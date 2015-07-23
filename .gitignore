@@ -1,0 +1,6 @@
+*/.settings/
+*/target/
+*/.classpath
+*/.project
+*/*.bat
+*/*.DS_Store
