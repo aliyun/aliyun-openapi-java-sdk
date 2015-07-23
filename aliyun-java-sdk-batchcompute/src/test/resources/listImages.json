@@ -1,0 +1,28 @@
+{
+  "img-0000000050FE595A755400000001": {
+    "BlockDeviceMapping": {
+      "/dev/vda": {
+        "SnapshotId": "snp-0000000050FE595A755400000009"
+      },
+      "/dev/vdb": {
+        "SnapshotId": "snp-0000000050FE595A7554000000010"
+      }
+    },
+    "Name": "Normal Image",
+    "Platform": "Linux",
+    "Description": "Linux Images"
+  },
+  "img-0000000050FE595A755400000002": {
+    "BlockDeviceMapping": {
+      "/dev/vda": {
+        "SnapshotId": "snp-0000000050FE595A755400000011"
+      },
+      "/dev/vdb": {
+        "SnapshotId": "snp-0000000050FE595A7554000000012"
+      }
+    },
+    "Name": "Normal Image2",
+    "Platform": "Linux",
+    "Description": "Linux Images2"
+  }
+}

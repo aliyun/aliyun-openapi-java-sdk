@@ -1,0 +1,38 @@
+{
+  "ReduceTask": {
+    "EndTime": 0,
+    "InstanceStatusVector": [
+      {
+        "EndTime": 0,
+        "InstanceId": 0,
+        "StartTime": 0,
+        "State": 1,
+        "WorkerEndTime": 0,
+        "WorkerStartTime": 0
+      }
+    ],
+    "StartTime": 0,
+    "State": 1,
+    "UnfinishedInstances": [
+      0
+    ]
+  },
+  "_prepare": {
+    "EndTime": 0,
+    "InstanceStatusVector": [
+      {
+        "EndTime": 0,
+        "InstanceId": 0,
+        "StartTime": 0,
+        "State": 2,
+        "WorkerEndTime": 0,
+        "WorkerStartTime": 0
+      }
+    ],
+    "StartTime": 1429193332,
+    "State": 2,
+    "UnfinishedInstances": [
+      0
+    ]
+  }
+}

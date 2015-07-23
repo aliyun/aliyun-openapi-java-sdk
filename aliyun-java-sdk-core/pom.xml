@@ -1,0 +1,82 @@
+﻿<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.aliyun</groupId>
+  <artifactId>aliyun-java-sdk-core</artifactId>
+  <packaging>jar</packaging>
+  <version>2.1.7-SNAPSHOT</version>
+  <name>aliyun-java-sdk-core</name>
+  <url>http://www.aliyun.com</url>
+  <description>Aliyun Open API SDK for Java
+
+Copyright (C) Alibaba Cloud Computing
+All rights reserved.
+
+版权所有 （C）阿里云计算有限公司
+
+http://www.aliyun.com</description>
+	<licenses>
+		<license>
+			<name></name>
+			<url></url>
+			<distribution></distribution>
+		</license>
+	</licenses>
+	<scm>
+		<url></url>
+		<connection></connection>
+	</scm>
+	<developers>
+		<developer>
+			<id>aliyunproducts</id>
+			<name>Aliyun SDK</name>
+			<email>aliyunsdk@aliyun.com</email>
+		</developer>
+	</developers>
+  <dependencies>
+  	<dependency>
+  		<groupId>junit</groupId>
+  		<artifactId>junit</artifactId>
+  		<version>4.12</version>
+		<scope>test</scope>
+  	</dependency>
+  </dependencies>
+  
+  <build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.3.2</version>
+				<configuration>
+					<source>1.6</source>
+					<target>1.6</target>
+					<encoding>UTF-8</encoding>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<version>2.3.2</version>
+				<configuration>
+					<excludes>
+					</excludes>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.10</version>
+				<configuration>
+					<argLine>-Dfile.encoding=UTF-8</argLine>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>2.8</version>
+				<configuration>
+					<encoding>UTF-8</encoding>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>

@@ -1,0 +1,163 @@
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+package com.aliyuncs;
+
+import java.io.UnsupportedEncodingException;
+import java.security.InvalidKeyException;
+import java.security.NoSuchAlgorithmException;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Map.Entry;
+
+import com.aliyuncs.http.FormatType;
+import com.aliyuncs.http.HttpRequest;
+import com.aliyuncs.http.ProtocolType;
+import com.aliyuncs.regions.ProductDomain;
+import com.aliyuncs.auth.AcsURLEncoder;
+import com.aliyuncs.auth.Credential;
+import com.aliyuncs.auth.ISignatureComposer;
+import com.aliyuncs.auth.ISigner;
+
+public abstract class AcsRequest<T extends AcsResponse> extends HttpRequest {
+	
+	private String version = null;
+	private String product = null;
+	private String actionName = null;
+	private String regionId = null;
+	private FormatType acceptFormat = null;
+	protected ISignatureComposer composer = null;
+	private ProtocolType protocol = ProtocolType.HTTP;
+	private Map<String, String> queryParameters = new HashMap<String, String>();
+	private Map<String, String> domainParameters = new HashMap<String, String>();
+	
+	public AcsRequest(String product) {
+		super(null);
+		this.headers.put("x-sdk-client", "Java/2.0.0");
+		this.product = product;
+	}
+	
+	public AcsRequest(String product, String version) {
+		super(null);
+		this.product = product;
+		this.setVersion(version);
+	}
+	
+	public String getActionName() {
+		return actionName;
+	}
+	
+	public void setActionName(String actionName) {
+		this.actionName = actionName;
+	}
+
+	public String getProduct() {
+		return product;
+	}
+
+	public ProtocolType getProtocol() {
+		return protocol;
+	}
+
+	public void setProtocol(ProtocolType protocol) {
+		this.protocol = protocol;
+	}
+	
+	public Map<String, String> getQueryParameters() {
+		return Collections.unmodifiableMap(queryParameters);
+	}
+	
+	protected void putQueryParameter(String name, String value) {
+		setParameter(this.queryParameters, name, value);
+	}
+	
+	public Map<String, String> getDomainParameters() {
+		return Collections.unmodifiableMap(domainParameters);
+	}
+
+	protected void putDomainParameter(String name, String value) {
+		setParameter(this.domainParameters, name, value);
+	}
+	
+	protected void setParameter(Map<String, String> map, String name, String value) {
+		if (null == name){
+			return;
+		}
+		map.put(name, value);
+	}
+
+	public String getVersion() {
+		return version;
+	}
+
+	public void setVersion(String version) {
+		this.version = version;
+	}
+
+	public FormatType getAcceptFormat() {
+		return acceptFormat;
+	}
+
+	public void setAcceptFormat(FormatType acceptFormat) {
+		this.acceptFormat = acceptFormat;
+		this.putHeaderParameter("Accept", 
+				FormatType.mapFormatToAccept(acceptFormat));
+	}
+	
+	public static String concatQueryString(Map<String, String> parameters) 
+			throws UnsupportedEncodingException {
+		if (null == parameters)
+			return null;
+		
+		StringBuilder urlBuilder = new StringBuilder("");
+		for(Entry<String, String> entry : parameters.entrySet()){
+            String key = entry.getKey();
+            String val = entry.getValue();
+			urlBuilder.append(AcsURLEncoder.encode(key));
+			if (val != null){
+            	urlBuilder.append("=").append(AcsURLEncoder.encode(val));
+			}
+			urlBuilder.append("&");
+        }
+		
+		int strIndex = urlBuilder.length();
+		if (parameters.size() > 0)
+			urlBuilder.deleteCharAt(strIndex - 1);
+		
+		return urlBuilder.toString();
+	}
+	
+	public abstract HttpRequest signRequest(ISigner signer, Credential credential, 
+			FormatType format, ProductDomain domain) 
+					throws InvalidKeyException, IllegalStateException, 
+						UnsupportedEncodingException, NoSuchAlgorithmException;
+	
+	public abstract String composeUrl(String endpoint, Map<String, String> queries) 
+			throws UnsupportedEncodingException;
+	
+	public abstract Class<T> getResponseClass();
+
+	public String getRegionId() {
+		return regionId;
+	}
+
+	public void setRegionId(String regionId) {
+		this.regionId = regionId;
+	}
+}
