@@ -13,17 +13,18 @@
 			<RegionId>cn-shenzhen</RegionId>
         </RegionIds>
 	    <Products>
+	    <!-- 
 	   		<Product>
 	            <ProductName>BatchCompute</ProductName>
-	            <DomainName>batchCompute.aliyuncs.com</DomainName>
-	        </Product>
+	            <DomainName>batchcompute.cn-qingdao.aliyuncs.com</DomainName>
+	        </Product> -->
 	    	<Product>
 	            <ProductName>Bss</ProductName>
 	            <DomainName>bss.aliyuncs.com</DomainName>
 	        </Product>
 	        <Product>
 	            <ProductName>Ecs</ProductName>
-	            <DomainName>ecs.aliyuncs.com</DomainName>
+	            <DomainName>ecs-cn-hangzhou.aliyuncs.com</DomainName>
 	        </Product>
 	        <Product>
 	            <ProductName>Oms</ProductName>
@@ -35,7 +36,7 @@
 	        </Product>
 	        <Product>
 	            <ProductName>Slb</ProductName>
-	            <DomainName>slb.aliyuncs.com</DomainName>
+	            <DomainName>slb-pop.aliyuncs.com</DomainName>
 	        </Product>
 	        <Product>
 	            <ProductName>Oss</ProductName>
@@ -120,6 +121,18 @@
 	        <Product>
 	            <ProductName>Dts</ProductName>
 	            <DomainName>dts.aliyuncs.com</DomainName>
+	        </Product>
+	        <Product>
+	            <ProductName>R-kvstore</ProductName>
+	            <DomainName>r-kvstore-cn-hangzhou.aliyuncs.com</DomainName>
+	        </Product>
+	        <Product>
+	            <ProductName>PTS</ProductName>
+	            <DomainName>pts.aliyuncs.com</DomainName>
+	        </Product>
+	        <Product>
+	            <ProductName>Alert</ProductName>
+	            <DomainName>alert.aliyuncs.com</DomainName>
 	        </Product>
 	    </Products>
     </Endpoint>
@@ -138,7 +151,7 @@
 	        </Product>
 	        <Product>
 	            <ProductName>Ecs</ProductName>
-	            <DomainName>ecs.aliyuncs.com</DomainName>
+	            <DomainName>ecs-cn-hangzhou.aliyuncs.com</DomainName>
 	        </Product>
 	        <Product>
 	            <ProductName>Oms</ProductName>
@@ -150,7 +163,7 @@
 	        </Product>
 	        <Product>
 	            <ProductName>Slb</ProductName>
-	            <DomainName>slb.aliyuncs.com</DomainName>
+	            <DomainName>slb-pop.aliyuncs.com</DomainName>
 	        </Product>
 	        <Product>
 	            <ProductName>Oss</ProductName>
@@ -235,6 +248,18 @@
 	        <Product>
 	            <ProductName>Dts</ProductName>
 	            <DomainName>dts.aliyuncs.com</DomainName>
+	        </Product>
+	        <Product>
+	            <ProductName>R-kvstore</ProductName>
+	            <DomainName>r-kvstore-cn-hangzhou.aliyuncs.com</DomainName>
+	        </Product>
+	        <Product>
+	            <ProductName>PTS</ProductName>
+	            <DomainName>pts.aliyuncs.com</DomainName>
+	        </Product>
+	        <Product>
+	            <ProductName>Alert</ProductName>
+	            <DomainName>alert.aliyuncs.com</DomainName>
 	        </Product>
 	    </Products>
     </Endpoint>

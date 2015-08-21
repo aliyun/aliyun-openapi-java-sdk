@@ -111,7 +111,7 @@ public abstract class RpcAcsRequest<T extends AcsResponse> extends AcsRequest<T>
 			String signature = signer.signString(strToSign, accessSecret + "&");
 			imutableMap.put("Signature", signature);
 		}
-		HttpRequest request = new HttpRequest(this.composeUrl(domain.getDomianName(), imutableMap));
+		HttpRequest request = new HttpRequest(this.composeUrl(domain.getDomianName(), imutableMap), this.getHeaders());
 		request.setMethod(this.getMethod());
 		return request;
 	}
