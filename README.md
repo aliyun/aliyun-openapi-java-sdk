@@ -38,12 +38,12 @@ We provide different installing ways for different programming language.（不�
     		<dependency>
     			<groupId>com.aliyun</groupId>
     			<artifactId>aliyun-java-sdk-core</artifactId>
-    			<version>2.1.6</version>
+    			<version>2.1.7</version>
     		</dependency>
     		<dependency>
     			<groupId>com.aliyun</groupId>
     			<artifactId>aliyun-java-sdk-sts</artifactId>
-    			<version>2.1.0</version>
+    			<version>2.1.5</version>
     		</dependency>
     		<dependency>
     			<groupId>com.aliyun</groupId>
@@ -85,6 +85,16 @@ We provide different installing ways for different programming language.（不�
     			<artifactId>aliyun-java-sdk-cms</artifactId>
     			<version>2.0.0</version>
     		</dependency>
+            <dependency>
+    			<groupId>com.aliyun</groupId>
+    			<artifactId>aliyun-java-sdk-batchcompute</artifactId>
+    			<version>2.1.0</version>
+    		</dependency>
+			<dependency>
+			  <groupId>com.aliyun</groupId>
+			  <artifactId>aliyun-java-sdk-ossadmin</artifactId>
+			  <version>2.0.0</version>
+			</dependency>
     	</dependencies>
 
  -  (待补充其他语言的下载安装方式)
