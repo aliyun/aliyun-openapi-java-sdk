@@ -43,7 +43,7 @@ We provide different installing ways for different programming language.（不�
     		<dependency>
     			<groupId>com.aliyun</groupId>
     			<artifactId>aliyun-java-sdk-sts</artifactId>
-    			<version>2.1.5</version>
+    			<version>2.1.6</version>
     		</dependency>
     		<dependency>
     			<groupId>com.aliyun</groupId>
