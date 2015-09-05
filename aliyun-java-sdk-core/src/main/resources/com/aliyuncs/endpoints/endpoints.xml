@@ -10,14 +10,9 @@
         	<RegionId>cn-shanghai</RegionId>
         	<RegionId>us-west-1</RegionId>
 			<RegionId>cn-shanghai-et2-test01</RegionId>
-			<RegionId>cn-shenzhen</RegionId>
+			<RegionId>ap-southeast-1</RegionId>
         </RegionIds>
 	    <Products>
-	    <!-- 
-	   		<Product>
-	            <ProductName>BatchCompute</ProductName>
-	            <DomainName>batchcompute.cn-qingdao.aliyuncs.com</DomainName>
-	        </Product> -->
 	    	<Product>
 	            <ProductName>Bss</ProductName>
 	            <DomainName>bss.aliyuncs.com</DomainName>
@@ -107,7 +102,7 @@
 	            <DomainName>ons.aliyuncs.com</DomainName>
 	        </Product>
 	        <Product>
-	            <ProductName>aas</ProductName>
+	            <ProductName>Aas</ProductName>
 	            <DomainName>aas.aliyuncs.com</DomainName>
 	        </Product>
 	        <Product>
@@ -133,6 +128,141 @@
 	        <Product>
 	            <ProductName>Alert</ProductName>
 	            <DomainName>alert.aliyuncs.com</DomainName>
+	        </Product>
+	        <Product>
+	            <ProductName>Push</ProductName>
+	            <DomainName>push.aliyuncs.com</DomainName>
+	        </Product>
+	    </Products>
+    </Endpoint>
+    <Endpoint name="cn-shenzhen">
+        <RegionIds>
+			<RegionId>cn-shenzhen</RegionId>
+        </RegionIds>
+	    <Products>
+	    	<Product>
+	            <ProductName>BatchCompute</ProductName>
+	            <DomainName>batchcompute.cn-shenzhen.aliyuncs.com</DomainName>
+	        </Product>
+	    	<Product>
+	            <ProductName>Bss</ProductName>
+	            <DomainName>bss.aliyuncs.com</DomainName>
+	        </Product>
+	        <Product>
+	            <ProductName>Ecs</ProductName>
+	            <DomainName>ecs-cn-hangzhou.aliyuncs.com</DomainName>
+	        </Product>
+	        <Product>
+	            <ProductName>Oms</ProductName>
+	            <DomainName>oms.aliyuncs.com</DomainName>
+	        </Product>
+	        <Product>
+	            <ProductName>Rds</ProductName>
+	            <DomainName>rds.aliyuncs.com</DomainName>
+	        </Product>
+	        <Product>
+	            <ProductName>Slb</ProductName>
+	            <DomainName>slb-pop.aliyuncs.com</DomainName>
+	        </Product>
+	        <Product>
+	            <ProductName>Oss</ProductName>
+	            <DomainName>oss-cn-hangzhou.aliyuncs.com</DomainName>
+	        </Product>
+	        <Product>
+	            <ProductName>OssAdmin</ProductName>
+	            <DomainName>oss-admin.aliyuncs.com</DomainName>
+	        </Product>
+	        <Product>
+	            <ProductName>Sts</ProductName>
+	            <DomainName>sts.aliyuncs.com</DomainName>
+	        </Product>
+	        <Product>
+	            <ProductName>Yundun</ProductName>
+	            <DomainName>yundun-cn-hangzhou.aliyuncs.com</DomainName>
+	        </Product>
+	        <Product>
+	            <ProductName>Risk</ProductName>
+	            <DomainName>risk-cn-hangzhou.aliyuncs.com</DomainName>
+	        </Product>
+	        <Product>
+	            <ProductName>Drds</ProductName>
+	            <DomainName>drds.aliyuncs.com</DomainName>
+	        </Product>
+	        <Product>
+	            <ProductName>M-kvstore</ProductName>
+	            <DomainName>m-kvstore.aliyuncs.com</DomainName>
+	        </Product>
+	        <Product>
+	            <ProductName>Ram</ProductName>
+	            <DomainName>ram.aliyuncs.com</DomainName>
+	        </Product>
+	        <Product>
+	            <ProductName>Cms</ProductName>
+	            <DomainName>metrics.aliyuncs.com</DomainName>
+	        </Product>
+	        <Product>
+	            <ProductName>Crm</ProductName>
+	            <DomainName>crm-cn-hangzhou.aliyuncs.com</DomainName>
+	        </Product>
+	        <Product>
+	            <ProductName>Ocs</ProductName>
+	            <DomainName>pop-ocs.aliyuncs.com</DomainName>
+	        </Product>
+	        <Product>
+	            <ProductName>Ots</ProductName>
+	            <DomainName>ots-pop.aliyuncs.com</DomainName>
+	        </Product>
+	        <Product>
+	            <ProductName>Dqs</ProductName>
+	            <DomainName>dqs.aliyuncs.com</DomainName>
+	        </Product>
+			<Product>
+	            <ProductName>Location</ProductName>
+	            <DomainName>location.aliyuncs.com</DomainName>
+	        </Product>
+	        <Product>
+	            <ProductName>Ubsms</ProductName>
+	            <DomainName>ubsms.aliyuncs.com</DomainName>
+	        </Product>
+			<Product>
+	            <ProductName>Drc</ProductName>
+	            <DomainName>drc.aliyuncs.com</DomainName>
+	        </Product>
+	        <Product>
+	            <ProductName>Ons</ProductName>
+	            <DomainName>ons.aliyuncs.com</DomainName>
+	        </Product>
+	        <Product>
+	            <ProductName>Aas</ProductName>
+	            <DomainName>aas.aliyuncs.com</DomainName>
+	        </Product>
+	        <Product>
+	            <ProductName>Ace</ProductName>
+	            <DomainName>ace.cn-hangzhou.aliyuncs.com</DomainName>
+	        </Product>
+	        <Product>
+	            <ProductName>Ubsms-inner</ProductName>
+	            <DomainName>ubsms-inner.aliyuncs.com</DomainName>
+	        </Product>
+	        <Product>
+	            <ProductName>Dts</ProductName>
+	            <DomainName>dts.aliyuncs.com</DomainName>
+	        </Product>
+	        <Product>
+	            <ProductName>R-kvstore</ProductName>
+	            <DomainName>r-kvstore-cn-hangzhou.aliyuncs.com</DomainName>
+	        </Product>
+	        <Product>
+	            <ProductName>PTS</ProductName>
+	            <DomainName>pts.aliyuncs.com</DomainName>
+	        </Product>
+	        <Product>
+	            <ProductName>Alert</ProductName>
+	            <DomainName>alert.aliyuncs.com</DomainName>
+	        </Product>
+	        <Product>
+	            <ProductName>Push</ProductName>
+	            <DomainName>push.aliyuncs.com</DomainName>
 	        </Product>
 	    </Products>
     </Endpoint>
@@ -234,7 +364,7 @@
 	            <DomainName>ons.aliyuncs.com</DomainName>
 	        </Product>
 	        <Product>
-	            <ProductName>aas</ProductName>
+	            <ProductName>Aas</ProductName>
 	            <DomainName>aas.aliyuncs.com</DomainName>
 	        </Product>
 	        <Product>
@@ -260,6 +390,10 @@
 	        <Product>
 	            <ProductName>Alert</ProductName>
 	            <DomainName>alert.aliyuncs.com</DomainName>
+	        </Product>
+	        <Product>
+	            <ProductName>Push</ProductName>
+	            <DomainName>push.aliyuncs.com</DomainName>
 	        </Product>
 	    </Products>
     </Endpoint>

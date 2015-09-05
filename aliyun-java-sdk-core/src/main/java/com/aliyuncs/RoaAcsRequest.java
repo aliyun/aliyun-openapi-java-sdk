@@ -88,9 +88,12 @@ public abstract class RoaAcsRequest<T extends AcsResponse> extends AcsRequest<T>
 		if (-1 == urlBuilder.indexOf("?")){
 			urlBuilder.append("?");
 		}
+		else if(!urlBuilder.toString().endsWith("?")) {
+			urlBuilder.append("&");
+		}
 		String query = concatQueryString(mapQueries);
 		String url = urlBuilder.append(query).toString();
-		if(url.endsWith("?")){
+		if(url.endsWith("?") || url.endsWith("&")){
 			url = url.substring(0, url.length()-1);
 		}
 		return url;
