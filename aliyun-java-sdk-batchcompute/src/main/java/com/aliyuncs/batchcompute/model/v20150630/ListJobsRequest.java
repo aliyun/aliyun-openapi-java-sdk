@@ -16,38 +16,25 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+package com.aliyuncs.batchcompute.model.v20150630;
 
-package com.aliyuncs.batchcompute.modelunittest;
-
-import com.aliyuncs.batchcompute.model.v20150630.GetJobRequest;
-import junit.framework.TestCase;
-import org.junit.Test;
+import com.aliyuncs.RoaAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
- * Created by guangchun.luo on 15/5/6.
+ * @author auto create
  */
-public class GetJobRequestTest extends TestCase {
+public class ListJobsRequest extends RoaAcsRequest<ListJobsResponse> {
 
-    @Test
-    public void testConstructor() {
-
-        String RESOURCE_ID = "abc123";
-        GetJobRequest req = new GetJobRequest(RESOURCE_ID);
-
-        assertEquals(req.getJobId(), RESOURCE_ID);
-
+    public ListJobsRequest() {
+        super("BatchCompute", "2015-06-30", "ListJobs");
+        setUriPattern("/jobs");
+        setMethod(MethodType.GET);
     }
 
-    @Test
-    public void testSetResourceId() {
-
-        GetJobRequest req = new GetJobRequest();
-
-        String RESOURCE_ID = "abc123";
-
-        req.setJobId(RESOURCE_ID);
-
-        assertEquals(req.getJobId(), RESOURCE_ID);
-
+    @Override
+    public Class<ListJobsResponse> getResponseClass() {
+        return ListJobsResponse.class;
     }
+
 }

@@ -38,7 +38,6 @@ public class Config {
         regionId = (String) prop.get("regionId");
         accessId = (String) prop.get("accessId");
         accessKey = (String) prop.get("accessKey");
-        imageId = (String) prop.get("imageId");
 
     }
 
@@ -63,11 +62,9 @@ public class Config {
         return accessKey;
     }
 
-    public String getImageId() { return imageId; }
 
     private String regionId;
     private String accessId;
     private String accessKey;
-    private String imageId;
 
 }

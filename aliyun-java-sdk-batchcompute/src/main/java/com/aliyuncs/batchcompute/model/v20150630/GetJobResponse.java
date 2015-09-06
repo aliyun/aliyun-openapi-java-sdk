@@ -29,7 +29,6 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetJobResponse extends BatchComputeResponse {
 
-
     private Job job;
 
     public Job getJob() {
@@ -44,4 +43,5 @@ public class GetJobResponse extends BatchComputeResponse {
     public GetJobResponse getInstance(UnmarshallerContext context) throws ServerException {
         return GetJobResponseUnmarshaller.unmarshall(this, context);
     }
+
 }

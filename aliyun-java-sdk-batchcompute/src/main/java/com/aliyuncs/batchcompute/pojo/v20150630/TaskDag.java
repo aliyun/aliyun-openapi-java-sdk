@@ -34,30 +34,30 @@ import java.util.Map;
 public class TaskDag {
 
     @JsonProperty("TaskDescMap")
-    private Map<String, Task> taskDescMap;
+    private Map<String, TaskDescription> taskDescMap;
 
     @JsonProperty("Dependencies")
     private Map<String, List<String>> dependencies;
 
     @JsonIgnore
-    public Map<String, Task> getTaskDescMap() {
+    public Map<String, TaskDescription> getTaskDescMap() {
         return taskDescMap;
     }
 
     @JsonIgnore
-    public void setTaskDescMap(Map<String, Task> taskDescMap) {
+    public void setTaskDescMap(Map<String, TaskDescription> taskDescMap) {
         this.taskDescMap = taskDescMap;
     }
 
-    public void addTask(String taskName, Task task) {
+    public void addTask(String taskName, TaskDescription taskDescription) {
         if (null == taskDescMap) {
             taskDescMap = new HashMap();
         }
-        taskDescMap.put(taskName, task);
+        taskDescMap.put(taskName, taskDescription);
     }
 
-    public void addTask(Task task) {
-        addTask(task.getTaskName(), task);
+    public void addTask(TaskDescription taskDescription) {
+        addTask(taskDescription.getTaskName(), taskDescription);
     }
 
 

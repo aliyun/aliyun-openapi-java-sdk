@@ -26,6 +26,25 @@ import com.aliyuncs.http.HttpResponse;
  */
 public abstract class BatchComputeResponse extends AcsResponse{
     protected HttpResponse httpResponse;
+
+    public int getStatusCode() {
+        return statusCode;
+    }
+
+    public void setStatusCode(int statusCode) {
+        this.statusCode = statusCode;
+    }
+
+    String requestId;
+    int statusCode;
+    public void setRequestId(String requestId){
+        this.requestId = requestId;
+    }
+    public String getRequestId(){
+        return requestId;
+    }
+
+
     public HttpResponse getHttpResponse(){
         return httpResponse;
     }

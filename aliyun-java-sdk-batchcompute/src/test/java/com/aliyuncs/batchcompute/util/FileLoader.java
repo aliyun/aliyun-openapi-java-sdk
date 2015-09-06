@@ -77,7 +77,7 @@ public class FileLoader {
 
     public static void main(String[] args) throws FileNotFoundException {
 
-        String s = FileLoader.loadFile("resources/listJobStatus.json");
+        String s = FileLoader.loadFile("resources/listJobs.json");
         System.out.println(s);
 
         String[] arr = new String[]{

@@ -56,7 +56,7 @@ public class CreateJobRequestMarshallerTest extends TestCase {
         CreateJobRequest request = new CreateJobRequest();
 
         /***** 构造 job *********/
-        Job job = generateJob();
+        JobDescription job = generateJob();
         /**************/
 
         try {
@@ -69,19 +69,19 @@ public class CreateJobRequestMarshallerTest extends TestCase {
         String contentString = new String(request.getContent(), "utf-8");
 
         ObjectMapper objectMapper = new ObjectMapper();
-        Job job2 = objectMapper.readValue(contentString, Job.class);
+        JobDescription job2 = objectMapper.readValue(contentString, JobDescription.class);
 
         assertEquals("jobName1",job2.getJobName());
         assertEquals("xx",job2.getJobTag());
         assertTrue(job2.getTaskDag().getDependencies().containsKey("task_1"));
         assertTrue(1==job2.getPriority());
 
-        Map<String, Task> taskDescMap2 = job2.getTaskDag().getTaskDescMap();
+        Map<String, TaskDescription> taskDescMap2 = job2.getTaskDag().getTaskDescMap();
 
         assertTrue(taskDescMap2.containsKey("task_1"));
 
 
-        Task a = taskDescMap2.get("task_1");
+        TaskDescription a = taskDescMap2.get("task_1");
         assertEquals("img_id",a.getImageId());
         assertEquals("b", a.getEnvironmentVariables().get("a"));
         //assertEquals("snapshot_id",a.getBlockDeviceMapping().get("/dev/xxx").getSnapshotId());
@@ -102,7 +102,7 @@ public class CreateJobRequestMarshallerTest extends TestCase {
     @Test
     public void testMarshall2(){
 
-        Job job = generateJob2();
+        JobDescription job = generateJob2();
 
         CreateJobRequest req = null;
 
@@ -128,7 +128,7 @@ public class CreateJobRequestMarshallerTest extends TestCase {
         assertTrue(contentStr.indexOf(IMAGE_ID)!=-1);
     }
 
-    private Job generateJob() {
+    private JobDescription generateJob() {
 
         TaskDag taskDag = new TaskDag();
 
@@ -138,9 +138,9 @@ public class CreateJobRequestMarshallerTest extends TestCase {
         taskDag.addDependencies("task_1", taskTargets);
 
 
-        Map<String, Task> taskDescMap = new HashMap();
+        Map<String, TaskDescription> taskDescMap = new HashMap();
 
-        Task task = new Task();
+        TaskDescription task = new TaskDescription();
 
 
         BlockDevice blockDevice = new BlockDevice("snapshot_id");
@@ -168,7 +168,7 @@ public class CreateJobRequestMarshallerTest extends TestCase {
         taskDag.setTaskDescMap(taskDescMap);
 
 
-        Job job = new Job();
+        JobDescription job = new JobDescription();
         job.setJobName("jobName1");
         job.setJobTag("xx");
         job.setTaskDag(taskDag);
@@ -178,12 +178,12 @@ public class CreateJobRequestMarshallerTest extends TestCase {
 
 
     @Test
-    public Job generateJob2() {
+    public JobDescription generateJob2() {
 
 
         TaskDag taskDag = new TaskDag();
 
-        Task task = new Task();
+        TaskDescription task = new TaskDescription();
 
         ResourceDescription resourceDesc = new ResourceDescription();
         resourceDesc.setCpu(1200);      //12 threads
@@ -200,20 +200,20 @@ public class CreateJobRequestMarshallerTest extends TestCase {
         task.setStderrRedirectPath("oss://" + OSS_BUCKET + "/" + OSS_LOG_PATH);
         task.setStdoutRedirectPath("oss://" + OSS_BUCKET + "/" + OSS_LOG_PATH);
 
-        Map<String, Task> taskDescMap = new HashMap();
+        Map<String, TaskDescription> taskDescMap = new HashMap();
 
         taskDescMap.put("CountTask", task);
 
         taskDag.setTaskDescMap(taskDescMap);
 
-        Task task2 = new Task();
+        TaskDescription task2 = new TaskDescription();
         task2.setTaskName("CountTask2");
         taskDag.addTask("CountTask2", task2);
 
         assertEquals("CountTask2", taskDag.getTaskDescMap().get("CountTask2").getTaskName());
 
 
-        Job job = new Job();
+        JobDescription job = new JobDescription();
         job.setJobName("jobName1");
         job.setJobTag("JobTag");
         job.setTaskDag(taskDag);

@@ -25,7 +25,7 @@ import com.aliyuncs.AcsResponse;
 import com.aliyuncs.DefaultAcsClient;
 import com.aliyuncs.IAcsClient;
 import com.aliyuncs.batchcompute.model.v20150630.*;
-import com.aliyuncs.batchcompute.pojo.v20150630.Job;
+import com.aliyuncs.batchcompute.pojo.v20150630.JobDescription;
 import com.aliyuncs.exceptions.ClientException;
 import com.aliyuncs.http.HttpResponse;
 import com.aliyuncs.profile.DefaultProfile;
@@ -38,6 +38,11 @@ public class BatchComputeClient implements BatchCompute {
     private IAcsClient client;
 
     public BatchComputeClient(String regionId, String accessKeyId, String accessKeySecret) {
+//        try {
+//            DefaultProfile.addEndpoint("cn-shenzhen","cn-shenzhen","BatchCompute","batchcompute.cn-shenzhen.aliyuncs.com");
+//        } catch (ClientException e) {
+//            e.printStackTrace();
+//        }
         this.client = new DefaultAcsClient(DefaultProfile.getProfile(regionId, accessKeyId, accessKeySecret));
     }
 
@@ -59,10 +64,10 @@ public class BatchComputeClient implements BatchCompute {
     }
 
 
-    public CreateJobResponse createJob(Job job) throws ClientException {
+    public CreateJobResponse createJob(JobDescription jobDescription) throws ClientException {
         CreateJobRequest request = new CreateJobRequest();
 
-        request.setJob(job);
+        request.setJobDescription(jobDescription);
         return createJob(request);
     }
 
@@ -93,26 +98,26 @@ public class BatchComputeClient implements BatchCompute {
     }
 
 
-    public GetJobStatusResponse getJobStatus(GetJobStatusRequest request) throws ClientException {
-        GetJobStatusResponse response = getAcsResponse(request);
+    public GetJobResponse getJob(GetJobRequest request) throws ClientException {
+        GetJobResponse response = getAcsResponse(request);
         return response;
     }
 
-    public GetJobStatusResponse getJobStatus(String jobId) throws ClientException {
-        GetJobStatusRequest request = new GetJobStatusRequest();
+    public GetJobResponse getJob(String jobId) throws ClientException {
+        GetJobRequest request = new GetJobRequest();
         request.setJobId(jobId);
-        return getJobStatus(request);
+        return getJob(request);
     }
 
 
-    public ListJobStatusResponse listJobStatus(ListJobStatusRequest request) throws ClientException {
-        ListJobStatusResponse response = getAcsResponse(request);
+    public ListJobsResponse listJobs(ListJobsRequest request) throws ClientException {
+        ListJobsResponse response = getAcsResponse(request);
         return response;
     }
 
 
-    public ListJobStatusResponse listJobStatus() throws ClientException {
-        return listJobStatus(new ListJobStatusRequest());
+    public ListJobsResponse listJobs() throws ClientException {
+        return listJobs(new ListJobsRequest());
     }
 
 
@@ -139,27 +144,27 @@ public class BatchComputeClient implements BatchCompute {
     }
 
 
-    public GetJobResponse getJob(GetJobRequest request) throws ClientException {
-        GetJobResponse response = getAcsResponse(request);
+    public GetJobDescriptionResponse getJobDescription(GetJobDescriptionRequest request) throws ClientException {
+        GetJobDescriptionResponse response = getAcsResponse(request);
         return response;
     }
 
-    public GetJobResponse getJob(String jobId) throws ClientException {
-        GetJobRequest request = new GetJobRequest();
+    public GetJobDescriptionResponse getJobDescription(String jobId) throws ClientException {
+        GetJobDescriptionRequest request = new GetJobDescriptionRequest();
         request.setJobId(jobId);
-        return getJob(request);
+        return getJobDescription(request);
     }
 
 
-    public ListTaskStatusResponse listTaskStatus(ListTaskStatusRequest request) throws ClientException {
-        ListTaskStatusResponse response = getAcsResponse(request);
+    public ListTasksResponse listTasks(ListTasksRequest request) throws ClientException {
+        ListTasksResponse response = getAcsResponse(request);
         return response;
     }
 
-    public ListTaskStatusResponse listTaskStatus(String jobId) throws ClientException {
-        ListTaskStatusRequest request = new ListTaskStatusRequest();
+    public ListTasksResponse listTasks(String jobId) throws ClientException {
+        ListTasksRequest request = new ListTasksRequest();
         request.setJobId(jobId);
-        return listTaskStatus(request);
+        return listTasks(request);
     }
 
 

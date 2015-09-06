@@ -20,7 +20,6 @@ package com.aliyuncs.batchcompute.transform.v20150630;
 
 import com.aliyuncs.batchcompute.model.v20150630.GetJobResponse;
 import com.aliyuncs.batchcompute.pojo.v20150630.Job;
-import com.aliyuncs.batchcompute.pojo.v20150630.Task;
 import com.aliyuncs.exceptions.ServerException;
 import com.aliyuncs.http.HttpResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -28,41 +27,26 @@ import org.codehaus.jackson.map.ObjectMapper;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
-import java.util.Iterator;
-import java.util.Map;
-import java.util.Set;
-
 
 public class GetJobResponseUnmarshaller {
 
-    public static GetJobResponse unmarshall(GetJobResponse getJobDescriptionResponse, UnmarshallerContext context) throws ServerException {
+    public static GetJobResponse unmarshall(GetJobResponse getJobResponse, UnmarshallerContext context) throws ServerException {
         HttpResponse httpResponse = context.getHttpResponse();
-        getJobDescriptionResponse.setHttpResponse(httpResponse);
+        getJobResponse.setHttpResponse(httpResponse);
+
         try {
             String body = new String(httpResponse.getContent(), httpResponse.getEncoding());
+
             ObjectMapper mapper = new ObjectMapper();
             Job job = mapper.readValue(body, Job.class);
 
-            //set task name
-            Map<String,Task> taskDescMap = job.getTaskDag().getTaskDescMap();
-            Set<String> keySet= taskDescMap.keySet();
-            Iterator<String> it=keySet.iterator();
-            while(it.hasNext()){
-                String taskName = it.next();
-                taskDescMap.get(taskName).setTaskName(taskName);
-            }
-
-            getJobDescriptionResponse.setJob(job);
-
+            getJobResponse.setJob(job);
         } catch (UnsupportedEncodingException e) {
-            //e.printStackTrace();
-            throw new ServerException("API.EncodeError", "encode response body error", getJobDescriptionResponse.getRequestId());
+            throw new ServerException("API.EncodeError", "encode response body error",getJobResponse.getRequestId());
         } catch (IOException e) {
-            //e.printStackTrace();
-            throw new ServerException("API.EncodeError", "encode response body error", getJobDescriptionResponse.getRequestId());
+            throw new ServerException("API.EncodeError", "encode response body error",getJobResponse.getRequestId());
         }
 
-        return getJobDescriptionResponse;
+        return getJobResponse;
     }
-
 }

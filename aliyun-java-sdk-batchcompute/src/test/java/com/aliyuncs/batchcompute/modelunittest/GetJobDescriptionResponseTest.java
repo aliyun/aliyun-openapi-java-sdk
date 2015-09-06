@@ -19,7 +19,7 @@
 
 package com.aliyuncs.batchcompute.modelunittest;
 
-import com.aliyuncs.batchcompute.model.v20150630.*;
+import com.aliyuncs.batchcompute.model.v20150630.GetJobDescriptionResponse;
 import com.aliyuncs.batchcompute.util.FileLoader;
 import com.aliyuncs.exceptions.ServerException;
 import com.aliyuncs.http.FormatType;
@@ -31,35 +31,34 @@ import org.junit.Test;
 /**
  * Created by guangchun.luo on 15/4/16.
  */
-public class GetJobResponseTest extends TestCase {
+public class GetJobDescriptionResponseTest extends TestCase {
+
 
     public void testGetInstance() throws ServerException {
 
-        GetJobResponse res = new GetJobResponse();
+        GetJobDescriptionResponse res = new GetJobDescriptionResponse();
 
         UnmarshallerContext context = new UnmarshallerContext();
 
         HttpResponse httpResponse = new HttpResponse("");
-        String body = FileLoader.loadFile("resources/getJob.json");
+        String body = FileLoader.loadFile("resources/getJobDescription.json");
 
         httpResponse.setContent(body.getBytes(), "utf-8", FormatType.JSON);
 
         context.setHttpResponse(httpResponse);
 
         res.getInstance(context);
-
-        System.out.println(res.getJob().getJobName());
-        assertEquals(res.getJob().getJobName(), "FindPrime");
+        assertEquals(res.getJobDescription().getJobName(), "Demo");
     }
 
     public void testGetInstanceWithUnsupportedEncoding() {
 
-        GetJobResponse res = new GetJobResponse();
+        GetJobDescriptionResponse res = new GetJobDescriptionResponse();
 
         UnmarshallerContext context = new UnmarshallerContext();
 
         HttpResponse httpResponse = new HttpResponse("");
-        String body = FileLoader.loadFile("resources/getJob.json");
+        String body = FileLoader.loadFile("resources/getJobDescription.json");
 
         httpResponse.setContent(body.getBytes(), "xxx", FormatType.JSON);
 
@@ -74,7 +73,7 @@ public class GetJobResponseTest extends TestCase {
 
     @Test
     public void testGetInstanceWithIncorrectJSON() {
-        GetJobResponse res = new GetJobResponse();
+        GetJobDescriptionResponse res = new GetJobDescriptionResponse();
 
         UnmarshallerContext context = new UnmarshallerContext();
 

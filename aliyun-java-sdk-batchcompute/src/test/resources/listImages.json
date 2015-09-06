@@ -8,9 +8,12 @@
         "SnapshotId": "snp-0000000050FE595A7554000000010"
       }
     },
+    "CreateTime": 1386650699,
+    "OwnerId": 0,
     "Name": "Normal Image",
     "Platform": "Linux",
-    "Description": "Linux Images"
+    "Description": "Linux Images",
+    "ResourceId": "img-0000000050FE595A755400000001"
   },
   "img-0000000050FE595A755400000002": {
     "BlockDeviceMapping": {
@@ -21,8 +24,11 @@
         "SnapshotId": "snp-0000000050FE595A7554000000012"
       }
     },
+    "CreateTime": 1386650399,
+    "OwnerId": 0,
     "Name": "Normal Image2",
     "Platform": "Linux",
-    "Description": "Linux Images2"
+    "Description": "Linux Images2",
+    "ResourceId": "img-0000000050FE595A755400000002"
   }
 }

@@ -16,38 +16,34 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+package com.aliyuncs.batchcompute.model.v20150630;
 
-package com.aliyuncs.batchcompute.modelunittest;
+import com.aliyuncs.batchcompute.main.v20150630.BatchComputeResponse;
+import com.aliyuncs.batchcompute.pojo.v20150630.Job;
+import com.aliyuncs.batchcompute.transform.v20150630.ListJobsResponseUnmarshaller;
+import com.aliyuncs.exceptions.ServerException;
+import com.aliyuncs.transform.UnmarshallerContext;
 
-import com.aliyuncs.batchcompute.model.v20150630.GetJobRequest;
-import junit.framework.TestCase;
-import org.junit.Test;
+import java.util.List;
 
 /**
- * Created by guangchun.luo on 15/5/6.
+ * @author auto create
  */
-public class GetJobRequestTest extends TestCase {
+public class ListJobsResponse extends BatchComputeResponse {
 
-    @Test
-    public void testConstructor() {
-
-        String RESOURCE_ID = "abc123";
-        GetJobRequest req = new GetJobRequest(RESOURCE_ID);
-
-        assertEquals(req.getJobId(), RESOURCE_ID);
-
+    public List<Job> getJobList() {
+        return jobList;
     }
 
-    @Test
-    public void testSetResourceId() {
-
-        GetJobRequest req = new GetJobRequest();
-
-        String RESOURCE_ID = "abc123";
-
-        req.setJobId(RESOURCE_ID);
-
-        assertEquals(req.getJobId(), RESOURCE_ID);
-
+    private List<Job> jobList;
+    public void setJobList(List<Job> list) {
+        this.jobList = list;
     }
+
+
+    @Override
+    public ListJobsResponse getInstance(UnmarshallerContext context) throws ServerException {
+        return ListJobsResponseUnmarshaller.unmarshall(this, context);
+    }
+
 }

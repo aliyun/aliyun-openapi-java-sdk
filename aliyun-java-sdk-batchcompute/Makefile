@@ -1,4 +1,4 @@
-NO_TEST=-DfailIfNoTests
+NO_TEST=-DskipTests
 SKIP_TEST=-Dmaven.test.skip=true
 REPO=-DaltDeploymentRepository=snapshots::default::http://mvnrepo.alibaba-inc.com/mvn/snapshots
 ENCODING=-Dfile.encoding=UTF-8

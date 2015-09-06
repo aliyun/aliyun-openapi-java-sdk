@@ -23,51 +23,43 @@ import org.codehaus.jackson.annotate.JsonIgnore;
 import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 import org.codehaus.jackson.annotate.JsonProperty;
 
-import java.util.List;
-
 /**
  * Created by guangchun.luo on 15/4/16.
  */
+
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class Task {
+public class Instance {
 
-
-    @JsonProperty("TaskName")
-    private String taskName;
-
-    @JsonProperty("EndTime")
-    private long endTime;
-
-    @JsonProperty("State")
-    private int state;
-
+    @JsonProperty("InstanceId")
+    private int instanceId;
 
     @JsonProperty("StartTime")
     private long startTime;
 
-    @JsonProperty("InstanceStatusVector")
-    private List<Instance> instanceList;
+    @JsonProperty("State")
+    private int state;
 
-
+    @JsonProperty("EndTime")
+    private long endTime;
 
     @JsonIgnore
-    public String getTaskName() {
-        return taskName;
+    public int getInstanceId() {
+        return instanceId;
     }
 
     @JsonIgnore
-    public void setTaskName(String taskName) {
-        this.taskName = taskName;
+    public void setInstanceId(int instanceId) {
+        this.instanceId = instanceId;
     }
 
     @JsonIgnore
-    public long getEndTime() {
-        return endTime;
+    public long getStartTime() {
+        return startTime;
     }
 
     @JsonIgnore
-    public void setEndTime(long endTime) {
-        this.endTime = endTime;
+    public void setStartTime(long startTime) {
+        this.startTime = startTime;
     }
 
 
@@ -82,23 +74,15 @@ public class Task {
     }
 
     @JsonIgnore
-    public long getStartTime() {
-        return startTime;
+    public long getEndTime() {
+        return this.endTime;
     }
 
     @JsonIgnore
-    public void setStartTime(long startTime) {
-        this.startTime = startTime;
+    public void setEndTime(long endTime) {
+        this.endTime = endTime;
     }
 
-    @JsonIgnore
-    public List<Instance> getInstanceList() {
-        return instanceList;
-    }
 
-    @JsonIgnore
-    public void setInstanceList(List<Instance> instanceList) {
-        this.instanceList = instanceList;
-    }
 
 }

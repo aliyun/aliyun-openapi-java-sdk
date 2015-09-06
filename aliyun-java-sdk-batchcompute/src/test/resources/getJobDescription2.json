@@ -1,0 +1,72 @@
+{
+  "Description": "",
+  "JobName": "FindPrime",
+  "JobTag": "MyTag",
+  "Priority": 0,
+  "TaskDag": {
+    "Dependences": {
+      "Find": [
+        "Sort"
+      ]
+    },
+    "TaskDescMap": {
+      "Find": {
+        "BlockDeviceMapping": {},
+        "CreateSnapshotAfterTerminated": "",
+        "EnvironmentVariables": {
+          "WORKDIR": "AT-DIKU-ZYF_diku_dd_test/"
+        },
+        "ImageId": "img-linux-1429670072",
+        "InstanceCount": 3,
+        "LoadImage": "",
+        "LoadPreparedData": false,
+        "MaxReplica": 0,
+        "MinReplica": 0,
+        "OssMapping": {},
+        "OssMappingLocale": "GBK",
+        "OssMappingLock": true,
+        "PackageUri": "oss://diku-e2e-test/AT-DIKU-ZYF_diku_dd_test/find-prime/package/find-prime.tar.gz",
+        "ProgramArguments": "",
+        "ProgramName": "e2e_test_raise.py",
+        "ProgramType": "python",
+        "ResourceDescription": {
+          "Cpu": 100,
+          "Memory": 2000
+        },
+        "SaveImage": "",
+        "StderrRedirectPath": "",
+        "StdoutRedirectPath": "",
+        "Timeout": 1000
+      },
+      "Sort": {
+        "BlockDeviceMapping": {},
+        "CreateSnapshotAfterTerminated": "",
+        "EnvironmentVariables": {
+          "WORKDIR": "AT-DIKU-ZYF_diku_dd_test/"
+        },
+        "ImageId": "img-linux-1429670072",
+        "InstanceCount": 1,
+        "LoadImage": "",
+        "LoadPreparedData": false,
+        "MaxReplica": 0,
+        "MinReplica": 0,
+        "OssMapping": {},
+        "OssMappingLocale": "GBK",
+        "OssMappingLock": true,
+        "PackageUri": "oss://diku-e2e-test/AT-DIKU-ZYF_diku_dd_test/find-prime/package/find-prime.tar.gz",
+        "ProgramArguments": "",
+        "ProgramName": "e2e_test_sort.py",
+        "ProgramType": "python",
+        "ResourceDescription": {
+          "Cpu": 100,
+          "Memory": 2000
+        },
+        "SaveImage": "",
+        "StderrRedirectPath": "",
+        "StdoutRedirectPath": "",
+        "Timeout": 1000
+      }
+    }
+  },
+  "ZoneId": ""
+}

@@ -50,7 +50,7 @@ public class CreateJobRequestTest extends TestCase {
     @Test
     public void testConstructor() throws ClientException, IOException {
 
-        Job job = createJob();
+        JobDescription job = createJob();
 
         CreateJobRequest req = new CreateJobRequest(job);
 
@@ -68,7 +68,7 @@ public class CreateJobRequestTest extends TestCase {
 
 
         ObjectMapper objectMapper = new ObjectMapper();
-        Job job2 = objectMapper.readValue(contentString, Job.class);
+        JobDescription job2 = objectMapper.readValue(contentString, JobDescription.class);
 
 
         assertEquals("jobName1",job2.getJobName());
@@ -76,12 +76,12 @@ public class CreateJobRequestTest extends TestCase {
         assertTrue(job2.getTaskDag().getDependencies().containsKey("task_1"));
         assertTrue(1==job2.getPriority());
 
-        Map<String, Task> taskDescMap2 = job2.getTaskDag().getTaskDescMap();
+        Map<String, TaskDescription> taskDescMap2 = job2.getTaskDag().getTaskDescMap();
 
         assertTrue(taskDescMap2.containsKey("task_1"));
 
 
-        Task a = taskDescMap2.get("task_1");
+        TaskDescription a = taskDescMap2.get("task_1");
         assertEquals("img_id",a.getImageId());
         assertEquals("b", a.getEnvironmentVariables().get("a"));
         //assertEquals("snapshot_id",a.getBlockDeviceMapping().get("/dev/xxx").getSnapshotId());
@@ -104,11 +104,11 @@ public class CreateJobRequestTest extends TestCase {
     @Test
     public void testSetContent() throws ClientException, IOException {
 
-        Job job = createJob();
+        JobDescription job = createJob();
 
         CreateJobRequest req = new CreateJobRequest();
 
-        req.setJob(job);
+        req.setJobDescription(job);
 
 
         String contentString = null;
@@ -121,7 +121,7 @@ public class CreateJobRequestTest extends TestCase {
 
 
         ObjectMapper objectMapper = new ObjectMapper();
-        Job job2 = objectMapper.readValue(contentString, Job.class);
+        JobDescription job2 = objectMapper.readValue(contentString, JobDescription.class);
 
 
         assertEquals("jobName1",job2.getJobName());
@@ -129,12 +129,12 @@ public class CreateJobRequestTest extends TestCase {
         assertTrue(job2.getTaskDag().getDependencies().containsKey("task_1"));
         assertTrue(1==job2.getPriority());
 
-        Map<String, Task> taskDescMap2 = job2.getTaskDag().getTaskDescMap();
+        Map<String, TaskDescription> taskDescMap2 = job2.getTaskDag().getTaskDescMap();
 
         assertTrue(taskDescMap2.containsKey("task_1"));
 
 
-        Task a = taskDescMap2.get("task_1");
+        TaskDescription a = taskDescMap2.get("task_1");
         assertEquals("img_id",a.getImageId());
         assertEquals("b", a.getEnvironmentVariables().get("a"));
         //assertEquals("snapshot_id",a.getBlockDeviceMapping().get("/dev/xxx").getSnapshotId());
@@ -152,7 +152,7 @@ public class CreateJobRequestTest extends TestCase {
     }
 
 
-    private Job createJob() {
+    private JobDescription createJob() {
 
         TaskDag taskDag = new TaskDag();
 
@@ -162,9 +162,9 @@ public class CreateJobRequestTest extends TestCase {
         taskDag.addDependencies("task_1", taskTargets);
 
 
-        Map<String, Task> taskDescMap = new HashMap();
+        Map<String, TaskDescription> taskDescMap = new HashMap();
 
-        Task task = new Task();
+        TaskDescription task = new TaskDescription();
 
 
         BlockDevice blockDevice = new BlockDevice("snapshot_id");
@@ -192,7 +192,7 @@ public class CreateJobRequestTest extends TestCase {
         taskDag.setTaskDescMap(taskDescMap);
 
 
-        Job job = new Job();
+        JobDescription job = new JobDescription();
         job.setJobName("jobName1");
         job.setJobTag("xx");
         job.setTaskDag(taskDag);
@@ -218,7 +218,7 @@ public class CreateJobRequestTest extends TestCase {
 
         TaskDag taskDag = new TaskDag();
 
-        Task task = new Task();
+        TaskDescription task = new TaskDescription();
 
         ResourceDescription resourceDesc = new ResourceDescription();
         resourceDesc.setCpu(1200);      //12 threads
@@ -235,20 +235,20 @@ public class CreateJobRequestTest extends TestCase {
         task.setStderrRedirectPath("oss://" + OSS_BUCKET + "/" + OSS_LOG_PATH);
         task.setStdoutRedirectPath("oss://" + OSS_BUCKET + "/" + OSS_LOG_PATH);
 
-        Map<String, Task> taskDescMap = new HashMap();
+        Map<String, TaskDescription> taskDescMap = new HashMap();
 
         taskDescMap.put("CountTask", task);
 
         taskDag.setTaskDescMap(taskDescMap);
 
-        Task task2 = new Task();
+        TaskDescription task2 = new TaskDescription();
         task2.setTaskName("CountTask2");
         taskDag.addTask("CountTask2", task2);
 
         assertEquals("CountTask2", taskDag.getTaskDescMap().get("CountTask2").getTaskName());
 
 
-        Job job = new Job();
+        JobDescription job = new JobDescription();
         job.setJobName("jobName1");
         job.setJobTag("JobTag");
         job.setTaskDag(taskDag);

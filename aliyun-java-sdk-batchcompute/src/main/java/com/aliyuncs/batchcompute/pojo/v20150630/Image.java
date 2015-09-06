@@ -31,23 +31,23 @@ import java.util.Map;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Image {
 
-    @JsonIgnore
-    public Map<String, BlockDevice> getBlockDeviceMapping() {
-        return blockDeviceMapping;
-    }
-
-    @JsonIgnore
-    public void setBlockDeviceMapping(Map<String, BlockDevice> blockDeviceMapping) {
-        this.blockDeviceMapping = blockDeviceMapping;
-    }
-
-
-    public void addBlockDeviceMapping(String path, BlockDevice blockDevice) {
-        if (null == blockDeviceMapping) {
-            blockDeviceMapping = new HashMap<String, BlockDevice>();
-        }
-        blockDeviceMapping.put(path, blockDevice);
-    }
+//    @JsonIgnore
+//    public Map<String, BlockDevice> getBlockDeviceMapping() {
+//        return blockDeviceMapping;
+//    }
+//
+//    @JsonIgnore
+//    public void setBlockDeviceMapping(Map<String, BlockDevice> blockDeviceMapping) {
+//        this.blockDeviceMapping = blockDeviceMapping;
+//    }
+//
+//
+//    public void addBlockDeviceMapping(String path, BlockDevice blockDevice) {
+//        if (null == blockDeviceMapping) {
+//            blockDeviceMapping = new HashMap<String, BlockDevice>();
+//        }
+//        blockDeviceMapping.put(path, blockDevice);
+//    }
 
     @JsonIgnore
     public String getImageName() {
@@ -79,8 +79,8 @@ public class Image {
         this.description = description;
     }
 
-    @JsonProperty("BlockDeviceMapping")
-    private Map<String, BlockDevice> blockDeviceMapping;
+//    @JsonProperty("BlockDeviceMapping")
+//    private Map<String, BlockDevice> blockDeviceMapping;
 
     @JsonProperty("Name")
     private String imageName;
@@ -104,5 +104,26 @@ public class Image {
     @JsonProperty("ResourceId")
     private String imageId;
 
+    public long getCreationTime() {
+        return creationTime;
+    }
+
+    public void setCreationTime(long creationTime) {
+        this.creationTime = creationTime;
+    }
+
+    public String getOwnerId() {
+        return ownerId;
+    }
+
+    public void setOwnerId(String ownerId) {
+        this.ownerId = ownerId;
+    }
+
+    @JsonProperty("CreateTime")
+    private long creationTime;
+
+    @JsonProperty("OwnerId")
+    private String ownerId;
 
 }

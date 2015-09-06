@@ -19,8 +19,9 @@
 
 package com.aliyuncs.batchcompute.modelunittest;
 
-import com.aliyuncs.batchcompute.model.v20150630.*;
+import com.aliyuncs.batchcompute.model.v20150630.ListJobsResponse;
 import com.aliyuncs.batchcompute.util.FileLoader;
+import com.aliyuncs.exceptions.ClientException;
 import com.aliyuncs.exceptions.ServerException;
 import com.aliyuncs.http.FormatType;
 import com.aliyuncs.http.HttpResponse;
@@ -31,50 +32,53 @@ import org.junit.Test;
 /**
  * Created by guangchun.luo on 15/4/16.
  */
-public class GetJobResponseTest extends TestCase {
+public class ListJobsResponseTest extends TestCase {
 
-    public void testGetInstance() throws ServerException {
 
-        GetJobResponse res = new GetJobResponse();
+    public void testGetGetInstance() throws ServerException {
+
+        ListJobsResponse res = new ListJobsResponse();
 
         UnmarshallerContext context = new UnmarshallerContext();
 
         HttpResponse httpResponse = new HttpResponse("");
-        String body = FileLoader.loadFile("resources/getJob.json");
+        String body = FileLoader.loadFile("resources/listJobs.json");
 
         httpResponse.setContent(body.getBytes(), "utf-8", FormatType.JSON);
 
         context.setHttpResponse(httpResponse);
 
-        res.getInstance(context);
-
-        System.out.println(res.getJob().getJobName());
-        assertEquals(res.getJob().getJobName(), "FindPrime");
+        try {
+            res.getInstance(context);
+        } catch (ClientException e) {
+            e.printStackTrace();
+        }
+        assertEquals(res.getJobList().size(), 2);
     }
 
-    public void testGetInstanceWithUnsupportedEncoding() {
+    public void testGetGetInstanceWithUnsupportedEncoding() {
 
-        GetJobResponse res = new GetJobResponse();
+        ListJobsResponse res = new ListJobsResponse();
 
         UnmarshallerContext context = new UnmarshallerContext();
 
         HttpResponse httpResponse = new HttpResponse("");
-        String body = FileLoader.loadFile("resources/getJob.json");
+        String body = FileLoader.loadFile("resources/listJobs.json");
 
         httpResponse.setContent(body.getBytes(), "xxx", FormatType.JSON);
 
         context.setHttpResponse(httpResponse);
         try {
             res.getInstance(context);
-        } catch (ServerException e) {
+        } catch (ClientException e) {
             assertEquals(e.getErrCode(), "API.EncodeError");
         }
     }
 
 
     @Test
-    public void testGetInstanceWithIncorrectJSON() {
-        GetJobResponse res = new GetJobResponse();
+    public void testGetGetInstanceWithIncorrectJSON() {
+        ListJobsResponse res = new ListJobsResponse();
 
         UnmarshallerContext context = new UnmarshallerContext();
 
@@ -84,11 +88,13 @@ public class GetJobResponseTest extends TestCase {
         httpResponse.setContent(str.getBytes(), "utf-8", FormatType.JSON);
 
         context.setHttpResponse(httpResponse);
+
         try {
             res.getInstance(context);
         } catch (ServerException e) {
             assertEquals(e.getErrCode(), "API.EncodeError");
         }
+
 
     }
 }

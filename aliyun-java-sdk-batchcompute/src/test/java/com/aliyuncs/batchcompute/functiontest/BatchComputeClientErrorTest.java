@@ -24,9 +24,9 @@ package com.aliyuncs.batchcompute.functiontest;
 import com.aliyuncs.batchcompute.main.v20150630.BatchCompute;
 import com.aliyuncs.batchcompute.main.v20150630.BatchComputeClient;
 import com.aliyuncs.batchcompute.model.v20150630.*;
-import com.aliyuncs.batchcompute.pojo.v20150630.Job;
+import com.aliyuncs.batchcompute.pojo.v20150630.JobDescription;
 import com.aliyuncs.batchcompute.pojo.v20150630.ResourceDescription;
-import com.aliyuncs.batchcompute.pojo.v20150630.Task;
+import com.aliyuncs.batchcompute.pojo.v20150630.TaskDescription;
 import com.aliyuncs.batchcompute.pojo.v20150630.TaskDag;
 import com.aliyuncs.batchcompute.util.Config;
 import com.aliyuncs.exceptions.ClientException;
@@ -59,14 +59,13 @@ public class BatchComputeClientErrorTest extends TestCase {
 
     private void initClient() {
         Config cfg = Config.getInstance();
-        imageId = cfg.getImageId();
         client = new BatchComputeClient(cfg.getRegionId(), cfg.getAccessId(), cfg.getAccessKey());
     }
 
     @Test
     public void testCreateClientWithBadAccessKey() throws ClientException {
 
-        BatchCompute client = new BatchComputeClient("cn-hangzhou","fake_access_id","fake_access_key");
+        BatchCompute client = new BatchComputeClient("cn-qingdao","fake_access_id","fake_access_key");
 
         try {
             ListImagesResponse res = client.listImages();
@@ -83,7 +82,7 @@ public class BatchComputeClientErrorTest extends TestCase {
 
         initClient();
 
-        Job job = genJobObjectWithTimeoutField();
+        JobDescription job = genJobObjectWithTimeoutField();
         try {
             CreateJobResponse res = client.createJob(job);
 
@@ -94,10 +93,10 @@ public class BatchComputeClientErrorTest extends TestCase {
     }
 
 
-    private Job genJobObjectWithTimeoutField() {
+    private JobDescription genJobObjectWithTimeoutField() {
         TaskDag taskDag = new TaskDag();
 
-        Task task = new Task();
+        TaskDescription task = new TaskDescription();
 
         ResourceDescription resourceDesc = new ResourceDescription();
         resourceDesc.setCpu(1200);      //12 threads
@@ -105,7 +104,7 @@ public class BatchComputeClientErrorTest extends TestCase {
 
         task.setResourceDescription(resourceDesc);
         task.setInstanceCount(1);
-        task.setImageId(imageId);
+        task.setImageId("img-xx");
         task.setProgramName(PROGRAM_NAME);
         task.setProgramType("python");
         //task.setTimeout(21600); //seconds
@@ -114,7 +113,7 @@ public class BatchComputeClientErrorTest extends TestCase {
         task.setStderrRedirectPath("oss://" + OSS_BUCKET + "/" + OSS_LOG_PATH);
         task.setStdoutRedirectPath("oss://" + OSS_BUCKET + "/" + OSS_LOG_PATH);
 
-        Map<String, Task> taskDescMap = new HashMap();
+        Map<String, TaskDescription> taskDescMap = new HashMap();
 
         taskDescMap.put("CountTask", task);
 
@@ -123,7 +122,7 @@ public class BatchComputeClientErrorTest extends TestCase {
 
         //taskDag.addDependencies("CountTask", list);
 
-        Job job = new Job();
+        JobDescription job = new JobDescription();
         job.setJobName("jobName1");
         job.setJobTag("JobTag");
         job.setTaskDag(taskDag);

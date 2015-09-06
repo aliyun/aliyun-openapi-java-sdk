@@ -21,9 +21,11 @@
 
 package com.aliyuncs.batchcompute.transformunittest;
 
+import com.aliyuncs.batchcompute.model.v20150630.GetJobDescriptionResponse;
 import com.aliyuncs.batchcompute.model.v20150630.GetJobResponse;
+import com.aliyuncs.batchcompute.pojo.v20150630.JobDescription;
 import com.aliyuncs.batchcompute.pojo.v20150630.Job;
-import com.aliyuncs.batchcompute.pojo.v20150630.Task;
+import com.aliyuncs.batchcompute.transform.v20150630.GetJobDescriptionResponseUnmarshaller;
 import com.aliyuncs.batchcompute.transform.v20150630.GetJobResponseUnmarshaller;
 import com.aliyuncs.batchcompute.util.FileLoader;
 import com.aliyuncs.exceptions.ServerException;
@@ -42,6 +44,9 @@ public class GetJobResponseUnmarshallerTest extends TestCase {
     public void testUnmarshall(){
 
         GetJobResponse response = new GetJobResponse();
+
+
+
         UnmarshallerContext context = new UnmarshallerContext();
 
         /***** 构造http response *********/
@@ -64,78 +69,38 @@ public class GetJobResponseUnmarshallerTest extends TestCase {
 
         Job job = response.getJob();
 
-        assertEquals("Demo",job.getJobName());
+        assertEquals("job-00000000552F996A00002B2D00000041", job.getJobId());
 
-        assertEquals("cc",job.getJobTag());
-        assertEquals(0,job.getPriority());
+        assertEquals(1429192352L, job.getCreationTime());
+        assertEquals(1429193263L, job.getEndTime());
+        assertEquals("FindPrime", job.getJobName());
+        assertEquals(2, job.getNumFinishedInstance());
+        assertEquals(48351, job.getOwnerId());
+        assertEquals("Finished", job.getState());
 
-        Task sortTask = job.getTaskDag().getTaskDescMap().get("Sort");
-        assertEquals("Sort",sortTask.getTaskName());
-        assertEquals("img-win-1428654123",sortTask.getImageId());
-    }
+        assertEquals("", job.getDescription());
+        assertEquals(0, job.getPriority());
 
-    @Test
-    public void testUnmarshall2(){
+        assertEquals(0, job.getNumFailedInstance());
+        assertEquals(0, job.getNumFailedTask());
 
-        GetJobResponse response = new GetJobResponse();
-        UnmarshallerContext context = new UnmarshallerContext();
+        assertEquals(2, job.getNumFinishedInstance());
+        assertEquals(2, job.getNumFinishedTask());
 
-        /***** 构造http response *********/
-        HttpResponse res = new HttpResponse("");
-        res.setStatus(200);
-        res.setContentType(FormatType.JSON);
+        assertEquals(0, job.getNumRunningInstance());
+        assertEquals(0, job.getNumRunningTask());
 
-        String body = FileLoader.loadFile("resources/getJob2.json");
+        assertEquals(0, job.getNumWaitingInstance());
+        assertEquals(0, job.getNumWaitingTask());
 
-        res.setContent(body.getBytes(),"utf-8",FormatType.JSON);
-        /**************/
+        assertEquals(0, job.getNumStoppedInstance());
+        assertEquals(0, job.getNumStoppedTask());
 
-        context.setHttpResponse(res);
+        assertEquals(2, job.getNumTotalInstance());
+        assertEquals(2, job.getNumTotalTask());
 
-        try {
-            GetJobResponseUnmarshaller.unmarshall(response, context);
-        } catch (ServerException e) {
-            e.printStackTrace();
-        }
-
-        Job job = response.getJob();
-        assertEquals("FindPrime",job.getJobName());
-
-        assertEquals("MyTag",job.getJobTag());
-        assertEquals(0,job.getPriority());
-
-    }
-
-    @Test
-    public void testUnmarshall3(){
-
-        GetJobResponse response = new GetJobResponse();
-        UnmarshallerContext context = new UnmarshallerContext();
-
-        /***** 构造http response *********/
-        HttpResponse res = new HttpResponse("");
-        res.setStatus(200);
-        res.setContentType(FormatType.JSON);
-
-        String body = FileLoader.loadFile("resources/getJob3.json");
-
-        res.setContent(body.getBytes(),"utf-8",FormatType.JSON);
-        /**************/
-
-        context.setHttpResponse(res);
-
-        try {
-            GetJobResponseUnmarshaller.unmarshall(response, context);
-        } catch (ServerException e) {
-            e.printStackTrace();
-        }
-
-        Job job = response.getJob();
-        assertEquals("AB-C-DE-F_1433579943.46",job.getJobName());
-
-        assertEquals("xxxxx",job.getJobTag());
-        assertEquals(0,job.getPriority());
-
+        assertEquals(1429192352L, job.getStartTime());
+        assertEquals(62L, job.getFinishedInstanceTotalTime());
     }
 
 

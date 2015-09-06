@@ -18,45 +18,30 @@
  */
 package com.aliyuncs.batchcompute.model.v20150630;
 
-import com.aliyuncs.RoaAcsRequest;
+import com.aliyuncs.batchcompute.main.v20150630.BatchComputeResponse;
 import com.aliyuncs.batchcompute.pojo.v20150630.JobDescription;
-import com.aliyuncs.batchcompute.transform.v20150630.CreateJobRequestMarshaller;
-import com.aliyuncs.exceptions.ClientException;
-import com.aliyuncs.http.MethodType;
+import com.aliyuncs.batchcompute.transform.v20150630.GetJobDescriptionResponseUnmarshaller;
+import com.aliyuncs.exceptions.ServerException;
+import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  */
-public class CreateJobRequest extends RoaAcsRequest<CreateJobResponse> {
+public class GetJobDescriptionResponse extends BatchComputeResponse {
 
-    public CreateJobRequest() {
-        super("BatchCompute", "2015-06-30", "PostJob");
-        setUriPattern("/jobs");
-        setMethod(MethodType.POST);
-    }
 
-    public CreateJobRequest(JobDescription jobDescription) throws ClientException {
-        super("BatchCompute", "2015-06-30", "PostJob");
-        setUriPattern("/jobs");
-        setMethod(MethodType.POST);
-        setJobDescription(jobDescription);
-    }
+    private JobDescription jobDescription;
 
     public JobDescription getJobDescription() {
         return jobDescription;
     }
 
-    public void setJobDescription(JobDescription jobDescription) throws ClientException {
+    public void setJobDescription(JobDescription jobDescription){
         this.jobDescription = jobDescription;
-        CreateJobRequestMarshaller.marshall(this, jobDescription);
     }
-
-    private JobDescription jobDescription;
-
 
     @Override
-    public Class<CreateJobResponse> getResponseClass() {
-        return CreateJobResponse.class;
+    public GetJobDescriptionResponse getInstance(UnmarshallerContext context) throws ServerException {
+        return GetJobDescriptionResponseUnmarshaller.unmarshall(this, context);
     }
-
 }

@@ -22,7 +22,7 @@
 package com.aliyuncs.batchcompute.transform.v20150630;
 
 import com.aliyuncs.batchcompute.model.v20150630.CreateJobRequest;
-import com.aliyuncs.batchcompute.pojo.v20150630.Job;
+import com.aliyuncs.batchcompute.pojo.v20150630.JobDescription;
 import com.aliyuncs.exceptions.ClientException;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.codehaus.jackson.map.annotate.JsonSerialize;
@@ -35,7 +35,7 @@ import java.security.NoSuchAlgorithmException;
  */
 public class CreateJobRequestMarshaller {
 
-    public static CreateJobRequest marshall(CreateJobRequest createJobsRequest, Job job) throws ClientException {
+    public static CreateJobRequest marshall(CreateJobRequest createJobsRequest, JobDescription jobDescription) throws ClientException {
         ObjectMapper mapper = new ObjectMapper();
 
         //null或“”不序列化
@@ -43,7 +43,7 @@ public class CreateJobRequestMarshaller {
 
         String contentString=null;
         try {
-            contentString = mapper.writeValueAsString(job);
+            contentString = mapper.writeValueAsString(jobDescription);
         } catch (IOException e) {
             //e.printStackTrace();
             throw new ClientException("API.EncodeError", "encode request body error");

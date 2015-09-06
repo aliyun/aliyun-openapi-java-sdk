@@ -19,35 +19,29 @@
 
 package com.aliyuncs.batchcompute.modelunittest;
 
-import com.aliyuncs.batchcompute.model.v20150630.GetJobRequest;
+
+import com.aliyuncs.batchcompute.model.v20150630.GetJobDescriptionRequest;
 import junit.framework.TestCase;
 import org.junit.Test;
 
 /**
  * Created by guangchun.luo on 15/5/6.
  */
-public class GetJobRequestTest extends TestCase {
+public class GetJobDescriptionRequestTest extends TestCase {
 
     @Test
     public void testConstructor() {
 
-        String RESOURCE_ID = "abc123";
-        GetJobRequest req = new GetJobRequest(RESOURCE_ID);
-
+        String RESOURCE_ID = "xx000111";
+        GetJobDescriptionRequest req = new GetJobDescriptionRequest(RESOURCE_ID);
         assertEquals(req.getJobId(), RESOURCE_ID);
-
     }
 
     @Test
     public void testSetResourceId() {
-
-        GetJobRequest req = new GetJobRequest();
-
-        String RESOURCE_ID = "abc123";
-
+        String RESOURCE_ID = "xx000111";
+        GetJobDescriptionRequest req = new GetJobDescriptionRequest();
         req.setJobId(RESOURCE_ID);
-
         assertEquals(req.getJobId(), RESOURCE_ID);
-
     }
 }

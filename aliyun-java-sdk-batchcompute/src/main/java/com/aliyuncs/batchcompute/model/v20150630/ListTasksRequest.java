@@ -24,17 +24,17 @@ import com.aliyuncs.http.MethodType;
 /**
  * @author auto create
  */
-public class GetJobRequest extends RoaAcsRequest<GetJobResponse> {
+public class ListTasksRequest extends RoaAcsRequest<ListTasksResponse> {
 
-    public GetJobRequest() {
-        super("BatchCompute", "2015-06-30", "GetJob");
-        setUriPattern("/jobs/[ResourceName]");
+    public ListTasksRequest() {
+        super("BatchCompute", "2015-06-30", "GetTasks");
+        setUriPattern("/jobs/[ResourceName]/tasks");
         setMethod(MethodType.GET);
     }
 
-    public GetJobRequest(String jobId) {
-        super("BatchCompute", "2015-06-30", "GetJob");
-        setUriPattern("/jobs/[ResourceName]");
+    public ListTasksRequest(String jobId) {
+        super("BatchCompute", "2015-06-30", "GetTasks");
+        setUriPattern("/jobs/[ResourceName]/tasks");
         setMethod(MethodType.GET);
         setJobId(jobId);
     }
@@ -51,8 +51,8 @@ public class GetJobRequest extends RoaAcsRequest<GetJobResponse> {
     }
 
     @Override
-    public Class<GetJobResponse> getResponseClass() {
-        return GetJobResponse.class;
+    public Class<ListTasksResponse> getResponseClass() {
+        return ListTasksResponse.class;
     }
 
 }

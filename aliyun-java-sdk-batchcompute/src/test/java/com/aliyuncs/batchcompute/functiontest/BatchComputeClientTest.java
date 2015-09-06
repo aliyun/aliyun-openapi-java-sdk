@@ -56,13 +56,31 @@ public class BatchComputeClientTest extends TestCase {
     public void setUp() throws Exception {
         Config cfg = Config.getInstance();
 
-        imageId = cfg.getImageId();
-
         client = new BatchComputeClient(cfg.getRegionId(), cfg.getAccessId(), cfg.getAccessKey());
     }
 
     @Test
+    public void testImages() throws ClientException {
+
+        ListImagesResponse response = client.listImages();
+
+        List<Image> list = response.getImageList();
+
+        assertTrue(list.size() >= 0);
+
+        if(list.size()>0){
+            Image img = list.get(0);
+            imageId = img.getImageId();
+            assertTrue(img.getImageId().startsWith("img-"));
+        }
+    }
+
+
+
+
+    @Test
     public void testJob() throws ClientException {
+
 
         //创建
         CreateJobResponse res = createJob();
@@ -74,19 +92,20 @@ public class BatchComputeClientTest extends TestCase {
         assertTrue(res.getRequestId() != null);
 
         //查询描述
-        GetJobResponse getJobResponse = client.getJob(jobId);
+        GetJobDescriptionResponse getJobDescriptionResponse = client.getJobDescription(jobId);
 
-        assertEquals("jobName1",getJobResponse.getJob().getJobName());
+        JobDescription jobDescription = getJobDescriptionResponse.getJobDescription();
+        assertEquals("jobName1", jobDescription.getJobName());
 
-        Job job = getJobResponse.getJob();
 
-        Task countTask = job.getTaskDag().getTaskDescMap().get("CountTask");
+
+        TaskDescription countTask = jobDescription.getTaskDag().getTaskDescMap().get("CountTask");
         assertEquals("CountTask", countTask.getTaskName());
 
         assertEquals(PROGRAM_NAME, countTask.getProgramName());
         assertEquals(imageId, countTask.getImageId());
 
-        assertEquals("JobTag", job.getJobTag());
+        assertEquals("JobTag", jobDescription.getJobTag());
 
 
         //修改
@@ -99,30 +118,30 @@ public class BatchComputeClientTest extends TestCase {
 
 
         //列举 job status
-        ListJobStatusResponse listJobStatusResponse = client.listJobStatus();
+        ListJobsResponse listJobsResponse = client.listJobs();
 
-        List<JobStatus> list = listJobStatusResponse.getJobStatusList();
+        List<Job> list = listJobsResponse.getJobList();
 
         assertTrue(list.size() > 0);
-        assertTrue(jobStatusListContains(list, jobId));
+        assertTrue(jobListContains(list, jobId));
 
 
         //列举 task status
-        ListTaskStatusResponse listTaskStatusResponse = client.listTaskStatus(jobId);
+        ListTasksResponse listTasksResponse = client.listTasks(jobId);
 
-        List<TaskStatus> taskStatusList = listTaskStatusResponse.getTaskStatusList();
+        List<Task> taskList = listTasksResponse.getTaskList();
 
         assertTrue(list.size() >= 0);
 
         if (list.size() > 0) {
-            TaskStatus taskStatus = taskStatusList.get(0);
-            assertTrue(taskStatus.getTaskName().length() > 0);
+            Task task = taskList.get(0);
+            assertTrue(task.getTaskName().length() > 0);
 
-            List<InstanceStatus> insList = taskStatus.getInstanceStatusList();
+            List<Instance> insList = task.getInstanceList();
 
             if (insList.size() > 0) {
-                InstanceStatus insStatus = insList.get(0);
-                assertTrue(insStatus.getInstanceId() >= 0);
+                Instance instance = insList.get(0);
+                assertTrue(instance.getInstanceId() >= 0);
             }
         }
 
@@ -141,18 +160,18 @@ public class BatchComputeClientTest extends TestCase {
 
 
         //查询 status
-        GetJobStatusResponse getJobStatusResponse = client.getJobStatus(jobId);
+        GetJobResponse getJobResponse = client.getJob(jobId);
 
-        assertEquals(2, getJobStatusResponse.getJobStatus().getPriority());
+        assertEquals(2, getJobResponse.getJob().getPriority());
 
 
         //start
         client.startJob(jobId);
 
         //查询 status
-        getJobStatusResponse = client.getJobStatus(jobId);
+        getJobResponse = client.getJob(jobId);
 
-        assertEquals("Waiting", getJobStatusResponse.getJobStatus().getState());
+        assertEquals("Waiting", getJobResponse.getJob().getState());
 
 
         //stop
@@ -163,7 +182,7 @@ public class BatchComputeClientTest extends TestCase {
 
 
         try {
-            getJobStatusResponse = client.getJobStatus(jobId);
+            getJobResponse = client.getJob(jobId);
         } catch (ClientException e) {
            // e.printStackTrace();
             assertEquals("ResourceNotFound", e.getErrCode());
@@ -174,38 +193,47 @@ public class BatchComputeClientTest extends TestCase {
 
 
 
-    @Test
-    public void testImages() throws ClientException {
 
-        ListImagesResponse response = client.listImages();
 
-        List<Image> list = response.getImageList();
-
-        assertTrue(list.size() >= 0);
-
-        if(list.size()>0){
-            Image img = list.get(0);
-            assertTrue(img.getImageId().startsWith("img-"));
-        }
-    }
-
-    private boolean jobStatusListContains(List<JobStatus> jobStatusList, String jobId) {
-        for (JobStatus jobStatus : jobStatusList) {
-            if (jobStatus.getJobId().equals(jobId)) return true;
+    private boolean jobListContains(List<Job> jobList, String jobId) {
+        for (Job job : jobList) {
+            if (job.getJobId().equals(jobId)) return true;
         }
         return false;
     }
 
     private CreateJobResponse createJob() throws ClientException {
-        Job job = genJobObject();
+        JobDescription job = genJobObject();
         return client.createJob(job);
 
     }
+    private String getImageId() throws ClientException {
 
-    private Job genJobObject() {
+        ListImagesResponse response = client.listImages();
+
+        List<Image> list = response.getImageList();
+
+        if(list.size()>0){
+            Image img = list.get(0);
+            imageId = img.getImageId();
+            return imageId;
+        }else{
+            return null;
+        }
+    }
+
+    private JobDescription genJobObject() {
+
+        String imageId = null;
+        try {
+            imageId = getImageId();
+        } catch (ClientException e) {
+            e.printStackTrace();
+        }
+
         TaskDag taskDag = new TaskDag();
 
-        Task task = new Task();
+        TaskDescription task = new TaskDescription();
 
         ResourceDescription resourceDesc = new ResourceDescription();
         resourceDesc.setCpu(1200);      //12 threads
@@ -222,7 +250,7 @@ public class BatchComputeClientTest extends TestCase {
         task.setStderrRedirectPath("oss://" + OSS_BUCKET + "/" + OSS_LOG_PATH);
         task.setStdoutRedirectPath("oss://" + OSS_BUCKET + "/" + OSS_LOG_PATH);
 
-        Map<String, Task> taskDescMap = new HashMap();
+        Map<String, TaskDescription> taskDescMap = new HashMap();
 
         taskDescMap.put("CountTask", task);
 
@@ -231,7 +259,7 @@ public class BatchComputeClientTest extends TestCase {
 
         //taskDag.addDependencies("CountTask", list);
 
-        Job job = new Job();
+        JobDescription job = new JobDescription();
         job.setJobName("jobName1");
         job.setJobTag("JobTag");
         job.setTaskDag(taskDag);

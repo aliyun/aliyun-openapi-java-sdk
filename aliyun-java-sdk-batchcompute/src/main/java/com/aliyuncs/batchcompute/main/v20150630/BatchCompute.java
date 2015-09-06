@@ -20,7 +20,7 @@ package com.aliyuncs.batchcompute.main.v20150630;
 
 
 import com.aliyuncs.batchcompute.model.v20150630.*;
-import com.aliyuncs.batchcompute.pojo.v20150630.Job;
+import com.aliyuncs.batchcompute.pojo.v20150630.JobDescription;
 import com.aliyuncs.exceptions.ClientException;
 
 
@@ -33,7 +33,7 @@ public interface BatchCompute {
     /** job 相关 */
     CreateJobResponse createJob(CreateJobRequest request) throws ClientException;
 
-    CreateJobResponse createJob(Job job) throws ClientException;
+    CreateJobResponse createJob(JobDescription jobDescription) throws ClientException;
 
     UpdateJobResponse updateJob(UpdateJobRequest request) throws ClientException;
 
@@ -43,13 +43,13 @@ public interface BatchCompute {
 
     DeleteJobResponse deleteJob(String jobId) throws ClientException;
 
-    GetJobStatusResponse getJobStatus(GetJobStatusRequest request) throws ClientException;
+    GetJobResponse getJob(GetJobRequest request) throws ClientException;
 
-    GetJobStatusResponse getJobStatus(String jobId) throws ClientException;
+    GetJobResponse getJob(String jobId) throws ClientException;
 
-    ListJobStatusResponse listJobStatus(ListJobStatusRequest request) throws ClientException;
+    ListJobsResponse listJobs(ListJobsRequest request) throws ClientException;
 
-    ListJobStatusResponse listJobStatus() throws ClientException;
+    ListJobsResponse listJobs() throws ClientException;
 
     StartJobResponse startJob(StartJobRequest request) throws ClientException;
 
@@ -59,15 +59,15 @@ public interface BatchCompute {
 
     StopJobResponse stopJob(String jobId) throws ClientException;
 
-    GetJobResponse getJob(GetJobRequest request) throws ClientException;
+    GetJobDescriptionResponse getJobDescription(GetJobDescriptionRequest request) throws ClientException;
 
-    GetJobResponse getJob(String jobId) throws ClientException;
+    GetJobDescriptionResponse getJobDescription(String jobId) throws ClientException;
 
 
     /** Task 相关 */
-    ListTaskStatusResponse listTaskStatus(ListTaskStatusRequest request) throws ClientException;
+    ListTasksResponse listTasks(ListTasksRequest request) throws ClientException;
 
-    ListTaskStatusResponse listTaskStatus(String jobId) throws ClientException;
+    ListTasksResponse listTasks(String jobId) throws ClientException;
 
     /** Image 相关*/
     ListImagesResponse listImages(ListImagesRequest request) throws ClientException;
