@@ -29,7 +29,27 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDrdsInstancesResponse extends AcsResponse {
 
+	private String requestId;
+
+	private Boolean success;
+
 	private List<Instance> data;
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
 
 	public List<Instance> getData() {
 		return this.data;
@@ -43,7 +63,7 @@ public class DescribeDrdsInstancesResponse extends AcsResponse {
 
 		private String drdsInstanceId;
 
-		private Integer type;
+		private String type;
 
 		private String regionId;
 
@@ -51,13 +71,15 @@ public class DescribeDrdsInstancesResponse extends AcsResponse {
 
 		private String description;
 
-		private String status;
+		private String networkType;
 
-		private String vips;
+		private String status;
 
 		private Long createTime;
 
 		private Long version;
+
+		private List<Vip> vips;
 
 		public String getDrdsInstanceId() {
 			return this.drdsInstanceId;
@@ -67,11 +89,11 @@ public class DescribeDrdsInstancesResponse extends AcsResponse {
 			this.drdsInstanceId = drdsInstanceId;
 		}
 
-		public Integer getType() {
+		public String getType() {
 			return this.type;
 		}
 
-		public void setType(Integer type) {
+		public void setType(String type) {
 			this.type = type;
 		}
 
@@ -99,20 +121,20 @@ public class DescribeDrdsInstancesResponse extends AcsResponse {
 			this.description = description;
 		}
 
+		public String getNetworkType() {
+			return this.networkType;
+		}
+
+		public void setNetworkType(String networkType) {
+			this.networkType = networkType;
+		}
+
 		public String getStatus() {
 			return this.status;
 		}
 
 		public void setStatus(String status) {
 			this.status = status;
-		}
-
-		public String getVips() {
-			return this.vips;
-		}
-
-		public void setVips(String vips) {
-			this.vips = vips;
 		}
 
 		public Long getCreateTime() {
@@ -129,6 +151,47 @@ public class DescribeDrdsInstancesResponse extends AcsResponse {
 
 		public void setVersion(Long version) {
 			this.version = version;
+		}
+
+		public List<Vip> getVips() {
+			return this.vips;
+		}
+
+		public void setVips(List<Vip> vips) {
+			this.vips = vips;
+		}
+
+		public static class Vip {
+
+			private String iP;
+
+			private String port;
+
+			private String type;
+
+			public String getIP() {
+				return this.iP;
+			}
+
+			public void setIP(String iP) {
+				this.iP = iP;
+			}
+
+			public String getPort() {
+				return this.port;
+			}
+
+			public void setPort(String port) {
+				this.port = port;
+			}
+
+			public String getType() {
+				return this.type;
+			}
+
+			public void setType(String type) {
+				this.type = type;
+			}
 		}
 	}
 

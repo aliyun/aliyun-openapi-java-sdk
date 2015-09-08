@@ -18,6 +18,7 @@
  */
 package com.aliyuncs.drds.model.v20150413;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.drds.transform.v20150413.CreateDrdsInstanceResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -28,14 +29,57 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateDrdsInstanceResponse extends AcsResponse {
 
-	private String drdsInstanceId;
+	private String requestId;
 
-	public String getDrdsInstanceId() {
-		return this.drdsInstanceId;
+	private Boolean success;
+
+	private Data data;
+
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setDrdsInstanceId(String drdsInstanceId) {
-		this.drdsInstanceId = drdsInstanceId;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
+	public Data getData() {
+		return this.data;
+	}
+
+	public void setData(Data data) {
+		this.data = data;
+	}
+
+	public static class Data {
+
+		private Long orderId;
+
+		private List<String> drdsInstanceIdList;
+
+		public Long getOrderId() {
+			return this.orderId;
+		}
+
+		public void setOrderId(Long orderId) {
+			this.orderId = orderId;
+		}
+
+		public List<String> getDrdsInstanceIdList() {
+			return this.drdsInstanceIdList;
+		}
+
+		public void setDrdsInstanceIdList(List<String> drdsInstanceIdList) {
+			this.drdsInstanceIdList = drdsInstanceIdList;
+		}
 	}
 
 	@Override

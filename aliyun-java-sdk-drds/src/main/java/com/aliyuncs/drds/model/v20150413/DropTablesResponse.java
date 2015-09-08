@@ -19,18 +19,18 @@
 package com.aliyuncs.drds.model.v20150413;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.drds.transform.v20150413.DeleteDrdsDBResponseUnmarshaller;
+import com.aliyuncs.drds.transform.v20150413.DropTablesResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DeleteDrdsDBResponse extends AcsResponse {
+public class DropTablesResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean success;
+	private String taskId;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -40,16 +40,16 @@ public class DeleteDrdsDBResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getTaskId() {
+		return this.taskId;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setTaskId(String taskId) {
+		this.taskId = taskId;
 	}
 
 	@Override
-	public DeleteDrdsDBResponse getInstance(UnmarshallerContext context) {
-		return	DeleteDrdsDBResponseUnmarshaller.unmarshall(this, context);
+	public DropTablesResponse getInstance(UnmarshallerContext context) {
+		return	DropTablesResponseUnmarshaller.unmarshall(this, context);
 	}
 }

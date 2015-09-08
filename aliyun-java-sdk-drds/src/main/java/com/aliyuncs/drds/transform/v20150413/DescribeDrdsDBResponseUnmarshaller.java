@@ -27,6 +27,8 @@ public class DescribeDrdsDBResponseUnmarshaller {
 
 	public static DescribeDrdsDBResponse unmarshall(DescribeDrdsDBResponse describeDrdsDBResponse, UnmarshallerContext context) {
 		
+		describeDrdsDBResponse.setRequestId(context.stringValue("DescribeDrdsDBResponse.RequestId"));
+		describeDrdsDBResponse.setSuccess(context.booleanValue("DescribeDrdsDBResponse.Success"));
 
 		Data  data = new Data();
 		data.setDbName(context.stringValue("DescribeDrdsDBResponse.Data.DbName"));

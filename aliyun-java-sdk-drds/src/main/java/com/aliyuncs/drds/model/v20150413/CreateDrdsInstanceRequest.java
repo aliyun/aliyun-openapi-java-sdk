@@ -36,6 +36,16 @@ public class CreateDrdsInstanceRequest extends RpcAcsRequest<CreateDrdsInstanceR
 
 	private String type;
 
+	private Integer quantity;
+
+	private String specification;
+
+	private String payType;
+
+	private String vpcId;
+
+	private String vswitchId;
+
 	public String getDescription() {
 		return this.description;
 	}
@@ -61,6 +71,51 @@ public class CreateDrdsInstanceRequest extends RpcAcsRequest<CreateDrdsInstanceR
 	public void setType(String type) {
 		this.type = type;
 		putQueryParameter("Type", type);
+	}
+
+	public Integer getQuantity() {
+		return this.quantity;
+	}
+
+	public void setQuantity(Integer quantity) {
+		this.quantity = quantity;
+		putQueryParameter("Quantity", String.valueOf(quantity));
+	}
+
+	public String getSpecification() {
+		return this.specification;
+	}
+
+	public void setSpecification(String specification) {
+		this.specification = specification;
+		putQueryParameter("Specification", specification);
+	}
+
+	public String getPayType() {
+		return this.payType;
+	}
+
+	public void setPayType(String payType) {
+		this.payType = payType;
+		putQueryParameter("PayType", payType);
+	}
+
+	public String getVpcId() {
+		return this.vpcId;
+	}
+
+	public void setVpcId(String vpcId) {
+		this.vpcId = vpcId;
+		putQueryParameter("VpcId", vpcId);
+	}
+
+	public String getVswitchId() {
+		return this.vswitchId;
+	}
+
+	public void setVswitchId(String vswitchId) {
+		this.vswitchId = vswitchId;
+		putQueryParameter("VswitchId", vswitchId);
 	}
 
 	@Override

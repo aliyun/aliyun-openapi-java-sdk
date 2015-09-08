@@ -18,7 +18,10 @@
  */
 package com.aliyuncs.drds.transform.v20150413;
 
+import java.util.ArrayList;
+import java.util.List;
 import com.aliyuncs.drds.model.v20150413.CreateDrdsInstanceResponse;
+import com.aliyuncs.drds.model.v20150413.CreateDrdsInstanceResponse.Data;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -26,7 +29,18 @@ public class CreateDrdsInstanceResponseUnmarshaller {
 
 	public static CreateDrdsInstanceResponse unmarshall(CreateDrdsInstanceResponse createDrdsInstanceResponse, UnmarshallerContext context) {
 		
-		createDrdsInstanceResponse.setDrdsInstanceId(context.stringValue("CreateDrdsInstanceResponse.DrdsInstanceId"));
+		createDrdsInstanceResponse.setRequestId(context.stringValue("CreateDrdsInstanceResponse.RequestId"));
+		createDrdsInstanceResponse.setSuccess(context.booleanValue("CreateDrdsInstanceResponse.Success"));
+
+		Data  data = new Data();
+		data.setOrderId(context.longValue("CreateDrdsInstanceResponse.Data.OrderId"));
+
+		List<String> drdsInstanceIdList = new ArrayList<String>();
+		for (int i = 0; i < context.lengthValue("CreateDrdsInstanceResponse.Data.DrdsInstanceIdList.Length"); i++) {
+			drdsInstanceIdList.add(context.stringValue("CreateDrdsInstanceResponse.Data.DrdsInstanceIdList["+ i +"]"));
+		}
+		data.setDrdsInstanceIdList(drdsInstanceIdList);
+		createDrdsInstanceResponse.setData(data);
 	 
 	 	return createDrdsInstanceResponse;
 	}

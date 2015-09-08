@@ -18,38 +18,54 @@
  */
 package com.aliyuncs.drds.model.v20150413;
 
-import com.aliyuncs.AcsResponse;
-import com.aliyuncs.drds.transform.v20150413.DeleteDrdsDBResponseUnmarshaller;
-import com.aliyuncs.transform.UnmarshallerContext;
+import com.aliyuncs.RpcAcsRequest;
 
 /**
  * @author auto create
  * @version 
  */
-public class DeleteDrdsDBResponse extends AcsResponse {
-
-	private String requestId;
-
-	private Boolean success;
-
-	public String getRequestId() {
-		return this.requestId;
+public class CreateIndexRequest extends RpcAcsRequest<CreateIndexResponse> {
+	
+	public CreateIndexRequest() {
+		super("Drds", "2015-04-13", "CreateIndex");
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	private String drdsInstanceId;
+
+	private String dbName;
+
+	private String ddlSql;
+
+	public String getDrdsInstanceId() {
+		return this.drdsInstanceId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public void setDrdsInstanceId(String drdsInstanceId) {
+		this.drdsInstanceId = drdsInstanceId;
+		putQueryParameter("DrdsInstanceId", drdsInstanceId);
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public String getDbName() {
+		return this.dbName;
+	}
+
+	public void setDbName(String dbName) {
+		this.dbName = dbName;
+		putQueryParameter("DbName", dbName);
+	}
+
+	public String getDdlSql() {
+		return this.ddlSql;
+	}
+
+	public void setDdlSql(String ddlSql) {
+		this.ddlSql = ddlSql;
+		putQueryParameter("DdlSql", ddlSql);
 	}
 
 	@Override
-	public DeleteDrdsDBResponse getInstance(UnmarshallerContext context) {
-		return	DeleteDrdsDBResponseUnmarshaller.unmarshall(this, context);
+	public Class<CreateIndexResponse> getResponseClass() {
+		return CreateIndexResponse.class;
 	}
+
 }

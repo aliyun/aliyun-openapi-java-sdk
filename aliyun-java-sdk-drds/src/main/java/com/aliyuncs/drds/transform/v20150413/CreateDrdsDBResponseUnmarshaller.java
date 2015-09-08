@@ -27,6 +27,7 @@ public class CreateDrdsDBResponseUnmarshaller {
 	public static CreateDrdsDBResponse unmarshall(CreateDrdsDBResponse createDrdsDBResponse, UnmarshallerContext context) {
 		
 		createDrdsDBResponse.setRequestId(context.stringValue("CreateDrdsDBResponse.RequestId"));
+		createDrdsDBResponse.setSuccess(context.booleanValue("CreateDrdsDBResponse.Success"));
 	 
 	 	return createDrdsDBResponse;
 	}

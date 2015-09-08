@@ -16,40 +16,19 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package com.aliyuncs.drds.model.v20150413;
+package com.aliyuncs.drds.transform.v20150413;
 
-import com.aliyuncs.AcsResponse;
-import com.aliyuncs.drds.transform.v20150413.DeleteDrdsDBResponseUnmarshaller;
+import com.aliyuncs.drds.model.v20150413.AlterTableResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
-/**
- * @author auto create
- * @version 
- */
-public class DeleteDrdsDBResponse extends AcsResponse {
 
-	private String requestId;
+public class AlterTableResponseUnmarshaller {
 
-	private Boolean success;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
-	@Override
-	public DeleteDrdsDBResponse getInstance(UnmarshallerContext context) {
-		return	DeleteDrdsDBResponseUnmarshaller.unmarshall(this, context);
+	public static AlterTableResponse unmarshall(AlterTableResponse alterTableResponse, UnmarshallerContext context) {
+		
+		alterTableResponse.setRequestId(context.stringValue("AlterTableResponse.RequestId"));
+		alterTableResponse.setTaskId(context.stringValue("AlterTableResponse.TaskId"));
+	 
+	 	return alterTableResponse;
 	}
 }

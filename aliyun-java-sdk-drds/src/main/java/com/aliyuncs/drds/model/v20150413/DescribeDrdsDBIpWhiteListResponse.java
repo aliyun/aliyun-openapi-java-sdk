@@ -18,19 +18,22 @@
  */
 package com.aliyuncs.drds.model.v20150413;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.drds.transform.v20150413.DeleteDrdsDBResponseUnmarshaller;
+import com.aliyuncs.drds.transform.v20150413.DescribeDrdsDBIpWhiteListResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DeleteDrdsDBResponse extends AcsResponse {
+public class DescribeDrdsDBIpWhiteListResponse extends AcsResponse {
 
 	private String requestId;
 
 	private Boolean success;
+
+	private Data data;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -48,8 +51,29 @@ public class DeleteDrdsDBResponse extends AcsResponse {
 		this.success = success;
 	}
 
+	public Data getData() {
+		return this.data;
+	}
+
+	public void setData(Data data) {
+		this.data = data;
+	}
+
+	public static class Data {
+
+		private List<String> ipWhiteList;
+
+		public List<String> getIpWhiteList() {
+			return this.ipWhiteList;
+		}
+
+		public void setIpWhiteList(List<String> ipWhiteList) {
+			this.ipWhiteList = ipWhiteList;
+		}
+	}
+
 	@Override
-	public DeleteDrdsDBResponse getInstance(UnmarshallerContext context) {
-		return	DeleteDrdsDBResponseUnmarshaller.unmarshall(this, context);
+	public DescribeDrdsDBIpWhiteListResponse getInstance(UnmarshallerContext context) {
+		return	DescribeDrdsDBIpWhiteListResponseUnmarshaller.unmarshall(this, context);
 	}
 }

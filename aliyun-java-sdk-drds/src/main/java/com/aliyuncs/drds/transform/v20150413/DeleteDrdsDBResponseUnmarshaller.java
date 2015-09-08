@@ -27,6 +27,7 @@ public class DeleteDrdsDBResponseUnmarshaller {
 	public static DeleteDrdsDBResponse unmarshall(DeleteDrdsDBResponse deleteDrdsDBResponse, UnmarshallerContext context) {
 		
 		deleteDrdsDBResponse.setRequestId(context.stringValue("DeleteDrdsDBResponse.RequestId"));
+		deleteDrdsDBResponse.setSuccess(context.booleanValue("DeleteDrdsDBResponse.Success"));
 	 
 	 	return deleteDrdsDBResponse;
 	}

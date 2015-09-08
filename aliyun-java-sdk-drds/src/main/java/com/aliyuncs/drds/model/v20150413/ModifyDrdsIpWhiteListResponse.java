@@ -19,14 +19,14 @@
 package com.aliyuncs.drds.model.v20150413;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.drds.transform.v20150413.DeleteDrdsDBResponseUnmarshaller;
+import com.aliyuncs.drds.transform.v20150413.ModifyDrdsIpWhiteListResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DeleteDrdsDBResponse extends AcsResponse {
+public class ModifyDrdsIpWhiteListResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -49,7 +49,7 @@ public class DeleteDrdsDBResponse extends AcsResponse {
 	}
 
 	@Override
-	public DeleteDrdsDBResponse getInstance(UnmarshallerContext context) {
-		return	DeleteDrdsDBResponseUnmarshaller.unmarshall(this, context);
+	public ModifyDrdsIpWhiteListResponse getInstance(UnmarshallerContext context) {
+		return	ModifyDrdsIpWhiteListResponseUnmarshaller.unmarshall(this, context);
 	}
 }

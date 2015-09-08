@@ -18,8 +18,11 @@
  */
 package com.aliyuncs.drds.transform.v20150413;
 
+import java.util.ArrayList;
+import java.util.List;
 import com.aliyuncs.drds.model.v20150413.DescribeDrdsInstanceResponse;
 import com.aliyuncs.drds.model.v20150413.DescribeDrdsInstanceResponse.Data;
+import com.aliyuncs.drds.model.v20150413.DescribeDrdsInstanceResponse.Data.Vip;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -27,17 +30,30 @@ public class DescribeDrdsInstanceResponseUnmarshaller {
 
 	public static DescribeDrdsInstanceResponse unmarshall(DescribeDrdsInstanceResponse describeDrdsInstanceResponse, UnmarshallerContext context) {
 		
+		describeDrdsInstanceResponse.setRequestId(context.stringValue("DescribeDrdsInstanceResponse.RequestId"));
+		describeDrdsInstanceResponse.setSuccess(context.booleanValue("DescribeDrdsInstanceResponse.Success"));
 
 		Data  data = new Data();
 		data.setDrdsInstanceId(context.stringValue("DescribeDrdsInstanceResponse.Data.DrdsInstanceId"));
-		data.setType(context.integerValue("DescribeDrdsInstanceResponse.Data.Type"));
+		data.setType(context.stringValue("DescribeDrdsInstanceResponse.Data.Type"));
 		data.setRegionId(context.stringValue("DescribeDrdsInstanceResponse.Data.RegionId"));
 		data.setZoneId(context.stringValue("DescribeDrdsInstanceResponse.Data.ZoneId"));
 		data.setDescription(context.stringValue("DescribeDrdsInstanceResponse.Data.Description"));
+		data.setNetworkType(context.stringValue("DescribeDrdsInstanceResponse.Data.NetworkType"));
 		data.setStatus(context.stringValue("DescribeDrdsInstanceResponse.Data.Status"));
-		data.setVips(context.stringValue("DescribeDrdsInstanceResponse.Data.Vips"));
 		data.setCreateTime(context.longValue("DescribeDrdsInstanceResponse.Data.CreateTime"));
 		data.setVersion(context.longValue("DescribeDrdsInstanceResponse.Data.Version"));
+
+		List<Vip> vips = new ArrayList<Vip>();
+		for (int i = 0; i < context.lengthValue("DescribeDrdsInstanceResponse.Data.Vips.Length"); i++) {
+			Vip  vip = new Vip();
+			vip.setIP(context.stringValue("DescribeDrdsInstanceResponse.Data.Vips["+ i +"].IP"));
+			vip.setPort(context.stringValue("DescribeDrdsInstanceResponse.Data.Vips["+ i +"].Port"));
+			vip.setType(context.stringValue("DescribeDrdsInstanceResponse.Data.Vips["+ i +"].Type"));
+
+			vips.add(vip);
+		}
+		data.setVips(vips);
 		describeDrdsInstanceResponse.setData(data);
 	 
 	 	return describeDrdsInstanceResponse;

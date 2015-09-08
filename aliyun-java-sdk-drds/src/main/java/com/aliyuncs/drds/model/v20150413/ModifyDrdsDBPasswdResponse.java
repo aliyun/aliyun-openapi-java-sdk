@@ -30,12 +30,22 @@ public class ModifyDrdsDBPasswdResponse extends AcsResponse {
 
 	private String requestId;
 
+	private Boolean success;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	@Override

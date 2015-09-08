@@ -29,6 +29,8 @@ public class DescribeDrdsDBsResponseUnmarshaller {
 
 	public static DescribeDrdsDBsResponse unmarshall(DescribeDrdsDBsResponse describeDrdsDBsResponse, UnmarshallerContext context) {
 		
+		describeDrdsDBsResponse.setRequestId(context.stringValue("DescribeDrdsDBsResponse.RequestId"));
+		describeDrdsDBsResponse.setSuccess(context.booleanValue("DescribeDrdsDBsResponse.Success"));
 
 		List<Db> data = new ArrayList<Db>();
 		for (int i = 0; i < context.lengthValue("DescribeDrdsDBsResponse.Data.Length"); i++) {

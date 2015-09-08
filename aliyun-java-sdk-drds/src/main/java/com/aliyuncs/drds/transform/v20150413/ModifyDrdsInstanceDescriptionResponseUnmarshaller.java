@@ -26,6 +26,8 @@ public class ModifyDrdsInstanceDescriptionResponseUnmarshaller {
 
 	public static ModifyDrdsInstanceDescriptionResponse unmarshall(ModifyDrdsInstanceDescriptionResponse modifyDrdsInstanceDescriptionResponse, UnmarshallerContext context) {
 		
+		modifyDrdsInstanceDescriptionResponse.setRequestId(context.stringValue("ModifyDrdsInstanceDescriptionResponse.RequestId"));
+		modifyDrdsInstanceDescriptionResponse.setSuccess(context.booleanValue("ModifyDrdsInstanceDescriptionResponse.Success"));
 	 
 	 	return modifyDrdsInstanceDescriptionResponse;
 	}

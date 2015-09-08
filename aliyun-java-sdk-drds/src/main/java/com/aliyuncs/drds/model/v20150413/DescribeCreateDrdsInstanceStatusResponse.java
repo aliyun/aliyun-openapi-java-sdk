@@ -19,18 +19,20 @@
 package com.aliyuncs.drds.model.v20150413;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.drds.transform.v20150413.DeleteDrdsDBResponseUnmarshaller;
+import com.aliyuncs.drds.transform.v20150413.DescribeCreateDrdsInstanceStatusResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DeleteDrdsDBResponse extends AcsResponse {
+public class DescribeCreateDrdsInstanceStatusResponse extends AcsResponse {
 
 	private String requestId;
 
 	private Boolean success;
+
+	private Data data;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -48,8 +50,29 @@ public class DeleteDrdsDBResponse extends AcsResponse {
 		this.success = success;
 	}
 
+	public Data getData() {
+		return this.data;
+	}
+
+	public void setData(Data data) {
+		this.data = data;
+	}
+
+	public static class Data {
+
+		private String status;
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
+		}
+	}
+
 	@Override
-	public DeleteDrdsDBResponse getInstance(UnmarshallerContext context) {
-		return	DeleteDrdsDBResponseUnmarshaller.unmarshall(this, context);
+	public DescribeCreateDrdsInstanceStatusResponse getInstance(UnmarshallerContext context) {
+		return	DescribeCreateDrdsInstanceStatusResponseUnmarshaller.unmarshall(this, context);
 	}
 }

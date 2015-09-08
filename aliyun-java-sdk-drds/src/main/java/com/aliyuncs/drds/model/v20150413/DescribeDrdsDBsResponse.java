@@ -29,7 +29,27 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDrdsDBsResponse extends AcsResponse {
 
+	private String requestId;
+
+	private Boolean success;
+
 	private List<Db> data;
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
 
 	public List<Db> getData() {
 		return this.data;

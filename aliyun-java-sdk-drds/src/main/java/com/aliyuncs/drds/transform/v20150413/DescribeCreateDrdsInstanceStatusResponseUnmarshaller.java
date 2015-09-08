@@ -18,17 +18,22 @@
  */
 package com.aliyuncs.drds.transform.v20150413;
 
-import com.aliyuncs.drds.model.v20150413.ModifyDrdsDBPasswdResponse;
+import com.aliyuncs.drds.model.v20150413.DescribeCreateDrdsInstanceStatusResponse;
+import com.aliyuncs.drds.model.v20150413.DescribeCreateDrdsInstanceStatusResponse.Data;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class ModifyDrdsDBPasswdResponseUnmarshaller {
+public class DescribeCreateDrdsInstanceStatusResponseUnmarshaller {
 
-	public static ModifyDrdsDBPasswdResponse unmarshall(ModifyDrdsDBPasswdResponse modifyDrdsDBPasswdResponse, UnmarshallerContext context) {
+	public static DescribeCreateDrdsInstanceStatusResponse unmarshall(DescribeCreateDrdsInstanceStatusResponse describeCreateDrdsInstanceStatusResponse, UnmarshallerContext context) {
 		
-		modifyDrdsDBPasswdResponse.setRequestId(context.stringValue("ModifyDrdsDBPasswdResponse.RequestId"));
-		modifyDrdsDBPasswdResponse.setSuccess(context.booleanValue("ModifyDrdsDBPasswdResponse.Success"));
+		describeCreateDrdsInstanceStatusResponse.setRequestId(context.stringValue("DescribeCreateDrdsInstanceStatusResponse.RequestId"));
+		describeCreateDrdsInstanceStatusResponse.setSuccess(context.booleanValue("DescribeCreateDrdsInstanceStatusResponse.Success"));
+
+		Data  data = new Data();
+		data.setStatus(context.stringValue("DescribeCreateDrdsInstanceStatusResponse.Data.Status"));
+		describeCreateDrdsInstanceStatusResponse.setData(data);
 	 
-	 	return modifyDrdsDBPasswdResponse;
+	 	return describeCreateDrdsInstanceStatusResponse;
 	}
 }
