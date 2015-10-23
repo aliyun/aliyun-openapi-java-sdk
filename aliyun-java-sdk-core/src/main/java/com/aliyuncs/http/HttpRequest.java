@@ -141,7 +141,7 @@ public class HttpRequest {
 		}
 		URL url = null;
 		String[] urlArray = null;
-		if(MethodType.POST.equals(this.method)){
+		if(MethodType.POST.equals(this.method) && null == getContent()){
 			urlArray =	strUrl.split("\\?");
 			url = new URL(urlArray[0]); 
 		}
@@ -168,7 +168,7 @@ public class HttpRequest {
 			}
 		}
 		
-		if(MethodType.POST.equals(this.method) && urlArray.length == 2){
+		if(MethodType.POST.equals(this.method) && null != urlArray && urlArray.length == 2){
 			httpConn.getOutputStream().write(urlArray[1].getBytes());
 		}
 		return httpConn;

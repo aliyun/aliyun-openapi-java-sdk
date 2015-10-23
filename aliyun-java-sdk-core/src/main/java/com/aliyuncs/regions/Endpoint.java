@@ -70,7 +70,7 @@ public class Endpoint {
 			return null;
 		}
 		for (ProductDomain productDomain : productDomains) {
-			if(product.equals(productDomain.getProductName())){
+			if(product.equalsIgnoreCase(productDomain.getProductName())){
 				return productDomain;	
 			}
 		}

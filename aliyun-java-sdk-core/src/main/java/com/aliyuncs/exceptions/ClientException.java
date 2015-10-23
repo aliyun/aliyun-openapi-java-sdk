@@ -82,4 +82,9 @@ public class ClientException extends Exception {
 	public void setErrorType(ErrorType errorType) {
 		this.errorType = errorType;
 	}
+	
+    @Override
+    public String getMessage() {
+        return super.getMessage() + (null == getRequestId() ? "" : "\r\nRequestId : " + getRequestId());
+    }
 }

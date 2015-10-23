@@ -41,6 +41,7 @@ public abstract class AcsRequest<T extends AcsResponse> extends HttpRequest {
 	private String product = null;
 	private String actionName = null;
 	private String regionId = null;
+	private String securityToken = null;
 	private FormatType acceptFormat = null;
 	protected ISignatureComposer composer = null;
 	private ProtocolType protocol = ProtocolType.HTTP;
@@ -83,6 +84,10 @@ public abstract class AcsRequest<T extends AcsResponse> extends HttpRequest {
 		return Collections.unmodifiableMap(queryParameters);
 	}
 	
+	protected void putQueryParameter(String name, Object value) {
+		setParameter(this.queryParameters, name, value);
+	}
+	
 	protected void putQueryParameter(String name, String value) {
 		setParameter(this.queryParameters, name, value);
 	}
@@ -91,15 +96,19 @@ public abstract class AcsRequest<T extends AcsResponse> extends HttpRequest {
 		return Collections.unmodifiableMap(domainParameters);
 	}
 
+	protected void putDomainParameter(String name, Object value) {
+		setParameter(this.domainParameters, name, value);
+	}
+	
 	protected void putDomainParameter(String name, String value) {
 		setParameter(this.domainParameters, name, value);
 	}
 	
-	protected void setParameter(Map<String, String> map, String name, String value) {
-		if (null == name){
+	protected void setParameter(Map<String, String> map, String name, Object value) {
+		if (null == map || null == name || null == value){
 			return;
 		}
-		map.put(name, value);
+		map.put(name,String.valueOf(value));
 	}
 
 	public String getVersion() {
@@ -118,6 +127,22 @@ public abstract class AcsRequest<T extends AcsResponse> extends HttpRequest {
 		this.acceptFormat = acceptFormat;
 		this.putHeaderParameter("Accept", 
 				FormatType.mapFormatToAccept(acceptFormat));
+	}
+	
+	public String getRegionId() {
+		return regionId;
+	}
+
+	public void setRegionId(String regionId) {
+		this.regionId = regionId;
+	}
+
+	public String getSecurityToken() {
+		return securityToken;
+	}
+
+	public void setSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
 	}
 	
 	public static String concatQueryString(Map<String, String> parameters) 
@@ -153,11 +178,5 @@ public abstract class AcsRequest<T extends AcsResponse> extends HttpRequest {
 	
 	public abstract Class<T> getResponseClass();
 
-	public String getRegionId() {
-		return regionId;
-	}
 
-	public void setRegionId(String regionId) {
-		this.regionId = regionId;
-	}
 }

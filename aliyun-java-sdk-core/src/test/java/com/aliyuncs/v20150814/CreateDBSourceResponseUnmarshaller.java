@@ -16,32 +16,21 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package com.aliyuncs.regions;
+package com.aliyuncs.v20150814;
 
-import static org.junit.Assert.*;
+import com.aliyuncs.transform.UnmarshallerContext;
 
-import java.util.List;
 
-import org.junit.Test;
+public class CreateDBSourceResponseUnmarshaller {
 
-import com.aliyuncs.exceptions.ClientException;
-
-public class RegionsTest {
-
-	@Test
-	public void test() {
-		testParseRegions();
-	}
-
-	private void testParseRegions() {
-		InternalEndpointsParser parser = new InternalEndpointsParser();
-		List<Endpoint> endpoints = null;
-		try {
-			endpoints = parser.getEndpoints();
-		} catch (ClientException e) {
-			fail(e.toString());
-		}
-		assertEquals("ecs-cn-hangzhou.aliyuncs.com", 
-				Endpoint.findProductDomain("cn-beijing", "Ecs", endpoints).getDomianName());
+	public static CreateDBSourceResponse unmarshall(CreateDBSourceResponse createDBSourceResponse, UnmarshallerContext context) {
+		
+		createDBSourceResponse.setCode(context.stringValue("CreateDBSourceResponse.Code"));
+		createDBSourceResponse.setMessage(context.stringValue("CreateDBSourceResponse.Message"));
+		createDBSourceResponse.setSuccess(context.stringValue("CreateDBSourceResponse.Success"));
+		createDBSourceResponse.setTraceId(context.stringValue("CreateDBSourceResponse.TraceId"));
+		createDBSourceResponse.setResult(context.stringValue("CreateDBSourceResponse.Result"));
+	 
+	 	return createDBSourceResponse;
 	}
 }

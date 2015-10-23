@@ -22,6 +22,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.security.NoSuchAlgorithmException;
 
+import com.aliyuncs.http.HttpRequest;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -127,6 +128,10 @@ public class DefaultAcsClientTest extends BaseTest {
 				Assert.fail();
 			}
 		} 
+	}
+
+	public void cmsTest(){
+		HttpRequest request = new HttpRequest("");
 	}
 	
 	

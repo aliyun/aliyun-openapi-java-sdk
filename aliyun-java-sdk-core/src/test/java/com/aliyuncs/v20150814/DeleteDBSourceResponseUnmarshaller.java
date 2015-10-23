@@ -16,32 +16,20 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package com.aliyuncs.regions;
+package com.aliyuncs.v20150814;
 
-import static org.junit.Assert.*;
+import com.aliyuncs.transform.UnmarshallerContext;
 
-import java.util.List;
 
-import org.junit.Test;
+public class DeleteDBSourceResponseUnmarshaller {
 
-import com.aliyuncs.exceptions.ClientException;
-
-public class RegionsTest {
-
-	@Test
-	public void test() {
-		testParseRegions();
-	}
-
-	private void testParseRegions() {
-		InternalEndpointsParser parser = new InternalEndpointsParser();
-		List<Endpoint> endpoints = null;
-		try {
-			endpoints = parser.getEndpoints();
-		} catch (ClientException e) {
-			fail(e.toString());
-		}
-		assertEquals("ecs-cn-hangzhou.aliyuncs.com", 
-				Endpoint.findProductDomain("cn-beijing", "Ecs", endpoints).getDomianName());
+	public static DeleteDBSourceResponse unmarshall(DeleteDBSourceResponse deleteDBSourceResponse, UnmarshallerContext context) {
+		
+		deleteDBSourceResponse.setCode(context.stringValue("DeleteDBSourceResponse.Code"));
+		deleteDBSourceResponse.setMessage(context.stringValue("DeleteDBSourceResponse.Message"));
+		deleteDBSourceResponse.setSuccess(context.stringValue("DeleteDBSourceResponse.Success"));
+		deleteDBSourceResponse.setTraceId(context.stringValue("DeleteDBSourceResponse.TraceId"));
+	 
+	 	return deleteDBSourceResponse;
 	}
 }

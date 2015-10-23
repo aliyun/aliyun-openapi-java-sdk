@@ -70,17 +70,15 @@ public abstract class RpcAcsRequest<T extends AcsResponse> extends AcsRequest<T>
 	}
 	
 	@Override
-	public void setAcceptFormat(FormatType acceptFormat) {
-		super.setAcceptFormat(acceptFormat);
-		this.putQueryParameter("Format", acceptFormat.toString());
+	public void setSecurityToken(String securityToken) {
+		super.setSecurityToken(securityToken);
+		this.putQueryParameter("SecurityToken", securityToken);
 	}
 	
 	@Override
-	protected void setParameter(Map<String, String> map, String name, String value) {
-		if (null == name || null == value){
-			return;
-		}
-		map.put(name, value);
+	public void setAcceptFormat(FormatType acceptFormat) {
+		super.setAcceptFormat(acceptFormat);
+		this.putQueryParameter("Format", acceptFormat.toString());
 	}
 	
 	public String composeUrl(String endpoint, Map<String, String> queries) 
@@ -111,8 +109,7 @@ public abstract class RpcAcsRequest<T extends AcsResponse> extends AcsRequest<T>
 			String signature = signer.signString(strToSign, accessSecret + "&");
 			imutableMap.put("Signature", signature);
 		}
-		HttpRequest request = new HttpRequest(this.composeUrl(domain.getDomianName(), imutableMap), this.getHeaders());
-		request.setMethod(this.getMethod());
-		return request;
+		setUrl(this.composeUrl(domain.getDomianName(), imutableMap));
+		return this;
 	}
 }

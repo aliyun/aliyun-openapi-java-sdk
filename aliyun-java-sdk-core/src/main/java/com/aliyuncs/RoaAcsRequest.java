@@ -65,10 +65,19 @@ public abstract class RoaAcsRequest<T extends AcsResponse> extends AcsRequest<T>
 		super.setVersion(version);
 		this.putHeaderParameter("x-acs-version", version);
 	}
-
 	
+	@Override
+	public void setSecurityToken(String securityToken) {
+		super.setSecurityToken(securityToken);
+		this.putHeaderParameter("x-acs-security-token", securityToken);
+	}
+
 	public Map<String, String> getPathParameters() {
 		return Collections.unmodifiableMap(pathParameters);
+	}
+	
+	protected void putPathParameter(String name, Object value) {
+		setParameter(this.pathParameters, name, value);
 	}
 	
 	protected void putPathParameter(String name, String value) {

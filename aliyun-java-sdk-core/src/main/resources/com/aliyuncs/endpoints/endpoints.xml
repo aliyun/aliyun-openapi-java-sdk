@@ -14,6 +14,10 @@
         </RegionIds>
 	    <Products>
 	    	<Product>
+	            <ProductName>ROS</ProductName>
+	            <DomainName>ros.aliyuncs.com</DomainName>
+	        </Product>
+	    	<Product>
 	            <ProductName>Bss</ProductName>
 	            <DomainName>bss.aliyuncs.com</DomainName>
 	        </Product>
@@ -131,7 +135,15 @@
 	        </Product>
 	        <Product>
 	            <ProductName>Push</ProductName>
-	            <DomainName>push.aliyuncs.com</DomainName>
+	            <DomainName>cloudpush.aliyuncs.com</DomainName>
+	        </Product>
+	        <Product>
+	            <ProductName>Emr</ProductName>
+	            <DomainName>emr.aliyuncs.com</DomainName>
+	        </Product>
+	        <Product>
+	            <ProductName>Cdn</ProductName>
+	            <DomainName>cdn.aliyuncs.com</DomainName>
 	        </Product>
 	    </Products>
     </Endpoint>
@@ -140,6 +152,10 @@
 			<RegionId>cn-shenzhen</RegionId>
         </RegionIds>
 	    <Products>
+	     	<Product>
+	            <ProductName>ROS</ProductName>
+	            <DomainName>ros.aliyuncs.com</DomainName>
+	        </Product>
 	    	<Product>
 	            <ProductName>BatchCompute</ProductName>
 	            <DomainName>batchcompute.cn-shenzhen.aliyuncs.com</DomainName>
@@ -148,7 +164,11 @@
 	            <ProductName>Bss</ProductName>
 	            <DomainName>bss.aliyuncs.com</DomainName>
 	        </Product>
-	        <Product>
+			<Product>
+				<ProductName>Alert</ProductName>
+				<DomainName>alert.aliyuncs.com</DomainName>
+			</Product>
+			<Product>
 	            <ProductName>Ecs</ProductName>
 	            <DomainName>ecs-cn-hangzhou.aliyuncs.com</DomainName>
 	        </Product>
@@ -262,7 +282,15 @@
 	        </Product>
 	        <Product>
 	            <ProductName>Push</ProductName>
-	            <DomainName>push.aliyuncs.com</DomainName>
+	            <DomainName>cloudpush.aliyuncs.com</DomainName>
+	        </Product>
+	        <Product>
+	            <ProductName>Emr</ProductName>
+	            <DomainName>emr.aliyuncs.com</DomainName>
+	        </Product>
+	        <Product>
+	            <ProductName>Cdn</ProductName>
+	            <DomainName>cdn.aliyuncs.com</DomainName>
 	        </Product>
 	    </Products>
     </Endpoint>
@@ -271,6 +299,10 @@
         	<RegionId>cn-qingdao</RegionId>
         </RegionIds>
 	    <Products>
+	    	<Product>
+	            <ProductName>ROS</ProductName>
+	            <DomainName>ros.aliyuncs.com</DomainName>
+	        </Product>
 	   		<Product>
 	            <ProductName>BatchCompute</ProductName>
 	            <DomainName>batchcompute.cn-qingdao.aliyuncs.com</DomainName>
@@ -393,7 +425,15 @@
 	        </Product>
 	        <Product>
 	            <ProductName>Push</ProductName>
-	            <DomainName>push.aliyuncs.com</DomainName>
+	            <DomainName>cloudpush.aliyuncs.com</DomainName>
+	        </Product>
+	        <Product>
+	            <ProductName>Emr</ProductName>
+	            <DomainName>emr.aliyuncs.com</DomainName>
+	        </Product>
+	        <Product>
+	            <ProductName>Cdn</ProductName>
+	            <DomainName>cdn.aliyuncs.com</DomainName>
 	        </Product>
 	    </Products>
     </Endpoint>
