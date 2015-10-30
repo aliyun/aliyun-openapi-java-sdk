@@ -36,6 +36,14 @@ public class NotifyUserBusinessCommandRequest extends RpcAcsRequest<NotifyUserBu
 
 	private String cmd;
 
+	private String region;
+
+	private String instanceId;
+
+	private String clientToken;
+
+	private String password;
+
 	public String getUid() {
 		return this.uid;
 	}
@@ -61,6 +69,42 @@ public class NotifyUserBusinessCommandRequest extends RpcAcsRequest<NotifyUserBu
 	public void setCmd(String cmd) {
 		this.cmd = cmd;
 		putQueryParameter("Cmd", cmd);
+	}
+
+	public String getRegion() {
+		return this.region;
+	}
+
+	public void setRegion(String region) {
+		this.region = region;
+		putQueryParameter("Region", region);
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		putQueryParameter("InstanceId", instanceId);
+	}
+
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		putQueryParameter("ClientToken", clientToken);
+	}
+
+	public String getPassword() {
+		return this.password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+		putQueryParameter("Password", password);
 	}
 
 	@Override

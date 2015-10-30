@@ -1,4 +1,5 @@
-package com.aliyuncs.ubsms;
+package com.aliyuncs.ubsms_inner;
+
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -24,21 +25,21 @@ import com.aliyuncs.profile.IClientProfile;
  * @author shaobo.asb 2015年7月17日 上午11:50:14
  */
 public class TestBase extends TestCase {
-    
-    
-    protected IAcsClient client = null;
-    
-    private static final String SETTINGS_FILE_NAME =
-            System.getProperty("user.home") +
-            System.getProperty("file.separator") +
-            "aliyun-sdk.properties";
-    
+
+    protected IAcsClient        client = null;
+
+    private static final String SETTINGS_FILE_NAME = System.getProperty("user.home")
+                                                           + System.getProperty("file.separator")
+                                                           + "service.properties";
+
+    @Override
     public void setUp() {
-        Properties properties =getProperties();
-        IClientProfile profile = DefaultProfile.getProfile("cn-hangzhou",properties.getProperty("accessKeyId"), properties.getProperty("accessSecret"));
+        Properties properties = getProperties();
+        IClientProfile profile = DefaultProfile.getProfile("cn-hangzhou", properties.getProperty("accessKeyId"),
+                properties.getProperty("accessSecret"));
         client = new DefaultAcsClient(profile);
     }
-    
+
     private Properties getProperties() {
         Properties pr = null;
         InputStream is = null;
@@ -53,5 +54,5 @@ public class TestBase extends TestCase {
         }
         return pr;
     }
-
+    
 }

@@ -74,6 +74,8 @@ public class SetUserBusinessStatusesRequest extends RpcAcsRequest<SetUserBusines
 
 	private String statusValue10;
 
+	private String password;
+
 	public String getUid() {
 		return this.uid;
 	}
@@ -270,6 +272,15 @@ public class SetUserBusinessStatusesRequest extends RpcAcsRequest<SetUserBusines
 	public void setStatusValue10(String statusValue10) {
 		this.statusValue10 = statusValue10;
 		putQueryParameter("StatusValue10", statusValue10);
+	}
+
+	public String getPassword() {
+		return this.password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+		putQueryParameter("Password", password);
 	}
 
 	@Override
