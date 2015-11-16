@@ -149,8 +149,7 @@ Plus， with client object， you still can temporarily change some parameter, s
 (在SDK的全局参数配置profile中，您可以提供一套全局参数的访问入口，在多次访问中共用。另外，Client类也提供了一种灵活性，让您可以暂时改变某个全局参数，例如：RegionId)
 
 ### About "RegionId" (地域的选择) ###
-
-Business requirements and availability is one of key featrue of cloud computing. We recommend you to choose the nearest region from your business location and it is good practise that to do some disaster backups in different regions. (RegionId是SDK的全局参数，您在选择地域的时候首先应该考虑的是业务就近原则。另外，在不同地域做适当的灾备也是推荐的。)
+Business requirements and availability is one of key feature of cloud computing. We recommend you to choose the nearest region from your business location and it is good practise that to do some disaster backups in different regions. (RegionId是SDK的全局参数，您在选择地域的时候首先应该考虑的是业务就近原则。另外，在不同地域做适当的灾备也是推荐的。)
 
 (Aliyun all regions)当前阿里云的RegionId列表
 cn-beijing
