@@ -3,7 +3,7 @@
   <groupId>com.aliyun</groupId>
   <artifactId>aliyun-java-sdk-cms</artifactId>
   <packaging>jar</packaging>
-  <version>3.0.0</version>
+  <version>3.0.5</version>
   <name>aliyun-java-sdk-cms</name>
   <url>http://www.aliyun.com</url>
   <description>Aliyun Open API SDK for Java
@@ -19,7 +19,7 @@ http://www.aliyun.com</description>
   	<groupId>com.aliyun</groupId>
   	<artifactId>aliyun-java-sdk-core</artifactId>
 	<optional>true</optional>
-	<version>2.1.9</version>
+	<version>2.1.8</version>
    </dependency>
    <dependency>
      <groupId>junit</groupId>
