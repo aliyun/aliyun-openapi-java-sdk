@@ -30,6 +30,11 @@ import java.util.Map.Entry;
 import com.aliyuncs.utils.ParameterHelper;
 
 public class HttpRequest {
+	
+	protected static final String CONTENT_TYPE = "Content-Type";
+	protected static final String CONTENT_MD5 = "Content-MD5";
+	protected static final String CONTENT_LENGTH ="Content-Length";
+	
 	private String url = null;
 	private MethodType method = null;
 	protected FormatType contentType = null;
@@ -74,10 +79,10 @@ public class HttpRequest {
 	public void setContentType(FormatType contentType) {
 		this.contentType = contentType;
 		if (null != this.content || null != contentType) {
-			this.headers.put("Content-Type", getContentTypeValue(this.contentType, this.encoding));
+			this.headers.put(CONTENT_TYPE, getContentTypeValue(this.contentType, this.encoding));
 		}
 		else { 
-			this.headers.remove("Content-Type");
+			this.headers.remove(CONTENT_TYPE);
 		}
 	}
 	
@@ -102,13 +107,12 @@ public class HttpRequest {
 			this.headers.put(name, value);
 	}
 	
-	public void setContent(byte[] content, String encoding, FormatType format)
-			throws NoSuchAlgorithmException {
+	public void setContent(byte[] content, String encoding, FormatType format) {
 		
 		if (null == content) {
-			this.headers.remove("Content-MD5");
-			this.headers.remove("Content-Length");
-			this.headers.remove("Content-Type");
+			this.headers.remove(CONTENT_MD5);
+			this.headers.remove(CONTENT_LENGTH);
+			this.headers.remove(CONTENT_TYPE);
 			this.contentType = null;
 			this.content = null;
 			this.encoding = null;
@@ -124,9 +128,9 @@ public class HttpRequest {
 		else {
 			this.contentType = FormatType.RAW;
 		}
-		this.headers.put("Content-MD5", strMd5);
-		this.headers.put("Content-Length", contentLen);
-		this.headers.put("Content-Type", getContentTypeValue(contentType, encoding));
+		this.headers.put(CONTENT_MD5, strMd5);
+		this.headers.put(CONTENT_LENGTH, contentLen);
+		this.headers.put(CONTENT_TYPE, getContentTypeValue(contentType, encoding));
 	}
 	
 	public Map<String, String> getHeaders() {
@@ -158,13 +162,13 @@ public class HttpRequest {
 			httpConn.setRequestProperty(entry.getKey(), entry.getValue());
 		}
 
-		if(null != getHeaderValue("Content-Type")){
-			httpConn.setRequestProperty("Content-Type", getHeaderValue("Content-Type"));
+		if(null != getHeaderValue(CONTENT_TYPE)){
+			httpConn.setRequestProperty(CONTENT_TYPE, getHeaderValue(CONTENT_TYPE));
 		}
 		else {
 			String contentTypeValue = getContentTypeValue(contentType, encoding);
 			if(null != contentTypeValue){
-				httpConn.setRequestProperty("Content-Type", contentTypeValue);
+				httpConn.setRequestProperty(CONTENT_TYPE, contentTypeValue);
 			}
 		}
 		

@@ -24,10 +24,10 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class CancelJobRequest extends RpcAcsRequest<CancelJobResponse> {
+public class QueryJobListByFileRequest extends RpcAcsRequest<QueryJobListByFileResponse> {
 	
-	public CancelJobRequest() {
-		super("Mts", "2014-06-18", "CancelJob");
+	public QueryJobListByFileRequest() {
+		super("Mts", "2014-06-18", "QueryJobListByFile");
 	}
 
 	private Long ownerId;
@@ -36,7 +36,11 @@ public class CancelJobRequest extends RpcAcsRequest<CancelJobResponse> {
 
 	private Long resourceOwnerId;
 
-	private String jobId;
+	private String bucket;
+
+	private String location;
+
+	private String uploadFileObjects;
 
 	private String ownerAccount;
 
@@ -67,13 +71,31 @@ public class CancelJobRequest extends RpcAcsRequest<CancelJobResponse> {
 		putQueryParameter("ResourceOwnerId", resourceOwnerId);
 	}
 
-	public String getJobId() {
-		return this.jobId;
+	public String getBucket() {
+		return this.bucket;
 	}
 
-	public void setJobId(String jobId) {
-		this.jobId = jobId;
-		putQueryParameter("JobId", jobId);
+	public void setBucket(String bucket) {
+		this.bucket = bucket;
+		putQueryParameter("Bucket", bucket);
+	}
+
+	public String getLocation() {
+		return this.location;
+	}
+
+	public void setLocation(String location) {
+		this.location = location;
+		putQueryParameter("Location", location);
+	}
+
+	public String getUploadFileObjects() {
+		return this.uploadFileObjects;
+	}
+
+	public void setUploadFileObjects(String uploadFileObjects) {
+		this.uploadFileObjects = uploadFileObjects;
+		putQueryParameter("UploadFileObjects", uploadFileObjects);
 	}
 
 	public String getOwnerAccount() {
@@ -86,8 +108,8 @@ public class CancelJobRequest extends RpcAcsRequest<CancelJobResponse> {
 	}
 
 	@Override
-	public Class<CancelJobResponse> getResponseClass() {
-		return CancelJobResponse.class;
+	public Class<QueryJobListByFileResponse> getResponseClass() {
+		return QueryJobListByFileResponse.class;
 	}
 
 }

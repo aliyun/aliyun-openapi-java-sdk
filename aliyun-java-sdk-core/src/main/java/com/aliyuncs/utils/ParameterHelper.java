@@ -91,9 +91,13 @@ public class ParameterHelper {
         return df.parse(strDate);  
     }
     
-    public static String md5Sum(byte[] buff) throws NoSuchAlgorithmException {
-        MessageDigest md = MessageDigest.getInstance("MD5");
-        byte[] messageDigest = md.digest(buff);
-        return Base64Helper.encode(messageDigest);
+    public static String md5Sum(byte[] buff){
+    	try {
+            MessageDigest md = MessageDigest.getInstance("MD5");
+            byte[] messageDigest = md.digest(buff);
+            return Base64Helper.encode(messageDigest);
+		} catch (Exception e) {
+		}
+       return null;
     }
 }

@@ -9,8 +9,8 @@
         	<RegionId>cn-shanghai-et2-b01</RegionId>
         	<RegionId>cn-shanghai</RegionId>
         	<RegionId>us-west-1</RegionId>
-			<RegionId>cn-shanghai-et2-test01</RegionId>
-			<RegionId>ap-southeast-1</RegionId>
+        	<RegionId>cn-shanghai-et2-test01</RegionId>
+        	<RegionId>ap-southeast-1</RegionId>
         </RegionIds>
 	    <Products>
 	    	<Product>
@@ -144,6 +144,18 @@
 	        <Product>
 	            <ProductName>Cdn</ProductName>
 	            <DomainName>cdn.aliyuncs.com</DomainName>
+	        </Product>
+	        <Product>
+	            <ProductName>COS</ProductName>
+	            <DomainName>cos.aliyuncs.com</DomainName>
+	        </Product>
+	        <Product>
+	            <ProductName>CF</ProductName>
+	            <DomainName>cf.aliyuncs.com</DomainName>
+	        </Product>
+	        <Product>
+	            <ProductName>Ess</ProductName>
+	            <DomainName>ess.aliyuncs.com</DomainName>
 	        </Product>
 	    </Products>
     </Endpoint>
@@ -292,6 +304,18 @@
 	            <ProductName>Cdn</ProductName>
 	            <DomainName>cdn.aliyuncs.com</DomainName>
 	        </Product>
+	        <Product>
+	            <ProductName>COS</ProductName>
+	            <DomainName>cos.aliyuncs.com</DomainName>
+	        </Product>
+	        <Product>
+	            <ProductName>CF</ProductName>
+	            <DomainName>cf.aliyuncs.com</DomainName>
+	        </Product>
+	        <Product>
+	            <ProductName>Ess</ProductName>
+	            <DomainName>ess.aliyuncs.com</DomainName>
+	        </Product>
 	    </Products>
     </Endpoint>
     <Endpoint name="cn-qingdao">
@@ -434,6 +458,18 @@
 	        <Product>
 	            <ProductName>Cdn</ProductName>
 	            <DomainName>cdn.aliyuncs.com</DomainName>
+	        </Product>
+	        <Product>
+	            <ProductName>COS</ProductName>
+	            <DomainName>cos.aliyuncs.com</DomainName>
+	        </Product>
+	        <Product>
+	            <ProductName>CF</ProductName>
+	            <DomainName>cf.aliyuncs.com</DomainName>
+	        </Product>
+	        <Product>
+	            <ProductName>Ess</ProductName>
+	            <DomainName>ess.aliyuncs.com</DomainName>
 	        </Product>
 	    </Products>
     </Endpoint>

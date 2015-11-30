@@ -78,9 +78,6 @@ public class HttpTest {
 		} catch (IOException e) {
 			fail(e.toString());
 			e.printStackTrace();
-		} catch (NoSuchAlgorithmException e) {
-			fail(e.toString());
-			e.printStackTrace();
-		}
+		} 
 	}
 }

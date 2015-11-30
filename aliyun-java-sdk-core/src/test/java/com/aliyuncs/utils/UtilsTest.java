@@ -57,9 +57,6 @@ public class UtilsTest {
 		try {
 			md5 = ParameterHelper.md5Sum(source.getBytes(encoding));
 			assertEquals("+J93MVb8RzUp4M+yNoFtLg==", md5);
-		} catch (NoSuchAlgorithmException e) {
-			fail(e.toString());
-			e.printStackTrace();
 		} catch (UnsupportedEncodingException e) {
 			fail(e.toString());
 			e.printStackTrace();

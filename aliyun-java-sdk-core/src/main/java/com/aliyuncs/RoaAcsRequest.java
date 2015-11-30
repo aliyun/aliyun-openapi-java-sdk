@@ -56,8 +56,8 @@ public abstract class RoaAcsRequest<T extends AcsResponse> extends AcsRequest<T>
 	}
 	
 	private void initialize() {
-		this.setAcceptFormat(FormatType.RAW);
 		this.composer = RoaSignatureComposer.getComposer();
+		this.setContent(new byte[0], "utf-8", FormatType.RAW);
 	}
 
 	@Override

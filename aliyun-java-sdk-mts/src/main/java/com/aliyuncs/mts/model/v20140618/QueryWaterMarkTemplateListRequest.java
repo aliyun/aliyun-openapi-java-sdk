@@ -46,7 +46,7 @@ public class QueryWaterMarkTemplateListRequest extends RpcAcsRequest<QueryWaterM
 
 	public void setOwnerId(Long ownerId) {
 		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", String.valueOf(ownerId));
+		putQueryParameter("OwnerId", ownerId);
 	}
 
 	public String getResourceOwnerAccount() {
@@ -64,7 +64,7 @@ public class QueryWaterMarkTemplateListRequest extends RpcAcsRequest<QueryWaterM
 
 	public void setResourceOwnerId(Long resourceOwnerId) {
 		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", String.valueOf(resourceOwnerId));
+		putQueryParameter("ResourceOwnerId", resourceOwnerId);
 	}
 
 	public String getWaterMarkTemplateIds() {
