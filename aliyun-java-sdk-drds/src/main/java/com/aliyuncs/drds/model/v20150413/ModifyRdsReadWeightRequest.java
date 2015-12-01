@@ -24,19 +24,19 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class ModifyDrdsIpWhiteListRequest extends RpcAcsRequest<ModifyDrdsIpWhiteListResponse> {
+public class ModifyRdsReadWeightRequest extends RpcAcsRequest<ModifyRdsReadWeightResponse> {
 	
-	public ModifyDrdsIpWhiteListRequest() {
-		super("Drds", "2015-04-13", "ModifyDrdsIpWhiteList");
+	public ModifyRdsReadWeightRequest() {
+		super("Drds", "2015-04-13", "ModifyRdsReadWeight");
 	}
 
 	private String drdsInstanceId;
 
 	private String dbName;
 
-	private String ipWhiteList;
+	private String instanceNames;
 
-	private Boolean mode;
+	private String weights;
 
 	public String getDrdsInstanceId() {
 		return this.drdsInstanceId;
@@ -56,27 +56,27 @@ public class ModifyDrdsIpWhiteListRequest extends RpcAcsRequest<ModifyDrdsIpWhit
 		putQueryParameter("DbName", dbName);
 	}
 
-	public String getIpWhiteList() {
-		return this.ipWhiteList;
+	public String getInstanceNames() {
+		return this.instanceNames;
 	}
 
-	public void setIpWhiteList(String ipWhiteList) {
-		this.ipWhiteList = ipWhiteList;
-		putQueryParameter("IpWhiteList", ipWhiteList);
+	public void setInstanceNames(String instanceNames) {
+		this.instanceNames = instanceNames;
+		putQueryParameter("InstanceNames", instanceNames);
 	}
 
-	public Boolean getMode() {
-		return this.mode;
+	public String getWeights() {
+		return this.weights;
 	}
 
-	public void setMode(Boolean mode) {
-		this.mode = mode;
-		putQueryParameter("Mode", mode);
+	public void setWeights(String weights) {
+		this.weights = weights;
+		putQueryParameter("Weights", weights);
 	}
 
 	@Override
-	public Class<ModifyDrdsIpWhiteListResponse> getResponseClass() {
-		return ModifyDrdsIpWhiteListResponse.class;
+	public Class<ModifyRdsReadWeightResponse> getResponseClass() {
+		return ModifyRdsReadWeightResponse.class;
 	}
 
 }

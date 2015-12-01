@@ -24,19 +24,19 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class ModifyDrdsIpWhiteListRequest extends RpcAcsRequest<ModifyDrdsIpWhiteListResponse> {
+public class ModifyFullTableScanRequest extends RpcAcsRequest<ModifyFullTableScanResponse> {
 	
-	public ModifyDrdsIpWhiteListRequest() {
-		super("Drds", "2015-04-13", "ModifyDrdsIpWhiteList");
+	public ModifyFullTableScanRequest() {
+		super("Drds", "2015-04-13", "ModifyFullTableScan");
 	}
 
 	private String drdsInstanceId;
 
 	private String dbName;
 
-	private String ipWhiteList;
+	private String tableNames;
 
-	private Boolean mode;
+	private Boolean fullTableScan;
 
 	public String getDrdsInstanceId() {
 		return this.drdsInstanceId;
@@ -56,27 +56,27 @@ public class ModifyDrdsIpWhiteListRequest extends RpcAcsRequest<ModifyDrdsIpWhit
 		putQueryParameter("DbName", dbName);
 	}
 
-	public String getIpWhiteList() {
-		return this.ipWhiteList;
+	public String getTableNames() {
+		return this.tableNames;
 	}
 
-	public void setIpWhiteList(String ipWhiteList) {
-		this.ipWhiteList = ipWhiteList;
-		putQueryParameter("IpWhiteList", ipWhiteList);
+	public void setTableNames(String tableNames) {
+		this.tableNames = tableNames;
+		putQueryParameter("TableNames", tableNames);
 	}
 
-	public Boolean getMode() {
-		return this.mode;
+	public Boolean getFullTableScan() {
+		return this.fullTableScan;
 	}
 
-	public void setMode(Boolean mode) {
-		this.mode = mode;
-		putQueryParameter("Mode", mode);
+	public void setFullTableScan(Boolean fullTableScan) {
+		this.fullTableScan = fullTableScan;
+		putQueryParameter("FullTableScan", fullTableScan);
 	}
 
 	@Override
-	public Class<ModifyDrdsIpWhiteListResponse> getResponseClass() {
-		return ModifyDrdsIpWhiteListResponse.class;
+	public Class<ModifyFullTableScanResponse> getResponseClass() {
+		return ModifyFullTableScanResponse.class;
 	}
 
 }

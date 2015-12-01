@@ -28,7 +28,7 @@ public class DescribeDDLTaskResponseUnmarshaller {
 	public static DescribeDDLTaskResponse unmarshall(DescribeDDLTaskResponse describeDDLTaskResponse, UnmarshallerContext context) {
 		
 
-		Data  data = new Data();
+		Data data = new Data();
 		data.setRequestId(context.stringValue("DescribeDDLTaskResponse.Data.RequestId"));
 		data.setTargetId(context.stringValue("DescribeDDLTaskResponse.Data.TargetId"));
 		data.setTaskDetail(context.stringValue("DescribeDDLTaskResponse.Data.TaskDetail"));

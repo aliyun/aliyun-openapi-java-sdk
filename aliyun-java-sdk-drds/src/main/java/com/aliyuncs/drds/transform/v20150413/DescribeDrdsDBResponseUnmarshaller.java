@@ -30,7 +30,7 @@ public class DescribeDrdsDBResponseUnmarshaller {
 		describeDrdsDBResponse.setRequestId(context.stringValue("DescribeDrdsDBResponse.RequestId"));
 		describeDrdsDBResponse.setSuccess(context.booleanValue("DescribeDrdsDBResponse.Success"));
 
-		Data  data = new Data();
+		Data data = new Data();
 		data.setDbName(context.stringValue("DescribeDrdsDBResponse.Data.DbName"));
 		data.setStatus(context.integerValue("DescribeDrdsDBResponse.Data.Status"));
 		data.setCreateTime(context.stringValue("DescribeDrdsDBResponse.Data.CreateTime"));

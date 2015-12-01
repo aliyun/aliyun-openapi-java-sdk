@@ -24,19 +24,17 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class ModifyDrdsIpWhiteListRequest extends RpcAcsRequest<ModifyDrdsIpWhiteListResponse> {
+public class DescribeShardDbConnectionInfoRequest extends RpcAcsRequest<DescribeShardDbConnectionInfoResponse> {
 	
-	public ModifyDrdsIpWhiteListRequest() {
-		super("Drds", "2015-04-13", "ModifyDrdsIpWhiteList");
+	public DescribeShardDbConnectionInfoRequest() {
+		super("Drds", "2015-04-13", "DescribeShardDbConnectionInfo");
 	}
 
 	private String drdsInstanceId;
 
 	private String dbName;
 
-	private String ipWhiteList;
-
-	private Boolean mode;
+	private String subDbName;
 
 	public String getDrdsInstanceId() {
 		return this.drdsInstanceId;
@@ -56,27 +54,18 @@ public class ModifyDrdsIpWhiteListRequest extends RpcAcsRequest<ModifyDrdsIpWhit
 		putQueryParameter("DbName", dbName);
 	}
 
-	public String getIpWhiteList() {
-		return this.ipWhiteList;
+	public String getSubDbName() {
+		return this.subDbName;
 	}
 
-	public void setIpWhiteList(String ipWhiteList) {
-		this.ipWhiteList = ipWhiteList;
-		putQueryParameter("IpWhiteList", ipWhiteList);
-	}
-
-	public Boolean getMode() {
-		return this.mode;
-	}
-
-	public void setMode(Boolean mode) {
-		this.mode = mode;
-		putQueryParameter("Mode", mode);
+	public void setSubDbName(String subDbName) {
+		this.subDbName = subDbName;
+		putQueryParameter("SubDbName", subDbName);
 	}
 
 	@Override
-	public Class<ModifyDrdsIpWhiteListResponse> getResponseClass() {
-		return ModifyDrdsIpWhiteListResponse.class;
+	public Class<DescribeShardDbConnectionInfoResponse> getResponseClass() {
+		return DescribeShardDbConnectionInfoResponse.class;
 	}
 
 }

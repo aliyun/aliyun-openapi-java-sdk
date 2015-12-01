@@ -79,7 +79,7 @@ public class CreateDrdsInstanceRequest extends RpcAcsRequest<CreateDrdsInstanceR
 
 	public void setQuantity(Integer quantity) {
 		this.quantity = quantity;
-		putQueryParameter("Quantity", String.valueOf(quantity));
+		putQueryParameter("Quantity", quantity);
 	}
 
 	public String getSpecification() {

@@ -18,22 +18,17 @@
  */
 package com.aliyuncs.drds.transform.v20150413;
 
-import com.aliyuncs.drds.model.v20150413.DescribeCreateDrdsInstanceStatusResponse;
-import com.aliyuncs.drds.model.v20150413.DescribeCreateDrdsInstanceStatusResponse.Data;
+import com.aliyuncs.drds.model.v20150413.DeleteFailedDrdsDBResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class DescribeCreateDrdsInstanceStatusResponseUnmarshaller {
+public class DeleteFailedDrdsDBResponseUnmarshaller {
 
-	public static DescribeCreateDrdsInstanceStatusResponse unmarshall(DescribeCreateDrdsInstanceStatusResponse describeCreateDrdsInstanceStatusResponse, UnmarshallerContext context) {
+	public static DeleteFailedDrdsDBResponse unmarshall(DeleteFailedDrdsDBResponse deleteFailedDrdsDBResponse, UnmarshallerContext context) {
 		
-		describeCreateDrdsInstanceStatusResponse.setRequestId(context.stringValue("DescribeCreateDrdsInstanceStatusResponse.RequestId"));
-		describeCreateDrdsInstanceStatusResponse.setSuccess(context.booleanValue("DescribeCreateDrdsInstanceStatusResponse.Success"));
-
-		Data data = new Data();
-		data.setStatus(context.stringValue("DescribeCreateDrdsInstanceStatusResponse.Data.Status"));
-		describeCreateDrdsInstanceStatusResponse.setData(data);
+		deleteFailedDrdsDBResponse.setRequestId(context.stringValue("DeleteFailedDrdsDBResponse.RequestId"));
+		deleteFailedDrdsDBResponse.setSuccess(context.booleanValue("DeleteFailedDrdsDBResponse.Success"));
 	 
-	 	return describeCreateDrdsInstanceStatusResponse;
+	 	return deleteFailedDrdsDBResponse;
 	}
 }

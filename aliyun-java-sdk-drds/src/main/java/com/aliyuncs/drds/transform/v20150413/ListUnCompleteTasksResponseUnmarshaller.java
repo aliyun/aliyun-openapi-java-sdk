@@ -20,6 +20,7 @@ package com.aliyuncs.drds.transform.v20150413;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import com.aliyuncs.drds.model.v20150413.ListUnCompleteTasksResponse;
 import com.aliyuncs.drds.model.v20150413.ListUnCompleteTasksResponse.task;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -32,7 +33,7 @@ public class ListUnCompleteTasksResponseUnmarshaller {
 
 		List<task> data = new ArrayList<task>();
 		for (int i = 0; i < context.lengthValue("ListUnCompleteTasksResponse.Data.Length"); i++) {
-			task  task = new task();
+			task task = new task();
 			task.setRequestId(context.stringValue("ListUnCompleteTasksResponse.Data["+ i +"].RequestId"));
 			task.setTargetId(context.stringValue("ListUnCompleteTasksResponse.Data["+ i +"].TargetId"));
 			task.setTaskDetail(context.stringValue("ListUnCompleteTasksResponse.Data["+ i +"].TaskDetail"));

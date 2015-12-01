@@ -20,6 +20,7 @@ package com.aliyuncs.drds.transform.v20150413;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import com.aliyuncs.drds.model.v20150413.DescribeDrdsInstanceResponse;
 import com.aliyuncs.drds.model.v20150413.DescribeDrdsInstanceResponse.Data;
 import com.aliyuncs.drds.model.v20150413.DescribeDrdsInstanceResponse.Data.Vip;
@@ -33,7 +34,7 @@ public class DescribeDrdsInstanceResponseUnmarshaller {
 		describeDrdsInstanceResponse.setRequestId(context.stringValue("DescribeDrdsInstanceResponse.RequestId"));
 		describeDrdsInstanceResponse.setSuccess(context.booleanValue("DescribeDrdsInstanceResponse.Success"));
 
-		Data  data = new Data();
+		Data data = new Data();
 		data.setDrdsInstanceId(context.stringValue("DescribeDrdsInstanceResponse.Data.DrdsInstanceId"));
 		data.setType(context.stringValue("DescribeDrdsInstanceResponse.Data.Type"));
 		data.setRegionId(context.stringValue("DescribeDrdsInstanceResponse.Data.RegionId"));
@@ -46,7 +47,7 @@ public class DescribeDrdsInstanceResponseUnmarshaller {
 
 		List<Vip> vips = new ArrayList<Vip>();
 		for (int i = 0; i < context.lengthValue("DescribeDrdsInstanceResponse.Data.Vips.Length"); i++) {
-			Vip  vip = new Vip();
+			Vip vip = new Vip();
 			vip.setIP(context.stringValue("DescribeDrdsInstanceResponse.Data.Vips["+ i +"].IP"));
 			vip.setPort(context.stringValue("DescribeDrdsInstanceResponse.Data.Vips["+ i +"].Port"));
 			vip.setType(context.stringValue("DescribeDrdsInstanceResponse.Data.Vips["+ i +"].Type"));

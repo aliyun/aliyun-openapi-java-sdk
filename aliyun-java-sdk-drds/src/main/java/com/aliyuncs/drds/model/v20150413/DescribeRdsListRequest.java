@@ -24,19 +24,15 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class ModifyDrdsIpWhiteListRequest extends RpcAcsRequest<ModifyDrdsIpWhiteListResponse> {
+public class DescribeRdsListRequest extends RpcAcsRequest<DescribeRdsListResponse> {
 	
-	public ModifyDrdsIpWhiteListRequest() {
-		super("Drds", "2015-04-13", "ModifyDrdsIpWhiteList");
+	public DescribeRdsListRequest() {
+		super("Drds", "2015-04-13", "DescribeRdsList");
 	}
 
 	private String drdsInstanceId;
 
 	private String dbName;
-
-	private String ipWhiteList;
-
-	private Boolean mode;
 
 	public String getDrdsInstanceId() {
 		return this.drdsInstanceId;
@@ -56,27 +52,9 @@ public class ModifyDrdsIpWhiteListRequest extends RpcAcsRequest<ModifyDrdsIpWhit
 		putQueryParameter("DbName", dbName);
 	}
 
-	public String getIpWhiteList() {
-		return this.ipWhiteList;
-	}
-
-	public void setIpWhiteList(String ipWhiteList) {
-		this.ipWhiteList = ipWhiteList;
-		putQueryParameter("IpWhiteList", ipWhiteList);
-	}
-
-	public Boolean getMode() {
-		return this.mode;
-	}
-
-	public void setMode(Boolean mode) {
-		this.mode = mode;
-		putQueryParameter("Mode", mode);
-	}
-
 	@Override
-	public Class<ModifyDrdsIpWhiteListResponse> getResponseClass() {
-		return ModifyDrdsIpWhiteListResponse.class;
+	public Class<DescribeRdsListResponse> getResponseClass() {
+		return DescribeRdsListResponse.class;
 	}
 
 }

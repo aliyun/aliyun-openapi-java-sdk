@@ -20,6 +20,7 @@ package com.aliyuncs.drds.transform.v20150413;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import com.aliyuncs.drds.model.v20150413.DescribeDrdsDBIpWhiteListResponse;
 import com.aliyuncs.drds.model.v20150413.DescribeDrdsDBIpWhiteListResponse.Data;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -32,7 +33,7 @@ public class DescribeDrdsDBIpWhiteListResponseUnmarshaller {
 		describeDrdsDBIpWhiteListResponse.setRequestId(context.stringValue("DescribeDrdsDBIpWhiteListResponse.RequestId"));
 		describeDrdsDBIpWhiteListResponse.setSuccess(context.booleanValue("DescribeDrdsDBIpWhiteListResponse.Success"));
 
-		Data  data = new Data();
+		Data data = new Data();
 
 		List<String> ipWhiteList = new ArrayList<String>();
 		for (int i = 0; i < context.lengthValue("DescribeDrdsDBIpWhiteListResponse.Data.IpWhiteList.Length"); i++) {

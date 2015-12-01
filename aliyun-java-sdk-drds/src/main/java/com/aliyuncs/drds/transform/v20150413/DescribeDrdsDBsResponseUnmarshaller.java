@@ -20,6 +20,7 @@ package com.aliyuncs.drds.transform.v20150413;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import com.aliyuncs.drds.model.v20150413.DescribeDrdsDBsResponse;
 import com.aliyuncs.drds.model.v20150413.DescribeDrdsDBsResponse.Db;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -34,7 +35,7 @@ public class DescribeDrdsDBsResponseUnmarshaller {
 
 		List<Db> data = new ArrayList<Db>();
 		for (int i = 0; i < context.lengthValue("DescribeDrdsDBsResponse.Data.Length"); i++) {
-			Db  db = new Db();
+			Db db = new Db();
 			db.setDbName(context.stringValue("DescribeDrdsDBsResponse.Data["+ i +"].DbName"));
 			db.setStatus(context.integerValue("DescribeDrdsDBsResponse.Data["+ i +"].Status"));
 			db.setCreateTime(context.stringValue("DescribeDrdsDBsResponse.Data["+ i +"].CreateTime"));

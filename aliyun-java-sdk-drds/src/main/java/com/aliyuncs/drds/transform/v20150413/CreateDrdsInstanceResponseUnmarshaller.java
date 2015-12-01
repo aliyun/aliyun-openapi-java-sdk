@@ -20,6 +20,7 @@ package com.aliyuncs.drds.transform.v20150413;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import com.aliyuncs.drds.model.v20150413.CreateDrdsInstanceResponse;
 import com.aliyuncs.drds.model.v20150413.CreateDrdsInstanceResponse.Data;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -32,7 +33,7 @@ public class CreateDrdsInstanceResponseUnmarshaller {
 		createDrdsInstanceResponse.setRequestId(context.stringValue("CreateDrdsInstanceResponse.RequestId"));
 		createDrdsInstanceResponse.setSuccess(context.booleanValue("CreateDrdsInstanceResponse.Success"));
 
-		Data  data = new Data();
+		Data data = new Data();
 		data.setOrderId(context.longValue("CreateDrdsInstanceResponse.Data.OrderId"));
 
 		List<String> drdsInstanceIdList = new ArrayList<String>();
