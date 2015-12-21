@@ -13,6 +13,22 @@
         	<RegionId>ap-southeast-1</RegionId>
         </RegionIds>
 	    <Products>
+			<Product>
+               <ProductName>CS</ProductName>
+               <DomainName>cs.aliyuncs.com</DomainName>
+            </Product>
+	    	<Product>
+               <ProductName>Green</ProductName>
+               <DomainName>green.aliyuncs.com</DomainName>
+            </Product>
+	    	<Product>
+               <ProductName>Mts</ProductName>
+               <DomainName>mts.cn-hangzhou.aliyuncs.com</DomainName>
+            </Product>
+	    	<Product>
+	            <ProductName>Dm</ProductName>
+	            <DomainName>dm.aliyuncs.com</DomainName>
+	        </Product>
 	    	<Product>
 	            <ProductName>ROS</ProductName>
 	            <DomainName>ros.aliyuncs.com</DomainName>
@@ -164,6 +180,18 @@
 			<RegionId>cn-shenzhen</RegionId>
         </RegionIds>
 	    <Products>
+			<Product>
+               <ProductName>CS</ProductName>
+               <DomainName>cs.aliyuncs.com</DomainName>
+            </Product>
+	    	<Product>
+               <ProductName>Green</ProductName>
+               <DomainName>green.aliyuncs.com</DomainName>
+            </Product>
+	    	<Product>
+	            <ProductName>Dm</ProductName>
+	            <DomainName>dm.aliyuncs.com</DomainName>
+	        </Product>
 	     	<Product>
 	            <ProductName>ROS</ProductName>
 	            <DomainName>ros.aliyuncs.com</DomainName>
@@ -323,6 +351,18 @@
         	<RegionId>cn-qingdao</RegionId>
         </RegionIds>
 	    <Products>
+			<Product>
+               <ProductName>CS</ProductName>
+               <DomainName>cs.aliyuncs.com</DomainName>
+            </Product>
+	    	<Product>
+               <ProductName>Green</ProductName>
+               <DomainName>green.aliyuncs.com</DomainName>
+            </Product>
+	    	<Product>
+	            <ProductName>Dm</ProductName>
+	            <DomainName>dm.aliyuncs.com</DomainName>
+	        </Product>
 	    	<Product>
 	            <ProductName>ROS</ProductName>
 	            <DomainName>ros.aliyuncs.com</DomainName>
