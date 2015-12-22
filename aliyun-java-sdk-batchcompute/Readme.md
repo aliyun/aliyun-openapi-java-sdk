@@ -46,7 +46,7 @@ make doc # 生成Reference文档
 先修改version为SNAPSHOP
 
 ```xml
-<version>2.0.0-SNAPSHOP</version>
+<version>3.0.0-SNAPSHOP</version>
 ```
 
 发布命令(SNAPSHOT版本可以重复发)
@@ -71,20 +71,23 @@ make deploy
 <dependency>
     <groupId>com.aliyun</groupId>
     <artifactId>aliyun-java-sdk-core</artifactId>
-    <version>2.1.4</version>
+    <version>2.2.0</version>
 </dependency>
 
 
 <dependency>
     <groupId>com.aliyun</groupId>
     <artifactId>aliyun-java-sdk-batchcompute</artifactId>
-    <version>2.0.0</version>
+    <version>3.0.0</version>
 </dependency>
 ```
 
 #### (1) 构造 client 对象
 
 ```java
+import com.aliyuncs.batchcompute.main.v20151111.*;  //注意版本号: v20151111, 目前支持2个版本的: v20150630 & v20151111
+...
+
 
 String regionId="cn-hangzhou";
 String accessKeyId="${your_access_key_id}";
@@ -115,17 +118,43 @@ try {
 
 #### (3)  client 对象支持的方法:
 
+版本 v20150630:
+
 | 序号 | 方法 | 描述 |
 | ----- | ---- | ---- |
-| 1. | createJob(Job job) | 创建Job |
+| 1. | createJob(JobDescription job) | 创建Job |
 | 2. | updateJobPriority(String jobId, int priority) | 设置Job优先级 |
 | 3. | deleteJob(String jobId) | 删除Job |
-| 4. | getJobStatus(String jobId) | 获取Job状态信息 |
-| 5. | listJobStatus() | 列举Job状态信息 |
-| 6. | getJob(String jobId) | 获取Job描述信息 |
+| 4. | getJob(String jobId) | 获取Job状态信息 |
+| 5. | listJobs() | 列举Job状态信息 |
+| 6. | getJobDescription(String jobId) | 获取Job描述信息 |
 | 7. | stopJob(String jobId) | 停止job |
 | 8. | startJob(String jobId) | 重新启动job |
-| 9. | listTaskStatus(String jobId) | 列举一个job下所有task的状态信息 |
+| 9. | listTasks(String jobId) | 列举一个job下所有task的状态信息 |
 | 10. | listImages() | 列举所有镜像 |
 
 
+版本 v20151111:
+
+| 序号 | 方法 | 描述 |
+| ----- | ---- | ---- |
+|  | *Cluster相关* | |
+| 1. | createCluster(ClusterDescription clusterDesc) | 创建Cluster |
+| 2. | getCluster(String clusterId) | 获取Cluster信息 |
+| 3. | deleteCluster(String clusterId) | 删除Cluster |
+| 4. | listClusters(String marker, int maxItemCount) | 列举Cluster信息 |
+|  | *Job相关* | |
+| 1. | createJob(JobDescription job) | 创建Job |
+| 2. | changeJobPriority(String jobId, int priority) | 设置Job优先级 |
+| 3. | deleteJob(String jobId) | 删除Job |
+| 4. | getJob(String jobId) | 获取Job状态信息 |
+| 5. | getJobDescription(String jobId) | 获取Job描述信息 |
+| 6. | stopJob(String jobId) | 停止job |
+| 7. | startJob(String jobId) | 重新启动job |
+| 8. | listJobs(String marker, int maxItemCount) | 列举Job状态信息 |
+|  | *Task相关* | |
+| 1. | listTasks(String jobId,String marker, int maxItemCount) | 列举一个job下所有task的状态信息 |
+| 2. | getTask(String jobId, String taskName) | 获取task状态信息 |
+|  | *Instance相关* | |
+| 2. | listInstances(String jobId, String taskName, String marker, int maxItemCount) | 获取task状态信息 |
+| 2. | getInstance(String jobId, String taskName) | 获取 instance 状态信息 |

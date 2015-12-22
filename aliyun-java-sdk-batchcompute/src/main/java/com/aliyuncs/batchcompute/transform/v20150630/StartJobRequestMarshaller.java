@@ -37,7 +37,6 @@ public class StartJobRequestMarshaller {
             startJobRequest.setContent("{}".getBytes(), startJobRequest.getEncoding(), startJobRequest.getAcceptFormat());
         } catch (NoSuchAlgorithmException e) {
             e.printStackTrace();
-            //throw new ClientException("API.EncodeError", "encode request body error");
         }
 
         return startJobRequest;

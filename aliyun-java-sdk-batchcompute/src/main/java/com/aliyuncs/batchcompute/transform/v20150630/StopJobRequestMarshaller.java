@@ -37,7 +37,6 @@ public class StopJobRequestMarshaller {
             stopJobRequest.setContent("{}".getBytes(), stopJobRequest.getEncoding(), stopJobRequest.getAcceptFormat());
         } catch (NoSuchAlgorithmException e) {
             e.printStackTrace();
-           // throw new ClientException("API.EncodeError", "encode request body error");
         }
 
         return stopJobRequest;

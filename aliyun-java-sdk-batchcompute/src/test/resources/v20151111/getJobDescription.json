@@ -1,0 +1,33 @@
+{
+  "DAG": {
+    "Dependencies": {},
+    "Tasks": {"task_1": {
+      "AutoCluster": {
+        "ECSImageId": "",
+        "ImageId": "",
+        "InstanceType": "",
+        "ResourceType": ""},
+      "ClusterId": "cls-6kilcg94rdtk004q",
+      "InputMapping": {"oss://my-bucket/disk1/": "/home/admin/disk1/"},
+      "InstanceCount": 1,
+      "LogMapping": {},
+      "MaxRetryCount": 2,
+      "OutputMapping": {"/home/admin/disk2/": "oss://my-bucket/disk2/"},
+      "Parameters": {
+        "Command": {
+          "CommandLine": "python main.py",
+          "EnvVars": {"a": "b"},
+          "PackagePath": "oss://my-bucket/test/worker.tar.gz"},
+        "InputMappingConfig": {
+          "Locale": "GBK",
+          "Lock": true},
+        "StderrRedirectPath": "oss://my-bucket/test/logs/",
+        "StdoutRedirectPath": "oss://my-bucket/test/logs/"},
+      "Timeout": 10000,
+      "WriteSupport": false}}},
+  "Description": "",
+  "JobFailOnInstanceFail": true,
+  "Name": "jobName1",
+  "Notification": {},
+  "Priority": 10,
+  "Type": "DAG"}

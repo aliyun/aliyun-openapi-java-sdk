@@ -24,11 +24,15 @@ import com.aliyuncs.AcsRequest;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.DefaultAcsClient;
 import com.aliyuncs.IAcsClient;
+import com.aliyuncs.batchcompute.main.v20151111.BatchComputeRequest;
 import com.aliyuncs.batchcompute.model.v20150630.*;
 import com.aliyuncs.batchcompute.pojo.v20150630.JobDescription;
 import com.aliyuncs.exceptions.ClientException;
 import com.aliyuncs.http.HttpResponse;
 import com.aliyuncs.profile.DefaultProfile;
+
+import java.util.Map;
+import java.util.Set;
 
 /**
  * Created by guangchun.luo on 15/6/5.
@@ -38,24 +42,67 @@ public class BatchComputeClient implements BatchCompute {
     private IAcsClient client;
 
     public BatchComputeClient(String regionId, String accessKeyId, String accessKeySecret) {
-//        try {
-//            DefaultProfile.addEndpoint("cn-shenzhen","cn-shenzhen","BatchCompute","batchcompute.cn-shenzhen.aliyuncs.com");
-//        } catch (ClientException e) {
-//            e.printStackTrace();
-//        }
         this.client = new DefaultAcsClient(DefaultProfile.getProfile(regionId, accessKeyId, accessKeySecret));
     }
 
 
+    /**
+     * add region domain mapping
+     *
+     * @param region "cn-shenzhen"
+     * @param domain "batchcompute.cn-shenzhen.aliyuncs.com"
+     */
+    public static void addEndpoint(String region, String domain) {
+        try {
+            DefaultProfile.addEndpoint(region, region, "BatchCompute", domain);
+        } catch (ClientException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static boolean verbose = false;
+
     //hack一下，处理 ErrorCode 的兼容
     private <T extends AcsResponse> T getAcsResponse(AcsRequest<T> request) throws ClientException {
-//        byte[] bs =request.getContent();
-//        if(bs==null) bs=new byte[]{};
-//        System.out.println("--->Request:"+ request.getActionName()+"\n"+new String(bs));
+
+        if (verbose) {
+
+            Map<String, String> reqHeaders = request.getHeaders();
+
+            Set<String> keys = reqHeaders.keySet();
+            System.out.println("--->Request.Headers:");
+            for (String key : keys) {
+                System.out.println("\t" + key + ":" + reqHeaders.get(key));
+            }
+
+            byte[] bs = request.getContent();
+            if (bs == null) bs = new byte[]{};
+            System.out.println("--->request.Action:"+request.getActionName());
+            System.out.println("--->Request.Body:" +  new String(bs));
+        }
+
+
         HttpResponse baseResponse = this.client.doAction(request);
-        //System.out.println("--->Response.body:" + new String(baseResponse.getContent()));
+
+        if (verbose) {
+            System.out.println("--->Request.method:" + request.getMethod());
+            System.out.println("--->Request.URL:" + request.getUrl());
+            System.out.println("--->Response.Status:" + baseResponse.getStatus());
+
+            Map<String, String> headers = baseResponse.getHeaders();
+            Set<String> keys = headers.keySet();
+            System.out.println("--->Response.Headers:");
+            for (String key : keys) {
+                System.out.println("\t" + key + ":" + headers.get(key));
+            }
+
+            System.out.println("--->Response.body:" + new String(baseResponse.getContent()));
+        }
+
         return HackAcsClient.parseAcsResponse(request.getResponseClass(), baseResponse);
+
     }
+
 
 
     public CreateJobResponse createJob(CreateJobRequest request) throws ClientException {

@@ -38,6 +38,7 @@ public class Config {
         regionId = (String) prop.get("regionId");
         accessId = (String) prop.get("accessId");
         accessKey = (String) prop.get("accessKey");
+        ecsImageId = (String) prop.get("escImageId");
 
     }
 
@@ -62,9 +63,14 @@ public class Config {
         return accessKey;
     }
 
+    public String getEcsImageId() {
+        return ecsImageId;
+    }
+
 
     private String regionId;
     private String accessId;
     private String accessKey;
+    private String ecsImageId;
 
 }

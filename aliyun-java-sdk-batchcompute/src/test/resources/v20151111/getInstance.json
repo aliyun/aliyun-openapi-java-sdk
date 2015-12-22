@@ -1,0 +1,14 @@
+{
+    "EndTime": "",
+    "InstanceId": 0,
+    "Progress": 0,
+    "Result": {
+      "Detail": "",
+      "ErrorCode": "",
+      "ErrorMessage": "",
+      "ExitCode": 0},
+    "RetryCount": 0,
+    "StartTime": "",
+    "State": "Stopped",
+    "StderrRedirectPath": "oss://my-bucket/test/logs/0.stderr",
+    "StdoutRedirectPath": "oss://my-bucket/test/logs/0.stdout"}

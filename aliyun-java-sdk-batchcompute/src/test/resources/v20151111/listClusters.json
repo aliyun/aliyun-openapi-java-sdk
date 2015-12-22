@@ -1,0 +1,514 @@
+{
+  "NextMarker": "",
+  "Items": [
+    {
+      "CreationTime": "2015-12-04T03:07:26.845609Z",
+      "Description": "node-sdk test",
+      "Groups": {
+        "group1": {
+          "ActualVMCount": 0,
+          "DesiredVMCount": 3,
+          "InstanceType": "ecs.t1.small",
+          "ResourceType": "OnDemand"
+        }
+      },
+      "Id": "cls-6kilcg94rdtk003g",
+      "ImageId": "m-28ptv7mvl",
+      "Metrics": {
+        "RunningCount": 0,
+        "StartingCount": 0,
+        "StoppedCount": 0,
+        "StoppingCount": 0
+      },
+      "Name": "node-sdk-test-cluster",
+      "OperationLogs": [
+        "[2015-12-04T03:07:29.923055Z][group1]Creating instance group successfully",
+        "[2015-12-04T03:07:29.923058Z]Creating cluster successfully"
+      ],
+      "OwnerId": 48351,
+      "State": "Deleting",
+      "UserData": {}
+    },
+    {
+      "CreationTime": "2015-12-04T05:17:52.140037Z",
+      "Description": "node-sdk test",
+      "Groups": {
+        "group1": {
+          "ActualVMCount": 3,
+          "DesiredVMCount": 3,
+          "InstanceType": "ecs.t1.small",
+          "ResourceType": "OnDemand"
+        }
+      },
+      "Id": "cls-6kilcg94rdtk0040",
+      "ImageId": "m-28ptv7mvl",
+      "Metrics": {
+        "RunningCount": 3,
+        "StartingCount": 0,
+        "StoppedCount": 0,
+        "StoppingCount": 0
+      },
+      "Name": "node-sdk-test-cluster",
+      "OperationLogs": [
+        "[2015-12-04T05:17:57.646451Z][group1]Creating instance group successfully",
+        "[2015-12-04T05:17:57.646455Z]Creating cluster successfully",
+        "[2015-12-04T05:19:04.771810Z][group1][i-280hk5lk5]Instance created",
+        "[2015-12-04T05:19:08.179210Z][group1][i-28ue2alwe]Instance created",
+        "[2015-12-04T05:19:11.765387Z][group1][i-28viild58]Instance created",
+        "[2015-12-04T05:20:27.397057Z][group1][i-280hk5lk5]Instance is active",
+        "[2015-12-04T05:20:27.397515Z][group1][i-28ue2alwe]Instance is active",
+        "[2015-12-04T05:20:27.397903Z][group1][i-28viild58]Instance is active",
+        "[2015-12-07T05:03:13.363522Z][group1][i-28viild58]Release ECS instance...",
+        "[2015-12-07T05:03:28.781915Z][group1][i-28viild58]Instance released",
+        "[2015-12-07T05:04:25.547041Z][group1][i-28qf84oao]Instance created",
+        "[2015-12-07T05:06:00.480515Z][group1][i-28qf84oao]Instance is active"
+      ],
+      "OwnerId": 48351,
+      "State": "Deleting",
+      "UserData": {}
+    },
+    {
+      "CreationTime": "2015-12-08T04:04:08.880717Z",
+      "Description": "cluster desc",
+      "Groups": {
+        "group1": {
+          "ActualVMCount": 3,
+          "DesiredVMCount": 3,
+          "InstanceType": "ecs.t1.small",
+          "ResourceType": "OnDemand"
+        }
+      },
+      "Id": "cls-6kilcg94rdtk004f",
+      "ImageId": "m-28ptv7mvl",
+      "Metrics": {
+        "RunningCount": 3,
+        "StartingCount": 0,
+        "StoppedCount": 0,
+        "StoppingCount": 0
+      },
+      "Name": "cluster_test",
+      "OperationLogs": [
+        "[2015-12-08T04:04:20.439245Z][group1]Creating instance group successfully",
+        "[2015-12-08T04:04:20.439248Z]Creating cluster successfully",
+        "[2015-12-08T04:05:25.731745Z][group1][i-28qrslz3v]Instance created",
+        "[2015-12-08T04:05:29.209335Z][group1][i-28px9q77o]Instance created",
+        "[2015-12-08T04:05:32.708550Z][group1][i-28lxzrpna]Instance created",
+        "[2015-12-08T04:06:32.739606Z][group1][i-28qrslz3v]Instance is active",
+        "[2015-12-08T04:06:32.740030Z][group1][i-28px9q77o]Instance is active",
+        "[2015-12-08T04:06:49.474762Z][group1][i-28lxzrpna]Instance is active"
+      ],
+      "OwnerId": 48351,
+      "State": "Deleting",
+      "UserData": {}
+    },
+    {
+      "CreationTime": "2015-12-08T06:13:18.307376Z",
+      "Description": "java sdk test",
+      "Groups": {
+        "group1": {
+          "ActualVMCount": 0,
+          "DesiredVMCount": 3,
+          "InstanceType": "ecs.t1.small",
+          "ResourceType": "OnDemand"
+        }
+      },
+      "Id": "cls-6kilcg94rdtk004g",
+      "ImageId": "m-28ptv7mvl",
+      "Metrics": {
+        "RunningCount": 0,
+        "StartingCount": 0,
+        "StoppedCount": 0,
+        "StoppingCount": 0
+      },
+      "Name": "cluster_test",
+      "OperationLogs": [],
+      "OwnerId": 48351,
+      "State": "Deleting",
+      "UserData": {}
+    },
+    {
+      "CreationTime": "2015-12-08T05:55:50.913464Z",
+      "Description": "java sdk test",
+      "Groups": {
+        "group1": {
+          "ActualVMCount": 3,
+          "DesiredVMCount": 3,
+          "InstanceType": "ecs.t1.small",
+          "ResourceType": "OnDemand"
+        }
+      },
+      "Id": "cls-6kilcg94rdtk004i",
+      "ImageId": "m-28ptv7mvl",
+      "Metrics": {
+        "RunningCount": 3,
+        "StartingCount": 0,
+        "StoppedCount": 0,
+        "StoppingCount": 0
+      },
+      "Name": "cluster_test",
+      "OperationLogs": [
+        "[2015-12-08T05:55:56.997893Z][group1]Creating instance group successfully",
+        "[2015-12-08T05:55:56.997897Z]Creating cluster successfully",
+        "[2015-12-08T05:57:03.015196Z][group1][i-287u5lv1k]Instance created",
+        "[2015-12-08T05:57:06.400955Z][group1][i-28srqy77t]Instance created",
+        "[2015-12-08T05:57:09.890614Z][group1][i-28cwt1ozm]Instance created",
+        "[2015-12-08T05:58:09.367987Z][group1][i-287u5lv1k]Instance is active",
+        "[2015-12-08T05:58:24.587963Z][group1][i-28srqy77t]Instance is active",
+        "[2015-12-08T05:58:24.588386Z][group1][i-28cwt1ozm]Instance is active"
+      ],
+      "OwnerId": 48351,
+      "State": "Deleting",
+      "UserData": {}
+    },
+    {
+      "CreationTime": "2015-12-08T06:18:30.529083Z",
+      "Description": "java sdk test",
+      "Groups": {
+        "group1": {
+          "ActualVMCount": 0,
+          "DesiredVMCount": 3,
+          "InstanceType": "ecs.t1.small",
+          "ResourceType": "OnDemand"
+        }
+      },
+      "Id": "cls-6kilcg94rdtk004k",
+      "ImageId": "m-28ptv7mvl",
+      "Metrics": {
+        "RunningCount": 0,
+        "StartingCount": 0,
+        "StoppedCount": 0,
+        "StoppingCount": 0
+      },
+      "Name": "cluster_test",
+      "OperationLogs": [],
+      "OwnerId": 48351,
+      "State": "Deleting",
+      "UserData": {}
+    },
+    {
+      "CreationTime": "2015-12-08T07:01:34.696512Z",
+      "Description": "java sdk test",
+      "Groups": {
+        "group1": {
+          "ActualVMCount": 0,
+          "DesiredVMCount": 3,
+          "InstanceType": "ecs.t1.small",
+          "ResourceType": "OnDemand"
+        }
+      },
+      "Id": "cls-6kilcg94rdtk004l",
+      "ImageId": "m-28ptv7mvl",
+      "Metrics": {
+        "RunningCount": 0,
+        "StartingCount": 0,
+        "StoppedCount": 0,
+        "StoppingCount": 0
+      },
+      "Name": "cluster_test",
+      "OperationLogs": [],
+      "OwnerId": 48351,
+      "State": "Active",
+      "UserData": {}
+    },
+    {
+      "CreationTime": "2015-12-08T07:02:54.199332Z",
+      "Description": "java sdk test",
+      "Groups": {
+        "group1": {
+          "ActualVMCount": 0,
+          "DesiredVMCount": 3,
+          "InstanceType": "ecs.t1.small",
+          "ResourceType": "OnDemand"
+        }
+      },
+      "Id": "cls-6kilcg94rdtk004m",
+      "ImageId": "m-28ptv7mvl",
+      "Metrics": {
+        "RunningCount": 0,
+        "StartingCount": 0,
+        "StoppedCount": 0,
+        "StoppingCount": 0
+      },
+      "Name": "cluster_test",
+      "OperationLogs": [],
+      "OwnerId": 48351,
+      "State": "Active",
+      "UserData": {}
+    },
+    {
+      "CreationTime": "2015-12-08T07:06:25.410356Z",
+      "Description": "java sdk test",
+      "Groups": {
+        "group1": {
+          "ActualVMCount": 0,
+          "DesiredVMCount": 3,
+          "InstanceType": "ecs.t1.small",
+          "ResourceType": "OnDemand"
+        }
+      },
+      "Id": "cls-6kilcg94rdtk004n",
+      "ImageId": "m-28ptv7mvl",
+      "Metrics": {
+        "RunningCount": 0,
+        "StartingCount": 0,
+        "StoppedCount": 0,
+        "StoppingCount": 0
+      },
+      "Name": "cluster_test",
+      "OperationLogs": [],
+      "OwnerId": 48351,
+      "State": "Active",
+      "UserData": {}
+    },
+    {
+      "CreationTime": "2015-12-08T07:06:57.683637Z",
+      "Description": "java sdk test",
+      "Groups": {
+        "group1": {
+          "ActualVMCount": 0,
+          "DesiredVMCount": 3,
+          "InstanceType": "ecs.t1.small",
+          "ResourceType": "OnDemand"
+        }
+      },
+      "Id": "cls-6kilcg94rdtk004o",
+      "ImageId": "m-28ptv7mvl",
+      "Metrics": {
+        "RunningCount": 0,
+        "StartingCount": 0,
+        "StoppedCount": 0,
+        "StoppingCount": 0
+      },
+      "Name": "cluster_test",
+      "OperationLogs": [],
+      "OwnerId": 48351,
+      "State": "Deleting",
+      "UserData": {}
+    },
+    {
+      "CreationTime": "2015-12-08T07:45:03.969675Z",
+      "Description": "java sdk test",
+      "Groups": {
+        "group1": {
+          "ActualVMCount": 0,
+          "DesiredVMCount": 3,
+          "InstanceType": "ecs.t1.small",
+          "ResourceType": "OnDemand"
+        }
+      },
+      "Id": "cls-6kilcg94rdtk004p",
+      "ImageId": "m-28ptv7mvl",
+      "Metrics": {
+        "RunningCount": 0,
+        "StartingCount": 0,
+        "StoppedCount": 0,
+        "StoppingCount": 0
+      },
+      "Name": "cluster_test",
+      "OperationLogs": [],
+      "OwnerId": 48351,
+      "State": "Deleting",
+      "UserData": {}
+    },
+    {
+      "CreationTime": "2015-12-08T08:11:54.734476Z",
+      "Description": "java sdk test",
+      "Groups": {
+        "group1": {
+          "ActualVMCount": 0,
+          "DesiredVMCount": 3,
+          "InstanceType": "ecs.t1.small",
+          "ResourceType": "OnDemand"
+        }
+      },
+      "Id": "cls-6kilcg94rdtk004q",
+      "ImageId": "m-28ptv7mvl",
+      "Metrics": {
+        "RunningCount": 0,
+        "StartingCount": 0,
+        "StoppedCount": 0,
+        "StoppingCount": 0
+      },
+      "Name": "cluster_test",
+      "OperationLogs": [],
+      "OwnerId": 48351,
+      "State": "Deleting",
+      "UserData": {}
+    },
+    {
+      "CreationTime": "2015-12-08T08:58:16.854411Z",
+      "Description": "java sdk test",
+      "Groups": {
+        "group1": {
+          "ActualVMCount": 0,
+          "DesiredVMCount": 3,
+          "InstanceType": "ecs.t1.small",
+          "ResourceType": "OnDemand"
+        }
+      },
+      "Id": "cls-6kilcg94rdtk004r",
+      "ImageId": "m-28ptv7mvl",
+      "Metrics": {
+        "RunningCount": 0,
+        "StartingCount": 0,
+        "StoppedCount": 0,
+        "StoppingCount": 0
+      },
+      "Name": "cluster_test",
+      "OperationLogs": [],
+      "OwnerId": 48351,
+      "State": "Deleting",
+      "UserData": {}
+    },
+    {
+      "CreationTime": "2015-12-08T08:58:17.631944Z",
+      "Description": "java sdk test",
+      "Groups": {
+        "group1": {
+          "ActualVMCount": 0,
+          "DesiredVMCount": 3,
+          "InstanceType": "ecs.t1.small",
+          "ResourceType": "OnDemand"
+        }
+      },
+      "Id": "cls-6kilcg94rdtk004s",
+      "ImageId": "m-28ptv7mvl",
+      "Metrics": {
+        "RunningCount": 0,
+        "StartingCount": 0,
+        "StoppedCount": 0,
+        "StoppingCount": 0
+      },
+      "Name": "cluster_test",
+      "OperationLogs": [],
+      "OwnerId": 48351,
+      "State": "Active",
+      "UserData": {}
+    },
+    {
+      "CreationTime": "2015-12-08T08:59:19.894368Z",
+      "Description": "java sdk test",
+      "Groups": {
+        "group1": {
+          "ActualVMCount": 0,
+          "DesiredVMCount": 3,
+          "InstanceType": "ecs.t1.small",
+          "ResourceType": "OnDemand"
+        }
+      },
+      "Id": "cls-6kilcg94rdtk004t",
+      "ImageId": "m-28ptv7mvl",
+      "Metrics": {
+        "RunningCount": 0,
+        "StartingCount": 0,
+        "StoppedCount": 0,
+        "StoppingCount": 0
+      },
+      "Name": "cluster_test",
+      "OperationLogs": [],
+      "OwnerId": 48351,
+      "State": "Active",
+      "UserData": {}
+    },
+    {
+      "CreationTime": "2015-12-08T08:59:46.235677Z",
+      "Description": "java sdk test",
+      "Groups": {
+        "group1": {
+          "ActualVMCount": 0,
+          "DesiredVMCount": 3,
+          "InstanceType": "ecs.t1.small",
+          "ResourceType": "OnDemand"
+        }
+      },
+      "Id": "cls-6kilcg94rdtk004u",
+      "ImageId": "m-28ptv7mvl",
+      "Metrics": {
+        "RunningCount": 0,
+        "StartingCount": 0,
+        "StoppedCount": 0,
+        "StoppingCount": 0
+      },
+      "Name": "cluster_test",
+      "OperationLogs": [],
+      "OwnerId": 48351,
+      "State": "Deleting",
+      "UserData": {}
+    },
+    {
+      "CreationTime": "2015-12-08T09:00:08.905431Z",
+      "Description": "java sdk test",
+      "Groups": {
+        "group1": {
+          "ActualVMCount": 0,
+          "DesiredVMCount": 3,
+          "InstanceType": "ecs.t1.small",
+          "ResourceType": "OnDemand"
+        }
+      },
+      "Id": "cls-6kilcg94rdtk004v",
+      "ImageId": "m-28ptv7mvl",
+      "Metrics": {
+        "RunningCount": 0,
+        "StartingCount": 0,
+        "StoppedCount": 0,
+        "StoppingCount": 0
+      },
+      "Name": "cluster_test",
+      "OperationLogs": [],
+      "OwnerId": 48351,
+      "State": "Deleting",
+      "UserData": {}
+    },
+    {
+      "CreationTime": "2015-12-08T09:00:09.885681Z",
+      "Description": "java sdk test",
+      "Groups": {
+        "group1": {
+          "ActualVMCount": 0,
+          "DesiredVMCount": 3,
+          "InstanceType": "ecs.t1.small",
+          "ResourceType": "OnDemand"
+        }
+      },
+      "Id": "cls-6kilcg94rdtk0050",
+      "ImageId": "m-28ptv7mvl",
+      "Metrics": {
+        "RunningCount": 0,
+        "StartingCount": 0,
+        "StoppedCount": 0,
+        "StoppingCount": 0
+      },
+      "Name": "cluster_test",
+      "OperationLogs": [],
+      "OwnerId": 48351,
+      "State": "Deleting",
+      "UserData": {}
+    },
+    {
+      "CreationTime": "2015-12-08T09:13:55.470698Z",
+      "Description": "java sdk test",
+      "Groups": {
+        "group1": {
+          "ActualVMCount": 0,
+          "DesiredVMCount": 3,
+          "InstanceType": "ecs.t1.small",
+          "ResourceType": "OnDemand"
+        }
+      },
+      "Id": "cls-6kilcg94rdtk0051",
+      "ImageId": "m-28ptv7mvl",
+      "Metrics": {
+        "RunningCount": 0,
+        "StartingCount": 0,
+        "StoppedCount": 0,
+        "StoppingCount": 0
+      },
+      "Name": "cluster_test",
+      "OperationLogs": [],
+      "OwnerId": 48351,
+      "State": "Active",
+      "UserData": {}
+    }
+  ]
+}

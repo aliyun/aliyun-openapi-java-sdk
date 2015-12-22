@@ -1,0 +1,13 @@
+{
+  "Items": [{
+    "EndTime": "",
+    "InstanceMetrics": {
+      "FailedCount": 0,
+      "FinishedCount": 0,
+      "RunningCount": 0,
+      "StoppedCount": 0,
+      "WaitingCount": 1},
+    "StartTime": "",
+    "State": "Stopped",
+    "TaskName": "task_1"}],
+  "NextMarker": ""}

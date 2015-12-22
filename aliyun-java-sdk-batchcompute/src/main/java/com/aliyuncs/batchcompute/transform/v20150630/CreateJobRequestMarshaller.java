@@ -52,9 +52,9 @@ public class CreateJobRequestMarshaller {
         try {
             createJobsRequest.setContent(contentString.getBytes(), createJobsRequest.getEncoding(), createJobsRequest.getAcceptFormat());
         } catch (NoSuchAlgorithmException e) {
-            //e.printStackTrace();
-            throw new ClientException("API.EncodeError", "encode request body error");
+            e.printStackTrace();
         }
+
 
         return createJobsRequest;
     }

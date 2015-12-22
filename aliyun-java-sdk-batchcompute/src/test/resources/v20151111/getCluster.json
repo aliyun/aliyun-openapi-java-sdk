@@ -1,0 +1,25 @@
+{
+  "CreationTime": "2015-12-08T09:13:55.470698Z",
+  "Description": "java sdk test",
+  "Groups": {
+    "group1": {
+      "ActualVMCount": 0,
+      "DesiredVMCount": 3,
+      "InstanceType": "ecs.t1.small",
+      "ResourceType": "OnDemand"
+    }
+  },
+  "Id": "cls-6kilcg94rdtk0051",
+  "ImageId": "m-28ptv7mvl",
+  "Metric": {
+    "RunningCount": 0,
+    "StartingCount": 0,
+    "StoppedCount": 0,
+    "StoppingCount": 0
+  },
+  "Name": "cluster_test",
+  "OperationLogs": [],
+  "OwnerId": 48351,
+  "State": "Active",
+  "UserData": {}
+}

@@ -32,13 +32,13 @@ import java.security.NoSuchAlgorithmException;
 public class UpdateJobRequestMarshaller {
 
     public static UpdateJobRequest marshall(UpdateJobRequest updateJobRequest) {
+
+
         try {
             updateJobRequest.setContent((updateJobRequest.getPriority() + "").getBytes(),
                     updateJobRequest.getEncoding(), updateJobRequest.getAcceptFormat());
-        }
-        catch (NoSuchAlgorithmException e) {
+        } catch (NoSuchAlgorithmException e) {
             e.printStackTrace();
-            //throw new ClientException("API.EncodeError", "encode request body error");
         }
 
         return updateJobRequest;
