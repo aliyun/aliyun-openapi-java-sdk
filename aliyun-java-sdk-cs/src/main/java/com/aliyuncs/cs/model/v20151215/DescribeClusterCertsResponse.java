@@ -16,59 +16,20 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package com.aliyuncs.v20150814;
+package com.aliyuncs.cs.model.v20151215;
 
 import com.aliyuncs.AcsResponse;
+import com.aliyuncs.cs.transform.v20151215.DescribeClusterCertsResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DeleteDBSourceResponse extends AcsResponse {
-
-	private String code;
-
-	private String message;
-
-	private String success;
-
-	private String traceId;
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
-	public String getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(String success) {
-		this.success = success;
-	}
-
-	public String getTraceId() {
-		return this.traceId;
-	}
-
-	public void setTraceId(String traceId) {
-		this.traceId = traceId;
-	}
+public class DescribeClusterCertsResponse extends AcsResponse {
 
 	@Override
-	public DeleteDBSourceResponse getInstance(UnmarshallerContext context) {
-		return	DeleteDBSourceResponseUnmarshaller.unmarshall(this, context);
+	public DescribeClusterCertsResponse getInstance(UnmarshallerContext context) {
+		return	DescribeClusterCertsResponseUnmarshaller.unmarshall(this, context);
 	}
 }

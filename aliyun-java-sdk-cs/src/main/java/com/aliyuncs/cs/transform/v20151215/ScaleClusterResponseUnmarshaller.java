@@ -16,20 +16,17 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package com.aliyuncs.v20150814;
+package com.aliyuncs.cs.transform.v20151215;
 
+import com.aliyuncs.cs.model.v20151215.ScaleClusterResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class ChangeDBSourceStatusResponseUnmarshaller {
+public class ScaleClusterResponseUnmarshaller {
 
-	public static ChangeDBSourceStatusResponse unmarshall(ChangeDBSourceStatusResponse changeDBSourceStatusResponse, UnmarshallerContext context) {
+	public static ScaleClusterResponse unmarshall(ScaleClusterResponse scaleClusterResponse, UnmarshallerContext context) {
 		
-		changeDBSourceStatusResponse.setCode(context.stringValue("ChangeDBSourceStatusResponse.Code"));
-		changeDBSourceStatusResponse.setMessage(context.stringValue("ChangeDBSourceStatusResponse.Message"));
-		changeDBSourceStatusResponse.setSuccess(context.stringValue("ChangeDBSourceStatusResponse.Success"));
-		changeDBSourceStatusResponse.setTraceId(context.stringValue("ChangeDBSourceStatusResponse.TraceId"));
 	 
-	 	return changeDBSourceStatusResponse;
+	 	return scaleClusterResponse;
 	}
 }

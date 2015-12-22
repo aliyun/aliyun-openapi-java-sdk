@@ -16,20 +16,37 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package com.aliyuncs.v20150814;
+package com.aliyuncs.cs.model.v20151215;
 
-import com.aliyuncs.transform.UnmarshallerContext;
+import com.aliyuncs.RoaAcsRequest;
+import com.aliyuncs.http.MethodType;
 
-
-public class ChangeDBSourceStatusResponseUnmarshaller {
-
-	public static ChangeDBSourceStatusResponse unmarshall(ChangeDBSourceStatusResponse changeDBSourceStatusResponse, UnmarshallerContext context) {
-		
-		changeDBSourceStatusResponse.setCode(context.stringValue("ChangeDBSourceStatusResponse.Code"));
-		changeDBSourceStatusResponse.setMessage(context.stringValue("ChangeDBSourceStatusResponse.Message"));
-		changeDBSourceStatusResponse.setSuccess(context.stringValue("ChangeDBSourceStatusResponse.Success"));
-		changeDBSourceStatusResponse.setTraceId(context.stringValue("ChangeDBSourceStatusResponse.TraceId"));
-	 
-	 	return changeDBSourceStatusResponse;
+/**
+ * @author auto create
+ * @version 
+ */
+public class DescribeClusterDetailRequest extends RoaAcsRequest<DescribeClusterDetailResponse> {
+	
+	public DescribeClusterDetailRequest() {
+		super("CS", "2015-12-15", "DescribeClusterDetail");
+		setUriPattern("/clusters/[ClusterId]");
+		setMethod(MethodType.GET);
 	}
+
+	private String clusterId;
+
+	public String getClusterId() {
+		return this.clusterId;
+	}
+
+	public void setClusterId(String clusterId) {
+		this.clusterId = clusterId;
+		putPathParameter("ClusterId", clusterId);
+	}
+
+	@Override
+	public Class<DescribeClusterDetailResponse> getResponseClass() {
+		return DescribeClusterDetailResponse.class;
+	}
+
 }

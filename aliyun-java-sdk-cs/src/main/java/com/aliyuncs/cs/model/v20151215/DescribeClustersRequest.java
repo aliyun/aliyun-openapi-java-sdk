@@ -16,20 +16,37 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package com.aliyuncs.v20150814;
+package com.aliyuncs.cs.model.v20151215;
 
-import com.aliyuncs.transform.UnmarshallerContext;
+import com.aliyuncs.RoaAcsRequest;
+import com.aliyuncs.http.MethodType;
 
-
-public class ChangeDBSourceStatusResponseUnmarshaller {
-
-	public static ChangeDBSourceStatusResponse unmarshall(ChangeDBSourceStatusResponse changeDBSourceStatusResponse, UnmarshallerContext context) {
-		
-		changeDBSourceStatusResponse.setCode(context.stringValue("ChangeDBSourceStatusResponse.Code"));
-		changeDBSourceStatusResponse.setMessage(context.stringValue("ChangeDBSourceStatusResponse.Message"));
-		changeDBSourceStatusResponse.setSuccess(context.stringValue("ChangeDBSourceStatusResponse.Success"));
-		changeDBSourceStatusResponse.setTraceId(context.stringValue("ChangeDBSourceStatusResponse.TraceId"));
-	 
-	 	return changeDBSourceStatusResponse;
+/**
+ * @author auto create
+ * @version 
+ */
+public class DescribeClustersRequest extends RoaAcsRequest<DescribeClustersResponse> {
+	
+	public DescribeClustersRequest() {
+		super("CS", "2015-12-15", "DescribeClusters");
+		setUriPattern("/clusters");
+		setMethod(MethodType.GET);
 	}
+
+	private String name;
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+		putQueryParameter("Name", name);
+	}
+
+	@Override
+	public Class<DescribeClustersResponse> getResponseClass() {
+		return DescribeClustersResponse.class;
+	}
+
 }
