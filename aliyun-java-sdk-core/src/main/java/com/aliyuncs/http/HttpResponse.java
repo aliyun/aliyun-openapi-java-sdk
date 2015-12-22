@@ -111,7 +111,7 @@ public class HttpResponse extends HttpRequest {
 
 		try {
 			httpConn.connect();
-			if (null != request.getContent()) {
+			if (null != request.getContent() && request.getContent().length > 0) {
 				out = httpConn.getOutputStream();
 				out.write(request.getContent());
 			}
