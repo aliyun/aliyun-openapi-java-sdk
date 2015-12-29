@@ -54,7 +54,7 @@ public class DescribeDBInstancesByExpireTimeRequest extends RpcAcsRequest<Descri
 
 	public void setOwnerId(Long ownerId) {
 		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", String.valueOf(ownerId));
+		putQueryParameter("OwnerId", ownerId);
 	}
 
 	public String getResourceOwnerAccount() {
@@ -72,7 +72,7 @@ public class DescribeDBInstancesByExpireTimeRequest extends RpcAcsRequest<Descri
 
 	public void setResourceOwnerId(Long resourceOwnerId) {
 		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", String.valueOf(resourceOwnerId));
+		putQueryParameter("ResourceOwnerId", resourceOwnerId);
 	}
 
 	public String getClientToken() {
@@ -99,7 +99,7 @@ public class DescribeDBInstancesByExpireTimeRequest extends RpcAcsRequest<Descri
 
 	public void setExpirePeriod(Integer expirePeriod) {
 		this.expirePeriod = expirePeriod;
-		putQueryParameter("ExpirePeriod", String.valueOf(expirePeriod));
+		putQueryParameter("ExpirePeriod", expirePeriod);
 	}
 
 	public Integer getPageSize() {
@@ -108,7 +108,7 @@ public class DescribeDBInstancesByExpireTimeRequest extends RpcAcsRequest<Descri
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
-		putQueryParameter("PageSize", String.valueOf(pageSize));
+		putQueryParameter("PageSize", pageSize);
 	}
 
 	public Integer getPageNumber() {
@@ -117,7 +117,7 @@ public class DescribeDBInstancesByExpireTimeRequest extends RpcAcsRequest<Descri
 
 	public void setPageNumber(Integer pageNumber) {
 		this.pageNumber = pageNumber;
-		putQueryParameter("PageNumber", String.valueOf(pageNumber));
+		putQueryParameter("PageNumber", pageNumber);
 	}
 
 	public String getOwnerAccount() {

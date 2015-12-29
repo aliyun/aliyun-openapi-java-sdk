@@ -2,6 +2,9 @@
 <Endpoints>
     <Endpoint name="cn-hangzhou">
         <RegionIds>
+			<RegionId>cn-beijing-inner</RegionId>
+        	<RegionId>cn-shanghai-inner</RegionId>
+        	<RegionId>cn-shenzhen-inner</RegionId>
         	<RegionId>cn-beijing</RegionId>
         	<RegionId>cn-hangzhou</RegionId>
         	<RegionId>cn-hangzhou-d</RegionId>
@@ -13,6 +16,14 @@
         	<RegionId>ap-southeast-1</RegionId>
         </RegionIds>
 	    <Products>
+			<Product>
+               <ProductName>Location-inner</ProductName>
+               <DomainName>location-inner.aliyuncs.com</DomainName>
+            </Product>
+			<Product>
+               <ProductName>oceanbase</ProductName>
+               <DomainName>oceanbase.aliyuncs.com</DomainName>
+            </Product>
 			<Product>
                <ProductName>CS</ProductName>
                <DomainName>cs.aliyuncs.com</DomainName>
@@ -47,7 +58,7 @@
 	        </Product>
 	        <Product>
 	            <ProductName>Rds</ProductName>
-	            <DomainName>rds.aliyuncs.com</DomainName>
+	            <DomainName>rds-cn-hangzhou.aliyuncs.com</DomainName>
 	        </Product>
 	        <Product>
 	            <ProductName>Slb</ProductName>
@@ -181,6 +192,14 @@
         </RegionIds>
 	    <Products>
 			<Product>
+               <ProductName>Location-inner</ProductName>
+               <DomainName>location-inner.aliyuncs.com</DomainName>
+            </Product>
+			<Product>
+               <ProductName>oceanbase</ProductName>
+               <DomainName>oceanbase.aliyuncs.com</DomainName>
+            </Product> 
+			<Product>
                <ProductName>CS</ProductName>
                <DomainName>cs.aliyuncs.com</DomainName>
             </Product>
@@ -218,7 +237,7 @@
 	        </Product>
 	        <Product>
 	            <ProductName>Rds</ProductName>
-	            <DomainName>rds.aliyuncs.com</DomainName>
+	            <DomainName>rds-cn-hangzhou.aliyuncs.com</DomainName>
 	        </Product>
 	        <Product>
 	            <ProductName>Slb</ProductName>
@@ -352,6 +371,14 @@
         </RegionIds>
 	    <Products>
 			<Product>
+               <ProductName>Location-inner</ProductName>
+               <DomainName>location-inner.aliyuncs.com</DomainName>
+            </Product>
+			<Product>
+               <ProductName>oceanbase</ProductName>
+               <DomainName>oceanbase.aliyuncs.com</DomainName>
+            </Product> 
+			<Product>
                <ProductName>CS</ProductName>
                <DomainName>cs.aliyuncs.com</DomainName>
             </Product>
@@ -385,7 +412,7 @@
 	        </Product>
 	        <Product>
 	            <ProductName>Rds</ProductName>
-	            <DomainName>rds.aliyuncs.com</DomainName>
+	            <DomainName>rds-cn-hangzhou.aliyuncs.com</DomainName>
 	        </Product>
 	        <Product>
 	            <ProductName>Slb</ProductName>

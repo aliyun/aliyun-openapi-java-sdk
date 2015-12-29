@@ -57,6 +57,8 @@ public class DescribeAccountsResponse extends AcsResponse {
 
 		private AccountStatus accountStatus;
 
+		private AccountType accountType;
+
 		private String accountDescription;
 
 		private List<DatabasePrivilege> databasePrivileges;
@@ -83,6 +85,14 @@ public class DescribeAccountsResponse extends AcsResponse {
 
 		public void setAccountStatus(AccountStatus accountStatus) {
 			this.accountStatus = accountStatus;
+		}
+
+		public AccountType getAccountType() {
+			return this.accountType;
+		}
+
+		public void setAccountType(AccountType accountType) {
+			this.accountType = accountType;
 		}
 
 		public String getAccountDescription() {
@@ -128,6 +138,39 @@ public class DescribeAccountsResponse extends AcsResponse {
 		    	for (AccountStatus accountStatus : AccountStatus.values()) {
 					if(accountStatus.getStringValue().equals(stringValue)){
 						return accountStatus;
+					}
+				}
+		    	return null;
+		    }
+		}
+
+		public enum AccountType {
+		
+			NORMAL("Normal"),
+			SUPER("Super"),;
+			
+		    private String stringValue;
+		
+			AccountType(String stringValue) {
+		        setStringValue(stringValue);
+		    }
+		
+		    public String getStringValue() {
+		        return stringValue;
+		    }
+		
+		    public void setStringValue(String stringValue) {
+		        this.stringValue = stringValue;
+		    }
+		    
+		    public static AccountType getEnum(String stringValue){
+		    	if(null == stringValue){
+		    		return null;
+		    	}
+		    	
+		    	for (AccountType accountType : AccountType.values()) {
+					if(accountType.getStringValue().equals(stringValue)){
+						return accountType;
 					}
 				}
 		    	return null;

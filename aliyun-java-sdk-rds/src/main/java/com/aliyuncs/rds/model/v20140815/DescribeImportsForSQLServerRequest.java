@@ -56,7 +56,7 @@ public class DescribeImportsForSQLServerRequest extends RpcAcsRequest<DescribeIm
 
 	public void setOwnerId(Long ownerId) {
 		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", String.valueOf(ownerId));
+		putQueryParameter("OwnerId", ownerId);
 	}
 
 	public String getResourceOwnerAccount() {
@@ -74,7 +74,7 @@ public class DescribeImportsForSQLServerRequest extends RpcAcsRequest<DescribeIm
 
 	public void setResourceOwnerId(Long resourceOwnerId) {
 		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", String.valueOf(resourceOwnerId));
+		putQueryParameter("ResourceOwnerId", resourceOwnerId);
 	}
 
 	public String getDBInstanceId() {
@@ -92,7 +92,7 @@ public class DescribeImportsForSQLServerRequest extends RpcAcsRequest<DescribeIm
 
 	public void setImportId(Integer importId) {
 		this.importId = importId;
-		putQueryParameter("ImportId", String.valueOf(importId));
+		putQueryParameter("ImportId", importId);
 	}
 
 	public String getStartTime() {
@@ -119,7 +119,7 @@ public class DescribeImportsForSQLServerRequest extends RpcAcsRequest<DescribeIm
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
-		putQueryParameter("PageSize", String.valueOf(pageSize));
+		putQueryParameter("PageSize", pageSize);
 	}
 
 	public Integer getPageNumber() {
@@ -128,7 +128,7 @@ public class DescribeImportsForSQLServerRequest extends RpcAcsRequest<DescribeIm
 
 	public void setPageNumber(Integer pageNumber) {
 		this.pageNumber = pageNumber;
-		putQueryParameter("PageNumber", String.valueOf(pageNumber));
+		putQueryParameter("PageNumber", pageNumber);
 	}
 
 	public String getOwnerAccount() {

@@ -68,7 +68,7 @@ public class CreateReadOnlyDBInstanceRequest extends RpcAcsRequest<CreateReadOnl
 
 	public void setOwnerId(Long ownerId) {
 		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", String.valueOf(ownerId));
+		putQueryParameter("OwnerId", ownerId);
 	}
 
 	public String getResourceOwnerAccount() {
@@ -86,7 +86,7 @@ public class CreateReadOnlyDBInstanceRequest extends RpcAcsRequest<CreateReadOnl
 
 	public void setResourceOwnerId(Long resourceOwnerId) {
 		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", String.valueOf(resourceOwnerId));
+		putQueryParameter("ResourceOwnerId", resourceOwnerId);
 	}
 
 	public String getClientToken() {
@@ -131,7 +131,7 @@ public class CreateReadOnlyDBInstanceRequest extends RpcAcsRequest<CreateReadOnl
 
 	public void setDBInstanceStorage(Integer dBInstanceStorage) {
 		this.dBInstanceStorage = dBInstanceStorage;
-		putQueryParameter("DBInstanceStorage", String.valueOf(dBInstanceStorage));
+		putQueryParameter("DBInstanceStorage", dBInstanceStorage);
 	}
 
 	public String getEngineVersion() {

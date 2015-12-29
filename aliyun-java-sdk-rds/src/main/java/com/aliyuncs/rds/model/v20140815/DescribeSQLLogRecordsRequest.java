@@ -46,6 +46,12 @@ public class DescribeSQLLogRecordsRequest extends RpcAcsRequest<DescribeSQLLogRe
 
 	private String startTime;
 
+	private String database;
+
+	private String user;
+
+	private String format;
+
 	private String endTime;
 
 	private Integer pageSize;
@@ -60,7 +66,7 @@ public class DescribeSQLLogRecordsRequest extends RpcAcsRequest<DescribeSQLLogRe
 
 	public void setOwnerId(Long ownerId) {
 		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", String.valueOf(ownerId));
+		putQueryParameter("OwnerId", ownerId);
 	}
 
 	public String getResourceOwnerAccount() {
@@ -78,7 +84,7 @@ public class DescribeSQLLogRecordsRequest extends RpcAcsRequest<DescribeSQLLogRe
 
 	public void setResourceOwnerId(Long resourceOwnerId) {
 		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", String.valueOf(resourceOwnerId));
+		putQueryParameter("ResourceOwnerId", resourceOwnerId);
 	}
 
 	public String getClientToken() {
@@ -105,7 +111,7 @@ public class DescribeSQLLogRecordsRequest extends RpcAcsRequest<DescribeSQLLogRe
 
 	public void setSQLId(Long sQLId) {
 		this.sQLId = sQLId;
-		putQueryParameter("SQLId", String.valueOf(sQLId));
+		putQueryParameter("SQLId", sQLId);
 	}
 
 	public String getQueryKeywords() {
@@ -126,6 +132,33 @@ public class DescribeSQLLogRecordsRequest extends RpcAcsRequest<DescribeSQLLogRe
 		putQueryParameter("StartTime", startTime);
 	}
 
+	public String getDatabase() {
+		return this.database;
+	}
+
+	public void setDatabase(String database) {
+		this.database = database;
+		putQueryParameter("Database", database);
+	}
+
+	public String getUser() {
+		return this.user;
+	}
+
+	public void setUser(String user) {
+		this.user = user;
+		putQueryParameter("User", user);
+	}
+
+	public String getFormat() {
+		return this.format;
+	}
+
+	public void setFormat(String format) {
+		this.format = format;
+		putQueryParameter("Format", format);
+	}
+
 	public String getEndTime() {
 		return this.endTime;
 	}
@@ -141,7 +174,7 @@ public class DescribeSQLLogRecordsRequest extends RpcAcsRequest<DescribeSQLLogRe
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
-		putQueryParameter("PageSize", String.valueOf(pageSize));
+		putQueryParameter("PageSize", pageSize);
 	}
 
 	public Integer getPageNumber() {
@@ -150,7 +183,7 @@ public class DescribeSQLLogRecordsRequest extends RpcAcsRequest<DescribeSQLLogRe
 
 	public void setPageNumber(Integer pageNumber) {
 		this.pageNumber = pageNumber;
-		putQueryParameter("PageNumber", String.valueOf(pageNumber));
+		putQueryParameter("PageNumber", pageNumber);
 	}
 
 	public String getOwnerAccount() {

@@ -20,14 +20,15 @@ package com.aliyuncs.rds.transform.v20140815;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import com.aliyuncs.rds.model.v20140815.DescribeBackupsResponse;
 import com.aliyuncs.rds.model.v20140815.DescribeBackupsResponse.Backup;
+import com.aliyuncs.rds.model.v20140815.DescribeBackupsResponse.Backup.BackupExtractionStatus;
+import com.aliyuncs.rds.model.v20140815.DescribeBackupsResponse.Backup.BackupMethod;
+import com.aliyuncs.rds.model.v20140815.DescribeBackupsResponse.Backup.BackupMode;
+import com.aliyuncs.rds.model.v20140815.DescribeBackupsResponse.Backup.BackupScale;
 import com.aliyuncs.rds.model.v20140815.DescribeBackupsResponse.Backup.BackupStatus;
 import com.aliyuncs.rds.model.v20140815.DescribeBackupsResponse.Backup.BackupType;
-import com.aliyuncs.rds.model.v20140815.DescribeBackupsResponse.Backup.BackupMode;
-import com.aliyuncs.rds.model.v20140815.DescribeBackupsResponse.Backup.BackupMethod;
-import com.aliyuncs.rds.model.v20140815.DescribeBackupsResponse.Backup.BackupExtractionStatus;
-import com.aliyuncs.rds.model.v20140815.DescribeBackupsResponse.Backup.BackupScale;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -42,7 +43,7 @@ public class DescribeBackupsResponseUnmarshaller {
 
 		List<Backup> items = new ArrayList<Backup>();
 		for (int i = 0; i < context.lengthValue("DescribeBackupsResponse.Items.Length"); i++) {
-			Backup  backup = new Backup();
+			Backup backup = new Backup();
 			backup.setBackupId(context.stringValue("DescribeBackupsResponse.Items["+ i +"].BackupId"));
 			backup.setDBInstanceId(context.stringValue("DescribeBackupsResponse.Items["+ i +"].DBInstanceId"));
 			backup.setBackupStatus(BackupStatus.getEnum(context.stringValue("DescribeBackupsResponse.Items["+ i +"].BackupStatus")));

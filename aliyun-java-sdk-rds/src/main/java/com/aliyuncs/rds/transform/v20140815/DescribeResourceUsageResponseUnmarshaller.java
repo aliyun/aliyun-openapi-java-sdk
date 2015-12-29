@@ -33,6 +33,8 @@ public class DescribeResourceUsageResponseUnmarshaller {
 		describeResourceUsageResponse.setDataSize(context.longValue("DescribeResourceUsageResponse.DataSize"));
 		describeResourceUsageResponse.setLogSize(context.longValue("DescribeResourceUsageResponse.LogSize"));
 		describeResourceUsageResponse.setBackupSize(context.longValue("DescribeResourceUsageResponse.BackupSize"));
+		describeResourceUsageResponse.setSQLSize(context.longValue("DescribeResourceUsageResponse.SQLSize"));
+		describeResourceUsageResponse.setColdBackupSize(context.longValue("DescribeResourceUsageResponse.ColdBackupSize"));
 	 
 	 	return describeResourceUsageResponse;
 	}

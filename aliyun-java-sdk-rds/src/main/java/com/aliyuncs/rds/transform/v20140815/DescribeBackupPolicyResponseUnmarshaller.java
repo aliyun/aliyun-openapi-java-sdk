@@ -31,6 +31,7 @@ public class DescribeBackupPolicyResponseUnmarshaller {
 		describeBackupPolicyResponse.setPreferredNextBackupTime(context.stringValue("DescribeBackupPolicyResponse.PreferredNextBackupTime"));
 		describeBackupPolicyResponse.setPreferredBackupTime(context.stringValue("DescribeBackupPolicyResponse.PreferredBackupTime"));
 		describeBackupPolicyResponse.setPreferredBackupPeriod(context.stringValue("DescribeBackupPolicyResponse.PreferredBackupPeriod"));
+		describeBackupPolicyResponse.setBackupLog(context.stringValue("DescribeBackupPolicyResponse.BackupLog"));
 	 
 	 	return describeBackupPolicyResponse;
 	}

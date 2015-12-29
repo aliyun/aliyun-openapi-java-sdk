@@ -99,6 +99,10 @@ public class DescribeTasksResponse extends AcsResponse {
 
 		private Status status;
 
+		private String taskErrorCode;
+
+		private String taskErrorMessage;
+
 		public String getDBName() {
 			return this.dBName;
 		}
@@ -169,6 +173,22 @@ public class DescribeTasksResponse extends AcsResponse {
 
 		public void setStatus(Status status) {
 			this.status = status;
+		}
+
+		public String getTaskErrorCode() {
+			return this.taskErrorCode;
+		}
+
+		public void setTaskErrorCode(String taskErrorCode) {
+			this.taskErrorCode = taskErrorCode;
+		}
+
+		public String getTaskErrorMessage() {
+			return this.taskErrorMessage;
+		}
+
+		public void setTaskErrorMessage(String taskErrorMessage) {
+			this.taskErrorMessage = taskErrorMessage;
 		}
 
 		public enum Status {

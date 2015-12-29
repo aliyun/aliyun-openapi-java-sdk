@@ -20,6 +20,7 @@ package com.aliyuncs.rds.transform.v20140815;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import com.aliyuncs.rds.model.v20140815.DescribeBinlogFilesResponse;
 import com.aliyuncs.rds.model.v20140815.DescribeBinlogFilesResponse.BinLogFile;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -36,7 +37,7 @@ public class DescribeBinlogFilesResponseUnmarshaller {
 
 		List<BinLogFile> items = new ArrayList<BinLogFile>();
 		for (int i = 0; i < context.lengthValue("DescribeBinlogFilesResponse.Items.Length"); i++) {
-			BinLogFile  binLogFile = new BinLogFile();
+			BinLogFile binLogFile = new BinLogFile();
 			binLogFile.setFileSize(context.longValue("DescribeBinlogFilesResponse.Items["+ i +"].FileSize"));
 			binLogFile.setLogBeginTime(context.stringValue("DescribeBinlogFilesResponse.Items["+ i +"].LogBeginTime"));
 			binLogFile.setLogEndTime(context.stringValue("DescribeBinlogFilesResponse.Items["+ i +"].LogEndTime"));

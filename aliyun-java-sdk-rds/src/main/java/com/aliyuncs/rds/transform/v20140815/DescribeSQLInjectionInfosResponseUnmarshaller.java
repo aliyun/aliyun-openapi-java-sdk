@@ -20,6 +20,7 @@ package com.aliyuncs.rds.transform.v20140815;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import com.aliyuncs.rds.model.v20140815.DescribeSQLInjectionInfosResponse;
 import com.aliyuncs.rds.model.v20140815.DescribeSQLInjectionInfosResponse.SQLInjectionInfo;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -37,7 +38,7 @@ public class DescribeSQLInjectionInfosResponseUnmarshaller {
 
 		List<SQLInjectionInfo> items = new ArrayList<SQLInjectionInfo>();
 		for (int i = 0; i < context.lengthValue("DescribeSQLInjectionInfosResponse.Items.Length"); i++) {
-			SQLInjectionInfo  sQLInjectionInfo = new SQLInjectionInfo();
+			SQLInjectionInfo sQLInjectionInfo = new SQLInjectionInfo();
 			sQLInjectionInfo.setDBName(context.stringValue("DescribeSQLInjectionInfosResponse.Items["+ i +"].DBName"));
 			sQLInjectionInfo.setSQLText(context.stringValue("DescribeSQLInjectionInfosResponse.Items["+ i +"].SQLText"));
 			sQLInjectionInfo.setLatencyTime(context.stringValue("DescribeSQLInjectionInfosResponse.Items["+ i +"].LatencyTime"));

@@ -20,6 +20,7 @@ package com.aliyuncs.rds.transform.v20140815;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import com.aliyuncs.rds.model.v20140815.DescribeVpcZoneNosResponse;
 import com.aliyuncs.rds.model.v20140815.DescribeVpcZoneNosResponse.VpcZoneId;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -33,7 +34,7 @@ public class DescribeVpcZoneNosResponseUnmarshaller {
 
 		List<VpcZoneId> items = new ArrayList<VpcZoneId>();
 		for (int i = 0; i < context.lengthValue("DescribeVpcZoneNosResponse.Items.Length"); i++) {
-			VpcZoneId  vpcZoneId = new VpcZoneId();
+			VpcZoneId vpcZoneId = new VpcZoneId();
 			vpcZoneId.setZoneId(context.stringValue("DescribeVpcZoneNosResponse.Items["+ i +"].ZoneId"));
 			vpcZoneId.setRegion(context.stringValue("DescribeVpcZoneNosResponse.Items["+ i +"].Region"));
 			vpcZoneId.setSubDomain(context.stringValue("DescribeVpcZoneNosResponse.Items["+ i +"].SubDomain"));

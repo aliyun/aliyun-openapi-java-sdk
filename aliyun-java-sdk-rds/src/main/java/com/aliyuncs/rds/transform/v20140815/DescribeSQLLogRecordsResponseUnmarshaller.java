@@ -20,6 +20,7 @@ package com.aliyuncs.rds.transform.v20140815;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import com.aliyuncs.rds.model.v20140815.DescribeSQLLogRecordsResponse;
 import com.aliyuncs.rds.model.v20140815.DescribeSQLLogRecordsResponse.SQLRecord;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -36,7 +37,7 @@ public class DescribeSQLLogRecordsResponseUnmarshaller {
 
 		List<SQLRecord> items = new ArrayList<SQLRecord>();
 		for (int i = 0; i < context.lengthValue("DescribeSQLLogRecordsResponse.Items.Length"); i++) {
-			SQLRecord  sQLRecord = new SQLRecord();
+			SQLRecord sQLRecord = new SQLRecord();
 			sQLRecord.setDBName(context.stringValue("DescribeSQLLogRecordsResponse.Items["+ i +"].DBName"));
 			sQLRecord.setAccountName(context.stringValue("DescribeSQLLogRecordsResponse.Items["+ i +"].AccountName"));
 			sQLRecord.setHostAddress(context.stringValue("DescribeSQLLogRecordsResponse.Items["+ i +"].HostAddress"));

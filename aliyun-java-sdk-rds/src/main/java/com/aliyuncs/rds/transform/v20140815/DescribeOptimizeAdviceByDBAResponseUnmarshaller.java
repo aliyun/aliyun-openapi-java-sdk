@@ -20,6 +20,7 @@ package com.aliyuncs.rds.transform.v20140815;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import com.aliyuncs.rds.model.v20140815.DescribeOptimizeAdviceByDBAResponse;
 import com.aliyuncs.rds.model.v20140815.DescribeOptimizeAdviceByDBAResponse.AdviceByDBA;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -36,7 +37,7 @@ public class DescribeOptimizeAdviceByDBAResponseUnmarshaller {
 
 		List<AdviceByDBA> items = new ArrayList<AdviceByDBA>();
 		for (int i = 0; i < context.lengthValue("DescribeOptimizeAdviceByDBAResponse.Items.Length"); i++) {
-			AdviceByDBA  adviceByDBA = new AdviceByDBA();
+			AdviceByDBA adviceByDBA = new AdviceByDBA();
 			adviceByDBA.setOptimizationText(context.stringValue("DescribeOptimizeAdviceByDBAResponse.Items["+ i +"].OptimizationText"));
 
 			items.add(adviceByDBA);

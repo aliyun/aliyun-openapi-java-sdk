@@ -51,6 +51,8 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 
 	public static class DBInstanceAttribute {
 
+		private Integer insId;
+
 		private String dBInstanceId;
 
 		private String payType;
@@ -58,8 +60,6 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 		private String dBInstanceClassType;
 
 		private DBInstanceType dBInstanceType;
-
-		private Integer insId;
 
 		private String regionId;
 
@@ -119,11 +119,23 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 
 		private String instanceNetworkType;
 
+		private AccountType accountType;
+
+		private SupportUpgradeAccountType supportUpgradeAccountType;
+
 		private String vpcId;
 
 		private ConnectionMode connectionMode;
 
 		private List<ReadOnlyDBInstanceId> readOnlyDBInstanceIds;
+
+		public Integer getInsId() {
+			return this.insId;
+		}
+
+		public void setInsId(Integer insId) {
+			this.insId = insId;
+		}
 
 		public String getDBInstanceId() {
 			return this.dBInstanceId;
@@ -155,14 +167,6 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 
 		public void setDBInstanceType(DBInstanceType dBInstanceType) {
 			this.dBInstanceType = dBInstanceType;
-		}
-
-		public Integer getInsId() {
-			return this.insId;
-		}
-
-		public void setInsId(Integer insId) {
-			this.insId = insId;
 		}
 
 		public String getRegionId() {
@@ -397,6 +401,22 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 			this.instanceNetworkType = instanceNetworkType;
 		}
 
+		public AccountType getAccountType() {
+			return this.accountType;
+		}
+
+		public void setAccountType(AccountType accountType) {
+			this.accountType = accountType;
+		}
+
+		public SupportUpgradeAccountType getSupportUpgradeAccountType() {
+			return this.supportUpgradeAccountType;
+		}
+
+		public void setSupportUpgradeAccountType(SupportUpgradeAccountType supportUpgradeAccountType) {
+			this.supportUpgradeAccountType = supportUpgradeAccountType;
+		}
+
 		public String getVpcId() {
 			return this.vpcId;
 		}
@@ -567,6 +587,72 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 		    	for (LockMode lockMode : LockMode.values()) {
 					if(lockMode.getStringValue().equals(stringValue)){
 						return lockMode;
+					}
+				}
+		    	return null;
+		    }
+		}
+
+		public enum AccountType {
+		
+			NORMAL("Normal"),
+			SUPER("Super"),;
+			
+		    private String stringValue;
+		
+			AccountType(String stringValue) {
+		        setStringValue(stringValue);
+		    }
+		
+		    public String getStringValue() {
+		        return stringValue;
+		    }
+		
+		    public void setStringValue(String stringValue) {
+		        this.stringValue = stringValue;
+		    }
+		    
+		    public static AccountType getEnum(String stringValue){
+		    	if(null == stringValue){
+		    		return null;
+		    	}
+		    	
+		    	for (AccountType accountType : AccountType.values()) {
+					if(accountType.getStringValue().equals(stringValue)){
+						return accountType;
+					}
+				}
+		    	return null;
+		    }
+		}
+
+		public enum SupportUpgradeAccountType {
+		
+			YES("Yes"),
+			NO("No"),;
+			
+		    private String stringValue;
+		
+			SupportUpgradeAccountType(String stringValue) {
+		        setStringValue(stringValue);
+		    }
+		
+		    public String getStringValue() {
+		        return stringValue;
+		    }
+		
+		    public void setStringValue(String stringValue) {
+		        this.stringValue = stringValue;
+		    }
+		    
+		    public static SupportUpgradeAccountType getEnum(String stringValue){
+		    	if(null == stringValue){
+		    		return null;
+		    	}
+		    	
+		    	for (SupportUpgradeAccountType supportUpgradeAccountType : SupportUpgradeAccountType.values()) {
+					if(supportUpgradeAccountType.getStringValue().equals(stringValue)){
+						return supportUpgradeAccountType;
 					}
 				}
 		    	return null;

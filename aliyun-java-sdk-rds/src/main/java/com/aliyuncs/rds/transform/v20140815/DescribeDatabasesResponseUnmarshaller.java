@@ -20,6 +20,7 @@ package com.aliyuncs.rds.transform.v20140815;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import com.aliyuncs.rds.model.v20140815.DescribeDatabasesResponse;
 import com.aliyuncs.rds.model.v20140815.DescribeDatabasesResponse.Database;
 import com.aliyuncs.rds.model.v20140815.DescribeDatabasesResponse.Database.AccountPrivilegeInfo;
@@ -35,7 +36,7 @@ public class DescribeDatabasesResponseUnmarshaller {
 
 		List<Database> databases = new ArrayList<Database>();
 		for (int i = 0; i < context.lengthValue("DescribeDatabasesResponse.Databases.Length"); i++) {
-			Database  database = new Database();
+			Database database = new Database();
 			database.setDBName(context.stringValue("DescribeDatabasesResponse.Databases["+ i +"].DBName"));
 			database.setDBInstanceId(context.stringValue("DescribeDatabasesResponse.Databases["+ i +"].DBInstanceId"));
 			database.setEngine(context.stringValue("DescribeDatabasesResponse.Databases["+ i +"].Engine"));
@@ -45,7 +46,7 @@ public class DescribeDatabasesResponseUnmarshaller {
 
 			List<AccountPrivilegeInfo> accounts = new ArrayList<AccountPrivilegeInfo>();
 			for (int j = 0; j < context.lengthValue("DescribeDatabasesResponse.Databases["+ i +"].Accounts.Length"); j++) {
-				AccountPrivilegeInfo  accountPrivilegeInfo = new AccountPrivilegeInfo();
+				AccountPrivilegeInfo accountPrivilegeInfo = new AccountPrivilegeInfo();
 				accountPrivilegeInfo.setAccount(context.stringValue("DescribeDatabasesResponse.Databases["+ i +"].Accounts["+ j +"].Account"));
 				accountPrivilegeInfo.setAccountPrivilege(context.stringValue("DescribeDatabasesResponse.Databases["+ i +"].Accounts["+ j +"].AccountPrivilege"));
 

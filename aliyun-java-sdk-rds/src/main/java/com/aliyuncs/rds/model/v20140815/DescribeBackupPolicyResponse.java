@@ -38,6 +38,8 @@ public class DescribeBackupPolicyResponse extends AcsResponse {
 
 	private String preferredBackupPeriod;
 
+	private String backupLog;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -76,6 +78,14 @@ public class DescribeBackupPolicyResponse extends AcsResponse {
 
 	public void setPreferredBackupPeriod(String preferredBackupPeriod) {
 		this.preferredBackupPeriod = preferredBackupPeriod;
+	}
+
+	public String getBackupLog() {
+		return this.backupLog;
+	}
+
+	public void setBackupLog(String backupLog) {
+		this.backupLog = backupLog;
 	}
 
 	@Override

@@ -20,14 +20,15 @@ package com.aliyuncs.rds.transform.v20140815;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import com.aliyuncs.rds.model.v20140815.DescribeDBInstancesResponse;
 import com.aliyuncs.rds.model.v20140815.DescribeDBInstancesResponse.DBInstance;
-import com.aliyuncs.rds.model.v20140815.DescribeDBInstancesResponse.DBInstance.ReadOnlyDBInstanceId;
-import com.aliyuncs.rds.model.v20140815.DescribeDBInstancesResponse.DBInstance.DBInstanceType;
-import com.aliyuncs.rds.model.v20140815.DescribeDBInstancesResponse.DBInstance.DBInstanceStatus;
-import com.aliyuncs.rds.model.v20140815.DescribeDBInstancesResponse.DBInstance.DBInstanceNetType;
 import com.aliyuncs.rds.model.v20140815.DescribeDBInstancesResponse.DBInstance.ConnectionMode;
+import com.aliyuncs.rds.model.v20140815.DescribeDBInstancesResponse.DBInstance.DBInstanceNetType;
+import com.aliyuncs.rds.model.v20140815.DescribeDBInstancesResponse.DBInstance.DBInstanceStatus;
+import com.aliyuncs.rds.model.v20140815.DescribeDBInstancesResponse.DBInstance.DBInstanceType;
 import com.aliyuncs.rds.model.v20140815.DescribeDBInstancesResponse.DBInstance.LockMode;
+import com.aliyuncs.rds.model.v20140815.DescribeDBInstancesResponse.DBInstance.ReadOnlyDBInstanceId;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -42,7 +43,7 @@ public class DescribeDBInstancesResponseUnmarshaller {
 
 		List<DBInstance> items = new ArrayList<DBInstance>();
 		for (int i = 0; i < context.lengthValue("DescribeDBInstancesResponse.Items.Length"); i++) {
-			DBInstance  dBInstance = new DBInstance();
+			DBInstance dBInstance = new DBInstance();
 			dBInstance.setInsId(context.integerValue("DescribeDBInstancesResponse.Items["+ i +"].InsId"));
 			dBInstance.setDBInstanceId(context.stringValue("DescribeDBInstancesResponse.Items["+ i +"].DBInstanceId"));
 			dBInstance.setDBInstanceDescription(context.stringValue("DescribeDBInstancesResponse.Items["+ i +"].DBInstanceDescription"));
@@ -68,7 +69,7 @@ public class DescribeDBInstancesResponseUnmarshaller {
 
 			List<ReadOnlyDBInstanceId> readOnlyDBInstanceIds = new ArrayList<ReadOnlyDBInstanceId>();
 			for (int j = 0; j < context.lengthValue("DescribeDBInstancesResponse.Items["+ i +"].ReadOnlyDBInstanceIds.Length"); j++) {
-				ReadOnlyDBInstanceId  readOnlyDBInstanceId = new ReadOnlyDBInstanceId();
+				ReadOnlyDBInstanceId readOnlyDBInstanceId = new ReadOnlyDBInstanceId();
 				readOnlyDBInstanceId.setDBInstanceId(context.stringValue("DescribeDBInstancesResponse.Items["+ i +"].ReadOnlyDBInstanceIds["+ j +"].DBInstanceId"));
 
 				readOnlyDBInstanceIds.add(readOnlyDBInstanceId);

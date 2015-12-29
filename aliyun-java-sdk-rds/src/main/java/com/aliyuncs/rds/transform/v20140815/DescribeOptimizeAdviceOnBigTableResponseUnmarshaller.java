@@ -20,6 +20,7 @@ package com.aliyuncs.rds.transform.v20140815;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import com.aliyuncs.rds.model.v20140815.DescribeOptimizeAdviceOnBigTableResponse;
 import com.aliyuncs.rds.model.v20140815.DescribeOptimizeAdviceOnBigTableResponse.AdviceOnBigTable;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -36,7 +37,7 @@ public class DescribeOptimizeAdviceOnBigTableResponseUnmarshaller {
 
 		List<AdviceOnBigTable> items = new ArrayList<AdviceOnBigTable>();
 		for (int i = 0; i < context.lengthValue("DescribeOptimizeAdviceOnBigTableResponse.Items.Length"); i++) {
-			AdviceOnBigTable  adviceOnBigTable = new AdviceOnBigTable();
+			AdviceOnBigTable adviceOnBigTable = new AdviceOnBigTable();
 			adviceOnBigTable.setDBName(context.stringValue("DescribeOptimizeAdviceOnBigTableResponse.Items["+ i +"].DBName"));
 			adviceOnBigTable.setTableName(context.stringValue("DescribeOptimizeAdviceOnBigTableResponse.Items["+ i +"].TableName"));
 			adviceOnBigTable.setTableSize(context.longValue("DescribeOptimizeAdviceOnBigTableResponse.Items["+ i +"].TableSize"));

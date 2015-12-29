@@ -20,14 +20,17 @@ package com.aliyuncs.rds.transform.v20140815;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import com.aliyuncs.rds.model.v20140815.DescribeDBInstanceAttributeResponse;
 import com.aliyuncs.rds.model.v20140815.DescribeDBInstanceAttributeResponse.DBInstanceAttribute;
-import com.aliyuncs.rds.model.v20140815.DescribeDBInstanceAttributeResponse.DBInstanceAttribute.ReadOnlyDBInstanceId;
-import com.aliyuncs.rds.model.v20140815.DescribeDBInstanceAttributeResponse.DBInstanceAttribute.DBInstanceType;
+import com.aliyuncs.rds.model.v20140815.DescribeDBInstanceAttributeResponse.DBInstanceAttribute.AccountType;
+import com.aliyuncs.rds.model.v20140815.DescribeDBInstanceAttributeResponse.DBInstanceAttribute.ConnectionMode;
 import com.aliyuncs.rds.model.v20140815.DescribeDBInstanceAttributeResponse.DBInstanceAttribute.DBInstanceNetType;
 import com.aliyuncs.rds.model.v20140815.DescribeDBInstanceAttributeResponse.DBInstanceAttribute.DBInstanceStatus;
+import com.aliyuncs.rds.model.v20140815.DescribeDBInstanceAttributeResponse.DBInstanceAttribute.DBInstanceType;
 import com.aliyuncs.rds.model.v20140815.DescribeDBInstanceAttributeResponse.DBInstanceAttribute.LockMode;
-import com.aliyuncs.rds.model.v20140815.DescribeDBInstanceAttributeResponse.DBInstanceAttribute.ConnectionMode;
+import com.aliyuncs.rds.model.v20140815.DescribeDBInstanceAttributeResponse.DBInstanceAttribute.ReadOnlyDBInstanceId;
+import com.aliyuncs.rds.model.v20140815.DescribeDBInstanceAttributeResponse.DBInstanceAttribute.SupportUpgradeAccountType;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -39,13 +42,12 @@ public class DescribeDBInstanceAttributeResponseUnmarshaller {
 
 		List<DBInstanceAttribute> items = new ArrayList<DBInstanceAttribute>();
 		for (int i = 0; i < context.lengthValue("DescribeDBInstanceAttributeResponse.Items.Length"); i++) {
-			DBInstanceAttribute  dBInstanceAttribute = new DBInstanceAttribute();
+			DBInstanceAttribute dBInstanceAttribute = new DBInstanceAttribute();
 			dBInstanceAttribute.setInsId(context.integerValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].InsId"));
 			dBInstanceAttribute.setDBInstanceId(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].DBInstanceId"));
 			dBInstanceAttribute.setPayType(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].PayType"));
 			dBInstanceAttribute.setDBInstanceClassType(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].DBInstanceClassType"));
 			dBInstanceAttribute.setDBInstanceType(DBInstanceType.getEnum(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].DBInstanceType")));
-			dBInstanceAttribute.setInsId(context.integerValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].InsId"));
 			dBInstanceAttribute.setRegionId(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].RegionId"));
 			dBInstanceAttribute.setConnectionString(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].ConnectionString"));
 			dBInstanceAttribute.setPort(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].Port"));
@@ -75,12 +77,14 @@ public class DescribeDBInstanceAttributeResponseUnmarshaller {
 			dBInstanceAttribute.setSecurityIPList(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].SecurityIPList"));
 			dBInstanceAttribute.setZoneId(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].ZoneId"));
 			dBInstanceAttribute.setInstanceNetworkType(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].InstanceNetworkType"));
+			dBInstanceAttribute.setAccountType(AccountType.getEnum(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].AccountType")));
+			dBInstanceAttribute.setSupportUpgradeAccountType(SupportUpgradeAccountType.getEnum(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].SupportUpgradeAccountType")));
 			dBInstanceAttribute.setVpcId(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].VpcId"));
 			dBInstanceAttribute.setConnectionMode(ConnectionMode.getEnum(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].ConnectionMode")));
 
 			List<ReadOnlyDBInstanceId> readOnlyDBInstanceIds = new ArrayList<ReadOnlyDBInstanceId>();
 			for (int j = 0; j < context.lengthValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].ReadOnlyDBInstanceIds.Length"); j++) {
-				ReadOnlyDBInstanceId  readOnlyDBInstanceId = new ReadOnlyDBInstanceId();
+				ReadOnlyDBInstanceId readOnlyDBInstanceId = new ReadOnlyDBInstanceId();
 				readOnlyDBInstanceId.setDBInstanceId(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].ReadOnlyDBInstanceIds["+ j +"].DBInstanceId"));
 
 				readOnlyDBInstanceIds.add(readOnlyDBInstanceId);

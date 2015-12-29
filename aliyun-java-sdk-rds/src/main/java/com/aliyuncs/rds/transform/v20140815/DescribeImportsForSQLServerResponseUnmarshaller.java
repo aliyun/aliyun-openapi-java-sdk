@@ -20,6 +20,7 @@ package com.aliyuncs.rds.transform.v20140815;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import com.aliyuncs.rds.model.v20140815.DescribeImportsForSQLServerResponse;
 import com.aliyuncs.rds.model.v20140815.DescribeImportsForSQLServerResponse.SQLServerImport;
 import com.aliyuncs.rds.model.v20140815.DescribeImportsForSQLServerResponse.SQLServerImport.ImportStatus;
@@ -37,7 +38,7 @@ public class DescribeImportsForSQLServerResponseUnmarshaller {
 
 		List<SQLServerImport> items = new ArrayList<SQLServerImport>();
 		for (int i = 0; i < context.lengthValue("DescribeImportsForSQLServerResponse.Items.Length"); i++) {
-			SQLServerImport  sQLServerImport = new SQLServerImport();
+			SQLServerImport sQLServerImport = new SQLServerImport();
 			sQLServerImport.setImportId(context.integerValue("DescribeImportsForSQLServerResponse.Items["+ i +"].ImportId"));
 			sQLServerImport.setFileName(context.stringValue("DescribeImportsForSQLServerResponse.Items["+ i +"].FileName"));
 			sQLServerImport.setDBName(context.stringValue("DescribeImportsForSQLServerResponse.Items["+ i +"].DBName"));

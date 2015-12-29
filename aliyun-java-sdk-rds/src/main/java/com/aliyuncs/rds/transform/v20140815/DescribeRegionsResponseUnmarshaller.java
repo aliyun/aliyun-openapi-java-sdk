@@ -20,6 +20,7 @@ package com.aliyuncs.rds.transform.v20140815;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import com.aliyuncs.rds.model.v20140815.DescribeRegionsResponse;
 import com.aliyuncs.rds.model.v20140815.DescribeRegionsResponse.RDSRegion;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -33,7 +34,7 @@ public class DescribeRegionsResponseUnmarshaller {
 
 		List<RDSRegion> regions = new ArrayList<RDSRegion>();
 		for (int i = 0; i < context.lengthValue("DescribeRegionsResponse.Regions.Length"); i++) {
-			RDSRegion  rDSRegion = new RDSRegion();
+			RDSRegion rDSRegion = new RDSRegion();
 			rDSRegion.setRegionId(context.stringValue("DescribeRegionsResponse.Regions["+ i +"].RegionId"));
 			rDSRegion.setZoneId(context.stringValue("DescribeRegionsResponse.Regions["+ i +"].ZoneId"));
 

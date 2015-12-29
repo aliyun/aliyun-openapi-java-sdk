@@ -42,6 +42,10 @@ public class DescribeResourceUsageResponse extends AcsResponse {
 
 	private Long backupSize;
 
+	private Long sQLSize;
+
+	private Long coldBackupSize;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -96,6 +100,22 @@ public class DescribeResourceUsageResponse extends AcsResponse {
 
 	public void setBackupSize(Long backupSize) {
 		this.backupSize = backupSize;
+	}
+
+	public Long getSQLSize() {
+		return this.sQLSize;
+	}
+
+	public void setSQLSize(Long sQLSize) {
+		this.sQLSize = sQLSize;
+	}
+
+	public Long getColdBackupSize() {
+		return this.coldBackupSize;
+	}
+
+	public void setColdBackupSize(Long coldBackupSize) {
+		this.coldBackupSize = coldBackupSize;
 	}
 
 	@Override

@@ -42,6 +42,10 @@ public class ModifySecurityIpsRequest extends RpcAcsRequest<ModifySecurityIpsRes
 
 	private String securityIps;
 
+	private String dBInstanceIPArrayName;
+
+	private String dBInstanceIPArrayAttribute;
+
 	private String ownerAccount;
 
 	public Long getOwnerId() {
@@ -50,7 +54,7 @@ public class ModifySecurityIpsRequest extends RpcAcsRequest<ModifySecurityIpsRes
 
 	public void setOwnerId(Long ownerId) {
 		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", String.valueOf(ownerId));
+		putQueryParameter("OwnerId", ownerId);
 	}
 
 	public String getResourceOwnerAccount() {
@@ -68,7 +72,7 @@ public class ModifySecurityIpsRequest extends RpcAcsRequest<ModifySecurityIpsRes
 
 	public void setResourceOwnerId(Long resourceOwnerId) {
 		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", String.valueOf(resourceOwnerId));
+		putQueryParameter("ResourceOwnerId", resourceOwnerId);
 	}
 
 	public String getClientToken() {
@@ -96,6 +100,24 @@ public class ModifySecurityIpsRequest extends RpcAcsRequest<ModifySecurityIpsRes
 	public void setSecurityIps(String securityIps) {
 		this.securityIps = securityIps;
 		putQueryParameter("SecurityIps", securityIps);
+	}
+
+	public String getDBInstanceIPArrayName() {
+		return this.dBInstanceIPArrayName;
+	}
+
+	public void setDBInstanceIPArrayName(String dBInstanceIPArrayName) {
+		this.dBInstanceIPArrayName = dBInstanceIPArrayName;
+		putQueryParameter("DBInstanceIPArrayName", dBInstanceIPArrayName);
+	}
+
+	public String getDBInstanceIPArrayAttribute() {
+		return this.dBInstanceIPArrayAttribute;
+	}
+
+	public void setDBInstanceIPArrayAttribute(String dBInstanceIPArrayAttribute) {
+		this.dBInstanceIPArrayAttribute = dBInstanceIPArrayAttribute;
+		putQueryParameter("DBInstanceIPArrayAttribute", dBInstanceIPArrayAttribute);
 	}
 
 	public String getOwnerAccount() {

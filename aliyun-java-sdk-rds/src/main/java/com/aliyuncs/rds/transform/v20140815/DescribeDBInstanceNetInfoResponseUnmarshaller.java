@@ -20,9 +20,10 @@ package com.aliyuncs.rds.transform.v20140815;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import com.aliyuncs.rds.model.v20140815.DescribeDBInstanceNetInfoResponse;
 import com.aliyuncs.rds.model.v20140815.DescribeDBInstanceNetInfoResponse.DBInstanceNetInfo;
-import com.aliyuncs.rds.model.v20140815.DescribeDBInstanceNetInfoResponse.DBInstanceNetInfo.SecurityIPGroup;
+import com.aliyuncs.rds.model.v20140815.DescribeDBInstanceNetInfoResponse.DBInstanceNetInfo.securityIPGroup;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -35,7 +36,7 @@ public class DescribeDBInstanceNetInfoResponseUnmarshaller {
 
 		List<DBInstanceNetInfo> dBInstanceNetInfos = new ArrayList<DBInstanceNetInfo>();
 		for (int i = 0; i < context.lengthValue("DescribeDBInstanceNetInfoResponse.DBInstanceNetInfos.Length"); i++) {
-			DBInstanceNetInfo  dBInstanceNetInfo = new DBInstanceNetInfo();
+			DBInstanceNetInfo dBInstanceNetInfo = new DBInstanceNetInfo();
 			dBInstanceNetInfo.setConnectionString(context.stringValue("DescribeDBInstanceNetInfoResponse.DBInstanceNetInfos["+ i +"].ConnectionString"));
 			dBInstanceNetInfo.setIPAddress(context.stringValue("DescribeDBInstanceNetInfoResponse.DBInstanceNetInfos["+ i +"].IPAddress"));
 			dBInstanceNetInfo.setIPType(context.stringValue("DescribeDBInstanceNetInfoResponse.DBInstanceNetInfos["+ i +"].IPType"));
@@ -43,9 +44,9 @@ public class DescribeDBInstanceNetInfoResponseUnmarshaller {
 			dBInstanceNetInfo.setVPCId(context.stringValue("DescribeDBInstanceNetInfoResponse.DBInstanceNetInfos["+ i +"].VPCId"));
 			dBInstanceNetInfo.setVSwitchId(context.stringValue("DescribeDBInstanceNetInfoResponse.DBInstanceNetInfos["+ i +"].VSwitchId"));
 
-			List<SecurityIPGroup> securityIPGroups = new ArrayList<SecurityIPGroup>();
+			List<securityIPGroup> securityIPGroups = new ArrayList<securityIPGroup>();
 			for (int j = 0; j < context.lengthValue("DescribeDBInstanceNetInfoResponse.DBInstanceNetInfos["+ i +"].SecurityIPGroups.Length"); j++) {
-				SecurityIPGroup  securityIPGroup = new SecurityIPGroup();
+				securityIPGroup securityIPGroup = new securityIPGroup();
 				securityIPGroup.setSecurityIPGroupName(context.stringValue("DescribeDBInstanceNetInfoResponse.DBInstanceNetInfos["+ i +"].SecurityIPGroups["+ j +"].SecurityIPGroupName"));
 				securityIPGroup.setSecurityIPs(context.stringValue("DescribeDBInstanceNetInfoResponse.DBInstanceNetInfos["+ i +"].SecurityIPGroups["+ j +"].SecurityIPs"));
 

@@ -20,6 +20,7 @@ package com.aliyuncs.rds.transform.v20140815;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import com.aliyuncs.rds.model.v20140815.DescribeFilesForSQLServerResponse;
 import com.aliyuncs.rds.model.v20140815.DescribeFilesForSQLServerResponse.SQLServerUploadFile;
 import com.aliyuncs.rds.model.v20140815.DescribeFilesForSQLServerResponse.SQLServerUploadFile.FileStatus;
@@ -38,7 +39,7 @@ public class DescribeFilesForSQLServerResponseUnmarshaller {
 
 		List<SQLServerUploadFile> items = new ArrayList<SQLServerUploadFile>();
 		for (int i = 0; i < context.lengthValue("DescribeFilesForSQLServerResponse.Items.Length"); i++) {
-			SQLServerUploadFile  sQLServerUploadFile = new SQLServerUploadFile();
+			SQLServerUploadFile sQLServerUploadFile = new SQLServerUploadFile();
 			sQLServerUploadFile.setDBName(context.stringValue("DescribeFilesForSQLServerResponse.Items["+ i +"].DBName"));
 			sQLServerUploadFile.setFileName(context.stringValue("DescribeFilesForSQLServerResponse.Items["+ i +"].FileName"));
 			sQLServerUploadFile.setFileSize(context.longValue("DescribeFilesForSQLServerResponse.Items["+ i +"].FileSize"));

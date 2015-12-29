@@ -44,6 +44,8 @@ public class CreateAccountRequest extends RpcAcsRequest<CreateAccountResponse> {
 
 	private String accountDescription;
 
+	private String accountType;
+
 	private String ownerAccount;
 
 	public Long getOwnerId() {
@@ -52,7 +54,7 @@ public class CreateAccountRequest extends RpcAcsRequest<CreateAccountResponse> {
 
 	public void setOwnerId(Long ownerId) {
 		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", String.valueOf(ownerId));
+		putQueryParameter("OwnerId", ownerId);
 	}
 
 	public String getResourceOwnerAccount() {
@@ -70,7 +72,7 @@ public class CreateAccountRequest extends RpcAcsRequest<CreateAccountResponse> {
 
 	public void setResourceOwnerId(Long resourceOwnerId) {
 		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", String.valueOf(resourceOwnerId));
+		putQueryParameter("ResourceOwnerId", resourceOwnerId);
 	}
 
 	public String getDBInstanceId() {
@@ -107,6 +109,15 @@ public class CreateAccountRequest extends RpcAcsRequest<CreateAccountResponse> {
 	public void setAccountDescription(String accountDescription) {
 		this.accountDescription = accountDescription;
 		putQueryParameter("AccountDescription", accountDescription);
+	}
+
+	public String getAccountType() {
+		return this.accountType;
+	}
+
+	public void setAccountType(String accountType) {
+		this.accountType = accountType;
+		putQueryParameter("AccountType", accountType);
 	}
 
 	public String getOwnerAccount() {

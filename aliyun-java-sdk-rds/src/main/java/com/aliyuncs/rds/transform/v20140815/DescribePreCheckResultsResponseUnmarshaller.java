@@ -20,6 +20,7 @@ package com.aliyuncs.rds.transform.v20140815;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import com.aliyuncs.rds.model.v20140815.DescribePreCheckResultsResponse;
 import com.aliyuncs.rds.model.v20140815.DescribePreCheckResultsResponse.PreCheckResult;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -34,7 +35,7 @@ public class DescribePreCheckResultsResponseUnmarshaller {
 
 		List<PreCheckResult> items = new ArrayList<PreCheckResult>();
 		for (int i = 0; i < context.lengthValue("DescribePreCheckResultsResponse.Items.Length"); i++) {
-			PreCheckResult  preCheckResult = new PreCheckResult();
+			PreCheckResult preCheckResult = new PreCheckResult();
 			preCheckResult.setPreCheckName(context.stringValue("DescribePreCheckResultsResponse.Items["+ i +"].PreCheckName"));
 			preCheckResult.setPreCheckResult(context.stringValue("DescribePreCheckResultsResponse.Items["+ i +"].PreCheckResult"));
 			preCheckResult.setFailReasion(context.stringValue("DescribePreCheckResultsResponse.Items["+ i +"].FailReasion"));

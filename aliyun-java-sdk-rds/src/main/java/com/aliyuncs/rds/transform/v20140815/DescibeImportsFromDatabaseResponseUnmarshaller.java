@@ -20,10 +20,11 @@ package com.aliyuncs.rds.transform.v20140815;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import com.aliyuncs.rds.model.v20140815.DescibeImportsFromDatabaseResponse;
 import com.aliyuncs.rds.model.v20140815.DescibeImportsFromDatabaseResponse.ImportResultFromDB;
-import com.aliyuncs.rds.model.v20140815.DescibeImportsFromDatabaseResponse.ImportResultFromDB.ImportDataType;
 import com.aliyuncs.rds.model.v20140815.DescibeImportsFromDatabaseResponse.ImportResultFromDB.ImportDataStatus;
+import com.aliyuncs.rds.model.v20140815.DescibeImportsFromDatabaseResponse.ImportResultFromDB.ImportDataType;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -38,7 +39,7 @@ public class DescibeImportsFromDatabaseResponseUnmarshaller {
 
 		List<ImportResultFromDB> items = new ArrayList<ImportResultFromDB>();
 		for (int i = 0; i < context.lengthValue("DescibeImportsFromDatabaseResponse.Items.Length"); i++) {
-			ImportResultFromDB  importResultFromDB = new ImportResultFromDB();
+			ImportResultFromDB importResultFromDB = new ImportResultFromDB();
 			importResultFromDB.setImportId(context.integerValue("DescibeImportsFromDatabaseResponse.Items["+ i +"].ImportId"));
 			importResultFromDB.setImportDataType(ImportDataType.getEnum(context.stringValue("DescibeImportsFromDatabaseResponse.Items["+ i +"].ImportDataType")));
 			importResultFromDB.setImportDataStatus(ImportDataStatus.getEnum(context.stringValue("DescibeImportsFromDatabaseResponse.Items["+ i +"].ImportDataStatus")));

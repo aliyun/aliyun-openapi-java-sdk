@@ -20,6 +20,7 @@ package com.aliyuncs.rds.transform.v20140815;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import com.aliyuncs.rds.model.v20140815.DescribeErrorLogsResponse;
 import com.aliyuncs.rds.model.v20140815.DescribeErrorLogsResponse.ErrorLog;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -36,7 +37,7 @@ public class DescribeErrorLogsResponseUnmarshaller {
 
 		List<ErrorLog> items = new ArrayList<ErrorLog>();
 		for (int i = 0; i < context.lengthValue("DescribeErrorLogsResponse.Items.Length"); i++) {
-			ErrorLog  errorLog = new ErrorLog();
+			ErrorLog errorLog = new ErrorLog();
 			errorLog.setErrorInfo(context.stringValue("DescribeErrorLogsResponse.Items["+ i +"].ErrorInfo"));
 			errorLog.setCreateTime(context.stringValue("DescribeErrorLogsResponse.Items["+ i +"].CreateTime"));
 

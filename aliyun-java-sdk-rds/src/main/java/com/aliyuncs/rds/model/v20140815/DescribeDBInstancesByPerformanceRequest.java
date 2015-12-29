@@ -50,6 +50,26 @@ public class DescribeDBInstancesByPerformanceRequest extends RpcAcsRequest<Descr
 
 	private String sortKey;
 
+	private String tag1key;
+
+	private String tag2key;
+
+	private String tag3key;
+
+	private String tag4key;
+
+	private String tag5key;
+
+	private String tag1value;
+
+	private String tag2value;
+
+	private String tag3value;
+
+	private String tag4value;
+
+	private String tag5value;
+
 	private String ownerAccount;
 
 	public Long getOwnerId() {
@@ -58,7 +78,7 @@ public class DescribeDBInstancesByPerformanceRequest extends RpcAcsRequest<Descr
 
 	public void setOwnerId(Long ownerId) {
 		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", String.valueOf(ownerId));
+		putQueryParameter("OwnerId", ownerId);
 	}
 
 	public String getResourceOwnerAccount() {
@@ -76,7 +96,7 @@ public class DescribeDBInstancesByPerformanceRequest extends RpcAcsRequest<Descr
 
 	public void setResourceOwnerId(Long resourceOwnerId) {
 		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", String.valueOf(resourceOwnerId));
+		putQueryParameter("ResourceOwnerId", resourceOwnerId);
 	}
 
 	public String getClientToken() {
@@ -112,7 +132,7 @@ public class DescribeDBInstancesByPerformanceRequest extends RpcAcsRequest<Descr
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
-		putQueryParameter("PageSize", String.valueOf(pageSize));
+		putQueryParameter("PageSize", pageSize);
 	}
 
 	public Integer getPageNumber() {
@@ -121,7 +141,7 @@ public class DescribeDBInstancesByPerformanceRequest extends RpcAcsRequest<Descr
 
 	public void setPageNumber(Integer pageNumber) {
 		this.pageNumber = pageNumber;
-		putQueryParameter("PageNumber", String.valueOf(pageNumber));
+		putQueryParameter("PageNumber", pageNumber);
 	}
 
 	public String getSortMethod() {
@@ -140,6 +160,96 @@ public class DescribeDBInstancesByPerformanceRequest extends RpcAcsRequest<Descr
 	public void setSortKey(String sortKey) {
 		this.sortKey = sortKey;
 		putQueryParameter("SortKey", sortKey);
+	}
+
+	public String getTag1key() {
+		return this.tag1key;
+	}
+
+	public void setTag1key(String tag1key) {
+		this.tag1key = tag1key;
+		putQueryParameter("Tag.1.key", tag1key);
+	}
+
+	public String getTag2key() {
+		return this.tag2key;
+	}
+
+	public void setTag2key(String tag2key) {
+		this.tag2key = tag2key;
+		putQueryParameter("Tag.2.key", tag2key);
+	}
+
+	public String getTag3key() {
+		return this.tag3key;
+	}
+
+	public void setTag3key(String tag3key) {
+		this.tag3key = tag3key;
+		putQueryParameter("Tag.3.key", tag3key);
+	}
+
+	public String getTag4key() {
+		return this.tag4key;
+	}
+
+	public void setTag4key(String tag4key) {
+		this.tag4key = tag4key;
+		putQueryParameter("Tag.4.key", tag4key);
+	}
+
+	public String getTag5key() {
+		return this.tag5key;
+	}
+
+	public void setTag5key(String tag5key) {
+		this.tag5key = tag5key;
+		putQueryParameter("Tag.5.key", tag5key);
+	}
+
+	public String getTag1value() {
+		return this.tag1value;
+	}
+
+	public void setTag1value(String tag1value) {
+		this.tag1value = tag1value;
+		putQueryParameter("Tag.1.value", tag1value);
+	}
+
+	public String getTag2value() {
+		return this.tag2value;
+	}
+
+	public void setTag2value(String tag2value) {
+		this.tag2value = tag2value;
+		putQueryParameter("Tag.2.value", tag2value);
+	}
+
+	public String getTag3value() {
+		return this.tag3value;
+	}
+
+	public void setTag3value(String tag3value) {
+		this.tag3value = tag3value;
+		putQueryParameter("Tag.3.value", tag3value);
+	}
+
+	public String getTag4value() {
+		return this.tag4value;
+	}
+
+	public void setTag4value(String tag4value) {
+		this.tag4value = tag4value;
+		putQueryParameter("Tag.4.value", tag4value);
+	}
+
+	public String getTag5value() {
+		return this.tag5value;
+	}
+
+	public void setTag5value(String tag5value) {
+		this.tag5value = tag5value;
+		putQueryParameter("Tag.5.value", tag5value);
 	}
 
 	public String getOwnerAccount() {

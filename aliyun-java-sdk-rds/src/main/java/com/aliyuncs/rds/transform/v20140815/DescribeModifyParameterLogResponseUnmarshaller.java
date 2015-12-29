@@ -20,6 +20,7 @@ package com.aliyuncs.rds.transform.v20140815;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import com.aliyuncs.rds.model.v20140815.DescribeModifyParameterLogResponse;
 import com.aliyuncs.rds.model.v20140815.DescribeModifyParameterLogResponse.ParameterChangeLog;
 import com.aliyuncs.rds.model.v20140815.DescribeModifyParameterLogResponse.ParameterChangeLog.Status;
@@ -40,7 +41,7 @@ public class DescribeModifyParameterLogResponseUnmarshaller {
 
 		List<ParameterChangeLog> items = new ArrayList<ParameterChangeLog>();
 		for (int i = 0; i < context.lengthValue("DescribeModifyParameterLogResponse.Items.Length"); i++) {
-			ParameterChangeLog  parameterChangeLog = new ParameterChangeLog();
+			ParameterChangeLog parameterChangeLog = new ParameterChangeLog();
 			parameterChangeLog.setModifyTime(context.stringValue("DescribeModifyParameterLogResponse.Items["+ i +"].ModifyTime"));
 			parameterChangeLog.setOldParameterValue(context.stringValue("DescribeModifyParameterLogResponse.Items["+ i +"].OldParameterValue"));
 			parameterChangeLog.setNewParameterValue(context.stringValue("DescribeModifyParameterLogResponse.Items["+ i +"].NewParameterValue"));

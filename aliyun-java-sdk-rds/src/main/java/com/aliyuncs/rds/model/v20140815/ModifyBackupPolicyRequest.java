@@ -42,6 +42,10 @@ public class ModifyBackupPolicyRequest extends RpcAcsRequest<ModifyBackupPolicyR
 
 	private String preferredBackupPeriod;
 
+	private String backupRetentionPeriod;
+
+	private String backupLog;
+
 	private String ownerAccount;
 
 	public Long getOwnerId() {
@@ -50,7 +54,7 @@ public class ModifyBackupPolicyRequest extends RpcAcsRequest<ModifyBackupPolicyR
 
 	public void setOwnerId(Long ownerId) {
 		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", String.valueOf(ownerId));
+		putQueryParameter("OwnerId", ownerId);
 	}
 
 	public String getResourceOwnerAccount() {
@@ -68,7 +72,7 @@ public class ModifyBackupPolicyRequest extends RpcAcsRequest<ModifyBackupPolicyR
 
 	public void setResourceOwnerId(Long resourceOwnerId) {
 		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", String.valueOf(resourceOwnerId));
+		putQueryParameter("ResourceOwnerId", resourceOwnerId);
 	}
 
 	public String getDBInstanceId() {
@@ -96,6 +100,24 @@ public class ModifyBackupPolicyRequest extends RpcAcsRequest<ModifyBackupPolicyR
 	public void setPreferredBackupPeriod(String preferredBackupPeriod) {
 		this.preferredBackupPeriod = preferredBackupPeriod;
 		putQueryParameter("PreferredBackupPeriod", preferredBackupPeriod);
+	}
+
+	public String getBackupRetentionPeriod() {
+		return this.backupRetentionPeriod;
+	}
+
+	public void setBackupRetentionPeriod(String backupRetentionPeriod) {
+		this.backupRetentionPeriod = backupRetentionPeriod;
+		putQueryParameter("BackupRetentionPeriod", backupRetentionPeriod);
+	}
+
+	public String getBackupLog() {
+		return this.backupLog;
+	}
+
+	public void setBackupLog(String backupLog) {
+		this.backupLog = backupLog;
+		putQueryParameter("BackupLog", backupLog);
 	}
 
 	public String getOwnerAccount() {

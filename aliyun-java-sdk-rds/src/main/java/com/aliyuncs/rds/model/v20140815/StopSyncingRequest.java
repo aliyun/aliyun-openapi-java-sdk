@@ -50,7 +50,7 @@ public class StopSyncingRequest extends RpcAcsRequest<StopSyncingResponse> {
 
 	public void setOwnerId(Long ownerId) {
 		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", String.valueOf(ownerId));
+		putQueryParameter("OwnerId", ownerId);
 	}
 
 	public String getResourceOwnerAccount() {
@@ -68,7 +68,7 @@ public class StopSyncingRequest extends RpcAcsRequest<StopSyncingResponse> {
 
 	public void setResourceOwnerId(Long resourceOwnerId) {
 		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", String.valueOf(resourceOwnerId));
+		putQueryParameter("ResourceOwnerId", resourceOwnerId);
 	}
 
 	public String getClientToken() {
@@ -95,7 +95,7 @@ public class StopSyncingRequest extends RpcAcsRequest<StopSyncingResponse> {
 
 	public void setImportId(Integer importId) {
 		this.importId = importId;
-		putQueryParameter("ImportId", String.valueOf(importId));
+		putQueryParameter("ImportId", importId);
 	}
 
 	public String getOwnerAccount() {

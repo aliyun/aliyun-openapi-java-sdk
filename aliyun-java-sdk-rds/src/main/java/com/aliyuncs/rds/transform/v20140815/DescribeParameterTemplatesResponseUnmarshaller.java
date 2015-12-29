@@ -20,8 +20,11 @@ package com.aliyuncs.rds.transform.v20140815;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import com.aliyuncs.rds.model.v20140815.DescribeParameterTemplatesResponse;
 import com.aliyuncs.rds.model.v20140815.DescribeParameterTemplatesResponse.TemplateRecord;
+import com.aliyuncs.rds.model.v20140815.DescribeParameterTemplatesResponse.TemplateRecord.ForceModify;
+import com.aliyuncs.rds.model.v20140815.DescribeParameterTemplatesResponse.TemplateRecord.ForceRestart;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -36,11 +39,11 @@ public class DescribeParameterTemplatesResponseUnmarshaller {
 
 		List<TemplateRecord> parameters = new ArrayList<TemplateRecord>();
 		for (int i = 0; i < context.lengthValue("DescribeParameterTemplatesResponse.Parameters.Length"); i++) {
-			TemplateRecord  templateRecord = new TemplateRecord();
+			TemplateRecord templateRecord = new TemplateRecord();
 			templateRecord.setParameterName(context.stringValue("DescribeParameterTemplatesResponse.Parameters["+ i +"].ParameterName"));
 			templateRecord.setParameterValue(context.stringValue("DescribeParameterTemplatesResponse.Parameters["+ i +"].ParameterValue"));
-			templateRecord.setForceModify(context.booleanValue("DescribeParameterTemplatesResponse.Parameters["+ i +"].ForceModify"));
-			templateRecord.setForceRestart(context.booleanValue("DescribeParameterTemplatesResponse.Parameters["+ i +"].ForceRestart"));
+			templateRecord.setForceModify(ForceModify.getEnum(context.stringValue("DescribeParameterTemplatesResponse.Parameters["+ i +"].ForceModify")));
+			templateRecord.setForceRestart(ForceRestart.getEnum(context.stringValue("DescribeParameterTemplatesResponse.Parameters["+ i +"].ForceRestart")));
 			templateRecord.setCheckingCode(context.stringValue("DescribeParameterTemplatesResponse.Parameters["+ i +"].CheckingCode"));
 			templateRecord.setParameterDescription(context.stringValue("DescribeParameterTemplatesResponse.Parameters["+ i +"].ParameterDescription"));
 

@@ -20,6 +20,7 @@ package com.aliyuncs.rds.transform.v20140815;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import com.aliyuncs.rds.model.v20140815.DescribeOptimizeAdviceOnMissPKResponse;
 import com.aliyuncs.rds.model.v20140815.DescribeOptimizeAdviceOnMissPKResponse.AdviceOnMissPK;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -36,7 +37,7 @@ public class DescribeOptimizeAdviceOnMissPKResponseUnmarshaller {
 
 		List<AdviceOnMissPK> items = new ArrayList<AdviceOnMissPK>();
 		for (int i = 0; i < context.lengthValue("DescribeOptimizeAdviceOnMissPKResponse.Items.Length"); i++) {
-			AdviceOnMissPK  adviceOnMissPK = new AdviceOnMissPK();
+			AdviceOnMissPK adviceOnMissPK = new AdviceOnMissPK();
 			adviceOnMissPK.setDBName(context.stringValue("DescribeOptimizeAdviceOnMissPKResponse.Items["+ i +"].DBName"));
 			adviceOnMissPK.setTableName(context.stringValue("DescribeOptimizeAdviceOnMissPKResponse.Items["+ i +"].TableName"));
 

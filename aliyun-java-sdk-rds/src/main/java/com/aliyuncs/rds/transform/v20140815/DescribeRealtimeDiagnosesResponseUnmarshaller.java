@@ -20,6 +20,7 @@ package com.aliyuncs.rds.transform.v20140815;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import com.aliyuncs.rds.model.v20140815.DescribeRealtimeDiagnosesResponse;
 import com.aliyuncs.rds.model.v20140815.DescribeRealtimeDiagnosesResponse.RealtimeDiagnoseTasks;
 import com.aliyuncs.rds.model.v20140815.DescribeRealtimeDiagnosesResponse.RealtimeDiagnoseTasks.Status;
@@ -38,7 +39,7 @@ public class DescribeRealtimeDiagnosesResponseUnmarshaller {
 
 		List<RealtimeDiagnoseTasks> tasks = new ArrayList<RealtimeDiagnoseTasks>();
 		for (int i = 0; i < context.lengthValue("DescribeRealtimeDiagnosesResponse.Tasks.Length"); i++) {
-			RealtimeDiagnoseTasks  realtimeDiagnoseTasks = new RealtimeDiagnoseTasks();
+			RealtimeDiagnoseTasks realtimeDiagnoseTasks = new RealtimeDiagnoseTasks();
 			realtimeDiagnoseTasks.setCreateTime(context.stringValue("DescribeRealtimeDiagnosesResponse.Tasks["+ i +"].CreateTime"));
 			realtimeDiagnoseTasks.setTaskId(context.stringValue("DescribeRealtimeDiagnosesResponse.Tasks["+ i +"].TaskId"));
 			realtimeDiagnoseTasks.setHealthScore(context.stringValue("DescribeRealtimeDiagnosesResponse.Tasks["+ i +"].HealthScore"));

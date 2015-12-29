@@ -73,7 +73,7 @@ public class DescribeDBInstanceNetInfoResponse extends AcsResponse {
 
 		private String vSwitchId;
 
-		private List<SecurityIPGroup> securityIPGroups;
+		private List<securityIPGroup> securityIPGroups;
 
 		public String getConnectionString() {
 			return this.connectionString;
@@ -123,15 +123,15 @@ public class DescribeDBInstanceNetInfoResponse extends AcsResponse {
 			this.vSwitchId = vSwitchId;
 		}
 
-		public List<SecurityIPGroup> getSecurityIPGroups() {
+		public List<securityIPGroup> getSecurityIPGroups() {
 			return this.securityIPGroups;
 		}
 
-		public void setSecurityIPGroups(List<SecurityIPGroup> securityIPGroups) {
+		public void setSecurityIPGroups(List<securityIPGroup> securityIPGroups) {
 			this.securityIPGroups = securityIPGroups;
 		}
 
-		public static class SecurityIPGroup {
+		public static class securityIPGroup {
 
 			private String securityIPGroupName;
 

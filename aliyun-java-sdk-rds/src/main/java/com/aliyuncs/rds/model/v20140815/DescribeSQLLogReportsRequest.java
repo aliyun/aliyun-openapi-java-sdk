@@ -36,15 +36,11 @@ public class DescribeSQLLogReportsRequest extends RpcAcsRequest<DescribeSQLLogRe
 
 	private Long resourceOwnerId;
 
-	private String clientToken;
-
 	private String dBInstanceId;
 
 	private String startTime;
 
 	private String endTime;
-
-	private String reportType;
 
 	private Integer pageSize;
 
@@ -58,7 +54,7 @@ public class DescribeSQLLogReportsRequest extends RpcAcsRequest<DescribeSQLLogRe
 
 	public void setOwnerId(Long ownerId) {
 		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", String.valueOf(ownerId));
+		putQueryParameter("OwnerId", ownerId);
 	}
 
 	public String getResourceOwnerAccount() {
@@ -76,16 +72,7 @@ public class DescribeSQLLogReportsRequest extends RpcAcsRequest<DescribeSQLLogRe
 
 	public void setResourceOwnerId(Long resourceOwnerId) {
 		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", String.valueOf(resourceOwnerId));
-	}
-
-	public String getClientToken() {
-		return this.clientToken;
-	}
-
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		putQueryParameter("ClientToken", clientToken);
+		putQueryParameter("ResourceOwnerId", resourceOwnerId);
 	}
 
 	public String getDBInstanceId() {
@@ -115,22 +102,13 @@ public class DescribeSQLLogReportsRequest extends RpcAcsRequest<DescribeSQLLogRe
 		putQueryParameter("EndTime", endTime);
 	}
 
-	public String getReportType() {
-		return this.reportType;
-	}
-
-	public void setReportType(String reportType) {
-		this.reportType = reportType;
-		putQueryParameter("ReportType", reportType);
-	}
-
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
-		putQueryParameter("PageSize", String.valueOf(pageSize));
+		putQueryParameter("PageSize", pageSize);
 	}
 
 	public Integer getPageNumber() {
@@ -139,7 +117,7 @@ public class DescribeSQLLogReportsRequest extends RpcAcsRequest<DescribeSQLLogRe
 
 	public void setPageNumber(Integer pageNumber) {
 		this.pageNumber = pageNumber;
-		putQueryParameter("PageNumber", String.valueOf(pageNumber));
+		putQueryParameter("PageNumber", pageNumber);
 	}
 
 	public String getOwnerAccount() {
