@@ -17,6 +17,14 @@
         </RegionIds>
 	    <Products>
 			<Product>
+               <ProductName>Commondriver</ProductName>
+               <DomainName>common.driver.aliyuncs.com</DomainName>
+			</Product>
+			<Product>
+               <ProductName>Dds</ProductName>
+               <DomainName>mongodb.aliyuncs.com</DomainName>
+            </Product> 
+			<Product>
                <ProductName>Location-inner</ProductName>
                <DomainName>location-inner.aliyuncs.com</DomainName>
             </Product>
@@ -191,6 +199,14 @@
 			<RegionId>cn-shenzhen</RegionId>
         </RegionIds>
 	    <Products>
+			<Product>
+               <ProductName>Commondriver</ProductName>
+               <DomainName>common.driver.aliyuncs.com</DomainName>
+			</Product>
+			<Product>
+               <ProductName>Dds</ProductName>
+               <DomainName>mongodb.aliyuncs.com</DomainName>
+            </Product> 
 			<Product>
                <ProductName>Location-inner</ProductName>
                <DomainName>location-inner.aliyuncs.com</DomainName>
@@ -370,6 +386,14 @@
         	<RegionId>cn-qingdao</RegionId>
         </RegionIds>
 	    <Products>
+			<Product>
+               <ProductName>Commondriver</ProductName>
+               <DomainName>common.driver.aliyuncs.com</DomainName>
+			</Product>
+			<Product>
+               <ProductName>Dds</ProductName>
+               <DomainName>mongodb.aliyuncs.com</DomainName>
+            </Product> 
 			<Product>
                <ProductName>Location-inner</ProductName>
                <DomainName>location-inner.aliyuncs.com</DomainName>
