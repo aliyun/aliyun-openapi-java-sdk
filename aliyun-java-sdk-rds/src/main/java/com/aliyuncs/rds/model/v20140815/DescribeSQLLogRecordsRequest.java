@@ -50,7 +50,7 @@ public class DescribeSQLLogRecordsRequest extends RpcAcsRequest<DescribeSQLLogRe
 
 	private String user;
 
-	private String format;
+	private String form;
 
 	private String endTime;
 
@@ -150,13 +150,13 @@ public class DescribeSQLLogRecordsRequest extends RpcAcsRequest<DescribeSQLLogRe
 		putQueryParameter("User", user);
 	}
 
-	public String getFormat() {
-		return this.format;
+	public String getForm() {
+		return this.form;
 	}
 
-	public void setFormat(String format) {
-		this.format = format;
-		putQueryParameter("Format", format);
+	public void setForm(String form) {
+		this.form = form;
+		putQueryParameter("Form", form);
 	}
 
 	public String getEndTime() {
