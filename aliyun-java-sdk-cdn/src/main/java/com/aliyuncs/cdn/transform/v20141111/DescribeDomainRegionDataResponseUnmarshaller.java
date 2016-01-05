@@ -1,0 +1,51 @@
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+package com.aliyuncs.cdn.transform.v20141111;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import com.aliyuncs.cdn.model.v20141111.DescribeDomainRegionDataResponse;
+import com.aliyuncs.cdn.model.v20141111.DescribeDomainRegionDataResponse.RegionProportionData;
+import com.aliyuncs.transform.UnmarshallerContext;
+
+
+public class DescribeDomainRegionDataResponseUnmarshaller {
+
+	public static DescribeDomainRegionDataResponse unmarshall(DescribeDomainRegionDataResponse describeDomainRegionDataResponse, UnmarshallerContext context) {
+		
+		describeDomainRegionDataResponse.setRequestId(context.stringValue("DescribeDomainRegionDataResponse.RequestId"));
+		describeDomainRegionDataResponse.setDomainName(context.stringValue("DescribeDomainRegionDataResponse.DomainName"));
+		describeDomainRegionDataResponse.setDataInterval(context.stringValue("DescribeDomainRegionDataResponse.DataInterval"));
+		describeDomainRegionDataResponse.setStartTime(context.stringValue("DescribeDomainRegionDataResponse.StartTime"));
+		describeDomainRegionDataResponse.setEndTime(context.stringValue("DescribeDomainRegionDataResponse.EndTime"));
+
+		List<RegionProportionData> value = new ArrayList<RegionProportionData>();
+		for (int i = 0; i < context.lengthValue("DescribeDomainRegionDataResponse.Value.Length"); i++) {
+			RegionProportionData regionProportionData = new RegionProportionData();
+			regionProportionData.setRegion(context.stringValue("DescribeDomainRegionDataResponse.Value["+ i +"].Region"));
+			regionProportionData.setProportion(context.stringValue("DescribeDomainRegionDataResponse.Value["+ i +"].Proportion"));
+
+			value.add(regionProportionData);
+		}
+		describeDomainRegionDataResponse.setValue(value);
+	 
+	 	return describeDomainRegionDataResponse;
+	}
+}
