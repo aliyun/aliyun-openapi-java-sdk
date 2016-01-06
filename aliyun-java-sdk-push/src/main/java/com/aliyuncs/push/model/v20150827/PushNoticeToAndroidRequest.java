@@ -40,6 +40,8 @@ public class PushNoticeToAndroidRequest extends RpcAcsRequest<PushNoticeToAndroi
 
 	private String title;
 
+	private String androidExtParameters;
+
 	public Long getAppKey() {
 		return this.appKey;
 	}
@@ -83,6 +85,15 @@ public class PushNoticeToAndroidRequest extends RpcAcsRequest<PushNoticeToAndroi
 	public void setTitle(String title) {
 		this.title = title;
 		putQueryParameter("Title", title);
+	}
+
+	public String getAndroidExtParameters() {
+		return this.androidExtParameters;
+	}
+
+	public void setAndroidExtParameters(String androidExtParameters) {
+		this.androidExtParameters = androidExtParameters;
+		putQueryParameter("AndroidExtParameters", androidExtParameters);
 	}
 
 	@Override

@@ -3,7 +3,7 @@
   <groupId>com.aliyun</groupId>
   <artifactId>aliyun-java-sdk-push</artifactId>
   <packaging>jar</packaging>
-  <version>2.0.1</version>
+  <version>2.0.2</version>
   <name>aliyun-java-sdk-push</name>
   <url>http://www.aliyun.com</url>
   <description>Aliyun Open API SDK for Java
@@ -14,12 +14,11 @@ All rights reserved.
 版权所有 （C）阿里云计算有限公司
 
 http://www.aliyun.com</description>
-  <dependencies> 
+  <dependencies>
   	<dependency>
   		<groupId>com.aliyun</groupId>
   		<artifactId>aliyun-java-sdk-core</artifactId>
-		<optional>true</optional>
-  		<version>2.2.0</version>
+  		<version>2.3.2</version>
   	</dependency>
   </dependencies>
 	<licenses>
@@ -39,7 +38,7 @@ http://www.aliyun.com</description>
 			<name>Aliyun SDK</name>
 			<email>aliyunsdk@aliyun.com</email>
 		</developer>
-	</developers>  
+	</developers>
   <build>
 		<plugins>
 			<plugin>

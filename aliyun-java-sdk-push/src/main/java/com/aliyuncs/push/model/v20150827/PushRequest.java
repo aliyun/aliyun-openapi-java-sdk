@@ -70,6 +70,12 @@ public class PushRequest extends RpcAcsRequest<PushResponse> {
 
 	private String iOSExtParameters;
 
+	private String pushTime;
+
+	private String apnsEnv;
+
+	private String expireTime;
+
 	public Long getAppKey() {
 		return this.appKey;
 	}
@@ -248,6 +254,33 @@ public class PushRequest extends RpcAcsRequest<PushResponse> {
 	public void setiOSExtParameters(String iOSExtParameters) {
 		this.iOSExtParameters = iOSExtParameters;
 		putQueryParameter("iOSExtParameters", iOSExtParameters);
+	}
+
+	public String getPushTime() {
+		return this.pushTime;
+	}
+
+	public void setPushTime(String pushTime) {
+		this.pushTime = pushTime;
+		putQueryParameter("PushTime", pushTime);
+	}
+
+	public String getApnsEnv() {
+		return this.apnsEnv;
+	}
+
+	public void setApnsEnv(String apnsEnv) {
+		this.apnsEnv = apnsEnv;
+		putQueryParameter("ApnsEnv", apnsEnv);
+	}
+
+	public String getExpireTime() {
+		return this.expireTime;
+	}
+
+	public void setExpireTime(String expireTime) {
+		this.expireTime = expireTime;
+		putQueryParameter("ExpireTime", expireTime);
 	}
 
 	@Override

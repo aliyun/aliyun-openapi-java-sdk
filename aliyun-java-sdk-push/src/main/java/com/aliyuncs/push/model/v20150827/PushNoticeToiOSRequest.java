@@ -42,6 +42,8 @@ public class PushNoticeToiOSRequest extends RpcAcsRequest<PushNoticeToiOSRespons
 
 	private String summary;
 
+	private String iOSExtParameters;
+
 	public Long getAppKey() {
 		return this.appKey;
 	}
@@ -94,6 +96,15 @@ public class PushNoticeToiOSRequest extends RpcAcsRequest<PushNoticeToiOSRespons
 	public void setSummary(String summary) {
 		this.summary = summary;
 		putQueryParameter("Summary", summary);
+	}
+
+	public String getiOSExtParameters() {
+		return this.iOSExtParameters;
+	}
+
+	public void setiOSExtParameters(String iOSExtParameters) {
+		this.iOSExtParameters = iOSExtParameters;
+		putQueryParameter("iOSExtParameters", iOSExtParameters);
 	}
 
 	@Override
