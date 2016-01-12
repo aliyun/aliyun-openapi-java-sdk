@@ -49,6 +49,7 @@ public class GetJobResponseTest extends TestCase {
         res.getInstance(context);
 
         assertEquals(res.getJob().getName(), "jobName1");
+        assertTrue(res.getJob().getStartTime().getTime()==1449563285970L);
     }
 
     public void testGetInstanceWithUnsupportedEncoding() {

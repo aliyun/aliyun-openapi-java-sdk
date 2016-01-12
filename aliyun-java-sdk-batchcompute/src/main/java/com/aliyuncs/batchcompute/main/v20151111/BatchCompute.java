@@ -23,6 +23,8 @@ import com.aliyuncs.batchcompute.model.v20151111.*;
 import com.aliyuncs.batchcompute.pojo.v20151111.*;
 import com.aliyuncs.exceptions.ClientException;
 
+import java.util.Map;
+
 
 /**
  * Created by guangchun.luo on 15/12/5
@@ -112,4 +114,8 @@ public interface BatchCompute {
     DeleteClusterResponse deleteCluster(DeleteClusterRequest request) throws ClientException;
 
     DeleteClusterResponse deleteCluster(String clusterId) throws ClientException;
+
+    ChangeClusterDesiredVMCountResponse changeClusterDesiredVMCount(ChangeClusterDesiredVMCountRequest req) throws ClientException;
+    ChangeClusterDesiredVMCountResponse changeClusterDesiredVMCount(String clusterId, ClusterDescription clusterDesc) throws ClientException;
+    ChangeClusterDesiredVMCountResponse changeClusterDesiredVMCount(String clusterId, String groupName, int count) throws ClientException;
 }

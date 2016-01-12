@@ -18,27 +18,14 @@
  */
 package com.aliyuncs.batchcompute.transform.v20151111;
 
-import com.aliyuncs.batchcompute.model.v20151111.ChangeJobPriorityRequest;
+import com.aliyuncs.batchcompute.model.v20151111.ChangeClusterDesiredVMCountResponse;
+import com.aliyuncs.transform.UnmarshallerContext;
 
-import java.security.NoSuchAlgorithmException;
 
+public class ChangeClusterDesiredVMCountResponseUnmarshaller {
 
-public class ChangeJobPriorityRequestMarshaller {
-
-	public static ChangeJobPriorityRequest marshall(ChangeJobPriorityRequest req) {
-
-		String contentString = "";
-		if(req._useInteger){
-			contentString = "{\"Priority\":"+req.getPriority()+"}";
-		}else{
-			contentString = "{\"Priority\":\""+req.getPriority()+"\"}";
-		}
-		try {
-			req.setContent(contentString.getBytes(), req.getEncoding(), req.getAcceptFormat());
-		} catch (NoSuchAlgorithmException e) {
-			e.printStackTrace();
-		}
-
-		return req;
+	public static ChangeClusterDesiredVMCountResponse unmarshall(ChangeClusterDesiredVMCountResponse res, UnmarshallerContext context) {
+		res.setHttpResponse(context.getHttpResponse());
+		return res;
 	}
 }

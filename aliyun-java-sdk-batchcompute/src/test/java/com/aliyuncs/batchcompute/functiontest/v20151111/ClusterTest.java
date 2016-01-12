@@ -93,7 +93,8 @@ public class ClusterTest extends TestCase {
         assertTrue(3 >= group.getActualVMCount());
         assertTrue(3 == group.getDesiredVMCount());
 
-         //3. list cluster
+
+        //3. list cluster
         ListClustersResponse listClustersResponse = client.listClusters();
         assertEquals(200, listClustersResponse.getStatusCode());
 
@@ -105,7 +106,20 @@ public class ClusterTest extends TestCase {
 
 
 
-        // 4. delete cluster
+        //4. update
+        ChangeClusterDesiredVMCountResponse res2 = client.changeClusterDesiredVMCount(gClusterId, "group1", 4);
+        assertEquals(200, res2.getStatusCode());
+
+        //5. check cluster desired vm count
+
+        GetClusterResponse getClusterResponse2 = client.getCluster(gClusterId);
+        Group group3 = getClusterResponse2.getCluster().getGroups().get("group1");
+
+        assertTrue(4 >= group3.getActualVMCount());
+        assertTrue(4 == group3.getDesiredVMCount());
+
+
+        // 6. delete cluster
         DeleteClusterResponse deleteClusterResponse = client.deleteCluster(gClusterId);
 
         int delStatusCode = deleteClusterResponse.getStatusCode();

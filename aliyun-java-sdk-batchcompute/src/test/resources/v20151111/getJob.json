@@ -11,7 +11,7 @@
   "Message": "",
   "Name": "jobName1",
   "OwnerId": 48351,
-  "StartTime": "",
+  "StartTime": "2015-12-08T08:11:54.971970Z",
   "State": "Stopped",
   "TaskMetrics": {
     "FailedCount": 0,

@@ -30,7 +30,6 @@ import com.aliyuncs.exceptions.ClientException;
 import com.aliyuncs.http.HttpResponse;
 import com.aliyuncs.profile.DefaultProfile;
 
-import java.io.IOException;
 import java.util.Map;
 import java.util.Set;
 
@@ -349,6 +348,28 @@ public class BatchComputeClient implements BatchCompute {
         DeleteClusterRequest req = new DeleteClusterRequest();
         req.setClusterId(clusterId);
         return deleteCluster(req);
+    }
+
+    @Override
+    public ChangeClusterDesiredVMCountResponse changeClusterDesiredVMCount(ChangeClusterDesiredVMCountRequest req) throws ClientException {
+        return getAcsResponse(req);
+    }
+
+    @Override
+    public ChangeClusterDesiredVMCountResponse changeClusterDesiredVMCount(String clusterId, ClusterDescription clusterDesc) throws ClientException {
+        ChangeClusterDesiredVMCountRequest req = new ChangeClusterDesiredVMCountRequest();
+        req.setClusterId(clusterId);
+        req.setClusterDescription(clusterDesc);
+        return changeClusterDesiredVMCount(req);
+    }
+
+
+    @Override
+    public ChangeClusterDesiredVMCountResponse changeClusterDesiredVMCount(String clusterId, String groupName, int count) throws ClientException {
+        ChangeClusterDesiredVMCountRequest req = new ChangeClusterDesiredVMCountRequest();
+        req.setClusterId(clusterId);
+        req.setDesiredVmCount(groupName, count);
+        return changeClusterDesiredVMCount(req);
     }
 
 }
