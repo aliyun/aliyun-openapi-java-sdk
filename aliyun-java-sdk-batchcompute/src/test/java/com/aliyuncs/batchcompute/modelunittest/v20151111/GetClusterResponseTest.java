@@ -89,6 +89,12 @@ public class GetClusterResponseTest extends TestCase {
         assertEquals(0, cluster.getMetrics().getStoppedCount());
         assertEquals(0, cluster.getMetrics().getStoppingCount());
 
+
+        assertEquals("bb", cluster.getUserData().get("a"));
+
+
+
+
     }
 
     public void testGetInstanceWithUnsupportedEncoding() {

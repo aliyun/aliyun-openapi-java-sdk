@@ -92,7 +92,7 @@ public class ClusterTest extends TestCase {
         assertEquals("OnDemand", group.getResourceType());
         assertTrue(3 >= group.getActualVMCount());
         assertTrue(3 == group.getDesiredVMCount());
-
+        assertEquals("bb", cluster.getUserData().get("a"));
 
         //3. list cluster
         ListClustersResponse listClustersResponse = client.listClusters();
@@ -143,6 +143,8 @@ public class ClusterTest extends TestCase {
         groupDesc.setInstanceType("ecs.t1.small");
         groupDesc.setResourceType("OnDemand");
         desc.addGroup("group1", groupDesc);
+
+        desc.addUserData("a","bb");
 
         return desc;
     }

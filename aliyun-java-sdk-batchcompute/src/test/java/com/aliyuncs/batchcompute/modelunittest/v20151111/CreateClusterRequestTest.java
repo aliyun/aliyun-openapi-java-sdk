@@ -84,6 +84,9 @@ public class CreateClusterRequestTest extends TestCase {
         assertEquals("OnDemand", group1.getResourceType());
         assertEquals("ecs", group1.getInstanceType());
 
+
+        assertEquals("bb", clusterDesc.getUserData().get("a"));
+
     }
 
 
@@ -95,6 +98,7 @@ public class CreateClusterRequestTest extends TestCase {
         cluster.setDescription("testCluster");
         cluster.setImageId("img-111");
         cluster.addGroup("group1", createGroupDescription());
+        cluster.addUserData("a","bb");
         return cluster;
     }
 

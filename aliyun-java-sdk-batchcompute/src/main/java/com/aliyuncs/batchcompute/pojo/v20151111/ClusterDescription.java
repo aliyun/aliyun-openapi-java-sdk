@@ -45,6 +45,32 @@ public class ClusterDescription {
     @JsonProperty("Groups")
     private Map<String, GroupDescription> groups;
 
+    @JsonProperty("UserData")
+    private Map<String, String> userData;
+
+
+    @JsonIgnore
+    public Map<String, String> getUserData() {
+        return userData;
+    }
+
+    @JsonIgnore
+    public void setUserData(Map<String, String> userData) {
+        this.userData = userData;
+    }
+    @JsonIgnore
+    public void addUserData(String key, String value) {
+        if(this.userData==null){
+            this.userData = new HashMap<String,String>();
+        }
+        this.userData.put(key, value);
+    }
+
+
+
+
+
+
 
     @JsonIgnore
     public String getName() {

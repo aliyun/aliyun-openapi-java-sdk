@@ -26,6 +26,7 @@ import org.codehaus.jackson.annotate.JsonProperty;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -72,6 +73,27 @@ public class Cluster extends DateFormatFieldPojo{
     @JsonProperty("Groups")
     private Map<String, Group> groups;
 
+
+    @JsonProperty("UserData")
+    private Map<String, String> userData;
+
+
+    @JsonIgnore
+    public Map<String, String> getUserData() {
+        return userData;
+    }
+
+    @JsonIgnore
+    public void setUserData(Map<String, String> userData) {
+        this.userData = userData;
+    }
+    @JsonIgnore
+    public void addUserData(String key, String value) {
+        if(this.userData==null){
+            this.userData = new HashMap<String,String>();
+        }
+        this.userData.put(key, value);
+    }
 
 
 
