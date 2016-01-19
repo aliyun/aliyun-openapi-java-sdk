@@ -20,9 +20,11 @@ package com.aliyuncs;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
+import java.net.SocketTimeoutException;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
 import java.util.List;
+import java.util.concurrent.TimeoutException;
 
 import com.aliyuncs.auth.Credential;
 import com.aliyuncs.auth.ISigner;
@@ -169,7 +171,9 @@ public class DefaultAcsClient implements IAcsClient{
 			return response;
 		} catch (InvalidKeyException exp) {
 			throw new ClientException("SDK.InvalidAccessSecret","Speicified access secret is not valid.");
-		} catch (IOException exp) {
+		}catch (SocketTimeoutException exp){
+			throw new ClientException("SDK.ServerUnreachable","SocketTimeoutException has occurred on a socket read or accept.");
+		}catch (IOException exp) {
 			throw new ClientException("SDK.ServerUnreachable", "Speicified endpoint or uri is not valid.");
 		} catch (NoSuchAlgorithmException exp) {
 			throw new ClientException("SDK.InvalidMD5Algorithm", "MD5 hash is not supported by client side.");

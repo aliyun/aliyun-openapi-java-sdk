@@ -41,6 +41,8 @@ public class HttpRequest {
 	protected byte[] content = null;
 	protected String encoding = null;
 	protected Map<String, String> headers = null;
+	protected Integer connectTimeout = null;
+	protected Integer readTimeout = null;
 	
 	public HttpRequest(String strUrl) {
 		this.url = strUrl;
@@ -101,7 +103,23 @@ public class HttpRequest {
 	public String getHeaderValue(String name) {
 		return this.headers.get(name);
 	}
-	
+
+	public Integer getConnectTimeout() {
+		return connectTimeout;
+	}
+
+	public void setConnectTimeout(Integer connectTimeout) {
+		this.connectTimeout = connectTimeout;
+	}
+
+	public Integer getReadTimeout() {
+		return readTimeout;
+	}
+
+	public void setReadTimeout(Integer readTimeout) {
+		this.readTimeout = readTimeout;
+	}
+
 	public void putHeaderParameter(String name, String value) {
 		if (null != name && null != value)
 			this.headers.put(name, value);
@@ -157,6 +175,13 @@ public class HttpRequest {
 		httpConn.setDoOutput(true);
 		httpConn.setDoInput(true);
 		httpConn.setUseCaches(false);
+		if (this.getConnectTimeout() != null) {
+			httpConn.setConnectTimeout(this.getConnectTimeout());
+		}
+
+		if (this.getReadTimeout() != null) {
+			httpConn.setReadTimeout(this.getReadTimeout());
+		}
 	
 		for(Entry<String, String> entry: mappedHeaders.entrySet()) {
 			httpConn.setRequestProperty(entry.getKey(), entry.getValue());
