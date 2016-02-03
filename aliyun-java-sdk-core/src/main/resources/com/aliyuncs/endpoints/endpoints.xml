@@ -14,8 +14,17 @@
         	<RegionId>us-west-1</RegionId>
         	<RegionId>cn-shanghai-et2-test01</RegionId>
         	<RegionId>ap-southeast-1</RegionId>
+			<RegionId>us-east-1</RegionId>
         </RegionIds>
 	    <Products>
+			<Product>
+               <ProductName>CmsSiteMonitor</ProductName>
+               <DomainName>sitemonitor.aliyuncs.com</DomainName>
+			</Product>
+			<Product>
+               <ProductName>Kms</ProductName>
+               <DomainName>kms.daily.alibaba.net</DomainName>
+			</Product>
 			<Product>
                <ProductName>Ess</ProductName>
                <DomainName>ess.aliyuncs.com</DomainName>
@@ -207,6 +216,14 @@
 			<RegionId>cn-shenzhen</RegionId>
         </RegionIds>
 	    <Products>
+			<Product>
+               <ProductName>CmsSiteMonitor</ProductName>
+               <DomainName>sitemonitor.aliyuncs.com</DomainName>
+			</Product>
+			<Product>
+               <ProductName>Kms</ProductName>
+               <DomainName>kms.daily.alibaba.net</DomainName>
+			</Product>
 			<Product>
                <ProductName>Ess</ProductName>
                <DomainName>ess.aliyuncs.com</DomainName>
@@ -402,6 +419,14 @@
         	<RegionId>cn-qingdao</RegionId>
         </RegionIds>
 	    <Products>
+			<Product>
+               <ProductName>CmsSiteMonitor</ProductName>
+               <DomainName>sitemonitor.aliyuncs.com</DomainName>
+			</Product>
+			<Product>
+               <ProductName>Kms</ProductName>
+               <DomainName>kms.daily.alibaba.net</DomainName>
+			</Product>
 			<Product>
                <ProductName>Ess</ProductName>
                <DomainName>ess.aliyuncs.com</DomainName>
