@@ -236,6 +236,8 @@ public class SearchJobResponse extends AcsResponse {
 
 			private MuxConfig muxConfig;
 
+			private TransFeatures transFeatures;
+
 			private Audio audio;
 
 			private Video video;
@@ -362,6 +364,14 @@ public class SearchJobResponse extends AcsResponse {
 				this.muxConfig = muxConfig;
 			}
 
+			public TransFeatures getTransFeatures() {
+				return this.transFeatures;
+			}
+
+			public void setTransFeatures(TransFeatures transFeatures) {
+				this.transFeatures = transFeatures;
+			}
+
 			public Audio getAudio() {
 				return this.audio;
 			}
@@ -390,6 +400,18 @@ public class SearchJobResponse extends AcsResponse {
 
 				private String waterMarkTemplateId;
 
+				private String width;
+
+				private String height;
+
+				private String dx;
+
+				private String dy;
+
+				private String referPos;
+
+				private String type;
+
 				private InputFile inputFile;
 
 				public String getWaterMarkTemplateId() {
@@ -398,6 +420,54 @@ public class SearchJobResponse extends AcsResponse {
 
 				public void setWaterMarkTemplateId(String waterMarkTemplateId) {
 					this.waterMarkTemplateId = waterMarkTemplateId;
+				}
+
+				public String getWidth() {
+					return this.width;
+				}
+
+				public void setWidth(String width) {
+					this.width = width;
+				}
+
+				public String getHeight() {
+					return this.height;
+				}
+
+				public void setHeight(String height) {
+					this.height = height;
+				}
+
+				public String getDx() {
+					return this.dx;
+				}
+
+				public void setDx(String dx) {
+					this.dx = dx;
+				}
+
+				public String getDy() {
+					return this.dy;
+				}
+
+				public void setDy(String dy) {
+					this.dy = dy;
+				}
+
+				public String getReferPos() {
+					return this.referPos;
+				}
+
+				public void setReferPos(String referPos) {
+					this.referPos = referPos;
+				}
+
+				public String getType() {
+					return this.type;
+				}
+
+				public void setType(String type) {
+					this.type = type;
 				}
 
 				public InputFile getInputFile() {
@@ -1335,6 +1405,52 @@ public class SearchJobResponse extends AcsResponse {
 
 					public void setFinalDelay(String finalDelay) {
 						this.finalDelay = finalDelay;
+					}
+				}
+			}
+
+			public static class TransFeatures {
+
+				private List<Merge> mergeList;
+
+				public List<Merge> getMergeList() {
+					return this.mergeList;
+				}
+
+				public void setMergeList(List<Merge> mergeList) {
+					this.mergeList = mergeList;
+				}
+
+				public static class Merge {
+
+					private String mergeURL;
+
+					private String start;
+
+					private String duration;
+
+					public String getMergeURL() {
+						return this.mergeURL;
+					}
+
+					public void setMergeURL(String mergeURL) {
+						this.mergeURL = mergeURL;
+					}
+
+					public String getStart() {
+						return this.start;
+					}
+
+					public void setStart(String start) {
+						this.start = start;
+					}
+
+					public String getDuration() {
+						return this.duration;
+					}
+
+					public void setDuration(String duration) {
+						this.duration = duration;
 					}
 				}
 			}

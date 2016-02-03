@@ -40,7 +40,7 @@ public class QueryJobListByFileRequest extends RpcAcsRequest<QueryJobListByFileR
 
 	private String location;
 
-	private String uploadFileObjects;
+	private String object;
 
 	private String ownerAccount;
 
@@ -89,13 +89,13 @@ public class QueryJobListByFileRequest extends RpcAcsRequest<QueryJobListByFileR
 		putQueryParameter("Location", location);
 	}
 
-	public String getUploadFileObjects() {
-		return this.uploadFileObjects;
+	public String getObject() {
+		return this.object;
 	}
 
-	public void setUploadFileObjects(String uploadFileObjects) {
-		this.uploadFileObjects = uploadFileObjects;
-		putQueryParameter("UploadFileObjects", uploadFileObjects);
+	public void setObject(String object) {
+		this.object = object;
+		putQueryParameter("Object", object);
 	}
 
 	public String getOwnerAccount() {

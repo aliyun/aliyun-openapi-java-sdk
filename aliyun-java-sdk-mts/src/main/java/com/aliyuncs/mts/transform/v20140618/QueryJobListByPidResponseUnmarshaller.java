@@ -45,6 +45,8 @@ import com.aliyuncs.mts.model.v20140618.QueryJobListByPidResponse.Job.Output.Sub
 import com.aliyuncs.mts.model.v20140618.QueryJobListByPidResponse.Job.Output.SubtitleConfig.Subtitle;
 import com.aliyuncs.mts.model.v20140618.QueryJobListByPidResponse.Job.Output.SuperReso;
 import com.aliyuncs.mts.model.v20140618.QueryJobListByPidResponse.Job.Output.TransConfig;
+import com.aliyuncs.mts.model.v20140618.QueryJobListByPidResponse.Job.Output.TransFeatures;
+import com.aliyuncs.mts.model.v20140618.QueryJobListByPidResponse.Job.Output.TransFeatures.Merge;
 import com.aliyuncs.mts.model.v20140618.QueryJobListByPidResponse.Job.Output.Video;
 import com.aliyuncs.mts.model.v20140618.QueryJobListByPidResponse.Job.Output.Video.BitrateBnd;
 import com.aliyuncs.mts.model.v20140618.QueryJobListByPidResponse.Job.Output.WaterMark;
@@ -241,6 +243,20 @@ public class QueryJobListByPidResponseUnmarshaller {
 			muxConfig.setGif(gif);
 			output.setMuxConfig(muxConfig);
 
+			TransFeatures transFeatures = new TransFeatures();
+
+			List<Merge> mergeList = new ArrayList<Merge>();
+			for (int j = 0; j < context.lengthValue("QueryJobListByPidResponse.JobList["+ i +"].Output.TransFeatures.MergeList.Length"); j++) {
+				Merge merge = new Merge();
+				merge.setMergeURL(context.stringValue("QueryJobListByPidResponse.JobList["+ i +"].Output.TransFeatures.MergeList["+ j +"].MergeURL"));
+				merge.setStart(context.stringValue("QueryJobListByPidResponse.JobList["+ i +"].Output.TransFeatures.MergeList["+ j +"].Start"));
+				merge.setDuration(context.stringValue("QueryJobListByPidResponse.JobList["+ i +"].Output.TransFeatures.MergeList["+ j +"].Duration"));
+
+				mergeList.add(merge);
+			}
+			transFeatures.setMergeList(mergeList);
+			output.setTransFeatures(transFeatures);
+
 			Audio audio = new Audio();
 			audio.setCodec(context.stringValue("QueryJobListByPidResponse.JobList["+ i +"].Output.Audio.Codec"));
 			audio.setProfile(context.stringValue("QueryJobListByPidResponse.JobList["+ i +"].Output.Audio.Profile"));
@@ -281,6 +297,12 @@ public class QueryJobListByPidResponseUnmarshaller {
 			for (int j = 0; j < context.lengthValue("QueryJobListByPidResponse.JobList["+ i +"].Output.WaterMarkList.Length"); j++) {
 				WaterMark waterMark = new WaterMark();
 				waterMark.setWaterMarkTemplateId(context.stringValue("QueryJobListByPidResponse.JobList["+ i +"].Output.WaterMarkList["+ j +"].WaterMarkTemplateId"));
+				waterMark.setWidth(context.stringValue("QueryJobListByPidResponse.JobList["+ i +"].Output.WaterMarkList["+ j +"].Width"));
+				waterMark.setHeight(context.stringValue("QueryJobListByPidResponse.JobList["+ i +"].Output.WaterMarkList["+ j +"].Height"));
+				waterMark.setDx(context.stringValue("QueryJobListByPidResponse.JobList["+ i +"].Output.WaterMarkList["+ j +"].Dx"));
+				waterMark.setDy(context.stringValue("QueryJobListByPidResponse.JobList["+ i +"].Output.WaterMarkList["+ j +"].Dy"));
+				waterMark.setReferPos(context.stringValue("QueryJobListByPidResponse.JobList["+ i +"].Output.WaterMarkList["+ j +"].ReferPos"));
+				waterMark.setType(context.stringValue("QueryJobListByPidResponse.JobList["+ i +"].Output.WaterMarkList["+ j +"].Type"));
 
 				InputFile inputFile = new InputFile();
 				inputFile.setBucket(context.stringValue("QueryJobListByPidResponse.JobList["+ i +"].Output.WaterMarkList["+ j +"].InputFile.Bucket"));

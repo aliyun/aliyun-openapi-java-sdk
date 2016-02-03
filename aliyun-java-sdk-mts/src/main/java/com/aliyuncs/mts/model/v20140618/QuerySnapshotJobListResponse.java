@@ -65,6 +65,8 @@ public class QuerySnapshotJobListResponse extends AcsResponse {
 
 		private String userData;
 
+		private String pipelineId;
+
 		private String state;
 
 		private String code;
@@ -91,6 +93,14 @@ public class QuerySnapshotJobListResponse extends AcsResponse {
 
 		public void setUserData(String userData) {
 			this.userData = userData;
+		}
+
+		public String getPipelineId() {
+			return this.pipelineId;
+		}
+
+		public void setPipelineId(String pipelineId) {
+			this.pipelineId = pipelineId;
 		}
 
 		public String getState() {

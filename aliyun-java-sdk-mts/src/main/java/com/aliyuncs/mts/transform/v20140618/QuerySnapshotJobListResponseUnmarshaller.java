@@ -46,6 +46,7 @@ public class QuerySnapshotJobListResponseUnmarshaller {
 			SnapshotJob snapshotJob = new SnapshotJob();
 			snapshotJob.setId(context.stringValue("QuerySnapshotJobListResponse.SnapshotJobList["+ i +"].Id"));
 			snapshotJob.setUserData(context.stringValue("QuerySnapshotJobListResponse.SnapshotJobList["+ i +"].UserData"));
+			snapshotJob.setPipelineId(context.stringValue("QuerySnapshotJobListResponse.SnapshotJobList["+ i +"].PipelineId"));
 			snapshotJob.setState(context.stringValue("QuerySnapshotJobListResponse.SnapshotJobList["+ i +"].State"));
 			snapshotJob.setCode(context.stringValue("QuerySnapshotJobListResponse.SnapshotJobList["+ i +"].Code"));
 			snapshotJob.setMessage(context.stringValue("QuerySnapshotJobListResponse.SnapshotJobList["+ i +"].Message"));

@@ -51,6 +51,7 @@ public class QueryMediaInfoJobListResponseUnmarshaller {
 			MediaInfoJob mediaInfoJob = new MediaInfoJob();
 			mediaInfoJob.setJobId(context.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].JobId"));
 			mediaInfoJob.setUserData(context.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].UserData"));
+			mediaInfoJob.setPipelineId(context.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].PipelineId"));
 			mediaInfoJob.setState(context.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].State"));
 			mediaInfoJob.setCode(context.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Code"));
 			mediaInfoJob.setMessage(context.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Message"));
