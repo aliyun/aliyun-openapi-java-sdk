@@ -105,6 +105,8 @@ public class DescribeImagesResponse extends AcsResponse {
 
 		private String imageOwnerAlias;
 
+		private Boolean isSupportIoOptimized;
+
 		private String oSName;
 
 		private Architecture architecture;
@@ -128,6 +130,8 @@ public class DescribeImagesResponse extends AcsResponse {
 		private Boolean isCopied;
 
 		private List<DiskDeviceMapping> diskDeviceMappings;
+
+		private List<Tag> tags;
 
 		public String getProgress() {
 			return this.progress;
@@ -183,6 +187,14 @@ public class DescribeImagesResponse extends AcsResponse {
 
 		public void setImageOwnerAlias(String imageOwnerAlias) {
 			this.imageOwnerAlias = imageOwnerAlias;
+		}
+
+		public Boolean getIsSupportIoOptimized() {
+			return this.isSupportIoOptimized;
+		}
+
+		public void setIsSupportIoOptimized(Boolean isSupportIoOptimized) {
+			this.isSupportIoOptimized = isSupportIoOptimized;
 		}
 
 		public String getOSName() {
@@ -281,6 +293,14 @@ public class DescribeImagesResponse extends AcsResponse {
 			this.diskDeviceMappings = diskDeviceMappings;
 		}
 
+		public List<Tag> getTags() {
+			return this.tags;
+		}
+
+		public void setTags(List<Tag> tags) {
+			this.tags = tags;
+		}
+
 		public enum Architecture {
 		
 			X86_64("x86_64"),
@@ -322,6 +342,12 @@ public class DescribeImagesResponse extends AcsResponse {
 
 			private String device;
 
+			private String format;
+
+			private String importOSSBucket;
+
+			private String importOSSObject;
+
 			public String getSnapshotId() {
 				return this.snapshotId;
 			}
@@ -344,6 +370,53 @@ public class DescribeImagesResponse extends AcsResponse {
 
 			public void setDevice(String device) {
 				this.device = device;
+			}
+
+			public String getFormat() {
+				return this.format;
+			}
+
+			public void setFormat(String format) {
+				this.format = format;
+			}
+
+			public String getImportOSSBucket() {
+				return this.importOSSBucket;
+			}
+
+			public void setImportOSSBucket(String importOSSBucket) {
+				this.importOSSBucket = importOSSBucket;
+			}
+
+			public String getImportOSSObject() {
+				return this.importOSSObject;
+			}
+
+			public void setImportOSSObject(String importOSSObject) {
+				this.importOSSObject = importOSSObject;
+			}
+		}
+
+		public static class Tag {
+
+			private String tagKey;
+
+			private String tagValue;
+
+			public String getTagKey() {
+				return this.tagKey;
+			}
+
+			public void setTagKey(String tagKey) {
+				this.tagKey = tagKey;
+			}
+
+			public String getTagValue() {
+				return this.tagValue;
+			}
+
+			public void setTagValue(String tagValue) {
+				this.tagValue = tagValue;
 			}
 		}
 	}

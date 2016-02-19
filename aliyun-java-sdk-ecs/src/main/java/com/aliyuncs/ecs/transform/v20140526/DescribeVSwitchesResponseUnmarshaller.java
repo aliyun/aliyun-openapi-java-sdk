@@ -20,6 +20,7 @@ package com.aliyuncs.ecs.transform.v20140526;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import com.aliyuncs.ecs.model.v20140526.DescribeVSwitchesResponse;
 import com.aliyuncs.ecs.model.v20140526.DescribeVSwitchesResponse.VSwitch;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -36,7 +37,7 @@ public class DescribeVSwitchesResponseUnmarshaller {
 
 		List<VSwitch> vSwitches = new ArrayList<VSwitch>();
 		for (int i = 0; i < context.lengthValue("DescribeVSwitchesResponse.VSwitches.Length"); i++) {
-			VSwitch  vSwitch = new VSwitch();
+			VSwitch vSwitch = new VSwitch();
 			vSwitch.setVSwitchId(context.stringValue("DescribeVSwitchesResponse.VSwitches["+ i +"].VSwitchId"));
 			vSwitch.setVpcId(context.stringValue("DescribeVSwitchesResponse.VSwitches["+ i +"].VpcId"));
 			vSwitch.setStatus(context.stringValue("DescribeVSwitchesResponse.VSwitches["+ i +"].Status"));
@@ -46,6 +47,7 @@ public class DescribeVSwitchesResponseUnmarshaller {
 			vSwitch.setDescription(context.stringValue("DescribeVSwitchesResponse.VSwitches["+ i +"].Description"));
 			vSwitch.setVSwitchName(context.stringValue("DescribeVSwitchesResponse.VSwitches["+ i +"].VSwitchName"));
 			vSwitch.setCreationTime(context.stringValue("DescribeVSwitchesResponse.VSwitches["+ i +"].CreationTime"));
+			vSwitch.setIsDefault(context.stringValue("DescribeVSwitchesResponse.VSwitches["+ i +"].IsDefault"));
 
 			vSwitches.add(vSwitch);
 		}

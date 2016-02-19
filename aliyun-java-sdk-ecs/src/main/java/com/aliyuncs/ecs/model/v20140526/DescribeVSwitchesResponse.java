@@ -99,6 +99,8 @@ public class DescribeVSwitchesResponse extends AcsResponse {
 
 		private String creationTime;
 
+		private String isDefault;
+
 		public String getVSwitchId() {
 			return this.vSwitchId;
 		}
@@ -169,6 +171,14 @@ public class DescribeVSwitchesResponse extends AcsResponse {
 
 		public void setCreationTime(String creationTime) {
 			this.creationTime = creationTime;
+		}
+
+		public String getIsDefault() {
+			return this.isDefault;
+		}
+
+		public void setIsDefault(String isDefault) {
+			this.isDefault = isDefault;
 		}
 	}
 

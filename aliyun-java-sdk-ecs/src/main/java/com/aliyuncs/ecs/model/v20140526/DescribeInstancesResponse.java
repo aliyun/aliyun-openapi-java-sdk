@@ -97,9 +97,15 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		private String instanceType;
 
+		private Integer cpu;
+
+		private Integer memory;
+
 		private String hostName;
 
 		private Status status;
+
+		private String serialNumber;
 
 		private String internetChargeType;
 
@@ -121,7 +127,11 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		private Boolean deviceAvailable;
 
+		private String instanceTypeFamily;
+
 		private List<LockReason> operationLocks;
+
+		private List<Tag> tags;
 
 		private List<String> securityGroupIds;
 
@@ -197,6 +207,22 @@ public class DescribeInstancesResponse extends AcsResponse {
 			this.instanceType = instanceType;
 		}
 
+		public Integer getCpu() {
+			return this.cpu;
+		}
+
+		public void setCpu(Integer cpu) {
+			this.cpu = cpu;
+		}
+
+		public Integer getMemory() {
+			return this.memory;
+		}
+
+		public void setMemory(Integer memory) {
+			this.memory = memory;
+		}
+
 		public String getHostName() {
 			return this.hostName;
 		}
@@ -211,6 +237,14 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		public void setStatus(Status status) {
 			this.status = status;
+		}
+
+		public String getSerialNumber() {
+			return this.serialNumber;
+		}
+
+		public void setSerialNumber(String serialNumber) {
+			this.serialNumber = serialNumber;
 		}
 
 		public String getInternetChargeType() {
@@ -293,12 +327,28 @@ public class DescribeInstancesResponse extends AcsResponse {
 			this.deviceAvailable = deviceAvailable;
 		}
 
+		public String getInstanceTypeFamily() {
+			return this.instanceTypeFamily;
+		}
+
+		public void setInstanceTypeFamily(String instanceTypeFamily) {
+			this.instanceTypeFamily = instanceTypeFamily;
+		}
+
 		public List<LockReason> getOperationLocks() {
 			return this.operationLocks;
 		}
 
 		public void setOperationLocks(List<LockReason> operationLocks) {
 			this.operationLocks = operationLocks;
+		}
+
+		public List<Tag> getTags() {
+			return this.tags;
+		}
+
+		public void setTags(List<Tag> tags) {
+			this.tags = tags;
 		}
 
 		public List<String> getSecurityGroupIds() {
@@ -349,7 +399,8 @@ public class DescribeInstancesResponse extends AcsResponse {
 			RUNNING("Running"),
 			RESETTING("Resetting"),
 			STARTING("Starting"),
-			STOPPING("Stopping"),;
+			STOPPING("Stopping"),
+			PENDING("Pending"),;
 			
 		    private String stringValue;
 		
@@ -389,6 +440,29 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 			public void setLockReason(String lockReason) {
 				this.lockReason = lockReason;
+			}
+		}
+
+		public static class Tag {
+
+			private String tagKey;
+
+			private String tagValue;
+
+			public String getTagKey() {
+				return this.tagKey;
+			}
+
+			public void setTagKey(String tagKey) {
+				this.tagKey = tagKey;
+			}
+
+			public String getTagValue() {
+				return this.tagValue;
+			}
+
+			public void setTagValue(String tagValue) {
+				this.tagValue = tagValue;
 			}
 		}
 

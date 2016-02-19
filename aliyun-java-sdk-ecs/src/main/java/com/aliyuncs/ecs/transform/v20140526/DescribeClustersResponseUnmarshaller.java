@@ -20,6 +20,7 @@ package com.aliyuncs.ecs.transform.v20140526;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import com.aliyuncs.ecs.model.v20140526.DescribeClustersResponse;
 import com.aliyuncs.ecs.model.v20140526.DescribeClustersResponse.Cluster;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -33,7 +34,7 @@ public class DescribeClustersResponseUnmarshaller {
 
 		List<Cluster> clusters = new ArrayList<Cluster>();
 		for (int i = 0; i < context.lengthValue("DescribeClustersResponse.Clusters.Length"); i++) {
-			Cluster  cluster = new Cluster();
+			Cluster cluster = new Cluster();
 			cluster.setClusterId(context.stringValue("DescribeClustersResponse.Clusters["+ i +"].ClusterId"));
 
 			clusters.add(cluster);

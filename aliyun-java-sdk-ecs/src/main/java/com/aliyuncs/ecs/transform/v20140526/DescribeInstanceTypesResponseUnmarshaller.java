@@ -20,6 +20,7 @@ package com.aliyuncs.ecs.transform.v20140526;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import com.aliyuncs.ecs.model.v20140526.DescribeInstanceTypesResponse;
 import com.aliyuncs.ecs.model.v20140526.DescribeInstanceTypesResponse.InstanceType;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -33,10 +34,11 @@ public class DescribeInstanceTypesResponseUnmarshaller {
 
 		List<InstanceType> instanceTypes = new ArrayList<InstanceType>();
 		for (int i = 0; i < context.lengthValue("DescribeInstanceTypesResponse.InstanceTypes.Length"); i++) {
-			InstanceType  instanceType = new InstanceType();
+			InstanceType instanceType = new InstanceType();
 			instanceType.setInstanceTypeId(context.stringValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].InstanceTypeId"));
 			instanceType.setCpuCoreCount(context.integerValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].CpuCoreCount"));
 			instanceType.setMemorySize(context.floatValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].MemorySize"));
+			instanceType.setInstanceTypeFamily(context.stringValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].InstanceTypeFamily"));
 
 			instanceTypes.add(instanceType);
 		}

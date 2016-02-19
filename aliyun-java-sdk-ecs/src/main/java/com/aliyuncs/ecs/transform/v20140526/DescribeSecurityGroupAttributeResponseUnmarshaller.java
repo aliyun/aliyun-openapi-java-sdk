@@ -20,6 +20,7 @@ package com.aliyuncs.ecs.transform.v20140526;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import com.aliyuncs.ecs.model.v20140526.DescribeSecurityGroupAttributeResponse;
 import com.aliyuncs.ecs.model.v20140526.DescribeSecurityGroupAttributeResponse.Permission;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -38,7 +39,7 @@ public class DescribeSecurityGroupAttributeResponseUnmarshaller {
 
 		List<Permission> permissions = new ArrayList<Permission>();
 		for (int i = 0; i < context.lengthValue("DescribeSecurityGroupAttributeResponse.Permissions.Length"); i++) {
-			Permission  permission = new Permission();
+			Permission permission = new Permission();
 			permission.setIpProtocol(context.stringValue("DescribeSecurityGroupAttributeResponse.Permissions["+ i +"].IpProtocol"));
 			permission.setPortRange(context.stringValue("DescribeSecurityGroupAttributeResponse.Permissions["+ i +"].PortRange"));
 			permission.setSourceGroupId(context.stringValue("DescribeSecurityGroupAttributeResponse.Permissions["+ i +"].SourceGroupId"));
@@ -50,6 +51,7 @@ public class DescribeSecurityGroupAttributeResponseUnmarshaller {
 			permission.setDestCidrIp(context.stringValue("DescribeSecurityGroupAttributeResponse.Permissions["+ i +"].DestCidrIp"));
 			permission.setDestGroupOwnerAccount(context.stringValue("DescribeSecurityGroupAttributeResponse.Permissions["+ i +"].DestGroupOwnerAccount"));
 			permission.setPriority(context.stringValue("DescribeSecurityGroupAttributeResponse.Permissions["+ i +"].Priority"));
+			permission.setDirection(context.stringValue("DescribeSecurityGroupAttributeResponse.Permissions["+ i +"].Direction"));
 
 			permissions.add(permission);
 		}

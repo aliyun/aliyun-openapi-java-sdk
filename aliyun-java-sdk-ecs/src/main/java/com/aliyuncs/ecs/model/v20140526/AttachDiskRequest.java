@@ -52,7 +52,7 @@ public class AttachDiskRequest extends RpcAcsRequest<AttachDiskResponse> {
 
 	public void setOwnerId(Long ownerId) {
 		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", String.valueOf(ownerId));
+		putQueryParameter("OwnerId", ownerId);
 	}
 
 	public String getResourceOwnerAccount() {
@@ -70,7 +70,7 @@ public class AttachDiskRequest extends RpcAcsRequest<AttachDiskResponse> {
 
 	public void setResourceOwnerId(Long resourceOwnerId) {
 		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", String.valueOf(resourceOwnerId));
+		putQueryParameter("ResourceOwnerId", resourceOwnerId);
 	}
 
 	public String getInstanceId() {
@@ -106,7 +106,7 @@ public class AttachDiskRequest extends RpcAcsRequest<AttachDiskResponse> {
 
 	public void setDeleteWithInstance(Boolean deleteWithInstance) {
 		this.deleteWithInstance = deleteWithInstance;
-		putQueryParameter("DeleteWithInstance", String.valueOf(deleteWithInstance));
+		putQueryParameter("DeleteWithInstance", deleteWithInstance);
 	}
 
 	public String getOwnerAccount() {

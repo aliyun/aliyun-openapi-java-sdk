@@ -55,9 +55,13 @@ public class DescribeZonesResponse extends AcsResponse {
 
 		private String localName;
 
+		private List<ResourcesInfo> availableResources;
+
 		private List<String> availableResourceCreation;
 
 		private List<String> availableDiskCategories;
+
+		private List<String> availableInstanceTypes;
 
 		public String getZoneId() {
 			return this.zoneId;
@@ -75,6 +79,14 @@ public class DescribeZonesResponse extends AcsResponse {
 			this.localName = localName;
 		}
 
+		public List<ResourcesInfo> getAvailableResources() {
+			return this.availableResources;
+		}
+
+		public void setAvailableResources(List<ResourcesInfo> availableResources) {
+			this.availableResources = availableResources;
+		}
+
 		public List<String> getAvailableResourceCreation() {
 			return this.availableResourceCreation;
 		}
@@ -89,6 +101,87 @@ public class DescribeZonesResponse extends AcsResponse {
 
 		public void setAvailableDiskCategories(List<String> availableDiskCategories) {
 			this.availableDiskCategories = availableDiskCategories;
+		}
+
+		public List<String> getAvailableInstanceTypes() {
+			return this.availableInstanceTypes;
+		}
+
+		public void setAvailableInstanceTypes(List<String> availableInstanceTypes) {
+			this.availableInstanceTypes = availableInstanceTypes;
+		}
+
+		public static class ResourcesInfo {
+
+			private Boolean ioOptimized;
+
+			private List<String> systemDiskCategories;
+
+			private List<String> dataDiskCategories;
+
+			private List<String> networkTypes;
+
+			private List<String> instanceTypes;
+
+			private List<String> instanceTypeFamilies;
+
+			private List<String> instanceGenerations;
+
+			public Boolean getIoOptimized() {
+				return this.ioOptimized;
+			}
+
+			public void setIoOptimized(Boolean ioOptimized) {
+				this.ioOptimized = ioOptimized;
+			}
+
+			public List<String> getSystemDiskCategories() {
+				return this.systemDiskCategories;
+			}
+
+			public void setSystemDiskCategories(List<String> systemDiskCategories) {
+				this.systemDiskCategories = systemDiskCategories;
+			}
+
+			public List<String> getDataDiskCategories() {
+				return this.dataDiskCategories;
+			}
+
+			public void setDataDiskCategories(List<String> dataDiskCategories) {
+				this.dataDiskCategories = dataDiskCategories;
+			}
+
+			public List<String> getNetworkTypes() {
+				return this.networkTypes;
+			}
+
+			public void setNetworkTypes(List<String> networkTypes) {
+				this.networkTypes = networkTypes;
+			}
+
+			public List<String> getInstanceTypes() {
+				return this.instanceTypes;
+			}
+
+			public void setInstanceTypes(List<String> instanceTypes) {
+				this.instanceTypes = instanceTypes;
+			}
+
+			public List<String> getInstanceTypeFamilies() {
+				return this.instanceTypeFamilies;
+			}
+
+			public void setInstanceTypeFamilies(List<String> instanceTypeFamilies) {
+				this.instanceTypeFamilies = instanceTypeFamilies;
+			}
+
+			public List<String> getInstanceGenerations() {
+				return this.instanceGenerations;
+			}
+
+			public void setInstanceGenerations(List<String> instanceGenerations) {
+				this.instanceGenerations = instanceGenerations;
+			}
 		}
 	}
 

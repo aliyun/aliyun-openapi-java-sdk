@@ -46,13 +46,19 @@ public class ModifyInstanceSpecRequest extends RpcAcsRequest<ModifyInstanceSpecR
 
 	private String ownerAccount;
 
+	private String temporaryStartTime;
+
+	private String temporaryEndTime;
+
+	private Integer temporaryInternetMaxBandwidthOut;
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
 
 	public void setOwnerId(Long ownerId) {
 		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", String.valueOf(ownerId));
+		putQueryParameter("OwnerId", ownerId);
 	}
 
 	public String getResourceOwnerAccount() {
@@ -70,7 +76,7 @@ public class ModifyInstanceSpecRequest extends RpcAcsRequest<ModifyInstanceSpecR
 
 	public void setResourceOwnerId(Long resourceOwnerId) {
 		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", String.valueOf(resourceOwnerId));
+		putQueryParameter("ResourceOwnerId", resourceOwnerId);
 	}
 
 	public String getInstanceId() {
@@ -97,7 +103,7 @@ public class ModifyInstanceSpecRequest extends RpcAcsRequest<ModifyInstanceSpecR
 
 	public void setInternetMaxBandwidthOut(Integer internetMaxBandwidthOut) {
 		this.internetMaxBandwidthOut = internetMaxBandwidthOut;
-		putQueryParameter("InternetMaxBandwidthOut", String.valueOf(internetMaxBandwidthOut));
+		putQueryParameter("InternetMaxBandwidthOut", internetMaxBandwidthOut);
 	}
 
 	public Integer getInternetMaxBandwidthIn() {
@@ -106,7 +112,7 @@ public class ModifyInstanceSpecRequest extends RpcAcsRequest<ModifyInstanceSpecR
 
 	public void setInternetMaxBandwidthIn(Integer internetMaxBandwidthIn) {
 		this.internetMaxBandwidthIn = internetMaxBandwidthIn;
-		putQueryParameter("InternetMaxBandwidthIn", String.valueOf(internetMaxBandwidthIn));
+		putQueryParameter("InternetMaxBandwidthIn", internetMaxBandwidthIn);
 	}
 
 	public String getOwnerAccount() {
@@ -116,6 +122,33 @@ public class ModifyInstanceSpecRequest extends RpcAcsRequest<ModifyInstanceSpecR
 	public void setOwnerAccount(String ownerAccount) {
 		this.ownerAccount = ownerAccount;
 		putQueryParameter("OwnerAccount", ownerAccount);
+	}
+
+	public String getTemporaryStartTime() {
+		return this.temporaryStartTime;
+	}
+
+	public void setTemporaryStartTime(String temporaryStartTime) {
+		this.temporaryStartTime = temporaryStartTime;
+		putQueryParameter("Temporary.StartTime", temporaryStartTime);
+	}
+
+	public String getTemporaryEndTime() {
+		return this.temporaryEndTime;
+	}
+
+	public void setTemporaryEndTime(String temporaryEndTime) {
+		this.temporaryEndTime = temporaryEndTime;
+		putQueryParameter("Temporary.EndTime", temporaryEndTime);
+	}
+
+	public Integer getTemporaryInternetMaxBandwidthOut() {
+		return this.temporaryInternetMaxBandwidthOut;
+	}
+
+	public void setTemporaryInternetMaxBandwidthOut(Integer temporaryInternetMaxBandwidthOut) {
+		this.temporaryInternetMaxBandwidthOut = temporaryInternetMaxBandwidthOut;
+		putQueryParameter("Temporary.InternetMaxBandwidthOut", temporaryInternetMaxBandwidthOut);
 	}
 
 	@Override

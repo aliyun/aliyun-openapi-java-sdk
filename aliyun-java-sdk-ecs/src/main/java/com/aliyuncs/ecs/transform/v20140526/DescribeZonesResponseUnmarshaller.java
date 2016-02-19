@@ -20,8 +20,10 @@ package com.aliyuncs.ecs.transform.v20140526;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import com.aliyuncs.ecs.model.v20140526.DescribeZonesResponse;
 import com.aliyuncs.ecs.model.v20140526.DescribeZonesResponse.Zone;
+import com.aliyuncs.ecs.model.v20140526.DescribeZonesResponse.Zone.ResourcesInfo;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -33,7 +35,7 @@ public class DescribeZonesResponseUnmarshaller {
 
 		List<Zone> zones = new ArrayList<Zone>();
 		for (int i = 0; i < context.lengthValue("DescribeZonesResponse.Zones.Length"); i++) {
-			Zone  zone = new Zone();
+			Zone zone = new Zone();
 			zone.setZoneId(context.stringValue("DescribeZonesResponse.Zones["+ i +"].ZoneId"));
 			zone.setLocalName(context.stringValue("DescribeZonesResponse.Zones["+ i +"].LocalName"));
 
@@ -48,6 +50,57 @@ public class DescribeZonesResponseUnmarshaller {
 				availableDiskCategories.add(context.stringValue("DescribeZonesResponse.Zones["+ i +"].AvailableDiskCategories["+ j +"]"));
 			}
 			zone.setAvailableDiskCategories(availableDiskCategories);
+
+			List<String> availableInstanceTypes = new ArrayList<String>();
+			for (int j = 0; j < context.lengthValue("DescribeZonesResponse.Zones["+ i +"].AvailableInstanceTypes.Length"); j++) {
+				availableInstanceTypes.add(context.stringValue("DescribeZonesResponse.Zones["+ i +"].AvailableInstanceTypes["+ j +"]"));
+			}
+			zone.setAvailableInstanceTypes(availableInstanceTypes);
+
+			List<ResourcesInfo> availableResources = new ArrayList<ResourcesInfo>();
+			for (int j = 0; j < context.lengthValue("DescribeZonesResponse.Zones["+ i +"].AvailableResources.Length"); j++) {
+				ResourcesInfo resourcesInfo = new ResourcesInfo();
+				resourcesInfo.setIoOptimized(context.booleanValue("DescribeZonesResponse.Zones["+ i +"].AvailableResources["+ j +"].IoOptimized"));
+
+				List<String> systemDiskCategories = new ArrayList<String>();
+				for (int k = 0; k < context.lengthValue("DescribeZonesResponse.Zones["+ i +"].AvailableResources["+ j +"].SystemDiskCategories.Length"); k++) {
+					systemDiskCategories.add(context.stringValue("DescribeZonesResponse.Zones["+ i +"].AvailableResources["+ j +"].SystemDiskCategories["+ k +"]"));
+				}
+				resourcesInfo.setSystemDiskCategories(systemDiskCategories);
+
+				List<String> dataDiskCategories = new ArrayList<String>();
+				for (int k = 0; k < context.lengthValue("DescribeZonesResponse.Zones["+ i +"].AvailableResources["+ j +"].DataDiskCategories.Length"); k++) {
+					dataDiskCategories.add(context.stringValue("DescribeZonesResponse.Zones["+ i +"].AvailableResources["+ j +"].DataDiskCategories["+ k +"]"));
+				}
+				resourcesInfo.setDataDiskCategories(dataDiskCategories);
+
+				List<String> networkTypes = new ArrayList<String>();
+				for (int k = 0; k < context.lengthValue("DescribeZonesResponse.Zones["+ i +"].AvailableResources["+ j +"].NetworkTypes.Length"); k++) {
+					networkTypes.add(context.stringValue("DescribeZonesResponse.Zones["+ i +"].AvailableResources["+ j +"].NetworkTypes["+ k +"]"));
+				}
+				resourcesInfo.setNetworkTypes(networkTypes);
+
+				List<String> instanceTypes = new ArrayList<String>();
+				for (int k = 0; k < context.lengthValue("DescribeZonesResponse.Zones["+ i +"].AvailableResources["+ j +"].InstanceTypes.Length"); k++) {
+					instanceTypes.add(context.stringValue("DescribeZonesResponse.Zones["+ i +"].AvailableResources["+ j +"].InstanceTypes["+ k +"]"));
+				}
+				resourcesInfo.setInstanceTypes(instanceTypes);
+
+				List<String> instanceTypeFamilies = new ArrayList<String>();
+				for (int k = 0; k < context.lengthValue("DescribeZonesResponse.Zones["+ i +"].AvailableResources["+ j +"].InstanceTypeFamilies.Length"); k++) {
+					instanceTypeFamilies.add(context.stringValue("DescribeZonesResponse.Zones["+ i +"].AvailableResources["+ j +"].InstanceTypeFamilies["+ k +"]"));
+				}
+				resourcesInfo.setInstanceTypeFamilies(instanceTypeFamilies);
+
+				List<String> instanceGenerations = new ArrayList<String>();
+				for (int k = 0; k < context.lengthValue("DescribeZonesResponse.Zones["+ i +"].AvailableResources["+ j +"].InstanceGenerations.Length"); k++) {
+					instanceGenerations.add(context.stringValue("DescribeZonesResponse.Zones["+ i +"].AvailableResources["+ j +"].InstanceGenerations["+ k +"]"));
+				}
+				resourcesInfo.setInstanceGenerations(instanceGenerations);
+
+				availableResources.add(resourcesInfo);
+			}
+			zone.setAvailableResources(availableResources);
 
 			zones.add(zone);
 		}

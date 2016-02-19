@@ -58,13 +58,17 @@ public class DescribeEipAddressesRequest extends RpcAcsRequest<DescribeEipAddres
 
 	private String lockReason;
 
+	private String associatedInstanceType;
+
+	private String associatedInstanceId;
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
 
 	public void setOwnerId(Long ownerId) {
 		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", String.valueOf(ownerId));
+		putQueryParameter("OwnerId", ownerId);
 	}
 
 	public String getResourceOwnerAccount() {
@@ -82,7 +86,7 @@ public class DescribeEipAddressesRequest extends RpcAcsRequest<DescribeEipAddres
 
 	public void setResourceOwnerId(Long resourceOwnerId) {
 		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", String.valueOf(resourceOwnerId));
+		putQueryParameter("ResourceOwnerId", resourceOwnerId);
 	}
 
 	public String getStatus() {
@@ -118,7 +122,7 @@ public class DescribeEipAddressesRequest extends RpcAcsRequest<DescribeEipAddres
 
 	public void setPageNumber(Integer pageNumber) {
 		this.pageNumber = pageNumber;
-		putQueryParameter("PageNumber", String.valueOf(pageNumber));
+		putQueryParameter("PageNumber", pageNumber);
 	}
 
 	public Integer getPageSize() {
@@ -127,7 +131,7 @@ public class DescribeEipAddressesRequest extends RpcAcsRequest<DescribeEipAddres
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
-		putQueryParameter("PageSize", String.valueOf(pageSize));
+		putQueryParameter("PageSize", pageSize);
 	}
 
 	public String getOwnerAccount() {
@@ -182,6 +186,24 @@ public class DescribeEipAddressesRequest extends RpcAcsRequest<DescribeEipAddres
 	public void setLockReason(String lockReason) {
 		this.lockReason = lockReason;
 		putQueryParameter("LockReason", lockReason);
+	}
+
+	public String getAssociatedInstanceType() {
+		return this.associatedInstanceType;
+	}
+
+	public void setAssociatedInstanceType(String associatedInstanceType) {
+		this.associatedInstanceType = associatedInstanceType;
+		putQueryParameter("AssociatedInstanceType", associatedInstanceType);
+	}
+
+	public String getAssociatedInstanceId() {
+		return this.associatedInstanceId;
+	}
+
+	public void setAssociatedInstanceId(String associatedInstanceId) {
+		this.associatedInstanceId = associatedInstanceId;
+		putQueryParameter("AssociatedInstanceId", associatedInstanceId);
 	}
 
 	@Override

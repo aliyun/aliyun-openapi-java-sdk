@@ -20,6 +20,7 @@ package com.aliyuncs.ecs.transform.v20140526;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import com.aliyuncs.ecs.model.v20140526.DescribeIpRangesResponse;
 import com.aliyuncs.ecs.model.v20140526.DescribeIpRangesResponse.IpRange;
 import com.aliyuncs.ecs.model.v20140526.DescribeIpRangesResponse.IpRange.NicType;
@@ -39,7 +40,7 @@ public class DescribeIpRangesResponseUnmarshaller {
 
 		List<IpRange> ipRanges = new ArrayList<IpRange>();
 		for (int i = 0; i < context.lengthValue("DescribeIpRangesResponse.IpRanges.Length"); i++) {
-			IpRange  ipRange = new IpRange();
+			IpRange ipRange = new IpRange();
 			ipRange.setIpAddress(context.stringValue("DescribeIpRangesResponse.IpRanges["+ i +"].IpAddress"));
 			ipRange.setNicType(NicType.getEnum(context.stringValue("DescribeIpRangesResponse.IpRanges["+ i +"].NicType")));
 

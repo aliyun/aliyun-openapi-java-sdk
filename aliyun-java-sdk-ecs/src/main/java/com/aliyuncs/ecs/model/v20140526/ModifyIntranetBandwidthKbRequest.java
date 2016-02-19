@@ -50,7 +50,7 @@ public class ModifyIntranetBandwidthKbRequest extends RpcAcsRequest<ModifyIntran
 
 	public void setOwnerId(Long ownerId) {
 		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", String.valueOf(ownerId));
+		putQueryParameter("OwnerId", ownerId);
 	}
 
 	public String getResourceOwnerAccount() {
@@ -68,7 +68,7 @@ public class ModifyIntranetBandwidthKbRequest extends RpcAcsRequest<ModifyIntran
 
 	public void setResourceOwnerId(Long resourceOwnerId) {
 		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", String.valueOf(resourceOwnerId));
+		putQueryParameter("ResourceOwnerId", resourceOwnerId);
 	}
 
 	public String getInstanceId() {
@@ -86,7 +86,7 @@ public class ModifyIntranetBandwidthKbRequest extends RpcAcsRequest<ModifyIntran
 
 	public void setIntranetMaxBandwidthIn(Integer intranetMaxBandwidthIn) {
 		this.intranetMaxBandwidthIn = intranetMaxBandwidthIn;
-		putQueryParameter("IntranetMaxBandwidthIn", String.valueOf(intranetMaxBandwidthIn));
+		putQueryParameter("IntranetMaxBandwidthIn", intranetMaxBandwidthIn);
 	}
 
 	public Integer getIntranetMaxBandwidthOut() {
@@ -95,7 +95,7 @@ public class ModifyIntranetBandwidthKbRequest extends RpcAcsRequest<ModifyIntran
 
 	public void setIntranetMaxBandwidthOut(Integer intranetMaxBandwidthOut) {
 		this.intranetMaxBandwidthOut = intranetMaxBandwidthOut;
-		putQueryParameter("IntranetMaxBandwidthOut", String.valueOf(intranetMaxBandwidthOut));
+		putQueryParameter("IntranetMaxBandwidthOut", intranetMaxBandwidthOut);
 	}
 
 	public String getOwnerAccount() {

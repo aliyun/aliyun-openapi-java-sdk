@@ -20,6 +20,7 @@ package com.aliyuncs.ecs.transform.v20140526;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import com.aliyuncs.ecs.model.v20140526.DescribeDiskMonitorDataResponse;
 import com.aliyuncs.ecs.model.v20140526.DescribeDiskMonitorDataResponse.DiskMonitorData;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -34,7 +35,7 @@ public class DescribeDiskMonitorDataResponseUnmarshaller {
 
 		List<DiskMonitorData> monitorData = new ArrayList<DiskMonitorData>();
 		for (int i = 0; i < context.lengthValue("DescribeDiskMonitorDataResponse.MonitorData.Length"); i++) {
-			DiskMonitorData  diskMonitorData = new DiskMonitorData();
+			DiskMonitorData diskMonitorData = new DiskMonitorData();
 			diskMonitorData.setDiskId(context.stringValue("DescribeDiskMonitorDataResponse.MonitorData["+ i +"].DiskId"));
 			diskMonitorData.setIOPSRead(context.integerValue("DescribeDiskMonitorDataResponse.MonitorData["+ i +"].IOPSRead"));
 			diskMonitorData.setIOPSWrite(context.integerValue("DescribeDiskMonitorDataResponse.MonitorData["+ i +"].IOPSWrite"));

@@ -20,6 +20,7 @@ package com.aliyuncs.ecs.transform.v20140526;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import com.aliyuncs.ecs.model.v20140526.DescribeVRoutersResponse;
 import com.aliyuncs.ecs.model.v20140526.DescribeVRoutersResponse.VRouter;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -36,7 +37,7 @@ public class DescribeVRoutersResponseUnmarshaller {
 
 		List<VRouter> vRouters = new ArrayList<VRouter>();
 		for (int i = 0; i < context.lengthValue("DescribeVRoutersResponse.VRouters.Length"); i++) {
-			VRouter  vRouter = new VRouter();
+			VRouter vRouter = new VRouter();
 			vRouter.setRegionId(context.stringValue("DescribeVRoutersResponse.VRouters["+ i +"].RegionId"));
 			vRouter.setVpcId(context.stringValue("DescribeVRoutersResponse.VRouters["+ i +"].VpcId"));
 			vRouter.setVRouterName(context.stringValue("DescribeVRoutersResponse.VRouters["+ i +"].VRouterName"));

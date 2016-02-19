@@ -64,6 +64,8 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 
 	private String innerIpAddress;
 
+	private Integer systemDiskSize;
+
 	private String systemDiskCategory;
 
 	private String systemDiskDiskName;
@@ -138,13 +140,39 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 
 	private String ownerAccount;
 
+	private Boolean useAdditionalService;
+
+	private String instanceChargeType;
+
+	private Integer period;
+
+	private String tag1Key;
+
+	private String tag2Key;
+
+	private String tag3Key;
+
+	private String tag4Key;
+
+	private String tag5Key;
+
+	private String tag1Value;
+
+	private String tag2Value;
+
+	private String tag3Value;
+
+	private String tag4Value;
+
+	private String tag5Value;
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
 
 	public void setOwnerId(Long ownerId) {
 		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", String.valueOf(ownerId));
+		putQueryParameter("OwnerId", ownerId);
 	}
 
 	public String getResourceOwnerAccount() {
@@ -162,7 +190,7 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 
 	public void setResourceOwnerId(Long resourceOwnerId) {
 		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", String.valueOf(resourceOwnerId));
+		putQueryParameter("ResourceOwnerId", resourceOwnerId);
 	}
 
 	public String getImageId() {
@@ -216,7 +244,7 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 
 	public void setInternetMaxBandwidthIn(Integer internetMaxBandwidthIn) {
 		this.internetMaxBandwidthIn = internetMaxBandwidthIn;
-		putQueryParameter("InternetMaxBandwidthIn", String.valueOf(internetMaxBandwidthIn));
+		putQueryParameter("InternetMaxBandwidthIn", internetMaxBandwidthIn);
 	}
 
 	public Integer getInternetMaxBandwidthOut() {
@@ -225,7 +253,7 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 
 	public void setInternetMaxBandwidthOut(Integer internetMaxBandwidthOut) {
 		this.internetMaxBandwidthOut = internetMaxBandwidthOut;
-		putQueryParameter("InternetMaxBandwidthOut", String.valueOf(internetMaxBandwidthOut));
+		putQueryParameter("InternetMaxBandwidthOut", internetMaxBandwidthOut);
 	}
 
 	public String getHostName() {
@@ -291,6 +319,15 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 		putQueryParameter("InnerIpAddress", innerIpAddress);
 	}
 
+	public Integer getSystemDiskSize() {
+		return this.systemDiskSize;
+	}
+
+	public void setSystemDiskSize(Integer systemDiskSize) {
+		this.systemDiskSize = systemDiskSize;
+		putQueryParameter("SystemDisk.Size", systemDiskSize);
+	}
+
 	public String getSystemDiskCategory() {
 		return this.systemDiskCategory;
 	}
@@ -324,7 +361,7 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 
 	public void setDataDisk1Size(Integer dataDisk1Size) {
 		this.dataDisk1Size = dataDisk1Size;
-		putQueryParameter("DataDisk.1.Size", String.valueOf(dataDisk1Size));
+		putQueryParameter("DataDisk.1.Size", dataDisk1Size);
 	}
 
 	public String getDataDisk1Category() {
@@ -378,7 +415,7 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 
 	public void setDataDisk1DeleteWithInstance(Boolean dataDisk1DeleteWithInstance) {
 		this.dataDisk1DeleteWithInstance = dataDisk1DeleteWithInstance;
-		putQueryParameter("DataDisk.1.DeleteWithInstance", String.valueOf(dataDisk1DeleteWithInstance));
+		putQueryParameter("DataDisk.1.DeleteWithInstance", dataDisk1DeleteWithInstance);
 	}
 
 	public Integer getDataDisk2Size() {
@@ -387,7 +424,7 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 
 	public void setDataDisk2Size(Integer dataDisk2Size) {
 		this.dataDisk2Size = dataDisk2Size;
-		putQueryParameter("DataDisk.2.Size", String.valueOf(dataDisk2Size));
+		putQueryParameter("DataDisk.2.Size", dataDisk2Size);
 	}
 
 	public String getDataDisk2Category() {
@@ -441,7 +478,7 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 
 	public void setDataDisk2DeleteWithInstance(Boolean dataDisk2DeleteWithInstance) {
 		this.dataDisk2DeleteWithInstance = dataDisk2DeleteWithInstance;
-		putQueryParameter("DataDisk.2.DeleteWithInstance", String.valueOf(dataDisk2DeleteWithInstance));
+		putQueryParameter("DataDisk.2.DeleteWithInstance", dataDisk2DeleteWithInstance);
 	}
 
 	public Integer getDataDisk3Size() {
@@ -450,7 +487,7 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 
 	public void setDataDisk3Size(Integer dataDisk3Size) {
 		this.dataDisk3Size = dataDisk3Size;
-		putQueryParameter("DataDisk.3.Size", String.valueOf(dataDisk3Size));
+		putQueryParameter("DataDisk.3.Size", dataDisk3Size);
 	}
 
 	public String getDataDisk3Category() {
@@ -504,7 +541,7 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 
 	public void setDataDisk3DeleteWithInstance(Boolean dataDisk3DeleteWithInstance) {
 		this.dataDisk3DeleteWithInstance = dataDisk3DeleteWithInstance;
-		putQueryParameter("DataDisk.3.DeleteWithInstance", String.valueOf(dataDisk3DeleteWithInstance));
+		putQueryParameter("DataDisk.3.DeleteWithInstance", dataDisk3DeleteWithInstance);
 	}
 
 	public Integer getDataDisk4Size() {
@@ -513,7 +550,7 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 
 	public void setDataDisk4Size(Integer dataDisk4Size) {
 		this.dataDisk4Size = dataDisk4Size;
-		putQueryParameter("DataDisk.4.Size", String.valueOf(dataDisk4Size));
+		putQueryParameter("DataDisk.4.Size", dataDisk4Size);
 	}
 
 	public String getDataDisk4Category() {
@@ -567,7 +604,7 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 
 	public void setDataDisk4DeleteWithInstance(Boolean dataDisk4DeleteWithInstance) {
 		this.dataDisk4DeleteWithInstance = dataDisk4DeleteWithInstance;
-		putQueryParameter("DataDisk.4.DeleteWithInstance", String.valueOf(dataDisk4DeleteWithInstance));
+		putQueryParameter("DataDisk.4.DeleteWithInstance", dataDisk4DeleteWithInstance);
 	}
 
 	public String getNodeControllerId() {
@@ -622,6 +659,123 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 	public void setOwnerAccount(String ownerAccount) {
 		this.ownerAccount = ownerAccount;
 		putQueryParameter("OwnerAccount", ownerAccount);
+	}
+
+	public Boolean getUseAdditionalService() {
+		return this.useAdditionalService;
+	}
+
+	public void setUseAdditionalService(Boolean useAdditionalService) {
+		this.useAdditionalService = useAdditionalService;
+		putQueryParameter("UseAdditionalService", useAdditionalService);
+	}
+
+	public String getInstanceChargeType() {
+		return this.instanceChargeType;
+	}
+
+	public void setInstanceChargeType(String instanceChargeType) {
+		this.instanceChargeType = instanceChargeType;
+		putQueryParameter("InstanceChargeType", instanceChargeType);
+	}
+
+	public Integer getPeriod() {
+		return this.period;
+	}
+
+	public void setPeriod(Integer period) {
+		this.period = period;
+		putQueryParameter("Period", period);
+	}
+
+	public String getTag1Key() {
+		return this.tag1Key;
+	}
+
+	public void setTag1Key(String tag1Key) {
+		this.tag1Key = tag1Key;
+		putQueryParameter("Tag.1.Key", tag1Key);
+	}
+
+	public String getTag2Key() {
+		return this.tag2Key;
+	}
+
+	public void setTag2Key(String tag2Key) {
+		this.tag2Key = tag2Key;
+		putQueryParameter("Tag.2.Key", tag2Key);
+	}
+
+	public String getTag3Key() {
+		return this.tag3Key;
+	}
+
+	public void setTag3Key(String tag3Key) {
+		this.tag3Key = tag3Key;
+		putQueryParameter("Tag.3.Key", tag3Key);
+	}
+
+	public String getTag4Key() {
+		return this.tag4Key;
+	}
+
+	public void setTag4Key(String tag4Key) {
+		this.tag4Key = tag4Key;
+		putQueryParameter("Tag.4.Key", tag4Key);
+	}
+
+	public String getTag5Key() {
+		return this.tag5Key;
+	}
+
+	public void setTag5Key(String tag5Key) {
+		this.tag5Key = tag5Key;
+		putQueryParameter("Tag.5.Key", tag5Key);
+	}
+
+	public String getTag1Value() {
+		return this.tag1Value;
+	}
+
+	public void setTag1Value(String tag1Value) {
+		this.tag1Value = tag1Value;
+		putQueryParameter("Tag.1.Value", tag1Value);
+	}
+
+	public String getTag2Value() {
+		return this.tag2Value;
+	}
+
+	public void setTag2Value(String tag2Value) {
+		this.tag2Value = tag2Value;
+		putQueryParameter("Tag.2.Value", tag2Value);
+	}
+
+	public String getTag3Value() {
+		return this.tag3Value;
+	}
+
+	public void setTag3Value(String tag3Value) {
+		this.tag3Value = tag3Value;
+		putQueryParameter("Tag.3.Value", tag3Value);
+	}
+
+	public String getTag4Value() {
+		return this.tag4Value;
+	}
+
+	public void setTag4Value(String tag4Value) {
+		this.tag4Value = tag4Value;
+		putQueryParameter("Tag.4.Value", tag4Value);
+	}
+
+	public String getTag5Value() {
+		return this.tag5Value;
+	}
+
+	public void setTag5Value(String tag5Value) {
+		this.tag5Value = tag5Value;
+		putQueryParameter("Tag.5.Value", tag5Value);
 	}
 
 	@Override

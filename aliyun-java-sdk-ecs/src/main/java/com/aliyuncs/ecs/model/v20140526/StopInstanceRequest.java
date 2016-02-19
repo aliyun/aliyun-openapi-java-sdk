@@ -48,7 +48,7 @@ public class StopInstanceRequest extends RpcAcsRequest<StopInstanceResponse> {
 
 	public void setOwnerId(Long ownerId) {
 		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", String.valueOf(ownerId));
+		putQueryParameter("OwnerId", ownerId);
 	}
 
 	public String getResourceOwnerAccount() {
@@ -66,7 +66,7 @@ public class StopInstanceRequest extends RpcAcsRequest<StopInstanceResponse> {
 
 	public void setResourceOwnerId(Long resourceOwnerId) {
 		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", String.valueOf(resourceOwnerId));
+		putQueryParameter("ResourceOwnerId", resourceOwnerId);
 	}
 
 	public String getInstanceId() {
@@ -84,7 +84,7 @@ public class StopInstanceRequest extends RpcAcsRequest<StopInstanceResponse> {
 
 	public void setForceStop(Boolean forceStop) {
 		this.forceStop = forceStop;
-		putQueryParameter("ForceStop", String.valueOf(forceStop));
+		putQueryParameter("ForceStop", forceStop);
 	}
 
 	public String getOwnerAccount() {

@@ -38,6 +38,8 @@ public class DescribeVpcsRequest extends RpcAcsRequest<DescribeVpcsResponse> {
 
 	private String vpcId;
 
+	private Boolean isDefault;
+
 	private Integer pageNumber;
 
 	private Integer pageSize;
@@ -50,7 +52,7 @@ public class DescribeVpcsRequest extends RpcAcsRequest<DescribeVpcsResponse> {
 
 	public void setOwnerId(Long ownerId) {
 		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", String.valueOf(ownerId));
+		putQueryParameter("OwnerId", ownerId);
 	}
 
 	public String getResourceOwnerAccount() {
@@ -68,7 +70,7 @@ public class DescribeVpcsRequest extends RpcAcsRequest<DescribeVpcsResponse> {
 
 	public void setResourceOwnerId(Long resourceOwnerId) {
 		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", String.valueOf(resourceOwnerId));
+		putQueryParameter("ResourceOwnerId", resourceOwnerId);
 	}
 
 	public String getVpcId() {
@@ -80,13 +82,22 @@ public class DescribeVpcsRequest extends RpcAcsRequest<DescribeVpcsResponse> {
 		putQueryParameter("VpcId", vpcId);
 	}
 
+	public Boolean getIsDefault() {
+		return this.isDefault;
+	}
+
+	public void setIsDefault(Boolean isDefault) {
+		this.isDefault = isDefault;
+		putQueryParameter("IsDefault", isDefault);
+	}
+
 	public Integer getPageNumber() {
 		return this.pageNumber;
 	}
 
 	public void setPageNumber(Integer pageNumber) {
 		this.pageNumber = pageNumber;
-		putQueryParameter("PageNumber", String.valueOf(pageNumber));
+		putQueryParameter("PageNumber", pageNumber);
 	}
 
 	public Integer getPageSize() {
@@ -95,7 +106,7 @@ public class DescribeVpcsRequest extends RpcAcsRequest<DescribeVpcsResponse> {
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
-		putQueryParameter("PageSize", String.valueOf(pageSize));
+		putQueryParameter("PageSize", pageSize);
 	}
 
 	public String getOwnerAccount() {

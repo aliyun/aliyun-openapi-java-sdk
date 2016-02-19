@@ -50,7 +50,7 @@ public class ResizeDiskRequest extends RpcAcsRequest<ResizeDiskResponse> {
 
 	public void setOwnerId(Long ownerId) {
 		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", String.valueOf(ownerId));
+		putQueryParameter("OwnerId", ownerId);
 	}
 
 	public String getResourceOwnerAccount() {
@@ -68,7 +68,7 @@ public class ResizeDiskRequest extends RpcAcsRequest<ResizeDiskResponse> {
 
 	public void setResourceOwnerId(Long resourceOwnerId) {
 		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", String.valueOf(resourceOwnerId));
+		putQueryParameter("ResourceOwnerId", resourceOwnerId);
 	}
 
 	public String getDiskId() {
@@ -86,7 +86,7 @@ public class ResizeDiskRequest extends RpcAcsRequest<ResizeDiskResponse> {
 
 	public void setNewSize(Integer newSize) {
 		this.newSize = newSize;
-		putQueryParameter("NewSize", String.valueOf(newSize));
+		putQueryParameter("NewSize", newSize);
 	}
 
 	public String getClientToken() {

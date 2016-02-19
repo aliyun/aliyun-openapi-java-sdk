@@ -20,6 +20,7 @@ package com.aliyuncs.ecs.transform.v20140526;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import com.aliyuncs.ecs.model.v20140526.DescribeEipMonitorDataResponse;
 import com.aliyuncs.ecs.model.v20140526.DescribeEipMonitorDataResponse.EipMonitorData;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -33,7 +34,7 @@ public class DescribeEipMonitorDataResponseUnmarshaller {
 
 		List<EipMonitorData> eipMonitorDatas = new ArrayList<EipMonitorData>();
 		for (int i = 0; i < context.lengthValue("DescribeEipMonitorDataResponse.EipMonitorDatas.Length"); i++) {
-			EipMonitorData  eipMonitorData = new EipMonitorData();
+			EipMonitorData eipMonitorData = new EipMonitorData();
 			eipMonitorData.setEipRX(context.integerValue("DescribeEipMonitorDataResponse.EipMonitorDatas["+ i +"].EipRX"));
 			eipMonitorData.setEipTX(context.integerValue("DescribeEipMonitorDataResponse.EipMonitorDatas["+ i +"].EipTX"));
 			eipMonitorData.setEipFlow(context.integerValue("DescribeEipMonitorDataResponse.EipMonitorDatas["+ i +"].EipFlow"));

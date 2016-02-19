@@ -123,6 +123,8 @@ public class DescribeSecurityGroupAttributeResponse extends AcsResponse {
 
 		private String priority;
 
+		private String direction;
+
 		public String getIpProtocol() {
 			return this.ipProtocol;
 		}
@@ -209,6 +211,14 @@ public class DescribeSecurityGroupAttributeResponse extends AcsResponse {
 
 		public void setPriority(String priority) {
 			this.priority = priority;
+		}
+
+		public String getDirection() {
+			return this.direction;
+		}
+
+		public void setDirection(String direction) {
+			this.direction = direction;
 		}
 	}
 

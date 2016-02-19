@@ -52,7 +52,7 @@ public class DescribeInstanceMonitorDataRequest extends RpcAcsRequest<DescribeIn
 
 	public void setOwnerId(Long ownerId) {
 		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", String.valueOf(ownerId));
+		putQueryParameter("OwnerId", ownerId);
 	}
 
 	public String getResourceOwnerAccount() {
@@ -70,7 +70,7 @@ public class DescribeInstanceMonitorDataRequest extends RpcAcsRequest<DescribeIn
 
 	public void setResourceOwnerId(Long resourceOwnerId) {
 		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", String.valueOf(resourceOwnerId));
+		putQueryParameter("ResourceOwnerId", resourceOwnerId);
 	}
 
 	public String getInstanceId() {
@@ -106,7 +106,7 @@ public class DescribeInstanceMonitorDataRequest extends RpcAcsRequest<DescribeIn
 
 	public void setPeriod(Integer period) {
 		this.period = period;
-		putQueryParameter("Period", String.valueOf(period));
+		putQueryParameter("Period", period);
 	}
 
 	public String getOwnerAccount() {

@@ -20,9 +20,11 @@ package com.aliyuncs.ecs.transform.v20140526;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import com.aliyuncs.ecs.model.v20140526.DescribeSnapshotsResponse;
 import com.aliyuncs.ecs.model.v20140526.DescribeSnapshotsResponse.Snapshot;
 import com.aliyuncs.ecs.model.v20140526.DescribeSnapshotsResponse.Snapshot.SourceDiskType;
+import com.aliyuncs.ecs.model.v20140526.DescribeSnapshotsResponse.Snapshot.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -37,7 +39,7 @@ public class DescribeSnapshotsResponseUnmarshaller {
 
 		List<Snapshot> snapshots = new ArrayList<Snapshot>();
 		for (int i = 0; i < context.lengthValue("DescribeSnapshotsResponse.Snapshots.Length"); i++) {
-			Snapshot  snapshot = new Snapshot();
+			Snapshot snapshot = new Snapshot();
 			snapshot.setSnapshotId(context.stringValue("DescribeSnapshotsResponse.Snapshots["+ i +"].SnapshotId"));
 			snapshot.setSnapshotName(context.stringValue("DescribeSnapshotsResponse.Snapshots["+ i +"].SnapshotName"));
 			snapshot.setProgress(context.stringValue("DescribeSnapshotsResponse.Snapshots["+ i +"].Progress"));
@@ -49,6 +51,16 @@ public class DescribeSnapshotsResponseUnmarshaller {
 			snapshot.setCreationTime(context.stringValue("DescribeSnapshotsResponse.Snapshots["+ i +"].CreationTime"));
 			snapshot.setStatus(context.stringValue("DescribeSnapshotsResponse.Snapshots["+ i +"].Status"));
 			snapshot.setUsage(context.stringValue("DescribeSnapshotsResponse.Snapshots["+ i +"].Usage"));
+
+			List<Tag> tags = new ArrayList<Tag>();
+			for (int j = 0; j < context.lengthValue("DescribeSnapshotsResponse.Snapshots["+ i +"].Tags.Length"); j++) {
+				Tag tag = new Tag();
+				tag.setTagKey(context.stringValue("DescribeSnapshotsResponse.Snapshots["+ i +"].Tags["+ j +"].TagKey"));
+				tag.setTagValue(context.stringValue("DescribeSnapshotsResponse.Snapshots["+ i +"].Tags["+ j +"].TagValue"));
+
+				tags.add(tag);
+			}
+			snapshot.setTags(tags);
 
 			snapshots.add(snapshot);
 		}

@@ -20,12 +20,14 @@ package com.aliyuncs.ecs.transform.v20140526;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import com.aliyuncs.ecs.model.v20140526.DescribeInstancesResponse;
 import com.aliyuncs.ecs.model.v20140526.DescribeInstancesResponse.Instance;
-import com.aliyuncs.ecs.model.v20140526.DescribeInstancesResponse.Instance.VpcAttributes;
 import com.aliyuncs.ecs.model.v20140526.DescribeInstancesResponse.Instance.EipAddress;
 import com.aliyuncs.ecs.model.v20140526.DescribeInstancesResponse.Instance.LockReason;
 import com.aliyuncs.ecs.model.v20140526.DescribeInstancesResponse.Instance.Status;
+import com.aliyuncs.ecs.model.v20140526.DescribeInstancesResponse.Instance.Tag;
+import com.aliyuncs.ecs.model.v20140526.DescribeInstancesResponse.Instance.VpcAttributes;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -40,7 +42,7 @@ public class DescribeInstancesResponseUnmarshaller {
 
 		List<Instance> instances = new ArrayList<Instance>();
 		for (int i = 0; i < context.lengthValue("DescribeInstancesResponse.Instances.Length"); i++) {
-			Instance  instance = new Instance();
+			Instance instance = new Instance();
 			instance.setInstanceId(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].InstanceId"));
 			instance.setInstanceName(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].InstanceName"));
 			instance.setDescription(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].Description"));
@@ -49,8 +51,11 @@ public class DescribeInstancesResponseUnmarshaller {
 			instance.setZoneId(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].ZoneId"));
 			instance.setClusterId(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].ClusterId"));
 			instance.setInstanceType(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].InstanceType"));
+			instance.setCpu(context.integerValue("DescribeInstancesResponse.Instances["+ i +"].Cpu"));
+			instance.setMemory(context.integerValue("DescribeInstancesResponse.Instances["+ i +"].Memory"));
 			instance.setHostName(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].HostName"));
 			instance.setStatus(Status.getEnum(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].Status")));
+			instance.setSerialNumber(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].SerialNumber"));
 			instance.setInternetChargeType(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].InternetChargeType"));
 			instance.setInternetMaxBandwidthIn(context.integerValue("DescribeInstancesResponse.Instances["+ i +"].InternetMaxBandwidthIn"));
 			instance.setInternetMaxBandwidthOut(context.integerValue("DescribeInstancesResponse.Instances["+ i +"].InternetMaxBandwidthOut"));
@@ -61,6 +66,7 @@ public class DescribeInstancesResponseUnmarshaller {
 			instance.setExpiredTime(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].ExpiredTime"));
 			instance.setIoOptimized(context.booleanValue("DescribeInstancesResponse.Instances["+ i +"].IoOptimized"));
 			instance.setDeviceAvailable(context.booleanValue("DescribeInstancesResponse.Instances["+ i +"].DeviceAvailable"));
+			instance.setInstanceTypeFamily(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].InstanceTypeFamily"));
 
 			List<String> securityGroupIds = new ArrayList<String>();
 			for (int j = 0; j < context.lengthValue("DescribeInstancesResponse.Instances["+ i +"].SecurityGroupIds.Length"); j++) {
@@ -80,7 +86,7 @@ public class DescribeInstancesResponseUnmarshaller {
 			}
 			instance.setInnerIpAddress(innerIpAddress);
 
-			VpcAttributes  vpcAttributes = new VpcAttributes();
+			VpcAttributes vpcAttributes = new VpcAttributes();
 			vpcAttributes.setVpcId(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].VpcAttributes.VpcId"));
 			vpcAttributes.setVSwitchId(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].VpcAttributes.VSwitchId"));
 			vpcAttributes.setNatIpAddress(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].VpcAttributes.NatIpAddress"));
@@ -92,7 +98,7 @@ public class DescribeInstancesResponseUnmarshaller {
 			vpcAttributes.setPrivateIpAddress(privateIpAddress);
 			instance.setVpcAttributes(vpcAttributes);
 
-			EipAddress  eipAddress = new EipAddress();
+			EipAddress eipAddress = new EipAddress();
 			eipAddress.setAllocationId(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].EipAddress.AllocationId"));
 			eipAddress.setIpAddress(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].EipAddress.IpAddress"));
 			eipAddress.setBandwidth(context.integerValue("DescribeInstancesResponse.Instances["+ i +"].EipAddress.Bandwidth"));
@@ -101,12 +107,22 @@ public class DescribeInstancesResponseUnmarshaller {
 
 			List<LockReason> operationLocks = new ArrayList<LockReason>();
 			for (int j = 0; j < context.lengthValue("DescribeInstancesResponse.Instances["+ i +"].OperationLocks.Length"); j++) {
-				LockReason  lockReason = new LockReason();
+				LockReason lockReason = new LockReason();
 				lockReason.setLockReason(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].OperationLocks["+ j +"].LockReason"));
 
 				operationLocks.add(lockReason);
 			}
 			instance.setOperationLocks(operationLocks);
+
+			List<Tag> tags = new ArrayList<Tag>();
+			for (int j = 0; j < context.lengthValue("DescribeInstancesResponse.Instances["+ i +"].Tags.Length"); j++) {
+				Tag tag = new Tag();
+				tag.setTagKey(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].Tags["+ j +"].TagKey"));
+				tag.setTagValue(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].Tags["+ j +"].TagValue"));
+
+				tags.add(tag);
+			}
+			instance.setTags(tags);
 
 			instances.add(instance);
 		}

@@ -31,7 +31,11 @@ public class DescribeTagsResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String nextToken;
+	private Integer pageSize;
+
+	private Integer pageNumber;
+
+	private Integer totalCount;
 
 	private List<Tag> tags;
 
@@ -43,12 +47,28 @@ public class DescribeTagsResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getNextToken() {
-		return this.nextToken;
+	public Integer getPageSize() {
+		return this.pageSize;
 	}
 
-	public void setNextToken(String nextToken) {
-		this.nextToken = nextToken;
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+	}
+
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public List<Tag> getTags() {
@@ -65,6 +85,8 @@ public class DescribeTagsResponse extends AcsResponse {
 
 		private String tagValue;
 
+		private ResourceTypeCount resourceTypeCount;
+
 		public String getTagKey() {
 			return this.tagKey;
 		}
@@ -79,6 +101,67 @@ public class DescribeTagsResponse extends AcsResponse {
 
 		public void setTagValue(String tagValue) {
 			this.tagValue = tagValue;
+		}
+
+		public ResourceTypeCount getResourceTypeCount() {
+			return this.resourceTypeCount;
+		}
+
+		public void setResourceTypeCount(ResourceTypeCount resourceTypeCount) {
+			this.resourceTypeCount = resourceTypeCount;
+		}
+
+		public static class ResourceTypeCount {
+
+			private Integer instance;
+
+			private Integer disk;
+
+			private Integer image;
+
+			private Integer snapshot;
+
+			private Integer securitygroup;
+
+			public Integer getInstance() {
+				return this.instance;
+			}
+
+			public void setInstance(Integer instance) {
+				this.instance = instance;
+			}
+
+			public Integer getDisk() {
+				return this.disk;
+			}
+
+			public void setDisk(Integer disk) {
+				this.disk = disk;
+			}
+
+			public Integer getImage() {
+				return this.image;
+			}
+
+			public void setImage(Integer image) {
+				this.image = image;
+			}
+
+			public Integer getSnapshot() {
+				return this.snapshot;
+			}
+
+			public void setSnapshot(Integer snapshot) {
+				this.snapshot = snapshot;
+			}
+
+			public Integer getSecuritygroup() {
+				return this.securitygroup;
+			}
+
+			public void setSecuritygroup(Integer securitygroup) {
+				this.securitygroup = securitygroup;
+			}
 		}
 	}
 

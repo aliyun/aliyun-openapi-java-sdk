@@ -20,11 +20,12 @@ package com.aliyuncs.ecs.transform.v20140526;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import com.aliyuncs.ecs.model.v20140526.DescribeInstanceAttributeResponse;
-import com.aliyuncs.ecs.model.v20140526.DescribeInstanceAttributeResponse.VpcAttributes;
 import com.aliyuncs.ecs.model.v20140526.DescribeInstanceAttributeResponse.EipAddress;
 import com.aliyuncs.ecs.model.v20140526.DescribeInstanceAttributeResponse.LockReason;
 import com.aliyuncs.ecs.model.v20140526.DescribeInstanceAttributeResponse.Status;
+import com.aliyuncs.ecs.model.v20140526.DescribeInstanceAttributeResponse.VpcAttributes;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -40,6 +41,8 @@ public class DescribeInstanceAttributeResponseUnmarshaller {
 		describeInstanceAttributeResponse.setZoneId(context.stringValue("DescribeInstanceAttributeResponse.ZoneId"));
 		describeInstanceAttributeResponse.setClusterId(context.stringValue("DescribeInstanceAttributeResponse.ClusterId"));
 		describeInstanceAttributeResponse.setInstanceType(context.stringValue("DescribeInstanceAttributeResponse.InstanceType"));
+		describeInstanceAttributeResponse.setCpu(context.integerValue("DescribeInstanceAttributeResponse.Cpu"));
+		describeInstanceAttributeResponse.setMemory(context.integerValue("DescribeInstanceAttributeResponse.Memory"));
 		describeInstanceAttributeResponse.setHostName(context.stringValue("DescribeInstanceAttributeResponse.HostName"));
 		describeInstanceAttributeResponse.setStatus(Status.getEnum(context.stringValue("DescribeInstanceAttributeResponse.Status")));
 		describeInstanceAttributeResponse.setInternetChargeType(context.stringValue("DescribeInstanceAttributeResponse.InternetChargeType"));
@@ -51,6 +54,8 @@ public class DescribeInstanceAttributeResponseUnmarshaller {
 		describeInstanceAttributeResponse.setDescription(context.stringValue("DescribeInstanceAttributeResponse.Description"));
 		describeInstanceAttributeResponse.setInstanceNetworkType(context.stringValue("DescribeInstanceAttributeResponse.InstanceNetworkType"));
 		describeInstanceAttributeResponse.setIoOptimized(context.stringValue("DescribeInstanceAttributeResponse.IoOptimized"));
+		describeInstanceAttributeResponse.setInstanceChargeType(context.stringValue("DescribeInstanceAttributeResponse.InstanceChargeType"));
+		describeInstanceAttributeResponse.setExpiredTime(context.stringValue("DescribeInstanceAttributeResponse.ExpiredTime"));
 
 		List<String> securityGroupIds = new ArrayList<String>();
 		for (int i = 0; i < context.lengthValue("DescribeInstanceAttributeResponse.SecurityGroupIds.Length"); i++) {
@@ -70,7 +75,7 @@ public class DescribeInstanceAttributeResponseUnmarshaller {
 		}
 		describeInstanceAttributeResponse.setInnerIpAddress(innerIpAddress);
 
-		VpcAttributes  vpcAttributes = new VpcAttributes();
+		VpcAttributes vpcAttributes = new VpcAttributes();
 		vpcAttributes.setVpcId(context.stringValue("DescribeInstanceAttributeResponse.VpcAttributes.VpcId"));
 		vpcAttributes.setVSwitchId(context.stringValue("DescribeInstanceAttributeResponse.VpcAttributes.VSwitchId"));
 		vpcAttributes.setNatIpAddress(context.stringValue("DescribeInstanceAttributeResponse.VpcAttributes.NatIpAddress"));
@@ -82,7 +87,7 @@ public class DescribeInstanceAttributeResponseUnmarshaller {
 		vpcAttributes.setPrivateIpAddress(privateIpAddress);
 		describeInstanceAttributeResponse.setVpcAttributes(vpcAttributes);
 
-		EipAddress  eipAddress = new EipAddress();
+		EipAddress eipAddress = new EipAddress();
 		eipAddress.setAllocationId(context.stringValue("DescribeInstanceAttributeResponse.EipAddress.AllocationId"));
 		eipAddress.setIpAddress(context.stringValue("DescribeInstanceAttributeResponse.EipAddress.IpAddress"));
 		eipAddress.setBandwidth(context.integerValue("DescribeInstanceAttributeResponse.EipAddress.Bandwidth"));
@@ -91,7 +96,7 @@ public class DescribeInstanceAttributeResponseUnmarshaller {
 
 		List<LockReason> operationLocks = new ArrayList<LockReason>();
 		for (int i = 0; i < context.lengthValue("DescribeInstanceAttributeResponse.OperationLocks.Length"); i++) {
-			LockReason  lockReason = new LockReason();
+			LockReason lockReason = new LockReason();
 			lockReason.setLockReason(context.stringValue("DescribeInstanceAttributeResponse.OperationLocks["+ i +"].LockReason"));
 
 			operationLocks.add(lockReason);

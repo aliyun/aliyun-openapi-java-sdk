@@ -20,8 +20,10 @@ package com.aliyuncs.ecs.transform.v20140526;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import com.aliyuncs.ecs.model.v20140526.DescribeTagsResponse;
 import com.aliyuncs.ecs.model.v20140526.DescribeTagsResponse.Tag;
+import com.aliyuncs.ecs.model.v20140526.DescribeTagsResponse.Tag.ResourceTypeCount;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -30,13 +32,23 @@ public class DescribeTagsResponseUnmarshaller {
 	public static DescribeTagsResponse unmarshall(DescribeTagsResponse describeTagsResponse, UnmarshallerContext context) {
 		
 		describeTagsResponse.setRequestId(context.stringValue("DescribeTagsResponse.RequestId"));
-		describeTagsResponse.setNextToken(context.stringValue("DescribeTagsResponse.NextToken"));
+		describeTagsResponse.setPageSize(context.integerValue("DescribeTagsResponse.PageSize"));
+		describeTagsResponse.setPageNumber(context.integerValue("DescribeTagsResponse.PageNumber"));
+		describeTagsResponse.setTotalCount(context.integerValue("DescribeTagsResponse.TotalCount"));
 
 		List<Tag> tags = new ArrayList<Tag>();
 		for (int i = 0; i < context.lengthValue("DescribeTagsResponse.Tags.Length"); i++) {
-			Tag  tag = new Tag();
+			Tag tag = new Tag();
 			tag.setTagKey(context.stringValue("DescribeTagsResponse.Tags["+ i +"].TagKey"));
 			tag.setTagValue(context.stringValue("DescribeTagsResponse.Tags["+ i +"].TagValue"));
+
+			ResourceTypeCount resourceTypeCount = new ResourceTypeCount();
+			resourceTypeCount.setInstance(context.integerValue("DescribeTagsResponse.Tags["+ i +"].ResourceTypeCount.Instance"));
+			resourceTypeCount.setDisk(context.integerValue("DescribeTagsResponse.Tags["+ i +"].ResourceTypeCount.Disk"));
+			resourceTypeCount.setImage(context.integerValue("DescribeTagsResponse.Tags["+ i +"].ResourceTypeCount.Image"));
+			resourceTypeCount.setSnapshot(context.integerValue("DescribeTagsResponse.Tags["+ i +"].ResourceTypeCount.Snapshot"));
+			resourceTypeCount.setSecuritygroup(context.integerValue("DescribeTagsResponse.Tags["+ i +"].ResourceTypeCount.Securitygroup"));
+			tag.setResourceTypeCount(resourceTypeCount);
 
 			tags.add(tag);
 		}

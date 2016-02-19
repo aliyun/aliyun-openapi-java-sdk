@@ -20,9 +20,11 @@ package com.aliyuncs.ecs.transform.v20140526;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import com.aliyuncs.ecs.model.v20140526.DescribeRouteTablesResponse;
 import com.aliyuncs.ecs.model.v20140526.DescribeRouteTablesResponse.RouteTable;
 import com.aliyuncs.ecs.model.v20140526.DescribeRouteTablesResponse.RouteTable.RouteEntry;
+import com.aliyuncs.ecs.model.v20140526.DescribeRouteTablesResponse.RouteTable.RouteEntry.NextHop;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -37,7 +39,7 @@ public class DescribeRouteTablesResponseUnmarshaller {
 
 		List<RouteTable> routeTables = new ArrayList<RouteTable>();
 		for (int i = 0; i < context.lengthValue("DescribeRouteTablesResponse.RouteTables.Length"); i++) {
-			RouteTable  routeTable = new RouteTable();
+			RouteTable routeTable = new RouteTable();
 			routeTable.setVRouterId(context.stringValue("DescribeRouteTablesResponse.RouteTables["+ i +"].VRouterId"));
 			routeTable.setRouteTableId(context.stringValue("DescribeRouteTablesResponse.RouteTables["+ i +"].RouteTableId"));
 			routeTable.setRouteTableType(context.stringValue("DescribeRouteTablesResponse.RouteTables["+ i +"].RouteTableType"));
@@ -45,12 +47,23 @@ public class DescribeRouteTablesResponseUnmarshaller {
 
 			List<RouteEntry> routeEntrys = new ArrayList<RouteEntry>();
 			for (int j = 0; j < context.lengthValue("DescribeRouteTablesResponse.RouteTables["+ i +"].RouteEntrys.Length"); j++) {
-				RouteEntry  routeEntry = new RouteEntry();
+				RouteEntry routeEntry = new RouteEntry();
 				routeEntry.setRouteTableId(context.stringValue("DescribeRouteTablesResponse.RouteTables["+ i +"].RouteEntrys["+ j +"].RouteTableId"));
 				routeEntry.setDestinationCidrBlock(context.stringValue("DescribeRouteTablesResponse.RouteTables["+ i +"].RouteEntrys["+ j +"].DestinationCidrBlock"));
 				routeEntry.setType(context.stringValue("DescribeRouteTablesResponse.RouteTables["+ i +"].RouteEntrys["+ j +"].Type"));
 				routeEntry.setStatus(context.stringValue("DescribeRouteTablesResponse.RouteTables["+ i +"].RouteEntrys["+ j +"].Status"));
 				routeEntry.setInstanceId(context.stringValue("DescribeRouteTablesResponse.RouteTables["+ i +"].RouteEntrys["+ j +"].InstanceId"));
+				routeEntry.setNextHopType(context.stringValue("DescribeRouteTablesResponse.RouteTables["+ i +"].RouteEntrys["+ j +"].NextHopType"));
+
+				List<NextHop> nextHops = new ArrayList<NextHop>();
+				for (int k = 0; k < context.lengthValue("DescribeRouteTablesResponse.RouteTables["+ i +"].RouteEntrys["+ j +"].NextHops.Length"); k++) {
+					NextHop nextHop = new NextHop();
+					nextHop.setNextHopType(context.stringValue("DescribeRouteTablesResponse.RouteTables["+ i +"].RouteEntrys["+ j +"].NextHops["+ k +"].NextHopType"));
+					nextHop.setNextHopId(context.stringValue("DescribeRouteTablesResponse.RouteTables["+ i +"].RouteEntrys["+ j +"].NextHops["+ k +"].NextHopId"));
+
+					nextHops.add(nextHop);
+				}
+				routeEntry.setNextHops(nextHops);
 
 				routeEntrys.add(routeEntry);
 			}

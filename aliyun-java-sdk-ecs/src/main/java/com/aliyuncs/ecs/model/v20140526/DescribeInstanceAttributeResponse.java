@@ -45,6 +45,10 @@ public class DescribeInstanceAttributeResponse extends AcsResponse {
 
 	private String instanceType;
 
+	private Integer cpu;
+
+	private Integer memory;
+
 	private String hostName;
 
 	private Status status;
@@ -66,6 +70,10 @@ public class DescribeInstanceAttributeResponse extends AcsResponse {
 	private String instanceNetworkType;
 
 	private String ioOptimized;
+
+	private String instanceChargeType;
+
+	private String expiredTime;
 
 	private List<LockReason> operationLocks;
 
@@ -141,6 +149,22 @@ public class DescribeInstanceAttributeResponse extends AcsResponse {
 
 	public void setInstanceType(String instanceType) {
 		this.instanceType = instanceType;
+	}
+
+	public Integer getCpu() {
+		return this.cpu;
+	}
+
+	public void setCpu(Integer cpu) {
+		this.cpu = cpu;
+	}
+
+	public Integer getMemory() {
+		return this.memory;
+	}
+
+	public void setMemory(Integer memory) {
+		this.memory = memory;
 	}
 
 	public String getHostName() {
@@ -231,6 +255,22 @@ public class DescribeInstanceAttributeResponse extends AcsResponse {
 		this.ioOptimized = ioOptimized;
 	}
 
+	public String getInstanceChargeType() {
+		return this.instanceChargeType;
+	}
+
+	public void setInstanceChargeType(String instanceChargeType) {
+		this.instanceChargeType = instanceChargeType;
+	}
+
+	public String getExpiredTime() {
+		return this.expiredTime;
+	}
+
+	public void setExpiredTime(String expiredTime) {
+		this.expiredTime = expiredTime;
+	}
+
 	public List<LockReason> getOperationLocks() {
 		return this.operationLocks;
 	}
@@ -287,7 +327,8 @@ public class DescribeInstanceAttributeResponse extends AcsResponse {
 	RUNNING("Running"),
 	RESETTING("Resetting"),
 	STARTING("Starting"),
-	STOPPING("Stopping"),;
+	STOPPING("Stopping"),
+	PENDING("Pending"),;
 		
 	    private String stringValue;
 	

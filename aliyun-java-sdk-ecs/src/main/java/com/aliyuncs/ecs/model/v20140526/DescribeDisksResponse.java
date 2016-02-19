@@ -101,6 +101,8 @@ public class DescribeDisksResponse extends AcsResponse {
 
 		private String sourceSnapshotId;
 
+		private String autoSnapshotPolicyId;
+
 		private String productCode;
 
 		private Boolean portable;
@@ -117,6 +119,8 @@ public class DescribeDisksResponse extends AcsResponse {
 
 		private Boolean enableAutoSnapshot;
 
+		private Boolean enableAutomatedSnapshotPolicy;
+
 		private String creationTime;
 
 		private String attachedTime;
@@ -125,7 +129,11 @@ public class DescribeDisksResponse extends AcsResponse {
 
 		private String diskChargeType;
 
+		private String expiredTime;
+
 		private List<OperationLock> operationLocks;
+
+		private List<Tag> tags;
 
 		public String getDiskId() {
 			return this.diskId;
@@ -207,6 +215,14 @@ public class DescribeDisksResponse extends AcsResponse {
 			this.sourceSnapshotId = sourceSnapshotId;
 		}
 
+		public String getAutoSnapshotPolicyId() {
+			return this.autoSnapshotPolicyId;
+		}
+
+		public void setAutoSnapshotPolicyId(String autoSnapshotPolicyId) {
+			this.autoSnapshotPolicyId = autoSnapshotPolicyId;
+		}
+
 		public String getProductCode() {
 			return this.productCode;
 		}
@@ -271,6 +287,14 @@ public class DescribeDisksResponse extends AcsResponse {
 			this.enableAutoSnapshot = enableAutoSnapshot;
 		}
 
+		public Boolean getEnableAutomatedSnapshotPolicy() {
+			return this.enableAutomatedSnapshotPolicy;
+		}
+
+		public void setEnableAutomatedSnapshotPolicy(Boolean enableAutomatedSnapshotPolicy) {
+			this.enableAutomatedSnapshotPolicy = enableAutomatedSnapshotPolicy;
+		}
+
 		public String getCreationTime() {
 			return this.creationTime;
 		}
@@ -303,12 +327,28 @@ public class DescribeDisksResponse extends AcsResponse {
 			this.diskChargeType = diskChargeType;
 		}
 
+		public String getExpiredTime() {
+			return this.expiredTime;
+		}
+
+		public void setExpiredTime(String expiredTime) {
+			this.expiredTime = expiredTime;
+		}
+
 		public List<OperationLock> getOperationLocks() {
 			return this.operationLocks;
 		}
 
 		public void setOperationLocks(List<OperationLock> operationLocks) {
 			this.operationLocks = operationLocks;
+		}
+
+		public List<Tag> getTags() {
+			return this.tags;
+		}
+
+		public void setTags(List<Tag> tags) {
+			this.tags = tags;
 		}
 
 		public enum Type {
@@ -388,6 +428,29 @@ public class DescribeDisksResponse extends AcsResponse {
 
 			public void setLockReason(String lockReason) {
 				this.lockReason = lockReason;
+			}
+		}
+
+		public static class Tag {
+
+			private String tagKey;
+
+			private String tagValue;
+
+			public String getTagKey() {
+				return this.tagKey;
+			}
+
+			public void setTagKey(String tagKey) {
+				this.tagKey = tagKey;
+			}
+
+			public String getTagValue() {
+				return this.tagValue;
+			}
+
+			public void setTagValue(String tagValue) {
+				this.tagValue = tagValue;
 			}
 		}
 	}

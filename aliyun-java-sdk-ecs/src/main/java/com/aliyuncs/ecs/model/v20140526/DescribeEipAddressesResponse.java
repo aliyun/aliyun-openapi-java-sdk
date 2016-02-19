@@ -97,6 +97,8 @@ public class DescribeEipAddressesResponse extends AcsResponse {
 
 		private String allocationTime;
 
+		private String instanceType;
+
 		private List<LockReason> operationLocks;
 
 		public String getRegionId() {
@@ -161,6 +163,14 @@ public class DescribeEipAddressesResponse extends AcsResponse {
 
 		public void setAllocationTime(String allocationTime) {
 			this.allocationTime = allocationTime;
+		}
+
+		public String getInstanceType() {
+			return this.instanceType;
+		}
+
+		public void setInstanceType(String instanceType) {
+			this.instanceType = instanceType;
 		}
 
 		public List<LockReason> getOperationLocks() {

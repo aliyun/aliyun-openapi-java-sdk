@@ -56,7 +56,7 @@ public class ModifyDiskAttributeRequest extends RpcAcsRequest<ModifyDiskAttribut
 
 	public void setOwnerId(Long ownerId) {
 		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", String.valueOf(ownerId));
+		putQueryParameter("OwnerId", ownerId);
 	}
 
 	public String getResourceOwnerAccount() {
@@ -74,7 +74,7 @@ public class ModifyDiskAttributeRequest extends RpcAcsRequest<ModifyDiskAttribut
 
 	public void setResourceOwnerId(Long resourceOwnerId) {
 		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", String.valueOf(resourceOwnerId));
+		putQueryParameter("ResourceOwnerId", resourceOwnerId);
 	}
 
 	public String getDiskId() {
@@ -110,7 +110,7 @@ public class ModifyDiskAttributeRequest extends RpcAcsRequest<ModifyDiskAttribut
 
 	public void setDeleteWithInstance(Boolean deleteWithInstance) {
 		this.deleteWithInstance = deleteWithInstance;
-		putQueryParameter("DeleteWithInstance", String.valueOf(deleteWithInstance));
+		putQueryParameter("DeleteWithInstance", deleteWithInstance);
 	}
 
 	public Boolean getDeleteAutoSnapshot() {
@@ -119,7 +119,7 @@ public class ModifyDiskAttributeRequest extends RpcAcsRequest<ModifyDiskAttribut
 
 	public void setDeleteAutoSnapshot(Boolean deleteAutoSnapshot) {
 		this.deleteAutoSnapshot = deleteAutoSnapshot;
-		putQueryParameter("DeleteAutoSnapshot", String.valueOf(deleteAutoSnapshot));
+		putQueryParameter("DeleteAutoSnapshot", deleteAutoSnapshot);
 	}
 
 	public Boolean getEnableAutoSnapshot() {
@@ -128,7 +128,7 @@ public class ModifyDiskAttributeRequest extends RpcAcsRequest<ModifyDiskAttribut
 
 	public void setEnableAutoSnapshot(Boolean enableAutoSnapshot) {
 		this.enableAutoSnapshot = enableAutoSnapshot;
-		putQueryParameter("EnableAutoSnapshot", String.valueOf(enableAutoSnapshot));
+		putQueryParameter("EnableAutoSnapshot", enableAutoSnapshot);
 	}
 
 	public String getOwnerAccount() {

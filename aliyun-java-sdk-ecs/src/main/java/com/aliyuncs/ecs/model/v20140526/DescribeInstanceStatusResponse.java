@@ -109,7 +109,8 @@ public class DescribeInstanceStatusResponse extends AcsResponse {
 			RUNNING("Running"),
 			RESETTING("Resetting"),
 			STARTING("Starting"),
-			STOPPING("Stopping"),;
+			STOPPING("Stopping"),
+			PENDING("Pending"),;
 			
 		    private String stringValue;
 		

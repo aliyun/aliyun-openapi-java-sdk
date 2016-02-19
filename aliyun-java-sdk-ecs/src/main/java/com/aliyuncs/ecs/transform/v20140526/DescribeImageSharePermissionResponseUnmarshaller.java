@@ -20,9 +20,10 @@ package com.aliyuncs.ecs.transform.v20140526;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import com.aliyuncs.ecs.model.v20140526.DescribeImageSharePermissionResponse;
-import com.aliyuncs.ecs.model.v20140526.DescribeImageSharePermissionResponse.ShareGroup;
 import com.aliyuncs.ecs.model.v20140526.DescribeImageSharePermissionResponse.Account;
+import com.aliyuncs.ecs.model.v20140526.DescribeImageSharePermissionResponse.ShareGroup;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -39,7 +40,7 @@ public class DescribeImageSharePermissionResponseUnmarshaller {
 
 		List<ShareGroup> shareGroups = new ArrayList<ShareGroup>();
 		for (int i = 0; i < context.lengthValue("DescribeImageSharePermissionResponse.ShareGroups.Length"); i++) {
-			ShareGroup  shareGroup = new ShareGroup();
+			ShareGroup shareGroup = new ShareGroup();
 			shareGroup.setGroup(context.stringValue("DescribeImageSharePermissionResponse.ShareGroups["+ i +"].Group"));
 
 			shareGroups.add(shareGroup);
@@ -48,7 +49,7 @@ public class DescribeImageSharePermissionResponseUnmarshaller {
 
 		List<Account> accounts = new ArrayList<Account>();
 		for (int i = 0; i < context.lengthValue("DescribeImageSharePermissionResponse.Accounts.Length"); i++) {
-			Account  account = new Account();
+			Account account = new Account();
 			account.setAliyunId(context.stringValue("DescribeImageSharePermissionResponse.Accounts["+ i +"].AliyunId"));
 
 			accounts.add(account);

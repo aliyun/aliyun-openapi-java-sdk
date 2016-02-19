@@ -20,6 +20,7 @@ package com.aliyuncs.ecs.transform.v20140526;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import com.aliyuncs.ecs.model.v20140526.DescribeInstanceMonitorDataResponse;
 import com.aliyuncs.ecs.model.v20140526.DescribeInstanceMonitorDataResponse.InstanceMonitorData;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -33,7 +34,7 @@ public class DescribeInstanceMonitorDataResponseUnmarshaller {
 
 		List<InstanceMonitorData> monitorData = new ArrayList<InstanceMonitorData>();
 		for (int i = 0; i < context.lengthValue("DescribeInstanceMonitorDataResponse.MonitorData.Length"); i++) {
-			InstanceMonitorData  instanceMonitorData = new InstanceMonitorData();
+			InstanceMonitorData instanceMonitorData = new InstanceMonitorData();
 			instanceMonitorData.setInstanceId(context.stringValue("DescribeInstanceMonitorDataResponse.MonitorData["+ i +"].InstanceId"));
 			instanceMonitorData.setCPU(context.integerValue("DescribeInstanceMonitorDataResponse.MonitorData["+ i +"].CPU"));
 			instanceMonitorData.setIntranetRX(context.integerValue("DescribeInstanceMonitorDataResponse.MonitorData["+ i +"].IntranetRX"));

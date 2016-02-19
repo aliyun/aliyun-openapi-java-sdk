@@ -97,7 +97,11 @@ public class DescribeVpcsResponse extends AcsResponse {
 
 		private String description;
 
+		private String isDefault;
+
 		private List<String> vSwitchIds;
+
+		private List<String> userCidrs;
 
 		public String getVpcId() {
 			return this.vpcId;
@@ -163,12 +167,28 @@ public class DescribeVpcsResponse extends AcsResponse {
 			this.description = description;
 		}
 
+		public String getIsDefault() {
+			return this.isDefault;
+		}
+
+		public void setIsDefault(String isDefault) {
+			this.isDefault = isDefault;
+		}
+
 		public List<String> getVSwitchIds() {
 			return this.vSwitchIds;
 		}
 
 		public void setVSwitchIds(List<String> vSwitchIds) {
 			this.vSwitchIds = vSwitchIds;
+		}
+
+		public List<String> getUserCidrs() {
+			return this.userCidrs;
+		}
+
+		public void setUserCidrs(List<String> userCidrs) {
+			this.userCidrs = userCidrs;
 		}
 	}
 

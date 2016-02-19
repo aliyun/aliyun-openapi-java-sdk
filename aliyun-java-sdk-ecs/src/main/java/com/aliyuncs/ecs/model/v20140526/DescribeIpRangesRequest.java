@@ -52,7 +52,7 @@ public class DescribeIpRangesRequest extends RpcAcsRequest<DescribeIpRangesRespo
 
 	public void setOwnerId(Long ownerId) {
 		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", String.valueOf(ownerId));
+		putQueryParameter("OwnerId", ownerId);
 	}
 
 	public String getResourceOwnerAccount() {
@@ -70,7 +70,7 @@ public class DescribeIpRangesRequest extends RpcAcsRequest<DescribeIpRangesRespo
 
 	public void setResourceOwnerId(Long resourceOwnerId) {
 		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", String.valueOf(resourceOwnerId));
+		putQueryParameter("ResourceOwnerId", resourceOwnerId);
 	}
 
 	public String getClusterId() {
@@ -97,7 +97,7 @@ public class DescribeIpRangesRequest extends RpcAcsRequest<DescribeIpRangesRespo
 
 	public void setPageNumber(Integer pageNumber) {
 		this.pageNumber = pageNumber;
-		putQueryParameter("PageNumber", String.valueOf(pageNumber));
+		putQueryParameter("PageNumber", pageNumber);
 	}
 
 	public Integer getPageSize() {
@@ -106,7 +106,7 @@ public class DescribeIpRangesRequest extends RpcAcsRequest<DescribeIpRangesRespo
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
-		putQueryParameter("PageSize", String.valueOf(pageSize));
+		putQueryParameter("PageSize", pageSize);
 	}
 
 	public String getOwnerAccount() {

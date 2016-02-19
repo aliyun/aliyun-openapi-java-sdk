@@ -19,6 +19,7 @@
 package com.aliyuncs.ecs.model.v20140526;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 
 /**
  * @author auto create
@@ -29,6 +30,8 @@ public class DeleteRouteEntryRequest extends RpcAcsRequest<DeleteRouteEntryRespo
 	public DeleteRouteEntryRequest() {
 		super("Ecs", "2014-05-26", "DeleteRouteEntry");
 	}
+
+	private List<NextHopList> nextHopLists;
 
 	private Long ownerId;
 
@@ -44,13 +47,25 @@ public class DeleteRouteEntryRequest extends RpcAcsRequest<DeleteRouteEntryRespo
 
 	private String ownerAccount;
 
+	public List<NextHopList> getNextHopLists() {
+		return this.nextHopLists;
+	}
+
+	public void setNextHopLists(List<NextHopList> nextHopLists) {
+		this.nextHopLists = nextHopLists;	
+		for (int i = 0; i < nextHopLists.size(); i++) {
+			putQueryParameter("NextHopList." + (i + 1) + ".NextHopType" , nextHopLists.get(i).getNextHopType());
+			putQueryParameter("NextHopList." + (i + 1) + ".NextHopId" , nextHopLists.get(i).getNextHopId());
+		}	
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
 
 	public void setOwnerId(Long ownerId) {
 		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", String.valueOf(ownerId));
+		putQueryParameter("OwnerId", ownerId);
 	}
 
 	public String getResourceOwnerAccount() {
@@ -68,7 +83,7 @@ public class DeleteRouteEntryRequest extends RpcAcsRequest<DeleteRouteEntryRespo
 
 	public void setResourceOwnerId(Long resourceOwnerId) {
 		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", String.valueOf(resourceOwnerId));
+		putQueryParameter("ResourceOwnerId", resourceOwnerId);
 	}
 
 	public String getRouteTableId() {
@@ -105,6 +120,29 @@ public class DeleteRouteEntryRequest extends RpcAcsRequest<DeleteRouteEntryRespo
 	public void setOwnerAccount(String ownerAccount) {
 		this.ownerAccount = ownerAccount;
 		putQueryParameter("OwnerAccount", ownerAccount);
+	}
+
+	public static class NextHopList {
+
+		private String nextHopType;
+
+		private String nextHopId;
+
+		public String getNextHopType() {
+			return this.nextHopType;
+		}
+
+		public void setNextHopType(String nextHopType) {
+			this.nextHopType = nextHopType;
+		}
+
+		public String getNextHopId() {
+			return this.nextHopId;
+		}
+
+		public void setNextHopId(String nextHopId) {
+			this.nextHopId = nextHopId;
+		}
 	}
 
 	@Override

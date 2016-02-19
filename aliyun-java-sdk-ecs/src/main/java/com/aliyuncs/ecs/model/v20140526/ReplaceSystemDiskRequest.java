@@ -40,9 +40,13 @@ public class ReplaceSystemDiskRequest extends RpcAcsRequest<ReplaceSystemDiskRes
 
 	private String imageId;
 
+	private Integer systemDiskSize;
+
 	private String clientToken;
 
 	private String ownerAccount;
+
+	private Boolean useAdditionalService;
 
 	public Long getOwnerId() {
 		return this.ownerId;
@@ -50,7 +54,7 @@ public class ReplaceSystemDiskRequest extends RpcAcsRequest<ReplaceSystemDiskRes
 
 	public void setOwnerId(Long ownerId) {
 		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", String.valueOf(ownerId));
+		putQueryParameter("OwnerId", ownerId);
 	}
 
 	public String getResourceOwnerAccount() {
@@ -68,7 +72,7 @@ public class ReplaceSystemDiskRequest extends RpcAcsRequest<ReplaceSystemDiskRes
 
 	public void setResourceOwnerId(Long resourceOwnerId) {
 		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", String.valueOf(resourceOwnerId));
+		putQueryParameter("ResourceOwnerId", resourceOwnerId);
 	}
 
 	public String getInstanceId() {
@@ -89,6 +93,15 @@ public class ReplaceSystemDiskRequest extends RpcAcsRequest<ReplaceSystemDiskRes
 		putQueryParameter("ImageId", imageId);
 	}
 
+	public Integer getSystemDiskSize() {
+		return this.systemDiskSize;
+	}
+
+	public void setSystemDiskSize(Integer systemDiskSize) {
+		this.systemDiskSize = systemDiskSize;
+		putQueryParameter("SystemDisk.Size", systemDiskSize);
+	}
+
 	public String getClientToken() {
 		return this.clientToken;
 	}
@@ -105,6 +118,15 @@ public class ReplaceSystemDiskRequest extends RpcAcsRequest<ReplaceSystemDiskRes
 	public void setOwnerAccount(String ownerAccount) {
 		this.ownerAccount = ownerAccount;
 		putQueryParameter("OwnerAccount", ownerAccount);
+	}
+
+	public Boolean getUseAdditionalService() {
+		return this.useAdditionalService;
+	}
+
+	public void setUseAdditionalService(Boolean useAdditionalService) {
+		this.useAdditionalService = useAdditionalService;
+		putQueryParameter("UseAdditionalService", useAdditionalService);
 	}
 
 	@Override

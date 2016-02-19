@@ -40,6 +40,10 @@ public class DescribeRouteTablesRequest extends RpcAcsRequest<DescribeRouteTable
 
 	private String routeTableId;
 
+	private String routerType;
+
+	private String routerId;
+
 	private Integer pageNumber;
 
 	private Integer pageSize;
@@ -52,7 +56,7 @@ public class DescribeRouteTablesRequest extends RpcAcsRequest<DescribeRouteTable
 
 	public void setOwnerId(Long ownerId) {
 		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", String.valueOf(ownerId));
+		putQueryParameter("OwnerId", ownerId);
 	}
 
 	public String getResourceOwnerAccount() {
@@ -70,7 +74,7 @@ public class DescribeRouteTablesRequest extends RpcAcsRequest<DescribeRouteTable
 
 	public void setResourceOwnerId(Long resourceOwnerId) {
 		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", String.valueOf(resourceOwnerId));
+		putQueryParameter("ResourceOwnerId", resourceOwnerId);
 	}
 
 	public String getVRouterId() {
@@ -91,13 +95,31 @@ public class DescribeRouteTablesRequest extends RpcAcsRequest<DescribeRouteTable
 		putQueryParameter("RouteTableId", routeTableId);
 	}
 
+	public String getRouterType() {
+		return this.routerType;
+	}
+
+	public void setRouterType(String routerType) {
+		this.routerType = routerType;
+		putQueryParameter("RouterType", routerType);
+	}
+
+	public String getRouterId() {
+		return this.routerId;
+	}
+
+	public void setRouterId(String routerId) {
+		this.routerId = routerId;
+		putQueryParameter("RouterId", routerId);
+	}
+
 	public Integer getPageNumber() {
 		return this.pageNumber;
 	}
 
 	public void setPageNumber(Integer pageNumber) {
 		this.pageNumber = pageNumber;
-		putQueryParameter("PageNumber", String.valueOf(pageNumber));
+		putQueryParameter("PageNumber", pageNumber);
 	}
 
 	public Integer getPageSize() {
@@ -106,7 +128,7 @@ public class DescribeRouteTablesRequest extends RpcAcsRequest<DescribeRouteTable
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
-		putQueryParameter("PageSize", String.valueOf(pageSize));
+		putQueryParameter("PageSize", pageSize);
 	}
 
 	public String getOwnerAccount() {

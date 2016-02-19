@@ -143,6 +143,10 @@ public class DescribeRouteTablesResponse extends AcsResponse {
 
 			private String instanceId;
 
+			private String nextHopType;
+
+			private List<NextHop> nextHops;
+
 			public String getRouteTableId() {
 				return this.routeTableId;
 			}
@@ -181,6 +185,45 @@ public class DescribeRouteTablesResponse extends AcsResponse {
 
 			public void setInstanceId(String instanceId) {
 				this.instanceId = instanceId;
+			}
+
+			public String getNextHopType() {
+				return this.nextHopType;
+			}
+
+			public void setNextHopType(String nextHopType) {
+				this.nextHopType = nextHopType;
+			}
+
+			public List<NextHop> getNextHops() {
+				return this.nextHops;
+			}
+
+			public void setNextHops(List<NextHop> nextHops) {
+				this.nextHops = nextHops;
+			}
+
+			public static class NextHop {
+
+				private String nextHopType;
+
+				private String nextHopId;
+
+				public String getNextHopType() {
+					return this.nextHopType;
+				}
+
+				public void setNextHopType(String nextHopType) {
+					this.nextHopType = nextHopType;
+				}
+
+				public String getNextHopId() {
+					return this.nextHopId;
+				}
+
+				public void setNextHopId(String nextHopId) {
+					this.nextHopId = nextHopId;
+				}
 			}
 		}
 	}

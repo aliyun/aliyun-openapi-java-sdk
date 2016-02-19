@@ -60,7 +60,7 @@ public class ModifyAutoSnapshotPolicyRequest extends RpcAcsRequest<ModifyAutoSna
 
 	public void setOwnerId(Long ownerId) {
 		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", String.valueOf(ownerId));
+		putQueryParameter("OwnerId", ownerId);
 	}
 
 	public String getResourceOwnerAccount() {
@@ -78,7 +78,7 @@ public class ModifyAutoSnapshotPolicyRequest extends RpcAcsRequest<ModifyAutoSna
 
 	public void setResourceOwnerId(Long resourceOwnerId) {
 		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", String.valueOf(resourceOwnerId));
+		putQueryParameter("ResourceOwnerId", resourceOwnerId);
 	}
 
 	public Boolean getSystemDiskPolicyEnabled() {
@@ -87,7 +87,7 @@ public class ModifyAutoSnapshotPolicyRequest extends RpcAcsRequest<ModifyAutoSna
 
 	public void setSystemDiskPolicyEnabled(Boolean systemDiskPolicyEnabled) {
 		this.systemDiskPolicyEnabled = systemDiskPolicyEnabled;
-		putQueryParameter("SystemDiskPolicyEnabled", String.valueOf(systemDiskPolicyEnabled));
+		putQueryParameter("SystemDiskPolicyEnabled", systemDiskPolicyEnabled);
 	}
 
 	public Integer getSystemDiskPolicyTimePeriod() {
@@ -96,7 +96,7 @@ public class ModifyAutoSnapshotPolicyRequest extends RpcAcsRequest<ModifyAutoSna
 
 	public void setSystemDiskPolicyTimePeriod(Integer systemDiskPolicyTimePeriod) {
 		this.systemDiskPolicyTimePeriod = systemDiskPolicyTimePeriod;
-		putQueryParameter("SystemDiskPolicyTimePeriod", String.valueOf(systemDiskPolicyTimePeriod));
+		putQueryParameter("SystemDiskPolicyTimePeriod", systemDiskPolicyTimePeriod);
 	}
 
 	public Integer getSystemDiskPolicyRetentionDays() {
@@ -105,7 +105,7 @@ public class ModifyAutoSnapshotPolicyRequest extends RpcAcsRequest<ModifyAutoSna
 
 	public void setSystemDiskPolicyRetentionDays(Integer systemDiskPolicyRetentionDays) {
 		this.systemDiskPolicyRetentionDays = systemDiskPolicyRetentionDays;
-		putQueryParameter("SystemDiskPolicyRetentionDays", String.valueOf(systemDiskPolicyRetentionDays));
+		putQueryParameter("SystemDiskPolicyRetentionDays", systemDiskPolicyRetentionDays);
 	}
 
 	public Boolean getSystemDiskPolicyRetentionLastWeek() {
@@ -114,7 +114,7 @@ public class ModifyAutoSnapshotPolicyRequest extends RpcAcsRequest<ModifyAutoSna
 
 	public void setSystemDiskPolicyRetentionLastWeek(Boolean systemDiskPolicyRetentionLastWeek) {
 		this.systemDiskPolicyRetentionLastWeek = systemDiskPolicyRetentionLastWeek;
-		putQueryParameter("SystemDiskPolicyRetentionLastWeek", String.valueOf(systemDiskPolicyRetentionLastWeek));
+		putQueryParameter("SystemDiskPolicyRetentionLastWeek", systemDiskPolicyRetentionLastWeek);
 	}
 
 	public Boolean getDataDiskPolicyEnabled() {
@@ -123,7 +123,7 @@ public class ModifyAutoSnapshotPolicyRequest extends RpcAcsRequest<ModifyAutoSna
 
 	public void setDataDiskPolicyEnabled(Boolean dataDiskPolicyEnabled) {
 		this.dataDiskPolicyEnabled = dataDiskPolicyEnabled;
-		putQueryParameter("DataDiskPolicyEnabled", String.valueOf(dataDiskPolicyEnabled));
+		putQueryParameter("DataDiskPolicyEnabled", dataDiskPolicyEnabled);
 	}
 
 	public Integer getDataDiskPolicyTimePeriod() {
@@ -132,7 +132,7 @@ public class ModifyAutoSnapshotPolicyRequest extends RpcAcsRequest<ModifyAutoSna
 
 	public void setDataDiskPolicyTimePeriod(Integer dataDiskPolicyTimePeriod) {
 		this.dataDiskPolicyTimePeriod = dataDiskPolicyTimePeriod;
-		putQueryParameter("DataDiskPolicyTimePeriod", String.valueOf(dataDiskPolicyTimePeriod));
+		putQueryParameter("DataDiskPolicyTimePeriod", dataDiskPolicyTimePeriod);
 	}
 
 	public Integer getDataDiskPolicyRetentionDays() {
@@ -141,7 +141,7 @@ public class ModifyAutoSnapshotPolicyRequest extends RpcAcsRequest<ModifyAutoSna
 
 	public void setDataDiskPolicyRetentionDays(Integer dataDiskPolicyRetentionDays) {
 		this.dataDiskPolicyRetentionDays = dataDiskPolicyRetentionDays;
-		putQueryParameter("DataDiskPolicyRetentionDays", String.valueOf(dataDiskPolicyRetentionDays));
+		putQueryParameter("DataDiskPolicyRetentionDays", dataDiskPolicyRetentionDays);
 	}
 
 	public Boolean getDataDiskPolicyRetentionLastWeek() {
@@ -150,7 +150,7 @@ public class ModifyAutoSnapshotPolicyRequest extends RpcAcsRequest<ModifyAutoSna
 
 	public void setDataDiskPolicyRetentionLastWeek(Boolean dataDiskPolicyRetentionLastWeek) {
 		this.dataDiskPolicyRetentionLastWeek = dataDiskPolicyRetentionLastWeek;
-		putQueryParameter("DataDiskPolicyRetentionLastWeek", String.valueOf(dataDiskPolicyRetentionLastWeek));
+		putQueryParameter("DataDiskPolicyRetentionLastWeek", dataDiskPolicyRetentionLastWeek);
 	}
 
 	public String getOwnerAccount() {

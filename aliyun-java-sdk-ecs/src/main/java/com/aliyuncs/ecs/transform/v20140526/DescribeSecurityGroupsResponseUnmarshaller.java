@@ -20,8 +20,10 @@ package com.aliyuncs.ecs.transform.v20140526;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import com.aliyuncs.ecs.model.v20140526.DescribeSecurityGroupsResponse;
 import com.aliyuncs.ecs.model.v20140526.DescribeSecurityGroupsResponse.SecurityGroup;
+import com.aliyuncs.ecs.model.v20140526.DescribeSecurityGroupsResponse.SecurityGroup.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -37,12 +39,23 @@ public class DescribeSecurityGroupsResponseUnmarshaller {
 
 		List<SecurityGroup> securityGroups = new ArrayList<SecurityGroup>();
 		for (int i = 0; i < context.lengthValue("DescribeSecurityGroupsResponse.SecurityGroups.Length"); i++) {
-			SecurityGroup  securityGroup = new SecurityGroup();
+			SecurityGroup securityGroup = new SecurityGroup();
 			securityGroup.setSecurityGroupId(context.stringValue("DescribeSecurityGroupsResponse.SecurityGroups["+ i +"].SecurityGroupId"));
 			securityGroup.setDescription(context.stringValue("DescribeSecurityGroupsResponse.SecurityGroups["+ i +"].Description"));
 			securityGroup.setSecurityGroupName(context.stringValue("DescribeSecurityGroupsResponse.SecurityGroups["+ i +"].SecurityGroupName"));
 			securityGroup.setVpcId(context.stringValue("DescribeSecurityGroupsResponse.SecurityGroups["+ i +"].VpcId"));
 			securityGroup.setCreationTime(context.stringValue("DescribeSecurityGroupsResponse.SecurityGroups["+ i +"].CreationTime"));
+			securityGroup.setEcsCount(context.integerValue("DescribeSecurityGroupsResponse.SecurityGroups["+ i +"].EcsCount"));
+
+			List<Tag> tags = new ArrayList<Tag>();
+			for (int j = 0; j < context.lengthValue("DescribeSecurityGroupsResponse.SecurityGroups["+ i +"].Tags.Length"); j++) {
+				Tag tag = new Tag();
+				tag.setTagKey(context.stringValue("DescribeSecurityGroupsResponse.SecurityGroups["+ i +"].Tags["+ j +"].TagKey"));
+				tag.setTagValue(context.stringValue("DescribeSecurityGroupsResponse.SecurityGroups["+ i +"].Tags["+ j +"].TagValue"));
+
+				tags.add(tag);
+			}
+			securityGroup.setTags(tags);
 
 			securityGroups.add(securityGroup);
 		}

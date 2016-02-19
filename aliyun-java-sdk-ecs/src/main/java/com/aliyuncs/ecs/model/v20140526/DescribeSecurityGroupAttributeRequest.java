@@ -42,13 +42,15 @@ public class DescribeSecurityGroupAttributeRequest extends RpcAcsRequest<Describ
 
 	private String ownerAccount;
 
+	private String direction;
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
 
 	public void setOwnerId(Long ownerId) {
 		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", String.valueOf(ownerId));
+		putQueryParameter("OwnerId", ownerId);
 	}
 
 	public String getResourceOwnerAccount() {
@@ -66,7 +68,7 @@ public class DescribeSecurityGroupAttributeRequest extends RpcAcsRequest<Describ
 
 	public void setResourceOwnerId(Long resourceOwnerId) {
 		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", String.valueOf(resourceOwnerId));
+		putQueryParameter("ResourceOwnerId", resourceOwnerId);
 	}
 
 	public String getSecurityGroupId() {
@@ -94,6 +96,15 @@ public class DescribeSecurityGroupAttributeRequest extends RpcAcsRequest<Describ
 	public void setOwnerAccount(String ownerAccount) {
 		this.ownerAccount = ownerAccount;
 		putQueryParameter("OwnerAccount", ownerAccount);
+	}
+
+	public String getDirection() {
+		return this.direction;
+	}
+
+	public void setDirection(String direction) {
+		this.direction = direction;
+		putQueryParameter("Direction", direction);
 	}
 
 	@Override

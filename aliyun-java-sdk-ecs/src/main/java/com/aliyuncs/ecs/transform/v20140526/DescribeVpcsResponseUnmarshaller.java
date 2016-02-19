@@ -20,6 +20,7 @@ package com.aliyuncs.ecs.transform.v20140526;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import com.aliyuncs.ecs.model.v20140526.DescribeVpcsResponse;
 import com.aliyuncs.ecs.model.v20140526.DescribeVpcsResponse.Vpc;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -36,7 +37,7 @@ public class DescribeVpcsResponseUnmarshaller {
 
 		List<Vpc> vpcs = new ArrayList<Vpc>();
 		for (int i = 0; i < context.lengthValue("DescribeVpcsResponse.Vpcs.Length"); i++) {
-			Vpc  vpc = new Vpc();
+			Vpc vpc = new Vpc();
 			vpc.setVpcId(context.stringValue("DescribeVpcsResponse.Vpcs["+ i +"].VpcId"));
 			vpc.setRegionId(context.stringValue("DescribeVpcsResponse.Vpcs["+ i +"].RegionId"));
 			vpc.setStatus(context.stringValue("DescribeVpcsResponse.Vpcs["+ i +"].Status"));
@@ -45,12 +46,19 @@ public class DescribeVpcsResponseUnmarshaller {
 			vpc.setCidrBlock(context.stringValue("DescribeVpcsResponse.Vpcs["+ i +"].CidrBlock"));
 			vpc.setVRouterId(context.stringValue("DescribeVpcsResponse.Vpcs["+ i +"].VRouterId"));
 			vpc.setDescription(context.stringValue("DescribeVpcsResponse.Vpcs["+ i +"].Description"));
+			vpc.setIsDefault(context.stringValue("DescribeVpcsResponse.Vpcs["+ i +"].IsDefault"));
 
 			List<String> vSwitchIds = new ArrayList<String>();
 			for (int j = 0; j < context.lengthValue("DescribeVpcsResponse.Vpcs["+ i +"].VSwitchIds.Length"); j++) {
 				vSwitchIds.add(context.stringValue("DescribeVpcsResponse.Vpcs["+ i +"].VSwitchIds["+ j +"]"));
 			}
 			vpc.setVSwitchIds(vSwitchIds);
+
+			List<String> userCidrs = new ArrayList<String>();
+			for (int j = 0; j < context.lengthValue("DescribeVpcsResponse.Vpcs["+ i +"].UserCidrs.Length"); j++) {
+				userCidrs.add(context.stringValue("DescribeVpcsResponse.Vpcs["+ i +"].UserCidrs["+ j +"]"));
+			}
+			vpc.setUserCidrs(userCidrs);
 
 			vpcs.add(vpc);
 		}

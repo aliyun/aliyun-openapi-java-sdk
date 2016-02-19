@@ -20,11 +20,13 @@ package com.aliyuncs.ecs.transform.v20140526;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import com.aliyuncs.ecs.model.v20140526.DescribeDisksResponse;
 import com.aliyuncs.ecs.model.v20140526.DescribeDisksResponse.Disk;
-import com.aliyuncs.ecs.model.v20140526.DescribeDisksResponse.Disk.OperationLock;
-import com.aliyuncs.ecs.model.v20140526.DescribeDisksResponse.Disk.Type;
 import com.aliyuncs.ecs.model.v20140526.DescribeDisksResponse.Disk.Category;
+import com.aliyuncs.ecs.model.v20140526.DescribeDisksResponse.Disk.OperationLock;
+import com.aliyuncs.ecs.model.v20140526.DescribeDisksResponse.Disk.Tag;
+import com.aliyuncs.ecs.model.v20140526.DescribeDisksResponse.Disk.Type;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -39,7 +41,7 @@ public class DescribeDisksResponseUnmarshaller {
 
 		List<Disk> disks = new ArrayList<Disk>();
 		for (int i = 0; i < context.lengthValue("DescribeDisksResponse.Disks.Length"); i++) {
-			Disk  disk = new Disk();
+			Disk disk = new Disk();
 			disk.setDiskId(context.stringValue("DescribeDisksResponse.Disks["+ i +"].DiskId"));
 			disk.setRegionId(context.stringValue("DescribeDisksResponse.Disks["+ i +"].RegionId"));
 			disk.setZoneId(context.stringValue("DescribeDisksResponse.Disks["+ i +"].ZoneId"));
@@ -50,6 +52,7 @@ public class DescribeDisksResponseUnmarshaller {
 			disk.setSize(context.integerValue("DescribeDisksResponse.Disks["+ i +"].Size"));
 			disk.setImageId(context.stringValue("DescribeDisksResponse.Disks["+ i +"].ImageId"));
 			disk.setSourceSnapshotId(context.stringValue("DescribeDisksResponse.Disks["+ i +"].SourceSnapshotId"));
+			disk.setAutoSnapshotPolicyId(context.stringValue("DescribeDisksResponse.Disks["+ i +"].AutoSnapshotPolicyId"));
 			disk.setProductCode(context.stringValue("DescribeDisksResponse.Disks["+ i +"].ProductCode"));
 			disk.setPortable(context.booleanValue("DescribeDisksResponse.Disks["+ i +"].Portable"));
 			disk.setStatus(context.stringValue("DescribeDisksResponse.Disks["+ i +"].Status"));
@@ -58,19 +61,31 @@ public class DescribeDisksResponseUnmarshaller {
 			disk.setDeleteWithInstance(context.booleanValue("DescribeDisksResponse.Disks["+ i +"].DeleteWithInstance"));
 			disk.setDeleteAutoSnapshot(context.booleanValue("DescribeDisksResponse.Disks["+ i +"].DeleteAutoSnapshot"));
 			disk.setEnableAutoSnapshot(context.booleanValue("DescribeDisksResponse.Disks["+ i +"].EnableAutoSnapshot"));
+			disk.setEnableAutomatedSnapshotPolicy(context.booleanValue("DescribeDisksResponse.Disks["+ i +"].EnableAutomatedSnapshotPolicy"));
 			disk.setCreationTime(context.stringValue("DescribeDisksResponse.Disks["+ i +"].CreationTime"));
 			disk.setAttachedTime(context.stringValue("DescribeDisksResponse.Disks["+ i +"].AttachedTime"));
 			disk.setDetachedTime(context.stringValue("DescribeDisksResponse.Disks["+ i +"].DetachedTime"));
 			disk.setDiskChargeType(context.stringValue("DescribeDisksResponse.Disks["+ i +"].DiskChargeType"));
+			disk.setExpiredTime(context.stringValue("DescribeDisksResponse.Disks["+ i +"].ExpiredTime"));
 
 			List<OperationLock> operationLocks = new ArrayList<OperationLock>();
 			for (int j = 0; j < context.lengthValue("DescribeDisksResponse.Disks["+ i +"].OperationLocks.Length"); j++) {
-				OperationLock  operationLock = new OperationLock();
+				OperationLock operationLock = new OperationLock();
 				operationLock.setLockReason(context.stringValue("DescribeDisksResponse.Disks["+ i +"].OperationLocks["+ j +"].LockReason"));
 
 				operationLocks.add(operationLock);
 			}
 			disk.setOperationLocks(operationLocks);
+
+			List<Tag> tags = new ArrayList<Tag>();
+			for (int j = 0; j < context.lengthValue("DescribeDisksResponse.Disks["+ i +"].Tags.Length"); j++) {
+				Tag tag = new Tag();
+				tag.setTagKey(context.stringValue("DescribeDisksResponse.Disks["+ i +"].Tags["+ j +"].TagKey"));
+				tag.setTagValue(context.stringValue("DescribeDisksResponse.Disks["+ i +"].Tags["+ j +"].TagValue"));
+
+				tags.add(tag);
+			}
+			disk.setTags(tags);
 
 			disks.add(disk);
 		}

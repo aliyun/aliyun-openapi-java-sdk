@@ -19,10 +19,10 @@
 package com.aliyuncs.ecs.transform.v20140526;
 
 import com.aliyuncs.ecs.model.v20140526.DescribeAutoSnapshotPolicyResponse;
-import com.aliyuncs.ecs.model.v20140526.DescribeAutoSnapshotPolicyResponse.AutoSnapshotPolicy;
 import com.aliyuncs.ecs.model.v20140526.DescribeAutoSnapshotPolicyResponse.AutoSnapshotExcutionStatus;
-import com.aliyuncs.ecs.model.v20140526.DescribeAutoSnapshotPolicyResponse.AutoSnapshotExcutionStatus.SystemDiskExcutionStatus;
 import com.aliyuncs.ecs.model.v20140526.DescribeAutoSnapshotPolicyResponse.AutoSnapshotExcutionStatus.DataDiskExcutionStatus;
+import com.aliyuncs.ecs.model.v20140526.DescribeAutoSnapshotPolicyResponse.AutoSnapshotExcutionStatus.SystemDiskExcutionStatus;
+import com.aliyuncs.ecs.model.v20140526.DescribeAutoSnapshotPolicyResponse.AutoSnapshotPolicy;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -33,7 +33,7 @@ public class DescribeAutoSnapshotPolicyResponseUnmarshaller {
 		describeAutoSnapshotPolicyResponse.setRequestId(context.stringValue("DescribeAutoSnapshotPolicyResponse.RequestId"));
 		describeAutoSnapshotPolicyResponse.setAutoSnapshotOccupation(context.integerValue("DescribeAutoSnapshotPolicyResponse.AutoSnapshotOccupation"));
 
-		AutoSnapshotPolicy  autoSnapshotPolicy = new AutoSnapshotPolicy();
+		AutoSnapshotPolicy autoSnapshotPolicy = new AutoSnapshotPolicy();
 		autoSnapshotPolicy.setSystemDiskPolicyEnabled(context.stringValue("DescribeAutoSnapshotPolicyResponse.AutoSnapshotPolicy.SystemDiskPolicyEnabled"));
 		autoSnapshotPolicy.setSystemDiskPolicyTimePeriod(context.stringValue("DescribeAutoSnapshotPolicyResponse.AutoSnapshotPolicy.SystemDiskPolicyTimePeriod"));
 		autoSnapshotPolicy.setSystemDiskPolicyRetentionDays(context.stringValue("DescribeAutoSnapshotPolicyResponse.AutoSnapshotPolicy.SystemDiskPolicyRetentionDays"));
@@ -44,7 +44,7 @@ public class DescribeAutoSnapshotPolicyResponseUnmarshaller {
 		autoSnapshotPolicy.setDataDiskPolicyRetentionLastWeek(context.stringValue("DescribeAutoSnapshotPolicyResponse.AutoSnapshotPolicy.DataDiskPolicyRetentionLastWeek"));
 		describeAutoSnapshotPolicyResponse.setAutoSnapshotPolicy(autoSnapshotPolicy);
 
-		AutoSnapshotExcutionStatus  autoSnapshotExcutionStatus = new AutoSnapshotExcutionStatus();
+		AutoSnapshotExcutionStatus autoSnapshotExcutionStatus = new AutoSnapshotExcutionStatus();
 		autoSnapshotExcutionStatus.setSystemDiskExcutionStatus(SystemDiskExcutionStatus.getEnum(context.stringValue("DescribeAutoSnapshotPolicyResponse.AutoSnapshotExcutionStatus.SystemDiskExcutionStatus")));
 		autoSnapshotExcutionStatus.setDataDiskExcutionStatus(DataDiskExcutionStatus.getEnum(context.stringValue("DescribeAutoSnapshotPolicyResponse.AutoSnapshotExcutionStatus.DataDiskExcutionStatus")));
 		describeAutoSnapshotPolicyResponse.setAutoSnapshotExcutionStatus(autoSnapshotExcutionStatus);

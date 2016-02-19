@@ -38,7 +38,7 @@ public class DescribeTagsRequest extends RpcAcsRequest<DescribeTagsResponse> {
 
 	private Integer pageSize;
 
-	private String nextToken;
+	private Integer pageNumber;
 
 	private String resourceType;
 
@@ -70,7 +70,7 @@ public class DescribeTagsRequest extends RpcAcsRequest<DescribeTagsResponse> {
 
 	public void setOwnerId(Long ownerId) {
 		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", String.valueOf(ownerId));
+		putQueryParameter("OwnerId", ownerId);
 	}
 
 	public String getResourceOwnerAccount() {
@@ -88,7 +88,7 @@ public class DescribeTagsRequest extends RpcAcsRequest<DescribeTagsResponse> {
 
 	public void setResourceOwnerId(Long resourceOwnerId) {
 		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", String.valueOf(resourceOwnerId));
+		putQueryParameter("ResourceOwnerId", resourceOwnerId);
 	}
 
 	public Integer getPageSize() {
@@ -97,16 +97,16 @@ public class DescribeTagsRequest extends RpcAcsRequest<DescribeTagsResponse> {
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
-		putQueryParameter("PageSize", String.valueOf(pageSize));
+		putQueryParameter("PageSize", pageSize);
 	}
 
-	public String getNextToken() {
-		return this.nextToken;
+	public Integer getPageNumber() {
+		return this.pageNumber;
 	}
 
-	public void setNextToken(String nextToken) {
-		this.nextToken = nextToken;
-		putQueryParameter("NextToken", nextToken);
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		putQueryParameter("PageNumber", pageNumber);
 	}
 
 	public String getResourceType() {

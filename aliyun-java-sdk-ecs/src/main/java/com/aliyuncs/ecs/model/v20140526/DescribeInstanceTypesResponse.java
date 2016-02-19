@@ -57,6 +57,8 @@ public class DescribeInstanceTypesResponse extends AcsResponse {
 
 		private Float memorySize;
 
+		private String instanceTypeFamily;
+
 		public String getInstanceTypeId() {
 			return this.instanceTypeId;
 		}
@@ -79,6 +81,14 @@ public class DescribeInstanceTypesResponse extends AcsResponse {
 
 		public void setMemorySize(Float memorySize) {
 			this.memorySize = memorySize;
+		}
+
+		public String getInstanceTypeFamily() {
+			return this.instanceTypeFamily;
+		}
+
+		public void setInstanceTypeFamily(String instanceTypeFamily) {
+			this.instanceTypeFamily = instanceTypeFamily;
 		}
 	}
 

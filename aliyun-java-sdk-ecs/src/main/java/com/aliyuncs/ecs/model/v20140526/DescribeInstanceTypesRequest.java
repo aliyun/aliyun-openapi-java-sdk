@@ -38,13 +38,15 @@ public class DescribeInstanceTypesRequest extends RpcAcsRequest<DescribeInstance
 
 	private String ownerAccount;
 
+	private String instanceTypeFamily;
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
 
 	public void setOwnerId(Long ownerId) {
 		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", String.valueOf(ownerId));
+		putQueryParameter("OwnerId", ownerId);
 	}
 
 	public String getResourceOwnerAccount() {
@@ -62,7 +64,7 @@ public class DescribeInstanceTypesRequest extends RpcAcsRequest<DescribeInstance
 
 	public void setResourceOwnerId(Long resourceOwnerId) {
 		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", String.valueOf(resourceOwnerId));
+		putQueryParameter("ResourceOwnerId", resourceOwnerId);
 	}
 
 	public String getOwnerAccount() {
@@ -72,6 +74,15 @@ public class DescribeInstanceTypesRequest extends RpcAcsRequest<DescribeInstance
 	public void setOwnerAccount(String ownerAccount) {
 		this.ownerAccount = ownerAccount;
 		putQueryParameter("OwnerAccount", ownerAccount);
+	}
+
+	public String getInstanceTypeFamily() {
+		return this.instanceTypeFamily;
+	}
+
+	public void setInstanceTypeFamily(String instanceTypeFamily) {
+		this.instanceTypeFamily = instanceTypeFamily;
+		putQueryParameter("InstanceTypeFamily", instanceTypeFamily);
 	}
 
 	@Override

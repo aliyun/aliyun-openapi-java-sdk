@@ -20,6 +20,7 @@ package com.aliyuncs.ecs.transform.v20140526;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import com.aliyuncs.ecs.model.v20140526.DescribeInstanceStatusResponse;
 import com.aliyuncs.ecs.model.v20140526.DescribeInstanceStatusResponse.InstanceStatus;
 import com.aliyuncs.ecs.model.v20140526.DescribeInstanceStatusResponse.InstanceStatus.Status;
@@ -37,7 +38,7 @@ public class DescribeInstanceStatusResponseUnmarshaller {
 
 		List<InstanceStatus> instanceStatuses = new ArrayList<InstanceStatus>();
 		for (int i = 0; i < context.lengthValue("DescribeInstanceStatusResponse.InstanceStatuses.Length"); i++) {
-			InstanceStatus  instanceStatus = new InstanceStatus();
+			InstanceStatus instanceStatus = new InstanceStatus();
 			instanceStatus.setInstanceId(context.stringValue("DescribeInstanceStatusResponse.InstanceStatuses["+ i +"].InstanceId"));
 			instanceStatus.setStatus(Status.getEnum(context.stringValue("DescribeInstanceStatusResponse.InstanceStatuses["+ i +"].Status")));
 

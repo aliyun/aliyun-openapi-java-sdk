@@ -101,6 +101,10 @@ public class DescribeSecurityGroupsResponse extends AcsResponse {
 
 		private String creationTime;
 
+		private Integer ecsCount;
+
+		private List<Tag> tags;
+
 		public String getSecurityGroupId() {
 			return this.securityGroupId;
 		}
@@ -139,6 +143,45 @@ public class DescribeSecurityGroupsResponse extends AcsResponse {
 
 		public void setCreationTime(String creationTime) {
 			this.creationTime = creationTime;
+		}
+
+		public Integer getEcsCount() {
+			return this.ecsCount;
+		}
+
+		public void setEcsCount(Integer ecsCount) {
+			this.ecsCount = ecsCount;
+		}
+
+		public List<Tag> getTags() {
+			return this.tags;
+		}
+
+		public void setTags(List<Tag> tags) {
+			this.tags = tags;
+		}
+
+		public static class Tag {
+
+			private String tagKey;
+
+			private String tagValue;
+
+			public String getTagKey() {
+				return this.tagKey;
+			}
+
+			public void setTagKey(String tagKey) {
+				this.tagKey = tagKey;
+			}
+
+			public String getTagValue() {
+				return this.tagValue;
+			}
+
+			public void setTagValue(String tagValue) {
+				this.tagValue = tagValue;
+			}
 		}
 	}
 
