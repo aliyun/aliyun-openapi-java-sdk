@@ -15,8 +15,13 @@
         	<RegionId>cn-shanghai-et2-test01</RegionId>
         	<RegionId>ap-southeast-1</RegionId>
 			<RegionId>us-east-1</RegionId>
+			<RegionId>cn-qingdao-cm9</RegionId>
         </RegionIds>
 	    <Products>
+			<Product>
+				<ProductName>Httpdns</ProductName>
+				<DomainName>httpdns-api.aliyuncs.com</DomainName>
+			</Product>
 			<Product>
                <ProductName>CmsSiteMonitor</ProductName>
                <DomainName>sitemonitor.aliyuncs.com</DomainName>
