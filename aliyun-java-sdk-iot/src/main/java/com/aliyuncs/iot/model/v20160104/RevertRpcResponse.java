@@ -19,18 +19,22 @@
 package com.aliyuncs.iot.model.v20160104;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.iot.transform.v20160104.SubResponseUnmarshaller;
+import com.aliyuncs.iot.transform.v20160104.RevertRpcResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class SubResponse extends AcsResponse {
+public class RevertRpcResponse extends AcsResponse {
 
 	private String requestId;
 
 	private Boolean success;
+
+	private String rpccode;
+
+	private String responseContent;
 
 	private String errorMessage;
 
@@ -50,6 +54,22 @@ public class SubResponse extends AcsResponse {
 		this.success = success;
 	}
 
+	public String getRpccode() {
+		return this.rpccode;
+	}
+
+	public void setRpccode(String rpccode) {
+		this.rpccode = rpccode;
+	}
+
+	public String getResponseContent() {
+		return this.responseContent;
+	}
+
+	public void setResponseContent(String responseContent) {
+		this.responseContent = responseContent;
+	}
+
 	public String getErrorMessage() {
 		return this.errorMessage;
 	}
@@ -59,7 +79,7 @@ public class SubResponse extends AcsResponse {
 	}
 
 	@Override
-	public SubResponse getInstance(UnmarshallerContext context) {
-		return	SubResponseUnmarshaller.unmarshall(this, context);
+	public RevertRpcResponse getInstance(UnmarshallerContext context) {
+		return	RevertRpcResponseUnmarshaller.unmarshall(this, context);
 	}
 }

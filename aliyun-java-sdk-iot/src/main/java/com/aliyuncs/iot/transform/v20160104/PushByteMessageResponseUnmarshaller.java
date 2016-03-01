@@ -18,18 +18,19 @@
  */
 package com.aliyuncs.iot.transform.v20160104;
 
-import com.aliyuncs.iot.model.v20160104.UnSubResponse;
+import com.aliyuncs.iot.model.v20160104.PushByteMessageResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class UnSubResponseUnmarshaller {
+public class PushByteMessageResponseUnmarshaller {
 
-	public static UnSubResponse unmarshall(UnSubResponse unSubResponse, UnmarshallerContext context) {
+	public static PushByteMessageResponse unmarshall(PushByteMessageResponse pushByteMessageResponse, UnmarshallerContext context) {
 		
-		unSubResponse.setRequestId(context.stringValue("UnSubResponse.RequestId"));
-		unSubResponse.setSuccess(context.booleanValue("UnSubResponse.Success"));
-		unSubResponse.setErrorMessage(context.stringValue("UnSubResponse.ErrorMessage"));
+		pushByteMessageResponse.setRequestId(context.stringValue("PushByteMessageResponse.RequestId"));
+		pushByteMessageResponse.setSuccess(context.booleanValue("PushByteMessageResponse.Success"));
+		pushByteMessageResponse.setErrorMessage(context.stringValue("PushByteMessageResponse.ErrorMessage"));
+		pushByteMessageResponse.setMessageId(context.stringValue("PushByteMessageResponse.MessageId"));
 	 
-	 	return unSubResponse;
+	 	return pushByteMessageResponse;
 	}
 }

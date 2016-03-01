@@ -19,20 +19,22 @@
 package com.aliyuncs.iot.model.v20160104;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.iot.transform.v20160104.SubResponseUnmarshaller;
+import com.aliyuncs.iot.transform.v20160104.PushByteMessageResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class SubResponse extends AcsResponse {
+public class PushByteMessageResponse extends AcsResponse {
 
 	private String requestId;
 
 	private Boolean success;
 
 	private String errorMessage;
+
+	private String messageId;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -58,8 +60,16 @@ public class SubResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
+	public String getMessageId() {
+		return this.messageId;
+	}
+
+	public void setMessageId(String messageId) {
+		this.messageId = messageId;
+	}
+
 	@Override
-	public SubResponse getInstance(UnmarshallerContext context) {
-		return	SubResponseUnmarshaller.unmarshall(this, context);
+	public PushByteMessageResponse getInstance(UnmarshallerContext context) {
+		return	PushByteMessageResponseUnmarshaller.unmarshall(this, context);
 	}
 }

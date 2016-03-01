@@ -19,34 +19,24 @@
 package com.aliyuncs.iot.model.v20160104;
 
 import com.aliyuncs.RpcAcsRequest;
-import java.util.List;
 
 /**
  * @author auto create
  * @version 
  */
-public class SubRequest extends RpcAcsRequest<SubResponse> {
+public class RevertRpcRequest extends RpcAcsRequest<RevertRpcResponse> {
 	
-	public SubRequest() {
-		super("Iot", "2016-01-04", "Sub");
+	public RevertRpcRequest() {
+		super("Iot", "2016-01-04", "RevertRpc");
 	}
-
-	private List<String> topics;
 
 	private Long appKey;
 
-	private String subCallback;
+	private String deviceId;
 
-	public List<String> getTopics() {
-		return this.topics;
-	}
+	private String rpcContent;
 
-	public void setTopics(List<String> topics) {
-		this.topics = topics;	
-		for (int i = 0; i < topics.size(); i++) {
-			putQueryParameter("Topic." + (i + 1) , topics.get(i));
-		}	
-	}
+	private Integer timeOut;
 
 	public Long getAppKey() {
 		return this.appKey;
@@ -57,18 +47,36 @@ public class SubRequest extends RpcAcsRequest<SubResponse> {
 		putQueryParameter("AppKey", appKey);
 	}
 
-	public String getSubCallback() {
-		return this.subCallback;
+	public String getDeviceId() {
+		return this.deviceId;
 	}
 
-	public void setSubCallback(String subCallback) {
-		this.subCallback = subCallback;
-		putQueryParameter("SubCallback", subCallback);
+	public void setDeviceId(String deviceId) {
+		this.deviceId = deviceId;
+		putQueryParameter("DeviceId", deviceId);
+	}
+
+	public String getRpcContent() {
+		return this.rpcContent;
+	}
+
+	public void setRpcContent(String rpcContent) {
+		this.rpcContent = rpcContent;
+		putQueryParameter("RpcContent", rpcContent);
+	}
+
+	public Integer getTimeOut() {
+		return this.timeOut;
+	}
+
+	public void setTimeOut(Integer timeOut) {
+		this.timeOut = timeOut;
+		putQueryParameter("TimeOut", timeOut);
 	}
 
 	@Override
-	public Class<SubResponse> getResponseClass() {
-		return SubResponse.class;
+	public Class<RevertRpcResponse> getResponseClass() {
+		return RevertRpcResponse.class;
 	}
 
 }

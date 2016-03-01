@@ -18,18 +18,20 @@
  */
 package com.aliyuncs.iot.transform.v20160104;
 
-import com.aliyuncs.iot.model.v20160104.UnSubResponse;
+import com.aliyuncs.iot.model.v20160104.RevertRpcResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class UnSubResponseUnmarshaller {
+public class RevertRpcResponseUnmarshaller {
 
-	public static UnSubResponse unmarshall(UnSubResponse unSubResponse, UnmarshallerContext context) {
+	public static RevertRpcResponse unmarshall(RevertRpcResponse revertRpcResponse, UnmarshallerContext context) {
 		
-		unSubResponse.setRequestId(context.stringValue("UnSubResponse.RequestId"));
-		unSubResponse.setSuccess(context.booleanValue("UnSubResponse.Success"));
-		unSubResponse.setErrorMessage(context.stringValue("UnSubResponse.ErrorMessage"));
+		revertRpcResponse.setRequestId(context.stringValue("RevertRpcResponse.RequestId"));
+		revertRpcResponse.setSuccess(context.booleanValue("RevertRpcResponse.Success"));
+		revertRpcResponse.setRpccode(context.stringValue("RevertRpcResponse.Rpccode"));
+		revertRpcResponse.setResponseContent(context.stringValue("RevertRpcResponse.ResponseContent"));
+		revertRpcResponse.setErrorMessage(context.stringValue("RevertRpcResponse.ErrorMessage"));
 	 
-	 	return unSubResponse;
+	 	return revertRpcResponse;
 	}
 }

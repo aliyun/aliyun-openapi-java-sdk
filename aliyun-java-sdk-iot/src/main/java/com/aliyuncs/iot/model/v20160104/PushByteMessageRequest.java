@@ -19,34 +19,22 @@
 package com.aliyuncs.iot.model.v20160104;
 
 import com.aliyuncs.RpcAcsRequest;
-import java.util.List;
 
 /**
  * @author auto create
  * @version 
  */
-public class SubRequest extends RpcAcsRequest<SubResponse> {
+public class PushByteMessageRequest extends RpcAcsRequest<PushByteMessageResponse> {
 	
-	public SubRequest() {
-		super("Iot", "2016-01-04", "Sub");
+	public PushByteMessageRequest() {
+		super("Iot", "2016-01-04", "PushByteMessage");
 	}
-
-	private List<String> topics;
 
 	private Long appKey;
 
-	private String subCallback;
+	private String deviceIds;
 
-	public List<String> getTopics() {
-		return this.topics;
-	}
-
-	public void setTopics(List<String> topics) {
-		this.topics = topics;	
-		for (int i = 0; i < topics.size(); i++) {
-			putQueryParameter("Topic." + (i + 1) , topics.get(i));
-		}	
-	}
+	private String pushContent;
 
 	public Long getAppKey() {
 		return this.appKey;
@@ -57,18 +45,27 @@ public class SubRequest extends RpcAcsRequest<SubResponse> {
 		putQueryParameter("AppKey", appKey);
 	}
 
-	public String getSubCallback() {
-		return this.subCallback;
+	public String getDeviceIds() {
+		return this.deviceIds;
 	}
 
-	public void setSubCallback(String subCallback) {
-		this.subCallback = subCallback;
-		putQueryParameter("SubCallback", subCallback);
+	public void setDeviceIds(String deviceIds) {
+		this.deviceIds = deviceIds;
+		putQueryParameter("DeviceIds", deviceIds);
+	}
+
+	public String getPushContent() {
+		return this.pushContent;
+	}
+
+	public void setPushContent(String pushContent) {
+		this.pushContent = pushContent;
+		putQueryParameter("PushContent", pushContent);
 	}
 
 	@Override
-	public Class<SubResponse> getResponseClass() {
-		return SubResponse.class;
+	public Class<PushByteMessageResponse> getResponseClass() {
+		return PushByteMessageResponse.class;
 	}
 
 }
