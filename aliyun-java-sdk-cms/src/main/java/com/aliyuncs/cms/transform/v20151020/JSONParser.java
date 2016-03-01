@@ -31,4 +31,23 @@ public final class JSONParser {
         }
         return datapoints;
     }
+
+
+    public static List<JSONObject> parseJSONArray(UnmarshallerContext context) {
+        try {
+            String contont = new String(context.getHttpResponse().getContent(),"UTF-8");
+            JSONObject json = JSON.parseObject(contont);
+            JSONArray array = json.getJSONArray("Datapoints");
+            if(array!=null) {
+                List<JSONObject> datapoints = new ArrayList<JSONObject>(array.size());
+                for (int i = 0; i < array.size(); i++) {
+                    datapoints.add(array.getJSONObject(i));
+                }
+                return datapoints;
+            }
+        } catch (UnsupportedEncodingException e) {
+        }
+
+        return null;
+    }
 }
