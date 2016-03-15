@@ -24,10 +24,10 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class DescribeDBInstancePerformanceRequest extends RpcAcsRequest<DescribeDBInstancePerformanceResponse> {
+public class SwitchDBInstanceChargeTypeRequest extends RpcAcsRequest<SwitchDBInstanceChargeTypeResponse> {
 	
-	public DescribeDBInstancePerformanceRequest() {
-		super("Rds", "2014-08-15", "DescribeDBInstancePerformance");
+	public SwitchDBInstanceChargeTypeRequest() {
+		super("Rds", "2014-08-15", "SwitchDBInstanceChargeType");
 	}
 
 	private Long ownerId;
@@ -37,12 +37,6 @@ public class DescribeDBInstancePerformanceRequest extends RpcAcsRequest<Describe
 	private Long resourceOwnerId;
 
 	private String dBInstanceId;
-
-	private String key;
-
-	private String startTime;
-
-	private String endTime;
 
 	private String ownerAccount;
 
@@ -82,33 +76,6 @@ public class DescribeDBInstancePerformanceRequest extends RpcAcsRequest<Describe
 		putQueryParameter("DBInstanceId", dBInstanceId);
 	}
 
-	public String getKey() {
-		return this.key;
-	}
-
-	public void setKey(String key) {
-		this.key = key;
-		putQueryParameter("Key", key);
-	}
-
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-		putQueryParameter("StartTime", startTime);
-	}
-
-	public String getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
-		putQueryParameter("EndTime", endTime);
-	}
-
 	public String getOwnerAccount() {
 		return this.ownerAccount;
 	}
@@ -119,8 +86,8 @@ public class DescribeDBInstancePerformanceRequest extends RpcAcsRequest<Describe
 	}
 
 	@Override
-	public Class<DescribeDBInstancePerformanceResponse> getResponseClass() {
-		return DescribeDBInstancePerformanceResponse.class;
+	public Class<SwitchDBInstanceChargeTypeResponse> getResponseClass() {
+		return SwitchDBInstanceChargeTypeResponse.class;
 	}
 
 }

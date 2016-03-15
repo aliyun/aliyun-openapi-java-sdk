@@ -38,6 +38,12 @@ public class SwitchDBInstanceHARequest extends RpcAcsRequest<SwitchDBInstanceHAR
 
 	private String dBInstanceId;
 
+	private String nodeId;
+
+	private String operation;
+
+	private String force;
+
 	private String ownerAccount;
 
 	public Long getOwnerId() {
@@ -74,6 +80,33 @@ public class SwitchDBInstanceHARequest extends RpcAcsRequest<SwitchDBInstanceHAR
 	public void setDBInstanceId(String dBInstanceId) {
 		this.dBInstanceId = dBInstanceId;
 		putQueryParameter("DBInstanceId", dBInstanceId);
+	}
+
+	public String getNodeId() {
+		return this.nodeId;
+	}
+
+	public void setNodeId(String nodeId) {
+		this.nodeId = nodeId;
+		putQueryParameter("NodeId", nodeId);
+	}
+
+	public String getOperation() {
+		return this.operation;
+	}
+
+	public void setOperation(String operation) {
+		this.operation = operation;
+		putQueryParameter("Operation", operation);
+	}
+
+	public String getForce() {
+		return this.force;
+	}
+
+	public void setForce(String force) {
+		this.force = force;
+		putQueryParameter("Force", force);
 	}
 
 	public String getOwnerAccount() {

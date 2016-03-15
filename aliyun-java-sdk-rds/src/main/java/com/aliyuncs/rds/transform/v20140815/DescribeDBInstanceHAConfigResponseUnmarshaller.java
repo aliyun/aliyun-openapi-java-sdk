@@ -22,8 +22,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.rds.model.v20140815.DescribeDBInstanceHAConfigResponse;
-import com.aliyuncs.rds.model.v20140815.DescribeDBInstanceHAConfigResponse.TaskProgressInfo;
-import com.aliyuncs.rds.model.v20140815.DescribeDBInstanceHAConfigResponse.TaskProgressInfo.SyncStatus;
+import com.aliyuncs.rds.model.v20140815.DescribeDBInstanceHAConfigResponse.NodeInfo;
+import com.aliyuncs.rds.model.v20140815.DescribeDBInstanceHAConfigResponse.NodeInfo.SyncStatus;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -36,18 +36,18 @@ public class DescribeDBInstanceHAConfigResponseUnmarshaller {
 		describeDBInstanceHAConfigResponse.setSyncMode(context.stringValue("DescribeDBInstanceHAConfigResponse.SyncMode"));
 		describeDBInstanceHAConfigResponse.setHAMode(context.stringValue("DescribeDBInstanceHAConfigResponse.HAMode"));
 
-		List<TaskProgressInfo> hostInstanceInfos = new ArrayList<TaskProgressInfo>();
+		List<NodeInfo> hostInstanceInfos = new ArrayList<NodeInfo>();
 		for (int i = 0; i < context.lengthValue("DescribeDBInstanceHAConfigResponse.HostInstanceInfos.Length"); i++) {
-			TaskProgressInfo taskProgressInfo = new TaskProgressInfo();
-			taskProgressInfo.setNodeId(context.stringValue("DescribeDBInstanceHAConfigResponse.HostInstanceInfos["+ i +"].NodeId"));
-			taskProgressInfo.setRegion(context.stringValue("DescribeDBInstanceHAConfigResponse.HostInstanceInfos["+ i +"].Region"));
-			taskProgressInfo.setLogDelay(context.stringValue("DescribeDBInstanceHAConfigResponse.HostInstanceInfos["+ i +"].LogDelay"));
-			taskProgressInfo.setDataDelay(context.stringValue("DescribeDBInstanceHAConfigResponse.HostInstanceInfos["+ i +"].DataDelay"));
-			taskProgressInfo.setNodeType(context.stringValue("DescribeDBInstanceHAConfigResponse.HostInstanceInfos["+ i +"].NodeType"));
-			taskProgressInfo.setZoneId(context.stringValue("DescribeDBInstanceHAConfigResponse.HostInstanceInfos["+ i +"].ZoneId"));
-			taskProgressInfo.setSyncStatus(SyncStatus.getEnum(context.stringValue("DescribeDBInstanceHAConfigResponse.HostInstanceInfos["+ i +"].SyncStatus")));
+			NodeInfo nodeInfo = new NodeInfo();
+			nodeInfo.setNodeId(context.stringValue("DescribeDBInstanceHAConfigResponse.HostInstanceInfos["+ i +"].NodeId"));
+			nodeInfo.setRegionId(context.stringValue("DescribeDBInstanceHAConfigResponse.HostInstanceInfos["+ i +"].RegionId"));
+			nodeInfo.setLogSyncTime(context.stringValue("DescribeDBInstanceHAConfigResponse.HostInstanceInfos["+ i +"].LogSyncTime"));
+			nodeInfo.setDataSyncTime(context.stringValue("DescribeDBInstanceHAConfigResponse.HostInstanceInfos["+ i +"].DataSyncTime"));
+			nodeInfo.setNodeType(context.stringValue("DescribeDBInstanceHAConfigResponse.HostInstanceInfos["+ i +"].NodeType"));
+			nodeInfo.setZoneId(context.stringValue("DescribeDBInstanceHAConfigResponse.HostInstanceInfos["+ i +"].ZoneId"));
+			nodeInfo.setSyncStatus(SyncStatus.getEnum(context.stringValue("DescribeDBInstanceHAConfigResponse.HostInstanceInfos["+ i +"].SyncStatus")));
 
-			hostInstanceInfos.add(taskProgressInfo);
+			hostInstanceInfos.add(nodeInfo);
 		}
 		describeDBInstanceHAConfigResponse.setHostInstanceInfos(hostInstanceInfos);
 	 

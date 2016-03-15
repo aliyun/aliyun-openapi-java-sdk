@@ -36,8 +36,6 @@ public class DescribeDBInstanceAttributeRequest extends RpcAcsRequest<DescribeDB
 
 	private Long resourceOwnerId;
 
-	private String clientToken;
-
 	private String dBInstanceId;
 
 	private String ownerAccount;
@@ -67,15 +65,6 @@ public class DescribeDBInstanceAttributeRequest extends RpcAcsRequest<DescribeDB
 	public void setResourceOwnerId(Long resourceOwnerId) {
 		this.resourceOwnerId = resourceOwnerId;
 		putQueryParameter("ResourceOwnerId", resourceOwnerId);
-	}
-
-	public String getClientToken() {
-		return this.clientToken;
-	}
-
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		putQueryParameter("ClientToken", clientToken);
 	}
 
 	public String getDBInstanceId() {

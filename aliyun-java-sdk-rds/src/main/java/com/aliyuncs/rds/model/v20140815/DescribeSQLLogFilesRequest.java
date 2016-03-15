@@ -24,10 +24,10 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class DescribeDBInstancePerformanceRequest extends RpcAcsRequest<DescribeDBInstancePerformanceResponse> {
+public class DescribeSQLLogFilesRequest extends RpcAcsRequest<DescribeSQLLogFilesResponse> {
 	
-	public DescribeDBInstancePerformanceRequest() {
-		super("Rds", "2014-08-15", "DescribeDBInstancePerformance");
+	public DescribeSQLLogFilesRequest() {
+		super("Rds", "2014-08-15", "DescribeSQLLogFiles");
 	}
 
 	private Long ownerId;
@@ -38,11 +38,11 @@ public class DescribeDBInstancePerformanceRequest extends RpcAcsRequest<Describe
 
 	private String dBInstanceId;
 
-	private String key;
+	private String fileName;
 
-	private String startTime;
+	private Integer pageSize;
 
-	private String endTime;
+	private Integer pageNumber;
 
 	private String ownerAccount;
 
@@ -82,31 +82,31 @@ public class DescribeDBInstancePerformanceRequest extends RpcAcsRequest<Describe
 		putQueryParameter("DBInstanceId", dBInstanceId);
 	}
 
-	public String getKey() {
-		return this.key;
+	public String getFileName() {
+		return this.fileName;
 	}
 
-	public void setKey(String key) {
-		this.key = key;
-		putQueryParameter("Key", key);
+	public void setFileName(String fileName) {
+		this.fileName = fileName;
+		putQueryParameter("FileName", fileName);
 	}
 
-	public String getStartTime() {
-		return this.startTime;
+	public Integer getPageSize() {
+		return this.pageSize;
 	}
 
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-		putQueryParameter("StartTime", startTime);
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		putQueryParameter("PageSize", pageSize);
 	}
 
-	public String getEndTime() {
-		return this.endTime;
+	public Integer getPageNumber() {
+		return this.pageNumber;
 	}
 
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
-		putQueryParameter("EndTime", endTime);
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		putQueryParameter("PageNumber", pageNumber);
 	}
 
 	public String getOwnerAccount() {
@@ -119,8 +119,8 @@ public class DescribeDBInstancePerformanceRequest extends RpcAcsRequest<Describe
 	}
 
 	@Override
-	public Class<DescribeDBInstancePerformanceResponse> getResponseClass() {
-		return DescribeDBInstancePerformanceResponse.class;
+	public Class<DescribeSQLLogFilesResponse> getResponseClass() {
+		return DescribeSQLLogFilesResponse.class;
 	}
 
 }

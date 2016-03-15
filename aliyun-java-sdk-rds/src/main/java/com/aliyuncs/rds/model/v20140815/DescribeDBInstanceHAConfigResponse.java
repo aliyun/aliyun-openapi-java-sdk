@@ -37,7 +37,7 @@ public class DescribeDBInstanceHAConfigResponse extends AcsResponse {
 
 	private String hAMode;
 
-	private List<TaskProgressInfo> hostInstanceInfos;
+	private List<NodeInfo> hostInstanceInfos;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -71,23 +71,23 @@ public class DescribeDBInstanceHAConfigResponse extends AcsResponse {
 		this.hAMode = hAMode;
 	}
 
-	public List<TaskProgressInfo> getHostInstanceInfos() {
+	public List<NodeInfo> getHostInstanceInfos() {
 		return this.hostInstanceInfos;
 	}
 
-	public void setHostInstanceInfos(List<TaskProgressInfo> hostInstanceInfos) {
+	public void setHostInstanceInfos(List<NodeInfo> hostInstanceInfos) {
 		this.hostInstanceInfos = hostInstanceInfos;
 	}
 
-	public static class TaskProgressInfo {
+	public static class NodeInfo {
 
 		private String nodeId;
 
-		private String region;
+		private String regionId;
 
-		private String logDelay;
+		private String logSyncTime;
 
-		private String dataDelay;
+		private String dataSyncTime;
 
 		private String nodeType;
 
@@ -103,28 +103,28 @@ public class DescribeDBInstanceHAConfigResponse extends AcsResponse {
 			this.nodeId = nodeId;
 		}
 
-		public String getRegion() {
-			return this.region;
+		public String getRegionId() {
+			return this.regionId;
 		}
 
-		public void setRegion(String region) {
-			this.region = region;
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
 		}
 
-		public String getLogDelay() {
-			return this.logDelay;
+		public String getLogSyncTime() {
+			return this.logSyncTime;
 		}
 
-		public void setLogDelay(String logDelay) {
-			this.logDelay = logDelay;
+		public void setLogSyncTime(String logSyncTime) {
+			this.logSyncTime = logSyncTime;
 		}
 
-		public String getDataDelay() {
-			return this.dataDelay;
+		public String getDataSyncTime() {
+			return this.dataSyncTime;
 		}
 
-		public void setDataDelay(String dataDelay) {
-			this.dataDelay = dataDelay;
+		public void setDataSyncTime(String dataSyncTime) {
+			this.dataSyncTime = dataSyncTime;
 		}
 
 		public String getNodeType() {
