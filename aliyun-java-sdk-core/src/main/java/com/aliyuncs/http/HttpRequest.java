@@ -129,7 +129,7 @@ public class HttpRequest {
 		
 		if (null == content) {
 			this.headers.remove(CONTENT_MD5);
-			this.headers.remove(CONTENT_LENGTH);
+			this.headers.put(CONTENT_LENGTH, "0");
 			this.headers.remove(CONTENT_TYPE);
 			this.contentType = null;
 			this.content = null;
@@ -170,6 +170,7 @@ public class HttpRequest {
 		else {
 			url = new URL(strUrl);
 		}
+		System.setProperty("sun.net.http.allowRestrictedHeaders", "true");
 		HttpURLConnection httpConn = (HttpURLConnection) url.openConnection();
 		httpConn.setRequestMethod(this.method.toString());
 		httpConn.setDoOutput(true);

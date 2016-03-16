@@ -19,6 +19,10 @@
         </RegionIds>
 	    <Products>
 			<Product>
+				<ProductName>AMS</ProductName>
+				<DomainName>ams.aliyuncs.com</DomainName>
+			</Product>
+			<Product>
 				<ProductName>Httpdns</ProductName>
 				<DomainName>httpdns-api.aliyuncs.com</DomainName>
 			</Product>
@@ -424,6 +428,14 @@
         	<RegionId>cn-qingdao</RegionId>
         </RegionIds>
 	    <Products>
+			<Product>
+				<ProductName>Ubsms</ProductName>
+				<DomainName>ubsms.cn-qingdao.aliyuncs.com</DomainName>
+			</Product>
+			<Product>
+				<ProductName>Ubsms-inner</ProductName>
+				<DomainName>ubsms-inner.cn-qingdao.aliyuncs.com</DomainName>
+			</Product>
 			<Product>
                <ProductName>CmsSiteMonitor</ProductName>
                <DomainName>sitemonitor.aliyuncs.com</DomainName>
