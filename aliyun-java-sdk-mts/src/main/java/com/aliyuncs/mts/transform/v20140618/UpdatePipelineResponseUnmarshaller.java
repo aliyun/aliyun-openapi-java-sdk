@@ -39,6 +39,7 @@ public class UpdatePipelineResponseUnmarshaller {
 
 		NotifyConfig notifyConfig = new NotifyConfig();
 		notifyConfig.setTopic(context.stringValue("UpdatePipelineResponse.Pipeline.NotifyConfig.Topic"));
+		notifyConfig.setQueueName(context.stringValue("UpdatePipelineResponse.Pipeline.NotifyConfig.QueueName"));
 		pipeline.setNotifyConfig(notifyConfig);
 		updatePipelineResponse.setPipeline(pipeline);
 	 

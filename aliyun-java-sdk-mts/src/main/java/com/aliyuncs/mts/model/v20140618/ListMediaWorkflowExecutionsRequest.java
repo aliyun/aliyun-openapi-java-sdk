@@ -24,10 +24,10 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class StartMediaWorkflowExecutionRequest extends RpcAcsRequest<StartMediaWorkflowExecutionResponse> {
+public class ListMediaWorkflowExecutionsRequest extends RpcAcsRequest<ListMediaWorkflowExecutionsResponse> {
 	
-	public StartMediaWorkflowExecutionRequest() {
-		super("Mts", "2014-06-18", "StartMediaWorkflowExecution");
+	public ListMediaWorkflowExecutionsRequest() {
+		super("Mts", "2014-06-18", "ListMediaWorkflowExecutions");
 	}
 
 	private Long ownerId;
@@ -36,9 +36,13 @@ public class StartMediaWorkflowExecutionRequest extends RpcAcsRequest<StartMedia
 
 	private Long resourceOwnerId;
 
-	private String input;
+	private String mediaWorkflowName;
 
-	private String name;
+	private String inputFileURL;
+
+	private String nextPageToken;
+
+	private Long maximumPageSize;
 
 	private String ownerAccount;
 
@@ -69,22 +73,40 @@ public class StartMediaWorkflowExecutionRequest extends RpcAcsRequest<StartMedia
 		putQueryParameter("ResourceOwnerId", resourceOwnerId);
 	}
 
-	public String getInput() {
-		return this.input;
+	public String getMediaWorkflowName() {
+		return this.mediaWorkflowName;
 	}
 
-	public void setInput(String input) {
-		this.input = input;
-		putQueryParameter("Input", input);
+	public void setMediaWorkflowName(String mediaWorkflowName) {
+		this.mediaWorkflowName = mediaWorkflowName;
+		putQueryParameter("MediaWorkflowName", mediaWorkflowName);
 	}
 
-	public String getName() {
-		return this.name;
+	public String getInputFileURL() {
+		return this.inputFileURL;
 	}
 
-	public void setName(String name) {
-		this.name = name;
-		putQueryParameter("Name", name);
+	public void setInputFileURL(String inputFileURL) {
+		this.inputFileURL = inputFileURL;
+		putQueryParameter("InputFileURL", inputFileURL);
+	}
+
+	public String getNextPageToken() {
+		return this.nextPageToken;
+	}
+
+	public void setNextPageToken(String nextPageToken) {
+		this.nextPageToken = nextPageToken;
+		putQueryParameter("NextPageToken", nextPageToken);
+	}
+
+	public Long getMaximumPageSize() {
+		return this.maximumPageSize;
+	}
+
+	public void setMaximumPageSize(Long maximumPageSize) {
+		this.maximumPageSize = maximumPageSize;
+		putQueryParameter("MaximumPageSize", maximumPageSize);
 	}
 
 	public String getOwnerAccount() {
@@ -97,8 +119,8 @@ public class StartMediaWorkflowExecutionRequest extends RpcAcsRequest<StartMedia
 	}
 
 	@Override
-	public Class<StartMediaWorkflowExecutionResponse> getResponseClass() {
-		return StartMediaWorkflowExecutionResponse.class;
+	public Class<ListMediaWorkflowExecutionsResponse> getResponseClass() {
+		return ListMediaWorkflowExecutionsResponse.class;
 	}
 
 }

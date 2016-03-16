@@ -47,6 +47,7 @@ public class SearchPipelineResponseUnmarshaller {
 
 			NotifyConfig notifyConfig = new NotifyConfig();
 			notifyConfig.setTopic(context.stringValue("SearchPipelineResponse.PipelineList["+ i +"].NotifyConfig.Topic"));
+			notifyConfig.setQueueName(context.stringValue("SearchPipelineResponse.PipelineList["+ i +"].NotifyConfig.QueueName"));
 			pipeline.setNotifyConfig(notifyConfig);
 
 			pipelineList.add(pipeline);

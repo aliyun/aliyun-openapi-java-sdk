@@ -114,12 +114,22 @@ public class AddPipelineResponse extends AcsResponse {
 
 			private String topic;
 
+			private String queueName;
+
 			public String getTopic() {
 				return this.topic;
 			}
 
 			public void setTopic(String topic) {
 				this.topic = topic;
+			}
+
+			public String getQueueName() {
+				return this.queueName;
+			}
+
+			public void setQueueName(String queueName) {
+				this.queueName = queueName;
 			}
 		}
 	}

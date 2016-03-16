@@ -50,6 +50,7 @@ public class QueryPipelineListResponseUnmarshaller {
 
 			NotifyConfig notifyConfig = new NotifyConfig();
 			notifyConfig.setTopic(context.stringValue("QueryPipelineListResponse.PipelineList["+ i +"].NotifyConfig.Topic"));
+			notifyConfig.setQueueName(context.stringValue("QueryPipelineListResponse.PipelineList["+ i +"].NotifyConfig.QueueName"));
 			pipeline.setNotifyConfig(notifyConfig);
 
 			pipelineList.add(pipeline);

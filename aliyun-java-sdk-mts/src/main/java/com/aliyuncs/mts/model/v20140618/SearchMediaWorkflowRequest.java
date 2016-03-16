@@ -24,10 +24,10 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class StartMediaWorkflowExecutionRequest extends RpcAcsRequest<StartMediaWorkflowExecutionResponse> {
+public class SearchMediaWorkflowRequest extends RpcAcsRequest<SearchMediaWorkflowResponse> {
 	
-	public StartMediaWorkflowExecutionRequest() {
-		super("Mts", "2014-06-18", "StartMediaWorkflowExecution");
+	public SearchMediaWorkflowRequest() {
+		super("Mts", "2014-06-18", "SearchMediaWorkflow");
 	}
 
 	private Long ownerId;
@@ -36,9 +36,11 @@ public class StartMediaWorkflowExecutionRequest extends RpcAcsRequest<StartMedia
 
 	private Long resourceOwnerId;
 
-	private String input;
+	private Long pageSize;
 
-	private String name;
+	private Long pageNumber;
+
+	private String stateList;
 
 	private String ownerAccount;
 
@@ -69,22 +71,31 @@ public class StartMediaWorkflowExecutionRequest extends RpcAcsRequest<StartMedia
 		putQueryParameter("ResourceOwnerId", resourceOwnerId);
 	}
 
-	public String getInput() {
-		return this.input;
+	public Long getPageSize() {
+		return this.pageSize;
 	}
 
-	public void setInput(String input) {
-		this.input = input;
-		putQueryParameter("Input", input);
+	public void setPageSize(Long pageSize) {
+		this.pageSize = pageSize;
+		putQueryParameter("PageSize", pageSize);
 	}
 
-	public String getName() {
-		return this.name;
+	public Long getPageNumber() {
+		return this.pageNumber;
 	}
 
-	public void setName(String name) {
-		this.name = name;
-		putQueryParameter("Name", name);
+	public void setPageNumber(Long pageNumber) {
+		this.pageNumber = pageNumber;
+		putQueryParameter("PageNumber", pageNumber);
+	}
+
+	public String getStateList() {
+		return this.stateList;
+	}
+
+	public void setStateList(String stateList) {
+		this.stateList = stateList;
+		putQueryParameter("StateList", stateList);
 	}
 
 	public String getOwnerAccount() {
@@ -97,8 +108,8 @@ public class StartMediaWorkflowExecutionRequest extends RpcAcsRequest<StartMedia
 	}
 
 	@Override
-	public Class<StartMediaWorkflowExecutionResponse> getResponseClass() {
-		return StartMediaWorkflowExecutionResponse.class;
+	public Class<SearchMediaWorkflowResponse> getResponseClass() {
+		return SearchMediaWorkflowResponse.class;
 	}
 
 }

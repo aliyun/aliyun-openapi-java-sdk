@@ -24,10 +24,10 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class StartMediaWorkflowExecutionRequest extends RpcAcsRequest<StartMediaWorkflowExecutionResponse> {
+public class QueryMediaWorkflowListRequest extends RpcAcsRequest<QueryMediaWorkflowListResponse> {
 	
-	public StartMediaWorkflowExecutionRequest() {
-		super("Mts", "2014-06-18", "StartMediaWorkflowExecution");
+	public QueryMediaWorkflowListRequest() {
+		super("Mts", "2014-06-18", "QueryMediaWorkflowList");
 	}
 
 	private Long ownerId;
@@ -36,9 +36,7 @@ public class StartMediaWorkflowExecutionRequest extends RpcAcsRequest<StartMedia
 
 	private Long resourceOwnerId;
 
-	private String input;
-
-	private String name;
+	private String mediaWorkflowIds;
 
 	private String ownerAccount;
 
@@ -69,22 +67,13 @@ public class StartMediaWorkflowExecutionRequest extends RpcAcsRequest<StartMedia
 		putQueryParameter("ResourceOwnerId", resourceOwnerId);
 	}
 
-	public String getInput() {
-		return this.input;
+	public String getMediaWorkflowIds() {
+		return this.mediaWorkflowIds;
 	}
 
-	public void setInput(String input) {
-		this.input = input;
-		putQueryParameter("Input", input);
-	}
-
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-		putQueryParameter("Name", name);
+	public void setMediaWorkflowIds(String mediaWorkflowIds) {
+		this.mediaWorkflowIds = mediaWorkflowIds;
+		putQueryParameter("MediaWorkflowIds", mediaWorkflowIds);
 	}
 
 	public String getOwnerAccount() {
@@ -97,8 +86,8 @@ public class StartMediaWorkflowExecutionRequest extends RpcAcsRequest<StartMedia
 	}
 
 	@Override
-	public Class<StartMediaWorkflowExecutionResponse> getResponseClass() {
-		return StartMediaWorkflowExecutionResponse.class;
+	public Class<QueryMediaWorkflowListResponse> getResponseClass() {
+		return QueryMediaWorkflowListResponse.class;
 	}
 
 }

@@ -20,14 +20,14 @@ package com.aliyuncs.mts.model.v20140618;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.mts.transform.v20140618.SearchPipelineResponseUnmarshaller;
+import com.aliyuncs.mts.transform.v20140618.SearchMediaWorkflowResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class SearchPipelineResponse extends AcsResponse {
+public class SearchMediaWorkflowResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -37,7 +37,7 @@ public class SearchPipelineResponse extends AcsResponse {
 
 	private Long pageSize;
 
-	private List<Pipeline> pipelineList;
+	private List<MediaWorkflow> mediaWorkflowList;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -71,34 +71,32 @@ public class SearchPipelineResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
-	public List<Pipeline> getPipelineList() {
-		return this.pipelineList;
+	public List<MediaWorkflow> getMediaWorkflowList() {
+		return this.mediaWorkflowList;
 	}
 
-	public void setPipelineList(List<Pipeline> pipelineList) {
-		this.pipelineList = pipelineList;
+	public void setMediaWorkflowList(List<MediaWorkflow> mediaWorkflowList) {
+		this.mediaWorkflowList = mediaWorkflowList;
 	}
 
-	public static class Pipeline {
+	public static class MediaWorkflow {
 
-		private String id;
+		private String mediaWorkflowId;
 
 		private String name;
 
+		private String topology;
+
 		private String state;
 
-		private String speed;
+		private String creationTime;
 
-		private String role;
-
-		private NotifyConfig notifyConfig;
-
-		public String getId() {
-			return this.id;
+		public String getMediaWorkflowId() {
+			return this.mediaWorkflowId;
 		}
 
-		public void setId(String id) {
-			this.id = id;
+		public void setMediaWorkflowId(String mediaWorkflowId) {
+			this.mediaWorkflowId = mediaWorkflowId;
 		}
 
 		public String getName() {
@@ -109,6 +107,14 @@ public class SearchPipelineResponse extends AcsResponse {
 			this.name = name;
 		}
 
+		public String getTopology() {
+			return this.topology;
+		}
+
+		public void setTopology(String topology) {
+			this.topology = topology;
+		}
+
 		public String getState() {
 			return this.state;
 		}
@@ -117,56 +123,17 @@ public class SearchPipelineResponse extends AcsResponse {
 			this.state = state;
 		}
 
-		public String getSpeed() {
-			return this.speed;
+		public String getCreationTime() {
+			return this.creationTime;
 		}
 
-		public void setSpeed(String speed) {
-			this.speed = speed;
-		}
-
-		public String getRole() {
-			return this.role;
-		}
-
-		public void setRole(String role) {
-			this.role = role;
-		}
-
-		public NotifyConfig getNotifyConfig() {
-			return this.notifyConfig;
-		}
-
-		public void setNotifyConfig(NotifyConfig notifyConfig) {
-			this.notifyConfig = notifyConfig;
-		}
-
-		public static class NotifyConfig {
-
-			private String topic;
-
-			private String queueName;
-
-			public String getTopic() {
-				return this.topic;
-			}
-
-			public void setTopic(String topic) {
-				this.topic = topic;
-			}
-
-			public String getQueueName() {
-				return this.queueName;
-			}
-
-			public void setQueueName(String queueName) {
-				this.queueName = queueName;
-			}
+		public void setCreationTime(String creationTime) {
+			this.creationTime = creationTime;
 		}
 	}
 
 	@Override
-	public SearchPipelineResponse getInstance(UnmarshallerContext context) {
-		return	SearchPipelineResponseUnmarshaller.unmarshall(this, context);
+	public SearchMediaWorkflowResponse getInstance(UnmarshallerContext context) {
+		return	SearchMediaWorkflowResponseUnmarshaller.unmarshall(this, context);
 	}
 }
