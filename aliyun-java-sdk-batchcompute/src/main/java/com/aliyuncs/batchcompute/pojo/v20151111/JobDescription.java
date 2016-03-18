@@ -51,9 +51,6 @@ public class JobDescription {
     private String type;
 
 
-
-
-
     @JsonIgnore
     public String getName() {
         return name;

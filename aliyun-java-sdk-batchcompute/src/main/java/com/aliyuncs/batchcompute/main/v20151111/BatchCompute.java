@@ -20,10 +20,9 @@ package com.aliyuncs.batchcompute.main.v20151111;
 
 
 import com.aliyuncs.batchcompute.model.v20151111.*;
-import com.aliyuncs.batchcompute.pojo.v20151111.*;
+import com.aliyuncs.batchcompute.pojo.v20151111.ClusterDescription;
+import com.aliyuncs.batchcompute.pojo.v20151111.JobDescription;
 import com.aliyuncs.exceptions.ClientException;
-
-import java.util.Map;
 
 
 /**
@@ -118,4 +117,21 @@ public interface BatchCompute {
     ChangeClusterDesiredVMCountResponse changeClusterDesiredVMCount(ChangeClusterDesiredVMCountRequest req) throws ClientException;
     ChangeClusterDesiredVMCountResponse changeClusterDesiredVMCount(String clusterId, ClusterDescription clusterDesc) throws ClientException;
     ChangeClusterDesiredVMCountResponse changeClusterDesiredVMCount(String clusterId, String groupName, int count) throws ClientException;
+
+
+    /** cluster instance **/
+
+    GetClusterInstanceResponse getClusterInstance(String clusterId, String groupName, String instanceId) throws ClientException;
+    GetClusterInstanceResponse getClusterInstance(GetClusterInstanceRequest req) throws ClientException;
+
+    ListClusterInstancesResponse listClusterInstances(String clusterId, String groupName) throws ClientException;
+    ListClusterInstancesResponse listClusterInstances(String clusterId, String groupName, String marker, int maxItemCount) throws ClientException;
+    ListClusterInstancesResponse listClusterInstances(ListClusterInstancesRequest req) throws ClientException;
+
+    RecreateClusterInstanceResponse recreateClusterInstance(String clusterId, String groupName, String instanceId) throws ClientException;
+    RecreateClusterInstanceResponse recreateClusterInstance(RecreateClusterInstanceRequest req) throws ClientException;
+
+    DeleteClusterInstanceResponse deleteClusterInstance(String clusterId, String groupName, String instanceId) throws ClientException;
+    DeleteClusterInstanceResponse deleteClusterInstance(DeleteClusterInstanceRequest req) throws ClientException;
+
 }

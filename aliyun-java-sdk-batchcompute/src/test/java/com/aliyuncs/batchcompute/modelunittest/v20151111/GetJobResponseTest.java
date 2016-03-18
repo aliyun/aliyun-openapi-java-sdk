@@ -26,14 +26,18 @@ import com.aliyuncs.http.FormatType;
 import com.aliyuncs.http.HttpResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 import junit.framework.TestCase;
+import org.codehaus.jackson.map.ObjectMapper;
+import org.codehaus.jackson.map.annotate.JsonSerialize;
 import org.junit.Test;
+
+import java.io.IOException;
 
 /**
  * Created by guangchun.luo on 15/4/16.
  */
 public class GetJobResponseTest extends TestCase {
 
-    public void testGetInstance() throws ServerException {
+    public void testGetInstance() throws ServerException, IOException {
 
         GetJobResponse res = new GetJobResponse();
 
@@ -49,7 +53,21 @@ public class GetJobResponseTest extends TestCase {
         res.getInstance(context);
 
         assertEquals(res.getJob().getName(), "jobName1");
-        assertTrue(res.getJob().getStartTime().getTime()==1449563285970L);
+
+        // "StartTime": "2015-12-08T08:11:54.971970Z",
+        assertEquals(1449562314971L, res.getJob().getStartTime().getTime());
+
+
+
+        ObjectMapper mapper = new ObjectMapper();
+        mapper.setSerializationInclusion(JsonSerialize.Inclusion.NON_EMPTY);
+        String jsonResult = mapper.writeValueAsString(res.getJob());
+
+
+        System.out.println(jsonResult);
+
+
+
     }
 
     public void testGetInstanceWithUnsupportedEncoding() {

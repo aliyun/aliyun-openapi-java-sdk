@@ -22,7 +22,6 @@
 package com.aliyuncs.batchcompute.transform.v20150630;
 
 import com.aliyuncs.batchcompute.model.v20150630.StopJobRequest;
-import com.aliyuncs.exceptions.ClientException;
 
 import java.security.NoSuchAlgorithmException;
 
@@ -33,11 +32,7 @@ public class StopJobRequestMarshaller {
 
     public static StopJobRequest marshall(StopJobRequest stopJobRequest) {
 
-        try {
-            stopJobRequest.setContent("{}".getBytes(), stopJobRequest.getEncoding(), stopJobRequest.getAcceptFormat());
-        } catch (NoSuchAlgorithmException e) {
-            e.printStackTrace();
-        }
+        stopJobRequest.setContent("{}".getBytes(), stopJobRequest.getEncoding(), stopJobRequest.getAcceptFormat());
 
         return stopJobRequest;
     }

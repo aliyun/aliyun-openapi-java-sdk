@@ -25,14 +25,10 @@ import java.security.NoSuchAlgorithmException;
 
 public class StopJobRequestMarshaller {
 
-	public static StopJobRequest marshall(StopJobRequest stopJobRequest) {
+    public static StopJobRequest marshall(StopJobRequest stopJobRequest) {
 
-		try {
-			stopJobRequest.setContent("".getBytes(), stopJobRequest.getEncoding(), stopJobRequest.getAcceptFormat());
-		} catch (NoSuchAlgorithmException e) {
-			e.printStackTrace();
-		}
+        stopJobRequest.setContent("".getBytes(), stopJobRequest.getEncoding(), stopJobRequest.getAcceptFormat());
 
-		return stopJobRequest;
-	}
+        return stopJobRequest;
+    }
 }

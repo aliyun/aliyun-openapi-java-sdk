@@ -41,7 +41,7 @@ public class CreateJobRequestMarshaller {
         //null或“”不序列化
         mapper.setSerializationInclusion(JsonSerialize.Inclusion.NON_EMPTY);
 
-        String contentString=null;
+        String contentString = null;
         try {
             contentString = mapper.writeValueAsString(jobDescription);
         } catch (IOException e) {
@@ -49,12 +49,7 @@ public class CreateJobRequestMarshaller {
             throw new ClientException("API.EncodeError", "encode request body error");
         }
 
-        try {
-            createJobsRequest.setContent(contentString.getBytes(), createJobsRequest.getEncoding(), createJobsRequest.getAcceptFormat());
-        } catch (NoSuchAlgorithmException e) {
-            e.printStackTrace();
-        }
-
+        createJobsRequest.setContent(contentString.getBytes(), createJobsRequest.getEncoding(), createJobsRequest.getAcceptFormat());
 
         return createJobsRequest;
     }

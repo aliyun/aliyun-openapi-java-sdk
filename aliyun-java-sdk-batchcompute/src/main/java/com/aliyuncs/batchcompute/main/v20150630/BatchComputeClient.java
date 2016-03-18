@@ -24,7 +24,6 @@ import com.aliyuncs.AcsRequest;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.DefaultAcsClient;
 import com.aliyuncs.IAcsClient;
-import com.aliyuncs.batchcompute.main.v20151111.BatchComputeRequest;
 import com.aliyuncs.batchcompute.model.v20150630.*;
 import com.aliyuncs.batchcompute.pojo.v20150630.JobDescription;
 import com.aliyuncs.exceptions.ClientException;

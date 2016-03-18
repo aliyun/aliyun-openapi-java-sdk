@@ -60,7 +60,7 @@ public class ListJobsResponseTest extends TestCase {
         assertEquals("job-00000000564ECC3F0000A25D0000000C", job.getId());
         assertEquals("Finished", job.getState());
 
-        assertEquals(1448005662385L, job.getCreationTime().getTime());
+        assertEquals(1448005498164L, job.getCreationTime().getTime());
         assertEquals(0, job.getInstanceMetrics().getRunningCount());
         assertEquals(3, job.getInstanceMetrics().getFinishedCount());
         assertEquals(0, job.getInstanceMetrics().getFailedCount());

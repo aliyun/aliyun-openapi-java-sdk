@@ -19,12 +19,12 @@
 
 package com.aliyuncs.batchcompute.pojo.v20151111;
 
+import com.aliyuncs.batchcompute.main.v20151111.CustomJsonDateDeserializer;
 import org.codehaus.jackson.annotate.JsonIgnore;
 import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 import org.codehaus.jackson.annotate.JsonProperty;
+import org.codehaus.jackson.map.annotate.JsonDeserialize;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.Date;
 
 
@@ -32,7 +32,7 @@ import java.util.Date;
  * Created by guangchun.luo on 15/12/05.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class Job extends DateFormatFieldPojo{
+public class Job{
 
     @JsonProperty("Id")
     private String id;
@@ -45,6 +45,7 @@ public class Job extends DateFormatFieldPojo{
 
 
     @JsonProperty("CreationTime")
+    @JsonDeserialize(using = CustomJsonDateDeserializer.class)
     private Date creationTime;
 
     @JsonProperty("State")
@@ -54,9 +55,11 @@ public class Job extends DateFormatFieldPojo{
     private String message;
 
     @JsonProperty("StartTime")
+    @JsonDeserialize(using = CustomJsonDateDeserializer.class)
     private Date startTime;
 
     @JsonProperty("EndTime")
+    @JsonDeserialize(using = CustomJsonDateDeserializer.class)
     private Date endTime;
 
     @JsonProperty("TaskMetrics")
@@ -104,10 +107,6 @@ public class Job extends DateFormatFieldPojo{
         this.creationTime = creationTime;
     }
 
-    @JsonIgnore
-    public void setCreationTime(String creationTime) {
-        this.creationTime = parseDate(creationTime);
-    }
 
     @JsonIgnore
     public String getState() {
@@ -134,10 +133,6 @@ public class Job extends DateFormatFieldPojo{
         return startTime;
     }
 
-    @JsonIgnore
-    public void setStartTime(String startTime) {
-        this.startTime = parseDate(startTime);
-    }
 
     @JsonIgnore
     public void setStartTime(Date startTime) {
@@ -149,10 +144,6 @@ public class Job extends DateFormatFieldPojo{
         return endTime;
     }
 
-    @JsonIgnore
-    public void setEndTime(String endTime) {
-        this.endTime = parseDate(endTime);
-    }
 
     @JsonIgnore
     public void setEndTime(Date endTime) {

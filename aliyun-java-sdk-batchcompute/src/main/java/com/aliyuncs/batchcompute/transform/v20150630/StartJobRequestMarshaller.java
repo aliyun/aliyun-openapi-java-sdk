@@ -22,7 +22,6 @@
 package com.aliyuncs.batchcompute.transform.v20150630;
 
 import com.aliyuncs.batchcompute.model.v20150630.StartJobRequest;
-import com.aliyuncs.exceptions.ClientException;
 
 import java.security.NoSuchAlgorithmException;
 
@@ -33,11 +32,7 @@ public class StartJobRequestMarshaller {
 
     public static StartJobRequest marshall(StartJobRequest startJobRequest) {
 
-        try {
-            startJobRequest.setContent("{}".getBytes(), startJobRequest.getEncoding(), startJobRequest.getAcceptFormat());
-        } catch (NoSuchAlgorithmException e) {
-            e.printStackTrace();
-        }
+        startJobRequest.setContent("{}".getBytes(), startJobRequest.getEncoding(), startJobRequest.getAcceptFormat());
 
         return startJobRequest;
     }

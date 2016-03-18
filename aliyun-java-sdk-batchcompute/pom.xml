@@ -2,8 +2,8 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.aliyun</groupId>
     <artifactId>aliyun-java-sdk-batchcompute</artifactId>
-    <packaging>jar</packaging>
-    <version>3.0.2-SNAPSHOT</version>
+    <packaging>jar</packaging> 
+    <version>3.0.5-SNAPSHOT</version>
     <name>aliyun-java-sdk-batchcompute</name>
     <url>http://www.aliyun.com</url>
     <description>Aliyun Open API SDK for Java
@@ -37,7 +37,7 @@
             <groupId>com.aliyun</groupId>
             <artifactId>aliyun-java-sdk-core</artifactId>
             <optional>false</optional>
-            <version>2.2.0</version>
+            <version>2.3.7</version>
         </dependency>
         <dependency>
             <groupId>org.codehaus.jackson</groupId>
@@ -80,6 +80,9 @@
                         <include>**/batchcompute/transformunittest/**/*.java</include>
 
                     </includes>
+                    <excludes>
+                        <exclude>**/batchcompute/functiontest/v20151111/ClusterInstanceTest.java</exclude>
+                    </excludes>
                 </configuration>
             </plugin>
 

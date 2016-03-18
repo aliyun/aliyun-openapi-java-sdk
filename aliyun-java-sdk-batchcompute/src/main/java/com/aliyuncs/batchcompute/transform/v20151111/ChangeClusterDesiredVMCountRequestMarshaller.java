@@ -18,7 +18,7 @@ public class ChangeClusterDesiredVMCountRequestMarshaller {
         //null或“”不序列化
         mapper.setSerializationInclusion(JsonSerialize.Inclusion.NON_EMPTY);
 
-        String contentString=null;
+        String contentString = null;
 
         try {
             contentString = mapper.writeValueAsString(req.getClusterDescription());
@@ -27,11 +27,7 @@ public class ChangeClusterDesiredVMCountRequestMarshaller {
         }
 
 
-        try {
-            req.setContent(contentString.getBytes(), req.getEncoding(), req.getAcceptFormat());
-        } catch (NoSuchAlgorithmException e) {
-            e.printStackTrace();
-        }
+        req.setContent(contentString.getBytes(), req.getEncoding(), req.getAcceptFormat());
 
         return req;
     }

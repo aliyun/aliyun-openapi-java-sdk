@@ -19,12 +19,12 @@
 
 package com.aliyuncs.batchcompute.pojo.v20151111;
 
+import com.aliyuncs.batchcompute.main.v20151111.CustomJsonDateDeserializer;
 import org.codehaus.jackson.annotate.JsonIgnore;
 import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 import org.codehaus.jackson.annotate.JsonProperty;
+import org.codehaus.jackson.map.annotate.JsonDeserialize;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -35,7 +35,7 @@ import java.util.Map;
  * Created by guangchun.luo on 15/12/05.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class Cluster extends DateFormatFieldPojo{
+public class Cluster {
 
     @JsonProperty("Id")
     private String id;
@@ -47,12 +47,41 @@ public class Cluster extends DateFormatFieldPojo{
     @JsonProperty("OwnerId")
     private long ownerId;
 
+    @JsonProperty("InstanceType")
+    private String instanceType;
+
+
+    @JsonProperty("Configs")
+    private Configs configs;
+
+
 
     @JsonProperty("CreationTime")
+    @JsonDeserialize(using = CustomJsonDateDeserializer.class)
     private Date creationTime;
 
     @JsonProperty("State")
     private String state;
+
+    @JsonIgnore
+    public String getInstanceType() {
+        return instanceType;
+    }
+
+    @JsonIgnore
+    public void setInstanceType(String instanceType) {
+        this.instanceType = instanceType;
+    }
+
+    @JsonIgnore
+    public Configs getConfigs() {
+        return configs;
+    }
+
+    @JsonIgnore
+    public void setConfigs(Configs configs) {
+        this.configs = configs;
+    }
 
     @JsonProperty("Description")
     private String description;
@@ -135,10 +164,6 @@ public class Cluster extends DateFormatFieldPojo{
     @JsonIgnore
     public void setCreationTime(Date creationTime) {
         this.creationTime = creationTime;
-    }
-    @JsonIgnore
-    public void setCreationTime(String creationTime) {
-        this.creationTime = parseDate(creationTime);
     }
 
     @JsonIgnore

@@ -25,11 +25,15 @@ import com.aliyuncs.AcsResponse;
 import com.aliyuncs.DefaultAcsClient;
 import com.aliyuncs.IAcsClient;
 import com.aliyuncs.batchcompute.model.v20151111.*;
-import com.aliyuncs.batchcompute.pojo.v20151111.*;
+import com.aliyuncs.batchcompute.pojo.v20151111.ClusterDescription;
+import com.aliyuncs.batchcompute.pojo.v20151111.JobDescription;
 import com.aliyuncs.exceptions.ClientException;
 import com.aliyuncs.http.HttpResponse;
 import com.aliyuncs.profile.DefaultProfile;
+import com.aliyuncs.regions.Endpoint;
+import com.aliyuncs.regions.ProductDomain;
 
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
@@ -60,6 +64,21 @@ public class BatchComputeClient implements BatchCompute {
         }
     }
 
+    public static void listEndpoints() {
+        try {
+            List<Endpoint> list = DefaultProfile.getProfile().getEndpoints();
+            for(Endpoint ep : list) {
+                for( ProductDomain pd: ep.getProductDomains()) {
+                    if(pd.getProductName().toLowerCase().indexOf("batchcompute")!=-1)
+                        System.out.println(ep.getName() + ", " + pd.getDomianName()+", "+ pd.getProductName());
+                }
+            }
+        } catch (ClientException e) {
+            e.printStackTrace();
+        }
+
+    }
+
 
     /**
      * add header k-v pairs for every request
@@ -77,7 +96,6 @@ public class BatchComputeClient implements BatchCompute {
     //hack一下，处理 ErrorCode 的兼容
     private <T extends AcsResponse> T getAcsResponse(AcsRequest<T> request) throws ClientException {
         if (verbose) {
-
             Map<String, String> reqHeaders = request.getHeaders();
 
             Set<String> keys = reqHeaders.keySet();
@@ -88,8 +106,8 @@ public class BatchComputeClient implements BatchCompute {
 
             byte[] bs = request.getContent();
             if (bs == null) bs = new byte[]{};
-            System.out.println("--->request.Action:"+request.getActionName());
-            System.out.println("--->Request.Body:" +  new String(bs));
+            System.out.println("--->Request.Action:"+request.getActionName());
+            System.out.println("--->Request.Body:->" +  new String(bs)+"<-");
         }
 
         HttpResponse baseResponse = this.client.doAction(request);
@@ -370,6 +388,59 @@ public class BatchComputeClient implements BatchCompute {
         req.setClusterId(clusterId);
         req.setDesiredVmCount(groupName, count);
         return changeClusterDesiredVMCount(req);
+    }
+
+
+    @Override
+    public GetClusterInstanceResponse getClusterInstance(String clusterId, String groupName, String instanceId) throws ClientException{
+        GetClusterInstanceRequest req = new GetClusterInstanceRequest(clusterId, groupName, instanceId);
+        return getClusterInstance(req);
+    }
+
+    @Override
+    public GetClusterInstanceResponse getClusterInstance(GetClusterInstanceRequest req) throws ClientException {
+        return getAcsResponse(req);
+    }
+
+    @Override
+    public ListClusterInstancesResponse listClusterInstances(String clusterId, String groupName) throws ClientException {
+        ListClusterInstancesRequest req = new ListClusterInstancesRequest(clusterId, groupName);
+        return listClusterInstances(req);
+    }
+
+    @Override
+    public ListClusterInstancesResponse listClusterInstances(String clusterId, String groupName, String marker, int maxItemCount) throws ClientException {
+        ListClusterInstancesRequest req = new ListClusterInstancesRequest(clusterId, groupName);
+        req.setMarker(marker);
+        req.setMaxItemCount(maxItemCount);
+        return listClusterInstances(req);
+    }
+
+    @Override
+    public ListClusterInstancesResponse listClusterInstances(ListClusterInstancesRequest req) throws ClientException {
+        return getAcsResponse(req);
+    }
+
+    @Override
+    public RecreateClusterInstanceResponse recreateClusterInstance(String clusterId, String groupName, String instanceId) throws ClientException {
+        RecreateClusterInstanceRequest req = new RecreateClusterInstanceRequest(clusterId, groupName, instanceId);
+        return recreateClusterInstance(req);
+    }
+
+    @Override
+    public RecreateClusterInstanceResponse recreateClusterInstance(RecreateClusterInstanceRequest req) throws ClientException {
+        return getAcsResponse(req);
+    }
+
+    @Override
+    public DeleteClusterInstanceResponse deleteClusterInstance(String clusterId, String groupName, String instanceId) throws ClientException {
+        DeleteClusterInstanceRequest req = new DeleteClusterInstanceRequest(clusterId, groupName, instanceId);
+        return deleteClusterInstance(req);
+    }
+
+    @Override
+    public DeleteClusterInstanceResponse deleteClusterInstance(DeleteClusterInstanceRequest req) throws ClientException {
+        return getAcsResponse(req);
     }
 
 }

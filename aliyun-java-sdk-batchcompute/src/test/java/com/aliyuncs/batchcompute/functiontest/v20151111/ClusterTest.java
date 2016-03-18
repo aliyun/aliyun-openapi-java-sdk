@@ -22,10 +22,7 @@ package com.aliyuncs.batchcompute.functiontest.v20151111;
 import com.aliyuncs.batchcompute.main.v20151111.BatchCompute;
 import com.aliyuncs.batchcompute.main.v20151111.BatchComputeClient;
 import com.aliyuncs.batchcompute.model.v20151111.*;
-import com.aliyuncs.batchcompute.pojo.v20151111.Cluster;
-import com.aliyuncs.batchcompute.pojo.v20151111.ClusterDescription;
-import com.aliyuncs.batchcompute.pojo.v20151111.Group;
-import com.aliyuncs.batchcompute.pojo.v20151111.GroupDescription;
+import com.aliyuncs.batchcompute.pojo.v20151111.*;
 import com.aliyuncs.batchcompute.util.Config;
 import com.aliyuncs.exceptions.ClientException;
 import junit.framework.TestCase;
@@ -53,6 +50,8 @@ public class ClusterTest extends TestCase {
         BatchComputeClient.verbose = true;
         BatchComputeClient.addRequestHeader("x-acs-source-ip", "127.0.0.1");
         BatchComputeClient.addRequestHeader("x-acs-secure-transport", "true");
+
+        BatchComputeClient.addEndpoint("caichi","batchcompute.caichi.aliyuncs.com");
 
         gImageId = cfg.getEcsImageId();
         System.out.println("=========="+gImageId);
@@ -94,6 +93,17 @@ public class ClusterTest extends TestCase {
         assertTrue(3 == group.getDesiredVMCount());
         assertEquals("bb", cluster.getUserData().get("a"));
 
+
+        Disks disks  = cluster.getConfigs().getDisks();
+        DataDisk dataDisk = disks.getDataDisk();
+        assertEquals(400, dataDisk.getSize());
+        assertEquals("/home/admin/xxx", dataDisk.getMountPoint());
+        assertEquals("cloud", dataDisk.getType());
+
+        SystemDisk systemDisk = disks.getSystemDisk();
+        assertEquals(80, systemDisk.getSize());
+
+
         //3. list cluster
         ListClustersResponse listClustersResponse = client.listClusters();
         assertEquals(200, listClustersResponse.getStatusCode());
@@ -125,7 +135,7 @@ public class ClusterTest extends TestCase {
         int delStatusCode = deleteClusterResponse.getStatusCode();
         System.out.println("--------delete status code:"+ delStatusCode);
 
-        assertTrue(200 == delStatusCode || 204 == delStatusCode || 202 == delStatusCode);
+        assertTrue( 202 == delStatusCode);
     }
 
 
@@ -143,6 +153,16 @@ public class ClusterTest extends TestCase {
         groupDesc.setInstanceType("ecs.t1.small");
         groupDesc.setResourceType("OnDemand");
         desc.addGroup("group1", groupDesc);
+
+        DataDisk dataDisk = new DataDisk();
+        dataDisk.setSize(400);
+        dataDisk.setType("cloud");
+        dataDisk.setMountPoint("/home/admin/xxx");
+        desc.mountDataDisk(dataDisk);
+
+        SystemDisk systemDisk = new SystemDisk();
+        systemDisk.setSize(80); //GB
+        desc.mountSystemDisk(systemDisk);
 
         desc.addUserData("a","bb");
 

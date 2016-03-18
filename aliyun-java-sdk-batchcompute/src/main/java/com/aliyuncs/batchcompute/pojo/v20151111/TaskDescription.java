@@ -38,6 +38,8 @@ public class TaskDescription {
     @JsonProperty("ClusterId")
     private String clusterId;
 
+    @JsonProperty("AutoCluster")
+    private AutoCluster autoCluster;
 
     @JsonProperty("InputMapping")
     private Map<String, String> inputMapping;
@@ -62,7 +64,29 @@ public class TaskDescription {
     private Parameters parameters;
 
 
+    @JsonProperty("WriteSupport")
+    private boolean writeSupport;
 
+
+    @JsonIgnore
+    public boolean isWriteSupport() {
+        return writeSupport;
+    }
+
+    @JsonIgnore
+    public void setWriteSupport(boolean writeSupport) {
+        this.writeSupport = writeSupport;
+    }
+
+
+    @JsonIgnore
+    public AutoCluster getAutoCluster() {
+        return autoCluster;
+    }
+    @JsonIgnore
+    public void setAutoCluster(AutoCluster autoCluster) {
+        this.autoCluster = autoCluster;
+    }
 
 
     @JsonIgnore
@@ -107,12 +131,16 @@ public class TaskDescription {
         return outputMapping;
     }
 
-
-    public void addOutputtMapping(String path, String ossPath) {
+    public void addOutputMapping(String path, String ossPath) {
         if (null == outputMapping) {
             outputMapping = new HashMap();
         }
         this.outputMapping.put(path, ossPath);
+    }
+
+    @Deprecated
+    public void addOutputtMapping(String path, String ossPath) {
+        addInputMapping(path,ossPath);
     }
 
     @JsonIgnore

@@ -18,7 +18,6 @@
  */
 package com.aliyuncs.batchcompute.model.v20151111;
 
-import com.aliyuncs.RoaAcsRequest;
 import com.aliyuncs.batchcompute.main.v20151111.BatchComputeRequest;
 import com.aliyuncs.batchcompute.pojo.v20151111.ClusterDescription;
 import com.aliyuncs.batchcompute.transform.v20151111.CreateClusterRequestMarshaller;

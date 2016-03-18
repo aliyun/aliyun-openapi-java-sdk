@@ -20,7 +20,6 @@ package com.aliyuncs.batchcompute.model.v20150630;
 
 import com.aliyuncs.RoaAcsRequest;
 import com.aliyuncs.batchcompute.transform.v20150630.UpdateJobRequestMarshaller;
-import com.aliyuncs.exceptions.ClientException;
 import com.aliyuncs.http.FormatType;
 import com.aliyuncs.http.MethodType;
 

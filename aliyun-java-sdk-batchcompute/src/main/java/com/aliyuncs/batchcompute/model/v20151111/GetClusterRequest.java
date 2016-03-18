@@ -18,9 +18,7 @@
  */
 package com.aliyuncs.batchcompute.model.v20151111;
 
-import com.aliyuncs.RoaAcsRequest;
 import com.aliyuncs.batchcompute.main.v20151111.BatchComputeRequest;
-import com.aliyuncs.http.FormatType;
 import com.aliyuncs.http.MethodType;
 
 /**

@@ -29,27 +29,23 @@ import java.security.NoSuchAlgorithmException;
 
 public class CreateJobRequestMarshaller {
 
-	public static CreateJobRequest marshall(CreateJobRequest req) throws ClientException {
+    public static CreateJobRequest marshall(CreateJobRequest req) throws ClientException {
 
-		ObjectMapper mapper = new ObjectMapper();
+        ObjectMapper mapper = new ObjectMapper();
 
-		//null或“”不序列化
-		mapper.setSerializationInclusion(JsonSerialize.Inclusion.NON_EMPTY);
+        //null或“”不序列化
+        mapper.setSerializationInclusion(JsonSerialize.Inclusion.NON_EMPTY);
 
-		String contentString=null;
-		try {
-			contentString = mapper.writeValueAsString(req.getJobDescription());
-		} catch (IOException e) {
-			//e.printStackTrace();
-			throw new ClientException("API.EncodeError", "encode request body error");
-		}
+        String contentString = null;
+        try {
+            contentString = mapper.writeValueAsString(req.getJobDescription());
+        } catch (IOException e) {
+            //e.printStackTrace();
+            throw new ClientException("API.EncodeError", "encode request body error");
+        }
 
-		try {
-			req.setContent(contentString.getBytes(), req.getEncoding(), req.getAcceptFormat());
-		} catch (NoSuchAlgorithmException e) {
-			e.printStackTrace();
-		}
+        req.setContent(contentString.getBytes(), req.getEncoding(), req.getAcceptFormat());
 
-		return req;
-	}
+        return req;
+    }
 }

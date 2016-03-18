@@ -25,20 +25,17 @@ import java.security.NoSuchAlgorithmException;
 
 public class ChangeJobPriorityRequestMarshaller {
 
-	public static ChangeJobPriorityRequest marshall(ChangeJobPriorityRequest req) {
+    public static ChangeJobPriorityRequest marshall(ChangeJobPriorityRequest req) {
 
-		String contentString = "";
-		if(req._useInteger){
-			contentString = "{\"Priority\":"+req.getPriority()+"}";
-		}else{
-			contentString = "{\"Priority\":\""+req.getPriority()+"\"}";
-		}
-		try {
-			req.setContent(contentString.getBytes(), req.getEncoding(), req.getAcceptFormat());
-		} catch (NoSuchAlgorithmException e) {
-			e.printStackTrace();
-		}
+        String contentString = "";
+        if (req._useInteger) {
+            contentString = "{\"Priority\":" + req.getPriority() + "}";
+        } else {
+            contentString = "{\"Priority\":\"" + req.getPriority() + "\"}";
+        }
 
-		return req;
-	}
+        req.setContent(contentString.getBytes(), req.getEncoding(), req.getAcceptFormat());
+
+        return req;
+    }
 }

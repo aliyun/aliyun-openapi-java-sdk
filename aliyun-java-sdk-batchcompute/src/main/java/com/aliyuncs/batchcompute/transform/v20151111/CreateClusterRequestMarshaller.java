@@ -29,27 +29,24 @@ import java.security.NoSuchAlgorithmException;
 
 public class CreateClusterRequestMarshaller {
 
-	public static CreateClusterRequest marshall(CreateClusterRequest req) throws ClientException {
+    public static CreateClusterRequest marshall(CreateClusterRequest req) throws ClientException {
 
-		ObjectMapper mapper = new ObjectMapper();
+        ObjectMapper mapper = new ObjectMapper();
 
-		//null或“”不序列化
-		mapper.setSerializationInclusion(JsonSerialize.Inclusion.NON_EMPTY);
+        //null或“”不序列化
+        mapper.setSerializationInclusion(JsonSerialize.Inclusion.NON_EMPTY);
 
-		String contentString=null;
-		try {
-			contentString = mapper.writeValueAsString(req.getClusterDescription());
-		} catch (IOException e) {
-			//e.printStackTrace();
-			throw new ClientException("API.EncodeError", "encode request body error");
-		}
+        String contentString = null;
+        try {
+            contentString = mapper.writeValueAsString(req.getClusterDescription());
+        } catch (IOException e) {
+            //e.printStackTrace();
+            throw new ClientException("API.EncodeError", "encode request body error");
+        }
 
-		try {
-			req.setContent(contentString.getBytes(), req.getEncoding(), req.getAcceptFormat());
-		} catch (NoSuchAlgorithmException e) {
-			e.printStackTrace();
-		}
 
-		return req;
-	}
+        req.setContent(contentString.getBytes(), req.getEncoding(), req.getAcceptFormat());
+
+        return req;
+    }
 }

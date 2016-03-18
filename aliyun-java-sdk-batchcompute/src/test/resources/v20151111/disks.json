@@ -1,0 +1,11 @@
+{
+  "DataDisk": {
+    "MountPoint": "/home/admin/xxx",
+    "Size": 400,
+    "Type": "ephemeral"
+  },
+  "SystemDisk": {
+    "Size": 80,
+    "Type": "ephemeral"
+  }
+}

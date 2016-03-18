@@ -90,6 +90,12 @@ public class CreateJobRequestTest extends TestCase {
         assertEquals("clu-001",a.getClusterId());
         assertEquals("task_1", a.getTaskName());
 
+        assertEquals("m-xxx", a.getAutoCluster().getECSImageId());
+        assertEquals("img-sxxx", a.getAutoCluster().getImageId());
+        assertEquals("OnDemand", a.getAutoCluster().getResourceType());
+        assertEquals("ecs", a.getAutoCluster().getInstanceType());
+
+
 
         assertTrue(1 == a.getInstanceCount());
         assertTrue(2 == a.getMaxRetryCount());
@@ -108,6 +114,8 @@ public class CreateJobRequestTest extends TestCase {
         assertEquals("oss://my-bucket/mappingLogs/", a.getLogMapping().get("/home/admin/a.log"));
         assertEquals("oss://my-bucket/disk2/", a.getOutputMapping().get("/home/admin/disk2/"));
         assertEquals("/home/admin/disk1/", a.getInputMapping().get("oss://my-bucket/disk1/"));
+
+
     }
 
 
@@ -137,10 +145,19 @@ public class CreateJobRequestTest extends TestCase {
         return job;
     }
 
+    private AutoCluster genAutoCluster(){
+        AutoCluster info = new AutoCluster();
+        info.setResourceType("OnDemand");
+        info.setInstanceType("ecs");
+        info.setECSImageId("m-xxx");
+        info.setImageId("img-sxxx");
+        return info;
+    }
     private TaskDescription getTaskDescription(){
         TaskDescription task = new TaskDescription();
 
         task.setClusterId("clu-001");
+        task.setAutoCluster(genAutoCluster());
         task.setInstanceCount(1);
         task.setMaxRetryCount(2);
         task.setTaskName("task_1");
@@ -162,7 +179,7 @@ public class CreateJobRequestTest extends TestCase {
         task.setParameters(parameters);
 
         task.addInputMapping("oss://my-bucket/disk1/", "/home/admin/disk1/");
-        task.addOutputtMapping("/home/admin/disk2/", "oss://my-bucket/disk2/");
+        task.addOutputMapping("/home/admin/disk2/", "oss://my-bucket/disk2/");
         task.addLogMapping( "/home/admin/a.log","oss://my-bucket/mappingLogs/");
 
         return task;

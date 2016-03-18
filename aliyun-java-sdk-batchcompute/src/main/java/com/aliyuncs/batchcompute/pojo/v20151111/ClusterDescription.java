@@ -42,11 +42,38 @@ public class ClusterDescription {
     @JsonProperty("ImageId")
     private String imageId;
 
+    @JsonProperty("InstanceType")
+    private String instanceType;
+
     @JsonProperty("Groups")
     private Map<String, GroupDescription> groups;
 
     @JsonProperty("UserData")
     private Map<String, String> userData;
+
+
+    @JsonIgnore
+    public Configs getConfigs() {
+        return configs;
+    }
+
+    @JsonIgnore
+    public void setConfigs(Configs configs) {
+        this.configs = configs;
+    }
+
+    @JsonIgnore
+    public String getInstanceType() {
+        return instanceType;
+    }
+
+    @JsonIgnore
+    public void setInstanceType(String instanceType) {
+        this.instanceType = instanceType;
+    }
+
+    @JsonProperty("Configs")
+    private Configs configs;
 
 
     @JsonIgnore
@@ -58,18 +85,13 @@ public class ClusterDescription {
     public void setUserData(Map<String, String> userData) {
         this.userData = userData;
     }
-    @JsonIgnore
+
     public void addUserData(String key, String value) {
         if(this.userData==null){
             this.userData = new HashMap<String,String>();
         }
         this.userData.put(key, value);
     }
-
-
-
-
-
 
 
     @JsonIgnore
@@ -119,6 +141,37 @@ public class ClusterDescription {
             this.groups = new HashMap<String, GroupDescription>();
         }
         this.groups.put(groupName, group);
+    }
+
+
+    public void mountDataDisk(DataDisk dataDisk){
+        Configs configs = getConfigs();
+        if(configs==null){
+            configs = new Configs();
+            setConfigs(configs);
+        }
+
+        Disks disks = configs.getDisks();
+        if(disks==null){
+            disks = new Disks();
+            configs.setDisks(disks);
+        }
+        disks.setDataDisk(dataDisk);
+    }
+    public void mountSystemDisk(SystemDisk systemDisk){
+
+        Configs configs = getConfigs();
+        if(configs==null){
+            configs = new Configs();
+            setConfigs(configs);
+        }
+
+        Disks disks = configs.getDisks();
+        if(disks==null){
+            disks = new Disks();
+            configs.setDisks(disks);
+        }
+        disks.setSystemDisk(systemDisk);
     }
 }
 

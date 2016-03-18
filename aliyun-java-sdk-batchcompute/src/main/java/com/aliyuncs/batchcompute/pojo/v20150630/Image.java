@@ -22,9 +22,6 @@ import org.codehaus.jackson.annotate.JsonIgnore;
 import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 import org.codehaus.jackson.annotate.JsonProperty;
 
-import java.util.HashMap;
-import java.util.Map;
-
 /**
  * Created by guangchun.luo on 15/4/17.
  */

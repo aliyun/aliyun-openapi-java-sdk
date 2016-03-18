@@ -20,7 +20,6 @@ package com.aliyuncs.batchcompute.main.v20151111;
 
 import com.aliyuncs.AcsError;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.DefaultAcsClient;
 import com.aliyuncs.exceptions.ClientException;
 import com.aliyuncs.exceptions.ServerException;
 import com.aliyuncs.http.FormatType;

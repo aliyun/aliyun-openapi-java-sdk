@@ -78,7 +78,7 @@ make deploy
 <dependency>
     <groupId>com.aliyun</groupId>
     <artifactId>aliyun-java-sdk-batchcompute</artifactId>
-    <version>3.0.0</version>
+    <version>3.0.4</version>
 </dependency>
 ```
 
@@ -143,6 +143,11 @@ try {
 | 2. | getCluster(String clusterId) | 获取Cluster信息 |
 | 3. | deleteCluster(String clusterId) | 删除Cluster |
 | 4. | listClusters(String marker, int maxItemCount) | 列举Cluster信息 |
+|  | *ClusterInstance相关* | |
+| 1. | listClusterInstances(String clusterId, String groupName) | 获取ClusterInstance 列表 |
+| 2. | getClusterInstance(String clusterId, String groupName, String instanceId) | 获取ClusterInstance信息 |
+| 3. | deleteClusterInstance(String clusterId,String groupName, String instanceId) | 删除ClusterInstance |
+| 4. | recreateClusterInstance(String clusterId, String groupName, String instanceId) | 重新创建ClusterInstance |
 |  | *Job相关* | |
 | 1. | createJob(JobDescription job) | 创建Job |
 | 2. | changeJobPriority(String jobId, int priority) | 设置Job优先级 |

@@ -52,6 +52,9 @@ public class JobTest extends TestCase {
         BatchComputeClient.addRequestHeader("x-acs-source-ip", "127.0.0.1");
         BatchComputeClient.addRequestHeader("x-acs-secure-transport", "true");
 
+        BatchComputeClient.addEndpoint("caichi","batchcompute.caichi.aliyuncs.com");
+
+
         gImageId = cfg.getEcsImageId();
         System.out.println("==========" + gImageId);
 
@@ -85,6 +88,17 @@ public class JobTest extends TestCase {
         assertTrue(201 == createJobResponse.getStatusCode());
 
 
+        // auto cluster job
+
+        JobDescription jobDescAutoCluster = getJobDescWithAutoCluster();
+
+        CreateJobResponse createJobAutoClusterRes = client.createJob(jobDescAutoCluster);
+        String gJobId2 = createJobAutoClusterRes.getJobId();
+        assertTrue(201 == createJobAutoClusterRes.getStatusCode());
+
+
+
+
         //gJobId = "job-00000000564ECC3F0000A25D00000074";
 
         // 3. list job
@@ -97,7 +111,7 @@ public class JobTest extends TestCase {
 
         ListJobsRequest listJobsRequest2 = new ListJobsRequest();
         listJobsRequest2.setMaxItemCount(60);
-        listJobsRequest2.setMarker("");
+        //listJobsRequest2.setMarker("");
         ListJobsResponse listJobsResponse2 = client.listJobs(listJobsRequest2);
         List<Job> jobList2 = listJobsResponse2.getItems();
         assertTrue(jobList2.size() > 0);
@@ -108,20 +122,39 @@ public class JobTest extends TestCase {
         GetJobResponse getJobResponse = client.getJob(gJobId);
         Job job = getJobResponse.getJob();
 
-        assertEquals("jobName1", job.getName());
+        assertEquals("testJob", job.getName());
         assertTrue(job.getCreationTime() != null);
+
 
 
         // 5. get job desc
         GetJobDescriptionResponse getJobDescriptionResponse = client.getJobDescription(gJobId);
         JobDescription jobDesc2 = getJobDescriptionResponse.getJobDescription();
 
-        assertEquals("jobName1", jobDesc2.getName());
+        assertEquals("testJob", jobDesc2.getName());
         assertTrue(jobDesc2.getPriority() == 1);
-
 
         TaskDescription taskDesc2 = jobDesc2.getDag().getTasks().get("task_1");
         assertEquals(gClusterId, taskDesc2.getClusterId());
+
+
+        //get job desc 2
+        GetJobDescriptionResponse getJobDescriptionResponse_auto = client.getJobDescription(gJobId2);
+        JobDescription jobDesc_auto = getJobDescriptionResponse_auto.getJobDescription();
+
+        assertEquals("testJobAutoCluster", jobDesc_auto.getName());
+        assertTrue(jobDesc_auto.getPriority() == 1);
+        TaskDescription taskDesc_auto = jobDesc_auto.getDag().getTasks().get("task_1");
+        Disks disks = taskDesc_auto.getAutoCluster().getConfigs().getDisks();
+        assertEquals("/disk1",disks.getDataDisk().getMountPoint());
+        assertEquals("ephemeral",disks.getDataDisk().getType());
+        assertTrue(5==disks.getDataDisk().getSize());
+
+        assertEquals("ephemeral",disks.getSystemDisk().getType());
+        assertTrue(40==disks.getSystemDisk().getSize());
+
+
+
 
 
         // 6. list tasks
@@ -150,6 +183,9 @@ public class JobTest extends TestCase {
         StopJobResponse stopJobResponse = client.stopJob(gJobId);
         assertTrue(201 == stopJobResponse.getStatusCode());
 
+        StopJobResponse stopJobResponseAutoClusterJob = client.stopJob(gJobId2);
+        assertTrue(201 == stopJobResponseAutoClusterJob.getStatusCode());
+
 
         // 11  change job priority
         ChangeJobPriorityResponse changeJobPriorityResponse = client.changeJobPriority(gJobId, 10);
@@ -173,6 +209,13 @@ public class JobTest extends TestCase {
         int delJobStatus = deleteJobResponse.getStatusCode();
         System.out.println("--------delete job status code:" + delJobStatus);
         assertTrue(200 == delJobStatus || 204 == delJobStatus || 202 == delJobStatus);
+
+
+        //delete auto cluster job
+        DeleteJobResponse deleteJobResponse2 = client.deleteJob(gJobId2);
+        int delJobStatus2 = deleteJobResponse2.getStatusCode();
+        System.out.println("--------delete auto cluster job status code:" + delJobStatus2);
+        assertTrue(200 == delJobStatus2 || 204 == delJobStatus2 || 202 == delJobStatus2);
 
 
         // 15. delete cluster
@@ -205,8 +248,9 @@ public class JobTest extends TestCase {
     private JobDescription getJobDesc() {
         JobDescription desc = new JobDescription();
 
-        desc.setName("jobName1");
+        desc.setName("testJob");
         desc.setPriority(1);
+        desc.setDescription("JAVA SDK TEST");
         desc.setType("DAG");
         desc.setJobFailOnInstanceFail(true);
 
@@ -243,8 +287,80 @@ public class JobTest extends TestCase {
         task.setParameters(parameters);
 
         task.addInputMapping("oss://my-bucket/disk1/", "/home/admin/disk1/");
-        task.addOutputtMapping("/home/admin/disk2/", "oss://my-bucket/disk2/");
+        task.addOutputMapping("/home/admin/disk2/", "oss://my-bucket/disk2/");
         //task.addLogMapping( "/home/admin/a.log","oss://my-bucket/a.log");
+
+        return task;
+    }
+
+    private JobDescription getJobDescWithAutoCluster() {
+        JobDescription desc = new JobDescription();
+
+        desc.setName("testJobAutoCluster");
+        desc.setPriority(1);
+        desc.setDescription("JAVA SDK TEST");
+        desc.setType("DAG");
+        desc.setJobFailOnInstanceFail(true);
+
+        DAG dag = new DAG();
+
+        dag.addTask(getTaskDescWithAutoCluster());
+
+        desc.setDag(dag);
+        return desc;
+    }
+
+    private TaskDescription getTaskDescWithAutoCluster() {
+        TaskDescription task = new TaskDescription();
+
+        AutoCluster autoCluster = new AutoCluster();
+        autoCluster.setECSImageId(gImageId);
+        autoCluster.setInstanceType("ecs.t1.small");
+        autoCluster.setResourceType("OnDemand");
+
+        DataDisk dataDisk = new DataDisk();
+        dataDisk.setMountPoint("/disk1");
+        dataDisk.setSize(5);  // 5~1024
+        dataDisk.setType("ephemeral");
+
+        SystemDisk systemDisk = new SystemDisk();
+        systemDisk.setSize(40); // 40~500
+        systemDisk.setType("ephemeral");
+
+        Configs configs = new Configs();
+        Disks disks = new Disks();
+        disks.setDataDisk(dataDisk);
+        disks.setSystemDisk(systemDisk);
+        configs.setDisks(disks);
+
+        autoCluster.setConfigs(configs);
+
+        task.setAutoCluster(autoCluster);
+
+        task.setInstanceCount(1);
+        task.setMaxRetryCount(2);
+        task.setTaskName("task_1");
+        task.setTimeout(10000);
+
+        Parameters parameters = new Parameters();
+        Command cmd = new Command();
+        cmd.setCommandLine("python main.py");
+        cmd.addEnvVars("a", "b");
+        cmd.setPackagePath("oss://my-bucket/test/worker.tar.gz");
+        parameters.setCommand(cmd);
+        parameters.setStderrRedirectPath("oss://my-bucket/test/logs/");
+        parameters.setStdoutRedirectPath("oss://my-bucket/test/logs/");
+        InputMappingConfig input = new InputMappingConfig();
+        input.setLocale("GBK");
+        input.setLock(true);
+        parameters.setInputMappingConfig(input);
+
+        task.setParameters(parameters);
+
+        task.addInputMapping("oss://my-bucket/disk1/", "/home/admin/disk1/");
+        task.addOutputMapping("/home/admin/disk2/", "oss://my-bucket/disk2/");
+        //task.addLogMapping( "/home/admin/a.log","oss://my-bucket/a.log");
+
 
         return task;
     }

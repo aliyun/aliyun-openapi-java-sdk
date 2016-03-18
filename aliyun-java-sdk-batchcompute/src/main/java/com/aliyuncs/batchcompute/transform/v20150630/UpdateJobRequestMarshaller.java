@@ -22,7 +22,6 @@
 package com.aliyuncs.batchcompute.transform.v20150630;
 
 import com.aliyuncs.batchcompute.model.v20150630.UpdateJobRequest;
-import com.aliyuncs.exceptions.ClientException;
 
 import java.security.NoSuchAlgorithmException;
 
@@ -33,13 +32,8 @@ public class UpdateJobRequestMarshaller {
 
     public static UpdateJobRequest marshall(UpdateJobRequest updateJobRequest) {
 
-
-        try {
-            updateJobRequest.setContent((updateJobRequest.getPriority() + "").getBytes(),
+         updateJobRequest.setContent((updateJobRequest.getPriority() + "").getBytes(),
                     updateJobRequest.getEncoding(), updateJobRequest.getAcceptFormat());
-        } catch (NoSuchAlgorithmException e) {
-            e.printStackTrace();
-        }
 
         return updateJobRequest;
     }
