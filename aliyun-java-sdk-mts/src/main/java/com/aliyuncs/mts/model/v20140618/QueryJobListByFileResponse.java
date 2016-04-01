@@ -192,6 +192,8 @@ public class QueryJobListByFileResponse extends AcsResponse {
 
 			private List<WaterMark> waterMarkList;
 
+			private List<Merge> mergeList;
+
 			private OutputFile outputFile;
 
 			private Properties properties;
@@ -205,8 +207,6 @@ public class QueryJobListByFileResponse extends AcsResponse {
 			private TransConfig transConfig;
 
 			private MuxConfig muxConfig;
-
-			private TransFeatures transFeatures;
 
 			private Audio audio;
 
@@ -278,6 +278,14 @@ public class QueryJobListByFileResponse extends AcsResponse {
 				this.waterMarkList = waterMarkList;
 			}
 
+			public List<Merge> getMergeList() {
+				return this.mergeList;
+			}
+
+			public void setMergeList(List<Merge> mergeList) {
+				this.mergeList = mergeList;
+			}
+
 			public OutputFile getOutputFile() {
 				return this.outputFile;
 			}
@@ -332,14 +340,6 @@ public class QueryJobListByFileResponse extends AcsResponse {
 
 			public void setMuxConfig(MuxConfig muxConfig) {
 				this.muxConfig = muxConfig;
-			}
-
-			public TransFeatures getTransFeatures() {
-				return this.transFeatures;
-			}
-
-			public void setTransFeatures(TransFeatures transFeatures) {
-				this.transFeatures = transFeatures;
 			}
 
 			public Audio getAudio() {
@@ -479,6 +479,39 @@ public class QueryJobListByFileResponse extends AcsResponse {
 					public void setObject(String object) {
 						this.object = object;
 					}
+				}
+			}
+
+			public static class Merge {
+
+				private String mergeURL;
+
+				private String start;
+
+				private String duration;
+
+				public String getMergeURL() {
+					return this.mergeURL;
+				}
+
+				public void setMergeURL(String mergeURL) {
+					this.mergeURL = mergeURL;
+				}
+
+				public String getStart() {
+					return this.start;
+				}
+
+				public void setStart(String start) {
+					this.start = start;
+				}
+
+				public String getDuration() {
+					return this.duration;
+				}
+
+				public void setDuration(String duration) {
+					this.duration = duration;
 				}
 			}
 
@@ -1375,52 +1408,6 @@ public class QueryJobListByFileResponse extends AcsResponse {
 
 					public void setFinalDelay(String finalDelay) {
 						this.finalDelay = finalDelay;
-					}
-				}
-			}
-
-			public static class TransFeatures {
-
-				private List<Merge> mergeList;
-
-				public List<Merge> getMergeList() {
-					return this.mergeList;
-				}
-
-				public void setMergeList(List<Merge> mergeList) {
-					this.mergeList = mergeList;
-				}
-
-				public static class Merge {
-
-					private String mergeURL;
-
-					private String start;
-
-					private String duration;
-
-					public String getMergeURL() {
-						return this.mergeURL;
-					}
-
-					public void setMergeURL(String mergeURL) {
-						this.mergeURL = mergeURL;
-					}
-
-					public String getStart() {
-						return this.start;
-					}
-
-					public void setStart(String start) {
-						this.start = start;
-					}
-
-					public String getDuration() {
-						return this.duration;
-					}
-
-					public void setDuration(String duration) {
-						this.duration = duration;
 					}
 				}
 			}

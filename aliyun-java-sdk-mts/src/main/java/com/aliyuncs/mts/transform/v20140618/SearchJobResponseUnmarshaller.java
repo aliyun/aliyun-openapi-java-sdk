@@ -29,6 +29,7 @@ import com.aliyuncs.mts.model.v20140618.SearchJobResponse.Job.Output.Audio;
 import com.aliyuncs.mts.model.v20140618.SearchJobResponse.Job.Output.Clip;
 import com.aliyuncs.mts.model.v20140618.SearchJobResponse.Job.Output.Clip.TimeSpan;
 import com.aliyuncs.mts.model.v20140618.SearchJobResponse.Job.Output.Container;
+import com.aliyuncs.mts.model.v20140618.SearchJobResponse.Job.Output.Merge;
 import com.aliyuncs.mts.model.v20140618.SearchJobResponse.Job.Output.MuxConfig;
 import com.aliyuncs.mts.model.v20140618.SearchJobResponse.Job.Output.MuxConfig.Gif;
 import com.aliyuncs.mts.model.v20140618.SearchJobResponse.Job.Output.MuxConfig.Segment;
@@ -45,8 +46,6 @@ import com.aliyuncs.mts.model.v20140618.SearchJobResponse.Job.Output.SubtitleCon
 import com.aliyuncs.mts.model.v20140618.SearchJobResponse.Job.Output.SubtitleConfig.Subtitle;
 import com.aliyuncs.mts.model.v20140618.SearchJobResponse.Job.Output.SuperReso;
 import com.aliyuncs.mts.model.v20140618.SearchJobResponse.Job.Output.TransConfig;
-import com.aliyuncs.mts.model.v20140618.SearchJobResponse.Job.Output.TransFeatures;
-import com.aliyuncs.mts.model.v20140618.SearchJobResponse.Job.Output.TransFeatures.Merge;
 import com.aliyuncs.mts.model.v20140618.SearchJobResponse.Job.Output.Video;
 import com.aliyuncs.mts.model.v20140618.SearchJobResponse.Job.Output.Video.BitrateBnd;
 import com.aliyuncs.mts.model.v20140618.SearchJobResponse.Job.Output.WaterMark;
@@ -243,20 +242,6 @@ public class SearchJobResponseUnmarshaller {
 			muxConfig.setGif(gif);
 			output.setMuxConfig(muxConfig);
 
-			TransFeatures transFeatures = new TransFeatures();
-
-			List<Merge> mergeList = new ArrayList<Merge>();
-			for (int j = 0; j < context.lengthValue("SearchJobResponse.JobList["+ i +"].Output.TransFeatures.MergeList.Length"); j++) {
-				Merge merge = new Merge();
-				merge.setMergeURL(context.stringValue("SearchJobResponse.JobList["+ i +"].Output.TransFeatures.MergeList["+ j +"].MergeURL"));
-				merge.setStart(context.stringValue("SearchJobResponse.JobList["+ i +"].Output.TransFeatures.MergeList["+ j +"].Start"));
-				merge.setDuration(context.stringValue("SearchJobResponse.JobList["+ i +"].Output.TransFeatures.MergeList["+ j +"].Duration"));
-
-				mergeList.add(merge);
-			}
-			transFeatures.setMergeList(mergeList);
-			output.setTransFeatures(transFeatures);
-
 			Audio audio = new Audio();
 			audio.setCodec(context.stringValue("SearchJobResponse.JobList["+ i +"].Output.Audio.Codec"));
 			audio.setProfile(context.stringValue("SearchJobResponse.JobList["+ i +"].Output.Audio.Profile"));
@@ -313,6 +298,17 @@ public class SearchJobResponseUnmarshaller {
 				waterMarkList.add(waterMark);
 			}
 			output.setWaterMarkList(waterMarkList);
+
+			List<Merge> mergeList = new ArrayList<Merge>();
+			for (int j = 0; j < context.lengthValue("SearchJobResponse.JobList["+ i +"].Output.MergeList.Length"); j++) {
+				Merge merge = new Merge();
+				merge.setMergeURL(context.stringValue("SearchJobResponse.JobList["+ i +"].Output.MergeList["+ j +"].MergeURL"));
+				merge.setStart(context.stringValue("SearchJobResponse.JobList["+ i +"].Output.MergeList["+ j +"].Start"));
+				merge.setDuration(context.stringValue("SearchJobResponse.JobList["+ i +"].Output.MergeList["+ j +"].Duration"));
+
+				mergeList.add(merge);
+			}
+			output.setMergeList(mergeList);
 			job.setOutput(output);
 
 			jobList.add(job);

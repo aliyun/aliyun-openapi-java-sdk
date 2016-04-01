@@ -20,22 +20,18 @@ package com.aliyuncs.mts.model.v20140618;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.mts.transform.v20140618.SearchJobResponseUnmarshaller;
+import com.aliyuncs.mts.transform.v20140618.ListJobResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class SearchJobResponse extends AcsResponse {
+public class ListJobResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Long totalCount;
-
-	private Long pageNumber;
-
-	private Long pageSize;
+	private String nextPageToken;
 
 	private List<Job> jobList;
 
@@ -47,28 +43,12 @@ public class SearchJobResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Long getTotalCount() {
-		return this.totalCount;
+	public String getNextPageToken() {
+		return this.nextPageToken;
 	}
 
-	public void setTotalCount(Long totalCount) {
-		this.totalCount = totalCount;
-	}
-
-	public Long getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Long pageNumber) {
-		this.pageNumber = pageNumber;
-	}
-
-	public Long getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Long pageSize) {
-		this.pageSize = pageSize;
+	public void setNextPageToken(String nextPageToken) {
+		this.nextPageToken = nextPageToken;
 	}
 
 	public List<Job> getJobList() {
@@ -1707,7 +1687,7 @@ public class SearchJobResponse extends AcsResponse {
 	}
 
 	@Override
-	public SearchJobResponse getInstance(UnmarshallerContext context) {
-		return	SearchJobResponseUnmarshaller.unmarshall(this, context);
+	public ListJobResponse getInstance(UnmarshallerContext context) {
+		return	ListJobResponseUnmarshaller.unmarshall(this, context);
 	}
 }
