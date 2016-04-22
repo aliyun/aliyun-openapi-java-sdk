@@ -54,6 +54,8 @@ public class SingleSendMailRequest extends RpcAcsRequest<SingleSendMailResponse>
 
 	private String textBody;
 
+	private String fromAlias;
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -151,6 +153,15 @@ public class SingleSendMailRequest extends RpcAcsRequest<SingleSendMailResponse>
 	public void setTextBody(String textBody) {
 		this.textBody = textBody;
 		putQueryParameter("TextBody", textBody);
+	}
+
+	public String getFromAlias() {
+		return this.fromAlias;
+	}
+
+	public void setFromAlias(String fromAlias) {
+		this.fromAlias = fromAlias;
+		putQueryParameter("FromAlias", fromAlias);
 	}
 
 	@Override
