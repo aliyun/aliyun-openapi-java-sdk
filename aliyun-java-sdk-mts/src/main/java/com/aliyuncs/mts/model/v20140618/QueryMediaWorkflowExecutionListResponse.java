@@ -141,6 +141,10 @@ public class QueryMediaWorkflowExecutionListResponse extends AcsResponse {
 
 			private String state;
 
+			private String code;
+
+			private String message;
+
 			private String startTime;
 
 			private String endTime;
@@ -177,6 +181,22 @@ public class QueryMediaWorkflowExecutionListResponse extends AcsResponse {
 				this.state = state;
 			}
 
+			public String getCode() {
+				return this.code;
+			}
+
+			public void setCode(String code) {
+				this.code = code;
+			}
+
+			public String getMessage() {
+				return this.message;
+			}
+
+			public void setMessage(String message) {
+				this.message = message;
+			}
+
 			public String getStartTime() {
 				return this.startTime;
 			}
@@ -196,7 +216,17 @@ public class QueryMediaWorkflowExecutionListResponse extends AcsResponse {
 
 		public static class Input {
 
+			private String userData;
+
 			private InputFile inputFile;
+
+			public String getUserData() {
+				return this.userData;
+			}
+
+			public void setUserData(String userData) {
+				this.userData = userData;
+			}
 
 			public InputFile getInputFile() {
 				return this.inputFile;

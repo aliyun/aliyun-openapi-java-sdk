@@ -216,7 +216,17 @@ public class ListMediaWorkflowExecutionsResponse extends AcsResponse {
 
 		public static class Input {
 
+			private String userData;
+
 			private InputFile inputFile;
+
+			public String getUserData() {
+				return this.userData;
+			}
+
+			public void setUserData(String userData) {
+				this.userData = userData;
+			}
 
 			public InputFile getInputFile() {
 				return this.inputFile;

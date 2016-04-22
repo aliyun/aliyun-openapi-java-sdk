@@ -49,6 +49,7 @@ public class QuerySnapshotJobListResponseUnmarshaller {
 			snapshotJob.setPipelineId(context.stringValue("QuerySnapshotJobListResponse.SnapshotJobList["+ i +"].PipelineId"));
 			snapshotJob.setState(context.stringValue("QuerySnapshotJobListResponse.SnapshotJobList["+ i +"].State"));
 			snapshotJob.setCode(context.stringValue("QuerySnapshotJobListResponse.SnapshotJobList["+ i +"].Code"));
+			snapshotJob.setCount(context.stringValue("QuerySnapshotJobListResponse.SnapshotJobList["+ i +"].Count"));
 			snapshotJob.setMessage(context.stringValue("QuerySnapshotJobListResponse.SnapshotJobList["+ i +"].Message"));
 			snapshotJob.setCreationTime(context.stringValue("QuerySnapshotJobListResponse.SnapshotJobList["+ i +"].CreationTime"));
 
@@ -60,6 +61,8 @@ public class QuerySnapshotJobListResponseUnmarshaller {
 
 			SnapshotConfig snapshotConfig = new SnapshotConfig();
 			snapshotConfig.setTime(context.stringValue("QuerySnapshotJobListResponse.SnapshotJobList["+ i +"].SnapshotConfig.Time"));
+			snapshotConfig.setInterval(context.stringValue("QuerySnapshotJobListResponse.SnapshotJobList["+ i +"].SnapshotConfig.Interval"));
+			snapshotConfig.setNum(context.stringValue("QuerySnapshotJobListResponse.SnapshotJobList["+ i +"].SnapshotConfig.Num"));
 
 			OutputFile outputFile = new OutputFile();
 			outputFile.setBucket(context.stringValue("QuerySnapshotJobListResponse.SnapshotJobList["+ i +"].SnapshotConfig.OutputFile.Bucket"));

@@ -60,6 +60,8 @@ public class SubmitSnapshotJobResponse extends AcsResponse {
 
 		private String code;
 
+		private String count;
+
 		private String message;
 
 		private String creationTime;
@@ -106,6 +108,14 @@ public class SubmitSnapshotJobResponse extends AcsResponse {
 
 		public void setCode(String code) {
 			this.code = code;
+		}
+
+		public String getCount() {
+			return this.count;
+		}
+
+		public void setCount(String count) {
+			this.count = count;
 		}
 
 		public String getMessage() {
@@ -177,6 +187,10 @@ public class SubmitSnapshotJobResponse extends AcsResponse {
 
 			private String time;
 
+			private String interval;
+
+			private String num;
+
 			private OutputFile outputFile;
 
 			public String getTime() {
@@ -185,6 +199,22 @@ public class SubmitSnapshotJobResponse extends AcsResponse {
 
 			public void setTime(String time) {
 				this.time = time;
+			}
+
+			public String getInterval() {
+				return this.interval;
+			}
+
+			public void setInterval(String interval) {
+				this.interval = interval;
+			}
+
+			public String getNum() {
+				return this.num;
+			}
+
+			public void setNum(String num) {
+				this.num = num;
 			}
 
 			public OutputFile getOutputFile() {

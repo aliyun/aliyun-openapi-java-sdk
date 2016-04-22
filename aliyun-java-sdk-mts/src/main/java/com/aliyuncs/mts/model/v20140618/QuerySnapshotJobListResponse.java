@@ -71,6 +71,8 @@ public class QuerySnapshotJobListResponse extends AcsResponse {
 
 		private String code;
 
+		private String count;
+
 		private String message;
 
 		private String creationTime;
@@ -117,6 +119,14 @@ public class QuerySnapshotJobListResponse extends AcsResponse {
 
 		public void setCode(String code) {
 			this.code = code;
+		}
+
+		public String getCount() {
+			return this.count;
+		}
+
+		public void setCount(String count) {
+			this.count = count;
 		}
 
 		public String getMessage() {
@@ -188,6 +198,10 @@ public class QuerySnapshotJobListResponse extends AcsResponse {
 
 			private String time;
 
+			private String interval;
+
+			private String num;
+
 			private OutputFile outputFile;
 
 			public String getTime() {
@@ -196,6 +210,22 @@ public class QuerySnapshotJobListResponse extends AcsResponse {
 
 			public void setTime(String time) {
 				this.time = time;
+			}
+
+			public String getInterval() {
+				return this.interval;
+			}
+
+			public void setInterval(String interval) {
+				this.interval = interval;
+			}
+
+			public String getNum() {
+				return this.num;
+			}
+
+			public void setNum(String num) {
+				this.num = num;
 			}
 
 			public OutputFile getOutputFile() {

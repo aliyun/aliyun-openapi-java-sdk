@@ -38,6 +38,7 @@ public class SubmitSnapshotJobResponseUnmarshaller {
 		snapshotJob.setPipelineId(context.stringValue("SubmitSnapshotJobResponse.SnapshotJob.PipelineId"));
 		snapshotJob.setState(context.stringValue("SubmitSnapshotJobResponse.SnapshotJob.State"));
 		snapshotJob.setCode(context.stringValue("SubmitSnapshotJobResponse.SnapshotJob.Code"));
+		snapshotJob.setCount(context.stringValue("SubmitSnapshotJobResponse.SnapshotJob.Count"));
 		snapshotJob.setMessage(context.stringValue("SubmitSnapshotJobResponse.SnapshotJob.Message"));
 		snapshotJob.setCreationTime(context.stringValue("SubmitSnapshotJobResponse.SnapshotJob.CreationTime"));
 
@@ -49,6 +50,8 @@ public class SubmitSnapshotJobResponseUnmarshaller {
 
 		SnapshotConfig snapshotConfig = new SnapshotConfig();
 		snapshotConfig.setTime(context.stringValue("SubmitSnapshotJobResponse.SnapshotJob.SnapshotConfig.Time"));
+		snapshotConfig.setInterval(context.stringValue("SubmitSnapshotJobResponse.SnapshotJob.SnapshotConfig.Interval"));
+		snapshotConfig.setNum(context.stringValue("SubmitSnapshotJobResponse.SnapshotJob.SnapshotConfig.Num"));
 
 		OutputFile outputFile = new OutputFile();
 		outputFile.setBucket(context.stringValue("SubmitSnapshotJobResponse.SnapshotJob.SnapshotConfig.OutputFile.Bucket"));

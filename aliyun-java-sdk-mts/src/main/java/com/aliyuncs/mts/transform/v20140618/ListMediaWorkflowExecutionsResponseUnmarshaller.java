@@ -46,6 +46,7 @@ public class ListMediaWorkflowExecutionsResponseUnmarshaller {
 			mediaWorkflowExecution.setCreationTime(context.stringValue("ListMediaWorkflowExecutionsResponse.MediaWorkflowExecutionList["+ i +"].CreationTime"));
 
 			Input input = new Input();
+			input.setUserData(context.stringValue("ListMediaWorkflowExecutionsResponse.MediaWorkflowExecutionList["+ i +"].Input.UserData"));
 
 			InputFile inputFile = new InputFile();
 			inputFile.setBucket(context.stringValue("ListMediaWorkflowExecutionsResponse.MediaWorkflowExecutionList["+ i +"].Input.InputFile.Bucket"));
