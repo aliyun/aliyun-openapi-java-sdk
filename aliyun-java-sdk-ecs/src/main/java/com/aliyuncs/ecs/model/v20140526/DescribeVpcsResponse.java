@@ -97,7 +97,7 @@ public class DescribeVpcsResponse extends AcsResponse {
 
 		private String description;
 
-		private String isDefault;
+		private Boolean isDefault;
 
 		private List<String> vSwitchIds;
 
@@ -167,11 +167,11 @@ public class DescribeVpcsResponse extends AcsResponse {
 			this.description = description;
 		}
 
-		public String getIsDefault() {
+		public Boolean getIsDefault() {
 			return this.isDefault;
 		}
 
-		public void setIsDefault(String isDefault) {
+		public void setIsDefault(Boolean isDefault) {
 			this.isDefault = isDefault;
 		}
 

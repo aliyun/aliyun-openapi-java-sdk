@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ReplaceSystemDiskRequest extends RpcAcsRequest<ReplaceSystemDiskResponse> {
 	
 	public ReplaceSystemDiskRequest() {
-		super("Ecs", "2014-05-26", "ReplaceSystemDisk");
+		super("Ecs", "2014-05-26", "ReplaceSystemDisk", "ecs");
 	}
 
 	private Long ownerId;
@@ -47,6 +47,8 @@ public class ReplaceSystemDiskRequest extends RpcAcsRequest<ReplaceSystemDiskRes
 	private String ownerAccount;
 
 	private Boolean useAdditionalService;
+
+	private String password;
 
 	public Long getOwnerId() {
 		return this.ownerId;
@@ -127,6 +129,15 @@ public class ReplaceSystemDiskRequest extends RpcAcsRequest<ReplaceSystemDiskRes
 	public void setUseAdditionalService(Boolean useAdditionalService) {
 		this.useAdditionalService = useAdditionalService;
 		putQueryParameter("UseAdditionalService", useAdditionalService);
+	}
+
+	public String getPassword() {
+		return this.password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+		putQueryParameter("Password", password);
 	}
 
 	@Override

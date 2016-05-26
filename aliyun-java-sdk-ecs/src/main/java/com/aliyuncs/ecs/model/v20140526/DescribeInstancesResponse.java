@@ -123,6 +123,8 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		private String expiredTime;
 
+		private String autoReleaseTime;
+
 		private Boolean ioOptimized;
 
 		private Boolean deviceAvailable;
@@ -309,6 +311,14 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		public void setExpiredTime(String expiredTime) {
 			this.expiredTime = expiredTime;
+		}
+
+		public String getAutoReleaseTime() {
+			return this.autoReleaseTime;
+		}
+
+		public void setAutoReleaseTime(String autoReleaseTime) {
+			this.autoReleaseTime = autoReleaseTime;
 		}
 
 		public Boolean getIoOptimized() {
@@ -519,6 +529,8 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 			private String internetChargeType;
 
+			private Boolean isSupportUnassociate;
+
 			public String getAllocationId() {
 				return this.allocationId;
 			}
@@ -549,6 +561,14 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 			public void setInternetChargeType(String internetChargeType) {
 				this.internetChargeType = internetChargeType;
+			}
+
+			public Boolean getIsSupportUnassociate() {
+				return this.isSupportUnassociate;
+			}
+
+			public void setIsSupportUnassociate(Boolean isSupportUnassociate) {
+				this.isSupportUnassociate = isSupportUnassociate;
 			}
 		}
 	}

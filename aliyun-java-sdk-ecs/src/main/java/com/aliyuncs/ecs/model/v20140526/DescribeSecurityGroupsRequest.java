@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeSecurityGroupsRequest extends RpcAcsRequest<DescribeSecurityGroupsResponse> {
 	
 	public DescribeSecurityGroupsRequest() {
-		super("Ecs", "2014-05-26", "DescribeSecurityGroups");
+		super("Ecs", "2014-05-26", "DescribeSecurityGroups", "ecs");
 	}
 
 	private Long ownerId;

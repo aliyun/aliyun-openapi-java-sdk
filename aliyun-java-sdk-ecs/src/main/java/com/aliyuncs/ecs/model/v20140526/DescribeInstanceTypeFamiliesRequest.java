@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeInstanceTypeFamiliesRequest extends RpcAcsRequest<DescribeInstanceTypeFamiliesResponse> {
 	
 	public DescribeInstanceTypeFamiliesRequest() {
-		super("Ecs", "2014-05-26", "DescribeInstanceTypeFamilies");
+		super("Ecs", "2014-05-26", "DescribeInstanceTypeFamilies", "ecs");
 	}
 
 	private Long ownerId;

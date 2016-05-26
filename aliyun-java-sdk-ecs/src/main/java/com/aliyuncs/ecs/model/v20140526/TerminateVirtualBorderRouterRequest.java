@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class TerminateVirtualBorderRouterRequest extends RpcAcsRequest<TerminateVirtualBorderRouterResponse> {
 	
 	public TerminateVirtualBorderRouterRequest() {
-		super("Ecs", "2014-05-26", "TerminateVirtualBorderRouter");
+		super("Ecs", "2014-05-26", "TerminateVirtualBorderRouter", "ecs");
 	}
 
 	private String vbrId;

@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeVSwitchesRequest extends RpcAcsRequest<DescribeVSwitchesResponse> {
 	
 	public DescribeVSwitchesRequest() {
-		super("Ecs", "2014-05-26", "DescribeVSwitches");
+		super("Ecs", "2014-05-26", "DescribeVSwitches", "ecs");
 	}
 
 	private Long ownerId;

@@ -28,7 +28,7 @@ import java.util.List;
 public class DescribePhysicalConnectionsRequest extends RpcAcsRequest<DescribePhysicalConnectionsResponse> {
 	
 	public DescribePhysicalConnectionsRequest() {
-		super("Ecs", "2014-05-26", "DescribePhysicalConnections");
+		super("Ecs", "2014-05-26", "DescribePhysicalConnections", "ecs");
 	}
 
 	private List<Filter> filters;

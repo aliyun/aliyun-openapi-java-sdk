@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeRouteTablesRequest extends RpcAcsRequest<DescribeRouteTablesResponse> {
 	
 	public DescribeRouteTablesRequest() {
-		super("Ecs", "2014-05-26", "DescribeRouteTables");
+		super("Ecs", "2014-05-26", "DescribeRouteTables", "ecs");
 	}
 
 	private Long ownerId;

@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ExportImageRequest extends RpcAcsRequest<ExportImageResponse> {
 	
 	public ExportImageRequest() {
-		super("Ecs", "2014-05-26", "ExportImage");
+		super("Ecs", "2014-05-26", "ExportImage", "ecs");
 	}
 
 	private Long ownerId;

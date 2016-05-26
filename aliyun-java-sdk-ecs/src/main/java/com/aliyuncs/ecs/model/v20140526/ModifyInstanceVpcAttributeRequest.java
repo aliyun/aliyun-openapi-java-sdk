@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifyInstanceVpcAttributeRequest extends RpcAcsRequest<ModifyInstanceVpcAttributeResponse> {
 	
 	public ModifyInstanceVpcAttributeRequest() {
-		super("Ecs", "2014-05-26", "ModifyInstanceVpcAttribute");
+		super("Ecs", "2014-05-26", "ModifyInstanceVpcAttribute", "ecs");
 	}
 
 	private Long ownerId;

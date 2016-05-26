@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifyPhysicalConnectionAttributeRequest extends RpcAcsRequest<ModifyPhysicalConnectionAttributeResponse> {
 	
 	public ModifyPhysicalConnectionAttributeRequest() {
-		super("Ecs", "2014-05-26", "ModifyPhysicalConnectionAttribute");
+		super("Ecs", "2014-05-26", "ModifyPhysicalConnectionAttribute", "ecs");
 	}
 
 	private String physicalConnectionId;

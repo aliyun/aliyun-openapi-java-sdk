@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifyInstanceNetworkSpecRequest extends RpcAcsRequest<ModifyInstanceNetworkSpecResponse> {
 	
 	public ModifyInstanceNetworkSpecRequest() {
-		super("Ecs", "2014-05-26", "ModifyInstanceNetworkSpec");
+		super("Ecs", "2014-05-26", "ModifyInstanceNetworkSpec", "ecs");
 	}
 
 	private Long ownerId;

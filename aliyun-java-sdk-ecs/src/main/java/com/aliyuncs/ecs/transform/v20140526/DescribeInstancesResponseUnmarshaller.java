@@ -64,6 +64,7 @@ public class DescribeInstancesResponseUnmarshaller {
 			instance.setInstanceNetworkType(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].InstanceNetworkType"));
 			instance.setInstanceChargeType(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].InstanceChargeType"));
 			instance.setExpiredTime(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].ExpiredTime"));
+			instance.setAutoReleaseTime(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].AutoReleaseTime"));
 			instance.setIoOptimized(context.booleanValue("DescribeInstancesResponse.Instances["+ i +"].IoOptimized"));
 			instance.setDeviceAvailable(context.booleanValue("DescribeInstancesResponse.Instances["+ i +"].DeviceAvailable"));
 			instance.setInstanceTypeFamily(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].InstanceTypeFamily"));
@@ -103,6 +104,7 @@ public class DescribeInstancesResponseUnmarshaller {
 			eipAddress.setIpAddress(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].EipAddress.IpAddress"));
 			eipAddress.setBandwidth(context.integerValue("DescribeInstancesResponse.Instances["+ i +"].EipAddress.Bandwidth"));
 			eipAddress.setInternetChargeType(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].EipAddress.InternetChargeType"));
+			eipAddress.setIsSupportUnassociate(context.booleanValue("DescribeInstancesResponse.Instances["+ i +"].EipAddress.IsSupportUnassociate"));
 			instance.setEipAddress(eipAddress);
 
 			List<LockReason> operationLocks = new ArrayList<LockReason>();

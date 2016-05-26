@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeDisksRequest extends RpcAcsRequest<DescribeDisksResponse> {
 	
 	public DescribeDisksRequest() {
-		super("Ecs", "2014-05-26", "DescribeDisks");
+		super("Ecs", "2014-05-26", "DescribeDisks", "ecs");
 	}
 
 	private Long ownerId;
@@ -63,6 +63,8 @@ public class DescribeDisksRequest extends RpcAcsRequest<DescribeDisksResponse> {
 	private String ownerAccount;
 
 	private String diskName;
+
+	private String autoSnapshotPolicyId;
 
 	private Boolean enableAutoSnapshot;
 
@@ -251,6 +253,15 @@ public class DescribeDisksRequest extends RpcAcsRequest<DescribeDisksResponse> {
 	public void setDiskName(String diskName) {
 		this.diskName = diskName;
 		putQueryParameter("DiskName", diskName);
+	}
+
+	public String getAutoSnapshotPolicyId() {
+		return this.autoSnapshotPolicyId;
+	}
+
+	public void setAutoSnapshotPolicyId(String autoSnapshotPolicyId) {
+		this.autoSnapshotPolicyId = autoSnapshotPolicyId;
+		putQueryParameter("AutoSnapshotPolicyId", autoSnapshotPolicyId);
 	}
 
 	public Boolean getEnableAutoSnapshot() {

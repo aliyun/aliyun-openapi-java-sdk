@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeInstancesRequest extends RpcAcsRequest<DescribeInstancesResponse> {
 	
 	public DescribeInstancesRequest() {
-		super("Ecs", "2014-05-26", "DescribeInstances");
+		super("Ecs", "2014-05-26", "DescribeInstances", "ecs");
 	}
 
 	private Long ownerId;

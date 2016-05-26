@@ -38,7 +38,7 @@ public class DescribeAutoSnapshotPolicyExResponseUnmarshaller {
 		List<AutoSnapshotPolicy> autoSnapshotPolicies = new ArrayList<AutoSnapshotPolicy>();
 		for (int i = 0; i < context.lengthValue("DescribeAutoSnapshotPolicyExResponse.AutoSnapshotPolicies.Length"); i++) {
 			AutoSnapshotPolicy autoSnapshotPolicy = new AutoSnapshotPolicy();
-			autoSnapshotPolicy.setAutoSnapshotPolicyId(context.integerValue("DescribeAutoSnapshotPolicyExResponse.AutoSnapshotPolicies["+ i +"].AutoSnapshotPolicyId"));
+			autoSnapshotPolicy.setAutoSnapshotPolicyId(context.stringValue("DescribeAutoSnapshotPolicyExResponse.AutoSnapshotPolicies["+ i +"].AutoSnapshotPolicyId"));
 			autoSnapshotPolicy.setRegionId(context.stringValue("DescribeAutoSnapshotPolicyExResponse.AutoSnapshotPolicies["+ i +"].RegionId"));
 			autoSnapshotPolicy.setAutoSnapshotPolicyName(context.stringValue("DescribeAutoSnapshotPolicyExResponse.AutoSnapshotPolicies["+ i +"].AutoSnapshotPolicyName"));
 			autoSnapshotPolicy.setTimePoints(context.stringValue("DescribeAutoSnapshotPolicyExResponse.AutoSnapshotPolicies["+ i +"].TimePoints"));

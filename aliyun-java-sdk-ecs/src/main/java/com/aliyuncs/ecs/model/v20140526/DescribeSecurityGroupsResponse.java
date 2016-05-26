@@ -101,6 +101,8 @@ public class DescribeSecurityGroupsResponse extends AcsResponse {
 
 		private String creationTime;
 
+		private Integer availableInstanceAmount;
+
 		private Integer ecsCount;
 
 		private List<Tag> tags;
@@ -143,6 +145,14 @@ public class DescribeSecurityGroupsResponse extends AcsResponse {
 
 		public void setCreationTime(String creationTime) {
 			this.creationTime = creationTime;
+		}
+
+		public Integer getAvailableInstanceAmount() {
+			return this.availableInstanceAmount;
+		}
+
+		public void setAvailableInstanceAmount(Integer availableInstanceAmount) {
+			this.availableInstanceAmount = availableInstanceAmount;
 		}
 
 		public Integer getEcsCount() {

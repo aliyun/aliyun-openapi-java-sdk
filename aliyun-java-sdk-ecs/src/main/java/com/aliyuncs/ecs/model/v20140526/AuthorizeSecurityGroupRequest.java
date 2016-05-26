@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class AuthorizeSecurityGroupRequest extends RpcAcsRequest<AuthorizeSecurityGroupResponse> {
 	
 	public AuthorizeSecurityGroupRequest() {
-		super("Ecs", "2014-05-26", "AuthorizeSecurityGroup");
+		super("Ecs", "2014-05-26", "AuthorizeSecurityGroup", "ecs");
 	}
 
 	private Long ownerId;

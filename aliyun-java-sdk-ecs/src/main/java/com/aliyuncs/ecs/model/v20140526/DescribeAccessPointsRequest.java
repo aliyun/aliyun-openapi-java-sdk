@@ -28,7 +28,7 @@ import java.util.List;
 public class DescribeAccessPointsRequest extends RpcAcsRequest<DescribeAccessPointsResponse> {
 	
 	public DescribeAccessPointsRequest() {
-		super("Ecs", "2014-05-26", "DescribeAccessPoints");
+		super("Ecs", "2014-05-26", "DescribeAccessPoints", "ecs");
 	}
 
 	private List<Filter> filters;

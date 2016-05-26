@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeleteRouterInterfaceRequest extends RpcAcsRequest<DeleteRouterInterfaceResponse> {
 	
 	public DeleteRouterInterfaceRequest() {
-		super("Ecs", "2014-05-26", "DeleteRouterInterface");
+		super("Ecs", "2014-05-26", "DeleteRouterInterface", "ecs");
 	}
 
 	private String routerInterfaceId;

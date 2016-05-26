@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse> {
 	
 	public CreateInstanceRequest() {
-		super("Ecs", "2014-05-26", "CreateInstance");
+		super("Ecs", "2014-05-26", "CreateInstance", "ecs");
 	}
 
 	private Long ownerId;
@@ -165,6 +165,8 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 	private String tag4Value;
 
 	private String tag5Value;
+
+	private String userData;
 
 	public Long getOwnerId() {
 		return this.ownerId;
@@ -776,6 +778,15 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 	public void setTag5Value(String tag5Value) {
 		this.tag5Value = tag5Value;
 		putQueryParameter("Tag.5.Value", tag5Value);
+	}
+
+	public String getUserData() {
+		return this.userData;
+	}
+
+	public void setUserData(String userData) {
+		this.userData = userData;
+		putQueryParameter("UserData", userData);
 	}
 
 	@Override

@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ReInitDiskRequest extends RpcAcsRequest<ReInitDiskResponse> {
 	
 	public ReInitDiskRequest() {
-		super("Ecs", "2014-05-26", "ReInitDisk");
+		super("Ecs", "2014-05-26", "ReInitDisk", "ecs");
 	}
 
 	private Long ownerId;
@@ -39,6 +39,8 @@ public class ReInitDiskRequest extends RpcAcsRequest<ReInitDiskResponse> {
 	private String diskId;
 
 	private String ownerAccount;
+
+	private String password;
 
 	public Long getOwnerId() {
 		return this.ownerId;
@@ -83,6 +85,15 @@ public class ReInitDiskRequest extends RpcAcsRequest<ReInitDiskResponse> {
 	public void setOwnerAccount(String ownerAccount) {
 		this.ownerAccount = ownerAccount;
 		putQueryParameter("OwnerAccount", ownerAccount);
+	}
+
+	public String getPassword() {
+		return this.password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+		putQueryParameter("Password", password);
 	}
 
 	@Override

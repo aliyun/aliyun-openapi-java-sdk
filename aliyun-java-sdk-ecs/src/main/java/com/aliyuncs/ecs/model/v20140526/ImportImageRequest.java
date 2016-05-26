@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ImportImageRequest extends RpcAcsRequest<ImportImageResponse> {
 	
 	public ImportImageRequest() {
-		super("Ecs", "2014-05-26", "ImportImage");
+		super("Ecs", "2014-05-26", "ImportImage", "ecs");
 	}
 
 	private Long ownerId;

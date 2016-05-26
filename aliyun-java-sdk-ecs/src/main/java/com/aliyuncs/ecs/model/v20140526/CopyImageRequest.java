@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class CopyImageRequest extends RpcAcsRequest<CopyImageResponse> {
 	
 	public CopyImageRequest() {
-		super("Ecs", "2014-05-26", "CopyImage");
+		super("Ecs", "2014-05-26", "CopyImage", "ecs");
 	}
 
 	private Long ownerId;

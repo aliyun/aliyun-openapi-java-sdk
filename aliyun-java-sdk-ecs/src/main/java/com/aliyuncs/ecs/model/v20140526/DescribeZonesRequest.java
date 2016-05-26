@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeZonesRequest extends RpcAcsRequest<DescribeZonesResponse> {
 	
 	public DescribeZonesRequest() {
-		super("Ecs", "2014-05-26", "DescribeZones");
+		super("Ecs", "2014-05-26", "DescribeZones", "ecs");
 	}
 
 	private Long ownerId;
@@ -37,6 +37,8 @@ public class DescribeZonesRequest extends RpcAcsRequest<DescribeZonesResponse> {
 	private Long resourceOwnerId;
 
 	private String ownerAccount;
+
+	private Boolean verbose;
 
 	public Long getOwnerId() {
 		return this.ownerId;
@@ -72,6 +74,15 @@ public class DescribeZonesRequest extends RpcAcsRequest<DescribeZonesResponse> {
 	public void setOwnerAccount(String ownerAccount) {
 		this.ownerAccount = ownerAccount;
 		putQueryParameter("OwnerAccount", ownerAccount);
+	}
+
+	public Boolean getVerbose() {
+		return this.verbose;
+	}
+
+	public void setVerbose(Boolean verbose) {
+		this.verbose = verbose;
+		putQueryParameter("Verbose", verbose);
 	}
 
 	@Override

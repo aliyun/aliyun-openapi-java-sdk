@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class CancelTaskRequest extends RpcAcsRequest<CancelTaskResponse> {
 	
 	public CancelTaskRequest() {
-		super("Ecs", "2014-05-26", "CancelTask");
+		super("Ecs", "2014-05-26", "CancelTask", "ecs");
 	}
 
 	private Long ownerId;

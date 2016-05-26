@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class TerminatePhysicalConnectionRequest extends RpcAcsRequest<TerminatePhysicalConnectionResponse> {
 	
 	public TerminatePhysicalConnectionRequest() {
-		super("Ecs", "2014-05-26", "TerminatePhysicalConnection");
+		super("Ecs", "2014-05-26", "TerminatePhysicalConnection", "ecs");
 	}
 
 	private String physicalConnectionId;

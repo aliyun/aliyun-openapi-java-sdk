@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ResetDiskRequest extends RpcAcsRequest<ResetDiskResponse> {
 	
 	public ResetDiskRequest() {
-		super("Ecs", "2014-05-26", "ResetDisk");
+		super("Ecs", "2014-05-26", "ResetDisk", "ecs");
 	}
 
 	private Long ownerId;

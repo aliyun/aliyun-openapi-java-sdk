@@ -81,7 +81,7 @@ public class DescribeAutoSnapshotPolicyExResponse extends AcsResponse {
 
 	public static class AutoSnapshotPolicy {
 
-		private Integer autoSnapshotPolicyId;
+		private String autoSnapshotPolicyId;
 
 		private String regionId;
 
@@ -97,11 +97,11 @@ public class DescribeAutoSnapshotPolicyExResponse extends AcsResponse {
 
 		private String creationTime;
 
-		public Integer getAutoSnapshotPolicyId() {
+		public String getAutoSnapshotPolicyId() {
 			return this.autoSnapshotPolicyId;
 		}
 
-		public void setAutoSnapshotPolicyId(Integer autoSnapshotPolicyId) {
+		public void setAutoSnapshotPolicyId(String autoSnapshotPolicyId) {
 			this.autoSnapshotPolicyId = autoSnapshotPolicyId;
 		}
 

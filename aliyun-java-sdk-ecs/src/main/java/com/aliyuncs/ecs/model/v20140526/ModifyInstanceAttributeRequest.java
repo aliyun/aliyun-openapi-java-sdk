@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifyInstanceAttributeRequest extends RpcAcsRequest<ModifyInstanceAttributeResponse> {
 	
 	public ModifyInstanceAttributeRequest() {
-		super("Ecs", "2014-05-26", "ModifyInstanceAttribute");
+		super("Ecs", "2014-05-26", "ModifyInstanceAttribute", "ecs");
 	}
 
 	private Long ownerId;
@@ -47,6 +47,8 @@ public class ModifyInstanceAttributeRequest extends RpcAcsRequest<ModifyInstance
 	private String description;
 
 	private String ownerAccount;
+
+	private String userData;
 
 	public Long getOwnerId() {
 		return this.ownerId;
@@ -127,6 +129,15 @@ public class ModifyInstanceAttributeRequest extends RpcAcsRequest<ModifyInstance
 	public void setOwnerAccount(String ownerAccount) {
 		this.ownerAccount = ownerAccount;
 		putQueryParameter("OwnerAccount", ownerAccount);
+	}
+
+	public String getUserData() {
+		return this.userData;
+	}
+
+	public void setUserData(String userData) {
+		this.userData = userData;
+		putQueryParameter("UserData", userData);
 	}
 
 	@Override

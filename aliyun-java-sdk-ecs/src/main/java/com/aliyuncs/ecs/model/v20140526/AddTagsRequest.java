@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class AddTagsRequest extends RpcAcsRequest<AddTagsResponse> {
 	
 	public AddTagsRequest() {
-		super("Ecs", "2014-05-26", "AddTags");
+		super("Ecs", "2014-05-26", "AddTags", "ecs");
 	}
 
 	private Long ownerId;
