@@ -19,7 +19,7 @@ http://www.aliyun.com</description>
   		<groupId>com.aliyun</groupId>
   		<artifactId>aliyun-java-sdk-core</artifactId>
 		<optional>true</optional>
-  		<version>2.4.2</version>
+  		<version>3.0.1</version>
   	</dependency>
   </dependencies>
 	<licenses>
