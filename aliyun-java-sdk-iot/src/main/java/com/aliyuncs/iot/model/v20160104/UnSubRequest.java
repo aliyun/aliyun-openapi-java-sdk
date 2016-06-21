@@ -35,6 +35,8 @@ public class UnSubRequest extends RpcAcsRequest<UnSubResponse> {
 
 	private Long appKey;
 
+	private String topicList;
+
 	public List<String> getTopics() {
 		return this.topics;
 	}
@@ -53,6 +55,15 @@ public class UnSubRequest extends RpcAcsRequest<UnSubResponse> {
 	public void setAppKey(Long appKey) {
 		this.appKey = appKey;
 		putQueryParameter("AppKey", appKey);
+	}
+
+	public String getTopicList() {
+		return this.topicList;
+	}
+
+	public void setTopicList(String topicList) {
+		this.topicList = topicList;
+		putQueryParameter("TopicList", topicList);
 	}
 
 	@Override

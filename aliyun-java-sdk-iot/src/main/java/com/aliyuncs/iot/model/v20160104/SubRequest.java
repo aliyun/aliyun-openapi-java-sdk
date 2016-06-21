@@ -37,6 +37,8 @@ public class SubRequest extends RpcAcsRequest<SubResponse> {
 
 	private String subCallback;
 
+	private String topicList;
+
 	public List<String> getTopics() {
 		return this.topics;
 	}
@@ -64,6 +66,15 @@ public class SubRequest extends RpcAcsRequest<SubResponse> {
 	public void setSubCallback(String subCallback) {
 		this.subCallback = subCallback;
 		putQueryParameter("SubCallback", subCallback);
+	}
+
+	public String getTopicList() {
+		return this.topicList;
+	}
+
+	public void setTopicList(String topicList) {
+		this.topicList = topicList;
+		putQueryParameter("TopicList", topicList);
 	}
 
 	@Override
