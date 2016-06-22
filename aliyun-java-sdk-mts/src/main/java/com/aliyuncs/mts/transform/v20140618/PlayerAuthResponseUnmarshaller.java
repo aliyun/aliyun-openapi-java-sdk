@@ -31,6 +31,7 @@ public class PlayerAuthResponseUnmarshaller {
 	public static PlayerAuthResponse unmarshall(PlayerAuthResponse playerAuthResponse, UnmarshallerContext context) {
 		
 		playerAuthResponse.setRequestId(context.stringValue("PlayerAuthResponse.RequestId"));
+		playerAuthResponse.setLogURL(context.stringValue("PlayerAuthResponse.LogURL"));
 
 		List<Switch> switchList = new ArrayList<Switch>();
 		for (int i = 0; i < context.lengthValue("PlayerAuthResponse.SwitchList.Length"); i++) {
@@ -38,6 +39,7 @@ public class PlayerAuthResponseUnmarshaller {
 			switch_.setState(context.stringValue("PlayerAuthResponse.SwitchList["+ i +"].State"));
 			switch_.setFunctionId(context.stringValue("PlayerAuthResponse.SwitchList["+ i +"].FunctionId"));
 			switch_.setSwitchId(context.stringValue("PlayerAuthResponse.SwitchList["+ i +"].SwitchId"));
+			switch_.setFunctionName(context.stringValue("PlayerAuthResponse.SwitchList["+ i +"].FunctionName"));
 
 			switchList.add(switch_);
 		}

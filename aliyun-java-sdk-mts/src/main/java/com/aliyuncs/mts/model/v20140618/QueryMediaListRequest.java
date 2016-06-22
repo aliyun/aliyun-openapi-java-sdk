@@ -38,6 +38,12 @@ public class QueryMediaListRequest extends RpcAcsRequest<QueryMediaListResponse>
 
 	private String mediaIds;
 
+	private Boolean includePlayList;
+
+	private Boolean includeSnapshotList;
+
+	private Boolean includeMediaInfo;
+
 	private String ownerAccount;
 
 	public Long getOwnerId() {
@@ -74,6 +80,33 @@ public class QueryMediaListRequest extends RpcAcsRequest<QueryMediaListResponse>
 	public void setMediaIds(String mediaIds) {
 		this.mediaIds = mediaIds;
 		putQueryParameter("MediaIds", mediaIds);
+	}
+
+	public Boolean getIncludePlayList() {
+		return this.includePlayList;
+	}
+
+	public void setIncludePlayList(Boolean includePlayList) {
+		this.includePlayList = includePlayList;
+		putQueryParameter("IncludePlayList", includePlayList);
+	}
+
+	public Boolean getIncludeSnapshotList() {
+		return this.includeSnapshotList;
+	}
+
+	public void setIncludeSnapshotList(Boolean includeSnapshotList) {
+		this.includeSnapshotList = includeSnapshotList;
+		putQueryParameter("IncludeSnapshotList", includeSnapshotList);
+	}
+
+	public Boolean getIncludeMediaInfo() {
+		return this.includeMediaInfo;
+	}
+
+	public void setIncludeMediaInfo(Boolean includeMediaInfo) {
+		this.includeMediaInfo = includeMediaInfo;
+		putQueryParameter("IncludeMediaInfo", includeMediaInfo);
 	}
 
 	public String getOwnerAccount() {

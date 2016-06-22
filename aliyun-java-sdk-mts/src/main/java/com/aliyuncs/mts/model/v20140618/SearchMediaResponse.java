@@ -31,7 +31,7 @@ public class SearchMediaResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Long totalCount;
+	private Long totalNum;
 
 	private Long pageNumber;
 
@@ -47,12 +47,12 @@ public class SearchMediaResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Long getTotalCount() {
-		return this.totalCount;
+	public Long getTotalNum() {
+		return this.totalNum;
 	}
 
-	public void setTotalCount(Long totalCount) {
-		this.totalCount = totalCount;
+	public void setTotalNum(Long totalNum) {
+		this.totalNum = totalNum;
 	}
 
 	public Long getPageNumber() {
@@ -83,13 +83,37 @@ public class SearchMediaResponse extends AcsResponse {
 
 		private String mediaId;
 
-		private String fileURL;
+		private String title;
 
-		private String state;
+		private String description;
+
+		private String coverURL;
+
+		private Long cateId;
+
+		private String duration;
+
+		private String format;
+
+		private String size;
+
+		private String bitrate;
+
+		private String width;
+
+		private String height;
+
+		private String fps;
+
+		private String publishState;
 
 		private String creationTime;
 
-		private MediaInfo mediaInfo;
+		private List<String> tags;
+
+		private List<String> runIdList;
+
+		private File file;
 
 		public String getMediaId() {
 			return this.mediaId;
@@ -99,20 +123,100 @@ public class SearchMediaResponse extends AcsResponse {
 			this.mediaId = mediaId;
 		}
 
-		public String getFileURL() {
-			return this.fileURL;
+		public String getTitle() {
+			return this.title;
 		}
 
-		public void setFileURL(String fileURL) {
-			this.fileURL = fileURL;
+		public void setTitle(String title) {
+			this.title = title;
 		}
 
-		public String getState() {
-			return this.state;
+		public String getDescription() {
+			return this.description;
 		}
 
-		public void setState(String state) {
-			this.state = state;
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public String getCoverURL() {
+			return this.coverURL;
+		}
+
+		public void setCoverURL(String coverURL) {
+			this.coverURL = coverURL;
+		}
+
+		public Long getCateId() {
+			return this.cateId;
+		}
+
+		public void setCateId(Long cateId) {
+			this.cateId = cateId;
+		}
+
+		public String getDuration() {
+			return this.duration;
+		}
+
+		public void setDuration(String duration) {
+			this.duration = duration;
+		}
+
+		public String getFormat() {
+			return this.format;
+		}
+
+		public void setFormat(String format) {
+			this.format = format;
+		}
+
+		public String getSize() {
+			return this.size;
+		}
+
+		public void setSize(String size) {
+			this.size = size;
+		}
+
+		public String getBitrate() {
+			return this.bitrate;
+		}
+
+		public void setBitrate(String bitrate) {
+			this.bitrate = bitrate;
+		}
+
+		public String getWidth() {
+			return this.width;
+		}
+
+		public void setWidth(String width) {
+			this.width = width;
+		}
+
+		public String getHeight() {
+			return this.height;
+		}
+
+		public void setHeight(String height) {
+			this.height = height;
+		}
+
+		public String getFps() {
+			return this.fps;
+		}
+
+		public void setFps(String fps) {
+			this.fps = fps;
+		}
+
+		public String getPublishState() {
+			return this.publishState;
+		}
+
+		public void setPublishState(String publishState) {
+			this.publishState = publishState;
 		}
 
 		public String getCreationTime() {
@@ -123,602 +227,50 @@ public class SearchMediaResponse extends AcsResponse {
 			this.creationTime = creationTime;
 		}
 
-		public MediaInfo getMediaInfo() {
-			return this.mediaInfo;
+		public List<String> getTags() {
+			return this.tags;
 		}
 
-		public void setMediaInfo(MediaInfo mediaInfo) {
-			this.mediaInfo = mediaInfo;
+		public void setTags(List<String> tags) {
+			this.tags = tags;
 		}
 
-		public static class MediaInfo {
+		public List<String> getRunIdList() {
+			return this.runIdList;
+		}
 
-			private Streams streams;
+		public void setRunIdList(List<String> runIdList) {
+			this.runIdList = runIdList;
+		}
 
-			private Format format;
+		public File getFile() {
+			return this.file;
+		}
 
-			public Streams getStreams() {
-				return this.streams;
+		public void setFile(File file) {
+			this.file = file;
+		}
+
+		public static class File {
+
+			private String uRL;
+
+			private String state;
+
+			public String getURL() {
+				return this.uRL;
 			}
 
-			public void setStreams(Streams streams) {
-				this.streams = streams;
+			public void setURL(String uRL) {
+				this.uRL = uRL;
 			}
 
-			public Format getFormat() {
-				return this.format;
+			public String getState() {
+				return this.state;
 			}
 
-			public void setFormat(Format format) {
-				this.format = format;
-			}
-
-			public static class Streams {
-
-				private List<VideoStream> videoStreamList;
-
-				private List<AudioStream> audioStreamList;
-
-				private List<SubtitleStream> subtitleStreamList;
-
-				public List<VideoStream> getVideoStreamList() {
-					return this.videoStreamList;
-				}
-
-				public void setVideoStreamList(List<VideoStream> videoStreamList) {
-					this.videoStreamList = videoStreamList;
-				}
-
-				public List<AudioStream> getAudioStreamList() {
-					return this.audioStreamList;
-				}
-
-				public void setAudioStreamList(List<AudioStream> audioStreamList) {
-					this.audioStreamList = audioStreamList;
-				}
-
-				public List<SubtitleStream> getSubtitleStreamList() {
-					return this.subtitleStreamList;
-				}
-
-				public void setSubtitleStreamList(List<SubtitleStream> subtitleStreamList) {
-					this.subtitleStreamList = subtitleStreamList;
-				}
-
-				public static class VideoStream {
-
-					private String index;
-
-					private String codecName;
-
-					private String codecLongName;
-
-					private String profile;
-
-					private String codecTimeBase;
-
-					private String codecTagString;
-
-					private String codecTag;
-
-					private String width;
-
-					private String height;
-
-					private String hasBFrames;
-
-					private String sar;
-
-					private String dar;
-
-					private String pixFmt;
-
-					private String level;
-
-					private String fps;
-
-					private String avgFPS;
-
-					private String timebase;
-
-					private String startTime;
-
-					private String duration;
-
-					private String bitrate;
-
-					private String numFrames;
-
-					private String lang;
-
-					private NetworkCost networkCost;
-
-					public String getIndex() {
-						return this.index;
-					}
-
-					public void setIndex(String index) {
-						this.index = index;
-					}
-
-					public String getCodecName() {
-						return this.codecName;
-					}
-
-					public void setCodecName(String codecName) {
-						this.codecName = codecName;
-					}
-
-					public String getCodecLongName() {
-						return this.codecLongName;
-					}
-
-					public void setCodecLongName(String codecLongName) {
-						this.codecLongName = codecLongName;
-					}
-
-					public String getProfile() {
-						return this.profile;
-					}
-
-					public void setProfile(String profile) {
-						this.profile = profile;
-					}
-
-					public String getCodecTimeBase() {
-						return this.codecTimeBase;
-					}
-
-					public void setCodecTimeBase(String codecTimeBase) {
-						this.codecTimeBase = codecTimeBase;
-					}
-
-					public String getCodecTagString() {
-						return this.codecTagString;
-					}
-
-					public void setCodecTagString(String codecTagString) {
-						this.codecTagString = codecTagString;
-					}
-
-					public String getCodecTag() {
-						return this.codecTag;
-					}
-
-					public void setCodecTag(String codecTag) {
-						this.codecTag = codecTag;
-					}
-
-					public String getWidth() {
-						return this.width;
-					}
-
-					public void setWidth(String width) {
-						this.width = width;
-					}
-
-					public String getHeight() {
-						return this.height;
-					}
-
-					public void setHeight(String height) {
-						this.height = height;
-					}
-
-					public String getHasBFrames() {
-						return this.hasBFrames;
-					}
-
-					public void setHasBFrames(String hasBFrames) {
-						this.hasBFrames = hasBFrames;
-					}
-
-					public String getSar() {
-						return this.sar;
-					}
-
-					public void setSar(String sar) {
-						this.sar = sar;
-					}
-
-					public String getDar() {
-						return this.dar;
-					}
-
-					public void setDar(String dar) {
-						this.dar = dar;
-					}
-
-					public String getPixFmt() {
-						return this.pixFmt;
-					}
-
-					public void setPixFmt(String pixFmt) {
-						this.pixFmt = pixFmt;
-					}
-
-					public String getLevel() {
-						return this.level;
-					}
-
-					public void setLevel(String level) {
-						this.level = level;
-					}
-
-					public String getFps() {
-						return this.fps;
-					}
-
-					public void setFps(String fps) {
-						this.fps = fps;
-					}
-
-					public String getAvgFPS() {
-						return this.avgFPS;
-					}
-
-					public void setAvgFPS(String avgFPS) {
-						this.avgFPS = avgFPS;
-					}
-
-					public String getTimebase() {
-						return this.timebase;
-					}
-
-					public void setTimebase(String timebase) {
-						this.timebase = timebase;
-					}
-
-					public String getStartTime() {
-						return this.startTime;
-					}
-
-					public void setStartTime(String startTime) {
-						this.startTime = startTime;
-					}
-
-					public String getDuration() {
-						return this.duration;
-					}
-
-					public void setDuration(String duration) {
-						this.duration = duration;
-					}
-
-					public String getBitrate() {
-						return this.bitrate;
-					}
-
-					public void setBitrate(String bitrate) {
-						this.bitrate = bitrate;
-					}
-
-					public String getNumFrames() {
-						return this.numFrames;
-					}
-
-					public void setNumFrames(String numFrames) {
-						this.numFrames = numFrames;
-					}
-
-					public String getLang() {
-						return this.lang;
-					}
-
-					public void setLang(String lang) {
-						this.lang = lang;
-					}
-
-					public NetworkCost getNetworkCost() {
-						return this.networkCost;
-					}
-
-					public void setNetworkCost(NetworkCost networkCost) {
-						this.networkCost = networkCost;
-					}
-
-					public static class NetworkCost {
-
-						private String preloadTime;
-
-						private String costBandwidth;
-
-						private String avgBitrate;
-
-						public String getPreloadTime() {
-							return this.preloadTime;
-						}
-
-						public void setPreloadTime(String preloadTime) {
-							this.preloadTime = preloadTime;
-						}
-
-						public String getCostBandwidth() {
-							return this.costBandwidth;
-						}
-
-						public void setCostBandwidth(String costBandwidth) {
-							this.costBandwidth = costBandwidth;
-						}
-
-						public String getAvgBitrate() {
-							return this.avgBitrate;
-						}
-
-						public void setAvgBitrate(String avgBitrate) {
-							this.avgBitrate = avgBitrate;
-						}
-					}
-				}
-
-				public static class AudioStream {
-
-					private String index;
-
-					private String codecName;
-
-					private String codecTimeBase;
-
-					private String codecLongName;
-
-					private String codecTagString;
-
-					private String codecTag;
-
-					private String sampleFmt;
-
-					private String samplerate;
-
-					private String channels;
-
-					private String channelLayout;
-
-					private String timebase;
-
-					private String startTime;
-
-					private String duration;
-
-					private String bitrate;
-
-					private String numFrames;
-
-					private String lang;
-
-					public String getIndex() {
-						return this.index;
-					}
-
-					public void setIndex(String index) {
-						this.index = index;
-					}
-
-					public String getCodecName() {
-						return this.codecName;
-					}
-
-					public void setCodecName(String codecName) {
-						this.codecName = codecName;
-					}
-
-					public String getCodecTimeBase() {
-						return this.codecTimeBase;
-					}
-
-					public void setCodecTimeBase(String codecTimeBase) {
-						this.codecTimeBase = codecTimeBase;
-					}
-
-					public String getCodecLongName() {
-						return this.codecLongName;
-					}
-
-					public void setCodecLongName(String codecLongName) {
-						this.codecLongName = codecLongName;
-					}
-
-					public String getCodecTagString() {
-						return this.codecTagString;
-					}
-
-					public void setCodecTagString(String codecTagString) {
-						this.codecTagString = codecTagString;
-					}
-
-					public String getCodecTag() {
-						return this.codecTag;
-					}
-
-					public void setCodecTag(String codecTag) {
-						this.codecTag = codecTag;
-					}
-
-					public String getSampleFmt() {
-						return this.sampleFmt;
-					}
-
-					public void setSampleFmt(String sampleFmt) {
-						this.sampleFmt = sampleFmt;
-					}
-
-					public String getSamplerate() {
-						return this.samplerate;
-					}
-
-					public void setSamplerate(String samplerate) {
-						this.samplerate = samplerate;
-					}
-
-					public String getChannels() {
-						return this.channels;
-					}
-
-					public void setChannels(String channels) {
-						this.channels = channels;
-					}
-
-					public String getChannelLayout() {
-						return this.channelLayout;
-					}
-
-					public void setChannelLayout(String channelLayout) {
-						this.channelLayout = channelLayout;
-					}
-
-					public String getTimebase() {
-						return this.timebase;
-					}
-
-					public void setTimebase(String timebase) {
-						this.timebase = timebase;
-					}
-
-					public String getStartTime() {
-						return this.startTime;
-					}
-
-					public void setStartTime(String startTime) {
-						this.startTime = startTime;
-					}
-
-					public String getDuration() {
-						return this.duration;
-					}
-
-					public void setDuration(String duration) {
-						this.duration = duration;
-					}
-
-					public String getBitrate() {
-						return this.bitrate;
-					}
-
-					public void setBitrate(String bitrate) {
-						this.bitrate = bitrate;
-					}
-
-					public String getNumFrames() {
-						return this.numFrames;
-					}
-
-					public void setNumFrames(String numFrames) {
-						this.numFrames = numFrames;
-					}
-
-					public String getLang() {
-						return this.lang;
-					}
-
-					public void setLang(String lang) {
-						this.lang = lang;
-					}
-				}
-
-				public static class SubtitleStream {
-
-					private String index;
-
-					private String lang;
-
-					public String getIndex() {
-						return this.index;
-					}
-
-					public void setIndex(String index) {
-						this.index = index;
-					}
-
-					public String getLang() {
-						return this.lang;
-					}
-
-					public void setLang(String lang) {
-						this.lang = lang;
-					}
-				}
-			}
-
-			public static class Format {
-
-				private String numStreams;
-
-				private String numPrograms;
-
-				private String formatName;
-
-				private String formatLongName;
-
-				private String startTime;
-
-				private String duration;
-
-				private String size;
-
-				private String bitrate;
-
-				public String getNumStreams() {
-					return this.numStreams;
-				}
-
-				public void setNumStreams(String numStreams) {
-					this.numStreams = numStreams;
-				}
-
-				public String getNumPrograms() {
-					return this.numPrograms;
-				}
-
-				public void setNumPrograms(String numPrograms) {
-					this.numPrograms = numPrograms;
-				}
-
-				public String getFormatName() {
-					return this.formatName;
-				}
-
-				public void setFormatName(String formatName) {
-					this.formatName = formatName;
-				}
-
-				public String getFormatLongName() {
-					return this.formatLongName;
-				}
-
-				public void setFormatLongName(String formatLongName) {
-					this.formatLongName = formatLongName;
-				}
-
-				public String getStartTime() {
-					return this.startTime;
-				}
-
-				public void setStartTime(String startTime) {
-					this.startTime = startTime;
-				}
-
-				public String getDuration() {
-					return this.duration;
-				}
-
-				public void setDuration(String duration) {
-					this.duration = duration;
-				}
-
-				public String getSize() {
-					return this.size;
-				}
-
-				public void setSize(String size) {
-					this.size = size;
-				}
-
-				public String getBitrate() {
-					return this.bitrate;
-				}
-
-				public void setBitrate(String bitrate) {
-					this.bitrate = bitrate;
-				}
+			public void setState(String state) {
+				this.state = state;
 			}
 		}
 	}

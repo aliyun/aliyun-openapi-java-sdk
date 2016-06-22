@@ -18,7 +18,14 @@
  */
 package com.aliyuncs.mts.transform.v20140618;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.mts.model.v20140618.StartMediaWorkflowExecutionResponse;
+import com.aliyuncs.mts.model.v20140618.StartMediaWorkflowExecutionResponse.MediaWorkflowExecution;
+import com.aliyuncs.mts.model.v20140618.StartMediaWorkflowExecutionResponse.MediaWorkflowExecution.Activity;
+import com.aliyuncs.mts.model.v20140618.StartMediaWorkflowExecutionResponse.MediaWorkflowExecution.Input;
+import com.aliyuncs.mts.model.v20140618.StartMediaWorkflowExecutionResponse.MediaWorkflowExecution.Input.InputFile;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -27,7 +34,40 @@ public class StartMediaWorkflowExecutionResponseUnmarshaller {
 	public static StartMediaWorkflowExecutionResponse unmarshall(StartMediaWorkflowExecutionResponse startMediaWorkflowExecutionResponse, UnmarshallerContext context) {
 		
 		startMediaWorkflowExecutionResponse.setRequestId(context.stringValue("StartMediaWorkflowExecutionResponse.RequestId"));
-		startMediaWorkflowExecutionResponse.setRunId(context.stringValue("StartMediaWorkflowExecutionResponse.RunId"));
+
+		MediaWorkflowExecution mediaWorkflowExecution = new MediaWorkflowExecution();
+		mediaWorkflowExecution.setRunId(context.stringValue("StartMediaWorkflowExecutionResponse.MediaWorkflowExecution.RunId"));
+		mediaWorkflowExecution.setName(context.stringValue("StartMediaWorkflowExecutionResponse.MediaWorkflowExecution.Name"));
+		mediaWorkflowExecution.setState(context.stringValue("StartMediaWorkflowExecutionResponse.MediaWorkflowExecution.State"));
+		mediaWorkflowExecution.setMediaId(context.stringValue("StartMediaWorkflowExecutionResponse.MediaWorkflowExecution.MediaId"));
+		mediaWorkflowExecution.setCreationTime(context.stringValue("StartMediaWorkflowExecutionResponse.MediaWorkflowExecution.CreationTime"));
+
+		Input input = new Input();
+		input.setUserData(context.stringValue("StartMediaWorkflowExecutionResponse.MediaWorkflowExecution.Input.UserData"));
+
+		InputFile inputFile = new InputFile();
+		inputFile.setBucket(context.stringValue("StartMediaWorkflowExecutionResponse.MediaWorkflowExecution.Input.InputFile.Bucket"));
+		inputFile.setLocation(context.stringValue("StartMediaWorkflowExecutionResponse.MediaWorkflowExecution.Input.InputFile.Location"));
+		inputFile.setObject(context.stringValue("StartMediaWorkflowExecutionResponse.MediaWorkflowExecution.Input.InputFile.Object"));
+		input.setInputFile(inputFile);
+		mediaWorkflowExecution.setInput(input);
+
+		List<Activity> activityList = new ArrayList<Activity>();
+		for (int i = 0; i < context.lengthValue("StartMediaWorkflowExecutionResponse.MediaWorkflowExecution.ActivityList.Length"); i++) {
+			Activity activity = new Activity();
+			activity.setName(context.stringValue("StartMediaWorkflowExecutionResponse.MediaWorkflowExecution.ActivityList["+ i +"].Name"));
+			activity.setType(context.stringValue("StartMediaWorkflowExecutionResponse.MediaWorkflowExecution.ActivityList["+ i +"].Type"));
+			activity.setJobId(context.stringValue("StartMediaWorkflowExecutionResponse.MediaWorkflowExecution.ActivityList["+ i +"].JobId"));
+			activity.setState(context.stringValue("StartMediaWorkflowExecutionResponse.MediaWorkflowExecution.ActivityList["+ i +"].State"));
+			activity.setCode(context.stringValue("StartMediaWorkflowExecutionResponse.MediaWorkflowExecution.ActivityList["+ i +"].Code"));
+			activity.setMessage(context.stringValue("StartMediaWorkflowExecutionResponse.MediaWorkflowExecution.ActivityList["+ i +"].Message"));
+			activity.setStartTime(context.stringValue("StartMediaWorkflowExecutionResponse.MediaWorkflowExecution.ActivityList["+ i +"].StartTime"));
+			activity.setEndTime(context.stringValue("StartMediaWorkflowExecutionResponse.MediaWorkflowExecution.ActivityList["+ i +"].EndTime"));
+
+			activityList.add(activity);
+		}
+		mediaWorkflowExecution.setActivityList(activityList);
+		startMediaWorkflowExecutionResponse.setMediaWorkflowExecution(mediaWorkflowExecution);
 	 
 	 	return startMediaWorkflowExecutionResponse;
 	}

@@ -23,13 +23,7 @@ import java.util.List;
 
 import com.aliyuncs.mts.model.v20140618.SearchMediaResponse;
 import com.aliyuncs.mts.model.v20140618.SearchMediaResponse.Media;
-import com.aliyuncs.mts.model.v20140618.SearchMediaResponse.Media.MediaInfo;
-import com.aliyuncs.mts.model.v20140618.SearchMediaResponse.Media.MediaInfo.Format;
-import com.aliyuncs.mts.model.v20140618.SearchMediaResponse.Media.MediaInfo.Streams;
-import com.aliyuncs.mts.model.v20140618.SearchMediaResponse.Media.MediaInfo.Streams.AudioStream;
-import com.aliyuncs.mts.model.v20140618.SearchMediaResponse.Media.MediaInfo.Streams.SubtitleStream;
-import com.aliyuncs.mts.model.v20140618.SearchMediaResponse.Media.MediaInfo.Streams.VideoStream;
-import com.aliyuncs.mts.model.v20140618.SearchMediaResponse.Media.MediaInfo.Streams.VideoStream.NetworkCost;
+import com.aliyuncs.mts.model.v20140618.SearchMediaResponse.Media.File;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -38,7 +32,7 @@ public class SearchMediaResponseUnmarshaller {
 	public static SearchMediaResponse unmarshall(SearchMediaResponse searchMediaResponse, UnmarshallerContext context) {
 		
 		searchMediaResponse.setRequestId(context.stringValue("SearchMediaResponse.RequestId"));
-		searchMediaResponse.setTotalCount(context.longValue("SearchMediaResponse.TotalCount"));
+		searchMediaResponse.setTotalNum(context.longValue("SearchMediaResponse.TotalNum"));
 		searchMediaResponse.setPageNumber(context.longValue("SearchMediaResponse.PageNumber"));
 		searchMediaResponse.setPageSize(context.longValue("SearchMediaResponse.PageSize"));
 
@@ -46,96 +40,36 @@ public class SearchMediaResponseUnmarshaller {
 		for (int i = 0; i < context.lengthValue("SearchMediaResponse.MediaList.Length"); i++) {
 			Media media = new Media();
 			media.setMediaId(context.stringValue("SearchMediaResponse.MediaList["+ i +"].MediaId"));
-			media.setFileURL(context.stringValue("SearchMediaResponse.MediaList["+ i +"].FileURL"));
-			media.setState(context.stringValue("SearchMediaResponse.MediaList["+ i +"].State"));
+			media.setTitle(context.stringValue("SearchMediaResponse.MediaList["+ i +"].Title"));
+			media.setDescription(context.stringValue("SearchMediaResponse.MediaList["+ i +"].Description"));
+			media.setCoverURL(context.stringValue("SearchMediaResponse.MediaList["+ i +"].CoverURL"));
+			media.setCateId(context.longValue("SearchMediaResponse.MediaList["+ i +"].CateId"));
+			media.setDuration(context.stringValue("SearchMediaResponse.MediaList["+ i +"].Duration"));
+			media.setFormat(context.stringValue("SearchMediaResponse.MediaList["+ i +"].Format"));
+			media.setSize(context.stringValue("SearchMediaResponse.MediaList["+ i +"].Size"));
+			media.setBitrate(context.stringValue("SearchMediaResponse.MediaList["+ i +"].Bitrate"));
+			media.setWidth(context.stringValue("SearchMediaResponse.MediaList["+ i +"].Width"));
+			media.setHeight(context.stringValue("SearchMediaResponse.MediaList["+ i +"].Height"));
+			media.setFps(context.stringValue("SearchMediaResponse.MediaList["+ i +"].Fps"));
+			media.setPublishState(context.stringValue("SearchMediaResponse.MediaList["+ i +"].PublishState"));
 			media.setCreationTime(context.stringValue("SearchMediaResponse.MediaList["+ i +"].CreationTime"));
 
-			MediaInfo mediaInfo = new MediaInfo();
-
-			Streams streams = new Streams();
-
-			List<VideoStream> videoStreamList = new ArrayList<VideoStream>();
-			for (int j = 0; j < context.lengthValue("SearchMediaResponse.MediaList["+ i +"].MediaInfo.Streams.VideoStreamList.Length"); j++) {
-				VideoStream videoStream = new VideoStream();
-				videoStream.setIndex(context.stringValue("SearchMediaResponse.MediaList["+ i +"].MediaInfo.Streams.VideoStreamList["+ j +"].Index"));
-				videoStream.setCodecName(context.stringValue("SearchMediaResponse.MediaList["+ i +"].MediaInfo.Streams.VideoStreamList["+ j +"].CodecName"));
-				videoStream.setCodecLongName(context.stringValue("SearchMediaResponse.MediaList["+ i +"].MediaInfo.Streams.VideoStreamList["+ j +"].CodecLongName"));
-				videoStream.setProfile(context.stringValue("SearchMediaResponse.MediaList["+ i +"].MediaInfo.Streams.VideoStreamList["+ j +"].Profile"));
-				videoStream.setCodecTimeBase(context.stringValue("SearchMediaResponse.MediaList["+ i +"].MediaInfo.Streams.VideoStreamList["+ j +"].CodecTimeBase"));
-				videoStream.setCodecTagString(context.stringValue("SearchMediaResponse.MediaList["+ i +"].MediaInfo.Streams.VideoStreamList["+ j +"].CodecTagString"));
-				videoStream.setCodecTag(context.stringValue("SearchMediaResponse.MediaList["+ i +"].MediaInfo.Streams.VideoStreamList["+ j +"].CodecTag"));
-				videoStream.setWidth(context.stringValue("SearchMediaResponse.MediaList["+ i +"].MediaInfo.Streams.VideoStreamList["+ j +"].Width"));
-				videoStream.setHeight(context.stringValue("SearchMediaResponse.MediaList["+ i +"].MediaInfo.Streams.VideoStreamList["+ j +"].Height"));
-				videoStream.setHasBFrames(context.stringValue("SearchMediaResponse.MediaList["+ i +"].MediaInfo.Streams.VideoStreamList["+ j +"].HasBFrames"));
-				videoStream.setSar(context.stringValue("SearchMediaResponse.MediaList["+ i +"].MediaInfo.Streams.VideoStreamList["+ j +"].Sar"));
-				videoStream.setDar(context.stringValue("SearchMediaResponse.MediaList["+ i +"].MediaInfo.Streams.VideoStreamList["+ j +"].Dar"));
-				videoStream.setPixFmt(context.stringValue("SearchMediaResponse.MediaList["+ i +"].MediaInfo.Streams.VideoStreamList["+ j +"].PixFmt"));
-				videoStream.setLevel(context.stringValue("SearchMediaResponse.MediaList["+ i +"].MediaInfo.Streams.VideoStreamList["+ j +"].Level"));
-				videoStream.setFps(context.stringValue("SearchMediaResponse.MediaList["+ i +"].MediaInfo.Streams.VideoStreamList["+ j +"].Fps"));
-				videoStream.setAvgFPS(context.stringValue("SearchMediaResponse.MediaList["+ i +"].MediaInfo.Streams.VideoStreamList["+ j +"].AvgFPS"));
-				videoStream.setTimebase(context.stringValue("SearchMediaResponse.MediaList["+ i +"].MediaInfo.Streams.VideoStreamList["+ j +"].Timebase"));
-				videoStream.setStartTime(context.stringValue("SearchMediaResponse.MediaList["+ i +"].MediaInfo.Streams.VideoStreamList["+ j +"].StartTime"));
-				videoStream.setDuration(context.stringValue("SearchMediaResponse.MediaList["+ i +"].MediaInfo.Streams.VideoStreamList["+ j +"].Duration"));
-				videoStream.setBitrate(context.stringValue("SearchMediaResponse.MediaList["+ i +"].MediaInfo.Streams.VideoStreamList["+ j +"].Bitrate"));
-				videoStream.setNumFrames(context.stringValue("SearchMediaResponse.MediaList["+ i +"].MediaInfo.Streams.VideoStreamList["+ j +"].NumFrames"));
-				videoStream.setLang(context.stringValue("SearchMediaResponse.MediaList["+ i +"].MediaInfo.Streams.VideoStreamList["+ j +"].Lang"));
-
-				NetworkCost networkCost = new NetworkCost();
-				networkCost.setPreloadTime(context.stringValue("SearchMediaResponse.MediaList["+ i +"].MediaInfo.Streams.VideoStreamList["+ j +"].NetworkCost.PreloadTime"));
-				networkCost.setCostBandwidth(context.stringValue("SearchMediaResponse.MediaList["+ i +"].MediaInfo.Streams.VideoStreamList["+ j +"].NetworkCost.CostBandwidth"));
-				networkCost.setAvgBitrate(context.stringValue("SearchMediaResponse.MediaList["+ i +"].MediaInfo.Streams.VideoStreamList["+ j +"].NetworkCost.AvgBitrate"));
-				videoStream.setNetworkCost(networkCost);
-
-				videoStreamList.add(videoStream);
+			List<String> tags = new ArrayList<String>();
+			for (int j = 0; j < context.lengthValue("SearchMediaResponse.MediaList["+ i +"].Tags.Length"); j++) {
+				tags.add(context.stringValue("SearchMediaResponse.MediaList["+ i +"].Tags["+ j +"]"));
 			}
-			streams.setVideoStreamList(videoStreamList);
+			media.setTags(tags);
 
-			List<AudioStream> audioStreamList = new ArrayList<AudioStream>();
-			for (int j = 0; j < context.lengthValue("SearchMediaResponse.MediaList["+ i +"].MediaInfo.Streams.AudioStreamList.Length"); j++) {
-				AudioStream audioStream = new AudioStream();
-				audioStream.setIndex(context.stringValue("SearchMediaResponse.MediaList["+ i +"].MediaInfo.Streams.AudioStreamList["+ j +"].Index"));
-				audioStream.setCodecName(context.stringValue("SearchMediaResponse.MediaList["+ i +"].MediaInfo.Streams.AudioStreamList["+ j +"].CodecName"));
-				audioStream.setCodecTimeBase(context.stringValue("SearchMediaResponse.MediaList["+ i +"].MediaInfo.Streams.AudioStreamList["+ j +"].CodecTimeBase"));
-				audioStream.setCodecLongName(context.stringValue("SearchMediaResponse.MediaList["+ i +"].MediaInfo.Streams.AudioStreamList["+ j +"].CodecLongName"));
-				audioStream.setCodecTagString(context.stringValue("SearchMediaResponse.MediaList["+ i +"].MediaInfo.Streams.AudioStreamList["+ j +"].CodecTagString"));
-				audioStream.setCodecTag(context.stringValue("SearchMediaResponse.MediaList["+ i +"].MediaInfo.Streams.AudioStreamList["+ j +"].CodecTag"));
-				audioStream.setSampleFmt(context.stringValue("SearchMediaResponse.MediaList["+ i +"].MediaInfo.Streams.AudioStreamList["+ j +"].SampleFmt"));
-				audioStream.setSamplerate(context.stringValue("SearchMediaResponse.MediaList["+ i +"].MediaInfo.Streams.AudioStreamList["+ j +"].Samplerate"));
-				audioStream.setChannels(context.stringValue("SearchMediaResponse.MediaList["+ i +"].MediaInfo.Streams.AudioStreamList["+ j +"].Channels"));
-				audioStream.setChannelLayout(context.stringValue("SearchMediaResponse.MediaList["+ i +"].MediaInfo.Streams.AudioStreamList["+ j +"].ChannelLayout"));
-				audioStream.setTimebase(context.stringValue("SearchMediaResponse.MediaList["+ i +"].MediaInfo.Streams.AudioStreamList["+ j +"].Timebase"));
-				audioStream.setStartTime(context.stringValue("SearchMediaResponse.MediaList["+ i +"].MediaInfo.Streams.AudioStreamList["+ j +"].StartTime"));
-				audioStream.setDuration(context.stringValue("SearchMediaResponse.MediaList["+ i +"].MediaInfo.Streams.AudioStreamList["+ j +"].Duration"));
-				audioStream.setBitrate(context.stringValue("SearchMediaResponse.MediaList["+ i +"].MediaInfo.Streams.AudioStreamList["+ j +"].Bitrate"));
-				audioStream.setNumFrames(context.stringValue("SearchMediaResponse.MediaList["+ i +"].MediaInfo.Streams.AudioStreamList["+ j +"].NumFrames"));
-				audioStream.setLang(context.stringValue("SearchMediaResponse.MediaList["+ i +"].MediaInfo.Streams.AudioStreamList["+ j +"].Lang"));
-
-				audioStreamList.add(audioStream);
+			List<String> runIdList = new ArrayList<String>();
+			for (int j = 0; j < context.lengthValue("SearchMediaResponse.MediaList["+ i +"].RunIdList.Length"); j++) {
+				runIdList.add(context.stringValue("SearchMediaResponse.MediaList["+ i +"].RunIdList["+ j +"]"));
 			}
-			streams.setAudioStreamList(audioStreamList);
+			media.setRunIdList(runIdList);
 
-			List<SubtitleStream> subtitleStreamList = new ArrayList<SubtitleStream>();
-			for (int j = 0; j < context.lengthValue("SearchMediaResponse.MediaList["+ i +"].MediaInfo.Streams.SubtitleStreamList.Length"); j++) {
-				SubtitleStream subtitleStream = new SubtitleStream();
-				subtitleStream.setIndex(context.stringValue("SearchMediaResponse.MediaList["+ i +"].MediaInfo.Streams.SubtitleStreamList["+ j +"].Index"));
-				subtitleStream.setLang(context.stringValue("SearchMediaResponse.MediaList["+ i +"].MediaInfo.Streams.SubtitleStreamList["+ j +"].Lang"));
-
-				subtitleStreamList.add(subtitleStream);
-			}
-			streams.setSubtitleStreamList(subtitleStreamList);
-			mediaInfo.setStreams(streams);
-
-			Format format = new Format();
-			format.setNumStreams(context.stringValue("SearchMediaResponse.MediaList["+ i +"].MediaInfo.Format.NumStreams"));
-			format.setNumPrograms(context.stringValue("SearchMediaResponse.MediaList["+ i +"].MediaInfo.Format.NumPrograms"));
-			format.setFormatName(context.stringValue("SearchMediaResponse.MediaList["+ i +"].MediaInfo.Format.FormatName"));
-			format.setFormatLongName(context.stringValue("SearchMediaResponse.MediaList["+ i +"].MediaInfo.Format.FormatLongName"));
-			format.setStartTime(context.stringValue("SearchMediaResponse.MediaList["+ i +"].MediaInfo.Format.StartTime"));
-			format.setDuration(context.stringValue("SearchMediaResponse.MediaList["+ i +"].MediaInfo.Format.Duration"));
-			format.setSize(context.stringValue("SearchMediaResponse.MediaList["+ i +"].MediaInfo.Format.Size"));
-			format.setBitrate(context.stringValue("SearchMediaResponse.MediaList["+ i +"].MediaInfo.Format.Bitrate"));
-			mediaInfo.setFormat(format);
-			media.setMediaInfo(mediaInfo);
+			File file = new File();
+			file.setURL(context.stringValue("SearchMediaResponse.MediaList["+ i +"].File.URL"));
+			file.setState(context.stringValue("SearchMediaResponse.MediaList["+ i +"].File.State"));
+			media.setFile(file);
 
 			mediaList.add(media);
 		}

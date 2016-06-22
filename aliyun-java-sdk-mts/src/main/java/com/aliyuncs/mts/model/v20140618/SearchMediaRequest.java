@@ -36,15 +36,25 @@ public class SearchMediaRequest extends RpcAcsRequest<SearchMediaResponse> {
 
 	private Long resourceOwnerId;
 
-	private String fileURLs;
+	private String from;
+
+	private String to;
+
+	private String keyWord;
+
+	private String title;
+
+	private String description;
+
+	private String tag;
+
+	private String cateId;
+
+	private String sortBy;
 
 	private Long pageSize;
 
 	private Long pageNumber;
-
-	private String stateList;
-
-	private String keyWords;
 
 	private String ownerAccount;
 
@@ -75,13 +85,76 @@ public class SearchMediaRequest extends RpcAcsRequest<SearchMediaResponse> {
 		putQueryParameter("ResourceOwnerId", resourceOwnerId);
 	}
 
-	public String getFileURLs() {
-		return this.fileURLs;
+	public String getFrom() {
+		return this.from;
 	}
 
-	public void setFileURLs(String fileURLs) {
-		this.fileURLs = fileURLs;
-		putQueryParameter("FileURLs", fileURLs);
+	public void setFrom(String from) {
+		this.from = from;
+		putQueryParameter("From", from);
+	}
+
+	public String getTo() {
+		return this.to;
+	}
+
+	public void setTo(String to) {
+		this.to = to;
+		putQueryParameter("To", to);
+	}
+
+	public String getKeyWord() {
+		return this.keyWord;
+	}
+
+	public void setKeyWord(String keyWord) {
+		this.keyWord = keyWord;
+		putQueryParameter("KeyWord", keyWord);
+	}
+
+	public String getTitle() {
+		return this.title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+		putQueryParameter("Title", title);
+	}
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+		putQueryParameter("Description", description);
+	}
+
+	public String getTag() {
+		return this.tag;
+	}
+
+	public void setTag(String tag) {
+		this.tag = tag;
+		putQueryParameter("Tag", tag);
+	}
+
+	public String getCateId() {
+		return this.cateId;
+	}
+
+	public void setCateId(String cateId) {
+		this.cateId = cateId;
+		putQueryParameter("CateId", cateId);
+	}
+
+	public String getSortBy() {
+		return this.sortBy;
+	}
+
+	public void setSortBy(String sortBy) {
+		this.sortBy = sortBy;
+		putQueryParameter("SortBy", sortBy);
 	}
 
 	public Long getPageSize() {
@@ -100,24 +173,6 @@ public class SearchMediaRequest extends RpcAcsRequest<SearchMediaResponse> {
 	public void setPageNumber(Long pageNumber) {
 		this.pageNumber = pageNumber;
 		putQueryParameter("PageNumber", pageNumber);
-	}
-
-	public String getStateList() {
-		return this.stateList;
-	}
-
-	public void setStateList(String stateList) {
-		this.stateList = stateList;
-		putQueryParameter("StateList", stateList);
-	}
-
-	public String getKeyWords() {
-		return this.keyWords;
-	}
-
-	public void setKeyWords(String keyWords) {
-		this.keyWords = keyWords;
-		putQueryParameter("KeyWords", keyWords);
 	}
 
 	public String getOwnerAccount() {

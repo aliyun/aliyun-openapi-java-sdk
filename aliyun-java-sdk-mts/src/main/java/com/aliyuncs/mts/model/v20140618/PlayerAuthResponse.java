@@ -31,6 +31,8 @@ public class PlayerAuthResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String logURL;
+
 	private List<Switch> switchList;
 
 	public String getRequestId() {
@@ -39,6 +41,14 @@ public class PlayerAuthResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getLogURL() {
+		return this.logURL;
+	}
+
+	public void setLogURL(String logURL) {
+		this.logURL = logURL;
 	}
 
 	public List<Switch> getSwitchList() {
@@ -56,6 +66,8 @@ public class PlayerAuthResponse extends AcsResponse {
 		private String functionId;
 
 		private String switchId;
+
+		private String functionName;
 
 		public String getState() {
 			return this.state;
@@ -79,6 +91,14 @@ public class PlayerAuthResponse extends AcsResponse {
 
 		public void setSwitchId(String switchId) {
 			this.switchId = switchId;
+		}
+
+		public String getFunctionName() {
+			return this.functionName;
+		}
+
+		public void setFunctionName(String functionName) {
+			this.functionName = functionName;
 		}
 	}
 
