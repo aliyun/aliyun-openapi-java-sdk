@@ -45,6 +45,7 @@ public class DescribeLicenseResponseUnmarshaller {
 		extendInfo.setAliUid(context.longValue("DescribeLicenseResponse.License.ExtendInfo.AliUid"));
 		extendInfo.setEmail(context.stringValue("DescribeLicenseResponse.License.ExtendInfo.Email"));
 		extendInfo.setMobile(context.stringValue("DescribeLicenseResponse.License.ExtendInfo.Mobile"));
+		extendInfo.setAccountQuantity(context.longValue("DescribeLicenseResponse.License.ExtendInfo.AccountQuantity"));
 		license.setExtendInfo(extendInfo);
 		describeLicenseResponse.setLicense(license);
 	 

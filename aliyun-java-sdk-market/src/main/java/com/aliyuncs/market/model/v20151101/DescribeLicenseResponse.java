@@ -158,6 +158,8 @@ public class DescribeLicenseResponse extends AcsResponse {
 
 			private String mobile;
 
+			private Long accountQuantity;
+
 			public Long getAliUid() {
 				return this.aliUid;
 			}
@@ -180,6 +182,14 @@ public class DescribeLicenseResponse extends AcsResponse {
 
 			public void setMobile(String mobile) {
 				this.mobile = mobile;
+			}
+
+			public Long getAccountQuantity() {
+				return this.accountQuantity;
+			}
+
+			public void setAccountQuantity(Long accountQuantity) {
+				this.accountQuantity = accountQuantity;
 			}
 		}
 	}
