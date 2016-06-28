@@ -52,6 +52,9 @@ public class SubmitSnapshotJobResponseUnmarshaller {
 		snapshotConfig.setTime(context.stringValue("SubmitSnapshotJobResponse.SnapshotJob.SnapshotConfig.Time"));
 		snapshotConfig.setInterval(context.stringValue("SubmitSnapshotJobResponse.SnapshotJob.SnapshotConfig.Interval"));
 		snapshotConfig.setNum(context.stringValue("SubmitSnapshotJobResponse.SnapshotJob.SnapshotConfig.Num"));
+		snapshotConfig.setWidth(context.stringValue("SubmitSnapshotJobResponse.SnapshotJob.SnapshotConfig.Width"));
+		snapshotConfig.setHeight(context.stringValue("SubmitSnapshotJobResponse.SnapshotJob.SnapshotConfig.Height"));
+		snapshotConfig.setFrameType(context.stringValue("SubmitSnapshotJobResponse.SnapshotJob.SnapshotConfig.FrameType"));
 
 		OutputFile outputFile = new OutputFile();
 		outputFile.setBucket(context.stringValue("SubmitSnapshotJobResponse.SnapshotJob.SnapshotConfig.OutputFile.Bucket"));

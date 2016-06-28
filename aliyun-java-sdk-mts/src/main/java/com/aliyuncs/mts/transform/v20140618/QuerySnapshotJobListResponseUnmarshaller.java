@@ -63,6 +63,9 @@ public class QuerySnapshotJobListResponseUnmarshaller {
 			snapshotConfig.setTime(context.stringValue("QuerySnapshotJobListResponse.SnapshotJobList["+ i +"].SnapshotConfig.Time"));
 			snapshotConfig.setInterval(context.stringValue("QuerySnapshotJobListResponse.SnapshotJobList["+ i +"].SnapshotConfig.Interval"));
 			snapshotConfig.setNum(context.stringValue("QuerySnapshotJobListResponse.SnapshotJobList["+ i +"].SnapshotConfig.Num"));
+			snapshotConfig.setWidth(context.stringValue("QuerySnapshotJobListResponse.SnapshotJobList["+ i +"].SnapshotConfig.Width"));
+			snapshotConfig.setHeight(context.stringValue("QuerySnapshotJobListResponse.SnapshotJobList["+ i +"].SnapshotConfig.Height"));
+			snapshotConfig.setFrameType(context.stringValue("QuerySnapshotJobListResponse.SnapshotJobList["+ i +"].SnapshotConfig.FrameType"));
 
 			OutputFile outputFile = new OutputFile();
 			outputFile.setBucket(context.stringValue("QuerySnapshotJobListResponse.SnapshotJobList["+ i +"].SnapshotConfig.OutputFile.Bucket"));

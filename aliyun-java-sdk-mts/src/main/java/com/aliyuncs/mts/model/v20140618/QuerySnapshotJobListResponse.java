@@ -202,6 +202,12 @@ public class QuerySnapshotJobListResponse extends AcsResponse {
 
 			private String num;
 
+			private String width;
+
+			private String height;
+
+			private String frameType;
+
 			private OutputFile outputFile;
 
 			public String getTime() {
@@ -226,6 +232,30 @@ public class QuerySnapshotJobListResponse extends AcsResponse {
 
 			public void setNum(String num) {
 				this.num = num;
+			}
+
+			public String getWidth() {
+				return this.width;
+			}
+
+			public void setWidth(String width) {
+				this.width = width;
+			}
+
+			public String getHeight() {
+				return this.height;
+			}
+
+			public void setHeight(String height) {
+				this.height = height;
+			}
+
+			public String getFrameType() {
+				return this.frameType;
+			}
+
+			public void setFrameType(String frameType) {
+				this.frameType = frameType;
 			}
 
 			public OutputFile getOutputFile() {
