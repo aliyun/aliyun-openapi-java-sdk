@@ -21,6 +21,7 @@ package com.aliyuncs.batchcompute.main.v20151111;
 
 import com.aliyuncs.batchcompute.model.v20151111.*;
 import com.aliyuncs.batchcompute.pojo.v20151111.ClusterDescription;
+import com.aliyuncs.batchcompute.pojo.v20151111.ImageDescription;
 import com.aliyuncs.batchcompute.pojo.v20151111.JobDescription;
 import com.aliyuncs.exceptions.ClientException;
 
@@ -134,4 +135,17 @@ public interface BatchCompute {
     DeleteClusterInstanceResponse deleteClusterInstance(String clusterId, String groupName, String instanceId) throws ClientException;
     DeleteClusterInstanceResponse deleteClusterInstance(DeleteClusterInstanceRequest req) throws ClientException;
 
+    /** image **/
+    GetImageResponse getImage(String imageId) throws ClientException;
+    GetImageResponse getImage(GetImageRequest req) throws ClientException;
+
+    CreateImageResponse createImage(ImageDescription imageDescription) throws ClientException;
+    CreateImageResponse createImage(CreateImageRequest req) throws ClientException;
+
+    DeleteImageResponse deleteImage(String imageId) throws ClientException;
+    DeleteImageResponse deleteImage(DeleteImageRequest req) throws ClientException;
+
+    ListImagesResponse listImages() throws ClientException;
+    ListImagesResponse listImages(String marker, int maxItemCount) throws ClientException;
+    ListImagesResponse listImages(ListImagesRequest req) throws ClientException;
 }

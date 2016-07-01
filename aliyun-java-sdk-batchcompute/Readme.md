@@ -46,7 +46,7 @@ make doc # 生成Reference文档
 先修改version为SNAPSHOP
 
 ```xml
-<version>3.0.0-SNAPSHOP</version>
+<version>3.0.6-SNAPSHOP</version>
 ```
 
 发布命令(SNAPSHOT版本可以重复发)
@@ -71,14 +71,14 @@ make deploy
 <dependency>
     <groupId>com.aliyun</groupId>
     <artifactId>aliyun-java-sdk-core</artifactId>
-    <version>2.2.0</version>
+    <version>3.0.0</version>
 </dependency>
 
 
 <dependency>
     <groupId>com.aliyun</groupId>
     <artifactId>aliyun-java-sdk-batchcompute</artifactId>
-    <version>3.0.4</version>
+    <version>3.0.6</version>
 </dependency>
 ```
 
@@ -143,6 +143,7 @@ try {
 | 2. | getCluster(String clusterId) | 获取Cluster信息 |
 | 3. | deleteCluster(String clusterId) | 删除Cluster |
 | 4. | listClusters(String marker, int maxItemCount) | 列举Cluster信息 |
+| 5. | changeClusterDesiredVMCount(String clusterId, String groupName, int count) | 修改期望虚机数 |
 |  | *ClusterInstance相关* | |
 | 1. | listClusterInstances(String clusterId, String groupName) | 获取ClusterInstance 列表 |
 | 2. | getClusterInstance(String clusterId, String groupName, String instanceId) | 获取ClusterInstance信息 |
@@ -161,5 +162,10 @@ try {
 | 1. | listTasks(String jobId,String marker, int maxItemCount) | 列举一个job下所有task的状态信息 |
 | 2. | getTask(String jobId, String taskName) | 获取task状态信息 |
 |  | *Instance相关* | |
-| 2. | listInstances(String jobId, String taskName, String marker, int maxItemCount) | 获取task状态信息 |
+| 1. | listInstances(String jobId, String taskName, String marker, int maxItemCount) | 获取task状态信息 |
 | 2. | getInstance(String jobId, String taskName) | 获取 instance 状态信息 |
+|  | *Image相关* | |
+| 1. | listImages(String marker, int maxItemCount) | 列举Images |
+| 2. | getImage(String imageId) | 获取 Image 信息 |
+| 2. | deleteImage(String imageId) | 删除Image |
+| 2. | createImage(ImageDescription imageDescription) | 创建Image |

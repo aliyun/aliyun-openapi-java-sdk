@@ -26,6 +26,7 @@ import com.aliyuncs.DefaultAcsClient;
 import com.aliyuncs.IAcsClient;
 import com.aliyuncs.batchcompute.model.v20151111.*;
 import com.aliyuncs.batchcompute.pojo.v20151111.ClusterDescription;
+import com.aliyuncs.batchcompute.pojo.v20151111.ImageDescription;
 import com.aliyuncs.batchcompute.pojo.v20151111.JobDescription;
 import com.aliyuncs.exceptions.ClientException;
 import com.aliyuncs.http.HttpResponse;
@@ -44,6 +45,9 @@ public class BatchComputeClient implements BatchCompute {
 
     private IAcsClient client;
 
+    static{
+        BatchComputeClient.addEndpoint("cn-beijing", "batchcompute.cn-beijing.aliyuncs.com");
+    }
 
     public BatchComputeClient(String regionId, String accessKeyId, String accessKeySecret) {
         this.client = new DefaultAcsClient(DefaultProfile.getProfile(regionId, accessKeyId, accessKeySecret));
@@ -440,6 +444,62 @@ public class BatchComputeClient implements BatchCompute {
 
     @Override
     public DeleteClusterInstanceResponse deleteClusterInstance(DeleteClusterInstanceRequest req) throws ClientException {
+        return getAcsResponse(req);
+    }
+
+
+
+    @Override
+    public GetImageResponse getImage(String imageId) throws ClientException {
+        GetImageRequest req = new GetImageRequest();
+        req.setImageId(imageId);
+        return getImage(req);
+    }
+
+    @Override
+    public GetImageResponse getImage(GetImageRequest req) throws ClientException {
+        return getAcsResponse(req);
+    }
+
+    @Override
+    public CreateImageResponse createImage(ImageDescription imageDescription) throws ClientException {
+        CreateImageRequest req = new CreateImageRequest();
+        req.setImageDescription(imageDescription);
+        return createImage(req);
+    }
+
+    @Override
+    public CreateImageResponse createImage(CreateImageRequest req) throws ClientException {
+        return getAcsResponse(req);
+    }
+
+    @Override
+    public DeleteImageResponse deleteImage(String imageId) throws ClientException {
+        DeleteImageRequest req = new DeleteImageRequest();
+        req.setImageId(imageId);
+        return deleteImage(req);
+    }
+
+    @Override
+    public DeleteImageResponse deleteImage(DeleteImageRequest req) throws ClientException {
+        return getAcsResponse(req);
+    }
+
+    @Override
+    public ListImagesResponse listImages() throws ClientException {
+        ListImagesRequest req = new ListImagesRequest();
+        return listImages(req);
+    }
+    @Override
+    public ListImagesResponse listImages(String marker, int maxItemCount) throws ClientException {
+        ListImagesRequest req = new ListImagesRequest();
+        req.setMarker(marker);
+        req.setMaxItemCount(maxItemCount);
+        return listImages(req);
+    }
+
+    @Override
+    public ListImagesResponse listImages(ListImagesRequest req) throws ClientException {
         return getAcsResponse(req);
     }
 

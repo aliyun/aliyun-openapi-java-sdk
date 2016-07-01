@@ -1,0 +1,5 @@
+<root>
+  <item name='java.util.List'>
+    <annotation name='org.jetbrains.annotations.Nullable'/>
+  </item>
+</root>
