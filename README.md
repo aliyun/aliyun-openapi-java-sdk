@@ -99,6 +99,11 @@ We provide different installing ways for different programming language.（不�
 	  <artifactId>aliyun-java-sdk-ossadmin</artifactId>
 	  <version>2.0.0</version>
 	</dependency>
+	<dependency>
+	  <groupId>com.aliyun</groupId>
+	  <artifactId>aliyun-java-sdk-kms</artifactId>
+	  <version>2.1.0</version>
+	</dependency>
 </dependencies>
 ```
 
