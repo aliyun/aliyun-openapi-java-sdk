@@ -26,11 +26,14 @@ import com.aliyuncs.cdn.model.v20141111.DescribeDomainConfigsResponse.DomainConf
 import com.aliyuncs.cdn.model.v20141111.DescribeDomainConfigsResponse.DomainConfigs.CacheExpiredConfig;
 import com.aliyuncs.cdn.model.v20141111.DescribeDomainConfigsResponse.DomainConfigs.CcConfig;
 import com.aliyuncs.cdn.model.v20141111.DescribeDomainConfigsResponse.DomainConfigs.ErrorPageConfig;
+import com.aliyuncs.cdn.model.v20141111.DescribeDomainConfigsResponse.DomainConfigs.ForwardSchemeConfig;
 import com.aliyuncs.cdn.model.v20141111.DescribeDomainConfigsResponse.DomainConfigs.HttpHeaderConfig;
 import com.aliyuncs.cdn.model.v20141111.DescribeDomainConfigsResponse.DomainConfigs.IgnoreQueryStringConfig;
+import com.aliyuncs.cdn.model.v20141111.DescribeDomainConfigsResponse.DomainConfigs.NotifyUrlConfig;
 import com.aliyuncs.cdn.model.v20141111.DescribeDomainConfigsResponse.DomainConfigs.OptimizeConfig;
 import com.aliyuncs.cdn.model.v20141111.DescribeDomainConfigsResponse.DomainConfigs.PageCompressConfig;
 import com.aliyuncs.cdn.model.v20141111.DescribeDomainConfigsResponse.DomainConfigs.RangeConfig;
+import com.aliyuncs.cdn.model.v20141111.DescribeDomainConfigsResponse.DomainConfigs.RedirectTypeConfig;
 import com.aliyuncs.cdn.model.v20141111.DescribeDomainConfigsResponse.DomainConfigs.RefererConfig;
 import com.aliyuncs.cdn.model.v20141111.DescribeDomainConfigsResponse.DomainConfigs.ReqAuthConfig;
 import com.aliyuncs.cdn.model.v20141111.DescribeDomainConfigsResponse.DomainConfigs.SrcHostConfig;
@@ -100,6 +103,21 @@ public class DescribeDomainConfigsResponseUnmarshaller {
 		wafConfig.setEnable(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.WafConfig.Enable"));
 		domainConfigs.setWafConfig(wafConfig);
 
+		NotifyUrlConfig notifyUrlConfig = new NotifyUrlConfig();
+		notifyUrlConfig.setEnable(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.NotifyUrlConfig.Enable"));
+		notifyUrlConfig.setNotifyUrl(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.NotifyUrlConfig.NotifyUrl"));
+		domainConfigs.setNotifyUrlConfig(notifyUrlConfig);
+
+		RedirectTypeConfig redirectTypeConfig = new RedirectTypeConfig();
+		redirectTypeConfig.setRedirectType(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.RedirectTypeConfig.RedirectType"));
+		domainConfigs.setRedirectTypeConfig(redirectTypeConfig);
+
+		ForwardSchemeConfig forwardSchemeConfig = new ForwardSchemeConfig();
+		forwardSchemeConfig.setEnable(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.ForwardSchemeConfig.Enable"));
+		forwardSchemeConfig.setSchemeOrigin(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.ForwardSchemeConfig.SchemeOrigin"));
+		forwardSchemeConfig.setSchemeOriginPort(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.ForwardSchemeConfig.SchemeOriginPort"));
+		domainConfigs.setForwardSchemeConfig(forwardSchemeConfig);
+
 		List<CacheExpiredConfig> cacheExpiredConfigs = new ArrayList<CacheExpiredConfig>();
 		for (int i = 0; i < context.lengthValue("DescribeDomainConfigsResponse.DomainConfigs.CacheExpiredConfigs.Length"); i++) {
 			CacheExpiredConfig cacheExpiredConfig = new CacheExpiredConfig();
@@ -107,6 +125,7 @@ public class DescribeDomainConfigsResponseUnmarshaller {
 			cacheExpiredConfig.setCacheType(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.CacheExpiredConfigs["+ i +"].CacheType"));
 			cacheExpiredConfig.setCacheContent(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.CacheExpiredConfigs["+ i +"].CacheContent"));
 			cacheExpiredConfig.setTTL(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.CacheExpiredConfigs["+ i +"].TTL"));
+			cacheExpiredConfig.setWeight(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.CacheExpiredConfigs["+ i +"].Weight"));
 			cacheExpiredConfig.setStatus(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.CacheExpiredConfigs["+ i +"].Status"));
 
 			cacheExpiredConfigs.add(cacheExpiredConfig);

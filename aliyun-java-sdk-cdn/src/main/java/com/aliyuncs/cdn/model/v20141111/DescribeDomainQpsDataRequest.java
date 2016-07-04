@@ -40,6 +40,8 @@ public class DescribeDomainQpsDataRequest extends RpcAcsRequest<DescribeDomainQp
 
 	private String endTime;
 
+	private String timeMerge;
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -83,6 +85,15 @@ public class DescribeDomainQpsDataRequest extends RpcAcsRequest<DescribeDomainQp
 	public void setEndTime(String endTime) {
 		this.endTime = endTime;
 		putQueryParameter("EndTime", endTime);
+	}
+
+	public String getTimeMerge() {
+		return this.timeMerge;
+	}
+
+	public void setTimeMerge(String timeMerge) {
+		this.timeMerge = timeMerge;
+		putQueryParameter("TimeMerge", timeMerge);
 	}
 
 	@Override

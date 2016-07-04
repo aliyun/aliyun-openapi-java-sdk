@@ -38,6 +38,10 @@ public class DescribeCdnDomainLogsRequest extends RpcAcsRequest<DescribeCdnDomai
 
 	private String logDay;
 
+	private Long pageSize;
+
+	private Long pageNumber;
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -72,6 +76,24 @@ public class DescribeCdnDomainLogsRequest extends RpcAcsRequest<DescribeCdnDomai
 	public void setLogDay(String logDay) {
 		this.logDay = logDay;
 		putQueryParameter("LogDay", logDay);
+	}
+
+	public Long getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Long pageSize) {
+		this.pageSize = pageSize;
+		putQueryParameter("PageSize", pageSize);
+	}
+
+	public Long getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Long pageNumber) {
+		this.pageNumber = pageNumber;
+		putQueryParameter("PageNumber", pageNumber);
 	}
 
 	@Override

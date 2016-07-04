@@ -41,6 +41,8 @@ public class DescribeDomainFlowDataResponseUnmarshaller {
 			DataModule dataModule = new DataModule();
 			dataModule.setTimeStamp(context.stringValue("DescribeDomainFlowDataResponse.FlowDataPerInterval["+ i +"].TimeStamp"));
 			dataModule.setValue(context.stringValue("DescribeDomainFlowDataResponse.FlowDataPerInterval["+ i +"].Value"));
+			dataModule.setDomesticValue(context.stringValue("DescribeDomainFlowDataResponse.FlowDataPerInterval["+ i +"].DomesticValue"));
+			dataModule.setOverseasValue(context.stringValue("DescribeDomainFlowDataResponse.FlowDataPerInterval["+ i +"].OverseasValue"));
 
 			flowDataPerInterval.add(dataModule);
 		}

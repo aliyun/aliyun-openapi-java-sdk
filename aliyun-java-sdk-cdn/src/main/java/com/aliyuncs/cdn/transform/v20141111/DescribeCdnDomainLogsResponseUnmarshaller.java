@@ -32,6 +32,9 @@ public class DescribeCdnDomainLogsResponseUnmarshaller {
 	public static DescribeCdnDomainLogsResponse unmarshall(DescribeCdnDomainLogsResponse describeCdnDomainLogsResponse, UnmarshallerContext context) {
 		
 		describeCdnDomainLogsResponse.setRequestId(context.stringValue("DescribeCdnDomainLogsResponse.RequestId"));
+		describeCdnDomainLogsResponse.setPageNumber(context.longValue("DescribeCdnDomainLogsResponse.PageNumber"));
+		describeCdnDomainLogsResponse.setPageSize(context.longValue("DescribeCdnDomainLogsResponse.PageSize"));
+		describeCdnDomainLogsResponse.setTotalCount(context.longValue("DescribeCdnDomainLogsResponse.TotalCount"));
 
 		DomainLogModel domainLogModel = new DomainLogModel();
 		domainLogModel.setDomainName(context.stringValue("DescribeCdnDomainLogsResponse.DomainLogModel.DomainName"));

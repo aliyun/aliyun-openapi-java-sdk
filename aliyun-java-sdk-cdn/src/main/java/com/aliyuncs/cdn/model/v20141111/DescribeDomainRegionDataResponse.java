@@ -95,6 +95,30 @@ public class DescribeDomainRegionDataResponse extends AcsResponse {
 
 		private String proportion;
 
+		private String regionEname;
+
+		private String avgObjectSize;
+
+		private String avgResponseTime;
+
+		private String bps;
+
+		private String byteHitRate;
+
+		private String qps;
+
+		private String reqErrRate;
+
+		private String reqHitRate;
+
+		private String avgResponseRate;
+
+		private String totalBytes;
+
+		private String bytesProportion;
+
+		private String totalQuery;
+
 		public String getRegion() {
 			return this.region;
 		}
@@ -109,6 +133,102 @@ public class DescribeDomainRegionDataResponse extends AcsResponse {
 
 		public void setProportion(String proportion) {
 			this.proportion = proportion;
+		}
+
+		public String getRegionEname() {
+			return this.regionEname;
+		}
+
+		public void setRegionEname(String regionEname) {
+			this.regionEname = regionEname;
+		}
+
+		public String getAvgObjectSize() {
+			return this.avgObjectSize;
+		}
+
+		public void setAvgObjectSize(String avgObjectSize) {
+			this.avgObjectSize = avgObjectSize;
+		}
+
+		public String getAvgResponseTime() {
+			return this.avgResponseTime;
+		}
+
+		public void setAvgResponseTime(String avgResponseTime) {
+			this.avgResponseTime = avgResponseTime;
+		}
+
+		public String getBps() {
+			return this.bps;
+		}
+
+		public void setBps(String bps) {
+			this.bps = bps;
+		}
+
+		public String getByteHitRate() {
+			return this.byteHitRate;
+		}
+
+		public void setByteHitRate(String byteHitRate) {
+			this.byteHitRate = byteHitRate;
+		}
+
+		public String getQps() {
+			return this.qps;
+		}
+
+		public void setQps(String qps) {
+			this.qps = qps;
+		}
+
+		public String getReqErrRate() {
+			return this.reqErrRate;
+		}
+
+		public void setReqErrRate(String reqErrRate) {
+			this.reqErrRate = reqErrRate;
+		}
+
+		public String getReqHitRate() {
+			return this.reqHitRate;
+		}
+
+		public void setReqHitRate(String reqHitRate) {
+			this.reqHitRate = reqHitRate;
+		}
+
+		public String getAvgResponseRate() {
+			return this.avgResponseRate;
+		}
+
+		public void setAvgResponseRate(String avgResponseRate) {
+			this.avgResponseRate = avgResponseRate;
+		}
+
+		public String getTotalBytes() {
+			return this.totalBytes;
+		}
+
+		public void setTotalBytes(String totalBytes) {
+			this.totalBytes = totalBytes;
+		}
+
+		public String getBytesProportion() {
+			return this.bytesProportion;
+		}
+
+		public void setBytesProportion(String bytesProportion) {
+			this.bytesProportion = bytesProportion;
+		}
+
+		public String getTotalQuery() {
+			return this.totalQuery;
+		}
+
+		public void setTotalQuery(String totalQuery) {
+			this.totalQuery = totalQuery;
 		}
 	}
 

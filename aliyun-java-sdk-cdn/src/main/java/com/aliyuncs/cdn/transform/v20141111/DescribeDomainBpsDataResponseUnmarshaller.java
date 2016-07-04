@@ -35,16 +35,32 @@ public class DescribeDomainBpsDataResponseUnmarshaller {
 		describeDomainBpsDataResponse.setDataInterval(context.stringValue("DescribeDomainBpsDataResponse.DataInterval"));
 		describeDomainBpsDataResponse.setStartTime(context.stringValue("DescribeDomainBpsDataResponse.StartTime"));
 		describeDomainBpsDataResponse.setEndTime(context.stringValue("DescribeDomainBpsDataResponse.EndTime"));
+		describeDomainBpsDataResponse.setLocationNameEn(context.stringValue("DescribeDomainBpsDataResponse.LocationNameEn"));
+		describeDomainBpsDataResponse.setIspNameEn(context.stringValue("DescribeDomainBpsDataResponse.IspNameEn"));
+		describeDomainBpsDataResponse.setLocationName(context.stringValue("DescribeDomainBpsDataResponse.LocationName"));
+		describeDomainBpsDataResponse.setIspName(context.stringValue("DescribeDomainBpsDataResponse.IspName"));
 
 		List<DataModule> bpsDataPerInterval = new ArrayList<DataModule>();
 		for (int i = 0; i < context.lengthValue("DescribeDomainBpsDataResponse.BpsDataPerInterval.Length"); i++) {
 			DataModule dataModule = new DataModule();
 			dataModule.setTimeStamp(context.stringValue("DescribeDomainBpsDataResponse.BpsDataPerInterval["+ i +"].TimeStamp"));
 			dataModule.setValue(context.stringValue("DescribeDomainBpsDataResponse.BpsDataPerInterval["+ i +"].Value"));
+			dataModule.setDomesticValue(context.stringValue("DescribeDomainBpsDataResponse.BpsDataPerInterval["+ i +"].DomesticValue"));
+			dataModule.setOverseasValue(context.stringValue("DescribeDomainBpsDataResponse.BpsDataPerInterval["+ i +"].OverseasValue"));
 
 			bpsDataPerInterval.add(dataModule);
 		}
 		describeDomainBpsDataResponse.setBpsDataPerInterval(bpsDataPerInterval);
+
+		List<DataModule> supplyBpsDatas = new ArrayList<DataModule>();
+		for (int i = 0; i < context.lengthValue("DescribeDomainBpsDataResponse.SupplyBpsDatas.Length"); i++) {
+			DataModule dataModule = new DataModule();
+			dataModule.setTimeStamp(context.stringValue("DescribeDomainBpsDataResponse.SupplyBpsDatas["+ i +"].TimeStamp"));
+			dataModule.setValue(context.stringValue("DescribeDomainBpsDataResponse.SupplyBpsDatas["+ i +"].Value"));
+
+			supplyBpsDatas.add(dataModule);
+		}
+		describeDomainBpsDataResponse.setSupplyBpsDatas(supplyBpsDatas);
 	 
 	 	return describeDomainBpsDataResponse;
 	}

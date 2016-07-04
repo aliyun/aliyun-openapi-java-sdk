@@ -42,6 +42,8 @@ public class SetReqAuthConfigRequest extends RpcAcsRequest<SetReqAuthConfigRespo
 
 	private String key2;
 
+	private String timeOut;
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -94,6 +96,15 @@ public class SetReqAuthConfigRequest extends RpcAcsRequest<SetReqAuthConfigRespo
 	public void setKey2(String key2) {
 		this.key2 = key2;
 		putQueryParameter("Key2", key2);
+	}
+
+	public String getTimeOut() {
+		return this.timeOut;
+	}
+
+	public void setTimeOut(String timeOut) {
+		this.timeOut = timeOut;
+		putQueryParameter("TimeOut", timeOut);
 	}
 
 	@Override

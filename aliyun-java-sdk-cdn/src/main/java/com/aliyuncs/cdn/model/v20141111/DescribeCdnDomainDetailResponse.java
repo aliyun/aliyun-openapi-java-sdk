@@ -59,6 +59,8 @@ public class DescribeCdnDomainDetailResponse extends AcsResponse {
 
 		private String domainStatus;
 
+		private Integer sourcePort;
+
 		private String cdnType;
 
 		private String cname;
@@ -105,6 +107,14 @@ public class DescribeCdnDomainDetailResponse extends AcsResponse {
 
 		public void setDomainStatus(String domainStatus) {
 			this.domainStatus = domainStatus;
+		}
+
+		public Integer getSourcePort() {
+			return this.sourcePort;
+		}
+
+		public void setSourcePort(Integer sourcePort) {
+			this.sourcePort = sourcePort;
 		}
 
 		public String getCdnType() {

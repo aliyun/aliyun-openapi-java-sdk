@@ -95,6 +95,10 @@ public class DescribeDomainFlowDataResponse extends AcsResponse {
 
 		private String value;
 
+		private String domesticValue;
+
+		private String overseasValue;
+
 		public String getTimeStamp() {
 			return this.timeStamp;
 		}
@@ -109,6 +113,22 @@ public class DescribeDomainFlowDataResponse extends AcsResponse {
 
 		public void setValue(String value) {
 			this.value = value;
+		}
+
+		public String getDomesticValue() {
+			return this.domesticValue;
+		}
+
+		public void setDomesticValue(String domesticValue) {
+			this.domesticValue = domesticValue;
+		}
+
+		public String getOverseasValue() {
+			return this.overseasValue;
+		}
+
+		public void setOverseasValue(String overseasValue) {
+			this.overseasValue = overseasValue;
 		}
 	}
 

@@ -44,6 +44,8 @@ public class AddCdnDomainRequest extends RpcAcsRequest<AddCdnDomainResponse> {
 
 	private String sources;
 
+	private Integer sourcePort;
+
 	private String serverCertificate;
 
 	private String privateKey;
@@ -109,6 +111,15 @@ public class AddCdnDomainRequest extends RpcAcsRequest<AddCdnDomainResponse> {
 	public void setSources(String sources) {
 		this.sources = sources;
 		putQueryParameter("Sources", sources);
+	}
+
+	public Integer getSourcePort() {
+		return this.sourcePort;
+	}
+
+	public void setSourcePort(Integer sourcePort) {
+		this.sourcePort = sourcePort;
+		putQueryParameter("SourcePort", sourcePort);
 	}
 
 	public String getServerCertificate() {

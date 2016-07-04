@@ -29,7 +29,9 @@ public class DescribeIpInfoResponseUnmarshaller {
 		describeIpInfoResponse.setRequestId(context.stringValue("DescribeIpInfoResponse.RequestId"));
 		describeIpInfoResponse.setCdnIp(context.stringValue("DescribeIpInfoResponse.CdnIp"));
 		describeIpInfoResponse.setISP(context.stringValue("DescribeIpInfoResponse.ISP"));
+		describeIpInfoResponse.setIspEname(context.stringValue("DescribeIpInfoResponse.IspEname"));
 		describeIpInfoResponse.setRegion(context.stringValue("DescribeIpInfoResponse.Region"));
+		describeIpInfoResponse.setRegionEname(context.stringValue("DescribeIpInfoResponse.RegionEname"));
 	 
 	 	return describeIpInfoResponse;
 	}

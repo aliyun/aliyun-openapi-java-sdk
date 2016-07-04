@@ -41,6 +41,11 @@ public class DescribeDomainQpsDataResponseUnmarshaller {
 			DataModule dataModule = new DataModule();
 			dataModule.setTimeStamp(context.stringValue("DescribeDomainQpsDataResponse.QpsDataInterval["+ i +"].TimeStamp"));
 			dataModule.setValue(context.stringValue("DescribeDomainQpsDataResponse.QpsDataInterval["+ i +"].Value"));
+			dataModule.setDomesticValue(context.stringValue("DescribeDomainQpsDataResponse.QpsDataInterval["+ i +"].DomesticValue"));
+			dataModule.setOverseasValue(context.stringValue("DescribeDomainQpsDataResponse.QpsDataInterval["+ i +"].OverseasValue"));
+			dataModule.setAccValue(context.stringValue("DescribeDomainQpsDataResponse.QpsDataInterval["+ i +"].AccValue"));
+			dataModule.setAccDomesticValue(context.stringValue("DescribeDomainQpsDataResponse.QpsDataInterval["+ i +"].AccDomesticValue"));
+			dataModule.setAccOverseasValue(context.stringValue("DescribeDomainQpsDataResponse.QpsDataInterval["+ i +"].AccOverseasValue"));
 
 			qpsDataInterval.add(dataModule);
 		}

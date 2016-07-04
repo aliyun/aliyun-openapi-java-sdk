@@ -40,6 +40,12 @@ public class DescribeDomainBpsDataRequest extends RpcAcsRequest<DescribeDomainBp
 
 	private String endTime;
 
+	private String timeMerge;
+
+	private String locationNameEn;
+
+	private String ispNameEn;
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -83,6 +89,33 @@ public class DescribeDomainBpsDataRequest extends RpcAcsRequest<DescribeDomainBp
 	public void setEndTime(String endTime) {
 		this.endTime = endTime;
 		putQueryParameter("EndTime", endTime);
+	}
+
+	public String getTimeMerge() {
+		return this.timeMerge;
+	}
+
+	public void setTimeMerge(String timeMerge) {
+		this.timeMerge = timeMerge;
+		putQueryParameter("TimeMerge", timeMerge);
+	}
+
+	public String getLocationNameEn() {
+		return this.locationNameEn;
+	}
+
+	public void setLocationNameEn(String locationNameEn) {
+		this.locationNameEn = locationNameEn;
+		putQueryParameter("LocationNameEn", locationNameEn);
+	}
+
+	public String getIspNameEn() {
+		return this.ispNameEn;
+	}
+
+	public void setIspNameEn(String ispNameEn) {
+		this.ispNameEn = ispNameEn;
+		putQueryParameter("IspNameEn", ispNameEn);
 	}
 
 	@Override

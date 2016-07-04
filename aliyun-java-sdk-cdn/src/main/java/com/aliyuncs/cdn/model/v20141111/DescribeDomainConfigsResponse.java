@@ -77,6 +77,12 @@ public class DescribeDomainConfigsResponse extends AcsResponse {
 
 		private WafConfig wafConfig;
 
+		private NotifyUrlConfig notifyUrlConfig;
+
+		private RedirectTypeConfig redirectTypeConfig;
+
+		private ForwardSchemeConfig forwardSchemeConfig;
+
 		public List<CacheExpiredConfig> getCacheExpiredConfigs() {
 			return this.cacheExpiredConfigs;
 		}
@@ -181,6 +187,30 @@ public class DescribeDomainConfigsResponse extends AcsResponse {
 			this.wafConfig = wafConfig;
 		}
 
+		public NotifyUrlConfig getNotifyUrlConfig() {
+			return this.notifyUrlConfig;
+		}
+
+		public void setNotifyUrlConfig(NotifyUrlConfig notifyUrlConfig) {
+			this.notifyUrlConfig = notifyUrlConfig;
+		}
+
+		public RedirectTypeConfig getRedirectTypeConfig() {
+			return this.redirectTypeConfig;
+		}
+
+		public void setRedirectTypeConfig(RedirectTypeConfig redirectTypeConfig) {
+			this.redirectTypeConfig = redirectTypeConfig;
+		}
+
+		public ForwardSchemeConfig getForwardSchemeConfig() {
+			return this.forwardSchemeConfig;
+		}
+
+		public void setForwardSchemeConfig(ForwardSchemeConfig forwardSchemeConfig) {
+			this.forwardSchemeConfig = forwardSchemeConfig;
+		}
+
 		public static class CacheExpiredConfig {
 
 			private String configId;
@@ -190,6 +220,8 @@ public class DescribeDomainConfigsResponse extends AcsResponse {
 			private String cacheContent;
 
 			private String tTL;
+
+			private String weight;
 
 			private String status;
 
@@ -223,6 +255,14 @@ public class DescribeDomainConfigsResponse extends AcsResponse {
 
 			public void setTTL(String tTL) {
 				this.tTL = tTL;
+			}
+
+			public String getWeight() {
+				return this.weight;
+			}
+
+			public void setWeight(String weight) {
+				this.weight = weight;
 			}
 
 			public String getStatus() {
@@ -507,6 +547,75 @@ public class DescribeDomainConfigsResponse extends AcsResponse {
 
 			public void setEnable(String enable) {
 				this.enable = enable;
+			}
+		}
+
+		public static class NotifyUrlConfig {
+
+			private String enable;
+
+			private String notifyUrl;
+
+			public String getEnable() {
+				return this.enable;
+			}
+
+			public void setEnable(String enable) {
+				this.enable = enable;
+			}
+
+			public String getNotifyUrl() {
+				return this.notifyUrl;
+			}
+
+			public void setNotifyUrl(String notifyUrl) {
+				this.notifyUrl = notifyUrl;
+			}
+		}
+
+		public static class RedirectTypeConfig {
+
+			private String redirectType;
+
+			public String getRedirectType() {
+				return this.redirectType;
+			}
+
+			public void setRedirectType(String redirectType) {
+				this.redirectType = redirectType;
+			}
+		}
+
+		public static class ForwardSchemeConfig {
+
+			private String enable;
+
+			private String schemeOrigin;
+
+			private String schemeOriginPort;
+
+			public String getEnable() {
+				return this.enable;
+			}
+
+			public void setEnable(String enable) {
+				this.enable = enable;
+			}
+
+			public String getSchemeOrigin() {
+				return this.schemeOrigin;
+			}
+
+			public void setSchemeOrigin(String schemeOrigin) {
+				this.schemeOrigin = schemeOrigin;
+			}
+
+			public String getSchemeOriginPort() {
+				return this.schemeOriginPort;
+			}
+
+			public void setSchemeOriginPort(String schemeOriginPort) {
+				this.schemeOriginPort = schemeOriginPort;
 			}
 		}
 	}

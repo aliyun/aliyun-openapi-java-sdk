@@ -36,6 +36,8 @@ public class SetSourceHostConfigRequest extends RpcAcsRequest<SetSourceHostConfi
 
 	private String domainName;
 
+	private String enable;
+
 	private String backSrcDomain;
 
 	public Long getOwnerId() {
@@ -63,6 +65,15 @@ public class SetSourceHostConfigRequest extends RpcAcsRequest<SetSourceHostConfi
 	public void setDomainName(String domainName) {
 		this.domainName = domainName;
 		putQueryParameter("DomainName", domainName);
+	}
+
+	public String getEnable() {
+		return this.enable;
+	}
+
+	public void setEnable(String enable) {
+		this.enable = enable;
+		putQueryParameter("Enable", enable);
 	}
 
 	public String getBackSrcDomain() {

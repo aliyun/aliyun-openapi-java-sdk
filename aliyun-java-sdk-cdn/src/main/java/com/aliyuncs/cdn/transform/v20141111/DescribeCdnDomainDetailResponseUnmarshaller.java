@@ -37,6 +37,7 @@ public class DescribeCdnDomainDetailResponseUnmarshaller {
 		getDomainDetailModel.setGmtModified(context.stringValue("DescribeCdnDomainDetailResponse.GetDomainDetailModel.GmtModified"));
 		getDomainDetailModel.setSourceType(context.stringValue("DescribeCdnDomainDetailResponse.GetDomainDetailModel.SourceType"));
 		getDomainDetailModel.setDomainStatus(context.stringValue("DescribeCdnDomainDetailResponse.GetDomainDetailModel.DomainStatus"));
+		getDomainDetailModel.setSourcePort(context.integerValue("DescribeCdnDomainDetailResponse.GetDomainDetailModel.SourcePort"));
 		getDomainDetailModel.setCdnType(context.stringValue("DescribeCdnDomainDetailResponse.GetDomainDetailModel.CdnType"));
 		getDomainDetailModel.setCname(context.stringValue("DescribeCdnDomainDetailResponse.GetDomainDetailModel.Cname"));
 		getDomainDetailModel.setHttpsCname(context.stringValue("DescribeCdnDomainDetailResponse.GetDomainDetailModel.HttpsCname"));

@@ -31,6 +31,12 @@ public class DescribeCdnDomainLogsResponse extends AcsResponse {
 
 	private String requestId;
 
+	private Long pageNumber;
+
+	private Long pageSize;
+
+	private Long totalCount;
+
 	private DomainLogModel domainLogModel;
 
 	public String getRequestId() {
@@ -39,6 +45,30 @@ public class DescribeCdnDomainLogsResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Long getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Long pageNumber) {
+		this.pageNumber = pageNumber;
+	}
+
+	public Long getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Long pageSize) {
+		this.pageSize = pageSize;
+	}
+
+	public Long getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Long totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public DomainLogModel getDomainLogModel() {

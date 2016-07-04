@@ -38,6 +38,8 @@ public class SetIgnoreQueryStringConfigRequest extends RpcAcsRequest<SetIgnoreQu
 
 	private String enable;
 
+	private String hashKeyArgs;
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -72,6 +74,15 @@ public class SetIgnoreQueryStringConfigRequest extends RpcAcsRequest<SetIgnoreQu
 	public void setEnable(String enable) {
 		this.enable = enable;
 		putQueryParameter("Enable", enable);
+	}
+
+	public String getHashKeyArgs() {
+		return this.hashKeyArgs;
+	}
+
+	public void setHashKeyArgs(String hashKeyArgs) {
+		this.hashKeyArgs = hashKeyArgs;
+		putQueryParameter("HashKeyArgs", hashKeyArgs);
 	}
 
 	@Override

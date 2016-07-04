@@ -45,6 +45,14 @@ public class DescribeUserDomainsResponseUnmarshaller {
 			pageData.setGmtCreated(context.stringValue("DescribeUserDomainsResponse.Domains["+ i +"].GmtCreated"));
 			pageData.setGmtModified(context.stringValue("DescribeUserDomainsResponse.Domains["+ i +"].GmtModified"));
 			pageData.setDescription(context.stringValue("DescribeUserDomainsResponse.Domains["+ i +"].Description"));
+			pageData.setSourceType(context.stringValue("DescribeUserDomainsResponse.Domains["+ i +"].SourceType"));
+			pageData.setSslProtocol(context.stringValue("DescribeUserDomainsResponse.Domains["+ i +"].SslProtocol"));
+
+			List<String> sources = new ArrayList<String>();
+			for (int j = 0; j < context.lengthValue("DescribeUserDomainsResponse.Domains["+ i +"].Sources.Length"); j++) {
+				sources.add(context.stringValue("DescribeUserDomainsResponse.Domains["+ i +"].Sources["+ j +"]"));
+			}
+			pageData.setSources(sources);
 
 			domains.add(pageData);
 		}

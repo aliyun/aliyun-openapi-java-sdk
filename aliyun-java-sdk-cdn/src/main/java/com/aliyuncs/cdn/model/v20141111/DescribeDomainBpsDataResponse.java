@@ -39,7 +39,17 @@ public class DescribeDomainBpsDataResponse extends AcsResponse {
 
 	private String endTime;
 
+	private String locationNameEn;
+
+	private String ispNameEn;
+
+	private String locationName;
+
+	private String ispName;
+
 	private List<DataModule> bpsDataPerInterval;
+
+	private List<DataModule> supplyBpsDatas;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -81,6 +91,38 @@ public class DescribeDomainBpsDataResponse extends AcsResponse {
 		this.endTime = endTime;
 	}
 
+	public String getLocationNameEn() {
+		return this.locationNameEn;
+	}
+
+	public void setLocationNameEn(String locationNameEn) {
+		this.locationNameEn = locationNameEn;
+	}
+
+	public String getIspNameEn() {
+		return this.ispNameEn;
+	}
+
+	public void setIspNameEn(String ispNameEn) {
+		this.ispNameEn = ispNameEn;
+	}
+
+	public String getLocationName() {
+		return this.locationName;
+	}
+
+	public void setLocationName(String locationName) {
+		this.locationName = locationName;
+	}
+
+	public String getIspName() {
+		return this.ispName;
+	}
+
+	public void setIspName(String ispName) {
+		this.ispName = ispName;
+	}
+
 	public List<DataModule> getBpsDataPerInterval() {
 		return this.bpsDataPerInterval;
 	}
@@ -89,11 +131,23 @@ public class DescribeDomainBpsDataResponse extends AcsResponse {
 		this.bpsDataPerInterval = bpsDataPerInterval;
 	}
 
+	public List<DataModule> getSupplyBpsDatas() {
+		return this.supplyBpsDatas;
+	}
+
+	public void setSupplyBpsDatas(List<DataModule> supplyBpsDatas) {
+		this.supplyBpsDatas = supplyBpsDatas;
+	}
+
 	public static class DataModule {
 
 		private String timeStamp;
 
 		private String value;
+
+		private String domesticValue;
+
+		private String overseasValue;
 
 		public String getTimeStamp() {
 			return this.timeStamp;
@@ -109,6 +163,22 @@ public class DescribeDomainBpsDataResponse extends AcsResponse {
 
 		public void setValue(String value) {
 			this.value = value;
+		}
+
+		public String getDomesticValue() {
+			return this.domesticValue;
+		}
+
+		public void setDomesticValue(String domesticValue) {
+			this.domesticValue = domesticValue;
+		}
+
+		public String getOverseasValue() {
+			return this.overseasValue;
+		}
+
+		public void setOverseasValue(String overseasValue) {
+			this.overseasValue = overseasValue;
 		}
 	}
 

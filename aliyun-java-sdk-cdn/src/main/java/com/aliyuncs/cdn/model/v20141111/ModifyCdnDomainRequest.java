@@ -38,6 +38,8 @@ public class ModifyCdnDomainRequest extends RpcAcsRequest<ModifyCdnDomainRespons
 
 	private String sourceType;
 
+	private Integer sourcePort;
+
 	private String sources;
 
 	public Long getOwnerId() {
@@ -74,6 +76,15 @@ public class ModifyCdnDomainRequest extends RpcAcsRequest<ModifyCdnDomainRespons
 	public void setSourceType(String sourceType) {
 		this.sourceType = sourceType;
 		putQueryParameter("SourceType", sourceType);
+	}
+
+	public Integer getSourcePort() {
+		return this.sourcePort;
+	}
+
+	public void setSourcePort(Integer sourcePort) {
+		this.sourcePort = sourcePort;
+		putQueryParameter("SourcePort", sourcePort);
 	}
 
 	public String getSources() {

@@ -34,7 +34,11 @@ public class DescribeIpInfoResponse extends AcsResponse {
 
 	private String iSP;
 
+	private String ispEname;
+
 	private String region;
+
+	private String regionEname;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -60,12 +64,28 @@ public class DescribeIpInfoResponse extends AcsResponse {
 		this.iSP = iSP;
 	}
 
+	public String getIspEname() {
+		return this.ispEname;
+	}
+
+	public void setIspEname(String ispEname) {
+		this.ispEname = ispEname;
+	}
+
 	public String getRegion() {
 		return this.region;
 	}
 
 	public void setRegion(String region) {
 		this.region = region;
+	}
+
+	public String getRegionEname() {
+		return this.regionEname;
+	}
+
+	public void setRegionEname(String regionEname) {
+		this.regionEname = regionEname;
 	}
 
 	@Override

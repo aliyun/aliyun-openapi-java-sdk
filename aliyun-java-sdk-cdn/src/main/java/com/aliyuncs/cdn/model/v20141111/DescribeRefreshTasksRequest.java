@@ -42,6 +42,10 @@ public class DescribeRefreshTasksRequest extends RpcAcsRequest<DescribeRefreshTa
 
 	private Integer pageSize;
 
+	private String startTime;
+
+	private String endTime;
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -94,6 +98,24 @@ public class DescribeRefreshTasksRequest extends RpcAcsRequest<DescribeRefreshTa
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
 		putQueryParameter("PageSize", pageSize);
+	}
+
+	public String getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+		putQueryParameter("StartTime", startTime);
+	}
+
+	public String getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+		putQueryParameter("EndTime", endTime);
 	}
 
 	@Override

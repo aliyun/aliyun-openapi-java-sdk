@@ -42,6 +42,12 @@ public class DescribeUserDomainsRequest extends RpcAcsRequest<DescribeUserDomain
 
 	private String domainStatus;
 
+	private String domainSearchType;
+
+	private String sources;
+
+	private String cdnType;
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -94,6 +100,33 @@ public class DescribeUserDomainsRequest extends RpcAcsRequest<DescribeUserDomain
 	public void setDomainStatus(String domainStatus) {
 		this.domainStatus = domainStatus;
 		putQueryParameter("DomainStatus", domainStatus);
+	}
+
+	public String getDomainSearchType() {
+		return this.domainSearchType;
+	}
+
+	public void setDomainSearchType(String domainSearchType) {
+		this.domainSearchType = domainSearchType;
+		putQueryParameter("DomainSearchType", domainSearchType);
+	}
+
+	public String getSources() {
+		return this.sources;
+	}
+
+	public void setSources(String sources) {
+		this.sources = sources;
+		putQueryParameter("Sources", sources);
+	}
+
+	public String getCdnType() {
+		return this.cdnType;
+	}
+
+	public void setCdnType(String cdnType) {
+		this.cdnType = cdnType;
+		putQueryParameter("CdnType", cdnType);
 	}
 
 	@Override

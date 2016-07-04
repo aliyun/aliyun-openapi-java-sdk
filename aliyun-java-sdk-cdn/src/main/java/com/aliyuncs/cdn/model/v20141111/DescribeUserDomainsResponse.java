@@ -95,6 +95,12 @@ public class DescribeUserDomainsResponse extends AcsResponse {
 
 		private String description;
 
+		private String sourceType;
+
+		private String sslProtocol;
+
+		private List<String> sources;
+
 		public String getDomainName() {
 			return this.domainName;
 		}
@@ -149,6 +155,30 @@ public class DescribeUserDomainsResponse extends AcsResponse {
 
 		public void setDescription(String description) {
 			this.description = description;
+		}
+
+		public String getSourceType() {
+			return this.sourceType;
+		}
+
+		public void setSourceType(String sourceType) {
+			this.sourceType = sourceType;
+		}
+
+		public String getSslProtocol() {
+			return this.sslProtocol;
+		}
+
+		public void setSslProtocol(String sslProtocol) {
+			this.sslProtocol = sslProtocol;
+		}
+
+		public List<String> getSources() {
+			return this.sources;
+		}
+
+		public void setSources(List<String> sources) {
+			this.sources = sources;
 		}
 	}
 
