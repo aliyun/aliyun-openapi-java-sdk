@@ -34,6 +34,7 @@ import com.aliyuncs.profile.DefaultProfile;
 import com.aliyuncs.regions.Endpoint;
 import com.aliyuncs.regions.ProductDomain;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -45,11 +46,19 @@ public class BatchComputeClient implements BatchCompute {
 
     private IAcsClient client;
 
+    static Map regionMap = new HashMap<String,String>();
+
     static{
+        BatchComputeClient.addEndpoint("cn-qingdao", "batchcompute.cn-qingdao.aliyuncs.com");
         BatchComputeClient.addEndpoint("cn-beijing", "batchcompute.cn-beijing.aliyuncs.com");
+        BatchComputeClient.addEndpoint("cn-shenzhen", "batchcompute.cn-shenzhen.aliyuncs.com");
+        BatchComputeClient.addEndpoint("cn-hangzhou", "batchcompute.cn-hangzhou.aliyuncs.com");
     }
 
     public BatchComputeClient(String regionId, String accessKeyId, String accessKeySecret) {
+        if(regionMap.get(regionId)==null){
+            BatchComputeClient.addEndpoint(regionId, "batchcompute."+regionId+".aliyuncs.com");
+        }
         this.client = new DefaultAcsClient(DefaultProfile.getProfile(regionId, accessKeyId, accessKeySecret));
     }
 
@@ -61,6 +70,7 @@ public class BatchComputeClient implements BatchCompute {
      * @param domain "batchcompute.cn-shenzhen.aliyuncs.com"
      */
     public static void addEndpoint(String region, String domain) {
+        regionMap.put(region, domain);
         try {
             DefaultProfile.addEndpoint(region, region, "BatchCompute", domain);
         } catch (ClientException e) {
