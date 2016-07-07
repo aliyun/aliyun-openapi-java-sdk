@@ -83,15 +83,37 @@ public class DescribeDnsProductInstancesResponse extends AcsResponse {
 
 		private String instanceId;
 
-		private String versionCode;
-
-		private String versionName;
-
 		private String startTime;
 
 		private String endTime;
 
 		private String domain;
+
+		private Long bindCount;
+
+		private Long bindUsedCount;
+
+		private Long tTLMinValue;
+
+		private Long subDomainLevel;
+
+		private Long dnsSLBCount;
+
+		private Long uRLForwardCount;
+
+		private Long dDosDefendFlow;
+
+		private Long dDosDefendQuery;
+
+		private Long overseaDDosDefendFlow;
+
+		private String searchEngineLines;
+
+		private String iSPLines;
+
+		private String iSPRegionLines;
+
+		private String overseaLine;
 
 		public String getInstanceId() {
 			return this.instanceId;
@@ -99,22 +121,6 @@ public class DescribeDnsProductInstancesResponse extends AcsResponse {
 
 		public void setInstanceId(String instanceId) {
 			this.instanceId = instanceId;
-		}
-
-		public String getVersionCode() {
-			return this.versionCode;
-		}
-
-		public void setVersionCode(String versionCode) {
-			this.versionCode = versionCode;
-		}
-
-		public String getVersionName() {
-			return this.versionName;
-		}
-
-		public void setVersionName(String versionName) {
-			this.versionName = versionName;
 		}
 
 		public String getStartTime() {
@@ -139,6 +145,110 @@ public class DescribeDnsProductInstancesResponse extends AcsResponse {
 
 		public void setDomain(String domain) {
 			this.domain = domain;
+		}
+
+		public Long getBindCount() {
+			return this.bindCount;
+		}
+
+		public void setBindCount(Long bindCount) {
+			this.bindCount = bindCount;
+		}
+
+		public Long getBindUsedCount() {
+			return this.bindUsedCount;
+		}
+
+		public void setBindUsedCount(Long bindUsedCount) {
+			this.bindUsedCount = bindUsedCount;
+		}
+
+		public Long getTTLMinValue() {
+			return this.tTLMinValue;
+		}
+
+		public void setTTLMinValue(Long tTLMinValue) {
+			this.tTLMinValue = tTLMinValue;
+		}
+
+		public Long getSubDomainLevel() {
+			return this.subDomainLevel;
+		}
+
+		public void setSubDomainLevel(Long subDomainLevel) {
+			this.subDomainLevel = subDomainLevel;
+		}
+
+		public Long getDnsSLBCount() {
+			return this.dnsSLBCount;
+		}
+
+		public void setDnsSLBCount(Long dnsSLBCount) {
+			this.dnsSLBCount = dnsSLBCount;
+		}
+
+		public Long getURLForwardCount() {
+			return this.uRLForwardCount;
+		}
+
+		public void setURLForwardCount(Long uRLForwardCount) {
+			this.uRLForwardCount = uRLForwardCount;
+		}
+
+		public Long getDDosDefendFlow() {
+			return this.dDosDefendFlow;
+		}
+
+		public void setDDosDefendFlow(Long dDosDefendFlow) {
+			this.dDosDefendFlow = dDosDefendFlow;
+		}
+
+		public Long getDDosDefendQuery() {
+			return this.dDosDefendQuery;
+		}
+
+		public void setDDosDefendQuery(Long dDosDefendQuery) {
+			this.dDosDefendQuery = dDosDefendQuery;
+		}
+
+		public Long getOverseaDDosDefendFlow() {
+			return this.overseaDDosDefendFlow;
+		}
+
+		public void setOverseaDDosDefendFlow(Long overseaDDosDefendFlow) {
+			this.overseaDDosDefendFlow = overseaDDosDefendFlow;
+		}
+
+		public String getSearchEngineLines() {
+			return this.searchEngineLines;
+		}
+
+		public void setSearchEngineLines(String searchEngineLines) {
+			this.searchEngineLines = searchEngineLines;
+		}
+
+		public String getISPLines() {
+			return this.iSPLines;
+		}
+
+		public void setISPLines(String iSPLines) {
+			this.iSPLines = iSPLines;
+		}
+
+		public String getISPRegionLines() {
+			return this.iSPRegionLines;
+		}
+
+		public void setISPRegionLines(String iSPRegionLines) {
+			this.iSPRegionLines = iSPRegionLines;
+		}
+
+		public String getOverseaLine() {
+			return this.overseaLine;
+		}
+
+		public void setOverseaLine(String overseaLine) {
+			this.overseaLine = overseaLine;
 		}
 	}
 

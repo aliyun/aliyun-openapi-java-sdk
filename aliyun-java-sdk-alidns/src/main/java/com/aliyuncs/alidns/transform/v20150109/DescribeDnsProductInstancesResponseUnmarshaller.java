@@ -39,11 +39,22 @@ public class DescribeDnsProductInstancesResponseUnmarshaller {
 		for (int i = 0; i < context.lengthValue("DescribeDnsProductInstancesResponse.DnsProducts.Length"); i++) {
 			DnsProduct dnsProduct = new DnsProduct();
 			dnsProduct.setInstanceId(context.stringValue("DescribeDnsProductInstancesResponse.DnsProducts["+ i +"].InstanceId"));
-			dnsProduct.setVersionCode(context.stringValue("DescribeDnsProductInstancesResponse.DnsProducts["+ i +"].VersionCode"));
-			dnsProduct.setVersionName(context.stringValue("DescribeDnsProductInstancesResponse.DnsProducts["+ i +"].VersionName"));
 			dnsProduct.setStartTime(context.stringValue("DescribeDnsProductInstancesResponse.DnsProducts["+ i +"].StartTime"));
 			dnsProduct.setEndTime(context.stringValue("DescribeDnsProductInstancesResponse.DnsProducts["+ i +"].EndTime"));
 			dnsProduct.setDomain(context.stringValue("DescribeDnsProductInstancesResponse.DnsProducts["+ i +"].Domain"));
+			dnsProduct.setBindCount(context.longValue("DescribeDnsProductInstancesResponse.DnsProducts["+ i +"].BindCount"));
+			dnsProduct.setBindUsedCount(context.longValue("DescribeDnsProductInstancesResponse.DnsProducts["+ i +"].BindUsedCount"));
+			dnsProduct.setTTLMinValue(context.longValue("DescribeDnsProductInstancesResponse.DnsProducts["+ i +"].TTLMinValue"));
+			dnsProduct.setSubDomainLevel(context.longValue("DescribeDnsProductInstancesResponse.DnsProducts["+ i +"].SubDomainLevel"));
+			dnsProduct.setDnsSLBCount(context.longValue("DescribeDnsProductInstancesResponse.DnsProducts["+ i +"].DnsSLBCount"));
+			dnsProduct.setURLForwardCount(context.longValue("DescribeDnsProductInstancesResponse.DnsProducts["+ i +"].URLForwardCount"));
+			dnsProduct.setDDosDefendFlow(context.longValue("DescribeDnsProductInstancesResponse.DnsProducts["+ i +"].DDosDefendFlow"));
+			dnsProduct.setDDosDefendQuery(context.longValue("DescribeDnsProductInstancesResponse.DnsProducts["+ i +"].DDosDefendQuery"));
+			dnsProduct.setOverseaDDosDefendFlow(context.longValue("DescribeDnsProductInstancesResponse.DnsProducts["+ i +"].OverseaDDosDefendFlow"));
+			dnsProduct.setSearchEngineLines(context.stringValue("DescribeDnsProductInstancesResponse.DnsProducts["+ i +"].SearchEngineLines"));
+			dnsProduct.setISPLines(context.stringValue("DescribeDnsProductInstancesResponse.DnsProducts["+ i +"].ISPLines"));
+			dnsProduct.setISPRegionLines(context.stringValue("DescribeDnsProductInstancesResponse.DnsProducts["+ i +"].ISPRegionLines"));
+			dnsProduct.setOverseaLine(context.stringValue("DescribeDnsProductInstancesResponse.DnsProducts["+ i +"].OverseaLine"));
 
 			dnsProducts.add(dnsProduct);
 		}
