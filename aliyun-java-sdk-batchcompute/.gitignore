@@ -2,4 +2,4 @@
 config_test.properties
 aliyun-java-sdk-batchcompute.iml
 .DS_Store
-
+java/io
