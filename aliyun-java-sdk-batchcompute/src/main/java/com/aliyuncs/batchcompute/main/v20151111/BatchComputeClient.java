@@ -50,7 +50,7 @@ public class BatchComputeClient implements BatchCompute {
 
     static{
         BatchComputeClient.addEndpoint("cn-qingdao", "batchcompute.cn-qingdao.aliyuncs.com");
-        BatchComputeClient.addEndpoint("cn-beijing", "batchcompute.cn-beijing.aliyuncs.com");
+        //BatchComputeClient.addEndpoint("cn-beijing", "batchcompute.cn-beijing.aliyuncs.com");
         BatchComputeClient.addEndpoint("cn-shenzhen", "batchcompute.cn-shenzhen.aliyuncs.com");
         BatchComputeClient.addEndpoint("cn-hangzhou", "batchcompute.cn-hangzhou.aliyuncs.com");
     }
@@ -510,6 +510,17 @@ public class BatchComputeClient implements BatchCompute {
 
     @Override
     public ListImagesResponse listImages(ListImagesRequest req) throws ClientException {
+        return getAcsResponse(req);
+    }
+
+    @Override
+    public GetQuotasResponse getQuotas() throws ClientException {
+        GetQuotasRequest req = new GetQuotasRequest();
+        return getQuotas(req);
+    }
+
+    @Override
+    public GetQuotasResponse getQuotas(GetQuotasRequest req) throws ClientException {
         return getAcsResponse(req);
     }
 

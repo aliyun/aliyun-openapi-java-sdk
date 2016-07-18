@@ -24,9 +24,22 @@ public class ClusterInstance {
     @JsonProperty("State")
     private String state;
 
+    @JsonProperty("IpAddress")
+    private String ipAddress;
+
     @JsonProperty("CreationTime")
     @JsonDeserialize(using = CustomJsonDateDeserializer.class)
     private Date creationTime;
+
+
+    @JsonIgnore
+    public String getIpAddress() {
+        return ipAddress;
+    }
+    @JsonIgnore
+    public void setIpAddress(String ipAddress) {
+        this.ipAddress = ipAddress;
+    }
 
 
     @JsonIgnore

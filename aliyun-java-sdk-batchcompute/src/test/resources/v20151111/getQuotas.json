@@ -1,0 +1,33 @@
+{
+  "AvailableClusterInstanceDataDiskType": [
+    "cloud",
+    "cloud_ssd",
+    "ephemeral",
+    "ephemeral_ssd"
+  ],
+  "AvailableClusterInstanceSystemDiskType": [
+    "cloud",
+    "cloud_ssd",
+    "ephemeral",
+    "ephemeral_ssd"
+  ],
+  "AvailableClusterInstanceType": [
+    "bcs.a2.3xlarge",
+    "bcs.a2.large",
+    "bcs.a2.xlarge",
+    "bcs.b2.3xlarge",
+    "bcs.b4.3xlarge",
+    "bcs.b4.5xlarge",
+    "bcs.b4.xlarge",
+    "ecs.c1.large",
+    "ecs.c2.large",
+    "ecs.c2.medium",
+    "ecs.c2.xlarge",
+    "ecs.m1.medium",
+    "ecs.m1.xlarge",
+    "ecs.m2.medium",
+    "ecs.m2.xlarge",
+    "ecs.s3.large",
+    "ecs.t1.small"
+  ]
+}

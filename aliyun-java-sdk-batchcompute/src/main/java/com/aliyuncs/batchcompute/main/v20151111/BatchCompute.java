@@ -148,4 +148,9 @@ public interface BatchCompute {
     ListImagesResponse listImages() throws ClientException;
     ListImagesResponse listImages(String marker, int maxItemCount) throws ClientException;
     ListImagesResponse listImages(ListImagesRequest req) throws ClientException;
+
+
+    /** Quotas **/
+    GetQuotasResponse getQuotas() throws ClientException;
+    GetQuotasResponse getQuotas(GetQuotasRequest req) throws ClientException;
 }
