@@ -94,6 +94,16 @@ public class Image {
         this.creationTime = creationTime;
     }
 
+    @JsonIgnore
+    public String getType() {
+        return type;
+    }
+
+    @JsonIgnore
+    public void setType(String type) {
+        this.type = type;
+    }
+
     @JsonProperty("Id")
     private String Id;
 
@@ -106,6 +116,9 @@ public class Image {
 
     @JsonProperty("OwnerId")
     private String OwnerId;
+
+    @JsonProperty("Type")
+    private String type;
 
     @JsonProperty("CreationTime")
     @JsonDeserialize(using = CustomJsonDateDeserializer.class)

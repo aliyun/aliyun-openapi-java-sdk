@@ -74,8 +74,9 @@ public class ListClusterInstancesRequest extends BatchComputeRequest<ListCluster
 
 	public void setMarker(String marker) {
 		this.marker = marker;
-		if(marker!=null && marker.equals(""))
-		    this.putQueryParameter("Marker",marker);
+		if(marker!=null && !marker.equals("")) {
+			this.putQueryParameter("Marker", marker);
+		}
 	}
 
 	public int getMaxItemCount() {

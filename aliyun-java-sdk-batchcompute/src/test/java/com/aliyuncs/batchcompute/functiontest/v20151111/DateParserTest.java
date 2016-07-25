@@ -23,7 +23,8 @@ public class DateParserTest extends TestCase {
         Date d = c.parseDate(createTime);
 
         System.out.println(d.toString());
-        System.out.println(d.getTime());
+
+        assertEquals(1457449277427L, d.getTime());
 
 
     }

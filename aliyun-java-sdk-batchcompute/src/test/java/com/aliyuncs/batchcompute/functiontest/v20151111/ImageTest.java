@@ -47,8 +47,6 @@ public class ImageTest extends TestCase {
         BatchComputeClient.addRequestHeader("x-acs-source-ip", "127.0.0.1");
         BatchComputeClient.addRequestHeader("x-acs-secure-transport", "true");
 
-        BatchComputeClient.addEndpoint("caichi","batchcompute.caichi.aliyuncs.com");
-
         gImageId = cfg.getEcsImageId();
         System.out.println("==========" + gImageId);
 
@@ -73,7 +71,6 @@ public class ImageTest extends TestCase {
 
 
         //get image
-
         GetImageResponse getImageResponse = client.getImage(id);
         Image img= getImageResponse.getImage();
 
@@ -101,13 +98,20 @@ public class ImageTest extends TestCase {
         }
         assertTrue(flag);
 
-
         //delete
         DeleteImageResponse delRes = client.deleteImage(id);
         assertEquals("noError","noError");
     }
 
-    //img-6kiif1hv7lelk7n0r9o002
+    @Test
+    public void testSystemImage() throws ClientException {
 
+        // list images
+        ListImagesResponse listRes = client.listImages(ListImagesRequest.SYSTEM,"",100);
+        List<Image> list = listRes.getItems();
+
+        assertTrue(0 < list.size());
+        assertEquals(ListImagesRequest.SYSTEM, list.get(0).getType());
+    }
 
 }

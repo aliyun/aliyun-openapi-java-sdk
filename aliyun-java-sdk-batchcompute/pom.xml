@@ -3,7 +3,7 @@
     <groupId>com.aliyun</groupId>
     <artifactId>aliyun-java-sdk-batchcompute</artifactId>
     <packaging>jar</packaging> 
-    <version>3.0.9</version>
+    <version>3.1.0</version>
     <name>aliyun-java-sdk-batchcompute</name>
     <url>http://www.aliyun.com</url>
     <description>Aliyun Open API SDK for Java
@@ -37,7 +37,7 @@
             <groupId>com.aliyun</groupId>
             <artifactId>aliyun-java-sdk-core</artifactId>
             <optional>false</optional>
-            <version>2.3.7</version>
+            <version>3.0.3</version>
         </dependency>
         <dependency>
             <groupId>org.codehaus.jackson</groupId>

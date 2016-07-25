@@ -19,41 +19,55 @@
 
 package com.aliyuncs.batchcompute.functiontest.v20151111;
 
+
 import com.aliyuncs.batchcompute.main.v20151111.BatchCompute;
 import com.aliyuncs.batchcompute.main.v20151111.BatchComputeClient;
-import com.aliyuncs.batchcompute.model.v20151111.*;
+import com.aliyuncs.batchcompute.model.v20151111.GetQuotasResponse;
 import com.aliyuncs.batchcompute.pojo.v20151111.Quotas;
 import com.aliyuncs.batchcompute.util.Config;
 import com.aliyuncs.exceptions.ClientException;
+import com.aliyuncs.profile.DefaultProfile;
+import com.aliyuncs.regions.Endpoint;
+import com.aliyuncs.regions.ProductDomain;
 import junit.framework.TestCase;
 import org.junit.Test;
 
+import java.util.List;
 
-public class QuotasTest extends TestCase {
 
-    private static BatchCompute client;
+public class EndpointTest extends TestCase {
+
+    Config cfg;
 
     @Override
     public void setUp() throws Exception {
-        Config cfg = Config.getInstance();
 
+        cfg = Config.getInstance();
         BatchComputeClient.verbose = true;
         BatchComputeClient.addRequestHeader("x-acs-source-ip", "127.0.0.1");
         BatchComputeClient.addRequestHeader("x-acs-secure-transport", "true");
 
-        client = new BatchComputeClient(cfg.getRegionId(), cfg.getAccessId(), cfg.getAccessKey());
     }
 
     @Test
     public void testGetQuotas() throws ClientException {
 
-        GetQuotasResponse res = client.getQuotas();
-        Quotas q = res.getQuotas();
+        doTest("cn-beijing");
+        doTest("cn-hangzhou");
+        doTest("cn-shenzhen");
+        doTest("cn-qingdao");
 
-        assertTrue(0 < q.getAvailableClusterInstanceType().size());
-        assertTrue(0 < q.getAvailableClusterInstanceSystemDiskType().size());
-        assertTrue(0 < q.getAvailableClusterInstanceDataDiskType().size());
+        //第二轮
+        doTest("cn-beijing");
+        doTest("cn-hangzhou");
+        doTest("cn-shenzhen");
+        doTest("cn-qingdao");
     }
 
+    private void doTest(String regionId) throws ClientException {
+        BatchCompute client = new BatchComputeClient(regionId, cfg.getAccessId(), cfg.getAccessKey());
+        GetQuotasResponse res = client.getQuotas();
+        assertEquals("http://batchcompute." + regionId + ".aliyuncs.com/quotas", res.getHttpResponse().getUrl());
+    }
 
 }

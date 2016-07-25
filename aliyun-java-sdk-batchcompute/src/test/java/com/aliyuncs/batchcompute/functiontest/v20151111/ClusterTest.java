@@ -51,8 +51,6 @@ public class ClusterTest extends TestCase {
         BatchComputeClient.addRequestHeader("x-acs-source-ip", "127.0.0.1");
         BatchComputeClient.addRequestHeader("x-acs-secure-transport", "true");
 
-        BatchComputeClient.addEndpoint("caichi","batchcompute.caichi.aliyuncs.com");
-
         gImageId = cfg.getEcsImageId();
         System.out.println("=========="+gImageId);
 
@@ -162,6 +160,7 @@ public class ClusterTest extends TestCase {
 
         SystemDisk systemDisk = new SystemDisk();
         systemDisk.setSize(80); //GB
+        systemDisk.setType("cloud");
         desc.mountSystemDisk(systemDisk);
 
         desc.addUserData("a","bb");

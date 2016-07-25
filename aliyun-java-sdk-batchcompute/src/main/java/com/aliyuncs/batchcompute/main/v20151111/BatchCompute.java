@@ -146,6 +146,8 @@ public interface BatchCompute {
     DeleteImageResponse deleteImage(DeleteImageRequest req) throws ClientException;
 
     ListImagesResponse listImages() throws ClientException;
+    ListImagesResponse listImages(String type) throws ClientException;
+    ListImagesResponse listImages(String type, String marker, int maxItemCount) throws ClientException;
     ListImagesResponse listImages(String marker, int maxItemCount) throws ClientException;
     ListImagesResponse listImages(ListImagesRequest req) throws ClientException;
 

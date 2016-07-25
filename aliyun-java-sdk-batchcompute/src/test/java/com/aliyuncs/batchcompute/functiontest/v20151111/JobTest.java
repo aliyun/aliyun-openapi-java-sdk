@@ -52,9 +52,6 @@ public class JobTest extends TestCase {
         BatchComputeClient.addRequestHeader("x-acs-source-ip", "127.0.0.1");
         BatchComputeClient.addRequestHeader("x-acs-secure-transport", "true");
 
-        BatchComputeClient.addEndpoint("caichi","batchcompute.caichi.aliyuncs.com");
-
-
         gImageId = cfg.getEcsImageId();
         System.out.println("==========" + gImageId);
 

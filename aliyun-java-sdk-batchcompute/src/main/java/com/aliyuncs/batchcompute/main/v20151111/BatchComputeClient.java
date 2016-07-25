@@ -50,9 +50,9 @@ public class BatchComputeClient implements BatchCompute {
 
     static{
         BatchComputeClient.addEndpoint("cn-qingdao", "batchcompute.cn-qingdao.aliyuncs.com");
-        //BatchComputeClient.addEndpoint("cn-beijing", "batchcompute.cn-beijing.aliyuncs.com");
         BatchComputeClient.addEndpoint("cn-shenzhen", "batchcompute.cn-shenzhen.aliyuncs.com");
         BatchComputeClient.addEndpoint("cn-hangzhou", "batchcompute.cn-hangzhou.aliyuncs.com");
+        BatchComputeClient.addEndpoint("cn-beijing", "batchcompute.cn-beijing.aliyuncs.com");
     }
 
     public BatchComputeClient(String regionId, String accessKeyId, String accessKeySecret) {
@@ -82,9 +82,11 @@ public class BatchComputeClient implements BatchCompute {
         try {
             List<Endpoint> list = DefaultProfile.getProfile().getEndpoints();
             for(Endpoint ep : list) {
+                System.out.println(ep.getName()+":  "+ ep.getProductDomains().size());
                 for( ProductDomain pd: ep.getProductDomains()) {
-                    if(pd.getProductName().toLowerCase().indexOf("batchcompute")!=-1)
-                        System.out.println(ep.getName() + ", " + pd.getDomianName()+", "+ pd.getProductName());
+                    if(pd.getProductName().toLowerCase().indexOf("batchcompute")!=-1) {
+                        System.out.println("   "+ep.getName() + ", " + pd.getDomianName() + ", " + pd.getProductName());
+                    }
                 }
             }
         } catch (ClientException e) {
@@ -498,6 +500,20 @@ public class BatchComputeClient implements BatchCompute {
     @Override
     public ListImagesResponse listImages() throws ClientException {
         ListImagesRequest req = new ListImagesRequest();
+        return listImages(req);
+    }
+    @Override
+    public ListImagesResponse listImages(String type) throws ClientException {
+        ListImagesRequest req = new ListImagesRequest();
+        req.setType(type);
+        return listImages(req);
+    }
+    @Override
+    public ListImagesResponse listImages(String type, String marker, int maxItemCount) throws ClientException {
+        ListImagesRequest req = new ListImagesRequest();
+        req.setType(type);
+        req.setMarker(marker);
+        req.setMaxItemCount(maxItemCount);
         return listImages(req);
     }
     @Override

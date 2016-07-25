@@ -27,6 +27,9 @@ import com.aliyuncs.http.MethodType;
  */
 public class ListImagesRequest extends BatchComputeRequest<ListImagesResponse> {
 
+	public static final String SYSTEM = "System";
+	public static final String SELF = "Self";
+
 	public ListImagesRequest() {
 		super("BatchCompute", "2015-11-11", "ListImages");
 		setUriPattern("/images");
@@ -36,6 +39,18 @@ public class ListImagesRequest extends BatchComputeRequest<ListImagesResponse> {
 
 	private String marker;
 	private int maxItemCount= 50;
+	private String type;
+
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+		if(type!=null && !type.equals("")) {
+			this.putQueryParameter("Type", type);
+		}
+	}
 
 	public String getMarker() {
 		return marker;
@@ -43,8 +58,9 @@ public class ListImagesRequest extends BatchComputeRequest<ListImagesResponse> {
 
 	public void setMarker(String marker) {
 		this.marker = marker;
-		if(marker!=null && marker.equals(""))
-		    this.putQueryParameter("Marker",marker);
+		if(marker!=null && !marker.equals("")) {
+			this.putQueryParameter("Marker", marker);
+		}
 	}
 
 	public int getMaxItemCount() {
