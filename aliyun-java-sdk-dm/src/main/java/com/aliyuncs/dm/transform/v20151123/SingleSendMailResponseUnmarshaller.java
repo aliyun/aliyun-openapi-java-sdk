@@ -27,6 +27,7 @@ public class SingleSendMailResponseUnmarshaller {
 	public static SingleSendMailResponse unmarshall(SingleSendMailResponse singleSendMailResponse, UnmarshallerContext context) {
 		
 		singleSendMailResponse.setRequestId(context.stringValue("SingleSendMailResponse.RequestId"));
+		singleSendMailResponse.setEnvId(context.stringValue("SingleSendMailResponse.EnvId"));
 	 
 	 	return singleSendMailResponse;
 	}

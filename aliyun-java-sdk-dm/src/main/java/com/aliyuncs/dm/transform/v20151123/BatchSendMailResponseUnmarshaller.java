@@ -27,6 +27,7 @@ public class BatchSendMailResponseUnmarshaller {
 	public static BatchSendMailResponse unmarshall(BatchSendMailResponse batchSendMailResponse, UnmarshallerContext context) {
 		
 		batchSendMailResponse.setRequestId(context.stringValue("BatchSendMailResponse.RequestId"));
+		batchSendMailResponse.setEnvId(context.stringValue("BatchSendMailResponse.EnvId"));
 	 
 	 	return batchSendMailResponse;
 	}

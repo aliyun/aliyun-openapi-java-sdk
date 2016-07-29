@@ -30,12 +30,22 @@ public class BatchSendMailResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String envId;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getEnvId() {
+		return this.envId;
+	}
+
+	public void setEnvId(String envId) {
+		this.envId = envId;
 	}
 
 	@Override

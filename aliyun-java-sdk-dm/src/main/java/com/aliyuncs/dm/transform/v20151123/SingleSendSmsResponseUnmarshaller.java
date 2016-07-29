@@ -16,40 +16,18 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package com.aliyuncs.dm.model.v20151123;
+package com.aliyuncs.dm.transform.v20151123;
 
-import com.aliyuncs.AcsResponse;
-import com.aliyuncs.dm.transform.v20151123.SingleSendMailResponseUnmarshaller;
+import com.aliyuncs.dm.model.v20151123.SingleSendSmsResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
-/**
- * @author auto create
- * @version 
- */
-public class SingleSendMailResponse extends AcsResponse {
 
-	private String requestId;
+public class SingleSendSmsResponseUnmarshaller {
 
-	private String envId;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getEnvId() {
-		return this.envId;
-	}
-
-	public void setEnvId(String envId) {
-		this.envId = envId;
-	}
-
-	@Override
-	public SingleSendMailResponse getInstance(UnmarshallerContext context) {
-		return	SingleSendMailResponseUnmarshaller.unmarshall(this, context);
+	public static SingleSendSmsResponse unmarshall(SingleSendSmsResponse singleSendSmsResponse, UnmarshallerContext context) {
+		
+		singleSendSmsResponse.setRequestId(context.stringValue("SingleSendSmsResponse.RequestId"));
+	 
+	 	return singleSendSmsResponse;
 	}
 }

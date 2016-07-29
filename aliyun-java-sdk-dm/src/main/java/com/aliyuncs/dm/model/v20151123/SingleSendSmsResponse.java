@@ -19,18 +19,16 @@
 package com.aliyuncs.dm.model.v20151123;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.dm.transform.v20151123.SingleSendMailResponseUnmarshaller;
+import com.aliyuncs.dm.transform.v20151123.SingleSendSmsResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class SingleSendMailResponse extends AcsResponse {
+public class SingleSendSmsResponse extends AcsResponse {
 
 	private String requestId;
-
-	private String envId;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -40,16 +38,8 @@ public class SingleSendMailResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getEnvId() {
-		return this.envId;
-	}
-
-	public void setEnvId(String envId) {
-		this.envId = envId;
-	}
-
 	@Override
-	public SingleSendMailResponse getInstance(UnmarshallerContext context) {
-		return	SingleSendMailResponseUnmarshaller.unmarshall(this, context);
+	public SingleSendSmsResponse getInstance(UnmarshallerContext context) {
+		return	SingleSendSmsResponseUnmarshaller.unmarshall(this, context);
 	}
 }

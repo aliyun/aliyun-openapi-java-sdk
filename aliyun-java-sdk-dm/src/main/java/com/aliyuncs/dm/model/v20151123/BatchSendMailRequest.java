@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class BatchSendMailRequest extends RpcAcsRequest<BatchSendMailResponse> {
 	
 	public BatchSendMailRequest() {
-		super("Dm", "2015-11-23", "BatchSendMail");
+		super("Dm", "2015-11-23", "BatchSendMail", "dm");
 	}
 
 	private Long ownerId;
@@ -45,6 +45,10 @@ public class BatchSendMailRequest extends RpcAcsRequest<BatchSendMailResponse> {
 	private Integer addressType;
 
 	private String tagName;
+
+	private String replyAddress;
+
+	private String replyAddressAlias;
 
 	public Long getOwnerId() {
 		return this.ownerId;
@@ -116,6 +120,24 @@ public class BatchSendMailRequest extends RpcAcsRequest<BatchSendMailResponse> {
 	public void setTagName(String tagName) {
 		this.tagName = tagName;
 		putQueryParameter("TagName", tagName);
+	}
+
+	public String getReplyAddress() {
+		return this.replyAddress;
+	}
+
+	public void setReplyAddress(String replyAddress) {
+		this.replyAddress = replyAddress;
+		putQueryParameter("ReplyAddress", replyAddress);
+	}
+
+	public String getReplyAddressAlias() {
+		return this.replyAddressAlias;
+	}
+
+	public void setReplyAddressAlias(String replyAddressAlias) {
+		this.replyAddressAlias = replyAddressAlias;
+		putQueryParameter("ReplyAddressAlias", replyAddressAlias);
 	}
 
 	@Override
