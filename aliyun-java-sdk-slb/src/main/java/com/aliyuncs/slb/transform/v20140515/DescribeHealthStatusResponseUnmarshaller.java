@@ -20,6 +20,7 @@ package com.aliyuncs.slb.transform.v20140515;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import com.aliyuncs.slb.model.v20140515.DescribeHealthStatusResponse;
 import com.aliyuncs.slb.model.v20140515.DescribeHealthStatusResponse.BackendServer;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -33,7 +34,7 @@ public class DescribeHealthStatusResponseUnmarshaller {
 
 		List<BackendServer> backendServers = new ArrayList<BackendServer>();
 		for (int i = 0; i < context.lengthValue("DescribeHealthStatusResponse.BackendServers.Length"); i++) {
-			BackendServer  backendServer = new BackendServer();
+			BackendServer backendServer = new BackendServer();
 			backendServer.setServerId(context.stringValue("DescribeHealthStatusResponse.BackendServers["+ i +"].ServerId"));
 			backendServer.setServerHealthStatus(context.stringValue("DescribeHealthStatusResponse.BackendServers["+ i +"].ServerHealthStatus"));
 

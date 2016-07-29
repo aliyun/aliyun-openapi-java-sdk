@@ -52,13 +52,23 @@ public class CreateLoadBalancerRequest extends RpcAcsRequest<CreateLoadBalancerR
 
 	private String ownerAccount;
 
+	private String masterZoneId;
+
+	private String slaveZoneId;
+
+	private String access_key_id;
+
+	private String tags;
+
+	private String enableVpcVipFlow;
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
 
 	public void setOwnerId(Long ownerId) {
 		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", String.valueOf(ownerId));
+		putQueryParameter("OwnerId", ownerId);
 	}
 
 	public String getResourceOwnerAccount() {
@@ -76,7 +86,7 @@ public class CreateLoadBalancerRequest extends RpcAcsRequest<CreateLoadBalancerR
 
 	public void setResourceOwnerId(Long resourceOwnerId) {
 		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", String.valueOf(resourceOwnerId));
+		putQueryParameter("ResourceOwnerId", resourceOwnerId);
 	}
 
 	public String getAddressType() {
@@ -103,7 +113,7 @@ public class CreateLoadBalancerRequest extends RpcAcsRequest<CreateLoadBalancerR
 
 	public void setBandwidth(Integer bandwidth) {
 		this.bandwidth = bandwidth;
-		putQueryParameter("Bandwidth", String.valueOf(bandwidth));
+		putQueryParameter("Bandwidth", bandwidth);
 	}
 
 	public String getClientToken() {
@@ -149,6 +159,51 @@ public class CreateLoadBalancerRequest extends RpcAcsRequest<CreateLoadBalancerR
 	public void setOwnerAccount(String ownerAccount) {
 		this.ownerAccount = ownerAccount;
 		putQueryParameter("OwnerAccount", ownerAccount);
+	}
+
+	public String getMasterZoneId() {
+		return this.masterZoneId;
+	}
+
+	public void setMasterZoneId(String masterZoneId) {
+		this.masterZoneId = masterZoneId;
+		putQueryParameter("MasterZoneId", masterZoneId);
+	}
+
+	public String getSlaveZoneId() {
+		return this.slaveZoneId;
+	}
+
+	public void setSlaveZoneId(String slaveZoneId) {
+		this.slaveZoneId = slaveZoneId;
+		putQueryParameter("SlaveZoneId", slaveZoneId);
+	}
+
+	public String getaccess_key_id() {
+		return this.access_key_id;
+	}
+
+	public void setaccess_key_id(String access_key_id) {
+		this.access_key_id = access_key_id;
+		putQueryParameter("access_key_id", access_key_id);
+	}
+
+	public String getTags() {
+		return this.tags;
+	}
+
+	public void setTags(String tags) {
+		this.tags = tags;
+		putQueryParameter("Tags", tags);
+	}
+
+	public String getEnableVpcVipFlow() {
+		return this.enableVpcVipFlow;
+	}
+
+	public void setEnableVpcVipFlow(String enableVpcVipFlow) {
+		this.enableVpcVipFlow = enableVpcVipFlow;
+		putQueryParameter("EnableVpcVipFlow", enableVpcVipFlow);
 	}
 
 	@Override

@@ -52,7 +52,15 @@ public class DescribeLoadBalancersRequest extends RpcAcsRequest<DescribeLoadBala
 
 	private String address;
 
+	private String masterZoneId;
+
+	private String slaveZoneId;
+
 	private String ownerAccount;
+
+	private String access_key_id;
+
+	private String tags;
 
 	public Long getOwnerId() {
 		return this.ownerId;
@@ -60,7 +68,7 @@ public class DescribeLoadBalancersRequest extends RpcAcsRequest<DescribeLoadBala
 
 	public void setOwnerId(Long ownerId) {
 		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", String.valueOf(ownerId));
+		putQueryParameter("OwnerId", ownerId);
 	}
 
 	public String getResourceOwnerAccount() {
@@ -78,7 +86,7 @@ public class DescribeLoadBalancersRequest extends RpcAcsRequest<DescribeLoadBala
 
 	public void setResourceOwnerId(Long resourceOwnerId) {
 		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", String.valueOf(resourceOwnerId));
+		putQueryParameter("ResourceOwnerId", resourceOwnerId);
 	}
 
 	public String getServerId() {
@@ -153,6 +161,24 @@ public class DescribeLoadBalancersRequest extends RpcAcsRequest<DescribeLoadBala
 		putQueryParameter("Address", address);
 	}
 
+	public String getMasterZoneId() {
+		return this.masterZoneId;
+	}
+
+	public void setMasterZoneId(String masterZoneId) {
+		this.masterZoneId = masterZoneId;
+		putQueryParameter("MasterZoneId", masterZoneId);
+	}
+
+	public String getSlaveZoneId() {
+		return this.slaveZoneId;
+	}
+
+	public void setSlaveZoneId(String slaveZoneId) {
+		this.slaveZoneId = slaveZoneId;
+		putQueryParameter("SlaveZoneId", slaveZoneId);
+	}
+
 	public String getOwnerAccount() {
 		return this.ownerAccount;
 	}
@@ -160,6 +186,24 @@ public class DescribeLoadBalancersRequest extends RpcAcsRequest<DescribeLoadBala
 	public void setOwnerAccount(String ownerAccount) {
 		this.ownerAccount = ownerAccount;
 		putQueryParameter("OwnerAccount", ownerAccount);
+	}
+
+	public String getaccess_key_id() {
+		return this.access_key_id;
+	}
+
+	public void setaccess_key_id(String access_key_id) {
+		this.access_key_id = access_key_id;
+		putQueryParameter("access_key_id", access_key_id);
+	}
+
+	public String getTags() {
+		return this.tags;
+	}
+
+	public void setTags(String tags) {
+		this.tags = tags;
+		putQueryParameter("Tags", tags);
 	}
 
 	@Override

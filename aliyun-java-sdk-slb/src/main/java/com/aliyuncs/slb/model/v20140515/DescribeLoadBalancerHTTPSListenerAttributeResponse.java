@@ -38,6 +38,8 @@ public class DescribeLoadBalancerHTTPSListenerAttributeResponse extends AcsRespo
 
 	private String status;
 
+	private String securityStatus;
+
 	private String xForwardedFor;
 
 	private String scheduler;
@@ -69,6 +71,12 @@ public class DescribeLoadBalancerHTTPSListenerAttributeResponse extends AcsRespo
 	private String healthCheckHttpCode;
 
 	private String serverCertificateId;
+
+	private String cACertificateId;
+
+	private Integer maxConnection;
+
+	private String vServerGroupId;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -108,6 +116,14 @@ public class DescribeLoadBalancerHTTPSListenerAttributeResponse extends AcsRespo
 
 	public void setStatus(String status) {
 		this.status = status;
+	}
+
+	public String getSecurityStatus() {
+		return this.securityStatus;
+	}
+
+	public void setSecurityStatus(String securityStatus) {
+		this.securityStatus = securityStatus;
 	}
 
 	public String getXForwardedFor() {
@@ -236,6 +252,30 @@ public class DescribeLoadBalancerHTTPSListenerAttributeResponse extends AcsRespo
 
 	public void setServerCertificateId(String serverCertificateId) {
 		this.serverCertificateId = serverCertificateId;
+	}
+
+	public String getCACertificateId() {
+		return this.cACertificateId;
+	}
+
+	public void setCACertificateId(String cACertificateId) {
+		this.cACertificateId = cACertificateId;
+	}
+
+	public Integer getMaxConnection() {
+		return this.maxConnection;
+	}
+
+	public void setMaxConnection(Integer maxConnection) {
+		this.maxConnection = maxConnection;
+	}
+
+	public String getVServerGroupId() {
+		return this.vServerGroupId;
+	}
+
+	public void setVServerGroupId(String vServerGroupId) {
+		this.vServerGroupId = vServerGroupId;
 	}
 
 	@Override

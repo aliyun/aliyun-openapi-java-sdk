@@ -63,11 +63,23 @@ public class DescribeLoadBalancersResponse extends AcsResponse {
 
 		private String regionId;
 
+		private String regionIdAlias;
+
 		private String vSwitchId;
 
 		private String vpcId;
 
 		private String networkType;
+
+		private String masterZoneId;
+
+		private String slaveZoneId;
+
+		private String internetChargeType;
+
+		private String createTime;
+
+		private Long createTimeStamp;
 
 		public String getLoadBalancerId() {
 			return this.loadBalancerId;
@@ -117,6 +129,14 @@ public class DescribeLoadBalancersResponse extends AcsResponse {
 			this.regionId = regionId;
 		}
 
+		public String getRegionIdAlias() {
+			return this.regionIdAlias;
+		}
+
+		public void setRegionIdAlias(String regionIdAlias) {
+			this.regionIdAlias = regionIdAlias;
+		}
+
 		public String getVSwitchId() {
 			return this.vSwitchId;
 		}
@@ -139,6 +159,46 @@ public class DescribeLoadBalancersResponse extends AcsResponse {
 
 		public void setNetworkType(String networkType) {
 			this.networkType = networkType;
+		}
+
+		public String getMasterZoneId() {
+			return this.masterZoneId;
+		}
+
+		public void setMasterZoneId(String masterZoneId) {
+			this.masterZoneId = masterZoneId;
+		}
+
+		public String getSlaveZoneId() {
+			return this.slaveZoneId;
+		}
+
+		public void setSlaveZoneId(String slaveZoneId) {
+			this.slaveZoneId = slaveZoneId;
+		}
+
+		public String getInternetChargeType() {
+			return this.internetChargeType;
+		}
+
+		public void setInternetChargeType(String internetChargeType) {
+			this.internetChargeType = internetChargeType;
+		}
+
+		public String getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
+		}
+
+		public Long getCreateTimeStamp() {
+			return this.createTimeStamp;
+		}
+
+		public void setCreateTimeStamp(Long createTimeStamp) {
+			this.createTimeStamp = createTimeStamp;
 		}
 	}
 

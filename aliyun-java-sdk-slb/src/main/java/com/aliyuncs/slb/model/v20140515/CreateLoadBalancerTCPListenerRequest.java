@@ -64,7 +64,17 @@ public class CreateLoadBalancerTCPListenerRequest extends RpcAcsRequest<CreateLo
 
 	private String healthCheckHttpCode;
 
+	private String healthCheckType;
+
+	private Integer maxConnection;
+
 	private String ownerAccount;
+
+	private String access_key_id;
+
+	private String vServerGroupId;
+
+	private String tags;
 
 	public Long getOwnerId() {
 		return this.ownerId;
@@ -72,7 +82,7 @@ public class CreateLoadBalancerTCPListenerRequest extends RpcAcsRequest<CreateLo
 
 	public void setOwnerId(Long ownerId) {
 		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", String.valueOf(ownerId));
+		putQueryParameter("OwnerId", ownerId);
 	}
 
 	public String getResourceOwnerAccount() {
@@ -90,7 +100,7 @@ public class CreateLoadBalancerTCPListenerRequest extends RpcAcsRequest<CreateLo
 
 	public void setResourceOwnerId(Long resourceOwnerId) {
 		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", String.valueOf(resourceOwnerId));
+		putQueryParameter("ResourceOwnerId", resourceOwnerId);
 	}
 
 	public String getLoadBalancerId() {
@@ -108,7 +118,7 @@ public class CreateLoadBalancerTCPListenerRequest extends RpcAcsRequest<CreateLo
 
 	public void setListenerPort(Integer listenerPort) {
 		this.listenerPort = listenerPort;
-		putQueryParameter("ListenerPort", String.valueOf(listenerPort));
+		putQueryParameter("ListenerPort", listenerPort);
 	}
 
 	public Integer getBackendServerPort() {
@@ -117,7 +127,7 @@ public class CreateLoadBalancerTCPListenerRequest extends RpcAcsRequest<CreateLo
 
 	public void setBackendServerPort(Integer backendServerPort) {
 		this.backendServerPort = backendServerPort;
-		putQueryParameter("BackendServerPort", String.valueOf(backendServerPort));
+		putQueryParameter("BackendServerPort", backendServerPort);
 	}
 
 	public Integer getBandwidth() {
@@ -126,7 +136,7 @@ public class CreateLoadBalancerTCPListenerRequest extends RpcAcsRequest<CreateLo
 
 	public void setBandwidth(Integer bandwidth) {
 		this.bandwidth = bandwidth;
-		putQueryParameter("Bandwidth", String.valueOf(bandwidth));
+		putQueryParameter("Bandwidth", bandwidth);
 	}
 
 	public String getScheduler() {
@@ -144,7 +154,7 @@ public class CreateLoadBalancerTCPListenerRequest extends RpcAcsRequest<CreateLo
 
 	public void setPersistenceTimeout(Integer persistenceTimeout) {
 		this.persistenceTimeout = persistenceTimeout;
-		putQueryParameter("PersistenceTimeout", String.valueOf(persistenceTimeout));
+		putQueryParameter("PersistenceTimeout", persistenceTimeout);
 	}
 
 	public Integer getHealthyThreshold() {
@@ -153,7 +163,7 @@ public class CreateLoadBalancerTCPListenerRequest extends RpcAcsRequest<CreateLo
 
 	public void setHealthyThreshold(Integer healthyThreshold) {
 		this.healthyThreshold = healthyThreshold;
-		putQueryParameter("HealthyThreshold", String.valueOf(healthyThreshold));
+		putQueryParameter("HealthyThreshold", healthyThreshold);
 	}
 
 	public Integer getUnhealthyThreshold() {
@@ -162,7 +172,7 @@ public class CreateLoadBalancerTCPListenerRequest extends RpcAcsRequest<CreateLo
 
 	public void setUnhealthyThreshold(Integer unhealthyThreshold) {
 		this.unhealthyThreshold = unhealthyThreshold;
-		putQueryParameter("UnhealthyThreshold", String.valueOf(unhealthyThreshold));
+		putQueryParameter("UnhealthyThreshold", unhealthyThreshold);
 	}
 
 	public Integer getHealthCheckConnectTimeout() {
@@ -171,7 +181,7 @@ public class CreateLoadBalancerTCPListenerRequest extends RpcAcsRequest<CreateLo
 
 	public void setHealthCheckConnectTimeout(Integer healthCheckConnectTimeout) {
 		this.healthCheckConnectTimeout = healthCheckConnectTimeout;
-		putQueryParameter("HealthCheckConnectTimeout", String.valueOf(healthCheckConnectTimeout));
+		putQueryParameter("HealthCheckConnectTimeout", healthCheckConnectTimeout);
 	}
 
 	public Integer getHealthCheckConnectPort() {
@@ -180,7 +190,7 @@ public class CreateLoadBalancerTCPListenerRequest extends RpcAcsRequest<CreateLo
 
 	public void setHealthCheckConnectPort(Integer healthCheckConnectPort) {
 		this.healthCheckConnectPort = healthCheckConnectPort;
-		putQueryParameter("HealthCheckConnectPort", String.valueOf(healthCheckConnectPort));
+		putQueryParameter("HealthCheckConnectPort", healthCheckConnectPort);
 	}
 
 	public Integer gethealthCheckInterval() {
@@ -189,7 +199,7 @@ public class CreateLoadBalancerTCPListenerRequest extends RpcAcsRequest<CreateLo
 
 	public void sethealthCheckInterval(Integer healthCheckInterval) {
 		this.healthCheckInterval = healthCheckInterval;
-		putQueryParameter("healthCheckInterval", String.valueOf(healthCheckInterval));
+		putQueryParameter("healthCheckInterval", healthCheckInterval);
 	}
 
 	public String getHealthCheckDomain() {
@@ -219,6 +229,24 @@ public class CreateLoadBalancerTCPListenerRequest extends RpcAcsRequest<CreateLo
 		putQueryParameter("HealthCheckHttpCode", healthCheckHttpCode);
 	}
 
+	public String getHealthCheckType() {
+		return this.healthCheckType;
+	}
+
+	public void setHealthCheckType(String healthCheckType) {
+		this.healthCheckType = healthCheckType;
+		putQueryParameter("HealthCheckType", healthCheckType);
+	}
+
+	public Integer getMaxConnection() {
+		return this.maxConnection;
+	}
+
+	public void setMaxConnection(Integer maxConnection) {
+		this.maxConnection = maxConnection;
+		putQueryParameter("MaxConnection", maxConnection);
+	}
+
 	public String getOwnerAccount() {
 		return this.ownerAccount;
 	}
@@ -226,6 +254,33 @@ public class CreateLoadBalancerTCPListenerRequest extends RpcAcsRequest<CreateLo
 	public void setOwnerAccount(String ownerAccount) {
 		this.ownerAccount = ownerAccount;
 		putQueryParameter("OwnerAccount", ownerAccount);
+	}
+
+	public String getaccess_key_id() {
+		return this.access_key_id;
+	}
+
+	public void setaccess_key_id(String access_key_id) {
+		this.access_key_id = access_key_id;
+		putQueryParameter("access_key_id", access_key_id);
+	}
+
+	public String getVServerGroupId() {
+		return this.vServerGroupId;
+	}
+
+	public void setVServerGroupId(String vServerGroupId) {
+		this.vServerGroupId = vServerGroupId;
+		putQueryParameter("VServerGroupId", vServerGroupId);
+	}
+
+	public String getTags() {
+		return this.tags;
+	}
+
+	public void setTags(String tags) {
+		this.tags = tags;
+		putQueryParameter("Tags", tags);
 	}
 
 	@Override

@@ -20,6 +20,7 @@ package com.aliyuncs.slb.transform.v20140515;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import com.aliyuncs.slb.model.v20140515.DescribeServerCertificatesResponse;
 import com.aliyuncs.slb.model.v20140515.DescribeServerCertificatesResponse.ServerCertificate;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -33,11 +34,12 @@ public class DescribeServerCertificatesResponseUnmarshaller {
 
 		List<ServerCertificate> serverCertificates = new ArrayList<ServerCertificate>();
 		for (int i = 0; i < context.lengthValue("DescribeServerCertificatesResponse.ServerCertificates.Length"); i++) {
-			ServerCertificate  serverCertificate = new ServerCertificate();
+			ServerCertificate serverCertificate = new ServerCertificate();
 			serverCertificate.setServerCertificateId(context.stringValue("DescribeServerCertificatesResponse.ServerCertificates["+ i +"].ServerCertificateId"));
 			serverCertificate.setFingerprint(context.stringValue("DescribeServerCertificatesResponse.ServerCertificates["+ i +"].Fingerprint"));
 			serverCertificate.setServerCertificateName(context.stringValue("DescribeServerCertificatesResponse.ServerCertificates["+ i +"].ServerCertificateName"));
 			serverCertificate.setRegionId(context.stringValue("DescribeServerCertificatesResponse.ServerCertificates["+ i +"].RegionId"));
+			serverCertificate.setRegionIdAlias(context.stringValue("DescribeServerCertificatesResponse.ServerCertificates["+ i +"].RegionIdAlias"));
 
 			serverCertificates.add(serverCertificate);
 		}

@@ -39,6 +39,8 @@ public class DescribeLoadBalancerAttributeResponse extends AcsResponse {
 
 	private String regionId;
 
+	private String regionIdAlias;
+
 	private String address;
 
 	private String addressType;
@@ -54,6 +56,12 @@ public class DescribeLoadBalancerAttributeResponse extends AcsResponse {
 	private Integer bandwidth;
 
 	private String createTime;
+
+	private Long createTimeStamp;
+
+	private String masterZoneId;
+
+	private String slaveZoneId;
 
 	private List<ListenerPortAndProtocal> listenerPortsAndProtocal;
 
@@ -101,6 +109,14 @@ public class DescribeLoadBalancerAttributeResponse extends AcsResponse {
 
 	public void setRegionId(String regionId) {
 		this.regionId = regionId;
+	}
+
+	public String getRegionIdAlias() {
+		return this.regionIdAlias;
+	}
+
+	public void setRegionIdAlias(String regionIdAlias) {
+		this.regionIdAlias = regionIdAlias;
 	}
 
 	public String getAddress() {
@@ -165,6 +181,30 @@ public class DescribeLoadBalancerAttributeResponse extends AcsResponse {
 
 	public void setCreateTime(String createTime) {
 		this.createTime = createTime;
+	}
+
+	public Long getCreateTimeStamp() {
+		return this.createTimeStamp;
+	}
+
+	public void setCreateTimeStamp(Long createTimeStamp) {
+		this.createTimeStamp = createTimeStamp;
+	}
+
+	public String getMasterZoneId() {
+		return this.masterZoneId;
+	}
+
+	public void setMasterZoneId(String masterZoneId) {
+		this.masterZoneId = masterZoneId;
+	}
+
+	public String getSlaveZoneId() {
+		return this.slaveZoneId;
+	}
+
+	public void setSlaveZoneId(String slaveZoneId) {
+		this.slaveZoneId = slaveZoneId;
 	}
 
 	public List<ListenerPortAndProtocal> getListenerPortsAndProtocal() {

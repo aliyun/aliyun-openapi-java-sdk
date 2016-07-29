@@ -62,9 +62,21 @@ public class SetLoadBalancerTCPListenerAttributeRequest extends RpcAcsRequest<Se
 
 	private String healthCheckHttpCode;
 
+	private String healthCheckType;
+
 	private String synProxy;
 
+	private Integer maxConnection;
+
 	private String ownerAccount;
+
+	private String access_key_id;
+
+	private String tags;
+
+	private String vServerGroup;
+
+	private String vServerGroupId;
 
 	public Long getOwnerId() {
 		return this.ownerId;
@@ -72,7 +84,7 @@ public class SetLoadBalancerTCPListenerAttributeRequest extends RpcAcsRequest<Se
 
 	public void setOwnerId(Long ownerId) {
 		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", String.valueOf(ownerId));
+		putQueryParameter("OwnerId", ownerId);
 	}
 
 	public String getResourceOwnerAccount() {
@@ -90,7 +102,7 @@ public class SetLoadBalancerTCPListenerAttributeRequest extends RpcAcsRequest<Se
 
 	public void setResourceOwnerId(Long resourceOwnerId) {
 		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", String.valueOf(resourceOwnerId));
+		putQueryParameter("ResourceOwnerId", resourceOwnerId);
 	}
 
 	public String getLoadBalancerId() {
@@ -108,7 +120,7 @@ public class SetLoadBalancerTCPListenerAttributeRequest extends RpcAcsRequest<Se
 
 	public void setListenerPort(Integer listenerPort) {
 		this.listenerPort = listenerPort;
-		putQueryParameter("ListenerPort", String.valueOf(listenerPort));
+		putQueryParameter("ListenerPort", listenerPort);
 	}
 
 	public Integer getBandwidth() {
@@ -117,7 +129,7 @@ public class SetLoadBalancerTCPListenerAttributeRequest extends RpcAcsRequest<Se
 
 	public void setBandwidth(Integer bandwidth) {
 		this.bandwidth = bandwidth;
-		putQueryParameter("Bandwidth", String.valueOf(bandwidth));
+		putQueryParameter("Bandwidth", bandwidth);
 	}
 
 	public String getScheduler() {
@@ -135,7 +147,7 @@ public class SetLoadBalancerTCPListenerAttributeRequest extends RpcAcsRequest<Se
 
 	public void setPersistenceTimeout(Integer persistenceTimeout) {
 		this.persistenceTimeout = persistenceTimeout;
-		putQueryParameter("PersistenceTimeout", String.valueOf(persistenceTimeout));
+		putQueryParameter("PersistenceTimeout", persistenceTimeout);
 	}
 
 	public Integer getHealthyThreshold() {
@@ -144,7 +156,7 @@ public class SetLoadBalancerTCPListenerAttributeRequest extends RpcAcsRequest<Se
 
 	public void setHealthyThreshold(Integer healthyThreshold) {
 		this.healthyThreshold = healthyThreshold;
-		putQueryParameter("HealthyThreshold", String.valueOf(healthyThreshold));
+		putQueryParameter("HealthyThreshold", healthyThreshold);
 	}
 
 	public Integer getUnhealthyThreshold() {
@@ -153,7 +165,7 @@ public class SetLoadBalancerTCPListenerAttributeRequest extends RpcAcsRequest<Se
 
 	public void setUnhealthyThreshold(Integer unhealthyThreshold) {
 		this.unhealthyThreshold = unhealthyThreshold;
-		putQueryParameter("UnhealthyThreshold", String.valueOf(unhealthyThreshold));
+		putQueryParameter("UnhealthyThreshold", unhealthyThreshold);
 	}
 
 	public Integer getHealthCheckConnectTimeout() {
@@ -162,7 +174,7 @@ public class SetLoadBalancerTCPListenerAttributeRequest extends RpcAcsRequest<Se
 
 	public void setHealthCheckConnectTimeout(Integer healthCheckConnectTimeout) {
 		this.healthCheckConnectTimeout = healthCheckConnectTimeout;
-		putQueryParameter("HealthCheckConnectTimeout", String.valueOf(healthCheckConnectTimeout));
+		putQueryParameter("HealthCheckConnectTimeout", healthCheckConnectTimeout);
 	}
 
 	public Integer getHealthCheckConnectPort() {
@@ -171,7 +183,7 @@ public class SetLoadBalancerTCPListenerAttributeRequest extends RpcAcsRequest<Se
 
 	public void setHealthCheckConnectPort(Integer healthCheckConnectPort) {
 		this.healthCheckConnectPort = healthCheckConnectPort;
-		putQueryParameter("HealthCheckConnectPort", String.valueOf(healthCheckConnectPort));
+		putQueryParameter("HealthCheckConnectPort", healthCheckConnectPort);
 	}
 
 	public Integer getHealthCheckInterval() {
@@ -180,7 +192,7 @@ public class SetLoadBalancerTCPListenerAttributeRequest extends RpcAcsRequest<Se
 
 	public void setHealthCheckInterval(Integer healthCheckInterval) {
 		this.healthCheckInterval = healthCheckInterval;
-		putQueryParameter("HealthCheckInterval", String.valueOf(healthCheckInterval));
+		putQueryParameter("HealthCheckInterval", healthCheckInterval);
 	}
 
 	public String getHealthCheckDomain() {
@@ -210,6 +222,15 @@ public class SetLoadBalancerTCPListenerAttributeRequest extends RpcAcsRequest<Se
 		putQueryParameter("HealthCheckHttpCode", healthCheckHttpCode);
 	}
 
+	public String getHealthCheckType() {
+		return this.healthCheckType;
+	}
+
+	public void setHealthCheckType(String healthCheckType) {
+		this.healthCheckType = healthCheckType;
+		putQueryParameter("HealthCheckType", healthCheckType);
+	}
+
 	public String getSynProxy() {
 		return this.synProxy;
 	}
@@ -219,6 +240,15 @@ public class SetLoadBalancerTCPListenerAttributeRequest extends RpcAcsRequest<Se
 		putQueryParameter("SynProxy", synProxy);
 	}
 
+	public Integer getMaxConnection() {
+		return this.maxConnection;
+	}
+
+	public void setMaxConnection(Integer maxConnection) {
+		this.maxConnection = maxConnection;
+		putQueryParameter("MaxConnection", maxConnection);
+	}
+
 	public String getOwnerAccount() {
 		return this.ownerAccount;
 	}
@@ -226,6 +256,42 @@ public class SetLoadBalancerTCPListenerAttributeRequest extends RpcAcsRequest<Se
 	public void setOwnerAccount(String ownerAccount) {
 		this.ownerAccount = ownerAccount;
 		putQueryParameter("OwnerAccount", ownerAccount);
+	}
+
+	public String getaccess_key_id() {
+		return this.access_key_id;
+	}
+
+	public void setaccess_key_id(String access_key_id) {
+		this.access_key_id = access_key_id;
+		putQueryParameter("access_key_id", access_key_id);
+	}
+
+	public String getTags() {
+		return this.tags;
+	}
+
+	public void setTags(String tags) {
+		this.tags = tags;
+		putQueryParameter("Tags", tags);
+	}
+
+	public String getVServerGroup() {
+		return this.vServerGroup;
+	}
+
+	public void setVServerGroup(String vServerGroup) {
+		this.vServerGroup = vServerGroup;
+		putQueryParameter("VServerGroup", vServerGroup);
+	}
+
+	public String getVServerGroupId() {
+		return this.vServerGroupId;
+	}
+
+	public void setVServerGroupId(String vServerGroupId) {
+		this.vServerGroupId = vServerGroupId;
+		putQueryParameter("VServerGroupId", vServerGroupId);
 	}
 
 	@Override

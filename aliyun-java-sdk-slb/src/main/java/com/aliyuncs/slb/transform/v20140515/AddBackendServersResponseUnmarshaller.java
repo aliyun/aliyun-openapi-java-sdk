@@ -20,6 +20,7 @@ package com.aliyuncs.slb.transform.v20140515;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import com.aliyuncs.slb.model.v20140515.AddBackendServersResponse;
 import com.aliyuncs.slb.model.v20140515.AddBackendServersResponse.BackendServer;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -34,7 +35,7 @@ public class AddBackendServersResponseUnmarshaller {
 
 		List<BackendServer> backendServers = new ArrayList<BackendServer>();
 		for (int i = 0; i < context.lengthValue("AddBackendServersResponse.BackendServers.Length"); i++) {
-			BackendServer  backendServer = new BackendServer();
+			BackendServer backendServer = new BackendServer();
 			backendServer.setServerId(context.stringValue("AddBackendServersResponse.BackendServers["+ i +"].ServerId"));
 			backendServer.setWeight(context.stringValue("AddBackendServersResponse.BackendServers["+ i +"].Weight"));
 

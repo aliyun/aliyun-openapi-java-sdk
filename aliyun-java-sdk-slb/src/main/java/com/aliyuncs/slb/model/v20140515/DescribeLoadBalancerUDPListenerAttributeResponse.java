@@ -54,6 +54,14 @@ public class DescribeLoadBalancerUDPListenerAttributeResponse extends AcsRespons
 
 	private Integer healthCheckInterval;
 
+	private String healthCheckReq;
+
+	private String healthCheckExp;
+
+	private Integer maxConnection;
+
+	private String vServerGroupId;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -156,6 +164,38 @@ public class DescribeLoadBalancerUDPListenerAttributeResponse extends AcsRespons
 
 	public void setHealthCheckInterval(Integer healthCheckInterval) {
 		this.healthCheckInterval = healthCheckInterval;
+	}
+
+	public String getHealthCheckReq() {
+		return this.healthCheckReq;
+	}
+
+	public void setHealthCheckReq(String healthCheckReq) {
+		this.healthCheckReq = healthCheckReq;
+	}
+
+	public String getHealthCheckExp() {
+		return this.healthCheckExp;
+	}
+
+	public void setHealthCheckExp(String healthCheckExp) {
+		this.healthCheckExp = healthCheckExp;
+	}
+
+	public Integer getMaxConnection() {
+		return this.maxConnection;
+	}
+
+	public void setMaxConnection(Integer maxConnection) {
+		this.maxConnection = maxConnection;
+	}
+
+	public String getVServerGroupId() {
+		return this.vServerGroupId;
+	}
+
+	public void setVServerGroupId(String vServerGroupId) {
+		this.vServerGroupId = vServerGroupId;
 	}
 
 	@Override

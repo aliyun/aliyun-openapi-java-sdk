@@ -74,7 +74,15 @@ public class CreateLoadBalancerHTTPListenerRequest extends RpcAcsRequest<CreateL
 
 	private String healthCheckHttpCode;
 
+	private Integer maxConnection;
+
 	private String ownerAccount;
+
+	private String access_key_id;
+
+	private String vServerGroupId;
+
+	private String tags;
 
 	public Long getOwnerId() {
 		return this.ownerId;
@@ -82,7 +90,7 @@ public class CreateLoadBalancerHTTPListenerRequest extends RpcAcsRequest<CreateL
 
 	public void setOwnerId(Long ownerId) {
 		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", String.valueOf(ownerId));
+		putQueryParameter("OwnerId", ownerId);
 	}
 
 	public String getResourceOwnerAccount() {
@@ -100,7 +108,7 @@ public class CreateLoadBalancerHTTPListenerRequest extends RpcAcsRequest<CreateL
 
 	public void setResourceOwnerId(Long resourceOwnerId) {
 		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", String.valueOf(resourceOwnerId));
+		putQueryParameter("ResourceOwnerId", resourceOwnerId);
 	}
 
 	public String getLoadBalancerId() {
@@ -118,7 +126,7 @@ public class CreateLoadBalancerHTTPListenerRequest extends RpcAcsRequest<CreateL
 
 	public void setBandwidth(Integer bandwidth) {
 		this.bandwidth = bandwidth;
-		putQueryParameter("Bandwidth", String.valueOf(bandwidth));
+		putQueryParameter("Bandwidth", bandwidth);
 	}
 
 	public Integer getListenerPort() {
@@ -127,7 +135,7 @@ public class CreateLoadBalancerHTTPListenerRequest extends RpcAcsRequest<CreateL
 
 	public void setListenerPort(Integer listenerPort) {
 		this.listenerPort = listenerPort;
-		putQueryParameter("ListenerPort", String.valueOf(listenerPort));
+		putQueryParameter("ListenerPort", listenerPort);
 	}
 
 	public Integer getBackendServerPort() {
@@ -136,7 +144,7 @@ public class CreateLoadBalancerHTTPListenerRequest extends RpcAcsRequest<CreateL
 
 	public void setBackendServerPort(Integer backendServerPort) {
 		this.backendServerPort = backendServerPort;
-		putQueryParameter("BackendServerPort", String.valueOf(backendServerPort));
+		putQueryParameter("BackendServerPort", backendServerPort);
 	}
 
 	public String getXForwardedFor() {
@@ -181,7 +189,7 @@ public class CreateLoadBalancerHTTPListenerRequest extends RpcAcsRequest<CreateL
 
 	public void setCookieTimeout(Integer cookieTimeout) {
 		this.cookieTimeout = cookieTimeout;
-		putQueryParameter("CookieTimeout", String.valueOf(cookieTimeout));
+		putQueryParameter("CookieTimeout", cookieTimeout);
 	}
 
 	public String getCookie() {
@@ -226,7 +234,7 @@ public class CreateLoadBalancerHTTPListenerRequest extends RpcAcsRequest<CreateL
 
 	public void setHealthyThreshold(Integer healthyThreshold) {
 		this.healthyThreshold = healthyThreshold;
-		putQueryParameter("HealthyThreshold", String.valueOf(healthyThreshold));
+		putQueryParameter("HealthyThreshold", healthyThreshold);
 	}
 
 	public Integer getUnhealthyThreshold() {
@@ -235,7 +243,7 @@ public class CreateLoadBalancerHTTPListenerRequest extends RpcAcsRequest<CreateL
 
 	public void setUnhealthyThreshold(Integer unhealthyThreshold) {
 		this.unhealthyThreshold = unhealthyThreshold;
-		putQueryParameter("UnhealthyThreshold", String.valueOf(unhealthyThreshold));
+		putQueryParameter("UnhealthyThreshold", unhealthyThreshold);
 	}
 
 	public Integer getHealthCheckTimeout() {
@@ -244,7 +252,7 @@ public class CreateLoadBalancerHTTPListenerRequest extends RpcAcsRequest<CreateL
 
 	public void setHealthCheckTimeout(Integer healthCheckTimeout) {
 		this.healthCheckTimeout = healthCheckTimeout;
-		putQueryParameter("HealthCheckTimeout", String.valueOf(healthCheckTimeout));
+		putQueryParameter("HealthCheckTimeout", healthCheckTimeout);
 	}
 
 	public Integer getHealthCheckConnectPort() {
@@ -253,7 +261,7 @@ public class CreateLoadBalancerHTTPListenerRequest extends RpcAcsRequest<CreateL
 
 	public void setHealthCheckConnectPort(Integer healthCheckConnectPort) {
 		this.healthCheckConnectPort = healthCheckConnectPort;
-		putQueryParameter("HealthCheckConnectPort", String.valueOf(healthCheckConnectPort));
+		putQueryParameter("HealthCheckConnectPort", healthCheckConnectPort);
 	}
 
 	public Integer getHealthCheckInterval() {
@@ -262,7 +270,7 @@ public class CreateLoadBalancerHTTPListenerRequest extends RpcAcsRequest<CreateL
 
 	public void setHealthCheckInterval(Integer healthCheckInterval) {
 		this.healthCheckInterval = healthCheckInterval;
-		putQueryParameter("HealthCheckInterval", String.valueOf(healthCheckInterval));
+		putQueryParameter("HealthCheckInterval", healthCheckInterval);
 	}
 
 	public String getHealthCheckHttpCode() {
@@ -274,6 +282,15 @@ public class CreateLoadBalancerHTTPListenerRequest extends RpcAcsRequest<CreateL
 		putQueryParameter("HealthCheckHttpCode", healthCheckHttpCode);
 	}
 
+	public Integer getMaxConnection() {
+		return this.maxConnection;
+	}
+
+	public void setMaxConnection(Integer maxConnection) {
+		this.maxConnection = maxConnection;
+		putQueryParameter("MaxConnection", maxConnection);
+	}
+
 	public String getOwnerAccount() {
 		return this.ownerAccount;
 	}
@@ -281,6 +298,33 @@ public class CreateLoadBalancerHTTPListenerRequest extends RpcAcsRequest<CreateL
 	public void setOwnerAccount(String ownerAccount) {
 		this.ownerAccount = ownerAccount;
 		putQueryParameter("OwnerAccount", ownerAccount);
+	}
+
+	public String getaccess_key_id() {
+		return this.access_key_id;
+	}
+
+	public void setaccess_key_id(String access_key_id) {
+		this.access_key_id = access_key_id;
+		putQueryParameter("access_key_id", access_key_id);
+	}
+
+	public String getVServerGroupId() {
+		return this.vServerGroupId;
+	}
+
+	public void setVServerGroupId(String vServerGroupId) {
+		this.vServerGroupId = vServerGroupId;
+		putQueryParameter("VServerGroupId", vServerGroupId);
+	}
+
+	public String getTags() {
+		return this.tags;
+	}
+
+	public void setTags(String tags) {
+		this.tags = tags;
+		putQueryParameter("Tags", tags);
 	}
 
 	@Override

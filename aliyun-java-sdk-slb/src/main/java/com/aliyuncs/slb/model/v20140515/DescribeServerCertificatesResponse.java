@@ -59,6 +59,8 @@ public class DescribeServerCertificatesResponse extends AcsResponse {
 
 		private String regionId;
 
+		private String regionIdAlias;
+
 		public String getServerCertificateId() {
 			return this.serverCertificateId;
 		}
@@ -89,6 +91,14 @@ public class DescribeServerCertificatesResponse extends AcsResponse {
 
 		public void setRegionId(String regionId) {
 			this.regionId = regionId;
+		}
+
+		public String getRegionIdAlias() {
+			return this.regionIdAlias;
+		}
+
+		public void setRegionIdAlias(String regionIdAlias) {
+			this.regionIdAlias = regionIdAlias;
 		}
 	}
 

@@ -43,6 +43,9 @@ public class DescribeLoadBalancerTCPListenerAttributeResponseUnmarshaller {
 		describeLoadBalancerTCPListenerAttributeResponse.setHealthCheckHttpCode(context.stringValue("DescribeLoadBalancerTCPListenerAttributeResponse.HealthCheckHttpCode"));
 		describeLoadBalancerTCPListenerAttributeResponse.setHealthCheckDomain(context.stringValue("DescribeLoadBalancerTCPListenerAttributeResponse.HealthCheckDomain"));
 		describeLoadBalancerTCPListenerAttributeResponse.setHealthCheckURI(context.stringValue("DescribeLoadBalancerTCPListenerAttributeResponse.HealthCheckURI"));
+		describeLoadBalancerTCPListenerAttributeResponse.setHealthCheckType(context.stringValue("DescribeLoadBalancerTCPListenerAttributeResponse.HealthCheckType"));
+		describeLoadBalancerTCPListenerAttributeResponse.setMaxConnection(context.integerValue("DescribeLoadBalancerTCPListenerAttributeResponse.MaxConnection"));
+		describeLoadBalancerTCPListenerAttributeResponse.setVServerGroupId(context.stringValue("DescribeLoadBalancerTCPListenerAttributeResponse.VServerGroupId"));
 	 
 	 	return describeLoadBalancerTCPListenerAttributeResponse;
 	}

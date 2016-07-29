@@ -20,10 +20,11 @@ package com.aliyuncs.slb.transform.v20140515;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import com.aliyuncs.slb.model.v20140515.DescribeLoadBalancerAttributeResponse;
+import com.aliyuncs.slb.model.v20140515.DescribeLoadBalancerAttributeResponse.BackendServer;
 import com.aliyuncs.slb.model.v20140515.DescribeLoadBalancerAttributeResponse.ListenerPortAndProtocal;
 import com.aliyuncs.slb.model.v20140515.DescribeLoadBalancerAttributeResponse.ListenerPortAndProtocol;
-import com.aliyuncs.slb.model.v20140515.DescribeLoadBalancerAttributeResponse.BackendServer;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -36,6 +37,7 @@ public class DescribeLoadBalancerAttributeResponseUnmarshaller {
 		describeLoadBalancerAttributeResponse.setLoadBalancerName(context.stringValue("DescribeLoadBalancerAttributeResponse.LoadBalancerName"));
 		describeLoadBalancerAttributeResponse.setLoadBalancerStatus(context.stringValue("DescribeLoadBalancerAttributeResponse.LoadBalancerStatus"));
 		describeLoadBalancerAttributeResponse.setRegionId(context.stringValue("DescribeLoadBalancerAttributeResponse.RegionId"));
+		describeLoadBalancerAttributeResponse.setRegionIdAlias(context.stringValue("DescribeLoadBalancerAttributeResponse.RegionIdAlias"));
 		describeLoadBalancerAttributeResponse.setAddress(context.stringValue("DescribeLoadBalancerAttributeResponse.Address"));
 		describeLoadBalancerAttributeResponse.setAddressType(context.stringValue("DescribeLoadBalancerAttributeResponse.AddressType"));
 		describeLoadBalancerAttributeResponse.setVpcId(context.stringValue("DescribeLoadBalancerAttributeResponse.VpcId"));
@@ -44,6 +46,9 @@ public class DescribeLoadBalancerAttributeResponseUnmarshaller {
 		describeLoadBalancerAttributeResponse.setInternetChargeType(context.stringValue("DescribeLoadBalancerAttributeResponse.InternetChargeType"));
 		describeLoadBalancerAttributeResponse.setBandwidth(context.integerValue("DescribeLoadBalancerAttributeResponse.Bandwidth"));
 		describeLoadBalancerAttributeResponse.setCreateTime(context.stringValue("DescribeLoadBalancerAttributeResponse.CreateTime"));
+		describeLoadBalancerAttributeResponse.setCreateTimeStamp(context.longValue("DescribeLoadBalancerAttributeResponse.CreateTimeStamp"));
+		describeLoadBalancerAttributeResponse.setMasterZoneId(context.stringValue("DescribeLoadBalancerAttributeResponse.MasterZoneId"));
+		describeLoadBalancerAttributeResponse.setSlaveZoneId(context.stringValue("DescribeLoadBalancerAttributeResponse.SlaveZoneId"));
 
 		List<String> listenerPorts = new ArrayList<String>();
 		for (int i = 0; i < context.lengthValue("DescribeLoadBalancerAttributeResponse.ListenerPorts.Length"); i++) {
@@ -53,7 +58,7 @@ public class DescribeLoadBalancerAttributeResponseUnmarshaller {
 
 		List<ListenerPortAndProtocal> listenerPortsAndProtocal = new ArrayList<ListenerPortAndProtocal>();
 		for (int i = 0; i < context.lengthValue("DescribeLoadBalancerAttributeResponse.ListenerPortsAndProtocal.Length"); i++) {
-			ListenerPortAndProtocal  listenerPortAndProtocal = new ListenerPortAndProtocal();
+			ListenerPortAndProtocal listenerPortAndProtocal = new ListenerPortAndProtocal();
 			listenerPortAndProtocal.setListenerPort(context.integerValue("DescribeLoadBalancerAttributeResponse.ListenerPortsAndProtocal["+ i +"].ListenerPort"));
 			listenerPortAndProtocal.setListenerProtocal(context.stringValue("DescribeLoadBalancerAttributeResponse.ListenerPortsAndProtocal["+ i +"].ListenerProtocal"));
 
@@ -63,7 +68,7 @@ public class DescribeLoadBalancerAttributeResponseUnmarshaller {
 
 		List<ListenerPortAndProtocol> listenerPortsAndProtocol = new ArrayList<ListenerPortAndProtocol>();
 		for (int i = 0; i < context.lengthValue("DescribeLoadBalancerAttributeResponse.ListenerPortsAndProtocol.Length"); i++) {
-			ListenerPortAndProtocol  listenerPortAndProtocol = new ListenerPortAndProtocol();
+			ListenerPortAndProtocol listenerPortAndProtocol = new ListenerPortAndProtocol();
 			listenerPortAndProtocol.setListenerPort(context.integerValue("DescribeLoadBalancerAttributeResponse.ListenerPortsAndProtocol["+ i +"].ListenerPort"));
 			listenerPortAndProtocol.setListenerProtocol(context.stringValue("DescribeLoadBalancerAttributeResponse.ListenerPortsAndProtocol["+ i +"].ListenerProtocol"));
 
@@ -73,7 +78,7 @@ public class DescribeLoadBalancerAttributeResponseUnmarshaller {
 
 		List<BackendServer> backendServers = new ArrayList<BackendServer>();
 		for (int i = 0; i < context.lengthValue("DescribeLoadBalancerAttributeResponse.BackendServers.Length"); i++) {
-			BackendServer  backendServer = new BackendServer();
+			BackendServer backendServer = new BackendServer();
 			backendServer.setServerId(context.stringValue("DescribeLoadBalancerAttributeResponse.BackendServers["+ i +"].ServerId"));
 			backendServer.setWeight(context.integerValue("DescribeLoadBalancerAttributeResponse.BackendServers["+ i +"].Weight"));
 

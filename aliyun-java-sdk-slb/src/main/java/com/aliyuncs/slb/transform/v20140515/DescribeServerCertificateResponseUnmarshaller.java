@@ -30,6 +30,7 @@ public class DescribeServerCertificateResponseUnmarshaller {
 		describeServerCertificateResponse.setServerCertificateId(context.stringValue("DescribeServerCertificateResponse.ServerCertificateId"));
 		describeServerCertificateResponse.setFingerprint(context.stringValue("DescribeServerCertificateResponse.Fingerprint"));
 		describeServerCertificateResponse.setRegionId(context.stringValue("DescribeServerCertificateResponse.RegionId"));
+		describeServerCertificateResponse.setRegionIdAlias(context.stringValue("DescribeServerCertificateResponse.RegionIdAlias"));
 		describeServerCertificateResponse.setServerCertificateName(context.stringValue("DescribeServerCertificateResponse.ServerCertificateName"));
 	 
 	 	return describeServerCertificateResponse;

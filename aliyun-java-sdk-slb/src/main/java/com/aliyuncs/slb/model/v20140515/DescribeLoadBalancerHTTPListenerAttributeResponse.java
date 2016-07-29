@@ -38,6 +38,8 @@ public class DescribeLoadBalancerHTTPListenerAttributeResponse extends AcsRespon
 
 	private String status;
 
+	private String securityStatus;
+
 	private String xForwardedFor;
 
 	private String scheduler;
@@ -67,6 +69,10 @@ public class DescribeLoadBalancerHTTPListenerAttributeResponse extends AcsRespon
 	private Integer healthCheckConnectPort;
 
 	private String healthCheckHttpCode;
+
+	private Integer maxConnection;
+
+	private String vServerGroupId;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -106,6 +112,14 @@ public class DescribeLoadBalancerHTTPListenerAttributeResponse extends AcsRespon
 
 	public void setStatus(String status) {
 		this.status = status;
+	}
+
+	public String getSecurityStatus() {
+		return this.securityStatus;
+	}
+
+	public void setSecurityStatus(String securityStatus) {
+		this.securityStatus = securityStatus;
 	}
 
 	public String getXForwardedFor() {
@@ -226,6 +240,22 @@ public class DescribeLoadBalancerHTTPListenerAttributeResponse extends AcsRespon
 
 	public void setHealthCheckHttpCode(String healthCheckHttpCode) {
 		this.healthCheckHttpCode = healthCheckHttpCode;
+	}
+
+	public Integer getMaxConnection() {
+		return this.maxConnection;
+	}
+
+	public void setMaxConnection(Integer maxConnection) {
+		this.maxConnection = maxConnection;
+	}
+
+	public String getVServerGroupId() {
+		return this.vServerGroupId;
+	}
+
+	public void setVServerGroupId(String vServerGroupId) {
+		this.vServerGroupId = vServerGroupId;
 	}
 
 	@Override

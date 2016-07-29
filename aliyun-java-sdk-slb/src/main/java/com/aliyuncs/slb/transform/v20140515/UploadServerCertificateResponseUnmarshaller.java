@@ -31,6 +31,7 @@ public class UploadServerCertificateResponseUnmarshaller {
 		uploadServerCertificateResponse.setFingerprint(context.stringValue("UploadServerCertificateResponse.Fingerprint"));
 		uploadServerCertificateResponse.setServerCertificateName(context.stringValue("UploadServerCertificateResponse.ServerCertificateName"));
 		uploadServerCertificateResponse.setRegionId(context.stringValue("UploadServerCertificateResponse.RegionId"));
+		uploadServerCertificateResponse.setRegionIdAlias(context.stringValue("UploadServerCertificateResponse.RegionIdAlias"));
 	 
 	 	return uploadServerCertificateResponse;
 	}
