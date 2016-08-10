@@ -18,159 +18,206 @@
  */
 package com.aliyuncs.profile;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
-import com.aliyuncs.auth.Credential;
-import com.aliyuncs.auth.ICredentialProvider;
-import com.aliyuncs.auth.ISigner;
-import com.aliyuncs.auth.ShaHmac1;
+import com.aliyuncs.auth.*;
 import com.aliyuncs.exceptions.ClientException;
 import com.aliyuncs.http.FormatType;
-import com.aliyuncs.regions.Endpoint;
-import com.aliyuncs.regions.IEndpointsProvider;
-import com.aliyuncs.regions.InternalEndpointsParser;
-import com.aliyuncs.regions.ProductDomain;
+import com.aliyuncs.regions.*;
 
 public class DefaultProfile implements IClientProfile {
 
-	private static DefaultProfile profile = null;
-	private static List<Endpoint> endpoints = null;
-	
-	private Credential credential = null;
-	private String regionId = null;
-	private FormatType acceptFormat = null;
-	private ISigner isigner = null;
-	private IEndpointsProvider iendpoints = null;
-	private ICredentialProvider icredential = null;
-	
-	private DefaultProfile() {
-		this.iendpoints = new InternalEndpointsParser();
-	}
-	
-	private DefaultProfile(String region, Credential creden) {
-		iendpoints = new InternalEndpointsParser();
-		credential = creden;
-		regionId = region;
-	}
-	
-	private DefaultProfile(ICredentialProvider icredential) {
-		this.icredential = icredential;
-		this.iendpoints = new InternalEndpointsParser();
-	}
-	
-	private DefaultProfile(String region, ICredentialProvider icredential) {
-		regionId = region;
-		this.icredential = icredential;
-		this.iendpoints = new InternalEndpointsParser();
-	}
-	
-	private DefaultProfile(ICredentialProvider icredential, String region, FormatType format) {
-		regionId = region;
-		acceptFormat = format;
-		this.icredential = icredential;
-		this.iendpoints = new InternalEndpointsParser();
-	}
-	
-	public synchronized ISigner getSigner() {
-		if (null == isigner)
-			isigner = new ShaHmac1();
-		return isigner;
-	}
+    private static DefaultProfile profile        = null;
+    private static List<Endpoint> endpoints      = null;
 
-	public synchronized String getRegionId() {
-		return regionId;
-	}
+    private Credential            credential     = null;
+    private String                regionId       = null;
+    private FormatType            acceptFormat   = null;
+    private ISigner               isigner        = null;
+    private IEndpointsProvider    iendpoints     = null;
+    private IEndpointsProvider    remoteProvider = null;
+    private ICredentialProvider   icredential    = null;
+    private LocationConfig        locationConfig = new LocationConfig();
 
-	public synchronized FormatType getFormat() {
-		return acceptFormat;
-	}
+    private DefaultProfile() {
+        this.locationConfig = new LocationConfig();
+        this.iendpoints = new InternalEndpointsParser();
+        this.remoteProvider = RemoteEndpointsParser.initRemoteEndpointsParser();
+    }
 
-	public synchronized Credential getCredential() {
-		if (null == credential && null != icredential)
-			credential = icredential.fresh();
-		return credential;
-	}
+    private DefaultProfile(String region, Credential creden) {
+        this.iendpoints = new InternalEndpointsParser();
+        this.remoteProvider = RemoteEndpointsParser.initRemoteEndpointsParser();
+        this.credential = creden;
+        this.regionId = region;
+        this.locationConfig = new LocationConfig();
+    }
 
-	public synchronized List<Endpoint> getEndpoints() throws ClientException {
-		if (null == endpoints)
-			endpoints = iendpoints.getEndpoints();
-		return endpoints;
-	}
+    private DefaultProfile(String region, Credential creden, IEndpointsProvider provider) {
+        this.iendpoints = provider;
+        this.credential = creden;
+        this.regionId = region;
+        this.locationConfig = new LocationConfig();
+        this.remoteProvider = RemoteEndpointsParser.initRemoteEndpointsParser();
+    }
 
-	public synchronized static DefaultProfile getProfile() {
-		if (null == profile)
-			profile = new DefaultProfile();
-		
-		return profile;
-	}
-	
-	public synchronized static DefaultProfile getProfile(String regionId, ICredentialProvider icredential) {
-		profile = new DefaultProfile(regionId, icredential);
-		return profile;
-	}
-	
-	public synchronized static DefaultProfile getProfile(String regionId, String accessKeyId, String secret) {
-		Credential creden = new Credential(accessKeyId, secret);
-		profile = new DefaultProfile(regionId, creden);
-		return profile;
-	}
+    private DefaultProfile(ICredentialProvider icredential) {
+        this.icredential = icredential;
+        this.iendpoints = new InternalEndpointsParser();
+        this.remoteProvider = RemoteEndpointsParser.initRemoteEndpointsParser();
+        this.locationConfig = new LocationConfig();
+    }
 
-	public synchronized static void addEndpoint(String endpointName, String regionId, String product, String domain) throws ClientException {
-		if(null == endpoints){
-			endpoints = getProfile().getEndpoints();
-		}
-		Endpoint endpoint = findEndpointByRegionId(regionId);
-		if(null == endpoint){
-			addEndpoint_(endpointName, regionId, product, domain);
-		} else {
-			updateEndpoint(regionId, product, domain, endpoint); 
-		}
-	}
+    private DefaultProfile(String region, ICredentialProvider icredential) {
+        this.regionId = region;
+        this.icredential = icredential;
+        this.iendpoints = new InternalEndpointsParser();
+        this.locationConfig = new LocationConfig();
+        this.remoteProvider = RemoteEndpointsParser.initRemoteEndpointsParser();
+    }
 
-	private static void addEndpoint_(String endpointName, String regionId, String product, String domain) {
-		Set<String> regions = new HashSet<String>();
-		regions.add(regionId);
-		
-		List<ProductDomain> productDomains = new ArrayList<ProductDomain>();
-		productDomains.add(new ProductDomain(product, domain));
-		Endpoint endpoint = new Endpoint(endpointName, regions, productDomains);
-		endpoints.add(endpoint);
-	}
+    private DefaultProfile(ICredentialProvider icredential, String region, FormatType format) {
+        this.regionId = region;
+        this.acceptFormat = format;
+        this.icredential = icredential;
+        this.iendpoints = new InternalEndpointsParser();
+        this.remoteProvider = RemoteEndpointsParser.initRemoteEndpointsParser();
+        this.locationConfig = new LocationConfig();
+    }
 
-	private static void updateEndpoint(String regionId, String product, String domain, Endpoint endpoint) {
-		Set<String> regionIds = endpoint.getRegionIds();
-		regionIds.add(regionId);
-		
-		List<ProductDomain> productDomains = endpoint.getProductDomains();
-		ProductDomain productDomain = findProductDomain(productDomains, product);
-		if(null == productDomain){
-			productDomains.add(new ProductDomain(product, domain));
-		}
-		else {
-			productDomain.setDomianName(domain);
-		}
-	}
-	
-	private static Endpoint findEndpointByRegionId(String regionId) {
-		for (Endpoint endpoint : endpoints) {
-			if(endpoint.getRegionIds().contains(regionId)){
-				return endpoint;
-			}
-		}
-		return null;
-	}
-	
-	private static ProductDomain findProductDomain(List<ProductDomain> productDomains, String product){
-		for (ProductDomain productDomain : productDomains) {
-			if(productDomain.getProductName().equals(product)){
-				return productDomain;
-			}
-		}
-		return null;
-	}
+    public synchronized ISigner getSigner() {
+        if (null == isigner)
+            this.isigner = ShaHmac1Singleton.INSTANCE.getInstance();
+        return isigner;
+    }
 
+    public synchronized String getRegionId() {
+        return regionId;
+    }
+
+    public synchronized FormatType getFormat() {
+        return acceptFormat;
+    }
+
+    public synchronized Credential getCredential() {
+        if (null == credential && null != icredential)
+            credential = icredential.fresh();
+        return credential;
+    }
+
+    public synchronized void setLocationConfig(String regionId, String product, String endpoint) {
+        this.locationConfig = LocationConfig.createLocationConfig(regionId, product, endpoint);
+    }
+
+    public synchronized List<Endpoint> getEndpoints() throws ClientException {
+        if (null == endpoints)
+            endpoints = iendpoints.getEndpoints();
+        return endpoints;
+    }
+
+    public synchronized List<Endpoint> getEndpoints(String product,String serviceCode, String endpointType) throws ClientException {
+        if (null == endpoints || Endpoint.findProductDomain(regionId, product, endpoints) == null) {
+            endpoints = remoteProvider.getEndpoints(regionId, serviceCode, endpointType, credential, locationConfig);
+            if (endpoints == null) {
+                endpoints = iendpoints.getEndpoints();
+            }
+        }
+        return endpoints;
+    }
+
+    public synchronized static DefaultProfile getProfile() {
+        if (null == profile)
+            profile = new DefaultProfile();
+
+        return profile;
+    }
+
+    public synchronized static DefaultProfile getProfile(String regionId, ICredentialProvider icredential) {
+        profile = new DefaultProfile(regionId, icredential);
+        return profile;
+    }
+
+    public synchronized static DefaultProfile getProfile(String regionId, String accessKeyId, String secret) {
+        Credential creden = new Credential(accessKeyId, secret);
+        profile = new DefaultProfile(regionId, creden);
+        return profile;
+    }
+
+    /**
+     * regionId,eg: cn-hangzhou
+     * productDomainMap,eg:
+     * Map<String, String> productDomainMap= new HashMap<String,String>();
+     * productDomainMap.put("ecs","ecs.aliyuncs.com")
+     * accessKeyId
+     * secret
+     */
+    public synchronized static DefaultProfile getProfile(String regionId, Map<String, String> productDomainMap,
+                                                         String accessKeyId, String secret) {
+        Credential creden = new Credential(accessKeyId, secret);
+        IEndpointsProvider provider = CustomizedEndpointsParser.initParser(regionId, productDomainMap);
+        profile = new DefaultProfile(regionId, creden, provider);
+        return profile;
+    }
+
+    public synchronized static DefaultProfile getProfile(String regionId, IEndpointsProvider provider,
+                                                         String accessKeyId, String secret) {
+        Credential creden = new Credential(accessKeyId, secret);
+        profile = new DefaultProfile(regionId, creden, provider);
+        return profile;
+    }
+
+    public synchronized static void addEndpoint(String endpointName, String regionId, String product, String domain)
+            throws ClientException {
+        if (null == endpoints) {
+            endpoints = getProfile().getEndpoints();
+        }
+        Endpoint endpoint = findEndpointByRegionId(regionId);
+        if (null == endpoint) {
+            addEndpoint_(endpointName, regionId, product, domain);
+        } else {
+            updateEndpoint(regionId, product, domain, endpoint);
+        }
+    }
+
+    private static void addEndpoint_(String endpointName, String regionId, String product, String domain) {
+        Set<String> regions = new HashSet<String>();
+        regions.add(regionId);
+
+        List<ProductDomain> productDomains = new ArrayList<ProductDomain>();
+        productDomains.add(new ProductDomain(product, domain));
+        Endpoint endpoint = new Endpoint(endpointName, regions, productDomains);
+        endpoints.add(endpoint);
+    }
+
+    private static void updateEndpoint(String regionId, String product, String domain, Endpoint endpoint) {
+        Set<String> regionIds = endpoint.getRegionIds();
+        regionIds.add(regionId);
+
+        List<ProductDomain> productDomains = endpoint.getProductDomains();
+        ProductDomain productDomain = findProductDomain(productDomains, product);
+        if (null == productDomain) {
+            productDomains.add(new ProductDomain(product, domain));
+        } else {
+            productDomain.setDomianName(domain);
+        }
+    }
+
+    private static Endpoint findEndpointByRegionId(String regionId) {
+        for (Endpoint endpoint : endpoints) {
+            if (endpoint.getRegionIds().contains(regionId)) {
+                return endpoint;
+            }
+        }
+        return null;
+    }
+
+    private static ProductDomain findProductDomain(List<ProductDomain> productDomains, String product) {
+        for (ProductDomain productDomain : productDomains) {
+            if (productDomain.getProductName().equals(product)) {
+                return productDomain;
+            }
+        }
+        return null;
+    }
 
 }

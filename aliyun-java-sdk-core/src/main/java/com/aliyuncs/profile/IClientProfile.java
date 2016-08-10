@@ -27,14 +27,18 @@ import com.aliyuncs.http.FormatType;
 import com.aliyuncs.regions.Endpoint;
 
 public interface IClientProfile {
-	
-	public ISigner getSigner();
-	
-	public String getRegionId();
-	
-	public FormatType getFormat();
-	
-	public Credential getCredential();
-	
-	public List<Endpoint> getEndpoints() throws ClientException;
+
+    public ISigner getSigner();
+
+    public String getRegionId();
+
+    public FormatType getFormat();
+
+    public Credential getCredential();
+
+    public void setLocationConfig(String regionId, String product, String endpoint);
+
+    public List<Endpoint> getEndpoints() throws ClientException;
+
+    public List<Endpoint> getEndpoints(String product, String serviceCode, String endpointType) throws ClientException;
 }

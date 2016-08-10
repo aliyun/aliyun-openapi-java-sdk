@@ -32,110 +32,122 @@ import com.aliyuncs.http.FormatType;
 import com.aliyuncs.http.HttpRequest;
 import com.aliyuncs.regions.ProductDomain;
 
-public abstract class RoaAcsRequest<T extends AcsResponse> extends AcsRequest<T>{
-	
-	protected String uriPattern = null;
-	private Map<String, String> pathParameters = new HashMap<String, String>();
+public abstract class RoaAcsRequest<T extends AcsResponse> extends AcsRequest<T> {
 
-	public RoaAcsRequest(String product) {
-		super(product);
-		initialize();
-	}
-	
-	public RoaAcsRequest(String product, String version) {
-		super(product, version);
-		this.setVersion(version);
-		initialize();
-	}
-	
-	public RoaAcsRequest(String product, String version, String action) {
-		super(product);
-		this.setVersion(version);
-		this.setActionName(action);
-		initialize();
-	}
-	
-	private void initialize() {
-		this.composer = RoaSignatureComposer.getComposer();
-		this.setContent(new byte[0], "utf-8", FormatType.RAW);
-	}
+    protected String            uriPattern     = null;
+    private Map<String, String> pathParameters = new HashMap<String, String>();
 
-	@Override
-	public void setVersion(String version) {
-		super.setVersion(version);
-		this.putHeaderParameter("x-acs-version", version);
-	}
-	
-	@Override
-	public void setSecurityToken(String securityToken) {
-		super.setSecurityToken(securityToken);
-		this.putHeaderParameter("x-acs-security-token", securityToken);
-	}
+    public RoaAcsRequest(String product) {
+        super(product);
+        initialize();
+    }
 
-	public Map<String, String> getPathParameters() {
-		return Collections.unmodifiableMap(pathParameters);
-	}
-	
-	protected void putPathParameter(String name, Object value) {
-		setParameter(this.pathParameters, name, value);
-	}
-	
-	protected void putPathParameter(String name, String value) {
-		setParameter(this.pathParameters, name, value);
-	}
-	
-	public String composeUrl(String endpoint, Map<String, String> queries) 
-			throws UnsupportedEncodingException{
-		
-		Map<String, String> mapQueries = (queries == null) ? this.getQueryParameters():queries;
-		StringBuilder urlBuilder = new StringBuilder("");
-		urlBuilder.append(this.getProtocol().toString());
-		urlBuilder.append("://").append(endpoint);
-		if (null != this.uriPattern){
-			urlBuilder.append(RoaSignatureComposer.replaceOccupiedParameters(uriPattern, this.getPathParameters()));
-		}
-		if (-1 == urlBuilder.indexOf("?")){
-			urlBuilder.append("?");
-		}
-		else if(!urlBuilder.toString().endsWith("?")) {
-			urlBuilder.append("&");
-		}
-		String query = concatQueryString(mapQueries);
-		String url = urlBuilder.append(query).toString();
-		if(url.endsWith("?") || url.endsWith("&")){
-			url = url.substring(0, url.length()-1);
-		}
-		return url;
-	}
+    public RoaAcsRequest(String product, String version) {
+        super(product, version);
+        this.setVersion(version);
+        initialize();
+    }
 
-	public String getUriPattern() {
-		return uriPattern;
-	}
+    public RoaAcsRequest(String product, String version, String action) {
+        super(product);
+        this.setVersion(version);
+        this.setActionName(action);
+        initialize();
+    }
 
-	public void setUriPattern(String uriPattern) {
-		this.uriPattern = uriPattern;
-	}
-	
-	@Override
-	public HttpRequest signRequest(ISigner signer, Credential credential,
-			FormatType format, ProductDomain domain) 
-			throws InvalidKeyException, IllegalStateException, 
-			UnsupportedEncodingException, NoSuchAlgorithmException {
-		
-		Map<String, String> imutableMap = new HashMap<String, String>(this.getHeaders());
-		if (null != signer && null != credential) {
-			String accessKeyId = credential.getAccessKeyId();
-			String accessSecret = credential.getAccessSecret();
-			imutableMap = this.composer.refreshSignParameters(this.getHeaders(), signer, accessKeyId, format);
-			String strToSign = this.composer.composeStringToSign(this.getMethod(), 
-					this.getUriPattern(), signer, this.getQueryParameters(), 
-					imutableMap, this.getPathParameters());
-			String signature = signer.signString(strToSign, accessSecret);
-			imutableMap.put("Authorization", "acs "+ accessKeyId+":"+signature);
-		}
-		this.setUrl(this.composeUrl(domain.getDomianName(), this.getQueryParameters()));
-		this.headers = imutableMap;
-		return this;
-	}
+    public RoaAcsRequest(String product, String version, String action, String locationProduct) {
+        super(product);
+        this.setVersion(version);
+        this.setActionName(action);
+        this.setLocationProduct(locationProduct);
+        initialize();
+    }
+
+    public RoaAcsRequest(String product, String version, String action, String locationProduct, String endpointType) {
+        super(product);
+        this.setVersion(version);
+        this.setActionName(action);
+        this.setLocationProduct(locationProduct);
+        this.setEndpointType(endpointType);
+        initialize();
+    }
+
+    private void initialize() {
+        this.composer = RoaSignatureComposer.getComposer();
+        this.setContent(new byte[0], "utf-8", FormatType.RAW);
+    }
+
+    @Override
+    public void setVersion(String version) {
+        super.setVersion(version);
+        this.putHeaderParameter("x-acs-version", version);
+    }
+
+    @Override
+    public void setSecurityToken(String securityToken) {
+        super.setSecurityToken(securityToken);
+        this.putHeaderParameter("x-acs-security-token", securityToken);
+    }
+
+    public Map<String, String> getPathParameters() {
+        return Collections.unmodifiableMap(pathParameters);
+    }
+
+    protected void putPathParameter(String name, Object value) {
+        setParameter(this.pathParameters, name, value);
+    }
+
+    protected void putPathParameter(String name, String value) {
+        setParameter(this.pathParameters, name, value);
+    }
+
+    public String composeUrl(String endpoint, Map<String, String> queries) throws UnsupportedEncodingException {
+
+        Map<String, String> mapQueries = (queries == null) ? this.getQueryParameters() : queries;
+        StringBuilder urlBuilder = new StringBuilder("");
+        urlBuilder.append(this.getProtocol().toString());
+        urlBuilder.append("://").append(endpoint);
+        if (null != this.uriPattern) {
+            urlBuilder.append(RoaSignatureComposer.replaceOccupiedParameters(uriPattern, this.getPathParameters()));
+        }
+        if (-1 == urlBuilder.indexOf("?")) {
+            urlBuilder.append("?");
+        } else if (!urlBuilder.toString().endsWith("?")) {
+            urlBuilder.append("&");
+        }
+        String query = concatQueryString(mapQueries);
+        String url = urlBuilder.append(query).toString();
+        if (url.endsWith("?") || url.endsWith("&")) {
+            url = url.substring(0, url.length() - 1);
+        }
+        return url;
+    }
+
+    public String getUriPattern() {
+        return uriPattern;
+    }
+
+    public void setUriPattern(String uriPattern) {
+        this.uriPattern = uriPattern;
+    }
+
+    @Override
+    public HttpRequest signRequest(ISigner signer, Credential credential, FormatType format, ProductDomain domain)
+            throws InvalidKeyException, IllegalStateException, UnsupportedEncodingException, NoSuchAlgorithmException {
+
+        Map<String, String> imutableMap = new HashMap<String, String>(this.getHeaders());
+        if (null != signer && null != credential) {
+            String accessKeyId = credential.getAccessKeyId();
+            String accessSecret = credential.getAccessSecret();
+            imutableMap = this.composer.refreshSignParameters(this.getHeaders(), signer, accessKeyId, format);
+            String strToSign = this.composer.composeStringToSign(this.getMethod(), this.getUriPattern(), signer,
+                    this.getQueryParameters(), imutableMap, this.getPathParameters());
+            String signature = signer.signString(strToSign, accessSecret);
+            imutableMap.put("Authorization", "acs " + accessKeyId + ":" + signature);
+        }
+        this.setUrl(this.composeUrl(domain.getDomianName(), this.getQueryParameters()));
+        this.headers = imutableMap;
+        return this;
+    }
 
 }

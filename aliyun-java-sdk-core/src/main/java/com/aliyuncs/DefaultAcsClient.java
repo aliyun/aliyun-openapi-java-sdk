@@ -24,7 +24,6 @@ import java.net.SocketTimeoutException;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
 import java.util.List;
-import java.util.concurrent.TimeoutException;
 
 import com.aliyuncs.auth.Credential;
 import com.aliyuncs.auth.ISigner;
@@ -54,62 +53,76 @@ public class DefaultAcsClient implements IAcsClient{
 		this.clientProfile = profile;
 	}
 	
-	public <T extends AcsResponse> HttpResponse doAction(AcsRequest<T> request) 
+	@Override
+    public <T extends AcsResponse> HttpResponse doAction(AcsRequest<T> request) 
 			throws ClientException, ServerException {
 		return this.doAction(request, autoRetry, maxRetryNumber, this.clientProfile);
 	}
 	
-	public <T extends AcsResponse> HttpResponse doAction(AcsRequest<T> request, 
+	@Override
+    public <T extends AcsResponse> HttpResponse doAction(AcsRequest<T> request, 
 			boolean autoRetry, int maxRetryCounts) throws ClientException, ServerException {
 		return this.doAction(request, autoRetry, maxRetryCounts, this.clientProfile);
 	}
 	
-	public <T extends AcsResponse> HttpResponse doAction(AcsRequest<T> request, IClientProfile profile) 
+	@Override
+    public <T extends AcsResponse> HttpResponse doAction(AcsRequest<T> request, IClientProfile profile) 
 			throws ClientException, ServerException {
 		return this.doAction(request, this.autoRetry, this.maxRetryNumber, profile);
 	}
 	
-	public <T extends AcsResponse> HttpResponse doAction(AcsRequest<T> request, String regionId, Credential credential) 
+	@Override
+    public <T extends AcsResponse> HttpResponse doAction(AcsRequest<T> request, String regionId, Credential credential) 
 			throws ClientException, ServerException {
 		boolean retry = this.autoRetry;
 		int retryNumber = this.maxRetryNumber;
 		ISigner signer = null;
 		FormatType format = null;
 		List<Endpoint> endpoints = null;
-		if (null != this.clientProfile) {
-			signer = clientProfile.getSigner();
-			format = clientProfile.getFormat();
-			endpoints = clientProfile.getEndpoints();
-		}
+        if (null != this.clientProfile) {
+            signer = clientProfile.getSigner();
+            format = clientProfile.getFormat();
+			try {
+				endpoints = clientProfile.getEndpoints(request.getProduct(), request.getLocationProduct(),
+						request.getEndpointType());
+			} catch (Throwable e) {
+				endpoints = clientProfile.getEndpoints();
+			}
+        }
 		
 		return this.doAction(request, retry, retryNumber, regionId, credential, signer, format, endpoints);
 	}
 	
-	public <T extends AcsResponse> T getAcsResponse(AcsRequest<T> request) 
+	@Override
+    public <T extends AcsResponse> T getAcsResponse(AcsRequest<T> request) 
 			throws ServerException, ClientException{
 		HttpResponse baseResponse = this.doAction(request);
 		return parseAcsResponse(request.getResponseClass(), baseResponse);
 	}
 	
-	public <T extends AcsResponse> T getAcsResponse(AcsRequest<T> request, 
+	@Override
+    public <T extends AcsResponse> T getAcsResponse(AcsRequest<T> request, 
 			boolean autoRetry, int maxRetryCounts) throws ServerException, ClientException{
 		HttpResponse baseResponse = this.doAction(request, autoRetry, maxRetryCounts);
 		return parseAcsResponse(request.getResponseClass(), baseResponse);
 	}
 	
-	public <T extends AcsResponse> T getAcsResponse(AcsRequest<T> request,IClientProfile profile) 
+	@Override
+    public <T extends AcsResponse> T getAcsResponse(AcsRequest<T> request,IClientProfile profile) 
 			throws ServerException, ClientException{
 		HttpResponse baseResponse = this.doAction(request, profile);
 		return parseAcsResponse(request.getResponseClass(), baseResponse);
 	}
 	
-	public <T extends AcsResponse> T getAcsResponse(AcsRequest<T> request, String regionId, Credential credential) 
+	@Override
+    public <T extends AcsResponse> T getAcsResponse(AcsRequest<T> request, String regionId, Credential credential) 
 			throws ServerException, ClientException {
 		HttpResponse baseResponse = this.doAction(request, regionId, credential);
 		return parseAcsResponse(request.getResponseClass(), baseResponse);
 	}
 	
-	public <T extends AcsResponse> HttpResponse doAction(AcsRequest<T> request, boolean autoRetry, 
+	@Override
+    public <T extends AcsResponse> HttpResponse doAction(AcsRequest<T> request, boolean autoRetry, 
 			int maxRetryCounts, IClientProfile profile) throws ClientException, ServerException {
 		if (null == profile){
 			throw new ClientException("SDK.InvalidProfile", "No active profile found.");
@@ -120,8 +133,13 @@ public class DefaultAcsClient implements IAcsClient{
 		Credential credential = profile.getCredential();
 		ISigner signer = profile.getSigner();
 		FormatType format = profile.getFormat();
-		List<Endpoint> endpoints = profile.getEndpoints();
-		
+        List<Endpoint> endpoints;
+		try {
+			endpoints = clientProfile.getEndpoints(request.getProduct(), request.getLocationProduct(),
+					request.getEndpointType());
+		} catch (Throwable e) {
+			endpoints = clientProfile.getEndpoints();
+		}
 		return this.doAction(request, retry, retryNumber, region, credential, signer, format, endpoints);
 	}
 	
@@ -143,7 +161,8 @@ public class DefaultAcsClient implements IAcsClient{
 		}
 	}
 	
-	public <T extends AcsResponse> HttpResponse doAction(AcsRequest<T> request, 
+	@Override
+    public <T extends AcsResponse> HttpResponse doAction(AcsRequest<T> request, 
 			boolean autoRetry, int maxRetryNumber,
 			String regionId, Credential credential,
 			ISigner signer, FormatType format, 
@@ -156,7 +175,13 @@ public class DefaultAcsClient implements IAcsClient{
 			if(null == request.getRegionId()){
 				request.setRegionId(regionId);
 			}
-			ProductDomain domain = Endpoint.findProductDomain(regionId, request.getProduct(), endpoints);
+            ProductDomain domain = null;
+            if (null != request.getLocationProduct()) {
+                domain = Endpoint.findProductDomain(request.getRegionId(), request.getLocationProduct(), endpoints);
+            }
+            if (null == domain) {
+                domain = Endpoint.findProductDomain(request.getRegionId(), request.getProduct(), endpoints);
+            }
 			if (null == domain){
 				throw new ClientException("SDK.InvalidRegionId", "Can not find endpoint to access.");
 			}

@@ -47,6 +47,9 @@ public abstract class AcsRequest<T extends AcsResponse> extends HttpRequest {
 	private ProtocolType protocol = ProtocolType.HTTP;
 	private Map<String, String> queryParameters = new HashMap<String, String>();
 	private Map<String, String> domainParameters = new HashMap<String, String>();
+
+	private String locationProduct;
+	private String endpointType;
 	
 	public AcsRequest(String product) {
 		super(null);
@@ -59,7 +62,23 @@ public abstract class AcsRequest<T extends AcsResponse> extends HttpRequest {
 		this.product = product;
 		this.setVersion(version);
 	}
-	
+
+	public String getLocationProduct() {
+		return locationProduct;
+	}
+
+	public void setLocationProduct(String locationProduct) {
+		this.locationProduct = locationProduct;
+	}
+
+	public String getEndpointType() {
+		return endpointType;
+	}
+
+	public void setEndpointType(String endpointType) {
+		this.endpointType = endpointType;
+	}
+
 	public String getActionName() {
 		return actionName;
 	}

@@ -29,6 +29,7 @@ import java.util.Set;
 
 import javax.xml.parsers.ParserConfigurationException;
 
+import com.aliyuncs.auth.Credential;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
@@ -39,47 +40,53 @@ import com.aliyuncs.exceptions.ClientException;
 import com.aliyuncs.utils.XmlUtils;
 
 public class InternalEndpointsParser implements IEndpointsProvider {
-	
-	private final static String BUNDLED_ENDPOINTS_RESOURCE_PATH = "/com/aliyuncs/endpoints/endpoints.xml";
-	
-	private static List<Endpoint> parseEndpoints(final InputStream input) 
-            throws IOException, ParserConfigurationException, SAXException {
+
+    private final static String BUNDLED_ENDPOINTS_RESOURCE_PATH = "/com/aliyuncs/endpoints/endpoints.xml";
+
+    private static List<Endpoint> parseEndpoints(final InputStream input) throws IOException,
+            ParserConfigurationException, SAXException {
         Document document = XmlUtils.getDocument(new InputSource(input), null);
         NodeList endpointNodes = document.getElementsByTagName("Endpoint");
         List<Endpoint> endpoints = new ArrayList<Endpoint>();
         for (int i = 0; i < endpointNodes.getLength(); i++) {
-        	Element endpoint = (Element) endpointNodes.item(i);
-        	Set<String> regionIds = new HashSet<String>();
-        	List<ProductDomain> products = new ArrayList<ProductDomain>();
-        	NodeList regionNodes = endpoint.getElementsByTagName("RegionId");
-        	NodeList productNodes = endpoint.getElementsByTagName("Product");
-        	for(int j =0; j < regionNodes.getLength(); j++) 
-        		regionIds.add(((Element)regionNodes.item(j)).getTextContent());
-        	for(int j =0; j < productNodes.getLength(); j++) {
-        		Element element = (Element) (productNodes.item(j));
-        		NodeList productNames = element.getElementsByTagName("ProductName");
-        		NodeList domainNames = element.getElementsByTagName("DomainName");
-        		for(int k =0; k < productNames.getLength(); k ++) {
-            		String productName = ((Element) productNames.item(k)).getTextContent();
-            		String domainName = ((Element) domainNames.item(k)).getTextContent();
-            		products.add(new ProductDomain(productName, domainName));
-            	}
-        	}
-        	endpoints.add(new Endpoint(endpoint.getAttribute("name"),regionIds, products));
+            Element endpoint = (Element) endpointNodes.item(i);
+            Set<String> regionIds = new HashSet<String>();
+            List<ProductDomain> products = new ArrayList<ProductDomain>();
+            NodeList regionNodes = endpoint.getElementsByTagName("RegionId");
+            NodeList productNodes = endpoint.getElementsByTagName("Product");
+            for (int j = 0; j < regionNodes.getLength(); j++)
+                regionIds.add(((Element) regionNodes.item(j)).getTextContent());
+            for (int j = 0; j < productNodes.getLength(); j++) {
+                Element element = (Element) (productNodes.item(j));
+                NodeList productNames = element.getElementsByTagName("ProductName");
+                NodeList domainNames = element.getElementsByTagName("DomainName");
+                for (int k = 0; k < productNames.getLength(); k++) {
+                    String productName = ((Element) productNames.item(k)).getTextContent();
+                    String domainName = ((Element) domainNames.item(k)).getTextContent();
+                    products.add(new ProductDomain(productName, domainName));
+                }
+            }
+            endpoints.add(new Endpoint(endpoint.getAttribute("name"), regionIds, products));
         }
         return endpoints;
     }
-	
-	public List<Endpoint> getEndpoints() throws ClientException {
-		InputStream stream = this.getClass().getResourceAsStream(BUNDLED_ENDPOINTS_RESOURCE_PATH);
-		try {
-			return parseEndpoints(stream);
-		} catch (IOException e) {
-			throw new ClientException("SDK.MissingEndpointsFile", "Internal endpoints file is missing.");
-		} catch (ParserConfigurationException e) {
-			throw new ClientException("SDK.InvalidEndpointsFile", "Internal endpoints file is missing.");
-		} catch (SAXException e) {
-			throw new ClientException("SDK.EndpointsFileMalformed", "Internal endpoints file is missing.");
-		}
-	}
+
+    public List<Endpoint> getEndpoints() throws ClientException {
+        InputStream stream = this.getClass().getResourceAsStream(BUNDLED_ENDPOINTS_RESOURCE_PATH);
+        try {
+            return parseEndpoints(stream);
+        } catch (IOException e) {
+            throw new ClientException("SDK.MissingEndpointsFile", "Internal endpoints file is missing.");
+        } catch (ParserConfigurationException e) {
+            throw new ClientException("SDK.InvalidEndpointsFile", "Internal endpoints file is missing.");
+        } catch (SAXException e) {
+            throw new ClientException("SDK.EndpointsFileMalformed", "Internal endpoints file is missing.");
+        }
+    }
+
+    @Override
+    public List<Endpoint> getEndpoints(String region, String product, String endpointType, Credential credential,
+                                       LocationConfig locationConfig) throws ClientException {
+        throw new UnsupportedOperationException();
+    }
 }
