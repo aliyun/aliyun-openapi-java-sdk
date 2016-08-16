@@ -18,7 +18,7 @@
  */
 package com.aliyuncs.profile;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import java.lang.reflect.Method;
 import java.util.ArrayList;
@@ -29,13 +29,8 @@ import java.util.Set;
 import org.junit.Assert;
 import org.junit.Test;
 
-import com.aliyuncs.AcsError;
-import com.aliyuncs.DefaultAcsClient;
-import com.aliyuncs.http.FormatType;
-import com.aliyuncs.http.HttpResponse;
 import com.aliyuncs.regions.Endpoint;
 import com.aliyuncs.regions.ProductDomain;
-import com.sun.org.apache.regexp.internal.recompile;
 
 public class DefaultProfileTest {
 
@@ -55,16 +50,17 @@ public class DefaultProfileTest {
 	public void addEndpoint_Test() throws Exception {
 		try {
 			IClientProfile clientProfile = DefaultProfile.getProfile();
-			clientProfile.getEndpoints();
-			Method method = DefaultProfile.class.getDeclaredMethod("addEndpoint_", String.class, String.class, String.class, String.class);
+            clientProfile.getEndpoints("cn-beijing", "Rds");
+            Method method = DefaultProfile.class.getDeclaredMethod("addEndpoint", String.class, String.class,
+                    String.class, String.class);
 			method.setAccessible(true);
-			method.invoke(DefaultProfile.class, "cn-shanghai", "cn-shanghai", "Oss","oss-admin.aliyuncs.com");
-			List<Endpoint> endpoints = clientProfile.getEndpoints();
+            method.invoke(DefaultProfile.class, "cn-beijing", "cn-beijing", "Oss", "oss-admin.aliyuncs.com");
+            List<Endpoint> endpoints = clientProfile.getEndpoints("cn-beijing", "Oss");
 			boolean success = false;
 			for (Endpoint endpoint : endpoints) {
-				if("cn-shanghai".equals(endpoint.getName())){
+                if ("cn-beijing".equals(endpoint.getName())) {
 					ProductDomain productDomain = getProductDomain(endpoint.getProductDomains(), "oss-admin.aliyuncs.com","Oss");
-					String regionId = getRegionId(endpoint.getRegionIds(), "cn-shanghai");
+                    String regionId = getRegionId(endpoint.getRegionIds(), "cn-beijing");
 					if(null != productDomain && null != regionId){
 						success = true;
 					}

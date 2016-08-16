@@ -21,21 +21,19 @@ package com.aliyuncs.regions;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
-import java.util.Map;
 import java.util.Set;
 
 import javax.xml.parsers.ParserConfigurationException;
 
-import com.aliyuncs.auth.Credential;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
+import com.aliyuncs.auth.Credential;
 import com.aliyuncs.exceptions.ClientException;
 import com.aliyuncs.utils.XmlUtils;
 
@@ -71,10 +69,29 @@ public class InternalEndpointsParser implements IEndpointsProvider {
         return endpoints;
     }
 
-    public List<Endpoint> getEndpoints() throws ClientException {
+    @Override
+    public Endpoint getEndpoint(String region, String product) throws ClientException {
         InputStream stream = this.getClass().getResourceAsStream(BUNDLED_ENDPOINTS_RESOURCE_PATH);
         try {
-            return parseEndpoints(stream);
+            List<Endpoint> internalEndpoints = parseEndpoints(stream);
+            for (Endpoint endpoint : internalEndpoints) {
+                for (String regionId : endpoint.getRegionIds()) {
+                    if (regionId.equals(region)) {
+                        for (ProductDomain productDomain : endpoint.getProductDomains()) {
+                            if (productDomain.getProductName().equals(product)) {
+                                Set<String> regionSet = new HashSet<String>();
+                                regionSet.add(region);
+
+                                List<ProductDomain> productDomains = new ArrayList<ProductDomain>();
+                                productDomains.add(productDomain);
+                                Endpoint resultEndpoint = new Endpoint(endpoint.getName(), regionSet, productDomains);
+                                return resultEndpoint;
+                            }
+                        }
+                    }
+                }
+            }
+            return null;
         } catch (IOException e) {
             throw new ClientException("SDK.MissingEndpointsFile", "Internal endpoints file is missing.");
         } catch (ParserConfigurationException e) {
@@ -85,8 +102,9 @@ public class InternalEndpointsParser implements IEndpointsProvider {
     }
 
     @Override
-    public List<Endpoint> getEndpoints(String region, String product, String endpointType, Credential credential,
-                                       LocationConfig locationConfig) throws ClientException {
+    public Endpoint getEndpoint(String region, String product, String serviceCode, String endpointType,
+                                Credential credential, LocationConfig locationConfig) throws ClientException {
         throw new UnsupportedOperationException();
     }
+
 }

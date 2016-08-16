@@ -1,25 +1,40 @@
 package com.aliyuncs.regions;
 
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
 import com.aliyuncs.auth.Credential;
 import com.aliyuncs.exceptions.ClientException;
 
-import java.util.*;
-
 public class CustomizedEndpointsParser implements IEndpointsProvider {
-    private List<Endpoint> endpoints;
+    private Endpoint endpoint;
 
-    public void setEndpoints(List<Endpoint> endpoints) {
-        this.endpoints = endpoints;
+    public void setEndpoint(Endpoint endpoint) {
+        this.endpoint = endpoint;
     }
 
     @Override
-    public List<Endpoint> getEndpoints() throws ClientException {
-        return this.endpoints;
+    public Endpoint getEndpoint(String regionId, String product) throws ClientException {
+        if (endpoint != null) {
+            for (String region : endpoint.getRegionIds()) {
+                if (region.equals(regionId)) {
+                    for (ProductDomain productDomain : endpoint.getProductDomains()) {
+                        if (productDomain.equals(product)) {
+                            return this.endpoint;
+                        }
+                    }
+                }
+            }
+        }
+        return null;
     }
 
     @Override
-    public List<Endpoint> getEndpoints(String region, String product, String endpointType, Credential credential,
-                                       LocationConfig locationConfig) throws ClientException {
+    public Endpoint getEndpoint(String region, String product, String serviceCode, String endpointType,
+                                Credential credential, LocationConfig locationConfig) throws ClientException {
         throw new UnsupportedOperationException();
     }
 
@@ -35,8 +50,7 @@ public class CustomizedEndpointsParser implements IEndpointsProvider {
             productDomainList.add(new ProductDomain(productName, productDomainMap.get(productName)));
         }
         Endpoint endpoint = new Endpoint(regionId, regionIds, productDomainList);
-
-        parser.setEndpoints(Arrays.asList(endpoint));
+        parser.setEndpoint(endpoint);
         return parser;
     }
 }

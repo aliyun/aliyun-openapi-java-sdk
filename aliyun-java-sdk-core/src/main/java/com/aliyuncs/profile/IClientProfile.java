@@ -38,7 +38,7 @@ public interface IClientProfile {
 
     public void setLocationConfig(String regionId, String product, String endpoint);
 
-    public List<Endpoint> getEndpoints() throws ClientException;
+    public List<Endpoint> getEndpoints(String regionId, String product) throws ClientException;
 
     public List<Endpoint> getEndpoints(String product, String serviceCode, String endpointType) throws ClientException;
 }

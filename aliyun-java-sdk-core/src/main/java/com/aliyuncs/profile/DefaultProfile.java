@@ -18,12 +18,25 @@
  */
 package com.aliyuncs.profile;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
-import com.aliyuncs.auth.*;
+import com.aliyuncs.auth.Credential;
+import com.aliyuncs.auth.ICredentialProvider;
+import com.aliyuncs.auth.ISigner;
+import com.aliyuncs.auth.ShaHmac1Singleton;
 import com.aliyuncs.exceptions.ClientException;
 import com.aliyuncs.http.FormatType;
-import com.aliyuncs.regions.*;
+import com.aliyuncs.regions.CustomizedEndpointsParser;
+import com.aliyuncs.regions.Endpoint;
+import com.aliyuncs.regions.IEndpointsProvider;
+import com.aliyuncs.regions.InternalEndpointsParser;
+import com.aliyuncs.regions.LocationConfig;
+import com.aliyuncs.regions.ProductDomain;
+import com.aliyuncs.regions.RemoteEndpointsParser;
 
 public class DefaultProfile implements IClientProfile {
 
@@ -85,45 +98,96 @@ public class DefaultProfile implements IClientProfile {
         this.locationConfig = new LocationConfig();
     }
 
+    @Override
     public synchronized ISigner getSigner() {
         if (null == isigner)
             this.isigner = ShaHmac1Singleton.INSTANCE.getInstance();
         return isigner;
     }
 
+    @Override
     public synchronized String getRegionId() {
         return regionId;
     }
 
+    @Override
     public synchronized FormatType getFormat() {
         return acceptFormat;
     }
 
+    @Override
     public synchronized Credential getCredential() {
         if (null == credential && null != icredential)
             credential = icredential.fresh();
         return credential;
     }
 
+    @Override
     public synchronized void setLocationConfig(String regionId, String product, String endpoint) {
         this.locationConfig = LocationConfig.createLocationConfig(regionId, product, endpoint);
     }
 
-    public synchronized List<Endpoint> getEndpoints() throws ClientException {
-        if (null == endpoints)
-            endpoints = iendpoints.getEndpoints();
+    @Override
+    public synchronized List<Endpoint> getEndpoints(String regionId, String product) throws ClientException {
+        if (null == endpoints) {
+            Endpoint endpoint = iendpoints.getEndpoint(regionId, product);
+            if (endpoint != null) {
+                endpoints = new ArrayList<Endpoint>();
+                endpoints.add(endpoint);
+            }
+        }
+
         return endpoints;
     }
 
+    //    public synchronized List<Endpoint> getEndpoints(String product,String serviceCode, String endpointType) throws ClientException {
+    //        if (null == endpoints || Endpoint.findProductDomain(regionId, product, endpoints) == null) {
+    //            if(serviceCode!=null){
+    //                endpoints = remoteProvider.getEndpoints(regionId, serviceCode, endpointType, credential, locationConfig);
+    //            }
+    //            if (endpoints == null|| Endpoint.findProductDomain(regionId, product, endpoints) == null) {
+    //
+    //                endpoints = iendpoints.getEndpoints();
+    //            }
+    //        }
+    //        return endpoints;
+    //    }
+
+    @Override
     public synchronized List<Endpoint> getEndpoints(String product,String serviceCode, String endpointType) throws ClientException {
-        if (null == endpoints || Endpoint.findProductDomain(regionId, product, endpoints) == null) {
-            endpoints = remoteProvider.getEndpoints(regionId, serviceCode, endpointType, credential, locationConfig);
-            if (endpoints == null) {
-                endpoints = iendpoints.getEndpoints();
+        if (null == endpoints) {
+            Endpoint endpoint = null;
+            if (serviceCode != null) {
+                endpoint = remoteProvider.getEndpoint(regionId, product, serviceCode, endpointType, credential,
+                        locationConfig);
+            }
+            if (endpoint == null) {
+                endpoint = iendpoints.getEndpoint(regionId, product);
+            }
+            if (endpoint != null) {
+                endpoints = new ArrayList<Endpoint>();
+                endpoints.add(endpoint);
+            }
+        } else if (Endpoint.findProductDomain(regionId, product, endpoints) == null) {
+            Endpoint endpoint = null;
+            if (serviceCode != null) {
+                endpoint = remoteProvider.getEndpoint(regionId, product, serviceCode, endpointType,
+                        credential, locationConfig);
+            }
+            if (endpoint == null) {
+                endpoint = iendpoints.getEndpoint(regionId, product);
+            }
+            if (endpoint != null) {
+                for (String regionId : endpoint.getRegionIds()) {
+                    for (ProductDomain productDomain : endpoint.getProductDomains()) {
+                        addEndpoint(endpoint.getName(), regionId, product, productDomain.getDomianName());
+                    }
+                }
             }
         }
         return endpoints;
     }
+
 
     public synchronized static DefaultProfile getProfile() {
         if (null == profile)
@@ -169,7 +233,7 @@ public class DefaultProfile implements IClientProfile {
     public synchronized static void addEndpoint(String endpointName, String regionId, String product, String domain)
             throws ClientException {
         if (null == endpoints) {
-            endpoints = getProfile().getEndpoints();
+            endpoints = getProfile().getEndpoints(regionId, product);
         }
         Endpoint endpoint = findEndpointByRegionId(regionId);
         if (null == endpoint) {
@@ -186,6 +250,9 @@ public class DefaultProfile implements IClientProfile {
         List<ProductDomain> productDomains = new ArrayList<ProductDomain>();
         productDomains.add(new ProductDomain(product, domain));
         Endpoint endpoint = new Endpoint(endpointName, regions, productDomains);
+        if (endpoints == null) {
+            endpoints = new ArrayList<Endpoint>();
+        }
         endpoints.add(endpoint);
     }
 
@@ -196,13 +263,17 @@ public class DefaultProfile implements IClientProfile {
         List<ProductDomain> productDomains = endpoint.getProductDomains();
         ProductDomain productDomain = findProductDomain(productDomains, product);
         if (null == productDomain) {
-            productDomains.add(new ProductDomain(product, domain));
+            ProductDomain newProductDomain = new ProductDomain(product, domain);
+            productDomains.add(newProductDomain);
         } else {
             productDomain.setDomianName(domain);
         }
     }
 
     private static Endpoint findEndpointByRegionId(String regionId) {
+        if (null == endpoints) {
+            return null;
+        }
         for (Endpoint endpoint : endpoints) {
             if (endpoint.getRegionIds().contains(regionId)) {
                 return endpoint;

@@ -18,14 +18,14 @@
  */
 package com.aliyuncs.regions;
 
-import java.util.List;
-
 import com.aliyuncs.auth.Credential;
 import com.aliyuncs.exceptions.ClientException;
 
 public interface IEndpointsProvider {
-    List<Endpoint> getEndpoints() throws ClientException;
+    //  Endpoint getEndpoints() throws ClientException;
 
-    List<Endpoint> getEndpoints(String region, String serviceCode, String endpointType, Credential credential,
+    Endpoint getEndpoint(String region, String product) throws ClientException;
+
+    Endpoint getEndpoint(String region, String product, String serviceCode, String endpointType, Credential credential,
                                 LocationConfig locationConfig) throws ClientException;
 }

@@ -18,9 +18,10 @@
  */
 package com.aliyuncs.regions;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.fail;
 
-import java.util.List;
+import java.util.Arrays;
 
 import org.junit.Test;
 
@@ -35,13 +36,13 @@ public class RegionsTest {
 
 	private void testParseRegions() {
 		InternalEndpointsParser parser = new InternalEndpointsParser();
-		List<Endpoint> endpoints = null;
+        Endpoint endpoint = null;
 		try {
-			endpoints = parser.getEndpoints();
+            endpoint = parser.getEndpoint("cn-hangzhou", "Rds");
 		} catch (ClientException e) {
 			fail(e.toString());
 		}
-		assertEquals("ecs-cn-hangzhou.aliyuncs.com", 
-				Endpoint.findProductDomain("cn-beijing", "Ecs", endpoints).getDomianName());
+        assertEquals("rds-cn-hangzhou.aliyuncs.com",
+                Endpoint.findProductDomain("cn-hangzhou", "Rds", Arrays.asList(endpoint)).getDomianName());
 	}
 }

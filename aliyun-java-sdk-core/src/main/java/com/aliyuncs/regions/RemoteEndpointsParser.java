@@ -1,17 +1,20 @@
 package com.aliyuncs.regions;
 
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentMap;
+
 import com.aliyuncs.auth.Credential;
 import com.aliyuncs.exceptions.ClientException;
 import com.aliyuncs.profile.DefaultProfile;
 import com.aliyuncs.profile.IClientProfile;
 
-import java.util.*;
-import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.ConcurrentMap;
-
 public class RemoteEndpointsParser implements IEndpointsProvider {
 
-    private ConcurrentMap<String, List<Endpoint>> endpointMap = new ConcurrentHashMap<String, List<Endpoint>>();
+    private final ConcurrentMap<String, Endpoint> endpointMap = new ConcurrentHashMap<String, Endpoint>();
 
     private DescribeEndpointService               describeEndpointService;
 
@@ -26,32 +29,31 @@ public class RemoteEndpointsParser implements IEndpointsProvider {
     }
 
     @Override
-    public List<Endpoint> getEndpoints() throws ClientException {
+    public Endpoint getEndpoint(String regionId, String product) throws ClientException {
         throw new UnsupportedOperationException();
     }
 
     @Override
-    public List<Endpoint> getEndpoints(String regionId, String serviceCode, String endpointType, Credential credential,
-                                       LocationConfig locationConfig) throws ClientException {
-        List<Endpoint> endpoints = endpointMap.get(serviceCode);
-        if (endpoints != null) {
-            return endpoints;
+    public Endpoint getEndpoint(String regionId, String product, String serviceCode, String endpointType,
+                                Credential credential, LocationConfig locationConfig) throws ClientException {
+        Endpoint endpoint = endpointMap.get(serviceCode);
+        if (endpoint != null) {
+            return endpoint;
         }
 
         DescribeEndpointResponse response = describeEndpointService.describeEndpoint(regionId, serviceCode,
                 endpointType, credential, locationConfig);
         if (response == null) {
-            return endpoints;
+            return endpoint;
         }
         Set<String> regionIds = new HashSet<String>();
         regionIds.add(response.getRegionId());
 
-        List<ProductDomain> productDomainList = Arrays.asList(new ProductDomain(response.getProduct(), response
-                .getEndpoint()));
-        Endpoint endpoint = new Endpoint(response.getRegionId(), regionIds, productDomainList);
-        endpoints = Arrays.asList(endpoint);
-        endpointMap.putIfAbsent(serviceCode, endpoints);
-        return endpoints;
+        List<ProductDomain> productDomainList = new ArrayList<ProductDomain>();
+        productDomainList.add(new ProductDomain(product, response.getEndpoint()));
+        endpoint = new Endpoint(response.getRegionId(), regionIds, productDomainList);
+        endpointMap.putIfAbsent(serviceCode, endpoint);
+        return endpoint;
     }
 
     public static void main(String[] args) throws ClientException {

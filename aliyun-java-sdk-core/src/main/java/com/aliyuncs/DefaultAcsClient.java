@@ -86,7 +86,7 @@ public class DefaultAcsClient implements IAcsClient{
 				endpoints = clientProfile.getEndpoints(request.getProduct(), request.getLocationProduct(),
 						request.getEndpointType());
 			} catch (Throwable e) {
-				endpoints = clientProfile.getEndpoints();
+                endpoints = clientProfile.getEndpoints(regionId, request.getProduct());
 			}
         }
 		
@@ -138,7 +138,7 @@ public class DefaultAcsClient implements IAcsClient{
 			endpoints = clientProfile.getEndpoints(request.getProduct(), request.getLocationProduct(),
 					request.getEndpointType());
 		} catch (Throwable e) {
-			endpoints = clientProfile.getEndpoints();
+            endpoints = clientProfile.getEndpoints(region, request.getProduct());
 		}
 		return this.doAction(request, retry, retryNumber, region, credential, signer, format, endpoints);
 	}
@@ -175,13 +175,7 @@ public class DefaultAcsClient implements IAcsClient{
 			if(null == request.getRegionId()){
 				request.setRegionId(regionId);
 			}
-            ProductDomain domain = null;
-            if (null != request.getLocationProduct()) {
-                domain = Endpoint.findProductDomain(request.getRegionId(), request.getLocationProduct(), endpoints);
-            }
-            if (null == domain) {
-                domain = Endpoint.findProductDomain(request.getRegionId(), request.getProduct(), endpoints);
-            }
+            ProductDomain domain = Endpoint.findProductDomain(request.getRegionId(), request.getProduct(), endpoints);
 			if (null == domain){
 				throw new ClientException("SDK.InvalidRegionId", "Can not find endpoint to access.");
 			}
