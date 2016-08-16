@@ -24,19 +24,13 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class PubRequest extends RpcAcsRequest<PubResponse> {
+public class ServerOnlineRequest extends RpcAcsRequest<ServerOnlineResponse> {
 	
-	public PubRequest() {
-		super("Iot", "2016-05-30", "Pub");
+	public ServerOnlineRequest() {
+		super("Iot", "2016-05-30", "ServerOnline");
 	}
 
 	private Long productKey;
-
-	private Integer qos;
-
-	private String topicFullName;
-
-	private String messageContent;
 
 	public Long getProductKey() {
 		return this.productKey;
@@ -47,36 +41,9 @@ public class PubRequest extends RpcAcsRequest<PubResponse> {
 		putQueryParameter("ProductKey", productKey);
 	}
 
-	public Integer getQos() {
-		return this.qos;
-	}
-
-	public void setQos(Integer qos) {
-		this.qos = qos;
-		putQueryParameter("Qos", qos);
-	}
-
-	public String getTopicFullName() {
-		return this.topicFullName;
-	}
-
-	public void setTopicFullName(String topicFullName) {
-		this.topicFullName = topicFullName;
-		putQueryParameter("TopicFullName", topicFullName);
-	}
-
-	public String getMessageContent() {
-		return this.messageContent;
-	}
-
-	public void setMessageContent(String messageContent) {
-		this.messageContent = messageContent;
-		putQueryParameter("MessageContent", messageContent);
-	}
-
 	@Override
-	public Class<PubResponse> getResponseClass() {
-		return PubResponse.class;
+	public Class<ServerOnlineResponse> getResponseClass() {
+		return ServerOnlineResponse.class;
 	}
 
 }
