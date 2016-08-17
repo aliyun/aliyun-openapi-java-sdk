@@ -30,6 +30,7 @@ public class GetDeviceInfosResponseUnmarshaller {
 
 	public static GetDeviceInfosResponse unmarshall(GetDeviceInfosResponse getDeviceInfosResponse, UnmarshallerContext context) {
 		
+		getDeviceInfosResponse.setRequestId(context.stringValue("GetDeviceInfosResponse.RequestId"));
 
 		List<DeviceInfo> deviceInfos = new ArrayList<DeviceInfo>();
 		for (int i = 0; i < context.lengthValue("GetDeviceInfosResponse.DeviceInfos.Length"); i++) {

@@ -54,6 +54,8 @@ public class PushRequest extends RpcAcsRequest<PushResponse> {
 
 	private String androidActivity;
 
+	private String xiaomiActivity;
+
 	private String androidOpenUrl;
 
 	private String androidExtParameters;
@@ -182,6 +184,15 @@ public class PushRequest extends RpcAcsRequest<PushResponse> {
 	public void setAndroidActivity(String androidActivity) {
 		this.androidActivity = androidActivity;
 		putQueryParameter("AndroidActivity", androidActivity);
+	}
+
+	public String getXiaomiActivity() {
+		return this.xiaomiActivity;
+	}
+
+	public void setXiaomiActivity(String xiaomiActivity) {
+		this.xiaomiActivity = xiaomiActivity;
+		putQueryParameter("XiaomiActivity", xiaomiActivity);
 	}
 
 	public String getAndroidOpenUrl() {

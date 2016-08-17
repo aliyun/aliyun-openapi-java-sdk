@@ -20,18 +20,18 @@ package com.aliyuncs.push.model.v20150827;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.push.transform.v20150827.GetDeviceInfosResponseUnmarshaller;
+import com.aliyuncs.push.transform.v20150827.QueryPushStatResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class GetDeviceInfosResponse extends AcsResponse {
+public class QueryPushStatResponse extends AcsResponse {
 
 	private String requestId;
 
-	private List<DeviceInfo> deviceInfos;
+	private List<PushStat> pushStats;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -41,39 +41,49 @@ public class GetDeviceInfosResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public List<DeviceInfo> getDeviceInfos() {
-		return this.deviceInfos;
+	public List<PushStat> getPushStats() {
+		return this.pushStats;
 	}
 
-	public void setDeviceInfos(List<DeviceInfo> deviceInfos) {
-		this.deviceInfos = deviceInfos;
+	public void setPushStats(List<PushStat> pushStats) {
+		this.pushStats = pushStats;
 	}
 
-	public static class DeviceInfo {
+	public static class PushStat {
 
-		private String deviceId;
+		private String messageId;
 
-		private Boolean isOnline;
+		private Long sentCount;
 
-		public String getDeviceId() {
-			return this.deviceId;
+		private Long receivedCount;
+
+		public String getMessageId() {
+			return this.messageId;
 		}
 
-		public void setDeviceId(String deviceId) {
-			this.deviceId = deviceId;
+		public void setMessageId(String messageId) {
+			this.messageId = messageId;
 		}
 
-		public Boolean getIsOnline() {
-			return this.isOnline;
+		public Long getSentCount() {
+			return this.sentCount;
 		}
 
-		public void setIsOnline(Boolean isOnline) {
-			this.isOnline = isOnline;
+		public void setSentCount(Long sentCount) {
+			this.sentCount = sentCount;
+		}
+
+		public Long getReceivedCount() {
+			return this.receivedCount;
+		}
+
+		public void setReceivedCount(Long receivedCount) {
+			this.receivedCount = receivedCount;
 		}
 	}
 
 	@Override
-	public GetDeviceInfosResponse getInstance(UnmarshallerContext context) {
-		return	GetDeviceInfosResponseUnmarshaller.unmarshall(this, context);
+	public QueryPushStatResponse getInstance(UnmarshallerContext context) {
+		return	QueryPushStatResponseUnmarshaller.unmarshall(this, context);
 	}
 }

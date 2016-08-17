@@ -20,18 +20,18 @@ package com.aliyuncs.push.model.v20150827;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.push.transform.v20150827.GetDeviceInfosResponseUnmarshaller;
+import com.aliyuncs.push.transform.v20150827.QueryUniqueDeviceStatResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class GetDeviceInfosResponse extends AcsResponse {
+public class QueryUniqueDeviceStatResponse extends AcsResponse {
 
 	private String requestId;
 
-	private List<DeviceInfo> deviceInfos;
+	private List<AppDeviceStat> appDeviceStats;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -41,39 +41,39 @@ public class GetDeviceInfosResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public List<DeviceInfo> getDeviceInfos() {
-		return this.deviceInfos;
+	public List<AppDeviceStat> getAppDeviceStats() {
+		return this.appDeviceStats;
 	}
 
-	public void setDeviceInfos(List<DeviceInfo> deviceInfos) {
-		this.deviceInfos = deviceInfos;
+	public void setAppDeviceStats(List<AppDeviceStat> appDeviceStats) {
+		this.appDeviceStats = appDeviceStats;
 	}
 
-	public static class DeviceInfo {
+	public static class AppDeviceStat {
 
-		private String deviceId;
+		private String time;
 
-		private Boolean isOnline;
+		private Long count;
 
-		public String getDeviceId() {
-			return this.deviceId;
+		public String getTime() {
+			return this.time;
 		}
 
-		public void setDeviceId(String deviceId) {
-			this.deviceId = deviceId;
+		public void setTime(String time) {
+			this.time = time;
 		}
 
-		public Boolean getIsOnline() {
-			return this.isOnline;
+		public Long getCount() {
+			return this.count;
 		}
 
-		public void setIsOnline(Boolean isOnline) {
-			this.isOnline = isOnline;
+		public void setCount(Long count) {
+			this.count = count;
 		}
 	}
 
 	@Override
-	public GetDeviceInfosResponse getInstance(UnmarshallerContext context) {
-		return	GetDeviceInfosResponseUnmarshaller.unmarshall(this, context);
+	public QueryUniqueDeviceStatResponse getInstance(UnmarshallerContext context) {
+		return	QueryUniqueDeviceStatResponseUnmarshaller.unmarshall(this, context);
 	}
 }
