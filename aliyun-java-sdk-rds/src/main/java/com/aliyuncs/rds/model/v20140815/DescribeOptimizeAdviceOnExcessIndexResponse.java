@@ -18,102 +18,102 @@
  */
 package com.aliyuncs.rds.model.v20140815;
 
-import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.rds.transform.v20140815.DescribeOptimizeAdviceOnExcessIndexResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
+import java.util.List;
+
 /**
  * @author auto create
- * @version 
  */
 public class DescribeOptimizeAdviceOnExcessIndexResponse extends AcsResponse {
 
-	private String requestId;
+    private String requestId;
 
-	private Integer totalRecordsCount;
+    private Integer totalRecordsCount;
 
-	private Integer pageNumber;
+    private Integer pageNumber;
 
-	private Integer pageRecordCount;
+    private Integer pageRecordCount;
 
-	private List<AdviceOnExcessIndex> items;
+    private List<AdviceOnExcessIndex> items;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
+    public String getRequestId() {
+        return this.requestId;
+    }
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+    public void setRequestId(String requestId) {
+        this.requestId = requestId;
+    }
 
-	public Integer getTotalRecordsCount() {
-		return this.totalRecordsCount;
-	}
+    public Integer getTotalRecordsCount() {
+        return this.totalRecordsCount;
+    }
 
-	public void setTotalRecordsCount(Integer totalRecordsCount) {
-		this.totalRecordsCount = totalRecordsCount;
-	}
+    public void setTotalRecordsCount(Integer totalRecordsCount) {
+        this.totalRecordsCount = totalRecordsCount;
+    }
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
+    public Integer getPageNumber() {
+        return this.pageNumber;
+    }
 
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-	}
+    public void setPageNumber(Integer pageNumber) {
+        this.pageNumber = pageNumber;
+    }
 
-	public Integer getPageRecordCount() {
-		return this.pageRecordCount;
-	}
+    public Integer getPageRecordCount() {
+        return this.pageRecordCount;
+    }
 
-	public void setPageRecordCount(Integer pageRecordCount) {
-		this.pageRecordCount = pageRecordCount;
-	}
+    public void setPageRecordCount(Integer pageRecordCount) {
+        this.pageRecordCount = pageRecordCount;
+    }
 
-	public List<AdviceOnExcessIndex> getItems() {
-		return this.items;
-	}
+    public List<AdviceOnExcessIndex> getItems() {
+        return this.items;
+    }
 
-	public void setItems(List<AdviceOnExcessIndex> items) {
-		this.items = items;
-	}
+    public void setItems(List<AdviceOnExcessIndex> items) {
+        this.items = items;
+    }
 
-	public static class AdviceOnExcessIndex {
+    public static class AdviceOnExcessIndex {
 
-		private String dBName;
+        private String dBName;
 
-		private String tableName;
+        private String tableName;
 
-		private Long indexCount;
+        private Long indexCount;
 
-		public String getDBName() {
-			return this.dBName;
-		}
+        public String getDBName() {
+            return this.dBName;
+        }
 
-		public void setDBName(String dBName) {
-			this.dBName = dBName;
-		}
+        public void setDBName(String dBName) {
+            this.dBName = dBName;
+        }
 
-		public String getTableName() {
-			return this.tableName;
-		}
+        public String getTableName() {
+            return this.tableName;
+        }
 
-		public void setTableName(String tableName) {
-			this.tableName = tableName;
-		}
+        public void setTableName(String tableName) {
+            this.tableName = tableName;
+        }
 
-		public Long getIndexCount() {
-			return this.indexCount;
-		}
+        public Long getIndexCount() {
+            return this.indexCount;
+        }
 
-		public void setIndexCount(Long indexCount) {
-			this.indexCount = indexCount;
-		}
-	}
+        public void setIndexCount(Long indexCount) {
+            this.indexCount = indexCount;
+        }
+    }
 
-	@Override
-	public DescribeOptimizeAdviceOnExcessIndexResponse getInstance(UnmarshallerContext context) {
-		return	DescribeOptimizeAdviceOnExcessIndexResponseUnmarshaller.unmarshall(this, context);
-	}
+    @Override
+    public DescribeOptimizeAdviceOnExcessIndexResponse getInstance(UnmarshallerContext context) {
+        return DescribeOptimizeAdviceOnExcessIndexResponseUnmarshaller.unmarshall(this, context);
+    }
 }

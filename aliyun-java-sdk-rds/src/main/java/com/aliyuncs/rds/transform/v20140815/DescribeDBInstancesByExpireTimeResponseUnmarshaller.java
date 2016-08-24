@@ -18,34 +18,44 @@
  */
 package com.aliyuncs.rds.transform.v20140815;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.aliyuncs.rds.model.v20140815.DescribeDBInstancesByExpireTimeResponse;
 import com.aliyuncs.rds.model.v20140815.DescribeDBInstancesByExpireTimeResponse.DBInstanceExpireTime;
 import com.aliyuncs.transform.UnmarshallerContext;
 
+import java.util.ArrayList;
+import java.util.List;
 
 public class DescribeDBInstancesByExpireTimeResponseUnmarshaller {
 
-	public static DescribeDBInstancesByExpireTimeResponse unmarshall(DescribeDBInstancesByExpireTimeResponse describeDBInstancesByExpireTimeResponse, UnmarshallerContext context) {
-		
-		describeDBInstancesByExpireTimeResponse.setRequestId(context.stringValue("DescribeDBInstancesByExpireTimeResponse.RequestId"));
-		describeDBInstancesByExpireTimeResponse.setPageNumber(context.integerValue("DescribeDBInstancesByExpireTimeResponse.PageNumber"));
-		describeDBInstancesByExpireTimeResponse.setTotalRecordCount(context.integerValue("DescribeDBInstancesByExpireTimeResponse.TotalRecordCount"));
-		describeDBInstancesByExpireTimeResponse.setPageRecordCount(context.integerValue("DescribeDBInstancesByExpireTimeResponse.PageRecordCount"));
+    public static DescribeDBInstancesByExpireTimeResponse unmarshall(
+            DescribeDBInstancesByExpireTimeResponse describeDBInstancesByExpireTimeResponse,
+            UnmarshallerContext context) {
 
-		List<DBInstanceExpireTime> items = new ArrayList<DBInstanceExpireTime>();
-		for (int i = 0; i < context.lengthValue("DescribeDBInstancesByExpireTimeResponse.Items.Length"); i++) {
-			DBInstanceExpireTime dBInstanceExpireTime = new DBInstanceExpireTime();
-			dBInstanceExpireTime.setDBInstanceId(context.stringValue("DescribeDBInstancesByExpireTimeResponse.Items["+ i +"].DBInstanceId"));
-			dBInstanceExpireTime.setDBInstanceDescription(context.stringValue("DescribeDBInstancesByExpireTimeResponse.Items["+ i +"].DBInstanceDescription"));
-			dBInstanceExpireTime.setExpireTime(context.stringValue("DescribeDBInstancesByExpireTimeResponse.Items["+ i +"].ExpireTime"));
+        describeDBInstancesByExpireTimeResponse.setRequestId(
+                context.stringValue("DescribeDBInstancesByExpireTimeResponse.RequestId"));
+        describeDBInstancesByExpireTimeResponse.setPageNumber(
+                context.integerValue("DescribeDBInstancesByExpireTimeResponse.PageNumber"));
+        describeDBInstancesByExpireTimeResponse.setTotalRecordCount(
+                context.integerValue("DescribeDBInstancesByExpireTimeResponse.TotalRecordCount"));
+        describeDBInstancesByExpireTimeResponse.setPageRecordCount(
+                context.integerValue("DescribeDBInstancesByExpireTimeResponse.PageRecordCount"));
 
-			items.add(dBInstanceExpireTime);
-		}
-		describeDBInstancesByExpireTimeResponse.setItems(items);
-	 
-	 	return describeDBInstancesByExpireTimeResponse;
-	}
+        List<DBInstanceExpireTime> items = new ArrayList<DBInstanceExpireTime>();
+        for (int i = 0;
+             i < context.lengthValue("DescribeDBInstancesByExpireTimeResponse.Items.Length"); i++) {
+            DBInstanceExpireTime dBInstanceExpireTime = new DBInstanceExpireTime();
+            dBInstanceExpireTime.setDBInstanceId(context.stringValue(
+                    "DescribeDBInstancesByExpireTimeResponse.Items[" + i + "].DBInstanceId"));
+            dBInstanceExpireTime.setDBInstanceDescription(context.stringValue(
+                    "DescribeDBInstancesByExpireTimeResponse.Items[" + i
+                            + "].DBInstanceDescription"));
+            dBInstanceExpireTime.setExpireTime(context.stringValue(
+                    "DescribeDBInstancesByExpireTimeResponse.Items[" + i + "].ExpireTime"));
+
+            items.add(dBInstanceExpireTime);
+        }
+        describeDBInstancesByExpireTimeResponse.setItems(items);
+
+        return describeDBInstancesByExpireTimeResponse;
+    }
 }

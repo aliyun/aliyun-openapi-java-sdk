@@ -18,31 +18,35 @@
  */
 package com.aliyuncs.rds.transform.v20140815;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.aliyuncs.rds.model.v20140815.DescribeVpcZoneNosResponse;
 import com.aliyuncs.rds.model.v20140815.DescribeVpcZoneNosResponse.VpcZoneId;
 import com.aliyuncs.transform.UnmarshallerContext;
 
+import java.util.ArrayList;
+import java.util.List;
 
 public class DescribeVpcZoneNosResponseUnmarshaller {
 
-	public static DescribeVpcZoneNosResponse unmarshall(DescribeVpcZoneNosResponse describeVpcZoneNosResponse, UnmarshallerContext context) {
-		
-		describeVpcZoneNosResponse.setRequestId(context.stringValue("DescribeVpcZoneNosResponse.RequestId"));
+    public static DescribeVpcZoneNosResponse unmarshall(
+            DescribeVpcZoneNosResponse describeVpcZoneNosResponse, UnmarshallerContext context) {
 
-		List<VpcZoneId> items = new ArrayList<VpcZoneId>();
-		for (int i = 0; i < context.lengthValue("DescribeVpcZoneNosResponse.Items.Length"); i++) {
-			VpcZoneId vpcZoneId = new VpcZoneId();
-			vpcZoneId.setZoneId(context.stringValue("DescribeVpcZoneNosResponse.Items["+ i +"].ZoneId"));
-			vpcZoneId.setRegion(context.stringValue("DescribeVpcZoneNosResponse.Items["+ i +"].Region"));
-			vpcZoneId.setSubDomain(context.stringValue("DescribeVpcZoneNosResponse.Items["+ i +"].SubDomain"));
+        describeVpcZoneNosResponse
+                .setRequestId(context.stringValue("DescribeVpcZoneNosResponse.RequestId"));
 
-			items.add(vpcZoneId);
-		}
-		describeVpcZoneNosResponse.setItems(items);
-	 
-	 	return describeVpcZoneNosResponse;
-	}
+        List<VpcZoneId> items = new ArrayList<VpcZoneId>();
+        for (int i = 0; i < context.lengthValue("DescribeVpcZoneNosResponse.Items.Length"); i++) {
+            VpcZoneId vpcZoneId = new VpcZoneId();
+            vpcZoneId.setZoneId(
+                    context.stringValue("DescribeVpcZoneNosResponse.Items[" + i + "].ZoneId"));
+            vpcZoneId.setRegion(
+                    context.stringValue("DescribeVpcZoneNosResponse.Items[" + i + "].Region"));
+            vpcZoneId.setSubDomain(
+                    context.stringValue("DescribeVpcZoneNosResponse.Items[" + i + "].SubDomain"));
+
+            items.add(vpcZoneId);
+        }
+        describeVpcZoneNosResponse.setItems(items);
+
+        return describeVpcZoneNosResponse;
+    }
 }

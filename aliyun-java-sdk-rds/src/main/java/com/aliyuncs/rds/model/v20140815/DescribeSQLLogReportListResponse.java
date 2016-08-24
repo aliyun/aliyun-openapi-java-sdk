@@ -18,158 +18,158 @@
  */
 package com.aliyuncs.rds.model.v20140815;
 
-import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.rds.transform.v20140815.DescribeSQLLogReportListResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
+import java.util.List;
+
 /**
  * @author auto create
- * @version 
  */
 public class DescribeSQLLogReportListResponse extends AcsResponse {
 
-	private String requestId;
+    private String requestId;
 
-	private Integer totalRecordCount;
+    private Integer totalRecordCount;
 
-	private Integer pageNumber;
+    private Integer pageNumber;
 
-	private Integer pageRecordCount;
+    private Integer pageRecordCount;
 
-	private List<Item> items;
+    private List<Item> items;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
+    public String getRequestId() {
+        return this.requestId;
+    }
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+    public void setRequestId(String requestId) {
+        this.requestId = requestId;
+    }
 
-	public Integer getTotalRecordCount() {
-		return this.totalRecordCount;
-	}
+    public Integer getTotalRecordCount() {
+        return this.totalRecordCount;
+    }
 
-	public void setTotalRecordCount(Integer totalRecordCount) {
-		this.totalRecordCount = totalRecordCount;
-	}
+    public void setTotalRecordCount(Integer totalRecordCount) {
+        this.totalRecordCount = totalRecordCount;
+    }
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
+    public Integer getPageNumber() {
+        return this.pageNumber;
+    }
 
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-	}
+    public void setPageNumber(Integer pageNumber) {
+        this.pageNumber = pageNumber;
+    }
 
-	public Integer getPageRecordCount() {
-		return this.pageRecordCount;
-	}
+    public Integer getPageRecordCount() {
+        return this.pageRecordCount;
+    }
 
-	public void setPageRecordCount(Integer pageRecordCount) {
-		this.pageRecordCount = pageRecordCount;
-	}
+    public void setPageRecordCount(Integer pageRecordCount) {
+        this.pageRecordCount = pageRecordCount;
+    }
 
-	public List<Item> getItems() {
-		return this.items;
-	}
+    public List<Item> getItems() {
+        return this.items;
+    }
 
-	public void setItems(List<Item> items) {
-		this.items = items;
-	}
+    public void setItems(List<Item> items) {
+        this.items = items;
+    }
 
-	public static class Item {
+    public static class Item {
 
-		private String reportTime;
+        private String reportTime;
 
-		private List<LatencyTopNItem> latencyTopNItems;
+        private List<LatencyTopNItem> latencyTopNItems;
 
-		private List<QPSTopNItem> qPSTopNItems;
+        private List<QPSTopNItem> qPSTopNItems;
 
-		public String getReportTime() {
-			return this.reportTime;
-		}
+        public String getReportTime() {
+            return this.reportTime;
+        }
 
-		public void setReportTime(String reportTime) {
-			this.reportTime = reportTime;
-		}
+        public void setReportTime(String reportTime) {
+            this.reportTime = reportTime;
+        }
 
-		public List<LatencyTopNItem> getLatencyTopNItems() {
-			return this.latencyTopNItems;
-		}
+        public List<LatencyTopNItem> getLatencyTopNItems() {
+            return this.latencyTopNItems;
+        }
 
-		public void setLatencyTopNItems(List<LatencyTopNItem> latencyTopNItems) {
-			this.latencyTopNItems = latencyTopNItems;
-		}
+        public void setLatencyTopNItems(List<LatencyTopNItem> latencyTopNItems) {
+            this.latencyTopNItems = latencyTopNItems;
+        }
 
-		public List<QPSTopNItem> getQPSTopNItems() {
-			return this.qPSTopNItems;
-		}
+        public List<QPSTopNItem> getQPSTopNItems() {
+            return this.qPSTopNItems;
+        }
 
-		public void setQPSTopNItems(List<QPSTopNItem> qPSTopNItems) {
-			this.qPSTopNItems = qPSTopNItems;
-		}
+        public void setQPSTopNItems(List<QPSTopNItem> qPSTopNItems) {
+            this.qPSTopNItems = qPSTopNItems;
+        }
 
-		public static class LatencyTopNItem {
+        public static class LatencyTopNItem {
 
-			private String sQLText;
+            private String sQLText;
 
-			private Long avgLatency;
+            private Long avgLatency;
 
-			private Long sQLExecuteTimes;
+            private Long sQLExecuteTimes;
 
-			public String getSQLText() {
-				return this.sQLText;
-			}
+            public String getSQLText() {
+                return this.sQLText;
+            }
 
-			public void setSQLText(String sQLText) {
-				this.sQLText = sQLText;
-			}
+            public void setSQLText(String sQLText) {
+                this.sQLText = sQLText;
+            }
 
-			public Long getAvgLatency() {
-				return this.avgLatency;
-			}
+            public Long getAvgLatency() {
+                return this.avgLatency;
+            }
 
-			public void setAvgLatency(Long avgLatency) {
-				this.avgLatency = avgLatency;
-			}
+            public void setAvgLatency(Long avgLatency) {
+                this.avgLatency = avgLatency;
+            }
 
-			public Long getSQLExecuteTimes() {
-				return this.sQLExecuteTimes;
-			}
+            public Long getSQLExecuteTimes() {
+                return this.sQLExecuteTimes;
+            }
 
-			public void setSQLExecuteTimes(Long sQLExecuteTimes) {
-				this.sQLExecuteTimes = sQLExecuteTimes;
-			}
-		}
+            public void setSQLExecuteTimes(Long sQLExecuteTimes) {
+                this.sQLExecuteTimes = sQLExecuteTimes;
+            }
+        }
 
-		public static class QPSTopNItem {
+        public static class QPSTopNItem {
 
-			private String sQLText;
+            private String sQLText;
 
-			private Long sQLExecuteTimes;
+            private Long sQLExecuteTimes;
 
-			public String getSQLText() {
-				return this.sQLText;
-			}
+            public String getSQLText() {
+                return this.sQLText;
+            }
 
-			public void setSQLText(String sQLText) {
-				this.sQLText = sQLText;
-			}
+            public void setSQLText(String sQLText) {
+                this.sQLText = sQLText;
+            }
 
-			public Long getSQLExecuteTimes() {
-				return this.sQLExecuteTimes;
-			}
+            public Long getSQLExecuteTimes() {
+                return this.sQLExecuteTimes;
+            }
 
-			public void setSQLExecuteTimes(Long sQLExecuteTimes) {
-				this.sQLExecuteTimes = sQLExecuteTimes;
-			}
-		}
-	}
+            public void setSQLExecuteTimes(Long sQLExecuteTimes) {
+                this.sQLExecuteTimes = sQLExecuteTimes;
+            }
+        }
+    }
 
-	@Override
-	public DescribeSQLLogReportListResponse getInstance(UnmarshallerContext context) {
-		return	DescribeSQLLogReportListResponseUnmarshaller.unmarshall(this, context);
-	}
+    @Override
+    public DescribeSQLLogReportListResponse getInstance(UnmarshallerContext context) {
+        return DescribeSQLLogReportListResponseUnmarshaller.unmarshall(this, context);
+    }
 }

@@ -22,116 +22,115 @@ import com.aliyuncs.RpcAcsRequest;
 
 /**
  * @author auto create
- * @version 
  */
 public class ModifyBackupPolicyRequest extends RpcAcsRequest<ModifyBackupPolicyResponse> {
-	
-	public ModifyBackupPolicyRequest() {
-		super("Rds", "2014-08-15", "ModifyBackupPolicy");
-	}
 
-	private Long ownerId;
+    public ModifyBackupPolicyRequest() {
+        super("Rds", "2014-08-15", "ModifyBackupPolicy");
+    }
 
-	private String resourceOwnerAccount;
+    private Long ownerId;
 
-	private Long resourceOwnerId;
+    private String resourceOwnerAccount;
 
-	private String dBInstanceId;
+    private Long resourceOwnerId;
 
-	private String preferredBackupTime;
+    private String dBInstanceId;
 
-	private String preferredBackupPeriod;
+    private String preferredBackupTime;
 
-	private String backupRetentionPeriod;
+    private String preferredBackupPeriod;
 
-	private String backupLog;
+    private String backupRetentionPeriod;
 
-	private String ownerAccount;
+    private String backupLog;
 
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
+    private String ownerAccount;
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
-	}
+    public Long getOwnerId() {
+        return this.ownerId;
+    }
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
+    public void setOwnerId(Long ownerId) {
+        this.ownerId = ownerId;
+        putQueryParameter("OwnerId", ownerId);
+    }
 
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-	}
+    public String getResourceOwnerAccount() {
+        return this.resourceOwnerAccount;
+    }
 
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
+    public void setResourceOwnerAccount(String resourceOwnerAccount) {
+        this.resourceOwnerAccount = resourceOwnerAccount;
+        putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+    }
 
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", resourceOwnerId);
-	}
+    public Long getResourceOwnerId() {
+        return this.resourceOwnerId;
+    }
 
-	public String getDBInstanceId() {
-		return this.dBInstanceId;
-	}
+    public void setResourceOwnerId(Long resourceOwnerId) {
+        this.resourceOwnerId = resourceOwnerId;
+        putQueryParameter("ResourceOwnerId", resourceOwnerId);
+    }
 
-	public void setDBInstanceId(String dBInstanceId) {
-		this.dBInstanceId = dBInstanceId;
-		putQueryParameter("DBInstanceId", dBInstanceId);
-	}
+    public String getDBInstanceId() {
+        return this.dBInstanceId;
+    }
 
-	public String getPreferredBackupTime() {
-		return this.preferredBackupTime;
-	}
+    public void setDBInstanceId(String dBInstanceId) {
+        this.dBInstanceId = dBInstanceId;
+        putQueryParameter("DBInstanceId", dBInstanceId);
+    }
 
-	public void setPreferredBackupTime(String preferredBackupTime) {
-		this.preferredBackupTime = preferredBackupTime;
-		putQueryParameter("PreferredBackupTime", preferredBackupTime);
-	}
+    public String getPreferredBackupTime() {
+        return this.preferredBackupTime;
+    }
 
-	public String getPreferredBackupPeriod() {
-		return this.preferredBackupPeriod;
-	}
+    public void setPreferredBackupTime(String preferredBackupTime) {
+        this.preferredBackupTime = preferredBackupTime;
+        putQueryParameter("PreferredBackupTime", preferredBackupTime);
+    }
 
-	public void setPreferredBackupPeriod(String preferredBackupPeriod) {
-		this.preferredBackupPeriod = preferredBackupPeriod;
-		putQueryParameter("PreferredBackupPeriod", preferredBackupPeriod);
-	}
+    public String getPreferredBackupPeriod() {
+        return this.preferredBackupPeriod;
+    }
 
-	public String getBackupRetentionPeriod() {
-		return this.backupRetentionPeriod;
-	}
+    public void setPreferredBackupPeriod(String preferredBackupPeriod) {
+        this.preferredBackupPeriod = preferredBackupPeriod;
+        putQueryParameter("PreferredBackupPeriod", preferredBackupPeriod);
+    }
 
-	public void setBackupRetentionPeriod(String backupRetentionPeriod) {
-		this.backupRetentionPeriod = backupRetentionPeriod;
-		putQueryParameter("BackupRetentionPeriod", backupRetentionPeriod);
-	}
+    public String getBackupRetentionPeriod() {
+        return this.backupRetentionPeriod;
+    }
 
-	public String getBackupLog() {
-		return this.backupLog;
-	}
+    public void setBackupRetentionPeriod(String backupRetentionPeriod) {
+        this.backupRetentionPeriod = backupRetentionPeriod;
+        putQueryParameter("BackupRetentionPeriod", backupRetentionPeriod);
+    }
 
-	public void setBackupLog(String backupLog) {
-		this.backupLog = backupLog;
-		putQueryParameter("BackupLog", backupLog);
-	}
+    public String getBackupLog() {
+        return this.backupLog;
+    }
 
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
+    public void setBackupLog(String backupLog) {
+        this.backupLog = backupLog;
+        putQueryParameter("BackupLog", backupLog);
+    }
 
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		putQueryParameter("OwnerAccount", ownerAccount);
-	}
+    public String getOwnerAccount() {
+        return this.ownerAccount;
+    }
 
-	@Override
-	public Class<ModifyBackupPolicyResponse> getResponseClass() {
-		return ModifyBackupPolicyResponse.class;
-	}
+    public void setOwnerAccount(String ownerAccount) {
+        this.ownerAccount = ownerAccount;
+        putQueryParameter("OwnerAccount", ownerAccount);
+    }
+
+    @Override
+    public Class<ModifyBackupPolicyResponse> getResponseClass() {
+        return ModifyBackupPolicyResponse.class;
+    }
 
 }

@@ -18,32 +18,39 @@
  */
 package com.aliyuncs.rds.transform.v20140815;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.aliyuncs.rds.model.v20140815.DescribeOptimizeAdviceByDBAResponse;
 import com.aliyuncs.rds.model.v20140815.DescribeOptimizeAdviceByDBAResponse.AdviceByDBA;
 import com.aliyuncs.transform.UnmarshallerContext;
 
+import java.util.ArrayList;
+import java.util.List;
 
 public class DescribeOptimizeAdviceByDBAResponseUnmarshaller {
 
-	public static DescribeOptimizeAdviceByDBAResponse unmarshall(DescribeOptimizeAdviceByDBAResponse describeOptimizeAdviceByDBAResponse, UnmarshallerContext context) {
-		
-		describeOptimizeAdviceByDBAResponse.setRequestId(context.stringValue("DescribeOptimizeAdviceByDBAResponse.RequestId"));
-		describeOptimizeAdviceByDBAResponse.setTotalRecordsCount(context.integerValue("DescribeOptimizeAdviceByDBAResponse.TotalRecordsCount"));
-		describeOptimizeAdviceByDBAResponse.setPageNumber(context.integerValue("DescribeOptimizeAdviceByDBAResponse.PageNumber"));
-		describeOptimizeAdviceByDBAResponse.setPageRecordCount(context.integerValue("DescribeOptimizeAdviceByDBAResponse.PageRecordCount"));
+    public static DescribeOptimizeAdviceByDBAResponse unmarshall(
+            DescribeOptimizeAdviceByDBAResponse describeOptimizeAdviceByDBAResponse,
+            UnmarshallerContext context) {
 
-		List<AdviceByDBA> items = new ArrayList<AdviceByDBA>();
-		for (int i = 0; i < context.lengthValue("DescribeOptimizeAdviceByDBAResponse.Items.Length"); i++) {
-			AdviceByDBA adviceByDBA = new AdviceByDBA();
-			adviceByDBA.setOptimizationText(context.stringValue("DescribeOptimizeAdviceByDBAResponse.Items["+ i +"].OptimizationText"));
+        describeOptimizeAdviceByDBAResponse
+                .setRequestId(context.stringValue("DescribeOptimizeAdviceByDBAResponse.RequestId"));
+        describeOptimizeAdviceByDBAResponse.setTotalRecordsCount(
+                context.integerValue("DescribeOptimizeAdviceByDBAResponse.TotalRecordsCount"));
+        describeOptimizeAdviceByDBAResponse.setPageNumber(
+                context.integerValue("DescribeOptimizeAdviceByDBAResponse.PageNumber"));
+        describeOptimizeAdviceByDBAResponse.setPageRecordCount(
+                context.integerValue("DescribeOptimizeAdviceByDBAResponse.PageRecordCount"));
 
-			items.add(adviceByDBA);
-		}
-		describeOptimizeAdviceByDBAResponse.setItems(items);
-	 
-	 	return describeOptimizeAdviceByDBAResponse;
-	}
+        List<AdviceByDBA> items = new ArrayList<AdviceByDBA>();
+        for (int i = 0;
+             i < context.lengthValue("DescribeOptimizeAdviceByDBAResponse.Items.Length"); i++) {
+            AdviceByDBA adviceByDBA = new AdviceByDBA();
+            adviceByDBA.setOptimizationText(context.stringValue(
+                    "DescribeOptimizeAdviceByDBAResponse.Items[" + i + "].OptimizationText"));
+
+            items.add(adviceByDBA);
+        }
+        describeOptimizeAdviceByDBAResponse.setItems(items);
+
+        return describeOptimizeAdviceByDBAResponse;
+    }
 }

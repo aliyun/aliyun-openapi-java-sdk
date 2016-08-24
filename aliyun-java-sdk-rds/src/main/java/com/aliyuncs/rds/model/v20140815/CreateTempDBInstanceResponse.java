@@ -24,32 +24,31 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
- * @version 
  */
 public class CreateTempDBInstanceResponse extends AcsResponse {
 
-	private String requestId;
+    private String requestId;
 
-	private String tempDBInstanceId;
+    private String tempDBInstanceId;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
+    public String getRequestId() {
+        return this.requestId;
+    }
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+    public void setRequestId(String requestId) {
+        this.requestId = requestId;
+    }
 
-	public String getTempDBInstanceId() {
-		return this.tempDBInstanceId;
-	}
+    public String getTempDBInstanceId() {
+        return this.tempDBInstanceId;
+    }
 
-	public void setTempDBInstanceId(String tempDBInstanceId) {
-		this.tempDBInstanceId = tempDBInstanceId;
-	}
+    public void setTempDBInstanceId(String tempDBInstanceId) {
+        this.tempDBInstanceId = tempDBInstanceId;
+    }
 
-	@Override
-	public CreateTempDBInstanceResponse getInstance(UnmarshallerContext context) {
-		return	CreateTempDBInstanceResponseUnmarshaller.unmarshall(this, context);
-	}
+    @Override
+    public CreateTempDBInstanceResponse getInstance(UnmarshallerContext context) {
+        return CreateTempDBInstanceResponseUnmarshaller.unmarshall(this, context);
+    }
 }

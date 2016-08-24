@@ -21,13 +21,15 @@ package com.aliyuncs.rds.transform.v20140815;
 import com.aliyuncs.rds.model.v20140815.ModifySQLCollectorPolicyResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
-
 public class ModifySQLCollectorPolicyResponseUnmarshaller {
 
-	public static ModifySQLCollectorPolicyResponse unmarshall(ModifySQLCollectorPolicyResponse modifySQLCollectorPolicyResponse, UnmarshallerContext context) {
-		
-		modifySQLCollectorPolicyResponse.setRequestId(context.stringValue("ModifySQLCollectorPolicyResponse.RequestId"));
-	 
-	 	return modifySQLCollectorPolicyResponse;
-	}
+    public static ModifySQLCollectorPolicyResponse unmarshall(
+            ModifySQLCollectorPolicyResponse modifySQLCollectorPolicyResponse,
+            UnmarshallerContext context) {
+
+        modifySQLCollectorPolicyResponse
+                .setRequestId(context.stringValue("ModifySQLCollectorPolicyResponse.RequestId"));
+
+        return modifySQLCollectorPolicyResponse;
+    }
 }

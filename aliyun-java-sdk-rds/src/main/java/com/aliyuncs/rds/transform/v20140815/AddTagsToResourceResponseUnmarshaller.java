@@ -21,13 +21,14 @@ package com.aliyuncs.rds.transform.v20140815;
 import com.aliyuncs.rds.model.v20140815.AddTagsToResourceResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
-
 public class AddTagsToResourceResponseUnmarshaller {
 
-	public static AddTagsToResourceResponse unmarshall(AddTagsToResourceResponse addTagsToResourceResponse, UnmarshallerContext context) {
-		
-		addTagsToResourceResponse.setRequestId(context.stringValue("AddTagsToResourceResponse.RequestId"));
-	 
-	 	return addTagsToResourceResponse;
-	}
+    public static AddTagsToResourceResponse unmarshall(
+            AddTagsToResourceResponse addTagsToResourceResponse, UnmarshallerContext context) {
+
+        addTagsToResourceResponse
+                .setRequestId(context.stringValue("AddTagsToResourceResponse.RequestId"));
+
+        return addTagsToResourceResponse;
+    }
 }

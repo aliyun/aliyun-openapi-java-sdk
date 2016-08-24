@@ -22,138 +22,137 @@ import com.aliyuncs.RpcAcsRequest;
 
 /**
  * @author auto create
- * @version 
  */
 public class DescribeSlowLogRecordsRequest extends RpcAcsRequest<DescribeSlowLogRecordsResponse> {
-	
-	public DescribeSlowLogRecordsRequest() {
-		super("Rds", "2014-08-15", "DescribeSlowLogRecords");
-	}
 
-	private Long ownerId;
+    public DescribeSlowLogRecordsRequest() {
+        super("Rds", "2014-08-15", "DescribeSlowLogRecords");
+    }
 
-	private String resourceOwnerAccount;
+    private Long ownerId;
 
-	private Long resourceOwnerId;
+    private String resourceOwnerAccount;
 
-	private String dBInstanceId;
+    private Long resourceOwnerId;
 
-	private Long sQLId;
+    private String dBInstanceId;
 
-	private String startTime;
+    private Long sQLId;
 
-	private String endTime;
+    private String startTime;
 
-	private String dBName;
+    private String endTime;
 
-	private Integer pageSize;
+    private String dBName;
 
-	private Integer pageNumber;
+    private Integer pageSize;
 
-	private String ownerAccount;
+    private Integer pageNumber;
 
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
+    private String ownerAccount;
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
-	}
+    public Long getOwnerId() {
+        return this.ownerId;
+    }
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
+    public void setOwnerId(Long ownerId) {
+        this.ownerId = ownerId;
+        putQueryParameter("OwnerId", ownerId);
+    }
 
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-	}
+    public String getResourceOwnerAccount() {
+        return this.resourceOwnerAccount;
+    }
 
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
+    public void setResourceOwnerAccount(String resourceOwnerAccount) {
+        this.resourceOwnerAccount = resourceOwnerAccount;
+        putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+    }
 
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", resourceOwnerId);
-	}
+    public Long getResourceOwnerId() {
+        return this.resourceOwnerId;
+    }
 
-	public String getDBInstanceId() {
-		return this.dBInstanceId;
-	}
+    public void setResourceOwnerId(Long resourceOwnerId) {
+        this.resourceOwnerId = resourceOwnerId;
+        putQueryParameter("ResourceOwnerId", resourceOwnerId);
+    }
 
-	public void setDBInstanceId(String dBInstanceId) {
-		this.dBInstanceId = dBInstanceId;
-		putQueryParameter("DBInstanceId", dBInstanceId);
-	}
+    public String getDBInstanceId() {
+        return this.dBInstanceId;
+    }
 
-	public Long getSQLId() {
-		return this.sQLId;
-	}
+    public void setDBInstanceId(String dBInstanceId) {
+        this.dBInstanceId = dBInstanceId;
+        putQueryParameter("DBInstanceId", dBInstanceId);
+    }
 
-	public void setSQLId(Long sQLId) {
-		this.sQLId = sQLId;
-		putQueryParameter("SQLId", sQLId);
-	}
+    public Long getSQLId() {
+        return this.sQLId;
+    }
 
-	public String getStartTime() {
-		return this.startTime;
-	}
+    public void setSQLId(Long sQLId) {
+        this.sQLId = sQLId;
+        putQueryParameter("SQLId", sQLId);
+    }
 
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-		putQueryParameter("StartTime", startTime);
-	}
+    public String getStartTime() {
+        return this.startTime;
+    }
 
-	public String getEndTime() {
-		return this.endTime;
-	}
+    public void setStartTime(String startTime) {
+        this.startTime = startTime;
+        putQueryParameter("StartTime", startTime);
+    }
 
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
-		putQueryParameter("EndTime", endTime);
-	}
+    public String getEndTime() {
+        return this.endTime;
+    }
 
-	public String getDBName() {
-		return this.dBName;
-	}
+    public void setEndTime(String endTime) {
+        this.endTime = endTime;
+        putQueryParameter("EndTime", endTime);
+    }
 
-	public void setDBName(String dBName) {
-		this.dBName = dBName;
-		putQueryParameter("DBName", dBName);
-	}
+    public String getDBName() {
+        return this.dBName;
+    }
 
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
+    public void setDBName(String dBName) {
+        this.dBName = dBName;
+        putQueryParameter("DBName", dBName);
+    }
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		putQueryParameter("PageSize", pageSize);
-	}
+    public Integer getPageSize() {
+        return this.pageSize;
+    }
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
+    public void setPageSize(Integer pageSize) {
+        this.pageSize = pageSize;
+        putQueryParameter("PageSize", pageSize);
+    }
 
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		putQueryParameter("PageNumber", pageNumber);
-	}
+    public Integer getPageNumber() {
+        return this.pageNumber;
+    }
 
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
+    public void setPageNumber(Integer pageNumber) {
+        this.pageNumber = pageNumber;
+        putQueryParameter("PageNumber", pageNumber);
+    }
 
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		putQueryParameter("OwnerAccount", ownerAccount);
-	}
+    public String getOwnerAccount() {
+        return this.ownerAccount;
+    }
 
-	@Override
-	public Class<DescribeSlowLogRecordsResponse> getResponseClass() {
-		return DescribeSlowLogRecordsResponse.class;
-	}
+    public void setOwnerAccount(String ownerAccount) {
+        this.ownerAccount = ownerAccount;
+        putQueryParameter("OwnerAccount", ownerAccount);
+    }
+
+    @Override
+    public Class<DescribeSlowLogRecordsResponse> getResponseClass() {
+        return DescribeSlowLogRecordsResponse.class;
+    }
 
 }

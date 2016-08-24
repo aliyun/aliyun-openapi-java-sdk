@@ -22,94 +22,94 @@ import com.aliyuncs.RpcAcsRequest;
 
 /**
  * @author auto create
- * @version 
  */
-public class ModifyDBInstanceHAConfigRequest extends RpcAcsRequest<ModifyDBInstanceHAConfigResponse> {
-	
-	public ModifyDBInstanceHAConfigRequest() {
-		super("Rds", "2014-08-15", "ModifyDBInstanceHAConfig");
-	}
+public class ModifyDBInstanceHAConfigRequest
+        extends RpcAcsRequest<ModifyDBInstanceHAConfigResponse> {
 
-	private Long ownerId;
+    public ModifyDBInstanceHAConfigRequest() {
+        super("Rds", "2014-08-15", "ModifyDBInstanceHAConfig");
+    }
 
-	private String resourceOwnerAccount;
+    private Long ownerId;
 
-	private Long resourceOwnerId;
+    private String resourceOwnerAccount;
 
-	private String syncMode;
+    private Long resourceOwnerId;
 
-	private String hAMode;
+    private String syncMode;
 
-	private String dbInstanceId;
+    private String hAMode;
 
-	private String ownerAccount;
+    private String dbInstanceId;
 
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
+    private String ownerAccount;
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
-	}
+    public Long getOwnerId() {
+        return this.ownerId;
+    }
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
+    public void setOwnerId(Long ownerId) {
+        this.ownerId = ownerId;
+        putQueryParameter("OwnerId", ownerId);
+    }
 
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-	}
+    public String getResourceOwnerAccount() {
+        return this.resourceOwnerAccount;
+    }
 
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
+    public void setResourceOwnerAccount(String resourceOwnerAccount) {
+        this.resourceOwnerAccount = resourceOwnerAccount;
+        putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+    }
 
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", resourceOwnerId);
-	}
+    public Long getResourceOwnerId() {
+        return this.resourceOwnerId;
+    }
 
-	public String getSyncMode() {
-		return this.syncMode;
-	}
+    public void setResourceOwnerId(Long resourceOwnerId) {
+        this.resourceOwnerId = resourceOwnerId;
+        putQueryParameter("ResourceOwnerId", resourceOwnerId);
+    }
 
-	public void setSyncMode(String syncMode) {
-		this.syncMode = syncMode;
-		putQueryParameter("SyncMode", syncMode);
-	}
+    public String getSyncMode() {
+        return this.syncMode;
+    }
 
-	public String getHAMode() {
-		return this.hAMode;
-	}
+    public void setSyncMode(String syncMode) {
+        this.syncMode = syncMode;
+        putQueryParameter("SyncMode", syncMode);
+    }
 
-	public void setHAMode(String hAMode) {
-		this.hAMode = hAMode;
-		putQueryParameter("HAMode", hAMode);
-	}
+    public String getHAMode() {
+        return this.hAMode;
+    }
 
-	public String getDbInstanceId() {
-		return this.dbInstanceId;
-	}
+    public void setHAMode(String hAMode) {
+        this.hAMode = hAMode;
+        putQueryParameter("HAMode", hAMode);
+    }
 
-	public void setDbInstanceId(String dbInstanceId) {
-		this.dbInstanceId = dbInstanceId;
-		putQueryParameter("DbInstanceId", dbInstanceId);
-	}
+    public String getDbInstanceId() {
+        return this.dbInstanceId;
+    }
 
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
+    public void setDbInstanceId(String dbInstanceId) {
+        this.dbInstanceId = dbInstanceId;
+        putQueryParameter("DbInstanceId", dbInstanceId);
+    }
 
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		putQueryParameter("OwnerAccount", ownerAccount);
-	}
+    public String getOwnerAccount() {
+        return this.ownerAccount;
+    }
 
-	@Override
-	public Class<ModifyDBInstanceHAConfigResponse> getResponseClass() {
-		return ModifyDBInstanceHAConfigResponse.class;
-	}
+    public void setOwnerAccount(String ownerAccount) {
+        this.ownerAccount = ownerAccount;
+        putQueryParameter("OwnerAccount", ownerAccount);
+    }
+
+    @Override
+    public Class<ModifyDBInstanceHAConfigResponse> getResponseClass() {
+        return ModifyDBInstanceHAConfigResponse.class;
+    }
 
 }

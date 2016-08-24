@@ -21,13 +21,15 @@ package com.aliyuncs.rds.transform.v20140815;
 import com.aliyuncs.rds.model.v20140815.CreateAccountForInnerResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
-
 public class CreateAccountForInnerResponseUnmarshaller {
 
-	public static CreateAccountForInnerResponse unmarshall(CreateAccountForInnerResponse createAccountForInnerResponse, UnmarshallerContext context) {
-		
-		createAccountForInnerResponse.setRequestId(context.stringValue("CreateAccountForInnerResponse.RequestId"));
-	 
-	 	return createAccountForInnerResponse;
-	}
+    public static CreateAccountForInnerResponse unmarshall(
+            CreateAccountForInnerResponse createAccountForInnerResponse,
+            UnmarshallerContext context) {
+
+        createAccountForInnerResponse
+                .setRequestId(context.stringValue("CreateAccountForInnerResponse.RequestId"));
+
+        return createAccountForInnerResponse;
+    }
 }

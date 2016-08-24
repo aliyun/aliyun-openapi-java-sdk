@@ -18,62 +18,62 @@
  */
 package com.aliyuncs.rds.model.v20140815;
 
-import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.rds.transform.v20140815.DescribeRegionsTestResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
+import java.util.List;
+
 /**
  * @author auto create
- * @version 
  */
 public class DescribeRegionsTestResponse extends AcsResponse {
 
-	private String requestId;
+    private String requestId;
 
-	private List<RDSRegion> regions;
+    private List<RDSRegion> regions;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
+    public String getRequestId() {
+        return this.requestId;
+    }
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+    public void setRequestId(String requestId) {
+        this.requestId = requestId;
+    }
 
-	public List<RDSRegion> getRegions() {
-		return this.regions;
-	}
+    public List<RDSRegion> getRegions() {
+        return this.regions;
+    }
 
-	public void setRegions(List<RDSRegion> regions) {
-		this.regions = regions;
-	}
+    public void setRegions(List<RDSRegion> regions) {
+        this.regions = regions;
+    }
 
-	public static class RDSRegion {
+    public static class RDSRegion {
 
-		private String regionId;
+        private String regionId;
 
-		private String zoneId;
+        private String zoneId;
 
-		public String getRegionId() {
-			return this.regionId;
-		}
+        public String getRegionId() {
+            return this.regionId;
+        }
 
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
-		}
+        public void setRegionId(String regionId) {
+            this.regionId = regionId;
+        }
 
-		public String getZoneId() {
-			return this.zoneId;
-		}
+        public String getZoneId() {
+            return this.zoneId;
+        }
 
-		public void setZoneId(String zoneId) {
-			this.zoneId = zoneId;
-		}
-	}
+        public void setZoneId(String zoneId) {
+            this.zoneId = zoneId;
+        }
+    }
 
-	@Override
-	public DescribeRegionsTestResponse getInstance(UnmarshallerContext context) {
-		return	DescribeRegionsTestResponseUnmarshaller.unmarshall(this, context);
-	}
+    @Override
+    public DescribeRegionsTestResponse getInstance(UnmarshallerContext context) {
+        return DescribeRegionsTestResponseUnmarshaller.unmarshall(this, context);
+    }
 }

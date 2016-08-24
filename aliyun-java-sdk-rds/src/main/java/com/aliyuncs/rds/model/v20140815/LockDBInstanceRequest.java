@@ -22,83 +22,82 @@ import com.aliyuncs.RpcAcsRequest;
 
 /**
  * @author auto create
- * @version 
  */
 public class LockDBInstanceRequest extends RpcAcsRequest<LockDBInstanceResponse> {
-	
-	public LockDBInstanceRequest() {
-		super("Rds", "2014-08-15", "LockDBInstance");
-	}
 
-	private Long ownerId;
+    public LockDBInstanceRequest() {
+        super("Rds", "2014-08-15", "LockDBInstance");
+    }
 
-	private String resourceOwnerAccount;
+    private Long ownerId;
 
-	private Long resourceOwnerId;
+    private String resourceOwnerAccount;
 
-	private String dBInstanceId;
+    private Long resourceOwnerId;
 
-	private String lockReason;
+    private String dBInstanceId;
 
-	private String ownerAccount;
+    private String lockReason;
 
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
+    private String ownerAccount;
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", String.valueOf(ownerId));
-	}
+    public Long getOwnerId() {
+        return this.ownerId;
+    }
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
+    public void setOwnerId(Long ownerId) {
+        this.ownerId = ownerId;
+        putQueryParameter("OwnerId", String.valueOf(ownerId));
+    }
 
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-	}
+    public String getResourceOwnerAccount() {
+        return this.resourceOwnerAccount;
+    }
 
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
+    public void setResourceOwnerAccount(String resourceOwnerAccount) {
+        this.resourceOwnerAccount = resourceOwnerAccount;
+        putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+    }
 
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", String.valueOf(resourceOwnerId));
-	}
+    public Long getResourceOwnerId() {
+        return this.resourceOwnerId;
+    }
 
-	public String getDBInstanceId() {
-		return this.dBInstanceId;
-	}
+    public void setResourceOwnerId(Long resourceOwnerId) {
+        this.resourceOwnerId = resourceOwnerId;
+        putQueryParameter("ResourceOwnerId", String.valueOf(resourceOwnerId));
+    }
 
-	public void setDBInstanceId(String dBInstanceId) {
-		this.dBInstanceId = dBInstanceId;
-		putQueryParameter("DBInstanceId", dBInstanceId);
-	}
+    public String getDBInstanceId() {
+        return this.dBInstanceId;
+    }
 
-	public String getLockReason() {
-		return this.lockReason;
-	}
+    public void setDBInstanceId(String dBInstanceId) {
+        this.dBInstanceId = dBInstanceId;
+        putQueryParameter("DBInstanceId", dBInstanceId);
+    }
 
-	public void setLockReason(String lockReason) {
-		this.lockReason = lockReason;
-		putQueryParameter("LockReason", lockReason);
-	}
+    public String getLockReason() {
+        return this.lockReason;
+    }
 
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
+    public void setLockReason(String lockReason) {
+        this.lockReason = lockReason;
+        putQueryParameter("LockReason", lockReason);
+    }
 
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		putQueryParameter("OwnerAccount", ownerAccount);
-	}
+    public String getOwnerAccount() {
+        return this.ownerAccount;
+    }
 
-	@Override
-	public Class<LockDBInstanceResponse> getResponseClass() {
-		return LockDBInstanceResponse.class;
-	}
+    public void setOwnerAccount(String ownerAccount) {
+        this.ownerAccount = ownerAccount;
+        putQueryParameter("OwnerAccount", ownerAccount);
+    }
+
+    @Override
+    public Class<LockDBInstanceResponse> getResponseClass() {
+        return LockDBInstanceResponse.class;
+    }
 
 }

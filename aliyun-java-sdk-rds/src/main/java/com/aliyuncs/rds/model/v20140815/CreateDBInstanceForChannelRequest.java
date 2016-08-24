@@ -22,193 +22,193 @@ import com.aliyuncs.RpcAcsRequest;
 
 /**
  * @author auto create
- * @version 
  */
-public class CreateDBInstanceForChannelRequest extends RpcAcsRequest<CreateDBInstanceForChannelResponse> {
-	
-	public CreateDBInstanceForChannelRequest() {
-		super("Rds", "2014-08-15", "CreateDBInstanceForChannel");
-	}
+public class CreateDBInstanceForChannelRequest
+        extends RpcAcsRequest<CreateDBInstanceForChannelResponse> {
 
-	private Long ownerId;
+    public CreateDBInstanceForChannelRequest() {
+        super("Rds", "2014-08-15", "CreateDBInstanceForChannel");
+    }
 
-	private String resourceOwnerAccount;
+    private Long ownerId;
 
-	private Long resourceOwnerId;
+    private String resourceOwnerAccount;
 
-	private String clientToken;
+    private Long resourceOwnerId;
 
-	private String systemDBCharset;
+    private String clientToken;
 
-	private String engine;
+    private String systemDBCharset;
 
-	private String engineVersion;
+    private String engine;
 
-	private String dBInstanceClass;
+    private String engineVersion;
 
-	private Integer dBInstanceStorage;
+    private String dBInstanceClass;
 
-	private String dBInstanceNetType;
+    private Integer dBInstanceStorage;
 
-	private String dBInstanceDescription;
+    private String dBInstanceNetType;
 
-	private String securityIPList;
+    private String dBInstanceDescription;
 
-	private String accountName;
+    private String securityIPList;
 
-	private String accountPassword;
+    private String accountName;
 
-	private String payType;
+    private String accountPassword;
 
-	private String ownerAccount;
+    private String payType;
 
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
+    private String ownerAccount;
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", String.valueOf(ownerId));
-	}
+    public Long getOwnerId() {
+        return this.ownerId;
+    }
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
+    public void setOwnerId(Long ownerId) {
+        this.ownerId = ownerId;
+        putQueryParameter("OwnerId", String.valueOf(ownerId));
+    }
 
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-	}
+    public String getResourceOwnerAccount() {
+        return this.resourceOwnerAccount;
+    }
 
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
+    public void setResourceOwnerAccount(String resourceOwnerAccount) {
+        this.resourceOwnerAccount = resourceOwnerAccount;
+        putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+    }
 
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", String.valueOf(resourceOwnerId));
-	}
+    public Long getResourceOwnerId() {
+        return this.resourceOwnerId;
+    }
 
-	public String getClientToken() {
-		return this.clientToken;
-	}
+    public void setResourceOwnerId(Long resourceOwnerId) {
+        this.resourceOwnerId = resourceOwnerId;
+        putQueryParameter("ResourceOwnerId", String.valueOf(resourceOwnerId));
+    }
 
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		putQueryParameter("ClientToken", clientToken);
-	}
+    public String getClientToken() {
+        return this.clientToken;
+    }
 
-	public String getSystemDBCharset() {
-		return this.systemDBCharset;
-	}
+    public void setClientToken(String clientToken) {
+        this.clientToken = clientToken;
+        putQueryParameter("ClientToken", clientToken);
+    }
 
-	public void setSystemDBCharset(String systemDBCharset) {
-		this.systemDBCharset = systemDBCharset;
-		putQueryParameter("SystemDBCharset", systemDBCharset);
-	}
+    public String getSystemDBCharset() {
+        return this.systemDBCharset;
+    }
 
-	public String getEngine() {
-		return this.engine;
-	}
+    public void setSystemDBCharset(String systemDBCharset) {
+        this.systemDBCharset = systemDBCharset;
+        putQueryParameter("SystemDBCharset", systemDBCharset);
+    }
 
-	public void setEngine(String engine) {
-		this.engine = engine;
-		putQueryParameter("Engine", engine);
-	}
+    public String getEngine() {
+        return this.engine;
+    }
 
-	public String getEngineVersion() {
-		return this.engineVersion;
-	}
+    public void setEngine(String engine) {
+        this.engine = engine;
+        putQueryParameter("Engine", engine);
+    }
 
-	public void setEngineVersion(String engineVersion) {
-		this.engineVersion = engineVersion;
-		putQueryParameter("EngineVersion", engineVersion);
-	}
+    public String getEngineVersion() {
+        return this.engineVersion;
+    }
 
-	public String getDBInstanceClass() {
-		return this.dBInstanceClass;
-	}
+    public void setEngineVersion(String engineVersion) {
+        this.engineVersion = engineVersion;
+        putQueryParameter("EngineVersion", engineVersion);
+    }
 
-	public void setDBInstanceClass(String dBInstanceClass) {
-		this.dBInstanceClass = dBInstanceClass;
-		putQueryParameter("DBInstanceClass", dBInstanceClass);
-	}
+    public String getDBInstanceClass() {
+        return this.dBInstanceClass;
+    }
 
-	public Integer getDBInstanceStorage() {
-		return this.dBInstanceStorage;
-	}
+    public void setDBInstanceClass(String dBInstanceClass) {
+        this.dBInstanceClass = dBInstanceClass;
+        putQueryParameter("DBInstanceClass", dBInstanceClass);
+    }
 
-	public void setDBInstanceStorage(Integer dBInstanceStorage) {
-		this.dBInstanceStorage = dBInstanceStorage;
-		putQueryParameter("DBInstanceStorage", String.valueOf(dBInstanceStorage));
-	}
+    public Integer getDBInstanceStorage() {
+        return this.dBInstanceStorage;
+    }
 
-	public String getDBInstanceNetType() {
-		return this.dBInstanceNetType;
-	}
+    public void setDBInstanceStorage(Integer dBInstanceStorage) {
+        this.dBInstanceStorage = dBInstanceStorage;
+        putQueryParameter("DBInstanceStorage", String.valueOf(dBInstanceStorage));
+    }
 
-	public void setDBInstanceNetType(String dBInstanceNetType) {
-		this.dBInstanceNetType = dBInstanceNetType;
-		putQueryParameter("DBInstanceNetType", dBInstanceNetType);
-	}
+    public String getDBInstanceNetType() {
+        return this.dBInstanceNetType;
+    }
 
-	public String getDBInstanceDescription() {
-		return this.dBInstanceDescription;
-	}
+    public void setDBInstanceNetType(String dBInstanceNetType) {
+        this.dBInstanceNetType = dBInstanceNetType;
+        putQueryParameter("DBInstanceNetType", dBInstanceNetType);
+    }
 
-	public void setDBInstanceDescription(String dBInstanceDescription) {
-		this.dBInstanceDescription = dBInstanceDescription;
-		putQueryParameter("DBInstanceDescription", dBInstanceDescription);
-	}
+    public String getDBInstanceDescription() {
+        return this.dBInstanceDescription;
+    }
 
-	public String getSecurityIPList() {
-		return this.securityIPList;
-	}
+    public void setDBInstanceDescription(String dBInstanceDescription) {
+        this.dBInstanceDescription = dBInstanceDescription;
+        putQueryParameter("DBInstanceDescription", dBInstanceDescription);
+    }
 
-	public void setSecurityIPList(String securityIPList) {
-		this.securityIPList = securityIPList;
-		putQueryParameter("SecurityIPList", securityIPList);
-	}
+    public String getSecurityIPList() {
+        return this.securityIPList;
+    }
 
-	public String getAccountName() {
-		return this.accountName;
-	}
+    public void setSecurityIPList(String securityIPList) {
+        this.securityIPList = securityIPList;
+        putQueryParameter("SecurityIPList", securityIPList);
+    }
 
-	public void setAccountName(String accountName) {
-		this.accountName = accountName;
-		putQueryParameter("AccountName", accountName);
-	}
+    public String getAccountName() {
+        return this.accountName;
+    }
 
-	public String getAccountPassword() {
-		return this.accountPassword;
-	}
+    public void setAccountName(String accountName) {
+        this.accountName = accountName;
+        putQueryParameter("AccountName", accountName);
+    }
 
-	public void setAccountPassword(String accountPassword) {
-		this.accountPassword = accountPassword;
-		putQueryParameter("AccountPassword", accountPassword);
-	}
+    public String getAccountPassword() {
+        return this.accountPassword;
+    }
 
-	public String getPayType() {
-		return this.payType;
-	}
+    public void setAccountPassword(String accountPassword) {
+        this.accountPassword = accountPassword;
+        putQueryParameter("AccountPassword", accountPassword);
+    }
 
-	public void setPayType(String payType) {
-		this.payType = payType;
-		putQueryParameter("PayType", payType);
-	}
+    public String getPayType() {
+        return this.payType;
+    }
 
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
+    public void setPayType(String payType) {
+        this.payType = payType;
+        putQueryParameter("PayType", payType);
+    }
 
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		putQueryParameter("OwnerAccount", ownerAccount);
-	}
+    public String getOwnerAccount() {
+        return this.ownerAccount;
+    }
 
-	@Override
-	public Class<CreateDBInstanceForChannelResponse> getResponseClass() {
-		return CreateDBInstanceForChannelResponse.class;
-	}
+    public void setOwnerAccount(String ownerAccount) {
+        this.ownerAccount = ownerAccount;
+        putQueryParameter("OwnerAccount", ownerAccount);
+    }
+
+    @Override
+    public Class<CreateDBInstanceForChannelResponse> getResponseClass() {
+        return CreateDBInstanceForChannelResponse.class;
+    }
 
 }

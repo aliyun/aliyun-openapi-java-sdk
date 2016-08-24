@@ -18,132 +18,132 @@
  */
 package com.aliyuncs.rds.model.v20140815;
 
-import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.rds.transform.v20140815.DescribeDBInstancesByPerformanceResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
+import java.util.List;
+
 /**
  * @author auto create
- * @version 
  */
 public class DescribeDBInstancesByPerformanceResponse extends AcsResponse {
 
-	private String requestId;
+    private String requestId;
 
-	private Integer pageNumber;
+    private Integer pageNumber;
 
-	private Integer totalRecordCount;
+    private Integer totalRecordCount;
 
-	private Integer pageRecordCount;
+    private Integer pageRecordCount;
 
-	private List<DBInstancePerformance> items;
+    private List<DBInstancePerformance> items;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
+    public String getRequestId() {
+        return this.requestId;
+    }
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+    public void setRequestId(String requestId) {
+        this.requestId = requestId;
+    }
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
+    public Integer getPageNumber() {
+        return this.pageNumber;
+    }
 
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-	}
+    public void setPageNumber(Integer pageNumber) {
+        this.pageNumber = pageNumber;
+    }
 
-	public Integer getTotalRecordCount() {
-		return this.totalRecordCount;
-	}
+    public Integer getTotalRecordCount() {
+        return this.totalRecordCount;
+    }
 
-	public void setTotalRecordCount(Integer totalRecordCount) {
-		this.totalRecordCount = totalRecordCount;
-	}
+    public void setTotalRecordCount(Integer totalRecordCount) {
+        this.totalRecordCount = totalRecordCount;
+    }
 
-	public Integer getPageRecordCount() {
-		return this.pageRecordCount;
-	}
+    public Integer getPageRecordCount() {
+        return this.pageRecordCount;
+    }
 
-	public void setPageRecordCount(Integer pageRecordCount) {
-		this.pageRecordCount = pageRecordCount;
-	}
+    public void setPageRecordCount(Integer pageRecordCount) {
+        this.pageRecordCount = pageRecordCount;
+    }
 
-	public List<DBInstancePerformance> getItems() {
-		return this.items;
-	}
+    public List<DBInstancePerformance> getItems() {
+        return this.items;
+    }
 
-	public void setItems(List<DBInstancePerformance> items) {
-		this.items = items;
-	}
+    public void setItems(List<DBInstancePerformance> items) {
+        this.items = items;
+    }
 
-	public static class DBInstancePerformance {
+    public static class DBInstancePerformance {
 
-		private String cPUUsage;
+        private String cPUUsage;
 
-		private String iOPSUsage;
+        private String iOPSUsage;
 
-		private String diskUsage;
+        private String diskUsage;
 
-		private String sessionUsage;
+        private String sessionUsage;
 
-		private String dBInstanceId;
+        private String dBInstanceId;
 
-		private String dBInstanceDescription;
+        private String dBInstanceDescription;
 
-		public String getCPUUsage() {
-			return this.cPUUsage;
-		}
+        public String getCPUUsage() {
+            return this.cPUUsage;
+        }
 
-		public void setCPUUsage(String cPUUsage) {
-			this.cPUUsage = cPUUsage;
-		}
+        public void setCPUUsage(String cPUUsage) {
+            this.cPUUsage = cPUUsage;
+        }
 
-		public String getIOPSUsage() {
-			return this.iOPSUsage;
-		}
+        public String getIOPSUsage() {
+            return this.iOPSUsage;
+        }
 
-		public void setIOPSUsage(String iOPSUsage) {
-			this.iOPSUsage = iOPSUsage;
-		}
+        public void setIOPSUsage(String iOPSUsage) {
+            this.iOPSUsage = iOPSUsage;
+        }
 
-		public String getDiskUsage() {
-			return this.diskUsage;
-		}
+        public String getDiskUsage() {
+            return this.diskUsage;
+        }
 
-		public void setDiskUsage(String diskUsage) {
-			this.diskUsage = diskUsage;
-		}
+        public void setDiskUsage(String diskUsage) {
+            this.diskUsage = diskUsage;
+        }
 
-		public String getSessionUsage() {
-			return this.sessionUsage;
-		}
+        public String getSessionUsage() {
+            return this.sessionUsage;
+        }
 
-		public void setSessionUsage(String sessionUsage) {
-			this.sessionUsage = sessionUsage;
-		}
+        public void setSessionUsage(String sessionUsage) {
+            this.sessionUsage = sessionUsage;
+        }
 
-		public String getDBInstanceId() {
-			return this.dBInstanceId;
-		}
+        public String getDBInstanceId() {
+            return this.dBInstanceId;
+        }
 
-		public void setDBInstanceId(String dBInstanceId) {
-			this.dBInstanceId = dBInstanceId;
-		}
+        public void setDBInstanceId(String dBInstanceId) {
+            this.dBInstanceId = dBInstanceId;
+        }
 
-		public String getDBInstanceDescription() {
-			return this.dBInstanceDescription;
-		}
+        public String getDBInstanceDescription() {
+            return this.dBInstanceDescription;
+        }
 
-		public void setDBInstanceDescription(String dBInstanceDescription) {
-			this.dBInstanceDescription = dBInstanceDescription;
-		}
-	}
+        public void setDBInstanceDescription(String dBInstanceDescription) {
+            this.dBInstanceDescription = dBInstanceDescription;
+        }
+    }
 
-	@Override
-	public DescribeDBInstancesByPerformanceResponse getInstance(UnmarshallerContext context) {
-		return	DescribeDBInstancesByPerformanceResponseUnmarshaller.unmarshall(this, context);
-	}
+    @Override
+    public DescribeDBInstancesByPerformanceResponse getInstance(UnmarshallerContext context) {
+        return DescribeDBInstancesByPerformanceResponseUnmarshaller.unmarshall(this, context);
+    }
 }

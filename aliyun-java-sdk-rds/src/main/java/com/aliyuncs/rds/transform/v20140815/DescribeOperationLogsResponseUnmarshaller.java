@@ -18,36 +18,49 @@
  */
 package com.aliyuncs.rds.transform.v20140815;
 
-import java.util.ArrayList;
-import java.util.List;
 import com.aliyuncs.rds.model.v20140815.DescribeOperationLogsResponse;
 import com.aliyuncs.rds.model.v20140815.DescribeOperationLogsResponse.Operationlog;
 import com.aliyuncs.transform.UnmarshallerContext;
 
+import java.util.ArrayList;
+import java.util.List;
 
 public class DescribeOperationLogsResponseUnmarshaller {
 
-	public static DescribeOperationLogsResponse unmarshall(DescribeOperationLogsResponse describeOperationLogsResponse, UnmarshallerContext context) {
-		
-		describeOperationLogsResponse.setRequestId(context.stringValue("DescribeOperationLogsResponse.RequestId"));
-		describeOperationLogsResponse.setEngine(context.stringValue("DescribeOperationLogsResponse.Engine"));
-		describeOperationLogsResponse.setTotalRecordCount(context.integerValue("DescribeOperationLogsResponse.TotalRecordCount"));
-		describeOperationLogsResponse.setPageNumber(context.integerValue("DescribeOperationLogsResponse.PageNumber"));
-		describeOperationLogsResponse.setPageRecordCount(context.integerValue("DescribeOperationLogsResponse.PageRecordCount"));
+    public static DescribeOperationLogsResponse unmarshall(
+            DescribeOperationLogsResponse describeOperationLogsResponse,
+            UnmarshallerContext context) {
 
-		List<Operationlog> items = new ArrayList<Operationlog>();
-		for (int i = 0; i < context.lengthValue("DescribeOperationLogsResponse.Items.Length"); i++) {
-			Operationlog  operationlog = new Operationlog();
-			operationlog.setDBInstanceDescription(context.stringValue("DescribeOperationLogsResponse.Items["+ i +"].DBInstanceDescription"));
-			operationlog.setDBInstanceId(context.stringValue("DescribeOperationLogsResponse.Items["+ i +"].DBInstanceId"));
-			operationlog.setOperationSource(context.stringValue("DescribeOperationLogsResponse.Items["+ i +"].OperationSource"));
-			operationlog.setOperationItem(context.stringValue("DescribeOperationLogsResponse.Items["+ i +"].OperationItem"));
-			operationlog.setexecutionTime(context.stringValue("DescribeOperationLogsResponse.Items["+ i +"].executionTime"));
+        describeOperationLogsResponse
+                .setRequestId(context.stringValue("DescribeOperationLogsResponse.RequestId"));
+        describeOperationLogsResponse
+                .setEngine(context.stringValue("DescribeOperationLogsResponse.Engine"));
+        describeOperationLogsResponse.setTotalRecordCount(
+                context.integerValue("DescribeOperationLogsResponse.TotalRecordCount"));
+        describeOperationLogsResponse
+                .setPageNumber(context.integerValue("DescribeOperationLogsResponse.PageNumber"));
+        describeOperationLogsResponse.setPageRecordCount(
+                context.integerValue("DescribeOperationLogsResponse.PageRecordCount"));
 
-			items.add(operationlog);
-		}
-		describeOperationLogsResponse.setItems(items);
-	 
-	 	return describeOperationLogsResponse;
-	}
+        List<Operationlog> items = new ArrayList<Operationlog>();
+        for (int i = 0;
+             i < context.lengthValue("DescribeOperationLogsResponse.Items.Length"); i++) {
+            Operationlog operationlog = new Operationlog();
+            operationlog.setDBInstanceDescription(context.stringValue(
+                    "DescribeOperationLogsResponse.Items[" + i + "].DBInstanceDescription"));
+            operationlog.setDBInstanceId(context.stringValue(
+                    "DescribeOperationLogsResponse.Items[" + i + "].DBInstanceId"));
+            operationlog.setOperationSource(context.stringValue(
+                    "DescribeOperationLogsResponse.Items[" + i + "].OperationSource"));
+            operationlog.setOperationItem(context.stringValue(
+                    "DescribeOperationLogsResponse.Items[" + i + "].OperationItem"));
+            operationlog.setexecutionTime(context.stringValue(
+                    "DescribeOperationLogsResponse.Items[" + i + "].executionTime"));
+
+            items.add(operationlog);
+        }
+        describeOperationLogsResponse.setItems(items);
+
+        return describeOperationLogsResponse;
+    }
 }

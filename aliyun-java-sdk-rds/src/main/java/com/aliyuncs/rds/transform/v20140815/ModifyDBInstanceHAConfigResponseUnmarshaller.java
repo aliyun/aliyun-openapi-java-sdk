@@ -21,13 +21,15 @@ package com.aliyuncs.rds.transform.v20140815;
 import com.aliyuncs.rds.model.v20140815.ModifyDBInstanceHAConfigResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
-
 public class ModifyDBInstanceHAConfigResponseUnmarshaller {
 
-	public static ModifyDBInstanceHAConfigResponse unmarshall(ModifyDBInstanceHAConfigResponse modifyDBInstanceHAConfigResponse, UnmarshallerContext context) {
-		
-		modifyDBInstanceHAConfigResponse.setRequestId(context.stringValue("ModifyDBInstanceHAConfigResponse.RequestId"));
-	 
-	 	return modifyDBInstanceHAConfigResponse;
-	}
+    public static ModifyDBInstanceHAConfigResponse unmarshall(
+            ModifyDBInstanceHAConfigResponse modifyDBInstanceHAConfigResponse,
+            UnmarshallerContext context) {
+
+        modifyDBInstanceHAConfigResponse
+                .setRequestId(context.stringValue("ModifyDBInstanceHAConfigResponse.RequestId"));
+
+        return modifyDBInstanceHAConfigResponse;
+    }
 }

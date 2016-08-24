@@ -24,22 +24,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
- * @version 
  */
 public class ModifyParameterResponse extends AcsResponse {
 
-	private String requestId;
+    private String requestId;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
+    public String getRequestId() {
+        return this.requestId;
+    }
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+    public void setRequestId(String requestId) {
+        this.requestId = requestId;
+    }
 
-	@Override
-	public ModifyParameterResponse getInstance(UnmarshallerContext context) {
-		return	ModifyParameterResponseUnmarshaller.unmarshall(this, context);
-	}
+    @Override
+    public ModifyParameterResponse getInstance(UnmarshallerContext context) {
+        return ModifyParameterResponseUnmarshaller.unmarshall(this, context);
+    }
 }

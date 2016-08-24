@@ -22,94 +22,94 @@ import com.aliyuncs.RpcAcsRequest;
 
 /**
  * @author auto create
- * @version 
  */
-public class DescribeOptimizeAdviceOnExcessIndexRequest extends RpcAcsRequest<DescribeOptimizeAdviceOnExcessIndexResponse> {
-	
-	public DescribeOptimizeAdviceOnExcessIndexRequest() {
-		super("Rds", "2014-08-15", "DescribeOptimizeAdviceOnExcessIndex");
-	}
+public class DescribeOptimizeAdviceOnExcessIndexRequest
+        extends RpcAcsRequest<DescribeOptimizeAdviceOnExcessIndexResponse> {
 
-	private Long ownerId;
+    public DescribeOptimizeAdviceOnExcessIndexRequest() {
+        super("Rds", "2014-08-15", "DescribeOptimizeAdviceOnExcessIndex");
+    }
 
-	private String resourceOwnerAccount;
+    private Long ownerId;
 
-	private Long resourceOwnerId;
+    private String resourceOwnerAccount;
 
-	private String dBInstanceId;
+    private Long resourceOwnerId;
 
-	private Integer pageSize;
+    private String dBInstanceId;
 
-	private Integer pageNumber;
+    private Integer pageSize;
 
-	private String ownerAccount;
+    private Integer pageNumber;
 
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
+    private String ownerAccount;
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
-	}
+    public Long getOwnerId() {
+        return this.ownerId;
+    }
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
+    public void setOwnerId(Long ownerId) {
+        this.ownerId = ownerId;
+        putQueryParameter("OwnerId", ownerId);
+    }
 
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-	}
+    public String getResourceOwnerAccount() {
+        return this.resourceOwnerAccount;
+    }
 
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
+    public void setResourceOwnerAccount(String resourceOwnerAccount) {
+        this.resourceOwnerAccount = resourceOwnerAccount;
+        putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+    }
 
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", resourceOwnerId);
-	}
+    public Long getResourceOwnerId() {
+        return this.resourceOwnerId;
+    }
 
-	public String getDBInstanceId() {
-		return this.dBInstanceId;
-	}
+    public void setResourceOwnerId(Long resourceOwnerId) {
+        this.resourceOwnerId = resourceOwnerId;
+        putQueryParameter("ResourceOwnerId", resourceOwnerId);
+    }
 
-	public void setDBInstanceId(String dBInstanceId) {
-		this.dBInstanceId = dBInstanceId;
-		putQueryParameter("DBInstanceId", dBInstanceId);
-	}
+    public String getDBInstanceId() {
+        return this.dBInstanceId;
+    }
 
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
+    public void setDBInstanceId(String dBInstanceId) {
+        this.dBInstanceId = dBInstanceId;
+        putQueryParameter("DBInstanceId", dBInstanceId);
+    }
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		putQueryParameter("PageSize", pageSize);
-	}
+    public Integer getPageSize() {
+        return this.pageSize;
+    }
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
+    public void setPageSize(Integer pageSize) {
+        this.pageSize = pageSize;
+        putQueryParameter("PageSize", pageSize);
+    }
 
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		putQueryParameter("PageNumber", pageNumber);
-	}
+    public Integer getPageNumber() {
+        return this.pageNumber;
+    }
 
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
+    public void setPageNumber(Integer pageNumber) {
+        this.pageNumber = pageNumber;
+        putQueryParameter("PageNumber", pageNumber);
+    }
 
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		putQueryParameter("OwnerAccount", ownerAccount);
-	}
+    public String getOwnerAccount() {
+        return this.ownerAccount;
+    }
 
-	@Override
-	public Class<DescribeOptimizeAdviceOnExcessIndexResponse> getResponseClass() {
-		return DescribeOptimizeAdviceOnExcessIndexResponse.class;
-	}
+    public void setOwnerAccount(String ownerAccount) {
+        this.ownerAccount = ownerAccount;
+        putQueryParameter("OwnerAccount", ownerAccount);
+    }
+
+    @Override
+    public Class<DescribeOptimizeAdviceOnExcessIndexResponse> getResponseClass() {
+        return DescribeOptimizeAdviceOnExcessIndexResponse.class;
+    }
 
 }

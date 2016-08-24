@@ -21,14 +21,17 @@ package com.aliyuncs.rds.transform.v20140815;
 import com.aliyuncs.rds.model.v20140815.CreateTempDBInstanceResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
-
 public class CreateTempDBInstanceResponseUnmarshaller {
 
-	public static CreateTempDBInstanceResponse unmarshall(CreateTempDBInstanceResponse createTempDBInstanceResponse, UnmarshallerContext context) {
-		
-		createTempDBInstanceResponse.setRequestId(context.stringValue("CreateTempDBInstanceResponse.RequestId"));
-		createTempDBInstanceResponse.setTempDBInstanceId(context.stringValue("CreateTempDBInstanceResponse.TempDBInstanceId"));
-	 
-	 	return createTempDBInstanceResponse;
-	}
+    public static CreateTempDBInstanceResponse unmarshall(
+            CreateTempDBInstanceResponse createTempDBInstanceResponse,
+            UnmarshallerContext context) {
+
+        createTempDBInstanceResponse
+                .setRequestId(context.stringValue("CreateTempDBInstanceResponse.RequestId"));
+        createTempDBInstanceResponse.setTempDBInstanceId(
+                context.stringValue("CreateTempDBInstanceResponse.TempDBInstanceId"));
+
+        return createTempDBInstanceResponse;
+    }
 }

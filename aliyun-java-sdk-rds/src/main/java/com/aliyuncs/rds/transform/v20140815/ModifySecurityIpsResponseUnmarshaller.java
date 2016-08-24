@@ -21,13 +21,14 @@ package com.aliyuncs.rds.transform.v20140815;
 import com.aliyuncs.rds.model.v20140815.ModifySecurityIpsResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
-
 public class ModifySecurityIpsResponseUnmarshaller {
 
-	public static ModifySecurityIpsResponse unmarshall(ModifySecurityIpsResponse modifySecurityIpsResponse, UnmarshallerContext context) {
-		
-		modifySecurityIpsResponse.setRequestId(context.stringValue("ModifySecurityIpsResponse.RequestId"));
-	 
-	 	return modifySecurityIpsResponse;
-	}
+    public static ModifySecurityIpsResponse unmarshall(
+            ModifySecurityIpsResponse modifySecurityIpsResponse, UnmarshallerContext context) {
+
+        modifySecurityIpsResponse
+                .setRequestId(context.stringValue("ModifySecurityIpsResponse.RequestId"));
+
+        return modifySecurityIpsResponse;
+    }
 }

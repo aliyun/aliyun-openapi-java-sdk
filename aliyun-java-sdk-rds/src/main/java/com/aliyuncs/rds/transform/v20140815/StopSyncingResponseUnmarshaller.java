@@ -21,13 +21,13 @@ package com.aliyuncs.rds.transform.v20140815;
 import com.aliyuncs.rds.model.v20140815.StopSyncingResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
-
 public class StopSyncingResponseUnmarshaller {
 
-	public static StopSyncingResponse unmarshall(StopSyncingResponse stopSyncingResponse, UnmarshallerContext context) {
-		
-		stopSyncingResponse.setRequestId(context.stringValue("StopSyncingResponse.RequestId"));
-	 
-	 	return stopSyncingResponse;
-	}
+    public static StopSyncingResponse unmarshall(StopSyncingResponse stopSyncingResponse,
+                                                 UnmarshallerContext context) {
+
+        stopSyncingResponse.setRequestId(context.stringValue("StopSyncingResponse.RequestId"));
+
+        return stopSyncingResponse;
+    }
 }

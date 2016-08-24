@@ -21,13 +21,14 @@ package com.aliyuncs.rds.transform.v20140815;
 import com.aliyuncs.rds.model.v20140815.PurgeDBInstanceLogResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
-
 public class PurgeDBInstanceLogResponseUnmarshaller {
 
-	public static PurgeDBInstanceLogResponse unmarshall(PurgeDBInstanceLogResponse purgeDBInstanceLogResponse, UnmarshallerContext context) {
-		
-		purgeDBInstanceLogResponse.setRequestId(context.stringValue("PurgeDBInstanceLogResponse.RequestId"));
-	 
-	 	return purgeDBInstanceLogResponse;
-	}
+    public static PurgeDBInstanceLogResponse unmarshall(
+            PurgeDBInstanceLogResponse purgeDBInstanceLogResponse, UnmarshallerContext context) {
+
+        purgeDBInstanceLogResponse
+                .setRequestId(context.stringValue("PurgeDBInstanceLogResponse.RequestId"));
+
+        return purgeDBInstanceLogResponse;
+    }
 }

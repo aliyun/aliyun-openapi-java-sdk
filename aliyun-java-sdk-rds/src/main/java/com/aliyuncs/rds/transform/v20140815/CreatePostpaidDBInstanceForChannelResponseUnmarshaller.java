@@ -21,17 +21,23 @@ package com.aliyuncs.rds.transform.v20140815;
 import com.aliyuncs.rds.model.v20140815.CreatePostpaidDBInstanceForChannelResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
-
 public class CreatePostpaidDBInstanceForChannelResponseUnmarshaller {
 
-	public static CreatePostpaidDBInstanceForChannelResponse unmarshall(CreatePostpaidDBInstanceForChannelResponse createPostpaidDBInstanceForChannelResponse, UnmarshallerContext context) {
-		
-		createPostpaidDBInstanceForChannelResponse.setRequestId(context.stringValue("CreatePostpaidDBInstanceForChannelResponse.RequestId"));
-		createPostpaidDBInstanceForChannelResponse.setDBInstanceId(context.stringValue("CreatePostpaidDBInstanceForChannelResponse.DBInstanceId"));
-		createPostpaidDBInstanceForChannelResponse.setOrderId(context.stringValue("CreatePostpaidDBInstanceForChannelResponse.OrderId"));
-		createPostpaidDBInstanceForChannelResponse.setConnectionString(context.stringValue("CreatePostpaidDBInstanceForChannelResponse.ConnectionString"));
-		createPostpaidDBInstanceForChannelResponse.setPort(context.stringValue("CreatePostpaidDBInstanceForChannelResponse.Port"));
-	 
-	 	return createPostpaidDBInstanceForChannelResponse;
-	}
+    public static CreatePostpaidDBInstanceForChannelResponse unmarshall(
+            CreatePostpaidDBInstanceForChannelResponse createPostpaidDBInstanceForChannelResponse,
+            UnmarshallerContext context) {
+
+        createPostpaidDBInstanceForChannelResponse.setRequestId(
+                context.stringValue("CreatePostpaidDBInstanceForChannelResponse.RequestId"));
+        createPostpaidDBInstanceForChannelResponse.setDBInstanceId(
+                context.stringValue("CreatePostpaidDBInstanceForChannelResponse.DBInstanceId"));
+        createPostpaidDBInstanceForChannelResponse.setOrderId(
+                context.stringValue("CreatePostpaidDBInstanceForChannelResponse.OrderId"));
+        createPostpaidDBInstanceForChannelResponse.setConnectionString(
+                context.stringValue("CreatePostpaidDBInstanceForChannelResponse.ConnectionString"));
+        createPostpaidDBInstanceForChannelResponse
+                .setPort(context.stringValue("CreatePostpaidDBInstanceForChannelResponse.Port"));
+
+        return createPostpaidDBInstanceForChannelResponse;
+    }
 }

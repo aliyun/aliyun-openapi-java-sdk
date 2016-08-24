@@ -21,18 +21,25 @@ package com.aliyuncs.rds.transform.v20140815;
 import com.aliyuncs.rds.model.v20140815.DescribeBackupPolicyResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
-
 public class DescribeBackupPolicyResponseUnmarshaller {
 
-	public static DescribeBackupPolicyResponse unmarshall(DescribeBackupPolicyResponse describeBackupPolicyResponse, UnmarshallerContext context) {
-		
-		describeBackupPolicyResponse.setRequestId(context.stringValue("DescribeBackupPolicyResponse.RequestId"));
-		describeBackupPolicyResponse.setBackupRetentionPeriod(context.integerValue("DescribeBackupPolicyResponse.BackupRetentionPeriod"));
-		describeBackupPolicyResponse.setPreferredNextBackupTime(context.stringValue("DescribeBackupPolicyResponse.PreferredNextBackupTime"));
-		describeBackupPolicyResponse.setPreferredBackupTime(context.stringValue("DescribeBackupPolicyResponse.PreferredBackupTime"));
-		describeBackupPolicyResponse.setPreferredBackupPeriod(context.stringValue("DescribeBackupPolicyResponse.PreferredBackupPeriod"));
-		describeBackupPolicyResponse.setBackupLog(context.stringValue("DescribeBackupPolicyResponse.BackupLog"));
-	 
-	 	return describeBackupPolicyResponse;
-	}
+    public static DescribeBackupPolicyResponse unmarshall(
+            DescribeBackupPolicyResponse describeBackupPolicyResponse,
+            UnmarshallerContext context) {
+
+        describeBackupPolicyResponse
+                .setRequestId(context.stringValue("DescribeBackupPolicyResponse.RequestId"));
+        describeBackupPolicyResponse.setBackupRetentionPeriod(
+                context.integerValue("DescribeBackupPolicyResponse.BackupRetentionPeriod"));
+        describeBackupPolicyResponse.setPreferredNextBackupTime(
+                context.stringValue("DescribeBackupPolicyResponse.PreferredNextBackupTime"));
+        describeBackupPolicyResponse.setPreferredBackupTime(
+                context.stringValue("DescribeBackupPolicyResponse.PreferredBackupTime"));
+        describeBackupPolicyResponse.setPreferredBackupPeriod(
+                context.stringValue("DescribeBackupPolicyResponse.PreferredBackupPeriod"));
+        describeBackupPolicyResponse
+                .setBackupLog(context.stringValue("DescribeBackupPolicyResponse.BackupLog"));
+
+        return describeBackupPolicyResponse;
+    }
 }

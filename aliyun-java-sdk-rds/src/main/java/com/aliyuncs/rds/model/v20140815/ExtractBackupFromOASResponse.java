@@ -24,32 +24,31 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
- * @version 
  */
 public class ExtractBackupFromOASResponse extends AcsResponse {
 
-	private String requestId;
+    private String requestId;
 
-	private String dataExtractionLastTime;
+    private String dataExtractionLastTime;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
+    public String getRequestId() {
+        return this.requestId;
+    }
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+    public void setRequestId(String requestId) {
+        this.requestId = requestId;
+    }
 
-	public String getDataExtractionLastTime() {
-		return this.dataExtractionLastTime;
-	}
+    public String getDataExtractionLastTime() {
+        return this.dataExtractionLastTime;
+    }
 
-	public void setDataExtractionLastTime(String dataExtractionLastTime) {
-		this.dataExtractionLastTime = dataExtractionLastTime;
-	}
+    public void setDataExtractionLastTime(String dataExtractionLastTime) {
+        this.dataExtractionLastTime = dataExtractionLastTime;
+    }
 
-	@Override
-	public ExtractBackupFromOASResponse getInstance(UnmarshallerContext context) {
-		return	ExtractBackupFromOASResponseUnmarshaller.unmarshall(this, context);
-	}
+    @Override
+    public ExtractBackupFromOASResponse getInstance(UnmarshallerContext context) {
+        return ExtractBackupFromOASResponseUnmarshaller.unmarshall(this, context);
+    }
 }

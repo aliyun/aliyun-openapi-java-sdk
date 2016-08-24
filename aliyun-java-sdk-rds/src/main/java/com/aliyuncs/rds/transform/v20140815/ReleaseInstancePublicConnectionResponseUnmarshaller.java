@@ -21,13 +21,15 @@ package com.aliyuncs.rds.transform.v20140815;
 import com.aliyuncs.rds.model.v20140815.ReleaseInstancePublicConnectionResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
-
 public class ReleaseInstancePublicConnectionResponseUnmarshaller {
 
-	public static ReleaseInstancePublicConnectionResponse unmarshall(ReleaseInstancePublicConnectionResponse releaseInstancePublicConnectionResponse, UnmarshallerContext context) {
-		
-		releaseInstancePublicConnectionResponse.setRequestId(context.stringValue("ReleaseInstancePublicConnectionResponse.RequestId"));
-	 
-	 	return releaseInstancePublicConnectionResponse;
-	}
+    public static ReleaseInstancePublicConnectionResponse unmarshall(
+            ReleaseInstancePublicConnectionResponse releaseInstancePublicConnectionResponse,
+            UnmarshallerContext context) {
+
+        releaseInstancePublicConnectionResponse.setRequestId(
+                context.stringValue("ReleaseInstancePublicConnectionResponse.RequestId"));
+
+        return releaseInstancePublicConnectionResponse;
+    }
 }

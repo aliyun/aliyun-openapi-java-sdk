@@ -18,29 +18,34 @@
  */
 package com.aliyuncs.rds.transform.v20140815;
 
-import java.util.ArrayList;
-import java.util.List;
 import com.aliyuncs.rds.model.v20140815.DescribeRegionsTestResponse;
 import com.aliyuncs.rds.model.v20140815.DescribeRegionsTestResponse.RDSRegion;
 import com.aliyuncs.transform.UnmarshallerContext;
 
+import java.util.ArrayList;
+import java.util.List;
 
 public class DescribeRegionsTestResponseUnmarshaller {
 
-	public static DescribeRegionsTestResponse unmarshall(DescribeRegionsTestResponse describeRegionsTestResponse, UnmarshallerContext context) {
-		
-		describeRegionsTestResponse.setRequestId(context.stringValue("DescribeRegionsTestResponse.RequestId"));
+    public static DescribeRegionsTestResponse unmarshall(
+            DescribeRegionsTestResponse describeRegionsTestResponse, UnmarshallerContext context) {
 
-		List<RDSRegion> regions = new ArrayList<RDSRegion>();
-		for (int i = 0; i < context.lengthValue("DescribeRegionsTestResponse.Regions.Length"); i++) {
-			RDSRegion  rDSRegion = new RDSRegion();
-			rDSRegion.setRegionId(context.stringValue("DescribeRegionsTestResponse.Regions["+ i +"].RegionId"));
-			rDSRegion.setZoneId(context.stringValue("DescribeRegionsTestResponse.Regions["+ i +"].ZoneId"));
+        describeRegionsTestResponse
+                .setRequestId(context.stringValue("DescribeRegionsTestResponse.RequestId"));
 
-			regions.add(rDSRegion);
-		}
-		describeRegionsTestResponse.setRegions(regions);
-	 
-	 	return describeRegionsTestResponse;
-	}
+        List<RDSRegion> regions = new ArrayList<RDSRegion>();
+        for (int i = 0;
+             i < context.lengthValue("DescribeRegionsTestResponse.Regions.Length"); i++) {
+            RDSRegion rDSRegion = new RDSRegion();
+            rDSRegion.setRegionId(
+                    context.stringValue("DescribeRegionsTestResponse.Regions[" + i + "].RegionId"));
+            rDSRegion.setZoneId(
+                    context.stringValue("DescribeRegionsTestResponse.Regions[" + i + "].ZoneId"));
+
+            regions.add(rDSRegion);
+        }
+        describeRegionsTestResponse.setRegions(regions);
+
+        return describeRegionsTestResponse;
+    }
 }

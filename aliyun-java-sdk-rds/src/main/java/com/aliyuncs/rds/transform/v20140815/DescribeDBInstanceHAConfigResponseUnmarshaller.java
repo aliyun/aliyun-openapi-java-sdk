@@ -18,39 +18,52 @@
  */
 package com.aliyuncs.rds.transform.v20140815;
 
+import com.aliyuncs.rds.model.v20140815.DescribeDBInstanceHAConfigResponse;
+import com.aliyuncs.rds.model.v20140815.DescribeDBInstanceHAConfigResponse.NodeInfo;
+import com.aliyuncs.transform.UnmarshallerContext;
+
 import java.util.ArrayList;
 import java.util.List;
 
-import com.aliyuncs.rds.model.v20140815.DescribeDBInstanceHAConfigResponse;
-import com.aliyuncs.rds.model.v20140815.DescribeDBInstanceHAConfigResponse.NodeInfo;
-import com.aliyuncs.rds.model.v20140815.DescribeDBInstanceHAConfigResponse.NodeInfo.SyncStatus;
-import com.aliyuncs.transform.UnmarshallerContext;
-
-
 public class DescribeDBInstanceHAConfigResponseUnmarshaller {
 
-	public static DescribeDBInstanceHAConfigResponse unmarshall(DescribeDBInstanceHAConfigResponse describeDBInstanceHAConfigResponse, UnmarshallerContext context) {
-		
-		describeDBInstanceHAConfigResponse.setRequestId(context.stringValue("DescribeDBInstanceHAConfigResponse.RequestId"));
-		describeDBInstanceHAConfigResponse.setDBInstanceId(context.stringValue("DescribeDBInstanceHAConfigResponse.DBInstanceId"));
-		describeDBInstanceHAConfigResponse.setSyncMode(context.stringValue("DescribeDBInstanceHAConfigResponse.SyncMode"));
-		describeDBInstanceHAConfigResponse.setHAMode(context.stringValue("DescribeDBInstanceHAConfigResponse.HAMode"));
+    public static DescribeDBInstanceHAConfigResponse unmarshall(
+            DescribeDBInstanceHAConfigResponse describeDBInstanceHAConfigResponse,
+            UnmarshallerContext context) {
 
-		List<NodeInfo> hostInstanceInfos = new ArrayList<NodeInfo>();
-		for (int i = 0; i < context.lengthValue("DescribeDBInstanceHAConfigResponse.HostInstanceInfos.Length"); i++) {
-			NodeInfo nodeInfo = new NodeInfo();
-			nodeInfo.setNodeId(context.stringValue("DescribeDBInstanceHAConfigResponse.HostInstanceInfos["+ i +"].NodeId"));
-			nodeInfo.setRegionId(context.stringValue("DescribeDBInstanceHAConfigResponse.HostInstanceInfos["+ i +"].RegionId"));
-			nodeInfo.setLogSyncTime(context.stringValue("DescribeDBInstanceHAConfigResponse.HostInstanceInfos["+ i +"].LogSyncTime"));
-			nodeInfo.setDataSyncTime(context.stringValue("DescribeDBInstanceHAConfigResponse.HostInstanceInfos["+ i +"].DataSyncTime"));
-			nodeInfo.setNodeType(context.stringValue("DescribeDBInstanceHAConfigResponse.HostInstanceInfos["+ i +"].NodeType"));
-			nodeInfo.setZoneId(context.stringValue("DescribeDBInstanceHAConfigResponse.HostInstanceInfos["+ i +"].ZoneId"));
-			nodeInfo.setSyncStatus(SyncStatus.getEnum(context.stringValue("DescribeDBInstanceHAConfigResponse.HostInstanceInfos["+ i +"].SyncStatus")));
+        describeDBInstanceHAConfigResponse
+                .setRequestId(context.stringValue("DescribeDBInstanceHAConfigResponse.RequestId"));
+        describeDBInstanceHAConfigResponse.setDBInstanceId(
+                context.stringValue("DescribeDBInstanceHAConfigResponse.DBInstanceId"));
+        describeDBInstanceHAConfigResponse
+                .setSyncMode(context.stringValue("DescribeDBInstanceHAConfigResponse.SyncMode"));
+        describeDBInstanceHAConfigResponse
+                .setHAMode(context.stringValue("DescribeDBInstanceHAConfigResponse.HAMode"));
 
-			hostInstanceInfos.add(nodeInfo);
-		}
-		describeDBInstanceHAConfigResponse.setHostInstanceInfos(hostInstanceInfos);
-	 
-	 	return describeDBInstanceHAConfigResponse;
-	}
+        List<NodeInfo> hostInstanceInfos = new ArrayList<NodeInfo>();
+        for (int i = 0; i < context
+                .lengthValue("DescribeDBInstanceHAConfigResponse.HostInstanceInfos.Length"); i++) {
+            NodeInfo nodeInfo = new NodeInfo();
+            nodeInfo.setNodeId(context.stringValue(
+                    "DescribeDBInstanceHAConfigResponse.HostInstanceInfos[" + i + "].NodeId"));
+            nodeInfo.setRegionId(context.stringValue(
+                    "DescribeDBInstanceHAConfigResponse.HostInstanceInfos[" + i + "].RegionId"));
+            nodeInfo.setLogSyncTime(context.stringValue(
+                    "DescribeDBInstanceHAConfigResponse.HostInstanceInfos[" + i + "].LogSyncTime"));
+            nodeInfo.setDataSyncTime(context.stringValue(
+                    "DescribeDBInstanceHAConfigResponse.HostInstanceInfos[" + i
+                            + "].DataSyncTime"));
+            nodeInfo.setNodeType(context.stringValue(
+                    "DescribeDBInstanceHAConfigResponse.HostInstanceInfos[" + i + "].NodeType"));
+            nodeInfo.setZoneId(context.stringValue(
+                    "DescribeDBInstanceHAConfigResponse.HostInstanceInfos[" + i + "].ZoneId"));
+            nodeInfo.setSyncStatus(context.stringValue(
+                    "DescribeDBInstanceHAConfigResponse.HostInstanceInfos[" + i + "].SyncStatus"));
+
+            hostInstanceInfos.add(nodeInfo);
+        }
+        describeDBInstanceHAConfigResponse.setHostInstanceInfos(hostInstanceInfos);
+
+        return describeDBInstanceHAConfigResponse;
+    }
 }

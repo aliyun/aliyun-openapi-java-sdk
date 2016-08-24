@@ -18,152 +18,152 @@
  */
 package com.aliyuncs.rds.model.v20140815;
 
-import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.rds.transform.v20140815.DescribeSQLInjectionInfosResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
+import java.util.List;
+
 /**
  * @author auto create
- * @version 
  */
 public class DescribeSQLInjectionInfosResponse extends AcsResponse {
 
-	private String requestId;
+    private String requestId;
 
-	private String engine;
+    private String engine;
 
-	private Integer totalRecordCount;
+    private Integer totalRecordCount;
 
-	private Integer pageNumber;
+    private Integer pageNumber;
 
-	private Integer pageRecordCount;
+    private Integer pageRecordCount;
 
-	private List<SQLInjectionInfo> items;
+    private List<SQLInjectionInfo> items;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
+    public String getRequestId() {
+        return this.requestId;
+    }
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+    public void setRequestId(String requestId) {
+        this.requestId = requestId;
+    }
 
-	public String getEngine() {
-		return this.engine;
-	}
+    public String getEngine() {
+        return this.engine;
+    }
 
-	public void setEngine(String engine) {
-		this.engine = engine;
-	}
+    public void setEngine(String engine) {
+        this.engine = engine;
+    }
 
-	public Integer getTotalRecordCount() {
-		return this.totalRecordCount;
-	}
+    public Integer getTotalRecordCount() {
+        return this.totalRecordCount;
+    }
 
-	public void setTotalRecordCount(Integer totalRecordCount) {
-		this.totalRecordCount = totalRecordCount;
-	}
+    public void setTotalRecordCount(Integer totalRecordCount) {
+        this.totalRecordCount = totalRecordCount;
+    }
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
+    public Integer getPageNumber() {
+        return this.pageNumber;
+    }
 
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-	}
+    public void setPageNumber(Integer pageNumber) {
+        this.pageNumber = pageNumber;
+    }
 
-	public Integer getPageRecordCount() {
-		return this.pageRecordCount;
-	}
+    public Integer getPageRecordCount() {
+        return this.pageRecordCount;
+    }
 
-	public void setPageRecordCount(Integer pageRecordCount) {
-		this.pageRecordCount = pageRecordCount;
-	}
+    public void setPageRecordCount(Integer pageRecordCount) {
+        this.pageRecordCount = pageRecordCount;
+    }
 
-	public List<SQLInjectionInfo> getItems() {
-		return this.items;
-	}
+    public List<SQLInjectionInfo> getItems() {
+        return this.items;
+    }
 
-	public void setItems(List<SQLInjectionInfo> items) {
-		this.items = items;
-	}
+    public void setItems(List<SQLInjectionInfo> items) {
+        this.items = items;
+    }
 
-	public static class SQLInjectionInfo {
+    public static class SQLInjectionInfo {
 
-		private String dBName;
+        private String dBName;
 
-		private String sQLText;
+        private String sQLText;
 
-		private String latencyTime;
+        private String latencyTime;
 
-		private String hostAddress;
+        private String hostAddress;
 
-		private String executeTime;
+        private String executeTime;
 
-		private String accountName;
+        private String accountName;
 
-		private String effectRowCount;
+        private String effectRowCount;
 
-		public String getDBName() {
-			return this.dBName;
-		}
+        public String getDBName() {
+            return this.dBName;
+        }
 
-		public void setDBName(String dBName) {
-			this.dBName = dBName;
-		}
+        public void setDBName(String dBName) {
+            this.dBName = dBName;
+        }
 
-		public String getSQLText() {
-			return this.sQLText;
-		}
+        public String getSQLText() {
+            return this.sQLText;
+        }
 
-		public void setSQLText(String sQLText) {
-			this.sQLText = sQLText;
-		}
+        public void setSQLText(String sQLText) {
+            this.sQLText = sQLText;
+        }
 
-		public String getLatencyTime() {
-			return this.latencyTime;
-		}
+        public String getLatencyTime() {
+            return this.latencyTime;
+        }
 
-		public void setLatencyTime(String latencyTime) {
-			this.latencyTime = latencyTime;
-		}
+        public void setLatencyTime(String latencyTime) {
+            this.latencyTime = latencyTime;
+        }
 
-		public String getHostAddress() {
-			return this.hostAddress;
-		}
+        public String getHostAddress() {
+            return this.hostAddress;
+        }
 
-		public void setHostAddress(String hostAddress) {
-			this.hostAddress = hostAddress;
-		}
+        public void setHostAddress(String hostAddress) {
+            this.hostAddress = hostAddress;
+        }
 
-		public String getExecuteTime() {
-			return this.executeTime;
-		}
+        public String getExecuteTime() {
+            return this.executeTime;
+        }
 
-		public void setExecuteTime(String executeTime) {
-			this.executeTime = executeTime;
-		}
+        public void setExecuteTime(String executeTime) {
+            this.executeTime = executeTime;
+        }
 
-		public String getAccountName() {
-			return this.accountName;
-		}
+        public String getAccountName() {
+            return this.accountName;
+        }
 
-		public void setAccountName(String accountName) {
-			this.accountName = accountName;
-		}
+        public void setAccountName(String accountName) {
+            this.accountName = accountName;
+        }
 
-		public String getEffectRowCount() {
-			return this.effectRowCount;
-		}
+        public String getEffectRowCount() {
+            return this.effectRowCount;
+        }
 
-		public void setEffectRowCount(String effectRowCount) {
-			this.effectRowCount = effectRowCount;
-		}
-	}
+        public void setEffectRowCount(String effectRowCount) {
+            this.effectRowCount = effectRowCount;
+        }
+    }
 
-	@Override
-	public DescribeSQLInjectionInfosResponse getInstance(UnmarshallerContext context) {
-		return	DescribeSQLInjectionInfosResponseUnmarshaller.unmarshall(this, context);
-	}
+    @Override
+    public DescribeSQLInjectionInfosResponse getInstance(UnmarshallerContext context) {
+        return DescribeSQLInjectionInfosResponseUnmarshaller.unmarshall(this, context);
+    }
 }

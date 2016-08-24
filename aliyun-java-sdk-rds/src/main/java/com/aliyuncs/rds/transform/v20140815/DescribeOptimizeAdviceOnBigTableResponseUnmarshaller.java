@@ -18,36 +18,47 @@
  */
 package com.aliyuncs.rds.transform.v20140815;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.aliyuncs.rds.model.v20140815.DescribeOptimizeAdviceOnBigTableResponse;
 import com.aliyuncs.rds.model.v20140815.DescribeOptimizeAdviceOnBigTableResponse.AdviceOnBigTable;
 import com.aliyuncs.transform.UnmarshallerContext;
 
+import java.util.ArrayList;
+import java.util.List;
 
 public class DescribeOptimizeAdviceOnBigTableResponseUnmarshaller {
 
-	public static DescribeOptimizeAdviceOnBigTableResponse unmarshall(DescribeOptimizeAdviceOnBigTableResponse describeOptimizeAdviceOnBigTableResponse, UnmarshallerContext context) {
-		
-		describeOptimizeAdviceOnBigTableResponse.setRequestId(context.stringValue("DescribeOptimizeAdviceOnBigTableResponse.RequestId"));
-		describeOptimizeAdviceOnBigTableResponse.setTotalRecordsCount(context.integerValue("DescribeOptimizeAdviceOnBigTableResponse.TotalRecordsCount"));
-		describeOptimizeAdviceOnBigTableResponse.setPageNumber(context.integerValue("DescribeOptimizeAdviceOnBigTableResponse.PageNumber"));
-		describeOptimizeAdviceOnBigTableResponse.setPageRecordCount(context.integerValue("DescribeOptimizeAdviceOnBigTableResponse.PageRecordCount"));
+    public static DescribeOptimizeAdviceOnBigTableResponse unmarshall(
+            DescribeOptimizeAdviceOnBigTableResponse describeOptimizeAdviceOnBigTableResponse,
+            UnmarshallerContext context) {
 
-		List<AdviceOnBigTable> items = new ArrayList<AdviceOnBigTable>();
-		for (int i = 0; i < context.lengthValue("DescribeOptimizeAdviceOnBigTableResponse.Items.Length"); i++) {
-			AdviceOnBigTable adviceOnBigTable = new AdviceOnBigTable();
-			adviceOnBigTable.setDBName(context.stringValue("DescribeOptimizeAdviceOnBigTableResponse.Items["+ i +"].DBName"));
-			adviceOnBigTable.setTableName(context.stringValue("DescribeOptimizeAdviceOnBigTableResponse.Items["+ i +"].TableName"));
-			adviceOnBigTable.setTableSize(context.longValue("DescribeOptimizeAdviceOnBigTableResponse.Items["+ i +"].TableSize"));
-			adviceOnBigTable.setDataSize(context.longValue("DescribeOptimizeAdviceOnBigTableResponse.Items["+ i +"].DataSize"));
-			adviceOnBigTable.setIndexSize(context.longValue("DescribeOptimizeAdviceOnBigTableResponse.Items["+ i +"].IndexSize"));
+        describeOptimizeAdviceOnBigTableResponse.setRequestId(
+                context.stringValue("DescribeOptimizeAdviceOnBigTableResponse.RequestId"));
+        describeOptimizeAdviceOnBigTableResponse.setTotalRecordsCount(
+                context.integerValue("DescribeOptimizeAdviceOnBigTableResponse.TotalRecordsCount"));
+        describeOptimizeAdviceOnBigTableResponse.setPageNumber(
+                context.integerValue("DescribeOptimizeAdviceOnBigTableResponse.PageNumber"));
+        describeOptimizeAdviceOnBigTableResponse.setPageRecordCount(
+                context.integerValue("DescribeOptimizeAdviceOnBigTableResponse.PageRecordCount"));
 
-			items.add(adviceOnBigTable);
-		}
-		describeOptimizeAdviceOnBigTableResponse.setItems(items);
-	 
-	 	return describeOptimizeAdviceOnBigTableResponse;
-	}
+        List<AdviceOnBigTable> items = new ArrayList<AdviceOnBigTable>();
+        for (int i = 0; i < context
+                .lengthValue("DescribeOptimizeAdviceOnBigTableResponse.Items.Length"); i++) {
+            AdviceOnBigTable adviceOnBigTable = new AdviceOnBigTable();
+            adviceOnBigTable.setDBName(context.stringValue(
+                    "DescribeOptimizeAdviceOnBigTableResponse.Items[" + i + "].DBName"));
+            adviceOnBigTable.setTableName(context.stringValue(
+                    "DescribeOptimizeAdviceOnBigTableResponse.Items[" + i + "].TableName"));
+            adviceOnBigTable.setTableSize(context.longValue(
+                    "DescribeOptimizeAdviceOnBigTableResponse.Items[" + i + "].TableSize"));
+            adviceOnBigTable.setDataSize(context.longValue(
+                    "DescribeOptimizeAdviceOnBigTableResponse.Items[" + i + "].DataSize"));
+            adviceOnBigTable.setIndexSize(context.longValue(
+                    "DescribeOptimizeAdviceOnBigTableResponse.Items[" + i + "].IndexSize"));
+
+            items.add(adviceOnBigTable);
+        }
+        describeOptimizeAdviceOnBigTableResponse.setItems(items);
+
+        return describeOptimizeAdviceOnBigTableResponse;
+    }
 }

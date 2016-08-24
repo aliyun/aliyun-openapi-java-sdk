@@ -21,13 +21,14 @@ package com.aliyuncs.rds.transform.v20140815;
 import com.aliyuncs.rds.model.v20140815.RestoreDBInstanceResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
-
 public class RestoreDBInstanceResponseUnmarshaller {
 
-	public static RestoreDBInstanceResponse unmarshall(RestoreDBInstanceResponse restoreDBInstanceResponse, UnmarshallerContext context) {
-		
-		restoreDBInstanceResponse.setRequestId(context.stringValue("RestoreDBInstanceResponse.RequestId"));
-	 
-	 	return restoreDBInstanceResponse;
-	}
+    public static RestoreDBInstanceResponse unmarshall(
+            RestoreDBInstanceResponse restoreDBInstanceResponse, UnmarshallerContext context) {
+
+        restoreDBInstanceResponse
+                .setRequestId(context.stringValue("RestoreDBInstanceResponse.RequestId"));
+
+        return restoreDBInstanceResponse;
+    }
 }

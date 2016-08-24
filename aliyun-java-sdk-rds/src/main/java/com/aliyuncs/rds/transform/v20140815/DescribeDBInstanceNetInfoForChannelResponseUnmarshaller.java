@@ -18,45 +18,68 @@
  */
 package com.aliyuncs.rds.transform.v20140815;
 
-import java.util.ArrayList;
-import java.util.List;
 import com.aliyuncs.rds.model.v20140815.DescribeDBInstanceNetInfoForChannelResponse;
 import com.aliyuncs.rds.model.v20140815.DescribeDBInstanceNetInfoForChannelResponse.DBInstanceNetInfo;
 import com.aliyuncs.rds.model.v20140815.DescribeDBInstanceNetInfoForChannelResponse.DBInstanceNetInfo.SecurityIPGroup;
 import com.aliyuncs.transform.UnmarshallerContext;
 
+import java.util.ArrayList;
+import java.util.List;
 
 public class DescribeDBInstanceNetInfoForChannelResponseUnmarshaller {
 
-	public static DescribeDBInstanceNetInfoForChannelResponse unmarshall(DescribeDBInstanceNetInfoForChannelResponse describeDBInstanceNetInfoForChannelResponse, UnmarshallerContext context) {
-		
-		describeDBInstanceNetInfoForChannelResponse.setRequestId(context.stringValue("DescribeDBInstanceNetInfoForChannelResponse.RequestId"));
-		describeDBInstanceNetInfoForChannelResponse.setInstanceNetworkType(context.stringValue("DescribeDBInstanceNetInfoForChannelResponse.InstanceNetworkType"));
+    public static DescribeDBInstanceNetInfoForChannelResponse unmarshall(
+            DescribeDBInstanceNetInfoForChannelResponse describeDBInstanceNetInfoForChannelResponse,
+            UnmarshallerContext context) {
 
-		List<DBInstanceNetInfo> dBInstanceNetInfos = new ArrayList<DBInstanceNetInfo>();
-		for (int i = 0; i < context.lengthValue("DescribeDBInstanceNetInfoForChannelResponse.DBInstanceNetInfos.Length"); i++) {
-			DBInstanceNetInfo  dBInstanceNetInfo = new DBInstanceNetInfo();
-			dBInstanceNetInfo.setConnectionString(context.stringValue("DescribeDBInstanceNetInfoForChannelResponse.DBInstanceNetInfos["+ i +"].ConnectionString"));
-			dBInstanceNetInfo.setIPAddress(context.stringValue("DescribeDBInstanceNetInfoForChannelResponse.DBInstanceNetInfos["+ i +"].IPAddress"));
-			dBInstanceNetInfo.setIPType(context.stringValue("DescribeDBInstanceNetInfoForChannelResponse.DBInstanceNetInfos["+ i +"].IPType"));
-			dBInstanceNetInfo.setPort(context.stringValue("DescribeDBInstanceNetInfoForChannelResponse.DBInstanceNetInfos["+ i +"].Port"));
-			dBInstanceNetInfo.setVPCId(context.stringValue("DescribeDBInstanceNetInfoForChannelResponse.DBInstanceNetInfos["+ i +"].VPCId"));
-			dBInstanceNetInfo.setVSwitchId(context.stringValue("DescribeDBInstanceNetInfoForChannelResponse.DBInstanceNetInfos["+ i +"].VSwitchId"));
+        describeDBInstanceNetInfoForChannelResponse.setRequestId(
+                context.stringValue("DescribeDBInstanceNetInfoForChannelResponse.RequestId"));
+        describeDBInstanceNetInfoForChannelResponse.setInstanceNetworkType(context.stringValue(
+                "DescribeDBInstanceNetInfoForChannelResponse.InstanceNetworkType"));
 
-			List<SecurityIPGroup> securityIPGroups = new ArrayList<SecurityIPGroup>();
-			for (int j = 0; j < context.lengthValue("DescribeDBInstanceNetInfoForChannelResponse.DBInstanceNetInfos["+ i +"].SecurityIPGroups.Length"); j++) {
-				SecurityIPGroup  securityIPGroup = new SecurityIPGroup();
-				securityIPGroup.setSecurityIPGroupName(context.stringValue("DescribeDBInstanceNetInfoForChannelResponse.DBInstanceNetInfos["+ i +"].SecurityIPGroups["+ j +"].SecurityIPGroupName"));
-				securityIPGroup.setSecurityIPs(context.stringValue("DescribeDBInstanceNetInfoForChannelResponse.DBInstanceNetInfos["+ i +"].SecurityIPGroups["+ j +"].SecurityIPs"));
+        List<DBInstanceNetInfo> dBInstanceNetInfos = new ArrayList<DBInstanceNetInfo>();
+        for (int i = 0; i < context.lengthValue(
+                "DescribeDBInstanceNetInfoForChannelResponse.DBInstanceNetInfos.Length"); i++) {
+            DBInstanceNetInfo dBInstanceNetInfo = new DBInstanceNetInfo();
+            dBInstanceNetInfo.setConnectionString(context.stringValue(
+                    "DescribeDBInstanceNetInfoForChannelResponse.DBInstanceNetInfos[" + i
+                            + "].ConnectionString"));
+            dBInstanceNetInfo.setIPAddress(context.stringValue(
+                    "DescribeDBInstanceNetInfoForChannelResponse.DBInstanceNetInfos[" + i
+                            + "].IPAddress"));
+            dBInstanceNetInfo.setIPType(context.stringValue(
+                    "DescribeDBInstanceNetInfoForChannelResponse.DBInstanceNetInfos[" + i
+                            + "].IPType"));
+            dBInstanceNetInfo.setPort(context.stringValue(
+                    "DescribeDBInstanceNetInfoForChannelResponse.DBInstanceNetInfos[" + i
+                            + "].Port"));
+            dBInstanceNetInfo.setVPCId(context.stringValue(
+                    "DescribeDBInstanceNetInfoForChannelResponse.DBInstanceNetInfos[" + i
+                            + "].VPCId"));
+            dBInstanceNetInfo.setVSwitchId(context.stringValue(
+                    "DescribeDBInstanceNetInfoForChannelResponse.DBInstanceNetInfos[" + i
+                            + "].VSwitchId"));
 
-				securityIPGroups.add(securityIPGroup);
-			}
-			dBInstanceNetInfo.setSecurityIPGroups(securityIPGroups);
+            List<SecurityIPGroup> securityIPGroups = new ArrayList<SecurityIPGroup>();
+            for (int j = 0; j < context.lengthValue(
+                    "DescribeDBInstanceNetInfoForChannelResponse.DBInstanceNetInfos[" + i
+                            + "].SecurityIPGroups.Length"); j++) {
+                SecurityIPGroup securityIPGroup = new SecurityIPGroup();
+                securityIPGroup.setSecurityIPGroupName(context.stringValue(
+                        "DescribeDBInstanceNetInfoForChannelResponse.DBInstanceNetInfos[" + i
+                                + "].SecurityIPGroups[" + j + "].SecurityIPGroupName"));
+                securityIPGroup.setSecurityIPs(context.stringValue(
+                        "DescribeDBInstanceNetInfoForChannelResponse.DBInstanceNetInfos[" + i
+                                + "].SecurityIPGroups[" + j + "].SecurityIPs"));
 
-			dBInstanceNetInfos.add(dBInstanceNetInfo);
-		}
-		describeDBInstanceNetInfoForChannelResponse.setDBInstanceNetInfos(dBInstanceNetInfos);
-	 
-	 	return describeDBInstanceNetInfoForChannelResponse;
-	}
+                securityIPGroups.add(securityIPGroup);
+            }
+            dBInstanceNetInfo.setSecurityIPGroups(securityIPGroups);
+
+            dBInstanceNetInfos.add(dBInstanceNetInfo);
+        }
+        describeDBInstanceNetInfoForChannelResponse.setDBInstanceNetInfos(dBInstanceNetInfos);
+
+        return describeDBInstanceNetInfoForChannelResponse;
+    }
 }

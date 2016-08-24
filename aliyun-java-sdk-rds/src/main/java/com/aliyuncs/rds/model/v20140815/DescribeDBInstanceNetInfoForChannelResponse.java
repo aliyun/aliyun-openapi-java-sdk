@@ -18,145 +18,145 @@
  */
 package com.aliyuncs.rds.model.v20140815;
 
-import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.rds.transform.v20140815.DescribeDBInstanceNetInfoForChannelResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
+import java.util.List;
+
 /**
  * @author auto create
- * @version 
  */
 public class DescribeDBInstanceNetInfoForChannelResponse extends AcsResponse {
 
-	private String requestId;
+    private String requestId;
 
-	private String instanceNetworkType;
+    private String instanceNetworkType;
 
-	private List<DBInstanceNetInfo> dBInstanceNetInfos;
+    private List<DBInstanceNetInfo> dBInstanceNetInfos;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
+    public String getRequestId() {
+        return this.requestId;
+    }
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+    public void setRequestId(String requestId) {
+        this.requestId = requestId;
+    }
 
-	public String getInstanceNetworkType() {
-		return this.instanceNetworkType;
-	}
+    public String getInstanceNetworkType() {
+        return this.instanceNetworkType;
+    }
 
-	public void setInstanceNetworkType(String instanceNetworkType) {
-		this.instanceNetworkType = instanceNetworkType;
-	}
+    public void setInstanceNetworkType(String instanceNetworkType) {
+        this.instanceNetworkType = instanceNetworkType;
+    }
 
-	public List<DBInstanceNetInfo> getDBInstanceNetInfos() {
-		return this.dBInstanceNetInfos;
-	}
+    public List<DBInstanceNetInfo> getDBInstanceNetInfos() {
+        return this.dBInstanceNetInfos;
+    }
 
-	public void setDBInstanceNetInfos(List<DBInstanceNetInfo> dBInstanceNetInfos) {
-		this.dBInstanceNetInfos = dBInstanceNetInfos;
-	}
+    public void setDBInstanceNetInfos(List<DBInstanceNetInfo> dBInstanceNetInfos) {
+        this.dBInstanceNetInfos = dBInstanceNetInfos;
+    }
 
-	public static class DBInstanceNetInfo {
+    public static class DBInstanceNetInfo {
 
-		private String connectionString;
+        private String connectionString;
 
-		private String iPAddress;
+        private String iPAddress;
 
-		private String iPType;
+        private String iPType;
 
-		private String port;
+        private String port;
 
-		private String vPCId;
+        private String vPCId;
 
-		private String vSwitchId;
+        private String vSwitchId;
 
-		private List<SecurityIPGroup> securityIPGroups;
+        private List<SecurityIPGroup> securityIPGroups;
 
-		public String getConnectionString() {
-			return this.connectionString;
-		}
+        public String getConnectionString() {
+            return this.connectionString;
+        }
 
-		public void setConnectionString(String connectionString) {
-			this.connectionString = connectionString;
-		}
+        public void setConnectionString(String connectionString) {
+            this.connectionString = connectionString;
+        }
 
-		public String getIPAddress() {
-			return this.iPAddress;
-		}
+        public String getIPAddress() {
+            return this.iPAddress;
+        }
 
-		public void setIPAddress(String iPAddress) {
-			this.iPAddress = iPAddress;
-		}
+        public void setIPAddress(String iPAddress) {
+            this.iPAddress = iPAddress;
+        }
 
-		public String getIPType() {
-			return this.iPType;
-		}
+        public String getIPType() {
+            return this.iPType;
+        }
 
-		public void setIPType(String iPType) {
-			this.iPType = iPType;
-		}
+        public void setIPType(String iPType) {
+            this.iPType = iPType;
+        }
 
-		public String getPort() {
-			return this.port;
-		}
+        public String getPort() {
+            return this.port;
+        }
 
-		public void setPort(String port) {
-			this.port = port;
-		}
+        public void setPort(String port) {
+            this.port = port;
+        }
 
-		public String getVPCId() {
-			return this.vPCId;
-		}
+        public String getVPCId() {
+            return this.vPCId;
+        }
 
-		public void setVPCId(String vPCId) {
-			this.vPCId = vPCId;
-		}
+        public void setVPCId(String vPCId) {
+            this.vPCId = vPCId;
+        }
 
-		public String getVSwitchId() {
-			return this.vSwitchId;
-		}
+        public String getVSwitchId() {
+            return this.vSwitchId;
+        }
 
-		public void setVSwitchId(String vSwitchId) {
-			this.vSwitchId = vSwitchId;
-		}
+        public void setVSwitchId(String vSwitchId) {
+            this.vSwitchId = vSwitchId;
+        }
 
-		public List<SecurityIPGroup> getSecurityIPGroups() {
-			return this.securityIPGroups;
-		}
+        public List<SecurityIPGroup> getSecurityIPGroups() {
+            return this.securityIPGroups;
+        }
 
-		public void setSecurityIPGroups(List<SecurityIPGroup> securityIPGroups) {
-			this.securityIPGroups = securityIPGroups;
-		}
+        public void setSecurityIPGroups(List<SecurityIPGroup> securityIPGroups) {
+            this.securityIPGroups = securityIPGroups;
+        }
 
-		public static class SecurityIPGroup {
+        public static class SecurityIPGroup {
 
-			private String securityIPGroupName;
+            private String securityIPGroupName;
 
-			private String securityIPs;
+            private String securityIPs;
 
-			public String getSecurityIPGroupName() {
-				return this.securityIPGroupName;
-			}
+            public String getSecurityIPGroupName() {
+                return this.securityIPGroupName;
+            }
 
-			public void setSecurityIPGroupName(String securityIPGroupName) {
-				this.securityIPGroupName = securityIPGroupName;
-			}
+            public void setSecurityIPGroupName(String securityIPGroupName) {
+                this.securityIPGroupName = securityIPGroupName;
+            }
 
-			public String getSecurityIPs() {
-				return this.securityIPs;
-			}
+            public String getSecurityIPs() {
+                return this.securityIPs;
+            }
 
-			public void setSecurityIPs(String securityIPs) {
-				this.securityIPs = securityIPs;
-			}
-		}
-	}
+            public void setSecurityIPs(String securityIPs) {
+                this.securityIPs = securityIPs;
+            }
+        }
+    }
 
-	@Override
-	public DescribeDBInstanceNetInfoForChannelResponse getInstance(UnmarshallerContext context) {
-		return	DescribeDBInstanceNetInfoForChannelResponseUnmarshaller.unmarshall(this, context);
-	}
+    @Override
+    public DescribeDBInstanceNetInfoForChannelResponse getInstance(UnmarshallerContext context) {
+        return DescribeDBInstanceNetInfoForChannelResponseUnmarshaller.unmarshall(this, context);
+    }
 }

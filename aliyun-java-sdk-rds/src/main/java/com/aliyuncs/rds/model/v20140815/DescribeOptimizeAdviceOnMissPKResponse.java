@@ -18,92 +18,92 @@
  */
 package com.aliyuncs.rds.model.v20140815;
 
-import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.rds.transform.v20140815.DescribeOptimizeAdviceOnMissPKResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
+import java.util.List;
+
 /**
  * @author auto create
- * @version 
  */
 public class DescribeOptimizeAdviceOnMissPKResponse extends AcsResponse {
 
-	private String requestId;
+    private String requestId;
 
-	private Integer totalRecordsCount;
+    private Integer totalRecordsCount;
 
-	private Integer pageNumber;
+    private Integer pageNumber;
 
-	private Integer pageRecordCount;
+    private Integer pageRecordCount;
 
-	private List<AdviceOnMissPK> items;
+    private List<AdviceOnMissPK> items;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
+    public String getRequestId() {
+        return this.requestId;
+    }
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+    public void setRequestId(String requestId) {
+        this.requestId = requestId;
+    }
 
-	public Integer getTotalRecordsCount() {
-		return this.totalRecordsCount;
-	}
+    public Integer getTotalRecordsCount() {
+        return this.totalRecordsCount;
+    }
 
-	public void setTotalRecordsCount(Integer totalRecordsCount) {
-		this.totalRecordsCount = totalRecordsCount;
-	}
+    public void setTotalRecordsCount(Integer totalRecordsCount) {
+        this.totalRecordsCount = totalRecordsCount;
+    }
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
+    public Integer getPageNumber() {
+        return this.pageNumber;
+    }
 
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-	}
+    public void setPageNumber(Integer pageNumber) {
+        this.pageNumber = pageNumber;
+    }
 
-	public Integer getPageRecordCount() {
-		return this.pageRecordCount;
-	}
+    public Integer getPageRecordCount() {
+        return this.pageRecordCount;
+    }
 
-	public void setPageRecordCount(Integer pageRecordCount) {
-		this.pageRecordCount = pageRecordCount;
-	}
+    public void setPageRecordCount(Integer pageRecordCount) {
+        this.pageRecordCount = pageRecordCount;
+    }
 
-	public List<AdviceOnMissPK> getItems() {
-		return this.items;
-	}
+    public List<AdviceOnMissPK> getItems() {
+        return this.items;
+    }
 
-	public void setItems(List<AdviceOnMissPK> items) {
-		this.items = items;
-	}
+    public void setItems(List<AdviceOnMissPK> items) {
+        this.items = items;
+    }
 
-	public static class AdviceOnMissPK {
+    public static class AdviceOnMissPK {
 
-		private String dBName;
+        private String dBName;
 
-		private String tableName;
+        private String tableName;
 
-		public String getDBName() {
-			return this.dBName;
-		}
+        public String getDBName() {
+            return this.dBName;
+        }
 
-		public void setDBName(String dBName) {
-			this.dBName = dBName;
-		}
+        public void setDBName(String dBName) {
+            this.dBName = dBName;
+        }
 
-		public String getTableName() {
-			return this.tableName;
-		}
+        public String getTableName() {
+            return this.tableName;
+        }
 
-		public void setTableName(String tableName) {
-			this.tableName = tableName;
-		}
-	}
+        public void setTableName(String tableName) {
+            this.tableName = tableName;
+        }
+    }
 
-	@Override
-	public DescribeOptimizeAdviceOnMissPKResponse getInstance(UnmarshallerContext context) {
-		return	DescribeOptimizeAdviceOnMissPKResponseUnmarshaller.unmarshall(this, context);
-	}
+    @Override
+    public DescribeOptimizeAdviceOnMissPKResponse getInstance(UnmarshallerContext context) {
+        return DescribeOptimizeAdviceOnMissPKResponseUnmarshaller.unmarshall(this, context);
+    }
 }

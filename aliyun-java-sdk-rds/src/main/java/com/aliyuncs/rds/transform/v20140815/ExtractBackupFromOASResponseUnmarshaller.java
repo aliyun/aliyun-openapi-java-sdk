@@ -21,14 +21,17 @@ package com.aliyuncs.rds.transform.v20140815;
 import com.aliyuncs.rds.model.v20140815.ExtractBackupFromOASResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
-
 public class ExtractBackupFromOASResponseUnmarshaller {
 
-	public static ExtractBackupFromOASResponse unmarshall(ExtractBackupFromOASResponse extractBackupFromOASResponse, UnmarshallerContext context) {
-		
-		extractBackupFromOASResponse.setRequestId(context.stringValue("ExtractBackupFromOASResponse.RequestId"));
-		extractBackupFromOASResponse.setDataExtractionLastTime(context.stringValue("ExtractBackupFromOASResponse.DataExtractionLastTime"));
-	 
-	 	return extractBackupFromOASResponse;
-	}
+    public static ExtractBackupFromOASResponse unmarshall(
+            ExtractBackupFromOASResponse extractBackupFromOASResponse,
+            UnmarshallerContext context) {
+
+        extractBackupFromOASResponse
+                .setRequestId(context.stringValue("ExtractBackupFromOASResponse.RequestId"));
+        extractBackupFromOASResponse.setDataExtractionLastTime(
+                context.stringValue("ExtractBackupFromOASResponse.DataExtractionLastTime"));
+
+        return extractBackupFromOASResponse;
+    }
 }

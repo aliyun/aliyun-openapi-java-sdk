@@ -22,94 +22,93 @@ import com.aliyuncs.RpcAcsRequest;
 
 /**
  * @author auto create
- * @version 
  */
 public class DescribeVpcZoneNosRequest extends RpcAcsRequest<DescribeVpcZoneNosResponse> {
-	
-	public DescribeVpcZoneNosRequest() {
-		super("Rds", "2014-08-15", "DescribeVpcZoneNos");
-	}
 
-	private Long ownerId;
+    public DescribeVpcZoneNosRequest() {
+        super("Rds", "2014-08-15", "DescribeVpcZoneNos");
+    }
 
-	private String resourceOwnerAccount;
+    private Long ownerId;
 
-	private Long resourceOwnerId;
+    private String resourceOwnerAccount;
 
-	private String clientToken;
+    private Long resourceOwnerId;
 
-	private String ownerAccount;
+    private String clientToken;
 
-	private String region;
+    private String ownerAccount;
 
-	private String zoneId;
+    private String region;
 
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
+    private String zoneId;
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
-	}
+    public Long getOwnerId() {
+        return this.ownerId;
+    }
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
+    public void setOwnerId(Long ownerId) {
+        this.ownerId = ownerId;
+        putQueryParameter("OwnerId", ownerId);
+    }
 
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-	}
+    public String getResourceOwnerAccount() {
+        return this.resourceOwnerAccount;
+    }
 
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
+    public void setResourceOwnerAccount(String resourceOwnerAccount) {
+        this.resourceOwnerAccount = resourceOwnerAccount;
+        putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+    }
 
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", resourceOwnerId);
-	}
+    public Long getResourceOwnerId() {
+        return this.resourceOwnerId;
+    }
 
-	public String getClientToken() {
-		return this.clientToken;
-	}
+    public void setResourceOwnerId(Long resourceOwnerId) {
+        this.resourceOwnerId = resourceOwnerId;
+        putQueryParameter("ResourceOwnerId", resourceOwnerId);
+    }
 
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		putQueryParameter("ClientToken", clientToken);
-	}
+    public String getClientToken() {
+        return this.clientToken;
+    }
 
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
+    public void setClientToken(String clientToken) {
+        this.clientToken = clientToken;
+        putQueryParameter("ClientToken", clientToken);
+    }
 
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		putQueryParameter("OwnerAccount", ownerAccount);
-	}
+    public String getOwnerAccount() {
+        return this.ownerAccount;
+    }
 
-	public String getRegion() {
-		return this.region;
-	}
+    public void setOwnerAccount(String ownerAccount) {
+        this.ownerAccount = ownerAccount;
+        putQueryParameter("OwnerAccount", ownerAccount);
+    }
 
-	public void setRegion(String region) {
-		this.region = region;
-		putQueryParameter("Region", region);
-	}
+    public String getRegion() {
+        return this.region;
+    }
 
-	public String getZoneId() {
-		return this.zoneId;
-	}
+    public void setRegion(String region) {
+        this.region = region;
+        putQueryParameter("Region", region);
+    }
 
-	public void setZoneId(String zoneId) {
-		this.zoneId = zoneId;
-		putQueryParameter("ZoneId", zoneId);
-	}
+    public String getZoneId() {
+        return this.zoneId;
+    }
 
-	@Override
-	public Class<DescribeVpcZoneNosResponse> getResponseClass() {
-		return DescribeVpcZoneNosResponse.class;
-	}
+    public void setZoneId(String zoneId) {
+        this.zoneId = zoneId;
+        putQueryParameter("ZoneId", zoneId);
+    }
+
+    @Override
+    public Class<DescribeVpcZoneNosResponse> getResponseClass() {
+        return DescribeVpcZoneNosResponse.class;
+    }
 
 }

@@ -24,22 +24,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
- * @version 
  */
 public class MigrateToOtherZoneResponse extends AcsResponse {
 
-	private String requestId;
+    private String requestId;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
+    public String getRequestId() {
+        return this.requestId;
+    }
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+    public void setRequestId(String requestId) {
+        this.requestId = requestId;
+    }
 
-	@Override
-	public MigrateToOtherZoneResponse getInstance(UnmarshallerContext context) {
-		return	MigrateToOtherZoneResponseUnmarshaller.unmarshall(this, context);
-	}
+    @Override
+    public MigrateToOtherZoneResponse getInstance(UnmarshallerContext context) {
+        return MigrateToOtherZoneResponseUnmarshaller.unmarshall(this, context);
+    }
 }

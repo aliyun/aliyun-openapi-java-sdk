@@ -22,83 +22,83 @@ import com.aliyuncs.RpcAcsRequest;
 
 /**
  * @author auto create
- * @version 
  */
-public class ReleaseInstancePublicConnectionRequest extends RpcAcsRequest<ReleaseInstancePublicConnectionResponse> {
-	
-	public ReleaseInstancePublicConnectionRequest() {
-		super("Rds", "2014-08-15", "ReleaseInstancePublicConnection");
-	}
+public class ReleaseInstancePublicConnectionRequest
+        extends RpcAcsRequest<ReleaseInstancePublicConnectionResponse> {
 
-	private Long ownerId;
+    public ReleaseInstancePublicConnectionRequest() {
+        super("Rds", "2014-08-15", "ReleaseInstancePublicConnection");
+    }
 
-	private String resourceOwnerAccount;
+    private Long ownerId;
 
-	private Long resourceOwnerId;
+    private String resourceOwnerAccount;
 
-	private String dBInstanceId;
+    private Long resourceOwnerId;
 
-	private String currentConnectionString;
+    private String dBInstanceId;
 
-	private String ownerAccount;
+    private String currentConnectionString;
 
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
+    private String ownerAccount;
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
-	}
+    public Long getOwnerId() {
+        return this.ownerId;
+    }
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
+    public void setOwnerId(Long ownerId) {
+        this.ownerId = ownerId;
+        putQueryParameter("OwnerId", ownerId);
+    }
 
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-	}
+    public String getResourceOwnerAccount() {
+        return this.resourceOwnerAccount;
+    }
 
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
+    public void setResourceOwnerAccount(String resourceOwnerAccount) {
+        this.resourceOwnerAccount = resourceOwnerAccount;
+        putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+    }
 
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", resourceOwnerId);
-	}
+    public Long getResourceOwnerId() {
+        return this.resourceOwnerId;
+    }
 
-	public String getDBInstanceId() {
-		return this.dBInstanceId;
-	}
+    public void setResourceOwnerId(Long resourceOwnerId) {
+        this.resourceOwnerId = resourceOwnerId;
+        putQueryParameter("ResourceOwnerId", resourceOwnerId);
+    }
 
-	public void setDBInstanceId(String dBInstanceId) {
-		this.dBInstanceId = dBInstanceId;
-		putQueryParameter("DBInstanceId", dBInstanceId);
-	}
+    public String getDBInstanceId() {
+        return this.dBInstanceId;
+    }
 
-	public String getCurrentConnectionString() {
-		return this.currentConnectionString;
-	}
+    public void setDBInstanceId(String dBInstanceId) {
+        this.dBInstanceId = dBInstanceId;
+        putQueryParameter("DBInstanceId", dBInstanceId);
+    }
 
-	public void setCurrentConnectionString(String currentConnectionString) {
-		this.currentConnectionString = currentConnectionString;
-		putQueryParameter("CurrentConnectionString", currentConnectionString);
-	}
+    public String getCurrentConnectionString() {
+        return this.currentConnectionString;
+    }
 
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
+    public void setCurrentConnectionString(String currentConnectionString) {
+        this.currentConnectionString = currentConnectionString;
+        putQueryParameter("CurrentConnectionString", currentConnectionString);
+    }
 
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		putQueryParameter("OwnerAccount", ownerAccount);
-	}
+    public String getOwnerAccount() {
+        return this.ownerAccount;
+    }
 
-	@Override
-	public Class<ReleaseInstancePublicConnectionResponse> getResponseClass() {
-		return ReleaseInstancePublicConnectionResponse.class;
-	}
+    public void setOwnerAccount(String ownerAccount) {
+        this.ownerAccount = ownerAccount;
+        putQueryParameter("OwnerAccount", ownerAccount);
+    }
+
+    @Override
+    public Class<ReleaseInstancePublicConnectionResponse> getResponseClass() {
+        return ReleaseInstancePublicConnectionResponse.class;
+    }
 
 }

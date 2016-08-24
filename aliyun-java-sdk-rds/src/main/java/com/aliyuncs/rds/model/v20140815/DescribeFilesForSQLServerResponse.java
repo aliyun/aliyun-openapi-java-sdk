@@ -18,235 +18,235 @@
  */
 package com.aliyuncs.rds.model.v20140815;
 
-import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.rds.transform.v20140815.DescribeFilesForSQLServerResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
+import java.util.List;
+
 /**
  * @author auto create
- * @version 
  */
 public class DescribeFilesForSQLServerResponse extends AcsResponse {
 
-	private String requestId;
+    private String requestId;
 
-	private String dBInstanceId;
+    private String dBInstanceId;
 
-	private Integer totalRecordCount;
+    private Integer totalRecordCount;
 
-	private Integer pageNumber;
+    private Integer pageNumber;
 
-	private Integer pageRecordCount;
+    private Integer pageRecordCount;
 
-	private List<SQLServerUploadFile> items;
+    private List<SQLServerUploadFile> items;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
+    public String getRequestId() {
+        return this.requestId;
+    }
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+    public void setRequestId(String requestId) {
+        this.requestId = requestId;
+    }
 
-	public String getDBInstanceId() {
-		return this.dBInstanceId;
-	}
+    public String getDBInstanceId() {
+        return this.dBInstanceId;
+    }
 
-	public void setDBInstanceId(String dBInstanceId) {
-		this.dBInstanceId = dBInstanceId;
-	}
+    public void setDBInstanceId(String dBInstanceId) {
+        this.dBInstanceId = dBInstanceId;
+    }
 
-	public Integer getTotalRecordCount() {
-		return this.totalRecordCount;
-	}
+    public Integer getTotalRecordCount() {
+        return this.totalRecordCount;
+    }
 
-	public void setTotalRecordCount(Integer totalRecordCount) {
-		this.totalRecordCount = totalRecordCount;
-	}
+    public void setTotalRecordCount(Integer totalRecordCount) {
+        this.totalRecordCount = totalRecordCount;
+    }
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
+    public Integer getPageNumber() {
+        return this.pageNumber;
+    }
 
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-	}
+    public void setPageNumber(Integer pageNumber) {
+        this.pageNumber = pageNumber;
+    }
 
-	public Integer getPageRecordCount() {
-		return this.pageRecordCount;
-	}
+    public Integer getPageRecordCount() {
+        return this.pageRecordCount;
+    }
 
-	public void setPageRecordCount(Integer pageRecordCount) {
-		this.pageRecordCount = pageRecordCount;
-	}
+    public void setPageRecordCount(Integer pageRecordCount) {
+        this.pageRecordCount = pageRecordCount;
+    }
 
-	public List<SQLServerUploadFile> getItems() {
-		return this.items;
-	}
+    public List<SQLServerUploadFile> getItems() {
+        return this.items;
+    }
 
-	public void setItems(List<SQLServerUploadFile> items) {
-		this.items = items;
-	}
+    public void setItems(List<SQLServerUploadFile> items) {
+        this.items = items;
+    }
 
-	public static class SQLServerUploadFile {
+    public static class SQLServerUploadFile {
 
-		private String dBName;
+        private String dBName;
 
-		private String fileName;
+        private String fileName;
 
-		private Long fileSize;
+        private Long fileSize;
 
-		private String internetFtpServer;
+        private String internetFtpServer;
 
-		private Integer internetPort;
+        private Integer internetPort;
 
-		private String intranetFtpserver;
+        private String intranetFtpserver;
 
-		private Integer intranetport;
+        private Integer intranetport;
 
-		private String userName;
+        private String userName;
 
-		private String password;
+        private String password;
 
-		private FileStatus fileStatus;
+        private FileStatus fileStatus;
 
-		private String description;
+        private String description;
 
-		private String creationTime;
+        private String creationTime;
 
-		public String getDBName() {
-			return this.dBName;
-		}
+        public String getDBName() {
+            return this.dBName;
+        }
 
-		public void setDBName(String dBName) {
-			this.dBName = dBName;
-		}
+        public void setDBName(String dBName) {
+            this.dBName = dBName;
+        }
 
-		public String getFileName() {
-			return this.fileName;
-		}
+        public String getFileName() {
+            return this.fileName;
+        }
 
-		public void setFileName(String fileName) {
-			this.fileName = fileName;
-		}
+        public void setFileName(String fileName) {
+            this.fileName = fileName;
+        }
 
-		public Long getFileSize() {
-			return this.fileSize;
-		}
+        public Long getFileSize() {
+            return this.fileSize;
+        }
 
-		public void setFileSize(Long fileSize) {
-			this.fileSize = fileSize;
-		}
+        public void setFileSize(Long fileSize) {
+            this.fileSize = fileSize;
+        }
 
-		public String getInternetFtpServer() {
-			return this.internetFtpServer;
-		}
+        public String getInternetFtpServer() {
+            return this.internetFtpServer;
+        }
 
-		public void setInternetFtpServer(String internetFtpServer) {
-			this.internetFtpServer = internetFtpServer;
-		}
+        public void setInternetFtpServer(String internetFtpServer) {
+            this.internetFtpServer = internetFtpServer;
+        }
 
-		public Integer getInternetPort() {
-			return this.internetPort;
-		}
+        public Integer getInternetPort() {
+            return this.internetPort;
+        }
 
-		public void setInternetPort(Integer internetPort) {
-			this.internetPort = internetPort;
-		}
+        public void setInternetPort(Integer internetPort) {
+            this.internetPort = internetPort;
+        }
 
-		public String getIntranetFtpserver() {
-			return this.intranetFtpserver;
-		}
+        public String getIntranetFtpserver() {
+            return this.intranetFtpserver;
+        }
 
-		public void setIntranetFtpserver(String intranetFtpserver) {
-			this.intranetFtpserver = intranetFtpserver;
-		}
+        public void setIntranetFtpserver(String intranetFtpserver) {
+            this.intranetFtpserver = intranetFtpserver;
+        }
 
-		public Integer getIntranetport() {
-			return this.intranetport;
-		}
+        public Integer getIntranetport() {
+            return this.intranetport;
+        }
 
-		public void setIntranetport(Integer intranetport) {
-			this.intranetport = intranetport;
-		}
+        public void setIntranetport(Integer intranetport) {
+            this.intranetport = intranetport;
+        }
 
-		public String getUserName() {
-			return this.userName;
-		}
+        public String getUserName() {
+            return this.userName;
+        }
 
-		public void setUserName(String userName) {
-			this.userName = userName;
-		}
+        public void setUserName(String userName) {
+            this.userName = userName;
+        }
 
-		public String getPassword() {
-			return this.password;
-		}
+        public String getPassword() {
+            return this.password;
+        }
 
-		public void setPassword(String password) {
-			this.password = password;
-		}
+        public void setPassword(String password) {
+            this.password = password;
+        }
 
-		public FileStatus getFileStatus() {
-			return this.fileStatus;
-		}
+        public FileStatus getFileStatus() {
+            return this.fileStatus;
+        }
 
-		public void setFileStatus(FileStatus fileStatus) {
-			this.fileStatus = fileStatus;
-		}
+        public void setFileStatus(FileStatus fileStatus) {
+            this.fileStatus = fileStatus;
+        }
 
-		public String getDescription() {
-			return this.description;
-		}
+        public String getDescription() {
+            return this.description;
+        }
 
-		public void setDescription(String description) {
-			this.description = description;
-		}
+        public void setDescription(String description) {
+            this.description = description;
+        }
 
-		public String getCreationTime() {
-			return this.creationTime;
-		}
+        public String getCreationTime() {
+            return this.creationTime;
+        }
 
-		public void setCreationTime(String creationTime) {
-			this.creationTime = creationTime;
-		}
+        public void setCreationTime(String creationTime) {
+            this.creationTime = creationTime;
+        }
 
-		public enum FileStatus {
-		
-			AVAILABLE("Available"),
-			UNAVAILABLE("Unavailable"),;
-			
-		    private String stringValue;
-		
-			FileStatus(String stringValue) {
-		        setStringValue(stringValue);
-		    }
-		
-		    public String getStringValue() {
-		        return stringValue;
-		    }
-		
-		    public void setStringValue(String stringValue) {
-		        this.stringValue = stringValue;
-		    }
-		    
-		    public static FileStatus getEnum(String stringValue){
-		    	if(null == stringValue){
-		    		return null;
-		    	}
-		    	
-		    	for (FileStatus fileStatus : FileStatus.values()) {
-					if(fileStatus.getStringValue().equals(stringValue)){
-						return fileStatus;
-					}
-				}
-		    	return null;
-		    }
-		}
-	}
+        public enum FileStatus {
 
-	@Override
-	public DescribeFilesForSQLServerResponse getInstance(UnmarshallerContext context) {
-		return	DescribeFilesForSQLServerResponseUnmarshaller.unmarshall(this, context);
-	}
+            AVAILABLE("Available"),
+            UNAVAILABLE("Unavailable"),;
+
+            private String stringValue;
+
+            FileStatus(String stringValue) {
+                setStringValue(stringValue);
+            }
+
+            public String getStringValue() {
+                return stringValue;
+            }
+
+            public void setStringValue(String stringValue) {
+                this.stringValue = stringValue;
+            }
+
+            public static FileStatus getEnum(String stringValue) {
+                if (null == stringValue) {
+                    return null;
+                }
+
+                for (FileStatus fileStatus : FileStatus.values()) {
+                    if (fileStatus.getStringValue().equals(stringValue)) {
+                        return fileStatus;
+                    }
+                }
+                return null;
+            }
+        }
+    }
+
+    @Override
+    public DescribeFilesForSQLServerResponse getInstance(UnmarshallerContext context) {
+        return DescribeFilesForSQLServerResponseUnmarshaller.unmarshall(this, context);
+    }
 }

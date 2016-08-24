@@ -21,13 +21,15 @@ package com.aliyuncs.rds.transform.v20140815;
 import com.aliyuncs.rds.model.v20140815.CheckAccountNameAvailableResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
-
 public class CheckAccountNameAvailableResponseUnmarshaller {
 
-	public static CheckAccountNameAvailableResponse unmarshall(CheckAccountNameAvailableResponse checkAccountNameAvailableResponse, UnmarshallerContext context) {
-		
-		checkAccountNameAvailableResponse.setRequestId(context.stringValue("CheckAccountNameAvailableResponse.RequestId"));
-	 
-	 	return checkAccountNameAvailableResponse;
-	}
+    public static CheckAccountNameAvailableResponse unmarshall(
+            CheckAccountNameAvailableResponse checkAccountNameAvailableResponse,
+            UnmarshallerContext context) {
+
+        checkAccountNameAvailableResponse
+                .setRequestId(context.stringValue("CheckAccountNameAvailableResponse.RequestId"));
+
+        return checkAccountNameAvailableResponse;
+    }
 }

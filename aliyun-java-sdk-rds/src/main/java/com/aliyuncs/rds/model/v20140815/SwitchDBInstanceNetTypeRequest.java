@@ -22,105 +22,104 @@ import com.aliyuncs.RpcAcsRequest;
 
 /**
  * @author auto create
- * @version 
  */
 public class SwitchDBInstanceNetTypeRequest extends RpcAcsRequest<SwitchDBInstanceNetTypeResponse> {
-	
-	public SwitchDBInstanceNetTypeRequest() {
-		super("Rds", "2014-08-15", "SwitchDBInstanceNetType");
-	}
 
-	private Long ownerId;
+    public SwitchDBInstanceNetTypeRequest() {
+        super("Rds", "2014-08-15", "SwitchDBInstanceNetType");
+    }
 
-	private String resourceOwnerAccount;
+    private Long ownerId;
 
-	private Long resourceOwnerId;
+    private String resourceOwnerAccount;
 
-	private String clientToken;
+    private Long resourceOwnerId;
 
-	private String dBInstanceId;
+    private String clientToken;
 
-	private String connectionStringPrefix;
+    private String dBInstanceId;
 
-	private String port;
+    private String connectionStringPrefix;
 
-	private String ownerAccount;
+    private String port;
 
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
+    private String ownerAccount;
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
-	}
+    public Long getOwnerId() {
+        return this.ownerId;
+    }
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
+    public void setOwnerId(Long ownerId) {
+        this.ownerId = ownerId;
+        putQueryParameter("OwnerId", ownerId);
+    }
 
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-	}
+    public String getResourceOwnerAccount() {
+        return this.resourceOwnerAccount;
+    }
 
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
+    public void setResourceOwnerAccount(String resourceOwnerAccount) {
+        this.resourceOwnerAccount = resourceOwnerAccount;
+        putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+    }
 
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", resourceOwnerId);
-	}
+    public Long getResourceOwnerId() {
+        return this.resourceOwnerId;
+    }
 
-	public String getClientToken() {
-		return this.clientToken;
-	}
+    public void setResourceOwnerId(Long resourceOwnerId) {
+        this.resourceOwnerId = resourceOwnerId;
+        putQueryParameter("ResourceOwnerId", resourceOwnerId);
+    }
 
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		putQueryParameter("ClientToken", clientToken);
-	}
+    public String getClientToken() {
+        return this.clientToken;
+    }
 
-	public String getDBInstanceId() {
-		return this.dBInstanceId;
-	}
+    public void setClientToken(String clientToken) {
+        this.clientToken = clientToken;
+        putQueryParameter("ClientToken", clientToken);
+    }
 
-	public void setDBInstanceId(String dBInstanceId) {
-		this.dBInstanceId = dBInstanceId;
-		putQueryParameter("DBInstanceId", dBInstanceId);
-	}
+    public String getDBInstanceId() {
+        return this.dBInstanceId;
+    }
 
-	public String getConnectionStringPrefix() {
-		return this.connectionStringPrefix;
-	}
+    public void setDBInstanceId(String dBInstanceId) {
+        this.dBInstanceId = dBInstanceId;
+        putQueryParameter("DBInstanceId", dBInstanceId);
+    }
 
-	public void setConnectionStringPrefix(String connectionStringPrefix) {
-		this.connectionStringPrefix = connectionStringPrefix;
-		putQueryParameter("ConnectionStringPrefix", connectionStringPrefix);
-	}
+    public String getConnectionStringPrefix() {
+        return this.connectionStringPrefix;
+    }
 
-	public String getPort() {
-		return this.port;
-	}
+    public void setConnectionStringPrefix(String connectionStringPrefix) {
+        this.connectionStringPrefix = connectionStringPrefix;
+        putQueryParameter("ConnectionStringPrefix", connectionStringPrefix);
+    }
 
-	public void setPort(String port) {
-		this.port = port;
-		putQueryParameter("Port", port);
-	}
+    public String getPort() {
+        return this.port;
+    }
 
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
+    public void setPort(String port) {
+        this.port = port;
+        putQueryParameter("Port", port);
+    }
 
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		putQueryParameter("OwnerAccount", ownerAccount);
-	}
+    public String getOwnerAccount() {
+        return this.ownerAccount;
+    }
 
-	@Override
-	public Class<SwitchDBInstanceNetTypeResponse> getResponseClass() {
-		return SwitchDBInstanceNetTypeResponse.class;
-	}
+    public void setOwnerAccount(String ownerAccount) {
+        this.ownerAccount = ownerAccount;
+        putQueryParameter("OwnerAccount", ownerAccount);
+    }
+
+    @Override
+    public Class<SwitchDBInstanceNetTypeResponse> getResponseClass() {
+        return SwitchDBInstanceNetTypeResponse.class;
+    }
 
 }

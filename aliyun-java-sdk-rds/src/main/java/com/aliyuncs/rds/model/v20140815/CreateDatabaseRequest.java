@@ -22,105 +22,104 @@ import com.aliyuncs.RpcAcsRequest;
 
 /**
  * @author auto create
- * @version 
  */
 public class CreateDatabaseRequest extends RpcAcsRequest<CreateDatabaseResponse> {
-	
-	public CreateDatabaseRequest() {
-		super("Rds", "2014-08-15", "CreateDatabase");
-	}
 
-	private Long ownerId;
+    public CreateDatabaseRequest() {
+        super("Rds", "2014-08-15", "CreateDatabase");
+    }
 
-	private String resourceOwnerAccount;
+    private Long ownerId;
 
-	private Long resourceOwnerId;
+    private String resourceOwnerAccount;
 
-	private String dBInstanceId;
+    private Long resourceOwnerId;
 
-	private String dBName;
+    private String dBInstanceId;
 
-	private String characterSetName;
+    private String dBName;
 
-	private String dBDescription;
+    private String characterSetName;
 
-	private String ownerAccount;
+    private String dBDescription;
 
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
+    private String ownerAccount;
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
-	}
+    public Long getOwnerId() {
+        return this.ownerId;
+    }
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
+    public void setOwnerId(Long ownerId) {
+        this.ownerId = ownerId;
+        putQueryParameter("OwnerId", ownerId);
+    }
 
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-	}
+    public String getResourceOwnerAccount() {
+        return this.resourceOwnerAccount;
+    }
 
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
+    public void setResourceOwnerAccount(String resourceOwnerAccount) {
+        this.resourceOwnerAccount = resourceOwnerAccount;
+        putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+    }
 
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", resourceOwnerId);
-	}
+    public Long getResourceOwnerId() {
+        return this.resourceOwnerId;
+    }
 
-	public String getDBInstanceId() {
-		return this.dBInstanceId;
-	}
+    public void setResourceOwnerId(Long resourceOwnerId) {
+        this.resourceOwnerId = resourceOwnerId;
+        putQueryParameter("ResourceOwnerId", resourceOwnerId);
+    }
 
-	public void setDBInstanceId(String dBInstanceId) {
-		this.dBInstanceId = dBInstanceId;
-		putQueryParameter("DBInstanceId", dBInstanceId);
-	}
+    public String getDBInstanceId() {
+        return this.dBInstanceId;
+    }
 
-	public String getDBName() {
-		return this.dBName;
-	}
+    public void setDBInstanceId(String dBInstanceId) {
+        this.dBInstanceId = dBInstanceId;
+        putQueryParameter("DBInstanceId", dBInstanceId);
+    }
 
-	public void setDBName(String dBName) {
-		this.dBName = dBName;
-		putQueryParameter("DBName", dBName);
-	}
+    public String getDBName() {
+        return this.dBName;
+    }
 
-	public String getCharacterSetName() {
-		return this.characterSetName;
-	}
+    public void setDBName(String dBName) {
+        this.dBName = dBName;
+        putQueryParameter("DBName", dBName);
+    }
 
-	public void setCharacterSetName(String characterSetName) {
-		this.characterSetName = characterSetName;
-		putQueryParameter("CharacterSetName", characterSetName);
-	}
+    public String getCharacterSetName() {
+        return this.characterSetName;
+    }
 
-	public String getDBDescription() {
-		return this.dBDescription;
-	}
+    public void setCharacterSetName(String characterSetName) {
+        this.characterSetName = characterSetName;
+        putQueryParameter("CharacterSetName", characterSetName);
+    }
 
-	public void setDBDescription(String dBDescription) {
-		this.dBDescription = dBDescription;
-		putQueryParameter("DBDescription", dBDescription);
-	}
+    public String getDBDescription() {
+        return this.dBDescription;
+    }
 
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
+    public void setDBDescription(String dBDescription) {
+        this.dBDescription = dBDescription;
+        putQueryParameter("DBDescription", dBDescription);
+    }
 
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		putQueryParameter("OwnerAccount", ownerAccount);
-	}
+    public String getOwnerAccount() {
+        return this.ownerAccount;
+    }
 
-	@Override
-	public Class<CreateDatabaseResponse> getResponseClass() {
-		return CreateDatabaseResponse.class;
-	}
+    public void setOwnerAccount(String ownerAccount) {
+        this.ownerAccount = ownerAccount;
+        putQueryParameter("OwnerAccount", ownerAccount);
+    }
+
+    @Override
+    public Class<CreateDatabaseResponse> getResponseClass() {
+        return CreateDatabaseResponse.class;
+    }
 
 }

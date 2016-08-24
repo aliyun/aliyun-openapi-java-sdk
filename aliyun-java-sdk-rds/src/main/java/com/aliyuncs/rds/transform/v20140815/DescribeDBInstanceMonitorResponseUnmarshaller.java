@@ -21,14 +21,17 @@ package com.aliyuncs.rds.transform.v20140815;
 import com.aliyuncs.rds.model.v20140815.DescribeDBInstanceMonitorResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
-
 public class DescribeDBInstanceMonitorResponseUnmarshaller {
 
-	public static DescribeDBInstanceMonitorResponse unmarshall(DescribeDBInstanceMonitorResponse describeDBInstanceMonitorResponse, UnmarshallerContext context) {
-		
-		describeDBInstanceMonitorResponse.setRequestId(context.stringValue("DescribeDBInstanceMonitorResponse.RequestId"));
-		describeDBInstanceMonitorResponse.setPeriod(context.stringValue("DescribeDBInstanceMonitorResponse.Period"));
-	 
-	 	return describeDBInstanceMonitorResponse;
-	}
+    public static DescribeDBInstanceMonitorResponse unmarshall(
+            DescribeDBInstanceMonitorResponse describeDBInstanceMonitorResponse,
+            UnmarshallerContext context) {
+
+        describeDBInstanceMonitorResponse
+                .setRequestId(context.stringValue("DescribeDBInstanceMonitorResponse.RequestId"));
+        describeDBInstanceMonitorResponse
+                .setPeriod(context.stringValue("DescribeDBInstanceMonitorResponse.Period"));
+
+        return describeDBInstanceMonitorResponse;
+    }
 }

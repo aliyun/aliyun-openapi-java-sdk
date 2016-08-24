@@ -18,122 +18,122 @@
  */
 package com.aliyuncs.rds.model.v20140815;
 
-import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.rds.transform.v20140815.DescribeOptimizeAdviceOnMissIndexResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
+import java.util.List;
+
 /**
  * @author auto create
- * @version 
  */
 public class DescribeOptimizeAdviceOnMissIndexResponse extends AcsResponse {
 
-	private String requestId;
+    private String requestId;
 
-	private String dBInstanceId;
+    private String dBInstanceId;
 
-	private Integer totalRecordsCount;
+    private Integer totalRecordsCount;
 
-	private Integer pageNumber;
+    private Integer pageNumber;
 
-	private Integer pageRecordCount;
+    private Integer pageRecordCount;
 
-	private List<AdviceOnMissIndex> items;
+    private List<AdviceOnMissIndex> items;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
+    public String getRequestId() {
+        return this.requestId;
+    }
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+    public void setRequestId(String requestId) {
+        this.requestId = requestId;
+    }
 
-	public String getDBInstanceId() {
-		return this.dBInstanceId;
-	}
+    public String getDBInstanceId() {
+        return this.dBInstanceId;
+    }
 
-	public void setDBInstanceId(String dBInstanceId) {
-		this.dBInstanceId = dBInstanceId;
-	}
+    public void setDBInstanceId(String dBInstanceId) {
+        this.dBInstanceId = dBInstanceId;
+    }
 
-	public Integer getTotalRecordsCount() {
-		return this.totalRecordsCount;
-	}
+    public Integer getTotalRecordsCount() {
+        return this.totalRecordsCount;
+    }
 
-	public void setTotalRecordsCount(Integer totalRecordsCount) {
-		this.totalRecordsCount = totalRecordsCount;
-	}
+    public void setTotalRecordsCount(Integer totalRecordsCount) {
+        this.totalRecordsCount = totalRecordsCount;
+    }
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
+    public Integer getPageNumber() {
+        return this.pageNumber;
+    }
 
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-	}
+    public void setPageNumber(Integer pageNumber) {
+        this.pageNumber = pageNumber;
+    }
 
-	public Integer getPageRecordCount() {
-		return this.pageRecordCount;
-	}
+    public Integer getPageRecordCount() {
+        return this.pageRecordCount;
+    }
 
-	public void setPageRecordCount(Integer pageRecordCount) {
-		this.pageRecordCount = pageRecordCount;
-	}
+    public void setPageRecordCount(Integer pageRecordCount) {
+        this.pageRecordCount = pageRecordCount;
+    }
 
-	public List<AdviceOnMissIndex> getItems() {
-		return this.items;
-	}
+    public List<AdviceOnMissIndex> getItems() {
+        return this.items;
+    }
 
-	public void setItems(List<AdviceOnMissIndex> items) {
-		this.items = items;
-	}
+    public void setItems(List<AdviceOnMissIndex> items) {
+        this.items = items;
+    }
 
-	public static class AdviceOnMissIndex {
+    public static class AdviceOnMissIndex {
 
-		private String dBName;
+        private String dBName;
 
-		private String tableName;
+        private String tableName;
 
-		private String queryColumn;
+        private String queryColumn;
 
-		private String sQLText;
+        private String sQLText;
 
-		public String getDBName() {
-			return this.dBName;
-		}
+        public String getDBName() {
+            return this.dBName;
+        }
 
-		public void setDBName(String dBName) {
-			this.dBName = dBName;
-		}
+        public void setDBName(String dBName) {
+            this.dBName = dBName;
+        }
 
-		public String getTableName() {
-			return this.tableName;
-		}
+        public String getTableName() {
+            return this.tableName;
+        }
 
-		public void setTableName(String tableName) {
-			this.tableName = tableName;
-		}
+        public void setTableName(String tableName) {
+            this.tableName = tableName;
+        }
 
-		public String getQueryColumn() {
-			return this.queryColumn;
-		}
+        public String getQueryColumn() {
+            return this.queryColumn;
+        }
 
-		public void setQueryColumn(String queryColumn) {
-			this.queryColumn = queryColumn;
-		}
+        public void setQueryColumn(String queryColumn) {
+            this.queryColumn = queryColumn;
+        }
 
-		public String getSQLText() {
-			return this.sQLText;
-		}
+        public String getSQLText() {
+            return this.sQLText;
+        }
 
-		public void setSQLText(String sQLText) {
-			this.sQLText = sQLText;
-		}
-	}
+        public void setSQLText(String sQLText) {
+            this.sQLText = sQLText;
+        }
+    }
 
-	@Override
-	public DescribeOptimizeAdviceOnMissIndexResponse getInstance(UnmarshallerContext context) {
-		return	DescribeOptimizeAdviceOnMissIndexResponseUnmarshaller.unmarshall(this, context);
-	}
+    @Override
+    public DescribeOptimizeAdviceOnMissIndexResponse getInstance(UnmarshallerContext context) {
+        return DescribeOptimizeAdviceOnMissIndexResponseUnmarshaller.unmarshall(this, context);
+    }
 }

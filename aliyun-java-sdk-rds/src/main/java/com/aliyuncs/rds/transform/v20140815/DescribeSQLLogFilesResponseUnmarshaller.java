@@ -18,38 +18,48 @@
  */
 package com.aliyuncs.rds.transform.v20140815;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.aliyuncs.rds.model.v20140815.DescribeSQLLogFilesResponse;
 import com.aliyuncs.rds.model.v20140815.DescribeSQLLogFilesResponse.LogFile;
 import com.aliyuncs.rds.model.v20140815.DescribeSQLLogFilesResponse.LogFile.LogStatus;
 import com.aliyuncs.transform.UnmarshallerContext;
 
+import java.util.ArrayList;
+import java.util.List;
 
 public class DescribeSQLLogFilesResponseUnmarshaller {
 
-	public static DescribeSQLLogFilesResponse unmarshall(DescribeSQLLogFilesResponse describeSQLLogFilesResponse, UnmarshallerContext context) {
-		
-		describeSQLLogFilesResponse.setRequestId(context.stringValue("DescribeSQLLogFilesResponse.RequestId"));
-		describeSQLLogFilesResponse.setTotalRecordCount(context.integerValue("DescribeSQLLogFilesResponse.TotalRecordCount"));
-		describeSQLLogFilesResponse.setPageNumber(context.integerValue("DescribeSQLLogFilesResponse.PageNumber"));
-		describeSQLLogFilesResponse.setPageRecordCount(context.integerValue("DescribeSQLLogFilesResponse.PageRecordCount"));
+    public static DescribeSQLLogFilesResponse unmarshall(
+            DescribeSQLLogFilesResponse describeSQLLogFilesResponse, UnmarshallerContext context) {
 
-		List<LogFile> items = new ArrayList<LogFile>();
-		for (int i = 0; i < context.lengthValue("DescribeSQLLogFilesResponse.Items.Length"); i++) {
-			LogFile logFile = new LogFile();
-			logFile.setFileID(context.stringValue("DescribeSQLLogFilesResponse.Items["+ i +"].FileID"));
-			logFile.setLogStatus(LogStatus.getEnum(context.stringValue("DescribeSQLLogFilesResponse.Items["+ i +"].LogStatus")));
-			logFile.setLogDownloadURL(context.stringValue("DescribeSQLLogFilesResponse.Items["+ i +"].LogDownloadURL"));
-			logFile.setLogSize(context.stringValue("DescribeSQLLogFilesResponse.Items["+ i +"].LogSize"));
-			logFile.setLogStartTime(context.stringValue("DescribeSQLLogFilesResponse.Items["+ i +"].LogStartTime"));
-			logFile.setLogEndTime(context.stringValue("DescribeSQLLogFilesResponse.Items["+ i +"].LogEndTime"));
+        describeSQLLogFilesResponse
+                .setRequestId(context.stringValue("DescribeSQLLogFilesResponse.RequestId"));
+        describeSQLLogFilesResponse.setTotalRecordCount(
+                context.integerValue("DescribeSQLLogFilesResponse.TotalRecordCount"));
+        describeSQLLogFilesResponse
+                .setPageNumber(context.integerValue("DescribeSQLLogFilesResponse.PageNumber"));
+        describeSQLLogFilesResponse.setPageRecordCount(
+                context.integerValue("DescribeSQLLogFilesResponse.PageRecordCount"));
 
-			items.add(logFile);
-		}
-		describeSQLLogFilesResponse.setItems(items);
-	 
-	 	return describeSQLLogFilesResponse;
-	}
+        List<LogFile> items = new ArrayList<LogFile>();
+        for (int i = 0; i < context.lengthValue("DescribeSQLLogFilesResponse.Items.Length"); i++) {
+            LogFile logFile = new LogFile();
+            logFile.setFileID(
+                    context.stringValue("DescribeSQLLogFilesResponse.Items[" + i + "].FileID"));
+            logFile.setLogStatus(LogStatus.getEnum(
+                    context.stringValue("DescribeSQLLogFilesResponse.Items[" + i + "].LogStatus")));
+            logFile.setLogDownloadURL(context.stringValue(
+                    "DescribeSQLLogFilesResponse.Items[" + i + "].LogDownloadURL"));
+            logFile.setLogSize(
+                    context.stringValue("DescribeSQLLogFilesResponse.Items[" + i + "].LogSize"));
+            logFile.setLogStartTime(context.stringValue(
+                    "DescribeSQLLogFilesResponse.Items[" + i + "].LogStartTime"));
+            logFile.setLogEndTime(
+                    context.stringValue("DescribeSQLLogFilesResponse.Items[" + i + "].LogEndTime"));
+
+            items.add(logFile);
+        }
+        describeSQLLogFilesResponse.setItems(items);
+
+        return describeSQLLogFilesResponse;
+    }
 }

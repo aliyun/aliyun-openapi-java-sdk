@@ -21,13 +21,15 @@ package com.aliyuncs.rds.transform.v20140815;
 import com.aliyuncs.rds.model.v20140815.ModifyDBInstanceConnectionStringResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
-
 public class ModifyDBInstanceConnectionStringResponseUnmarshaller {
 
-	public static ModifyDBInstanceConnectionStringResponse unmarshall(ModifyDBInstanceConnectionStringResponse modifyDBInstanceConnectionStringResponse, UnmarshallerContext context) {
-		
-		modifyDBInstanceConnectionStringResponse.setRequestId(context.stringValue("ModifyDBInstanceConnectionStringResponse.RequestId"));
-	 
-	 	return modifyDBInstanceConnectionStringResponse;
-	}
+    public static ModifyDBInstanceConnectionStringResponse unmarshall(
+            ModifyDBInstanceConnectionStringResponse modifyDBInstanceConnectionStringResponse,
+            UnmarshallerContext context) {
+
+        modifyDBInstanceConnectionStringResponse.setRequestId(
+                context.stringValue("ModifyDBInstanceConnectionStringResponse.RequestId"));
+
+        return modifyDBInstanceConnectionStringResponse;
+    }
 }

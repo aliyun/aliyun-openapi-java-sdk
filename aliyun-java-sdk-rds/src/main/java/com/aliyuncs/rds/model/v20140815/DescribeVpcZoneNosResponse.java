@@ -18,72 +18,72 @@
  */
 package com.aliyuncs.rds.model.v20140815;
 
-import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.rds.transform.v20140815.DescribeVpcZoneNosResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
+import java.util.List;
+
 /**
  * @author auto create
- * @version 
  */
 public class DescribeVpcZoneNosResponse extends AcsResponse {
 
-	private String requestId;
+    private String requestId;
 
-	private List<VpcZoneId> items;
+    private List<VpcZoneId> items;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
+    public String getRequestId() {
+        return this.requestId;
+    }
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+    public void setRequestId(String requestId) {
+        this.requestId = requestId;
+    }
 
-	public List<VpcZoneId> getItems() {
-		return this.items;
-	}
+    public List<VpcZoneId> getItems() {
+        return this.items;
+    }
 
-	public void setItems(List<VpcZoneId> items) {
-		this.items = items;
-	}
+    public void setItems(List<VpcZoneId> items) {
+        this.items = items;
+    }
 
-	public static class VpcZoneId {
+    public static class VpcZoneId {
 
-		private String zoneId;
+        private String zoneId;
 
-		private String region;
+        private String region;
 
-		private String subDomain;
+        private String subDomain;
 
-		public String getZoneId() {
-			return this.zoneId;
-		}
+        public String getZoneId() {
+            return this.zoneId;
+        }
 
-		public void setZoneId(String zoneId) {
-			this.zoneId = zoneId;
-		}
+        public void setZoneId(String zoneId) {
+            this.zoneId = zoneId;
+        }
 
-		public String getRegion() {
-			return this.region;
-		}
+        public String getRegion() {
+            return this.region;
+        }
 
-		public void setRegion(String region) {
-			this.region = region;
-		}
+        public void setRegion(String region) {
+            this.region = region;
+        }
 
-		public String getSubDomain() {
-			return this.subDomain;
-		}
+        public String getSubDomain() {
+            return this.subDomain;
+        }
 
-		public void setSubDomain(String subDomain) {
-			this.subDomain = subDomain;
-		}
-	}
+        public void setSubDomain(String subDomain) {
+            this.subDomain = subDomain;
+        }
+    }
 
-	@Override
-	public DescribeVpcZoneNosResponse getInstance(UnmarshallerContext context) {
-		return	DescribeVpcZoneNosResponseUnmarshaller.unmarshall(this, context);
-	}
+    @Override
+    public DescribeVpcZoneNosResponse getInstance(UnmarshallerContext context) {
+        return DescribeVpcZoneNosResponseUnmarshaller.unmarshall(this, context);
+    }
 }

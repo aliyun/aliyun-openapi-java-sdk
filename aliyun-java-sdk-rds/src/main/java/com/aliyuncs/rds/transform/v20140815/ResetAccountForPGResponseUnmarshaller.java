@@ -21,13 +21,14 @@ package com.aliyuncs.rds.transform.v20140815;
 import com.aliyuncs.rds.model.v20140815.ResetAccountForPGResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
-
 public class ResetAccountForPGResponseUnmarshaller {
 
-	public static ResetAccountForPGResponse unmarshall(ResetAccountForPGResponse resetAccountForPGResponse, UnmarshallerContext context) {
-		
-		resetAccountForPGResponse.setRequestId(context.stringValue("ResetAccountForPGResponse.RequestId"));
-	 
-	 	return resetAccountForPGResponse;
-	}
+    public static ResetAccountForPGResponse unmarshall(
+            ResetAccountForPGResponse resetAccountForPGResponse, UnmarshallerContext context) {
+
+        resetAccountForPGResponse
+                .setRequestId(context.stringValue("ResetAccountForPGResponse.RequestId"));
+
+        return resetAccountForPGResponse;
+    }
 }

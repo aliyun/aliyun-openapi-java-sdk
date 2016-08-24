@@ -24,102 +24,101 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
- * @version 
  */
 public class DescribeResourceUsageResponse extends AcsResponse {
 
-	private String requestId;
+    private String requestId;
 
-	private String dBInstanceId;
+    private String dBInstanceId;
 
-	private String engine;
+    private String engine;
 
-	private Long diskUsed;
+    private Long diskUsed;
 
-	private Long dataSize;
+    private Long dataSize;
 
-	private Long logSize;
+    private Long logSize;
 
-	private Long backupSize;
+    private Long backupSize;
 
-	private Long sQLSize;
+    private Long sQLSize;
 
-	private Long coldBackupSize;
+    private Long coldBackupSize;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
+    public String getRequestId() {
+        return this.requestId;
+    }
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+    public void setRequestId(String requestId) {
+        this.requestId = requestId;
+    }
 
-	public String getDBInstanceId() {
-		return this.dBInstanceId;
-	}
+    public String getDBInstanceId() {
+        return this.dBInstanceId;
+    }
 
-	public void setDBInstanceId(String dBInstanceId) {
-		this.dBInstanceId = dBInstanceId;
-	}
+    public void setDBInstanceId(String dBInstanceId) {
+        this.dBInstanceId = dBInstanceId;
+    }
 
-	public String getEngine() {
-		return this.engine;
-	}
+    public String getEngine() {
+        return this.engine;
+    }
 
-	public void setEngine(String engine) {
-		this.engine = engine;
-	}
+    public void setEngine(String engine) {
+        this.engine = engine;
+    }
 
-	public Long getDiskUsed() {
-		return this.diskUsed;
-	}
+    public Long getDiskUsed() {
+        return this.diskUsed;
+    }
 
-	public void setDiskUsed(Long diskUsed) {
-		this.diskUsed = diskUsed;
-	}
+    public void setDiskUsed(Long diskUsed) {
+        this.diskUsed = diskUsed;
+    }
 
-	public Long getDataSize() {
-		return this.dataSize;
-	}
+    public Long getDataSize() {
+        return this.dataSize;
+    }
 
-	public void setDataSize(Long dataSize) {
-		this.dataSize = dataSize;
-	}
+    public void setDataSize(Long dataSize) {
+        this.dataSize = dataSize;
+    }
 
-	public Long getLogSize() {
-		return this.logSize;
-	}
+    public Long getLogSize() {
+        return this.logSize;
+    }
 
-	public void setLogSize(Long logSize) {
-		this.logSize = logSize;
-	}
+    public void setLogSize(Long logSize) {
+        this.logSize = logSize;
+    }
 
-	public Long getBackupSize() {
-		return this.backupSize;
-	}
+    public Long getBackupSize() {
+        return this.backupSize;
+    }
 
-	public void setBackupSize(Long backupSize) {
-		this.backupSize = backupSize;
-	}
+    public void setBackupSize(Long backupSize) {
+        this.backupSize = backupSize;
+    }
 
-	public Long getSQLSize() {
-		return this.sQLSize;
-	}
+    public Long getSQLSize() {
+        return this.sQLSize;
+    }
 
-	public void setSQLSize(Long sQLSize) {
-		this.sQLSize = sQLSize;
-	}
+    public void setSQLSize(Long sQLSize) {
+        this.sQLSize = sQLSize;
+    }
 
-	public Long getColdBackupSize() {
-		return this.coldBackupSize;
-	}
+    public Long getColdBackupSize() {
+        return this.coldBackupSize;
+    }
 
-	public void setColdBackupSize(Long coldBackupSize) {
-		this.coldBackupSize = coldBackupSize;
-	}
+    public void setColdBackupSize(Long coldBackupSize) {
+        this.coldBackupSize = coldBackupSize;
+    }
 
-	@Override
-	public DescribeResourceUsageResponse getInstance(UnmarshallerContext context) {
-		return	DescribeResourceUsageResponseUnmarshaller.unmarshall(this, context);
-	}
+    @Override
+    public DescribeResourceUsageResponse getInstance(UnmarshallerContext context) {
+        return DescribeResourceUsageResponseUnmarshaller.unmarshall(this, context);
+    }
 }

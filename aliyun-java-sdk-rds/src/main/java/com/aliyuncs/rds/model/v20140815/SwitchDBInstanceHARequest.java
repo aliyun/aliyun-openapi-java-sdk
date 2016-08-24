@@ -22,105 +22,104 @@ import com.aliyuncs.RpcAcsRequest;
 
 /**
  * @author auto create
- * @version 
  */
 public class SwitchDBInstanceHARequest extends RpcAcsRequest<SwitchDBInstanceHAResponse> {
-	
-	public SwitchDBInstanceHARequest() {
-		super("Rds", "2014-08-15", "SwitchDBInstanceHA");
-	}
 
-	private Long ownerId;
+    public SwitchDBInstanceHARequest() {
+        super("Rds", "2014-08-15", "SwitchDBInstanceHA");
+    }
 
-	private String resourceOwnerAccount;
+    private Long ownerId;
 
-	private Long resourceOwnerId;
+    private String resourceOwnerAccount;
 
-	private String dBInstanceId;
+    private Long resourceOwnerId;
 
-	private String nodeId;
+    private String dBInstanceId;
 
-	private String operation;
+    private String nodeId;
 
-	private String force;
+    private String operation;
 
-	private String ownerAccount;
+    private String force;
 
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
+    private String ownerAccount;
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
-	}
+    public Long getOwnerId() {
+        return this.ownerId;
+    }
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
+    public void setOwnerId(Long ownerId) {
+        this.ownerId = ownerId;
+        putQueryParameter("OwnerId", ownerId);
+    }
 
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-	}
+    public String getResourceOwnerAccount() {
+        return this.resourceOwnerAccount;
+    }
 
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
+    public void setResourceOwnerAccount(String resourceOwnerAccount) {
+        this.resourceOwnerAccount = resourceOwnerAccount;
+        putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+    }
 
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", resourceOwnerId);
-	}
+    public Long getResourceOwnerId() {
+        return this.resourceOwnerId;
+    }
 
-	public String getDBInstanceId() {
-		return this.dBInstanceId;
-	}
+    public void setResourceOwnerId(Long resourceOwnerId) {
+        this.resourceOwnerId = resourceOwnerId;
+        putQueryParameter("ResourceOwnerId", resourceOwnerId);
+    }
 
-	public void setDBInstanceId(String dBInstanceId) {
-		this.dBInstanceId = dBInstanceId;
-		putQueryParameter("DBInstanceId", dBInstanceId);
-	}
+    public String getDBInstanceId() {
+        return this.dBInstanceId;
+    }
 
-	public String getNodeId() {
-		return this.nodeId;
-	}
+    public void setDBInstanceId(String dBInstanceId) {
+        this.dBInstanceId = dBInstanceId;
+        putQueryParameter("DBInstanceId", dBInstanceId);
+    }
 
-	public void setNodeId(String nodeId) {
-		this.nodeId = nodeId;
-		putQueryParameter("NodeId", nodeId);
-	}
+    public String getNodeId() {
+        return this.nodeId;
+    }
 
-	public String getOperation() {
-		return this.operation;
-	}
+    public void setNodeId(String nodeId) {
+        this.nodeId = nodeId;
+        putQueryParameter("NodeId", nodeId);
+    }
 
-	public void setOperation(String operation) {
-		this.operation = operation;
-		putQueryParameter("Operation", operation);
-	}
+    public String getOperation() {
+        return this.operation;
+    }
 
-	public String getForce() {
-		return this.force;
-	}
+    public void setOperation(String operation) {
+        this.operation = operation;
+        putQueryParameter("Operation", operation);
+    }
 
-	public void setForce(String force) {
-		this.force = force;
-		putQueryParameter("Force", force);
-	}
+    public String getForce() {
+        return this.force;
+    }
 
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
+    public void setForce(String force) {
+        this.force = force;
+        putQueryParameter("Force", force);
+    }
 
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		putQueryParameter("OwnerAccount", ownerAccount);
-	}
+    public String getOwnerAccount() {
+        return this.ownerAccount;
+    }
 
-	@Override
-	public Class<SwitchDBInstanceHAResponse> getResponseClass() {
-		return SwitchDBInstanceHAResponse.class;
-	}
+    public void setOwnerAccount(String ownerAccount) {
+        this.ownerAccount = ownerAccount;
+        putQueryParameter("OwnerAccount", ownerAccount);
+    }
+
+    @Override
+    public Class<SwitchDBInstanceHAResponse> getResponseClass() {
+        return SwitchDBInstanceHAResponse.class;
+    }
 
 }

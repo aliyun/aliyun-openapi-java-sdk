@@ -22,94 +22,94 @@ import com.aliyuncs.RpcAcsRequest;
 
 /**
  * @author auto create
- * @version 
  */
-public class ImportDatabaseBetweenInstancesMaLiJieRequest extends RpcAcsRequest<ImportDatabaseBetweenInstancesMaLiJieResponse> {
-	
-	public ImportDatabaseBetweenInstancesMaLiJieRequest() {
-		super("Rds", "2014-08-15", "ImportDatabaseBetweenInstancesMaLiJie");
-	}
+public class ImportDatabaseBetweenInstancesMaLiJieRequest
+        extends RpcAcsRequest<ImportDatabaseBetweenInstancesMaLiJieResponse> {
 
-	private Long ownerId;
+    public ImportDatabaseBetweenInstancesMaLiJieRequest() {
+        super("Rds", "2014-08-15", "ImportDatabaseBetweenInstancesMaLiJie");
+    }
 
-	private String resourceOwnerAccount;
+    private Long ownerId;
 
-	private Long resourceOwnerId;
+    private String resourceOwnerAccount;
 
-	private String dBInstanceId;
+    private Long resourceOwnerId;
 
-	private String sourceDBInstanceId;
+    private String dBInstanceId;
 
-	private String dBInfo;
+    private String sourceDBInstanceId;
 
-	private String ownerAccount;
+    private String dBInfo;
 
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
+    private String ownerAccount;
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", String.valueOf(ownerId));
-	}
+    public Long getOwnerId() {
+        return this.ownerId;
+    }
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
+    public void setOwnerId(Long ownerId) {
+        this.ownerId = ownerId;
+        putQueryParameter("OwnerId", String.valueOf(ownerId));
+    }
 
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-	}
+    public String getResourceOwnerAccount() {
+        return this.resourceOwnerAccount;
+    }
 
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
+    public void setResourceOwnerAccount(String resourceOwnerAccount) {
+        this.resourceOwnerAccount = resourceOwnerAccount;
+        putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+    }
 
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", String.valueOf(resourceOwnerId));
-	}
+    public Long getResourceOwnerId() {
+        return this.resourceOwnerId;
+    }
 
-	public String getDBInstanceId() {
-		return this.dBInstanceId;
-	}
+    public void setResourceOwnerId(Long resourceOwnerId) {
+        this.resourceOwnerId = resourceOwnerId;
+        putQueryParameter("ResourceOwnerId", String.valueOf(resourceOwnerId));
+    }
 
-	public void setDBInstanceId(String dBInstanceId) {
-		this.dBInstanceId = dBInstanceId;
-		putQueryParameter("DBInstanceId", dBInstanceId);
-	}
+    public String getDBInstanceId() {
+        return this.dBInstanceId;
+    }
 
-	public String getSourceDBInstanceId() {
-		return this.sourceDBInstanceId;
-	}
+    public void setDBInstanceId(String dBInstanceId) {
+        this.dBInstanceId = dBInstanceId;
+        putQueryParameter("DBInstanceId", dBInstanceId);
+    }
 
-	public void setSourceDBInstanceId(String sourceDBInstanceId) {
-		this.sourceDBInstanceId = sourceDBInstanceId;
-		putQueryParameter("SourceDBInstanceId", sourceDBInstanceId);
-	}
+    public String getSourceDBInstanceId() {
+        return this.sourceDBInstanceId;
+    }
 
-	public String getDBInfo() {
-		return this.dBInfo;
-	}
+    public void setSourceDBInstanceId(String sourceDBInstanceId) {
+        this.sourceDBInstanceId = sourceDBInstanceId;
+        putQueryParameter("SourceDBInstanceId", sourceDBInstanceId);
+    }
 
-	public void setDBInfo(String dBInfo) {
-		this.dBInfo = dBInfo;
-		putQueryParameter("DBInfo", dBInfo);
-	}
+    public String getDBInfo() {
+        return this.dBInfo;
+    }
 
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
+    public void setDBInfo(String dBInfo) {
+        this.dBInfo = dBInfo;
+        putQueryParameter("DBInfo", dBInfo);
+    }
 
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		putQueryParameter("OwnerAccount", ownerAccount);
-	}
+    public String getOwnerAccount() {
+        return this.ownerAccount;
+    }
 
-	@Override
-	public Class<ImportDatabaseBetweenInstancesMaLiJieResponse> getResponseClass() {
-		return ImportDatabaseBetweenInstancesMaLiJieResponse.class;
-	}
+    public void setOwnerAccount(String ownerAccount) {
+        this.ownerAccount = ownerAccount;
+        putQueryParameter("OwnerAccount", ownerAccount);
+    }
+
+    @Override
+    public Class<ImportDatabaseBetweenInstancesMaLiJieResponse> getResponseClass() {
+        return ImportDatabaseBetweenInstancesMaLiJieResponse.class;
+    }
 
 }

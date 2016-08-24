@@ -22,182 +22,181 @@ import com.aliyuncs.RpcAcsRequest;
 
 /**
  * @author auto create
- * @version 
  */
 public class DescribeSQLLogRecordsRequest extends RpcAcsRequest<DescribeSQLLogRecordsResponse> {
-	
-	public DescribeSQLLogRecordsRequest() {
-		super("Rds", "2014-08-15", "DescribeSQLLogRecords");
-	}
 
-	private Long ownerId;
+    public DescribeSQLLogRecordsRequest() {
+        super("Rds", "2014-08-15", "DescribeSQLLogRecords");
+    }
 
-	private String resourceOwnerAccount;
+    private Long ownerId;
 
-	private Long resourceOwnerId;
+    private String resourceOwnerAccount;
 
-	private String clientToken;
+    private Long resourceOwnerId;
 
-	private String dBInstanceId;
+    private String clientToken;
 
-	private Long sQLId;
+    private String dBInstanceId;
 
-	private String queryKeywords;
+    private Long sQLId;
 
-	private String startTime;
+    private String queryKeywords;
 
-	private String database;
+    private String startTime;
 
-	private String user;
+    private String database;
 
-	private String form;
+    private String user;
 
-	private String endTime;
+    private String form;
 
-	private Integer pageSize;
+    private String endTime;
 
-	private Integer pageNumber;
+    private Integer pageSize;
 
-	private String ownerAccount;
+    private Integer pageNumber;
 
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
+    private String ownerAccount;
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
-	}
+    public Long getOwnerId() {
+        return this.ownerId;
+    }
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
+    public void setOwnerId(Long ownerId) {
+        this.ownerId = ownerId;
+        putQueryParameter("OwnerId", ownerId);
+    }
 
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-	}
+    public String getResourceOwnerAccount() {
+        return this.resourceOwnerAccount;
+    }
 
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
+    public void setResourceOwnerAccount(String resourceOwnerAccount) {
+        this.resourceOwnerAccount = resourceOwnerAccount;
+        putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+    }
 
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", resourceOwnerId);
-	}
+    public Long getResourceOwnerId() {
+        return this.resourceOwnerId;
+    }
 
-	public String getClientToken() {
-		return this.clientToken;
-	}
+    public void setResourceOwnerId(Long resourceOwnerId) {
+        this.resourceOwnerId = resourceOwnerId;
+        putQueryParameter("ResourceOwnerId", resourceOwnerId);
+    }
 
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		putQueryParameter("ClientToken", clientToken);
-	}
+    public String getClientToken() {
+        return this.clientToken;
+    }
 
-	public String getDBInstanceId() {
-		return this.dBInstanceId;
-	}
+    public void setClientToken(String clientToken) {
+        this.clientToken = clientToken;
+        putQueryParameter("ClientToken", clientToken);
+    }
 
-	public void setDBInstanceId(String dBInstanceId) {
-		this.dBInstanceId = dBInstanceId;
-		putQueryParameter("DBInstanceId", dBInstanceId);
-	}
+    public String getDBInstanceId() {
+        return this.dBInstanceId;
+    }
 
-	public Long getSQLId() {
-		return this.sQLId;
-	}
+    public void setDBInstanceId(String dBInstanceId) {
+        this.dBInstanceId = dBInstanceId;
+        putQueryParameter("DBInstanceId", dBInstanceId);
+    }
 
-	public void setSQLId(Long sQLId) {
-		this.sQLId = sQLId;
-		putQueryParameter("SQLId", sQLId);
-	}
+    public Long getSQLId() {
+        return this.sQLId;
+    }
 
-	public String getQueryKeywords() {
-		return this.queryKeywords;
-	}
+    public void setSQLId(Long sQLId) {
+        this.sQLId = sQLId;
+        putQueryParameter("SQLId", sQLId);
+    }
 
-	public void setQueryKeywords(String queryKeywords) {
-		this.queryKeywords = queryKeywords;
-		putQueryParameter("QueryKeywords", queryKeywords);
-	}
+    public String getQueryKeywords() {
+        return this.queryKeywords;
+    }
 
-	public String getStartTime() {
-		return this.startTime;
-	}
+    public void setQueryKeywords(String queryKeywords) {
+        this.queryKeywords = queryKeywords;
+        putQueryParameter("QueryKeywords", queryKeywords);
+    }
 
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-		putQueryParameter("StartTime", startTime);
-	}
+    public String getStartTime() {
+        return this.startTime;
+    }
 
-	public String getDatabase() {
-		return this.database;
-	}
+    public void setStartTime(String startTime) {
+        this.startTime = startTime;
+        putQueryParameter("StartTime", startTime);
+    }
 
-	public void setDatabase(String database) {
-		this.database = database;
-		putQueryParameter("Database", database);
-	}
+    public String getDatabase() {
+        return this.database;
+    }
 
-	public String getUser() {
-		return this.user;
-	}
+    public void setDatabase(String database) {
+        this.database = database;
+        putQueryParameter("Database", database);
+    }
 
-	public void setUser(String user) {
-		this.user = user;
-		putQueryParameter("User", user);
-	}
+    public String getUser() {
+        return this.user;
+    }
 
-	public String getForm() {
-		return this.form;
-	}
+    public void setUser(String user) {
+        this.user = user;
+        putQueryParameter("User", user);
+    }
 
-	public void setForm(String form) {
-		this.form = form;
-		putQueryParameter("Form", form);
-	}
+    public String getForm() {
+        return this.form;
+    }
 
-	public String getEndTime() {
-		return this.endTime;
-	}
+    public void setForm(String form) {
+        this.form = form;
+        putQueryParameter("Form", form);
+    }
 
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
-		putQueryParameter("EndTime", endTime);
-	}
+    public String getEndTime() {
+        return this.endTime;
+    }
 
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
+    public void setEndTime(String endTime) {
+        this.endTime = endTime;
+        putQueryParameter("EndTime", endTime);
+    }
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		putQueryParameter("PageSize", pageSize);
-	}
+    public Integer getPageSize() {
+        return this.pageSize;
+    }
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
+    public void setPageSize(Integer pageSize) {
+        this.pageSize = pageSize;
+        putQueryParameter("PageSize", pageSize);
+    }
 
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		putQueryParameter("PageNumber", pageNumber);
-	}
+    public Integer getPageNumber() {
+        return this.pageNumber;
+    }
 
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
+    public void setPageNumber(Integer pageNumber) {
+        this.pageNumber = pageNumber;
+        putQueryParameter("PageNumber", pageNumber);
+    }
 
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		putQueryParameter("OwnerAccount", ownerAccount);
-	}
+    public String getOwnerAccount() {
+        return this.ownerAccount;
+    }
 
-	@Override
-	public Class<DescribeSQLLogRecordsResponse> getResponseClass() {
-		return DescribeSQLLogRecordsResponse.class;
-	}
+    public void setOwnerAccount(String ownerAccount) {
+        this.ownerAccount = ownerAccount;
+        putQueryParameter("OwnerAccount", ownerAccount);
+    }
+
+    @Override
+    public Class<DescribeSQLLogRecordsResponse> getResponseClass() {
+        return DescribeSQLLogRecordsResponse.class;
+    }
 
 }

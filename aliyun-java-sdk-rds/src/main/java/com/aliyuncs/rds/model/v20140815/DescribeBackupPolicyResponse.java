@@ -24,72 +24,71 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
- * @version 
  */
 public class DescribeBackupPolicyResponse extends AcsResponse {
 
-	private String requestId;
+    private String requestId;
 
-	private Integer backupRetentionPeriod;
+    private Integer backupRetentionPeriod;
 
-	private String preferredNextBackupTime;
+    private String preferredNextBackupTime;
 
-	private String preferredBackupTime;
+    private String preferredBackupTime;
 
-	private String preferredBackupPeriod;
+    private String preferredBackupPeriod;
 
-	private String backupLog;
+    private String backupLog;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
+    public String getRequestId() {
+        return this.requestId;
+    }
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+    public void setRequestId(String requestId) {
+        this.requestId = requestId;
+    }
 
-	public Integer getBackupRetentionPeriod() {
-		return this.backupRetentionPeriod;
-	}
+    public Integer getBackupRetentionPeriod() {
+        return this.backupRetentionPeriod;
+    }
 
-	public void setBackupRetentionPeriod(Integer backupRetentionPeriod) {
-		this.backupRetentionPeriod = backupRetentionPeriod;
-	}
+    public void setBackupRetentionPeriod(Integer backupRetentionPeriod) {
+        this.backupRetentionPeriod = backupRetentionPeriod;
+    }
 
-	public String getPreferredNextBackupTime() {
-		return this.preferredNextBackupTime;
-	}
+    public String getPreferredNextBackupTime() {
+        return this.preferredNextBackupTime;
+    }
 
-	public void setPreferredNextBackupTime(String preferredNextBackupTime) {
-		this.preferredNextBackupTime = preferredNextBackupTime;
-	}
+    public void setPreferredNextBackupTime(String preferredNextBackupTime) {
+        this.preferredNextBackupTime = preferredNextBackupTime;
+    }
 
-	public String getPreferredBackupTime() {
-		return this.preferredBackupTime;
-	}
+    public String getPreferredBackupTime() {
+        return this.preferredBackupTime;
+    }
 
-	public void setPreferredBackupTime(String preferredBackupTime) {
-		this.preferredBackupTime = preferredBackupTime;
-	}
+    public void setPreferredBackupTime(String preferredBackupTime) {
+        this.preferredBackupTime = preferredBackupTime;
+    }
 
-	public String getPreferredBackupPeriod() {
-		return this.preferredBackupPeriod;
-	}
+    public String getPreferredBackupPeriod() {
+        return this.preferredBackupPeriod;
+    }
 
-	public void setPreferredBackupPeriod(String preferredBackupPeriod) {
-		this.preferredBackupPeriod = preferredBackupPeriod;
-	}
+    public void setPreferredBackupPeriod(String preferredBackupPeriod) {
+        this.preferredBackupPeriod = preferredBackupPeriod;
+    }
 
-	public String getBackupLog() {
-		return this.backupLog;
-	}
+    public String getBackupLog() {
+        return this.backupLog;
+    }
 
-	public void setBackupLog(String backupLog) {
-		this.backupLog = backupLog;
-	}
+    public void setBackupLog(String backupLog) {
+        this.backupLog = backupLog;
+    }
 
-	@Override
-	public DescribeBackupPolicyResponse getInstance(UnmarshallerContext context) {
-		return	DescribeBackupPolicyResponseUnmarshaller.unmarshall(this, context);
-	}
+    @Override
+    public DescribeBackupPolicyResponse getInstance(UnmarshallerContext context) {
+        return DescribeBackupPolicyResponseUnmarshaller.unmarshall(this, context);
+    }
 }

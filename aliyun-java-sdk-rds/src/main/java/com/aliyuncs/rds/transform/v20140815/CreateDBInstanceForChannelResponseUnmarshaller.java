@@ -21,17 +21,23 @@ package com.aliyuncs.rds.transform.v20140815;
 import com.aliyuncs.rds.model.v20140815.CreateDBInstanceForChannelResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
-
 public class CreateDBInstanceForChannelResponseUnmarshaller {
 
-	public static CreateDBInstanceForChannelResponse unmarshall(CreateDBInstanceForChannelResponse createDBInstanceForChannelResponse, UnmarshallerContext context) {
-		
-		createDBInstanceForChannelResponse.setRequestId(context.stringValue("CreateDBInstanceForChannelResponse.RequestId"));
-		createDBInstanceForChannelResponse.setDBInstanceId(context.stringValue("CreateDBInstanceForChannelResponse.DBInstanceId"));
-		createDBInstanceForChannelResponse.setOrderId(context.stringValue("CreateDBInstanceForChannelResponse.OrderId"));
-		createDBInstanceForChannelResponse.setConnectionString(context.stringValue("CreateDBInstanceForChannelResponse.ConnectionString"));
-		createDBInstanceForChannelResponse.setPort(context.stringValue("CreateDBInstanceForChannelResponse.Port"));
-	 
-	 	return createDBInstanceForChannelResponse;
-	}
+    public static CreateDBInstanceForChannelResponse unmarshall(
+            CreateDBInstanceForChannelResponse createDBInstanceForChannelResponse,
+            UnmarshallerContext context) {
+
+        createDBInstanceForChannelResponse
+                .setRequestId(context.stringValue("CreateDBInstanceForChannelResponse.RequestId"));
+        createDBInstanceForChannelResponse.setDBInstanceId(
+                context.stringValue("CreateDBInstanceForChannelResponse.DBInstanceId"));
+        createDBInstanceForChannelResponse
+                .setOrderId(context.stringValue("CreateDBInstanceForChannelResponse.OrderId"));
+        createDBInstanceForChannelResponse.setConnectionString(
+                context.stringValue("CreateDBInstanceForChannelResponse.ConnectionString"));
+        createDBInstanceForChannelResponse
+                .setPort(context.stringValue("CreateDBInstanceForChannelResponse.Port"));
+
+        return createDBInstanceForChannelResponse;
+    }
 }

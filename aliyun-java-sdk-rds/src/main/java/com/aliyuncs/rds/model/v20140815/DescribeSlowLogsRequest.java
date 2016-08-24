@@ -22,138 +22,137 @@ import com.aliyuncs.RpcAcsRequest;
 
 /**
  * @author auto create
- * @version 
  */
 public class DescribeSlowLogsRequest extends RpcAcsRequest<DescribeSlowLogsResponse> {
-	
-	public DescribeSlowLogsRequest() {
-		super("Rds", "2014-08-15", "DescribeSlowLogs");
-	}
 
-	private Long ownerId;
+    public DescribeSlowLogsRequest() {
+        super("Rds", "2014-08-15", "DescribeSlowLogs");
+    }
 
-	private String resourceOwnerAccount;
+    private Long ownerId;
 
-	private Long resourceOwnerId;
+    private String resourceOwnerAccount;
 
-	private String dBInstanceId;
+    private Long resourceOwnerId;
 
-	private String startTime;
+    private String dBInstanceId;
 
-	private String endTime;
+    private String startTime;
 
-	private String dBName;
+    private String endTime;
 
-	private String sortKey;
+    private String dBName;
 
-	private Integer pageSize;
+    private String sortKey;
 
-	private Integer pageNumber;
+    private Integer pageSize;
 
-	private String ownerAccount;
+    private Integer pageNumber;
 
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
+    private String ownerAccount;
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
-	}
+    public Long getOwnerId() {
+        return this.ownerId;
+    }
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
+    public void setOwnerId(Long ownerId) {
+        this.ownerId = ownerId;
+        putQueryParameter("OwnerId", ownerId);
+    }
 
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-	}
+    public String getResourceOwnerAccount() {
+        return this.resourceOwnerAccount;
+    }
 
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
+    public void setResourceOwnerAccount(String resourceOwnerAccount) {
+        this.resourceOwnerAccount = resourceOwnerAccount;
+        putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+    }
 
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", resourceOwnerId);
-	}
+    public Long getResourceOwnerId() {
+        return this.resourceOwnerId;
+    }
 
-	public String getDBInstanceId() {
-		return this.dBInstanceId;
-	}
+    public void setResourceOwnerId(Long resourceOwnerId) {
+        this.resourceOwnerId = resourceOwnerId;
+        putQueryParameter("ResourceOwnerId", resourceOwnerId);
+    }
 
-	public void setDBInstanceId(String dBInstanceId) {
-		this.dBInstanceId = dBInstanceId;
-		putQueryParameter("DBInstanceId", dBInstanceId);
-	}
+    public String getDBInstanceId() {
+        return this.dBInstanceId;
+    }
 
-	public String getStartTime() {
-		return this.startTime;
-	}
+    public void setDBInstanceId(String dBInstanceId) {
+        this.dBInstanceId = dBInstanceId;
+        putQueryParameter("DBInstanceId", dBInstanceId);
+    }
 
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-		putQueryParameter("StartTime", startTime);
-	}
+    public String getStartTime() {
+        return this.startTime;
+    }
 
-	public String getEndTime() {
-		return this.endTime;
-	}
+    public void setStartTime(String startTime) {
+        this.startTime = startTime;
+        putQueryParameter("StartTime", startTime);
+    }
 
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
-		putQueryParameter("EndTime", endTime);
-	}
+    public String getEndTime() {
+        return this.endTime;
+    }
 
-	public String getDBName() {
-		return this.dBName;
-	}
+    public void setEndTime(String endTime) {
+        this.endTime = endTime;
+        putQueryParameter("EndTime", endTime);
+    }
 
-	public void setDBName(String dBName) {
-		this.dBName = dBName;
-		putQueryParameter("DBName", dBName);
-	}
+    public String getDBName() {
+        return this.dBName;
+    }
 
-	public String getSortKey() {
-		return this.sortKey;
-	}
+    public void setDBName(String dBName) {
+        this.dBName = dBName;
+        putQueryParameter("DBName", dBName);
+    }
 
-	public void setSortKey(String sortKey) {
-		this.sortKey = sortKey;
-		putQueryParameter("SortKey", sortKey);
-	}
+    public String getSortKey() {
+        return this.sortKey;
+    }
 
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
+    public void setSortKey(String sortKey) {
+        this.sortKey = sortKey;
+        putQueryParameter("SortKey", sortKey);
+    }
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		putQueryParameter("PageSize", pageSize);
-	}
+    public Integer getPageSize() {
+        return this.pageSize;
+    }
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
+    public void setPageSize(Integer pageSize) {
+        this.pageSize = pageSize;
+        putQueryParameter("PageSize", pageSize);
+    }
 
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		putQueryParameter("PageNumber", pageNumber);
-	}
+    public Integer getPageNumber() {
+        return this.pageNumber;
+    }
 
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
+    public void setPageNumber(Integer pageNumber) {
+        this.pageNumber = pageNumber;
+        putQueryParameter("PageNumber", pageNumber);
+    }
 
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		putQueryParameter("OwnerAccount", ownerAccount);
-	}
+    public String getOwnerAccount() {
+        return this.ownerAccount;
+    }
 
-	@Override
-	public Class<DescribeSlowLogsResponse> getResponseClass() {
-		return DescribeSlowLogsResponse.class;
-	}
+    public void setOwnerAccount(String ownerAccount) {
+        this.ownerAccount = ownerAccount;
+        putQueryParameter("OwnerAccount", ownerAccount);
+    }
+
+    @Override
+    public Class<DescribeSlowLogsResponse> getResponseClass() {
+        return DescribeSlowLogsResponse.class;
+    }
 
 }

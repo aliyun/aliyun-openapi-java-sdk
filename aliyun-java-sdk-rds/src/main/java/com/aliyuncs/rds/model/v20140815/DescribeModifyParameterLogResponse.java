@@ -18,185 +18,185 @@
  */
 package com.aliyuncs.rds.model.v20140815;
 
-import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.rds.transform.v20140815.DescribeModifyParameterLogResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
+import java.util.List;
+
 /**
  * @author auto create
- * @version 
  */
 public class DescribeModifyParameterLogResponse extends AcsResponse {
 
-	private String requestId;
+    private String requestId;
 
-	private String engine;
+    private String engine;
 
-	private String dBInstanceId;
+    private String dBInstanceId;
 
-	private String engineVersion;
+    private String engineVersion;
 
-	private Integer totalRecordCount;
+    private Integer totalRecordCount;
 
-	private Integer pageNumber;
+    private Integer pageNumber;
 
-	private Integer pageRecordCount;
+    private Integer pageRecordCount;
 
-	private List<ParameterChangeLog> items;
+    private List<ParameterChangeLog> items;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
+    public String getRequestId() {
+        return this.requestId;
+    }
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+    public void setRequestId(String requestId) {
+        this.requestId = requestId;
+    }
 
-	public String getEngine() {
-		return this.engine;
-	}
+    public String getEngine() {
+        return this.engine;
+    }
 
-	public void setEngine(String engine) {
-		this.engine = engine;
-	}
+    public void setEngine(String engine) {
+        this.engine = engine;
+    }
 
-	public String getDBInstanceId() {
-		return this.dBInstanceId;
-	}
+    public String getDBInstanceId() {
+        return this.dBInstanceId;
+    }
 
-	public void setDBInstanceId(String dBInstanceId) {
-		this.dBInstanceId = dBInstanceId;
-	}
+    public void setDBInstanceId(String dBInstanceId) {
+        this.dBInstanceId = dBInstanceId;
+    }
 
-	public String getEngineVersion() {
-		return this.engineVersion;
-	}
+    public String getEngineVersion() {
+        return this.engineVersion;
+    }
 
-	public void setEngineVersion(String engineVersion) {
-		this.engineVersion = engineVersion;
-	}
+    public void setEngineVersion(String engineVersion) {
+        this.engineVersion = engineVersion;
+    }
 
-	public Integer getTotalRecordCount() {
-		return this.totalRecordCount;
-	}
+    public Integer getTotalRecordCount() {
+        return this.totalRecordCount;
+    }
 
-	public void setTotalRecordCount(Integer totalRecordCount) {
-		this.totalRecordCount = totalRecordCount;
-	}
+    public void setTotalRecordCount(Integer totalRecordCount) {
+        this.totalRecordCount = totalRecordCount;
+    }
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
+    public Integer getPageNumber() {
+        return this.pageNumber;
+    }
 
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-	}
+    public void setPageNumber(Integer pageNumber) {
+        this.pageNumber = pageNumber;
+    }
 
-	public Integer getPageRecordCount() {
-		return this.pageRecordCount;
-	}
+    public Integer getPageRecordCount() {
+        return this.pageRecordCount;
+    }
 
-	public void setPageRecordCount(Integer pageRecordCount) {
-		this.pageRecordCount = pageRecordCount;
-	}
+    public void setPageRecordCount(Integer pageRecordCount) {
+        this.pageRecordCount = pageRecordCount;
+    }
 
-	public List<ParameterChangeLog> getItems() {
-		return this.items;
-	}
+    public List<ParameterChangeLog> getItems() {
+        return this.items;
+    }
 
-	public void setItems(List<ParameterChangeLog> items) {
-		this.items = items;
-	}
+    public void setItems(List<ParameterChangeLog> items) {
+        this.items = items;
+    }
 
-	public static class ParameterChangeLog {
+    public static class ParameterChangeLog {
 
-		private String modifyTime;
+        private String modifyTime;
 
-		private String oldParameterValue;
+        private String oldParameterValue;
 
-		private String newParameterValue;
+        private String newParameterValue;
 
-		private String parameterName;
+        private String parameterName;
 
-		private Status status;
+        private Status status;
 
-		public String getModifyTime() {
-			return this.modifyTime;
-		}
+        public String getModifyTime() {
+            return this.modifyTime;
+        }
 
-		public void setModifyTime(String modifyTime) {
-			this.modifyTime = modifyTime;
-		}
+        public void setModifyTime(String modifyTime) {
+            this.modifyTime = modifyTime;
+        }
 
-		public String getOldParameterValue() {
-			return this.oldParameterValue;
-		}
+        public String getOldParameterValue() {
+            return this.oldParameterValue;
+        }
 
-		public void setOldParameterValue(String oldParameterValue) {
-			this.oldParameterValue = oldParameterValue;
-		}
+        public void setOldParameterValue(String oldParameterValue) {
+            this.oldParameterValue = oldParameterValue;
+        }
 
-		public String getNewParameterValue() {
-			return this.newParameterValue;
-		}
+        public String getNewParameterValue() {
+            return this.newParameterValue;
+        }
 
-		public void setNewParameterValue(String newParameterValue) {
-			this.newParameterValue = newParameterValue;
-		}
+        public void setNewParameterValue(String newParameterValue) {
+            this.newParameterValue = newParameterValue;
+        }
 
-		public String getParameterName() {
-			return this.parameterName;
-		}
+        public String getParameterName() {
+            return this.parameterName;
+        }
 
-		public void setParameterName(String parameterName) {
-			this.parameterName = parameterName;
-		}
+        public void setParameterName(String parameterName) {
+            this.parameterName = parameterName;
+        }
 
-		public Status getStatus() {
-			return this.status;
-		}
+        public Status getStatus() {
+            return this.status;
+        }
 
-		public void setStatus(Status status) {
-			this.status = status;
-		}
+        public void setStatus(Status status) {
+            this.status = status;
+        }
 
-		public enum Status {
-		
-			APPLIED("Applied"),
-			SYNCING("Syncing"),;
-			
-		    private String stringValue;
-		
-			Status(String stringValue) {
-		        setStringValue(stringValue);
-		    }
-		
-		    public String getStringValue() {
-		        return stringValue;
-		    }
-		
-		    public void setStringValue(String stringValue) {
-		        this.stringValue = stringValue;
-		    }
-		    
-		    public static Status getEnum(String stringValue){
-		    	if(null == stringValue){
-		    		return null;
-		    	}
-		    	
-		    	for (Status status : Status.values()) {
-					if(status.getStringValue().equals(stringValue)){
-						return status;
-					}
-				}
-		    	return null;
-		    }
-		}
-	}
+        public enum Status {
 
-	@Override
-	public DescribeModifyParameterLogResponse getInstance(UnmarshallerContext context) {
-		return	DescribeModifyParameterLogResponseUnmarshaller.unmarshall(this, context);
-	}
+            APPLIED("Applied"),
+            SYNCING("Syncing"),;
+
+            private String stringValue;
+
+            Status(String stringValue) {
+                setStringValue(stringValue);
+            }
+
+            public String getStringValue() {
+                return stringValue;
+            }
+
+            public void setStringValue(String stringValue) {
+                this.stringValue = stringValue;
+            }
+
+            public static Status getEnum(String stringValue) {
+                if (null == stringValue) {
+                    return null;
+                }
+
+                for (Status status : Status.values()) {
+                    if (status.getStringValue().equals(stringValue)) {
+                        return status;
+                    }
+                }
+                return null;
+            }
+        }
+    }
+
+    @Override
+    public DescribeModifyParameterLogResponse getInstance(UnmarshallerContext context) {
+        return DescribeModifyParameterLogResponseUnmarshaller.unmarshall(this, context);
+    }
 }

@@ -18,132 +18,132 @@
  */
 package com.aliyuncs.rds.model.v20140815;
 
-import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.rds.transform.v20140815.DescribeOperationLogsResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
+import java.util.List;
+
 /**
  * @author auto create
- * @version 
  */
 public class DescribeOperationLogsResponse extends AcsResponse {
 
-	private String requestId;
+    private String requestId;
 
-	private String engine;
+    private String engine;
 
-	private Integer totalRecordCount;
+    private Integer totalRecordCount;
 
-	private Integer pageNumber;
+    private Integer pageNumber;
 
-	private Integer pageRecordCount;
+    private Integer pageRecordCount;
 
-	private List<Operationlog> items;
+    private List<Operationlog> items;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
+    public String getRequestId() {
+        return this.requestId;
+    }
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+    public void setRequestId(String requestId) {
+        this.requestId = requestId;
+    }
 
-	public String getEngine() {
-		return this.engine;
-	}
+    public String getEngine() {
+        return this.engine;
+    }
 
-	public void setEngine(String engine) {
-		this.engine = engine;
-	}
+    public void setEngine(String engine) {
+        this.engine = engine;
+    }
 
-	public Integer getTotalRecordCount() {
-		return this.totalRecordCount;
-	}
+    public Integer getTotalRecordCount() {
+        return this.totalRecordCount;
+    }
 
-	public void setTotalRecordCount(Integer totalRecordCount) {
-		this.totalRecordCount = totalRecordCount;
-	}
+    public void setTotalRecordCount(Integer totalRecordCount) {
+        this.totalRecordCount = totalRecordCount;
+    }
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
+    public Integer getPageNumber() {
+        return this.pageNumber;
+    }
 
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-	}
+    public void setPageNumber(Integer pageNumber) {
+        this.pageNumber = pageNumber;
+    }
 
-	public Integer getPageRecordCount() {
-		return this.pageRecordCount;
-	}
+    public Integer getPageRecordCount() {
+        return this.pageRecordCount;
+    }
 
-	public void setPageRecordCount(Integer pageRecordCount) {
-		this.pageRecordCount = pageRecordCount;
-	}
+    public void setPageRecordCount(Integer pageRecordCount) {
+        this.pageRecordCount = pageRecordCount;
+    }
 
-	public List<Operationlog> getItems() {
-		return this.items;
-	}
+    public List<Operationlog> getItems() {
+        return this.items;
+    }
 
-	public void setItems(List<Operationlog> items) {
-		this.items = items;
-	}
+    public void setItems(List<Operationlog> items) {
+        this.items = items;
+    }
 
-	public static class Operationlog {
+    public static class Operationlog {
 
-		private String dBInstanceDescription;
+        private String dBInstanceDescription;
 
-		private String dBInstanceId;
+        private String dBInstanceId;
 
-		private String operationSource;
+        private String operationSource;
 
-		private String operationItem;
+        private String operationItem;
 
-		private String executionTime;
+        private String executionTime;
 
-		public String getDBInstanceDescription() {
-			return this.dBInstanceDescription;
-		}
+        public String getDBInstanceDescription() {
+            return this.dBInstanceDescription;
+        }
 
-		public void setDBInstanceDescription(String dBInstanceDescription) {
-			this.dBInstanceDescription = dBInstanceDescription;
-		}
+        public void setDBInstanceDescription(String dBInstanceDescription) {
+            this.dBInstanceDescription = dBInstanceDescription;
+        }
 
-		public String getDBInstanceId() {
-			return this.dBInstanceId;
-		}
+        public String getDBInstanceId() {
+            return this.dBInstanceId;
+        }
 
-		public void setDBInstanceId(String dBInstanceId) {
-			this.dBInstanceId = dBInstanceId;
-		}
+        public void setDBInstanceId(String dBInstanceId) {
+            this.dBInstanceId = dBInstanceId;
+        }
 
-		public String getOperationSource() {
-			return this.operationSource;
-		}
+        public String getOperationSource() {
+            return this.operationSource;
+        }
 
-		public void setOperationSource(String operationSource) {
-			this.operationSource = operationSource;
-		}
+        public void setOperationSource(String operationSource) {
+            this.operationSource = operationSource;
+        }
 
-		public String getOperationItem() {
-			return this.operationItem;
-		}
+        public String getOperationItem() {
+            return this.operationItem;
+        }
 
-		public void setOperationItem(String operationItem) {
-			this.operationItem = operationItem;
-		}
+        public void setOperationItem(String operationItem) {
+            this.operationItem = operationItem;
+        }
 
-		public String getexecutionTime() {
-			return this.executionTime;
-		}
+        public String getexecutionTime() {
+            return this.executionTime;
+        }
 
-		public void setexecutionTime(String executionTime) {
-			this.executionTime = executionTime;
-		}
-	}
+        public void setexecutionTime(String executionTime) {
+            this.executionTime = executionTime;
+        }
+    }
 
-	@Override
-	public DescribeOperationLogsResponse getInstance(UnmarshallerContext context) {
-		return	DescribeOperationLogsResponseUnmarshaller.unmarshall(this, context);
-	}
+    @Override
+    public DescribeOperationLogsResponse getInstance(UnmarshallerContext context) {
+        return DescribeOperationLogsResponseUnmarshaller.unmarshall(this, context);
+    }
 }

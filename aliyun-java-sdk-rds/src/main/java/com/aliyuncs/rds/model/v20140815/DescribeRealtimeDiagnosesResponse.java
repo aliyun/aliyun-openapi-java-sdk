@@ -18,156 +18,156 @@
  */
 package com.aliyuncs.rds.model.v20140815;
 
-import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.rds.transform.v20140815.DescribeRealtimeDiagnosesResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
+import java.util.List;
+
 /**
  * @author auto create
- * @version 
  */
 public class DescribeRealtimeDiagnosesResponse extends AcsResponse {
 
-	private String requestId;
+    private String requestId;
 
-	private String engine;
+    private String engine;
 
-	private Integer totalRecordCount;
+    private Integer totalRecordCount;
 
-	private Integer pageNumber;
+    private Integer pageNumber;
 
-	private Integer pageRecordCount;
+    private Integer pageRecordCount;
 
-	private List<RealtimeDiagnoseTasks> tasks;
+    private List<RealtimeDiagnoseTasks> tasks;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
+    public String getRequestId() {
+        return this.requestId;
+    }
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+    public void setRequestId(String requestId) {
+        this.requestId = requestId;
+    }
 
-	public String getEngine() {
-		return this.engine;
-	}
+    public String getEngine() {
+        return this.engine;
+    }
 
-	public void setEngine(String engine) {
-		this.engine = engine;
-	}
+    public void setEngine(String engine) {
+        this.engine = engine;
+    }
 
-	public Integer getTotalRecordCount() {
-		return this.totalRecordCount;
-	}
+    public Integer getTotalRecordCount() {
+        return this.totalRecordCount;
+    }
 
-	public void setTotalRecordCount(Integer totalRecordCount) {
-		this.totalRecordCount = totalRecordCount;
-	}
+    public void setTotalRecordCount(Integer totalRecordCount) {
+        this.totalRecordCount = totalRecordCount;
+    }
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
+    public Integer getPageNumber() {
+        return this.pageNumber;
+    }
 
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-	}
+    public void setPageNumber(Integer pageNumber) {
+        this.pageNumber = pageNumber;
+    }
 
-	public Integer getPageRecordCount() {
-		return this.pageRecordCount;
-	}
+    public Integer getPageRecordCount() {
+        return this.pageRecordCount;
+    }
 
-	public void setPageRecordCount(Integer pageRecordCount) {
-		this.pageRecordCount = pageRecordCount;
-	}
+    public void setPageRecordCount(Integer pageRecordCount) {
+        this.pageRecordCount = pageRecordCount;
+    }
 
-	public List<RealtimeDiagnoseTasks> getTasks() {
-		return this.tasks;
-	}
+    public List<RealtimeDiagnoseTasks> getTasks() {
+        return this.tasks;
+    }
 
-	public void setTasks(List<RealtimeDiagnoseTasks> tasks) {
-		this.tasks = tasks;
-	}
+    public void setTasks(List<RealtimeDiagnoseTasks> tasks) {
+        this.tasks = tasks;
+    }
 
-	public static class RealtimeDiagnoseTasks {
+    public static class RealtimeDiagnoseTasks {
 
-		private String createTime;
+        private String createTime;
 
-		private String taskId;
+        private String taskId;
 
-		private String healthScore;
+        private String healthScore;
 
-		private Status status;
+        private Status status;
 
-		public String getCreateTime() {
-			return this.createTime;
-		}
+        public String getCreateTime() {
+            return this.createTime;
+        }
 
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
-		}
+        public void setCreateTime(String createTime) {
+            this.createTime = createTime;
+        }
 
-		public String getTaskId() {
-			return this.taskId;
-		}
+        public String getTaskId() {
+            return this.taskId;
+        }
 
-		public void setTaskId(String taskId) {
-			this.taskId = taskId;
-		}
+        public void setTaskId(String taskId) {
+            this.taskId = taskId;
+        }
 
-		public String getHealthScore() {
-			return this.healthScore;
-		}
+        public String getHealthScore() {
+            return this.healthScore;
+        }
 
-		public void setHealthScore(String healthScore) {
-			this.healthScore = healthScore;
-		}
+        public void setHealthScore(String healthScore) {
+            this.healthScore = healthScore;
+        }
 
-		public Status getStatus() {
-			return this.status;
-		}
+        public Status getStatus() {
+            return this.status;
+        }
 
-		public void setStatus(Status status) {
-			this.status = status;
-		}
+        public void setStatus(Status status) {
+            this.status = status;
+        }
 
-		public enum Status {
-		
-			RUNNING("Running"),
-			NO_START("NoStart"),
-			SUCCESS("Success"),;
-			
-		    private String stringValue;
-		
-			Status(String stringValue) {
-		        setStringValue(stringValue);
-		    }
-		
-		    public String getStringValue() {
-		        return stringValue;
-		    }
-		
-		    public void setStringValue(String stringValue) {
-		        this.stringValue = stringValue;
-		    }
-		    
-		    public static Status getEnum(String stringValue){
-		    	if(null == stringValue){
-		    		return null;
-		    	}
-		    	
-		    	for (Status status : Status.values()) {
-					if(status.getStringValue().equals(stringValue)){
-						return status;
-					}
-				}
-		    	return null;
-		    }
-		}
-	}
+        public enum Status {
 
-	@Override
-	public DescribeRealtimeDiagnosesResponse getInstance(UnmarshallerContext context) {
-		return	DescribeRealtimeDiagnosesResponseUnmarshaller.unmarshall(this, context);
-	}
+            RUNNING("Running"),
+            NO_START("NoStart"),
+            SUCCESS("Success"),;
+
+            private String stringValue;
+
+            Status(String stringValue) {
+                setStringValue(stringValue);
+            }
+
+            public String getStringValue() {
+                return stringValue;
+            }
+
+            public void setStringValue(String stringValue) {
+                this.stringValue = stringValue;
+            }
+
+            public static Status getEnum(String stringValue) {
+                if (null == stringValue) {
+                    return null;
+                }
+
+                for (Status status : Status.values()) {
+                    if (status.getStringValue().equals(stringValue)) {
+                        return status;
+                    }
+                }
+                return null;
+            }
+        }
+    }
+
+    @Override
+    public DescribeRealtimeDiagnosesResponse getInstance(UnmarshallerContext context) {
+        return DescribeRealtimeDiagnosesResponseUnmarshaller.unmarshall(this, context);
+    }
 }

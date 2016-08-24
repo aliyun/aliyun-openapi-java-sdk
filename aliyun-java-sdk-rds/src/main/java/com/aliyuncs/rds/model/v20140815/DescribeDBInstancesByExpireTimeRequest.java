@@ -22,116 +22,127 @@ import com.aliyuncs.RpcAcsRequest;
 
 /**
  * @author auto create
- * @version 
  */
-public class DescribeDBInstancesByExpireTimeRequest extends RpcAcsRequest<DescribeDBInstancesByExpireTimeResponse> {
-	
-	public DescribeDBInstancesByExpireTimeRequest() {
-		super("Rds", "2014-08-15", "DescribeDBInstancesByExpireTime");
-	}
+public class DescribeDBInstancesByExpireTimeRequest
+        extends RpcAcsRequest<DescribeDBInstancesByExpireTimeResponse> {
 
-	private Long ownerId;
+    public DescribeDBInstancesByExpireTimeRequest() {
+        super("Rds", "2014-08-15", "DescribeDBInstancesByExpireTime");
+    }
 
-	private String resourceOwnerAccount;
+    private Long ownerId;
 
-	private Long resourceOwnerId;
+    private String resourceOwnerAccount;
 
-	private String clientToken;
+    private Long resourceOwnerId;
 
-	private String proxyId;
+    private String clientToken;
 
-	private Integer expirePeriod;
+    private String proxyId;
 
-	private Integer pageSize;
+    private Integer expirePeriod;
 
-	private Integer pageNumber;
+    private Integer pageSize;
 
-	private String ownerAccount;
+    private Integer pageNumber;
 
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
+    private String tags;
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
-	}
+    private String ownerAccount;
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
+    public Long getOwnerId() {
+        return this.ownerId;
+    }
 
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-	}
+    public void setOwnerId(Long ownerId) {
+        this.ownerId = ownerId;
+        putQueryParameter("OwnerId", ownerId);
+    }
 
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
+    public String getResourceOwnerAccount() {
+        return this.resourceOwnerAccount;
+    }
 
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", resourceOwnerId);
-	}
+    public void setResourceOwnerAccount(String resourceOwnerAccount) {
+        this.resourceOwnerAccount = resourceOwnerAccount;
+        putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+    }
 
-	public String getClientToken() {
-		return this.clientToken;
-	}
+    public Long getResourceOwnerId() {
+        return this.resourceOwnerId;
+    }
 
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		putQueryParameter("ClientToken", clientToken);
-	}
+    public void setResourceOwnerId(Long resourceOwnerId) {
+        this.resourceOwnerId = resourceOwnerId;
+        putQueryParameter("ResourceOwnerId", resourceOwnerId);
+    }
 
-	public String getproxyId() {
-		return this.proxyId;
-	}
+    public String getClientToken() {
+        return this.clientToken;
+    }
 
-	public void setproxyId(String proxyId) {
-		this.proxyId = proxyId;
-		putQueryParameter("proxyId", proxyId);
-	}
+    public void setClientToken(String clientToken) {
+        this.clientToken = clientToken;
+        putQueryParameter("ClientToken", clientToken);
+    }
 
-	public Integer getExpirePeriod() {
-		return this.expirePeriod;
-	}
+    public String getproxyId() {
+        return this.proxyId;
+    }
 
-	public void setExpirePeriod(Integer expirePeriod) {
-		this.expirePeriod = expirePeriod;
-		putQueryParameter("ExpirePeriod", expirePeriod);
-	}
+    public void setproxyId(String proxyId) {
+        this.proxyId = proxyId;
+        putQueryParameter("proxyId", proxyId);
+    }
 
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
+    public Integer getExpirePeriod() {
+        return this.expirePeriod;
+    }
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		putQueryParameter("PageSize", pageSize);
-	}
+    public void setExpirePeriod(Integer expirePeriod) {
+        this.expirePeriod = expirePeriod;
+        putQueryParameter("ExpirePeriod", expirePeriod);
+    }
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
+    public Integer getPageSize() {
+        return this.pageSize;
+    }
 
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		putQueryParameter("PageNumber", pageNumber);
-	}
+    public void setPageSize(Integer pageSize) {
+        this.pageSize = pageSize;
+        putQueryParameter("PageSize", pageSize);
+    }
 
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
+    public Integer getPageNumber() {
+        return this.pageNumber;
+    }
 
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		putQueryParameter("OwnerAccount", ownerAccount);
-	}
+    public void setPageNumber(Integer pageNumber) {
+        this.pageNumber = pageNumber;
+        putQueryParameter("PageNumber", pageNumber);
+    }
 
-	@Override
-	public Class<DescribeDBInstancesByExpireTimeResponse> getResponseClass() {
-		return DescribeDBInstancesByExpireTimeResponse.class;
-	}
+    public String getTags() {
+        return this.tags;
+    }
+
+    public void setTags(String tags) {
+        this.tags = tags;
+        putQueryParameter("Tags", tags);
+    }
+
+    public String getOwnerAccount() {
+        return this.ownerAccount;
+    }
+
+    public void setOwnerAccount(String ownerAccount) {
+        this.ownerAccount = ownerAccount;
+        putQueryParameter("OwnerAccount", ownerAccount);
+    }
+
+    @Override
+    public Class<DescribeDBInstancesByExpireTimeResponse> getResponseClass() {
+        return DescribeDBInstancesByExpireTimeResponse.class;
+    }
 
 }

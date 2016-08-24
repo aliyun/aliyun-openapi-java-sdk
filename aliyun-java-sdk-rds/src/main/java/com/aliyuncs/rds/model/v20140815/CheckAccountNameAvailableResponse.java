@@ -24,22 +24,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
- * @version 
  */
 public class CheckAccountNameAvailableResponse extends AcsResponse {
 
-	private String requestId;
+    private String requestId;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
+    public String getRequestId() {
+        return this.requestId;
+    }
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+    public void setRequestId(String requestId) {
+        this.requestId = requestId;
+    }
 
-	@Override
-	public CheckAccountNameAvailableResponse getInstance(UnmarshallerContext context) {
-		return	CheckAccountNameAvailableResponseUnmarshaller.unmarshall(this, context);
-	}
+    @Override
+    public CheckAccountNameAvailableResponse getInstance(UnmarshallerContext context) {
+        return CheckAccountNameAvailableResponseUnmarshaller.unmarshall(this, context);
+    }
 }

@@ -22,193 +22,193 @@ import com.aliyuncs.RpcAcsRequest;
 
 /**
  * @author auto create
- * @version 
  */
-public class CreateReadOnlyDBInstanceRequest extends RpcAcsRequest<CreateReadOnlyDBInstanceResponse> {
-	
-	public CreateReadOnlyDBInstanceRequest() {
-		super("Rds", "2014-08-15", "CreateReadOnlyDBInstance");
-	}
+public class CreateReadOnlyDBInstanceRequest
+        extends RpcAcsRequest<CreateReadOnlyDBInstanceResponse> {
 
-	private Long ownerId;
+    public CreateReadOnlyDBInstanceRequest() {
+        super("Rds", "2014-08-15", "CreateReadOnlyDBInstance");
+    }
 
-	private String resourceOwnerAccount;
+    private Long ownerId;
 
-	private Long resourceOwnerId;
+    private String resourceOwnerAccount;
 
-	private String clientToken;
+    private Long resourceOwnerId;
 
-	private String zoneId;
+    private String clientToken;
 
-	private String dBInstanceId;
+    private String zoneId;
 
-	private String dBInstanceClass;
+    private String dBInstanceId;
 
-	private Integer dBInstanceStorage;
+    private String dBInstanceClass;
 
-	private String engineVersion;
+    private Integer dBInstanceStorage;
 
-	private String payType;
+    private String engineVersion;
 
-	private String dBInstanceDescription;
+    private String payType;
 
-	private String instanceNetworkType;
+    private String dBInstanceDescription;
 
-	private String vPCId;
+    private String instanceNetworkType;
 
-	private String vSwitchId;
+    private String vPCId;
 
-	private String privateIpAddress;
+    private String vSwitchId;
 
-	private String ownerAccount;
+    private String privateIpAddress;
 
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
+    private String ownerAccount;
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
-	}
+    public Long getOwnerId() {
+        return this.ownerId;
+    }
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
+    public void setOwnerId(Long ownerId) {
+        this.ownerId = ownerId;
+        putQueryParameter("OwnerId", ownerId);
+    }
 
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-	}
+    public String getResourceOwnerAccount() {
+        return this.resourceOwnerAccount;
+    }
 
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
+    public void setResourceOwnerAccount(String resourceOwnerAccount) {
+        this.resourceOwnerAccount = resourceOwnerAccount;
+        putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+    }
 
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", resourceOwnerId);
-	}
+    public Long getResourceOwnerId() {
+        return this.resourceOwnerId;
+    }
 
-	public String getClientToken() {
-		return this.clientToken;
-	}
+    public void setResourceOwnerId(Long resourceOwnerId) {
+        this.resourceOwnerId = resourceOwnerId;
+        putQueryParameter("ResourceOwnerId", resourceOwnerId);
+    }
 
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		putQueryParameter("ClientToken", clientToken);
-	}
+    public String getClientToken() {
+        return this.clientToken;
+    }
 
-	public String getZoneId() {
-		return this.zoneId;
-	}
+    public void setClientToken(String clientToken) {
+        this.clientToken = clientToken;
+        putQueryParameter("ClientToken", clientToken);
+    }
 
-	public void setZoneId(String zoneId) {
-		this.zoneId = zoneId;
-		putQueryParameter("ZoneId", zoneId);
-	}
+    public String getZoneId() {
+        return this.zoneId;
+    }
 
-	public String getDBInstanceId() {
-		return this.dBInstanceId;
-	}
+    public void setZoneId(String zoneId) {
+        this.zoneId = zoneId;
+        putQueryParameter("ZoneId", zoneId);
+    }
 
-	public void setDBInstanceId(String dBInstanceId) {
-		this.dBInstanceId = dBInstanceId;
-		putQueryParameter("DBInstanceId", dBInstanceId);
-	}
+    public String getDBInstanceId() {
+        return this.dBInstanceId;
+    }
 
-	public String getDBInstanceClass() {
-		return this.dBInstanceClass;
-	}
+    public void setDBInstanceId(String dBInstanceId) {
+        this.dBInstanceId = dBInstanceId;
+        putQueryParameter("DBInstanceId", dBInstanceId);
+    }
 
-	public void setDBInstanceClass(String dBInstanceClass) {
-		this.dBInstanceClass = dBInstanceClass;
-		putQueryParameter("DBInstanceClass", dBInstanceClass);
-	}
+    public String getDBInstanceClass() {
+        return this.dBInstanceClass;
+    }
 
-	public Integer getDBInstanceStorage() {
-		return this.dBInstanceStorage;
-	}
+    public void setDBInstanceClass(String dBInstanceClass) {
+        this.dBInstanceClass = dBInstanceClass;
+        putQueryParameter("DBInstanceClass", dBInstanceClass);
+    }
 
-	public void setDBInstanceStorage(Integer dBInstanceStorage) {
-		this.dBInstanceStorage = dBInstanceStorage;
-		putQueryParameter("DBInstanceStorage", dBInstanceStorage);
-	}
+    public Integer getDBInstanceStorage() {
+        return this.dBInstanceStorage;
+    }
 
-	public String getEngineVersion() {
-		return this.engineVersion;
-	}
+    public void setDBInstanceStorage(Integer dBInstanceStorage) {
+        this.dBInstanceStorage = dBInstanceStorage;
+        putQueryParameter("DBInstanceStorage", dBInstanceStorage);
+    }
 
-	public void setEngineVersion(String engineVersion) {
-		this.engineVersion = engineVersion;
-		putQueryParameter("EngineVersion", engineVersion);
-	}
+    public String getEngineVersion() {
+        return this.engineVersion;
+    }
 
-	public String getPayType() {
-		return this.payType;
-	}
+    public void setEngineVersion(String engineVersion) {
+        this.engineVersion = engineVersion;
+        putQueryParameter("EngineVersion", engineVersion);
+    }
 
-	public void setPayType(String payType) {
-		this.payType = payType;
-		putQueryParameter("PayType", payType);
-	}
+    public String getPayType() {
+        return this.payType;
+    }
 
-	public String getDBInstanceDescription() {
-		return this.dBInstanceDescription;
-	}
+    public void setPayType(String payType) {
+        this.payType = payType;
+        putQueryParameter("PayType", payType);
+    }
 
-	public void setDBInstanceDescription(String dBInstanceDescription) {
-		this.dBInstanceDescription = dBInstanceDescription;
-		putQueryParameter("DBInstanceDescription", dBInstanceDescription);
-	}
+    public String getDBInstanceDescription() {
+        return this.dBInstanceDescription;
+    }
 
-	public String getInstanceNetworkType() {
-		return this.instanceNetworkType;
-	}
+    public void setDBInstanceDescription(String dBInstanceDescription) {
+        this.dBInstanceDescription = dBInstanceDescription;
+        putQueryParameter("DBInstanceDescription", dBInstanceDescription);
+    }
 
-	public void setInstanceNetworkType(String instanceNetworkType) {
-		this.instanceNetworkType = instanceNetworkType;
-		putQueryParameter("InstanceNetworkType", instanceNetworkType);
-	}
+    public String getInstanceNetworkType() {
+        return this.instanceNetworkType;
+    }
 
-	public String getVPCId() {
-		return this.vPCId;
-	}
+    public void setInstanceNetworkType(String instanceNetworkType) {
+        this.instanceNetworkType = instanceNetworkType;
+        putQueryParameter("InstanceNetworkType", instanceNetworkType);
+    }
 
-	public void setVPCId(String vPCId) {
-		this.vPCId = vPCId;
-		putQueryParameter("VPCId", vPCId);
-	}
+    public String getVPCId() {
+        return this.vPCId;
+    }
 
-	public String getVSwitchId() {
-		return this.vSwitchId;
-	}
+    public void setVPCId(String vPCId) {
+        this.vPCId = vPCId;
+        putQueryParameter("VPCId", vPCId);
+    }
 
-	public void setVSwitchId(String vSwitchId) {
-		this.vSwitchId = vSwitchId;
-		putQueryParameter("VSwitchId", vSwitchId);
-	}
+    public String getVSwitchId() {
+        return this.vSwitchId;
+    }
 
-	public String getPrivateIpAddress() {
-		return this.privateIpAddress;
-	}
+    public void setVSwitchId(String vSwitchId) {
+        this.vSwitchId = vSwitchId;
+        putQueryParameter("VSwitchId", vSwitchId);
+    }
 
-	public void setPrivateIpAddress(String privateIpAddress) {
-		this.privateIpAddress = privateIpAddress;
-		putQueryParameter("PrivateIpAddress", privateIpAddress);
-	}
+    public String getPrivateIpAddress() {
+        return this.privateIpAddress;
+    }
 
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
+    public void setPrivateIpAddress(String privateIpAddress) {
+        this.privateIpAddress = privateIpAddress;
+        putQueryParameter("PrivateIpAddress", privateIpAddress);
+    }
 
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		putQueryParameter("OwnerAccount", ownerAccount);
-	}
+    public String getOwnerAccount() {
+        return this.ownerAccount;
+    }
 
-	@Override
-	public Class<CreateReadOnlyDBInstanceResponse> getResponseClass() {
-		return CreateReadOnlyDBInstanceResponse.class;
-	}
+    public void setOwnerAccount(String ownerAccount) {
+        this.ownerAccount = ownerAccount;
+        putQueryParameter("OwnerAccount", ownerAccount);
+    }
+
+    @Override
+    public Class<CreateReadOnlyDBInstanceResponse> getResponseClass() {
+        return CreateReadOnlyDBInstanceResponse.class;
+    }
 
 }

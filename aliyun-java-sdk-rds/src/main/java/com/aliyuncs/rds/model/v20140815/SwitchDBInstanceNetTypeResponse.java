@@ -24,22 +24,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
- * @version 
  */
 public class SwitchDBInstanceNetTypeResponse extends AcsResponse {
 
-	private String requestId;
+    private String requestId;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
+    public String getRequestId() {
+        return this.requestId;
+    }
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+    public void setRequestId(String requestId) {
+        this.requestId = requestId;
+    }
 
-	@Override
-	public SwitchDBInstanceNetTypeResponse getInstance(UnmarshallerContext context) {
-		return	SwitchDBInstanceNetTypeResponseUnmarshaller.unmarshall(this, context);
-	}
+    @Override
+    public SwitchDBInstanceNetTypeResponse getInstance(UnmarshallerContext context) {
+        return SwitchDBInstanceNetTypeResponseUnmarshaller.unmarshall(this, context);
+    }
 }

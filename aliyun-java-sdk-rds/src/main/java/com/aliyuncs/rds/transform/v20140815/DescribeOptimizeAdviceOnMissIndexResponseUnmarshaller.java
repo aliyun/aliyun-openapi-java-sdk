@@ -18,36 +18,47 @@
  */
 package com.aliyuncs.rds.transform.v20140815;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.aliyuncs.rds.model.v20140815.DescribeOptimizeAdviceOnMissIndexResponse;
 import com.aliyuncs.rds.model.v20140815.DescribeOptimizeAdviceOnMissIndexResponse.AdviceOnMissIndex;
 import com.aliyuncs.transform.UnmarshallerContext;
 
+import java.util.ArrayList;
+import java.util.List;
 
 public class DescribeOptimizeAdviceOnMissIndexResponseUnmarshaller {
 
-	public static DescribeOptimizeAdviceOnMissIndexResponse unmarshall(DescribeOptimizeAdviceOnMissIndexResponse describeOptimizeAdviceOnMissIndexResponse, UnmarshallerContext context) {
-		
-		describeOptimizeAdviceOnMissIndexResponse.setRequestId(context.stringValue("DescribeOptimizeAdviceOnMissIndexResponse.RequestId"));
-		describeOptimizeAdviceOnMissIndexResponse.setDBInstanceId(context.stringValue("DescribeOptimizeAdviceOnMissIndexResponse.DBInstanceId"));
-		describeOptimizeAdviceOnMissIndexResponse.setTotalRecordsCount(context.integerValue("DescribeOptimizeAdviceOnMissIndexResponse.TotalRecordsCount"));
-		describeOptimizeAdviceOnMissIndexResponse.setPageNumber(context.integerValue("DescribeOptimizeAdviceOnMissIndexResponse.PageNumber"));
-		describeOptimizeAdviceOnMissIndexResponse.setPageRecordCount(context.integerValue("DescribeOptimizeAdviceOnMissIndexResponse.PageRecordCount"));
+    public static DescribeOptimizeAdviceOnMissIndexResponse unmarshall(
+            DescribeOptimizeAdviceOnMissIndexResponse describeOptimizeAdviceOnMissIndexResponse,
+            UnmarshallerContext context) {
 
-		List<AdviceOnMissIndex> items = new ArrayList<AdviceOnMissIndex>();
-		for (int i = 0; i < context.lengthValue("DescribeOptimizeAdviceOnMissIndexResponse.Items.Length"); i++) {
-			AdviceOnMissIndex adviceOnMissIndex = new AdviceOnMissIndex();
-			adviceOnMissIndex.setDBName(context.stringValue("DescribeOptimizeAdviceOnMissIndexResponse.Items["+ i +"].DBName"));
-			adviceOnMissIndex.setTableName(context.stringValue("DescribeOptimizeAdviceOnMissIndexResponse.Items["+ i +"].TableName"));
-			adviceOnMissIndex.setQueryColumn(context.stringValue("DescribeOptimizeAdviceOnMissIndexResponse.Items["+ i +"].QueryColumn"));
-			adviceOnMissIndex.setSQLText(context.stringValue("DescribeOptimizeAdviceOnMissIndexResponse.Items["+ i +"].SQLText"));
+        describeOptimizeAdviceOnMissIndexResponse.setRequestId(
+                context.stringValue("DescribeOptimizeAdviceOnMissIndexResponse.RequestId"));
+        describeOptimizeAdviceOnMissIndexResponse.setDBInstanceId(
+                context.stringValue("DescribeOptimizeAdviceOnMissIndexResponse.DBInstanceId"));
+        describeOptimizeAdviceOnMissIndexResponse.setTotalRecordsCount(context.integerValue(
+                "DescribeOptimizeAdviceOnMissIndexResponse.TotalRecordsCount"));
+        describeOptimizeAdviceOnMissIndexResponse.setPageNumber(
+                context.integerValue("DescribeOptimizeAdviceOnMissIndexResponse.PageNumber"));
+        describeOptimizeAdviceOnMissIndexResponse.setPageRecordCount(
+                context.integerValue("DescribeOptimizeAdviceOnMissIndexResponse.PageRecordCount"));
 
-			items.add(adviceOnMissIndex);
-		}
-		describeOptimizeAdviceOnMissIndexResponse.setItems(items);
-	 
-	 	return describeOptimizeAdviceOnMissIndexResponse;
-	}
+        List<AdviceOnMissIndex> items = new ArrayList<AdviceOnMissIndex>();
+        for (int i = 0; i < context
+                .lengthValue("DescribeOptimizeAdviceOnMissIndexResponse.Items.Length"); i++) {
+            AdviceOnMissIndex adviceOnMissIndex = new AdviceOnMissIndex();
+            adviceOnMissIndex.setDBName(context.stringValue(
+                    "DescribeOptimizeAdviceOnMissIndexResponse.Items[" + i + "].DBName"));
+            adviceOnMissIndex.setTableName(context.stringValue(
+                    "DescribeOptimizeAdviceOnMissIndexResponse.Items[" + i + "].TableName"));
+            adviceOnMissIndex.setQueryColumn(context.stringValue(
+                    "DescribeOptimizeAdviceOnMissIndexResponse.Items[" + i + "].QueryColumn"));
+            adviceOnMissIndex.setSQLText(context.stringValue(
+                    "DescribeOptimizeAdviceOnMissIndexResponse.Items[" + i + "].SQLText"));
+
+            items.add(adviceOnMissIndex);
+        }
+        describeOptimizeAdviceOnMissIndexResponse.setItems(items);
+
+        return describeOptimizeAdviceOnMissIndexResponse;
+    }
 }

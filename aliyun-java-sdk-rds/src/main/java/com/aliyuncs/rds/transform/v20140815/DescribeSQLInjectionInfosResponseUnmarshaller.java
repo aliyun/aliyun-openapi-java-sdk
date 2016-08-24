@@ -18,39 +18,53 @@
  */
 package com.aliyuncs.rds.transform.v20140815;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.aliyuncs.rds.model.v20140815.DescribeSQLInjectionInfosResponse;
 import com.aliyuncs.rds.model.v20140815.DescribeSQLInjectionInfosResponse.SQLInjectionInfo;
 import com.aliyuncs.transform.UnmarshallerContext;
 
+import java.util.ArrayList;
+import java.util.List;
 
 public class DescribeSQLInjectionInfosResponseUnmarshaller {
 
-	public static DescribeSQLInjectionInfosResponse unmarshall(DescribeSQLInjectionInfosResponse describeSQLInjectionInfosResponse, UnmarshallerContext context) {
-		
-		describeSQLInjectionInfosResponse.setRequestId(context.stringValue("DescribeSQLInjectionInfosResponse.RequestId"));
-		describeSQLInjectionInfosResponse.setEngine(context.stringValue("DescribeSQLInjectionInfosResponse.Engine"));
-		describeSQLInjectionInfosResponse.setTotalRecordCount(context.integerValue("DescribeSQLInjectionInfosResponse.TotalRecordCount"));
-		describeSQLInjectionInfosResponse.setPageNumber(context.integerValue("DescribeSQLInjectionInfosResponse.PageNumber"));
-		describeSQLInjectionInfosResponse.setPageRecordCount(context.integerValue("DescribeSQLInjectionInfosResponse.PageRecordCount"));
+    public static DescribeSQLInjectionInfosResponse unmarshall(
+            DescribeSQLInjectionInfosResponse describeSQLInjectionInfosResponse,
+            UnmarshallerContext context) {
 
-		List<SQLInjectionInfo> items = new ArrayList<SQLInjectionInfo>();
-		for (int i = 0; i < context.lengthValue("DescribeSQLInjectionInfosResponse.Items.Length"); i++) {
-			SQLInjectionInfo sQLInjectionInfo = new SQLInjectionInfo();
-			sQLInjectionInfo.setDBName(context.stringValue("DescribeSQLInjectionInfosResponse.Items["+ i +"].DBName"));
-			sQLInjectionInfo.setSQLText(context.stringValue("DescribeSQLInjectionInfosResponse.Items["+ i +"].SQLText"));
-			sQLInjectionInfo.setLatencyTime(context.stringValue("DescribeSQLInjectionInfosResponse.Items["+ i +"].LatencyTime"));
-			sQLInjectionInfo.setHostAddress(context.stringValue("DescribeSQLInjectionInfosResponse.Items["+ i +"].HostAddress"));
-			sQLInjectionInfo.setExecuteTime(context.stringValue("DescribeSQLInjectionInfosResponse.Items["+ i +"].ExecuteTime"));
-			sQLInjectionInfo.setAccountName(context.stringValue("DescribeSQLInjectionInfosResponse.Items["+ i +"].AccountName"));
-			sQLInjectionInfo.setEffectRowCount(context.stringValue("DescribeSQLInjectionInfosResponse.Items["+ i +"].EffectRowCount"));
+        describeSQLInjectionInfosResponse
+                .setRequestId(context.stringValue("DescribeSQLInjectionInfosResponse.RequestId"));
+        describeSQLInjectionInfosResponse
+                .setEngine(context.stringValue("DescribeSQLInjectionInfosResponse.Engine"));
+        describeSQLInjectionInfosResponse.setTotalRecordCount(
+                context.integerValue("DescribeSQLInjectionInfosResponse.TotalRecordCount"));
+        describeSQLInjectionInfosResponse.setPageNumber(
+                context.integerValue("DescribeSQLInjectionInfosResponse.PageNumber"));
+        describeSQLInjectionInfosResponse.setPageRecordCount(
+                context.integerValue("DescribeSQLInjectionInfosResponse.PageRecordCount"));
 
-			items.add(sQLInjectionInfo);
-		}
-		describeSQLInjectionInfosResponse.setItems(items);
-	 
-	 	return describeSQLInjectionInfosResponse;
-	}
+        List<SQLInjectionInfo> items = new ArrayList<SQLInjectionInfo>();
+        for (int i = 0;
+             i < context.lengthValue("DescribeSQLInjectionInfosResponse.Items.Length"); i++) {
+            SQLInjectionInfo sQLInjectionInfo = new SQLInjectionInfo();
+            sQLInjectionInfo.setDBName(context.stringValue(
+                    "DescribeSQLInjectionInfosResponse.Items[" + i + "].DBName"));
+            sQLInjectionInfo.setSQLText(context.stringValue(
+                    "DescribeSQLInjectionInfosResponse.Items[" + i + "].SQLText"));
+            sQLInjectionInfo.setLatencyTime(context.stringValue(
+                    "DescribeSQLInjectionInfosResponse.Items[" + i + "].LatencyTime"));
+            sQLInjectionInfo.setHostAddress(context.stringValue(
+                    "DescribeSQLInjectionInfosResponse.Items[" + i + "].HostAddress"));
+            sQLInjectionInfo.setExecuteTime(context.stringValue(
+                    "DescribeSQLInjectionInfosResponse.Items[" + i + "].ExecuteTime"));
+            sQLInjectionInfo.setAccountName(context.stringValue(
+                    "DescribeSQLInjectionInfosResponse.Items[" + i + "].AccountName"));
+            sQLInjectionInfo.setEffectRowCount(context.stringValue(
+                    "DescribeSQLInjectionInfosResponse.Items[" + i + "].EffectRowCount"));
+
+            items.add(sQLInjectionInfo);
+        }
+        describeSQLInjectionInfosResponse.setItems(items);
+
+        return describeSQLInjectionInfosResponse;
+    }
 }

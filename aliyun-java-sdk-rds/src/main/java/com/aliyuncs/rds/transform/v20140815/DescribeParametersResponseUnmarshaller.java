@@ -18,44 +18,56 @@
  */
 package com.aliyuncs.rds.transform.v20140815;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.aliyuncs.rds.model.v20140815.DescribeParametersResponse;
 import com.aliyuncs.rds.model.v20140815.DescribeParametersResponse.DBInstanceParameter;
 import com.aliyuncs.transform.UnmarshallerContext;
 
+import java.util.ArrayList;
+import java.util.List;
 
 public class DescribeParametersResponseUnmarshaller {
 
-	public static DescribeParametersResponse unmarshall(DescribeParametersResponse describeParametersResponse, UnmarshallerContext context) {
-		
-		describeParametersResponse.setRequestId(context.stringValue("DescribeParametersResponse.RequestId"));
-		describeParametersResponse.setEngine(context.stringValue("DescribeParametersResponse.Engine"));
-		describeParametersResponse.setEngineVersion(context.stringValue("DescribeParametersResponse.EngineVersion"));
+    public static DescribeParametersResponse unmarshall(
+            DescribeParametersResponse describeParametersResponse, UnmarshallerContext context) {
 
-		List<DBInstanceParameter> configParameters = new ArrayList<DBInstanceParameter>();
-		for (int i = 0; i < context.lengthValue("DescribeParametersResponse.ConfigParameters.Length"); i++) {
-			DBInstanceParameter dBInstanceParameter = new DBInstanceParameter();
-			dBInstanceParameter.setParameterName(context.stringValue("DescribeParametersResponse.ConfigParameters["+ i +"].ParameterName"));
-			dBInstanceParameter.setParameterValue(context.stringValue("DescribeParametersResponse.ConfigParameters["+ i +"].ParameterValue"));
-			dBInstanceParameter.setParameterDescription(context.stringValue("DescribeParametersResponse.ConfigParameters["+ i +"].ParameterDescription"));
+        describeParametersResponse
+                .setRequestId(context.stringValue("DescribeParametersResponse.RequestId"));
+        describeParametersResponse
+                .setEngine(context.stringValue("DescribeParametersResponse.Engine"));
+        describeParametersResponse
+                .setEngineVersion(context.stringValue("DescribeParametersResponse.EngineVersion"));
 
-			configParameters.add(dBInstanceParameter);
-		}
-		describeParametersResponse.setConfigParameters(configParameters);
+        List<DBInstanceParameter> configParameters = new ArrayList<DBInstanceParameter>();
+        for (int i = 0;
+             i < context.lengthValue("DescribeParametersResponse.ConfigParameters.Length"); i++) {
+            DBInstanceParameter dBInstanceParameter = new DBInstanceParameter();
+            dBInstanceParameter.setParameterName(context.stringValue(
+                    "DescribeParametersResponse.ConfigParameters[" + i + "].ParameterName"));
+            dBInstanceParameter.setParameterValue(context.stringValue(
+                    "DescribeParametersResponse.ConfigParameters[" + i + "].ParameterValue"));
+            dBInstanceParameter.setParameterDescription(context.stringValue(
+                    "DescribeParametersResponse.ConfigParameters[" + i + "].ParameterDescription"));
 
-		List<DBInstanceParameter> runningParameters = new ArrayList<DBInstanceParameter>();
-		for (int i = 0; i < context.lengthValue("DescribeParametersResponse.RunningParameters.Length"); i++) {
-			DBInstanceParameter dBInstanceParameter = new DBInstanceParameter();
-			dBInstanceParameter.setParameterName(context.stringValue("DescribeParametersResponse.RunningParameters["+ i +"].ParameterName"));
-			dBInstanceParameter.setParameterValue(context.stringValue("DescribeParametersResponse.RunningParameters["+ i +"].ParameterValue"));
-			dBInstanceParameter.setParameterDescription(context.stringValue("DescribeParametersResponse.RunningParameters["+ i +"].ParameterDescription"));
+            configParameters.add(dBInstanceParameter);
+        }
+        describeParametersResponse.setConfigParameters(configParameters);
 
-			runningParameters.add(dBInstanceParameter);
-		}
-		describeParametersResponse.setRunningParameters(runningParameters);
-	 
-	 	return describeParametersResponse;
-	}
+        List<DBInstanceParameter> runningParameters = new ArrayList<DBInstanceParameter>();
+        for (int i = 0;
+             i < context.lengthValue("DescribeParametersResponse.RunningParameters.Length"); i++) {
+            DBInstanceParameter dBInstanceParameter = new DBInstanceParameter();
+            dBInstanceParameter.setParameterName(context.stringValue(
+                    "DescribeParametersResponse.RunningParameters[" + i + "].ParameterName"));
+            dBInstanceParameter.setParameterValue(context.stringValue(
+                    "DescribeParametersResponse.RunningParameters[" + i + "].ParameterValue"));
+            dBInstanceParameter.setParameterDescription(context.stringValue(
+                    "DescribeParametersResponse.RunningParameters[" + i
+                            + "].ParameterDescription"));
+
+            runningParameters.add(dBInstanceParameter);
+        }
+        describeParametersResponse.setRunningParameters(runningParameters);
+
+        return describeParametersResponse;
+    }
 }

@@ -22,72 +22,71 @@ import com.aliyuncs.RpcAcsRequest;
 
 /**
  * @author auto create
- * @version 
  */
 public class DescribeRegionsTestRequest extends RpcAcsRequest<DescribeRegionsTestResponse> {
-	
-	public DescribeRegionsTestRequest() {
-		super("Rds", "2014-08-15", "DescribeRegionsTest");
-	}
 
-	private Integer ownerId;
+    public DescribeRegionsTestRequest() {
+        super("Rds", "2014-08-15", "DescribeRegionsTest");
+    }
 
-	private String resourceOwnerAccount;
+    private Integer ownerId;
 
-	private Integer resourceOwnerId;
+    private String resourceOwnerAccount;
 
-	private String clientToken;
+    private Integer resourceOwnerId;
 
-	private String ownerAccount;
+    private String clientToken;
 
-	public Integer getownerId() {
-		return this.ownerId;
-	}
+    private String ownerAccount;
 
-	public void setownerId(Integer ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("ownerId", String.valueOf(ownerId));
-	}
+    public Integer getownerId() {
+        return this.ownerId;
+    }
 
-	public String getresourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
+    public void setownerId(Integer ownerId) {
+        this.ownerId = ownerId;
+        putQueryParameter("ownerId", String.valueOf(ownerId));
+    }
 
-	public void setresourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		putQueryParameter("resourceOwnerAccount", resourceOwnerAccount);
-	}
+    public String getresourceOwnerAccount() {
+        return this.resourceOwnerAccount;
+    }
 
-	public Integer getresourceOwnerId() {
-		return this.resourceOwnerId;
-	}
+    public void setresourceOwnerAccount(String resourceOwnerAccount) {
+        this.resourceOwnerAccount = resourceOwnerAccount;
+        putQueryParameter("resourceOwnerAccount", resourceOwnerAccount);
+    }
 
-	public void setresourceOwnerId(Integer resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("resourceOwnerId", String.valueOf(resourceOwnerId));
-	}
+    public Integer getresourceOwnerId() {
+        return this.resourceOwnerId;
+    }
 
-	public String getClientToken() {
-		return this.clientToken;
-	}
+    public void setresourceOwnerId(Integer resourceOwnerId) {
+        this.resourceOwnerId = resourceOwnerId;
+        putQueryParameter("resourceOwnerId", String.valueOf(resourceOwnerId));
+    }
 
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		putQueryParameter("ClientToken", clientToken);
-	}
+    public String getClientToken() {
+        return this.clientToken;
+    }
 
-	public String getownerAccount() {
-		return this.ownerAccount;
-	}
+    public void setClientToken(String clientToken) {
+        this.clientToken = clientToken;
+        putQueryParameter("ClientToken", clientToken);
+    }
 
-	public void setownerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		putQueryParameter("ownerAccount", ownerAccount);
-	}
+    public String getownerAccount() {
+        return this.ownerAccount;
+    }
 
-	@Override
-	public Class<DescribeRegionsTestResponse> getResponseClass() {
-		return DescribeRegionsTestResponse.class;
-	}
+    public void setownerAccount(String ownerAccount) {
+        this.ownerAccount = ownerAccount;
+        putQueryParameter("ownerAccount", ownerAccount);
+    }
+
+    @Override
+    public Class<DescribeRegionsTestResponse> getResponseClass() {
+        return DescribeRegionsTestResponse.class;
+    }
 
 }

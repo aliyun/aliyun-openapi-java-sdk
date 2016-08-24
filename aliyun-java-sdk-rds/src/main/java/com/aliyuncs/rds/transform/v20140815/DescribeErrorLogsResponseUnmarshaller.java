@@ -18,33 +18,39 @@
  */
 package com.aliyuncs.rds.transform.v20140815;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.aliyuncs.rds.model.v20140815.DescribeErrorLogsResponse;
 import com.aliyuncs.rds.model.v20140815.DescribeErrorLogsResponse.ErrorLog;
 import com.aliyuncs.transform.UnmarshallerContext;
 
+import java.util.ArrayList;
+import java.util.List;
 
 public class DescribeErrorLogsResponseUnmarshaller {
 
-	public static DescribeErrorLogsResponse unmarshall(DescribeErrorLogsResponse describeErrorLogsResponse, UnmarshallerContext context) {
-		
-		describeErrorLogsResponse.setRequestId(context.stringValue("DescribeErrorLogsResponse.RequestId"));
-		describeErrorLogsResponse.setTotalRecordCount(context.integerValue("DescribeErrorLogsResponse.TotalRecordCount"));
-		describeErrorLogsResponse.setPageNumber(context.integerValue("DescribeErrorLogsResponse.PageNumber"));
-		describeErrorLogsResponse.setPageRecordCount(context.integerValue("DescribeErrorLogsResponse.PageRecordCount"));
+    public static DescribeErrorLogsResponse unmarshall(
+            DescribeErrorLogsResponse describeErrorLogsResponse, UnmarshallerContext context) {
 
-		List<ErrorLog> items = new ArrayList<ErrorLog>();
-		for (int i = 0; i < context.lengthValue("DescribeErrorLogsResponse.Items.Length"); i++) {
-			ErrorLog errorLog = new ErrorLog();
-			errorLog.setErrorInfo(context.stringValue("DescribeErrorLogsResponse.Items["+ i +"].ErrorInfo"));
-			errorLog.setCreateTime(context.stringValue("DescribeErrorLogsResponse.Items["+ i +"].CreateTime"));
+        describeErrorLogsResponse
+                .setRequestId(context.stringValue("DescribeErrorLogsResponse.RequestId"));
+        describeErrorLogsResponse.setTotalRecordCount(
+                context.integerValue("DescribeErrorLogsResponse.TotalRecordCount"));
+        describeErrorLogsResponse
+                .setPageNumber(context.integerValue("DescribeErrorLogsResponse.PageNumber"));
+        describeErrorLogsResponse.setPageRecordCount(
+                context.integerValue("DescribeErrorLogsResponse.PageRecordCount"));
 
-			items.add(errorLog);
-		}
-		describeErrorLogsResponse.setItems(items);
-	 
-	 	return describeErrorLogsResponse;
-	}
+        List<ErrorLog> items = new ArrayList<ErrorLog>();
+        for (int i = 0; i < context.lengthValue("DescribeErrorLogsResponse.Items.Length"); i++) {
+            ErrorLog errorLog = new ErrorLog();
+            errorLog.setErrorInfo(
+                    context.stringValue("DescribeErrorLogsResponse.Items[" + i + "].ErrorInfo"));
+            errorLog.setCreateTime(
+                    context.stringValue("DescribeErrorLogsResponse.Items[" + i + "].CreateTime"));
+
+            items.add(errorLog);
+        }
+        describeErrorLogsResponse.setItems(items);
+
+        return describeErrorLogsResponse;
+    }
 }

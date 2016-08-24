@@ -21,14 +21,17 @@ package com.aliyuncs.rds.transform.v20140815;
 import com.aliyuncs.rds.model.v20140815.ImportDatabaseBetweenInstancesMaLiJieResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
-
 public class ImportDatabaseBetweenInstancesMaLiJieResponseUnmarshaller {
 
-	public static ImportDatabaseBetweenInstancesMaLiJieResponse unmarshall(ImportDatabaseBetweenInstancesMaLiJieResponse importDatabaseBetweenInstancesMaLiJieResponse, UnmarshallerContext context) {
-		
-		importDatabaseBetweenInstancesMaLiJieResponse.setRequestId(context.stringValue("ImportDatabaseBetweenInstancesMaLiJieResponse.RequestId"));
-		importDatabaseBetweenInstancesMaLiJieResponse.setImportId(context.stringValue("ImportDatabaseBetweenInstancesMaLiJieResponse.ImportId"));
-	 
-	 	return importDatabaseBetweenInstancesMaLiJieResponse;
-	}
+    public static ImportDatabaseBetweenInstancesMaLiJieResponse unmarshall(
+            ImportDatabaseBetweenInstancesMaLiJieResponse importDatabaseBetweenInstancesMaLiJieResponse,
+            UnmarshallerContext context) {
+
+        importDatabaseBetweenInstancesMaLiJieResponse.setRequestId(
+                context.stringValue("ImportDatabaseBetweenInstancesMaLiJieResponse.RequestId"));
+        importDatabaseBetweenInstancesMaLiJieResponse.setImportId(
+                context.stringValue("ImportDatabaseBetweenInstancesMaLiJieResponse.ImportId"));
+
+        return importDatabaseBetweenInstancesMaLiJieResponse;
+    }
 }

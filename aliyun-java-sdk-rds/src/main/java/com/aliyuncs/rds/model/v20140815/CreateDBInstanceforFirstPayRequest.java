@@ -22,160 +22,160 @@ import com.aliyuncs.RpcAcsRequest;
 
 /**
  * @author auto create
- * @version 
  */
-public class CreateDBInstanceforFirstPayRequest extends RpcAcsRequest<CreateDBInstanceforFirstPayResponse> {
-	
-	public CreateDBInstanceforFirstPayRequest() {
-		super("Rds", "2014-08-15", "CreateDBInstanceforFirstPay");
-	}
+public class CreateDBInstanceforFirstPayRequest
+        extends RpcAcsRequest<CreateDBInstanceforFirstPayResponse> {
 
-	private Long uid;
+    public CreateDBInstanceforFirstPayRequest() {
+        super("Rds", "2014-08-15", "CreateDBInstanceforFirstPay");
+    }
 
-	private String bid;
+    private Long uid;
 
-	private String uidLoginEmail;
+    private String bid;
 
-	private String bidLoginEmail;
+    private String uidLoginEmail;
 
-	private String engine;
+    private String bidLoginEmail;
 
-	private String engineVersion;
+    private String engine;
 
-	private String dBInstanceClass;
+    private String engineVersion;
 
-	private Integer dBInstanceStorage;
+    private String dBInstanceClass;
 
-	private String dBInstanceNetType;
+    private Integer dBInstanceStorage;
 
-	private String characterSetName;
+    private String dBInstanceNetType;
 
-	private String dBInstanceRemarks;
+    private String characterSetName;
 
-	private String clientToken;
+    private String dBInstanceRemarks;
 
-	private String ownerAccount;
+    private String clientToken;
 
-	public Long getuid() {
-		return this.uid;
-	}
+    private String ownerAccount;
 
-	public void setuid(Long uid) {
-		this.uid = uid;
-		putQueryParameter("uid", String.valueOf(uid));
-	}
+    public Long getuid() {
+        return this.uid;
+    }
 
-	public String getbid() {
-		return this.bid;
-	}
+    public void setuid(Long uid) {
+        this.uid = uid;
+        putQueryParameter("uid", String.valueOf(uid));
+    }
 
-	public void setbid(String bid) {
-		this.bid = bid;
-		putQueryParameter("bid", bid);
-	}
+    public String getbid() {
+        return this.bid;
+    }
 
-	public String getuidLoginEmail() {
-		return this.uidLoginEmail;
-	}
+    public void setbid(String bid) {
+        this.bid = bid;
+        putQueryParameter("bid", bid);
+    }
 
-	public void setuidLoginEmail(String uidLoginEmail) {
-		this.uidLoginEmail = uidLoginEmail;
-		putQueryParameter("uidLoginEmail", uidLoginEmail);
-	}
+    public String getuidLoginEmail() {
+        return this.uidLoginEmail;
+    }
 
-	public String getbidLoginEmail() {
-		return this.bidLoginEmail;
-	}
+    public void setuidLoginEmail(String uidLoginEmail) {
+        this.uidLoginEmail = uidLoginEmail;
+        putQueryParameter("uidLoginEmail", uidLoginEmail);
+    }
 
-	public void setbidLoginEmail(String bidLoginEmail) {
-		this.bidLoginEmail = bidLoginEmail;
-		putQueryParameter("bidLoginEmail", bidLoginEmail);
-	}
+    public String getbidLoginEmail() {
+        return this.bidLoginEmail;
+    }
 
-	public String getEngine() {
-		return this.engine;
-	}
+    public void setbidLoginEmail(String bidLoginEmail) {
+        this.bidLoginEmail = bidLoginEmail;
+        putQueryParameter("bidLoginEmail", bidLoginEmail);
+    }
 
-	public void setEngine(String engine) {
-		this.engine = engine;
-		putQueryParameter("Engine", engine);
-	}
+    public String getEngine() {
+        return this.engine;
+    }
 
-	public String getEngineVersion() {
-		return this.engineVersion;
-	}
+    public void setEngine(String engine) {
+        this.engine = engine;
+        putQueryParameter("Engine", engine);
+    }
 
-	public void setEngineVersion(String engineVersion) {
-		this.engineVersion = engineVersion;
-		putQueryParameter("EngineVersion", engineVersion);
-	}
+    public String getEngineVersion() {
+        return this.engineVersion;
+    }
 
-	public String getDBInstanceClass() {
-		return this.dBInstanceClass;
-	}
+    public void setEngineVersion(String engineVersion) {
+        this.engineVersion = engineVersion;
+        putQueryParameter("EngineVersion", engineVersion);
+    }
 
-	public void setDBInstanceClass(String dBInstanceClass) {
-		this.dBInstanceClass = dBInstanceClass;
-		putQueryParameter("DBInstanceClass", dBInstanceClass);
-	}
+    public String getDBInstanceClass() {
+        return this.dBInstanceClass;
+    }
 
-	public Integer getDBInstanceStorage() {
-		return this.dBInstanceStorage;
-	}
+    public void setDBInstanceClass(String dBInstanceClass) {
+        this.dBInstanceClass = dBInstanceClass;
+        putQueryParameter("DBInstanceClass", dBInstanceClass);
+    }
 
-	public void setDBInstanceStorage(Integer dBInstanceStorage) {
-		this.dBInstanceStorage = dBInstanceStorage;
-		putQueryParameter("DBInstanceStorage", String.valueOf(dBInstanceStorage));
-	}
+    public Integer getDBInstanceStorage() {
+        return this.dBInstanceStorage;
+    }
 
-	public String getDBInstanceNetType() {
-		return this.dBInstanceNetType;
-	}
+    public void setDBInstanceStorage(Integer dBInstanceStorage) {
+        this.dBInstanceStorage = dBInstanceStorage;
+        putQueryParameter("DBInstanceStorage", String.valueOf(dBInstanceStorage));
+    }
 
-	public void setDBInstanceNetType(String dBInstanceNetType) {
-		this.dBInstanceNetType = dBInstanceNetType;
-		putQueryParameter("DBInstanceNetType", dBInstanceNetType);
-	}
+    public String getDBInstanceNetType() {
+        return this.dBInstanceNetType;
+    }
 
-	public String getCharacterSetName() {
-		return this.characterSetName;
-	}
+    public void setDBInstanceNetType(String dBInstanceNetType) {
+        this.dBInstanceNetType = dBInstanceNetType;
+        putQueryParameter("DBInstanceNetType", dBInstanceNetType);
+    }
 
-	public void setCharacterSetName(String characterSetName) {
-		this.characterSetName = characterSetName;
-		putQueryParameter("CharacterSetName", characterSetName);
-	}
+    public String getCharacterSetName() {
+        return this.characterSetName;
+    }
 
-	public String getDBInstanceRemarks() {
-		return this.dBInstanceRemarks;
-	}
+    public void setCharacterSetName(String characterSetName) {
+        this.characterSetName = characterSetName;
+        putQueryParameter("CharacterSetName", characterSetName);
+    }
 
-	public void setDBInstanceRemarks(String dBInstanceRemarks) {
-		this.dBInstanceRemarks = dBInstanceRemarks;
-		putQueryParameter("DBInstanceRemarks", dBInstanceRemarks);
-	}
+    public String getDBInstanceRemarks() {
+        return this.dBInstanceRemarks;
+    }
 
-	public String getClientToken() {
-		return this.clientToken;
-	}
+    public void setDBInstanceRemarks(String dBInstanceRemarks) {
+        this.dBInstanceRemarks = dBInstanceRemarks;
+        putQueryParameter("DBInstanceRemarks", dBInstanceRemarks);
+    }
 
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		putQueryParameter("ClientToken", clientToken);
-	}
+    public String getClientToken() {
+        return this.clientToken;
+    }
 
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
+    public void setClientToken(String clientToken) {
+        this.clientToken = clientToken;
+        putQueryParameter("ClientToken", clientToken);
+    }
 
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		putQueryParameter("OwnerAccount", ownerAccount);
-	}
+    public String getOwnerAccount() {
+        return this.ownerAccount;
+    }
 
-	@Override
-	public Class<CreateDBInstanceforFirstPayResponse> getResponseClass() {
-		return CreateDBInstanceforFirstPayResponse.class;
-	}
+    public void setOwnerAccount(String ownerAccount) {
+        this.ownerAccount = ownerAccount;
+        putQueryParameter("OwnerAccount", ownerAccount);
+    }
+
+    @Override
+    public Class<CreateDBInstanceforFirstPayResponse> getResponseClass() {
+        return CreateDBInstanceforFirstPayResponse.class;
+    }
 
 }

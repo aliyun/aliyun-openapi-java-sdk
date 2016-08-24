@@ -24,22 +24,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
- * @version 
  */
 public class RestartDBInstanceResponse extends AcsResponse {
 
-	private String requestId;
+    private String requestId;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
+    public String getRequestId() {
+        return this.requestId;
+    }
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+    public void setRequestId(String requestId) {
+        this.requestId = requestId;
+    }
 
-	@Override
-	public RestartDBInstanceResponse getInstance(UnmarshallerContext context) {
-		return	RestartDBInstanceResponseUnmarshaller.unmarshall(this, context);
-	}
+    @Override
+    public RestartDBInstanceResponse getInstance(UnmarshallerContext context) {
+        return RestartDBInstanceResponseUnmarshaller.unmarshall(this, context);
+    }
 }

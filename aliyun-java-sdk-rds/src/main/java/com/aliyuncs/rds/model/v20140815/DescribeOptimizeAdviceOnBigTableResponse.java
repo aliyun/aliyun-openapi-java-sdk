@@ -18,122 +18,122 @@
  */
 package com.aliyuncs.rds.model.v20140815;
 
-import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.rds.transform.v20140815.DescribeOptimizeAdviceOnBigTableResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
+import java.util.List;
+
 /**
  * @author auto create
- * @version 
  */
 public class DescribeOptimizeAdviceOnBigTableResponse extends AcsResponse {
 
-	private String requestId;
+    private String requestId;
 
-	private Integer totalRecordsCount;
+    private Integer totalRecordsCount;
 
-	private Integer pageNumber;
+    private Integer pageNumber;
 
-	private Integer pageRecordCount;
+    private Integer pageRecordCount;
 
-	private List<AdviceOnBigTable> items;
+    private List<AdviceOnBigTable> items;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
+    public String getRequestId() {
+        return this.requestId;
+    }
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+    public void setRequestId(String requestId) {
+        this.requestId = requestId;
+    }
 
-	public Integer getTotalRecordsCount() {
-		return this.totalRecordsCount;
-	}
+    public Integer getTotalRecordsCount() {
+        return this.totalRecordsCount;
+    }
 
-	public void setTotalRecordsCount(Integer totalRecordsCount) {
-		this.totalRecordsCount = totalRecordsCount;
-	}
+    public void setTotalRecordsCount(Integer totalRecordsCount) {
+        this.totalRecordsCount = totalRecordsCount;
+    }
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
+    public Integer getPageNumber() {
+        return this.pageNumber;
+    }
 
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-	}
+    public void setPageNumber(Integer pageNumber) {
+        this.pageNumber = pageNumber;
+    }
 
-	public Integer getPageRecordCount() {
-		return this.pageRecordCount;
-	}
+    public Integer getPageRecordCount() {
+        return this.pageRecordCount;
+    }
 
-	public void setPageRecordCount(Integer pageRecordCount) {
-		this.pageRecordCount = pageRecordCount;
-	}
+    public void setPageRecordCount(Integer pageRecordCount) {
+        this.pageRecordCount = pageRecordCount;
+    }
 
-	public List<AdviceOnBigTable> getItems() {
-		return this.items;
-	}
+    public List<AdviceOnBigTable> getItems() {
+        return this.items;
+    }
 
-	public void setItems(List<AdviceOnBigTable> items) {
-		this.items = items;
-	}
+    public void setItems(List<AdviceOnBigTable> items) {
+        this.items = items;
+    }
 
-	public static class AdviceOnBigTable {
+    public static class AdviceOnBigTable {
 
-		private String dBName;
+        private String dBName;
 
-		private String tableName;
+        private String tableName;
 
-		private Long tableSize;
+        private Long tableSize;
 
-		private Long dataSize;
+        private Long dataSize;
 
-		private Long indexSize;
+        private Long indexSize;
 
-		public String getDBName() {
-			return this.dBName;
-		}
+        public String getDBName() {
+            return this.dBName;
+        }
 
-		public void setDBName(String dBName) {
-			this.dBName = dBName;
-		}
+        public void setDBName(String dBName) {
+            this.dBName = dBName;
+        }
 
-		public String getTableName() {
-			return this.tableName;
-		}
+        public String getTableName() {
+            return this.tableName;
+        }
 
-		public void setTableName(String tableName) {
-			this.tableName = tableName;
-		}
+        public void setTableName(String tableName) {
+            this.tableName = tableName;
+        }
 
-		public Long getTableSize() {
-			return this.tableSize;
-		}
+        public Long getTableSize() {
+            return this.tableSize;
+        }
 
-		public void setTableSize(Long tableSize) {
-			this.tableSize = tableSize;
-		}
+        public void setTableSize(Long tableSize) {
+            this.tableSize = tableSize;
+        }
 
-		public Long getDataSize() {
-			return this.dataSize;
-		}
+        public Long getDataSize() {
+            return this.dataSize;
+        }
 
-		public void setDataSize(Long dataSize) {
-			this.dataSize = dataSize;
-		}
+        public void setDataSize(Long dataSize) {
+            this.dataSize = dataSize;
+        }
 
-		public Long getIndexSize() {
-			return this.indexSize;
-		}
+        public Long getIndexSize() {
+            return this.indexSize;
+        }
 
-		public void setIndexSize(Long indexSize) {
-			this.indexSize = indexSize;
-		}
-	}
+        public void setIndexSize(Long indexSize) {
+            this.indexSize = indexSize;
+        }
+    }
 
-	@Override
-	public DescribeOptimizeAdviceOnBigTableResponse getInstance(UnmarshallerContext context) {
-		return	DescribeOptimizeAdviceOnBigTableResponseUnmarshaller.unmarshall(this, context);
-	}
+    @Override
+    public DescribeOptimizeAdviceOnBigTableResponse getInstance(UnmarshallerContext context) {
+        return DescribeOptimizeAdviceOnBigTableResponseUnmarshaller.unmarshall(this, context);
+    }
 }

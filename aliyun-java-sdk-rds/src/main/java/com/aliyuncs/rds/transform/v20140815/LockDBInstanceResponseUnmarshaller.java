@@ -21,13 +21,14 @@ package com.aliyuncs.rds.transform.v20140815;
 import com.aliyuncs.rds.model.v20140815.LockDBInstanceResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
-
 public class LockDBInstanceResponseUnmarshaller {
 
-	public static LockDBInstanceResponse unmarshall(LockDBInstanceResponse lockDBInstanceResponse, UnmarshallerContext context) {
-		
-		lockDBInstanceResponse.setRequestId(context.stringValue("LockDBInstanceResponse.RequestId"));
-	 
-	 	return lockDBInstanceResponse;
-	}
+    public static LockDBInstanceResponse unmarshall(LockDBInstanceResponse lockDBInstanceResponse,
+                                                    UnmarshallerContext context) {
+
+        lockDBInstanceResponse
+                .setRequestId(context.stringValue("LockDBInstanceResponse.RequestId"));
+
+        return lockDBInstanceResponse;
+    }
 }

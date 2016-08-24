@@ -22,127 +22,126 @@ import com.aliyuncs.RpcAcsRequest;
 
 /**
  * @author auto create
- * @version 
  */
 public class DescribeBackupTasksRequest extends RpcAcsRequest<DescribeBackupTasksResponse> {
-	
-	public DescribeBackupTasksRequest() {
-		super("Rds", "2014-08-15", "DescribeBackupTasks");
-	}
 
-	private Long ownerId;
+    public DescribeBackupTasksRequest() {
+        super("Rds", "2014-08-15", "DescribeBackupTasks");
+    }
 
-	private String resourceOwnerAccount;
+    private Long ownerId;
 
-	private Long resourceOwnerId;
+    private String resourceOwnerAccount;
 
-	private String clientToken;
+    private Long resourceOwnerId;
 
-	private String flag;
+    private String clientToken;
 
-	private String ownerAccount;
+    private String flag;
 
-	private String dBInstanceId;
+    private String ownerAccount;
 
-	private String backupJobId;
+    private String dBInstanceId;
 
-	private String backupMode;
+    private String backupJobId;
 
-	private String backupJobStatus;
+    private String backupMode;
 
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
+    private String backupJobStatus;
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
-	}
+    public Long getOwnerId() {
+        return this.ownerId;
+    }
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
+    public void setOwnerId(Long ownerId) {
+        this.ownerId = ownerId;
+        putQueryParameter("OwnerId", ownerId);
+    }
 
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-	}
+    public String getResourceOwnerAccount() {
+        return this.resourceOwnerAccount;
+    }
 
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
+    public void setResourceOwnerAccount(String resourceOwnerAccount) {
+        this.resourceOwnerAccount = resourceOwnerAccount;
+        putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+    }
 
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", resourceOwnerId);
-	}
+    public Long getResourceOwnerId() {
+        return this.resourceOwnerId;
+    }
 
-	public String getClientToken() {
-		return this.clientToken;
-	}
+    public void setResourceOwnerId(Long resourceOwnerId) {
+        this.resourceOwnerId = resourceOwnerId;
+        putQueryParameter("ResourceOwnerId", resourceOwnerId);
+    }
 
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		putQueryParameter("ClientToken", clientToken);
-	}
+    public String getClientToken() {
+        return this.clientToken;
+    }
 
-	public String getFlag() {
-		return this.flag;
-	}
+    public void setClientToken(String clientToken) {
+        this.clientToken = clientToken;
+        putQueryParameter("ClientToken", clientToken);
+    }
 
-	public void setFlag(String flag) {
-		this.flag = flag;
-		putQueryParameter("Flag", flag);
-	}
+    public String getFlag() {
+        return this.flag;
+    }
 
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
+    public void setFlag(String flag) {
+        this.flag = flag;
+        putQueryParameter("Flag", flag);
+    }
 
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		putQueryParameter("OwnerAccount", ownerAccount);
-	}
+    public String getOwnerAccount() {
+        return this.ownerAccount;
+    }
 
-	public String getDBInstanceId() {
-		return this.dBInstanceId;
-	}
+    public void setOwnerAccount(String ownerAccount) {
+        this.ownerAccount = ownerAccount;
+        putQueryParameter("OwnerAccount", ownerAccount);
+    }
 
-	public void setDBInstanceId(String dBInstanceId) {
-		this.dBInstanceId = dBInstanceId;
-		putQueryParameter("DBInstanceId", dBInstanceId);
-	}
+    public String getDBInstanceId() {
+        return this.dBInstanceId;
+    }
 
-	public String getBackupJobId() {
-		return this.backupJobId;
-	}
+    public void setDBInstanceId(String dBInstanceId) {
+        this.dBInstanceId = dBInstanceId;
+        putQueryParameter("DBInstanceId", dBInstanceId);
+    }
 
-	public void setBackupJobId(String backupJobId) {
-		this.backupJobId = backupJobId;
-		putQueryParameter("BackupJobId", backupJobId);
-	}
+    public String getBackupJobId() {
+        return this.backupJobId;
+    }
 
-	public String getBackupMode() {
-		return this.backupMode;
-	}
+    public void setBackupJobId(String backupJobId) {
+        this.backupJobId = backupJobId;
+        putQueryParameter("BackupJobId", backupJobId);
+    }
 
-	public void setBackupMode(String backupMode) {
-		this.backupMode = backupMode;
-		putQueryParameter("BackupMode", backupMode);
-	}
+    public String getBackupMode() {
+        return this.backupMode;
+    }
 
-	public String getBackupJobStatus() {
-		return this.backupJobStatus;
-	}
+    public void setBackupMode(String backupMode) {
+        this.backupMode = backupMode;
+        putQueryParameter("BackupMode", backupMode);
+    }
 
-	public void setBackupJobStatus(String backupJobStatus) {
-		this.backupJobStatus = backupJobStatus;
-		putQueryParameter("BackupJobStatus", backupJobStatus);
-	}
+    public String getBackupJobStatus() {
+        return this.backupJobStatus;
+    }
 
-	@Override
-	public Class<DescribeBackupTasksResponse> getResponseClass() {
-		return DescribeBackupTasksResponse.class;
-	}
+    public void setBackupJobStatus(String backupJobStatus) {
+        this.backupJobStatus = backupJobStatus;
+        putQueryParameter("BackupJobStatus", backupJobStatus);
+    }
+
+    @Override
+    public Class<DescribeBackupTasksResponse> getResponseClass() {
+        return DescribeBackupTasksResponse.class;
+    }
 
 }

@@ -18,92 +18,92 @@
  */
 package com.aliyuncs.rds.model.v20140815;
 
-import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.rds.transform.v20140815.DescribeErrorLogsResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
+import java.util.List;
+
 /**
  * @author auto create
- * @version 
  */
 public class DescribeErrorLogsResponse extends AcsResponse {
 
-	private String requestId;
+    private String requestId;
 
-	private Integer totalRecordCount;
+    private Integer totalRecordCount;
 
-	private Integer pageNumber;
+    private Integer pageNumber;
 
-	private Integer pageRecordCount;
+    private Integer pageRecordCount;
 
-	private List<ErrorLog> items;
+    private List<ErrorLog> items;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
+    public String getRequestId() {
+        return this.requestId;
+    }
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+    public void setRequestId(String requestId) {
+        this.requestId = requestId;
+    }
 
-	public Integer getTotalRecordCount() {
-		return this.totalRecordCount;
-	}
+    public Integer getTotalRecordCount() {
+        return this.totalRecordCount;
+    }
 
-	public void setTotalRecordCount(Integer totalRecordCount) {
-		this.totalRecordCount = totalRecordCount;
-	}
+    public void setTotalRecordCount(Integer totalRecordCount) {
+        this.totalRecordCount = totalRecordCount;
+    }
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
+    public Integer getPageNumber() {
+        return this.pageNumber;
+    }
 
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-	}
+    public void setPageNumber(Integer pageNumber) {
+        this.pageNumber = pageNumber;
+    }
 
-	public Integer getPageRecordCount() {
-		return this.pageRecordCount;
-	}
+    public Integer getPageRecordCount() {
+        return this.pageRecordCount;
+    }
 
-	public void setPageRecordCount(Integer pageRecordCount) {
-		this.pageRecordCount = pageRecordCount;
-	}
+    public void setPageRecordCount(Integer pageRecordCount) {
+        this.pageRecordCount = pageRecordCount;
+    }
 
-	public List<ErrorLog> getItems() {
-		return this.items;
-	}
+    public List<ErrorLog> getItems() {
+        return this.items;
+    }
 
-	public void setItems(List<ErrorLog> items) {
-		this.items = items;
-	}
+    public void setItems(List<ErrorLog> items) {
+        this.items = items;
+    }
 
-	public static class ErrorLog {
+    public static class ErrorLog {
 
-		private String errorInfo;
+        private String errorInfo;
 
-		private String createTime;
+        private String createTime;
 
-		public String getErrorInfo() {
-			return this.errorInfo;
-		}
+        public String getErrorInfo() {
+            return this.errorInfo;
+        }
 
-		public void setErrorInfo(String errorInfo) {
-			this.errorInfo = errorInfo;
-		}
+        public void setErrorInfo(String errorInfo) {
+            this.errorInfo = errorInfo;
+        }
 
-		public String getCreateTime() {
-			return this.createTime;
-		}
+        public String getCreateTime() {
+            return this.createTime;
+        }
 
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
-		}
-	}
+        public void setCreateTime(String createTime) {
+            this.createTime = createTime;
+        }
+    }
 
-	@Override
-	public DescribeErrorLogsResponse getInstance(UnmarshallerContext context) {
-		return	DescribeErrorLogsResponseUnmarshaller.unmarshall(this, context);
-	}
+    @Override
+    public DescribeErrorLogsResponse getInstance(UnmarshallerContext context) {
+        return DescribeErrorLogsResponseUnmarshaller.unmarshall(this, context);
+    }
 }

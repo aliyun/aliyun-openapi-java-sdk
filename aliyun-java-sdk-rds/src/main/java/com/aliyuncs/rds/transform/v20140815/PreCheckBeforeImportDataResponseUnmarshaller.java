@@ -21,14 +21,17 @@ package com.aliyuncs.rds.transform.v20140815;
 import com.aliyuncs.rds.model.v20140815.PreCheckBeforeImportDataResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
-
 public class PreCheckBeforeImportDataResponseUnmarshaller {
 
-	public static PreCheckBeforeImportDataResponse unmarshall(PreCheckBeforeImportDataResponse preCheckBeforeImportDataResponse, UnmarshallerContext context) {
-		
-		preCheckBeforeImportDataResponse.setRequestId(context.stringValue("PreCheckBeforeImportDataResponse.RequestId"));
-		preCheckBeforeImportDataResponse.setPreCheckId(context.stringValue("PreCheckBeforeImportDataResponse.PreCheckId"));
-	 
-	 	return preCheckBeforeImportDataResponse;
-	}
+    public static PreCheckBeforeImportDataResponse unmarshall(
+            PreCheckBeforeImportDataResponse preCheckBeforeImportDataResponse,
+            UnmarshallerContext context) {
+
+        preCheckBeforeImportDataResponse
+                .setRequestId(context.stringValue("PreCheckBeforeImportDataResponse.RequestId"));
+        preCheckBeforeImportDataResponse
+                .setPreCheckId(context.stringValue("PreCheckBeforeImportDataResponse.PreCheckId"));
+
+        return preCheckBeforeImportDataResponse;
+    }
 }

@@ -18,46 +18,63 @@
  */
 package com.aliyuncs.rds.transform.v20140815;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.aliyuncs.rds.model.v20140815.DescribeDBInstanceNetInfoResponse;
 import com.aliyuncs.rds.model.v20140815.DescribeDBInstanceNetInfoResponse.DBInstanceNetInfo;
 import com.aliyuncs.rds.model.v20140815.DescribeDBInstanceNetInfoResponse.DBInstanceNetInfo.securityIPGroup;
 import com.aliyuncs.transform.UnmarshallerContext;
 
+import java.util.ArrayList;
+import java.util.List;
 
 public class DescribeDBInstanceNetInfoResponseUnmarshaller {
 
-	public static DescribeDBInstanceNetInfoResponse unmarshall(DescribeDBInstanceNetInfoResponse describeDBInstanceNetInfoResponse, UnmarshallerContext context) {
-		
-		describeDBInstanceNetInfoResponse.setRequestId(context.stringValue("DescribeDBInstanceNetInfoResponse.RequestId"));
-		describeDBInstanceNetInfoResponse.setInstanceNetworkType(context.stringValue("DescribeDBInstanceNetInfoResponse.InstanceNetworkType"));
+    public static DescribeDBInstanceNetInfoResponse unmarshall(
+            DescribeDBInstanceNetInfoResponse describeDBInstanceNetInfoResponse,
+            UnmarshallerContext context) {
 
-		List<DBInstanceNetInfo> dBInstanceNetInfos = new ArrayList<DBInstanceNetInfo>();
-		for (int i = 0; i < context.lengthValue("DescribeDBInstanceNetInfoResponse.DBInstanceNetInfos.Length"); i++) {
-			DBInstanceNetInfo dBInstanceNetInfo = new DBInstanceNetInfo();
-			dBInstanceNetInfo.setConnectionString(context.stringValue("DescribeDBInstanceNetInfoResponse.DBInstanceNetInfos["+ i +"].ConnectionString"));
-			dBInstanceNetInfo.setIPAddress(context.stringValue("DescribeDBInstanceNetInfoResponse.DBInstanceNetInfos["+ i +"].IPAddress"));
-			dBInstanceNetInfo.setIPType(context.stringValue("DescribeDBInstanceNetInfoResponse.DBInstanceNetInfos["+ i +"].IPType"));
-			dBInstanceNetInfo.setPort(context.stringValue("DescribeDBInstanceNetInfoResponse.DBInstanceNetInfos["+ i +"].Port"));
-			dBInstanceNetInfo.setVPCId(context.stringValue("DescribeDBInstanceNetInfoResponse.DBInstanceNetInfos["+ i +"].VPCId"));
-			dBInstanceNetInfo.setVSwitchId(context.stringValue("DescribeDBInstanceNetInfoResponse.DBInstanceNetInfos["+ i +"].VSwitchId"));
+        describeDBInstanceNetInfoResponse
+                .setRequestId(context.stringValue("DescribeDBInstanceNetInfoResponse.RequestId"));
+        describeDBInstanceNetInfoResponse.setInstanceNetworkType(
+                context.stringValue("DescribeDBInstanceNetInfoResponse.InstanceNetworkType"));
 
-			List<securityIPGroup> securityIPGroups = new ArrayList<securityIPGroup>();
-			for (int j = 0; j < context.lengthValue("DescribeDBInstanceNetInfoResponse.DBInstanceNetInfos["+ i +"].SecurityIPGroups.Length"); j++) {
-				securityIPGroup securityIPGroup = new securityIPGroup();
-				securityIPGroup.setSecurityIPGroupName(context.stringValue("DescribeDBInstanceNetInfoResponse.DBInstanceNetInfos["+ i +"].SecurityIPGroups["+ j +"].SecurityIPGroupName"));
-				securityIPGroup.setSecurityIPs(context.stringValue("DescribeDBInstanceNetInfoResponse.DBInstanceNetInfos["+ i +"].SecurityIPGroups["+ j +"].SecurityIPs"));
+        List<DBInstanceNetInfo> dBInstanceNetInfos = new ArrayList<DBInstanceNetInfo>();
+        for (int i = 0; i < context
+                .lengthValue("DescribeDBInstanceNetInfoResponse.DBInstanceNetInfos.Length"); i++) {
+            DBInstanceNetInfo dBInstanceNetInfo = new DBInstanceNetInfo();
+            dBInstanceNetInfo.setConnectionString(context.stringValue(
+                    "DescribeDBInstanceNetInfoResponse.DBInstanceNetInfos[" + i
+                            + "].ConnectionString"));
+            dBInstanceNetInfo.setIPAddress(context.stringValue(
+                    "DescribeDBInstanceNetInfoResponse.DBInstanceNetInfos[" + i + "].IPAddress"));
+            dBInstanceNetInfo.setIPType(context.stringValue(
+                    "DescribeDBInstanceNetInfoResponse.DBInstanceNetInfos[" + i + "].IPType"));
+            dBInstanceNetInfo.setPort(context.stringValue(
+                    "DescribeDBInstanceNetInfoResponse.DBInstanceNetInfos[" + i + "].Port"));
+            dBInstanceNetInfo.setVPCId(context.stringValue(
+                    "DescribeDBInstanceNetInfoResponse.DBInstanceNetInfos[" + i + "].VPCId"));
+            dBInstanceNetInfo.setVSwitchId(context.stringValue(
+                    "DescribeDBInstanceNetInfoResponse.DBInstanceNetInfos[" + i + "].VSwitchId"));
 
-				securityIPGroups.add(securityIPGroup);
-			}
-			dBInstanceNetInfo.setSecurityIPGroups(securityIPGroups);
+            List<securityIPGroup> securityIPGroups = new ArrayList<securityIPGroup>();
+            for (int j = 0; j < context.lengthValue(
+                    "DescribeDBInstanceNetInfoResponse.DBInstanceNetInfos[" + i
+                            + "].SecurityIPGroups.Length"); j++) {
+                securityIPGroup securityIPGroup = new securityIPGroup();
+                securityIPGroup.setSecurityIPGroupName(context.stringValue(
+                        "DescribeDBInstanceNetInfoResponse.DBInstanceNetInfos[" + i
+                                + "].SecurityIPGroups[" + j + "].SecurityIPGroupName"));
+                securityIPGroup.setSecurityIPs(context.stringValue(
+                        "DescribeDBInstanceNetInfoResponse.DBInstanceNetInfos[" + i
+                                + "].SecurityIPGroups[" + j + "].SecurityIPs"));
 
-			dBInstanceNetInfos.add(dBInstanceNetInfo);
-		}
-		describeDBInstanceNetInfoResponse.setDBInstanceNetInfos(dBInstanceNetInfos);
-	 
-	 	return describeDBInstanceNetInfoResponse;
-	}
+                securityIPGroups.add(securityIPGroup);
+            }
+            dBInstanceNetInfo.setSecurityIPGroups(securityIPGroups);
+
+            dBInstanceNetInfos.add(dBInstanceNetInfo);
+        }
+        describeDBInstanceNetInfoResponse.setDBInstanceNetInfos(dBInstanceNetInfos);
+
+        return describeDBInstanceNetInfoResponse;
+    }
 }

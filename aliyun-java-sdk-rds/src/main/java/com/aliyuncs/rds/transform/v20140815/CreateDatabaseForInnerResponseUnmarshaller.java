@@ -21,13 +21,15 @@ package com.aliyuncs.rds.transform.v20140815;
 import com.aliyuncs.rds.model.v20140815.CreateDatabaseForInnerResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
-
 public class CreateDatabaseForInnerResponseUnmarshaller {
 
-	public static CreateDatabaseForInnerResponse unmarshall(CreateDatabaseForInnerResponse createDatabaseForInnerResponse, UnmarshallerContext context) {
-		
-		createDatabaseForInnerResponse.setRequestId(context.stringValue("CreateDatabaseForInnerResponse.RequestId"));
-	 
-	 	return createDatabaseForInnerResponse;
-	}
+    public static CreateDatabaseForInnerResponse unmarshall(
+            CreateDatabaseForInnerResponse createDatabaseForInnerResponse,
+            UnmarshallerContext context) {
+
+        createDatabaseForInnerResponse
+                .setRequestId(context.stringValue("CreateDatabaseForInnerResponse.RequestId"));
+
+        return createDatabaseForInnerResponse;
+    }
 }

@@ -21,13 +21,13 @@ package com.aliyuncs.rds.transform.v20140815;
 import com.aliyuncs.rds.model.v20140815.CreateBackupResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
-
 public class CreateBackupResponseUnmarshaller {
 
-	public static CreateBackupResponse unmarshall(CreateBackupResponse createBackupResponse, UnmarshallerContext context) {
-		
-		createBackupResponse.setRequestId(context.stringValue("CreateBackupResponse.RequestId"));
-	 
-	 	return createBackupResponse;
-	}
+    public static CreateBackupResponse unmarshall(CreateBackupResponse createBackupResponse,
+                                                  UnmarshallerContext context) {
+
+        createBackupResponse.setRequestId(context.stringValue("CreateBackupResponse.RequestId"));
+
+        return createBackupResponse;
+    }
 }

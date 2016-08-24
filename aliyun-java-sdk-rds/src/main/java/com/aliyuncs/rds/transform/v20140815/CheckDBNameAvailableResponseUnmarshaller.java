@@ -21,13 +21,15 @@ package com.aliyuncs.rds.transform.v20140815;
 import com.aliyuncs.rds.model.v20140815.CheckDBNameAvailableResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
-
 public class CheckDBNameAvailableResponseUnmarshaller {
 
-	public static CheckDBNameAvailableResponse unmarshall(CheckDBNameAvailableResponse checkDBNameAvailableResponse, UnmarshallerContext context) {
-		
-		checkDBNameAvailableResponse.setRequestId(context.stringValue("CheckDBNameAvailableResponse.RequestId"));
-	 
-	 	return checkDBNameAvailableResponse;
-	}
+    public static CheckDBNameAvailableResponse unmarshall(
+            CheckDBNameAvailableResponse checkDBNameAvailableResponse,
+            UnmarshallerContext context) {
+
+        checkDBNameAvailableResponse
+                .setRequestId(context.stringValue("CheckDBNameAvailableResponse.RequestId"));
+
+        return checkDBNameAvailableResponse;
+    }
 }

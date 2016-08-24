@@ -18,46 +18,63 @@
  */
 package com.aliyuncs.rds.transform.v20140815;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.aliyuncs.rds.model.v20140815.DescribeDBInstancePerformanceResponse;
 import com.aliyuncs.rds.model.v20140815.DescribeDBInstancePerformanceResponse.PerformanceKey;
 import com.aliyuncs.rds.model.v20140815.DescribeDBInstancePerformanceResponse.PerformanceKey.PerformanceValue;
 import com.aliyuncs.transform.UnmarshallerContext;
 
+import java.util.ArrayList;
+import java.util.List;
 
 public class DescribeDBInstancePerformanceResponseUnmarshaller {
 
-	public static DescribeDBInstancePerformanceResponse unmarshall(DescribeDBInstancePerformanceResponse describeDBInstancePerformanceResponse, UnmarshallerContext context) {
-		
-		describeDBInstancePerformanceResponse.setRequestId(context.stringValue("DescribeDBInstancePerformanceResponse.RequestId"));
-		describeDBInstancePerformanceResponse.setDBInstanceId(context.stringValue("DescribeDBInstancePerformanceResponse.DBInstanceId"));
-		describeDBInstancePerformanceResponse.setEngine(context.stringValue("DescribeDBInstancePerformanceResponse.Engine"));
-		describeDBInstancePerformanceResponse.setStartTime(context.stringValue("DescribeDBInstancePerformanceResponse.StartTime"));
-		describeDBInstancePerformanceResponse.setEndTime(context.stringValue("DescribeDBInstancePerformanceResponse.EndTime"));
+    public static DescribeDBInstancePerformanceResponse unmarshall(
+            DescribeDBInstancePerformanceResponse describeDBInstancePerformanceResponse,
+            UnmarshallerContext context) {
 
-		List<PerformanceKey> performanceKeys = new ArrayList<PerformanceKey>();
-		for (int i = 0; i < context.lengthValue("DescribeDBInstancePerformanceResponse.PerformanceKeys.Length"); i++) {
-			PerformanceKey performanceKey = new PerformanceKey();
-			performanceKey.setKey(context.stringValue("DescribeDBInstancePerformanceResponse.PerformanceKeys["+ i +"].Key"));
-			performanceKey.setUnit(context.stringValue("DescribeDBInstancePerformanceResponse.PerformanceKeys["+ i +"].Unit"));
-			performanceKey.setValueFormat(context.stringValue("DescribeDBInstancePerformanceResponse.PerformanceKeys["+ i +"].ValueFormat"));
+        describeDBInstancePerformanceResponse.setRequestId(
+                context.stringValue("DescribeDBInstancePerformanceResponse.RequestId"));
+        describeDBInstancePerformanceResponse.setDBInstanceId(
+                context.stringValue("DescribeDBInstancePerformanceResponse.DBInstanceId"));
+        describeDBInstancePerformanceResponse
+                .setEngine(context.stringValue("DescribeDBInstancePerformanceResponse.Engine"));
+        describeDBInstancePerformanceResponse.setStartTime(
+                context.stringValue("DescribeDBInstancePerformanceResponse.StartTime"));
+        describeDBInstancePerformanceResponse
+                .setEndTime(context.stringValue("DescribeDBInstancePerformanceResponse.EndTime"));
 
-			List<PerformanceValue> values = new ArrayList<PerformanceValue>();
-			for (int j = 0; j < context.lengthValue("DescribeDBInstancePerformanceResponse.PerformanceKeys["+ i +"].Values.Length"); j++) {
-				PerformanceValue performanceValue = new PerformanceValue();
-				performanceValue.setValue(context.stringValue("DescribeDBInstancePerformanceResponse.PerformanceKeys["+ i +"].Values["+ j +"].Value"));
-				performanceValue.setDate(context.stringValue("DescribeDBInstancePerformanceResponse.PerformanceKeys["+ i +"].Values["+ j +"].Date"));
+        List<PerformanceKey> performanceKeys = new ArrayList<PerformanceKey>();
+        for (int i = 0; i < context
+                .lengthValue("DescribeDBInstancePerformanceResponse.PerformanceKeys.Length"); i++) {
+            PerformanceKey performanceKey = new PerformanceKey();
+            performanceKey.setKey(context.stringValue(
+                    "DescribeDBInstancePerformanceResponse.PerformanceKeys[" + i + "].Key"));
+            performanceKey.setUnit(context.stringValue(
+                    "DescribeDBInstancePerformanceResponse.PerformanceKeys[" + i + "].Unit"));
+            performanceKey.setValueFormat(context.stringValue(
+                    "DescribeDBInstancePerformanceResponse.PerformanceKeys[" + i
+                            + "].ValueFormat"));
 
-				values.add(performanceValue);
-			}
-			performanceKey.setValues(values);
+            List<PerformanceValue> values = new ArrayList<PerformanceValue>();
+            for (int j = 0; j < context.lengthValue(
+                    "DescribeDBInstancePerformanceResponse.PerformanceKeys[" + i
+                            + "].Values.Length"); j++) {
+                PerformanceValue performanceValue = new PerformanceValue();
+                performanceValue.setValue(context.stringValue(
+                        "DescribeDBInstancePerformanceResponse.PerformanceKeys[" + i + "].Values["
+                                + j + "].Value"));
+                performanceValue.setDate(context.stringValue(
+                        "DescribeDBInstancePerformanceResponse.PerformanceKeys[" + i + "].Values["
+                                + j + "].Date"));
 
-			performanceKeys.add(performanceKey);
-		}
-		describeDBInstancePerformanceResponse.setPerformanceKeys(performanceKeys);
-	 
-	 	return describeDBInstancePerformanceResponse;
-	}
+                values.add(performanceValue);
+            }
+            performanceKey.setValues(values);
+
+            performanceKeys.add(performanceKey);
+        }
+        describeDBInstancePerformanceResponse.setPerformanceKeys(performanceKeys);
+
+        return describeDBInstancePerformanceResponse;
+    }
 }

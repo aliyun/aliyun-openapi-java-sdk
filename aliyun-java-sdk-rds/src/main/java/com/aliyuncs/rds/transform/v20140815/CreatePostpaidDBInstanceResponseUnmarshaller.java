@@ -21,17 +21,23 @@ package com.aliyuncs.rds.transform.v20140815;
 import com.aliyuncs.rds.model.v20140815.CreatePostpaidDBInstanceResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
-
 public class CreatePostpaidDBInstanceResponseUnmarshaller {
 
-	public static CreatePostpaidDBInstanceResponse unmarshall(CreatePostpaidDBInstanceResponse createPostpaidDBInstanceResponse, UnmarshallerContext context) {
-		
-		createPostpaidDBInstanceResponse.setRequestId(context.stringValue("CreatePostpaidDBInstanceResponse.RequestId"));
-		createPostpaidDBInstanceResponse.setDBInstanceId(context.stringValue("CreatePostpaidDBInstanceResponse.DBInstanceId"));
-		createPostpaidDBInstanceResponse.setOrderId(context.stringValue("CreatePostpaidDBInstanceResponse.OrderId"));
-		createPostpaidDBInstanceResponse.setConnectionString(context.stringValue("CreatePostpaidDBInstanceResponse.ConnectionString"));
-		createPostpaidDBInstanceResponse.setPort(context.stringValue("CreatePostpaidDBInstanceResponse.Port"));
-	 
-	 	return createPostpaidDBInstanceResponse;
-	}
+    public static CreatePostpaidDBInstanceResponse unmarshall(
+            CreatePostpaidDBInstanceResponse createPostpaidDBInstanceResponse,
+            UnmarshallerContext context) {
+
+        createPostpaidDBInstanceResponse
+                .setRequestId(context.stringValue("CreatePostpaidDBInstanceResponse.RequestId"));
+        createPostpaidDBInstanceResponse.setDBInstanceId(
+                context.stringValue("CreatePostpaidDBInstanceResponse.DBInstanceId"));
+        createPostpaidDBInstanceResponse
+                .setOrderId(context.stringValue("CreatePostpaidDBInstanceResponse.OrderId"));
+        createPostpaidDBInstanceResponse.setConnectionString(
+                context.stringValue("CreatePostpaidDBInstanceResponse.ConnectionString"));
+        createPostpaidDBInstanceResponse
+                .setPort(context.stringValue("CreatePostpaidDBInstanceResponse.Port"));
+
+        return createPostpaidDBInstanceResponse;
+    }
 }

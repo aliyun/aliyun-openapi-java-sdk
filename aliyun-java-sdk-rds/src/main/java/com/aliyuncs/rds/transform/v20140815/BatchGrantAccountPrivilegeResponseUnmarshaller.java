@@ -21,13 +21,15 @@ package com.aliyuncs.rds.transform.v20140815;
 import com.aliyuncs.rds.model.v20140815.BatchGrantAccountPrivilegeResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
-
 public class BatchGrantAccountPrivilegeResponseUnmarshaller {
 
-	public static BatchGrantAccountPrivilegeResponse unmarshall(BatchGrantAccountPrivilegeResponse batchGrantAccountPrivilegeResponse, UnmarshallerContext context) {
-		
-		batchGrantAccountPrivilegeResponse.setRequestId(context.stringValue("BatchGrantAccountPrivilegeResponse.RequestId"));
-	 
-	 	return batchGrantAccountPrivilegeResponse;
-	}
+    public static BatchGrantAccountPrivilegeResponse unmarshall(
+            BatchGrantAccountPrivilegeResponse batchGrantAccountPrivilegeResponse,
+            UnmarshallerContext context) {
+
+        batchGrantAccountPrivilegeResponse
+                .setRequestId(context.stringValue("BatchGrantAccountPrivilegeResponse.RequestId"));
+
+        return batchGrantAccountPrivilegeResponse;
+    }
 }
