@@ -57,6 +57,10 @@ public class QueryAppPushStatResponse extends AcsResponse {
 
 		private Long receivedCount;
 
+		private Long openedCount;
+
+		private Long deletedCount;
+
 		public String getTime() {
 			return this.time;
 		}
@@ -79,6 +83,22 @@ public class QueryAppPushStatResponse extends AcsResponse {
 
 		public void setReceivedCount(Long receivedCount) {
 			this.receivedCount = receivedCount;
+		}
+
+		public Long getOpenedCount() {
+			return this.openedCount;
+		}
+
+		public void setOpenedCount(Long openedCount) {
+			this.openedCount = openedCount;
+		}
+
+		public Long getDeletedCount() {
+			return this.deletedCount;
+		}
+
+		public void setDeletedCount(Long deletedCount) {
+			this.deletedCount = deletedCount;
 		}
 	}
 

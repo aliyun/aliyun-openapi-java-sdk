@@ -38,6 +38,8 @@ public class QueryPushStatResponseUnmarshaller {
 			pushStat.setMessageId(context.stringValue("QueryPushStatResponse.PushStats["+ i +"].MessageId"));
 			pushStat.setSentCount(context.longValue("QueryPushStatResponse.PushStats["+ i +"].SentCount"));
 			pushStat.setReceivedCount(context.longValue("QueryPushStatResponse.PushStats["+ i +"].ReceivedCount"));
+			pushStat.setOpenedCount(context.longValue("QueryPushStatResponse.PushStats["+ i +"].OpenedCount"));
+			pushStat.setDeletedCount(context.longValue("QueryPushStatResponse.PushStats["+ i +"].DeletedCount"));
 
 			pushStats.add(pushStat);
 		}

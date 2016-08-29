@@ -38,6 +38,8 @@ public class QueryAppPushStatResponseUnmarshaller {
 			appPushStat.setTime(context.stringValue("QueryAppPushStatResponse.AppPushStats["+ i +"].Time"));
 			appPushStat.setSentCount(context.longValue("QueryAppPushStatResponse.AppPushStats["+ i +"].SentCount"));
 			appPushStat.setReceivedCount(context.longValue("QueryAppPushStatResponse.AppPushStats["+ i +"].ReceivedCount"));
+			appPushStat.setOpenedCount(context.longValue("QueryAppPushStatResponse.AppPushStats["+ i +"].OpenedCount"));
+			appPushStat.setDeletedCount(context.longValue("QueryAppPushStatResponse.AppPushStats["+ i +"].DeletedCount"));
 
 			appPushStats.add(appPushStat);
 		}
