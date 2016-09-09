@@ -39,6 +39,7 @@ public class DescribeLiveStreamsFrameRateAndBitRateDataResponseUnmarshaller {
 			frameRateAndBitRateInfo.setVideoFrameRate(context.floatValue("DescribeLiveStreamsFrameRateAndBitRateDataResponse.FrameRateAndBitRateInfos["+ i +"].VideoFrameRate"));
 			frameRateAndBitRateInfo.setAudioFrameRate(context.floatValue("DescribeLiveStreamsFrameRateAndBitRateDataResponse.FrameRateAndBitRateInfos["+ i +"].AudioFrameRate"));
 			frameRateAndBitRateInfo.setBitRate(context.floatValue("DescribeLiveStreamsFrameRateAndBitRateDataResponse.FrameRateAndBitRateInfos["+ i +"].BitRate"));
+			frameRateAndBitRateInfo.setTime(context.stringValue("DescribeLiveStreamsFrameRateAndBitRateDataResponse.FrameRateAndBitRateInfos["+ i +"].Time"));
 
 			frameRateAndBitRateInfos.add(frameRateAndBitRateInfo);
 		}

@@ -59,6 +59,8 @@ public class DescribeLiveStreamsFrameRateAndBitRateDataResponse extends AcsRespo
 
 		private Float bitRate;
 
+		private String time;
+
 		public String getStreamUrl() {
 			return this.streamUrl;
 		}
@@ -89,6 +91,14 @@ public class DescribeLiveStreamsFrameRateAndBitRateDataResponse extends AcsRespo
 
 		public void setBitRate(Float bitRate) {
 			this.bitRate = bitRate;
+		}
+
+		public String getTime() {
+			return this.time;
+		}
+
+		public void setTime(String time) {
+			this.time = time;
 		}
 	}
 
