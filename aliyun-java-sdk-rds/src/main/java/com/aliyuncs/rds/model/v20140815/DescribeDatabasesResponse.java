@@ -22,6 +22,7 @@ import com.aliyuncs.AcsResponse;
 import com.aliyuncs.rds.transform.v20140815.DescribeDatabasesResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
@@ -49,7 +50,7 @@ public class DescribeDatabasesResponse extends AcsResponse {
         this.databases = databases;
     }
 
-    public static class Database {
+    public static class Database implements Serializable {
 
         private String dBName;
 
@@ -155,7 +156,7 @@ public class DescribeDatabasesResponse extends AcsResponse {
             }
         }
 
-        public static class AccountPrivilegeInfo {
+        public static class AccountPrivilegeInfo implements Serializable {
 
             private String account;
 
