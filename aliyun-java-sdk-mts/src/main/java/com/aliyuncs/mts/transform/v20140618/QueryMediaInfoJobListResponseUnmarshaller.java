@@ -24,6 +24,7 @@ import java.util.List;
 import com.aliyuncs.mts.model.v20140618.QueryMediaInfoJobListResponse;
 import com.aliyuncs.mts.model.v20140618.QueryMediaInfoJobListResponse.MediaInfoJob;
 import com.aliyuncs.mts.model.v20140618.QueryMediaInfoJobListResponse.MediaInfoJob.Input;
+import com.aliyuncs.mts.model.v20140618.QueryMediaInfoJobListResponse.MediaInfoJob.MNSMessageResult;
 import com.aliyuncs.mts.model.v20140618.QueryMediaInfoJobListResponse.MediaInfoJob.Properties;
 import com.aliyuncs.mts.model.v20140618.QueryMediaInfoJobListResponse.MediaInfoJob.Properties.Format;
 import com.aliyuncs.mts.model.v20140618.QueryMediaInfoJobListResponse.MediaInfoJob.Properties.Streams;
@@ -99,6 +100,7 @@ public class QueryMediaInfoJobListResponseUnmarshaller {
 				videoStream.setBitrate(context.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Streams.VideoStreamList["+ j +"].Bitrate"));
 				videoStream.setNumFrames(context.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Streams.VideoStreamList["+ j +"].NumFrames"));
 				videoStream.setLang(context.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Streams.VideoStreamList["+ j +"].Lang"));
+				videoStream.setRotate(context.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Streams.VideoStreamList["+ j +"].Rotate"));
 
 				NetworkCost networkCost = new NetworkCost();
 				networkCost.setPreloadTime(context.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Streams.VideoStreamList["+ j +"].NetworkCost.PreloadTime"));
@@ -156,6 +158,12 @@ public class QueryMediaInfoJobListResponseUnmarshaller {
 			format.setBitrate(context.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Format.Bitrate"));
 			properties.setFormat(format);
 			mediaInfoJob.setProperties(properties);
+
+			MNSMessageResult mNSMessageResult = new MNSMessageResult();
+			mNSMessageResult.setMessageId(context.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].MNSMessageResult.MessageId"));
+			mNSMessageResult.setErrorMessage(context.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].MNSMessageResult.ErrorMessage"));
+			mNSMessageResult.setErrorCode(context.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].MNSMessageResult.ErrorCode"));
+			mediaInfoJob.setMNSMessageResult(mNSMessageResult);
 
 			mediaInfoJobList.add(mediaInfoJob);
 		}

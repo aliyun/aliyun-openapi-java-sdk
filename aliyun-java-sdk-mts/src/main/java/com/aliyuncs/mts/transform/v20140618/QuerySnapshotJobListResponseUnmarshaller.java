@@ -24,6 +24,7 @@ import java.util.List;
 import com.aliyuncs.mts.model.v20140618.QuerySnapshotJobListResponse;
 import com.aliyuncs.mts.model.v20140618.QuerySnapshotJobListResponse.SnapshotJob;
 import com.aliyuncs.mts.model.v20140618.QuerySnapshotJobListResponse.SnapshotJob.Input;
+import com.aliyuncs.mts.model.v20140618.QuerySnapshotJobListResponse.SnapshotJob.MNSMessageResult;
 import com.aliyuncs.mts.model.v20140618.QuerySnapshotJobListResponse.SnapshotJob.SnapshotConfig;
 import com.aliyuncs.mts.model.v20140618.QuerySnapshotJobListResponse.SnapshotJob.SnapshotConfig.OutputFile;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -73,6 +74,12 @@ public class QuerySnapshotJobListResponseUnmarshaller {
 			outputFile.setObject(context.stringValue("QuerySnapshotJobListResponse.SnapshotJobList["+ i +"].SnapshotConfig.OutputFile.Object"));
 			snapshotConfig.setOutputFile(outputFile);
 			snapshotJob.setSnapshotConfig(snapshotConfig);
+
+			MNSMessageResult mNSMessageResult = new MNSMessageResult();
+			mNSMessageResult.setMessageId(context.stringValue("QuerySnapshotJobListResponse.SnapshotJobList["+ i +"].MNSMessageResult.MessageId"));
+			mNSMessageResult.setErrorMessage(context.stringValue("QuerySnapshotJobListResponse.SnapshotJobList["+ i +"].MNSMessageResult.ErrorMessage"));
+			mNSMessageResult.setErrorCode(context.stringValue("QuerySnapshotJobListResponse.SnapshotJobList["+ i +"].MNSMessageResult.ErrorCode"));
+			snapshotJob.setMNSMessageResult(mNSMessageResult);
 
 			snapshotJobList.add(snapshotJob);
 		}

@@ -69,6 +69,8 @@ public class SubmitMediaInfoJobResponse extends AcsResponse {
 
 		private Properties properties;
 
+		private MNSMessageResult mNSMessageResult;
+
 		public String getJobId() {
 			return this.jobId;
 		}
@@ -139,6 +141,14 @@ public class SubmitMediaInfoJobResponse extends AcsResponse {
 
 		public void setProperties(Properties properties) {
 			this.properties = properties;
+		}
+
+		public MNSMessageResult getMNSMessageResult() {
+			return this.mNSMessageResult;
+		}
+
+		public void setMNSMessageResult(MNSMessageResult mNSMessageResult) {
+			this.mNSMessageResult = mNSMessageResult;
 		}
 
 		public static class Input {
@@ -344,6 +354,8 @@ public class SubmitMediaInfoJobResponse extends AcsResponse {
 
 					private String lang;
 
+					private String rotate;
+
 					private NetworkCost networkCost;
 
 					public String getIndex() {
@@ -520,6 +532,14 @@ public class SubmitMediaInfoJobResponse extends AcsResponse {
 
 					public void setLang(String lang) {
 						this.lang = lang;
+					}
+
+					public String getRotate() {
+						return this.rotate;
+					}
+
+					public void setRotate(String rotate) {
+						this.rotate = rotate;
 					}
 
 					public NetworkCost getNetworkCost() {
@@ -832,6 +852,39 @@ public class SubmitMediaInfoJobResponse extends AcsResponse {
 				public void setBitrate(String bitrate) {
 					this.bitrate = bitrate;
 				}
+			}
+		}
+
+		public static class MNSMessageResult {
+
+			private String messageId;
+
+			private String errorMessage;
+
+			private String errorCode;
+
+			public String getMessageId() {
+				return this.messageId;
+			}
+
+			public void setMessageId(String messageId) {
+				this.messageId = messageId;
+			}
+
+			public String getErrorMessage() {
+				return this.errorMessage;
+			}
+
+			public void setErrorMessage(String errorMessage) {
+				this.errorMessage = errorMessage;
+			}
+
+			public String getErrorCode() {
+				return this.errorCode;
+			}
+
+			public void setErrorCode(String errorCode) {
+				this.errorCode = errorCode;
 			}
 		}
 	}

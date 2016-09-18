@@ -28,6 +28,7 @@ import com.aliyuncs.mts.model.v20140618.QueryAnalysisJobListResponse.AnalysisJob
 import com.aliyuncs.mts.model.v20140618.QueryAnalysisJobListResponse.AnalysisJob.AnalysisConfig.PropertiesControl.Crop;
 import com.aliyuncs.mts.model.v20140618.QueryAnalysisJobListResponse.AnalysisJob.AnalysisConfig.QualityControl;
 import com.aliyuncs.mts.model.v20140618.QueryAnalysisJobListResponse.AnalysisJob.InputFile;
+import com.aliyuncs.mts.model.v20140618.QueryAnalysisJobListResponse.AnalysisJob.MNSMessageResult;
 import com.aliyuncs.mts.model.v20140618.QueryAnalysisJobListResponse.AnalysisJob.Template;
 import com.aliyuncs.mts.model.v20140618.QueryAnalysisJobListResponse.AnalysisJob.Template.Audio;
 import com.aliyuncs.mts.model.v20140618.QueryAnalysisJobListResponse.AnalysisJob.Template.Container;
@@ -90,6 +91,12 @@ public class QueryAnalysisJobListResponseUnmarshaller {
 			propertiesControl.setCrop(crop);
 			analysisConfig.setPropertiesControl(propertiesControl);
 			analysisJob.setAnalysisConfig(analysisConfig);
+
+			MNSMessageResult mNSMessageResult = new MNSMessageResult();
+			mNSMessageResult.setMessageId(context.stringValue("QueryAnalysisJobListResponse.AnalysisJobList["+ i +"].MNSMessageResult.MessageId"));
+			mNSMessageResult.setErrorMessage(context.stringValue("QueryAnalysisJobListResponse.AnalysisJobList["+ i +"].MNSMessageResult.ErrorMessage"));
+			mNSMessageResult.setErrorCode(context.stringValue("QueryAnalysisJobListResponse.AnalysisJobList["+ i +"].MNSMessageResult.ErrorCode"));
+			analysisJob.setMNSMessageResult(mNSMessageResult);
 
 			List<Template> templateList = new ArrayList<Template>();
 			for (int j = 0; j < context.lengthValue("QueryAnalysisJobListResponse.AnalysisJobList["+ i +"].TemplateList.Length"); j++) {

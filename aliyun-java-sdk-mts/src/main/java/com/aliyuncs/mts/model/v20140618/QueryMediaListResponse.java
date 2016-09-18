@@ -586,6 +586,8 @@ public class QueryMediaListResponse extends AcsResponse {
 
 					private String lang;
 
+					private String rotate;
+
 					private NetworkCost networkCost;
 
 					public String getIndex() {
@@ -762,6 +764,14 @@ public class QueryMediaListResponse extends AcsResponse {
 
 					public void setLang(String lang) {
 						this.lang = lang;
+					}
+
+					public String getRotate() {
+						return this.rotate;
+					}
+
+					public void setRotate(String rotate) {
+						this.rotate = rotate;
 					}
 
 					public NetworkCost getNetworkCost() {

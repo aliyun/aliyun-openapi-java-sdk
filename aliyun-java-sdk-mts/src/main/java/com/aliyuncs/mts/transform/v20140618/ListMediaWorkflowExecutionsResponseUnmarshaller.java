@@ -24,6 +24,7 @@ import java.util.List;
 import com.aliyuncs.mts.model.v20140618.ListMediaWorkflowExecutionsResponse;
 import com.aliyuncs.mts.model.v20140618.ListMediaWorkflowExecutionsResponse.MediaWorkflowExecution;
 import com.aliyuncs.mts.model.v20140618.ListMediaWorkflowExecutionsResponse.MediaWorkflowExecution.Activity;
+import com.aliyuncs.mts.model.v20140618.ListMediaWorkflowExecutionsResponse.MediaWorkflowExecution.Activity.MNSMessageResult;
 import com.aliyuncs.mts.model.v20140618.ListMediaWorkflowExecutionsResponse.MediaWorkflowExecution.Input;
 import com.aliyuncs.mts.model.v20140618.ListMediaWorkflowExecutionsResponse.MediaWorkflowExecution.Input.InputFile;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -66,6 +67,12 @@ public class ListMediaWorkflowExecutionsResponseUnmarshaller {
 				activity.setMessage(context.stringValue("ListMediaWorkflowExecutionsResponse.MediaWorkflowExecutionList["+ i +"].ActivityList["+ j +"].Message"));
 				activity.setStartTime(context.stringValue("ListMediaWorkflowExecutionsResponse.MediaWorkflowExecutionList["+ i +"].ActivityList["+ j +"].StartTime"));
 				activity.setEndTime(context.stringValue("ListMediaWorkflowExecutionsResponse.MediaWorkflowExecutionList["+ i +"].ActivityList["+ j +"].EndTime"));
+
+				MNSMessageResult mNSMessageResult = new MNSMessageResult();
+				mNSMessageResult.setMessageId(context.stringValue("ListMediaWorkflowExecutionsResponse.MediaWorkflowExecutionList["+ i +"].ActivityList["+ j +"].MNSMessageResult.MessageId"));
+				mNSMessageResult.setErrorMessage(context.stringValue("ListMediaWorkflowExecutionsResponse.MediaWorkflowExecutionList["+ i +"].ActivityList["+ j +"].MNSMessageResult.ErrorMessage"));
+				mNSMessageResult.setErrorCode(context.stringValue("ListMediaWorkflowExecutionsResponse.MediaWorkflowExecutionList["+ i +"].ActivityList["+ j +"].MNSMessageResult.ErrorCode"));
+				activity.setMNSMessageResult(mNSMessageResult);
 
 				activityList.add(activity);
 			}

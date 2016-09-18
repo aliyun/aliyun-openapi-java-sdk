@@ -24,6 +24,7 @@ import java.util.List;
 import com.aliyuncs.mts.model.v20140618.QueryJobListResponse;
 import com.aliyuncs.mts.model.v20140618.QueryJobListResponse.Job;
 import com.aliyuncs.mts.model.v20140618.QueryJobListResponse.Job.Input;
+import com.aliyuncs.mts.model.v20140618.QueryJobListResponse.Job.MNSMessageResult;
 import com.aliyuncs.mts.model.v20140618.QueryJobListResponse.Job.Output;
 import com.aliyuncs.mts.model.v20140618.QueryJobListResponse.Job.Output.Audio;
 import com.aliyuncs.mts.model.v20140618.QueryJobListResponse.Job.Output.Clip;
@@ -313,6 +314,12 @@ public class QueryJobListResponseUnmarshaller {
 			}
 			output.setMergeList(mergeList);
 			job.setOutput(output);
+
+			MNSMessageResult mNSMessageResult = new MNSMessageResult();
+			mNSMessageResult.setMessageId(context.stringValue("QueryJobListResponse.JobList["+ i +"].MNSMessageResult.MessageId"));
+			mNSMessageResult.setErrorMessage(context.stringValue("QueryJobListResponse.JobList["+ i +"].MNSMessageResult.ErrorMessage"));
+			mNSMessageResult.setErrorCode(context.stringValue("QueryJobListResponse.JobList["+ i +"].MNSMessageResult.ErrorCode"));
+			job.setMNSMessageResult(mNSMessageResult);
 
 			jobList.add(job);
 		}

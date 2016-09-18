@@ -24,6 +24,7 @@ import java.util.List;
 import com.aliyuncs.mts.model.v20140618.ListJobResponse;
 import com.aliyuncs.mts.model.v20140618.ListJobResponse.Job;
 import com.aliyuncs.mts.model.v20140618.ListJobResponse.Job.Input;
+import com.aliyuncs.mts.model.v20140618.ListJobResponse.Job.MNSMessageResult;
 import com.aliyuncs.mts.model.v20140618.ListJobResponse.Job.Output;
 import com.aliyuncs.mts.model.v20140618.ListJobResponse.Job.Output.Audio;
 import com.aliyuncs.mts.model.v20140618.ListJobResponse.Job.Output.Clip;
@@ -308,6 +309,12 @@ public class ListJobResponseUnmarshaller {
 			}
 			output.setMergeList(mergeList);
 			job.setOutput(output);
+
+			MNSMessageResult mNSMessageResult = new MNSMessageResult();
+			mNSMessageResult.setMessageId(context.stringValue("ListJobResponse.JobList["+ i +"].MNSMessageResult.MessageId"));
+			mNSMessageResult.setErrorMessage(context.stringValue("ListJobResponse.JobList["+ i +"].MNSMessageResult.ErrorMessage"));
+			mNSMessageResult.setErrorCode(context.stringValue("ListJobResponse.JobList["+ i +"].MNSMessageResult.ErrorCode"));
+			job.setMNSMessageResult(mNSMessageResult);
 
 			jobList.add(job);
 		}

@@ -79,6 +79,8 @@ public class ListJobResponse extends AcsResponse {
 
 		private Output output;
 
+		private MNSMessageResult mNSMessageResult;
+
 		public String getJobId() {
 			return this.jobId;
 		}
@@ -149,6 +151,14 @@ public class ListJobResponse extends AcsResponse {
 
 		public void setOutput(Output output) {
 			this.output = output;
+		}
+
+		public MNSMessageResult getMNSMessageResult() {
+			return this.mNSMessageResult;
+		}
+
+		public void setMNSMessageResult(MNSMessageResult mNSMessageResult) {
+			this.mNSMessageResult = mNSMessageResult;
 		}
 
 		public static class Input {
@@ -1682,6 +1692,39 @@ public class ListJobResponse extends AcsResponse {
 				public void setFormat(String format) {
 					this.format = format;
 				}
+			}
+		}
+
+		public static class MNSMessageResult {
+
+			private String messageId;
+
+			private String errorMessage;
+
+			private String errorCode;
+
+			public String getMessageId() {
+				return this.messageId;
+			}
+
+			public void setMessageId(String messageId) {
+				this.messageId = messageId;
+			}
+
+			public String getErrorMessage() {
+				return this.errorMessage;
+			}
+
+			public void setErrorMessage(String errorMessage) {
+				this.errorMessage = errorMessage;
+			}
+
+			public String getErrorCode() {
+				return this.errorCode;
+			}
+
+			public void setErrorCode(String errorCode) {
+				this.errorCode = errorCode;
 			}
 		}
 	}

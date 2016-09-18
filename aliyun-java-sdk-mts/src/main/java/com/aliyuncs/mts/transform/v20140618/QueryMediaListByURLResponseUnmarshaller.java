@@ -112,6 +112,7 @@ public class QueryMediaListByURLResponseUnmarshaller {
 				videoStream.setBitrate(context.stringValue("QueryMediaListByURLResponse.MediaList["+ i +"].MediaInfo.Streams.VideoStreamList["+ j +"].Bitrate"));
 				videoStream.setNumFrames(context.stringValue("QueryMediaListByURLResponse.MediaList["+ i +"].MediaInfo.Streams.VideoStreamList["+ j +"].NumFrames"));
 				videoStream.setLang(context.stringValue("QueryMediaListByURLResponse.MediaList["+ i +"].MediaInfo.Streams.VideoStreamList["+ j +"].Lang"));
+				videoStream.setRotate(context.stringValue("QueryMediaListByURLResponse.MediaList["+ i +"].MediaInfo.Streams.VideoStreamList["+ j +"].Rotate"));
 
 				NetworkCost networkCost = new NetworkCost();
 				networkCost.setPreloadTime(context.stringValue("QueryMediaListByURLResponse.MediaList["+ i +"].MediaInfo.Streams.VideoStreamList["+ j +"].NetworkCost.PreloadTime"));

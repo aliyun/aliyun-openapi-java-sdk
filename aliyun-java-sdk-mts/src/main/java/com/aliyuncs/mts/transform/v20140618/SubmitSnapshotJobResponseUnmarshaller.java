@@ -21,6 +21,7 @@ package com.aliyuncs.mts.transform.v20140618;
 import com.aliyuncs.mts.model.v20140618.SubmitSnapshotJobResponse;
 import com.aliyuncs.mts.model.v20140618.SubmitSnapshotJobResponse.SnapshotJob;
 import com.aliyuncs.mts.model.v20140618.SubmitSnapshotJobResponse.SnapshotJob.Input;
+import com.aliyuncs.mts.model.v20140618.SubmitSnapshotJobResponse.SnapshotJob.MNSMessageResult;
 import com.aliyuncs.mts.model.v20140618.SubmitSnapshotJobResponse.SnapshotJob.SnapshotConfig;
 import com.aliyuncs.mts.model.v20140618.SubmitSnapshotJobResponse.SnapshotJob.SnapshotConfig.OutputFile;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -62,6 +63,12 @@ public class SubmitSnapshotJobResponseUnmarshaller {
 		outputFile.setObject(context.stringValue("SubmitSnapshotJobResponse.SnapshotJob.SnapshotConfig.OutputFile.Object"));
 		snapshotConfig.setOutputFile(outputFile);
 		snapshotJob.setSnapshotConfig(snapshotConfig);
+
+		MNSMessageResult mNSMessageResult = new MNSMessageResult();
+		mNSMessageResult.setMessageId(context.stringValue("SubmitSnapshotJobResponse.SnapshotJob.MNSMessageResult.MessageId"));
+		mNSMessageResult.setErrorMessage(context.stringValue("SubmitSnapshotJobResponse.SnapshotJob.MNSMessageResult.ErrorMessage"));
+		mNSMessageResult.setErrorCode(context.stringValue("SubmitSnapshotJobResponse.SnapshotJob.MNSMessageResult.ErrorCode"));
+		snapshotJob.setMNSMessageResult(mNSMessageResult);
 		submitSnapshotJobResponse.setSnapshotJob(snapshotJob);
 	 
 	 	return submitSnapshotJobResponse;

@@ -24,6 +24,7 @@ import java.util.List;
 import com.aliyuncs.mts.model.v20140618.SubmitMediaInfoJobResponse;
 import com.aliyuncs.mts.model.v20140618.SubmitMediaInfoJobResponse.MediaInfoJob;
 import com.aliyuncs.mts.model.v20140618.SubmitMediaInfoJobResponse.MediaInfoJob.Input;
+import com.aliyuncs.mts.model.v20140618.SubmitMediaInfoJobResponse.MediaInfoJob.MNSMessageResult;
 import com.aliyuncs.mts.model.v20140618.SubmitMediaInfoJobResponse.MediaInfoJob.Properties;
 import com.aliyuncs.mts.model.v20140618.SubmitMediaInfoJobResponse.MediaInfoJob.Properties.Format;
 import com.aliyuncs.mts.model.v20140618.SubmitMediaInfoJobResponse.MediaInfoJob.Properties.Streams;
@@ -91,6 +92,7 @@ public class SubmitMediaInfoJobResponseUnmarshaller {
 			videoStream.setBitrate(context.stringValue("SubmitMediaInfoJobResponse.MediaInfoJob.Properties.Streams.VideoStreamList["+ i +"].Bitrate"));
 			videoStream.setNumFrames(context.stringValue("SubmitMediaInfoJobResponse.MediaInfoJob.Properties.Streams.VideoStreamList["+ i +"].NumFrames"));
 			videoStream.setLang(context.stringValue("SubmitMediaInfoJobResponse.MediaInfoJob.Properties.Streams.VideoStreamList["+ i +"].Lang"));
+			videoStream.setRotate(context.stringValue("SubmitMediaInfoJobResponse.MediaInfoJob.Properties.Streams.VideoStreamList["+ i +"].Rotate"));
 
 			NetworkCost networkCost = new NetworkCost();
 			networkCost.setPreloadTime(context.stringValue("SubmitMediaInfoJobResponse.MediaInfoJob.Properties.Streams.VideoStreamList["+ i +"].NetworkCost.PreloadTime"));
@@ -148,6 +150,12 @@ public class SubmitMediaInfoJobResponseUnmarshaller {
 		format.setBitrate(context.stringValue("SubmitMediaInfoJobResponse.MediaInfoJob.Properties.Format.Bitrate"));
 		properties.setFormat(format);
 		mediaInfoJob.setProperties(properties);
+
+		MNSMessageResult mNSMessageResult = new MNSMessageResult();
+		mNSMessageResult.setMessageId(context.stringValue("SubmitMediaInfoJobResponse.MediaInfoJob.MNSMessageResult.MessageId"));
+		mNSMessageResult.setErrorMessage(context.stringValue("SubmitMediaInfoJobResponse.MediaInfoJob.MNSMessageResult.ErrorMessage"));
+		mNSMessageResult.setErrorCode(context.stringValue("SubmitMediaInfoJobResponse.MediaInfoJob.MNSMessageResult.ErrorCode"));
+		mediaInfoJob.setMNSMessageResult(mNSMessageResult);
 		submitMediaInfoJobResponse.setMediaInfoJob(mediaInfoJob);
 	 
 	 	return submitMediaInfoJobResponse;

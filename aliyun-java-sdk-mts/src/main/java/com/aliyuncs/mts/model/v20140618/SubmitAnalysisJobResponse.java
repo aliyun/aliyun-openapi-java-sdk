@@ -75,6 +75,8 @@ public class SubmitAnalysisJobResponse extends AcsResponse {
 
 		private AnalysisConfig analysisConfig;
 
+		private MNSMessageResult mNSMessageResult;
+
 		public String getId() {
 			return this.id;
 		}
@@ -169,6 +171,14 @@ public class SubmitAnalysisJobResponse extends AcsResponse {
 
 		public void setAnalysisConfig(AnalysisConfig analysisConfig) {
 			this.analysisConfig = analysisConfig;
+		}
+
+		public MNSMessageResult getMNSMessageResult() {
+			return this.mNSMessageResult;
+		}
+
+		public void setMNSMessageResult(MNSMessageResult mNSMessageResult) {
+			this.mNSMessageResult = mNSMessageResult;
 		}
 
 		public static class Template {
@@ -740,6 +750,39 @@ public class SubmitAnalysisJobResponse extends AcsResponse {
 						this.left = left;
 					}
 				}
+			}
+		}
+
+		public static class MNSMessageResult {
+
+			private String messageId;
+
+			private String errorMessage;
+
+			private String errorCode;
+
+			public String getMessageId() {
+				return this.messageId;
+			}
+
+			public void setMessageId(String messageId) {
+				this.messageId = messageId;
+			}
+
+			public String getErrorMessage() {
+				return this.errorMessage;
+			}
+
+			public void setErrorMessage(String errorMessage) {
+				this.errorMessage = errorMessage;
+			}
+
+			public String getErrorCode() {
+				return this.errorCode;
+			}
+
+			public void setErrorCode(String errorCode) {
+				this.errorCode = errorCode;
 			}
 		}
 	}

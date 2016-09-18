@@ -25,6 +25,7 @@ import com.aliyuncs.mts.model.v20140618.SubmitJobsResponse;
 import com.aliyuncs.mts.model.v20140618.SubmitJobsResponse.JobResult;
 import com.aliyuncs.mts.model.v20140618.SubmitJobsResponse.JobResult.Job;
 import com.aliyuncs.mts.model.v20140618.SubmitJobsResponse.JobResult.Job.Input;
+import com.aliyuncs.mts.model.v20140618.SubmitJobsResponse.JobResult.Job.MNSMessageResult;
 import com.aliyuncs.mts.model.v20140618.SubmitJobsResponse.JobResult.Job.Output;
 import com.aliyuncs.mts.model.v20140618.SubmitJobsResponse.JobResult.Job.Output.Audio;
 import com.aliyuncs.mts.model.v20140618.SubmitJobsResponse.JobResult.Job.Output.Clip;
@@ -313,6 +314,12 @@ public class SubmitJobsResponseUnmarshaller {
 			}
 			output.setMergeList(mergeList);
 			job.setOutput(output);
+
+			MNSMessageResult mNSMessageResult = new MNSMessageResult();
+			mNSMessageResult.setMessageId(context.stringValue("SubmitJobsResponse.JobResultList["+ i +"].Job.MNSMessageResult.MessageId"));
+			mNSMessageResult.setErrorMessage(context.stringValue("SubmitJobsResponse.JobResultList["+ i +"].Job.MNSMessageResult.ErrorMessage"));
+			mNSMessageResult.setErrorCode(context.stringValue("SubmitJobsResponse.JobResultList["+ i +"].Job.MNSMessageResult.ErrorCode"));
+			job.setMNSMessageResult(mNSMessageResult);
 			jobResult.setJob(job);
 
 			jobResultList.add(jobResult);

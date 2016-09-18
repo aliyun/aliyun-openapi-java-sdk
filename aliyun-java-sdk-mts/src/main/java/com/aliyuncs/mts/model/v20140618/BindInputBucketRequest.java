@@ -38,8 +38,6 @@ public class BindInputBucketRequest extends RpcAcsRequest<BindInputBucketRespons
 
 	private String bucket;
 
-	private Boolean sync;
-
 	private String ownerAccount;
 
 	public Long getOwnerId() {
@@ -76,15 +74,6 @@ public class BindInputBucketRequest extends RpcAcsRequest<BindInputBucketRespons
 	public void setBucket(String bucket) {
 		this.bucket = bucket;
 		putQueryParameter("Bucket", bucket);
-	}
-
-	public Boolean getSync() {
-		return this.sync;
-	}
-
-	public void setSync(Boolean sync) {
-		this.sync = sync;
-		putQueryParameter("Sync", sync);
 	}
 
 	public String getOwnerAccount() {
