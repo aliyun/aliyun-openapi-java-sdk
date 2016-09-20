@@ -20,50 +20,50 @@ package com.aliyuncs.push.model.v20150827;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.push.transform.v20150827.GenerateIotDevicesArrayResponseUnmarshaller;
+import com.aliyuncs.push.transform.v20150827.PopTestResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class GenerateIotDevicesArrayResponse extends AcsResponse {
+public class PopTestResponse extends AcsResponse {
 
-	private List<DeviceInfo> deviceInfos;
+	private String requestId;
 
-	public List<DeviceInfo> getDeviceInfos() {
-		return this.deviceInfos;
+	private List<TagInfo> tagInfos;
+
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setDeviceInfos(List<DeviceInfo> deviceInfos) {
-		this.deviceInfos = deviceInfos;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
-	public static class DeviceInfo {
+	public List<TagInfo> getTagInfos() {
+		return this.tagInfos;
+	}
 
-		private String deviceSn;
+	public void setTagInfos(List<TagInfo> tagInfos) {
+		this.tagInfos = tagInfos;
+	}
 
-		private String deviceSecret;
+	public static class TagInfo {
 
-		public String getDeviceSn() {
-			return this.deviceSn;
+		private String tagName;
+
+		public String getTagName() {
+			return this.tagName;
 		}
 
-		public void setDeviceSn(String deviceSn) {
-			this.deviceSn = deviceSn;
-		}
-
-		public String getDeviceSecret() {
-			return this.deviceSecret;
-		}
-
-		public void setDeviceSecret(String deviceSecret) {
-			this.deviceSecret = deviceSecret;
+		public void setTagName(String tagName) {
+			this.tagName = tagName;
 		}
 	}
 
 	@Override
-	public GenerateIotDevicesArrayResponse getInstance(UnmarshallerContext context) {
-		return	GenerateIotDevicesArrayResponseUnmarshaller.unmarshall(this, context);
+	public PopTestResponse getInstance(UnmarshallerContext context) {
+		return	PopTestResponseUnmarshaller.unmarshall(this, context);
 	}
 }

@@ -24,19 +24,13 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class ListDevicePushRecordsRequest extends RpcAcsRequest<ListDevicePushRecordsResponse> {
+public class PopTestRequest extends RpcAcsRequest<PopTestResponse> {
 	
-	public ListDevicePushRecordsRequest() {
-		super("Push", "2015-08-27", "ListDevicePushRecords");
+	public PopTestRequest() {
+		super("Push", "2015-08-27", "PopTest");
 	}
 
 	private Long appKey;
-
-	private String deviceId;
-
-	private Integer page;
-
-	private Integer pageSize;
 
 	public Long getAppKey() {
 		return this.appKey;
@@ -47,36 +41,9 @@ public class ListDevicePushRecordsRequest extends RpcAcsRequest<ListDevicePushRe
 		putQueryParameter("AppKey", appKey);
 	}
 
-	public String getDeviceId() {
-		return this.deviceId;
-	}
-
-	public void setDeviceId(String deviceId) {
-		this.deviceId = deviceId;
-		putQueryParameter("DeviceId", deviceId);
-	}
-
-	public Integer getPage() {
-		return this.page;
-	}
-
-	public void setPage(Integer page) {
-		this.page = page;
-		putQueryParameter("Page", page);
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		putQueryParameter("PageSize", pageSize);
-	}
-
 	@Override
-	public Class<ListDevicePushRecordsResponse> getResponseClass() {
-		return ListDevicePushRecordsResponse.class;
+	public Class<PopTestResponse> getResponseClass() {
+		return PopTestResponse.class;
 	}
 
 }

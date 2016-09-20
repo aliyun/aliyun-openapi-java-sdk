@@ -21,26 +21,27 @@ package com.aliyuncs.push.transform.v20150827;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.aliyuncs.push.model.v20150827.GenerateIotDevicesResponse;
-import com.aliyuncs.push.model.v20150827.GenerateIotDevicesResponse.DeviceInfo;
+import com.aliyuncs.push.model.v20150827.QueryMessageCountResponse;
+import com.aliyuncs.push.model.v20150827.QueryMessageCountResponse.BillInfo;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class GenerateIotDevicesResponseUnmarshaller {
+public class QueryMessageCountResponseUnmarshaller {
 
-	public static GenerateIotDevicesResponse unmarshall(GenerateIotDevicesResponse generateIotDevicesResponse, UnmarshallerContext context) {
+	public static QueryMessageCountResponse unmarshall(QueryMessageCountResponse queryMessageCountResponse, UnmarshallerContext context) {
 		
+		queryMessageCountResponse.setRequestId(context.stringValue("QueryMessageCountResponse.RequestId"));
 
-		List<DeviceInfo> deviceInfos = new ArrayList<DeviceInfo>();
-		for (int i = 0; i < context.lengthValue("GenerateIotDevicesResponse.DeviceInfos.Length"); i++) {
-			DeviceInfo deviceInfo = new DeviceInfo();
-			deviceInfo.setDeviceSn(context.stringValue("GenerateIotDevicesResponse.DeviceInfos["+ i +"].DeviceSn"));
-			deviceInfo.setDeviceSecret(context.stringValue("GenerateIotDevicesResponse.DeviceInfos["+ i +"].DeviceSecret"));
+		List<BillInfo> billInfos = new ArrayList<BillInfo>();
+		for (int i = 0; i < context.lengthValue("QueryMessageCountResponse.billInfos.Length"); i++) {
+			BillInfo billInfo = new BillInfo();
+			billInfo.setdate(context.stringValue("QueryMessageCountResponse.billInfos["+ i +"].date"));
+			billInfo.setcount(context.integerValue("QueryMessageCountResponse.billInfos["+ i +"].count"));
 
-			deviceInfos.add(deviceInfo);
+			billInfos.add(billInfo);
 		}
-		generateIotDevicesResponse.setDeviceInfos(deviceInfos);
+		queryMessageCountResponse.setbillInfos(billInfos);
 	 
-	 	return generateIotDevicesResponse;
+	 	return queryMessageCountResponse;
 	}
 }

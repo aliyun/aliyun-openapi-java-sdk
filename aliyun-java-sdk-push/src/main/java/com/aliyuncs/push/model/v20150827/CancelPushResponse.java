@@ -18,52 +18,28 @@
  */
 package com.aliyuncs.push.model.v20150827;
 
-import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.push.transform.v20150827.GenerateIotDevicesArrayResponseUnmarshaller;
+import com.aliyuncs.push.transform.v20150827.CancelPushResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class GenerateIotDevicesArrayResponse extends AcsResponse {
+public class CancelPushResponse extends AcsResponse {
 
-	private List<DeviceInfo> deviceInfos;
+	private String requestId;
 
-	public List<DeviceInfo> getDeviceInfos() {
-		return this.deviceInfos;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setDeviceInfos(List<DeviceInfo> deviceInfos) {
-		this.deviceInfos = deviceInfos;
-	}
-
-	public static class DeviceInfo {
-
-		private String deviceSn;
-
-		private String deviceSecret;
-
-		public String getDeviceSn() {
-			return this.deviceSn;
-		}
-
-		public void setDeviceSn(String deviceSn) {
-			this.deviceSn = deviceSn;
-		}
-
-		public String getDeviceSecret() {
-			return this.deviceSecret;
-		}
-
-		public void setDeviceSecret(String deviceSecret) {
-			this.deviceSecret = deviceSecret;
-		}
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override
-	public GenerateIotDevicesArrayResponse getInstance(UnmarshallerContext context) {
-		return	GenerateIotDevicesArrayResponseUnmarshaller.unmarshall(this, context);
+	public CancelPushResponse getInstance(UnmarshallerContext context) {
+		return	CancelPushResponseUnmarshaller.unmarshall(this, context);
 	}
 }

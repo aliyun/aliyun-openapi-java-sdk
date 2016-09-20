@@ -21,26 +21,26 @@ package com.aliyuncs.push.transform.v20150827;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.aliyuncs.push.model.v20150827.GenerateIotDevicesResponse;
-import com.aliyuncs.push.model.v20150827.GenerateIotDevicesResponse.DeviceInfo;
+import com.aliyuncs.push.model.v20150827.PopTestResponse;
+import com.aliyuncs.push.model.v20150827.PopTestResponse.TagInfo;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class GenerateIotDevicesResponseUnmarshaller {
+public class PopTestResponseUnmarshaller {
 
-	public static GenerateIotDevicesResponse unmarshall(GenerateIotDevicesResponse generateIotDevicesResponse, UnmarshallerContext context) {
+	public static PopTestResponse unmarshall(PopTestResponse popTestResponse, UnmarshallerContext context) {
 		
+		popTestResponse.setRequestId(context.stringValue("PopTestResponse.RequestId"));
 
-		List<DeviceInfo> deviceInfos = new ArrayList<DeviceInfo>();
-		for (int i = 0; i < context.lengthValue("GenerateIotDevicesResponse.DeviceInfos.Length"); i++) {
-			DeviceInfo deviceInfo = new DeviceInfo();
-			deviceInfo.setDeviceSn(context.stringValue("GenerateIotDevicesResponse.DeviceInfos["+ i +"].DeviceSn"));
-			deviceInfo.setDeviceSecret(context.stringValue("GenerateIotDevicesResponse.DeviceInfos["+ i +"].DeviceSecret"));
+		List<TagInfo> tagInfos = new ArrayList<TagInfo>();
+		for (int i = 0; i < context.lengthValue("PopTestResponse.TagInfos.Length"); i++) {
+			TagInfo tagInfo = new TagInfo();
+			tagInfo.setTagName(context.stringValue("PopTestResponse.TagInfos["+ i +"].TagName"));
 
-			deviceInfos.add(deviceInfo);
+			tagInfos.add(tagInfo);
 		}
-		generateIotDevicesResponse.setDeviceInfos(deviceInfos);
+		popTestResponse.setTagInfos(tagInfos);
 	 
-	 	return generateIotDevicesResponse;
+	 	return popTestResponse;
 	}
 }

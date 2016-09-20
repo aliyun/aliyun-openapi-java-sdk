@@ -24,19 +24,19 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class ListDevicePushRecordsRequest extends RpcAcsRequest<ListDevicePushRecordsResponse> {
+public class QueryMessageCountRequest extends RpcAcsRequest<QueryMessageCountResponse> {
 	
-	public ListDevicePushRecordsRequest() {
-		super("Push", "2015-08-27", "ListDevicePushRecords");
+	public QueryMessageCountRequest() {
+		super("Push", "2015-08-27", "QueryMessageCount");
 	}
 
 	private Long appKey;
 
-	private String deviceId;
+	private String start;
 
-	private Integer page;
+	private String end;
 
-	private Integer pageSize;
+	private Integer level;
 
 	public Long getAppKey() {
 		return this.appKey;
@@ -47,36 +47,36 @@ public class ListDevicePushRecordsRequest extends RpcAcsRequest<ListDevicePushRe
 		putQueryParameter("AppKey", appKey);
 	}
 
-	public String getDeviceId() {
-		return this.deviceId;
+	public String getstart() {
+		return this.start;
 	}
 
-	public void setDeviceId(String deviceId) {
-		this.deviceId = deviceId;
-		putQueryParameter("DeviceId", deviceId);
+	public void setstart(String start) {
+		this.start = start;
+		putQueryParameter("start", start);
 	}
 
-	public Integer getPage() {
-		return this.page;
+	public String getend() {
+		return this.end;
 	}
 
-	public void setPage(Integer page) {
-		this.page = page;
-		putQueryParameter("Page", page);
+	public void setend(String end) {
+		this.end = end;
+		putQueryParameter("end", end);
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public Integer getlevel() {
+		return this.level;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		putQueryParameter("PageSize", pageSize);
+	public void setlevel(Integer level) {
+		this.level = level;
+		putQueryParameter("level", level);
 	}
 
 	@Override
-	public Class<ListDevicePushRecordsResponse> getResponseClass() {
-		return ListDevicePushRecordsResponse.class;
+	public Class<QueryMessageCountResponse> getResponseClass() {
+		return QueryMessageCountResponse.class;
 	}
 
 }

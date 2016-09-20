@@ -16,45 +16,20 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package com.aliyuncs.push.model.v20150827;
+package com.aliyuncs.push.transform.v20150827;
 
-import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.push.model.v20150827.TestResponse;
+import com.aliyuncs.transform.UnmarshallerContext;
 
-/**
- * @author auto create
- * @version 
- */
-public class GenerateIotDevicesRequest extends RpcAcsRequest<GenerateIotDevicesResponse> {
-	
-	public GenerateIotDevicesRequest() {
-		super("Push", "2015-08-27", "GenerateIotDevices");
+
+public class TestResponseUnmarshaller {
+
+	public static TestResponse unmarshall(TestResponse testResponse, UnmarshallerContext context) {
+		
+		testResponse.setRequestId(context.stringValue("TestResponse.RequestId"));
+		testResponse.setResponseId(context.stringValue("TestResponse.ResponseId"));
+		testResponse.setMessage(context.stringValue("TestResponse.Message"));
+	 
+	 	return testResponse;
 	}
-
-	private Boolean isDev;
-
-	private Long number;
-
-	public Boolean getisDev() {
-		return this.isDev;
-	}
-
-	public void setisDev(Boolean isDev) {
-		this.isDev = isDev;
-		putQueryParameter("isDev", isDev);
-	}
-
-	public Long getNumber() {
-		return this.number;
-	}
-
-	public void setNumber(Long number) {
-		this.number = number;
-		putQueryParameter("Number", number);
-	}
-
-	@Override
-	public Class<GenerateIotDevicesResponse> getResponseClass() {
-		return GenerateIotDevicesResponse.class;
-	}
-
 }

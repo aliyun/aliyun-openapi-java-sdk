@@ -18,52 +18,58 @@
  */
 package com.aliyuncs.push.model.v20150827;
 
-import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.push.transform.v20150827.GenerateIotDevicesArrayResponseUnmarshaller;
+import com.aliyuncs.push.transform.v20150827.QueryMessageStatisticsByMessageIdResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class GenerateIotDevicesArrayResponse extends AcsResponse {
+public class QueryMessageStatisticsByMessageIdResponse extends AcsResponse {
 
-	private List<DeviceInfo> deviceInfos;
+	private String requestId;
 
-	public List<DeviceInfo> getDeviceInfos() {
-		return this.deviceInfos;
+	private String messageId;
+
+	private Integer sent;
+
+	private Integer received;
+
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setDeviceInfos(List<DeviceInfo> deviceInfos) {
-		this.deviceInfos = deviceInfos;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
-	public static class DeviceInfo {
+	public String getMessageId() {
+		return this.messageId;
+	}
 
-		private String deviceSn;
+	public void setMessageId(String messageId) {
+		this.messageId = messageId;
+	}
 
-		private String deviceSecret;
+	public Integer getSent() {
+		return this.sent;
+	}
 
-		public String getDeviceSn() {
-			return this.deviceSn;
-		}
+	public void setSent(Integer sent) {
+		this.sent = sent;
+	}
 
-		public void setDeviceSn(String deviceSn) {
-			this.deviceSn = deviceSn;
-		}
+	public Integer getReceived() {
+		return this.received;
+	}
 
-		public String getDeviceSecret() {
-			return this.deviceSecret;
-		}
-
-		public void setDeviceSecret(String deviceSecret) {
-			this.deviceSecret = deviceSecret;
-		}
+	public void setReceived(Integer received) {
+		this.received = received;
 	}
 
 	@Override
-	public GenerateIotDevicesArrayResponse getInstance(UnmarshallerContext context) {
-		return	GenerateIotDevicesArrayResponseUnmarshaller.unmarshall(this, context);
+	public QueryMessageStatisticsByMessageIdResponse getInstance(UnmarshallerContext context) {
+		return	QueryMessageStatisticsByMessageIdResponseUnmarshaller.unmarshall(this, context);
 	}
 }

@@ -24,19 +24,15 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class ListDevicePushRecordsRequest extends RpcAcsRequest<ListDevicePushRecordsResponse> {
+public class CancelPushRequest extends RpcAcsRequest<CancelPushResponse> {
 	
-	public ListDevicePushRecordsRequest() {
-		super("Push", "2015-08-27", "ListDevicePushRecords");
+	public CancelPushRequest() {
+		super("Push", "2015-08-27", "CancelPush");
 	}
 
 	private Long appKey;
 
-	private String deviceId;
-
-	private Integer page;
-
-	private Integer pageSize;
+	private String messageId;
 
 	public Long getAppKey() {
 		return this.appKey;
@@ -47,36 +43,18 @@ public class ListDevicePushRecordsRequest extends RpcAcsRequest<ListDevicePushRe
 		putQueryParameter("AppKey", appKey);
 	}
 
-	public String getDeviceId() {
-		return this.deviceId;
+	public String getMessageId() {
+		return this.messageId;
 	}
 
-	public void setDeviceId(String deviceId) {
-		this.deviceId = deviceId;
-		putQueryParameter("DeviceId", deviceId);
-	}
-
-	public Integer getPage() {
-		return this.page;
-	}
-
-	public void setPage(Integer page) {
-		this.page = page;
-		putQueryParameter("Page", page);
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		putQueryParameter("PageSize", pageSize);
+	public void setMessageId(String messageId) {
+		this.messageId = messageId;
+		putQueryParameter("MessageId", messageId);
 	}
 
 	@Override
-	public Class<ListDevicePushRecordsResponse> getResponseClass() {
-		return ListDevicePushRecordsResponse.class;
+	public Class<CancelPushResponse> getResponseClass() {
+		return CancelPushResponse.class;
 	}
 
 }

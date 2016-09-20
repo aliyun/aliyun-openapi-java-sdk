@@ -24,19 +24,17 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class ListDevicePushRecordsRequest extends RpcAcsRequest<ListDevicePushRecordsResponse> {
+public class QueryMessageStatisticsRequest extends RpcAcsRequest<QueryMessageStatisticsResponse> {
 	
-	public ListDevicePushRecordsRequest() {
-		super("Push", "2015-08-27", "ListDevicePushRecords");
+	public QueryMessageStatisticsRequest() {
+		super("Push", "2015-08-27", "QueryMessageStatistics");
 	}
 
 	private Long appKey;
 
-	private String deviceId;
+	private String startTime;
 
-	private Integer page;
-
-	private Integer pageSize;
+	private String endTime;
 
 	public Long getAppKey() {
 		return this.appKey;
@@ -47,36 +45,27 @@ public class ListDevicePushRecordsRequest extends RpcAcsRequest<ListDevicePushRe
 		putQueryParameter("AppKey", appKey);
 	}
 
-	public String getDeviceId() {
-		return this.deviceId;
+	public String getStartTime() {
+		return this.startTime;
 	}
 
-	public void setDeviceId(String deviceId) {
-		this.deviceId = deviceId;
-		putQueryParameter("DeviceId", deviceId);
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+		putQueryParameter("StartTime", startTime);
 	}
 
-	public Integer getPage() {
-		return this.page;
+	public String getEndTime() {
+		return this.endTime;
 	}
 
-	public void setPage(Integer page) {
-		this.page = page;
-		putQueryParameter("Page", page);
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		putQueryParameter("PageSize", pageSize);
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+		putQueryParameter("EndTime", endTime);
 	}
 
 	@Override
-	public Class<ListDevicePushRecordsResponse> getResponseClass() {
-		return ListDevicePushRecordsResponse.class;
+	public Class<QueryMessageStatisticsResponse> getResponseClass() {
+		return QueryMessageStatisticsResponse.class;
 	}
 
 }

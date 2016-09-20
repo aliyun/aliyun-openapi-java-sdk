@@ -24,19 +24,19 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class ListDevicePushRecordsRequest extends RpcAcsRequest<ListDevicePushRecordsResponse> {
+public class UnbindKeysFromTagRequest extends RpcAcsRequest<UnbindKeysFromTagResponse> {
 	
-	public ListDevicePushRecordsRequest() {
-		super("Push", "2015-08-27", "ListDevicePushRecords");
+	public UnbindKeysFromTagRequest() {
+		super("Push", "2015-08-27", "UnbindKeysFromTag");
 	}
 
 	private Long appKey;
 
-	private String deviceId;
+	private String clientKey;
 
-	private Integer page;
+	private Integer keyType;
 
-	private Integer pageSize;
+	private String tagName;
 
 	public Long getAppKey() {
 		return this.appKey;
@@ -47,36 +47,36 @@ public class ListDevicePushRecordsRequest extends RpcAcsRequest<ListDevicePushRe
 		putQueryParameter("AppKey", appKey);
 	}
 
-	public String getDeviceId() {
-		return this.deviceId;
+	public String getClientKey() {
+		return this.clientKey;
 	}
 
-	public void setDeviceId(String deviceId) {
-		this.deviceId = deviceId;
-		putQueryParameter("DeviceId", deviceId);
+	public void setClientKey(String clientKey) {
+		this.clientKey = clientKey;
+		putQueryParameter("ClientKey", clientKey);
 	}
 
-	public Integer getPage() {
-		return this.page;
+	public Integer getKeyType() {
+		return this.keyType;
 	}
 
-	public void setPage(Integer page) {
-		this.page = page;
-		putQueryParameter("Page", page);
+	public void setKeyType(Integer keyType) {
+		this.keyType = keyType;
+		putQueryParameter("KeyType", keyType);
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public String getTagName() {
+		return this.tagName;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		putQueryParameter("PageSize", pageSize);
+	public void setTagName(String tagName) {
+		this.tagName = tagName;
+		putQueryParameter("TagName", tagName);
 	}
 
 	@Override
-	public Class<ListDevicePushRecordsResponse> getResponseClass() {
-		return ListDevicePushRecordsResponse.class;
+	public Class<UnbindKeysFromTagResponse> getResponseClass() {
+		return UnbindKeysFromTagResponse.class;
 	}
 
 }

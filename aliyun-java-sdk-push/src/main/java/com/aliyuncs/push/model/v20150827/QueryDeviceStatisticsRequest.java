@@ -24,19 +24,21 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class ListDevicePushRecordsRequest extends RpcAcsRequest<ListDevicePushRecordsResponse> {
+public class QueryDeviceStatisticsRequest extends RpcAcsRequest<QueryDeviceStatisticsResponse> {
 	
-	public ListDevicePushRecordsRequest() {
-		super("Push", "2015-08-27", "ListDevicePushRecords");
+	public QueryDeviceStatisticsRequest() {
+		super("Push", "2015-08-27", "QueryDeviceStatistics");
 	}
 
 	private Long appKey;
 
-	private String deviceId;
+	private Integer type;
 
-	private Integer page;
+	private Integer deviceType;
 
-	private Integer pageSize;
+	private String startTime;
+
+	private String endTime;
 
 	public Long getAppKey() {
 		return this.appKey;
@@ -47,36 +49,45 @@ public class ListDevicePushRecordsRequest extends RpcAcsRequest<ListDevicePushRe
 		putQueryParameter("AppKey", appKey);
 	}
 
-	public String getDeviceId() {
-		return this.deviceId;
+	public Integer getType() {
+		return this.type;
 	}
 
-	public void setDeviceId(String deviceId) {
-		this.deviceId = deviceId;
-		putQueryParameter("DeviceId", deviceId);
+	public void setType(Integer type) {
+		this.type = type;
+		putQueryParameter("Type", type);
 	}
 
-	public Integer getPage() {
-		return this.page;
+	public Integer getDeviceType() {
+		return this.deviceType;
 	}
 
-	public void setPage(Integer page) {
-		this.page = page;
-		putQueryParameter("Page", page);
+	public void setDeviceType(Integer deviceType) {
+		this.deviceType = deviceType;
+		putQueryParameter("DeviceType", deviceType);
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public String getStartTime() {
+		return this.startTime;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		putQueryParameter("PageSize", pageSize);
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+		putQueryParameter("StartTime", startTime);
+	}
+
+	public String getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+		putQueryParameter("EndTime", endTime);
 	}
 
 	@Override
-	public Class<ListDevicePushRecordsResponse> getResponseClass() {
-		return ListDevicePushRecordsResponse.class;
+	public Class<QueryDeviceStatisticsResponse> getResponseClass() {
+		return QueryDeviceStatisticsResponse.class;
 	}
 
 }

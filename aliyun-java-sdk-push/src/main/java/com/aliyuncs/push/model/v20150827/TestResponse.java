@@ -18,52 +18,48 @@
  */
 package com.aliyuncs.push.model.v20150827;
 
-import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.push.transform.v20150827.GenerateIotDevicesArrayResponseUnmarshaller;
+import com.aliyuncs.push.transform.v20150827.TestResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class GenerateIotDevicesArrayResponse extends AcsResponse {
+public class TestResponse extends AcsResponse {
 
-	private List<DeviceInfo> deviceInfos;
+	private String requestId;
 
-	public List<DeviceInfo> getDeviceInfos() {
-		return this.deviceInfos;
+	private String responseId;
+
+	private String message;
+
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setDeviceInfos(List<DeviceInfo> deviceInfos) {
-		this.deviceInfos = deviceInfos;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
-	public static class DeviceInfo {
+	public String getResponseId() {
+		return this.responseId;
+	}
 
-		private String deviceSn;
+	public void setResponseId(String responseId) {
+		this.responseId = responseId;
+	}
 
-		private String deviceSecret;
+	public String getMessage() {
+		return this.message;
+	}
 
-		public String getDeviceSn() {
-			return this.deviceSn;
-		}
-
-		public void setDeviceSn(String deviceSn) {
-			this.deviceSn = deviceSn;
-		}
-
-		public String getDeviceSecret() {
-			return this.deviceSecret;
-		}
-
-		public void setDeviceSecret(String deviceSecret) {
-			this.deviceSecret = deviceSecret;
-		}
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	@Override
-	public GenerateIotDevicesArrayResponse getInstance(UnmarshallerContext context) {
-		return	GenerateIotDevicesArrayResponseUnmarshaller.unmarshall(this, context);
+	public TestResponse getInstance(UnmarshallerContext context) {
+		return	TestResponseUnmarshaller.unmarshall(this, context);
 	}
 }

@@ -20,50 +20,60 @@ package com.aliyuncs.push.model.v20150827;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.push.transform.v20150827.GenerateIotDevicesArrayResponseUnmarshaller;
+import com.aliyuncs.push.transform.v20150827.QueryMessageCountResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class GenerateIotDevicesArrayResponse extends AcsResponse {
+public class QueryMessageCountResponse extends AcsResponse {
 
-	private List<DeviceInfo> deviceInfos;
+	private String requestId;
 
-	public List<DeviceInfo> getDeviceInfos() {
-		return this.deviceInfos;
+	private List<BillInfo> billInfos;
+
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setDeviceInfos(List<DeviceInfo> deviceInfos) {
-		this.deviceInfos = deviceInfos;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
-	public static class DeviceInfo {
+	public List<BillInfo> getbillInfos() {
+		return this.billInfos;
+	}
 
-		private String deviceSn;
+	public void setbillInfos(List<BillInfo> billInfos) {
+		this.billInfos = billInfos;
+	}
 
-		private String deviceSecret;
+	public static class BillInfo {
 
-		public String getDeviceSn() {
-			return this.deviceSn;
+		private String date;
+
+		private Integer count;
+
+		public String getdate() {
+			return this.date;
 		}
 
-		public void setDeviceSn(String deviceSn) {
-			this.deviceSn = deviceSn;
+		public void setdate(String date) {
+			this.date = date;
 		}
 
-		public String getDeviceSecret() {
-			return this.deviceSecret;
+		public Integer getcount() {
+			return this.count;
 		}
 
-		public void setDeviceSecret(String deviceSecret) {
-			this.deviceSecret = deviceSecret;
+		public void setcount(Integer count) {
+			this.count = count;
 		}
 	}
 
 	@Override
-	public GenerateIotDevicesArrayResponse getInstance(UnmarshallerContext context) {
-		return	GenerateIotDevicesArrayResponseUnmarshaller.unmarshall(this, context);
+	public QueryMessageCountResponse getInstance(UnmarshallerContext context) {
+		return	QueryMessageCountResponseUnmarshaller.unmarshall(this, context);
 	}
 }

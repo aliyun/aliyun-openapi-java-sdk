@@ -24,19 +24,21 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class ListDevicePushRecordsRequest extends RpcAcsRequest<ListDevicePushRecordsResponse> {
+public class TestRequest extends RpcAcsRequest<TestResponse> {
 	
-	public ListDevicePushRecordsRequest() {
-		super("Push", "2015-08-27", "ListDevicePushRecords");
+	public TestRequest() {
+		super("Push", "2015-08-27", "Test");
 	}
 
 	private Long appKey;
 
-	private String deviceId;
+	private String target;
 
-	private Integer page;
+	private String targetValue;
 
-	private Integer pageSize;
+	private String my_name;
+
+	private Long my_age;
 
 	public Long getAppKey() {
 		return this.appKey;
@@ -47,36 +49,45 @@ public class ListDevicePushRecordsRequest extends RpcAcsRequest<ListDevicePushRe
 		putQueryParameter("AppKey", appKey);
 	}
 
-	public String getDeviceId() {
-		return this.deviceId;
+	public String getTarget() {
+		return this.target;
 	}
 
-	public void setDeviceId(String deviceId) {
-		this.deviceId = deviceId;
-		putQueryParameter("DeviceId", deviceId);
+	public void setTarget(String target) {
+		this.target = target;
+		putQueryParameter("Target", target);
 	}
 
-	public Integer getPage() {
-		return this.page;
+	public String getTargetValue() {
+		return this.targetValue;
 	}
 
-	public void setPage(Integer page) {
-		this.page = page;
-		putQueryParameter("Page", page);
+	public void setTargetValue(String targetValue) {
+		this.targetValue = targetValue;
+		putQueryParameter("TargetValue", targetValue);
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public String getmy_name() {
+		return this.my_name;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		putQueryParameter("PageSize", pageSize);
+	public void setmy_name(String my_name) {
+		this.my_name = my_name;
+		putQueryParameter("my_name", my_name);
+	}
+
+	public Long getmy_age() {
+		return this.my_age;
+	}
+
+	public void setmy_age(Long my_age) {
+		this.my_age = my_age;
+		putQueryParameter("my_age", my_age);
 	}
 
 	@Override
-	public Class<ListDevicePushRecordsResponse> getResponseClass() {
-		return ListDevicePushRecordsResponse.class;
+	public Class<TestResponse> getResponseClass() {
+		return TestResponse.class;
 	}
 
 }

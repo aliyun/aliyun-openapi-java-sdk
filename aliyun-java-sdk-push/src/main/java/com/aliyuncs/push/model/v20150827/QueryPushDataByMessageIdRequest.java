@@ -24,19 +24,15 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class ListDevicePushRecordsRequest extends RpcAcsRequest<ListDevicePushRecordsResponse> {
+public class QueryPushDataByMessageIdRequest extends RpcAcsRequest<QueryPushDataByMessageIdResponse> {
 	
-	public ListDevicePushRecordsRequest() {
-		super("Push", "2015-08-27", "ListDevicePushRecords");
+	public QueryPushDataByMessageIdRequest() {
+		super("Push", "2015-08-27", "QueryPushDataByMessageId");
 	}
 
 	private Long appKey;
 
-	private String deviceId;
-
-	private Integer page;
-
-	private Integer pageSize;
+	private Long messageId;
 
 	public Long getAppKey() {
 		return this.appKey;
@@ -47,36 +43,18 @@ public class ListDevicePushRecordsRequest extends RpcAcsRequest<ListDevicePushRe
 		putQueryParameter("AppKey", appKey);
 	}
 
-	public String getDeviceId() {
-		return this.deviceId;
+	public Long getMessageId() {
+		return this.messageId;
 	}
 
-	public void setDeviceId(String deviceId) {
-		this.deviceId = deviceId;
-		putQueryParameter("DeviceId", deviceId);
-	}
-
-	public Integer getPage() {
-		return this.page;
-	}
-
-	public void setPage(Integer page) {
-		this.page = page;
-		putQueryParameter("Page", page);
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		putQueryParameter("PageSize", pageSize);
+	public void setMessageId(Long messageId) {
+		this.messageId = messageId;
+		putQueryParameter("MessageId", messageId);
 	}
 
 	@Override
-	public Class<ListDevicePushRecordsResponse> getResponseClass() {
-		return ListDevicePushRecordsResponse.class;
+	public Class<QueryPushDataByMessageIdResponse> getResponseClass() {
+		return QueryPushDataByMessageIdResponse.class;
 	}
 
 }
