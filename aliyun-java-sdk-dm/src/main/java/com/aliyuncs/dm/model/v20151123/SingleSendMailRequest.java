@@ -27,7 +27,7 @@ import com.aliyuncs.http.MethodType;
 public class SingleSendMailRequest extends RpcAcsRequest<SingleSendMailResponse> {
 	
 	public SingleSendMailRequest() {
-		super("Dm", "2015-11-23", "SingleSendMail", "dm");
+		super("Dm", "2015-11-23", "SingleSendMail");
 		this.setMethod(MethodType.POST);
 	}
 

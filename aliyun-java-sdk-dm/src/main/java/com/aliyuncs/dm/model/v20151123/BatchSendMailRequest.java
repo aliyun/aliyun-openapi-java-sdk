@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class BatchSendMailRequest extends RpcAcsRequest<BatchSendMailResponse> {
 	
 	public BatchSendMailRequest() {
-		super("Dm", "2015-11-23", "BatchSendMail", "dm");
+		super("Dm", "2015-11-23", "BatchSendMail");
 	}
 
 	private Long ownerId;

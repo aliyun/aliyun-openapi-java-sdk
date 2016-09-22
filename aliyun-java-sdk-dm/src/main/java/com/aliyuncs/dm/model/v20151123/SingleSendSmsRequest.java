@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class SingleSendSmsRequest extends RpcAcsRequest<SingleSendSmsResponse> {
 	
 	public SingleSendSmsRequest() {
-		super("Dm", "2015-11-23", "SingleSendSms", "dm");
+		super("Dm", "2015-11-23", "SingleSendSms");
 	}
 
 	private Long ownerId;
