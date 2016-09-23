@@ -36,11 +36,17 @@ public class DescribeLiveStreamsPublishListRequest extends RpcAcsRequest<Describ
 
 	private String domainName;
 
-	private String startTime;
-
 	private String appName;
 
+	private String streamName;
+
+	private String startTime;
+
 	private String endTime;
+
+	private Long pageSize;
+
+	private Long pageNumber;
 
 	public Long getOwnerId() {
 		return this.ownerId;
@@ -69,15 +75,6 @@ public class DescribeLiveStreamsPublishListRequest extends RpcAcsRequest<Describ
 		putQueryParameter("DomainName", domainName);
 	}
 
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-		putQueryParameter("StartTime", startTime);
-	}
-
 	public String getAppName() {
 		return this.appName;
 	}
@@ -87,6 +84,24 @@ public class DescribeLiveStreamsPublishListRequest extends RpcAcsRequest<Describ
 		putQueryParameter("AppName", appName);
 	}
 
+	public String getStreamName() {
+		return this.streamName;
+	}
+
+	public void setStreamName(String streamName) {
+		this.streamName = streamName;
+		putQueryParameter("StreamName", streamName);
+	}
+
+	public String getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+		putQueryParameter("StartTime", startTime);
+	}
+
 	public String getEndTime() {
 		return this.endTime;
 	}
@@ -94,6 +109,24 @@ public class DescribeLiveStreamsPublishListRequest extends RpcAcsRequest<Describ
 	public void setEndTime(String endTime) {
 		this.endTime = endTime;
 		putQueryParameter("EndTime", endTime);
+	}
+
+	public Long getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Long pageSize) {
+		this.pageSize = pageSize;
+		putQueryParameter("PageSize", pageSize);
+	}
+
+	public Long getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Long pageNumber) {
+		this.pageNumber = pageNumber;
+		putQueryParameter("PageNumber", pageNumber);
 	}
 
 	@Override

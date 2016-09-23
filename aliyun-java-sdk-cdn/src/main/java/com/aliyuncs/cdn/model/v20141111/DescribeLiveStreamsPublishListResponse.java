@@ -57,6 +57,8 @@ public class DescribeLiveStreamsPublishListResponse extends AcsResponse {
 
 		private String streamName;
 
+		private String streamUrl;
+
 		private String publishTime;
 
 		private String stopTime;
@@ -64,6 +66,8 @@ public class DescribeLiveStreamsPublishListResponse extends AcsResponse {
 		private String publishUrl;
 
 		private String clientAddr;
+
+		private String edgeNodeAddr;
 
 		public String getDomainName() {
 			return this.domainName;
@@ -87,6 +91,14 @@ public class DescribeLiveStreamsPublishListResponse extends AcsResponse {
 
 		public void setStreamName(String streamName) {
 			this.streamName = streamName;
+		}
+
+		public String getStreamUrl() {
+			return this.streamUrl;
+		}
+
+		public void setStreamUrl(String streamUrl) {
+			this.streamUrl = streamUrl;
 		}
 
 		public String getPublishTime() {
@@ -119,6 +131,14 @@ public class DescribeLiveStreamsPublishListResponse extends AcsResponse {
 
 		public void setClientAddr(String clientAddr) {
 			this.clientAddr = clientAddr;
+		}
+
+		public String getEdgeNodeAddr() {
+			return this.edgeNodeAddr;
+		}
+
+		public void setEdgeNodeAddr(String edgeNodeAddr) {
+			this.edgeNodeAddr = edgeNodeAddr;
 		}
 	}
 

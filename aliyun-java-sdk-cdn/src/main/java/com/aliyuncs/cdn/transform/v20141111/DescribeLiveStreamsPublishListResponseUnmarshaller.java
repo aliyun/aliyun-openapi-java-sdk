@@ -38,10 +38,12 @@ public class DescribeLiveStreamsPublishListResponseUnmarshaller {
 			liveStreamPublishInfo.setDomainName(context.stringValue("DescribeLiveStreamsPublishListResponse.PublishInfo["+ i +"].DomainName"));
 			liveStreamPublishInfo.setAppName(context.stringValue("DescribeLiveStreamsPublishListResponse.PublishInfo["+ i +"].AppName"));
 			liveStreamPublishInfo.setStreamName(context.stringValue("DescribeLiveStreamsPublishListResponse.PublishInfo["+ i +"].StreamName"));
+			liveStreamPublishInfo.setStreamUrl(context.stringValue("DescribeLiveStreamsPublishListResponse.PublishInfo["+ i +"].StreamUrl"));
 			liveStreamPublishInfo.setPublishTime(context.stringValue("DescribeLiveStreamsPublishListResponse.PublishInfo["+ i +"].PublishTime"));
 			liveStreamPublishInfo.setStopTime(context.stringValue("DescribeLiveStreamsPublishListResponse.PublishInfo["+ i +"].StopTime"));
 			liveStreamPublishInfo.setPublishUrl(context.stringValue("DescribeLiveStreamsPublishListResponse.PublishInfo["+ i +"].PublishUrl"));
 			liveStreamPublishInfo.setClientAddr(context.stringValue("DescribeLiveStreamsPublishListResponse.PublishInfo["+ i +"].ClientAddr"));
+			liveStreamPublishInfo.setEdgeNodeAddr(context.stringValue("DescribeLiveStreamsPublishListResponse.PublishInfo["+ i +"].EdgeNodeAddr"));
 
 			publishInfo.add(liveStreamPublishInfo);
 		}
