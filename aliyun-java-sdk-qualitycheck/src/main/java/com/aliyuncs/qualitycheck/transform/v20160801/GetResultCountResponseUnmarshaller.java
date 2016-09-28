@@ -18,19 +18,20 @@
  */
 package com.aliyuncs.qualitycheck.transform.v20160801;
 
-import com.aliyuncs.qualitycheck.model.v20160801.UploadRuleResponse;
+import com.aliyuncs.qualitycheck.model.v20160801.GetResultCountResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class UploadRuleResponseUnmarshaller {
+public class GetResultCountResponseUnmarshaller {
 
-	public static UploadRuleResponse unmarshall(UploadRuleResponse uploadRuleResponse, UnmarshallerContext context) {
+	public static GetResultCountResponse unmarshall(GetResultCountResponse getResultCountResponse, UnmarshallerContext context) {
 		
-		uploadRuleResponse.setRequestId(context.stringValue("UploadRuleResponse.RequestId"));
-		uploadRuleResponse.setSuccess(context.booleanValue("UploadRuleResponse.Success"));
-		uploadRuleResponse.setCode(context.stringValue("UploadRuleResponse.Code"));
-		uploadRuleResponse.setMessage(context.stringValue("UploadRuleResponse.Message"));
+		getResultCountResponse.setRequestId(context.stringValue("GetResultCountResponse.RequestId"));
+		getResultCountResponse.setSuccess(context.booleanValue("GetResultCountResponse.Success"));
+		getResultCountResponse.setCode(context.stringValue("GetResultCountResponse.Code"));
+		getResultCountResponse.setMessage(context.stringValue("GetResultCountResponse.Message"));
+		getResultCountResponse.setData(context.integerValue("GetResultCountResponse.Data"));
 	 
-	 	return uploadRuleResponse;
+	 	return getResultCountResponse;
 	}
 }

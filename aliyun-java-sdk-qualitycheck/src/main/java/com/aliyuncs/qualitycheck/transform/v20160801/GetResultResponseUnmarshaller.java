@@ -31,6 +31,7 @@ import com.aliyuncs.qualitycheck.model.v20160801.GetResultResponse.ResultInfo.Ru
 import com.aliyuncs.qualitycheck.model.v20160801.GetResultResponse.ResultInfo.RuleHitInfo.ConditionBasicInfo.OperatorBasicInfo;
 import com.aliyuncs.qualitycheck.model.v20160801.GetResultResponse.ResultInfo.RuleHitInfo.ConditionBasicInfo.OperatorBasicInfo.Param;
 import com.aliyuncs.qualitycheck.model.v20160801.GetResultResponse.ResultInfo.RuleHitInfo.ConditionHitInfo;
+import com.aliyuncs.qualitycheck.model.v20160801.GetResultResponse.ResultInfo.RuleHitInfo.ConditionHitInfo.HitKeyWord;
 import com.aliyuncs.qualitycheck.model.v20160801.GetResultResponse.ResultInfo.RuleHitInfo.ConditionHitInfo.Phrase;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -65,12 +66,6 @@ public class GetResultResponseUnmarshaller {
 					}
 					conditionHitInfo.setHitCids(hitCids);
 
-					List<String> keyWords = new ArrayList<String>();
-					for (int l = 0; l < context.lengthValue("GetResultResponse.Data["+ i +"].Rules["+ j +"].Hit["+ k +"].KeyWords.Length"); l++) {
-						keyWords.add(context.stringValue("GetResultResponse.Data["+ i +"].Rules["+ j +"].Hit["+ k +"].KeyWords["+ l +"]"));
-					}
-					conditionHitInfo.setKeyWords(keyWords);
-
 					Phrase phrase = new Phrase();
 					phrase.setRole(context.stringValue("GetResultResponse.Data["+ i +"].Rules["+ j +"].Hit["+ k +"].Phrase.Role"));
 					phrase.setIdentity(context.stringValue("GetResultResponse.Data["+ i +"].Rules["+ j +"].Hit["+ k +"].Phrase.Identity"));
@@ -80,6 +75,19 @@ public class GetResultResponseUnmarshaller {
 					phrase.setBeginTime(context.stringValue("GetResultResponse.Data["+ i +"].Rules["+ j +"].Hit["+ k +"].Phrase.BeginTime"));
 					phrase.sethourMinSec(context.stringValue("GetResultResponse.Data["+ i +"].Rules["+ j +"].Hit["+ k +"].Phrase.hourMinSec"));
 					conditionHitInfo.setPhrase(phrase);
+
+					List<HitKeyWord> hitKeyWords = new ArrayList<HitKeyWord>();
+					for (int l = 0; l < context.lengthValue("GetResultResponse.Data["+ i +"].Rules["+ j +"].Hit["+ k +"].HitKeyWords.Length"); l++) {
+						HitKeyWord hitKeyWord = new HitKeyWord();
+						hitKeyWord.setVal(context.stringValue("GetResultResponse.Data["+ i +"].Rules["+ j +"].Hit["+ k +"].HitKeyWords["+ l +"].Val"));
+						hitKeyWord.setPid(context.integerValue("GetResultResponse.Data["+ i +"].Rules["+ j +"].Hit["+ k +"].HitKeyWords["+ l +"].Pid"));
+						hitKeyWord.setFrom(context.integerValue("GetResultResponse.Data["+ i +"].Rules["+ j +"].Hit["+ k +"].HitKeyWords["+ l +"].From"));
+						hitKeyWord.setTo(context.integerValue("GetResultResponse.Data["+ i +"].Rules["+ j +"].Hit["+ k +"].HitKeyWords["+ l +"].To"));
+						hitKeyWord.setTid(context.stringValue("GetResultResponse.Data["+ i +"].Rules["+ j +"].Hit["+ k +"].HitKeyWords["+ l +"].Tid"));
+
+						hitKeyWords.add(hitKeyWord);
+					}
+					conditionHitInfo.setHitKeyWords(hitKeyWords);
 
 					hit.add(conditionHitInfo);
 				}
@@ -120,12 +128,15 @@ public class GetResultResponseUnmarshaller {
 						param.setThreshold(context.floatValue("GetResultResponse.Data["+ i +"].Rules["+ j +"].ConditionInfo["+ k +"].Operators["+ l +"].Param.Threshold"));
 						param.setInSentence(context.booleanValue("GetResultResponse.Data["+ i +"].Rules["+ j +"].ConditionInfo["+ k +"].Operators["+ l +"].Param.InSentence"));
 						param.setTarget(context.integerValue("GetResultResponse.Data["+ i +"].Rules["+ j +"].ConditionInfo["+ k +"].Operators["+ l +"].Param.Target"));
+						param.setFromEnd(context.booleanValue("GetResultResponse.Data["+ i +"].Rules["+ j +"].ConditionInfo["+ k +"].Operators["+ l +"].Param.FromEnd"));
+						param.setDifferentRole(context.booleanValue("GetResultResponse.Data["+ i +"].Rules["+ j +"].ConditionInfo["+ k +"].Operators["+ l +"].Param.DifferentRole"));
+						param.setTargetRole(context.stringValue("GetResultResponse.Data["+ i +"].Rules["+ j +"].ConditionInfo["+ k +"].Operators["+ l +"].Param.TargetRole"));
 
-						List<String> keyWords = new ArrayList<String>();
-						for (int m = 0; m < context.lengthValue("GetResultResponse.Data["+ i +"].Rules["+ j +"].ConditionInfo["+ k +"].Operators["+ l +"].Param.KeyWords.Length"); m++) {
-							keyWords.add(context.stringValue("GetResultResponse.Data["+ i +"].Rules["+ j +"].ConditionInfo["+ k +"].Operators["+ l +"].Param.KeyWords["+ m +"]"));
+						List<String> operKeyWords = new ArrayList<String>();
+						for (int m = 0; m < context.lengthValue("GetResultResponse.Data["+ i +"].Rules["+ j +"].ConditionInfo["+ k +"].Operators["+ l +"].Param.OperKeyWords.Length"); m++) {
+							operKeyWords.add(context.stringValue("GetResultResponse.Data["+ i +"].Rules["+ j +"].ConditionInfo["+ k +"].Operators["+ l +"].Param.OperKeyWords["+ m +"]"));
 						}
-						param.setKeyWords(keyWords);
+						param.setOperKeyWords(operKeyWords);
 
 						List<String> references = new ArrayList<String>();
 						for (int m = 0; m < context.lengthValue("GetResultResponse.Data["+ i +"].Rules["+ j +"].ConditionInfo["+ k +"].Operators["+ l +"].Param.References.Length"); m++) {

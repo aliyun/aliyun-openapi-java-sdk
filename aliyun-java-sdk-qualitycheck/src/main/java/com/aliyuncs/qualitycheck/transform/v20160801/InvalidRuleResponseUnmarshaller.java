@@ -18,19 +18,20 @@
  */
 package com.aliyuncs.qualitycheck.transform.v20160801;
 
-import com.aliyuncs.qualitycheck.model.v20160801.UploadRuleResponse;
+import com.aliyuncs.qualitycheck.model.v20160801.InvalidRuleResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class UploadRuleResponseUnmarshaller {
+public class InvalidRuleResponseUnmarshaller {
 
-	public static UploadRuleResponse unmarshall(UploadRuleResponse uploadRuleResponse, UnmarshallerContext context) {
+	public static InvalidRuleResponse unmarshall(InvalidRuleResponse invalidRuleResponse, UnmarshallerContext context) {
 		
-		uploadRuleResponse.setRequestId(context.stringValue("UploadRuleResponse.RequestId"));
-		uploadRuleResponse.setSuccess(context.booleanValue("UploadRuleResponse.Success"));
-		uploadRuleResponse.setCode(context.stringValue("UploadRuleResponse.Code"));
-		uploadRuleResponse.setMessage(context.stringValue("UploadRuleResponse.Message"));
+		invalidRuleResponse.setRequestId(context.stringValue("InvalidRuleResponse.RequestId"));
+		invalidRuleResponse.setSuccess(context.booleanValue("InvalidRuleResponse.Success"));
+		invalidRuleResponse.setCode(context.stringValue("InvalidRuleResponse.Code"));
+		invalidRuleResponse.setMessage(context.stringValue("InvalidRuleResponse.Message"));
+		invalidRuleResponse.setData(context.booleanValue("InvalidRuleResponse.Data"));
 	 
-	 	return uploadRuleResponse;
+	 	return invalidRuleResponse;
 	}
 }

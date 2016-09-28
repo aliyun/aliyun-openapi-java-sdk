@@ -145,11 +145,19 @@ public class GetResultResponse extends AcsResponse {
 
 			public static class ConditionHitInfo {
 
+				private List<HitKeyWord> hitKeyWords;
+
 				private List<String> hitCids;
 
-				private List<String> keyWords;
-
 				private Phrase phrase;
+
+				public List<HitKeyWord> getHitKeyWords() {
+					return this.hitKeyWords;
+				}
+
+				public void setHitKeyWords(List<HitKeyWord> hitKeyWords) {
+					this.hitKeyWords = hitKeyWords;
+				}
 
 				public List<String> getHitCids() {
 					return this.hitCids;
@@ -159,20 +167,65 @@ public class GetResultResponse extends AcsResponse {
 					this.hitCids = hitCids;
 				}
 
-				public List<String> getKeyWords() {
-					return this.keyWords;
-				}
-
-				public void setKeyWords(List<String> keyWords) {
-					this.keyWords = keyWords;
-				}
-
 				public Phrase getPhrase() {
 					return this.phrase;
 				}
 
 				public void setPhrase(Phrase phrase) {
 					this.phrase = phrase;
+				}
+
+				public static class HitKeyWord {
+
+					private String val;
+
+					private Integer pid;
+
+					private Integer from;
+
+					private Integer to;
+
+					private String tid;
+
+					public String getVal() {
+						return this.val;
+					}
+
+					public void setVal(String val) {
+						this.val = val;
+					}
+
+					public Integer getPid() {
+						return this.pid;
+					}
+
+					public void setPid(Integer pid) {
+						this.pid = pid;
+					}
+
+					public Integer getFrom() {
+						return this.from;
+					}
+
+					public void setFrom(Integer from) {
+						this.from = from;
+					}
+
+					public Integer getTo() {
+						return this.to;
+					}
+
+					public void setTo(Integer to) {
+						this.to = to;
+					}
+
+					public String getTid() {
+						return this.tid;
+					}
+
+					public void setTid(String tid) {
+						this.tid = tid;
+					}
 				}
 
 				public static class Phrase {
@@ -347,7 +400,13 @@ public class GetResultResponse extends AcsResponse {
 
 						private Integer target;
 
-						private List<String> keyWords;
+						private Boolean fromEnd;
+
+						private Boolean differentRole;
+
+						private String targetRole;
+
+						private List<String> operKeyWords;
 
 						private List<String> references;
 
@@ -399,12 +458,36 @@ public class GetResultResponse extends AcsResponse {
 							this.target = target;
 						}
 
-						public List<String> getKeyWords() {
-							return this.keyWords;
+						public Boolean getFromEnd() {
+							return this.fromEnd;
 						}
 
-						public void setKeyWords(List<String> keyWords) {
-							this.keyWords = keyWords;
+						public void setFromEnd(Boolean fromEnd) {
+							this.fromEnd = fromEnd;
+						}
+
+						public Boolean getDifferentRole() {
+							return this.differentRole;
+						}
+
+						public void setDifferentRole(Boolean differentRole) {
+							this.differentRole = differentRole;
+						}
+
+						public String getTargetRole() {
+							return this.targetRole;
+						}
+
+						public void setTargetRole(String targetRole) {
+							this.targetRole = targetRole;
+						}
+
+						public List<String> getOperKeyWords() {
+							return this.operKeyWords;
+						}
+
+						public void setOperKeyWords(List<String> operKeyWords) {
+							this.operKeyWords = operKeyWords;
 						}
 
 						public List<String> getReferences() {

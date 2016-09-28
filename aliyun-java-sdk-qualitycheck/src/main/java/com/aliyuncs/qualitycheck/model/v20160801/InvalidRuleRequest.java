@@ -16,21 +16,34 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package com.aliyuncs.qualitycheck.transform.v20160801;
+package com.aliyuncs.qualitycheck.model.v20160801;
 
-import com.aliyuncs.qualitycheck.model.v20160801.UploadRuleResponse;
-import com.aliyuncs.transform.UnmarshallerContext;
+import com.aliyuncs.RpcAcsRequest;
 
-
-public class UploadRuleResponseUnmarshaller {
-
-	public static UploadRuleResponse unmarshall(UploadRuleResponse uploadRuleResponse, UnmarshallerContext context) {
-		
-		uploadRuleResponse.setRequestId(context.stringValue("UploadRuleResponse.RequestId"));
-		uploadRuleResponse.setSuccess(context.booleanValue("UploadRuleResponse.Success"));
-		uploadRuleResponse.setCode(context.stringValue("UploadRuleResponse.Code"));
-		uploadRuleResponse.setMessage(context.stringValue("UploadRuleResponse.Message"));
-	 
-	 	return uploadRuleResponse;
+/**
+ * @author auto create
+ * @version 
+ */
+public class InvalidRuleRequest extends RpcAcsRequest<InvalidRuleResponse> {
+	
+	public InvalidRuleRequest() {
+		super("Qualitycheck", "2016-08-01", "InvalidRule");
 	}
+
+	private String jsonStr;
+
+	public String getJsonStr() {
+		return this.jsonStr;
+	}
+
+	public void setJsonStr(String jsonStr) {
+		this.jsonStr = jsonStr;
+		putQueryParameter("JsonStr", jsonStr);
+	}
+
+	@Override
+	public Class<InvalidRuleResponse> getResponseClass() {
+		return InvalidRuleResponse.class;
+	}
+
 }

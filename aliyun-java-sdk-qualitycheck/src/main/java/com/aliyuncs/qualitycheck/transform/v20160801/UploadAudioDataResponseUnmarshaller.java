@@ -18,19 +18,20 @@
  */
 package com.aliyuncs.qualitycheck.transform.v20160801;
 
-import com.aliyuncs.qualitycheck.model.v20160801.UploadRuleResponse;
+import com.aliyuncs.qualitycheck.model.v20160801.UploadAudioDataResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class UploadRuleResponseUnmarshaller {
+public class UploadAudioDataResponseUnmarshaller {
 
-	public static UploadRuleResponse unmarshall(UploadRuleResponse uploadRuleResponse, UnmarshallerContext context) {
+	public static UploadAudioDataResponse unmarshall(UploadAudioDataResponse uploadAudioDataResponse, UnmarshallerContext context) {
 		
-		uploadRuleResponse.setRequestId(context.stringValue("UploadRuleResponse.RequestId"));
-		uploadRuleResponse.setSuccess(context.booleanValue("UploadRuleResponse.Success"));
-		uploadRuleResponse.setCode(context.stringValue("UploadRuleResponse.Code"));
-		uploadRuleResponse.setMessage(context.stringValue("UploadRuleResponse.Message"));
+		uploadAudioDataResponse.setRequestId(context.stringValue("UploadAudioDataResponse.RequestId"));
+		uploadAudioDataResponse.setSuccess(context.booleanValue("UploadAudioDataResponse.Success"));
+		uploadAudioDataResponse.setCode(context.stringValue("UploadAudioDataResponse.Code"));
+		uploadAudioDataResponse.setMessage(context.stringValue("UploadAudioDataResponse.Message"));
+		uploadAudioDataResponse.setData(context.stringValue("UploadAudioDataResponse.Data"));
 	 
-	 	return uploadRuleResponse;
+	 	return uploadAudioDataResponse;
 	}
 }

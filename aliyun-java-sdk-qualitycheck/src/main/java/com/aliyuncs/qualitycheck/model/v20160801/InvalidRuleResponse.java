@@ -19,14 +19,14 @@
 package com.aliyuncs.qualitycheck.model.v20160801;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.qualitycheck.transform.v20160801.UploadRuleResponseUnmarshaller;
+import com.aliyuncs.qualitycheck.transform.v20160801.InvalidRuleResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class UploadRuleResponse extends AcsResponse {
+public class InvalidRuleResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -35,6 +35,8 @@ public class UploadRuleResponse extends AcsResponse {
 	private String code;
 
 	private String message;
+
+	private Boolean data;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -68,8 +70,16 @@ public class UploadRuleResponse extends AcsResponse {
 		this.message = message;
 	}
 
+	public Boolean getData() {
+		return this.data;
+	}
+
+	public void setData(Boolean data) {
+		this.data = data;
+	}
+
 	@Override
-	public UploadRuleResponse getInstance(UnmarshallerContext context) {
-		return	UploadRuleResponseUnmarshaller.unmarshall(this, context);
+	public InvalidRuleResponse getInstance(UnmarshallerContext context) {
+		return	InvalidRuleResponseUnmarshaller.unmarshall(this, context);
 	}
 }
