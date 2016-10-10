@@ -65,6 +65,8 @@ public class DescribeLiveStreamOnlineUserNumResponse extends AcsResponse {
 
 		private Long userNumber;
 
+		private String time;
+
 		public String getStreamUrl() {
 			return this.streamUrl;
 		}
@@ -79,6 +81,14 @@ public class DescribeLiveStreamOnlineUserNumResponse extends AcsResponse {
 
 		public void setUserNumber(Long userNumber) {
 			this.userNumber = userNumber;
+		}
+
+		public String getTime() {
+			return this.time;
+		}
+
+		public void setTime(String time) {
+			this.time = time;
 		}
 	}
 

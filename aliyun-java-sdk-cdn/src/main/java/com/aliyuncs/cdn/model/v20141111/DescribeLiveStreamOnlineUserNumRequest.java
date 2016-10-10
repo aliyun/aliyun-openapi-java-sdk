@@ -40,6 +40,12 @@ public class DescribeLiveStreamOnlineUserNumRequest extends RpcAcsRequest<Descri
 
 	private String streamName;
 
+	private String startTime;
+
+	private String endTime;
+
+	private String hlsSwitch;
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -83,6 +89,33 @@ public class DescribeLiveStreamOnlineUserNumRequest extends RpcAcsRequest<Descri
 	public void setStreamName(String streamName) {
 		this.streamName = streamName;
 		putQueryParameter("StreamName", streamName);
+	}
+
+	public String getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+		putQueryParameter("StartTime", startTime);
+	}
+
+	public String getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+		putQueryParameter("EndTime", endTime);
+	}
+
+	public String getHlsSwitch() {
+		return this.hlsSwitch;
+	}
+
+	public void setHlsSwitch(String hlsSwitch) {
+		this.hlsSwitch = hlsSwitch;
+		putQueryParameter("HlsSwitch", hlsSwitch);
 	}
 
 	@Override
