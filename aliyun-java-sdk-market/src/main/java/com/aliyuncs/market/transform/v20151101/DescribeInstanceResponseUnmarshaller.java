@@ -25,22 +25,22 @@ import com.aliyuncs.transform.UnmarshallerContext;
 public class DescribeInstanceResponseUnmarshaller {
 
 	public static DescribeInstanceResponse unmarshall(DescribeInstanceResponse describeInstanceResponse, UnmarshallerContext context) {
-		
+
 		describeInstanceResponse.setInstanceId(context.longValue("DescribeInstanceResponse.InstanceId"));
 		describeInstanceResponse.setOrderId(context.longValue("DescribeInstanceResponse.OrderId"));
-		describeInstanceResponse.setSupplierName(context.longValue("DescribeInstanceResponse.SupplierName"));
-		describeInstanceResponse.setProductCode(context.longValue("DescribeInstanceResponse.ProductCode"));
+		describeInstanceResponse.setSupplierName(context.stringValue("DescribeInstanceResponse.SupplierName"));
+		describeInstanceResponse.setProductCode(context.stringValue("DescribeInstanceResponse.ProductCode"));
 		describeInstanceResponse.setProductSkuCode(context.stringValue("DescribeInstanceResponse.ProductSkuCode"));
 		describeInstanceResponse.setProductName(context.stringValue("DescribeInstanceResponse.ProductName"));
 		describeInstanceResponse.setProductType(context.stringValue("DescribeInstanceResponse.ProductType"));
-		describeInstanceResponse.setStatus(context.integerValue("DescribeInstanceResponse.Status"));
+		describeInstanceResponse.setStatus(context.stringValue("DescribeInstanceResponse.Status"));
 		describeInstanceResponse.setBeganOn(context.longValue("DescribeInstanceResponse.BeganOn"));
 		describeInstanceResponse.setEndOn(context.longValue("DescribeInstanceResponse.EndOn"));
 		describeInstanceResponse.setCreatedOn(context.longValue("DescribeInstanceResponse.CreatedOn"));
 		describeInstanceResponse.setExtendJson(context.stringValue("DescribeInstanceResponse.ExtendJson"));
 		describeInstanceResponse.setHostJson(context.stringValue("DescribeInstanceResponse.HostJson"));
 		describeInstanceResponse.setAppJson(context.stringValue("DescribeInstanceResponse.AppJson"));
-	 
-	 	return describeInstanceResponse;
+
+		return describeInstanceResponse;
 	}
 }

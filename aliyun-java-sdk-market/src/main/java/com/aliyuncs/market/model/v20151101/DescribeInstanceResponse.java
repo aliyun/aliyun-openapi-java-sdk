@@ -24,7 +24,7 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
- * @version 
+ * @version
  */
 public class DescribeInstanceResponse extends AcsResponse {
 
@@ -32,9 +32,9 @@ public class DescribeInstanceResponse extends AcsResponse {
 
 	private Long orderId;
 
-	private Long supplierName;
+	private String supplierName;
 
-	private Long productCode;
+	private String productCode;
 
 	private String productSkuCode;
 
@@ -42,7 +42,7 @@ public class DescribeInstanceResponse extends AcsResponse {
 
 	private String productType;
 
-	private Integer status;
+	private String status;
 
 	private Long beganOn;
 
@@ -72,19 +72,19 @@ public class DescribeInstanceResponse extends AcsResponse {
 		this.orderId = orderId;
 	}
 
-	public Long getSupplierName() {
+	public String getSupplierName() {
 		return this.supplierName;
 	}
 
-	public void setSupplierName(Long supplierName) {
+	public void setSupplierName(String supplierName) {
 		this.supplierName = supplierName;
 	}
 
-	public Long getProductCode() {
+	public String getProductCode() {
 		return this.productCode;
 	}
 
-	public void setProductCode(Long productCode) {
+	public void setProductCode(String productCode) {
 		this.productCode = productCode;
 	}
 
@@ -112,11 +112,11 @@ public class DescribeInstanceResponse extends AcsResponse {
 		this.productType = productType;
 	}
 
-	public Integer getStatus() {
+	public String getStatus() {
 		return this.status;
 	}
 
-	public void setStatus(Integer status) {
+	public void setStatus(String status) {
 		this.status = status;
 	}
 
