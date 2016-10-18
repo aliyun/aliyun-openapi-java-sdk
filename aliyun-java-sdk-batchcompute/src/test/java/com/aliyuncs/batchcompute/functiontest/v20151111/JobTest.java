@@ -105,13 +105,18 @@ public class JobTest extends TestCase {
         assertTrue(jobList.size() > 0);
 
 
-
         ListJobsRequest listJobsRequest2 = new ListJobsRequest();
         listJobsRequest2.setMaxItemCount(60);
         //listJobsRequest2.setMarker("");
         ListJobsResponse listJobsResponse2 = client.listJobs(listJobsRequest2);
         List<Job> jobList2 = listJobsResponse2.getItems();
         assertTrue(jobList2.size() > 0);
+
+        ListJobsResponse listJobsResponse3 = client.listJobs("Waiting");
+
+        List<Job> jobList3 = listJobsResponse3.getItems();
+        assertTrue(jobList3.size() > 0);
+
 
 
 
@@ -250,6 +255,7 @@ public class JobTest extends TestCase {
         desc.setDescription("JAVA SDK TEST");
         desc.setType("DAG");
         desc.setJobFailOnInstanceFail(true);
+        desc.setAutoRelease(false);
 
         DAG dag = new DAG();
 

@@ -208,7 +208,7 @@ public class BatchComputeClient implements BatchCompute {
         return getJob(request);
     }
 
-
+    @Override
     public ListJobsResponse listJobs(ListJobsRequest request) throws ClientException {
         return getAcsResponse(request);
     }
@@ -219,11 +219,26 @@ public class BatchComputeClient implements BatchCompute {
         return listJobs(req);
     }
 
-
+    @Override
     public ListJobsResponse listJobs(String marker, int maxItemCount) throws ClientException {
         ListJobsRequest req = new ListJobsRequest();
         req.setMarker(marker);
         req.setMaxItemCount(maxItemCount);
+        return listJobs(req);
+    }
+    @Override
+    public ListJobsResponse listJobs(String state) throws ClientException {
+        ListJobsRequest req = new ListJobsRequest();
+        req.setState(state);
+        return listJobs(req);
+    }
+
+    @Override
+    public ListJobsResponse listJobs(String state, String marker, int maxItemCount) throws ClientException {
+        ListJobsRequest req = new ListJobsRequest();
+        req.setMarker(marker);
+        req.setMaxItemCount(maxItemCount);
+        req.setState(state);
         return listJobs(req);
     }
 

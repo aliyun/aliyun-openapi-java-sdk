@@ -27,6 +27,7 @@
       "WriteSupport": false}}},
   "Description": "",
   "JobFailOnInstanceFail": true,
+  "AutoRelease": false,
   "Name": "jobName1",
   "Notification": {},
   "Priority": 10,

@@ -50,6 +50,7 @@ public class GetJobDescriptionResponseTest extends TestCase {
         res.getInstance(context);
 
         assertEquals(res.getJobDescription().getName(), "jobName1");
+        assertEquals(res.getJobDescription().isAutoRelease(), false);
     }
 
     public void testGetInstanceWithUnsupportedEncoding() {

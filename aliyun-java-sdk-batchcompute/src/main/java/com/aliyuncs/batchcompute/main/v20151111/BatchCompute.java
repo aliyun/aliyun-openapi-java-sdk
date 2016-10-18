@@ -55,6 +55,10 @@ public interface BatchCompute {
 
     ListJobsResponse listJobs( String marker, int maxItemCount) throws ClientException;
 
+    ListJobsResponse listJobs(String state) throws ClientException;
+
+    ListJobsResponse listJobs(String state, String marker, int maxItemCount) throws ClientException;
+
     StartJobResponse startJob(StartJobRequest request) throws ClientException;
 
     StartJobResponse startJob(String jobId) throws ClientException;

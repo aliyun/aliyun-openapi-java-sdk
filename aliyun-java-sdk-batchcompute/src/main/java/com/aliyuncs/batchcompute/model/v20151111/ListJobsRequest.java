@@ -36,6 +36,7 @@ public class ListJobsRequest extends BatchComputeRequest<ListJobsResponse> {
 
 	private String marker;
 	private int maxItemCount= 50;
+	private String state;
 
 	public String getMarker() {
 		return marker;
@@ -55,6 +56,17 @@ public class ListJobsRequest extends BatchComputeRequest<ListJobsResponse> {
 	public void setMaxItemCount(int maxItemCount) {
 		this.maxItemCount = maxItemCount;
 		this.putQueryParameter("MaxItemCount",maxItemCount);
+	}
+
+	public String getState() {
+		return state;
+	}
+
+	public void setState(String state) {
+		this.state = state;
+		if(state!=null && !state.equals("")) {
+			this.putQueryParameter("State", state);
+		}
 	}
 
 	@Override

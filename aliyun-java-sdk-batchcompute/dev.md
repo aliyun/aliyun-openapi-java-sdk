@@ -1,10 +1,68 @@
 Batchcompute SDK For Java
 -------------------------
 
+### 1. 环境
 
-### 1. 如何使用
+#### (1). 配置jdk
 
-#### (1) pom.xml 中配置
+需要配置：JAVA_HOME 和 PATH 这个不再赘述。
+
+#### (2). 配置maven
+
+从官网下载一个maven（注意依赖的jdk版本），解压后配置 PATH.
+
+配置 ~/.m2/settings.xml 文件。 可以从这里下载：[http://yunpan.alibaba-inc.com/share/link/N6PYGZVJq]
+需要注意, 一定不要用默认的这种方式：~/.m2/repository ，最好配置绝对路径。
+
+```xml
+<!-- localRepository
+      | The path to the local repository maven will use to store artifacts.
+      |
+      | Default: ~/.m2/repository
+    -->
+    <localRepository>/Users/zu/.m2/repository</localRepository>
+```
+
+#### (3) 安装依赖
+
+```
+mvn clean install  # 安装依赖
+```
+
+2. 开发常用命令
+
+```bash
+mvn test     # 运行测试case
+
+make co  # 生成代码覆盖率文档
+make doc # 生成Reference文档
+```
+
+
+3. 发布
+
+* 1. 测试版本(SNAPSHOT)版本通过执行 mvn deploy 命令上传到 maven 仓库；
+
+先修改version为SNAPSHOP
+
+```xml
+<version>3.1.1-SNAPSHOP</version>
+```
+
+发布命令(SNAPSHOT版本可以重复发)
+```bash
+make deploy
+```
+
+* 2. 正式版本通过本地执行 mvn package 命令打包，然后通过 Aone2 发布到 maven 仓库, [发布地址](http://aone.alibaba-inc.com/aone2/library/upload),
+> 注意发布正式版之前需要把pom中core包引用改为正式版本,最新版本通过如下地址查询：[查询地址](http://repo.alibaba-inc.com/nexus/#nexus-search;gav~com.aliyun~aliyun-java-sdk-core~~~);
+* 3. 正式版本发布后请把发布包及SDK版本发邮件到lijie.ma@alibaba-inc.com,由马立杰发布到 maven 官方仓库;
+* 4. 公司maven库会代理maven官方库，所以如果需要发到maven官方库可以省略第二步。
+
+
+### 2. 如何使用
+
+#### (0) pom.xml 中配置
 
 前往[http://repo.alibaba-inc.com/nexus]中查找下面2个包。
 将其xml描述放到pom.xml的dependencies标签中。例如：
@@ -24,7 +82,7 @@ Batchcompute SDK For Java
 </dependency>
 ```
 
-#### (2) 构造 client 对象
+#### (1) 构造 client 对象
 
 ```java
 import com.aliyuncs.batchcompute.main.v20151111.*;  //注意版本号: v20151111, 目前支持2个版本的: v20150630 & v20151111
@@ -39,7 +97,7 @@ String accessKeySecret="${your_access_key_secret}";
 BatchCompute client = new BatchComputeClient(regionId, accessKeyId, accessKeySecret);
 ```
 
-#### (3) 使用 client 对象的方法:
+#### (2) 使用 client 对象的方法:
 
 ```java
 try {
@@ -58,7 +116,7 @@ try {
 }
 ```
 
-#### (4)  client 对象支持的方法:
+#### (3)  client 对象支持的方法:
 
 版本 v20150630:
 
@@ -80,8 +138,6 @@ try {
 
 | 序号 | 方法 | 描述 |
 | ----- | ---- | ---- |
-|  | *Quota相关* | |
-| 1. | getQuotas() | 查询quota |
 |  | *Cluster相关* | |
 | 1. | createCluster(ClusterDescription clusterDesc) | 创建Cluster |
 | 2. | getCluster(String clusterId) | 获取Cluster信息 |

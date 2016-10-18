@@ -47,6 +47,21 @@ public class JobDescription {
     @JsonProperty("JobFailOnInstanceFail")
     private boolean jobFailOnInstanceFail;
 
+    @JsonIgnore
+    public boolean isAutoRelease() {
+        return autoRelease;
+    }
+
+    @JsonIgnore
+    public void setAutoRelease(boolean autoRelease) {
+        this.autoRelease = autoRelease;
+    }
+
+    @JsonProperty("AutoRelease")
+    private boolean autoRelease;
+
+
+
     @JsonProperty("Type")
     private String type;
 
