@@ -19,16 +19,18 @@
 package com.aliyuncs.cdn.model.v20141111;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.cdn.transform.v20141111.UpdateLiveAppSnapshotConfigResponseUnmarshaller;
+import com.aliyuncs.cdn.transform.v20141111.DescribeRangeDataByLocateAndIspServiceResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class UpdateLiveAppSnapshotConfigResponse extends AcsResponse {
+public class DescribeRangeDataByLocateAndIspServiceResponse extends AcsResponse {
 
 	private String requestId;
+
+	private String jsonResult;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -38,8 +40,16 @@ public class UpdateLiveAppSnapshotConfigResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public String getJsonResult() {
+		return this.jsonResult;
+	}
+
+	public void setJsonResult(String jsonResult) {
+		this.jsonResult = jsonResult;
+	}
+
 	@Override
-	public UpdateLiveAppSnapshotConfigResponse getInstance(UnmarshallerContext context) {
-		return	UpdateLiveAppSnapshotConfigResponseUnmarshaller.unmarshall(this, context);
+	public DescribeRangeDataByLocateAndIspServiceResponse getInstance(UnmarshallerContext context) {
+		return	DescribeRangeDataByLocateAndIspServiceResponseUnmarshaller.unmarshall(this, context);
 	}
 }

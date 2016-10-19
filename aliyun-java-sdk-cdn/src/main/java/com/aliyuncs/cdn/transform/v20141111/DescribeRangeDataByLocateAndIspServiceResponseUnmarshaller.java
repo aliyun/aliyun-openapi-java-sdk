@@ -16,30 +16,19 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package com.aliyuncs.cdn.model.v20141111;
+package com.aliyuncs.cdn.transform.v20141111;
 
-import com.aliyuncs.AcsResponse;
-import com.aliyuncs.cdn.transform.v20141111.UpdateLiveAppSnapshotConfigResponseUnmarshaller;
+import com.aliyuncs.cdn.model.v20141111.DescribeRangeDataByLocateAndIspServiceResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
-/**
- * @author auto create
- * @version 
- */
-public class UpdateLiveAppSnapshotConfigResponse extends AcsResponse {
 
-	private String requestId;
+public class DescribeRangeDataByLocateAndIspServiceResponseUnmarshaller {
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	@Override
-	public UpdateLiveAppSnapshotConfigResponse getInstance(UnmarshallerContext context) {
-		return	UpdateLiveAppSnapshotConfigResponseUnmarshaller.unmarshall(this, context);
+	public static DescribeRangeDataByLocateAndIspServiceResponse unmarshall(DescribeRangeDataByLocateAndIspServiceResponse describeRangeDataByLocateAndIspServiceResponse, UnmarshallerContext context) {
+		
+		describeRangeDataByLocateAndIspServiceResponse.setRequestId(context.stringValue("DescribeRangeDataByLocateAndIspServiceResponse.RequestId"));
+		describeRangeDataByLocateAndIspServiceResponse.setJsonResult(context.stringValue("DescribeRangeDataByLocateAndIspServiceResponse.JsonResult"));
+	 
+	 	return describeRangeDataByLocateAndIspServiceResponse;
 	}
 }

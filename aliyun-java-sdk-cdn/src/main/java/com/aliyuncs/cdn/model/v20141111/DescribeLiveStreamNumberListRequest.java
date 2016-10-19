@@ -24,10 +24,10 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class DeleteLiveAppSnapshotConfigRequest extends RpcAcsRequest<DeleteLiveAppSnapshotConfigResponse> {
+public class DescribeLiveStreamNumberListRequest extends RpcAcsRequest<DescribeLiveStreamNumberListResponse> {
 	
-	public DeleteLiveAppSnapshotConfigRequest() {
-		super("Cdn", "2014-11-11", "DeleteLiveAppSnapshotConfig");
+	public DescribeLiveStreamNumberListRequest() {
+		super("Cdn", "2014-11-11", "DescribeLiveStreamNumberList");
 	}
 
 	private Long ownerId;
@@ -37,6 +37,10 @@ public class DeleteLiveAppSnapshotConfigRequest extends RpcAcsRequest<DeleteLive
 	private String domainName;
 
 	private String appName;
+
+	private String startTime;
+
+	private String endTime;
 
 	public Long getOwnerId() {
 		return this.ownerId;
@@ -74,9 +78,27 @@ public class DeleteLiveAppSnapshotConfigRequest extends RpcAcsRequest<DeleteLive
 		putQueryParameter("AppName", appName);
 	}
 
+	public String getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+		putQueryParameter("StartTime", startTime);
+	}
+
+	public String getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+		putQueryParameter("EndTime", endTime);
+	}
+
 	@Override
-	public Class<DeleteLiveAppSnapshotConfigResponse> getResponseClass() {
-		return DeleteLiveAppSnapshotConfigResponse.class;
+	public Class<DescribeLiveStreamNumberListResponse> getResponseClass() {
+		return DescribeLiveStreamNumberListResponse.class;
 	}
 
 }
