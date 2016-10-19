@@ -34,7 +34,6 @@ public class AddCategoryResponseUnmarshaller {
 		category.setCateName(context.stringValue("AddCategoryResponse.Category.CateName"));
 		category.setParentId(context.stringValue("AddCategoryResponse.Category.ParentId"));
 		category.setLevel(context.stringValue("AddCategoryResponse.Category.Level"));
-		category.setMediaNum(context.stringValue("AddCategoryResponse.Category.MediaNum"));
 		addCategoryResponse.setCategory(category);
 	 
 	 	return addCategoryResponse;

@@ -59,8 +59,6 @@ public class ListAllCategoryResponse extends AcsResponse {
 
 		private String level;
 
-		private String mediaNum;
-
 		public String getCateId() {
 			return this.cateId;
 		}
@@ -91,14 +89,6 @@ public class ListAllCategoryResponse extends AcsResponse {
 
 		public void setLevel(String level) {
 			this.level = level;
-		}
-
-		public String getMediaNum() {
-			return this.mediaNum;
-		}
-
-		public void setMediaNum(String mediaNum) {
-			this.mediaNum = mediaNum;
 		}
 	}
 

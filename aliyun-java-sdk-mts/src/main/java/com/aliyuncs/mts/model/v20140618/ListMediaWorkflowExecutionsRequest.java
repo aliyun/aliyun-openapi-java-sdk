@@ -36,6 +36,8 @@ public class ListMediaWorkflowExecutionsRequest extends RpcAcsRequest<ListMediaW
 
 	private Long resourceOwnerId;
 
+	private String mediaWorkflowId;
+
 	private String mediaWorkflowName;
 
 	private String inputFileURL;
@@ -71,6 +73,15 @@ public class ListMediaWorkflowExecutionsRequest extends RpcAcsRequest<ListMediaW
 	public void setResourceOwnerId(Long resourceOwnerId) {
 		this.resourceOwnerId = resourceOwnerId;
 		putQueryParameter("ResourceOwnerId", resourceOwnerId);
+	}
+
+	public String getMediaWorkflowId() {
+		return this.mediaWorkflowId;
+	}
+
+	public void setMediaWorkflowId(String mediaWorkflowId) {
+		this.mediaWorkflowId = mediaWorkflowId;
+		putQueryParameter("MediaWorkflowId", mediaWorkflowId);
 	}
 
 	public String getMediaWorkflowName() {

@@ -46,6 +46,10 @@ public class AddMediaRequest extends RpcAcsRequest<AddMediaResponse> {
 
 	private String tags;
 
+	private String mediaWorkflowId;
+
+	private String mediaWorkflowUserData;
+
 	private Long cateId;
 
 	private String ownerAccount;
@@ -120,6 +124,24 @@ public class AddMediaRequest extends RpcAcsRequest<AddMediaResponse> {
 	public void setTags(String tags) {
 		this.tags = tags;
 		putQueryParameter("Tags", tags);
+	}
+
+	public String getMediaWorkflowId() {
+		return this.mediaWorkflowId;
+	}
+
+	public void setMediaWorkflowId(String mediaWorkflowId) {
+		this.mediaWorkflowId = mediaWorkflowId;
+		putQueryParameter("MediaWorkflowId", mediaWorkflowId);
+	}
+
+	public String getMediaWorkflowUserData() {
+		return this.mediaWorkflowUserData;
+	}
+
+	public void setMediaWorkflowUserData(String mediaWorkflowUserData) {
+		this.mediaWorkflowUserData = mediaWorkflowUserData;
+		putQueryParameter("MediaWorkflowUserData", mediaWorkflowUserData);
 	}
 
 	public Long getCateId() {

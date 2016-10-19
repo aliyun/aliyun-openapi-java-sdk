@@ -37,7 +37,6 @@ public class ListAllMediaBucketResponseUnmarshaller {
 			MediaBucket mediaBucket = new MediaBucket();
 			mediaBucket.setBucket(context.stringValue("ListAllMediaBucketResponse.MediaBucketList["+ i +"].Bucket"));
 			mediaBucket.setType(context.stringValue("ListAllMediaBucketResponse.MediaBucketList["+ i +"].Type"));
-			mediaBucket.setSync(context.booleanValue("ListAllMediaBucketResponse.MediaBucketList["+ i +"].Sync"));
 
 			mediaBucketList.add(mediaBucket);
 		}

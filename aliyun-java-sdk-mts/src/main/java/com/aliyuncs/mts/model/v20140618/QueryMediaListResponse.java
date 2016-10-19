@@ -265,6 +265,8 @@ public class QueryMediaListResponse extends AcsResponse {
 
 			private String activityName;
 
+			private String mediaWorkflowId;
+
 			private String mediaWorkflowName;
 
 			private String duration;
@@ -289,6 +291,14 @@ public class QueryMediaListResponse extends AcsResponse {
 
 			public void setActivityName(String activityName) {
 				this.activityName = activityName;
+			}
+
+			public String getMediaWorkflowId() {
+				return this.mediaWorkflowId;
+			}
+
+			public void setMediaWorkflowId(String mediaWorkflowId) {
+				this.mediaWorkflowId = mediaWorkflowId;
 			}
 
 			public String getMediaWorkflowName() {
@@ -391,6 +401,8 @@ public class QueryMediaListResponse extends AcsResponse {
 
 			private String type;
 
+			private String mediaWorkflowId;
+
 			private String mediaWorkflowName;
 
 			private String activityName;
@@ -405,6 +417,14 @@ public class QueryMediaListResponse extends AcsResponse {
 
 			public void setType(String type) {
 				this.type = type;
+			}
+
+			public String getMediaWorkflowId() {
+				return this.mediaWorkflowId;
+			}
+
+			public void setMediaWorkflowId(String mediaWorkflowId) {
+				this.mediaWorkflowId = mediaWorkflowId;
 			}
 
 			public String getMediaWorkflowName() {

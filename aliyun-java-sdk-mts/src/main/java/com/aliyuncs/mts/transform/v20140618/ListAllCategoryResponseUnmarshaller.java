@@ -39,7 +39,6 @@ public class ListAllCategoryResponseUnmarshaller {
 			category.setCateName(context.stringValue("ListAllCategoryResponse.CategoryList["+ i +"].CateName"));
 			category.setParentId(context.stringValue("ListAllCategoryResponse.CategoryList["+ i +"].ParentId"));
 			category.setLevel(context.stringValue("ListAllCategoryResponse.CategoryList["+ i +"].Level"));
-			category.setMediaNum(context.stringValue("ListAllCategoryResponse.CategoryList["+ i +"].MediaNum"));
 
 			categoryList.add(category);
 		}

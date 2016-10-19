@@ -63,6 +63,8 @@ public class ListMediaWorkflowExecutionsResponse extends AcsResponse {
 
 		private String runId;
 
+		private String mediaWorkflowId;
+
 		private String name;
 
 		private String state;
@@ -81,6 +83,14 @@ public class ListMediaWorkflowExecutionsResponse extends AcsResponse {
 
 		public void setRunId(String runId) {
 			this.runId = runId;
+		}
+
+		public String getMediaWorkflowId() {
+			return this.mediaWorkflowId;
+		}
+
+		public void setMediaWorkflowId(String mediaWorkflowId) {
+			this.mediaWorkflowId = mediaWorkflowId;
 		}
 
 		public String getName() {

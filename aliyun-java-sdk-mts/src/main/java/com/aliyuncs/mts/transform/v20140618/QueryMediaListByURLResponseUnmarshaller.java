@@ -175,6 +175,7 @@ public class QueryMediaListByURLResponseUnmarshaller {
 			for (int j = 0; j < context.lengthValue("QueryMediaListByURLResponse.MediaList["+ i +"].PlayList.Length"); j++) {
 				Play play = new Play();
 				play.setActivityName(context.stringValue("QueryMediaListByURLResponse.MediaList["+ i +"].PlayList["+ j +"].ActivityName"));
+				play.setMediaWorkflowId(context.stringValue("QueryMediaListByURLResponse.MediaList["+ i +"].PlayList["+ j +"].MediaWorkflowId"));
 				play.setMediaWorkflowName(context.stringValue("QueryMediaListByURLResponse.MediaList["+ i +"].PlayList["+ j +"].MediaWorkflowName"));
 				play.setDuration(context.stringValue("QueryMediaListByURLResponse.MediaList["+ i +"].PlayList["+ j +"].Duration"));
 				play.setFormat(context.stringValue("QueryMediaListByURLResponse.MediaList["+ i +"].PlayList["+ j +"].Format"));
@@ -197,6 +198,7 @@ public class QueryMediaListByURLResponseUnmarshaller {
 			for (int j = 0; j < context.lengthValue("QueryMediaListByURLResponse.MediaList["+ i +"].SnapshotList.Length"); j++) {
 				Snapshot snapshot = new Snapshot();
 				snapshot.setType(context.stringValue("QueryMediaListByURLResponse.MediaList["+ i +"].SnapshotList["+ j +"].Type"));
+				snapshot.setMediaWorkflowId(context.stringValue("QueryMediaListByURLResponse.MediaList["+ i +"].SnapshotList["+ j +"].MediaWorkflowId"));
 				snapshot.setMediaWorkflowName(context.stringValue("QueryMediaListByURLResponse.MediaList["+ i +"].SnapshotList["+ j +"].MediaWorkflowName"));
 				snapshot.setActivityName(context.stringValue("QueryMediaListByURLResponse.MediaList["+ i +"].SnapshotList["+ j +"].ActivityName"));
 				snapshot.setCount(context.stringValue("QueryMediaListByURLResponse.MediaList["+ i +"].SnapshotList["+ j +"].Count"));

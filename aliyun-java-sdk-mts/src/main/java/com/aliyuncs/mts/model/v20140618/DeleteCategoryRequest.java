@@ -36,7 +36,7 @@ public class DeleteCategoryRequest extends RpcAcsRequest<DeleteCategoryResponse>
 
 	private Long resourceOwnerId;
 
-	private String cateId;
+	private Long cateId;
 
 	private String ownerAccount;
 
@@ -67,11 +67,11 @@ public class DeleteCategoryRequest extends RpcAcsRequest<DeleteCategoryResponse>
 		putQueryParameter("ResourceOwnerId", resourceOwnerId);
 	}
 
-	public String getCateId() {
+	public Long getCateId() {
 		return this.cateId;
 	}
 
-	public void setCateId(String cateId) {
+	public void setCateId(Long cateId) {
 		this.cateId = cateId;
 		putQueryParameter("CateId", cateId);
 	}

@@ -55,8 +55,6 @@ public class ListAllMediaBucketResponse extends AcsResponse {
 
 		private String type;
 
-		private Boolean sync;
-
 		public String getBucket() {
 			return this.bucket;
 		}
@@ -71,14 +69,6 @@ public class ListAllMediaBucketResponse extends AcsResponse {
 
 		public void setType(String type) {
 			this.type = type;
-		}
-
-		public Boolean getSync() {
-			return this.sync;
-		}
-
-		public void setSync(Boolean sync) {
-			this.sync = sync;
 		}
 	}
 

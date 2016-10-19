@@ -46,6 +46,7 @@ public class QueryMediaWorkflowExecutionListResponseUnmarshaller {
 		for (int i = 0; i < context.lengthValue("QueryMediaWorkflowExecutionListResponse.MediaWorkflowExecutionList.Length"); i++) {
 			MediaWorkflowExecution mediaWorkflowExecution = new MediaWorkflowExecution();
 			mediaWorkflowExecution.setRunId(context.stringValue("QueryMediaWorkflowExecutionListResponse.MediaWorkflowExecutionList["+ i +"].RunId"));
+			mediaWorkflowExecution.setMediaWorkflowId(context.stringValue("QueryMediaWorkflowExecutionListResponse.MediaWorkflowExecutionList["+ i +"].MediaWorkflowId"));
 			mediaWorkflowExecution.setName(context.stringValue("QueryMediaWorkflowExecutionListResponse.MediaWorkflowExecutionList["+ i +"].Name"));
 			mediaWorkflowExecution.setState(context.stringValue("QueryMediaWorkflowExecutionListResponse.MediaWorkflowExecutionList["+ i +"].State"));
 			mediaWorkflowExecution.setMediaId(context.stringValue("QueryMediaWorkflowExecutionListResponse.MediaWorkflowExecutionList["+ i +"].MediaId"));
