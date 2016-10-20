@@ -38,19 +38,19 @@ public class PushRequest extends RpcAcsRequest<PushResponse> {
 
 	private Integer type;
 
+	private Integer deviceType;
+
 	private String title;
+
+	private String body;
+
+	private String summary;
+
+	private Integer timeOut;
 
 	private Boolean remind;
 
 	private Boolean storeOffline;
-
-	private String body;
-
-	private Integer deviceType;
-
-	private Integer timeOut;
-
-	private String summary;
 
 	private String androidActivity;
 
@@ -69,6 +69,14 @@ public class PushRequest extends RpcAcsRequest<PushResponse> {
 	private String iOSMusic;
 
 	private String iOSBadge;
+
+	private String iOSTitle;
+
+	private String iOSSubtitle;
+
+	private String iOSNotificationCategory;
+
+	private Boolean iOSMutableContent;
 
 	private String iOSExtParameters;
 
@@ -114,6 +122,15 @@ public class PushRequest extends RpcAcsRequest<PushResponse> {
 		putQueryParameter("Type", type);
 	}
 
+	public Integer getDeviceType() {
+		return this.deviceType;
+	}
+
+	public void setDeviceType(Integer deviceType) {
+		this.deviceType = deviceType;
+		putQueryParameter("DeviceType", deviceType);
+	}
+
 	public String getTitle() {
 		return this.title;
 	}
@@ -121,6 +138,33 @@ public class PushRequest extends RpcAcsRequest<PushResponse> {
 	public void setTitle(String title) {
 		this.title = title;
 		putQueryParameter("Title", title);
+	}
+
+	public String getBody() {
+		return this.body;
+	}
+
+	public void setBody(String body) {
+		this.body = body;
+		putQueryParameter("Body", body);
+	}
+
+	public String getSummary() {
+		return this.summary;
+	}
+
+	public void setSummary(String summary) {
+		this.summary = summary;
+		putQueryParameter("Summary", summary);
+	}
+
+	public Integer getTimeOut() {
+		return this.timeOut;
+	}
+
+	public void setTimeOut(Integer timeOut) {
+		this.timeOut = timeOut;
+		putQueryParameter("TimeOut", timeOut);
 	}
 
 	public Boolean getRemind() {
@@ -139,42 +183,6 @@ public class PushRequest extends RpcAcsRequest<PushResponse> {
 	public void setStoreOffline(Boolean storeOffline) {
 		this.storeOffline = storeOffline;
 		putQueryParameter("StoreOffline", storeOffline);
-	}
-
-	public String getBody() {
-		return this.body;
-	}
-
-	public void setBody(String body) {
-		this.body = body;
-		putQueryParameter("Body", body);
-	}
-
-	public Integer getDeviceType() {
-		return this.deviceType;
-	}
-
-	public void setDeviceType(Integer deviceType) {
-		this.deviceType = deviceType;
-		putQueryParameter("DeviceType", deviceType);
-	}
-
-	public Integer getTimeOut() {
-		return this.timeOut;
-	}
-
-	public void setTimeOut(Integer timeOut) {
-		this.timeOut = timeOut;
-		putQueryParameter("TimeOut", timeOut);
-	}
-
-	public String getSummary() {
-		return this.summary;
-	}
-
-	public void setSummary(String summary) {
-		this.summary = summary;
-		putQueryParameter("Summary", summary);
 	}
 
 	public String getAndroidActivity() {
@@ -256,6 +264,42 @@ public class PushRequest extends RpcAcsRequest<PushResponse> {
 	public void setiOSBadge(String iOSBadge) {
 		this.iOSBadge = iOSBadge;
 		putQueryParameter("iOSBadge", iOSBadge);
+	}
+
+	public String getiOSTitle() {
+		return this.iOSTitle;
+	}
+
+	public void setiOSTitle(String iOSTitle) {
+		this.iOSTitle = iOSTitle;
+		putQueryParameter("iOSTitle", iOSTitle);
+	}
+
+	public String getiOSSubtitle() {
+		return this.iOSSubtitle;
+	}
+
+	public void setiOSSubtitle(String iOSSubtitle) {
+		this.iOSSubtitle = iOSSubtitle;
+		putQueryParameter("iOSSubtitle", iOSSubtitle);
+	}
+
+	public String getiOSNotificationCategory() {
+		return this.iOSNotificationCategory;
+	}
+
+	public void setiOSNotificationCategory(String iOSNotificationCategory) {
+		this.iOSNotificationCategory = iOSNotificationCategory;
+		putQueryParameter("iOSNotificationCategory", iOSNotificationCategory);
+	}
+
+	public Boolean getiOSMutableContent() {
+		return this.iOSMutableContent;
+	}
+
+	public void setiOSMutableContent(Boolean iOSMutableContent) {
+		this.iOSMutableContent = iOSMutableContent;
+		putQueryParameter("iOSMutableContent", iOSMutableContent);
 	}
 
 	public String getiOSExtParameters() {
