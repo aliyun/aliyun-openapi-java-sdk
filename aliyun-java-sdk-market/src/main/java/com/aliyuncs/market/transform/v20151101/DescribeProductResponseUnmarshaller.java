@@ -18,6 +18,9 @@
  */
 package com.aliyuncs.market.transform.v20151101;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.market.model.v20151101.DescribeProductResponse;
 import com.aliyuncs.market.model.v20151101.DescribeProductResponse.ProductExtra;
 import com.aliyuncs.market.model.v20151101.DescribeProductResponse.ProductSku;
@@ -29,19 +32,17 @@ import com.aliyuncs.market.model.v20151101.DescribeProductResponse.ShopInfo;
 import com.aliyuncs.market.model.v20151101.DescribeProductResponse.ShopInfo.WangWang;
 import com.aliyuncs.transform.UnmarshallerContext;
 
-import java.util.ArrayList;
-import java.util.List;
-
 
 public class DescribeProductResponseUnmarshaller {
 
 	public static DescribeProductResponse unmarshall(DescribeProductResponse describeProductResponse, UnmarshallerContext context) {
-		
+
 		describeProductResponse.setCode(context.stringValue("DescribeProductResponse.Code"));
 		describeProductResponse.setName(context.stringValue("DescribeProductResponse.Name"));
 		describeProductResponse.setType(context.stringValue("DescribeProductResponse.Type"));
 		describeProductResponse.setPicUrl(context.stringValue("DescribeProductResponse.PicUrl"));
 		describeProductResponse.setDescription(context.stringValue("DescribeProductResponse.Description"));
+		describeProductResponse.setShortDescription(context.stringValue("DescribeProductResponse.ShortDescription"));
 
 		ShopInfo shopInfo = new ShopInfo();
 		shopInfo.setId(context.longValue("DescribeProductResponse.ShopInfo.Id"));
@@ -123,7 +124,7 @@ public class DescribeProductResponseUnmarshaller {
 		for (int i = 0; i < context.lengthValue("DescribeProductResponse.ProductExtras.Length"); i++) {
 			ProductExtra productExtra = new ProductExtra();
 			productExtra.setKey(context.stringValue("DescribeProductResponse.ProductExtras["+ i +"].Key"));
-			productExtra.setValue(context.stringValue("DescribeProductResponse.ProductExtras["+ i +"].Value"));
+			productExtra.setValues(context.stringValue("DescribeProductResponse.ProductExtras["+ i +"].Values"));
 			productExtra.setLabel(context.stringValue("DescribeProductResponse.ProductExtras["+ i +"].Label"));
 			productExtra.setOrder(context.integerValue("DescribeProductResponse.ProductExtras["+ i +"].Order"));
 			productExtra.setType(context.stringValue("DescribeProductResponse.ProductExtras["+ i +"].Type"));
@@ -131,7 +132,7 @@ public class DescribeProductResponseUnmarshaller {
 			productExtras.add(productExtra);
 		}
 		describeProductResponse.setProductExtras(productExtras);
-	 
-	 	return describeProductResponse;
+
+		return describeProductResponse;
 	}
 }
