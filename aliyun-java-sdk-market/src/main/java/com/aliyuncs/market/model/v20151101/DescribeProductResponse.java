@@ -18,15 +18,14 @@
  */
 package com.aliyuncs.market.model.v20151101;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.market.transform.v20151101.DescribeProductResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
-import java.util.List;
-
 /**
  * @author auto create
- * @version 
+ * @version
  */
 public class DescribeProductResponse extends AcsResponse {
 
@@ -39,6 +38,8 @@ public class DescribeProductResponse extends AcsResponse {
 	private String picUrl;
 
 	private String description;
+
+	private String shortDescription;
 
 	private List<ProductSku> productSkus;
 
@@ -84,6 +85,14 @@ public class DescribeProductResponse extends AcsResponse {
 
 	public void setDescription(String description) {
 		this.description = description;
+	}
+
+	public String getShortDescription() {
+		return this.shortDescription;
+	}
+
+	public void setShortDescription(String shortDescription) {
+		this.shortDescription = shortDescription;
 	}
 
 	public List<ProductSku> getProductSkus() {
@@ -309,7 +318,7 @@ public class DescribeProductResponse extends AcsResponse {
 
 		private String key;
 
-		private String value;
+		private String values;
 
 		private String label;
 
@@ -325,12 +334,12 @@ public class DescribeProductResponse extends AcsResponse {
 			this.key = key;
 		}
 
-		public String getValue() {
-			return this.value;
+		public String getValues() {
+			return this.values;
 		}
 
-		public void setValue(String value) {
-			this.value = value;
+		public void setValues(String values) {
+			this.values = values;
 		}
 
 		public String getLabel() {
