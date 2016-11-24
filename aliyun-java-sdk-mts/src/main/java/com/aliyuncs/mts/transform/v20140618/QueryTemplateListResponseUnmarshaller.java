@@ -74,6 +74,8 @@ public class QueryTemplateListResponseUnmarshaller {
 			video.setDegrain(context.stringValue("QueryTemplateListResponse.TemplateList["+ i +"].Video.Degrain"));
 			video.setQscale(context.stringValue("QueryTemplateListResponse.TemplateList["+ i +"].Video.Qscale"));
 			video.setRemove(context.stringValue("QueryTemplateListResponse.TemplateList["+ i +"].Video.Remove"));
+			video.setCrop(context.stringValue("QueryTemplateListResponse.TemplateList["+ i +"].Video.Crop"));
+			video.setPad(context.stringValue("QueryTemplateListResponse.TemplateList["+ i +"].Video.Pad"));
 
 			BitrateBnd bitrateBnd = new BitrateBnd();
 			bitrateBnd.setMax(context.stringValue("QueryTemplateListResponse.TemplateList["+ i +"].Video.BitrateBnd.Max"));
@@ -93,6 +95,11 @@ public class QueryTemplateListResponseUnmarshaller {
 
 			TransConfig transConfig = new TransConfig();
 			transConfig.setTransMode(context.stringValue("QueryTemplateListResponse.TemplateList["+ i +"].TransConfig.TransMode"));
+			transConfig.setIsCheckReso(context.stringValue("QueryTemplateListResponse.TemplateList["+ i +"].TransConfig.IsCheckReso"));
+			transConfig.setIsCheckResoFail(context.stringValue("QueryTemplateListResponse.TemplateList["+ i +"].TransConfig.IsCheckResoFail"));
+			transConfig.setIsCheckVideoBitrate(context.stringValue("QueryTemplateListResponse.TemplateList["+ i +"].TransConfig.IsCheckVideoBitrate"));
+			transConfig.setIsCheckAudioBitrate(context.stringValue("QueryTemplateListResponse.TemplateList["+ i +"].TransConfig.IsCheckAudioBitrate"));
+			transConfig.setAdjDarMethod(context.stringValue("QueryTemplateListResponse.TemplateList["+ i +"].TransConfig.AdjDarMethod"));
 			template.setTransConfig(transConfig);
 
 			MuxConfig muxConfig = new MuxConfig();

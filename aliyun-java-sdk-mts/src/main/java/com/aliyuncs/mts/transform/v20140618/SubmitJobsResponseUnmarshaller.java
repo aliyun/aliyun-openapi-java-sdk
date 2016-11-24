@@ -232,6 +232,11 @@ public class SubmitJobsResponseUnmarshaller {
 
 			TransConfig transConfig = new TransConfig();
 			transConfig.setTransMode(context.stringValue("SubmitJobsResponse.JobResultList["+ i +"].Job.Output.TransConfig.TransMode"));
+			transConfig.setIsCheckReso(context.stringValue("SubmitJobsResponse.JobResultList["+ i +"].Job.Output.TransConfig.IsCheckReso"));
+			transConfig.setIsCheckResoFail(context.stringValue("SubmitJobsResponse.JobResultList["+ i +"].Job.Output.TransConfig.IsCheckResoFail"));
+			transConfig.setIsCheckVideoBitrate(context.stringValue("SubmitJobsResponse.JobResultList["+ i +"].Job.Output.TransConfig.IsCheckVideoBitrate"));
+			transConfig.setIsCheckAudioBitrate(context.stringValue("SubmitJobsResponse.JobResultList["+ i +"].Job.Output.TransConfig.IsCheckAudioBitrate"));
+			transConfig.setAdjDarMethod(context.stringValue("SubmitJobsResponse.JobResultList["+ i +"].Job.Output.TransConfig.AdjDarMethod"));
 			output.setTransConfig(transConfig);
 
 			MuxConfig muxConfig = new MuxConfig();
@@ -271,6 +276,8 @@ public class SubmitJobsResponseUnmarshaller {
 			video.setPixFmt(context.stringValue("SubmitJobsResponse.JobResultList["+ i +"].Job.Output.Video.PixFmt"));
 			video.setDegrain(context.stringValue("SubmitJobsResponse.JobResultList["+ i +"].Job.Output.Video.Degrain"));
 			video.setQscale(context.stringValue("SubmitJobsResponse.JobResultList["+ i +"].Job.Output.Video.Qscale"));
+			video.setCrop(context.stringValue("SubmitJobsResponse.JobResultList["+ i +"].Job.Output.Video.Crop"));
+			video.setPad(context.stringValue("SubmitJobsResponse.JobResultList["+ i +"].Job.Output.Video.Pad"));
 
 			BitrateBnd bitrateBnd = new BitrateBnd();
 			bitrateBnd.setMax(context.stringValue("SubmitJobsResponse.JobResultList["+ i +"].Job.Output.Video.BitrateBnd.Max"));

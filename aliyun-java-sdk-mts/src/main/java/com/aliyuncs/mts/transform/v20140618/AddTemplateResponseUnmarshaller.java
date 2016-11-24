@@ -63,6 +63,8 @@ public class AddTemplateResponseUnmarshaller {
 		video.setDegrain(context.stringValue("AddTemplateResponse.Template.Video.Degrain"));
 		video.setQscale(context.stringValue("AddTemplateResponse.Template.Video.Qscale"));
 		video.setRemove(context.stringValue("AddTemplateResponse.Template.Video.Remove"));
+		video.setCrop(context.stringValue("AddTemplateResponse.Template.Video.Crop"));
+		video.setPad(context.stringValue("AddTemplateResponse.Template.Video.Pad"));
 
 		BitrateBnd bitrateBnd = new BitrateBnd();
 		bitrateBnd.setMax(context.stringValue("AddTemplateResponse.Template.Video.BitrateBnd.Max"));
@@ -82,6 +84,11 @@ public class AddTemplateResponseUnmarshaller {
 
 		TransConfig transConfig = new TransConfig();
 		transConfig.setTransMode(context.stringValue("AddTemplateResponse.Template.TransConfig.TransMode"));
+		transConfig.setIsCheckReso(context.stringValue("AddTemplateResponse.Template.TransConfig.IsCheckReso"));
+		transConfig.setIsCheckResoFail(context.stringValue("AddTemplateResponse.Template.TransConfig.IsCheckResoFail"));
+		transConfig.setIsCheckVideoBitrate(context.stringValue("AddTemplateResponse.Template.TransConfig.IsCheckVideoBitrate"));
+		transConfig.setIsCheckAudioBitrate(context.stringValue("AddTemplateResponse.Template.TransConfig.IsCheckAudioBitrate"));
+		transConfig.setAdjDarMethod(context.stringValue("AddTemplateResponse.Template.TransConfig.AdjDarMethod"));
 		template.setTransConfig(transConfig);
 
 		MuxConfig muxConfig = new MuxConfig();

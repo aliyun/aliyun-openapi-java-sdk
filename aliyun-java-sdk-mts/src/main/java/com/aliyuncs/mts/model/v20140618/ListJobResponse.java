@@ -1364,12 +1364,62 @@ public class ListJobResponse extends AcsResponse {
 
 				private String transMode;
 
+				private String isCheckReso;
+
+				private String isCheckResoFail;
+
+				private String isCheckVideoBitrate;
+
+				private String isCheckAudioBitrate;
+
+				private String adjDarMethod;
+
 				public String getTransMode() {
 					return this.transMode;
 				}
 
 				public void setTransMode(String transMode) {
 					this.transMode = transMode;
+				}
+
+				public String getIsCheckReso() {
+					return this.isCheckReso;
+				}
+
+				public void setIsCheckReso(String isCheckReso) {
+					this.isCheckReso = isCheckReso;
+				}
+
+				public String getIsCheckResoFail() {
+					return this.isCheckResoFail;
+				}
+
+				public void setIsCheckResoFail(String isCheckResoFail) {
+					this.isCheckResoFail = isCheckResoFail;
+				}
+
+				public String getIsCheckVideoBitrate() {
+					return this.isCheckVideoBitrate;
+				}
+
+				public void setIsCheckVideoBitrate(String isCheckVideoBitrate) {
+					this.isCheckVideoBitrate = isCheckVideoBitrate;
+				}
+
+				public String getIsCheckAudioBitrate() {
+					return this.isCheckAudioBitrate;
+				}
+
+				public void setIsCheckAudioBitrate(String isCheckAudioBitrate) {
+					this.isCheckAudioBitrate = isCheckAudioBitrate;
+				}
+
+				public String getAdjDarMethod() {
+					return this.adjDarMethod;
+				}
+
+				public void setAdjDarMethod(String adjDarMethod) {
+					this.adjDarMethod = adjDarMethod;
 				}
 			}
 
@@ -1527,6 +1577,10 @@ public class ListJobResponse extends AcsResponse {
 
 				private String qscale;
 
+				private String crop;
+
+				private String pad;
+
 				private BitrateBnd bitrateBnd;
 
 				public String getCodec() {
@@ -1647,6 +1701,22 @@ public class ListJobResponse extends AcsResponse {
 
 				public void setQscale(String qscale) {
 					this.qscale = qscale;
+				}
+
+				public String getCrop() {
+					return this.crop;
+				}
+
+				public void setCrop(String crop) {
+					this.crop = crop;
+				}
+
+				public String getPad() {
+					return this.pad;
+				}
+
+				public void setPad(String pad) {
+					this.pad = pad;
 				}
 
 				public BitrateBnd getBitrateBnd() {

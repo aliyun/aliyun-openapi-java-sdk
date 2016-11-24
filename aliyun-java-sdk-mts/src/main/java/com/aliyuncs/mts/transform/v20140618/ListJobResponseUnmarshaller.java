@@ -227,6 +227,11 @@ public class ListJobResponseUnmarshaller {
 
 			TransConfig transConfig = new TransConfig();
 			transConfig.setTransMode(context.stringValue("ListJobResponse.JobList["+ i +"].Output.TransConfig.TransMode"));
+			transConfig.setIsCheckReso(context.stringValue("ListJobResponse.JobList["+ i +"].Output.TransConfig.IsCheckReso"));
+			transConfig.setIsCheckResoFail(context.stringValue("ListJobResponse.JobList["+ i +"].Output.TransConfig.IsCheckResoFail"));
+			transConfig.setIsCheckVideoBitrate(context.stringValue("ListJobResponse.JobList["+ i +"].Output.TransConfig.IsCheckVideoBitrate"));
+			transConfig.setIsCheckAudioBitrate(context.stringValue("ListJobResponse.JobList["+ i +"].Output.TransConfig.IsCheckAudioBitrate"));
+			transConfig.setAdjDarMethod(context.stringValue("ListJobResponse.JobList["+ i +"].Output.TransConfig.AdjDarMethod"));
 			output.setTransConfig(transConfig);
 
 			MuxConfig muxConfig = new MuxConfig();
@@ -266,6 +271,8 @@ public class ListJobResponseUnmarshaller {
 			video.setPixFmt(context.stringValue("ListJobResponse.JobList["+ i +"].Output.Video.PixFmt"));
 			video.setDegrain(context.stringValue("ListJobResponse.JobList["+ i +"].Output.Video.Degrain"));
 			video.setQscale(context.stringValue("ListJobResponse.JobList["+ i +"].Output.Video.Qscale"));
+			video.setCrop(context.stringValue("ListJobResponse.JobList["+ i +"].Output.Video.Crop"));
+			video.setPad(context.stringValue("ListJobResponse.JobList["+ i +"].Output.Video.Pad"));
 
 			BitrateBnd bitrateBnd = new BitrateBnd();
 			bitrateBnd.setMax(context.stringValue("ListJobResponse.JobList["+ i +"].Output.Video.BitrateBnd.Max"));
