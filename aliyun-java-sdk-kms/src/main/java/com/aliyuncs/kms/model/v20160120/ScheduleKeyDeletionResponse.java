@@ -19,14 +19,14 @@
 package com.aliyuncs.kms.model.v20160120;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.kms.transform.v20160120.EnableKeyResponseUnmarshaller;
+import com.aliyuncs.kms.transform.v20160120.ScheduleKeyDeletionResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class EnableKeyResponse extends AcsResponse {
+public class ScheduleKeyDeletionResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -39,7 +39,7 @@ public class EnableKeyResponse extends AcsResponse {
 	}
 
 	@Override
-	public EnableKeyResponse getInstance(UnmarshallerContext context) {
-		return	EnableKeyResponseUnmarshaller.unmarshall(this, context);
+	public ScheduleKeyDeletionResponse getInstance(UnmarshallerContext context) {
+		return	ScheduleKeyDeletionResponseUnmarshaller.unmarshall(this, context);
 	}
 }

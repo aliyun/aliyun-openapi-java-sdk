@@ -50,13 +50,35 @@ public class DescribeKeyResponse extends AcsResponse {
 
 	public static class KeyMetadata {
 
+		private String creationDate;
+
+		private String description;
+
 		private String keyId;
 
 		private String keyState;
 
 		private String keyUsage;
 
-		private String description;
+		private String deleteDate;
+
+		private String creator;
+
+		public String getCreationDate() {
+			return this.creationDate;
+		}
+
+		public void setCreationDate(String creationDate) {
+			this.creationDate = creationDate;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
 
 		public String getKeyId() {
 			return this.keyId;
@@ -82,12 +104,20 @@ public class DescribeKeyResponse extends AcsResponse {
 			this.keyUsage = keyUsage;
 		}
 
-		public String getDescription() {
-			return this.description;
+		public String getDeleteDate() {
+			return this.deleteDate;
 		}
 
-		public void setDescription(String description) {
-			this.description = description;
+		public void setDeleteDate(String deleteDate) {
+			this.deleteDate = deleteDate;
+		}
+
+		public String getCreator() {
+			return this.creator;
+		}
+
+		public void setCreator(String creator) {
+			this.creator = creator;
 		}
 	}
 

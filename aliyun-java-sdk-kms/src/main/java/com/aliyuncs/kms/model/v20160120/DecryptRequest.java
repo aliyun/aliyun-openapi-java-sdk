@@ -27,12 +27,14 @@ import com.aliyuncs.RpcAcsRequest;
 public class DecryptRequest extends RpcAcsRequest<DecryptResponse> {
 	
 	public DecryptRequest() {
-		super("Kms", "2016-01-20", "Decrypt");
+		super("Kms", "2016-01-20", "Decrypt", "kms");
 	}
 
 	private String ciphertextBlob;
 
 	private String sTSToken;
+
+	private String encryptionContext;
 
 	public String getCiphertextBlob() {
 		return this.ciphertextBlob;
@@ -50,6 +52,15 @@ public class DecryptRequest extends RpcAcsRequest<DecryptResponse> {
 	public void setSTSToken(String sTSToken) {
 		this.sTSToken = sTSToken;
 		putQueryParameter("STSToken", sTSToken);
+	}
+
+	public String getEncryptionContext() {
+		return this.encryptionContext;
+	}
+
+	public void setEncryptionContext(String encryptionContext) {
+		this.encryptionContext = encryptionContext;
+		putQueryParameter("EncryptionContext", encryptionContext);
 	}
 
 	@Override

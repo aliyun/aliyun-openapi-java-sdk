@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ListKeysRequest extends RpcAcsRequest<ListKeysResponse> {
 	
 	public ListKeysRequest() {
-		super("Kms", "2016-01-20", "ListKeys");
+		super("Kms", "2016-01-20", "ListKeys", "kms");
 	}
 
 	private Integer pageNumber;

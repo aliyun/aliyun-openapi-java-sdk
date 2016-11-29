@@ -30,10 +30,13 @@ public class DescribeKeyResponseUnmarshaller {
 		describeKeyResponse.setRequestId(context.stringValue("DescribeKeyResponse.RequestId"));
 
 		KeyMetadata keyMetadata = new KeyMetadata();
+		keyMetadata.setCreationDate(context.stringValue("DescribeKeyResponse.KeyMetadata.CreationDate"));
+		keyMetadata.setDescription(context.stringValue("DescribeKeyResponse.KeyMetadata.Description"));
 		keyMetadata.setKeyId(context.stringValue("DescribeKeyResponse.KeyMetadata.KeyId"));
 		keyMetadata.setKeyState(context.stringValue("DescribeKeyResponse.KeyMetadata.KeyState"));
 		keyMetadata.setKeyUsage(context.stringValue("DescribeKeyResponse.KeyMetadata.KeyUsage"));
-		keyMetadata.setDescription(context.stringValue("DescribeKeyResponse.KeyMetadata.Description"));
+		keyMetadata.setDeleteDate(context.stringValue("DescribeKeyResponse.KeyMetadata.DeleteDate"));
+		keyMetadata.setCreator(context.stringValue("DescribeKeyResponse.KeyMetadata.Creator"));
 		describeKeyResponse.setKeyMetadata(keyMetadata);
 	 
 	 	return describeKeyResponse;

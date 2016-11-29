@@ -27,10 +27,12 @@ import com.aliyuncs.RpcAcsRequest;
 public class EnableKeyRequest extends RpcAcsRequest<EnableKeyResponse> {
 	
 	public EnableKeyRequest() {
-		super("Kms", "2016-01-20", "EnableKey");
+		super("Kms", "2016-01-20", "EnableKey", "kms");
 	}
 
 	private String keyId;
+
+	private String sTSToken;
 
 	public String getKeyId() {
 		return this.keyId;
@@ -39,6 +41,15 @@ public class EnableKeyRequest extends RpcAcsRequest<EnableKeyResponse> {
 	public void setKeyId(String keyId) {
 		this.keyId = keyId;
 		putQueryParameter("KeyId", keyId);
+	}
+
+	public String getSTSToken() {
+		return this.sTSToken;
+	}
+
+	public void setSTSToken(String sTSToken) {
+		this.sTSToken = sTSToken;
+		putQueryParameter("STSToken", sTSToken);
 	}
 
 	@Override

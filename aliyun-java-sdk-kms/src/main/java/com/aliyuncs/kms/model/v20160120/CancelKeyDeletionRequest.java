@@ -24,19 +24,15 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class EncryptRequest extends RpcAcsRequest<EncryptResponse> {
+public class CancelKeyDeletionRequest extends RpcAcsRequest<CancelKeyDeletionResponse> {
 	
-	public EncryptRequest() {
-		super("Kms", "2016-01-20", "Encrypt", "kms");
+	public CancelKeyDeletionRequest() {
+		super("Kms", "2016-01-20", "CancelKeyDeletion", "kms");
 	}
 
 	private String keyId;
 
-	private String plaintext;
-
 	private String sTSToken;
-
-	private String encryptionContext;
 
 	public String getKeyId() {
 		return this.keyId;
@@ -45,15 +41,6 @@ public class EncryptRequest extends RpcAcsRequest<EncryptResponse> {
 	public void setKeyId(String keyId) {
 		this.keyId = keyId;
 		putQueryParameter("KeyId", keyId);
-	}
-
-	public String getPlaintext() {
-		return this.plaintext;
-	}
-
-	public void setPlaintext(String plaintext) {
-		this.plaintext = plaintext;
-		putQueryParameter("Plaintext", plaintext);
 	}
 
 	public String getSTSToken() {
@@ -65,18 +52,9 @@ public class EncryptRequest extends RpcAcsRequest<EncryptResponse> {
 		putQueryParameter("STSToken", sTSToken);
 	}
 
-	public String getEncryptionContext() {
-		return this.encryptionContext;
-	}
-
-	public void setEncryptionContext(String encryptionContext) {
-		this.encryptionContext = encryptionContext;
-		putQueryParameter("EncryptionContext", encryptionContext);
-	}
-
 	@Override
-	public Class<EncryptResponse> getResponseClass() {
-		return EncryptResponse.class;
+	public Class<CancelKeyDeletionResponse> getResponseClass() {
+		return CancelKeyDeletionResponse.class;
 	}
 
 }

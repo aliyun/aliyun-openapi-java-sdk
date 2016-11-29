@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeKeyRequest extends RpcAcsRequest<DescribeKeyResponse> {
 	
 	public DescribeKeyRequest() {
-		super("Kms", "2016-01-20", "DescribeKey");
+		super("Kms", "2016-01-20", "DescribeKey", "kms");
 	}
 
 	private String keyId;

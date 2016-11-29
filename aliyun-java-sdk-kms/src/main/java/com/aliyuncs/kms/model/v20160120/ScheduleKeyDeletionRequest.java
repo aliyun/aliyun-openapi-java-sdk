@@ -24,19 +24,17 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class EncryptRequest extends RpcAcsRequest<EncryptResponse> {
+public class ScheduleKeyDeletionRequest extends RpcAcsRequest<ScheduleKeyDeletionResponse> {
 	
-	public EncryptRequest() {
-		super("Kms", "2016-01-20", "Encrypt", "kms");
+	public ScheduleKeyDeletionRequest() {
+		super("Kms", "2016-01-20", "ScheduleKeyDeletion", "kms");
 	}
 
 	private String keyId;
 
-	private String plaintext;
+	private Integer pendingWindowInDays;
 
 	private String sTSToken;
-
-	private String encryptionContext;
 
 	public String getKeyId() {
 		return this.keyId;
@@ -47,13 +45,13 @@ public class EncryptRequest extends RpcAcsRequest<EncryptResponse> {
 		putQueryParameter("KeyId", keyId);
 	}
 
-	public String getPlaintext() {
-		return this.plaintext;
+	public Integer getPendingWindowInDays() {
+		return this.pendingWindowInDays;
 	}
 
-	public void setPlaintext(String plaintext) {
-		this.plaintext = plaintext;
-		putQueryParameter("Plaintext", plaintext);
+	public void setPendingWindowInDays(Integer pendingWindowInDays) {
+		this.pendingWindowInDays = pendingWindowInDays;
+		putQueryParameter("PendingWindowInDays", pendingWindowInDays);
 	}
 
 	public String getSTSToken() {
@@ -65,18 +63,9 @@ public class EncryptRequest extends RpcAcsRequest<EncryptResponse> {
 		putQueryParameter("STSToken", sTSToken);
 	}
 
-	public String getEncryptionContext() {
-		return this.encryptionContext;
-	}
-
-	public void setEncryptionContext(String encryptionContext) {
-		this.encryptionContext = encryptionContext;
-		putQueryParameter("EncryptionContext", encryptionContext);
-	}
-
 	@Override
-	public Class<EncryptResponse> getResponseClass() {
-		return EncryptResponse.class;
+	public Class<ScheduleKeyDeletionResponse> getResponseClass() {
+		return ScheduleKeyDeletionResponse.class;
 	}
 
 }

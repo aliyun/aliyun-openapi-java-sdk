@@ -16,30 +16,18 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package com.aliyuncs.kms.model.v20160120;
+package com.aliyuncs.kms.transform.v20160120;
 
-import com.aliyuncs.AcsResponse;
-import com.aliyuncs.kms.transform.v20160120.EnableKeyResponseUnmarshaller;
+import com.aliyuncs.kms.model.v20160120.ScheduleKeyDeletionResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
-/**
- * @author auto create
- * @version 
- */
-public class EnableKeyResponse extends AcsResponse {
 
-	private String requestId;
+public class ScheduleKeyDeletionResponseUnmarshaller {
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	@Override
-	public EnableKeyResponse getInstance(UnmarshallerContext context) {
-		return	EnableKeyResponseUnmarshaller.unmarshall(this, context);
+	public static ScheduleKeyDeletionResponse unmarshall(ScheduleKeyDeletionResponse scheduleKeyDeletionResponse, UnmarshallerContext context) {
+		
+		scheduleKeyDeletionResponse.setRequestId(context.stringValue("ScheduleKeyDeletionResponse.RequestId"));
+	 
+	 	return scheduleKeyDeletionResponse;
 	}
 }

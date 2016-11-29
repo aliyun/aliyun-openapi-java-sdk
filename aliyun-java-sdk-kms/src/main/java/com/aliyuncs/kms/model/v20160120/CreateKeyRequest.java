@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class CreateKeyRequest extends RpcAcsRequest<CreateKeyResponse> {
 	
 	public CreateKeyRequest() {
-		super("Kms", "2016-01-20", "CreateKey");
+		super("Kms", "2016-01-20", "CreateKey", "kms");
 	}
 
 	private String description;

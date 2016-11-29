@@ -60,6 +60,8 @@ public class CreateKeyResponse extends AcsResponse {
 
 		private String keyUsage;
 
+		private String deleteDate;
+
 		public String getCreationDate() {
 			return this.creationDate;
 		}
@@ -98,6 +100,14 @@ public class CreateKeyResponse extends AcsResponse {
 
 		public void setKeyUsage(String keyUsage) {
 			this.keyUsage = keyUsage;
+		}
+
+		public String getDeleteDate() {
+			return this.deleteDate;
+		}
+
+		public void setDeleteDate(String deleteDate) {
+			this.deleteDate = deleteDate;
 		}
 	}
 

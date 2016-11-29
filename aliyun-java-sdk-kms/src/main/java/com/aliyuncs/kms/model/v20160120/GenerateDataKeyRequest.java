@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class GenerateDataKeyRequest extends RpcAcsRequest<GenerateDataKeyResponse> {
 	
 	public GenerateDataKeyRequest() {
-		super("Kms", "2016-01-20", "GenerateDataKey");
+		super("Kms", "2016-01-20", "GenerateDataKey", "kms");
 	}
 
 	private String keyId;
@@ -37,6 +37,8 @@ public class GenerateDataKeyRequest extends RpcAcsRequest<GenerateDataKeyRespons
 	private Integer numberOfBytes;
 
 	private String sTSToken;
+
+	private String encryptionContext;
 
 	public String getKeyId() {
 		return this.keyId;
@@ -72,6 +74,15 @@ public class GenerateDataKeyRequest extends RpcAcsRequest<GenerateDataKeyRespons
 	public void setSTSToken(String sTSToken) {
 		this.sTSToken = sTSToken;
 		putQueryParameter("STSToken", sTSToken);
+	}
+
+	public String getEncryptionContext() {
+		return this.encryptionContext;
+	}
+
+	public void setEncryptionContext(String encryptionContext) {
+		this.encryptionContext = encryptionContext;
+		putQueryParameter("EncryptionContext", encryptionContext);
 	}
 
 	@Override
