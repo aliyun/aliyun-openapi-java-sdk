@@ -18,175 +18,175 @@
  */
 package com.aliyuncs.rds.model.v20140815;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.rds.transform.v20140815.DescribeAbnormalDBInstancesResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
-import java.util.List;
-
 /**
  * @author auto create
+ * @version 
  */
 public class DescribeAbnormalDBInstancesResponse extends AcsResponse {
 
-    private String requestId;
+	private String requestId;
 
-    private Integer totalRecordCount;
+	private Integer totalRecordCount;
 
-    private Integer pageNumber;
+	private Integer pageNumber;
 
-    private Integer pageRecordCount;
+	private Integer pageRecordCount;
 
-    private List<InstanceResult> items;
+	private List<InstanceResult> items;
 
-    public String getRequestId() {
-        return this.requestId;
-    }
+	public String getRequestId() {
+		return this.requestId;
+	}
 
-    public void setRequestId(String requestId) {
-        this.requestId = requestId;
-    }
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
 
-    public Integer getTotalRecordCount() {
-        return this.totalRecordCount;
-    }
+	public Integer getTotalRecordCount() {
+		return this.totalRecordCount;
+	}
 
-    public void setTotalRecordCount(Integer totalRecordCount) {
-        this.totalRecordCount = totalRecordCount;
-    }
+	public void setTotalRecordCount(Integer totalRecordCount) {
+		this.totalRecordCount = totalRecordCount;
+	}
 
-    public Integer getPageNumber() {
-        return this.pageNumber;
-    }
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
 
-    public void setPageNumber(Integer pageNumber) {
-        this.pageNumber = pageNumber;
-    }
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+	}
 
-    public Integer getPageRecordCount() {
-        return this.pageRecordCount;
-    }
+	public Integer getPageRecordCount() {
+		return this.pageRecordCount;
+	}
 
-    public void setPageRecordCount(Integer pageRecordCount) {
-        this.pageRecordCount = pageRecordCount;
-    }
+	public void setPageRecordCount(Integer pageRecordCount) {
+		this.pageRecordCount = pageRecordCount;
+	}
 
-    public List<InstanceResult> getItems() {
-        return this.items;
-    }
+	public List<InstanceResult> getItems() {
+		return this.items;
+	}
 
-    public void setItems(List<InstanceResult> items) {
-        this.items = items;
-    }
+	public void setItems(List<InstanceResult> items) {
+		this.items = items;
+	}
 
-    public static class InstanceResult {
+	public static class InstanceResult {
 
-        private String dBInstanceDescription;
+		private String dBInstanceDescription;
 
-        private String dBInstanceId;
+		private String dBInstanceId;
 
-        private List<AbnormalItem> abnormalItems;
+		private List<AbnormalItem> abnormalItems;
 
-        public String getDBInstanceDescription() {
-            return this.dBInstanceDescription;
-        }
+		public String getDBInstanceDescription() {
+			return this.dBInstanceDescription;
+		}
 
-        public void setDBInstanceDescription(String dBInstanceDescription) {
-            this.dBInstanceDescription = dBInstanceDescription;
-        }
+		public void setDBInstanceDescription(String dBInstanceDescription) {
+			this.dBInstanceDescription = dBInstanceDescription;
+		}
 
-        public String getDBInstanceId() {
-            return this.dBInstanceId;
-        }
+		public String getDBInstanceId() {
+			return this.dBInstanceId;
+		}
 
-        public void setDBInstanceId(String dBInstanceId) {
-            this.dBInstanceId = dBInstanceId;
-        }
+		public void setDBInstanceId(String dBInstanceId) {
+			this.dBInstanceId = dBInstanceId;
+		}
 
-        public List<AbnormalItem> getAbnormalItems() {
-            return this.abnormalItems;
-        }
+		public List<AbnormalItem> getAbnormalItems() {
+			return this.abnormalItems;
+		}
 
-        public void setAbnormalItems(List<AbnormalItem> abnormalItems) {
-            this.abnormalItems = abnormalItems;
-        }
+		public void setAbnormalItems(List<AbnormalItem> abnormalItems) {
+			this.abnormalItems = abnormalItems;
+		}
 
-        public static class AbnormalItem {
+		public static class AbnormalItem {
 
-            private String checkTime;
+			private String checkTime;
 
-            private String checkItem;
+			private String checkItem;
 
-            private String abnormalReason;
+			private String abnormalReason;
 
-            private String abnormalValue;
+			private String abnormalValue;
 
-            private String abnormalDetail;
+			private String abnormalDetail;
 
-            private String adviceKey;
+			private String adviceKey;
 
-            private List<String> adviseValue;
+			private List<String> adviseValue;
 
-            public String getCheckTime() {
-                return this.checkTime;
-            }
+			public String getCheckTime() {
+				return this.checkTime;
+			}
 
-            public void setCheckTime(String checkTime) {
-                this.checkTime = checkTime;
-            }
+			public void setCheckTime(String checkTime) {
+				this.checkTime = checkTime;
+			}
 
-            public String getCheckItem() {
-                return this.checkItem;
-            }
+			public String getCheckItem() {
+				return this.checkItem;
+			}
 
-            public void setCheckItem(String checkItem) {
-                this.checkItem = checkItem;
-            }
+			public void setCheckItem(String checkItem) {
+				this.checkItem = checkItem;
+			}
 
-            public String getAbnormalReason() {
-                return this.abnormalReason;
-            }
+			public String getAbnormalReason() {
+				return this.abnormalReason;
+			}
 
-            public void setAbnormalReason(String abnormalReason) {
-                this.abnormalReason = abnormalReason;
-            }
+			public void setAbnormalReason(String abnormalReason) {
+				this.abnormalReason = abnormalReason;
+			}
 
-            public String getAbnormalValue() {
-                return this.abnormalValue;
-            }
+			public String getAbnormalValue() {
+				return this.abnormalValue;
+			}
 
-            public void setAbnormalValue(String abnormalValue) {
-                this.abnormalValue = abnormalValue;
-            }
+			public void setAbnormalValue(String abnormalValue) {
+				this.abnormalValue = abnormalValue;
+			}
 
-            public String getAbnormalDetail() {
-                return this.abnormalDetail;
-            }
+			public String getAbnormalDetail() {
+				return this.abnormalDetail;
+			}
 
-            public void setAbnormalDetail(String abnormalDetail) {
-                this.abnormalDetail = abnormalDetail;
-            }
+			public void setAbnormalDetail(String abnormalDetail) {
+				this.abnormalDetail = abnormalDetail;
+			}
 
-            public String getAdviceKey() {
-                return this.adviceKey;
-            }
+			public String getAdviceKey() {
+				return this.adviceKey;
+			}
 
-            public void setAdviceKey(String adviceKey) {
-                this.adviceKey = adviceKey;
-            }
+			public void setAdviceKey(String adviceKey) {
+				this.adviceKey = adviceKey;
+			}
 
-            public List<String> getAdviseValue() {
-                return this.adviseValue;
-            }
+			public List<String> getAdviseValue() {
+				return this.adviseValue;
+			}
 
-            public void setAdviseValue(List<String> adviseValue) {
-                this.adviseValue = adviseValue;
-            }
-        }
-    }
+			public void setAdviseValue(List<String> adviseValue) {
+				this.adviseValue = adviseValue;
+			}
+		}
+	}
 
-    @Override
-    public DescribeAbnormalDBInstancesResponse getInstance(UnmarshallerContext context) {
-        return DescribeAbnormalDBInstancesResponseUnmarshaller.unmarshall(this, context);
-    }
+	@Override
+	public DescribeAbnormalDBInstancesResponse getInstance(UnmarshallerContext context) {
+		return	DescribeAbnormalDBInstancesResponseUnmarshaller.unmarshall(this, context);
+	}
 }

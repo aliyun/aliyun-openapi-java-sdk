@@ -21,31 +21,21 @@ package com.aliyuncs.rds.transform.v20140815;
 import com.aliyuncs.rds.model.v20140815.DescribeResourceUsageResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
+
 public class DescribeResourceUsageResponseUnmarshaller {
 
-    public static DescribeResourceUsageResponse unmarshall(
-            DescribeResourceUsageResponse describeResourceUsageResponse,
-            UnmarshallerContext context) {
-
-        describeResourceUsageResponse
-                .setRequestId(context.stringValue("DescribeResourceUsageResponse.RequestId"));
-        describeResourceUsageResponse
-                .setDBInstanceId(context.stringValue("DescribeResourceUsageResponse.DBInstanceId"));
-        describeResourceUsageResponse
-                .setEngine(context.stringValue("DescribeResourceUsageResponse.Engine"));
-        describeResourceUsageResponse
-                .setDiskUsed(context.longValue("DescribeResourceUsageResponse.DiskUsed"));
-        describeResourceUsageResponse
-                .setDataSize(context.longValue("DescribeResourceUsageResponse.DataSize"));
-        describeResourceUsageResponse
-                .setLogSize(context.longValue("DescribeResourceUsageResponse.LogSize"));
-        describeResourceUsageResponse
-                .setBackupSize(context.longValue("DescribeResourceUsageResponse.BackupSize"));
-        describeResourceUsageResponse
-                .setSQLSize(context.longValue("DescribeResourceUsageResponse.SQLSize"));
-        describeResourceUsageResponse.setColdBackupSize(
-                context.longValue("DescribeResourceUsageResponse.ColdBackupSize"));
-
-        return describeResourceUsageResponse;
-    }
+	public static DescribeResourceUsageResponse unmarshall(DescribeResourceUsageResponse describeResourceUsageResponse, UnmarshallerContext context) {
+		
+		describeResourceUsageResponse.setRequestId(context.stringValue("DescribeResourceUsageResponse.RequestId"));
+		describeResourceUsageResponse.setDBInstanceId(context.stringValue("DescribeResourceUsageResponse.DBInstanceId"));
+		describeResourceUsageResponse.setEngine(context.stringValue("DescribeResourceUsageResponse.Engine"));
+		describeResourceUsageResponse.setDiskUsed(context.longValue("DescribeResourceUsageResponse.DiskUsed"));
+		describeResourceUsageResponse.setDataSize(context.longValue("DescribeResourceUsageResponse.DataSize"));
+		describeResourceUsageResponse.setLogSize(context.longValue("DescribeResourceUsageResponse.LogSize"));
+		describeResourceUsageResponse.setBackupSize(context.longValue("DescribeResourceUsageResponse.BackupSize"));
+		describeResourceUsageResponse.setSQLSize(context.longValue("DescribeResourceUsageResponse.SQLSize"));
+		describeResourceUsageResponse.setColdBackupSize(context.longValue("DescribeResourceUsageResponse.ColdBackupSize"));
+	 
+	 	return describeResourceUsageResponse;
+	}
 }

@@ -22,93 +22,94 @@ import com.aliyuncs.RpcAcsRequest;
 
 /**
  * @author auto create
+ * @version 
  */
 public class CreateTempDBInstanceRequest extends RpcAcsRequest<CreateTempDBInstanceResponse> {
+	
+	public CreateTempDBInstanceRequest() {
+		super("Rds", "2014-08-15", "CreateTempDBInstance", "rds");
+	}
 
-    public CreateTempDBInstanceRequest() {
-        super("Rds", "2014-08-15", "CreateTempDBInstance");
-    }
+	private Long ownerId;
 
-    private Long ownerId;
+	private String resourceOwnerAccount;
 
-    private String resourceOwnerAccount;
+	private Long resourceOwnerId;
 
-    private Long resourceOwnerId;
+	private String dBInstanceId;
 
-    private String dBInstanceId;
+	private Integer backupId;
 
-    private Integer backupId;
+	private String restoreTime;
 
-    private String restoreTime;
+	private String ownerAccount;
 
-    private String ownerAccount;
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
 
-    public Long getOwnerId() {
-        return this.ownerId;
-    }
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		putQueryParameter("OwnerId", ownerId);
+	}
 
-    public void setOwnerId(Long ownerId) {
-        this.ownerId = ownerId;
-        putQueryParameter("OwnerId", ownerId);
-    }
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
 
-    public String getResourceOwnerAccount() {
-        return this.resourceOwnerAccount;
-    }
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	}
 
-    public void setResourceOwnerAccount(String resourceOwnerAccount) {
-        this.resourceOwnerAccount = resourceOwnerAccount;
-        putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-    }
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
+	}
 
-    public Long getResourceOwnerId() {
-        return this.resourceOwnerId;
-    }
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		putQueryParameter("ResourceOwnerId", resourceOwnerId);
+	}
 
-    public void setResourceOwnerId(Long resourceOwnerId) {
-        this.resourceOwnerId = resourceOwnerId;
-        putQueryParameter("ResourceOwnerId", resourceOwnerId);
-    }
+	public String getDBInstanceId() {
+		return this.dBInstanceId;
+	}
 
-    public String getDBInstanceId() {
-        return this.dBInstanceId;
-    }
+	public void setDBInstanceId(String dBInstanceId) {
+		this.dBInstanceId = dBInstanceId;
+		putQueryParameter("DBInstanceId", dBInstanceId);
+	}
 
-    public void setDBInstanceId(String dBInstanceId) {
-        this.dBInstanceId = dBInstanceId;
-        putQueryParameter("DBInstanceId", dBInstanceId);
-    }
+	public Integer getBackupId() {
+		return this.backupId;
+	}
 
-    public Integer getBackupId() {
-        return this.backupId;
-    }
+	public void setBackupId(Integer backupId) {
+		this.backupId = backupId;
+		putQueryParameter("BackupId", backupId);
+	}
 
-    public void setBackupId(Integer backupId) {
-        this.backupId = backupId;
-        putQueryParameter("BackupId", backupId);
-    }
+	public String getRestoreTime() {
+		return this.restoreTime;
+	}
 
-    public String getRestoreTime() {
-        return this.restoreTime;
-    }
+	public void setRestoreTime(String restoreTime) {
+		this.restoreTime = restoreTime;
+		putQueryParameter("RestoreTime", restoreTime);
+	}
 
-    public void setRestoreTime(String restoreTime) {
-        this.restoreTime = restoreTime;
-        putQueryParameter("RestoreTime", restoreTime);
-    }
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
 
-    public String getOwnerAccount() {
-        return this.ownerAccount;
-    }
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		putQueryParameter("OwnerAccount", ownerAccount);
+	}
 
-    public void setOwnerAccount(String ownerAccount) {
-        this.ownerAccount = ownerAccount;
-        putQueryParameter("OwnerAccount", ownerAccount);
-    }
-
-    @Override
-    public Class<CreateTempDBInstanceResponse> getResponseClass() {
-        return CreateTempDBInstanceResponse.class;
-    }
+	@Override
+	public Class<CreateTempDBInstanceResponse> getResponseClass() {
+		return CreateTempDBInstanceResponse.class;
+	}
 
 }

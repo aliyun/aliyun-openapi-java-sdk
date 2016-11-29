@@ -21,15 +21,13 @@ package com.aliyuncs.rds.transform.v20140815;
 import com.aliyuncs.rds.model.v20140815.RevokeOperatorPermissionResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
+
 public class RevokeOperatorPermissionResponseUnmarshaller {
 
-    public static RevokeOperatorPermissionResponse unmarshall(
-            RevokeOperatorPermissionResponse revokeOperatorPermissionResponse,
-            UnmarshallerContext context) {
-
-        revokeOperatorPermissionResponse
-                .setRequestId(context.stringValue("RevokeOperatorPermissionResponse.RequestId"));
-
-        return revokeOperatorPermissionResponse;
-    }
+	public static RevokeOperatorPermissionResponse unmarshall(RevokeOperatorPermissionResponse revokeOperatorPermissionResponse, UnmarshallerContext context) {
+		
+		revokeOperatorPermissionResponse.setRequestId(context.stringValue("RevokeOperatorPermissionResponse.RequestId"));
+	 
+	 	return revokeOperatorPermissionResponse;
+	}
 }

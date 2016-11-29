@@ -24,61 +24,62 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
+ * @version 
  */
 public class CreateDBInstanceResponse extends AcsResponse {
 
-    private String requestId;
+	private String requestId;
 
-    private String dBInstanceId;
+	private String dBInstanceId;
 
-    private String orderId;
+	private String orderId;
 
-    private String connectionString;
+	private String connectionString;
 
-    private String port;
+	private String port;
 
-    public String getRequestId() {
-        return this.requestId;
-    }
+	public String getRequestId() {
+		return this.requestId;
+	}
 
-    public void setRequestId(String requestId) {
-        this.requestId = requestId;
-    }
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
 
-    public String getDBInstanceId() {
-        return this.dBInstanceId;
-    }
+	public String getDBInstanceId() {
+		return this.dBInstanceId;
+	}
 
-    public void setDBInstanceId(String dBInstanceId) {
-        this.dBInstanceId = dBInstanceId;
-    }
+	public void setDBInstanceId(String dBInstanceId) {
+		this.dBInstanceId = dBInstanceId;
+	}
 
-    public String getOrderId() {
-        return this.orderId;
-    }
+	public String getOrderId() {
+		return this.orderId;
+	}
 
-    public void setOrderId(String orderId) {
-        this.orderId = orderId;
-    }
+	public void setOrderId(String orderId) {
+		this.orderId = orderId;
+	}
 
-    public String getConnectionString() {
-        return this.connectionString;
-    }
+	public String getConnectionString() {
+		return this.connectionString;
+	}
 
-    public void setConnectionString(String connectionString) {
-        this.connectionString = connectionString;
-    }
+	public void setConnectionString(String connectionString) {
+		this.connectionString = connectionString;
+	}
 
-    public String getPort() {
-        return this.port;
-    }
+	public String getPort() {
+		return this.port;
+	}
 
-    public void setPort(String port) {
-        this.port = port;
-    }
+	public void setPort(String port) {
+		this.port = port;
+	}
 
-    @Override
-    public CreateDBInstanceResponse getInstance(UnmarshallerContext context) {
-        return CreateDBInstanceResponseUnmarshaller.unmarshall(this, context);
-    }
+	@Override
+	public CreateDBInstanceResponse getInstance(UnmarshallerContext context) {
+		return	CreateDBInstanceResponseUnmarshaller.unmarshall(this, context);
+	}
 }

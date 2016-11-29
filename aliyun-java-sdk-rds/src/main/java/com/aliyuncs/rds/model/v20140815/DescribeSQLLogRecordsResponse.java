@@ -18,152 +18,152 @@
  */
 package com.aliyuncs.rds.model.v20140815;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.rds.transform.v20140815.DescribeSQLLogRecordsResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
-import java.util.List;
-
 /**
  * @author auto create
+ * @version 
  */
 public class DescribeSQLLogRecordsResponse extends AcsResponse {
 
-    private String requestId;
+	private String requestId;
 
-    private Integer totalRecordCount;
+	private Integer totalRecordCount;
 
-    private Integer pageNumber;
+	private Integer pageNumber;
 
-    private Integer pageRecordCount;
+	private Integer pageRecordCount;
 
-    private List<SQLRecord> items;
+	private List<SQLRecord> items;
 
-    public String getRequestId() {
-        return this.requestId;
-    }
+	public String getRequestId() {
+		return this.requestId;
+	}
 
-    public void setRequestId(String requestId) {
-        this.requestId = requestId;
-    }
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
 
-    public Integer getTotalRecordCount() {
-        return this.totalRecordCount;
-    }
+	public Integer getTotalRecordCount() {
+		return this.totalRecordCount;
+	}
 
-    public void setTotalRecordCount(Integer totalRecordCount) {
-        this.totalRecordCount = totalRecordCount;
-    }
+	public void setTotalRecordCount(Integer totalRecordCount) {
+		this.totalRecordCount = totalRecordCount;
+	}
 
-    public Integer getPageNumber() {
-        return this.pageNumber;
-    }
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
 
-    public void setPageNumber(Integer pageNumber) {
-        this.pageNumber = pageNumber;
-    }
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+	}
 
-    public Integer getPageRecordCount() {
-        return this.pageRecordCount;
-    }
+	public Integer getPageRecordCount() {
+		return this.pageRecordCount;
+	}
 
-    public void setPageRecordCount(Integer pageRecordCount) {
-        this.pageRecordCount = pageRecordCount;
-    }
+	public void setPageRecordCount(Integer pageRecordCount) {
+		this.pageRecordCount = pageRecordCount;
+	}
 
-    public List<SQLRecord> getItems() {
-        return this.items;
-    }
+	public List<SQLRecord> getItems() {
+		return this.items;
+	}
 
-    public void setItems(List<SQLRecord> items) {
-        this.items = items;
-    }
+	public void setItems(List<SQLRecord> items) {
+		this.items = items;
+	}
 
-    public static class SQLRecord {
+	public static class SQLRecord {
 
-        private String dBName;
+		private String dBName;
 
-        private String accountName;
+		private String accountName;
 
-        private String hostAddress;
+		private String hostAddress;
 
-        private String sQLText;
+		private String sQLText;
 
-        private Long totalExecutionTimes;
+		private Long totalExecutionTimes;
 
-        private Long returnRowCounts;
+		private Long returnRowCounts;
 
-        private String executeTime;
+		private String executeTime;
 
-        private String threadID;
+		private String threadID;
 
-        public String getDBName() {
-            return this.dBName;
-        }
+		public String getDBName() {
+			return this.dBName;
+		}
 
-        public void setDBName(String dBName) {
-            this.dBName = dBName;
-        }
+		public void setDBName(String dBName) {
+			this.dBName = dBName;
+		}
 
-        public String getAccountName() {
-            return this.accountName;
-        }
+		public String getAccountName() {
+			return this.accountName;
+		}
 
-        public void setAccountName(String accountName) {
-            this.accountName = accountName;
-        }
+		public void setAccountName(String accountName) {
+			this.accountName = accountName;
+		}
 
-        public String getHostAddress() {
-            return this.hostAddress;
-        }
+		public String getHostAddress() {
+			return this.hostAddress;
+		}
 
-        public void setHostAddress(String hostAddress) {
-            this.hostAddress = hostAddress;
-        }
+		public void setHostAddress(String hostAddress) {
+			this.hostAddress = hostAddress;
+		}
 
-        public String getSQLText() {
-            return this.sQLText;
-        }
+		public String getSQLText() {
+			return this.sQLText;
+		}
 
-        public void setSQLText(String sQLText) {
-            this.sQLText = sQLText;
-        }
+		public void setSQLText(String sQLText) {
+			this.sQLText = sQLText;
+		}
 
-        public Long getTotalExecutionTimes() {
-            return this.totalExecutionTimes;
-        }
+		public Long getTotalExecutionTimes() {
+			return this.totalExecutionTimes;
+		}
 
-        public void setTotalExecutionTimes(Long totalExecutionTimes) {
-            this.totalExecutionTimes = totalExecutionTimes;
-        }
+		public void setTotalExecutionTimes(Long totalExecutionTimes) {
+			this.totalExecutionTimes = totalExecutionTimes;
+		}
 
-        public Long getReturnRowCounts() {
-            return this.returnRowCounts;
-        }
+		public Long getReturnRowCounts() {
+			return this.returnRowCounts;
+		}
 
-        public void setReturnRowCounts(Long returnRowCounts) {
-            this.returnRowCounts = returnRowCounts;
-        }
+		public void setReturnRowCounts(Long returnRowCounts) {
+			this.returnRowCounts = returnRowCounts;
+		}
 
-        public String getExecuteTime() {
-            return this.executeTime;
-        }
+		public String getExecuteTime() {
+			return this.executeTime;
+		}
 
-        public void setExecuteTime(String executeTime) {
-            this.executeTime = executeTime;
-        }
+		public void setExecuteTime(String executeTime) {
+			this.executeTime = executeTime;
+		}
 
-        public String getThreadID() {
-            return this.threadID;
-        }
+		public String getThreadID() {
+			return this.threadID;
+		}
 
-        public void setThreadID(String threadID) {
-            this.threadID = threadID;
-        }
-    }
+		public void setThreadID(String threadID) {
+			this.threadID = threadID;
+		}
+	}
 
-    @Override
-    public DescribeSQLLogRecordsResponse getInstance(UnmarshallerContext context) {
-        return DescribeSQLLogRecordsResponseUnmarshaller.unmarshall(this, context);
-    }
+	@Override
+	public DescribeSQLLogRecordsResponse getInstance(UnmarshallerContext context) {
+		return	DescribeSQLLogRecordsResponseUnmarshaller.unmarshall(this, context);
+	}
 }

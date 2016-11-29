@@ -22,104 +22,105 @@ import com.aliyuncs.RpcAcsRequest;
 
 /**
  * @author auto create
+ * @version 
  */
 public class CreateBackupRequest extends RpcAcsRequest<CreateBackupResponse> {
+	
+	public CreateBackupRequest() {
+		super("Rds", "2014-08-15", "CreateBackup", "rds");
+	}
 
-    public CreateBackupRequest() {
-        super("Rds", "2014-08-15", "CreateBackup");
-    }
+	private Long ownerId;
 
-    private Long ownerId;
+	private String resourceOwnerAccount;
 
-    private String resourceOwnerAccount;
+	private Long resourceOwnerId;
 
-    private Long resourceOwnerId;
+	private String dBInstanceId;
 
-    private String dBInstanceId;
+	private String dBName;
 
-    private String dBName;
+	private String backupMethod;
 
-    private String backupMethod;
+	private String backupType;
 
-    private String backupType;
+	private String ownerAccount;
 
-    private String ownerAccount;
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
 
-    public Long getOwnerId() {
-        return this.ownerId;
-    }
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		putQueryParameter("OwnerId", ownerId);
+	}
 
-    public void setOwnerId(Long ownerId) {
-        this.ownerId = ownerId;
-        putQueryParameter("OwnerId", ownerId);
-    }
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
 
-    public String getResourceOwnerAccount() {
-        return this.resourceOwnerAccount;
-    }
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	}
 
-    public void setResourceOwnerAccount(String resourceOwnerAccount) {
-        this.resourceOwnerAccount = resourceOwnerAccount;
-        putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-    }
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
+	}
 
-    public Long getResourceOwnerId() {
-        return this.resourceOwnerId;
-    }
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		putQueryParameter("ResourceOwnerId", resourceOwnerId);
+	}
 
-    public void setResourceOwnerId(Long resourceOwnerId) {
-        this.resourceOwnerId = resourceOwnerId;
-        putQueryParameter("ResourceOwnerId", resourceOwnerId);
-    }
+	public String getDBInstanceId() {
+		return this.dBInstanceId;
+	}
 
-    public String getDBInstanceId() {
-        return this.dBInstanceId;
-    }
+	public void setDBInstanceId(String dBInstanceId) {
+		this.dBInstanceId = dBInstanceId;
+		putQueryParameter("DBInstanceId", dBInstanceId);
+	}
 
-    public void setDBInstanceId(String dBInstanceId) {
-        this.dBInstanceId = dBInstanceId;
-        putQueryParameter("DBInstanceId", dBInstanceId);
-    }
+	public String getDBName() {
+		return this.dBName;
+	}
 
-    public String getDBName() {
-        return this.dBName;
-    }
+	public void setDBName(String dBName) {
+		this.dBName = dBName;
+		putQueryParameter("DBName", dBName);
+	}
 
-    public void setDBName(String dBName) {
-        this.dBName = dBName;
-        putQueryParameter("DBName", dBName);
-    }
+	public String getBackupMethod() {
+		return this.backupMethod;
+	}
 
-    public String getBackupMethod() {
-        return this.backupMethod;
-    }
+	public void setBackupMethod(String backupMethod) {
+		this.backupMethod = backupMethod;
+		putQueryParameter("BackupMethod", backupMethod);
+	}
 
-    public void setBackupMethod(String backupMethod) {
-        this.backupMethod = backupMethod;
-        putQueryParameter("BackupMethod", backupMethod);
-    }
+	public String getBackupType() {
+		return this.backupType;
+	}
 
-    public String getBackupType() {
-        return this.backupType;
-    }
+	public void setBackupType(String backupType) {
+		this.backupType = backupType;
+		putQueryParameter("BackupType", backupType);
+	}
 
-    public void setBackupType(String backupType) {
-        this.backupType = backupType;
-        putQueryParameter("BackupType", backupType);
-    }
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
 
-    public String getOwnerAccount() {
-        return this.ownerAccount;
-    }
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		putQueryParameter("OwnerAccount", ownerAccount);
+	}
 
-    public void setOwnerAccount(String ownerAccount) {
-        this.ownerAccount = ownerAccount;
-        putQueryParameter("OwnerAccount", ownerAccount);
-    }
-
-    @Override
-    public Class<CreateBackupResponse> getResponseClass() {
-        return CreateBackupResponse.class;
-    }
+	@Override
+	public Class<CreateBackupResponse> getResponseClass() {
+		return CreateBackupResponse.class;
+	}
 
 }

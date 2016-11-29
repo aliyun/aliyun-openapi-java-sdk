@@ -24,61 +24,62 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
+ * @version 
  */
 public class DescribeDBInstanceSSLResponse extends AcsResponse {
 
-    private String requestId;
+	private String requestId;
 
-    private String connectionString;
+	private String connectionString;
 
-    private String sSLExpireTime;
+	private String sSLExpireTime;
 
-    private String requireUpdate;
+	private String requireUpdate;
 
-    private String requireUpdateReason;
+	private String requireUpdateReason;
 
-    public String getRequestId() {
-        return this.requestId;
-    }
+	public String getRequestId() {
+		return this.requestId;
+	}
 
-    public void setRequestId(String requestId) {
-        this.requestId = requestId;
-    }
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
 
-    public String getConnectionString() {
-        return this.connectionString;
-    }
+	public String getConnectionString() {
+		return this.connectionString;
+	}
 
-    public void setConnectionString(String connectionString) {
-        this.connectionString = connectionString;
-    }
+	public void setConnectionString(String connectionString) {
+		this.connectionString = connectionString;
+	}
 
-    public String getSSLExpireTime() {
-        return this.sSLExpireTime;
-    }
+	public String getSSLExpireTime() {
+		return this.sSLExpireTime;
+	}
 
-    public void setSSLExpireTime(String sSLExpireTime) {
-        this.sSLExpireTime = sSLExpireTime;
-    }
+	public void setSSLExpireTime(String sSLExpireTime) {
+		this.sSLExpireTime = sSLExpireTime;
+	}
 
-    public String getRequireUpdate() {
-        return this.requireUpdate;
-    }
+	public String getRequireUpdate() {
+		return this.requireUpdate;
+	}
 
-    public void setRequireUpdate(String requireUpdate) {
-        this.requireUpdate = requireUpdate;
-    }
+	public void setRequireUpdate(String requireUpdate) {
+		this.requireUpdate = requireUpdate;
+	}
 
-    public String getRequireUpdateReason() {
-        return this.requireUpdateReason;
-    }
+	public String getRequireUpdateReason() {
+		return this.requireUpdateReason;
+	}
 
-    public void setRequireUpdateReason(String requireUpdateReason) {
-        this.requireUpdateReason = requireUpdateReason;
-    }
+	public void setRequireUpdateReason(String requireUpdateReason) {
+		this.requireUpdateReason = requireUpdateReason;
+	}
 
-    @Override
-    public DescribeDBInstanceSSLResponse getInstance(UnmarshallerContext context) {
-        return DescribeDBInstanceSSLResponseUnmarshaller.unmarshall(this, context);
-    }
+	@Override
+	public DescribeDBInstanceSSLResponse getInstance(UnmarshallerContext context) {
+		return	DescribeDBInstanceSSLResponseUnmarshaller.unmarshall(this, context);
+	}
 }

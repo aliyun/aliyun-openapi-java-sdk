@@ -22,115 +22,116 @@ import com.aliyuncs.RpcAcsRequest;
 
 /**
  * @author auto create
+ * @version 
  */
 public class CreateAccountRequest extends RpcAcsRequest<CreateAccountResponse> {
+	
+	public CreateAccountRequest() {
+		super("Rds", "2014-08-15", "CreateAccount", "rds");
+	}
 
-    public CreateAccountRequest() {
-        super("Rds", "2014-08-15", "CreateAccount");
-    }
+	private Long ownerId;
 
-    private Long ownerId;
+	private String resourceOwnerAccount;
 
-    private String resourceOwnerAccount;
+	private Long resourceOwnerId;
 
-    private Long resourceOwnerId;
+	private String dBInstanceId;
 
-    private String dBInstanceId;
+	private String accountName;
 
-    private String accountName;
+	private String accountPassword;
 
-    private String accountPassword;
+	private String accountDescription;
 
-    private String accountDescription;
+	private String accountType;
 
-    private String accountType;
+	private String ownerAccount;
 
-    private String ownerAccount;
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
 
-    public Long getOwnerId() {
-        return this.ownerId;
-    }
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		putQueryParameter("OwnerId", ownerId);
+	}
 
-    public void setOwnerId(Long ownerId) {
-        this.ownerId = ownerId;
-        putQueryParameter("OwnerId", ownerId);
-    }
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
 
-    public String getResourceOwnerAccount() {
-        return this.resourceOwnerAccount;
-    }
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	}
 
-    public void setResourceOwnerAccount(String resourceOwnerAccount) {
-        this.resourceOwnerAccount = resourceOwnerAccount;
-        putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-    }
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
+	}
 
-    public Long getResourceOwnerId() {
-        return this.resourceOwnerId;
-    }
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		putQueryParameter("ResourceOwnerId", resourceOwnerId);
+	}
 
-    public void setResourceOwnerId(Long resourceOwnerId) {
-        this.resourceOwnerId = resourceOwnerId;
-        putQueryParameter("ResourceOwnerId", resourceOwnerId);
-    }
+	public String getDBInstanceId() {
+		return this.dBInstanceId;
+	}
 
-    public String getDBInstanceId() {
-        return this.dBInstanceId;
-    }
+	public void setDBInstanceId(String dBInstanceId) {
+		this.dBInstanceId = dBInstanceId;
+		putQueryParameter("DBInstanceId", dBInstanceId);
+	}
 
-    public void setDBInstanceId(String dBInstanceId) {
-        this.dBInstanceId = dBInstanceId;
-        putQueryParameter("DBInstanceId", dBInstanceId);
-    }
+	public String getAccountName() {
+		return this.accountName;
+	}
 
-    public String getAccountName() {
-        return this.accountName;
-    }
+	public void setAccountName(String accountName) {
+		this.accountName = accountName;
+		putQueryParameter("AccountName", accountName);
+	}
 
-    public void setAccountName(String accountName) {
-        this.accountName = accountName;
-        putQueryParameter("AccountName", accountName);
-    }
+	public String getAccountPassword() {
+		return this.accountPassword;
+	}
 
-    public String getAccountPassword() {
-        return this.accountPassword;
-    }
+	public void setAccountPassword(String accountPassword) {
+		this.accountPassword = accountPassword;
+		putQueryParameter("AccountPassword", accountPassword);
+	}
 
-    public void setAccountPassword(String accountPassword) {
-        this.accountPassword = accountPassword;
-        putQueryParameter("AccountPassword", accountPassword);
-    }
+	public String getAccountDescription() {
+		return this.accountDescription;
+	}
 
-    public String getAccountDescription() {
-        return this.accountDescription;
-    }
+	public void setAccountDescription(String accountDescription) {
+		this.accountDescription = accountDescription;
+		putQueryParameter("AccountDescription", accountDescription);
+	}
 
-    public void setAccountDescription(String accountDescription) {
-        this.accountDescription = accountDescription;
-        putQueryParameter("AccountDescription", accountDescription);
-    }
+	public String getAccountType() {
+		return this.accountType;
+	}
 
-    public String getAccountType() {
-        return this.accountType;
-    }
+	public void setAccountType(String accountType) {
+		this.accountType = accountType;
+		putQueryParameter("AccountType", accountType);
+	}
 
-    public void setAccountType(String accountType) {
-        this.accountType = accountType;
-        putQueryParameter("AccountType", accountType);
-    }
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
 
-    public String getOwnerAccount() {
-        return this.ownerAccount;
-    }
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		putQueryParameter("OwnerAccount", ownerAccount);
+	}
 
-    public void setOwnerAccount(String ownerAccount) {
-        this.ownerAccount = ownerAccount;
-        putQueryParameter("OwnerAccount", ownerAccount);
-    }
-
-    @Override
-    public Class<CreateAccountResponse> getResponseClass() {
-        return CreateAccountResponse.class;
-    }
+	@Override
+	public Class<CreateAccountResponse> getResponseClass() {
+		return CreateAccountResponse.class;
+	}
 
 }

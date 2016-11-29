@@ -21,15 +21,13 @@ package com.aliyuncs.rds.transform.v20140815;
 import com.aliyuncs.rds.model.v20140815.SwitchDBInstanceNetTypeResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
+
 public class SwitchDBInstanceNetTypeResponseUnmarshaller {
 
-    public static SwitchDBInstanceNetTypeResponse unmarshall(
-            SwitchDBInstanceNetTypeResponse switchDBInstanceNetTypeResponse,
-            UnmarshallerContext context) {
-
-        switchDBInstanceNetTypeResponse
-                .setRequestId(context.stringValue("SwitchDBInstanceNetTypeResponse.RequestId"));
-
-        return switchDBInstanceNetTypeResponse;
-    }
+	public static SwitchDBInstanceNetTypeResponse unmarshall(SwitchDBInstanceNetTypeResponse switchDBInstanceNetTypeResponse, UnmarshallerContext context) {
+		
+		switchDBInstanceNetTypeResponse.setRequestId(context.stringValue("SwitchDBInstanceNetTypeResponse.RequestId"));
+	 
+	 	return switchDBInstanceNetTypeResponse;
+	}
 }

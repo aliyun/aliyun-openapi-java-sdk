@@ -22,105 +22,105 @@ import com.aliyuncs.RpcAcsRequest;
 
 /**
  * @author auto create
+ * @version 
  */
-public class ModifyDBInstanceConnectionStringRequest
-        extends RpcAcsRequest<ModifyDBInstanceConnectionStringResponse> {
+public class ModifyDBInstanceConnectionStringRequest extends RpcAcsRequest<ModifyDBInstanceConnectionStringResponse> {
+	
+	public ModifyDBInstanceConnectionStringRequest() {
+		super("Rds", "2014-08-15", "ModifyDBInstanceConnectionString", "rds");
+	}
 
-    public ModifyDBInstanceConnectionStringRequest() {
-        super("Rds", "2014-08-15", "ModifyDBInstanceConnectionString");
-    }
+	private Long ownerId;
 
-    private Long ownerId;
+	private String resourceOwnerAccount;
 
-    private String resourceOwnerAccount;
+	private Long resourceOwnerId;
 
-    private Long resourceOwnerId;
+	private String dBInstanceId;
 
-    private String dBInstanceId;
+	private String currentConnectionString;
 
-    private String currentConnectionString;
+	private String connectionStringPrefix;
 
-    private String connectionStringPrefix;
+	private String port;
 
-    private String port;
+	private String ownerAccount;
 
-    private String ownerAccount;
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
 
-    public Long getOwnerId() {
-        return this.ownerId;
-    }
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		putQueryParameter("OwnerId", ownerId);
+	}
 
-    public void setOwnerId(Long ownerId) {
-        this.ownerId = ownerId;
-        putQueryParameter("OwnerId", ownerId);
-    }
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
 
-    public String getResourceOwnerAccount() {
-        return this.resourceOwnerAccount;
-    }
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	}
 
-    public void setResourceOwnerAccount(String resourceOwnerAccount) {
-        this.resourceOwnerAccount = resourceOwnerAccount;
-        putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-    }
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
+	}
 
-    public Long getResourceOwnerId() {
-        return this.resourceOwnerId;
-    }
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		putQueryParameter("ResourceOwnerId", resourceOwnerId);
+	}
 
-    public void setResourceOwnerId(Long resourceOwnerId) {
-        this.resourceOwnerId = resourceOwnerId;
-        putQueryParameter("ResourceOwnerId", resourceOwnerId);
-    }
+	public String getDBInstanceId() {
+		return this.dBInstanceId;
+	}
 
-    public String getDBInstanceId() {
-        return this.dBInstanceId;
-    }
+	public void setDBInstanceId(String dBInstanceId) {
+		this.dBInstanceId = dBInstanceId;
+		putQueryParameter("DBInstanceId", dBInstanceId);
+	}
 
-    public void setDBInstanceId(String dBInstanceId) {
-        this.dBInstanceId = dBInstanceId;
-        putQueryParameter("DBInstanceId", dBInstanceId);
-    }
+	public String getCurrentConnectionString() {
+		return this.currentConnectionString;
+	}
 
-    public String getCurrentConnectionString() {
-        return this.currentConnectionString;
-    }
+	public void setCurrentConnectionString(String currentConnectionString) {
+		this.currentConnectionString = currentConnectionString;
+		putQueryParameter("CurrentConnectionString", currentConnectionString);
+	}
 
-    public void setCurrentConnectionString(String currentConnectionString) {
-        this.currentConnectionString = currentConnectionString;
-        putQueryParameter("CurrentConnectionString", currentConnectionString);
-    }
+	public String getConnectionStringPrefix() {
+		return this.connectionStringPrefix;
+	}
 
-    public String getConnectionStringPrefix() {
-        return this.connectionStringPrefix;
-    }
+	public void setConnectionStringPrefix(String connectionStringPrefix) {
+		this.connectionStringPrefix = connectionStringPrefix;
+		putQueryParameter("ConnectionStringPrefix", connectionStringPrefix);
+	}
 
-    public void setConnectionStringPrefix(String connectionStringPrefix) {
-        this.connectionStringPrefix = connectionStringPrefix;
-        putQueryParameter("ConnectionStringPrefix", connectionStringPrefix);
-    }
+	public String getPort() {
+		return this.port;
+	}
 
-    public String getPort() {
-        return this.port;
-    }
+	public void setPort(String port) {
+		this.port = port;
+		putQueryParameter("Port", port);
+	}
 
-    public void setPort(String port) {
-        this.port = port;
-        putQueryParameter("Port", port);
-    }
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
 
-    public String getOwnerAccount() {
-        return this.ownerAccount;
-    }
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		putQueryParameter("OwnerAccount", ownerAccount);
+	}
 
-    public void setOwnerAccount(String ownerAccount) {
-        this.ownerAccount = ownerAccount;
-        putQueryParameter("OwnerAccount", ownerAccount);
-    }
-
-    @Override
-    public Class<ModifyDBInstanceConnectionStringResponse> getResponseClass() {
-        return ModifyDBInstanceConnectionStringResponse.class;
-    }
+	@Override
+	public Class<ModifyDBInstanceConnectionStringResponse> getResponseClass() {
+		return ModifyDBInstanceConnectionStringResponse.class;
+	}
 
 }

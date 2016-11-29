@@ -18,54 +18,40 @@
  */
 package com.aliyuncs.rds.transform.v20140815;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.rds.model.v20140815.DescribeModifyParameterLogResponse;
 import com.aliyuncs.rds.model.v20140815.DescribeModifyParameterLogResponse.ParameterChangeLog;
 import com.aliyuncs.rds.model.v20140815.DescribeModifyParameterLogResponse.ParameterChangeLog.Status;
 import com.aliyuncs.transform.UnmarshallerContext;
 
-import java.util.ArrayList;
-import java.util.List;
 
 public class DescribeModifyParameterLogResponseUnmarshaller {
 
-    public static DescribeModifyParameterLogResponse unmarshall(
-            DescribeModifyParameterLogResponse describeModifyParameterLogResponse,
-            UnmarshallerContext context) {
+	public static DescribeModifyParameterLogResponse unmarshall(DescribeModifyParameterLogResponse describeModifyParameterLogResponse, UnmarshallerContext context) {
+		
+		describeModifyParameterLogResponse.setRequestId(context.stringValue("DescribeModifyParameterLogResponse.RequestId"));
+		describeModifyParameterLogResponse.setEngine(context.stringValue("DescribeModifyParameterLogResponse.Engine"));
+		describeModifyParameterLogResponse.setDBInstanceId(context.stringValue("DescribeModifyParameterLogResponse.DBInstanceId"));
+		describeModifyParameterLogResponse.setEngineVersion(context.stringValue("DescribeModifyParameterLogResponse.EngineVersion"));
+		describeModifyParameterLogResponse.setTotalRecordCount(context.integerValue("DescribeModifyParameterLogResponse.TotalRecordCount"));
+		describeModifyParameterLogResponse.setPageNumber(context.integerValue("DescribeModifyParameterLogResponse.PageNumber"));
+		describeModifyParameterLogResponse.setPageRecordCount(context.integerValue("DescribeModifyParameterLogResponse.PageRecordCount"));
 
-        describeModifyParameterLogResponse
-                .setRequestId(context.stringValue("DescribeModifyParameterLogResponse.RequestId"));
-        describeModifyParameterLogResponse
-                .setEngine(context.stringValue("DescribeModifyParameterLogResponse.Engine"));
-        describeModifyParameterLogResponse.setDBInstanceId(
-                context.stringValue("DescribeModifyParameterLogResponse.DBInstanceId"));
-        describeModifyParameterLogResponse.setEngineVersion(
-                context.stringValue("DescribeModifyParameterLogResponse.EngineVersion"));
-        describeModifyParameterLogResponse.setTotalRecordCount(
-                context.integerValue("DescribeModifyParameterLogResponse.TotalRecordCount"));
-        describeModifyParameterLogResponse.setPageNumber(
-                context.integerValue("DescribeModifyParameterLogResponse.PageNumber"));
-        describeModifyParameterLogResponse.setPageRecordCount(
-                context.integerValue("DescribeModifyParameterLogResponse.PageRecordCount"));
+		List<ParameterChangeLog> items = new ArrayList<ParameterChangeLog>();
+		for (int i = 0; i < context.lengthValue("DescribeModifyParameterLogResponse.Items.Length"); i++) {
+			ParameterChangeLog parameterChangeLog = new ParameterChangeLog();
+			parameterChangeLog.setModifyTime(context.stringValue("DescribeModifyParameterLogResponse.Items["+ i +"].ModifyTime"));
+			parameterChangeLog.setOldParameterValue(context.stringValue("DescribeModifyParameterLogResponse.Items["+ i +"].OldParameterValue"));
+			parameterChangeLog.setNewParameterValue(context.stringValue("DescribeModifyParameterLogResponse.Items["+ i +"].NewParameterValue"));
+			parameterChangeLog.setParameterName(context.stringValue("DescribeModifyParameterLogResponse.Items["+ i +"].ParameterName"));
+			parameterChangeLog.setStatus(Status.getEnum(context.stringValue("DescribeModifyParameterLogResponse.Items["+ i +"].Status")));
 
-        List<ParameterChangeLog> items = new ArrayList<ParameterChangeLog>();
-        for (int i = 0;
-             i < context.lengthValue("DescribeModifyParameterLogResponse.Items.Length"); i++) {
-            ParameterChangeLog parameterChangeLog = new ParameterChangeLog();
-            parameterChangeLog.setModifyTime(context.stringValue(
-                    "DescribeModifyParameterLogResponse.Items[" + i + "].ModifyTime"));
-            parameterChangeLog.setOldParameterValue(context.stringValue(
-                    "DescribeModifyParameterLogResponse.Items[" + i + "].OldParameterValue"));
-            parameterChangeLog.setNewParameterValue(context.stringValue(
-                    "DescribeModifyParameterLogResponse.Items[" + i + "].NewParameterValue"));
-            parameterChangeLog.setParameterName(context.stringValue(
-                    "DescribeModifyParameterLogResponse.Items[" + i + "].ParameterName"));
-            parameterChangeLog.setStatus(Status.getEnum(context.stringValue(
-                    "DescribeModifyParameterLogResponse.Items[" + i + "].Status")));
-
-            items.add(parameterChangeLog);
-        }
-        describeModifyParameterLogResponse.setItems(items);
-
-        return describeModifyParameterLogResponse;
-    }
+			items.add(parameterChangeLog);
+		}
+		describeModifyParameterLogResponse.setItems(items);
+	 
+	 	return describeModifyParameterLogResponse;
+	}
 }

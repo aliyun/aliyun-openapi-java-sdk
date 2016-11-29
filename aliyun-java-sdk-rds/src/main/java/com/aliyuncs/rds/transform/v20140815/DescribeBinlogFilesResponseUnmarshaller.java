@@ -18,53 +18,40 @@
  */
 package com.aliyuncs.rds.transform.v20140815;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.rds.model.v20140815.DescribeBinlogFilesResponse;
 import com.aliyuncs.rds.model.v20140815.DescribeBinlogFilesResponse.BinLogFile;
 import com.aliyuncs.transform.UnmarshallerContext;
 
-import java.util.ArrayList;
-import java.util.List;
 
 public class DescribeBinlogFilesResponseUnmarshaller {
 
-    public static DescribeBinlogFilesResponse unmarshall(
-            DescribeBinlogFilesResponse describeBinlogFilesResponse, UnmarshallerContext context) {
+	public static DescribeBinlogFilesResponse unmarshall(DescribeBinlogFilesResponse describeBinlogFilesResponse, UnmarshallerContext context) {
+		
+		describeBinlogFilesResponse.setRequestId(context.stringValue("DescribeBinlogFilesResponse.RequestId"));
+		describeBinlogFilesResponse.setTotalRecordCount(context.integerValue("DescribeBinlogFilesResponse.TotalRecordCount"));
+		describeBinlogFilesResponse.setPageNumber(context.integerValue("DescribeBinlogFilesResponse.PageNumber"));
+		describeBinlogFilesResponse.setPageRecordCount(context.integerValue("DescribeBinlogFilesResponse.PageRecordCount"));
+		describeBinlogFilesResponse.setTotalFileSize(context.longValue("DescribeBinlogFilesResponse.TotalFileSize"));
 
-        describeBinlogFilesResponse
-                .setRequestId(context.stringValue("DescribeBinlogFilesResponse.RequestId"));
-        describeBinlogFilesResponse.setTotalRecordCount(
-                context.integerValue("DescribeBinlogFilesResponse.TotalRecordCount"));
-        describeBinlogFilesResponse
-                .setPageNumber(context.integerValue("DescribeBinlogFilesResponse.PageNumber"));
-        describeBinlogFilesResponse.setPageRecordCount(
-                context.integerValue("DescribeBinlogFilesResponse.PageRecordCount"));
-        describeBinlogFilesResponse
-                .setTotalFileSize(context.longValue("DescribeBinlogFilesResponse.TotalFileSize"));
+		List<BinLogFile> items = new ArrayList<BinLogFile>();
+		for (int i = 0; i < context.lengthValue("DescribeBinlogFilesResponse.Items.Length"); i++) {
+			BinLogFile binLogFile = new BinLogFile();
+			binLogFile.setFileSize(context.longValue("DescribeBinlogFilesResponse.Items["+ i +"].FileSize"));
+			binLogFile.setLogBeginTime(context.stringValue("DescribeBinlogFilesResponse.Items["+ i +"].LogBeginTime"));
+			binLogFile.setLogEndTime(context.stringValue("DescribeBinlogFilesResponse.Items["+ i +"].LogEndTime"));
+			binLogFile.setDownloadLink(context.stringValue("DescribeBinlogFilesResponse.Items["+ i +"].DownloadLink"));
+			binLogFile.setIntranetDownloadLink(context.stringValue("DescribeBinlogFilesResponse.Items["+ i +"].IntranetDownloadLink"));
+			binLogFile.setLinkExpiredTime(context.stringValue("DescribeBinlogFilesResponse.Items["+ i +"].LinkExpiredTime"));
+			binLogFile.setChecksum(context.stringValue("DescribeBinlogFilesResponse.Items["+ i +"].Checksum"));
+			binLogFile.setHostInstanceID(context.stringValue("DescribeBinlogFilesResponse.Items["+ i +"].HostInstanceID"));
 
-        List<BinLogFile> items = new ArrayList<BinLogFile>();
-        for (int i = 0; i < context.lengthValue("DescribeBinlogFilesResponse.Items.Length"); i++) {
-            BinLogFile binLogFile = new BinLogFile();
-            binLogFile.setFileSize(
-                    context.longValue("DescribeBinlogFilesResponse.Items[" + i + "].FileSize"));
-            binLogFile.setLogBeginTime(context.stringValue(
-                    "DescribeBinlogFilesResponse.Items[" + i + "].LogBeginTime"));
-            binLogFile.setLogEndTime(
-                    context.stringValue("DescribeBinlogFilesResponse.Items[" + i + "].LogEndTime"));
-            binLogFile.setDownloadLink(context.stringValue(
-                    "DescribeBinlogFilesResponse.Items[" + i + "].DownloadLink"));
-            binLogFile.setIntranetDownloadLink(context.stringValue(
-                    "DescribeBinlogFilesResponse.Items[" + i + "].IntranetDownloadLink"));
-            binLogFile.setLinkExpiredTime(context.stringValue(
-                    "DescribeBinlogFilesResponse.Items[" + i + "].LinkExpiredTime"));
-            binLogFile.setChecksum(
-                    context.stringValue("DescribeBinlogFilesResponse.Items[" + i + "].Checksum"));
-            binLogFile.setHostInstanceID(context.stringValue(
-                    "DescribeBinlogFilesResponse.Items[" + i + "].HostInstanceID"));
-
-            items.add(binLogFile);
-        }
-        describeBinlogFilesResponse.setItems(items);
-
-        return describeBinlogFilesResponse;
-    }
+			items.add(binLogFile);
+		}
+		describeBinlogFilesResponse.setItems(items);
+	 
+	 	return describeBinlogFilesResponse;
+	}
 }

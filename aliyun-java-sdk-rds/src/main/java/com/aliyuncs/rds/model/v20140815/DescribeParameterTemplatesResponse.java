@@ -18,198 +18,198 @@
  */
 package com.aliyuncs.rds.model.v20140815;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.rds.transform.v20140815.DescribeParameterTemplatesResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
-import java.util.List;
-
 /**
  * @author auto create
+ * @version 
  */
 public class DescribeParameterTemplatesResponse extends AcsResponse {
 
-    private String requestId;
+	private String requestId;
 
-    private String engine;
+	private String engine;
 
-    private String engineVersion;
+	private String engineVersion;
 
-    private String parameterCount;
+	private String parameterCount;
 
-    private List<TemplateRecord> parameters;
+	private List<TemplateRecord> parameters;
 
-    public String getRequestId() {
-        return this.requestId;
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getEngine() {
+		return this.engine;
+	}
+
+	public void setEngine(String engine) {
+		this.engine = engine;
+	}
+
+	public String getEngineVersion() {
+		return this.engineVersion;
+	}
+
+	public void setEngineVersion(String engineVersion) {
+		this.engineVersion = engineVersion;
+	}
+
+	public String getParameterCount() {
+		return this.parameterCount;
+	}
+
+	public void setParameterCount(String parameterCount) {
+		this.parameterCount = parameterCount;
+	}
+
+	public List<TemplateRecord> getParameters() {
+		return this.parameters;
+	}
+
+	public void setParameters(List<TemplateRecord> parameters) {
+		this.parameters = parameters;
+	}
+
+	public static class TemplateRecord {
+
+		private String parameterName;
+
+		private String parameterValue;
+
+		private ForceModify forceModify;
+
+		private ForceRestart forceRestart;
+
+		private String checkingCode;
+
+		private String parameterDescription;
+
+		public String getParameterName() {
+			return this.parameterName;
+		}
+
+		public void setParameterName(String parameterName) {
+			this.parameterName = parameterName;
+		}
+
+		public String getParameterValue() {
+			return this.parameterValue;
+		}
+
+		public void setParameterValue(String parameterValue) {
+			this.parameterValue = parameterValue;
+		}
+
+		public ForceModify getForceModify() {
+			return this.forceModify;
+		}
+
+		public void setForceModify(ForceModify forceModify) {
+			this.forceModify = forceModify;
+		}
+
+		public ForceRestart getForceRestart() {
+			return this.forceRestart;
+		}
+
+		public void setForceRestart(ForceRestart forceRestart) {
+			this.forceRestart = forceRestart;
+		}
+
+		public String getCheckingCode() {
+			return this.checkingCode;
+		}
+
+		public void setCheckingCode(String checkingCode) {
+			this.checkingCode = checkingCode;
+		}
+
+		public String getParameterDescription() {
+			return this.parameterDescription;
+		}
+
+		public void setParameterDescription(String parameterDescription) {
+			this.parameterDescription = parameterDescription;
+		}
+
+public enum ForceModify {
+
+			TRUE("true"),
+			FALSE("false"),;
+	
+    private String stringValue;
+
+	ForceModify(String stringValue) {
+        setStringValue(stringValue);
     }
 
-    public void setRequestId(String requestId) {
-        this.requestId = requestId;
+    public String getStringValue() {
+        return stringValue;
     }
 
-    public String getEngine() {
-        return this.engine;
+    public void setStringValue(String stringValue) {
+        this.stringValue = stringValue;
+    }
+    
+    public static ForceModify getEnum(String stringValue){
+    	if(null == stringValue){
+    		return null;
+    	}
+    	
+    	for (ForceModify forceModify : ForceModify.values()) {
+			if(forceModify.getStringValue().equals(stringValue)){
+				return forceModify;
+			}
+		}
+    	return null;
+    }
+}
+
+public enum ForceRestart {
+
+			FALSE("false"),
+			TRUE("true"),;
+	
+    private String stringValue;
+
+	ForceRestart(String stringValue) {
+        setStringValue(stringValue);
     }
 
-    public void setEngine(String engine) {
-        this.engine = engine;
+    public String getStringValue() {
+        return stringValue;
     }
 
-    public String getEngineVersion() {
-        return this.engineVersion;
+    public void setStringValue(String stringValue) {
+        this.stringValue = stringValue;
     }
-
-    public void setEngineVersion(String engineVersion) {
-        this.engineVersion = engineVersion;
+    
+    public static ForceRestart getEnum(String stringValue){
+    	if(null == stringValue){
+    		return null;
+    	}
+    	
+    	for (ForceRestart forceRestart : ForceRestart.values()) {
+			if(forceRestart.getStringValue().equals(stringValue)){
+				return forceRestart;
+			}
+		}
+    	return null;
     }
+}
+	}
 
-    public String getParameterCount() {
-        return this.parameterCount;
-    }
-
-    public void setParameterCount(String parameterCount) {
-        this.parameterCount = parameterCount;
-    }
-
-    public List<TemplateRecord> getParameters() {
-        return this.parameters;
-    }
-
-    public void setParameters(List<TemplateRecord> parameters) {
-        this.parameters = parameters;
-    }
-
-    public static class TemplateRecord {
-
-        private String parameterName;
-
-        private String parameterValue;
-
-        private ForceModify forceModify;
-
-        private ForceRestart forceRestart;
-
-        private String checkingCode;
-
-        private String parameterDescription;
-
-        public String getParameterName() {
-            return this.parameterName;
-        }
-
-        public void setParameterName(String parameterName) {
-            this.parameterName = parameterName;
-        }
-
-        public String getParameterValue() {
-            return this.parameterValue;
-        }
-
-        public void setParameterValue(String parameterValue) {
-            this.parameterValue = parameterValue;
-        }
-
-        public ForceModify getForceModify() {
-            return this.forceModify;
-        }
-
-        public void setForceModify(ForceModify forceModify) {
-            this.forceModify = forceModify;
-        }
-
-        public ForceRestart getForceRestart() {
-            return this.forceRestart;
-        }
-
-        public void setForceRestart(ForceRestart forceRestart) {
-            this.forceRestart = forceRestart;
-        }
-
-        public String getCheckingCode() {
-            return this.checkingCode;
-        }
-
-        public void setCheckingCode(String checkingCode) {
-            this.checkingCode = checkingCode;
-        }
-
-        public String getParameterDescription() {
-            return this.parameterDescription;
-        }
-
-        public void setParameterDescription(String parameterDescription) {
-            this.parameterDescription = parameterDescription;
-        }
-
-        public enum ForceModify {
-
-            TRUE("true"),
-            FALSE("false"),;
-
-            private String stringValue;
-
-            ForceModify(String stringValue) {
-                setStringValue(stringValue);
-            }
-
-            public String getStringValue() {
-                return stringValue;
-            }
-
-            public void setStringValue(String stringValue) {
-                this.stringValue = stringValue;
-            }
-
-            public static ForceModify getEnum(String stringValue) {
-                if (null == stringValue) {
-                    return null;
-                }
-
-                for (ForceModify forceModify : ForceModify.values()) {
-                    if (forceModify.getStringValue().equals(stringValue)) {
-                        return forceModify;
-                    }
-                }
-                return null;
-            }
-        }
-
-        public enum ForceRestart {
-
-            FALSE("false"),
-            TRUE("true"),;
-
-            private String stringValue;
-
-            ForceRestart(String stringValue) {
-                setStringValue(stringValue);
-            }
-
-            public String getStringValue() {
-                return stringValue;
-            }
-
-            public void setStringValue(String stringValue) {
-                this.stringValue = stringValue;
-            }
-
-            public static ForceRestart getEnum(String stringValue) {
-                if (null == stringValue) {
-                    return null;
-                }
-
-                for (ForceRestart forceRestart : ForceRestart.values()) {
-                    if (forceRestart.getStringValue().equals(stringValue)) {
-                        return forceRestart;
-                    }
-                }
-                return null;
-            }
-        }
-    }
-
-    @Override
-    public DescribeParameterTemplatesResponse getInstance(UnmarshallerContext context) {
-        return DescribeParameterTemplatesResponseUnmarshaller.unmarshall(this, context);
-    }
+	@Override
+	public DescribeParameterTemplatesResponse getInstance(UnmarshallerContext context) {
+		return	DescribeParameterTemplatesResponseUnmarshaller.unmarshall(this, context);
+	}
 }

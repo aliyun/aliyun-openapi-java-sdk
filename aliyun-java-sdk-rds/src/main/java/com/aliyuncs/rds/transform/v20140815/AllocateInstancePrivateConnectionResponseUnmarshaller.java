@@ -21,15 +21,13 @@ package com.aliyuncs.rds.transform.v20140815;
 import com.aliyuncs.rds.model.v20140815.AllocateInstancePrivateConnectionResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
+
 public class AllocateInstancePrivateConnectionResponseUnmarshaller {
 
-    public static AllocateInstancePrivateConnectionResponse unmarshall(
-            AllocateInstancePrivateConnectionResponse allocateInstancePrivateConnectionResponse,
-            UnmarshallerContext context) {
-
-        allocateInstancePrivateConnectionResponse.setRequestId(
-                context.stringValue("AllocateInstancePrivateConnectionResponse.RequestId"));
-
-        return allocateInstancePrivateConnectionResponse;
-    }
+	public static AllocateInstancePrivateConnectionResponse unmarshall(AllocateInstancePrivateConnectionResponse allocateInstancePrivateConnectionResponse, UnmarshallerContext context) {
+		
+		allocateInstancePrivateConnectionResponse.setRequestId(context.stringValue("AllocateInstancePrivateConnectionResponse.RequestId"));
+	 
+	 	return allocateInstancePrivateConnectionResponse;
+	}
 }

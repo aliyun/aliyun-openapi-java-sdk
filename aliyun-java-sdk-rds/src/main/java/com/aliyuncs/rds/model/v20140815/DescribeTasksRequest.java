@@ -22,137 +22,138 @@ import com.aliyuncs.RpcAcsRequest;
 
 /**
  * @author auto create
+ * @version 
  */
 public class DescribeTasksRequest extends RpcAcsRequest<DescribeTasksResponse> {
+	
+	public DescribeTasksRequest() {
+		super("Rds", "2014-08-15", "DescribeTasks", "rds");
+	}
 
-    public DescribeTasksRequest() {
-        super("Rds", "2014-08-15", "DescribeTasks");
-    }
+	private Long ownerId;
 
-    private Long ownerId;
+	private String resourceOwnerAccount;
 
-    private String resourceOwnerAccount;
+	private Long resourceOwnerId;
 
-    private Long resourceOwnerId;
+	private String dBInstanceId;
 
-    private String dBInstanceId;
+	private String startTime;
 
-    private String startTime;
+	private String endTime;
 
-    private String endTime;
+	private Integer pageSize;
 
-    private Integer pageSize;
+	private Integer pageNumber;
 
-    private Integer pageNumber;
+	private String status;
 
-    private String status;
+	private String taskAction;
 
-    private String taskAction;
+	private String ownerAccount;
 
-    private String ownerAccount;
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
 
-    public Long getOwnerId() {
-        return this.ownerId;
-    }
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		putQueryParameter("OwnerId", ownerId);
+	}
 
-    public void setOwnerId(Long ownerId) {
-        this.ownerId = ownerId;
-        putQueryParameter("OwnerId", ownerId);
-    }
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
 
-    public String getResourceOwnerAccount() {
-        return this.resourceOwnerAccount;
-    }
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	}
 
-    public void setResourceOwnerAccount(String resourceOwnerAccount) {
-        this.resourceOwnerAccount = resourceOwnerAccount;
-        putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-    }
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
+	}
 
-    public Long getResourceOwnerId() {
-        return this.resourceOwnerId;
-    }
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		putQueryParameter("ResourceOwnerId", resourceOwnerId);
+	}
 
-    public void setResourceOwnerId(Long resourceOwnerId) {
-        this.resourceOwnerId = resourceOwnerId;
-        putQueryParameter("ResourceOwnerId", resourceOwnerId);
-    }
+	public String getDBInstanceId() {
+		return this.dBInstanceId;
+	}
 
-    public String getDBInstanceId() {
-        return this.dBInstanceId;
-    }
+	public void setDBInstanceId(String dBInstanceId) {
+		this.dBInstanceId = dBInstanceId;
+		putQueryParameter("DBInstanceId", dBInstanceId);
+	}
 
-    public void setDBInstanceId(String dBInstanceId) {
-        this.dBInstanceId = dBInstanceId;
-        putQueryParameter("DBInstanceId", dBInstanceId);
-    }
+	public String getStartTime() {
+		return this.startTime;
+	}
 
-    public String getStartTime() {
-        return this.startTime;
-    }
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+		putQueryParameter("StartTime", startTime);
+	}
 
-    public void setStartTime(String startTime) {
-        this.startTime = startTime;
-        putQueryParameter("StartTime", startTime);
-    }
+	public String getEndTime() {
+		return this.endTime;
+	}
 
-    public String getEndTime() {
-        return this.endTime;
-    }
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+		putQueryParameter("EndTime", endTime);
+	}
 
-    public void setEndTime(String endTime) {
-        this.endTime = endTime;
-        putQueryParameter("EndTime", endTime);
-    }
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
 
-    public Integer getPageSize() {
-        return this.pageSize;
-    }
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		putQueryParameter("PageSize", pageSize);
+	}
 
-    public void setPageSize(Integer pageSize) {
-        this.pageSize = pageSize;
-        putQueryParameter("PageSize", pageSize);
-    }
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
 
-    public Integer getPageNumber() {
-        return this.pageNumber;
-    }
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		putQueryParameter("PageNumber", pageNumber);
+	}
 
-    public void setPageNumber(Integer pageNumber) {
-        this.pageNumber = pageNumber;
-        putQueryParameter("PageNumber", pageNumber);
-    }
+	public String getStatus() {
+		return this.status;
+	}
 
-    public String getStatus() {
-        return this.status;
-    }
+	public void setStatus(String status) {
+		this.status = status;
+		putQueryParameter("Status", status);
+	}
 
-    public void setStatus(String status) {
-        this.status = status;
-        putQueryParameter("Status", status);
-    }
+	public String getTaskAction() {
+		return this.taskAction;
+	}
 
-    public String getTaskAction() {
-        return this.taskAction;
-    }
+	public void setTaskAction(String taskAction) {
+		this.taskAction = taskAction;
+		putQueryParameter("TaskAction", taskAction);
+	}
 
-    public void setTaskAction(String taskAction) {
-        this.taskAction = taskAction;
-        putQueryParameter("TaskAction", taskAction);
-    }
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
 
-    public String getOwnerAccount() {
-        return this.ownerAccount;
-    }
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		putQueryParameter("OwnerAccount", ownerAccount);
+	}
 
-    public void setOwnerAccount(String ownerAccount) {
-        this.ownerAccount = ownerAccount;
-        putQueryParameter("OwnerAccount", ownerAccount);
-    }
-
-    @Override
-    public Class<DescribeTasksResponse> getResponseClass() {
-        return DescribeTasksResponse.class;
-    }
+	@Override
+	public Class<DescribeTasksResponse> getResponseClass() {
+		return DescribeTasksResponse.class;
+	}
 
 }

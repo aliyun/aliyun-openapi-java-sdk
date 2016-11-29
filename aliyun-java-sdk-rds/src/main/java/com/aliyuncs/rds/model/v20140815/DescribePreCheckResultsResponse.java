@@ -18,92 +18,92 @@
  */
 package com.aliyuncs.rds.model.v20140815;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.rds.transform.v20140815.DescribePreCheckResultsResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
-import java.util.List;
-
 /**
  * @author auto create
+ * @version 
  */
 public class DescribePreCheckResultsResponse extends AcsResponse {
 
-    private String requestId;
+	private String requestId;
 
-    private String dBInstanceId;
+	private String dBInstanceId;
 
-    private List<PreCheckResult> items;
+	private List<PreCheckResult> items;
 
-    public String getRequestId() {
-        return this.requestId;
-    }
+	public String getRequestId() {
+		return this.requestId;
+	}
 
-    public void setRequestId(String requestId) {
-        this.requestId = requestId;
-    }
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
 
-    public String getDBInstanceId() {
-        return this.dBInstanceId;
-    }
+	public String getDBInstanceId() {
+		return this.dBInstanceId;
+	}
 
-    public void setDBInstanceId(String dBInstanceId) {
-        this.dBInstanceId = dBInstanceId;
-    }
+	public void setDBInstanceId(String dBInstanceId) {
+		this.dBInstanceId = dBInstanceId;
+	}
 
-    public List<PreCheckResult> getItems() {
-        return this.items;
-    }
+	public List<PreCheckResult> getItems() {
+		return this.items;
+	}
 
-    public void setItems(List<PreCheckResult> items) {
-        this.items = items;
-    }
+	public void setItems(List<PreCheckResult> items) {
+		this.items = items;
+	}
 
-    public static class PreCheckResult {
+	public static class PreCheckResult {
 
-        private String preCheckName;
+		private String preCheckName;
 
-        private String preCheckResult;
+		private String preCheckResult;
 
-        private String failReasion;
+		private String failReasion;
 
-        private String repairMethod;
+		private String repairMethod;
 
-        public String getPreCheckName() {
-            return this.preCheckName;
-        }
+		public String getPreCheckName() {
+			return this.preCheckName;
+		}
 
-        public void setPreCheckName(String preCheckName) {
-            this.preCheckName = preCheckName;
-        }
+		public void setPreCheckName(String preCheckName) {
+			this.preCheckName = preCheckName;
+		}
 
-        public String getPreCheckResult() {
-            return this.preCheckResult;
-        }
+		public String getPreCheckResult() {
+			return this.preCheckResult;
+		}
 
-        public void setPreCheckResult(String preCheckResult) {
-            this.preCheckResult = preCheckResult;
-        }
+		public void setPreCheckResult(String preCheckResult) {
+			this.preCheckResult = preCheckResult;
+		}
 
-        public String getFailReasion() {
-            return this.failReasion;
-        }
+		public String getFailReasion() {
+			return this.failReasion;
+		}
 
-        public void setFailReasion(String failReasion) {
-            this.failReasion = failReasion;
-        }
+		public void setFailReasion(String failReasion) {
+			this.failReasion = failReasion;
+		}
 
-        public String getRepairMethod() {
-            return this.repairMethod;
-        }
+		public String getRepairMethod() {
+			return this.repairMethod;
+		}
 
-        public void setRepairMethod(String repairMethod) {
-            this.repairMethod = repairMethod;
-        }
-    }
+		public void setRepairMethod(String repairMethod) {
+			this.repairMethod = repairMethod;
+		}
+	}
 
-    @Override
-    public DescribePreCheckResultsResponse getInstance(UnmarshallerContext context) {
-        return DescribePreCheckResultsResponseUnmarshaller.unmarshall(this, context);
-    }
+	@Override
+	public DescribePreCheckResultsResponse getInstance(UnmarshallerContext context) {
+		return	DescribePreCheckResultsResponseUnmarshaller.unmarshall(this, context);
+	}
 }

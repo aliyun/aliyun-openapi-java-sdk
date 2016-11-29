@@ -21,15 +21,13 @@ package com.aliyuncs.rds.transform.v20140815;
 import com.aliyuncs.rds.model.v20140815.RemoveTagsFromResourceResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
+
 public class RemoveTagsFromResourceResponseUnmarshaller {
 
-    public static RemoveTagsFromResourceResponse unmarshall(
-            RemoveTagsFromResourceResponse removeTagsFromResourceResponse,
-            UnmarshallerContext context) {
-
-        removeTagsFromResourceResponse
-                .setRequestId(context.stringValue("RemoveTagsFromResourceResponse.RequestId"));
-
-        return removeTagsFromResourceResponse;
-    }
+	public static RemoveTagsFromResourceResponse unmarshall(RemoveTagsFromResourceResponse removeTagsFromResourceResponse, UnmarshallerContext context) {
+		
+		removeTagsFromResourceResponse.setRequestId(context.stringValue("RemoveTagsFromResourceResponse.RequestId"));
+	 
+	 	return removeTagsFromResourceResponse;
+	}
 }

@@ -18,47 +18,36 @@
  */
 package com.aliyuncs.rds.transform.v20140815;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.rds.model.v20140815.DescribeOptimizeAdviceOnStorageResponse;
 import com.aliyuncs.rds.model.v20140815.DescribeOptimizeAdviceOnStorageResponse.AdviceOnStorage;
 import com.aliyuncs.transform.UnmarshallerContext;
 
-import java.util.ArrayList;
-import java.util.List;
 
 public class DescribeOptimizeAdviceOnStorageResponseUnmarshaller {
 
-    public static DescribeOptimizeAdviceOnStorageResponse unmarshall(
-            DescribeOptimizeAdviceOnStorageResponse describeOptimizeAdviceOnStorageResponse,
-            UnmarshallerContext context) {
+	public static DescribeOptimizeAdviceOnStorageResponse unmarshall(DescribeOptimizeAdviceOnStorageResponse describeOptimizeAdviceOnStorageResponse, UnmarshallerContext context) {
+		
+		describeOptimizeAdviceOnStorageResponse.setRequestId(context.stringValue("DescribeOptimizeAdviceOnStorageResponse.RequestId"));
+		describeOptimizeAdviceOnStorageResponse.setDBInstanceId(context.stringValue("DescribeOptimizeAdviceOnStorageResponse.DBInstanceId"));
+		describeOptimizeAdviceOnStorageResponse.setTotalRecordsCount(context.integerValue("DescribeOptimizeAdviceOnStorageResponse.TotalRecordsCount"));
+		describeOptimizeAdviceOnStorageResponse.setPageNumber(context.integerValue("DescribeOptimizeAdviceOnStorageResponse.PageNumber"));
+		describeOptimizeAdviceOnStorageResponse.setPageRecordCount(context.integerValue("DescribeOptimizeAdviceOnStorageResponse.PageRecordCount"));
 
-        describeOptimizeAdviceOnStorageResponse.setRequestId(
-                context.stringValue("DescribeOptimizeAdviceOnStorageResponse.RequestId"));
-        describeOptimizeAdviceOnStorageResponse.setDBInstanceId(
-                context.stringValue("DescribeOptimizeAdviceOnStorageResponse.DBInstanceId"));
-        describeOptimizeAdviceOnStorageResponse.setTotalRecordsCount(
-                context.integerValue("DescribeOptimizeAdviceOnStorageResponse.TotalRecordsCount"));
-        describeOptimizeAdviceOnStorageResponse.setPageNumber(
-                context.integerValue("DescribeOptimizeAdviceOnStorageResponse.PageNumber"));
-        describeOptimizeAdviceOnStorageResponse.setPageRecordCount(
-                context.integerValue("DescribeOptimizeAdviceOnStorageResponse.PageRecordCount"));
+		List<AdviceOnStorage> items = new ArrayList<AdviceOnStorage>();
+		for (int i = 0; i < context.lengthValue("DescribeOptimizeAdviceOnStorageResponse.Items.Length"); i++) {
+			AdviceOnStorage adviceOnStorage = new AdviceOnStorage();
+			adviceOnStorage.setDBName(context.stringValue("DescribeOptimizeAdviceOnStorageResponse.Items["+ i +"].DBName"));
+			adviceOnStorage.setTableName(context.stringValue("DescribeOptimizeAdviceOnStorageResponse.Items["+ i +"].TableName"));
+			adviceOnStorage.setCurrentEngine(context.stringValue("DescribeOptimizeAdviceOnStorageResponse.Items["+ i +"].CurrentEngine"));
+			adviceOnStorage.setAdviseEngine(context.stringValue("DescribeOptimizeAdviceOnStorageResponse.Items["+ i +"].AdviseEngine"));
 
-        List<AdviceOnStorage> items = new ArrayList<AdviceOnStorage>();
-        for (int i = 0;
-             i < context.lengthValue("DescribeOptimizeAdviceOnStorageResponse.Items.Length"); i++) {
-            AdviceOnStorage adviceOnStorage = new AdviceOnStorage();
-            adviceOnStorage.setDBName(context.stringValue(
-                    "DescribeOptimizeAdviceOnStorageResponse.Items[" + i + "].DBName"));
-            adviceOnStorage.setTableName(context.stringValue(
-                    "DescribeOptimizeAdviceOnStorageResponse.Items[" + i + "].TableName"));
-            adviceOnStorage.setCurrentEngine(context.stringValue(
-                    "DescribeOptimizeAdviceOnStorageResponse.Items[" + i + "].CurrentEngine"));
-            adviceOnStorage.setAdviseEngine(context.stringValue(
-                    "DescribeOptimizeAdviceOnStorageResponse.Items[" + i + "].AdviseEngine"));
-
-            items.add(adviceOnStorage);
-        }
-        describeOptimizeAdviceOnStorageResponse.setItems(items);
-
-        return describeOptimizeAdviceOnStorageResponse;
-    }
+			items.add(adviceOnStorage);
+		}
+		describeOptimizeAdviceOnStorageResponse.setItems(items);
+	 
+	 	return describeOptimizeAdviceOnStorageResponse;
+	}
 }

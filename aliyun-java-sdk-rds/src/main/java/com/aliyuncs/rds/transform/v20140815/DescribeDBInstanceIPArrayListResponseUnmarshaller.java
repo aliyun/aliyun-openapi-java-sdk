@@ -18,39 +18,31 @@
  */
 package com.aliyuncs.rds.transform.v20140815;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.rds.model.v20140815.DescribeDBInstanceIPArrayListResponse;
 import com.aliyuncs.rds.model.v20140815.DescribeDBInstanceIPArrayListResponse.DBInstanceIPArray;
 import com.aliyuncs.transform.UnmarshallerContext;
 
-import java.util.ArrayList;
-import java.util.List;
 
 public class DescribeDBInstanceIPArrayListResponseUnmarshaller {
 
-    public static DescribeDBInstanceIPArrayListResponse unmarshall(
-            DescribeDBInstanceIPArrayListResponse describeDBInstanceIPArrayListResponse,
-            UnmarshallerContext context) {
+	public static DescribeDBInstanceIPArrayListResponse unmarshall(DescribeDBInstanceIPArrayListResponse describeDBInstanceIPArrayListResponse, UnmarshallerContext context) {
+		
+		describeDBInstanceIPArrayListResponse.setRequestId(context.stringValue("DescribeDBInstanceIPArrayListResponse.RequestId"));
 
-        describeDBInstanceIPArrayListResponse.setRequestId(
-                context.stringValue("DescribeDBInstanceIPArrayListResponse.RequestId"));
+		List<DBInstanceIPArray> items = new ArrayList<DBInstanceIPArray>();
+		for (int i = 0; i < context.lengthValue("DescribeDBInstanceIPArrayListResponse.Items.Length"); i++) {
+			DBInstanceIPArray dBInstanceIPArray = new DBInstanceIPArray();
+			dBInstanceIPArray.setDBInstanceIPArrayName(context.stringValue("DescribeDBInstanceIPArrayListResponse.Items["+ i +"].DBInstanceIPArrayName"));
+			dBInstanceIPArray.setDBInstanceIPArrayAttribute(context.stringValue("DescribeDBInstanceIPArrayListResponse.Items["+ i +"].DBInstanceIPArrayAttribute"));
+			dBInstanceIPArray.setSecurityIPList(context.stringValue("DescribeDBInstanceIPArrayListResponse.Items["+ i +"].SecurityIPList"));
 
-        List<DBInstanceIPArray> items = new ArrayList<DBInstanceIPArray>();
-        for (int i = 0;
-             i < context.lengthValue("DescribeDBInstanceIPArrayListResponse.Items.Length"); i++) {
-            DBInstanceIPArray dBInstanceIPArray = new DBInstanceIPArray();
-            dBInstanceIPArray.setDBInstanceIPArrayName(context.stringValue(
-                    "DescribeDBInstanceIPArrayListResponse.Items[" + i
-                            + "].DBInstanceIPArrayName"));
-            dBInstanceIPArray.setDBInstanceIPArrayAttribute(context.stringValue(
-                    "DescribeDBInstanceIPArrayListResponse.Items[" + i
-                            + "].DBInstanceIPArrayAttribute"));
-            dBInstanceIPArray.setSecurityIPList(context.stringValue(
-                    "DescribeDBInstanceIPArrayListResponse.Items[" + i + "].SecurityIPList"));
-
-            items.add(dBInstanceIPArray);
-        }
-        describeDBInstanceIPArrayListResponse.setItems(items);
-
-        return describeDBInstanceIPArrayListResponse;
-    }
+			items.add(dBInstanceIPArray);
+		}
+		describeDBInstanceIPArrayListResponse.setItems(items);
+	 
+	 	return describeDBInstanceIPArrayListResponse;
+	}
 }

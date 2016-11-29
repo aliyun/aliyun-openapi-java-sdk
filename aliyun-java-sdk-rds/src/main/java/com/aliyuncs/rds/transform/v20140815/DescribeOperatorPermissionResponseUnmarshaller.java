@@ -21,21 +21,16 @@ package com.aliyuncs.rds.transform.v20140815;
 import com.aliyuncs.rds.model.v20140815.DescribeOperatorPermissionResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
+
 public class DescribeOperatorPermissionResponseUnmarshaller {
 
-    public static DescribeOperatorPermissionResponse unmarshall(
-            DescribeOperatorPermissionResponse describeOperatorPermissionResponse,
-            UnmarshallerContext context) {
-
-        describeOperatorPermissionResponse
-                .setRequestId(context.stringValue("DescribeOperatorPermissionResponse.RequestId"));
-        describeOperatorPermissionResponse.setPrivileges(
-                context.stringValue("DescribeOperatorPermissionResponse.Privileges"));
-        describeOperatorPermissionResponse.setCreatedTime(
-                context.stringValue("DescribeOperatorPermissionResponse.CreatedTime"));
-        describeOperatorPermissionResponse.setExpiredTime(
-                context.stringValue("DescribeOperatorPermissionResponse.ExpiredTime"));
-
-        return describeOperatorPermissionResponse;
-    }
+	public static DescribeOperatorPermissionResponse unmarshall(DescribeOperatorPermissionResponse describeOperatorPermissionResponse, UnmarshallerContext context) {
+		
+		describeOperatorPermissionResponse.setRequestId(context.stringValue("DescribeOperatorPermissionResponse.RequestId"));
+		describeOperatorPermissionResponse.setPrivileges(context.stringValue("DescribeOperatorPermissionResponse.Privileges"));
+		describeOperatorPermissionResponse.setCreatedTime(context.stringValue("DescribeOperatorPermissionResponse.CreatedTime"));
+		describeOperatorPermissionResponse.setExpiredTime(context.stringValue("DescribeOperatorPermissionResponse.ExpiredTime"));
+	 
+	 	return describeOperatorPermissionResponse;
+	}
 }

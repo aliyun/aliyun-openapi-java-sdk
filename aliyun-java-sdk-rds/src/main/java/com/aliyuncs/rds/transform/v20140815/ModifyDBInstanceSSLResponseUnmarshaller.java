@@ -21,14 +21,13 @@ package com.aliyuncs.rds.transform.v20140815;
 import com.aliyuncs.rds.model.v20140815.ModifyDBInstanceSSLResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
+
 public class ModifyDBInstanceSSLResponseUnmarshaller {
 
-    public static ModifyDBInstanceSSLResponse unmarshall(
-            ModifyDBInstanceSSLResponse modifyDBInstanceSSLResponse, UnmarshallerContext context) {
-
-        modifyDBInstanceSSLResponse
-                .setRequestId(context.stringValue("ModifyDBInstanceSSLResponse.RequestId"));
-
-        return modifyDBInstanceSSLResponse;
-    }
+	public static ModifyDBInstanceSSLResponse unmarshall(ModifyDBInstanceSSLResponse modifyDBInstanceSSLResponse, UnmarshallerContext context) {
+		
+		modifyDBInstanceSSLResponse.setRequestId(context.stringValue("ModifyDBInstanceSSLResponse.RequestId"));
+	 
+	 	return modifyDBInstanceSSLResponse;
+	}
 }

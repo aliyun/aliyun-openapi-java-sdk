@@ -18,125 +18,125 @@
  */
 package com.aliyuncs.rds.model.v20140815;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.rds.transform.v20140815.DescribeBackupTasksResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
-import java.util.List;
-
 /**
  * @author auto create
+ * @version 
  */
 public class DescribeBackupTasksResponse extends AcsResponse {
 
-    private String requestId;
+	private String requestId;
 
-    private List<BackupJob> items;
+	private List<BackupJob> items;
 
-    public String getRequestId() {
-        return this.requestId;
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public List<BackupJob> getItems() {
+		return this.items;
+	}
+
+	public void setItems(List<BackupJob> items) {
+		this.items = items;
+	}
+
+	public static class BackupJob {
+
+		private String backupProgressStatus;
+
+		private JobMode jobMode;
+
+		private String process;
+
+		private String taskAction;
+
+		private String backupjobId;
+
+		public String getBackupProgressStatus() {
+			return this.backupProgressStatus;
+		}
+
+		public void setBackupProgressStatus(String backupProgressStatus) {
+			this.backupProgressStatus = backupProgressStatus;
+		}
+
+		public JobMode getJobMode() {
+			return this.jobMode;
+		}
+
+		public void setJobMode(JobMode jobMode) {
+			this.jobMode = jobMode;
+		}
+
+		public String getProcess() {
+			return this.process;
+		}
+
+		public void setProcess(String process) {
+			this.process = process;
+		}
+
+		public String getTaskAction() {
+			return this.taskAction;
+		}
+
+		public void setTaskAction(String taskAction) {
+			this.taskAction = taskAction;
+		}
+
+		public String getBackupjobId() {
+			return this.backupjobId;
+		}
+
+		public void setBackupjobId(String backupjobId) {
+			this.backupjobId = backupjobId;
+		}
+
+public enum JobMode {
+
+			MANUAL("Manual"),
+			AUTOMATED("Automated"),;
+	
+    private String stringValue;
+
+	JobMode(String stringValue) {
+        setStringValue(stringValue);
     }
 
-    public void setRequestId(String requestId) {
-        this.requestId = requestId;
+    public String getStringValue() {
+        return stringValue;
     }
 
-    public List<BackupJob> getItems() {
-        return this.items;
+    public void setStringValue(String stringValue) {
+        this.stringValue = stringValue;
     }
-
-    public void setItems(List<BackupJob> items) {
-        this.items = items;
+    
+    public static JobMode getEnum(String stringValue){
+    	if(null == stringValue){
+    		return null;
+    	}
+    	
+    	for (JobMode jobMode : JobMode.values()) {
+			if(jobMode.getStringValue().equals(stringValue)){
+				return jobMode;
+			}
+		}
+    	return null;
     }
+}
+	}
 
-    public static class BackupJob {
-
-        private String backupProgressStatus;
-
-        private JobMode jobMode;
-
-        private String process;
-
-        private String taskAction;
-
-        private String backupjobId;
-
-        public String getBackupProgressStatus() {
-            return this.backupProgressStatus;
-        }
-
-        public void setBackupProgressStatus(String backupProgressStatus) {
-            this.backupProgressStatus = backupProgressStatus;
-        }
-
-        public JobMode getJobMode() {
-            return this.jobMode;
-        }
-
-        public void setJobMode(JobMode jobMode) {
-            this.jobMode = jobMode;
-        }
-
-        public String getProcess() {
-            return this.process;
-        }
-
-        public void setProcess(String process) {
-            this.process = process;
-        }
-
-        public String getTaskAction() {
-            return this.taskAction;
-        }
-
-        public void setTaskAction(String taskAction) {
-            this.taskAction = taskAction;
-        }
-
-        public String getBackupjobId() {
-            return this.backupjobId;
-        }
-
-        public void setBackupjobId(String backupjobId) {
-            this.backupjobId = backupjobId;
-        }
-
-        public enum JobMode {
-
-            MANUAL("Manual"),
-            AUTOMATED("Automated"),;
-
-            private String stringValue;
-
-            JobMode(String stringValue) {
-                setStringValue(stringValue);
-            }
-
-            public String getStringValue() {
-                return stringValue;
-            }
-
-            public void setStringValue(String stringValue) {
-                this.stringValue = stringValue;
-            }
-
-            public static JobMode getEnum(String stringValue) {
-                if (null == stringValue) {
-                    return null;
-                }
-
-                for (JobMode jobMode : JobMode.values()) {
-                    if (jobMode.getStringValue().equals(stringValue)) {
-                        return jobMode;
-                    }
-                }
-                return null;
-            }
-        }
-    }
-
-    @Override
-    public DescribeBackupTasksResponse getInstance(UnmarshallerContext context) {
-        return DescribeBackupTasksResponseUnmarshaller.unmarshall(this, context);
-    }
+	@Override
+	public DescribeBackupTasksResponse getInstance(UnmarshallerContext context) {
+		return	DescribeBackupTasksResponseUnmarshaller.unmarshall(this, context);
+	}
 }

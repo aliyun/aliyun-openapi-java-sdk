@@ -21,14 +21,13 @@ package com.aliyuncs.rds.transform.v20140815;
 import com.aliyuncs.rds.model.v20140815.StartArchiveSQLLogResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
+
 public class StartArchiveSQLLogResponseUnmarshaller {
 
-    public static StartArchiveSQLLogResponse unmarshall(
-            StartArchiveSQLLogResponse startArchiveSQLLogResponse, UnmarshallerContext context) {
-
-        startArchiveSQLLogResponse
-                .setRequestId(context.stringValue("StartArchiveSQLLogResponse.RequestId"));
-
-        return startArchiveSQLLogResponse;
-    }
+	public static StartArchiveSQLLogResponse unmarshall(StartArchiveSQLLogResponse startArchiveSQLLogResponse, UnmarshallerContext context) {
+		
+		startArchiveSQLLogResponse.setRequestId(context.stringValue("StartArchiveSQLLogResponse.RequestId"));
+	 
+	 	return startArchiveSQLLogResponse;
+	}
 }

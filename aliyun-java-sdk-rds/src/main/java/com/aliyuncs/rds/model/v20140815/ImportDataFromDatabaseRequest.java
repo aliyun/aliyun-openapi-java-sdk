@@ -22,148 +22,149 @@ import com.aliyuncs.RpcAcsRequest;
 
 /**
  * @author auto create
+ * @version 
  */
 public class ImportDataFromDatabaseRequest extends RpcAcsRequest<ImportDataFromDatabaseResponse> {
+	
+	public ImportDataFromDatabaseRequest() {
+		super("Rds", "2014-08-15", "ImportDataFromDatabase", "rds");
+	}
 
-    public ImportDataFromDatabaseRequest() {
-        super("Rds", "2014-08-15", "ImportDataFromDatabase");
-    }
+	private Long ownerId;
 
-    private Long ownerId;
+	private String resourceOwnerAccount;
 
-    private String resourceOwnerAccount;
+	private Long resourceOwnerId;
 
-    private Long resourceOwnerId;
+	private String dBInstanceId;
 
-    private String dBInstanceId;
+	private String sourceDatabaseIp;
 
-    private String sourceDatabaseIp;
+	private String sourceDatabasePort;
 
-    private String sourceDatabasePort;
+	private String sourceDatabaseUserName;
 
-    private String sourceDatabaseUserName;
+	private String sourceDatabasePassword;
 
-    private String sourceDatabasePassword;
+	private String importDataType;
 
-    private String importDataType;
+	private String isLockTable;
 
-    private String isLockTable;
+	private String sourceDatabaseDBNames;
 
-    private String sourceDatabaseDBNames;
+	private String ownerAccount;
 
-    private String ownerAccount;
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
 
-    public Long getOwnerId() {
-        return this.ownerId;
-    }
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		putQueryParameter("OwnerId", ownerId);
+	}
 
-    public void setOwnerId(Long ownerId) {
-        this.ownerId = ownerId;
-        putQueryParameter("OwnerId", ownerId);
-    }
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
 
-    public String getResourceOwnerAccount() {
-        return this.resourceOwnerAccount;
-    }
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	}
 
-    public void setResourceOwnerAccount(String resourceOwnerAccount) {
-        this.resourceOwnerAccount = resourceOwnerAccount;
-        putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-    }
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
+	}
 
-    public Long getResourceOwnerId() {
-        return this.resourceOwnerId;
-    }
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		putQueryParameter("ResourceOwnerId", resourceOwnerId);
+	}
 
-    public void setResourceOwnerId(Long resourceOwnerId) {
-        this.resourceOwnerId = resourceOwnerId;
-        putQueryParameter("ResourceOwnerId", resourceOwnerId);
-    }
+	public String getDBInstanceId() {
+		return this.dBInstanceId;
+	}
 
-    public String getDBInstanceId() {
-        return this.dBInstanceId;
-    }
+	public void setDBInstanceId(String dBInstanceId) {
+		this.dBInstanceId = dBInstanceId;
+		putQueryParameter("DBInstanceId", dBInstanceId);
+	}
 
-    public void setDBInstanceId(String dBInstanceId) {
-        this.dBInstanceId = dBInstanceId;
-        putQueryParameter("DBInstanceId", dBInstanceId);
-    }
+	public String getSourceDatabaseIp() {
+		return this.sourceDatabaseIp;
+	}
 
-    public String getSourceDatabaseIp() {
-        return this.sourceDatabaseIp;
-    }
+	public void setSourceDatabaseIp(String sourceDatabaseIp) {
+		this.sourceDatabaseIp = sourceDatabaseIp;
+		putQueryParameter("SourceDatabaseIp", sourceDatabaseIp);
+	}
 
-    public void setSourceDatabaseIp(String sourceDatabaseIp) {
-        this.sourceDatabaseIp = sourceDatabaseIp;
-        putQueryParameter("SourceDatabaseIp", sourceDatabaseIp);
-    }
+	public String getSourceDatabasePort() {
+		return this.sourceDatabasePort;
+	}
 
-    public String getSourceDatabasePort() {
-        return this.sourceDatabasePort;
-    }
+	public void setSourceDatabasePort(String sourceDatabasePort) {
+		this.sourceDatabasePort = sourceDatabasePort;
+		putQueryParameter("SourceDatabasePort", sourceDatabasePort);
+	}
 
-    public void setSourceDatabasePort(String sourceDatabasePort) {
-        this.sourceDatabasePort = sourceDatabasePort;
-        putQueryParameter("SourceDatabasePort", sourceDatabasePort);
-    }
+	public String getSourceDatabaseUserName() {
+		return this.sourceDatabaseUserName;
+	}
 
-    public String getSourceDatabaseUserName() {
-        return this.sourceDatabaseUserName;
-    }
+	public void setSourceDatabaseUserName(String sourceDatabaseUserName) {
+		this.sourceDatabaseUserName = sourceDatabaseUserName;
+		putQueryParameter("SourceDatabaseUserName", sourceDatabaseUserName);
+	}
 
-    public void setSourceDatabaseUserName(String sourceDatabaseUserName) {
-        this.sourceDatabaseUserName = sourceDatabaseUserName;
-        putQueryParameter("SourceDatabaseUserName", sourceDatabaseUserName);
-    }
+	public String getSourceDatabasePassword() {
+		return this.sourceDatabasePassword;
+	}
 
-    public String getSourceDatabasePassword() {
-        return this.sourceDatabasePassword;
-    }
+	public void setSourceDatabasePassword(String sourceDatabasePassword) {
+		this.sourceDatabasePassword = sourceDatabasePassword;
+		putQueryParameter("SourceDatabasePassword", sourceDatabasePassword);
+	}
 
-    public void setSourceDatabasePassword(String sourceDatabasePassword) {
-        this.sourceDatabasePassword = sourceDatabasePassword;
-        putQueryParameter("SourceDatabasePassword", sourceDatabasePassword);
-    }
+	public String getImportDataType() {
+		return this.importDataType;
+	}
 
-    public String getImportDataType() {
-        return this.importDataType;
-    }
+	public void setImportDataType(String importDataType) {
+		this.importDataType = importDataType;
+		putQueryParameter("ImportDataType", importDataType);
+	}
 
-    public void setImportDataType(String importDataType) {
-        this.importDataType = importDataType;
-        putQueryParameter("ImportDataType", importDataType);
-    }
+	public String getIsLockTable() {
+		return this.isLockTable;
+	}
 
-    public String getIsLockTable() {
-        return this.isLockTable;
-    }
+	public void setIsLockTable(String isLockTable) {
+		this.isLockTable = isLockTable;
+		putQueryParameter("IsLockTable", isLockTable);
+	}
 
-    public void setIsLockTable(String isLockTable) {
-        this.isLockTable = isLockTable;
-        putQueryParameter("IsLockTable", isLockTable);
-    }
+	public String getSourceDatabaseDBNames() {
+		return this.sourceDatabaseDBNames;
+	}
 
-    public String getSourceDatabaseDBNames() {
-        return this.sourceDatabaseDBNames;
-    }
+	public void setSourceDatabaseDBNames(String sourceDatabaseDBNames) {
+		this.sourceDatabaseDBNames = sourceDatabaseDBNames;
+		putQueryParameter("SourceDatabaseDBNames", sourceDatabaseDBNames);
+	}
 
-    public void setSourceDatabaseDBNames(String sourceDatabaseDBNames) {
-        this.sourceDatabaseDBNames = sourceDatabaseDBNames;
-        putQueryParameter("SourceDatabaseDBNames", sourceDatabaseDBNames);
-    }
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
 
-    public String getOwnerAccount() {
-        return this.ownerAccount;
-    }
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		putQueryParameter("OwnerAccount", ownerAccount);
+	}
 
-    public void setOwnerAccount(String ownerAccount) {
-        this.ownerAccount = ownerAccount;
-        putQueryParameter("OwnerAccount", ownerAccount);
-    }
-
-    @Override
-    public Class<ImportDataFromDatabaseResponse> getResponseClass() {
-        return ImportDataFromDatabaseResponse.class;
-    }
+	@Override
+	public Class<ImportDataFromDatabaseResponse> getResponseClass() {
+		return ImportDataFromDatabaseResponse.class;
+	}
 
 }

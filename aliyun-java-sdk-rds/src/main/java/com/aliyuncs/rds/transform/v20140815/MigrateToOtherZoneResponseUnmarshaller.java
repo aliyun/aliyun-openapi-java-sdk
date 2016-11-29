@@ -21,14 +21,13 @@ package com.aliyuncs.rds.transform.v20140815;
 import com.aliyuncs.rds.model.v20140815.MigrateToOtherZoneResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
+
 public class MigrateToOtherZoneResponseUnmarshaller {
 
-    public static MigrateToOtherZoneResponse unmarshall(
-            MigrateToOtherZoneResponse migrateToOtherZoneResponse, UnmarshallerContext context) {
-
-        migrateToOtherZoneResponse
-                .setRequestId(context.stringValue("MigrateToOtherZoneResponse.RequestId"));
-
-        return migrateToOtherZoneResponse;
-    }
+	public static MigrateToOtherZoneResponse unmarshall(MigrateToOtherZoneResponse migrateToOtherZoneResponse, UnmarshallerContext context) {
+		
+		migrateToOtherZoneResponse.setRequestId(context.stringValue("MigrateToOtherZoneResponse.RequestId"));
+	 
+	 	return migrateToOtherZoneResponse;
+	}
 }

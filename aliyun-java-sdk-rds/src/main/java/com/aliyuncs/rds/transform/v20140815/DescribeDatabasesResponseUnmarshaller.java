@@ -18,59 +18,46 @@
  */
 package com.aliyuncs.rds.transform.v20140815;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.rds.model.v20140815.DescribeDatabasesResponse;
 import com.aliyuncs.rds.model.v20140815.DescribeDatabasesResponse.Database;
 import com.aliyuncs.rds.model.v20140815.DescribeDatabasesResponse.Database.AccountPrivilegeInfo;
 import com.aliyuncs.rds.model.v20140815.DescribeDatabasesResponse.Database.DBStatus;
 import com.aliyuncs.transform.UnmarshallerContext;
 
-import java.util.ArrayList;
-import java.util.List;
 
 public class DescribeDatabasesResponseUnmarshaller {
 
-    public static DescribeDatabasesResponse unmarshall(
-            DescribeDatabasesResponse describeDatabasesResponse, UnmarshallerContext context) {
+	public static DescribeDatabasesResponse unmarshall(DescribeDatabasesResponse describeDatabasesResponse, UnmarshallerContext context) {
+		
+		describeDatabasesResponse.setRequestId(context.stringValue("DescribeDatabasesResponse.RequestId"));
 
-        describeDatabasesResponse
-                .setRequestId(context.stringValue("DescribeDatabasesResponse.RequestId"));
+		List<Database> databases = new ArrayList<Database>();
+		for (int i = 0; i < context.lengthValue("DescribeDatabasesResponse.Databases.Length"); i++) {
+			Database database = new Database();
+			database.setDBName(context.stringValue("DescribeDatabasesResponse.Databases["+ i +"].DBName"));
+			database.setDBInstanceId(context.stringValue("DescribeDatabasesResponse.Databases["+ i +"].DBInstanceId"));
+			database.setEngine(context.stringValue("DescribeDatabasesResponse.Databases["+ i +"].Engine"));
+			database.setDBStatus(DBStatus.getEnum(context.stringValue("DescribeDatabasesResponse.Databases["+ i +"].DBStatus")));
+			database.setCharacterSetName(context.stringValue("DescribeDatabasesResponse.Databases["+ i +"].CharacterSetName"));
+			database.setDBDescription(context.stringValue("DescribeDatabasesResponse.Databases["+ i +"].DBDescription"));
 
-        List<Database> databases = new ArrayList<Database>();
-        for (int i = 0;
-             i < context.lengthValue("DescribeDatabasesResponse.Databases.Length"); i++) {
-            Database database = new Database();
-            database.setDBName(
-                    context.stringValue("DescribeDatabasesResponse.Databases[" + i + "].DBName"));
-            database.setDBInstanceId(context.stringValue(
-                    "DescribeDatabasesResponse.Databases[" + i + "].DBInstanceId"));
-            database.setEngine(
-                    context.stringValue("DescribeDatabasesResponse.Databases[" + i + "].Engine"));
-            database.setDBStatus(DBStatus.getEnum(context.stringValue(
-                    "DescribeDatabasesResponse.Databases[" + i + "].DBStatus")));
-            database.setCharacterSetName(context.stringValue(
-                    "DescribeDatabasesResponse.Databases[" + i + "].CharacterSetName"));
-            database.setDBDescription(context.stringValue(
-                    "DescribeDatabasesResponse.Databases[" + i + "].DBDescription"));
+			List<AccountPrivilegeInfo> accounts = new ArrayList<AccountPrivilegeInfo>();
+			for (int j = 0; j < context.lengthValue("DescribeDatabasesResponse.Databases["+ i +"].Accounts.Length"); j++) {
+				AccountPrivilegeInfo accountPrivilegeInfo = new AccountPrivilegeInfo();
+				accountPrivilegeInfo.setAccount(context.stringValue("DescribeDatabasesResponse.Databases["+ i +"].Accounts["+ j +"].Account"));
+				accountPrivilegeInfo.setAccountPrivilege(context.stringValue("DescribeDatabasesResponse.Databases["+ i +"].Accounts["+ j +"].AccountPrivilege"));
 
-            List<AccountPrivilegeInfo> accounts = new ArrayList<AccountPrivilegeInfo>();
-            for (int j = 0; j < context.lengthValue(
-                    "DescribeDatabasesResponse.Databases[" + i + "].Accounts.Length"); j++) {
-                AccountPrivilegeInfo accountPrivilegeInfo = new AccountPrivilegeInfo();
-                accountPrivilegeInfo.setAccount(context.stringValue(
-                        "DescribeDatabasesResponse.Databases[" + i + "].Accounts[" + j
-                                + "].Account"));
-                accountPrivilegeInfo.setAccountPrivilege(context.stringValue(
-                        "DescribeDatabasesResponse.Databases[" + i + "].Accounts[" + j
-                                + "].AccountPrivilege"));
+				accounts.add(accountPrivilegeInfo);
+			}
+			database.setAccounts(accounts);
 
-                accounts.add(accountPrivilegeInfo);
-            }
-            database.setAccounts(accounts);
-
-            databases.add(database);
-        }
-        describeDatabasesResponse.setDatabases(databases);
-
-        return describeDatabasesResponse;
-    }
+			databases.add(database);
+		}
+		describeDatabasesResponse.setDatabases(databases);
+	 
+	 	return describeDatabasesResponse;
+	}
 }

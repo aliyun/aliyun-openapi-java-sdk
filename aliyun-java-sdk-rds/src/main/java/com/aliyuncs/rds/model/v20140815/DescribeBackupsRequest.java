@@ -22,159 +22,160 @@ import com.aliyuncs.RpcAcsRequest;
 
 /**
  * @author auto create
+ * @version 
  */
 public class DescribeBackupsRequest extends RpcAcsRequest<DescribeBackupsResponse> {
+	
+	public DescribeBackupsRequest() {
+		super("Rds", "2014-08-15", "DescribeBackups", "rds");
+	}
 
-    public DescribeBackupsRequest() {
-        super("Rds", "2014-08-15", "DescribeBackups");
-    }
+	private Long ownerId;
 
-    private Long ownerId;
+	private String resourceOwnerAccount;
 
-    private String resourceOwnerAccount;
+	private Long resourceOwnerId;
 
-    private Long resourceOwnerId;
+	private String dBInstanceId;
 
-    private String dBInstanceId;
+	private String backupId;
 
-    private String backupId;
+	private String backupLocation;
 
-    private String backupLocation;
+	private String backupStatus;
 
-    private String backupStatus;
+	private String backupMode;
 
-    private String backupMode;
+	private String startTime;
 
-    private String startTime;
+	private String endTime;
 
-    private String endTime;
+	private Integer pageSize;
 
-    private Integer pageSize;
+	private Integer pageNumber;
 
-    private Integer pageNumber;
+	private String ownerAccount;
 
-    private String ownerAccount;
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
 
-    public Long getOwnerId() {
-        return this.ownerId;
-    }
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		putQueryParameter("OwnerId", ownerId);
+	}
 
-    public void setOwnerId(Long ownerId) {
-        this.ownerId = ownerId;
-        putQueryParameter("OwnerId", ownerId);
-    }
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
 
-    public String getResourceOwnerAccount() {
-        return this.resourceOwnerAccount;
-    }
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	}
 
-    public void setResourceOwnerAccount(String resourceOwnerAccount) {
-        this.resourceOwnerAccount = resourceOwnerAccount;
-        putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-    }
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
+	}
 
-    public Long getResourceOwnerId() {
-        return this.resourceOwnerId;
-    }
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		putQueryParameter("ResourceOwnerId", resourceOwnerId);
+	}
 
-    public void setResourceOwnerId(Long resourceOwnerId) {
-        this.resourceOwnerId = resourceOwnerId;
-        putQueryParameter("ResourceOwnerId", resourceOwnerId);
-    }
+	public String getDBInstanceId() {
+		return this.dBInstanceId;
+	}
 
-    public String getDBInstanceId() {
-        return this.dBInstanceId;
-    }
+	public void setDBInstanceId(String dBInstanceId) {
+		this.dBInstanceId = dBInstanceId;
+		putQueryParameter("DBInstanceId", dBInstanceId);
+	}
 
-    public void setDBInstanceId(String dBInstanceId) {
-        this.dBInstanceId = dBInstanceId;
-        putQueryParameter("DBInstanceId", dBInstanceId);
-    }
+	public String getBackupId() {
+		return this.backupId;
+	}
 
-    public String getBackupId() {
-        return this.backupId;
-    }
+	public void setBackupId(String backupId) {
+		this.backupId = backupId;
+		putQueryParameter("BackupId", backupId);
+	}
 
-    public void setBackupId(String backupId) {
-        this.backupId = backupId;
-        putQueryParameter("BackupId", backupId);
-    }
+	public String getBackupLocation() {
+		return this.backupLocation;
+	}
 
-    public String getBackupLocation() {
-        return this.backupLocation;
-    }
+	public void setBackupLocation(String backupLocation) {
+		this.backupLocation = backupLocation;
+		putQueryParameter("BackupLocation", backupLocation);
+	}
 
-    public void setBackupLocation(String backupLocation) {
-        this.backupLocation = backupLocation;
-        putQueryParameter("BackupLocation", backupLocation);
-    }
+	public String getBackupStatus() {
+		return this.backupStatus;
+	}
 
-    public String getBackupStatus() {
-        return this.backupStatus;
-    }
+	public void setBackupStatus(String backupStatus) {
+		this.backupStatus = backupStatus;
+		putQueryParameter("BackupStatus", backupStatus);
+	}
 
-    public void setBackupStatus(String backupStatus) {
-        this.backupStatus = backupStatus;
-        putQueryParameter("BackupStatus", backupStatus);
-    }
+	public String getBackupMode() {
+		return this.backupMode;
+	}
 
-    public String getBackupMode() {
-        return this.backupMode;
-    }
+	public void setBackupMode(String backupMode) {
+		this.backupMode = backupMode;
+		putQueryParameter("BackupMode", backupMode);
+	}
 
-    public void setBackupMode(String backupMode) {
-        this.backupMode = backupMode;
-        putQueryParameter("BackupMode", backupMode);
-    }
+	public String getStartTime() {
+		return this.startTime;
+	}
 
-    public String getStartTime() {
-        return this.startTime;
-    }
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+		putQueryParameter("StartTime", startTime);
+	}
 
-    public void setStartTime(String startTime) {
-        this.startTime = startTime;
-        putQueryParameter("StartTime", startTime);
-    }
+	public String getEndTime() {
+		return this.endTime;
+	}
 
-    public String getEndTime() {
-        return this.endTime;
-    }
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+		putQueryParameter("EndTime", endTime);
+	}
 
-    public void setEndTime(String endTime) {
-        this.endTime = endTime;
-        putQueryParameter("EndTime", endTime);
-    }
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
 
-    public Integer getPageSize() {
-        return this.pageSize;
-    }
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		putQueryParameter("PageSize", pageSize);
+	}
 
-    public void setPageSize(Integer pageSize) {
-        this.pageSize = pageSize;
-        putQueryParameter("PageSize", pageSize);
-    }
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
 
-    public Integer getPageNumber() {
-        return this.pageNumber;
-    }
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		putQueryParameter("PageNumber", pageNumber);
+	}
 
-    public void setPageNumber(Integer pageNumber) {
-        this.pageNumber = pageNumber;
-        putQueryParameter("PageNumber", pageNumber);
-    }
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
 
-    public String getOwnerAccount() {
-        return this.ownerAccount;
-    }
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		putQueryParameter("OwnerAccount", ownerAccount);
+	}
 
-    public void setOwnerAccount(String ownerAccount) {
-        this.ownerAccount = ownerAccount;
-        putQueryParameter("OwnerAccount", ownerAccount);
-    }
-
-    @Override
-    public Class<DescribeBackupsResponse> getResponseClass() {
-        return DescribeBackupsResponse.class;
-    }
+	@Override
+	public Class<DescribeBackupsResponse> getResponseClass() {
+		return DescribeBackupsResponse.class;
+	}
 
 }

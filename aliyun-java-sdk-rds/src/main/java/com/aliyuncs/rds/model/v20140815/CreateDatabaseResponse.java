@@ -24,21 +24,22 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
+ * @version 
  */
 public class CreateDatabaseResponse extends AcsResponse {
 
-    private String requestId;
+	private String requestId;
 
-    public String getRequestId() {
-        return this.requestId;
-    }
+	public String getRequestId() {
+		return this.requestId;
+	}
 
-    public void setRequestId(String requestId) {
-        this.requestId = requestId;
-    }
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
 
-    @Override
-    public CreateDatabaseResponse getInstance(UnmarshallerContext context) {
-        return CreateDatabaseResponseUnmarshaller.unmarshall(this, context);
-    }
+	@Override
+	public CreateDatabaseResponse getInstance(UnmarshallerContext context) {
+		return	CreateDatabaseResponseUnmarshaller.unmarshall(this, context);
+	}
 }

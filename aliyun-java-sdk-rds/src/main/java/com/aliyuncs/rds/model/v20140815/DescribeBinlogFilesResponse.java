@@ -18,162 +18,162 @@
  */
 package com.aliyuncs.rds.model.v20140815;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.rds.transform.v20140815.DescribeBinlogFilesResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
-import java.util.List;
-
 /**
  * @author auto create
+ * @version 
  */
 public class DescribeBinlogFilesResponse extends AcsResponse {
 
-    private String requestId;
+	private String requestId;
 
-    private Integer totalRecordCount;
+	private Integer totalRecordCount;
 
-    private Integer pageNumber;
+	private Integer pageNumber;
 
-    private Integer pageRecordCount;
+	private Integer pageRecordCount;
 
-    private Long totalFileSize;
+	private Long totalFileSize;
 
-    private List<BinLogFile> items;
+	private List<BinLogFile> items;
 
-    public String getRequestId() {
-        return this.requestId;
-    }
+	public String getRequestId() {
+		return this.requestId;
+	}
 
-    public void setRequestId(String requestId) {
-        this.requestId = requestId;
-    }
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
 
-    public Integer getTotalRecordCount() {
-        return this.totalRecordCount;
-    }
+	public Integer getTotalRecordCount() {
+		return this.totalRecordCount;
+	}
 
-    public void setTotalRecordCount(Integer totalRecordCount) {
-        this.totalRecordCount = totalRecordCount;
-    }
+	public void setTotalRecordCount(Integer totalRecordCount) {
+		this.totalRecordCount = totalRecordCount;
+	}
 
-    public Integer getPageNumber() {
-        return this.pageNumber;
-    }
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
 
-    public void setPageNumber(Integer pageNumber) {
-        this.pageNumber = pageNumber;
-    }
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+	}
 
-    public Integer getPageRecordCount() {
-        return this.pageRecordCount;
-    }
+	public Integer getPageRecordCount() {
+		return this.pageRecordCount;
+	}
 
-    public void setPageRecordCount(Integer pageRecordCount) {
-        this.pageRecordCount = pageRecordCount;
-    }
+	public void setPageRecordCount(Integer pageRecordCount) {
+		this.pageRecordCount = pageRecordCount;
+	}
 
-    public Long getTotalFileSize() {
-        return this.totalFileSize;
-    }
+	public Long getTotalFileSize() {
+		return this.totalFileSize;
+	}
 
-    public void setTotalFileSize(Long totalFileSize) {
-        this.totalFileSize = totalFileSize;
-    }
+	public void setTotalFileSize(Long totalFileSize) {
+		this.totalFileSize = totalFileSize;
+	}
 
-    public List<BinLogFile> getItems() {
-        return this.items;
-    }
+	public List<BinLogFile> getItems() {
+		return this.items;
+	}
 
-    public void setItems(List<BinLogFile> items) {
-        this.items = items;
-    }
+	public void setItems(List<BinLogFile> items) {
+		this.items = items;
+	}
 
-    public static class BinLogFile {
+	public static class BinLogFile {
 
-        private Long fileSize;
+		private Long fileSize;
 
-        private String logBeginTime;
+		private String logBeginTime;
 
-        private String logEndTime;
+		private String logEndTime;
 
-        private String downloadLink;
+		private String downloadLink;
 
-        private String intranetDownloadLink;
+		private String intranetDownloadLink;
 
-        private String linkExpiredTime;
+		private String linkExpiredTime;
 
-        private String checksum;
+		private String checksum;
 
-        private String hostInstanceID;
+		private String hostInstanceID;
 
-        public Long getFileSize() {
-            return this.fileSize;
-        }
+		public Long getFileSize() {
+			return this.fileSize;
+		}
 
-        public void setFileSize(Long fileSize) {
-            this.fileSize = fileSize;
-        }
+		public void setFileSize(Long fileSize) {
+			this.fileSize = fileSize;
+		}
 
-        public String getLogBeginTime() {
-            return this.logBeginTime;
-        }
+		public String getLogBeginTime() {
+			return this.logBeginTime;
+		}
 
-        public void setLogBeginTime(String logBeginTime) {
-            this.logBeginTime = logBeginTime;
-        }
+		public void setLogBeginTime(String logBeginTime) {
+			this.logBeginTime = logBeginTime;
+		}
 
-        public String getLogEndTime() {
-            return this.logEndTime;
-        }
+		public String getLogEndTime() {
+			return this.logEndTime;
+		}
 
-        public void setLogEndTime(String logEndTime) {
-            this.logEndTime = logEndTime;
-        }
+		public void setLogEndTime(String logEndTime) {
+			this.logEndTime = logEndTime;
+		}
 
-        public String getDownloadLink() {
-            return this.downloadLink;
-        }
+		public String getDownloadLink() {
+			return this.downloadLink;
+		}
 
-        public void setDownloadLink(String downloadLink) {
-            this.downloadLink = downloadLink;
-        }
+		public void setDownloadLink(String downloadLink) {
+			this.downloadLink = downloadLink;
+		}
 
-        public String getIntranetDownloadLink() {
-            return this.intranetDownloadLink;
-        }
+		public String getIntranetDownloadLink() {
+			return this.intranetDownloadLink;
+		}
 
-        public void setIntranetDownloadLink(String intranetDownloadLink) {
-            this.intranetDownloadLink = intranetDownloadLink;
-        }
+		public void setIntranetDownloadLink(String intranetDownloadLink) {
+			this.intranetDownloadLink = intranetDownloadLink;
+		}
 
-        public String getLinkExpiredTime() {
-            return this.linkExpiredTime;
-        }
+		public String getLinkExpiredTime() {
+			return this.linkExpiredTime;
+		}
 
-        public void setLinkExpiredTime(String linkExpiredTime) {
-            this.linkExpiredTime = linkExpiredTime;
-        }
+		public void setLinkExpiredTime(String linkExpiredTime) {
+			this.linkExpiredTime = linkExpiredTime;
+		}
 
-        public String getChecksum() {
-            return this.checksum;
-        }
+		public String getChecksum() {
+			return this.checksum;
+		}
 
-        public void setChecksum(String checksum) {
-            this.checksum = checksum;
-        }
+		public void setChecksum(String checksum) {
+			this.checksum = checksum;
+		}
 
-        public String getHostInstanceID() {
-            return this.hostInstanceID;
-        }
+		public String getHostInstanceID() {
+			return this.hostInstanceID;
+		}
 
-        public void setHostInstanceID(String hostInstanceID) {
-            this.hostInstanceID = hostInstanceID;
-        }
-    }
+		public void setHostInstanceID(String hostInstanceID) {
+			this.hostInstanceID = hostInstanceID;
+		}
+	}
 
-    @Override
-    public DescribeBinlogFilesResponse getInstance(UnmarshallerContext context) {
-        return DescribeBinlogFilesResponseUnmarshaller.unmarshall(this, context);
-    }
+	@Override
+	public DescribeBinlogFilesResponse getInstance(UnmarshallerContext context) {
+		return	DescribeBinlogFilesResponseUnmarshaller.unmarshall(this, context);
+	}
 }

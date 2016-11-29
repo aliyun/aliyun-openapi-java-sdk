@@ -18,72 +18,72 @@
  */
 package com.aliyuncs.rds.model.v20140815;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.rds.transform.v20140815.DescribeDBInstanceIPArrayListResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
-import java.util.List;
-
 /**
  * @author auto create
+ * @version 
  */
 public class DescribeDBInstanceIPArrayListResponse extends AcsResponse {
 
-    private String requestId;
+	private String requestId;
 
-    private List<DBInstanceIPArray> items;
+	private List<DBInstanceIPArray> items;
 
-    public String getRequestId() {
-        return this.requestId;
-    }
+	public String getRequestId() {
+		return this.requestId;
+	}
 
-    public void setRequestId(String requestId) {
-        this.requestId = requestId;
-    }
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
 
-    public List<DBInstanceIPArray> getItems() {
-        return this.items;
-    }
+	public List<DBInstanceIPArray> getItems() {
+		return this.items;
+	}
 
-    public void setItems(List<DBInstanceIPArray> items) {
-        this.items = items;
-    }
+	public void setItems(List<DBInstanceIPArray> items) {
+		this.items = items;
+	}
 
-    public static class DBInstanceIPArray {
+	public static class DBInstanceIPArray {
 
-        private String dBInstanceIPArrayName;
+		private String dBInstanceIPArrayName;
 
-        private String dBInstanceIPArrayAttribute;
+		private String dBInstanceIPArrayAttribute;
 
-        private String securityIPList;
+		private String securityIPList;
 
-        public String getDBInstanceIPArrayName() {
-            return this.dBInstanceIPArrayName;
-        }
+		public String getDBInstanceIPArrayName() {
+			return this.dBInstanceIPArrayName;
+		}
 
-        public void setDBInstanceIPArrayName(String dBInstanceIPArrayName) {
-            this.dBInstanceIPArrayName = dBInstanceIPArrayName;
-        }
+		public void setDBInstanceIPArrayName(String dBInstanceIPArrayName) {
+			this.dBInstanceIPArrayName = dBInstanceIPArrayName;
+		}
 
-        public String getDBInstanceIPArrayAttribute() {
-            return this.dBInstanceIPArrayAttribute;
-        }
+		public String getDBInstanceIPArrayAttribute() {
+			return this.dBInstanceIPArrayAttribute;
+		}
 
-        public void setDBInstanceIPArrayAttribute(String dBInstanceIPArrayAttribute) {
-            this.dBInstanceIPArrayAttribute = dBInstanceIPArrayAttribute;
-        }
+		public void setDBInstanceIPArrayAttribute(String dBInstanceIPArrayAttribute) {
+			this.dBInstanceIPArrayAttribute = dBInstanceIPArrayAttribute;
+		}
 
-        public String getSecurityIPList() {
-            return this.securityIPList;
-        }
+		public String getSecurityIPList() {
+			return this.securityIPList;
+		}
 
-        public void setSecurityIPList(String securityIPList) {
-            this.securityIPList = securityIPList;
-        }
-    }
+		public void setSecurityIPList(String securityIPList) {
+			this.securityIPList = securityIPList;
+		}
+	}
 
-    @Override
-    public DescribeDBInstanceIPArrayListResponse getInstance(UnmarshallerContext context) {
-        return DescribeDBInstanceIPArrayListResponseUnmarshaller.unmarshall(this, context);
-    }
+	@Override
+	public DescribeDBInstanceIPArrayListResponse getInstance(UnmarshallerContext context) {
+		return	DescribeDBInstanceIPArrayListResponseUnmarshaller.unmarshall(this, context);
+	}
 }

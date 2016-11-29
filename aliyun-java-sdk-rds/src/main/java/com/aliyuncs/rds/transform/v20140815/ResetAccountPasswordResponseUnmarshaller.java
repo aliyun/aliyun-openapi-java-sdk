@@ -21,15 +21,13 @@ package com.aliyuncs.rds.transform.v20140815;
 import com.aliyuncs.rds.model.v20140815.ResetAccountPasswordResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
+
 public class ResetAccountPasswordResponseUnmarshaller {
 
-    public static ResetAccountPasswordResponse unmarshall(
-            ResetAccountPasswordResponse resetAccountPasswordResponse,
-            UnmarshallerContext context) {
-
-        resetAccountPasswordResponse
-                .setRequestId(context.stringValue("ResetAccountPasswordResponse.RequestId"));
-
-        return resetAccountPasswordResponse;
-    }
+	public static ResetAccountPasswordResponse unmarshall(ResetAccountPasswordResponse resetAccountPasswordResponse, UnmarshallerContext context) {
+		
+		resetAccountPasswordResponse.setRequestId(context.stringValue("ResetAccountPasswordResponse.RequestId"));
+	 
+	 	return resetAccountPasswordResponse;
+	}
 }

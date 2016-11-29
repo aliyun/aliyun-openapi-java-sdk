@@ -24,21 +24,22 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
+ * @version 
  */
 public class ModifyDBInstanceConnectionStringResponse extends AcsResponse {
 
-    private String requestId;
+	private String requestId;
 
-    public String getRequestId() {
-        return this.requestId;
-    }
+	public String getRequestId() {
+		return this.requestId;
+	}
 
-    public void setRequestId(String requestId) {
-        this.requestId = requestId;
-    }
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
 
-    @Override
-    public ModifyDBInstanceConnectionStringResponse getInstance(UnmarshallerContext context) {
-        return ModifyDBInstanceConnectionStringResponseUnmarshaller.unmarshall(this, context);
-    }
+	@Override
+	public ModifyDBInstanceConnectionStringResponse getInstance(UnmarshallerContext context) {
+		return	ModifyDBInstanceConnectionStringResponseUnmarshaller.unmarshall(this, context);
+	}
 }

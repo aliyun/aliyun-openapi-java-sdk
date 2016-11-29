@@ -18,48 +18,37 @@
  */
 package com.aliyuncs.rds.transform.v20140815;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.rds.model.v20140815.DescribeRealtimeDiagnosesResponse;
 import com.aliyuncs.rds.model.v20140815.DescribeRealtimeDiagnosesResponse.RealtimeDiagnoseTasks;
 import com.aliyuncs.rds.model.v20140815.DescribeRealtimeDiagnosesResponse.RealtimeDiagnoseTasks.Status;
 import com.aliyuncs.transform.UnmarshallerContext;
 
-import java.util.ArrayList;
-import java.util.List;
 
 public class DescribeRealtimeDiagnosesResponseUnmarshaller {
 
-    public static DescribeRealtimeDiagnosesResponse unmarshall(
-            DescribeRealtimeDiagnosesResponse describeRealtimeDiagnosesResponse,
-            UnmarshallerContext context) {
+	public static DescribeRealtimeDiagnosesResponse unmarshall(DescribeRealtimeDiagnosesResponse describeRealtimeDiagnosesResponse, UnmarshallerContext context) {
+		
+		describeRealtimeDiagnosesResponse.setRequestId(context.stringValue("DescribeRealtimeDiagnosesResponse.RequestId"));
+		describeRealtimeDiagnosesResponse.setEngine(context.stringValue("DescribeRealtimeDiagnosesResponse.Engine"));
+		describeRealtimeDiagnosesResponse.setTotalRecordCount(context.integerValue("DescribeRealtimeDiagnosesResponse.TotalRecordCount"));
+		describeRealtimeDiagnosesResponse.setPageNumber(context.integerValue("DescribeRealtimeDiagnosesResponse.PageNumber"));
+		describeRealtimeDiagnosesResponse.setPageRecordCount(context.integerValue("DescribeRealtimeDiagnosesResponse.PageRecordCount"));
 
-        describeRealtimeDiagnosesResponse
-                .setRequestId(context.stringValue("DescribeRealtimeDiagnosesResponse.RequestId"));
-        describeRealtimeDiagnosesResponse
-                .setEngine(context.stringValue("DescribeRealtimeDiagnosesResponse.Engine"));
-        describeRealtimeDiagnosesResponse.setTotalRecordCount(
-                context.integerValue("DescribeRealtimeDiagnosesResponse.TotalRecordCount"));
-        describeRealtimeDiagnosesResponse.setPageNumber(
-                context.integerValue("DescribeRealtimeDiagnosesResponse.PageNumber"));
-        describeRealtimeDiagnosesResponse.setPageRecordCount(
-                context.integerValue("DescribeRealtimeDiagnosesResponse.PageRecordCount"));
+		List<RealtimeDiagnoseTasks> tasks = new ArrayList<RealtimeDiagnoseTasks>();
+		for (int i = 0; i < context.lengthValue("DescribeRealtimeDiagnosesResponse.Tasks.Length"); i++) {
+			RealtimeDiagnoseTasks realtimeDiagnoseTasks = new RealtimeDiagnoseTasks();
+			realtimeDiagnoseTasks.setCreateTime(context.stringValue("DescribeRealtimeDiagnosesResponse.Tasks["+ i +"].CreateTime"));
+			realtimeDiagnoseTasks.setTaskId(context.stringValue("DescribeRealtimeDiagnosesResponse.Tasks["+ i +"].TaskId"));
+			realtimeDiagnoseTasks.setHealthScore(context.stringValue("DescribeRealtimeDiagnosesResponse.Tasks["+ i +"].HealthScore"));
+			realtimeDiagnoseTasks.setStatus(Status.getEnum(context.stringValue("DescribeRealtimeDiagnosesResponse.Tasks["+ i +"].Status")));
 
-        List<RealtimeDiagnoseTasks> tasks = new ArrayList<RealtimeDiagnoseTasks>();
-        for (int i = 0;
-             i < context.lengthValue("DescribeRealtimeDiagnosesResponse.Tasks.Length"); i++) {
-            RealtimeDiagnoseTasks realtimeDiagnoseTasks = new RealtimeDiagnoseTasks();
-            realtimeDiagnoseTasks.setCreateTime(context.stringValue(
-                    "DescribeRealtimeDiagnosesResponse.Tasks[" + i + "].CreateTime"));
-            realtimeDiagnoseTasks.setTaskId(context.stringValue(
-                    "DescribeRealtimeDiagnosesResponse.Tasks[" + i + "].TaskId"));
-            realtimeDiagnoseTasks.setHealthScore(context.stringValue(
-                    "DescribeRealtimeDiagnosesResponse.Tasks[" + i + "].HealthScore"));
-            realtimeDiagnoseTasks.setStatus(Status.getEnum(context.stringValue(
-                    "DescribeRealtimeDiagnosesResponse.Tasks[" + i + "].Status")));
-
-            tasks.add(realtimeDiagnoseTasks);
-        }
-        describeRealtimeDiagnosesResponse.setTasks(tasks);
-
-        return describeRealtimeDiagnosesResponse;
-    }
+			tasks.add(realtimeDiagnoseTasks);
+		}
+		describeRealtimeDiagnosesResponse.setTasks(tasks);
+	 
+	 	return describeRealtimeDiagnosesResponse;
+	}
 }

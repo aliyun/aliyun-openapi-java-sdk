@@ -18,72 +18,72 @@
  */
 package com.aliyuncs.rds.model.v20140815;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.rds.transform.v20140815.DescribeTagsResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
-import java.util.List;
-
 /**
  * @author auto create
+ * @version 
  */
 public class DescribeTagsResponse extends AcsResponse {
 
-    private String requestId;
+	private String requestId;
 
-    private List<TagInfos> items;
+	private List<TagInfos> items;
 
-    public String getRequestId() {
-        return this.requestId;
-    }
+	public String getRequestId() {
+		return this.requestId;
+	}
 
-    public void setRequestId(String requestId) {
-        this.requestId = requestId;
-    }
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
 
-    public List<TagInfos> getItems() {
-        return this.items;
-    }
+	public List<TagInfos> getItems() {
+		return this.items;
+	}
 
-    public void setItems(List<TagInfos> items) {
-        this.items = items;
-    }
+	public void setItems(List<TagInfos> items) {
+		this.items = items;
+	}
 
-    public static class TagInfos {
+	public static class TagInfos {
 
-        private String tagKey;
+		private String tagKey;
 
-        private String tagValue;
+		private String tagValue;
 
-        private List<String> dBInstanceIds;
+		private List<String> dBInstanceIds;
 
-        public String getTagKey() {
-            return this.tagKey;
-        }
+		public String getTagKey() {
+			return this.tagKey;
+		}
 
-        public void setTagKey(String tagKey) {
-            this.tagKey = tagKey;
-        }
+		public void setTagKey(String tagKey) {
+			this.tagKey = tagKey;
+		}
 
-        public String getTagValue() {
-            return this.tagValue;
-        }
+		public String getTagValue() {
+			return this.tagValue;
+		}
 
-        public void setTagValue(String tagValue) {
-            this.tagValue = tagValue;
-        }
+		public void setTagValue(String tagValue) {
+			this.tagValue = tagValue;
+		}
 
-        public List<String> getDBInstanceIds() {
-            return this.dBInstanceIds;
-        }
+		public List<String> getDBInstanceIds() {
+			return this.dBInstanceIds;
+		}
 
-        public void setDBInstanceIds(List<String> dBInstanceIds) {
-            this.dBInstanceIds = dBInstanceIds;
-        }
-    }
+		public void setDBInstanceIds(List<String> dBInstanceIds) {
+			this.dBInstanceIds = dBInstanceIds;
+		}
+	}
 
-    @Override
-    public DescribeTagsResponse getInstance(UnmarshallerContext context) {
-        return DescribeTagsResponseUnmarshaller.unmarshall(this, context);
-    }
+	@Override
+	public DescribeTagsResponse getInstance(UnmarshallerContext context) {
+		return	DescribeTagsResponseUnmarshaller.unmarshall(this, context);
+	}
 }

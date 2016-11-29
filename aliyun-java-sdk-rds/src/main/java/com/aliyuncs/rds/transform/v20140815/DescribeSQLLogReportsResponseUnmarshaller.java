@@ -18,74 +18,55 @@
  */
 package com.aliyuncs.rds.transform.v20140815;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.rds.model.v20140815.DescribeSQLLogReportsResponse;
 import com.aliyuncs.rds.model.v20140815.DescribeSQLLogReportsResponse.Item;
 import com.aliyuncs.rds.model.v20140815.DescribeSQLLogReportsResponse.Item.LatencyTopNItem;
 import com.aliyuncs.rds.model.v20140815.DescribeSQLLogReportsResponse.Item.QPSTopNItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
-import java.util.ArrayList;
-import java.util.List;
 
 public class DescribeSQLLogReportsResponseUnmarshaller {
 
-    public static DescribeSQLLogReportsResponse unmarshall(
-            DescribeSQLLogReportsResponse describeSQLLogReportsResponse,
-            UnmarshallerContext context) {
+	public static DescribeSQLLogReportsResponse unmarshall(DescribeSQLLogReportsResponse describeSQLLogReportsResponse, UnmarshallerContext context) {
+		
+		describeSQLLogReportsResponse.setRequestId(context.stringValue("DescribeSQLLogReportsResponse.RequestId"));
+		describeSQLLogReportsResponse.setTotalRecordCount(context.integerValue("DescribeSQLLogReportsResponse.TotalRecordCount"));
+		describeSQLLogReportsResponse.setPageNumber(context.integerValue("DescribeSQLLogReportsResponse.PageNumber"));
+		describeSQLLogReportsResponse.setPageRecordCount(context.integerValue("DescribeSQLLogReportsResponse.PageRecordCount"));
 
-        describeSQLLogReportsResponse
-                .setRequestId(context.stringValue("DescribeSQLLogReportsResponse.RequestId"));
-        describeSQLLogReportsResponse.setTotalRecordCount(
-                context.integerValue("DescribeSQLLogReportsResponse.TotalRecordCount"));
-        describeSQLLogReportsResponse
-                .setPageNumber(context.integerValue("DescribeSQLLogReportsResponse.PageNumber"));
-        describeSQLLogReportsResponse.setPageRecordCount(
-                context.integerValue("DescribeSQLLogReportsResponse.PageRecordCount"));
+		List<Item> items = new ArrayList<Item>();
+		for (int i = 0; i < context.lengthValue("DescribeSQLLogReportsResponse.Items.Length"); i++) {
+			Item item = new Item();
+			item.setReportTime(context.stringValue("DescribeSQLLogReportsResponse.Items["+ i +"].ReportTime"));
 
-        List<Item> items = new ArrayList<Item>();
-        for (int i = 0;
-             i < context.lengthValue("DescribeSQLLogReportsResponse.Items.Length"); i++) {
-            Item item = new Item();
-            item.setReportTime(context.stringValue(
-                    "DescribeSQLLogReportsResponse.Items[" + i + "].ReportTime"));
+			List<LatencyTopNItem> latencyTopNItems = new ArrayList<LatencyTopNItem>();
+			for (int j = 0; j < context.lengthValue("DescribeSQLLogReportsResponse.Items["+ i +"].LatencyTopNItems.Length"); j++) {
+				LatencyTopNItem latencyTopNItem = new LatencyTopNItem();
+				latencyTopNItem.setSQLText(context.stringValue("DescribeSQLLogReportsResponse.Items["+ i +"].LatencyTopNItems["+ j +"].SQLText"));
+				latencyTopNItem.setAvgLatency(context.longValue("DescribeSQLLogReportsResponse.Items["+ i +"].LatencyTopNItems["+ j +"].AvgLatency"));
+				latencyTopNItem.setSQLExecuteTimes(context.longValue("DescribeSQLLogReportsResponse.Items["+ i +"].LatencyTopNItems["+ j +"].SQLExecuteTimes"));
 
-            List<LatencyTopNItem> latencyTopNItems = new ArrayList<LatencyTopNItem>();
-            for (int j = 0; j < context.lengthValue("DescribeSQLLogReportsResponse.Items[" + i
-                    + "].LatencyTopNItems.Length"); j++) {
-                LatencyTopNItem latencyTopNItem = new LatencyTopNItem();
-                latencyTopNItem.setSQLText(context.stringValue(
-                        "DescribeSQLLogReportsResponse.Items[" + i + "].LatencyTopNItems[" + j
-                                + "].SQLText"));
-                latencyTopNItem.setAvgLatency(context.longValue(
-                        "DescribeSQLLogReportsResponse.Items[" + i + "].LatencyTopNItems[" + j
-                                + "].AvgLatency"));
-                latencyTopNItem.setSQLExecuteTimes(context.longValue(
-                        "DescribeSQLLogReportsResponse.Items[" + i + "].LatencyTopNItems[" + j
-                                + "].SQLExecuteTimes"));
+				latencyTopNItems.add(latencyTopNItem);
+			}
+			item.setLatencyTopNItems(latencyTopNItems);
 
-                latencyTopNItems.add(latencyTopNItem);
-            }
-            item.setLatencyTopNItems(latencyTopNItems);
+			List<QPSTopNItem> qPSTopNItems = new ArrayList<QPSTopNItem>();
+			for (int j = 0; j < context.lengthValue("DescribeSQLLogReportsResponse.Items["+ i +"].QPSTopNItems.Length"); j++) {
+				QPSTopNItem qPSTopNItem = new QPSTopNItem();
+				qPSTopNItem.setSQLText(context.stringValue("DescribeSQLLogReportsResponse.Items["+ i +"].QPSTopNItems["+ j +"].SQLText"));
+				qPSTopNItem.setSQLExecuteTimes(context.longValue("DescribeSQLLogReportsResponse.Items["+ i +"].QPSTopNItems["+ j +"].SQLExecuteTimes"));
 
-            List<QPSTopNItem> qPSTopNItems = new ArrayList<QPSTopNItem>();
-            for (int j = 0; j < context.lengthValue(
-                    "DescribeSQLLogReportsResponse.Items[" + i + "].QPSTopNItems.Length"); j++) {
-                QPSTopNItem qPSTopNItem = new QPSTopNItem();
-                qPSTopNItem.setSQLText(context.stringValue(
-                        "DescribeSQLLogReportsResponse.Items[" + i + "].QPSTopNItems[" + j
-                                + "].SQLText"));
-                qPSTopNItem.setSQLExecuteTimes(context.longValue(
-                        "DescribeSQLLogReportsResponse.Items[" + i + "].QPSTopNItems[" + j
-                                + "].SQLExecuteTimes"));
+				qPSTopNItems.add(qPSTopNItem);
+			}
+			item.setQPSTopNItems(qPSTopNItems);
 
-                qPSTopNItems.add(qPSTopNItem);
-            }
-            item.setQPSTopNItems(qPSTopNItems);
-
-            items.add(item);
-        }
-        describeSQLLogReportsResponse.setItems(items);
-
-        return describeSQLLogReportsResponse;
-    }
+			items.add(item);
+		}
+		describeSQLLogReportsResponse.setItems(items);
+	 
+	 	return describeSQLLogReportsResponse;
+	}
 }

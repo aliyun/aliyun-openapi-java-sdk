@@ -24,31 +24,32 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
+ * @version 
  */
 public class ImportDatabaseBetweenInstancesResponse extends AcsResponse {
 
-    private String requestId;
+	private String requestId;
 
-    private String importId;
+	private String importId;
 
-    public String getRequestId() {
-        return this.requestId;
-    }
+	public String getRequestId() {
+		return this.requestId;
+	}
 
-    public void setRequestId(String requestId) {
-        this.requestId = requestId;
-    }
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
 
-    public String getImportId() {
-        return this.importId;
-    }
+	public String getImportId() {
+		return this.importId;
+	}
 
-    public void setImportId(String importId) {
-        this.importId = importId;
-    }
+	public void setImportId(String importId) {
+		this.importId = importId;
+	}
 
-    @Override
-    public ImportDatabaseBetweenInstancesResponse getInstance(UnmarshallerContext context) {
-        return ImportDatabaseBetweenInstancesResponseUnmarshaller.unmarshall(this, context);
-    }
+	@Override
+	public ImportDatabaseBetweenInstancesResponse getInstance(UnmarshallerContext context) {
+		return	ImportDatabaseBetweenInstancesResponseUnmarshaller.unmarshall(this, context);
+	}
 }

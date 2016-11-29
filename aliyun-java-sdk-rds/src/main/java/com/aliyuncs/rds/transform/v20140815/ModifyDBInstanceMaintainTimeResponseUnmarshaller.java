@@ -21,15 +21,13 @@ package com.aliyuncs.rds.transform.v20140815;
 import com.aliyuncs.rds.model.v20140815.ModifyDBInstanceMaintainTimeResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
+
 public class ModifyDBInstanceMaintainTimeResponseUnmarshaller {
 
-    public static ModifyDBInstanceMaintainTimeResponse unmarshall(
-            ModifyDBInstanceMaintainTimeResponse modifyDBInstanceMaintainTimeResponse,
-            UnmarshallerContext context) {
-
-        modifyDBInstanceMaintainTimeResponse.setRequestId(
-                context.stringValue("ModifyDBInstanceMaintainTimeResponse.RequestId"));
-
-        return modifyDBInstanceMaintainTimeResponse;
-    }
+	public static ModifyDBInstanceMaintainTimeResponse unmarshall(ModifyDBInstanceMaintainTimeResponse modifyDBInstanceMaintainTimeResponse, UnmarshallerContext context) {
+		
+		modifyDBInstanceMaintainTimeResponse.setRequestId(context.stringValue("ModifyDBInstanceMaintainTimeResponse.RequestId"));
+	 
+	 	return modifyDBInstanceMaintainTimeResponse;
+	}
 }

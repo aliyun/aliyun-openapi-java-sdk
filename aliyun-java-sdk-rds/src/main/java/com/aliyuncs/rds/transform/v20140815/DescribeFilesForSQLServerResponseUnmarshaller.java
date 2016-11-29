@@ -18,64 +18,45 @@
  */
 package com.aliyuncs.rds.transform.v20140815;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.rds.model.v20140815.DescribeFilesForSQLServerResponse;
 import com.aliyuncs.rds.model.v20140815.DescribeFilesForSQLServerResponse.SQLServerUploadFile;
 import com.aliyuncs.rds.model.v20140815.DescribeFilesForSQLServerResponse.SQLServerUploadFile.FileStatus;
 import com.aliyuncs.transform.UnmarshallerContext;
 
-import java.util.ArrayList;
-import java.util.List;
 
 public class DescribeFilesForSQLServerResponseUnmarshaller {
 
-    public static DescribeFilesForSQLServerResponse unmarshall(
-            DescribeFilesForSQLServerResponse describeFilesForSQLServerResponse,
-            UnmarshallerContext context) {
+	public static DescribeFilesForSQLServerResponse unmarshall(DescribeFilesForSQLServerResponse describeFilesForSQLServerResponse, UnmarshallerContext context) {
+		
+		describeFilesForSQLServerResponse.setRequestId(context.stringValue("DescribeFilesForSQLServerResponse.RequestId"));
+		describeFilesForSQLServerResponse.setDBInstanceId(context.stringValue("DescribeFilesForSQLServerResponse.DBInstanceId"));
+		describeFilesForSQLServerResponse.setTotalRecordCount(context.integerValue("DescribeFilesForSQLServerResponse.TotalRecordCount"));
+		describeFilesForSQLServerResponse.setPageNumber(context.integerValue("DescribeFilesForSQLServerResponse.PageNumber"));
+		describeFilesForSQLServerResponse.setPageRecordCount(context.integerValue("DescribeFilesForSQLServerResponse.PageRecordCount"));
 
-        describeFilesForSQLServerResponse
-                .setRequestId(context.stringValue("DescribeFilesForSQLServerResponse.RequestId"));
-        describeFilesForSQLServerResponse.setDBInstanceId(
-                context.stringValue("DescribeFilesForSQLServerResponse.DBInstanceId"));
-        describeFilesForSQLServerResponse.setTotalRecordCount(
-                context.integerValue("DescribeFilesForSQLServerResponse.TotalRecordCount"));
-        describeFilesForSQLServerResponse.setPageNumber(
-                context.integerValue("DescribeFilesForSQLServerResponse.PageNumber"));
-        describeFilesForSQLServerResponse.setPageRecordCount(
-                context.integerValue("DescribeFilesForSQLServerResponse.PageRecordCount"));
+		List<SQLServerUploadFile> items = new ArrayList<SQLServerUploadFile>();
+		for (int i = 0; i < context.lengthValue("DescribeFilesForSQLServerResponse.Items.Length"); i++) {
+			SQLServerUploadFile sQLServerUploadFile = new SQLServerUploadFile();
+			sQLServerUploadFile.setDBName(context.stringValue("DescribeFilesForSQLServerResponse.Items["+ i +"].DBName"));
+			sQLServerUploadFile.setFileName(context.stringValue("DescribeFilesForSQLServerResponse.Items["+ i +"].FileName"));
+			sQLServerUploadFile.setFileSize(context.longValue("DescribeFilesForSQLServerResponse.Items["+ i +"].FileSize"));
+			sQLServerUploadFile.setInternetFtpServer(context.stringValue("DescribeFilesForSQLServerResponse.Items["+ i +"].InternetFtpServer"));
+			sQLServerUploadFile.setInternetPort(context.integerValue("DescribeFilesForSQLServerResponse.Items["+ i +"].InternetPort"));
+			sQLServerUploadFile.setIntranetFtpserver(context.stringValue("DescribeFilesForSQLServerResponse.Items["+ i +"].IntranetFtpserver"));
+			sQLServerUploadFile.setIntranetport(context.integerValue("DescribeFilesForSQLServerResponse.Items["+ i +"].Intranetport"));
+			sQLServerUploadFile.setUserName(context.stringValue("DescribeFilesForSQLServerResponse.Items["+ i +"].UserName"));
+			sQLServerUploadFile.setPassword(context.stringValue("DescribeFilesForSQLServerResponse.Items["+ i +"].Password"));
+			sQLServerUploadFile.setFileStatus(FileStatus.getEnum(context.stringValue("DescribeFilesForSQLServerResponse.Items["+ i +"].FileStatus")));
+			sQLServerUploadFile.setDescription(context.stringValue("DescribeFilesForSQLServerResponse.Items["+ i +"].Description"));
+			sQLServerUploadFile.setCreationTime(context.stringValue("DescribeFilesForSQLServerResponse.Items["+ i +"].CreationTime"));
 
-        List<SQLServerUploadFile> items = new ArrayList<SQLServerUploadFile>();
-        for (int i = 0;
-             i < context.lengthValue("DescribeFilesForSQLServerResponse.Items.Length"); i++) {
-            SQLServerUploadFile sQLServerUploadFile = new SQLServerUploadFile();
-            sQLServerUploadFile.setDBName(context.stringValue(
-                    "DescribeFilesForSQLServerResponse.Items[" + i + "].DBName"));
-            sQLServerUploadFile.setFileName(context.stringValue(
-                    "DescribeFilesForSQLServerResponse.Items[" + i + "].FileName"));
-            sQLServerUploadFile.setFileSize(context.longValue(
-                    "DescribeFilesForSQLServerResponse.Items[" + i + "].FileSize"));
-            sQLServerUploadFile.setInternetFtpServer(context.stringValue(
-                    "DescribeFilesForSQLServerResponse.Items[" + i + "].InternetFtpServer"));
-            sQLServerUploadFile.setInternetPort(context.integerValue(
-                    "DescribeFilesForSQLServerResponse.Items[" + i + "].InternetPort"));
-            sQLServerUploadFile.setIntranetFtpserver(context.stringValue(
-                    "DescribeFilesForSQLServerResponse.Items[" + i + "].IntranetFtpserver"));
-            sQLServerUploadFile.setIntranetport(context.integerValue(
-                    "DescribeFilesForSQLServerResponse.Items[" + i + "].Intranetport"));
-            sQLServerUploadFile.setUserName(context.stringValue(
-                    "DescribeFilesForSQLServerResponse.Items[" + i + "].UserName"));
-            sQLServerUploadFile.setPassword(context.stringValue(
-                    "DescribeFilesForSQLServerResponse.Items[" + i + "].Password"));
-            sQLServerUploadFile.setFileStatus(FileStatus.getEnum(context.stringValue(
-                    "DescribeFilesForSQLServerResponse.Items[" + i + "].FileStatus")));
-            sQLServerUploadFile.setDescription(context.stringValue(
-                    "DescribeFilesForSQLServerResponse.Items[" + i + "].Description"));
-            sQLServerUploadFile.setCreationTime(context.stringValue(
-                    "DescribeFilesForSQLServerResponse.Items[" + i + "].CreationTime"));
-
-            items.add(sQLServerUploadFile);
-        }
-        describeFilesForSQLServerResponse.setItems(items);
-
-        return describeFilesForSQLServerResponse;
-    }
+			items.add(sQLServerUploadFile);
+		}
+		describeFilesForSQLServerResponse.setItems(items);
+	 
+	 	return describeFilesForSQLServerResponse;
+	}
 }

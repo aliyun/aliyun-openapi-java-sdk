@@ -21,17 +21,14 @@ package com.aliyuncs.rds.transform.v20140815;
 import com.aliyuncs.rds.model.v20140815.ImportDataFromDatabaseResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
+
 public class ImportDataFromDatabaseResponseUnmarshaller {
 
-    public static ImportDataFromDatabaseResponse unmarshall(
-            ImportDataFromDatabaseResponse importDataFromDatabaseResponse,
-            UnmarshallerContext context) {
-
-        importDataFromDatabaseResponse
-                .setRequestId(context.stringValue("ImportDataFromDatabaseResponse.RequestId"));
-        importDataFromDatabaseResponse
-                .setImportId(context.integerValue("ImportDataFromDatabaseResponse.ImportId"));
-
-        return importDataFromDatabaseResponse;
-    }
+	public static ImportDataFromDatabaseResponse unmarshall(ImportDataFromDatabaseResponse importDataFromDatabaseResponse, UnmarshallerContext context) {
+		
+		importDataFromDatabaseResponse.setRequestId(context.stringValue("ImportDataFromDatabaseResponse.RequestId"));
+		importDataFromDatabaseResponse.setImportId(context.integerValue("ImportDataFromDatabaseResponse.ImportId"));
+	 
+	 	return importDataFromDatabaseResponse;
+	}
 }

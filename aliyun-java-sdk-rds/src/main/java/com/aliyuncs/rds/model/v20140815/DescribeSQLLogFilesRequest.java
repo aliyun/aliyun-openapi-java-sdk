@@ -22,104 +22,105 @@ import com.aliyuncs.RpcAcsRequest;
 
 /**
  * @author auto create
+ * @version 
  */
 public class DescribeSQLLogFilesRequest extends RpcAcsRequest<DescribeSQLLogFilesResponse> {
+	
+	public DescribeSQLLogFilesRequest() {
+		super("Rds", "2014-08-15", "DescribeSQLLogFiles", "rds");
+	}
 
-    public DescribeSQLLogFilesRequest() {
-        super("Rds", "2014-08-15", "DescribeSQLLogFiles");
-    }
+	private Long ownerId;
 
-    private Long ownerId;
+	private String resourceOwnerAccount;
 
-    private String resourceOwnerAccount;
+	private Long resourceOwnerId;
 
-    private Long resourceOwnerId;
+	private String dBInstanceId;
 
-    private String dBInstanceId;
+	private String fileName;
 
-    private String fileName;
+	private Integer pageSize;
 
-    private Integer pageSize;
+	private Integer pageNumber;
 
-    private Integer pageNumber;
+	private String ownerAccount;
 
-    private String ownerAccount;
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
 
-    public Long getOwnerId() {
-        return this.ownerId;
-    }
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		putQueryParameter("OwnerId", ownerId);
+	}
 
-    public void setOwnerId(Long ownerId) {
-        this.ownerId = ownerId;
-        putQueryParameter("OwnerId", ownerId);
-    }
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
 
-    public String getResourceOwnerAccount() {
-        return this.resourceOwnerAccount;
-    }
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	}
 
-    public void setResourceOwnerAccount(String resourceOwnerAccount) {
-        this.resourceOwnerAccount = resourceOwnerAccount;
-        putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-    }
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
+	}
 
-    public Long getResourceOwnerId() {
-        return this.resourceOwnerId;
-    }
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		putQueryParameter("ResourceOwnerId", resourceOwnerId);
+	}
 
-    public void setResourceOwnerId(Long resourceOwnerId) {
-        this.resourceOwnerId = resourceOwnerId;
-        putQueryParameter("ResourceOwnerId", resourceOwnerId);
-    }
+	public String getDBInstanceId() {
+		return this.dBInstanceId;
+	}
 
-    public String getDBInstanceId() {
-        return this.dBInstanceId;
-    }
+	public void setDBInstanceId(String dBInstanceId) {
+		this.dBInstanceId = dBInstanceId;
+		putQueryParameter("DBInstanceId", dBInstanceId);
+	}
 
-    public void setDBInstanceId(String dBInstanceId) {
-        this.dBInstanceId = dBInstanceId;
-        putQueryParameter("DBInstanceId", dBInstanceId);
-    }
+	public String getFileName() {
+		return this.fileName;
+	}
 
-    public String getFileName() {
-        return this.fileName;
-    }
+	public void setFileName(String fileName) {
+		this.fileName = fileName;
+		putQueryParameter("FileName", fileName);
+	}
 
-    public void setFileName(String fileName) {
-        this.fileName = fileName;
-        putQueryParameter("FileName", fileName);
-    }
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
 
-    public Integer getPageSize() {
-        return this.pageSize;
-    }
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		putQueryParameter("PageSize", pageSize);
+	}
 
-    public void setPageSize(Integer pageSize) {
-        this.pageSize = pageSize;
-        putQueryParameter("PageSize", pageSize);
-    }
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
 
-    public Integer getPageNumber() {
-        return this.pageNumber;
-    }
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		putQueryParameter("PageNumber", pageNumber);
+	}
 
-    public void setPageNumber(Integer pageNumber) {
-        this.pageNumber = pageNumber;
-        putQueryParameter("PageNumber", pageNumber);
-    }
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
 
-    public String getOwnerAccount() {
-        return this.ownerAccount;
-    }
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		putQueryParameter("OwnerAccount", ownerAccount);
+	}
 
-    public void setOwnerAccount(String ownerAccount) {
-        this.ownerAccount = ownerAccount;
-        putQueryParameter("OwnerAccount", ownerAccount);
-    }
-
-    @Override
-    public Class<DescribeSQLLogFilesResponse> getResponseClass() {
-        return DescribeSQLLogFilesResponse.class;
-    }
+	@Override
+	public Class<DescribeSQLLogFilesResponse> getResponseClass() {
+		return DescribeSQLLogFilesResponse.class;
+	}
 
 }

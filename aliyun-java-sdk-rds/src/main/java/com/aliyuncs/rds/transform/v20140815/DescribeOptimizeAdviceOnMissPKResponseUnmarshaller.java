@@ -18,41 +18,33 @@
  */
 package com.aliyuncs.rds.transform.v20140815;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.rds.model.v20140815.DescribeOptimizeAdviceOnMissPKResponse;
 import com.aliyuncs.rds.model.v20140815.DescribeOptimizeAdviceOnMissPKResponse.AdviceOnMissPK;
 import com.aliyuncs.transform.UnmarshallerContext;
 
-import java.util.ArrayList;
-import java.util.List;
 
 public class DescribeOptimizeAdviceOnMissPKResponseUnmarshaller {
 
-    public static DescribeOptimizeAdviceOnMissPKResponse unmarshall(
-            DescribeOptimizeAdviceOnMissPKResponse describeOptimizeAdviceOnMissPKResponse,
-            UnmarshallerContext context) {
+	public static DescribeOptimizeAdviceOnMissPKResponse unmarshall(DescribeOptimizeAdviceOnMissPKResponse describeOptimizeAdviceOnMissPKResponse, UnmarshallerContext context) {
+		
+		describeOptimizeAdviceOnMissPKResponse.setRequestId(context.stringValue("DescribeOptimizeAdviceOnMissPKResponse.RequestId"));
+		describeOptimizeAdviceOnMissPKResponse.setTotalRecordsCount(context.integerValue("DescribeOptimizeAdviceOnMissPKResponse.TotalRecordsCount"));
+		describeOptimizeAdviceOnMissPKResponse.setPageNumber(context.integerValue("DescribeOptimizeAdviceOnMissPKResponse.PageNumber"));
+		describeOptimizeAdviceOnMissPKResponse.setPageRecordCount(context.integerValue("DescribeOptimizeAdviceOnMissPKResponse.PageRecordCount"));
 
-        describeOptimizeAdviceOnMissPKResponse.setRequestId(
-                context.stringValue("DescribeOptimizeAdviceOnMissPKResponse.RequestId"));
-        describeOptimizeAdviceOnMissPKResponse.setTotalRecordsCount(
-                context.integerValue("DescribeOptimizeAdviceOnMissPKResponse.TotalRecordsCount"));
-        describeOptimizeAdviceOnMissPKResponse.setPageNumber(
-                context.integerValue("DescribeOptimizeAdviceOnMissPKResponse.PageNumber"));
-        describeOptimizeAdviceOnMissPKResponse.setPageRecordCount(
-                context.integerValue("DescribeOptimizeAdviceOnMissPKResponse.PageRecordCount"));
+		List<AdviceOnMissPK> items = new ArrayList<AdviceOnMissPK>();
+		for (int i = 0; i < context.lengthValue("DescribeOptimizeAdviceOnMissPKResponse.Items.Length"); i++) {
+			AdviceOnMissPK adviceOnMissPK = new AdviceOnMissPK();
+			adviceOnMissPK.setDBName(context.stringValue("DescribeOptimizeAdviceOnMissPKResponse.Items["+ i +"].DBName"));
+			adviceOnMissPK.setTableName(context.stringValue("DescribeOptimizeAdviceOnMissPKResponse.Items["+ i +"].TableName"));
 
-        List<AdviceOnMissPK> items = new ArrayList<AdviceOnMissPK>();
-        for (int i = 0;
-             i < context.lengthValue("DescribeOptimizeAdviceOnMissPKResponse.Items.Length"); i++) {
-            AdviceOnMissPK adviceOnMissPK = new AdviceOnMissPK();
-            adviceOnMissPK.setDBName(context.stringValue(
-                    "DescribeOptimizeAdviceOnMissPKResponse.Items[" + i + "].DBName"));
-            adviceOnMissPK.setTableName(context.stringValue(
-                    "DescribeOptimizeAdviceOnMissPKResponse.Items[" + i + "].TableName"));
-
-            items.add(adviceOnMissPK);
-        }
-        describeOptimizeAdviceOnMissPKResponse.setItems(items);
-
-        return describeOptimizeAdviceOnMissPKResponse;
-    }
+			items.add(adviceOnMissPK);
+		}
+		describeOptimizeAdviceOnMissPKResponse.setItems(items);
+	 
+	 	return describeOptimizeAdviceOnMissPKResponse;
+	}
 }

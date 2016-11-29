@@ -22,105 +22,105 @@ import com.aliyuncs.RpcAcsRequest;
 
 /**
  * @author auto create
+ * @version 
  */
-public class DescribeDBInstancePerformanceRequest
-        extends RpcAcsRequest<DescribeDBInstancePerformanceResponse> {
+public class DescribeDBInstancePerformanceRequest extends RpcAcsRequest<DescribeDBInstancePerformanceResponse> {
+	
+	public DescribeDBInstancePerformanceRequest() {
+		super("Rds", "2014-08-15", "DescribeDBInstancePerformance", "rds");
+	}
 
-    public DescribeDBInstancePerformanceRequest() {
-        super("Rds", "2014-08-15", "DescribeDBInstancePerformance");
-    }
+	private Long ownerId;
 
-    private Long ownerId;
+	private String ownerAccount;
 
-    private String resourceOwnerAccount;
+	private String resourceOwnerAccount;
 
-    private Long resourceOwnerId;
+	private Long resourceOwnerId;
 
-    private String dBInstanceId;
+	private String dBInstanceId;
 
-    private String key;
+	private String key;
 
-    private String startTime;
+	private String startTime;
 
-    private String endTime;
+	private String endTime;
 
-    private String ownerAccount;
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
 
-    public Long getOwnerId() {
-        return this.ownerId;
-    }
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		putQueryParameter("OwnerId", ownerId);
+	}
 
-    public void setOwnerId(Long ownerId) {
-        this.ownerId = ownerId;
-        putQueryParameter("OwnerId", ownerId);
-    }
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
 
-    public String getResourceOwnerAccount() {
-        return this.resourceOwnerAccount;
-    }
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		putQueryParameter("OwnerAccount", ownerAccount);
+	}
 
-    public void setResourceOwnerAccount(String resourceOwnerAccount) {
-        this.resourceOwnerAccount = resourceOwnerAccount;
-        putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-    }
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
 
-    public Long getResourceOwnerId() {
-        return this.resourceOwnerId;
-    }
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	}
 
-    public void setResourceOwnerId(Long resourceOwnerId) {
-        this.resourceOwnerId = resourceOwnerId;
-        putQueryParameter("ResourceOwnerId", resourceOwnerId);
-    }
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
+	}
 
-    public String getDBInstanceId() {
-        return this.dBInstanceId;
-    }
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		putQueryParameter("ResourceOwnerId", resourceOwnerId);
+	}
 
-    public void setDBInstanceId(String dBInstanceId) {
-        this.dBInstanceId = dBInstanceId;
-        putQueryParameter("DBInstanceId", dBInstanceId);
-    }
+	public String getDBInstanceId() {
+		return this.dBInstanceId;
+	}
 
-    public String getKey() {
-        return this.key;
-    }
+	public void setDBInstanceId(String dBInstanceId) {
+		this.dBInstanceId = dBInstanceId;
+		putQueryParameter("DBInstanceId", dBInstanceId);
+	}
 
-    public void setKey(String key) {
-        this.key = key;
-        putQueryParameter("Key", key);
-    }
+	public String getKey() {
+		return this.key;
+	}
 
-    public String getStartTime() {
-        return this.startTime;
-    }
+	public void setKey(String key) {
+		this.key = key;
+		putQueryParameter("Key", key);
+	}
 
-    public void setStartTime(String startTime) {
-        this.startTime = startTime;
-        putQueryParameter("StartTime", startTime);
-    }
+	public String getStartTime() {
+		return this.startTime;
+	}
 
-    public String getEndTime() {
-        return this.endTime;
-    }
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+		putQueryParameter("StartTime", startTime);
+	}
 
-    public void setEndTime(String endTime) {
-        this.endTime = endTime;
-        putQueryParameter("EndTime", endTime);
-    }
+	public String getEndTime() {
+		return this.endTime;
+	}
 
-    public String getOwnerAccount() {
-        return this.ownerAccount;
-    }
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+		putQueryParameter("EndTime", endTime);
+	}
 
-    public void setOwnerAccount(String ownerAccount) {
-        this.ownerAccount = ownerAccount;
-        putQueryParameter("OwnerAccount", ownerAccount);
-    }
-
-    @Override
-    public Class<DescribeDBInstancePerformanceResponse> getResponseClass() {
-        return DescribeDBInstancePerformanceResponse.class;
-    }
+	@Override
+	public Class<DescribeDBInstancePerformanceResponse> getResponseClass() {
+		return DescribeDBInstancePerformanceResponse.class;
+	}
 
 }

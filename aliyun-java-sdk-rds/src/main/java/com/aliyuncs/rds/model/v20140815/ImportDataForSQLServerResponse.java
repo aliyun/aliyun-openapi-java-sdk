@@ -24,31 +24,32 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
+ * @version 
  */
 public class ImportDataForSQLServerResponse extends AcsResponse {
 
-    private String requestId;
+	private String requestId;
 
-    private Integer importID;
+	private Integer importID;
 
-    public String getRequestId() {
-        return this.requestId;
-    }
+	public String getRequestId() {
+		return this.requestId;
+	}
 
-    public void setRequestId(String requestId) {
-        this.requestId = requestId;
-    }
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
 
-    public Integer getImportID() {
-        return this.importID;
-    }
+	public Integer getImportID() {
+		return this.importID;
+	}
 
-    public void setImportID(Integer importID) {
-        this.importID = importID;
-    }
+	public void setImportID(Integer importID) {
+		this.importID = importID;
+	}
 
-    @Override
-    public ImportDataForSQLServerResponse getInstance(UnmarshallerContext context) {
-        return ImportDataForSQLServerResponseUnmarshaller.unmarshall(this, context);
-    }
+	@Override
+	public ImportDataForSQLServerResponse getInstance(UnmarshallerContext context) {
+		return	ImportDataForSQLServerResponseUnmarshaller.unmarshall(this, context);
+	}
 }

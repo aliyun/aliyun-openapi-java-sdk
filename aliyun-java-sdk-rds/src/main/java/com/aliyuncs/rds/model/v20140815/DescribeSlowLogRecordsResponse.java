@@ -18,162 +18,162 @@
  */
 package com.aliyuncs.rds.model.v20140815;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.rds.transform.v20140815.DescribeSlowLogRecordsResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
-import java.util.List;
-
 /**
  * @author auto create
+ * @version 
  */
 public class DescribeSlowLogRecordsResponse extends AcsResponse {
 
-    private String requestId;
+	private String requestId;
 
-    private String engine;
+	private String engine;
 
-    private Integer totalRecordCount;
+	private Integer totalRecordCount;
 
-    private Integer pageNumber;
+	private Integer pageNumber;
 
-    private Integer pageRecordCount;
+	private Integer pageRecordCount;
 
-    private List<SQLSlowRecord> items;
+	private List<SQLSlowRecord> items;
 
-    public String getRequestId() {
-        return this.requestId;
-    }
+	public String getRequestId() {
+		return this.requestId;
+	}
 
-    public void setRequestId(String requestId) {
-        this.requestId = requestId;
-    }
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
 
-    public String getEngine() {
-        return this.engine;
-    }
+	public String getEngine() {
+		return this.engine;
+	}
 
-    public void setEngine(String engine) {
-        this.engine = engine;
-    }
+	public void setEngine(String engine) {
+		this.engine = engine;
+	}
 
-    public Integer getTotalRecordCount() {
-        return this.totalRecordCount;
-    }
+	public Integer getTotalRecordCount() {
+		return this.totalRecordCount;
+	}
 
-    public void setTotalRecordCount(Integer totalRecordCount) {
-        this.totalRecordCount = totalRecordCount;
-    }
+	public void setTotalRecordCount(Integer totalRecordCount) {
+		this.totalRecordCount = totalRecordCount;
+	}
 
-    public Integer getPageNumber() {
-        return this.pageNumber;
-    }
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
 
-    public void setPageNumber(Integer pageNumber) {
-        this.pageNumber = pageNumber;
-    }
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+	}
 
-    public Integer getPageRecordCount() {
-        return this.pageRecordCount;
-    }
+	public Integer getPageRecordCount() {
+		return this.pageRecordCount;
+	}
 
-    public void setPageRecordCount(Integer pageRecordCount) {
-        this.pageRecordCount = pageRecordCount;
-    }
+	public void setPageRecordCount(Integer pageRecordCount) {
+		this.pageRecordCount = pageRecordCount;
+	}
 
-    public List<SQLSlowRecord> getItems() {
-        return this.items;
-    }
+	public List<SQLSlowRecord> getItems() {
+		return this.items;
+	}
 
-    public void setItems(List<SQLSlowRecord> items) {
-        this.items = items;
-    }
+	public void setItems(List<SQLSlowRecord> items) {
+		this.items = items;
+	}
 
-    public static class SQLSlowRecord {
+	public static class SQLSlowRecord {
 
-        private String hostAddress;
+		private String hostAddress;
 
-        private String dBName;
+		private String dBName;
 
-        private String sQLText;
+		private String sQLText;
 
-        private Long queryTimes;
+		private Long queryTimes;
 
-        private Long lockTimes;
+		private Long lockTimes;
 
-        private Long parseRowCounts;
+		private Long parseRowCounts;
 
-        private Long returnRowCounts;
+		private Long returnRowCounts;
 
-        private String executionStartTime;
+		private String executionStartTime;
 
-        public String getHostAddress() {
-            return this.hostAddress;
-        }
+		public String getHostAddress() {
+			return this.hostAddress;
+		}
 
-        public void setHostAddress(String hostAddress) {
-            this.hostAddress = hostAddress;
-        }
+		public void setHostAddress(String hostAddress) {
+			this.hostAddress = hostAddress;
+		}
 
-        public String getDBName() {
-            return this.dBName;
-        }
+		public String getDBName() {
+			return this.dBName;
+		}
 
-        public void setDBName(String dBName) {
-            this.dBName = dBName;
-        }
+		public void setDBName(String dBName) {
+			this.dBName = dBName;
+		}
 
-        public String getSQLText() {
-            return this.sQLText;
-        }
+		public String getSQLText() {
+			return this.sQLText;
+		}
 
-        public void setSQLText(String sQLText) {
-            this.sQLText = sQLText;
-        }
+		public void setSQLText(String sQLText) {
+			this.sQLText = sQLText;
+		}
 
-        public Long getQueryTimes() {
-            return this.queryTimes;
-        }
+		public Long getQueryTimes() {
+			return this.queryTimes;
+		}
 
-        public void setQueryTimes(Long queryTimes) {
-            this.queryTimes = queryTimes;
-        }
+		public void setQueryTimes(Long queryTimes) {
+			this.queryTimes = queryTimes;
+		}
 
-        public Long getLockTimes() {
-            return this.lockTimes;
-        }
+		public Long getLockTimes() {
+			return this.lockTimes;
+		}
 
-        public void setLockTimes(Long lockTimes) {
-            this.lockTimes = lockTimes;
-        }
+		public void setLockTimes(Long lockTimes) {
+			this.lockTimes = lockTimes;
+		}
 
-        public Long getParseRowCounts() {
-            return this.parseRowCounts;
-        }
+		public Long getParseRowCounts() {
+			return this.parseRowCounts;
+		}
 
-        public void setParseRowCounts(Long parseRowCounts) {
-            this.parseRowCounts = parseRowCounts;
-        }
+		public void setParseRowCounts(Long parseRowCounts) {
+			this.parseRowCounts = parseRowCounts;
+		}
 
-        public Long getReturnRowCounts() {
-            return this.returnRowCounts;
-        }
+		public Long getReturnRowCounts() {
+			return this.returnRowCounts;
+		}
 
-        public void setReturnRowCounts(Long returnRowCounts) {
-            this.returnRowCounts = returnRowCounts;
-        }
+		public void setReturnRowCounts(Long returnRowCounts) {
+			this.returnRowCounts = returnRowCounts;
+		}
 
-        public String getExecutionStartTime() {
-            return this.executionStartTime;
-        }
+		public String getExecutionStartTime() {
+			return this.executionStartTime;
+		}
 
-        public void setExecutionStartTime(String executionStartTime) {
-            this.executionStartTime = executionStartTime;
-        }
-    }
+		public void setExecutionStartTime(String executionStartTime) {
+			this.executionStartTime = executionStartTime;
+		}
+	}
 
-    @Override
-    public DescribeSlowLogRecordsResponse getInstance(UnmarshallerContext context) {
-        return DescribeSlowLogRecordsResponseUnmarshaller.unmarshall(this, context);
-    }
+	@Override
+	public DescribeSlowLogRecordsResponse getInstance(UnmarshallerContext context) {
+		return	DescribeSlowLogRecordsResponseUnmarshaller.unmarshall(this, context);
+	}
 }

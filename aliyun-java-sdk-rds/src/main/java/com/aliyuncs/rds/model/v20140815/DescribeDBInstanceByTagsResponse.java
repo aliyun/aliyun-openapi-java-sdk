@@ -18,115 +18,115 @@
  */
 package com.aliyuncs.rds.model.v20140815;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.rds.transform.v20140815.DescribeDBInstanceByTagsResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
-import java.util.List;
-
 /**
  * @author auto create
+ * @version 
  */
 public class DescribeDBInstanceByTagsResponse extends AcsResponse {
 
-    private String requestId;
+	private String requestId;
 
-    private Integer pageNumber;
+	private Integer pageNumber;
 
-    private Integer pageRecordCount;
+	private Integer pageRecordCount;
 
-    private Integer totalRecordCount;
+	private Integer totalRecordCount;
 
-    private List<DBInstanceTag> items;
+	private List<DBInstanceTag> items;
 
-    public String getRequestId() {
-        return this.requestId;
-    }
+	public String getRequestId() {
+		return this.requestId;
+	}
 
-    public void setRequestId(String requestId) {
-        this.requestId = requestId;
-    }
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
 
-    public Integer getPageNumber() {
-        return this.pageNumber;
-    }
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
 
-    public void setPageNumber(Integer pageNumber) {
-        this.pageNumber = pageNumber;
-    }
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+	}
 
-    public Integer getPageRecordCount() {
-        return this.pageRecordCount;
-    }
+	public Integer getPageRecordCount() {
+		return this.pageRecordCount;
+	}
 
-    public void setPageRecordCount(Integer pageRecordCount) {
-        this.pageRecordCount = pageRecordCount;
-    }
+	public void setPageRecordCount(Integer pageRecordCount) {
+		this.pageRecordCount = pageRecordCount;
+	}
 
-    public Integer getTotalRecordCount() {
-        return this.totalRecordCount;
-    }
+	public Integer getTotalRecordCount() {
+		return this.totalRecordCount;
+	}
 
-    public void setTotalRecordCount(Integer totalRecordCount) {
-        this.totalRecordCount = totalRecordCount;
-    }
+	public void setTotalRecordCount(Integer totalRecordCount) {
+		this.totalRecordCount = totalRecordCount;
+	}
 
-    public List<DBInstanceTag> getItems() {
-        return this.items;
-    }
+	public List<DBInstanceTag> getItems() {
+		return this.items;
+	}
 
-    public void setItems(List<DBInstanceTag> items) {
-        this.items = items;
-    }
+	public void setItems(List<DBInstanceTag> items) {
+		this.items = items;
+	}
 
-    public static class DBInstanceTag {
+	public static class DBInstanceTag {
 
-        private String dBInstanceId;
+		private String dBInstanceId;
 
-        private List<Tag> tags;
+		private List<Tag> tags;
 
-        public String getDBInstanceId() {
-            return this.dBInstanceId;
-        }
+		public String getDBInstanceId() {
+			return this.dBInstanceId;
+		}
 
-        public void setDBInstanceId(String dBInstanceId) {
-            this.dBInstanceId = dBInstanceId;
-        }
+		public void setDBInstanceId(String dBInstanceId) {
+			this.dBInstanceId = dBInstanceId;
+		}
 
-        public List<Tag> getTags() {
-            return this.tags;
-        }
+		public List<Tag> getTags() {
+			return this.tags;
+		}
 
-        public void setTags(List<Tag> tags) {
-            this.tags = tags;
-        }
+		public void setTags(List<Tag> tags) {
+			this.tags = tags;
+		}
 
-        public static class Tag {
+		public static class Tag {
 
-            private String tagKey;
+			private String tagKey;
 
-            private String tagValue;
+			private String tagValue;
 
-            public String getTagKey() {
-                return this.tagKey;
-            }
+			public String getTagKey() {
+				return this.tagKey;
+			}
 
-            public void setTagKey(String tagKey) {
-                this.tagKey = tagKey;
-            }
+			public void setTagKey(String tagKey) {
+				this.tagKey = tagKey;
+			}
 
-            public String getTagValue() {
-                return this.tagValue;
-            }
+			public String getTagValue() {
+				return this.tagValue;
+			}
 
-            public void setTagValue(String tagValue) {
-                this.tagValue = tagValue;
-            }
-        }
-    }
+			public void setTagValue(String tagValue) {
+				this.tagValue = tagValue;
+			}
+		}
+	}
 
-    @Override
-    public DescribeDBInstanceByTagsResponse getInstance(UnmarshallerContext context) {
-        return DescribeDBInstanceByTagsResponseUnmarshaller.unmarshall(this, context);
-    }
+	@Override
+	public DescribeDBInstanceByTagsResponse getInstance(UnmarshallerContext context) {
+		return	DescribeDBInstanceByTagsResponseUnmarshaller.unmarshall(this, context);
+	}
 }

@@ -22,302 +22,303 @@ import com.aliyuncs.RpcAcsRequest;
 
 /**
  * @author auto create
+ * @version 
  */
 public class DescribeDBInstancesRequest extends RpcAcsRequest<DescribeDBInstancesResponse> {
+	
+	public DescribeDBInstancesRequest() {
+		super("Rds", "2014-08-15", "DescribeDBInstances", "rds");
+	}
 
-    public DescribeDBInstancesRequest() {
-        super("Rds", "2014-08-15", "DescribeDBInstances");
-    }
+	private Long ownerId;
 
-    private Long ownerId;
+	private String resourceOwnerAccount;
 
-    private String resourceOwnerAccount;
+	private Long resourceOwnerId;
 
-    private Long resourceOwnerId;
+	private String clientToken;
 
-    private String clientToken;
+	private String proxyId;
 
-    private String proxyId;
+	private String engine;
 
-    private String engine;
+	private String dBInstanceStatus;
 
-    private String dBInstanceStatus;
+	private String searchKey;
 
-    private String searchKey;
+	private String dBInstanceId;
 
-    private String dBInstanceId;
+	private String dBInstanceType;
 
-    private String dBInstanceType;
+	private Integer pageSize;
 
-    private Integer pageSize;
+	private Integer pageNumber;
 
-    private Integer pageNumber;
+	private String instanceNetworkType;
 
-    private String instanceNetworkType;
+	private String connectionMode;
 
-    private String connectionMode;
+	private String tag1key;
 
-    private String tag1key;
+	private String tag2key;
 
-    private String tag2key;
+	private String tag3key;
 
-    private String tag3key;
+	private String tag4key;
 
-    private String tag4key;
+	private String tag5key;
 
-    private String tag5key;
+	private String tag1value;
 
-    private String tag1value;
+	private String tag2value;
 
-    private String tag2value;
+	private String tag3value;
 
-    private String tag3value;
+	private String tag4value;
 
-    private String tag4value;
+	private String tag5value;
 
-    private String tag5value;
+	private String tags;
 
-    private String tags;
+	private String ownerAccount;
 
-    private String ownerAccount;
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
 
-    public Long getOwnerId() {
-        return this.ownerId;
-    }
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		putQueryParameter("OwnerId", ownerId);
+	}
 
-    public void setOwnerId(Long ownerId) {
-        this.ownerId = ownerId;
-        putQueryParameter("OwnerId", ownerId);
-    }
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
 
-    public String getResourceOwnerAccount() {
-        return this.resourceOwnerAccount;
-    }
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	}
 
-    public void setResourceOwnerAccount(String resourceOwnerAccount) {
-        this.resourceOwnerAccount = resourceOwnerAccount;
-        putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-    }
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
+	}
 
-    public Long getResourceOwnerId() {
-        return this.resourceOwnerId;
-    }
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		putQueryParameter("ResourceOwnerId", resourceOwnerId);
+	}
 
-    public void setResourceOwnerId(Long resourceOwnerId) {
-        this.resourceOwnerId = resourceOwnerId;
-        putQueryParameter("ResourceOwnerId", resourceOwnerId);
-    }
+	public String getClientToken() {
+		return this.clientToken;
+	}
 
-    public String getClientToken() {
-        return this.clientToken;
-    }
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		putQueryParameter("ClientToken", clientToken);
+	}
 
-    public void setClientToken(String clientToken) {
-        this.clientToken = clientToken;
-        putQueryParameter("ClientToken", clientToken);
-    }
+	public String getproxyId() {
+		return this.proxyId;
+	}
 
-    public String getproxyId() {
-        return this.proxyId;
-    }
-
-    public void setproxyId(String proxyId) {
-        this.proxyId = proxyId;
-        putQueryParameter("proxyId", proxyId);
-    }
-
-    public String getEngine() {
-        return this.engine;
-    }
-
-    public void setEngine(String engine) {
-        this.engine = engine;
-        putQueryParameter("Engine", engine);
-    }
-
-    public String getDBInstanceStatus() {
-        return this.dBInstanceStatus;
-    }
-
-    public void setDBInstanceStatus(String dBInstanceStatus) {
-        this.dBInstanceStatus = dBInstanceStatus;
-        putQueryParameter("DBInstanceStatus", dBInstanceStatus);
-    }
-
-    public String getSearchKey() {
-        return this.searchKey;
-    }
-
-    public void setSearchKey(String searchKey) {
-        this.searchKey = searchKey;
-        putQueryParameter("SearchKey", searchKey);
-    }
-
-    public String getDBInstanceId() {
-        return this.dBInstanceId;
-    }
-
-    public void setDBInstanceId(String dBInstanceId) {
-        this.dBInstanceId = dBInstanceId;
-        putQueryParameter("DBInstanceId", dBInstanceId);
-    }
-
-    public String getDBInstanceType() {
-        return this.dBInstanceType;
-    }
-
-    public void setDBInstanceType(String dBInstanceType) {
-        this.dBInstanceType = dBInstanceType;
-        putQueryParameter("DBInstanceType", dBInstanceType);
-    }
-
-    public Integer getPageSize() {
-        return this.pageSize;
-    }
-
-    public void setPageSize(Integer pageSize) {
-        this.pageSize = pageSize;
-        putQueryParameter("PageSize", pageSize);
-    }
-
-    public Integer getPageNumber() {
-        return this.pageNumber;
-    }
-
-    public void setPageNumber(Integer pageNumber) {
-        this.pageNumber = pageNumber;
-        putQueryParameter("PageNumber", pageNumber);
-    }
-
-    public String getInstanceNetworkType() {
-        return this.instanceNetworkType;
-    }
-
-    public void setInstanceNetworkType(String instanceNetworkType) {
-        this.instanceNetworkType = instanceNetworkType;
-        putQueryParameter("InstanceNetworkType", instanceNetworkType);
-    }
-
-    public String getConnectionMode() {
-        return this.connectionMode;
-    }
-
-    public void setConnectionMode(String connectionMode) {
-        this.connectionMode = connectionMode;
-        putQueryParameter("ConnectionMode", connectionMode);
-    }
-
-    public String getTag1key() {
-        return this.tag1key;
-    }
-
-    public void setTag1key(String tag1key) {
-        this.tag1key = tag1key;
-        putQueryParameter("Tag.1.key", tag1key);
-    }
-
-    public String getTag2key() {
-        return this.tag2key;
-    }
-
-    public void setTag2key(String tag2key) {
-        this.tag2key = tag2key;
-        putQueryParameter("Tag.2.key", tag2key);
-    }
-
-    public String getTag3key() {
-        return this.tag3key;
-    }
-
-    public void setTag3key(String tag3key) {
-        this.tag3key = tag3key;
-        putQueryParameter("Tag.3.key", tag3key);
-    }
-
-    public String getTag4key() {
-        return this.tag4key;
-    }
-
-    public void setTag4key(String tag4key) {
-        this.tag4key = tag4key;
-        putQueryParameter("Tag.4.key", tag4key);
-    }
-
-    public String getTag5key() {
-        return this.tag5key;
-    }
-
-    public void setTag5key(String tag5key) {
-        this.tag5key = tag5key;
-        putQueryParameter("Tag.5.key", tag5key);
-    }
-
-    public String getTag1value() {
-        return this.tag1value;
-    }
-
-    public void setTag1value(String tag1value) {
-        this.tag1value = tag1value;
-        putQueryParameter("Tag.1.value", tag1value);
-    }
-
-    public String getTag2value() {
-        return this.tag2value;
-    }
-
-    public void setTag2value(String tag2value) {
-        this.tag2value = tag2value;
-        putQueryParameter("Tag.2.value", tag2value);
-    }
-
-    public String getTag3value() {
-        return this.tag3value;
-    }
-
-    public void setTag3value(String tag3value) {
-        this.tag3value = tag3value;
-        putQueryParameter("Tag.3.value", tag3value);
-    }
-
-    public String getTag4value() {
-        return this.tag4value;
-    }
-
-    public void setTag4value(String tag4value) {
-        this.tag4value = tag4value;
-        putQueryParameter("Tag.4.value", tag4value);
-    }
-
-    public String getTag5value() {
-        return this.tag5value;
-    }
-
-    public void setTag5value(String tag5value) {
-        this.tag5value = tag5value;
-        putQueryParameter("Tag.5.value", tag5value);
-    }
-
-    public String getTags() {
-        return this.tags;
-    }
-
-    public void setTags(String tags) {
-        this.tags = tags;
-        putQueryParameter("Tags", tags);
-    }
-
-    public String getOwnerAccount() {
-        return this.ownerAccount;
-    }
-
-    public void setOwnerAccount(String ownerAccount) {
-        this.ownerAccount = ownerAccount;
-        putQueryParameter("OwnerAccount", ownerAccount);
-    }
-
-    @Override
-    public Class<DescribeDBInstancesResponse> getResponseClass() {
-        return DescribeDBInstancesResponse.class;
-    }
+	public void setproxyId(String proxyId) {
+		this.proxyId = proxyId;
+		putQueryParameter("proxyId", proxyId);
+	}
+
+	public String getEngine() {
+		return this.engine;
+	}
+
+	public void setEngine(String engine) {
+		this.engine = engine;
+		putQueryParameter("Engine", engine);
+	}
+
+	public String getDBInstanceStatus() {
+		return this.dBInstanceStatus;
+	}
+
+	public void setDBInstanceStatus(String dBInstanceStatus) {
+		this.dBInstanceStatus = dBInstanceStatus;
+		putQueryParameter("DBInstanceStatus", dBInstanceStatus);
+	}
+
+	public String getSearchKey() {
+		return this.searchKey;
+	}
+
+	public void setSearchKey(String searchKey) {
+		this.searchKey = searchKey;
+		putQueryParameter("SearchKey", searchKey);
+	}
+
+	public String getDBInstanceId() {
+		return this.dBInstanceId;
+	}
+
+	public void setDBInstanceId(String dBInstanceId) {
+		this.dBInstanceId = dBInstanceId;
+		putQueryParameter("DBInstanceId", dBInstanceId);
+	}
+
+	public String getDBInstanceType() {
+		return this.dBInstanceType;
+	}
+
+	public void setDBInstanceType(String dBInstanceType) {
+		this.dBInstanceType = dBInstanceType;
+		putQueryParameter("DBInstanceType", dBInstanceType);
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		putQueryParameter("PageSize", pageSize);
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		putQueryParameter("PageNumber", pageNumber);
+	}
+
+	public String getInstanceNetworkType() {
+		return this.instanceNetworkType;
+	}
+
+	public void setInstanceNetworkType(String instanceNetworkType) {
+		this.instanceNetworkType = instanceNetworkType;
+		putQueryParameter("InstanceNetworkType", instanceNetworkType);
+	}
+
+	public String getConnectionMode() {
+		return this.connectionMode;
+	}
+
+	public void setConnectionMode(String connectionMode) {
+		this.connectionMode = connectionMode;
+		putQueryParameter("ConnectionMode", connectionMode);
+	}
+
+	public String getTag1key() {
+		return this.tag1key;
+	}
+
+	public void setTag1key(String tag1key) {
+		this.tag1key = tag1key;
+		putQueryParameter("Tag.1.key", tag1key);
+	}
+
+	public String getTag2key() {
+		return this.tag2key;
+	}
+
+	public void setTag2key(String tag2key) {
+		this.tag2key = tag2key;
+		putQueryParameter("Tag.2.key", tag2key);
+	}
+
+	public String getTag3key() {
+		return this.tag3key;
+	}
+
+	public void setTag3key(String tag3key) {
+		this.tag3key = tag3key;
+		putQueryParameter("Tag.3.key", tag3key);
+	}
+
+	public String getTag4key() {
+		return this.tag4key;
+	}
+
+	public void setTag4key(String tag4key) {
+		this.tag4key = tag4key;
+		putQueryParameter("Tag.4.key", tag4key);
+	}
+
+	public String getTag5key() {
+		return this.tag5key;
+	}
+
+	public void setTag5key(String tag5key) {
+		this.tag5key = tag5key;
+		putQueryParameter("Tag.5.key", tag5key);
+	}
+
+	public String getTag1value() {
+		return this.tag1value;
+	}
+
+	public void setTag1value(String tag1value) {
+		this.tag1value = tag1value;
+		putQueryParameter("Tag.1.value", tag1value);
+	}
+
+	public String getTag2value() {
+		return this.tag2value;
+	}
+
+	public void setTag2value(String tag2value) {
+		this.tag2value = tag2value;
+		putQueryParameter("Tag.2.value", tag2value);
+	}
+
+	public String getTag3value() {
+		return this.tag3value;
+	}
+
+	public void setTag3value(String tag3value) {
+		this.tag3value = tag3value;
+		putQueryParameter("Tag.3.value", tag3value);
+	}
+
+	public String getTag4value() {
+		return this.tag4value;
+	}
+
+	public void setTag4value(String tag4value) {
+		this.tag4value = tag4value;
+		putQueryParameter("Tag.4.value", tag4value);
+	}
+
+	public String getTag5value() {
+		return this.tag5value;
+	}
+
+	public void setTag5value(String tag5value) {
+		this.tag5value = tag5value;
+		putQueryParameter("Tag.5.value", tag5value);
+	}
+
+	public String getTags() {
+		return this.tags;
+	}
+
+	public void setTags(String tags) {
+		this.tags = tags;
+		putQueryParameter("Tags", tags);
+	}
+
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		putQueryParameter("OwnerAccount", ownerAccount);
+	}
+
+	@Override
+	public Class<DescribeDBInstancesResponse> getResponseClass() {
+		return DescribeDBInstancesResponse.class;
+	}
 
 }

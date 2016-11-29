@@ -22,115 +22,116 @@ import com.aliyuncs.RpcAcsRequest;
 
 /**
  * @author auto create
+ * @version 
  */
 public class ModifySecurityIpsRequest extends RpcAcsRequest<ModifySecurityIpsResponse> {
+	
+	public ModifySecurityIpsRequest() {
+		super("Rds", "2014-08-15", "ModifySecurityIps", "rds");
+	}
 
-    public ModifySecurityIpsRequest() {
-        super("Rds", "2014-08-15", "ModifySecurityIps");
-    }
+	private Long ownerId;
 
-    private Long ownerId;
+	private String resourceOwnerAccount;
 
-    private String resourceOwnerAccount;
+	private Long resourceOwnerId;
 
-    private Long resourceOwnerId;
+	private String clientToken;
 
-    private String clientToken;
+	private String dBInstanceId;
 
-    private String dBInstanceId;
+	private String securityIps;
 
-    private String securityIps;
+	private String dBInstanceIPArrayName;
 
-    private String dBInstanceIPArrayName;
+	private String dBInstanceIPArrayAttribute;
 
-    private String dBInstanceIPArrayAttribute;
+	private String ownerAccount;
 
-    private String ownerAccount;
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
 
-    public Long getOwnerId() {
-        return this.ownerId;
-    }
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		putQueryParameter("OwnerId", ownerId);
+	}
 
-    public void setOwnerId(Long ownerId) {
-        this.ownerId = ownerId;
-        putQueryParameter("OwnerId", ownerId);
-    }
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
 
-    public String getResourceOwnerAccount() {
-        return this.resourceOwnerAccount;
-    }
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	}
 
-    public void setResourceOwnerAccount(String resourceOwnerAccount) {
-        this.resourceOwnerAccount = resourceOwnerAccount;
-        putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-    }
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
+	}
 
-    public Long getResourceOwnerId() {
-        return this.resourceOwnerId;
-    }
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		putQueryParameter("ResourceOwnerId", resourceOwnerId);
+	}
 
-    public void setResourceOwnerId(Long resourceOwnerId) {
-        this.resourceOwnerId = resourceOwnerId;
-        putQueryParameter("ResourceOwnerId", resourceOwnerId);
-    }
+	public String getClientToken() {
+		return this.clientToken;
+	}
 
-    public String getClientToken() {
-        return this.clientToken;
-    }
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		putQueryParameter("ClientToken", clientToken);
+	}
 
-    public void setClientToken(String clientToken) {
-        this.clientToken = clientToken;
-        putQueryParameter("ClientToken", clientToken);
-    }
+	public String getDBInstanceId() {
+		return this.dBInstanceId;
+	}
 
-    public String getDBInstanceId() {
-        return this.dBInstanceId;
-    }
+	public void setDBInstanceId(String dBInstanceId) {
+		this.dBInstanceId = dBInstanceId;
+		putQueryParameter("DBInstanceId", dBInstanceId);
+	}
 
-    public void setDBInstanceId(String dBInstanceId) {
-        this.dBInstanceId = dBInstanceId;
-        putQueryParameter("DBInstanceId", dBInstanceId);
-    }
+	public String getSecurityIps() {
+		return this.securityIps;
+	}
 
-    public String getSecurityIps() {
-        return this.securityIps;
-    }
+	public void setSecurityIps(String securityIps) {
+		this.securityIps = securityIps;
+		putQueryParameter("SecurityIps", securityIps);
+	}
 
-    public void setSecurityIps(String securityIps) {
-        this.securityIps = securityIps;
-        putQueryParameter("SecurityIps", securityIps);
-    }
+	public String getDBInstanceIPArrayName() {
+		return this.dBInstanceIPArrayName;
+	}
 
-    public String getDBInstanceIPArrayName() {
-        return this.dBInstanceIPArrayName;
-    }
+	public void setDBInstanceIPArrayName(String dBInstanceIPArrayName) {
+		this.dBInstanceIPArrayName = dBInstanceIPArrayName;
+		putQueryParameter("DBInstanceIPArrayName", dBInstanceIPArrayName);
+	}
 
-    public void setDBInstanceIPArrayName(String dBInstanceIPArrayName) {
-        this.dBInstanceIPArrayName = dBInstanceIPArrayName;
-        putQueryParameter("DBInstanceIPArrayName", dBInstanceIPArrayName);
-    }
+	public String getDBInstanceIPArrayAttribute() {
+		return this.dBInstanceIPArrayAttribute;
+	}
 
-    public String getDBInstanceIPArrayAttribute() {
-        return this.dBInstanceIPArrayAttribute;
-    }
+	public void setDBInstanceIPArrayAttribute(String dBInstanceIPArrayAttribute) {
+		this.dBInstanceIPArrayAttribute = dBInstanceIPArrayAttribute;
+		putQueryParameter("DBInstanceIPArrayAttribute", dBInstanceIPArrayAttribute);
+	}
 
-    public void setDBInstanceIPArrayAttribute(String dBInstanceIPArrayAttribute) {
-        this.dBInstanceIPArrayAttribute = dBInstanceIPArrayAttribute;
-        putQueryParameter("DBInstanceIPArrayAttribute", dBInstanceIPArrayAttribute);
-    }
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
 
-    public String getOwnerAccount() {
-        return this.ownerAccount;
-    }
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		putQueryParameter("OwnerAccount", ownerAccount);
+	}
 
-    public void setOwnerAccount(String ownerAccount) {
-        this.ownerAccount = ownerAccount;
-        putQueryParameter("OwnerAccount", ownerAccount);
-    }
-
-    @Override
-    public Class<ModifySecurityIpsResponse> getResponseClass() {
-        return ModifySecurityIpsResponse.class;
-    }
+	@Override
+	public Class<ModifySecurityIpsResponse> getResponseClass() {
+		return ModifySecurityIpsResponse.class;
+	}
 
 }

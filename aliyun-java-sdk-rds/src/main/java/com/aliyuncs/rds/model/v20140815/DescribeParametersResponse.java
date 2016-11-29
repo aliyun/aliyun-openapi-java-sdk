@@ -18,102 +18,102 @@
  */
 package com.aliyuncs.rds.model.v20140815;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.rds.transform.v20140815.DescribeParametersResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
-import java.util.List;
-
 /**
  * @author auto create
+ * @version 
  */
 public class DescribeParametersResponse extends AcsResponse {
 
-    private String requestId;
+	private String requestId;
 
-    private String engine;
+	private String engine;
 
-    private String engineVersion;
+	private String engineVersion;
 
-    private List<DBInstanceParameter> configParameters;
+	private List<DBInstanceParameter> configParameters;
 
-    private List<DBInstanceParameter> runningParameters;
+	private List<DBInstanceParameter> runningParameters;
 
-    public String getRequestId() {
-        return this.requestId;
-    }
+	public String getRequestId() {
+		return this.requestId;
+	}
 
-    public void setRequestId(String requestId) {
-        this.requestId = requestId;
-    }
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
 
-    public String getEngine() {
-        return this.engine;
-    }
+	public String getEngine() {
+		return this.engine;
+	}
 
-    public void setEngine(String engine) {
-        this.engine = engine;
-    }
+	public void setEngine(String engine) {
+		this.engine = engine;
+	}
 
-    public String getEngineVersion() {
-        return this.engineVersion;
-    }
+	public String getEngineVersion() {
+		return this.engineVersion;
+	}
 
-    public void setEngineVersion(String engineVersion) {
-        this.engineVersion = engineVersion;
-    }
+	public void setEngineVersion(String engineVersion) {
+		this.engineVersion = engineVersion;
+	}
 
-    public List<DBInstanceParameter> getConfigParameters() {
-        return this.configParameters;
-    }
+	public List<DBInstanceParameter> getConfigParameters() {
+		return this.configParameters;
+	}
 
-    public void setConfigParameters(List<DBInstanceParameter> configParameters) {
-        this.configParameters = configParameters;
-    }
+	public void setConfigParameters(List<DBInstanceParameter> configParameters) {
+		this.configParameters = configParameters;
+	}
 
-    public List<DBInstanceParameter> getRunningParameters() {
-        return this.runningParameters;
-    }
+	public List<DBInstanceParameter> getRunningParameters() {
+		return this.runningParameters;
+	}
 
-    public void setRunningParameters(List<DBInstanceParameter> runningParameters) {
-        this.runningParameters = runningParameters;
-    }
+	public void setRunningParameters(List<DBInstanceParameter> runningParameters) {
+		this.runningParameters = runningParameters;
+	}
 
-    public static class DBInstanceParameter {
+	public static class DBInstanceParameter {
 
-        private String parameterName;
+		private String parameterName;
 
-        private String parameterValue;
+		private String parameterValue;
 
-        private String parameterDescription;
+		private String parameterDescription;
 
-        public String getParameterName() {
-            return this.parameterName;
-        }
+		public String getParameterName() {
+			return this.parameterName;
+		}
 
-        public void setParameterName(String parameterName) {
-            this.parameterName = parameterName;
-        }
+		public void setParameterName(String parameterName) {
+			this.parameterName = parameterName;
+		}
 
-        public String getParameterValue() {
-            return this.parameterValue;
-        }
+		public String getParameterValue() {
+			return this.parameterValue;
+		}
 
-        public void setParameterValue(String parameterValue) {
-            this.parameterValue = parameterValue;
-        }
+		public void setParameterValue(String parameterValue) {
+			this.parameterValue = parameterValue;
+		}
 
-        public String getParameterDescription() {
-            return this.parameterDescription;
-        }
+		public String getParameterDescription() {
+			return this.parameterDescription;
+		}
 
-        public void setParameterDescription(String parameterDescription) {
-            this.parameterDescription = parameterDescription;
-        }
-    }
+		public void setParameterDescription(String parameterDescription) {
+			this.parameterDescription = parameterDescription;
+		}
+	}
 
-    @Override
-    public DescribeParametersResponse getInstance(UnmarshallerContext context) {
-        return DescribeParametersResponseUnmarshaller.unmarshall(this, context);
-    }
+	@Override
+	public DescribeParametersResponse getInstance(UnmarshallerContext context) {
+		return	DescribeParametersResponseUnmarshaller.unmarshall(this, context);
+	}
 }

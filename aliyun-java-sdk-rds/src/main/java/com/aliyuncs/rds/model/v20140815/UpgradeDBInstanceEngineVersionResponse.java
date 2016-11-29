@@ -24,31 +24,32 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
+ * @version 
  */
 public class UpgradeDBInstanceEngineVersionResponse extends AcsResponse {
 
-    private String requestId;
+	private String requestId;
 
-    private String taskId;
+	private String taskId;
 
-    public String getRequestId() {
-        return this.requestId;
-    }
+	public String getRequestId() {
+		return this.requestId;
+	}
 
-    public void setRequestId(String requestId) {
-        this.requestId = requestId;
-    }
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
 
-    public String getTaskId() {
-        return this.taskId;
-    }
+	public String getTaskId() {
+		return this.taskId;
+	}
 
-    public void setTaskId(String taskId) {
-        this.taskId = taskId;
-    }
+	public void setTaskId(String taskId) {
+		this.taskId = taskId;
+	}
 
-    @Override
-    public UpgradeDBInstanceEngineVersionResponse getInstance(UnmarshallerContext context) {
-        return UpgradeDBInstanceEngineVersionResponseUnmarshaller.unmarshall(this, context);
-    }
+	@Override
+	public UpgradeDBInstanceEngineVersionResponse getInstance(UnmarshallerContext context) {
+		return	UpgradeDBInstanceEngineVersionResponseUnmarshaller.unmarshall(this, context);
+	}
 }

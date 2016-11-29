@@ -21,19 +21,15 @@ package com.aliyuncs.rds.transform.v20140815;
 import com.aliyuncs.rds.model.v20140815.StartDBInstanceDiagnoseResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
+
 public class StartDBInstanceDiagnoseResponseUnmarshaller {
 
-    public static StartDBInstanceDiagnoseResponse unmarshall(
-            StartDBInstanceDiagnoseResponse startDBInstanceDiagnoseResponse,
-            UnmarshallerContext context) {
-
-        startDBInstanceDiagnoseResponse
-                .setRequestId(context.stringValue("StartDBInstanceDiagnoseResponse.RequestId"));
-        startDBInstanceDiagnoseResponse.setDBInstanceName(
-                context.stringValue("StartDBInstanceDiagnoseResponse.DBInstanceName"));
-        startDBInstanceDiagnoseResponse.setDBInstanceId(
-                context.stringValue("StartDBInstanceDiagnoseResponse.DBInstanceId"));
-
-        return startDBInstanceDiagnoseResponse;
-    }
+	public static StartDBInstanceDiagnoseResponse unmarshall(StartDBInstanceDiagnoseResponse startDBInstanceDiagnoseResponse, UnmarshallerContext context) {
+		
+		startDBInstanceDiagnoseResponse.setRequestId(context.stringValue("StartDBInstanceDiagnoseResponse.RequestId"));
+		startDBInstanceDiagnoseResponse.setDBInstanceName(context.stringValue("StartDBInstanceDiagnoseResponse.DBInstanceName"));
+		startDBInstanceDiagnoseResponse.setDBInstanceId(context.stringValue("StartDBInstanceDiagnoseResponse.DBInstanceId"));
+	 
+	 	return startDBInstanceDiagnoseResponse;
+	}
 }

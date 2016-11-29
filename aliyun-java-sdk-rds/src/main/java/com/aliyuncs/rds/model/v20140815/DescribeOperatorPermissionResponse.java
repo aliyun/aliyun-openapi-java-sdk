@@ -24,51 +24,52 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
+ * @version 
  */
 public class DescribeOperatorPermissionResponse extends AcsResponse {
 
-    private String requestId;
+	private String requestId;
 
-    private String privileges;
+	private String privileges;
 
-    private String createdTime;
+	private String createdTime;
 
-    private String expiredTime;
+	private String expiredTime;
 
-    public String getRequestId() {
-        return this.requestId;
-    }
+	public String getRequestId() {
+		return this.requestId;
+	}
 
-    public void setRequestId(String requestId) {
-        this.requestId = requestId;
-    }
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
 
-    public String getPrivileges() {
-        return this.privileges;
-    }
+	public String getPrivileges() {
+		return this.privileges;
+	}
 
-    public void setPrivileges(String privileges) {
-        this.privileges = privileges;
-    }
+	public void setPrivileges(String privileges) {
+		this.privileges = privileges;
+	}
 
-    public String getCreatedTime() {
-        return this.createdTime;
-    }
+	public String getCreatedTime() {
+		return this.createdTime;
+	}
 
-    public void setCreatedTime(String createdTime) {
-        this.createdTime = createdTime;
-    }
+	public void setCreatedTime(String createdTime) {
+		this.createdTime = createdTime;
+	}
 
-    public String getExpiredTime() {
-        return this.expiredTime;
-    }
+	public String getExpiredTime() {
+		return this.expiredTime;
+	}
 
-    public void setExpiredTime(String expiredTime) {
-        this.expiredTime = expiredTime;
-    }
+	public void setExpiredTime(String expiredTime) {
+		this.expiredTime = expiredTime;
+	}
 
-    @Override
-    public DescribeOperatorPermissionResponse getInstance(UnmarshallerContext context) {
-        return DescribeOperatorPermissionResponseUnmarshaller.unmarshall(this, context);
-    }
+	@Override
+	public DescribeOperatorPermissionResponse getInstance(UnmarshallerContext context) {
+		return	DescribeOperatorPermissionResponseUnmarshaller.unmarshall(this, context);
+	}
 }

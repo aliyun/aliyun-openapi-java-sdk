@@ -24,41 +24,42 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
+ * @version 
  */
 public class StartDBInstanceDiagnoseResponse extends AcsResponse {
 
-    private String requestId;
+	private String requestId;
 
-    private String dBInstanceName;
+	private String dBInstanceName;
 
-    private String dBInstanceId;
+	private String dBInstanceId;
 
-    public String getRequestId() {
-        return this.requestId;
-    }
+	public String getRequestId() {
+		return this.requestId;
+	}
 
-    public void setRequestId(String requestId) {
-        this.requestId = requestId;
-    }
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
 
-    public String getDBInstanceName() {
-        return this.dBInstanceName;
-    }
+	public String getDBInstanceName() {
+		return this.dBInstanceName;
+	}
 
-    public void setDBInstanceName(String dBInstanceName) {
-        this.dBInstanceName = dBInstanceName;
-    }
+	public void setDBInstanceName(String dBInstanceName) {
+		this.dBInstanceName = dBInstanceName;
+	}
 
-    public String getDBInstanceId() {
-        return this.dBInstanceId;
-    }
+	public String getDBInstanceId() {
+		return this.dBInstanceId;
+	}
 
-    public void setDBInstanceId(String dBInstanceId) {
-        this.dBInstanceId = dBInstanceId;
-    }
+	public void setDBInstanceId(String dBInstanceId) {
+		this.dBInstanceId = dBInstanceId;
+	}
 
-    @Override
-    public StartDBInstanceDiagnoseResponse getInstance(UnmarshallerContext context) {
-        return StartDBInstanceDiagnoseResponseUnmarshaller.unmarshall(this, context);
-    }
+	@Override
+	public StartDBInstanceDiagnoseResponse getInstance(UnmarshallerContext context) {
+		return	StartDBInstanceDiagnoseResponseUnmarshaller.unmarshall(this, context);
+	}
 }

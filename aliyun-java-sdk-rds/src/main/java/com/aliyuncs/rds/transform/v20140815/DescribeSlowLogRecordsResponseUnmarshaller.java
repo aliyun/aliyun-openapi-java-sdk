@@ -18,55 +18,40 @@
  */
 package com.aliyuncs.rds.transform.v20140815;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.rds.model.v20140815.DescribeSlowLogRecordsResponse;
 import com.aliyuncs.rds.model.v20140815.DescribeSlowLogRecordsResponse.SQLSlowRecord;
 import com.aliyuncs.transform.UnmarshallerContext;
 
-import java.util.ArrayList;
-import java.util.List;
 
 public class DescribeSlowLogRecordsResponseUnmarshaller {
 
-    public static DescribeSlowLogRecordsResponse unmarshall(
-            DescribeSlowLogRecordsResponse describeSlowLogRecordsResponse,
-            UnmarshallerContext context) {
+	public static DescribeSlowLogRecordsResponse unmarshall(DescribeSlowLogRecordsResponse describeSlowLogRecordsResponse, UnmarshallerContext context) {
+		
+		describeSlowLogRecordsResponse.setRequestId(context.stringValue("DescribeSlowLogRecordsResponse.RequestId"));
+		describeSlowLogRecordsResponse.setEngine(context.stringValue("DescribeSlowLogRecordsResponse.Engine"));
+		describeSlowLogRecordsResponse.setTotalRecordCount(context.integerValue("DescribeSlowLogRecordsResponse.TotalRecordCount"));
+		describeSlowLogRecordsResponse.setPageNumber(context.integerValue("DescribeSlowLogRecordsResponse.PageNumber"));
+		describeSlowLogRecordsResponse.setPageRecordCount(context.integerValue("DescribeSlowLogRecordsResponse.PageRecordCount"));
 
-        describeSlowLogRecordsResponse
-                .setRequestId(context.stringValue("DescribeSlowLogRecordsResponse.RequestId"));
-        describeSlowLogRecordsResponse
-                .setEngine(context.stringValue("DescribeSlowLogRecordsResponse.Engine"));
-        describeSlowLogRecordsResponse.setTotalRecordCount(
-                context.integerValue("DescribeSlowLogRecordsResponse.TotalRecordCount"));
-        describeSlowLogRecordsResponse
-                .setPageNumber(context.integerValue("DescribeSlowLogRecordsResponse.PageNumber"));
-        describeSlowLogRecordsResponse.setPageRecordCount(
-                context.integerValue("DescribeSlowLogRecordsResponse.PageRecordCount"));
+		List<SQLSlowRecord> items = new ArrayList<SQLSlowRecord>();
+		for (int i = 0; i < context.lengthValue("DescribeSlowLogRecordsResponse.Items.Length"); i++) {
+			SQLSlowRecord sQLSlowRecord = new SQLSlowRecord();
+			sQLSlowRecord.setHostAddress(context.stringValue("DescribeSlowLogRecordsResponse.Items["+ i +"].HostAddress"));
+			sQLSlowRecord.setDBName(context.stringValue("DescribeSlowLogRecordsResponse.Items["+ i +"].DBName"));
+			sQLSlowRecord.setSQLText(context.stringValue("DescribeSlowLogRecordsResponse.Items["+ i +"].SQLText"));
+			sQLSlowRecord.setQueryTimes(context.longValue("DescribeSlowLogRecordsResponse.Items["+ i +"].QueryTimes"));
+			sQLSlowRecord.setLockTimes(context.longValue("DescribeSlowLogRecordsResponse.Items["+ i +"].LockTimes"));
+			sQLSlowRecord.setParseRowCounts(context.longValue("DescribeSlowLogRecordsResponse.Items["+ i +"].ParseRowCounts"));
+			sQLSlowRecord.setReturnRowCounts(context.longValue("DescribeSlowLogRecordsResponse.Items["+ i +"].ReturnRowCounts"));
+			sQLSlowRecord.setExecutionStartTime(context.stringValue("DescribeSlowLogRecordsResponse.Items["+ i +"].ExecutionStartTime"));
 
-        List<SQLSlowRecord> items = new ArrayList<SQLSlowRecord>();
-        for (int i = 0;
-             i < context.lengthValue("DescribeSlowLogRecordsResponse.Items.Length"); i++) {
-            SQLSlowRecord sQLSlowRecord = new SQLSlowRecord();
-            sQLSlowRecord.setHostAddress(context.stringValue(
-                    "DescribeSlowLogRecordsResponse.Items[" + i + "].HostAddress"));
-            sQLSlowRecord.setDBName(
-                    context.stringValue("DescribeSlowLogRecordsResponse.Items[" + i + "].DBName"));
-            sQLSlowRecord.setSQLText(
-                    context.stringValue("DescribeSlowLogRecordsResponse.Items[" + i + "].SQLText"));
-            sQLSlowRecord.setQueryTimes(context.longValue(
-                    "DescribeSlowLogRecordsResponse.Items[" + i + "].QueryTimes"));
-            sQLSlowRecord.setLockTimes(
-                    context.longValue("DescribeSlowLogRecordsResponse.Items[" + i + "].LockTimes"));
-            sQLSlowRecord.setParseRowCounts(context.longValue(
-                    "DescribeSlowLogRecordsResponse.Items[" + i + "].ParseRowCounts"));
-            sQLSlowRecord.setReturnRowCounts(context.longValue(
-                    "DescribeSlowLogRecordsResponse.Items[" + i + "].ReturnRowCounts"));
-            sQLSlowRecord.setExecutionStartTime(context.stringValue(
-                    "DescribeSlowLogRecordsResponse.Items[" + i + "].ExecutionStartTime"));
-
-            items.add(sQLSlowRecord);
-        }
-        describeSlowLogRecordsResponse.setItems(items);
-
-        return describeSlowLogRecordsResponse;
-    }
+			items.add(sQLSlowRecord);
+		}
+		describeSlowLogRecordsResponse.setItems(items);
+	 
+	 	return describeSlowLogRecordsResponse;
+	}
 }

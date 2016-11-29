@@ -24,31 +24,32 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
+ * @version 
  */
 public class DescribeSQLCollectorPolicyResponse extends AcsResponse {
 
-    private String requestId;
+	private String requestId;
 
-    private String sQLCollectorStatus;
+	private String sQLCollectorStatus;
 
-    public String getRequestId() {
-        return this.requestId;
-    }
+	public String getRequestId() {
+		return this.requestId;
+	}
 
-    public void setRequestId(String requestId) {
-        this.requestId = requestId;
-    }
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
 
-    public String getSQLCollectorStatus() {
-        return this.sQLCollectorStatus;
-    }
+	public String getSQLCollectorStatus() {
+		return this.sQLCollectorStatus;
+	}
 
-    public void setSQLCollectorStatus(String sQLCollectorStatus) {
-        this.sQLCollectorStatus = sQLCollectorStatus;
-    }
+	public void setSQLCollectorStatus(String sQLCollectorStatus) {
+		this.sQLCollectorStatus = sQLCollectorStatus;
+	}
 
-    @Override
-    public DescribeSQLCollectorPolicyResponse getInstance(UnmarshallerContext context) {
-        return DescribeSQLCollectorPolicyResponseUnmarshaller.unmarshall(this, context);
-    }
+	@Override
+	public DescribeSQLCollectorPolicyResponse getInstance(UnmarshallerContext context) {
+		return	DescribeSQLCollectorPolicyResponseUnmarshaller.unmarshall(this, context);
+	}
 }

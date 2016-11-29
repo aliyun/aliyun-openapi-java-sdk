@@ -18,37 +18,31 @@
  */
 package com.aliyuncs.rds.transform.v20140815;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.rds.model.v20140815.DescribeDBInstanceTDEResponse;
 import com.aliyuncs.rds.model.v20140815.DescribeDBInstanceTDEResponse.Database;
 import com.aliyuncs.transform.UnmarshallerContext;
 
-import java.util.ArrayList;
-import java.util.List;
 
 public class DescribeDBInstanceTDEResponseUnmarshaller {
 
-    public static DescribeDBInstanceTDEResponse unmarshall(
-            DescribeDBInstanceTDEResponse describeDBInstanceTDEResponse,
-            UnmarshallerContext context) {
+	public static DescribeDBInstanceTDEResponse unmarshall(DescribeDBInstanceTDEResponse describeDBInstanceTDEResponse, UnmarshallerContext context) {
+		
+		describeDBInstanceTDEResponse.setRequestId(context.stringValue("DescribeDBInstanceTDEResponse.RequestId"));
+		describeDBInstanceTDEResponse.setTDEStatus(context.stringValue("DescribeDBInstanceTDEResponse.TDEStatus"));
 
-        describeDBInstanceTDEResponse
-                .setRequestId(context.stringValue("DescribeDBInstanceTDEResponse.RequestId"));
-        describeDBInstanceTDEResponse
-                .setTDEStatus(context.stringValue("DescribeDBInstanceTDEResponse.TDEStatus"));
+		List<Database> databases = new ArrayList<Database>();
+		for (int i = 0; i < context.lengthValue("DescribeDBInstanceTDEResponse.Databases.Length"); i++) {
+			Database database = new Database();
+			database.setDBName(context.stringValue("DescribeDBInstanceTDEResponse.Databases["+ i +"].DBName"));
+			database.setTDEStatus(context.stringValue("DescribeDBInstanceTDEResponse.Databases["+ i +"].TDEStatus"));
 
-        List<Database> databases = new ArrayList<Database>();
-        for (int i = 0;
-             i < context.lengthValue("DescribeDBInstanceTDEResponse.Databases.Length"); i++) {
-            Database database = new Database();
-            database.setDBName(context.stringValue(
-                    "DescribeDBInstanceTDEResponse.Databases[" + i + "].DBName"));
-            database.setTDEStatus(context.stringValue(
-                    "DescribeDBInstanceTDEResponse.Databases[" + i + "].TDEStatus"));
-
-            databases.add(database);
-        }
-        describeDBInstanceTDEResponse.setDatabases(databases);
-
-        return describeDBInstanceTDEResponse;
-    }
+			databases.add(database);
+		}
+		describeDBInstanceTDEResponse.setDatabases(databases);
+	 
+	 	return describeDBInstanceTDEResponse;
+	}
 }

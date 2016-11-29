@@ -18,145 +18,145 @@
  */
 package com.aliyuncs.rds.model.v20140815;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.rds.transform.v20140815.DescribeDBInstancePerformanceResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
-import java.util.List;
-
 /**
  * @author auto create
+ * @version 
  */
 public class DescribeDBInstancePerformanceResponse extends AcsResponse {
 
-    private String requestId;
+	private String requestId;
 
-    private String dBInstanceId;
+	private String dBInstanceId;
 
-    private String engine;
+	private String engine;
 
-    private String startTime;
+	private String startTime;
 
-    private String endTime;
+	private String endTime;
 
-    private List<PerformanceKey> performanceKeys;
+	private List<PerformanceKey> performanceKeys;
 
-    public String getRequestId() {
-        return this.requestId;
-    }
+	public String getRequestId() {
+		return this.requestId;
+	}
 
-    public void setRequestId(String requestId) {
-        this.requestId = requestId;
-    }
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
 
-    public String getDBInstanceId() {
-        return this.dBInstanceId;
-    }
+	public String getDBInstanceId() {
+		return this.dBInstanceId;
+	}
 
-    public void setDBInstanceId(String dBInstanceId) {
-        this.dBInstanceId = dBInstanceId;
-    }
+	public void setDBInstanceId(String dBInstanceId) {
+		this.dBInstanceId = dBInstanceId;
+	}
 
-    public String getEngine() {
-        return this.engine;
-    }
+	public String getEngine() {
+		return this.engine;
+	}
 
-    public void setEngine(String engine) {
-        this.engine = engine;
-    }
+	public void setEngine(String engine) {
+		this.engine = engine;
+	}
 
-    public String getStartTime() {
-        return this.startTime;
-    }
+	public String getStartTime() {
+		return this.startTime;
+	}
 
-    public void setStartTime(String startTime) {
-        this.startTime = startTime;
-    }
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+	}
 
-    public String getEndTime() {
-        return this.endTime;
-    }
+	public String getEndTime() {
+		return this.endTime;
+	}
 
-    public void setEndTime(String endTime) {
-        this.endTime = endTime;
-    }
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+	}
 
-    public List<PerformanceKey> getPerformanceKeys() {
-        return this.performanceKeys;
-    }
+	public List<PerformanceKey> getPerformanceKeys() {
+		return this.performanceKeys;
+	}
 
-    public void setPerformanceKeys(List<PerformanceKey> performanceKeys) {
-        this.performanceKeys = performanceKeys;
-    }
+	public void setPerformanceKeys(List<PerformanceKey> performanceKeys) {
+		this.performanceKeys = performanceKeys;
+	}
 
-    public static class PerformanceKey {
+	public static class PerformanceKey {
 
-        private String key;
+		private String key;
 
-        private String unit;
+		private String unit;
 
-        private String valueFormat;
+		private String valueFormat;
 
-        private List<PerformanceValue> values;
+		private List<PerformanceValue> values;
 
-        public String getKey() {
-            return this.key;
-        }
+		public String getKey() {
+			return this.key;
+		}
 
-        public void setKey(String key) {
-            this.key = key;
-        }
+		public void setKey(String key) {
+			this.key = key;
+		}
 
-        public String getUnit() {
-            return this.unit;
-        }
+		public String getUnit() {
+			return this.unit;
+		}
 
-        public void setUnit(String unit) {
-            this.unit = unit;
-        }
+		public void setUnit(String unit) {
+			this.unit = unit;
+		}
 
-        public String getValueFormat() {
-            return this.valueFormat;
-        }
+		public String getValueFormat() {
+			return this.valueFormat;
+		}
 
-        public void setValueFormat(String valueFormat) {
-            this.valueFormat = valueFormat;
-        }
+		public void setValueFormat(String valueFormat) {
+			this.valueFormat = valueFormat;
+		}
 
-        public List<PerformanceValue> getValues() {
-            return this.values;
-        }
+		public List<PerformanceValue> getValues() {
+			return this.values;
+		}
 
-        public void setValues(List<PerformanceValue> values) {
-            this.values = values;
-        }
+		public void setValues(List<PerformanceValue> values) {
+			this.values = values;
+		}
 
-        public static class PerformanceValue {
+		public static class PerformanceValue {
 
-            private String value;
+			private String value;
 
-            private String date;
+			private String date;
 
-            public String getValue() {
-                return this.value;
-            }
+			public String getValue() {
+				return this.value;
+			}
 
-            public void setValue(String value) {
-                this.value = value;
-            }
+			public void setValue(String value) {
+				this.value = value;
+			}
 
-            public String getDate() {
-                return this.date;
-            }
+			public String getDate() {
+				return this.date;
+			}
 
-            public void setDate(String date) {
-                this.date = date;
-            }
-        }
-    }
+			public void setDate(String date) {
+				this.date = date;
+			}
+		}
+	}
 
-    @Override
-    public DescribeDBInstancePerformanceResponse getInstance(UnmarshallerContext context) {
-        return DescribeDBInstancePerformanceResponseUnmarshaller.unmarshall(this, context);
-    }
+	@Override
+	public DescribeDBInstancePerformanceResponse getInstance(UnmarshallerContext context) {
+		return	DescribeDBInstancePerformanceResponseUnmarshaller.unmarshall(this, context);
+	}
 }

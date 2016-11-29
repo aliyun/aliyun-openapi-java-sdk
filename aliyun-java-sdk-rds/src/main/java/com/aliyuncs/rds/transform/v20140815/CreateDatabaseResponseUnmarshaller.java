@@ -21,14 +21,13 @@ package com.aliyuncs.rds.transform.v20140815;
 import com.aliyuncs.rds.model.v20140815.CreateDatabaseResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
+
 public class CreateDatabaseResponseUnmarshaller {
 
-    public static CreateDatabaseResponse unmarshall(CreateDatabaseResponse createDatabaseResponse,
-                                                    UnmarshallerContext context) {
-
-        createDatabaseResponse
-                .setRequestId(context.stringValue("CreateDatabaseResponse.RequestId"));
-
-        return createDatabaseResponse;
-    }
+	public static CreateDatabaseResponse unmarshall(CreateDatabaseResponse createDatabaseResponse, UnmarshallerContext context) {
+		
+		createDatabaseResponse.setRequestId(context.stringValue("CreateDatabaseResponse.RequestId"));
+	 
+	 	return createDatabaseResponse;
+	}
 }

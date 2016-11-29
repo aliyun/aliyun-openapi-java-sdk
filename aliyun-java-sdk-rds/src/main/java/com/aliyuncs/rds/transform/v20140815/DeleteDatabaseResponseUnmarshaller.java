@@ -21,14 +21,13 @@ package com.aliyuncs.rds.transform.v20140815;
 import com.aliyuncs.rds.model.v20140815.DeleteDatabaseResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
+
 public class DeleteDatabaseResponseUnmarshaller {
 
-    public static DeleteDatabaseResponse unmarshall(DeleteDatabaseResponse deleteDatabaseResponse,
-                                                    UnmarshallerContext context) {
-
-        deleteDatabaseResponse
-                .setRequestId(context.stringValue("DeleteDatabaseResponse.RequestId"));
-
-        return deleteDatabaseResponse;
-    }
+	public static DeleteDatabaseResponse unmarshall(DeleteDatabaseResponse deleteDatabaseResponse, UnmarshallerContext context) {
+		
+		deleteDatabaseResponse.setRequestId(context.stringValue("DeleteDatabaseResponse.RequestId"));
+	 
+	 	return deleteDatabaseResponse;
+	}
 }

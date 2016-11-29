@@ -18,142 +18,142 @@
  */
 package com.aliyuncs.rds.model.v20140815;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.rds.transform.v20140815.DescribeDBInstanceHAConfigResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
-import java.util.List;
-
 /**
  * @author auto create
+ * @version 
  */
 public class DescribeDBInstanceHAConfigResponse extends AcsResponse {
 
-    private String requestId;
+	private String requestId;
 
-    private String dBInstanceId;
+	private String dBInstanceId;
 
-    private String syncMode;
+	private String syncMode;
 
-    private String hAMode;
+	private String hAMode;
 
-    private List<NodeInfo> hostInstanceInfos;
+	private List<NodeInfo> hostInstanceInfos;
 
-    public String getRequestId() {
-        return this.requestId;
-    }
+	public String getRequestId() {
+		return this.requestId;
+	}
 
-    public void setRequestId(String requestId) {
-        this.requestId = requestId;
-    }
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
 
-    public String getDBInstanceId() {
-        return this.dBInstanceId;
-    }
+	public String getDBInstanceId() {
+		return this.dBInstanceId;
+	}
 
-    public void setDBInstanceId(String dBInstanceId) {
-        this.dBInstanceId = dBInstanceId;
-    }
+	public void setDBInstanceId(String dBInstanceId) {
+		this.dBInstanceId = dBInstanceId;
+	}
 
-    public String getSyncMode() {
-        return this.syncMode;
-    }
+	public String getSyncMode() {
+		return this.syncMode;
+	}
 
-    public void setSyncMode(String syncMode) {
-        this.syncMode = syncMode;
-    }
+	public void setSyncMode(String syncMode) {
+		this.syncMode = syncMode;
+	}
 
-    public String getHAMode() {
-        return this.hAMode;
-    }
+	public String getHAMode() {
+		return this.hAMode;
+	}
 
-    public void setHAMode(String hAMode) {
-        this.hAMode = hAMode;
-    }
+	public void setHAMode(String hAMode) {
+		this.hAMode = hAMode;
+	}
 
-    public List<NodeInfo> getHostInstanceInfos() {
-        return this.hostInstanceInfos;
-    }
+	public List<NodeInfo> getHostInstanceInfos() {
+		return this.hostInstanceInfos;
+	}
 
-    public void setHostInstanceInfos(List<NodeInfo> hostInstanceInfos) {
-        this.hostInstanceInfos = hostInstanceInfos;
-    }
+	public void setHostInstanceInfos(List<NodeInfo> hostInstanceInfos) {
+		this.hostInstanceInfos = hostInstanceInfos;
+	}
 
-    public static class NodeInfo {
+	public static class NodeInfo {
 
-        private String nodeId;
+		private String nodeId;
 
-        private String regionId;
+		private String regionId;
 
-        private String logSyncTime;
+		private String logSyncTime;
 
-        private String dataSyncTime;
+		private String dataSyncTime;
 
-        private String nodeType;
+		private String nodeType;
 
-        private String zoneId;
+		private String zoneId;
 
-        private String syncStatus;
+		private String syncStatus;
 
-        public String getNodeId() {
-            return this.nodeId;
-        }
+		public String getNodeId() {
+			return this.nodeId;
+		}
 
-        public void setNodeId(String nodeId) {
-            this.nodeId = nodeId;
-        }
+		public void setNodeId(String nodeId) {
+			this.nodeId = nodeId;
+		}
 
-        public String getRegionId() {
-            return this.regionId;
-        }
+		public String getRegionId() {
+			return this.regionId;
+		}
 
-        public void setRegionId(String regionId) {
-            this.regionId = regionId;
-        }
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
+		}
 
-        public String getLogSyncTime() {
-            return this.logSyncTime;
-        }
+		public String getLogSyncTime() {
+			return this.logSyncTime;
+		}
 
-        public void setLogSyncTime(String logSyncTime) {
-            this.logSyncTime = logSyncTime;
-        }
+		public void setLogSyncTime(String logSyncTime) {
+			this.logSyncTime = logSyncTime;
+		}
 
-        public String getDataSyncTime() {
-            return this.dataSyncTime;
-        }
+		public String getDataSyncTime() {
+			return this.dataSyncTime;
+		}
 
-        public void setDataSyncTime(String dataSyncTime) {
-            this.dataSyncTime = dataSyncTime;
-        }
+		public void setDataSyncTime(String dataSyncTime) {
+			this.dataSyncTime = dataSyncTime;
+		}
 
-        public String getNodeType() {
-            return this.nodeType;
-        }
+		public String getNodeType() {
+			return this.nodeType;
+		}
 
-        public void setNodeType(String nodeType) {
-            this.nodeType = nodeType;
-        }
+		public void setNodeType(String nodeType) {
+			this.nodeType = nodeType;
+		}
 
-        public String getZoneId() {
-            return this.zoneId;
-        }
+		public String getZoneId() {
+			return this.zoneId;
+		}
 
-        public void setZoneId(String zoneId) {
-            this.zoneId = zoneId;
-        }
+		public void setZoneId(String zoneId) {
+			this.zoneId = zoneId;
+		}
 
-        public String getSyncStatus() {
-            return this.syncStatus;
-        }
+		public String getSyncStatus() {
+			return this.syncStatus;
+		}
 
-        public void setSyncStatus(String syncStatus) {
-            this.syncStatus = syncStatus;
-        }
-    }
+		public void setSyncStatus(String syncStatus) {
+			this.syncStatus = syncStatus;
+		}
+	}
 
-    @Override
-    public DescribeDBInstanceHAConfigResponse getInstance(UnmarshallerContext context) {
-        return DescribeDBInstanceHAConfigResponseUnmarshaller.unmarshall(this, context);
-    }
+	@Override
+	public DescribeDBInstanceHAConfigResponse getInstance(UnmarshallerContext context) {
+		return	DescribeDBInstanceHAConfigResponseUnmarshaller.unmarshall(this, context);
+	}
 }

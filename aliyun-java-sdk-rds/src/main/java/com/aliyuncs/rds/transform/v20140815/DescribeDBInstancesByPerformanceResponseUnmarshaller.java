@@ -18,50 +18,37 @@
  */
 package com.aliyuncs.rds.transform.v20140815;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.rds.model.v20140815.DescribeDBInstancesByPerformanceResponse;
 import com.aliyuncs.rds.model.v20140815.DescribeDBInstancesByPerformanceResponse.DBInstancePerformance;
 import com.aliyuncs.transform.UnmarshallerContext;
 
-import java.util.ArrayList;
-import java.util.List;
 
 public class DescribeDBInstancesByPerformanceResponseUnmarshaller {
 
-    public static DescribeDBInstancesByPerformanceResponse unmarshall(
-            DescribeDBInstancesByPerformanceResponse describeDBInstancesByPerformanceResponse,
-            UnmarshallerContext context) {
+	public static DescribeDBInstancesByPerformanceResponse unmarshall(DescribeDBInstancesByPerformanceResponse describeDBInstancesByPerformanceResponse, UnmarshallerContext context) {
+		
+		describeDBInstancesByPerformanceResponse.setRequestId(context.stringValue("DescribeDBInstancesByPerformanceResponse.RequestId"));
+		describeDBInstancesByPerformanceResponse.setPageNumber(context.integerValue("DescribeDBInstancesByPerformanceResponse.PageNumber"));
+		describeDBInstancesByPerformanceResponse.setTotalRecordCount(context.integerValue("DescribeDBInstancesByPerformanceResponse.TotalRecordCount"));
+		describeDBInstancesByPerformanceResponse.setPageRecordCount(context.integerValue("DescribeDBInstancesByPerformanceResponse.PageRecordCount"));
 
-        describeDBInstancesByPerformanceResponse.setRequestId(
-                context.stringValue("DescribeDBInstancesByPerformanceResponse.RequestId"));
-        describeDBInstancesByPerformanceResponse.setPageNumber(
-                context.integerValue("DescribeDBInstancesByPerformanceResponse.PageNumber"));
-        describeDBInstancesByPerformanceResponse.setTotalRecordCount(
-                context.integerValue("DescribeDBInstancesByPerformanceResponse.TotalRecordCount"));
-        describeDBInstancesByPerformanceResponse.setPageRecordCount(
-                context.integerValue("DescribeDBInstancesByPerformanceResponse.PageRecordCount"));
+		List<DBInstancePerformance> items = new ArrayList<DBInstancePerformance>();
+		for (int i = 0; i < context.lengthValue("DescribeDBInstancesByPerformanceResponse.Items.Length"); i++) {
+			DBInstancePerformance dBInstancePerformance = new DBInstancePerformance();
+			dBInstancePerformance.setCPUUsage(context.stringValue("DescribeDBInstancesByPerformanceResponse.Items["+ i +"].CPUUsage"));
+			dBInstancePerformance.setIOPSUsage(context.stringValue("DescribeDBInstancesByPerformanceResponse.Items["+ i +"].IOPSUsage"));
+			dBInstancePerformance.setDiskUsage(context.stringValue("DescribeDBInstancesByPerformanceResponse.Items["+ i +"].DiskUsage"));
+			dBInstancePerformance.setSessionUsage(context.stringValue("DescribeDBInstancesByPerformanceResponse.Items["+ i +"].SessionUsage"));
+			dBInstancePerformance.setDBInstanceId(context.stringValue("DescribeDBInstancesByPerformanceResponse.Items["+ i +"].DBInstanceId"));
+			dBInstancePerformance.setDBInstanceDescription(context.stringValue("DescribeDBInstancesByPerformanceResponse.Items["+ i +"].DBInstanceDescription"));
 
-        List<DBInstancePerformance> items = new ArrayList<DBInstancePerformance>();
-        for (int i = 0; i < context
-                .lengthValue("DescribeDBInstancesByPerformanceResponse.Items.Length"); i++) {
-            DBInstancePerformance dBInstancePerformance = new DBInstancePerformance();
-            dBInstancePerformance.setCPUUsage(context.stringValue(
-                    "DescribeDBInstancesByPerformanceResponse.Items[" + i + "].CPUUsage"));
-            dBInstancePerformance.setIOPSUsage(context.stringValue(
-                    "DescribeDBInstancesByPerformanceResponse.Items[" + i + "].IOPSUsage"));
-            dBInstancePerformance.setDiskUsage(context.stringValue(
-                    "DescribeDBInstancesByPerformanceResponse.Items[" + i + "].DiskUsage"));
-            dBInstancePerformance.setSessionUsage(context.stringValue(
-                    "DescribeDBInstancesByPerformanceResponse.Items[" + i + "].SessionUsage"));
-            dBInstancePerformance.setDBInstanceId(context.stringValue(
-                    "DescribeDBInstancesByPerformanceResponse.Items[" + i + "].DBInstanceId"));
-            dBInstancePerformance.setDBInstanceDescription(context.stringValue(
-                    "DescribeDBInstancesByPerformanceResponse.Items[" + i
-                            + "].DBInstanceDescription"));
-
-            items.add(dBInstancePerformance);
-        }
-        describeDBInstancesByPerformanceResponse.setItems(items);
-
-        return describeDBInstancesByPerformanceResponse;
-    }
+			items.add(dBInstancePerformance);
+		}
+		describeDBInstancesByPerformanceResponse.setItems(items);
+	 
+	 	return describeDBInstancesByPerformanceResponse;
+	}
 }

@@ -24,31 +24,32 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
+ * @version 
  */
 public class DescribeDBInstanceMonitorResponse extends AcsResponse {
 
-    private String requestId;
+	private String requestId;
 
-    private String period;
+	private String period;
 
-    public String getRequestId() {
-        return this.requestId;
-    }
+	public String getRequestId() {
+		return this.requestId;
+	}
 
-    public void setRequestId(String requestId) {
-        this.requestId = requestId;
-    }
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
 
-    public String getPeriod() {
-        return this.period;
-    }
+	public String getPeriod() {
+		return this.period;
+	}
 
-    public void setPeriod(String period) {
-        this.period = period;
-    }
+	public void setPeriod(String period) {
+		this.period = period;
+	}
 
-    @Override
-    public DescribeDBInstanceMonitorResponse getInstance(UnmarshallerContext context) {
-        return DescribeDBInstanceMonitorResponseUnmarshaller.unmarshall(this, context);
-    }
+	@Override
+	public DescribeDBInstanceMonitorResponse getInstance(UnmarshallerContext context) {
+		return	DescribeDBInstanceMonitorResponseUnmarshaller.unmarshall(this, context);
+	}
 }

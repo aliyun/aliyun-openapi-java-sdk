@@ -22,115 +22,116 @@ import com.aliyuncs.RpcAcsRequest;
 
 /**
  * @author auto create
+ * @version 
  */
 public class ModifyDBInstanceSpecRequest extends RpcAcsRequest<ModifyDBInstanceSpecResponse> {
+	
+	public ModifyDBInstanceSpecRequest() {
+		super("Rds", "2014-08-15", "ModifyDBInstanceSpec", "rds");
+	}
 
-    public ModifyDBInstanceSpecRequest() {
-        super("Rds", "2014-08-15", "ModifyDBInstanceSpec");
-    }
+	private Long ownerId;
 
-    private Long ownerId;
+	private String resourceOwnerAccount;
 
-    private String resourceOwnerAccount;
+	private Long resourceOwnerId;
 
-    private Long resourceOwnerId;
+	private String clientToken;
 
-    private String clientToken;
+	private String dBInstanceId;
 
-    private String dBInstanceId;
+	private String dBInstanceClass;
 
-    private String dBInstanceClass;
+	private Integer dBInstanceStorage;
 
-    private Integer dBInstanceStorage;
+	private String payType;
 
-    private String payType;
+	private String ownerAccount;
 
-    private String ownerAccount;
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
 
-    public Long getOwnerId() {
-        return this.ownerId;
-    }
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		putQueryParameter("OwnerId", ownerId);
+	}
 
-    public void setOwnerId(Long ownerId) {
-        this.ownerId = ownerId;
-        putQueryParameter("OwnerId", ownerId);
-    }
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
 
-    public String getResourceOwnerAccount() {
-        return this.resourceOwnerAccount;
-    }
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	}
 
-    public void setResourceOwnerAccount(String resourceOwnerAccount) {
-        this.resourceOwnerAccount = resourceOwnerAccount;
-        putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-    }
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
+	}
 
-    public Long getResourceOwnerId() {
-        return this.resourceOwnerId;
-    }
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		putQueryParameter("ResourceOwnerId", resourceOwnerId);
+	}
 
-    public void setResourceOwnerId(Long resourceOwnerId) {
-        this.resourceOwnerId = resourceOwnerId;
-        putQueryParameter("ResourceOwnerId", resourceOwnerId);
-    }
+	public String getClientToken() {
+		return this.clientToken;
+	}
 
-    public String getClientToken() {
-        return this.clientToken;
-    }
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		putQueryParameter("ClientToken", clientToken);
+	}
 
-    public void setClientToken(String clientToken) {
-        this.clientToken = clientToken;
-        putQueryParameter("ClientToken", clientToken);
-    }
+	public String getDBInstanceId() {
+		return this.dBInstanceId;
+	}
 
-    public String getDBInstanceId() {
-        return this.dBInstanceId;
-    }
+	public void setDBInstanceId(String dBInstanceId) {
+		this.dBInstanceId = dBInstanceId;
+		putQueryParameter("DBInstanceId", dBInstanceId);
+	}
 
-    public void setDBInstanceId(String dBInstanceId) {
-        this.dBInstanceId = dBInstanceId;
-        putQueryParameter("DBInstanceId", dBInstanceId);
-    }
+	public String getDBInstanceClass() {
+		return this.dBInstanceClass;
+	}
 
-    public String getDBInstanceClass() {
-        return this.dBInstanceClass;
-    }
+	public void setDBInstanceClass(String dBInstanceClass) {
+		this.dBInstanceClass = dBInstanceClass;
+		putQueryParameter("DBInstanceClass", dBInstanceClass);
+	}
 
-    public void setDBInstanceClass(String dBInstanceClass) {
-        this.dBInstanceClass = dBInstanceClass;
-        putQueryParameter("DBInstanceClass", dBInstanceClass);
-    }
+	public Integer getDBInstanceStorage() {
+		return this.dBInstanceStorage;
+	}
 
-    public Integer getDBInstanceStorage() {
-        return this.dBInstanceStorage;
-    }
+	public void setDBInstanceStorage(Integer dBInstanceStorage) {
+		this.dBInstanceStorage = dBInstanceStorage;
+		putQueryParameter("DBInstanceStorage", dBInstanceStorage);
+	}
 
-    public void setDBInstanceStorage(Integer dBInstanceStorage) {
-        this.dBInstanceStorage = dBInstanceStorage;
-        putQueryParameter("DBInstanceStorage", dBInstanceStorage);
-    }
+	public String getPayType() {
+		return this.payType;
+	}
 
-    public String getPayType() {
-        return this.payType;
-    }
+	public void setPayType(String payType) {
+		this.payType = payType;
+		putQueryParameter("PayType", payType);
+	}
 
-    public void setPayType(String payType) {
-        this.payType = payType;
-        putQueryParameter("PayType", payType);
-    }
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
 
-    public String getOwnerAccount() {
-        return this.ownerAccount;
-    }
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		putQueryParameter("OwnerAccount", ownerAccount);
+	}
 
-    public void setOwnerAccount(String ownerAccount) {
-        this.ownerAccount = ownerAccount;
-        putQueryParameter("OwnerAccount", ownerAccount);
-    }
-
-    @Override
-    public Class<ModifyDBInstanceSpecResponse> getResponseClass() {
-        return ModifyDBInstanceSpecResponse.class;
-    }
+	@Override
+	public Class<ModifyDBInstanceSpecResponse> getResponseClass() {
+		return ModifyDBInstanceSpecResponse.class;
+	}
 
 }

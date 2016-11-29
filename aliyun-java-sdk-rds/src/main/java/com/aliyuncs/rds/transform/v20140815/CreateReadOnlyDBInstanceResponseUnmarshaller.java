@@ -21,23 +21,17 @@ package com.aliyuncs.rds.transform.v20140815;
 import com.aliyuncs.rds.model.v20140815.CreateReadOnlyDBInstanceResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
+
 public class CreateReadOnlyDBInstanceResponseUnmarshaller {
 
-    public static CreateReadOnlyDBInstanceResponse unmarshall(
-            CreateReadOnlyDBInstanceResponse createReadOnlyDBInstanceResponse,
-            UnmarshallerContext context) {
-
-        createReadOnlyDBInstanceResponse
-                .setRequestId(context.stringValue("CreateReadOnlyDBInstanceResponse.RequestId"));
-        createReadOnlyDBInstanceResponse.setDBInstanceId(
-                context.stringValue("CreateReadOnlyDBInstanceResponse.DBInstanceId"));
-        createReadOnlyDBInstanceResponse
-                .setOrderId(context.stringValue("CreateReadOnlyDBInstanceResponse.OrderId"));
-        createReadOnlyDBInstanceResponse.setConnectionString(
-                context.stringValue("CreateReadOnlyDBInstanceResponse.ConnectionString"));
-        createReadOnlyDBInstanceResponse
-                .setPort(context.stringValue("CreateReadOnlyDBInstanceResponse.Port"));
-
-        return createReadOnlyDBInstanceResponse;
-    }
+	public static CreateReadOnlyDBInstanceResponse unmarshall(CreateReadOnlyDBInstanceResponse createReadOnlyDBInstanceResponse, UnmarshallerContext context) {
+		
+		createReadOnlyDBInstanceResponse.setRequestId(context.stringValue("CreateReadOnlyDBInstanceResponse.RequestId"));
+		createReadOnlyDBInstanceResponse.setDBInstanceId(context.stringValue("CreateReadOnlyDBInstanceResponse.DBInstanceId"));
+		createReadOnlyDBInstanceResponse.setOrderId(context.stringValue("CreateReadOnlyDBInstanceResponse.OrderId"));
+		createReadOnlyDBInstanceResponse.setConnectionString(context.stringValue("CreateReadOnlyDBInstanceResponse.ConnectionString"));
+		createReadOnlyDBInstanceResponse.setPort(context.stringValue("CreateReadOnlyDBInstanceResponse.Port"));
+	 
+	 	return createReadOnlyDBInstanceResponse;
+	}
 }

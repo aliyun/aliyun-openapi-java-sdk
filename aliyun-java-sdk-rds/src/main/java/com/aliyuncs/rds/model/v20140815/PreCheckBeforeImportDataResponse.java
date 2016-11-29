@@ -24,31 +24,32 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
+ * @version 
  */
 public class PreCheckBeforeImportDataResponse extends AcsResponse {
 
-    private String requestId;
+	private String requestId;
 
-    private String preCheckId;
+	private String preCheckId;
 
-    public String getRequestId() {
-        return this.requestId;
-    }
+	public String getRequestId() {
+		return this.requestId;
+	}
 
-    public void setRequestId(String requestId) {
-        this.requestId = requestId;
-    }
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
 
-    public String getPreCheckId() {
-        return this.preCheckId;
-    }
+	public String getPreCheckId() {
+		return this.preCheckId;
+	}
 
-    public void setPreCheckId(String preCheckId) {
-        this.preCheckId = preCheckId;
-    }
+	public void setPreCheckId(String preCheckId) {
+		this.preCheckId = preCheckId;
+	}
 
-    @Override
-    public PreCheckBeforeImportDataResponse getInstance(UnmarshallerContext context) {
-        return PreCheckBeforeImportDataResponseUnmarshaller.unmarshall(this, context);
-    }
+	@Override
+	public PreCheckBeforeImportDataResponse getInstance(UnmarshallerContext context) {
+		return	PreCheckBeforeImportDataResponseUnmarshaller.unmarshall(this, context);
+	}
 }

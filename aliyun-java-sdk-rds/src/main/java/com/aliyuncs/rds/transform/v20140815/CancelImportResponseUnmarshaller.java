@@ -21,13 +21,13 @@ package com.aliyuncs.rds.transform.v20140815;
 import com.aliyuncs.rds.model.v20140815.CancelImportResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
+
 public class CancelImportResponseUnmarshaller {
 
-    public static CancelImportResponse unmarshall(CancelImportResponse cancelImportResponse,
-                                                  UnmarshallerContext context) {
-
-        cancelImportResponse.setRequestId(context.stringValue("CancelImportResponse.RequestId"));
-
-        return cancelImportResponse;
-    }
+	public static CancelImportResponse unmarshall(CancelImportResponse cancelImportResponse, UnmarshallerContext context) {
+		
+		cancelImportResponse.setRequestId(context.stringValue("CancelImportResponse.RequestId"));
+	 
+	 	return cancelImportResponse;
+	}
 }

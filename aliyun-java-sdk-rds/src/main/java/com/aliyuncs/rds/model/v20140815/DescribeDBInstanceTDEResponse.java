@@ -18,72 +18,72 @@
  */
 package com.aliyuncs.rds.model.v20140815;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.rds.transform.v20140815.DescribeDBInstanceTDEResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
-import java.util.List;
-
 /**
  * @author auto create
+ * @version 
  */
 public class DescribeDBInstanceTDEResponse extends AcsResponse {
 
-    private String requestId;
+	private String requestId;
 
-    private String tDEStatus;
+	private String tDEStatus;
 
-    private List<Database> databases;
+	private List<Database> databases;
 
-    public String getRequestId() {
-        return this.requestId;
-    }
+	public String getRequestId() {
+		return this.requestId;
+	}
 
-    public void setRequestId(String requestId) {
-        this.requestId = requestId;
-    }
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
 
-    public String getTDEStatus() {
-        return this.tDEStatus;
-    }
+	public String getTDEStatus() {
+		return this.tDEStatus;
+	}
 
-    public void setTDEStatus(String tDEStatus) {
-        this.tDEStatus = tDEStatus;
-    }
+	public void setTDEStatus(String tDEStatus) {
+		this.tDEStatus = tDEStatus;
+	}
 
-    public List<Database> getDatabases() {
-        return this.databases;
-    }
+	public List<Database> getDatabases() {
+		return this.databases;
+	}
 
-    public void setDatabases(List<Database> databases) {
-        this.databases = databases;
-    }
+	public void setDatabases(List<Database> databases) {
+		this.databases = databases;
+	}
 
-    public static class Database {
+	public static class Database {
 
-        private String dBName;
+		private String dBName;
 
-        private String tDEStatus;
+		private String tDEStatus;
 
-        public String getDBName() {
-            return this.dBName;
-        }
+		public String getDBName() {
+			return this.dBName;
+		}
 
-        public void setDBName(String dBName) {
-            this.dBName = dBName;
-        }
+		public void setDBName(String dBName) {
+			this.dBName = dBName;
+		}
 
-        public String getTDEStatus() {
-            return this.tDEStatus;
-        }
+		public String getTDEStatus() {
+			return this.tDEStatus;
+		}
 
-        public void setTDEStatus(String tDEStatus) {
-            this.tDEStatus = tDEStatus;
-        }
-    }
+		public void setTDEStatus(String tDEStatus) {
+			this.tDEStatus = tDEStatus;
+		}
+	}
 
-    @Override
-    public DescribeDBInstanceTDEResponse getInstance(UnmarshallerContext context) {
-        return DescribeDBInstanceTDEResponseUnmarshaller.unmarshall(this, context);
-    }
+	@Override
+	public DescribeDBInstanceTDEResponse getInstance(UnmarshallerContext context) {
+		return	DescribeDBInstanceTDEResponseUnmarshaller.unmarshall(this, context);
+	}
 }

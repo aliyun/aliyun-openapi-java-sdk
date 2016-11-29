@@ -21,14 +21,13 @@ package com.aliyuncs.rds.transform.v20140815;
 import com.aliyuncs.rds.model.v20140815.SwitchDBInstanceHAResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
+
 public class SwitchDBInstanceHAResponseUnmarshaller {
 
-    public static SwitchDBInstanceHAResponse unmarshall(
-            SwitchDBInstanceHAResponse switchDBInstanceHAResponse, UnmarshallerContext context) {
-
-        switchDBInstanceHAResponse
-                .setRequestId(context.stringValue("SwitchDBInstanceHAResponse.RequestId"));
-
-        return switchDBInstanceHAResponse;
-    }
+	public static SwitchDBInstanceHAResponse unmarshall(SwitchDBInstanceHAResponse switchDBInstanceHAResponse, UnmarshallerContext context) {
+		
+		switchDBInstanceHAResponse.setRequestId(context.stringValue("SwitchDBInstanceHAResponse.RequestId"));
+	 
+	 	return switchDBInstanceHAResponse;
+	}
 }

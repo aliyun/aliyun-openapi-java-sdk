@@ -21,23 +21,17 @@ package com.aliyuncs.rds.transform.v20140815;
 import com.aliyuncs.rds.model.v20140815.DescribeDBInstanceSSLResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
+
 public class DescribeDBInstanceSSLResponseUnmarshaller {
 
-    public static DescribeDBInstanceSSLResponse unmarshall(
-            DescribeDBInstanceSSLResponse describeDBInstanceSSLResponse,
-            UnmarshallerContext context) {
-
-        describeDBInstanceSSLResponse
-                .setRequestId(context.stringValue("DescribeDBInstanceSSLResponse.RequestId"));
-        describeDBInstanceSSLResponse.setConnectionString(
-                context.stringValue("DescribeDBInstanceSSLResponse.ConnectionString"));
-        describeDBInstanceSSLResponse.setSSLExpireTime(
-                context.stringValue("DescribeDBInstanceSSLResponse.SSLExpireTime"));
-        describeDBInstanceSSLResponse.setRequireUpdate(
-                context.stringValue("DescribeDBInstanceSSLResponse.RequireUpdate"));
-        describeDBInstanceSSLResponse.setRequireUpdateReason(
-                context.stringValue("DescribeDBInstanceSSLResponse.RequireUpdateReason"));
-
-        return describeDBInstanceSSLResponse;
-    }
+	public static DescribeDBInstanceSSLResponse unmarshall(DescribeDBInstanceSSLResponse describeDBInstanceSSLResponse, UnmarshallerContext context) {
+		
+		describeDBInstanceSSLResponse.setRequestId(context.stringValue("DescribeDBInstanceSSLResponse.RequestId"));
+		describeDBInstanceSSLResponse.setConnectionString(context.stringValue("DescribeDBInstanceSSLResponse.ConnectionString"));
+		describeDBInstanceSSLResponse.setSSLExpireTime(context.stringValue("DescribeDBInstanceSSLResponse.SSLExpireTime"));
+		describeDBInstanceSSLResponse.setRequireUpdate(context.stringValue("DescribeDBInstanceSSLResponse.RequireUpdate"));
+		describeDBInstanceSSLResponse.setRequireUpdateReason(context.stringValue("DescribeDBInstanceSSLResponse.RequireUpdateReason"));
+	 
+	 	return describeDBInstanceSSLResponse;
+	}
 }
