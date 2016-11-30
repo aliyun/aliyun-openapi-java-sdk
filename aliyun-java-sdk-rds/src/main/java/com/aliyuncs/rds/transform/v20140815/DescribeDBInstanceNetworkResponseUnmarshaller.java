@@ -35,7 +35,7 @@ public class DescribeDBInstanceNetworkResponseUnmarshaller {
 		describeDBInstanceNetworkResponse.setStartTime(context.stringValue("DescribeDBInstanceNetworkResponse.StartTime"));
 		describeDBInstanceNetworkResponse.setEndTime(context.stringValue("DescribeDBInstanceNetworkResponse.EndTime"));
 
-		List<Topology> topology = new ArrayList<Topology>();
+		List<Topology> topologys = new ArrayList<Topology>();
 		for (int i = 0; i < context.lengthValue("DescribeDBInstanceNetworkResponse.Topology.Length"); i++) {
 			Topology topology = new Topology();
 			topology.setStartPoint(context.stringValue("DescribeDBInstanceNetworkResponse.Topology["+ i +"].StartPoint"));
@@ -46,9 +46,9 @@ public class DescribeDBInstanceNetworkResponseUnmarshaller {
 			topology.setBackendLatency(context.stringValue("DescribeDBInstanceNetworkResponse.Topology["+ i +"].BackendLatency"));
 			topology.setNetworkErrors(context.stringValue("DescribeDBInstanceNetworkResponse.Topology["+ i +"].NetworkErrors"));
 
-			topology.add(topology);
+            topologys.add(topology);
 		}
-		describeDBInstanceNetworkResponse.setTopology(topology);
+		describeDBInstanceNetworkResponse.setTopology(topologys);
 	 
 	 	return describeDBInstanceNetworkResponse;
 	}
