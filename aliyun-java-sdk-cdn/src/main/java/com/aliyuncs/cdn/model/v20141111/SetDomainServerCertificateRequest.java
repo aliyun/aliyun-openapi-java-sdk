@@ -36,11 +36,15 @@ public class SetDomainServerCertificateRequest extends RpcAcsRequest<SetDomainSe
 
 	private String domainName;
 
+	private String certName;
+
 	private String serverCertificateStatus;
 
 	private String serverCertificate;
 
 	private String privateKey;
+
+	private String region;
 
 	public Long getOwnerId() {
 		return this.ownerId;
@@ -69,6 +73,15 @@ public class SetDomainServerCertificateRequest extends RpcAcsRequest<SetDomainSe
 		putQueryParameter("DomainName", domainName);
 	}
 
+	public String getCertName() {
+		return this.certName;
+	}
+
+	public void setCertName(String certName) {
+		this.certName = certName;
+		putQueryParameter("CertName", certName);
+	}
+
 	public String getServerCertificateStatus() {
 		return this.serverCertificateStatus;
 	}
@@ -94,6 +107,15 @@ public class SetDomainServerCertificateRequest extends RpcAcsRequest<SetDomainSe
 	public void setPrivateKey(String privateKey) {
 		this.privateKey = privateKey;
 		putQueryParameter("PrivateKey", privateKey);
+	}
+
+	public String getRegion() {
+		return this.region;
+	}
+
+	public void setRegion(String region) {
+		this.region = region;
+		putQueryParameter("Region", region);
 	}
 
 	@Override
