@@ -35,7 +35,7 @@ import java.net.UnknownHostException;
 public class PutMetricDataRequest extends RpcAcsRequest<PutMetricDataResponse> {
 
 	public PutMetricDataRequest() {
-		super("Cms", "2016-03-18", "PutMetricData");
+		super("Cms", "2016-09-22", "PutMetricData", "cms");
 		setMethod(MethodType.POST);
 	}
 

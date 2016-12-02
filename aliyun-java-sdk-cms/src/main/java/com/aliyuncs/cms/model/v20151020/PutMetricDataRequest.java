@@ -34,7 +34,7 @@ import java.util.List;
 public class PutMetricDataRequest extends BodyHttpRequest<PutMetricDataResponse> {
 	
 	public PutMetricDataRequest() {
-		super("Cms", "2016-03-18", "PutMetricData");
+		super("Cms", "2016-09-22", "PutMetricData", "cms");
 		setMethod(MethodType.POST);
 	}
 

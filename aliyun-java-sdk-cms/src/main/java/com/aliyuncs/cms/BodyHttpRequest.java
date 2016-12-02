@@ -32,6 +32,10 @@ public abstract class BodyHttpRequest<T extends AcsResponse> extends RpcAcsReque
     public BodyHttpRequest(String product, String version, String action) {
         super(product, version, action);
     }
+    
+    public BodyHttpRequest(String product, String version, String action, String serviceCode) {
+        super(product, version, action, serviceCode);
+    }
 
     public Map<String, String> getBodyParameter() {
         return bodyParameter;

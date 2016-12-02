@@ -42,8 +42,11 @@ public class QueryMetricLastResponse extends AcsResponse {
 	private String period;
 
 	private String cursor;
+	
 	private String size;
-
+	
+	private List<JSONObject> datapoints;
+	
 	public String getCursor() {
 		return cursor;
 	}
@@ -91,9 +94,15 @@ public class QueryMetricLastResponse extends AcsResponse {
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
 	}
+	
+	public void setPeriod(String period) {
+		this.period = period;
+	}
 
-	private List<JSONObject> datapoints;
-
+	public String getPeriod() {
+		return period;
+	}
+	
 	public List<JSONObject> getDatapoints() {
 		return this.datapoints;
 	}
@@ -105,13 +114,5 @@ public class QueryMetricLastResponse extends AcsResponse {
 	@Override
 	public QueryMetricLastResponse getInstance(UnmarshallerContext context) {
 		return	QueryMetricLastResponseUnmarshaller.unmarshall(this, context);
-	}
-
-	public void setPeriod(String period) {
-		this.period = period;
-	}
-
-	public String getPeriod() {
-		return period;
 	}
 }

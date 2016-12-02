@@ -42,8 +42,11 @@ public class QueryMetricListResponse extends AcsResponse {
 	private String period;
 
 	private String cursor;
+	
 	private String size;
-
+	
+	private List<JSONObject> datapoints;
+	
 	public String getCode() {
 		return this.code;
 	}
@@ -76,21 +79,6 @@ public class QueryMetricListResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	private List<JSONObject> datapoints;
-
-	public List<JSONObject> getDatapoints() {
-		return this.datapoints;
-	}
-
-	public void setDatapoints(List<JSONObject> datapoints) {
-		this.datapoints = datapoints;
-	}
-
-	@Override
-	public QueryMetricListResponse getInstance(UnmarshallerContext context) {
-		return	QueryMetricListResponseUnmarshaller.unmarshall(this, context);
-	}
-
 	public String getCursor() {
 		return cursor;
 	}
@@ -113,5 +101,18 @@ public class QueryMetricListResponse extends AcsResponse {
 
 	public String getPeriod() {
 		return period;
+	}
+	
+	public List<JSONObject> getDatapoints() {
+		return this.datapoints;
+	}
+
+	public void setDatapoints(List<JSONObject> datapoints) {
+		this.datapoints = datapoints;
+	}
+
+	@Override
+	public QueryMetricListResponse getInstance(UnmarshallerContext context) {
+		return	QueryMetricListResponseUnmarshaller.unmarshall(this, context);
 	}
 }
