@@ -76,6 +76,7 @@ public class QueryTemplateListResponseUnmarshaller {
 			video.setRemove(context.stringValue("QueryTemplateListResponse.TemplateList["+ i +"].Video.Remove"));
 			video.setCrop(context.stringValue("QueryTemplateListResponse.TemplateList["+ i +"].Video.Crop"));
 			video.setPad(context.stringValue("QueryTemplateListResponse.TemplateList["+ i +"].Video.Pad"));
+			video.setMaxFps(context.stringValue("QueryTemplateListResponse.TemplateList["+ i +"].Video.MaxFps"));
 
 			BitrateBnd bitrateBnd = new BitrateBnd();
 			bitrateBnd.setMax(context.stringValue("QueryTemplateListResponse.TemplateList["+ i +"].Video.BitrateBnd.Max"));
@@ -111,6 +112,8 @@ public class QueryTemplateListResponseUnmarshaller {
 			Gif gif = new Gif();
 			gif.setLoop(context.stringValue("QueryTemplateListResponse.TemplateList["+ i +"].MuxConfig.Gif.Loop"));
 			gif.setFinalDelay(context.stringValue("QueryTemplateListResponse.TemplateList["+ i +"].MuxConfig.Gif.FinalDelay"));
+			gif.setIsCustomPalette(context.stringValue("QueryTemplateListResponse.TemplateList["+ i +"].MuxConfig.Gif.IsCustomPalette"));
+			gif.setDitherMode(context.stringValue("QueryTemplateListResponse.TemplateList["+ i +"].MuxConfig.Gif.DitherMode"));
 			muxConfig.setGif(gif);
 			template.setMuxConfig(muxConfig);
 

@@ -73,6 +73,7 @@ public class SearchTemplateResponseUnmarshaller {
 			video.setRemove(context.stringValue("SearchTemplateResponse.TemplateList["+ i +"].Video.Remove"));
 			video.setCrop(context.stringValue("SearchTemplateResponse.TemplateList["+ i +"].Video.Crop"));
 			video.setPad(context.stringValue("SearchTemplateResponse.TemplateList["+ i +"].Video.Pad"));
+			video.setMaxFps(context.stringValue("SearchTemplateResponse.TemplateList["+ i +"].Video.MaxFps"));
 
 			BitrateBnd bitrateBnd = new BitrateBnd();
 			bitrateBnd.setMax(context.stringValue("SearchTemplateResponse.TemplateList["+ i +"].Video.BitrateBnd.Max"));
@@ -108,6 +109,8 @@ public class SearchTemplateResponseUnmarshaller {
 			Gif gif = new Gif();
 			gif.setLoop(context.stringValue("SearchTemplateResponse.TemplateList["+ i +"].MuxConfig.Gif.Loop"));
 			gif.setFinalDelay(context.stringValue("SearchTemplateResponse.TemplateList["+ i +"].MuxConfig.Gif.FinalDelay"));
+			gif.setIsCustomPalette(context.stringValue("SearchTemplateResponse.TemplateList["+ i +"].MuxConfig.Gif.IsCustomPalette"));
+			gif.setDitherMode(context.stringValue("SearchTemplateResponse.TemplateList["+ i +"].MuxConfig.Gif.DitherMode"));
 			muxConfig.setGif(gif);
 			template.setMuxConfig(muxConfig);
 

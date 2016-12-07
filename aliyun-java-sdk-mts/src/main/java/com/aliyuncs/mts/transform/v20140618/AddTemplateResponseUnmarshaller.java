@@ -65,6 +65,7 @@ public class AddTemplateResponseUnmarshaller {
 		video.setRemove(context.stringValue("AddTemplateResponse.Template.Video.Remove"));
 		video.setCrop(context.stringValue("AddTemplateResponse.Template.Video.Crop"));
 		video.setPad(context.stringValue("AddTemplateResponse.Template.Video.Pad"));
+		video.setMaxFps(context.stringValue("AddTemplateResponse.Template.Video.MaxFps"));
 
 		BitrateBnd bitrateBnd = new BitrateBnd();
 		bitrateBnd.setMax(context.stringValue("AddTemplateResponse.Template.Video.BitrateBnd.Max"));
@@ -100,6 +101,8 @@ public class AddTemplateResponseUnmarshaller {
 		Gif gif = new Gif();
 		gif.setLoop(context.stringValue("AddTemplateResponse.Template.MuxConfig.Gif.Loop"));
 		gif.setFinalDelay(context.stringValue("AddTemplateResponse.Template.MuxConfig.Gif.FinalDelay"));
+		gif.setIsCustomPalette(context.stringValue("AddTemplateResponse.Template.MuxConfig.Gif.IsCustomPalette"));
+		gif.setDitherMode(context.stringValue("AddTemplateResponse.Template.MuxConfig.Gif.DitherMode"));
 		muxConfig.setGif(gif);
 		template.setMuxConfig(muxConfig);
 		addTemplateResponse.setTemplate(template);

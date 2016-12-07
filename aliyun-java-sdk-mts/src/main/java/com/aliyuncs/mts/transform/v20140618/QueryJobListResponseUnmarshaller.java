@@ -248,6 +248,8 @@ public class QueryJobListResponseUnmarshaller {
 			Gif gif = new Gif();
 			gif.setLoop(context.stringValue("QueryJobListResponse.JobList["+ i +"].Output.MuxConfig.Gif.Loop"));
 			gif.setFinalDelay(context.stringValue("QueryJobListResponse.JobList["+ i +"].Output.MuxConfig.Gif.FinalDelay"));
+			gif.setIsCustomPalette(context.stringValue("QueryJobListResponse.JobList["+ i +"].Output.MuxConfig.Gif.IsCustomPalette"));
+			gif.setDitherMode(context.stringValue("QueryJobListResponse.JobList["+ i +"].Output.MuxConfig.Gif.DitherMode"));
 			muxConfig.setGif(gif);
 			output.setMuxConfig(muxConfig);
 
@@ -278,6 +280,7 @@ public class QueryJobListResponseUnmarshaller {
 			video.setQscale(context.stringValue("QueryJobListResponse.JobList["+ i +"].Output.Video.Qscale"));
 			video.setCrop(context.stringValue("QueryJobListResponse.JobList["+ i +"].Output.Video.Crop"));
 			video.setPad(context.stringValue("QueryJobListResponse.JobList["+ i +"].Output.Video.Pad"));
+			video.setMaxFps(context.stringValue("QueryJobListResponse.JobList["+ i +"].Output.Video.MaxFps"));
 
 			BitrateBnd bitrateBnd = new BitrateBnd();
 			bitrateBnd.setMax(context.stringValue("QueryJobListResponse.JobList["+ i +"].Output.Video.BitrateBnd.Max"));

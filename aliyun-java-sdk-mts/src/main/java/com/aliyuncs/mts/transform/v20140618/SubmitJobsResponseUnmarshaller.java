@@ -248,6 +248,8 @@ public class SubmitJobsResponseUnmarshaller {
 			Gif gif = new Gif();
 			gif.setLoop(context.stringValue("SubmitJobsResponse.JobResultList["+ i +"].Job.Output.MuxConfig.Gif.Loop"));
 			gif.setFinalDelay(context.stringValue("SubmitJobsResponse.JobResultList["+ i +"].Job.Output.MuxConfig.Gif.FinalDelay"));
+			gif.setIsCustomPalette(context.stringValue("SubmitJobsResponse.JobResultList["+ i +"].Job.Output.MuxConfig.Gif.IsCustomPalette"));
+			gif.setDitherMode(context.stringValue("SubmitJobsResponse.JobResultList["+ i +"].Job.Output.MuxConfig.Gif.DitherMode"));
 			muxConfig.setGif(gif);
 			output.setMuxConfig(muxConfig);
 
@@ -278,6 +280,7 @@ public class SubmitJobsResponseUnmarshaller {
 			video.setQscale(context.stringValue("SubmitJobsResponse.JobResultList["+ i +"].Job.Output.Video.Qscale"));
 			video.setCrop(context.stringValue("SubmitJobsResponse.JobResultList["+ i +"].Job.Output.Video.Crop"));
 			video.setPad(context.stringValue("SubmitJobsResponse.JobResultList["+ i +"].Job.Output.Video.Pad"));
+			video.setMaxFps(context.stringValue("SubmitJobsResponse.JobResultList["+ i +"].Job.Output.Video.MaxFps"));
 
 			BitrateBnd bitrateBnd = new BitrateBnd();
 			bitrateBnd.setMax(context.stringValue("SubmitJobsResponse.JobResultList["+ i +"].Job.Output.Video.BitrateBnd.Max"));

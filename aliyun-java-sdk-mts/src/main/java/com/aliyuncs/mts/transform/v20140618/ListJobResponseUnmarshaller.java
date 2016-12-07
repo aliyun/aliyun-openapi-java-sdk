@@ -243,6 +243,8 @@ public class ListJobResponseUnmarshaller {
 			Gif gif = new Gif();
 			gif.setLoop(context.stringValue("ListJobResponse.JobList["+ i +"].Output.MuxConfig.Gif.Loop"));
 			gif.setFinalDelay(context.stringValue("ListJobResponse.JobList["+ i +"].Output.MuxConfig.Gif.FinalDelay"));
+			gif.setIsCustomPalette(context.stringValue("ListJobResponse.JobList["+ i +"].Output.MuxConfig.Gif.IsCustomPalette"));
+			gif.setDitherMode(context.stringValue("ListJobResponse.JobList["+ i +"].Output.MuxConfig.Gif.DitherMode"));
 			muxConfig.setGif(gif);
 			output.setMuxConfig(muxConfig);
 
@@ -273,6 +275,7 @@ public class ListJobResponseUnmarshaller {
 			video.setQscale(context.stringValue("ListJobResponse.JobList["+ i +"].Output.Video.Qscale"));
 			video.setCrop(context.stringValue("ListJobResponse.JobList["+ i +"].Output.Video.Crop"));
 			video.setPad(context.stringValue("ListJobResponse.JobList["+ i +"].Output.Video.Pad"));
+			video.setMaxFps(context.stringValue("ListJobResponse.JobList["+ i +"].Output.Video.MaxFps"));
 
 			BitrateBnd bitrateBnd = new BitrateBnd();
 			bitrateBnd.setMax(context.stringValue("ListJobResponse.JobList["+ i +"].Output.Video.BitrateBnd.Max"));

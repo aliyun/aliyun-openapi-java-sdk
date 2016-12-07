@@ -192,6 +192,8 @@ public class QueryTemplateListResponse extends AcsResponse {
 
 			private String pad;
 
+			private String maxFps;
+
 			private BitrateBnd bitrateBnd;
 
 			public String getCodec() {
@@ -336,6 +338,14 @@ public class QueryTemplateListResponse extends AcsResponse {
 
 			public void setPad(String pad) {
 				this.pad = pad;
+			}
+
+			public String getMaxFps() {
+				return this.maxFps;
+			}
+
+			public void setMaxFps(String maxFps) {
+				this.maxFps = maxFps;
 			}
 
 			public BitrateBnd getBitrateBnd() {
@@ -547,6 +557,10 @@ public class QueryTemplateListResponse extends AcsResponse {
 
 				private String finalDelay;
 
+				private String isCustomPalette;
+
+				private String ditherMode;
+
 				public String getLoop() {
 					return this.loop;
 				}
@@ -561,6 +575,22 @@ public class QueryTemplateListResponse extends AcsResponse {
 
 				public void setFinalDelay(String finalDelay) {
 					this.finalDelay = finalDelay;
+				}
+
+				public String getIsCustomPalette() {
+					return this.isCustomPalette;
+				}
+
+				public void setIsCustomPalette(String isCustomPalette) {
+					this.isCustomPalette = isCustomPalette;
+				}
+
+				public String getDitherMode() {
+					return this.ditherMode;
+				}
+
+				public void setDitherMode(String ditherMode) {
+					this.ditherMode = ditherMode;
 				}
 			}
 		}
