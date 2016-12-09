@@ -22,6 +22,7 @@ package com.aliyuncs.batchcompute.modelunittest.v20151111;
 import com.aliyuncs.batchcompute.model.v20151111.GetClusterResponse;
 import com.aliyuncs.batchcompute.model.v20151111.GetJobResponse;
 import com.aliyuncs.batchcompute.pojo.v20151111.Cluster;
+import com.aliyuncs.batchcompute.pojo.v20151111.Topic;
 import com.aliyuncs.batchcompute.util.FileLoader;
 import com.aliyuncs.exceptions.ClientException;
 import com.aliyuncs.exceptions.ServerException;
@@ -63,6 +64,14 @@ public class GetClusterResponseTest extends TestCase {
         assertEquals(0, cluster.getMetrics().getStartingCount());
         assertEquals(0, cluster.getMetrics().getStoppedCount());
         assertEquals(0, cluster.getMetrics().getStoppingCount());
+
+
+        Topic topic = cluster.getNotification().getTopic();
+
+        assertEquals(topic.getName(), "test-topic");
+        assertEquals(topic.getEndpoint(), "xxx");
+        assertEquals(topic.getEvents().size(), 3);
+        assertEquals(topic.getEvents().get(0), "OnClusterDeleted");
 
     }
     public void testGetInstance2() throws ServerException {

@@ -31,4 +31,30 @@
   "Name": "jobName1",
   "Notification": {},
   "Priority": 10,
-  "Type": "DAG"}
+  "Type": "DAG",
+  "Notification": {
+    "Topic": {
+      "Name": "test-topic",
+      "Endpoint": "xxx",
+      "Events": [
+        "OnJobWaiting",
+        "OnJobRunning",
+        "OnJobStopped",
+        "OnJobFinished",
+        "OnJobFailed",
+        "OnTaskWaiting",
+        "OnTaskRunning",
+        "OnTaskStopped",
+        "OnTaskFinished",
+        "OnTaskFailed",
+        "OnInstanceWaiting",
+        "OnInstanceRunning",
+        "OnInstanceStopped",
+        "OnInstanceFinished",
+        "OnInstanceFailed",
+        "OnPriorityChange"
+      ]
+    }
+  }
+}
+}

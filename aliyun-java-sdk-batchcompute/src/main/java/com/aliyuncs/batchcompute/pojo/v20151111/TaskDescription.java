@@ -52,7 +52,7 @@ public class TaskDescription {
 
 
     @JsonProperty("Timeout")
-    private int timeout;
+    private long timeout;
 
     @JsonProperty("InstanceCount")
     private int instanceCount;
@@ -166,11 +166,11 @@ public class TaskDescription {
         this.logMapping = logMapping;
     }
     @JsonIgnore
-    public int getTimeout() {
+    public long getTimeout() {
         return this.timeout;
     }
     @JsonIgnore
-    public void setTimeout(int timeout) {
+    public void setTimeout(long timeout) {
         this.timeout = timeout;
     }
     @JsonIgnore

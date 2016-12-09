@@ -27,6 +27,7 @@ import com.aliyuncs.exceptions.ClientException;
 import junit.framework.TestCase;
 import org.junit.Test;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -52,11 +53,53 @@ public class JobTest extends TestCase {
         BatchComputeClient.addRequestHeader("x-acs-source-ip", "127.0.0.1");
         BatchComputeClient.addRequestHeader("x-acs-secure-transport", "true");
 
-        gImageId = cfg.getEcsImageId();
-        System.out.println("==========" + gImageId);
+        gImageId = "img-ubuntu";
 
         client = new BatchComputeClient(cfg.getRegionId(), cfg.getAccessId(), cfg.getAccessKey());
     }
+    @Test
+    public void testListInstance() throws ClientException {
+
+        List<Job> list = client.listJobs().getItems();
+        if(list!=null && list.size()>0){
+            String jobId = list.get(0).getId();
+            listAllInstances(jobId);
+        }
+    }
+
+    public List<Instance> listAllInstances(String jobId) throws ClientException{
+
+        List<Instance> allInstances = new ArrayList<Instance>();
+        List<Task> allTasks = new ArrayList<Task>();
+
+        String nextMarker = "";
+        do {
+            ListTasksResponse listTasksResponse = client.listTasks(jobId, nextMarker, 100);
+            List<Task> taskList = listTasksResponse.getItems();
+            allTasks.addAll(taskList);
+
+            nextMarker = listTasksResponse.getNextMarker();
+        }while(nextMarker!=null && !nextMarker.equals(""));
+
+
+        nextMarker = "";
+
+        for(Task task: allTasks){
+            ListInstancesResponse listInstancesResponse = client.listInstances(jobId, task.getTaskName(), nextMarker, 100);
+            do {
+
+                List<Instance> instanceList = listInstancesResponse.getItems();
+                allInstances.addAll(instanceList);
+
+                nextMarker = listInstancesResponse.getNextMarker();
+            }while(nextMarker!=null && !nextMarker.equals(""));
+        }
+
+        return allInstances;
+    }
+
+
+
 
     @Test
     public void testJob() throws ClientException {
@@ -128,7 +171,6 @@ public class JobTest extends TestCase {
         assertTrue(job.getCreationTime() != null);
 
 
-
         // 5. get job desc
         GetJobDescriptionResponse getJobDescriptionResponse = client.getJobDescription(gJobId);
         JobDescription jobDesc2 = getJobDescriptionResponse.getJobDescription();
@@ -138,6 +180,12 @@ public class JobTest extends TestCase {
 
         TaskDescription taskDesc2 = jobDesc2.getDag().getTasks().get("task_1");
         assertEquals(gClusterId, taskDesc2.getClusterId());
+
+        Topic tp = jobDesc2.getNotification().getTopic();
+
+        assertEquals(tp.getName(),"tp_n1");
+        assertEquals(tp.getEndpoint(),"xxxxx");
+        assertEquals(tp.getEvents().size(), 2);
 
 
         //get job desc 2
@@ -262,6 +310,16 @@ public class JobTest extends TestCase {
         dag.addTask(getTaskDesc());
 
         desc.setDag(dag);
+
+        Notification noti = new Notification();
+        Topic topic = new Topic();
+        topic.addEvent(Topic.ON_JOB_FAILED);
+        topic.addEvent(Topic.ON_JOB_FINISHED);
+        noti.setTopic(topic);
+        topic.setName("tp_n1");
+        topic.setEndpoint("xxxxx");
+        desc.setNotification(noti);
+
         return desc;
     }
 
@@ -317,7 +375,7 @@ public class JobTest extends TestCase {
         TaskDescription task = new TaskDescription();
 
         AutoCluster autoCluster = new AutoCluster();
-        autoCluster.setECSImageId(gImageId);
+        autoCluster.setImageId(gImageId);
         autoCluster.setInstanceType("ecs.t1.small");
         autoCluster.setResourceType("OnDemand");
 

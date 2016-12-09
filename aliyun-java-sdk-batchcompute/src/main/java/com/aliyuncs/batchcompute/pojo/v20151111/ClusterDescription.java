@@ -51,6 +51,18 @@ public class ClusterDescription {
     @JsonProperty("UserData")
     private Map<String, String> userData;
 
+    @JsonIgnore
+    public Notification getNotification() {
+        return notification;
+    }
+    @JsonIgnore
+    public void setNotification(Notification notification) {
+        this.notification = notification;
+    }
+
+    @JsonProperty("Notification")
+    private Notification notification;
+
 
     @JsonIgnore
     public Configs getConfigs() {

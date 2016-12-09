@@ -21,6 +21,8 @@ package com.aliyuncs.batchcompute.modelunittest.v20151111;
 
 import com.aliyuncs.batchcompute.model.v20151111.GetJobDescriptionResponse;
 import com.aliyuncs.batchcompute.model.v20151111.GetJobResponse;
+import com.aliyuncs.batchcompute.pojo.v20151111.JobDescription;
+import com.aliyuncs.batchcompute.pojo.v20151111.Topic;
 import com.aliyuncs.batchcompute.util.FileLoader;
 import com.aliyuncs.exceptions.ServerException;
 import com.aliyuncs.http.FormatType;
@@ -49,8 +51,19 @@ public class GetJobDescriptionResponseTest extends TestCase {
 
         res.getInstance(context);
 
-        assertEquals(res.getJobDescription().getName(), "jobName1");
-        assertEquals(res.getJobDescription().isAutoRelease(), false);
+        JobDescription desc = res.getJobDescription();
+
+        assertEquals(desc.getName(), "jobName1");
+        assertEquals(desc.isAutoRelease(), false);
+
+        assertEquals(desc.getPriority(), 10);
+
+        Topic topic = desc.getNotification().getTopic();
+
+        assertEquals(topic.getName(), "test-topic");
+        assertEquals(topic.getEndpoint(), "xxx");
+        assertEquals(topic.getEvents().size(), 16);
+        assertEquals(topic.getEvents().get(0), "OnJobWaiting");
     }
 
     public void testGetInstanceWithUnsupportedEncoding() {

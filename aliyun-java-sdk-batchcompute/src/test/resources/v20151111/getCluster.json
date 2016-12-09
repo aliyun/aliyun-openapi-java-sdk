@@ -21,5 +21,16 @@
   "OperationLogs": [],
   "OwnerId": 48351,
   "State": "Active",
-  "UserData": {}
+  "UserData": {},
+  "Notification": {
+    "Topic": {
+      "Name": "test-topic",
+      "Endpoint": "xxx",
+      "Events": [
+        "OnClusterDeleted",
+        "OnInstanceCreated",
+        "OnInstanceActive"
+      ]
+    }
+  }
 }

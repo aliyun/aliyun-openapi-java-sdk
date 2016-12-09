@@ -38,7 +38,7 @@ public class ClusterInstanceTest extends TestCase {
 
     private static BatchCompute client;
 
-    private String gImageId;
+    private String gImageId = "ubuntu";
 
     private String gClusterId;
 
@@ -52,9 +52,6 @@ public class ClusterInstanceTest extends TestCase {
         BatchComputeClient.verbose = true;
         BatchComputeClient.addRequestHeader("x-acs-source-ip", "127.0.0.1");
         BatchComputeClient.addRequestHeader("x-acs-secure-transport", "true");
-
-        gImageId = cfg.getEcsImageId();
-        System.out.println("=========="+gImageId);
 
         client = new BatchComputeClient(cfg.getRegionId(), cfg.getAccessId(), cfg.getAccessKey());
     }

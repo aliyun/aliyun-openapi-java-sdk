@@ -61,9 +61,21 @@ public class JobDescription {
     private boolean autoRelease;
 
 
-
     @JsonProperty("Type")
     private String type;
+
+    @JsonProperty("Notification")
+    private Notification notification;
+
+
+    @JsonIgnore
+    public Notification getNotification() {
+        return notification;
+    }
+    @JsonIgnore
+    public void setNotification(Notification notification) {
+        this.notification = notification;
+    }
 
 
     @JsonIgnore

@@ -38,7 +38,7 @@ public class ClusterTest extends TestCase {
 
     private static BatchCompute client;
 
-    private String gImageId;
+    private String gImageId =  "ubuntu";
 
     private String gClusterId;
 
@@ -50,9 +50,6 @@ public class ClusterTest extends TestCase {
         BatchComputeClient.verbose = true;
         BatchComputeClient.addRequestHeader("x-acs-source-ip", "127.0.0.1");
         BatchComputeClient.addRequestHeader("x-acs-secure-transport", "true");
-
-        gImageId = cfg.getEcsImageId();
-        System.out.println("=========="+gImageId);
 
         client = new BatchComputeClient(cfg.getRegionId(), cfg.getAccessId(), cfg.getAccessKey());
     }
@@ -100,6 +97,11 @@ public class ClusterTest extends TestCase {
 
         SystemDisk systemDisk = disks.getSystemDisk();
         assertEquals(80, systemDisk.getSize());
+
+        Topic topic = cluster.getNotification().getTopic();
+        assertEquals("tp_n2", topic.getName());
+        assertEquals("xxxx", topic.getEndpoint());
+        assertEquals(2, topic.getEvents().size());
 
 
         //3. list cluster
@@ -164,6 +166,15 @@ public class ClusterTest extends TestCase {
         desc.mountSystemDisk(systemDisk);
 
         desc.addUserData("a","bb");
+
+        Notification noti = new Notification();
+        Topic topic = new Topic();
+        topic.addEvent(Topic.ON_CLUSTER_DELETED);
+        topic.addEvent(Topic.ON_CLUSTER_INSTANCE_ACTIVE);
+        noti.setTopic(topic);
+        topic.setName("tp_n2");
+        topic.setEndpoint("xxxx");
+        desc.setNotification(noti);
 
         return desc;
     }

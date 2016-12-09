@@ -35,7 +35,7 @@ public class ImageTest extends TestCase {
 
     private static BatchCompute client;
 
-    private String gImageId;
+    private String gEcsImageId;
 
 
 
@@ -47,10 +47,11 @@ public class ImageTest extends TestCase {
         BatchComputeClient.addRequestHeader("x-acs-source-ip", "127.0.0.1");
         BatchComputeClient.addRequestHeader("x-acs-secure-transport", "true");
 
-        gImageId = cfg.getEcsImageId();
-        System.out.println("==========" + gImageId);
+        gEcsImageId = cfg.getEcsImageId();
+        System.out.println("==========" + gEcsImageId);
 
         client = new BatchComputeClient(cfg.getRegionId(), cfg.getAccessId(), cfg.getAccessKey());
+
     }
 
     @Test
@@ -60,7 +61,7 @@ public class ImageTest extends TestCase {
         ImageDescription desc = new ImageDescription();
         desc.setName("image-11aa");
         desc.setDescription("test");
-        desc.setEcsImageId(gImageId);
+        desc.setEcsImageId(gEcsImageId);
 
         desc.setPlatform(desc.LINUX);
 
@@ -75,7 +76,7 @@ public class ImageTest extends TestCase {
         Image img= getImageResponse.getImage();
 
         assertEquals(id,img.getId());
-        assertEquals(gImageId,img.getEcsImageId());
+        assertEquals(gEcsImageId,img.getEcsImageId());
         assertEquals(desc.LINUX, img.getPlatform());
         assertEquals("test", img.getDescription());
         assertEquals("image-11aa", img.getName());
@@ -89,7 +90,7 @@ public class ImageTest extends TestCase {
         for(Image im: list){
             if(im.getId().equals(id)){
                 flag=true;
-                assertEquals(gImageId,im.getEcsImageId());
+                assertEquals(gEcsImageId,im.getEcsImageId());
                 assertEquals(desc.LINUX, im.getPlatform());
                 assertEquals("test", im.getDescription());
                 assertEquals("image-11aa", im.getName());

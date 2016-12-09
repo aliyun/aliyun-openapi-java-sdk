@@ -54,6 +54,18 @@ public class Cluster {
     @JsonProperty("Configs")
     private Configs configs;
 
+    @JsonIgnore
+    public Notification getNotification() {
+        return notification;
+    }
+    @JsonIgnore
+    public void setNotification(Notification notification) {
+        this.notification = notification;
+    }
+
+    @JsonProperty("Notification")
+    private Notification notification;
+
 
 
     @JsonProperty("CreationTime")
