@@ -18,18 +18,17 @@
  */
 package com.aliyuncs.push.transform.v20160801;
 
-import com.aliyuncs.push.model.v20160801.QueryAppSecurityInfoResponse;
+import com.aliyuncs.push.model.v20160801.CheckDeviceResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class QueryAppSecurityInfoResponseUnmarshaller {
+public class CheckDeviceResponseUnmarshaller {
 
-	public static QueryAppSecurityInfoResponse unmarshall(QueryAppSecurityInfoResponse queryAppSecurityInfoResponse, UnmarshallerContext context) {
+	public static CheckDeviceResponse unmarshall(CheckDeviceResponse checkDeviceResponse, UnmarshallerContext context) {
 		
-		queryAppSecurityInfoResponse.setRequestId(context.stringValue("QueryAppSecurityInfoResponse.RequestId"));
-		queryAppSecurityInfoResponse.setAppKey(context.longValue("QueryAppSecurityInfoResponse.AppKey"));
-		queryAppSecurityInfoResponse.setAppSecret(context.stringValue("QueryAppSecurityInfoResponse.AppSecret"));
+		checkDeviceResponse.setRequestId(context.stringValue("CheckDeviceResponse.RequestId"));
+		checkDeviceResponse.setAvailable(context.booleanValue("CheckDeviceResponse.Available"));
 	 
-	 	return queryAppSecurityInfoResponse;
+	 	return checkDeviceResponse;
 	}
 }

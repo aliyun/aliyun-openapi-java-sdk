@@ -16,20 +16,45 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package com.aliyuncs.push.transform.v20160801;
+package com.aliyuncs.push.model.v20160801;
 
-import com.aliyuncs.push.model.v20160801.QueryAppSecurityInfoResponse;
-import com.aliyuncs.transform.UnmarshallerContext;
+import com.aliyuncs.RpcAcsRequest;
 
-
-public class QueryAppSecurityInfoResponseUnmarshaller {
-
-	public static QueryAppSecurityInfoResponse unmarshall(QueryAppSecurityInfoResponse queryAppSecurityInfoResponse, UnmarshallerContext context) {
-		
-		queryAppSecurityInfoResponse.setRequestId(context.stringValue("QueryAppSecurityInfoResponse.RequestId"));
-		queryAppSecurityInfoResponse.setAppKey(context.longValue("QueryAppSecurityInfoResponse.AppKey"));
-		queryAppSecurityInfoResponse.setAppSecret(context.stringValue("QueryAppSecurityInfoResponse.AppSecret"));
-	 
-	 	return queryAppSecurityInfoResponse;
+/**
+ * @author auto create
+ * @version 
+ */
+public class CheckDeviceRequest extends RpcAcsRequest<CheckDeviceResponse> {
+	
+	public CheckDeviceRequest() {
+		super("Push", "2016-08-01", "CheckDevice");
 	}
+
+	private Long appKey;
+
+	private String deviceId;
+
+	public Long getAppKey() {
+		return this.appKey;
+	}
+
+	public void setAppKey(Long appKey) {
+		this.appKey = appKey;
+		putQueryParameter("AppKey", appKey);
+	}
+
+	public String getDeviceId() {
+		return this.deviceId;
+	}
+
+	public void setDeviceId(String deviceId) {
+		this.deviceId = deviceId;
+		putQueryParameter("DeviceId", deviceId);
+	}
+
+	@Override
+	public Class<CheckDeviceResponse> getResponseClass() {
+		return CheckDeviceResponse.class;
+	}
+
 }

@@ -16,20 +16,40 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package com.aliyuncs.push.transform.v20160801;
+package com.aliyuncs.push.model.v20160801;
 
-import com.aliyuncs.push.model.v20160801.QueryAppSecurityInfoResponse;
+import com.aliyuncs.AcsResponse;
+import com.aliyuncs.push.transform.v20160801.CheckDeviceResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
+/**
+ * @author auto create
+ * @version 
+ */
+public class CheckDeviceResponse extends AcsResponse {
 
-public class QueryAppSecurityInfoResponseUnmarshaller {
+	private String requestId;
 
-	public static QueryAppSecurityInfoResponse unmarshall(QueryAppSecurityInfoResponse queryAppSecurityInfoResponse, UnmarshallerContext context) {
-		
-		queryAppSecurityInfoResponse.setRequestId(context.stringValue("QueryAppSecurityInfoResponse.RequestId"));
-		queryAppSecurityInfoResponse.setAppKey(context.longValue("QueryAppSecurityInfoResponse.AppKey"));
-		queryAppSecurityInfoResponse.setAppSecret(context.stringValue("QueryAppSecurityInfoResponse.AppSecret"));
-	 
-	 	return queryAppSecurityInfoResponse;
+	private Boolean available;
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getAvailable() {
+		return this.available;
+	}
+
+	public void setAvailable(Boolean available) {
+		this.available = available;
+	}
+
+	@Override
+	public CheckDeviceResponse getInstance(UnmarshallerContext context) {
+		return	CheckDeviceResponseUnmarshaller.unmarshall(this, context);
 	}
 }
