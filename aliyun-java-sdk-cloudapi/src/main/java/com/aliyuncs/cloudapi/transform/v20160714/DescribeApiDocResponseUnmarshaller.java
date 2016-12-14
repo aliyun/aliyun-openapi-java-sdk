@@ -22,6 +22,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.cloudapi.model.v20160714.DescribeApiDocResponse;
+import com.aliyuncs.cloudapi.model.v20160714.DescribeApiResponse.ErrorCodeSample;
 import com.aliyuncs.cloudapi.model.v20160714.DescribeApiResponse.RequestConfig;
 import com.aliyuncs.cloudapi.model.v20160714.DescribeApiResponse.RequestParameter;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -43,6 +44,7 @@ public class DescribeApiDocResponseUnmarshaller {
 		describeApiDocResponse.setAuthType(context.stringValue("DescribeApiDocResponse.AuthType"));
 		describeApiDocResponse.setResultType(context.stringValue("DescribeApiDocResponse.ResultType"));
 		describeApiDocResponse.setResultSample(context.stringValue("DescribeApiDocResponse.ResultSample"));
+		describeApiDocResponse.setFailResultSample(context.stringValue("DescribeApiDocResponse.FailResultSample"));
 		describeApiDocResponse.setDeployedTime(context.stringValue("DescribeApiDocResponse.DeployedTime"));
 
 		RequestConfig requestConfig = new RequestConfig();
@@ -76,7 +78,18 @@ public class DescribeApiDocResponseUnmarshaller {
 			requestParameters.add(requestParameter);
 		}
 		describeApiDocResponse.setRequestParameters(requestParameters);
-	 
+		
+		List<ErrorCodeSample> errorCodeSamples = new ArrayList<ErrorCodeSample>();
+		for (int i = 0; i < context.lengthValue("DescribeApiDocResponse.ErrorCodeSamples.Length"); i++) {
+			ErrorCodeSample errorCodeSample = new ErrorCodeSample();
+			errorCodeSample.setCode(context.stringValue("DescribeApiDocResponse.ErrorCodeSamples["+ i +"].Code"));
+			errorCodeSample.setMessage(context.stringValue("DescribeApiDocResponse.ErrorCodeSamples["+ i +"].Message"));
+			errorCodeSample.setDescription(context.stringValue("DescribeApiDocResponse.ErrorCodeSamples["+ i +"].Description"));
+
+			errorCodeSamples.add(errorCodeSample);
+		}
+		describeApiDocResponse.setErrorCodeSamples(errorCodeSamples);
+		
 	 	return describeApiDocResponse;
 	}
 }

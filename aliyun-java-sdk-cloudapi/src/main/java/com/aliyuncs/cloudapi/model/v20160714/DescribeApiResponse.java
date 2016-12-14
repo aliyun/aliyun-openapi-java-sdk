@@ -25,696 +25,812 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
- * @version 
+ * @version
  */
 public class DescribeApiResponse extends AcsResponse {
 
-	private String requestId;
+    private String                    requestId;
 
-	private String regionId;
+    private String                    regionId;
 
-	private String apiId;
+    private String                    apiId;
 
-	private String apiName;
+    private String                    apiName;
 
-	private String groupId;
+    private String                    groupId;
 
-	private String groupName;
+    private String                    groupName;
 
-	private String visibility;
+    private String                    visibility;
 
-	private String authType;
+    private String                    authType;
 
-	private String resultType;
+    private String                    resultType;
 
-	private String resultSample;
+    private String                    resultSample;
 
-	private String createdTime;
+    private String                    failResultSample;
 
-	private String modifiedTime;
+    private String                    createdTime;
 
-	private String description;
+    private String                    modifiedTime;
 
-	private String mock;
+    private String                    description;
 
-	private String mockResult;
+    private List<SystemParameter>     systemParameters;
 
-	private List<SystemParameter> systemParameters;
+    private List<SystemParameter>     customSystemParameters;
 
-	private List<ConstantParameter> constantParameters;
+    private List<ConstantParameter>   constantParameters;
 
-	private List<RequestParameter> requestParameters;
+    private List<RequestParameter>    requestParameters;
 
-	private List<ServiceParameter> serviceParameters;
+    private List<ServiceParameter>    serviceParameters;
 
-	private List<ServiceParameterMap> serviceParametersMap;
+    private List<ServiceParameterMap> serviceParametersMap;
 
-	private List<DeployedInfo> deployedInfos;
+    private List<ErrorCodeSample>     errorCodeSamples;
 
-	private RequestConfig requestConfig;
+    private List<DeployedInfo>        deployedInfos;
 
-	private ServiceConfig serviceConfig;
+    private RequestConfig             requestConfig;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
+    private ServiceConfig             serviceConfig;
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+    private OpenIdConnectConfig       openIdConnectConfig;
 
-	public String getRegionId() {
-		return this.regionId;
-	}
+    public String getRequestId() {
+        return this.requestId;
+    }
 
-	public void setRegionId(String regionId) {
-		this.regionId = regionId;
-	}
+    public void setRequestId(String requestId) {
+        this.requestId = requestId;
+    }
 
-	public String getApiId() {
-		return this.apiId;
-	}
+    public String getRegionId() {
+        return this.regionId;
+    }
 
-	public void setApiId(String apiId) {
-		this.apiId = apiId;
-	}
+    public void setRegionId(String regionId) {
+        this.regionId = regionId;
+    }
 
-	public String getApiName() {
-		return this.apiName;
-	}
+    public String getApiId() {
+        return this.apiId;
+    }
 
-	public void setApiName(String apiName) {
-		this.apiName = apiName;
-	}
+    public void setApiId(String apiId) {
+        this.apiId = apiId;
+    }
 
-	public String getGroupId() {
-		return this.groupId;
-	}
+    public String getApiName() {
+        return this.apiName;
+    }
 
-	public void setGroupId(String groupId) {
-		this.groupId = groupId;
-	}
+    public void setApiName(String apiName) {
+        this.apiName = apiName;
+    }
 
-	public String getGroupName() {
-		return this.groupName;
-	}
+    public String getGroupId() {
+        return this.groupId;
+    }
 
-	public void setGroupName(String groupName) {
-		this.groupName = groupName;
-	}
+    public void setGroupId(String groupId) {
+        this.groupId = groupId;
+    }
 
-	public String getVisibility() {
-		return this.visibility;
-	}
+    public String getGroupName() {
+        return this.groupName;
+    }
 
-	public void setVisibility(String visibility) {
-		this.visibility = visibility;
-	}
-
-	public String getAuthType() {
-		return this.authType;
-	}
-
-	public void setAuthType(String authType) {
-		this.authType = authType;
-	}
-
-	public String getResultType() {
-		return this.resultType;
-	}
-
-	public void setResultType(String resultType) {
-		this.resultType = resultType;
-	}
-
-	public String getResultSample() {
-		return this.resultSample;
-	}
-
-	public void setResultSample(String resultSample) {
-		this.resultSample = resultSample;
-	}
-
-	public String getCreatedTime() {
-		return this.createdTime;
-	}
-
-	public void setCreatedTime(String createdTime) {
-		this.createdTime = createdTime;
-	}
+    public void setGroupName(String groupName) {
+        this.groupName = groupName;
+    }
 
-	public String getModifiedTime() {
-		return this.modifiedTime;
-	}
+    public String getVisibility() {
+        return this.visibility;
+    }
+
+    public void setVisibility(String visibility) {
+        this.visibility = visibility;
+    }
+
+    public String getAuthType() {
+        return this.authType;
+    }
+
+    public void setAuthType(String authType) {
+        this.authType = authType;
+    }
+
+    public String getResultType() {
+        return this.resultType;
+    }
+
+    public void setResultType(String resultType) {
+        this.resultType = resultType;
+    }
+
+    public String getResultSample() {
+        return this.resultSample;
+    }
+
+    public void setResultSample(String resultSample) {
+        this.resultSample = resultSample;
+    }
+
+    public String getCreatedTime() {
+        return this.createdTime;
+    }
+
+    public void setCreatedTime(String createdTime) {
+        this.createdTime = createdTime;
+    }
+
+    public String getModifiedTime() {
+        return this.modifiedTime;
+    }
+
+    public void setModifiedTime(String modifiedTime) {
+        this.modifiedTime = modifiedTime;
+    }
+
+    public String getDescription() {
+        return this.description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
 
-	public void setModifiedTime(String modifiedTime) {
-		this.modifiedTime = modifiedTime;
-	}
+    public List<SystemParameter> getSystemParameters() {
+        return this.systemParameters;
+    }
 
-	public String getDescription() {
-		return this.description;
-	}
+    public void setSystemParameters(List<SystemParameter> systemParameters) {
+        this.systemParameters = systemParameters;
+    }
 
-	public void setDescription(String description) {
-		this.description = description;
-	}
+    public List<SystemParameter> getCustomSystemParameters() {
+        return customSystemParameters;
+    }
 
-	public String getMock() {
-		return this.mock;
-	}
+    public void setCustomSystemParameters(List<SystemParameter> customSystemParameters) {
+        this.customSystemParameters = customSystemParameters;
+    }
 
-	public void setMock(String mock) {
-		this.mock = mock;
-	}
+    public List<ConstantParameter> getConstantParameters() {
+        return this.constantParameters;
+    }
 
-	public String getMockResult() {
-		return this.mockResult;
-	}
+    public void setConstantParameters(List<ConstantParameter> constantParameters) {
+        this.constantParameters = constantParameters;
+    }
 
-	public void setMockResult(String mockResult) {
-		this.mockResult = mockResult;
-	}
+    public List<RequestParameter> getRequestParameters() {
+        return this.requestParameters;
+    }
 
-	public List<SystemParameter> getSystemParameters() {
-		return this.systemParameters;
-	}
+    public void setRequestParameters(List<RequestParameter> requestParameters) {
+        this.requestParameters = requestParameters;
+    }
 
-	public void setSystemParameters(List<SystemParameter> systemParameters) {
-		this.systemParameters = systemParameters;
-	}
+    public List<ServiceParameter> getServiceParameters() {
+        return this.serviceParameters;
+    }
 
-	public List<ConstantParameter> getConstantParameters() {
-		return this.constantParameters;
-	}
+    public void setServiceParameters(List<ServiceParameter> serviceParameters) {
+        this.serviceParameters = serviceParameters;
+    }
 
-	public void setConstantParameters(List<ConstantParameter> constantParameters) {
-		this.constantParameters = constantParameters;
-	}
+    public List<ServiceParameterMap> getServiceParametersMap() {
+        return this.serviceParametersMap;
+    }
 
-	public List<RequestParameter> getRequestParameters() {
-		return this.requestParameters;
-	}
+    public void setServiceParametersMap(List<ServiceParameterMap> serviceParametersMap) {
+        this.serviceParametersMap = serviceParametersMap;
+    }
 
-	public void setRequestParameters(List<RequestParameter> requestParameters) {
-		this.requestParameters = requestParameters;
-	}
+    public List<DeployedInfo> getDeployedInfos() {
+        return this.deployedInfos;
+    }
 
-	public List<ServiceParameter> getServiceParameters() {
-		return this.serviceParameters;
-	}
+    public void setDeployedInfos(List<DeployedInfo> deployedInfos) {
+        this.deployedInfos = deployedInfos;
+    }
 
-	public void setServiceParameters(List<ServiceParameter> serviceParameters) {
-		this.serviceParameters = serviceParameters;
-	}
+    public RequestConfig getRequestConfig() {
+        return this.requestConfig;
+    }
 
-	public List<ServiceParameterMap> getServiceParametersMap() {
-		return this.serviceParametersMap;
-	}
+    public void setRequestConfig(RequestConfig requestConfig) {
+        this.requestConfig = requestConfig;
+    }
 
-	public void setServiceParametersMap(List<ServiceParameterMap> serviceParametersMap) {
-		this.serviceParametersMap = serviceParametersMap;
-	}
+    public ServiceConfig getServiceConfig() {
+        return this.serviceConfig;
+    }
 
-	public List<DeployedInfo> getDeployedInfos() {
-		return this.deployedInfos;
-	}
+    public void setServiceConfig(ServiceConfig serviceConfig) {
+        this.serviceConfig = serviceConfig;
+    }
 
-	public void setDeployedInfos(List<DeployedInfo> deployedInfos) {
-		this.deployedInfos = deployedInfos;
-	}
+    public String getFailResultSample() {
+        return failResultSample;
+    }
 
-	public RequestConfig getRequestConfig() {
-		return this.requestConfig;
-	}
+    public void setFailResultSample(String failResultSample) {
+        this.failResultSample = failResultSample;
+    }
 
-	public void setRequestConfig(RequestConfig requestConfig) {
-		this.requestConfig = requestConfig;
-	}
+    public List<ErrorCodeSample> getErrorCodeSamples() {
+        return errorCodeSamples;
+    }
 
-	public ServiceConfig getServiceConfig() {
-		return this.serviceConfig;
-	}
+    public void setErrorCodeSamples(List<ErrorCodeSample> errorCodeSamples) {
+        this.errorCodeSamples = errorCodeSamples;
+    }
 
-	public void setServiceConfig(ServiceConfig serviceConfig) {
-		this.serviceConfig = serviceConfig;
-	}
+    public OpenIdConnectConfig getOpenIdConnectConfig() {
+        return openIdConnectConfig;
+    }
 
-	public static class SystemParameter {
+    public void setOpenIdConnectConfig(OpenIdConnectConfig openIdConnectConfig) {
+        this.openIdConnectConfig = openIdConnectConfig;
+    }
 
-		private String parameterName;
+    public static class SystemParameter {
 
-		private String serviceParameterName;
+        private String parameterName;
 
-		private String location;
+        private String serviceParameterName;
 
-		private String demoValue;
+        private String location;
 
-		private String description;
+        private String demoValue;
 
-		public String getParameterName() {
-			return this.parameterName;
-		}
+        private String description;
 
-		public void setParameterName(String parameterName) {
-			this.parameterName = parameterName;
-		}
+        public String getParameterName() {
+            return this.parameterName;
+        }
 
-		public String getServiceParameterName() {
-			return this.serviceParameterName;
-		}
+        public void setParameterName(String parameterName) {
+            this.parameterName = parameterName;
+        }
 
-		public void setServiceParameterName(String serviceParameterName) {
-			this.serviceParameterName = serviceParameterName;
-		}
+        public String getServiceParameterName() {
+            return this.serviceParameterName;
+        }
 
-		public String getLocation() {
-			return this.location;
-		}
+        public void setServiceParameterName(String serviceParameterName) {
+            this.serviceParameterName = serviceParameterName;
+        }
 
-		public void setLocation(String location) {
-			this.location = location;
-		}
+        public String getLocation() {
+            return this.location;
+        }
 
-		public String getDemoValue() {
-			return this.demoValue;
-		}
+        public void setLocation(String location) {
+            this.location = location;
+        }
 
-		public void setDemoValue(String demoValue) {
-			this.demoValue = demoValue;
-		}
+        public String getDemoValue() {
+            return this.demoValue;
+        }
 
-		public String getDescription() {
-			return this.description;
-		}
+        public void setDemoValue(String demoValue) {
+            this.demoValue = demoValue;
+        }
 
-		public void setDescription(String description) {
-			this.description = description;
-		}
-	}
+        public String getDescription() {
+            return this.description;
+        }
 
-	public static class ConstantParameter {
+        public void setDescription(String description) {
+            this.description = description;
+        }
+    }
 
-		private String serviceParameterName;
+    public static class ConstantParameter {
 
-		private String constantValue;
+        private String serviceParameterName;
 
-		private String location;
+        private String constantValue;
 
-		private String description;
+        private String location;
 
-		public String getServiceParameterName() {
-			return this.serviceParameterName;
-		}
+        private String description;
 
-		public void setServiceParameterName(String serviceParameterName) {
-			this.serviceParameterName = serviceParameterName;
-		}
+        public String getServiceParameterName() {
+            return this.serviceParameterName;
+        }
 
-		public String getConstantValue() {
-			return this.constantValue;
-		}
+        public void setServiceParameterName(String serviceParameterName) {
+            this.serviceParameterName = serviceParameterName;
+        }
 
-		public void setConstantValue(String constantValue) {
-			this.constantValue = constantValue;
-		}
+        public String getConstantValue() {
+            return this.constantValue;
+        }
 
-		public String getLocation() {
-			return this.location;
-		}
+        public void setConstantValue(String constantValue) {
+            this.constantValue = constantValue;
+        }
 
-		public void setLocation(String location) {
-			this.location = location;
-		}
+        public String getLocation() {
+            return this.location;
+        }
 
-		public String getDescription() {
-			return this.description;
-		}
+        public void setLocation(String location) {
+            this.location = location;
+        }
 
-		public void setDescription(String description) {
-			this.description = description;
-		}
-	}
+        public String getDescription() {
+            return this.description;
+        }
 
-	public static class RequestParameter {
+        public void setDescription(String description) {
+            this.description = description;
+        }
+    }
 
-		private String apiParameterName;
+    public static class RequestParameter {
 
-		private String location;
+        private String  apiParameterName;
 
-		private String parameterType;
+        private String  location;
 
-		private String required;
+        private String  parameterType;
 
-		private String defaultValue;
+        private String  required;
 
-		private String demoValue;
+        private String  defaultValue;
 
-		private Long maxValue;
+        private String  demoValue;
 
-		private Long minValue;
+        private Long    maxValue;
 
-		private Long maxLength;
+        private Long    minValue;
 
-		private Long minLength;
+        private Long    maxLength;
 
-		private String regularExpression;
+        private Long    minLength;
 
-		private String jsonScheme;
+        private String  regularExpression;
 
-		private String enumValue;
+        private String  jsonScheme;
 
-		private String docShow;
+        private String  enumValue;
 
-		private Integer docOrder;
+        private String  docShow;
 
-		private String description;
+        private Integer docOrder;
 
-		public String getApiParameterName() {
-			return this.apiParameterName;
-		}
+        private String  description;
 
-		public void setApiParameterName(String apiParameterName) {
-			this.apiParameterName = apiParameterName;
-		}
+        public String getApiParameterName() {
+            return this.apiParameterName;
+        }
 
-		public String getLocation() {
-			return this.location;
-		}
+        public void setApiParameterName(String apiParameterName) {
+            this.apiParameterName = apiParameterName;
+        }
 
-		public void setLocation(String location) {
-			this.location = location;
-		}
+        public String getLocation() {
+            return this.location;
+        }
 
-		public String getParameterType() {
-			return this.parameterType;
-		}
+        public void setLocation(String location) {
+            this.location = location;
+        }
 
-		public void setParameterType(String parameterType) {
-			this.parameterType = parameterType;
-		}
+        public String getParameterType() {
+            return this.parameterType;
+        }
 
-		public String getRequired() {
-			return this.required;
-		}
+        public void setParameterType(String parameterType) {
+            this.parameterType = parameterType;
+        }
 
-		public void setRequired(String required) {
-			this.required = required;
-		}
+        public String getRequired() {
+            return this.required;
+        }
 
-		public String getDefaultValue() {
-			return this.defaultValue;
-		}
+        public void setRequired(String required) {
+            this.required = required;
+        }
 
-		public void setDefaultValue(String defaultValue) {
-			this.defaultValue = defaultValue;
-		}
+        public String getDefaultValue() {
+            return this.defaultValue;
+        }
 
-		public String getDemoValue() {
-			return this.demoValue;
-		}
+        public void setDefaultValue(String defaultValue) {
+            this.defaultValue = defaultValue;
+        }
 
-		public void setDemoValue(String demoValue) {
-			this.demoValue = demoValue;
-		}
+        public String getDemoValue() {
+            return this.demoValue;
+        }
 
-		public Long getMaxValue() {
-			return this.maxValue;
-		}
+        public void setDemoValue(String demoValue) {
+            this.demoValue = demoValue;
+        }
 
-		public void setMaxValue(Long maxValue) {
-			this.maxValue = maxValue;
-		}
+        public Long getMaxValue() {
+            return this.maxValue;
+        }
 
-		public Long getMinValue() {
-			return this.minValue;
-		}
+        public void setMaxValue(Long maxValue) {
+            this.maxValue = maxValue;
+        }
 
-		public void setMinValue(Long minValue) {
-			this.minValue = minValue;
-		}
+        public Long getMinValue() {
+            return this.minValue;
+        }
 
-		public Long getMaxLength() {
-			return this.maxLength;
-		}
+        public void setMinValue(Long minValue) {
+            this.minValue = minValue;
+        }
 
-		public void setMaxLength(Long maxLength) {
-			this.maxLength = maxLength;
-		}
+        public Long getMaxLength() {
+            return this.maxLength;
+        }
 
-		public Long getMinLength() {
-			return this.minLength;
-		}
+        public void setMaxLength(Long maxLength) {
+            this.maxLength = maxLength;
+        }
 
-		public void setMinLength(Long minLength) {
-			this.minLength = minLength;
-		}
+        public Long getMinLength() {
+            return this.minLength;
+        }
 
-		public String getRegularExpression() {
-			return this.regularExpression;
-		}
+        public void setMinLength(Long minLength) {
+            this.minLength = minLength;
+        }
 
-		public void setRegularExpression(String regularExpression) {
-			this.regularExpression = regularExpression;
-		}
+        public String getRegularExpression() {
+            return this.regularExpression;
+        }
 
-		public String getJsonScheme() {
-			return this.jsonScheme;
-		}
+        public void setRegularExpression(String regularExpression) {
+            this.regularExpression = regularExpression;
+        }
 
-		public void setJsonScheme(String jsonScheme) {
-			this.jsonScheme = jsonScheme;
-		}
+        public String getJsonScheme() {
+            return this.jsonScheme;
+        }
 
-		public String getEnumValue() {
-			return this.enumValue;
-		}
+        public void setJsonScheme(String jsonScheme) {
+            this.jsonScheme = jsonScheme;
+        }
 
-		public void setEnumValue(String enumValue) {
-			this.enumValue = enumValue;
-		}
+        public String getEnumValue() {
+            return this.enumValue;
+        }
 
-		public String getDocShow() {
-			return this.docShow;
-		}
+        public void setEnumValue(String enumValue) {
+            this.enumValue = enumValue;
+        }
 
-		public void setDocShow(String docShow) {
-			this.docShow = docShow;
-		}
+        public String getDocShow() {
+            return this.docShow;
+        }
 
-		public Integer getDocOrder() {
-			return this.docOrder;
-		}
+        public void setDocShow(String docShow) {
+            this.docShow = docShow;
+        }
 
-		public void setDocOrder(Integer docOrder) {
-			this.docOrder = docOrder;
-		}
+        public Integer getDocOrder() {
+            return this.docOrder;
+        }
 
-		public String getDescription() {
-			return this.description;
-		}
+        public void setDocOrder(Integer docOrder) {
+            this.docOrder = docOrder;
+        }
 
-		public void setDescription(String description) {
-			this.description = description;
-		}
-	}
+        public String getDescription() {
+            return this.description;
+        }
 
-	public static class ServiceParameter {
+        public void setDescription(String description) {
+            this.description = description;
+        }
+    }
 
-		private String serviceParameterName;
+    public static class ServiceParameter {
 
-		private String location;
+        private String serviceParameterName;
 
-		private String parameterType;
+        private String location;
 
-		public String getServiceParameterName() {
-			return this.serviceParameterName;
-		}
+        private String parameterType;
 
-		public void setServiceParameterName(String serviceParameterName) {
-			this.serviceParameterName = serviceParameterName;
-		}
+        public String getServiceParameterName() {
+            return this.serviceParameterName;
+        }
 
-		public String getLocation() {
-			return this.location.toUpperCase();
-		}
+        public void setServiceParameterName(String serviceParameterName) {
+            this.serviceParameterName = serviceParameterName;
+        }
 
-		public void setLocation(String location) {
-			this.location = location;
-		}
+        public String getLocation() {
+            return this.location.toUpperCase();
+        }
 
-		public String getParameterType() {
-			return this.parameterType;
-		}
+        public void setLocation(String location) {
+            this.location = location;
+        }
 
-		public void setParameterType(String parameterType) {
-			this.parameterType = parameterType;
-		}
-	}
+        public String getParameterType() {
+            return this.parameterType;
+        }
 
-	public static class ServiceParameterMap {
+        public void setParameterType(String parameterType) {
+            this.parameterType = parameterType;
+        }
+    }
 
-		private String serviceParameterName;
+    public static class ServiceParameterMap {
 
-		private String requestParameterName;
+        private String serviceParameterName;
 
-		public String getServiceParameterName() {
-			return this.serviceParameterName;
-		}
+        private String requestParameterName;
 
-		public void setServiceParameterName(String serviceParameterName) {
-			this.serviceParameterName = serviceParameterName;
-		}
+        public String getServiceParameterName() {
+            return this.serviceParameterName;
+        }
 
-		public String getRequestParameterName() {
-			return this.requestParameterName;
-		}
+        public void setServiceParameterName(String serviceParameterName) {
+            this.serviceParameterName = serviceParameterName;
+        }
 
-		public void setRequestParameterName(String requestParameterName) {
-			this.requestParameterName = requestParameterName;
-		}
-	}
+        public String getRequestParameterName() {
+            return this.requestParameterName;
+        }
 
-	public static class DeployedInfo {
+        public void setRequestParameterName(String requestParameterName) {
+            this.requestParameterName = requestParameterName;
+        }
+    }
 
-		private String stageName;
+    public static class DeployedInfo {
 
-		private String effectiveVersion;
+        private String stageName;
 
-		private String deployedStatus;
+        private String effectiveVersion;
 
-		public String getStageName() {
-			return this.stageName;
-		}
+        private String deployedStatus;
 
-		public void setStageName(String stageName) {
-			this.stageName = stageName;
-		}
+        public String getStageName() {
+            return this.stageName;
+        }
 
-		public String getEffectiveVersion() {
-			return this.effectiveVersion;
-		}
+        public void setStageName(String stageName) {
+            this.stageName = stageName;
+        }
 
-		public void setEffectiveVersion(String effectiveVersion) {
-			this.effectiveVersion = effectiveVersion;
-		}
+        public String getEffectiveVersion() {
+            return this.effectiveVersion;
+        }
 
-		public String getDeployedStatus() {
-			return this.deployedStatus;
-		}
+        public void setEffectiveVersion(String effectiveVersion) {
+            this.effectiveVersion = effectiveVersion;
+        }
 
-		public void setDeployedStatus(String deployedStatus) {
-			this.deployedStatus = deployedStatus;
-		}
-	}
+        public String getDeployedStatus() {
+            return this.deployedStatus;
+        }
 
-	public static class RequestConfig {
+        public void setDeployedStatus(String deployedStatus) {
+            this.deployedStatus = deployedStatus;
+        }
+    }
 
-		private String requestProtocol;
+    public static class ErrorCodeSample {
 
-		private String requestHttpMethod;
+        private String code;
 
-		private String requestPath;
+        private String message;
 
-		private String bodyFormat;
+        private String description;
 
-		private String postBodyDescription;
+        public String getCode() {
+            return this.code;
+        }
 
-		public String getRequestProtocol() {
-			return this.requestProtocol;
-		}
+        public void setCode(String code) {
+            this.code = code;
+        }
 
-		public void setRequestProtocol(String requestProtocol) {
-			this.requestProtocol = requestProtocol;
-		}
+        public String getMessage() {
+            return this.message;
+        }
 
-		public String getRequestHttpMethod() {
-			return this.requestHttpMethod;
-		}
+        public void setMessage(String message) {
+            this.message = message;
+        }
 
-		public void setRequestHttpMethod(String requestHttpMethod) {
-			this.requestHttpMethod = requestHttpMethod;
-		}
+        public String getDescription() {
+            return this.description;
+        }
 
-		public String getRequestPath() {
-			return this.requestPath;
-		}
+        public void setDescription(String description) {
+            this.description = description;
+        }
+    }
 
-		public void setRequestPath(String requestPath) {
-			this.requestPath = requestPath;
-		}
+    public static class RequestConfig {
 
-		public String getBodyFormat() {
-			return this.bodyFormat;
-		}
+        private String requestProtocol;
 
-		public void setBodyFormat(String bodyFormat) {
-			this.bodyFormat = bodyFormat;
-		}
+        private String requestHttpMethod;
 
-		public String getPostBodyDescription() {
-			return this.postBodyDescription;
-		}
+        private String requestPath;
 
-		public void setPostBodyDescription(String postBodyDescription) {
-			this.postBodyDescription = postBodyDescription;
-		}
-	}
+        private String bodyFormat;
 
-	public static class ServiceConfig {
+        private String postBodyDescription;
 
-		private String serviceProtocol;
+        public String getRequestProtocol() {
+            return this.requestProtocol;
+        }
 
-		private String serviceAddress;
+        public void setRequestProtocol(String requestProtocol) {
+            this.requestProtocol = requestProtocol;
+        }
 
-		private String serviceHttpMethod;
+        public String getRequestHttpMethod() {
+            return this.requestHttpMethod;
+        }
 
-		private String servicePath;
+        public void setRequestHttpMethod(String requestHttpMethod) {
+            this.requestHttpMethod = requestHttpMethod;
+        }
 
-		private Integer serviceTimeout;
+        public String getRequestPath() {
+            return this.requestPath;
+        }
 
-		public String getServiceProtocol() {
-			return this.serviceProtocol;
-		}
+        public void setRequestPath(String requestPath) {
+            this.requestPath = requestPath;
+        }
 
-		public void setServiceProtocol(String serviceProtocol) {
-			this.serviceProtocol = serviceProtocol;
-		}
+        public String getBodyFormat() {
+            return this.bodyFormat;
+        }
 
-		public String getServiceAddress() {
-			return this.serviceAddress;
-		}
+        public void setBodyFormat(String bodyFormat) {
+            this.bodyFormat = bodyFormat;
+        }
 
-		public void setServiceAddress(String serviceAddress) {
-			this.serviceAddress = serviceAddress;
-		}
+        public String getPostBodyDescription() {
+            return this.postBodyDescription;
+        }
 
-		public String getServiceHttpMethod() {
-			return this.serviceHttpMethod;
-		}
+        public void setPostBodyDescription(String postBodyDescription) {
+            this.postBodyDescription = postBodyDescription;
+        }
+    }
 
-		public void setServiceHttpMethod(String serviceHttpMethod) {
-			this.serviceHttpMethod = serviceHttpMethod;
-		}
+    public static class ServiceConfig {
 
-		public String getServicePath() {
-			return this.servicePath;
-		}
+        private String  serviceProtocol;
 
-		public void setServicePath(String servicePath) {
-			this.servicePath = servicePath;
-		}
+        private String  serviceAddress;
 
-		public Integer getServiceTimeout() {
-			return this.serviceTimeout;
-		}
+        private String  serviceHttpMethod;
 
-		public void setServiceTimeout(Integer serviceTimeout) {
-			this.serviceTimeout = serviceTimeout;
-		}
-	}
+        private String  servicePath;
 
-	@Override
-	public DescribeApiResponse getInstance(UnmarshallerContext context) {
-		return	DescribeApiResponseUnmarshaller.unmarshall(this, context);
-	}
+        private Integer serviceTimeout;
+
+        private String  mock;
+
+        private String  mockResult;
+
+        public String getServiceProtocol() {
+            return this.serviceProtocol;
+        }
+
+        public void setServiceProtocol(String serviceProtocol) {
+            this.serviceProtocol = serviceProtocol;
+        }
+
+        public String getServiceAddress() {
+            return this.serviceAddress;
+        }
+
+        public void setServiceAddress(String serviceAddress) {
+            this.serviceAddress = serviceAddress;
+        }
+
+        public String getServiceHttpMethod() {
+            return this.serviceHttpMethod;
+        }
+
+        public void setServiceHttpMethod(String serviceHttpMethod) {
+            this.serviceHttpMethod = serviceHttpMethod;
+        }
+
+        public String getServicePath() {
+            return this.servicePath;
+        }
+
+        public void setServicePath(String servicePath) {
+            this.servicePath = servicePath;
+        }
+
+        public Integer getServiceTimeout() {
+            return this.serviceTimeout;
+        }
+
+        public void setServiceTimeout(Integer serviceTimeout) {
+            this.serviceTimeout = serviceTimeout;
+        }
+
+        public String getMock() {
+            return mock;
+        }
+
+        public void setMock(String mock) {
+            this.mock = mock;
+        }
+        
+        public String getMockResult() {
+            return mockResult;
+        }
+
+        public void setMockResult(String mockResult) {
+            this.mockResult = mockResult;
+        }
+    }
+
+    public static class OpenIdConnectConfig {
+        private String openIdApiType;
+
+        private String idTokenParamName;
+
+        private String publicKeyId;
+
+        private String publicKey;
+
+        public String getOpenIdApiType() {
+            return openIdApiType;
+        }
+
+        public void setOpenIdApiType(String openIdApiType) {
+            this.openIdApiType = openIdApiType;
+        }
+
+        public String getIdTokenParamName() {
+            return idTokenParamName;
+        }
+
+        public void setIdTokenParamName(String idTokenParamName) {
+            this.idTokenParamName = idTokenParamName;
+        }
+
+        public String getPublicKeyId() {
+            return publicKeyId;
+        }
+
+        public void setPublicKeyId(String publicKeyId) {
+            this.publicKeyId = publicKeyId;
+        }
+
+        public String getPublicKey() {
+            return publicKey;
+        }
+
+        public void setPublicKey(String publicKey) {
+            this.publicKey = publicKey;
+        }
+    }
+
+    @Override
+    public DescribeApiResponse getInstance(UnmarshallerContext context) {
+        return DescribeApiResponseUnmarshaller.unmarshall(this, context);
+    }
+
 }

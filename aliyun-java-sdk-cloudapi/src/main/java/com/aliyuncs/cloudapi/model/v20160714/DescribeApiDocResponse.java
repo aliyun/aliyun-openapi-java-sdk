@@ -20,6 +20,7 @@ package com.aliyuncs.cloudapi.model.v20160714;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
+import com.aliyuncs.cloudapi.model.v20160714.DescribeApiResponse.ErrorCodeSample;
 import com.aliyuncs.cloudapi.model.v20160714.DescribeApiResponse.RequestConfig;
 import com.aliyuncs.cloudapi.model.v20160714.DescribeApiResponse.RequestParameter;
 import com.aliyuncs.cloudapi.transform.v20160714.DescribeApiDocResponseUnmarshaller;
@@ -55,7 +56,11 @@ public class DescribeApiDocResponse extends AcsResponse {
 
 	private String resultSample;
 
+	private String failResultSample;
+
 	private String deployedTime;
+
+	private List<ErrorCodeSample> errorCodeSamples;
 
 	private List<RequestParameter> requestParameters;
 
@@ -179,7 +184,23 @@ public class DescribeApiDocResponse extends AcsResponse {
 
 	public void setRequestConfig(RequestConfig requestConfig) {
 		this.requestConfig = requestConfig;
-	}	
+	}
+
+	public String getFailResultSample() {
+		return failResultSample;
+	}
+
+	public void setFailResultSample(String failResultSample) {
+		this.failResultSample = failResultSample;
+	}
+
+	public List<ErrorCodeSample> getErrorCodeSamples() {
+		return errorCodeSamples;
+	}
+
+	public void setErrorCodeSamples(List<ErrorCodeSample> errorCodeSamples) {
+		this.errorCodeSamples = errorCodeSamples;
+	}
 
 	@Override
 	public DescribeApiDocResponse getInstance(UnmarshallerContext context) {

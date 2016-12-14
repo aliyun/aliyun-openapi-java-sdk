@@ -20,7 +20,9 @@ package com.aliyuncs.cloudapi.model.v20160714;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
+import com.aliyuncs.cloudapi.model.v20160714.DescribeApiResponse.ErrorCodeSample;
 import com.aliyuncs.cloudapi.model.v20160714.DescribeApiResponse.ConstantParameter;
+import com.aliyuncs.cloudapi.model.v20160714.DescribeApiResponse.OpenIdConnectConfig;
 import com.aliyuncs.cloudapi.model.v20160714.DescribeApiResponse.RequestConfig;
 import com.aliyuncs.cloudapi.model.v20160714.DescribeApiResponse.RequestParameter;
 import com.aliyuncs.cloudapi.model.v20160714.DescribeApiResponse.ServiceConfig;
@@ -64,9 +66,15 @@ public class DescribeApiHistoryResponse extends AcsResponse {
 
 	private String resultSample;
 
+	private String failResultSample;
+
 	private String deployedTime;
 
+	private List<ErrorCodeSample> errorCodeSamples;
+
 	private List<SystemParameter> systemParameters;
+	
+	private List<SystemParameter> customSystemParameters;
 
 	private List<ConstantParameter> constantParameters;
 
@@ -79,6 +87,8 @@ public class DescribeApiHistoryResponse extends AcsResponse {
 	private RequestConfig requestConfig;
 
 	private ServiceConfig serviceConfig;
+	
+	private OpenIdConnectConfig openIdConnectConfig;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -254,10 +264,43 @@ public class DescribeApiHistoryResponse extends AcsResponse {
 
 	public void setServiceConfig(ServiceConfig serviceConfig) {
 		this.serviceConfig = serviceConfig;
-	}	
+	}
+	
+	public String getFailResultSample() {
+		return failResultSample;
+	}
+
+	public void setFailResultSample(String failResultSample) {
+		this.failResultSample = failResultSample;
+	}
+
+	public List<ErrorCodeSample> getErrorCodeSamples() {
+		return errorCodeSamples;
+	}
+
+	public void setErrorCodeSamples(List<ErrorCodeSample> errorCodeSamples) {
+		this.errorCodeSamples = errorCodeSamples;
+	}
+	
+    public List<SystemParameter> getCustomSystemParameters() {
+        return customSystemParameters;
+    }
+
+    public void setCustomSystemParameters(List<SystemParameter> customSystemParameters) {
+        this.customSystemParameters = customSystemParameters;
+    }
+
+    public OpenIdConnectConfig getOpenIdConnectConfig() {
+        return openIdConnectConfig;
+    }
+
+    public void setOpenIdConnectConfig(OpenIdConnectConfig openIdConnectConfig) {
+        this.openIdConnectConfig = openIdConnectConfig;
+    }
 
 	@Override
 	public DescribeApiHistoryResponse getInstance(UnmarshallerContext context) {
 		return	DescribeApiHistoryResponseUnmarshaller.unmarshall(this, context);
 	}
+
 }

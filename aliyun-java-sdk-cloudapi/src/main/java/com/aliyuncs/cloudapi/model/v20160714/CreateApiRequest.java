@@ -22,7 +22,9 @@ import java.util.List;
 
 import com.alibaba.fastjson.JSON;
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.cloudapi.model.v20160714.DescribeApiResponse.ErrorCodeSample;
 import com.aliyuncs.cloudapi.model.v20160714.DescribeApiResponse.ConstantParameter;
+import com.aliyuncs.cloudapi.model.v20160714.DescribeApiResponse.OpenIdConnectConfig;
 import com.aliyuncs.cloudapi.model.v20160714.DescribeApiResponse.RequestConfig;
 import com.aliyuncs.cloudapi.model.v20160714.DescribeApiResponse.RequestParameter;
 import com.aliyuncs.cloudapi.model.v20160714.DescribeApiResponse.ServiceConfig;
@@ -67,6 +69,12 @@ public class CreateApiRequest extends RpcAcsRequest<CreateApiResponse> {
 	private String resultType;
 
 	private String resultSample;
+	
+	private String failResultSample;
+
+	private String errorCodeSamples;
+	
+	private String openIdConnectConfig;
 
 	public String getGroupId() {
 		return this.groupId;
@@ -194,6 +202,24 @@ public class CreateApiRequest extends RpcAcsRequest<CreateApiResponse> {
 		putQueryParameter("ResultSample", resultSample);
 	}
 	
+	public String getFailResultSample() {
+		return this.failResultSample;
+	}
+
+	public void setFailResultSample(String failResultSample) {
+		this.failResultSample = failResultSample;
+		putQueryParameter("FailResultSample", failResultSample);
+	}
+
+	public String getErrorCodeSamples() {
+		return this.errorCodeSamples;
+	}
+
+	public void setErrorCodeSamples(String errorCodeSamples) {
+		this.errorCodeSamples = errorCodeSamples;
+		putQueryParameter("ErrorCodeSamples", errorCodeSamples);
+	}
+	
 	public void setRequestConfig(RequestConfig requestConfig) {
 		if (null != requestConfig) {
 			setRequestConfig(JSON.toJSONString(requestConfig));
@@ -234,9 +260,30 @@ public class CreateApiRequest extends RpcAcsRequest<CreateApiResponse> {
 		if (null != list) {
 			setServiceParametersMap(JSON.toJSONString(list));
 		}
-	}	
+	}
+	
+	public void setErrorCodeSamples(List<ErrorCodeSample> list) {
+		if (null != list) {
+			setErrorCodeSamples(JSON.toJSONString(list));
+		}
+	}
+	
+	public void setOpenIdConnectConfig(OpenIdConnectConfig openIdConnectConfig) {
+	    if (null != openIdConnectConfig) {
+	        setOpenIdConnectConfig(JSON.toJSONString(openIdConnectConfig));
+	    }
+	}
 
-	@Override
+    public String getOpenIdConnectConfig() {
+        return openIdConnectConfig;
+    }
+
+    public void setOpenIdConnectConfig(String openIdConnectConfig) {
+        this.openIdConnectConfig = openIdConnectConfig;
+        putQueryParameter("OpenIdConnectConfig", openIdConnectConfig);
+    }
+
+    @Override
 	public Class<CreateApiResponse> getResponseClass() {
 		return CreateApiResponse.class;
 	}

@@ -22,8 +22,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.cloudapi.model.v20160714.DescribeApiResponse;
+import com.aliyuncs.cloudapi.model.v20160714.DescribeApiResponse.ErrorCodeSample;
 import com.aliyuncs.cloudapi.model.v20160714.DescribeApiResponse.ConstantParameter;
 import com.aliyuncs.cloudapi.model.v20160714.DescribeApiResponse.DeployedInfo;
+import com.aliyuncs.cloudapi.model.v20160714.DescribeApiResponse.OpenIdConnectConfig;
 import com.aliyuncs.cloudapi.model.v20160714.DescribeApiResponse.RequestConfig;
 import com.aliyuncs.cloudapi.model.v20160714.DescribeApiResponse.RequestParameter;
 import com.aliyuncs.cloudapi.model.v20160714.DescribeApiResponse.ServiceConfig;
@@ -47,11 +49,10 @@ public class DescribeApiResponseUnmarshaller {
 		describeApiResponse.setAuthType(context.stringValue("DescribeApiResponse.AuthType"));
 		describeApiResponse.setResultType(context.stringValue("DescribeApiResponse.ResultType"));
 		describeApiResponse.setResultSample(context.stringValue("DescribeApiResponse.ResultSample"));
+		describeApiResponse.setFailResultSample(context.stringValue("DescribeApiResponse.FailResultSample"));
 		describeApiResponse.setCreatedTime(context.stringValue("DescribeApiResponse.CreatedTime"));
 		describeApiResponse.setModifiedTime(context.stringValue("DescribeApiResponse.ModifiedTime"));
 		describeApiResponse.setDescription(context.stringValue("DescribeApiResponse.Description"));
-		describeApiResponse.setMock(context.stringValue("DescribeApiResponse.Mock"));
-		describeApiResponse.setMockResult(context.stringValue("DescribeApiResponse.MockResult"));
 
 		RequestConfig requestConfig = new RequestConfig();
 		requestConfig.setRequestProtocol(context.stringValue("DescribeApiResponse.RequestConfig.RequestProtocol"));
@@ -67,7 +68,16 @@ public class DescribeApiResponseUnmarshaller {
 		serviceConfig.setServiceHttpMethod(context.stringValue("DescribeApiResponse.ServiceConfig.ServiceHttpMethod"));
 		serviceConfig.setServicePath(context.stringValue("DescribeApiResponse.ServiceConfig.ServicePath"));
 		serviceConfig.setServiceTimeout(context.integerValue("DescribeApiResponse.ServiceConfig.ServiceTimeout"));
+		serviceConfig.setMock(context.stringValue("DescribeApiResponse.ServiceConfig.Mock"));
+		serviceConfig.setMockResult(context.stringValue("DescribeApiResponse.ServiceConfig.MockResult"));
 		describeApiResponse.setServiceConfig(serviceConfig);
+		
+		OpenIdConnectConfig openIdConnectConfig = new OpenIdConnectConfig();
+		openIdConnectConfig.setIdTokenParamName(context.stringValue("DescribeApiResponse.OpenIdConnectConfig.IdTokenParamName"));
+		openIdConnectConfig.setOpenIdApiType(context.stringValue("DescribeApiResponse.OpenIdConnectConfig.OpenIdApiType"));
+		openIdConnectConfig.setPublicKey(context.stringValue("DescribeApiResponse.OpenIdConnectConfig.PublicKey"));
+		openIdConnectConfig.setPublicKeyId(context.stringValue("DescribeApiResponse.OpenIdConnectConfig.PublicKeyId"));
+		describeApiResponse.setOpenIdConnectConfig(openIdConnectConfig);
 
 		List<SystemParameter> systemParameters = new ArrayList<SystemParameter>();
 		for (int i = 0; i < context.lengthValue("DescribeApiResponse.SystemParameters.Length"); i++) {
@@ -81,6 +91,19 @@ public class DescribeApiResponseUnmarshaller {
 			systemParameters.add(systemParameter);
 		}
 		describeApiResponse.setSystemParameters(systemParameters);
+		
+		List<SystemParameter> customSystemParameters = new ArrayList<SystemParameter>();
+        for (int i = 0; i < context.lengthValue("DescribeApiResponse.CustomSystemParameters.Length"); i++) {
+            SystemParameter customSystemParameter = new SystemParameter();
+            customSystemParameter.setParameterName(context.stringValue("DescribeApiResponse.CustomSystemParameters["+ i +"].ParameterName"));
+            customSystemParameter.setServiceParameterName(context.stringValue("DescribeApiResponse.CustomSystemParameters["+ i +"].ServiceParameterName"));
+            customSystemParameter.setLocation(context.stringValue("DescribeApiResponse.CustomSystemParameters["+ i +"].Location"));
+            customSystemParameter.setDemoValue(context.stringValue("DescribeApiResponse.CustomSystemParameters["+ i +"].DemoValue"));
+            customSystemParameter.setDescription(context.stringValue("DescribeApiResponse.CustomSystemParameters["+ i +"].Description"));
+
+            customSystemParameters.add(customSystemParameter);
+        }
+        describeApiResponse.setCustomSystemParameters(customSystemParameters);
 
 		List<ConstantParameter> constantParameters = new ArrayList<ConstantParameter>();
 		for (int i = 0; i < context.lengthValue("DescribeApiResponse.ConstantParameters.Length"); i++) {
@@ -149,6 +172,17 @@ public class DescribeApiResponseUnmarshaller {
 			deployedInfos.add(deployedInfo);
 		}
 		describeApiResponse.setDeployedInfos(deployedInfos);
+		
+		List<ErrorCodeSample> errorCodeSamples = new ArrayList<ErrorCodeSample>();
+		for (int i = 0; i < context.lengthValue("DescribeApiResponse.ErrorCodeSamples.Length"); i++) {
+			ErrorCodeSample errorCodeSample = new ErrorCodeSample();
+			errorCodeSample.setCode(context.stringValue("DescribeApiResponse.ErrorCodeSamples["+ i +"].Code"));
+			errorCodeSample.setMessage(context.stringValue("DescribeApiResponse.ErrorCodeSamples["+ i +"].Message"));
+			errorCodeSample.setDescription(context.stringValue("DescribeApiResponse.ErrorCodeSamples["+ i +"].Description"));
+
+			errorCodeSamples.add(errorCodeSample);
+		}
+		describeApiResponse.setErrorCodeSamples(errorCodeSamples);
 	 
 	 	return describeApiResponse;
 	}

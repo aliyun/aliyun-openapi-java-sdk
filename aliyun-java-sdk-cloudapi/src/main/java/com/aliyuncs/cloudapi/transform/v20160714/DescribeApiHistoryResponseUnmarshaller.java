@@ -22,7 +22,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.cloudapi.model.v20160714.DescribeApiHistoryResponse;
+import com.aliyuncs.cloudapi.model.v20160714.DescribeApiResponse.ErrorCodeSample;
 import com.aliyuncs.cloudapi.model.v20160714.DescribeApiResponse.ConstantParameter;
+import com.aliyuncs.cloudapi.model.v20160714.DescribeApiResponse.OpenIdConnectConfig;
 import com.aliyuncs.cloudapi.model.v20160714.DescribeApiResponse.RequestConfig;
 import com.aliyuncs.cloudapi.model.v20160714.DescribeApiResponse.RequestParameter;
 import com.aliyuncs.cloudapi.model.v20160714.DescribeApiResponse.ServiceConfig;
@@ -50,6 +52,7 @@ public class DescribeApiHistoryResponseUnmarshaller {
 		describeApiHistoryResponse.setAuthType(context.stringValue("DescribeApiHistoryResponse.AuthType"));
 		describeApiHistoryResponse.setResultType(context.stringValue("DescribeApiHistoryResponse.ResultType"));
 		describeApiHistoryResponse.setResultSample(context.stringValue("DescribeApiHistoryResponse.ResultSample"));
+		describeApiHistoryResponse.setFailResultSample(context.stringValue("DescribeApiHistoryResponse.FailResultSample"));
 		describeApiHistoryResponse.setDeployedTime(context.stringValue("DescribeApiHistoryResponse.DeployedTime"));
 
 		RequestConfig requestConfig = new RequestConfig();
@@ -66,7 +69,16 @@ public class DescribeApiHistoryResponseUnmarshaller {
 		serviceConfig.setServiceHttpMethod(context.stringValue("DescribeApiHistoryResponse.ServiceConfig.ServiceHttpMethod"));
 		serviceConfig.setServicePath(context.stringValue("DescribeApiHistoryResponse.ServiceConfig.ServicePath"));
 		serviceConfig.setServiceTimeout(context.integerValue("DescribeApiHistoryResponse.ServiceConfig.ServiceTimeout"));
+		serviceConfig.setMock(context.stringValue("DescribeApiHistoryResponse.ServiceConfig.Mock"));
+        serviceConfig.setMockResult(context.stringValue("DescribeApiHistoryResponse.ServiceConfig.MockResult"));
 		describeApiHistoryResponse.setServiceConfig(serviceConfig);
+		
+		OpenIdConnectConfig openIdConnectConfig = new OpenIdConnectConfig();
+        openIdConnectConfig.setIdTokenParamName(context.stringValue("DescribeApiHistoryResponse.OpenIdConnectConfig.IdTokenParamName"));
+        openIdConnectConfig.setOpenIdApiType(context.stringValue("DescribeApiHistoryResponse.OpenIdConnectConfig.OpenIdApiType"));
+        openIdConnectConfig.setPublicKey(context.stringValue("DescribeApiHistoryResponse.OpenIdConnectConfig.PublicKey"));
+        openIdConnectConfig.setPublicKeyId(context.stringValue("DescribeApiHistoryResponse.OpenIdConnectConfig.PublicKeyId"));
+        describeApiHistoryResponse.setOpenIdConnectConfig(openIdConnectConfig);
 
 		List<SystemParameter> systemParameters = new ArrayList<SystemParameter>();
 		for (int i = 0; i < context.lengthValue("DescribeApiHistoryResponse.SystemParameters.Length"); i++) {
@@ -80,6 +92,19 @@ public class DescribeApiHistoryResponseUnmarshaller {
 			systemParameters.add(systemParameter);
 		}
 		describeApiHistoryResponse.setSystemParameters(systemParameters);
+		
+		List<SystemParameter> customSystemParameters = new ArrayList<SystemParameter>();
+        for (int i = 0; i < context.lengthValue("DescribeApiHistoryResponse.CustomSystemParameters.Length"); i++) {
+            SystemParameter customSystemParameter = new SystemParameter();
+            customSystemParameter.setParameterName(context.stringValue("DescribeApiHistoryResponse.CustomSystemParameters["+ i +"].ParameterName"));
+            customSystemParameter.setServiceParameterName(context.stringValue("DescribeApiHistoryResponse.CustomSystemParameters["+ i +"].ServiceParameterName"));
+            customSystemParameter.setLocation(context.stringValue("DescribeApiHistoryResponse.CustomSystemParameters["+ i +"].Location"));
+            customSystemParameter.setDemoValue(context.stringValue("DescribeApiHistoryResponse.CustomSystemParameters["+ i +"].DemoValue"));
+            customSystemParameter.setDescription(context.stringValue("DescribeApiHistoryResponse.CustomSystemParameters["+ i +"].Description"));
+
+            customSystemParameters.add(customSystemParameter);
+        }
+        describeApiHistoryResponse.setCustomSystemParameters(customSystemParameters);
 
 		List<ConstantParameter> constantParameters = new ArrayList<ConstantParameter>();
 		for (int i = 0; i < context.lengthValue("DescribeApiHistoryResponse.ConstantParameters.Length"); i++) {
@@ -138,6 +163,17 @@ public class DescribeApiHistoryResponseUnmarshaller {
 		}
 		describeApiHistoryResponse.setServiceParametersMap(serviceParametersMap);
 	 
+		List<ErrorCodeSample> errorCodeSamples = new ArrayList<ErrorCodeSample>();
+		for (int i = 0; i < context.lengthValue("DescribeApiHistoryResponse.ErrorCodeSamples.Length"); i++) {
+			ErrorCodeSample errorCodeSample = new ErrorCodeSample();
+			errorCodeSample.setCode(context.stringValue("DescribeApiHistoryResponse.ErrorCodeSamples["+ i +"].Code"));
+			errorCodeSample.setMessage(context.stringValue("DescribeApiHistoryResponse.ErrorCodeSamples["+ i +"].Message"));
+			errorCodeSample.setDescription(context.stringValue("DescribeApiHistoryResponse.ErrorCodeSamples["+ i +"].Description"));
+
+			errorCodeSamples.add(errorCodeSample);
+		}
+		describeApiHistoryResponse.setErrorCodeSamples(errorCodeSamples);
+		
 	 	return describeApiHistoryResponse;
 	}
 }
