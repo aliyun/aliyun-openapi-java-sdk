@@ -79,18 +79,22 @@ public class DefaultAcsClient implements IAcsClient{
 		ISigner signer = null;
 		FormatType format = null;
 		List<Endpoint> endpoints = null;
+        if (null == request.getRegionId()) {
+            request.setRegionId(regionId);
+        }
         if (null != this.clientProfile) {
             signer = clientProfile.getSigner();
             format = clientProfile.getFormat();
 			try {
-				endpoints = clientProfile.getEndpoints(request.getProduct(), request.getLocationProduct(),
+                endpoints = clientProfile.getEndpoints(request.getProduct(), request.getRegionId(),
+                        request.getLocationProduct(),
 						request.getEndpointType());
 			} catch (Throwable e) {
-                endpoints = clientProfile.getEndpoints(regionId, request.getProduct());
+                endpoints = clientProfile.getEndpoints(request.getRegionId(), request.getProduct());
 			}
         }
 		
-		return this.doAction(request, retry, retryNumber, regionId, credential, signer, format, endpoints);
+        return this.doAction(request, retry, retryNumber, request.getRegionId(), credential, signer, format, endpoints);
 	}
 	
 	@Override
@@ -130,17 +134,21 @@ public class DefaultAcsClient implements IAcsClient{
 		boolean retry = autoRetry;
 		int retryNumber = maxRetryCounts;
 		String region = profile.getRegionId();
+        if (null == request.getRegionId()) {
+            request.setRegionId(region);
+        }
 		Credential credential = profile.getCredential();
 		ISigner signer = profile.getSigner();
 		FormatType format = profile.getFormat();
         List<Endpoint> endpoints;
 		try {
-			endpoints = clientProfile.getEndpoints(request.getProduct(), request.getLocationProduct(),
+            endpoints = clientProfile.getEndpoints(request.getProduct(), request.getRegionId(),
+                    request.getLocationProduct(),
 					request.getEndpointType());
 		} catch (Throwable e) {
-            endpoints = clientProfile.getEndpoints(region, request.getProduct());
+            endpoints = clientProfile.getEndpoints(request.getRegionId(), request.getProduct());
 		}
-		return this.doAction(request, retry, retryNumber, region, credential, signer, format, endpoints);
+        return this.doAction(request, retry, retryNumber, request.getRegionId(), credential, signer, format, endpoints);
 	}
 	
 	private <T extends AcsResponse> T parseAcsResponse(Class<T> clasz, HttpResponse baseResponse) 
@@ -172,10 +180,7 @@ public class DefaultAcsClient implements IAcsClient{
 			if (null != requestFormatType){
 				format = requestFormatType;
 			}
-			if(null == request.getRegionId()){
-				request.setRegionId(regionId);
-			}
-            ProductDomain domain = Endpoint.findProductDomain(request.getRegionId(), request.getProduct(), endpoints);
+            ProductDomain domain = Endpoint.findProductDomain(regionId, request.getProduct(), endpoints);
 			if (null == domain){
 				throw new ClientException("SDK.InvalidRegionId", "Can not find endpoint to access.");
 			}

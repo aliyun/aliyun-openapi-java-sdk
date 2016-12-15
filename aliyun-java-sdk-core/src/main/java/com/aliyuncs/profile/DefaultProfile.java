@@ -128,6 +128,11 @@ public class DefaultProfile implements IClientProfile {
     }
 
     @Override
+    public List<Endpoint> getEndpoints() throws ClientException {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override
     public synchronized List<Endpoint> getEndpoints(String regionId, String product) throws ClientException {
         if (null == endpoints) {
             Endpoint endpoint = iendpoints.getEndpoint(regionId, product);
@@ -154,7 +159,8 @@ public class DefaultProfile implements IClientProfile {
     //    }
 
     @Override
-    public synchronized List<Endpoint> getEndpoints(String product,String serviceCode, String endpointType) throws ClientException {
+    public synchronized List<Endpoint> getEndpoints(String product, String regionId, String serviceCode,
+                                                    String endpointType) throws ClientException {
         if (null == endpoints) {
             Endpoint endpoint = null;
             if (serviceCode != null) {
@@ -178,9 +184,9 @@ public class DefaultProfile implements IClientProfile {
                 endpoint = iendpoints.getEndpoint(regionId, product);
             }
             if (endpoint != null) {
-                for (String regionId : endpoint.getRegionIds()) {
+                for (String region : endpoint.getRegionIds()) {
                     for (ProductDomain productDomain : endpoint.getProductDomains()) {
-                        addEndpoint(endpoint.getName(), regionId, product, productDomain.getDomianName());
+                        addEndpoint(endpoint.getName(), region, product, productDomain.getDomianName());
                     }
                 }
             }
@@ -207,13 +213,21 @@ public class DefaultProfile implements IClientProfile {
         return profile;
     }
 
+    public synchronized static DefaultProfile getProfile(String regionId, String accessKeyId, String secret,
+                                                         String stsToken) {
+        Credential creden = new Credential(accessKeyId, secret, stsToken);
+        profile = new DefaultProfile(regionId, creden);
+        return profile;
+    }
+
     /**
-     * regionId,eg: cn-hangzhou
-     * productDomainMap,eg:
-     * Map<String, String> productDomainMap= new HashMap<String,String>();
-     * productDomainMap.put("ecs","ecs.aliyuncs.com")
-     * accessKeyId
-     * secret
+     * <pre>
+     * 给个性化用户使用的，CustomizedEndpointsParser 通过这个去解析endpoint,
+     * 非本地和location；所以一般情况不要使用这个 regionId,
+     * </pre>
+     * eg: cn-hangzhou productDomainMap,eg: Map<String, String>
+     * productDomainMap= new HashMap<String,String>();
+     * productDomainMap.put("ecs","ecs.aliyuncs.com") accessKeyId secret
      */
     public synchronized static DefaultProfile getProfile(String regionId, Map<String, String> productDomainMap,
                                                          String accessKeyId, String secret) {
@@ -223,9 +237,24 @@ public class DefaultProfile implements IClientProfile {
         return profile;
     }
 
+    public synchronized static DefaultProfile getProfile(String regionId, Map<String, String> productDomainMap,
+                                                         String accessKeyId, String secret, String stsToken) {
+        Credential creden = new Credential(accessKeyId, secret, stsToken);
+        IEndpointsProvider provider = CustomizedEndpointsParser.initParser(regionId, productDomainMap);
+        profile = new DefaultProfile(regionId, creden, provider);
+        return profile;
+    }
+
     public synchronized static DefaultProfile getProfile(String regionId, IEndpointsProvider provider,
                                                          String accessKeyId, String secret) {
         Credential creden = new Credential(accessKeyId, secret);
+        profile = new DefaultProfile(regionId, creden, provider);
+        return profile;
+    }
+
+    public synchronized static DefaultProfile getProfile(String regionId, IEndpointsProvider provider,
+                                                         String accessKeyId, String secret, String stsToken) {
+        Credential creden = new Credential(accessKeyId, secret, stsToken);
         profile = new DefaultProfile(regionId, creden, provider);
         return profile;
     }
@@ -290,5 +319,6 @@ public class DefaultProfile implements IClientProfile {
         }
         return null;
     }
+
 
 }

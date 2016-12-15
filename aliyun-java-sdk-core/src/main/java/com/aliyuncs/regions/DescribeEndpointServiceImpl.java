@@ -1,11 +1,12 @@
 package com.aliyuncs.regions;
 
+import java.io.UnsupportedEncodingException;
+
 import com.aliyuncs.AcsError;
 import com.aliyuncs.auth.Credential;
 import com.aliyuncs.auth.ISigner;
 import com.aliyuncs.auth.ShaHmac1Singleton;
 import com.aliyuncs.exceptions.ClientException;
-import com.aliyuncs.exceptions.ServerException;
 import com.aliyuncs.http.FormatType;
 import com.aliyuncs.http.HttpRequest;
 import com.aliyuncs.http.HttpResponse;
@@ -13,14 +14,11 @@ import com.aliyuncs.reader.Reader;
 import com.aliyuncs.reader.ReaderFactory;
 import com.aliyuncs.transform.UnmarshallerContext;
 
-import java.io.UnsupportedEncodingException;
-import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
-
 /**
  * Created by hi.yan.li on 2016/4/26.
  */
 public class DescribeEndpointServiceImpl implements DescribeEndpointService {
+    private static final String DEFAULT_ENDPOINT_TYPE = "openAPI";
 
     private boolean isEmpty(String str) {
         return ((str == null) || (str.length() == 0));
@@ -37,7 +35,9 @@ public class DescribeEndpointServiceImpl implements DescribeEndpointService {
         request.setAcceptFormat(FormatType.JSON);
         request.setId(regionId);
         request.setRegionId(locationConfig.getRegionId());
-        request.setServiceCode(serviceCode);
+        request.setLocationProduct(serviceCode);
+        request.setSecurityToken(credential.getSecurityToken());
+        request.setEndpointType(DEFAULT_ENDPOINT_TYPE);
 
         ISigner signer = ShaHmac1Singleton.INSTANCE.getInstance();
         ProductDomain domain = new ProductDomain(locationConfig.getProduct(), locationConfig.getEndpoint());
@@ -71,13 +71,23 @@ public class DescribeEndpointServiceImpl implements DescribeEndpointService {
     private DescribeEndpointResponse getEndpointResponse(String data) throws ClientException {
         Reader reader = ReaderFactory.createInstance(FormatType.JSON);
         UnmarshallerContext context = new UnmarshallerContext();
-        DescribeEndpointResponse response = new DescribeEndpointResponse();
-        context.setResponseMap(reader.read(data, "DescribeEndpointResponse"));
-        response.setRequestId(context.stringValue("DescribeEndpointResponse.RequestId"));
-        response.setProduct(context.stringValue("DescribeEndpointResponse.SerivceCode"));
-        response.setEndpoint(context.stringValue("DescribeEndpointResponse.Endpoint"));
-        response.setRegionId(context.stringValue("DescribeEndpointResponse.Id"));
-        return response;
+
+        context.setResponseMap(reader.read(data, "DescribeEndpointsResponse"));
+
+        int endpointsLength = context.lengthValue("DescribeEndpointsResponse.Endpoints.Length");
+        for (int i = 0; i < endpointsLength; i++) {
+            if (DEFAULT_ENDPOINT_TYPE.equalsIgnoreCase(context.stringValue("DescribeEndpointsResponse.Endpoints[" + i
+                    + "].Type"))) {
+                DescribeEndpointResponse response = new DescribeEndpointResponse();
+
+                response.setRequestId(context.stringValue("DescribeEndpointsResponse.RequestId"));
+                response.setProduct(context.stringValue("DescribeEndpointsResponse.Endpoints[" + i + "].SerivceCode"));
+                response.setEndpoint(context.stringValue("DescribeEndpointsResponse.Endpoints[" + i + "].Endpoint"));
+                response.setRegionId(context.stringValue("DescribeEndpointsResponse.Endpoints[" + i + "].Id"));
+                return response;
+            }
+        }
+        return null;
     }
 
     private AcsError readError(HttpResponse httpResponse, FormatType format) throws ClientException {

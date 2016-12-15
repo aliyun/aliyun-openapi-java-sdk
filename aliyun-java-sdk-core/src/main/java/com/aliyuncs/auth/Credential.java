@@ -23,7 +23,7 @@ import java.util.Date;
 
 public class Credential {
 	
-	private Date refreshDate;
+    private final Date refreshDate;
 	private Date expiredDate;
 	private String accessKeyId;
 	private String accessSecret;
@@ -39,6 +39,13 @@ public class Credential {
 		this.refreshDate = new Date();
 	}
 	
+    public Credential(String keyId, String secret, String securityToken) {
+        this.accessKeyId = keyId;
+        this.accessSecret = secret;
+        this.securityToken = securityToken;
+        this.refreshDate = new Date();
+    }
+
 	public Credential(String keyId, String secret, int expiredHours) {
 		this.accessKeyId = keyId;
 		this.accessSecret = secret;
@@ -46,6 +53,15 @@ public class Credential {
 		
 		setExpiredDate(expiredHours);
 	}
+
+    public Credential(String keyId, String secret, String securityToken, int expiredHours) {
+        this.accessKeyId = keyId;
+        this.accessSecret = secret;
+        this.securityToken = securityToken;
+        this.refreshDate = new Date();
+
+        setExpiredDate(expiredHours);
+    }
 
 	private void setExpiredDate(int expiredHours) {
 		if (expiredHours > 0) {

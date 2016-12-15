@@ -22,7 +22,7 @@ public class CustomizedEndpointsParser implements IEndpointsProvider {
             for (String region : endpoint.getRegionIds()) {
                 if (region.equals(regionId)) {
                     for (ProductDomain productDomain : endpoint.getProductDomains()) {
-                        if (productDomain.equals(product)) {
+                        if (productDomain.getProductName().equals(product)) {
                             return this.endpoint;
                         }
                     }

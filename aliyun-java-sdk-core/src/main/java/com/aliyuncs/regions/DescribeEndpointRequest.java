@@ -7,12 +7,10 @@ import com.aliyuncs.RpcAcsRequest;
  */
 public class DescribeEndpointRequest extends RpcAcsRequest<DescribeEndpointResponse> {
     public DescribeEndpointRequest() {
-        super("Location", "2015-06-12", "DescribeEndpoint");
+        super("Location", "2015-06-12", "DescribeEndpoints");
     }
 
     private String id;
-
-    private String serviceCode;
 
     private String password;
 
@@ -25,14 +23,6 @@ public class DescribeEndpointRequest extends RpcAcsRequest<DescribeEndpointRespo
         putQueryParameter("Id", id);
     }
 
-    public String getLocationProduct() {
-        return this.serviceCode;
-    }
-
-    public void setServiceCode(String serviceCode) {
-        this.serviceCode = serviceCode;
-        putQueryParameter("ServiceCode", serviceCode);
-    }
 
     public String getPassword() {
         return this.password;
@@ -47,5 +37,6 @@ public class DescribeEndpointRequest extends RpcAcsRequest<DescribeEndpointRespo
     public Class<DescribeEndpointResponse> getResponseClass() {
         return DescribeEndpointResponse.class;
     }
+
 
 }

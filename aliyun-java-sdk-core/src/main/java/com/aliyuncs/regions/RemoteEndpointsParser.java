@@ -4,8 +4,6 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.ConcurrentMap;
 
 import com.aliyuncs.auth.Credential;
 import com.aliyuncs.exceptions.ClientException;
@@ -13,8 +11,6 @@ import com.aliyuncs.profile.DefaultProfile;
 import com.aliyuncs.profile.IClientProfile;
 
 public class RemoteEndpointsParser implements IEndpointsProvider {
-
-    private final ConcurrentMap<String, Endpoint> endpointMap = new ConcurrentHashMap<String, Endpoint>();
 
     private DescribeEndpointService               describeEndpointService;
 
@@ -36,10 +32,10 @@ public class RemoteEndpointsParser implements IEndpointsProvider {
     @Override
     public Endpoint getEndpoint(String regionId, String product, String serviceCode, String endpointType,
                                 Credential credential, LocationConfig locationConfig) throws ClientException {
-        Endpoint endpoint = endpointMap.get(serviceCode);
-        if (endpoint != null) {
-            return endpoint;
+        if (serviceCode == null) {
+            return null;
         }
+        Endpoint endpoint = null;
 
         DescribeEndpointResponse response = describeEndpointService.describeEndpoint(regionId, serviceCode,
                 endpointType, credential, locationConfig);
@@ -47,19 +43,18 @@ public class RemoteEndpointsParser implements IEndpointsProvider {
             return endpoint;
         }
         Set<String> regionIds = new HashSet<String>();
-        regionIds.add(response.getRegionId());
+        regionIds.add(regionId);
 
         List<ProductDomain> productDomainList = new ArrayList<ProductDomain>();
         productDomainList.add(new ProductDomain(product, response.getEndpoint()));
         endpoint = new Endpoint(response.getRegionId(), regionIds, productDomainList);
-        endpointMap.putIfAbsent(serviceCode, endpoint);
         return endpoint;
     }
 
     public static void main(String[] args) throws ClientException {
 
         IClientProfile profile= DefaultProfile.getProfile("cn-qingdao", "account", "secret");
-        List<Endpoint> list =  profile.getEndpoints("Ecs", "ecs", "");
+        List<Endpoint> list = profile.getEndpoints("Ecs", "cn-qingdao", "ecs", "");
         System.out.println(list.get(0));
 
     }

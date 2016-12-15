@@ -26,14 +26,14 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
 
-import com.aliyuncs.http.FormatType;
-import com.aliyuncs.http.HttpRequest;
-import com.aliyuncs.http.ProtocolType;
-import com.aliyuncs.regions.ProductDomain;
 import com.aliyuncs.auth.AcsURLEncoder;
 import com.aliyuncs.auth.Credential;
 import com.aliyuncs.auth.ISignatureComposer;
 import com.aliyuncs.auth.ISigner;
+import com.aliyuncs.http.FormatType;
+import com.aliyuncs.http.HttpRequest;
+import com.aliyuncs.http.ProtocolType;
+import com.aliyuncs.regions.ProductDomain;
 
 public abstract class AcsRequest<T extends AcsResponse> extends HttpRequest {
 	
@@ -45,8 +45,8 @@ public abstract class AcsRequest<T extends AcsResponse> extends HttpRequest {
 	private FormatType acceptFormat = null;
 	protected ISignatureComposer composer = null;
 	private ProtocolType protocol = ProtocolType.HTTP;
-	private Map<String, String> queryParameters = new HashMap<String, String>();
-	private Map<String, String> domainParameters = new HashMap<String, String>();
+    private final Map<String, String> queryParameters  = new HashMap<String, String>();
+    private final Map<String, String> domainParameters = new HashMap<String, String>();
 
 	private String locationProduct;
 	private String endpointType;
@@ -69,6 +69,7 @@ public abstract class AcsRequest<T extends AcsResponse> extends HttpRequest {
 
 	public void setLocationProduct(String locationProduct) {
 		this.locationProduct = locationProduct;
+        putQueryParameter("ServiceCode", locationProduct);
 	}
 
 	public String getEndpointType() {
@@ -77,6 +78,7 @@ public abstract class AcsRequest<T extends AcsResponse> extends HttpRequest {
 
 	public void setEndpointType(String endpointType) {
 		this.endpointType = endpointType;
+        putQueryParameter("Type", endpointType);
 	}
 
 	public String getActionName() {
@@ -162,6 +164,7 @@ public abstract class AcsRequest<T extends AcsResponse> extends HttpRequest {
 
 	public void setSecurityToken(String securityToken) {
 		this.securityToken = securityToken;
+        putQueryParameter("SecurityToken", securityToken);
 	}
 	
 	public static String concatQueryString(Map<String, String> parameters) 
