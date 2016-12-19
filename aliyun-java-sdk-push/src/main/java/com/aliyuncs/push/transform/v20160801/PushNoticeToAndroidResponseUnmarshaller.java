@@ -27,7 +27,7 @@ public class PushNoticeToAndroidResponseUnmarshaller {
 	public static PushNoticeToAndroidResponse unmarshall(PushNoticeToAndroidResponse pushNoticeToAndroidResponse, UnmarshallerContext context) {
 		
 		pushNoticeToAndroidResponse.setRequestId(context.stringValue("PushNoticeToAndroidResponse.RequestId"));
-		pushNoticeToAndroidResponse.setMessageId(context.longValue("PushNoticeToAndroidResponse.MessageId"));
+		pushNoticeToAndroidResponse.setMessageId(context.stringValue("PushNoticeToAndroidResponse.MessageId"));
 	 
 	 	return pushNoticeToAndroidResponse;
 	}

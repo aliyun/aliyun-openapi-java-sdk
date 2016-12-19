@@ -53,8 +53,6 @@ public class ListSummaryAppsResponse extends AcsResponse {
 
 		private String appName;
 
-		private String platform;
-
 		private Long appKey;
 
 		public String getAppName() {
@@ -63,14 +61,6 @@ public class ListSummaryAppsResponse extends AcsResponse {
 
 		public void setAppName(String appName) {
 			this.appName = appName;
-		}
-
-		public String getPlatform() {
-			return this.platform;
-		}
-
-		public void setPlatform(String platform) {
-			this.platform = platform;
 		}
 
 		public Long getAppKey() {

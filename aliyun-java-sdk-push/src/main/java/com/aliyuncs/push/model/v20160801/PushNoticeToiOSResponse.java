@@ -30,7 +30,7 @@ public class PushNoticeToiOSResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Long messageId;
+	private String messageId;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -40,11 +40,11 @@ public class PushNoticeToiOSResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Long getMessageId() {
+	public String getMessageId() {
 		return this.messageId;
 	}
 
-	public void setMessageId(Long messageId) {
+	public void setMessageId(String messageId) {
 		this.messageId = messageId;
 	}
 

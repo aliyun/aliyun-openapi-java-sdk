@@ -88,6 +88,8 @@ public class CreateProductResponse extends AcsResponse {
 
 		private String gmtModified;
 
+		private String productSecret;
+
 		public String getProductKey() {
 			return this.productKey;
 		}
@@ -158,6 +160,14 @@ public class CreateProductResponse extends AcsResponse {
 
 		public void setGmtModified(String gmtModified) {
 			this.gmtModified = gmtModified;
+		}
+
+		public String getProductSecret() {
+			return this.productSecret;
+		}
+
+		public void setProductSecret(String productSecret) {
+			this.productSecret = productSecret;
 		}
 	}
 

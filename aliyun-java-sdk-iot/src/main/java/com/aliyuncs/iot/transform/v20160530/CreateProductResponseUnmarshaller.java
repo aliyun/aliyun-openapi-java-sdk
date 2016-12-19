@@ -41,6 +41,7 @@ public class CreateProductResponseUnmarshaller {
 		productInfo.setExtProps(context.stringValue("CreateProductResponse.ProductInfo.ExtProps"));
 		productInfo.setGmtCreate(context.stringValue("CreateProductResponse.ProductInfo.GmtCreate"));
 		productInfo.setGmtModified(context.stringValue("CreateProductResponse.ProductInfo.GmtModified"));
+		productInfo.setProductSecret(context.stringValue("CreateProductResponse.ProductInfo.ProductSecret"));
 		createProductResponse.setProductInfo(productInfo);
 	 
 	 	return createProductResponse;

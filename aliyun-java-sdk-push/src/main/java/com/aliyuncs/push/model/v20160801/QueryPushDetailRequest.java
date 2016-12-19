@@ -32,7 +32,7 @@ public class QueryPushDetailRequest extends RpcAcsRequest<QueryPushDetailRespons
 
 	private Long appKey;
 
-	private Long messageId;
+	private String messageId;
 
 	public Long getAppKey() {
 		return this.appKey;
@@ -43,11 +43,11 @@ public class QueryPushDetailRequest extends RpcAcsRequest<QueryPushDetailRespons
 		putQueryParameter("AppKey", appKey);
 	}
 
-	public Long getMessageId() {
+	public String getMessageId() {
 		return this.messageId;
 	}
 
-	public void setMessageId(Long messageId) {
+	public void setMessageId(String messageId) {
 		this.messageId = messageId;
 		putQueryParameter("MessageId", messageId);
 	}

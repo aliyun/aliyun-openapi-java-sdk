@@ -84,6 +84,8 @@ public class PushRequest extends RpcAcsRequest<PushResponse> {
 
 	private Integer iOSBadge;
 
+	private Boolean iOSSilentNotification;
+
 	private String iOSSubtitle;
 
 	private String iOSNotificationCategory;
@@ -333,6 +335,15 @@ public class PushRequest extends RpcAcsRequest<PushResponse> {
 	public void setiOSBadge(Integer iOSBadge) {
 		this.iOSBadge = iOSBadge;
 		putQueryParameter("iOSBadge", iOSBadge);
+	}
+
+	public Boolean getiOSSilentNotification() {
+		return this.iOSSilentNotification;
+	}
+
+	public void setiOSSilentNotification(Boolean iOSSilentNotification) {
+		this.iOSSilentNotification = iOSSilentNotification;
+		putQueryParameter("iOSSilentNotification", iOSSilentNotification);
 	}
 
 	public String getiOSSubtitle() {

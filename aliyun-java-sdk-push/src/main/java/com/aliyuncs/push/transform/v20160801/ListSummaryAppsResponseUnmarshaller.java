@@ -36,7 +36,6 @@ public class ListSummaryAppsResponseUnmarshaller {
 		for (int i = 0; i < context.lengthValue("ListSummaryAppsResponse.SummaryAppInfos.Length"); i++) {
 			SummaryAppInfo summaryAppInfo = new SummaryAppInfo();
 			summaryAppInfo.setAppName(context.stringValue("ListSummaryAppsResponse.SummaryAppInfos["+ i +"].AppName"));
-			summaryAppInfo.setPlatform(context.stringValue("ListSummaryAppsResponse.SummaryAppInfos["+ i +"].Platform"));
 			summaryAppInfo.setAppKey(context.longValue("ListSummaryAppsResponse.SummaryAppInfos["+ i +"].AppKey"));
 
 			summaryAppInfos.add(summaryAppInfo);

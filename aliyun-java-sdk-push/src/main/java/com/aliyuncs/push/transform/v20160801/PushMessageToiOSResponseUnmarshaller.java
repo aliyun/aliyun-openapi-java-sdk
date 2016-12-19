@@ -27,7 +27,7 @@ public class PushMessageToiOSResponseUnmarshaller {
 	public static PushMessageToiOSResponse unmarshall(PushMessageToiOSResponse pushMessageToiOSResponse, UnmarshallerContext context) {
 		
 		pushMessageToiOSResponse.setRequestId(context.stringValue("PushMessageToiOSResponse.RequestId"));
-		pushMessageToiOSResponse.setMessageId(context.longValue("PushMessageToiOSResponse.MessageId"));
+		pushMessageToiOSResponse.setMessageId(context.stringValue("PushMessageToiOSResponse.MessageId"));
 	 
 	 	return pushMessageToiOSResponse;
 	}
