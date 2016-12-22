@@ -42,6 +42,10 @@ public class DescribeCdnDomainLogsRequest extends RpcAcsRequest<DescribeCdnDomai
 
 	private Long pageNumber;
 
+	private String startTime;
+
+	private String endTime;
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -94,6 +98,24 @@ public class DescribeCdnDomainLogsRequest extends RpcAcsRequest<DescribeCdnDomai
 	public void setPageNumber(Long pageNumber) {
 		this.pageNumber = pageNumber;
 		putQueryParameter("PageNumber", pageNumber);
+	}
+
+	public String getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+		putQueryParameter("StartTime", startTime);
+	}
+
+	public String getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+		putQueryParameter("EndTime", endTime);
 	}
 
 	@Override

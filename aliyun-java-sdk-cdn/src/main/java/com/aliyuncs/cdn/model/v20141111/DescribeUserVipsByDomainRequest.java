@@ -36,6 +36,8 @@ public class DescribeUserVipsByDomainRequest extends RpcAcsRequest<DescribeUserV
 
 	private String domainName;
 
+	private String available;
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -61,6 +63,15 @@ public class DescribeUserVipsByDomainRequest extends RpcAcsRequest<DescribeUserV
 	public void setDomainName(String domainName) {
 		this.domainName = domainName;
 		putQueryParameter("DomainName", domainName);
+	}
+
+	public String getAvailable() {
+		return this.available;
+	}
+
+	public void setAvailable(String available) {
+		this.available = available;
+		putQueryParameter("Available", available);
 	}
 
 	@Override

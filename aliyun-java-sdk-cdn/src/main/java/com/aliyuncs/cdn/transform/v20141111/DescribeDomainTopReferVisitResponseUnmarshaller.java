@@ -39,6 +39,9 @@ public class DescribeDomainTopReferVisitResponseUnmarshaller {
 			ReferList referList = new ReferList();
 			referList.setReferDetail(context.stringValue("DescribeDomainTopReferVisitResponse.TopReferList["+ i +"].ReferDetail"));
 			referList.setVisitData(context.stringValue("DescribeDomainTopReferVisitResponse.TopReferList["+ i +"].VisitData"));
+			referList.setVisitProportion(context.floatValue("DescribeDomainTopReferVisitResponse.TopReferList["+ i +"].VisitProportion"));
+			referList.setFlow(context.stringValue("DescribeDomainTopReferVisitResponse.TopReferList["+ i +"].Flow"));
+			referList.setFlowProportion(context.floatValue("DescribeDomainTopReferVisitResponse.TopReferList["+ i +"].FlowProportion"));
 
 			topReferList.add(referList);
 		}

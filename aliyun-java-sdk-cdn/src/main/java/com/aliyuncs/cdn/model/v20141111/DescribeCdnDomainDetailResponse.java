@@ -75,6 +75,10 @@ public class DescribeCdnDomainDetailResponse extends AcsResponse {
 
 		private String serverCertificate;
 
+		private String scope;
+
+		private String certificateName;
+
 		private List<String> sources;
 
 		public String getGmtCreated() {
@@ -171,6 +175,22 @@ public class DescribeCdnDomainDetailResponse extends AcsResponse {
 
 		public void setServerCertificate(String serverCertificate) {
 			this.serverCertificate = serverCertificate;
+		}
+
+		public String getScope() {
+			return this.scope;
+		}
+
+		public void setScope(String scope) {
+			this.scope = scope;
+		}
+
+		public String getCertificateName() {
+			return this.certificateName;
+		}
+
+		public void setCertificateName(String certificateName) {
+			this.certificateName = certificateName;
 		}
 
 		public List<String> getSources() {

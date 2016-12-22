@@ -115,6 +115,12 @@ public class DescribeDomainTopUrlVisitResponse extends AcsResponse {
 
 		private String visitData;
 
+		private Float visitProportion;
+
+		private String flow;
+
+		private Float flowProportion;
+
 		public String getUrlDetail() {
 			return this.urlDetail;
 		}
@@ -129,6 +135,30 @@ public class DescribeDomainTopUrlVisitResponse extends AcsResponse {
 
 		public void setVisitData(String visitData) {
 			this.visitData = visitData;
+		}
+
+		public Float getVisitProportion() {
+			return this.visitProportion;
+		}
+
+		public void setVisitProportion(Float visitProportion) {
+			this.visitProportion = visitProportion;
+		}
+
+		public String getFlow() {
+			return this.flow;
+		}
+
+		public void setFlow(String flow) {
+			this.flow = flow;
+		}
+
+		public Float getFlowProportion() {
+			return this.flowProportion;
+		}
+
+		public void setFlowProportion(Float flowProportion) {
+			this.flowProportion = flowProportion;
 		}
 	}
 
