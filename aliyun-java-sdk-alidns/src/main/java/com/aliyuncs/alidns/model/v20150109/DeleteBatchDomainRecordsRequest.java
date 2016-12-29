@@ -30,7 +30,29 @@ public class DeleteBatchDomainRecordsRequest extends RpcAcsRequest<DeleteBatchDo
 		super("Alidns", "2015-01-09", "DeleteBatchDomainRecords");
 	}
 
+	private String lang;
+
+	private String userClientIp;
+
 	private String records;
+
+	public String getLang() {
+		return this.lang;
+	}
+
+	public void setLang(String lang) {
+		this.lang = lang;
+		putQueryParameter("Lang", lang);
+	}
+
+	public String getUserClientIp() {
+		return this.userClientIp;
+	}
+
+	public void setUserClientIp(String userClientIp) {
+		this.userClientIp = userClientIp;
+		putQueryParameter("UserClientIp", userClientIp);
+	}
 
 	public String getRecords() {
 		return this.records;

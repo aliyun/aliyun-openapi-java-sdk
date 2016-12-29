@@ -20,26 +20,20 @@ package com.aliyuncs.alidns.model.v20150109;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.alidns.transform.v20150109.AddDomainResponseUnmarshaller;
+import com.aliyuncs.alidns.transform.v20150109.DescribeDomainNsResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class AddDomainResponse extends AcsResponse {
+public class DescribeDomainNsResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String domainId;
+	private Boolean allAliDns;
 
-	private String domainName;
-
-	private String punyCode;
-
-	private String groupId;
-
-	private String groupName;
+	private Boolean includeAliDns;
 
 	private List<String> dnsServers;
 
@@ -51,44 +45,20 @@ public class AddDomainResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getDomainId() {
-		return this.domainId;
+	public Boolean getAllAliDns() {
+		return this.allAliDns;
 	}
 
-	public void setDomainId(String domainId) {
-		this.domainId = domainId;
+	public void setAllAliDns(Boolean allAliDns) {
+		this.allAliDns = allAliDns;
 	}
 
-	public String getDomainName() {
-		return this.domainName;
+	public Boolean getIncludeAliDns() {
+		return this.includeAliDns;
 	}
 
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
-	}
-
-	public String getPunyCode() {
-		return this.punyCode;
-	}
-
-	public void setPunyCode(String punyCode) {
-		this.punyCode = punyCode;
-	}
-
-	public String getGroupId() {
-		return this.groupId;
-	}
-
-	public void setGroupId(String groupId) {
-		this.groupId = groupId;
-	}
-
-	public String getGroupName() {
-		return this.groupName;
-	}
-
-	public void setGroupName(String groupName) {
-		this.groupName = groupName;
+	public void setIncludeAliDns(Boolean includeAliDns) {
+		this.includeAliDns = includeAliDns;
 	}
 
 	public List<String> getDnsServers() {
@@ -100,7 +70,7 @@ public class AddDomainResponse extends AcsResponse {
 	}
 
 	@Override
-	public AddDomainResponse getInstance(UnmarshallerContext context) {
-		return	AddDomainResponseUnmarshaller.unmarshall(this, context);
+	public DescribeDomainNsResponse getInstance(UnmarshallerContext context) {
+		return	DescribeDomainNsResponseUnmarshaller.unmarshall(this, context);
 	}
 }

@@ -30,9 +30,31 @@ public class SetDNSSLBStatusRequest extends RpcAcsRequest<SetDNSSLBStatusRespons
 		super("Alidns", "2015-01-09", "SetDNSSLBStatus");
 	}
 
+	private String lang;
+
+	private String userClientIp;
+
 	private String subDomain;
 
 	private Boolean open;
+
+	public String getLang() {
+		return this.lang;
+	}
+
+	public void setLang(String lang) {
+		this.lang = lang;
+		putQueryParameter("Lang", lang);
+	}
+
+	public String getUserClientIp() {
+		return this.userClientIp;
+	}
+
+	public void setUserClientIp(String userClientIp) {
+		this.userClientIp = userClientIp;
+		putQueryParameter("UserClientIp", userClientIp);
+	}
 
 	public String getSubDomain() {
 		return this.subDomain;

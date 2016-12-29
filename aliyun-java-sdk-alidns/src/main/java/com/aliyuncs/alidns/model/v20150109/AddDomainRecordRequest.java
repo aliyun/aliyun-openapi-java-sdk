@@ -30,6 +30,10 @@ public class AddDomainRecordRequest extends RpcAcsRequest<AddDomainRecordRespons
 		super("Alidns", "2015-01-09", "AddDomainRecord");
 	}
 
+	private String lang;
+
+	private String userClientIp;
+
 	private String domainName;
 
 	private String rR;
@@ -43,6 +47,24 @@ public class AddDomainRecordRequest extends RpcAcsRequest<AddDomainRecordRespons
 	private Long priority;
 
 	private String line;
+
+	public String getLang() {
+		return this.lang;
+	}
+
+	public void setLang(String lang) {
+		this.lang = lang;
+		putQueryParameter("Lang", lang);
+	}
+
+	public String getUserClientIp() {
+		return this.userClientIp;
+	}
+
+	public void setUserClientIp(String userClientIp) {
+		this.userClientIp = userClientIp;
+		putQueryParameter("UserClientIp", userClientIp);
+	}
 
 	public String getDomainName() {
 		return this.domainName;

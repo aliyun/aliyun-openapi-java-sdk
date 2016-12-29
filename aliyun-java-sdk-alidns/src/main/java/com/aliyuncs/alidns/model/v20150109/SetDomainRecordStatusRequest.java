@@ -30,9 +30,31 @@ public class SetDomainRecordStatusRequest extends RpcAcsRequest<SetDomainRecordS
 		super("Alidns", "2015-01-09", "SetDomainRecordStatus");
 	}
 
+	private String lang;
+
+	private String userClientIp;
+
 	private String recordId;
 
 	private String status;
+
+	public String getLang() {
+		return this.lang;
+	}
+
+	public void setLang(String lang) {
+		this.lang = lang;
+		putQueryParameter("Lang", lang);
+	}
+
+	public String getUserClientIp() {
+		return this.userClientIp;
+	}
+
+	public void setUserClientIp(String userClientIp) {
+		this.userClientIp = userClientIp;
+		putQueryParameter("UserClientIp", userClientIp);
+	}
 
 	public String getRecordId() {
 		return this.recordId;

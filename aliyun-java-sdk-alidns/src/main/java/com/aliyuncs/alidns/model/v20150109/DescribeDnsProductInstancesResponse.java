@@ -83,9 +83,17 @@ public class DescribeDnsProductInstancesResponse extends AcsResponse {
 
 		private String instanceId;
 
+		private String versionCode;
+
+		private String versionName;
+
 		private String startTime;
 
 		private String endTime;
+
+		private Long startTimestamp;
+
+		private Long endTimestamp;
 
 		private String domain;
 
@@ -115,12 +123,34 @@ public class DescribeDnsProductInstancesResponse extends AcsResponse {
 
 		private String overseaLine;
 
+		private Long monitorNodeCount;
+
+		private Long monitorFrequency;
+
+		private Long monitorTaskCount;
+
 		public String getInstanceId() {
 			return this.instanceId;
 		}
 
 		public void setInstanceId(String instanceId) {
 			this.instanceId = instanceId;
+		}
+
+		public String getVersionCode() {
+			return this.versionCode;
+		}
+
+		public void setVersionCode(String versionCode) {
+			this.versionCode = versionCode;
+		}
+
+		public String getVersionName() {
+			return this.versionName;
+		}
+
+		public void setVersionName(String versionName) {
+			this.versionName = versionName;
 		}
 
 		public String getStartTime() {
@@ -137,6 +167,22 @@ public class DescribeDnsProductInstancesResponse extends AcsResponse {
 
 		public void setEndTime(String endTime) {
 			this.endTime = endTime;
+		}
+
+		public Long getStartTimestamp() {
+			return this.startTimestamp;
+		}
+
+		public void setStartTimestamp(Long startTimestamp) {
+			this.startTimestamp = startTimestamp;
+		}
+
+		public Long getEndTimestamp() {
+			return this.endTimestamp;
+		}
+
+		public void setEndTimestamp(Long endTimestamp) {
+			this.endTimestamp = endTimestamp;
 		}
 
 		public String getDomain() {
@@ -249,6 +295,30 @@ public class DescribeDnsProductInstancesResponse extends AcsResponse {
 
 		public void setOverseaLine(String overseaLine) {
 			this.overseaLine = overseaLine;
+		}
+
+		public Long getMonitorNodeCount() {
+			return this.monitorNodeCount;
+		}
+
+		public void setMonitorNodeCount(Long monitorNodeCount) {
+			this.monitorNodeCount = monitorNodeCount;
+		}
+
+		public Long getMonitorFrequency() {
+			return this.monitorFrequency;
+		}
+
+		public void setMonitorFrequency(Long monitorFrequency) {
+			this.monitorFrequency = monitorFrequency;
+		}
+
+		public Long getMonitorTaskCount() {
+			return this.monitorTaskCount;
+		}
+
+		public void setMonitorTaskCount(Long monitorTaskCount) {
+			this.monitorTaskCount = monitorTaskCount;
 		}
 	}
 

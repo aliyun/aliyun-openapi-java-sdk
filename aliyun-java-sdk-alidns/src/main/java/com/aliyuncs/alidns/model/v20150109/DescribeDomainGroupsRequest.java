@@ -30,11 +30,33 @@ public class DescribeDomainGroupsRequest extends RpcAcsRequest<DescribeDomainGro
 		super("Alidns", "2015-01-09", "DescribeDomainGroups");
 	}
 
+	private String lang;
+
+	private String userClientIp;
+
 	private String keyWord;
 
 	private Long pageNumber;
 
 	private Long pageSize;
+
+	public String getLang() {
+		return this.lang;
+	}
+
+	public void setLang(String lang) {
+		this.lang = lang;
+		putQueryParameter("Lang", lang);
+	}
+
+	public String getUserClientIp() {
+		return this.userClientIp;
+	}
+
+	public void setUserClientIp(String userClientIp) {
+		this.userClientIp = userClientIp;
+		putQueryParameter("UserClientIp", userClientIp);
+	}
 
 	public String getKeyWord() {
 		return this.keyWord;

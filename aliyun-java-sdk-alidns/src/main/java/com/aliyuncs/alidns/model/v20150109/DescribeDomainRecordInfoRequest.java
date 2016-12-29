@@ -30,7 +30,29 @@ public class DescribeDomainRecordInfoRequest extends RpcAcsRequest<DescribeDomai
 		super("Alidns", "2015-01-09", "DescribeDomainRecordInfo");
 	}
 
+	private String lang;
+
+	private String userClientIp;
+
 	private String recordId;
+
+	public String getLang() {
+		return this.lang;
+	}
+
+	public void setLang(String lang) {
+		this.lang = lang;
+		putQueryParameter("Lang", lang);
+	}
+
+	public String getUserClientIp() {
+		return this.userClientIp;
+	}
+
+	public void setUserClientIp(String userClientIp) {
+		this.userClientIp = userClientIp;
+		putQueryParameter("UserClientIp", userClientIp);
+	}
 
 	public String getRecordId() {
 		return this.recordId;

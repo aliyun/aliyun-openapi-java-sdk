@@ -30,9 +30,31 @@ public class ChangeDomainOfDnsProductRequest extends RpcAcsRequest<ChangeDomainO
 		super("Alidns", "2015-01-09", "ChangeDomainOfDnsProduct");
 	}
 
+	private String lang;
+
+	private String userClientIp;
+
 	private String instanceId;
 
 	private String newDomain;
+
+	public String getLang() {
+		return this.lang;
+	}
+
+	public void setLang(String lang) {
+		this.lang = lang;
+		putQueryParameter("Lang", lang);
+	}
+
+	public String getUserClientIp() {
+		return this.userClientIp;
+	}
+
+	public void setUserClientIp(String userClientIp) {
+		this.userClientIp = userClientIp;
+		putQueryParameter("UserClientIp", userClientIp);
+	}
 
 	public String getInstanceId() {
 		return this.instanceId;

@@ -39,8 +39,12 @@ public class DescribeDnsProductInstancesResponseUnmarshaller {
 		for (int i = 0; i < context.lengthValue("DescribeDnsProductInstancesResponse.DnsProducts.Length"); i++) {
 			DnsProduct dnsProduct = new DnsProduct();
 			dnsProduct.setInstanceId(context.stringValue("DescribeDnsProductInstancesResponse.DnsProducts["+ i +"].InstanceId"));
+			dnsProduct.setVersionCode(context.stringValue("DescribeDnsProductInstancesResponse.DnsProducts["+ i +"].VersionCode"));
+			dnsProduct.setVersionName(context.stringValue("DescribeDnsProductInstancesResponse.DnsProducts["+ i +"].VersionName"));
 			dnsProduct.setStartTime(context.stringValue("DescribeDnsProductInstancesResponse.DnsProducts["+ i +"].StartTime"));
 			dnsProduct.setEndTime(context.stringValue("DescribeDnsProductInstancesResponse.DnsProducts["+ i +"].EndTime"));
+			dnsProduct.setStartTimestamp(context.longValue("DescribeDnsProductInstancesResponse.DnsProducts["+ i +"].StartTimestamp"));
+			dnsProduct.setEndTimestamp(context.longValue("DescribeDnsProductInstancesResponse.DnsProducts["+ i +"].EndTimestamp"));
 			dnsProduct.setDomain(context.stringValue("DescribeDnsProductInstancesResponse.DnsProducts["+ i +"].Domain"));
 			dnsProduct.setBindCount(context.longValue("DescribeDnsProductInstancesResponse.DnsProducts["+ i +"].BindCount"));
 			dnsProduct.setBindUsedCount(context.longValue("DescribeDnsProductInstancesResponse.DnsProducts["+ i +"].BindUsedCount"));
@@ -55,6 +59,9 @@ public class DescribeDnsProductInstancesResponseUnmarshaller {
 			dnsProduct.setISPLines(context.stringValue("DescribeDnsProductInstancesResponse.DnsProducts["+ i +"].ISPLines"));
 			dnsProduct.setISPRegionLines(context.stringValue("DescribeDnsProductInstancesResponse.DnsProducts["+ i +"].ISPRegionLines"));
 			dnsProduct.setOverseaLine(context.stringValue("DescribeDnsProductInstancesResponse.DnsProducts["+ i +"].OverseaLine"));
+			dnsProduct.setMonitorNodeCount(context.longValue("DescribeDnsProductInstancesResponse.DnsProducts["+ i +"].MonitorNodeCount"));
+			dnsProduct.setMonitorFrequency(context.longValue("DescribeDnsProductInstancesResponse.DnsProducts["+ i +"].MonitorFrequency"));
+			dnsProduct.setMonitorTaskCount(context.longValue("DescribeDnsProductInstancesResponse.DnsProducts["+ i +"].MonitorTaskCount"));
 
 			dnsProducts.add(dnsProduct);
 		}

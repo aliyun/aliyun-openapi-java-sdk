@@ -30,6 +30,10 @@ public class DescribeSubDomainRecordsRequest extends RpcAcsRequest<DescribeSubDo
 		super("Alidns", "2015-01-09", "DescribeSubDomainRecords");
 	}
 
+	private String lang;
+
+	private String userClientIp;
+
 	private String subDomain;
 
 	private Long pageNumber;
@@ -37,6 +41,24 @@ public class DescribeSubDomainRecordsRequest extends RpcAcsRequest<DescribeSubDo
 	private Long pageSize;
 
 	private String type;
+
+	public String getLang() {
+		return this.lang;
+	}
+
+	public void setLang(String lang) {
+		this.lang = lang;
+		putQueryParameter("Lang", lang);
+	}
+
+	public String getUserClientIp() {
+		return this.userClientIp;
+	}
+
+	public void setUserClientIp(String userClientIp) {
+		this.userClientIp = userClientIp;
+		putQueryParameter("UserClientIp", userClientIp);
+	}
 
 	public String getSubDomain() {
 		return this.subDomain;

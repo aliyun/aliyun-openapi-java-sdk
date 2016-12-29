@@ -30,9 +30,31 @@ public class UpdateDomainGroupRequest extends RpcAcsRequest<UpdateDomainGroupRes
 		super("Alidns", "2015-01-09", "UpdateDomainGroup");
 	}
 
+	private String lang;
+
+	private String userClientIp;
+
 	private String groupId;
 
 	private String groupName;
+
+	public String getLang() {
+		return this.lang;
+	}
+
+	public void setLang(String lang) {
+		this.lang = lang;
+		putQueryParameter("Lang", lang);
+	}
+
+	public String getUserClientIp() {
+		return this.userClientIp;
+	}
+
+	public void setUserClientIp(String userClientIp) {
+		this.userClientIp = userClientIp;
+		putQueryParameter("UserClientIp", userClientIp);
+	}
 
 	public String getGroupId() {
 		return this.groupId;

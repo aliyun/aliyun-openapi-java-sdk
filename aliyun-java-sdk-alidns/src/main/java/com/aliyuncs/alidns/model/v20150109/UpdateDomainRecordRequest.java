@@ -30,6 +30,10 @@ public class UpdateDomainRecordRequest extends RpcAcsRequest<UpdateDomainRecordR
 		super("Alidns", "2015-01-09", "UpdateDomainRecord");
 	}
 
+	private String lang;
+
+	private String userClientIp;
+
 	private String recordId;
 
 	private String rR;
@@ -43,6 +47,24 @@ public class UpdateDomainRecordRequest extends RpcAcsRequest<UpdateDomainRecordR
 	private Long priority;
 
 	private String line;
+
+	public String getLang() {
+		return this.lang;
+	}
+
+	public void setLang(String lang) {
+		this.lang = lang;
+		putQueryParameter("Lang", lang);
+	}
+
+	public String getUserClientIp() {
+		return this.userClientIp;
+	}
+
+	public void setUserClientIp(String userClientIp) {
+		this.userClientIp = userClientIp;
+		putQueryParameter("UserClientIp", userClientIp);
+	}
 
 	public String getRecordId() {
 		return this.recordId;

@@ -30,6 +30,10 @@ public class CheckDomainRecordRequest extends RpcAcsRequest<CheckDomainRecordRes
 		super("Alidns", "2015-01-09", "CheckDomainRecord");
 	}
 
+	private String lang;
+
+	private String userClientIp;
+
 	private String domainName;
 
 	private String rR;
@@ -37,6 +41,24 @@ public class CheckDomainRecordRequest extends RpcAcsRequest<CheckDomainRecordRes
 	private String type;
 
 	private String value;
+
+	public String getLang() {
+		return this.lang;
+	}
+
+	public void setLang(String lang) {
+		this.lang = lang;
+		putQueryParameter("Lang", lang);
+	}
+
+	public String getUserClientIp() {
+		return this.userClientIp;
+	}
+
+	public void setUserClientIp(String userClientIp) {
+		this.userClientIp = userClientIp;
+		putQueryParameter("UserClientIp", userClientIp);
+	}
 
 	public String getDomainName() {
 		return this.domainName;
