@@ -24,17 +24,21 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class DescribeDrdsDBIpWhiteListRequest extends RpcAcsRequest<DescribeDrdsDBIpWhiteListResponse> {
+public class ModifyReadOnlyAccountPasswordRequest extends RpcAcsRequest<ModifyReadOnlyAccountPasswordResponse> {
 	
-	public DescribeDrdsDBIpWhiteListRequest() {
-		super("Drds", "2015-04-13", "DescribeDrdsDBIpWhiteList");
+	public ModifyReadOnlyAccountPasswordRequest() {
+		super("Drds", "2015-04-13", "ModifyReadOnlyAccountPassword");
 	}
 
 	private String drdsInstanceId;
 
 	private String dbName;
 
-	private String groupName;
+	private String accountName;
+
+	private String originPassword;
+
+	private String newPasswd;
 
 	public String getDrdsInstanceId() {
 		return this.drdsInstanceId;
@@ -54,18 +58,36 @@ public class DescribeDrdsDBIpWhiteListRequest extends RpcAcsRequest<DescribeDrds
 		putQueryParameter("DbName", dbName);
 	}
 
-	public String getGroupName() {
-		return this.groupName;
+	public String getAccountName() {
+		return this.accountName;
 	}
 
-	public void setGroupName(String groupName) {
-		this.groupName = groupName;
-		putQueryParameter("GroupName", groupName);
+	public void setAccountName(String accountName) {
+		this.accountName = accountName;
+		putQueryParameter("AccountName", accountName);
+	}
+
+	public String getOriginPassword() {
+		return this.originPassword;
+	}
+
+	public void setOriginPassword(String originPassword) {
+		this.originPassword = originPassword;
+		putQueryParameter("OriginPassword", originPassword);
+	}
+
+	public String getNewPasswd() {
+		return this.newPasswd;
+	}
+
+	public void setNewPasswd(String newPasswd) {
+		this.newPasswd = newPasswd;
+		putQueryParameter("NewPasswd", newPasswd);
 	}
 
 	@Override
-	public Class<DescribeDrdsDBIpWhiteListResponse> getResponseClass() {
-		return DescribeDrdsDBIpWhiteListResponse.class;
+	public Class<ModifyReadOnlyAccountPasswordResponse> getResponseClass() {
+		return ModifyReadOnlyAccountPasswordResponse.class;
 	}
 
 }

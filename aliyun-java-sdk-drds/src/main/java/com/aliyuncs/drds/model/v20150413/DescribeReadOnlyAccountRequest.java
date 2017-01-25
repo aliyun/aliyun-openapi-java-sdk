@@ -24,17 +24,15 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class DescribeDrdsDBIpWhiteListRequest extends RpcAcsRequest<DescribeDrdsDBIpWhiteListResponse> {
+public class DescribeReadOnlyAccountRequest extends RpcAcsRequest<DescribeReadOnlyAccountResponse> {
 	
-	public DescribeDrdsDBIpWhiteListRequest() {
-		super("Drds", "2015-04-13", "DescribeDrdsDBIpWhiteList");
+	public DescribeReadOnlyAccountRequest() {
+		super("Drds", "2015-04-13", "DescribeReadOnlyAccount");
 	}
 
 	private String drdsInstanceId;
 
 	private String dbName;
-
-	private String groupName;
 
 	public String getDrdsInstanceId() {
 		return this.drdsInstanceId;
@@ -54,18 +52,9 @@ public class DescribeDrdsDBIpWhiteListRequest extends RpcAcsRequest<DescribeDrds
 		putQueryParameter("DbName", dbName);
 	}
 
-	public String getGroupName() {
-		return this.groupName;
-	}
-
-	public void setGroupName(String groupName) {
-		this.groupName = groupName;
-		putQueryParameter("GroupName", groupName);
-	}
-
 	@Override
-	public Class<DescribeDrdsDBIpWhiteListResponse> getResponseClass() {
-		return DescribeDrdsDBIpWhiteListResponse.class;
+	public Class<DescribeReadOnlyAccountResponse> getResponseClass() {
+		return DescribeReadOnlyAccountResponse.class;
 	}
 
 }

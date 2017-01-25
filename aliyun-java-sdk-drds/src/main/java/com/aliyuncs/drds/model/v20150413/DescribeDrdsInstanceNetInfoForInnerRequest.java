@@ -24,17 +24,13 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class DescribeDrdsDBIpWhiteListRequest extends RpcAcsRequest<DescribeDrdsDBIpWhiteListResponse> {
+public class DescribeDrdsInstanceNetInfoForInnerRequest extends RpcAcsRequest<DescribeDrdsInstanceNetInfoForInnerResponse> {
 	
-	public DescribeDrdsDBIpWhiteListRequest() {
-		super("Drds", "2015-04-13", "DescribeDrdsDBIpWhiteList");
+	public DescribeDrdsInstanceNetInfoForInnerRequest() {
+		super("Drds", "2015-04-13", "DescribeDrdsInstanceNetInfoForInner");
 	}
 
 	private String drdsInstanceId;
-
-	private String dbName;
-
-	private String groupName;
 
 	public String getDrdsInstanceId() {
 		return this.drdsInstanceId;
@@ -45,27 +41,9 @@ public class DescribeDrdsDBIpWhiteListRequest extends RpcAcsRequest<DescribeDrds
 		putQueryParameter("DrdsInstanceId", drdsInstanceId);
 	}
 
-	public String getDbName() {
-		return this.dbName;
-	}
-
-	public void setDbName(String dbName) {
-		this.dbName = dbName;
-		putQueryParameter("DbName", dbName);
-	}
-
-	public String getGroupName() {
-		return this.groupName;
-	}
-
-	public void setGroupName(String groupName) {
-		this.groupName = groupName;
-		putQueryParameter("GroupName", groupName);
-	}
-
 	@Override
-	public Class<DescribeDrdsDBIpWhiteListResponse> getResponseClass() {
-		return DescribeDrdsDBIpWhiteListResponse.class;
+	public Class<DescribeDrdsInstanceNetInfoForInnerResponse> getResponseClass() {
+		return DescribeDrdsInstanceNetInfoForInnerResponse.class;
 	}
 
 }

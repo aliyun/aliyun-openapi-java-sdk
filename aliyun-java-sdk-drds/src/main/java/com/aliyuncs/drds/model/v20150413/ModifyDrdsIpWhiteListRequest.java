@@ -38,6 +38,10 @@ public class ModifyDrdsIpWhiteListRequest extends RpcAcsRequest<ModifyDrdsIpWhit
 
 	private Boolean mode;
 
+	private String groupName;
+
+	private String groupAttribute;
+
 	public String getDrdsInstanceId() {
 		return this.drdsInstanceId;
 	}
@@ -72,6 +76,24 @@ public class ModifyDrdsIpWhiteListRequest extends RpcAcsRequest<ModifyDrdsIpWhit
 	public void setMode(Boolean mode) {
 		this.mode = mode;
 		putQueryParameter("Mode", mode);
+	}
+
+	public String getGroupName() {
+		return this.groupName;
+	}
+
+	public void setGroupName(String groupName) {
+		this.groupName = groupName;
+		putQueryParameter("GroupName", groupName);
+	}
+
+	public String getGroupAttribute() {
+		return this.groupAttribute;
+	}
+
+	public void setGroupAttribute(String groupAttribute) {
+		this.groupAttribute = groupAttribute;
+		putQueryParameter("GroupAttribute", groupAttribute);
 	}
 
 	@Override
