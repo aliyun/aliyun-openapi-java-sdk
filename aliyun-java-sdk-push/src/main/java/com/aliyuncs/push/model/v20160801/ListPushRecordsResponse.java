@@ -85,7 +85,7 @@ public class ListPushRecordsResponse extends AcsResponse {
 
 		private String appName;
 
-		private Long messageId;
+		private String messageId;
 
 		private String type;
 
@@ -113,11 +113,11 @@ public class ListPushRecordsResponse extends AcsResponse {
 			this.appName = appName;
 		}
 
-		public Long getMessageId() {
+		public String getMessageId() {
 			return this.messageId;
 		}
 
-		public void setMessageId(Long messageId) {
+		public void setMessageId(String messageId) {
 			this.messageId = messageId;
 		}
 

@@ -40,7 +40,7 @@ public class ListPushRecordsResponseUnmarshaller {
 			PushMessageInfo pushMessageInfo = new PushMessageInfo();
 			pushMessageInfo.setAppKey(context.longValue("ListPushRecordsResponse.PushMessageInfos["+ i +"].AppKey"));
 			pushMessageInfo.setAppName(context.stringValue("ListPushRecordsResponse.PushMessageInfos["+ i +"].AppName"));
-			pushMessageInfo.setMessageId(context.longValue("ListPushRecordsResponse.PushMessageInfos["+ i +"].MessageId"));
+			pushMessageInfo.setMessageId(context.stringValue("ListPushRecordsResponse.PushMessageInfos["+ i +"].MessageId"));
 			pushMessageInfo.setType(context.stringValue("ListPushRecordsResponse.PushMessageInfos["+ i +"].Type"));
 			pushMessageInfo.setDeviceType(context.stringValue("ListPushRecordsResponse.PushMessageInfos["+ i +"].DeviceType"));
 			pushMessageInfo.setPushTime(context.stringValue("ListPushRecordsResponse.PushMessageInfos["+ i +"].PushTime"));
