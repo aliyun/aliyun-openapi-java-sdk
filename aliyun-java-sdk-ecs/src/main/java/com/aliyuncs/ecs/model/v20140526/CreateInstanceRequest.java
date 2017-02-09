@@ -46,6 +46,10 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 
 	private String internetChargeType;
 
+	private Boolean autoRenew;
+
+	private Integer autoRenewPeriod;
+
 	private Integer internetMaxBandwidthIn;
 
 	private Integer internetMaxBandwidthOut;
@@ -168,6 +172,8 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 
 	private String userData;
 
+	private String spotStrategy;
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -238,6 +244,24 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 	public void setInternetChargeType(String internetChargeType) {
 		this.internetChargeType = internetChargeType;
 		putQueryParameter("InternetChargeType", internetChargeType);
+	}
+
+	public Boolean getAutoRenew() {
+		return this.autoRenew;
+	}
+
+	public void setAutoRenew(Boolean autoRenew) {
+		this.autoRenew = autoRenew;
+		putQueryParameter("AutoRenew", autoRenew);
+	}
+
+	public Integer getAutoRenewPeriod() {
+		return this.autoRenewPeriod;
+	}
+
+	public void setAutoRenewPeriod(Integer autoRenewPeriod) {
+		this.autoRenewPeriod = autoRenewPeriod;
+		putQueryParameter("AutoRenewPeriod", autoRenewPeriod);
 	}
 
 	public Integer getInternetMaxBandwidthIn() {
@@ -787,6 +811,15 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 	public void setUserData(String userData) {
 		this.userData = userData;
 		putQueryParameter("UserData", userData);
+	}
+
+	public String getSpotStrategy() {
+		return this.spotStrategy;
+	}
+
+	public void setSpotStrategy(String spotStrategy) {
+		this.spotStrategy = spotStrategy;
+		putQueryParameter("SpotStrategy", spotStrategy);
 	}
 
 	@Override

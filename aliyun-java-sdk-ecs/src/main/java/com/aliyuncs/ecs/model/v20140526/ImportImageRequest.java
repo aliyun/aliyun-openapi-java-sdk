@@ -19,6 +19,7 @@
 package com.aliyuncs.ecs.model.v20140526;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 
 /**
  * @author auto create
@@ -29,6 +30,8 @@ public class ImportImageRequest extends RpcAcsRequest<ImportImageResponse> {
 	public ImportImageRequest() {
 		super("Ecs", "2014-05-26", "ImportImage", "ecs");
 	}
+
+	private List<DiskDeviceMapping> diskDeviceMappings;
 
 	private Long ownerId;
 
@@ -46,17 +49,23 @@ public class ImportImageRequest extends RpcAcsRequest<ImportImageResponse> {
 
 	private String platform;
 
-	private String diskDeviceMapping1Format;
-
-	private String diskDeviceMapping1OSSBucket;
-
-	private String diskDeviceMapping1OSSObject;
-
-	private Integer diskDeviceMapping1DiskImSize;
-
-	private String diskDeviceMapping1Device;
-
 	private String roleName;
+
+	public List<DiskDeviceMapping> getDiskDeviceMappings() {
+		return this.diskDeviceMappings;
+	}
+
+	public void setDiskDeviceMappings(List<DiskDeviceMapping> diskDeviceMappings) {
+		this.diskDeviceMappings = diskDeviceMappings;	
+		for (int i = 0; i < diskDeviceMappings.size(); i++) {
+			putQueryParameter("DiskDeviceMapping." + (i + 1) + ".Format" , diskDeviceMappings.get(i).getFormat());
+			putQueryParameter("DiskDeviceMapping." + (i + 1) + ".OSSBucket" , diskDeviceMappings.get(i).getOSSBucket());
+			putQueryParameter("DiskDeviceMapping." + (i + 1) + ".OSSObject" , diskDeviceMappings.get(i).getOSSObject());
+			putQueryParameter("DiskDeviceMapping." + (i + 1) + ".DiskImSize" , diskDeviceMappings.get(i).getDiskImSize());
+			putQueryParameter("DiskDeviceMapping." + (i + 1) + ".DiskImageSize" , diskDeviceMappings.get(i).getDiskImageSize());
+			putQueryParameter("DiskDeviceMapping." + (i + 1) + ".Device" , diskDeviceMappings.get(i).getDevice());
+		}	
+	}
 
 	public Long getOwnerId() {
 		return this.ownerId;
@@ -130,51 +139,6 @@ public class ImportImageRequest extends RpcAcsRequest<ImportImageResponse> {
 		putQueryParameter("Platform", platform);
 	}
 
-	public String getDiskDeviceMapping1Format() {
-		return this.diskDeviceMapping1Format;
-	}
-
-	public void setDiskDeviceMapping1Format(String diskDeviceMapping1Format) {
-		this.diskDeviceMapping1Format = diskDeviceMapping1Format;
-		putQueryParameter("DiskDeviceMapping.1.Format", diskDeviceMapping1Format);
-	}
-
-	public String getDiskDeviceMapping1OSSBucket() {
-		return this.diskDeviceMapping1OSSBucket;
-	}
-
-	public void setDiskDeviceMapping1OSSBucket(String diskDeviceMapping1OSSBucket) {
-		this.diskDeviceMapping1OSSBucket = diskDeviceMapping1OSSBucket;
-		putQueryParameter("DiskDeviceMapping.1.OSSBucket", diskDeviceMapping1OSSBucket);
-	}
-
-	public String getDiskDeviceMapping1OSSObject() {
-		return this.diskDeviceMapping1OSSObject;
-	}
-
-	public void setDiskDeviceMapping1OSSObject(String diskDeviceMapping1OSSObject) {
-		this.diskDeviceMapping1OSSObject = diskDeviceMapping1OSSObject;
-		putQueryParameter("DiskDeviceMapping.1.OSSObject", diskDeviceMapping1OSSObject);
-	}
-
-	public Integer getDiskDeviceMapping1DiskImSize() {
-		return this.diskDeviceMapping1DiskImSize;
-	}
-
-	public void setDiskDeviceMapping1DiskImSize(Integer diskDeviceMapping1DiskImSize) {
-		this.diskDeviceMapping1DiskImSize = diskDeviceMapping1DiskImSize;
-		putQueryParameter("DiskDeviceMapping.1.DiskImSize", diskDeviceMapping1DiskImSize);
-	}
-
-	public String getDiskDeviceMapping1Device() {
-		return this.diskDeviceMapping1Device;
-	}
-
-	public void setDiskDeviceMapping1Device(String diskDeviceMapping1Device) {
-		this.diskDeviceMapping1Device = diskDeviceMapping1Device;
-		putQueryParameter("DiskDeviceMapping.1.Device", diskDeviceMapping1Device);
-	}
-
 	public String getRoleName() {
 		return this.roleName;
 	}
@@ -182,6 +146,69 @@ public class ImportImageRequest extends RpcAcsRequest<ImportImageResponse> {
 	public void setRoleName(String roleName) {
 		this.roleName = roleName;
 		putQueryParameter("RoleName", roleName);
+	}
+
+	public static class DiskDeviceMapping {
+
+		private String format;
+
+		private String oSSBucket;
+
+		private String oSSObject;
+
+		private Integer diskImSize;
+
+		private Integer diskImageSize;
+
+		private String device;
+
+		public String getFormat() {
+			return this.format;
+		}
+
+		public void setFormat(String format) {
+			this.format = format;
+		}
+
+		public String getOSSBucket() {
+			return this.oSSBucket;
+		}
+
+		public void setOSSBucket(String oSSBucket) {
+			this.oSSBucket = oSSBucket;
+		}
+
+		public String getOSSObject() {
+			return this.oSSObject;
+		}
+
+		public void setOSSObject(String oSSObject) {
+			this.oSSObject = oSSObject;
+		}
+
+		public Integer getDiskImSize() {
+			return this.diskImSize;
+		}
+
+		public void setDiskImSize(Integer diskImSize) {
+			this.diskImSize = diskImSize;
+		}
+
+		public Integer getDiskImageSize() {
+			return this.diskImageSize;
+		}
+
+		public void setDiskImageSize(Integer diskImageSize) {
+			this.diskImageSize = diskImageSize;
+		}
+		
+		public String getDevice() {
+			return this.device;
+		}
+
+		public void setDevice(String device) {
+			this.device = device;
+		}
 	}
 
 	@Override

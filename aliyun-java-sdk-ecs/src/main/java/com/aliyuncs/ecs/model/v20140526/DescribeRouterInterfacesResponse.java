@@ -99,6 +99,10 @@ public class DescribeRouterInterfacesResponse extends AcsResponse {
 
 		private String creationTime;
 
+		private String endTime;
+
+		private String chargeType;
+
 		private String status;
 
 		private String businessStatus;
@@ -197,6 +201,22 @@ public class DescribeRouterInterfacesResponse extends AcsResponse {
 
 		public void setCreationTime(String creationTime) {
 			this.creationTime = creationTime;
+		}
+
+		public String getEndTime() {
+			return this.endTime;
+		}
+
+		public void setEndTime(String endTime) {
+			this.endTime = endTime;
+		}
+
+		public String getChargeType() {
+			return this.chargeType;
+		}
+
+		public void setChargeType(String chargeType) {
+			this.chargeType = chargeType;
 		}
 
 		public String getStatus() {

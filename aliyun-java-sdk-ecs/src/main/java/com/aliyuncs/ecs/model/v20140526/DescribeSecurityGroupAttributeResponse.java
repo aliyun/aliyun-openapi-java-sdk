@@ -107,6 +107,8 @@ public class DescribeSecurityGroupAttributeResponse extends AcsResponse {
 
 		private String sourceGroupId;
 
+		private String sourceGroupName;
+
 		private String sourceCidrIp;
 
 		private String policy;
@@ -116,6 +118,8 @@ public class DescribeSecurityGroupAttributeResponse extends AcsResponse {
 		private String sourceGroupOwnerAccount;
 
 		private String destGroupId;
+
+		private String destGroupName;
 
 		private String destCidrIp;
 
@@ -147,6 +151,14 @@ public class DescribeSecurityGroupAttributeResponse extends AcsResponse {
 
 		public void setSourceGroupId(String sourceGroupId) {
 			this.sourceGroupId = sourceGroupId;
+		}
+
+		public String getSourceGroupName() {
+			return this.sourceGroupName;
+		}
+
+		public void setSourceGroupName(String sourceGroupName) {
+			this.sourceGroupName = sourceGroupName;
 		}
 
 		public String getSourceCidrIp() {
@@ -187,6 +199,14 @@ public class DescribeSecurityGroupAttributeResponse extends AcsResponse {
 
 		public void setDestGroupId(String destGroupId) {
 			this.destGroupId = destGroupId;
+		}
+
+		public String getDestGroupName() {
+			return this.destGroupName;
+		}
+
+		public void setDestGroupName(String destGroupName) {
+			this.destGroupName = destGroupName;
 		}
 
 		public String getDestCidrIp() {

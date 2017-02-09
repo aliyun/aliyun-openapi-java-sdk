@@ -59,6 +59,14 @@ public class DescribeInstanceTypesResponse extends AcsResponse {
 
 		private String instanceTypeFamily;
 
+		private Long localStorageCapacity;
+
+		private Integer localStorageAmount;
+
+		private Integer gPUAmount;
+
+		private String gPUSpec;
+
 		public String getInstanceTypeId() {
 			return this.instanceTypeId;
 		}
@@ -89,6 +97,38 @@ public class DescribeInstanceTypesResponse extends AcsResponse {
 
 		public void setInstanceTypeFamily(String instanceTypeFamily) {
 			this.instanceTypeFamily = instanceTypeFamily;
+		}
+
+		public Long getLocalStorageCapacity() {
+			return this.localStorageCapacity;
+		}
+
+		public void setLocalStorageCapacity(Long localStorageCapacity) {
+			this.localStorageCapacity = localStorageCapacity;
+		}
+
+		public Integer getLocalStorageAmount() {
+			return this.localStorageAmount;
+		}
+
+		public void setLocalStorageAmount(Integer localStorageAmount) {
+			this.localStorageAmount = localStorageAmount;
+		}
+
+		public Integer getGPUAmount() {
+			return this.gPUAmount;
+		}
+
+		public void setGPUAmount(Integer gPUAmount) {
+			this.gPUAmount = gPUAmount;
+		}
+
+		public String getGPUSpec() {
+			return this.gPUSpec;
+		}
+
+		public void setGPUSpec(String gPUSpec) {
+			this.gPUSpec = gPUSpec;
 		}
 	}
 

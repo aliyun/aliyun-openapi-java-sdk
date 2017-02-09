@@ -39,6 +39,10 @@ public class DescribeInstanceTypesResponseUnmarshaller {
 			instanceType.setCpuCoreCount(context.integerValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].CpuCoreCount"));
 			instanceType.setMemorySize(context.floatValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].MemorySize"));
 			instanceType.setInstanceTypeFamily(context.stringValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].InstanceTypeFamily"));
+			instanceType.setLocalStorageCapacity(context.longValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].LocalStorageCapacity"));
+			instanceType.setLocalStorageAmount(context.integerValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].LocalStorageAmount"));
+			instanceType.setGPUAmount(context.integerValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].GPUAmount"));
+			instanceType.setGPUSpec(context.stringValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].GPUSpec"));
 
 			instanceTypes.add(instanceType);
 		}

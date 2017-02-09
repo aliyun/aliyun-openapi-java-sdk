@@ -44,6 +44,8 @@ public class AuthorizeSecurityGroupEgressRequest extends RpcAcsRequest<Authorize
 
 	private String destGroupId;
 
+	private Long destGroupOwnerId;
+
 	private String destGroupOwnerAccount;
 
 	private String destCidrIp;
@@ -119,6 +121,15 @@ public class AuthorizeSecurityGroupEgressRequest extends RpcAcsRequest<Authorize
 	public void setDestGroupId(String destGroupId) {
 		this.destGroupId = destGroupId;
 		putQueryParameter("DestGroupId", destGroupId);
+	}
+
+	public Long getDestGroupOwnerId() {
+		return this.destGroupOwnerId;
+	}
+
+	public void setDestGroupOwnerId(Long destGroupOwnerId) {
+		this.destGroupOwnerId = destGroupOwnerId;
+		putQueryParameter("DestGroupOwnerId", destGroupOwnerId);
 	}
 
 	public String getDestGroupOwnerAccount() {

@@ -44,6 +44,8 @@ public class RevokeSecurityGroupRequest extends RpcAcsRequest<RevokeSecurityGrou
 
 	private String sourceGroupId;
 
+	private Long sourceGroupOwnerId;
+
 	private String sourceGroupOwnerAccount;
 
 	private String sourceCidrIp;
@@ -115,6 +117,15 @@ public class RevokeSecurityGroupRequest extends RpcAcsRequest<RevokeSecurityGrou
 	public void setSourceGroupId(String sourceGroupId) {
 		this.sourceGroupId = sourceGroupId;
 		putQueryParameter("SourceGroupId", sourceGroupId);
+	}
+
+	public Long getSourceGroupOwnerId() {
+		return this.sourceGroupOwnerId;
+	}
+
+	public void setSourceGroupOwnerId(Long sourceGroupOwnerId) {
+		this.sourceGroupOwnerId = sourceGroupOwnerId;
+		putQueryParameter("SourceGroupOwnerId", sourceGroupOwnerId);
 	}
 
 	public String getSourceGroupOwnerAccount() {

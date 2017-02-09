@@ -386,8 +386,10 @@ public class DescribeDisksResponse extends AcsResponse {
 
 		public enum Category {
 		
+			CLOUD_SSD("cloud_ssd"),
 			EPHEMERAL_SSD("ephemeral_ssd"),
 			EPHEMERAL("ephemeral"),
+			CLOUD_EFFICIENCY("cloud_efficiency"),
 			CLOUD("cloud"),;
 			
 		    private String stringValue;

@@ -47,6 +47,8 @@ public class DescribeRouterInterfacesResponseUnmarshaller {
 			routerInterfaceType.setRouterId(context.stringValue("DescribeRouterInterfacesResponse.RouterInterfaceSet["+ i +"].RouterId"));
 			routerInterfaceType.setRouterType(context.stringValue("DescribeRouterInterfacesResponse.RouterInterfaceSet["+ i +"].RouterType"));
 			routerInterfaceType.setCreationTime(context.stringValue("DescribeRouterInterfacesResponse.RouterInterfaceSet["+ i +"].CreationTime"));
+			routerInterfaceType.setEndTime(context.stringValue("DescribeRouterInterfacesResponse.RouterInterfaceSet["+ i +"].EndTime"));
+			routerInterfaceType.setChargeType(context.stringValue("DescribeRouterInterfacesResponse.RouterInterfaceSet["+ i +"].ChargeType"));
 			routerInterfaceType.setStatus(context.stringValue("DescribeRouterInterfacesResponse.RouterInterfaceSet["+ i +"].Status"));
 			routerInterfaceType.setBusinessStatus(context.stringValue("DescribeRouterInterfacesResponse.RouterInterfaceSet["+ i +"].BusinessStatus"));
 			routerInterfaceType.setConnectedTime(context.stringValue("DescribeRouterInterfacesResponse.RouterInterfaceSet["+ i +"].ConnectedTime"));

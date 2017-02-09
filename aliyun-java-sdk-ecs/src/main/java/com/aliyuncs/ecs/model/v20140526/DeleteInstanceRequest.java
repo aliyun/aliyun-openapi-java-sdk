@@ -40,6 +40,8 @@ public class DeleteInstanceRequest extends RpcAcsRequest<DeleteInstanceResponse>
 
 	private String ownerAccount;
 
+	private Boolean force;
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -83,6 +85,15 @@ public class DeleteInstanceRequest extends RpcAcsRequest<DeleteInstanceResponse>
 	public void setOwnerAccount(String ownerAccount) {
 		this.ownerAccount = ownerAccount;
 		putQueryParameter("OwnerAccount", ownerAccount);
+	}
+
+	public Boolean getForce() {
+		return this.force;
+	}
+
+	public void setForce(Boolean force) {
+		this.force = force;
+		putQueryParameter("Force", force);
 	}
 
 	@Override

@@ -40,23 +40,7 @@ public class RenewInstanceRequest extends RpcAcsRequest<RenewInstanceResponse> {
 
 	private String instanceId;
 
-	private String instanceType;
-
-	private Integer internetMaxBandwidthOut;
-
-	private String internetChargeType;
-
 	private Integer period;
-
-	private String rebootTime;
-
-	private String covertDiskPortable1DiskId;
-
-	private String covertDiskPortable2DiskId;
-
-	private String covertDiskPortable3DiskId;
-
-	private String covertDiskPortable4DiskId;
 
 	public Long getOwnerId() {
 		return this.ownerId;
@@ -103,33 +87,6 @@ public class RenewInstanceRequest extends RpcAcsRequest<RenewInstanceResponse> {
 		putQueryParameter("InstanceId", instanceId);
 	}
 
-	public String getInstanceType() {
-		return this.instanceType;
-	}
-
-	public void setInstanceType(String instanceType) {
-		this.instanceType = instanceType;
-		putQueryParameter("InstanceType", instanceType);
-	}
-
-	public Integer getInternetMaxBandwidthOut() {
-		return this.internetMaxBandwidthOut;
-	}
-
-	public void setInternetMaxBandwidthOut(Integer internetMaxBandwidthOut) {
-		this.internetMaxBandwidthOut = internetMaxBandwidthOut;
-		putQueryParameter("InternetMaxBandwidthOut", internetMaxBandwidthOut);
-	}
-
-	public String getInternetChargeType() {
-		return this.internetChargeType;
-	}
-
-	public void setInternetChargeType(String internetChargeType) {
-		this.internetChargeType = internetChargeType;
-		putQueryParameter("InternetChargeType", internetChargeType);
-	}
-
 	public Integer getPeriod() {
 		return this.period;
 	}
@@ -137,51 +94,6 @@ public class RenewInstanceRequest extends RpcAcsRequest<RenewInstanceResponse> {
 	public void setPeriod(Integer period) {
 		this.period = period;
 		putQueryParameter("Period", period);
-	}
-
-	public String getRebootTime() {
-		return this.rebootTime;
-	}
-
-	public void setRebootTime(String rebootTime) {
-		this.rebootTime = rebootTime;
-		putQueryParameter("RebootTime", rebootTime);
-	}
-
-	public String getCovertDiskPortable1DiskId() {
-		return this.covertDiskPortable1DiskId;
-	}
-
-	public void setCovertDiskPortable1DiskId(String covertDiskPortable1DiskId) {
-		this.covertDiskPortable1DiskId = covertDiskPortable1DiskId;
-		putQueryParameter("CovertDiskPortable.1.DiskId", covertDiskPortable1DiskId);
-	}
-
-	public String getCovertDiskPortable2DiskId() {
-		return this.covertDiskPortable2DiskId;
-	}
-
-	public void setCovertDiskPortable2DiskId(String covertDiskPortable2DiskId) {
-		this.covertDiskPortable2DiskId = covertDiskPortable2DiskId;
-		putQueryParameter("CovertDiskPortable.2.DiskId", covertDiskPortable2DiskId);
-	}
-
-	public String getCovertDiskPortable3DiskId() {
-		return this.covertDiskPortable3DiskId;
-	}
-
-	public void setCovertDiskPortable3DiskId(String covertDiskPortable3DiskId) {
-		this.covertDiskPortable3DiskId = covertDiskPortable3DiskId;
-		putQueryParameter("CovertDiskPortable.3.DiskId", covertDiskPortable3DiskId);
-	}
-
-	public String getCovertDiskPortable4DiskId() {
-		return this.covertDiskPortable4DiskId;
-	}
-
-	public void setCovertDiskPortable4DiskId(String covertDiskPortable4DiskId) {
-		this.covertDiskPortable4DiskId = covertDiskPortable4DiskId;
-		putQueryParameter("CovertDiskPortable.4.DiskId", covertDiskPortable4DiskId);
 	}
 
 	@Override

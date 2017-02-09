@@ -52,6 +52,8 @@ public class ModifyInstanceSpecRequest extends RpcAcsRequest<ModifyInstanceSpecR
 
 	private Integer temporaryInternetMaxBandwidthOut;
 
+	private Boolean async;
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -149,6 +151,15 @@ public class ModifyInstanceSpecRequest extends RpcAcsRequest<ModifyInstanceSpecR
 	public void setTemporaryInternetMaxBandwidthOut(Integer temporaryInternetMaxBandwidthOut) {
 		this.temporaryInternetMaxBandwidthOut = temporaryInternetMaxBandwidthOut;
 		putQueryParameter("Temporary.InternetMaxBandwidthOut", temporaryInternetMaxBandwidthOut);
+	}
+
+	public Boolean getAsync() {
+		return this.async;
+	}
+
+	public void setAsync(Boolean async) {
+		this.async = async;
+		putQueryParameter("Async", async);
 	}
 
 	@Override

@@ -19,6 +19,7 @@
 package com.aliyuncs.ecs.model.v20140526;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 
 /**
  * @author auto create
@@ -30,6 +31,8 @@ public class CreateImageRequest extends RpcAcsRequest<CreateImageResponse> {
 		super("Ecs", "2014-05-26", "CreateImage", "ecs");
 	}
 
+	private List<DiskDeviceMapping> diskDeviceMappings;
+
 	private Long ownerId;
 
 	private String resourceOwnerAccount;
@@ -37,6 +40,8 @@ public class CreateImageRequest extends RpcAcsRequest<CreateImageResponse> {
 	private Long resourceOwnerId;
 
 	private String snapshotId;
+
+	private String instanceId;
 
 	private String imageName;
 
@@ -67,6 +72,19 @@ public class CreateImageRequest extends RpcAcsRequest<CreateImageResponse> {
 	private String tag4Value;
 
 	private String tag5Value;
+
+	public List<DiskDeviceMapping> getDiskDeviceMappings() {
+		return this.diskDeviceMappings;
+	}
+
+	public void setDiskDeviceMappings(List<DiskDeviceMapping> diskDeviceMappings) {
+		this.diskDeviceMappings = diskDeviceMappings;	
+		for (int i = 0; i < diskDeviceMappings.size(); i++) {
+			putQueryParameter("DiskDeviceMapping." + (i + 1) + ".Size" , diskDeviceMappings.get(i).getSize());
+			putQueryParameter("DiskDeviceMapping." + (i + 1) + ".SnapshotId" , diskDeviceMappings.get(i).getSnapshotId());
+			putQueryParameter("DiskDeviceMapping." + (i + 1) + ".Device" , diskDeviceMappings.get(i).getDevice());
+		}	
+	}
 
 	public Long getOwnerId() {
 		return this.ownerId;
@@ -102,6 +120,15 @@ public class CreateImageRequest extends RpcAcsRequest<CreateImageResponse> {
 	public void setSnapshotId(String snapshotId) {
 		this.snapshotId = snapshotId;
 		putQueryParameter("SnapshotId", snapshotId);
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		putQueryParameter("InstanceId", instanceId);
 	}
 
 	public String getImageName() {
@@ -237,6 +264,39 @@ public class CreateImageRequest extends RpcAcsRequest<CreateImageResponse> {
 	public void setTag5Value(String tag5Value) {
 		this.tag5Value = tag5Value;
 		putQueryParameter("Tag.5.Value", tag5Value);
+	}
+
+	public static class DiskDeviceMapping {
+
+		private Integer size;
+
+		private String snapshotId;
+
+		private String device;
+
+		public Integer getSize() {
+			return this.size;
+		}
+
+		public void setSize(Integer size) {
+			this.size = size;
+		}
+
+		public String getSnapshotId() {
+			return this.snapshotId;
+		}
+
+		public void setSnapshotId(String snapshotId) {
+			this.snapshotId = snapshotId;
+		}
+
+		public String getDevice() {
+			return this.device;
+		}
+
+		public void setDevice(String device) {
+			this.device = device;
+		}
 	}
 
 	@Override

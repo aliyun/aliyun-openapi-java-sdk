@@ -131,6 +131,16 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		private String instanceTypeFamily;
 
+		private Long localStorageCapacity;
+
+		private Integer localStorageAmount;
+
+		private Integer gPUAmount;
+
+		private String gPUSpec;
+
+		private String spotStrategy;
+
 		private List<LockReason> operationLocks;
 
 		private List<Tag> tags;
@@ -345,6 +355,46 @@ public class DescribeInstancesResponse extends AcsResponse {
 			this.instanceTypeFamily = instanceTypeFamily;
 		}
 
+		public Long getLocalStorageCapacity() {
+			return this.localStorageCapacity;
+		}
+
+		public void setLocalStorageCapacity(Long localStorageCapacity) {
+			this.localStorageCapacity = localStorageCapacity;
+		}
+
+		public Integer getLocalStorageAmount() {
+			return this.localStorageAmount;
+		}
+
+		public void setLocalStorageAmount(Integer localStorageAmount) {
+			this.localStorageAmount = localStorageAmount;
+		}
+
+		public Integer getGPUAmount() {
+			return this.gPUAmount;
+		}
+
+		public void setGPUAmount(Integer gPUAmount) {
+			this.gPUAmount = gPUAmount;
+		}
+
+		public String getGPUSpec() {
+			return this.gPUSpec;
+		}
+
+		public void setGPUSpec(String gPUSpec) {
+			this.gPUSpec = gPUSpec;
+		}
+
+		public String getSpotStrategy() {
+			return this.spotStrategy;
+		}
+
+		public void setSpotStrategy(String spotStrategy) {
+			this.spotStrategy = spotStrategy;
+		}
+
 		public List<LockReason> getOperationLocks() {
 			return this.operationLocks;
 		}
@@ -401,8 +451,8 @@ public class DescribeInstancesResponse extends AcsResponse {
 			this.eipAddress = eipAddress;
 		}
 
-		public enum Status {
-		
+public enum Status {
+
 			DELETED("Deleted"),
 			STOPPED("Stopped"),
 			TRANSFERRING("Transferring"),
@@ -411,38 +461,40 @@ public class DescribeInstancesResponse extends AcsResponse {
 			STARTING("Starting"),
 			STOPPING("Stopping"),
 			PENDING("Pending"),;
-			
-		    private String stringValue;
-		
-			Status(String stringValue) {
-		        setStringValue(stringValue);
-		    }
-		
-		    public String getStringValue() {
-		        return stringValue;
-		    }
-		
-		    public void setStringValue(String stringValue) {
-		        this.stringValue = stringValue;
-		    }
-		    
-		    public static Status getEnum(String stringValue){
-		    	if(null == stringValue){
-		    		return null;
-		    	}
-		    	
-		    	for (Status status : Status.values()) {
-					if(status.getStringValue().equals(stringValue)){
-						return status;
-					}
-				}
-		    	return null;
-		    }
+	
+    private String stringValue;
+
+	Status(String stringValue) {
+        setStringValue(stringValue);
+    }
+
+    public String getStringValue() {
+        return stringValue;
+    }
+
+    public void setStringValue(String stringValue) {
+        this.stringValue = stringValue;
+    }
+    
+    public static Status getEnum(String stringValue){
+    	if(null == stringValue){
+    		return null;
+    	}
+    	
+    	for (Status status : Status.values()) {
+			if(status.getStringValue().equals(stringValue)){
+				return status;
+			}
 		}
+    	return null;
+    }
+}
 
 		public static class LockReason {
 
 			private String lockReason;
+
+			private String lockMsg;
 
 			public String getLockReason() {
 				return this.lockReason;
@@ -450,6 +502,14 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 			public void setLockReason(String lockReason) {
 				this.lockReason = lockReason;
+			}
+
+			public String getLockMsg() {
+				return this.lockMsg;
+			}
+
+			public void setLockMsg(String lockMsg) {
+				this.lockMsg = lockMsg;
 			}
 		}
 

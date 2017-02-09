@@ -40,6 +40,8 @@ public class DescribeSnapshotsRequest extends RpcAcsRequest<DescribeSnapshotsRes
 
 	private String diskId;
 
+	private String snapshotLinkId;
+
 	private String snapshotIds;
 
 	private Integer pageNumber;
@@ -129,6 +131,15 @@ public class DescribeSnapshotsRequest extends RpcAcsRequest<DescribeSnapshotsRes
 	public void setDiskId(String diskId) {
 		this.diskId = diskId;
 		putQueryParameter("DiskId", diskId);
+	}
+
+	public String getSnapshotLinkId() {
+		return this.snapshotLinkId;
+	}
+
+	public void setSnapshotLinkId(String snapshotLinkId) {
+		this.snapshotLinkId = snapshotLinkId;
+		putQueryParameter("SnapshotLinkId", snapshotLinkId);
 	}
 
 	public String getSnapshotIds() {

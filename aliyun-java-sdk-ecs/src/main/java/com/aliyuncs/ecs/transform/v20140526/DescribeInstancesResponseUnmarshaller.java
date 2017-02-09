@@ -68,6 +68,11 @@ public class DescribeInstancesResponseUnmarshaller {
 			instance.setIoOptimized(context.booleanValue("DescribeInstancesResponse.Instances["+ i +"].IoOptimized"));
 			instance.setDeviceAvailable(context.booleanValue("DescribeInstancesResponse.Instances["+ i +"].DeviceAvailable"));
 			instance.setInstanceTypeFamily(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].InstanceTypeFamily"));
+			instance.setLocalStorageCapacity(context.longValue("DescribeInstancesResponse.Instances["+ i +"].LocalStorageCapacity"));
+			instance.setLocalStorageAmount(context.integerValue("DescribeInstancesResponse.Instances["+ i +"].LocalStorageAmount"));
+			instance.setGPUAmount(context.integerValue("DescribeInstancesResponse.Instances["+ i +"].GPUAmount"));
+			instance.setGPUSpec(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].GPUSpec"));
+			instance.setSpotStrategy(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].SpotStrategy"));
 
 			List<String> securityGroupIds = new ArrayList<String>();
 			for (int j = 0; j < context.lengthValue("DescribeInstancesResponse.Instances["+ i +"].SecurityGroupIds.Length"); j++) {
@@ -111,6 +116,7 @@ public class DescribeInstancesResponseUnmarshaller {
 			for (int j = 0; j < context.lengthValue("DescribeInstancesResponse.Instances["+ i +"].OperationLocks.Length"); j++) {
 				LockReason lockReason = new LockReason();
 				lockReason.setLockReason(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].OperationLocks["+ j +"].LockReason"));
+				lockReason.setLockMsg(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].OperationLocks["+ j +"].LockMsg"));
 
 				operationLocks.add(lockReason);
 			}
