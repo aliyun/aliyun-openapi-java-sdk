@@ -50,6 +50,8 @@ public class BatchSendMailRequest extends RpcAcsRequest<BatchSendMailResponse> {
 
 	private String replyAddressAlias;
 
+	private String clickTrace;
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -138,6 +140,15 @@ public class BatchSendMailRequest extends RpcAcsRequest<BatchSendMailResponse> {
 	public void setReplyAddressAlias(String replyAddressAlias) {
 		this.replyAddressAlias = replyAddressAlias;
 		putQueryParameter("ReplyAddressAlias", replyAddressAlias);
+	}
+
+	public String getClickTrace() {
+		return this.clickTrace;
+	}
+
+	public void setClickTrace(String clickTrace) {
+		this.clickTrace = clickTrace;
+		putQueryParameter("ClickTrace", clickTrace);
 	}
 
 	@Override

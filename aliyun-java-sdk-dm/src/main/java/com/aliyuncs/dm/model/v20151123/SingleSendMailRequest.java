@@ -19,7 +19,7 @@
 package com.aliyuncs.dm.model.v20151123;
 
 import com.aliyuncs.RpcAcsRequest;
-import com.aliyuncs.http.MethodType;
+
 /**
  * @author auto create
  * @version 
@@ -28,7 +28,6 @@ public class SingleSendMailRequest extends RpcAcsRequest<SingleSendMailResponse>
 	
 	public SingleSendMailRequest() {
 		super("Dm", "2015-11-23", "SingleSendMail");
-		this.setMethod(MethodType.POST);
 	}
 
 	private Long ownerId;
@@ -58,6 +57,8 @@ public class SingleSendMailRequest extends RpcAcsRequest<SingleSendMailResponse>
 	private String replyAddress;
 
 	private String replyAddressAlias;
+
+	private String clickTrace;
 
 	public Long getOwnerId() {
 		return this.ownerId;
@@ -183,6 +184,15 @@ public class SingleSendMailRequest extends RpcAcsRequest<SingleSendMailResponse>
 	public void setReplyAddressAlias(String replyAddressAlias) {
 		this.replyAddressAlias = replyAddressAlias;
 		putQueryParameter("ReplyAddressAlias", replyAddressAlias);
+	}
+
+	public String getClickTrace() {
+		return this.clickTrace;
+	}
+
+	public void setClickTrace(String clickTrace) {
+		this.clickTrace = clickTrace;
+		putQueryParameter("ClickTrace", clickTrace);
 	}
 
 	@Override
