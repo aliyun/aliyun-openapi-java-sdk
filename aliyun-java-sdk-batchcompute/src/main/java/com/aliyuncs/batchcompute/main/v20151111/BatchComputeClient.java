@@ -53,6 +53,7 @@ public class BatchComputeClient implements BatchCompute {
         BatchComputeClient.addEndpoint("cn-shenzhen", "batchcompute.cn-shenzhen.aliyuncs.com");
         BatchComputeClient.addEndpoint("cn-hangzhou", "batchcompute.cn-hangzhou.aliyuncs.com");
         BatchComputeClient.addEndpoint("cn-beijing", "batchcompute.cn-beijing.aliyuncs.com");
+        BatchComputeClient.addEndpoint("cn-shanghai", "batchcompute.cn-shanghai.aliyuncs.com");
     }
 
     public BatchComputeClient(String regionId, String accessKeyId, String accessKeySecret) {

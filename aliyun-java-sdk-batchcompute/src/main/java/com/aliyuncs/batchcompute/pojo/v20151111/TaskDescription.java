@@ -67,6 +67,18 @@ public class TaskDescription {
     @JsonProperty("WriteSupport")
     private boolean writeSupport;
 
+    @JsonProperty("Mounts")
+    private Mounts mounts;
+    @JsonIgnore
+    public Mounts getMounts() {
+        return mounts;
+    }
+    @JsonIgnore
+    public void setMounts(Mounts mounts) {
+        this.mounts = mounts;
+    }
+
+
 
     @JsonIgnore
     public boolean isWriteSupport() {

@@ -51,6 +51,44 @@ public class ClusterDescription {
     @JsonProperty("UserData")
     private Map<String, String> userData;
 
+
+    @JsonProperty("Bootstrap")
+    private String bootstrap;
+
+
+    @JsonProperty("EnvVars")
+    private Map<String, String> envVars;
+
+    @JsonIgnore
+    public String getBootstrap() {
+        return bootstrap;
+    }
+
+    @JsonIgnore
+    public void setBootstrap(String bootstrap) {
+        this.bootstrap = bootstrap;
+    }
+
+    @JsonIgnore
+    public Map<String, String> getEnvVars() {
+        return envVars;
+    }
+
+    @JsonIgnore
+    public void setEnvVars(Map<String, String> envVars) {
+        this.envVars = envVars;
+    }
+
+    public void addEnvVar(String key, String value) {
+        if(this.envVars==null){
+            this.envVars = new HashMap<String,String>();
+        }
+        this.envVars.put(key, value);
+    }
+
+
+
+
     @JsonIgnore
     public Notification getNotification() {
         return notification;
@@ -74,6 +112,10 @@ public class ClusterDescription {
         this.configs = configs;
     }
 
+
+    @JsonProperty("Configs")
+    private Configs configs;
+
     @JsonIgnore
     public String getInstanceType() {
         return instanceType;
@@ -84,8 +126,6 @@ public class ClusterDescription {
         this.instanceType = instanceType;
     }
 
-    @JsonProperty("Configs")
-    private Configs configs;
 
 
     @JsonIgnore

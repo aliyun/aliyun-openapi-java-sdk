@@ -44,6 +44,8 @@ public class ClusterInstanceTest extends TestCase {
 
     int DUR = 3000;
 
+    private String gInstanceType;
+
 
     @Override
     public void setUp() throws Exception {
@@ -52,6 +54,8 @@ public class ClusterInstanceTest extends TestCase {
         BatchComputeClient.verbose = true;
         BatchComputeClient.addRequestHeader("x-acs-source-ip", "127.0.0.1");
         BatchComputeClient.addRequestHeader("x-acs-secure-transport", "true");
+
+        gInstanceType = cfg.getInstanceType();
 
         client = new BatchComputeClient(cfg.getRegionId(), cfg.getAccessId(), cfg.getAccessKey());
     }
@@ -193,7 +197,7 @@ public class ClusterInstanceTest extends TestCase {
 
         GroupDescription groupDesc = new GroupDescription();
         groupDesc.setDesiredVMCount(1);
-        groupDesc.setInstanceType("ecs.t1.small");
+        groupDesc.setInstanceType(gInstanceType);
         groupDesc.setResourceType("OnDemand");
         desc.addGroup("group1", groupDesc);
 

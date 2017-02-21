@@ -43,6 +43,7 @@ public class JobTest extends TestCase {
     private String gClusterId;
 
     private String gJobId;
+    private String gInstanceType;
 
 
     @Override
@@ -54,6 +55,7 @@ public class JobTest extends TestCase {
         BatchComputeClient.addRequestHeader("x-acs-secure-transport", "true");
 
         gImageId = "img-ubuntu";
+        gInstanceType = cfg.getInstanceType();
 
         client = new BatchComputeClient(cfg.getRegionId(), cfg.getAccessId(), cfg.getAccessKey());
     }
@@ -288,7 +290,7 @@ public class JobTest extends TestCase {
 
         GroupDescription groupDesc = new GroupDescription();
         groupDesc.setDesiredVMCount(3);
-        groupDesc.setInstanceType("ecs.t1.small");
+        groupDesc.setInstanceType(gInstanceType);
         groupDesc.setResourceType("OnDemand");
         desc.addGroup("group1", groupDesc);
 
@@ -376,7 +378,7 @@ public class JobTest extends TestCase {
 
         AutoCluster autoCluster = new AutoCluster();
         autoCluster.setImageId(gImageId);
-        autoCluster.setInstanceType("ecs.t1.small");
+        autoCluster.setInstanceType(gInstanceType);
         autoCluster.setResourceType("OnDemand");
 
         DataDisk dataDisk = new DataDisk();

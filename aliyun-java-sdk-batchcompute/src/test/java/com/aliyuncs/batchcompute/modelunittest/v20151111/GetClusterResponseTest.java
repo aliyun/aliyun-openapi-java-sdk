@@ -21,8 +21,7 @@ package com.aliyuncs.batchcompute.modelunittest.v20151111;
 
 import com.aliyuncs.batchcompute.model.v20151111.GetClusterResponse;
 import com.aliyuncs.batchcompute.model.v20151111.GetJobResponse;
-import com.aliyuncs.batchcompute.pojo.v20151111.Cluster;
-import com.aliyuncs.batchcompute.pojo.v20151111.Topic;
+import com.aliyuncs.batchcompute.pojo.v20151111.*;
 import com.aliyuncs.batchcompute.util.FileLoader;
 import com.aliyuncs.exceptions.ClientException;
 import com.aliyuncs.exceptions.ServerException;
@@ -72,6 +71,29 @@ public class GetClusterResponseTest extends TestCase {
         assertEquals(topic.getEndpoint(), "xxx");
         assertEquals(topic.getEvents().size(), 3);
         assertEquals(topic.getEvents().get(0), "OnClusterDeleted");
+
+
+        // auto cluster config mounts
+        System.out.println(cluster);
+        Mounts  mounts = cluster.getConfigs().getMounts();
+
+        assertEquals(mounts.getLocale(), "GBK");
+        assertEquals(mounts.isLock(), false);
+
+        assertEquals(mounts.getEntries().get(0).getSource(),  "oss://your-bucket/mount-source");
+        assertEquals(mounts.getEntries().get(0).getDestination(),  "/home/admin/mount-dest");
+        assertEquals(mounts.getNas().getAccessGroup().get(0),  "group1");
+        assertEquals(mounts.getNas().getFileSystem().get(0),  "filesystem1");
+        assertEquals(mounts.getOss().getAccessKeyId(),  "a");
+        assertEquals(mounts.getOss().getAccessKeySecret(),  "b");
+        assertEquals(mounts.getOss().getSecurityToken(),  "c");
+
+        // net work
+        ClassicNetWork cnw = cluster.getConfigs().getNetworks().getClassic();
+        assertEquals(cnw.getAllowIpAddress().get(0),  "10.1.1.1");
+        assertEquals(cnw.getAllowSecurityGroup().get(0),  "aa");
+        assertEquals(cnw.getAllowSecurityGroup().get(1),  "bb");
+
 
     }
     public void testGetInstance2() throws ServerException {

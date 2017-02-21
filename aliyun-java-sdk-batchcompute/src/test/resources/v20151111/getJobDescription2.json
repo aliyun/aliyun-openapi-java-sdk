@@ -1,0 +1,140 @@
+{
+  "DAG": {
+    "Dependencies": {},
+    "Tasks": {"task_1": {
+      "AutoCluster": {
+        "ECSImageId": "",
+        "ImageId": "",
+        "InstanceType": "",
+        "ResourceType": "",
+
+        "UserData": {
+          "a": "b"
+        },
+        "Configs": {
+          "Disks": {
+            "DataDisk": {
+              "MountPoint": "/path/to/mount",
+              "Size": 500,
+              "Type": "cloud"
+            },
+            "SystemDisk": {
+              "Size": 500,
+              "Type": "cloud"
+            }
+          },
+          "Mounts": {
+            "Entries": [
+              {
+                "Destination": "/home/admin/mount-dest",
+                "Source": "oss://your-bucket/mount-source",
+                "WriteSupport": true
+              }
+            ],
+            "Locale": "GBK",
+            "Lock": false,
+            "NAS": {
+              "AccessGroup": [
+                "group1",
+                "group2"
+              ],
+              "FileSystem": [
+                "filesystem1",
+                "filesystem2"
+              ]
+            },
+            "OSS": {
+              "AccessKeyId": "abc2",
+              "AccessKeySecret": "",
+              "AccessSecurityToken": ""
+            }
+          },
+          "Networks": {
+            "Classic": {
+              "AllowIpAddress": ["10.1.1.1"],
+              "AllowIpAddressEgress": [],
+              "AllowSecurityGroup": [],
+              "AllowSecurityGroupEgress": []
+            },
+            "VPC": {}
+          }
+        }
+
+      },
+
+      "ClusterId": "cls-6kilcg94rdtk004q",
+      "InputMapping": {"oss://my-bucket/disk1/": "/home/admin/disk1/"},
+      "InstanceCount": 1,
+      "LogMapping": {},
+      "Mounts": {
+        "Entries": [
+          {
+            "Destination": "/home/admin/mount-dest2",
+            "Source": "oss://your-bucket/mount-source",
+            "WriteSupport": true
+          }
+        ],
+        "Locale": "GBK",
+        "Lock": false,
+        "NAS": {
+          "AccessGroup": [
+            "group1",
+            "group2"
+          ],
+          "FileSystem": [
+            "filesystem1",
+            "filesystem2"
+          ]
+        },
+        "OSS": {
+          "AccessKeyId": "abc",
+          "AccessKeySecret": "",
+          "AccessSecurityToken": ""
+        }
+      },
+      "MaxRetryCount": 2,
+      "OutputMapping": {"/home/admin/disk2/": "oss://my-bucket/disk2/"},
+      "Parameters": {
+        "Command": {
+          "CommandLine": "python main.py",
+          "EnvVars": {"a": "b"},
+          "PackagePath": "oss://my-bucket/test/worker.tar.gz"},
+        "InputMappingConfig": {
+          "Locale": "GBK",
+          "Lock": true},
+        "StderrRedirectPath": "oss://my-bucket/test/logs/",
+        "StdoutRedirectPath": "oss://my-bucket/test/logs/"},
+      "Timeout": 10000,
+      "WriteSupport": false}}},
+  "Description": "",
+  "JobFailOnInstanceFail": true,
+  "AutoRelease": false,
+  "Name": "jobName1",
+  "Priority": 10,
+  "Type": "DAG",
+  "Notification": {
+    "Topic": {
+      "Name": "test-topic",
+      "Endpoint": "xxx",
+      "Events": [
+        "OnJobWaiting",
+        "OnJobRunning",
+        "OnJobStopped",
+        "OnJobFinished",
+        "OnJobFailed",
+        "OnTaskWaiting",
+        "OnTaskRunning",
+        "OnTaskStopped",
+        "OnTaskFinished",
+        "OnTaskFailed",
+        "OnInstanceWaiting",
+        "OnInstanceRunning",
+        "OnInstanceStopped",
+        "OnInstanceFinished",
+        "OnInstanceFailed",
+        "OnPriorityChange"
+      ]
+    }
+  }
+}
+}

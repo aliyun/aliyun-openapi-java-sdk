@@ -18,10 +18,50 @@
     "StoppingCount": 0
   },
   "Name": "cluster_test",
+  "Bootstrap": "",
+  "EnvVars": {"c":"dd"},
+
   "OperationLogs": [],
   "OwnerId": 48351,
   "State": "Active",
   "UserData": {},
+  "Configs": {
+    "Mounts": {
+      "Entries": [
+        {
+          "Destination": "/home/admin/mount-dest",
+          "Source": "oss://your-bucket/mount-source",
+          "WriteSupport": true
+        }
+      ],
+      "Locale": "GBK",
+      "Lock": false,
+      "NAS": {
+        "AccessGroup": [
+          "group1",
+          "group2"
+        ],
+        "FileSystem": [
+          "filesystem1",
+          "filesystem2"
+        ]
+      },
+      "OSS": {
+        "AccessKeyId": "a",
+        "AccessKeySecret": "b",
+        "SecurityToken": "c"
+      }
+    },
+    "Networks": {
+      "Classic": {
+        "AllowIpAddress": ["10.1.1.1"],
+        "AllowIpAddressEgress": [],
+        "AllowSecurityGroup": ["aa","bb"],
+        "AllowSecurityGroupEgress": []
+      },
+      "VPC": {}
+    }
+  },
   "Notification": {
     "Topic": {
       "Name": "test-topic",

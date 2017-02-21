@@ -20,18 +20,18 @@ Batchcompute SDK For Java
 <dependency>
     <groupId>com.aliyun</groupId>
     <artifactId>aliyun-java-sdk-batchcompute</artifactId>
-    <version>3.2.0</version>
+    <version>4.0.0</version>
 </dependency>
 ```
 
 #### (2) 构造 client 对象
 
 ```java
-import com.aliyuncs.batchcompute.main.v20151111.*;  //注意版本号: v20151111, 目前支持2个版本的: v20150630 & v20151111
+import com.aliyuncs.batchcompute.main.v20151111.*;
 ...
 
 
-String regionId="cn-hangzhou";
+String regionId="cn-shenzhen";
 String accessKeyId="${your_access_key_id}";
 String accessKeySecret="${your_access_key_secret}";
 
@@ -60,23 +60,6 @@ try {
 
 #### (4)  client 对象支持的方法:
 
-版本 v20150630:
-
-| 序号 | 方法 | 描述 |
-| ----- | ---- | ---- |
-| 1. | createJob(JobDescription job) | 创建Job |
-| 2. | updateJobPriority(String jobId, int priority) | 设置Job优先级 |
-| 3. | deleteJob(String jobId) | 删除Job |
-| 4. | getJob(String jobId) | 获取Job状态信息 |
-| 5. | listJobs() | 列举Job状态信息 |
-| 6. | getJobDescription(String jobId) | 获取Job描述信息 |
-| 7. | stopJob(String jobId) | 停止job |
-| 8. | startJob(String jobId) | 重新启动job |
-| 9. | listTasks(String jobId) | 列举一个job下所有task的状态信息 |
-| 10. | listImages() | 列举所有镜像 |
-
-
-版本 v20151111:
 
 | 序号 | 方法 | 描述 |
 | ----- | ---- | ---- |

@@ -39,6 +39,7 @@ public class Config {
         accessId = (String) prop.get("accessId");
         accessKey = (String) prop.get("accessKey");
         ecsImageId = (String) prop.get("escImageId");
+        instanceType = (String) prop.get("instanceType");
 
     }
 
@@ -67,10 +68,15 @@ public class Config {
         return ecsImageId;
     }
 
+    public String getInstanceType() {
+        return instanceType;
+    }
+
 
     private String regionId;
     private String accessId;
     private String accessKey;
     private String ecsImageId;
+    private String instanceType;
 
 }

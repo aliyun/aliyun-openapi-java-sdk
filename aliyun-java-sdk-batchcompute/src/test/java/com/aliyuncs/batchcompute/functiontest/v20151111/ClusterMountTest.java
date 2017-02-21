@@ -34,7 +34,7 @@ import java.util.List;
 /**
  * Created by guangchun.luo on 15/4/14.
  */
-public class ClusterTest extends TestCase {
+public class ClusterMountTest extends TestCase {
 
     private static BatchCompute client;
 
@@ -43,7 +43,6 @@ public class ClusterTest extends TestCase {
     private String gClusterId;
 
     private String gInstanceType;
-
 
     @Override
     public void setUp() throws Exception {
@@ -88,49 +87,35 @@ public class ClusterTest extends TestCase {
         Group group = cluster.getGroups().get("group1");
 
         assertEquals("OnDemand", group.getResourceType());
+        assertEquals(gInstanceType, group.getInstanceType());
         assertTrue(3 >= group.getActualVMCount());
         assertTrue(3 == group.getDesiredVMCount());
-        assertEquals("bb", cluster.getUserData().get("a"));
 
 
-        Disks disks  = cluster.getConfigs().getDisks();
-        DataDisk dataDisk = disks.getDataDisk();
-        assertEquals(400, dataDisk.getSize());
-        assertEquals("/home/admin/xxx", dataDisk.getMountPoint());
-        assertEquals("cloud", dataDisk.getType());
-
-        SystemDisk systemDisk = disks.getSystemDisk();
-        assertEquals(80, systemDisk.getSize());
-
-        Topic topic = cluster.getNotification().getTopic();
-        assertEquals("tp_n2", topic.getName());
-        assertEquals("xxxx", topic.getEndpoint());
-        assertEquals(2, topic.getEvents().size());
+        assertEquals("echo 123", cluster.getBootstrap());
+        assertEquals("d", cluster.getEnvVars().get("c"));
 
 
-        //3. list cluster
-        ListClustersResponse listClustersResponse = client.listClusters();
-        assertEquals(200, listClustersResponse.getStatusCode());
+        //  mounts
+        Mounts mounts = cluster.getConfigs().getMounts();
+        assertEquals(mounts.getEntries().get(0).getDestination(), "/home/admin/nas1");
+        assertEquals(mounts.getEntries().get(0).getSource(), "nas://0266ef-xx1.cn-hangzhou.nas.aliyuncs.com");
+        assertEquals(mounts.getEntries().get(0).isWriteSupport(), false);
 
-        List<Cluster> list = listClustersResponse.getItems();
+        assertEquals(mounts.getLocale(), "UTF-8");
+        assertEquals(mounts.isLock(), true);
 
-        assertTrue(list.size()>0);
-        assertTrue(list.get(0).getState()!=null);
+        assertEquals(mounts.getNas().getAccessGroup().get(0), "group1");
+        assertEquals(mounts.getNas().getFileSystem().get(0), "filesystem1");
 
+        assertEquals(mounts.getOss().getAccessKeyId(), "id");
+        assertEquals(mounts.getOss().getAccessKeySecret(), "key");
 
+        //  networks
+        Networks networks = cluster.getConfigs().getNetworks();
+        assertEquals(networks.getClassic().getAllowIpAddress().get(0), "10.1.1.1");
+        assertEquals(networks.getClassic().getAllowSecurityGroup().get(0), "group1");
 
-
-        //4. update
-        ChangeClusterDesiredVMCountResponse res2 = client.changeClusterDesiredVMCount(gClusterId, "group1", 4);
-        assertEquals(200, res2.getStatusCode());
-
-        //5. check cluster desired vm count
-
-        GetClusterResponse getClusterResponse2 = client.getCluster(gClusterId);
-        Group group3 = getClusterResponse2.getCluster().getGroups().get("group1");
-
-        assertTrue(4 >= group3.getActualVMCount());
-        assertTrue(4 == group3.getDesiredVMCount());
 
 
         // 6. delete cluster
@@ -151,36 +136,59 @@ public class ClusterTest extends TestCase {
         desc.setImageId(gImageId);
         desc.setDescription("java sdk test");
 
-
         GroupDescription groupDesc = new GroupDescription();
         groupDesc.setDesiredVMCount(3);
         groupDesc.setInstanceType(gInstanceType);
         groupDesc.setResourceType("OnDemand");
         desc.addGroup("group1", groupDesc);
 
-        DataDisk dataDisk = new DataDisk();
-        dataDisk.setSize(400);
-        dataDisk.setType("cloud");
-        dataDisk.setMountPoint("/home/admin/xxx");
-        desc.mountDataDisk(dataDisk);
 
-        SystemDisk systemDisk = new SystemDisk();
-        systemDisk.setSize(80); //GB
-        systemDisk.setType("cloud");
-        desc.mountSystemDisk(systemDisk);
+        desc.setBootstrap("echo 123");
+        desc.addEnvVar("c","d");
 
-        desc.addUserData("a","bb");
 
-        Notification noti = new Notification();
-        Topic topic = new Topic();
-        topic.addEvent(Topic.ON_CLUSTER_DELETED);
-        topic.addEvent(Topic.ON_CLUSTER_INSTANCE_ACTIVE);
-        noti.setTopic(topic);
-        topic.setName("tp_n2");
-        topic.setEndpoint("xxxx");
-        desc.setNotification(noti);
+        Configs cc  =  new Configs();
+
+        cc.setMounts(getMounts());
+        cc.setNetworks(getNetworks());
+
+        desc.setConfigs(cc);
 
         return desc;
+    }
+
+
+    private Mounts getMounts(){
+        Mounts mounts = new Mounts();
+        MountEntry entry = new MountEntry();
+        entry.setDestination("/home/admin/nas1");
+        entry.setSource("nas://0266ef-xx1.cn-hangzhou.nas.aliyuncs.com");
+        entry.setWriteSupport(false);
+
+        mounts.setLock(true);
+        mounts.setLocale("UTF-8");
+
+        NASConfig nas = new NASConfig();
+        nas.addAccessGroup("group1");
+        nas.addFileSystem("filesystem1");
+        mounts.setNas(nas);
+
+        OSSConfig ossConfig = new OSSConfig();
+        ossConfig.setAccessKeyId("id");
+        ossConfig.setAccessKeySecret("key");
+        mounts.setOss(ossConfig);
+
+        mounts.addEntries(entry);
+        return mounts;
+    }
+
+    private Networks getNetworks(){
+        Networks nw = new Networks();
+        ClassicNetWork c = new ClassicNetWork();
+        c.addAllowIpAddress("10.1.1.1");
+        c.addAllowSecurityGroup("group1");
+        nw.setClassic(c);
+        return nw;
     }
 
 }

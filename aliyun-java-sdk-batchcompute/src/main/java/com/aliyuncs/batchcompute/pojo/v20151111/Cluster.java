@@ -67,7 +67,6 @@ public class Cluster {
     private Notification notification;
 
 
-
     @JsonProperty("CreationTime")
     @JsonDeserialize(using = CustomJsonDateDeserializer.class)
     private Date creationTime;
@@ -117,6 +116,41 @@ public class Cluster {
 
     @JsonProperty("UserData")
     private Map<String, String> userData;
+
+
+    @JsonProperty("Bootstrap")
+    private String bootstrap;
+
+
+    @JsonProperty("EnvVars")
+    private Map<String, String> envVars;
+
+    @JsonIgnore
+    public String getBootstrap() {
+        return bootstrap;
+    }
+
+    @JsonIgnore
+    public void setBootstrap(String bootstrap) {
+        this.bootstrap = bootstrap;
+    }
+
+    @JsonIgnore
+    public Map<String, String> getEnvVars() {
+        return envVars;
+    }
+
+    @JsonIgnore
+    public void setEnvVars(Map<String, String> envVars) {
+        this.envVars = envVars;
+    }
+
+    public void addEnvVar(String key, String value) {
+        if(this.envVars==null){
+            this.envVars = new HashMap<String,String>();
+        }
+        this.envVars.put(key, value);
+    }
 
 
     @JsonIgnore

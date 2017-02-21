@@ -24,6 +24,31 @@ public class Configs {
     @JsonProperty("Disks")
     private Disks disks;
 
+    @JsonProperty("Mounts")
+    private Mounts mounts;
+
+    @JsonIgnore
+    public Mounts getMounts() {
+        return mounts;
+    }
+
+    @JsonIgnore
+    public void setMounts(Mounts mounts) {
+        this.mounts = mounts;
+    }
+
+    @JsonIgnore
+    public Networks getNetworks() {
+        return networks;
+    }
+
+    @JsonIgnore
+    public void setNetworks(Networks networks) {
+        this.networks = networks;
+    }
+
+    @JsonProperty("Networks")
+    private Networks networks;
 
 
 }
