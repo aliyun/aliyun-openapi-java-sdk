@@ -3,7 +3,7 @@
     <Endpoint name="jp-fudao-1">
         <RegionIds><RegionId>jp-fudao-1</RegionId></RegionIds>
         <Products>
-            <Product><ProductName>Ecs</ProductName><DomainName>ecs.aliyuncs.com</DomainName></Product>
+            <Product><ProductName>Ecs</ProductName><DomainName>ecs-cn-hangzhou.aliyuncs.com</DomainName></Product>
         </Products>
     </Endpoint>
     <Endpoint name="me-east-1">
@@ -53,7 +53,7 @@
             <Product><ProductName>jaq</ProductName><DomainName>jaq.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Oms</ProductName><DomainName>oms.aliyuncs.com</DomainName></Product>
             <Product><ProductName>live</ProductName><DomainName>live.aliyuncs.com</DomainName></Product>
-            <Product><ProductName>Ecs</ProductName><DomainName>ecs.aliyuncs.com</DomainName></Product>
+            <Product><ProductName>Ecs</ProductName><DomainName>ecs-cn-hangzhou.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Ubsms</ProductName><DomainName>ubsms.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Vpc</ProductName><DomainName>vpc.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Alert</ProductName><DomainName>alert.aliyuncs.com</DomainName></Product>
@@ -109,7 +109,7 @@
     <Endpoint name="cn-hangzhou-bj-b01">
         <RegionIds><RegionId>cn-hangzhou-bj-b01</RegionId></RegionIds>
         <Products>
-            <Product><ProductName>Ecs</ProductName><DomainName>ecs.aliyuncs.com</DomainName></Product>
+            <Product><ProductName>Ecs</ProductName><DomainName>ecs-cn-hangzhou.aliyuncs.com</DomainName></Product>
         </Products>
     </Endpoint>
     <Endpoint name="cn-hongkong">
@@ -148,7 +148,7 @@
             <Product><ProductName>jaq</ProductName><DomainName>jaq.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Oms</ProductName><DomainName>oms.aliyuncs.com</DomainName></Product>
             <Product><ProductName>live</ProductName><DomainName>live.aliyuncs.com</DomainName></Product>
-            <Product><ProductName>Ecs</ProductName><DomainName>ecs.aliyuncs.com</DomainName></Product>
+            <Product><ProductName>Ecs</ProductName><DomainName>ecs-cn-hangzhou.aliyuncs.com</DomainName></Product>
             <Product><ProductName>M-kvstore</ProductName><DomainName>m-kvstore.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Vpc</ProductName><DomainName>vpc.aliyuncs.com</DomainName></Product>
             <Product><ProductName>BatchCompute</ProductName><DomainName>batchCompute.aliyuncs.com</DomainName></Product>
@@ -192,33 +192,33 @@
     <Endpoint name="cn-beijing-nu16-b01">
         <RegionIds><RegionId>cn-beijing-nu16-b01</RegionId></RegionIds>
         <Products>
-            <Product><ProductName>Ecs</ProductName><DomainName>ecs.aliyuncs.com</DomainName></Product>
+            <Product><ProductName>Ecs</ProductName><DomainName>ecs-cn-hangzhou.aliyuncs.com</DomainName></Product>
         </Products>
     </Endpoint>
     <Endpoint name="cn-beijing-am13-c01">
         <RegionIds><RegionId>cn-beijing-am13-c01</RegionId></RegionIds>
         <Products>
-            <Product><ProductName>Ecs</ProductName><DomainName>ecs.aliyuncs.com</DomainName></Product>
+            <Product><ProductName>Ecs</ProductName><DomainName>ecs-cn-hangzhou.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Vpc</ProductName><DomainName>vpc.aliyuncs.com</DomainName></Product>
         </Products>
     </Endpoint>
     <Endpoint name="in-west-antgroup-1">
         <RegionIds><RegionId>in-west-antgroup-1</RegionId></RegionIds>
         <Products>
-            <Product><ProductName>Ecs</ProductName><DomainName>ecs.aliyuncs.com</DomainName></Product>
+            <Product><ProductName>Ecs</ProductName><DomainName>ecs-cn-hangzhou.aliyuncs.com</DomainName></Product>
         </Products>
     </Endpoint>
     <Endpoint name="cn-guizhou-gov">
         <RegionIds><RegionId>cn-guizhou-gov</RegionId></RegionIds>
         <Products>
-            <Product><ProductName>Ecs</ProductName><DomainName>ecs.aliyuncs.com</DomainName></Product>
+            <Product><ProductName>Ecs</ProductName><DomainName>ecs-cn-hangzhou.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Vpc</ProductName><DomainName>vpc.aliyuncs.com</DomainName></Product>
         </Products>
     </Endpoint>
     <Endpoint name="in-west-antgroup-2">
         <RegionIds><RegionId>in-west-antgroup-2</RegionId></RegionIds>
         <Products>
-            <Product><ProductName>Ecs</ProductName><DomainName>ecs.aliyuncs.com</DomainName></Product>
+            <Product><ProductName>Ecs</ProductName><DomainName>ecs-cn-hangzhou.aliyuncs.com</DomainName></Product>
         </Products>
     </Endpoint>
     <Endpoint name="cn-qingdao-cm9">
@@ -256,7 +256,7 @@
             <Product><ProductName>jaq</ProductName><DomainName>jaq.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Oms</ProductName><DomainName>oms.aliyuncs.com</DomainName></Product>
             <Product><ProductName>live</ProductName><DomainName>live.aliyuncs.com</DomainName></Product>
-            <Product><ProductName>Ecs</ProductName><DomainName>ecs.aliyuncs.com</DomainName></Product>
+            <Product><ProductName>Ecs</ProductName><DomainName>ecs-cn-hangzhou.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Ubsms</ProductName><DomainName>ubsms.aliyuncs.com</DomainName></Product>
             <Product><ProductName>CmsSiteMonitor</ProductName><DomainName>sitemonitor.aliyuncs.com</DomainName></Product>
             <Product><ProductName>AMS</ProductName><DomainName>ams.aliyuncs.com</DomainName></Product>
@@ -295,14 +295,14 @@
     <Endpoint name="tw-snowcloud-kaohsiung">
         <RegionIds><RegionId>tw-snowcloud-kaohsiung</RegionId></RegionIds>
         <Products>
-            <Product><ProductName>Ecs</ProductName><DomainName>ecs.aliyuncs.com</DomainName></Product>
+            <Product><ProductName>Ecs</ProductName><DomainName>ecs-cn-hangzhou.aliyuncs.com</DomainName></Product>
         </Products>
     </Endpoint>
     <Endpoint name="cn-shanghai-finance-1">
         <RegionIds><RegionId>cn-shanghai-finance-1</RegionId></RegionIds>
         <Products>
             <Product><ProductName>Kms</ProductName><DomainName>kms.cn-shanghai-finance-1.aliyuncs.com</DomainName></Product>
-            <Product><ProductName>Ecs</ProductName><DomainName>ecs.aliyuncs.com</DomainName></Product>
+            <Product><ProductName>Ecs</ProductName><DomainName>ecs-cn-hangzhou.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Vpc</ProductName><DomainName>vpc.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Rds</ProductName><DomainName>rds.aliyuncs.com</DomainName></Product>
         </Products>
@@ -310,7 +310,7 @@
     <Endpoint name="cn-guizhou">
         <RegionIds><RegionId>cn-guizhou</RegionId></RegionIds>
         <Products>
-            <Product><ProductName>Ecs</ProductName><DomainName>ecs.aliyuncs.com</DomainName></Product>
+            <Product><ProductName>Ecs</ProductName><DomainName>ecs-cn-hangzhou.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Vpc</ProductName><DomainName>vpc.aliyuncs.com</DomainName></Product>
         </Products>
     </Endpoint>
@@ -361,7 +361,7 @@
             <Product><ProductName>Oms</ProductName><DomainName>oms.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Ubsms</ProductName><DomainName>ubsms.aliyuncs.com</DomainName></Product>
             <Product><ProductName>live</ProductName><DomainName>live.aliyuncs.com</DomainName></Product>
-            <Product><ProductName>Ecs</ProductName><DomainName>ecs.aliyuncs.com</DomainName></Product>
+            <Product><ProductName>Ecs</ProductName><DomainName>ecs-cn-hangzhou.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Ace-ops</ProductName><DomainName>ace-ops.cn-hangzhou.aliyuncs.com</DomainName></Product>
             <Product><ProductName>CmsSiteMonitor</ProductName><DomainName>sitemonitor.aliyuncs.com</DomainName></Product>
             <Product><ProductName>BatchCompute</ProductName><DomainName>batchCompute.aliyuncs.com</DomainName></Product>
@@ -439,7 +439,7 @@
             <Product><ProductName>Alert</ProductName><DomainName>alert.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Oms</ProductName><DomainName>oms.aliyuncs.com</DomainName></Product>
             <Product><ProductName>live</ProductName><DomainName>live.aliyuncs.com</DomainName></Product>
-            <Product><ProductName>Ecs</ProductName><DomainName>ecs.aliyuncs.com</DomainName></Product>
+            <Product><ProductName>Ecs</ProductName><DomainName>ecs-cn-hangzhou.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Ubsms</ProductName><DomainName>ubsms.aliyuncs.com</DomainName></Product>
             <Product><ProductName>CmsSiteMonitor</ProductName><DomainName>sitemonitor.aliyuncs.com</DomainName></Product>
             <Product><ProductName>AMS</ProductName><DomainName>ams.aliyuncs.com</DomainName></Product>
@@ -479,14 +479,14 @@
     <Endpoint name="cn-fujian">
         <RegionIds><RegionId>cn-fujian</RegionId></RegionIds>
         <Products>
-            <Product><ProductName>Ecs</ProductName><DomainName>ecs.aliyuncs.com</DomainName></Product>
+            <Product><ProductName>Ecs</ProductName><DomainName>ecs-cn-hangzhou.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Rds</ProductName><DomainName>rds.aliyuncs.com</DomainName></Product>
         </Products>
     </Endpoint>
     <Endpoint name="in-mumbai-alipay">
         <RegionIds><RegionId>in-mumbai-alipay</RegionId></RegionIds>
         <Products>
-            <Product><ProductName>Ecs</ProductName><DomainName>ecs.aliyuncs.com</DomainName></Product>
+            <Product><ProductName>Ecs</ProductName><DomainName>ecs-cn-hangzhou.aliyuncs.com</DomainName></Product>
         </Products>
     </Endpoint>
     <Endpoint name="us-west-1">
@@ -524,7 +524,7 @@
             <Product><ProductName>Alert</ProductName><DomainName>alert.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Oms</ProductName><DomainName>oms.aliyuncs.com</DomainName></Product>
             <Product><ProductName>live</ProductName><DomainName>live.aliyuncs.com</DomainName></Product>
-            <Product><ProductName>Ecs</ProductName><DomainName>ecs.aliyuncs.com</DomainName></Product>
+            <Product><ProductName>Ecs</ProductName><DomainName>ecs-cn-hangzhou.aliyuncs.com</DomainName></Product>
             <Product><ProductName>M-kvstore</ProductName><DomainName>m-kvstore.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Vpc</ProductName><DomainName>vpc.aliyuncs.com</DomainName></Product>
             <Product><ProductName>BatchCompute</ProductName><DomainName>batchCompute.aliyuncs.com</DomainName></Product>
@@ -600,7 +600,7 @@
             <Product><ProductName>Bss</ProductName><DomainName>bss.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Oms</ProductName><DomainName>oms.aliyuncs.com</DomainName></Product>
             <Product><ProductName>live</ProductName><DomainName>live.aliyuncs.com</DomainName></Product>
-            <Product><ProductName>Ecs</ProductName><DomainName>ecs.aliyuncs.com</DomainName></Product>
+            <Product><ProductName>Ecs</ProductName><DomainName>ecs-cn-hangzhou.aliyuncs.com</DomainName></Product>
             <Product><ProductName>M-kvstore</ProductName><DomainName>m-kvstore.aliyuncs.com</DomainName></Product>
             <Product><ProductName>CmsSiteMonitor</ProductName><DomainName>sitemonitor.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Alert</ProductName><DomainName>alert.aliyuncs.com</DomainName></Product>
@@ -640,7 +640,7 @@
     <Endpoint name="cn-anhui-gov-1">
         <RegionIds><RegionId>cn-anhui-gov-1</RegionId></RegionIds>
         <Products>
-            <Product><ProductName>Ecs</ProductName><DomainName>ecs.aliyuncs.com</DomainName></Product>
+            <Product><ProductName>Ecs</ProductName><DomainName>ecs-cn-hangzhou.aliyuncs.com</DomainName></Product>
         </Products>
     </Endpoint>
     <Endpoint name="cn-hangzhou-finance">
@@ -686,7 +686,7 @@
             <Product><ProductName>jaq</ProductName><DomainName>jaq.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Oms</ProductName><DomainName>oms.aliyuncs.com</DomainName></Product>
             <Product><ProductName>live</ProductName><DomainName>live.aliyuncs.com</DomainName></Product>
-            <Product><ProductName>Ecs</ProductName><DomainName>ecs.aliyuncs.com</DomainName></Product>
+            <Product><ProductName>Ecs</ProductName><DomainName>ecs-cn-hangzhou.aliyuncs.com</DomainName></Product>
             <Product><ProductName>M-kvstore</ProductName><DomainName>m-kvstore.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Vpc</ProductName><DomainName>vpc.aliyuncs.com</DomainName></Product>
             <Product><ProductName>BatchCompute</ProductName><DomainName>batchCompute.aliyuncs.com</DomainName></Product>
@@ -765,7 +765,7 @@
             <Product><ProductName>Oms</ProductName><DomainName>oms.aliyuncs.com</DomainName></Product>
             <Product><ProductName>M-kvstore</ProductName><DomainName>m-kvstore.aliyuncs.com</DomainName></Product>
             <Product><ProductName>live</ProductName><DomainName>live.aliyuncs.com</DomainName></Product>
-            <Product><ProductName>Ecs</ProductName><DomainName>ecs.aliyuncs.com</DomainName></Product>
+            <Product><ProductName>Ecs</ProductName><DomainName>ecs-cn-hangzhou.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Alert</ProductName><DomainName>alert.aliyuncs.com</DomainName></Product>
             <Product><ProductName>CmsSiteMonitor</ProductName><DomainName>sitemonitor.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Ace</ProductName><DomainName>ace.cn-hangzhou.aliyuncs.com</DomainName></Product>
@@ -804,7 +804,7 @@
     <Endpoint name="cn-haidian-cm12-c01">
         <RegionIds><RegionId>cn-haidian-cm12-c01</RegionId></RegionIds>
         <Products>
-            <Product><ProductName>Ecs</ProductName><DomainName>ecs.aliyuncs.com</DomainName></Product>
+            <Product><ProductName>Ecs</ProductName><DomainName>ecs-cn-hangzhou.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Vpc</ProductName><DomainName>vpc.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Rds</ProductName><DomainName>rds.aliyuncs.com</DomainName></Product>
         </Products>
@@ -812,7 +812,7 @@
     <Endpoint name="cn-anhui-gov">
         <RegionIds><RegionId>cn-anhui-gov</RegionId></RegionIds>
         <Products>
-            <Product><ProductName>Ecs</ProductName><DomainName>ecs.aliyuncs.com</DomainName></Product>
+            <Product><ProductName>Ecs</ProductName><DomainName>ecs-cn-hangzhou.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Vpc</ProductName><DomainName>vpc.aliyuncs.com</DomainName></Product>
         </Products>
     </Endpoint>
@@ -846,7 +846,7 @@
             <Product><ProductName>Oms</ProductName><DomainName>oms.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Ubsms</ProductName><DomainName>ubsms.aliyuncs.com</DomainName></Product>
             <Product><ProductName>live</ProductName><DomainName>live.aliyuncs.com</DomainName></Product>
-            <Product><ProductName>Ecs</ProductName><DomainName>ecs.aliyuncs.com</DomainName></Product>
+            <Product><ProductName>Ecs</ProductName><DomainName>ecs-cn-hangzhou.aliyuncs.com</DomainName></Product>
             <Product><ProductName>M-kvstore</ProductName><DomainName>m-kvstore.aliyuncs.com</DomainName></Product>
             <Product><ProductName>CmsSiteMonitor</ProductName><DomainName>sitemonitor.aliyuncs.com</DomainName></Product>
             <Product><ProductName>BatchCompute</ProductName><DomainName>batchcompute.cn-shenzhen.aliyuncs.com</DomainName></Product>
@@ -925,7 +925,7 @@
             <Product><ProductName>Oms</ProductName><DomainName>oms.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Ubsms</ProductName><DomainName>ubsms.cn-qingdao.aliyuncs.com</DomainName></Product>
             <Product><ProductName>live</ProductName><DomainName>live.aliyuncs.com</DomainName></Product>
-            <Product><ProductName>Ecs</ProductName><DomainName>ecs.aliyuncs.com</DomainName></Product>
+            <Product><ProductName>Ecs</ProductName><DomainName>ecs-cn-hangzhou.aliyuncs.com</DomainName></Product>
             <Product><ProductName>M-kvstore</ProductName><DomainName>m-kvstore.aliyuncs.com</DomainName></Product>
             <Product><ProductName>CmsSiteMonitor</ProductName><DomainName>sitemonitor.aliyuncs.com</DomainName></Product>
             <Product><ProductName>BatchCompute</ProductName><DomainName>batchcompute.cn-qingdao.aliyuncs.com</DomainName></Product>
@@ -966,25 +966,25 @@
     <Endpoint name="cn-shenzhen-su18-b02">
         <RegionIds><RegionId>cn-shenzhen-su18-b02</RegionId></RegionIds>
         <Products>
-            <Product><ProductName>Ecs</ProductName><DomainName>ecs.aliyuncs.com</DomainName></Product>
+            <Product><ProductName>Ecs</ProductName><DomainName>ecs-cn-hangzhou.aliyuncs.com</DomainName></Product>
         </Products>
     </Endpoint>
     <Endpoint name="cn-shenzhen-su18-b03">
         <RegionIds><RegionId>cn-shenzhen-su18-b03</RegionId></RegionIds>
         <Products>
-            <Product><ProductName>Ecs</ProductName><DomainName>ecs.aliyuncs.com</DomainName></Product>
+            <Product><ProductName>Ecs</ProductName><DomainName>ecs-cn-hangzhou.aliyuncs.com</DomainName></Product>
         </Products>
     </Endpoint>
     <Endpoint name="cn-shenzhen-su18-b01">
         <RegionIds><RegionId>cn-shenzhen-su18-b01</RegionId></RegionIds>
         <Products>
-            <Product><ProductName>Ecs</ProductName><DomainName>ecs.aliyuncs.com</DomainName></Product>
+            <Product><ProductName>Ecs</ProductName><DomainName>ecs-cn-hangzhou.aliyuncs.com</DomainName></Product>
         </Products>
     </Endpoint>
     <Endpoint name="ap-southeast-antgroup-1">
         <RegionIds><RegionId>ap-southeast-antgroup-1</RegionId></RegionIds>
         <Products>
-            <Product><ProductName>Ecs</ProductName><DomainName>ecs.aliyuncs.com</DomainName></Product>
+            <Product><ProductName>Ecs</ProductName><DomainName>ecs-cn-hangzhou.aliyuncs.com</DomainName></Product>
         </Products>
     </Endpoint>
     <Endpoint name="oss-cn-bjzwy">
@@ -996,7 +996,7 @@
     <Endpoint name="cn-henan-am12001">
         <RegionIds><RegionId>cn-henan-am12001</RegionId></RegionIds>
         <Products>
-            <Product><ProductName>Ecs</ProductName><DomainName>ecs.aliyuncs.com</DomainName></Product>
+            <Product><ProductName>Ecs</ProductName><DomainName>ecs-cn-hangzhou.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Vpc</ProductName><DomainName>vpc.aliyuncs.com</DomainName></Product>
         </Products>
     </Endpoint>
@@ -1037,7 +1037,7 @@
             <Product><ProductName>Oms</ProductName><DomainName>oms.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Ubsms</ProductName><DomainName>ubsms.aliyuncs.com</DomainName></Product>
             <Product><ProductName>live</ProductName><DomainName>live.aliyuncs.com</DomainName></Product>
-            <Product><ProductName>Ecs</ProductName><DomainName>ecs.aliyuncs.com</DomainName></Product>
+            <Product><ProductName>Ecs</ProductName><DomainName>ecs-cn-hangzhou.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Ace-ops</ProductName><DomainName>ace-ops.cn-hangzhou.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Vpc</ProductName><DomainName>vpc.aliyuncs.com</DomainName></Product>
             <Product><ProductName>BatchCompute</ProductName><DomainName>batchCompute.aliyuncs.com</DomainName></Product>
@@ -1112,7 +1112,7 @@
             <Product><ProductName>jaq</ProductName><DomainName>jaq.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Oms</ProductName><DomainName>oms.aliyuncs.com</DomainName></Product>
             <Product><ProductName>live</ProductName><DomainName>live.aliyuncs.com</DomainName></Product>
-            <Product><ProductName>Ecs</ProductName><DomainName>ecs.aliyuncs.com</DomainName></Product>
+            <Product><ProductName>Ecs</ProductName><DomainName>ecs-cn-hangzhou.aliyuncs.com</DomainName></Product>
             <Product><ProductName>M-kvstore</ProductName><DomainName>m-kvstore.aliyuncs.com</DomainName></Product>
             <Product><ProductName>CmsSiteMonitor</ProductName><DomainName>sitemonitor.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Alert</ProductName><DomainName>alert.aliyuncs.com</DomainName></Product>
@@ -1153,7 +1153,7 @@
     <Endpoint name="cn-gansu-am6">
         <RegionIds><RegionId>cn-gansu-am6</RegionId></RegionIds>
         <Products>
-            <Product><ProductName>Ecs</ProductName><DomainName>ecs.aliyuncs.com</DomainName></Product>
+            <Product><ProductName>Ecs</ProductName><DomainName>ecs-cn-hangzhou.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Vpc</ProductName><DomainName>vpc.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Rds</ProductName><DomainName>rds.aliyuncs.com</DomainName></Product>
         </Products>
@@ -1161,7 +1161,7 @@
     <Endpoint name="cn-ningxiazhongwei">
         <RegionIds><RegionId>cn-ningxiazhongwei</RegionId></RegionIds>
         <Products>
-            <Product><ProductName>Ecs</ProductName><DomainName>ecs.aliyuncs.com</DomainName></Product>
+            <Product><ProductName>Ecs</ProductName><DomainName>ecs-cn-hangzhou.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Vpc</ProductName><DomainName>vpc.aliyuncs.com</DomainName></Product>
         </Products>
     </Endpoint>
@@ -1200,7 +1200,7 @@
             <Product><ProductName>Oms</ProductName><DomainName>oms.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Ubsms</ProductName><DomainName>ubsms.aliyuncs.com</DomainName></Product>
             <Product><ProductName>live</ProductName><DomainName>live.aliyuncs.com</DomainName></Product>
-            <Product><ProductName>Ecs</ProductName><DomainName>ecs.aliyuncs.com</DomainName></Product>
+            <Product><ProductName>Ecs</ProductName><DomainName>ecs-cn-hangzhou.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Ace-ops</ProductName><DomainName>ace-ops.cn-hangzhou.aliyuncs.com</DomainName></Product>
             <Product><ProductName>CmsSiteMonitor</ProductName><DomainName>sitemonitor.aliyuncs.com</DomainName></Product>
             <Product><ProductName>BatchCompute</ProductName><DomainName>batchCompute.aliyuncs.com</DomainName></Product>
@@ -1244,7 +1244,7 @@
     <Endpoint name="cn-ningxia-am7-c01">
         <RegionIds><RegionId>cn-ningxia-am7-c01</RegionId></RegionIds>
         <Products>
-            <Product><ProductName>Ecs</ProductName><DomainName>ecs.aliyuncs.com</DomainName></Product>
+            <Product><ProductName>Ecs</ProductName><DomainName>ecs-cn-hangzhou.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Vpc</ProductName><DomainName>vpc.aliyuncs.com</DomainName></Product>
         </Products>
     </Endpoint>
@@ -1252,7 +1252,7 @@
         <RegionIds><RegionId>cn-shenzhen-finance-1</RegionId></RegionIds>
         <Products>
             <Product><ProductName>Kms</ProductName><DomainName>kms.cn-shenzhen-finance-1.aliyuncs.com</DomainName></Product>
-            <Product><ProductName>Ecs</ProductName><DomainName>ecs.aliyuncs.com</DomainName></Product>
+            <Product><ProductName>Ecs</ProductName><DomainName>ecs-cn-hangzhou.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Rds</ProductName><DomainName>rds.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Vpc</ProductName><DomainName>vpc.aliyuncs.com</DomainName></Product>
         </Products>
@@ -1293,7 +1293,7 @@
             <Product><ProductName>jaq</ProductName><DomainName>jaq.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Oms</ProductName><DomainName>oms.aliyuncs.com</DomainName></Product>
             <Product><ProductName>live</ProductName><DomainName>live.aliyuncs.com</DomainName></Product>
-            <Product><ProductName>Ecs</ProductName><DomainName>ecs.aliyuncs.com</DomainName></Product>
+            <Product><ProductName>Ecs</ProductName><DomainName>ecs-cn-hangzhou.aliyuncs.com</DomainName></Product>
             <Product><ProductName>M-kvstore</ProductName><DomainName>m-kvstore.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Vpc</ProductName><DomainName>vpc.aliyuncs.com</DomainName></Product>
             <Product><ProductName>BatchCompute</ProductName><DomainName>batchCompute.aliyuncs.com</DomainName></Product>
@@ -1334,7 +1334,7 @@
     <Endpoint name="cn-shenzhen-st4-d01">
         <RegionIds><RegionId>cn-shenzhen-st4-d01</RegionId></RegionIds>
         <Products>
-            <Product><ProductName>Ecs</ProductName><DomainName>ecs.aliyuncs.com</DomainName></Product>
+            <Product><ProductName>Ecs</ProductName><DomainName>ecs-cn-hangzhou.aliyuncs.com</DomainName></Product>
         </Products>
     </Endpoint>
     <Endpoint name="eu-central-1">

@@ -44,6 +44,7 @@ public class DefaultAcsClient implements IAcsClient{
 	private int maxRetryNumber = 3;
 	private boolean autoRetry = true;
 	private IClientProfile clientProfile = null;
+    private boolean urlTestFlag = false;
 	
 	public DefaultAcsClient() {
 		this.clientProfile = DefaultProfile.getProfile();
@@ -185,6 +186,11 @@ public class DefaultAcsClient implements IAcsClient{
 				throw new ClientException("SDK.InvalidRegionId", "Can not find endpoint to access.");
 			}
 			HttpRequest httpRequest = request.signRequest(signer, credential, format, domain);
+
+            if (this.urlTestFlag) {
+                throw new ClientException("URLTestFlagIsSet", httpRequest.getUrl());
+            }
+
 			int retryTimes = 1;
 			HttpResponse response = HttpResponse.getResponse(httpRequest);
 			while (500 <= response.getStatus() && autoRetry && retryTimes < maxRetryNumber) {
@@ -260,4 +266,8 @@ public class DefaultAcsClient implements IAcsClient{
 	public void setMaxRetryNumber(int maxRetryNumber) {
 		this.maxRetryNumber = maxRetryNumber;
 	}
+
+    public void setUrlTestFlag(boolean flag) {
+        this.urlTestFlag = flag;
+    }
 }
