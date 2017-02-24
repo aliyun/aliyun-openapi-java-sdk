@@ -24,11 +24,13 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class DeleteBackupRequest extends RpcAcsRequest<DeleteBackupResponse> {
+public class DeleteDampPolicyRequest extends RpcAcsRequest<DeleteDampPolicyResponse> {
 	
-	public DeleteBackupRequest() {
-		super("Rds", "2014-08-15", "DeleteBackup", "rds");
+	public DeleteDampPolicyRequest() {
+		super("Rds", "2014-08-15", "DeleteDampPolicy", "rds");
 	}
+
+	private String securityToken;
 
 	private Long ownerId;
 
@@ -36,11 +38,20 @@ public class DeleteBackupRequest extends RpcAcsRequest<DeleteBackupResponse> {
 
 	private Long resourceOwnerId;
 
+	private String ownerAccount;
+
 	private String dBInstanceId;
 
-	private String backupId;
+	private String policyName;
 
-	private String ownerAccount;
+	public String getSecurityToken() {
+		return this.securityToken;
+	}
+
+	public void setSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		putQueryParameter("SecurityToken", securityToken);
+	}
 
 	public Long getOwnerId() {
 		return this.ownerId;
@@ -69,24 +80,6 @@ public class DeleteBackupRequest extends RpcAcsRequest<DeleteBackupResponse> {
 		putQueryParameter("ResourceOwnerId", resourceOwnerId);
 	}
 
-	public String getDBInstanceId() {
-		return this.dBInstanceId;
-	}
-
-	public void setDBInstanceId(String dBInstanceId) {
-		this.dBInstanceId = dBInstanceId;
-		putQueryParameter("DBInstanceId", dBInstanceId);
-	}
-
-	public String getBackupId() {
-		return this.backupId;
-	}
-
-	public void setBackupId(String backupId) {
-		this.backupId = backupId;
-		putQueryParameter("BackupId", backupId);
-	}
-
 	public String getOwnerAccount() {
 		return this.ownerAccount;
 	}
@@ -96,9 +89,27 @@ public class DeleteBackupRequest extends RpcAcsRequest<DeleteBackupResponse> {
 		putQueryParameter("OwnerAccount", ownerAccount);
 	}
 
+	public String getDBInstanceId() {
+		return this.dBInstanceId;
+	}
+
+	public void setDBInstanceId(String dBInstanceId) {
+		this.dBInstanceId = dBInstanceId;
+		putQueryParameter("DBInstanceId", dBInstanceId);
+	}
+
+	public String getPolicyName() {
+		return this.policyName;
+	}
+
+	public void setPolicyName(String policyName) {
+		this.policyName = policyName;
+		putQueryParameter("PolicyName", policyName);
+	}
+
 	@Override
-	public Class<DeleteBackupResponse> getResponseClass() {
-		return DeleteBackupResponse.class;
+	public Class<DeleteDampPolicyResponse> getResponseClass() {
+		return DeleteDampPolicyResponse.class;
 	}
 
 }

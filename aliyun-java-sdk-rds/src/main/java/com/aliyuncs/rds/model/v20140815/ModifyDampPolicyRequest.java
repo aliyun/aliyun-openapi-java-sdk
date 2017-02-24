@@ -24,11 +24,13 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class ModifyBackupPolicyRequest extends RpcAcsRequest<ModifyBackupPolicyResponse> {
+public class ModifyDampPolicyRequest extends RpcAcsRequest<ModifyDampPolicyResponse> {
 	
-	public ModifyBackupPolicyRequest() {
-		super("Rds", "2014-08-15", "ModifyBackupPolicy", "rds");
+	public ModifyDampPolicyRequest() {
+		super("Rds", "2014-08-15", "ModifyDampPolicy", "rds");
 	}
+
+	private String securityToken;
 
 	private Long ownerId;
 
@@ -36,19 +38,28 @@ public class ModifyBackupPolicyRequest extends RpcAcsRequest<ModifyBackupPolicyR
 
 	private Long resourceOwnerId;
 
+	private String ownerAccount;
+
 	private String dBInstanceId;
 
-	private String preferredBackupTime;
+	private String policyName;
 
-	private String preferredBackupPeriod;
+	private String handlers;
 
-	private String backupRetentionPeriod;
+	private String sourceRules;
 
-	private String backupLog;
+	private String timeRules;
 
-	private String logBackupRetentionPeriod;
+	private String actionRules;
 
-	private String ownerAccount;
+	public String getSecurityToken() {
+		return this.securityToken;
+	}
+
+	public void setSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		putQueryParameter("SecurityToken", securityToken);
+	}
 
 	public Long getOwnerId() {
 		return this.ownerId;
@@ -77,60 +88,6 @@ public class ModifyBackupPolicyRequest extends RpcAcsRequest<ModifyBackupPolicyR
 		putQueryParameter("ResourceOwnerId", resourceOwnerId);
 	}
 
-	public String getDBInstanceId() {
-		return this.dBInstanceId;
-	}
-
-	public void setDBInstanceId(String dBInstanceId) {
-		this.dBInstanceId = dBInstanceId;
-		putQueryParameter("DBInstanceId", dBInstanceId);
-	}
-
-	public String getPreferredBackupTime() {
-		return this.preferredBackupTime;
-	}
-
-	public void setPreferredBackupTime(String preferredBackupTime) {
-		this.preferredBackupTime = preferredBackupTime;
-		putQueryParameter("PreferredBackupTime", preferredBackupTime);
-	}
-
-	public String getPreferredBackupPeriod() {
-		return this.preferredBackupPeriod;
-	}
-
-	public void setPreferredBackupPeriod(String preferredBackupPeriod) {
-		this.preferredBackupPeriod = preferredBackupPeriod;
-		putQueryParameter("PreferredBackupPeriod", preferredBackupPeriod);
-	}
-
-	public String getBackupRetentionPeriod() {
-		return this.backupRetentionPeriod;
-	}
-
-	public void setBackupRetentionPeriod(String backupRetentionPeriod) {
-		this.backupRetentionPeriod = backupRetentionPeriod;
-		putQueryParameter("BackupRetentionPeriod", backupRetentionPeriod);
-	}
-
-	public String getBackupLog() {
-		return this.backupLog;
-	}
-
-	public void setBackupLog(String backupLog) {
-		this.backupLog = backupLog;
-		putQueryParameter("BackupLog", backupLog);
-	}
-
-	public String getLogBackupRetentionPeriod() {
-		return this.logBackupRetentionPeriod;
-	}
-
-	public void setLogBackupRetentionPeriod(String logBackupRetentionPeriod) {
-		this.logBackupRetentionPeriod = logBackupRetentionPeriod;
-		putQueryParameter("LogBackupRetentionPeriod", logBackupRetentionPeriod);
-	}
-
 	public String getOwnerAccount() {
 		return this.ownerAccount;
 	}
@@ -140,9 +97,63 @@ public class ModifyBackupPolicyRequest extends RpcAcsRequest<ModifyBackupPolicyR
 		putQueryParameter("OwnerAccount", ownerAccount);
 	}
 
+	public String getDBInstanceId() {
+		return this.dBInstanceId;
+	}
+
+	public void setDBInstanceId(String dBInstanceId) {
+		this.dBInstanceId = dBInstanceId;
+		putQueryParameter("DBInstanceId", dBInstanceId);
+	}
+
+	public String getPolicyName() {
+		return this.policyName;
+	}
+
+	public void setPolicyName(String policyName) {
+		this.policyName = policyName;
+		putQueryParameter("PolicyName", policyName);
+	}
+
+	public String getHandlers() {
+		return this.handlers;
+	}
+
+	public void setHandlers(String handlers) {
+		this.handlers = handlers;
+		putQueryParameter("Handlers", handlers);
+	}
+
+	public String getSourceRules() {
+		return this.sourceRules;
+	}
+
+	public void setSourceRules(String sourceRules) {
+		this.sourceRules = sourceRules;
+		putQueryParameter("SourceRules", sourceRules);
+	}
+
+	public String getTimeRules() {
+		return this.timeRules;
+	}
+
+	public void setTimeRules(String timeRules) {
+		this.timeRules = timeRules;
+		putQueryParameter("TimeRules", timeRules);
+	}
+
+	public String getActionRules() {
+		return this.actionRules;
+	}
+
+	public void setActionRules(String actionRules) {
+		this.actionRules = actionRules;
+		putQueryParameter("ActionRules", actionRules);
+	}
+
 	@Override
-	public Class<ModifyBackupPolicyResponse> getResponseClass() {
-		return ModifyBackupPolicyResponse.class;
+	public Class<ModifyDampPolicyResponse> getResponseClass() {
+		return ModifyDampPolicyResponse.class;
 	}
 
 }

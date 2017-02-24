@@ -29,6 +29,7 @@ import com.aliyuncs.rds.model.v20140815.DescribeBackupsResponse.Backup.BackupMod
 import com.aliyuncs.rds.model.v20140815.DescribeBackupsResponse.Backup.BackupScale;
 import com.aliyuncs.rds.model.v20140815.DescribeBackupsResponse.Backup.BackupStatus;
 import com.aliyuncs.rds.model.v20140815.DescribeBackupsResponse.Backup.BackupType;
+import com.aliyuncs.rds.model.v20140815.DescribeBackupsResponse.Backup.StoreStatus;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -62,6 +63,7 @@ public class DescribeBackupsResponseUnmarshaller {
 			backup.setTotalBackupSize(context.longValue("DescribeBackupsResponse.Items["+ i +"].TotalBackupSize"));
 			backup.setBackupSize(context.longValue("DescribeBackupsResponse.Items["+ i +"].BackupSize"));
 			backup.setHostInstanceID(context.stringValue("DescribeBackupsResponse.Items["+ i +"].HostInstanceID"));
+			backup.setStoreStatus(StoreStatus.getEnum(context.stringValue("DescribeBackupsResponse.Items["+ i +"].StoreStatus")));
 
 			items.add(backup);
 		}

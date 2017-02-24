@@ -24,10 +24,10 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class ModifyBackupPolicyRequest extends RpcAcsRequest<ModifyBackupPolicyResponse> {
+public class CheckResourceRequest extends RpcAcsRequest<CheckResourceResponse> {
 	
-	public ModifyBackupPolicyRequest() {
-		super("Rds", "2014-08-15", "ModifyBackupPolicy", "rds");
+	public CheckResourceRequest() {
+		super("Rds", "2014-08-15", "CheckResource", "rds");
 	}
 
 	private Long ownerId;
@@ -36,17 +36,19 @@ public class ModifyBackupPolicyRequest extends RpcAcsRequest<ModifyBackupPolicyR
 
 	private Long resourceOwnerId;
 
+	private String engine;
+
 	private String dBInstanceId;
 
-	private String preferredBackupTime;
+	private String engineVersion;
 
-	private String preferredBackupPeriod;
+	private String dBInstanceClass;
 
-	private String backupRetentionPeriod;
+	private String zoneId;
 
-	private String backupLog;
+	private String dBInstanceUseType;
 
-	private String logBackupRetentionPeriod;
+	private String specifyCount;
 
 	private String ownerAccount;
 
@@ -77,6 +79,15 @@ public class ModifyBackupPolicyRequest extends RpcAcsRequest<ModifyBackupPolicyR
 		putQueryParameter("ResourceOwnerId", resourceOwnerId);
 	}
 
+	public String getEngine() {
+		return this.engine;
+	}
+
+	public void setEngine(String engine) {
+		this.engine = engine;
+		putQueryParameter("Engine", engine);
+	}
+
 	public String getDBInstanceId() {
 		return this.dBInstanceId;
 	}
@@ -86,49 +97,49 @@ public class ModifyBackupPolicyRequest extends RpcAcsRequest<ModifyBackupPolicyR
 		putQueryParameter("DBInstanceId", dBInstanceId);
 	}
 
-	public String getPreferredBackupTime() {
-		return this.preferredBackupTime;
+	public String getEngineVersion() {
+		return this.engineVersion;
 	}
 
-	public void setPreferredBackupTime(String preferredBackupTime) {
-		this.preferredBackupTime = preferredBackupTime;
-		putQueryParameter("PreferredBackupTime", preferredBackupTime);
+	public void setEngineVersion(String engineVersion) {
+		this.engineVersion = engineVersion;
+		putQueryParameter("EngineVersion", engineVersion);
 	}
 
-	public String getPreferredBackupPeriod() {
-		return this.preferredBackupPeriod;
+	public String getDBInstanceClass() {
+		return this.dBInstanceClass;
 	}
 
-	public void setPreferredBackupPeriod(String preferredBackupPeriod) {
-		this.preferredBackupPeriod = preferredBackupPeriod;
-		putQueryParameter("PreferredBackupPeriod", preferredBackupPeriod);
+	public void setDBInstanceClass(String dBInstanceClass) {
+		this.dBInstanceClass = dBInstanceClass;
+		putQueryParameter("DBInstanceClass", dBInstanceClass);
 	}
 
-	public String getBackupRetentionPeriod() {
-		return this.backupRetentionPeriod;
+	public String getZoneId() {
+		return this.zoneId;
 	}
 
-	public void setBackupRetentionPeriod(String backupRetentionPeriod) {
-		this.backupRetentionPeriod = backupRetentionPeriod;
-		putQueryParameter("BackupRetentionPeriod", backupRetentionPeriod);
+	public void setZoneId(String zoneId) {
+		this.zoneId = zoneId;
+		putQueryParameter("ZoneId", zoneId);
 	}
 
-	public String getBackupLog() {
-		return this.backupLog;
+	public String getDBInstanceUseType() {
+		return this.dBInstanceUseType;
 	}
 
-	public void setBackupLog(String backupLog) {
-		this.backupLog = backupLog;
-		putQueryParameter("BackupLog", backupLog);
+	public void setDBInstanceUseType(String dBInstanceUseType) {
+		this.dBInstanceUseType = dBInstanceUseType;
+		putQueryParameter("DBInstanceUseType", dBInstanceUseType);
 	}
 
-	public String getLogBackupRetentionPeriod() {
-		return this.logBackupRetentionPeriod;
+	public String getSpecifyCount() {
+		return this.specifyCount;
 	}
 
-	public void setLogBackupRetentionPeriod(String logBackupRetentionPeriod) {
-		this.logBackupRetentionPeriod = logBackupRetentionPeriod;
-		putQueryParameter("LogBackupRetentionPeriod", logBackupRetentionPeriod);
+	public void setSpecifyCount(String specifyCount) {
+		this.specifyCount = specifyCount;
+		putQueryParameter("SpecifyCount", specifyCount);
 	}
 
 	public String getOwnerAccount() {
@@ -141,8 +152,8 @@ public class ModifyBackupPolicyRequest extends RpcAcsRequest<ModifyBackupPolicyR
 	}
 
 	@Override
-	public Class<ModifyBackupPolicyResponse> getResponseClass() {
-		return ModifyBackupPolicyResponse.class;
+	public Class<CheckResourceResponse> getResponseClass() {
+		return CheckResourceResponse.class;
 	}
 
 }

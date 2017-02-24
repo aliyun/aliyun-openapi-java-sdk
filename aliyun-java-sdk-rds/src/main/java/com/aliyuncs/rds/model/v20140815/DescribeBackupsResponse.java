@@ -125,6 +125,8 @@ public class DescribeBackupsResponse extends AcsResponse {
 
 		private String hostInstanceID;
 
+		private StoreStatus storeStatus;
+
 		public String getBackupId() {
 			return this.backupId;
 		}
@@ -261,6 +263,14 @@ public class DescribeBackupsResponse extends AcsResponse {
 			this.hostInstanceID = hostInstanceID;
 		}
 
+		public StoreStatus getStoreStatus() {
+			return this.storeStatus;
+		}
+
+		public void setStoreStatus(StoreStatus storeStatus) {
+			this.storeStatus = storeStatus;
+		}
+
 public enum BackupStatus {
 
 			FAILED("Failed"),
@@ -363,7 +373,8 @@ public enum BackupMode {
 public enum BackupMethod {
 
 			PHYSICAL("Physical"),
-			LOGICAL("Logical"),;
+			LOGICAL("Logical"),
+			SNAPSHOT("Snapshot"),;
 	
     private String stringValue;
 
@@ -455,6 +466,39 @@ public enum BackupScale {
     	for (BackupScale backupScale : BackupScale.values()) {
 			if(backupScale.getStringValue().equals(stringValue)){
 				return backupScale;
+			}
+		}
+    	return null;
+    }
+}
+
+public enum StoreStatus {
+
+			ENABLED("Enabled"),
+			DISABLED("Disabled"),;
+	
+    private String stringValue;
+
+	StoreStatus(String stringValue) {
+        setStringValue(stringValue);
+    }
+
+    public String getStringValue() {
+        return stringValue;
+    }
+
+    public void setStringValue(String stringValue) {
+        this.stringValue = stringValue;
+    }
+    
+    public static StoreStatus getEnum(String stringValue){
+    	if(null == stringValue){
+    		return null;
+    	}
+    	
+    	for (StoreStatus storeStatus : StoreStatus.values()) {
+			if(storeStatus.getStringValue().equals(stringValue)){
+				return storeStatus;
 			}
 		}
     	return null;

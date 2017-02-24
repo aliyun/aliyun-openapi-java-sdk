@@ -24,10 +24,10 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class DeleteBackupRequest extends RpcAcsRequest<DeleteBackupResponse> {
+public class DescribeCharacterSetNameRequest extends RpcAcsRequest<DescribeCharacterSetNameResponse> {
 	
-	public DeleteBackupRequest() {
-		super("Rds", "2014-08-15", "DeleteBackup", "rds");
+	public DescribeCharacterSetNameRequest() {
+		super("Rds", "2014-08-15", "DescribeCharacterSetName", "rds");
 	}
 
 	private Long ownerId;
@@ -36,9 +36,7 @@ public class DeleteBackupRequest extends RpcAcsRequest<DeleteBackupResponse> {
 
 	private Long resourceOwnerId;
 
-	private String dBInstanceId;
-
-	private String backupId;
+	private String engine;
 
 	private String ownerAccount;
 
@@ -69,22 +67,13 @@ public class DeleteBackupRequest extends RpcAcsRequest<DeleteBackupResponse> {
 		putQueryParameter("ResourceOwnerId", resourceOwnerId);
 	}
 
-	public String getDBInstanceId() {
-		return this.dBInstanceId;
+	public String getEngine() {
+		return this.engine;
 	}
 
-	public void setDBInstanceId(String dBInstanceId) {
-		this.dBInstanceId = dBInstanceId;
-		putQueryParameter("DBInstanceId", dBInstanceId);
-	}
-
-	public String getBackupId() {
-		return this.backupId;
-	}
-
-	public void setBackupId(String backupId) {
-		this.backupId = backupId;
-		putQueryParameter("BackupId", backupId);
+	public void setEngine(String engine) {
+		this.engine = engine;
+		putQueryParameter("Engine", engine);
 	}
 
 	public String getOwnerAccount() {
@@ -97,8 +86,8 @@ public class DeleteBackupRequest extends RpcAcsRequest<DeleteBackupResponse> {
 	}
 
 	@Override
-	public Class<DeleteBackupResponse> getResponseClass() {
-		return DeleteBackupResponse.class;
+	public Class<DescribeCharacterSetNameResponse> getResponseClass() {
+		return DescribeCharacterSetNameResponse.class;
 	}
 
 }

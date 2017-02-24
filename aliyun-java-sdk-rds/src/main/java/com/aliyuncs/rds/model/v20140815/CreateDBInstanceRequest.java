@@ -36,8 +36,6 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 
 	private Long resourceOwnerId;
 
-	private String clientToken;
-
 	private String engine;
 
 	private String engineVersion;
@@ -53,6 +51,8 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 	private String dBInstanceDescription;
 
 	private String securityIPList;
+
+	private String clientToken;
 
 	private String payType;
 
@@ -99,15 +99,6 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 	public void setResourceOwnerId(Long resourceOwnerId) {
 		this.resourceOwnerId = resourceOwnerId;
 		putQueryParameter("ResourceOwnerId", resourceOwnerId);
-	}
-
-	public String getClientToken() {
-		return this.clientToken;
-	}
-
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		putQueryParameter("ClientToken", clientToken);
 	}
 
 	public String getEngine() {
@@ -180,6 +171,15 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 	public void setSecurityIPList(String securityIPList) {
 		this.securityIPList = securityIPList;
 		putQueryParameter("SecurityIPList", securityIPList);
+	}
+
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		putQueryParameter("ClientToken", clientToken);
 	}
 
 	public String getPayType() {

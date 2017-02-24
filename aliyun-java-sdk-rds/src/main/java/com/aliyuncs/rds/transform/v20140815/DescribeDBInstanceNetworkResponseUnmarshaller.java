@@ -46,7 +46,7 @@ public class DescribeDBInstanceNetworkResponseUnmarshaller {
 			topology.setBackendLatency(context.stringValue("DescribeDBInstanceNetworkResponse.Topology["+ i +"].BackendLatency"));
 			topology.setNetworkErrors(context.stringValue("DescribeDBInstanceNetworkResponse.Topology["+ i +"].NetworkErrors"));
 
-            topologys.add(topology);
+			topologys.add(topology);
 		}
 		describeDBInstanceNetworkResponse.setTopology(topologys);
 	 
