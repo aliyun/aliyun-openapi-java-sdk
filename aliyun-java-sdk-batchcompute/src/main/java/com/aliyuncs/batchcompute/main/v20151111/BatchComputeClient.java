@@ -46,7 +46,10 @@ public class BatchComputeClient implements BatchCompute {
 
     private IAcsClient client;
 
-    static Map regionMap = new HashMap<String,String>();
+    private final static String PRODUCT_CODE = "BatchCompute";
+
+
+    static Map<String,String> regionMap = new HashMap<String,String>();
 
     static{
         BatchComputeClient.addEndpoint("cn-qingdao", "batchcompute.cn-qingdao.aliyuncs.com");
@@ -79,20 +82,26 @@ public class BatchComputeClient implements BatchCompute {
         }
     }
 
-    public static void listEndpoints() {
-        try {
-            List<Endpoint> list = DefaultProfile.getProfile().getEndpoints();
-            for(Endpoint ep : list) {
-                System.out.println(ep.getName()+":  "+ ep.getProductDomains().size());
+    public static Map<String, String> listEndpoints() throws ClientException {
+
+        Map<String, String> m = new HashMap<String,String>();
+
+        for(Map.Entry<String, String>  ent : regionMap.entrySet()){
+            String region = ent.getKey();
+
+            List<Endpoint>  list = DefaultProfile.getProfile().getEndpoints(region, PRODUCT_CODE);
+
+            for(Endpoint ep : list){
+                //System.out.println(ep.getName()+":  "+ ep.getProductDomains().size());
                 for( ProductDomain pd: ep.getProductDomains()) {
-                    if(pd.getProductName().toLowerCase().indexOf("batchcompute")!=-1) {
-                        System.out.println("   "+ep.getName() + ", " + pd.getDomianName() + ", " + pd.getProductName());
+                    if(pd.getProductName().equals(PRODUCT_CODE)) {
+                        m.put(ep.getName(), pd.getDomianName());
+                        //System.out.println("   "+ep.getName() + ", " + pd.getDomianName() + ", " + pd.getProductName());
                     }
                 }
             }
-        } catch (ClientException e) {
-            e.printStackTrace();
         }
+        return m;
 
     }
 

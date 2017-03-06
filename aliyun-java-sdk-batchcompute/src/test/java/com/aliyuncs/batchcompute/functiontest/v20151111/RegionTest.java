@@ -27,15 +27,22 @@ import com.aliyuncs.batchcompute.pojo.v20151111.Job;
 import com.aliyuncs.batchcompute.pojo.v20151111.Quotas;
 import com.aliyuncs.batchcompute.util.Config;
 import com.aliyuncs.exceptions.ClientException;
+import com.aliyuncs.profile.DefaultProfile;
+import com.aliyuncs.regions.Endpoint;
 import junit.framework.TestCase;
 import org.junit.Test;
 
+import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 
 public class RegionTest extends TestCase {
 
     private static BatchCompute client;
+
+    final String PRODUCT_CODE = "batchcompute";
 
     @Override
     public void setUp() throws Exception {
@@ -46,10 +53,21 @@ public class RegionTest extends TestCase {
 
     @Test
     public void testListJob() throws ClientException {
+
+
         run("cn-beijing");
         run("cn-hangzhou");
         run("cn-qingdao");
         run("cn-shenzhen");
+        run("cn-shanghai");
+
+
+        Map<String,String> m = BatchComputeClient.listEndpoints();
+        for (Map.Entry<String, String> entry : m.entrySet()) {
+            System.out.println(entry.getKey() +"======>"+ entry.getValue());
+            assertEquals("batchcompute."+entry.getKey()+".aliyuncs.com", entry.getValue());
+        }
+
     }
 
     public void run(String region) throws ClientException {
@@ -59,8 +77,8 @@ public class RegionTest extends TestCase {
         List<Job>  arr = client.listJobs().getItems();
 
         if(arr!=null)
-        for(Job j: arr){
-            System.out.println(j.getId());
-        }
+            for(Job j: arr){
+                System.out.println(j.getId());
+            }
     }
 }

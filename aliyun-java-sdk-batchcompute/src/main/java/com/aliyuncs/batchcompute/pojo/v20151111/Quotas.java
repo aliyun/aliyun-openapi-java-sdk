@@ -5,6 +5,7 @@ import org.codehaus.jackson.annotate.JsonIgnore;
 import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 import org.codehaus.jackson.annotate.JsonProperty;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -23,6 +24,32 @@ public class Quotas {
 
     @JsonProperty("AvailableClusterInstanceDataDiskType")
     private List<String> availableClusterInstanceDataDiskType;
+
+
+    @JsonProperty("AvailableSpotInstanceType")
+    private List<String> availableSpotInstanceType;
+
+    @JsonProperty("AvailableClusterResourceType")
+    private List<String> availableClusterResourceType;
+
+
+    @JsonIgnore
+    public List<String> getAvailableClusterResourceType() {
+        return availableClusterResourceType;
+    }
+    @JsonIgnore
+    public void setAvailableClusterResourceType(List<String> availableClusterResourceType) {
+        this.availableClusterResourceType = availableClusterResourceType;
+    }
+
+    @JsonIgnore
+    public List<String> getAvailableSpotInstanceType() {
+        return availableSpotInstanceType;
+    }
+    @JsonIgnore
+    public void setAvailableSpotInstanceType(List<String> availableSpotInstanceType) {
+        this.availableSpotInstanceType = availableSpotInstanceType;
+    }
 
 
     @JsonIgnore

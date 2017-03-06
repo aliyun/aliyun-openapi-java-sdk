@@ -53,6 +53,8 @@ public class QuotasTest extends TestCase {
         assertTrue(0 < q.getAvailableClusterInstanceType().size());
         assertTrue(0 < q.getAvailableClusterInstanceSystemDiskType().size());
         assertTrue(0 < q.getAvailableClusterInstanceDataDiskType().size());
+        assertTrue(0 < q.getAvailableSpotInstanceType().size());
+        assertTrue(0 < q.getAvailableClusterResourceType().size());
     }
 
 
