@@ -37,7 +37,10 @@ public class DescribeEndpointServiceImpl implements DescribeEndpointService {
         request.setRegionId(locationConfig.getRegionId());
         request.setLocationProduct(serviceCode);
         request.setSecurityToken(credential.getSecurityToken());
-        request.setEndpointType(DEFAULT_ENDPOINT_TYPE);
+        if (isEmpty(endpointType)) {
+            endpointType = DEFAULT_ENDPOINT_TYPE;
+        }
+        request.setEndpointType(endpointType);
 
         ISigner signer = ShaHmac1Singleton.INSTANCE.getInstance();
         ProductDomain domain = new ProductDomain(locationConfig.getProduct(), locationConfig.getEndpoint());
@@ -47,7 +50,7 @@ public class DescribeEndpointServiceImpl implements DescribeEndpointService {
             HttpResponse httpResponse = HttpResponse.getResponse(httpRequest);
             if (httpResponse.isSuccess()) {
                 String data = new String(httpResponse.getContent(), "utf-8");
-                DescribeEndpointResponse response = getEndpointResponse(data);
+                DescribeEndpointResponse response = getEndpointResponse(data, endpointType);
                 if (response == null || isEmpty(response.getEndpoint())) {
                     return null;
                 }
@@ -68,7 +71,7 @@ public class DescribeEndpointServiceImpl implements DescribeEndpointService {
         }
     }
 
-    private DescribeEndpointResponse getEndpointResponse(String data) throws ClientException {
+    private DescribeEndpointResponse getEndpointResponse(String data, String endpointType) throws ClientException {
         Reader reader = ReaderFactory.createInstance(FormatType.JSON);
         UnmarshallerContext context = new UnmarshallerContext();
 
@@ -76,8 +79,8 @@ public class DescribeEndpointServiceImpl implements DescribeEndpointService {
 
         int endpointsLength = context.lengthValue("DescribeEndpointsResponse.Endpoints.Length");
         for (int i = 0; i < endpointsLength; i++) {
-            if (DEFAULT_ENDPOINT_TYPE.equalsIgnoreCase(context.stringValue("DescribeEndpointsResponse.Endpoints[" + i
-                    + "].Type"))) {
+            if (endpointType.equalsIgnoreCase(context
+                    .stringValue("DescribeEndpointsResponse.Endpoints[" + i + "].Type"))) {
                 DescribeEndpointResponse response = new DescribeEndpointResponse();
 
                 response.setRequestId(context.stringValue("DescribeEndpointsResponse.RequestId"));

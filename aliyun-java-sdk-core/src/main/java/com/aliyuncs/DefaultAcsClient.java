@@ -204,7 +204,7 @@ public class DefaultAcsClient implements IAcsClient{
 		}catch (SocketTimeoutException exp){
 			throw new ClientException("SDK.ServerUnreachable","SocketTimeoutException has occurred on a socket read or accept.");
 		}catch (IOException exp) {
-			throw new ClientException("SDK.ServerUnreachable", "Speicified endpoint or uri is not valid.");
+			throw new ClientException("SDK.ServerUnreachable", "Server unreachable: " + exp.toString());
 		} catch (NoSuchAlgorithmException exp) {
 			throw new ClientException("SDK.InvalidMD5Algorithm", "MD5 hash is not supported by client side.");
 		}
