@@ -1,9 +1,9 @@
-﻿<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.aliyun</groupId>
   <artifactId>aliyun-java-sdk-cs</artifactId>
   <packaging>jar</packaging>
-  <version>2.0.2</version>
+  <version>2.1.0</version>
   <name>aliyun-java-sdk-cs</name>
   <url>http://www.aliyun.com</url>
   <description>Aliyun Open API SDK for Java
@@ -19,7 +19,7 @@ http://www.aliyun.com</description>
   		<groupId>com.aliyun</groupId>
   		<artifactId>aliyun-java-sdk-core</artifactId>
 		<optional>true</optional>
-  		<version>2.2.6</version>
+  		<version>2.4.2</version>
   	</dependency>
   </dependencies>
 	<licenses>
