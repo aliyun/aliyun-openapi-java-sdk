@@ -11,9 +11,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by fray.yangb-然诺 on 15/10/22.
+ * Created by yichun.zyc on 2016/9/25.
  */
-public final class JSONParser {
+public class JSONParser {
     public static List<JSONObject> parseJSONArray(UnmarshallerContext context, int length) {
         List<JSONObject> datapoints = new ArrayList<JSONObject>(length);
         HttpResponse response = context.getHttpResponse();
@@ -32,7 +32,6 @@ public final class JSONParser {
         return datapoints;
     }
 
-
     public static List<JSONObject> parseJSONArray(UnmarshallerContext context) {
         try {
             String contont = new String(context.getHttpResponse().getContent(),"UTF-8");
@@ -42,6 +41,65 @@ public final class JSONParser {
                 List<JSONObject> datapoints = new ArrayList<JSONObject>(array.size());
                 for (int i = 0; i < array.size(); i++) {
                     datapoints.add(array.getJSONObject(i));
+                }
+                return datapoints;
+            }
+        } catch (UnsupportedEncodingException e) {
+        }
+
+        return null;
+    }
+    
+    public static List<JSONObject> parseJSONArray(UnmarshallerContext context, String arrayKey) {
+        try {
+            String contont = new String(context.getHttpResponse().getContent(),"UTF-8");
+            JSONObject json = JSON.parseObject(contont);
+            JSONArray array = json.getJSONArray(arrayKey);
+            if(array!=null) {
+            	List<JSONObject> datapoints = new ArrayList<JSONObject>(array.size());
+                for (int i = 0; i < array.size(); i++) {
+                    datapoints.add(array.getJSONObject(i));
+                }
+                return datapoints;
+            }
+        } catch (UnsupportedEncodingException e) {
+        }
+
+        return null;
+    }
+    
+    public static JSONObject parseJSONObject(UnmarshallerContext context, String key) {
+        try {
+            String contont = new String(context.getHttpResponse().getContent(),"UTF-8");
+            JSONObject json = JSON.parseObject(contont);
+            JSONObject jsonObject = json.getJSONObject(key);
+            return jsonObject;
+        } catch (UnsupportedEncodingException e) {
+        }
+
+        return null;
+    }
+
+    public static <T> T parseResult(UnmarshallerContext context, Class<T> clazz) {
+        try {
+            String contont = new String(context.getHttpResponse().getContent(),"UTF-8");
+            JSONObject json = JSON.parseObject(contont);
+            return json.getObject("Result", clazz);
+        } catch (UnsupportedEncodingException e) {
+        }
+
+        return null;
+    }
+
+    public static List<String> parseStringArray(UnmarshallerContext context) {
+        try {
+            String contont = new String(context.getHttpResponse().getContent(),"UTF-8");
+            JSONObject json = JSON.parseObject(contont);
+            JSONArray array = json.getJSONArray("Datapoints");
+            if(array!=null) {
+                List<String> datapoints = new ArrayList<String>(array.size());
+                for (int i = 0; i < array.size(); i++) {
+                    datapoints.add(array.getString(i));
                 }
                 return datapoints;
             }
