@@ -18,22 +18,16 @@
  */
 package com.aliyuncs.cloudapi.transform.v20160714;
 
-import com.aliyuncs.cloudapi.model.v20160714.SetDomainResponse;
+import com.aliyuncs.cloudapi.model.v20160714.ReactivateDomainResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class SetDomainResponseUnmarshaller {
+public class ReactivateDomainResponseUnmarshaller {
 
-	public static SetDomainResponse unmarshall(SetDomainResponse setDomainResponse, UnmarshallerContext context) {
+	public static ReactivateDomainResponse unmarshall(ReactivateDomainResponse reactivateDomainResponse, UnmarshallerContext context) {
 		
-		setDomainResponse.setRequestId(context.stringValue("SetDomainResponse.RequestId"));
-		setDomainResponse.setGroupId(context.stringValue("SetDomainResponse.GroupId"));
-		setDomainResponse.setDomainName(context.stringValue("SetDomainResponse.DomainName"));
-		setDomainResponse.setSubDomain(context.stringValue("SetDomainResponse.SubDomain"));
-		setDomainResponse.setDomainBindingStatus(context.stringValue("SetDomainResponse.DomainBindingStatus"));
-		setDomainResponse.setDomainLegalStatus(context.stringValue("SetDomainResponse.DomainLegalStatus"));
-		setDomainResponse.setDomainRemark(context.stringValue("SetDomainResponse.DomainRemark"));
+		reactivateDomainResponse.setRequestId(context.stringValue("ReactivateDomainResponse.RequestId"));
 	 
-	 	return setDomainResponse;
+	 	return reactivateDomainResponse;
 	}
 }

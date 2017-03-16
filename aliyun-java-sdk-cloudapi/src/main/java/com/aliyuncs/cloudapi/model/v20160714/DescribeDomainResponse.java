@@ -48,6 +48,10 @@ public class DescribeDomainResponse extends AcsResponse {
 
 	private String domainCNAMEStatus;
 
+	private String domainLegalStatus;
+
+	private String domainRemark;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -126,6 +130,23 @@ public class DescribeDomainResponse extends AcsResponse {
 
 	public void setDomainCNAMEStatus(String domainCNAMEStatus) {
 		this.domainCNAMEStatus = domainCNAMEStatus;
+	}
+
+
+	public String getDomainRemark() {
+		return domainRemark;
+	}
+
+	public void setDomainRemark(String domainRemark) {
+		this.domainRemark = domainRemark;
+	}
+
+	public String getDomainLegalStatus() {
+		return domainLegalStatus;
+	}
+
+	public void setDomainLegalStatus(String domainLegalStatus) {
+		this.domainLegalStatus = domainLegalStatus;
 	}
 
 	@Override

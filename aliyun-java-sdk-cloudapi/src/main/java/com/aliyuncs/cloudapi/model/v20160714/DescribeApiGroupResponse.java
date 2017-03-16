@@ -181,6 +181,10 @@ public class DescribeApiGroupResponse extends AcsResponse {
 
 		private String domainBindingStatus;
 
+		private String domainLegalStatus;
+
+		private String domainRemark;
+
 		public String getDomainName() {
 			return this.domainName;
 		}
@@ -219,6 +223,22 @@ public class DescribeApiGroupResponse extends AcsResponse {
 
 		public void setDomainBindingStatus(String domainBindingStatus) {
 			this.domainBindingStatus = domainBindingStatus;
+		}
+
+		public String getDomainRemark() {
+			return domainRemark;
+		}
+
+		public void setDomainRemark(String domainRemark) {
+			this.domainRemark = domainRemark;
+		}
+
+		public String getDomainLegalStatus() {
+			return domainLegalStatus;
+		}
+
+		public void setDomainLegalStatus(String domainLegalStatus) {
+			this.domainLegalStatus = domainLegalStatus;
 		}
 	}
 

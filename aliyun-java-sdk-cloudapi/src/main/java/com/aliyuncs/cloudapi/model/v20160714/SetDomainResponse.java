@@ -38,6 +38,10 @@ public class SetDomainResponse extends AcsResponse {
 
 	private String domainBindingStatus;
 
+	private String domainLegalStatus;
+
+	private String domainRemark;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -76,6 +80,22 @@ public class SetDomainResponse extends AcsResponse {
 
 	public void setDomainBindingStatus(String domainBindingStatus) {
 		this.domainBindingStatus = domainBindingStatus;
+	}
+
+	public String getDomainLegalStatus() {
+		return domainLegalStatus;
+	}
+
+	public void setDomainLegalStatus(String domainLegalStatus) {
+		this.domainLegalStatus = domainLegalStatus;
+	}
+
+	public String getDomainRemark() {
+		return domainRemark;
+	}
+
+	public void setDomainRemark(String domainRemark) {
+		this.domainRemark = domainRemark;
 	}
 
 	@Override

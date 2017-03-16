@@ -19,6 +19,7 @@
 package com.aliyuncs.cloudapi.model.v20160714;
 
 import java.util.List;
+
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.cloudapi.transform.v20160714.DescribeApiResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -715,19 +716,23 @@ public class DescribeApiResponse extends AcsResponse {
 
     public static class ServiceConfig {
 
-        private String  serviceProtocol;
+        private String    serviceProtocol;
 
-        private String  serviceAddress;
+        private String    serviceAddress;
 
-        private String  serviceHttpMethod;
+        private String    serviceHttpMethod;
 
-        private String  servicePath;
+        private String    servicePath;
 
-        private Integer serviceTimeout;
+        private Integer   serviceTimeout;
 
-        private String  mock;
+        private String    mock;
 
-        private String  mockResult;
+        private String    mockResult;
+
+        private boolean   serviceVpcEnable = false;
+
+        private VpcConfig vpcConfig;
 
         public String getServiceProtocol() {
             return this.serviceProtocol;
@@ -776,13 +781,29 @@ public class DescribeApiResponse extends AcsResponse {
         public void setMock(String mock) {
             this.mock = mock;
         }
-        
+
         public String getMockResult() {
             return mockResult;
         }
 
         public void setMockResult(String mockResult) {
             this.mockResult = mockResult;
+        }
+        
+        public VpcConfig getVpcConfig() {
+            return vpcConfig;
+        }
+
+        public void setVpcConfig(VpcConfig vpcConfig) {
+            this.vpcConfig = vpcConfig;
+        }
+
+        public boolean isServiceVpcEnable() {
+            return serviceVpcEnable;
+        }
+
+        public void setServiceVpcEnable(boolean serviceVpcEnable) {
+            this.serviceVpcEnable = serviceVpcEnable;
         }
     }
 
@@ -826,6 +847,40 @@ public class DescribeApiResponse extends AcsResponse {
         public void setPublicKey(String publicKey) {
             this.publicKey = publicKey;
         }
+    }
+
+    public static class VpcConfig {
+
+        private String  vpcId;
+
+        private String  instanceId;
+
+        private Integer port;
+
+        public String getVpcId() {
+            return vpcId;
+        }
+
+        public void setVpcId(String vpcId) {
+            this.vpcId = vpcId;
+        }
+
+        public String getInstanceId() {
+            return instanceId;
+        }
+
+        public void setInstanceId(String instanceId) {
+            this.instanceId = instanceId;
+        }
+
+        public Integer getPort() {
+            return port;
+        }
+
+        public void setPort(Integer port) {
+            this.port = port;
+        }
+
     }
 
     @Override

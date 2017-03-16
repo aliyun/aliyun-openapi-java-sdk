@@ -36,6 +36,8 @@ public class DescribeDomainResponseUnmarshaller {
 		describeDomainResponse.setCertificatePrivateKey(context.stringValue("DescribeDomainResponse.CertificatePrivateKey"));
 		describeDomainResponse.setDomainBindingStatus(context.stringValue("DescribeDomainResponse.DomainBindingStatus"));
 		describeDomainResponse.setDomainCNAMEStatus(context.stringValue("DescribeDomainResponse.DomainCNAMEStatus"));
+		describeDomainResponse.setDomainLegalStatus(context.stringValue("DescribeDomainResponse.DomainLegalStatus"));
+		describeDomainResponse.setDomainRemark(context.stringValue("DescribeDomainResponse.DomainRemark"));
 	 
 	 	return describeDomainResponse;
 	}

@@ -31,6 +31,7 @@ import com.aliyuncs.cloudapi.model.v20160714.DescribeApiResponse.ServiceConfig;
 import com.aliyuncs.cloudapi.model.v20160714.DescribeApiResponse.ServiceParameter;
 import com.aliyuncs.cloudapi.model.v20160714.DescribeApiResponse.ServiceParameterMap;
 import com.aliyuncs.cloudapi.model.v20160714.DescribeApiResponse.SystemParameter;
+import com.aliyuncs.cloudapi.model.v20160714.DescribeApiResponse.VpcConfig;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -69,6 +70,12 @@ public class DescribeDeployedApiResponseUnmarshaller {
 		serviceConfig.setServiceTimeout(context.integerValue("DescribeDeployedApiResponse.ServiceConfig.ServiceTimeout"));
 		serviceConfig.setMock(context.stringValue("DescribeDeployedApiResponse.ServiceConfig.Mock"));
         serviceConfig.setMockResult(context.stringValue("DescribeDeployedApiResponse.ServiceConfig.MockResult"));
+        serviceConfig.setServiceVpcEnable(context.booleanValue("DescribeDeployedApiResponse.ServiceConfig.ServiceVpcEnable"));
+        VpcConfig vpcConfig = new VpcConfig();
+        vpcConfig.setVpcId(context.stringValue("DescribeDeployedApiResponse.ServiceConfig.VpcConfig.VpcId"));
+        vpcConfig.setInstanceId(context.stringValue("DescribeDeployedApiResponse.ServiceConfig.VpcConfig.InstanceId"));
+        vpcConfig.setPort(context.integerValue("DescribeDeployedApiResponse.ServiceConfig.VpcConfig.Port"));
+        serviceConfig.setVpcConfig(vpcConfig);
 		describeDeployedApiResponse.setServiceConfig(serviceConfig);
 		
 		OpenIdConnectConfig openIdConnectConfig = new OpenIdConnectConfig();
