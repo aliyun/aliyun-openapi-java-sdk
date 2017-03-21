@@ -330,6 +330,7 @@
     <Endpoint name="cn-shanghai">
         <RegionIds><RegionId>cn-shanghai</RegionId></RegionIds>
         <Products>
+            <Product><ProductName>ARMS</ProductName><DomainName>arms.cn-shanghai.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Risk</ProductName><DomainName>risk-cn-hangzhou.aliyuncs.com</DomainName></Product>
             <Product><ProductName>COS</ProductName><DomainName>cos.aliyuncs.com</DomainName></Product>
             <Product><ProductName>HPC</ProductName><DomainName>hpc.aliyuncs.com</DomainName></Product>
@@ -652,6 +653,7 @@
     <Endpoint name="cn-hangzhou">
         <RegionIds><RegionId>cn-hangzhou</RegionId></RegionIds>
         <Products>
+            <Product><ProductName>ARMS</ProductName><DomainName>arms.cn-hangzhou.aliyuncs.com</DomainName></Product>
             <Product><ProductName>CS</ProductName><DomainName>cs.aliyuncs.com</DomainName></Product>
             <Product><ProductName>COS</ProductName><DomainName>cos.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Ess</ProductName><DomainName>ess.aliyuncs.com</DomainName></Product>
@@ -819,6 +821,7 @@
     <Endpoint name="cn-shenzhen">
         <RegionIds><RegionId>cn-shenzhen</RegionId></RegionIds>
         <Products>
+            <Product><ProductName>ARMS</ProductName><DomainName>arms.cn-shenzhen.aliyuncs.com</DomainName></Product>
             <Product><ProductName>CS</ProductName><DomainName>cs.aliyuncs.com</DomainName></Product>
             <Product><ProductName>COS</ProductName><DomainName>cos.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Ons</ProductName><DomainName>ons.aliyuncs.com</DomainName></Product>
@@ -1003,6 +1006,7 @@
     <Endpoint name="cn-beijing">
         <RegionIds><RegionId>cn-beijing</RegionId></RegionIds>
         <Products>
+            <Product><ProductName>ARMS</ProductName><DomainName>arms.cn-beijing.aliyuncs.com</DomainName></Product>
             <Product><ProductName>CS</ProductName><DomainName>cs.aliyuncs.com</DomainName></Product>
             <Product><ProductName>COS</ProductName><DomainName>cos.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Jaq</ProductName><DomainName>jaq.aliyuncs.com</DomainName></Product>
@@ -1346,6 +1350,16 @@
             <Product><ProductName>Kms</ProductName><DomainName>kms.eu-central-1.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Cms</ProductName><DomainName>metrics.cn-hangzhou.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Slb</ProductName><DomainName>slb.eu-central-1.aliyuncs.com</DomainName></Product>
+        </Products>
+    </Endpoint>
+    <Endpoint name="cn-zhangjiakou">
+        <RegionIds><RegionId>cn-zhangjiakou</RegionId></RegionIds>
+        <Products>
+            <Product><ProductName>Rds</ProductName><DomainName>rds.cn-zhangjiakou.aliyuncs.com</DomainName></Product>
+            <Product><ProductName>Ecs</ProductName><DomainName>ecs.cn-zhangjiakou.aliyuncs.com</DomainName></Product>
+            <Product><ProductName>Vpc</ProductName><DomainName>vpc.cn-zhangjiakou.aliyuncs.com</DomainName></Product>
+            <Product><ProductName>Cms</ProductName><DomainName>metrics.cn-hangzhou.aliyuncs.com</DomainName></Product>
+            <Product><ProductName>Slb</ProductName><DomainName>slb.cn-zhangjiakou.aliyuncs.com</DomainName></Product>
         </Products>
     </Endpoint>
 </Endpoints>
