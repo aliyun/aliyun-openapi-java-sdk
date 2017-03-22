@@ -26,7 +26,7 @@ public class ForbidLiveStreamResponseUnmarshaller {
 
 	public static ForbidLiveStreamResponse unmarshall(ForbidLiveStreamResponse forbidLiveStreamResponse, UnmarshallerContext context) {
 		
-		forbidLiveStreamResponse.setrequestId(context.stringValue("ForbidLiveStreamResponse.requestId"));
+		forbidLiveStreamResponse.setRequestId(context.stringValue("ForbidLiveStreamResponse.RequestId"));
 	 
 	 	return forbidLiveStreamResponse;
 	}

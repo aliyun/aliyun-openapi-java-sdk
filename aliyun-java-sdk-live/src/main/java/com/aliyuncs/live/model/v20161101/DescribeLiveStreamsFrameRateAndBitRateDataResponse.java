@@ -33,11 +33,11 @@ public class DescribeLiveStreamsFrameRateAndBitRateDataResponse extends AcsRespo
 
 	private List<FrameRateAndBitRateInfo> frameRateAndBitRateInfos;
 
-	public String getrequestId() {
+	public String getRequestId() {
 		return this.requestId;
 	}
 
-	public void setrequestId(String requestId) {
+	public void setRequestId(String requestId) {
 		this.requestId = requestId;
 	}
 

@@ -30,7 +30,7 @@ public class DescribeLiveStreamsControlHistoryResponseUnmarshaller {
 
 	public static DescribeLiveStreamsControlHistoryResponse unmarshall(DescribeLiveStreamsControlHistoryResponse describeLiveStreamsControlHistoryResponse, UnmarshallerContext context) {
 		
-		describeLiveStreamsControlHistoryResponse.setrequestId(context.stringValue("DescribeLiveStreamsControlHistoryResponse.requestId"));
+		describeLiveStreamsControlHistoryResponse.setRequestId(context.stringValue("DescribeLiveStreamsControlHistoryResponse.RequestId"));
 
 		List<LiveStreamControlInfo> controlInfo = new ArrayList<LiveStreamControlInfo>();
 		for (int i = 0; i < context.lengthValue("DescribeLiveStreamsControlHistoryResponse.ControlInfo.Length"); i++) {

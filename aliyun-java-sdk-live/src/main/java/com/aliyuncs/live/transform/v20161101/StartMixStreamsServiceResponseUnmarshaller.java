@@ -30,7 +30,7 @@ public class StartMixStreamsServiceResponseUnmarshaller {
 
 	public static StartMixStreamsServiceResponse unmarshall(StartMixStreamsServiceResponse startMixStreamsServiceResponse, UnmarshallerContext context) {
 		
-		startMixStreamsServiceResponse.setrequestId(context.stringValue("StartMixStreamsServiceResponse.requestId"));
+		startMixStreamsServiceResponse.setRequestId(context.stringValue("StartMixStreamsServiceResponse.RequestId"));
 
 		List<MixStreamsInfo> mixStreamsInfoList = new ArrayList<MixStreamsInfo>();
 		for (int i = 0; i < context.lengthValue("StartMixStreamsServiceResponse.MixStreamsInfoList.Length"); i++) {

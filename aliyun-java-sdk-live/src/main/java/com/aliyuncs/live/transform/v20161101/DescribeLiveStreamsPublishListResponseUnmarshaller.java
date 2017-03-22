@@ -30,7 +30,7 @@ public class DescribeLiveStreamsPublishListResponseUnmarshaller {
 
 	public static DescribeLiveStreamsPublishListResponse unmarshall(DescribeLiveStreamsPublishListResponse describeLiveStreamsPublishListResponse, UnmarshallerContext context) {
 		
-		describeLiveStreamsPublishListResponse.setrequestId(context.stringValue("DescribeLiveStreamsPublishListResponse.requestId"));
+		describeLiveStreamsPublishListResponse.setRequestId(context.stringValue("DescribeLiveStreamsPublishListResponse.RequestId"));
 
 		List<LiveStreamPublishInfo> publishInfo = new ArrayList<LiveStreamPublishInfo>();
 		for (int i = 0; i < context.lengthValue("DescribeLiveStreamsPublishListResponse.PublishInfo.Length"); i++) {

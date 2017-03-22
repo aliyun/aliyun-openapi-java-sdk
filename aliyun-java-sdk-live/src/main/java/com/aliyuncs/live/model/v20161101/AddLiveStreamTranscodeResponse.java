@@ -30,11 +30,11 @@ public class AddLiveStreamTranscodeResponse extends AcsResponse {
 
 	private String requestId;
 
-	public String getrequestId() {
+	public String getRequestId() {
 		return this.requestId;
 	}
 
-	public void setrequestId(String requestId) {
+	public void setRequestId(String requestId) {
 		this.requestId = requestId;
 	}
 

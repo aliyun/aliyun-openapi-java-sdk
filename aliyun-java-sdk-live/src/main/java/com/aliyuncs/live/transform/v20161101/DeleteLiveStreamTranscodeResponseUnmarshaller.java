@@ -26,7 +26,7 @@ public class DeleteLiveStreamTranscodeResponseUnmarshaller {
 
 	public static DeleteLiveStreamTranscodeResponse unmarshall(DeleteLiveStreamTranscodeResponse deleteLiveStreamTranscodeResponse, UnmarshallerContext context) {
 		
-		deleteLiveStreamTranscodeResponse.setrequestId(context.stringValue("DeleteLiveStreamTranscodeResponse.requestId"));
+		deleteLiveStreamTranscodeResponse.setRequestId(context.stringValue("DeleteLiveStreamTranscodeResponse.RequestId"));
 	 
 	 	return deleteLiveStreamTranscodeResponse;
 	}

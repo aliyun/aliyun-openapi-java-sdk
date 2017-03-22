@@ -33,11 +33,11 @@ public class DescribeLiveStreamsControlHistoryResponse extends AcsResponse {
 
 	private List<LiveStreamControlInfo> controlInfo;
 
-	public String getrequestId() {
+	public String getRequestId() {
 		return this.requestId;
 	}
 
-	public void setrequestId(String requestId) {
+	public void setRequestId(String requestId) {
 		this.requestId = requestId;
 	}
 

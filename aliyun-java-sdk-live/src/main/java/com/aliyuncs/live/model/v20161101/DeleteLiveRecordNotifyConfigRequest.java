@@ -18,29 +18,40 @@
  */
 package com.aliyuncs.live.model.v20161101;
 
-import java.util.List;
-import com.aliyuncs.AcsResponse;
-import com.aliyuncs.live.transform.v20161101.DescribeLiveStreamsBlockListResponseUnmarshaller;
-import com.aliyuncs.transform.UnmarshallerContext;
+import com.aliyuncs.RpcAcsRequest;
 
 /**
  * @author auto create
  * @version 
  */
-public class DescribeLiveStreamsBlockListResponse extends AcsResponse {
+public class DeleteLiveRecordNotifyConfigRequest extends RpcAcsRequest<DeleteLiveRecordNotifyConfigResponse> {
+	
+	public DeleteLiveRecordNotifyConfigRequest() {
+		super("live", "2016-11-01", "DeleteLiveRecordNotifyConfig", "live");
+	}
 
-	private String requestId;
+	private String securityToken;
+
+	private Long ownerId;
 
 	private String domainName;
 
-	private List<String> streamUrls;
-
-	public String getRequestId() {
-		return this.requestId;
+	public String getSecurityToken() {
+		return this.securityToken;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		putQueryParameter("SecurityToken", securityToken);
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		putQueryParameter("OwnerId", ownerId);
 	}
 
 	public String getDomainName() {
@@ -49,18 +60,12 @@ public class DescribeLiveStreamsBlockListResponse extends AcsResponse {
 
 	public void setDomainName(String domainName) {
 		this.domainName = domainName;
-	}
-
-	public List<String> getStreamUrls() {
-		return this.streamUrls;
-	}
-
-	public void setStreamUrls(List<String> streamUrls) {
-		this.streamUrls = streamUrls;
+		putQueryParameter("DomainName", domainName);
 	}
 
 	@Override
-	public DescribeLiveStreamsBlockListResponse getInstance(UnmarshallerContext context) {
-		return	DescribeLiveStreamsBlockListResponseUnmarshaller.unmarshall(this, context);
+	public Class<DeleteLiveRecordNotifyConfigResponse> getResponseClass() {
+		return DeleteLiveRecordNotifyConfigResponse.class;
 	}
+
 }

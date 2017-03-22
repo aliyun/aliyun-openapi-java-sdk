@@ -19,14 +19,14 @@
 package com.aliyuncs.live.model.v20161101;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.live.transform.v20161101.DeleteLiveStreamTranscodeResponseUnmarshaller;
+import com.aliyuncs.live.transform.v20161101.DeleteLiveRecordNotifyConfigResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DeleteLiveStreamTranscodeResponse extends AcsResponse {
+public class DeleteLiveRecordNotifyConfigResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -39,7 +39,7 @@ public class DeleteLiveStreamTranscodeResponse extends AcsResponse {
 	}
 
 	@Override
-	public DeleteLiveStreamTranscodeResponse getInstance(UnmarshallerContext context) {
-		return	DeleteLiveStreamTranscodeResponseUnmarshaller.unmarshall(this, context);
+	public DeleteLiveRecordNotifyConfigResponse getInstance(UnmarshallerContext context) {
+		return	DeleteLiveRecordNotifyConfigResponseUnmarshaller.unmarshall(this, context);
 	}
 }

@@ -26,7 +26,7 @@ public class AddLiveStreamTranscodeResponseUnmarshaller {
 
 	public static AddLiveStreamTranscodeResponse unmarshall(AddLiveStreamTranscodeResponse addLiveStreamTranscodeResponse, UnmarshallerContext context) {
 		
-		addLiveStreamTranscodeResponse.setrequestId(context.stringValue("AddLiveStreamTranscodeResponse.requestId"));
+		addLiveStreamTranscodeResponse.setRequestId(context.stringValue("AddLiveStreamTranscodeResponse.RequestId"));
 	 
 	 	return addLiveStreamTranscodeResponse;
 	}

@@ -16,30 +16,18 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package com.aliyuncs.live.model.v20161101;
+package com.aliyuncs.live.transform.v20161101;
 
-import com.aliyuncs.AcsResponse;
-import com.aliyuncs.live.transform.v20161101.DeleteLiveStreamTranscodeResponseUnmarshaller;
+import com.aliyuncs.live.model.v20161101.AddLiveRecordNotifyConfigResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
-/**
- * @author auto create
- * @version 
- */
-public class DeleteLiveStreamTranscodeResponse extends AcsResponse {
 
-	private String requestId;
+public class AddLiveRecordNotifyConfigResponseUnmarshaller {
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	@Override
-	public DeleteLiveStreamTranscodeResponse getInstance(UnmarshallerContext context) {
-		return	DeleteLiveStreamTranscodeResponseUnmarshaller.unmarshall(this, context);
+	public static AddLiveRecordNotifyConfigResponse unmarshall(AddLiveRecordNotifyConfigResponse addLiveRecordNotifyConfigResponse, UnmarshallerContext context) {
+		
+		addLiveRecordNotifyConfigResponse.setRequestId(context.stringValue("AddLiveRecordNotifyConfigResponse.RequestId"));
+	 
+	 	return addLiveRecordNotifyConfigResponse;
 	}
 }

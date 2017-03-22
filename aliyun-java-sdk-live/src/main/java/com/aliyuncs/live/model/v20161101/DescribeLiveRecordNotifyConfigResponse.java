@@ -18,20 +18,19 @@
  */
 package com.aliyuncs.live.model.v20161101;
 
-import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.live.transform.v20161101.StartMixStreamsServiceResponseUnmarshaller;
+import com.aliyuncs.live.transform.v20161101.DescribeLiveRecordNotifyConfigResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class StartMixStreamsServiceResponse extends AcsResponse {
+public class DescribeLiveRecordNotifyConfigResponse extends AcsResponse {
 
 	private String requestId;
 
-	private List<MixStreamsInfo> mixStreamsInfoList;
+	private LiveRecordNotifyConfig liveRecordNotifyConfig;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -41,21 +40,21 @@ public class StartMixStreamsServiceResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public List<MixStreamsInfo> getMixStreamsInfoList() {
-		return this.mixStreamsInfoList;
+	public LiveRecordNotifyConfig getLiveRecordNotifyConfig() {
+		return this.liveRecordNotifyConfig;
 	}
 
-	public void setMixStreamsInfoList(List<MixStreamsInfo> mixStreamsInfoList) {
-		this.mixStreamsInfoList = mixStreamsInfoList;
+	public void setLiveRecordNotifyConfig(LiveRecordNotifyConfig liveRecordNotifyConfig) {
+		this.liveRecordNotifyConfig = liveRecordNotifyConfig;
 	}
 
-	public static class MixStreamsInfo {
+	public static class LiveRecordNotifyConfig {
 
 		private String domainName;
 
-		private String appName;
+		private String notifyUrl;
 
-		private String streamName;
+		private Boolean needStatusNotify;
 
 		public String getDomainName() {
 			return this.domainName;
@@ -65,25 +64,25 @@ public class StartMixStreamsServiceResponse extends AcsResponse {
 			this.domainName = domainName;
 		}
 
-		public String getAppName() {
-			return this.appName;
+		public String getNotifyUrl() {
+			return this.notifyUrl;
 		}
 
-		public void setAppName(String appName) {
-			this.appName = appName;
+		public void setNotifyUrl(String notifyUrl) {
+			this.notifyUrl = notifyUrl;
 		}
 
-		public String getStreamName() {
-			return this.streamName;
+		public Boolean getNeedStatusNotify() {
+			return this.needStatusNotify;
 		}
 
-		public void setStreamName(String streamName) {
-			this.streamName = streamName;
+		public void setNeedStatusNotify(Boolean needStatusNotify) {
+			this.needStatusNotify = needStatusNotify;
 		}
 	}
 
 	@Override
-	public StartMixStreamsServiceResponse getInstance(UnmarshallerContext context) {
-		return	StartMixStreamsServiceResponseUnmarshaller.unmarshall(this, context);
+	public DescribeLiveRecordNotifyConfigResponse getInstance(UnmarshallerContext context) {
+		return	DescribeLiveRecordNotifyConfigResponseUnmarshaller.unmarshall(this, context);
 	}
 }

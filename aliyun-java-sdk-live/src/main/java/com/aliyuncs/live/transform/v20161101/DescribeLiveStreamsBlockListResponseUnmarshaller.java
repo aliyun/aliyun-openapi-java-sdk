@@ -29,7 +29,7 @@ public class DescribeLiveStreamsBlockListResponseUnmarshaller {
 
 	public static DescribeLiveStreamsBlockListResponse unmarshall(DescribeLiveStreamsBlockListResponse describeLiveStreamsBlockListResponse, UnmarshallerContext context) {
 		
-		describeLiveStreamsBlockListResponse.setrequestId(context.stringValue("DescribeLiveStreamsBlockListResponse.requestId"));
+		describeLiveStreamsBlockListResponse.setRequestId(context.stringValue("DescribeLiveStreamsBlockListResponse.RequestId"));
 		describeLiveStreamsBlockListResponse.setDomainName(context.stringValue("DescribeLiveStreamsBlockListResponse.DomainName"));
 
 		List<String> streamUrls = new ArrayList<String>();

@@ -30,7 +30,7 @@ public class DescribeLiveStreamTranscodeInfoResponseUnmarshaller {
 
 	public static DescribeLiveStreamTranscodeInfoResponse unmarshall(DescribeLiveStreamTranscodeInfoResponse describeLiveStreamTranscodeInfoResponse, UnmarshallerContext context) {
 		
-		describeLiveStreamTranscodeInfoResponse.setrequestId(context.stringValue("DescribeLiveStreamTranscodeInfoResponse.requestId"));
+		describeLiveStreamTranscodeInfoResponse.setRequestId(context.stringValue("DescribeLiveStreamTranscodeInfoResponse.RequestId"));
 
 		List<DomainTranscodeInfo> domainTranscodeList = new ArrayList<DomainTranscodeInfo>();
 		for (int i = 0; i < context.lengthValue("DescribeLiveStreamTranscodeInfoResponse.DomainTranscodeList.Length"); i++) {

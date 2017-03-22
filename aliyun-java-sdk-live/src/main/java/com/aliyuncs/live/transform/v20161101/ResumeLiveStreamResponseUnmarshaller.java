@@ -26,7 +26,7 @@ public class ResumeLiveStreamResponseUnmarshaller {
 
 	public static ResumeLiveStreamResponse unmarshall(ResumeLiveStreamResponse resumeLiveStreamResponse, UnmarshallerContext context) {
 		
-		resumeLiveStreamResponse.setrequestId(context.stringValue("ResumeLiveStreamResponse.requestId"));
+		resumeLiveStreamResponse.setRequestId(context.stringValue("ResumeLiveStreamResponse.RequestId"));
 	 
 	 	return resumeLiveStreamResponse;
 	}

@@ -19,16 +19,18 @@
 package com.aliyuncs.live.model.v20161101;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.live.transform.v20161101.DeleteLiveStreamTranscodeResponseUnmarshaller;
+import com.aliyuncs.live.transform.v20161101.DescribeLiveStreamsNotifyUrlConfigResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DeleteLiveStreamTranscodeResponse extends AcsResponse {
+public class DescribeLiveStreamsNotifyUrlConfigResponse extends AcsResponse {
 
 	private String requestId;
+
+	private LiveStreamsNotifyConfig liveStreamsNotifyConfig;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -38,8 +40,39 @@ public class DeleteLiveStreamTranscodeResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public LiveStreamsNotifyConfig getLiveStreamsNotifyConfig() {
+		return this.liveStreamsNotifyConfig;
+	}
+
+	public void setLiveStreamsNotifyConfig(LiveStreamsNotifyConfig liveStreamsNotifyConfig) {
+		this.liveStreamsNotifyConfig = liveStreamsNotifyConfig;
+	}
+
+	public static class LiveStreamsNotifyConfig {
+
+		private String domainName;
+
+		private String notifyUrl;
+
+		public String getDomainName() {
+			return this.domainName;
+		}
+
+		public void setDomainName(String domainName) {
+			this.domainName = domainName;
+		}
+
+		public String getNotifyUrl() {
+			return this.notifyUrl;
+		}
+
+		public void setNotifyUrl(String notifyUrl) {
+			this.notifyUrl = notifyUrl;
+		}
+	}
+
 	@Override
-	public DeleteLiveStreamTranscodeResponse getInstance(UnmarshallerContext context) {
-		return	DeleteLiveStreamTranscodeResponseUnmarshaller.unmarshall(this, context);
+	public DescribeLiveStreamsNotifyUrlConfigResponse getInstance(UnmarshallerContext context) {
+		return	DescribeLiveStreamsNotifyUrlConfigResponseUnmarshaller.unmarshall(this, context);
 	}
 }

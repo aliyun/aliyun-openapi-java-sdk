@@ -30,7 +30,7 @@ public class DescribeLiveStreamsFrameRateAndBitRateDataResponseUnmarshaller {
 
 	public static DescribeLiveStreamsFrameRateAndBitRateDataResponse unmarshall(DescribeLiveStreamsFrameRateAndBitRateDataResponse describeLiveStreamsFrameRateAndBitRateDataResponse, UnmarshallerContext context) {
 		
-		describeLiveStreamsFrameRateAndBitRateDataResponse.setrequestId(context.stringValue("DescribeLiveStreamsFrameRateAndBitRateDataResponse.requestId"));
+		describeLiveStreamsFrameRateAndBitRateDataResponse.setRequestId(context.stringValue("DescribeLiveStreamsFrameRateAndBitRateDataResponse.RequestId"));
 
 		List<FrameRateAndBitRateInfo> frameRateAndBitRateInfos = new ArrayList<FrameRateAndBitRateInfo>();
 		for (int i = 0; i < context.lengthValue("DescribeLiveStreamsFrameRateAndBitRateDataResponse.FrameRateAndBitRateInfos.Length"); i++) {
