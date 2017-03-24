@@ -23,6 +23,8 @@ import java.util.List;
 
 import com.aliyuncs.mts.model.v20140618.QueryWaterMarkTemplateListResponse;
 import com.aliyuncs.mts.model.v20140618.QueryWaterMarkTemplateListResponse.WaterMarkTemplate;
+import com.aliyuncs.mts.model.v20140618.QueryWaterMarkTemplateListResponse.WaterMarkTemplate.RatioRefer;
+import com.aliyuncs.mts.model.v20140618.QueryWaterMarkTemplateListResponse.WaterMarkTemplate.Timeline;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -50,6 +52,18 @@ public class QueryWaterMarkTemplateListResponseUnmarshaller {
 			waterMarkTemplate.setReferPos(context.stringValue("QueryWaterMarkTemplateListResponse.WaterMarkTemplateList["+ i +"].ReferPos"));
 			waterMarkTemplate.setType(context.stringValue("QueryWaterMarkTemplateListResponse.WaterMarkTemplateList["+ i +"].Type"));
 			waterMarkTemplate.setState(context.stringValue("QueryWaterMarkTemplateListResponse.WaterMarkTemplateList["+ i +"].State"));
+
+			Timeline timeline = new Timeline();
+			timeline.setStart(context.stringValue("QueryWaterMarkTemplateListResponse.WaterMarkTemplateList["+ i +"].Timeline.Start"));
+			timeline.setDuration(context.stringValue("QueryWaterMarkTemplateListResponse.WaterMarkTemplateList["+ i +"].Timeline.Duration"));
+			waterMarkTemplate.setTimeline(timeline);
+
+			RatioRefer ratioRefer = new RatioRefer();
+			ratioRefer.setDx(context.stringValue("QueryWaterMarkTemplateListResponse.WaterMarkTemplateList["+ i +"].RatioRefer.Dx"));
+			ratioRefer.setDy(context.stringValue("QueryWaterMarkTemplateListResponse.WaterMarkTemplateList["+ i +"].RatioRefer.Dy"));
+			ratioRefer.setWidth(context.stringValue("QueryWaterMarkTemplateListResponse.WaterMarkTemplateList["+ i +"].RatioRefer.Width"));
+			ratioRefer.setHeight(context.stringValue("QueryWaterMarkTemplateListResponse.WaterMarkTemplateList["+ i +"].RatioRefer.Height"));
+			waterMarkTemplate.setRatioRefer(ratioRefer);
 
 			waterMarkTemplateList.add(waterMarkTemplate);
 		}

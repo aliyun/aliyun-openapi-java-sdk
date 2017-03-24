@@ -79,6 +79,10 @@ public class QueryWaterMarkTemplateListResponse extends AcsResponse {
 
 		private String state;
 
+		private Timeline timeline;
+
+		private RatioRefer ratioRefer;
+
 		public String getId() {
 			return this.id;
 		}
@@ -149,6 +153,88 @@ public class QueryWaterMarkTemplateListResponse extends AcsResponse {
 
 		public void setState(String state) {
 			this.state = state;
+		}
+
+		public Timeline getTimeline() {
+			return this.timeline;
+		}
+
+		public void setTimeline(Timeline timeline) {
+			this.timeline = timeline;
+		}
+
+		public RatioRefer getRatioRefer() {
+			return this.ratioRefer;
+		}
+
+		public void setRatioRefer(RatioRefer ratioRefer) {
+			this.ratioRefer = ratioRefer;
+		}
+
+		public static class Timeline {
+
+			private String start;
+
+			private String duration;
+
+			public String getStart() {
+				return this.start;
+			}
+
+			public void setStart(String start) {
+				this.start = start;
+			}
+
+			public String getDuration() {
+				return this.duration;
+			}
+
+			public void setDuration(String duration) {
+				this.duration = duration;
+			}
+		}
+
+		public static class RatioRefer {
+
+			private String dx;
+
+			private String dy;
+
+			private String width;
+
+			private String height;
+
+			public String getDx() {
+				return this.dx;
+			}
+
+			public void setDx(String dx) {
+				this.dx = dx;
+			}
+
+			public String getDy() {
+				return this.dy;
+			}
+
+			public void setDy(String dy) {
+				this.dy = dy;
+			}
+
+			public String getWidth() {
+				return this.width;
+			}
+
+			public void setWidth(String width) {
+				this.width = width;
+			}
+
+			public String getHeight() {
+				return this.height;
+			}
+
+			public void setHeight(String height) {
+				this.height = height;
+			}
 		}
 	}
 

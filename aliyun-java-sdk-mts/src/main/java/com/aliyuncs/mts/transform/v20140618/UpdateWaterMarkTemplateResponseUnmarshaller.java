@@ -20,6 +20,8 @@ package com.aliyuncs.mts.transform.v20140618;
 
 import com.aliyuncs.mts.model.v20140618.UpdateWaterMarkTemplateResponse;
 import com.aliyuncs.mts.model.v20140618.UpdateWaterMarkTemplateResponse.WaterMarkTemplate;
+import com.aliyuncs.mts.model.v20140618.UpdateWaterMarkTemplateResponse.WaterMarkTemplate.RatioRefer;
+import com.aliyuncs.mts.model.v20140618.UpdateWaterMarkTemplateResponse.WaterMarkTemplate.Timeline;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -39,6 +41,18 @@ public class UpdateWaterMarkTemplateResponseUnmarshaller {
 		waterMarkTemplate.setReferPos(context.stringValue("UpdateWaterMarkTemplateResponse.WaterMarkTemplate.ReferPos"));
 		waterMarkTemplate.setType(context.stringValue("UpdateWaterMarkTemplateResponse.WaterMarkTemplate.Type"));
 		waterMarkTemplate.setState(context.stringValue("UpdateWaterMarkTemplateResponse.WaterMarkTemplate.State"));
+
+		Timeline timeline = new Timeline();
+		timeline.setStart(context.stringValue("UpdateWaterMarkTemplateResponse.WaterMarkTemplate.Timeline.Start"));
+		timeline.setDuration(context.stringValue("UpdateWaterMarkTemplateResponse.WaterMarkTemplate.Timeline.Duration"));
+		waterMarkTemplate.setTimeline(timeline);
+
+		RatioRefer ratioRefer = new RatioRefer();
+		ratioRefer.setDx(context.stringValue("UpdateWaterMarkTemplateResponse.WaterMarkTemplate.RatioRefer.Dx"));
+		ratioRefer.setDy(context.stringValue("UpdateWaterMarkTemplateResponse.WaterMarkTemplate.RatioRefer.Dy"));
+		ratioRefer.setWidth(context.stringValue("UpdateWaterMarkTemplateResponse.WaterMarkTemplate.RatioRefer.Width"));
+		ratioRefer.setHeight(context.stringValue("UpdateWaterMarkTemplateResponse.WaterMarkTemplate.RatioRefer.Height"));
+		waterMarkTemplate.setRatioRefer(ratioRefer);
 		updateWaterMarkTemplateResponse.setWaterMarkTemplate(waterMarkTemplate);
 	 
 	 	return updateWaterMarkTemplateResponse;
