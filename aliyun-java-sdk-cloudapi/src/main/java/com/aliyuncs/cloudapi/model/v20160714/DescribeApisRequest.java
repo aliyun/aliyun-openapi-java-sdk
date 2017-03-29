@@ -35,6 +35,8 @@ public class DescribeApisRequest extends RpcAcsRequest<DescribeApisResponse> {
 	private String apiId;
 
 	private String apiName;
+	
+	private String catalogId;
 
 	private String visibility;
 
@@ -67,6 +69,15 @@ public class DescribeApisRequest extends RpcAcsRequest<DescribeApisResponse> {
 	public void setApiName(String apiName) {
 		this.apiName = apiName;
 		putQueryParameter("ApiName", apiName);
+	}
+	
+	public String getCatalogId() {
+		return this.catalogId;
+	}
+
+	public void setCatalogId(String catalogId) {
+		this.catalogId = catalogId;
+		putQueryParameter("CatalogId", catalogId);
 	}
 
 	public String getVisibility() {
