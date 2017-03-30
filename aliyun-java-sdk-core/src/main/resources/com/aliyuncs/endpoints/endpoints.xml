@@ -399,6 +399,7 @@
             <Product><ProductName>Ess</ProductName><DomainName>ess.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Oss</ProductName><DomainName>oss-cn-shanghai.aliyuncs.com</DomainName></Product>
             <Product><ProductName>YundunDdos</ProductName><DomainName>inner-yundun-ddos.cn-hangzhou.aliyuncs.com</DomainName></Product>
+            <Product><ProductName>vod</ProductName><DomainName>vod.cn-shanghai.aliyuncs.com</DomainName></Product>
         </Products>
     </Endpoint>
     <Endpoint name="cn-shenzhen-inner">
@@ -1067,6 +1068,7 @@
             <Product><ProductName>Yundun</ProductName><DomainName>yundun-cn-hangzhou.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Cdn</ProductName><DomainName>cdn.aliyuncs.com</DomainName></Product>
             <Product><ProductName>YundunDdos</ProductName><DomainName>inner-yundun-ddos.cn-hangzhou.aliyuncs.com</DomainName></Product>
+            <Product><ProductName>vod</ProductName><DomainName>vod.cn-beijing.aliyuncs.com</DomainName></Product>
         </Products>
     </Endpoint>
     <Endpoint name="cn-hangzhou-d">
