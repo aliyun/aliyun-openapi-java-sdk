@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class NodeProcessDeleteRequest extends RpcAcsRequest<NodeProcessDeleteResponse> {
 	
 	public NodeProcessDeleteRequest() {
-		super("Cms", "2017-03-01", "NodeProcessDelete");
+		super("Cms", "2017-03-01", "NodeProcessDelete", "cms");
 	}
 
 	private String instanceId;

@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ProfileSetRequest extends RpcAcsRequest<ProfileSetResponse> {
 	
 	public ProfileSetRequest() {
-		super("Cms", "2017-03-01", "ProfileSet");
+		super("Cms", "2017-03-01", "ProfileSet", "cms");
 	}
 
 	private Long userId;

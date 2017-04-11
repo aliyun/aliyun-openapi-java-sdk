@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class NodeUninstallRequest extends RpcAcsRequest<NodeUninstallResponse> {
 	
 	public NodeUninstallRequest() {
-		super("Cms", "2017-03-01", "NodeUninstall");
+		super("Cms", "2017-03-01", "NodeUninstall", "cms");
 	}
 
 	private String instanceId;

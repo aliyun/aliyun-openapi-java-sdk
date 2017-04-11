@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class AccessKeyGetRequest extends RpcAcsRequest<AccessKeyGetResponse> {
 	
 	public AccessKeyGetRequest() {
-		super("Cms", "2017-03-01", "AccessKeyGet");
+		super("Cms", "2017-03-01", "AccessKeyGet", "cms");
 	}
 
 	private Long userId;

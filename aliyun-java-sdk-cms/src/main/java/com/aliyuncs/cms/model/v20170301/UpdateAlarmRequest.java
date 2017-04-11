@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class UpdateAlarmRequest extends RpcAcsRequest<UpdateAlarmResponse> {
 	
 	public UpdateAlarmRequest() {
-		super("Cms", "2017-03-01", "UpdateAlarm");
+		super("Cms", "2017-03-01", "UpdateAlarm", "cms");
 	}
 
 	private String callby_cms_owner;

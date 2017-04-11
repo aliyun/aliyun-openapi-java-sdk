@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ListContactGroupRequest extends RpcAcsRequest<ListContactGroupResponse> {
 	
 	public ListContactGroupRequest() {
-		super("Cms", "2017-03-01", "ListContactGroup");
+		super("Cms", "2017-03-01", "ListContactGroup", "cms");
 	}
 
 	private String callby_cms_owner;

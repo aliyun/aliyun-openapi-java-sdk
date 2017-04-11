@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class EnableAlarmRequest extends RpcAcsRequest<EnableAlarmResponse> {
 	
 	public EnableAlarmRequest() {
-		super("Cms", "2017-03-01", "EnableAlarm");
+		super("Cms", "2017-03-01", "EnableAlarm", "cms");
 	}
 
 	private String callby_cms_owner;

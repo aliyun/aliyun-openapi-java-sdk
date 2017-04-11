@@ -28,7 +28,7 @@ import com.aliyuncs.http.MethodType;
 public class CreateAlarmRequest extends RpcAcsRequest<CreateAlarmResponse> {
 	
 	public CreateAlarmRequest() {
-		super("Cms", "2017-03-01", "CreateAlarm");
+		super("Cms", "2017-03-01", "CreateAlarm", "cms");
 		setMethod(MethodType.POST);
 	}
 

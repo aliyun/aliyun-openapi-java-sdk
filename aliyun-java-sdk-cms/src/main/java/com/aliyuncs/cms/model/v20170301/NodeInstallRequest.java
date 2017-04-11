@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class NodeInstallRequest extends RpcAcsRequest<NodeInstallResponse> {
 	
 	public NodeInstallRequest() {
-		super("Cms", "2017-03-01", "NodeInstall");
+		super("Cms", "2017-03-01", "NodeInstall", "cms");
 	}
 
 	private String userId;

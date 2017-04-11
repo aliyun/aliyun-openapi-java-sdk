@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class NodeStatusListRequest extends RpcAcsRequest<NodeStatusListResponse> {
 	
 	public NodeStatusListRequest() {
-		super("Cms", "2017-03-01", "NodeStatusList");
+		super("Cms", "2017-03-01", "NodeStatusList", "cms");
 	}
 
 	private String instanceIds;

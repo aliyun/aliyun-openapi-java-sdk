@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class PutMetricDataRequest extends RpcAcsRequest<PutMetricDataResponse> {
 	
 	public PutMetricDataRequest() {
-		super("Cms", "2017-03-01", "PutMetricData");
+		super("Cms", "2017-03-01", "PutMetricData", "cms");
 	}
 
 	private String callby_cms_owner;

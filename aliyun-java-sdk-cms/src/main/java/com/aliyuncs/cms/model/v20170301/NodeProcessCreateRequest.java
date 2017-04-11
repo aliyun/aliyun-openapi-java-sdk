@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class NodeProcessCreateRequest extends RpcAcsRequest<NodeProcessCreateResponse> {
 	
 	public NodeProcessCreateRequest() {
-		super("Cms", "2017-03-01", "NodeProcessCreate");
+		super("Cms", "2017-03-01", "NodeProcessCreate", "cms");
 	}
 
 	private String instanceId;

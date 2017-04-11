@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class NodeListRequest extends RpcAcsRequest<NodeListResponse> {
 	
 	public NodeListRequest() {
-		super("Cms", "2017-03-01", "NodeList");
+		super("Cms", "2017-03-01", "NodeList", "cms");
 	}
 
 	private Long userId;

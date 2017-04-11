@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class NodeProcessesRequest extends RpcAcsRequest<NodeProcessesResponse> {
 	
 	public NodeProcessesRequest() {
-		super("Cms", "2017-03-01", "NodeProcesses");
+		super("Cms", "2017-03-01", "NodeProcesses", "cms");
 	}
 
 	private String instanceId;

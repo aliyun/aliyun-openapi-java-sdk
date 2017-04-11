@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class QueryMetricLastRequest extends RpcAcsRequest<QueryMetricLastResponse> {
 	
 	public QueryMetricLastRequest() {
-		super("Cms", "2017-03-01", "QueryMetricLast");
+		super("Cms", "2017-03-01", "QueryMetricLast", "cms");
 	}
 
 	private Long resourceOwnerId;

@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeleteAlarmRequest extends RpcAcsRequest<DeleteAlarmResponse> {
 	
 	public DeleteAlarmRequest() {
-		super("Cms", "2017-03-01", "DeleteAlarm");
+		super("Cms", "2017-03-01", "DeleteAlarm", "cms");
 	}
 
 	private String callby_cms_owner;
