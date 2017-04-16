@@ -30,7 +30,7 @@ public class AbandonStackRequest extends RoaAcsRequest<AbandonStackResponse> {
 	public AbandonStackRequest() {
 		super("ROS", "2015-09-01", "AbandonStack");
 		setUriPattern("/stacks/[StackName]/[StackId]/abandon");
-		setMethod(MethodType.POST);
+		setMethod(MethodType.DELETE);
 	}
 
 	private String stackName;
