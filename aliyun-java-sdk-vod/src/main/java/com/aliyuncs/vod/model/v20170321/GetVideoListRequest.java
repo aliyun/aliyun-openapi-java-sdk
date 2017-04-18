@@ -24,10 +24,10 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class CreateUploadVideoRequest extends RpcAcsRequest<CreateUploadVideoResponse> {
+public class GetVideoListRequest extends RpcAcsRequest<GetVideoListResponse> {
 	
-	public CreateUploadVideoRequest() {
-		super("vod", "2017-03-21", "CreateUploadVideo");
+	public GetVideoListRequest() {
+		super("vod", "2017-03-21", "GetVideoList");
 	}
 
 	private Long ownerId;
@@ -36,17 +36,15 @@ public class CreateUploadVideoRequest extends RpcAcsRequest<CreateUploadVideoRes
 
 	private Long resourceOwnerId;
 
-	private String coverURL;
+	private Integer cateId;
 
-	private String description;
+	private String status;
 
-	private String fileName;
+	private Integer pageNo;
 
-	private Long fileSize;
+	private Integer pageSize;
 
-	private String iP;
-
-	private String title;
+	private String sortBy;
 
 	public Long getOwnerId() {
 		return this.ownerId;
@@ -75,63 +73,54 @@ public class CreateUploadVideoRequest extends RpcAcsRequest<CreateUploadVideoRes
 		putQueryParameter("ResourceOwnerId", resourceOwnerId);
 	}
 
-	public String getCoverURL() {
-		return this.coverURL;
+	public Integer getCateId() {
+		return this.cateId;
 	}
 
-	public void setCoverURL(String coverURL) {
-		this.coverURL = coverURL;
-		putQueryParameter("CoverURL", coverURL);
+	public void setCateId(Integer cateId) {
+		this.cateId = cateId;
+		putQueryParameter("CateId", cateId);
 	}
 
-	public String getDescription() {
-		return this.description;
+	public String getStatus() {
+		return this.status;
 	}
 
-	public void setDescription(String description) {
-		this.description = description;
-		putQueryParameter("Description", description);
+	public void setStatus(String status) {
+		this.status = status;
+		putQueryParameter("Status", status);
 	}
 
-	public String getFileName() {
-		return this.fileName;
+	public Integer getPageNo() {
+		return this.pageNo;
 	}
 
-	public void setFileName(String fileName) {
-		this.fileName = fileName;
-		putQueryParameter("FileName", fileName);
+	public void setPageNo(Integer pageNo) {
+		this.pageNo = pageNo;
+		putQueryParameter("PageNo", pageNo);
 	}
 
-	public Long getFileSize() {
-		return this.fileSize;
+	public Integer getPageSize() {
+		return this.pageSize;
 	}
 
-	public void setFileSize(Long fileSize) {
-		this.fileSize = fileSize;
-		putQueryParameter("FileSize", fileSize);
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		putQueryParameter("PageSize", pageSize);
 	}
 
-	public String getIP() {
-		return this.iP;
+	public String getSortBy() {
+		return this.sortBy;
 	}
 
-	public void setIP(String iP) {
-		this.iP = iP;
-		putQueryParameter("IP", iP);
-	}
-
-	public String getTitle() {
-		return this.title;
-	}
-
-	public void setTitle(String title) {
-		this.title = title;
-		putQueryParameter("Title", title);
+	public void setSortBy(String sortBy) {
+		this.sortBy = sortBy;
+		putQueryParameter("SortBy", sortBy);
 	}
 
 	@Override
-	public Class<CreateUploadVideoResponse> getResponseClass() {
-		return CreateUploadVideoResponse.class;
+	public Class<GetVideoListResponse> getResponseClass() {
+		return GetVideoListResponse.class;
 	}
 
 }

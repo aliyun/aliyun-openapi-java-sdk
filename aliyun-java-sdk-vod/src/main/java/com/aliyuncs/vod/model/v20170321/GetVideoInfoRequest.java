@@ -24,10 +24,10 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class CreateUploadVideoRequest extends RpcAcsRequest<CreateUploadVideoResponse> {
+public class GetVideoInfoRequest extends RpcAcsRequest<GetVideoInfoResponse> {
 	
-	public CreateUploadVideoRequest() {
-		super("vod", "2017-03-21", "CreateUploadVideo");
+	public GetVideoInfoRequest() {
+		super("vod", "2017-03-21", "GetVideoInfo");
 	}
 
 	private Long ownerId;
@@ -36,17 +36,7 @@ public class CreateUploadVideoRequest extends RpcAcsRequest<CreateUploadVideoRes
 
 	private Long resourceOwnerId;
 
-	private String coverURL;
-
-	private String description;
-
-	private String fileName;
-
-	private Long fileSize;
-
-	private String iP;
-
-	private String title;
+	private String videoId;
 
 	public Long getOwnerId() {
 		return this.ownerId;
@@ -75,63 +65,18 @@ public class CreateUploadVideoRequest extends RpcAcsRequest<CreateUploadVideoRes
 		putQueryParameter("ResourceOwnerId", resourceOwnerId);
 	}
 
-	public String getCoverURL() {
-		return this.coverURL;
+	public String getVideoId() {
+		return this.videoId;
 	}
 
-	public void setCoverURL(String coverURL) {
-		this.coverURL = coverURL;
-		putQueryParameter("CoverURL", coverURL);
-	}
-
-	public String getDescription() {
-		return this.description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-		putQueryParameter("Description", description);
-	}
-
-	public String getFileName() {
-		return this.fileName;
-	}
-
-	public void setFileName(String fileName) {
-		this.fileName = fileName;
-		putQueryParameter("FileName", fileName);
-	}
-
-	public Long getFileSize() {
-		return this.fileSize;
-	}
-
-	public void setFileSize(Long fileSize) {
-		this.fileSize = fileSize;
-		putQueryParameter("FileSize", fileSize);
-	}
-
-	public String getIP() {
-		return this.iP;
-	}
-
-	public void setIP(String iP) {
-		this.iP = iP;
-		putQueryParameter("IP", iP);
-	}
-
-	public String getTitle() {
-		return this.title;
-	}
-
-	public void setTitle(String title) {
-		this.title = title;
-		putQueryParameter("Title", title);
+	public void setVideoId(String videoId) {
+		this.videoId = videoId;
+		putQueryParameter("VideoId", videoId);
 	}
 
 	@Override
-	public Class<CreateUploadVideoResponse> getResponseClass() {
-		return CreateUploadVideoResponse.class;
+	public Class<GetVideoInfoResponse> getResponseClass() {
+		return GetVideoInfoResponse.class;
 	}
 
 }

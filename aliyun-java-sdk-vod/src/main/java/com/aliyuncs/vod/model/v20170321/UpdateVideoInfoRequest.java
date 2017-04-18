@@ -24,10 +24,10 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class CreateUploadVideoRequest extends RpcAcsRequest<CreateUploadVideoResponse> {
+public class UpdateVideoInfoRequest extends RpcAcsRequest<UpdateVideoInfoResponse> {
 	
-	public CreateUploadVideoRequest() {
-		super("vod", "2017-03-21", "CreateUploadVideo");
+	public UpdateVideoInfoRequest() {
+		super("vod", "2017-03-21", "UpdateVideoInfo");
 	}
 
 	private Long ownerId;
@@ -36,17 +36,17 @@ public class CreateUploadVideoRequest extends RpcAcsRequest<CreateUploadVideoRes
 
 	private Long resourceOwnerId;
 
-	private String coverURL;
+	private String videoId;
+
+	private String title;
+
+	private String tags;
 
 	private String description;
 
-	private String fileName;
+	private String coverURL;
 
-	private Long fileSize;
-
-	private String iP;
-
-	private String title;
+	private Integer cateId;
 
 	public Long getOwnerId() {
 		return this.ownerId;
@@ -75,49 +75,13 @@ public class CreateUploadVideoRequest extends RpcAcsRequest<CreateUploadVideoRes
 		putQueryParameter("ResourceOwnerId", resourceOwnerId);
 	}
 
-	public String getCoverURL() {
-		return this.coverURL;
+	public String getVideoId() {
+		return this.videoId;
 	}
 
-	public void setCoverURL(String coverURL) {
-		this.coverURL = coverURL;
-		putQueryParameter("CoverURL", coverURL);
-	}
-
-	public String getDescription() {
-		return this.description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-		putQueryParameter("Description", description);
-	}
-
-	public String getFileName() {
-		return this.fileName;
-	}
-
-	public void setFileName(String fileName) {
-		this.fileName = fileName;
-		putQueryParameter("FileName", fileName);
-	}
-
-	public Long getFileSize() {
-		return this.fileSize;
-	}
-
-	public void setFileSize(Long fileSize) {
-		this.fileSize = fileSize;
-		putQueryParameter("FileSize", fileSize);
-	}
-
-	public String getIP() {
-		return this.iP;
-	}
-
-	public void setIP(String iP) {
-		this.iP = iP;
-		putQueryParameter("IP", iP);
+	public void setVideoId(String videoId) {
+		this.videoId = videoId;
+		putQueryParameter("VideoId", videoId);
 	}
 
 	public String getTitle() {
@@ -129,9 +93,45 @@ public class CreateUploadVideoRequest extends RpcAcsRequest<CreateUploadVideoRes
 		putQueryParameter("Title", title);
 	}
 
+	public String getTags() {
+		return this.tags;
+	}
+
+	public void setTags(String tags) {
+		this.tags = tags;
+		putQueryParameter("Tags", tags);
+	}
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+		putQueryParameter("Description", description);
+	}
+
+	public String getCoverURL() {
+		return this.coverURL;
+	}
+
+	public void setCoverURL(String coverURL) {
+		this.coverURL = coverURL;
+		putQueryParameter("CoverURL", coverURL);
+	}
+
+	public Integer getCateId() {
+		return this.cateId;
+	}
+
+	public void setCateId(Integer cateId) {
+		this.cateId = cateId;
+		putQueryParameter("CateId", cateId);
+	}
+
 	@Override
-	public Class<CreateUploadVideoResponse> getResponseClass() {
-		return CreateUploadVideoResponse.class;
+	public Class<UpdateVideoInfoResponse> getResponseClass() {
+		return UpdateVideoInfoResponse.class;
 	}
 
 }
