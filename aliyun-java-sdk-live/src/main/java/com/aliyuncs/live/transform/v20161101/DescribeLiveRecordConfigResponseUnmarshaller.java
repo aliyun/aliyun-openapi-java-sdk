@@ -38,7 +38,7 @@ public class DescribeLiveRecordConfigResponseUnmarshaller {
 		describeLiveRecordConfigResponse.setTotalNum(context.integerValue("DescribeLiveRecordConfigResponse.TotalNum"));
 		describeLiveRecordConfigResponse.setTotalPage(context.integerValue("DescribeLiveRecordConfigResponse.TotalPage"));
 
-		List<LiveAppRecord> liveAppRecordList = new ArrayList<LiveAppRecord>();
+		List<LiveAppRecord> liveAppRecordListList = new ArrayList<LiveAppRecord>();
 		for (int i = 0; i < context.lengthValue("DescribeLiveRecordConfigResponse.LiveAppRecordList.Length"); i++) {
 			LiveAppRecord liveAppRecord = new LiveAppRecord();
 			liveAppRecord.setDomainName(context.stringValue("DescribeLiveRecordConfigResponse.LiveAppRecordList["+ i +"].DomainName"));
@@ -47,20 +47,20 @@ public class DescribeLiveRecordConfigResponseUnmarshaller {
 			liveAppRecord.setOssBucket(context.stringValue("DescribeLiveRecordConfigResponse.LiveAppRecordList["+ i +"].OssBucket"));
 			liveAppRecord.setCreateTime(context.stringValue("DescribeLiveRecordConfigResponse.LiveAppRecordList["+ i +"].CreateTime"));
 
-			List<RecordFormat> recordFormatList = new ArrayList<RecordFormat>();
+			List<RecordFormat> recordFormatListList = new ArrayList<RecordFormat>();
 			for (int j = 0; j < context.lengthValue("DescribeLiveRecordConfigResponse.LiveAppRecordList["+ i +"].RecordFormatList.Length"); j++) {
 				RecordFormat recordFormat = new RecordFormat();
 				recordFormat.setFormat(context.stringValue("DescribeLiveRecordConfigResponse.LiveAppRecordList["+ i +"].RecordFormatList["+ j +"].Format"));
 				recordFormat.setOssObjectPrefix(context.stringValue("DescribeLiveRecordConfigResponse.LiveAppRecordList["+ i +"].RecordFormatList["+ j +"].OssObjectPrefix"));
 				recordFormat.setSliceOssObjectPrefix(context.stringValue("DescribeLiveRecordConfigResponse.LiveAppRecordList["+ i +"].RecordFormatList["+ j +"].SliceOssObjectPrefix"));
 
-				recordFormatList.add(recordFormat);
+				recordFormatListList.add(recordFormat);
 			}
-			liveAppRecord.setRecordFormatList(recordFormatList);
+			liveAppRecord.setRecordFormatList(recordFormatListList);
 
-			liveAppRecordList.add(liveAppRecord);
+			liveAppRecordListList.add(liveAppRecord);
 		}
-		describeLiveRecordConfigResponse.setLiveAppRecordList(liveAppRecordList);
+		describeLiveRecordConfigResponse.setLiveAppRecordList(liveAppRecordListList);
 	 
 	 	return describeLiveRecordConfigResponse;
 	}
