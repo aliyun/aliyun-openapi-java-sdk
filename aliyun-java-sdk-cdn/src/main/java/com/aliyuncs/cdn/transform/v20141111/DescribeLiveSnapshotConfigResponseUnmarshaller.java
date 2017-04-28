@@ -37,7 +37,7 @@ public class DescribeLiveSnapshotConfigResponseUnmarshaller {
 		describeLiveSnapshotConfigResponse.setTotalNum(context.integerValue("DescribeLiveSnapshotConfigResponse.TotalNum"));
 		describeLiveSnapshotConfigResponse.setTotalPage(context.integerValue("DescribeLiveSnapshotConfigResponse.TotalPage"));
 
-		List<LiveStreamSnapshotConfig> liveStreamSnapshotConfigList = new ArrayList<LiveStreamSnapshotConfig>();
+		List<LiveStreamSnapshotConfig> liveStreamSnapshotConfigListList = new ArrayList<LiveStreamSnapshotConfig>();
 		for (int i = 0; i < context.lengthValue("DescribeLiveSnapshotConfigResponse.LiveStreamSnapshotConfigList.Length"); i++) {
 			LiveStreamSnapshotConfig liveStreamSnapshotConfig = new LiveStreamSnapshotConfig();
 			liveStreamSnapshotConfig.setDomainName(context.stringValue("DescribeLiveSnapshotConfigResponse.LiveStreamSnapshotConfigList["+ i +"].DomainName"));
@@ -49,9 +49,9 @@ public class DescribeLiveSnapshotConfigResponseUnmarshaller {
 			liveStreamSnapshotConfig.setSequenceOssObject(context.stringValue("DescribeLiveSnapshotConfigResponse.LiveStreamSnapshotConfigList["+ i +"].SequenceOssObject"));
 			liveStreamSnapshotConfig.setCreateTime(context.stringValue("DescribeLiveSnapshotConfigResponse.LiveStreamSnapshotConfigList["+ i +"].CreateTime"));
 
-			liveStreamSnapshotConfigList.add(liveStreamSnapshotConfig);
+			liveStreamSnapshotConfigListList.add(liveStreamSnapshotConfig);
 		}
-		describeLiveSnapshotConfigResponse.setLiveStreamSnapshotConfigList(liveStreamSnapshotConfigList);
+		describeLiveSnapshotConfigResponse.setLiveStreamSnapshotConfigList(liveStreamSnapshotConfigListList);
 	 
 	 	return describeLiveSnapshotConfigResponse;
 	}

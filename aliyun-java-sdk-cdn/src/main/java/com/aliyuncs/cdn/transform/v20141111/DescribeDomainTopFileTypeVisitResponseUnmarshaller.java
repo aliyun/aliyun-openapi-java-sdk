@@ -34,15 +34,15 @@ public class DescribeDomainTopFileTypeVisitResponseUnmarshaller {
 		describeDomainTopFileTypeVisitResponse.setDomainName(context.stringValue("DescribeDomainTopFileTypeVisitResponse.DomainName"));
 		describeDomainTopFileTypeVisitResponse.setStartTime(context.stringValue("DescribeDomainTopFileTypeVisitResponse.StartTime"));
 
-		List<FileTypeList> topFileTypeList = new ArrayList<FileTypeList>();
+		List<FileTypeList> topFileTypeListList = new ArrayList<FileTypeList>();
 		for (int i = 0; i < context.lengthValue("DescribeDomainTopFileTypeVisitResponse.TopFileTypeList.Length"); i++) {
 			FileTypeList fileTypeList = new FileTypeList();
 			fileTypeList.setFileTypeDetail(context.stringValue("DescribeDomainTopFileTypeVisitResponse.TopFileTypeList["+ i +"].FileTypeDetail"));
 			fileTypeList.setVisitData(context.stringValue("DescribeDomainTopFileTypeVisitResponse.TopFileTypeList["+ i +"].VisitData"));
 
-			topFileTypeList.add(fileTypeList);
+			topFileTypeListList.add(fileTypeList);
 		}
-		describeDomainTopFileTypeVisitResponse.setTopFileTypeList(topFileTypeList);
+		describeDomainTopFileTypeVisitResponse.setTopFileTypeList(topFileTypeListList);
 	 
 	 	return describeDomainTopFileTypeVisitResponse;
 	}

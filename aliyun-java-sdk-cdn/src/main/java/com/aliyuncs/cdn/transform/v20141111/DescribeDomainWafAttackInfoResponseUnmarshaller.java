@@ -37,7 +37,7 @@ public class DescribeDomainWafAttackInfoResponseUnmarshaller {
 		describeDomainWafAttackInfoResponse.setPageNumber(context.integerValue("DescribeDomainWafAttackInfoResponse.PageNumber"));
 		describeDomainWafAttackInfoResponse.setPageSize(context.integerValue("DescribeDomainWafAttackInfoResponse.PageSize"));
 
-		List<AttackDatas> attackDataList = new ArrayList<AttackDatas>();
+		List<AttackDatas> attackDataListList = new ArrayList<AttackDatas>();
 		for (int i = 0; i < context.lengthValue("DescribeDomainWafAttackInfoResponse.AttackDataList.Length"); i++) {
 			AttackDatas attackDatas = new AttackDatas();
 			attackDatas.setIp(context.stringValue("DescribeDomainWafAttackInfoResponse.AttackDataList["+ i +"].Ip"));
@@ -46,9 +46,9 @@ public class DescribeDomainWafAttackInfoResponseUnmarshaller {
 			attackDatas.setType(context.stringValue("DescribeDomainWafAttackInfoResponse.AttackDataList["+ i +"].Type"));
 			attackDatas.setResult(context.stringValue("DescribeDomainWafAttackInfoResponse.AttackDataList["+ i +"].Result"));
 
-			attackDataList.add(attackDatas);
+			attackDataListList.add(attackDatas);
 		}
-		describeDomainWafAttackInfoResponse.setAttackDataList(attackDataList);
+		describeDomainWafAttackInfoResponse.setAttackDataList(attackDataListList);
 	 
 	 	return describeDomainWafAttackInfoResponse;
 	}

@@ -32,15 +32,15 @@ public class DescribeLiveSpecificDomainMappingResponseUnmarshaller {
 		
 		describeLiveSpecificDomainMappingResponse.setRequestId(context.stringValue("DescribeLiveSpecificDomainMappingResponse.RequestId"));
 
-		List<DomainMappingModel> domainMappingModels = new ArrayList<DomainMappingModel>();
+		List<DomainMappingModel> domainMappingModelsList = new ArrayList<DomainMappingModel>();
 		for (int i = 0; i < context.lengthValue("DescribeLiveSpecificDomainMappingResponse.DomainMappingModels.Length"); i++) {
 			DomainMappingModel domainMappingModel = new DomainMappingModel();
 			domainMappingModel.setPushDomain(context.stringValue("DescribeLiveSpecificDomainMappingResponse.DomainMappingModels["+ i +"].PushDomain"));
 			domainMappingModel.setPullDomain(context.stringValue("DescribeLiveSpecificDomainMappingResponse.DomainMappingModels["+ i +"].PullDomain"));
 
-			domainMappingModels.add(domainMappingModel);
+			domainMappingModelsList.add(domainMappingModel);
 		}
-		describeLiveSpecificDomainMappingResponse.setDomainMappingModels(domainMappingModels);
+		describeLiveSpecificDomainMappingResponse.setDomainMappingModels(domainMappingModelsList);
 	 
 	 	return describeLiveSpecificDomainMappingResponse;
 	}

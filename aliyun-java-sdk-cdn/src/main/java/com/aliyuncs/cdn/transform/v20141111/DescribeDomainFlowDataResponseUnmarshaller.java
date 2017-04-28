@@ -36,17 +36,23 @@ public class DescribeDomainFlowDataResponseUnmarshaller {
 		describeDomainFlowDataResponse.setStartTime(context.stringValue("DescribeDomainFlowDataResponse.StartTime"));
 		describeDomainFlowDataResponse.setEndTime(context.stringValue("DescribeDomainFlowDataResponse.EndTime"));
 
-		List<DataModule> flowDataPerInterval = new ArrayList<DataModule>();
+		List<DataModule> flowDataPerIntervalList = new ArrayList<DataModule>();
 		for (int i = 0; i < context.lengthValue("DescribeDomainFlowDataResponse.FlowDataPerInterval.Length"); i++) {
 			DataModule dataModule = new DataModule();
 			dataModule.setTimeStamp(context.stringValue("DescribeDomainFlowDataResponse.FlowDataPerInterval["+ i +"].TimeStamp"));
 			dataModule.setValue(context.stringValue("DescribeDomainFlowDataResponse.FlowDataPerInterval["+ i +"].Value"));
 			dataModule.setDomesticValue(context.stringValue("DescribeDomainFlowDataResponse.FlowDataPerInterval["+ i +"].DomesticValue"));
 			dataModule.setOverseasValue(context.stringValue("DescribeDomainFlowDataResponse.FlowDataPerInterval["+ i +"].OverseasValue"));
+			dataModule.setDynamicValue(context.stringValue("DescribeDomainFlowDataResponse.FlowDataPerInterval["+ i +"].DynamicValue"));
+			dataModule.setDynamicDomesticValue(context.stringValue("DescribeDomainFlowDataResponse.FlowDataPerInterval["+ i +"].DynamicDomesticValue"));
+			dataModule.setDynamicOverseasValue(context.stringValue("DescribeDomainFlowDataResponse.FlowDataPerInterval["+ i +"].DynamicOverseasValue"));
+			dataModule.setStaticValue(context.stringValue("DescribeDomainFlowDataResponse.FlowDataPerInterval["+ i +"].StaticValue"));
+			dataModule.setStaticDomesticValue(context.stringValue("DescribeDomainFlowDataResponse.FlowDataPerInterval["+ i +"].StaticDomesticValue"));
+			dataModule.setStaticOverseasValue(context.stringValue("DescribeDomainFlowDataResponse.FlowDataPerInterval["+ i +"].StaticOverseasValue"));
 
-			flowDataPerInterval.add(dataModule);
+			flowDataPerIntervalList.add(dataModule);
 		}
-		describeDomainFlowDataResponse.setFlowDataPerInterval(flowDataPerInterval);
+		describeDomainFlowDataResponse.setFlowDataPerInterval(flowDataPerIntervalList);
 	 
 	 	return describeDomainFlowDataResponse;
 	}

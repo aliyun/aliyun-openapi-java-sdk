@@ -31,7 +31,7 @@ public class DescribeL2VipsByDomainResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Long domainName;
+	private String domainName;
 
 	private List<String> vips;
 
@@ -43,11 +43,11 @@ public class DescribeL2VipsByDomainResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Long getDomainName() {
+	public String getDomainName() {
 		return this.domainName;
 	}
 
-	public void setDomainName(Long domainName) {
+	public void setDomainName(String domainName) {
 		this.domainName = domainName;
 	}
 

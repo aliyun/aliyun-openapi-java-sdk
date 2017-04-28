@@ -25,8 +25,10 @@ import com.aliyuncs.cdn.model.v20141111.DescribeDomainConfigsResponse;
 import com.aliyuncs.cdn.model.v20141111.DescribeDomainConfigsResponse.DomainConfigs;
 import com.aliyuncs.cdn.model.v20141111.DescribeDomainConfigsResponse.DomainConfigs.CacheExpiredConfig;
 import com.aliyuncs.cdn.model.v20141111.DescribeDomainConfigsResponse.DomainConfigs.CcConfig;
+import com.aliyuncs.cdn.model.v20141111.DescribeDomainConfigsResponse.DomainConfigs.DynamicConfig;
 import com.aliyuncs.cdn.model.v20141111.DescribeDomainConfigsResponse.DomainConfigs.ErrorPageConfig;
 import com.aliyuncs.cdn.model.v20141111.DescribeDomainConfigsResponse.DomainConfigs.ForwardSchemeConfig;
+import com.aliyuncs.cdn.model.v20141111.DescribeDomainConfigsResponse.DomainConfigs.HttpErrorPageConfig;
 import com.aliyuncs.cdn.model.v20141111.DescribeDomainConfigsResponse.DomainConfigs.HttpHeaderConfig;
 import com.aliyuncs.cdn.model.v20141111.DescribeDomainConfigsResponse.DomainConfigs.IgnoreQueryStringConfig;
 import com.aliyuncs.cdn.model.v20141111.DescribeDomainConfigsResponse.DomainConfigs.NotifyUrlConfig;
@@ -36,6 +38,7 @@ import com.aliyuncs.cdn.model.v20141111.DescribeDomainConfigsResponse.DomainConf
 import com.aliyuncs.cdn.model.v20141111.DescribeDomainConfigsResponse.DomainConfigs.RedirectTypeConfig;
 import com.aliyuncs.cdn.model.v20141111.DescribeDomainConfigsResponse.DomainConfigs.RefererConfig;
 import com.aliyuncs.cdn.model.v20141111.DescribeDomainConfigsResponse.DomainConfigs.ReqAuthConfig;
+import com.aliyuncs.cdn.model.v20141111.DescribeDomainConfigsResponse.DomainConfigs.ReqHeaderConfig;
 import com.aliyuncs.cdn.model.v20141111.DescribeDomainConfigsResponse.DomainConfigs.SrcHostConfig;
 import com.aliyuncs.cdn.model.v20141111.DescribeDomainConfigsResponse.DomainConfigs.VideoSeekConfig;
 import com.aliyuncs.cdn.model.v20141111.DescribeDomainConfigsResponse.DomainConfigs.WafConfig;
@@ -57,6 +60,7 @@ public class DescribeDomainConfigsResponseUnmarshaller {
 		domainConfigs.setCcConfig(ccConfig);
 
 		ErrorPageConfig errorPageConfig = new ErrorPageConfig();
+		errorPageConfig.setConfigId(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.ErrorPageConfig.ConfigId"));
 		errorPageConfig.setErrorCode(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.ErrorPageConfig.ErrorCode"));
 		errorPageConfig.setPageType(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.ErrorPageConfig.PageType"));
 		errorPageConfig.setCustomPageUrl(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.ErrorPageConfig.CustomPageUrl"));
@@ -118,7 +122,7 @@ public class DescribeDomainConfigsResponseUnmarshaller {
 		forwardSchemeConfig.setSchemeOriginPort(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.ForwardSchemeConfig.SchemeOriginPort"));
 		domainConfigs.setForwardSchemeConfig(forwardSchemeConfig);
 
-		List<CacheExpiredConfig> cacheExpiredConfigs = new ArrayList<CacheExpiredConfig>();
+		List<CacheExpiredConfig> cacheExpiredConfigsList = new ArrayList<CacheExpiredConfig>();
 		for (int i = 0; i < context.lengthValue("DescribeDomainConfigsResponse.DomainConfigs.CacheExpiredConfigs.Length"); i++) {
 			CacheExpiredConfig cacheExpiredConfig = new CacheExpiredConfig();
 			cacheExpiredConfig.setConfigId(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.CacheExpiredConfigs["+ i +"].ConfigId"));
@@ -128,11 +132,22 @@ public class DescribeDomainConfigsResponseUnmarshaller {
 			cacheExpiredConfig.setWeight(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.CacheExpiredConfigs["+ i +"].Weight"));
 			cacheExpiredConfig.setStatus(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.CacheExpiredConfigs["+ i +"].Status"));
 
-			cacheExpiredConfigs.add(cacheExpiredConfig);
+			cacheExpiredConfigsList.add(cacheExpiredConfig);
 		}
-		domainConfigs.setCacheExpiredConfigs(cacheExpiredConfigs);
+		domainConfigs.setCacheExpiredConfigs(cacheExpiredConfigsList);
 
-		List<HttpHeaderConfig> httpHeaderConfigs = new ArrayList<HttpHeaderConfig>();
+		List<HttpErrorPageConfig> httpErrorPageConfigsList = new ArrayList<HttpErrorPageConfig>();
+		for (int i = 0; i < context.lengthValue("DescribeDomainConfigsResponse.DomainConfigs.HttpErrorPageConfigs.Length"); i++) {
+			HttpErrorPageConfig httpErrorPageConfig = new HttpErrorPageConfig();
+			httpErrorPageConfig.setConfigId(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.HttpErrorPageConfigs["+ i +"].ConfigId"));
+			httpErrorPageConfig.setErrorCode(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.HttpErrorPageConfigs["+ i +"].ErrorCode"));
+			httpErrorPageConfig.setPageUrl(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.HttpErrorPageConfigs["+ i +"].PageUrl"));
+
+			httpErrorPageConfigsList.add(httpErrorPageConfig);
+		}
+		domainConfigs.setHttpErrorPageConfigs(httpErrorPageConfigsList);
+
+		List<HttpHeaderConfig> httpHeaderConfigsList = new ArrayList<HttpHeaderConfig>();
 		for (int i = 0; i < context.lengthValue("DescribeDomainConfigsResponse.DomainConfigs.HttpHeaderConfigs.Length"); i++) {
 			HttpHeaderConfig httpHeaderConfig = new HttpHeaderConfig();
 			httpHeaderConfig.setConfigId(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.HttpHeaderConfigs["+ i +"].ConfigId"));
@@ -140,9 +155,34 @@ public class DescribeDomainConfigsResponseUnmarshaller {
 			httpHeaderConfig.setHeaderValue(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.HttpHeaderConfigs["+ i +"].HeaderValue"));
 			httpHeaderConfig.setStatus(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.HttpHeaderConfigs["+ i +"].Status"));
 
-			httpHeaderConfigs.add(httpHeaderConfig);
+			httpHeaderConfigsList.add(httpHeaderConfig);
 		}
-		domainConfigs.setHttpHeaderConfigs(httpHeaderConfigs);
+		domainConfigs.setHttpHeaderConfigs(httpHeaderConfigsList);
+
+		List<DynamicConfig> dynamicConfigsList = new ArrayList<DynamicConfig>();
+		for (int i = 0; i < context.lengthValue("DescribeDomainConfigsResponse.DomainConfigs.DynamicConfigs.Length"); i++) {
+			DynamicConfig dynamicConfig = new DynamicConfig();
+			dynamicConfig.setConfigId(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.DynamicConfigs["+ i +"].ConfigId"));
+			dynamicConfig.setDynamicOrigin(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.DynamicConfigs["+ i +"].DynamicOrigin"));
+			dynamicConfig.setStaticType(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.DynamicConfigs["+ i +"].StaticType"));
+			dynamicConfig.setStaticUri(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.DynamicConfigs["+ i +"].StaticUri"));
+			dynamicConfig.setStaticPath(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.DynamicConfigs["+ i +"].StaticPath"));
+			dynamicConfig.setDynamicCacheControl(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.DynamicConfigs["+ i +"].DynamicCacheControl"));
+
+			dynamicConfigsList.add(dynamicConfig);
+		}
+		domainConfigs.setDynamicConfigs(dynamicConfigsList);
+
+		List<ReqHeaderConfig> reqHeaderConfigsList = new ArrayList<ReqHeaderConfig>();
+		for (int i = 0; i < context.lengthValue("DescribeDomainConfigsResponse.DomainConfigs.ReqHeaderConfigs.Length"); i++) {
+			ReqHeaderConfig reqHeaderConfig = new ReqHeaderConfig();
+			reqHeaderConfig.setConfigId(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.ReqHeaderConfigs["+ i +"].ConfigId"));
+			reqHeaderConfig.setKey(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.ReqHeaderConfigs["+ i +"].Key"));
+			reqHeaderConfig.setValue(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.ReqHeaderConfigs["+ i +"].Value"));
+
+			reqHeaderConfigsList.add(reqHeaderConfig);
+		}
+		domainConfigs.setReqHeaderConfigs(reqHeaderConfigsList);
 		describeDomainConfigsResponse.setDomainConfigs(domainConfigs);
 	 
 	 	return describeDomainConfigsResponse;

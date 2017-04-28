@@ -34,9 +34,9 @@ public class DescribeUserDomainsRequest extends RpcAcsRequest<DescribeUserDomain
 
 	private String securityToken;
 
-	private Long pageSize;
+	private Integer pageSize;
 
-	private Long pageNumber;
+	private Integer pageNumber;
 
 	private String domainName;
 
@@ -47,6 +47,8 @@ public class DescribeUserDomainsRequest extends RpcAcsRequest<DescribeUserDomain
 	private String sources;
 
 	private String cdnType;
+
+	private Boolean checkDomainShow;
 
 	public Long getOwnerId() {
 		return this.ownerId;
@@ -66,20 +68,20 @@ public class DescribeUserDomainsRequest extends RpcAcsRequest<DescribeUserDomain
 		putQueryParameter("SecurityToken", securityToken);
 	}
 
-	public Long getPageSize() {
+	public Integer getPageSize() {
 		return this.pageSize;
 	}
 
-	public void setPageSize(Long pageSize) {
+	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
 		putQueryParameter("PageSize", pageSize);
 	}
 
-	public Long getPageNumber() {
+	public Integer getPageNumber() {
 		return this.pageNumber;
 	}
 
-	public void setPageNumber(Long pageNumber) {
+	public void setPageNumber(Integer pageNumber) {
 		this.pageNumber = pageNumber;
 		putQueryParameter("PageNumber", pageNumber);
 	}
@@ -127,6 +129,15 @@ public class DescribeUserDomainsRequest extends RpcAcsRequest<DescribeUserDomain
 	public void setCdnType(String cdnType) {
 		this.cdnType = cdnType;
 		putQueryParameter("CdnType", cdnType);
+	}
+
+	public Boolean getCheckDomainShow() {
+		return this.checkDomainShow;
+	}
+
+	public void setCheckDomainShow(Boolean checkDomainShow) {
+		this.checkDomainShow = checkDomainShow;
+		putQueryParameter("CheckDomainShow", checkDomainShow);
 	}
 
 	@Override

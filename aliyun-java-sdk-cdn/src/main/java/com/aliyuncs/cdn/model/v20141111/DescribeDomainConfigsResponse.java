@@ -53,7 +53,13 @@ public class DescribeDomainConfigsResponse extends AcsResponse {
 
 		private List<CacheExpiredConfig> cacheExpiredConfigs;
 
+		private List<HttpErrorPageConfig> httpErrorPageConfigs;
+
 		private List<HttpHeaderConfig> httpHeaderConfigs;
+
+		private List<DynamicConfig> dynamicConfigs;
+
+		private List<ReqHeaderConfig> reqHeaderConfigs;
 
 		private CcConfig ccConfig;
 
@@ -91,12 +97,36 @@ public class DescribeDomainConfigsResponse extends AcsResponse {
 			this.cacheExpiredConfigs = cacheExpiredConfigs;
 		}
 
+		public List<HttpErrorPageConfig> getHttpErrorPageConfigs() {
+			return this.httpErrorPageConfigs;
+		}
+
+		public void setHttpErrorPageConfigs(List<HttpErrorPageConfig> httpErrorPageConfigs) {
+			this.httpErrorPageConfigs = httpErrorPageConfigs;
+		}
+
 		public List<HttpHeaderConfig> getHttpHeaderConfigs() {
 			return this.httpHeaderConfigs;
 		}
 
 		public void setHttpHeaderConfigs(List<HttpHeaderConfig> httpHeaderConfigs) {
 			this.httpHeaderConfigs = httpHeaderConfigs;
+		}
+
+		public List<DynamicConfig> getDynamicConfigs() {
+			return this.dynamicConfigs;
+		}
+
+		public void setDynamicConfigs(List<DynamicConfig> dynamicConfigs) {
+			this.dynamicConfigs = dynamicConfigs;
+		}
+
+		public List<ReqHeaderConfig> getReqHeaderConfigs() {
+			return this.reqHeaderConfigs;
+		}
+
+		public void setReqHeaderConfigs(List<ReqHeaderConfig> reqHeaderConfigs) {
+			this.reqHeaderConfigs = reqHeaderConfigs;
 		}
 
 		public CcConfig getCcConfig() {
@@ -274,6 +304,39 @@ public class DescribeDomainConfigsResponse extends AcsResponse {
 			}
 		}
 
+		public static class HttpErrorPageConfig {
+
+			private String configId;
+
+			private String errorCode;
+
+			private String pageUrl;
+
+			public String getConfigId() {
+				return this.configId;
+			}
+
+			public void setConfigId(String configId) {
+				this.configId = configId;
+			}
+
+			public String getErrorCode() {
+				return this.errorCode;
+			}
+
+			public void setErrorCode(String errorCode) {
+				this.errorCode = errorCode;
+			}
+
+			public String getPageUrl() {
+				return this.pageUrl;
+			}
+
+			public void setPageUrl(String pageUrl) {
+				this.pageUrl = pageUrl;
+			}
+		}
+
 		public static class HttpHeaderConfig {
 
 			private String configId;
@@ -317,6 +380,102 @@ public class DescribeDomainConfigsResponse extends AcsResponse {
 			}
 		}
 
+		public static class DynamicConfig {
+
+			private String configId;
+
+			private String dynamicOrigin;
+
+			private String staticType;
+
+			private String staticUri;
+
+			private String staticPath;
+
+			private String dynamicCacheControl;
+
+			public String getConfigId() {
+				return this.configId;
+			}
+
+			public void setConfigId(String configId) {
+				this.configId = configId;
+			}
+
+			public String getDynamicOrigin() {
+				return this.dynamicOrigin;
+			}
+
+			public void setDynamicOrigin(String dynamicOrigin) {
+				this.dynamicOrigin = dynamicOrigin;
+			}
+
+			public String getStaticType() {
+				return this.staticType;
+			}
+
+			public void setStaticType(String staticType) {
+				this.staticType = staticType;
+			}
+
+			public String getStaticUri() {
+				return this.staticUri;
+			}
+
+			public void setStaticUri(String staticUri) {
+				this.staticUri = staticUri;
+			}
+
+			public String getStaticPath() {
+				return this.staticPath;
+			}
+
+			public void setStaticPath(String staticPath) {
+				this.staticPath = staticPath;
+			}
+
+			public String getDynamicCacheControl() {
+				return this.dynamicCacheControl;
+			}
+
+			public void setDynamicCacheControl(String dynamicCacheControl) {
+				this.dynamicCacheControl = dynamicCacheControl;
+			}
+		}
+
+		public static class ReqHeaderConfig {
+
+			private String configId;
+
+			private String key;
+
+			private String value;
+
+			public String getConfigId() {
+				return this.configId;
+			}
+
+			public void setConfigId(String configId) {
+				this.configId = configId;
+			}
+
+			public String getKey() {
+				return this.key;
+			}
+
+			public void setKey(String key) {
+				this.key = key;
+			}
+
+			public String getValue() {
+				return this.value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
+			}
+		}
+
 		public static class CcConfig {
 
 			private String enable;
@@ -352,11 +511,21 @@ public class DescribeDomainConfigsResponse extends AcsResponse {
 
 		public static class ErrorPageConfig {
 
+			private String configId;
+
 			private String errorCode;
 
 			private String pageType;
 
 			private String customPageUrl;
+
+			public String getConfigId() {
+				return this.configId;
+			}
+
+			public void setConfigId(String configId) {
+				this.configId = configId;
+			}
 
 			public String getErrorCode() {
 				return this.errorCode;

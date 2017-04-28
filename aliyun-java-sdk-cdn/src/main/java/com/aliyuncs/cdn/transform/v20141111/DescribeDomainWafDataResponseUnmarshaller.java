@@ -36,7 +36,7 @@ public class DescribeDomainWafDataResponseUnmarshaller {
 		describeDomainWafDataResponse.setStartTime(context.stringValue("DescribeDomainWafDataResponse.StartTime"));
 		describeDomainWafDataResponse.setEndTime(context.stringValue("DescribeDomainWafDataResponse.EndTime"));
 
-		List<WafDatas> wafDataList = new ArrayList<WafDatas>();
+		List<WafDatas> wafDataListList = new ArrayList<WafDatas>();
 		for (int i = 0; i < context.lengthValue("DescribeDomainWafDataResponse.WafDataList.Length"); i++) {
 			WafDatas wafDatas = new WafDatas();
 			wafDatas.setTimeStamp(context.stringValue("DescribeDomainWafDataResponse.WafDataList["+ i +"].TimeStamp"));
@@ -47,9 +47,9 @@ public class DescribeDomainWafDataResponseUnmarshaller {
 			}
 			wafDatas.setValue(value);
 
-			wafDataList.add(wafDatas);
+			wafDataListList.add(wafDatas);
 		}
-		describeDomainWafDataResponse.setWafDataList(wafDataList);
+		describeDomainWafDataResponse.setWafDataList(wafDataListList);
 	 
 	 	return describeDomainWafDataResponse;
 	}

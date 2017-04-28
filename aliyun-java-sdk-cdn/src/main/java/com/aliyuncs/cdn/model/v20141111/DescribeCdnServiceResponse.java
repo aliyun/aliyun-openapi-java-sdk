@@ -31,6 +31,8 @@ public class DescribeCdnServiceResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String instanceId;
+
 	private String internetChargeType;
 
 	private String openingTime;
@@ -47,6 +49,14 @@ public class DescribeCdnServiceResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
 	}
 
 	public String getInternetChargeType() {

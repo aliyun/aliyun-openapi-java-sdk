@@ -34,13 +34,7 @@ public class DescribeLiveStreamRelayPushErrorsRequest extends RpcAcsRequest<Desc
 
 	private String securityToken;
 
-	private String domainName;
-
 	private String relayDomain;
-
-	private String appName;
-
-	private String streamName;
 
 	private String startTime;
 
@@ -64,15 +58,6 @@ public class DescribeLiveStreamRelayPushErrorsRequest extends RpcAcsRequest<Desc
 		putQueryParameter("SecurityToken", securityToken);
 	}
 
-	public String getDomainName() {
-		return this.domainName;
-	}
-
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
-		putQueryParameter("DomainName", domainName);
-	}
-
 	public String getRelayDomain() {
 		return this.relayDomain;
 	}
@@ -80,24 +65,6 @@ public class DescribeLiveStreamRelayPushErrorsRequest extends RpcAcsRequest<Desc
 	public void setRelayDomain(String relayDomain) {
 		this.relayDomain = relayDomain;
 		putQueryParameter("RelayDomain", relayDomain);
-	}
-
-	public String getAppName() {
-		return this.appName;
-	}
-
-	public void setAppName(String appName) {
-		this.appName = appName;
-		putQueryParameter("AppName", appName);
-	}
-
-	public String getStreamName() {
-		return this.streamName;
-	}
-
-	public void setStreamName(String streamName) {
-		this.streamName = streamName;
-		putQueryParameter("StreamName", streamName);
 	}
 
 	public String getStartTime() {

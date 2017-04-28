@@ -32,19 +32,20 @@ public class DescribeLiveStreamRelayPushDataResponseUnmarshaller {
 		
 		describeLiveStreamRelayPushDataResponse.setRequestId(context.stringValue("DescribeLiveStreamRelayPushDataResponse.RequestId"));
 
-		List<RelayPushDetailModel> relayPushDetailModelList = new ArrayList<RelayPushDetailModel>();
+		List<RelayPushDetailModel> relayPushDetailModelListList = new ArrayList<RelayPushDetailModel>();
 		for (int i = 0; i < context.lengthValue("DescribeLiveStreamRelayPushDataResponse.RelayPushDetailModelList.Length"); i++) {
 			RelayPushDetailModel relayPushDetailModel = new RelayPushDetailModel();
 			relayPushDetailModel.setTime(context.stringValue("DescribeLiveStreamRelayPushDataResponse.RelayPushDetailModelList["+ i +"].Time"));
+			relayPushDetailModel.setStream(context.stringValue("DescribeLiveStreamRelayPushDataResponse.RelayPushDetailModelList["+ i +"].Stream"));
 			relayPushDetailModel.setFrameRate(context.floatValue("DescribeLiveStreamRelayPushDataResponse.RelayPushDetailModelList["+ i +"].FrameRate"));
 			relayPushDetailModel.setBitRate(context.floatValue("DescribeLiveStreamRelayPushDataResponse.RelayPushDetailModelList["+ i +"].BitRate"));
 			relayPushDetailModel.setFrameLossRate(context.floatValue("DescribeLiveStreamRelayPushDataResponse.RelayPushDetailModelList["+ i +"].FrameLossRate"));
 			relayPushDetailModel.setServerAddr(context.stringValue("DescribeLiveStreamRelayPushDataResponse.RelayPushDetailModelList["+ i +"].ServerAddr"));
 			relayPushDetailModel.setClientAddr(context.stringValue("DescribeLiveStreamRelayPushDataResponse.RelayPushDetailModelList["+ i +"].ClientAddr"));
 
-			relayPushDetailModelList.add(relayPushDetailModel);
+			relayPushDetailModelListList.add(relayPushDetailModel);
 		}
-		describeLiveStreamRelayPushDataResponse.setRelayPushDetailModelList(relayPushDetailModelList);
+		describeLiveStreamRelayPushDataResponse.setRelayPushDetailModelList(relayPushDetailModelListList);
 	 
 	 	return describeLiveStreamRelayPushDataResponse;
 	}

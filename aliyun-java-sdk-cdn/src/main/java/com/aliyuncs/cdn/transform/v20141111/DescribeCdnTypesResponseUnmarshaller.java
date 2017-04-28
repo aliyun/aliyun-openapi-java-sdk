@@ -32,15 +32,15 @@ public class DescribeCdnTypesResponseUnmarshaller {
 		
 		describeCdnTypesResponse.setRequestId(context.stringValue("DescribeCdnTypesResponse.RequestId"));
 
-		List<CdnType> cdnTypes = new ArrayList<CdnType>();
+		List<CdnType> cdnTypesList = new ArrayList<CdnType>();
 		for (int i = 0; i < context.lengthValue("DescribeCdnTypesResponse.CdnTypes.Length"); i++) {
 			CdnType cdnType = new CdnType();
 			cdnType.setType(context.stringValue("DescribeCdnTypesResponse.CdnTypes["+ i +"].Type"));
 			cdnType.setDesc(context.stringValue("DescribeCdnTypesResponse.CdnTypes["+ i +"].Desc"));
 
-			cdnTypes.add(cdnType);
+			cdnTypesList.add(cdnType);
 		}
-		describeCdnTypesResponse.setCdnTypes(cdnTypes);
+		describeCdnTypesResponse.setCdnTypes(cdnTypesList);
 	 
 	 	return describeCdnTypesResponse;
 	}

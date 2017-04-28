@@ -37,7 +37,7 @@ public class DescribeHistoryCharge95InfoResponseUnmarshaller {
 		describeHistoryCharge95InfoResponse.setTotalPages(context.longValue("DescribeHistoryCharge95InfoResponse.TotalPages"));
 		describeHistoryCharge95InfoResponse.setUserName(context.stringValue("DescribeHistoryCharge95InfoResponse.UserName"));
 
-		List<HistoryCharge95Info> historyCharge95Infos = new ArrayList<HistoryCharge95Info>();
+		List<HistoryCharge95Info> historyCharge95InfosList = new ArrayList<HistoryCharge95Info>();
 		for (int i = 0; i < context.lengthValue("DescribeHistoryCharge95InfoResponse.HistoryCharge95Infos.Length"); i++) {
 			HistoryCharge95Info historyCharge95Info = new HistoryCharge95Info();
 			historyCharge95Info.setDomainName(context.stringValue("DescribeHistoryCharge95InfoResponse.HistoryCharge95Infos["+ i +"].DomainName"));
@@ -51,9 +51,9 @@ public class DescribeHistoryCharge95InfoResponseUnmarshaller {
 			historyCharge95Info.setProportion(context.floatValue("DescribeHistoryCharge95InfoResponse.HistoryCharge95Infos["+ i +"].Proportion"));
 			historyCharge95Info.setDownloadUrl(context.stringValue("DescribeHistoryCharge95InfoResponse.HistoryCharge95Infos["+ i +"].DownloadUrl"));
 
-			historyCharge95Infos.add(historyCharge95Info);
+			historyCharge95InfosList.add(historyCharge95Info);
 		}
-		describeHistoryCharge95InfoResponse.setHistoryCharge95Infos(historyCharge95Infos);
+		describeHistoryCharge95InfoResponse.setHistoryCharge95Infos(historyCharge95InfosList);
 	 
 	 	return describeHistoryCharge95InfoResponse;
 	}

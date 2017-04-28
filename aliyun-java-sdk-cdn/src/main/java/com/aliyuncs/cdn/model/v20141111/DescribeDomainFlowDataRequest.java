@@ -42,6 +42,14 @@ public class DescribeDomainFlowDataRequest extends RpcAcsRequest<DescribeDomainF
 
 	private String timeMerge;
 
+	private String locationNameEn;
+
+	private String ispNameEn;
+
+	private String domainType;
+
+	private String interval;
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -94,6 +102,42 @@ public class DescribeDomainFlowDataRequest extends RpcAcsRequest<DescribeDomainF
 	public void setTimeMerge(String timeMerge) {
 		this.timeMerge = timeMerge;
 		putQueryParameter("TimeMerge", timeMerge);
+	}
+
+	public String getLocationNameEn() {
+		return this.locationNameEn;
+	}
+
+	public void setLocationNameEn(String locationNameEn) {
+		this.locationNameEn = locationNameEn;
+		putQueryParameter("LocationNameEn", locationNameEn);
+	}
+
+	public String getIspNameEn() {
+		return this.ispNameEn;
+	}
+
+	public void setIspNameEn(String ispNameEn) {
+		this.ispNameEn = ispNameEn;
+		putQueryParameter("IspNameEn", ispNameEn);
+	}
+
+	public String getDomainType() {
+		return this.domainType;
+	}
+
+	public void setDomainType(String domainType) {
+		this.domainType = domainType;
+		putQueryParameter("DomainType", domainType);
+	}
+
+	public String getInterval() {
+		return this.interval;
+	}
+
+	public void setInterval(String interval) {
+		this.interval = interval;
+		putQueryParameter("Interval", interval);
 	}
 
 	@Override

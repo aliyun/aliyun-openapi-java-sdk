@@ -32,7 +32,7 @@ public class DescribeLiveRecordConfigResponseUnmarshaller {
 		
 		describeLiveRecordConfigResponse.setRequestId(context.stringValue("DescribeLiveRecordConfigResponse.RequestId"));
 
-		List<LiveAppRecord> liveAppRecordList = new ArrayList<LiveAppRecord>();
+		List<LiveAppRecord> liveAppRecordListList = new ArrayList<LiveAppRecord>();
 		for (int i = 0; i < context.lengthValue("DescribeLiveRecordConfigResponse.LiveAppRecordList.Length"); i++) {
 			LiveAppRecord liveAppRecord = new LiveAppRecord();
 			liveAppRecord.setDomainName(context.stringValue("DescribeLiveRecordConfigResponse.LiveAppRecordList["+ i +"].DomainName"));
@@ -42,9 +42,9 @@ public class DescribeLiveRecordConfigResponseUnmarshaller {
 			liveAppRecord.setOssObjectPrefix(context.stringValue("DescribeLiveRecordConfigResponse.LiveAppRecordList["+ i +"].OssObjectPrefix"));
 			liveAppRecord.setCreateTime(context.stringValue("DescribeLiveRecordConfigResponse.LiveAppRecordList["+ i +"].CreateTime"));
 
-			liveAppRecordList.add(liveAppRecord);
+			liveAppRecordListList.add(liveAppRecord);
 		}
-		describeLiveRecordConfigResponse.setLiveAppRecordList(liveAppRecordList);
+		describeLiveRecordConfigResponse.setLiveAppRecordList(liveAppRecordListList);
 	 
 	 	return describeLiveRecordConfigResponse;
 	}

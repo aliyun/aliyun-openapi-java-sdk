@@ -36,15 +36,15 @@ public class DescribeDomainHitRateDataResponseUnmarshaller {
 		describeDomainHitRateDataResponse.setStartTime(context.stringValue("DescribeDomainHitRateDataResponse.StartTime"));
 		describeDomainHitRateDataResponse.setEndTime(context.stringValue("DescribeDomainHitRateDataResponse.EndTime"));
 
-		List<DataModule> hitRateInterval = new ArrayList<DataModule>();
+		List<DataModule> hitRateIntervalList = new ArrayList<DataModule>();
 		for (int i = 0; i < context.lengthValue("DescribeDomainHitRateDataResponse.HitRateInterval.Length"); i++) {
 			DataModule dataModule = new DataModule();
 			dataModule.setTimeStamp(context.stringValue("DescribeDomainHitRateDataResponse.HitRateInterval["+ i +"].TimeStamp"));
 			dataModule.setValue(context.stringValue("DescribeDomainHitRateDataResponse.HitRateInterval["+ i +"].Value"));
 
-			hitRateInterval.add(dataModule);
+			hitRateIntervalList.add(dataModule);
 		}
-		describeDomainHitRateDataResponse.setHitRateInterval(hitRateInterval);
+		describeDomainHitRateDataResponse.setHitRateInterval(hitRateIntervalList);
 	 
 	 	return describeDomainHitRateDataResponse;
 	}

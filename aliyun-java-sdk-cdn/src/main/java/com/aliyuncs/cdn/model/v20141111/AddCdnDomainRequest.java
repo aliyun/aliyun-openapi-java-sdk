@@ -46,9 +46,11 @@ public class AddCdnDomainRequest extends RpcAcsRequest<AddCdnDomainResponse> {
 
 	private Integer sourcePort;
 
-	private String serverCertificate;
+	private String checkUrl;
 
-	private String privateKey;
+	private String region;
+
+	private String scope;
 
 	public Long getOwnerId() {
 		return this.ownerId;
@@ -122,22 +124,31 @@ public class AddCdnDomainRequest extends RpcAcsRequest<AddCdnDomainResponse> {
 		putQueryParameter("SourcePort", sourcePort);
 	}
 
-	public String getServerCertificate() {
-		return this.serverCertificate;
+	public String getCheckUrl() {
+		return this.checkUrl;
 	}
 
-	public void setServerCertificate(String serverCertificate) {
-		this.serverCertificate = serverCertificate;
-		putQueryParameter("ServerCertificate", serverCertificate);
+	public void setCheckUrl(String checkUrl) {
+		this.checkUrl = checkUrl;
+		putQueryParameter("CheckUrl", checkUrl);
 	}
 
-	public String getPrivateKey() {
-		return this.privateKey;
+	public String getRegion() {
+		return this.region;
 	}
 
-	public void setPrivateKey(String privateKey) {
-		this.privateKey = privateKey;
-		putQueryParameter("PrivateKey", privateKey);
+	public void setRegion(String region) {
+		this.region = region;
+		putQueryParameter("Region", region);
+	}
+
+	public String getScope() {
+		return this.scope;
+	}
+
+	public void setScope(String scope) {
+		this.scope = scope;
+		putQueryParameter("Scope", scope);
 	}
 
 	@Override

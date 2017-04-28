@@ -40,27 +40,36 @@ public class DescribeDomainBpsDataResponseUnmarshaller {
 		describeDomainBpsDataResponse.setLocationName(context.stringValue("DescribeDomainBpsDataResponse.LocationName"));
 		describeDomainBpsDataResponse.setIspName(context.stringValue("DescribeDomainBpsDataResponse.IspName"));
 
-		List<DataModule> bpsDataPerInterval = new ArrayList<DataModule>();
+		List<DataModule> bpsDataPerIntervalList = new ArrayList<DataModule>();
 		for (int i = 0; i < context.lengthValue("DescribeDomainBpsDataResponse.BpsDataPerInterval.Length"); i++) {
 			DataModule dataModule = new DataModule();
 			dataModule.setTimeStamp(context.stringValue("DescribeDomainBpsDataResponse.BpsDataPerInterval["+ i +"].TimeStamp"));
 			dataModule.setValue(context.stringValue("DescribeDomainBpsDataResponse.BpsDataPerInterval["+ i +"].Value"));
 			dataModule.setDomesticValue(context.stringValue("DescribeDomainBpsDataResponse.BpsDataPerInterval["+ i +"].DomesticValue"));
 			dataModule.setOverseasValue(context.stringValue("DescribeDomainBpsDataResponse.BpsDataPerInterval["+ i +"].OverseasValue"));
+			dataModule.setDynamicValue(context.stringValue("DescribeDomainBpsDataResponse.BpsDataPerInterval["+ i +"].DynamicValue"));
+			dataModule.setDynamicDomesticValue(context.stringValue("DescribeDomainBpsDataResponse.BpsDataPerInterval["+ i +"].DynamicDomesticValue"));
+			dataModule.setDynamicOverseasValue(context.stringValue("DescribeDomainBpsDataResponse.BpsDataPerInterval["+ i +"].DynamicOverseasValue"));
+			dataModule.setStaticValue(context.stringValue("DescribeDomainBpsDataResponse.BpsDataPerInterval["+ i +"].StaticValue"));
+			dataModule.setStaticDomesticValue(context.stringValue("DescribeDomainBpsDataResponse.BpsDataPerInterval["+ i +"].StaticDomesticValue"));
+			dataModule.setStaticOverseasValue(context.stringValue("DescribeDomainBpsDataResponse.BpsDataPerInterval["+ i +"].StaticOverseasValue"));
+			dataModule.setL2Value(context.stringValue("DescribeDomainBpsDataResponse.BpsDataPerInterval["+ i +"].L2Value"));
+			dataModule.setDomesticL2Value(context.stringValue("DescribeDomainBpsDataResponse.BpsDataPerInterval["+ i +"].DomesticL2Value"));
+			dataModule.setOverseasL2Value(context.stringValue("DescribeDomainBpsDataResponse.BpsDataPerInterval["+ i +"].OverseasL2Value"));
 
-			bpsDataPerInterval.add(dataModule);
+			bpsDataPerIntervalList.add(dataModule);
 		}
-		describeDomainBpsDataResponse.setBpsDataPerInterval(bpsDataPerInterval);
+		describeDomainBpsDataResponse.setBpsDataPerInterval(bpsDataPerIntervalList);
 
-		List<DataModule> supplyBpsDatas = new ArrayList<DataModule>();
+		List<DataModule> supplyBpsDatasList = new ArrayList<DataModule>();
 		for (int i = 0; i < context.lengthValue("DescribeDomainBpsDataResponse.SupplyBpsDatas.Length"); i++) {
 			DataModule dataModule = new DataModule();
 			dataModule.setTimeStamp(context.stringValue("DescribeDomainBpsDataResponse.SupplyBpsDatas["+ i +"].TimeStamp"));
 			dataModule.setValue(context.stringValue("DescribeDomainBpsDataResponse.SupplyBpsDatas["+ i +"].Value"));
 
-			supplyBpsDatas.add(dataModule);
+			supplyBpsDatasList.add(dataModule);
 		}
-		describeDomainBpsDataResponse.setSupplyBpsDatas(supplyBpsDatas);
+		describeDomainBpsDataResponse.setSupplyBpsDatas(supplyBpsDatasList);
 	 
 	 	return describeDomainBpsDataResponse;
 	}

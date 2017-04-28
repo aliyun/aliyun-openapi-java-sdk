@@ -149,6 +149,24 @@ public class DescribeDomainBpsDataResponse extends AcsResponse {
 
 		private String overseasValue;
 
+		private String dynamicValue;
+
+		private String dynamicDomesticValue;
+
+		private String dynamicOverseasValue;
+
+		private String staticValue;
+
+		private String staticDomesticValue;
+
+		private String staticOverseasValue;
+
+		private String l2Value;
+
+		private String domesticL2Value;
+
+		private String overseasL2Value;
+
 		public String getTimeStamp() {
 			return this.timeStamp;
 		}
@@ -179,6 +197,78 @@ public class DescribeDomainBpsDataResponse extends AcsResponse {
 
 		public void setOverseasValue(String overseasValue) {
 			this.overseasValue = overseasValue;
+		}
+
+		public String getDynamicValue() {
+			return this.dynamicValue;
+		}
+
+		public void setDynamicValue(String dynamicValue) {
+			this.dynamicValue = dynamicValue;
+		}
+
+		public String getDynamicDomesticValue() {
+			return this.dynamicDomesticValue;
+		}
+
+		public void setDynamicDomesticValue(String dynamicDomesticValue) {
+			this.dynamicDomesticValue = dynamicDomesticValue;
+		}
+
+		public String getDynamicOverseasValue() {
+			return this.dynamicOverseasValue;
+		}
+
+		public void setDynamicOverseasValue(String dynamicOverseasValue) {
+			this.dynamicOverseasValue = dynamicOverseasValue;
+		}
+
+		public String getStaticValue() {
+			return this.staticValue;
+		}
+
+		public void setStaticValue(String staticValue) {
+			this.staticValue = staticValue;
+		}
+
+		public String getStaticDomesticValue() {
+			return this.staticDomesticValue;
+		}
+
+		public void setStaticDomesticValue(String staticDomesticValue) {
+			this.staticDomesticValue = staticDomesticValue;
+		}
+
+		public String getStaticOverseasValue() {
+			return this.staticOverseasValue;
+		}
+
+		public void setStaticOverseasValue(String staticOverseasValue) {
+			this.staticOverseasValue = staticOverseasValue;
+		}
+
+		public String getL2Value() {
+			return this.l2Value;
+		}
+
+		public void setL2Value(String l2Value) {
+			this.l2Value = l2Value;
+		}
+
+		public String getDomesticL2Value() {
+			return this.domesticL2Value;
+		}
+
+		public void setDomesticL2Value(String domesticL2Value) {
+			this.domesticL2Value = domesticL2Value;
+		}
+
+		public String getOverseasL2Value() {
+			return this.overseasL2Value;
+		}
+
+		public void setOverseasL2Value(String overseasL2Value) {
+			this.overseasL2Value = overseasL2Value;
 		}
 	}
 

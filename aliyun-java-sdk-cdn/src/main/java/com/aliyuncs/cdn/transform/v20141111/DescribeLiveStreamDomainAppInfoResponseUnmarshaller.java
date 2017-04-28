@@ -32,7 +32,7 @@ public class DescribeLiveStreamDomainAppInfoResponseUnmarshaller {
 		
 		describeLiveStreamDomainAppInfoResponse.setRequestId(context.stringValue("DescribeLiveStreamDomainAppInfoResponse.RequestId"));
 
-		List<DomainAppInfo> domainAppList = new ArrayList<DomainAppInfo>();
+		List<DomainAppInfo> domainAppListList = new ArrayList<DomainAppInfo>();
 		for (int i = 0; i < context.lengthValue("DescribeLiveStreamDomainAppInfoResponse.DomainAppList.Length"); i++) {
 			DomainAppInfo domainAppInfo = new DomainAppInfo();
 			domainAppInfo.setAppDomain(context.stringValue("DescribeLiveStreamDomainAppInfoResponse.DomainAppList["+ i +"].AppDomain"));
@@ -44,9 +44,9 @@ public class DescribeLiveStreamDomainAppInfoResponseUnmarshaller {
 			domainAppInfo.setAppSecret(context.stringValue("DescribeLiveStreamDomainAppInfoResponse.DomainAppList["+ i +"].AppSecret"));
 			domainAppInfo.setUpdateTime(context.stringValue("DescribeLiveStreamDomainAppInfoResponse.DomainAppList["+ i +"].UpdateTime"));
 
-			domainAppList.add(domainAppInfo);
+			domainAppListList.add(domainAppInfo);
 		}
-		describeLiveStreamDomainAppInfoResponse.setDomainAppList(domainAppList);
+		describeLiveStreamDomainAppInfoResponse.setDomainAppList(domainAppListList);
 	 
 	 	return describeLiveStreamDomainAppInfoResponse;
 	}

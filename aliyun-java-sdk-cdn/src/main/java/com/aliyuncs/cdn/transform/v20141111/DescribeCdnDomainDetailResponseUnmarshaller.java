@@ -45,6 +45,7 @@ public class DescribeCdnDomainDetailResponseUnmarshaller {
 		getDomainDetailModel.setDescription(context.stringValue("DescribeCdnDomainDetailResponse.GetDomainDetailModel.Description"));
 		getDomainDetailModel.setServerCertificateStatus(context.stringValue("DescribeCdnDomainDetailResponse.GetDomainDetailModel.ServerCertificateStatus"));
 		getDomainDetailModel.setServerCertificate(context.stringValue("DescribeCdnDomainDetailResponse.GetDomainDetailModel.ServerCertificate"));
+		getDomainDetailModel.setRegion(context.stringValue("DescribeCdnDomainDetailResponse.GetDomainDetailModel.Region"));
 		getDomainDetailModel.setScope(context.stringValue("DescribeCdnDomainDetailResponse.GetDomainDetailModel.Scope"));
 		getDomainDetailModel.setCertificateName(context.stringValue("DescribeCdnDomainDetailResponse.GetDomainDetailModel.CertificateName"));
 

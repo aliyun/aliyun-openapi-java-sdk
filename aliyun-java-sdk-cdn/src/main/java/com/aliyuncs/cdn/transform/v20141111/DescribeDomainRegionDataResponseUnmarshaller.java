@@ -36,7 +36,7 @@ public class DescribeDomainRegionDataResponseUnmarshaller {
 		describeDomainRegionDataResponse.setStartTime(context.stringValue("DescribeDomainRegionDataResponse.StartTime"));
 		describeDomainRegionDataResponse.setEndTime(context.stringValue("DescribeDomainRegionDataResponse.EndTime"));
 
-		List<RegionProportionData> value = new ArrayList<RegionProportionData>();
+		List<RegionProportionData> valueList = new ArrayList<RegionProportionData>();
 		for (int i = 0; i < context.lengthValue("DescribeDomainRegionDataResponse.Value.Length"); i++) {
 			RegionProportionData regionProportionData = new RegionProportionData();
 			regionProportionData.setRegion(context.stringValue("DescribeDomainRegionDataResponse.Value["+ i +"].Region"));
@@ -54,9 +54,9 @@ public class DescribeDomainRegionDataResponseUnmarshaller {
 			regionProportionData.setBytesProportion(context.stringValue("DescribeDomainRegionDataResponse.Value["+ i +"].BytesProportion"));
 			regionProportionData.setTotalQuery(context.stringValue("DescribeDomainRegionDataResponse.Value["+ i +"].TotalQuery"));
 
-			value.add(regionProportionData);
+			valueList.add(regionProportionData);
 		}
-		describeDomainRegionDataResponse.setValue(value);
+		describeDomainRegionDataResponse.setValue(valueList);
 	 
 	 	return describeDomainRegionDataResponse;
 	}

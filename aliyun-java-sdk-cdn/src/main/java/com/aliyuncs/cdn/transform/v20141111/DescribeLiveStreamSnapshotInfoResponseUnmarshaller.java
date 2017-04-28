@@ -33,7 +33,7 @@ public class DescribeLiveStreamSnapshotInfoResponseUnmarshaller {
 		describeLiveStreamSnapshotInfoResponse.setRequestId(context.stringValue("DescribeLiveStreamSnapshotInfoResponse.RequestId"));
 		describeLiveStreamSnapshotInfoResponse.setNextStartTime(context.stringValue("DescribeLiveStreamSnapshotInfoResponse.NextStartTime"));
 
-		List<LiveStreamSnapshotInfo> liveStreamSnapshotInfoList = new ArrayList<LiveStreamSnapshotInfo>();
+		List<LiveStreamSnapshotInfo> liveStreamSnapshotInfoListList = new ArrayList<LiveStreamSnapshotInfo>();
 		for (int i = 0; i < context.lengthValue("DescribeLiveStreamSnapshotInfoResponse.LiveStreamSnapshotInfoList.Length"); i++) {
 			LiveStreamSnapshotInfo liveStreamSnapshotInfo = new LiveStreamSnapshotInfo();
 			liveStreamSnapshotInfo.setOssEndpoint(context.stringValue("DescribeLiveStreamSnapshotInfoResponse.LiveStreamSnapshotInfoList["+ i +"].OssEndpoint"));
@@ -41,9 +41,9 @@ public class DescribeLiveStreamSnapshotInfoResponseUnmarshaller {
 			liveStreamSnapshotInfo.setOssObject(context.stringValue("DescribeLiveStreamSnapshotInfoResponse.LiveStreamSnapshotInfoList["+ i +"].OssObject"));
 			liveStreamSnapshotInfo.setCreateTime(context.stringValue("DescribeLiveStreamSnapshotInfoResponse.LiveStreamSnapshotInfoList["+ i +"].CreateTime"));
 
-			liveStreamSnapshotInfoList.add(liveStreamSnapshotInfo);
+			liveStreamSnapshotInfoListList.add(liveStreamSnapshotInfo);
 		}
-		describeLiveStreamSnapshotInfoResponse.setLiveStreamSnapshotInfoList(liveStreamSnapshotInfoList);
+		describeLiveStreamSnapshotInfoResponse.setLiveStreamSnapshotInfoList(liveStreamSnapshotInfoListList);
 	 
 	 	return describeLiveStreamSnapshotInfoResponse;
 	}

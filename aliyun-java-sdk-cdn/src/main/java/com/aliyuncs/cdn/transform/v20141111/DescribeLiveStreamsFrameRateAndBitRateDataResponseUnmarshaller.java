@@ -32,7 +32,7 @@ public class DescribeLiveStreamsFrameRateAndBitRateDataResponseUnmarshaller {
 		
 		describeLiveStreamsFrameRateAndBitRateDataResponse.setRequestId(context.stringValue("DescribeLiveStreamsFrameRateAndBitRateDataResponse.RequestId"));
 
-		List<FrameRateAndBitRateInfo> frameRateAndBitRateInfos = new ArrayList<FrameRateAndBitRateInfo>();
+		List<FrameRateAndBitRateInfo> frameRateAndBitRateInfosList = new ArrayList<FrameRateAndBitRateInfo>();
 		for (int i = 0; i < context.lengthValue("DescribeLiveStreamsFrameRateAndBitRateDataResponse.FrameRateAndBitRateInfos.Length"); i++) {
 			FrameRateAndBitRateInfo frameRateAndBitRateInfo = new FrameRateAndBitRateInfo();
 			frameRateAndBitRateInfo.setStreamUrl(context.stringValue("DescribeLiveStreamsFrameRateAndBitRateDataResponse.FrameRateAndBitRateInfos["+ i +"].StreamUrl"));
@@ -41,9 +41,9 @@ public class DescribeLiveStreamsFrameRateAndBitRateDataResponseUnmarshaller {
 			frameRateAndBitRateInfo.setBitRate(context.floatValue("DescribeLiveStreamsFrameRateAndBitRateDataResponse.FrameRateAndBitRateInfos["+ i +"].BitRate"));
 			frameRateAndBitRateInfo.setTime(context.stringValue("DescribeLiveStreamsFrameRateAndBitRateDataResponse.FrameRateAndBitRateInfos["+ i +"].Time"));
 
-			frameRateAndBitRateInfos.add(frameRateAndBitRateInfo);
+			frameRateAndBitRateInfosList.add(frameRateAndBitRateInfo);
 		}
-		describeLiveStreamsFrameRateAndBitRateDataResponse.setFrameRateAndBitRateInfos(frameRateAndBitRateInfos);
+		describeLiveStreamsFrameRateAndBitRateDataResponse.setFrameRateAndBitRateInfos(frameRateAndBitRateInfosList);
 	 
 	 	return describeLiveStreamsFrameRateAndBitRateDataResponse;
 	}

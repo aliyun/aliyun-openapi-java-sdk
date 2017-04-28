@@ -36,7 +36,7 @@ public class DescribeTopDomainsByFlowResponseUnmarshaller {
 		describeTopDomainsByFlowResponse.setDomainCount(context.longValue("DescribeTopDomainsByFlowResponse.DomainCount"));
 		describeTopDomainsByFlowResponse.setDomainOnlineCount(context.longValue("DescribeTopDomainsByFlowResponse.DomainOnlineCount"));
 
-		List<TopDomain> topDomains = new ArrayList<TopDomain>();
+		List<TopDomain> topDomainsList = new ArrayList<TopDomain>();
 		for (int i = 0; i < context.lengthValue("DescribeTopDomainsByFlowResponse.TopDomains.Length"); i++) {
 			TopDomain topDomain = new TopDomain();
 			topDomain.setDomainName(context.stringValue("DescribeTopDomainsByFlowResponse.TopDomains["+ i +"].DomainName"));
@@ -47,9 +47,9 @@ public class DescribeTopDomainsByFlowResponseUnmarshaller {
 			topDomain.setMaxBpsTime(context.stringValue("DescribeTopDomainsByFlowResponse.TopDomains["+ i +"].MaxBpsTime"));
 			topDomain.setTotalAccess(context.longValue("DescribeTopDomainsByFlowResponse.TopDomains["+ i +"].TotalAccess"));
 
-			topDomains.add(topDomain);
+			topDomainsList.add(topDomain);
 		}
-		describeTopDomainsByFlowResponse.setTopDomains(topDomains);
+		describeTopDomainsByFlowResponse.setTopDomains(topDomainsList);
 	 
 	 	return describeTopDomainsByFlowResponse;
 	}

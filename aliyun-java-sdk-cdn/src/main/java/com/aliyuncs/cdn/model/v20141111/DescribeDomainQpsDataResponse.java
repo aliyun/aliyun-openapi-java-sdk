@@ -105,6 +105,18 @@ public class DescribeDomainQpsDataResponse extends AcsResponse {
 
 		private String accOverseasValue;
 
+		private String dynamicValue;
+
+		private String dynamicDomesticValue;
+
+		private String dynamicOverseasValue;
+
+		private String staticValue;
+
+		private String staticDomesticValue;
+
+		private String staticOverseasValue;
+
 		public String getTimeStamp() {
 			return this.timeStamp;
 		}
@@ -159,6 +171,54 @@ public class DescribeDomainQpsDataResponse extends AcsResponse {
 
 		public void setAccOverseasValue(String accOverseasValue) {
 			this.accOverseasValue = accOverseasValue;
+		}
+
+		public String getDynamicValue() {
+			return this.dynamicValue;
+		}
+
+		public void setDynamicValue(String dynamicValue) {
+			this.dynamicValue = dynamicValue;
+		}
+
+		public String getDynamicDomesticValue() {
+			return this.dynamicDomesticValue;
+		}
+
+		public void setDynamicDomesticValue(String dynamicDomesticValue) {
+			this.dynamicDomesticValue = dynamicDomesticValue;
+		}
+
+		public String getDynamicOverseasValue() {
+			return this.dynamicOverseasValue;
+		}
+
+		public void setDynamicOverseasValue(String dynamicOverseasValue) {
+			this.dynamicOverseasValue = dynamicOverseasValue;
+		}
+
+		public String getStaticValue() {
+			return this.staticValue;
+		}
+
+		public void setStaticValue(String staticValue) {
+			this.staticValue = staticValue;
+		}
+
+		public String getStaticDomesticValue() {
+			return this.staticDomesticValue;
+		}
+
+		public void setStaticDomesticValue(String staticDomesticValue) {
+			this.staticDomesticValue = staticDomesticValue;
+		}
+
+		public String getStaticOverseasValue() {
+			return this.staticOverseasValue;
+		}
+
+		public void setStaticOverseasValue(String staticOverseasValue) {
+			this.staticOverseasValue = staticOverseasValue;
 		}
 	}
 

@@ -35,7 +35,7 @@ public class DescribeUserDomainsResponseUnmarshaller {
 		describeUserDomainsResponse.setPageSize(context.longValue("DescribeUserDomainsResponse.PageSize"));
 		describeUserDomainsResponse.setTotalCount(context.longValue("DescribeUserDomainsResponse.TotalCount"));
 
-		List<PageData> domains = new ArrayList<PageData>();
+		List<PageData> domainsList = new ArrayList<PageData>();
 		for (int i = 0; i < context.lengthValue("DescribeUserDomainsResponse.Domains.Length"); i++) {
 			PageData pageData = new PageData();
 			pageData.setDomainName(context.stringValue("DescribeUserDomainsResponse.Domains["+ i +"].DomainName"));
@@ -54,9 +54,9 @@ public class DescribeUserDomainsResponseUnmarshaller {
 			}
 			pageData.setSources(sources);
 
-			domains.add(pageData);
+			domainsList.add(pageData);
 		}
-		describeUserDomainsResponse.setDomains(domains);
+		describeUserDomainsResponse.setDomains(domainsList);
 	 
 	 	return describeUserDomainsResponse;
 	}

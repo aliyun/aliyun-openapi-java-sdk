@@ -36,15 +36,15 @@ public class DescribeDomainUvDataResponseUnmarshaller {
 		describeDomainUvDataResponse.setStartTime(context.stringValue("DescribeDomainUvDataResponse.StartTime"));
 		describeDomainUvDataResponse.setEndTime(context.stringValue("DescribeDomainUvDataResponse.EndTime"));
 
-		List<UsageData> uvDataInterval = new ArrayList<UsageData>();
+		List<UsageData> uvDataIntervalList = new ArrayList<UsageData>();
 		for (int i = 0; i < context.lengthValue("DescribeDomainUvDataResponse.UvDataInterval.Length"); i++) {
 			UsageData usageData = new UsageData();
 			usageData.setTimeStamp(context.stringValue("DescribeDomainUvDataResponse.UvDataInterval["+ i +"].TimeStamp"));
 			usageData.setValue(context.stringValue("DescribeDomainUvDataResponse.UvDataInterval["+ i +"].Value"));
 
-			uvDataInterval.add(usageData);
+			uvDataIntervalList.add(usageData);
 		}
-		describeDomainUvDataResponse.setUvDataInterval(uvDataInterval);
+		describeDomainUvDataResponse.setUvDataInterval(uvDataIntervalList);
 	 
 	 	return describeDomainUvDataResponse;
 	}

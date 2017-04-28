@@ -91,6 +91,8 @@ public class DescribeRefreshTasksResponse extends AcsResponse {
 
 		private String creationTime;
 
+		private String description;
+
 		public String getTaskId() {
 			return this.taskId;
 		}
@@ -129,6 +131,14 @@ public class DescribeRefreshTasksResponse extends AcsResponse {
 
 		public void setCreationTime(String creationTime) {
 			this.creationTime = creationTime;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
 		}
 	}
 

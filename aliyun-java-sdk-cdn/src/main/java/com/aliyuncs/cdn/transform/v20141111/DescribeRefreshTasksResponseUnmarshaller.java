@@ -35,7 +35,7 @@ public class DescribeRefreshTasksResponseUnmarshaller {
 		describeRefreshTasksResponse.setPageSize(context.longValue("DescribeRefreshTasksResponse.PageSize"));
 		describeRefreshTasksResponse.setTotalCount(context.longValue("DescribeRefreshTasksResponse.TotalCount"));
 
-		List<CDNTask> tasks = new ArrayList<CDNTask>();
+		List<CDNTask> tasksList = new ArrayList<CDNTask>();
 		for (int i = 0; i < context.lengthValue("DescribeRefreshTasksResponse.Tasks.Length"); i++) {
 			CDNTask cDNTask = new CDNTask();
 			cDNTask.setTaskId(context.stringValue("DescribeRefreshTasksResponse.Tasks["+ i +"].TaskId"));
@@ -43,10 +43,11 @@ public class DescribeRefreshTasksResponseUnmarshaller {
 			cDNTask.setProcess(context.stringValue("DescribeRefreshTasksResponse.Tasks["+ i +"].Process"));
 			cDNTask.setStatus(context.stringValue("DescribeRefreshTasksResponse.Tasks["+ i +"].Status"));
 			cDNTask.setCreationTime(context.stringValue("DescribeRefreshTasksResponse.Tasks["+ i +"].CreationTime"));
+			cDNTask.setDescription(context.stringValue("DescribeRefreshTasksResponse.Tasks["+ i +"].Description"));
 
-			tasks.add(cDNTask);
+			tasksList.add(cDNTask);
 		}
-		describeRefreshTasksResponse.setTasks(tasks);
+		describeRefreshTasksResponse.setTasks(tasksList);
 	 
 	 	return describeRefreshTasksResponse;
 	}

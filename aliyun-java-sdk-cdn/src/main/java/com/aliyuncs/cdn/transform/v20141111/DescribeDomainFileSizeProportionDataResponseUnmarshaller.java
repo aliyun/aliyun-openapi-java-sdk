@@ -37,24 +37,24 @@ public class DescribeDomainFileSizeProportionDataResponseUnmarshaller {
 		describeDomainFileSizeProportionDataResponse.setStartTime(context.stringValue("DescribeDomainFileSizeProportionDataResponse.StartTime"));
 		describeDomainFileSizeProportionDataResponse.setEndTime(context.stringValue("DescribeDomainFileSizeProportionDataResponse.EndTime"));
 
-		List<UsageData> fileSizeProportionDataInterval = new ArrayList<UsageData>();
+		List<UsageData> fileSizeProportionDataIntervalList = new ArrayList<UsageData>();
 		for (int i = 0; i < context.lengthValue("DescribeDomainFileSizeProportionDataResponse.FileSizeProportionDataInterval.Length"); i++) {
 			UsageData usageData = new UsageData();
 			usageData.setTimeStamp(context.stringValue("DescribeDomainFileSizeProportionDataResponse.FileSizeProportionDataInterval["+ i +"].TimeStamp"));
 
-			List<FileSizeProportionData> value = new ArrayList<FileSizeProportionData>();
+			List<FileSizeProportionData> valueList = new ArrayList<FileSizeProportionData>();
 			for (int j = 0; j < context.lengthValue("DescribeDomainFileSizeProportionDataResponse.FileSizeProportionDataInterval["+ i +"].Value.Length"); j++) {
 				FileSizeProportionData fileSizeProportionData = new FileSizeProportionData();
 				fileSizeProportionData.setFileSize(context.stringValue("DescribeDomainFileSizeProportionDataResponse.FileSizeProportionDataInterval["+ i +"].Value["+ j +"].FileSize"));
 				fileSizeProportionData.setProportion(context.stringValue("DescribeDomainFileSizeProportionDataResponse.FileSizeProportionDataInterval["+ i +"].Value["+ j +"].Proportion"));
 
-				value.add(fileSizeProportionData);
+				valueList.add(fileSizeProportionData);
 			}
-			usageData.setValue(value);
+			usageData.setValue(valueList);
 
-			fileSizeProportionDataInterval.add(usageData);
+			fileSizeProportionDataIntervalList.add(usageData);
 		}
-		describeDomainFileSizeProportionDataResponse.setFileSizeProportionDataInterval(fileSizeProportionDataInterval);
+		describeDomainFileSizeProportionDataResponse.setFileSizeProportionDataInterval(fileSizeProportionDataIntervalList);
 	 
 	 	return describeDomainFileSizeProportionDataResponse;
 	}

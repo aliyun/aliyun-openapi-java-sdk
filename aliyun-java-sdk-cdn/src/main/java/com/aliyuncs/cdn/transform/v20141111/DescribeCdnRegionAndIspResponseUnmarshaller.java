@@ -33,25 +33,25 @@ public class DescribeCdnRegionAndIspResponseUnmarshaller {
 		
 		describeCdnRegionAndIspResponse.setRequestId(context.stringValue("DescribeCdnRegionAndIspResponse.RequestId"));
 
-		List<Region> regions = new ArrayList<Region>();
+		List<Region> regionsList = new ArrayList<Region>();
 		for (int i = 0; i < context.lengthValue("DescribeCdnRegionAndIspResponse.Regions.Length"); i++) {
 			Region region = new Region();
 			region.setNameZh(context.stringValue("DescribeCdnRegionAndIspResponse.Regions["+ i +"].NameZh"));
 			region.setNameEn(context.stringValue("DescribeCdnRegionAndIspResponse.Regions["+ i +"].NameEn"));
 
-			regions.add(region);
+			regionsList.add(region);
 		}
-		describeCdnRegionAndIspResponse.setRegions(regions);
+		describeCdnRegionAndIspResponse.setRegions(regionsList);
 
-		List<Isp> isps = new ArrayList<Isp>();
+		List<Isp> ispsList = new ArrayList<Isp>();
 		for (int i = 0; i < context.lengthValue("DescribeCdnRegionAndIspResponse.Isps.Length"); i++) {
 			Isp isp = new Isp();
 			isp.setNameZh(context.stringValue("DescribeCdnRegionAndIspResponse.Isps["+ i +"].NameZh"));
 			isp.setNameEn(context.stringValue("DescribeCdnRegionAndIspResponse.Isps["+ i +"].NameEn"));
 
-			isps.add(isp);
+			ispsList.add(isp);
 		}
-		describeCdnRegionAndIspResponse.setIsps(isps);
+		describeCdnRegionAndIspResponse.setIsps(ispsList);
 	 
 	 	return describeCdnRegionAndIspResponse;
 	}

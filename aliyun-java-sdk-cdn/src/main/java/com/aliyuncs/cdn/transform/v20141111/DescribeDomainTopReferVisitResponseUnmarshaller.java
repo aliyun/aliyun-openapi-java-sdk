@@ -34,7 +34,7 @@ public class DescribeDomainTopReferVisitResponseUnmarshaller {
 		describeDomainTopReferVisitResponse.setDomainName(context.stringValue("DescribeDomainTopReferVisitResponse.DomainName"));
 		describeDomainTopReferVisitResponse.setStartTime(context.stringValue("DescribeDomainTopReferVisitResponse.StartTime"));
 
-		List<ReferList> topReferList = new ArrayList<ReferList>();
+		List<ReferList> topReferListList = new ArrayList<ReferList>();
 		for (int i = 0; i < context.lengthValue("DescribeDomainTopReferVisitResponse.TopReferList.Length"); i++) {
 			ReferList referList = new ReferList();
 			referList.setReferDetail(context.stringValue("DescribeDomainTopReferVisitResponse.TopReferList["+ i +"].ReferDetail"));
@@ -43,9 +43,9 @@ public class DescribeDomainTopReferVisitResponseUnmarshaller {
 			referList.setFlow(context.stringValue("DescribeDomainTopReferVisitResponse.TopReferList["+ i +"].Flow"));
 			referList.setFlowProportion(context.floatValue("DescribeDomainTopReferVisitResponse.TopReferList["+ i +"].FlowProportion"));
 
-			topReferList.add(referList);
+			topReferListList.add(referList);
 		}
-		describeDomainTopReferVisitResponse.setTopReferList(topReferList);
+		describeDomainTopReferVisitResponse.setTopReferList(topReferListList);
 	 
 	 	return describeDomainTopReferVisitResponse;
 	}

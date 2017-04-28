@@ -36,7 +36,7 @@ public class DescribeDomainISPDataResponseUnmarshaller {
 		describeDomainISPDataResponse.setStartTime(context.stringValue("DescribeDomainISPDataResponse.StartTime"));
 		describeDomainISPDataResponse.setEndTime(context.stringValue("DescribeDomainISPDataResponse.EndTime"));
 
-		List<ISPProportionData> value = new ArrayList<ISPProportionData>();
+		List<ISPProportionData> valueList = new ArrayList<ISPProportionData>();
 		for (int i = 0; i < context.lengthValue("DescribeDomainISPDataResponse.Value.Length"); i++) {
 			ISPProportionData iSPProportionData = new ISPProportionData();
 			iSPProportionData.setISP(context.stringValue("DescribeDomainISPDataResponse.Value["+ i +"].ISP"));
@@ -54,9 +54,9 @@ public class DescribeDomainISPDataResponseUnmarshaller {
 			iSPProportionData.setBytesProportion(context.stringValue("DescribeDomainISPDataResponse.Value["+ i +"].BytesProportion"));
 			iSPProportionData.setTotalQuery(context.stringValue("DescribeDomainISPDataResponse.Value["+ i +"].TotalQuery"));
 
-			value.add(iSPProportionData);
+			valueList.add(iSPProportionData);
 		}
-		describeDomainISPDataResponse.setValue(value);
+		describeDomainISPDataResponse.setValue(valueList);
 	 
 	 	return describeDomainISPDataResponse;
 	}

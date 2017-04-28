@@ -30,7 +30,7 @@ public class DescribeL2VipsByDomainResponseUnmarshaller {
 	public static DescribeL2VipsByDomainResponse unmarshall(DescribeL2VipsByDomainResponse describeL2VipsByDomainResponse, UnmarshallerContext context) {
 		
 		describeL2VipsByDomainResponse.setRequestId(context.stringValue("DescribeL2VipsByDomainResponse.RequestId"));
-		describeL2VipsByDomainResponse.setDomainName(context.longValue("DescribeL2VipsByDomainResponse.DomainName"));
+		describeL2VipsByDomainResponse.setDomainName(context.stringValue("DescribeL2VipsByDomainResponse.DomainName"));
 
 		List<String> vips = new ArrayList<String>();
 		for (int i = 0; i < context.lengthValue("DescribeL2VipsByDomainResponse.Vips.Length"); i++) {

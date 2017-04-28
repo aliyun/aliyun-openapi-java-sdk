@@ -53,6 +53,8 @@ public class DescribeLiveStreamPushDataResponse extends AcsResponse {
 
 		private String time;
 
+		private String stream;
+
 		private Float frameRate;
 
 		private Float bitRate;
@@ -69,6 +71,14 @@ public class DescribeLiveStreamPushDataResponse extends AcsResponse {
 
 		public void setTime(String time) {
 			this.time = time;
+		}
+
+		public String getStream() {
+			return this.stream;
+		}
+
+		public void setStream(String stream) {
+			this.stream = stream;
 		}
 
 		public Float getFrameRate() {

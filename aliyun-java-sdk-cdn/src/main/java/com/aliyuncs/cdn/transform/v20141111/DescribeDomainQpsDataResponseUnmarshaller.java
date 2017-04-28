@@ -36,7 +36,7 @@ public class DescribeDomainQpsDataResponseUnmarshaller {
 		describeDomainQpsDataResponse.setStartTime(context.stringValue("DescribeDomainQpsDataResponse.StartTime"));
 		describeDomainQpsDataResponse.setEndTime(context.stringValue("DescribeDomainQpsDataResponse.EndTime"));
 
-		List<DataModule> qpsDataInterval = new ArrayList<DataModule>();
+		List<DataModule> qpsDataIntervalList = new ArrayList<DataModule>();
 		for (int i = 0; i < context.lengthValue("DescribeDomainQpsDataResponse.QpsDataInterval.Length"); i++) {
 			DataModule dataModule = new DataModule();
 			dataModule.setTimeStamp(context.stringValue("DescribeDomainQpsDataResponse.QpsDataInterval["+ i +"].TimeStamp"));
@@ -46,10 +46,16 @@ public class DescribeDomainQpsDataResponseUnmarshaller {
 			dataModule.setAccValue(context.stringValue("DescribeDomainQpsDataResponse.QpsDataInterval["+ i +"].AccValue"));
 			dataModule.setAccDomesticValue(context.stringValue("DescribeDomainQpsDataResponse.QpsDataInterval["+ i +"].AccDomesticValue"));
 			dataModule.setAccOverseasValue(context.stringValue("DescribeDomainQpsDataResponse.QpsDataInterval["+ i +"].AccOverseasValue"));
+			dataModule.setDynamicValue(context.stringValue("DescribeDomainQpsDataResponse.QpsDataInterval["+ i +"].DynamicValue"));
+			dataModule.setDynamicDomesticValue(context.stringValue("DescribeDomainQpsDataResponse.QpsDataInterval["+ i +"].DynamicDomesticValue"));
+			dataModule.setDynamicOverseasValue(context.stringValue("DescribeDomainQpsDataResponse.QpsDataInterval["+ i +"].DynamicOverseasValue"));
+			dataModule.setStaticValue(context.stringValue("DescribeDomainQpsDataResponse.QpsDataInterval["+ i +"].StaticValue"));
+			dataModule.setStaticDomesticValue(context.stringValue("DescribeDomainQpsDataResponse.QpsDataInterval["+ i +"].StaticDomesticValue"));
+			dataModule.setStaticOverseasValue(context.stringValue("DescribeDomainQpsDataResponse.QpsDataInterval["+ i +"].StaticOverseasValue"));
 
-			qpsDataInterval.add(dataModule);
+			qpsDataIntervalList.add(dataModule);
 		}
-		describeDomainQpsDataResponse.setQpsDataInterval(qpsDataInterval);
+		describeDomainQpsDataResponse.setQpsDataInterval(qpsDataIntervalList);
 	 
 	 	return describeDomainQpsDataResponse;
 	}

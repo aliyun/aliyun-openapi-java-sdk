@@ -40,6 +40,8 @@ public class DescribeCdnMonitorDataRequest extends RpcAcsRequest<DescribeCdnMoni
 
 	private String endTime;
 
+	private String interval;
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -83,6 +85,15 @@ public class DescribeCdnMonitorDataRequest extends RpcAcsRequest<DescribeCdnMoni
 	public void setEndTime(String endTime) {
 		this.endTime = endTime;
 		putQueryParameter("EndTime", endTime);
+	}
+
+	public String getInterval() {
+		return this.interval;
+	}
+
+	public void setInterval(String interval) {
+		this.interval = interval;
+		putQueryParameter("Interval", interval);
 	}
 
 	@Override

@@ -32,15 +32,15 @@ public class DescribeDomainUpstreamBpsOfEdgeResponseUnmarshaller {
 		
 		describeDomainUpstreamBpsOfEdgeResponse.setRequestId(context.stringValue("DescribeDomainUpstreamBpsOfEdgeResponse.RequestId"));
 
-		List<DomainBpsModel> bpsDatas = new ArrayList<DomainBpsModel>();
+		List<DomainBpsModel> bpsDatasList = new ArrayList<DomainBpsModel>();
 		for (int i = 0; i < context.lengthValue("DescribeDomainUpstreamBpsOfEdgeResponse.BpsDatas.Length"); i++) {
 			DomainBpsModel domainBpsModel = new DomainBpsModel();
 			domainBpsModel.setTime(context.stringValue("DescribeDomainUpstreamBpsOfEdgeResponse.BpsDatas["+ i +"].Time"));
 			domainBpsModel.setBps(context.floatValue("DescribeDomainUpstreamBpsOfEdgeResponse.BpsDatas["+ i +"].Bps"));
 
-			bpsDatas.add(domainBpsModel);
+			bpsDatasList.add(domainBpsModel);
 		}
-		describeDomainUpstreamBpsOfEdgeResponse.setBpsDatas(bpsDatas);
+		describeDomainUpstreamBpsOfEdgeResponse.setBpsDatas(bpsDatasList);
 	 
 	 	return describeDomainUpstreamBpsOfEdgeResponse;
 	}

@@ -42,9 +42,13 @@ public class DescribeDomainBpsDataRequest extends RpcAcsRequest<DescribeDomainBp
 
 	private String timeMerge;
 
+	private String interval;
+
 	private String locationNameEn;
 
 	private String ispNameEn;
+
+	private String domainType;
 
 	public Long getOwnerId() {
 		return this.ownerId;
@@ -100,6 +104,15 @@ public class DescribeDomainBpsDataRequest extends RpcAcsRequest<DescribeDomainBp
 		putQueryParameter("TimeMerge", timeMerge);
 	}
 
+	public String getInterval() {
+		return this.interval;
+	}
+
+	public void setInterval(String interval) {
+		this.interval = interval;
+		putQueryParameter("Interval", interval);
+	}
+
 	public String getLocationNameEn() {
 		return this.locationNameEn;
 	}
@@ -116,6 +129,15 @@ public class DescribeDomainBpsDataRequest extends RpcAcsRequest<DescribeDomainBp
 	public void setIspNameEn(String ispNameEn) {
 		this.ispNameEn = ispNameEn;
 		putQueryParameter("IspNameEn", ispNameEn);
+	}
+
+	public String getDomainType() {
+		return this.domainType;
+	}
+
+	public void setDomainType(String domainType) {
+		this.domainType = domainType;
+		putQueryParameter("DomainType", domainType);
 	}
 
 	@Override

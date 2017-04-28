@@ -75,6 +75,8 @@ public class DescribeCdnDomainDetailResponse extends AcsResponse {
 
 		private String serverCertificate;
 
+		private String region;
+
 		private String scope;
 
 		private String certificateName;
@@ -175,6 +177,14 @@ public class DescribeCdnDomainDetailResponse extends AcsResponse {
 
 		public void setServerCertificate(String serverCertificate) {
 			this.serverCertificate = serverCertificate;
+		}
+
+		public String getRegion() {
+			return this.region;
+		}
+
+		public void setRegion(String region) {
+			this.region = region;
 		}
 
 		public String getScope() {

@@ -42,6 +42,8 @@ public class DescribeDomainSrcFlowDataRequest extends RpcAcsRequest<DescribeDoma
 
 	private String timeMerge;
 
+	private String interval;
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -94,6 +96,15 @@ public class DescribeDomainSrcFlowDataRequest extends RpcAcsRequest<DescribeDoma
 	public void setTimeMerge(String timeMerge) {
 		this.timeMerge = timeMerge;
 		putQueryParameter("TimeMerge", timeMerge);
+	}
+
+	public String getInterval() {
+		return this.interval;
+	}
+
+	public void setInterval(String interval) {
+		this.interval = interval;
+		putQueryParameter("Interval", interval);
 	}
 
 	@Override

@@ -32,16 +32,16 @@ public class StartMixStreamsServiceResponseUnmarshaller {
 		
 		startMixStreamsServiceResponse.setRequestId(context.stringValue("StartMixStreamsServiceResponse.RequestId"));
 
-		List<MixStreamsInfo> mixStreamsInfoList = new ArrayList<MixStreamsInfo>();
+		List<MixStreamsInfo> mixStreamsInfoListList = new ArrayList<MixStreamsInfo>();
 		for (int i = 0; i < context.lengthValue("StartMixStreamsServiceResponse.MixStreamsInfoList.Length"); i++) {
 			MixStreamsInfo mixStreamsInfo = new MixStreamsInfo();
 			mixStreamsInfo.setDomainName(context.stringValue("StartMixStreamsServiceResponse.MixStreamsInfoList["+ i +"].DomainName"));
 			mixStreamsInfo.setAppName(context.stringValue("StartMixStreamsServiceResponse.MixStreamsInfoList["+ i +"].AppName"));
 			mixStreamsInfo.setStreamName(context.stringValue("StartMixStreamsServiceResponse.MixStreamsInfoList["+ i +"].StreamName"));
 
-			mixStreamsInfoList.add(mixStreamsInfo);
+			mixStreamsInfoListList.add(mixStreamsInfo);
 		}
-		startMixStreamsServiceResponse.setMixStreamsInfoList(mixStreamsInfoList);
+		startMixStreamsServiceResponse.setMixStreamsInfoList(mixStreamsInfoListList);
 	 
 	 	return startMixStreamsServiceResponse;
 	}

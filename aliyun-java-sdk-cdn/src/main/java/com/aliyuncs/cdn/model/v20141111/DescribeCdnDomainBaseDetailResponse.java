@@ -59,6 +59,8 @@ public class DescribeCdnDomainBaseDetailResponse extends AcsResponse {
 
 		private String sourceType;
 
+		private String region;
+
 		private String domainName;
 
 		private String remark;
@@ -99,6 +101,14 @@ public class DescribeCdnDomainBaseDetailResponse extends AcsResponse {
 
 		public void setSourceType(String sourceType) {
 			this.sourceType = sourceType;
+		}
+
+		public String getRegion() {
+			return this.region;
+		}
+
+		public void setRegion(String region) {
+			this.region = region;
 		}
 
 		public String getDomainName() {

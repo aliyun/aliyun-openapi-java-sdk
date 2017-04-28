@@ -36,10 +36,6 @@ public class DescribeLiveStreamPushErrorsRequest extends RpcAcsRequest<DescribeL
 
 	private String domainName;
 
-	private String appName;
-
-	private String streamName;
-
 	private String startTime;
 
 	private String endTime;
@@ -69,24 +65,6 @@ public class DescribeLiveStreamPushErrorsRequest extends RpcAcsRequest<DescribeL
 	public void setDomainName(String domainName) {
 		this.domainName = domainName;
 		putQueryParameter("DomainName", domainName);
-	}
-
-	public String getAppName() {
-		return this.appName;
-	}
-
-	public void setAppName(String appName) {
-		this.appName = appName;
-		putQueryParameter("AppName", appName);
-	}
-
-	public String getStreamName() {
-		return this.streamName;
-	}
-
-	public void setStreamName(String streamName) {
-		this.streamName = streamName;
-		putQueryParameter("StreamName", streamName);
 	}
 
 	public String getStartTime() {

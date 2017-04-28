@@ -48,7 +48,7 @@ public class DescribeDomainsUsageByDayResponseUnmarshaller {
 		usageTotal.setTotalTraffic(context.stringValue("DescribeDomainsUsageByDayResponse.UsageTotal.TotalTraffic"));
 		describeDomainsUsageByDayResponse.setUsageTotal(usageTotal);
 
-		List<UsageByDay> usageByDays = new ArrayList<UsageByDay>();
+		List<UsageByDay> usageByDaysList = new ArrayList<UsageByDay>();
 		for (int i = 0; i < context.lengthValue("DescribeDomainsUsageByDayResponse.UsageByDays.Length"); i++) {
 			UsageByDay usageByDay = new UsageByDay();
 			usageByDay.setTimeStamp(context.stringValue("DescribeDomainsUsageByDayResponse.UsageByDays["+ i +"].TimeStamp"));
@@ -62,9 +62,9 @@ public class DescribeDomainsUsageByDayResponseUnmarshaller {
 			usageByDay.setTotalAccess(context.stringValue("DescribeDomainsUsageByDayResponse.UsageByDays["+ i +"].TotalAccess"));
 			usageByDay.setTotalTraffic(context.stringValue("DescribeDomainsUsageByDayResponse.UsageByDays["+ i +"].TotalTraffic"));
 
-			usageByDays.add(usageByDay);
+			usageByDaysList.add(usageByDay);
 		}
-		describeDomainsUsageByDayResponse.setUsageByDays(usageByDays);
+		describeDomainsUsageByDayResponse.setUsageByDays(usageByDaysList);
 	 
 	 	return describeDomainsUsageByDayResponse;
 	}

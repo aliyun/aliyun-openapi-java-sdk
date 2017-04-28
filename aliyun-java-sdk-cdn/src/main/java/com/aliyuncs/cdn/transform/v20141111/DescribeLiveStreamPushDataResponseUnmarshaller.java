@@ -32,19 +32,20 @@ public class DescribeLiveStreamPushDataResponseUnmarshaller {
 		
 		describeLiveStreamPushDataResponse.setRequestId(context.stringValue("DescribeLiveStreamPushDataResponse.RequestId"));
 
-		List<PushStreamModel> pushStreamModelList = new ArrayList<PushStreamModel>();
+		List<PushStreamModel> pushStreamModelListList = new ArrayList<PushStreamModel>();
 		for (int i = 0; i < context.lengthValue("DescribeLiveStreamPushDataResponse.PushStreamModelList.Length"); i++) {
 			PushStreamModel pushStreamModel = new PushStreamModel();
 			pushStreamModel.setTime(context.stringValue("DescribeLiveStreamPushDataResponse.PushStreamModelList["+ i +"].Time"));
+			pushStreamModel.setStream(context.stringValue("DescribeLiveStreamPushDataResponse.PushStreamModelList["+ i +"].Stream"));
 			pushStreamModel.setFrameRate(context.floatValue("DescribeLiveStreamPushDataResponse.PushStreamModelList["+ i +"].FrameRate"));
 			pushStreamModel.setBitRate(context.floatValue("DescribeLiveStreamPushDataResponse.PushStreamModelList["+ i +"].BitRate"));
 			pushStreamModel.setFrameLossRate(context.floatValue("DescribeLiveStreamPushDataResponse.PushStreamModelList["+ i +"].FrameLossRate"));
 			pushStreamModel.setServerAddr(context.stringValue("DescribeLiveStreamPushDataResponse.PushStreamModelList["+ i +"].ServerAddr"));
 			pushStreamModel.setClientAddr(context.stringValue("DescribeLiveStreamPushDataResponse.PushStreamModelList["+ i +"].ClientAddr"));
 
-			pushStreamModelList.add(pushStreamModel);
+			pushStreamModelListList.add(pushStreamModel);
 		}
-		describeLiveStreamPushDataResponse.setPushStreamModelList(pushStreamModelList);
+		describeLiveStreamPushDataResponse.setPushStreamModelList(pushStreamModelListList);
 	 
 	 	return describeLiveStreamPushDataResponse;
 	}

@@ -32,7 +32,7 @@ public class DescribeLiveStreamTranscodeInfoResponseUnmarshaller {
 		
 		describeLiveStreamTranscodeInfoResponse.setRequestId(context.stringValue("DescribeLiveStreamTranscodeInfoResponse.RequestId"));
 
-		List<DomainTranscodeInfo> domainTranscodeList = new ArrayList<DomainTranscodeInfo>();
+		List<DomainTranscodeInfo> domainTranscodeListList = new ArrayList<DomainTranscodeInfo>();
 		for (int i = 0; i < context.lengthValue("DescribeLiveStreamTranscodeInfoResponse.DomainTranscodeList.Length"); i++) {
 			DomainTranscodeInfo domainTranscodeInfo = new DomainTranscodeInfo();
 			domainTranscodeInfo.setTranscodeApp(context.stringValue("DescribeLiveStreamTranscodeInfoResponse.DomainTranscodeList["+ i +"].TranscodeApp"));
@@ -42,9 +42,9 @@ public class DescribeLiveStreamTranscodeInfoResponseUnmarshaller {
 			domainTranscodeInfo.setTranscodeSnapshot(context.stringValue("DescribeLiveStreamTranscodeInfoResponse.DomainTranscodeList["+ i +"].TranscodeSnapshot"));
 			domainTranscodeInfo.setTranscodeTemplate(context.stringValue("DescribeLiveStreamTranscodeInfoResponse.DomainTranscodeList["+ i +"].TranscodeTemplate"));
 
-			domainTranscodeList.add(domainTranscodeInfo);
+			domainTranscodeListList.add(domainTranscodeInfo);
 		}
-		describeLiveStreamTranscodeInfoResponse.setDomainTranscodeList(domainTranscodeList);
+		describeLiveStreamTranscodeInfoResponse.setDomainTranscodeList(domainTranscodeListList);
 	 
 	 	return describeLiveStreamTranscodeInfoResponse;
 	}

@@ -34,7 +34,7 @@ public class DescribeDomainTopUrlVisitResponseUnmarshaller {
 		describeDomainTopUrlVisitResponse.setDomainName(context.stringValue("DescribeDomainTopUrlVisitResponse.DomainName"));
 		describeDomainTopUrlVisitResponse.setStartTime(context.stringValue("DescribeDomainTopUrlVisitResponse.StartTime"));
 
-		List<UrlList> allUrlList = new ArrayList<UrlList>();
+		List<UrlList> allUrlListList = new ArrayList<UrlList>();
 		for (int i = 0; i < context.lengthValue("DescribeDomainTopUrlVisitResponse.AllUrlList.Length"); i++) {
 			UrlList urlList = new UrlList();
 			urlList.setUrlDetail(context.stringValue("DescribeDomainTopUrlVisitResponse.AllUrlList["+ i +"].UrlDetail"));
@@ -43,11 +43,11 @@ public class DescribeDomainTopUrlVisitResponseUnmarshaller {
 			urlList.setFlow(context.stringValue("DescribeDomainTopUrlVisitResponse.AllUrlList["+ i +"].Flow"));
 			urlList.setFlowProportion(context.floatValue("DescribeDomainTopUrlVisitResponse.AllUrlList["+ i +"].FlowProportion"));
 
-			allUrlList.add(urlList);
+			allUrlListList.add(urlList);
 		}
-		describeDomainTopUrlVisitResponse.setAllUrlList(allUrlList);
+		describeDomainTopUrlVisitResponse.setAllUrlList(allUrlListList);
 
-		List<UrlList> url200List = new ArrayList<UrlList>();
+		List<UrlList> url200ListList = new ArrayList<UrlList>();
 		for (int i = 0; i < context.lengthValue("DescribeDomainTopUrlVisitResponse.Url200List.Length"); i++) {
 			UrlList urlList = new UrlList();
 			urlList.setUrlDetail(context.stringValue("DescribeDomainTopUrlVisitResponse.Url200List["+ i +"].UrlDetail"));
@@ -56,11 +56,11 @@ public class DescribeDomainTopUrlVisitResponseUnmarshaller {
 			urlList.setFlow(context.stringValue("DescribeDomainTopUrlVisitResponse.Url200List["+ i +"].Flow"));
 			urlList.setFlowProportion(context.floatValue("DescribeDomainTopUrlVisitResponse.Url200List["+ i +"].FlowProportion"));
 
-			url200List.add(urlList);
+			url200ListList.add(urlList);
 		}
-		describeDomainTopUrlVisitResponse.setUrl200List(url200List);
+		describeDomainTopUrlVisitResponse.setUrl200List(url200ListList);
 
-		List<UrlList> url300List = new ArrayList<UrlList>();
+		List<UrlList> url300ListList = new ArrayList<UrlList>();
 		for (int i = 0; i < context.lengthValue("DescribeDomainTopUrlVisitResponse.Url300List.Length"); i++) {
 			UrlList urlList = new UrlList();
 			urlList.setUrlDetail(context.stringValue("DescribeDomainTopUrlVisitResponse.Url300List["+ i +"].UrlDetail"));
@@ -69,11 +69,11 @@ public class DescribeDomainTopUrlVisitResponseUnmarshaller {
 			urlList.setFlow(context.stringValue("DescribeDomainTopUrlVisitResponse.Url300List["+ i +"].Flow"));
 			urlList.setFlowProportion(context.floatValue("DescribeDomainTopUrlVisitResponse.Url300List["+ i +"].FlowProportion"));
 
-			url300List.add(urlList);
+			url300ListList.add(urlList);
 		}
-		describeDomainTopUrlVisitResponse.setUrl300List(url300List);
+		describeDomainTopUrlVisitResponse.setUrl300List(url300ListList);
 
-		List<UrlList> url400List = new ArrayList<UrlList>();
+		List<UrlList> url400ListList = new ArrayList<UrlList>();
 		for (int i = 0; i < context.lengthValue("DescribeDomainTopUrlVisitResponse.Url400List.Length"); i++) {
 			UrlList urlList = new UrlList();
 			urlList.setUrlDetail(context.stringValue("DescribeDomainTopUrlVisitResponse.Url400List["+ i +"].UrlDetail"));
@@ -82,11 +82,11 @@ public class DescribeDomainTopUrlVisitResponseUnmarshaller {
 			urlList.setFlow(context.stringValue("DescribeDomainTopUrlVisitResponse.Url400List["+ i +"].Flow"));
 			urlList.setFlowProportion(context.floatValue("DescribeDomainTopUrlVisitResponse.Url400List["+ i +"].FlowProportion"));
 
-			url400List.add(urlList);
+			url400ListList.add(urlList);
 		}
-		describeDomainTopUrlVisitResponse.setUrl400List(url400List);
+		describeDomainTopUrlVisitResponse.setUrl400List(url400ListList);
 
-		List<UrlList> url500List = new ArrayList<UrlList>();
+		List<UrlList> url500ListList = new ArrayList<UrlList>();
 		for (int i = 0; i < context.lengthValue("DescribeDomainTopUrlVisitResponse.Url500List.Length"); i++) {
 			UrlList urlList = new UrlList();
 			urlList.setUrlDetail(context.stringValue("DescribeDomainTopUrlVisitResponse.Url500List["+ i +"].UrlDetail"));
@@ -95,9 +95,9 @@ public class DescribeDomainTopUrlVisitResponseUnmarshaller {
 			urlList.setFlow(context.stringValue("DescribeDomainTopUrlVisitResponse.Url500List["+ i +"].Flow"));
 			urlList.setFlowProportion(context.floatValue("DescribeDomainTopUrlVisitResponse.Url500List["+ i +"].FlowProportion"));
 
-			url500List.add(urlList);
+			url500ListList.add(urlList);
 		}
-		describeDomainTopUrlVisitResponse.setUrl500List(url500List);
+		describeDomainTopUrlVisitResponse.setUrl500List(url500ListList);
 	 
 	 	return describeDomainTopUrlVisitResponse;
 	}

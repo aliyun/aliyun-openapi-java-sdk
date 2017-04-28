@@ -36,15 +36,15 @@ public class DescribeDomainSrcFlowDataResponseUnmarshaller {
 		describeDomainSrcFlowDataResponse.setStartTime(context.stringValue("DescribeDomainSrcFlowDataResponse.StartTime"));
 		describeDomainSrcFlowDataResponse.setEndTime(context.stringValue("DescribeDomainSrcFlowDataResponse.EndTime"));
 
-		List<DataModule> srcFlowDataPerInterval = new ArrayList<DataModule>();
+		List<DataModule> srcFlowDataPerIntervalList = new ArrayList<DataModule>();
 		for (int i = 0; i < context.lengthValue("DescribeDomainSrcFlowDataResponse.SrcFlowDataPerInterval.Length"); i++) {
 			DataModule dataModule = new DataModule();
 			dataModule.setTimeStamp(context.stringValue("DescribeDomainSrcFlowDataResponse.SrcFlowDataPerInterval["+ i +"].TimeStamp"));
 			dataModule.setValue(context.stringValue("DescribeDomainSrcFlowDataResponse.SrcFlowDataPerInterval["+ i +"].Value"));
 
-			srcFlowDataPerInterval.add(dataModule);
+			srcFlowDataPerIntervalList.add(dataModule);
 		}
-		describeDomainSrcFlowDataResponse.setSrcFlowDataPerInterval(srcFlowDataPerInterval);
+		describeDomainSrcFlowDataResponse.setSrcFlowDataPerInterval(srcFlowDataPerIntervalList);
 	 
 	 	return describeDomainSrcFlowDataResponse;
 	}
