@@ -60,7 +60,8 @@ public class GetJobResponseTest extends TestCase {
 
 
         ObjectMapper mapper = new ObjectMapper();
-        mapper.setSerializationInclusion(JsonSerialize.Inclusion.NON_EMPTY);
+        mapper.setSerializationInclusion(JsonSerialize.Inclusion.NON_DEFAULT);
+
         String jsonResult = mapper.writeValueAsString(res.getJob());
 
 

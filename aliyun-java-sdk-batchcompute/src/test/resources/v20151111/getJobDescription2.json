@@ -56,7 +56,15 @@
               "AllowSecurityGroup": [],
               "AllowSecurityGroupEgress": []
             },
-            "VPC": {}
+            "VPC": {
+              "CidrBlock": "10.0.0.0/8",
+              "ExpressConnectSpec": "Large.2",
+              "OppositeRegionId": "cn-hangzhou",
+              "OppositeAccessPointId": "",
+              "OppositeRouterType": "VRouter",
+              "OppositeRouterId": "vtb-xxyyzz",
+              "OppositeInterfaceId": "xxyyzz"
+            }
           }
         }
 

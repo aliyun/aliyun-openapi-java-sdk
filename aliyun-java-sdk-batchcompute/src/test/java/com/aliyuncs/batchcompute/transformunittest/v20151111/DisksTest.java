@@ -4,7 +4,6 @@ import com.aliyuncs.batchcompute.pojo.v20151111.DataDisk;
 import com.aliyuncs.batchcompute.pojo.v20151111.Disks;
 import com.aliyuncs.batchcompute.pojo.v20151111.SystemDisk;
 import com.aliyuncs.batchcompute.util.FileLoader;
-import com.aliyuncs.exceptions.ClientException;
 import junit.framework.TestCase;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.codehaus.jackson.map.annotate.JsonSerialize;
@@ -35,6 +34,33 @@ public class DisksTest extends TestCase {
     }
 
 
+    @Test
+    public void testDisks2() throws IOException {
+
+        Disks disks = new Disks();
+        SystemDisk d = new SystemDisk();
+        disks.setSystemDisk(d);
+        //d.setSize(20);
+
+        ObjectMapper mapper = new ObjectMapper();
+        mapper.setSerializationInclusion(JsonSerialize.Inclusion.NON_DEFAULT);
+        String str = mapper.writeValueAsString(disks);
+        System.out.println(str);
+
+        assertEquals("{\"SystemDisk\":{}}", str);
+
+
+        ObjectMapper mapper2 = new ObjectMapper();
+
+        Disks disks2  = mapper2.readValue(str, Disks.class);
+
+        System.out.println(disks2.getSystemDisk().getSize());
+
+        assertEquals(0,disks2.getSystemDisk().getSize());
+
+
+    }
+
 
 
     @Test
@@ -57,8 +83,8 @@ public class DisksTest extends TestCase {
 
         ObjectMapper mapper = new ObjectMapper();
 
-        //null或“”不序列化
-        mapper.setSerializationInclusion(JsonSerialize.Inclusion.NON_EMPTY);
+        //默认值不序列化
+        mapper.setSerializationInclusion(JsonSerialize.Inclusion.NON_DEFAULT);
 
         String body = mapper.writeValueAsString(disks);
 

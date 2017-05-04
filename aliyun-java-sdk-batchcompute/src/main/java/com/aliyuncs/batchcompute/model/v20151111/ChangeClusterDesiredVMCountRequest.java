@@ -61,9 +61,9 @@ public class ChangeClusterDesiredVMCountRequest extends BatchComputeRequest<Chan
     public void setClusterDescription(ClusterDescription d){
         clusterDesc  = d;
 
-        for(Map.Entry<String, GroupDescription> set: clusterDesc.getGroups().entrySet()){
-            set.getValue().setResourceType(null);
-        }
+//        for(Map.Entry<String, GroupDescription> set: clusterDesc.getGroups().entrySet()){
+//            set.getValue().setResourceType(null);
+//        }
 
         ChangeClusterDesiredVMCountRequestMarshaller.marshall(this);
     }
@@ -71,7 +71,7 @@ public class ChangeClusterDesiredVMCountRequest extends BatchComputeRequest<Chan
 
         GroupDescription groupDesc = new GroupDescription();
         groupDesc.setDesiredVMCount(count);
-        groupDesc.setResourceType(null);
+        //groupDesc.setResourceType(null);
         clusterDesc.addGroup(groupName, groupDesc);
 
         ChangeClusterDesiredVMCountRequestMarshaller.marshall(this);

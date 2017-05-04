@@ -94,6 +94,20 @@ public class GetJobDescriptionResponseTest extends TestCase {
         assertEquals(topic.getEvents().size(), 16);
         assertEquals(topic.getEvents().get(0), "OnJobWaiting");
 
+        //vpc
+        TaskDescription task1 = desc.getDag().getTasks().get("task_1");
+
+        VPC vpc = task1.getAutoCluster().getConfigs().getNetworks().getVpc();
+
+
+        assertEquals("10.0.0.0/8", vpc.getCidrBlock());
+        assertEquals("Large.2", vpc.getExpressConnectSpec());
+        assertEquals("cn-hangzhou", vpc.getOppositeRegionId());
+        assertEquals("", vpc.getOppositeAccessPointId());
+        assertEquals("VRouter", vpc.getOppositeRouterType());
+        assertEquals("vtb-xxyyzz", vpc.getOppositeRouterId());
+        assertEquals("xxyyzz", vpc.getOppositeInterfaceId());
+
 
         //task mounts 字段
         TaskDescription tdesc = desc.getDag().getTasks().get("task_1");

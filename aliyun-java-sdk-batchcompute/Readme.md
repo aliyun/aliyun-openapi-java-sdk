@@ -6,8 +6,8 @@ Batchcompute SDK For Java
 
 #### (1) pom.xml 中配置
 
-前往[http://repo.alibaba-inc.com/nexus]中查找下面2个包。
-将其xml描述放到pom.xml的dependencies标签中。例如：
+
+将下面xml描述放到pom.xml的dependencies标签中：
 
 ```xml
 <dependency>
@@ -20,7 +20,7 @@ Batchcompute SDK For Java
 <dependency>
     <groupId>com.aliyun</groupId>
     <artifactId>aliyun-java-sdk-batchcompute</artifactId>
-    <version>4.1.0</version>
+    <version>4.2.0</version>
 </dependency>
 ```
 

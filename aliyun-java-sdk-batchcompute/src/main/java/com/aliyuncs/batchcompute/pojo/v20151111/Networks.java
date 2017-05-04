@@ -24,5 +24,16 @@ public class Networks {
     private ClassicNetWork classic;
 
 
+    public VPC getVpc() {
+        return vpc;
+    }
+
+    public void setVpc(VPC vpc) {
+        this.vpc = vpc;
+    }
+
+    @JsonProperty("VPC")
+    private VPC vpc;
+
 
 }

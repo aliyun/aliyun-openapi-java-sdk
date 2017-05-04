@@ -32,8 +32,8 @@ public class CreateImageRequestMarshaller {
 
         ObjectMapper mapper = new ObjectMapper();
 
-        //null或“”不序列化
-        mapper.setSerializationInclusion(JsonSerialize.Inclusion.NON_EMPTY);
+        //默认值不序列化
+        mapper.setSerializationInclusion(JsonSerialize.Inclusion.NON_DEFAULT);
 
         String contentString = null;
         try {
