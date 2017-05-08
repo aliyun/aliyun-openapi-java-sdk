@@ -22,10 +22,10 @@ import com.aliyuncs.RpcAcsRequest;
 
 /**
  * @author auto create
- * @version 
+ * @version
  */
 public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse> {
-	
+
 	public CreateInstanceRequest() {
 		super("Ecs", "2014-05-26", "CreateInstance", "ecs");
 	}
@@ -57,6 +57,8 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 	private String hostName;
 
 	private String password;
+
+	private String deploymentSetId;
 
 	private String zoneId;
 
@@ -173,6 +175,8 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 	private String userData;
 
 	private String spotStrategy;
+
+	private String keyPairName;
 
 	public Long getOwnerId() {
 		return this.ownerId;
@@ -298,6 +302,15 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 	public void setPassword(String password) {
 		this.password = password;
 		putQueryParameter("Password", password);
+	}
+
+	public String getDeploymentSetId() {
+		return this.deploymentSetId;
+	}
+
+	public void setDeploymentSetId(String deploymentSetId) {
+		this.deploymentSetId = deploymentSetId;
+		putQueryParameter("DeploymentSetId", deploymentSetId);
 	}
 
 	public String getZoneId() {
@@ -820,6 +833,15 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 	public void setSpotStrategy(String spotStrategy) {
 		this.spotStrategy = spotStrategy;
 		putQueryParameter("SpotStrategy", spotStrategy);
+	}
+
+	public String getKeyPairName() {
+		return this.keyPairName;
+	}
+
+	public void setKeyPairName(String keyPairName) {
+		this.keyPairName = keyPairName;
+		putQueryParameter("KeyPairName", keyPairName);
 	}
 
 	@Override

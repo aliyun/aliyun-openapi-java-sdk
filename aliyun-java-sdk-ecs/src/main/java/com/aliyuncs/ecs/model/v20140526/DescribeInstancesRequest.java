@@ -22,10 +22,10 @@ import com.aliyuncs.RpcAcsRequest;
 
 /**
  * @author auto create
- * @version 
+ * @version
  */
 public class DescribeInstancesRequest extends RpcAcsRequest<DescribeInstancesResponse> {
-	
+
 	public DescribeInstancesRequest() {
 		super("Ecs", "2014-05-26", "DescribeInstances", "ecs");
 	}
@@ -115,6 +115,8 @@ public class DescribeInstancesRequest extends RpcAcsRequest<DescribeInstancesRes
 	private String instanceType;
 
 	private String instanceTypeFamily;
+
+	private String keyPairName;
 
 	public Long getOwnerId() {
 		return this.ownerId;
@@ -501,6 +503,15 @@ public class DescribeInstancesRequest extends RpcAcsRequest<DescribeInstancesRes
 	public void setInstanceTypeFamily(String instanceTypeFamily) {
 		this.instanceTypeFamily = instanceTypeFamily;
 		putQueryParameter("InstanceTypeFamily", instanceTypeFamily);
+	}
+
+	public String getKeyPairName() {
+		return this.keyPairName;
+	}
+
+	public void setKeyPairName(String keyPairName) {
+		this.keyPairName = keyPairName;
+		putQueryParameter("KeyPairName", keyPairName);
 	}
 
 	@Override

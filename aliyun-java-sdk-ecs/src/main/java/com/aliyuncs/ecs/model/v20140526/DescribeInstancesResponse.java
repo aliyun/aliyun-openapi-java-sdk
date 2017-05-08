@@ -25,7 +25,7 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
- * @version 
+ * @version
  */
 public class DescribeInstancesResponse extends AcsResponse {
 
@@ -89,6 +89,10 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		private String imageId;
 
+		private String oSName;
+
+		private String oSType;
+
 		private String regionId;
 
 		private String zoneId;
@@ -141,6 +145,8 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		private String spotStrategy;
 
+		private String keyPairName;
+
 		private List<LockReason> operationLocks;
 
 		private List<Tag> tags;
@@ -185,6 +191,22 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		public void setImageId(String imageId) {
 			this.imageId = imageId;
+		}
+
+		public String getOSName() {
+			return this.oSName;
+		}
+
+		public void setOSName(String oSName) {
+			this.oSName = oSName;
+		}
+
+		public String getOSType() {
+			return this.oSType;
+		}
+
+		public void setOSType(String oSType) {
+			this.oSType = oSType;
 		}
 
 		public String getRegionId() {
@@ -395,6 +417,14 @@ public class DescribeInstancesResponse extends AcsResponse {
 			this.spotStrategy = spotStrategy;
 		}
 
+		public String getKeyPairName() {
+			return this.keyPairName;
+		}
+
+		public void setKeyPairName(String keyPairName) {
+			this.keyPairName = keyPairName;
+		}
+
 		public List<LockReason> getOperationLocks() {
 			return this.operationLocks;
 		}
@@ -451,7 +481,7 @@ public class DescribeInstancesResponse extends AcsResponse {
 			this.eipAddress = eipAddress;
 		}
 
-public enum Status {
+		public enum Status {
 
 			DELETED("Deleted"),
 			STOPPED("Stopped"),
@@ -461,34 +491,34 @@ public enum Status {
 			STARTING("Starting"),
 			STOPPING("Stopping"),
 			PENDING("Pending"),;
-	
-    private String stringValue;
 
-	Status(String stringValue) {
-        setStringValue(stringValue);
-    }
+			private String stringValue;
 
-    public String getStringValue() {
-        return stringValue;
-    }
+			Status(String stringValue) {
+				setStringValue(stringValue);
+			}
 
-    public void setStringValue(String stringValue) {
-        this.stringValue = stringValue;
-    }
-    
-    public static Status getEnum(String stringValue){
-    	if(null == stringValue){
-    		return null;
-    	}
-    	
-    	for (Status status : Status.values()) {
-			if(status.getStringValue().equals(stringValue)){
-				return status;
+			public String getStringValue() {
+				return stringValue;
+			}
+
+			public void setStringValue(String stringValue) {
+				this.stringValue = stringValue;
+			}
+
+			public static Status getEnum(String stringValue){
+				if(null == stringValue){
+					return null;
+				}
+
+				for (Status status : Status.values()) {
+					if(status.getStringValue().equals(stringValue)){
+						return status;
+					}
+				}
+				return null;
 			}
 		}
-    	return null;
-    }
-}
 
 		public static class LockReason {
 

@@ -34,19 +34,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
 public class DescribeInstancesResponseUnmarshaller {
 
 	public static DescribeInstancesResponse unmarshall(DescribeInstancesResponse describeInstancesResponse, UnmarshallerContext context) {
-		
+
 		describeInstancesResponse.setRequestId(context.stringValue("DescribeInstancesResponse.RequestId"));
 		describeInstancesResponse.setTotalCount(context.integerValue("DescribeInstancesResponse.TotalCount"));
 		describeInstancesResponse.setPageNumber(context.integerValue("DescribeInstancesResponse.PageNumber"));
 		describeInstancesResponse.setPageSize(context.integerValue("DescribeInstancesResponse.PageSize"));
 
-		List<Instance> instances = new ArrayList<Instance>();
+		List<Instance> instancesList = new ArrayList<Instance>();
 		for (int i = 0; i < context.lengthValue("DescribeInstancesResponse.Instances.Length"); i++) {
 			Instance instance = new Instance();
 			instance.setInstanceId(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].InstanceId"));
 			instance.setInstanceName(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].InstanceName"));
 			instance.setDescription(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].Description"));
 			instance.setImageId(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].ImageId"));
+			instance.setOSName(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].OSName"));
+			instance.setOSType(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].OSType"));
 			instance.setRegionId(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].RegionId"));
 			instance.setZoneId(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].ZoneId"));
 			instance.setClusterId(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].ClusterId"));
@@ -73,6 +75,7 @@ public class DescribeInstancesResponseUnmarshaller {
 			instance.setGPUAmount(context.integerValue("DescribeInstancesResponse.Instances["+ i +"].GPUAmount"));
 			instance.setGPUSpec(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].GPUSpec"));
 			instance.setSpotStrategy(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].SpotStrategy"));
+			instance.setKeyPairName(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].KeyPairName"));
 
 			List<String> securityGroupIds = new ArrayList<String>();
 			for (int j = 0; j < context.lengthValue("DescribeInstancesResponse.Instances["+ i +"].SecurityGroupIds.Length"); j++) {
@@ -112,30 +115,30 @@ public class DescribeInstancesResponseUnmarshaller {
 			eipAddress.setIsSupportUnassociate(context.booleanValue("DescribeInstancesResponse.Instances["+ i +"].EipAddress.IsSupportUnassociate"));
 			instance.setEipAddress(eipAddress);
 
-			List<LockReason> operationLocks = new ArrayList<LockReason>();
+			List<LockReason> operationLocksList = new ArrayList<LockReason>();
 			for (int j = 0; j < context.lengthValue("DescribeInstancesResponse.Instances["+ i +"].OperationLocks.Length"); j++) {
 				LockReason lockReason = new LockReason();
 				lockReason.setLockReason(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].OperationLocks["+ j +"].LockReason"));
 				lockReason.setLockMsg(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].OperationLocks["+ j +"].LockMsg"));
 
-				operationLocks.add(lockReason);
+				operationLocksList.add(lockReason);
 			}
-			instance.setOperationLocks(operationLocks);
+			instance.setOperationLocks(operationLocksList);
 
-			List<Tag> tags = new ArrayList<Tag>();
+			List<Tag> tagsList = new ArrayList<Tag>();
 			for (int j = 0; j < context.lengthValue("DescribeInstancesResponse.Instances["+ i +"].Tags.Length"); j++) {
 				Tag tag = new Tag();
 				tag.setTagKey(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].Tags["+ j +"].TagKey"));
 				tag.setTagValue(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].Tags["+ j +"].TagValue"));
 
-				tags.add(tag);
+				tagsList.add(tag);
 			}
-			instance.setTags(tags);
+			instance.setTags(tagsList);
 
-			instances.add(instance);
+			instancesList.add(instance);
 		}
-		describeInstancesResponse.setInstances(instances);
-	 
-	 	return describeInstancesResponse;
+		describeInstancesResponse.setInstances(instancesList);
+
+		return describeInstancesResponse;
 	}
 }
