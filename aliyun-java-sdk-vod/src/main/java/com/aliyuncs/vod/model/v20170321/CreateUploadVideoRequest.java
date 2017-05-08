@@ -48,6 +48,10 @@ public class CreateUploadVideoRequest extends RpcAcsRequest<CreateUploadVideoRes
 
 	private String title;
 
+	private Integer cateId;
+
+	private String tags;
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -127,6 +131,24 @@ public class CreateUploadVideoRequest extends RpcAcsRequest<CreateUploadVideoRes
 	public void setTitle(String title) {
 		this.title = title;
 		putQueryParameter("Title", title);
+	}
+
+	public Integer getCateId() {
+		return this.cateId;
+	}
+
+	public void setCateId(Integer cateId) {
+		this.cateId = cateId;
+		putQueryParameter("CateId", cateId);
+	}
+
+	public String getTags() {
+		return this.tags;
+	}
+
+	public void setTags(String tags) {
+		this.tags = tags;
+		putQueryParameter("Tags", tags);
 	}
 
 	@Override
