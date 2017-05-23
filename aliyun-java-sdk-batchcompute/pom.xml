@@ -2,8 +2,8 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.aliyun</groupId>
     <artifactId>aliyun-java-sdk-batchcompute</artifactId>
-    <packaging>jar</packaging> 
-    <version>4.2.0</version>
+    <packaging>jar</packaging>
+    <version>4.2.1</version>
     <name>aliyun-java-sdk-batchcompute</name>
     <url>http://www.aliyun.com</url>
     <description>Aliyun Open API SDK for Java
@@ -36,7 +36,7 @@
         <dependency>
             <groupId>com.aliyun</groupId>
             <artifactId>aliyun-java-sdk-core</artifactId>
-            <optional>false</optional>
+            <optional>true</optional>
             <version>3.0.9</version>
         </dependency>
         <dependency>

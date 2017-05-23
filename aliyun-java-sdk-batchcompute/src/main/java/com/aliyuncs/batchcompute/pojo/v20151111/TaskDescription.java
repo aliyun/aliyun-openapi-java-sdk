@@ -55,7 +55,7 @@ public class TaskDescription {
     private long timeout;
 
     @JsonProperty("InstanceCount")
-    private int instanceCount;
+    private int instanceCount = -1;
 
     @JsonProperty("MaxRetryCount")
     private int maxRetryCount;

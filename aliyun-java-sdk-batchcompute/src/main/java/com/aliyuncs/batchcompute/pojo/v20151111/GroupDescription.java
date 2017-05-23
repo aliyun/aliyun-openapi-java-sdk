@@ -11,7 +11,7 @@ import org.codehaus.jackson.annotate.JsonProperty;
 public class GroupDescription {
 
     @JsonProperty("DesiredVMCount")
-    private int desiredVMCount;
+    private int desiredVMCount = -1;
 
 
     @JsonProperty("InstanceType")
