@@ -62,4 +62,6 @@ public interface IAcsClient {
 			String regionId, Credential credential,
 			ISigner signer, FormatType format, 
 			List<Endpoint> endpoints) throws ClientException, ServerException;
+
+    public CommonResponse getCommonResponse(CommonRequest request) throws ServerException, ClientException;
 }

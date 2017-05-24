@@ -18,13 +18,6 @@
  */
 package com.aliyuncs;
 
-import java.io.IOException;
-import java.io.UnsupportedEncodingException;
-import java.net.SocketTimeoutException;
-import java.security.InvalidKeyException;
-import java.security.NoSuchAlgorithmException;
-import java.util.List;
-
 import com.aliyuncs.auth.Credential;
 import com.aliyuncs.auth.ISigner;
 import com.aliyuncs.exceptions.ClientException;
@@ -40,232 +33,255 @@ import com.aliyuncs.regions.Endpoint;
 import com.aliyuncs.regions.ProductDomain;
 import com.aliyuncs.transform.UnmarshallerContext;
 
-public class DefaultAcsClient implements IAcsClient{
-	private int maxRetryNumber = 3;
-	private boolean autoRetry = true;
-	private IClientProfile clientProfile = null;
+import java.io.IOException;
+import java.io.UnsupportedEncodingException;
+import java.net.SocketTimeoutException;
+import java.security.InvalidKeyException;
+import java.security.NoSuchAlgorithmException;
+import java.util.List;
+
+public class DefaultAcsClient implements IAcsClient {
+    private int maxRetryNumber = 3;
+    private boolean autoRetry = true;
+    private IClientProfile clientProfile = null;
     private boolean urlTestFlag = false;
-	
-	public DefaultAcsClient() {
-		this.clientProfile = DefaultProfile.getProfile();
-	}
-	
-	public DefaultAcsClient(IClientProfile profile) {
-		this.clientProfile = profile;
-	}
-	
-	@Override
-    public <T extends AcsResponse> HttpResponse doAction(AcsRequest<T> request) 
-			throws ClientException, ServerException {
-		return this.doAction(request, autoRetry, maxRetryNumber, this.clientProfile);
-	}
-	
-	@Override
-    public <T extends AcsResponse> HttpResponse doAction(AcsRequest<T> request, 
-			boolean autoRetry, int maxRetryCounts) throws ClientException, ServerException {
-		return this.doAction(request, autoRetry, maxRetryCounts, this.clientProfile);
-	}
-	
-	@Override
-    public <T extends AcsResponse> HttpResponse doAction(AcsRequest<T> request, IClientProfile profile) 
-			throws ClientException, ServerException {
-		return this.doAction(request, this.autoRetry, this.maxRetryNumber, profile);
-	}
-	
-	@Override
-    public <T extends AcsResponse> HttpResponse doAction(AcsRequest<T> request, String regionId, Credential credential) 
-			throws ClientException, ServerException {
-		boolean retry = this.autoRetry;
-		int retryNumber = this.maxRetryNumber;
-		ISigner signer = null;
-		FormatType format = null;
-		List<Endpoint> endpoints = null;
+
+    public DefaultAcsClient() {
+        this.clientProfile = DefaultProfile.getProfile();
+    }
+
+    public DefaultAcsClient(IClientProfile profile) {
+        this.clientProfile = profile;
+    }
+
+    @Override
+    public <T extends AcsResponse> HttpResponse doAction(AcsRequest<T> request)
+            throws ClientException, ServerException {
+        return this.doAction(request, autoRetry, maxRetryNumber, this.clientProfile);
+    }
+
+    @Override
+    public <T extends AcsResponse> HttpResponse doAction(AcsRequest<T> request,
+                                                         boolean autoRetry, int maxRetryCounts) throws ClientException, ServerException {
+        return this.doAction(request, autoRetry, maxRetryCounts, this.clientProfile);
+    }
+
+    @Override
+    public <T extends AcsResponse> HttpResponse doAction(AcsRequest<T> request, IClientProfile profile)
+            throws ClientException, ServerException {
+        return this.doAction(request, this.autoRetry, this.maxRetryNumber, profile);
+    }
+
+    @Override
+    public <T extends AcsResponse> HttpResponse doAction(AcsRequest<T> request, String regionId, Credential credential)
+            throws ClientException, ServerException {
+        boolean retry = this.autoRetry;
+        int retryNumber = this.maxRetryNumber;
+        ISigner signer = null;
+        FormatType format = null;
+        List<Endpoint> endpoints = null;
         if (null == request.getRegionId()) {
             request.setRegionId(regionId);
         }
         if (null != this.clientProfile) {
             signer = clientProfile.getSigner();
             format = clientProfile.getFormat();
-			try {
+            try {
                 endpoints = clientProfile.getEndpoints(request.getProduct(), request.getRegionId(),
                         request.getLocationProduct(),
-						request.getEndpointType());
-			} catch (Throwable e) {
+                        request.getEndpointType());
+            } catch (Throwable e) {
                 endpoints = clientProfile.getEndpoints(request.getRegionId(), request.getProduct());
-			}
+            }
         }
-		
+
         return this.doAction(request, retry, retryNumber, request.getRegionId(), credential, signer, format, endpoints);
-	}
-	
-	@Override
-    public <T extends AcsResponse> T getAcsResponse(AcsRequest<T> request) 
-			throws ServerException, ClientException{
-		HttpResponse baseResponse = this.doAction(request);
-		return parseAcsResponse(request.getResponseClass(), baseResponse);
-	}
-	
-	@Override
-    public <T extends AcsResponse> T getAcsResponse(AcsRequest<T> request, 
-			boolean autoRetry, int maxRetryCounts) throws ServerException, ClientException{
-		HttpResponse baseResponse = this.doAction(request, autoRetry, maxRetryCounts);
-		return parseAcsResponse(request.getResponseClass(), baseResponse);
-	}
-	
-	@Override
-    public <T extends AcsResponse> T getAcsResponse(AcsRequest<T> request,IClientProfile profile) 
-			throws ServerException, ClientException{
-		HttpResponse baseResponse = this.doAction(request, profile);
-		return parseAcsResponse(request.getResponseClass(), baseResponse);
-	}
-	
-	@Override
-    public <T extends AcsResponse> T getAcsResponse(AcsRequest<T> request, String regionId, Credential credential) 
-			throws ServerException, ClientException {
-		HttpResponse baseResponse = this.doAction(request, regionId, credential);
-		return parseAcsResponse(request.getResponseClass(), baseResponse);
-	}
-	
-	@Override
-    public <T extends AcsResponse> HttpResponse doAction(AcsRequest<T> request, boolean autoRetry, 
-			int maxRetryCounts, IClientProfile profile) throws ClientException, ServerException {
-		if (null == profile){
-			throw new ClientException("SDK.InvalidProfile", "No active profile found.");
-		}
-		boolean retry = autoRetry;
-		int retryNumber = maxRetryCounts;
-		String region = profile.getRegionId();
+    }
+
+    @Override
+    public <T extends AcsResponse> T getAcsResponse(AcsRequest<T> request)
+            throws ServerException, ClientException {
+        HttpResponse baseResponse = this.doAction(request);
+        return parseAcsResponse(request.getResponseClass(), baseResponse);
+    }
+
+    @Override
+    public <T extends AcsResponse> T getAcsResponse(AcsRequest<T> request,
+                                                    boolean autoRetry, int maxRetryCounts) throws ServerException, ClientException {
+        HttpResponse baseResponse = this.doAction(request, autoRetry, maxRetryCounts);
+        return parseAcsResponse(request.getResponseClass(), baseResponse);
+    }
+
+    @Override
+    public <T extends AcsResponse> T getAcsResponse(AcsRequest<T> request, IClientProfile profile)
+            throws ServerException, ClientException {
+        HttpResponse baseResponse = this.doAction(request, profile);
+        return parseAcsResponse(request.getResponseClass(), baseResponse);
+    }
+
+    @Override
+    public <T extends AcsResponse> T getAcsResponse(AcsRequest<T> request, String regionId, Credential credential)
+            throws ServerException, ClientException {
+        HttpResponse baseResponse = this.doAction(request, regionId, credential);
+        return parseAcsResponse(request.getResponseClass(), baseResponse);
+    }
+
+    @Override
+    public CommonResponse getCommonResponse(CommonRequest request)
+            throws ServerException, ClientException {
+        HttpResponse baseResponse = this.doAction(request);
+        String data;
+        try {
+            data = new String(baseResponse.getContent(), "utf-8");
+        } catch (UnsupportedEncodingException e) {
+            throw new ClientException("SDK.CommonResponseEncodingError", "CommonResponse Encoding UnsupportedEncodingException.");
+        }
+        CommonResponse response = new CommonResponse();
+        response.setData(data);
+        response.setHttpResponse(baseResponse);
+
+        return response;
+    }
+
+    @Override
+    public <T extends AcsResponse> HttpResponse doAction(AcsRequest<T> request, boolean autoRetry,
+                                                         int maxRetryCounts, IClientProfile profile) throws ClientException, ServerException {
+        if (null == profile) {
+            throw new ClientException("SDK.InvalidProfile", "No active profile found.");
+        }
+        boolean retry = autoRetry;
+        int retryNumber = maxRetryCounts;
+        String region = profile.getRegionId();
         if (null == request.getRegionId()) {
             request.setRegionId(region);
         }
-		Credential credential = profile.getCredential();
-		ISigner signer = profile.getSigner();
-		FormatType format = profile.getFormat();
+        Credential credential = profile.getCredential();
+        ISigner signer = profile.getSigner();
+        FormatType format = profile.getFormat();
         List<Endpoint> endpoints;
-		try {
+        try {
             endpoints = clientProfile.getEndpoints(request.getProduct(), request.getRegionId(),
                     request.getLocationProduct(),
-					request.getEndpointType());
-		} catch (Throwable e) {
+                    request.getEndpointType());
+        } catch (Throwable e) {
             endpoints = clientProfile.getEndpoints(request.getRegionId(), request.getProduct());
-		}
+        }
         return this.doAction(request, retry, retryNumber, request.getRegionId(), credential, signer, format, endpoints);
-	}
-	
-	private <T extends AcsResponse> T parseAcsResponse(Class<T> clasz, HttpResponse baseResponse) 
-			throws ServerException, ClientException {
+    }
 
-		FormatType format = baseResponse.getContentType();
+    private <T extends AcsResponse> T parseAcsResponse(Class<T> clasz, HttpResponse baseResponse)
+            throws ServerException, ClientException {
 
-		if (baseResponse.isSuccess()) {
-			return readResponse(clasz, baseResponse, format);
-		} else {
-			AcsError error = readError(baseResponse, format);
-			if (500 <= baseResponse.getStatus()){
-				throw new ServerException(error.getErrorCode(), error.getErrorMessage(), error.getRequestId());
-			}
-			else{
-				throw new ClientException(error.getErrorCode(), error.getErrorMessage(), error.getRequestId());
-			}
-		}
-	}
-	
-	@Override
-    public <T extends AcsResponse> HttpResponse doAction(AcsRequest<T> request, 
-			boolean autoRetry, int maxRetryNumber,
-			String regionId, Credential credential,
-			ISigner signer, FormatType format, 
-			List<Endpoint> endpoints) throws ClientException, ServerException {
-		try {
-			FormatType requestFormatType = request.getAcceptFormat();
-			if (null != requestFormatType){
-				format = requestFormatType;
-			}
+        FormatType format = baseResponse.getContentType();
+
+        if (baseResponse.isSuccess()) {
+            return readResponse(clasz, baseResponse, format);
+        } else {
+            AcsError error = readError(baseResponse, format);
+            if (500 <= baseResponse.getStatus()) {
+                throw new ServerException(error.getErrorCode(), error.getErrorMessage(), error.getRequestId());
+            } else {
+                throw new ClientException(error.getErrorCode(), error.getErrorMessage(), error.getRequestId());
+            }
+        }
+    }
+
+    @Override
+    public <T extends AcsResponse> HttpResponse doAction(AcsRequest<T> request,
+                                                         boolean autoRetry, int maxRetryNumber,
+                                                         String regionId, Credential credential,
+                                                         ISigner signer, FormatType format,
+                                                         List<Endpoint> endpoints) throws ClientException, ServerException {
+        try {
+            FormatType requestFormatType = request.getAcceptFormat();
+            if (null != requestFormatType) {
+                format = requestFormatType;
+            }
             ProductDomain domain = Endpoint.findProductDomain(regionId, request.getProduct(), endpoints);
-			if (null == domain){
-				throw new ClientException("SDK.InvalidRegionId", "Can not find endpoint to access.");
-			}
-			HttpRequest httpRequest = request.signRequest(signer, credential, format, domain);
+            if (null == domain) {
+                throw new ClientException("SDK.InvalidRegionId", "Can not find endpoint to access.");
+            }
+            HttpRequest httpRequest = request.signRequest(signer, credential, format, domain);
 
             if (this.urlTestFlag) {
                 throw new ClientException("URLTestFlagIsSet", httpRequest.getUrl());
             }
 
-			int retryTimes = 1;
-			HttpResponse response = HttpResponse.getResponse(httpRequest);
-			while (500 <= response.getStatus() && autoRetry && retryTimes < maxRetryNumber) {
-				httpRequest = request.signRequest(signer, credential, format, domain);
-				response = HttpResponse.getResponse(httpRequest);
-				retryTimes ++;
-			}
-			return response;
-		} catch (InvalidKeyException exp) {
-			throw new ClientException("SDK.InvalidAccessSecret","Speicified access secret is not valid.");
-		}catch (SocketTimeoutException exp){
-			throw new ClientException("SDK.ServerUnreachable","SocketTimeoutException has occurred on a socket read or accept.");
-		}catch (IOException exp) {
-			throw new ClientException("SDK.ServerUnreachable", "Server unreachable: " + exp.toString());
-		} catch (NoSuchAlgorithmException exp) {
-			throw new ClientException("SDK.InvalidMD5Algorithm", "MD5 hash is not supported by client side.");
-		}
-	}
-	
-	private <T extends AcsResponse> T readResponse(Class<T> clasz, HttpResponse httpResponse, FormatType format) throws ClientException {
-		Reader reader = ReaderFactory.createInstance(format);
-		UnmarshallerContext context = new UnmarshallerContext();
-		T response = null;
-		String stringContent = getResponseContent(httpResponse);
-		try {
-			response = clasz.newInstance();
-		} catch (Exception e) {
-			throw new ClientException("SDK.InvalidResponseClass", "Unable to allocate "+ clasz.getName() + " class");
-		}
-		String responseEndpoint= clasz.getName().substring(clasz.getName().lastIndexOf(".") + 1);
-		context.setResponseMap(reader.read(stringContent,responseEndpoint));
-		context.setHttpResponse(httpResponse);
-		response.getInstance(context);
-		return response;
-	}
+            int retryTimes = 1;
+            HttpResponse response = HttpResponse.getResponse(httpRequest);
+            while (500 <= response.getStatus() && autoRetry && retryTimes < maxRetryNumber) {
+                httpRequest = request.signRequest(signer, credential, format, domain);
+                response = HttpResponse.getResponse(httpRequest);
+                retryTimes++;
+            }
+            return response;
+        } catch (InvalidKeyException exp) {
+            throw new ClientException("SDK.InvalidAccessSecret", "Speicified access secret is not valid.");
+        } catch (SocketTimeoutException exp) {
+            throw new ClientException("SDK.ServerUnreachable", "SocketTimeoutException has occurred on a socket read or accept.");
+        } catch (IOException exp) {
+            throw new ClientException("SDK.ServerUnreachable", "Server unreachable: " + exp.toString());
+        } catch (NoSuchAlgorithmException exp) {
+            throw new ClientException("SDK.InvalidMD5Algorithm", "MD5 hash is not supported by client side.");
+        }
+    }
 
-	private String getResponseContent(HttpResponse httpResponse) throws ClientException {
-		String stringContent = null;
-		try {
-			if(null == httpResponse.getEncoding()){
-				stringContent = new String(httpResponse.getContent());
-			} else {
-				stringContent = new String(httpResponse.getContent(), httpResponse.getEncoding());
-			}
-		} catch(UnsupportedEncodingException exp) {
-			throw new ClientException("SDK.UnsupportedEncoding", "Can not parse response due to un supported encoding.");
-		}
-		return stringContent;
-	}
-	
-	private AcsError readError(HttpResponse httpResponse, FormatType format) throws ClientException {
-		AcsError error = new AcsError();
-		String responseEndpoint= "Error";
-		Reader reader = ReaderFactory.createInstance(format);
-		UnmarshallerContext context = new UnmarshallerContext();
-		String stringContent = getResponseContent(httpResponse);
-		context.setResponseMap(reader.read(stringContent,responseEndpoint));
-		return error.getInstance(context);
-	}
-	
-	public boolean isAutoRetry() {
-		return autoRetry;
-	}
+    private <T extends AcsResponse> T readResponse(Class<T> clasz, HttpResponse httpResponse, FormatType format) throws ClientException {
+        Reader reader = ReaderFactory.createInstance(format);
+        UnmarshallerContext context = new UnmarshallerContext();
+        T response = null;
+        String stringContent = getResponseContent(httpResponse);
+        try {
+            response = clasz.newInstance();
+        } catch (Exception e) {
+            throw new ClientException("SDK.InvalidResponseClass", "Unable to allocate " + clasz.getName() + " class");
+        }
+        String responseEndpoint = clasz.getName().substring(clasz.getName().lastIndexOf(".") + 1);
+        context.setResponseMap(reader.read(stringContent, responseEndpoint));
+        context.setHttpResponse(httpResponse);
+        response.getInstance(context);
+        return response;
+    }
 
-	public void setAutoRetry(boolean autoRetry) {
-		this.autoRetry = autoRetry;
-	}
-	
-	public int getMaxRetryNumber() {
-		return maxRetryNumber;
-	}
+    private String getResponseContent(HttpResponse httpResponse) throws ClientException {
+        String stringContent = null;
+        try {
+            if (null == httpResponse.getEncoding()) {
+                stringContent = new String(httpResponse.getContent());
+            } else {
+                stringContent = new String(httpResponse.getContent(), httpResponse.getEncoding());
+            }
+        } catch (UnsupportedEncodingException exp) {
+            throw new ClientException("SDK.UnsupportedEncoding", "Can not parse response due to un supported encoding.");
+        }
+        return stringContent;
+    }
 
-	public void setMaxRetryNumber(int maxRetryNumber) {
-		this.maxRetryNumber = maxRetryNumber;
-	}
+    private AcsError readError(HttpResponse httpResponse, FormatType format) throws ClientException {
+        AcsError error = new AcsError();
+        String responseEndpoint = "Error";
+        Reader reader = ReaderFactory.createInstance(format);
+        UnmarshallerContext context = new UnmarshallerContext();
+        String stringContent = getResponseContent(httpResponse);
+        context.setResponseMap(reader.read(stringContent, responseEndpoint));
+        return error.getInstance(context);
+    }
+
+    public boolean isAutoRetry() {
+        return autoRetry;
+    }
+
+    public void setAutoRetry(boolean autoRetry) {
+        this.autoRetry = autoRetry;
+    }
+
+    public int getMaxRetryNumber() {
+        return maxRetryNumber;
+    }
+
+    public void setMaxRetryNumber(int maxRetryNumber) {
+        this.maxRetryNumber = maxRetryNumber;
+    }
 
     public void setUrlTestFlag(boolean flag) {
         this.urlTestFlag = flag;

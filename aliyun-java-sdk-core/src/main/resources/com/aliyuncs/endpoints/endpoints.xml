@@ -1301,7 +1301,7 @@
             <Product><ProductName>Crm</ProductName><DomainName>crm-cn-hangzhou.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Location-inner</ProductName><DomainName>location-inner.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Aas</ProductName><DomainName>aas.aliyuncs.com</DomainName></Product>
-            <Product><ProductName>Emr</ProductName><DomainName>emr.ap-southeast-1.aliyuncs.com</DomainName></Product>
+            <Product><ProductName>Emr</ProductName><DomainName>emr.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Httpdns</ProductName><DomainName>httpdns-api.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Drc</ProductName><DomainName>drc.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Push</ProductName><DomainName>cloudpush.aliyuncs.com</DomainName></Product>
