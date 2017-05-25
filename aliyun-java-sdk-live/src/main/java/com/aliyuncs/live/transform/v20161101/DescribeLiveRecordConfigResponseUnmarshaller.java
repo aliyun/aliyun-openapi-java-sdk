@@ -38,7 +38,7 @@ public class DescribeLiveRecordConfigResponseUnmarshaller {
 		describeLiveRecordConfigResponse.setTotalNum(context.integerValue("DescribeLiveRecordConfigResponse.TotalNum"));
 		describeLiveRecordConfigResponse.setTotalPage(context.integerValue("DescribeLiveRecordConfigResponse.TotalPage"));
 
-		List<LiveAppRecord> liveAppRecordListList = new ArrayList<LiveAppRecord>();
+		List<LiveAppRecord> liveAppRecordList = new ArrayList<LiveAppRecord>();
 		for (int i = 0; i < context.lengthValue("DescribeLiveRecordConfigResponse.LiveAppRecordList.Length"); i++) {
 			LiveAppRecord liveAppRecord = new LiveAppRecord();
 			liveAppRecord.setDomainName(context.stringValue("DescribeLiveRecordConfigResponse.LiveAppRecordList["+ i +"].DomainName"));
@@ -47,20 +47,21 @@ public class DescribeLiveRecordConfigResponseUnmarshaller {
 			liveAppRecord.setOssBucket(context.stringValue("DescribeLiveRecordConfigResponse.LiveAppRecordList["+ i +"].OssBucket"));
 			liveAppRecord.setCreateTime(context.stringValue("DescribeLiveRecordConfigResponse.LiveAppRecordList["+ i +"].CreateTime"));
 
-			List<RecordFormat> recordFormatListList = new ArrayList<RecordFormat>();
+			List<RecordFormat> recordFormatList = new ArrayList<RecordFormat>();
 			for (int j = 0; j < context.lengthValue("DescribeLiveRecordConfigResponse.LiveAppRecordList["+ i +"].RecordFormatList.Length"); j++) {
 				RecordFormat recordFormat = new RecordFormat();
 				recordFormat.setFormat(context.stringValue("DescribeLiveRecordConfigResponse.LiveAppRecordList["+ i +"].RecordFormatList["+ j +"].Format"));
 				recordFormat.setOssObjectPrefix(context.stringValue("DescribeLiveRecordConfigResponse.LiveAppRecordList["+ i +"].RecordFormatList["+ j +"].OssObjectPrefix"));
 				recordFormat.setSliceOssObjectPrefix(context.stringValue("DescribeLiveRecordConfigResponse.LiveAppRecordList["+ i +"].RecordFormatList["+ j +"].SliceOssObjectPrefix"));
+				recordFormat.setCycleDuration(context.integerValue("DescribeLiveRecordConfigResponse.LiveAppRecordList["+ i +"].RecordFormatList["+ j +"].CycleDuration"));
 
-				recordFormatListList.add(recordFormat);
+				recordFormatList.add(recordFormat);
 			}
-			liveAppRecord.setRecordFormatList(recordFormatListList);
+			liveAppRecord.setRecordFormatList(recordFormatList);
 
-			liveAppRecordListList.add(liveAppRecord);
+			liveAppRecordList.add(liveAppRecord);
 		}
-		describeLiveRecordConfigResponse.setLiveAppRecordList(liveAppRecordListList);
+		describeLiveRecordConfigResponse.setLiveAppRecordList(liveAppRecordList);
 	 
 	 	return describeLiveRecordConfigResponse;
 	}

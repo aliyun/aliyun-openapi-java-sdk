@@ -169,6 +169,8 @@ public class DescribeLiveRecordConfigResponse extends AcsResponse {
 
 			private String sliceOssObjectPrefix;
 
+			private Integer cycleDuration;
+
 			public String getFormat() {
 				return this.format;
 			}
@@ -191,6 +193,14 @@ public class DescribeLiveRecordConfigResponse extends AcsResponse {
 
 			public void setSliceOssObjectPrefix(String sliceOssObjectPrefix) {
 				this.sliceOssObjectPrefix = sliceOssObjectPrefix;
+			}
+
+			public Integer getCycleDuration() {
+				return this.cycleDuration;
+			}
+
+			public void setCycleDuration(Integer cycleDuration) {
+				this.cycleDuration = cycleDuration;
 			}
 		}
 	}

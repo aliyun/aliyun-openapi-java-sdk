@@ -32,16 +32,16 @@ public class DescribeLiveMixConfigResponseUnmarshaller {
 		
 		describeLiveMixConfigResponse.setRequestId(context.stringValue("DescribeLiveMixConfigResponse.RequestId"));
 
-		List<MixConfig> mixConfigListList = new ArrayList<MixConfig>();
+		List<MixConfig> mixConfigList = new ArrayList<MixConfig>();
 		for (int i = 0; i < context.lengthValue("DescribeLiveMixConfigResponse.MixConfigList.Length"); i++) {
 			MixConfig mixConfig = new MixConfig();
 			mixConfig.setDomainName(context.stringValue("DescribeLiveMixConfigResponse.MixConfigList["+ i +"].DomainName"));
 			mixConfig.setAppName(context.stringValue("DescribeLiveMixConfigResponse.MixConfigList["+ i +"].AppName"));
 			mixConfig.setTemplate(context.stringValue("DescribeLiveMixConfigResponse.MixConfigList["+ i +"].Template"));
 
-			mixConfigListList.add(mixConfig);
+			mixConfigList.add(mixConfig);
 		}
-		describeLiveMixConfigResponse.setMixConfigList(mixConfigListList);
+		describeLiveMixConfigResponse.setMixConfigList(mixConfigList);
 	 
 	 	return describeLiveMixConfigResponse;
 	}

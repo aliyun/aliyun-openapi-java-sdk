@@ -109,6 +109,7 @@ public class AddLiveAppRecordConfigRequest extends RpcAcsRequest<AddLiveAppRecor
 			putQueryParameter("RecordFormat." + (i + 1) + ".Format" , recordFormats.get(i).getFormat());
 			putQueryParameter("RecordFormat." + (i + 1) + ".OssObjectPrefix" , recordFormats.get(i).getOssObjectPrefix());
 			putQueryParameter("RecordFormat." + (i + 1) + ".SliceOssObjectPrefix" , recordFormats.get(i).getSliceOssObjectPrefix());
+			putQueryParameter("RecordFormat." + (i + 1) + ".CycleDuration" , recordFormats.get(i).getCycleDuration());
 		}	
 	}
 
@@ -119,6 +120,8 @@ public class AddLiveAppRecordConfigRequest extends RpcAcsRequest<AddLiveAppRecor
 		private String ossObjectPrefix;
 
 		private String sliceOssObjectPrefix;
+
+		private Integer cycleDuration;
 
 		public String getFormat() {
 			return this.format;
@@ -142,6 +145,14 @@ public class AddLiveAppRecordConfigRequest extends RpcAcsRequest<AddLiveAppRecor
 
 		public void setSliceOssObjectPrefix(String sliceOssObjectPrefix) {
 			this.sliceOssObjectPrefix = sliceOssObjectPrefix;
+		}
+
+		public Integer getCycleDuration() {
+			return this.cycleDuration;
+		}
+
+		public void setCycleDuration(Integer cycleDuration) {
+			this.cycleDuration = cycleDuration;
 		}
 	}
 
