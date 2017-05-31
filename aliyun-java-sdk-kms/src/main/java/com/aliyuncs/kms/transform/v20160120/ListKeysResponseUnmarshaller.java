@@ -39,6 +39,7 @@ public class ListKeysResponseUnmarshaller {
 		for (int i = 0; i < context.lengthValue("ListKeysResponse.Keys.Length"); i++) {
 			Key key = new Key();
 			key.setKeyId(context.stringValue("ListKeysResponse.Keys["+ i +"].KeyId"));
+			key.setKeyArn(context.stringValue("ListKeysResponse.Keys["+ i +"].KeyArn"));
 
 			keys.add(key);
 		}

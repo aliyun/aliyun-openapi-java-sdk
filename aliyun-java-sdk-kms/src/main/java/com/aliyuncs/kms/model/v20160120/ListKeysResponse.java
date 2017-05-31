@@ -83,12 +83,22 @@ public class ListKeysResponse extends AcsResponse {
 
 		private String keyId;
 
+		private String keyArn;
+
 		public String getKeyId() {
 			return this.keyId;
 		}
 
 		public void setKeyId(String keyId) {
 			this.keyId = keyId;
+		}
+
+		public String getKeyArn() {
+			return this.keyArn;
+		}
+
+		public void setKeyArn(String keyArn) {
+			this.keyArn = keyArn;
 		}
 	}
 

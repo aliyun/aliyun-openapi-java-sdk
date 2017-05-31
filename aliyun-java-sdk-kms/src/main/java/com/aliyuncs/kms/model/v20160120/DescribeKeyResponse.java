@@ -64,6 +64,8 @@ public class DescribeKeyResponse extends AcsResponse {
 
 		private String creator;
 
+		private String arn;
+
 		public String getCreationDate() {
 			return this.creationDate;
 		}
@@ -118,6 +120,14 @@ public class DescribeKeyResponse extends AcsResponse {
 
 		public void setCreator(String creator) {
 			this.creator = creator;
+		}
+
+		public String getArn() {
+			return this.arn;
+		}
+
+		public void setArn(String arn) {
+			this.arn = arn;
 		}
 	}
 

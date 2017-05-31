@@ -36,6 +36,8 @@ public class CreateKeyResponseUnmarshaller {
 		keyMetadata.setKeyState(context.stringValue("CreateKeyResponse.KeyMetadata.KeyState"));
 		keyMetadata.setKeyUsage(context.stringValue("CreateKeyResponse.KeyMetadata.KeyUsage"));
 		keyMetadata.setDeleteDate(context.stringValue("CreateKeyResponse.KeyMetadata.DeleteDate"));
+		keyMetadata.setCreator(context.stringValue("CreateKeyResponse.KeyMetadata.Creator"));
+		keyMetadata.setArn(context.stringValue("CreateKeyResponse.KeyMetadata.Arn"));
 		createKeyResponse.setKeyMetadata(keyMetadata);
 	 
 	 	return createKeyResponse;

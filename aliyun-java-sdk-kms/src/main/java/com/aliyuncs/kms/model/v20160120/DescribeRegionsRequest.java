@@ -25,36 +25,14 @@ import com.aliyuncs.http.ProtocolType;
  * @author auto create
  * @version 
  */
-public class ScheduleKeyDeletionRequest extends RpcAcsRequest<ScheduleKeyDeletionResponse> {
+public class DescribeRegionsRequest extends RpcAcsRequest<DescribeRegionsResponse> {
 	
-	public ScheduleKeyDeletionRequest() {
-		super("Kms", "2016-01-20", "ScheduleKeyDeletion", "kms");
+	public DescribeRegionsRequest() {
+		super("Kms", "2016-01-20", "DescribeRegions", "kms");
 		setProtocol(ProtocolType.HTTPS);
 	}
 
-	private String keyId;
-
-	private Integer pendingWindowInDays;
-
 	private String sTSToken;
-
-	public String getKeyId() {
-		return this.keyId;
-	}
-
-	public void setKeyId(String keyId) {
-		this.keyId = keyId;
-		putQueryParameter("KeyId", keyId);
-	}
-
-	public Integer getPendingWindowInDays() {
-		return this.pendingWindowInDays;
-	}
-
-	public void setPendingWindowInDays(Integer pendingWindowInDays) {
-		this.pendingWindowInDays = pendingWindowInDays;
-		putQueryParameter("PendingWindowInDays", pendingWindowInDays);
-	}
 
 	public String getSTSToken() {
 		return this.sTSToken;
@@ -66,8 +44,8 @@ public class ScheduleKeyDeletionRequest extends RpcAcsRequest<ScheduleKeyDeletio
 	}
 
 	@Override
-	public Class<ScheduleKeyDeletionResponse> getResponseClass() {
-		return ScheduleKeyDeletionResponse.class;
+	public Class<DescribeRegionsResponse> getResponseClass() {
+		return DescribeRegionsResponse.class;
 	}
 
 }

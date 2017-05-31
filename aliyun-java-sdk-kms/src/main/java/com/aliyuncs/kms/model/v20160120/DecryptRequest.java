@@ -19,6 +19,7 @@
 package com.aliyuncs.kms.model.v20160120;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.ProtocolType;
 
 /**
  * @author auto create
@@ -28,6 +29,7 @@ public class DecryptRequest extends RpcAcsRequest<DecryptResponse> {
 	
 	public DecryptRequest() {
 		super("Kms", "2016-01-20", "Decrypt", "kms");
+		setProtocol(ProtocolType.HTTPS);
 	}
 
 	private String ciphertextBlob;

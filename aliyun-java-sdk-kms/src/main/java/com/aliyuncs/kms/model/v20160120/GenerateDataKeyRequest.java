@@ -19,6 +19,7 @@
 package com.aliyuncs.kms.model.v20160120;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.ProtocolType;
 
 /**
  * @author auto create
@@ -28,6 +29,7 @@ public class GenerateDataKeyRequest extends RpcAcsRequest<GenerateDataKeyRespons
 	
 	public GenerateDataKeyRequest() {
 		super("Kms", "2016-01-20", "GenerateDataKey", "kms");
+		setProtocol(ProtocolType.HTTPS);
 	}
 
 	private String keyId;

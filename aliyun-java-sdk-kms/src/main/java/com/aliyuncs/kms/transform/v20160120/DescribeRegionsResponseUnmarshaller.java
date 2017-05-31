@@ -18,16 +18,29 @@
  */
 package com.aliyuncs.kms.transform.v20160120;
 
-import com.aliyuncs.kms.model.v20160120.CancelKeyDeletionResponse;
+import java.util.ArrayList;
+import java.util.List;
+
+import com.aliyuncs.kms.model.v20160120.DescribeRegionsResponse;
+import com.aliyuncs.kms.model.v20160120.DescribeRegionsResponse.Region;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class CancelKeyDeletionResponseUnmarshaller {
+public class DescribeRegionsResponseUnmarshaller {
 
-	public static CancelKeyDeletionResponse unmarshall(CancelKeyDeletionResponse cancelKeyDeletionResponse, UnmarshallerContext context) {
+	public static DescribeRegionsResponse unmarshall(DescribeRegionsResponse describeRegionsResponse, UnmarshallerContext context) {
 		
-		cancelKeyDeletionResponse.setRequestId(context.stringValue("CancelKeyDeletionResponse.RequestId"));
+		describeRegionsResponse.setRequestId(context.stringValue("DescribeRegionsResponse.RequestId"));
+
+		List<Region> regions = new ArrayList<Region>();
+		for (int i = 0; i < context.lengthValue("DescribeRegionsResponse.Regions.Length"); i++) {
+			Region region = new Region();
+			region.setRegionId(context.stringValue("DescribeRegionsResponse.Regions["+ i +"].RegionId"));
+
+			regions.add(region);
+		}
+		describeRegionsResponse.setRegions(regions);
 	 
-	 	return cancelKeyDeletionResponse;
+	 	return describeRegionsResponse;
 	}
 }

@@ -62,6 +62,10 @@ public class CreateKeyResponse extends AcsResponse {
 
 		private String deleteDate;
 
+		private String creator;
+
+		private String arn;
+
 		public String getCreationDate() {
 			return this.creationDate;
 		}
@@ -108,6 +112,22 @@ public class CreateKeyResponse extends AcsResponse {
 
 		public void setDeleteDate(String deleteDate) {
 			this.deleteDate = deleteDate;
+		}
+
+		public String getCreator() {
+			return this.creator;
+		}
+
+		public void setCreator(String creator) {
+			this.creator = creator;
+		}
+
+		public String getArn() {
+			return this.arn;
+		}
+
+		public void setArn(String arn) {
+			this.arn = arn;
 		}
 	}
 

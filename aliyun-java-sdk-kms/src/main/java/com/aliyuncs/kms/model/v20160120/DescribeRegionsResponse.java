@@ -18,17 +18,20 @@
  */
 package com.aliyuncs.kms.model.v20160120;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.kms.transform.v20160120.ScheduleKeyDeletionResponseUnmarshaller;
+import com.aliyuncs.kms.transform.v20160120.DescribeRegionsResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ScheduleKeyDeletionResponse extends AcsResponse {
+public class DescribeRegionsResponse extends AcsResponse {
 
 	private String requestId;
+
+	private List<Region> regions;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -38,8 +41,29 @@ public class ScheduleKeyDeletionResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public List<Region> getRegions() {
+		return this.regions;
+	}
+
+	public void setRegions(List<Region> regions) {
+		this.regions = regions;
+	}
+
+	public static class Region {
+
+		private String regionId;
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
+		}
+	}
+
 	@Override
-	public ScheduleKeyDeletionResponse getInstance(UnmarshallerContext context) {
-		return	ScheduleKeyDeletionResponseUnmarshaller.unmarshall(this, context);
+	public DescribeRegionsResponse getInstance(UnmarshallerContext context) {
+		return	DescribeRegionsResponseUnmarshaller.unmarshall(this, context);
 	}
 }
