@@ -178,6 +178,8 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 
 	private String keyPairName;
 
+	private String ramRoleName;
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -842,6 +844,15 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 	public void setKeyPairName(String keyPairName) {
 		this.keyPairName = keyPairName;
 		putQueryParameter("KeyPairName", keyPairName);
+	}
+
+	public String getRamRoleName() {
+		return this.ramRoleName;
+	}
+
+	public void setRamRoleName(String ramRoleName) {
+		this.ramRoleName = ramRoleName;
+		putQueryParameter("RamRoleName", ramRoleName);
 	}
 
 	@Override
