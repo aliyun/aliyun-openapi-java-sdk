@@ -23,52 +23,51 @@ import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
- * @version 
  */
 public class ChangeDBSourceStatusRequest extends RoaAcsRequest<ChangeDBSourceStatusResponse> {
-	
-	public ChangeDBSourceStatusRequest() {
-		super("Cms", "2015-08-14", "ChangeDBSourceStatus");
-		setUriPattern("/projects/[ProjectName]/sources/[SourceName]/setStatus");
-		setMethod(MethodType.PUT);
-	}
 
-	private String projectName;
+    public ChangeDBSourceStatusRequest() {
+        super("Cms", "2015-08-14", "ChangeDBSourceStatus");
+        setUriPattern("/projects/[ProjectName]/sources/[SourceName]/setStatus");
+        setMethod(MethodType.PUT);
+    }
 
-	private String sourceName;
+    private String projectName;
 
-	private String status;
+    private String sourceName;
 
-	public String getProjectName() {
-		return this.projectName;
-	}
+    private String status;
 
-	public void setProjectName(String projectName) {
-		this.projectName = projectName;
-		putPathParameter("ProjectName", projectName);
-	}
+    public String getProjectName() {
+        return this.projectName;
+    }
 
-	public String getSourceName() {
-		return this.sourceName;
-	}
+    public void setProjectName(String projectName) {
+        this.projectName = projectName;
+        putPathParameter("ProjectName", projectName);
+    }
 
-	public void setSourceName(String sourceName) {
-		this.sourceName = sourceName;
-		putPathParameter("SourceName", sourceName);
-	}
+    public String getSourceName() {
+        return this.sourceName;
+    }
 
-	public String getStatus() {
-		return this.status;
-	}
+    public void setSourceName(String sourceName) {
+        this.sourceName = sourceName;
+        putPathParameter("SourceName", sourceName);
+    }
 
-	public void setStatus(String status) {
-		this.status = status;
-		putQueryParameter("Status", status);
-	}
+    public String getStatus() {
+        return this.status;
+    }
 
-	@Override
-	public Class<ChangeDBSourceStatusResponse> getResponseClass() {
-		return ChangeDBSourceStatusResponse.class;
-	}
+    public void setStatus(String status) {
+        this.status = status;
+        putQueryParameter("Status", status);
+    }
+
+    @Override
+    public Class<ChangeDBSourceStatusResponse> getResponseClass() {
+        return ChangeDBSourceStatusResponse.class;
+    }
 
 }

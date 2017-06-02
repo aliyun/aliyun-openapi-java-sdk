@@ -59,11 +59,11 @@ public class DescribeEndpointServiceImpl implements DescribeEndpointService {
             AcsError error = readError(httpResponse, FormatType.JSON);
             if (500 <= httpResponse.getStatus()) {
                 System.out.println("Invoke_Error, requestId:" + error.getRequestId() + "; code:" + error.getErrorCode()
-                        + "; Msg" + error.getErrorMessage());
+                    + "; Msg" + error.getErrorMessage());
                 return null;
             }
             System.out.println("Invoke_Error, requestId:" + error.getRequestId() + "; code:" + error.getErrorCode()
-                    + "; Msg" + error.getErrorMessage());
+                + "; Msg" + error.getErrorMessage());
             return null;
         } catch (Throwable e) {
             System.out.println("Invoke Remote Error,Msg" + e.getMessage());
@@ -80,7 +80,7 @@ public class DescribeEndpointServiceImpl implements DescribeEndpointService {
         int endpointsLength = context.lengthValue("DescribeEndpointsResponse.Endpoints.Length");
         for (int i = 0; i < endpointsLength; i++) {
             if (endpointType.equalsIgnoreCase(context
-                    .stringValue("DescribeEndpointsResponse.Endpoints[" + i + "].Type"))) {
+                .stringValue("DescribeEndpointsResponse.Endpoints[" + i + "].Type"))) {
                 DescribeEndpointResponse response = new DescribeEndpointResponse();
 
                 response.setRequestId(context.stringValue("DescribeEndpointsResponse.RequestId"));
@@ -116,7 +116,8 @@ public class DescribeEndpointServiceImpl implements DescribeEndpointService {
                 stringContent = new String(httpResponse.getContent(), httpResponse.getEncoding());
             }
         } catch (UnsupportedEncodingException exp) {
-            throw new ClientException("SDK.UnsupportedEncoding", "Can not parse response due to un supported encoding.");
+            throw new ClientException("SDK.UnsupportedEncoding",
+                "Can not parse response due to un supported encoding.");
         }
         return stringContent;
     }

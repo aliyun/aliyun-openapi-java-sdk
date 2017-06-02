@@ -27,43 +27,43 @@ import org.junit.Test;
 
 public class ParameterHelperTest {
 
-	@Test
-	public void parseISO8601DateTest() throws ParseException {
-		Assert.assertNull(ParameterHelper.parseISO8601(null));
-		String iso8601Date = "2014-12-22T10:33:40Z";
-		Date date =  ParameterHelper.parseISO8601(iso8601Date);
-		Calendar calendar = Calendar.getInstance();
-		calendar.setTime(date);
-		Assert.assertEquals(2014, calendar.get(Calendar.YEAR));
-		Assert.assertEquals(11, calendar.get(Calendar.MONTH));
-		Assert.assertEquals(22, calendar.get(Calendar.DATE));
-		Assert.assertEquals(6, calendar.get(Calendar.HOUR));
-		Assert.assertEquals(33, calendar.get(Calendar.MINUTE));
-		Assert.assertEquals(40, calendar.get(Calendar.SECOND));
+    @Test
+    public void parseISO8601DateTest() throws ParseException {
+        Assert.assertNull(ParameterHelper.parseISO8601(null));
+        String iso8601Date = "2014-12-22T10:33:40Z";
+        Date date = ParameterHelper.parseISO8601(iso8601Date);
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(date);
+        Assert.assertEquals(2014, calendar.get(Calendar.YEAR));
+        Assert.assertEquals(11, calendar.get(Calendar.MONTH));
+        Assert.assertEquals(22, calendar.get(Calendar.DATE));
+        Assert.assertEquals(6, calendar.get(Calendar.HOUR));
+        Assert.assertEquals(33, calendar.get(Calendar.MINUTE));
+        Assert.assertEquals(40, calendar.get(Calendar.SECOND));
 
-		Assert.assertTrue(iso8601Date.equals(ParameterHelper.getISO8601Time(date)));
-	}
-	
-	@Test
-	public void parseRFC2616DateTest() throws ParseException {
-		Assert.assertNull(ParameterHelper.parseRFC2616(null));
-		String rfc2616Date = "Wed, 16 Jan 2013 19:01:18 GMT";
-		Date date =  ParameterHelper.parseRFC2616(rfc2616Date);
-		Calendar calendar = Calendar.getInstance();
-		calendar.setTime(date);
-		Assert.assertEquals(2013, calendar.get(Calendar.YEAR));
-		Assert.assertEquals(0, calendar.get(Calendar.MONTH));
-		Assert.assertEquals(17, calendar.get(Calendar.DATE));
-		Assert.assertEquals(3, calendar.get(Calendar.HOUR));
-		Assert.assertEquals(01, calendar.get(Calendar.MINUTE));
-		Assert.assertEquals(18, calendar.get(Calendar.SECOND));
-		System.out.println(ParameterHelper.getRFC2616Date(date));
-		Assert.assertTrue(rfc2616Date.equals(ParameterHelper.getRFC2616Date(date)));
-	}
-	
-	@Test
-	public void getUniqueNonceTest() {
-		Assert.assertNotNull(ParameterHelper.getUniqueNonce());
-		Assert.assertFalse(ParameterHelper.getUniqueNonce().equals(ParameterHelper.getUniqueNonce()));
-	}
+        Assert.assertTrue(iso8601Date.equals(ParameterHelper.getISO8601Time(date)));
+    }
+
+    @Test
+    public void parseRFC2616DateTest() throws ParseException {
+        Assert.assertNull(ParameterHelper.parseRFC2616(null));
+        String rfc2616Date = "Wed, 16 Jan 2013 19:01:18 GMT";
+        Date date = ParameterHelper.parseRFC2616(rfc2616Date);
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(date);
+        Assert.assertEquals(2013, calendar.get(Calendar.YEAR));
+        Assert.assertEquals(0, calendar.get(Calendar.MONTH));
+        Assert.assertEquals(17, calendar.get(Calendar.DATE));
+        Assert.assertEquals(3, calendar.get(Calendar.HOUR));
+        Assert.assertEquals(01, calendar.get(Calendar.MINUTE));
+        Assert.assertEquals(18, calendar.get(Calendar.SECOND));
+        System.out.println(ParameterHelper.getRFC2616Date(date));
+        Assert.assertTrue(rfc2616Date.equals(ParameterHelper.getRFC2616Date(date)));
+    }
+
+    @Test
+    public void getUniqueNonceTest() {
+        Assert.assertNotNull(ParameterHelper.getUniqueNonce());
+        Assert.assertFalse(ParameterHelper.getUniqueNonce().equals(ParameterHelper.getUniqueNonce()));
+    }
 }

@@ -12,7 +12,7 @@ import com.aliyuncs.profile.IClientProfile;
 
 public class RemoteEndpointsParser implements IEndpointsProvider {
 
-    private DescribeEndpointService               describeEndpointService;
+    private DescribeEndpointService describeEndpointService;
 
     public void setDescribeEndpointService(DescribeEndpointService describeEndpointService) {
         this.describeEndpointService = describeEndpointService;
@@ -38,7 +38,7 @@ public class RemoteEndpointsParser implements IEndpointsProvider {
         Endpoint endpoint = null;
 
         DescribeEndpointResponse response = describeEndpointService.describeEndpoint(regionId, serviceCode,
-                endpointType, credential, locationConfig);
+            endpointType, credential, locationConfig);
         if (response == null) {
             return endpoint;
         }
@@ -53,7 +53,7 @@ public class RemoteEndpointsParser implements IEndpointsProvider {
 
     public static void main(String[] args) throws ClientException {
 
-        IClientProfile profile= DefaultProfile.getProfile("cn-qingdao", "account", "secret");
+        IClientProfile profile = DefaultProfile.getProfile("cn-qingdao", "account", "secret");
         List<Endpoint> list = profile.getEndpoints("Ecs", "cn-qingdao", "ecs", "");
         System.out.println(list.get(0));
 

@@ -22,13 +22,13 @@ import com.aliyuncs.RpcAcsRequest;
 
 public class DescribeRegionsRequest extends RpcAcsRequest<DescribeRegionsResponse> {
 
-	public DescribeRegionsRequest() {
-		super("Ecs", "2014-05-26", "DescribeRegions");
-	}
+    public DescribeRegionsRequest() {
+        super("Ecs", "2014-05-26", "DescribeRegions");
+    }
 
-	@Override
-	public Class<DescribeRegionsResponse> getResponseClass() {
-		return DescribeRegionsResponse.class;
-	}
+    @Override
+    public Class<DescribeRegionsResponse> getResponseClass() {
+        return DescribeRegionsResponse.class;
+    }
 
 }

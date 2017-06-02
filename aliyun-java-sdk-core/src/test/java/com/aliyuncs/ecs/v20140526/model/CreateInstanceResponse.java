@@ -25,32 +25,31 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
- * @version 
  */
 public class CreateInstanceResponse extends AcsResponse {
 
-	private String requestId;
+    private String requestId;
 
-	private String instanceId;
+    private String instanceId;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
+    public String getRequestId() {
+        return this.requestId;
+    }
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+    public void setRequestId(String requestId) {
+        this.requestId = requestId;
+    }
 
-	public String getInstanceId() {
-		return this.instanceId;
-	}
+    public String getInstanceId() {
+        return this.instanceId;
+    }
 
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-	}
+    public void setInstanceId(String instanceId) {
+        this.instanceId = instanceId;
+    }
 
-	@Override
-	public CreateInstanceResponse getInstance(UnmarshallerContext context) {
-		return	CreateInstanceResponseUnmarshaller.unmarshall(this, context);
-	}
+    @Override
+    public CreateInstanceResponse getInstance(UnmarshallerContext context) {
+        return CreateInstanceResponseUnmarshaller.unmarshall(this, context);
+    }
 }

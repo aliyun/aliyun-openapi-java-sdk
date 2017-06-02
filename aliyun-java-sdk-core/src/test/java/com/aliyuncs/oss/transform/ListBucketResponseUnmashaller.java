@@ -27,24 +27,24 @@ import com.aliyuncs.oss.model.Owner;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListBucketResponseUnmashaller {
-	public static ListBucketResponse unmarshall(ListBucketResponse  listBucketResponse, 
-			UnmarshallerContext context) {
-		
-		Owner owner = new Owner();
-		owner.setId(context.stringValue("ListBucketResponse.Owner.ID"));
-		owner.setDisplayName(context.stringValue("ListBucketResponse.Owner.DisplayName"));
-		listBucketResponse.setOwner(owner);
-		
-		List<Bucket> buckets = new ArrayList<Bucket>();
-		for (int i = 0; i < context.lengthValue("ListBucketResponse.Buckets.Length"); i++) {
-			Bucket  bucket = new Bucket();
-			bucket.setLocation(context.stringValue("ListBucketResponse.Buckets["+ i +"].Location"));
-			bucket.setName(context.stringValue("ListBucketResponse.Buckets["+ i +"].Name"));
-			bucket.setCreationDate(context.stringValue("ListBucketResponse.Buckets["+ i +"].CreationDate"));
-			buckets.add(bucket);
-		}
-		listBucketResponse.setBuckets(buckets);
-	
-		return listBucketResponse;
-	}
+    public static ListBucketResponse unmarshall(ListBucketResponse listBucketResponse,
+                                                UnmarshallerContext context) {
+
+        Owner owner = new Owner();
+        owner.setId(context.stringValue("ListBucketResponse.Owner.ID"));
+        owner.setDisplayName(context.stringValue("ListBucketResponse.Owner.DisplayName"));
+        listBucketResponse.setOwner(owner);
+
+        List<Bucket> buckets = new ArrayList<Bucket>();
+        for (int i = 0; i < context.lengthValue("ListBucketResponse.Buckets.Length"); i++) {
+            Bucket bucket = new Bucket();
+            bucket.setLocation(context.stringValue("ListBucketResponse.Buckets[" + i + "].Location"));
+            bucket.setName(context.stringValue("ListBucketResponse.Buckets[" + i + "].Name"));
+            bucket.setCreationDate(context.stringValue("ListBucketResponse.Buckets[" + i + "].CreationDate"));
+            buckets.add(bucket);
+        }
+        listBucketResponse.setBuckets(buckets);
+
+        return listBucketResponse;
+    }
 }

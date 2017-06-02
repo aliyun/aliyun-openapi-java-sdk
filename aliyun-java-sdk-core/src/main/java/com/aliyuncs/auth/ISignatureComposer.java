@@ -24,13 +24,13 @@ import com.aliyuncs.http.FormatType;
 import com.aliyuncs.http.MethodType;
 
 public interface ISignatureComposer {
-	
-	public Map<String, String> refreshSignParameters(Map<String, String> parameters, 
-			ISigner signer, String accessKeyId, FormatType format);
-	
-	public String composeStringToSign(MethodType method, 
-			String uriPattern,ISigner signer,
-			Map<String, String> queries, 
-			Map<String, String> headers, 
-			Map<String, String> paths);
+
+    public Map<String, String> refreshSignParameters(Map<String, String> parameters,
+                                                     ISigner signer, String accessKeyId, FormatType format);
+
+    public String composeStringToSign(MethodType method,
+                                      String uriPattern, ISigner signer,
+                                      Map<String, String> queries,
+                                      Map<String, String> headers,
+                                      Map<String, String> paths);
 }

@@ -23,52 +23,51 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
- * @version 
  */
 public class DeleteDBSourceResponse extends AcsResponse {
 
-	private String code;
+    private String code;
 
-	private String message;
+    private String message;
 
-	private String success;
+    private String success;
 
-	private String traceId;
+    private String traceId;
 
-	public String getCode() {
-		return this.code;
-	}
+    public String getCode() {
+        return this.code;
+    }
 
-	public void setCode(String code) {
-		this.code = code;
-	}
+    public void setCode(String code) {
+        this.code = code;
+    }
 
-	public String getMessage() {
-		return this.message;
-	}
+    public String getMessage() {
+        return this.message;
+    }
 
-	public void setMessage(String message) {
-		this.message = message;
-	}
+    public void setMessage(String message) {
+        this.message = message;
+    }
 
-	public String getSuccess() {
-		return this.success;
-	}
+    public String getSuccess() {
+        return this.success;
+    }
 
-	public void setSuccess(String success) {
-		this.success = success;
-	}
+    public void setSuccess(String success) {
+        this.success = success;
+    }
 
-	public String getTraceId() {
-		return this.traceId;
-	}
+    public String getTraceId() {
+        return this.traceId;
+    }
 
-	public void setTraceId(String traceId) {
-		this.traceId = traceId;
-	}
+    public void setTraceId(String traceId) {
+        this.traceId = traceId;
+    }
 
-	@Override
-	public DeleteDBSourceResponse getInstance(UnmarshallerContext context) {
-		return	DeleteDBSourceResponseUnmarshaller.unmarshall(this, context);
-	}
+    @Override
+    public DeleteDBSourceResponse getInstance(UnmarshallerContext context) {
+        return DeleteDBSourceResponseUnmarshaller.unmarshall(this, context);
+    }
 }

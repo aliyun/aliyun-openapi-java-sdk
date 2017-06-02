@@ -43,5 +43,5 @@ public interface IClientProfile {
     public List<Endpoint> getEndpoints(String regionId, String product) throws ClientException;
 
     public List<Endpoint> getEndpoints(String product, String regionId, String serviceCode, String endpointType)
-            throws ClientException;
+        throws ClientException;
 }

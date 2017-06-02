@@ -26,30 +26,28 @@ import org.junit.Test;
 
 public class CredentialTest {
 
-	@Test
-	public void setExpiredDateTest() {
-		Credential credential = new Credential("<accessKeyId>","<accessSecret>");
-		Method method;
-		try {
-			Assert.assertFalse(credential.isExpired());
-			int expiredHours = 1;
-			method = Credential.class.getDeclaredMethod("setExpiredDate", int.class);
-			method.setAccessible(true);
-			method.invoke(credential, expiredHours);
-			Assert.assertFalse(credential.isExpired());
-		} catch (SecurityException e) {
-			Assert.fail();
-		} catch (NoSuchMethodException e) {
-			Assert.fail();
-		} catch (IllegalArgumentException e) {
-			Assert.fail();
-		} catch (IllegalAccessException e) {
-			Assert.fail();
-		} catch (InvocationTargetException e) {
-			Assert.fail();
-		}
+    @Test
+    public void setExpiredDateTest() {
+        Credential credential = new Credential("<accessKeyId>", "<accessSecret>");
+        Method method;
+        try {
+            Assert.assertFalse(credential.isExpired());
+            int expiredHours = 1;
+            method = Credential.class.getDeclaredMethod("setExpiredDate", int.class);
+            method.setAccessible(true);
+            method.invoke(credential, expiredHours);
+            Assert.assertFalse(credential.isExpired());
+        } catch (SecurityException e) {
+            Assert.fail();
+        } catch (NoSuchMethodException e) {
+            Assert.fail();
+        } catch (IllegalArgumentException e) {
+            Assert.fail();
+        } catch (IllegalAccessException e) {
+            Assert.fail();
+        } catch (InvocationTargetException e) {
+            Assert.fail();
+        }
 
-		
-		
-	}
+    }
 }

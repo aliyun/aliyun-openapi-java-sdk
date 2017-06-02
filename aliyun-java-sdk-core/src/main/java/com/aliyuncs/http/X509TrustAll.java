@@ -31,53 +31,48 @@ import javax.net.ssl.SSLSocketFactory;
 import javax.net.ssl.TrustManager;
 import javax.net.ssl.X509TrustManager;
 
-public final class X509TrustAll implements X509TrustManager,HostnameVerifier {
+public final class X509TrustAll implements X509TrustManager, HostnameVerifier {
 
-	private static HostnameVerifier defaultVerifier;
-	private static SSLSocketFactory defaultSSLFactory;
-	
-	public boolean verify(String hostname, SSLSession session) {
-		return true;
-	}
-	
-	public void checkClientTrusted(X509Certificate[] arg0, String arg1)
-			throws CertificateException {
-	}
+    private static HostnameVerifier defaultVerifier;
+    private static SSLSocketFactory defaultSSLFactory;
 
-	public void checkServerTrusted(X509Certificate[] arg0, String arg1)
-			throws CertificateException {
-	}
+    public boolean verify(String hostname, SSLSession session) {
+        return true;
+    }
 
-	public X509Certificate[] getAcceptedIssuers() {
-		return null;
-	}
+    public void checkClientTrusted(X509Certificate[] arg0, String arg1)
+        throws CertificateException {
+    }
 
-	public static void restoreSSLCertificate() {
-		if (null != defaultSSLFactory) {
-			HttpsURLConnection.setDefaultSSLSocketFactory(defaultSSLFactory);
+    public void checkServerTrusted(X509Certificate[] arg0, String arg1)
+        throws CertificateException {
+    }
+
+    public X509Certificate[] getAcceptedIssuers() {
+        return null;
+    }
+
+    public static void restoreSSLCertificate() {
+        if (null != defaultSSLFactory) {
+            HttpsURLConnection.setDefaultSSLSocketFactory(defaultSSLFactory);
             HttpsURLConnection.setDefaultHostnameVerifier(defaultVerifier);
-		}
-	}
-	
-	public static void ignoreSSLCertificate() {
-        try
-        {
-        	X509TrustAll trustAll = new X509TrustAll();
+        }
+    }
+
+    public static void ignoreSSLCertificate() {
+        try {
+            X509TrustAll trustAll = new X509TrustAll();
             SSLContext sc = SSLContext.getInstance("SSL");
-            sc.init(null, new TrustManager[]{trustAll}, new java.security.SecureRandom()); 
+            sc.init(null, new TrustManager[] {trustAll}, new java.security.SecureRandom());
             if (null == defaultSSLFactory) {
-            	defaultSSLFactory = HttpsURLConnection.getDefaultSSLSocketFactory();
-            	defaultVerifier = HttpsURLConnection.getDefaultHostnameVerifier();
+                defaultSSLFactory = HttpsURLConnection.getDefaultSSLSocketFactory();
+                defaultVerifier = HttpsURLConnection.getDefaultHostnameVerifier();
             }
             HttpsURLConnection.setDefaultSSLSocketFactory(sc.getSocketFactory());
             HttpsURLConnection.setDefaultHostnameVerifier(trustAll);
-        }
-        catch (NoSuchAlgorithmException e)
-        {
+        } catch (NoSuchAlgorithmException e) {
             throw new RuntimeException("Failed setting up all thrusting certificate manager.", e);
-        }
-        catch (KeyManagementException e)
-        {
+        } catch (KeyManagementException e) {
             throw new RuntimeException("Failed setting up all thrusting certificate manager.", e);
         }
     }

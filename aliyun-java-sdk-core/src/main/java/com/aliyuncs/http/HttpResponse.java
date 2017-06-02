@@ -29,120 +29,117 @@ import java.util.Map.Entry;
 
 public class HttpResponse extends HttpRequest {
 
-	private int status;
+    private int status;
 
-	public HttpResponse(String strUrl) {
-		super(strUrl);
-	}
-	
-	public HttpResponse() {
-	}
-	
-	@Override
-	public void setContent(byte[] content, String encoding, FormatType format) {
-		this.content = content;
-		this.encoding = encoding;
-		this.contentType = format;
-	}
-	
-	@Override
-	public String getHeaderValue(String name) {
-		String value = this.headers.get(name);
-		if (null == value){
-			value = this.headers.get(name.toLowerCase());
-		}
-		return value;
-	}
-	
-	private static byte[] readContent(InputStream content)
-            throws IOException {
-        if (content == null){
+    public HttpResponse(String strUrl) {
+        super(strUrl);
+    }
+
+    public HttpResponse() {
+    }
+
+    @Override
+    public void setContent(byte[] content, String encoding, FormatType format) {
+        this.content = content;
+        this.encoding = encoding;
+        this.contentType = format;
+    }
+
+    @Override
+    public String getHeaderValue(String name) {
+        String value = this.headers.get(name);
+        if (null == value) {
+            value = this.headers.get(name.toLowerCase());
+        }
+        return value;
+    }
+
+    private static byte[] readContent(InputStream content)
+        throws IOException {
+        if (content == null) {
             return null;
         }
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
         byte[] buff = new byte[1024];
 
-        while(true) {
-           final int read = content.read(buff);
-           if(read == -1) break;
-           outputStream.write(buff,0,read);
+        while (true) {
+            final int read = content.read(buff);
+            if (read == -1) { break; }
+            outputStream.write(buff, 0, read);
         }
-        
+
         return outputStream.toByteArray();
     }
-	
-	private static void pasrseHttpConn(HttpResponse response, HttpURLConnection httpConn,
-			InputStream content) throws IOException {
-		byte[] buff = readContent(content);
-		response.setStatus(httpConn.getResponseCode());
-		Map<String, List<String>> headers = httpConn.getHeaderFields();
-		for(Entry<String,List<String>> entry:headers.entrySet()) {
-			String key = entry.getKey();
-			if (null == key)
-				continue;
-			List<String> values = entry.getValue();
-			StringBuilder builder = new StringBuilder(values.get(0));
-			for(int i=1; i<values.size(); i++) {
-				builder.append(",");
-				builder.append(values.get(i));
-			}
-			response.putHeaderParameter(key, builder.toString());
-		}
-		String type = response.getHeaderValue("Content-Type");
-		if (null != buff && null != type) {
-			response.setEncoding("UTF-8");
-			String[] split = type.split(";");
-			response.setContentType(FormatType.mapAcceptToFormat(split[0].trim()));
-			if (split.length > 1 && split[1].contains("=")) {
-				String[] codings = split[1].split("=");
-				response.setEncoding(codings[1].trim().toUpperCase());
-			}
-		}
-		response.setStatus(httpConn.getResponseCode());
-		response.setContent(buff, response.getEncoding(), 
-				response.getContentType());
-	}
-	
-	public static HttpResponse getResponse(HttpRequest request) throws IOException {
-		OutputStream out= null;
-		InputStream content = null;
-		HttpResponse response = null;
-		HttpURLConnection httpConn = request.getHttpConnection();
 
-		try {
-			httpConn.connect();
-			if (null != request.getContent() && request.getContent().length > 0) {
-				out = httpConn.getOutputStream();
-				out.write(request.getContent());
-			}
-			content = httpConn.getInputStream();
-			response = new HttpResponse(httpConn.getURL().toString());
-			pasrseHttpConn(response, httpConn, content);
-			return response;
-		} catch (IOException e) {
-			content = httpConn.getErrorStream();
-			response = new HttpResponse(httpConn.getURL().toString());
-			pasrseHttpConn(response, httpConn, content);
-			return response;
-		} finally {
-			if (content != null) 
-				content.close();
+    private static void pasrseHttpConn(HttpResponse response, HttpURLConnection httpConn,
+                                       InputStream content) throws IOException {
+        byte[] buff = readContent(content);
+        response.setStatus(httpConn.getResponseCode());
+        Map<String, List<String>> headers = httpConn.getHeaderFields();
+        for (Entry<String, List<String>> entry : headers.entrySet()) {
+            String key = entry.getKey();
+            if (null == key) { continue; }
+            List<String> values = entry.getValue();
+            StringBuilder builder = new StringBuilder(values.get(0));
+            for (int i = 1; i < values.size(); i++) {
+                builder.append(",");
+                builder.append(values.get(i));
+            }
+            response.putHeaderParameter(key, builder.toString());
+        }
+        String type = response.getHeaderValue("Content-Type");
+        if (null != buff && null != type) {
+            response.setEncoding("UTF-8");
+            String[] split = type.split(";");
+            response.setContentType(FormatType.mapAcceptToFormat(split[0].trim()));
+            if (split.length > 1 && split[1].contains("=")) {
+                String[] codings = split[1].split("=");
+                response.setEncoding(codings[1].trim().toUpperCase());
+            }
+        }
+        response.setStatus(httpConn.getResponseCode());
+        response.setContent(buff, response.getEncoding(),
+            response.getContentType());
+    }
+
+    public static HttpResponse getResponse(HttpRequest request) throws IOException {
+        OutputStream out = null;
+        InputStream content = null;
+        HttpResponse response = null;
+        HttpURLConnection httpConn = request.getHttpConnection();
+
+        try {
+            httpConn.connect();
+            if (null != request.getContent() && request.getContent().length > 0) {
+                out = httpConn.getOutputStream();
+                out.write(request.getContent());
+            }
+            content = httpConn.getInputStream();
+            response = new HttpResponse(httpConn.getURL().toString());
+            pasrseHttpConn(response, httpConn, content);
+            return response;
+        } catch (IOException e) {
+            content = httpConn.getErrorStream();
+            response = new HttpResponse(httpConn.getURL().toString());
+            pasrseHttpConn(response, httpConn, content);
+            return response;
+        } finally {
+            if (content != null) { content.close(); }
             httpConn.disconnect();
         }
-	}
-	
-	public int getStatus() {
-		return status;
-	}
-	
-	public void setStatus(int status) {
-		this.status = status;
-	}
-	
-	public boolean isSuccess() {
-		if (200 <= this.status &&
-				300 > this.status)
-			return true;
-		return false;
-	}
+    }
+
+    public int getStatus() {
+        return status;
+    }
+
+    public void setStatus(int status) {
+        this.status = status;
+    }
+
+    public boolean isSuccess() {
+        if (200 <= this.status &&
+            300 > this.status) { return true; }
+        return false;
+    }
 }

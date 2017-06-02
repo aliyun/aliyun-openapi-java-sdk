@@ -27,41 +27,40 @@ import org.junit.Test;
 
 public class UtilsTest {
 
-	@Test
-	public void test() {
-		testBase64();
-		testMd5();
-	}
+    @Test
+    public void test() {
+        testBase64();
+        testMd5();
+    }
 
-	private void testBase64() {
-		try {
-			String encoding = "UTF-8";
-			String encode1 = Base64Helper.encode("1234567890", encoding);
-			String encode2 = Base64Helper.encode("abcdefghijklmnopqrstuvwxyz", encoding);
-			assertEquals("MTIzNDU2Nzg5MA==", encode1);
-			assertEquals("YWJjZGVmZ2hpamtsbW5vcHFyc3R1dnd4eXo=", encode2);
-			String decode1 = Base64Helper.decode(encode1, encoding);
-			String decode2 = Base64Helper.decode(encode2, encoding);
-			assertEquals("1234567890", decode1);
-			assertEquals("abcdefghijklmnopqrstuvwxyz", decode2);
-		} catch (UnsupportedEncodingException e) {
-			fail(e.toString());
-			e.printStackTrace();
-		}
-	}
-	
-	private void testMd5() {
-		String encoding = "UTF-8";
-		String source = "<Product name=\"Yundun\" domain=\"yundun.aliyuncs.com\"/>";
-		String md5;
-		try {
-			md5 = ParameterHelper.md5Sum(source.getBytes(encoding));
-			assertEquals("+J93MVb8RzUp4M+yNoFtLg==", md5);
-		} catch (UnsupportedEncodingException e) {
-			fail(e.toString());
-			e.printStackTrace();
-		}
-		
-		
-	}
+    private void testBase64() {
+        try {
+            String encoding = "UTF-8";
+            String encode1 = Base64Helper.encode("1234567890", encoding);
+            String encode2 = Base64Helper.encode("abcdefghijklmnopqrstuvwxyz", encoding);
+            assertEquals("MTIzNDU2Nzg5MA==", encode1);
+            assertEquals("YWJjZGVmZ2hpamtsbW5vcHFyc3R1dnd4eXo=", encode2);
+            String decode1 = Base64Helper.decode(encode1, encoding);
+            String decode2 = Base64Helper.decode(encode2, encoding);
+            assertEquals("1234567890", decode1);
+            assertEquals("abcdefghijklmnopqrstuvwxyz", decode2);
+        } catch (UnsupportedEncodingException e) {
+            fail(e.toString());
+            e.printStackTrace();
+        }
+    }
+
+    private void testMd5() {
+        String encoding = "UTF-8";
+        String source = "<Product name=\"Yundun\" domain=\"yundun.aliyuncs.com\"/>";
+        String md5;
+        try {
+            md5 = ParameterHelper.md5Sum(source.getBytes(encoding));
+            assertEquals("+J93MVb8RzUp4M+yNoFtLg==", md5);
+        } catch (UnsupportedEncodingException e) {
+            fail(e.toString());
+            e.printStackTrace();
+        }
+
+    }
 }

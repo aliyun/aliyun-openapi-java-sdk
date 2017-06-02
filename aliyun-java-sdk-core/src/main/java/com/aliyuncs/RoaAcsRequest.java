@@ -34,7 +34,7 @@ import com.aliyuncs.regions.ProductDomain;
 
 public abstract class RoaAcsRequest<T extends AcsResponse> extends AcsRequest<T> {
 
-    protected String            uriPattern     = null;
+    protected String uriPattern = null;
     private Map<String, String> pathParameters = new HashMap<String, String>();
 
     public RoaAcsRequest(String product) {
@@ -133,7 +133,7 @@ public abstract class RoaAcsRequest<T extends AcsResponse> extends AcsRequest<T>
 
     @Override
     public HttpRequest signRequest(ISigner signer, Credential credential, FormatType format, ProductDomain domain)
-            throws InvalidKeyException, IllegalStateException, UnsupportedEncodingException, NoSuchAlgorithmException {
+        throws InvalidKeyException, IllegalStateException, UnsupportedEncodingException, NoSuchAlgorithmException {
 
         Map<String, String> imutableMap = new HashMap<String, String>(this.getHeaders());
         if (null != signer && null != credential) {
@@ -141,7 +141,7 @@ public abstract class RoaAcsRequest<T extends AcsResponse> extends AcsRequest<T>
             String accessSecret = credential.getAccessSecret();
             imutableMap = this.composer.refreshSignParameters(this.getHeaders(), signer, accessKeyId, format);
             String strToSign = this.composer.composeStringToSign(this.getMethod(), this.getUriPattern(), signer,
-                    this.getQueryParameters(), imutableMap, this.getPathParameters());
+                this.getQueryParameters(), imutableMap, this.getPathParameters());
             String signature = signer.signString(strToSign, accessSecret);
             imutableMap.put("Authorization", "acs " + accessKeyId + ":" + signature);
         }

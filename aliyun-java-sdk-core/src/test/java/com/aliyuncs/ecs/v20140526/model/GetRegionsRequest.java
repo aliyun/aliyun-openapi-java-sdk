@@ -22,14 +22,14 @@ import com.aliyuncs.RoaAcsRequest;
 import com.aliyuncs.http.MethodType;
 
 public class GetRegionsRequest extends RoaAcsRequest<DescribeRegionsResponse> {
-	public GetRegionsRequest() {
-		super("Acs", "2015-01-01", "GetGlobal");
-		this.setMethod(MethodType.GET);
-		this.setUriPattern("/");
-	}
+    public GetRegionsRequest() {
+        super("Acs", "2015-01-01", "GetGlobal");
+        this.setMethod(MethodType.GET);
+        this.setUriPattern("/");
+    }
 
-	@Override
-	public Class<DescribeRegionsResponse> getResponseClass() {
-		return DescribeRegionsResponse.class;
-	}
+    @Override
+    public Class<DescribeRegionsResponse> getResponseClass() {
+        return DescribeRegionsResponse.class;
+    }
 }

@@ -23,41 +23,40 @@ import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
- * @version 
  */
 public class DeleteDBSourceRequest extends RoaAcsRequest<DeleteDBSourceResponse> {
-	
-	public DeleteDBSourceRequest() {
-		super("Cms", "2015-08-14", "DeleteDBSource");
-		setUriPattern("/projects/[ProjectName]/sources/[SourceName]");
-		setMethod(MethodType.DELETE);
-	}
 
-	private String projectName;
+    public DeleteDBSourceRequest() {
+        super("Cms", "2015-08-14", "DeleteDBSource");
+        setUriPattern("/projects/[ProjectName]/sources/[SourceName]");
+        setMethod(MethodType.DELETE);
+    }
 
-	private String sourceName;
+    private String projectName;
 
-	public String getProjectName() {
-		return this.projectName;
-	}
+    private String sourceName;
 
-	public void setProjectName(String projectName) {
-		this.projectName = projectName;
-		putPathParameter("ProjectName", projectName);
-	}
+    public String getProjectName() {
+        return this.projectName;
+    }
 
-	public String getSourceName() {
-		return this.sourceName;
-	}
+    public void setProjectName(String projectName) {
+        this.projectName = projectName;
+        putPathParameter("ProjectName", projectName);
+    }
 
-	public void setSourceName(String sourceName) {
-		this.sourceName = sourceName;
-		putPathParameter("SourceName", sourceName);
-	}
+    public String getSourceName() {
+        return this.sourceName;
+    }
 
-	@Override
-	public Class<DeleteDBSourceResponse> getResponseClass() {
-		return DeleteDBSourceResponse.class;
-	}
+    public void setSourceName(String sourceName) {
+        this.sourceName = sourceName;
+        putPathParameter("SourceName", sourceName);
+    }
+
+    @Override
+    public Class<DeleteDBSourceResponse> getResponseClass() {
+        return DeleteDBSourceResponse.class;
+    }
 
 }

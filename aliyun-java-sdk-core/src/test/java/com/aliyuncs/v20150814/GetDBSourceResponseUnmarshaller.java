@@ -20,17 +20,16 @@ package com.aliyuncs.v20150814;
 
 import com.aliyuncs.transform.UnmarshallerContext;
 
-
 public class GetDBSourceResponseUnmarshaller {
 
-	public static GetDBSourceResponse unmarshall(GetDBSourceResponse getDBSourceResponse, UnmarshallerContext context) {
-		
-		getDBSourceResponse.setCode(context.stringValue("GetDBSourceResponse.Code"));
-		getDBSourceResponse.setMessage(context.stringValue("GetDBSourceResponse.Message"));
-		getDBSourceResponse.setSuccess(context.stringValue("GetDBSourceResponse.Success"));
-		getDBSourceResponse.setTraceId(context.stringValue("GetDBSourceResponse.TraceId"));
-		getDBSourceResponse.setResult(context.stringValue("GetDBSourceResponse.Result"));
-	 
-	 	return getDBSourceResponse;
-	}
+    public static GetDBSourceResponse unmarshall(GetDBSourceResponse getDBSourceResponse, UnmarshallerContext context) {
+
+        getDBSourceResponse.setCode(context.stringValue("GetDBSourceResponse.Code"));
+        getDBSourceResponse.setMessage(context.stringValue("GetDBSourceResponse.Message"));
+        getDBSourceResponse.setSuccess(context.stringValue("GetDBSourceResponse.Success"));
+        getDBSourceResponse.setTraceId(context.stringValue("GetDBSourceResponse.TraceId"));
+        getDBSourceResponse.setResult(context.stringValue("GetDBSourceResponse.Result"));
+
+        return getDBSourceResponse;
+    }
 }

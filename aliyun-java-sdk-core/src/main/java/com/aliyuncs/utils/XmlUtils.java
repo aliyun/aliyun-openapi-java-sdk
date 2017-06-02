@@ -45,111 +45,103 @@ import org.xml.sax.SAXException;
 
 public final class XmlUtils {
 
-	public static Document getDocument(String payload) 
-			throws ParserConfigurationException,SAXException,IOException {
-		if (payload == null || payload.length() < 1) 
-			return null;
+    public static Document getDocument(String payload)
+        throws ParserConfigurationException, SAXException, IOException {
+        if (payload == null || payload.length() < 1) { return null; }
 
-		StringReader sr = new StringReader(payload);
-		InputSource source = new InputSource(sr);
-		
-		return getDocument(source, null);
-	}
-	
-	public static Document getDocument(InputSource xml, InputStream xsd) 
-			throws ParserConfigurationException,SAXException,IOException {
-		Document doc = null;
+        StringReader sr = new StringReader(payload);
+        InputSource source = new InputSource(sr);
 
-		try {
-			DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
-			if (xsd != null) {
-				dbf.setNamespaceAware(true);
-			}
+        return getDocument(source, null);
+    }
 
-			DocumentBuilder builder = dbf.newDocumentBuilder();
-			doc = builder.parse(xml);
+    public static Document getDocument(InputSource xml, InputStream xsd)
+        throws ParserConfigurationException, SAXException, IOException {
+        Document doc = null;
 
-			if (xsd != null)
-				validateXml(doc, xsd);
-		} finally {
-			closeStream(xml.getByteStream());
-		}
-		
-		return doc;
-	}
+        try {
+            DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+            if (xsd != null) {
+                dbf.setNamespaceAware(true);
+            }
 
-	public static Element getRootElementFromString(String payload) 
-			throws ParserConfigurationException, SAXException, IOException {
-		
-		return getDocument(payload).getDocumentElement();
-	}
+            DocumentBuilder builder = dbf.newDocumentBuilder();
+            doc = builder.parse(xml);
 
-	
-	public static List<Element> getChildElements(Element parent, String tagName) {
-		if (null == parent)
-			return null;
-		NodeList nodes = parent.getElementsByTagName(tagName);
-		List<Element> elements = new ArrayList<Element>();
+            if (xsd != null) { validateXml(doc, xsd); }
+        } finally {
+            closeStream(xml.getByteStream());
+        }
 
-		for (int i = 0; i < nodes.getLength(); i++) {
-			Node node = nodes.item(i);
-			if (node.getParentNode() == parent)
-				elements.add((Element) node);
-		}
+        return doc;
+    }
 
-		return elements;
-	}
+    public static Element getRootElementFromString(String payload)
+        throws ParserConfigurationException, SAXException, IOException {
 
-	
-	public static List<Element> getChildElements(Element parent) {
-		if (null == parent)
-			return null;
-		
-		NodeList nodes = parent.getChildNodes();
-		List<Element> elements = new ArrayList<Element>();
+        return getDocument(payload).getDocumentElement();
+    }
 
-		for (int i = 0; i < nodes.getLength(); i++) {
-			Node node = nodes.item(i);
-			if (node.getNodeType() == Node.ELEMENT_NODE) 
-				elements.add((Element) node);
-		}
+    public static List<Element> getChildElements(Element parent, String tagName) {
+        if (null == parent) { return null; }
+        NodeList nodes = parent.getElementsByTagName(tagName);
+        List<Element> elements = new ArrayList<Element>();
 
-		return elements;
-	}
-	
-	public static void validateXml(InputStream xml, InputStream xsd) 
-			throws SAXException, IOException, ParserConfigurationException {
-		try {
-			DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
-			dbf.setNamespaceAware(true);
-			Document doc = dbf.newDocumentBuilder().parse(xml);
-			validateXml(doc, xsd);
-		} finally {
-			closeStream(xml);
-			closeStream(xsd);
-		}
-	}
+        for (int i = 0; i < nodes.getLength(); i++) {
+            Node node = nodes.item(i);
+            if (node.getParentNode() == parent) { elements.add((Element)node); }
+        }
 
-	public static void validateXml(Node root, InputStream xsd) 
-			throws SAXException, IOException {
-		try {
-			Source source = new StreamSource(xsd);
-			Schema schema = SchemaFactory.newInstance(
-					XMLConstants.W3C_XML_SCHEMA_NS_URI).newSchema(source);
+        return elements;
+    }
 
-			Validator validator = schema.newValidator();
-			validator.validate(new DOMSource(root));
-		} finally {
-			closeStream(xsd);
-		}
-	}
-	
-	private static void closeStream(Closeable stream) {
-		if (stream != null) {
-			try {
-				stream.close();
-			} catch (IOException e) {
-			}
-		}
-	}
+    public static List<Element> getChildElements(Element parent) {
+        if (null == parent) { return null; }
+
+        NodeList nodes = parent.getChildNodes();
+        List<Element> elements = new ArrayList<Element>();
+
+        for (int i = 0; i < nodes.getLength(); i++) {
+            Node node = nodes.item(i);
+            if (node.getNodeType() == Node.ELEMENT_NODE) { elements.add((Element)node); }
+        }
+
+        return elements;
+    }
+
+    public static void validateXml(InputStream xml, InputStream xsd)
+        throws SAXException, IOException, ParserConfigurationException {
+        try {
+            DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+            dbf.setNamespaceAware(true);
+            Document doc = dbf.newDocumentBuilder().parse(xml);
+            validateXml(doc, xsd);
+        } finally {
+            closeStream(xml);
+            closeStream(xsd);
+        }
+    }
+
+    public static void validateXml(Node root, InputStream xsd)
+        throws SAXException, IOException {
+        try {
+            Source source = new StreamSource(xsd);
+            Schema schema = SchemaFactory.newInstance(
+                XMLConstants.W3C_XML_SCHEMA_NS_URI).newSchema(source);
+
+            Validator validator = schema.newValidator();
+            validator.validate(new DOMSource(root));
+        } finally {
+            closeStream(xsd);
+        }
+    }
+
+    private static void closeStream(Closeable stream) {
+        if (stream != null) {
+            try {
+                stream.close();
+            } catch (IOException e) {
+            }
+        }
+    }
 }

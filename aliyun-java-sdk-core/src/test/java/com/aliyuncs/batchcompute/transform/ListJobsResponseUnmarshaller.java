@@ -23,12 +23,11 @@ import java.util.Map;
 import com.aliyuncs.batchcompute.model.ListJobsResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
-
 public class ListJobsResponseUnmarshaller {
 
-	public static ListJobsResponse unmarshall(ListJobsResponse listJobsResponse, UnmarshallerContext context) {
-		Map<String, String> headersMap = context.getHttpResponse().getHeaders();
-		listJobsResponse.setRequestId(headersMap.get("Request-Id"));	
-	 	return listJobsResponse;
-	}
+    public static ListJobsResponse unmarshall(ListJobsResponse listJobsResponse, UnmarshallerContext context) {
+        Map<String, String> headersMap = context.getHttpResponse().getHeaders();
+        listJobsResponse.setRequestId(headersMap.get("Request-Id"));
+        return listJobsResponse;
+    }
 }

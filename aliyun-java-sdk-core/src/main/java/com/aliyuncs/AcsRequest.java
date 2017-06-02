@@ -36,169 +36,166 @@ import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.regions.ProductDomain;
 
 public abstract class AcsRequest<T extends AcsResponse> extends HttpRequest {
-	
-	private String version = null;
-	private String product = null;
-	private String actionName = null;
-	private String regionId = null;
-	private String securityToken = null;
-	private FormatType acceptFormat = null;
-	protected ISignatureComposer composer = null;
-	private ProtocolType protocol = ProtocolType.HTTP;
-    private final Map<String, String> queryParameters  = new HashMap<String, String>();
+
+    private String version = null;
+    private String product = null;
+    private String actionName = null;
+    private String regionId = null;
+    private String securityToken = null;
+    private FormatType acceptFormat = null;
+    protected ISignatureComposer composer = null;
+    private ProtocolType protocol = ProtocolType.HTTP;
+    private final Map<String, String> queryParameters = new HashMap<String, String>();
     private final Map<String, String> domainParameters = new HashMap<String, String>();
 
-	private String locationProduct;
-	private String endpointType;
-	
-	public AcsRequest(String product) {
-		super(null);
-		this.headers.put("x-sdk-client", "Java/2.0.0");
-		this.product = product;
-	}
-	
-	public AcsRequest(String product, String version) {
-		super(null);
-		this.product = product;
-		this.setVersion(version);
-	}
+    private String locationProduct;
+    private String endpointType;
 
-	public String getLocationProduct() {
-		return locationProduct;
-	}
+    public AcsRequest(String product) {
+        super(null);
+        this.headers.put("x-sdk-client", "Java/2.0.0");
+        this.product = product;
+    }
 
-	public void setLocationProduct(String locationProduct) {
-		this.locationProduct = locationProduct;
+    public AcsRequest(String product, String version) {
+        super(null);
+        this.product = product;
+        this.setVersion(version);
+    }
+
+    public String getLocationProduct() {
+        return locationProduct;
+    }
+
+    public void setLocationProduct(String locationProduct) {
+        this.locationProduct = locationProduct;
         putQueryParameter("ServiceCode", locationProduct);
-	}
+    }
 
-	public String getEndpointType() {
-		return endpointType;
-	}
+    public String getEndpointType() {
+        return endpointType;
+    }
 
-	public void setEndpointType(String endpointType) {
-		this.endpointType = endpointType;
+    public void setEndpointType(String endpointType) {
+        this.endpointType = endpointType;
         putQueryParameter("Type", endpointType);
-	}
+    }
 
-	public String getActionName() {
-		return actionName;
-	}
-	
-	public void setActionName(String actionName) {
-		this.actionName = actionName;
-	}
+    public String getActionName() {
+        return actionName;
+    }
 
-	public String getProduct() {
-		return product;
-	}
+    public void setActionName(String actionName) {
+        this.actionName = actionName;
+    }
 
-	public ProtocolType getProtocol() {
-		return protocol;
-	}
+    public String getProduct() {
+        return product;
+    }
 
-	public void setProtocol(ProtocolType protocol) {
-		this.protocol = protocol;
-	}
-	
-	public Map<String, String> getQueryParameters() {
-		return Collections.unmodifiableMap(queryParameters);
-	}
-	
-	public <K> void putQueryParameter(String name, K value) {
-		setParameter(this.queryParameters, name, value);
-	}
-	
-	protected void putQueryParameter(String name, String value) {
-		setParameter(this.queryParameters, name, value);
-	}
-	
-	public Map<String, String> getDomainParameters() {
-		return Collections.unmodifiableMap(domainParameters);
-	}
+    public ProtocolType getProtocol() {
+        return protocol;
+    }
 
-	protected void putDomainParameter(String name, Object value) {
-		setParameter(this.domainParameters, name, value);
-	}
-	
-	protected void putDomainParameter(String name, String value) {
-		setParameter(this.domainParameters, name, value);
-	}
-	
-	protected <K> void setParameter(Map<String, String> map, String name, K value) {
-		if (null == map || null == name || null == value){
-			return;
-		}
-		map.put(name,String.valueOf(value));
-	}
+    public void setProtocol(ProtocolType protocol) {
+        this.protocol = protocol;
+    }
 
-	public String getVersion() {
-		return version;
-	}
+    public Map<String, String> getQueryParameters() {
+        return Collections.unmodifiableMap(queryParameters);
+    }
 
-	public void setVersion(String version) {
-		this.version = version;
-	}
+    public <K> void putQueryParameter(String name, K value) {
+        setParameter(this.queryParameters, name, value);
+    }
 
-	public FormatType getAcceptFormat() {
-		return acceptFormat;
-	}
+    protected void putQueryParameter(String name, String value) {
+        setParameter(this.queryParameters, name, value);
+    }
 
-	public void setAcceptFormat(FormatType acceptFormat) {
-		this.acceptFormat = acceptFormat;
-		this.putHeaderParameter("Accept", 
-				FormatType.mapFormatToAccept(acceptFormat));
-	}
-	
-	public String getRegionId() {
-		return regionId;
-	}
+    public Map<String, String> getDomainParameters() {
+        return Collections.unmodifiableMap(domainParameters);
+    }
 
-	public void setRegionId(String regionId) {
-		this.regionId = regionId;
-	}
+    protected void putDomainParameter(String name, Object value) {
+        setParameter(this.domainParameters, name, value);
+    }
 
-	public String getSecurityToken() {
-		return securityToken;
-	}
+    protected void putDomainParameter(String name, String value) {
+        setParameter(this.domainParameters, name, value);
+    }
 
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
+    protected <K> void setParameter(Map<String, String> map, String name, K value) {
+        if (null == map || null == name || null == value) {
+            return;
+        }
+        map.put(name, String.valueOf(value));
+    }
+
+    public String getVersion() {
+        return version;
+    }
+
+    public void setVersion(String version) {
+        this.version = version;
+    }
+
+    public FormatType getAcceptFormat() {
+        return acceptFormat;
+    }
+
+    public void setAcceptFormat(FormatType acceptFormat) {
+        this.acceptFormat = acceptFormat;
+        this.putHeaderParameter("Accept",
+            FormatType.mapFormatToAccept(acceptFormat));
+    }
+
+    public String getRegionId() {
+        return regionId;
+    }
+
+    public void setRegionId(String regionId) {
+        this.regionId = regionId;
+    }
+
+    public String getSecurityToken() {
+        return securityToken;
+    }
+
+    public void setSecurityToken(String securityToken) {
+        this.securityToken = securityToken;
         putQueryParameter("SecurityToken", securityToken);
-	}
-	
-	public static String concatQueryString(Map<String, String> parameters) 
-			throws UnsupportedEncodingException {
-		if (null == parameters)
-			return null;
-		
-		StringBuilder urlBuilder = new StringBuilder("");
-		for(Entry<String, String> entry : parameters.entrySet()){
+    }
+
+    public static String concatQueryString(Map<String, String> parameters)
+        throws UnsupportedEncodingException {
+        if (null == parameters) { return null; }
+
+        StringBuilder urlBuilder = new StringBuilder("");
+        for (Entry<String, String> entry : parameters.entrySet()) {
             String key = entry.getKey();
             String val = entry.getValue();
-			urlBuilder.append(AcsURLEncoder.encode(key));
-			if (val != null){
-            	urlBuilder.append("=").append(AcsURLEncoder.encode(val));
-			}
-			urlBuilder.append("&");
+            urlBuilder.append(AcsURLEncoder.encode(key));
+            if (val != null) {
+                urlBuilder.append("=").append(AcsURLEncoder.encode(val));
+            }
+            urlBuilder.append("&");
         }
-		
-		int strIndex = urlBuilder.length();
-		if (parameters.size() > 0)
-			urlBuilder.deleteCharAt(strIndex - 1);
-		
-		return urlBuilder.toString();
-	}
-	
-	public abstract HttpRequest signRequest(ISigner signer, Credential credential, 
-			FormatType format, ProductDomain domain) 
-					throws InvalidKeyException, IllegalStateException, 
-						UnsupportedEncodingException, NoSuchAlgorithmException;
-	
-	public abstract String composeUrl(String endpoint, Map<String, String> queries) 
-			throws UnsupportedEncodingException;
-	
-	public abstract Class<T> getResponseClass();
 
+        int strIndex = urlBuilder.length();
+        if (parameters.size() > 0) { urlBuilder.deleteCharAt(strIndex - 1); }
+
+        return urlBuilder.toString();
+    }
+
+    public abstract HttpRequest signRequest(ISigner signer, Credential credential,
+                                            FormatType format, ProductDomain domain)
+        throws InvalidKeyException, IllegalStateException,
+        UnsupportedEncodingException, NoSuchAlgorithmException;
+
+    public abstract String composeUrl(String endpoint, Map<String, String> queries)
+        throws UnsupportedEncodingException;
+
+    public abstract Class<T> getResponseClass();
 
 }

@@ -27,57 +27,57 @@ import org.junit.Test;
 
 public class HttpTest {
 
-	@Test
-	public void test() {
-		testHttpGet();
-		testHttpPut();
-		testHttps();
-	}
+    @Test
+    public void test() {
+        testHttpGet();
+        testHttpPut();
+        testHttps();
+    }
 
-	private void testHttps() {
-		HttpRequest request = new HttpRequest("https://acs.aliyun-inc.com/");
-		request.setMethod(MethodType.GET);
-		try {
-			X509TrustAll.ignoreSSLCertificate();
-			HttpResponse response = HttpResponse.getResponse(request);
-			String strResult = new String(response.getContent(), response.getEncoding());
-			assertEquals(400, response.getStatus());
-			assertNotNull(strResult);
-		} catch (IOException e) {
-			fail(e.toString());
-			e.printStackTrace();
-		} finally {
-			X509TrustAll.restoreSSLCertificate();
-		}
-	}
-	
-	private void testHttpGet() {
-		HttpRequest request = new HttpRequest("http://acs.aliyun-inc.com/");
-		request.setMethod(MethodType.GET);
-		try {
-			HttpResponse response = HttpResponse.getResponse(request);
-			String strResult = new String(response.getContent(), response.getEncoding());
-			assertEquals(400, response.getStatus());
-			assertNotNull(strResult);
-		} catch (IOException e) {
-			fail(e.toString());
-			e.printStackTrace();
-		}
-	}
-	
-	private void testHttpPut()  {
-		String content = "<Product name=\"Yundun\" domain=\"yundun.aliyuncs.com\"/>";
-		HttpRequest request = new HttpRequest("http://acs.aliyun-inc.com/");
-		request.setMethod(MethodType.PUT);
-		try {
-			request.setContent(content.getBytes("UTF-8"), "UTF-8", FormatType.XML);
-			HttpResponse response = HttpResponse.getResponse(request);
-			String strResult = new String(response.getContent(), response.getEncoding());
-			assertEquals(400, response.getStatus());
-			assertNotNull(strResult);
-		} catch (IOException e) {
-			fail(e.toString());
-			e.printStackTrace();
-		} 
-	}
+    private void testHttps() {
+        HttpRequest request = new HttpRequest("https://acs.aliyun-inc.com/");
+        request.setMethod(MethodType.GET);
+        try {
+            X509TrustAll.ignoreSSLCertificate();
+            HttpResponse response = HttpResponse.getResponse(request);
+            String strResult = new String(response.getContent(), response.getEncoding());
+            assertEquals(400, response.getStatus());
+            assertNotNull(strResult);
+        } catch (IOException e) {
+            fail(e.toString());
+            e.printStackTrace();
+        } finally {
+            X509TrustAll.restoreSSLCertificate();
+        }
+    }
+
+    private void testHttpGet() {
+        HttpRequest request = new HttpRequest("http://acs.aliyun-inc.com/");
+        request.setMethod(MethodType.GET);
+        try {
+            HttpResponse response = HttpResponse.getResponse(request);
+            String strResult = new String(response.getContent(), response.getEncoding());
+            assertEquals(400, response.getStatus());
+            assertNotNull(strResult);
+        } catch (IOException e) {
+            fail(e.toString());
+            e.printStackTrace();
+        }
+    }
+
+    private void testHttpPut() {
+        String content = "<Product name=\"Yundun\" domain=\"yundun.aliyuncs.com\"/>";
+        HttpRequest request = new HttpRequest("http://acs.aliyun-inc.com/");
+        request.setMethod(MethodType.PUT);
+        try {
+            request.setContent(content.getBytes("UTF-8"), "UTF-8", FormatType.XML);
+            HttpResponse response = HttpResponse.getResponse(request);
+            String strResult = new String(response.getContent(), response.getEncoding());
+            assertEquals(400, response.getStatus());
+            assertNotNull(strResult);
+        } catch (IOException e) {
+            fail(e.toString());
+            e.printStackTrace();
+        }
+    }
 }

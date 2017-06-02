@@ -31,60 +31,60 @@ import com.aliyuncs.profile.DefaultProfile;
 
 public class ClientExceptionTest extends BaseTest {
 
-	@Test
-	public void test() {
-		testMissingProfile();
-		testRegionId();
-		testServerUnreachable();
-		testExceptionRequstId();
-	}
-	
-	private void testMissingProfile() {
-		DefaultAcsClient client = new DefaultAcsClient(null);
-		AcsRequest request = new DescribeRegionsRequest();
-		
-		try {
-			client.doAction(request, null);
-		} catch (ServerException e) {
-			fail(e.toString());
-		} catch (ClientException e) {
-			assertEquals("SDK.InvalidProfile", e.getErrCode());
-		}
-	}
-	
-	private void testRegionId() {
-		DefaultAcsClient client = new DefaultAcsClient(DefaultProfile.getProfile());
-		AcsRequest request = new DescribeRegionsRequest();
-		
-		try {
-			client.doAction(request, "cn-lizuhe", new Credential("testid", "testsecret"));
-		} catch (ServerException e) {
-			fail(e.toString());
-		} catch (ClientException e) {
-			assertEquals("SDK.InvalidRegionId", e.getErrCode());
-		}
-	}
-	
-	private void testServerUnreachable() {
-		DefaultAcsClient client = new DefaultAcsClient(DefaultProfile.getProfile());
-		AcsRequest request = new DescribeRegionsRequest();
-		
-		try {
-			client.doAction(request, "cn-beijing", new Credential("testid", "testsecret"));
-		} catch (ServerException e) {
-			fail(e.toString());
-		} catch (ClientException e) {
-			assertEquals("SDK.ServerUnreachable", e.getErrCode());
-		}
-	}
-	
-	private void testExceptionRequstId() {
-		AcsRequest request = new CreateInstanceRequest();
-		try {
-			client.getAcsResponse(request);
-		}  catch (ClientException e) {
-			assertNotNull(e.getRequestId());
-		}
-		
-	}
+    @Test
+    public void test() {
+        testMissingProfile();
+        testRegionId();
+        testServerUnreachable();
+        testExceptionRequstId();
+    }
+
+    private void testMissingProfile() {
+        DefaultAcsClient client = new DefaultAcsClient(null);
+        AcsRequest request = new DescribeRegionsRequest();
+
+        try {
+            client.doAction(request, null);
+        } catch (ServerException e) {
+            fail(e.toString());
+        } catch (ClientException e) {
+            assertEquals("SDK.InvalidProfile", e.getErrCode());
+        }
+    }
+
+    private void testRegionId() {
+        DefaultAcsClient client = new DefaultAcsClient(DefaultProfile.getProfile());
+        AcsRequest request = new DescribeRegionsRequest();
+
+        try {
+            client.doAction(request, "cn-lizuhe", new Credential("testid", "testsecret"));
+        } catch (ServerException e) {
+            fail(e.toString());
+        } catch (ClientException e) {
+            assertEquals("SDK.InvalidRegionId", e.getErrCode());
+        }
+    }
+
+    private void testServerUnreachable() {
+        DefaultAcsClient client = new DefaultAcsClient(DefaultProfile.getProfile());
+        AcsRequest request = new DescribeRegionsRequest();
+
+        try {
+            client.doAction(request, "cn-beijing", new Credential("testid", "testsecret"));
+        } catch (ServerException e) {
+            fail(e.toString());
+        } catch (ClientException e) {
+            assertEquals("SDK.ServerUnreachable", e.getErrCode());
+        }
+    }
+
+    private void testExceptionRequstId() {
+        AcsRequest request = new CreateInstanceRequest();
+        try {
+            client.getAcsResponse(request);
+        } catch (ClientException e) {
+            assertNotNull(e.getRequestId());
+        }
+
+    }
 }

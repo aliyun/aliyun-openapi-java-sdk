@@ -42,25 +42,26 @@ public class InternalEndpointsParser implements IEndpointsProvider {
     private final static String BUNDLED_ENDPOINTS_RESOURCE_PATH = "/com/aliyuncs/endpoints/endpoints.xml";
 
     private static List<Endpoint> parseEndpoints(final InputStream input) throws IOException,
-            ParserConfigurationException, SAXException {
+        ParserConfigurationException, SAXException {
         Document document = XmlUtils.getDocument(new InputSource(input), null);
         NodeList endpointNodes = document.getElementsByTagName("Endpoint");
         List<Endpoint> endpoints = new ArrayList<Endpoint>();
         for (int i = 0; i < endpointNodes.getLength(); i++) {
-            Element endpoint = (Element) endpointNodes.item(i);
+            Element endpoint = (Element)endpointNodes.item(i);
             Set<String> regionIds = new HashSet<String>();
             List<ProductDomain> products = new ArrayList<ProductDomain>();
             NodeList regionNodes = endpoint.getElementsByTagName("RegionId");
             NodeList productNodes = endpoint.getElementsByTagName("Product");
-            for (int j = 0; j < regionNodes.getLength(); j++)
-                regionIds.add(((Element) regionNodes.item(j)).getTextContent());
+            for (int j = 0; j < regionNodes.getLength(); j++) {
+                regionIds.add(((Element)regionNodes.item(j)).getTextContent());
+            }
             for (int j = 0; j < productNodes.getLength(); j++) {
-                Element element = (Element) (productNodes.item(j));
+                Element element = (Element)(productNodes.item(j));
                 NodeList productNames = element.getElementsByTagName("ProductName");
                 NodeList domainNames = element.getElementsByTagName("DomainName");
                 for (int k = 0; k < productNames.getLength(); k++) {
-                    String productName = ((Element) productNames.item(k)).getTextContent();
-                    String domainName = ((Element) domainNames.item(k)).getTextContent();
+                    String productName = ((Element)productNames.item(k)).getTextContent();
+                    String domainName = ((Element)domainNames.item(k)).getTextContent();
                     products.add(new ProductDomain(productName, domainName));
                 }
             }

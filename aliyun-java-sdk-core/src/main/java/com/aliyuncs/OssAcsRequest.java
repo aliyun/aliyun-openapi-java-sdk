@@ -32,73 +32,72 @@ import com.aliyuncs.http.FormatType;
 import com.aliyuncs.http.HttpRequest;
 import com.aliyuncs.regions.ProductDomain;
 
-public abstract class OssAcsRequest<T extends AcsResponse> 
-	extends RoaAcsRequest<T> {
+public abstract class OssAcsRequest<T extends AcsResponse>
+    extends RoaAcsRequest<T> {
 
-	private String bucketName = null;
-	
-	public OssAcsRequest(String product, String actionName) {
-		super(product);
-		this.setActionName(actionName);
-		this.composer = OssSignatureComposer.getComposer();
-	}
+    private String bucketName = null;
 
-	@Override
-	public void setVersion(String version) {
-		
-	}
+    public OssAcsRequest(String product, String actionName) {
+        super(product);
+        this.setActionName(actionName);
+        this.composer = OssSignatureComposer.getComposer();
+    }
 
-	@Override
-	public String composeUrl(String endpoint,
-			Map<String, String> queries) 
-			throws UnsupportedEncodingException{
-		Map<String, String> mapQueries = 
-				queries == null?this.getQueryParameters():queries;
-				
-		StringBuilder urlBuilder = new StringBuilder("");
-		urlBuilder.append(this.getProtocol().toString());
-		urlBuilder.append("://");
-		if (null != this.bucketName)
-			urlBuilder.append(this.bucketName).append(".");
-		urlBuilder.append(endpoint);
-		if (null != this.uriPattern)
-			urlBuilder.append(
-					RoaSignatureComposer.replaceOccupiedParameters
-					(uriPattern, this.getPathParameters()));
-		if (-1 == urlBuilder.indexOf("?"))
-			urlBuilder.append("?");
-		String query = concatQueryString(mapQueries);
-		
-		return urlBuilder.append(query).toString();
-	}
-	
-	@Override
-	public HttpRequest signRequest(ISigner signer, Credential credential,
-			FormatType format, ProductDomain domain) 
-			throws InvalidKeyException, IllegalStateException, 
-			UnsupportedEncodingException, NoSuchAlgorithmException {
-		Map<String, String> imutableMap = new HashMap<String, String>(this.getHeaders());
-		if (null != signer && null != credential) {
-			String accessKeyId = credential.getAccessKeyId();
-			String accessSecret = credential.getAccessSecret();
-			imutableMap = this.composer.refreshSignParameters
-					(this.getHeaders(), signer, accessKeyId, format);
-			String uri = this.uriPattern;
-			if (null != this.bucketName){
-				uri = "/" + bucketName + uri;
-			}
-			String strToSign = this.composer.composeStringToSign(this.getMethod(), uri, signer, 
-					this.getQueryParameters(), imutableMap, this.getPathParameters());
-			String signature = signer.signString(strToSign, accessSecret);
-			imutableMap.put("Authorization", "OSS "+ accessKeyId+":"+signature);
-		}
-		HttpRequest request = new HttpRequest(
-				this.composeUrl(domain.getDomianName(), this.getQueryParameters()), imutableMap);
-		request.setMethod(this.getMethod());
-		request.setContent(this.getContent(), this.getEncoding(), this.getContentType());
-		
-		return request;
-	}
-	
-	public abstract Class<T> getResponseClass();
+    @Override
+    public void setVersion(String version) {
+
+    }
+
+    @Override
+    public String composeUrl(String endpoint,
+                             Map<String, String> queries)
+        throws UnsupportedEncodingException {
+        Map<String, String> mapQueries =
+            queries == null ? this.getQueryParameters() : queries;
+
+        StringBuilder urlBuilder = new StringBuilder("");
+        urlBuilder.append(this.getProtocol().toString());
+        urlBuilder.append("://");
+        if (null != this.bucketName) { urlBuilder.append(this.bucketName).append("."); }
+        urlBuilder.append(endpoint);
+        if (null != this.uriPattern) {
+            urlBuilder.append(
+                RoaSignatureComposer.replaceOccupiedParameters
+                    (uriPattern, this.getPathParameters()));
+        }
+        if (-1 == urlBuilder.indexOf("?")) { urlBuilder.append("?"); }
+        String query = concatQueryString(mapQueries);
+
+        return urlBuilder.append(query).toString();
+    }
+
+    @Override
+    public HttpRequest signRequest(ISigner signer, Credential credential,
+                                   FormatType format, ProductDomain domain)
+        throws InvalidKeyException, IllegalStateException,
+        UnsupportedEncodingException, NoSuchAlgorithmException {
+        Map<String, String> imutableMap = new HashMap<String, String>(this.getHeaders());
+        if (null != signer && null != credential) {
+            String accessKeyId = credential.getAccessKeyId();
+            String accessSecret = credential.getAccessSecret();
+            imutableMap = this.composer.refreshSignParameters
+                (this.getHeaders(), signer, accessKeyId, format);
+            String uri = this.uriPattern;
+            if (null != this.bucketName) {
+                uri = "/" + bucketName + uri;
+            }
+            String strToSign = this.composer.composeStringToSign(this.getMethod(), uri, signer,
+                this.getQueryParameters(), imutableMap, this.getPathParameters());
+            String signature = signer.signString(strToSign, accessSecret);
+            imutableMap.put("Authorization", "OSS " + accessKeyId + ":" + signature);
+        }
+        HttpRequest request = new HttpRequest(
+            this.composeUrl(domain.getDomianName(), this.getQueryParameters()), imutableMap);
+        request.setMethod(this.getMethod());
+        request.setContent(this.getContent(), this.getEncoding(), this.getContentType());
+
+        return request;
+    }
+
+    public abstract Class<T> getResponseClass();
 }

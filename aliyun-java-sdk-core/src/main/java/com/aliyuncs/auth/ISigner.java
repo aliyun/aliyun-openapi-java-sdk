@@ -22,11 +22,11 @@ import java.security.InvalidKeyException;
 
 public interface ISigner {
 
-	public String getSignerName();
-	
-	public String getSignerVersion();
-	
-	public String signString(String source, String accessSecret) 
-			throws InvalidKeyException, IllegalStateException;
-	
+    public String getSignerName();
+
+    public String getSignerVersion();
+
+    public String signString(String source, String accessSecret)
+        throws InvalidKeyException, IllegalStateException;
+
 }

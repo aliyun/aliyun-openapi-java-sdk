@@ -23,7 +23,6 @@ public class DescribeEndpointRequest extends RpcAcsRequest<DescribeEndpointRespo
         putQueryParameter("Id", id);
     }
 
-
     public String getPassword() {
         return this.password;
     }
@@ -37,6 +36,5 @@ public class DescribeEndpointRequest extends RpcAcsRequest<DescribeEndpointRespo
     public Class<DescribeEndpointResponse> getResponseClass() {
         return DescribeEndpointResponse.class;
     }
-
 
 }

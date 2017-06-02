@@ -20,6 +20,6 @@ package com.aliyuncs.auth;
 
 public interface ICredentialProvider {
 
-	public Credential fresh();
-	
+    public Credential fresh();
+
 }

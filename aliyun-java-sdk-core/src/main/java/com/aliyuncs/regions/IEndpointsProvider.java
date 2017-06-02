@@ -27,5 +27,5 @@ public interface IEndpointsProvider {
     Endpoint getEndpoint(String region, String product) throws ClientException;
 
     Endpoint getEndpoint(String region, String product, String serviceCode, String endpointType, Credential credential,
-                                LocationConfig locationConfig) throws ClientException;
+                         LocationConfig locationConfig) throws ClientException;
 }

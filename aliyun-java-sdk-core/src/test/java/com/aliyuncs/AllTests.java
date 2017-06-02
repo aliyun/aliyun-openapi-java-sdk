@@ -37,10 +37,10 @@ import com.aliyuncs.utils.ParameterHelperTest;
 import com.aliyuncs.utils.UtilsTest;
 
 @RunWith(Suite.class)
-@SuiteClasses({ HttpTest.class, UtilsTest.class,RegionsTest.class, DefaultProfileTest.class, 
-	AuthTest.class,ClientExceptionTest.class,DefaultAcsClientTest.class,OssTest.class,
-	UnmarshallerContextTest.class,JsonReaderTest.class,XmlReaderTest.class,
-	ShaHmac256Test.class,CredentialTest.class,ParameterHelperTest.class,EndpointTest.class})
+@SuiteClasses({HttpTest.class, UtilsTest.class, RegionsTest.class, DefaultProfileTest.class,
+    AuthTest.class, ClientExceptionTest.class, DefaultAcsClientTest.class, OssTest.class,
+    UnmarshallerContextTest.class, JsonReaderTest.class, XmlReaderTest.class,
+    ShaHmac256Test.class, CredentialTest.class, ParameterHelperTest.class, EndpointTest.class})
 public class AllTests {
 
 }

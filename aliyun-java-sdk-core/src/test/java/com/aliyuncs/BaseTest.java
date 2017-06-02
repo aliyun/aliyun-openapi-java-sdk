@@ -30,39 +30,38 @@ import com.aliyuncs.profile.DefaultProfile;
 import com.aliyuncs.profile.IClientProfile;
 
 public class BaseTest {
-	
-	protected IAcsClient client = null;
-	
+
+    protected IAcsClient client = null;
+
     private static final String SETTINGS_FILE_NAME =
-            System.getProperty("user.home") +
+        System.getProperty("user.home") +
             System.getProperty("file.separator") +
             "aliyun-sdk.properties";
-	
-	@Before
-	public void init() {
-		Properties properties =getProperties();
-		IClientProfile profile = DefaultProfile.getProfile("cn-hangzhou",properties.getProperty("accessKeyId"), properties.getProperty("accessSecret"));
-		client = new DefaultAcsClient(profile);
-		
-		System.setProperty("http.proxyHost", "127.0.0.1");  
-		System.setProperty("http.proxyPort", "8888");  
-	}
-	
-	private Properties getProperties() {
-		Properties pr = null;
-		InputStream is = null;
+
+    @Before
+    public void init() {
+        Properties properties = getProperties();
+        IClientProfile profile = DefaultProfile.getProfile("cn-hangzhou", properties.getProperty("accessKeyId"),
+            properties.getProperty("accessSecret"));
+        client = new DefaultAcsClient(profile);
+
+        System.setProperty("http.proxyHost", "127.0.0.1");
+        System.setProperty("http.proxyPort", "8888");
+    }
+
+    private Properties getProperties() {
+        Properties pr = null;
+        InputStream is = null;
         try {
-        	pr = new Properties();
-			is = new FileInputStream(SETTINGS_FILE_NAME);
-	        pr.load(is);
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+            pr = new Properties();
+            is = new FileInputStream(SETTINGS_FILE_NAME);
+            pr.load(is);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         return pr;
-	}
-	
-	
+    }
 
 }

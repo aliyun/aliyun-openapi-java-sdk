@@ -19,7 +19,7 @@
 package com.aliyuncs.exceptions;
 
 public enum ErrorType {
-	Client,
+    Client,
     Server,
     Throttling,
     Unknown,

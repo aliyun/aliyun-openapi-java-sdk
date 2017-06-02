@@ -24,22 +24,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
- * @version 
  */
 public class ListJobsResponse extends AcsResponse {
-	
-	private String requestId;
 
-	@Override
-	public ListJobsResponse getInstance(UnmarshallerContext context) {
-		return	ListJobsResponseUnmarshaller.unmarshall(this, context);
-	}
+    private String requestId;
 
-	public String getRequestId() {
-		return requestId;
-	}
+    @Override
+    public ListJobsResponse getInstance(UnmarshallerContext context) {
+        return ListJobsResponseUnmarshaller.unmarshall(this, context);
+    }
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+    public String getRequestId() {
+        return requestId;
+    }
+
+    public void setRequestId(String requestId) {
+        this.requestId = requestId;
+    }
 }

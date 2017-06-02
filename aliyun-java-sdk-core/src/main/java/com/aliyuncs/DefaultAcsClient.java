@@ -56,25 +56,26 @@ public class DefaultAcsClient implements IAcsClient {
 
     @Override
     public <T extends AcsResponse> HttpResponse doAction(AcsRequest<T> request)
-            throws ClientException, ServerException {
+        throws ClientException, ServerException {
         return this.doAction(request, autoRetry, maxRetryNumber, this.clientProfile);
     }
 
     @Override
     public <T extends AcsResponse> HttpResponse doAction(AcsRequest<T> request,
-                                                         boolean autoRetry, int maxRetryCounts) throws ClientException, ServerException {
+                                                         boolean autoRetry, int maxRetryCounts)
+        throws ClientException, ServerException {
         return this.doAction(request, autoRetry, maxRetryCounts, this.clientProfile);
     }
 
     @Override
     public <T extends AcsResponse> HttpResponse doAction(AcsRequest<T> request, IClientProfile profile)
-            throws ClientException, ServerException {
+        throws ClientException, ServerException {
         return this.doAction(request, this.autoRetry, this.maxRetryNumber, profile);
     }
 
     @Override
     public <T extends AcsResponse> HttpResponse doAction(AcsRequest<T> request, String regionId, Credential credential)
-            throws ClientException, ServerException {
+        throws ClientException, ServerException {
         boolean retry = this.autoRetry;
         int retryNumber = this.maxRetryNumber;
         ISigner signer = null;
@@ -88,8 +89,8 @@ public class DefaultAcsClient implements IAcsClient {
             format = clientProfile.getFormat();
             try {
                 endpoints = clientProfile.getEndpoints(request.getProduct(), request.getRegionId(),
-                        request.getLocationProduct(),
-                        request.getEndpointType());
+                    request.getLocationProduct(),
+                    request.getEndpointType());
             } catch (Throwable e) {
                 endpoints = clientProfile.getEndpoints(request.getRegionId(), request.getProduct());
             }
@@ -100,41 +101,43 @@ public class DefaultAcsClient implements IAcsClient {
 
     @Override
     public <T extends AcsResponse> T getAcsResponse(AcsRequest<T> request)
-            throws ServerException, ClientException {
+        throws ServerException, ClientException {
         HttpResponse baseResponse = this.doAction(request);
         return parseAcsResponse(request.getResponseClass(), baseResponse);
     }
 
     @Override
     public <T extends AcsResponse> T getAcsResponse(AcsRequest<T> request,
-                                                    boolean autoRetry, int maxRetryCounts) throws ServerException, ClientException {
+                                                    boolean autoRetry, int maxRetryCounts)
+        throws ServerException, ClientException {
         HttpResponse baseResponse = this.doAction(request, autoRetry, maxRetryCounts);
         return parseAcsResponse(request.getResponseClass(), baseResponse);
     }
 
     @Override
     public <T extends AcsResponse> T getAcsResponse(AcsRequest<T> request, IClientProfile profile)
-            throws ServerException, ClientException {
+        throws ServerException, ClientException {
         HttpResponse baseResponse = this.doAction(request, profile);
         return parseAcsResponse(request.getResponseClass(), baseResponse);
     }
 
     @Override
     public <T extends AcsResponse> T getAcsResponse(AcsRequest<T> request, String regionId, Credential credential)
-            throws ServerException, ClientException {
+        throws ServerException, ClientException {
         HttpResponse baseResponse = this.doAction(request, regionId, credential);
         return parseAcsResponse(request.getResponseClass(), baseResponse);
     }
 
     @Override
     public CommonResponse getCommonResponse(CommonRequest request)
-            throws ServerException, ClientException {
+        throws ServerException, ClientException {
         HttpResponse baseResponse = this.doAction(request);
         String data;
         try {
             data = new String(baseResponse.getContent(), "utf-8");
         } catch (UnsupportedEncodingException e) {
-            throw new ClientException("SDK.CommonResponseEncodingError", "CommonResponse Encoding UnsupportedEncodingException.");
+            throw new ClientException("SDK.CommonResponseEncodingError",
+                "CommonResponse Encoding UnsupportedEncodingException.");
         }
         CommonResponse response = new CommonResponse();
         response.setData(data);
@@ -145,7 +148,8 @@ public class DefaultAcsClient implements IAcsClient {
 
     @Override
     public <T extends AcsResponse> HttpResponse doAction(AcsRequest<T> request, boolean autoRetry,
-                                                         int maxRetryCounts, IClientProfile profile) throws ClientException, ServerException {
+                                                         int maxRetryCounts, IClientProfile profile)
+        throws ClientException, ServerException {
         if (null == profile) {
             throw new ClientException("SDK.InvalidProfile", "No active profile found.");
         }
@@ -161,8 +165,8 @@ public class DefaultAcsClient implements IAcsClient {
         List<Endpoint> endpoints;
         try {
             endpoints = clientProfile.getEndpoints(request.getProduct(), request.getRegionId(),
-                    request.getLocationProduct(),
-                    request.getEndpointType());
+                request.getLocationProduct(),
+                request.getEndpointType());
         } catch (Throwable e) {
             endpoints = clientProfile.getEndpoints(request.getRegionId(), request.getProduct());
         }
@@ -170,7 +174,7 @@ public class DefaultAcsClient implements IAcsClient {
     }
 
     private <T extends AcsResponse> T parseAcsResponse(Class<T> clasz, HttpResponse baseResponse)
-            throws ServerException, ClientException {
+        throws ServerException, ClientException {
 
         FormatType format = baseResponse.getContentType();
 
@@ -191,7 +195,8 @@ public class DefaultAcsClient implements IAcsClient {
                                                          boolean autoRetry, int maxRetryNumber,
                                                          String regionId, Credential credential,
                                                          ISigner signer, FormatType format,
-                                                         List<Endpoint> endpoints) throws ClientException, ServerException {
+                                                         List<Endpoint> endpoints)
+        throws ClientException, ServerException {
         try {
             FormatType requestFormatType = request.getAcceptFormat();
             if (null != requestFormatType) {
@@ -218,7 +223,8 @@ public class DefaultAcsClient implements IAcsClient {
         } catch (InvalidKeyException exp) {
             throw new ClientException("SDK.InvalidAccessSecret", "Speicified access secret is not valid.");
         } catch (SocketTimeoutException exp) {
-            throw new ClientException("SDK.ServerUnreachable", "SocketTimeoutException has occurred on a socket read or accept.");
+            throw new ClientException("SDK.ServerUnreachable",
+                "SocketTimeoutException has occurred on a socket read or accept.");
         } catch (IOException exp) {
             throw new ClientException("SDK.ServerUnreachable", "Server unreachable: " + exp.toString());
         } catch (NoSuchAlgorithmException exp) {
@@ -226,7 +232,8 @@ public class DefaultAcsClient implements IAcsClient {
         }
     }
 
-    private <T extends AcsResponse> T readResponse(Class<T> clasz, HttpResponse httpResponse, FormatType format) throws ClientException {
+    private <T extends AcsResponse> T readResponse(Class<T> clasz, HttpResponse httpResponse, FormatType format)
+        throws ClientException {
         Reader reader = ReaderFactory.createInstance(format);
         UnmarshallerContext context = new UnmarshallerContext();
         T response = null;
@@ -252,7 +259,8 @@ public class DefaultAcsClient implements IAcsClient {
                 stringContent = new String(httpResponse.getContent(), httpResponse.getEncoding());
             }
         } catch (UnsupportedEncodingException exp) {
-            throw new ClientException("SDK.UnsupportedEncoding", "Can not parse response due to un supported encoding.");
+            throw new ClientException("SDK.UnsupportedEncoding",
+                "Can not parse response due to un supported encoding.");
         }
         return stringContent;
     }

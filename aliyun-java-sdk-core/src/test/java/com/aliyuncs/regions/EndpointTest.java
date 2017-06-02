@@ -28,26 +28,26 @@ import org.junit.Test;
 
 public class EndpointTest {
 
-	@Test
-	public void  findProductDomainTest()  {
-		String name = "hangzhou";
-		String region = "cn-hangzhou";
-		String product = "Ecs";
-		String domain = "ecs.aliyuncs.com";
-		
-		List<Endpoint> endpoints = new ArrayList<Endpoint>();
-		Set<String> regions = new HashSet<String>();
-		regions.add(region);
-		
-		List<ProductDomain> productDomains = new ArrayList<ProductDomain>();
-		productDomains.add(new ProductDomain(product, domain));
-		
-		Endpoint endpoint = new Endpoint(name, regions, productDomains);
-		endpoints.add(endpoint);
-		
-		ProductDomain productDomain = Endpoint.findProductDomain(region, product, endpoints);
-		Assert.assertNotNull(productDomain);
-		Assert.assertTrue(product.equals(productDomain.getProductName()));
-		Assert.assertTrue(domain.equals(productDomain.getDomianName()));
-	}
+    @Test
+    public void findProductDomainTest() {
+        String name = "hangzhou";
+        String region = "cn-hangzhou";
+        String product = "Ecs";
+        String domain = "ecs.aliyuncs.com";
+
+        List<Endpoint> endpoints = new ArrayList<Endpoint>();
+        Set<String> regions = new HashSet<String>();
+        regions.add(region);
+
+        List<ProductDomain> productDomains = new ArrayList<ProductDomain>();
+        productDomains.add(new ProductDomain(product, domain));
+
+        Endpoint endpoint = new Endpoint(name, regions, productDomains);
+        endpoints.add(endpoint);
+
+        ProductDomain productDomain = Endpoint.findProductDomain(region, product, endpoints);
+        Assert.assertNotNull(productDomain);
+        Assert.assertTrue(product.equals(productDomain.getProductName()));
+        Assert.assertTrue(domain.equals(productDomain.getDomianName()));
+    }
 }

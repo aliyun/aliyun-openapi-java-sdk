@@ -23,15 +23,15 @@ import com.aliyuncs.http.MethodType;
 
 public class ListBucketRequest extends OssAcsRequest<ListBucketResponse> {
 
-	public ListBucketRequest() {
-		super("Oss", "ListBucket");
-		this.setUriPattern("/");
-		this.setMethod(MethodType.GET);
-	}
+    public ListBucketRequest() {
+        super("Oss", "ListBucket");
+        this.setUriPattern("/");
+        this.setMethod(MethodType.GET);
+    }
 
-	@Override
-	public Class<ListBucketResponse> getResponseClass() {
-		return ListBucketResponse.class;
-	}
+    @Override
+    public Class<ListBucketResponse> getResponseClass() {
+        return ListBucketResponse.class;
+    }
 
 }

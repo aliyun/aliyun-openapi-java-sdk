@@ -26,48 +26,48 @@ import org.junit.Before;
 import org.junit.Test;
 
 public class UnmarshallerContextTest {
-	
-	UnmarshallerContext unmarshallerContext;
-	
-	@Before
-	public void init() {
-		Map<String, String> responseMap = new HashMap<String, String>();
-		responseMap.put("IntegerValueKey", String.valueOf(Integer.MAX_VALUE));
-		responseMap.put("StringValueKey", "this is a string test");
-		responseMap.put("LongValueKey", String.valueOf(Long.MAX_VALUE));
-		responseMap.put("BooleanValueKey",String.valueOf(Boolean.TRUE));
-		responseMap.put("LengthValueKey", "100");
-		
-		unmarshallerContext =new UnmarshallerContext();
-		unmarshallerContext.setResponseMap(responseMap);
-	}
 
-	@Test
-	public void integerValueTest(){
-		Assert.assertTrue(Integer.MAX_VALUE == unmarshallerContext.integerValue("IntegerValueKey"));	
-		Assert.assertNull(unmarshallerContext.integerValue("NullIntegerValueKey"));
-	}
-	
-	@Test
-	public void stringValueTest(){
-		Assert.assertTrue("this is a string test".equals(unmarshallerContext.stringValue("StringValueKey")));	
-	}
-	
-	@Test
-	public void longValueTest(){
-		Assert.assertTrue(Long.MAX_VALUE == unmarshallerContext.longValue("LongValueKey"));
-		Assert.assertNull(unmarshallerContext.longValue("NullLongValueKey"));
-	}
-	
-	@Test
-	public void booleanValueTest(){
-		Assert.assertTrue(Boolean.TRUE == unmarshallerContext.booleanValue("BooleanValueKey"));
-		Assert.assertNull(unmarshallerContext.booleanValue("NullBooleanValueKey"));
-	}
-	
-	@Test
-	public void lengthValueTest(){
-		Assert.assertTrue(100 == unmarshallerContext.lengthValue("LengthValueKey"));	
-		Assert.assertTrue(0 == unmarshallerContext.lengthValue("NullLengthValueKey"));
-	}
+    UnmarshallerContext unmarshallerContext;
+
+    @Before
+    public void init() {
+        Map<String, String> responseMap = new HashMap<String, String>();
+        responseMap.put("IntegerValueKey", String.valueOf(Integer.MAX_VALUE));
+        responseMap.put("StringValueKey", "this is a string test");
+        responseMap.put("LongValueKey", String.valueOf(Long.MAX_VALUE));
+        responseMap.put("BooleanValueKey", String.valueOf(Boolean.TRUE));
+        responseMap.put("LengthValueKey", "100");
+
+        unmarshallerContext = new UnmarshallerContext();
+        unmarshallerContext.setResponseMap(responseMap);
+    }
+
+    @Test
+    public void integerValueTest() {
+        Assert.assertTrue(Integer.MAX_VALUE == unmarshallerContext.integerValue("IntegerValueKey"));
+        Assert.assertNull(unmarshallerContext.integerValue("NullIntegerValueKey"));
+    }
+
+    @Test
+    public void stringValueTest() {
+        Assert.assertTrue("this is a string test".equals(unmarshallerContext.stringValue("StringValueKey")));
+    }
+
+    @Test
+    public void longValueTest() {
+        Assert.assertTrue(Long.MAX_VALUE == unmarshallerContext.longValue("LongValueKey"));
+        Assert.assertNull(unmarshallerContext.longValue("NullLongValueKey"));
+    }
+
+    @Test
+    public void booleanValueTest() {
+        Assert.assertTrue(Boolean.TRUE == unmarshallerContext.booleanValue("BooleanValueKey"));
+        Assert.assertNull(unmarshallerContext.booleanValue("NullBooleanValueKey"));
+    }
+
+    @Test
+    public void lengthValueTest() {
+        Assert.assertTrue(100 == unmarshallerContext.lengthValue("LengthValueKey"));
+        Assert.assertTrue(0 == unmarshallerContext.lengthValue("NullLengthValueKey"));
+    }
 }

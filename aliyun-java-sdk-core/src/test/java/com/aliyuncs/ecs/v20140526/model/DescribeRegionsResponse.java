@@ -24,52 +24,52 @@ import com.aliyuncs.AcsResponse;
 import com.aliyuncs.ecs.v20140526.transform.DescribeRegionsResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
-public class DescribeRegionsResponse extends AcsResponse{
+public class DescribeRegionsResponse extends AcsResponse {
 
-	private List<Region> regions;
-	private String requestId;
+    private List<Region> regions;
+    private String requestId;
 
-	public List<Region> getRegions() {
-		return this.regions;
-	}
+    public List<Region> getRegions() {
+        return this.regions;
+    }
 
-	public void setRegions(List<Region> regions) {
-		this.regions = regions;
-	}
+    public void setRegions(List<Region> regions) {
+        this.regions = regions;
+    }
 
-	public static class Region {
+    public static class Region {
 
-		private String regionId;
+        private String regionId;
 
-		private String localName;
+        private String localName;
 
-		public String getRegionId() {
-			return this.regionId;
-		}
+        public String getRegionId() {
+            return this.regionId;
+        }
 
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
-		}
+        public void setRegionId(String regionId) {
+            this.regionId = regionId;
+        }
 
-		public String getLocalName() {
-			return this.localName;
-		}
+        public String getLocalName() {
+            return this.localName;
+        }
 
-		public void setLocalName(String localName) {
-			this.localName = localName;
-		}
-	}
+        public void setLocalName(String localName) {
+            this.localName = localName;
+        }
+    }
 
-	@Override
-	public DescribeRegionsResponse getInstance(UnmarshallerContext context) {
-		return	DescribeRegionsResponseUnmarshaller.unmarshall(this, context);
-	}
+    @Override
+    public DescribeRegionsResponse getInstance(UnmarshallerContext context) {
+        return DescribeRegionsResponseUnmarshaller.unmarshall(this, context);
+    }
 
-	public String getRequestId() {
-		return requestId;
-	}
+    public String getRequestId() {
+        return requestId;
+    }
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+    public void setRequestId(String requestId) {
+        this.requestId = requestId;
+    }
 }

@@ -29,20 +29,20 @@ import com.aliyuncs.exceptions.ClientException;
 
 public class RegionsTest {
 
-	@Test
-	public void test() {
-		testParseRegions();
-	}
+    @Test
+    public void test() {
+        testParseRegions();
+    }
 
-	private void testParseRegions() {
-		InternalEndpointsParser parser = new InternalEndpointsParser();
+    private void testParseRegions() {
+        InternalEndpointsParser parser = new InternalEndpointsParser();
         Endpoint endpoint = null;
-		try {
+        try {
             endpoint = parser.getEndpoint("cn-hangzhou", "Rds");
-		} catch (ClientException e) {
-			fail(e.toString());
-		}
+        } catch (ClientException e) {
+            fail(e.toString());
+        }
         assertEquals("rds-cn-hangzhou.aliyuncs.com",
-                Endpoint.findProductDomain("cn-hangzhou", "Rds", Arrays.asList(endpoint)).getDomianName());
-	}
+            Endpoint.findProductDomain("cn-hangzhou", "Rds", Arrays.asList(endpoint)).getDomianName());
+    }
 }

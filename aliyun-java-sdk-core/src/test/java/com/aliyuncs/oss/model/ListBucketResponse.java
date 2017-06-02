@@ -26,28 +26,28 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListBucketResponse extends AcsResponse {
 
-	private Owner owner;
-	private List<Bucket> buckets;
-	
-	public Owner getOwner() {
-		return owner;
-	}
+    private Owner owner;
+    private List<Bucket> buckets;
 
-	public void setOwner(Owner owner) {
-		this.owner = owner;
-	}
+    public Owner getOwner() {
+        return owner;
+    }
 
-	public List<Bucket> getBuckets() {
-		return buckets;
-	}
+    public void setOwner(Owner owner) {
+        this.owner = owner;
+    }
 
-	public void setBuckets(List<Bucket> buckets) {
-		this.buckets = buckets;
-	}
+    public List<Bucket> getBuckets() {
+        return buckets;
+    }
 
-	@Override
-	public ListBucketResponse getInstance(UnmarshallerContext context) {
-		return ListBucketResponseUnmashaller.unmarshall(this, context);
-	}
+    public void setBuckets(List<Bucket> buckets) {
+        this.buckets = buckets;
+    }
+
+    @Override
+    public ListBucketResponse getInstance(UnmarshallerContext context) {
+        return ListBucketResponseUnmashaller.unmarshall(this, context);
+    }
 
 }

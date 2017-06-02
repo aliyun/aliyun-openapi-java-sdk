@@ -23,62 +23,61 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
- * @version 
  */
 public class CreateDBSourceResponse extends AcsResponse {
 
-	private String code;
+    private String code;
 
-	private String message;
+    private String message;
 
-	private String success;
+    private String success;
 
-	private String traceId;
+    private String traceId;
 
-	private String result;
+    private String result;
 
-	public String getCode() {
-		return this.code;
-	}
+    public String getCode() {
+        return this.code;
+    }
 
-	public void setCode(String code) {
-		this.code = code;
-	}
+    public void setCode(String code) {
+        this.code = code;
+    }
 
-	public String getMessage() {
-		return this.message;
-	}
+    public String getMessage() {
+        return this.message;
+    }
 
-	public void setMessage(String message) {
-		this.message = message;
-	}
+    public void setMessage(String message) {
+        this.message = message;
+    }
 
-	public String getSuccess() {
-		return this.success;
-	}
+    public String getSuccess() {
+        return this.success;
+    }
 
-	public void setSuccess(String success) {
-		this.success = success;
-	}
+    public void setSuccess(String success) {
+        this.success = success;
+    }
 
-	public String getTraceId() {
-		return this.traceId;
-	}
+    public String getTraceId() {
+        return this.traceId;
+    }
 
-	public void setTraceId(String traceId) {
-		this.traceId = traceId;
-	}
+    public void setTraceId(String traceId) {
+        this.traceId = traceId;
+    }
 
-	public String getResult() {
-		return this.result;
-	}
+    public String getResult() {
+        return this.result;
+    }
 
-	public void setResult(String result) {
-		this.result = result;
-	}
+    public void setResult(String result) {
+        this.result = result;
+    }
 
-	@Override
-	public CreateDBSourceResponse getInstance(UnmarshallerContext context) {
-		return	CreateDBSourceResponseUnmarshaller.unmarshall(this, context);
-	}
+    @Override
+    public CreateDBSourceResponse getInstance(UnmarshallerContext context) {
+        return CreateDBSourceResponseUnmarshaller.unmarshall(this, context);
+    }
 }

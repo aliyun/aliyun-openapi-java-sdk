@@ -23,40 +23,39 @@ import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
- * @version 
  */
 public class CreateDBSourceRequest extends RoaAcsRequest<CreateDBSourceResponse> {
-	
-	public CreateDBSourceRequest() {
-		super("Cms", "2015-08-14", "CreateDBSource");
-		setUriPattern("/projects/[ProjectName]/sources");
-		setMethod(MethodType.POST);
-	}
 
-	private String projectName;
+    public CreateDBSourceRequest() {
+        super("Cms", "2015-08-14", "CreateDBSource");
+        setUriPattern("/projects/[ProjectName]/sources");
+        setMethod(MethodType.POST);
+    }
 
-	private String source;
+    private String projectName;
 
-	public String getProjectName() {
-		return this.projectName;
-	}
+    private String source;
 
-	public void setProjectName(String projectName) {
-		this.projectName = projectName;
-		putPathParameter("ProjectName", projectName);
-	}
+    public String getProjectName() {
+        return this.projectName;
+    }
 
-	public String getSource() {
-		return this.source;
-	}
+    public void setProjectName(String projectName) {
+        this.projectName = projectName;
+        putPathParameter("ProjectName", projectName);
+    }
 
-	public void setSource(String source) {
-		this.source = source;
-		}
+    public String getSource() {
+        return this.source;
+    }
 
-	@Override
-	public Class<CreateDBSourceResponse> getResponseClass() {
-		return CreateDBSourceResponse.class;
-	}
+    public void setSource(String source) {
+        this.source = source;
+    }
+
+    @Override
+    public Class<CreateDBSourceResponse> getResponseClass() {
+        return CreateDBSourceResponse.class;
+    }
 
 }

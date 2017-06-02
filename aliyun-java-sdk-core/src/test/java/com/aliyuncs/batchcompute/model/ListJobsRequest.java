@@ -25,24 +25,23 @@ import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
- * @version 
  */
 public class ListJobsRequest extends RoaAcsRequest<ListJobsResponse> {
-	
-	public ListJobsRequest() {
-		super("BatchCompute", "2013-01-11", "ListJobs");
-		setUriPattern("/jobs");
-		setMethod(MethodType.GET);
-	}
 
-	@Override
-	public Class<ListJobsResponse> getResponseClass() {
-		return ListJobsResponse.class;
-	}
-	
-	public void setContent(Job job) throws NoSuchAlgorithmException {
-		String	c ="this is a content test";//convert job to json string
-		
-		super.setContent(c.getBytes(), super.getEncoding(), super.getAcceptFormat());
-	}
+    public ListJobsRequest() {
+        super("BatchCompute", "2013-01-11", "ListJobs");
+        setUriPattern("/jobs");
+        setMethod(MethodType.GET);
+    }
+
+    @Override
+    public Class<ListJobsResponse> getResponseClass() {
+        return ListJobsResponse.class;
+    }
+
+    public void setContent(Job job) throws NoSuchAlgorithmException {
+        String c = "this is a content test";//convert job to json string
+
+        super.setContent(c.getBytes(), super.getEncoding(), super.getAcceptFormat());
+    }
 }

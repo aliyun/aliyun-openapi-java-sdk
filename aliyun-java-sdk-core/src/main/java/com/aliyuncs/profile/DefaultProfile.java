@@ -40,17 +40,17 @@ import com.aliyuncs.regions.RemoteEndpointsParser;
 
 public class DefaultProfile implements IClientProfile {
 
-    private static DefaultProfile profile        = null;
-    private static List<Endpoint> endpoints      = null;
+    private static DefaultProfile profile = null;
+    private static List<Endpoint> endpoints = null;
 
-    private Credential            credential     = null;
-    private String                regionId       = null;
-    private FormatType            acceptFormat   = null;
-    private ISigner               isigner        = null;
-    private IEndpointsProvider    iendpoints     = null;
-    private IEndpointsProvider    remoteProvider = null;
-    private ICredentialProvider   icredential    = null;
-    private LocationConfig        locationConfig = new LocationConfig();
+    private Credential credential = null;
+    private String regionId = null;
+    private FormatType acceptFormat = null;
+    private ISigner isigner = null;
+    private IEndpointsProvider iendpoints = null;
+    private IEndpointsProvider remoteProvider = null;
+    private ICredentialProvider icredential = null;
+    private LocationConfig locationConfig = new LocationConfig();
 
     private DefaultProfile() {
         this.locationConfig = new LocationConfig();
@@ -100,8 +100,7 @@ public class DefaultProfile implements IClientProfile {
 
     @Override
     public synchronized ISigner getSigner() {
-        if (null == isigner)
-            this.isigner = ShaHmac1Singleton.INSTANCE.getInstance();
+        if (null == isigner) { this.isigner = ShaHmac1Singleton.INSTANCE.getInstance(); }
         return isigner;
     }
 
@@ -117,8 +116,7 @@ public class DefaultProfile implements IClientProfile {
 
     @Override
     public synchronized Credential getCredential() {
-        if (null == credential && null != icredential)
-            credential = icredential.fresh();
+        if (null == credential && null != icredential) { credential = icredential.fresh(); }
         return credential;
     }
 
@@ -145,10 +143,12 @@ public class DefaultProfile implements IClientProfile {
         return endpoints;
     }
 
-    //    public synchronized List<Endpoint> getEndpoints(String product,String serviceCode, String endpointType) throws ClientException {
+    //    public synchronized List<Endpoint> getEndpoints(String product,String serviceCode, String endpointType)
+    // throws ClientException {
     //        if (null == endpoints || Endpoint.findProductDomain(regionId, product, endpoints) == null) {
     //            if(serviceCode!=null){
-    //                endpoints = remoteProvider.getEndpoints(regionId, serviceCode, endpointType, credential, locationConfig);
+    //                endpoints = remoteProvider.getEndpoints(regionId, serviceCode, endpointType, credential,
+    // locationConfig);
     //            }
     //            if (endpoints == null|| Endpoint.findProductDomain(regionId, product, endpoints) == null) {
     //
@@ -165,7 +165,7 @@ public class DefaultProfile implements IClientProfile {
             Endpoint endpoint = null;
             if (serviceCode != null) {
                 endpoint = remoteProvider.getEndpoint(regionId, product, serviceCode, endpointType, credential,
-                        locationConfig);
+                    locationConfig);
             }
             if (endpoint == null) {
                 endpoint = iendpoints.getEndpoint(regionId, product);
@@ -178,7 +178,7 @@ public class DefaultProfile implements IClientProfile {
             Endpoint endpoint = null;
             if (serviceCode != null) {
                 endpoint = remoteProvider.getEndpoint(regionId, product, serviceCode, endpointType,
-                        credential, locationConfig);
+                    credential, locationConfig);
             }
             if (endpoint == null) {
                 endpoint = iendpoints.getEndpoint(regionId, product);
@@ -194,10 +194,8 @@ public class DefaultProfile implements IClientProfile {
         return endpoints;
     }
 
-
     public synchronized static DefaultProfile getProfile() {
-        if (null == profile)
-            profile = new DefaultProfile();
+        if (null == profile) { profile = new DefaultProfile(); }
 
         return profile;
     }
@@ -260,7 +258,7 @@ public class DefaultProfile implements IClientProfile {
     }
 
     public synchronized static void addEndpoint(String endpointName, String regionId, String product, String domain)
-            throws ClientException {
+        throws ClientException {
         if (null == endpoints) {
             endpoints = getProfile().getEndpoints(regionId, product);
         }
@@ -319,6 +317,5 @@ public class DefaultProfile implements IClientProfile {
         }
         return null;
     }
-
 
 }

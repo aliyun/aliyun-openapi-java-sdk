@@ -6,9 +6,9 @@ import com.aliyuncs.http.HttpResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CommonResponse extends AcsResponse {
-    
+
     private String data;
-    
+
     private HttpResponse httpResponse;
 
     @Override

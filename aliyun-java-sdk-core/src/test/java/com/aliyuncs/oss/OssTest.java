@@ -28,20 +28,20 @@ import com.aliyuncs.oss.model.ListBucketRequest;
 import com.aliyuncs.oss.model.ListBucketResponse;
 
 public class OssTest extends BaseTest {
-	
-	@Test
-	public void listBucketTest() {
-		try {
-			ListBucketRequest listBucketRequest = new ListBucketRequest();
-			ListBucketResponse listBucketResponse = client.getAcsResponse(listBucketRequest);
-	
-			Assert.assertNotNull(listBucketResponse.getOwner().getId())	;
-			Assert.assertNotNull(listBucketResponse.getOwner().getDisplayName());
-		
-		} catch (ServerException e) {
-			e.printStackTrace();
-		} catch (ClientException e) {
-			e.printStackTrace();
-		}
-	}
+
+    @Test
+    public void listBucketTest() {
+        try {
+            ListBucketRequest listBucketRequest = new ListBucketRequest();
+            ListBucketResponse listBucketResponse = client.getAcsResponse(listBucketRequest);
+
+            Assert.assertNotNull(listBucketResponse.getOwner().getId());
+            Assert.assertNotNull(listBucketResponse.getOwner().getDisplayName());
+
+        } catch (ServerException e) {
+            e.printStackTrace();
+        } catch (ClientException e) {
+            e.printStackTrace();
+        }
+    }
 }

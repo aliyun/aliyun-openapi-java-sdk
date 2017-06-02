@@ -34,131 +34,134 @@ import com.aliyuncs.regions.ProductDomain;
 
 public class DefaultProfileTest {
 
-	@Test
-	public void test() {
-		testProfileCredential();
-	}
+    @Test
+    public void test() {
+        testProfileCredential();
+    }
 
-	private void testProfileCredential() {
-		IClientProfile iprofile = DefaultProfile.getProfile("cn-beijing", "testid", "testsecret");
-		assertEquals("cn-beijing", iprofile.getRegionId());
-		assertEquals("testid", iprofile.getCredential().getAccessKeyId());
-		assertEquals("testsecret", iprofile.getCredential().getAccessSecret());
-	}
-	
-	@Test
-	public void addEndpoint_Test() throws Exception {
-		try {
-			IClientProfile clientProfile = DefaultProfile.getProfile();
+    private void testProfileCredential() {
+        IClientProfile iprofile = DefaultProfile.getProfile("cn-beijing", "testid", "testsecret");
+        assertEquals("cn-beijing", iprofile.getRegionId());
+        assertEquals("testid", iprofile.getCredential().getAccessKeyId());
+        assertEquals("testsecret", iprofile.getCredential().getAccessSecret());
+    }
+
+    @Test
+    public void addEndpoint_Test() throws Exception {
+        try {
+            IClientProfile clientProfile = DefaultProfile.getProfile();
             clientProfile.getEndpoints("cn-beijing", "Rds");
             Method method = DefaultProfile.class.getDeclaredMethod("addEndpoint", String.class, String.class,
-                    String.class, String.class);
-			method.setAccessible(true);
+                String.class, String.class);
+            method.setAccessible(true);
             method.invoke(DefaultProfile.class, "cn-beijing", "cn-beijing", "Oss", "oss-admin.aliyuncs.com");
             List<Endpoint> endpoints = clientProfile.getEndpoints("cn-beijing", "Oss");
-			boolean success = false;
-			for (Endpoint endpoint : endpoints) {
+            boolean success = false;
+            for (Endpoint endpoint : endpoints) {
                 if ("cn-beijing".equals(endpoint.getName())) {
-					ProductDomain productDomain = getProductDomain(endpoint.getProductDomains(), "oss-admin.aliyuncs.com","Oss");
+                    ProductDomain productDomain = getProductDomain(endpoint.getProductDomains(),
+                        "oss-admin.aliyuncs.com", "Oss");
                     String regionId = getRegionId(endpoint.getRegionIds(), "cn-beijing");
-					if(null != productDomain && null != regionId){
-						success = true;
-					}
-				}
-			}
-			Assert.assertTrue(success);
-		} catch (Exception e) {
-			Assert.fail();
-		}	
-	}
-	
-	private String getRegionId(Set<String> regionIds,String regionId) {
-		for (String r : regionIds) {
-			if(r.equals(regionId)){
-				return r;
-			}
-		}
-		return null;
-	}
-	
-	private ProductDomain getProductDomain(List<ProductDomain> productDomains, String domainName, String productName) {
-		for (ProductDomain productDomain : productDomains) {
-			if(domainName.equals(productDomain.getDomianName()) && productName.equals(productDomain.getProductName())){
-				return productDomain;
-			}
-		}
-		return null;
-	}
-	
-	@Test
-	public void updateEndpointTest() {
-		try {
-			Set<String> regions = new HashSet<String>();	
-			
-			List<ProductDomain> productDomains = new ArrayList<ProductDomain>();
-			productDomains.add(new ProductDomain("Ecs", "ecs.aliyuncs.com"));
-			productDomains.add(new ProductDomain("Rds", "rds.aliyuncs.com"));
-			productDomains.add(new ProductDomain("Oss", "oss.aliyuncs.com"));
-	
-			Endpoint endpoint = new Endpoint("cn-hangzhou", regions, productDomains);
-			
-			Method method = DefaultProfile.class.getDeclaredMethod("updateEndpoint", String.class, String.class, String.class,Endpoint.class);
-			method.setAccessible(true);
-			
-			method.invoke(DefaultProfile.class, "cn-hangzhou", "Oss", "oss-admin.aliyuncs.com", endpoint);
-			
-			Method method_findProductDomain = DefaultProfile.class.getDeclaredMethod("findProductDomain", List.class, String.class);
-			method_findProductDomain.setAccessible(true);
-			ProductDomain productDomain =(ProductDomain)method_findProductDomain.invoke(DefaultProfile.class, productDomains, "Oss");
-			Assert.assertTrue("Oss".equals(productDomain.getProductName()));
-			Assert.assertTrue("oss-admin.aliyuncs.com".equals(productDomain.getDomianName()));
-			
-			productDomain =(ProductDomain)method_findProductDomain.invoke(DefaultProfile.class, productDomains, "Oss");
-			Assert.assertTrue("Oss".equals(productDomain.getProductName()));
-			Assert.assertTrue("oss-admin.aliyuncs.com".equals(productDomain.getDomianName()));
-			
-			Assert.assertTrue("cn-hangzhou".equals(endpoint.getName()));
-			
-		} catch (Exception e) {
-			Assert.fail();
-		}	
-	}
-	
-	@Test
-	public void findEndpointByNameTest() {
-		try {
-			DefaultProfile.addEndpoint("cn-hangzhou", "cn-hangzhou", "Ecs", "ecs.aliyuncs.com");
-			DefaultProfile.addEndpoint("cn-hangzhou", "cn-beijing", "Ecs", "ecs.aliyuncs.com");
-			DefaultProfile.addEndpoint("cn-hangzhou", "cn-shanghai", "Ecs", "ecs.aliyuncs.com");
-			Method method = DefaultProfile.class.getDeclaredMethod("findEndpointByRegionId", String.class);
-			method.setAccessible(true);
-			
-			Endpoint endpoint =(Endpoint)method.invoke(DefaultProfile.class, "cn-hangzhou");
-			Assert.assertTrue("cn-hangzhou".equals(endpoint.getName()));
-			
-		} catch (Exception e) {
-			Assert.fail();
-		}	
-	}
-	
-	@Test
-	public void findProductDomainTest(){
-		try {
-			List<ProductDomain> productDomains = new ArrayList<ProductDomain>();
-			productDomains.add(new ProductDomain("Ecs", "ecs.aliyuncs.com"));
-			productDomains.add(new ProductDomain("Rds", "rds.aliyuncs.com"));
-			productDomains.add(new ProductDomain("Ocs", "ocs.aliyuncs.com"));
-			
-			Method method = DefaultProfile.class.getDeclaredMethod("findProductDomain", List.class, String.class);
-			method.setAccessible(true);
-			ProductDomain productDomain =(ProductDomain)method.invoke(DefaultProfile.class, productDomains, "Ecs");
-			Assert.assertTrue("Ecs".equals(productDomain.getProductName()));
-			Assert.assertTrue("ecs.aliyuncs.com".equals(productDomain.getDomianName()));
-		} catch (Exception e) {
-			Assert.fail();
-		}
-	}
-	
+                    if (null != productDomain && null != regionId) {
+                        success = true;
+                    }
+                }
+            }
+            Assert.assertTrue(success);
+        } catch (Exception e) {
+            Assert.fail();
+        }
+    }
 
-	
+    private String getRegionId(Set<String> regionIds, String regionId) {
+        for (String r : regionIds) {
+            if (r.equals(regionId)) {
+                return r;
+            }
+        }
+        return null;
+    }
+
+    private ProductDomain getProductDomain(List<ProductDomain> productDomains, String domainName, String productName) {
+        for (ProductDomain productDomain : productDomains) {
+            if (domainName.equals(productDomain.getDomianName()) && productName.equals(
+                productDomain.getProductName())) {
+                return productDomain;
+            }
+        }
+        return null;
+    }
+
+    @Test
+    public void updateEndpointTest() {
+        try {
+            Set<String> regions = new HashSet<String>();
+
+            List<ProductDomain> productDomains = new ArrayList<ProductDomain>();
+            productDomains.add(new ProductDomain("Ecs", "ecs.aliyuncs.com"));
+            productDomains.add(new ProductDomain("Rds", "rds.aliyuncs.com"));
+            productDomains.add(new ProductDomain("Oss", "oss.aliyuncs.com"));
+
+            Endpoint endpoint = new Endpoint("cn-hangzhou", regions, productDomains);
+
+            Method method = DefaultProfile.class.getDeclaredMethod("updateEndpoint", String.class, String.class,
+                String.class, Endpoint.class);
+            method.setAccessible(true);
+
+            method.invoke(DefaultProfile.class, "cn-hangzhou", "Oss", "oss-admin.aliyuncs.com", endpoint);
+
+            Method method_findProductDomain = DefaultProfile.class.getDeclaredMethod("findProductDomain", List.class,
+                String.class);
+            method_findProductDomain.setAccessible(true);
+            ProductDomain productDomain = (ProductDomain)method_findProductDomain.invoke(DefaultProfile.class,
+                productDomains, "Oss");
+            Assert.assertTrue("Oss".equals(productDomain.getProductName()));
+            Assert.assertTrue("oss-admin.aliyuncs.com".equals(productDomain.getDomianName()));
+
+            productDomain = (ProductDomain)method_findProductDomain.invoke(DefaultProfile.class, productDomains, "Oss");
+            Assert.assertTrue("Oss".equals(productDomain.getProductName()));
+            Assert.assertTrue("oss-admin.aliyuncs.com".equals(productDomain.getDomianName()));
+
+            Assert.assertTrue("cn-hangzhou".equals(endpoint.getName()));
+
+        } catch (Exception e) {
+            Assert.fail();
+        }
+    }
+
+    @Test
+    public void findEndpointByNameTest() {
+        try {
+            DefaultProfile.addEndpoint("cn-hangzhou", "cn-hangzhou", "Ecs", "ecs.aliyuncs.com");
+            DefaultProfile.addEndpoint("cn-hangzhou", "cn-beijing", "Ecs", "ecs.aliyuncs.com");
+            DefaultProfile.addEndpoint("cn-hangzhou", "cn-shanghai", "Ecs", "ecs.aliyuncs.com");
+            Method method = DefaultProfile.class.getDeclaredMethod("findEndpointByRegionId", String.class);
+            method.setAccessible(true);
+
+            Endpoint endpoint = (Endpoint)method.invoke(DefaultProfile.class, "cn-hangzhou");
+            Assert.assertTrue("cn-hangzhou".equals(endpoint.getName()));
+
+        } catch (Exception e) {
+            Assert.fail();
+        }
+    }
+
+    @Test
+    public void findProductDomainTest() {
+        try {
+            List<ProductDomain> productDomains = new ArrayList<ProductDomain>();
+            productDomains.add(new ProductDomain("Ecs", "ecs.aliyuncs.com"));
+            productDomains.add(new ProductDomain("Rds", "rds.aliyuncs.com"));
+            productDomains.add(new ProductDomain("Ocs", "ocs.aliyuncs.com"));
+
+            Method method = DefaultProfile.class.getDeclaredMethod("findProductDomain", List.class, String.class);
+            method.setAccessible(true);
+            ProductDomain productDomain = (ProductDomain)method.invoke(DefaultProfile.class, productDomains, "Ecs");
+            Assert.assertTrue("Ecs".equals(productDomain.getProductName()));
+            Assert.assertTrue("ecs.aliyuncs.com".equals(productDomain.getDomianName()));
+        } catch (Exception e) {
+            Assert.fail();
+        }
+    }
+
 }

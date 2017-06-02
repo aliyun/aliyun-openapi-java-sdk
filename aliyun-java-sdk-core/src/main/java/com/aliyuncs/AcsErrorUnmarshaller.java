@@ -23,13 +23,13 @@ import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 public class AcsErrorUnmarshaller {
-	public static AcsError unmarshall(AcsError error, UnmarshallerContext context) {
-		Map<String,String> map = context.getResponseMap();
-		error.setStatusCode(context.getHttpStatus());
-		error.setRequestId(map.get("Error.RequestId"));
-		error.setErrorCode(map.get("Error.Code"));
-		error.setErrorMessage(map.get("Error.Message"));
-	 
-	 	return error;
-	}
+    public static AcsError unmarshall(AcsError error, UnmarshallerContext context) {
+        Map<String, String> map = context.getResponseMap();
+        error.setStatusCode(context.getHttpStatus());
+        error.setRequestId(map.get("Error.RequestId"));
+        error.setErrorCode(map.get("Error.Code"));
+        error.setErrorMessage(map.get("Error.Message"));
+
+        return error;
+    }
 }

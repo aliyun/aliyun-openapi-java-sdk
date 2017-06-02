@@ -21,14 +21,14 @@ package com.aliyuncs.ecs.v20140526.transform;
 import com.aliyuncs.ecs.v20140526.model.CreateInstanceResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
-
 public class CreateInstanceResponseUnmarshaller {
 
-	public static CreateInstanceResponse unmarshall(CreateInstanceResponse createInstanceResponse, UnmarshallerContext context) {
-		
-		createInstanceResponse.setRequestId(context.stringValue("CreateInstanceResponse.RequestId"));
-		createInstanceResponse.setInstanceId(context.stringValue("CreateInstanceResponse.InstanceId"));
-	 
-	 	return createInstanceResponse;
-	}
+    public static CreateInstanceResponse unmarshall(CreateInstanceResponse createInstanceResponse,
+                                                    UnmarshallerContext context) {
+
+        createInstanceResponse.setRequestId(context.stringValue("CreateInstanceResponse.RequestId"));
+        createInstanceResponse.setInstanceId(context.stringValue("CreateInstanceResponse.InstanceId"));
+
+        return createInstanceResponse;
+    }
 }
