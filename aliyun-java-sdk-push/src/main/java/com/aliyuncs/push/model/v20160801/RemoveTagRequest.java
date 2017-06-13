@@ -24,15 +24,15 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class CheckDevicesRequest extends RpcAcsRequest<CheckDevicesResponse> {
+public class RemoveTagRequest extends RpcAcsRequest<RemoveTagResponse> {
 	
-	public CheckDevicesRequest() {
-		super("Push", "2016-08-01", "CheckDevices");
+	public RemoveTagRequest() {
+		super("Push", "2016-08-01", "RemoveTag");
 	}
 
 	private Long appKey;
 
-	private String deviceIds;
+	private String tagName;
 
 	public Long getAppKey() {
 		return this.appKey;
@@ -43,18 +43,18 @@ public class CheckDevicesRequest extends RpcAcsRequest<CheckDevicesResponse> {
 		putQueryParameter("AppKey", appKey);
 	}
 
-	public String getDeviceIds() {
-		return this.deviceIds;
+	public String getTagName() {
+		return this.tagName;
 	}
 
-	public void setDeviceIds(String deviceIds) {
-		this.deviceIds = deviceIds;
-		putQueryParameter("DeviceIds", deviceIds);
+	public void setTagName(String tagName) {
+		this.tagName = tagName;
+		putQueryParameter("TagName", tagName);
 	}
 
 	@Override
-	public Class<CheckDevicesResponse> getResponseClass() {
-		return CheckDevicesResponse.class;
+	public Class<RemoveTagResponse> getResponseClass() {
+		return RemoveTagResponse.class;
 	}
 
 }

@@ -18,43 +18,28 @@
  */
 package com.aliyuncs.push.model.v20160801;
 
-import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.AcsResponse;
+import com.aliyuncs.push.transform.v20160801.RemoveTagResponseUnmarshaller;
+import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CheckDevicesRequest extends RpcAcsRequest<CheckDevicesResponse> {
-	
-	public CheckDevicesRequest() {
-		super("Push", "2016-08-01", "CheckDevices");
+public class RemoveTagResponse extends AcsResponse {
+
+	private String requestId;
+
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	private Long appKey;
-
-	private String deviceIds;
-
-	public Long getAppKey() {
-		return this.appKey;
-	}
-
-	public void setAppKey(Long appKey) {
-		this.appKey = appKey;
-		putQueryParameter("AppKey", appKey);
-	}
-
-	public String getDeviceIds() {
-		return this.deviceIds;
-	}
-
-	public void setDeviceIds(String deviceIds) {
-		this.deviceIds = deviceIds;
-		putQueryParameter("DeviceIds", deviceIds);
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override
-	public Class<CheckDevicesResponse> getResponseClass() {
-		return CheckDevicesResponse.class;
+	public RemoveTagResponse getInstance(UnmarshallerContext context) {
+		return	RemoveTagResponseUnmarshaller.unmarshall(this, context);
 	}
-
 }

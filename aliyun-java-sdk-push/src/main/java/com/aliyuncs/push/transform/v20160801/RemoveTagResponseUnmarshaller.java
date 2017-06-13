@@ -16,45 +16,18 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package com.aliyuncs.push.model.v20160801;
+package com.aliyuncs.push.transform.v20160801;
 
-import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.push.model.v20160801.RemoveTagResponse;
+import com.aliyuncs.transform.UnmarshallerContext;
 
-/**
- * @author auto create
- * @version 
- */
-public class CheckDevicesRequest extends RpcAcsRequest<CheckDevicesResponse> {
-	
-	public CheckDevicesRequest() {
-		super("Push", "2016-08-01", "CheckDevices");
+
+public class RemoveTagResponseUnmarshaller {
+
+	public static RemoveTagResponse unmarshall(RemoveTagResponse removeTagResponse, UnmarshallerContext context) {
+		
+		removeTagResponse.setRequestId(context.stringValue("RemoveTagResponse.RequestId"));
+	 
+	 	return removeTagResponse;
 	}
-
-	private Long appKey;
-
-	private String deviceIds;
-
-	public Long getAppKey() {
-		return this.appKey;
-	}
-
-	public void setAppKey(Long appKey) {
-		this.appKey = appKey;
-		putQueryParameter("AppKey", appKey);
-	}
-
-	public String getDeviceIds() {
-		return this.deviceIds;
-	}
-
-	public void setDeviceIds(String deviceIds) {
-		this.deviceIds = deviceIds;
-		putQueryParameter("DeviceIds", deviceIds);
-	}
-
-	@Override
-	public Class<CheckDevicesResponse> getResponseClass() {
-		return CheckDevicesResponse.class;
-	}
-
 }

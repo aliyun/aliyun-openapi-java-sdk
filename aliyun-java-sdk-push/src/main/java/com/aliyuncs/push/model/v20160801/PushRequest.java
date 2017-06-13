@@ -44,6 +44,8 @@ public class PushRequest extends RpcAcsRequest<PushResponse> {
 
 	private String body;
 
+	private String jobKey;
+
 	private String pushTime;
 
 	private String expireTime;
@@ -65,6 +67,12 @@ public class PushRequest extends RpcAcsRequest<PushResponse> {
 	private String androidXiaoMiNotifyTitle;
 
 	private String androidXiaoMiNotifyBody;
+
+	private String androidPopupActivity;
+
+	private String androidPopupTitle;
+
+	private String androidPopupBody;
 
 	private String androidMusic;
 
@@ -155,6 +163,15 @@ public class PushRequest extends RpcAcsRequest<PushResponse> {
 	public void setBody(String body) {
 		this.body = body;
 		putQueryParameter("Body", body);
+	}
+
+	public String getJobKey() {
+		return jobKey;
+	}
+
+	public void setJobKey(String jobKey) {
+		this.jobKey = jobKey;
+		putQueryParameter("JobKey", jobKey);
 	}
 
 	public String getPushTime() {
@@ -254,6 +271,33 @@ public class PushRequest extends RpcAcsRequest<PushResponse> {
 	public void setAndroidXiaoMiNotifyBody(String androidXiaoMiNotifyBody) {
 		this.androidXiaoMiNotifyBody = androidXiaoMiNotifyBody;
 		putQueryParameter("AndroidXiaoMiNotifyBody", androidXiaoMiNotifyBody);
+	}
+
+	public String getAndroidPopupActivity() {
+		return this.androidPopupActivity;
+	}
+
+	public void setAndroidPopupActivity(String androidPopupActivity) {
+		this.androidPopupActivity = androidPopupActivity;
+		putQueryParameter("AndroidPopupActivity", androidPopupActivity);
+	}
+
+	public String getAndroidPopupTitle() {
+		return this.androidPopupTitle;
+	}
+
+	public void setAndroidPopupTitle(String androidPopupTitle) {
+		this.androidPopupTitle = androidPopupTitle;
+		putQueryParameter("AndroidPopupTitle", androidPopupTitle);
+	}
+
+	public String getAndroidPopupBody() {
+		return this.androidPopupBody;
+	}
+
+	public void setAndroidPopupBody(String androidPopupBody) {
+		this.androidPopupBody = androidPopupBody;
+		putQueryParameter("AndroidPopupBody", androidPopupBody);
 	}
 
 	public String getAndroidMusic() {
