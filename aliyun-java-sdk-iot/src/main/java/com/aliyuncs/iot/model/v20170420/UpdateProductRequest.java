@@ -30,23 +30,23 @@ public class UpdateProductRequest extends RpcAcsRequest<UpdateProductResponse> {
 		super("Iot", "2017-04-20", "UpdateProduct");
 	}
 
-	private String productName;
+	private String productKey;
 
 	private String productDesc;
 
-	private String extProps;
-
 	private Long catId;
 
-	private String productKey;
+	private String productName;
 
-	public String getProductName() {
-		return this.productName;
+	private String extProps;
+
+	public String getProductKey() {
+		return this.productKey;
 	}
 
-	public void setProductName(String productName) {
-		this.productName = productName;
-		putQueryParameter("ProductName", productName);
+	public void setProductKey(String productKey) {
+		this.productKey = productKey;
+		putQueryParameter("ProductKey", productKey);
 	}
 
 	public String getProductDesc() {
@@ -58,15 +58,6 @@ public class UpdateProductRequest extends RpcAcsRequest<UpdateProductResponse> {
 		putQueryParameter("ProductDesc", productDesc);
 	}
 
-	public String getExtProps() {
-		return this.extProps;
-	}
-
-	public void setExtProps(String extProps) {
-		this.extProps = extProps;
-		putQueryParameter("ExtProps", extProps);
-	}
-
 	public Long getCatId() {
 		return this.catId;
 	}
@@ -76,13 +67,22 @@ public class UpdateProductRequest extends RpcAcsRequest<UpdateProductResponse> {
 		putQueryParameter("CatId", catId);
 	}
 
-	public String getProductKey() {
-		return this.productKey;
+	public String getProductName() {
+		return this.productName;
 	}
 
-	public void setProductKey(String productKey) {
-		this.productKey = productKey;
-		putQueryParameter("ProductKey", productKey);
+	public void setProductName(String productName) {
+		this.productName = productName;
+		putQueryParameter("ProductName", productName);
+	}
+
+	public String getExtProps() {
+		return this.extProps;
+	}
+
+	public void setExtProps(String extProps) {
+		this.extProps = extProps;
+		putQueryParameter("ExtProps", extProps);
 	}
 
 	@Override

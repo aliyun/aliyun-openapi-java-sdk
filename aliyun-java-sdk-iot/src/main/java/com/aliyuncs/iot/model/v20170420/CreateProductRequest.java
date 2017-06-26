@@ -32,13 +32,13 @@ public class CreateProductRequest extends RpcAcsRequest<CreateProductResponse> {
 
 	private String name;
 
-	private String desc;
-
 	private Long catId;
+
+	private String securityPolicy;
 
 	private String extProps;
 
-	private String securityPolicy;
+	private String desc;
 
 	public String getName() {
 		return this.name;
@@ -47,15 +47,6 @@ public class CreateProductRequest extends RpcAcsRequest<CreateProductResponse> {
 	public void setName(String name) {
 		this.name = name;
 		putQueryParameter("Name", name);
-	}
-
-	public String getDesc() {
-		return this.desc;
-	}
-
-	public void setDesc(String desc) {
-		this.desc = desc;
-		putQueryParameter("Desc", desc);
 	}
 
 	public Long getCatId() {
@@ -67,6 +58,15 @@ public class CreateProductRequest extends RpcAcsRequest<CreateProductResponse> {
 		putQueryParameter("CatId", catId);
 	}
 
+	public String getSecurityPolicy() {
+		return this.securityPolicy;
+	}
+
+	public void setSecurityPolicy(String securityPolicy) {
+		this.securityPolicy = securityPolicy;
+		putQueryParameter("SecurityPolicy", securityPolicy);
+	}
+
 	public String getExtProps() {
 		return this.extProps;
 	}
@@ -76,13 +76,13 @@ public class CreateProductRequest extends RpcAcsRequest<CreateProductResponse> {
 		putQueryParameter("ExtProps", extProps);
 	}
 
-	public String getSecurityPolicy() {
-		return this.securityPolicy;
+	public String getDesc() {
+		return this.desc;
 	}
 
-	public void setSecurityPolicy(String securityPolicy) {
-		this.securityPolicy = securityPolicy;
-		putQueryParameter("SecurityPolicy", securityPolicy);
+	public void setDesc(String desc) {
+		this.desc = desc;
+		putQueryParameter("Desc", desc);
 	}
 
 	@Override

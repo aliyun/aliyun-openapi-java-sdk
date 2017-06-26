@@ -31,18 +31,9 @@ public class BatchGetDeviceStateRequest extends RpcAcsRequest<BatchGetDeviceStat
 		super("Iot", "2017-04-20", "BatchGetDeviceState");
 	}
 
-	private String productKey;
-
 	private List<String> deviceNames;
 
-	public String getProductKey() {
-		return this.productKey;
-	}
-
-	public void setProductKey(String productKey) {
-		this.productKey = productKey;
-		putQueryParameter("ProductKey", productKey);
-	}
+	private String productKey;
 
 	public List<String> getDeviceNames() {
 		return this.deviceNames;
@@ -53,6 +44,15 @@ public class BatchGetDeviceStateRequest extends RpcAcsRequest<BatchGetDeviceStat
 		for (int i = 0; i < deviceNames.size(); i++) {
 			putQueryParameter("DeviceName." + (i + 1) , deviceNames.get(i));
 		}	
+	}
+
+	public String getProductKey() {
+		return this.productKey;
+	}
+
+	public void setProductKey(String productKey) {
+		this.productKey = productKey;
+		putQueryParameter("ProductKey", productKey);
 	}
 
 	@Override

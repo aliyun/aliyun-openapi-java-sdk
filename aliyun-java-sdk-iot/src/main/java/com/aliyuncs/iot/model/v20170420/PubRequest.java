@@ -30,22 +30,13 @@ public class PubRequest extends RpcAcsRequest<PubResponse> {
 		super("Iot", "2017-04-20", "Pub");
 	}
 
-	private String productKey;
-
 	private Integer qos;
+
+	private String productKey;
 
 	private String topicFullName;
 
 	private String messageContent;
-
-	public String getProductKey() {
-		return this.productKey;
-	}
-
-	public void setProductKey(String productKey) {
-		this.productKey = productKey;
-		putQueryParameter("ProductKey", productKey);
-	}
 
 	public Integer getQos() {
 		return this.qos;
@@ -54,6 +45,15 @@ public class PubRequest extends RpcAcsRequest<PubResponse> {
 	public void setQos(Integer qos) {
 		this.qos = qos;
 		putQueryParameter("Qos", qos);
+	}
+
+	public String getProductKey() {
+		return this.productKey;
+	}
+
+	public void setProductKey(String productKey) {
+		this.productKey = productKey;
+		putQueryParameter("ProductKey", productKey);
 	}
 
 	public String getTopicFullName() {

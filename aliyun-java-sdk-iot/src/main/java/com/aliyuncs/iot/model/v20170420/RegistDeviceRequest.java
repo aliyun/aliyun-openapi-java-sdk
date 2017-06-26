@@ -34,8 +34,6 @@ public class RegistDeviceRequest extends RpcAcsRequest<RegistDeviceResponse> {
 
 	private String productKey;
 
-	private String deviceType;
-
 	public String getDeviceName() {
 		return this.deviceName;
 	}
@@ -52,15 +50,6 @@ public class RegistDeviceRequest extends RpcAcsRequest<RegistDeviceResponse> {
 	public void setProductKey(String productKey) {
 		this.productKey = productKey;
 		putQueryParameter("ProductKey", productKey);
-	}
-
-	public String getDeviceType() {
-		return this.deviceType;
-	}
-
-	public void setDeviceType(String deviceType) {
-		this.deviceType = deviceType;
-		putQueryParameter("DeviceType", deviceType);
 	}
 
 	@Override

@@ -30,11 +30,20 @@ public class GetDeviceShadowRequest extends RpcAcsRequest<GetDeviceShadowRespons
 		super("Iot", "2017-04-20", "GetDeviceShadow");
 	}
 
+	private String shadowMessage;
+
 	private String deviceName;
 
 	private String productKey;
 
-	private String shadowMessage;
+	public String getShadowMessage() {
+		return this.shadowMessage;
+	}
+
+	public void setShadowMessage(String shadowMessage) {
+		this.shadowMessage = shadowMessage;
+		putQueryParameter("ShadowMessage", shadowMessage);
+	}
 
 	public String getDeviceName() {
 		return this.deviceName;
@@ -52,15 +61,6 @@ public class GetDeviceShadowRequest extends RpcAcsRequest<GetDeviceShadowRespons
 	public void setProductKey(String productKey) {
 		this.productKey = productKey;
 		putQueryParameter("ProductKey", productKey);
-	}
-
-	public String getShadowMessage() {
-		return this.shadowMessage;
-	}
-
-	public void setShadowMessage(String shadowMessage) {
-		this.shadowMessage = shadowMessage;
-		putQueryParameter("ShadowMessage", shadowMessage);
 	}
 
 	@Override

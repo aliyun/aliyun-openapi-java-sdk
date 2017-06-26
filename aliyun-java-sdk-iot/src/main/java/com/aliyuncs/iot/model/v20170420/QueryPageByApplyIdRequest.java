@@ -30,20 +30,11 @@ public class QueryPageByApplyIdRequest extends RpcAcsRequest<QueryPageByApplyIdR
 		super("Iot", "2017-04-20", "QueryPageByApplyId");
 	}
 
-	private Integer currentPage;
-
 	private Integer pageSize;
 
+	private Integer currentPage;
+
 	private Long applyId;
-
-	public Integer getCurrentPage() {
-		return this.currentPage;
-	}
-
-	public void setCurrentPage(Integer currentPage) {
-		this.currentPage = currentPage;
-		putQueryParameter("CurrentPage", currentPage);
-	}
 
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -52,6 +43,15 @@ public class QueryPageByApplyIdRequest extends RpcAcsRequest<QueryPageByApplyIdR
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
 		putQueryParameter("PageSize", pageSize);
+	}
+
+	public Integer getCurrentPage() {
+		return this.currentPage;
+	}
+
+	public void setCurrentPage(Integer currentPage) {
+		this.currentPage = currentPage;
+		putQueryParameter("CurrentPage", currentPage);
 	}
 
 	public Long getApplyId() {

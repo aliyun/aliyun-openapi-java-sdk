@@ -34,6 +34,8 @@ public class PubResponse extends AcsResponse {
 
 	private String errorMessage;
 
+	private String messageId;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -56,6 +58,14 @@ public class PubResponse extends AcsResponse {
 
 	public void setErrorMessage(String errorMessage) {
 		this.errorMessage = errorMessage;
+	}
+
+	public String getMessageId() {
+		return this.messageId;
+	}
+
+	public void setMessageId(String messageId) {
+		this.messageId = messageId;
 	}
 
 	@Override
