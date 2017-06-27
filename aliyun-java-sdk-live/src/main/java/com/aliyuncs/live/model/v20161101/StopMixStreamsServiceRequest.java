@@ -30,21 +30,39 @@ public class StopMixStreamsServiceRequest extends RpcAcsRequest<StopMixStreamsSe
 		super("live", "2016-11-01", "StopMixStreamsService", "live");
 	}
 
+	private String mixDomainName;
+
+	private String mixStreamName;
+
 	private String securityToken;
 
 	private Long ownerId;
+
+	private String mainStreamName;
+
+	private String mixAppName;
 
 	private String mainDomainName;
 
 	private String mainAppName;
 
-	private String mainStreamName;
+	public String getMixDomainName() {
+		return this.mixDomainName;
+	}
 
-	private String mixDomainName;
+	public void setMixDomainName(String mixDomainName) {
+		this.mixDomainName = mixDomainName;
+		putQueryParameter("MixDomainName", mixDomainName);
+	}
 
-	private String mixAppName;
+	public String getMixStreamName() {
+		return this.mixStreamName;
+	}
 
-	private String mixStreamName;
+	public void setMixStreamName(String mixStreamName) {
+		this.mixStreamName = mixStreamName;
+		putQueryParameter("MixStreamName", mixStreamName);
+	}
 
 	public String getSecurityToken() {
 		return this.securityToken;
@@ -64,6 +82,24 @@ public class StopMixStreamsServiceRequest extends RpcAcsRequest<StopMixStreamsSe
 		putQueryParameter("OwnerId", ownerId);
 	}
 
+	public String getMainStreamName() {
+		return this.mainStreamName;
+	}
+
+	public void setMainStreamName(String mainStreamName) {
+		this.mainStreamName = mainStreamName;
+		putQueryParameter("MainStreamName", mainStreamName);
+	}
+
+	public String getMixAppName() {
+		return this.mixAppName;
+	}
+
+	public void setMixAppName(String mixAppName) {
+		this.mixAppName = mixAppName;
+		putQueryParameter("MixAppName", mixAppName);
+	}
+
 	public String getMainDomainName() {
 		return this.mainDomainName;
 	}
@@ -80,42 +116,6 @@ public class StopMixStreamsServiceRequest extends RpcAcsRequest<StopMixStreamsSe
 	public void setMainAppName(String mainAppName) {
 		this.mainAppName = mainAppName;
 		putQueryParameter("MainAppName", mainAppName);
-	}
-
-	public String getMainStreamName() {
-		return this.mainStreamName;
-	}
-
-	public void setMainStreamName(String mainStreamName) {
-		this.mainStreamName = mainStreamName;
-		putQueryParameter("MainStreamName", mainStreamName);
-	}
-
-	public String getMixDomainName() {
-		return this.mixDomainName;
-	}
-
-	public void setMixDomainName(String mixDomainName) {
-		this.mixDomainName = mixDomainName;
-		putQueryParameter("MixDomainName", mixDomainName);
-	}
-
-	public String getMixAppName() {
-		return this.mixAppName;
-	}
-
-	public void setMixAppName(String mixAppName) {
-		this.mixAppName = mixAppName;
-		putQueryParameter("MixAppName", mixAppName);
-	}
-
-	public String getMixStreamName() {
-		return this.mixStreamName;
-	}
-
-	public void setMixStreamName(String mixStreamName) {
-		this.mixStreamName = mixStreamName;
-		putQueryParameter("MixStreamName", mixStreamName);
 	}
 
 	@Override

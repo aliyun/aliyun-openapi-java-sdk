@@ -30,6 +30,10 @@ public class CreateLiveStreamRecordIndexFilesRequest extends RpcAcsRequest<Creat
 		super("live", "2016-11-01", "CreateLiveStreamRecordIndexFiles", "live");
 	}
 
+	private String ossObject;
+
+	private String streamName;
+
 	private String securityToken;
 
 	private Long ownerId;
@@ -38,17 +42,31 @@ public class CreateLiveStreamRecordIndexFilesRequest extends RpcAcsRequest<Creat
 
 	private String appName;
 
-	private String streamName;
-
 	private String ossEndpoint;
+
+	private String endTime;
 
 	private String ossBucket;
 
-	private String ossObject;
-
 	private String startTime;
 
-	private String endTime;
+	public String getOssObject() {
+		return this.ossObject;
+	}
+
+	public void setOssObject(String ossObject) {
+		this.ossObject = ossObject;
+		putQueryParameter("OssObject", ossObject);
+	}
+
+	public String getStreamName() {
+		return this.streamName;
+	}
+
+	public void setStreamName(String streamName) {
+		this.streamName = streamName;
+		putQueryParameter("StreamName", streamName);
+	}
 
 	public String getSecurityToken() {
 		return this.securityToken;
@@ -86,15 +104,6 @@ public class CreateLiveStreamRecordIndexFilesRequest extends RpcAcsRequest<Creat
 		putQueryParameter("AppName", appName);
 	}
 
-	public String getStreamName() {
-		return this.streamName;
-	}
-
-	public void setStreamName(String streamName) {
-		this.streamName = streamName;
-		putQueryParameter("StreamName", streamName);
-	}
-
 	public String getOssEndpoint() {
 		return this.ossEndpoint;
 	}
@@ -102,6 +111,15 @@ public class CreateLiveStreamRecordIndexFilesRequest extends RpcAcsRequest<Creat
 	public void setOssEndpoint(String ossEndpoint) {
 		this.ossEndpoint = ossEndpoint;
 		putQueryParameter("OssEndpoint", ossEndpoint);
+	}
+
+	public String getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+		putQueryParameter("EndTime", endTime);
 	}
 
 	public String getOssBucket() {
@@ -113,15 +131,6 @@ public class CreateLiveStreamRecordIndexFilesRequest extends RpcAcsRequest<Creat
 		putQueryParameter("OssBucket", ossBucket);
 	}
 
-	public String getOssObject() {
-		return this.ossObject;
-	}
-
-	public void setOssObject(String ossObject) {
-		this.ossObject = ossObject;
-		putQueryParameter("OssObject", ossObject);
-	}
-
 	public String getStartTime() {
 		return this.startTime;
 	}
@@ -129,15 +138,6 @@ public class CreateLiveStreamRecordIndexFilesRequest extends RpcAcsRequest<Creat
 	public void setStartTime(String startTime) {
 		this.startTime = startTime;
 		putQueryParameter("StartTime", startTime);
-	}
-
-	public String getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
-		putQueryParameter("EndTime", endTime);
 	}
 
 	@Override

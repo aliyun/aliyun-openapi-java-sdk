@@ -30,6 +30,10 @@ public class DescribeLiveStreamRecordIndexFileRequest extends RpcAcsRequest<Desc
 		super("live", "2016-11-01", "DescribeLiveStreamRecordIndexFile", "live");
 	}
 
+	private String recordId;
+
+	private String streamName;
+
 	private String securityToken;
 
 	private Long ownerId;
@@ -38,9 +42,23 @@ public class DescribeLiveStreamRecordIndexFileRequest extends RpcAcsRequest<Desc
 
 	private String appName;
 
-	private String streamName;
+	public String getRecordId() {
+		return this.recordId;
+	}
 
-	private String recordId;
+	public void setRecordId(String recordId) {
+		this.recordId = recordId;
+		putQueryParameter("RecordId", recordId);
+	}
+
+	public String getStreamName() {
+		return this.streamName;
+	}
+
+	public void setStreamName(String streamName) {
+		this.streamName = streamName;
+		putQueryParameter("StreamName", streamName);
+	}
 
 	public String getSecurityToken() {
 		return this.securityToken;
@@ -76,24 +94,6 @@ public class DescribeLiveStreamRecordIndexFileRequest extends RpcAcsRequest<Desc
 	public void setAppName(String appName) {
 		this.appName = appName;
 		putQueryParameter("AppName", appName);
-	}
-
-	public String getStreamName() {
-		return this.streamName;
-	}
-
-	public void setStreamName(String streamName) {
-		this.streamName = streamName;
-		putQueryParameter("StreamName", streamName);
-	}
-
-	public String getRecordId() {
-		return this.recordId;
-	}
-
-	public void setRecordId(String recordId) {
-		this.recordId = recordId;
-		putQueryParameter("RecordId", recordId);
 	}
 
 	@Override

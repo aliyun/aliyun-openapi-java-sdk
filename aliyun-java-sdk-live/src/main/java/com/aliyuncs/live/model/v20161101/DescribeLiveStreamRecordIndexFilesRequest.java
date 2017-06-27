@@ -30,25 +30,43 @@ public class DescribeLiveStreamRecordIndexFilesRequest extends RpcAcsRequest<Des
 		super("live", "2016-11-01", "DescribeLiveStreamRecordIndexFiles", "live");
 	}
 
+	private String streamName;
+
+	private Integer pageSize;
+
 	private String securityToken;
 
 	private Long ownerId;
+
+	private String order;
 
 	private String domainName;
 
 	private String appName;
 
-	private String streamName;
+	private String endTime;
 
 	private String startTime;
 
-	private String endTime;
-
 	private Integer pageNum;
 
-	private Integer pageSize;
+	public String getStreamName() {
+		return this.streamName;
+	}
 
-	private String order;
+	public void setStreamName(String streamName) {
+		this.streamName = streamName;
+		putQueryParameter("StreamName", streamName);
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		putQueryParameter("PageSize", pageSize);
+	}
 
 	public String getSecurityToken() {
 		return this.securityToken;
@@ -66,6 +84,15 @@ public class DescribeLiveStreamRecordIndexFilesRequest extends RpcAcsRequest<Des
 	public void setOwnerId(Long ownerId) {
 		this.ownerId = ownerId;
 		putQueryParameter("OwnerId", ownerId);
+	}
+
+	public String getOrder() {
+		return this.order;
+	}
+
+	public void setOrder(String order) {
+		this.order = order;
+		putQueryParameter("Order", order);
 	}
 
 	public String getDomainName() {
@@ -86,13 +113,13 @@ public class DescribeLiveStreamRecordIndexFilesRequest extends RpcAcsRequest<Des
 		putQueryParameter("AppName", appName);
 	}
 
-	public String getStreamName() {
-		return this.streamName;
+	public String getEndTime() {
+		return this.endTime;
 	}
 
-	public void setStreamName(String streamName) {
-		this.streamName = streamName;
-		putQueryParameter("StreamName", streamName);
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+		putQueryParameter("EndTime", endTime);
 	}
 
 	public String getStartTime() {
@@ -104,15 +131,6 @@ public class DescribeLiveStreamRecordIndexFilesRequest extends RpcAcsRequest<Des
 		putQueryParameter("StartTime", startTime);
 	}
 
-	public String getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
-		putQueryParameter("EndTime", endTime);
-	}
-
 	public Integer getPageNum() {
 		return this.pageNum;
 	}
@@ -120,24 +138,6 @@ public class DescribeLiveStreamRecordIndexFilesRequest extends RpcAcsRequest<Des
 	public void setPageNum(Integer pageNum) {
 		this.pageNum = pageNum;
 		putQueryParameter("PageNum", pageNum);
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		putQueryParameter("PageSize", pageSize);
-	}
-
-	public String getOrder() {
-		return this.order;
-	}
-
-	public void setOrder(String order) {
-		this.order = order;
-		putQueryParameter("Order", order);
 	}
 
 	@Override

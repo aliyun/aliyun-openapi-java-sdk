@@ -38,9 +38,9 @@ public class DescribeLiveStreamsControlHistoryRequest extends RpcAcsRequest<Desc
 
 	private String appName;
 
-	private String startTime;
-
 	private String endTime;
+
+	private String startTime;
 
 	public String getSecurityToken() {
 		return this.securityToken;
@@ -78,15 +78,6 @@ public class DescribeLiveStreamsControlHistoryRequest extends RpcAcsRequest<Desc
 		putQueryParameter("AppName", appName);
 	}
 
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-		putQueryParameter("StartTime", startTime);
-	}
-
 	public String getEndTime() {
 		return this.endTime;
 	}
@@ -94,6 +85,15 @@ public class DescribeLiveStreamsControlHistoryRequest extends RpcAcsRequest<Desc
 	public void setEndTime(String endTime) {
 		this.endTime = endTime;
 		putQueryParameter("EndTime", endTime);
+	}
+
+	public String getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+		putQueryParameter("StartTime", startTime);
 	}
 
 	@Override

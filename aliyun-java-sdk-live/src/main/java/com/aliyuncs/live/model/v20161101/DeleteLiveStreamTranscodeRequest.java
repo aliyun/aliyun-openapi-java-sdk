@@ -30,33 +30,15 @@ public class DeleteLiveStreamTranscodeRequest extends RpcAcsRequest<DeleteLiveSt
 		super("live", "2016-11-01", "DeleteLiveStreamTranscode", "live");
 	}
 
-	private String securityToken;
-
-	private Long ownerId;
-
 	private String domain;
 
 	private String app;
 
 	private String template;
 
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
+	private String securityToken;
 
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		putQueryParameter("SecurityToken", securityToken);
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
-	}
+	private Long ownerId;
 
 	public String getDomain() {
 		return this.domain;
@@ -83,6 +65,24 @@ public class DeleteLiveStreamTranscodeRequest extends RpcAcsRequest<DeleteLiveSt
 	public void setTemplate(String template) {
 		this.template = template;
 		putQueryParameter("Template", template);
+	}
+
+	public String getSecurityToken() {
+		return this.securityToken;
+	}
+
+	public void setSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		putQueryParameter("SecurityToken", securityToken);
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		putQueryParameter("OwnerId", ownerId);
 	}
 
 	@Override

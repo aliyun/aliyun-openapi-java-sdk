@@ -30,6 +30,8 @@ public class AddLiveMixConfigRequest extends RpcAcsRequest<AddLiveMixConfigRespo
 		super("live", "2016-11-01", "AddLiveMixConfig", "live");
 	}
 
+	private String template;
+
 	private String securityToken;
 
 	private Long ownerId;
@@ -38,7 +40,14 @@ public class AddLiveMixConfigRequest extends RpcAcsRequest<AddLiveMixConfigRespo
 
 	private String appName;
 
-	private String template;
+	public String getTemplate() {
+		return this.template;
+	}
+
+	public void setTemplate(String template) {
+		this.template = template;
+		putQueryParameter("Template", template);
+	}
 
 	public String getSecurityToken() {
 		return this.securityToken;
@@ -74,15 +83,6 @@ public class AddLiveMixConfigRequest extends RpcAcsRequest<AddLiveMixConfigRespo
 	public void setAppName(String appName) {
 		this.appName = appName;
 		putQueryParameter("AppName", appName);
-	}
-
-	public String getTemplate() {
-		return this.template;
-	}
-
-	public void setTemplate(String template) {
-		this.template = template;
-		putQueryParameter("Template", template);
 	}
 
 	@Override

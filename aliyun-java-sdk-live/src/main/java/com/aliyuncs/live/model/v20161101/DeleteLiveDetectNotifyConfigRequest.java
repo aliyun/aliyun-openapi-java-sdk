@@ -24,28 +24,17 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class SetLiveStreamsNotifyUrlConfigRequest extends RpcAcsRequest<SetLiveStreamsNotifyUrlConfigResponse> {
+public class DeleteLiveDetectNotifyConfigRequest extends RpcAcsRequest<DeleteLiveDetectNotifyConfigResponse> {
 	
-	public SetLiveStreamsNotifyUrlConfigRequest() {
-		super("live", "2016-11-01", "SetLiveStreamsNotifyUrlConfig", "live");
+	public DeleteLiveDetectNotifyConfigRequest() {
+		super("live", "2016-11-01", "DeleteLiveDetectNotifyConfig", "live");
 	}
-
-	private String notifyUrl;
 
 	private String securityToken;
 
 	private Long ownerId;
 
 	private String domainName;
-
-	public String getNotifyUrl() {
-		return this.notifyUrl;
-	}
-
-	public void setNotifyUrl(String notifyUrl) {
-		this.notifyUrl = notifyUrl;
-		putQueryParameter("NotifyUrl", notifyUrl);
-	}
 
 	public String getSecurityToken() {
 		return this.securityToken;
@@ -75,8 +64,8 @@ public class SetLiveStreamsNotifyUrlConfigRequest extends RpcAcsRequest<SetLiveS
 	}
 
 	@Override
-	public Class<SetLiveStreamsNotifyUrlConfigResponse> getResponseClass() {
-		return SetLiveStreamsNotifyUrlConfigResponse.class;
+	public Class<DeleteLiveDetectNotifyConfigResponse> getResponseClass() {
+		return DeleteLiveDetectNotifyConfigResponse.class;
 	}
 
 }

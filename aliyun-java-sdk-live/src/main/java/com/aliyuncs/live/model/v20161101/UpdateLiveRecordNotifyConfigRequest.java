@@ -30,15 +30,33 @@ public class UpdateLiveRecordNotifyConfigRequest extends RpcAcsRequest<UpdateLiv
 		super("live", "2016-11-01", "UpdateLiveRecordNotifyConfig", "live");
 	}
 
+	private Boolean needStatusNotify;
+
+	private String notifyUrl;
+
 	private String securityToken;
 
 	private Long ownerId;
 
 	private String domainName;
 
-	private String notifyUrl;
+	public Boolean getNeedStatusNotify() {
+		return this.needStatusNotify;
+	}
 
-	private Boolean needStatusNotify;
+	public void setNeedStatusNotify(Boolean needStatusNotify) {
+		this.needStatusNotify = needStatusNotify;
+		putQueryParameter("NeedStatusNotify", needStatusNotify);
+	}
+
+	public String getNotifyUrl() {
+		return this.notifyUrl;
+	}
+
+	public void setNotifyUrl(String notifyUrl) {
+		this.notifyUrl = notifyUrl;
+		putQueryParameter("NotifyUrl", notifyUrl);
+	}
 
 	public String getSecurityToken() {
 		return this.securityToken;
@@ -65,24 +83,6 @@ public class UpdateLiveRecordNotifyConfigRequest extends RpcAcsRequest<UpdateLiv
 	public void setDomainName(String domainName) {
 		this.domainName = domainName;
 		putQueryParameter("DomainName", domainName);
-	}
-
-	public String getNotifyUrl() {
-		return this.notifyUrl;
-	}
-
-	public void setNotifyUrl(String notifyUrl) {
-		this.notifyUrl = notifyUrl;
-		putQueryParameter("NotifyUrl", notifyUrl);
-	}
-
-	public Boolean getNeedStatusNotify() {
-		return this.needStatusNotify;
-	}
-
-	public void setNeedStatusNotify(Boolean needStatusNotify) {
-		this.needStatusNotify = needStatusNotify;
-		putQueryParameter("NeedStatusNotify", needStatusNotify);
 	}
 
 	@Override

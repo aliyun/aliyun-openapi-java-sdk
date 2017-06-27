@@ -24,27 +24,33 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class SetLiveStreamsNotifyUrlConfigRequest extends RpcAcsRequest<SetLiveStreamsNotifyUrlConfigResponse> {
+public class DescribeLiveSnapshotDetectPornConfigRequest extends RpcAcsRequest<DescribeLiveSnapshotDetectPornConfigResponse> {
 	
-	public SetLiveStreamsNotifyUrlConfigRequest() {
-		super("live", "2016-11-01", "SetLiveStreamsNotifyUrlConfig", "live");
+	public DescribeLiveSnapshotDetectPornConfigRequest() {
+		super("live", "2016-11-01", "DescribeLiveSnapshotDetectPornConfig", "live");
 	}
 
-	private String notifyUrl;
+	private Integer pageSize;
 
 	private String securityToken;
 
 	private Long ownerId;
 
+	private String order;
+
 	private String domainName;
 
-	public String getNotifyUrl() {
-		return this.notifyUrl;
+	private String appName;
+
+	private Integer pageNum;
+
+	public Integer getPageSize() {
+		return this.pageSize;
 	}
 
-	public void setNotifyUrl(String notifyUrl) {
-		this.notifyUrl = notifyUrl;
-		putQueryParameter("NotifyUrl", notifyUrl);
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		putQueryParameter("PageSize", pageSize);
 	}
 
 	public String getSecurityToken() {
@@ -65,6 +71,15 @@ public class SetLiveStreamsNotifyUrlConfigRequest extends RpcAcsRequest<SetLiveS
 		putQueryParameter("OwnerId", ownerId);
 	}
 
+	public String getOrder() {
+		return this.order;
+	}
+
+	public void setOrder(String order) {
+		this.order = order;
+		putQueryParameter("Order", order);
+	}
+
 	public String getDomainName() {
 		return this.domainName;
 	}
@@ -74,9 +89,27 @@ public class SetLiveStreamsNotifyUrlConfigRequest extends RpcAcsRequest<SetLiveS
 		putQueryParameter("DomainName", domainName);
 	}
 
+	public String getAppName() {
+		return this.appName;
+	}
+
+	public void setAppName(String appName) {
+		this.appName = appName;
+		putQueryParameter("AppName", appName);
+	}
+
+	public Integer getPageNum() {
+		return this.pageNum;
+	}
+
+	public void setPageNum(Integer pageNum) {
+		this.pageNum = pageNum;
+		putQueryParameter("PageNum", pageNum);
+	}
+
 	@Override
-	public Class<SetLiveStreamsNotifyUrlConfigResponse> getResponseClass() {
-		return SetLiveStreamsNotifyUrlConfigResponse.class;
+	public Class<DescribeLiveSnapshotDetectPornConfigResponse> getResponseClass() {
+		return DescribeLiveSnapshotDetectPornConfigResponse.class;
 	}
 
 }

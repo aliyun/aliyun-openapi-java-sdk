@@ -30,6 +30,8 @@ public class DescribeLiveStreamSnapshotInfoRequest extends RpcAcsRequest<Describ
 		super("live", "2016-11-01", "DescribeLiveStreamSnapshotInfo", "live");
 	}
 
+	private String streamName;
+
 	private String securityToken;
 
 	private Long ownerId;
@@ -38,13 +40,20 @@ public class DescribeLiveStreamSnapshotInfoRequest extends RpcAcsRequest<Describ
 
 	private String appName;
 
-	private String streamName;
+	private String endTime;
 
 	private String startTime;
 
-	private String endTime;
-
 	private Integer limit;
+
+	public String getStreamName() {
+		return this.streamName;
+	}
+
+	public void setStreamName(String streamName) {
+		this.streamName = streamName;
+		putQueryParameter("StreamName", streamName);
+	}
 
 	public String getSecurityToken() {
 		return this.securityToken;
@@ -82,13 +91,13 @@ public class DescribeLiveStreamSnapshotInfoRequest extends RpcAcsRequest<Describ
 		putQueryParameter("AppName", appName);
 	}
 
-	public String getStreamName() {
-		return this.streamName;
+	public String getEndTime() {
+		return this.endTime;
 	}
 
-	public void setStreamName(String streamName) {
-		this.streamName = streamName;
-		putQueryParameter("StreamName", streamName);
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+		putQueryParameter("EndTime", endTime);
 	}
 
 	public String getStartTime() {
@@ -98,15 +107,6 @@ public class DescribeLiveStreamSnapshotInfoRequest extends RpcAcsRequest<Describ
 	public void setStartTime(String startTime) {
 		this.startTime = startTime;
 		putQueryParameter("StartTime", startTime);
-	}
-
-	public String getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
-		putQueryParameter("EndTime", endTime);
 	}
 
 	public Integer getLimit() {

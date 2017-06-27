@@ -30,11 +30,20 @@ public class DescribeLiveStreamTranscodeInfoRequest extends RpcAcsRequest<Descri
 		super("live", "2016-11-01", "DescribeLiveStreamTranscodeInfo", "live");
 	}
 
+	private String domainTranscodeName;
+
 	private String securityToken;
 
 	private Long ownerId;
 
-	private String domainTranscodeName;
+	public String getDomainTranscodeName() {
+		return this.domainTranscodeName;
+	}
+
+	public void setDomainTranscodeName(String domainTranscodeName) {
+		this.domainTranscodeName = domainTranscodeName;
+		putQueryParameter("DomainTranscodeName", domainTranscodeName);
+	}
 
 	public String getSecurityToken() {
 		return this.securityToken;
@@ -52,15 +61,6 @@ public class DescribeLiveStreamTranscodeInfoRequest extends RpcAcsRequest<Descri
 	public void setOwnerId(Long ownerId) {
 		this.ownerId = ownerId;
 		putQueryParameter("OwnerId", ownerId);
-	}
-
-	public String getDomainTranscodeName() {
-		return this.domainTranscodeName;
-	}
-
-	public void setDomainTranscodeName(String domainTranscodeName) {
-		this.domainTranscodeName = domainTranscodeName;
-		putQueryParameter("DomainTranscodeName", domainTranscodeName);
 	}
 
 	@Override

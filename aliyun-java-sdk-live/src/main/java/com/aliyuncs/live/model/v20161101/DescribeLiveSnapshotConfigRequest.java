@@ -30,9 +30,13 @@ public class DescribeLiveSnapshotConfigRequest extends RpcAcsRequest<DescribeLiv
 		super("live", "2016-11-01", "DescribeLiveSnapshotConfig", "live");
 	}
 
+	private Integer pageSize;
+
 	private String securityToken;
 
 	private Long ownerId;
+
+	private String order;
 
 	private String domainName;
 
@@ -40,9 +44,14 @@ public class DescribeLiveSnapshotConfigRequest extends RpcAcsRequest<DescribeLiv
 
 	private Integer pageNum;
 
-	private Integer pageSize;
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
 
-	private String order;
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		putQueryParameter("PageSize", pageSize);
+	}
 
 	public String getSecurityToken() {
 		return this.securityToken;
@@ -60,6 +69,15 @@ public class DescribeLiveSnapshotConfigRequest extends RpcAcsRequest<DescribeLiv
 	public void setOwnerId(Long ownerId) {
 		this.ownerId = ownerId;
 		putQueryParameter("OwnerId", ownerId);
+	}
+
+	public String getOrder() {
+		return this.order;
+	}
+
+	public void setOrder(String order) {
+		this.order = order;
+		putQueryParameter("Order", order);
 	}
 
 	public String getDomainName() {
@@ -87,24 +105,6 @@ public class DescribeLiveSnapshotConfigRequest extends RpcAcsRequest<DescribeLiv
 	public void setPageNum(Integer pageNum) {
 		this.pageNum = pageNum;
 		putQueryParameter("PageNum", pageNum);
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		putQueryParameter("PageSize", pageSize);
-	}
-
-	public String getOrder() {
-		return this.order;
-	}
-
-	public void setOrder(String order) {
-		this.order = order;
-		putQueryParameter("Order", order);
 	}
 
 	@Override

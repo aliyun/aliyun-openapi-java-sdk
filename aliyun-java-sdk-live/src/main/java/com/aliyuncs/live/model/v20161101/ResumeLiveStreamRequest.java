@@ -30,17 +30,26 @@ public class ResumeLiveStreamRequest extends RpcAcsRequest<ResumeLiveStreamRespo
 		super("live", "2016-11-01", "ResumeLiveStream", "live");
 	}
 
+	private String streamName;
+
 	private String securityToken;
 
 	private Long ownerId;
 
-	private String domainName;
-
 	private String liveStreamType;
+
+	private String domainName;
 
 	private String appName;
 
-	private String streamName;
+	public String getStreamName() {
+		return this.streamName;
+	}
+
+	public void setStreamName(String streamName) {
+		this.streamName = streamName;
+		putQueryParameter("StreamName", streamName);
+	}
 
 	public String getSecurityToken() {
 		return this.securityToken;
@@ -60,15 +69,6 @@ public class ResumeLiveStreamRequest extends RpcAcsRequest<ResumeLiveStreamRespo
 		putQueryParameter("OwnerId", ownerId);
 	}
 
-	public String getDomainName() {
-		return this.domainName;
-	}
-
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
-		putQueryParameter("DomainName", domainName);
-	}
-
 	public String getLiveStreamType() {
 		return this.liveStreamType;
 	}
@@ -78,6 +78,15 @@ public class ResumeLiveStreamRequest extends RpcAcsRequest<ResumeLiveStreamRespo
 		putQueryParameter("LiveStreamType", liveStreamType);
 	}
 
+	public String getDomainName() {
+		return this.domainName;
+	}
+
+	public void setDomainName(String domainName) {
+		this.domainName = domainName;
+		putQueryParameter("DomainName", domainName);
+	}
+
 	public String getAppName() {
 		return this.appName;
 	}
@@ -85,15 +94,6 @@ public class ResumeLiveStreamRequest extends RpcAcsRequest<ResumeLiveStreamRespo
 	public void setAppName(String appName) {
 		this.appName = appName;
 		putQueryParameter("AppName", appName);
-	}
-
-	public String getStreamName() {
-		return this.streamName;
-	}
-
-	public void setStreamName(String streamName) {
-		this.streamName = streamName;
-		putQueryParameter("StreamName", streamName);
 	}
 
 	@Override

@@ -31,6 +31,8 @@ public class AddLiveAppRecordConfigRequest extends RpcAcsRequest<AddLiveAppRecor
 		super("live", "2016-11-01", "AddLiveAppRecordConfig", "live");
 	}
 
+	private List<RecordFormat> recordFormats;
+
 	private String securityToken;
 
 	private Long ownerId;
@@ -43,7 +45,19 @@ public class AddLiveAppRecordConfigRequest extends RpcAcsRequest<AddLiveAppRecor
 
 	private String ossBucket;
 
-	private List<RecordFormat> recordFormats;
+	public List<RecordFormat> getRecordFormats() {
+		return this.recordFormats;
+	}
+
+	public void setRecordFormats(List<RecordFormat> recordFormats) {
+		this.recordFormats = recordFormats;	
+		for (int i = 0; i < recordFormats.size(); i++) {
+			putQueryParameter("RecordFormat." + (i + 1) + ".Format" , recordFormats.get(i).getFormat());
+			putQueryParameter("RecordFormat." + (i + 1) + ".OssObjectPrefix" , recordFormats.get(i).getOssObjectPrefix());
+			putQueryParameter("RecordFormat." + (i + 1) + ".SliceOssObjectPrefix" , recordFormats.get(i).getSliceOssObjectPrefix());
+			putQueryParameter("RecordFormat." + (i + 1) + ".CycleDuration" , recordFormats.get(i).getCycleDuration());
+		}	
+	}
 
 	public String getSecurityToken() {
 		return this.securityToken;
@@ -97,20 +111,6 @@ public class AddLiveAppRecordConfigRequest extends RpcAcsRequest<AddLiveAppRecor
 	public void setOssBucket(String ossBucket) {
 		this.ossBucket = ossBucket;
 		putQueryParameter("OssBucket", ossBucket);
-	}
-
-	public List<RecordFormat> getRecordFormats() {
-		return this.recordFormats;
-	}
-
-	public void setRecordFormats(List<RecordFormat> recordFormats) {
-		this.recordFormats = recordFormats;	
-		for (int i = 0; i < recordFormats.size(); i++) {
-			putQueryParameter("RecordFormat." + (i + 1) + ".Format" , recordFormats.get(i).getFormat());
-			putQueryParameter("RecordFormat." + (i + 1) + ".OssObjectPrefix" , recordFormats.get(i).getOssObjectPrefix());
-			putQueryParameter("RecordFormat." + (i + 1) + ".SliceOssObjectPrefix" , recordFormats.get(i).getSliceOssObjectPrefix());
-			putQueryParameter("RecordFormat." + (i + 1) + ".CycleDuration" , recordFormats.get(i).getCycleDuration());
-		}	
 	}
 
 	public static class RecordFormat {

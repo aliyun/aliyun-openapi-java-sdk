@@ -30,19 +30,28 @@ public class ForbidLiveStreamRequest extends RpcAcsRequest<ForbidLiveStreamRespo
 		super("live", "2016-11-01", "ForbidLiveStream", "live");
 	}
 
+	private String streamName;
+
 	private String securityToken;
 
 	private Long ownerId;
 
-	private String domainName;
-
 	private String liveStreamType;
+
+	private String resumeTime;
+
+	private String domainName;
 
 	private String appName;
 
-	private String streamName;
+	public String getStreamName() {
+		return this.streamName;
+	}
 
-	private String resumeTime;
+	public void setStreamName(String streamName) {
+		this.streamName = streamName;
+		putQueryParameter("StreamName", streamName);
+	}
 
 	public String getSecurityToken() {
 		return this.securityToken;
@@ -62,15 +71,6 @@ public class ForbidLiveStreamRequest extends RpcAcsRequest<ForbidLiveStreamRespo
 		putQueryParameter("OwnerId", ownerId);
 	}
 
-	public String getDomainName() {
-		return this.domainName;
-	}
-
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
-		putQueryParameter("DomainName", domainName);
-	}
-
 	public String getLiveStreamType() {
 		return this.liveStreamType;
 	}
@@ -80,24 +80,6 @@ public class ForbidLiveStreamRequest extends RpcAcsRequest<ForbidLiveStreamRespo
 		putQueryParameter("LiveStreamType", liveStreamType);
 	}
 
-	public String getAppName() {
-		return this.appName;
-	}
-
-	public void setAppName(String appName) {
-		this.appName = appName;
-		putQueryParameter("AppName", appName);
-	}
-
-	public String getStreamName() {
-		return this.streamName;
-	}
-
-	public void setStreamName(String streamName) {
-		this.streamName = streamName;
-		putQueryParameter("StreamName", streamName);
-	}
-
 	public String getResumeTime() {
 		return this.resumeTime;
 	}
@@ -105,6 +87,24 @@ public class ForbidLiveStreamRequest extends RpcAcsRequest<ForbidLiveStreamRespo
 	public void setResumeTime(String resumeTime) {
 		this.resumeTime = resumeTime;
 		putQueryParameter("ResumeTime", resumeTime);
+	}
+
+	public String getDomainName() {
+		return this.domainName;
+	}
+
+	public void setDomainName(String domainName) {
+		this.domainName = domainName;
+		putQueryParameter("DomainName", domainName);
+	}
+
+	public String getAppName() {
+		return this.appName;
+	}
+
+	public void setAppName(String appName) {
+		this.appName = appName;
+		putQueryParameter("AppName", appName);
 	}
 
 	@Override

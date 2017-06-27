@@ -30,25 +30,43 @@ public class StartMixStreamsServiceRequest extends RpcAcsRequest<StartMixStreams
 		super("live", "2016-11-01", "StartMixStreamsService", "live");
 	}
 
+	private String mixDomainName;
+
+	private String mixStreamName;
+
 	private String securityToken;
 
 	private Long ownerId;
+
+	private String mainStreamName;
+
+	private String mixAppName;
 
 	private String mainDomainName;
 
 	private String mainAppName;
 
-	private String mainStreamName;
-
-	private String mixDomainName;
-
-	private String mixAppName;
-
-	private String mixStreamName;
+	private String mixType;
 
 	private String mixTemplate;
 
-	private String mixType;
+	public String getMixDomainName() {
+		return this.mixDomainName;
+	}
+
+	public void setMixDomainName(String mixDomainName) {
+		this.mixDomainName = mixDomainName;
+		putQueryParameter("MixDomainName", mixDomainName);
+	}
+
+	public String getMixStreamName() {
+		return this.mixStreamName;
+	}
+
+	public void setMixStreamName(String mixStreamName) {
+		this.mixStreamName = mixStreamName;
+		putQueryParameter("MixStreamName", mixStreamName);
+	}
 
 	public String getSecurityToken() {
 		return this.securityToken;
@@ -66,6 +84,24 @@ public class StartMixStreamsServiceRequest extends RpcAcsRequest<StartMixStreams
 	public void setOwnerId(Long ownerId) {
 		this.ownerId = ownerId;
 		putQueryParameter("OwnerId", ownerId);
+	}
+
+	public String getMainStreamName() {
+		return this.mainStreamName;
+	}
+
+	public void setMainStreamName(String mainStreamName) {
+		this.mainStreamName = mainStreamName;
+		putQueryParameter("MainStreamName", mainStreamName);
+	}
+
+	public String getMixAppName() {
+		return this.mixAppName;
+	}
+
+	public void setMixAppName(String mixAppName) {
+		this.mixAppName = mixAppName;
+		putQueryParameter("MixAppName", mixAppName);
 	}
 
 	public String getMainDomainName() {
@@ -86,40 +122,13 @@ public class StartMixStreamsServiceRequest extends RpcAcsRequest<StartMixStreams
 		putQueryParameter("MainAppName", mainAppName);
 	}
 
-	public String getMainStreamName() {
-		return this.mainStreamName;
+	public String getMixType() {
+		return this.mixType;
 	}
 
-	public void setMainStreamName(String mainStreamName) {
-		this.mainStreamName = mainStreamName;
-		putQueryParameter("MainStreamName", mainStreamName);
-	}
-
-	public String getMixDomainName() {
-		return this.mixDomainName;
-	}
-
-	public void setMixDomainName(String mixDomainName) {
-		this.mixDomainName = mixDomainName;
-		putQueryParameter("MixDomainName", mixDomainName);
-	}
-
-	public String getMixAppName() {
-		return this.mixAppName;
-	}
-
-	public void setMixAppName(String mixAppName) {
-		this.mixAppName = mixAppName;
-		putQueryParameter("MixAppName", mixAppName);
-	}
-
-	public String getMixStreamName() {
-		return this.mixStreamName;
-	}
-
-	public void setMixStreamName(String mixStreamName) {
-		this.mixStreamName = mixStreamName;
-		putQueryParameter("MixStreamName", mixStreamName);
+	public void setMixType(String mixType) {
+		this.mixType = mixType;
+		putQueryParameter("MixType", mixType);
 	}
 
 	public String getMixTemplate() {
@@ -129,15 +138,6 @@ public class StartMixStreamsServiceRequest extends RpcAcsRequest<StartMixStreams
 	public void setMixTemplate(String mixTemplate) {
 		this.mixTemplate = mixTemplate;
 		putQueryParameter("MixTemplate", mixTemplate);
-	}
-
-	public String getMixType() {
-		return this.mixType;
-	}
-
-	public void setMixType(String mixType) {
-		this.mixType = mixType;
-		putQueryParameter("MixType", mixType);
 	}
 
 	@Override

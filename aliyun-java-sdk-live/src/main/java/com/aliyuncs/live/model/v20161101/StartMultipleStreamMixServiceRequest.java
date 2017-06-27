@@ -30,6 +30,8 @@ public class StartMultipleStreamMixServiceRequest extends RpcAcsRequest<StartMul
 		super("live", "2016-11-01", "StartMultipleStreamMixService", "live");
 	}
 
+	private String streamName;
+
 	private String securityToken;
 
 	private Long ownerId;
@@ -38,9 +40,16 @@ public class StartMultipleStreamMixServiceRequest extends RpcAcsRequest<StartMul
 
 	private String appName;
 
-	private String streamName;
-
 	private String mixTemplate;
+
+	public String getStreamName() {
+		return this.streamName;
+	}
+
+	public void setStreamName(String streamName) {
+		this.streamName = streamName;
+		putQueryParameter("StreamName", streamName);
+	}
 
 	public String getSecurityToken() {
 		return this.securityToken;
@@ -76,15 +85,6 @@ public class StartMultipleStreamMixServiceRequest extends RpcAcsRequest<StartMul
 	public void setAppName(String appName) {
 		this.appName = appName;
 		putQueryParameter("AppName", appName);
-	}
-
-	public String getStreamName() {
-		return this.streamName;
-	}
-
-	public void setStreamName(String streamName) {
-		this.streamName = streamName;
-		putQueryParameter("StreamName", streamName);
 	}
 
 	public String getMixTemplate() {

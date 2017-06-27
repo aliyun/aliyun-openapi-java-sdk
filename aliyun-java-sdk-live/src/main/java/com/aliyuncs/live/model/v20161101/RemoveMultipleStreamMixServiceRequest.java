@@ -30,6 +30,12 @@ public class RemoveMultipleStreamMixServiceRequest extends RpcAcsRequest<RemoveM
 		super("live", "2016-11-01", "RemoveMultipleStreamMixService", "live");
 	}
 
+	private String mixDomainName;
+
+	private String mixStreamName;
+
+	private String streamName;
+
 	private String securityToken;
 
 	private Long ownerId;
@@ -38,13 +44,34 @@ public class RemoveMultipleStreamMixServiceRequest extends RpcAcsRequest<RemoveM
 
 	private String appName;
 
-	private String streamName;
-
-	private String mixDomainName;
-
 	private String mixAppName;
 
-	private String mixStreamName;
+	public String getMixDomainName() {
+		return this.mixDomainName;
+	}
+
+	public void setMixDomainName(String mixDomainName) {
+		this.mixDomainName = mixDomainName;
+		putQueryParameter("MixDomainName", mixDomainName);
+	}
+
+	public String getMixStreamName() {
+		return this.mixStreamName;
+	}
+
+	public void setMixStreamName(String mixStreamName) {
+		this.mixStreamName = mixStreamName;
+		putQueryParameter("MixStreamName", mixStreamName);
+	}
+
+	public String getStreamName() {
+		return this.streamName;
+	}
+
+	public void setStreamName(String streamName) {
+		this.streamName = streamName;
+		putQueryParameter("StreamName", streamName);
+	}
 
 	public String getSecurityToken() {
 		return this.securityToken;
@@ -82,24 +109,6 @@ public class RemoveMultipleStreamMixServiceRequest extends RpcAcsRequest<RemoveM
 		putQueryParameter("AppName", appName);
 	}
 
-	public String getStreamName() {
-		return this.streamName;
-	}
-
-	public void setStreamName(String streamName) {
-		this.streamName = streamName;
-		putQueryParameter("StreamName", streamName);
-	}
-
-	public String getMixDomainName() {
-		return this.mixDomainName;
-	}
-
-	public void setMixDomainName(String mixDomainName) {
-		this.mixDomainName = mixDomainName;
-		putQueryParameter("MixDomainName", mixDomainName);
-	}
-
 	public String getMixAppName() {
 		return this.mixAppName;
 	}
@@ -107,15 +116,6 @@ public class RemoveMultipleStreamMixServiceRequest extends RpcAcsRequest<RemoveM
 	public void setMixAppName(String mixAppName) {
 		this.mixAppName = mixAppName;
 		putQueryParameter("MixAppName", mixAppName);
-	}
-
-	public String getMixStreamName() {
-		return this.mixStreamName;
-	}
-
-	public void setMixStreamName(String mixStreamName) {
-		this.mixStreamName = mixStreamName;
-		putQueryParameter("MixStreamName", mixStreamName);
 	}
 
 	@Override

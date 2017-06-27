@@ -24,13 +24,15 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class SetLiveStreamsNotifyUrlConfigRequest extends RpcAcsRequest<SetLiveStreamsNotifyUrlConfigResponse> {
+public class AddLiveSnapshotDetectPornConfigRequest extends RpcAcsRequest<AddLiveSnapshotDetectPornConfigResponse> {
 	
-	public SetLiveStreamsNotifyUrlConfigRequest() {
-		super("live", "2016-11-01", "SetLiveStreamsNotifyUrlConfig", "live");
+	public AddLiveSnapshotDetectPornConfigRequest() {
+		super("live", "2016-11-01", "AddLiveSnapshotDetectPornConfig", "live");
 	}
 
-	private String notifyUrl;
+	private String ossObject;
+
+	private Integer interval;
 
 	private String securityToken;
 
@@ -38,13 +40,28 @@ public class SetLiveStreamsNotifyUrlConfigRequest extends RpcAcsRequest<SetLiveS
 
 	private String domainName;
 
-	public String getNotifyUrl() {
-		return this.notifyUrl;
+	private String appName;
+
+	private String ossEndpoint;
+
+	private String ossBucket;
+
+	public String getOssObject() {
+		return this.ossObject;
 	}
 
-	public void setNotifyUrl(String notifyUrl) {
-		this.notifyUrl = notifyUrl;
-		putQueryParameter("NotifyUrl", notifyUrl);
+	public void setOssObject(String ossObject) {
+		this.ossObject = ossObject;
+		putQueryParameter("OssObject", ossObject);
+	}
+
+	public Integer getInterval() {
+		return this.interval;
+	}
+
+	public void setInterval(Integer interval) {
+		this.interval = interval;
+		putQueryParameter("Interval", interval);
 	}
 
 	public String getSecurityToken() {
@@ -74,9 +91,36 @@ public class SetLiveStreamsNotifyUrlConfigRequest extends RpcAcsRequest<SetLiveS
 		putQueryParameter("DomainName", domainName);
 	}
 
+	public String getAppName() {
+		return this.appName;
+	}
+
+	public void setAppName(String appName) {
+		this.appName = appName;
+		putQueryParameter("AppName", appName);
+	}
+
+	public String getOssEndpoint() {
+		return this.ossEndpoint;
+	}
+
+	public void setOssEndpoint(String ossEndpoint) {
+		this.ossEndpoint = ossEndpoint;
+		putQueryParameter("OssEndpoint", ossEndpoint);
+	}
+
+	public String getOssBucket() {
+		return this.ossBucket;
+	}
+
+	public void setOssBucket(String ossBucket) {
+		this.ossBucket = ossBucket;
+		putQueryParameter("OssBucket", ossBucket);
+	}
+
 	@Override
-	public Class<SetLiveStreamsNotifyUrlConfigResponse> getResponseClass() {
-		return SetLiveStreamsNotifyUrlConfigResponse.class;
+	public Class<AddLiveSnapshotDetectPornConfigResponse> getResponseClass() {
+		return AddLiveSnapshotDetectPornConfigResponse.class;
 	}
 
 }

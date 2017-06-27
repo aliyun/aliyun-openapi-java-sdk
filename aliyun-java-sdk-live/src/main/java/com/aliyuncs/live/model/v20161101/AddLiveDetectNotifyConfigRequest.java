@@ -24,10 +24,10 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class SetLiveStreamsNotifyUrlConfigRequest extends RpcAcsRequest<SetLiveStreamsNotifyUrlConfigResponse> {
+public class AddLiveDetectNotifyConfigRequest extends RpcAcsRequest<AddLiveDetectNotifyConfigResponse> {
 	
-	public SetLiveStreamsNotifyUrlConfigRequest() {
-		super("live", "2016-11-01", "SetLiveStreamsNotifyUrlConfig", "live");
+	public AddLiveDetectNotifyConfigRequest() {
+		super("live", "2016-11-01", "AddLiveDetectNotifyConfig", "live");
 	}
 
 	private String notifyUrl;
@@ -75,8 +75,8 @@ public class SetLiveStreamsNotifyUrlConfigRequest extends RpcAcsRequest<SetLiveS
 	}
 
 	@Override
-	public Class<SetLiveStreamsNotifyUrlConfigResponse> getResponseClass() {
-		return SetLiveStreamsNotifyUrlConfigResponse.class;
+	public Class<AddLiveDetectNotifyConfigResponse> getResponseClass() {
+		return AddLiveDetectNotifyConfigResponse.class;
 	}
 
 }

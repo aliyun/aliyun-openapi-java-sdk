@@ -30,6 +30,10 @@ public class UpdateLiveAppSnapshotConfigRequest extends RpcAcsRequest<UpdateLive
 		super("live", "2016-11-01", "UpdateLiveAppSnapshotConfig", "live");
 	}
 
+	private String overwriteOssObject;
+
+	private String sequenceOssObject;
+
 	private String securityToken;
 
 	private Long ownerId;
@@ -38,15 +42,29 @@ public class UpdateLiveAppSnapshotConfigRequest extends RpcAcsRequest<UpdateLive
 
 	private String appName;
 
-	private Integer timeInterval;
-
 	private String ossEndpoint;
 
 	private String ossBucket;
 
-	private String overwriteOssObject;
+	private Integer timeInterval;
 
-	private String sequenceOssObject;
+	public String getOverwriteOssObject() {
+		return this.overwriteOssObject;
+	}
+
+	public void setOverwriteOssObject(String overwriteOssObject) {
+		this.overwriteOssObject = overwriteOssObject;
+		putQueryParameter("OverwriteOssObject", overwriteOssObject);
+	}
+
+	public String getSequenceOssObject() {
+		return this.sequenceOssObject;
+	}
+
+	public void setSequenceOssObject(String sequenceOssObject) {
+		this.sequenceOssObject = sequenceOssObject;
+		putQueryParameter("SequenceOssObject", sequenceOssObject);
+	}
 
 	public String getSecurityToken() {
 		return this.securityToken;
@@ -84,15 +102,6 @@ public class UpdateLiveAppSnapshotConfigRequest extends RpcAcsRequest<UpdateLive
 		putQueryParameter("AppName", appName);
 	}
 
-	public Integer getTimeInterval() {
-		return this.timeInterval;
-	}
-
-	public void setTimeInterval(Integer timeInterval) {
-		this.timeInterval = timeInterval;
-		putQueryParameter("TimeInterval", timeInterval);
-	}
-
 	public String getOssEndpoint() {
 		return this.ossEndpoint;
 	}
@@ -111,22 +120,13 @@ public class UpdateLiveAppSnapshotConfigRequest extends RpcAcsRequest<UpdateLive
 		putQueryParameter("OssBucket", ossBucket);
 	}
 
-	public String getOverwriteOssObject() {
-		return this.overwriteOssObject;
+	public Integer getTimeInterval() {
+		return this.timeInterval;
 	}
 
-	public void setOverwriteOssObject(String overwriteOssObject) {
-		this.overwriteOssObject = overwriteOssObject;
-		putQueryParameter("OverwriteOssObject", overwriteOssObject);
-	}
-
-	public String getSequenceOssObject() {
-		return this.sequenceOssObject;
-	}
-
-	public void setSequenceOssObject(String sequenceOssObject) {
-		this.sequenceOssObject = sequenceOssObject;
-		putQueryParameter("SequenceOssObject", sequenceOssObject);
+	public void setTimeInterval(Integer timeInterval) {
+		this.timeInterval = timeInterval;
+		putQueryParameter("TimeInterval", timeInterval);
 	}
 
 	@Override

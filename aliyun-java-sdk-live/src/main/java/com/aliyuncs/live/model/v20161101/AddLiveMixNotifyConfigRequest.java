@@ -30,13 +30,22 @@ public class AddLiveMixNotifyConfigRequest extends RpcAcsRequest<AddLiveMixNotif
 		super("live", "2016-11-01", "AddLiveMixNotifyConfig", "live");
 	}
 
+	private String notifyUrl;
+
 	private String securityToken;
 
 	private Long ownerId;
 
 	private String domainName;
 
-	private String notifyUrl;
+	public String getNotifyUrl() {
+		return this.notifyUrl;
+	}
+
+	public void setNotifyUrl(String notifyUrl) {
+		this.notifyUrl = notifyUrl;
+		putQueryParameter("NotifyUrl", notifyUrl);
+	}
 
 	public String getSecurityToken() {
 		return this.securityToken;
@@ -63,15 +72,6 @@ public class AddLiveMixNotifyConfigRequest extends RpcAcsRequest<AddLiveMixNotif
 	public void setDomainName(String domainName) {
 		this.domainName = domainName;
 		putQueryParameter("DomainName", domainName);
-	}
-
-	public String getNotifyUrl() {
-		return this.notifyUrl;
-	}
-
-	public void setNotifyUrl(String notifyUrl) {
-		this.notifyUrl = notifyUrl;
-		putQueryParameter("NotifyUrl", notifyUrl);
 	}
 
 	@Override

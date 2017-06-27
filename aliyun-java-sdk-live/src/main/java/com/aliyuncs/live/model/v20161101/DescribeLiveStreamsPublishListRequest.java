@@ -30,6 +30,12 @@ public class DescribeLiveStreamsPublishListRequest extends RpcAcsRequest<Describ
 		super("live", "2016-11-01", "DescribeLiveStreamsPublishList", "live");
 	}
 
+	private Long pageNumber;
+
+	private String streamName;
+
+	private Long pageSize;
+
 	private String securityToken;
 
 	private Long ownerId;
@@ -38,15 +44,36 @@ public class DescribeLiveStreamsPublishListRequest extends RpcAcsRequest<Describ
 
 	private String appName;
 
-	private String streamName;
+	private String endTime;
 
 	private String startTime;
 
-	private String endTime;
+	public Long getPageNumber() {
+		return this.pageNumber;
+	}
 
-	private Long pageSize;
+	public void setPageNumber(Long pageNumber) {
+		this.pageNumber = pageNumber;
+		putQueryParameter("PageNumber", pageNumber);
+	}
 
-	private Long pageNumber;
+	public String getStreamName() {
+		return this.streamName;
+	}
+
+	public void setStreamName(String streamName) {
+		this.streamName = streamName;
+		putQueryParameter("StreamName", streamName);
+	}
+
+	public Long getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Long pageSize) {
+		this.pageSize = pageSize;
+		putQueryParameter("PageSize", pageSize);
+	}
 
 	public String getSecurityToken() {
 		return this.securityToken;
@@ -84,24 +111,6 @@ public class DescribeLiveStreamsPublishListRequest extends RpcAcsRequest<Describ
 		putQueryParameter("AppName", appName);
 	}
 
-	public String getStreamName() {
-		return this.streamName;
-	}
-
-	public void setStreamName(String streamName) {
-		this.streamName = streamName;
-		putQueryParameter("StreamName", streamName);
-	}
-
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-		putQueryParameter("StartTime", startTime);
-	}
-
 	public String getEndTime() {
 		return this.endTime;
 	}
@@ -111,22 +120,13 @@ public class DescribeLiveStreamsPublishListRequest extends RpcAcsRequest<Describ
 		putQueryParameter("EndTime", endTime);
 	}
 
-	public Long getPageSize() {
-		return this.pageSize;
+	public String getStartTime() {
+		return this.startTime;
 	}
 
-	public void setPageSize(Long pageSize) {
-		this.pageSize = pageSize;
-		putQueryParameter("PageSize", pageSize);
-	}
-
-	public Long getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Long pageNumber) {
-		this.pageNumber = pageNumber;
-		putQueryParameter("PageNumber", pageNumber);
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+		putQueryParameter("StartTime", startTime);
 	}
 
 	@Override
