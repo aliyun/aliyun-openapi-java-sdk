@@ -36,6 +36,8 @@ public class UnbindAliasRequest extends RpcAcsRequest<UnbindAliasResponse> {
 
 	private String deviceId;
 
+	private Boolean unbindAll;
+
 	public Long getAppKey() {
 		return this.appKey;
 	}
@@ -61,6 +63,15 @@ public class UnbindAliasRequest extends RpcAcsRequest<UnbindAliasResponse> {
 	public void setDeviceId(String deviceId) {
 		this.deviceId = deviceId;
 		putQueryParameter("DeviceId", deviceId);
+	}
+
+	public Boolean getUnbindAll() {
+		return unbindAll;
+	}
+
+	public void setUnbindAll(Boolean unbindAll) {
+		this.unbindAll = unbindAll;
+		putQueryParameter("UnbindAll", unbindAll);
 	}
 
 	@Override
