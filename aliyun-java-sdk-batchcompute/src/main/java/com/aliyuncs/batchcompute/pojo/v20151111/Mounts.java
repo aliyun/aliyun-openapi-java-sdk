@@ -20,6 +20,17 @@ public class Mounts {
     @JsonProperty("Lock")
     private boolean lock = false;
 
+    //控制ossmounter是否开启分布式缓存，Job级别的设置会被忽略，只有cluster和AutoCluster级别的有效
+    @JsonProperty("CacheSupport")
+    private boolean cacheSupport = true;
+
+
+    @JsonProperty("CacheBlockSize")
+    private long cacheBlockSize = 262144L;
+
+    @JsonProperty("CacheTotalSize")
+    private long cacheTotalSize = 536870912L;
+
 
     @JsonProperty("NAS")
     private NASConfig nas;
@@ -31,6 +42,30 @@ public class Mounts {
     private List<MountEntry> entries;
 
 
+    @JsonIgnore
+    public long getCacheBlockSize() {
+        return cacheBlockSize;
+    }
+    @JsonIgnore
+    public void setCacheBlockSize(long cacheBlockSize) {
+        this.cacheBlockSize = cacheBlockSize;
+    }
+    @JsonIgnore
+    public long getCacheTotalSize() {
+        return cacheTotalSize;
+    }
+    @JsonIgnore
+    public void setCacheTotalSize(long cacheTotalSize) {
+        this.cacheTotalSize = cacheTotalSize;
+    }
+    @JsonIgnore
+    public boolean isCacheSupport() {
+        return cacheSupport;
+    }
+    @JsonIgnore
+    public void setCacheSupport(boolean cacheSupport) {
+        this.cacheSupport = cacheSupport;
+    }
 
     @JsonIgnore
     public NASConfig getNas() {

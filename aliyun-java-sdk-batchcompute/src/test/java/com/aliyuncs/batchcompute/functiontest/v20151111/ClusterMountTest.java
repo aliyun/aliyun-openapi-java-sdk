@@ -104,6 +104,7 @@ public class ClusterMountTest extends TestCase {
 
         assertEquals(mounts.getLocale(), "UTF-8");
         assertEquals(mounts.isLock(), true);
+        assertEquals(mounts.isCacheSupport(), true);
 
         assertEquals(mounts.getNas().getAccessGroup().get(0), "group1");
         assertEquals(mounts.getNas().getFileSystem().get(0), "filesystem1");

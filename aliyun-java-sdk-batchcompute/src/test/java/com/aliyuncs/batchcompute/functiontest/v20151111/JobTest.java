@@ -205,6 +205,7 @@ public class JobTest extends TestCase {
         assertEquals("ephemeral",disks.getSystemDisk().getType());
         assertTrue(40==disks.getSystemDisk().getSize());
 
+        assertTrue(taskDesc_auto.getAutoCluster().isReserveOnFail());
 
 
 
@@ -307,6 +308,7 @@ public class JobTest extends TestCase {
         desc.setJobFailOnInstanceFail(true);
         desc.setAutoRelease(false);
 
+
         DAG dag = new DAG();
 
         dag.addTask(getTaskDesc());
@@ -380,6 +382,7 @@ public class JobTest extends TestCase {
         autoCluster.setImageId(gImageId);
         autoCluster.setInstanceType(gInstanceType);
         autoCluster.setResourceType("OnDemand");
+        autoCluster.setReserveOnFail(true);
 
         DataDisk dataDisk = new DataDisk();
         dataDisk.setMountPoint("/disk1");

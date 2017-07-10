@@ -24,6 +24,19 @@ public class Group {
     private String resourceType = "OnDemand";
 
 
+    @JsonProperty("Disks")
+    private Disks disks;
+
+
+    @JsonIgnore
+    public Disks getDisks() {
+        return disks;
+    }
+    @JsonIgnore
+    public void setDisks(Disks disks) {
+        this.disks = disks;
+    }
+
 
     @JsonIgnore
     public int getDesiredVMCount() {

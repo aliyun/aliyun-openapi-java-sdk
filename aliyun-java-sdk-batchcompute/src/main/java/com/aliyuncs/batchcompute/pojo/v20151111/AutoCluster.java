@@ -29,6 +29,19 @@ public class AutoCluster{
     @JsonProperty("Configs")
     private Configs configs;
 
+    @JsonProperty("ReserveOnFail")
+    private boolean reserveOnFail = false;
+
+    @JsonIgnore
+    public boolean isReserveOnFail() {
+        return reserveOnFail;
+    }
+    @JsonIgnore
+    public void setReserveOnFail(boolean reserveOnFail) {
+        this.reserveOnFail = reserveOnFail;
+    }
+
+
     @JsonProperty("UserData")
     private Map<String, String> userData;
 

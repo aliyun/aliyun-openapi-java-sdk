@@ -20,7 +20,7 @@ Batchcompute SDK For Java
 <dependency>
     <groupId>com.aliyun</groupId>
     <artifactId>aliyun-java-sdk-batchcompute</artifactId>
-    <version>4.2.1</version>
+    <version>4.3.0</version>
 </dependency>
 ```
 
@@ -96,3 +96,15 @@ try {
 | 2. | getImage(String imageId) | 获取 Image 信息 |
 | 2. | deleteImage(String imageId) | 删除Image |
 | 2. | createImage(ImageDescription imageDescription) | 创建Image |
+
+
+### 5. release note
+
+4.3.0
+
+```
+1. Mounts增加 cacheSupport 属性。
+2. AutoCluster 增加 reserveOnFail 属性。
+3. Group 增加Disks属性。
+```
+

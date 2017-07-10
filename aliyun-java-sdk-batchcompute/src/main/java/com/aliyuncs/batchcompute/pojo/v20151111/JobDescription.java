@@ -47,16 +47,6 @@ public class JobDescription {
     @JsonProperty("JobFailOnInstanceFail")
     private boolean jobFailOnInstanceFail;
 
-    @JsonIgnore
-    public boolean isAutoRelease() {
-        return autoRelease;
-    }
-
-    @JsonIgnore
-    public void setAutoRelease(boolean autoRelease) {
-        this.autoRelease = autoRelease;
-    }
-
     @JsonProperty("AutoRelease")
     private boolean autoRelease;
 
@@ -66,6 +56,17 @@ public class JobDescription {
 
     @JsonProperty("Notification")
     private Notification notification;
+
+
+    @JsonIgnore
+    public boolean isAutoRelease() {
+        return autoRelease;
+    }
+
+    @JsonIgnore
+    public void setAutoRelease(boolean autoRelease) {
+        this.autoRelease = autoRelease;
+    }
 
 
     @JsonIgnore
