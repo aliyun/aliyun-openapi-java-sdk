@@ -30,107 +30,37 @@ public class CreateUploadVideoRequest extends RpcAcsRequest<CreateUploadVideoRes
 		super("vod", "2017-03-21", "CreateUploadVideo");
 	}
 
+	private String tags;
+
+	private Integer cateId;
+
 	private Long ownerId;
 
+	private String iP;
+
+	private Long fileSize;
+
+	private String title;
+
 	private String resourceOwnerAccount;
-
-	private Long resourceOwnerId;
-
-	private String coverURL;
 
 	private String description;
 
 	private String fileName;
 
-	private Long fileSize;
+	private String coverURL;
 
-	private String iP;
+	private Long resourceOwnerId;
 
-	private String title;
-
-	private Integer cateId;
-
-	private String tags;
-
-	public Long getOwnerId() {
-		return this.ownerId;
+	public String getTags() {
+		return this.tags;
 	}
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-	}
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", resourceOwnerId);
-	}
-
-	public String getCoverURL() {
-		return this.coverURL;
-	}
-
-	public void setCoverURL(String coverURL) {
-		this.coverURL = coverURL;
-		putQueryParameter("CoverURL", coverURL);
-	}
-
-	public String getDescription() {
-		return this.description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-		putQueryParameter("Description", description);
-	}
-
-	public String getFileName() {
-		return this.fileName;
-	}
-
-	public void setFileName(String fileName) {
-		this.fileName = fileName;
-		putQueryParameter("FileName", fileName);
-	}
-
-	public Long getFileSize() {
-		return this.fileSize;
-	}
-
-	public void setFileSize(Long fileSize) {
-		this.fileSize = fileSize;
-		putQueryParameter("FileSize", fileSize);
-	}
-
-	public String getIP() {
-		return this.iP;
-	}
-
-	public void setIP(String iP) {
-		this.iP = iP;
-		putQueryParameter("IP", iP);
-	}
-
-	public String getTitle() {
-		return this.title;
-	}
-
-	public void setTitle(String title) {
-		this.title = title;
-		putQueryParameter("Title", title);
+	public void setTags(String tags) {
+		this.tags = tags;
+		if(tags != null){
+			putQueryParameter("Tags", tags);
+		}
 	}
 
 	public Integer getCateId() {
@@ -139,16 +69,108 @@ public class CreateUploadVideoRequest extends RpcAcsRequest<CreateUploadVideoRes
 
 	public void setCateId(Integer cateId) {
 		this.cateId = cateId;
-		putQueryParameter("CateId", cateId);
+		if(cateId != null){
+			putQueryParameter("CateId", cateId.toString());
+		}
 	}
 
-	public String getTags() {
-		return this.tags;
+	public Long getOwnerId() {
+		return this.ownerId;
 	}
 
-	public void setTags(String tags) {
-		this.tags = tags;
-		putQueryParameter("Tags", tags);
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getIP() {
+		return this.iP;
+	}
+
+	public void setIP(String iP) {
+		this.iP = iP;
+		if(iP != null){
+			putQueryParameter("IP", iP);
+		}
+	}
+
+	public Long getFileSize() {
+		return this.fileSize;
+	}
+
+	public void setFileSize(Long fileSize) {
+		this.fileSize = fileSize;
+		if(fileSize != null){
+			putQueryParameter("FileSize", fileSize.toString());
+		}
+	}
+
+	public String getTitle() {
+		return this.title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+		if(title != null){
+			putQueryParameter("Title", title);
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+		if(description != null){
+			putQueryParameter("Description", description);
+		}
+	}
+
+	public String getFileName() {
+		return this.fileName;
+	}
+
+	public void setFileName(String fileName) {
+		this.fileName = fileName;
+		if(fileName != null){
+			putQueryParameter("FileName", fileName);
+		}
+	}
+
+	public String getCoverURL() {
+		return this.coverURL;
+	}
+
+	public void setCoverURL(String coverURL) {
+		this.coverURL = coverURL;
+		if(coverURL != null){
+			putQueryParameter("CoverURL", coverURL);
+		}
+	}
+
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
+	}
+
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
 	}
 
 	@Override

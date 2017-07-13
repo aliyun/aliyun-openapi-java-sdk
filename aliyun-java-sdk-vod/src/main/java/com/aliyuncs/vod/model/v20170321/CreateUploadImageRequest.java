@@ -24,19 +24,15 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class GetOSSStatisRequest extends RpcAcsRequest<GetOSSStatisResponse> {
+public class CreateUploadImageRequest extends RpcAcsRequest<CreateUploadImageResponse> {
 	
-	public GetOSSStatisRequest() {
-		super("vod", "2017-03-21", "GetOSSStatis");
+	public CreateUploadImageRequest() {
+		super("vod", "2017-03-21", "CreateUploadImage");
 	}
-
-	private String level;
 
 	private String resourceOwnerAccount;
 
-	private String endStatisTime;
-
-	private String startStatisTime;
+	private String imageType;
 
 	private String resourceOwnerId;
 
@@ -44,16 +40,7 @@ public class GetOSSStatisRequest extends RpcAcsRequest<GetOSSStatisResponse> {
 
 	private String ownerId;
 
-	public String getLevel() {
-		return this.level;
-	}
-
-	public void setLevel(String level) {
-		this.level = level;
-		if(level != null){
-			putQueryParameter("Level", level);
-		}
-	}
+	private String imageExt;
 
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
@@ -66,25 +53,14 @@ public class GetOSSStatisRequest extends RpcAcsRequest<GetOSSStatisResponse> {
 		}
 	}
 
-	public String getEndStatisTime() {
-		return this.endStatisTime;
+	public String getImageType() {
+		return this.imageType;
 	}
 
-	public void setEndStatisTime(String endStatisTime) {
-		this.endStatisTime = endStatisTime;
-		if(endStatisTime != null){
-			putQueryParameter("EndStatisTime", endStatisTime);
-		}
-	}
-
-	public String getStartStatisTime() {
-		return this.startStatisTime;
-	}
-
-	public void setStartStatisTime(String startStatisTime) {
-		this.startStatisTime = startStatisTime;
-		if(startStatisTime != null){
-			putQueryParameter("StartStatisTime", startStatisTime);
+	public void setImageType(String imageType) {
+		this.imageType = imageType;
+		if(imageType != null){
+			putQueryParameter("ImageType", imageType);
 		}
 	}
 
@@ -121,9 +97,20 @@ public class GetOSSStatisRequest extends RpcAcsRequest<GetOSSStatisResponse> {
 		}
 	}
 
+	public String getImageExt() {
+		return this.imageExt;
+	}
+
+	public void setImageExt(String imageExt) {
+		this.imageExt = imageExt;
+		if(imageExt != null){
+			putQueryParameter("ImageExt", imageExt);
+		}
+	}
+
 	@Override
-	public Class<GetOSSStatisResponse> getResponseClass() {
-		return GetOSSStatisResponse.class;
+	public Class<CreateUploadImageResponse> getResponseClass() {
+		return CreateUploadImageResponse.class;
 	}
 
 }

@@ -31,8 +31,9 @@ public class GetVideoListResponseUnmarshaller {
 	public static GetVideoListResponse unmarshall(GetVideoListResponse getVideoListResponse, UnmarshallerContext context) {
 		
 		getVideoListResponse.setRequestId(context.stringValue("GetVideoListResponse.RequestId"));
+		getVideoListResponse.setTotal(context.integerValue("GetVideoListResponse.Total"));
 
-		List<Video> videoListList = new ArrayList<Video>();
+		List<Video> videoList = new ArrayList<Video>();
 		for (int i = 0; i < context.lengthValue("GetVideoListResponse.VideoList.Length"); i++) {
 			Video video = new Video();
 			video.setVideoId(context.stringValue("GetVideoListResponse.VideoList["+ i +"].VideoId"));
@@ -43,6 +44,7 @@ public class GetVideoListResponseUnmarshaller {
 			video.setDuration(context.floatValue("GetVideoListResponse.VideoList["+ i +"].Duration"));
 			video.setDescription(context.stringValue("GetVideoListResponse.VideoList["+ i +"].Description"));
 			video.setCreateTime(context.stringValue("GetVideoListResponse.VideoList["+ i +"].CreateTime"));
+			video.setCreationTime(context.stringValue("GetVideoListResponse.VideoList["+ i +"].CreationTime"));
 			video.setModifyTime(context.stringValue("GetVideoListResponse.VideoList["+ i +"].ModifyTime"));
 			video.setCoverURL(context.stringValue("GetVideoListResponse.VideoList["+ i +"].CoverURL"));
 			video.setCateId(context.integerValue("GetVideoListResponse.VideoList["+ i +"].CateId"));
@@ -54,9 +56,9 @@ public class GetVideoListResponseUnmarshaller {
 			}
 			video.setSnapshots(snapshots);
 
-			videoListList.add(video);
+			videoList.add(video);
 		}
-		getVideoListResponse.setVideoList(videoListList);
+		getVideoListResponse.setVideoList(videoList);
 	 
 	 	return getVideoListResponse;
 	}

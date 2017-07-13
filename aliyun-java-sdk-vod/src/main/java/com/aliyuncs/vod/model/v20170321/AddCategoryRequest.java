@@ -24,19 +24,15 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class GetOSSStatisRequest extends RpcAcsRequest<GetOSSStatisResponse> {
+public class AddCategoryRequest extends RpcAcsRequest<AddCategoryResponse> {
 	
-	public GetOSSStatisRequest() {
-		super("vod", "2017-03-21", "GetOSSStatis");
+	public AddCategoryRequest() {
+		super("vod", "2017-03-21", "AddCategory");
 	}
-
-	private String level;
 
 	private String resourceOwnerAccount;
 
-	private String endStatisTime;
-
-	private String startStatisTime;
+	private Long parentId;
 
 	private String resourceOwnerId;
 
@@ -44,16 +40,7 @@ public class GetOSSStatisRequest extends RpcAcsRequest<GetOSSStatisResponse> {
 
 	private String ownerId;
 
-	public String getLevel() {
-		return this.level;
-	}
-
-	public void setLevel(String level) {
-		this.level = level;
-		if(level != null){
-			putQueryParameter("Level", level);
-		}
-	}
+	private String cateName;
 
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
@@ -66,25 +53,14 @@ public class GetOSSStatisRequest extends RpcAcsRequest<GetOSSStatisResponse> {
 		}
 	}
 
-	public String getEndStatisTime() {
-		return this.endStatisTime;
+	public Long getParentId() {
+		return this.parentId;
 	}
 
-	public void setEndStatisTime(String endStatisTime) {
-		this.endStatisTime = endStatisTime;
-		if(endStatisTime != null){
-			putQueryParameter("EndStatisTime", endStatisTime);
-		}
-	}
-
-	public String getStartStatisTime() {
-		return this.startStatisTime;
-	}
-
-	public void setStartStatisTime(String startStatisTime) {
-		this.startStatisTime = startStatisTime;
-		if(startStatisTime != null){
-			putQueryParameter("StartStatisTime", startStatisTime);
+	public void setParentId(Long parentId) {
+		this.parentId = parentId;
+		if(parentId != null){
+			putQueryParameter("ParentId", parentId.toString());
 		}
 	}
 
@@ -121,9 +97,20 @@ public class GetOSSStatisRequest extends RpcAcsRequest<GetOSSStatisResponse> {
 		}
 	}
 
+	public String getCateName() {
+		return this.cateName;
+	}
+
+	public void setCateName(String cateName) {
+		this.cateName = cateName;
+		if(cateName != null){
+			putQueryParameter("CateName", cateName);
+		}
+	}
+
 	@Override
-	public Class<GetOSSStatisResponse> getResponseClass() {
-		return GetOSSStatisResponse.class;
+	public Class<AddCategoryResponse> getResponseClass() {
+		return AddCategoryResponse.class;
 	}
 
 }

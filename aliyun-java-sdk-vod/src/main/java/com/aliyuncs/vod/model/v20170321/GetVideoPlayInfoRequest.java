@@ -30,68 +30,23 @@ public class GetVideoPlayInfoRequest extends RpcAcsRequest<GetVideoPlayInfoRespo
 		super("vod", "2017-03-21", "GetVideoPlayInfo");
 	}
 
-	private Long ownerId;
-
-	private String resourceOwnerAccount;
-
-	private Long resourceOwnerId;
-
-	private String channel;
-
-	private Long clientTS;
-
 	private String clientVersion;
-
-	private String playSign;
 
 	private String signVersion;
 
+	private String resourceOwnerAccount;
+
+	private Long clientTS;
+
+	private Long resourceOwnerId;
+
+	private Long ownerId;
+
 	private String videoId;
 
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
+	private String channel;
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-	}
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", resourceOwnerId);
-	}
-
-	public String getChannel() {
-		return this.channel;
-	}
-
-	public void setChannel(String channel) {
-		this.channel = channel;
-		putQueryParameter("Channel", channel);
-	}
-
-	public Long getClientTS() {
-		return this.clientTS;
-	}
-
-	public void setClientTS(Long clientTS) {
-		this.clientTS = clientTS;
-		putQueryParameter("ClientTS", clientTS);
-	}
+	private String playSign;
 
 	public String getClientVersion() {
 		return this.clientVersion;
@@ -99,16 +54,9 @@ public class GetVideoPlayInfoRequest extends RpcAcsRequest<GetVideoPlayInfoRespo
 
 	public void setClientVersion(String clientVersion) {
 		this.clientVersion = clientVersion;
-		putQueryParameter("ClientVersion", clientVersion);
-	}
-
-	public String getPlaySign() {
-		return this.playSign;
-	}
-
-	public void setPlaySign(String playSign) {
-		this.playSign = playSign;
-		putQueryParameter("PlaySign", playSign);
+		if(clientVersion != null){
+			putQueryParameter("ClientVersion", clientVersion);
+		}
 	}
 
 	public String getSignVersion() {
@@ -117,7 +65,53 @@ public class GetVideoPlayInfoRequest extends RpcAcsRequest<GetVideoPlayInfoRespo
 
 	public void setSignVersion(String signVersion) {
 		this.signVersion = signVersion;
-		putQueryParameter("SignVersion", signVersion);
+		if(signVersion != null){
+			putQueryParameter("SignVersion", signVersion);
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public Long getClientTS() {
+		return this.clientTS;
+	}
+
+	public void setClientTS(Long clientTS) {
+		this.clientTS = clientTS;
+		if(clientTS != null){
+			putQueryParameter("ClientTS", clientTS.toString());
+		}
+	}
+
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
+	}
+
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
 	}
 
 	public String getVideoId() {
@@ -126,7 +120,31 @@ public class GetVideoPlayInfoRequest extends RpcAcsRequest<GetVideoPlayInfoRespo
 
 	public void setVideoId(String videoId) {
 		this.videoId = videoId;
-		putQueryParameter("VideoId", videoId);
+		if(videoId != null){
+			putQueryParameter("VideoId", videoId);
+		}
+	}
+
+	public String getChannel() {
+		return this.channel;
+	}
+
+	public void setChannel(String channel) {
+		this.channel = channel;
+		if(channel != null){
+			putQueryParameter("Channel", channel);
+		}
+	}
+
+	public String getPlaySign() {
+		return this.playSign;
+	}
+
+	public void setPlaySign(String playSign) {
+		this.playSign = playSign;
+		if(playSign != null){
+			putQueryParameter("PlaySign", playSign);
+		}
 	}
 
 	@Override

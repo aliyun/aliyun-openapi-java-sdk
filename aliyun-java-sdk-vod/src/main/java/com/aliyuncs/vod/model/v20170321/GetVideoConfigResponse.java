@@ -19,16 +19,18 @@
 package com.aliyuncs.vod.model.v20170321;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.vod.transform.v20170321.UpdateVideoInfoResponseUnmarshaller;
+import com.aliyuncs.vod.transform.v20170321.GetVideoConfigResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class UpdateVideoInfoResponse extends AcsResponse {
+public class GetVideoConfigResponse extends AcsResponse {
 
 	private String requestId;
+
+	private String downloadSwitch;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -38,8 +40,16 @@ public class UpdateVideoInfoResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public String getDownloadSwitch() {
+		return this.downloadSwitch;
+	}
+
+	public void setDownloadSwitch(String downloadSwitch) {
+		this.downloadSwitch = downloadSwitch;
+	}
+
 	@Override
-	public UpdateVideoInfoResponse getInstance(UnmarshallerContext context) {
-		return	UpdateVideoInfoResponseUnmarshaller.unmarshall(this, context);
+	public GetVideoConfigResponse getInstance(UnmarshallerContext context) {
+		return	GetVideoConfigResponseUnmarshaller.unmarshall(this, context);
 	}
 }

@@ -34,7 +34,7 @@ public class GetCDNStatisSumResponseUnmarshaller {
 		getCDNStatisSumResponse.setSumFlowDataValue(context.longValue("GetCDNStatisSumResponse.SumFlowDataValue"));
 		getCDNStatisSumResponse.setMaxBpsDataValue(context.longValue("GetCDNStatisSumResponse.MaxBpsDataValue"));
 
-		List<CDNMetric> cDNStatisListList = new ArrayList<CDNMetric>();
+		List<CDNMetric> cDNStatisList = new ArrayList<CDNMetric>();
 		for (int i = 0; i < context.lengthValue("GetCDNStatisSumResponse.CDNStatisList.Length"); i++) {
 			CDNMetric cDNMetric = new CDNMetric();
 			cDNMetric.setStatTime(context.stringValue("GetCDNStatisSumResponse.CDNStatisList["+ i +"].StatTime"));
@@ -45,9 +45,9 @@ public class GetCDNStatisSumResponseUnmarshaller {
 			cDNMetric.setBpsDataOverseasValue(context.longValue("GetCDNStatisSumResponse.CDNStatisList["+ i +"].BpsDataOverseasValue"));
 			cDNMetric.setBpsDataValue(context.longValue("GetCDNStatisSumResponse.CDNStatisList["+ i +"].BpsDataValue"));
 
-			cDNStatisListList.add(cDNMetric);
+			cDNStatisList.add(cDNMetric);
 		}
-		getCDNStatisSumResponse.setCDNStatisList(cDNStatisListList);
+		getCDNStatisSumResponse.setCDNStatisList(cDNStatisList);
 	 
 	 	return getCDNStatisSumResponse;
 	}

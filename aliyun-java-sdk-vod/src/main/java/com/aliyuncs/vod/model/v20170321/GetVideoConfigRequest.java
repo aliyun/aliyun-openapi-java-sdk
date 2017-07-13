@@ -24,62 +24,19 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class UpdateVideoInfoRequest extends RpcAcsRequest<UpdateVideoInfoResponse> {
+public class GetVideoConfigRequest extends RpcAcsRequest<GetVideoConfigResponse> {
 	
-	public UpdateVideoInfoRequest() {
-		super("vod", "2017-03-21", "UpdateVideoInfo");
+	public GetVideoConfigRequest() {
+		super("vod", "2017-03-21", "GetVideoConfig");
 	}
 
-	private String tags;
-
-	private Integer cateId;
-
-	private String title;
-
 	private String resourceOwnerAccount;
-
-	private String description;
-
-	private String coverURL;
 
 	private Long resourceOwnerId;
 
 	private Long ownerId;
 
 	private String videoId;
-
-	public String getTags() {
-		return this.tags;
-	}
-
-	public void setTags(String tags) {
-		this.tags = tags;
-		if(tags != null){
-			putQueryParameter("Tags", tags);
-		}
-	}
-
-	public Integer getCateId() {
-		return this.cateId;
-	}
-
-	public void setCateId(Integer cateId) {
-		this.cateId = cateId;
-		if(cateId != null){
-			putQueryParameter("CateId", cateId.toString());
-		}
-	}
-
-	public String getTitle() {
-		return this.title;
-	}
-
-	public void setTitle(String title) {
-		this.title = title;
-		if(title != null){
-			putQueryParameter("Title", title);
-		}
-	}
 
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
@@ -89,28 +46,6 @@ public class UpdateVideoInfoRequest extends RpcAcsRequest<UpdateVideoInfoRespons
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public String getDescription() {
-		return this.description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-		if(description != null){
-			putQueryParameter("Description", description);
-		}
-	}
-
-	public String getCoverURL() {
-		return this.coverURL;
-	}
-
-	public void setCoverURL(String coverURL) {
-		this.coverURL = coverURL;
-		if(coverURL != null){
-			putQueryParameter("CoverURL", coverURL);
 		}
 	}
 
@@ -148,8 +83,8 @@ public class UpdateVideoInfoRequest extends RpcAcsRequest<UpdateVideoInfoRespons
 	}
 
 	@Override
-	public Class<UpdateVideoInfoResponse> getResponseClass() {
-		return UpdateVideoInfoResponse.class;
+	public Class<GetVideoConfigResponse> getResponseClass() {
+		return GetVideoConfigResponse.class;
 	}
 
 }

@@ -41,6 +41,7 @@ public class GetVideoInfoResponseUnmarshaller {
 		video.setDuration(context.floatValue("GetVideoInfoResponse.Video.Duration"));
 		video.setDescription(context.stringValue("GetVideoInfoResponse.Video.Description"));
 		video.setCreateTime(context.stringValue("GetVideoInfoResponse.Video.CreateTime"));
+		video.setCreationTime(context.stringValue("GetVideoInfoResponse.Video.CreationTime"));
 		video.setModifyTime(context.stringValue("GetVideoInfoResponse.Video.ModifyTime"));
 		video.setCoverURL(context.stringValue("GetVideoInfoResponse.Video.CoverURL"));
 		video.setCateId(context.integerValue("GetVideoInfoResponse.Video.CateId"));

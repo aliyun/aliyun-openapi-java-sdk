@@ -24,84 +24,45 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class GetVideoListRequest extends RpcAcsRequest<GetVideoListResponse> {
+public class GetCategoriesRequest extends RpcAcsRequest<GetCategoriesResponse> {
 	
-	public GetVideoListRequest() {
-		super("vod", "2017-03-21", "GetVideoList");
+	public GetCategoriesRequest() {
+		super("vod", "2017-03-21", "GetCategories");
 	}
 
-	private String endTime;
+	private Long pageSize;
 
-	private Integer pageSize;
-
-	private Integer cateId;
-
-	private String sortBy;
-
-	private String startTime;
+	private Long cateId;
 
 	private String resourceOwnerAccount;
 
-	private String status;
+	private String resourceOwnerId;
 
-	private Long resourceOwnerId;
+	private Long pageNo;
 
-	private Integer pageNo;
+	private String ownerAccount;
 
-	private Long ownerId;
+	private String ownerId;
 
-	public String getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
-		if(endTime != null){
-			putQueryParameter("EndTime", endTime);
-		}
-	}
-
-	public Integer getPageSize() {
+	public Long getPageSize() {
 		return this.pageSize;
 	}
 
-	public void setPageSize(Integer pageSize) {
+	public void setPageSize(Long pageSize) {
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 
-	public Integer getCateId() {
+	public Long getCateId() {
 		return this.cateId;
 	}
 
-	public void setCateId(Integer cateId) {
+	public void setCateId(Long cateId) {
 		this.cateId = cateId;
 		if(cateId != null){
 			putQueryParameter("CateId", cateId.toString());
-		}
-	}
-
-	public String getSortBy() {
-		return this.sortBy;
-	}
-
-	public void setSortBy(String sortBy) {
-		this.sortBy = sortBy;
-		if(sortBy != null){
-			putQueryParameter("SortBy", sortBy);
-		}
-	}
-
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("StartTime", startTime);
 		}
 	}
 
@@ -116,53 +77,53 @@ public class GetVideoListRequest extends RpcAcsRequest<GetVideoListResponse> {
 		}
 	}
 
-	public String getStatus() {
-		return this.status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
-		if(status != null){
-			putQueryParameter("Status", status);
-		}
-	}
-
-	public Long getResourceOwnerId() {
+	public String getResourceOwnerId() {
 		return this.resourceOwnerId;
 	}
 
-	public void setResourceOwnerId(Long resourceOwnerId) {
+	public void setResourceOwnerId(String resourceOwnerId) {
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+			putQueryParameter("ResourceOwnerId", resourceOwnerId);
 		}
 	}
 
-	public Integer getPageNo() {
+	public Long getPageNo() {
 		return this.pageNo;
 	}
 
-	public void setPageNo(Integer pageNo) {
+	public void setPageNo(Long pageNo) {
 		this.pageNo = pageNo;
 		if(pageNo != null){
 			putQueryParameter("PageNo", pageNo.toString());
 		}
 	}
 
-	public Long getOwnerId() {
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public String getOwnerId() {
 		return this.ownerId;
 	}
 
-	public void setOwnerId(Long ownerId) {
+	public void setOwnerId(String ownerId) {
 		this.ownerId = ownerId;
 		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
+			putQueryParameter("OwnerId", ownerId);
 		}
 	}
 
 	@Override
-	public Class<GetVideoListResponse> getResponseClass() {
-		return GetVideoListResponse.class;
+	public Class<GetCategoriesResponse> getResponseClass() {
+		return GetCategoriesResponse.class;
 	}
 
 }

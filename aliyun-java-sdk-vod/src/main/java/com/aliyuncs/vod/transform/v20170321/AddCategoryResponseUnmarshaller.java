@@ -18,16 +18,24 @@
  */
 package com.aliyuncs.vod.transform.v20170321;
 
-import com.aliyuncs.vod.model.v20170321.SetMessageCallbackResponse;
+import com.aliyuncs.vod.model.v20170321.AddCategoryResponse;
+import com.aliyuncs.vod.model.v20170321.AddCategoryResponse.Category;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class SetMessageCallbackResponseUnmarshaller {
+public class AddCategoryResponseUnmarshaller {
 
-	public static SetMessageCallbackResponse unmarshall(SetMessageCallbackResponse setMessageCallbackResponse, UnmarshallerContext context) {
+	public static AddCategoryResponse unmarshall(AddCategoryResponse addCategoryResponse, UnmarshallerContext context) {
 		
-		setMessageCallbackResponse.setRequestId(context.stringValue("SetMessageCallbackResponse.RequestId"));
+		addCategoryResponse.setRequestId(context.stringValue("AddCategoryResponse.RequestId"));
+
+		Category category = new Category();
+		category.setCateId(context.longValue("AddCategoryResponse.Category.CateId"));
+		category.setCateName(context.stringValue("AddCategoryResponse.Category.CateName"));
+		category.setParentId(context.longValue("AddCategoryResponse.Category.ParentId"));
+		category.setLevel(context.longValue("AddCategoryResponse.Category.Level"));
+		addCategoryResponse.setCategory(category);
 	 
-	 	return setMessageCallbackResponse;
+	 	return addCategoryResponse;
 	}
 }

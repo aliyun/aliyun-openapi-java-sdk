@@ -24,19 +24,15 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class GetOSSStatisRequest extends RpcAcsRequest<GetOSSStatisResponse> {
+public class DeleteCategoryRequest extends RpcAcsRequest<DeleteCategoryResponse> {
 	
-	public GetOSSStatisRequest() {
-		super("vod", "2017-03-21", "GetOSSStatis");
+	public DeleteCategoryRequest() {
+		super("vod", "2017-03-21", "DeleteCategory");
 	}
 
-	private String level;
+	private Long cateId;
 
 	private String resourceOwnerAccount;
-
-	private String endStatisTime;
-
-	private String startStatisTime;
 
 	private String resourceOwnerId;
 
@@ -44,14 +40,14 @@ public class GetOSSStatisRequest extends RpcAcsRequest<GetOSSStatisResponse> {
 
 	private String ownerId;
 
-	public String getLevel() {
-		return this.level;
+	public Long getCateId() {
+		return this.cateId;
 	}
 
-	public void setLevel(String level) {
-		this.level = level;
-		if(level != null){
-			putQueryParameter("Level", level);
+	public void setCateId(Long cateId) {
+		this.cateId = cateId;
+		if(cateId != null){
+			putQueryParameter("CateId", cateId.toString());
 		}
 	}
 
@@ -63,28 +59,6 @@ public class GetOSSStatisRequest extends RpcAcsRequest<GetOSSStatisResponse> {
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public String getEndStatisTime() {
-		return this.endStatisTime;
-	}
-
-	public void setEndStatisTime(String endStatisTime) {
-		this.endStatisTime = endStatisTime;
-		if(endStatisTime != null){
-			putQueryParameter("EndStatisTime", endStatisTime);
-		}
-	}
-
-	public String getStartStatisTime() {
-		return this.startStatisTime;
-	}
-
-	public void setStartStatisTime(String startStatisTime) {
-		this.startStatisTime = startStatisTime;
-		if(startStatisTime != null){
-			putQueryParameter("StartStatisTime", startStatisTime);
 		}
 	}
 
@@ -122,8 +96,8 @@ public class GetOSSStatisRequest extends RpcAcsRequest<GetOSSStatisResponse> {
 	}
 
 	@Override
-	public Class<GetOSSStatisResponse> getResponseClass() {
-		return GetOSSStatisResponse.class;
+	public Class<DeleteCategoryResponse> getResponseClass() {
+		return DeleteCategoryResponse.class;
 	}
 
 }

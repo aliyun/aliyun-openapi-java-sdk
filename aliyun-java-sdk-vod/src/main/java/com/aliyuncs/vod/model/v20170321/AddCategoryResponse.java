@@ -19,16 +19,18 @@
 package com.aliyuncs.vod.model.v20170321;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.vod.transform.v20170321.UpdateVideoInfoResponseUnmarshaller;
+import com.aliyuncs.vod.transform.v20170321.AddCategoryResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class UpdateVideoInfoResponse extends AcsResponse {
+public class AddCategoryResponse extends AcsResponse {
 
 	private String requestId;
+
+	private Category category;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -38,8 +40,59 @@ public class UpdateVideoInfoResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public Category getCategory() {
+		return this.category;
+	}
+
+	public void setCategory(Category category) {
+		this.category = category;
+	}
+
+	public static class Category {
+
+		private Long cateId;
+
+		private String cateName;
+
+		private Long parentId;
+
+		private Long level;
+
+		public Long getCateId() {
+			return this.cateId;
+		}
+
+		public void setCateId(Long cateId) {
+			this.cateId = cateId;
+		}
+
+		public String getCateName() {
+			return this.cateName;
+		}
+
+		public void setCateName(String cateName) {
+			this.cateName = cateName;
+		}
+
+		public Long getParentId() {
+			return this.parentId;
+		}
+
+		public void setParentId(Long parentId) {
+			this.parentId = parentId;
+		}
+
+		public Long getLevel() {
+			return this.level;
+		}
+
+		public void setLevel(Long level) {
+			this.level = level;
+		}
+	}
+
 	@Override
-	public UpdateVideoInfoResponse getInstance(UnmarshallerContext context) {
-		return	UpdateVideoInfoResponseUnmarshaller.unmarshall(this, context);
+	public AddCategoryResponse getInstance(UnmarshallerContext context) {
+		return	AddCategoryResponseUnmarshaller.unmarshall(this, context);
 	}
 }

@@ -19,16 +19,22 @@
 package com.aliyuncs.vod.model.v20170321;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.vod.transform.v20170321.UpdateVideoInfoResponseUnmarshaller;
+import com.aliyuncs.vod.transform.v20170321.CreateUploadImageResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class UpdateVideoInfoResponse extends AcsResponse {
+public class CreateUploadImageResponse extends AcsResponse {
 
 	private String requestId;
+
+	private String uploadAddress;
+
+	private String uploadAuth;
+
+	private String imageURL;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -38,8 +44,32 @@ public class UpdateVideoInfoResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public String getUploadAddress() {
+		return this.uploadAddress;
+	}
+
+	public void setUploadAddress(String uploadAddress) {
+		this.uploadAddress = uploadAddress;
+	}
+
+	public String getUploadAuth() {
+		return this.uploadAuth;
+	}
+
+	public void setUploadAuth(String uploadAuth) {
+		this.uploadAuth = uploadAuth;
+	}
+
+	public String getImageURL() {
+		return this.imageURL;
+	}
+
+	public void setImageURL(String imageURL) {
+		this.imageURL = imageURL;
+	}
+
 	@Override
-	public UpdateVideoInfoResponse getInstance(UnmarshallerContext context) {
-		return	UpdateVideoInfoResponseUnmarshaller.unmarshall(this, context);
+	public CreateUploadImageResponse getInstance(UnmarshallerContext context) {
+		return	CreateUploadImageResponseUnmarshaller.unmarshall(this, context);
 	}
 }

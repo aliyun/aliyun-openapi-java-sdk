@@ -33,15 +33,15 @@ public class GetOSSStatisResponseUnmarshaller {
 		getOSSStatisResponse.setRequestId(context.stringValue("GetOSSStatisResponse.RequestId"));
 		getOSSStatisResponse.setMaxStorageUtilization(context.longValue("GetOSSStatisResponse.MaxStorageUtilization"));
 
-		List<OSSMetric> ossStatisListList = new ArrayList<OSSMetric>();
+		List<OSSMetric> ossStatisList = new ArrayList<OSSMetric>();
 		for (int i = 0; i < context.lengthValue("GetOSSStatisResponse.OssStatisList.Length"); i++) {
 			OSSMetric oSSMetric = new OSSMetric();
 			oSSMetric.setStatTime(context.stringValue("GetOSSStatisResponse.OssStatisList["+ i +"].StatTime"));
 			oSSMetric.setStorageUtilization(context.longValue("GetOSSStatisResponse.OssStatisList["+ i +"].StorageUtilization"));
 
-			ossStatisListList.add(oSSMetric);
+			ossStatisList.add(oSSMetric);
 		}
-		getOSSStatisResponse.setOssStatisList(ossStatisListList);
+		getOSSStatisResponse.setOssStatisList(ossStatisList);
 	 
 	 	return getOSSStatisResponse;
 	}

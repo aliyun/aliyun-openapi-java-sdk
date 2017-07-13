@@ -30,21 +30,23 @@ public class GetMessageCallbackRequest extends RpcAcsRequest<GetMessageCallbackR
 		super("vod", "2017-03-21", "GetMessageCallback");
 	}
 
-	private String ownerId;
+	private String resourceOwnerAccount;
 
 	private String resourceOwnerId;
 
-	private String resourceOwnerAccount;
-
 	private String ownerAccount;
 
-	public String getOwnerId() {
-		return this.ownerId;
+	private String ownerId;
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
 	}
 
-	public void setOwnerId(String ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
 	}
 
 	public String getResourceOwnerId() {
@@ -53,16 +55,9 @@ public class GetMessageCallbackRequest extends RpcAcsRequest<GetMessageCallbackR
 
 	public void setResourceOwnerId(String resourceOwnerId) {
 		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", resourceOwnerId);
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId);
+		}
 	}
 
 	public String getOwnerAccount() {
@@ -71,7 +66,20 @@ public class GetMessageCallbackRequest extends RpcAcsRequest<GetMessageCallbackR
 
 	public void setOwnerAccount(String ownerAccount) {
 		this.ownerAccount = ownerAccount;
-		putQueryParameter("OwnerAccount", ownerAccount);
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public String getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(String ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId);
+		}
 	}
 
 	@Override

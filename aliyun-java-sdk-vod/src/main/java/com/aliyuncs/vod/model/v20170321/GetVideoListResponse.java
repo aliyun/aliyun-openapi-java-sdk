@@ -31,6 +31,8 @@ public class GetVideoListResponse extends AcsResponse {
 
 	private String requestId;
 
+	private Integer total;
+
 	private List<Video> videoList;
 
 	public String getRequestId() {
@@ -39,6 +41,14 @@ public class GetVideoListResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Integer getTotal() {
+		return this.total;
+	}
+
+	public void setTotal(Integer total) {
+		this.total = total;
 	}
 
 	public List<Video> getVideoList() {
@@ -66,6 +76,8 @@ public class GetVideoListResponse extends AcsResponse {
 		private String description;
 
 		private String createTime;
+
+		private String creationTime;
 
 		private String modifyTime;
 
@@ -139,6 +151,14 @@ public class GetVideoListResponse extends AcsResponse {
 
 		public void setCreateTime(String createTime) {
 			this.createTime = createTime;
+		}
+
+		public String getCreationTime() {
+			return this.creationTime;
+		}
+
+		public void setCreationTime(String creationTime) {
+			this.creationTime = creationTime;
 		}
 
 		public String getModifyTime() {

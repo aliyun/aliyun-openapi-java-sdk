@@ -30,22 +30,13 @@ public class DeleteVideoRequest extends RpcAcsRequest<DeleteVideoResponse> {
 		super("vod", "2017-03-21", "DeleteVideo");
 	}
 
-	private Long ownerId;
-
 	private String resourceOwnerAccount;
 
 	private Long resourceOwnerId;
 
 	private String videoIds;
 
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
-	}
+	private Long ownerId;
 
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
@@ -53,7 +44,9 @@ public class DeleteVideoRequest extends RpcAcsRequest<DeleteVideoResponse> {
 
 	public void setResourceOwnerAccount(String resourceOwnerAccount) {
 		this.resourceOwnerAccount = resourceOwnerAccount;
-		putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
 	}
 
 	public Long getResourceOwnerId() {
@@ -62,7 +55,9 @@ public class DeleteVideoRequest extends RpcAcsRequest<DeleteVideoResponse> {
 
 	public void setResourceOwnerId(Long resourceOwnerId) {
 		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", resourceOwnerId);
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
 	}
 
 	public String getVideoIds() {
@@ -71,7 +66,20 @@ public class DeleteVideoRequest extends RpcAcsRequest<DeleteVideoResponse> {
 
 	public void setVideoIds(String videoIds) {
 		this.videoIds = videoIds;
-		putQueryParameter("VideoIds", videoIds);
+		if(videoIds != null){
+			putQueryParameter("VideoIds", videoIds);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
 	}
 
 	@Override

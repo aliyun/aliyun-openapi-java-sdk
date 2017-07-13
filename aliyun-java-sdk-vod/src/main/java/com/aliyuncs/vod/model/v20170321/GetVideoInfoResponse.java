@@ -67,6 +67,8 @@ public class GetVideoInfoResponse extends AcsResponse {
 
 		private String createTime;
 
+		private String creationTime;
+
 		private String modifyTime;
 
 		private String coverURL;
@@ -139,6 +141,14 @@ public class GetVideoInfoResponse extends AcsResponse {
 
 		public void setCreateTime(String createTime) {
 			this.createTime = createTime;
+		}
+
+		public String getCreationTime() {
+			return this.creationTime;
+		}
+
+		public void setCreationTime(String creationTime) {
+			this.creationTime = creationTime;
 		}
 
 		public String getModifyTime() {

@@ -30,36 +30,31 @@ public class SetMessageCallbackRequest extends RpcAcsRequest<SetMessageCallbackR
 		super("vod", "2017-03-21", "SetMessageCallback");
 	}
 
-	private String ownerId;
-
-	private String resourceOwnerId;
+	private String eventTypeList;
 
 	private String resourceOwnerAccount;
 
-	private String ownerAccount;
+	private String callbackURL;
 
 	private String callbackSwitch;
 
 	private String callbackType;
 
-	private String callbackURL;
+	private String resourceOwnerId;
 
-	public String getOwnerId() {
-		return this.ownerId;
+	private String ownerAccount;
+
+	private String ownerId;
+
+	public String getEventTypeList() {
+		return this.eventTypeList;
 	}
 
-	public void setOwnerId(String ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
-	}
-
-	public String getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(String resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", resourceOwnerId);
+	public void setEventTypeList(String eventTypeList) {
+		this.eventTypeList = eventTypeList;
+		if(eventTypeList != null){
+			putQueryParameter("EventTypeList", eventTypeList);
+		}
 	}
 
 	public String getResourceOwnerAccount() {
@@ -68,34 +63,9 @@ public class SetMessageCallbackRequest extends RpcAcsRequest<SetMessageCallbackR
 
 	public void setResourceOwnerAccount(String resourceOwnerAccount) {
 		this.resourceOwnerAccount = resourceOwnerAccount;
-		putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-	}
-
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
-
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		putQueryParameter("OwnerAccount", ownerAccount);
-	}
-
-	public String getCallbackSwitch() {
-		return this.callbackSwitch;
-	}
-
-	public void setCallbackSwitch(String callbackSwitch) {
-		this.callbackSwitch = callbackSwitch;
-		putQueryParameter("CallbackSwitch", callbackSwitch);
-	}
-
-	public String getCallbackType() {
-		return this.callbackType;
-	}
-
-	public void setCallbackType(String callbackType) {
-		this.callbackType = callbackType;
-		putQueryParameter("CallbackType", callbackType);
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
 	}
 
 	public String getCallbackURL() {
@@ -104,7 +74,64 @@ public class SetMessageCallbackRequest extends RpcAcsRequest<SetMessageCallbackR
 
 	public void setCallbackURL(String callbackURL) {
 		this.callbackURL = callbackURL;
-		putQueryParameter("CallbackURL", callbackURL);
+		if(callbackURL != null){
+			putQueryParameter("CallbackURL", callbackURL);
+		}
+	}
+
+	public String getCallbackSwitch() {
+		return this.callbackSwitch;
+	}
+
+	public void setCallbackSwitch(String callbackSwitch) {
+		this.callbackSwitch = callbackSwitch;
+		if(callbackSwitch != null){
+			putQueryParameter("CallbackSwitch", callbackSwitch);
+		}
+	}
+
+	public String getCallbackType() {
+		return this.callbackType;
+	}
+
+	public void setCallbackType(String callbackType) {
+		this.callbackType = callbackType;
+		if(callbackType != null){
+			putQueryParameter("CallbackType", callbackType);
+		}
+	}
+
+	public String getResourceOwnerId() {
+		return this.resourceOwnerId;
+	}
+
+	public void setResourceOwnerId(String resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId);
+		}
+	}
+
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public String getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(String ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId);
+		}
 	}
 
 	@Override

@@ -54,6 +54,8 @@ public class GetMessageCallbackResponse extends AcsResponse {
 
 		private String callbackURL;
 
+		private String eventTypeList;
+
 		public String getCallbackSwitch() {
 			return this.callbackSwitch;
 		}
@@ -68,6 +70,14 @@ public class GetMessageCallbackResponse extends AcsResponse {
 
 		public void setCallbackURL(String callbackURL) {
 			this.callbackURL = callbackURL;
+		}
+
+		public String getEventTypeList() {
+			return this.eventTypeList;
+		}
+
+		public void setEventTypeList(String eventTypeList) {
+			this.eventTypeList = eventTypeList;
 		}
 	}
 

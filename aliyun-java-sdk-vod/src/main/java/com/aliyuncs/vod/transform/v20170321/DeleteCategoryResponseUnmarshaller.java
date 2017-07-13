@@ -16,30 +16,18 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package com.aliyuncs.vod.model.v20170321;
+package com.aliyuncs.vod.transform.v20170321;
 
-import com.aliyuncs.AcsResponse;
-import com.aliyuncs.vod.transform.v20170321.UpdateVideoInfoResponseUnmarshaller;
+import com.aliyuncs.vod.model.v20170321.DeleteCategoryResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
-/**
- * @author auto create
- * @version 
- */
-public class UpdateVideoInfoResponse extends AcsResponse {
 
-	private String requestId;
+public class DeleteCategoryResponseUnmarshaller {
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	@Override
-	public UpdateVideoInfoResponse getInstance(UnmarshallerContext context) {
-		return	UpdateVideoInfoResponseUnmarshaller.unmarshall(this, context);
+	public static DeleteCategoryResponse unmarshall(DeleteCategoryResponse deleteCategoryResponse, UnmarshallerContext context) {
+		
+		deleteCategoryResponse.setRequestId(context.stringValue("DeleteCategoryResponse.RequestId"));
+	 
+	 	return deleteCategoryResponse;
 	}
 }

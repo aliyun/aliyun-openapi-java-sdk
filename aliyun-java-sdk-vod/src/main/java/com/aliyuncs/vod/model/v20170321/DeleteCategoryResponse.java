@@ -19,14 +19,14 @@
 package com.aliyuncs.vod.model.v20170321;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.vod.transform.v20170321.UpdateVideoInfoResponseUnmarshaller;
+import com.aliyuncs.vod.transform.v20170321.DeleteCategoryResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class UpdateVideoInfoResponse extends AcsResponse {
+public class DeleteCategoryResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -39,7 +39,7 @@ public class UpdateVideoInfoResponse extends AcsResponse {
 	}
 
 	@Override
-	public UpdateVideoInfoResponse getInstance(UnmarshallerContext context) {
-		return	UpdateVideoInfoResponseUnmarshaller.unmarshall(this, context);
+	public DeleteCategoryResponse getInstance(UnmarshallerContext context) {
+		return	DeleteCategoryResponseUnmarshaller.unmarshall(this, context);
 	}
 }

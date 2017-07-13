@@ -30,36 +30,29 @@ public class GetCDNStatisSumRequest extends RpcAcsRequest<GetCDNStatisSumRespons
 		super("vod", "2017-03-21", "GetCDNStatisSum");
 	}
 
-	private String ownerId;
-
-	private String resourceOwnerId;
+	private String level;
 
 	private String resourceOwnerAccount;
 
-	private String ownerAccount;
+	private String endStatisTime;
 
 	private String startStatisTime;
 
-	private String endStatisTime;
+	private String resourceOwnerId;
 
-	private String level;
+	private String ownerAccount;
 
-	public String getOwnerId() {
-		return this.ownerId;
+	private String ownerId;
+
+	public String getLevel() {
+		return this.level;
 	}
 
-	public void setOwnerId(String ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
-	}
-
-	public String getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(String resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", resourceOwnerId);
+	public void setLevel(String level) {
+		this.level = level;
+		if(level != null){
+			putQueryParameter("Level", level);
+		}
 	}
 
 	public String getResourceOwnerAccount() {
@@ -68,25 +61,9 @@ public class GetCDNStatisSumRequest extends RpcAcsRequest<GetCDNStatisSumRespons
 
 	public void setResourceOwnerAccount(String resourceOwnerAccount) {
 		this.resourceOwnerAccount = resourceOwnerAccount;
-		putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-	}
-
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
-
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		putQueryParameter("OwnerAccount", ownerAccount);
-	}
-
-	public String getStartStatisTime() {
-		return this.startStatisTime;
-	}
-
-	public void setStartStatisTime(String startStatisTime) {
-		this.startStatisTime = startStatisTime;
-		putQueryParameter("StartStatisTime", startStatisTime);
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
 	}
 
 	public String getEndStatisTime() {
@@ -95,16 +72,53 @@ public class GetCDNStatisSumRequest extends RpcAcsRequest<GetCDNStatisSumRespons
 
 	public void setEndStatisTime(String endStatisTime) {
 		this.endStatisTime = endStatisTime;
-		putQueryParameter("EndStatisTime", endStatisTime);
+		if(endStatisTime != null){
+			putQueryParameter("EndStatisTime", endStatisTime);
+		}
 	}
 
-	public String getLevel() {
-		return this.level;
+	public String getStartStatisTime() {
+		return this.startStatisTime;
 	}
 
-	public void setLevel(String level) {
-		this.level = level;
-		putQueryParameter("Level", level);
+	public void setStartStatisTime(String startStatisTime) {
+		this.startStatisTime = startStatisTime;
+		if(startStatisTime != null){
+			putQueryParameter("StartStatisTime", startStatisTime);
+		}
+	}
+
+	public String getResourceOwnerId() {
+		return this.resourceOwnerId;
+	}
+
+	public void setResourceOwnerId(String resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId);
+		}
+	}
+
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public String getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(String ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId);
+		}
 	}
 
 	@Override
