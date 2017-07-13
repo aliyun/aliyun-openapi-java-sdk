@@ -30,19 +30,21 @@ public class DescribeDomainsRequest extends RpcAcsRequest<DescribeDomainsRespons
 		super("Httpdns", "2016-02-01", "DescribeDomains");
 	}
 
-	private String accountId;
+	private Long pageSize;
 
 	private Long pageNumber;
 
-	private Long pageSize;
+	private String accountId;
 
-	public String getAccountId() {
-		return this.accountId;
+	public Long getPageSize() {
+		return this.pageSize;
 	}
 
-	public void setAccountId(String accountId) {
-		this.accountId = accountId;
-		putQueryParameter("AccountId", accountId);
+	public void setPageSize(Long pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
 	}
 
 	public Long getPageNumber() {
@@ -51,16 +53,20 @@ public class DescribeDomainsRequest extends RpcAcsRequest<DescribeDomainsRespons
 
 	public void setPageNumber(Long pageNumber) {
 		this.pageNumber = pageNumber;
-		putQueryParameter("PageNumber", pageNumber);
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
 	}
 
-	public Long getPageSize() {
-		return this.pageSize;
+	public String getAccountId() {
+		return this.accountId;
 	}
 
-	public void setPageSize(Long pageSize) {
-		this.pageSize = pageSize;
-		putQueryParameter("PageSize", pageSize);
+	public void setAccountId(String accountId) {
+		this.accountId = accountId;
+		if(accountId != null){
+			putQueryParameter("AccountId", accountId);
+		}
 	}
 
 	@Override

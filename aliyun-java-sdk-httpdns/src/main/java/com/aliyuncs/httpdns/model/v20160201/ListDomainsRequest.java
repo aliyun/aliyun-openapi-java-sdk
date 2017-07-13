@@ -24,41 +24,41 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class DeleteDomainRequest extends RpcAcsRequest<DeleteDomainResponse> {
+public class ListDomainsRequest extends RpcAcsRequest<ListDomainsResponse> {
 	
-	public DeleteDomainRequest() {
-		super("Httpdns", "2016-02-01", "DeleteDomain");
+	public ListDomainsRequest() {
+		super("Httpdns", "2016-02-01", "ListDomains");
 	}
 
-	private String accountId;
+	private Integer pageSize;
 
-	private String domainName;
+	private Integer pageNumber;
 
-	public String getAccountId() {
-		return this.accountId;
+	public Integer getPageSize() {
+		return this.pageSize;
 	}
 
-	public void setAccountId(String accountId) {
-		this.accountId = accountId;
-		if(accountId != null){
-			putQueryParameter("AccountId", accountId);
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 
-	public String getDomainName() {
-		return this.domainName;
+	public Integer getPageNumber() {
+		return this.pageNumber;
 	}
 
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
-		if(domainName != null){
-			putQueryParameter("DomainName", domainName);
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
 		}
 	}
 
 	@Override
-	public Class<DeleteDomainResponse> getResponseClass() {
-		return DeleteDomainResponse.class;
+	public Class<ListDomainsResponse> getResponseClass() {
+		return ListDomainsResponse.class;
 	}
 
 }

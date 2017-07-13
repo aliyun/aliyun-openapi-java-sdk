@@ -24,41 +24,15 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class DeleteDomainRequest extends RpcAcsRequest<DeleteDomainResponse> {
+public class GetAccountInfoRequest extends RpcAcsRequest<GetAccountInfoResponse> {
 	
-	public DeleteDomainRequest() {
-		super("Httpdns", "2016-02-01", "DeleteDomain");
-	}
-
-	private String accountId;
-
-	private String domainName;
-
-	public String getAccountId() {
-		return this.accountId;
-	}
-
-	public void setAccountId(String accountId) {
-		this.accountId = accountId;
-		if(accountId != null){
-			putQueryParameter("AccountId", accountId);
-		}
-	}
-
-	public String getDomainName() {
-		return this.domainName;
-	}
-
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
-		if(domainName != null){
-			putQueryParameter("DomainName", domainName);
-		}
+	public GetAccountInfoRequest() {
+		super("Httpdns", "2016-02-01", "GetAccountInfo");
 	}
 
 	@Override
-	public Class<DeleteDomainResponse> getResponseClass() {
-		return DeleteDomainResponse.class;
+	public Class<GetAccountInfoResponse> getResponseClass() {
+		return GetAccountInfoResponse.class;
 	}
 
 }

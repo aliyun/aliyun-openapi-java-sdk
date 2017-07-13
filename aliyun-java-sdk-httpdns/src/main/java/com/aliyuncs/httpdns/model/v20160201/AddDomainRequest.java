@@ -40,7 +40,9 @@ public class AddDomainRequest extends RpcAcsRequest<AddDomainResponse> {
 
 	public void setAccountId(String accountId) {
 		this.accountId = accountId;
-		putQueryParameter("AccountId", accountId);
+		if(accountId != null){
+			putQueryParameter("AccountId", accountId);
+		}
 	}
 
 	public String getDomainName() {
@@ -49,7 +51,9 @@ public class AddDomainRequest extends RpcAcsRequest<AddDomainResponse> {
 
 	public void setDomainName(String domainName) {
 		this.domainName = domainName;
-		putQueryParameter("DomainName", domainName);
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
+		}
 	}
 
 	@Override

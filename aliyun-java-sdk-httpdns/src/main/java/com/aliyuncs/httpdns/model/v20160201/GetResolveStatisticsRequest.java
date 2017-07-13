@@ -24,26 +24,19 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class DeleteDomainRequest extends RpcAcsRequest<DeleteDomainResponse> {
+public class GetResolveStatisticsRequest extends RpcAcsRequest<GetResolveStatisticsResponse> {
 	
-	public DeleteDomainRequest() {
-		super("Httpdns", "2016-02-01", "DeleteDomain");
+	public GetResolveStatisticsRequest() {
+		super("Httpdns", "2016-02-01", "GetResolveStatistics");
 	}
-
-	private String accountId;
 
 	private String domainName;
 
-	public String getAccountId() {
-		return this.accountId;
-	}
+	private Integer timeSpan;
 
-	public void setAccountId(String accountId) {
-		this.accountId = accountId;
-		if(accountId != null){
-			putQueryParameter("AccountId", accountId);
-		}
-	}
+	private String protocolName;
+
+	private String granularity;
 
 	public String getDomainName() {
 		return this.domainName;
@@ -56,9 +49,42 @@ public class DeleteDomainRequest extends RpcAcsRequest<DeleteDomainResponse> {
 		}
 	}
 
+	public Integer getTimeSpan() {
+		return this.timeSpan;
+	}
+
+	public void setTimeSpan(Integer timeSpan) {
+		this.timeSpan = timeSpan;
+		if(timeSpan != null){
+			putQueryParameter("TimeSpan", timeSpan.toString());
+		}
+	}
+
+	public String getProtocolName() {
+		return this.protocolName;
+	}
+
+	public void setProtocolName(String protocolName) {
+		this.protocolName = protocolName;
+		if(protocolName != null){
+			putQueryParameter("ProtocolName", protocolName);
+		}
+	}
+
+	public String getGranularity() {
+		return this.granularity;
+	}
+
+	public void setGranularity(String granularity) {
+		this.granularity = granularity;
+		if(granularity != null){
+			putQueryParameter("Granularity", granularity);
+		}
+	}
+
 	@Override
-	public Class<DeleteDomainResponse> getResponseClass() {
-		return DeleteDomainResponse.class;
+	public Class<GetResolveStatisticsResponse> getResponseClass() {
+		return GetResolveStatisticsResponse.class;
 	}
 
 }
