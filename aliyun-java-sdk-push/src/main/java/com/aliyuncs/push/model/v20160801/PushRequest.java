@@ -76,6 +76,8 @@ public class PushRequest extends RpcAcsRequest<PushResponse> {
 
 	private String androidMusic;
 
+	private Boolean androidRemind;
+
 	private Integer androidNotificationBarType;
 
 	private Integer androidNotificationBarPriority;
@@ -334,6 +336,15 @@ public class PushRequest extends RpcAcsRequest<PushResponse> {
 	public void setAndroidExtParameters(String androidExtParameters) {
 		this.androidExtParameters = androidExtParameters;
 		putQueryParameter("AndroidExtParameters", androidExtParameters);
+	}
+
+	public Boolean getAndroidRemind() {
+		return androidRemind;
+	}
+
+	public void setAndroidRemind(Boolean androidRemind) {
+		this.androidRemind = androidRemind;
+		putQueryParameter("AndroidRemind", androidRemind);
 	}
 
 	public String getiOSApnsEnv() {
