@@ -131,6 +131,8 @@ public class DescribeDisksResponse extends AcsResponse {
 
 		private String expiredTime;
 
+		private String resourceGroupId;
+
 		private List<OperationLock> operationLocks;
 
 		private List<Tag> tags;
@@ -333,6 +335,14 @@ public class DescribeDisksResponse extends AcsResponse {
 
 		public void setExpiredTime(String expiredTime) {
 			this.expiredTime = expiredTime;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
 		}
 
 		public List<OperationLock> getOperationLocks() {

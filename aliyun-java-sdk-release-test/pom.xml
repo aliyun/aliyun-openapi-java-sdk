@@ -3,7 +3,7 @@
   <groupId>com.aliyun</groupId>
   <artifactId>aliyun-java-sdk-release-test</artifactId>
   <packaging>jar</packaging>
-  <version>1.1.5</version>
+  <version>0.0.1</version>
   <name>aliyun-java-sdk-release-test</name>
   <url>http://www.aliyun.com</url>
   <description>Aliyun Open API SDK for Java

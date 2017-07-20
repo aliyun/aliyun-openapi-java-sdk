@@ -52,6 +52,8 @@ public class DescribeDisksRequest extends RpcAcsRequest<DescribeDisksResponse> {
 
 	private Boolean deleteAutoSnapshot;
 
+	private String resourceGroupId;
+
 	private String diskChargeType;
 
 	private String lockReason;
@@ -220,6 +222,17 @@ public class DescribeDisksRequest extends RpcAcsRequest<DescribeDisksResponse> {
 		this.deleteAutoSnapshot = deleteAutoSnapshot;
 		if(deleteAutoSnapshot != null){
 			putQueryParameter("DeleteAutoSnapshot", deleteAutoSnapshot.toString());
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

@@ -74,6 +74,7 @@ public class DescribeInstancesResponseUnmarshaller {
 			instance.setGPUAmount(context.integerValue("DescribeInstancesResponse.Instances["+ i +"].GPUAmount"));
 			instance.setGPUSpec(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].GPUSpec"));
 			instance.setSpotStrategy(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].SpotStrategy"));
+			instance.setResourceGroupId(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].ResourceGroupId"));
 			instance.setKeyPairName(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].KeyPairName"));
 
 			List<String> securityGroupIds = new ArrayList<String>();

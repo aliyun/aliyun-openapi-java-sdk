@@ -145,6 +145,8 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		private String spotStrategy;
 
+		private String resourceGroupId;
+
 		private String keyPairName;
 
 		private List<LockReason> operationLocks;
@@ -417,6 +419,14 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		public void setSpotStrategy(String spotStrategy) {
 			this.spotStrategy = spotStrategy;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
 		}
 
 		public String getKeyPairName() {
