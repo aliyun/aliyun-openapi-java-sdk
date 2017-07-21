@@ -1,0 +1,3 @@
+2017-07-21 Version: 3.3.0
+1, StartInstance增加参数：InitLocalDisk。当取值true时，instance上所有的本地磁盘都会被重新初始化，所有数据都会丢失；同时instance会做迁移。当取值为false时，行为和以前没有变化。
+

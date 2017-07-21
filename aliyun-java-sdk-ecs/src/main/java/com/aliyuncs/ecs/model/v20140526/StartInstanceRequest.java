@@ -30,32 +30,27 @@ public class StartInstanceRequest extends RpcAcsRequest<StartInstanceResponse> {
 		super("Ecs", "2014-05-26", "StartInstance", "ecs");
 	}
 
-	private Long ownerId;
-
-	private String resourceOwnerAccount;
+	private Boolean initLocalDisk;
 
 	private Long resourceOwnerId;
 
 	private String instanceId;
 
+	private String resourceOwnerAccount;
+
 	private String ownerAccount;
 
-	public Long getOwnerId() {
-		return this.ownerId;
+	private Long ownerId;
+
+	public Boolean getInitLocalDisk() {
+		return this.initLocalDisk;
 	}
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	public void setInitLocalDisk(Boolean initLocalDisk) {
+		this.initLocalDisk = initLocalDisk;
+		if(initLocalDisk != null){
+			putQueryParameter("InitLocalDisk", initLocalDisk.toString());
+		}
 	}
 
 	public Long getResourceOwnerId() {
@@ -64,7 +59,9 @@ public class StartInstanceRequest extends RpcAcsRequest<StartInstanceResponse> {
 
 	public void setResourceOwnerId(Long resourceOwnerId) {
 		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", resourceOwnerId);
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
 	}
 
 	public String getInstanceId() {
@@ -73,7 +70,20 @@ public class StartInstanceRequest extends RpcAcsRequest<StartInstanceResponse> {
 
 	public void setInstanceId(String instanceId) {
 		this.instanceId = instanceId;
-		putQueryParameter("InstanceId", instanceId);
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
 	}
 
 	public String getOwnerAccount() {
@@ -82,7 +92,20 @@ public class StartInstanceRequest extends RpcAcsRequest<StartInstanceResponse> {
 
 	public void setOwnerAccount(String ownerAccount) {
 		this.ownerAccount = ownerAccount;
-		putQueryParameter("OwnerAccount", ownerAccount);
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
 	}
 
 	@Override
