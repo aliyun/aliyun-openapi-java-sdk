@@ -30,11 +30,7 @@ import com.aliyuncs.exceptions.ClientException;
 public class RegionsTest {
 
     @Test
-    public void test() {
-        testParseRegions();
-    }
-
-    private void testParseRegions() {
+    public void testParseRegions() {
         InternalEndpointsParser parser = new InternalEndpointsParser();
         Endpoint endpoint = null;
         try {
@@ -42,7 +38,7 @@ public class RegionsTest {
         } catch (ClientException e) {
             fail(e.toString());
         }
-        assertEquals("rds-cn-hangzhou.aliyuncs.com",
+        assertEquals("rds.aliyuncs.com",
             Endpoint.findProductDomain("cn-hangzhou", "Rds", Arrays.asList(endpoint)).getDomianName());
     }
 }

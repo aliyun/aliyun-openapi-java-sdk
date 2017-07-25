@@ -129,24 +129,6 @@ public class DefaultAcsClient implements IAcsClient {
     }
 
     @Override
-    public CommonResponse getCommonResponse(CommonRequest request)
-        throws ServerException, ClientException {
-        HttpResponse baseResponse = this.doAction(request);
-        String data;
-        try {
-            data = new String(baseResponse.getContent(), "utf-8");
-        } catch (UnsupportedEncodingException e) {
-            throw new ClientException("SDK.CommonResponseEncodingError",
-                "CommonResponse Encoding UnsupportedEncodingException.");
-        }
-        CommonResponse response = new CommonResponse();
-        response.setData(data);
-        response.setHttpResponse(baseResponse);
-
-        return response;
-    }
-
-    @Override
     public <T extends AcsResponse> HttpResponse doAction(AcsRequest<T> request, boolean autoRetry,
                                                          int maxRetryCounts, IClientProfile profile)
         throws ClientException, ServerException {
@@ -176,7 +158,7 @@ public class DefaultAcsClient implements IAcsClient {
     private <T extends AcsResponse> T parseAcsResponse(Class<T> clasz, HttpResponse baseResponse)
         throws ServerException, ClientException {
 
-        FormatType format = baseResponse.getContentType();
+        FormatType format = baseResponse.getHttpContentType();
 
         if (baseResponse.isSuccess()) {
             return readResponse(clasz, baseResponse, format);
@@ -243,8 +225,14 @@ public class DefaultAcsClient implements IAcsClient {
         } catch (Exception e) {
             throw new ClientException("SDK.InvalidResponseClass", "Unable to allocate " + clasz.getName() + " class");
         }
+        
         String responseEndpoint = clasz.getName().substring(clasz.getName().lastIndexOf(".") + 1);
-        context.setResponseMap(reader.read(stringContent, responseEndpoint));
+        if (response.checkShowJsonItemName()) {
+            context.setResponseMap(reader.read(stringContent, responseEndpoint));
+        } else {
+            context.setResponseMap(reader.readForHideArrayItem(stringContent, responseEndpoint)); 
+        }
+        
         context.setHttpResponse(httpResponse);
         response.getInstance(context);
         return response;
@@ -254,9 +242,9 @@ public class DefaultAcsClient implements IAcsClient {
         String stringContent = null;
         try {
             if (null == httpResponse.getEncoding()) {
-                stringContent = new String(httpResponse.getContent());
+                stringContent = new String(httpResponse.getHttpContent());
             } else {
-                stringContent = new String(httpResponse.getContent(), httpResponse.getEncoding());
+                stringContent = new String(httpResponse.getHttpContent(), httpResponse.getEncoding());
             }
         } catch (UnsupportedEncodingException exp) {
             throw new ClientException("SDK.UnsupportedEncoding",

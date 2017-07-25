@@ -16,15 +16,26 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package com.aliyuncs.reader;
+package com.aliyuncs.ft.model.v20160102;
 
-import java.util.Map;
+import com.aliyuncs.RoaAcsRequest;
+import com.aliyuncs.http.MethodType;
 
-import com.aliyuncs.exceptions.ClientException;
+/**
+ * @author auto create
+ * @version 
+ */
+public class TestRoaApiRequest extends RoaAcsRequest<TestRoaApiResponse> {
+	
+	public TestRoaApiRequest() {
+		super("Ft", "2016-01-02", "TestRoaApi");
+		setUriPattern("/web/cloudapi");
+		setMethod(MethodType.PUT);
+	}
 
-public interface Reader {
+	@Override
+	public Class<TestRoaApiResponse> getResponseClass() {
+		return TestRoaApiResponse.class;
+	}
 
-    public Map<String, String> read(String response, String endpoint) throws ClientException;
-    
-    public Map<String, String> readForHideArrayItem(String response, String endpoint) throws ClientException;
 }

@@ -48,6 +48,10 @@ public class XmlReader implements Reader {
         }
         return map;
     }
+    
+    public Map<String, String> readForHideArrayItem(String response, String endpoint) throws ClientException {
+        return  read(response, endpoint);
+    }
 
     private void read(Element element, String path, boolean appendPath) {
         path = buildPath(element, path, appendPath);

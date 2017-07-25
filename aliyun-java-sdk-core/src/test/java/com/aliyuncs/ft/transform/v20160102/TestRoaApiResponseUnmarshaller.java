@@ -16,15 +16,17 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package com.aliyuncs.reader;
+package com.aliyuncs.ft.transform.v20160102;
 
-import java.util.Map;
+import com.aliyuncs.ft.model.v20160102.TestRoaApiResponse;
+import com.aliyuncs.transform.UnmarshallerContext;
 
-import com.aliyuncs.exceptions.ClientException;
 
-public interface Reader {
+public class TestRoaApiResponseUnmarshaller {
 
-    public Map<String, String> read(String response, String endpoint) throws ClientException;
-    
-    public Map<String, String> readForHideArrayItem(String response, String endpoint) throws ClientException;
+	public static TestRoaApiResponse unmarshall(TestRoaApiResponse testRoaApiResponse, UnmarshallerContext context) {
+		
+	 
+	 	return testRoaApiResponse;
+	}
 }

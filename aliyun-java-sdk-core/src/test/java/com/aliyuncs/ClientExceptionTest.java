@@ -18,8 +18,12 @@
  */
 package com.aliyuncs;
 
+import java.io.UnsupportedEncodingException;
+
 import static org.junit.Assert.*;
 
+import com.aliyuncs.http.HttpResponse;
+import org.junit.FixMethodOrder;
 import org.junit.Test;
 
 import com.aliyuncs.auth.Credential;
@@ -28,18 +32,13 @@ import com.aliyuncs.ecs.v20140526.model.DescribeRegionsRequest;
 import com.aliyuncs.exceptions.ClientException;
 import com.aliyuncs.exceptions.ServerException;
 import com.aliyuncs.profile.DefaultProfile;
+import org.junit.runners.MethodSorters;
 
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class ClientExceptionTest extends BaseTest {
 
-    @Test
-    public void test() {
-        testMissingProfile();
-        testRegionId();
-        testServerUnreachable();
-        testExceptionRequstId();
-    }
-
-    private void testMissingProfile() {
+    @Test(expected = ClientException.class)
+    public void test1_InvalidProfile() throws ClientException {
         DefaultAcsClient client = new DefaultAcsClient(null);
         AcsRequest request = new DescribeRegionsRequest();
 
@@ -49,42 +48,68 @@ public class ClientExceptionTest extends BaseTest {
             fail(e.toString());
         } catch (ClientException e) {
             assertEquals("SDK.InvalidProfile", e.getErrCode());
+            throw e;
         }
     }
 
-    private void testRegionId() {
+    @Test(expected = ClientException.class)
+    public void test2_InvalidRegionId() throws ClientException {
         DefaultAcsClient client = new DefaultAcsClient(DefaultProfile.getProfile());
         AcsRequest request = new DescribeRegionsRequest();
 
         try {
-            client.doAction(request, "cn-lizuhe", new Credential("testid", "testsecret"));
+            client.doAction(request, "cn-invalid-region", new Credential("testid", "testsecret"));
         } catch (ServerException e) {
             fail(e.toString());
         } catch (ClientException e) {
             assertEquals("SDK.InvalidRegionId", e.getErrCode());
+            throw e;
         }
     }
 
-    private void testServerUnreachable() {
+    @Test
+    public void test3_InvalidAccessKeyId() throws ClientException {
         DefaultAcsClient client = new DefaultAcsClient(DefaultProfile.getProfile());
         AcsRequest request = new DescribeRegionsRequest();
 
         try {
-            client.doAction(request, "cn-beijing", new Credential("testid", "testsecret"));
-        } catch (ServerException e) {
+            HttpResponse response = client.doAction(request, "cn-beijing", new Credential("testid", "testsecret"));
+            assertNotNull(response);
+            assertEquals(404, response.getStatus());
+            assertTrue(new String(response.getHttpContent(), "UTF-8").contains("<Code>InvalidAccessKeyId.NotFound</Code>"));
+        } catch (Exception e) {
             fail(e.toString());
-        } catch (ClientException e) {
-            assertEquals("SDK.ServerUnreachable", e.getErrCode());
         }
     }
 
-    private void testExceptionRequstId() {
+    @Test(expected = ClientException.class)
+    public void test4_RequestIdNotNull() throws ClientException {
         AcsRequest request = new CreateInstanceRequest();
         try {
             client.getAcsResponse(request);
         } catch (ClientException e) {
             assertNotNull(e.getRequestId());
+            throw e;
         }
 
+    }
+
+    @Test(expected = ClientException.class)
+    public void test5_ServerUnreachable() throws ClientException {
+        DefaultAcsClient client = new DefaultAcsClient(DefaultProfile.getProfile());
+        AcsRequest request = new DescribeRegionsRequest();
+
+        try {
+            DefaultProfile.addEndpoint("cn-hangzhou", "cn-beijing", "Ecs", "unreachable.aliyuncs.com");
+            HttpResponse response = client.doAction(request, "cn-beijing", new Credential("testid", "testsecret"));
+        } catch (ClientException e) {
+            assertEquals("SDK.ServerUnreachable", e.getErrCode());
+            throw e;
+        } catch (Exception e){
+            fail(e.toString());
+        } finally {
+            // restore
+            DefaultProfile.addEndpoint("cn-hangzhou", "cn-beijing", "Ecs", "ecs-cn-hangzhou.aliyuncs.com");
+        }
     }
 }

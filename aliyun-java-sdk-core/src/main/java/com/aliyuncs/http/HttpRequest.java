@@ -21,7 +21,6 @@ package com.aliyuncs.http;
 import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.security.NoSuchAlgorithmException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Collections;
@@ -37,8 +36,8 @@ public class HttpRequest {
 
     private String url = null;
     private MethodType method = null;
-    protected FormatType contentType = null;
-    protected byte[] content = null;
+    protected FormatType httpContentType = null;
+    protected byte[] httpContent = null;
     protected String encoding = null;
     protected Map<String, String> headers = null;
     protected Integer connectTimeout = null;
@@ -73,14 +72,14 @@ public class HttpRequest {
         this.encoding = encoding;
     }
 
-    public FormatType getContentType() {
-        return contentType;
+    public FormatType getHttpContentType() {
+        return httpContentType;
     }
 
-    public void setContentType(FormatType contentType) {
-        this.contentType = contentType;
-        if (null != this.content || null != contentType) {
-            this.headers.put(CONTENT_TYPE, getContentTypeValue(this.contentType, this.encoding));
+    public void setHttpContentType(FormatType httpContentType) {
+        this.httpContentType = httpContentType;
+        if (null != this.httpContent || null != httpContentType) {
+            this.headers.put(CONTENT_TYPE, getContentTypeValue(this.httpContentType, this.encoding));
         } else {
             this.headers.remove(CONTENT_TYPE);
         }
@@ -94,8 +93,8 @@ public class HttpRequest {
         this.method = method;
     }
 
-    public byte[] getContent() {
-        return content;
+    public byte[] getHttpContent() {
+        return httpContent;
     }
 
     public String getHeaderValue(String name) {
@@ -122,29 +121,29 @@ public class HttpRequest {
         if (null != name && null != value) { this.headers.put(name, value); }
     }
 
-    public void setContent(byte[] content, String encoding, FormatType format) {
+    public void setHttpContent(byte[] content, String encoding, FormatType format) {
 
         if (null == content) {
             this.headers.remove(CONTENT_MD5);
             this.headers.put(CONTENT_LENGTH, "0");
             this.headers.remove(CONTENT_TYPE);
-            this.contentType = null;
-            this.content = null;
+            this.httpContentType = null;
+            this.httpContent = null;
             this.encoding = null;
             return;
         }
-        this.content = content;
+        this.httpContent = content;
         this.encoding = encoding;
         String contentLen = String.valueOf(content.length);
         String strMd5 = ParameterHelper.md5Sum(content);
         if (null != format) {
-            this.contentType = format;
+            this.httpContentType = format;
         } else {
-            this.contentType = FormatType.RAW;
+            this.httpContentType = FormatType.RAW;
         }
         this.headers.put(CONTENT_MD5, strMd5);
         this.headers.put(CONTENT_LENGTH, contentLen);
-        this.headers.put(CONTENT_TYPE, getContentTypeValue(contentType, encoding));
+        this.headers.put(CONTENT_TYPE, getContentTypeValue(httpContentType, encoding));
     }
 
     public Map<String, String> getHeaders() {
@@ -159,7 +158,7 @@ public class HttpRequest {
         }
         URL url = null;
         String[] urlArray = null;
-        if (MethodType.POST.equals(this.method) && null == getContent()) {
+        if (MethodType.POST.equals(this.method) && null == getHttpContent()) {
             urlArray = strUrl.split("\\?");
             url = new URL(urlArray[0]);
         } else {
@@ -186,7 +185,7 @@ public class HttpRequest {
         if (null != getHeaderValue(CONTENT_TYPE)) {
             httpConn.setRequestProperty(CONTENT_TYPE, getHeaderValue(CONTENT_TYPE));
         } else {
-            String contentTypeValue = getContentTypeValue(contentType, encoding);
+            String contentTypeValue = getContentTypeValue(httpContentType, encoding);
             if (null != contentTypeValue) {
                 httpConn.setRequestProperty(CONTENT_TYPE, contentTypeValue);
             }

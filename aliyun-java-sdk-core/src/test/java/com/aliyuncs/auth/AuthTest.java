@@ -36,13 +36,7 @@ import com.aliyuncs.regions.Endpoint;
 public class AuthTest {
 
     @Test
-    public void test() {
-        testRPCComposer();
-        testRoaComposer();
-        testHmac1();
-    }
-
-    private void testRPCComposer() {
+    public void testRPCComposer() {
         ISigner signer = new ShaHmac1();
         @SuppressWarnings("rawtypes")
         AcsRequest request = new DescribeRegionsRequest();
@@ -56,24 +50,21 @@ public class AuthTest {
         assertEquals(true, strToSign.endsWith("Version%3D2014-05-26"));
     }
 
-    private void testRoaComposer() {
+    @Test
+    public void testRoaComposer() {
         ISigner signer = new ShaHmac1();
         RoaAcsRequest request = new GetRegionsRequest();
 
         ISignatureComposer composer = RoaSignatureComposer.getComposer();
-        Map<String, String> immune = composer.refreshSignParameters(request.getHeaders(),
-            signer, "testid", FormatType.XML);
-        String strToSign = composer.composeStringToSign(
-            request.getMethod(), request.getUriPattern(), signer,
+        Map<String, String> immune = composer.refreshSignParameters(request.getHeaders(), signer, "testid", FormatType.XML);
+        String strToSign = composer.composeStringToSign(request.getMethod(), request.getUriPattern(), signer,
             request.getQueryParameters(), immune, request.getPathParameters());
-        assertEquals(0,
-            strToSign.indexOf("GET\napplication/xml\n\n\n"));
-        assertEquals(true,
-            strToSign.endsWith(
-                "\nx-acs-signature-method:HMAC-SHA1\nx-acs-signature-version:1.0\nx-acs-version:2015-01-01\n/"));
+        assertEquals(0, strToSign.indexOf("GET\napplication/xml\n"));
+        assertEquals(true, strToSign.endsWith("\nx-acs-signature-method:HMAC-SHA1\nx-acs-signature-version:1.0\nx-acs-version:2015-01-01\n/"));
     }
 
-    private void testHmac1() {
+    @Test
+    public void testHmac1() {
         ISigner signer = new ShaHmac1();
 
         String sign;

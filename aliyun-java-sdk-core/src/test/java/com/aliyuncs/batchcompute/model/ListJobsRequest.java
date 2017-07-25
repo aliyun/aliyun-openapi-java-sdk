@@ -40,8 +40,8 @@ public class ListJobsRequest extends RoaAcsRequest<ListJobsResponse> {
     }
 
     public void setContent(Job job) throws NoSuchAlgorithmException {
-        String c = "this is a content test";//convert job to json string
+        String c = "this is a httpContent test";//convert job to json string
 
-        super.setContent(c.getBytes(), super.getEncoding(), super.getAcceptFormat());
+        super.setHttpContent(c.getBytes(), super.getEncoding(), super.getAcceptFormat());
     }
 }

@@ -18,7 +18,10 @@
  */
 package com.aliyuncs.profile;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
@@ -37,6 +40,7 @@ import com.aliyuncs.regions.InternalEndpointsParser;
 import com.aliyuncs.regions.LocationConfig;
 import com.aliyuncs.regions.ProductDomain;
 import com.aliyuncs.regions.RemoteEndpointsParser;
+import com.aliyuncs.utils.CacheTimeHelper;
 
 public class DefaultProfile implements IClientProfile {
 
@@ -143,21 +147,6 @@ public class DefaultProfile implements IClientProfile {
         return endpoints;
     }
 
-    //    public synchronized List<Endpoint> getEndpoints(String product,String serviceCode, String endpointType)
-    // throws ClientException {
-    //        if (null == endpoints || Endpoint.findProductDomain(regionId, product, endpoints) == null) {
-    //            if(serviceCode!=null){
-    //                endpoints = remoteProvider.getEndpoints(regionId, serviceCode, endpointType, credential,
-    // locationConfig);
-    //            }
-    //            if (endpoints == null|| Endpoint.findProductDomain(regionId, product, endpoints) == null) {
-    //
-    //                endpoints = iendpoints.getEndpoints();
-    //            }
-    //        }
-    //        return endpoints;
-    //    }
-
     @Override
     public synchronized List<Endpoint> getEndpoints(String product, String regionId, String serviceCode,
                                                     String endpointType) throws ClientException {
@@ -174,7 +163,7 @@ public class DefaultProfile implements IClientProfile {
                 endpoints = new ArrayList<Endpoint>();
                 endpoints.add(endpoint);
             }
-        } else if (Endpoint.findProductDomain(regionId, product, endpoints) == null) {
+        } else if (Endpoint.findProductDomain(regionId, product, endpoints) == null || CacheTimeHelper.CheckEndPointCacheIsExpire(product, regionId)) {
             Endpoint endpoint = null;
             if (serviceCode != null) {
                 endpoint = remoteProvider.getEndpoint(regionId, product, serviceCode, endpointType,
@@ -186,7 +175,7 @@ public class DefaultProfile implements IClientProfile {
             if (endpoint != null) {
                 for (String region : endpoint.getRegionIds()) {
                     for (ProductDomain productDomain : endpoint.getProductDomains()) {
-                        addEndpoint(endpoint.getName(), region, product, productDomain.getDomianName());
+                        addEndpoint(endpoint.getName(), region, product, productDomain.getDomianName(), false);
                     }
                 }
             }
@@ -259,6 +248,11 @@ public class DefaultProfile implements IClientProfile {
 
     public synchronized static void addEndpoint(String endpointName, String regionId, String product, String domain)
         throws ClientException {
+        addEndpoint(endpointName, regionId, product, domain, true);
+    }
+    
+    public synchronized static void addEndpoint(String endpointName, String regionId, String product, String domain, boolean isNeverExpire)
+            throws ClientException {
         if (null == endpoints) {
             endpoints = getProfile().getEndpoints(regionId, product);
         }
@@ -268,6 +262,11 @@ public class DefaultProfile implements IClientProfile {
         } else {
             updateEndpoint(regionId, product, domain, endpoint);
         }
+
+        if (isNeverExpire) {
+            Date date = new Date(32472115200000L);
+            CacheTimeHelper.addLastClearTimePerProduct(product, regionId, date);
+        }       
     }
 
     private static void addEndpoint_(String endpointName, String regionId, String product, String domain) {
@@ -316,6 +315,10 @@ public class DefaultProfile implements IClientProfile {
             }
         }
         return null;
+    }
+    
+    public void mockRemoteProvider(IEndpointsProvider remoteProvider) {
+        this.remoteProvider = remoteProvider;
     }
 
 }

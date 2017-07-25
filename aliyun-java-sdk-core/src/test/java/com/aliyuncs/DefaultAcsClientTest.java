@@ -22,7 +22,11 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.security.NoSuchAlgorithmException;
 
+import com.aliyuncs.auth.Credential;
+import com.aliyuncs.ft.model.v20160102.TestRoaApiRequest;
+import com.aliyuncs.ft.model.v20160102.TestRoaApiResponse;
 import com.aliyuncs.http.HttpRequest;
+import com.aliyuncs.profile.DefaultProfile;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -36,7 +40,6 @@ import com.aliyuncs.exceptions.ClientException;
 import com.aliyuncs.exceptions.ServerException;
 import com.aliyuncs.http.FormatType;
 import com.aliyuncs.http.HttpResponse;
-import com.aliyuncs.profile.DefaultProfile;
 
 public class DefaultAcsClientTest extends BaseTest {
 
@@ -68,11 +71,11 @@ public class DefaultAcsClientTest extends BaseTest {
 
     @Test
     public void getAcsResponse_ROA_Test() throws ServerException, ClientException, NoSuchAlgorithmException {
-        ListJobsRequest listJobsRequest = new ListJobsRequest();
-        Job job = new Job();
-        //listJobsRequest.setContent(job);
-        ListJobsResponse listJobsResponse = client.getAcsResponse(listJobsRequest);
-        Assert.assertNotNull(listJobsResponse.getRequestId());
+        DefaultProfile.addEndpoint("cn-hangzhou", "cn-hangzhou", "Ft", "ft.aliyuncs.com");
+        TestRoaApiRequest request = new TestRoaApiRequest();
+        request.setHttpContentType(FormatType.JSON);
+        TestRoaApiResponse response = client.getAcsResponse(request, "cn-hangzhou", dailyEnvCredentail);
+        Assert.assertNotNull(response);
     }
 
     @Test
@@ -83,7 +86,7 @@ public class DefaultAcsClientTest extends BaseTest {
                 = "{\"RequestId\":\"AFDB32E4-6CD3-402E-A5C5-695F05D3ED0A\",\"HostId\":\"ecs.aliyuncs.com\","
                 + "\"Code\":\"MissingParameter\",\"Message\":\"An input parameter ImageId that is mandatory for "
                 + "processing the request is not supplied.\"}";
-            httpResponse.setContent(json.getBytes(), "UTF-8", FormatType.JSON);
+            httpResponse.setHttpContent(json.getBytes(), "UTF-8", FormatType.JSON);
             Method method = DefaultAcsClient.class.getDeclaredMethod("readError", HttpResponse.class, FormatType.class);
             method.setAccessible(true);
             AcsError acsError = (AcsError)method.invoke(client, httpResponse, FormatType.JSON);
@@ -112,7 +115,7 @@ public class DefaultAcsClientTest extends BaseTest {
             = "{\"RequestId\":\"AFDB32E4-6CD3-402E-A5C5-695F05D3ED0A\",\"HostId\":\"ecs.aliyuncs.com\","
             + "\"Code\":\"MissingParameter\",\"Message\":\"An input parameter ImageId that is mandatory for "
             + "processing the request is not supplied.\"}";
-        httpResponse.setContent(json.getBytes(), "UTF-8", FormatType.JSON);
+        httpResponse.setHttpContent(json.getBytes(), "UTF-8", FormatType.JSON);
         DescribeRegionsRequest describeRegionsRequest = new DescribeRegionsRequest();
         try {
             httpResponse.setStatus(310);

@@ -1182,7 +1182,7 @@
             </Product>
             <Product>
                 <ProductName>Iot</ProductName>
-                <DomainName>iot.aliyuncs.com</DomainName>
+                <DomainName>iot.cn-shanghai.aliyuncs.com</DomainName>
             </Product>
             <Product>
                 <ProductName>Bss</ProductName>
@@ -2547,6 +2547,10 @@
             <Product>
                 <ProductName>YundunDdos</ProductName>
                 <DomainName>inner-yundun-ddos.cn-hangzhou.aliyuncs.com</DomainName>
+            </Product>
+            <Product>
+                <ProductName>connect</ProductName>
+                <DomainName>connect.aliyuncs.com</DomainName>
             </Product>
         </Products>
     </Endpoint>

@@ -16,15 +16,20 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package com.aliyuncs.reader;
+package com.aliyuncs.ft.model.v20160102;
 
-import java.util.Map;
+import com.aliyuncs.AcsResponse;
+import com.aliyuncs.ft.transform.v20160102.TestRoaApiResponseUnmarshaller;
+import com.aliyuncs.transform.UnmarshallerContext;
 
-import com.aliyuncs.exceptions.ClientException;
+/**
+ * @author auto create
+ * @version 
+ */
+public class TestRoaApiResponse extends AcsResponse {
 
-public interface Reader {
-
-    public Map<String, String> read(String response, String endpoint) throws ClientException;
-    
-    public Map<String, String> readForHideArrayItem(String response, String endpoint) throws ClientException;
+	@Override
+	public TestRoaApiResponse getInstance(UnmarshallerContext context) {
+		return	TestRoaApiResponseUnmarshaller.unmarshall(this, context);
+	}
 }

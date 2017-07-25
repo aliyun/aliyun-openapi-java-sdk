@@ -49,7 +49,7 @@ public class DescribeEndpointServiceImpl implements DescribeEndpointService {
             HttpRequest httpRequest = request.signRequest(signer, credential, FormatType.JSON, domain);
             HttpResponse httpResponse = HttpResponse.getResponse(httpRequest);
             if (httpResponse.isSuccess()) {
-                String data = new String(httpResponse.getContent(), "utf-8");
+                String data = new String(httpResponse.getHttpContent(), "utf-8");
                 DescribeEndpointResponse response = getEndpointResponse(data, endpointType);
                 if (response == null || isEmpty(response.getEndpoint())) {
                     return null;
@@ -111,9 +111,9 @@ public class DescribeEndpointServiceImpl implements DescribeEndpointService {
         String stringContent = null;
         try {
             if (null == httpResponse.getEncoding()) {
-                stringContent = new String(httpResponse.getContent());
+                stringContent = new String(httpResponse.getHttpContent());
             } else {
-                stringContent = new String(httpResponse.getContent(), httpResponse.getEncoding());
+                stringContent = new String(httpResponse.getHttpContent(), httpResponse.getEncoding());
             }
         } catch (UnsupportedEncodingException exp) {
             throw new ClientException("SDK.UnsupportedEncoding",

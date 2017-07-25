@@ -56,6 +56,10 @@ public class JsonReader implements Reader {
     public Map<String, String> read(String response, String endpoint) {
         return read(new StringCharacterIterator(response), endpoint, FIRST_POSITION);
     }
+    
+    public Map<String, String> readForHideArrayItem(String response, String endpoint) {
+        return readForHideItem(new StringCharacterIterator(response), endpoint, FIRST_POSITION);
+    }
 
     public Map<String, String> read(CharacterIterator ci, String endpoint, int start) {
         ct = ci;
@@ -71,6 +75,23 @@ public class JsonReader implements Reader {
                 break;
         }
         readJson(endpoint);
+        return map;
+    }
+    
+    public Map<String, String> readForHideItem(CharacterIterator ci, String endpoint, int start) {
+        ct = ci;
+        switch (start) {
+            case FIRST_POSITION:
+                c = ct.first();
+                break;
+            case CURRENT_POSITION:
+                c = ct.current();
+                break;
+            case NEXT_POSITION:
+                c = ct.next();
+                break;
+        }
+        readJsonForHideItem(endpoint);
         return map;
     }
 
@@ -132,6 +153,65 @@ public class JsonReader implements Reader {
         }
         return token;
     }
+    
+    private Object readJsonForHideItem(String baseKey) {
+        skipWhiteSpace();
+        char ch = c;
+        nextChar();
+        switch (ch) {
+            case '{':
+                processObjectForHideItemName(baseKey);
+                break;
+            case '}':
+                token = OBJECT_END_TOKEN;
+                break;
+            case '[':
+                if (c == '"') {
+                    processList(baseKey);
+                    break;
+                } else {
+                    processArrayForHideItem(baseKey);
+                    break;
+                }
+            case ']':
+                token = ARRAY_END_TOKEN;
+                break;
+            case '"':
+                token = processString();
+                break;
+            case ',':
+                token = COMMA_TOKEN;
+                break;
+            case ':':
+                token = COLON_TOKEN;
+                break;
+            case 't':
+                nextChar();
+                nextChar();
+                nextChar();
+                token = Boolean.TRUE;
+                break;
+            case 'n':
+                nextChar();
+                nextChar();
+                nextChar();
+                token = null;
+                break;
+            case 'f':
+                nextChar();
+                nextChar();
+                nextChar();
+                nextChar();
+                token = Boolean.FALSE;
+                break;
+            default:
+                c = ct.previous();
+                if (Character.isDigit(c) || c == '-') {
+                    token = processNumber();
+                }
+        }
+        return token;
+    }
 
     private void processObject(String baseKey) {
         String key = baseKey + "." + readJson(baseKey);
@@ -139,6 +219,24 @@ public class JsonReader implements Reader {
             readJson(key);
             if (token != OBJECT_END_TOKEN) {
                 Object object = readJson(key);
+                if (object instanceof String || object instanceof Number || object instanceof Boolean) {
+                    map.put(key, String.valueOf(object));
+                }
+
+                if (readJson(key) == COMMA_TOKEN) {
+                    key = String.valueOf(readJson(key));
+                    key = baseKey + "." + key;
+                }
+            }
+        }
+    }
+    
+    private void processObjectForHideItemName(String baseKey) {
+        String key = baseKey + "." + readJsonForHideItem(baseKey);
+        while (token != OBJECT_END_TOKEN) {
+            readJsonForHideItem(key);
+            if (token != OBJECT_END_TOKEN) {
+                Object object = readJsonForHideItem(key);
                 if (object instanceof String || object instanceof Number || object instanceof Boolean) {
                     map.put(key, String.valueOf(object));
                 }
@@ -167,6 +265,24 @@ public class JsonReader implements Reader {
     private void processArray(String baseKey) {
         int index = 0;
         String preKey = baseKey.substring(0, baseKey.lastIndexOf("."));
+        String key = preKey + "[" + index + "]";
+        Object value = readJson(key);
+
+        while (token != ARRAY_END_TOKEN) {
+            map.put(preKey + ".Length", String.valueOf(index + 1));
+            if (value instanceof String) {
+                map.put(key, String.valueOf(value));
+            }
+            if (readJson(baseKey) == COMMA_TOKEN) {
+                key = preKey + "[" + (++index) + "]";
+                value = readJson(key);
+            }
+        }
+    }
+    
+    private void processArrayForHideItem(String baseKey) {
+        int index = 0;
+        String preKey = baseKey;
         String key = preKey + "[" + index + "]";
         Object value = readJson(key);
 

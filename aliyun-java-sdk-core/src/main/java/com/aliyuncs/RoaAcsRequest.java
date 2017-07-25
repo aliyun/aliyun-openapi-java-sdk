@@ -74,7 +74,7 @@ public abstract class RoaAcsRequest<T extends AcsResponse> extends AcsRequest<T>
 
     private void initialize() {
         this.composer = RoaSignatureComposer.getComposer();
-        this.setContent(new byte[0], "utf-8", FormatType.RAW);
+        this.setHttpContent(new byte[0], "utf-8", FormatType.RAW);
     }
 
     @Override
@@ -140,6 +140,9 @@ public abstract class RoaAcsRequest<T extends AcsResponse> extends AcsRequest<T>
             String accessKeyId = credential.getAccessKeyId();
             String accessSecret = credential.getAccessSecret();
             imutableMap = this.composer.refreshSignParameters(this.getHeaders(), signer, accessKeyId, format);
+            if (null != credential.getSecurityToken()) {
+                imutableMap.put("SecurityToken", credential.getSecurityToken()); 
+            } 
             String strToSign = this.composer.composeStringToSign(this.getMethod(), this.getUriPattern(), signer,
                 this.getQueryParameters(), imutableMap, this.getPathParameters());
             String signature = signer.signString(strToSign, accessSecret);

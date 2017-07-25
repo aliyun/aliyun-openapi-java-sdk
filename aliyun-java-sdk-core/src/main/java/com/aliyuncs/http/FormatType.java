@@ -33,7 +33,8 @@ public enum FormatType {
     public static FormatType mapAcceptToFormat(String accept) {
         if (accept.toLowerCase().equals("application/xml") ||
             accept.toLowerCase().equals("text/xml")) { return FormatType.XML; }
-        if (accept.toLowerCase().equals("application/json")) { return FormatType.JSON; }
+        if (accept.toLowerCase().equals("application/json") ||
+            accept.toLowerCase().equals("text/json")) { return FormatType.JSON; }
 
         return FormatType.RAW;
     }

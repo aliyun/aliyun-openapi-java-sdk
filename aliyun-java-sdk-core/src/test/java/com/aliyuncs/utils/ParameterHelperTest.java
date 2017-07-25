@@ -57,7 +57,6 @@ public class ParameterHelperTest {
         Assert.assertEquals(3, calendar.get(Calendar.HOUR));
         Assert.assertEquals(01, calendar.get(Calendar.MINUTE));
         Assert.assertEquals(18, calendar.get(Calendar.SECOND));
-        System.out.println(ParameterHelper.getRFC2616Date(date));
         Assert.assertTrue(rfc2616Date.equals(ParameterHelper.getRFC2616Date(date)));
     }
 

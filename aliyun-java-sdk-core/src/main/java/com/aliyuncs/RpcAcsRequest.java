@@ -117,6 +117,9 @@ public abstract class RpcAcsRequest<T extends AcsResponse> extends AcsRequest<T>
         if (null != signer && null != credential) {
             String accessKeyId = credential.getAccessKeyId();
             String accessSecret = credential.getAccessSecret();
+            if (null != credential.getSecurityToken()) {
+                this.putQueryParameter("SecurityToken", credential.getSecurityToken()); 
+            }           
             imutableMap = this.composer.refreshSignParameters(this.getQueryParameters(), signer, accessKeyId, format);
             imutableMap.put("RegionId", getRegionId());
             String strToSign = this.composer.composeStringToSign(this.getMethod(), null, signer, imutableMap, null,

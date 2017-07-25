@@ -69,5 +69,4 @@ public interface IAcsClient {
                                                          List<Endpoint> endpoints)
         throws ClientException, ServerException;
 
-    public CommonResponse getCommonResponse(CommonRequest request) throws ServerException, ClientException;
 }

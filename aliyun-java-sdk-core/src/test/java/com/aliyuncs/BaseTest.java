@@ -24,6 +24,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
+import com.aliyuncs.auth.Credential;
 import org.junit.Before;
 
 import com.aliyuncs.profile.DefaultProfile;
@@ -32,6 +33,8 @@ import com.aliyuncs.profile.IClientProfile;
 public class BaseTest {
 
     protected IAcsClient client = null;
+
+    protected Credential dailyEnvCredentail = null;
 
     private static final String SETTINGS_FILE_NAME =
         System.getProperty("user.home") +
@@ -44,6 +47,8 @@ public class BaseTest {
         IClientProfile profile = DefaultProfile.getProfile("cn-hangzhou", properties.getProperty("accessKeyId"),
             properties.getProperty("accessSecret"));
         client = new DefaultAcsClient(profile);
+
+        dailyEnvCredentail = new Credential(properties.getProperty("daily_accessKeyId"), properties.getProperty("daily_accessSecret"));
 
         System.setProperty("http.proxyHost", "127.0.0.1");
         System.setProperty("http.proxyPort", "8888");

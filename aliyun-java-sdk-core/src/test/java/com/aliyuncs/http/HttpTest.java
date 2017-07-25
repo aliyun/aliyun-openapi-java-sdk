@@ -21,7 +21,6 @@ package com.aliyuncs.http;
 import static org.junit.Assert.*;
 
 import java.io.IOException;
-import java.security.NoSuchAlgorithmException;
 
 import org.junit.Test;
 
@@ -40,7 +39,7 @@ public class HttpTest {
         try {
             X509TrustAll.ignoreSSLCertificate();
             HttpResponse response = HttpResponse.getResponse(request);
-            String strResult = new String(response.getContent(), response.getEncoding());
+            String strResult = new String(response.getHttpContent(), response.getEncoding());
             assertEquals(400, response.getStatus());
             assertNotNull(strResult);
         } catch (IOException e) {
@@ -56,7 +55,7 @@ public class HttpTest {
         request.setMethod(MethodType.GET);
         try {
             HttpResponse response = HttpResponse.getResponse(request);
-            String strResult = new String(response.getContent(), response.getEncoding());
+            String strResult = new String(response.getHttpContent(), response.getEncoding());
             assertEquals(400, response.getStatus());
             assertNotNull(strResult);
         } catch (IOException e) {
@@ -70,9 +69,9 @@ public class HttpTest {
         HttpRequest request = new HttpRequest("http://acs.aliyun-inc.com/");
         request.setMethod(MethodType.PUT);
         try {
-            request.setContent(content.getBytes("UTF-8"), "UTF-8", FormatType.XML);
+            request.setHttpContent(content.getBytes("UTF-8"), "UTF-8", FormatType.XML);
             HttpResponse response = HttpResponse.getResponse(request);
-            String strResult = new String(response.getContent(), response.getEncoding());
+            String strResult = new String(response.getHttpContent(), response.getEncoding());
             assertEquals(400, response.getStatus());
             assertNotNull(strResult);
         } catch (IOException e) {

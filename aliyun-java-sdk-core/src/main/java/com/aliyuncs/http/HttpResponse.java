@@ -39,10 +39,10 @@ public class HttpResponse extends HttpRequest {
     }
 
     @Override
-    public void setContent(byte[] content, String encoding, FormatType format) {
-        this.content = content;
+    public void setHttpContent(byte[] content, String encoding, FormatType format) {
+        this.httpContent = content;
         this.encoding = encoding;
-        this.contentType = format;
+        this.httpContentType = format;
     }
 
     @Override
@@ -91,15 +91,15 @@ public class HttpResponse extends HttpRequest {
         if (null != buff && null != type) {
             response.setEncoding("UTF-8");
             String[] split = type.split(";");
-            response.setContentType(FormatType.mapAcceptToFormat(split[0].trim()));
+            response.setHttpContentType(FormatType.mapAcceptToFormat(split[0].trim()));
             if (split.length > 1 && split[1].contains("=")) {
                 String[] codings = split[1].split("=");
                 response.setEncoding(codings[1].trim().toUpperCase());
             }
         }
         response.setStatus(httpConn.getResponseCode());
-        response.setContent(buff, response.getEncoding(),
-            response.getContentType());
+        response.setHttpContent(buff, response.getEncoding(),
+            response.getHttpContentType());
     }
 
     public static HttpResponse getResponse(HttpRequest request) throws IOException {
@@ -110,9 +110,9 @@ public class HttpResponse extends HttpRequest {
 
         try {
             httpConn.connect();
-            if (null != request.getContent() && request.getContent().length > 0) {
+            if (null != request.getHttpContent() && request.getHttpContent().length > 0) {
                 out = httpConn.getOutputStream();
-                out.write(request.getContent());
+                out.write(request.getHttpContent());
             }
             content = httpConn.getInputStream();
             response = new HttpResponse(httpConn.getURL().toString());

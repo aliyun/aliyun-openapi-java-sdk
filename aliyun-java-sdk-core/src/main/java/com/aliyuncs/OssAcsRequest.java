@@ -94,7 +94,7 @@ public abstract class OssAcsRequest<T extends AcsResponse>
         HttpRequest request = new HttpRequest(
             this.composeUrl(domain.getDomianName(), this.getQueryParameters()), imutableMap);
         request.setMethod(this.getMethod());
-        request.setContent(this.getContent(), this.getEncoding(), this.getContentType());
+        request.setHttpContent(this.getHttpContent(), this.getEncoding(), this.getHttpContentType());
 
         return request;
     }

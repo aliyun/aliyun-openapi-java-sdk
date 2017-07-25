@@ -27,19 +27,18 @@ import java.util.List;
 import java.util.Set;
 
 import org.junit.Assert;
+import org.junit.FixMethodOrder;
 import org.junit.Test;
 
 import com.aliyuncs.regions.Endpoint;
 import com.aliyuncs.regions.ProductDomain;
+import org.junit.runners.MethodSorters;
 
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class DefaultProfileTest {
 
     @Test
-    public void test() {
-        testProfileCredential();
-    }
-
-    private void testProfileCredential() {
+    public void testProfileCredential() {
         IClientProfile iprofile = DefaultProfile.getProfile("cn-beijing", "testid", "testsecret");
         assertEquals("cn-beijing", iprofile.getRegionId());
         assertEquals("testid", iprofile.getCredential().getAccessKeyId());
@@ -47,7 +46,7 @@ public class DefaultProfileTest {
     }
 
     @Test
-    public void addEndpoint_Test() throws Exception {
+    public void testAddEndpoint() throws Exception {
         try {
             IClientProfile clientProfile = DefaultProfile.getProfile();
             clientProfile.getEndpoints("cn-beijing", "Rds");
@@ -93,7 +92,7 @@ public class DefaultProfileTest {
     }
 
     @Test
-    public void updateEndpointTest() {
+    public void testUpdateEndpoint() {
         try {
             Set<String> regions = new HashSet<String>();
 
@@ -130,11 +129,11 @@ public class DefaultProfileTest {
     }
 
     @Test
-    public void findEndpointByNameTest() {
+    public void testFindEndpointByName() {
         try {
-            DefaultProfile.addEndpoint("cn-hangzhou", "cn-hangzhou", "Ecs", "ecs.aliyuncs.com");
-            DefaultProfile.addEndpoint("cn-hangzhou", "cn-beijing", "Ecs", "ecs.aliyuncs.com");
-            DefaultProfile.addEndpoint("cn-hangzhou", "cn-shanghai", "Ecs", "ecs.aliyuncs.com");
+            DefaultProfile.addEndpoint("cn-hangzhou", "cn-hangzhou", "Ecs", "ecs-cn-hangzhou.aliyuncs.com");
+            DefaultProfile.addEndpoint("cn-hangzhou", "cn-beijing", "Ecs", "ecs-cn-hangzhou.aliyuncs.com");
+            DefaultProfile.addEndpoint("cn-hangzhou", "cn-shanghai", "Ecs", "ecs-cn-hangzhou.aliyuncs.com");
             Method method = DefaultProfile.class.getDeclaredMethod("findEndpointByRegionId", String.class);
             method.setAccessible(true);
 
@@ -147,7 +146,7 @@ public class DefaultProfileTest {
     }
 
     @Test
-    public void findProductDomainTest() {
+    public void testFindProductDomain() {
         try {
             List<ProductDomain> productDomains = new ArrayList<ProductDomain>();
             productDomains.add(new ProductDomain("Ecs", "ecs.aliyuncs.com"));

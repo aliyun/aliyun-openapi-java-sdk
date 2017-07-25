@@ -23,8 +23,15 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import javax.accessibility.AccessibleKeyBinding;
+
 import org.junit.Assert;
 import org.junit.Test;
+
+import com.aliyuncs.exceptions.ClientException;
+import com.aliyuncs.profile.DefaultProfile;
+import com.aliyuncs.profile.IClientProfile;
+import com.aliyuncs.reader.JsonReader;
 
 public class EndpointTest {
 
@@ -49,5 +56,53 @@ public class EndpointTest {
         Assert.assertNotNull(productDomain);
         Assert.assertTrue(product.equals(productDomain.getProductName()));
         Assert.assertTrue(domain.equals(productDomain.getDomianName()));
+    }
+    
+    @Test
+    public void getEndPointsByLocationTest() throws ClientException {
+        DefaultProfile profile = DefaultProfile.getProfile("cn-shanghai", "<your AK>", "<your Secret>");
+        profile.mockRemoteProvider(new MockRemoteEndpointsParser());
+        List<Endpoint> endpoints  = profile.getEndpoints("Ecs", "cn-shanghai", "ecs", "openAPI");
+        ProductDomain productDomain = Endpoint.findProductDomain("cn-shanghai", "Ecs", endpoints);
+        
+        Assert.assertTrue("Ecs".equals(productDomain.getProductName()));
+        Assert.assertTrue("ecs.cn-shanghai.aliyuncs.com".equals(productDomain.getDomianName()));
+    }
+    
+    @Test
+    public void getEndPointsByLocationAndAddEndPointTest() throws ClientException {
+        DefaultProfile.addEndpoint("cn-shanghai", "cn-shanghai", "Ecs", "ecs.cn-shanghai-a.aliyuncs.com");
+        
+        DefaultProfile profile = DefaultProfile.getProfile("cn-shanghai", "<your AK>", "<your Secret>");
+        profile.mockRemoteProvider(new MockRemoteEndpointsParser());
+        List<Endpoint> endpoints  = profile.getEndpoints("Ecs", "cn-shanghai", "ecs", "openAPI");
+        ProductDomain productDomain = Endpoint.findProductDomain("cn-shanghai", "Ecs", endpoints);
+        
+        Assert.assertTrue("Ecs".equals(productDomain.getProductName()));
+        Assert.assertTrue("ecs.cn-shanghai-a.aliyuncs.com".equals(productDomain.getDomianName()));
+    }
+    
+    @Test
+    public void getEndPointsTest() throws ClientException {
+        DefaultProfile profile = DefaultProfile.getProfile("cn-shanghai", "<your AK>", "<your Secret>");
+        profile.mockRemoteProvider(new MockRemoteEndpointsParser());
+        List<Endpoint> endpoints  = profile.getEndpoints("Ecs", "cn-shanghai", null, null);
+        ProductDomain productDomain = Endpoint.findProductDomain("cn-shanghai", "Ecs", endpoints);
+        
+        Assert.assertTrue("Ecs".equals(productDomain.getProductName()));
+        Assert.assertTrue("ecs-cn-hangzhou.aliyuncs.com".equals(productDomain.getDomianName()));
+    }
+    
+    @Test
+    public void getEndPointsByAddEndPointTest() throws ClientException {
+        DefaultProfile.addEndpoint("cn-shanghai", "cn-shanghai", "Ecs", "ecs.cn-shanghai-a.aliyuncs.com");
+        
+        DefaultProfile profile = DefaultProfile.getProfile("cn-shanghai", "<your AK>", "<your Secret>");
+        profile.mockRemoteProvider(new MockRemoteEndpointsParser());
+        List<Endpoint> endpoints  = profile.getEndpoints("Ecs", "cn-shanghai", null, null);
+        ProductDomain productDomain = Endpoint.findProductDomain("cn-shanghai", "Ecs", endpoints);
+        
+        Assert.assertTrue("Ecs".equals(productDomain.getProductName()));
+        Assert.assertTrue("ecs.cn-shanghai-a.aliyuncs.com".equals(productDomain.getDomianName()));
     }
 }
