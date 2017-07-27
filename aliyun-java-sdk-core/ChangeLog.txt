@@ -1,3 +1,7 @@
+2017-07-27 Version: 3.2.6
+1, 支持自动寻址，自动寻址endpoint缓存失效时间为1小时
+2, 手工调用addEndpoint方法添加endpoint优先级高于自动寻址
+
 2017-07-25 Version: 3.2.5
 1, 修改IoT套件在华东2个Region上的endpoint。
 
