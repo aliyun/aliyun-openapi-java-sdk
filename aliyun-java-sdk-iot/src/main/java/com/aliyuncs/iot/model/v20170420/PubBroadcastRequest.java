@@ -27,23 +27,14 @@ import com.aliyuncs.RpcAcsRequest;
 public class PubBroadcastRequest extends RpcAcsRequest<PubBroadcastResponse> {
 	
 	public PubBroadcastRequest() {
-		super("Iot", "2017-04-20", "PubBroadcast");
+		super("Iot", "2017-04-20", "PubBroadcast", "iot");
 	}
-
-	private String productKey;
 
 	private String topicFullName;
 
 	private String messageContent;
 
-	public String getProductKey() {
-		return this.productKey;
-	}
-
-	public void setProductKey(String productKey) {
-		this.productKey = productKey;
-		putQueryParameter("ProductKey", productKey);
-	}
+	private String productKey;
 
 	public String getTopicFullName() {
 		return this.topicFullName;
@@ -51,7 +42,9 @@ public class PubBroadcastRequest extends RpcAcsRequest<PubBroadcastResponse> {
 
 	public void setTopicFullName(String topicFullName) {
 		this.topicFullName = topicFullName;
-		putQueryParameter("TopicFullName", topicFullName);
+		if(topicFullName != null){
+			putQueryParameter("TopicFullName", topicFullName);
+		}
 	}
 
 	public String getMessageContent() {
@@ -60,7 +53,20 @@ public class PubBroadcastRequest extends RpcAcsRequest<PubBroadcastResponse> {
 
 	public void setMessageContent(String messageContent) {
 		this.messageContent = messageContent;
-		putQueryParameter("MessageContent", messageContent);
+		if(messageContent != null){
+			putQueryParameter("MessageContent", messageContent);
+		}
+	}
+
+	public String getProductKey() {
+		return this.productKey;
+	}
+
+	public void setProductKey(String productKey) {
+		this.productKey = productKey;
+		if(productKey != null){
+			putQueryParameter("ProductKey", productKey);
+		}
 	}
 
 	@Override

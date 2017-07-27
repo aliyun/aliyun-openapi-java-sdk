@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class QueryDeviceByNameRequest extends RpcAcsRequest<QueryDeviceByNameResponse> {
 	
 	public QueryDeviceByNameRequest() {
-		super("Iot", "2017-04-20", "QueryDeviceByName");
+		super("Iot", "2017-04-20", "QueryDeviceByName", "iot");
 	}
 
 	private String deviceName;
@@ -40,7 +40,9 @@ public class QueryDeviceByNameRequest extends RpcAcsRequest<QueryDeviceByNameRes
 
 	public void setDeviceName(String deviceName) {
 		this.deviceName = deviceName;
-		putQueryParameter("DeviceName", deviceName);
+		if(deviceName != null){
+			putQueryParameter("DeviceName", deviceName);
+		}
 	}
 
 	public String getProductKey() {
@@ -49,7 +51,9 @@ public class QueryDeviceByNameRequest extends RpcAcsRequest<QueryDeviceByNameRes
 
 	public void setProductKey(String productKey) {
 		this.productKey = productKey;
-		putQueryParameter("ProductKey", productKey);
+		if(productKey != null){
+			putQueryParameter("ProductKey", productKey);
+		}
 	}
 
 	@Override

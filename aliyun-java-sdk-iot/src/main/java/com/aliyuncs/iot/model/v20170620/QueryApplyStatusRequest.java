@@ -29,7 +29,7 @@ import com.aliyuncs.http.MethodType;
 public class QueryApplyStatusRequest extends RoaAcsRequest<QueryApplyStatusResponse> {
 	
 	public QueryApplyStatusRequest() {
-		super("Iot", "2017-06-20", "QueryApplyStatus");
+		super("Iot", "2017-06-20", "QueryApplyStatus", "iot");
 		setProtocol(ProtocolType.HTTPS);
 		setUriPattern("/queryApplyStatus/[ApplyId]");
 		setMethod(MethodType.GET);
@@ -43,7 +43,9 @@ public class QueryApplyStatusRequest extends RoaAcsRequest<QueryApplyStatusRespo
 
 	public void setApplyId(Long applyId) {
 		this.applyId = applyId;
-		putPathParameter("ApplyId", applyId);
+		if(applyId != null){
+			putPathParameter("ApplyId", applyId.toString());
+		}
 	}
 
 	@Override

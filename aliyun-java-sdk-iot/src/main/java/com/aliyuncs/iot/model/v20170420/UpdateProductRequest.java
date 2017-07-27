@@ -27,12 +27,8 @@ import com.aliyuncs.RpcAcsRequest;
 public class UpdateProductRequest extends RpcAcsRequest<UpdateProductResponse> {
 	
 	public UpdateProductRequest() {
-		super("Iot", "2017-04-20", "UpdateProduct");
+		super("Iot", "2017-04-20", "UpdateProduct", "iot");
 	}
-
-	private String productKey;
-
-	private String productDesc;
 
 	private Long catId;
 
@@ -40,23 +36,9 @@ public class UpdateProductRequest extends RpcAcsRequest<UpdateProductResponse> {
 
 	private String extProps;
 
-	public String getProductKey() {
-		return this.productKey;
-	}
+	private String productKey;
 
-	public void setProductKey(String productKey) {
-		this.productKey = productKey;
-		putQueryParameter("ProductKey", productKey);
-	}
-
-	public String getProductDesc() {
-		return this.productDesc;
-	}
-
-	public void setProductDesc(String productDesc) {
-		this.productDesc = productDesc;
-		putQueryParameter("ProductDesc", productDesc);
-	}
+	private String productDesc;
 
 	public Long getCatId() {
 		return this.catId;
@@ -64,7 +46,9 @@ public class UpdateProductRequest extends RpcAcsRequest<UpdateProductResponse> {
 
 	public void setCatId(Long catId) {
 		this.catId = catId;
-		putQueryParameter("CatId", catId);
+		if(catId != null){
+			putQueryParameter("CatId", catId.toString());
+		}
 	}
 
 	public String getProductName() {
@@ -73,7 +57,9 @@ public class UpdateProductRequest extends RpcAcsRequest<UpdateProductResponse> {
 
 	public void setProductName(String productName) {
 		this.productName = productName;
-		putQueryParameter("ProductName", productName);
+		if(productName != null){
+			putQueryParameter("ProductName", productName);
+		}
 	}
 
 	public String getExtProps() {
@@ -82,7 +68,31 @@ public class UpdateProductRequest extends RpcAcsRequest<UpdateProductResponse> {
 
 	public void setExtProps(String extProps) {
 		this.extProps = extProps;
-		putQueryParameter("ExtProps", extProps);
+		if(extProps != null){
+			putQueryParameter("ExtProps", extProps);
+		}
+	}
+
+	public String getProductKey() {
+		return this.productKey;
+	}
+
+	public void setProductKey(String productKey) {
+		this.productKey = productKey;
+		if(productKey != null){
+			putQueryParameter("ProductKey", productKey);
+		}
+	}
+
+	public String getProductDesc() {
+		return this.productDesc;
+	}
+
+	public void setProductDesc(String productDesc) {
+		this.productDesc = productDesc;
+		if(productDesc != null){
+			putQueryParameter("ProductDesc", productDesc);
+		}
 	}
 
 	@Override

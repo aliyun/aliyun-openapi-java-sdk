@@ -16,20 +16,23 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package com.aliyuncs.iot.transform.v20160104;
+package com.aliyuncs.iot.transform.v20170420;
 
-import com.aliyuncs.iot.model.v20160104.UnSubResponse;
+import com.aliyuncs.iot.model.v20170420.RRpcResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class UnSubResponseUnmarshaller {
+public class RRpcResponseUnmarshaller {
 
-	public static UnSubResponse unmarshall(UnSubResponse unSubResponse, UnmarshallerContext context) {
+	public static RRpcResponse unmarshall(RRpcResponse rRpcResponse, UnmarshallerContext context) {
 		
-		unSubResponse.setRequestId(context.stringValue("UnSubResponse.RequestId"));
-		unSubResponse.setSuccess(context.booleanValue("UnSubResponse.Success"));
-		unSubResponse.setErrorMessage(context.stringValue("UnSubResponse.ErrorMessage"));
+		rRpcResponse.setRequestId(context.stringValue("RRpcResponse.RequestId"));
+		rRpcResponse.setSuccess(context.booleanValue("RRpcResponse.Success"));
+		rRpcResponse.setErrorMessage(context.stringValue("RRpcResponse.ErrorMessage"));
+		rRpcResponse.setRrpcCode(context.stringValue("RRpcResponse.RrpcCode"));
+		rRpcResponse.setPayloadBase64Byte(context.stringValue("RRpcResponse.PayloadBase64Byte"));
+		rRpcResponse.setMessageId(context.longValue("RRpcResponse.MessageId"));
 	 
-	 	return unSubResponse;
+	 	return rRpcResponse;
 	}
 }

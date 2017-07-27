@@ -27,27 +27,18 @@ import com.aliyuncs.RpcAcsRequest;
 public class CreateProductRequest extends RpcAcsRequest<CreateProductResponse> {
 	
 	public CreateProductRequest() {
-		super("Iot", "2017-04-20", "CreateProduct");
+		super("Iot", "2017-04-20", "CreateProduct", "iot");
 	}
-
-	private String name;
 
 	private Long catId;
 
-	private String securityPolicy;
+	private String name;
 
 	private String extProps;
 
+	private String securityPolicy;
+
 	private String desc;
-
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-		putQueryParameter("Name", name);
-	}
 
 	public Long getCatId() {
 		return this.catId;
@@ -55,16 +46,20 @@ public class CreateProductRequest extends RpcAcsRequest<CreateProductResponse> {
 
 	public void setCatId(Long catId) {
 		this.catId = catId;
-		putQueryParameter("CatId", catId);
+		if(catId != null){
+			putQueryParameter("CatId", catId.toString());
+		}
 	}
 
-	public String getSecurityPolicy() {
-		return this.securityPolicy;
+	public String getName() {
+		return this.name;
 	}
 
-	public void setSecurityPolicy(String securityPolicy) {
-		this.securityPolicy = securityPolicy;
-		putQueryParameter("SecurityPolicy", securityPolicy);
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
+		}
 	}
 
 	public String getExtProps() {
@@ -73,7 +68,20 @@ public class CreateProductRequest extends RpcAcsRequest<CreateProductResponse> {
 
 	public void setExtProps(String extProps) {
 		this.extProps = extProps;
-		putQueryParameter("ExtProps", extProps);
+		if(extProps != null){
+			putQueryParameter("ExtProps", extProps);
+		}
+	}
+
+	public String getSecurityPolicy() {
+		return this.securityPolicy;
+	}
+
+	public void setSecurityPolicy(String securityPolicy) {
+		this.securityPolicy = securityPolicy;
+		if(securityPolicy != null){
+			putQueryParameter("SecurityPolicy", securityPolicy);
+		}
 	}
 
 	public String getDesc() {
@@ -82,7 +90,9 @@ public class CreateProductRequest extends RpcAcsRequest<CreateProductResponse> {
 
 	public void setDesc(String desc) {
 		this.desc = desc;
-		putQueryParameter("Desc", desc);
+		if(desc != null){
+			putQueryParameter("Desc", desc);
+		}
 	}
 
 	@Override

@@ -3,7 +3,7 @@
   <groupId>com.aliyun</groupId>
   <artifactId>aliyun-java-sdk-iot</artifactId>
   <packaging>jar</packaging>
-  <version>2.2.0</version>
+  <version>3.0.0</version>
   <name>aliyun-java-sdk-iot</name>
   <url>http://www.aliyun.com</url>
   <description>Aliyun Open API SDK for Java
@@ -14,12 +14,24 @@ All rights reserved.
 版权所有 （C）阿里云计算有限公司
 
 http://www.aliyun.com</description>
+
+<distributionManagement>
+    <snapshotRepository>
+        <id>sonatype-nexus-snapshots</id>
+        <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+    </snapshotRepository>
+    <repository>
+        <id>sonatype-nexus-staging</id>
+        <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+    </repository>
+</distributionManagement>
+
   <dependencies> 
   	<dependency>
   		<groupId>com.aliyun</groupId>
   		<artifactId>aliyun-java-sdk-core</artifactId>
 		<optional>true</optional>
-  		<version>2.4.2</version>
+  		<version>3.2.3</version>
   	</dependency>
   </dependencies>
 	<licenses>
@@ -76,6 +88,31 @@ http://www.aliyun.com</description>
 					<encoding>UTF-8</encoding>
 				</configuration>
 			</plugin>
+			<plugin>
+			    <groupId>org.apache.maven.plugins</groupId>
+			    <artifactId>maven-gpg-plugin</artifactId>
+				<version>1.5</version>
+				<executions>
+				    <execution>
+					<id>sign-artifacts</id>
+					<phase>verify</phase>
+					 <goals>
+					     <goal>sign</goal>
+					 </goals>
+				    </execution>
+				</executions>
+			 </plugin>
+			 <plugin>
+			     <groupId>org.sonatype.plugins</groupId>
+			      <artifactId>nexus-staging-maven-plugin</artifactId>
+			      <version>1.6.3</version>
+				  <extensions>true</extensions>
+				  <configuration>
+				      <serverId>sonatype-nexus-staging</serverId>
+				      <nexusUrl>https://oss.sonatype.org/</nexusUrl>
+				      <autoReleaseAfterClose>true</autoReleaseAfterClose>
+			      </configuration>
+			 </plugin>
 		</plugins>
 	</build>
 </project>

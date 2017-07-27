@@ -27,23 +27,14 @@ import com.aliyuncs.RpcAcsRequest;
 public class QueryDeviceRequest extends RpcAcsRequest<QueryDeviceResponse> {
 	
 	public QueryDeviceRequest() {
-		super("Iot", "2017-04-20", "QueryDevice");
+		super("Iot", "2017-04-20", "QueryDevice", "iot");
 	}
-
-	private String productKey;
 
 	private Integer pageSize;
 
 	private Integer currentPage;
 
-	public String getProductKey() {
-		return this.productKey;
-	}
-
-	public void setProductKey(String productKey) {
-		this.productKey = productKey;
-		putQueryParameter("ProductKey", productKey);
-	}
+	private String productKey;
 
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -51,7 +42,9 @@ public class QueryDeviceRequest extends RpcAcsRequest<QueryDeviceResponse> {
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
-		putQueryParameter("PageSize", pageSize);
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
 	}
 
 	public Integer getCurrentPage() {
@@ -60,7 +53,20 @@ public class QueryDeviceRequest extends RpcAcsRequest<QueryDeviceResponse> {
 
 	public void setCurrentPage(Integer currentPage) {
 		this.currentPage = currentPage;
-		putQueryParameter("CurrentPage", currentPage);
+		if(currentPage != null){
+			putQueryParameter("CurrentPage", currentPage.toString());
+		}
+	}
+
+	public String getProductKey() {
+		return this.productKey;
+	}
+
+	public void setProductKey(String productKey) {
+		this.productKey = productKey;
+		if(productKey != null){
+			putQueryParameter("ProductKey", productKey);
+		}
 	}
 
 	@Override

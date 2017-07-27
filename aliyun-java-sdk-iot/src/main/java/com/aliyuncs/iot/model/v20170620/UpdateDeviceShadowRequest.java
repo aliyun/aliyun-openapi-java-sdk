@@ -29,7 +29,7 @@ import com.aliyuncs.http.MethodType;
 public class UpdateDeviceShadowRequest extends RoaAcsRequest<UpdateDeviceShadowResponse> {
 	
 	public UpdateDeviceShadowRequest() {
-		super("Iot", "2017-06-20", "UpdateDeviceShadow");
+		super("Iot", "2017-06-20", "UpdateDeviceShadow", "iot");
 		setProtocol(ProtocolType.HTTPS);
 		setUriPattern("/updateDeviceShadow/[ProductKey]/[DeviceName]");
 		setMethod(MethodType.POST);
@@ -47,7 +47,9 @@ public class UpdateDeviceShadowRequest extends RoaAcsRequest<UpdateDeviceShadowR
 
 	public void setShadowMessage(String shadowMessage) {
 		this.shadowMessage = shadowMessage;
-		putQueryParameter("ShadowMessage", shadowMessage);
+		if(shadowMessage != null){
+			putQueryParameter("ShadowMessage", shadowMessage);
+		}
 	}
 
 	public String getDeviceName() {
@@ -56,7 +58,9 @@ public class UpdateDeviceShadowRequest extends RoaAcsRequest<UpdateDeviceShadowR
 
 	public void setDeviceName(String deviceName) {
 		this.deviceName = deviceName;
-		putPathParameter("DeviceName", deviceName);
+		if(deviceName != null){
+			putPathParameter("DeviceName", deviceName);
+		}
 	}
 
 	public String getProductKey() {
@@ -65,7 +69,9 @@ public class UpdateDeviceShadowRequest extends RoaAcsRequest<UpdateDeviceShadowR
 
 	public void setProductKey(String productKey) {
 		this.productKey = productKey;
-		putPathParameter("ProductKey", productKey);
+		if(productKey != null){
+			putPathParameter("ProductKey", productKey);
+		}
 	}
 
 	@Override

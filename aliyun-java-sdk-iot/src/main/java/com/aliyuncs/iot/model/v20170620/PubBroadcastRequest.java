@@ -29,26 +29,17 @@ import com.aliyuncs.http.MethodType;
 public class PubBroadcastRequest extends RoaAcsRequest<PubBroadcastResponse> {
 	
 	public PubBroadcastRequest() {
-		super("Iot", "2017-06-20", "PubBroadcast");
+		super("Iot", "2017-06-20", "PubBroadcast", "iot");
 		setProtocol(ProtocolType.HTTPS);
 		setUriPattern("/pubBroadcast/[ProductKey]");
 		setMethod(MethodType.POST);
 	}
 
-	private String productKey;
-
 	private String topicFullName;
 
 	private String messageContent;
 
-	public String getProductKey() {
-		return this.productKey;
-	}
-
-	public void setProductKey(String productKey) {
-		this.productKey = productKey;
-		putPathParameter("ProductKey", productKey);
-	}
+	private String productKey;
 
 	public String getTopicFullName() {
 		return this.topicFullName;
@@ -56,7 +47,9 @@ public class PubBroadcastRequest extends RoaAcsRequest<PubBroadcastResponse> {
 
 	public void setTopicFullName(String topicFullName) {
 		this.topicFullName = topicFullName;
-		putQueryParameter("TopicFullName", topicFullName);
+		if(topicFullName != null){
+			putQueryParameter("TopicFullName", topicFullName);
+		}
 	}
 
 	public String getMessageContent() {
@@ -65,7 +58,20 @@ public class PubBroadcastRequest extends RoaAcsRequest<PubBroadcastResponse> {
 
 	public void setMessageContent(String messageContent) {
 		this.messageContent = messageContent;
-		putQueryParameter("MessageContent", messageContent);
+		if(messageContent != null){
+			putQueryParameter("MessageContent", messageContent);
+		}
+	}
+
+	public String getProductKey() {
+		return this.productKey;
+	}
+
+	public void setProductKey(String productKey) {
+		this.productKey = productKey;
+		if(productKey != null){
+			putPathParameter("ProductKey", productKey);
+		}
 	}
 
 	@Override

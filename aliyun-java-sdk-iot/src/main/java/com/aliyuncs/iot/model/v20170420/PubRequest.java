@@ -27,34 +27,16 @@ import com.aliyuncs.RpcAcsRequest;
 public class PubRequest extends RpcAcsRequest<PubResponse> {
 	
 	public PubRequest() {
-		super("Iot", "2017-04-20", "Pub");
+		super("Iot", "2017-04-20", "Pub", "iot");
 	}
-
-	private Integer qos;
-
-	private String productKey;
 
 	private String topicFullName;
 
+	private Integer qos;
+
 	private String messageContent;
 
-	public Integer getQos() {
-		return this.qos;
-	}
-
-	public void setQos(Integer qos) {
-		this.qos = qos;
-		putQueryParameter("Qos", qos);
-	}
-
-	public String getProductKey() {
-		return this.productKey;
-	}
-
-	public void setProductKey(String productKey) {
-		this.productKey = productKey;
-		putQueryParameter("ProductKey", productKey);
-	}
+	private String productKey;
 
 	public String getTopicFullName() {
 		return this.topicFullName;
@@ -62,7 +44,20 @@ public class PubRequest extends RpcAcsRequest<PubResponse> {
 
 	public void setTopicFullName(String topicFullName) {
 		this.topicFullName = topicFullName;
-		putQueryParameter("TopicFullName", topicFullName);
+		if(topicFullName != null){
+			putQueryParameter("TopicFullName", topicFullName);
+		}
+	}
+
+	public Integer getQos() {
+		return this.qos;
+	}
+
+	public void setQos(Integer qos) {
+		this.qos = qos;
+		if(qos != null){
+			putQueryParameter("Qos", qos.toString());
+		}
 	}
 
 	public String getMessageContent() {
@@ -71,7 +66,20 @@ public class PubRequest extends RpcAcsRequest<PubResponse> {
 
 	public void setMessageContent(String messageContent) {
 		this.messageContent = messageContent;
-		putQueryParameter("MessageContent", messageContent);
+		if(messageContent != null){
+			putQueryParameter("MessageContent", messageContent);
+		}
+	}
+
+	public String getProductKey() {
+		return this.productKey;
+	}
+
+	public void setProductKey(String productKey) {
+		this.productKey = productKey;
+		if(productKey != null){
+			putQueryParameter("ProductKey", productKey);
+		}
 	}
 
 	@Override

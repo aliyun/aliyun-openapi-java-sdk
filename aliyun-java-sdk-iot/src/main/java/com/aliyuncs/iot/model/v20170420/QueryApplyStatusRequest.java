@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class QueryApplyStatusRequest extends RpcAcsRequest<QueryApplyStatusResponse> {
 	
 	public QueryApplyStatusRequest() {
-		super("Iot", "2017-04-20", "QueryApplyStatus");
+		super("Iot", "2017-04-20", "QueryApplyStatus", "iot");
 	}
 
 	private Long applyId;
@@ -38,7 +38,9 @@ public class QueryApplyStatusRequest extends RpcAcsRequest<QueryApplyStatusRespo
 
 	public void setApplyId(Long applyId) {
 		this.applyId = applyId;
-		putQueryParameter("ApplyId", applyId);
+		if(applyId != null){
+			putQueryParameter("ApplyId", applyId.toString());
+		}
 	}
 
 	@Override

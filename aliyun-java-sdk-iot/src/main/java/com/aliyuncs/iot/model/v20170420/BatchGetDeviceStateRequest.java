@@ -28,7 +28,7 @@ import java.util.List;
 public class BatchGetDeviceStateRequest extends RpcAcsRequest<BatchGetDeviceStateResponse> {
 	
 	public BatchGetDeviceStateRequest() {
-		super("Iot", "2017-04-20", "BatchGetDeviceState");
+		super("Iot", "2017-04-20", "BatchGetDeviceState", "iot");
 	}
 
 	private List<String> deviceNames;
@@ -39,10 +39,10 @@ public class BatchGetDeviceStateRequest extends RpcAcsRequest<BatchGetDeviceStat
 		return this.deviceNames;
 	}
 
-	public void setDeviceNames(List<String> deviceNames) {
-		this.deviceNames = deviceNames;	
-		for (int i = 0; i < deviceNames.size(); i++) {
-			putQueryParameter("DeviceName." + (i + 1) , deviceNames.get(i));
+	public void setDeviceNames(List<String> deviceName) {
+		this.deviceNames = deviceName;	
+		for (int i = 0; i < deviceName.size(); i++) {
+			putQueryParameter("DeviceName." + (i + 1) , deviceName.get(i));
 		}	
 	}
 
@@ -52,7 +52,9 @@ public class BatchGetDeviceStateRequest extends RpcAcsRequest<BatchGetDeviceStat
 
 	public void setProductKey(String productKey) {
 		this.productKey = productKey;
-		putQueryParameter("ProductKey", productKey);
+		if(productKey != null){
+			putQueryParameter("ProductKey", productKey);
+		}
 	}
 
 	@Override

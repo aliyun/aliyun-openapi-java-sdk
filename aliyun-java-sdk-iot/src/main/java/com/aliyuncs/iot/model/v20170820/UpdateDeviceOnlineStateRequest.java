@@ -27,14 +27,14 @@ import com.aliyuncs.RpcAcsRequest;
 public class UpdateDeviceOnlineStateRequest extends RpcAcsRequest<UpdateDeviceOnlineStateResponse> {
 	
 	public UpdateDeviceOnlineStateRequest() {
-		super("Iot", "2017-08-20", "UpdateDeviceOnlineState");
+		super("Iot", "2017-08-20", "UpdateDeviceOnlineState", "iot");
 	}
 
 	private String deviceName;
 
-	private String productKey;
-
 	private String onlineState;
+
+	private String productKey;
 
 	public String getDeviceName() {
 		return this.deviceName;
@@ -42,16 +42,9 @@ public class UpdateDeviceOnlineStateRequest extends RpcAcsRequest<UpdateDeviceOn
 
 	public void setDeviceName(String deviceName) {
 		this.deviceName = deviceName;
-		putQueryParameter("DeviceName", deviceName);
-	}
-
-	public String getProductKey() {
-		return this.productKey;
-	}
-
-	public void setProductKey(String productKey) {
-		this.productKey = productKey;
-		putQueryParameter("ProductKey", productKey);
+		if(deviceName != null){
+			putQueryParameter("DeviceName", deviceName);
+		}
 	}
 
 	public String getOnlineState() {
@@ -60,7 +53,20 @@ public class UpdateDeviceOnlineStateRequest extends RpcAcsRequest<UpdateDeviceOn
 
 	public void setOnlineState(String onlineState) {
 		this.onlineState = onlineState;
-		putQueryParameter("OnlineState", onlineState);
+		if(onlineState != null){
+			putQueryParameter("OnlineState", onlineState);
+		}
+	}
+
+	public String getProductKey() {
+		return this.productKey;
+	}
+
+	public void setProductKey(String productKey) {
+		this.productKey = productKey;
+		if(productKey != null){
+			putQueryParameter("ProductKey", productKey);
+		}
 	}
 
 	@Override

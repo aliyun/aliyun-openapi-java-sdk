@@ -16,23 +16,29 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package com.aliyuncs.iot.model.v20160104;
+package com.aliyuncs.iot.model.v20170420;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.iot.transform.v20160104.SubResponseUnmarshaller;
+import com.aliyuncs.iot.transform.v20170420.RRpcResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class SubResponse extends AcsResponse {
+public class RRpcResponse extends AcsResponse {
 
 	private String requestId;
 
 	private Boolean success;
 
 	private String errorMessage;
+
+	private String rrpcCode;
+
+	private String payloadBase64Byte;
+
+	private Long messageId;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -58,8 +64,32 @@ public class SubResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
+	public String getRrpcCode() {
+		return this.rrpcCode;
+	}
+
+	public void setRrpcCode(String rrpcCode) {
+		this.rrpcCode = rrpcCode;
+	}
+
+	public String getPayloadBase64Byte() {
+		return this.payloadBase64Byte;
+	}
+
+	public void setPayloadBase64Byte(String payloadBase64Byte) {
+		this.payloadBase64Byte = payloadBase64Byte;
+	}
+
+	public Long getMessageId() {
+		return this.messageId;
+	}
+
+	public void setMessageId(Long messageId) {
+		this.messageId = messageId;
+	}
+
 	@Override
-	public SubResponse getInstance(UnmarshallerContext context) {
-		return	SubResponseUnmarshaller.unmarshall(this, context);
+	public RRpcResponse getInstance(UnmarshallerContext context) {
+		return	RRpcResponseUnmarshaller.unmarshall(this, context);
 	}
 }

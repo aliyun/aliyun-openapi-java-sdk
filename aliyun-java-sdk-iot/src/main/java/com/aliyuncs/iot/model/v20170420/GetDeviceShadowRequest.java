@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class GetDeviceShadowRequest extends RpcAcsRequest<GetDeviceShadowResponse> {
 	
 	public GetDeviceShadowRequest() {
-		super("Iot", "2017-04-20", "GetDeviceShadow");
+		super("Iot", "2017-04-20", "GetDeviceShadow", "iot");
 	}
 
 	private String shadowMessage;
@@ -42,7 +42,9 @@ public class GetDeviceShadowRequest extends RpcAcsRequest<GetDeviceShadowRespons
 
 	public void setShadowMessage(String shadowMessage) {
 		this.shadowMessage = shadowMessage;
-		putQueryParameter("ShadowMessage", shadowMessage);
+		if(shadowMessage != null){
+			putQueryParameter("ShadowMessage", shadowMessage);
+		}
 	}
 
 	public String getDeviceName() {
@@ -51,7 +53,9 @@ public class GetDeviceShadowRequest extends RpcAcsRequest<GetDeviceShadowRespons
 
 	public void setDeviceName(String deviceName) {
 		this.deviceName = deviceName;
-		putQueryParameter("DeviceName", deviceName);
+		if(deviceName != null){
+			putQueryParameter("DeviceName", deviceName);
+		}
 	}
 
 	public String getProductKey() {
@@ -60,7 +64,9 @@ public class GetDeviceShadowRequest extends RpcAcsRequest<GetDeviceShadowRespons
 
 	public void setProductKey(String productKey) {
 		this.productKey = productKey;
-		putQueryParameter("ProductKey", productKey);
+		if(productKey != null){
+			putQueryParameter("ProductKey", productKey);
+		}
 	}
 
 	@Override

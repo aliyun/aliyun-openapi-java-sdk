@@ -16,7 +16,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package com.aliyuncs.iot.model.v20160530;
+package com.aliyuncs.iot.model.v20170420;
 
 import com.aliyuncs.RpcAcsRequest;
 
@@ -24,36 +24,29 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class DeviceRevokeByTopicRequest extends RpcAcsRequest<DeviceRevokeByTopicResponse> {
+public class RRpcRequest extends RpcAcsRequest<RRpcResponse> {
 	
-	public DeviceRevokeByTopicRequest() {
-		super("Iot", "2016-05-30", "DeviceRevokeByTopic");
+	public RRpcRequest() {
+		super("Iot", "2017-04-20", "RRpc", "iot");
 	}
 
-	private Long productKey;
-
-	private String topicFullName;
+	private String requestBase64Byte;
 
 	private String deviceName;
 
-	private String grantType;
+	private String productKey;
 
-	public Long getProductKey() {
-		return this.productKey;
+	private Integer timeout;
+
+	public String getRequestBase64Byte() {
+		return this.requestBase64Byte;
 	}
 
-	public void setProductKey(Long productKey) {
-		this.productKey = productKey;
-		putQueryParameter("ProductKey", productKey);
-	}
-
-	public String getTopicFullName() {
-		return this.topicFullName;
-	}
-
-	public void setTopicFullName(String topicFullName) {
-		this.topicFullName = topicFullName;
-		putQueryParameter("TopicFullName", topicFullName);
+	public void setRequestBase64Byte(String requestBase64Byte) {
+		this.requestBase64Byte = requestBase64Byte;
+		if(requestBase64Byte != null){
+			putQueryParameter("RequestBase64Byte", requestBase64Byte);
+		}
 	}
 
 	public String getDeviceName() {
@@ -62,21 +55,36 @@ public class DeviceRevokeByTopicRequest extends RpcAcsRequest<DeviceRevokeByTopi
 
 	public void setDeviceName(String deviceName) {
 		this.deviceName = deviceName;
-		putQueryParameter("DeviceName", deviceName);
+		if(deviceName != null){
+			putQueryParameter("DeviceName", deviceName);
+		}
 	}
 
-	public String getGrantType() {
-		return this.grantType;
+	public String getProductKey() {
+		return this.productKey;
 	}
 
-	public void setGrantType(String grantType) {
-		this.grantType = grantType;
-		putQueryParameter("GrantType", grantType);
+	public void setProductKey(String productKey) {
+		this.productKey = productKey;
+		if(productKey != null){
+			putQueryParameter("ProductKey", productKey);
+		}
+	}
+
+	public Integer getTimeout() {
+		return this.timeout;
+	}
+
+	public void setTimeout(Integer timeout) {
+		this.timeout = timeout;
+		if(timeout != null){
+			putQueryParameter("Timeout", timeout.toString());
+		}
 	}
 
 	@Override
-	public Class<DeviceRevokeByTopicResponse> getResponseClass() {
-		return DeviceRevokeByTopicResponse.class;
+	public Class<RRpcResponse> getResponseClass() {
+		return RRpcResponse.class;
 	}
 
 }

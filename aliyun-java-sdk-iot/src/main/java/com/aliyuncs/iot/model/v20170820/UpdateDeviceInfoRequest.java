@@ -27,23 +27,14 @@ import com.aliyuncs.RpcAcsRequest;
 public class UpdateDeviceInfoRequest extends RpcAcsRequest<UpdateDeviceInfoResponse> {
 	
 	public UpdateDeviceInfoRequest() {
-		super("Iot", "2017-08-20", "UpdateDeviceInfo");
+		super("Iot", "2017-08-20", "UpdateDeviceInfo", "iot");
 	}
-
-	private String deviceName;
 
 	private String deviceInfoPayload;
 
+	private String deviceName;
+
 	private String productKey;
-
-	public String getDeviceName() {
-		return this.deviceName;
-	}
-
-	public void setDeviceName(String deviceName) {
-		this.deviceName = deviceName;
-		putQueryParameter("DeviceName", deviceName);
-	}
 
 	public String getDeviceInfoPayload() {
 		return this.deviceInfoPayload;
@@ -51,7 +42,20 @@ public class UpdateDeviceInfoRequest extends RpcAcsRequest<UpdateDeviceInfoRespo
 
 	public void setDeviceInfoPayload(String deviceInfoPayload) {
 		this.deviceInfoPayload = deviceInfoPayload;
-		putQueryParameter("DeviceInfoPayload", deviceInfoPayload);
+		if(deviceInfoPayload != null){
+			putQueryParameter("DeviceInfoPayload", deviceInfoPayload);
+		}
+	}
+
+	public String getDeviceName() {
+		return this.deviceName;
+	}
+
+	public void setDeviceName(String deviceName) {
+		this.deviceName = deviceName;
+		if(deviceName != null){
+			putQueryParameter("DeviceName", deviceName);
+		}
 	}
 
 	public String getProductKey() {
@@ -60,7 +64,9 @@ public class UpdateDeviceInfoRequest extends RpcAcsRequest<UpdateDeviceInfoRespo
 
 	public void setProductKey(String productKey) {
 		this.productKey = productKey;
-		putQueryParameter("ProductKey", productKey);
+		if(productKey != null){
+			putQueryParameter("ProductKey", productKey);
+		}
 	}
 
 	@Override

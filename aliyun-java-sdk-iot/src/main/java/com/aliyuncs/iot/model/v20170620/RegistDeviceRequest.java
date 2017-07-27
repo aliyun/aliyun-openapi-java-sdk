@@ -29,7 +29,7 @@ import com.aliyuncs.http.MethodType;
 public class RegistDeviceRequest extends RoaAcsRequest<RegistDeviceResponse> {
 	
 	public RegistDeviceRequest() {
-		super("Iot", "2017-06-20", "RegistDevice");
+		super("Iot", "2017-06-20", "RegistDevice", "iot");
 		setProtocol(ProtocolType.HTTPS);
 		setUriPattern("/registDevice/[ProductKey]");
 		setMethod(MethodType.POST);
@@ -45,7 +45,9 @@ public class RegistDeviceRequest extends RoaAcsRequest<RegistDeviceResponse> {
 
 	public void setDeviceName(String deviceName) {
 		this.deviceName = deviceName;
-		putQueryParameter("DeviceName", deviceName);
+		if(deviceName != null){
+			putQueryParameter("DeviceName", deviceName);
+		}
 	}
 
 	public String getProductKey() {
@@ -54,7 +56,9 @@ public class RegistDeviceRequest extends RoaAcsRequest<RegistDeviceResponse> {
 
 	public void setProductKey(String productKey) {
 		this.productKey = productKey;
-		putPathParameter("ProductKey", productKey);
+		if(productKey != null){
+			putPathParameter("ProductKey", productKey);
+		}
 	}
 
 	@Override

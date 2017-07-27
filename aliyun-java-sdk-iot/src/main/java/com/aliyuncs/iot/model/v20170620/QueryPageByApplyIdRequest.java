@@ -29,17 +29,28 @@ import com.aliyuncs.http.MethodType;
 public class QueryPageByApplyIdRequest extends RoaAcsRequest<QueryPageByApplyIdResponse> {
 	
 	public QueryPageByApplyIdRequest() {
-		super("Iot", "2017-06-20", "QueryPageByApplyId");
+		super("Iot", "2017-06-20", "QueryPageByApplyId", "iot");
 		setProtocol(ProtocolType.HTTPS);
 		setUriPattern("/queryPageByApplyId/[ApplyId]");
 		setMethod(MethodType.GET);
 	}
 
+	private Long applyId;
+
 	private Integer pageSize;
 
 	private Integer currentPage;
 
-	private Long applyId;
+	public Long getApplyId() {
+		return this.applyId;
+	}
+
+	public void setApplyId(Long applyId) {
+		this.applyId = applyId;
+		if(applyId != null){
+			putPathParameter("ApplyId", applyId.toString());
+		}
+	}
 
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -47,7 +58,9 @@ public class QueryPageByApplyIdRequest extends RoaAcsRequest<QueryPageByApplyIdR
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
-		putQueryParameter("PageSize", pageSize);
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
 	}
 
 	public Integer getCurrentPage() {
@@ -56,16 +69,9 @@ public class QueryPageByApplyIdRequest extends RoaAcsRequest<QueryPageByApplyIdR
 
 	public void setCurrentPage(Integer currentPage) {
 		this.currentPage = currentPage;
-		putQueryParameter("CurrentPage", currentPage);
-	}
-
-	public Long getApplyId() {
-		return this.applyId;
-	}
-
-	public void setApplyId(Long applyId) {
-		this.applyId = applyId;
-		putPathParameter("ApplyId", applyId);
+		if(currentPage != null){
+			putQueryParameter("CurrentPage", currentPage.toString());
+		}
 	}
 
 	@Override
