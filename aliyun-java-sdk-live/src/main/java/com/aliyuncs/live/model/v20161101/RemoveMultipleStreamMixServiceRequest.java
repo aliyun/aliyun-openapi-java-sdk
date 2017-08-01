@@ -27,50 +27,34 @@ import com.aliyuncs.RpcAcsRequest;
 public class RemoveMultipleStreamMixServiceRequest extends RpcAcsRequest<RemoveMultipleStreamMixServiceResponse> {
 	
 	public RemoveMultipleStreamMixServiceRequest() {
-		super("live", "2016-11-01", "RemoveMultipleStreamMixService", "live");
+		super("live", "2016-11-01", "RemoveMultipleStreamMixService", "None");
 	}
-
-	private String mixDomainName;
-
-	private String mixStreamName;
-
-	private String streamName;
-
-	private String securityToken;
-
-	private Long ownerId;
-
-	private String domainName;
 
 	private String appName;
 
+	private String securityToken;
+
+	private String domainName;
+
+	private String mixStreamName;
+
+	private String mixDomainName;
+
+	private Long ownerId;
+
 	private String mixAppName;
 
-	public String getMixDomainName() {
-		return this.mixDomainName;
+	private String streamName;
+
+	public String getAppName() {
+		return this.appName;
 	}
 
-	public void setMixDomainName(String mixDomainName) {
-		this.mixDomainName = mixDomainName;
-		putQueryParameter("MixDomainName", mixDomainName);
-	}
-
-	public String getMixStreamName() {
-		return this.mixStreamName;
-	}
-
-	public void setMixStreamName(String mixStreamName) {
-		this.mixStreamName = mixStreamName;
-		putQueryParameter("MixStreamName", mixStreamName);
-	}
-
-	public String getStreamName() {
-		return this.streamName;
-	}
-
-	public void setStreamName(String streamName) {
-		this.streamName = streamName;
-		putQueryParameter("StreamName", streamName);
+	public void setAppName(String appName) {
+		this.appName = appName;
+		if(appName != null){
+			putQueryParameter("AppName", appName);
+		}
 	}
 
 	public String getSecurityToken() {
@@ -79,16 +63,9 @@ public class RemoveMultipleStreamMixServiceRequest extends RpcAcsRequest<RemoveM
 
 	public void setSecurityToken(String securityToken) {
 		this.securityToken = securityToken;
-		putQueryParameter("SecurityToken", securityToken);
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
 	}
 
 	public String getDomainName() {
@@ -97,16 +74,42 @@ public class RemoveMultipleStreamMixServiceRequest extends RpcAcsRequest<RemoveM
 
 	public void setDomainName(String domainName) {
 		this.domainName = domainName;
-		putQueryParameter("DomainName", domainName);
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
+		}
 	}
 
-	public String getAppName() {
-		return this.appName;
+	public String getMixStreamName() {
+		return this.mixStreamName;
 	}
 
-	public void setAppName(String appName) {
-		this.appName = appName;
-		putQueryParameter("AppName", appName);
+	public void setMixStreamName(String mixStreamName) {
+		this.mixStreamName = mixStreamName;
+		if(mixStreamName != null){
+			putQueryParameter("MixStreamName", mixStreamName);
+		}
+	}
+
+	public String getMixDomainName() {
+		return this.mixDomainName;
+	}
+
+	public void setMixDomainName(String mixDomainName) {
+		this.mixDomainName = mixDomainName;
+		if(mixDomainName != null){
+			putQueryParameter("MixDomainName", mixDomainName);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
 	}
 
 	public String getMixAppName() {
@@ -115,7 +118,20 @@ public class RemoveMultipleStreamMixServiceRequest extends RpcAcsRequest<RemoveM
 
 	public void setMixAppName(String mixAppName) {
 		this.mixAppName = mixAppName;
-		putQueryParameter("MixAppName", mixAppName);
+		if(mixAppName != null){
+			putQueryParameter("MixAppName", mixAppName);
+		}
+	}
+
+	public String getStreamName() {
+		return this.streamName;
+	}
+
+	public void setStreamName(String streamName) {
+		this.streamName = streamName;
+		if(streamName != null){
+			putQueryParameter("StreamName", streamName);
+		}
 	}
 
 	@Override

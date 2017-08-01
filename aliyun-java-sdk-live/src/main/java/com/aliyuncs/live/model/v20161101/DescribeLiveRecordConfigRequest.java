@@ -27,30 +27,32 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeLiveRecordConfigRequest extends RpcAcsRequest<DescribeLiveRecordConfigResponse> {
 	
 	public DescribeLiveRecordConfigRequest() {
-		super("live", "2016-11-01", "DescribeLiveRecordConfig", "live");
+		super("live", "2016-11-01", "DescribeLiveRecordConfig", "None");
 	}
-
-	private Integer pageSize;
-
-	private String securityToken;
-
-	private Long ownerId;
-
-	private String order;
-
-	private String domainName;
 
 	private String appName;
 
+	private String securityToken;
+
+	private String domainName;
+
+	private Integer pageSize;
+
+	private Long ownerId;
+
 	private Integer pageNum;
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	private String order;
+
+	public String getAppName() {
+		return this.appName;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		putQueryParameter("PageSize", pageSize);
+	public void setAppName(String appName) {
+		this.appName = appName;
+		if(appName != null){
+			putQueryParameter("AppName", appName);
+		}
 	}
 
 	public String getSecurityToken() {
@@ -59,25 +61,9 @@ public class DescribeLiveRecordConfigRequest extends RpcAcsRequest<DescribeLiveR
 
 	public void setSecurityToken(String securityToken) {
 		this.securityToken = securityToken;
-		putQueryParameter("SecurityToken", securityToken);
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
-	}
-
-	public String getOrder() {
-		return this.order;
-	}
-
-	public void setOrder(String order) {
-		this.order = order;
-		putQueryParameter("Order", order);
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
 	}
 
 	public String getDomainName() {
@@ -86,16 +72,31 @@ public class DescribeLiveRecordConfigRequest extends RpcAcsRequest<DescribeLiveR
 
 	public void setDomainName(String domainName) {
 		this.domainName = domainName;
-		putQueryParameter("DomainName", domainName);
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
+		}
 	}
 
-	public String getAppName() {
-		return this.appName;
+	public Integer getPageSize() {
+		return this.pageSize;
 	}
 
-	public void setAppName(String appName) {
-		this.appName = appName;
-		putQueryParameter("AppName", appName);
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
 	}
 
 	public Integer getPageNum() {
@@ -104,7 +105,20 @@ public class DescribeLiveRecordConfigRequest extends RpcAcsRequest<DescribeLiveR
 
 	public void setPageNum(Integer pageNum) {
 		this.pageNum = pageNum;
-		putQueryParameter("PageNum", pageNum);
+		if(pageNum != null){
+			putQueryParameter("PageNum", pageNum.toString());
+		}
+	}
+
+	public String getOrder() {
+		return this.order;
+	}
+
+	public void setOrder(String order) {
+		this.order = order;
+		if(order != null){
+			putQueryParameter("Order", order);
+		}
 	}
 
 	@Override

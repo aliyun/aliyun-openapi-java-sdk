@@ -27,18 +27,18 @@ import com.aliyuncs.RpcAcsRequest;
 public class AddLiveMixConfigRequest extends RpcAcsRequest<AddLiveMixConfigResponse> {
 	
 	public AddLiveMixConfigRequest() {
-		super("live", "2016-11-01", "AddLiveMixConfig", "live");
+		super("live", "2016-11-01", "AddLiveMixConfig", "None");
 	}
 
 	private String template;
 
-	private String securityToken;
+	private String appName;
 
-	private Long ownerId;
+	private String securityToken;
 
 	private String domainName;
 
-	private String appName;
+	private Long ownerId;
 
 	public String getTemplate() {
 		return this.template;
@@ -46,34 +46,9 @@ public class AddLiveMixConfigRequest extends RpcAcsRequest<AddLiveMixConfigRespo
 
 	public void setTemplate(String template) {
 		this.template = template;
-		putQueryParameter("Template", template);
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		putQueryParameter("SecurityToken", securityToken);
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
-	}
-
-	public String getDomainName() {
-		return this.domainName;
-	}
-
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
-		putQueryParameter("DomainName", domainName);
+		if(template != null){
+			putQueryParameter("Template", template);
+		}
 	}
 
 	public String getAppName() {
@@ -82,7 +57,42 @@ public class AddLiveMixConfigRequest extends RpcAcsRequest<AddLiveMixConfigRespo
 
 	public void setAppName(String appName) {
 		this.appName = appName;
-		putQueryParameter("AppName", appName);
+		if(appName != null){
+			putQueryParameter("AppName", appName);
+		}
+	}
+
+	public String getSecurityToken() {
+		return this.securityToken;
+	}
+
+	public void setSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	public String getDomainName() {
+		return this.domainName;
+	}
+
+	public void setDomainName(String domainName) {
+		this.domainName = domainName;
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
 	}
 
 	@Override

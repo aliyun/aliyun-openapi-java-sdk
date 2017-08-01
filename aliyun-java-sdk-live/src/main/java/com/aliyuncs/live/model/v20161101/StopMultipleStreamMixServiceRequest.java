@@ -27,26 +27,28 @@ import com.aliyuncs.RpcAcsRequest;
 public class StopMultipleStreamMixServiceRequest extends RpcAcsRequest<StopMultipleStreamMixServiceResponse> {
 	
 	public StopMultipleStreamMixServiceRequest() {
-		super("live", "2016-11-01", "StopMultipleStreamMixService", "live");
+		super("live", "2016-11-01", "StopMultipleStreamMixService", "None");
 	}
-
-	private String streamName;
-
-	private String securityToken;
-
-	private Long ownerId;
-
-	private String domainName;
 
 	private String appName;
 
-	public String getStreamName() {
-		return this.streamName;
+	private String securityToken;
+
+	private String domainName;
+
+	private Long ownerId;
+
+	private String streamName;
+
+	public String getAppName() {
+		return this.appName;
 	}
 
-	public void setStreamName(String streamName) {
-		this.streamName = streamName;
-		putQueryParameter("StreamName", streamName);
+	public void setAppName(String appName) {
+		this.appName = appName;
+		if(appName != null){
+			putQueryParameter("AppName", appName);
+		}
 	}
 
 	public String getSecurityToken() {
@@ -55,16 +57,9 @@ public class StopMultipleStreamMixServiceRequest extends RpcAcsRequest<StopMulti
 
 	public void setSecurityToken(String securityToken) {
 		this.securityToken = securityToken;
-		putQueryParameter("SecurityToken", securityToken);
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
 	}
 
 	public String getDomainName() {
@@ -73,16 +68,31 @@ public class StopMultipleStreamMixServiceRequest extends RpcAcsRequest<StopMulti
 
 	public void setDomainName(String domainName) {
 		this.domainName = domainName;
-		putQueryParameter("DomainName", domainName);
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
+		}
 	}
 
-	public String getAppName() {
-		return this.appName;
+	public Long getOwnerId() {
+		return this.ownerId;
 	}
 
-	public void setAppName(String appName) {
-		this.appName = appName;
-		putQueryParameter("AppName", appName);
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getStreamName() {
+		return this.streamName;
+	}
+
+	public void setStreamName(String streamName) {
+		this.streamName = streamName;
+		if(streamName != null){
+			putQueryParameter("StreamName", streamName);
+		}
 	}
 
 	@Override

@@ -27,30 +27,32 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeLiveStreamsFrameRateAndBitRateDataRequest extends RpcAcsRequest<DescribeLiveStreamsFrameRateAndBitRateDataResponse> {
 	
 	public DescribeLiveStreamsFrameRateAndBitRateDataRequest() {
-		super("live", "2016-11-01", "DescribeLiveStreamsFrameRateAndBitRateData", "live");
+		super("live", "2016-11-01", "DescribeLiveStreamsFrameRateAndBitRateData", "None");
 	}
 
-	private String streamName;
+	private String appName;
 
 	private String securityToken;
 
-	private Long ownerId;
-
 	private String domainName;
-
-	private String appName;
 
 	private String endTime;
 
 	private String startTime;
 
-	public String getStreamName() {
-		return this.streamName;
+	private Long ownerId;
+
+	private String streamName;
+
+	public String getAppName() {
+		return this.appName;
 	}
 
-	public void setStreamName(String streamName) {
-		this.streamName = streamName;
-		putQueryParameter("StreamName", streamName);
+	public void setAppName(String appName) {
+		this.appName = appName;
+		if(appName != null){
+			putQueryParameter("AppName", appName);
+		}
 	}
 
 	public String getSecurityToken() {
@@ -59,16 +61,9 @@ public class DescribeLiveStreamsFrameRateAndBitRateDataRequest extends RpcAcsReq
 
 	public void setSecurityToken(String securityToken) {
 		this.securityToken = securityToken;
-		putQueryParameter("SecurityToken", securityToken);
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
 	}
 
 	public String getDomainName() {
@@ -77,16 +72,9 @@ public class DescribeLiveStreamsFrameRateAndBitRateDataRequest extends RpcAcsReq
 
 	public void setDomainName(String domainName) {
 		this.domainName = domainName;
-		putQueryParameter("DomainName", domainName);
-	}
-
-	public String getAppName() {
-		return this.appName;
-	}
-
-	public void setAppName(String appName) {
-		this.appName = appName;
-		putQueryParameter("AppName", appName);
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
+		}
 	}
 
 	public String getEndTime() {
@@ -95,7 +83,9 @@ public class DescribeLiveStreamsFrameRateAndBitRateDataRequest extends RpcAcsReq
 
 	public void setEndTime(String endTime) {
 		this.endTime = endTime;
-		putQueryParameter("EndTime", endTime);
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime);
+		}
 	}
 
 	public String getStartTime() {
@@ -104,7 +94,31 @@ public class DescribeLiveStreamsFrameRateAndBitRateDataRequest extends RpcAcsReq
 
 	public void setStartTime(String startTime) {
 		this.startTime = startTime;
-		putQueryParameter("StartTime", startTime);
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getStreamName() {
+		return this.streamName;
+	}
+
+	public void setStreamName(String streamName) {
+		this.streamName = streamName;
+		if(streamName != null){
+			putQueryParameter("StreamName", streamName);
+		}
 	}
 
 	@Override

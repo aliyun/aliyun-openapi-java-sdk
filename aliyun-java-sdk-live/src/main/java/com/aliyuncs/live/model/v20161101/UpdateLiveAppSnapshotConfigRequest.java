@@ -27,88 +27,36 @@ import com.aliyuncs.RpcAcsRequest;
 public class UpdateLiveAppSnapshotConfigRequest extends RpcAcsRequest<UpdateLiveAppSnapshotConfigResponse> {
 	
 	public UpdateLiveAppSnapshotConfigRequest() {
-		super("live", "2016-11-01", "UpdateLiveAppSnapshotConfig", "live");
+		super("live", "2016-11-01", "UpdateLiveAppSnapshotConfig", "None");
 	}
-
-	private String overwriteOssObject;
-
-	private String sequenceOssObject;
-
-	private String securityToken;
-
-	private Long ownerId;
-
-	private String domainName;
-
-	private String appName;
-
-	private String ossEndpoint;
-
-	private String ossBucket;
 
 	private Integer timeInterval;
 
-	public String getOverwriteOssObject() {
-		return this.overwriteOssObject;
+	private String ossBucket;
+
+	private String appName;
+
+	private String securityToken;
+
+	private String domainName;
+
+	private String ossEndpoint;
+
+	private String sequenceOssObject;
+
+	private String overwriteOssObject;
+
+	private Long ownerId;
+
+	public Integer getTimeInterval() {
+		return this.timeInterval;
 	}
 
-	public void setOverwriteOssObject(String overwriteOssObject) {
-		this.overwriteOssObject = overwriteOssObject;
-		putQueryParameter("OverwriteOssObject", overwriteOssObject);
-	}
-
-	public String getSequenceOssObject() {
-		return this.sequenceOssObject;
-	}
-
-	public void setSequenceOssObject(String sequenceOssObject) {
-		this.sequenceOssObject = sequenceOssObject;
-		putQueryParameter("SequenceOssObject", sequenceOssObject);
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		putQueryParameter("SecurityToken", securityToken);
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
-	}
-
-	public String getDomainName() {
-		return this.domainName;
-	}
-
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
-		putQueryParameter("DomainName", domainName);
-	}
-
-	public String getAppName() {
-		return this.appName;
-	}
-
-	public void setAppName(String appName) {
-		this.appName = appName;
-		putQueryParameter("AppName", appName);
-	}
-
-	public String getOssEndpoint() {
-		return this.ossEndpoint;
-	}
-
-	public void setOssEndpoint(String ossEndpoint) {
-		this.ossEndpoint = ossEndpoint;
-		putQueryParameter("OssEndpoint", ossEndpoint);
+	public void setTimeInterval(Integer timeInterval) {
+		this.timeInterval = timeInterval;
+		if(timeInterval != null){
+			putQueryParameter("TimeInterval", timeInterval.toString());
+		}
 	}
 
 	public String getOssBucket() {
@@ -117,16 +65,86 @@ public class UpdateLiveAppSnapshotConfigRequest extends RpcAcsRequest<UpdateLive
 
 	public void setOssBucket(String ossBucket) {
 		this.ossBucket = ossBucket;
-		putQueryParameter("OssBucket", ossBucket);
+		if(ossBucket != null){
+			putQueryParameter("OssBucket", ossBucket);
+		}
 	}
 
-	public Integer getTimeInterval() {
-		return this.timeInterval;
+	public String getAppName() {
+		return this.appName;
 	}
 
-	public void setTimeInterval(Integer timeInterval) {
-		this.timeInterval = timeInterval;
-		putQueryParameter("TimeInterval", timeInterval);
+	public void setAppName(String appName) {
+		this.appName = appName;
+		if(appName != null){
+			putQueryParameter("AppName", appName);
+		}
+	}
+
+	public String getSecurityToken() {
+		return this.securityToken;
+	}
+
+	public void setSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	public String getDomainName() {
+		return this.domainName;
+	}
+
+	public void setDomainName(String domainName) {
+		this.domainName = domainName;
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
+		}
+	}
+
+	public String getOssEndpoint() {
+		return this.ossEndpoint;
+	}
+
+	public void setOssEndpoint(String ossEndpoint) {
+		this.ossEndpoint = ossEndpoint;
+		if(ossEndpoint != null){
+			putQueryParameter("OssEndpoint", ossEndpoint);
+		}
+	}
+
+	public String getSequenceOssObject() {
+		return this.sequenceOssObject;
+	}
+
+	public void setSequenceOssObject(String sequenceOssObject) {
+		this.sequenceOssObject = sequenceOssObject;
+		if(sequenceOssObject != null){
+			putQueryParameter("SequenceOssObject", sequenceOssObject);
+		}
+	}
+
+	public String getOverwriteOssObject() {
+		return this.overwriteOssObject;
+	}
+
+	public void setOverwriteOssObject(String overwriteOssObject) {
+		this.overwriteOssObject = overwriteOssObject;
+		if(overwriteOssObject != null){
+			putQueryParameter("OverwriteOssObject", overwriteOssObject);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
 	}
 
 	@Override

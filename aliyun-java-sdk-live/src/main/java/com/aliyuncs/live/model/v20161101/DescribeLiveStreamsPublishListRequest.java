@@ -27,52 +27,36 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeLiveStreamsPublishListRequest extends RpcAcsRequest<DescribeLiveStreamsPublishListResponse> {
 	
 	public DescribeLiveStreamsPublishListRequest() {
-		super("live", "2016-11-01", "DescribeLiveStreamsPublishList", "live");
+		super("live", "2016-11-01", "DescribeLiveStreamsPublishList", "None");
 	}
 
-	private Long pageNumber;
-
-	private String streamName;
-
-	private Long pageSize;
+	private String appName;
 
 	private String securityToken;
 
-	private Long ownerId;
-
 	private String domainName;
 
-	private String appName;
+	private Long pageSize;
 
 	private String endTime;
 
 	private String startTime;
 
-	public Long getPageNumber() {
-		return this.pageNumber;
+	private Long ownerId;
+
+	private String streamName;
+
+	private Long pageNumber;
+
+	public String getAppName() {
+		return this.appName;
 	}
 
-	public void setPageNumber(Long pageNumber) {
-		this.pageNumber = pageNumber;
-		putQueryParameter("PageNumber", pageNumber);
-	}
-
-	public String getStreamName() {
-		return this.streamName;
-	}
-
-	public void setStreamName(String streamName) {
-		this.streamName = streamName;
-		putQueryParameter("StreamName", streamName);
-	}
-
-	public Long getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Long pageSize) {
-		this.pageSize = pageSize;
-		putQueryParameter("PageSize", pageSize);
+	public void setAppName(String appName) {
+		this.appName = appName;
+		if(appName != null){
+			putQueryParameter("AppName", appName);
+		}
 	}
 
 	public String getSecurityToken() {
@@ -81,16 +65,9 @@ public class DescribeLiveStreamsPublishListRequest extends RpcAcsRequest<Describ
 
 	public void setSecurityToken(String securityToken) {
 		this.securityToken = securityToken;
-		putQueryParameter("SecurityToken", securityToken);
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
 	}
 
 	public String getDomainName() {
@@ -99,16 +76,20 @@ public class DescribeLiveStreamsPublishListRequest extends RpcAcsRequest<Describ
 
 	public void setDomainName(String domainName) {
 		this.domainName = domainName;
-		putQueryParameter("DomainName", domainName);
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
+		}
 	}
 
-	public String getAppName() {
-		return this.appName;
+	public Long getPageSize() {
+		return this.pageSize;
 	}
 
-	public void setAppName(String appName) {
-		this.appName = appName;
-		putQueryParameter("AppName", appName);
+	public void setPageSize(Long pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
 	}
 
 	public String getEndTime() {
@@ -117,7 +98,9 @@ public class DescribeLiveStreamsPublishListRequest extends RpcAcsRequest<Describ
 
 	public void setEndTime(String endTime) {
 		this.endTime = endTime;
-		putQueryParameter("EndTime", endTime);
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime);
+		}
 	}
 
 	public String getStartTime() {
@@ -126,7 +109,42 @@ public class DescribeLiveStreamsPublishListRequest extends RpcAcsRequest<Describ
 
 	public void setStartTime(String startTime) {
 		this.startTime = startTime;
-		putQueryParameter("StartTime", startTime);
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getStreamName() {
+		return this.streamName;
+	}
+
+	public void setStreamName(String streamName) {
+		this.streamName = streamName;
+		if(streamName != null){
+			putQueryParameter("StreamName", streamName);
+		}
+	}
+
+	public Long getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Long pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
 	}
 
 	@Override

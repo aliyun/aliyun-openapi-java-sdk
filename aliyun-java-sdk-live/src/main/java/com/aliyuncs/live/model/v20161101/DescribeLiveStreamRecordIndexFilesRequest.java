@@ -27,45 +27,38 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeLiveStreamRecordIndexFilesRequest extends RpcAcsRequest<DescribeLiveStreamRecordIndexFilesResponse> {
 	
 	public DescribeLiveStreamRecordIndexFilesRequest() {
-		super("live", "2016-11-01", "DescribeLiveStreamRecordIndexFiles", "live");
+		super("live", "2016-11-01", "DescribeLiveStreamRecordIndexFiles", "None");
 	}
 
-	private String streamName;
-
-	private Integer pageSize;
+	private String appName;
 
 	private String securityToken;
 
-	private Long ownerId;
-
-	private String order;
-
 	private String domainName;
 
-	private String appName;
+	private Integer pageSize;
 
 	private String endTime;
 
 	private String startTime;
 
+	private Long ownerId;
+
 	private Integer pageNum;
 
-	public String getStreamName() {
-		return this.streamName;
+	private String streamName;
+
+	private String order;
+
+	public String getAppName() {
+		return this.appName;
 	}
 
-	public void setStreamName(String streamName) {
-		this.streamName = streamName;
-		putQueryParameter("StreamName", streamName);
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		putQueryParameter("PageSize", pageSize);
+	public void setAppName(String appName) {
+		this.appName = appName;
+		if(appName != null){
+			putQueryParameter("AppName", appName);
+		}
 	}
 
 	public String getSecurityToken() {
@@ -74,25 +67,9 @@ public class DescribeLiveStreamRecordIndexFilesRequest extends RpcAcsRequest<Des
 
 	public void setSecurityToken(String securityToken) {
 		this.securityToken = securityToken;
-		putQueryParameter("SecurityToken", securityToken);
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
-	}
-
-	public String getOrder() {
-		return this.order;
-	}
-
-	public void setOrder(String order) {
-		this.order = order;
-		putQueryParameter("Order", order);
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
 	}
 
 	public String getDomainName() {
@@ -101,16 +78,20 @@ public class DescribeLiveStreamRecordIndexFilesRequest extends RpcAcsRequest<Des
 
 	public void setDomainName(String domainName) {
 		this.domainName = domainName;
-		putQueryParameter("DomainName", domainName);
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
+		}
 	}
 
-	public String getAppName() {
-		return this.appName;
+	public Integer getPageSize() {
+		return this.pageSize;
 	}
 
-	public void setAppName(String appName) {
-		this.appName = appName;
-		putQueryParameter("AppName", appName);
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
 	}
 
 	public String getEndTime() {
@@ -119,7 +100,9 @@ public class DescribeLiveStreamRecordIndexFilesRequest extends RpcAcsRequest<Des
 
 	public void setEndTime(String endTime) {
 		this.endTime = endTime;
-		putQueryParameter("EndTime", endTime);
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime);
+		}
 	}
 
 	public String getStartTime() {
@@ -128,7 +111,20 @@ public class DescribeLiveStreamRecordIndexFilesRequest extends RpcAcsRequest<Des
 
 	public void setStartTime(String startTime) {
 		this.startTime = startTime;
-		putQueryParameter("StartTime", startTime);
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
 	}
 
 	public Integer getPageNum() {
@@ -137,7 +133,31 @@ public class DescribeLiveStreamRecordIndexFilesRequest extends RpcAcsRequest<Des
 
 	public void setPageNum(Integer pageNum) {
 		this.pageNum = pageNum;
-		putQueryParameter("PageNum", pageNum);
+		if(pageNum != null){
+			putQueryParameter("PageNum", pageNum.toString());
+		}
+	}
+
+	public String getStreamName() {
+		return this.streamName;
+	}
+
+	public void setStreamName(String streamName) {
+		this.streamName = streamName;
+		if(streamName != null){
+			putQueryParameter("StreamName", streamName);
+		}
+	}
+
+	public String getOrder() {
+		return this.order;
+	}
+
+	public void setOrder(String order) {
+		this.order = order;
+		if(order != null){
+			putQueryParameter("Order", order);
+		}
 	}
 
 	@Override

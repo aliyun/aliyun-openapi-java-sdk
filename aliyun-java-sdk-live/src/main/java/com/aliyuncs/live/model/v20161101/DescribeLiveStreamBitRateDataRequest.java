@@ -24,17 +24,36 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class DeleteLiveStreamsNotifyUrlConfigRequest extends RpcAcsRequest<DeleteLiveStreamsNotifyUrlConfigResponse> {
+public class DescribeLiveStreamBitRateDataRequest extends RpcAcsRequest<DescribeLiveStreamBitRateDataResponse> {
 	
-	public DeleteLiveStreamsNotifyUrlConfigRequest() {
-		super("live", "2016-11-01", "DeleteLiveStreamsNotifyUrlConfig", "None");
+	public DescribeLiveStreamBitRateDataRequest() {
+		super("live", "2016-11-01", "DescribeLiveStreamBitRateData", "None");
 	}
+
+	private String appName;
 
 	private String securityToken;
 
 	private String domainName;
 
+	private String endTime;
+
+	private String startTime;
+
 	private Long ownerId;
+
+	private String streamName;
+
+	public String getAppName() {
+		return this.appName;
+	}
+
+	public void setAppName(String appName) {
+		this.appName = appName;
+		if(appName != null){
+			putQueryParameter("AppName", appName);
+		}
+	}
 
 	public String getSecurityToken() {
 		return this.securityToken;
@@ -58,6 +77,28 @@ public class DeleteLiveStreamsNotifyUrlConfigRequest extends RpcAcsRequest<Delet
 		}
 	}
 
+	public String getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime);
+		}
+	}
+
+	public String getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime);
+		}
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -69,9 +110,20 @@ public class DeleteLiveStreamsNotifyUrlConfigRequest extends RpcAcsRequest<Delet
 		}
 	}
 
+	public String getStreamName() {
+		return this.streamName;
+	}
+
+	public void setStreamName(String streamName) {
+		this.streamName = streamName;
+		if(streamName != null){
+			putQueryParameter("StreamName", streamName);
+		}
+	}
+
 	@Override
-	public Class<DeleteLiveStreamsNotifyUrlConfigResponse> getResponseClass() {
-		return DeleteLiveStreamsNotifyUrlConfigResponse.class;
+	public Class<DescribeLiveStreamBitRateDataResponse> getResponseClass() {
+		return DescribeLiveStreamBitRateDataResponse.class;
 	}
 
 }

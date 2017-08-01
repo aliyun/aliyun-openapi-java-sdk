@@ -27,28 +27,30 @@ import com.aliyuncs.RpcAcsRequest;
 public class StartMultipleStreamMixServiceRequest extends RpcAcsRequest<StartMultipleStreamMixServiceResponse> {
 	
 	public StartMultipleStreamMixServiceRequest() {
-		super("live", "2016-11-01", "StartMultipleStreamMixService", "live");
+		super("live", "2016-11-01", "StartMultipleStreamMixService", "None");
 	}
-
-	private String streamName;
-
-	private String securityToken;
-
-	private Long ownerId;
-
-	private String domainName;
 
 	private String appName;
 
+	private String securityToken;
+
+	private String domainName;
+
 	private String mixTemplate;
 
-	public String getStreamName() {
-		return this.streamName;
+	private Long ownerId;
+
+	private String streamName;
+
+	public String getAppName() {
+		return this.appName;
 	}
 
-	public void setStreamName(String streamName) {
-		this.streamName = streamName;
-		putQueryParameter("StreamName", streamName);
+	public void setAppName(String appName) {
+		this.appName = appName;
+		if(appName != null){
+			putQueryParameter("AppName", appName);
+		}
 	}
 
 	public String getSecurityToken() {
@@ -57,16 +59,9 @@ public class StartMultipleStreamMixServiceRequest extends RpcAcsRequest<StartMul
 
 	public void setSecurityToken(String securityToken) {
 		this.securityToken = securityToken;
-		putQueryParameter("SecurityToken", securityToken);
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
 	}
 
 	public String getDomainName() {
@@ -75,16 +70,9 @@ public class StartMultipleStreamMixServiceRequest extends RpcAcsRequest<StartMul
 
 	public void setDomainName(String domainName) {
 		this.domainName = domainName;
-		putQueryParameter("DomainName", domainName);
-	}
-
-	public String getAppName() {
-		return this.appName;
-	}
-
-	public void setAppName(String appName) {
-		this.appName = appName;
-		putQueryParameter("AppName", appName);
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
+		}
 	}
 
 	public String getMixTemplate() {
@@ -93,7 +81,31 @@ public class StartMultipleStreamMixServiceRequest extends RpcAcsRequest<StartMul
 
 	public void setMixTemplate(String mixTemplate) {
 		this.mixTemplate = mixTemplate;
-		putQueryParameter("MixTemplate", mixTemplate);
+		if(mixTemplate != null){
+			putQueryParameter("MixTemplate", mixTemplate);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getStreamName() {
+		return this.streamName;
+	}
+
+	public void setStreamName(String streamName) {
+		this.streamName = streamName;
+		if(streamName != null){
+			putQueryParameter("StreamName", streamName);
+		}
 	}
 
 	@Override

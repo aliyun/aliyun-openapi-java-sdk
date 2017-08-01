@@ -27,58 +27,22 @@ import com.aliyuncs.RpcAcsRequest;
 public class ForbidLiveStreamRequest extends RpcAcsRequest<ForbidLiveStreamResponse> {
 	
 	public ForbidLiveStreamRequest() {
-		super("live", "2016-11-01", "ForbidLiveStream", "live");
+		super("live", "2016-11-01", "ForbidLiveStream", "None");
 	}
-
-	private String streamName;
-
-	private String securityToken;
-
-	private Long ownerId;
-
-	private String liveStreamType;
 
 	private String resumeTime;
 
-	private String domainName;
-
 	private String appName;
 
-	public String getStreamName() {
-		return this.streamName;
-	}
+	private String securityToken;
 
-	public void setStreamName(String streamName) {
-		this.streamName = streamName;
-		putQueryParameter("StreamName", streamName);
-	}
+	private String liveStreamType;
 
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
+	private String domainName;
 
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		putQueryParameter("SecurityToken", securityToken);
-	}
+	private Long ownerId;
 
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
-	}
-
-	public String getLiveStreamType() {
-		return this.liveStreamType;
-	}
-
-	public void setLiveStreamType(String liveStreamType) {
-		this.liveStreamType = liveStreamType;
-		putQueryParameter("LiveStreamType", liveStreamType);
-	}
+	private String streamName;
 
 	public String getResumeTime() {
 		return this.resumeTime;
@@ -86,16 +50,9 @@ public class ForbidLiveStreamRequest extends RpcAcsRequest<ForbidLiveStreamRespo
 
 	public void setResumeTime(String resumeTime) {
 		this.resumeTime = resumeTime;
-		putQueryParameter("ResumeTime", resumeTime);
-	}
-
-	public String getDomainName() {
-		return this.domainName;
-	}
-
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
-		putQueryParameter("DomainName", domainName);
+		if(resumeTime != null){
+			putQueryParameter("ResumeTime", resumeTime);
+		}
 	}
 
 	public String getAppName() {
@@ -104,7 +61,64 @@ public class ForbidLiveStreamRequest extends RpcAcsRequest<ForbidLiveStreamRespo
 
 	public void setAppName(String appName) {
 		this.appName = appName;
-		putQueryParameter("AppName", appName);
+		if(appName != null){
+			putQueryParameter("AppName", appName);
+		}
+	}
+
+	public String getSecurityToken() {
+		return this.securityToken;
+	}
+
+	public void setSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	public String getLiveStreamType() {
+		return this.liveStreamType;
+	}
+
+	public void setLiveStreamType(String liveStreamType) {
+		this.liveStreamType = liveStreamType;
+		if(liveStreamType != null){
+			putQueryParameter("LiveStreamType", liveStreamType);
+		}
+	}
+
+	public String getDomainName() {
+		return this.domainName;
+	}
+
+	public void setDomainName(String domainName) {
+		this.domainName = domainName;
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getStreamName() {
+		return this.streamName;
+	}
+
+	public void setStreamName(String streamName) {
+		this.streamName = streamName;
+		if(streamName != null){
+			putQueryParameter("StreamName", streamName);
+		}
 	}
 
 	@Override

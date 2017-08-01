@@ -1,0 +1,3 @@
+2017-08-01 Version: 2.6.0
+1, 增加了DescribeLiveStreamBitRateData接口,提供流粒度帧率码率历史查询。
+

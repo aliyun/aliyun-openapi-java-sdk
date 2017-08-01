@@ -27,68 +27,34 @@ import com.aliyuncs.RpcAcsRequest;
 public class UpdateLiveSnapshotDetectPornConfigRequest extends RpcAcsRequest<UpdateLiveSnapshotDetectPornConfigResponse> {
 	
 	public UpdateLiveSnapshotDetectPornConfigRequest() {
-		super("live", "2016-11-01", "UpdateLiveSnapshotDetectPornConfig", "live");
+		super("live", "2016-11-01", "UpdateLiveSnapshotDetectPornConfig", "None");
 	}
-
-	private String ossObject;
-
-	private Integer interval;
-
-	private String securityToken;
-
-	private Long ownerId;
-
-	private String domainName;
-
-	private String appName;
-
-	private String ossEndpoint;
 
 	private String ossBucket;
 
-	public String getOssObject() {
-		return this.ossObject;
+	private String appName;
+
+	private String securityToken;
+
+	private String domainName;
+
+	private String ossEndpoint;
+
+	private Integer interval;
+
+	private Long ownerId;
+
+	private String ossObject;
+
+	public String getOssBucket() {
+		return this.ossBucket;
 	}
 
-	public void setOssObject(String ossObject) {
-		this.ossObject = ossObject;
-		putQueryParameter("OssObject", ossObject);
-	}
-
-	public Integer getInterval() {
-		return this.interval;
-	}
-
-	public void setInterval(Integer interval) {
-		this.interval = interval;
-		putQueryParameter("Interval", interval);
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		putQueryParameter("SecurityToken", securityToken);
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
-	}
-
-	public String getDomainName() {
-		return this.domainName;
-	}
-
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
-		putQueryParameter("DomainName", domainName);
+	public void setOssBucket(String ossBucket) {
+		this.ossBucket = ossBucket;
+		if(ossBucket != null){
+			putQueryParameter("OssBucket", ossBucket);
+		}
 	}
 
 	public String getAppName() {
@@ -97,7 +63,31 @@ public class UpdateLiveSnapshotDetectPornConfigRequest extends RpcAcsRequest<Upd
 
 	public void setAppName(String appName) {
 		this.appName = appName;
-		putQueryParameter("AppName", appName);
+		if(appName != null){
+			putQueryParameter("AppName", appName);
+		}
+	}
+
+	public String getSecurityToken() {
+		return this.securityToken;
+	}
+
+	public void setSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	public String getDomainName() {
+		return this.domainName;
+	}
+
+	public void setDomainName(String domainName) {
+		this.domainName = domainName;
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
+		}
 	}
 
 	public String getOssEndpoint() {
@@ -106,16 +96,42 @@ public class UpdateLiveSnapshotDetectPornConfigRequest extends RpcAcsRequest<Upd
 
 	public void setOssEndpoint(String ossEndpoint) {
 		this.ossEndpoint = ossEndpoint;
-		putQueryParameter("OssEndpoint", ossEndpoint);
+		if(ossEndpoint != null){
+			putQueryParameter("OssEndpoint", ossEndpoint);
+		}
 	}
 
-	public String getOssBucket() {
-		return this.ossBucket;
+	public Integer getInterval() {
+		return this.interval;
 	}
 
-	public void setOssBucket(String ossBucket) {
-		this.ossBucket = ossBucket;
-		putQueryParameter("OssBucket", ossBucket);
+	public void setInterval(Integer interval) {
+		this.interval = interval;
+		if(interval != null){
+			putQueryParameter("Interval", interval.toString());
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getOssObject() {
+		return this.ossObject;
+	}
+
+	public void setOssObject(String ossObject) {
+		this.ossObject = ossObject;
+		if(ossObject != null){
+			putQueryParameter("OssObject", ossObject);
+		}
 	}
 
 	@Override

@@ -27,14 +27,14 @@ import com.aliyuncs.RpcAcsRequest;
 public class ImagePornDetectionRequest extends RpcAcsRequest<ImagePornDetectionResponse> {
 	
 	public ImagePornDetectionRequest() {
-		super("live", "2016-11-01", "ImagePornDetection", "live");
+		super("live", "2016-11-01", "ImagePornDetection", "None");
 	}
 
 	private String securityToken;
 
-	private Long ownerId;
-
 	private String imageUrl;
+
+	private Long ownerId;
 
 	public String getSecurityToken() {
 		return this.securityToken;
@@ -42,16 +42,9 @@ public class ImagePornDetectionRequest extends RpcAcsRequest<ImagePornDetectionR
 
 	public void setSecurityToken(String securityToken) {
 		this.securityToken = securityToken;
-		putQueryParameter("SecurityToken", securityToken);
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
 	}
 
 	public String getImageUrl() {
@@ -60,7 +53,20 @@ public class ImagePornDetectionRequest extends RpcAcsRequest<ImagePornDetectionR
 
 	public void setImageUrl(String imageUrl) {
 		this.imageUrl = imageUrl;
-		putQueryParameter("ImageUrl", imageUrl);
+		if(imageUrl != null){
+			putQueryParameter("ImageUrl", imageUrl);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
 	}
 
 	@Override

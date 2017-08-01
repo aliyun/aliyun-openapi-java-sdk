@@ -28,62 +28,32 @@ import java.util.List;
 public class AddLiveAppRecordConfigRequest extends RpcAcsRequest<AddLiveAppRecordConfigResponse> {
 	
 	public AddLiveAppRecordConfigRequest() {
-		super("live", "2016-11-01", "AddLiveAppRecordConfig", "live");
+		super("live", "2016-11-01", "AddLiveAppRecordConfig", "None");
 	}
-
-	private List<RecordFormat> recordFormats;
-
-	private String securityToken;
-
-	private Long ownerId;
-
-	private String domainName;
-
-	private String appName;
-
-	private String ossEndpoint;
 
 	private String ossBucket;
 
-	public List<RecordFormat> getRecordFormats() {
-		return this.recordFormats;
+	private String appName;
+
+	private String securityToken;
+
+	private List<RecordFormat> recordFormats;
+
+	private String domainName;
+
+	private String ossEndpoint;
+
+	private Long ownerId;
+
+	public String getOssBucket() {
+		return this.ossBucket;
 	}
 
-	public void setRecordFormats(List<RecordFormat> recordFormats) {
-		this.recordFormats = recordFormats;	
-		for (int i = 0; i < recordFormats.size(); i++) {
-			putQueryParameter("RecordFormat." + (i + 1) + ".Format" , recordFormats.get(i).getFormat());
-			putQueryParameter("RecordFormat." + (i + 1) + ".OssObjectPrefix" , recordFormats.get(i).getOssObjectPrefix());
-			putQueryParameter("RecordFormat." + (i + 1) + ".SliceOssObjectPrefix" , recordFormats.get(i).getSliceOssObjectPrefix());
-			putQueryParameter("RecordFormat." + (i + 1) + ".CycleDuration" , recordFormats.get(i).getCycleDuration());
-		}	
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		putQueryParameter("SecurityToken", securityToken);
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
-	}
-
-	public String getDomainName() {
-		return this.domainName;
-	}
-
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
-		putQueryParameter("DomainName", domainName);
+	public void setOssBucket(String ossBucket) {
+		this.ossBucket = ossBucket;
+		if(ossBucket != null){
+			putQueryParameter("OssBucket", ossBucket);
+		}
 	}
 
 	public String getAppName() {
@@ -92,7 +62,45 @@ public class AddLiveAppRecordConfigRequest extends RpcAcsRequest<AddLiveAppRecor
 
 	public void setAppName(String appName) {
 		this.appName = appName;
-		putQueryParameter("AppName", appName);
+		if(appName != null){
+			putQueryParameter("AppName", appName);
+		}
+	}
+
+	public String getSecurityToken() {
+		return this.securityToken;
+	}
+
+	public void setSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	public List<RecordFormat> getRecordFormats() {
+		return this.recordFormats;
+	}
+
+	public void setRecordFormats(List<RecordFormat> recordFormat) {
+		this.recordFormats = recordFormat;	
+		for (int i = 0; i < recordFormat.size(); i++) {
+			putQueryParameter("RecordFormat." + (i + 1) + ".Format" , recordFormat.get(i).getFormat());
+			putQueryParameter("RecordFormat." + (i + 1) + ".OssObjectPrefix" , recordFormat.get(i).getOssObjectPrefix());
+			putQueryParameter("RecordFormat." + (i + 1) + ".SliceOssObjectPrefix" , recordFormat.get(i).getSliceOssObjectPrefix());
+			putQueryParameter("RecordFormat." + (i + 1) + ".CycleDuration" , recordFormat.get(i).getCycleDuration());
+		}	
+	}
+
+	public String getDomainName() {
+		return this.domainName;
+	}
+
+	public void setDomainName(String domainName) {
+		this.domainName = domainName;
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
+		}
 	}
 
 	public String getOssEndpoint() {
@@ -101,16 +109,20 @@ public class AddLiveAppRecordConfigRequest extends RpcAcsRequest<AddLiveAppRecor
 
 	public void setOssEndpoint(String ossEndpoint) {
 		this.ossEndpoint = ossEndpoint;
-		putQueryParameter("OssEndpoint", ossEndpoint);
+		if(ossEndpoint != null){
+			putQueryParameter("OssEndpoint", ossEndpoint);
+		}
 	}
 
-	public String getOssBucket() {
-		return this.ossBucket;
+	public Long getOwnerId() {
+		return this.ownerId;
 	}
 
-	public void setOssBucket(String ossBucket) {
-		this.ossBucket = ossBucket;
-		putQueryParameter("OssBucket", ossBucket);
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
 	}
 
 	public static class RecordFormat {

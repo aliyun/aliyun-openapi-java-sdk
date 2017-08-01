@@ -27,16 +27,27 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeleteLiveAppRecordConfigRequest extends RpcAcsRequest<DeleteLiveAppRecordConfigResponse> {
 	
 	public DeleteLiveAppRecordConfigRequest() {
-		super("live", "2016-11-01", "DeleteLiveAppRecordConfig", "live");
+		super("live", "2016-11-01", "DeleteLiveAppRecordConfig", "None");
 	}
+
+	private String appName;
 
 	private String securityToken;
 
-	private Long ownerId;
-
 	private String domainName;
 
-	private String appName;
+	private Long ownerId;
+
+	public String getAppName() {
+		return this.appName;
+	}
+
+	public void setAppName(String appName) {
+		this.appName = appName;
+		if(appName != null){
+			putQueryParameter("AppName", appName);
+		}
+	}
 
 	public String getSecurityToken() {
 		return this.securityToken;
@@ -44,16 +55,9 @@ public class DeleteLiveAppRecordConfigRequest extends RpcAcsRequest<DeleteLiveAp
 
 	public void setSecurityToken(String securityToken) {
 		this.securityToken = securityToken;
-		putQueryParameter("SecurityToken", securityToken);
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
 	}
 
 	public String getDomainName() {
@@ -62,16 +66,20 @@ public class DeleteLiveAppRecordConfigRequest extends RpcAcsRequest<DeleteLiveAp
 
 	public void setDomainName(String domainName) {
 		this.domainName = domainName;
-		putQueryParameter("DomainName", domainName);
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
+		}
 	}
 
-	public String getAppName() {
-		return this.appName;
+	public Long getOwnerId() {
+		return this.ownerId;
 	}
 
-	public void setAppName(String appName) {
-		this.appName = appName;
-		putQueryParameter("AppName", appName);
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
 	}
 
 	@Override

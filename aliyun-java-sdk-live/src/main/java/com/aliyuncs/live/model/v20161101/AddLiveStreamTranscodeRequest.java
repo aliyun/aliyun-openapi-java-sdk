@@ -27,10 +27,8 @@ import com.aliyuncs.RpcAcsRequest;
 public class AddLiveStreamTranscodeRequest extends RpcAcsRequest<AddLiveStreamTranscodeResponse> {
 	
 	public AddLiveStreamTranscodeRequest() {
-		super("live", "2016-11-01", "AddLiveStreamTranscode", "live");
+		super("live", "2016-11-01", "AddLiveStreamTranscode", "None");
 	}
-
-	private String domain;
 
 	private String app;
 
@@ -38,16 +36,9 @@ public class AddLiveStreamTranscodeRequest extends RpcAcsRequest<AddLiveStreamTr
 
 	private String securityToken;
 
+	private String domain;
+
 	private Long ownerId;
-
-	public String getDomain() {
-		return this.domain;
-	}
-
-	public void setDomain(String domain) {
-		this.domain = domain;
-		putQueryParameter("Domain", domain);
-	}
 
 	public String getApp() {
 		return this.app;
@@ -55,7 +46,9 @@ public class AddLiveStreamTranscodeRequest extends RpcAcsRequest<AddLiveStreamTr
 
 	public void setApp(String app) {
 		this.app = app;
-		putQueryParameter("App", app);
+		if(app != null){
+			putQueryParameter("App", app);
+		}
 	}
 
 	public String getTemplate() {
@@ -64,7 +57,9 @@ public class AddLiveStreamTranscodeRequest extends RpcAcsRequest<AddLiveStreamTr
 
 	public void setTemplate(String template) {
 		this.template = template;
-		putQueryParameter("Template", template);
+		if(template != null){
+			putQueryParameter("Template", template);
+		}
 	}
 
 	public String getSecurityToken() {
@@ -73,7 +68,20 @@ public class AddLiveStreamTranscodeRequest extends RpcAcsRequest<AddLiveStreamTr
 
 	public void setSecurityToken(String securityToken) {
 		this.securityToken = securityToken;
-		putQueryParameter("SecurityToken", securityToken);
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	public String getDomain() {
+		return this.domain;
+	}
+
+	public void setDomain(String domain) {
+		this.domain = domain;
+		if(domain != null){
+			putQueryParameter("Domain", domain);
+		}
 	}
 
 	public Long getOwnerId() {
@@ -82,7 +90,9 @@ public class AddLiveStreamTranscodeRequest extends RpcAcsRequest<AddLiveStreamTr
 
 	public void setOwnerId(Long ownerId) {
 		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
 	}
 
 	@Override

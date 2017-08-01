@@ -20,20 +20,18 @@ package com.aliyuncs.live.model.v20161101;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.live.transform.v20161101.DescribeLiveStreamOnlineUserNumResponseUnmarshaller;
+import com.aliyuncs.live.transform.v20161101.DescribeLiveStreamBitRateDataResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DescribeLiveStreamOnlineUserNumResponse extends AcsResponse {
+public class DescribeLiveStreamBitRateDataResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Long totalUserNumber;
-
-	private List<LiveStreamOnlineUserNumInfo> onlineUserInfo;
+	private List<FrameRateAndBitRateInfo> frameRateAndBitRateInfos;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -43,27 +41,23 @@ public class DescribeLiveStreamOnlineUserNumResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Long getTotalUserNumber() {
-		return this.totalUserNumber;
+	public List<FrameRateAndBitRateInfo> getFrameRateAndBitRateInfos() {
+		return this.frameRateAndBitRateInfos;
 	}
 
-	public void setTotalUserNumber(Long totalUserNumber) {
-		this.totalUserNumber = totalUserNumber;
+	public void setFrameRateAndBitRateInfos(List<FrameRateAndBitRateInfo> frameRateAndBitRateInfos) {
+		this.frameRateAndBitRateInfos = frameRateAndBitRateInfos;
 	}
 
-	public List<LiveStreamOnlineUserNumInfo> getOnlineUserInfo() {
-		return this.onlineUserInfo;
-	}
-
-	public void setOnlineUserInfo(List<LiveStreamOnlineUserNumInfo> onlineUserInfo) {
-		this.onlineUserInfo = onlineUserInfo;
-	}
-
-	public static class LiveStreamOnlineUserNumInfo {
+	public static class FrameRateAndBitRateInfo {
 
 		private String streamUrl;
 
-		private Long userNumber;
+		private Float videoFrameRate;
+
+		private Float audioFrameRate;
+
+		private Float bitRate;
 
 		private String time;
 
@@ -75,12 +69,28 @@ public class DescribeLiveStreamOnlineUserNumResponse extends AcsResponse {
 			this.streamUrl = streamUrl;
 		}
 
-		public Long getUserNumber() {
-			return this.userNumber;
+		public Float getVideoFrameRate() {
+			return this.videoFrameRate;
 		}
 
-		public void setUserNumber(Long userNumber) {
-			this.userNumber = userNumber;
+		public void setVideoFrameRate(Float videoFrameRate) {
+			this.videoFrameRate = videoFrameRate;
+		}
+
+		public Float getAudioFrameRate() {
+			return this.audioFrameRate;
+		}
+
+		public void setAudioFrameRate(Float audioFrameRate) {
+			this.audioFrameRate = audioFrameRate;
+		}
+
+		public Float getBitRate() {
+			return this.bitRate;
+		}
+
+		public void setBitRate(Float bitRate) {
+			this.bitRate = bitRate;
 		}
 
 		public String getTime() {
@@ -93,7 +103,7 @@ public class DescribeLiveStreamOnlineUserNumResponse extends AcsResponse {
 	}
 
 	@Override
-	public DescribeLiveStreamOnlineUserNumResponse getInstance(UnmarshallerContext context) {
-		return	DescribeLiveStreamOnlineUserNumResponseUnmarshaller.unmarshall(this, context);
+	public DescribeLiveStreamBitRateDataResponse getInstance(UnmarshallerContext context) {
+		return	DescribeLiveStreamBitRateDataResponseUnmarshaller.unmarshall(this, context);
 	}
 }

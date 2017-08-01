@@ -27,36 +27,18 @@ import com.aliyuncs.RpcAcsRequest;
 public class UpdateLiveRecordNotifyConfigRequest extends RpcAcsRequest<UpdateLiveRecordNotifyConfigResponse> {
 	
 	public UpdateLiveRecordNotifyConfigRequest() {
-		super("live", "2016-11-01", "UpdateLiveRecordNotifyConfig", "live");
+		super("live", "2016-11-01", "UpdateLiveRecordNotifyConfig", "None");
 	}
-
-	private Boolean needStatusNotify;
-
-	private String notifyUrl;
 
 	private String securityToken;
 
-	private Long ownerId;
-
 	private String domainName;
 
-	public Boolean getNeedStatusNotify() {
-		return this.needStatusNotify;
-	}
+	private String notifyUrl;
 
-	public void setNeedStatusNotify(Boolean needStatusNotify) {
-		this.needStatusNotify = needStatusNotify;
-		putQueryParameter("NeedStatusNotify", needStatusNotify);
-	}
+	private Long ownerId;
 
-	public String getNotifyUrl() {
-		return this.notifyUrl;
-	}
-
-	public void setNotifyUrl(String notifyUrl) {
-		this.notifyUrl = notifyUrl;
-		putQueryParameter("NotifyUrl", notifyUrl);
-	}
+	private Boolean needStatusNotify;
 
 	public String getSecurityToken() {
 		return this.securityToken;
@@ -64,16 +46,9 @@ public class UpdateLiveRecordNotifyConfigRequest extends RpcAcsRequest<UpdateLiv
 
 	public void setSecurityToken(String securityToken) {
 		this.securityToken = securityToken;
-		putQueryParameter("SecurityToken", securityToken);
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
 	}
 
 	public String getDomainName() {
@@ -82,7 +57,42 @@ public class UpdateLiveRecordNotifyConfigRequest extends RpcAcsRequest<UpdateLiv
 
 	public void setDomainName(String domainName) {
 		this.domainName = domainName;
-		putQueryParameter("DomainName", domainName);
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
+		}
+	}
+
+	public String getNotifyUrl() {
+		return this.notifyUrl;
+	}
+
+	public void setNotifyUrl(String notifyUrl) {
+		this.notifyUrl = notifyUrl;
+		if(notifyUrl != null){
+			putQueryParameter("NotifyUrl", notifyUrl);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public Boolean getNeedStatusNotify() {
+		return this.needStatusNotify;
+	}
+
+	public void setNeedStatusNotify(Boolean needStatusNotify) {
+		this.needStatusNotify = needStatusNotify;
+		if(needStatusNotify != null){
+			putQueryParameter("NeedStatusNotify", needStatusNotify.toString());
+		}
 	}
 
 	@Override

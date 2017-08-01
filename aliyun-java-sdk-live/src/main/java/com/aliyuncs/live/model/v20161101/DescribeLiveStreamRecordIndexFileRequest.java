@@ -27,20 +27,20 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeLiveStreamRecordIndexFileRequest extends RpcAcsRequest<DescribeLiveStreamRecordIndexFileResponse> {
 	
 	public DescribeLiveStreamRecordIndexFileRequest() {
-		super("live", "2016-11-01", "DescribeLiveStreamRecordIndexFile", "live");
+		super("live", "2016-11-01", "DescribeLiveStreamRecordIndexFile", "None");
 	}
 
 	private String recordId;
 
-	private String streamName;
+	private String appName;
 
 	private String securityToken;
 
-	private Long ownerId;
-
 	private String domainName;
 
-	private String appName;
+	private Long ownerId;
+
+	private String streamName;
 
 	public String getRecordId() {
 		return this.recordId;
@@ -48,43 +48,9 @@ public class DescribeLiveStreamRecordIndexFileRequest extends RpcAcsRequest<Desc
 
 	public void setRecordId(String recordId) {
 		this.recordId = recordId;
-		putQueryParameter("RecordId", recordId);
-	}
-
-	public String getStreamName() {
-		return this.streamName;
-	}
-
-	public void setStreamName(String streamName) {
-		this.streamName = streamName;
-		putQueryParameter("StreamName", streamName);
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		putQueryParameter("SecurityToken", securityToken);
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
-	}
-
-	public String getDomainName() {
-		return this.domainName;
-	}
-
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
-		putQueryParameter("DomainName", domainName);
+		if(recordId != null){
+			putQueryParameter("RecordId", recordId);
+		}
 	}
 
 	public String getAppName() {
@@ -93,7 +59,53 @@ public class DescribeLiveStreamRecordIndexFileRequest extends RpcAcsRequest<Desc
 
 	public void setAppName(String appName) {
 		this.appName = appName;
-		putQueryParameter("AppName", appName);
+		if(appName != null){
+			putQueryParameter("AppName", appName);
+		}
+	}
+
+	public String getSecurityToken() {
+		return this.securityToken;
+	}
+
+	public void setSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	public String getDomainName() {
+		return this.domainName;
+	}
+
+	public void setDomainName(String domainName) {
+		this.domainName = domainName;
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getStreamName() {
+		return this.streamName;
+	}
+
+	public void setStreamName(String streamName) {
+		this.streamName = streamName;
+		if(streamName != null){
+			putQueryParameter("StreamName", streamName);
+		}
 	}
 
 	@Override

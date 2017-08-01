@@ -27,25 +27,16 @@ import com.aliyuncs.RpcAcsRequest;
 public class AddLiveMixNotifyConfigRequest extends RpcAcsRequest<AddLiveMixNotifyConfigResponse> {
 	
 	public AddLiveMixNotifyConfigRequest() {
-		super("live", "2016-11-01", "AddLiveMixNotifyConfig", "live");
+		super("live", "2016-11-01", "AddLiveMixNotifyConfig", "None");
 	}
-
-	private String notifyUrl;
 
 	private String securityToken;
 
-	private Long ownerId;
-
 	private String domainName;
 
-	public String getNotifyUrl() {
-		return this.notifyUrl;
-	}
+	private String notifyUrl;
 
-	public void setNotifyUrl(String notifyUrl) {
-		this.notifyUrl = notifyUrl;
-		putQueryParameter("NotifyUrl", notifyUrl);
-	}
+	private Long ownerId;
 
 	public String getSecurityToken() {
 		return this.securityToken;
@@ -53,16 +44,9 @@ public class AddLiveMixNotifyConfigRequest extends RpcAcsRequest<AddLiveMixNotif
 
 	public void setSecurityToken(String securityToken) {
 		this.securityToken = securityToken;
-		putQueryParameter("SecurityToken", securityToken);
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
 	}
 
 	public String getDomainName() {
@@ -71,7 +55,31 @@ public class AddLiveMixNotifyConfigRequest extends RpcAcsRequest<AddLiveMixNotif
 
 	public void setDomainName(String domainName) {
 		this.domainName = domainName;
-		putQueryParameter("DomainName", domainName);
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
+		}
+	}
+
+	public String getNotifyUrl() {
+		return this.notifyUrl;
+	}
+
+	public void setNotifyUrl(String notifyUrl) {
+		this.notifyUrl = notifyUrl;
+		if(notifyUrl != null){
+			putQueryParameter("NotifyUrl", notifyUrl);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
 	}
 
 	@Override

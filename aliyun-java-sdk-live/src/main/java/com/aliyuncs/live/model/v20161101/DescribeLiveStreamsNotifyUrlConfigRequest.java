@@ -27,14 +27,14 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeLiveStreamsNotifyUrlConfigRequest extends RpcAcsRequest<DescribeLiveStreamsNotifyUrlConfigResponse> {
 	
 	public DescribeLiveStreamsNotifyUrlConfigRequest() {
-		super("live", "2016-11-01", "DescribeLiveStreamsNotifyUrlConfig", "live");
+		super("live", "2016-11-01", "DescribeLiveStreamsNotifyUrlConfig", "None");
 	}
 
 	private String securityToken;
 
-	private Long ownerId;
-
 	private String domainName;
+
+	private Long ownerId;
 
 	public String getSecurityToken() {
 		return this.securityToken;
@@ -42,16 +42,9 @@ public class DescribeLiveStreamsNotifyUrlConfigRequest extends RpcAcsRequest<Des
 
 	public void setSecurityToken(String securityToken) {
 		this.securityToken = securityToken;
-		putQueryParameter("SecurityToken", securityToken);
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
 	}
 
 	public String getDomainName() {
@@ -60,7 +53,20 @@ public class DescribeLiveStreamsNotifyUrlConfigRequest extends RpcAcsRequest<Des
 
 	public void setDomainName(String domainName) {
 		this.domainName = domainName;
-		putQueryParameter("DomainName", domainName);
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
 	}
 
 	@Override
