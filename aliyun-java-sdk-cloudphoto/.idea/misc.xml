@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="EclipseCodeFormatter">
+    <option name="formatter" value="ECLIPSE" />
+    <option name="id" value="1487311693379" />
+    <option name="importOrderConfigFilePath" value="$PROJECT_DIR$/../../../ali_import_order.importorder" />
+    <option name="importOrderFromFile" value="true" />
+    <option name="name" value="aliCodeStyle" />
+    <option name="pathToConfigFileJava" value="$PROJECT_DIR$/../../../ali-code-style.xml" />
+    <option name="selectedJavaProfile" value="ali-style" />
+  </component>
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/classes" />
+  </component>
+</project>
