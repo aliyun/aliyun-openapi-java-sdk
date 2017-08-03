@@ -45,6 +45,7 @@ public class DescribeAutoSnapshotPolicyExResponseUnmarshaller {
 			autoSnapshotPolicy.setRepeatWeekdays(context.stringValue("DescribeAutoSnapshotPolicyExResponse.AutoSnapshotPolicies["+ i +"].RepeatWeekdays"));
 			autoSnapshotPolicy.setRetentionDays(context.integerValue("DescribeAutoSnapshotPolicyExResponse.AutoSnapshotPolicies["+ i +"].RetentionDays"));
 			autoSnapshotPolicy.setDiskNums(context.integerValue("DescribeAutoSnapshotPolicyExResponse.AutoSnapshotPolicies["+ i +"].DiskNums"));
+			autoSnapshotPolicy.setVolumeNums(context.integerValue("DescribeAutoSnapshotPolicyExResponse.AutoSnapshotPolicies["+ i +"].VolumeNums"));
 			autoSnapshotPolicy.setCreationTime(context.stringValue("DescribeAutoSnapshotPolicyExResponse.AutoSnapshotPolicies["+ i +"].CreationTime"));
 
 			autoSnapshotPolicies.add(autoSnapshotPolicy);

@@ -30,30 +30,21 @@ public class ModifyVpcAttributeRequest extends RpcAcsRequest<ModifyVpcAttributeR
 		super("Ecs", "2014-05-26", "ModifyVpcAttribute", "ecs");
 	}
 
-	private Long ownerId;
-
 	private String resourceOwnerAccount;
-
-	private Long resourceOwnerId;
-
-	private String vpcId;
 
 	private String description;
 
 	private String vpcName;
 
-	private String ownerAccount;
-
 	private String userCidr;
 
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
+	private Long resourceOwnerId;
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
-	}
+	private String ownerAccount;
+
+	private String vpcId;
+
+	private Long ownerId;
 
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
@@ -61,25 +52,9 @@ public class ModifyVpcAttributeRequest extends RpcAcsRequest<ModifyVpcAttributeR
 
 	public void setResourceOwnerAccount(String resourceOwnerAccount) {
 		this.resourceOwnerAccount = resourceOwnerAccount;
-		putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-	}
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", resourceOwnerId);
-	}
-
-	public String getVpcId() {
-		return this.vpcId;
-	}
-
-	public void setVpcId(String vpcId) {
-		this.vpcId = vpcId;
-		putQueryParameter("VpcId", vpcId);
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
 	}
 
 	public String getDescription() {
@@ -88,7 +63,9 @@ public class ModifyVpcAttributeRequest extends RpcAcsRequest<ModifyVpcAttributeR
 
 	public void setDescription(String description) {
 		this.description = description;
-		putQueryParameter("Description", description);
+		if(description != null){
+			putQueryParameter("Description", description);
+		}
 	}
 
 	public String getVpcName() {
@@ -97,16 +74,9 @@ public class ModifyVpcAttributeRequest extends RpcAcsRequest<ModifyVpcAttributeR
 
 	public void setVpcName(String vpcName) {
 		this.vpcName = vpcName;
-		putQueryParameter("VpcName", vpcName);
-	}
-
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
-
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		putQueryParameter("OwnerAccount", ownerAccount);
+		if(vpcName != null){
+			putQueryParameter("VpcName", vpcName);
+		}
 	}
 
 	public String getUserCidr() {
@@ -115,7 +85,53 @@ public class ModifyVpcAttributeRequest extends RpcAcsRequest<ModifyVpcAttributeR
 
 	public void setUserCidr(String userCidr) {
 		this.userCidr = userCidr;
-		putQueryParameter("UserCidr", userCidr);
+		if(userCidr != null){
+			putQueryParameter("UserCidr", userCidr);
+		}
+	}
+
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
+	}
+
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public String getVpcId() {
+		return this.vpcId;
+	}
+
+	public void setVpcId(String vpcId) {
+		this.vpcId = vpcId;
+		if(vpcId != null){
+			putQueryParameter("VpcId", vpcId);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
 	}
 
 	@Override

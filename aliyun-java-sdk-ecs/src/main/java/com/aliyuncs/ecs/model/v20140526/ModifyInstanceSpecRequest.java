@@ -30,74 +30,31 @@ public class ModifyInstanceSpecRequest extends RpcAcsRequest<ModifyInstanceSpecR
 		super("Ecs", "2014-05-26", "ModifyInstanceSpec", "ecs");
 	}
 
-	private Long ownerId;
-
-	private String resourceOwnerAccount;
-
-	private Long resourceOwnerId;
-
-	private String instanceId;
-
-	private String instanceType;
-
 	private Integer internetMaxBandwidthOut;
 
-	private Integer internetMaxBandwidthIn;
-
-	private String ownerAccount;
-
-	private String temporaryStartTime;
+	private String clientToken;
 
 	private String temporaryEndTime;
 
-	private Integer temporaryInternetMaxBandwidthOut;
+	private Long ownerId;
 
 	private Boolean async;
 
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
+	private String instanceType;
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
-	}
+	private String resourceOwnerAccount;
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
+	private String temporaryStartTime;
 
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-	}
+	private Integer internetMaxBandwidthIn;
 
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
+	private Long resourceOwnerId;
 
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", resourceOwnerId);
-	}
+	private String ownerAccount;
 
-	public String getInstanceId() {
-		return this.instanceId;
-	}
+	private Integer temporaryInternetMaxBandwidthOut;
 
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		putQueryParameter("InstanceId", instanceId);
-	}
-
-	public String getInstanceType() {
-		return this.instanceType;
-	}
-
-	public void setInstanceType(String instanceType) {
-		this.instanceType = instanceType;
-		putQueryParameter("InstanceType", instanceType);
-	}
+	private String instanceId;
 
 	public Integer getInternetMaxBandwidthOut() {
 		return this.internetMaxBandwidthOut;
@@ -105,34 +62,20 @@ public class ModifyInstanceSpecRequest extends RpcAcsRequest<ModifyInstanceSpecR
 
 	public void setInternetMaxBandwidthOut(Integer internetMaxBandwidthOut) {
 		this.internetMaxBandwidthOut = internetMaxBandwidthOut;
-		putQueryParameter("InternetMaxBandwidthOut", internetMaxBandwidthOut);
+		if(internetMaxBandwidthOut != null){
+			putQueryParameter("InternetMaxBandwidthOut", internetMaxBandwidthOut.toString());
+		}
 	}
 
-	public Integer getInternetMaxBandwidthIn() {
-		return this.internetMaxBandwidthIn;
+	public String getClientToken() {
+		return this.clientToken;
 	}
 
-	public void setInternetMaxBandwidthIn(Integer internetMaxBandwidthIn) {
-		this.internetMaxBandwidthIn = internetMaxBandwidthIn;
-		putQueryParameter("InternetMaxBandwidthIn", internetMaxBandwidthIn);
-	}
-
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
-
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		putQueryParameter("OwnerAccount", ownerAccount);
-	}
-
-	public String getTemporaryStartTime() {
-		return this.temporaryStartTime;
-	}
-
-	public void setTemporaryStartTime(String temporaryStartTime) {
-		this.temporaryStartTime = temporaryStartTime;
-		putQueryParameter("Temporary.StartTime", temporaryStartTime);
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
+		}
 	}
 
 	public String getTemporaryEndTime() {
@@ -141,16 +84,20 @@ public class ModifyInstanceSpecRequest extends RpcAcsRequest<ModifyInstanceSpecR
 
 	public void setTemporaryEndTime(String temporaryEndTime) {
 		this.temporaryEndTime = temporaryEndTime;
-		putQueryParameter("Temporary.EndTime", temporaryEndTime);
+		if(temporaryEndTime != null){
+			putQueryParameter("Temporary.EndTime", temporaryEndTime);
+		}
 	}
 
-	public Integer getTemporaryInternetMaxBandwidthOut() {
-		return this.temporaryInternetMaxBandwidthOut;
+	public Long getOwnerId() {
+		return this.ownerId;
 	}
 
-	public void setTemporaryInternetMaxBandwidthOut(Integer temporaryInternetMaxBandwidthOut) {
-		this.temporaryInternetMaxBandwidthOut = temporaryInternetMaxBandwidthOut;
-		putQueryParameter("Temporary.InternetMaxBandwidthOut", temporaryInternetMaxBandwidthOut);
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
 	}
 
 	public Boolean getAsync() {
@@ -159,7 +106,97 @@ public class ModifyInstanceSpecRequest extends RpcAcsRequest<ModifyInstanceSpecR
 
 	public void setAsync(Boolean async) {
 		this.async = async;
-		putQueryParameter("Async", async);
+		if(async != null){
+			putQueryParameter("Async", async.toString());
+		}
+	}
+
+	public String getInstanceType() {
+		return this.instanceType;
+	}
+
+	public void setInstanceType(String instanceType) {
+		this.instanceType = instanceType;
+		if(instanceType != null){
+			putQueryParameter("InstanceType", instanceType);
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getTemporaryStartTime() {
+		return this.temporaryStartTime;
+	}
+
+	public void setTemporaryStartTime(String temporaryStartTime) {
+		this.temporaryStartTime = temporaryStartTime;
+		if(temporaryStartTime != null){
+			putQueryParameter("Temporary.StartTime", temporaryStartTime);
+		}
+	}
+
+	public Integer getInternetMaxBandwidthIn() {
+		return this.internetMaxBandwidthIn;
+	}
+
+	public void setInternetMaxBandwidthIn(Integer internetMaxBandwidthIn) {
+		this.internetMaxBandwidthIn = internetMaxBandwidthIn;
+		if(internetMaxBandwidthIn != null){
+			putQueryParameter("InternetMaxBandwidthIn", internetMaxBandwidthIn.toString());
+		}
+	}
+
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
+	}
+
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public Integer getTemporaryInternetMaxBandwidthOut() {
+		return this.temporaryInternetMaxBandwidthOut;
+	}
+
+	public void setTemporaryInternetMaxBandwidthOut(Integer temporaryInternetMaxBandwidthOut) {
+		this.temporaryInternetMaxBandwidthOut = temporaryInternetMaxBandwidthOut;
+		if(temporaryInternetMaxBandwidthOut != null){
+			putQueryParameter("Temporary.InternetMaxBandwidthOut", temporaryInternetMaxBandwidthOut.toString());
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
+		}
 	}
 
 	@Override

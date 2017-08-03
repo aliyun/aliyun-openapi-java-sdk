@@ -31,42 +31,21 @@ public class DeleteRouteEntryRequest extends RpcAcsRequest<DeleteRouteEntryRespo
 		super("Ecs", "2014-05-26", "DeleteRouteEntry", "ecs");
 	}
 
-	private List<NextHopList> nextHopLists;
-
-	private Long ownerId;
-
 	private String resourceOwnerAccount;
 
-	private Long resourceOwnerId;
-
-	private String routeTableId;
-
-	private String destinationCidrBlock;
+	private List<NextHopList> nextHopLists;
 
 	private String nextHopId;
 
+	private String routeTableId;
+
+	private Long resourceOwnerId;
+
 	private String ownerAccount;
 
-	public List<NextHopList> getNextHopLists() {
-		return this.nextHopLists;
-	}
+	private Long ownerId;
 
-	public void setNextHopLists(List<NextHopList> nextHopLists) {
-		this.nextHopLists = nextHopLists;	
-		for (int i = 0; i < nextHopLists.size(); i++) {
-			putQueryParameter("NextHopList." + (i + 1) + ".NextHopType" , nextHopLists.get(i).getNextHopType());
-			putQueryParameter("NextHopList." + (i + 1) + ".NextHopId" , nextHopLists.get(i).getNextHopId());
-		}	
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
-	}
+	private String destinationCidrBlock;
 
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
@@ -74,34 +53,21 @@ public class DeleteRouteEntryRequest extends RpcAcsRequest<DeleteRouteEntryRespo
 
 	public void setResourceOwnerAccount(String resourceOwnerAccount) {
 		this.resourceOwnerAccount = resourceOwnerAccount;
-		putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
 	}
 
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
+	public List<NextHopList> getNextHopLists() {
+		return this.nextHopLists;
 	}
 
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", resourceOwnerId);
-	}
-
-	public String getRouteTableId() {
-		return this.routeTableId;
-	}
-
-	public void setRouteTableId(String routeTableId) {
-		this.routeTableId = routeTableId;
-		putQueryParameter("RouteTableId", routeTableId);
-	}
-
-	public String getDestinationCidrBlock() {
-		return this.destinationCidrBlock;
-	}
-
-	public void setDestinationCidrBlock(String destinationCidrBlock) {
-		this.destinationCidrBlock = destinationCidrBlock;
-		putQueryParameter("DestinationCidrBlock", destinationCidrBlock);
+	public void setNextHopLists(List<NextHopList> nextHopList) {
+		this.nextHopLists = nextHopList;	
+		for (int i = 0; i < nextHopList.size(); i++) {
+			putQueryParameter("NextHopList." + (i + 1) + ".NextHopType" , nextHopList.get(i).getNextHopType());
+			putQueryParameter("NextHopList." + (i + 1) + ".NextHopId" , nextHopList.get(i).getNextHopId());
+		}	
 	}
 
 	public String getNextHopId() {
@@ -110,7 +76,31 @@ public class DeleteRouteEntryRequest extends RpcAcsRequest<DeleteRouteEntryRespo
 
 	public void setNextHopId(String nextHopId) {
 		this.nextHopId = nextHopId;
-		putQueryParameter("NextHopId", nextHopId);
+		if(nextHopId != null){
+			putQueryParameter("NextHopId", nextHopId);
+		}
+	}
+
+	public String getRouteTableId() {
+		return this.routeTableId;
+	}
+
+	public void setRouteTableId(String routeTableId) {
+		this.routeTableId = routeTableId;
+		if(routeTableId != null){
+			putQueryParameter("RouteTableId", routeTableId);
+		}
+	}
+
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
+	}
+
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
 	}
 
 	public String getOwnerAccount() {
@@ -119,7 +109,31 @@ public class DeleteRouteEntryRequest extends RpcAcsRequest<DeleteRouteEntryRespo
 
 	public void setOwnerAccount(String ownerAccount) {
 		this.ownerAccount = ownerAccount;
-		putQueryParameter("OwnerAccount", ownerAccount);
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getDestinationCidrBlock() {
+		return this.destinationCidrBlock;
+	}
+
+	public void setDestinationCidrBlock(String destinationCidrBlock) {
+		this.destinationCidrBlock = destinationCidrBlock;
+		if(destinationCidrBlock != null){
+			putQueryParameter("DestinationCidrBlock", destinationCidrBlock);
+		}
 	}
 
 	public static class NextHopList {

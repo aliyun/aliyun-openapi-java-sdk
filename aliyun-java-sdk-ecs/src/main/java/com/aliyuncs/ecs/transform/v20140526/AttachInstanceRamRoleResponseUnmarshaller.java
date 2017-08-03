@@ -23,7 +23,6 @@ import java.util.List;
 
 import com.aliyuncs.ecs.model.v20140526.AttachInstanceRamRoleResponse;
 import com.aliyuncs.ecs.model.v20140526.AttachInstanceRamRoleResponse.AttachInstanceRamRoleResult;
-import com.aliyuncs.ecs.model.v20140526.AttachInstanceRamRoleResponse.AttachInstanceRamRoleResult.Code;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -41,7 +40,7 @@ public class AttachInstanceRamRoleResponseUnmarshaller {
 			AttachInstanceRamRoleResult attachInstanceRamRoleResult = new AttachInstanceRamRoleResult();
 			attachInstanceRamRoleResult.setInstanceId(context.stringValue("AttachInstanceRamRoleResponse.AttachInstanceRamRoleResults["+ i +"].InstanceId"));
 			attachInstanceRamRoleResult.setSuccess(context.booleanValue("AttachInstanceRamRoleResponse.AttachInstanceRamRoleResults["+ i +"].Success"));
-			attachInstanceRamRoleResult.setCode(Code.getEnum(context.stringValue("AttachInstanceRamRoleResponse.AttachInstanceRamRoleResults["+ i +"].Code")));
+			attachInstanceRamRoleResult.setCode(context.stringValue("AttachInstanceRamRoleResponse.AttachInstanceRamRoleResults["+ i +"].Code"));
 			attachInstanceRamRoleResult.setMessage(context.stringValue("AttachInstanceRamRoleResponse.AttachInstanceRamRoleResults["+ i +"].Message"));
 
 			attachInstanceRamRoleResults.add(attachInstanceRamRoleResult);

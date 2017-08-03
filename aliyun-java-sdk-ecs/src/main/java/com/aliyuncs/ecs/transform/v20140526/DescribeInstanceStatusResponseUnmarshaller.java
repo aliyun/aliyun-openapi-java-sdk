@@ -23,7 +23,6 @@ import java.util.List;
 
 import com.aliyuncs.ecs.model.v20140526.DescribeInstanceStatusResponse;
 import com.aliyuncs.ecs.model.v20140526.DescribeInstanceStatusResponse.InstanceStatus;
-import com.aliyuncs.ecs.model.v20140526.DescribeInstanceStatusResponse.InstanceStatus.Status;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -40,7 +39,7 @@ public class DescribeInstanceStatusResponseUnmarshaller {
 		for (int i = 0; i < context.lengthValue("DescribeInstanceStatusResponse.InstanceStatuses.Length"); i++) {
 			InstanceStatus instanceStatus = new InstanceStatus();
 			instanceStatus.setInstanceId(context.stringValue("DescribeInstanceStatusResponse.InstanceStatuses["+ i +"].InstanceId"));
-			instanceStatus.setStatus(Status.getEnum(context.stringValue("DescribeInstanceStatusResponse.InstanceStatuses["+ i +"].Status")));
+			instanceStatus.setStatus(context.stringValue("DescribeInstanceStatusResponse.InstanceStatuses["+ i +"].Status"));
 
 			instanceStatuses.add(instanceStatus);
 		}

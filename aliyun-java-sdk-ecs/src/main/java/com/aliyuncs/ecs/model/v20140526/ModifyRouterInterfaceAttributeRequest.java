@@ -30,91 +30,50 @@ public class ModifyRouterInterfaceAttributeRequest extends RpcAcsRequest<ModifyR
 		super("Ecs", "2014-05-26", "ModifyRouterInterfaceAttribute", "ecs");
 	}
 
-	private Long ownerId;
+	private String healthCheckTargetIp;
 
-	private String resourceOwnerAccount;
-
-	private Long resourceOwnerId;
-
-	private String routerInterfaceId;
-
-	private String name;
-
-	private String description;
-
-	private String oppositeInterfaceId;
+	private Long oppositeInterfaceOwnerId;
 
 	private String oppositeRouterId;
 
-	private String oppositeRouterType;
-
-	private String oppositeInterfaceOwnerId;
+	private Long ownerId;
 
 	private String healthCheckSourceIp;
 
-	private String healthCheckTargetIp;
+	private String oppositeRouterType;
 
-	public Long getOwnerId() {
-		return this.ownerId;
+	private String resourceOwnerAccount;
+
+	private String description;
+
+	private String name;
+
+	private String routerInterfaceId;
+
+	private String oppositeInterfaceId;
+
+	private Long resourceOwnerId;
+
+	public String getHealthCheckTargetIp() {
+		return this.healthCheckTargetIp;
 	}
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
+	public void setHealthCheckTargetIp(String healthCheckTargetIp) {
+		this.healthCheckTargetIp = healthCheckTargetIp;
+		if(healthCheckTargetIp != null){
+			putQueryParameter("HealthCheckTargetIp", healthCheckTargetIp);
+		}
 	}
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
+	public Long getOppositeInterfaceOwnerId() {
+		return this.oppositeInterfaceOwnerId;
 	}
 
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-	}
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", resourceOwnerId);
-	}
-
-	public String getRouterInterfaceId() {
-		return this.routerInterfaceId;
-	}
-
-	public void setRouterInterfaceId(String routerInterfaceId) {
-		this.routerInterfaceId = routerInterfaceId;
-		putQueryParameter("RouterInterfaceId", routerInterfaceId);
-	}
-
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-		putQueryParameter("Name", name);
-	}
-
-	public String getDescription() {
-		return this.description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-		putQueryParameter("Description", description);
-	}
-
-	public String getOppositeInterfaceId() {
-		return this.oppositeInterfaceId;
-	}
-
-	public void setOppositeInterfaceId(String oppositeInterfaceId) {
-		this.oppositeInterfaceId = oppositeInterfaceId;
-		putQueryParameter("OppositeInterfaceId", oppositeInterfaceId);
+	public void setOppositeInterfaceOwnerId(Long oppositeInterfaceOwnerId) {
+		this.oppositeInterfaceOwnerId = oppositeInterfaceOwnerId;
+		if(oppositeInterfaceOwnerId != null){
+			putQueryParameter("OppositeInterfaceOwnerId", oppositeInterfaceOwnerId.toString());
+		}
 	}
 
 	public String getOppositeRouterId() {
@@ -123,25 +82,20 @@ public class ModifyRouterInterfaceAttributeRequest extends RpcAcsRequest<ModifyR
 
 	public void setOppositeRouterId(String oppositeRouterId) {
 		this.oppositeRouterId = oppositeRouterId;
-		putQueryParameter("OppositeRouterId", oppositeRouterId);
+		if(oppositeRouterId != null){
+			putQueryParameter("OppositeRouterId", oppositeRouterId);
+		}
 	}
 
-	public String getOppositeRouterType() {
-		return this.oppositeRouterType;
+	public Long getOwnerId() {
+		return this.ownerId;
 	}
 
-	public void setOppositeRouterType(String oppositeRouterType) {
-		this.oppositeRouterType = oppositeRouterType;
-		putQueryParameter("OppositeRouterType", oppositeRouterType);
-	}
-
-	public String getOppositeInterfaceOwnerId() {
-		return this.oppositeInterfaceOwnerId;
-	}
-
-	public void setOppositeInterfaceOwnerId(String oppositeInterfaceOwnerId) {
-		this.oppositeInterfaceOwnerId = oppositeInterfaceOwnerId;
-		putQueryParameter("OppositeInterfaceOwnerId", oppositeInterfaceOwnerId);
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
 	}
 
 	public String getHealthCheckSourceIp() {
@@ -150,16 +104,86 @@ public class ModifyRouterInterfaceAttributeRequest extends RpcAcsRequest<ModifyR
 
 	public void setHealthCheckSourceIp(String healthCheckSourceIp) {
 		this.healthCheckSourceIp = healthCheckSourceIp;
-		putQueryParameter("HealthCheckSourceIp", healthCheckSourceIp);
+		if(healthCheckSourceIp != null){
+			putQueryParameter("HealthCheckSourceIp", healthCheckSourceIp);
+		}
 	}
 
-	public String getHealthCheckTargetIp() {
-		return this.healthCheckTargetIp;
+	public String getOppositeRouterType() {
+		return this.oppositeRouterType;
 	}
 
-	public void setHealthCheckTargetIp(String healthCheckTargetIp) {
-		this.healthCheckTargetIp = healthCheckTargetIp;
-		putQueryParameter("HealthCheckTargetIp", healthCheckTargetIp);
+	public void setOppositeRouterType(String oppositeRouterType) {
+		this.oppositeRouterType = oppositeRouterType;
+		if(oppositeRouterType != null){
+			putQueryParameter("OppositeRouterType", oppositeRouterType);
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+		if(description != null){
+			putQueryParameter("Description", description);
+		}
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
+		}
+	}
+
+	public String getRouterInterfaceId() {
+		return this.routerInterfaceId;
+	}
+
+	public void setRouterInterfaceId(String routerInterfaceId) {
+		this.routerInterfaceId = routerInterfaceId;
+		if(routerInterfaceId != null){
+			putQueryParameter("RouterInterfaceId", routerInterfaceId);
+		}
+	}
+
+	public String getOppositeInterfaceId() {
+		return this.oppositeInterfaceId;
+	}
+
+	public void setOppositeInterfaceId(String oppositeInterfaceId) {
+		this.oppositeInterfaceId = oppositeInterfaceId;
+		if(oppositeInterfaceId != null){
+			putQueryParameter("OppositeInterfaceId", oppositeInterfaceId);
+		}
+	}
+
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
+	}
+
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
 	}
 
 	@Override

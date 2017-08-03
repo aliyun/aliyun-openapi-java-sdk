@@ -31,41 +31,29 @@ public class DescribeVirtualBorderRoutersForPhysicalConnectionRequest extends Rp
 		super("Ecs", "2014-05-26", "DescribeVirtualBorderRoutersForPhysicalConnection", "ecs");
 	}
 
-	private List<Filter> filters;
-
-	private Long ownerId;
+	private Integer pageSize;
 
 	private String resourceOwnerAccount;
+
+	private Integer pageNumber;
 
 	private Long resourceOwnerId;
 
 	private String physicalConnectionId;
 
-	private Integer pageNumber;
+	private Long ownerId;
 
-	private Integer pageSize;
+	private List<Filter> filters;
 
-	public List<Filter> getFilters() {
-		return this.filters;
+	public Integer getPageSize() {
+		return this.pageSize;
 	}
 
-	public void setFilters(List<Filter> filters) {
-		this.filters = filters;	
-		for (int i = 0; i < filters.size(); i++) {
-			putQueryParameter("Filter." + (i + 1) + ".Key" , filters.get(i).getKey());
-			for (int j = 0; j < filters.get(i).getValues().size(); j++) {
-				putQueryParameter("Filter." + (i + 1) + ".Value." +(j + 1), filters.get(i).getValues().get(j));
-			}
-		}	
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
 	}
 
 	public String getResourceOwnerAccount() {
@@ -74,25 +62,9 @@ public class DescribeVirtualBorderRoutersForPhysicalConnectionRequest extends Rp
 
 	public void setResourceOwnerAccount(String resourceOwnerAccount) {
 		this.resourceOwnerAccount = resourceOwnerAccount;
-		putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-	}
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", resourceOwnerId);
-	}
-
-	public String getPhysicalConnectionId() {
-		return this.physicalConnectionId;
-	}
-
-	public void setPhysicalConnectionId(String physicalConnectionId) {
-		this.physicalConnectionId = physicalConnectionId;
-		putQueryParameter("PhysicalConnectionId", physicalConnectionId);
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
 	}
 
 	public Integer getPageNumber() {
@@ -101,16 +73,56 @@ public class DescribeVirtualBorderRoutersForPhysicalConnectionRequest extends Rp
 
 	public void setPageNumber(Integer pageNumber) {
 		this.pageNumber = pageNumber;
-		putQueryParameter("PageNumber", pageNumber);
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		putQueryParameter("PageSize", pageSize);
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getPhysicalConnectionId() {
+		return this.physicalConnectionId;
+	}
+
+	public void setPhysicalConnectionId(String physicalConnectionId) {
+		this.physicalConnectionId = physicalConnectionId;
+		if(physicalConnectionId != null){
+			putQueryParameter("PhysicalConnectionId", physicalConnectionId);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public List<Filter> getFilters() {
+		return this.filters;
+	}
+
+	public void setFilters(List<Filter> filter) {
+		this.filters = filter;	
+		for (int i = 0; i < filter.size(); i++) {
+			putQueryParameter("Filter." + (i + 1) + ".Key" , filter.get(i).getKey());
+			for (int j = 0; j < filter.get(i).getValues().size(); j++) {
+				putQueryParameter("Filter." + (i + 1) + ".Value." +(j + 1), filter.get(i).getValues().get(j));
+			}
+		}	
 	}
 
 	public static class Filter {

@@ -30,56 +30,31 @@ public class CreateHaVipRequest extends RpcAcsRequest<CreateHaVipResponse> {
 		super("Ecs", "2014-05-26", "CreateHaVip", "ecs");
 	}
 
-	private Long ownerId;
-
-	private String resourceOwnerAccount;
-
-	private Long resourceOwnerId;
-
-	private String ownerAccount;
+	private String vSwitchId;
 
 	private String clientToken;
 
-	private String vSwitchId;
-
-	private String ipAddress;
+	private String resourceOwnerAccount;
 
 	private String description;
 
-	public Long getOwnerId() {
-		return this.ownerId;
+	private Long resourceOwnerId;
+
+	private String ipAddress;
+
+	private String ownerAccount;
+
+	private Long ownerId;
+
+	public String getVSwitchId() {
+		return this.vSwitchId;
 	}
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-	}
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", resourceOwnerId);
-	}
-
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
-
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		putQueryParameter("OwnerAccount", ownerAccount);
+	public void setVSwitchId(String vSwitchId) {
+		this.vSwitchId = vSwitchId;
+		if(vSwitchId != null){
+			putQueryParameter("VSwitchId", vSwitchId);
+		}
 	}
 
 	public String getClientToken() {
@@ -88,25 +63,20 @@ public class CreateHaVipRequest extends RpcAcsRequest<CreateHaVipResponse> {
 
 	public void setClientToken(String clientToken) {
 		this.clientToken = clientToken;
-		putQueryParameter("ClientToken", clientToken);
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
+		}
 	}
 
-	public String getVSwitchId() {
-		return this.vSwitchId;
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
 	}
 
-	public void setVSwitchId(String vSwitchId) {
-		this.vSwitchId = vSwitchId;
-		putQueryParameter("VSwitchId", vSwitchId);
-	}
-
-	public String getIpAddress() {
-		return this.ipAddress;
-	}
-
-	public void setIpAddress(String ipAddress) {
-		this.ipAddress = ipAddress;
-		putQueryParameter("IpAddress", ipAddress);
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
 	}
 
 	public String getDescription() {
@@ -115,7 +85,53 @@ public class CreateHaVipRequest extends RpcAcsRequest<CreateHaVipResponse> {
 
 	public void setDescription(String description) {
 		this.description = description;
-		putQueryParameter("Description", description);
+		if(description != null){
+			putQueryParameter("Description", description);
+		}
+	}
+
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
+	}
+
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getIpAddress() {
+		return this.ipAddress;
+	}
+
+	public void setIpAddress(String ipAddress) {
+		this.ipAddress = ipAddress;
+		if(ipAddress != null){
+			putQueryParameter("IpAddress", ipAddress);
+		}
+	}
+
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
 	}
 
 	@Override

@@ -30,36 +30,29 @@ public class EnablePhysicalConnectionRequest extends RpcAcsRequest<EnablePhysica
 		super("Ecs", "2014-05-26", "EnablePhysicalConnection", "ecs");
 	}
 
-	private String physicalConnectionId;
-
-	private Long ownerId;
+	private String clientToken;
 
 	private String resourceOwnerAccount;
 
-	private Long resourceOwnerId;
+	private String userCidr;
 
-	private String clientToken;
+	private Long resourceOwnerId;
 
 	private String ownerAccount;
 
-	private String userCidr;
+	private Long ownerId;
 
-	public String getPhysicalConnectionId() {
-		return this.physicalConnectionId;
+	private String physicalConnectionId;
+
+	public String getClientToken() {
+		return this.clientToken;
 	}
 
-	public void setPhysicalConnectionId(String physicalConnectionId) {
-		this.physicalConnectionId = physicalConnectionId;
-		putQueryParameter("PhysicalConnectionId", physicalConnectionId);
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
+		}
 	}
 
 	public String getResourceOwnerAccount() {
@@ -68,34 +61,9 @@ public class EnablePhysicalConnectionRequest extends RpcAcsRequest<EnablePhysica
 
 	public void setResourceOwnerAccount(String resourceOwnerAccount) {
 		this.resourceOwnerAccount = resourceOwnerAccount;
-		putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-	}
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", resourceOwnerId);
-	}
-
-	public String getClientToken() {
-		return this.clientToken;
-	}
-
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		putQueryParameter("ClientToken", clientToken);
-	}
-
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
-
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		putQueryParameter("OwnerAccount", ownerAccount);
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
 	}
 
 	public String getUserCidr() {
@@ -104,7 +72,53 @@ public class EnablePhysicalConnectionRequest extends RpcAcsRequest<EnablePhysica
 
 	public void setUserCidr(String userCidr) {
 		this.userCidr = userCidr;
-		putQueryParameter("UserCidr", userCidr);
+		if(userCidr != null){
+			putQueryParameter("UserCidr", userCidr);
+		}
+	}
+
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
+	}
+
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getPhysicalConnectionId() {
+		return this.physicalConnectionId;
+	}
+
+	public void setPhysicalConnectionId(String physicalConnectionId) {
+		this.physicalConnectionId = physicalConnectionId;
+		if(physicalConnectionId != null){
+			putQueryParameter("PhysicalConnectionId", physicalConnectionId);
+		}
 	}
 
 	@Override

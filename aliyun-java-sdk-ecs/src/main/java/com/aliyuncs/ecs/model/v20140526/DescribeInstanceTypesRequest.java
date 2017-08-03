@@ -30,7 +30,7 @@ public class DescribeInstanceTypesRequest extends RpcAcsRequest<DescribeInstance
 		super("Ecs", "2014-05-26", "DescribeInstanceTypes", "ecs");
 	}
 
-	private Long ownerId;
+	private String instanceTypeFamily;
 
 	private String resourceOwnerAccount;
 
@@ -38,15 +38,17 @@ public class DescribeInstanceTypesRequest extends RpcAcsRequest<DescribeInstance
 
 	private String ownerAccount;
 
-	private String instanceTypeFamily;
+	private Long ownerId;
 
-	public Long getOwnerId() {
-		return this.ownerId;
+	public String getInstanceTypeFamily() {
+		return this.instanceTypeFamily;
 	}
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
+	public void setInstanceTypeFamily(String instanceTypeFamily) {
+		this.instanceTypeFamily = instanceTypeFamily;
+		if(instanceTypeFamily != null){
+			putQueryParameter("InstanceTypeFamily", instanceTypeFamily);
+		}
 	}
 
 	public String getResourceOwnerAccount() {
@@ -55,7 +57,9 @@ public class DescribeInstanceTypesRequest extends RpcAcsRequest<DescribeInstance
 
 	public void setResourceOwnerAccount(String resourceOwnerAccount) {
 		this.resourceOwnerAccount = resourceOwnerAccount;
-		putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
 	}
 
 	public Long getResourceOwnerId() {
@@ -64,7 +68,9 @@ public class DescribeInstanceTypesRequest extends RpcAcsRequest<DescribeInstance
 
 	public void setResourceOwnerId(Long resourceOwnerId) {
 		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", resourceOwnerId);
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
 	}
 
 	public String getOwnerAccount() {
@@ -73,16 +79,20 @@ public class DescribeInstanceTypesRequest extends RpcAcsRequest<DescribeInstance
 
 	public void setOwnerAccount(String ownerAccount) {
 		this.ownerAccount = ownerAccount;
-		putQueryParameter("OwnerAccount", ownerAccount);
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
 	}
 
-	public String getInstanceTypeFamily() {
-		return this.instanceTypeFamily;
+	public Long getOwnerId() {
+		return this.ownerId;
 	}
 
-	public void setInstanceTypeFamily(String instanceTypeFamily) {
-		this.instanceTypeFamily = instanceTypeFamily;
-		putQueryParameter("InstanceTypeFamily", instanceTypeFamily);
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
 	}
 
 	@Override

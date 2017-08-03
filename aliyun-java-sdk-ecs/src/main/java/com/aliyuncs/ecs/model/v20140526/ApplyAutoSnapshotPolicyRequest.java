@@ -30,23 +30,25 @@ public class ApplyAutoSnapshotPolicyRequest extends RpcAcsRequest<ApplyAutoSnaps
 		super("Ecs", "2014-05-26", "ApplyAutoSnapshotPolicy", "ecs");
 	}
 
-	private Long ownerId;
+	private String diskIds;
 
 	private String resourceOwnerAccount;
 
-	private Long resourceOwnerId;
-
 	private String autoSnapshotPolicyId;
 
-	private String diskIds;
+	private Long resourceOwnerId;
 
-	public Long getOwnerId() {
-		return this.ownerId;
+	private Long ownerId;
+
+	public String getDiskIds() {
+		return this.diskIds;
 	}
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
+	public void setDiskIds(String diskIds) {
+		this.diskIds = diskIds;
+		if(diskIds != null){
+			putQueryParameter("diskIds", diskIds);
+		}
 	}
 
 	public String getResourceOwnerAccount() {
@@ -55,7 +57,20 @@ public class ApplyAutoSnapshotPolicyRequest extends RpcAcsRequest<ApplyAutoSnaps
 
 	public void setResourceOwnerAccount(String resourceOwnerAccount) {
 		this.resourceOwnerAccount = resourceOwnerAccount;
-		putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getAutoSnapshotPolicyId() {
+		return this.autoSnapshotPolicyId;
+	}
+
+	public void setAutoSnapshotPolicyId(String autoSnapshotPolicyId) {
+		this.autoSnapshotPolicyId = autoSnapshotPolicyId;
+		if(autoSnapshotPolicyId != null){
+			putQueryParameter("autoSnapshotPolicyId", autoSnapshotPolicyId);
+		}
 	}
 
 	public Long getResourceOwnerId() {
@@ -64,25 +79,20 @@ public class ApplyAutoSnapshotPolicyRequest extends RpcAcsRequest<ApplyAutoSnaps
 
 	public void setResourceOwnerId(Long resourceOwnerId) {
 		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", resourceOwnerId);
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
 	}
 
-	public String getautoSnapshotPolicyId() {
-		return this.autoSnapshotPolicyId;
+	public Long getOwnerId() {
+		return this.ownerId;
 	}
 
-	public void setautoSnapshotPolicyId(String autoSnapshotPolicyId) {
-		this.autoSnapshotPolicyId = autoSnapshotPolicyId;
-		putQueryParameter("autoSnapshotPolicyId", autoSnapshotPolicyId);
-	}
-
-	public String getdiskIds() {
-		return this.diskIds;
-	}
-
-	public void setdiskIds(String diskIds) {
-		this.diskIds = diskIds;
-		putQueryParameter("diskIds", diskIds);
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
 	}
 
 	@Override

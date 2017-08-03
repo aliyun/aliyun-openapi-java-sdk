@@ -35,15 +35,15 @@ public class DescribeKeyPairsResponseUnmarshaller {
 		describeKeyPairsResponse.setPageNumber(context.integerValue("DescribeKeyPairsResponse.PageNumber"));
 		describeKeyPairsResponse.setPageSize(context.integerValue("DescribeKeyPairsResponse.PageSize"));
 
-		List<KeyPair> keyPairsList = new ArrayList<KeyPair>();
+		List<KeyPair> keyPairs = new ArrayList<KeyPair>();
 		for (int i = 0; i < context.lengthValue("DescribeKeyPairsResponse.KeyPairs.Length"); i++) {
 			KeyPair keyPair = new KeyPair();
 			keyPair.setKeyPairName(context.stringValue("DescribeKeyPairsResponse.KeyPairs["+ i +"].KeyPairName"));
 			keyPair.setKeyPairFingerPrint(context.stringValue("DescribeKeyPairsResponse.KeyPairs["+ i +"].KeyPairFingerPrint"));
 
-			keyPairsList.add(keyPair);
+			keyPairs.add(keyPair);
 		}
-		describeKeyPairsResponse.setKeyPairs(keyPairsList);
+		describeKeyPairsResponse.setKeyPairs(keyPairs);
 	 
 	 	return describeKeyPairsResponse;
 	}

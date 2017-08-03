@@ -30,26 +30,17 @@ public class LeaveSecurityGroupRequest extends RpcAcsRequest<LeaveSecurityGroupR
 		super("Ecs", "2014-05-26", "LeaveSecurityGroup", "ecs");
 	}
 
-	private Long ownerId;
-
 	private String resourceOwnerAccount;
-
-	private Long resourceOwnerId;
 
 	private String securityGroupId;
 
-	private String instanceId;
+	private Long resourceOwnerId;
 
 	private String ownerAccount;
 
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
+	private Long ownerId;
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
-	}
+	private String instanceId;
 
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
@@ -57,16 +48,9 @@ public class LeaveSecurityGroupRequest extends RpcAcsRequest<LeaveSecurityGroupR
 
 	public void setResourceOwnerAccount(String resourceOwnerAccount) {
 		this.resourceOwnerAccount = resourceOwnerAccount;
-		putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-	}
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", resourceOwnerId);
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
 	}
 
 	public String getSecurityGroupId() {
@@ -75,16 +59,20 @@ public class LeaveSecurityGroupRequest extends RpcAcsRequest<LeaveSecurityGroupR
 
 	public void setSecurityGroupId(String securityGroupId) {
 		this.securityGroupId = securityGroupId;
-		putQueryParameter("SecurityGroupId", securityGroupId);
+		if(securityGroupId != null){
+			putQueryParameter("SecurityGroupId", securityGroupId);
+		}
 	}
 
-	public String getInstanceId() {
-		return this.instanceId;
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
 	}
 
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		putQueryParameter("InstanceId", instanceId);
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
 	}
 
 	public String getOwnerAccount() {
@@ -93,7 +81,31 @@ public class LeaveSecurityGroupRequest extends RpcAcsRequest<LeaveSecurityGroupR
 
 	public void setOwnerAccount(String ownerAccount) {
 		this.ownerAccount = ownerAccount;
-		putQueryParameter("OwnerAccount", ownerAccount);
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
+		}
 	}
 
 	@Override

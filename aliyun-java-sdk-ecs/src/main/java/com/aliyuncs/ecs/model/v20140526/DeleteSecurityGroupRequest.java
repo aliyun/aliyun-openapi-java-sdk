@@ -30,24 +30,15 @@ public class DeleteSecurityGroupRequest extends RpcAcsRequest<DeleteSecurityGrou
 		super("Ecs", "2014-05-26", "DeleteSecurityGroup", "ecs");
 	}
 
-	private Long ownerId;
-
 	private String resourceOwnerAccount;
-
-	private Long resourceOwnerId;
 
 	private String securityGroupId;
 
+	private Long resourceOwnerId;
+
 	private String ownerAccount;
 
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
-	}
+	private Long ownerId;
 
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
@@ -55,16 +46,9 @@ public class DeleteSecurityGroupRequest extends RpcAcsRequest<DeleteSecurityGrou
 
 	public void setResourceOwnerAccount(String resourceOwnerAccount) {
 		this.resourceOwnerAccount = resourceOwnerAccount;
-		putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-	}
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", resourceOwnerId);
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
 	}
 
 	public String getSecurityGroupId() {
@@ -73,7 +57,20 @@ public class DeleteSecurityGroupRequest extends RpcAcsRequest<DeleteSecurityGrou
 
 	public void setSecurityGroupId(String securityGroupId) {
 		this.securityGroupId = securityGroupId;
-		putQueryParameter("SecurityGroupId", securityGroupId);
+		if(securityGroupId != null){
+			putQueryParameter("SecurityGroupId", securityGroupId);
+		}
+	}
+
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
+	}
+
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
 	}
 
 	public String getOwnerAccount() {
@@ -82,7 +79,20 @@ public class DeleteSecurityGroupRequest extends RpcAcsRequest<DeleteSecurityGrou
 
 	public void setOwnerAccount(String ownerAccount) {
 		this.ownerAccount = ownerAccount;
-		putQueryParameter("OwnerAccount", ownerAccount);
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
 	}
 
 	@Override

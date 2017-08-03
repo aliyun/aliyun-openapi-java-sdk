@@ -24,7 +24,6 @@ import java.util.List;
 import com.aliyuncs.ecs.model.v20140526.DescribeInstanceAttributeResponse;
 import com.aliyuncs.ecs.model.v20140526.DescribeInstanceAttributeResponse.EipAddress;
 import com.aliyuncs.ecs.model.v20140526.DescribeInstanceAttributeResponse.LockReason;
-import com.aliyuncs.ecs.model.v20140526.DescribeInstanceAttributeResponse.Status;
 import com.aliyuncs.ecs.model.v20140526.DescribeInstanceAttributeResponse.VpcAttributes;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -44,7 +43,7 @@ public class DescribeInstanceAttributeResponseUnmarshaller {
 		describeInstanceAttributeResponse.setCpu(context.integerValue("DescribeInstanceAttributeResponse.Cpu"));
 		describeInstanceAttributeResponse.setMemory(context.integerValue("DescribeInstanceAttributeResponse.Memory"));
 		describeInstanceAttributeResponse.setHostName(context.stringValue("DescribeInstanceAttributeResponse.HostName"));
-		describeInstanceAttributeResponse.setStatus(Status.getEnum(context.stringValue("DescribeInstanceAttributeResponse.Status")));
+		describeInstanceAttributeResponse.setStatus(context.stringValue("DescribeInstanceAttributeResponse.Status"));
 		describeInstanceAttributeResponse.setInternetChargeType(context.stringValue("DescribeInstanceAttributeResponse.InternetChargeType"));
 		describeInstanceAttributeResponse.setInternetMaxBandwidthIn(context.integerValue("DescribeInstanceAttributeResponse.InternetMaxBandwidthIn"));
 		describeInstanceAttributeResponse.setInternetMaxBandwidthOut(context.integerValue("DescribeInstanceAttributeResponse.InternetMaxBandwidthOut"));

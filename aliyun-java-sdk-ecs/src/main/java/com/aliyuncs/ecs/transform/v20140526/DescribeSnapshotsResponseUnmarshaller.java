@@ -23,7 +23,6 @@ import java.util.List;
 
 import com.aliyuncs.ecs.model.v20140526.DescribeSnapshotsResponse;
 import com.aliyuncs.ecs.model.v20140526.DescribeSnapshotsResponse.Snapshot;
-import com.aliyuncs.ecs.model.v20140526.DescribeSnapshotsResponse.Snapshot.SourceDiskType;
 import com.aliyuncs.ecs.model.v20140526.DescribeSnapshotsResponse.Snapshot.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -45,12 +44,13 @@ public class DescribeSnapshotsResponseUnmarshaller {
 			snapshot.setProgress(context.stringValue("DescribeSnapshotsResponse.Snapshots["+ i +"].Progress"));
 			snapshot.setProductCode(context.stringValue("DescribeSnapshotsResponse.Snapshots["+ i +"].ProductCode"));
 			snapshot.setSourceDiskId(context.stringValue("DescribeSnapshotsResponse.Snapshots["+ i +"].SourceDiskId"));
-			snapshot.setSourceDiskType(SourceDiskType.getEnum(context.stringValue("DescribeSnapshotsResponse.Snapshots["+ i +"].SourceDiskType")));
+			snapshot.setSourceDiskType(context.stringValue("DescribeSnapshotsResponse.Snapshots["+ i +"].SourceDiskType"));
 			snapshot.setSourceDiskSize(context.stringValue("DescribeSnapshotsResponse.Snapshots["+ i +"].SourceDiskSize"));
 			snapshot.setDescription(context.stringValue("DescribeSnapshotsResponse.Snapshots["+ i +"].Description"));
 			snapshot.setCreationTime(context.stringValue("DescribeSnapshotsResponse.Snapshots["+ i +"].CreationTime"));
 			snapshot.setStatus(context.stringValue("DescribeSnapshotsResponse.Snapshots["+ i +"].Status"));
 			snapshot.setUsage(context.stringValue("DescribeSnapshotsResponse.Snapshots["+ i +"].Usage"));
+			snapshot.setSourceStorageType(context.stringValue("DescribeSnapshotsResponse.Snapshots["+ i +"].SourceStorageType"));
 
 			List<Tag> tags = new ArrayList<Tag>();
 			for (int j = 0; j < context.lengthValue("DescribeSnapshotsResponse.Snapshots["+ i +"].Tags.Length"); j++) {

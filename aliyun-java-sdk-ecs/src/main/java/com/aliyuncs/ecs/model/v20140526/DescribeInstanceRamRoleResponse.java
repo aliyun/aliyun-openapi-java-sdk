@@ -35,10 +35,6 @@ public class DescribeInstanceRamRoleResponse extends AcsResponse {
 
 	private Integer totalCount;
 
-	private Integer pageNumber;
-
-	private Integer pageSize;
-
 	private List<InstanceRamRoleSet> instanceRamRoleSets;
 
 	public String getRequestId() {
@@ -63,22 +59,6 @@ public class DescribeInstanceRamRoleResponse extends AcsResponse {
 
 	public void setTotalCount(Integer totalCount) {
 		this.totalCount = totalCount;
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
 	}
 
 	public List<InstanceRamRoleSet> getInstanceRamRoleSets() {

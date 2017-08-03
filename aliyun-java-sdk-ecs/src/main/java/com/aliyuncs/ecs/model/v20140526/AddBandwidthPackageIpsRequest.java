@@ -30,27 +30,29 @@ public class AddBandwidthPackageIpsRequest extends RpcAcsRequest<AddBandwidthPac
 		super("Ecs", "2014-05-26", "AddBandwidthPackageIps", "ecs");
 	}
 
-	private Long ownerId;
+	private String clientToken;
 
 	private String resourceOwnerAccount;
+
+	private String ipCount;
 
 	private Long resourceOwnerId;
 
 	private String ownerAccount;
 
+	private Long ownerId;
+
 	private String bandwidthPackageId;
 
-	private String ipCount;
-
-	private String clientToken;
-
-	public Long getOwnerId() {
-		return this.ownerId;
+	public String getClientToken() {
+		return this.clientToken;
 	}
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
+		}
 	}
 
 	public String getResourceOwnerAccount() {
@@ -59,34 +61,9 @@ public class AddBandwidthPackageIpsRequest extends RpcAcsRequest<AddBandwidthPac
 
 	public void setResourceOwnerAccount(String resourceOwnerAccount) {
 		this.resourceOwnerAccount = resourceOwnerAccount;
-		putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-	}
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", resourceOwnerId);
-	}
-
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
-
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		putQueryParameter("OwnerAccount", ownerAccount);
-	}
-
-	public String getBandwidthPackageId() {
-		return this.bandwidthPackageId;
-	}
-
-	public void setBandwidthPackageId(String bandwidthPackageId) {
-		this.bandwidthPackageId = bandwidthPackageId;
-		putQueryParameter("BandwidthPackageId", bandwidthPackageId);
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
 	}
 
 	public String getIpCount() {
@@ -95,16 +72,53 @@ public class AddBandwidthPackageIpsRequest extends RpcAcsRequest<AddBandwidthPac
 
 	public void setIpCount(String ipCount) {
 		this.ipCount = ipCount;
-		putQueryParameter("IpCount", ipCount);
+		if(ipCount != null){
+			putQueryParameter("IpCount", ipCount);
+		}
 	}
 
-	public String getClientToken() {
-		return this.clientToken;
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
 	}
 
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		putQueryParameter("ClientToken", clientToken);
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getBandwidthPackageId() {
+		return this.bandwidthPackageId;
+	}
+
+	public void setBandwidthPackageId(String bandwidthPackageId) {
+		this.bandwidthPackageId = bandwidthPackageId;
+		if(bandwidthPackageId != null){
+			putQueryParameter("BandwidthPackageId", bandwidthPackageId);
+		}
 	}
 
 	@Override

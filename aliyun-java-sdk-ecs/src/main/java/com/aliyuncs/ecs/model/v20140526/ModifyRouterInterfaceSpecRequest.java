@@ -30,30 +30,21 @@ public class ModifyRouterInterfaceSpecRequest extends RpcAcsRequest<ModifyRouter
 		super("Ecs", "2014-05-26", "ModifyRouterInterfaceSpec", "ecs");
 	}
 
-	private String routerInterfaceId;
-
 	private String spec;
-
-	private Long ownerId;
-
-	private String resourceOwnerAccount;
-
-	private Long resourceOwnerId;
 
 	private String clientToken;
 
-	private String ownerAccount;
+	private String resourceOwnerAccount;
+
+	private String routerInterfaceId;
 
 	private String userCidr;
 
-	public String getRouterInterfaceId() {
-		return this.routerInterfaceId;
-	}
+	private Long resourceOwnerId;
 
-	public void setRouterInterfaceId(String routerInterfaceId) {
-		this.routerInterfaceId = routerInterfaceId;
-		putQueryParameter("RouterInterfaceId", routerInterfaceId);
-	}
+	private String ownerAccount;
+
+	private Long ownerId;
 
 	public String getSpec() {
 		return this.spec;
@@ -61,34 +52,9 @@ public class ModifyRouterInterfaceSpecRequest extends RpcAcsRequest<ModifyRouter
 
 	public void setSpec(String spec) {
 		this.spec = spec;
-		putQueryParameter("Spec", spec);
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-	}
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", resourceOwnerId);
+		if(spec != null){
+			putQueryParameter("Spec", spec);
+		}
 	}
 
 	public String getClientToken() {
@@ -97,16 +63,31 @@ public class ModifyRouterInterfaceSpecRequest extends RpcAcsRequest<ModifyRouter
 
 	public void setClientToken(String clientToken) {
 		this.clientToken = clientToken;
-		putQueryParameter("ClientToken", clientToken);
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
+		}
 	}
 
-	public String getOwnerAccount() {
-		return this.ownerAccount;
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
 	}
 
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		putQueryParameter("OwnerAccount", ownerAccount);
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getRouterInterfaceId() {
+		return this.routerInterfaceId;
+	}
+
+	public void setRouterInterfaceId(String routerInterfaceId) {
+		this.routerInterfaceId = routerInterfaceId;
+		if(routerInterfaceId != null){
+			putQueryParameter("RouterInterfaceId", routerInterfaceId);
+		}
 	}
 
 	public String getUserCidr() {
@@ -115,7 +96,42 @@ public class ModifyRouterInterfaceSpecRequest extends RpcAcsRequest<ModifyRouter
 
 	public void setUserCidr(String userCidr) {
 		this.userCidr = userCidr;
-		putQueryParameter("UserCidr", userCidr);
+		if(userCidr != null){
+			putQueryParameter("UserCidr", userCidr);
+		}
+	}
+
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
+	}
+
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
 	}
 
 	@Override

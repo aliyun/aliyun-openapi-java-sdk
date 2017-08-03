@@ -30,53 +30,35 @@ public class CreateVirtualBorderRouterRequest extends RpcAcsRequest<CreateVirtua
 		super("Ecs", "2014-05-26", "CreateVirtualBorderRouter", "ecs");
 	}
 
-	private String physicalConnectionId;
-
-	private Long vbrOwnerId;
-
 	private Integer vlanId;
-
-	private String circuitCode;
-
-	private String localGatewayIp;
-
-	private String peerGatewayIp;
-
-	private String peeringSubnetMask;
-
-	private String description;
-
-	private String name;
 
 	private String clientToken;
 
+	private String userCidr;
+
+	private String physicalConnectionId;
+
 	private Long ownerId;
 
+	private Long vbrOwnerId;
+
+	private String circuitCode;
+
 	private String resourceOwnerAccount;
+
+	private String localGatewayIp;
+
+	private String description;
+
+	private String peerGatewayIp;
+
+	private String name;
+
+	private String peeringSubnetMask;
 
 	private Long resourceOwnerId;
 
 	private String ownerAccount;
-
-	private String userCidr;
-
-	public String getPhysicalConnectionId() {
-		return this.physicalConnectionId;
-	}
-
-	public void setPhysicalConnectionId(String physicalConnectionId) {
-		this.physicalConnectionId = physicalConnectionId;
-		putQueryParameter("PhysicalConnectionId", physicalConnectionId);
-	}
-
-	public Long getVbrOwnerId() {
-		return this.vbrOwnerId;
-	}
-
-	public void setVbrOwnerId(Long vbrOwnerId) {
-		this.vbrOwnerId = vbrOwnerId;
-		putQueryParameter("VbrOwnerId", vbrOwnerId);
-	}
 
 	public Integer getVlanId() {
 		return this.vlanId;
@@ -84,61 +66,9 @@ public class CreateVirtualBorderRouterRequest extends RpcAcsRequest<CreateVirtua
 
 	public void setVlanId(Integer vlanId) {
 		this.vlanId = vlanId;
-		putQueryParameter("VlanId", vlanId);
-	}
-
-	public String getCircuitCode() {
-		return this.circuitCode;
-	}
-
-	public void setCircuitCode(String circuitCode) {
-		this.circuitCode = circuitCode;
-		putQueryParameter("CircuitCode", circuitCode);
-	}
-
-	public String getLocalGatewayIp() {
-		return this.localGatewayIp;
-	}
-
-	public void setLocalGatewayIp(String localGatewayIp) {
-		this.localGatewayIp = localGatewayIp;
-		putQueryParameter("LocalGatewayIp", localGatewayIp);
-	}
-
-	public String getPeerGatewayIp() {
-		return this.peerGatewayIp;
-	}
-
-	public void setPeerGatewayIp(String peerGatewayIp) {
-		this.peerGatewayIp = peerGatewayIp;
-		putQueryParameter("PeerGatewayIp", peerGatewayIp);
-	}
-
-	public String getPeeringSubnetMask() {
-		return this.peeringSubnetMask;
-	}
-
-	public void setPeeringSubnetMask(String peeringSubnetMask) {
-		this.peeringSubnetMask = peeringSubnetMask;
-		putQueryParameter("PeeringSubnetMask", peeringSubnetMask);
-	}
-
-	public String getDescription() {
-		return this.description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-		putQueryParameter("Description", description);
-	}
-
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-		putQueryParameter("Name", name);
+		if(vlanId != null){
+			putQueryParameter("VlanId", vlanId.toString());
+		}
 	}
 
 	public String getClientToken() {
@@ -147,43 +77,9 @@ public class CreateVirtualBorderRouterRequest extends RpcAcsRequest<CreateVirtua
 
 	public void setClientToken(String clientToken) {
 		this.clientToken = clientToken;
-		putQueryParameter("ClientToken", clientToken);
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-	}
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", resourceOwnerId);
-	}
-
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
-
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		putQueryParameter("OwnerAccount", ownerAccount);
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
+		}
 	}
 
 	public String getUserCidr() {
@@ -192,7 +88,141 @@ public class CreateVirtualBorderRouterRequest extends RpcAcsRequest<CreateVirtua
 
 	public void setUserCidr(String userCidr) {
 		this.userCidr = userCidr;
-		putQueryParameter("UserCidr", userCidr);
+		if(userCidr != null){
+			putQueryParameter("UserCidr", userCidr);
+		}
+	}
+
+	public String getPhysicalConnectionId() {
+		return this.physicalConnectionId;
+	}
+
+	public void setPhysicalConnectionId(String physicalConnectionId) {
+		this.physicalConnectionId = physicalConnectionId;
+		if(physicalConnectionId != null){
+			putQueryParameter("PhysicalConnectionId", physicalConnectionId);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public Long getVbrOwnerId() {
+		return this.vbrOwnerId;
+	}
+
+	public void setVbrOwnerId(Long vbrOwnerId) {
+		this.vbrOwnerId = vbrOwnerId;
+		if(vbrOwnerId != null){
+			putQueryParameter("VbrOwnerId", vbrOwnerId.toString());
+		}
+	}
+
+	public String getCircuitCode() {
+		return this.circuitCode;
+	}
+
+	public void setCircuitCode(String circuitCode) {
+		this.circuitCode = circuitCode;
+		if(circuitCode != null){
+			putQueryParameter("CircuitCode", circuitCode);
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getLocalGatewayIp() {
+		return this.localGatewayIp;
+	}
+
+	public void setLocalGatewayIp(String localGatewayIp) {
+		this.localGatewayIp = localGatewayIp;
+		if(localGatewayIp != null){
+			putQueryParameter("LocalGatewayIp", localGatewayIp);
+		}
+	}
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+		if(description != null){
+			putQueryParameter("Description", description);
+		}
+	}
+
+	public String getPeerGatewayIp() {
+		return this.peerGatewayIp;
+	}
+
+	public void setPeerGatewayIp(String peerGatewayIp) {
+		this.peerGatewayIp = peerGatewayIp;
+		if(peerGatewayIp != null){
+			putQueryParameter("PeerGatewayIp", peerGatewayIp);
+		}
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
+		}
+	}
+
+	public String getPeeringSubnetMask() {
+		return this.peeringSubnetMask;
+	}
+
+	public void setPeeringSubnetMask(String peeringSubnetMask) {
+		this.peeringSubnetMask = peeringSubnetMask;
+		if(peeringSubnetMask != null){
+			putQueryParameter("PeeringSubnetMask", peeringSubnetMask);
+		}
+	}
+
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
+	}
+
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
 	}
 
 	@Override

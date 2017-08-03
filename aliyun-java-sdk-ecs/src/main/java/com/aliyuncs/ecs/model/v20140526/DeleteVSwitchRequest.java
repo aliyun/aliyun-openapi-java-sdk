@@ -30,23 +30,25 @@ public class DeleteVSwitchRequest extends RpcAcsRequest<DeleteVSwitchResponse> {
 		super("Ecs", "2014-05-26", "DeleteVSwitch", "ecs");
 	}
 
-	private Long ownerId;
+	private String vSwitchId;
 
 	private String resourceOwnerAccount;
 
 	private Long resourceOwnerId;
 
-	private String vSwitchId;
-
 	private String ownerAccount;
 
-	public Long getOwnerId() {
-		return this.ownerId;
+	private Long ownerId;
+
+	public String getVSwitchId() {
+		return this.vSwitchId;
 	}
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
+	public void setVSwitchId(String vSwitchId) {
+		this.vSwitchId = vSwitchId;
+		if(vSwitchId != null){
+			putQueryParameter("VSwitchId", vSwitchId);
+		}
 	}
 
 	public String getResourceOwnerAccount() {
@@ -55,7 +57,9 @@ public class DeleteVSwitchRequest extends RpcAcsRequest<DeleteVSwitchResponse> {
 
 	public void setResourceOwnerAccount(String resourceOwnerAccount) {
 		this.resourceOwnerAccount = resourceOwnerAccount;
-		putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
 	}
 
 	public Long getResourceOwnerId() {
@@ -64,16 +68,9 @@ public class DeleteVSwitchRequest extends RpcAcsRequest<DeleteVSwitchResponse> {
 
 	public void setResourceOwnerId(Long resourceOwnerId) {
 		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", resourceOwnerId);
-	}
-
-	public String getVSwitchId() {
-		return this.vSwitchId;
-	}
-
-	public void setVSwitchId(String vSwitchId) {
-		this.vSwitchId = vSwitchId;
-		putQueryParameter("VSwitchId", vSwitchId);
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
 	}
 
 	public String getOwnerAccount() {
@@ -82,7 +79,20 @@ public class DeleteVSwitchRequest extends RpcAcsRequest<DeleteVSwitchResponse> {
 
 	public void setOwnerAccount(String ownerAccount) {
 		this.ownerAccount = ownerAccount;
-		putQueryParameter("OwnerAccount", ownerAccount);
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
 	}
 
 	@Override

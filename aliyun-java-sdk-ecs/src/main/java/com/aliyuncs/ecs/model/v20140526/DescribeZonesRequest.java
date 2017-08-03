@@ -30,24 +30,15 @@ public class DescribeZonesRequest extends RpcAcsRequest<DescribeZonesResponse> {
 		super("Ecs", "2014-05-26", "DescribeZones", "ecs");
 	}
 
-	private Long ownerId;
-
 	private String resourceOwnerAccount;
+
+	private Boolean verbose;
 
 	private Long resourceOwnerId;
 
 	private String ownerAccount;
 
-	private Boolean verbose;
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
-	}
+	private Long ownerId;
 
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
@@ -55,25 +46,9 @@ public class DescribeZonesRequest extends RpcAcsRequest<DescribeZonesResponse> {
 
 	public void setResourceOwnerAccount(String resourceOwnerAccount) {
 		this.resourceOwnerAccount = resourceOwnerAccount;
-		putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-	}
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", resourceOwnerId);
-	}
-
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
-
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		putQueryParameter("OwnerAccount", ownerAccount);
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
 	}
 
 	public Boolean getVerbose() {
@@ -82,7 +57,42 @@ public class DescribeZonesRequest extends RpcAcsRequest<DescribeZonesResponse> {
 
 	public void setVerbose(Boolean verbose) {
 		this.verbose = verbose;
-		putQueryParameter("Verbose", verbose);
+		if(verbose != null){
+			putQueryParameter("Verbose", verbose.toString());
+		}
+	}
+
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
+	}
+
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
 	}
 
 	@Override

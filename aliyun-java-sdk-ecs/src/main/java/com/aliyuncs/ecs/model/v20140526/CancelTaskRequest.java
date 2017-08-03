@@ -30,22 +30,13 @@ public class CancelTaskRequest extends RpcAcsRequest<CancelTaskResponse> {
 		super("Ecs", "2014-05-26", "CancelTask", "ecs");
 	}
 
-	private Long ownerId;
-
 	private String resourceOwnerAccount;
-
-	private Long resourceOwnerId;
 
 	private String taskId;
 
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
+	private Long resourceOwnerId;
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
-	}
+	private Long ownerId;
 
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
@@ -53,16 +44,9 @@ public class CancelTaskRequest extends RpcAcsRequest<CancelTaskResponse> {
 
 	public void setResourceOwnerAccount(String resourceOwnerAccount) {
 		this.resourceOwnerAccount = resourceOwnerAccount;
-		putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-	}
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", resourceOwnerId);
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
 	}
 
 	public String getTaskId() {
@@ -71,7 +55,31 @@ public class CancelTaskRequest extends RpcAcsRequest<CancelTaskResponse> {
 
 	public void setTaskId(String taskId) {
 		this.taskId = taskId;
-		putQueryParameter("TaskId", taskId);
+		if(taskId != null){
+			putQueryParameter("TaskId", taskId);
+		}
+	}
+
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
+	}
+
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
 	}
 
 	@Override

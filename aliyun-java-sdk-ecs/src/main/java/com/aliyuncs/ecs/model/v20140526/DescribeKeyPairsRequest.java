@@ -30,27 +30,29 @@ public class DescribeKeyPairsRequest extends RpcAcsRequest<DescribeKeyPairsRespo
 		super("Ecs", "2014-05-26", "DescribeKeyPairs", "ecs");
 	}
 
-	private Long ownerId;
+	private Integer pageSize;
 
 	private String resourceOwnerAccount;
 
-	private Long resourceOwnerId;
-
-	private String keyPairName;
+	private Integer pageNumber;
 
 	private String keyPairFingerPrint;
 
-	private Integer pageNumber;
+	private String keyPairName;
 
-	private Integer pageSize;
+	private Long resourceOwnerId;
 
-	public Long getOwnerId() {
-		return this.ownerId;
+	private Long ownerId;
+
+	public Integer getPageSize() {
+		return this.pageSize;
 	}
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
 	}
 
 	public String getResourceOwnerAccount() {
@@ -59,34 +61,9 @@ public class DescribeKeyPairsRequest extends RpcAcsRequest<DescribeKeyPairsRespo
 
 	public void setResourceOwnerAccount(String resourceOwnerAccount) {
 		this.resourceOwnerAccount = resourceOwnerAccount;
-		putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-	}
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", resourceOwnerId);
-	}
-
-	public String getKeyPairName() {
-		return this.keyPairName;
-	}
-
-	public void setKeyPairName(String keyPairName) {
-		this.keyPairName = keyPairName;
-		putQueryParameter("KeyPairName", keyPairName);
-	}
-
-	public String getKeyPairFingerPrint() {
-		return this.keyPairFingerPrint;
-	}
-
-	public void setKeyPairFingerPrint(String keyPairFingerPrint) {
-		this.keyPairFingerPrint = keyPairFingerPrint;
-		putQueryParameter("KeyPairFingerPrint", keyPairFingerPrint);
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
 	}
 
 	public Integer getPageNumber() {
@@ -95,16 +72,53 @@ public class DescribeKeyPairsRequest extends RpcAcsRequest<DescribeKeyPairsRespo
 
 	public void setPageNumber(Integer pageNumber) {
 		this.pageNumber = pageNumber;
-		putQueryParameter("PageNumber", pageNumber);
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public String getKeyPairFingerPrint() {
+		return this.keyPairFingerPrint;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		putQueryParameter("PageSize", pageSize);
+	public void setKeyPairFingerPrint(String keyPairFingerPrint) {
+		this.keyPairFingerPrint = keyPairFingerPrint;
+		if(keyPairFingerPrint != null){
+			putQueryParameter("KeyPairFingerPrint", keyPairFingerPrint);
+		}
+	}
+
+	public String getKeyPairName() {
+		return this.keyPairName;
+	}
+
+	public void setKeyPairName(String keyPairName) {
+		this.keyPairName = keyPairName;
+		if(keyPairName != null){
+			putQueryParameter("KeyPairName", keyPairName);
+		}
+	}
+
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
+	}
+
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
 	}
 
 	@Override

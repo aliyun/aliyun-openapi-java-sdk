@@ -95,6 +95,8 @@ public class DescribeAutoSnapshotPolicyExResponse extends AcsResponse {
 
 		private Integer diskNums;
 
+		private Integer volumeNums;
+
 		private String creationTime;
 
 		public String getAutoSnapshotPolicyId() {
@@ -151,6 +153,14 @@ public class DescribeAutoSnapshotPolicyExResponse extends AcsResponse {
 
 		public void setDiskNums(Integer diskNums) {
 			this.diskNums = diskNums;
+		}
+
+		public Integer getVolumeNums() {
+			return this.volumeNums;
+		}
+
+		public void setVolumeNums(Integer volumeNums) {
+			this.volumeNums = volumeNums;
 		}
 
 		public String getCreationTime() {

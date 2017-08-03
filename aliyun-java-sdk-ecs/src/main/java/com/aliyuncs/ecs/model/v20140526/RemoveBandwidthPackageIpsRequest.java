@@ -33,7 +33,7 @@ public class RemoveBandwidthPackageIpsRequest extends RpcAcsRequest<RemoveBandwi
 
 	private List<String> removedIpAddressess;
 
-	private Long ownerId;
+	private String clientToken;
 
 	private String resourceOwnerAccount;
 
@@ -41,64 +41,19 @@ public class RemoveBandwidthPackageIpsRequest extends RpcAcsRequest<RemoveBandwi
 
 	private String ownerAccount;
 
-	private String bandwidthPackageId;
+	private Long ownerId;
 
-	private String clientToken;
+	private String bandwidthPackageId;
 
 	public List<String> getRemovedIpAddressess() {
 		return this.removedIpAddressess;
 	}
 
-	public void setRemovedIpAddressess(List<String> removedIpAddressess) {
-		this.removedIpAddressess = removedIpAddressess;	
-		for (int i = 0; i < removedIpAddressess.size(); i++) {
-			putQueryParameter("RemovedIpAddresses." + (i + 1) , removedIpAddressess.get(i));
+	public void setRemovedIpAddressess(List<String> removedIpAddresses) {
+		this.removedIpAddressess = removedIpAddresses;	
+		for (int i = 0; i < removedIpAddresses.size(); i++) {
+			putQueryParameter("RemovedIpAddresses." + (i + 1) , removedIpAddresses.get(i));
 		}	
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-	}
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", resourceOwnerId);
-	}
-
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
-
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		putQueryParameter("OwnerAccount", ownerAccount);
-	}
-
-	public String getBandwidthPackageId() {
-		return this.bandwidthPackageId;
-	}
-
-	public void setBandwidthPackageId(String bandwidthPackageId) {
-		this.bandwidthPackageId = bandwidthPackageId;
-		putQueryParameter("BandwidthPackageId", bandwidthPackageId);
 	}
 
 	public String getClientToken() {
@@ -107,7 +62,64 @@ public class RemoveBandwidthPackageIpsRequest extends RpcAcsRequest<RemoveBandwi
 
 	public void setClientToken(String clientToken) {
 		this.clientToken = clientToken;
-		putQueryParameter("ClientToken", clientToken);
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
+	}
+
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getBandwidthPackageId() {
+		return this.bandwidthPackageId;
+	}
+
+	public void setBandwidthPackageId(String bandwidthPackageId) {
+		this.bandwidthPackageId = bandwidthPackageId;
+		if(bandwidthPackageId != null){
+			putQueryParameter("BandwidthPackageId", bandwidthPackageId);
+		}
 	}
 
 	@Override

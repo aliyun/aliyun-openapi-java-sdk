@@ -30,26 +30,19 @@ public class RenewInstanceRequest extends RpcAcsRequest<RenewInstanceResponse> {
 		super("Ecs", "2014-05-26", "RenewInstance", "ecs");
 	}
 
-	private Long ownerId;
-
 	private String resourceOwnerAccount;
+
+	private String clientToken;
 
 	private Long resourceOwnerId;
 
-	private String ownerAccount;
-
-	private String instanceId;
-
 	private Integer period;
 
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
+	private String ownerAccount;
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
-	}
+	private Long ownerId;
+
+	private String instanceId;
 
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
@@ -57,7 +50,20 @@ public class RenewInstanceRequest extends RpcAcsRequest<RenewInstanceResponse> {
 
 	public void setResourceOwnerAccount(String resourceOwnerAccount) {
 		this.resourceOwnerAccount = resourceOwnerAccount;
-		putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
+		}
 	}
 
 	public Long getResourceOwnerId() {
@@ -66,25 +72,9 @@ public class RenewInstanceRequest extends RpcAcsRequest<RenewInstanceResponse> {
 
 	public void setResourceOwnerId(Long resourceOwnerId) {
 		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", resourceOwnerId);
-	}
-
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
-
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		putQueryParameter("OwnerAccount", ownerAccount);
-	}
-
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		putQueryParameter("InstanceId", instanceId);
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
 	}
 
 	public Integer getPeriod() {
@@ -93,7 +83,42 @@ public class RenewInstanceRequest extends RpcAcsRequest<RenewInstanceResponse> {
 
 	public void setPeriod(Integer period) {
 		this.period = period;
-		putQueryParameter("Period", period);
+		if(period != null){
+			putQueryParameter("Period", period.toString());
+		}
+	}
+
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
+		}
 	}
 
 	@Override

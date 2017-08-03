@@ -48,6 +48,8 @@ public class DescribeEipAddressesResponseUnmarshaller {
 			eipAddress.setInternetChargeType(context.stringValue("DescribeEipAddressesResponse.EipAddresses["+ i +"].InternetChargeType"));
 			eipAddress.setAllocationTime(context.stringValue("DescribeEipAddressesResponse.EipAddresses["+ i +"].AllocationTime"));
 			eipAddress.setInstanceType(context.stringValue("DescribeEipAddressesResponse.EipAddresses["+ i +"].InstanceType"));
+			eipAddress.setChargeType(context.stringValue("DescribeEipAddressesResponse.EipAddresses["+ i +"].ChargeType"));
+			eipAddress.setExpiredTime(context.stringValue("DescribeEipAddressesResponse.EipAddresses["+ i +"].ExpiredTime"));
 
 			List<LockReason> operationLocks = new ArrayList<LockReason>();
 			for (int j = 0; j < context.lengthValue("DescribeEipAddressesResponse.EipAddresses["+ i +"].OperationLocks.Length"); j++) {

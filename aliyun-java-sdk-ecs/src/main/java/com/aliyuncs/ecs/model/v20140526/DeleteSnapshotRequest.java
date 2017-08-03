@@ -30,24 +30,17 @@ public class DeleteSnapshotRequest extends RpcAcsRequest<DeleteSnapshotResponse>
 		super("Ecs", "2014-05-26", "DeleteSnapshot", "ecs");
 	}
 
-	private Long ownerId;
-
 	private String resourceOwnerAccount;
-
-	private Long resourceOwnerId;
 
 	private String snapshotId;
 
+	private Boolean force;
+
+	private Long resourceOwnerId;
+
 	private String ownerAccount;
 
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
-	}
+	private Long ownerId;
 
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
@@ -55,16 +48,9 @@ public class DeleteSnapshotRequest extends RpcAcsRequest<DeleteSnapshotResponse>
 
 	public void setResourceOwnerAccount(String resourceOwnerAccount) {
 		this.resourceOwnerAccount = resourceOwnerAccount;
-		putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-	}
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", resourceOwnerId);
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
 	}
 
 	public String getSnapshotId() {
@@ -73,7 +59,31 @@ public class DeleteSnapshotRequest extends RpcAcsRequest<DeleteSnapshotResponse>
 
 	public void setSnapshotId(String snapshotId) {
 		this.snapshotId = snapshotId;
-		putQueryParameter("SnapshotId", snapshotId);
+		if(snapshotId != null){
+			putQueryParameter("SnapshotId", snapshotId);
+		}
+	}
+
+	public Boolean getForce() {
+		return this.force;
+	}
+
+	public void setForce(Boolean force) {
+		this.force = force;
+		if(force != null){
+			putQueryParameter("Force", force.toString());
+		}
+	}
+
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
+	}
+
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
 	}
 
 	public String getOwnerAccount() {
@@ -82,7 +92,20 @@ public class DeleteSnapshotRequest extends RpcAcsRequest<DeleteSnapshotResponse>
 
 	public void setOwnerAccount(String ownerAccount) {
 		this.ownerAccount = ownerAccount;
-		putQueryParameter("OwnerAccount", ownerAccount);
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
 	}
 
 	@Override

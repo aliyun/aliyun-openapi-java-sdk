@@ -30,56 +30,31 @@ public class DescribeDiskMonitorDataRequest extends RpcAcsRequest<DescribeDiskMo
 		super("Ecs", "2014-05-26", "DescribeDiskMonitorData", "ecs");
 	}
 
-	private Long ownerId;
-
-	private String resourceOwnerAccount;
-
-	private Long resourceOwnerId;
-
-	private String diskId;
+	private String endTime;
 
 	private String startTime;
 
-	private String endTime;
+	private String resourceOwnerAccount;
 
-	private Integer period;
+	private String diskId;
+
+	private Long resourceOwnerId;
 
 	private String ownerAccount;
 
-	public Long getOwnerId() {
-		return this.ownerId;
+	private Integer period;
+
+	private Long ownerId;
+
+	public String getEndTime() {
+		return this.endTime;
 	}
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-	}
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", resourceOwnerId);
-	}
-
-	public String getDiskId() {
-		return this.diskId;
-	}
-
-	public void setDiskId(String diskId) {
-		this.diskId = diskId;
-		putQueryParameter("DiskId", diskId);
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime);
+		}
 	}
 
 	public String getStartTime() {
@@ -88,25 +63,42 @@ public class DescribeDiskMonitorDataRequest extends RpcAcsRequest<DescribeDiskMo
 
 	public void setStartTime(String startTime) {
 		this.startTime = startTime;
-		putQueryParameter("StartTime", startTime);
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime);
+		}
 	}
 
-	public String getEndTime() {
-		return this.endTime;
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
 	}
 
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
-		putQueryParameter("EndTime", endTime);
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
 	}
 
-	public Integer getPeriod() {
-		return this.period;
+	public String getDiskId() {
+		return this.diskId;
 	}
 
-	public void setPeriod(Integer period) {
-		this.period = period;
-		putQueryParameter("Period", period);
+	public void setDiskId(String diskId) {
+		this.diskId = diskId;
+		if(diskId != null){
+			putQueryParameter("DiskId", diskId);
+		}
+	}
+
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
+	}
+
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
 	}
 
 	public String getOwnerAccount() {
@@ -115,7 +107,31 @@ public class DescribeDiskMonitorDataRequest extends RpcAcsRequest<DescribeDiskMo
 
 	public void setOwnerAccount(String ownerAccount) {
 		this.ownerAccount = ownerAccount;
-		putQueryParameter("OwnerAccount", ownerAccount);
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public Integer getPeriod() {
+		return this.period;
+	}
+
+	public void setPeriod(Integer period) {
+		this.period = period;
+		if(period != null){
+			putQueryParameter("Period", period.toString());
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
 	}
 
 	@Override

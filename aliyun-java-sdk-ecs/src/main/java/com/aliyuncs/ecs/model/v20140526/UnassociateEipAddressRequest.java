@@ -30,28 +30,19 @@ public class UnassociateEipAddressRequest extends RpcAcsRequest<UnassociateEipAd
 		super("Ecs", "2014-05-26", "UnassociateEipAddress", "ecs");
 	}
 
-	private Long ownerId;
-
 	private String resourceOwnerAccount;
 
 	private Long resourceOwnerId;
+
+	private String ownerAccount;
+
+	private Long ownerId;
 
 	private String allocationId;
 
 	private String instanceId;
 
-	private String ownerAccount;
-
 	private String instanceType;
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
-	}
 
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
@@ -59,7 +50,9 @@ public class UnassociateEipAddressRequest extends RpcAcsRequest<UnassociateEipAd
 
 	public void setResourceOwnerAccount(String resourceOwnerAccount) {
 		this.resourceOwnerAccount = resourceOwnerAccount;
-		putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
 	}
 
 	public Long getResourceOwnerId() {
@@ -68,25 +61,9 @@ public class UnassociateEipAddressRequest extends RpcAcsRequest<UnassociateEipAd
 
 	public void setResourceOwnerId(Long resourceOwnerId) {
 		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", resourceOwnerId);
-	}
-
-	public String getAllocationId() {
-		return this.allocationId;
-	}
-
-	public void setAllocationId(String allocationId) {
-		this.allocationId = allocationId;
-		putQueryParameter("AllocationId", allocationId);
-	}
-
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		putQueryParameter("InstanceId", instanceId);
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
 	}
 
 	public String getOwnerAccount() {
@@ -95,7 +72,42 @@ public class UnassociateEipAddressRequest extends RpcAcsRequest<UnassociateEipAd
 
 	public void setOwnerAccount(String ownerAccount) {
 		this.ownerAccount = ownerAccount;
-		putQueryParameter("OwnerAccount", ownerAccount);
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getAllocationId() {
+		return this.allocationId;
+	}
+
+	public void setAllocationId(String allocationId) {
+		this.allocationId = allocationId;
+		if(allocationId != null){
+			putQueryParameter("AllocationId", allocationId);
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
+		}
 	}
 
 	public String getInstanceType() {
@@ -104,7 +116,9 @@ public class UnassociateEipAddressRequest extends RpcAcsRequest<UnassociateEipAd
 
 	public void setInstanceType(String instanceType) {
 		this.instanceType = instanceType;
-		putQueryParameter("InstanceType", instanceType);
+		if(instanceType != null){
+			putQueryParameter("InstanceType", instanceType);
+		}
 	}
 
 	@Override

@@ -30,28 +30,19 @@ public class ModifySnapshotAttributeRequest extends RpcAcsRequest<ModifySnapshot
 		super("Ecs", "2014-05-26", "ModifySnapshotAttribute", "ecs");
 	}
 
-	private Long ownerId;
-
 	private String resourceOwnerAccount;
+
+	private String snapshotId;
+
+	private String description;
+
+	private String snapshotName;
 
 	private Long resourceOwnerId;
 
 	private String ownerAccount;
 
-	private String snapshotId;
-
-	private String snapshotName;
-
-	private String description;
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
-	}
+	private Long ownerId;
 
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
@@ -59,25 +50,9 @@ public class ModifySnapshotAttributeRequest extends RpcAcsRequest<ModifySnapshot
 
 	public void setResourceOwnerAccount(String resourceOwnerAccount) {
 		this.resourceOwnerAccount = resourceOwnerAccount;
-		putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-	}
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", resourceOwnerId);
-	}
-
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
-
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		putQueryParameter("OwnerAccount", ownerAccount);
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
 	}
 
 	public String getSnapshotId() {
@@ -86,16 +61,9 @@ public class ModifySnapshotAttributeRequest extends RpcAcsRequest<ModifySnapshot
 
 	public void setSnapshotId(String snapshotId) {
 		this.snapshotId = snapshotId;
-		putQueryParameter("SnapshotId", snapshotId);
-	}
-
-	public String getSnapshotName() {
-		return this.snapshotName;
-	}
-
-	public void setSnapshotName(String snapshotName) {
-		this.snapshotName = snapshotName;
-		putQueryParameter("SnapshotName", snapshotName);
+		if(snapshotId != null){
+			putQueryParameter("SnapshotId", snapshotId);
+		}
 	}
 
 	public String getDescription() {
@@ -104,7 +72,53 @@ public class ModifySnapshotAttributeRequest extends RpcAcsRequest<ModifySnapshot
 
 	public void setDescription(String description) {
 		this.description = description;
-		putQueryParameter("Description", description);
+		if(description != null){
+			putQueryParameter("Description", description);
+		}
+	}
+
+	public String getSnapshotName() {
+		return this.snapshotName;
+	}
+
+	public void setSnapshotName(String snapshotName) {
+		this.snapshotName = snapshotName;
+		if(snapshotName != null){
+			putQueryParameter("SnapshotName", snapshotName);
+		}
+	}
+
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
+	}
+
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
 	}
 
 	@Override

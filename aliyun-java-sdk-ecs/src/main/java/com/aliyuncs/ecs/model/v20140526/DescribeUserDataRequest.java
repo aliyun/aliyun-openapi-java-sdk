@@ -30,22 +30,13 @@ public class DescribeUserDataRequest extends RpcAcsRequest<DescribeUserDataRespo
 		super("Ecs", "2014-05-26", "DescribeUserData", "ecs");
 	}
 
-	private Long ownerId;
-
 	private String resourceOwnerAccount;
 
 	private Long resourceOwnerId;
 
+	private Long ownerId;
+
 	private String instanceId;
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
-	}
 
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
@@ -53,7 +44,9 @@ public class DescribeUserDataRequest extends RpcAcsRequest<DescribeUserDataRespo
 
 	public void setResourceOwnerAccount(String resourceOwnerAccount) {
 		this.resourceOwnerAccount = resourceOwnerAccount;
-		putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
 	}
 
 	public Long getResourceOwnerId() {
@@ -62,7 +55,20 @@ public class DescribeUserDataRequest extends RpcAcsRequest<DescribeUserDataRespo
 
 	public void setResourceOwnerId(Long resourceOwnerId) {
 		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", resourceOwnerId);
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
 	}
 
 	public String getInstanceId() {
@@ -71,7 +77,9 @@ public class DescribeUserDataRequest extends RpcAcsRequest<DescribeUserDataRespo
 
 	public void setInstanceId(String instanceId) {
 		this.instanceId = instanceId;
-		putQueryParameter("InstanceId", instanceId);
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
+		}
 	}
 
 	@Override

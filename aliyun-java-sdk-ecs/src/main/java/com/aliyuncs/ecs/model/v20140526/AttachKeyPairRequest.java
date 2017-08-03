@@ -30,24 +30,15 @@ public class AttachKeyPairRequest extends RpcAcsRequest<AttachKeyPairResponse> {
 		super("Ecs", "2014-05-26", "AttachKeyPair", "ecs");
 	}
 
-	private Long ownerId;
-
 	private String resourceOwnerAccount;
-
-	private Long resourceOwnerId;
-
-	private String keyPairName;
 
 	private String instanceIds;
 
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
+	private String keyPairName;
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
-	}
+	private Long resourceOwnerId;
+
+	private Long ownerId;
 
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
@@ -55,25 +46,9 @@ public class AttachKeyPairRequest extends RpcAcsRequest<AttachKeyPairResponse> {
 
 	public void setResourceOwnerAccount(String resourceOwnerAccount) {
 		this.resourceOwnerAccount = resourceOwnerAccount;
-		putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-	}
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", resourceOwnerId);
-	}
-
-	public String getKeyPairName() {
-		return this.keyPairName;
-	}
-
-	public void setKeyPairName(String keyPairName) {
-		this.keyPairName = keyPairName;
-		putQueryParameter("KeyPairName", keyPairName);
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
 	}
 
 	public String getInstanceIds() {
@@ -82,7 +57,42 @@ public class AttachKeyPairRequest extends RpcAcsRequest<AttachKeyPairResponse> {
 
 	public void setInstanceIds(String instanceIds) {
 		this.instanceIds = instanceIds;
-		putQueryParameter("InstanceIds", instanceIds);
+		if(instanceIds != null){
+			putQueryParameter("InstanceIds", instanceIds);
+		}
+	}
+
+	public String getKeyPairName() {
+		return this.keyPairName;
+	}
+
+	public void setKeyPairName(String keyPairName) {
+		this.keyPairName = keyPairName;
+		if(keyPairName != null){
+			putQueryParameter("KeyPairName", keyPairName);
+		}
+	}
+
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
+	}
+
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
 	}
 
 	@Override

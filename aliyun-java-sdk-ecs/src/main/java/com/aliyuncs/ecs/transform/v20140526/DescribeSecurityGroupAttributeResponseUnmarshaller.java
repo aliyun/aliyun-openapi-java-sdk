@@ -36,6 +36,7 @@ public class DescribeSecurityGroupAttributeResponseUnmarshaller {
 		describeSecurityGroupAttributeResponse.setDescription(context.stringValue("DescribeSecurityGroupAttributeResponse.Description"));
 		describeSecurityGroupAttributeResponse.setSecurityGroupName(context.stringValue("DescribeSecurityGroupAttributeResponse.SecurityGroupName"));
 		describeSecurityGroupAttributeResponse.setVpcId(context.stringValue("DescribeSecurityGroupAttributeResponse.VpcId"));
+		describeSecurityGroupAttributeResponse.setInnerAccessPolicy(context.stringValue("DescribeSecurityGroupAttributeResponse.InnerAccessPolicy"));
 
 		List<Permission> permissions = new ArrayList<Permission>();
 		for (int i = 0; i < context.lengthValue("DescribeSecurityGroupAttributeResponse.Permissions.Length"); i++) {
@@ -54,6 +55,8 @@ public class DescribeSecurityGroupAttributeResponseUnmarshaller {
 			permission.setDestGroupOwnerAccount(context.stringValue("DescribeSecurityGroupAttributeResponse.Permissions["+ i +"].DestGroupOwnerAccount"));
 			permission.setPriority(context.stringValue("DescribeSecurityGroupAttributeResponse.Permissions["+ i +"].Priority"));
 			permission.setDirection(context.stringValue("DescribeSecurityGroupAttributeResponse.Permissions["+ i +"].Direction"));
+			permission.setDescription(context.stringValue("DescribeSecurityGroupAttributeResponse.Permissions["+ i +"].Description"));
+			permission.setCreateTime(context.stringValue("DescribeSecurityGroupAttributeResponse.Permissions["+ i +"].CreateTime"));
 
 			permissions.add(permission);
 		}

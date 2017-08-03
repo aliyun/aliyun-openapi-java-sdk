@@ -99,6 +99,10 @@ public class DescribeEipAddressesResponse extends AcsResponse {
 
 		private String instanceType;
 
+		private String chargeType;
+
+		private String expiredTime;
+
 		private List<LockReason> operationLocks;
 
 		public String getRegionId() {
@@ -171,6 +175,22 @@ public class DescribeEipAddressesResponse extends AcsResponse {
 
 		public void setInstanceType(String instanceType) {
 			this.instanceType = instanceType;
+		}
+
+		public String getChargeType() {
+			return this.chargeType;
+		}
+
+		public void setChargeType(String chargeType) {
+			this.chargeType = chargeType;
+		}
+
+		public String getExpiredTime() {
+			return this.expiredTime;
+		}
+
+		public void setExpiredTime(String expiredTime) {
+			this.expiredTime = expiredTime;
 		}
 
 		public List<LockReason> getOperationLocks() {

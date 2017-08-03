@@ -20,8 +20,6 @@ package com.aliyuncs.ecs.transform.v20140526;
 
 import com.aliyuncs.ecs.model.v20140526.DescribeAutoSnapshotPolicyResponse;
 import com.aliyuncs.ecs.model.v20140526.DescribeAutoSnapshotPolicyResponse.AutoSnapshotExcutionStatus;
-import com.aliyuncs.ecs.model.v20140526.DescribeAutoSnapshotPolicyResponse.AutoSnapshotExcutionStatus.DataDiskExcutionStatus;
-import com.aliyuncs.ecs.model.v20140526.DescribeAutoSnapshotPolicyResponse.AutoSnapshotExcutionStatus.SystemDiskExcutionStatus;
 import com.aliyuncs.ecs.model.v20140526.DescribeAutoSnapshotPolicyResponse.AutoSnapshotPolicy;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -45,8 +43,8 @@ public class DescribeAutoSnapshotPolicyResponseUnmarshaller {
 		describeAutoSnapshotPolicyResponse.setAutoSnapshotPolicy(autoSnapshotPolicy);
 
 		AutoSnapshotExcutionStatus autoSnapshotExcutionStatus = new AutoSnapshotExcutionStatus();
-		autoSnapshotExcutionStatus.setSystemDiskExcutionStatus(SystemDiskExcutionStatus.getEnum(context.stringValue("DescribeAutoSnapshotPolicyResponse.AutoSnapshotExcutionStatus.SystemDiskExcutionStatus")));
-		autoSnapshotExcutionStatus.setDataDiskExcutionStatus(DataDiskExcutionStatus.getEnum(context.stringValue("DescribeAutoSnapshotPolicyResponse.AutoSnapshotExcutionStatus.DataDiskExcutionStatus")));
+		autoSnapshotExcutionStatus.setSystemDiskExcutionStatus(context.stringValue("DescribeAutoSnapshotPolicyResponse.AutoSnapshotExcutionStatus.SystemDiskExcutionStatus"));
+		autoSnapshotExcutionStatus.setDataDiskExcutionStatus(context.stringValue("DescribeAutoSnapshotPolicyResponse.AutoSnapshotExcutionStatus.DataDiskExcutionStatus"));
 		describeAutoSnapshotPolicyResponse.setAutoSnapshotExcutionStatus(autoSnapshotExcutionStatus);
 	 
 	 	return describeAutoSnapshotPolicyResponse;

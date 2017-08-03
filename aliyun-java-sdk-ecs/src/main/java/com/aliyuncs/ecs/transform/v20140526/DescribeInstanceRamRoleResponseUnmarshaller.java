@@ -33,8 +33,6 @@ public class DescribeInstanceRamRoleResponseUnmarshaller {
 		describeInstanceRamRoleResponse.setRequestId(context.stringValue("DescribeInstanceRamRoleResponse.RequestId"));
 		describeInstanceRamRoleResponse.setRegionId(context.stringValue("DescribeInstanceRamRoleResponse.RegionId"));
 		describeInstanceRamRoleResponse.setTotalCount(context.integerValue("DescribeInstanceRamRoleResponse.TotalCount"));
-		describeInstanceRamRoleResponse.setPageNumber(context.integerValue("DescribeInstanceRamRoleResponse.PageNumber"));
-		describeInstanceRamRoleResponse.setPageSize(context.integerValue("DescribeInstanceRamRoleResponse.PageSize"));
 
 		List<InstanceRamRoleSet> instanceRamRoleSets = new ArrayList<InstanceRamRoleSet>();
 		for (int i = 0; i < context.lengthValue("DescribeInstanceRamRoleResponse.InstanceRamRoleSets.Length"); i++) {

@@ -30,25 +30,62 @@ public class ReplaceSystemDiskRequest extends RpcAcsRequest<ReplaceSystemDiskRes
 		super("Ecs", "2014-05-26", "ReplaceSystemDisk", "ecs");
 	}
 
+	private String clientToken;
+
+	private String securityEnhancementStrategy;
+
+	private String keyPairName;
+
 	private Long ownerId;
+
+	private String imageId;
+
+	private String password;
+
+	private Boolean useAdditionalService;
 
 	private String resourceOwnerAccount;
 
 	private Long resourceOwnerId;
 
-	private String instanceId;
-
-	private String imageId;
+	private String ownerAccount;
 
 	private Integer systemDiskSize;
 
-	private String clientToken;
+	private String instanceId;
 
-	private String ownerAccount;
+	public String getClientToken() {
+		return this.clientToken;
+	}
 
-	private Boolean useAdditionalService;
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
+		}
+	}
 
-	private String password;
+	public String getSecurityEnhancementStrategy() {
+		return this.securityEnhancementStrategy;
+	}
+
+	public void setSecurityEnhancementStrategy(String securityEnhancementStrategy) {
+		this.securityEnhancementStrategy = securityEnhancementStrategy;
+		if(securityEnhancementStrategy != null){
+			putQueryParameter("SecurityEnhancementStrategy", securityEnhancementStrategy);
+		}
+	}
+
+	public String getKeyPairName() {
+		return this.keyPairName;
+	}
+
+	public void setKeyPairName(String keyPairName) {
+		this.keyPairName = keyPairName;
+		if(keyPairName != null){
+			putQueryParameter("KeyPairName", keyPairName);
+		}
+	}
 
 	public Long getOwnerId() {
 		return this.ownerId;
@@ -56,34 +93,9 @@ public class ReplaceSystemDiskRequest extends RpcAcsRequest<ReplaceSystemDiskRes
 
 	public void setOwnerId(Long ownerId) {
 		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-	}
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", resourceOwnerId);
-	}
-
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		putQueryParameter("InstanceId", instanceId);
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
 	}
 
 	public String getImageId() {
@@ -92,43 +104,9 @@ public class ReplaceSystemDiskRequest extends RpcAcsRequest<ReplaceSystemDiskRes
 
 	public void setImageId(String imageId) {
 		this.imageId = imageId;
-		putQueryParameter("ImageId", imageId);
-	}
-
-	public Integer getSystemDiskSize() {
-		return this.systemDiskSize;
-	}
-
-	public void setSystemDiskSize(Integer systemDiskSize) {
-		this.systemDiskSize = systemDiskSize;
-		putQueryParameter("SystemDisk.Size", systemDiskSize);
-	}
-
-	public String getClientToken() {
-		return this.clientToken;
-	}
-
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		putQueryParameter("ClientToken", clientToken);
-	}
-
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
-
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		putQueryParameter("OwnerAccount", ownerAccount);
-	}
-
-	public Boolean getUseAdditionalService() {
-		return this.useAdditionalService;
-	}
-
-	public void setUseAdditionalService(Boolean useAdditionalService) {
-		this.useAdditionalService = useAdditionalService;
-		putQueryParameter("UseAdditionalService", useAdditionalService);
+		if(imageId != null){
+			putQueryParameter("ImageId", imageId);
+		}
 	}
 
 	public String getPassword() {
@@ -137,7 +115,75 @@ public class ReplaceSystemDiskRequest extends RpcAcsRequest<ReplaceSystemDiskRes
 
 	public void setPassword(String password) {
 		this.password = password;
-		putQueryParameter("Password", password);
+		if(password != null){
+			putQueryParameter("Password", password);
+		}
+	}
+
+	public Boolean getUseAdditionalService() {
+		return this.useAdditionalService;
+	}
+
+	public void setUseAdditionalService(Boolean useAdditionalService) {
+		this.useAdditionalService = useAdditionalService;
+		if(useAdditionalService != null){
+			putQueryParameter("UseAdditionalService", useAdditionalService.toString());
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
+	}
+
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public Integer getSystemDiskSize() {
+		return this.systemDiskSize;
+	}
+
+	public void setSystemDiskSize(Integer systemDiskSize) {
+		this.systemDiskSize = systemDiskSize;
+		if(systemDiskSize != null){
+			putQueryParameter("SystemDisk.Size", systemDiskSize.toString());
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
+		}
 	}
 
 	@Override

@@ -89,7 +89,7 @@ public class DescribeSnapshotLinksResponse extends AcsResponse {
 
 		private Integer sourceDiskSize;
 
-		private SourceDiskType sourceDiskType;
+		private String sourceDiskType;
 
 		private Integer totalSize;
 
@@ -127,11 +127,11 @@ public class DescribeSnapshotLinksResponse extends AcsResponse {
 			this.sourceDiskSize = sourceDiskSize;
 		}
 
-		public SourceDiskType getSourceDiskType() {
+		public String getSourceDiskType() {
 			return this.sourceDiskType;
 		}
 
-		public void setSourceDiskType(SourceDiskType sourceDiskType) {
+		public void setSourceDiskType(String sourceDiskType) {
 			this.sourceDiskType = sourceDiskType;
 		}
 
@@ -150,39 +150,6 @@ public class DescribeSnapshotLinksResponse extends AcsResponse {
 		public void setTotalCount(Integer totalCount) {
 			this.totalCount = totalCount;
 		}
-
-public enum SourceDiskType {
-
-			SYSTEM("system"),
-			DATA("data"),;
-	
-    private String stringValue;
-
-	SourceDiskType(String stringValue) {
-        setStringValue(stringValue);
-    }
-
-    public String getStringValue() {
-        return stringValue;
-    }
-
-    public void setStringValue(String stringValue) {
-        this.stringValue = stringValue;
-    }
-    
-    public static SourceDiskType getEnum(String stringValue){
-    	if(null == stringValue){
-    		return null;
-    	}
-    	
-    	for (SourceDiskType sourceDiskType : SourceDiskType.values()) {
-			if(sourceDiskType.getStringValue().equals(stringValue)){
-				return sourceDiskType;
-			}
-		}
-    	return null;
-    }
-}
 	}
 
 	@Override

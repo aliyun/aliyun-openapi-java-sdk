@@ -30,62 +30,37 @@ public class DescribeTasksRequest extends RpcAcsRequest<DescribeTasksResponse> {
 		super("Ecs", "2014-05-26", "DescribeTasks", "ecs");
 	}
 
-	private Long ownerId;
-
-	private String resourceOwnerAccount;
-
-	private Long resourceOwnerId;
-
-	private Integer pageNumber;
+	private String endTime;
 
 	private Integer pageSize;
 
-	private String ownerAccount;
+	private String startTime;
 
-	private String taskIds;
+	private Integer pageNumber;
+
+	private Long ownerId;
 
 	private String taskAction;
 
+	private String resourceOwnerAccount;
+
+	private String taskIds;
+
 	private String taskStatus;
 
-	private String startTime;
+	private Long resourceOwnerId;
 
-	private String endTime;
+	private String ownerAccount;
 
-	public Long getOwnerId() {
-		return this.ownerId;
+	public String getEndTime() {
+		return this.endTime;
 	}
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-	}
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", resourceOwnerId);
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		putQueryParameter("PageNumber", pageNumber);
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime);
+		}
 	}
 
 	public Integer getPageSize() {
@@ -94,43 +69,9 @@ public class DescribeTasksRequest extends RpcAcsRequest<DescribeTasksResponse> {
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
-		putQueryParameter("PageSize", pageSize);
-	}
-
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
-
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		putQueryParameter("OwnerAccount", ownerAccount);
-	}
-
-	public String getTaskIds() {
-		return this.taskIds;
-	}
-
-	public void setTaskIds(String taskIds) {
-		this.taskIds = taskIds;
-		putQueryParameter("TaskIds", taskIds);
-	}
-
-	public String getTaskAction() {
-		return this.taskAction;
-	}
-
-	public void setTaskAction(String taskAction) {
-		this.taskAction = taskAction;
-		putQueryParameter("TaskAction", taskAction);
-	}
-
-	public String getTaskStatus() {
-		return this.taskStatus;
-	}
-
-	public void setTaskStatus(String taskStatus) {
-		this.taskStatus = taskStatus;
-		putQueryParameter("TaskStatus", taskStatus);
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
 	}
 
 	public String getStartTime() {
@@ -139,16 +80,97 @@ public class DescribeTasksRequest extends RpcAcsRequest<DescribeTasksResponse> {
 
 	public void setStartTime(String startTime) {
 		this.startTime = startTime;
-		putQueryParameter("StartTime", startTime);
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime);
+		}
 	}
 
-	public String getEndTime() {
-		return this.endTime;
+	public Integer getPageNumber() {
+		return this.pageNumber;
 	}
 
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
-		putQueryParameter("EndTime", endTime);
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getTaskAction() {
+		return this.taskAction;
+	}
+
+	public void setTaskAction(String taskAction) {
+		this.taskAction = taskAction;
+		if(taskAction != null){
+			putQueryParameter("TaskAction", taskAction);
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getTaskIds() {
+		return this.taskIds;
+	}
+
+	public void setTaskIds(String taskIds) {
+		this.taskIds = taskIds;
+		if(taskIds != null){
+			putQueryParameter("TaskIds", taskIds);
+		}
+	}
+
+	public String getTaskStatus() {
+		return this.taskStatus;
+	}
+
+	public void setTaskStatus(String taskStatus) {
+		this.taskStatus = taskStatus;
+		if(taskStatus != null){
+			putQueryParameter("TaskStatus", taskStatus);
+		}
+	}
+
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
+	}
+
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
 	}
 
 	@Override

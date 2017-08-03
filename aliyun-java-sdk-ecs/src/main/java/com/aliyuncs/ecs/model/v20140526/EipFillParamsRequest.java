@@ -30,36 +30,29 @@ public class EipFillParamsRequest extends RpcAcsRequest<EipFillParamsResponse> {
 		super("Ecs", "2014-05-26", "EipFillParams", "ecs");
 	}
 
-	private String data;
-
-	private Long ownerId;
+	private String clientToken;
 
 	private String resourceOwnerAccount;
 
-	private Long resourceOwnerId;
-
-	private String clientToken;
-
-	private String ownerAccount;
+	private String data;
 
 	private String userCidr;
 
-	public String getdata() {
-		return this.data;
+	private Long resourceOwnerId;
+
+	private String ownerAccount;
+
+	private Long ownerId;
+
+	public String getClientToken() {
+		return this.clientToken;
 	}
 
-	public void setdata(String data) {
-		this.data = data;
-		putQueryParameter("data", data);
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
+		}
 	}
 
 	public String getResourceOwnerAccount() {
@@ -68,34 +61,20 @@ public class EipFillParamsRequest extends RpcAcsRequest<EipFillParamsResponse> {
 
 	public void setResourceOwnerAccount(String resourceOwnerAccount) {
 		this.resourceOwnerAccount = resourceOwnerAccount;
-		putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
 	}
 
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
+	public String getData() {
+		return this.data;
 	}
 
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", resourceOwnerId);
-	}
-
-	public String getClientToken() {
-		return this.clientToken;
-	}
-
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		putQueryParameter("ClientToken", clientToken);
-	}
-
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
-
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		putQueryParameter("OwnerAccount", ownerAccount);
+	public void setData(String data) {
+		this.data = data;
+		if(data != null){
+			putQueryParameter("data", data);
+		}
 	}
 
 	public String getUserCidr() {
@@ -104,7 +83,42 @@ public class EipFillParamsRequest extends RpcAcsRequest<EipFillParamsResponse> {
 
 	public void setUserCidr(String userCidr) {
 		this.userCidr = userCidr;
-		putQueryParameter("UserCidr", userCidr);
+		if(userCidr != null){
+			putQueryParameter("UserCidr", userCidr);
+		}
+	}
+
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
+	}
+
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
 	}
 
 	@Override

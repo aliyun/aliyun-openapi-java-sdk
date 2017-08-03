@@ -25,7 +25,7 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
- * @version
+ * @version 
  */
 public class AttachInstanceRamRoleResponse extends AcsResponse {
 
@@ -85,7 +85,7 @@ public class AttachInstanceRamRoleResponse extends AcsResponse {
 
 		private Boolean success;
 
-		private Code code;
+		private String code;
 
 		private String message;
 
@@ -105,11 +105,11 @@ public class AttachInstanceRamRoleResponse extends AcsResponse {
 			this.success = success;
 		}
 
-		public Code getCode() {
+		public String getCode() {
 			return this.code;
 		}
 
-		public void setCode(Code code) {
+		public void setCode(String code) {
 			this.code = code;
 		}
 
@@ -119,38 +119,6 @@ public class AttachInstanceRamRoleResponse extends AcsResponse {
 
 		public void setMessage(String message) {
 			this.message = message;
-		}
-
-		public enum Code {
-
-			INSTANCE_RAM_ROLE_ALREADY_EXISTS("InvalidRamRole.AlreadyExists"),;
-
-			private String stringValue;
-
-			Code(String stringValue) {
-				setStringValue(stringValue);
-			}
-
-			public String getStringValue() {
-				return stringValue;
-			}
-
-			public void setStringValue(String stringValue) {
-				this.stringValue = stringValue;
-			}
-
-			public static Code getEnum(String stringValue){
-				if(null == stringValue){
-					return null;
-				}
-
-				for (Code code : Code.values()) {
-					if(code.getStringValue().equals(stringValue)){
-						return code;
-					}
-				}
-				return null;
-			}
 		}
 	}
 

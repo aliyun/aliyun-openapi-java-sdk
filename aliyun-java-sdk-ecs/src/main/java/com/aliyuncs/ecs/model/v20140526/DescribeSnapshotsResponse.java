@@ -91,7 +91,7 @@ public class DescribeSnapshotsResponse extends AcsResponse {
 
 		private String sourceDiskId;
 
-		private SourceDiskType sourceDiskType;
+		private String sourceDiskType;
 
 		private String sourceDiskSize;
 
@@ -102,6 +102,8 @@ public class DescribeSnapshotsResponse extends AcsResponse {
 		private String status;
 
 		private String usage;
+
+		private String sourceStorageType;
 
 		private List<Tag> tags;
 
@@ -145,11 +147,11 @@ public class DescribeSnapshotsResponse extends AcsResponse {
 			this.sourceDiskId = sourceDiskId;
 		}
 
-		public SourceDiskType getSourceDiskType() {
+		public String getSourceDiskType() {
 			return this.sourceDiskType;
 		}
 
-		public void setSourceDiskType(SourceDiskType sourceDiskType) {
+		public void setSourceDiskType(String sourceDiskType) {
 			this.sourceDiskType = sourceDiskType;
 		}
 
@@ -193,45 +195,20 @@ public class DescribeSnapshotsResponse extends AcsResponse {
 			this.usage = usage;
 		}
 
+		public String getSourceStorageType() {
+			return this.sourceStorageType;
+		}
+
+		public void setSourceStorageType(String sourceStorageType) {
+			this.sourceStorageType = sourceStorageType;
+		}
+
 		public List<Tag> getTags() {
 			return this.tags;
 		}
 
 		public void setTags(List<Tag> tags) {
 			this.tags = tags;
-		}
-
-		public enum SourceDiskType {
-		
-			SYSTEM("system"),
-			DATA("data"),;
-			
-		    private String stringValue;
-		
-			SourceDiskType(String stringValue) {
-		        setStringValue(stringValue);
-		    }
-		
-		    public String getStringValue() {
-		        return stringValue;
-		    }
-		
-		    public void setStringValue(String stringValue) {
-		        this.stringValue = stringValue;
-		    }
-		    
-		    public static SourceDiskType getEnum(String stringValue){
-		    	if(null == stringValue){
-		    		return null;
-		    	}
-		    	
-		    	for (SourceDiskType sourceDiskType : SourceDiskType.values()) {
-					if(sourceDiskType.getStringValue().equals(stringValue)){
-						return sourceDiskType;
-					}
-				}
-		    	return null;
-		    }
 		}
 
 		public static class Tag {

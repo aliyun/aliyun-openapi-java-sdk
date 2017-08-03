@@ -30,7 +30,7 @@ public class CheckDiskEnableAutoSnapshotValidationRequest extends RpcAcsRequest<
 		super("Ecs", "2014-05-26", "CheckDiskEnableAutoSnapshotValidation", "ecs");
 	}
 
-	private Long ownerId;
+	private String diskIds;
 
 	private String resourceOwnerAccount;
 
@@ -38,15 +38,17 @@ public class CheckDiskEnableAutoSnapshotValidationRequest extends RpcAcsRequest<
 
 	private String ownerAccount;
 
-	private String diskIds;
+	private Long ownerId;
 
-	public Long getOwnerId() {
-		return this.ownerId;
+	public String getDiskIds() {
+		return this.diskIds;
 	}
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
+	public void setDiskIds(String diskIds) {
+		this.diskIds = diskIds;
+		if(diskIds != null){
+			putQueryParameter("DiskIds", diskIds);
+		}
 	}
 
 	public String getResourceOwnerAccount() {
@@ -55,7 +57,9 @@ public class CheckDiskEnableAutoSnapshotValidationRequest extends RpcAcsRequest<
 
 	public void setResourceOwnerAccount(String resourceOwnerAccount) {
 		this.resourceOwnerAccount = resourceOwnerAccount;
-		putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
 	}
 
 	public Long getResourceOwnerId() {
@@ -64,7 +68,9 @@ public class CheckDiskEnableAutoSnapshotValidationRequest extends RpcAcsRequest<
 
 	public void setResourceOwnerId(Long resourceOwnerId) {
 		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", resourceOwnerId);
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
 	}
 
 	public String getOwnerAccount() {
@@ -73,16 +79,20 @@ public class CheckDiskEnableAutoSnapshotValidationRequest extends RpcAcsRequest<
 
 	public void setOwnerAccount(String ownerAccount) {
 		this.ownerAccount = ownerAccount;
-		putQueryParameter("OwnerAccount", ownerAccount);
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
 	}
 
-	public String getDiskIds() {
-		return this.diskIds;
+	public Long getOwnerId() {
+		return this.ownerId;
 	}
 
-	public void setDiskIds(String diskIds) {
-		this.diskIds = diskIds;
-		putQueryParameter("DiskIds", diskIds);
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
 	}
 
 	@Override

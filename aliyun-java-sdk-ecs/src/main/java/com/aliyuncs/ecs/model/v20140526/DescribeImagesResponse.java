@@ -107,9 +107,11 @@ public class DescribeImagesResponse extends AcsResponse {
 
 		private Boolean isSupportIoOptimized;
 
+		private Boolean isSupportCloudinit;
+
 		private String oSName;
 
-		private Architecture architecture;
+		private String architecture;
 
 		private String status;
 
@@ -197,6 +199,14 @@ public class DescribeImagesResponse extends AcsResponse {
 			this.isSupportIoOptimized = isSupportIoOptimized;
 		}
 
+		public Boolean getIsSupportCloudinit() {
+			return this.isSupportCloudinit;
+		}
+
+		public void setIsSupportCloudinit(Boolean isSupportCloudinit) {
+			this.isSupportCloudinit = isSupportCloudinit;
+		}
+
 		public String getOSName() {
 			return this.oSName;
 		}
@@ -205,11 +215,11 @@ public class DescribeImagesResponse extends AcsResponse {
 			this.oSName = oSName;
 		}
 
-		public Architecture getArchitecture() {
+		public String getArchitecture() {
 			return this.architecture;
 		}
 
-		public void setArchitecture(Architecture architecture) {
+		public void setArchitecture(String architecture) {
 			this.architecture = architecture;
 		}
 
@@ -299,39 +309,6 @@ public class DescribeImagesResponse extends AcsResponse {
 
 		public void setTags(List<Tag> tags) {
 			this.tags = tags;
-		}
-
-		public enum Architecture {
-		
-			X86_64("x86_64"),
-			I386("i386"),;
-			
-		    private String stringValue;
-		
-			Architecture(String stringValue) {
-		        setStringValue(stringValue);
-		    }
-		
-		    public String getStringValue() {
-		        return stringValue;
-		    }
-		
-		    public void setStringValue(String stringValue) {
-		        this.stringValue = stringValue;
-		    }
-		    
-		    public static Architecture getEnum(String stringValue){
-		    	if(null == stringValue){
-		    		return null;
-		    	}
-		    	
-		    	for (Architecture architecture : Architecture.values()) {
-					if(architecture.getStringValue().equals(stringValue)){
-						return architecture;
-					}
-				}
-		    	return null;
-		    }
 		}
 
 		public static class DiskDeviceMapping {

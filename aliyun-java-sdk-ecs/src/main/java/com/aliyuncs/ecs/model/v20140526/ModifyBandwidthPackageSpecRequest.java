@@ -30,26 +30,17 @@ public class ModifyBandwidthPackageSpecRequest extends RpcAcsRequest<ModifyBandw
 		super("Ecs", "2014-05-26", "ModifyBandwidthPackageSpec", "ecs");
 	}
 
-	private Long ownerId;
-
 	private String resourceOwnerAccount;
 
 	private Long resourceOwnerId;
 
 	private String ownerAccount;
 
-	private String bandwidthPackageId;
+	private Long ownerId;
 
 	private String bandwidth;
 
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
-	}
+	private String bandwidthPackageId;
 
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
@@ -57,7 +48,9 @@ public class ModifyBandwidthPackageSpecRequest extends RpcAcsRequest<ModifyBandw
 
 	public void setResourceOwnerAccount(String resourceOwnerAccount) {
 		this.resourceOwnerAccount = resourceOwnerAccount;
-		putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
 	}
 
 	public Long getResourceOwnerId() {
@@ -66,7 +59,9 @@ public class ModifyBandwidthPackageSpecRequest extends RpcAcsRequest<ModifyBandw
 
 	public void setResourceOwnerId(Long resourceOwnerId) {
 		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", resourceOwnerId);
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
 	}
 
 	public String getOwnerAccount() {
@@ -75,16 +70,20 @@ public class ModifyBandwidthPackageSpecRequest extends RpcAcsRequest<ModifyBandw
 
 	public void setOwnerAccount(String ownerAccount) {
 		this.ownerAccount = ownerAccount;
-		putQueryParameter("OwnerAccount", ownerAccount);
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
 	}
 
-	public String getBandwidthPackageId() {
-		return this.bandwidthPackageId;
+	public Long getOwnerId() {
+		return this.ownerId;
 	}
 
-	public void setBandwidthPackageId(String bandwidthPackageId) {
-		this.bandwidthPackageId = bandwidthPackageId;
-		putQueryParameter("BandwidthPackageId", bandwidthPackageId);
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
 	}
 
 	public String getBandwidth() {
@@ -93,7 +92,20 @@ public class ModifyBandwidthPackageSpecRequest extends RpcAcsRequest<ModifyBandw
 
 	public void setBandwidth(String bandwidth) {
 		this.bandwidth = bandwidth;
-		putQueryParameter("Bandwidth", bandwidth);
+		if(bandwidth != null){
+			putQueryParameter("Bandwidth", bandwidth);
+		}
+	}
+
+	public String getBandwidthPackageId() {
+		return this.bandwidthPackageId;
+	}
+
+	public void setBandwidthPackageId(String bandwidthPackageId) {
+		this.bandwidthPackageId = bandwidthPackageId;
+		if(bandwidthPackageId != null){
+			putQueryParameter("BandwidthPackageId", bandwidthPackageId);
+		}
 	}
 
 	@Override

@@ -45,6 +45,7 @@ public class DescribeTagsResponseUnmarshaller {
 			ResourceTypeCount resourceTypeCount = new ResourceTypeCount();
 			resourceTypeCount.setInstance(context.integerValue("DescribeTagsResponse.Tags["+ i +"].ResourceTypeCount.Instance"));
 			resourceTypeCount.setDisk(context.integerValue("DescribeTagsResponse.Tags["+ i +"].ResourceTypeCount.Disk"));
+			resourceTypeCount.setVolume(context.integerValue("DescribeTagsResponse.Tags["+ i +"].ResourceTypeCount.Volume"));
 			resourceTypeCount.setImage(context.integerValue("DescribeTagsResponse.Tags["+ i +"].ResourceTypeCount.Image"));
 			resourceTypeCount.setSnapshot(context.integerValue("DescribeTagsResponse.Tags["+ i +"].ResourceTypeCount.Snapshot"));
 			resourceTypeCount.setSecuritygroup(context.integerValue("DescribeTagsResponse.Tags["+ i +"].ResourceTypeCount.Securitygroup"));

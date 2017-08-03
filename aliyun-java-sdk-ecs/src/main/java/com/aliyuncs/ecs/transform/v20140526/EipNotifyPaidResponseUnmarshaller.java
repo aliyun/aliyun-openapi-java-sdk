@@ -26,11 +26,11 @@ public class EipNotifyPaidResponseUnmarshaller {
 
 	public static EipNotifyPaidResponse unmarshall(EipNotifyPaidResponse eipNotifyPaidResponse, UnmarshallerContext context) {
 		
-		eipNotifyPaidResponse.setrequestId(context.stringValue("EipNotifyPaidResponse.requestId"));
-		eipNotifyPaidResponse.setdata(context.stringValue("EipNotifyPaidResponse.data"));
-		eipNotifyPaidResponse.setcode(context.stringValue("EipNotifyPaidResponse.code"));
-		eipNotifyPaidResponse.setmessage(context.stringValue("EipNotifyPaidResponse.message"));
-		eipNotifyPaidResponse.setsuccess(context.booleanValue("EipNotifyPaidResponse.success"));
+		eipNotifyPaidResponse.setRequestId(context.stringValue("EipNotifyPaidResponse.requestId"));
+		eipNotifyPaidResponse.setData(context.stringValue("EipNotifyPaidResponse.data"));
+		eipNotifyPaidResponse.setCode(context.stringValue("EipNotifyPaidResponse.code"));
+		eipNotifyPaidResponse.setMessage(context.stringValue("EipNotifyPaidResponse.message"));
+		eipNotifyPaidResponse.setSuccess(context.booleanValue("EipNotifyPaidResponse.success"));
 	 
 	 	return eipNotifyPaidResponse;
 	}

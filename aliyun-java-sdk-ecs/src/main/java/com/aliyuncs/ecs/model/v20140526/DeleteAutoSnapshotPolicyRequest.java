@@ -30,22 +30,13 @@ public class DeleteAutoSnapshotPolicyRequest extends RpcAcsRequest<DeleteAutoSna
 		super("Ecs", "2014-05-26", "DeleteAutoSnapshotPolicy", "ecs");
 	}
 
-	private Long ownerId;
-
 	private String resourceOwnerAccount;
-
-	private Long resourceOwnerId;
 
 	private String autoSnapshotPolicyId;
 
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
+	private Long resourceOwnerId;
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
-	}
+	private Long ownerId;
 
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
@@ -53,7 +44,20 @@ public class DeleteAutoSnapshotPolicyRequest extends RpcAcsRequest<DeleteAutoSna
 
 	public void setResourceOwnerAccount(String resourceOwnerAccount) {
 		this.resourceOwnerAccount = resourceOwnerAccount;
-		putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getAutoSnapshotPolicyId() {
+		return this.autoSnapshotPolicyId;
+	}
+
+	public void setAutoSnapshotPolicyId(String autoSnapshotPolicyId) {
+		this.autoSnapshotPolicyId = autoSnapshotPolicyId;
+		if(autoSnapshotPolicyId != null){
+			putQueryParameter("autoSnapshotPolicyId", autoSnapshotPolicyId);
+		}
 	}
 
 	public Long getResourceOwnerId() {
@@ -62,16 +66,20 @@ public class DeleteAutoSnapshotPolicyRequest extends RpcAcsRequest<DeleteAutoSna
 
 	public void setResourceOwnerId(Long resourceOwnerId) {
 		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", resourceOwnerId);
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
 	}
 
-	public String getautoSnapshotPolicyId() {
-		return this.autoSnapshotPolicyId;
+	public Long getOwnerId() {
+		return this.ownerId;
 	}
 
-	public void setautoSnapshotPolicyId(String autoSnapshotPolicyId) {
-		this.autoSnapshotPolicyId = autoSnapshotPolicyId;
-		putQueryParameter("autoSnapshotPolicyId", autoSnapshotPolicyId);
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
 	}
 
 	@Override

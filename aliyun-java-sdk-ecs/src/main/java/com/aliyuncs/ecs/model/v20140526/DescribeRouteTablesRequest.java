@@ -30,33 +30,35 @@ public class DescribeRouteTablesRequest extends RpcAcsRequest<DescribeRouteTable
 		super("Ecs", "2014-05-26", "DescribeRouteTables", "ecs");
 	}
 
-	private Long ownerId;
+	private Integer pageSize;
 
 	private String resourceOwnerAccount;
 
-	private Long resourceOwnerId;
+	private Integer pageNumber;
 
 	private String vRouterId;
 
-	private String routeTableId;
+	private String routerId;
 
 	private String routerType;
 
-	private String routerId;
+	private String routeTableId;
 
-	private Integer pageNumber;
-
-	private Integer pageSize;
+	private Long resourceOwnerId;
 
 	private String ownerAccount;
 
-	public Long getOwnerId() {
-		return this.ownerId;
+	private Long ownerId;
+
+	public Integer getPageSize() {
+		return this.pageSize;
 	}
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
 	}
 
 	public String getResourceOwnerAccount() {
@@ -65,52 +67,9 @@ public class DescribeRouteTablesRequest extends RpcAcsRequest<DescribeRouteTable
 
 	public void setResourceOwnerAccount(String resourceOwnerAccount) {
 		this.resourceOwnerAccount = resourceOwnerAccount;
-		putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-	}
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", resourceOwnerId);
-	}
-
-	public String getVRouterId() {
-		return this.vRouterId;
-	}
-
-	public void setVRouterId(String vRouterId) {
-		this.vRouterId = vRouterId;
-		putQueryParameter("VRouterId", vRouterId);
-	}
-
-	public String getRouteTableId() {
-		return this.routeTableId;
-	}
-
-	public void setRouteTableId(String routeTableId) {
-		this.routeTableId = routeTableId;
-		putQueryParameter("RouteTableId", routeTableId);
-	}
-
-	public String getRouterType() {
-		return this.routerType;
-	}
-
-	public void setRouterType(String routerType) {
-		this.routerType = routerType;
-		putQueryParameter("RouterType", routerType);
-	}
-
-	public String getRouterId() {
-		return this.routerId;
-	}
-
-	public void setRouterId(String routerId) {
-		this.routerId = routerId;
-		putQueryParameter("RouterId", routerId);
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
 	}
 
 	public Integer getPageNumber() {
@@ -119,16 +78,64 @@ public class DescribeRouteTablesRequest extends RpcAcsRequest<DescribeRouteTable
 
 	public void setPageNumber(Integer pageNumber) {
 		this.pageNumber = pageNumber;
-		putQueryParameter("PageNumber", pageNumber);
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public String getVRouterId() {
+		return this.vRouterId;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		putQueryParameter("PageSize", pageSize);
+	public void setVRouterId(String vRouterId) {
+		this.vRouterId = vRouterId;
+		if(vRouterId != null){
+			putQueryParameter("VRouterId", vRouterId);
+		}
+	}
+
+	public String getRouterId() {
+		return this.routerId;
+	}
+
+	public void setRouterId(String routerId) {
+		this.routerId = routerId;
+		if(routerId != null){
+			putQueryParameter("RouterId", routerId);
+		}
+	}
+
+	public String getRouterType() {
+		return this.routerType;
+	}
+
+	public void setRouterType(String routerType) {
+		this.routerType = routerType;
+		if(routerType != null){
+			putQueryParameter("RouterType", routerType);
+		}
+	}
+
+	public String getRouteTableId() {
+		return this.routeTableId;
+	}
+
+	public void setRouteTableId(String routeTableId) {
+		this.routeTableId = routeTableId;
+		if(routeTableId != null){
+			putQueryParameter("RouteTableId", routeTableId);
+		}
+	}
+
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
+	}
+
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
 	}
 
 	public String getOwnerAccount() {
@@ -137,7 +144,20 @@ public class DescribeRouteTablesRequest extends RpcAcsRequest<DescribeRouteTable
 
 	public void setOwnerAccount(String ownerAccount) {
 		this.ownerAccount = ownerAccount;
-		putQueryParameter("OwnerAccount", ownerAccount);
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
 	}
 
 	@Override

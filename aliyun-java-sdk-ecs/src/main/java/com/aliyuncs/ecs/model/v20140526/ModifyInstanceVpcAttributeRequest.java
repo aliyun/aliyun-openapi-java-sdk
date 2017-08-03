@@ -30,55 +30,19 @@ public class ModifyInstanceVpcAttributeRequest extends RpcAcsRequest<ModifyInsta
 		super("Ecs", "2014-05-26", "ModifyInstanceVpcAttribute", "ecs");
 	}
 
-	private Long ownerId;
+	private String vSwitchId;
+
+	private String privateIpAddress;
 
 	private String resourceOwnerAccount;
 
 	private Long resourceOwnerId;
 
-	private String instanceId;
-
-	private String vSwitchId;
-
-	private String privateIpAddress;
-
 	private String ownerAccount;
 
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
+	private Long ownerId;
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-	}
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", resourceOwnerId);
-	}
-
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		putQueryParameter("InstanceId", instanceId);
-	}
+	private String instanceId;
 
 	public String getVSwitchId() {
 		return this.vSwitchId;
@@ -86,7 +50,9 @@ public class ModifyInstanceVpcAttributeRequest extends RpcAcsRequest<ModifyInsta
 
 	public void setVSwitchId(String vSwitchId) {
 		this.vSwitchId = vSwitchId;
-		putQueryParameter("VSwitchId", vSwitchId);
+		if(vSwitchId != null){
+			putQueryParameter("VSwitchId", vSwitchId);
+		}
 	}
 
 	public String getPrivateIpAddress() {
@@ -95,7 +61,31 @@ public class ModifyInstanceVpcAttributeRequest extends RpcAcsRequest<ModifyInsta
 
 	public void setPrivateIpAddress(String privateIpAddress) {
 		this.privateIpAddress = privateIpAddress;
-		putQueryParameter("PrivateIpAddress", privateIpAddress);
+		if(privateIpAddress != null){
+			putQueryParameter("PrivateIpAddress", privateIpAddress);
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
+	}
+
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
 	}
 
 	public String getOwnerAccount() {
@@ -104,7 +94,31 @@ public class ModifyInstanceVpcAttributeRequest extends RpcAcsRequest<ModifyInsta
 
 	public void setOwnerAccount(String ownerAccount) {
 		this.ownerAccount = ownerAccount;
-		putQueryParameter("OwnerAccount", ownerAccount);
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
+		}
 	}
 
 	@Override

@@ -23,10 +23,8 @@ import java.util.List;
 
 import com.aliyuncs.ecs.model.v20140526.DescribeDisksResponse;
 import com.aliyuncs.ecs.model.v20140526.DescribeDisksResponse.Disk;
-import com.aliyuncs.ecs.model.v20140526.DescribeDisksResponse.Disk.Category;
 import com.aliyuncs.ecs.model.v20140526.DescribeDisksResponse.Disk.OperationLock;
 import com.aliyuncs.ecs.model.v20140526.DescribeDisksResponse.Disk.Tag;
-import com.aliyuncs.ecs.model.v20140526.DescribeDisksResponse.Disk.Type;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -47,8 +45,8 @@ public class DescribeDisksResponseUnmarshaller {
 			disk.setZoneId(context.stringValue("DescribeDisksResponse.Disks["+ i +"].ZoneId"));
 			disk.setDiskName(context.stringValue("DescribeDisksResponse.Disks["+ i +"].DiskName"));
 			disk.setDescription(context.stringValue("DescribeDisksResponse.Disks["+ i +"].Description"));
-			disk.setType(Type.getEnum(context.stringValue("DescribeDisksResponse.Disks["+ i +"].Type")));
-			disk.setCategory(Category.getEnum(context.stringValue("DescribeDisksResponse.Disks["+ i +"].Category")));
+			disk.setType(context.stringValue("DescribeDisksResponse.Disks["+ i +"].Type"));
+			disk.setCategory(context.stringValue("DescribeDisksResponse.Disks["+ i +"].Category"));
 			disk.setSize(context.integerValue("DescribeDisksResponse.Disks["+ i +"].Size"));
 			disk.setImageId(context.stringValue("DescribeDisksResponse.Disks["+ i +"].ImageId"));
 			disk.setSourceSnapshotId(context.stringValue("DescribeDisksResponse.Disks["+ i +"].SourceSnapshotId"));
@@ -67,6 +65,7 @@ public class DescribeDisksResponseUnmarshaller {
 			disk.setDetachedTime(context.stringValue("DescribeDisksResponse.Disks["+ i +"].DetachedTime"));
 			disk.setDiskChargeType(context.stringValue("DescribeDisksResponse.Disks["+ i +"].DiskChargeType"));
 			disk.setExpiredTime(context.stringValue("DescribeDisksResponse.Disks["+ i +"].ExpiredTime"));
+			disk.setResourceGroupId(context.stringValue("DescribeDisksResponse.Disks["+ i +"].ResourceGroupId"));
 
 			List<OperationLock> operationLocks = new ArrayList<OperationLock>();
 			for (int j = 0; j < context.lengthValue("DescribeDisksResponse.Disks["+ i +"].OperationLocks.Length"); j++) {

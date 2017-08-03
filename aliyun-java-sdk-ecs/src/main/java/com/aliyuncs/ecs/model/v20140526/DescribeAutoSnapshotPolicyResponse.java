@@ -153,92 +153,24 @@ public class DescribeAutoSnapshotPolicyResponse extends AcsResponse {
 
 	public static class AutoSnapshotExcutionStatus {
 
-		private SystemDiskExcutionStatus systemDiskExcutionStatus;
+		private String systemDiskExcutionStatus;
 
-		private DataDiskExcutionStatus dataDiskExcutionStatus;
+		private String dataDiskExcutionStatus;
 
-		public SystemDiskExcutionStatus getSystemDiskExcutionStatus() {
+		public String getSystemDiskExcutionStatus() {
 			return this.systemDiskExcutionStatus;
 		}
 
-		public void setSystemDiskExcutionStatus(SystemDiskExcutionStatus systemDiskExcutionStatus) {
+		public void setSystemDiskExcutionStatus(String systemDiskExcutionStatus) {
 			this.systemDiskExcutionStatus = systemDiskExcutionStatus;
 		}
 
-		public DataDiskExcutionStatus getDataDiskExcutionStatus() {
+		public String getDataDiskExcutionStatus() {
 			return this.dataDiskExcutionStatus;
 		}
 
-		public void setDataDiskExcutionStatus(DataDiskExcutionStatus dataDiskExcutionStatus) {
+		public void setDataDiskExcutionStatus(String dataDiskExcutionStatus) {
 			this.dataDiskExcutionStatus = dataDiskExcutionStatus;
-		}
-
-		public enum SystemDiskExcutionStatus {
-		
-			STANDBY("Standby"),
-			FAILED("Failed"),
-			EXECUTED("Executed"),;
-			
-		    private String stringValue;
-		
-			SystemDiskExcutionStatus(String stringValue) {
-		        setStringValue(stringValue);
-		    }
-		
-		    public String getStringValue() {
-		        return stringValue;
-		    }
-		
-		    public void setStringValue(String stringValue) {
-		        this.stringValue = stringValue;
-		    }
-		    
-		    public static SystemDiskExcutionStatus getEnum(String stringValue){
-		    	if(null == stringValue){
-		    		return null;
-		    	}
-		    	
-		    	for (SystemDiskExcutionStatus systemDiskExcutionStatus : SystemDiskExcutionStatus.values()) {
-					if(systemDiskExcutionStatus.getStringValue().equals(stringValue)){
-						return systemDiskExcutionStatus;
-					}
-				}
-		    	return null;
-		    }
-		}
-
-		public enum DataDiskExcutionStatus {
-		
-			STANDBY("Standby"),
-			FAILED("Failed"),
-			EXECUTED("Executed"),;
-			
-		    private String stringValue;
-		
-			DataDiskExcutionStatus(String stringValue) {
-		        setStringValue(stringValue);
-		    }
-		
-		    public String getStringValue() {
-		        return stringValue;
-		    }
-		
-		    public void setStringValue(String stringValue) {
-		        this.stringValue = stringValue;
-		    }
-		    
-		    public static DataDiskExcutionStatus getEnum(String stringValue){
-		    	if(null == stringValue){
-		    		return null;
-		    	}
-		    	
-		    	for (DataDiskExcutionStatus dataDiskExcutionStatus : DataDiskExcutionStatus.values()) {
-					if(dataDiskExcutionStatus.getStringValue().equals(stringValue)){
-						return dataDiskExcutionStatus;
-					}
-				}
-		    	return null;
-		    }
 		}
 	}
 

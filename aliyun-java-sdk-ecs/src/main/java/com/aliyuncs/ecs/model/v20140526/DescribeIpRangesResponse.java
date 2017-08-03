@@ -103,7 +103,7 @@ public class DescribeIpRangesResponse extends AcsResponse {
 
 		private String ipAddress;
 
-		private NicType nicType;
+		private String nicType;
 
 		public String getIpAddress() {
 			return this.ipAddress;
@@ -113,45 +113,12 @@ public class DescribeIpRangesResponse extends AcsResponse {
 			this.ipAddress = ipAddress;
 		}
 
-		public NicType getNicType() {
+		public String getNicType() {
 			return this.nicType;
 		}
 
-		public void setNicType(NicType nicType) {
+		public void setNicType(String nicType) {
 			this.nicType = nicType;
-		}
-
-		public enum NicType {
-		
-			INTRANET("intranet"),
-			INTERNET("internet"),;
-			
-		    private String stringValue;
-		
-			NicType(String stringValue) {
-		        setStringValue(stringValue);
-		    }
-		
-		    public String getStringValue() {
-		        return stringValue;
-		    }
-		
-		    public void setStringValue(String stringValue) {
-		        this.stringValue = stringValue;
-		    }
-		    
-		    public static NicType getEnum(String stringValue){
-		    	if(null == stringValue){
-		    		return null;
-		    	}
-		    	
-		    	for (NicType nicType : NicType.values()) {
-					if(nicType.getStringValue().equals(stringValue)){
-						return nicType;
-					}
-				}
-		    	return null;
-		    }
 		}
 	}
 

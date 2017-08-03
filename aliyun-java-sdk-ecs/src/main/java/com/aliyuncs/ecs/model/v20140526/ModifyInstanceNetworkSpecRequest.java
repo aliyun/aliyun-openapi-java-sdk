@@ -30,27 +30,29 @@ public class ModifyInstanceNetworkSpecRequest extends RpcAcsRequest<ModifyInstan
 		super("Ecs", "2014-05-26", "ModifyInstanceNetworkSpec", "ecs");
 	}
 
-	private Long ownerId;
+	private Integer internetMaxBandwidthOut;
 
 	private String resourceOwnerAccount;
 
-	private Long resourceOwnerId;
-
-	private String instanceId;
-
-	private Integer internetMaxBandwidthOut;
-
 	private Integer internetMaxBandwidthIn;
+
+	private Long resourceOwnerId;
 
 	private String ownerAccount;
 
-	public Long getOwnerId() {
-		return this.ownerId;
+	private Long ownerId;
+
+	private String instanceId;
+
+	public Integer getInternetMaxBandwidthOut() {
+		return this.internetMaxBandwidthOut;
 	}
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
+	public void setInternetMaxBandwidthOut(Integer internetMaxBandwidthOut) {
+		this.internetMaxBandwidthOut = internetMaxBandwidthOut;
+		if(internetMaxBandwidthOut != null){
+			putQueryParameter("InternetMaxBandwidthOut", internetMaxBandwidthOut.toString());
+		}
 	}
 
 	public String getResourceOwnerAccount() {
@@ -59,34 +61,9 @@ public class ModifyInstanceNetworkSpecRequest extends RpcAcsRequest<ModifyInstan
 
 	public void setResourceOwnerAccount(String resourceOwnerAccount) {
 		this.resourceOwnerAccount = resourceOwnerAccount;
-		putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-	}
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", resourceOwnerId);
-	}
-
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		putQueryParameter("InstanceId", instanceId);
-	}
-
-	public Integer getInternetMaxBandwidthOut() {
-		return this.internetMaxBandwidthOut;
-	}
-
-	public void setInternetMaxBandwidthOut(Integer internetMaxBandwidthOut) {
-		this.internetMaxBandwidthOut = internetMaxBandwidthOut;
-		putQueryParameter("InternetMaxBandwidthOut", internetMaxBandwidthOut);
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
 	}
 
 	public Integer getInternetMaxBandwidthIn() {
@@ -95,7 +72,20 @@ public class ModifyInstanceNetworkSpecRequest extends RpcAcsRequest<ModifyInstan
 
 	public void setInternetMaxBandwidthIn(Integer internetMaxBandwidthIn) {
 		this.internetMaxBandwidthIn = internetMaxBandwidthIn;
-		putQueryParameter("InternetMaxBandwidthIn", internetMaxBandwidthIn);
+		if(internetMaxBandwidthIn != null){
+			putQueryParameter("InternetMaxBandwidthIn", internetMaxBandwidthIn.toString());
+		}
+	}
+
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
+	}
+
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
 	}
 
 	public String getOwnerAccount() {
@@ -104,7 +94,31 @@ public class ModifyInstanceNetworkSpecRequest extends RpcAcsRequest<ModifyInstan
 
 	public void setOwnerAccount(String ownerAccount) {
 		this.ownerAccount = ownerAccount;
-		putQueryParameter("OwnerAccount", ownerAccount);
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
+		}
 	}
 
 	@Override

@@ -25,7 +25,7 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
- * @version
+ * @version 
  */
 public class DescribeInstancesResponse extends AcsResponse {
 
@@ -107,7 +107,7 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		private String hostName;
 
-		private Status status;
+		private String status;
 
 		private String serialNumber;
 
@@ -145,6 +145,8 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		private String spotStrategy;
 
+		private String resourceGroupId;
+
 		private String keyPairName;
 
 		private List<LockReason> operationLocks;
@@ -152,6 +154,8 @@ public class DescribeInstancesResponse extends AcsResponse {
 		private List<Tag> tags;
 
 		private List<String> securityGroupIds;
+
+		private List<String> networkInterfaceIds;
 
 		private List<String> publicIpAddress;
 
@@ -265,11 +269,11 @@ public class DescribeInstancesResponse extends AcsResponse {
 			this.hostName = hostName;
 		}
 
-		public Status getStatus() {
+		public String getStatus() {
 			return this.status;
 		}
 
-		public void setStatus(Status status) {
+		public void setStatus(String status) {
 			this.status = status;
 		}
 
@@ -417,6 +421,14 @@ public class DescribeInstancesResponse extends AcsResponse {
 			this.spotStrategy = spotStrategy;
 		}
 
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
+		}
+
 		public String getKeyPairName() {
 			return this.keyPairName;
 		}
@@ -449,6 +461,14 @@ public class DescribeInstancesResponse extends AcsResponse {
 			this.securityGroupIds = securityGroupIds;
 		}
 
+		public List<String> getNetworkInterfaceIds() {
+			return this.networkInterfaceIds;
+		}
+
+		public void setNetworkInterfaceIds(List<String> networkInterfaceIds) {
+			this.networkInterfaceIds = networkInterfaceIds;
+		}
+
 		public List<String> getPublicIpAddress() {
 			return this.publicIpAddress;
 		}
@@ -479,45 +499,6 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		public void setEipAddress(EipAddress eipAddress) {
 			this.eipAddress = eipAddress;
-		}
-
-		public enum Status {
-
-			DELETED("Deleted"),
-			STOPPED("Stopped"),
-			TRANSFERRING("Transferring"),
-			RUNNING("Running"),
-			RESETTING("Resetting"),
-			STARTING("Starting"),
-			STOPPING("Stopping"),
-			PENDING("Pending"),;
-
-			private String stringValue;
-
-			Status(String stringValue) {
-				setStringValue(stringValue);
-			}
-
-			public String getStringValue() {
-				return stringValue;
-			}
-
-			public void setStringValue(String stringValue) {
-				this.stringValue = stringValue;
-			}
-
-			public static Status getEnum(String stringValue){
-				if(null == stringValue){
-					return null;
-				}
-
-				for (Status status : Status.values()) {
-					if(status.getStringValue().equals(stringValue)){
-						return status;
-					}
-				}
-				return null;
-			}
 		}
 
 		public static class LockReason {

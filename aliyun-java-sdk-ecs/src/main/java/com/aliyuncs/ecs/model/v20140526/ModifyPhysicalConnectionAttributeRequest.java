@@ -30,62 +30,35 @@ public class ModifyPhysicalConnectionAttributeRequest extends RpcAcsRequest<Modi
 		super("Ecs", "2014-05-26", "ModifyPhysicalConnectionAttribute", "ecs");
 	}
 
-	private String physicalConnectionId;
-
-	private String lineOperator;
-
-	private Integer bandwidth;
-
 	private String peerLocation;
-
-	private String portType;
-
-	private String redundantPhysicalConnectionId;
-
-	private String description;
-
-	private String name;
 
 	private String clientToken;
 
+	private String userCidr;
+
+	private String redundantPhysicalConnectionId;
+
+	private String physicalConnectionId;
+
 	private Long ownerId;
 
+	private Integer bandwidth;
+
+	private String lineOperator;
+
+	private String circuitCode;
+
 	private String resourceOwnerAccount;
+
+	private String description;
+
+	private String portType;
+
+	private String name;
 
 	private Long resourceOwnerId;
 
 	private String ownerAccount;
-
-	private String userCidr;
-
-	private String circuitCode;
-
-	public String getPhysicalConnectionId() {
-		return this.physicalConnectionId;
-	}
-
-	public void setPhysicalConnectionId(String physicalConnectionId) {
-		this.physicalConnectionId = physicalConnectionId;
-		putQueryParameter("PhysicalConnectionId", physicalConnectionId);
-	}
-
-	public String getLineOperator() {
-		return this.lineOperator;
-	}
-
-	public void setLineOperator(String lineOperator) {
-		this.lineOperator = lineOperator;
-		putQueryParameter("LineOperator", lineOperator);
-	}
-
-	public Integer getbandwidth() {
-		return this.bandwidth;
-	}
-
-	public void setbandwidth(Integer bandwidth) {
-		this.bandwidth = bandwidth;
-		putQueryParameter("bandwidth", bandwidth);
-	}
 
 	public String getPeerLocation() {
 		return this.peerLocation;
@@ -93,43 +66,9 @@ public class ModifyPhysicalConnectionAttributeRequest extends RpcAcsRequest<Modi
 
 	public void setPeerLocation(String peerLocation) {
 		this.peerLocation = peerLocation;
-		putQueryParameter("PeerLocation", peerLocation);
-	}
-
-	public String getPortType() {
-		return this.portType;
-	}
-
-	public void setPortType(String portType) {
-		this.portType = portType;
-		putQueryParameter("PortType", portType);
-	}
-
-	public String getRedundantPhysicalConnectionId() {
-		return this.redundantPhysicalConnectionId;
-	}
-
-	public void setRedundantPhysicalConnectionId(String redundantPhysicalConnectionId) {
-		this.redundantPhysicalConnectionId = redundantPhysicalConnectionId;
-		putQueryParameter("RedundantPhysicalConnectionId", redundantPhysicalConnectionId);
-	}
-
-	public String getDescription() {
-		return this.description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-		putQueryParameter("Description", description);
-	}
-
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-		putQueryParameter("Name", name);
+		if(peerLocation != null){
+			putQueryParameter("PeerLocation", peerLocation);
+		}
 	}
 
 	public String getClientToken() {
@@ -138,43 +77,9 @@ public class ModifyPhysicalConnectionAttributeRequest extends RpcAcsRequest<Modi
 
 	public void setClientToken(String clientToken) {
 		this.clientToken = clientToken;
-		putQueryParameter("ClientToken", clientToken);
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-	}
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", resourceOwnerId);
-	}
-
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
-
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		putQueryParameter("OwnerAccount", ownerAccount);
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
+		}
 	}
 
 	public String getUserCidr() {
@@ -183,7 +88,64 @@ public class ModifyPhysicalConnectionAttributeRequest extends RpcAcsRequest<Modi
 
 	public void setUserCidr(String userCidr) {
 		this.userCidr = userCidr;
-		putQueryParameter("UserCidr", userCidr);
+		if(userCidr != null){
+			putQueryParameter("UserCidr", userCidr);
+		}
+	}
+
+	public String getRedundantPhysicalConnectionId() {
+		return this.redundantPhysicalConnectionId;
+	}
+
+	public void setRedundantPhysicalConnectionId(String redundantPhysicalConnectionId) {
+		this.redundantPhysicalConnectionId = redundantPhysicalConnectionId;
+		if(redundantPhysicalConnectionId != null){
+			putQueryParameter("RedundantPhysicalConnectionId", redundantPhysicalConnectionId);
+		}
+	}
+
+	public String getPhysicalConnectionId() {
+		return this.physicalConnectionId;
+	}
+
+	public void setPhysicalConnectionId(String physicalConnectionId) {
+		this.physicalConnectionId = physicalConnectionId;
+		if(physicalConnectionId != null){
+			putQueryParameter("PhysicalConnectionId", physicalConnectionId);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public Integer getBandwidth() {
+		return this.bandwidth;
+	}
+
+	public void setBandwidth(Integer bandwidth) {
+		this.bandwidth = bandwidth;
+		if(bandwidth != null){
+			putQueryParameter("bandwidth", bandwidth.toString());
+		}
+	}
+
+	public String getLineOperator() {
+		return this.lineOperator;
+	}
+
+	public void setLineOperator(String lineOperator) {
+		this.lineOperator = lineOperator;
+		if(lineOperator != null){
+			putQueryParameter("LineOperator", lineOperator);
+		}
 	}
 
 	public String getCircuitCode() {
@@ -192,7 +154,75 @@ public class ModifyPhysicalConnectionAttributeRequest extends RpcAcsRequest<Modi
 
 	public void setCircuitCode(String circuitCode) {
 		this.circuitCode = circuitCode;
-		putQueryParameter("CircuitCode", circuitCode);
+		if(circuitCode != null){
+			putQueryParameter("CircuitCode", circuitCode);
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+		if(description != null){
+			putQueryParameter("Description", description);
+		}
+	}
+
+	public String getPortType() {
+		return this.portType;
+	}
+
+	public void setPortType(String portType) {
+		this.portType = portType;
+		if(portType != null){
+			putQueryParameter("PortType", portType);
+		}
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
+		}
+	}
+
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
+	}
+
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
 	}
 
 	@Override

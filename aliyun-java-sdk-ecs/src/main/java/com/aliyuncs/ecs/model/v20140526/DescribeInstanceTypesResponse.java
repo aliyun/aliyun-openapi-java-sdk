@@ -63,6 +63,8 @@ public class DescribeInstanceTypesResponse extends AcsResponse {
 
 		private Integer localStorageAmount;
 
+		private String localStorageCategory;
+
 		private Integer gPUAmount;
 
 		private String gPUSpec;
@@ -113,6 +115,14 @@ public class DescribeInstanceTypesResponse extends AcsResponse {
 
 		public void setLocalStorageAmount(Integer localStorageAmount) {
 			this.localStorageAmount = localStorageAmount;
+		}
+
+		public String getLocalStorageCategory() {
+			return this.localStorageCategory;
+		}
+
+		public void setLocalStorageCategory(String localStorageCategory) {
+			this.localStorageCategory = localStorageCategory;
 		}
 
 		public Integer getGPUAmount() {

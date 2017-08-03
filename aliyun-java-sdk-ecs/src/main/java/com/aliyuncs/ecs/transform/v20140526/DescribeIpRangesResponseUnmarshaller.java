@@ -23,7 +23,6 @@ import java.util.List;
 
 import com.aliyuncs.ecs.model.v20140526.DescribeIpRangesResponse;
 import com.aliyuncs.ecs.model.v20140526.DescribeIpRangesResponse.IpRange;
-import com.aliyuncs.ecs.model.v20140526.DescribeIpRangesResponse.IpRange.NicType;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -42,7 +41,7 @@ public class DescribeIpRangesResponseUnmarshaller {
 		for (int i = 0; i < context.lengthValue("DescribeIpRangesResponse.IpRanges.Length"); i++) {
 			IpRange ipRange = new IpRange();
 			ipRange.setIpAddress(context.stringValue("DescribeIpRangesResponse.IpRanges["+ i +"].IpAddress"));
-			ipRange.setNicType(NicType.getEnum(context.stringValue("DescribeIpRangesResponse.IpRanges["+ i +"].NicType")));
+			ipRange.setNicType(context.stringValue("DescribeIpRangesResponse.IpRanges["+ i +"].NicType"));
 
 			ipRanges.add(ipRange);
 		}

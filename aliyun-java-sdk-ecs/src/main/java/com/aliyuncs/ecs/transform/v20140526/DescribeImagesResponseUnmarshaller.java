@@ -23,7 +23,6 @@ import java.util.List;
 
 import com.aliyuncs.ecs.model.v20140526.DescribeImagesResponse;
 import com.aliyuncs.ecs.model.v20140526.DescribeImagesResponse.Image;
-import com.aliyuncs.ecs.model.v20140526.DescribeImagesResponse.Image.Architecture;
 import com.aliyuncs.ecs.model.v20140526.DescribeImagesResponse.Image.DiskDeviceMapping;
 import com.aliyuncs.ecs.model.v20140526.DescribeImagesResponse.Image.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -50,8 +49,9 @@ public class DescribeImagesResponseUnmarshaller {
 			image.setSize(context.integerValue("DescribeImagesResponse.Images["+ i +"].Size"));
 			image.setImageOwnerAlias(context.stringValue("DescribeImagesResponse.Images["+ i +"].ImageOwnerAlias"));
 			image.setIsSupportIoOptimized(context.booleanValue("DescribeImagesResponse.Images["+ i +"].IsSupportIoOptimized"));
+			image.setIsSupportCloudinit(context.booleanValue("DescribeImagesResponse.Images["+ i +"].IsSupportCloudinit"));
 			image.setOSName(context.stringValue("DescribeImagesResponse.Images["+ i +"].OSName"));
-			image.setArchitecture(Architecture.getEnum(context.stringValue("DescribeImagesResponse.Images["+ i +"].Architecture")));
+			image.setArchitecture(context.stringValue("DescribeImagesResponse.Images["+ i +"].Architecture"));
 			image.setStatus(context.stringValue("DescribeImagesResponse.Images["+ i +"].Status"));
 			image.setProductCode(context.stringValue("DescribeImagesResponse.Images["+ i +"].ProductCode"));
 			image.setIsSubscribed(context.booleanValue("DescribeImagesResponse.Images["+ i +"].IsSubscribed"));

@@ -35,7 +35,7 @@ public class DetachKeyPairResponseUnmarshaller {
 		detachKeyPairResponse.setFailCount(context.stringValue("DetachKeyPairResponse.FailCount"));
 		detachKeyPairResponse.setKeyPairName(context.stringValue("DetachKeyPairResponse.KeyPairName"));
 
-		List<Result> resultsList = new ArrayList<Result>();
+		List<Result> results = new ArrayList<Result>();
 		for (int i = 0; i < context.lengthValue("DetachKeyPairResponse.Results.Length"); i++) {
 			Result result = new Result();
 			result.setInstanceId(context.stringValue("DetachKeyPairResponse.Results["+ i +"].InstanceId"));
@@ -43,9 +43,9 @@ public class DetachKeyPairResponseUnmarshaller {
 			result.setCode(context.stringValue("DetachKeyPairResponse.Results["+ i +"].Code"));
 			result.setMessage(context.stringValue("DetachKeyPairResponse.Results["+ i +"].Message"));
 
-			resultsList.add(result);
+			results.add(result);
 		}
-		detachKeyPairResponse.setResults(resultsList);
+		detachKeyPairResponse.setResults(results);
 	 
 	 	return detachKeyPairResponse;
 	}

@@ -30,26 +30,23 @@ public class ReInitDiskRequest extends RpcAcsRequest<ReInitDiskResponse> {
 		super("Ecs", "2014-05-26", "ReInitDisk", "ecs");
 	}
 
-	private Long ownerId;
-
 	private String resourceOwnerAccount;
 
-	private Long resourceOwnerId;
+	private String securityEnhancementStrategy;
 
 	private String diskId;
 
+	private String keyPairName;
+
+	private Long resourceOwnerId;
+
+	private Boolean autoStartInstance;
+
 	private String ownerAccount;
 
+	private Long ownerId;
+
 	private String password;
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
-	}
 
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
@@ -57,16 +54,20 @@ public class ReInitDiskRequest extends RpcAcsRequest<ReInitDiskResponse> {
 
 	public void setResourceOwnerAccount(String resourceOwnerAccount) {
 		this.resourceOwnerAccount = resourceOwnerAccount;
-		putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
 	}
 
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
+	public String getSecurityEnhancementStrategy() {
+		return this.securityEnhancementStrategy;
 	}
 
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", resourceOwnerId);
+	public void setSecurityEnhancementStrategy(String securityEnhancementStrategy) {
+		this.securityEnhancementStrategy = securityEnhancementStrategy;
+		if(securityEnhancementStrategy != null){
+			putQueryParameter("SecurityEnhancementStrategy", securityEnhancementStrategy);
+		}
 	}
 
 	public String getDiskId() {
@@ -75,7 +76,42 @@ public class ReInitDiskRequest extends RpcAcsRequest<ReInitDiskResponse> {
 
 	public void setDiskId(String diskId) {
 		this.diskId = diskId;
-		putQueryParameter("DiskId", diskId);
+		if(diskId != null){
+			putQueryParameter("DiskId", diskId);
+		}
+	}
+
+	public String getKeyPairName() {
+		return this.keyPairName;
+	}
+
+	public void setKeyPairName(String keyPairName) {
+		this.keyPairName = keyPairName;
+		if(keyPairName != null){
+			putQueryParameter("KeyPairName", keyPairName);
+		}
+	}
+
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
+	}
+
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public Boolean getAutoStartInstance() {
+		return this.autoStartInstance;
+	}
+
+	public void setAutoStartInstance(Boolean autoStartInstance) {
+		this.autoStartInstance = autoStartInstance;
+		if(autoStartInstance != null){
+			putQueryParameter("AutoStartInstance", autoStartInstance.toString());
+		}
 	}
 
 	public String getOwnerAccount() {
@@ -84,7 +120,20 @@ public class ReInitDiskRequest extends RpcAcsRequest<ReInitDiskResponse> {
 
 	public void setOwnerAccount(String ownerAccount) {
 		this.ownerAccount = ownerAccount;
-		putQueryParameter("OwnerAccount", ownerAccount);
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
 	}
 
 	public String getPassword() {
@@ -93,7 +142,9 @@ public class ReInitDiskRequest extends RpcAcsRequest<ReInitDiskResponse> {
 
 	public void setPassword(String password) {
 		this.password = password;
-		putQueryParameter("Password", password);
+		if(password != null){
+			putQueryParameter("Password", password);
+		}
 	}
 
 	@Override

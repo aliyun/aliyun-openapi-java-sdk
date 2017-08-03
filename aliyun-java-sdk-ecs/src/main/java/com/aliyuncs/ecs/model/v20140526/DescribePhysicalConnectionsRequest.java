@@ -31,46 +31,23 @@ public class DescribePhysicalConnectionsRequest extends RpcAcsRequest<DescribePh
 		super("Ecs", "2014-05-26", "DescribePhysicalConnections", "ecs");
 	}
 
-	private List<Filter> filters;
-
-	private Integer pageNumber;
-
 	private Integer pageSize;
-
-	private Long ownerId;
-
-	private String resourceOwnerAccount;
-
-	private Long resourceOwnerId;
 
 	private String clientToken;
 
-	private String ownerAccount;
+	private String resourceOwnerAccount;
+
+	private Integer pageNumber;
 
 	private String userCidr;
 
-	public List<Filter> getFilters() {
-		return this.filters;
-	}
+	private Long resourceOwnerId;
 
-	public void setFilters(List<Filter> filters) {
-		this.filters = filters;	
-		for (int i = 0; i < filters.size(); i++) {
-			putQueryParameter("Filter." + (i + 1) + ".Key" , filters.get(i).getKey());
-			for (int j = 0; j < filters.get(i).getValues().size(); j++) {
-				putQueryParameter("Filter." + (i + 1) + ".Value." +(j + 1), filters.get(i).getValues().get(j));
-			}
-		}	
-	}
+	private String ownerAccount;
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
+	private Long ownerId;
 
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		putQueryParameter("PageNumber", pageNumber);
-	}
+	private List<Filter> filters;
 
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -78,34 +55,9 @@ public class DescribePhysicalConnectionsRequest extends RpcAcsRequest<DescribePh
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
-		putQueryParameter("PageSize", pageSize);
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-	}
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", resourceOwnerId);
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
 	}
 
 	public String getClientToken() {
@@ -114,16 +66,31 @@ public class DescribePhysicalConnectionsRequest extends RpcAcsRequest<DescribePh
 
 	public void setClientToken(String clientToken) {
 		this.clientToken = clientToken;
-		putQueryParameter("ClientToken", clientToken);
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
+		}
 	}
 
-	public String getOwnerAccount() {
-		return this.ownerAccount;
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
 	}
 
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		putQueryParameter("OwnerAccount", ownerAccount);
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
 	}
 
 	public String getUserCidr() {
@@ -132,7 +99,56 @@ public class DescribePhysicalConnectionsRequest extends RpcAcsRequest<DescribePh
 
 	public void setUserCidr(String userCidr) {
 		this.userCidr = userCidr;
-		putQueryParameter("UserCidr", userCidr);
+		if(userCidr != null){
+			putQueryParameter("UserCidr", userCidr);
+		}
+	}
+
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
+	}
+
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public List<Filter> getFilters() {
+		return this.filters;
+	}
+
+	public void setFilters(List<Filter> filter) {
+		this.filters = filter;	
+		for (int i = 0; i < filter.size(); i++) {
+			putQueryParameter("Filter." + (i + 1) + ".Key" , filter.get(i).getKey());
+			for (int j = 0; j < filter.get(i).getValues().size(); j++) {
+				putQueryParameter("Filter." + (i + 1) + ".Value." +(j + 1), filter.get(i).getValues().get(j));
+			}
+		}	
 	}
 
 	public static class Filter {

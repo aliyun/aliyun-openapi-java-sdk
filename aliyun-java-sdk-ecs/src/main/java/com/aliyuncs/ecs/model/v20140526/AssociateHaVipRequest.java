@@ -30,7 +30,7 @@ public class AssociateHaVipRequest extends RpcAcsRequest<AssociateHaVipResponse>
 		super("Ecs", "2014-05-26", "AssociateHaVip", "ecs");
 	}
 
-	private Long ownerId;
+	private String clientToken;
 
 	private String resourceOwnerAccount;
 
@@ -38,19 +38,21 @@ public class AssociateHaVipRequest extends RpcAcsRequest<AssociateHaVipResponse>
 
 	private String ownerAccount;
 
-	private String clientToken;
-
-	private String haVipId;
+	private Long ownerId;
 
 	private String instanceId;
 
-	public Long getOwnerId() {
-		return this.ownerId;
+	private String haVipId;
+
+	public String getClientToken() {
+		return this.clientToken;
 	}
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
+		}
 	}
 
 	public String getResourceOwnerAccount() {
@@ -59,7 +61,9 @@ public class AssociateHaVipRequest extends RpcAcsRequest<AssociateHaVipResponse>
 
 	public void setResourceOwnerAccount(String resourceOwnerAccount) {
 		this.resourceOwnerAccount = resourceOwnerAccount;
-		putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
 	}
 
 	public Long getResourceOwnerId() {
@@ -68,7 +72,9 @@ public class AssociateHaVipRequest extends RpcAcsRequest<AssociateHaVipResponse>
 
 	public void setResourceOwnerId(Long resourceOwnerId) {
 		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", resourceOwnerId);
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
 	}
 
 	public String getOwnerAccount() {
@@ -77,25 +83,20 @@ public class AssociateHaVipRequest extends RpcAcsRequest<AssociateHaVipResponse>
 
 	public void setOwnerAccount(String ownerAccount) {
 		this.ownerAccount = ownerAccount;
-		putQueryParameter("OwnerAccount", ownerAccount);
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
 	}
 
-	public String getClientToken() {
-		return this.clientToken;
+	public Long getOwnerId() {
+		return this.ownerId;
 	}
 
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		putQueryParameter("ClientToken", clientToken);
-	}
-
-	public String getHaVipId() {
-		return this.haVipId;
-	}
-
-	public void setHaVipId(String haVipId) {
-		this.haVipId = haVipId;
-		putQueryParameter("HaVipId", haVipId);
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
 	}
 
 	public String getInstanceId() {
@@ -104,7 +105,20 @@ public class AssociateHaVipRequest extends RpcAcsRequest<AssociateHaVipResponse>
 
 	public void setInstanceId(String instanceId) {
 		this.instanceId = instanceId;
-		putQueryParameter("InstanceId", instanceId);
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public String getHaVipId() {
+		return this.haVipId;
+	}
+
+	public void setHaVipId(String haVipId) {
+		this.haVipId = haVipId;
+		if(haVipId != null){
+			putQueryParameter("HaVipId", haVipId);
+		}
 	}
 
 	@Override

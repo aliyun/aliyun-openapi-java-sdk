@@ -30,27 +30,29 @@ public class ModifySecurityGroupAttributeRequest extends RpcAcsRequest<ModifySec
 		super("Ecs", "2014-05-26", "ModifySecurityGroupAttribute", "ecs");
 	}
 
-	private Long ownerId;
+	private String securityGroupName;
 
 	private String resourceOwnerAccount;
-
-	private Long resourceOwnerId;
 
 	private String securityGroupId;
 
 	private String description;
 
-	private String securityGroupName;
+	private Long resourceOwnerId;
 
 	private String ownerAccount;
 
-	public Long getOwnerId() {
-		return this.ownerId;
+	private Long ownerId;
+
+	public String getSecurityGroupName() {
+		return this.securityGroupName;
 	}
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
+	public void setSecurityGroupName(String securityGroupName) {
+		this.securityGroupName = securityGroupName;
+		if(securityGroupName != null){
+			putQueryParameter("SecurityGroupName", securityGroupName);
+		}
 	}
 
 	public String getResourceOwnerAccount() {
@@ -59,16 +61,9 @@ public class ModifySecurityGroupAttributeRequest extends RpcAcsRequest<ModifySec
 
 	public void setResourceOwnerAccount(String resourceOwnerAccount) {
 		this.resourceOwnerAccount = resourceOwnerAccount;
-		putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-	}
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", resourceOwnerId);
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
 	}
 
 	public String getSecurityGroupId() {
@@ -77,7 +72,9 @@ public class ModifySecurityGroupAttributeRequest extends RpcAcsRequest<ModifySec
 
 	public void setSecurityGroupId(String securityGroupId) {
 		this.securityGroupId = securityGroupId;
-		putQueryParameter("SecurityGroupId", securityGroupId);
+		if(securityGroupId != null){
+			putQueryParameter("SecurityGroupId", securityGroupId);
+		}
 	}
 
 	public String getDescription() {
@@ -86,16 +83,20 @@ public class ModifySecurityGroupAttributeRequest extends RpcAcsRequest<ModifySec
 
 	public void setDescription(String description) {
 		this.description = description;
-		putQueryParameter("Description", description);
+		if(description != null){
+			putQueryParameter("Description", description);
+		}
 	}
 
-	public String getSecurityGroupName() {
-		return this.securityGroupName;
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
 	}
 
-	public void setSecurityGroupName(String securityGroupName) {
-		this.securityGroupName = securityGroupName;
-		putQueryParameter("SecurityGroupName", securityGroupName);
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
 	}
 
 	public String getOwnerAccount() {
@@ -104,7 +105,20 @@ public class ModifySecurityGroupAttributeRequest extends RpcAcsRequest<ModifySec
 
 	public void setOwnerAccount(String ownerAccount) {
 		this.ownerAccount = ownerAccount;
-		putQueryParameter("OwnerAccount", ownerAccount);
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
 	}
 
 	@Override

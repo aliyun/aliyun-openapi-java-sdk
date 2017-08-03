@@ -60,6 +60,8 @@ public class DescribeRouteTablesResponseUnmarshaller {
 					NextHop nextHop = new NextHop();
 					nextHop.setNextHopType(context.stringValue("DescribeRouteTablesResponse.RouteTables["+ i +"].RouteEntrys["+ j +"].NextHops["+ k +"].NextHopType"));
 					nextHop.setNextHopId(context.stringValue("DescribeRouteTablesResponse.RouteTables["+ i +"].RouteEntrys["+ j +"].NextHops["+ k +"].NextHopId"));
+					nextHop.setEnabled(context.integerValue("DescribeRouteTablesResponse.RouteTables["+ i +"].RouteEntrys["+ j +"].NextHops["+ k +"].Enabled"));
+					nextHop.setWeight(context.integerValue("DescribeRouteTablesResponse.RouteTables["+ i +"].RouteEntrys["+ j +"].NextHops["+ k +"].Weight"));
 
 					nextHops.add(nextHop);
 				}

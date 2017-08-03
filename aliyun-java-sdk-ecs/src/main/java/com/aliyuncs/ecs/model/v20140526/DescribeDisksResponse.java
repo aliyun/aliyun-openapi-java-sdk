@@ -91,9 +91,9 @@ public class DescribeDisksResponse extends AcsResponse {
 
 		private String description;
 
-		private Type type;
+		private String type;
 
-		private Category category;
+		private String category;
 
 		private Integer size;
 
@@ -130,6 +130,8 @@ public class DescribeDisksResponse extends AcsResponse {
 		private String diskChargeType;
 
 		private String expiredTime;
+
+		private String resourceGroupId;
 
 		private List<OperationLock> operationLocks;
 
@@ -175,19 +177,19 @@ public class DescribeDisksResponse extends AcsResponse {
 			this.description = description;
 		}
 
-		public Type getType() {
+		public String getType() {
 			return this.type;
 		}
 
-		public void setType(Type type) {
+		public void setType(String type) {
 			this.type = type;
 		}
 
-		public Category getCategory() {
+		public String getCategory() {
 			return this.category;
 		}
 
-		public void setCategory(Category category) {
+		public void setCategory(String category) {
 			this.category = category;
 		}
 
@@ -335,6 +337,14 @@ public class DescribeDisksResponse extends AcsResponse {
 			this.expiredTime = expiredTime;
 		}
 
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
+		}
+
 		public List<OperationLock> getOperationLocks() {
 			return this.operationLocks;
 		}
@@ -349,75 +359,6 @@ public class DescribeDisksResponse extends AcsResponse {
 
 		public void setTags(List<Tag> tags) {
 			this.tags = tags;
-		}
-
-		public enum Type {
-		
-			SYSTEM("system"),
-			DATA("data"),;
-			
-		    private String stringValue;
-		
-			Type(String stringValue) {
-		        setStringValue(stringValue);
-		    }
-		
-		    public String getStringValue() {
-		        return stringValue;
-		    }
-		
-		    public void setStringValue(String stringValue) {
-		        this.stringValue = stringValue;
-		    }
-		    
-		    public static Type getEnum(String stringValue){
-		    	if(null == stringValue){
-		    		return null;
-		    	}
-		    	
-		    	for (Type type : Type.values()) {
-					if(type.getStringValue().equals(stringValue)){
-						return type;
-					}
-				}
-		    	return null;
-		    }
-		}
-
-		public enum Category {
-		
-			CLOUD_SSD("cloud_ssd"),
-			EPHEMERAL_SSD("ephemeral_ssd"),
-			EPHEMERAL("ephemeral"),
-			CLOUD_EFFICIENCY("cloud_efficiency"),
-			CLOUD("cloud"),;
-			
-		    private String stringValue;
-		
-			Category(String stringValue) {
-		        setStringValue(stringValue);
-		    }
-		
-		    public String getStringValue() {
-		        return stringValue;
-		    }
-		
-		    public void setStringValue(String stringValue) {
-		        this.stringValue = stringValue;
-		    }
-		    
-		    public static Category getEnum(String stringValue){
-		    	if(null == stringValue){
-		    		return null;
-		    	}
-		    	
-		    	for (Category category : Category.values()) {
-					if(category.getStringValue().equals(stringValue)){
-						return category;
-					}
-				}
-		    	return null;
-		    }
 		}
 
 		public static class OperationLock {

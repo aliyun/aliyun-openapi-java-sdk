@@ -30,33 +30,35 @@ public class ModifyInstanceAttributeRequest extends RpcAcsRequest<ModifyInstance
 		super("Ecs", "2014-05-26", "ModifyInstanceAttribute", "ecs");
 	}
 
-	private Long ownerId;
+	private String userData;
 
 	private String resourceOwnerAccount;
 
-	private Long resourceOwnerId;
-
-	private String instanceId;
-
-	private String password;
-
-	private String hostName;
+	private String description;
 
 	private String instanceName;
 
-	private String description;
+	private String hostName;
+
+	private Long resourceOwnerId;
 
 	private String ownerAccount;
 
-	private String userData;
+	private Long ownerId;
 
-	public Long getOwnerId() {
-		return this.ownerId;
+	private String password;
+
+	private String instanceId;
+
+	public String getUserData() {
+		return this.userData;
 	}
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
+	public void setUserData(String userData) {
+		this.userData = userData;
+		if(userData != null){
+			putQueryParameter("UserData", userData);
+		}
 	}
 
 	public String getResourceOwnerAccount() {
@@ -65,52 +67,9 @@ public class ModifyInstanceAttributeRequest extends RpcAcsRequest<ModifyInstance
 
 	public void setResourceOwnerAccount(String resourceOwnerAccount) {
 		this.resourceOwnerAccount = resourceOwnerAccount;
-		putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-	}
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", resourceOwnerId);
-	}
-
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		putQueryParameter("InstanceId", instanceId);
-	}
-
-	public String getPassword() {
-		return this.password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
-		putQueryParameter("Password", password);
-	}
-
-	public String getHostName() {
-		return this.hostName;
-	}
-
-	public void setHostName(String hostName) {
-		this.hostName = hostName;
-		putQueryParameter("HostName", hostName);
-	}
-
-	public String getInstanceName() {
-		return this.instanceName;
-	}
-
-	public void setInstanceName(String instanceName) {
-		this.instanceName = instanceName;
-		putQueryParameter("InstanceName", instanceName);
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
 	}
 
 	public String getDescription() {
@@ -119,7 +78,42 @@ public class ModifyInstanceAttributeRequest extends RpcAcsRequest<ModifyInstance
 
 	public void setDescription(String description) {
 		this.description = description;
-		putQueryParameter("Description", description);
+		if(description != null){
+			putQueryParameter("Description", description);
+		}
+	}
+
+	public String getInstanceName() {
+		return this.instanceName;
+	}
+
+	public void setInstanceName(String instanceName) {
+		this.instanceName = instanceName;
+		if(instanceName != null){
+			putQueryParameter("InstanceName", instanceName);
+		}
+	}
+
+	public String getHostName() {
+		return this.hostName;
+	}
+
+	public void setHostName(String hostName) {
+		this.hostName = hostName;
+		if(hostName != null){
+			putQueryParameter("HostName", hostName);
+		}
+	}
+
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
+	}
+
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
 	}
 
 	public String getOwnerAccount() {
@@ -128,16 +122,42 @@ public class ModifyInstanceAttributeRequest extends RpcAcsRequest<ModifyInstance
 
 	public void setOwnerAccount(String ownerAccount) {
 		this.ownerAccount = ownerAccount;
-		putQueryParameter("OwnerAccount", ownerAccount);
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
 	}
 
-	public String getUserData() {
-		return this.userData;
+	public Long getOwnerId() {
+		return this.ownerId;
 	}
 
-	public void setUserData(String userData) {
-		this.userData = userData;
-		putQueryParameter("UserData", userData);
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getPassword() {
+		return this.password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+		if(password != null){
+			putQueryParameter("Password", password);
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
+		}
 	}
 
 	@Override

@@ -30,25 +30,27 @@ public class ModifyInstanceVncPasswdRequest extends RpcAcsRequest<ModifyInstance
 		super("Ecs", "2014-05-26", "ModifyInstanceVncPasswd", "ecs");
 	}
 
-	private Long ownerId;
+	private String vncPassword;
 
 	private String resourceOwnerAccount;
 
 	private Long resourceOwnerId;
 
-	private String instanceId;
-
-	private String vncPassword;
-
 	private String ownerAccount;
 
-	public Long getOwnerId() {
-		return this.ownerId;
+	private Long ownerId;
+
+	private String instanceId;
+
+	public String getVncPassword() {
+		return this.vncPassword;
 	}
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
+	public void setVncPassword(String vncPassword) {
+		this.vncPassword = vncPassword;
+		if(vncPassword != null){
+			putQueryParameter("VncPassword", vncPassword);
+		}
 	}
 
 	public String getResourceOwnerAccount() {
@@ -57,7 +59,9 @@ public class ModifyInstanceVncPasswdRequest extends RpcAcsRequest<ModifyInstance
 
 	public void setResourceOwnerAccount(String resourceOwnerAccount) {
 		this.resourceOwnerAccount = resourceOwnerAccount;
-		putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
 	}
 
 	public Long getResourceOwnerId() {
@@ -66,25 +70,9 @@ public class ModifyInstanceVncPasswdRequest extends RpcAcsRequest<ModifyInstance
 
 	public void setResourceOwnerId(Long resourceOwnerId) {
 		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", resourceOwnerId);
-	}
-
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		putQueryParameter("InstanceId", instanceId);
-	}
-
-	public String getVncPassword() {
-		return this.vncPassword;
-	}
-
-	public void setVncPassword(String vncPassword) {
-		this.vncPassword = vncPassword;
-		putQueryParameter("VncPassword", vncPassword);
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
 	}
 
 	public String getOwnerAccount() {
@@ -93,7 +81,31 @@ public class ModifyInstanceVncPasswdRequest extends RpcAcsRequest<ModifyInstance
 
 	public void setOwnerAccount(String ownerAccount) {
 		this.ownerAccount = ownerAccount;
-		putQueryParameter("OwnerAccount", ownerAccount);
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
+		}
 	}
 
 	@Override

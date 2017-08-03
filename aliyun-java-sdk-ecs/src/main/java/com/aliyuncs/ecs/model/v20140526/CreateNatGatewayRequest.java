@@ -33,96 +33,33 @@ public class CreateNatGatewayRequest extends RpcAcsRequest<CreateNatGatewayRespo
 
 	private List<BandwidthPackage> bandwidthPackages;
 
-	private Long ownerId;
+	private String clientToken;
 
 	private String resourceOwnerAccount;
 
-	private Long resourceOwnerId;
-
-	private String ownerAccount;
-
-	private String vpcId;
+	private String description;
 
 	private String name;
 
-	private String description;
+	private Long resourceOwnerId;
 
-	private String clientToken;
+	private String vpcId;
+
+	private String ownerAccount;
+
+	private Long ownerId;
 
 	public List<BandwidthPackage> getBandwidthPackages() {
 		return this.bandwidthPackages;
 	}
 
-	public void setBandwidthPackages(List<BandwidthPackage> bandwidthPackages) {
-		this.bandwidthPackages = bandwidthPackages;	
-		for (int i = 0; i < bandwidthPackages.size(); i++) {
-			putQueryParameter("BandwidthPackage." + (i + 1) + ".IpCount" , bandwidthPackages.get(i).getIpCount());
-			putQueryParameter("BandwidthPackage." + (i + 1) + ".Bandwidth" , bandwidthPackages.get(i).getBandwidth());
-			putQueryParameter("BandwidthPackage." + (i + 1) + ".Zone" , bandwidthPackages.get(i).getZone());
+	public void setBandwidthPackages(List<BandwidthPackage> bandwidthPackage) {
+		this.bandwidthPackages = bandwidthPackage;	
+		for (int i = 0; i < bandwidthPackage.size(); i++) {
+			putQueryParameter("BandwidthPackage." + (i + 1) + ".IpCount" , bandwidthPackage.get(i).getIpCount());
+			putQueryParameter("BandwidthPackage." + (i + 1) + ".Bandwidth" , bandwidthPackage.get(i).getBandwidth());
+			putQueryParameter("BandwidthPackage." + (i + 1) + ".Zone" , bandwidthPackage.get(i).getZone());
 		}	
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-	}
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", resourceOwnerId);
-	}
-
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
-
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		putQueryParameter("OwnerAccount", ownerAccount);
-	}
-
-	public String getVpcId() {
-		return this.vpcId;
-	}
-
-	public void setVpcId(String vpcId) {
-		this.vpcId = vpcId;
-		putQueryParameter("VpcId", vpcId);
-	}
-
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-		putQueryParameter("Name", name);
-	}
-
-	public String getDescription() {
-		return this.description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-		putQueryParameter("Description", description);
 	}
 
 	public String getClientToken() {
@@ -131,7 +68,86 @@ public class CreateNatGatewayRequest extends RpcAcsRequest<CreateNatGatewayRespo
 
 	public void setClientToken(String clientToken) {
 		this.clientToken = clientToken;
-		putQueryParameter("ClientToken", clientToken);
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+		if(description != null){
+			putQueryParameter("Description", description);
+		}
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
+		}
+	}
+
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
+	}
+
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getVpcId() {
+		return this.vpcId;
+	}
+
+	public void setVpcId(String vpcId) {
+		this.vpcId = vpcId;
+		if(vpcId != null){
+			putQueryParameter("VpcId", vpcId);
+		}
+	}
+
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
 	}
 
 	public static class BandwidthPackage {

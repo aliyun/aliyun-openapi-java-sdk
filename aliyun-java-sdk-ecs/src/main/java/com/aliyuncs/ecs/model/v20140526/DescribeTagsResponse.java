@@ -117,6 +117,8 @@ public class DescribeTagsResponse extends AcsResponse {
 
 			private Integer disk;
 
+			private Integer volume;
+
 			private Integer image;
 
 			private Integer snapshot;
@@ -137,6 +139,14 @@ public class DescribeTagsResponse extends AcsResponse {
 
 			public void setDisk(Integer disk) {
 				this.disk = disk;
+			}
+
+			public Integer getVolume() {
+				return this.volume;
+			}
+
+			public void setVolume(Integer volume) {
+				this.volume = volume;
 			}
 
 			public Integer getImage() {

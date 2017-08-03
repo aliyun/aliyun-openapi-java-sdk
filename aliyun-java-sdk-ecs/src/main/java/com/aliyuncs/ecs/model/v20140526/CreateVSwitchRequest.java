@@ -30,79 +30,25 @@ public class CreateVSwitchRequest extends RpcAcsRequest<CreateVSwitchResponse> {
 		super("Ecs", "2014-05-26", "CreateVSwitch", "ecs");
 	}
 
-	private Long ownerId;
-
-	private String resourceOwnerAccount;
-
-	private Long resourceOwnerId;
-
-	private String zoneId;
-
-	private String cidrBlock;
-
-	private String vpcId;
-
 	private String vSwitchName;
-
-	private String description;
 
 	private String clientToken;
 
+	private String resourceOwnerAccount;
+
+	private String zoneId;
+
+	private String description;
+
+	private Long resourceOwnerId;
+
 	private String ownerAccount;
 
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
+	private String vpcId;
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
-	}
+	private String cidrBlock;
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-	}
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", resourceOwnerId);
-	}
-
-	public String getZoneId() {
-		return this.zoneId;
-	}
-
-	public void setZoneId(String zoneId) {
-		this.zoneId = zoneId;
-		putQueryParameter("ZoneId", zoneId);
-	}
-
-	public String getCidrBlock() {
-		return this.cidrBlock;
-	}
-
-	public void setCidrBlock(String cidrBlock) {
-		this.cidrBlock = cidrBlock;
-		putQueryParameter("CidrBlock", cidrBlock);
-	}
-
-	public String getVpcId() {
-		return this.vpcId;
-	}
-
-	public void setVpcId(String vpcId) {
-		this.vpcId = vpcId;
-		putQueryParameter("VpcId", vpcId);
-	}
+	private Long ownerId;
 
 	public String getVSwitchName() {
 		return this.vSwitchName;
@@ -110,16 +56,9 @@ public class CreateVSwitchRequest extends RpcAcsRequest<CreateVSwitchResponse> {
 
 	public void setVSwitchName(String vSwitchName) {
 		this.vSwitchName = vSwitchName;
-		putQueryParameter("VSwitchName", vSwitchName);
-	}
-
-	public String getDescription() {
-		return this.description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-		putQueryParameter("Description", description);
+		if(vSwitchName != null){
+			putQueryParameter("VSwitchName", vSwitchName);
+		}
 	}
 
 	public String getClientToken() {
@@ -128,7 +67,53 @@ public class CreateVSwitchRequest extends RpcAcsRequest<CreateVSwitchResponse> {
 
 	public void setClientToken(String clientToken) {
 		this.clientToken = clientToken;
-		putQueryParameter("ClientToken", clientToken);
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getZoneId() {
+		return this.zoneId;
+	}
+
+	public void setZoneId(String zoneId) {
+		this.zoneId = zoneId;
+		if(zoneId != null){
+			putQueryParameter("ZoneId", zoneId);
+		}
+	}
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+		if(description != null){
+			putQueryParameter("Description", description);
+		}
+	}
+
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
+	}
+
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
 	}
 
 	public String getOwnerAccount() {
@@ -137,7 +122,42 @@ public class CreateVSwitchRequest extends RpcAcsRequest<CreateVSwitchResponse> {
 
 	public void setOwnerAccount(String ownerAccount) {
 		this.ownerAccount = ownerAccount;
-		putQueryParameter("OwnerAccount", ownerAccount);
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public String getVpcId() {
+		return this.vpcId;
+	}
+
+	public void setVpcId(String vpcId) {
+		this.vpcId = vpcId;
+		if(vpcId != null){
+			putQueryParameter("VpcId", vpcId);
+		}
+	}
+
+	public String getCidrBlock() {
+		return this.cidrBlock;
+	}
+
+	public void setCidrBlock(String cidrBlock) {
+		this.cidrBlock = cidrBlock;
+		if(cidrBlock != null){
+			putQueryParameter("CidrBlock", cidrBlock);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
 	}
 
 	@Override

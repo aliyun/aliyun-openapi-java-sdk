@@ -51,7 +51,7 @@ public class DescribeInstanceAttributeResponse extends AcsResponse {
 
 	private String hostName;
 
-	private Status status;
+	private String status;
 
 	private String internetChargeType;
 
@@ -175,11 +175,11 @@ public class DescribeInstanceAttributeResponse extends AcsResponse {
 		this.hostName = hostName;
 	}
 
-	public Status getStatus() {
+	public String getStatus() {
 		return this.status;
 	}
 
-	public void setStatus(Status status) {
+	public void setStatus(String status) {
 		this.status = status;
 	}
 
@@ -317,45 +317,6 @@ public class DescribeInstanceAttributeResponse extends AcsResponse {
 
 	public void setEipAddress(EipAddress eipAddress) {
 		this.eipAddress = eipAddress;
-	}
-
-	public enum Status {
-	
-	DELETED("Deleted"),
-	STOPPED("Stopped"),
-	TRANSFERRING("Transferring"),
-	RUNNING("Running"),
-	RESETTING("Resetting"),
-	STARTING("Starting"),
-	STOPPING("Stopping"),
-	PENDING("Pending"),;
-		
-	    private String stringValue;
-	
-		Status(String stringValue) {
-	        setStringValue(stringValue);
-	    }
-	
-	    public String getStringValue() {
-	        return stringValue;
-	    }
-	
-	    public void setStringValue(String stringValue) {
-	        this.stringValue = stringValue;
-	    }
-	    
-	    public static Status getEnum(String stringValue){
-	    	if(null == stringValue){
-	    		return null;
-	    	}
-	    	
-	    	for (Status status : Status.values()) {
-				if(status.getStringValue().equals(stringValue)){
-					return status;
-				}
-			}
-	    	return null;
-	    }
 	}
 
 	public static class LockReason {

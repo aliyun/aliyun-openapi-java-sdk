@@ -38,43 +38,43 @@ public class EipNotifyPaidResponse extends AcsResponse {
 
 	private Boolean success;
 
-	public String getrequestId() {
+	public String getRequestId() {
 		return this.requestId;
 	}
 
-	public void setrequestId(String requestId) {
+	public void setRequestId(String requestId) {
 		this.requestId = requestId;
 	}
 
-	public String getdata() {
+	public String getData() {
 		return this.data;
 	}
 
-	public void setdata(String data) {
+	public void setData(String data) {
 		this.data = data;
 	}
 
-	public String getcode() {
+	public String getCode() {
 		return this.code;
 	}
 
-	public void setcode(String code) {
+	public void setCode(String code) {
 		this.code = code;
 	}
 
-	public String getmessage() {
+	public String getMessage() {
 		return this.message;
 	}
 
-	public void setmessage(String message) {
+	public void setMessage(String message) {
 		this.message = message;
 	}
 
-	public Boolean getsuccess() {
+	public Boolean getSuccess() {
 		return this.success;
 	}
 
-	public void setsuccess(Boolean success) {
+	public void setSuccess(Boolean success) {
 		this.success = success;
 	}
 

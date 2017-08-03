@@ -1,3 +1,12 @@
+2017-08-03 Version: 4.0.0
+1, 修改sdk中对空参数的处理
+2, 增加ClassicLinkVpc相关接口，提供ClassicLinkVpc相关功能
+3, sdk中枚举类型识别改为字符串类型（提高sdk的适应性）
+4, 增加资源组相关参数，提供资源组功能
+5, 增加部署集相关参数，提供部署集功能
+6, 创建实例接口的list类型参数优化
+7, 增加修改付费类型接口，提供修改实例付费类型功能
+
 2017-07-21 Version: 3.3.0
 1, StartInstance增加参数：InitLocalDisk。当取值true时，instance上所有的本地磁盘都会被重新初始化，所有数据都会丢失；同时instance会做迁移。当取值为false时，行为和以前没有变化。
 

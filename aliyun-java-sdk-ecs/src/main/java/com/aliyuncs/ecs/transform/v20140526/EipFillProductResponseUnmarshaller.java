@@ -26,11 +26,11 @@ public class EipFillProductResponseUnmarshaller {
 
 	public static EipFillProductResponse unmarshall(EipFillProductResponse eipFillProductResponse, UnmarshallerContext context) {
 		
-		eipFillProductResponse.setrequestId(context.stringValue("EipFillProductResponse.requestId"));
-		eipFillProductResponse.setdata(context.stringValue("EipFillProductResponse.data"));
-		eipFillProductResponse.setcode(context.stringValue("EipFillProductResponse.code"));
-		eipFillProductResponse.setsuccess(context.booleanValue("EipFillProductResponse.success"));
-		eipFillProductResponse.setmessage(context.stringValue("EipFillProductResponse.message"));
+		eipFillProductResponse.setRequestId(context.stringValue("EipFillProductResponse.requestId"));
+		eipFillProductResponse.setData(context.stringValue("EipFillProductResponse.data"));
+		eipFillProductResponse.setCode(context.stringValue("EipFillProductResponse.code"));
+		eipFillProductResponse.setSuccess(context.booleanValue("EipFillProductResponse.success"));
+		eipFillProductResponse.setMessage(context.stringValue("EipFillProductResponse.message"));
 	 
 	 	return eipFillProductResponse;
 	}

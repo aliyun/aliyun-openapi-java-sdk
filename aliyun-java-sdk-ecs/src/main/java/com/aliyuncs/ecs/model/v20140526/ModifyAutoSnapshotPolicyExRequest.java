@@ -30,29 +30,42 @@ public class ModifyAutoSnapshotPolicyExRequest extends RpcAcsRequest<ModifyAutoS
 		super("Ecs", "2014-05-26", "ModifyAutoSnapshotPolicyEx", "ecs");
 	}
 
-	private Long ownerId;
-
-	private String resourceOwnerAccount;
-
-	private Long resourceOwnerId;
-
-	private String autoSnapshotPolicyId;
+	private String repeatWeekdays;
 
 	private String autoSnapshotPolicyName;
 
+	private String resourceOwnerAccount;
+
 	private String timePoints;
 
-	private String repeatWeekdays;
+	private String autoSnapshotPolicyId;
 
 	private Integer retentionDays;
 
-	public Long getOwnerId() {
-		return this.ownerId;
+	private Long resourceOwnerId;
+
+	private Long ownerId;
+
+	public String getRepeatWeekdays() {
+		return this.repeatWeekdays;
 	}
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
+	public void setRepeatWeekdays(String repeatWeekdays) {
+		this.repeatWeekdays = repeatWeekdays;
+		if(repeatWeekdays != null){
+			putQueryParameter("repeatWeekdays", repeatWeekdays);
+		}
+	}
+
+	public String getAutoSnapshotPolicyName() {
+		return this.autoSnapshotPolicyName;
+	}
+
+	public void setAutoSnapshotPolicyName(String autoSnapshotPolicyName) {
+		this.autoSnapshotPolicyName = autoSnapshotPolicyName;
+		if(autoSnapshotPolicyName != null){
+			putQueryParameter("autoSnapshotPolicyName", autoSnapshotPolicyName);
+		}
 	}
 
 	public String getResourceOwnerAccount() {
@@ -61,7 +74,42 @@ public class ModifyAutoSnapshotPolicyExRequest extends RpcAcsRequest<ModifyAutoS
 
 	public void setResourceOwnerAccount(String resourceOwnerAccount) {
 		this.resourceOwnerAccount = resourceOwnerAccount;
-		putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getTimePoints() {
+		return this.timePoints;
+	}
+
+	public void setTimePoints(String timePoints) {
+		this.timePoints = timePoints;
+		if(timePoints != null){
+			putQueryParameter("timePoints", timePoints);
+		}
+	}
+
+	public String getAutoSnapshotPolicyId() {
+		return this.autoSnapshotPolicyId;
+	}
+
+	public void setAutoSnapshotPolicyId(String autoSnapshotPolicyId) {
+		this.autoSnapshotPolicyId = autoSnapshotPolicyId;
+		if(autoSnapshotPolicyId != null){
+			putQueryParameter("autoSnapshotPolicyId", autoSnapshotPolicyId);
+		}
+	}
+
+	public Integer getRetentionDays() {
+		return this.retentionDays;
+	}
+
+	public void setRetentionDays(Integer retentionDays) {
+		this.retentionDays = retentionDays;
+		if(retentionDays != null){
+			putQueryParameter("retentionDays", retentionDays.toString());
+		}
 	}
 
 	public Long getResourceOwnerId() {
@@ -70,52 +118,20 @@ public class ModifyAutoSnapshotPolicyExRequest extends RpcAcsRequest<ModifyAutoS
 
 	public void setResourceOwnerId(Long resourceOwnerId) {
 		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", resourceOwnerId);
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
 	}
 
-	public String getautoSnapshotPolicyId() {
-		return this.autoSnapshotPolicyId;
+	public Long getOwnerId() {
+		return this.ownerId;
 	}
 
-	public void setautoSnapshotPolicyId(String autoSnapshotPolicyId) {
-		this.autoSnapshotPolicyId = autoSnapshotPolicyId;
-		putQueryParameter("autoSnapshotPolicyId", autoSnapshotPolicyId);
-	}
-
-	public String getautoSnapshotPolicyName() {
-		return this.autoSnapshotPolicyName;
-	}
-
-	public void setautoSnapshotPolicyName(String autoSnapshotPolicyName) {
-		this.autoSnapshotPolicyName = autoSnapshotPolicyName;
-		putQueryParameter("autoSnapshotPolicyName", autoSnapshotPolicyName);
-	}
-
-	public String gettimePoints() {
-		return this.timePoints;
-	}
-
-	public void settimePoints(String timePoints) {
-		this.timePoints = timePoints;
-		putQueryParameter("timePoints", timePoints);
-	}
-
-	public String getrepeatWeekdays() {
-		return this.repeatWeekdays;
-	}
-
-	public void setrepeatWeekdays(String repeatWeekdays) {
-		this.repeatWeekdays = repeatWeekdays;
-		putQueryParameter("repeatWeekdays", repeatWeekdays);
-	}
-
-	public Integer getretentionDays() {
-		return this.retentionDays;
-	}
-
-	public void setretentionDays(Integer retentionDays) {
-		this.retentionDays = retentionDays;
-		putQueryParameter("retentionDays", retentionDays);
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
 	}
 
 	@Override

@@ -41,6 +41,8 @@ public class DescribeSecurityGroupAttributeResponse extends AcsResponse {
 
 	private String vpcId;
 
+	private String innerAccessPolicy;
+
 	private List<Permission> permissions;
 
 	public String getRequestId() {
@@ -91,6 +93,14 @@ public class DescribeSecurityGroupAttributeResponse extends AcsResponse {
 		this.vpcId = vpcId;
 	}
 
+	public String getInnerAccessPolicy() {
+		return this.innerAccessPolicy;
+	}
+
+	public void setInnerAccessPolicy(String innerAccessPolicy) {
+		this.innerAccessPolicy = innerAccessPolicy;
+	}
+
 	public List<Permission> getPermissions() {
 		return this.permissions;
 	}
@@ -128,6 +138,10 @@ public class DescribeSecurityGroupAttributeResponse extends AcsResponse {
 		private String priority;
 
 		private String direction;
+
+		private String description;
+
+		private String createTime;
 
 		public String getIpProtocol() {
 			return this.ipProtocol;
@@ -239,6 +253,22 @@ public class DescribeSecurityGroupAttributeResponse extends AcsResponse {
 
 		public void setDirection(String direction) {
 			this.direction = direction;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public String getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
 		}
 	}
 

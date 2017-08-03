@@ -30,80 +30,37 @@ public class ModifyForwardEntryRequest extends RpcAcsRequest<ModifyForwardEntryR
 		super("Ecs", "2014-05-26", "ModifyForwardEntry", "ecs");
 	}
 
-	private Long ownerId;
-
-	private String resourceOwnerAccount;
-
-	private Long resourceOwnerId;
-
-	private String ownerAccount;
-
-	private String forwardTableId;
-
-	private String forwardEntryId;
+	private String internalIp;
 
 	private String externalIp;
 
-	private String externalPort;
-
-	private String internalIp;
-
-	private String internalPort;
+	private Long ownerId;
 
 	private String ipProtocol;
 
-	public Long getOwnerId() {
-		return this.ownerId;
+	private String resourceOwnerAccount;
+
+	private String forwardTableId;
+
+	private Long resourceOwnerId;
+
+	private String forwardEntryId;
+
+	private String ownerAccount;
+
+	private String externalPort;
+
+	private String internalPort;
+
+	public String getInternalIp() {
+		return this.internalIp;
 	}
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-	}
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", resourceOwnerId);
-	}
-
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
-
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		putQueryParameter("OwnerAccount", ownerAccount);
-	}
-
-	public String getForwardTableId() {
-		return this.forwardTableId;
-	}
-
-	public void setForwardTableId(String forwardTableId) {
-		this.forwardTableId = forwardTableId;
-		putQueryParameter("ForwardTableId", forwardTableId);
-	}
-
-	public String getForwardEntryId() {
-		return this.forwardEntryId;
-	}
-
-	public void setForwardEntryId(String forwardEntryId) {
-		this.forwardEntryId = forwardEntryId;
-		putQueryParameter("ForwardEntryId", forwardEntryId);
+	public void setInternalIp(String internalIp) {
+		this.internalIp = internalIp;
+		if(internalIp != null){
+			putQueryParameter("InternalIp", internalIp);
+		}
 	}
 
 	public String getExternalIp() {
@@ -112,34 +69,20 @@ public class ModifyForwardEntryRequest extends RpcAcsRequest<ModifyForwardEntryR
 
 	public void setExternalIp(String externalIp) {
 		this.externalIp = externalIp;
-		putQueryParameter("ExternalIp", externalIp);
+		if(externalIp != null){
+			putQueryParameter("ExternalIp", externalIp);
+		}
 	}
 
-	public String getExternalPort() {
-		return this.externalPort;
+	public Long getOwnerId() {
+		return this.ownerId;
 	}
 
-	public void setExternalPort(String externalPort) {
-		this.externalPort = externalPort;
-		putQueryParameter("ExternalPort", externalPort);
-	}
-
-	public String getInternalIp() {
-		return this.internalIp;
-	}
-
-	public void setInternalIp(String internalIp) {
-		this.internalIp = internalIp;
-		putQueryParameter("InternalIp", internalIp);
-	}
-
-	public String getInternalPort() {
-		return this.internalPort;
-	}
-
-	public void setInternalPort(String internalPort) {
-		this.internalPort = internalPort;
-		putQueryParameter("InternalPort", internalPort);
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
 	}
 
 	public String getIpProtocol() {
@@ -148,7 +91,86 @@ public class ModifyForwardEntryRequest extends RpcAcsRequest<ModifyForwardEntryR
 
 	public void setIpProtocol(String ipProtocol) {
 		this.ipProtocol = ipProtocol;
-		putQueryParameter("IpProtocol", ipProtocol);
+		if(ipProtocol != null){
+			putQueryParameter("IpProtocol", ipProtocol);
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getForwardTableId() {
+		return this.forwardTableId;
+	}
+
+	public void setForwardTableId(String forwardTableId) {
+		this.forwardTableId = forwardTableId;
+		if(forwardTableId != null){
+			putQueryParameter("ForwardTableId", forwardTableId);
+		}
+	}
+
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
+	}
+
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getForwardEntryId() {
+		return this.forwardEntryId;
+	}
+
+	public void setForwardEntryId(String forwardEntryId) {
+		this.forwardEntryId = forwardEntryId;
+		if(forwardEntryId != null){
+			putQueryParameter("ForwardEntryId", forwardEntryId);
+		}
+	}
+
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public String getExternalPort() {
+		return this.externalPort;
+	}
+
+	public void setExternalPort(String externalPort) {
+		this.externalPort = externalPort;
+		if(externalPort != null){
+			putQueryParameter("ExternalPort", externalPort);
+		}
+	}
+
+	public String getInternalPort() {
+		return this.internalPort;
+	}
+
+	public void setInternalPort(String internalPort) {
+		this.internalPort = internalPort;
+		if(internalPort != null){
+			putQueryParameter("InternalPort", internalPort);
+		}
 	}
 
 	@Override

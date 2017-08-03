@@ -209,6 +209,10 @@ public class DescribeRouteTablesResponse extends AcsResponse {
 
 				private String nextHopId;
 
+				private Integer enabled;
+
+				private Integer weight;
+
 				public String getNextHopType() {
 					return this.nextHopType;
 				}
@@ -223,6 +227,22 @@ public class DescribeRouteTablesResponse extends AcsResponse {
 
 				public void setNextHopId(String nextHopId) {
 					this.nextHopId = nextHopId;
+				}
+
+				public Integer getEnabled() {
+					return this.enabled;
+				}
+
+				public void setEnabled(Integer enabled) {
+					this.enabled = enabled;
+				}
+
+				public Integer getWeight() {
+					return this.weight;
+				}
+
+				public void setWeight(Integer weight) {
+					this.weight = weight;
 				}
 			}
 		}
