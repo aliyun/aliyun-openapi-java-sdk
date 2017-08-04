@@ -27,21 +27,12 @@ import com.aliyuncs.RpcAcsRequest;
 public class CheckDevicesRequest extends RpcAcsRequest<CheckDevicesResponse> {
 	
 	public CheckDevicesRequest() {
-		super("Push", "2016-08-01", "CheckDevices");
+		super("Push", "2016-08-01", "CheckDevices", "None");
 	}
-
-	private Long appKey;
 
 	private String deviceIds;
 
-	public Long getAppKey() {
-		return this.appKey;
-	}
-
-	public void setAppKey(Long appKey) {
-		this.appKey = appKey;
-		putQueryParameter("AppKey", appKey);
-	}
+	private Long appKey;
 
 	public String getDeviceIds() {
 		return this.deviceIds;
@@ -49,7 +40,20 @@ public class CheckDevicesRequest extends RpcAcsRequest<CheckDevicesResponse> {
 
 	public void setDeviceIds(String deviceIds) {
 		this.deviceIds = deviceIds;
-		putQueryParameter("DeviceIds", deviceIds);
+		if(deviceIds != null){
+			putQueryParameter("DeviceIds", deviceIds);
+		}
+	}
+
+	public Long getAppKey() {
+		return this.appKey;
+	}
+
+	public void setAppKey(Long appKey) {
+		this.appKey = appKey;
+		if(appKey != null){
+			putQueryParameter("AppKey", appKey.toString());
+		}
 	}
 
 	@Override

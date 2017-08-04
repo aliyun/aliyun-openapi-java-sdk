@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ListTagsRequest extends RpcAcsRequest<ListTagsResponse> {
 	
 	public ListTagsRequest() {
-		super("Push", "2016-08-01", "ListTags");
+		super("Push", "2016-08-01", "ListTags", "None");
 	}
 
 	private Long appKey;
@@ -38,7 +38,9 @@ public class ListTagsRequest extends RpcAcsRequest<ListTagsResponse> {
 
 	public void setAppKey(Long appKey) {
 		this.appKey = appKey;
-		putQueryParameter("AppKey", appKey);
+		if(appKey != null){
+			putQueryParameter("AppKey", appKey.toString());
+		}
 	}
 
 	@Override

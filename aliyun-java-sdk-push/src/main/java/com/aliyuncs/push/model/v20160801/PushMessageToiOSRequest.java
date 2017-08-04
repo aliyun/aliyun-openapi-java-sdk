@@ -27,12 +27,10 @@ import com.aliyuncs.RpcAcsRequest;
 public class PushMessageToiOSRequest extends RpcAcsRequest<PushMessageToiOSResponse> {
 	
 	public PushMessageToiOSRequest() {
-		super("Push", "2016-08-01", "PushMessageToiOS");
+		super("Push", "2016-08-01", "PushMessageToiOS", "None");
 	}
 
 	private Long appKey;
-
-	private String target;
 
 	private String targetValue;
 
@@ -40,22 +38,19 @@ public class PushMessageToiOSRequest extends RpcAcsRequest<PushMessageToiOSRespo
 
 	private String body;
 
+	private String jobKey;
+
+	private String target;
+
 	public Long getAppKey() {
 		return this.appKey;
 	}
 
 	public void setAppKey(Long appKey) {
 		this.appKey = appKey;
-		putQueryParameter("AppKey", appKey);
-	}
-
-	public String getTarget() {
-		return this.target;
-	}
-
-	public void setTarget(String target) {
-		this.target = target;
-		putQueryParameter("Target", target);
+		if(appKey != null){
+			putQueryParameter("AppKey", appKey.toString());
+		}
 	}
 
 	public String getTargetValue() {
@@ -64,7 +59,9 @@ public class PushMessageToiOSRequest extends RpcAcsRequest<PushMessageToiOSRespo
 
 	public void setTargetValue(String targetValue) {
 		this.targetValue = targetValue;
-		putQueryParameter("TargetValue", targetValue);
+		if(targetValue != null){
+			putQueryParameter("TargetValue", targetValue);
+		}
 	}
 
 	public String getTitle() {
@@ -73,7 +70,9 @@ public class PushMessageToiOSRequest extends RpcAcsRequest<PushMessageToiOSRespo
 
 	public void setTitle(String title) {
 		this.title = title;
-		putQueryParameter("Title", title);
+		if(title != null){
+			putQueryParameter("Title", title);
+		}
 	}
 
 	public String getBody() {
@@ -82,7 +81,31 @@ public class PushMessageToiOSRequest extends RpcAcsRequest<PushMessageToiOSRespo
 
 	public void setBody(String body) {
 		this.body = body;
-		putQueryParameter("Body", body);
+		if(body != null){
+			putQueryParameter("Body", body);
+		}
+	}
+
+	public String getJobKey() {
+		return this.jobKey;
+	}
+
+	public void setJobKey(String jobKey) {
+		this.jobKey = jobKey;
+		if(jobKey != null){
+			putQueryParameter("JobKey", jobKey);
+		}
+	}
+
+	public String getTarget() {
+		return this.target;
+	}
+
+	public void setTarget(String target) {
+		this.target = target;
+		if(target != null){
+			putQueryParameter("Target", target);
+		}
 	}
 
 	@Override

@@ -27,46 +27,30 @@ import com.aliyuncs.RpcAcsRequest;
 public class ListPushRecordsRequest extends RpcAcsRequest<ListPushRecordsResponse> {
 	
 	public ListPushRecordsRequest() {
-		super("Push", "2016-08-01", "ListPushRecords");
+		super("Push", "2016-08-01", "ListPushRecords", "None");
 	}
-
-	private Long appKey;
-
-	private String pushType;
-
-	private String startTime;
-
-	private String endTime;
-
-	private Integer page;
 
 	private Integer pageSize;
 
-	public Long getAppKey() {
-		return this.appKey;
+	private String endTime;
+
+	private Long appKey;
+
+	private String startTime;
+
+	private Integer page;
+
+	private String pushType;
+
+	public Integer getPageSize() {
+		return this.pageSize;
 	}
 
-	public void setAppKey(Long appKey) {
-		this.appKey = appKey;
-		putQueryParameter("AppKey", appKey);
-	}
-
-	public String getPushType() {
-		return this.pushType;
-	}
-
-	public void setPushType(String pushType) {
-		this.pushType = pushType;
-		putQueryParameter("PushType", pushType);
-	}
-
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-		putQueryParameter("StartTime", startTime);
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
 	}
 
 	public String getEndTime() {
@@ -75,7 +59,31 @@ public class ListPushRecordsRequest extends RpcAcsRequest<ListPushRecordsRespons
 
 	public void setEndTime(String endTime) {
 		this.endTime = endTime;
-		putQueryParameter("EndTime", endTime);
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime);
+		}
+	}
+
+	public Long getAppKey() {
+		return this.appKey;
+	}
+
+	public void setAppKey(Long appKey) {
+		this.appKey = appKey;
+		if(appKey != null){
+			putQueryParameter("AppKey", appKey.toString());
+		}
+	}
+
+	public String getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime);
+		}
 	}
 
 	public Integer getPage() {
@@ -84,16 +92,20 @@ public class ListPushRecordsRequest extends RpcAcsRequest<ListPushRecordsRespons
 
 	public void setPage(Integer page) {
 		this.page = page;
-		putQueryParameter("Page", page);
+		if(page != null){
+			putQueryParameter("Page", page.toString());
+		}
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public String getPushType() {
+		return this.pushType;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		putQueryParameter("PageSize", pageSize);
+	public void setPushType(String pushType) {
+		this.pushType = pushType;
+		if(pushType != null){
+			putQueryParameter("PushType", pushType);
+		}
 	}
 
 	@Override

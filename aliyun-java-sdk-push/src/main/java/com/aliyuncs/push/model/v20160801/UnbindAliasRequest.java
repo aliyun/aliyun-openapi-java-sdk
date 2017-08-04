@@ -27,25 +27,16 @@ import com.aliyuncs.RpcAcsRequest;
 public class UnbindAliasRequest extends RpcAcsRequest<UnbindAliasResponse> {
 	
 	public UnbindAliasRequest() {
-		super("Push", "2016-08-01", "UnbindAlias");
+		super("Push", "2016-08-01", "UnbindAlias", "None");
 	}
 
-	private Long appKey;
-
 	private String aliasName;
+
+	private Long appKey;
 
 	private String deviceId;
 
 	private Boolean unbindAll;
-
-	public Long getAppKey() {
-		return this.appKey;
-	}
-
-	public void setAppKey(Long appKey) {
-		this.appKey = appKey;
-		putQueryParameter("AppKey", appKey);
-	}
 
 	public String getAliasName() {
 		return this.aliasName;
@@ -53,7 +44,20 @@ public class UnbindAliasRequest extends RpcAcsRequest<UnbindAliasResponse> {
 
 	public void setAliasName(String aliasName) {
 		this.aliasName = aliasName;
-		putQueryParameter("AliasName", aliasName);
+		if(aliasName != null){
+			putQueryParameter("AliasName", aliasName);
+		}
+	}
+
+	public Long getAppKey() {
+		return this.appKey;
+	}
+
+	public void setAppKey(Long appKey) {
+		this.appKey = appKey;
+		if(appKey != null){
+			putQueryParameter("AppKey", appKey.toString());
+		}
 	}
 
 	public String getDeviceId() {
@@ -62,16 +66,20 @@ public class UnbindAliasRequest extends RpcAcsRequest<UnbindAliasResponse> {
 
 	public void setDeviceId(String deviceId) {
 		this.deviceId = deviceId;
-		putQueryParameter("DeviceId", deviceId);
+		if(deviceId != null){
+			putQueryParameter("DeviceId", deviceId);
+		}
 	}
 
 	public Boolean getUnbindAll() {
-		return unbindAll;
+		return this.unbindAll;
 	}
 
 	public void setUnbindAll(Boolean unbindAll) {
 		this.unbindAll = unbindAll;
-		putQueryParameter("UnbindAll", unbindAll);
+		if(unbindAll != null){
+			putQueryParameter("UnbindAll", unbindAll.toString());
+		}
 	}
 
 	@Override

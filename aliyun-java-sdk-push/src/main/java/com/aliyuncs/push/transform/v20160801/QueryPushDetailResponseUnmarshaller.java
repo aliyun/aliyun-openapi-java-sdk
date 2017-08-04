@@ -41,15 +41,15 @@ public class QueryPushDetailResponseUnmarshaller {
 		queryPushDetailResponse.setStoreOffline(context.booleanValue("QueryPushDetailResponse.StoreOffline"));
 		queryPushDetailResponse.setBatchNumber(context.stringValue("QueryPushDetailResponse.BatchNumber"));
 		queryPushDetailResponse.setProvinceId(context.stringValue("QueryPushDetailResponse.ProvinceId"));
-		queryPushDetailResponse.setiOSApnsEnv(context.stringValue("QueryPushDetailResponse.iOSApnsEnv"));
-		queryPushDetailResponse.setiOSRemind(context.booleanValue("QueryPushDetailResponse.iOSRemind"));
-		queryPushDetailResponse.setiOSRemindBody(context.stringValue("QueryPushDetailResponse.iOSRemindBody"));
-		queryPushDetailResponse.setiOSBadge(context.integerValue("QueryPushDetailResponse.iOSBadge"));
-		queryPushDetailResponse.setiOSMusic(context.stringValue("QueryPushDetailResponse.iOSMusic"));
-		queryPushDetailResponse.setiOSSubtitle(context.stringValue("QueryPushDetailResponse.iOSSubtitle"));
-		queryPushDetailResponse.setiOSNotificationCategory(context.stringValue("QueryPushDetailResponse.iOSNotificationCategory"));
-		queryPushDetailResponse.setiOSMutableContent(context.booleanValue("QueryPushDetailResponse.iOSMutableContent"));
-		queryPushDetailResponse.setiOSExtParameters(context.stringValue("QueryPushDetailResponse.iOSExtParameters"));
+		queryPushDetailResponse.setIOSApnsEnv(context.stringValue("QueryPushDetailResponse.iOSApnsEnv"));
+		queryPushDetailResponse.setIOSRemind(context.booleanValue("QueryPushDetailResponse.iOSRemind"));
+		queryPushDetailResponse.setIOSRemindBody(context.stringValue("QueryPushDetailResponse.iOSRemindBody"));
+		queryPushDetailResponse.setIOSBadge(context.integerValue("QueryPushDetailResponse.iOSBadge"));
+		queryPushDetailResponse.setIOSMusic(context.stringValue("QueryPushDetailResponse.iOSMusic"));
+		queryPushDetailResponse.setIOSSubtitle(context.stringValue("QueryPushDetailResponse.iOSSubtitle"));
+		queryPushDetailResponse.setIOSNotificationCategory(context.stringValue("QueryPushDetailResponse.iOSNotificationCategory"));
+		queryPushDetailResponse.setIOSMutableContent(context.booleanValue("QueryPushDetailResponse.iOSMutableContent"));
+		queryPushDetailResponse.setIOSExtParameters(context.stringValue("QueryPushDetailResponse.iOSExtParameters"));
 		queryPushDetailResponse.setAndroidNotifyType(context.stringValue("QueryPushDetailResponse.AndroidNotifyType"));
 		queryPushDetailResponse.setAndroidOpenType(context.stringValue("QueryPushDetailResponse.AndroidOpenType"));
 		queryPushDetailResponse.setAndroidActivity(context.stringValue("QueryPushDetailResponse.AndroidActivity"));
@@ -58,9 +58,17 @@ public class QueryPushDetailResponseUnmarshaller {
 		queryPushDetailResponse.setAndroidXiaoMiActivity(context.stringValue("QueryPushDetailResponse.AndroidXiaoMiActivity"));
 		queryPushDetailResponse.setAndroidXiaoMiNotifyTitle(context.stringValue("QueryPushDetailResponse.AndroidXiaoMiNotifyTitle"));
 		queryPushDetailResponse.setAndroidXiaoMiNotifyBody(context.stringValue("QueryPushDetailResponse.AndroidXiaoMiNotifyBody"));
+		queryPushDetailResponse.setAndroidPopupActivity(context.stringValue("QueryPushDetailResponse.AndroidPopupActivity"));
+		queryPushDetailResponse.setAndroidPopupTitle(context.stringValue("QueryPushDetailResponse.AndroidPopupTitle"));
+		queryPushDetailResponse.setAndroidPopupBody(context.stringValue("QueryPushDetailResponse.AndroidPopupBody"));
 		queryPushDetailResponse.setAndroidNotificationBarType(context.integerValue("QueryPushDetailResponse.AndroidNotificationBarType"));
 		queryPushDetailResponse.setAndroidNotificationBarPriority(context.integerValue("QueryPushDetailResponse.AndroidNotificationBarPriority"));
 		queryPushDetailResponse.setAndroidExtParameters(context.stringValue("QueryPushDetailResponse.AndroidExtParameters"));
+		queryPushDetailResponse.setSmsTemplateName(context.stringValue("QueryPushDetailResponse.SmsTemplateName"));
+		queryPushDetailResponse.setSmsSignName(context.stringValue("QueryPushDetailResponse.SmsSignName"));
+		queryPushDetailResponse.setSmsParams(context.stringValue("QueryPushDetailResponse.SmsParams"));
+		queryPushDetailResponse.setSmsDelaySecs(context.integerValue("QueryPushDetailResponse.SmsDelaySecs"));
+		queryPushDetailResponse.setSmsSendPolicy(context.integerValue("QueryPushDetailResponse.SmsSendPolicy"));
 	 
 	 	return queryPushDetailResponse;
 	}

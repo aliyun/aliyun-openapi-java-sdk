@@ -27,23 +27,14 @@ import com.aliyuncs.RpcAcsRequest;
 public class QueryTagsRequest extends RpcAcsRequest<QueryTagsResponse> {
 	
 	public QueryTagsRequest() {
-		super("Push", "2016-08-01", "QueryTags");
+		super("Push", "2016-08-01", "QueryTags", "None");
 	}
-
-	private Long appKey;
 
 	private String clientKey;
 
+	private Long appKey;
+
 	private String keyType;
-
-	public Long getAppKey() {
-		return this.appKey;
-	}
-
-	public void setAppKey(Long appKey) {
-		this.appKey = appKey;
-		putQueryParameter("AppKey", appKey);
-	}
 
 	public String getClientKey() {
 		return this.clientKey;
@@ -51,7 +42,20 @@ public class QueryTagsRequest extends RpcAcsRequest<QueryTagsResponse> {
 
 	public void setClientKey(String clientKey) {
 		this.clientKey = clientKey;
-		putQueryParameter("ClientKey", clientKey);
+		if(clientKey != null){
+			putQueryParameter("ClientKey", clientKey);
+		}
+	}
+
+	public Long getAppKey() {
+		return this.appKey;
+	}
+
+	public void setAppKey(Long appKey) {
+		this.appKey = appKey;
+		if(appKey != null){
+			putQueryParameter("AppKey", appKey.toString());
+		}
 	}
 
 	public String getKeyType() {
@@ -60,7 +64,9 @@ public class QueryTagsRequest extends RpcAcsRequest<QueryTagsResponse> {
 
 	public void setKeyType(String keyType) {
 		this.keyType = keyType;
-		putQueryParameter("KeyType", keyType);
+		if(keyType != null){
+			putQueryParameter("KeyType", keyType);
+		}
 	}
 
 	@Override

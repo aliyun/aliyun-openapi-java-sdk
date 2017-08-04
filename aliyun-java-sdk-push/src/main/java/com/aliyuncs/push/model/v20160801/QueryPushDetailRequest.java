@@ -27,21 +27,12 @@ import com.aliyuncs.RpcAcsRequest;
 public class QueryPushDetailRequest extends RpcAcsRequest<QueryPushDetailResponse> {
 	
 	public QueryPushDetailRequest() {
-		super("Push", "2016-08-01", "QueryPushDetail");
+		super("Push", "2016-08-01", "QueryPushDetail", "None");
 	}
-
-	private Long appKey;
 
 	private String messageId;
 
-	public Long getAppKey() {
-		return this.appKey;
-	}
-
-	public void setAppKey(Long appKey) {
-		this.appKey = appKey;
-		putQueryParameter("AppKey", appKey);
-	}
+	private Long appKey;
 
 	public String getMessageId() {
 		return this.messageId;
@@ -49,7 +40,20 @@ public class QueryPushDetailRequest extends RpcAcsRequest<QueryPushDetailRespons
 
 	public void setMessageId(String messageId) {
 		this.messageId = messageId;
-		putQueryParameter("MessageId", messageId);
+		if(messageId != null){
+			putQueryParameter("MessageId", messageId);
+		}
+	}
+
+	public Long getAppKey() {
+		return this.appKey;
+	}
+
+	public void setAppKey(Long appKey) {
+		this.appKey = appKey;
+		if(appKey != null){
+			putQueryParameter("AppKey", appKey.toString());
+		}
 	}
 
 	@Override

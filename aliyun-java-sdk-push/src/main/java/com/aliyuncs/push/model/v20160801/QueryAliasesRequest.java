@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class QueryAliasesRequest extends RpcAcsRequest<QueryAliasesResponse> {
 	
 	public QueryAliasesRequest() {
-		super("Push", "2016-08-01", "QueryAliases");
+		super("Push", "2016-08-01", "QueryAliases", "None");
 	}
 
 	private Long appKey;
@@ -40,7 +40,9 @@ public class QueryAliasesRequest extends RpcAcsRequest<QueryAliasesResponse> {
 
 	public void setAppKey(Long appKey) {
 		this.appKey = appKey;
-		putQueryParameter("AppKey", appKey);
+		if(appKey != null){
+			putQueryParameter("AppKey", appKey.toString());
+		}
 	}
 
 	public String getDeviceId() {
@@ -49,7 +51,9 @@ public class QueryAliasesRequest extends RpcAcsRequest<QueryAliasesResponse> {
 
 	public void setDeviceId(String deviceId) {
 		this.deviceId = deviceId;
-		putQueryParameter("DeviceId", deviceId);
+		if(deviceId != null){
+			putQueryParameter("DeviceId", deviceId);
+		}
 	}
 
 	@Override

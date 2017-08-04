@@ -27,33 +27,26 @@ import com.aliyuncs.RpcAcsRequest;
 public class QueryUniqueDeviceStatRequest extends RpcAcsRequest<QueryUniqueDeviceStatResponse> {
 	
 	public QueryUniqueDeviceStatRequest() {
-		super("Push", "2016-08-01", "QueryUniqueDeviceStat");
+		super("Push", "2016-08-01", "QueryUniqueDeviceStat", "None");
 	}
+
+	private String granularity;
+
+	private String endTime;
 
 	private Long appKey;
 
 	private String startTime;
 
-	private String endTime;
-
-	private String granularity;
-
-	public Long getAppKey() {
-		return this.appKey;
+	public String getGranularity() {
+		return this.granularity;
 	}
 
-	public void setAppKey(Long appKey) {
-		this.appKey = appKey;
-		putQueryParameter("AppKey", appKey);
-	}
-
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-		putQueryParameter("StartTime", startTime);
+	public void setGranularity(String granularity) {
+		this.granularity = granularity;
+		if(granularity != null){
+			putQueryParameter("Granularity", granularity);
+		}
 	}
 
 	public String getEndTime() {
@@ -62,16 +55,31 @@ public class QueryUniqueDeviceStatRequest extends RpcAcsRequest<QueryUniqueDevic
 
 	public void setEndTime(String endTime) {
 		this.endTime = endTime;
-		putQueryParameter("EndTime", endTime);
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime);
+		}
 	}
 
-	public String getGranularity() {
-		return this.granularity;
+	public Long getAppKey() {
+		return this.appKey;
 	}
 
-	public void setGranularity(String granularity) {
-		this.granularity = granularity;
-		putQueryParameter("Granularity", granularity);
+	public void setAppKey(Long appKey) {
+		this.appKey = appKey;
+		if(appKey != null){
+			putQueryParameter("AppKey", appKey.toString());
+		}
+	}
+
+	public String getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime);
+		}
 	}
 
 	@Override

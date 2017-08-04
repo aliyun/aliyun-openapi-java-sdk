@@ -27,21 +27,12 @@ import com.aliyuncs.RpcAcsRequest;
 public class RemoveTagRequest extends RpcAcsRequest<RemoveTagResponse> {
 	
 	public RemoveTagRequest() {
-		super("Push", "2016-08-01", "RemoveTag");
+		super("Push", "2016-08-01", "RemoveTag", "None");
 	}
-
-	private Long appKey;
 
 	private String tagName;
 
-	public Long getAppKey() {
-		return this.appKey;
-	}
-
-	public void setAppKey(Long appKey) {
-		this.appKey = appKey;
-		putQueryParameter("AppKey", appKey);
-	}
+	private Long appKey;
 
 	public String getTagName() {
 		return this.tagName;
@@ -49,7 +40,20 @@ public class RemoveTagRequest extends RpcAcsRequest<RemoveTagResponse> {
 
 	public void setTagName(String tagName) {
 		this.tagName = tagName;
-		putQueryParameter("TagName", tagName);
+		if(tagName != null){
+			putQueryParameter("TagName", tagName);
+		}
+	}
+
+	public Long getAppKey() {
+		return this.appKey;
+	}
+
+	public void setAppKey(Long appKey) {
+		this.appKey = appKey;
+		if(appKey != null){
+			putQueryParameter("AppKey", appKey.toString());
+		}
 	}
 
 	@Override

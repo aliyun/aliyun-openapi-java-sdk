@@ -27,18 +27,29 @@ import com.aliyuncs.RpcAcsRequest;
 public class QueryDeviceStatRequest extends RpcAcsRequest<QueryDeviceStatResponse> {
 	
 	public QueryDeviceStatRequest() {
-		super("Push", "2016-08-01", "QueryDeviceStat");
+		super("Push", "2016-08-01", "QueryDeviceStat", "None");
 	}
+
+	private String endTime;
 
 	private Long appKey;
 
 	private String startTime;
 
-	private String endTime;
-
 	private String deviceType;
 
 	private String queryType;
+
+	public String getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime);
+		}
+	}
 
 	public Long getAppKey() {
 		return this.appKey;
@@ -46,7 +57,9 @@ public class QueryDeviceStatRequest extends RpcAcsRequest<QueryDeviceStatRespons
 
 	public void setAppKey(Long appKey) {
 		this.appKey = appKey;
-		putQueryParameter("AppKey", appKey);
+		if(appKey != null){
+			putQueryParameter("AppKey", appKey.toString());
+		}
 	}
 
 	public String getStartTime() {
@@ -55,16 +68,9 @@ public class QueryDeviceStatRequest extends RpcAcsRequest<QueryDeviceStatRespons
 
 	public void setStartTime(String startTime) {
 		this.startTime = startTime;
-		putQueryParameter("StartTime", startTime);
-	}
-
-	public String getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
-		putQueryParameter("EndTime", endTime);
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime);
+		}
 	}
 
 	public String getDeviceType() {
@@ -73,7 +79,9 @@ public class QueryDeviceStatRequest extends RpcAcsRequest<QueryDeviceStatRespons
 
 	public void setDeviceType(String deviceType) {
 		this.deviceType = deviceType;
-		putQueryParameter("DeviceType", deviceType);
+		if(deviceType != null){
+			putQueryParameter("DeviceType", deviceType);
+		}
 	}
 
 	public String getQueryType() {
@@ -82,7 +90,9 @@ public class QueryDeviceStatRequest extends RpcAcsRequest<QueryDeviceStatRespons
 
 	public void setQueryType(String queryType) {
 		this.queryType = queryType;
-		putQueryParameter("QueryType", queryType);
+		if(queryType != null){
+			putQueryParameter("QueryType", queryType);
+		}
 	}
 
 	@Override

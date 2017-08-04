@@ -27,48 +27,34 @@ import com.aliyuncs.RpcAcsRequest;
 public class PushNoticeToiOSRequest extends RpcAcsRequest<PushNoticeToiOSResponse> {
 	
 	public PushNoticeToiOSRequest() {
-		super("Push", "2016-08-01", "PushNoticeToiOS");
+		super("Push", "2016-08-01", "PushNoticeToiOS", "None");
 	}
+
+	private String extParameters;
+
+	private String apnsEnv;
 
 	private Long appKey;
 
-	private String target;
-
 	private String targetValue;
-
-	private String apnsEnv;
 
 	private String title;
 
 	private String body;
 
-	private String extParameters;
+	private String jobKey;
 
-	public Long getAppKey() {
-		return this.appKey;
+	private String target;
+
+	public String getExtParameters() {
+		return this.extParameters;
 	}
 
-	public void setAppKey(Long appKey) {
-		this.appKey = appKey;
-		putQueryParameter("AppKey", appKey);
-	}
-
-	public String getTarget() {
-		return this.target;
-	}
-
-	public void setTarget(String target) {
-		this.target = target;
-		putQueryParameter("Target", target);
-	}
-
-	public String getTargetValue() {
-		return this.targetValue;
-	}
-
-	public void setTargetValue(String targetValue) {
-		this.targetValue = targetValue;
-		putQueryParameter("TargetValue", targetValue);
+	public void setExtParameters(String extParameters) {
+		this.extParameters = extParameters;
+		if(extParameters != null){
+			putQueryParameter("ExtParameters", extParameters);
+		}
 	}
 
 	public String getApnsEnv() {
@@ -77,7 +63,31 @@ public class PushNoticeToiOSRequest extends RpcAcsRequest<PushNoticeToiOSRespons
 
 	public void setApnsEnv(String apnsEnv) {
 		this.apnsEnv = apnsEnv;
-		putQueryParameter("ApnsEnv", apnsEnv);
+		if(apnsEnv != null){
+			putQueryParameter("ApnsEnv", apnsEnv);
+		}
+	}
+
+	public Long getAppKey() {
+		return this.appKey;
+	}
+
+	public void setAppKey(Long appKey) {
+		this.appKey = appKey;
+		if(appKey != null){
+			putQueryParameter("AppKey", appKey.toString());
+		}
+	}
+
+	public String getTargetValue() {
+		return this.targetValue;
+	}
+
+	public void setTargetValue(String targetValue) {
+		this.targetValue = targetValue;
+		if(targetValue != null){
+			putQueryParameter("TargetValue", targetValue);
+		}
 	}
 
 	public String getTitle() {
@@ -86,7 +96,9 @@ public class PushNoticeToiOSRequest extends RpcAcsRequest<PushNoticeToiOSRespons
 
 	public void setTitle(String title) {
 		this.title = title;
-		putQueryParameter("Title", title);
+		if(title != null){
+			putQueryParameter("Title", title);
+		}
 	}
 
 	public String getBody() {
@@ -95,16 +107,31 @@ public class PushNoticeToiOSRequest extends RpcAcsRequest<PushNoticeToiOSRespons
 
 	public void setBody(String body) {
 		this.body = body;
-		putQueryParameter("Body", body);
+		if(body != null){
+			putQueryParameter("Body", body);
+		}
 	}
 
-	public String getExtParameters() {
-		return this.extParameters;
+	public String getJobKey() {
+		return this.jobKey;
 	}
 
-	public void setExtParameters(String extParameters) {
-		this.extParameters = extParameters;
-		putQueryParameter("ExtParameters", extParameters);
+	public void setJobKey(String jobKey) {
+		this.jobKey = jobKey;
+		if(jobKey != null){
+			putQueryParameter("JobKey", jobKey);
+		}
+	}
+
+	public String getTarget() {
+		return this.target;
+	}
+
+	public void setTarget(String target) {
+		this.target = target;
+		if(target != null){
+			putQueryParameter("Target", target);
+		}
 	}
 
 	@Override

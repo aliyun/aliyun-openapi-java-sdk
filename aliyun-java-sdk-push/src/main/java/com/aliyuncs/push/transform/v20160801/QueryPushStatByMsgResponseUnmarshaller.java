@@ -36,10 +36,16 @@ public class QueryPushStatByMsgResponseUnmarshaller {
 		for (int i = 0; i < context.lengthValue("QueryPushStatByMsgResponse.PushStats.Length"); i++) {
 			PushStat pushStat = new PushStat();
 			pushStat.setMessageId(context.stringValue("QueryPushStatByMsgResponse.PushStats["+ i +"].MessageId"));
+			pushStat.setAcceptCount(context.longValue("QueryPushStatByMsgResponse.PushStats["+ i +"].AcceptCount"));
 			pushStat.setSentCount(context.longValue("QueryPushStatByMsgResponse.PushStats["+ i +"].SentCount"));
 			pushStat.setReceivedCount(context.longValue("QueryPushStatByMsgResponse.PushStats["+ i +"].ReceivedCount"));
 			pushStat.setOpenedCount(context.longValue("QueryPushStatByMsgResponse.PushStats["+ i +"].OpenedCount"));
 			pushStat.setDeletedCount(context.longValue("QueryPushStatByMsgResponse.PushStats["+ i +"].DeletedCount"));
+			pushStat.setSmsSentCount(context.longValue("QueryPushStatByMsgResponse.PushStats["+ i +"].SmsSentCount"));
+			pushStat.setSmsSkipCount(context.longValue("QueryPushStatByMsgResponse.PushStats["+ i +"].SmsSkipCount"));
+			pushStat.setSmsFailedCount(context.longValue("QueryPushStatByMsgResponse.PushStats["+ i +"].SmsFailedCount"));
+			pushStat.setSmsReceiveSuccessCount(context.longValue("QueryPushStatByMsgResponse.PushStats["+ i +"].SmsReceiveSuccessCount"));
+			pushStat.setSmsReceiveFailedCount(context.longValue("QueryPushStatByMsgResponse.PushStats["+ i +"].SmsReceiveFailedCount"));
 
 			pushStats.add(pushStat);
 		}

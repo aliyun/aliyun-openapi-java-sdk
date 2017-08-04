@@ -27,24 +27,26 @@ import com.aliyuncs.RpcAcsRequest;
 public class BindTagRequest extends RpcAcsRequest<BindTagResponse> {
 	
 	public BindTagRequest() {
-		super("Push", "2016-08-01", "BindTag");
+		super("Push", "2016-08-01", "BindTag", "None");
 	}
-
-	private Long appKey;
-
-	private String clientKey;
-
-	private String keyType;
 
 	private String tagName;
 
-	public Long getAppKey() {
-		return this.appKey;
+	private String clientKey;
+
+	private Long appKey;
+
+	private String keyType;
+
+	public String getTagName() {
+		return this.tagName;
 	}
 
-	public void setAppKey(Long appKey) {
-		this.appKey = appKey;
-		putQueryParameter("AppKey", appKey);
+	public void setTagName(String tagName) {
+		this.tagName = tagName;
+		if(tagName != null){
+			putQueryParameter("TagName", tagName);
+		}
 	}
 
 	public String getClientKey() {
@@ -53,7 +55,20 @@ public class BindTagRequest extends RpcAcsRequest<BindTagResponse> {
 
 	public void setClientKey(String clientKey) {
 		this.clientKey = clientKey;
-		putQueryParameter("ClientKey", clientKey);
+		if(clientKey != null){
+			putQueryParameter("ClientKey", clientKey);
+		}
+	}
+
+	public Long getAppKey() {
+		return this.appKey;
+	}
+
+	public void setAppKey(Long appKey) {
+		this.appKey = appKey;
+		if(appKey != null){
+			putQueryParameter("AppKey", appKey.toString());
+		}
 	}
 
 	public String getKeyType() {
@@ -62,16 +77,9 @@ public class BindTagRequest extends RpcAcsRequest<BindTagResponse> {
 
 	public void setKeyType(String keyType) {
 		this.keyType = keyType;
-		putQueryParameter("KeyType", keyType);
-	}
-
-	public String getTagName() {
-		return this.tagName;
-	}
-
-	public void setTagName(String tagName) {
-		this.tagName = tagName;
-		putQueryParameter("TagName", tagName);
+		if(keyType != null){
+			putQueryParameter("KeyType", keyType);
+		}
 	}
 
 	@Override

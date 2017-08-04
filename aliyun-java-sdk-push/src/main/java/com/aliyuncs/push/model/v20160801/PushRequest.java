@@ -27,289 +27,92 @@ import com.aliyuncs.RpcAcsRequest;
 public class PushRequest extends RpcAcsRequest<PushResponse> {
 	
 	public PushRequest() {
-		super("Push", "2016-08-01", "Push");
+		super("Push", "2016-08-01", "Push", "None");
 	}
 
-	private Long appKey;
+	private Integer androidNotificationBarType;
 
-	private String target;
+	private Integer smsSendPolicy;
 
-	private String targetValue;
+	private String androidExtParameters;
 
-	private String pushType;
+	private Integer iOSBadge;
 
-	private String deviceType;
+	private String androidOpenType;
 
 	private String title;
 
 	private String body;
 
-	private String jobKey;
+	private String deviceType;
 
 	private String pushTime;
 
-	private String expireTime;
+	private Integer smsDelaySecs;
 
-	private Boolean storeOffline;
+	private String androidPopupActivity;
+
+	private String iOSRemindBody;
 
 	private String batchNumber;
 
+	private String iOSExtParameters;
+
 	private String androidNotifyType;
 
-	private String androidOpenType;
+	private String androidPopupTitle;
+
+	private String iOSMusic;
+
+	private String iOSApnsEnv;
+
+	private Boolean iOSMutableContent;
+
+	private Integer androidNotificationBarPriority;
+
+	private String expireTime;
+
+	private String smsTemplateName;
+
+	private String androidPopupBody;
+
+	private String iOSNotificationCategory;
+
+	private Boolean storeOffline;
+
+	private Boolean iOSSilentNotification;
+
+	private String smsParams;
+
+	private String jobKey;
+
+	private String target;
+
+	private String androidOpenUrl;
+
+	private Boolean androidRemind;
 
 	private String androidActivity;
 
-	private String androidOpenUrl;
+	private String androidXiaoMiNotifyBody;
+
+	private String iOSSubtitle;
+
+	private String smsSignName;
+
+	private Boolean iOSRemind;
+
+	private Long appKey;
+
+	private String targetValue;
+
+	private String androidMusic;
 
 	private String androidXiaoMiActivity;
 
 	private String androidXiaoMiNotifyTitle;
 
-	private String androidXiaoMiNotifyBody;
-
-	private String androidPopupActivity;
-
-	private String androidPopupTitle;
-
-	private String androidPopupBody;
-
-	private String androidMusic;
-
-	private Boolean androidRemind;
-
-	private Integer androidNotificationBarType;
-
-	private Integer androidNotificationBarPriority;
-
-	private String androidExtParameters;
-
-	private String iOSApnsEnv;
-
-	private Boolean iOSRemind;
-
-	private String iOSRemindBody;
-
-	private String iOSMusic;
-
-	private Integer iOSBadge;
-
-	private Boolean iOSSilentNotification;
-
-	private String iOSSubtitle;
-
-	private String iOSNotificationCategory;
-
-	private Boolean iOSMutableContent;
-
-	private String iOSExtParameters;
-
-	public Long getAppKey() {
-		return this.appKey;
-	}
-
-	public void setAppKey(Long appKey) {
-		this.appKey = appKey;
-		putQueryParameter("AppKey", appKey);
-	}
-
-	public String getTarget() {
-		return this.target;
-	}
-
-	public void setTarget(String target) {
-		this.target = target;
-		putQueryParameter("Target", target);
-	}
-
-	public String getTargetValue() {
-		return this.targetValue;
-	}
-
-	public void setTargetValue(String targetValue) {
-		this.targetValue = targetValue;
-		putQueryParameter("TargetValue", targetValue);
-	}
-
-	public String getPushType() {
-		return this.pushType;
-	}
-
-	public void setPushType(String pushType) {
-		this.pushType = pushType;
-		putQueryParameter("PushType", pushType);
-	}
-
-	public String getDeviceType() {
-		return this.deviceType;
-	}
-
-	public void setDeviceType(String deviceType) {
-		this.deviceType = deviceType;
-		putQueryParameter("DeviceType", deviceType);
-	}
-
-	public String getTitle() {
-		return this.title;
-	}
-
-	public void setTitle(String title) {
-		this.title = title;
-		putQueryParameter("Title", title);
-	}
-
-	public String getBody() {
-		return this.body;
-	}
-
-	public void setBody(String body) {
-		this.body = body;
-		putQueryParameter("Body", body);
-	}
-
-	public String getJobKey() {
-		return jobKey;
-	}
-
-	public void setJobKey(String jobKey) {
-		this.jobKey = jobKey;
-		putQueryParameter("JobKey", jobKey);
-	}
-
-	public String getPushTime() {
-		return this.pushTime;
-	}
-
-	public void setPushTime(String pushTime) {
-		this.pushTime = pushTime;
-		putQueryParameter("PushTime", pushTime);
-	}
-
-	public String getExpireTime() {
-		return this.expireTime;
-	}
-
-	public void setExpireTime(String expireTime) {
-		this.expireTime = expireTime;
-		putQueryParameter("ExpireTime", expireTime);
-	}
-
-	public Boolean getStoreOffline() {
-		return this.storeOffline;
-	}
-
-	public void setStoreOffline(Boolean storeOffline) {
-		this.storeOffline = storeOffline;
-		putQueryParameter("StoreOffline", storeOffline);
-	}
-
-	public String getBatchNumber() {
-		return this.batchNumber;
-	}
-
-	public void setBatchNumber(String batchNumber) {
-		this.batchNumber = batchNumber;
-		putQueryParameter("BatchNumber", batchNumber);
-	}
-
-	public String getAndroidNotifyType() {
-		return this.androidNotifyType;
-	}
-
-	public void setAndroidNotifyType(String androidNotifyType) {
-		this.androidNotifyType = androidNotifyType;
-		putQueryParameter("AndroidNotifyType", androidNotifyType);
-	}
-
-	public String getAndroidOpenType() {
-		return this.androidOpenType;
-	}
-
-	public void setAndroidOpenType(String androidOpenType) {
-		this.androidOpenType = androidOpenType;
-		putQueryParameter("AndroidOpenType", androidOpenType);
-	}
-
-	public String getAndroidActivity() {
-		return this.androidActivity;
-	}
-
-	public void setAndroidActivity(String androidActivity) {
-		this.androidActivity = androidActivity;
-		putQueryParameter("AndroidActivity", androidActivity);
-	}
-
-	public String getAndroidOpenUrl() {
-		return this.androidOpenUrl;
-	}
-
-	public void setAndroidOpenUrl(String androidOpenUrl) {
-		this.androidOpenUrl = androidOpenUrl;
-		putQueryParameter("AndroidOpenUrl", androidOpenUrl);
-	}
-
-	public String getAndroidXiaoMiActivity() {
-		return this.androidXiaoMiActivity;
-	}
-
-	public void setAndroidXiaoMiActivity(String androidXiaoMiActivity) {
-		this.androidXiaoMiActivity = androidXiaoMiActivity;
-		putQueryParameter("AndroidXiaoMiActivity", androidXiaoMiActivity);
-	}
-
-	public String getAndroidXiaoMiNotifyTitle() {
-		return this.androidXiaoMiNotifyTitle;
-	}
-
-	public void setAndroidXiaoMiNotifyTitle(String androidXiaoMiNotifyTitle) {
-		this.androidXiaoMiNotifyTitle = androidXiaoMiNotifyTitle;
-		putQueryParameter("AndroidXiaoMiNotifyTitle", androidXiaoMiNotifyTitle);
-	}
-
-	public String getAndroidXiaoMiNotifyBody() {
-		return this.androidXiaoMiNotifyBody;
-	}
-
-	public void setAndroidXiaoMiNotifyBody(String androidXiaoMiNotifyBody) {
-		this.androidXiaoMiNotifyBody = androidXiaoMiNotifyBody;
-		putQueryParameter("AndroidXiaoMiNotifyBody", androidXiaoMiNotifyBody);
-	}
-
-	public String getAndroidPopupActivity() {
-		return this.androidPopupActivity;
-	}
-
-	public void setAndroidPopupActivity(String androidPopupActivity) {
-		this.androidPopupActivity = androidPopupActivity;
-		putQueryParameter("AndroidPopupActivity", androidPopupActivity);
-	}
-
-	public String getAndroidPopupTitle() {
-		return this.androidPopupTitle;
-	}
-
-	public void setAndroidPopupTitle(String androidPopupTitle) {
-		this.androidPopupTitle = androidPopupTitle;
-		putQueryParameter("AndroidPopupTitle", androidPopupTitle);
-	}
-
-	public String getAndroidPopupBody() {
-		return this.androidPopupBody;
-	}
-
-	public void setAndroidPopupBody(String androidPopupBody) {
-		this.androidPopupBody = androidPopupBody;
-		putQueryParameter("AndroidPopupBody", androidPopupBody);
-	}
-
-	public String getAndroidMusic() {
-		return this.androidMusic;
-	}
-
-	public void setAndroidMusic(String androidMusic) {
-		this.androidMusic = androidMusic;
-		putQueryParameter("AndroidMusic", androidMusic);
-	}
+	private String pushType;
 
 	public Integer getAndroidNotificationBarType() {
 		return this.androidNotificationBarType;
@@ -317,16 +120,20 @@ public class PushRequest extends RpcAcsRequest<PushResponse> {
 
 	public void setAndroidNotificationBarType(Integer androidNotificationBarType) {
 		this.androidNotificationBarType = androidNotificationBarType;
-		putQueryParameter("AndroidNotificationBarType", androidNotificationBarType);
+		if(androidNotificationBarType != null){
+			putQueryParameter("AndroidNotificationBarType", androidNotificationBarType.toString());
+		}
 	}
 
-	public Integer getAndroidNotificationBarPriority() {
-		return this.androidNotificationBarPriority;
+	public Integer getSmsSendPolicy() {
+		return this.smsSendPolicy;
 	}
 
-	public void setAndroidNotificationBarPriority(Integer androidNotificationBarPriority) {
-		this.androidNotificationBarPriority = androidNotificationBarPriority;
-		putQueryParameter("AndroidNotificationBarPriority", androidNotificationBarPriority);
+	public void setSmsSendPolicy(Integer smsSendPolicy) {
+		this.smsSendPolicy = smsSendPolicy;
+		if(smsSendPolicy != null){
+			putQueryParameter("SmsSendPolicy", smsSendPolicy.toString());
+		}
 	}
 
 	public String getAndroidExtParameters() {
@@ -335,106 +142,438 @@ public class PushRequest extends RpcAcsRequest<PushResponse> {
 
 	public void setAndroidExtParameters(String androidExtParameters) {
 		this.androidExtParameters = androidExtParameters;
-		putQueryParameter("AndroidExtParameters", androidExtParameters);
+		if(androidExtParameters != null){
+			putQueryParameter("AndroidExtParameters", androidExtParameters);
+		}
+	}
+
+	public Integer getIOSBadge() {
+		return this.iOSBadge;
+	}
+
+	public void setIOSBadge(Integer iOSBadge) {
+		this.iOSBadge = iOSBadge;
+		if(iOSBadge != null){
+			putQueryParameter("iOSBadge", iOSBadge.toString());
+		}
+	}
+
+	public String getAndroidOpenType() {
+		return this.androidOpenType;
+	}
+
+	public void setAndroidOpenType(String androidOpenType) {
+		this.androidOpenType = androidOpenType;
+		if(androidOpenType != null){
+			putQueryParameter("AndroidOpenType", androidOpenType);
+		}
+	}
+
+	public String getTitle() {
+		return this.title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+		if(title != null){
+			putQueryParameter("Title", title);
+		}
+	}
+
+	public String getBody() {
+		return this.body;
+	}
+
+	public void setBody(String body) {
+		this.body = body;
+		if(body != null){
+			putQueryParameter("Body", body);
+		}
+	}
+
+	public String getDeviceType() {
+		return this.deviceType;
+	}
+
+	public void setDeviceType(String deviceType) {
+		this.deviceType = deviceType;
+		if(deviceType != null){
+			putQueryParameter("DeviceType", deviceType);
+		}
+	}
+
+	public String getPushTime() {
+		return this.pushTime;
+	}
+
+	public void setPushTime(String pushTime) {
+		this.pushTime = pushTime;
+		if(pushTime != null){
+			putQueryParameter("PushTime", pushTime);
+		}
+	}
+
+	public Integer getSmsDelaySecs() {
+		return this.smsDelaySecs;
+	}
+
+	public void setSmsDelaySecs(Integer smsDelaySecs) {
+		this.smsDelaySecs = smsDelaySecs;
+		if(smsDelaySecs != null){
+			putQueryParameter("SmsDelaySecs", smsDelaySecs.toString());
+		}
+	}
+
+	public String getAndroidPopupActivity() {
+		return this.androidPopupActivity;
+	}
+
+	public void setAndroidPopupActivity(String androidPopupActivity) {
+		this.androidPopupActivity = androidPopupActivity;
+		if(androidPopupActivity != null){
+			putQueryParameter("AndroidPopupActivity", androidPopupActivity);
+		}
+	}
+
+	public String getIOSRemindBody() {
+		return this.iOSRemindBody;
+	}
+
+	public void setIOSRemindBody(String iOSRemindBody) {
+		this.iOSRemindBody = iOSRemindBody;
+		if(iOSRemindBody != null){
+			putQueryParameter("iOSRemindBody", iOSRemindBody);
+		}
+	}
+
+	public String getBatchNumber() {
+		return this.batchNumber;
+	}
+
+	public void setBatchNumber(String batchNumber) {
+		this.batchNumber = batchNumber;
+		if(batchNumber != null){
+			putQueryParameter("BatchNumber", batchNumber);
+		}
+	}
+
+	public String getIOSExtParameters() {
+		return this.iOSExtParameters;
+	}
+
+	public void setIOSExtParameters(String iOSExtParameters) {
+		this.iOSExtParameters = iOSExtParameters;
+		if(iOSExtParameters != null){
+			putQueryParameter("iOSExtParameters", iOSExtParameters);
+		}
+	}
+
+	public String getAndroidNotifyType() {
+		return this.androidNotifyType;
+	}
+
+	public void setAndroidNotifyType(String androidNotifyType) {
+		this.androidNotifyType = androidNotifyType;
+		if(androidNotifyType != null){
+			putQueryParameter("AndroidNotifyType", androidNotifyType);
+		}
+	}
+
+	public String getAndroidPopupTitle() {
+		return this.androidPopupTitle;
+	}
+
+	public void setAndroidPopupTitle(String androidPopupTitle) {
+		this.androidPopupTitle = androidPopupTitle;
+		if(androidPopupTitle != null){
+			putQueryParameter("AndroidPopupTitle", androidPopupTitle);
+		}
+	}
+
+	public String getIOSMusic() {
+		return this.iOSMusic;
+	}
+
+	public void setIOSMusic(String iOSMusic) {
+		this.iOSMusic = iOSMusic;
+		if(iOSMusic != null){
+			putQueryParameter("iOSMusic", iOSMusic);
+		}
+	}
+
+	public String getIOSApnsEnv() {
+		return this.iOSApnsEnv;
+	}
+
+	public void setIOSApnsEnv(String iOSApnsEnv) {
+		this.iOSApnsEnv = iOSApnsEnv;
+		if(iOSApnsEnv != null){
+			putQueryParameter("iOSApnsEnv", iOSApnsEnv);
+		}
+	}
+
+	public Boolean getIOSMutableContent() {
+		return this.iOSMutableContent;
+	}
+
+	public void setIOSMutableContent(Boolean iOSMutableContent) {
+		this.iOSMutableContent = iOSMutableContent;
+		if(iOSMutableContent != null){
+			putQueryParameter("iOSMutableContent", iOSMutableContent.toString());
+		}
+	}
+
+	public Integer getAndroidNotificationBarPriority() {
+		return this.androidNotificationBarPriority;
+	}
+
+	public void setAndroidNotificationBarPriority(Integer androidNotificationBarPriority) {
+		this.androidNotificationBarPriority = androidNotificationBarPriority;
+		if(androidNotificationBarPriority != null){
+			putQueryParameter("AndroidNotificationBarPriority", androidNotificationBarPriority.toString());
+		}
+	}
+
+	public String getExpireTime() {
+		return this.expireTime;
+	}
+
+	public void setExpireTime(String expireTime) {
+		this.expireTime = expireTime;
+		if(expireTime != null){
+			putQueryParameter("ExpireTime", expireTime);
+		}
+	}
+
+	public String getSmsTemplateName() {
+		return this.smsTemplateName;
+	}
+
+	public void setSmsTemplateName(String smsTemplateName) {
+		this.smsTemplateName = smsTemplateName;
+		if(smsTemplateName != null){
+			putQueryParameter("SmsTemplateName", smsTemplateName);
+		}
+	}
+
+	public String getAndroidPopupBody() {
+		return this.androidPopupBody;
+	}
+
+	public void setAndroidPopupBody(String androidPopupBody) {
+		this.androidPopupBody = androidPopupBody;
+		if(androidPopupBody != null){
+			putQueryParameter("AndroidPopupBody", androidPopupBody);
+		}
+	}
+
+	public String getIOSNotificationCategory() {
+		return this.iOSNotificationCategory;
+	}
+
+	public void setIOSNotificationCategory(String iOSNotificationCategory) {
+		this.iOSNotificationCategory = iOSNotificationCategory;
+		if(iOSNotificationCategory != null){
+			putQueryParameter("iOSNotificationCategory", iOSNotificationCategory);
+		}
+	}
+
+	public Boolean getStoreOffline() {
+		return this.storeOffline;
+	}
+
+	public void setStoreOffline(Boolean storeOffline) {
+		this.storeOffline = storeOffline;
+		if(storeOffline != null){
+			putQueryParameter("StoreOffline", storeOffline.toString());
+		}
+	}
+
+	public Boolean getIOSSilentNotification() {
+		return this.iOSSilentNotification;
+	}
+
+	public void setIOSSilentNotification(Boolean iOSSilentNotification) {
+		this.iOSSilentNotification = iOSSilentNotification;
+		if(iOSSilentNotification != null){
+			putQueryParameter("iOSSilentNotification", iOSSilentNotification.toString());
+		}
+	}
+
+	public String getSmsParams() {
+		return this.smsParams;
+	}
+
+	public void setSmsParams(String smsParams) {
+		this.smsParams = smsParams;
+		if(smsParams != null){
+			putQueryParameter("SmsParams", smsParams);
+		}
+	}
+
+	public String getJobKey() {
+		return this.jobKey;
+	}
+
+	public void setJobKey(String jobKey) {
+		this.jobKey = jobKey;
+		if(jobKey != null){
+			putQueryParameter("JobKey", jobKey);
+		}
+	}
+
+	public String getTarget() {
+		return this.target;
+	}
+
+	public void setTarget(String target) {
+		this.target = target;
+		if(target != null){
+			putQueryParameter("Target", target);
+		}
+	}
+
+	public String getAndroidOpenUrl() {
+		return this.androidOpenUrl;
+	}
+
+	public void setAndroidOpenUrl(String androidOpenUrl) {
+		this.androidOpenUrl = androidOpenUrl;
+		if(androidOpenUrl != null){
+			putQueryParameter("AndroidOpenUrl", androidOpenUrl);
+		}
 	}
 
 	public Boolean getAndroidRemind() {
-		return androidRemind;
+		return this.androidRemind;
 	}
 
 	public void setAndroidRemind(Boolean androidRemind) {
 		this.androidRemind = androidRemind;
-		putQueryParameter("AndroidRemind", androidRemind);
+		if(androidRemind != null){
+			putQueryParameter("AndroidRemind", androidRemind.toString());
+		}
 	}
 
-	public String getiOSApnsEnv() {
-		return this.iOSApnsEnv;
+	public String getAndroidActivity() {
+		return this.androidActivity;
 	}
 
-	public void setiOSApnsEnv(String iOSApnsEnv) {
-		this.iOSApnsEnv = iOSApnsEnv;
-		putQueryParameter("iOSApnsEnv", iOSApnsEnv);
+	public void setAndroidActivity(String androidActivity) {
+		this.androidActivity = androidActivity;
+		if(androidActivity != null){
+			putQueryParameter("AndroidActivity", androidActivity);
+		}
 	}
 
-	public Boolean getiOSRemind() {
-		return this.iOSRemind;
+	public String getAndroidXiaoMiNotifyBody() {
+		return this.androidXiaoMiNotifyBody;
 	}
 
-	public void setiOSRemind(Boolean iOSRemind) {
-		this.iOSRemind = iOSRemind;
-		putQueryParameter("iOSRemind", iOSRemind);
+	public void setAndroidXiaoMiNotifyBody(String androidXiaoMiNotifyBody) {
+		this.androidXiaoMiNotifyBody = androidXiaoMiNotifyBody;
+		if(androidXiaoMiNotifyBody != null){
+			putQueryParameter("AndroidXiaoMiNotifyBody", androidXiaoMiNotifyBody);
+		}
 	}
 
-	public String getiOSRemindBody() {
-		return this.iOSRemindBody;
-	}
-
-	public void setiOSRemindBody(String iOSRemindBody) {
-		this.iOSRemindBody = iOSRemindBody;
-		putQueryParameter("iOSRemindBody", iOSRemindBody);
-	}
-
-	public String getiOSMusic() {
-		return this.iOSMusic;
-	}
-
-	public void setiOSMusic(String iOSMusic) {
-		this.iOSMusic = iOSMusic;
-		putQueryParameter("iOSMusic", iOSMusic);
-	}
-
-	public Integer getiOSBadge() {
-		return this.iOSBadge;
-	}
-
-	public void setiOSBadge(Integer iOSBadge) {
-		this.iOSBadge = iOSBadge;
-		putQueryParameter("iOSBadge", iOSBadge);
-	}
-
-	public Boolean getiOSSilentNotification() {
-		return this.iOSSilentNotification;
-	}
-
-	public void setiOSSilentNotification(Boolean iOSSilentNotification) {
-		this.iOSSilentNotification = iOSSilentNotification;
-		putQueryParameter("iOSSilentNotification", iOSSilentNotification);
-	}
-
-	public String getiOSSubtitle() {
+	public String getIOSSubtitle() {
 		return this.iOSSubtitle;
 	}
 
-	public void setiOSSubtitle(String iOSSubtitle) {
+	public void setIOSSubtitle(String iOSSubtitle) {
 		this.iOSSubtitle = iOSSubtitle;
-		putQueryParameter("iOSSubtitle", iOSSubtitle);
+		if(iOSSubtitle != null){
+			putQueryParameter("iOSSubtitle", iOSSubtitle);
+		}
 	}
 
-	public String getiOSNotificationCategory() {
-		return this.iOSNotificationCategory;
+	public String getSmsSignName() {
+		return this.smsSignName;
 	}
 
-	public void setiOSNotificationCategory(String iOSNotificationCategory) {
-		this.iOSNotificationCategory = iOSNotificationCategory;
-		putQueryParameter("iOSNotificationCategory", iOSNotificationCategory);
+	public void setSmsSignName(String smsSignName) {
+		this.smsSignName = smsSignName;
+		if(smsSignName != null){
+			putQueryParameter("SmsSignName", smsSignName);
+		}
 	}
 
-	public Boolean getiOSMutableContent() {
-		return this.iOSMutableContent;
+	public Boolean getIOSRemind() {
+		return this.iOSRemind;
 	}
 
-	public void setiOSMutableContent(Boolean iOSMutableContent) {
-		this.iOSMutableContent = iOSMutableContent;
-		putQueryParameter("iOSMutableContent", iOSMutableContent);
+	public void setIOSRemind(Boolean iOSRemind) {
+		this.iOSRemind = iOSRemind;
+		if(iOSRemind != null){
+			putQueryParameter("iOSRemind", iOSRemind.toString());
+		}
 	}
 
-	public String getiOSExtParameters() {
-		return this.iOSExtParameters;
+	public Long getAppKey() {
+		return this.appKey;
 	}
 
-	public void setiOSExtParameters(String iOSExtParameters) {
-		this.iOSExtParameters = iOSExtParameters;
-		putQueryParameter("iOSExtParameters", iOSExtParameters);
+	public void setAppKey(Long appKey) {
+		this.appKey = appKey;
+		if(appKey != null){
+			putQueryParameter("AppKey", appKey.toString());
+		}
+	}
+
+	public String getTargetValue() {
+		return this.targetValue;
+	}
+
+	public void setTargetValue(String targetValue) {
+		this.targetValue = targetValue;
+		if(targetValue != null){
+			putQueryParameter("TargetValue", targetValue);
+		}
+	}
+
+	public String getAndroidMusic() {
+		return this.androidMusic;
+	}
+
+	public void setAndroidMusic(String androidMusic) {
+		this.androidMusic = androidMusic;
+		if(androidMusic != null){
+			putQueryParameter("AndroidMusic", androidMusic);
+		}
+	}
+
+	public String getAndroidXiaoMiActivity() {
+		return this.androidXiaoMiActivity;
+	}
+
+	public void setAndroidXiaoMiActivity(String androidXiaoMiActivity) {
+		this.androidXiaoMiActivity = androidXiaoMiActivity;
+		if(androidXiaoMiActivity != null){
+			putQueryParameter("AndroidXiaoMiActivity", androidXiaoMiActivity);
+		}
+	}
+
+	public String getAndroidXiaoMiNotifyTitle() {
+		return this.androidXiaoMiNotifyTitle;
+	}
+
+	public void setAndroidXiaoMiNotifyTitle(String androidXiaoMiNotifyTitle) {
+		this.androidXiaoMiNotifyTitle = androidXiaoMiNotifyTitle;
+		if(androidXiaoMiNotifyTitle != null){
+			putQueryParameter("AndroidXiaoMiNotifyTitle", androidXiaoMiNotifyTitle);
+		}
+	}
+
+	public String getPushType() {
+		return this.pushType;
+	}
+
+	public void setPushType(String pushType) {
+		this.pushType = pushType;
+		if(pushType != null){
+			putQueryParameter("PushType", pushType);
+		}
 	}
 
 	@Override

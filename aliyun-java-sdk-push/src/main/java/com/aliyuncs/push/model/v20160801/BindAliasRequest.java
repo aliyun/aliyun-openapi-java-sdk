@@ -27,23 +27,14 @@ import com.aliyuncs.RpcAcsRequest;
 public class BindAliasRequest extends RpcAcsRequest<BindAliasResponse> {
 	
 	public BindAliasRequest() {
-		super("Push", "2016-08-01", "BindAlias");
+		super("Push", "2016-08-01", "BindAlias", "None");
 	}
-
-	private Long appKey;
 
 	private String aliasName;
 
+	private Long appKey;
+
 	private String deviceId;
-
-	public Long getAppKey() {
-		return this.appKey;
-	}
-
-	public void setAppKey(Long appKey) {
-		this.appKey = appKey;
-		putQueryParameter("AppKey", appKey);
-	}
 
 	public String getAliasName() {
 		return this.aliasName;
@@ -51,7 +42,20 @@ public class BindAliasRequest extends RpcAcsRequest<BindAliasResponse> {
 
 	public void setAliasName(String aliasName) {
 		this.aliasName = aliasName;
-		putQueryParameter("AliasName", aliasName);
+		if(aliasName != null){
+			putQueryParameter("AliasName", aliasName);
+		}
+	}
+
+	public Long getAppKey() {
+		return this.appKey;
+	}
+
+	public void setAppKey(Long appKey) {
+		this.appKey = appKey;
+		if(appKey != null){
+			putQueryParameter("AppKey", appKey.toString());
+		}
 	}
 
 	public String getDeviceId() {
@@ -60,7 +64,9 @@ public class BindAliasRequest extends RpcAcsRequest<BindAliasResponse> {
 
 	public void setDeviceId(String deviceId) {
 		this.deviceId = deviceId;
-		putQueryParameter("DeviceId", deviceId);
+		if(deviceId != null){
+			putQueryParameter("DeviceId", deviceId);
+		}
 	}
 
 	@Override

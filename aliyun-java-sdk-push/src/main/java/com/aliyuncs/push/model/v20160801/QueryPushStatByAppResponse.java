@@ -53,6 +53,8 @@ public class QueryPushStatByAppResponse extends AcsResponse {
 
 		private String time;
 
+		private Long acceptCount;
+
 		private Long sentCount;
 
 		private Long receivedCount;
@@ -61,12 +63,30 @@ public class QueryPushStatByAppResponse extends AcsResponse {
 
 		private Long deletedCount;
 
+		private Long smsSentCount;
+
+		private Long smsSkipCount;
+
+		private Long smsFailedCount;
+
+		private Long smsReceiveSuccessCount;
+
+		private Long smsReceiveFailedCount;
+
 		public String getTime() {
 			return this.time;
 		}
 
 		public void setTime(String time) {
 			this.time = time;
+		}
+
+		public Long getAcceptCount() {
+			return this.acceptCount;
+		}
+
+		public void setAcceptCount(Long acceptCount) {
+			this.acceptCount = acceptCount;
 		}
 
 		public Long getSentCount() {
@@ -99,6 +119,46 @@ public class QueryPushStatByAppResponse extends AcsResponse {
 
 		public void setDeletedCount(Long deletedCount) {
 			this.deletedCount = deletedCount;
+		}
+
+		public Long getSmsSentCount() {
+			return this.smsSentCount;
+		}
+
+		public void setSmsSentCount(Long smsSentCount) {
+			this.smsSentCount = smsSentCount;
+		}
+
+		public Long getSmsSkipCount() {
+			return this.smsSkipCount;
+		}
+
+		public void setSmsSkipCount(Long smsSkipCount) {
+			this.smsSkipCount = smsSkipCount;
+		}
+
+		public Long getSmsFailedCount() {
+			return this.smsFailedCount;
+		}
+
+		public void setSmsFailedCount(Long smsFailedCount) {
+			this.smsFailedCount = smsFailedCount;
+		}
+
+		public Long getSmsReceiveSuccessCount() {
+			return this.smsReceiveSuccessCount;
+		}
+
+		public void setSmsReceiveSuccessCount(Long smsReceiveSuccessCount) {
+			this.smsReceiveSuccessCount = smsReceiveSuccessCount;
+		}
+
+		public Long getSmsReceiveFailedCount() {
+			return this.smsReceiveFailedCount;
+		}
+
+		public void setSmsReceiveFailedCount(Long smsReceiveFailedCount) {
+			this.smsReceiveFailedCount = smsReceiveFailedCount;
 		}
 	}
 

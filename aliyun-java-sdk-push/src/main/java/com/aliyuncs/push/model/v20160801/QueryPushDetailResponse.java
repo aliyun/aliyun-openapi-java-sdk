@@ -92,11 +92,27 @@ public class QueryPushDetailResponse extends AcsResponse {
 
 	private String androidXiaoMiNotifyBody;
 
+	private String androidPopupActivity;
+
+	private String androidPopupTitle;
+
+	private String androidPopupBody;
+
 	private Integer androidNotificationBarType;
 
 	private Integer androidNotificationBarPriority;
 
 	private String androidExtParameters;
+
+	private String smsTemplateName;
+
+	private String smsSignName;
+
+	private String smsParams;
+
+	private Integer smsDelaySecs;
+
+	private Integer smsSendPolicy;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -218,75 +234,75 @@ public class QueryPushDetailResponse extends AcsResponse {
 		this.provinceId = provinceId;
 	}
 
-	public String getiOSApnsEnv() {
+	public String getIOSApnsEnv() {
 		return this.iOSApnsEnv;
 	}
 
-	public void setiOSApnsEnv(String iOSApnsEnv) {
+	public void setIOSApnsEnv(String iOSApnsEnv) {
 		this.iOSApnsEnv = iOSApnsEnv;
 	}
 
-	public Boolean getiOSRemind() {
+	public Boolean getIOSRemind() {
 		return this.iOSRemind;
 	}
 
-	public void setiOSRemind(Boolean iOSRemind) {
+	public void setIOSRemind(Boolean iOSRemind) {
 		this.iOSRemind = iOSRemind;
 	}
 
-	public String getiOSRemindBody() {
+	public String getIOSRemindBody() {
 		return this.iOSRemindBody;
 	}
 
-	public void setiOSRemindBody(String iOSRemindBody) {
+	public void setIOSRemindBody(String iOSRemindBody) {
 		this.iOSRemindBody = iOSRemindBody;
 	}
 
-	public Integer getiOSBadge() {
+	public Integer getIOSBadge() {
 		return this.iOSBadge;
 	}
 
-	public void setiOSBadge(Integer iOSBadge) {
+	public void setIOSBadge(Integer iOSBadge) {
 		this.iOSBadge = iOSBadge;
 	}
 
-	public String getiOSMusic() {
+	public String getIOSMusic() {
 		return this.iOSMusic;
 	}
 
-	public void setiOSMusic(String iOSMusic) {
+	public void setIOSMusic(String iOSMusic) {
 		this.iOSMusic = iOSMusic;
 	}
 
-	public String getiOSSubtitle() {
+	public String getIOSSubtitle() {
 		return this.iOSSubtitle;
 	}
 
-	public void setiOSSubtitle(String iOSSubtitle) {
+	public void setIOSSubtitle(String iOSSubtitle) {
 		this.iOSSubtitle = iOSSubtitle;
 	}
 
-	public String getiOSNotificationCategory() {
+	public String getIOSNotificationCategory() {
 		return this.iOSNotificationCategory;
 	}
 
-	public void setiOSNotificationCategory(String iOSNotificationCategory) {
+	public void setIOSNotificationCategory(String iOSNotificationCategory) {
 		this.iOSNotificationCategory = iOSNotificationCategory;
 	}
 
-	public Boolean getiOSMutableContent() {
+	public Boolean getIOSMutableContent() {
 		return this.iOSMutableContent;
 	}
 
-	public void setiOSMutableContent(Boolean iOSMutableContent) {
+	public void setIOSMutableContent(Boolean iOSMutableContent) {
 		this.iOSMutableContent = iOSMutableContent;
 	}
 
-	public String getiOSExtParameters() {
+	public String getIOSExtParameters() {
 		return this.iOSExtParameters;
 	}
 
-	public void setiOSExtParameters(String iOSExtParameters) {
+	public void setIOSExtParameters(String iOSExtParameters) {
 		this.iOSExtParameters = iOSExtParameters;
 	}
 
@@ -354,6 +370,30 @@ public class QueryPushDetailResponse extends AcsResponse {
 		this.androidXiaoMiNotifyBody = androidXiaoMiNotifyBody;
 	}
 
+	public String getAndroidPopupActivity() {
+		return this.androidPopupActivity;
+	}
+
+	public void setAndroidPopupActivity(String androidPopupActivity) {
+		this.androidPopupActivity = androidPopupActivity;
+	}
+
+	public String getAndroidPopupTitle() {
+		return this.androidPopupTitle;
+	}
+
+	public void setAndroidPopupTitle(String androidPopupTitle) {
+		this.androidPopupTitle = androidPopupTitle;
+	}
+
+	public String getAndroidPopupBody() {
+		return this.androidPopupBody;
+	}
+
+	public void setAndroidPopupBody(String androidPopupBody) {
+		this.androidPopupBody = androidPopupBody;
+	}
+
 	public Integer getAndroidNotificationBarType() {
 		return this.androidNotificationBarType;
 	}
@@ -376,6 +416,46 @@ public class QueryPushDetailResponse extends AcsResponse {
 
 	public void setAndroidExtParameters(String androidExtParameters) {
 		this.androidExtParameters = androidExtParameters;
+	}
+
+	public String getSmsTemplateName() {
+		return this.smsTemplateName;
+	}
+
+	public void setSmsTemplateName(String smsTemplateName) {
+		this.smsTemplateName = smsTemplateName;
+	}
+
+	public String getSmsSignName() {
+		return this.smsSignName;
+	}
+
+	public void setSmsSignName(String smsSignName) {
+		this.smsSignName = smsSignName;
+	}
+
+	public String getSmsParams() {
+		return this.smsParams;
+	}
+
+	public void setSmsParams(String smsParams) {
+		this.smsParams = smsParams;
+	}
+
+	public Integer getSmsDelaySecs() {
+		return this.smsDelaySecs;
+	}
+
+	public void setSmsDelaySecs(Integer smsDelaySecs) {
+		this.smsDelaySecs = smsDelaySecs;
+	}
+
+	public Integer getSmsSendPolicy() {
+		return this.smsSendPolicy;
+	}
+
+	public void setSmsSendPolicy(Integer smsSendPolicy) {
+		this.smsSendPolicy = smsSendPolicy;
 	}
 
 	@Override
