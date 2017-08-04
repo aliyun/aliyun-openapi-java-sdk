@@ -27,33 +27,24 @@ import com.aliyuncs.RpcAcsRequest;
 public class StopMixStreamsServiceRequest extends RpcAcsRequest<StopMixStreamsServiceResponse> {
 	
 	public StopMixStreamsServiceRequest() {
-		super("Cdn", "2014-11-11", "StopMixStreamsService");
+		super("Cdn", "2014-11-11", "StopMixStreamsService", "None");
 	}
-
-	private Long ownerId;
 
 	private String securityToken;
 
 	private String mainDomainName;
 
-	private String mainAppName;
-
-	private String mainStreamName;
+	private String mixStreamName;
 
 	private String mixDomainName;
 
+	private Long ownerId;
+
+	private String mainAppName;
+
 	private String mixAppName;
 
-	private String mixStreamName;
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
-	}
+	private String mainStreamName;
 
 	public String getSecurityToken() {
 		return this.securityToken;
@@ -61,7 +52,9 @@ public class StopMixStreamsServiceRequest extends RpcAcsRequest<StopMixStreamsSe
 
 	public void setSecurityToken(String securityToken) {
 		this.securityToken = securityToken;
-		putQueryParameter("SecurityToken", securityToken);
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
 	}
 
 	public String getMainDomainName() {
@@ -70,43 +63,9 @@ public class StopMixStreamsServiceRequest extends RpcAcsRequest<StopMixStreamsSe
 
 	public void setMainDomainName(String mainDomainName) {
 		this.mainDomainName = mainDomainName;
-		putQueryParameter("MainDomainName", mainDomainName);
-	}
-
-	public String getMainAppName() {
-		return this.mainAppName;
-	}
-
-	public void setMainAppName(String mainAppName) {
-		this.mainAppName = mainAppName;
-		putQueryParameter("MainAppName", mainAppName);
-	}
-
-	public String getMainStreamName() {
-		return this.mainStreamName;
-	}
-
-	public void setMainStreamName(String mainStreamName) {
-		this.mainStreamName = mainStreamName;
-		putQueryParameter("MainStreamName", mainStreamName);
-	}
-
-	public String getMixDomainName() {
-		return this.mixDomainName;
-	}
-
-	public void setMixDomainName(String mixDomainName) {
-		this.mixDomainName = mixDomainName;
-		putQueryParameter("MixDomainName", mixDomainName);
-	}
-
-	public String getMixAppName() {
-		return this.mixAppName;
-	}
-
-	public void setMixAppName(String mixAppName) {
-		this.mixAppName = mixAppName;
-		putQueryParameter("MixAppName", mixAppName);
+		if(mainDomainName != null){
+			putQueryParameter("MainDomainName", mainDomainName);
+		}
 	}
 
 	public String getMixStreamName() {
@@ -115,7 +74,64 @@ public class StopMixStreamsServiceRequest extends RpcAcsRequest<StopMixStreamsSe
 
 	public void setMixStreamName(String mixStreamName) {
 		this.mixStreamName = mixStreamName;
-		putQueryParameter("MixStreamName", mixStreamName);
+		if(mixStreamName != null){
+			putQueryParameter("MixStreamName", mixStreamName);
+		}
+	}
+
+	public String getMixDomainName() {
+		return this.mixDomainName;
+	}
+
+	public void setMixDomainName(String mixDomainName) {
+		this.mixDomainName = mixDomainName;
+		if(mixDomainName != null){
+			putQueryParameter("MixDomainName", mixDomainName);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getMainAppName() {
+		return this.mainAppName;
+	}
+
+	public void setMainAppName(String mainAppName) {
+		this.mainAppName = mainAppName;
+		if(mainAppName != null){
+			putQueryParameter("MainAppName", mainAppName);
+		}
+	}
+
+	public String getMixAppName() {
+		return this.mixAppName;
+	}
+
+	public void setMixAppName(String mixAppName) {
+		this.mixAppName = mixAppName;
+		if(mixAppName != null){
+			putQueryParameter("MixAppName", mixAppName);
+		}
+	}
+
+	public String getMainStreamName() {
+		return this.mainStreamName;
+	}
+
+	public void setMainStreamName(String mainStreamName) {
+		this.mainStreamName = mainStreamName;
+		if(mainStreamName != null){
+			putQueryParameter("MainStreamName", mainStreamName);
+		}
 	}
 
 	@Override

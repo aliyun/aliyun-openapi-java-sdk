@@ -27,10 +27,8 @@ import com.aliyuncs.RpcAcsRequest;
 public class SetUserAgentAcessRestrictionRequest extends RpcAcsRequest<SetUserAgentAcessRestrictionResponse> {
 	
 	public SetUserAgentAcessRestrictionRequest() {
-		super("Cdn", "2014-11-11", "SetUserAgentAcessRestriction");
+		super("Cdn", "2014-11-11", "SetUserAgentAcessRestriction", "None");
 	}
-
-	private Long ownerId;
 
 	private String securityToken;
 
@@ -38,16 +36,9 @@ public class SetUserAgentAcessRestrictionRequest extends RpcAcsRequest<SetUserAg
 
 	private String userAgent;
 
+	private Long ownerId;
+
 	private String type;
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
-	}
 
 	public String getSecurityToken() {
 		return this.securityToken;
@@ -55,7 +46,9 @@ public class SetUserAgentAcessRestrictionRequest extends RpcAcsRequest<SetUserAg
 
 	public void setSecurityToken(String securityToken) {
 		this.securityToken = securityToken;
-		putQueryParameter("SecurityToken", securityToken);
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
 	}
 
 	public String getDomainName() {
@@ -64,7 +57,9 @@ public class SetUserAgentAcessRestrictionRequest extends RpcAcsRequest<SetUserAg
 
 	public void setDomainName(String domainName) {
 		this.domainName = domainName;
-		putQueryParameter("DomainName", domainName);
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
+		}
 	}
 
 	public String getUserAgent() {
@@ -73,7 +68,20 @@ public class SetUserAgentAcessRestrictionRequest extends RpcAcsRequest<SetUserAg
 
 	public void setUserAgent(String userAgent) {
 		this.userAgent = userAgent;
-		putQueryParameter("UserAgent", userAgent);
+		if(userAgent != null){
+			putQueryParameter("UserAgent", userAgent);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
 	}
 
 	public String getType() {
@@ -82,7 +90,9 @@ public class SetUserAgentAcessRestrictionRequest extends RpcAcsRequest<SetUserAg
 
 	public void setType(String type) {
 		this.type = type;
-		putQueryParameter("Type", type);
+		if(type != null){
+			putQueryParameter("Type", type);
+		}
 	}
 
 	@Override

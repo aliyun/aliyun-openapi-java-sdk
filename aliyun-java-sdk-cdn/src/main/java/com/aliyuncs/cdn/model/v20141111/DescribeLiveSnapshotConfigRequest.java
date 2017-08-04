@@ -27,32 +27,34 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeLiveSnapshotConfigRequest extends RpcAcsRequest<DescribeLiveSnapshotConfigResponse> {
 	
 	public DescribeLiveSnapshotConfigRequest() {
-		super("Cdn", "2014-11-11", "DescribeLiveSnapshotConfig");
+		super("Cdn", "2014-11-11", "DescribeLiveSnapshotConfig", "None");
 	}
 
-	private Long ownerId;
+	private String appName;
 
 	private String securityToken;
 
 	private String domainName;
 
-	private String appName;
+	private Integer pageSize;
 
-	private String streamName;
+	private Long ownerId;
 
 	private Integer pageNum;
 
-	private Integer pageSize;
+	private String streamName;
 
 	private String order;
 
-	public Long getOwnerId() {
-		return this.ownerId;
+	public String getAppName() {
+		return this.appName;
 	}
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
+	public void setAppName(String appName) {
+		this.appName = appName;
+		if(appName != null){
+			putQueryParameter("AppName", appName);
+		}
 	}
 
 	public String getSecurityToken() {
@@ -61,7 +63,9 @@ public class DescribeLiveSnapshotConfigRequest extends RpcAcsRequest<DescribeLiv
 
 	public void setSecurityToken(String securityToken) {
 		this.securityToken = securityToken;
-		putQueryParameter("SecurityToken", securityToken);
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
 	}
 
 	public String getDomainName() {
@@ -70,34 +74,9 @@ public class DescribeLiveSnapshotConfigRequest extends RpcAcsRequest<DescribeLiv
 
 	public void setDomainName(String domainName) {
 		this.domainName = domainName;
-		putQueryParameter("DomainName", domainName);
-	}
-
-	public String getAppName() {
-		return this.appName;
-	}
-
-	public void setAppName(String appName) {
-		this.appName = appName;
-		putQueryParameter("AppName", appName);
-	}
-
-	public String getStreamName() {
-		return this.streamName;
-	}
-
-	public void setStreamName(String streamName) {
-		this.streamName = streamName;
-		putQueryParameter("StreamName", streamName);
-	}
-
-	public Integer getPageNum() {
-		return this.pageNum;
-	}
-
-	public void setPageNum(Integer pageNum) {
-		this.pageNum = pageNum;
-		putQueryParameter("PageNum", pageNum);
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
+		}
 	}
 
 	public Integer getPageSize() {
@@ -106,7 +85,42 @@ public class DescribeLiveSnapshotConfigRequest extends RpcAcsRequest<DescribeLiv
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
-		putQueryParameter("PageSize", pageSize);
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public Integer getPageNum() {
+		return this.pageNum;
+	}
+
+	public void setPageNum(Integer pageNum) {
+		this.pageNum = pageNum;
+		if(pageNum != null){
+			putQueryParameter("PageNum", pageNum.toString());
+		}
+	}
+
+	public String getStreamName() {
+		return this.streamName;
+	}
+
+	public void setStreamName(String streamName) {
+		this.streamName = streamName;
+		if(streamName != null){
+			putQueryParameter("StreamName", streamName);
+		}
 	}
 
 	public String getOrder() {
@@ -115,7 +129,9 @@ public class DescribeLiveSnapshotConfigRequest extends RpcAcsRequest<DescribeLiv
 
 	public void setOrder(String order) {
 		this.order = order;
-		putQueryParameter("Order", order);
+		if(order != null){
+			putQueryParameter("Order", order);
+		}
 	}
 
 	@Override

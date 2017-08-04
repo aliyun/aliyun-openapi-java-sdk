@@ -27,10 +27,10 @@ import com.aliyuncs.RpcAcsRequest;
 public class SetHttpHeaderConfigRequest extends RpcAcsRequest<SetHttpHeaderConfigResponse> {
 	
 	public SetHttpHeaderConfigRequest() {
-		super("Cdn", "2014-11-11", "SetHttpHeaderConfig");
+		super("Cdn", "2014-11-11", "SetHttpHeaderConfig", "None");
 	}
 
-	private Long ownerId;
+	private String headerValue;
 
 	private String securityToken;
 
@@ -38,15 +38,17 @@ public class SetHttpHeaderConfigRequest extends RpcAcsRequest<SetHttpHeaderConfi
 
 	private String headerKey;
 
-	private String headerValue;
+	private Long ownerId;
 
-	public Long getOwnerId() {
-		return this.ownerId;
+	public String getHeaderValue() {
+		return this.headerValue;
 	}
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
+	public void setHeaderValue(String headerValue) {
+		this.headerValue = headerValue;
+		if(headerValue != null){
+			putQueryParameter("HeaderValue", headerValue);
+		}
 	}
 
 	public String getSecurityToken() {
@@ -55,7 +57,9 @@ public class SetHttpHeaderConfigRequest extends RpcAcsRequest<SetHttpHeaderConfi
 
 	public void setSecurityToken(String securityToken) {
 		this.securityToken = securityToken;
-		putQueryParameter("SecurityToken", securityToken);
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
 	}
 
 	public String getDomainName() {
@@ -64,7 +68,9 @@ public class SetHttpHeaderConfigRequest extends RpcAcsRequest<SetHttpHeaderConfi
 
 	public void setDomainName(String domainName) {
 		this.domainName = domainName;
-		putQueryParameter("DomainName", domainName);
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
+		}
 	}
 
 	public String getHeaderKey() {
@@ -73,16 +79,20 @@ public class SetHttpHeaderConfigRequest extends RpcAcsRequest<SetHttpHeaderConfi
 
 	public void setHeaderKey(String headerKey) {
 		this.headerKey = headerKey;
-		putQueryParameter("HeaderKey", headerKey);
+		if(headerKey != null){
+			putQueryParameter("HeaderKey", headerKey);
+		}
 	}
 
-	public String getHeaderValue() {
-		return this.headerValue;
+	public Long getOwnerId() {
+		return this.ownerId;
 	}
 
-	public void setHeaderValue(String headerValue) {
-		this.headerValue = headerValue;
-		putQueryParameter("HeaderValue", headerValue);
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
 	}
 
 	@Override

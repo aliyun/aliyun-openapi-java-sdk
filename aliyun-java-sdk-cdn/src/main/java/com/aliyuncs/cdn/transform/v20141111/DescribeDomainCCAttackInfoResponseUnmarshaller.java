@@ -36,27 +36,27 @@ public class DescribeDomainCCAttackInfoResponseUnmarshaller {
 		describeDomainCCAttackInfoResponse.setStartTime(context.stringValue("DescribeDomainCCAttackInfoResponse.StartTime"));
 		describeDomainCCAttackInfoResponse.setEndTime(context.stringValue("DescribeDomainCCAttackInfoResponse.EndTime"));
 
-		List<AttackIpDatas> attackIpDataListList = new ArrayList<AttackIpDatas>();
+		List<AttackIpDatas> attackIpDataList = new ArrayList<AttackIpDatas>();
 		for (int i = 0; i < context.lengthValue("DescribeDomainCCAttackInfoResponse.AttackIpDataList.Length"); i++) {
 			AttackIpDatas attackIpDatas = new AttackIpDatas();
 			attackIpDatas.setIp(context.stringValue("DescribeDomainCCAttackInfoResponse.AttackIpDataList["+ i +"].Ip"));
 			attackIpDatas.setAttackCount(context.stringValue("DescribeDomainCCAttackInfoResponse.AttackIpDataList["+ i +"].AttackCount"));
 			attackIpDatas.setResult(context.stringValue("DescribeDomainCCAttackInfoResponse.AttackIpDataList["+ i +"].Result"));
 
-			attackIpDataListList.add(attackIpDatas);
+			attackIpDataList.add(attackIpDatas);
 		}
-		describeDomainCCAttackInfoResponse.setAttackIpDataList(attackIpDataListList);
+		describeDomainCCAttackInfoResponse.setAttackIpDataList(attackIpDataList);
 
-		List<AttackedUrlDatas> attackedUrlDataListList = new ArrayList<AttackedUrlDatas>();
+		List<AttackedUrlDatas> attackedUrlDataList = new ArrayList<AttackedUrlDatas>();
 		for (int i = 0; i < context.lengthValue("DescribeDomainCCAttackInfoResponse.AttackedUrlDataList.Length"); i++) {
 			AttackedUrlDatas attackedUrlDatas = new AttackedUrlDatas();
 			attackedUrlDatas.setUrl(context.stringValue("DescribeDomainCCAttackInfoResponse.AttackedUrlDataList["+ i +"].Url"));
 			attackedUrlDatas.setAttackCount(context.stringValue("DescribeDomainCCAttackInfoResponse.AttackedUrlDataList["+ i +"].AttackCount"));
 			attackedUrlDatas.setResult(context.stringValue("DescribeDomainCCAttackInfoResponse.AttackedUrlDataList["+ i +"].Result"));
 
-			attackedUrlDataListList.add(attackedUrlDatas);
+			attackedUrlDataList.add(attackedUrlDatas);
 		}
-		describeDomainCCAttackInfoResponse.setAttackedUrlDataList(attackedUrlDataListList);
+		describeDomainCCAttackInfoResponse.setAttackedUrlDataList(attackedUrlDataList);
 	 
 	 	return describeDomainCCAttackInfoResponse;
 	}

@@ -36,15 +36,15 @@ public class DescribeDomainPvDataResponseUnmarshaller {
 		describeDomainPvDataResponse.setStartTime(context.stringValue("DescribeDomainPvDataResponse.StartTime"));
 		describeDomainPvDataResponse.setEndTime(context.stringValue("DescribeDomainPvDataResponse.EndTime"));
 
-		List<UsageData> pvDataIntervalList = new ArrayList<UsageData>();
+		List<UsageData> pvDataInterval = new ArrayList<UsageData>();
 		for (int i = 0; i < context.lengthValue("DescribeDomainPvDataResponse.PvDataInterval.Length"); i++) {
 			UsageData usageData = new UsageData();
 			usageData.setTimeStamp(context.stringValue("DescribeDomainPvDataResponse.PvDataInterval["+ i +"].TimeStamp"));
 			usageData.setValue(context.stringValue("DescribeDomainPvDataResponse.PvDataInterval["+ i +"].Value"));
 
-			pvDataIntervalList.add(usageData);
+			pvDataInterval.add(usageData);
 		}
-		describeDomainPvDataResponse.setPvDataInterval(pvDataIntervalList);
+		describeDomainPvDataResponse.setPvDataInterval(pvDataInterval);
 	 
 	 	return describeDomainPvDataResponse;
 	}

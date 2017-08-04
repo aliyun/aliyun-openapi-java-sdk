@@ -27,22 +27,24 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeCdnTypesRequest extends RpcAcsRequest<DescribeCdnTypesResponse> {
 	
 	public DescribeCdnTypesRequest() {
-		super("Cdn", "2014-11-11", "DescribeCdnTypes");
+		super("Cdn", "2014-11-11", "DescribeCdnTypes", "None");
 	}
-
-	private Long ownerId;
-
-	private String ownerAccount;
 
 	private String securityToken;
 
-	public Long getOwnerId() {
-		return this.ownerId;
+	private String ownerAccount;
+
+	private Long ownerId;
+
+	public String getSecurityToken() {
+		return this.securityToken;
 	}
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
+	public void setSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
 	}
 
 	public String getOwnerAccount() {
@@ -51,16 +53,20 @@ public class DescribeCdnTypesRequest extends RpcAcsRequest<DescribeCdnTypesRespo
 
 	public void setOwnerAccount(String ownerAccount) {
 		this.ownerAccount = ownerAccount;
-		putQueryParameter("OwnerAccount", ownerAccount);
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
 	}
 
-	public String getSecurityToken() {
-		return this.securityToken;
+	public Long getOwnerId() {
+		return this.ownerId;
 	}
 
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		putQueryParameter("SecurityToken", securityToken);
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
 	}
 
 	@Override

@@ -27,23 +27,14 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeL2VipsByDomainRequest extends RpcAcsRequest<DescribeL2VipsByDomainResponse> {
 	
 	public DescribeL2VipsByDomainRequest() {
-		super("Cdn", "2014-11-11", "DescribeL2VipsByDomain");
+		super("Cdn", "2014-11-11", "DescribeL2VipsByDomain", "None");
 	}
-
-	private Long ownerId;
 
 	private String securityToken;
 
 	private String domainName;
 
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
-	}
+	private Long ownerId;
 
 	public String getSecurityToken() {
 		return this.securityToken;
@@ -51,7 +42,9 @@ public class DescribeL2VipsByDomainRequest extends RpcAcsRequest<DescribeL2VipsB
 
 	public void setSecurityToken(String securityToken) {
 		this.securityToken = securityToken;
-		putQueryParameter("SecurityToken", securityToken);
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
 	}
 
 	public String getDomainName() {
@@ -60,7 +53,20 @@ public class DescribeL2VipsByDomainRequest extends RpcAcsRequest<DescribeL2VipsB
 
 	public void setDomainName(String domainName) {
 		this.domainName = domainName;
-		putQueryParameter("DomainName", domainName);
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
 	}
 
 	@Override

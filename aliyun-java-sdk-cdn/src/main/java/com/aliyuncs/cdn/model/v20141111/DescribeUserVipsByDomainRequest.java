@@ -27,10 +27,8 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeUserVipsByDomainRequest extends RpcAcsRequest<DescribeUserVipsByDomainResponse> {
 	
 	public DescribeUserVipsByDomainRequest() {
-		super("Cdn", "2014-11-11", "DescribeUserVipsByDomain");
+		super("Cdn", "2014-11-11", "DescribeUserVipsByDomain", "None");
 	}
-
-	private Long ownerId;
 
 	private String securityToken;
 
@@ -38,14 +36,7 @@ public class DescribeUserVipsByDomainRequest extends RpcAcsRequest<DescribeUserV
 
 	private String available;
 
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
-	}
+	private Long ownerId;
 
 	public String getSecurityToken() {
 		return this.securityToken;
@@ -53,7 +44,9 @@ public class DescribeUserVipsByDomainRequest extends RpcAcsRequest<DescribeUserV
 
 	public void setSecurityToken(String securityToken) {
 		this.securityToken = securityToken;
-		putQueryParameter("SecurityToken", securityToken);
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
 	}
 
 	public String getDomainName() {
@@ -62,7 +55,9 @@ public class DescribeUserVipsByDomainRequest extends RpcAcsRequest<DescribeUserV
 
 	public void setDomainName(String domainName) {
 		this.domainName = domainName;
-		putQueryParameter("DomainName", domainName);
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
+		}
 	}
 
 	public String getAvailable() {
@@ -71,7 +66,20 @@ public class DescribeUserVipsByDomainRequest extends RpcAcsRequest<DescribeUserV
 
 	public void setAvailable(String available) {
 		this.available = available;
-		putQueryParameter("Available", available);
+		if(available != null){
+			putQueryParameter("Available", available);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
 	}
 
 	@Override

@@ -27,26 +27,28 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeOneMinuteDataRequest extends RpcAcsRequest<DescribeOneMinuteDataResponse> {
 	
 	public DescribeOneMinuteDataRequest() {
-		super("Cdn", "2014-11-11", "DescribeOneMinuteData");
+		super("Cdn", "2014-11-11", "DescribeOneMinuteData", "None");
 	}
-
-	private Long ownerId;
-
-	private String resourceOwnerAccount;
 
 	private Long resourceOwnerId;
 
-	private String domainName;
+	private String resourceOwnerAccount;
 
 	private String dataTime;
 
-	public Long getOwnerId() {
-		return this.ownerId;
+	private String domainName;
+
+	private Long ownerId;
+
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
 	}
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
 	}
 
 	public String getResourceOwnerAccount() {
@@ -55,25 +57,9 @@ public class DescribeOneMinuteDataRequest extends RpcAcsRequest<DescribeOneMinut
 
 	public void setResourceOwnerAccount(String resourceOwnerAccount) {
 		this.resourceOwnerAccount = resourceOwnerAccount;
-		putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-	}
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", resourceOwnerId);
-	}
-
-	public String getDomainName() {
-		return this.domainName;
-	}
-
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
-		putQueryParameter("DomainName", domainName);
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
 	}
 
 	public String getDataTime() {
@@ -82,7 +68,31 @@ public class DescribeOneMinuteDataRequest extends RpcAcsRequest<DescribeOneMinut
 
 	public void setDataTime(String dataTime) {
 		this.dataTime = dataTime;
-		putQueryParameter("DataTime", dataTime);
+		if(dataTime != null){
+			putQueryParameter("DataTime", dataTime);
+		}
+	}
+
+	public String getDomainName() {
+		return this.domainName;
+	}
+
+	public void setDomainName(String domainName) {
+		this.domainName = domainName;
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
 	}
 
 	@Override

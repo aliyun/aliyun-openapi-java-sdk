@@ -117,6 +117,8 @@ public class DescribeDomainHttpCodeDataResponse extends AcsResponse {
 
 			private String proportion;
 
+			private String count;
+
 			public String getCode() {
 				return this.code;
 			}
@@ -131,6 +133,14 @@ public class DescribeDomainHttpCodeDataResponse extends AcsResponse {
 
 			public void setProportion(String proportion) {
 				this.proportion = proportion;
+			}
+
+			public String getCount() {
+				return this.count;
+			}
+
+			public void setCount(String count) {
+				this.count = count;
 			}
 		}
 	}

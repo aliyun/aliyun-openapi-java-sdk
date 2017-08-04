@@ -27,23 +27,14 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifyCdnServiceRequest extends RpcAcsRequest<ModifyCdnServiceResponse> {
 	
 	public ModifyCdnServiceRequest() {
-		super("Cdn", "2014-11-11", "ModifyCdnService");
+		super("Cdn", "2014-11-11", "ModifyCdnService", "None");
 	}
-
-	private Long ownerId;
 
 	private String securityToken;
 
 	private String internetChargeType;
 
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
-	}
+	private Long ownerId;
 
 	public String getSecurityToken() {
 		return this.securityToken;
@@ -51,7 +42,9 @@ public class ModifyCdnServiceRequest extends RpcAcsRequest<ModifyCdnServiceRespo
 
 	public void setSecurityToken(String securityToken) {
 		this.securityToken = securityToken;
-		putQueryParameter("SecurityToken", securityToken);
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
 	}
 
 	public String getInternetChargeType() {
@@ -60,7 +53,20 @@ public class ModifyCdnServiceRequest extends RpcAcsRequest<ModifyCdnServiceRespo
 
 	public void setInternetChargeType(String internetChargeType) {
 		this.internetChargeType = internetChargeType;
-		putQueryParameter("InternetChargeType", internetChargeType);
+		if(internetChargeType != null){
+			putQueryParameter("InternetChargeType", internetChargeType);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
 	}
 
 	@Override

@@ -27,24 +27,26 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeleteLiveAppSnapshotConfigRequest extends RpcAcsRequest<DeleteLiveAppSnapshotConfigResponse> {
 	
 	public DeleteLiveAppSnapshotConfigRequest() {
-		super("Cdn", "2014-11-11", "DeleteLiveAppSnapshotConfig");
+		super("Cdn", "2014-11-11", "DeleteLiveAppSnapshotConfig", "None");
 	}
 
-	private Long ownerId;
+	private String appName;
 
 	private String securityToken;
 
 	private String domainName;
 
-	private String appName;
+	private Long ownerId;
 
-	public Long getOwnerId() {
-		return this.ownerId;
+	public String getAppName() {
+		return this.appName;
 	}
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
+	public void setAppName(String appName) {
+		this.appName = appName;
+		if(appName != null){
+			putQueryParameter("AppName", appName);
+		}
 	}
 
 	public String getSecurityToken() {
@@ -53,7 +55,9 @@ public class DeleteLiveAppSnapshotConfigRequest extends RpcAcsRequest<DeleteLive
 
 	public void setSecurityToken(String securityToken) {
 		this.securityToken = securityToken;
-		putQueryParameter("SecurityToken", securityToken);
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
 	}
 
 	public String getDomainName() {
@@ -62,16 +66,20 @@ public class DeleteLiveAppSnapshotConfigRequest extends RpcAcsRequest<DeleteLive
 
 	public void setDomainName(String domainName) {
 		this.domainName = domainName;
-		putQueryParameter("DomainName", domainName);
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
+		}
 	}
 
-	public String getAppName() {
-		return this.appName;
+	public Long getOwnerId() {
+		return this.ownerId;
 	}
 
-	public void setAppName(String appName) {
-		this.appName = appName;
-		putQueryParameter("AppName", appName);
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
 	}
 
 	@Override

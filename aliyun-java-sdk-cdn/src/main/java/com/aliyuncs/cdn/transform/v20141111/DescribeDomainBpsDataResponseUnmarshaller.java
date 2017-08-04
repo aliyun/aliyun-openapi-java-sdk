@@ -23,6 +23,7 @@ import java.util.List;
 
 import com.aliyuncs.cdn.model.v20141111.DescribeDomainBpsDataResponse;
 import com.aliyuncs.cdn.model.v20141111.DescribeDomainBpsDataResponse.DataModule;
+import com.aliyuncs.cdn.model.v20141111.DescribeDomainBpsDataResponse.DataModule1;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -40,7 +41,7 @@ public class DescribeDomainBpsDataResponseUnmarshaller {
 		describeDomainBpsDataResponse.setLocationName(context.stringValue("DescribeDomainBpsDataResponse.LocationName"));
 		describeDomainBpsDataResponse.setIspName(context.stringValue("DescribeDomainBpsDataResponse.IspName"));
 
-		List<DataModule> bpsDataPerIntervalList = new ArrayList<DataModule>();
+		List<DataModule> bpsDataPerInterval = new ArrayList<DataModule>();
 		for (int i = 0; i < context.lengthValue("DescribeDomainBpsDataResponse.BpsDataPerInterval.Length"); i++) {
 			DataModule dataModule = new DataModule();
 			dataModule.setTimeStamp(context.stringValue("DescribeDomainBpsDataResponse.BpsDataPerInterval["+ i +"].TimeStamp"));
@@ -57,19 +58,19 @@ public class DescribeDomainBpsDataResponseUnmarshaller {
 			dataModule.setDomesticL2Value(context.stringValue("DescribeDomainBpsDataResponse.BpsDataPerInterval["+ i +"].DomesticL2Value"));
 			dataModule.setOverseasL2Value(context.stringValue("DescribeDomainBpsDataResponse.BpsDataPerInterval["+ i +"].OverseasL2Value"));
 
-			bpsDataPerIntervalList.add(dataModule);
+			bpsDataPerInterval.add(dataModule);
 		}
-		describeDomainBpsDataResponse.setBpsDataPerInterval(bpsDataPerIntervalList);
+		describeDomainBpsDataResponse.setBpsDataPerInterval(bpsDataPerInterval);
 
-		List<DataModule> supplyBpsDatasList = new ArrayList<DataModule>();
+		List<DataModule1> supplyBpsDatas = new ArrayList<DataModule1>();
 		for (int i = 0; i < context.lengthValue("DescribeDomainBpsDataResponse.SupplyBpsDatas.Length"); i++) {
-			DataModule dataModule = new DataModule();
-			dataModule.setTimeStamp(context.stringValue("DescribeDomainBpsDataResponse.SupplyBpsDatas["+ i +"].TimeStamp"));
-			dataModule.setValue(context.stringValue("DescribeDomainBpsDataResponse.SupplyBpsDatas["+ i +"].Value"));
+			DataModule1 dataModule1 = new DataModule1();
+			dataModule1.setTimeStamp(context.stringValue("DescribeDomainBpsDataResponse.SupplyBpsDatas["+ i +"].TimeStamp"));
+			dataModule1.setValue(context.stringValue("DescribeDomainBpsDataResponse.SupplyBpsDatas["+ i +"].Value"));
 
-			supplyBpsDatasList.add(dataModule);
+			supplyBpsDatas.add(dataModule1);
 		}
-		describeDomainBpsDataResponse.setSupplyBpsDatas(supplyBpsDatasList);
+		describeDomainBpsDataResponse.setSupplyBpsDatas(supplyBpsDatas);
 	 
 	 	return describeDomainBpsDataResponse;
 	}

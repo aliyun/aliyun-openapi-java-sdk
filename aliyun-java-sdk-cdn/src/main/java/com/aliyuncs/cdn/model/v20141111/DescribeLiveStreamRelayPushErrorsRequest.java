@@ -27,26 +27,28 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeLiveStreamRelayPushErrorsRequest extends RpcAcsRequest<DescribeLiveStreamRelayPushErrorsResponse> {
 	
 	public DescribeLiveStreamRelayPushErrorsRequest() {
-		super("Cdn", "2014-11-11", "DescribeLiveStreamRelayPushErrors");
+		super("Cdn", "2014-11-11", "DescribeLiveStreamRelayPushErrors", "None");
 	}
-
-	private Long ownerId;
-
-	private String securityToken;
 
 	private String relayDomain;
 
-	private String startTime;
+	private String securityToken;
 
 	private String endTime;
 
-	public Long getOwnerId() {
-		return this.ownerId;
+	private String startTime;
+
+	private Long ownerId;
+
+	public String getRelayDomain() {
+		return this.relayDomain;
 	}
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
+	public void setRelayDomain(String relayDomain) {
+		this.relayDomain = relayDomain;
+		if(relayDomain != null){
+			putQueryParameter("RelayDomain", relayDomain);
+		}
 	}
 
 	public String getSecurityToken() {
@@ -55,25 +57,9 @@ public class DescribeLiveStreamRelayPushErrorsRequest extends RpcAcsRequest<Desc
 
 	public void setSecurityToken(String securityToken) {
 		this.securityToken = securityToken;
-		putQueryParameter("SecurityToken", securityToken);
-	}
-
-	public String getRelayDomain() {
-		return this.relayDomain;
-	}
-
-	public void setRelayDomain(String relayDomain) {
-		this.relayDomain = relayDomain;
-		putQueryParameter("RelayDomain", relayDomain);
-	}
-
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-		putQueryParameter("StartTime", startTime);
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
 	}
 
 	public String getEndTime() {
@@ -82,7 +68,31 @@ public class DescribeLiveStreamRelayPushErrorsRequest extends RpcAcsRequest<Desc
 
 	public void setEndTime(String endTime) {
 		this.endTime = endTime;
-		putQueryParameter("EndTime", endTime);
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime);
+		}
+	}
+
+	public String getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
 	}
 
 	@Override

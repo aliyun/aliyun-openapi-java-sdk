@@ -27,28 +27,28 @@ import com.aliyuncs.RpcAcsRequest;
 public class SetCcConfigRequest extends RpcAcsRequest<SetCcConfigResponse> {
 	
 	public SetCcConfigRequest() {
-		super("Cdn", "2014-11-11", "SetCcConfig");
+		super("Cdn", "2014-11-11", "SetCcConfig", "None");
 	}
 
-	private Long ownerId;
+	private String allowIps;
 
 	private String securityToken;
 
 	private String domainName;
 
-	private String enable;
-
-	private String allowIps;
+	private Long ownerId;
 
 	private String blockIps;
 
-	public Long getOwnerId() {
-		return this.ownerId;
+	public String getAllowIps() {
+		return this.allowIps;
 	}
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
+	public void setAllowIps(String allowIps) {
+		this.allowIps = allowIps;
+		if(allowIps != null){
+			putQueryParameter("AllowIps", allowIps);
+		}
 	}
 
 	public String getSecurityToken() {
@@ -57,7 +57,9 @@ public class SetCcConfigRequest extends RpcAcsRequest<SetCcConfigResponse> {
 
 	public void setSecurityToken(String securityToken) {
 		this.securityToken = securityToken;
-		putQueryParameter("SecurityToken", securityToken);
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
 	}
 
 	public String getDomainName() {
@@ -66,25 +68,20 @@ public class SetCcConfigRequest extends RpcAcsRequest<SetCcConfigResponse> {
 
 	public void setDomainName(String domainName) {
 		this.domainName = domainName;
-		putQueryParameter("DomainName", domainName);
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
+		}
 	}
 
-	public String getEnable() {
-		return this.enable;
+	public Long getOwnerId() {
+		return this.ownerId;
 	}
 
-	public void setEnable(String enable) {
-		this.enable = enable;
-		putQueryParameter("Enable", enable);
-	}
-
-	public String getAllowIps() {
-		return this.allowIps;
-	}
-
-	public void setAllowIps(String allowIps) {
-		this.allowIps = allowIps;
-		putQueryParameter("AllowIps", allowIps);
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
 	}
 
 	public String getBlockIps() {
@@ -93,7 +90,9 @@ public class SetCcConfigRequest extends RpcAcsRequest<SetCcConfigResponse> {
 
 	public void setBlockIps(String blockIps) {
 		this.blockIps = blockIps;
-		putQueryParameter("BlockIps", blockIps);
+		if(blockIps != null){
+			putQueryParameter("BlockIps", blockIps);
+		}
 	}
 
 	@Override

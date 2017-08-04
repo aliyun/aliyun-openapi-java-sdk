@@ -27,35 +27,26 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeDomainHttpCodeDataRequest extends RpcAcsRequest<DescribeDomainHttpCodeDataResponse> {
 	
 	public DescribeDomainHttpCodeDataRequest() {
-		super("Cdn", "2014-11-11", "DescribeDomainHttpCodeData");
+		super("Cdn", "2014-11-11", "DescribeDomainHttpCodeData", "None");
 	}
-
-	private Long ownerId;
 
 	private String securityToken;
 
-	private String domainName;
+	private String timeMerge;
 
-	private String startTime;
+	private String domainName;
 
 	private String endTime;
 
-	private String timeMerge;
-
 	private String locationNameEn;
-
-	private String ispNameEn;
 
 	private String interval;
 
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
+	private String startTime;
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
-	}
+	private String ispNameEn;
+
+	private Long ownerId;
 
 	public String getSecurityToken() {
 		return this.securityToken;
@@ -63,34 +54,9 @@ public class DescribeDomainHttpCodeDataRequest extends RpcAcsRequest<DescribeDom
 
 	public void setSecurityToken(String securityToken) {
 		this.securityToken = securityToken;
-		putQueryParameter("SecurityToken", securityToken);
-	}
-
-	public String getDomainName() {
-		return this.domainName;
-	}
-
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
-		putQueryParameter("DomainName", domainName);
-	}
-
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-		putQueryParameter("StartTime", startTime);
-	}
-
-	public String getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
-		putQueryParameter("EndTime", endTime);
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
 	}
 
 	public String getTimeMerge() {
@@ -99,7 +65,31 @@ public class DescribeDomainHttpCodeDataRequest extends RpcAcsRequest<DescribeDom
 
 	public void setTimeMerge(String timeMerge) {
 		this.timeMerge = timeMerge;
-		putQueryParameter("TimeMerge", timeMerge);
+		if(timeMerge != null){
+			putQueryParameter("TimeMerge", timeMerge);
+		}
+	}
+
+	public String getDomainName() {
+		return this.domainName;
+	}
+
+	public void setDomainName(String domainName) {
+		this.domainName = domainName;
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
+		}
+	}
+
+	public String getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime);
+		}
 	}
 
 	public String getLocationNameEn() {
@@ -108,16 +98,9 @@ public class DescribeDomainHttpCodeDataRequest extends RpcAcsRequest<DescribeDom
 
 	public void setLocationNameEn(String locationNameEn) {
 		this.locationNameEn = locationNameEn;
-		putQueryParameter("LocationNameEn", locationNameEn);
-	}
-
-	public String getIspNameEn() {
-		return this.ispNameEn;
-	}
-
-	public void setIspNameEn(String ispNameEn) {
-		this.ispNameEn = ispNameEn;
-		putQueryParameter("IspNameEn", ispNameEn);
+		if(locationNameEn != null){
+			putQueryParameter("LocationNameEn", locationNameEn);
+		}
 	}
 
 	public String getInterval() {
@@ -126,7 +109,42 @@ public class DescribeDomainHttpCodeDataRequest extends RpcAcsRequest<DescribeDom
 
 	public void setInterval(String interval) {
 		this.interval = interval;
-		putQueryParameter("Interval", interval);
+		if(interval != null){
+			putQueryParameter("Interval", interval);
+		}
+	}
+
+	public String getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime);
+		}
+	}
+
+	public String getIspNameEn() {
+		return this.ispNameEn;
+	}
+
+	public void setIspNameEn(String ispNameEn) {
+		this.ispNameEn = ispNameEn;
+		if(ispNameEn != null){
+			putQueryParameter("IspNameEn", ispNameEn);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
 	}
 
 	@Override

@@ -35,7 +35,7 @@ public class DescribeUserDomainsResponseUnmarshaller {
 		describeUserDomainsResponse.setPageSize(context.longValue("DescribeUserDomainsResponse.PageSize"));
 		describeUserDomainsResponse.setTotalCount(context.longValue("DescribeUserDomainsResponse.TotalCount"));
 
-		List<PageData> domainsList = new ArrayList<PageData>();
+		List<PageData> domains = new ArrayList<PageData>();
 		for (int i = 0; i < context.lengthValue("DescribeUserDomainsResponse.Domains.Length"); i++) {
 			PageData pageData = new PageData();
 			pageData.setDomainName(context.stringValue("DescribeUserDomainsResponse.Domains["+ i +"].DomainName"));
@@ -47,6 +47,8 @@ public class DescribeUserDomainsResponseUnmarshaller {
 			pageData.setDescription(context.stringValue("DescribeUserDomainsResponse.Domains["+ i +"].Description"));
 			pageData.setSourceType(context.stringValue("DescribeUserDomainsResponse.Domains["+ i +"].SourceType"));
 			pageData.setSslProtocol(context.stringValue("DescribeUserDomainsResponse.Domains["+ i +"].SslProtocol"));
+			pageData.setResourceGroupId(context.stringValue("DescribeUserDomainsResponse.Domains["+ i +"].ResourceGroupId"));
+			pageData.setSandbox(context.stringValue("DescribeUserDomainsResponse.Domains["+ i +"].Sandbox"));
 
 			List<String> sources = new ArrayList<String>();
 			for (int j = 0; j < context.lengthValue("DescribeUserDomainsResponse.Domains["+ i +"].Sources.Length"); j++) {
@@ -54,9 +56,9 @@ public class DescribeUserDomainsResponseUnmarshaller {
 			}
 			pageData.setSources(sources);
 
-			domainsList.add(pageData);
+			domains.add(pageData);
 		}
-		describeUserDomainsResponse.setDomains(domainsList);
+		describeUserDomainsResponse.setDomains(domains);
 	 
 	 	return describeUserDomainsResponse;
 	}

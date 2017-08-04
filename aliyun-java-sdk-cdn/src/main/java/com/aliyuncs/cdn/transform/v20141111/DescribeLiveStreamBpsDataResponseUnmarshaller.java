@@ -32,15 +32,15 @@ public class DescribeLiveStreamBpsDataResponseUnmarshaller {
 		
 		describeLiveStreamBpsDataResponse.setRequestId(context.stringValue("DescribeLiveStreamBpsDataResponse.RequestId"));
 
-		List<DomainBpsModel> bpsDatasList = new ArrayList<DomainBpsModel>();
+		List<DomainBpsModel> bpsDatas = new ArrayList<DomainBpsModel>();
 		for (int i = 0; i < context.lengthValue("DescribeLiveStreamBpsDataResponse.BpsDatas.Length"); i++) {
 			DomainBpsModel domainBpsModel = new DomainBpsModel();
 			domainBpsModel.setTime(context.stringValue("DescribeLiveStreamBpsDataResponse.BpsDatas["+ i +"].Time"));
 			domainBpsModel.setBps(context.floatValue("DescribeLiveStreamBpsDataResponse.BpsDatas["+ i +"].Bps"));
 
-			bpsDatasList.add(domainBpsModel);
+			bpsDatas.add(domainBpsModel);
 		}
-		describeLiveStreamBpsDataResponse.setBpsDatas(bpsDatasList);
+		describeLiveStreamBpsDataResponse.setBpsDatas(bpsDatas);
 	 
 	 	return describeLiveStreamBpsDataResponse;
 	}

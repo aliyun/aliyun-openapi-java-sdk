@@ -27,28 +27,30 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifyHttpHeaderConfigRequest extends RpcAcsRequest<ModifyHttpHeaderConfigResponse> {
 	
 	public ModifyHttpHeaderConfigRequest() {
-		super("Cdn", "2014-11-11", "ModifyHttpHeaderConfig");
+		super("Cdn", "2014-11-11", "ModifyHttpHeaderConfig", "None");
 	}
 
-	private Long ownerId;
+	private String headerValue;
 
 	private String securityToken;
+
+	private String configID;
 
 	private String domainName;
 
 	private String headerKey;
 
-	private String headerValue;
+	private Long ownerId;
 
-	private String configID;
-
-	public Long getOwnerId() {
-		return this.ownerId;
+	public String getHeaderValue() {
+		return this.headerValue;
 	}
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
+	public void setHeaderValue(String headerValue) {
+		this.headerValue = headerValue;
+		if(headerValue != null){
+			putQueryParameter("HeaderValue", headerValue);
+		}
 	}
 
 	public String getSecurityToken() {
@@ -57,34 +59,9 @@ public class ModifyHttpHeaderConfigRequest extends RpcAcsRequest<ModifyHttpHeade
 
 	public void setSecurityToken(String securityToken) {
 		this.securityToken = securityToken;
-		putQueryParameter("SecurityToken", securityToken);
-	}
-
-	public String getDomainName() {
-		return this.domainName;
-	}
-
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
-		putQueryParameter("DomainName", domainName);
-	}
-
-	public String getHeaderKey() {
-		return this.headerKey;
-	}
-
-	public void setHeaderKey(String headerKey) {
-		this.headerKey = headerKey;
-		putQueryParameter("HeaderKey", headerKey);
-	}
-
-	public String getHeaderValue() {
-		return this.headerValue;
-	}
-
-	public void setHeaderValue(String headerValue) {
-		this.headerValue = headerValue;
-		putQueryParameter("HeaderValue", headerValue);
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
 	}
 
 	public String getConfigID() {
@@ -93,7 +70,42 @@ public class ModifyHttpHeaderConfigRequest extends RpcAcsRequest<ModifyHttpHeade
 
 	public void setConfigID(String configID) {
 		this.configID = configID;
-		putQueryParameter("ConfigID", configID);
+		if(configID != null){
+			putQueryParameter("ConfigID", configID);
+		}
+	}
+
+	public String getDomainName() {
+		return this.domainName;
+	}
+
+	public void setDomainName(String domainName) {
+		this.domainName = domainName;
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
+		}
+	}
+
+	public String getHeaderKey() {
+		return this.headerKey;
+	}
+
+	public void setHeaderKey(String headerKey) {
+		this.headerKey = headerKey;
+		if(headerKey != null){
+			putQueryParameter("HeaderKey", headerKey);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
 	}
 
 	@Override

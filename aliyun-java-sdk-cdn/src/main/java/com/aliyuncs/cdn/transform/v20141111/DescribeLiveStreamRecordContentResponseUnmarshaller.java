@@ -32,7 +32,7 @@ public class DescribeLiveStreamRecordContentResponseUnmarshaller {
 		
 		describeLiveStreamRecordContentResponse.setRequestId(context.stringValue("DescribeLiveStreamRecordContentResponse.RequestId"));
 
-		List<RecordContentInfo> recordContentInfoListList = new ArrayList<RecordContentInfo>();
+		List<RecordContentInfo> recordContentInfoList = new ArrayList<RecordContentInfo>();
 		for (int i = 0; i < context.lengthValue("DescribeLiveStreamRecordContentResponse.RecordContentInfoList.Length"); i++) {
 			RecordContentInfo recordContentInfo = new RecordContentInfo();
 			recordContentInfo.setOssEndpoint(context.stringValue("DescribeLiveStreamRecordContentResponse.RecordContentInfoList["+ i +"].OssEndpoint"));
@@ -42,9 +42,9 @@ public class DescribeLiveStreamRecordContentResponseUnmarshaller {
 			recordContentInfo.setEndTime(context.stringValue("DescribeLiveStreamRecordContentResponse.RecordContentInfoList["+ i +"].EndTime"));
 			recordContentInfo.setDuration(context.floatValue("DescribeLiveStreamRecordContentResponse.RecordContentInfoList["+ i +"].Duration"));
 
-			recordContentInfoListList.add(recordContentInfo);
+			recordContentInfoList.add(recordContentInfo);
 		}
-		describeLiveStreamRecordContentResponse.setRecordContentInfoList(recordContentInfoListList);
+		describeLiveStreamRecordContentResponse.setRecordContentInfoList(recordContentInfoList);
 	 
 	 	return describeLiveStreamRecordContentResponse;
 	}

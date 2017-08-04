@@ -27,25 +27,16 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeleteHttpHeaderConfigRequest extends RpcAcsRequest<DeleteHttpHeaderConfigResponse> {
 	
 	public DeleteHttpHeaderConfigRequest() {
-		super("Cdn", "2014-11-11", "DeleteHttpHeaderConfig");
+		super("Cdn", "2014-11-11", "DeleteHttpHeaderConfig", "None");
 	}
-
-	private Long ownerId;
 
 	private String securityToken;
 
-	private String domainName;
-
 	private String configID;
 
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
+	private String domainName;
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
-	}
+	private Long ownerId;
 
 	public String getSecurityToken() {
 		return this.securityToken;
@@ -53,16 +44,9 @@ public class DeleteHttpHeaderConfigRequest extends RpcAcsRequest<DeleteHttpHeade
 
 	public void setSecurityToken(String securityToken) {
 		this.securityToken = securityToken;
-		putQueryParameter("SecurityToken", securityToken);
-	}
-
-	public String getDomainName() {
-		return this.domainName;
-	}
-
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
-		putQueryParameter("DomainName", domainName);
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
 	}
 
 	public String getConfigID() {
@@ -71,7 +55,31 @@ public class DeleteHttpHeaderConfigRequest extends RpcAcsRequest<DeleteHttpHeade
 
 	public void setConfigID(String configID) {
 		this.configID = configID;
-		putQueryParameter("ConfigID", configID);
+		if(configID != null){
+			putQueryParameter("ConfigID", configID);
+		}
+	}
+
+	public String getDomainName() {
+		return this.domainName;
+	}
+
+	public void setDomainName(String domainName) {
+		this.domainName = domainName;
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
 	}
 
 	@Override

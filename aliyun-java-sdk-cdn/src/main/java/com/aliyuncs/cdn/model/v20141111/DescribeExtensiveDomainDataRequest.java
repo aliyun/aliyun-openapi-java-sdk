@@ -27,31 +27,22 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeExtensiveDomainDataRequest extends RpcAcsRequest<DescribeExtensiveDomainDataResponse> {
 	
 	public DescribeExtensiveDomainDataRequest() {
-		super("Cdn", "2014-11-11", "DescribeExtensiveDomainData");
+		super("Cdn", "2014-11-11", "DescribeExtensiveDomainData", "None");
 	}
-
-	private Long ownerId;
 
 	private String securityToken;
 
 	private String extensiveDomain;
 
-	private String startTime;
+	private Integer pageSize;
 
 	private String endTime;
 
+	private String startTime;
+
+	private Long ownerId;
+
 	private Integer pageNumber;
-
-	private Integer pageSize;
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
-	}
 
 	public String getSecurityToken() {
 		return this.securityToken;
@@ -59,7 +50,9 @@ public class DescribeExtensiveDomainDataRequest extends RpcAcsRequest<DescribeEx
 
 	public void setSecurityToken(String securityToken) {
 		this.securityToken = securityToken;
-		putQueryParameter("SecurityToken", securityToken);
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
 	}
 
 	public String getExtensiveDomain() {
@@ -68,34 +61,9 @@ public class DescribeExtensiveDomainDataRequest extends RpcAcsRequest<DescribeEx
 
 	public void setExtensiveDomain(String extensiveDomain) {
 		this.extensiveDomain = extensiveDomain;
-		putQueryParameter("ExtensiveDomain", extensiveDomain);
-	}
-
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-		putQueryParameter("StartTime", startTime);
-	}
-
-	public String getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
-		putQueryParameter("EndTime", endTime);
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		putQueryParameter("PageNumber", pageNumber);
+		if(extensiveDomain != null){
+			putQueryParameter("ExtensiveDomain", extensiveDomain);
+		}
 	}
 
 	public Integer getPageSize() {
@@ -104,7 +72,53 @@ public class DescribeExtensiveDomainDataRequest extends RpcAcsRequest<DescribeEx
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
-		putQueryParameter("PageSize", pageSize);
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime);
+		}
+	}
+
+	public String getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
 	}
 
 	@Override

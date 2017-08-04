@@ -27,10 +27,10 @@ import com.aliyuncs.RpcAcsRequest;
 public class SetRefererConfigRequest extends RpcAcsRequest<SetRefererConfigResponse> {
 	
 	public SetRefererConfigRequest() {
-		super("Cdn", "2014-11-11", "SetRefererConfig");
+		super("Cdn", "2014-11-11", "SetRefererConfig", "None");
 	}
 
-	private Long ownerId;
+	private String referList;
 
 	private String securityToken;
 
@@ -38,17 +38,21 @@ public class SetRefererConfigRequest extends RpcAcsRequest<SetRefererConfigRespo
 
 	private String referType;
 
-	private String referList;
+	private String disableAst;
+
+	private Long ownerId;
 
 	private String allowEmpty;
 
-	public Long getOwnerId() {
-		return this.ownerId;
+	public String getReferList() {
+		return this.referList;
 	}
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
+	public void setReferList(String referList) {
+		this.referList = referList;
+		if(referList != null){
+			putQueryParameter("ReferList", referList);
+		}
 	}
 
 	public String getSecurityToken() {
@@ -57,7 +61,9 @@ public class SetRefererConfigRequest extends RpcAcsRequest<SetRefererConfigRespo
 
 	public void setSecurityToken(String securityToken) {
 		this.securityToken = securityToken;
-		putQueryParameter("SecurityToken", securityToken);
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
 	}
 
 	public String getDomainName() {
@@ -66,7 +72,9 @@ public class SetRefererConfigRequest extends RpcAcsRequest<SetRefererConfigRespo
 
 	public void setDomainName(String domainName) {
 		this.domainName = domainName;
-		putQueryParameter("DomainName", domainName);
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
+		}
 	}
 
 	public String getReferType() {
@@ -75,16 +83,31 @@ public class SetRefererConfigRequest extends RpcAcsRequest<SetRefererConfigRespo
 
 	public void setReferType(String referType) {
 		this.referType = referType;
-		putQueryParameter("ReferType", referType);
+		if(referType != null){
+			putQueryParameter("ReferType", referType);
+		}
 	}
 
-	public String getReferList() {
-		return this.referList;
+	public String getDisableAst() {
+		return this.disableAst;
 	}
 
-	public void setReferList(String referList) {
-		this.referList = referList;
-		putQueryParameter("ReferList", referList);
+	public void setDisableAst(String disableAst) {
+		this.disableAst = disableAst;
+		if(disableAst != null){
+			putQueryParameter("DisableAst", disableAst);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
 	}
 
 	public String getAllowEmpty() {
@@ -93,7 +116,9 @@ public class SetRefererConfigRequest extends RpcAcsRequest<SetRefererConfigRespo
 
 	public void setAllowEmpty(String allowEmpty) {
 		this.allowEmpty = allowEmpty;
-		putQueryParameter("AllowEmpty", allowEmpty);
+		if(allowEmpty != null){
+			putQueryParameter("AllowEmpty", allowEmpty);
+		}
 	}
 
 	@Override

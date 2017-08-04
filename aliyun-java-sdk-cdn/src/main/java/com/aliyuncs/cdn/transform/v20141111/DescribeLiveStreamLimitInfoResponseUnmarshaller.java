@@ -32,16 +32,16 @@ public class DescribeLiveStreamLimitInfoResponseUnmarshaller {
 		
 		describeLiveStreamLimitInfoResponse.setRequestId(context.stringValue("DescribeLiveStreamLimitInfoResponse.RequestId"));
 
-		List<UserLimitMode> userLimitListsList = new ArrayList<UserLimitMode>();
+		List<UserLimitMode> userLimitLists = new ArrayList<UserLimitMode>();
 		for (int i = 0; i < context.lengthValue("DescribeLiveStreamLimitInfoResponse.UserLimitLists.Length"); i++) {
 			UserLimitMode userLimitMode = new UserLimitMode();
 			userLimitMode.setLimitDomain(context.stringValue("DescribeLiveStreamLimitInfoResponse.UserLimitLists["+ i +"].LimitDomain"));
 			userLimitMode.setLimitNum(context.stringValue("DescribeLiveStreamLimitInfoResponse.UserLimitLists["+ i +"].LimitNum"));
 			userLimitMode.setLimitTranscodeNum(context.stringValue("DescribeLiveStreamLimitInfoResponse.UserLimitLists["+ i +"].LimitTranscodeNum"));
 
-			userLimitListsList.add(userLimitMode);
+			userLimitLists.add(userLimitMode);
 		}
-		describeLiveStreamLimitInfoResponse.setUserLimitLists(userLimitListsList);
+		describeLiveStreamLimitInfoResponse.setUserLimitLists(userLimitLists);
 	 
 	 	return describeLiveStreamLimitInfoResponse;
 	}

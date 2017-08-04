@@ -27,10 +27,12 @@ import com.aliyuncs.RpcAcsRequest;
 public class SetForwardSchemeConfigRequest extends RpcAcsRequest<SetForwardSchemeConfigResponse> {
 	
 	public SetForwardSchemeConfigRequest() {
-		super("Cdn", "2014-11-11", "SetForwardSchemeConfig");
+		super("Cdn", "2014-11-11", "SetForwardSchemeConfig", "None");
 	}
 
-	private Long ownerId;
+	private String schemeOrigin;
+
+	private String schemeOriginPort;
 
 	private String securityToken;
 
@@ -38,45 +40,7 @@ public class SetForwardSchemeConfigRequest extends RpcAcsRequest<SetForwardSchem
 
 	private String domainName;
 
-	private String schemeOrigin;
-
-	private String schemeOriginPort;
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		putQueryParameter("SecurityToken", securityToken);
-	}
-
-	public String getEnable() {
-		return this.enable;
-	}
-
-	public void setEnable(String enable) {
-		this.enable = enable;
-		putQueryParameter("Enable", enable);
-	}
-
-	public String getDomainName() {
-		return this.domainName;
-	}
-
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
-		putQueryParameter("DomainName", domainName);
-	}
+	private Long ownerId;
 
 	public String getSchemeOrigin() {
 		return this.schemeOrigin;
@@ -84,7 +48,9 @@ public class SetForwardSchemeConfigRequest extends RpcAcsRequest<SetForwardSchem
 
 	public void setSchemeOrigin(String schemeOrigin) {
 		this.schemeOrigin = schemeOrigin;
-		putQueryParameter("SchemeOrigin", schemeOrigin);
+		if(schemeOrigin != null){
+			putQueryParameter("SchemeOrigin", schemeOrigin);
+		}
 	}
 
 	public String getSchemeOriginPort() {
@@ -93,7 +59,53 @@ public class SetForwardSchemeConfigRequest extends RpcAcsRequest<SetForwardSchem
 
 	public void setSchemeOriginPort(String schemeOriginPort) {
 		this.schemeOriginPort = schemeOriginPort;
-		putQueryParameter("SchemeOriginPort", schemeOriginPort);
+		if(schemeOriginPort != null){
+			putQueryParameter("SchemeOriginPort", schemeOriginPort);
+		}
+	}
+
+	public String getSecurityToken() {
+		return this.securityToken;
+	}
+
+	public void setSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	public String getEnable() {
+		return this.enable;
+	}
+
+	public void setEnable(String enable) {
+		this.enable = enable;
+		if(enable != null){
+			putQueryParameter("Enable", enable);
+		}
+	}
+
+	public String getDomainName() {
+		return this.domainName;
+	}
+
+	public void setDomainName(String domainName) {
+		this.domainName = domainName;
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
 	}
 
 	@Override

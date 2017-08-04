@@ -39,7 +39,7 @@ public class DescribeExtensiveDomainDataResponseUnmarshaller {
 		describeExtensiveDomainDataResponse.setTotalCount(context.stringValue("DescribeExtensiveDomainDataResponse.TotalCount"));
 		describeExtensiveDomainDataResponse.setPageSize(context.stringValue("DescribeExtensiveDomainDataResponse.PageSize"));
 
-		List<UsageData> dataPerIntervalList = new ArrayList<UsageData>();
+		List<UsageData> dataPerInterval = new ArrayList<UsageData>();
 		for (int i = 0; i < context.lengthValue("DescribeExtensiveDomainDataResponse.DataPerInterval.Length"); i++) {
 			UsageData usageData = new UsageData();
 			usageData.setExactDomain(context.stringValue("DescribeExtensiveDomainDataResponse.DataPerInterval["+ i +"].ExactDomain"));
@@ -47,9 +47,9 @@ public class DescribeExtensiveDomainDataResponseUnmarshaller {
 			usageData.setAcc(context.stringValue("DescribeExtensiveDomainDataResponse.DataPerInterval["+ i +"].Acc"));
 			usageData.setFlow(context.stringValue("DescribeExtensiveDomainDataResponse.DataPerInterval["+ i +"].Flow"));
 
-			dataPerIntervalList.add(usageData);
+			dataPerInterval.add(usageData);
 		}
-		describeExtensiveDomainDataResponse.setDataPerInterval(dataPerIntervalList);
+		describeExtensiveDomainDataResponse.setDataPerInterval(dataPerInterval);
 	 
 	 	return describeExtensiveDomainDataResponse;
 	}

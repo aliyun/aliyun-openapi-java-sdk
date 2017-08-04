@@ -27,53 +27,30 @@ import com.aliyuncs.RpcAcsRequest;
 public class SetIgnoreQueryStringConfigRequest extends RpcAcsRequest<SetIgnoreQueryStringConfigResponse> {
 	
 	public SetIgnoreQueryStringConfigRequest() {
-		super("Cdn", "2014-11-11", "SetIgnoreQueryStringConfig");
+		super("Cdn", "2014-11-11", "SetIgnoreQueryStringConfig", "None");
 	}
 
-	private Long ownerId;
-
-	private String securityToken;
-
-	private String domainName;
-
-	private String enable;
+	private String keepOssArgs;
 
 	private String hashKeyArgs;
 
-	public Long getOwnerId() {
-		return this.ownerId;
+	private String securityToken;
+
+	private String enable;
+
+	private String domainName;
+
+	private Long ownerId;
+
+	public String getKeepOssArgs() {
+		return this.keepOssArgs;
 	}
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		putQueryParameter("SecurityToken", securityToken);
-	}
-
-	public String getDomainName() {
-		return this.domainName;
-	}
-
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
-		putQueryParameter("DomainName", domainName);
-	}
-
-	public String getEnable() {
-		return this.enable;
-	}
-
-	public void setEnable(String enable) {
-		this.enable = enable;
-		putQueryParameter("Enable", enable);
+	public void setKeepOssArgs(String keepOssArgs) {
+		this.keepOssArgs = keepOssArgs;
+		if(keepOssArgs != null){
+			putQueryParameter("KeepOssArgs", keepOssArgs);
+		}
 	}
 
 	public String getHashKeyArgs() {
@@ -82,7 +59,53 @@ public class SetIgnoreQueryStringConfigRequest extends RpcAcsRequest<SetIgnoreQu
 
 	public void setHashKeyArgs(String hashKeyArgs) {
 		this.hashKeyArgs = hashKeyArgs;
-		putQueryParameter("HashKeyArgs", hashKeyArgs);
+		if(hashKeyArgs != null){
+			putQueryParameter("HashKeyArgs", hashKeyArgs);
+		}
+	}
+
+	public String getSecurityToken() {
+		return this.securityToken;
+	}
+
+	public void setSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	public String getEnable() {
+		return this.enable;
+	}
+
+	public void setEnable(String enable) {
+		this.enable = enable;
+		if(enable != null){
+			putQueryParameter("Enable", enable);
+		}
+	}
+
+	public String getDomainName() {
+		return this.domainName;
+	}
+
+	public void setDomainName(String domainName) {
+		this.domainName = domainName;
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
 	}
 
 	@Override

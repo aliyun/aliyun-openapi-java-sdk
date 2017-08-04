@@ -27,28 +27,30 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeDomainBpsDataByTimeStampRequest extends RpcAcsRequest<DescribeDomainBpsDataByTimeStampResponse> {
 	
 	public DescribeDomainBpsDataByTimeStampRequest() {
-		super("Cdn", "2014-11-11", "DescribeDomainBpsDataByTimeStamp");
+		super("Cdn", "2014-11-11", "DescribeDomainBpsDataByTimeStamp", "None");
 	}
-
-	private Long ownerId;
-
-	private String securityToken;
-
-	private String domainName;
-
-	private String locationNames;
 
 	private String ispNames;
 
+	private String securityToken;
+
+	private String locationNames;
+
+	private String domainName;
+
+	private Long ownerId;
+
 	private String timePoint;
 
-	public Long getOwnerId() {
-		return this.ownerId;
+	public String getIspNames() {
+		return this.ispNames;
 	}
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
+	public void setIspNames(String ispNames) {
+		this.ispNames = ispNames;
+		if(ispNames != null){
+			putQueryParameter("IspNames", ispNames);
+		}
 	}
 
 	public String getSecurityToken() {
@@ -57,16 +59,9 @@ public class DescribeDomainBpsDataByTimeStampRequest extends RpcAcsRequest<Descr
 
 	public void setSecurityToken(String securityToken) {
 		this.securityToken = securityToken;
-		putQueryParameter("SecurityToken", securityToken);
-	}
-
-	public String getDomainName() {
-		return this.domainName;
-	}
-
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
-		putQueryParameter("DomainName", domainName);
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
 	}
 
 	public String getLocationNames() {
@@ -75,16 +70,31 @@ public class DescribeDomainBpsDataByTimeStampRequest extends RpcAcsRequest<Descr
 
 	public void setLocationNames(String locationNames) {
 		this.locationNames = locationNames;
-		putQueryParameter("LocationNames", locationNames);
+		if(locationNames != null){
+			putQueryParameter("LocationNames", locationNames);
+		}
 	}
 
-	public String getIspNames() {
-		return this.ispNames;
+	public String getDomainName() {
+		return this.domainName;
 	}
 
-	public void setIspNames(String ispNames) {
-		this.ispNames = ispNames;
-		putQueryParameter("IspNames", ispNames);
+	public void setDomainName(String domainName) {
+		this.domainName = domainName;
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
 	}
 
 	public String getTimePoint() {
@@ -93,7 +103,9 @@ public class DescribeDomainBpsDataByTimeStampRequest extends RpcAcsRequest<Descr
 
 	public void setTimePoint(String timePoint) {
 		this.timePoint = timePoint;
-		putQueryParameter("TimePoint", timePoint);
+		if(timePoint != null){
+			putQueryParameter("TimePoint", timePoint);
+		}
 	}
 
 	@Override

@@ -32,7 +32,7 @@ public class DescribeLiveStreamRelayPushDataResponseUnmarshaller {
 		
 		describeLiveStreamRelayPushDataResponse.setRequestId(context.stringValue("DescribeLiveStreamRelayPushDataResponse.RequestId"));
 
-		List<RelayPushDetailModel> relayPushDetailModelListList = new ArrayList<RelayPushDetailModel>();
+		List<RelayPushDetailModel> relayPushDetailModelList = new ArrayList<RelayPushDetailModel>();
 		for (int i = 0; i < context.lengthValue("DescribeLiveStreamRelayPushDataResponse.RelayPushDetailModelList.Length"); i++) {
 			RelayPushDetailModel relayPushDetailModel = new RelayPushDetailModel();
 			relayPushDetailModel.setTime(context.stringValue("DescribeLiveStreamRelayPushDataResponse.RelayPushDetailModelList["+ i +"].Time"));
@@ -43,9 +43,9 @@ public class DescribeLiveStreamRelayPushDataResponseUnmarshaller {
 			relayPushDetailModel.setServerAddr(context.stringValue("DescribeLiveStreamRelayPushDataResponse.RelayPushDetailModelList["+ i +"].ServerAddr"));
 			relayPushDetailModel.setClientAddr(context.stringValue("DescribeLiveStreamRelayPushDataResponse.RelayPushDetailModelList["+ i +"].ClientAddr"));
 
-			relayPushDetailModelListList.add(relayPushDetailModel);
+			relayPushDetailModelList.add(relayPushDetailModel);
 		}
-		describeLiveStreamRelayPushDataResponse.setRelayPushDetailModelList(relayPushDetailModelListList);
+		describeLiveStreamRelayPushDataResponse.setRelayPushDetailModelList(relayPushDetailModelList);
 	 
 	 	return describeLiveStreamRelayPushDataResponse;
 	}

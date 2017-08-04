@@ -36,15 +36,15 @@ public class DescribeDomainSrcBpsDataResponseUnmarshaller {
 		describeDomainSrcBpsDataResponse.setStartTime(context.stringValue("DescribeDomainSrcBpsDataResponse.StartTime"));
 		describeDomainSrcBpsDataResponse.setEndTime(context.stringValue("DescribeDomainSrcBpsDataResponse.EndTime"));
 
-		List<DataModule> srcBpsDataPerIntervalList = new ArrayList<DataModule>();
+		List<DataModule> srcBpsDataPerInterval = new ArrayList<DataModule>();
 		for (int i = 0; i < context.lengthValue("DescribeDomainSrcBpsDataResponse.SrcBpsDataPerInterval.Length"); i++) {
 			DataModule dataModule = new DataModule();
 			dataModule.setTimeStamp(context.stringValue("DescribeDomainSrcBpsDataResponse.SrcBpsDataPerInterval["+ i +"].TimeStamp"));
 			dataModule.setValue(context.stringValue("DescribeDomainSrcBpsDataResponse.SrcBpsDataPerInterval["+ i +"].Value"));
 
-			srcBpsDataPerIntervalList.add(dataModule);
+			srcBpsDataPerInterval.add(dataModule);
 		}
-		describeDomainSrcBpsDataResponse.setSrcBpsDataPerInterval(srcBpsDataPerIntervalList);
+		describeDomainSrcBpsDataResponse.setSrcBpsDataPerInterval(srcBpsDataPerInterval);
 	 
 	 	return describeDomainSrcBpsDataResponse;
 	}

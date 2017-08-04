@@ -27,26 +27,28 @@ import com.aliyuncs.RpcAcsRequest;
 public class SetOssLogConfigRequest extends RpcAcsRequest<SetOssLogConfigResponse> {
 	
 	public SetOssLogConfigRequest() {
-		super("Cdn", "2014-11-11", "SetOssLogConfig");
+		super("Cdn", "2014-11-11", "SetOssLogConfig", "None");
 	}
 
-	private Long ownerId;
+	private String bucket;
 
 	private String securityToken;
 
 	private String enable;
 
-	private String bucket;
-
 	private String prefix;
 
-	public Long getOwnerId() {
-		return this.ownerId;
+	private Long ownerId;
+
+	public String getBucket() {
+		return this.bucket;
 	}
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
+	public void setBucket(String bucket) {
+		this.bucket = bucket;
+		if(bucket != null){
+			putQueryParameter("Bucket", bucket);
+		}
 	}
 
 	public String getSecurityToken() {
@@ -55,7 +57,9 @@ public class SetOssLogConfigRequest extends RpcAcsRequest<SetOssLogConfigRespons
 
 	public void setSecurityToken(String securityToken) {
 		this.securityToken = securityToken;
-		putQueryParameter("SecurityToken", securityToken);
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
 	}
 
 	public String getEnable() {
@@ -64,16 +68,9 @@ public class SetOssLogConfigRequest extends RpcAcsRequest<SetOssLogConfigRespons
 
 	public void setEnable(String enable) {
 		this.enable = enable;
-		putQueryParameter("Enable", enable);
-	}
-
-	public String getBucket() {
-		return this.bucket;
-	}
-
-	public void setBucket(String bucket) {
-		this.bucket = bucket;
-		putQueryParameter("Bucket", bucket);
+		if(enable != null){
+			putQueryParameter("Enable", enable);
+		}
 	}
 
 	public String getPrefix() {
@@ -82,7 +79,20 @@ public class SetOssLogConfigRequest extends RpcAcsRequest<SetOssLogConfigRespons
 
 	public void setPrefix(String prefix) {
 		this.prefix = prefix;
-		putQueryParameter("Prefix", prefix);
+		if(prefix != null){
+			putQueryParameter("Prefix", prefix);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
 	}
 
 	@Override

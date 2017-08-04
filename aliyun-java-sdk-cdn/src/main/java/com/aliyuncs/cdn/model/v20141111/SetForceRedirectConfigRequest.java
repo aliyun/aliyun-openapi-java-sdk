@@ -27,10 +27,8 @@ import com.aliyuncs.RpcAcsRequest;
 public class SetForceRedirectConfigRequest extends RpcAcsRequest<SetForceRedirectConfigResponse> {
 	
 	public SetForceRedirectConfigRequest() {
-		super("Cdn", "2014-11-11", "SetForceRedirectConfig");
+		super("Cdn", "2014-11-11", "SetForceRedirectConfig", "None");
 	}
-
-	private Long ownerId;
 
 	private String securityToken;
 
@@ -38,14 +36,7 @@ public class SetForceRedirectConfigRequest extends RpcAcsRequest<SetForceRedirec
 
 	private String redirectType;
 
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
-	}
+	private Long ownerId;
 
 	public String getSecurityToken() {
 		return this.securityToken;
@@ -53,7 +44,9 @@ public class SetForceRedirectConfigRequest extends RpcAcsRequest<SetForceRedirec
 
 	public void setSecurityToken(String securityToken) {
 		this.securityToken = securityToken;
-		putQueryParameter("SecurityToken", securityToken);
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
 	}
 
 	public String getDomainName() {
@@ -62,7 +55,9 @@ public class SetForceRedirectConfigRequest extends RpcAcsRequest<SetForceRedirec
 
 	public void setDomainName(String domainName) {
 		this.domainName = domainName;
-		putQueryParameter("DomainName", domainName);
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
+		}
 	}
 
 	public String getRedirectType() {
@@ -71,7 +66,20 @@ public class SetForceRedirectConfigRequest extends RpcAcsRequest<SetForceRedirec
 
 	public void setRedirectType(String redirectType) {
 		this.redirectType = redirectType;
-		putQueryParameter("RedirectType", redirectType);
+		if(redirectType != null){
+			putQueryParameter("RedirectType", redirectType);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
 	}
 
 	@Override

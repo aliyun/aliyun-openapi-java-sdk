@@ -27,55 +27,30 @@ import com.aliyuncs.RpcAcsRequest;
 public class MigrateDomainToHttpsDeliveryRequest extends RpcAcsRequest<MigrateDomainToHttpsDeliveryResponse> {
 	
 	public MigrateDomainToHttpsDeliveryRequest() {
-		super("Cdn", "2014-11-11", "MigrateDomainToHttpsDelivery");
+		super("Cdn", "2014-11-11", "MigrateDomainToHttpsDelivery", "None");
 	}
-
-	private Long ownerId;
-
-	private String ownerAccount;
-
-	private String securityToken;
-
-	private String domainName;
-
-	private String serverCertificate;
 
 	private String privateKey;
 
-	public Long getOwnerId() {
-		return this.ownerId;
+	private String serverCertificate;
+
+	private String securityToken;
+
+	private String ownerAccount;
+
+	private String domainName;
+
+	private Long ownerId;
+
+	public String getPrivateKey() {
+		return this.privateKey;
 	}
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
-	}
-
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
-
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		putQueryParameter("OwnerAccount", ownerAccount);
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		putQueryParameter("SecurityToken", securityToken);
-	}
-
-	public String getDomainName() {
-		return this.domainName;
-	}
-
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
-		putQueryParameter("DomainName", domainName);
+	public void setPrivateKey(String privateKey) {
+		this.privateKey = privateKey;
+		if(privateKey != null){
+			putQueryParameter("PrivateKey", privateKey);
+		}
 	}
 
 	public String getServerCertificate() {
@@ -84,16 +59,53 @@ public class MigrateDomainToHttpsDeliveryRequest extends RpcAcsRequest<MigrateDo
 
 	public void setServerCertificate(String serverCertificate) {
 		this.serverCertificate = serverCertificate;
-		putQueryParameter("ServerCertificate", serverCertificate);
+		if(serverCertificate != null){
+			putQueryParameter("ServerCertificate", serverCertificate);
+		}
 	}
 
-	public String getPrivateKey() {
-		return this.privateKey;
+	public String getSecurityToken() {
+		return this.securityToken;
 	}
 
-	public void setPrivateKey(String privateKey) {
-		this.privateKey = privateKey;
-		putQueryParameter("PrivateKey", privateKey);
+	public void setSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public String getDomainName() {
+		return this.domainName;
+	}
+
+	public void setDomainName(String domainName) {
+		this.domainName = domainName;
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
 	}
 
 	@Override

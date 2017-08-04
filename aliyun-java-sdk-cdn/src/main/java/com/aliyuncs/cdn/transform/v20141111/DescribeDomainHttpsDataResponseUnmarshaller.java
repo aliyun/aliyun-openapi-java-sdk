@@ -34,7 +34,7 @@ public class DescribeDomainHttpsDataResponseUnmarshaller {
 		describeDomainHttpsDataResponse.setDomainNames(context.stringValue("DescribeDomainHttpsDataResponse.DomainNames"));
 		describeDomainHttpsDataResponse.setDataInterval(context.stringValue("DescribeDomainHttpsDataResponse.DataInterval"));
 
-		List<HttpsStatisticsInfo> httpsStatisticsInfosList = new ArrayList<HttpsStatisticsInfo>();
+		List<HttpsStatisticsInfo> httpsStatisticsInfos = new ArrayList<HttpsStatisticsInfo>();
 		for (int i = 0; i < context.lengthValue("DescribeDomainHttpsDataResponse.HttpsStatisticsInfos.Length"); i++) {
 			HttpsStatisticsInfo httpsStatisticsInfo = new HttpsStatisticsInfo();
 			httpsStatisticsInfo.setTime(context.stringValue("DescribeDomainHttpsDataResponse.HttpsStatisticsInfos["+ i +"].Time"));
@@ -61,7 +61,7 @@ public class DescribeDomainHttpsDataResponseUnmarshaller {
 			httpsStatisticsInfo.setL1StHttpsBps(context.floatValue("DescribeDomainHttpsDataResponse.HttpsStatisticsInfos["+ i +"].L1StHttpsBps"));
 			httpsStatisticsInfo.setL1StHttpsInnerBps(context.floatValue("DescribeDomainHttpsDataResponse.HttpsStatisticsInfos["+ i +"].L1StHttpsInnerBps"));
 			httpsStatisticsInfo.setL1StHttpsOutBps(context.floatValue("DescribeDomainHttpsDataResponse.HttpsStatisticsInfos["+ i +"].L1StHttpsOutBps"));
-			httpsStatisticsInfo.setL1DyHttpsTraf(context.floatValue("DescribeDomainHttpsDataResponse.HttpsStatisticsInfos["+ i +"].L1DyHttpsTraf"));
+			httpsStatisticsInfo.setL1DyHttpsTraf(context.floatValue("DescribeDomainHttpsDataResponse.HttpsStatisticsInfos["+ i +"].l1DyHttpsTraf"));
 			httpsStatisticsInfo.setL1DyHttpsInnerTraf(context.floatValue("DescribeDomainHttpsDataResponse.HttpsStatisticsInfos["+ i +"].L1DyHttpsInnerTraf"));
 			httpsStatisticsInfo.setL1DyHttpsOutTraf(context.floatValue("DescribeDomainHttpsDataResponse.HttpsStatisticsInfos["+ i +"].L1DyHttpsOutTraf"));
 			httpsStatisticsInfo.setL1StHttpsTraf(context.floatValue("DescribeDomainHttpsDataResponse.HttpsStatisticsInfos["+ i +"].L1StHttpsTraf"));
@@ -80,9 +80,9 @@ public class DescribeDomainHttpsDataResponseUnmarshaller {
 			httpsStatisticsInfo.setL1StHttpsInnerAcc(context.floatValue("DescribeDomainHttpsDataResponse.HttpsStatisticsInfos["+ i +"].L1StHttpsInnerAcc"));
 			httpsStatisticsInfo.setL1StHttpsOutAcc(context.floatValue("DescribeDomainHttpsDataResponse.HttpsStatisticsInfos["+ i +"].L1StHttpsOutAcc"));
 
-			httpsStatisticsInfosList.add(httpsStatisticsInfo);
+			httpsStatisticsInfos.add(httpsStatisticsInfo);
 		}
-		describeDomainHttpsDataResponse.setHttpsStatisticsInfos(httpsStatisticsInfosList);
+		describeDomainHttpsDataResponse.setHttpsStatisticsInfos(httpsStatisticsInfos);
 	 
 	 	return describeDomainHttpsDataResponse;
 	}

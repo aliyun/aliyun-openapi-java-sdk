@@ -27,27 +27,18 @@ import com.aliyuncs.RpcAcsRequest;
 public class SetSourceHostConfigRequest extends RpcAcsRequest<SetSourceHostConfigResponse> {
 	
 	public SetSourceHostConfigRequest() {
-		super("Cdn", "2014-11-11", "SetSourceHostConfig");
+		super("Cdn", "2014-11-11", "SetSourceHostConfig", "None");
 	}
-
-	private Long ownerId;
 
 	private String securityToken;
 
-	private String domainName;
-
 	private String enable;
 
+	private String domainName;
+
+	private Long ownerId;
+
 	private String backSrcDomain;
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
-	}
 
 	public String getSecurityToken() {
 		return this.securityToken;
@@ -55,16 +46,9 @@ public class SetSourceHostConfigRequest extends RpcAcsRequest<SetSourceHostConfi
 
 	public void setSecurityToken(String securityToken) {
 		this.securityToken = securityToken;
-		putQueryParameter("SecurityToken", securityToken);
-	}
-
-	public String getDomainName() {
-		return this.domainName;
-	}
-
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
-		putQueryParameter("DomainName", domainName);
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
 	}
 
 	public String getEnable() {
@@ -73,7 +57,31 @@ public class SetSourceHostConfigRequest extends RpcAcsRequest<SetSourceHostConfi
 
 	public void setEnable(String enable) {
 		this.enable = enable;
-		putQueryParameter("Enable", enable);
+		if(enable != null){
+			putQueryParameter("Enable", enable);
+		}
+	}
+
+	public String getDomainName() {
+		return this.domainName;
+	}
+
+	public void setDomainName(String domainName) {
+		this.domainName = domainName;
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
 	}
 
 	public String getBackSrcDomain() {
@@ -82,7 +90,9 @@ public class SetSourceHostConfigRequest extends RpcAcsRequest<SetSourceHostConfi
 
 	public void setBackSrcDomain(String backSrcDomain) {
 		this.backSrcDomain = backSrcDomain;
-		putQueryParameter("BackSrcDomain", backSrcDomain);
+		if(backSrcDomain != null){
+			putQueryParameter("BackSrcDomain", backSrcDomain);
+		}
 	}
 
 	@Override

@@ -27,33 +27,24 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeCdnDomainLogsRequest extends RpcAcsRequest<DescribeCdnDomainLogsResponse> {
 	
 	public DescribeCdnDomainLogsRequest() {
-		super("Cdn", "2014-11-11", "DescribeCdnDomainLogs");
+		super("Cdn", "2014-11-11", "DescribeCdnDomainLogs", "None");
 	}
-
-	private Long ownerId;
 
 	private String securityToken;
 
 	private String domainName;
 
-	private String logDay;
-
 	private Long pageSize;
-
-	private Long pageNumber;
-
-	private String startTime;
 
 	private String endTime;
 
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
+	private String startTime;
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
-	}
+	private Long ownerId;
+
+	private Long pageNumber;
+
+	private String logDay;
 
 	public String getSecurityToken() {
 		return this.securityToken;
@@ -61,7 +52,9 @@ public class DescribeCdnDomainLogsRequest extends RpcAcsRequest<DescribeCdnDomai
 
 	public void setSecurityToken(String securityToken) {
 		this.securityToken = securityToken;
-		putQueryParameter("SecurityToken", securityToken);
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
 	}
 
 	public String getDomainName() {
@@ -70,16 +63,9 @@ public class DescribeCdnDomainLogsRequest extends RpcAcsRequest<DescribeCdnDomai
 
 	public void setDomainName(String domainName) {
 		this.domainName = domainName;
-		putQueryParameter("DomainName", domainName);
-	}
-
-	public String getLogDay() {
-		return this.logDay;
-	}
-
-	public void setLogDay(String logDay) {
-		this.logDay = logDay;
-		putQueryParameter("LogDay", logDay);
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
+		}
 	}
 
 	public Long getPageSize() {
@@ -88,25 +74,9 @@ public class DescribeCdnDomainLogsRequest extends RpcAcsRequest<DescribeCdnDomai
 
 	public void setPageSize(Long pageSize) {
 		this.pageSize = pageSize;
-		putQueryParameter("PageSize", pageSize);
-	}
-
-	public Long getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Long pageNumber) {
-		this.pageNumber = pageNumber;
-		putQueryParameter("PageNumber", pageNumber);
-	}
-
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-		putQueryParameter("StartTime", startTime);
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
 	}
 
 	public String getEndTime() {
@@ -115,7 +85,53 @@ public class DescribeCdnDomainLogsRequest extends RpcAcsRequest<DescribeCdnDomai
 
 	public void setEndTime(String endTime) {
 		this.endTime = endTime;
-		putQueryParameter("EndTime", endTime);
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime);
+		}
+	}
+
+	public String getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public Long getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Long pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public String getLogDay() {
+		return this.logDay;
+	}
+
+	public void setLogDay(String logDay) {
+		this.logDay = logDay;
+		if(logDay != null){
+			putQueryParameter("LogDay", logDay);
+		}
 	}
 
 	@Override

@@ -81,6 +81,10 @@ public class DescribeCdnDomainDetailResponse extends AcsResponse {
 
 		private String certificateName;
 
+		private String resourceGroupId;
+
+		private List<SourceModel> sourceModels;
+
 		private List<String> sources;
 
 		public String getGmtCreated() {
@@ -203,12 +207,81 @@ public class DescribeCdnDomainDetailResponse extends AcsResponse {
 			this.certificateName = certificateName;
 		}
 
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
+		}
+
+		public List<SourceModel> getSourceModels() {
+			return this.sourceModels;
+		}
+
+		public void setSourceModels(List<SourceModel> sourceModels) {
+			this.sourceModels = sourceModels;
+		}
+
 		public List<String> getSources() {
 			return this.sources;
 		}
 
 		public void setSources(List<String> sources) {
 			this.sources = sources;
+		}
+
+		public static class SourceModel {
+
+			private String content;
+
+			private String type;
+
+			private Integer port;
+
+			private String enabled;
+
+			private String priority;
+
+			public String getContent() {
+				return this.content;
+			}
+
+			public void setContent(String content) {
+				this.content = content;
+			}
+
+			public String getType() {
+				return this.type;
+			}
+
+			public void setType(String type) {
+				this.type = type;
+			}
+
+			public Integer getPort() {
+				return this.port;
+			}
+
+			public void setPort(Integer port) {
+				this.port = port;
+			}
+
+			public String getEnabled() {
+				return this.enabled;
+			}
+
+			public void setEnabled(String enabled) {
+				this.enabled = enabled;
+			}
+
+			public String getPriority() {
+				return this.priority;
+			}
+
+			public void setPriority(String priority) {
+				this.priority = priority;
+			}
 		}
 	}
 

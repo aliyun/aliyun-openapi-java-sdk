@@ -27,22 +27,26 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeleteCdnDomainRequest extends RpcAcsRequest<DeleteCdnDomainResponse> {
 	
 	public DeleteCdnDomainRequest() {
-		super("Cdn", "2014-11-11", "DeleteCdnDomain");
+		super("Cdn", "2014-11-11", "DeleteCdnDomain", "None");
 	}
 
-	private Long ownerId;
+	private String resourceGroupId;
 
 	private String securityToken;
 
 	private String domainName;
 
-	public Long getOwnerId() {
-		return this.ownerId;
+	private Long ownerId;
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
 	}
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
 	}
 
 	public String getSecurityToken() {
@@ -51,7 +55,9 @@ public class DeleteCdnDomainRequest extends RpcAcsRequest<DeleteCdnDomainRespons
 
 	public void setSecurityToken(String securityToken) {
 		this.securityToken = securityToken;
-		putQueryParameter("SecurityToken", securityToken);
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
 	}
 
 	public String getDomainName() {
@@ -60,7 +66,20 @@ public class DeleteCdnDomainRequest extends RpcAcsRequest<DeleteCdnDomainRespons
 
 	public void setDomainName(String domainName) {
 		this.domainName = domainName;
-		putQueryParameter("DomainName", domainName);
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
 	}
 
 	@Override

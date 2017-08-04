@@ -32,14 +32,14 @@ public class DescribeLiveStreamRelayPushErrorsResponseUnmarshaller {
 		
 		describeLiveStreamRelayPushErrorsResponse.setRequestId(context.stringValue("DescribeLiveStreamRelayPushErrorsResponse.RequestId"));
 
-		List<RelayPushErrorsModel> relayPushErrorsModelListList = new ArrayList<RelayPushErrorsModel>();
+		List<RelayPushErrorsModel> relayPushErrorsModelList = new ArrayList<RelayPushErrorsModel>();
 		for (int i = 0; i < context.lengthValue("DescribeLiveStreamRelayPushErrorsResponse.RelayPushErrorsModelList.Length"); i++) {
 			RelayPushErrorsModel relayPushErrorsModel = new RelayPushErrorsModel();
 			relayPushErrorsModel.setErrorCode(context.stringValue("DescribeLiveStreamRelayPushErrorsResponse.RelayPushErrorsModelList["+ i +"].ErrorCode"));
 
-			relayPushErrorsModelListList.add(relayPushErrorsModel);
+			relayPushErrorsModelList.add(relayPushErrorsModel);
 		}
-		describeLiveStreamRelayPushErrorsResponse.setRelayPushErrorsModelList(relayPushErrorsModelListList);
+		describeLiveStreamRelayPushErrorsResponse.setRelayPushErrorsModelList(relayPushErrorsModelList);
 	 
 	 	return describeLiveStreamRelayPushErrorsResponse;
 	}

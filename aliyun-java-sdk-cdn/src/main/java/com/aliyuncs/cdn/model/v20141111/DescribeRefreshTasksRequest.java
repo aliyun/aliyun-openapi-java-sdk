@@ -27,33 +27,24 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeRefreshTasksRequest extends RpcAcsRequest<DescribeRefreshTasksResponse> {
 	
 	public DescribeRefreshTasksRequest() {
-		super("Cdn", "2014-11-11", "DescribeRefreshTasks");
+		super("Cdn", "2014-11-11", "DescribeRefreshTasks", "None");
 	}
-
-	private Long ownerId;
 
 	private String securityToken;
 
-	private String taskId;
-
 	private String objectPath;
-
-	private Integer pageNumber;
 
 	private Integer pageSize;
 
-	private String startTime;
-
 	private String endTime;
 
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
+	private String startTime;
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
-	}
+	private Long ownerId;
+
+	private String taskId;
+
+	private Integer pageNumber;
 
 	public String getSecurityToken() {
 		return this.securityToken;
@@ -61,16 +52,9 @@ public class DescribeRefreshTasksRequest extends RpcAcsRequest<DescribeRefreshTa
 
 	public void setSecurityToken(String securityToken) {
 		this.securityToken = securityToken;
-		putQueryParameter("SecurityToken", securityToken);
-	}
-
-	public String getTaskId() {
-		return this.taskId;
-	}
-
-	public void setTaskId(String taskId) {
-		this.taskId = taskId;
-		putQueryParameter("TaskId", taskId);
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
 	}
 
 	public String getObjectPath() {
@@ -79,16 +63,9 @@ public class DescribeRefreshTasksRequest extends RpcAcsRequest<DescribeRefreshTa
 
 	public void setObjectPath(String objectPath) {
 		this.objectPath = objectPath;
-		putQueryParameter("ObjectPath", objectPath);
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		putQueryParameter("PageNumber", pageNumber);
+		if(objectPath != null){
+			putQueryParameter("ObjectPath", objectPath);
+		}
 	}
 
 	public Integer getPageSize() {
@@ -97,16 +74,9 @@ public class DescribeRefreshTasksRequest extends RpcAcsRequest<DescribeRefreshTa
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
-		putQueryParameter("PageSize", pageSize);
-	}
-
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-		putQueryParameter("StartTime", startTime);
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
 	}
 
 	public String getEndTime() {
@@ -115,7 +85,53 @@ public class DescribeRefreshTasksRequest extends RpcAcsRequest<DescribeRefreshTa
 
 	public void setEndTime(String endTime) {
 		this.endTime = endTime;
-		putQueryParameter("EndTime", endTime);
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime);
+		}
+	}
+
+	public String getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getTaskId() {
+		return this.taskId;
+	}
+
+	public void setTaskId(String taskId) {
+		this.taskId = taskId;
+		if(taskId != null){
+			putQueryParameter("TaskId", taskId);
+		}
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
 	}
 
 	@Override

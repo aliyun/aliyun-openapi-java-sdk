@@ -23,6 +23,7 @@ import java.util.List;
 
 import com.aliyuncs.cdn.model.v20141111.DescribeCdnDomainDetailResponse;
 import com.aliyuncs.cdn.model.v20141111.DescribeCdnDomainDetailResponse.GetDomainDetailModel;
+import com.aliyuncs.cdn.model.v20141111.DescribeCdnDomainDetailResponse.GetDomainDetailModel.SourceModel;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -48,12 +49,26 @@ public class DescribeCdnDomainDetailResponseUnmarshaller {
 		getDomainDetailModel.setRegion(context.stringValue("DescribeCdnDomainDetailResponse.GetDomainDetailModel.Region"));
 		getDomainDetailModel.setScope(context.stringValue("DescribeCdnDomainDetailResponse.GetDomainDetailModel.Scope"));
 		getDomainDetailModel.setCertificateName(context.stringValue("DescribeCdnDomainDetailResponse.GetDomainDetailModel.CertificateName"));
+		getDomainDetailModel.setResourceGroupId(context.stringValue("DescribeCdnDomainDetailResponse.GetDomainDetailModel.ResourceGroupId"));
 
 		List<String> sources = new ArrayList<String>();
 		for (int i = 0; i < context.lengthValue("DescribeCdnDomainDetailResponse.GetDomainDetailModel.Sources.Length"); i++) {
 			sources.add(context.stringValue("DescribeCdnDomainDetailResponse.GetDomainDetailModel.Sources["+ i +"]"));
 		}
 		getDomainDetailModel.setSources(sources);
+
+		List<SourceModel> sourceModels = new ArrayList<SourceModel>();
+		for (int i = 0; i < context.lengthValue("DescribeCdnDomainDetailResponse.GetDomainDetailModel.SourceModels.Length"); i++) {
+			SourceModel sourceModel = new SourceModel();
+			sourceModel.setContent(context.stringValue("DescribeCdnDomainDetailResponse.GetDomainDetailModel.SourceModels["+ i +"].Content"));
+			sourceModel.setType(context.stringValue("DescribeCdnDomainDetailResponse.GetDomainDetailModel.SourceModels["+ i +"].Type"));
+			sourceModel.setPort(context.integerValue("DescribeCdnDomainDetailResponse.GetDomainDetailModel.SourceModels["+ i +"].Port"));
+			sourceModel.setEnabled(context.stringValue("DescribeCdnDomainDetailResponse.GetDomainDetailModel.SourceModels["+ i +"].Enabled"));
+			sourceModel.setPriority(context.stringValue("DescribeCdnDomainDetailResponse.GetDomainDetailModel.SourceModels["+ i +"].Priority"));
+
+			sourceModels.add(sourceModel);
+		}
+		getDomainDetailModel.setSourceModels(sourceModels);
 		describeCdnDomainDetailResponse.setGetDomainDetailModel(getDomainDetailModel);
 	 
 	 	return describeCdnDomainDetailResponse;

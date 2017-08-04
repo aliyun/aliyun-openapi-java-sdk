@@ -27,23 +27,14 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeLiveStreamDomainAppInfoRequest extends RpcAcsRequest<DescribeLiveStreamDomainAppInfoResponse> {
 	
 	public DescribeLiveStreamDomainAppInfoRequest() {
-		super("Cdn", "2014-11-11", "DescribeLiveStreamDomainAppInfo");
+		super("Cdn", "2014-11-11", "DescribeLiveStreamDomainAppInfo", "None");
 	}
-
-	private Long ownerId;
 
 	private String securityToken;
 
 	private String appDomain;
 
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
-	}
+	private Long ownerId;
 
 	public String getSecurityToken() {
 		return this.securityToken;
@@ -51,7 +42,9 @@ public class DescribeLiveStreamDomainAppInfoRequest extends RpcAcsRequest<Descri
 
 	public void setSecurityToken(String securityToken) {
 		this.securityToken = securityToken;
-		putQueryParameter("SecurityToken", securityToken);
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
 	}
 
 	public String getAppDomain() {
@@ -60,7 +53,20 @@ public class DescribeLiveStreamDomainAppInfoRequest extends RpcAcsRequest<Descri
 
 	public void setAppDomain(String appDomain) {
 		this.appDomain = appDomain;
-		putQueryParameter("AppDomain", appDomain);
+		if(appDomain != null){
+			putQueryParameter("AppDomain", appDomain);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
 	}
 
 	@Override

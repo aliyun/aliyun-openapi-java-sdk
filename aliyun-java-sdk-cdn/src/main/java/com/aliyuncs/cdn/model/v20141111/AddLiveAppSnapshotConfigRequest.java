@@ -27,62 +27,26 @@ import com.aliyuncs.RpcAcsRequest;
 public class AddLiveAppSnapshotConfigRequest extends RpcAcsRequest<AddLiveAppSnapshotConfigResponse> {
 	
 	public AddLiveAppSnapshotConfigRequest() {
-		super("Cdn", "2014-11-11", "AddLiveAppSnapshotConfig");
+		super("Cdn", "2014-11-11", "AddLiveAppSnapshotConfig", "None");
 	}
 
-	private Long ownerId;
+	private Integer timeInterval;
+
+	private String ossBucket;
+
+	private String appName;
 
 	private String securityToken;
 
 	private String domainName;
 
-	private String appName;
-
-	private Integer timeInterval;
-
 	private String ossEndpoint;
-
-	private String ossBucket;
-
-	private String overwriteOssObject;
 
 	private String sequenceOssObject;
 
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
+	private String overwriteOssObject;
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		putQueryParameter("SecurityToken", securityToken);
-	}
-
-	public String getDomainName() {
-		return this.domainName;
-	}
-
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
-		putQueryParameter("DomainName", domainName);
-	}
-
-	public String getAppName() {
-		return this.appName;
-	}
-
-	public void setAppName(String appName) {
-		this.appName = appName;
-		putQueryParameter("AppName", appName);
-	}
+	private Long ownerId;
 
 	public Integer getTimeInterval() {
 		return this.timeInterval;
@@ -90,16 +54,9 @@ public class AddLiveAppSnapshotConfigRequest extends RpcAcsRequest<AddLiveAppSna
 
 	public void setTimeInterval(Integer timeInterval) {
 		this.timeInterval = timeInterval;
-		putQueryParameter("TimeInterval", timeInterval);
-	}
-
-	public String getOssEndpoint() {
-		return this.ossEndpoint;
-	}
-
-	public void setOssEndpoint(String ossEndpoint) {
-		this.ossEndpoint = ossEndpoint;
-		putQueryParameter("OssEndpoint", ossEndpoint);
+		if(timeInterval != null){
+			putQueryParameter("TimeInterval", timeInterval.toString());
+		}
 	}
 
 	public String getOssBucket() {
@@ -108,16 +65,53 @@ public class AddLiveAppSnapshotConfigRequest extends RpcAcsRequest<AddLiveAppSna
 
 	public void setOssBucket(String ossBucket) {
 		this.ossBucket = ossBucket;
-		putQueryParameter("OssBucket", ossBucket);
+		if(ossBucket != null){
+			putQueryParameter("OssBucket", ossBucket);
+		}
 	}
 
-	public String getOverwriteOssObject() {
-		return this.overwriteOssObject;
+	public String getAppName() {
+		return this.appName;
 	}
 
-	public void setOverwriteOssObject(String overwriteOssObject) {
-		this.overwriteOssObject = overwriteOssObject;
-		putQueryParameter("OverwriteOssObject", overwriteOssObject);
+	public void setAppName(String appName) {
+		this.appName = appName;
+		if(appName != null){
+			putQueryParameter("AppName", appName);
+		}
+	}
+
+	public String getSecurityToken() {
+		return this.securityToken;
+	}
+
+	public void setSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	public String getDomainName() {
+		return this.domainName;
+	}
+
+	public void setDomainName(String domainName) {
+		this.domainName = domainName;
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
+		}
+	}
+
+	public String getOssEndpoint() {
+		return this.ossEndpoint;
+	}
+
+	public void setOssEndpoint(String ossEndpoint) {
+		this.ossEndpoint = ossEndpoint;
+		if(ossEndpoint != null){
+			putQueryParameter("OssEndpoint", ossEndpoint);
+		}
 	}
 
 	public String getSequenceOssObject() {
@@ -126,7 +120,31 @@ public class AddLiveAppSnapshotConfigRequest extends RpcAcsRequest<AddLiveAppSna
 
 	public void setSequenceOssObject(String sequenceOssObject) {
 		this.sequenceOssObject = sequenceOssObject;
-		putQueryParameter("SequenceOssObject", sequenceOssObject);
+		if(sequenceOssObject != null){
+			putQueryParameter("SequenceOssObject", sequenceOssObject);
+		}
+	}
+
+	public String getOverwriteOssObject() {
+		return this.overwriteOssObject;
+	}
+
+	public void setOverwriteOssObject(String overwriteOssObject) {
+		this.overwriteOssObject = overwriteOssObject;
+		if(overwriteOssObject != null){
+			putQueryParameter("OverwriteOssObject", overwriteOssObject);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
 	}
 
 	@Override

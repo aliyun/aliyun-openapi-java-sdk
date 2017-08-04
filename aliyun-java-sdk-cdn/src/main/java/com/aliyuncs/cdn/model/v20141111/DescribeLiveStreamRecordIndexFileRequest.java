@@ -27,46 +27,30 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeLiveStreamRecordIndexFileRequest extends RpcAcsRequest<DescribeLiveStreamRecordIndexFileResponse> {
 	
 	public DescribeLiveStreamRecordIndexFileRequest() {
-		super("Cdn", "2014-11-11", "DescribeLiveStreamRecordIndexFile");
+		super("Cdn", "2014-11-11", "DescribeLiveStreamRecordIndexFile", "None");
 	}
 
-	private Long ownerId;
+	private String recordId;
+
+	private String appName;
 
 	private String securityToken;
 
 	private String domainName;
 
-	private String appName;
+	private Long ownerId;
 
 	private String streamName;
 
-	private String recordId;
-
-	public Long getOwnerId() {
-		return this.ownerId;
+	public String getRecordId() {
+		return this.recordId;
 	}
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		putQueryParameter("SecurityToken", securityToken);
-	}
-
-	public String getDomainName() {
-		return this.domainName;
-	}
-
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
-		putQueryParameter("DomainName", domainName);
+	public void setRecordId(String recordId) {
+		this.recordId = recordId;
+		if(recordId != null){
+			putQueryParameter("RecordId", recordId);
+		}
 	}
 
 	public String getAppName() {
@@ -75,7 +59,42 @@ public class DescribeLiveStreamRecordIndexFileRequest extends RpcAcsRequest<Desc
 
 	public void setAppName(String appName) {
 		this.appName = appName;
-		putQueryParameter("AppName", appName);
+		if(appName != null){
+			putQueryParameter("AppName", appName);
+		}
+	}
+
+	public String getSecurityToken() {
+		return this.securityToken;
+	}
+
+	public void setSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	public String getDomainName() {
+		return this.domainName;
+	}
+
+	public void setDomainName(String domainName) {
+		this.domainName = domainName;
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
 	}
 
 	public String getStreamName() {
@@ -84,16 +103,9 @@ public class DescribeLiveStreamRecordIndexFileRequest extends RpcAcsRequest<Desc
 
 	public void setStreamName(String streamName) {
 		this.streamName = streamName;
-		putQueryParameter("StreamName", streamName);
-	}
-
-	public String getRecordId() {
-		return this.recordId;
-	}
-
-	public void setRecordId(String recordId) {
-		this.recordId = recordId;
-		putQueryParameter("RecordId", recordId);
+		if(streamName != null){
+			putQueryParameter("StreamName", streamName);
+		}
 	}
 
 	@Override

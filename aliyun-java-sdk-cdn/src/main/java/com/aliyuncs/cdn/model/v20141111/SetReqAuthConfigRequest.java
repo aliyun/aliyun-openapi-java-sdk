@@ -27,58 +27,22 @@ import com.aliyuncs.RpcAcsRequest;
 public class SetReqAuthConfigRequest extends RpcAcsRequest<SetReqAuthConfigResponse> {
 	
 	public SetReqAuthConfigRequest() {
-		super("Cdn", "2014-11-11", "SetReqAuthConfig");
+		super("Cdn", "2014-11-11", "SetReqAuthConfig", "None");
 	}
-
-	private Long ownerId;
-
-	private String securityToken;
-
-	private String domainName;
-
-	private String authType;
 
 	private String key1;
 
 	private String key2;
 
+	private String securityToken;
+
+	private String domainName;
+
+	private Long ownerId;
+
 	private String timeOut;
 
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		putQueryParameter("SecurityToken", securityToken);
-	}
-
-	public String getDomainName() {
-		return this.domainName;
-	}
-
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
-		putQueryParameter("DomainName", domainName);
-	}
-
-	public String getAuthType() {
-		return this.authType;
-	}
-
-	public void setAuthType(String authType) {
-		this.authType = authType;
-		putQueryParameter("AuthType", authType);
-	}
+	private String authType;
 
 	public String getKey1() {
 		return this.key1;
@@ -86,7 +50,9 @@ public class SetReqAuthConfigRequest extends RpcAcsRequest<SetReqAuthConfigRespo
 
 	public void setKey1(String key1) {
 		this.key1 = key1;
-		putQueryParameter("Key1", key1);
+		if(key1 != null){
+			putQueryParameter("Key1", key1);
+		}
 	}
 
 	public String getKey2() {
@@ -95,7 +61,42 @@ public class SetReqAuthConfigRequest extends RpcAcsRequest<SetReqAuthConfigRespo
 
 	public void setKey2(String key2) {
 		this.key2 = key2;
-		putQueryParameter("Key2", key2);
+		if(key2 != null){
+			putQueryParameter("Key2", key2);
+		}
+	}
+
+	public String getSecurityToken() {
+		return this.securityToken;
+	}
+
+	public void setSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	public String getDomainName() {
+		return this.domainName;
+	}
+
+	public void setDomainName(String domainName) {
+		this.domainName = domainName;
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
 	}
 
 	public String getTimeOut() {
@@ -104,7 +105,20 @@ public class SetReqAuthConfigRequest extends RpcAcsRequest<SetReqAuthConfigRespo
 
 	public void setTimeOut(String timeOut) {
 		this.timeOut = timeOut;
-		putQueryParameter("TimeOut", timeOut);
+		if(timeOut != null){
+			putQueryParameter("TimeOut", timeOut);
+		}
+	}
+
+	public String getAuthType() {
+		return this.authType;
+	}
+
+	public void setAuthType(String authType) {
+		this.authType = authType;
+		if(authType != null){
+			putQueryParameter("AuthType", authType);
+		}
 	}
 
 	@Override

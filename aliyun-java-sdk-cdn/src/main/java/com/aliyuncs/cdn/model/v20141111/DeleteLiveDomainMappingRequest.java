@@ -27,24 +27,26 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeleteLiveDomainMappingRequest extends RpcAcsRequest<DeleteLiveDomainMappingResponse> {
 	
 	public DeleteLiveDomainMappingRequest() {
-		super("Cdn", "2014-11-11", "DeleteLiveDomainMapping");
+		super("Cdn", "2014-11-11", "DeleteLiveDomainMapping", "None");
 	}
 
-	private Long ownerId;
+	private String pullDomain;
 
 	private String securityToken;
 
 	private String pushDomain;
 
-	private String pullDomain;
+	private Long ownerId;
 
-	public Long getOwnerId() {
-		return this.ownerId;
+	public String getPullDomain() {
+		return this.pullDomain;
 	}
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
+	public void setPullDomain(String pullDomain) {
+		this.pullDomain = pullDomain;
+		if(pullDomain != null){
+			putQueryParameter("PullDomain", pullDomain);
+		}
 	}
 
 	public String getSecurityToken() {
@@ -53,7 +55,9 @@ public class DeleteLiveDomainMappingRequest extends RpcAcsRequest<DeleteLiveDoma
 
 	public void setSecurityToken(String securityToken) {
 		this.securityToken = securityToken;
-		putQueryParameter("SecurityToken", securityToken);
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
 	}
 
 	public String getPushDomain() {
@@ -62,16 +66,20 @@ public class DeleteLiveDomainMappingRequest extends RpcAcsRequest<DeleteLiveDoma
 
 	public void setPushDomain(String pushDomain) {
 		this.pushDomain = pushDomain;
-		putQueryParameter("PushDomain", pushDomain);
+		if(pushDomain != null){
+			putQueryParameter("PushDomain", pushDomain);
+		}
 	}
 
-	public String getPullDomain() {
-		return this.pullDomain;
+	public Long getOwnerId() {
+		return this.ownerId;
 	}
 
-	public void setPullDomain(String pullDomain) {
-		this.pullDomain = pullDomain;
-		putQueryParameter("PullDomain", pullDomain);
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
 	}
 
 	@Override

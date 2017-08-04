@@ -27,10 +27,10 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeRangeDataByLocateAndIspServiceRequest extends RpcAcsRequest<DescribeRangeDataByLocateAndIspServiceResponse> {
 	
 	public DescribeRangeDataByLocateAndIspServiceRequest() {
-		super("Cdn", "2014-11-11", "DescribeRangeDataByLocateAndIspService");
+		super("Cdn", "2014-11-11", "DescribeRangeDataByLocateAndIspService", "None");
 	}
 
-	private Long ownerId;
+	private String ispNames;
 
 	private String securityToken;
 
@@ -38,19 +38,21 @@ public class DescribeRangeDataByLocateAndIspServiceRequest extends RpcAcsRequest
 
 	private String locationNames;
 
-	private String ispNames;
+	private String endTime;
 
 	private String startTime;
 
-	private String endTime;
+	private Long ownerId;
 
-	public Long getOwnerId() {
-		return this.ownerId;
+	public String getIspNames() {
+		return this.ispNames;
 	}
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
+	public void setIspNames(String ispNames) {
+		this.ispNames = ispNames;
+		if(ispNames != null){
+			putQueryParameter("IspNames", ispNames);
+		}
 	}
 
 	public String getSecurityToken() {
@@ -59,7 +61,9 @@ public class DescribeRangeDataByLocateAndIspServiceRequest extends RpcAcsRequest
 
 	public void setSecurityToken(String securityToken) {
 		this.securityToken = securityToken;
-		putQueryParameter("SecurityToken", securityToken);
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
 	}
 
 	public String getDomainNames() {
@@ -68,7 +72,9 @@ public class DescribeRangeDataByLocateAndIspServiceRequest extends RpcAcsRequest
 
 	public void setDomainNames(String domainNames) {
 		this.domainNames = domainNames;
-		putQueryParameter("DomainNames", domainNames);
+		if(domainNames != null){
+			putQueryParameter("DomainNames", domainNames);
+		}
 	}
 
 	public String getLocationNames() {
@@ -77,25 +83,9 @@ public class DescribeRangeDataByLocateAndIspServiceRequest extends RpcAcsRequest
 
 	public void setLocationNames(String locationNames) {
 		this.locationNames = locationNames;
-		putQueryParameter("LocationNames", locationNames);
-	}
-
-	public String getIspNames() {
-		return this.ispNames;
-	}
-
-	public void setIspNames(String ispNames) {
-		this.ispNames = ispNames;
-		putQueryParameter("IspNames", ispNames);
-	}
-
-	public String getstartTime() {
-		return this.startTime;
-	}
-
-	public void setstartTime(String startTime) {
-		this.startTime = startTime;
-		putQueryParameter("startTime", startTime);
+		if(locationNames != null){
+			putQueryParameter("LocationNames", locationNames);
+		}
 	}
 
 	public String getEndTime() {
@@ -104,7 +94,31 @@ public class DescribeRangeDataByLocateAndIspServiceRequest extends RpcAcsRequest
 
 	public void setEndTime(String endTime) {
 		this.endTime = endTime;
-		putQueryParameter("EndTime", endTime);
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime);
+		}
+	}
+
+	public String getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("startTime", startTime);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
 	}
 
 	@Override

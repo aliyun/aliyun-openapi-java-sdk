@@ -33,16 +33,16 @@ public class DescribeLiveStreamOnlineUserNumResponseUnmarshaller {
 		describeLiveStreamOnlineUserNumResponse.setRequestId(context.stringValue("DescribeLiveStreamOnlineUserNumResponse.RequestId"));
 		describeLiveStreamOnlineUserNumResponse.setTotalUserNumber(context.longValue("DescribeLiveStreamOnlineUserNumResponse.TotalUserNumber"));
 
-		List<LiveStreamOnlineUserNumInfo> onlineUserInfoList = new ArrayList<LiveStreamOnlineUserNumInfo>();
+		List<LiveStreamOnlineUserNumInfo> onlineUserInfo = new ArrayList<LiveStreamOnlineUserNumInfo>();
 		for (int i = 0; i < context.lengthValue("DescribeLiveStreamOnlineUserNumResponse.OnlineUserInfo.Length"); i++) {
 			LiveStreamOnlineUserNumInfo liveStreamOnlineUserNumInfo = new LiveStreamOnlineUserNumInfo();
 			liveStreamOnlineUserNumInfo.setStreamUrl(context.stringValue("DescribeLiveStreamOnlineUserNumResponse.OnlineUserInfo["+ i +"].StreamUrl"));
 			liveStreamOnlineUserNumInfo.setUserNumber(context.longValue("DescribeLiveStreamOnlineUserNumResponse.OnlineUserInfo["+ i +"].UserNumber"));
 			liveStreamOnlineUserNumInfo.setTime(context.stringValue("DescribeLiveStreamOnlineUserNumResponse.OnlineUserInfo["+ i +"].Time"));
 
-			onlineUserInfoList.add(liveStreamOnlineUserNumInfo);
+			onlineUserInfo.add(liveStreamOnlineUserNumInfo);
 		}
-		describeLiveStreamOnlineUserNumResponse.setOnlineUserInfo(onlineUserInfoList);
+		describeLiveStreamOnlineUserNumResponse.setOnlineUserInfo(onlineUserInfo);
 	 
 	 	return describeLiveStreamOnlineUserNumResponse;
 	}

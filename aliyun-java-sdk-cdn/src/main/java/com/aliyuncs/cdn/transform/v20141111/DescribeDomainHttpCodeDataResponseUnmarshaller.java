@@ -37,24 +37,25 @@ public class DescribeDomainHttpCodeDataResponseUnmarshaller {
 		describeDomainHttpCodeDataResponse.setStartTime(context.stringValue("DescribeDomainHttpCodeDataResponse.StartTime"));
 		describeDomainHttpCodeDataResponse.setEndTime(context.stringValue("DescribeDomainHttpCodeDataResponse.EndTime"));
 
-		List<UsageData> httpCodeDataList = new ArrayList<UsageData>();
+		List<UsageData> httpCodeData = new ArrayList<UsageData>();
 		for (int i = 0; i < context.lengthValue("DescribeDomainHttpCodeDataResponse.HttpCodeData.Length"); i++) {
 			UsageData usageData = new UsageData();
 			usageData.setTimeStamp(context.stringValue("DescribeDomainHttpCodeDataResponse.HttpCodeData["+ i +"].TimeStamp"));
 
-			List<CodeProportionData> valueList = new ArrayList<CodeProportionData>();
+			List<CodeProportionData> value = new ArrayList<CodeProportionData>();
 			for (int j = 0; j < context.lengthValue("DescribeDomainHttpCodeDataResponse.HttpCodeData["+ i +"].Value.Length"); j++) {
 				CodeProportionData codeProportionData = new CodeProportionData();
 				codeProportionData.setCode(context.stringValue("DescribeDomainHttpCodeDataResponse.HttpCodeData["+ i +"].Value["+ j +"].Code"));
 				codeProportionData.setProportion(context.stringValue("DescribeDomainHttpCodeDataResponse.HttpCodeData["+ i +"].Value["+ j +"].Proportion"));
+				codeProportionData.setCount(context.stringValue("DescribeDomainHttpCodeDataResponse.HttpCodeData["+ i +"].Value["+ j +"].Count"));
 
-				valueList.add(codeProportionData);
+				value.add(codeProportionData);
 			}
-			usageData.setValue(valueList);
+			usageData.setValue(value);
 
-			httpCodeDataList.add(usageData);
+			httpCodeData.add(usageData);
 		}
-		describeDomainHttpCodeDataResponse.setHttpCodeData(httpCodeDataList);
+		describeDomainHttpCodeDataResponse.setHttpCodeData(httpCodeData);
 	 
 	 	return describeDomainHttpCodeDataResponse;
 	}

@@ -89,6 +89,10 @@ public class DescribeDomainConfigsResponse extends AcsResponse {
 
 		private ForwardSchemeConfig forwardSchemeConfig;
 
+		private RemoveQueryStringConfig removeQueryStringConfig;
+
+		private L2OssKeyConfig l2OssKeyConfig;
+
 		public List<CacheExpiredConfig> getCacheExpiredConfigs() {
 			return this.cacheExpiredConfigs;
 		}
@@ -241,6 +245,22 @@ public class DescribeDomainConfigsResponse extends AcsResponse {
 			this.forwardSchemeConfig = forwardSchemeConfig;
 		}
 
+		public RemoveQueryStringConfig getRemoveQueryStringConfig() {
+			return this.removeQueryStringConfig;
+		}
+
+		public void setRemoveQueryStringConfig(RemoveQueryStringConfig removeQueryStringConfig) {
+			this.removeQueryStringConfig = removeQueryStringConfig;
+		}
+
+		public L2OssKeyConfig getL2OssKeyConfig() {
+			return this.l2OssKeyConfig;
+		}
+
+		public void setL2OssKeyConfig(L2OssKeyConfig l2OssKeyConfig) {
+			this.l2OssKeyConfig = l2OssKeyConfig;
+		}
+
 		public static class CacheExpiredConfig {
 
 			private String configId;
@@ -312,6 +332,8 @@ public class DescribeDomainConfigsResponse extends AcsResponse {
 
 			private String pageUrl;
 
+			private String status;
+
 			public String getConfigId() {
 				return this.configId;
 			}
@@ -334,6 +356,14 @@ public class DescribeDomainConfigsResponse extends AcsResponse {
 
 			public void setPageUrl(String pageUrl) {
 				this.pageUrl = pageUrl;
+			}
+
+			public String getStatus() {
+				return this.status;
+			}
+
+			public void setStatus(String status) {
+				this.status = status;
 			}
 		}
 
@@ -394,6 +424,8 @@ public class DescribeDomainConfigsResponse extends AcsResponse {
 
 			private String dynamicCacheControl;
 
+			private String status;
+
 			public String getConfigId() {
 				return this.configId;
 			}
@@ -441,6 +473,14 @@ public class DescribeDomainConfigsResponse extends AcsResponse {
 			public void setDynamicCacheControl(String dynamicCacheControl) {
 				this.dynamicCacheControl = dynamicCacheControl;
 			}
+
+			public String getStatus() {
+				return this.status;
+			}
+
+			public void setStatus(String status) {
+				this.status = status;
+			}
 		}
 
 		public static class ReqHeaderConfig {
@@ -450,6 +490,8 @@ public class DescribeDomainConfigsResponse extends AcsResponse {
 			private String key;
 
 			private String value;
+
+			private String status;
 
 			public String getConfigId() {
 				return this.configId;
@@ -474,15 +516,35 @@ public class DescribeDomainConfigsResponse extends AcsResponse {
 			public void setValue(String value) {
 				this.value = value;
 			}
+
+			public String getStatus() {
+				return this.status;
+			}
+
+			public void setStatus(String status) {
+				this.status = status;
+			}
 		}
 
 		public static class CcConfig {
+
+			private String configId;
 
 			private String enable;
 
 			private String allowIps;
 
 			private String blockIps;
+
+			private String status;
+
+			public String getConfigId() {
+				return this.configId;
+			}
+
+			public void setConfigId(String configId) {
+				this.configId = configId;
+			}
 
 			public String getEnable() {
 				return this.enable;
@@ -507,6 +569,14 @@ public class DescribeDomainConfigsResponse extends AcsResponse {
 			public void setBlockIps(String blockIps) {
 				this.blockIps = blockIps;
 			}
+
+			public String getStatus() {
+				return this.status;
+			}
+
+			public void setStatus(String status) {
+				this.status = status;
+			}
 		}
 
 		public static class ErrorPageConfig {
@@ -518,6 +588,8 @@ public class DescribeDomainConfigsResponse extends AcsResponse {
 			private String pageType;
 
 			private String customPageUrl;
+
+			private String status;
 
 			public String getConfigId() {
 				return this.configId;
@@ -550,11 +622,31 @@ public class DescribeDomainConfigsResponse extends AcsResponse {
 			public void setCustomPageUrl(String customPageUrl) {
 				this.customPageUrl = customPageUrl;
 			}
+
+			public String getStatus() {
+				return this.status;
+			}
+
+			public void setStatus(String status) {
+				this.status = status;
+			}
 		}
 
 		public static class OptimizeConfig {
 
+			private String configId;
+
 			private String enable;
+
+			private String status;
+
+			public String getConfigId() {
+				return this.configId;
+			}
+
+			public void setConfigId(String configId) {
+				this.configId = configId;
+			}
 
 			public String getEnable() {
 				return this.enable;
@@ -562,12 +654,32 @@ public class DescribeDomainConfigsResponse extends AcsResponse {
 
 			public void setEnable(String enable) {
 				this.enable = enable;
+			}
+
+			public String getStatus() {
+				return this.status;
+			}
+
+			public void setStatus(String status) {
+				this.status = status;
 			}
 		}
 
 		public static class PageCompressConfig {
 
+			private String configId;
+
 			private String enable;
+
+			private String status;
+
+			public String getConfigId() {
+				return this.configId;
+			}
+
+			public void setConfigId(String configId) {
+				this.configId = configId;
+			}
 
 			public String getEnable() {
 				return this.enable;
@@ -576,13 +688,33 @@ public class DescribeDomainConfigsResponse extends AcsResponse {
 			public void setEnable(String enable) {
 				this.enable = enable;
 			}
+
+			public String getStatus() {
+				return this.status;
+			}
+
+			public void setStatus(String status) {
+				this.status = status;
+			}
 		}
 
 		public static class IgnoreQueryStringConfig {
 
+			private String configId;
+
 			private String hashKeyArgs;
 
 			private String enable;
+
+			private String status;
+
+			public String getConfigId() {
+				return this.configId;
+			}
+
+			public void setConfigId(String configId) {
+				this.configId = configId;
+			}
 
 			public String getHashKeyArgs() {
 				return this.hashKeyArgs;
@@ -599,11 +731,31 @@ public class DescribeDomainConfigsResponse extends AcsResponse {
 			public void setEnable(String enable) {
 				this.enable = enable;
 			}
+
+			public String getStatus() {
+				return this.status;
+			}
+
+			public void setStatus(String status) {
+				this.status = status;
+			}
 		}
 
 		public static class RangeConfig {
 
+			private String configId;
+
 			private String enable;
+
+			private String status;
+
+			public String getConfigId() {
+				return this.configId;
+			}
+
+			public void setConfigId(String configId) {
+				this.configId = configId;
+			}
 
 			public String getEnable() {
 				return this.enable;
@@ -612,15 +764,37 @@ public class DescribeDomainConfigsResponse extends AcsResponse {
 			public void setEnable(String enable) {
 				this.enable = enable;
 			}
+
+			public String getStatus() {
+				return this.status;
+			}
+
+			public void setStatus(String status) {
+				this.status = status;
+			}
 		}
 
 		public static class RefererConfig {
+
+			private String configId;
 
 			private String referType;
 
 			private String referList;
 
 			private String allowEmpty;
+
+			private String disableAst;
+
+			private String status;
+
+			public String getConfigId() {
+				return this.configId;
+			}
+
+			public void setConfigId(String configId) {
+				this.configId = configId;
+			}
 
 			public String getReferType() {
 				return this.referType;
@@ -645,15 +819,53 @@ public class DescribeDomainConfigsResponse extends AcsResponse {
 			public void setAllowEmpty(String allowEmpty) {
 				this.allowEmpty = allowEmpty;
 			}
+
+			public String getDisableAst() {
+				return this.disableAst;
+			}
+
+			public void setDisableAst(String disableAst) {
+				this.disableAst = disableAst;
+			}
+
+			public String getStatus() {
+				return this.status;
+			}
+
+			public void setStatus(String status) {
+				this.status = status;
+			}
 		}
 
 		public static class ReqAuthConfig {
+
+			private String configId;
 
 			private String authType;
 
 			private String key1;
 
 			private String key2;
+
+			private String status;
+
+			private String aliAuthWhiteList;
+
+			private String authM3u8;
+
+			private String authAddr;
+
+			private String authRemoteDesc;
+
+			private String timeOut;
+
+			public String getConfigId() {
+				return this.configId;
+			}
+
+			public void setConfigId(String configId) {
+				this.configId = configId;
+			}
 
 			public String getAuthType() {
 				return this.authType;
@@ -678,11 +890,71 @@ public class DescribeDomainConfigsResponse extends AcsResponse {
 			public void setKey2(String key2) {
 				this.key2 = key2;
 			}
+
+			public String getStatus() {
+				return this.status;
+			}
+
+			public void setStatus(String status) {
+				this.status = status;
+			}
+
+			public String getAliAuthWhiteList() {
+				return this.aliAuthWhiteList;
+			}
+
+			public void setAliAuthWhiteList(String aliAuthWhiteList) {
+				this.aliAuthWhiteList = aliAuthWhiteList;
+			}
+
+			public String getAuthM3u8() {
+				return this.authM3u8;
+			}
+
+			public void setAuthM3u8(String authM3u8) {
+				this.authM3u8 = authM3u8;
+			}
+
+			public String getAuthAddr() {
+				return this.authAddr;
+			}
+
+			public void setAuthAddr(String authAddr) {
+				this.authAddr = authAddr;
+			}
+
+			public String getAuthRemoteDesc() {
+				return this.authRemoteDesc;
+			}
+
+			public void setAuthRemoteDesc(String authRemoteDesc) {
+				this.authRemoteDesc = authRemoteDesc;
+			}
+
+			public String getTimeOut() {
+				return this.timeOut;
+			}
+
+			public void setTimeOut(String timeOut) {
+				this.timeOut = timeOut;
+			}
 		}
 
 		public static class SrcHostConfig {
 
+			private String configId;
+
 			private String domainName;
+
+			private String status;
+
+			public String getConfigId() {
+				return this.configId;
+			}
+
+			public void setConfigId(String configId) {
+				this.configId = configId;
+			}
 
 			public String getDomainName() {
 				return this.domainName;
@@ -691,11 +963,31 @@ public class DescribeDomainConfigsResponse extends AcsResponse {
 			public void setDomainName(String domainName) {
 				this.domainName = domainName;
 			}
+
+			public String getStatus() {
+				return this.status;
+			}
+
+			public void setStatus(String status) {
+				this.status = status;
+			}
 		}
 
 		public static class VideoSeekConfig {
 
+			private String configId;
+
 			private String enable;
+
+			private String status;
+
+			public String getConfigId() {
+				return this.configId;
+			}
+
+			public void setConfigId(String configId) {
+				this.configId = configId;
+			}
 
 			public String getEnable() {
 				return this.enable;
@@ -703,12 +995,32 @@ public class DescribeDomainConfigsResponse extends AcsResponse {
 
 			public void setEnable(String enable) {
 				this.enable = enable;
+			}
+
+			public String getStatus() {
+				return this.status;
+			}
+
+			public void setStatus(String status) {
+				this.status = status;
 			}
 		}
 
 		public static class WafConfig {
 
+			private String configId;
+
 			private String enable;
+
+			private String status;
+
+			public String getConfigId() {
+				return this.configId;
+			}
+
+			public void setConfigId(String configId) {
+				this.configId = configId;
+			}
 
 			public String getEnable() {
 				return this.enable;
@@ -716,6 +1028,14 @@ public class DescribeDomainConfigsResponse extends AcsResponse {
 
 			public void setEnable(String enable) {
 				this.enable = enable;
+			}
+
+			public String getStatus() {
+				return this.status;
+			}
+
+			public void setStatus(String status) {
+				this.status = status;
 			}
 		}
 
@@ -757,11 +1077,23 @@ public class DescribeDomainConfigsResponse extends AcsResponse {
 
 		public static class ForwardSchemeConfig {
 
+			private String configId;
+
 			private String enable;
 
 			private String schemeOrigin;
 
 			private String schemeOriginPort;
+
+			private String status;
+
+			public String getConfigId() {
+				return this.configId;
+			}
+
+			public void setConfigId(String configId) {
+				this.configId = configId;
+			}
 
 			public String getEnable() {
 				return this.enable;
@@ -785,6 +1117,80 @@ public class DescribeDomainConfigsResponse extends AcsResponse {
 
 			public void setSchemeOriginPort(String schemeOriginPort) {
 				this.schemeOriginPort = schemeOriginPort;
+			}
+
+			public String getStatus() {
+				return this.status;
+			}
+
+			public void setStatus(String status) {
+				this.status = status;
+			}
+		}
+
+		public static class RemoveQueryStringConfig {
+
+			private String aliRemoveArgs;
+
+			private String configId;
+
+			private String status;
+
+			public String getAliRemoveArgs() {
+				return this.aliRemoveArgs;
+			}
+
+			public void setAliRemoveArgs(String aliRemoveArgs) {
+				this.aliRemoveArgs = aliRemoveArgs;
+			}
+
+			public String getConfigId() {
+				return this.configId;
+			}
+
+			public void setConfigId(String configId) {
+				this.configId = configId;
+			}
+
+			public String getStatus() {
+				return this.status;
+			}
+
+			public void setStatus(String status) {
+				this.status = status;
+			}
+		}
+
+		public static class L2OssKeyConfig {
+
+			private String privateOssAuth;
+
+			private String configId;
+
+			private String status;
+
+			public String getPrivateOssAuth() {
+				return this.privateOssAuth;
+			}
+
+			public void setPrivateOssAuth(String privateOssAuth) {
+				this.privateOssAuth = privateOssAuth;
+			}
+
+			public String getConfigId() {
+				return this.configId;
+			}
+
+			public void setConfigId(String configId) {
+				this.configId = configId;
+			}
+
+			public String getStatus() {
+				return this.status;
+			}
+
+			public void setStatus(String status) {
+				this.status = status;
 			}
 		}
 	}

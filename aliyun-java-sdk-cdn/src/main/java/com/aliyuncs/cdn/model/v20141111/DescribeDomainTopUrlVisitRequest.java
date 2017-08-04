@@ -27,25 +27,18 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeDomainTopUrlVisitRequest extends RpcAcsRequest<DescribeDomainTopUrlVisitResponse> {
 	
 	public DescribeDomainTopUrlVisitRequest() {
-		super("Cdn", "2014-11-11", "DescribeDomainTopUrlVisit");
+		super("Cdn", "2014-11-11", "DescribeDomainTopUrlVisit", "None");
 	}
-
-	private Long ownerId;
 
 	private String securityToken;
 
 	private String domainName;
 
+	private String sortBy;
+
 	private String startTime;
 
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
-	}
+	private Long ownerId;
 
 	public String getSecurityToken() {
 		return this.securityToken;
@@ -53,7 +46,9 @@ public class DescribeDomainTopUrlVisitRequest extends RpcAcsRequest<DescribeDoma
 
 	public void setSecurityToken(String securityToken) {
 		this.securityToken = securityToken;
-		putQueryParameter("SecurityToken", securityToken);
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
 	}
 
 	public String getDomainName() {
@@ -62,7 +57,20 @@ public class DescribeDomainTopUrlVisitRequest extends RpcAcsRequest<DescribeDoma
 
 	public void setDomainName(String domainName) {
 		this.domainName = domainName;
-		putQueryParameter("DomainName", domainName);
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
+		}
+	}
+
+	public String getSortBy() {
+		return this.sortBy;
+	}
+
+	public void setSortBy(String sortBy) {
+		this.sortBy = sortBy;
+		if(sortBy != null){
+			putQueryParameter("SortBy", sortBy);
+		}
 	}
 
 	public String getStartTime() {
@@ -71,7 +79,20 @@ public class DescribeDomainTopUrlVisitRequest extends RpcAcsRequest<DescribeDoma
 
 	public void setStartTime(String startTime) {
 		this.startTime = startTime;
-		putQueryParameter("StartTime", startTime);
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
 	}
 
 	@Override

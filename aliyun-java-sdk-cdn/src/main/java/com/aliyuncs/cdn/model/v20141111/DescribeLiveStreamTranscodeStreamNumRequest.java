@@ -27,24 +27,26 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeLiveStreamTranscodeStreamNumRequest extends RpcAcsRequest<DescribeLiveStreamTranscodeStreamNumResponse> {
 	
 	public DescribeLiveStreamTranscodeStreamNumRequest() {
-		super("Cdn", "2014-11-11", "DescribeLiveStreamTranscodeStreamNum");
+		super("Cdn", "2014-11-11", "DescribeLiveStreamTranscodeStreamNum", "None");
 	}
-
-	private Long ownerId;
-
-	private String securityToken;
 
 	private String pullDomain;
 
+	private String securityToken;
+
 	private String pushDomain;
 
-	public Long getOwnerId() {
-		return this.ownerId;
+	private Long ownerId;
+
+	public String getPullDomain() {
+		return this.pullDomain;
 	}
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
+	public void setPullDomain(String pullDomain) {
+		this.pullDomain = pullDomain;
+		if(pullDomain != null){
+			putQueryParameter("PullDomain", pullDomain);
+		}
 	}
 
 	public String getSecurityToken() {
@@ -53,16 +55,9 @@ public class DescribeLiveStreamTranscodeStreamNumRequest extends RpcAcsRequest<D
 
 	public void setSecurityToken(String securityToken) {
 		this.securityToken = securityToken;
-		putQueryParameter("SecurityToken", securityToken);
-	}
-
-	public String getPullDomain() {
-		return this.pullDomain;
-	}
-
-	public void setPullDomain(String pullDomain) {
-		this.pullDomain = pullDomain;
-		putQueryParameter("PullDomain", pullDomain);
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
 	}
 
 	public String getPushDomain() {
@@ -71,7 +66,20 @@ public class DescribeLiveStreamTranscodeStreamNumRequest extends RpcAcsRequest<D
 
 	public void setPushDomain(String pushDomain) {
 		this.pushDomain = pushDomain;
-		putQueryParameter("PushDomain", pushDomain);
+		if(pushDomain != null){
+			putQueryParameter("PushDomain", pushDomain);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
 	}
 
 	@Override

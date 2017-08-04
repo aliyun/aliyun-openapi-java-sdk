@@ -36,7 +36,7 @@ public class DescribeDomainQpsDataResponseUnmarshaller {
 		describeDomainQpsDataResponse.setStartTime(context.stringValue("DescribeDomainQpsDataResponse.StartTime"));
 		describeDomainQpsDataResponse.setEndTime(context.stringValue("DescribeDomainQpsDataResponse.EndTime"));
 
-		List<DataModule> qpsDataIntervalList = new ArrayList<DataModule>();
+		List<DataModule> qpsDataInterval = new ArrayList<DataModule>();
 		for (int i = 0; i < context.lengthValue("DescribeDomainQpsDataResponse.QpsDataInterval.Length"); i++) {
 			DataModule dataModule = new DataModule();
 			dataModule.setTimeStamp(context.stringValue("DescribeDomainQpsDataResponse.QpsDataInterval["+ i +"].TimeStamp"));
@@ -53,9 +53,9 @@ public class DescribeDomainQpsDataResponseUnmarshaller {
 			dataModule.setStaticDomesticValue(context.stringValue("DescribeDomainQpsDataResponse.QpsDataInterval["+ i +"].StaticDomesticValue"));
 			dataModule.setStaticOverseasValue(context.stringValue("DescribeDomainQpsDataResponse.QpsDataInterval["+ i +"].StaticOverseasValue"));
 
-			qpsDataIntervalList.add(dataModule);
+			qpsDataInterval.add(dataModule);
 		}
-		describeDomainQpsDataResponse.setQpsDataInterval(qpsDataIntervalList);
+		describeDomainQpsDataResponse.setQpsDataInterval(qpsDataInterval);
 	 
 	 	return describeDomainQpsDataResponse;
 	}

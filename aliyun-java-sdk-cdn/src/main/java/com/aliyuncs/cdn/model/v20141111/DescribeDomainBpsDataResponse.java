@@ -49,7 +49,7 @@ public class DescribeDomainBpsDataResponse extends AcsResponse {
 
 	private List<DataModule> bpsDataPerInterval;
 
-	private List<DataModule> supplyBpsDatas;
+	private List<DataModule1> supplyBpsDatas;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -131,11 +131,11 @@ public class DescribeDomainBpsDataResponse extends AcsResponse {
 		this.bpsDataPerInterval = bpsDataPerInterval;
 	}
 
-	public List<DataModule> getSupplyBpsDatas() {
+	public List<DataModule1> getSupplyBpsDatas() {
 		return this.supplyBpsDatas;
 	}
 
-	public void setSupplyBpsDatas(List<DataModule> supplyBpsDatas) {
+	public void setSupplyBpsDatas(List<DataModule1> supplyBpsDatas) {
 		this.supplyBpsDatas = supplyBpsDatas;
 	}
 
@@ -269,6 +269,29 @@ public class DescribeDomainBpsDataResponse extends AcsResponse {
 
 		public void setOverseasL2Value(String overseasL2Value) {
 			this.overseasL2Value = overseasL2Value;
+		}
+	}
+
+	public static class DataModule1 {
+
+		private String timeStamp;
+
+		private String value;
+
+		public String getTimeStamp() {
+			return this.timeStamp;
+		}
+
+		public void setTimeStamp(String timeStamp) {
+			this.timeStamp = timeStamp;
+		}
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
 		}
 	}
 

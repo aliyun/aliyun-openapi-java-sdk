@@ -27,23 +27,14 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeLiveStreamTranscodeInfoRequest extends RpcAcsRequest<DescribeLiveStreamTranscodeInfoResponse> {
 	
 	public DescribeLiveStreamTranscodeInfoRequest() {
-		super("Cdn", "2014-11-11", "DescribeLiveStreamTranscodeInfo");
+		super("Cdn", "2014-11-11", "DescribeLiveStreamTranscodeInfo", "None");
 	}
-
-	private Long ownerId;
 
 	private String securityToken;
 
+	private Long ownerId;
+
 	private String domainTranscodeName;
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
-	}
 
 	public String getSecurityToken() {
 		return this.securityToken;
@@ -51,7 +42,20 @@ public class DescribeLiveStreamTranscodeInfoRequest extends RpcAcsRequest<Descri
 
 	public void setSecurityToken(String securityToken) {
 		this.securityToken = securityToken;
-		putQueryParameter("SecurityToken", securityToken);
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
 	}
 
 	public String getDomainTranscodeName() {
@@ -60,7 +64,9 @@ public class DescribeLiveStreamTranscodeInfoRequest extends RpcAcsRequest<Descri
 
 	public void setDomainTranscodeName(String domainTranscodeName) {
 		this.domainTranscodeName = domainTranscodeName;
-		putQueryParameter("DomainTranscodeName", domainTranscodeName);
+		if(domainTranscodeName != null){
+			putQueryParameter("DomainTranscodeName", domainTranscodeName);
+		}
 	}
 
 	@Override

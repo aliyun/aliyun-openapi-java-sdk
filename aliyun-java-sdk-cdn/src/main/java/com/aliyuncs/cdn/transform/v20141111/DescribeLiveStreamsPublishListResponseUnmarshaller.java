@@ -32,7 +32,7 @@ public class DescribeLiveStreamsPublishListResponseUnmarshaller {
 		
 		describeLiveStreamsPublishListResponse.setRequestId(context.stringValue("DescribeLiveStreamsPublishListResponse.RequestId"));
 
-		List<LiveStreamPublishInfo> publishInfoList = new ArrayList<LiveStreamPublishInfo>();
+		List<LiveStreamPublishInfo> publishInfo = new ArrayList<LiveStreamPublishInfo>();
 		for (int i = 0; i < context.lengthValue("DescribeLiveStreamsPublishListResponse.PublishInfo.Length"); i++) {
 			LiveStreamPublishInfo liveStreamPublishInfo = new LiveStreamPublishInfo();
 			liveStreamPublishInfo.setDomainName(context.stringValue("DescribeLiveStreamsPublishListResponse.PublishInfo["+ i +"].DomainName"));
@@ -45,9 +45,9 @@ public class DescribeLiveStreamsPublishListResponseUnmarshaller {
 			liveStreamPublishInfo.setClientAddr(context.stringValue("DescribeLiveStreamsPublishListResponse.PublishInfo["+ i +"].ClientAddr"));
 			liveStreamPublishInfo.setEdgeNodeAddr(context.stringValue("DescribeLiveStreamsPublishListResponse.PublishInfo["+ i +"].EdgeNodeAddr"));
 
-			publishInfoList.add(liveStreamPublishInfo);
+			publishInfo.add(liveStreamPublishInfo);
 		}
-		describeLiveStreamsPublishListResponse.setPublishInfo(publishInfoList);
+		describeLiveStreamsPublishListResponse.setPublishInfo(publishInfo);
 	 
 	 	return describeLiveStreamsPublishListResponse;
 	}

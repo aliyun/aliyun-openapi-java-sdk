@@ -27,60 +27,24 @@ import com.aliyuncs.RpcAcsRequest;
 public class AddLiveStreamTranscodeRequest extends RpcAcsRequest<AddLiveStreamTranscodeResponse> {
 	
 	public AddLiveStreamTranscodeRequest() {
-		super("Cdn", "2014-11-11", "AddLiveStreamTranscode");
+		super("Cdn", "2014-11-11", "AddLiveStreamTranscode", "None");
 	}
-
-	private Long ownerId;
-
-	private String ownerAccount;
-
-	private String securityToken;
-
-	private String domain;
 
 	private String template;
 
-	private String record;
-
-	private String snapshot;
-
 	private String app;
 
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
+	private String securityToken;
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
-	}
+	private String ownerAccount;
 
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
+	private String domain;
 
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		putQueryParameter("OwnerAccount", ownerAccount);
-	}
+	private String record;
 
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
+	private Long ownerId;
 
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		putQueryParameter("SecurityToken", securityToken);
-	}
-
-	public String getDomain() {
-		return this.domain;
-	}
-
-	public void setDomain(String domain) {
-		this.domain = domain;
-		putQueryParameter("Domain", domain);
-	}
+	private String snapshot;
 
 	public String getTemplate() {
 		return this.template;
@@ -88,25 +52,9 @@ public class AddLiveStreamTranscodeRequest extends RpcAcsRequest<AddLiveStreamTr
 
 	public void setTemplate(String template) {
 		this.template = template;
-		putQueryParameter("Template", template);
-	}
-
-	public String getRecord() {
-		return this.record;
-	}
-
-	public void setRecord(String record) {
-		this.record = record;
-		putQueryParameter("Record", record);
-	}
-
-	public String getSnapshot() {
-		return this.snapshot;
-	}
-
-	public void setSnapshot(String snapshot) {
-		this.snapshot = snapshot;
-		putQueryParameter("Snapshot", snapshot);
+		if(template != null){
+			putQueryParameter("Template", template);
+		}
 	}
 
 	public String getApp() {
@@ -115,7 +63,75 @@ public class AddLiveStreamTranscodeRequest extends RpcAcsRequest<AddLiveStreamTr
 
 	public void setApp(String app) {
 		this.app = app;
-		putQueryParameter("App", app);
+		if(app != null){
+			putQueryParameter("App", app);
+		}
+	}
+
+	public String getSecurityToken() {
+		return this.securityToken;
+	}
+
+	public void setSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public String getDomain() {
+		return this.domain;
+	}
+
+	public void setDomain(String domain) {
+		this.domain = domain;
+		if(domain != null){
+			putQueryParameter("Domain", domain);
+		}
+	}
+
+	public String getRecord() {
+		return this.record;
+	}
+
+	public void setRecord(String record) {
+		this.record = record;
+		if(record != null){
+			putQueryParameter("Record", record);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getSnapshot() {
+		return this.snapshot;
+	}
+
+	public void setSnapshot(String snapshot) {
+		this.snapshot = snapshot;
+		if(snapshot != null){
+			putQueryParameter("Snapshot", snapshot);
+		}
 	}
 
 	@Override

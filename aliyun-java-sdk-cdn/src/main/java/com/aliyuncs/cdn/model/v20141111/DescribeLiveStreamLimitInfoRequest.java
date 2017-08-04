@@ -27,23 +27,14 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeLiveStreamLimitInfoRequest extends RpcAcsRequest<DescribeLiveStreamLimitInfoResponse> {
 	
 	public DescribeLiveStreamLimitInfoRequest() {
-		super("Cdn", "2014-11-11", "DescribeLiveStreamLimitInfo");
+		super("Cdn", "2014-11-11", "DescribeLiveStreamLimitInfo", "None");
 	}
-
-	private Long ownerId;
 
 	private String securityToken;
 
+	private Long ownerId;
+
 	private String limitDomain;
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
-	}
 
 	public String getSecurityToken() {
 		return this.securityToken;
@@ -51,7 +42,20 @@ public class DescribeLiveStreamLimitInfoRequest extends RpcAcsRequest<DescribeLi
 
 	public void setSecurityToken(String securityToken) {
 		this.securityToken = securityToken;
-		putQueryParameter("SecurityToken", securityToken);
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
 	}
 
 	public String getLimitDomain() {
@@ -60,7 +64,9 @@ public class DescribeLiveStreamLimitInfoRequest extends RpcAcsRequest<DescribeLi
 
 	public void setLimitDomain(String limitDomain) {
 		this.limitDomain = limitDomain;
-		putQueryParameter("LimitDomain", limitDomain);
+		if(limitDomain != null){
+			putQueryParameter("LimitDomain", limitDomain);
+		}
 	}
 
 	@Override

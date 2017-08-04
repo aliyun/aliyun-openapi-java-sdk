@@ -1,0 +1,20 @@
+2017-08-04 Version: 2.4.0
+1, 增加了DescribeDomainAverageResponseTime接口。
+2, 增加了DescribeDomainMax95BpsData接口。
+3, 增加了DescribeDomainPathData接口。
+4, 增加了DescribeDomainRealTimeData接口。
+5, 增加了DescribeLiveStreamBitRateData接口。
+6, 增加了DescribeLiveStreamFrameAndBitRateByDomain接口。
+7, 增加了DescribeLiveStreamFrameInfo接口。
+8, 增加了DescribeLiveStreamFrameLossRatio接口。
+9, 增加了DescribeLiveStreamHlsOnlineUserNumByDomain接口。
+10, 增加了DescribeLiveStreamOnlineBps接口。
+11, 增加了DescribeLiveStreamOnlineUserNumByDomain接口。
+12, 增加了DescribeLiveStreamRelayPushBitRate接口。
+13, 增加了DescribeLiveStreamRoomBitRate接口。
+14, 增加了DescribeLiveStreamRoomUserNumber接口。
+15, 增加了DescribeUserCustomerLabels接口。
+16, 增加了SetIpBlackListConfig接口。
+17, 增加了SetRemoteReqAuthConfig接口。
+18, 增加了SetRemoveQueryStringConfig接口。
+

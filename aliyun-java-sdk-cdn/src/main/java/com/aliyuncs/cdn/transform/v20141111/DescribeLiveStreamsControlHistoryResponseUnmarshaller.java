@@ -32,7 +32,7 @@ public class DescribeLiveStreamsControlHistoryResponseUnmarshaller {
 		
 		describeLiveStreamsControlHistoryResponse.setRequestId(context.stringValue("DescribeLiveStreamsControlHistoryResponse.RequestId"));
 
-		List<LiveStreamControlInfo> controlInfoList = new ArrayList<LiveStreamControlInfo>();
+		List<LiveStreamControlInfo> controlInfo = new ArrayList<LiveStreamControlInfo>();
 		for (int i = 0; i < context.lengthValue("DescribeLiveStreamsControlHistoryResponse.ControlInfo.Length"); i++) {
 			LiveStreamControlInfo liveStreamControlInfo = new LiveStreamControlInfo();
 			liveStreamControlInfo.setStreamName(context.stringValue("DescribeLiveStreamsControlHistoryResponse.ControlInfo["+ i +"].StreamName"));
@@ -40,9 +40,9 @@ public class DescribeLiveStreamsControlHistoryResponseUnmarshaller {
 			liveStreamControlInfo.setAction(context.stringValue("DescribeLiveStreamsControlHistoryResponse.ControlInfo["+ i +"].Action"));
 			liveStreamControlInfo.setTimeStamp(context.stringValue("DescribeLiveStreamsControlHistoryResponse.ControlInfo["+ i +"].TimeStamp"));
 
-			controlInfoList.add(liveStreamControlInfo);
+			controlInfo.add(liveStreamControlInfo);
 		}
-		describeLiveStreamsControlHistoryResponse.setControlInfo(controlInfoList);
+		describeLiveStreamsControlHistoryResponse.setControlInfo(controlInfo);
 	 
 	 	return describeLiveStreamsControlHistoryResponse;
 	}

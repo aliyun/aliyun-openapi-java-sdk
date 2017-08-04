@@ -27,10 +27,8 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeDomainConfigsRequest extends RpcAcsRequest<DescribeDomainConfigsResponse> {
 	
 	public DescribeDomainConfigsRequest() {
-		super("Cdn", "2014-11-11", "DescribeDomainConfigs");
+		super("Cdn", "2014-11-11", "DescribeDomainConfigs", "None");
 	}
-
-	private Long ownerId;
 
 	private String securityToken;
 
@@ -38,14 +36,7 @@ public class DescribeDomainConfigsRequest extends RpcAcsRequest<DescribeDomainCo
 
 	private String configList;
 
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
-	}
+	private Long ownerId;
 
 	public String getSecurityToken() {
 		return this.securityToken;
@@ -53,7 +44,9 @@ public class DescribeDomainConfigsRequest extends RpcAcsRequest<DescribeDomainCo
 
 	public void setSecurityToken(String securityToken) {
 		this.securityToken = securityToken;
-		putQueryParameter("SecurityToken", securityToken);
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
 	}
 
 	public String getDomainName() {
@@ -62,7 +55,9 @@ public class DescribeDomainConfigsRequest extends RpcAcsRequest<DescribeDomainCo
 
 	public void setDomainName(String domainName) {
 		this.domainName = domainName;
-		putQueryParameter("DomainName", domainName);
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
+		}
 	}
 
 	public String getConfigList() {
@@ -71,7 +66,20 @@ public class DescribeDomainConfigsRequest extends RpcAcsRequest<DescribeDomainCo
 
 	public void setConfigList(String configList) {
 		this.configList = configList;
-		putQueryParameter("ConfigList", configList);
+		if(configList != null){
+			putQueryParameter("ConfigList", configList);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
 	}
 
 	@Override

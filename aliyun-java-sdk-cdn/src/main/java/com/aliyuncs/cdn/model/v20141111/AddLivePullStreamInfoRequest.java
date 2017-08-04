@@ -27,71 +27,26 @@ import com.aliyuncs.RpcAcsRequest;
 public class AddLivePullStreamInfoRequest extends RpcAcsRequest<AddLivePullStreamInfoResponse> {
 	
 	public AddLivePullStreamInfoRequest() {
-		super("Cdn", "2014-11-11", "AddLivePullStreamInfo");
+		super("Cdn", "2014-11-11", "AddLivePullStreamInfo", "None");
 	}
-
-	private Long ownerId;
-
-	private String securityToken;
-
-	private String domainName;
-
-	private String appName;
-
-	private String streamName;
 
 	private String sourceUrl;
 
 	private String always;
 
-	private String startTime;
+	private String appName;
+
+	private String securityToken;
+
+	private String domainName;
 
 	private String endTime;
 
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
+	private String startTime;
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
-	}
+	private Long ownerId;
 
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		putQueryParameter("SecurityToken", securityToken);
-	}
-
-	public String getDomainName() {
-		return this.domainName;
-	}
-
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
-		putQueryParameter("DomainName", domainName);
-	}
-
-	public String getAppName() {
-		return this.appName;
-	}
-
-	public void setAppName(String appName) {
-		this.appName = appName;
-		putQueryParameter("AppName", appName);
-	}
-
-	public String getStreamName() {
-		return this.streamName;
-	}
-
-	public void setStreamName(String streamName) {
-		this.streamName = streamName;
-		putQueryParameter("StreamName", streamName);
-	}
+	private String streamName;
 
 	public String getSourceUrl() {
 		return this.sourceUrl;
@@ -99,7 +54,9 @@ public class AddLivePullStreamInfoRequest extends RpcAcsRequest<AddLivePullStrea
 
 	public void setSourceUrl(String sourceUrl) {
 		this.sourceUrl = sourceUrl;
-		putQueryParameter("SourceUrl", sourceUrl);
+		if(sourceUrl != null){
+			putQueryParameter("SourceUrl", sourceUrl);
+		}
 	}
 
 	public String getAlways() {
@@ -108,16 +65,42 @@ public class AddLivePullStreamInfoRequest extends RpcAcsRequest<AddLivePullStrea
 
 	public void setAlways(String always) {
 		this.always = always;
-		putQueryParameter("Always", always);
+		if(always != null){
+			putQueryParameter("Always", always);
+		}
 	}
 
-	public String getStartTime() {
-		return this.startTime;
+	public String getAppName() {
+		return this.appName;
 	}
 
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-		putQueryParameter("StartTime", startTime);
+	public void setAppName(String appName) {
+		this.appName = appName;
+		if(appName != null){
+			putQueryParameter("AppName", appName);
+		}
+	}
+
+	public String getSecurityToken() {
+		return this.securityToken;
+	}
+
+	public void setSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	public String getDomainName() {
+		return this.domainName;
+	}
+
+	public void setDomainName(String domainName) {
+		this.domainName = domainName;
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
+		}
 	}
 
 	public String getEndTime() {
@@ -126,7 +109,42 @@ public class AddLivePullStreamInfoRequest extends RpcAcsRequest<AddLivePullStrea
 
 	public void setEndTime(String endTime) {
 		this.endTime = endTime;
-		putQueryParameter("EndTime", endTime);
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime);
+		}
+	}
+
+	public String getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getStreamName() {
+		return this.streamName;
+	}
+
+	public void setStreamName(String streamName) {
+		this.streamName = streamName;
+		if(streamName != null){
+			putQueryParameter("StreamName", streamName);
+		}
 	}
 
 	@Override

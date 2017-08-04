@@ -27,25 +27,16 @@ import com.aliyuncs.RpcAcsRequest;
 public class RefreshObjectCachesRequest extends RpcAcsRequest<RefreshObjectCachesResponse> {
 	
 	public RefreshObjectCachesRequest() {
-		super("Cdn", "2014-11-11", "RefreshObjectCaches");
+		super("Cdn", "2014-11-11", "RefreshObjectCaches", "None");
 	}
-
-	private Long ownerId;
 
 	private String securityToken;
 
 	private String objectPath;
 
+	private Long ownerId;
+
 	private String objectType;
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
-	}
 
 	public String getSecurityToken() {
 		return this.securityToken;
@@ -53,7 +44,9 @@ public class RefreshObjectCachesRequest extends RpcAcsRequest<RefreshObjectCache
 
 	public void setSecurityToken(String securityToken) {
 		this.securityToken = securityToken;
-		putQueryParameter("SecurityToken", securityToken);
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
 	}
 
 	public String getObjectPath() {
@@ -62,7 +55,20 @@ public class RefreshObjectCachesRequest extends RpcAcsRequest<RefreshObjectCache
 
 	public void setObjectPath(String objectPath) {
 		this.objectPath = objectPath;
-		putQueryParameter("ObjectPath", objectPath);
+		if(objectPath != null){
+			putQueryParameter("ObjectPath", objectPath);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
 	}
 
 	public String getObjectType() {
@@ -71,7 +77,9 @@ public class RefreshObjectCachesRequest extends RpcAcsRequest<RefreshObjectCache
 
 	public void setObjectType(String objectType) {
 		this.objectType = objectType;
-		putQueryParameter("ObjectType", objectType);
+		if(objectType != null){
+			putQueryParameter("ObjectType", objectType);
+		}
 	}
 
 	@Override

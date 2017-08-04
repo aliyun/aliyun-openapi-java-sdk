@@ -27,24 +27,26 @@ import com.aliyuncs.RpcAcsRequest;
 public class GetUserDomainBlackListRequest extends RpcAcsRequest<GetUserDomainBlackListResponse> {
 	
 	public GetUserDomainBlackListRequest() {
-		super("Cdn", "2014-11-11", "GetUserDomainBlackList");
+		super("Cdn", "2014-11-11", "GetUserDomainBlackList", "None");
 	}
-
-	private Long ownerId;
-
-	private String ownerAccount;
 
 	private String securityToken;
 
+	private String ownerAccount;
+
 	private String domainName;
 
-	public Long getOwnerId() {
-		return this.ownerId;
+	private Long ownerId;
+
+	public String getSecurityToken() {
+		return this.securityToken;
 	}
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
+	public void setSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
 	}
 
 	public String getOwnerAccount() {
@@ -53,16 +55,9 @@ public class GetUserDomainBlackListRequest extends RpcAcsRequest<GetUserDomainBl
 
 	public void setOwnerAccount(String ownerAccount) {
 		this.ownerAccount = ownerAccount;
-		putQueryParameter("OwnerAccount", ownerAccount);
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		putQueryParameter("SecurityToken", securityToken);
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
 	}
 
 	public String getDomainName() {
@@ -71,7 +66,20 @@ public class GetUserDomainBlackListRequest extends RpcAcsRequest<GetUserDomainBl
 
 	public void setDomainName(String domainName) {
 		this.domainName = domainName;
-		putQueryParameter("DomainName", domainName);
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
 	}
 
 	@Override

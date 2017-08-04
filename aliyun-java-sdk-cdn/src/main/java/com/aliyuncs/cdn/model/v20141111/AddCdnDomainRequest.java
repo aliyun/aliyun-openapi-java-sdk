@@ -27,83 +27,46 @@ import com.aliyuncs.RpcAcsRequest;
 public class AddCdnDomainRequest extends RpcAcsRequest<AddCdnDomainResponse> {
 	
 	public AddCdnDomainRequest() {
-		super("Cdn", "2014-11-11", "AddCdnDomain");
+		super("Cdn", "2014-11-11", "AddCdnDomain", "None");
 	}
 
-	private Long ownerId;
-
-	private String ownerAccount;
-
-	private String securityToken;
-
-	private String domainName;
-
-	private String cdnType;
-
-	private String sourceType;
+	private String topLevelDomain;
 
 	private String sources;
 
+	private String ownerAccount;
+
+	private String domainName;
+
+	private Long ownerId;
+
+	private String resourceGroupId;
+
 	private Integer sourcePort;
+
+	private String priorities;
+
+	private String securityToken;
+
+	private String cdnType;
+
+	private String scope;
+
+	private String sourceType;
 
 	private String checkUrl;
 
 	private String region;
 
-	private String scope;
-
-	public Long getOwnerId() {
-		return this.ownerId;
+	public String getTopLevelDomain() {
+		return this.topLevelDomain;
 	}
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
-	}
-
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
-
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		putQueryParameter("OwnerAccount", ownerAccount);
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		putQueryParameter("SecurityToken", securityToken);
-	}
-
-	public String getDomainName() {
-		return this.domainName;
-	}
-
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
-		putQueryParameter("DomainName", domainName);
-	}
-
-	public String getCdnType() {
-		return this.cdnType;
-	}
-
-	public void setCdnType(String cdnType) {
-		this.cdnType = cdnType;
-		putQueryParameter("CdnType", cdnType);
-	}
-
-	public String getSourceType() {
-		return this.sourceType;
-	}
-
-	public void setSourceType(String sourceType) {
-		this.sourceType = sourceType;
-		putQueryParameter("SourceType", sourceType);
+	public void setTopLevelDomain(String topLevelDomain) {
+		this.topLevelDomain = topLevelDomain;
+		if(topLevelDomain != null){
+			putQueryParameter("TopLevelDomain", topLevelDomain);
+		}
 	}
 
 	public String getSources() {
@@ -112,7 +75,53 @@ public class AddCdnDomainRequest extends RpcAcsRequest<AddCdnDomainResponse> {
 
 	public void setSources(String sources) {
 		this.sources = sources;
-		putQueryParameter("Sources", sources);
+		if(sources != null){
+			putQueryParameter("Sources", sources);
+		}
+	}
+
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public String getDomainName() {
+		return this.domainName;
+	}
+
+	public void setDomainName(String domainName) {
+		this.domainName = domainName;
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
 	}
 
 	public Integer getSourcePort() {
@@ -121,25 +130,42 @@ public class AddCdnDomainRequest extends RpcAcsRequest<AddCdnDomainResponse> {
 
 	public void setSourcePort(Integer sourcePort) {
 		this.sourcePort = sourcePort;
-		putQueryParameter("SourcePort", sourcePort);
+		if(sourcePort != null){
+			putQueryParameter("SourcePort", sourcePort.toString());
+		}
 	}
 
-	public String getCheckUrl() {
-		return this.checkUrl;
+	public String getPriorities() {
+		return this.priorities;
 	}
 
-	public void setCheckUrl(String checkUrl) {
-		this.checkUrl = checkUrl;
-		putQueryParameter("CheckUrl", checkUrl);
+	public void setPriorities(String priorities) {
+		this.priorities = priorities;
+		if(priorities != null){
+			putQueryParameter("Priorities", priorities);
+		}
 	}
 
-	public String getRegion() {
-		return this.region;
+	public String getSecurityToken() {
+		return this.securityToken;
 	}
 
-	public void setRegion(String region) {
-		this.region = region;
-		putQueryParameter("Region", region);
+	public void setSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	public String getCdnType() {
+		return this.cdnType;
+	}
+
+	public void setCdnType(String cdnType) {
+		this.cdnType = cdnType;
+		if(cdnType != null){
+			putQueryParameter("CdnType", cdnType);
+		}
 	}
 
 	public String getScope() {
@@ -148,7 +174,42 @@ public class AddCdnDomainRequest extends RpcAcsRequest<AddCdnDomainResponse> {
 
 	public void setScope(String scope) {
 		this.scope = scope;
-		putQueryParameter("Scope", scope);
+		if(scope != null){
+			putQueryParameter("Scope", scope);
+		}
+	}
+
+	public String getSourceType() {
+		return this.sourceType;
+	}
+
+	public void setSourceType(String sourceType) {
+		this.sourceType = sourceType;
+		if(sourceType != null){
+			putQueryParameter("SourceType", sourceType);
+		}
+	}
+
+	public String getCheckUrl() {
+		return this.checkUrl;
+	}
+
+	public void setCheckUrl(String checkUrl) {
+		this.checkUrl = checkUrl;
+		if(checkUrl != null){
+			putQueryParameter("CheckUrl", checkUrl);
+		}
+	}
+
+	public String getRegion() {
+		return this.region;
+	}
+
+	public void setRegion(String region) {
+		this.region = region;
+		if(region != null){
+			putQueryParameter("Region", region);
+		}
 	}
 
 	@Override

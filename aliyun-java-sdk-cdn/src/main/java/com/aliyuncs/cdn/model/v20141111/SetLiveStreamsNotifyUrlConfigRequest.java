@@ -27,10 +27,8 @@ import com.aliyuncs.RpcAcsRequest;
 public class SetLiveStreamsNotifyUrlConfigRequest extends RpcAcsRequest<SetLiveStreamsNotifyUrlConfigResponse> {
 	
 	public SetLiveStreamsNotifyUrlConfigRequest() {
-		super("Cdn", "2014-11-11", "SetLiveStreamsNotifyUrlConfig");
+		super("Cdn", "2014-11-11", "SetLiveStreamsNotifyUrlConfig", "None");
 	}
-
-	private Long ownerId;
 
 	private String securityToken;
 
@@ -38,14 +36,7 @@ public class SetLiveStreamsNotifyUrlConfigRequest extends RpcAcsRequest<SetLiveS
 
 	private String notifyUrl;
 
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
-	}
+	private Long ownerId;
 
 	public String getSecurityToken() {
 		return this.securityToken;
@@ -53,7 +44,9 @@ public class SetLiveStreamsNotifyUrlConfigRequest extends RpcAcsRequest<SetLiveS
 
 	public void setSecurityToken(String securityToken) {
 		this.securityToken = securityToken;
-		putQueryParameter("SecurityToken", securityToken);
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
 	}
 
 	public String getDomainName() {
@@ -62,7 +55,9 @@ public class SetLiveStreamsNotifyUrlConfigRequest extends RpcAcsRequest<SetLiveS
 
 	public void setDomainName(String domainName) {
 		this.domainName = domainName;
-		putQueryParameter("DomainName", domainName);
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
+		}
 	}
 
 	public String getNotifyUrl() {
@@ -71,7 +66,20 @@ public class SetLiveStreamsNotifyUrlConfigRequest extends RpcAcsRequest<SetLiveS
 
 	public void setNotifyUrl(String notifyUrl) {
 		this.notifyUrl = notifyUrl;
-		putQueryParameter("NotifyUrl", notifyUrl);
+		if(notifyUrl != null){
+			putQueryParameter("NotifyUrl", notifyUrl);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
 	}
 
 	@Override

@@ -32,7 +32,7 @@ public class DescribeLiveStreamRecordIndexFilesResponseUnmarshaller {
 		
 		describeLiveStreamRecordIndexFilesResponse.setRequestId(context.stringValue("DescribeLiveStreamRecordIndexFilesResponse.RequestId"));
 
-		List<RecordIndexInfo> recordIndexInfoListList = new ArrayList<RecordIndexInfo>();
+		List<RecordIndexInfo> recordIndexInfoList = new ArrayList<RecordIndexInfo>();
 		for (int i = 0; i < context.lengthValue("DescribeLiveStreamRecordIndexFilesResponse.RecordIndexInfoList.Length"); i++) {
 			RecordIndexInfo recordIndexInfo = new RecordIndexInfo();
 			recordIndexInfo.setRecordId(context.stringValue("DescribeLiveStreamRecordIndexFilesResponse.RecordIndexInfoList["+ i +"].RecordId"));
@@ -48,9 +48,9 @@ public class DescribeLiveStreamRecordIndexFilesResponseUnmarshaller {
 			recordIndexInfo.setWidth(context.integerValue("DescribeLiveStreamRecordIndexFilesResponse.RecordIndexInfoList["+ i +"].Width"));
 			recordIndexInfo.setCreateTime(context.stringValue("DescribeLiveStreamRecordIndexFilesResponse.RecordIndexInfoList["+ i +"].CreateTime"));
 
-			recordIndexInfoListList.add(recordIndexInfo);
+			recordIndexInfoList.add(recordIndexInfo);
 		}
-		describeLiveStreamRecordIndexFilesResponse.setRecordIndexInfoList(recordIndexInfoListList);
+		describeLiveStreamRecordIndexFilesResponse.setRecordIndexInfoList(recordIndexInfoList);
 	 
 	 	return describeLiveStreamRecordIndexFilesResponse;
 	}

@@ -27,25 +27,16 @@ import com.aliyuncs.RpcAcsRequest;
 public class SetRangeConfigRequest extends RpcAcsRequest<SetRangeConfigResponse> {
 	
 	public SetRangeConfigRequest() {
-		super("Cdn", "2014-11-11", "SetRangeConfig");
+		super("Cdn", "2014-11-11", "SetRangeConfig", "None");
 	}
-
-	private Long ownerId;
 
 	private String securityToken;
 
-	private String domainName;
-
 	private String enable;
 
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
+	private String domainName;
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
-	}
+	private Long ownerId;
 
 	public String getSecurityToken() {
 		return this.securityToken;
@@ -53,16 +44,9 @@ public class SetRangeConfigRequest extends RpcAcsRequest<SetRangeConfigResponse>
 
 	public void setSecurityToken(String securityToken) {
 		this.securityToken = securityToken;
-		putQueryParameter("SecurityToken", securityToken);
-	}
-
-	public String getDomainName() {
-		return this.domainName;
-	}
-
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
-		putQueryParameter("DomainName", domainName);
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
 	}
 
 	public String getEnable() {
@@ -71,7 +55,31 @@ public class SetRangeConfigRequest extends RpcAcsRequest<SetRangeConfigResponse>
 
 	public void setEnable(String enable) {
 		this.enable = enable;
-		putQueryParameter("Enable", enable);
+		if(enable != null){
+			putQueryParameter("Enable", enable);
+		}
+	}
+
+	public String getDomainName() {
+		return this.domainName;
+	}
+
+	public void setDomainName(String domainName) {
+		this.domainName = domainName;
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
 	}
 
 	@Override

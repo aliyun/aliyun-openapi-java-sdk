@@ -32,15 +32,15 @@ public class DescribeDomainUpstreamOfCenterResponseUnmarshaller {
 		
 		describeDomainUpstreamOfCenterResponse.setRequestId(context.stringValue("DescribeDomainUpstreamOfCenterResponse.RequestId"));
 
-		List<DomainBpsModel> bpsDatasList = new ArrayList<DomainBpsModel>();
+		List<DomainBpsModel> bpsDatas = new ArrayList<DomainBpsModel>();
 		for (int i = 0; i < context.lengthValue("DescribeDomainUpstreamOfCenterResponse.BpsDatas.Length"); i++) {
 			DomainBpsModel domainBpsModel = new DomainBpsModel();
 			domainBpsModel.setTime(context.stringValue("DescribeDomainUpstreamOfCenterResponse.BpsDatas["+ i +"].Time"));
 			domainBpsModel.setBps(context.floatValue("DescribeDomainUpstreamOfCenterResponse.BpsDatas["+ i +"].Bps"));
 
-			bpsDatasList.add(domainBpsModel);
+			bpsDatas.add(domainBpsModel);
 		}
-		describeDomainUpstreamOfCenterResponse.setBpsDatas(bpsDatasList);
+		describeDomainUpstreamOfCenterResponse.setBpsDatas(bpsDatas);
 	 
 	 	return describeDomainUpstreamOfCenterResponse;
 	}

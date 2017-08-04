@@ -63,7 +63,7 @@ public class DescribeDomainsBySourceResponse extends AcsResponse {
 
 		private String source;
 
-		private List<domainInfo> domainInfos;
+		private List<DomainInfo> domainInfos;
 
 		private List<String> domains;
 
@@ -75,11 +75,11 @@ public class DescribeDomainsBySourceResponse extends AcsResponse {
 			this.source = source;
 		}
 
-		public List<domainInfo> getDomainInfos() {
+		public List<DomainInfo> getDomainInfos() {
 			return this.domainInfos;
 		}
 
-		public void setDomainInfos(List<domainInfo> domainInfos) {
+		public void setDomainInfos(List<DomainInfo> domainInfos) {
 			this.domainInfos = domainInfos;
 		}
 
@@ -91,7 +91,7 @@ public class DescribeDomainsBySourceResponse extends AcsResponse {
 			this.domains = domains;
 		}
 
-		public static class domainInfo {
+		public static class DomainInfo {
 
 			private String domainName;
 

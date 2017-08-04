@@ -34,16 +34,16 @@ public class DescribeDomainBpsDataByTimeStampResponseUnmarshaller {
 		describeDomainBpsDataByTimeStampResponse.setDomainName(context.stringValue("DescribeDomainBpsDataByTimeStampResponse.DomainName"));
 		describeDomainBpsDataByTimeStampResponse.setTimeStamp(context.stringValue("DescribeDomainBpsDataByTimeStampResponse.TimeStamp"));
 
-		List<BpsDataModel> bpsDataListList = new ArrayList<BpsDataModel>();
+		List<BpsDataModel> bpsDataList = new ArrayList<BpsDataModel>();
 		for (int i = 0; i < context.lengthValue("DescribeDomainBpsDataByTimeStampResponse.BpsDataList.Length"); i++) {
 			BpsDataModel bpsDataModel = new BpsDataModel();
 			bpsDataModel.setLocationName(context.stringValue("DescribeDomainBpsDataByTimeStampResponse.BpsDataList["+ i +"].LocationName"));
 			bpsDataModel.setIspName(context.stringValue("DescribeDomainBpsDataByTimeStampResponse.BpsDataList["+ i +"].IspName"));
 			bpsDataModel.setBps(context.longValue("DescribeDomainBpsDataByTimeStampResponse.BpsDataList["+ i +"].Bps"));
 
-			bpsDataListList.add(bpsDataModel);
+			bpsDataList.add(bpsDataModel);
 		}
-		describeDomainBpsDataByTimeStampResponse.setBpsDataList(bpsDataListList);
+		describeDomainBpsDataByTimeStampResponse.setBpsDataList(bpsDataList);
 	 
 	 	return describeDomainBpsDataByTimeStampResponse;
 	}

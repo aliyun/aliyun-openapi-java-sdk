@@ -32,7 +32,7 @@ public class DescribeLivePullStreamConfigResponseUnmarshaller {
 		
 		describeLivePullStreamConfigResponse.setRequestId(context.stringValue("DescribeLivePullStreamConfigResponse.RequestId"));
 
-		List<LiveAppRecord> liveAppRecordListList = new ArrayList<LiveAppRecord>();
+		List<LiveAppRecord> liveAppRecordList = new ArrayList<LiveAppRecord>();
 		for (int i = 0; i < context.lengthValue("DescribeLivePullStreamConfigResponse.LiveAppRecordList.Length"); i++) {
 			LiveAppRecord liveAppRecord = new LiveAppRecord();
 			liveAppRecord.setDomainName(context.stringValue("DescribeLivePullStreamConfigResponse.LiveAppRecordList["+ i +"].DomainName"));
@@ -42,9 +42,9 @@ public class DescribeLivePullStreamConfigResponseUnmarshaller {
 			liveAppRecord.setStartTime(context.stringValue("DescribeLivePullStreamConfigResponse.LiveAppRecordList["+ i +"].StartTime"));
 			liveAppRecord.setEndTime(context.stringValue("DescribeLivePullStreamConfigResponse.LiveAppRecordList["+ i +"].EndTime"));
 
-			liveAppRecordListList.add(liveAppRecord);
+			liveAppRecordList.add(liveAppRecord);
 		}
-		describeLivePullStreamConfigResponse.setLiveAppRecordList(liveAppRecordListList);
+		describeLivePullStreamConfigResponse.setLiveAppRecordList(liveAppRecordList);
 	 
 	 	return describeLivePullStreamConfigResponse;
 	}

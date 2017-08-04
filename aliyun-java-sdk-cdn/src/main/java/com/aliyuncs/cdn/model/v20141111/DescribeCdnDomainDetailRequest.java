@@ -27,23 +27,14 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeCdnDomainDetailRequest extends RpcAcsRequest<DescribeCdnDomainDetailResponse> {
 	
 	public DescribeCdnDomainDetailRequest() {
-		super("Cdn", "2014-11-11", "DescribeCdnDomainDetail");
+		super("Cdn", "2014-11-11", "DescribeCdnDomainDetail", "None");
 	}
-
-	private Long ownerId;
 
 	private String securityToken;
 
 	private String domainName;
 
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
-	}
+	private Long ownerId;
 
 	public String getSecurityToken() {
 		return this.securityToken;
@@ -51,7 +42,9 @@ public class DescribeCdnDomainDetailRequest extends RpcAcsRequest<DescribeCdnDom
 
 	public void setSecurityToken(String securityToken) {
 		this.securityToken = securityToken;
-		putQueryParameter("SecurityToken", securityToken);
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
 	}
 
 	public String getDomainName() {
@@ -60,7 +53,20 @@ public class DescribeCdnDomainDetailRequest extends RpcAcsRequest<DescribeCdnDom
 
 	public void setDomainName(String domainName) {
 		this.domainName = domainName;
-		putQueryParameter("DomainName", domainName);
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
 	}
 
 	@Override

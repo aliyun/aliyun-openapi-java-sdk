@@ -39,7 +39,7 @@ public class DescribeCdnDomainLogsResponseUnmarshaller {
 		DomainLogModel domainLogModel = new DomainLogModel();
 		domainLogModel.setDomainName(context.stringValue("DescribeCdnDomainLogsResponse.DomainLogModel.DomainName"));
 
-		List<DomainLogDetail> domainLogDetailsList = new ArrayList<DomainLogDetail>();
+		List<DomainLogDetail> domainLogDetails = new ArrayList<DomainLogDetail>();
 		for (int i = 0; i < context.lengthValue("DescribeCdnDomainLogsResponse.DomainLogModel.DomainLogDetails.Length"); i++) {
 			DomainLogDetail domainLogDetail = new DomainLogDetail();
 			domainLogDetail.setLogName(context.stringValue("DescribeCdnDomainLogsResponse.DomainLogModel.DomainLogDetails["+ i +"].LogName"));
@@ -48,9 +48,9 @@ public class DescribeCdnDomainLogsResponseUnmarshaller {
 			domainLogDetail.setStartTime(context.stringValue("DescribeCdnDomainLogsResponse.DomainLogModel.DomainLogDetails["+ i +"].StartTime"));
 			domainLogDetail.setEndTime(context.stringValue("DescribeCdnDomainLogsResponse.DomainLogModel.DomainLogDetails["+ i +"].EndTime"));
 
-			domainLogDetailsList.add(domainLogDetail);
+			domainLogDetails.add(domainLogDetail);
 		}
-		domainLogModel.setDomainLogDetails(domainLogDetailsList);
+		domainLogModel.setDomainLogDetails(domainLogDetails);
 		describeCdnDomainLogsResponse.setDomainLogModel(domainLogModel);
 	 
 	 	return describeCdnDomainLogsResponse;

@@ -27,31 +27,22 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeDomainSrcFlowDataRequest extends RpcAcsRequest<DescribeDomainSrcFlowDataResponse> {
 	
 	public DescribeDomainSrcFlowDataRequest() {
-		super("Cdn", "2014-11-11", "DescribeDomainSrcFlowData");
+		super("Cdn", "2014-11-11", "DescribeDomainSrcFlowData", "None");
 	}
-
-	private Long ownerId;
 
 	private String securityToken;
 
-	private String domainName;
+	private String timeMerge;
 
-	private String startTime;
+	private String domainName;
 
 	private String endTime;
 
-	private String timeMerge;
-
 	private String interval;
 
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
+	private String startTime;
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
-	}
+	private Long ownerId;
 
 	public String getSecurityToken() {
 		return this.securityToken;
@@ -59,34 +50,9 @@ public class DescribeDomainSrcFlowDataRequest extends RpcAcsRequest<DescribeDoma
 
 	public void setSecurityToken(String securityToken) {
 		this.securityToken = securityToken;
-		putQueryParameter("SecurityToken", securityToken);
-	}
-
-	public String getDomainName() {
-		return this.domainName;
-	}
-
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
-		putQueryParameter("DomainName", domainName);
-	}
-
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-		putQueryParameter("StartTime", startTime);
-	}
-
-	public String getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
-		putQueryParameter("EndTime", endTime);
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
 	}
 
 	public String getTimeMerge() {
@@ -95,7 +61,31 @@ public class DescribeDomainSrcFlowDataRequest extends RpcAcsRequest<DescribeDoma
 
 	public void setTimeMerge(String timeMerge) {
 		this.timeMerge = timeMerge;
-		putQueryParameter("TimeMerge", timeMerge);
+		if(timeMerge != null){
+			putQueryParameter("TimeMerge", timeMerge);
+		}
+	}
+
+	public String getDomainName() {
+		return this.domainName;
+	}
+
+	public void setDomainName(String domainName) {
+		this.domainName = domainName;
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
+		}
+	}
+
+	public String getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime);
+		}
 	}
 
 	public String getInterval() {
@@ -104,7 +94,31 @@ public class DescribeDomainSrcFlowDataRequest extends RpcAcsRequest<DescribeDoma
 
 	public void setInterval(String interval) {
 		this.interval = interval;
-		putQueryParameter("Interval", interval);
+		if(interval != null){
+			putQueryParameter("Interval", interval);
+		}
+	}
+
+	public String getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
 	}
 
 	@Override

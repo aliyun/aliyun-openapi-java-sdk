@@ -27,24 +27,26 @@ import com.aliyuncs.RpcAcsRequest;
 public class AddLiveDomainMappingRequest extends RpcAcsRequest<AddLiveDomainMappingResponse> {
 	
 	public AddLiveDomainMappingRequest() {
-		super("Cdn", "2014-11-11", "AddLiveDomainMapping");
+		super("Cdn", "2014-11-11", "AddLiveDomainMapping", "None");
 	}
 
-	private Long ownerId;
+	private String pullDomain;
 
 	private String securityToken;
 
 	private String pushDomain;
 
-	private String pullDomain;
+	private Long ownerId;
 
-	public Long getOwnerId() {
-		return this.ownerId;
+	public String getPullDomain() {
+		return this.pullDomain;
 	}
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
+	public void setPullDomain(String pullDomain) {
+		this.pullDomain = pullDomain;
+		if(pullDomain != null){
+			putQueryParameter("PullDomain", pullDomain);
+		}
 	}
 
 	public String getSecurityToken() {
@@ -53,7 +55,9 @@ public class AddLiveDomainMappingRequest extends RpcAcsRequest<AddLiveDomainMapp
 
 	public void setSecurityToken(String securityToken) {
 		this.securityToken = securityToken;
-		putQueryParameter("SecurityToken", securityToken);
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
 	}
 
 	public String getPushDomain() {
@@ -62,16 +66,20 @@ public class AddLiveDomainMappingRequest extends RpcAcsRequest<AddLiveDomainMapp
 
 	public void setPushDomain(String pushDomain) {
 		this.pushDomain = pushDomain;
-		putQueryParameter("PushDomain", pushDomain);
+		if(pushDomain != null){
+			putQueryParameter("PushDomain", pushDomain);
+		}
 	}
 
-	public String getPullDomain() {
-		return this.pullDomain;
+	public Long getOwnerId() {
+		return this.ownerId;
 	}
 
-	public void setPullDomain(String pullDomain) {
-		this.pullDomain = pullDomain;
-		putQueryParameter("PullDomain", pullDomain);
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
 	}
 
 	@Override

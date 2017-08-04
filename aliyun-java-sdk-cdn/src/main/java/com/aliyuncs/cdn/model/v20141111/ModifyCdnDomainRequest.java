@@ -27,10 +27,16 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifyCdnDomainRequest extends RpcAcsRequest<ModifyCdnDomainResponse> {
 	
 	public ModifyCdnDomainRequest() {
-		super("Cdn", "2014-11-11", "ModifyCdnDomain");
+		super("Cdn", "2014-11-11", "ModifyCdnDomain", "None");
 	}
 
-	private Long ownerId;
+	private Integer sourcePort;
+
+	private String resourceGroupId;
+
+	private String priorities;
+
+	private String sources;
 
 	private String securityToken;
 
@@ -38,45 +44,7 @@ public class ModifyCdnDomainRequest extends RpcAcsRequest<ModifyCdnDomainRespons
 
 	private String sourceType;
 
-	private Integer sourcePort;
-
-	private String sources;
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		putQueryParameter("SecurityToken", securityToken);
-	}
-
-	public String getDomainName() {
-		return this.domainName;
-	}
-
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
-		putQueryParameter("DomainName", domainName);
-	}
-
-	public String getSourceType() {
-		return this.sourceType;
-	}
-
-	public void setSourceType(String sourceType) {
-		this.sourceType = sourceType;
-		putQueryParameter("SourceType", sourceType);
-	}
+	private Long ownerId;
 
 	public Integer getSourcePort() {
 		return this.sourcePort;
@@ -84,7 +52,31 @@ public class ModifyCdnDomainRequest extends RpcAcsRequest<ModifyCdnDomainRespons
 
 	public void setSourcePort(Integer sourcePort) {
 		this.sourcePort = sourcePort;
-		putQueryParameter("SourcePort", sourcePort);
+		if(sourcePort != null){
+			putQueryParameter("SourcePort", sourcePort.toString());
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
+	public String getPriorities() {
+		return this.priorities;
+	}
+
+	public void setPriorities(String priorities) {
+		this.priorities = priorities;
+		if(priorities != null){
+			putQueryParameter("Priorities", priorities);
+		}
 	}
 
 	public String getSources() {
@@ -93,7 +85,53 @@ public class ModifyCdnDomainRequest extends RpcAcsRequest<ModifyCdnDomainRespons
 
 	public void setSources(String sources) {
 		this.sources = sources;
-		putQueryParameter("Sources", sources);
+		if(sources != null){
+			putQueryParameter("Sources", sources);
+		}
+	}
+
+	public String getSecurityToken() {
+		return this.securityToken;
+	}
+
+	public void setSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	public String getDomainName() {
+		return this.domainName;
+	}
+
+	public void setDomainName(String domainName) {
+		this.domainName = domainName;
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
+		}
+	}
+
+	public String getSourceType() {
+		return this.sourceType;
+	}
+
+	public void setSourceType(String sourceType) {
+		this.sourceType = sourceType;
+		if(sourceType != null){
+			putQueryParameter("SourceType", sourceType);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
 	}
 
 	@Override

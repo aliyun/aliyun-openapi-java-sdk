@@ -36,7 +36,7 @@ public class DescribeCdnMonitorDataResponseUnmarshaller {
 		describeCdnMonitorDataResponse.setStartTime(context.stringValue("DescribeCdnMonitorDataResponse.StartTime"));
 		describeCdnMonitorDataResponse.setEndTime(context.stringValue("DescribeCdnMonitorDataResponse.EndTime"));
 
-		List<CDNMonitorData> monitorDatasList = new ArrayList<CDNMonitorData>();
+		List<CDNMonitorData> monitorDatas = new ArrayList<CDNMonitorData>();
 		for (int i = 0; i < context.lengthValue("DescribeCdnMonitorDataResponse.MonitorDatas.Length"); i++) {
 			CDNMonitorData cDNMonitorData = new CDNMonitorData();
 			cDNMonitorData.setTimeStamp(context.stringValue("DescribeCdnMonitorDataResponse.MonitorDatas["+ i +"].TimeStamp"));
@@ -46,9 +46,9 @@ public class DescribeCdnMonitorDataResponseUnmarshaller {
 			cDNMonitorData.setRequestHitRate(context.stringValue("DescribeCdnMonitorDataResponse.MonitorDatas["+ i +"].RequestHitRate"));
 			cDNMonitorData.setAverageObjectSize(context.stringValue("DescribeCdnMonitorDataResponse.MonitorDatas["+ i +"].AverageObjectSize"));
 
-			monitorDatasList.add(cDNMonitorData);
+			monitorDatas.add(cDNMonitorData);
 		}
-		describeCdnMonitorDataResponse.setMonitorDatas(monitorDatasList);
+		describeCdnMonitorDataResponse.setMonitorDatas(monitorDatas);
 	 
 	 	return describeCdnMonitorDataResponse;
 	}

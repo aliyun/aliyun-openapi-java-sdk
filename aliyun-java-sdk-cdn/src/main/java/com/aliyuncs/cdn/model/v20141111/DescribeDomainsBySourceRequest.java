@@ -27,22 +27,24 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeDomainsBySourceRequest extends RpcAcsRequest<DescribeDomainsBySourceResponse> {
 	
 	public DescribeDomainsBySourceRequest() {
-		super("Cdn", "2014-11-11", "DescribeDomainsBySource");
+		super("Cdn", "2014-11-11", "DescribeDomainsBySource", "None");
 	}
-
-	private Long ownerId;
-
-	private String securityToken;
 
 	private String sources;
 
-	public Long getOwnerId() {
-		return this.ownerId;
+	private String securityToken;
+
+	private Long ownerId;
+
+	public String getSources() {
+		return this.sources;
 	}
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
+	public void setSources(String sources) {
+		this.sources = sources;
+		if(sources != null){
+			putQueryParameter("Sources", sources);
+		}
 	}
 
 	public String getSecurityToken() {
@@ -51,16 +53,20 @@ public class DescribeDomainsBySourceRequest extends RpcAcsRequest<DescribeDomain
 
 	public void setSecurityToken(String securityToken) {
 		this.securityToken = securityToken;
-		putQueryParameter("SecurityToken", securityToken);
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
 	}
 
-	public String getSources() {
-		return this.sources;
+	public Long getOwnerId() {
+		return this.ownerId;
 	}
 
-	public void setSources(String sources) {
-		this.sources = sources;
-		putQueryParameter("Sources", sources);
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
 	}
 
 	@Override

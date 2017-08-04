@@ -27,51 +27,24 @@ import com.aliyuncs.RpcAcsRequest;
 public class SetDynamicConfigRequest extends RpcAcsRequest<SetDynamicConfigResponse> {
 	
 	public SetDynamicConfigRequest() {
-		super("Cdn", "2014-11-11", "SetDynamicConfig");
+		super("Cdn", "2014-11-11", "SetDynamicConfig", "None");
 	}
-
-	private Long ownerId;
-
-	private String securityToken;
-
-	private String domainName;
 
 	private String dynamicOrigin;
 
 	private String staticType;
 
+	private String securityToken;
+
 	private String staticUri;
+
+	private String domainName;
 
 	private String staticPath;
 
 	private String dynamicCacheControl;
 
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		putQueryParameter("SecurityToken", securityToken);
-	}
-
-	public String getDomainName() {
-		return this.domainName;
-	}
-
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
-		putQueryParameter("DomainName", domainName);
-	}
+	private Long ownerId;
 
 	public String getDynamicOrigin() {
 		return this.dynamicOrigin;
@@ -79,7 +52,9 @@ public class SetDynamicConfigRequest extends RpcAcsRequest<SetDynamicConfigRespo
 
 	public void setDynamicOrigin(String dynamicOrigin) {
 		this.dynamicOrigin = dynamicOrigin;
-		putQueryParameter("DynamicOrigin", dynamicOrigin);
+		if(dynamicOrigin != null){
+			putQueryParameter("DynamicOrigin", dynamicOrigin);
+		}
 	}
 
 	public String getStaticType() {
@@ -88,7 +63,20 @@ public class SetDynamicConfigRequest extends RpcAcsRequest<SetDynamicConfigRespo
 
 	public void setStaticType(String staticType) {
 		this.staticType = staticType;
-		putQueryParameter("StaticType", staticType);
+		if(staticType != null){
+			putQueryParameter("StaticType", staticType);
+		}
+	}
+
+	public String getSecurityToken() {
+		return this.securityToken;
+	}
+
+	public void setSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
 	}
 
 	public String getStaticUri() {
@@ -97,7 +85,20 @@ public class SetDynamicConfigRequest extends RpcAcsRequest<SetDynamicConfigRespo
 
 	public void setStaticUri(String staticUri) {
 		this.staticUri = staticUri;
-		putQueryParameter("StaticUri", staticUri);
+		if(staticUri != null){
+			putQueryParameter("StaticUri", staticUri);
+		}
+	}
+
+	public String getDomainName() {
+		return this.domainName;
+	}
+
+	public void setDomainName(String domainName) {
+		this.domainName = domainName;
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
+		}
 	}
 
 	public String getStaticPath() {
@@ -106,7 +107,9 @@ public class SetDynamicConfigRequest extends RpcAcsRequest<SetDynamicConfigRespo
 
 	public void setStaticPath(String staticPath) {
 		this.staticPath = staticPath;
-		putQueryParameter("StaticPath", staticPath);
+		if(staticPath != null){
+			putQueryParameter("StaticPath", staticPath);
+		}
 	}
 
 	public String getDynamicCacheControl() {
@@ -115,7 +118,20 @@ public class SetDynamicConfigRequest extends RpcAcsRequest<SetDynamicConfigRespo
 
 	public void setDynamicCacheControl(String dynamicCacheControl) {
 		this.dynamicCacheControl = dynamicCacheControl;
-		putQueryParameter("DynamicCacheControl", dynamicCacheControl);
+		if(dynamicCacheControl != null){
+			putQueryParameter("DynamicCacheControl", dynamicCacheControl);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
 	}
 
 	@Override

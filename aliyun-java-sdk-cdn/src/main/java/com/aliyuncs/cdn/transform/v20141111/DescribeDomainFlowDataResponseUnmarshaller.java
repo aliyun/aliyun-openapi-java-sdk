@@ -36,7 +36,7 @@ public class DescribeDomainFlowDataResponseUnmarshaller {
 		describeDomainFlowDataResponse.setStartTime(context.stringValue("DescribeDomainFlowDataResponse.StartTime"));
 		describeDomainFlowDataResponse.setEndTime(context.stringValue("DescribeDomainFlowDataResponse.EndTime"));
 
-		List<DataModule> flowDataPerIntervalList = new ArrayList<DataModule>();
+		List<DataModule> flowDataPerInterval = new ArrayList<DataModule>();
 		for (int i = 0; i < context.lengthValue("DescribeDomainFlowDataResponse.FlowDataPerInterval.Length"); i++) {
 			DataModule dataModule = new DataModule();
 			dataModule.setTimeStamp(context.stringValue("DescribeDomainFlowDataResponse.FlowDataPerInterval["+ i +"].TimeStamp"));
@@ -50,9 +50,9 @@ public class DescribeDomainFlowDataResponseUnmarshaller {
 			dataModule.setStaticDomesticValue(context.stringValue("DescribeDomainFlowDataResponse.FlowDataPerInterval["+ i +"].StaticDomesticValue"));
 			dataModule.setStaticOverseasValue(context.stringValue("DescribeDomainFlowDataResponse.FlowDataPerInterval["+ i +"].StaticOverseasValue"));
 
-			flowDataPerIntervalList.add(dataModule);
+			flowDataPerInterval.add(dataModule);
 		}
-		describeDomainFlowDataResponse.setFlowDataPerInterval(flowDataPerIntervalList);
+		describeDomainFlowDataResponse.setFlowDataPerInterval(flowDataPerInterval);
 	 
 	 	return describeDomainFlowDataResponse;
 	}

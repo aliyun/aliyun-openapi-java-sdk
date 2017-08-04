@@ -37,14 +37,14 @@ public class DescribeCdnServiceResponseUnmarshaller {
 		describeCdnServiceResponse.setChangingChargeType(context.stringValue("DescribeCdnServiceResponse.ChangingChargeType"));
 		describeCdnServiceResponse.setChangingAffectTime(context.stringValue("DescribeCdnServiceResponse.ChangingAffectTime"));
 
-		List<LockReason> operationLocksList = new ArrayList<LockReason>();
+		List<LockReason> operationLocks = new ArrayList<LockReason>();
 		for (int i = 0; i < context.lengthValue("DescribeCdnServiceResponse.OperationLocks.Length"); i++) {
 			LockReason lockReason = new LockReason();
 			lockReason.setLockReason(context.stringValue("DescribeCdnServiceResponse.OperationLocks["+ i +"].LockReason"));
 
-			operationLocksList.add(lockReason);
+			operationLocks.add(lockReason);
 		}
-		describeCdnServiceResponse.setOperationLocks(operationLocksList);
+		describeCdnServiceResponse.setOperationLocks(operationLocks);
 	 
 	 	return describeCdnServiceResponse;
 	}

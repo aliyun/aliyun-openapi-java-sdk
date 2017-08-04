@@ -27,23 +27,14 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeIpInfoRequest extends RpcAcsRequest<DescribeIpInfoResponse> {
 	
 	public DescribeIpInfoRequest() {
-		super("Cdn", "2014-11-11", "DescribeIpInfo");
+		super("Cdn", "2014-11-11", "DescribeIpInfo", "None");
 	}
-
-	private Long ownerId;
 
 	private String securityToken;
 
 	private String iP;
 
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
-	}
+	private Long ownerId;
 
 	public String getSecurityToken() {
 		return this.securityToken;
@@ -51,7 +42,9 @@ public class DescribeIpInfoRequest extends RpcAcsRequest<DescribeIpInfoResponse>
 
 	public void setSecurityToken(String securityToken) {
 		this.securityToken = securityToken;
-		putQueryParameter("SecurityToken", securityToken);
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
 	}
 
 	public String getIP() {
@@ -60,7 +53,20 @@ public class DescribeIpInfoRequest extends RpcAcsRequest<DescribeIpInfoResponse>
 
 	public void setIP(String iP) {
 		this.iP = iP;
-		putQueryParameter("IP", iP);
+		if(iP != null){
+			putQueryParameter("IP", iP);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
 	}
 
 	@Override

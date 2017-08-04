@@ -27,10 +27,8 @@ import com.aliyuncs.RpcAcsRequest;
 public class SetHttpErrorPageConfigRequest extends RpcAcsRequest<SetHttpErrorPageConfigResponse> {
 	
 	public SetHttpErrorPageConfigRequest() {
-		super("Cdn", "2014-11-11", "SetHttpErrorPageConfig");
+		super("Cdn", "2014-11-11", "SetHttpErrorPageConfig", "None");
 	}
-
-	private Long ownerId;
 
 	private String securityToken;
 
@@ -38,16 +36,9 @@ public class SetHttpErrorPageConfigRequest extends RpcAcsRequest<SetHttpErrorPag
 
 	private String pageUrl;
 
+	private Long ownerId;
+
 	private String errorCode;
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
-	}
 
 	public String getSecurityToken() {
 		return this.securityToken;
@@ -55,7 +46,9 @@ public class SetHttpErrorPageConfigRequest extends RpcAcsRequest<SetHttpErrorPag
 
 	public void setSecurityToken(String securityToken) {
 		this.securityToken = securityToken;
-		putQueryParameter("SecurityToken", securityToken);
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
 	}
 
 	public String getDomainName() {
@@ -64,7 +57,9 @@ public class SetHttpErrorPageConfigRequest extends RpcAcsRequest<SetHttpErrorPag
 
 	public void setDomainName(String domainName) {
 		this.domainName = domainName;
-		putQueryParameter("DomainName", domainName);
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
+		}
 	}
 
 	public String getPageUrl() {
@@ -73,7 +68,20 @@ public class SetHttpErrorPageConfigRequest extends RpcAcsRequest<SetHttpErrorPag
 
 	public void setPageUrl(String pageUrl) {
 		this.pageUrl = pageUrl;
-		putQueryParameter("PageUrl", pageUrl);
+		if(pageUrl != null){
+			putQueryParameter("PageUrl", pageUrl);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
 	}
 
 	public String getErrorCode() {
@@ -82,7 +90,9 @@ public class SetHttpErrorPageConfigRequest extends RpcAcsRequest<SetHttpErrorPag
 
 	public void setErrorCode(String errorCode) {
 		this.errorCode = errorCode;
-		putQueryParameter("ErrorCode", errorCode);
+		if(errorCode != null){
+			putQueryParameter("ErrorCode", errorCode);
+		}
 	}
 
 	@Override

@@ -27,54 +27,38 @@ import com.aliyuncs.RpcAcsRequest;
 public class CreateLiveStreamRecordIndexFilesRequest extends RpcAcsRequest<CreateLiveStreamRecordIndexFilesResponse> {
 	
 	public CreateLiveStreamRecordIndexFilesRequest() {
-		super("Cdn", "2014-11-11", "CreateLiveStreamRecordIndexFiles");
+		super("Cdn", "2014-11-11", "CreateLiveStreamRecordIndexFiles", "None");
 	}
 
-	private Long ownerId;
+	private String ossBucket;
+
+	private String appName;
 
 	private String securityToken;
 
 	private String domainName;
 
-	private String appName;
-
-	private String streamName;
-
 	private String ossEndpoint;
-
-	private String ossBucket;
-
-	private String ossObject;
-
-	private String startTime;
 
 	private String endTime;
 
-	public Long getOwnerId() {
-		return this.ownerId;
+	private String startTime;
+
+	private Long ownerId;
+
+	private String streamName;
+
+	private String ossObject;
+
+	public String getOssBucket() {
+		return this.ossBucket;
 	}
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		putQueryParameter("SecurityToken", securityToken);
-	}
-
-	public String getDomainName() {
-		return this.domainName;
-	}
-
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
-		putQueryParameter("DomainName", domainName);
+	public void setOssBucket(String ossBucket) {
+		this.ossBucket = ossBucket;
+		if(ossBucket != null){
+			putQueryParameter("OssBucket", ossBucket);
+		}
 	}
 
 	public String getAppName() {
@@ -83,16 +67,31 @@ public class CreateLiveStreamRecordIndexFilesRequest extends RpcAcsRequest<Creat
 
 	public void setAppName(String appName) {
 		this.appName = appName;
-		putQueryParameter("AppName", appName);
+		if(appName != null){
+			putQueryParameter("AppName", appName);
+		}
 	}
 
-	public String getStreamName() {
-		return this.streamName;
+	public String getSecurityToken() {
+		return this.securityToken;
 	}
 
-	public void setStreamName(String streamName) {
-		this.streamName = streamName;
-		putQueryParameter("StreamName", streamName);
+	public void setSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	public String getDomainName() {
+		return this.domainName;
+	}
+
+	public void setDomainName(String domainName) {
+		this.domainName = domainName;
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
+		}
 	}
 
 	public String getOssEndpoint() {
@@ -101,34 +100,9 @@ public class CreateLiveStreamRecordIndexFilesRequest extends RpcAcsRequest<Creat
 
 	public void setOssEndpoint(String ossEndpoint) {
 		this.ossEndpoint = ossEndpoint;
-		putQueryParameter("OssEndpoint", ossEndpoint);
-	}
-
-	public String getOssBucket() {
-		return this.ossBucket;
-	}
-
-	public void setOssBucket(String ossBucket) {
-		this.ossBucket = ossBucket;
-		putQueryParameter("OssBucket", ossBucket);
-	}
-
-	public String getOssObject() {
-		return this.ossObject;
-	}
-
-	public void setOssObject(String ossObject) {
-		this.ossObject = ossObject;
-		putQueryParameter("OssObject", ossObject);
-	}
-
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-		putQueryParameter("StartTime", startTime);
+		if(ossEndpoint != null){
+			putQueryParameter("OssEndpoint", ossEndpoint);
+		}
 	}
 
 	public String getEndTime() {
@@ -137,7 +111,53 @@ public class CreateLiveStreamRecordIndexFilesRequest extends RpcAcsRequest<Creat
 
 	public void setEndTime(String endTime) {
 		this.endTime = endTime;
-		putQueryParameter("EndTime", endTime);
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime);
+		}
+	}
+
+	public String getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getStreamName() {
+		return this.streamName;
+	}
+
+	public void setStreamName(String streamName) {
+		this.streamName = streamName;
+		if(streamName != null){
+			putQueryParameter("StreamName", streamName);
+		}
+	}
+
+	public String getOssObject() {
+		return this.ossObject;
+	}
+
+	public void setOssObject(String ossObject) {
+		this.ossObject = ossObject;
+		if(ossObject != null){
+			putQueryParameter("OssObject", ossObject);
+		}
 	}
 
 	@Override

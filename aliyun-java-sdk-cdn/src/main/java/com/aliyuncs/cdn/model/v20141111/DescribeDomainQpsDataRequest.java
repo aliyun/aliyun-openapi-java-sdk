@@ -27,36 +27,38 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeDomainQpsDataRequest extends RpcAcsRequest<DescribeDomainQpsDataResponse> {
 	
 	public DescribeDomainQpsDataRequest() {
-		super("Cdn", "2014-11-11", "DescribeDomainQpsData");
+		super("Cdn", "2014-11-11", "DescribeDomainQpsData", "None");
 	}
-
-	private Long ownerId;
-
-	private String securityToken;
-
-	private String domainName;
-
-	private String startTime;
-
-	private String endTime;
-
-	private String timeMerge;
-
-	private String locationNameEn;
-
-	private String ispNameEn;
 
 	private String domainType;
 
+	private String securityToken;
+
+	private String timeMerge;
+
+	private String domainName;
+
+	private String endTime;
+
+	private String locationNameEn;
+
 	private String interval;
 
-	public Long getOwnerId() {
-		return this.ownerId;
+	private String startTime;
+
+	private String ispNameEn;
+
+	private Long ownerId;
+
+	public String getDomainType() {
+		return this.domainType;
 	}
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
+	public void setDomainType(String domainType) {
+		this.domainType = domainType;
+		if(domainType != null){
+			putQueryParameter("DomainType", domainType);
+		}
 	}
 
 	public String getSecurityToken() {
@@ -65,34 +67,9 @@ public class DescribeDomainQpsDataRequest extends RpcAcsRequest<DescribeDomainQp
 
 	public void setSecurityToken(String securityToken) {
 		this.securityToken = securityToken;
-		putQueryParameter("SecurityToken", securityToken);
-	}
-
-	public String getDomainName() {
-		return this.domainName;
-	}
-
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
-		putQueryParameter("DomainName", domainName);
-	}
-
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-		putQueryParameter("StartTime", startTime);
-	}
-
-	public String getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
-		putQueryParameter("EndTime", endTime);
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
 	}
 
 	public String getTimeMerge() {
@@ -101,7 +78,31 @@ public class DescribeDomainQpsDataRequest extends RpcAcsRequest<DescribeDomainQp
 
 	public void setTimeMerge(String timeMerge) {
 		this.timeMerge = timeMerge;
-		putQueryParameter("TimeMerge", timeMerge);
+		if(timeMerge != null){
+			putQueryParameter("TimeMerge", timeMerge);
+		}
+	}
+
+	public String getDomainName() {
+		return this.domainName;
+	}
+
+	public void setDomainName(String domainName) {
+		this.domainName = domainName;
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
+		}
+	}
+
+	public String getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime);
+		}
 	}
 
 	public String getLocationNameEn() {
@@ -110,25 +111,9 @@ public class DescribeDomainQpsDataRequest extends RpcAcsRequest<DescribeDomainQp
 
 	public void setLocationNameEn(String locationNameEn) {
 		this.locationNameEn = locationNameEn;
-		putQueryParameter("LocationNameEn", locationNameEn);
-	}
-
-	public String getIspNameEn() {
-		return this.ispNameEn;
-	}
-
-	public void setIspNameEn(String ispNameEn) {
-		this.ispNameEn = ispNameEn;
-		putQueryParameter("IspNameEn", ispNameEn);
-	}
-
-	public String getDomainType() {
-		return this.domainType;
-	}
-
-	public void setDomainType(String domainType) {
-		this.domainType = domainType;
-		putQueryParameter("DomainType", domainType);
+		if(locationNameEn != null){
+			putQueryParameter("LocationNameEn", locationNameEn);
+		}
 	}
 
 	public String getInterval() {
@@ -137,7 +122,42 @@ public class DescribeDomainQpsDataRequest extends RpcAcsRequest<DescribeDomainQp
 
 	public void setInterval(String interval) {
 		this.interval = interval;
-		putQueryParameter("Interval", interval);
+		if(interval != null){
+			putQueryParameter("Interval", interval);
+		}
+	}
+
+	public String getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime);
+		}
+	}
+
+	public String getIspNameEn() {
+		return this.ispNameEn;
+	}
+
+	public void setIspNameEn(String ispNameEn) {
+		this.ispNameEn = ispNameEn;
+		if(ispNameEn != null){
+			putQueryParameter("IspNameEn", ispNameEn);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
 	}
 
 	@Override

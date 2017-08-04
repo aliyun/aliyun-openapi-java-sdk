@@ -36,15 +36,15 @@ public class DescribeDomainReqHitRateDataResponseUnmarshaller {
 		describeDomainReqHitRateDataResponse.setStartTime(context.stringValue("DescribeDomainReqHitRateDataResponse.StartTime"));
 		describeDomainReqHitRateDataResponse.setEndTime(context.stringValue("DescribeDomainReqHitRateDataResponse.EndTime"));
 
-		List<DataModule> reqHitRateIntervalList = new ArrayList<DataModule>();
+		List<DataModule> reqHitRateInterval = new ArrayList<DataModule>();
 		for (int i = 0; i < context.lengthValue("DescribeDomainReqHitRateDataResponse.ReqHitRateInterval.Length"); i++) {
 			DataModule dataModule = new DataModule();
 			dataModule.setTimeStamp(context.stringValue("DescribeDomainReqHitRateDataResponse.ReqHitRateInterval["+ i +"].TimeStamp"));
 			dataModule.setValue(context.stringValue("DescribeDomainReqHitRateDataResponse.ReqHitRateInterval["+ i +"].Value"));
 
-			reqHitRateIntervalList.add(dataModule);
+			reqHitRateInterval.add(dataModule);
 		}
-		describeDomainReqHitRateDataResponse.setReqHitRateInterval(reqHitRateIntervalList);
+		describeDomainReqHitRateDataResponse.setReqHitRateInterval(reqHitRateInterval);
 	 
 	 	return describeDomainReqHitRateDataResponse;
 	}

@@ -36,15 +36,15 @@ public class DescribeDomainCCDataResponseUnmarshaller {
 		describeDomainCCDataResponse.setStartTime(context.stringValue("DescribeDomainCCDataResponse.StartTime"));
 		describeDomainCCDataResponse.setEndTime(context.stringValue("DescribeDomainCCDataResponse.EndTime"));
 
-		List<CCDatas> cCDataListList = new ArrayList<CCDatas>();
+		List<CCDatas> cCDataList = new ArrayList<CCDatas>();
 		for (int i = 0; i < context.lengthValue("DescribeDomainCCDataResponse.CCDataList.Length"); i++) {
 			CCDatas cCDatas = new CCDatas();
 			cCDatas.setTimeStamp(context.stringValue("DescribeDomainCCDataResponse.CCDataList["+ i +"].TimeStamp"));
 			cCDatas.setCount(context.stringValue("DescribeDomainCCDataResponse.CCDataList["+ i +"].Count"));
 
-			cCDataListList.add(cCDatas);
+			cCDataList.add(cCDatas);
 		}
-		describeDomainCCDataResponse.setCCDataList(cCDataListList);
+		describeDomainCCDataResponse.setCCDataList(cCDataList);
 	 
 	 	return describeDomainCCDataResponse;
 	}

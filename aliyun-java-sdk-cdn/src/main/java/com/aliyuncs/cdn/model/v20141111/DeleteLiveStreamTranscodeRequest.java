@@ -27,56 +27,20 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeleteLiveStreamTranscodeRequest extends RpcAcsRequest<DeleteLiveStreamTranscodeResponse> {
 	
 	public DeleteLiveStreamTranscodeRequest() {
-		super("Cdn", "2014-11-11", "DeleteLiveStreamTranscode");
+		super("Cdn", "2014-11-11", "DeleteLiveStreamTranscode", "None");
 	}
-
-	private Long ownerId;
-
-	private String ownerAccount;
-
-	private String securityToken;
-
-	private String domain;
 
 	private String template;
 
 	private String app;
 
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
+	private String securityToken;
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
-	}
+	private String ownerAccount;
 
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
+	private String domain;
 
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		putQueryParameter("OwnerAccount", ownerAccount);
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		putQueryParameter("SecurityToken", securityToken);
-	}
-
-	public String getDomain() {
-		return this.domain;
-	}
-
-	public void setDomain(String domain) {
-		this.domain = domain;
-		putQueryParameter("Domain", domain);
-	}
+	private Long ownerId;
 
 	public String getTemplate() {
 		return this.template;
@@ -84,7 +48,9 @@ public class DeleteLiveStreamTranscodeRequest extends RpcAcsRequest<DeleteLiveSt
 
 	public void setTemplate(String template) {
 		this.template = template;
-		putQueryParameter("Template", template);
+		if(template != null){
+			putQueryParameter("Template", template);
+		}
 	}
 
 	public String getApp() {
@@ -93,7 +59,53 @@ public class DeleteLiveStreamTranscodeRequest extends RpcAcsRequest<DeleteLiveSt
 
 	public void setApp(String app) {
 		this.app = app;
-		putQueryParameter("App", app);
+		if(app != null){
+			putQueryParameter("App", app);
+		}
+	}
+
+	public String getSecurityToken() {
+		return this.securityToken;
+	}
+
+	public void setSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public String getDomain() {
+		return this.domain;
+	}
+
+	public void setDomain(String domain) {
+		this.domain = domain;
+		if(domain != null){
+			putQueryParameter("Domain", domain);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
 	}
 
 	@Override

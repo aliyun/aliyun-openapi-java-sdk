@@ -27,23 +27,14 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeUserConfigsRequest extends RpcAcsRequest<DescribeUserConfigsResponse> {
 	
 	public DescribeUserConfigsRequest() {
-		super("Cdn", "2014-11-11", "DescribeUserConfigs");
+		super("Cdn", "2014-11-11", "DescribeUserConfigs", "None");
 	}
-
-	private Long ownerId;
 
 	private String securityToken;
 
+	private Long ownerId;
+
 	private String config;
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
-	}
 
 	public String getSecurityToken() {
 		return this.securityToken;
@@ -51,7 +42,20 @@ public class DescribeUserConfigsRequest extends RpcAcsRequest<DescribeUserConfig
 
 	public void setSecurityToken(String securityToken) {
 		this.securityToken = securityToken;
-		putQueryParameter("SecurityToken", securityToken);
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
 	}
 
 	public String getConfig() {
@@ -60,7 +64,9 @@ public class DescribeUserConfigsRequest extends RpcAcsRequest<DescribeUserConfig
 
 	public void setConfig(String config) {
 		this.config = config;
-		putQueryParameter("Config", config);
+		if(config != null){
+			putQueryParameter("Config", config);
+		}
 	}
 
 	@Override

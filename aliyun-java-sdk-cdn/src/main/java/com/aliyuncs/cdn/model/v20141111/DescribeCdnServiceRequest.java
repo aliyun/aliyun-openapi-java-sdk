@@ -27,21 +27,12 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeCdnServiceRequest extends RpcAcsRequest<DescribeCdnServiceResponse> {
 	
 	public DescribeCdnServiceRequest() {
-		super("Cdn", "2014-11-11", "DescribeCdnService");
+		super("Cdn", "2014-11-11", "DescribeCdnService", "None");
 	}
-
-	private Long ownerId;
 
 	private String securityToken;
 
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
-	}
+	private Long ownerId;
 
 	public String getSecurityToken() {
 		return this.securityToken;
@@ -49,7 +40,20 @@ public class DescribeCdnServiceRequest extends RpcAcsRequest<DescribeCdnServiceR
 
 	public void setSecurityToken(String securityToken) {
 		this.securityToken = securityToken;
-		putQueryParameter("SecurityToken", securityToken);
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
 	}
 
 	@Override

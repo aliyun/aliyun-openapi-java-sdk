@@ -27,10 +27,8 @@ import com.aliyuncs.RpcAcsRequest;
 public class SetLocationAccessRestrictionRequest extends RpcAcsRequest<SetLocationAccessRestrictionResponse> {
 	
 	public SetLocationAccessRestrictionRequest() {
-		super("Cdn", "2014-11-11", "SetLocationAccessRestriction");
+		super("Cdn", "2014-11-11", "SetLocationAccessRestriction", "None");
 	}
-
-	private Long ownerId;
 
 	private String securityToken;
 
@@ -38,16 +36,9 @@ public class SetLocationAccessRestrictionRequest extends RpcAcsRequest<SetLocati
 
 	private String location;
 
+	private Long ownerId;
+
 	private String type;
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
-	}
 
 	public String getSecurityToken() {
 		return this.securityToken;
@@ -55,7 +46,9 @@ public class SetLocationAccessRestrictionRequest extends RpcAcsRequest<SetLocati
 
 	public void setSecurityToken(String securityToken) {
 		this.securityToken = securityToken;
-		putQueryParameter("SecurityToken", securityToken);
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
 	}
 
 	public String getDomainName() {
@@ -64,7 +57,9 @@ public class SetLocationAccessRestrictionRequest extends RpcAcsRequest<SetLocati
 
 	public void setDomainName(String domainName) {
 		this.domainName = domainName;
-		putQueryParameter("DomainName", domainName);
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
+		}
 	}
 
 	public String getLocation() {
@@ -73,7 +68,20 @@ public class SetLocationAccessRestrictionRequest extends RpcAcsRequest<SetLocati
 
 	public void setLocation(String location) {
 		this.location = location;
-		putQueryParameter("Location", location);
+		if(location != null){
+			putQueryParameter("Location", location);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
 	}
 
 	public String getType() {
@@ -82,7 +90,9 @@ public class SetLocationAccessRestrictionRequest extends RpcAcsRequest<SetLocati
 
 	public void setType(String type) {
 		this.type = type;
-		putQueryParameter("Type", type);
+		if(type != null){
+			putQueryParameter("Type", type);
+		}
 	}
 
 	@Override

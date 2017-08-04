@@ -27,22 +27,24 @@ import com.aliyuncs.RpcAcsRequest;
 public class ClearUserBlackListRequest extends RpcAcsRequest<ClearUserBlackListResponse> {
 	
 	public ClearUserBlackListRequest() {
-		super("Cdn", "2014-11-11", "ClearUserBlackList");
+		super("Cdn", "2014-11-11", "ClearUserBlackList", "None");
 	}
-
-	private Long ownerId;
-
-	private String ownerAccount;
 
 	private String securityToken;
 
-	public Long getOwnerId() {
-		return this.ownerId;
+	private String ownerAccount;
+
+	private Long ownerId;
+
+	public String getSecurityToken() {
+		return this.securityToken;
 	}
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
+	public void setSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
 	}
 
 	public String getOwnerAccount() {
@@ -51,16 +53,20 @@ public class ClearUserBlackListRequest extends RpcAcsRequest<ClearUserBlackListR
 
 	public void setOwnerAccount(String ownerAccount) {
 		this.ownerAccount = ownerAccount;
-		putQueryParameter("OwnerAccount", ownerAccount);
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
 	}
 
-	public String getSecurityToken() {
-		return this.securityToken;
+	public Long getOwnerId() {
+		return this.ownerId;
 	}
 
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		putQueryParameter("SecurityToken", securityToken);
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
 	}
 
 	@Override

@@ -27,27 +27,18 @@ import com.aliyuncs.RpcAcsRequest;
 public class SetReqHeaderConfigRequest extends RpcAcsRequest<SetReqHeaderConfigResponse> {
 	
 	public SetReqHeaderConfigRequest() {
-		super("Cdn", "2014-11-11", "SetReqHeaderConfig");
+		super("Cdn", "2014-11-11", "SetReqHeaderConfig", "None");
 	}
-
-	private Long ownerId;
 
 	private String securityToken;
 
 	private String domainName;
 
-	private String key;
+	private Long ownerId;
 
 	private String value;
 
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
-	}
+	private String key;
 
 	public String getSecurityToken() {
 		return this.securityToken;
@@ -55,7 +46,9 @@ public class SetReqHeaderConfigRequest extends RpcAcsRequest<SetReqHeaderConfigR
 
 	public void setSecurityToken(String securityToken) {
 		this.securityToken = securityToken;
-		putQueryParameter("SecurityToken", securityToken);
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
 	}
 
 	public String getDomainName() {
@@ -64,16 +57,20 @@ public class SetReqHeaderConfigRequest extends RpcAcsRequest<SetReqHeaderConfigR
 
 	public void setDomainName(String domainName) {
 		this.domainName = domainName;
-		putQueryParameter("DomainName", domainName);
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
+		}
 	}
 
-	public String getKey() {
-		return this.key;
+	public Long getOwnerId() {
+		return this.ownerId;
 	}
 
-	public void setKey(String key) {
-		this.key = key;
-		putQueryParameter("Key", key);
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
 	}
 
 	public String getValue() {
@@ -82,7 +79,20 @@ public class SetReqHeaderConfigRequest extends RpcAcsRequest<SetReqHeaderConfigR
 
 	public void setValue(String value) {
 		this.value = value;
-		putQueryParameter("Value", value);
+		if(value != null){
+			putQueryParameter("Value", value);
+		}
+	}
+
+	public String getKey() {
+		return this.key;
+	}
+
+	public void setKey(String key) {
+		this.key = key;
+		if(key != null){
+			putQueryParameter("Key", key);
+		}
 	}
 
 	@Override

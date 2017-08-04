@@ -99,6 +99,10 @@ public class DescribeUserDomainsResponse extends AcsResponse {
 
 		private String sslProtocol;
 
+		private String resourceGroupId;
+
+		private String sandbox;
+
 		private List<String> sources;
 
 		public String getDomainName() {
@@ -171,6 +175,22 @@ public class DescribeUserDomainsResponse extends AcsResponse {
 
 		public void setSslProtocol(String sslProtocol) {
 			this.sslProtocol = sslProtocol;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
+		}
+
+		public String getSandbox() {
+			return this.sandbox;
+		}
+
+		public void setSandbox(String sandbox) {
+			this.sandbox = sandbox;
 		}
 
 		public List<String> getSources() {

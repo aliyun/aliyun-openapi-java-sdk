@@ -27,26 +27,28 @@ import com.aliyuncs.RpcAcsRequest;
 public class SetErrorPageConfigRequest extends RpcAcsRequest<SetErrorPageConfigResponse> {
 	
 	public SetErrorPageConfigRequest() {
-		super("Cdn", "2014-11-11", "SetErrorPageConfig");
+		super("Cdn", "2014-11-11", "SetErrorPageConfig", "None");
 	}
 
-	private Long ownerId;
+	private String pageType;
 
 	private String securityToken;
 
 	private String domainName;
 
-	private String pageType;
-
 	private String customPageUrl;
 
-	public Long getOwnerId() {
-		return this.ownerId;
+	private Long ownerId;
+
+	public String getPageType() {
+		return this.pageType;
 	}
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
+	public void setPageType(String pageType) {
+		this.pageType = pageType;
+		if(pageType != null){
+			putQueryParameter("PageType", pageType);
+		}
 	}
 
 	public String getSecurityToken() {
@@ -55,7 +57,9 @@ public class SetErrorPageConfigRequest extends RpcAcsRequest<SetErrorPageConfigR
 
 	public void setSecurityToken(String securityToken) {
 		this.securityToken = securityToken;
-		putQueryParameter("SecurityToken", securityToken);
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
 	}
 
 	public String getDomainName() {
@@ -64,16 +68,9 @@ public class SetErrorPageConfigRequest extends RpcAcsRequest<SetErrorPageConfigR
 
 	public void setDomainName(String domainName) {
 		this.domainName = domainName;
-		putQueryParameter("DomainName", domainName);
-	}
-
-	public String getPageType() {
-		return this.pageType;
-	}
-
-	public void setPageType(String pageType) {
-		this.pageType = pageType;
-		putQueryParameter("PageType", pageType);
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
+		}
 	}
 
 	public String getCustomPageUrl() {
@@ -82,7 +79,20 @@ public class SetErrorPageConfigRequest extends RpcAcsRequest<SetErrorPageConfigR
 
 	public void setCustomPageUrl(String customPageUrl) {
 		this.customPageUrl = customPageUrl;
-		putQueryParameter("CustomPageUrl", customPageUrl);
+		if(customPageUrl != null){
+			putQueryParameter("CustomPageUrl", customPageUrl);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
 	}
 
 	@Override

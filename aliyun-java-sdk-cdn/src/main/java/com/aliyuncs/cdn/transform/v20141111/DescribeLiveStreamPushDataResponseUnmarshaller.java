@@ -32,7 +32,7 @@ public class DescribeLiveStreamPushDataResponseUnmarshaller {
 		
 		describeLiveStreamPushDataResponse.setRequestId(context.stringValue("DescribeLiveStreamPushDataResponse.RequestId"));
 
-		List<PushStreamModel> pushStreamModelListList = new ArrayList<PushStreamModel>();
+		List<PushStreamModel> pushStreamModelList = new ArrayList<PushStreamModel>();
 		for (int i = 0; i < context.lengthValue("DescribeLiveStreamPushDataResponse.PushStreamModelList.Length"); i++) {
 			PushStreamModel pushStreamModel = new PushStreamModel();
 			pushStreamModel.setTime(context.stringValue("DescribeLiveStreamPushDataResponse.PushStreamModelList["+ i +"].Time"));
@@ -43,9 +43,9 @@ public class DescribeLiveStreamPushDataResponseUnmarshaller {
 			pushStreamModel.setServerAddr(context.stringValue("DescribeLiveStreamPushDataResponse.PushStreamModelList["+ i +"].ServerAddr"));
 			pushStreamModel.setClientAddr(context.stringValue("DescribeLiveStreamPushDataResponse.PushStreamModelList["+ i +"].ClientAddr"));
 
-			pushStreamModelListList.add(pushStreamModel);
+			pushStreamModelList.add(pushStreamModel);
 		}
-		describeLiveStreamPushDataResponse.setPushStreamModelList(pushStreamModelListList);
+		describeLiveStreamPushDataResponse.setPushStreamModelList(pushStreamModelList);
 	 
 	 	return describeLiveStreamPushDataResponse;
 	}

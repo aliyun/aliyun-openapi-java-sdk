@@ -33,15 +33,15 @@ public class DescribeLiveStreamNumberListResponseUnmarshaller {
 		describeLiveStreamNumberListResponse.setRequestId(context.stringValue("DescribeLiveStreamNumberListResponse.RequestId"));
 		describeLiveStreamNumberListResponse.setDomainName(context.stringValue("DescribeLiveStreamNumberListResponse.DomainName"));
 
-		List<StreamNumberInfo> streamNumberInfosList = new ArrayList<StreamNumberInfo>();
+		List<StreamNumberInfo> streamNumberInfos = new ArrayList<StreamNumberInfo>();
 		for (int i = 0; i < context.lengthValue("DescribeLiveStreamNumberListResponse.StreamNumberInfos.Length"); i++) {
 			StreamNumberInfo streamNumberInfo = new StreamNumberInfo();
 			streamNumberInfo.setNumber(context.integerValue("DescribeLiveStreamNumberListResponse.StreamNumberInfos["+ i +"].Number"));
 			streamNumberInfo.setTime(context.stringValue("DescribeLiveStreamNumberListResponse.StreamNumberInfos["+ i +"].Time"));
 
-			streamNumberInfosList.add(streamNumberInfo);
+			streamNumberInfos.add(streamNumberInfo);
 		}
-		describeLiveStreamNumberListResponse.setStreamNumberInfos(streamNumberInfosList);
+		describeLiveStreamNumberListResponse.setStreamNumberInfos(streamNumberInfos);
 	 
 	 	return describeLiveStreamNumberListResponse;
 	}

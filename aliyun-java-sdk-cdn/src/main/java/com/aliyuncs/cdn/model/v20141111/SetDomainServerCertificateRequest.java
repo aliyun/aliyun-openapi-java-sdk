@@ -27,59 +27,34 @@ import com.aliyuncs.RpcAcsRequest;
 public class SetDomainServerCertificateRequest extends RpcAcsRequest<SetDomainServerCertificateResponse> {
 	
 	public SetDomainServerCertificateRequest() {
-		super("Cdn", "2014-11-11", "SetDomainServerCertificate");
+		super("Cdn", "2014-11-11", "SetDomainServerCertificate", "None");
 	}
 
-	private Long ownerId;
-
-	private String securityToken;
-
-	private String domainName;
-
-	private String certName;
+	private String privateKey;
 
 	private String serverCertificateStatus;
 
 	private String serverCertificate;
 
-	private String privateKey;
+	private String securityToken;
+
+	private String certName;
+
+	private String domainName;
+
+	private Long ownerId;
 
 	private String region;
 
-	public Long getOwnerId() {
-		return this.ownerId;
+	public String getPrivateKey() {
+		return this.privateKey;
 	}
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		putQueryParameter("SecurityToken", securityToken);
-	}
-
-	public String getDomainName() {
-		return this.domainName;
-	}
-
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
-		putQueryParameter("DomainName", domainName);
-	}
-
-	public String getCertName() {
-		return this.certName;
-	}
-
-	public void setCertName(String certName) {
-		this.certName = certName;
-		putQueryParameter("CertName", certName);
+	public void setPrivateKey(String privateKey) {
+		this.privateKey = privateKey;
+		if(privateKey != null){
+			putQueryParameter("PrivateKey", privateKey);
+		}
 	}
 
 	public String getServerCertificateStatus() {
@@ -88,7 +63,9 @@ public class SetDomainServerCertificateRequest extends RpcAcsRequest<SetDomainSe
 
 	public void setServerCertificateStatus(String serverCertificateStatus) {
 		this.serverCertificateStatus = serverCertificateStatus;
-		putQueryParameter("ServerCertificateStatus", serverCertificateStatus);
+		if(serverCertificateStatus != null){
+			putQueryParameter("ServerCertificateStatus", serverCertificateStatus);
+		}
 	}
 
 	public String getServerCertificate() {
@@ -97,16 +74,53 @@ public class SetDomainServerCertificateRequest extends RpcAcsRequest<SetDomainSe
 
 	public void setServerCertificate(String serverCertificate) {
 		this.serverCertificate = serverCertificate;
-		putQueryParameter("ServerCertificate", serverCertificate);
+		if(serverCertificate != null){
+			putQueryParameter("ServerCertificate", serverCertificate);
+		}
 	}
 
-	public String getPrivateKey() {
-		return this.privateKey;
+	public String getSecurityToken() {
+		return this.securityToken;
 	}
 
-	public void setPrivateKey(String privateKey) {
-		this.privateKey = privateKey;
-		putQueryParameter("PrivateKey", privateKey);
+	public void setSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	public String getCertName() {
+		return this.certName;
+	}
+
+	public void setCertName(String certName) {
+		this.certName = certName;
+		if(certName != null){
+			putQueryParameter("CertName", certName);
+		}
+	}
+
+	public String getDomainName() {
+		return this.domainName;
+	}
+
+	public void setDomainName(String domainName) {
+		this.domainName = domainName;
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
 	}
 
 	public String getRegion() {
@@ -115,7 +129,9 @@ public class SetDomainServerCertificateRequest extends RpcAcsRequest<SetDomainSe
 
 	public void setRegion(String region) {
 		this.region = region;
-		putQueryParameter("Region", region);
+		if(region != null){
+			putQueryParameter("Region", region);
+		}
 	}
 
 	@Override

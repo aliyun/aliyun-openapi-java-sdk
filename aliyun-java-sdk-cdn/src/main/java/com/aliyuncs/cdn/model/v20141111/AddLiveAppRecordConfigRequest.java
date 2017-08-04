@@ -27,48 +27,32 @@ import com.aliyuncs.RpcAcsRequest;
 public class AddLiveAppRecordConfigRequest extends RpcAcsRequest<AddLiveAppRecordConfigResponse> {
 	
 	public AddLiveAppRecordConfigRequest() {
-		super("Cdn", "2014-11-11", "AddLiveAppRecordConfig");
+		super("Cdn", "2014-11-11", "AddLiveAppRecordConfig", "None");
 	}
 
-	private Long ownerId;
+	private String ossBucket;
+
+	private String appName;
 
 	private String securityToken;
 
 	private String domainName;
 
-	private String appName;
-
 	private String ossEndpoint;
-
-	private String ossBucket;
 
 	private String ossObjectPrefix;
 
-	public Long getOwnerId() {
-		return this.ownerId;
+	private Long ownerId;
+
+	public String getOssBucket() {
+		return this.ossBucket;
 	}
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		putQueryParameter("SecurityToken", securityToken);
-	}
-
-	public String getDomainName() {
-		return this.domainName;
-	}
-
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
-		putQueryParameter("DomainName", domainName);
+	public void setOssBucket(String ossBucket) {
+		this.ossBucket = ossBucket;
+		if(ossBucket != null){
+			putQueryParameter("OssBucket", ossBucket);
+		}
 	}
 
 	public String getAppName() {
@@ -77,7 +61,31 @@ public class AddLiveAppRecordConfigRequest extends RpcAcsRequest<AddLiveAppRecor
 
 	public void setAppName(String appName) {
 		this.appName = appName;
-		putQueryParameter("AppName", appName);
+		if(appName != null){
+			putQueryParameter("AppName", appName);
+		}
+	}
+
+	public String getSecurityToken() {
+		return this.securityToken;
+	}
+
+	public void setSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	public String getDomainName() {
+		return this.domainName;
+	}
+
+	public void setDomainName(String domainName) {
+		this.domainName = domainName;
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
+		}
 	}
 
 	public String getOssEndpoint() {
@@ -86,16 +94,9 @@ public class AddLiveAppRecordConfigRequest extends RpcAcsRequest<AddLiveAppRecor
 
 	public void setOssEndpoint(String ossEndpoint) {
 		this.ossEndpoint = ossEndpoint;
-		putQueryParameter("OssEndpoint", ossEndpoint);
-	}
-
-	public String getOssBucket() {
-		return this.ossBucket;
-	}
-
-	public void setOssBucket(String ossBucket) {
-		this.ossBucket = ossBucket;
-		putQueryParameter("OssBucket", ossBucket);
+		if(ossEndpoint != null){
+			putQueryParameter("OssEndpoint", ossEndpoint);
+		}
 	}
 
 	public String getOssObjectPrefix() {
@@ -104,7 +105,20 @@ public class AddLiveAppRecordConfigRequest extends RpcAcsRequest<AddLiveAppRecor
 
 	public void setOssObjectPrefix(String ossObjectPrefix) {
 		this.ossObjectPrefix = ossObjectPrefix;
-		putQueryParameter("OssObjectPrefix", ossObjectPrefix);
+		if(ossObjectPrefix != null){
+			putQueryParameter("OssObjectPrefix", ossObjectPrefix);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
 	}
 
 	@Override
