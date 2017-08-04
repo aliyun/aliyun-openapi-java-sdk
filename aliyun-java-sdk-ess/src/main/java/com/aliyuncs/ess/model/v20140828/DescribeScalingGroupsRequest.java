@@ -126,7 +126,7 @@ public class DescribeScalingGroupsRequest extends RpcAcsRequest<DescribeScalingG
 
 	public void setOwnerId(Long ownerId) {
 		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
+		putQueryParameter("OwnerId", String.valueOf(ownerId)));
 	}
 
 	public String getResourceOwnerAccount() {
@@ -144,7 +144,7 @@ public class DescribeScalingGroupsRequest extends RpcAcsRequest<DescribeScalingG
 
 	public void setResourceOwnerId(Long resourceOwnerId) {
 		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", resourceOwnerId);
+		putQueryParameter("ResourceOwnerId", String.valueOf(resourceOwnerId));
 	}
 
 	public Integer getPageNumber() {
@@ -153,7 +153,7 @@ public class DescribeScalingGroupsRequest extends RpcAcsRequest<DescribeScalingG
 
 	public void setPageNumber(Integer pageNumber) {
 		this.pageNumber = pageNumber;
-		putQueryParameter("PageNumber", pageNumber);
+		putQueryParameter("PageNumber", String.valueOf(pageNumber));
 	}
 
 	public Integer getPageSize() {
@@ -162,7 +162,7 @@ public class DescribeScalingGroupsRequest extends RpcAcsRequest<DescribeScalingG
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
-		putQueryParameter("PageSize", pageSize);
+		putQueryParameter("PageSize", String.valueOf(pageSize));
 	}
 
 	public String getScalingGroupId1() {
