@@ -99,7 +99,7 @@ public class ListAlarmHistoryResponse extends AcsResponse {
 
 		private String metricName;
 
-		private String dimensions;
+		private String dimension;
 
 		private Integer evaluationCount;
 
@@ -147,12 +147,12 @@ public class ListAlarmHistoryResponse extends AcsResponse {
 			this.metricName = metricName;
 		}
 
-		public String getDimensions() {
-			return this.dimensions;
+		public String getDimension() {
+			return this.dimension;
 		}
 
-		public void setDimensions(String dimensions) {
-			this.dimensions = dimensions;
+		public void setDimension(String dimension) {
+			this.dimension = dimension;
 		}
 
 		public Integer getEvaluationCount() {

@@ -1,0 +1,3 @@
+2017-08-07 Version: 5.0.2
+1, 修改ListAlarmHistory接口的返回值的alarmHistoryList属性中获取不到dimension值的bug。
+

@@ -30,34 +30,38 @@ public class ListAlarmHistoryRequest extends RpcAcsRequest<ListAlarmHistoryRespo
 		super("Cms", "2017-03-01", "ListAlarmHistory", "cms");
 	}
 
-	private String callby_cms_owner;
+	private String cursor;
 
-	private String id;
+	private String callby_cms_owner;
 
 	private Integer size;
 
-	private String startTime;
-
 	private String endTime;
 
-	private String cursor;
+	private String id;
 
-	public String getcallby_cms_owner() {
+	private String startTime;
+
+	public String getCursor() {
+		return this.cursor;
+	}
+
+	public void setCursor(String cursor) {
+		this.cursor = cursor;
+		if(cursor != null){
+			putQueryParameter("Cursor", cursor);
+		}
+	}
+
+	public String getCallby_cms_owner() {
 		return this.callby_cms_owner;
 	}
 
-	public void setcallby_cms_owner(String callby_cms_owner) {
+	public void setCallby_cms_owner(String callby_cms_owner) {
 		this.callby_cms_owner = callby_cms_owner;
-		putQueryParameter("callby_cms_owner", callby_cms_owner);
-	}
-
-	public String getId() {
-		return this.id;
-	}
-
-	public void setId(String id) {
-		this.id = id;
-		putQueryParameter("Id", id);
+		if(callby_cms_owner != null){
+			putQueryParameter("callby_cms_owner", callby_cms_owner);
+		}
 	}
 
 	public Integer getSize() {
@@ -66,16 +70,9 @@ public class ListAlarmHistoryRequest extends RpcAcsRequest<ListAlarmHistoryRespo
 
 	public void setSize(Integer size) {
 		this.size = size;
-		putQueryParameter("Size", size);
-	}
-
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-		putQueryParameter("StartTime", startTime);
+		if(size != null){
+			putQueryParameter("Size", size.toString());
+		}
 	}
 
 	public String getEndTime() {
@@ -84,16 +81,31 @@ public class ListAlarmHistoryRequest extends RpcAcsRequest<ListAlarmHistoryRespo
 
 	public void setEndTime(String endTime) {
 		this.endTime = endTime;
-		putQueryParameter("EndTime", endTime);
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime);
+		}
 	}
 
-	public String getCursor() {
-		return this.cursor;
+	public String getId() {
+		return this.id;
 	}
 
-	public void setCursor(String cursor) {
-		this.cursor = cursor;
-		putQueryParameter("Cursor", cursor);
+	public void setId(String id) {
+		this.id = id;
+		if(id != null){
+			putQueryParameter("Id", id);
+		}
+	}
+
+	public String getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime);
+		}
 	}
 
 	@Override

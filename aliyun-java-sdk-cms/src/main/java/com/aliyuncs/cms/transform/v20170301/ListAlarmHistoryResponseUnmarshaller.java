@@ -43,7 +43,7 @@ public class ListAlarmHistoryResponseUnmarshaller {
 			alarmHistory.setName(context.stringValue("ListAlarmHistoryResponse.AlarmHistoryList["+ i +"].Name"));
 			alarmHistory.setNamespace(context.stringValue("ListAlarmHistoryResponse.AlarmHistoryList["+ i +"].Namespace"));
 			alarmHistory.setMetricName(context.stringValue("ListAlarmHistoryResponse.AlarmHistoryList["+ i +"].MetricName"));
-			alarmHistory.setDimensions(context.stringValue("ListAlarmHistoryResponse.AlarmHistoryList["+ i +"].Dimensions"));
+			alarmHistory.setDimension(context.stringValue("ListAlarmHistoryResponse.AlarmHistoryList["+ i +"].Dimension"));
 			alarmHistory.setEvaluationCount(context.integerValue("ListAlarmHistoryResponse.AlarmHistoryList["+ i +"].EvaluationCount"));
 			alarmHistory.setValue(context.stringValue("ListAlarmHistoryResponse.AlarmHistoryList["+ i +"].Value"));
 			alarmHistory.setAlarmTime(context.longValue("ListAlarmHistoryResponse.AlarmHistoryList["+ i +"].AlarmTime"));

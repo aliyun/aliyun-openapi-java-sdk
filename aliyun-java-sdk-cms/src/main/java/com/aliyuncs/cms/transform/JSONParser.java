@@ -18,7 +18,7 @@ public class JSONParser {
         List<JSONObject> datapoints = new ArrayList<JSONObject>(length);
         HttpResponse response = context.getHttpResponse();
         try {
-            JSONObject json = JSON.parseObject(new String(response.getContent(), "UTF-8"));
+            JSONObject json = JSON.parseObject(new String(response.getHttpContent(), "UTF-8"));
             if(json==null)return datapoints;
             JSONObject dpjs = json.getJSONObject("Datapoints");
             if(dpjs==null){return datapoints;}
@@ -34,7 +34,7 @@ public class JSONParser {
 
     public static List<JSONObject> parseJSONArray(UnmarshallerContext context) {
         try {
-            String contont = new String(context.getHttpResponse().getContent(),"UTF-8");
+            String contont = new String(context.getHttpResponse().getHttpContent(),"UTF-8");
             JSONObject json = JSON.parseObject(contont);
             JSONArray array = json.getJSONArray("Datapoints");
             if(array!=null) {
@@ -52,7 +52,7 @@ public class JSONParser {
     
     public static List<JSONObject> parseJSONArray(UnmarshallerContext context, String arrayKey) {
         try {
-            String contont = new String(context.getHttpResponse().getContent(),"UTF-8");
+            String contont = new String(context.getHttpResponse().getHttpContent(),"UTF-8");
             JSONObject json = JSON.parseObject(contont);
             JSONArray array = json.getJSONArray(arrayKey);
             if(array!=null) {
@@ -70,7 +70,7 @@ public class JSONParser {
     
     public static JSONObject parseJSONObject(UnmarshallerContext context, String key) {
         try {
-            String contont = new String(context.getHttpResponse().getContent(),"UTF-8");
+            String contont = new String(context.getHttpResponse().getHttpContent(),"UTF-8");
             JSONObject json = JSON.parseObject(contont);
             JSONObject jsonObject = json.getJSONObject(key);
             return jsonObject;
@@ -82,7 +82,7 @@ public class JSONParser {
 
     public static <T> T parseResult(UnmarshallerContext context, Class<T> clazz) {
         try {
-            String contont = new String(context.getHttpResponse().getContent(),"UTF-8");
+            String contont = new String(context.getHttpResponse().getHttpContent(),"UTF-8");
             JSONObject json = JSON.parseObject(contont);
             return json.getObject("Result", clazz);
         } catch (UnsupportedEncodingException e) {
@@ -93,7 +93,7 @@ public class JSONParser {
 
     public static List<String> parseStringArray(UnmarshallerContext context) {
         try {
-            String contont = new String(context.getHttpResponse().getContent(),"UTF-8");
+            String contont = new String(context.getHttpResponse().getHttpContent(),"UTF-8");
             JSONObject json = JSON.parseObject(contont);
             JSONArray array = json.getJSONArray("Datapoints");
             if(array!=null) {
