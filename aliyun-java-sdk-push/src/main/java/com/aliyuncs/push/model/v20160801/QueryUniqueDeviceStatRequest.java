@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class QueryUniqueDeviceStatRequest extends RpcAcsRequest<QueryUniqueDeviceStatResponse> {
 	
 	public QueryUniqueDeviceStatRequest() {
-		super("Push", "2016-08-01", "QueryUniqueDeviceStat", "None");
+		super("Push", "2016-08-01", "QueryUniqueDeviceStat");
 	}
 
 	private String granularity;

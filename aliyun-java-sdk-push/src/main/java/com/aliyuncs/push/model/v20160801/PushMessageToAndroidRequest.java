@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class PushMessageToAndroidRequest extends RpcAcsRequest<PushMessageToAndroidResponse> {
 	
 	public PushMessageToAndroidRequest() {
-		super("Push", "2016-08-01", "PushMessageToAndroid", "None");
+		super("Push", "2016-08-01", "PushMessageToAndroid");
 	}
 
 	private Long appKey;

@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class PushNoticeToAndroidRequest extends RpcAcsRequest<PushNoticeToAndroidResponse> {
 	
 	public PushNoticeToAndroidRequest() {
-		super("Push", "2016-08-01", "PushNoticeToAndroid", "None");
+		super("Push", "2016-08-01", "PushNoticeToAndroid");
 	}
 
 	private String extParameters;

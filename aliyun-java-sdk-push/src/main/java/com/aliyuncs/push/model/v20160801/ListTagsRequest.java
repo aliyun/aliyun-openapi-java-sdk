@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ListTagsRequest extends RpcAcsRequest<ListTagsResponse> {
 	
 	public ListTagsRequest() {
-		super("Push", "2016-08-01", "ListTags", "None");
+		super("Push", "2016-08-01", "ListTags");
 	}
 
 	private Long appKey;

@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ListPushRecordsRequest extends RpcAcsRequest<ListPushRecordsResponse> {
 	
 	public ListPushRecordsRequest() {
-		super("Push", "2016-08-01", "ListPushRecords", "None");
+		super("Push", "2016-08-01", "ListPushRecords");
 	}
 
 	private Integer pageSize;

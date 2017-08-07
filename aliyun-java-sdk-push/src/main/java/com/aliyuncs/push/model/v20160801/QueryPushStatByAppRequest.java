@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class QueryPushStatByAppRequest extends RpcAcsRequest<QueryPushStatByAppResponse> {
 	
 	public QueryPushStatByAppRequest() {
-		super("Push", "2016-08-01", "QueryPushStatByApp", "None");
+		super("Push", "2016-08-01", "QueryPushStatByApp");
 	}
 
 	private String granularity;

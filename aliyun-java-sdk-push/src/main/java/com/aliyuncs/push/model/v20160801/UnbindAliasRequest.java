@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class UnbindAliasRequest extends RpcAcsRequest<UnbindAliasResponse> {
 	
 	public UnbindAliasRequest() {
-		super("Push", "2016-08-01", "UnbindAlias", "None");
+		super("Push", "2016-08-01", "UnbindAlias");
 	}
 
 	private String aliasName;

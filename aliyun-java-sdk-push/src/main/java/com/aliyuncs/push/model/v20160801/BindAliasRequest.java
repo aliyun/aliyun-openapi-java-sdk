@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class BindAliasRequest extends RpcAcsRequest<BindAliasResponse> {
 	
 	public BindAliasRequest() {
-		super("Push", "2016-08-01", "BindAlias", "None");
+		super("Push", "2016-08-01", "BindAlias");
 	}
 
 	private String aliasName;

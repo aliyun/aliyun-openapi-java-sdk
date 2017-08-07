@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class UnbindTagRequest extends RpcAcsRequest<UnbindTagResponse> {
 	
 	public UnbindTagRequest() {
-		super("Push", "2016-08-01", "UnbindTag", "None");
+		super("Push", "2016-08-01", "UnbindTag");
 	}
 
 	private String tagName;

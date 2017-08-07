@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class QueryTagsRequest extends RpcAcsRequest<QueryTagsResponse> {
 	
 	public QueryTagsRequest() {
-		super("Push", "2016-08-01", "QueryTags", "None");
+		super("Push", "2016-08-01", "QueryTags");
 	}
 
 	private String clientKey;

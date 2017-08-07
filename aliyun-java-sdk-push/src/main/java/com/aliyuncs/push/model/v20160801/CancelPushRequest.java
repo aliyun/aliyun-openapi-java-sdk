@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class CancelPushRequest extends RpcAcsRequest<CancelPushResponse> {
 	
 	public CancelPushRequest() {
-		super("Push", "2016-08-01", "CancelPush", "None");
+		super("Push", "2016-08-01", "CancelPush");
 	}
 
 	private String messageId;

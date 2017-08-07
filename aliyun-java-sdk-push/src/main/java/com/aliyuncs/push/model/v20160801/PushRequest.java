@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class PushRequest extends RpcAcsRequest<PushResponse> {
 	
 	public PushRequest() {
-		super("Push", "2016-08-01", "Push", "None");
+		super("Push", "2016-08-01", "Push");
 	}
 
 	private Integer androidNotificationBarType;

@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ListSummaryAppsRequest extends RpcAcsRequest<ListSummaryAppsResponse> {
 	
 	public ListSummaryAppsRequest() {
-		super("Push", "2016-08-01", "ListSummaryApps", "None");
+		super("Push", "2016-08-01", "ListSummaryApps");
 	}
 
 	@Override

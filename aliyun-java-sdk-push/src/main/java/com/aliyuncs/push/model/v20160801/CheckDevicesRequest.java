@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class CheckDevicesRequest extends RpcAcsRequest<CheckDevicesResponse> {
 	
 	public CheckDevicesRequest() {
-		super("Push", "2016-08-01", "CheckDevices", "None");
+		super("Push", "2016-08-01", "CheckDevices");
 	}
 
 	private String deviceIds;

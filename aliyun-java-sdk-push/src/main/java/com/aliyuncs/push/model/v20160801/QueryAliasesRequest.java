@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class QueryAliasesRequest extends RpcAcsRequest<QueryAliasesResponse> {
 	
 	public QueryAliasesRequest() {
-		super("Push", "2016-08-01", "QueryAliases", "None");
+		super("Push", "2016-08-01", "QueryAliases");
 	}
 
 	private Long appKey;

@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class QueryDeviceInfoRequest extends RpcAcsRequest<QueryDeviceInfoResponse> {
 	
 	public QueryDeviceInfoRequest() {
-		super("Push", "2016-08-01", "QueryDeviceInfo", "None");
+		super("Push", "2016-08-01", "QueryDeviceInfo");
 	}
 
 	private Long appKey;

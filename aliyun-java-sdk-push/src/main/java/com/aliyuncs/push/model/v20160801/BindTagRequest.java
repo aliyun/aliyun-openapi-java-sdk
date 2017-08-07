@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class BindTagRequest extends RpcAcsRequest<BindTagResponse> {
 	
 	public BindTagRequest() {
-		super("Push", "2016-08-01", "BindTag", "None");
+		super("Push", "2016-08-01", "BindTag");
 	}
 
 	private String tagName;

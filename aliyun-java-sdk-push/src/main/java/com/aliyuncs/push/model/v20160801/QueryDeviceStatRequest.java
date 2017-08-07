@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class QueryDeviceStatRequest extends RpcAcsRequest<QueryDeviceStatResponse> {
 	
 	public QueryDeviceStatRequest() {
-		super("Push", "2016-08-01", "QueryDeviceStat", "None");
+		super("Push", "2016-08-01", "QueryDeviceStat");
 	}
 
 	private String endTime;

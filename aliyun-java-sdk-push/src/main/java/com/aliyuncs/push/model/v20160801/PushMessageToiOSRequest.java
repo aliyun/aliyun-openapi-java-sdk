@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class PushMessageToiOSRequest extends RpcAcsRequest<PushMessageToiOSResponse> {
 	
 	public PushMessageToiOSRequest() {
-		super("Push", "2016-08-01", "PushMessageToiOS", "None");
+		super("Push", "2016-08-01", "PushMessageToiOS");
 	}
 
 	private Long appKey;

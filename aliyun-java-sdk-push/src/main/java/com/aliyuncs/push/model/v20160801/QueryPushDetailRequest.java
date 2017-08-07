@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class QueryPushDetailRequest extends RpcAcsRequest<QueryPushDetailResponse> {
 	
 	public QueryPushDetailRequest() {
-		super("Push", "2016-08-01", "QueryPushDetail", "None");
+		super("Push", "2016-08-01", "QueryPushDetail");
 	}
 
 	private String messageId;
