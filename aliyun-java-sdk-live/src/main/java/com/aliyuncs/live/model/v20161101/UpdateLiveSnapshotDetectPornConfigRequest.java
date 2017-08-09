@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class UpdateLiveSnapshotDetectPornConfigRequest extends RpcAcsRequest<UpdateLiveSnapshotDetectPornConfigResponse> {
 	
 	public UpdateLiveSnapshotDetectPornConfigRequest() {
-		super("live", "2016-11-01", "UpdateLiveSnapshotDetectPornConfig", "None");
+		super("live", "2016-11-01", "UpdateLiveSnapshotDetectPornConfig");
 	}
 
 	private String ossBucket;

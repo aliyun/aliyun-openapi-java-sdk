@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeLiveRecordNotifyConfigRequest extends RpcAcsRequest<DescribeLiveRecordNotifyConfigResponse> {
 	
 	public DescribeLiveRecordNotifyConfigRequest() {
-		super("live", "2016-11-01", "DescribeLiveRecordNotifyConfig", "None");
+		super("live", "2016-11-01", "DescribeLiveRecordNotifyConfig");
 	}
 
 	private String securityToken;

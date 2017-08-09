@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeLiveStreamsFrameRateAndBitRateDataRequest extends RpcAcsRequest<DescribeLiveStreamsFrameRateAndBitRateDataResponse> {
 	
 	public DescribeLiveStreamsFrameRateAndBitRateDataRequest() {
-		super("live", "2016-11-01", "DescribeLiveStreamsFrameRateAndBitRateData", "None");
+		super("live", "2016-11-01", "DescribeLiveStreamsFrameRateAndBitRateData");
 	}
 
 	private String appName;

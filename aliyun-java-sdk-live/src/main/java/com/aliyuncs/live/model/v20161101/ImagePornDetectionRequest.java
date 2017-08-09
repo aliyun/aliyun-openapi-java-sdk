@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ImagePornDetectionRequest extends RpcAcsRequest<ImagePornDetectionResponse> {
 	
 	public ImagePornDetectionRequest() {
-		super("live", "2016-11-01", "ImagePornDetection", "None");
+		super("live", "2016-11-01", "ImagePornDetection");
 	}
 
 	private String securityToken;

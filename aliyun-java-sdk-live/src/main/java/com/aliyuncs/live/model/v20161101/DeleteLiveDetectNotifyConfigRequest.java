@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeleteLiveDetectNotifyConfigRequest extends RpcAcsRequest<DeleteLiveDetectNotifyConfigResponse> {
 	
 	public DeleteLiveDetectNotifyConfigRequest() {
-		super("live", "2016-11-01", "DeleteLiveDetectNotifyConfig", "None");
+		super("live", "2016-11-01", "DeleteLiveDetectNotifyConfig");
 	}
 
 	private String securityToken;

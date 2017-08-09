@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeLiveStreamSnapshotInfoRequest extends RpcAcsRequest<DescribeLiveStreamSnapshotInfoResponse> {
 	
 	public DescribeLiveStreamSnapshotInfoRequest() {
-		super("live", "2016-11-01", "DescribeLiveStreamSnapshotInfo", "None");
+		super("live", "2016-11-01", "DescribeLiveStreamSnapshotInfo");
 	}
 
 	private String appName;

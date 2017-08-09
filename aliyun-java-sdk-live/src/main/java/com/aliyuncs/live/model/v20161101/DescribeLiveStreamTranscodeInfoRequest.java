@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeLiveStreamTranscodeInfoRequest extends RpcAcsRequest<DescribeLiveStreamTranscodeInfoResponse> {
 	
 	public DescribeLiveStreamTranscodeInfoRequest() {
-		super("live", "2016-11-01", "DescribeLiveStreamTranscodeInfo", "None");
+		super("live", "2016-11-01", "DescribeLiveStreamTranscodeInfo");
 	}
 
 	private String securityToken;

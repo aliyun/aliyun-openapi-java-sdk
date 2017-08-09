@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class StartMixStreamsServiceRequest extends RpcAcsRequest<StartMixStreamsServiceResponse> {
 	
 	public StartMixStreamsServiceRequest() {
-		super("live", "2016-11-01", "StartMixStreamsService", "None");
+		super("live", "2016-11-01", "StartMixStreamsService");
 	}
 
 	private String mixType;

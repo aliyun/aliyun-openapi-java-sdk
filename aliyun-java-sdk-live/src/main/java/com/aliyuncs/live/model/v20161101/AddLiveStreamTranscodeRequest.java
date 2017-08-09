@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class AddLiveStreamTranscodeRequest extends RpcAcsRequest<AddLiveStreamTranscodeResponse> {
 	
 	public AddLiveStreamTranscodeRequest() {
-		super("live", "2016-11-01", "AddLiveStreamTranscode", "None");
+		super("live", "2016-11-01", "AddLiveStreamTranscode");
 	}
 
 	private String app;

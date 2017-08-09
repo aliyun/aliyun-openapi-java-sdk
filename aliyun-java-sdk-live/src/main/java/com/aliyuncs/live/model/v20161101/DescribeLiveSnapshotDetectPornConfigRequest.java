@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeLiveSnapshotDetectPornConfigRequest extends RpcAcsRequest<DescribeLiveSnapshotDetectPornConfigResponse> {
 	
 	public DescribeLiveSnapshotDetectPornConfigRequest() {
-		super("live", "2016-11-01", "DescribeLiveSnapshotDetectPornConfig", "None");
+		super("live", "2016-11-01", "DescribeLiveSnapshotDetectPornConfig");
 	}
 
 	private String appName;

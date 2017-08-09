@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeleteLiveStreamTranscodeRequest extends RpcAcsRequest<DeleteLiveStreamTranscodeResponse> {
 	
 	public DeleteLiveStreamTranscodeRequest() {
-		super("live", "2016-11-01", "DeleteLiveStreamTranscode", "None");
+		super("live", "2016-11-01", "DeleteLiveStreamTranscode");
 	}
 
 	private String app;
