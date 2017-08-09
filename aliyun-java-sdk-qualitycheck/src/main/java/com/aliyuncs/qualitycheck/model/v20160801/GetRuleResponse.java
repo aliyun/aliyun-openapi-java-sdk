@@ -171,19 +171,19 @@ public class GetRuleResponse extends AcsResponse {
 				this.isDelete = isDelete;
 			}
 
-			public String getstartTime() {
+			public String getStartTime() {
 				return this.startTime;
 			}
 
-			public void setstartTime(String startTime) {
+			public void setStartTime(String startTime) {
 				this.startTime = startTime;
 			}
 
-			public String getendTime() {
+			public String getEndTime() {
 				return this.endTime;
 			}
 
-			public void setendTime(String endTime) {
+			public void setEndTime(String endTime) {
 				this.endTime = endTime;
 			}
 

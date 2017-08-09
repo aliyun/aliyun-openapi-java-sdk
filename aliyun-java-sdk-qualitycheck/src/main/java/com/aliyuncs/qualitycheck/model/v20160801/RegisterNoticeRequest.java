@@ -24,10 +24,10 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class GetResultRequest extends RpcAcsRequest<GetResultResponse> {
+public class RegisterNoticeRequest extends RpcAcsRequest<RegisterNoticeResponse> {
 	
-	public GetResultRequest() {
-		super("Qualitycheck", "2016-08-01", "GetResult");
+	public RegisterNoticeRequest() {
+		super("Qualitycheck", "2016-08-01", "RegisterNotice");
 	}
 
 	private String jsonStr;
@@ -44,8 +44,8 @@ public class GetResultRequest extends RpcAcsRequest<GetResultResponse> {
 	}
 
 	@Override
-	public Class<GetResultResponse> getResponseClass() {
-		return GetResultResponse.class;
+	public Class<RegisterNoticeResponse> getResponseClass() {
+		return RegisterNoticeResponse.class;
 	}
 
 }

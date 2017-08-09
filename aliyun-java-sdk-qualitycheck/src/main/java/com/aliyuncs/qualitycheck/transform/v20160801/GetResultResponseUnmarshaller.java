@@ -73,7 +73,7 @@ public class GetResultResponseUnmarshaller {
 					phrase.setBegin(context.longValue("GetResultResponse.Data["+ i +"].Rules["+ j +"].Hit["+ k +"].Phrase.Begin"));
 					phrase.setEnd(context.longValue("GetResultResponse.Data["+ i +"].Rules["+ j +"].Hit["+ k +"].Phrase.End"));
 					phrase.setBeginTime(context.stringValue("GetResultResponse.Data["+ i +"].Rules["+ j +"].Hit["+ k +"].Phrase.BeginTime"));
-					phrase.sethourMinSec(context.stringValue("GetResultResponse.Data["+ i +"].Rules["+ j +"].Hit["+ k +"].Phrase.hourMinSec"));
+					phrase.setHourMinSec(context.stringValue("GetResultResponse.Data["+ i +"].Rules["+ j +"].Hit["+ k +"].Phrase.hourMinSec"));
 					conditionHitInfo.setPhrase(phrase);
 
 					List<HitKeyWord> hitKeyWords = new ArrayList<HitKeyWord>();

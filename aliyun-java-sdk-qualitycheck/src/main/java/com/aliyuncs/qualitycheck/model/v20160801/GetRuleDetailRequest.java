@@ -38,7 +38,9 @@ public class GetRuleDetailRequest extends RpcAcsRequest<GetRuleDetailResponse> {
 
 	public void setJsonStr(String jsonStr) {
 		this.jsonStr = jsonStr;
-		putQueryParameter("JsonStr", jsonStr);
+		if(jsonStr != null){
+			putQueryParameter("JsonStr", jsonStr);
+		}
 	}
 
 	@Override

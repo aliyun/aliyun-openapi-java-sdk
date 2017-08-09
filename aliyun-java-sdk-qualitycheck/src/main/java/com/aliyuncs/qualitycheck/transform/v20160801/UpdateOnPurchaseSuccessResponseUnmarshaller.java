@@ -18,20 +18,20 @@
  */
 package com.aliyuncs.qualitycheck.transform.v20160801;
 
-import com.aliyuncs.qualitycheck.model.v20160801.GetResultCountResponse;
+import com.aliyuncs.qualitycheck.model.v20160801.UpdateOnPurchaseSuccessResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class GetResultCountResponseUnmarshaller {
+public class UpdateOnPurchaseSuccessResponseUnmarshaller {
 
-	public static GetResultCountResponse unmarshall(GetResultCountResponse getResultCountResponse, UnmarshallerContext context) {
+	public static UpdateOnPurchaseSuccessResponse unmarshall(UpdateOnPurchaseSuccessResponse updateOnPurchaseSuccessResponse, UnmarshallerContext context) {
 		
-		getResultCountResponse.setRequestId(context.stringValue("GetResultCountResponse.RequestId"));
-		getResultCountResponse.setSuccess(context.booleanValue("GetResultCountResponse.Success"));
-		getResultCountResponse.setCode(context.stringValue("GetResultCountResponse.Code"));
-		getResultCountResponse.setMessage(context.stringValue("GetResultCountResponse.Message"));
-		getResultCountResponse.setData(context.integerValue("GetResultCountResponse.Data"));
+		updateOnPurchaseSuccessResponse.setRequestId(context.stringValue("UpdateOnPurchaseSuccessResponse.requestId"));
+		updateOnPurchaseSuccessResponse.setData(context.stringValue("UpdateOnPurchaseSuccessResponse.data"));
+		updateOnPurchaseSuccessResponse.setSuccess(context.booleanValue("UpdateOnPurchaseSuccessResponse.success"));
+		updateOnPurchaseSuccessResponse.setCode(context.stringValue("UpdateOnPurchaseSuccessResponse.code"));
+		updateOnPurchaseSuccessResponse.setMessage(context.stringValue("UpdateOnPurchaseSuccessResponse.message"));
 	 
-	 	return getResultCountResponse;
+	 	return updateOnPurchaseSuccessResponse;
 	}
 }

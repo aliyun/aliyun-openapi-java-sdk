@@ -16,36 +16,21 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package com.aliyuncs.qualitycheck.model.v20160801;
+package com.aliyuncs.qualitycheck.transform.v20160801;
 
-import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.qualitycheck.model.v20160801.RegisterNoticeResponse;
+import com.aliyuncs.transform.UnmarshallerContext;
 
-/**
- * @author auto create
- * @version 
- */
-public class GetResultRequest extends RpcAcsRequest<GetResultResponse> {
-	
-	public GetResultRequest() {
-		super("Qualitycheck", "2016-08-01", "GetResult");
+
+public class RegisterNoticeResponseUnmarshaller {
+
+	public static RegisterNoticeResponse unmarshall(RegisterNoticeResponse registerNoticeResponse, UnmarshallerContext context) {
+		
+		registerNoticeResponse.setRequestId(context.stringValue("RegisterNoticeResponse.RequestId"));
+		registerNoticeResponse.setSuccess(context.booleanValue("RegisterNoticeResponse.Success"));
+		registerNoticeResponse.setCode(context.stringValue("RegisterNoticeResponse.Code"));
+		registerNoticeResponse.setMessage(context.stringValue("RegisterNoticeResponse.Message"));
+	 
+	 	return registerNoticeResponse;
 	}
-
-	private String jsonStr;
-
-	public String getJsonStr() {
-		return this.jsonStr;
-	}
-
-	public void setJsonStr(String jsonStr) {
-		this.jsonStr = jsonStr;
-		if(jsonStr != null){
-			putQueryParameter("JsonStr", jsonStr);
-		}
-	}
-
-	@Override
-	public Class<GetResultResponse> getResponseClass() {
-		return GetResultResponse.class;
-	}
-
 }

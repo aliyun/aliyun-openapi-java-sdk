@@ -19,16 +19,18 @@
 package com.aliyuncs.qualitycheck.model.v20160801;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.qualitycheck.transform.v20160801.UploadDataResponseUnmarshaller;
+import com.aliyuncs.qualitycheck.transform.v20160801.UpdateOnPurchaseSuccessResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class UploadDataResponse extends AcsResponse {
+public class UpdateOnPurchaseSuccessResponse extends AcsResponse {
 
 	private String requestId;
+
+	private String data;
 
 	private Boolean success;
 
@@ -36,14 +38,20 @@ public class UploadDataResponse extends AcsResponse {
 
 	private String message;
 
-	private String data;
-
 	public String getRequestId() {
 		return this.requestId;
 	}
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getData() {
+		return this.data;
+	}
+
+	public void setData(String data) {
+		this.data = data;
 	}
 
 	public Boolean getSuccess() {
@@ -70,16 +78,8 @@ public class UploadDataResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getData() {
-		return this.data;
-	}
-
-	public void setData(String data) {
-		this.data = data;
-	}
-
 	@Override
-	public UploadDataResponse getInstance(UnmarshallerContext context) {
-		return	UploadDataResponseUnmarshaller.unmarshall(this, context);
+	public UpdateOnPurchaseSuccessResponse getInstance(UnmarshallerContext context) {
+		return	UpdateOnPurchaseSuccessResponseUnmarshaller.unmarshall(this, context);
 	}
 }

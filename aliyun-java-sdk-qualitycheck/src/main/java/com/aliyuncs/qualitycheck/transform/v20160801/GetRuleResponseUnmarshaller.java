@@ -47,8 +47,8 @@ public class GetRuleResponseUnmarshaller {
 			ruleInfo.setType(context.integerValue("GetRuleResponse.Data.Rules["+ i +"].Type"));
 			ruleInfo.setStatus(context.integerValue("GetRuleResponse.Data.Rules["+ i +"].Status"));
 			ruleInfo.setIsDelete(context.integerValue("GetRuleResponse.Data.Rules["+ i +"].IsDelete"));
-			ruleInfo.setstartTime(context.stringValue("GetRuleResponse.Data.Rules["+ i +"].startTime"));
-			ruleInfo.setendTime(context.stringValue("GetRuleResponse.Data.Rules["+ i +"].endTime"));
+			ruleInfo.setStartTime(context.stringValue("GetRuleResponse.Data.Rules["+ i +"].startTime"));
+			ruleInfo.setEndTime(context.stringValue("GetRuleResponse.Data.Rules["+ i +"].endTime"));
 			ruleInfo.setWeight(context.stringValue("GetRuleResponse.Data.Rules["+ i +"].Weight"));
 			ruleInfo.setIsOnline(context.integerValue("GetRuleResponse.Data.Rules["+ i +"].IsOnline"));
 			ruleInfo.setCreateEmpid(context.stringValue("GetRuleResponse.Data.Rules["+ i +"].CreateEmpid"));

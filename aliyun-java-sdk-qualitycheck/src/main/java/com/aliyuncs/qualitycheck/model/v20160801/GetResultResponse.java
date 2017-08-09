@@ -292,11 +292,11 @@ public class GetResultResponse extends AcsResponse {
 						this.beginTime = beginTime;
 					}
 
-					public String gethourMinSec() {
+					public String getHourMinSec() {
 						return this.hourMinSec;
 					}
 
-					public void sethourMinSec(String hourMinSec) {
+					public void setHourMinSec(String hourMinSec) {
 						this.hourMinSec = hourMinSec;
 					}
 				}

@@ -38,7 +38,9 @@ public class UploadAudioDataRequest extends RpcAcsRequest<UploadAudioDataRespons
 
 	public void setJsonStr(String jsonStr) {
 		this.jsonStr = jsonStr;
-		putQueryParameter("JsonStr", jsonStr);
+		if(jsonStr != null){
+			putQueryParameter("JsonStr", jsonStr);
+		}
 	}
 
 	@Override

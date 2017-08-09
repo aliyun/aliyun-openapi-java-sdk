@@ -24,28 +24,28 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class GetResultRequest extends RpcAcsRequest<GetResultResponse> {
+public class UpdateOnPurchaseSuccessRequest extends RpcAcsRequest<UpdateOnPurchaseSuccessResponse> {
 	
-	public GetResultRequest() {
-		super("Qualitycheck", "2016-08-01", "GetResult");
+	public UpdateOnPurchaseSuccessRequest() {
+		super("Qualitycheck", "2016-08-01", "UpdateOnPurchaseSuccess");
 	}
 
-	private String jsonStr;
+	private String data;
 
-	public String getJsonStr() {
-		return this.jsonStr;
+	public String getData() {
+		return this.data;
 	}
 
-	public void setJsonStr(String jsonStr) {
-		this.jsonStr = jsonStr;
-		if(jsonStr != null){
-			putQueryParameter("JsonStr", jsonStr);
+	public void setData(String data) {
+		this.data = data;
+		if(data != null){
+			putQueryParameter("data", data);
 		}
 	}
 
 	@Override
-	public Class<GetResultResponse> getResponseClass() {
-		return GetResultResponse.class;
+	public Class<UpdateOnPurchaseSuccessResponse> getResponseClass() {
+		return UpdateOnPurchaseSuccessResponse.class;
 	}
 
 }
