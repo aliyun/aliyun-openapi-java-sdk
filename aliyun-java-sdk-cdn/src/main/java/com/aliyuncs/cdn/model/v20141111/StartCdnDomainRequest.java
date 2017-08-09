@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class StartCdnDomainRequest extends RpcAcsRequest<StartCdnDomainResponse> {
 	
 	public StartCdnDomainRequest() {
-		super("Cdn", "2014-11-11", "StartCdnDomain", "None");
+		super("Cdn", "2014-11-11", "StartCdnDomain");
 	}
 
 	private String securityToken;

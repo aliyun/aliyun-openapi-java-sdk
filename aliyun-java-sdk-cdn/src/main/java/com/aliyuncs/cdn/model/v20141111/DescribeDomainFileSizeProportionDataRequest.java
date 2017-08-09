@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeDomainFileSizeProportionDataRequest extends RpcAcsRequest<DescribeDomainFileSizeProportionDataResponse> {
 	
 	public DescribeDomainFileSizeProportionDataRequest() {
-		super("Cdn", "2014-11-11", "DescribeDomainFileSizeProportionData", "None");
+		super("Cdn", "2014-11-11", "DescribeDomainFileSizeProportionData");
 	}
 
 	private String securityToken;

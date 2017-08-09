@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class AddLiveDomainMappingRequest extends RpcAcsRequest<AddLiveDomainMappingResponse> {
 	
 	public AddLiveDomainMappingRequest() {
-		super("Cdn", "2014-11-11", "AddLiveDomainMapping", "None");
+		super("Cdn", "2014-11-11", "AddLiveDomainMapping");
 	}
 
 	private String pullDomain;

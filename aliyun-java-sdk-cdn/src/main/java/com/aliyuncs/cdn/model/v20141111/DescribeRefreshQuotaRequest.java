@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeRefreshQuotaRequest extends RpcAcsRequest<DescribeRefreshQuotaResponse> {
 	
 	public DescribeRefreshQuotaRequest() {
-		super("Cdn", "2014-11-11", "DescribeRefreshQuota", "None");
+		super("Cdn", "2014-11-11", "DescribeRefreshQuota");
 	}
 
 	private String securityToken;

@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeDomainBpsDataByTimeStampRequest extends RpcAcsRequest<DescribeDomainBpsDataByTimeStampResponse> {
 	
 	public DescribeDomainBpsDataByTimeStampRequest() {
-		super("Cdn", "2014-11-11", "DescribeDomainBpsDataByTimeStamp", "None");
+		super("Cdn", "2014-11-11", "DescribeDomainBpsDataByTimeStamp");
 	}
 
 	private String ispNames;

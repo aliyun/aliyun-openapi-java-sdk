@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeDomainUpstreamBpsOfEdgeRequest extends RpcAcsRequest<DescribeDomainUpstreamBpsOfEdgeResponse> {
 	
 	public DescribeDomainUpstreamBpsOfEdgeRequest() {
-		super("Cdn", "2014-11-11", "DescribeDomainUpstreamBpsOfEdge", "None");
+		super("Cdn", "2014-11-11", "DescribeDomainUpstreamBpsOfEdge");
 	}
 
 	private String securityToken;

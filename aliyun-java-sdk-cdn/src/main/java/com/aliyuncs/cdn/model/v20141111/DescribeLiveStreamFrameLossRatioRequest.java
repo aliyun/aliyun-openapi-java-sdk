@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeLiveStreamFrameLossRatioRequest extends RpcAcsRequest<DescribeLiveStreamFrameLossRatioResponse> {
 	
 	public DescribeLiveStreamFrameLossRatioRequest() {
-		super("Cdn", "2014-11-11", "DescribeLiveStreamFrameLossRatio", "None");
+		super("Cdn", "2014-11-11", "DescribeLiveStreamFrameLossRatio");
 	}
 
 	private String appName;

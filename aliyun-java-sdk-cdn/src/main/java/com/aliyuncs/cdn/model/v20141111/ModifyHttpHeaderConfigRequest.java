@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifyHttpHeaderConfigRequest extends RpcAcsRequest<ModifyHttpHeaderConfigResponse> {
 	
 	public ModifyHttpHeaderConfigRequest() {
-		super("Cdn", "2014-11-11", "ModifyHttpHeaderConfig", "None");
+		super("Cdn", "2014-11-11", "ModifyHttpHeaderConfig");
 	}
 
 	private String headerValue;

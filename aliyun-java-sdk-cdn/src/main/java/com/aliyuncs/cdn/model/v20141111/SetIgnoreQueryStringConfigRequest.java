@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class SetIgnoreQueryStringConfigRequest extends RpcAcsRequest<SetIgnoreQueryStringConfigResponse> {
 	
 	public SetIgnoreQueryStringConfigRequest() {
-		super("Cdn", "2014-11-11", "SetIgnoreQueryStringConfig", "None");
+		super("Cdn", "2014-11-11", "SetIgnoreQueryStringConfig");
 	}
 
 	private String keepOssArgs;

@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class SetSourceHostConfigRequest extends RpcAcsRequest<SetSourceHostConfigResponse> {
 	
 	public SetSourceHostConfigRequest() {
-		super("Cdn", "2014-11-11", "SetSourceHostConfig", "None");
+		super("Cdn", "2014-11-11", "SetSourceHostConfig");
 	}
 
 	private String securityToken;

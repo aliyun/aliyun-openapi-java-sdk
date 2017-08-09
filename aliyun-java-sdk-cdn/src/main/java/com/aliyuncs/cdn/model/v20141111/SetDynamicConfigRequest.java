@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class SetDynamicConfigRequest extends RpcAcsRequest<SetDynamicConfigResponse> {
 	
 	public SetDynamicConfigRequest() {
-		super("Cdn", "2014-11-11", "SetDynamicConfig", "None");
+		super("Cdn", "2014-11-11", "SetDynamicConfig");
 	}
 
 	private String dynamicOrigin;

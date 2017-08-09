@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class AddLivePullStreamInfoRequest extends RpcAcsRequest<AddLivePullStreamInfoResponse> {
 	
 	public AddLivePullStreamInfoRequest() {
-		super("Cdn", "2014-11-11", "AddLivePullStreamInfo", "None");
+		super("Cdn", "2014-11-11", "AddLivePullStreamInfo");
 	}
 
 	private String sourceUrl;

@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeLiveStreamTranscodeStreamNumRequest extends RpcAcsRequest<DescribeLiveStreamTranscodeStreamNumResponse> {
 	
 	public DescribeLiveStreamTranscodeStreamNumRequest() {
-		super("Cdn", "2014-11-11", "DescribeLiveStreamTranscodeStreamNum", "None");
+		super("Cdn", "2014-11-11", "DescribeLiveStreamTranscodeStreamNum");
 	}
 
 	private String pullDomain;

@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class SetRemoveQueryStringConfigRequest extends RpcAcsRequest<SetRemoveQueryStringConfigResponse> {
 	
 	public SetRemoveQueryStringConfigRequest() {
-		super("Cdn", "2014-11-11", "SetRemoveQueryStringConfig", "None");
+		super("Cdn", "2014-11-11", "SetRemoveQueryStringConfig");
 	}
 
 	private String keepOssArgs;

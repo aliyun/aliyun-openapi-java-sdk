@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class SetOptimizeConfigRequest extends RpcAcsRequest<SetOptimizeConfigResponse> {
 	
 	public SetOptimizeConfigRequest() {
-		super("Cdn", "2014-11-11", "SetOptimizeConfig", "None");
+		super("Cdn", "2014-11-11", "SetOptimizeConfig");
 	}
 
 	private String securityToken;

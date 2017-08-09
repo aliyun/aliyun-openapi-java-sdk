@@ -1,3 +1,6 @@
+2017-08-09 Version: 2.4.1
+1, 修复SDK中Service Code设置错误的Bug。该Bug会导致SDK会发起一次对域名管理服务的无效访问。
+
 2017-08-04 Version: 2.4.0
 1, 增加了DescribeDomainAverageResponseTime接口。
 2, 增加了DescribeDomainMax95BpsData接口。

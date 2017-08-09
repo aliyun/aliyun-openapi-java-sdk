@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeLiveStreamsBlockListRequest extends RpcAcsRequest<DescribeLiveStreamsBlockListResponse> {
 	
 	public DescribeLiveStreamsBlockListRequest() {
-		super("Cdn", "2014-11-11", "DescribeLiveStreamsBlockList", "None");
+		super("Cdn", "2014-11-11", "DescribeLiveStreamsBlockList");
 	}
 
 	private String securityToken;

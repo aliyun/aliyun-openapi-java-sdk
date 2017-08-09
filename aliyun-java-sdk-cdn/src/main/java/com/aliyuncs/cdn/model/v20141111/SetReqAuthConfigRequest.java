@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class SetReqAuthConfigRequest extends RpcAcsRequest<SetReqAuthConfigResponse> {
 	
 	public SetReqAuthConfigRequest() {
-		super("Cdn", "2014-11-11", "SetReqAuthConfig", "None");
+		super("Cdn", "2014-11-11", "SetReqAuthConfig");
 	}
 
 	private String key1;

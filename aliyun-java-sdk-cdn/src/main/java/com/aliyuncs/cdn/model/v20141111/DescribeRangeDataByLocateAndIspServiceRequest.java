@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeRangeDataByLocateAndIspServiceRequest extends RpcAcsRequest<DescribeRangeDataByLocateAndIspServiceResponse> {
 	
 	public DescribeRangeDataByLocateAndIspServiceRequest() {
-		super("Cdn", "2014-11-11", "DescribeRangeDataByLocateAndIspService", "None");
+		super("Cdn", "2014-11-11", "DescribeRangeDataByLocateAndIspService");
 	}
 
 	private String ispNames;

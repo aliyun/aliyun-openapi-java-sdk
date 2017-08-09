@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class SetVideoSeekConfigRequest extends RpcAcsRequest<SetVideoSeekConfigResponse> {
 	
 	public SetVideoSeekConfigRequest() {
-		super("Cdn", "2014-11-11", "SetVideoSeekConfig", "None");
+		super("Cdn", "2014-11-11", "SetVideoSeekConfig");
 	}
 
 	private String securityToken;

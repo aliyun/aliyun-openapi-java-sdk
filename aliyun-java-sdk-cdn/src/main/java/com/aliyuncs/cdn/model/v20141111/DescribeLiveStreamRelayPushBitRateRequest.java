@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeLiveStreamRelayPushBitRateRequest extends RpcAcsRequest<DescribeLiveStreamRelayPushBitRateResponse> {
 	
 	public DescribeLiveStreamRelayPushBitRateRequest() {
-		super("Cdn", "2014-11-11", "DescribeLiveStreamRelayPushBitRate", "None");
+		super("Cdn", "2014-11-11", "DescribeLiveStreamRelayPushBitRate");
 	}
 
 	private String appName;

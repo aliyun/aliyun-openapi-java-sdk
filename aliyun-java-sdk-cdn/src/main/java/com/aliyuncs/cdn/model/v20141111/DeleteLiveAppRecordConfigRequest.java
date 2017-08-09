@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeleteLiveAppRecordConfigRequest extends RpcAcsRequest<DeleteLiveAppRecordConfigResponse> {
 	
 	public DeleteLiveAppRecordConfigRequest() {
-		super("Cdn", "2014-11-11", "DeleteLiveAppRecordConfig", "None");
+		super("Cdn", "2014-11-11", "DeleteLiveAppRecordConfig");
 	}
 
 	private String appName;

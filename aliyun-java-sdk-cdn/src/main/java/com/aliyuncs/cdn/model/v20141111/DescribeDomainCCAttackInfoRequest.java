@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeDomainCCAttackInfoRequest extends RpcAcsRequest<DescribeDomainCCAttackInfoResponse> {
 	
 	public DescribeDomainCCAttackInfoRequest() {
-		super("Cdn", "2014-11-11", "DescribeDomainCCAttackInfo", "None");
+		super("Cdn", "2014-11-11", "DescribeDomainCCAttackInfo");
 	}
 
 	private String securityToken;

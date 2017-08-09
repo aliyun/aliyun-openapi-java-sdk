@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class MigrateDomainToHttpsDeliveryRequest extends RpcAcsRequest<MigrateDomainToHttpsDeliveryResponse> {
 	
 	public MigrateDomainToHttpsDeliveryRequest() {
-		super("Cdn", "2014-11-11", "MigrateDomainToHttpsDelivery", "None");
+		super("Cdn", "2014-11-11", "MigrateDomainToHttpsDelivery");
 	}
 
 	private String privateKey;

@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeDomainHttpsDataRequest extends RpcAcsRequest<DescribeDomainHttpsDataResponse> {
 	
 	public DescribeDomainHttpsDataRequest() {
-		super("Cdn", "2014-11-11", "DescribeDomainHttpsData", "None");
+		super("Cdn", "2014-11-11", "DescribeDomainHttpsData");
 	}
 
 	private String domainType;

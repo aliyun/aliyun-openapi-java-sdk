@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeUserVipsByDomainRequest extends RpcAcsRequest<DescribeUserVipsByDomainResponse> {
 	
 	public DescribeUserVipsByDomainRequest() {
-		super("Cdn", "2014-11-11", "DescribeUserVipsByDomain", "None");
+		super("Cdn", "2014-11-11", "DescribeUserVipsByDomain");
 	}
 
 	private String securityToken;

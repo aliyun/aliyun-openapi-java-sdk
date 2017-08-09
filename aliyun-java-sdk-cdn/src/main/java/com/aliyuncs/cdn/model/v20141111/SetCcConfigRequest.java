@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class SetCcConfigRequest extends RpcAcsRequest<SetCcConfigResponse> {
 	
 	public SetCcConfigRequest() {
-		super("Cdn", "2014-11-11", "SetCcConfig", "None");
+		super("Cdn", "2014-11-11", "SetCcConfig");
 	}
 
 	private String allowIps;

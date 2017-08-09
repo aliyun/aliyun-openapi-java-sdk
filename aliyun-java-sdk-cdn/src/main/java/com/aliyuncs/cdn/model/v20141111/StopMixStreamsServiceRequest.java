@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class StopMixStreamsServiceRequest extends RpcAcsRequest<StopMixStreamsServiceResponse> {
 	
 	public StopMixStreamsServiceRequest() {
-		super("Cdn", "2014-11-11", "StopMixStreamsService", "None");
+		super("Cdn", "2014-11-11", "StopMixStreamsService");
 	}
 
 	private String securityToken;

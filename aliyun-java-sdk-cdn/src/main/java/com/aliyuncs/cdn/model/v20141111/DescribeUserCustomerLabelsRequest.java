@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeUserCustomerLabelsRequest extends RpcAcsRequest<DescribeUserCustomerLabelsResponse> {
 	
 	public DescribeUserCustomerLabelsRequest() {
-		super("Cdn", "2014-11-11", "DescribeUserCustomerLabels", "None");
+		super("Cdn", "2014-11-11", "DescribeUserCustomerLabels");
 	}
 
 	private Long uid;

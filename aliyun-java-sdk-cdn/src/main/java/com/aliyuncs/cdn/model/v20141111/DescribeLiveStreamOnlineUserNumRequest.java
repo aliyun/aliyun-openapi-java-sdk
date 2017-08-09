@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeLiveStreamOnlineUserNumRequest extends RpcAcsRequest<DescribeLiveStreamOnlineUserNumResponse> {
 	
 	public DescribeLiveStreamOnlineUserNumRequest() {
-		super("Cdn", "2014-11-11", "DescribeLiveStreamOnlineUserNum", "None");
+		super("Cdn", "2014-11-11", "DescribeLiveStreamOnlineUserNum");
 	}
 
 	private String appName;

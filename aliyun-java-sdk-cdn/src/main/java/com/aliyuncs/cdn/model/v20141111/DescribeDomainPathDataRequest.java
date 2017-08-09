@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeDomainPathDataRequest extends RpcAcsRequest<DescribeDomainPathDataResponse> {
 	
 	public DescribeDomainPathDataRequest() {
-		super("Cdn", "2014-11-11", "DescribeDomainPathData", "None");
+		super("Cdn", "2014-11-11", "DescribeDomainPathData");
 	}
 
 	private String startTime;

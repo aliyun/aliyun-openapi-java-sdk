@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class RefreshObjectCachesRequest extends RpcAcsRequest<RefreshObjectCachesResponse> {
 	
 	public RefreshObjectCachesRequest() {
-		super("Cdn", "2014-11-11", "RefreshObjectCaches", "None");
+		super("Cdn", "2014-11-11", "RefreshObjectCaches");
 	}
 
 	private String securityToken;

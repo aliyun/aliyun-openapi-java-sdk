@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeLiveStreamRoomBitRateRequest extends RpcAcsRequest<DescribeLiveStreamRoomBitRateResponse> {
 	
 	public DescribeLiveStreamRoomBitRateRequest() {
-		super("Cdn", "2014-11-11", "DescribeLiveStreamRoomBitRate", "None");
+		super("Cdn", "2014-11-11", "DescribeLiveStreamRoomBitRate");
 	}
 
 	private String appName;

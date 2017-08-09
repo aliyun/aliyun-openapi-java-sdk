@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeLiveStreamRelayPushErrorsRequest extends RpcAcsRequest<DescribeLiveStreamRelayPushErrorsResponse> {
 	
 	public DescribeLiveStreamRelayPushErrorsRequest() {
-		super("Cdn", "2014-11-11", "DescribeLiveStreamRelayPushErrors", "None");
+		super("Cdn", "2014-11-11", "DescribeLiveStreamRelayPushErrors");
 	}
 
 	private String relayDomain;

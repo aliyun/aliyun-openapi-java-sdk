@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeRefreshTasksRequest extends RpcAcsRequest<DescribeRefreshTasksResponse> {
 	
 	public DescribeRefreshTasksRequest() {
-		super("Cdn", "2014-11-11", "DescribeRefreshTasks", "None");
+		super("Cdn", "2014-11-11", "DescribeRefreshTasks");
 	}
 
 	private String securityToken;

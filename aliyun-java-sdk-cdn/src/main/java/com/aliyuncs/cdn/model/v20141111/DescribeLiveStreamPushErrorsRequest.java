@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeLiveStreamPushErrorsRequest extends RpcAcsRequest<DescribeLiveStreamPushErrorsResponse> {
 	
 	public DescribeLiveStreamPushErrorsRequest() {
-		super("Cdn", "2014-11-11", "DescribeLiveStreamPushErrors", "None");
+		super("Cdn", "2014-11-11", "DescribeLiveStreamPushErrors");
 	}
 
 	private String securityToken;

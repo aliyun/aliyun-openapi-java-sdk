@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeleteLiveDomainMappingRequest extends RpcAcsRequest<DeleteLiveDomainMappingResponse> {
 	
 	public DeleteLiveDomainMappingRequest() {
-		super("Cdn", "2014-11-11", "DeleteLiveDomainMapping", "None");
+		super("Cdn", "2014-11-11", "DeleteLiveDomainMapping");
 	}
 
 	private String pullDomain;

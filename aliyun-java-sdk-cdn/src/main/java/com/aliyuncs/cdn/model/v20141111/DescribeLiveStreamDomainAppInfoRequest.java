@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeLiveStreamDomainAppInfoRequest extends RpcAcsRequest<DescribeLiveStreamDomainAppInfoResponse> {
 	
 	public DescribeLiveStreamDomainAppInfoRequest() {
-		super("Cdn", "2014-11-11", "DescribeLiveStreamDomainAppInfo", "None");
+		super("Cdn", "2014-11-11", "DescribeLiveStreamDomainAppInfo");
 	}
 
 	private String securityToken;

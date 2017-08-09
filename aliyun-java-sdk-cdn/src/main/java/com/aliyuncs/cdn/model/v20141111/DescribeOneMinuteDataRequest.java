@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeOneMinuteDataRequest extends RpcAcsRequest<DescribeOneMinuteDataResponse> {
 	
 	public DescribeOneMinuteDataRequest() {
-		super("Cdn", "2014-11-11", "DescribeOneMinuteData", "None");
+		super("Cdn", "2014-11-11", "DescribeOneMinuteData");
 	}
 
 	private Long resourceOwnerId;

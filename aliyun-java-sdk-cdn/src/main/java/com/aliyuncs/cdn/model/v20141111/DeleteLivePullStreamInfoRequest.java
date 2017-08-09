@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeleteLivePullStreamInfoRequest extends RpcAcsRequest<DeleteLivePullStreamInfoResponse> {
 	
 	public DeleteLivePullStreamInfoRequest() {
-		super("Cdn", "2014-11-11", "DeleteLivePullStreamInfo", "None");
+		super("Cdn", "2014-11-11", "DeleteLivePullStreamInfo");
 	}
 
 	private String appName;

@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeLiveStreamPushDataRequest extends RpcAcsRequest<DescribeLiveStreamPushDataResponse> {
 	
 	public DescribeLiveStreamPushDataRequest() {
-		super("Cdn", "2014-11-11", "DescribeLiveStreamPushData", "None");
+		super("Cdn", "2014-11-11", "DescribeLiveStreamPushData");
 	}
 
 	private String securityToken;

@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeDomainRegionDataRequest extends RpcAcsRequest<DescribeDomainRegionDataResponse> {
 	
 	public DescribeDomainRegionDataRequest() {
-		super("Cdn", "2014-11-11", "DescribeDomainRegionData", "None");
+		super("Cdn", "2014-11-11", "DescribeDomainRegionData");
 	}
 
 	private String securityToken;

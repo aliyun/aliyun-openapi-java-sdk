@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeDomainMax95BpsDataRequest extends RpcAcsRequest<DescribeDomainMax95BpsDataResponse> {
 	
 	public DescribeDomainMax95BpsDataRequest() {
-		super("Cdn", "2014-11-11", "DescribeDomainMax95BpsData", "None");
+		super("Cdn", "2014-11-11", "DescribeDomainMax95BpsData");
 	}
 
 	private String securityToken;

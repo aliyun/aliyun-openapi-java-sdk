@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ClearUserBlackListRequest extends RpcAcsRequest<ClearUserBlackListResponse> {
 	
 	public ClearUserBlackListRequest() {
-		super("Cdn", "2014-11-11", "ClearUserBlackList", "None");
+		super("Cdn", "2014-11-11", "ClearUserBlackList");
 	}
 
 	private String securityToken;

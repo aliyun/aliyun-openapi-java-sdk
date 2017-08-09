@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeDomainSrcBpsDataRequest extends RpcAcsRequest<DescribeDomainSrcBpsDataResponse> {
 	
 	public DescribeDomainSrcBpsDataRequest() {
-		super("Cdn", "2014-11-11", "DescribeDomainSrcBpsData", "None");
+		super("Cdn", "2014-11-11", "DescribeDomainSrcBpsData");
 	}
 
 	private String securityToken;

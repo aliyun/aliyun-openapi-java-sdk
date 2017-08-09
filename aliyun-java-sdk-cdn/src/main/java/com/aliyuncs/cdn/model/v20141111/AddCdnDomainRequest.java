@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class AddCdnDomainRequest extends RpcAcsRequest<AddCdnDomainResponse> {
 	
 	public AddCdnDomainRequest() {
-		super("Cdn", "2014-11-11", "AddCdnDomain", "None");
+		super("Cdn", "2014-11-11", "AddCdnDomain");
 	}
 
 	private String topLevelDomain;

@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeDomainReqHitRateDataRequest extends RpcAcsRequest<DescribeDomainReqHitRateDataResponse> {
 	
 	public DescribeDomainReqHitRateDataRequest() {
-		super("Cdn", "2014-11-11", "DescribeDomainReqHitRateData", "None");
+		super("Cdn", "2014-11-11", "DescribeDomainReqHitRateData");
 	}
 
 	private String securityToken;

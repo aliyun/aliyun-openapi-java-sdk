@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class SetUserAgentAcessRestrictionRequest extends RpcAcsRequest<SetUserAgentAcessRestrictionResponse> {
 	
 	public SetUserAgentAcessRestrictionRequest() {
-		super("Cdn", "2014-11-11", "SetUserAgentAcessRestriction", "None");
+		super("Cdn", "2014-11-11", "SetUserAgentAcessRestriction");
 	}
 
 	private String securityToken;

@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeLiveStreamBpsDataRequest extends RpcAcsRequest<DescribeLiveStreamBpsDataResponse> {
 	
 	public DescribeLiveStreamBpsDataRequest() {
-		super("Cdn", "2014-11-11", "DescribeLiveStreamBpsData", "None");
+		super("Cdn", "2014-11-11", "DescribeLiveStreamBpsData");
 	}
 
 	private String appName;

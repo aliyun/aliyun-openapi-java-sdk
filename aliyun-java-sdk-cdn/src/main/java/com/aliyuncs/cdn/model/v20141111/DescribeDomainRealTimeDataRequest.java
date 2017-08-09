@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeDomainRealTimeDataRequest extends RpcAcsRequest<DescribeDomainRealTimeDataResponse> {
 	
 	public DescribeDomainRealTimeDataRequest() {
-		super("Cdn", "2014-11-11", "DescribeDomainRealTimeData", "None");
+		super("Cdn", "2014-11-11", "DescribeDomainRealTimeData");
 	}
 
 	private String field;

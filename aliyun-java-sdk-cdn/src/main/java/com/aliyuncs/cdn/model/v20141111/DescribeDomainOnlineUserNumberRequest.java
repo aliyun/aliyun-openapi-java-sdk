@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeDomainOnlineUserNumberRequest extends RpcAcsRequest<DescribeDomainOnlineUserNumberResponse> {
 	
 	public DescribeDomainOnlineUserNumberRequest() {
-		super("Cdn", "2014-11-11", "DescribeDomainOnlineUserNumber", "None");
+		super("Cdn", "2014-11-11", "DescribeDomainOnlineUserNumber");
 	}
 
 	private String securityToken;

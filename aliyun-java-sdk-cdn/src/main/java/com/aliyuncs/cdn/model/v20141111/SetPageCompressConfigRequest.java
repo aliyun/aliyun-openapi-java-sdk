@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class SetPageCompressConfigRequest extends RpcAcsRequest<SetPageCompressConfigResponse> {
 	
 	public SetPageCompressConfigRequest() {
-		super("Cdn", "2014-11-11", "SetPageCompressConfig", "None");
+		super("Cdn", "2014-11-11", "SetPageCompressConfig");
 	}
 
 	private String securityToken;

@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class SetUserBlackListRequest extends RpcAcsRequest<SetUserBlackListResponse> {
 	
 	public SetUserBlackListRequest() {
-		super("Cdn", "2014-11-11", "SetUserBlackList", "None");
+		super("Cdn", "2014-11-11", "SetUserBlackList");
 	}
 
 	private String configUrl;

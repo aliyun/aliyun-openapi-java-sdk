@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeDomainPvDataRequest extends RpcAcsRequest<DescribeDomainPvDataResponse> {
 	
 	public DescribeDomainPvDataRequest() {
-		super("Cdn", "2014-11-11", "DescribeDomainPvData", "None");
+		super("Cdn", "2014-11-11", "DescribeDomainPvData");
 	}
 
 	private String securityToken;

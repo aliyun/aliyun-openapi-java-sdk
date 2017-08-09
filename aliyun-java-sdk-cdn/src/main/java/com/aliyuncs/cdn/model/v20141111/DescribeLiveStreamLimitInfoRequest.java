@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeLiveStreamLimitInfoRequest extends RpcAcsRequest<DescribeLiveStreamLimitInfoResponse> {
 	
 	public DescribeLiveStreamLimitInfoRequest() {
-		super("Cdn", "2014-11-11", "DescribeLiveStreamLimitInfo", "None");
+		super("Cdn", "2014-11-11", "DescribeLiveStreamLimitInfo");
 	}
 
 	private String securityToken;

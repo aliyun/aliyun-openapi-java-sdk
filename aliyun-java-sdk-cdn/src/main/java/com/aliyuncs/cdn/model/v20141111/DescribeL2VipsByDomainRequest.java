@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeL2VipsByDomainRequest extends RpcAcsRequest<DescribeL2VipsByDomainResponse> {
 	
 	public DescribeL2VipsByDomainRequest() {
-		super("Cdn", "2014-11-11", "DescribeL2VipsByDomain", "None");
+		super("Cdn", "2014-11-11", "DescribeL2VipsByDomain");
 	}
 
 	private String securityToken;

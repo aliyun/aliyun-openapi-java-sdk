@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class SetUserDomainBlackListRequest extends RpcAcsRequest<SetUserDomainBlackListResponse> {
 	
 	public SetUserDomainBlackListRequest() {
-		super("Cdn", "2014-11-11", "SetUserDomainBlackList", "None");
+		super("Cdn", "2014-11-11", "SetUserDomainBlackList");
 	}
 
 	private String securityToken;

@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeLiveRecordConfigRequest extends RpcAcsRequest<DescribeLiveRecordConfigResponse> {
 	
 	public DescribeLiveRecordConfigRequest() {
-		super("Cdn", "2014-11-11", "DescribeLiveRecordConfig", "None");
+		super("Cdn", "2014-11-11", "DescribeLiveRecordConfig");
 	}
 
 	private String securityToken;

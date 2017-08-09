@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeLiveStreamsPublishListRequest extends RpcAcsRequest<DescribeLiveStreamsPublishListResponse> {
 	
 	public DescribeLiveStreamsPublishListRequest() {
-		super("Cdn", "2014-11-11", "DescribeLiveStreamsPublishList", "None");
+		super("Cdn", "2014-11-11", "DescribeLiveStreamsPublishList");
 	}
 
 	private String appName;

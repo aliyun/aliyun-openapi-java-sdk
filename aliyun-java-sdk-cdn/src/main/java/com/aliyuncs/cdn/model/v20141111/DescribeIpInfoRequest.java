@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeIpInfoRequest extends RpcAcsRequest<DescribeIpInfoResponse> {
 	
 	public DescribeIpInfoRequest() {
-		super("Cdn", "2014-11-11", "DescribeIpInfo", "None");
+		super("Cdn", "2014-11-11", "DescribeIpInfo");
 	}
 
 	private String securityToken;

@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeDomainAverageResponseTimeRequest extends RpcAcsRequest<DescribeDomainAverageResponseTimeResponse> {
 	
 	public DescribeDomainAverageResponseTimeRequest() {
-		super("Cdn", "2014-11-11", "DescribeDomainAverageResponseTime", "None");
+		super("Cdn", "2014-11-11", "DescribeDomainAverageResponseTime");
 	}
 
 	private String securityToken;

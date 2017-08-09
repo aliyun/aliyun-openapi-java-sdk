@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeLiveSpecificDomainMappingRequest extends RpcAcsRequest<DescribeLiveSpecificDomainMappingResponse> {
 	
 	public DescribeLiveSpecificDomainMappingRequest() {
-		super("Cdn", "2014-11-11", "DescribeLiveSpecificDomainMapping", "None");
+		super("Cdn", "2014-11-11", "DescribeLiveSpecificDomainMapping");
 	}
 
 	private String pullDomain;

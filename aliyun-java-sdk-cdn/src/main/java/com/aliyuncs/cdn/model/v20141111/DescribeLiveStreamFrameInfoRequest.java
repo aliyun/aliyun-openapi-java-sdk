@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeLiveStreamFrameInfoRequest extends RpcAcsRequest<DescribeLiveStreamFrameInfoResponse> {
 	
 	public DescribeLiveStreamFrameInfoRequest() {
-		super("Cdn", "2014-11-11", "DescribeLiveStreamFrameInfo", "None");
+		super("Cdn", "2014-11-11", "DescribeLiveStreamFrameInfo");
 	}
 
 	private String appName;

@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeDomainQpsDataRequest extends RpcAcsRequest<DescribeDomainQpsDataResponse> {
 	
 	public DescribeDomainQpsDataRequest() {
-		super("Cdn", "2014-11-11", "DescribeDomainQpsData", "None");
+		super("Cdn", "2014-11-11", "DescribeDomainQpsData");
 	}
 
 	private String domainType;

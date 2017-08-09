@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeLiveStreamFrameAndBitRateByDomainRequest extends RpcAcsRequest<DescribeLiveStreamFrameAndBitRateByDomainResponse> {
 	
 	public DescribeLiveStreamFrameAndBitRateByDomainRequest() {
-		super("Cdn", "2014-11-11", "DescribeLiveStreamFrameAndBitRateByDomain", "None");
+		super("Cdn", "2014-11-11", "DescribeLiveStreamFrameAndBitRateByDomain");
 	}
 
 	private String appName;

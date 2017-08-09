@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeleteCdnDomainRequest extends RpcAcsRequest<DeleteCdnDomainResponse> {
 	
 	public DeleteCdnDomainRequest() {
-		super("Cdn", "2014-11-11", "DeleteCdnDomain", "None");
+		super("Cdn", "2014-11-11", "DeleteCdnDomain");
 	}
 
 	private String resourceGroupId;

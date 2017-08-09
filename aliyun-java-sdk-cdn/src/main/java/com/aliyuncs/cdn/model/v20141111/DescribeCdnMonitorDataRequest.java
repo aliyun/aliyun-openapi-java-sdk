@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeCdnMonitorDataRequest extends RpcAcsRequest<DescribeCdnMonitorDataResponse> {
 	
 	public DescribeCdnMonitorDataRequest() {
-		super("Cdn", "2014-11-11", "DescribeCdnMonitorData", "None");
+		super("Cdn", "2014-11-11", "DescribeCdnMonitorData");
 	}
 
 	private String securityToken;

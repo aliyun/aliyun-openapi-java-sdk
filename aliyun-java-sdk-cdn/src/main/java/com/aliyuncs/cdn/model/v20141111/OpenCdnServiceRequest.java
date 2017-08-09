@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class OpenCdnServiceRequest extends RpcAcsRequest<OpenCdnServiceResponse> {
 	
 	public OpenCdnServiceRequest() {
-		super("Cdn", "2014-11-11", "OpenCdnService", "None");
+		super("Cdn", "2014-11-11", "OpenCdnService");
 	}
 
 	private String securityToken;

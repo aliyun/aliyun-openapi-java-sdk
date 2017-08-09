@@ -27,8 +27,10 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifyCdnDomainRequest extends RpcAcsRequest<ModifyCdnDomainResponse> {
 	
 	public ModifyCdnDomainRequest() {
-		super("Cdn", "2014-11-11", "ModifyCdnDomain", "None");
+		super("Cdn", "2014-11-11", "ModifyCdnDomain");
 	}
+
+	private String topLevelDomain;
 
 	private Integer sourcePort;
 
@@ -45,6 +47,17 @@ public class ModifyCdnDomainRequest extends RpcAcsRequest<ModifyCdnDomainRespons
 	private String sourceType;
 
 	private Long ownerId;
+
+	public String getTopLevelDomain() {
+		return this.topLevelDomain;
+	}
+
+	public void setTopLevelDomain(String topLevelDomain) {
+		this.topLevelDomain = topLevelDomain;
+		if(topLevelDomain != null){
+			putQueryParameter("TopLevelDomain", topLevelDomain);
+		}
+	}
 
 	public Integer getSourcePort() {
 		return this.sourcePort;

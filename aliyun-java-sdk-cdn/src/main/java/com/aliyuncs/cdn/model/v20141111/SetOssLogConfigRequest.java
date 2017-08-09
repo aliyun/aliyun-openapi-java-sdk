@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class SetOssLogConfigRequest extends RpcAcsRequest<SetOssLogConfigResponse> {
 	
 	public SetOssLogConfigRequest() {
-		super("Cdn", "2014-11-11", "SetOssLogConfig", "None");
+		super("Cdn", "2014-11-11", "SetOssLogConfig");
 	}
 
 	private String bucket;

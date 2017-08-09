@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeLiveStreamOnlineBpsRequest extends RpcAcsRequest<DescribeLiveStreamOnlineBpsResponse> {
 	
 	public DescribeLiveStreamOnlineBpsRequest() {
-		super("Cdn", "2014-11-11", "DescribeLiveStreamOnlineBps", "None");
+		super("Cdn", "2014-11-11", "DescribeLiveStreamOnlineBps");
 	}
 
 	private String appName;

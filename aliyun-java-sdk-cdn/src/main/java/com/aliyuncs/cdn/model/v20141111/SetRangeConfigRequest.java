@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class SetRangeConfigRequest extends RpcAcsRequest<SetRangeConfigResponse> {
 	
 	public SetRangeConfigRequest() {
-		super("Cdn", "2014-11-11", "SetRangeConfig", "None");
+		super("Cdn", "2014-11-11", "SetRangeConfig");
 	}
 
 	private String securityToken;

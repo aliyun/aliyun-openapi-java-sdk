@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class AddLiveAppRecordConfigRequest extends RpcAcsRequest<AddLiveAppRecordConfigResponse> {
 	
 	public AddLiveAppRecordConfigRequest() {
-		super("Cdn", "2014-11-11", "AddLiveAppRecordConfig", "None");
+		super("Cdn", "2014-11-11", "AddLiveAppRecordConfig");
 	}
 
 	private String ossBucket;

@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class SetHttpErrorPageConfigRequest extends RpcAcsRequest<SetHttpErrorPageConfigResponse> {
 	
 	public SetHttpErrorPageConfigRequest() {
-		super("Cdn", "2014-11-11", "SetHttpErrorPageConfig", "None");
+		super("Cdn", "2014-11-11", "SetHttpErrorPageConfig");
 	}
 
 	private String securityToken;

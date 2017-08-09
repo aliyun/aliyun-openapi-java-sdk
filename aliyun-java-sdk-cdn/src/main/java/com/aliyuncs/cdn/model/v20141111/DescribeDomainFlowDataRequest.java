@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeDomainFlowDataRequest extends RpcAcsRequest<DescribeDomainFlowDataResponse> {
 	
 	public DescribeDomainFlowDataRequest() {
-		super("Cdn", "2014-11-11", "DescribeDomainFlowData", "None");
+		super("Cdn", "2014-11-11", "DescribeDomainFlowData");
 	}
 
 	private String domainType;

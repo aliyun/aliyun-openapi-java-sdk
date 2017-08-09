@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class SetIpBlackListConfigRequest extends RpcAcsRequest<SetIpBlackListConfigResponse> {
 	
 	public SetIpBlackListConfigRequest() {
-		super("Cdn", "2014-11-11", "SetIpBlackListConfig", "None");
+		super("Cdn", "2014-11-11", "SetIpBlackListConfig");
 	}
 
 	private String securityToken;

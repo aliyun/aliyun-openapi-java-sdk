@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class SetReqHeaderConfigRequest extends RpcAcsRequest<SetReqHeaderConfigResponse> {
 	
 	public SetReqHeaderConfigRequest() {
-		super("Cdn", "2014-11-11", "SetReqHeaderConfig", "None");
+		super("Cdn", "2014-11-11", "SetReqHeaderConfig");
 	}
 
 	private String securityToken;

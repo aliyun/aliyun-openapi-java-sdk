@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class SetLiveStreamsNotifyUrlConfigRequest extends RpcAcsRequest<SetLiveStreamsNotifyUrlConfigResponse> {
 	
 	public SetLiveStreamsNotifyUrlConfigRequest() {
-		super("Cdn", "2014-11-11", "SetLiveStreamsNotifyUrlConfig", "None");
+		super("Cdn", "2014-11-11", "SetLiveStreamsNotifyUrlConfig");
 	}
 
 	private String securityToken;

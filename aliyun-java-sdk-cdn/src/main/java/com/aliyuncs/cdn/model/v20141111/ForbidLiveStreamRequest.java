@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ForbidLiveStreamRequest extends RpcAcsRequest<ForbidLiveStreamResponse> {
 	
 	public ForbidLiveStreamRequest() {
-		super("Cdn", "2014-11-11", "ForbidLiveStream", "None");
+		super("Cdn", "2014-11-11", "ForbidLiveStream");
 	}
 
 	private String resumeTime;

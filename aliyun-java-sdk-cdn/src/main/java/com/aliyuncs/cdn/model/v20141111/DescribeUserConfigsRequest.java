@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeUserConfigsRequest extends RpcAcsRequest<DescribeUserConfigsResponse> {
 	
 	public DescribeUserConfigsRequest() {
-		super("Cdn", "2014-11-11", "DescribeUserConfigs", "None");
+		super("Cdn", "2014-11-11", "DescribeUserConfigs");
 	}
 
 	private String securityToken;

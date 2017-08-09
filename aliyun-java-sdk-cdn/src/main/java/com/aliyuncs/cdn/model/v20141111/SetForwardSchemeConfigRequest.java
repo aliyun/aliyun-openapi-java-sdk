@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class SetForwardSchemeConfigRequest extends RpcAcsRequest<SetForwardSchemeConfigResponse> {
 	
 	public SetForwardSchemeConfigRequest() {
-		super("Cdn", "2014-11-11", "SetForwardSchemeConfig", "None");
+		super("Cdn", "2014-11-11", "SetForwardSchemeConfig");
 	}
 
 	private String schemeOrigin;

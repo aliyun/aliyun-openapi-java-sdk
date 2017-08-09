@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeDomainSrcFlowDataRequest extends RpcAcsRequest<DescribeDomainSrcFlowDataResponse> {
 	
 	public DescribeDomainSrcFlowDataRequest() {
-		super("Cdn", "2014-11-11", "DescribeDomainSrcFlowData", "None");
+		super("Cdn", "2014-11-11", "DescribeDomainSrcFlowData");
 	}
 
 	private String securityToken;

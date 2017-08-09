@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class UpdateLiveAppSnapshotConfigRequest extends RpcAcsRequest<UpdateLiveAppSnapshotConfigResponse> {
 	
 	public UpdateLiveAppSnapshotConfigRequest() {
-		super("Cdn", "2014-11-11", "UpdateLiveAppSnapshotConfig", "None");
+		super("Cdn", "2014-11-11", "UpdateLiveAppSnapshotConfig");
 	}
 
 	private Integer timeInterval;

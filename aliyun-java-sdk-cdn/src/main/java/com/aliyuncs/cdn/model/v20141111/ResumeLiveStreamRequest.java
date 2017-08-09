@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ResumeLiveStreamRequest extends RpcAcsRequest<ResumeLiveStreamResponse> {
 	
 	public ResumeLiveStreamRequest() {
-		super("Cdn", "2014-11-11", "ResumeLiveStream", "None");
+		super("Cdn", "2014-11-11", "ResumeLiveStream");
 	}
 
 	private String appName;

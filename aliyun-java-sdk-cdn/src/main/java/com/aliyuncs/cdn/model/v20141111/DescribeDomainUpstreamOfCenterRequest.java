@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeDomainUpstreamOfCenterRequest extends RpcAcsRequest<DescribeDomainUpstreamOfCenterResponse> {
 	
 	public DescribeDomainUpstreamOfCenterRequest() {
-		super("Cdn", "2014-11-11", "DescribeDomainUpstreamOfCenter", "None");
+		super("Cdn", "2014-11-11", "DescribeDomainUpstreamOfCenter");
 	}
 
 	private String securityToken;

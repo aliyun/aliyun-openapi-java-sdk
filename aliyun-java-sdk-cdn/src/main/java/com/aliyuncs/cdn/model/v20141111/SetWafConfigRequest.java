@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class SetWafConfigRequest extends RpcAcsRequest<SetWafConfigResponse> {
 	
 	public SetWafConfigRequest() {
-		super("Cdn", "2014-11-11", "SetWafConfig", "None");
+		super("Cdn", "2014-11-11", "SetWafConfig");
 	}
 
 	private String securityToken;

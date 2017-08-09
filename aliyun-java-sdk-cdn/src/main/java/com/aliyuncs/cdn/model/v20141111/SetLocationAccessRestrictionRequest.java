@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class SetLocationAccessRestrictionRequest extends RpcAcsRequest<SetLocationAccessRestrictionResponse> {
 	
 	public SetLocationAccessRestrictionRequest() {
-		super("Cdn", "2014-11-11", "SetLocationAccessRestriction", "None");
+		super("Cdn", "2014-11-11", "SetLocationAccessRestriction");
 	}
 
 	private String securityToken;

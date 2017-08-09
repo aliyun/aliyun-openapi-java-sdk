@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeleteHttpHeaderConfigRequest extends RpcAcsRequest<DeleteHttpHeaderConfigResponse> {
 	
 	public DeleteHttpHeaderConfigRequest() {
-		super("Cdn", "2014-11-11", "DeleteHttpHeaderConfig", "None");
+		super("Cdn", "2014-11-11", "DeleteHttpHeaderConfig");
 	}
 
 	private String securityToken;

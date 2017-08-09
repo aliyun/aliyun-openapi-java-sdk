@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeCdnTypesRequest extends RpcAcsRequest<DescribeCdnTypesResponse> {
 	
 	public DescribeCdnTypesRequest() {
-		super("Cdn", "2014-11-11", "DescribeCdnTypes", "None");
+		super("Cdn", "2014-11-11", "DescribeCdnTypes");
 	}
 
 	private String securityToken;

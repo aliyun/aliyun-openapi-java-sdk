@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class SetErrorPageConfigRequest extends RpcAcsRequest<SetErrorPageConfigResponse> {
 	
 	public SetErrorPageConfigRequest() {
-		super("Cdn", "2014-11-11", "SetErrorPageConfig", "None");
+		super("Cdn", "2014-11-11", "SetErrorPageConfig");
 	}
 
 	private String pageType;

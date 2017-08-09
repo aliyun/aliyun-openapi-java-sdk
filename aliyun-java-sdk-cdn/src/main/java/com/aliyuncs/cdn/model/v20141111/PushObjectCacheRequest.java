@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class PushObjectCacheRequest extends RpcAcsRequest<PushObjectCacheResponse> {
 	
 	public PushObjectCacheRequest() {
-		super("Cdn", "2014-11-11", "PushObjectCache", "None");
+		super("Cdn", "2014-11-11", "PushObjectCache");
 	}
 
 	private String securityToken;

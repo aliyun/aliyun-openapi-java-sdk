@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeDomainTopReferVisitRequest extends RpcAcsRequest<DescribeDomainTopReferVisitResponse> {
 	
 	public DescribeDomainTopReferVisitRequest() {
-		super("Cdn", "2014-11-11", "DescribeDomainTopReferVisit", "None");
+		super("Cdn", "2014-11-11", "DescribeDomainTopReferVisit");
 	}
 
 	private String securityToken;

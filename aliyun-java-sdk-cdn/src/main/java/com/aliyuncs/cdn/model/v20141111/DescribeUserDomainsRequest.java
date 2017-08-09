@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeUserDomainsRequest extends RpcAcsRequest<DescribeUserDomainsResponse> {
 	
 	public DescribeUserDomainsRequest() {
-		super("Cdn", "2014-11-11", "DescribeUserDomains", "None");
+		super("Cdn", "2014-11-11", "DescribeUserDomains");
 	}
 
 	private String sources;

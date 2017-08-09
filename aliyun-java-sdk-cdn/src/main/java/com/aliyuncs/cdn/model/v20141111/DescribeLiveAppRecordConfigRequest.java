@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeLiveAppRecordConfigRequest extends RpcAcsRequest<DescribeLiveAppRecordConfigResponse> {
 	
 	public DescribeLiveAppRecordConfigRequest() {
-		super("Cdn", "2014-11-11", "DescribeLiveAppRecordConfig", "None");
+		super("Cdn", "2014-11-11", "DescribeLiveAppRecordConfig");
 	}
 
 	private String appName;

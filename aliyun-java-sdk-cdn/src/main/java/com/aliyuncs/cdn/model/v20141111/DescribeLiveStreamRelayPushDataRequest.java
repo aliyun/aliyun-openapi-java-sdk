@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeLiveStreamRelayPushDataRequest extends RpcAcsRequest<DescribeLiveStreamRelayPushDataResponse> {
 	
 	public DescribeLiveStreamRelayPushDataRequest() {
-		super("Cdn", "2014-11-11", "DescribeLiveStreamRelayPushData", "None");
+		super("Cdn", "2014-11-11", "DescribeLiveStreamRelayPushData");
 	}
 
 	private String relayDomain;

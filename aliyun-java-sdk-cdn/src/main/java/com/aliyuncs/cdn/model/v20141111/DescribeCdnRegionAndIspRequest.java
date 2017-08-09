@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeCdnRegionAndIspRequest extends RpcAcsRequest<DescribeCdnRegionAndIspResponse> {
 	
 	public DescribeCdnRegionAndIspRequest() {
-		super("Cdn", "2014-11-11", "DescribeCdnRegionAndIsp", "None");
+		super("Cdn", "2014-11-11", "DescribeCdnRegionAndIsp");
 	}
 
 	private String securityToken;

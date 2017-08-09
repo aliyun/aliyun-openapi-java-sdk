@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class SetRemoteReqAuthConfigRequest extends RpcAcsRequest<SetRemoteReqAuthConfigResponse> {
 	
 	public SetRemoteReqAuthConfigRequest() {
-		super("Cdn", "2014-11-11", "SetRemoteReqAuthConfig", "None");
+		super("Cdn", "2014-11-11", "SetRemoteReqAuthConfig");
 	}
 
 	private String authPath;

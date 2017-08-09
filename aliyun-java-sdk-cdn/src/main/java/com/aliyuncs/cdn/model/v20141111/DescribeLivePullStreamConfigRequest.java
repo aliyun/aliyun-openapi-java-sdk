@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeLivePullStreamConfigRequest extends RpcAcsRequest<DescribeLivePullStreamConfigResponse> {
 	
 	public DescribeLivePullStreamConfigRequest() {
-		super("Cdn", "2014-11-11", "DescribeLivePullStreamConfig", "None");
+		super("Cdn", "2014-11-11", "DescribeLivePullStreamConfig");
 	}
 
 	private String securityToken;

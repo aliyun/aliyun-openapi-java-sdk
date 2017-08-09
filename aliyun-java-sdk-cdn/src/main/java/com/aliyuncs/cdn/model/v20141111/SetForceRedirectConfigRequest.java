@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class SetForceRedirectConfigRequest extends RpcAcsRequest<SetForceRedirectConfigResponse> {
 	
 	public SetForceRedirectConfigRequest() {
-		super("Cdn", "2014-11-11", "SetForceRedirectConfig", "None");
+		super("Cdn", "2014-11-11", "SetForceRedirectConfig");
 	}
 
 	private String securityToken;
