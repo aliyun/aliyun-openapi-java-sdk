@@ -36,18 +36,22 @@ public final class X509TrustAll implements X509TrustManager, HostnameVerifier {
     private static HostnameVerifier defaultVerifier;
     private static SSLSocketFactory defaultSSLFactory;
 
+    @Override
     public boolean verify(String hostname, SSLSession session) {
         return true;
     }
 
+    @Override
     public void checkClientTrusted(X509Certificate[] arg0, String arg1)
         throws CertificateException {
     }
 
+    @Override
     public void checkServerTrusted(X509Certificate[] arg0, String arg1)
         throws CertificateException {
     }
 
+    @Override
     public X509Certificate[] getAcceptedIssuers() {
         return null;
     }

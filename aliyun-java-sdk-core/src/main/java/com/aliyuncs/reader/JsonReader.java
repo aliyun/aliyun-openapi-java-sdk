@@ -53,6 +53,7 @@ public class JsonReader implements Reader {
         escapes.put(Character.valueOf('f'), Character.valueOf('\f'));
     }
 
+    @Override
     public Map<String, String> read(String response, String endpoint) {
         return read(new StringCharacterIterator(response), endpoint, FIRST_POSITION);
     }
@@ -72,6 +73,8 @@ public class JsonReader implements Reader {
                 break;
             case NEXT_POSITION:
                 c = ct.next();
+                break;
+            default:
                 break;
         }
         readJson(endpoint);

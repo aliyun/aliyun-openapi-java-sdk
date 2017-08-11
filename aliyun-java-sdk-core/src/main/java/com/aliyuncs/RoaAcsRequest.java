@@ -31,6 +31,7 @@ import com.aliyuncs.auth.RoaSignatureComposer;
 import com.aliyuncs.http.FormatType;
 import com.aliyuncs.http.HttpRequest;
 import com.aliyuncs.regions.ProductDomain;
+import com.aliyuncs.utils.ParameterHelper;
 
 public abstract class RoaAcsRequest<T extends AcsResponse> extends AcsRequest<T> {
 
@@ -101,6 +102,7 @@ public abstract class RoaAcsRequest<T extends AcsResponse> extends AcsRequest<T>
         setParameter(this.pathParameters, name, value);
     }
 
+    @Override
     public String composeUrl(String endpoint, Map<String, String> queries) throws UnsupportedEncodingException {
 
         Map<String, String> mapQueries = (queries == null) ? this.getQueryParameters() : queries;
@@ -134,6 +136,12 @@ public abstract class RoaAcsRequest<T extends AcsResponse> extends AcsRequest<T>
     @Override
     public HttpRequest signRequest(ISigner signer, Credential credential, FormatType format, ProductDomain domain)
         throws InvalidKeyException, IllegalStateException, UnsupportedEncodingException, NoSuchAlgorithmException {
+
+        Map<String, String> formParams = this.getBodyParameters();
+        if (formParams != null && !formParams.isEmpty()) {
+            byte[] data = ParameterHelper.getFormData(formParams);
+            this.setHttpContent(data, "UTF-8", FormatType.FORM);
+        }
 
         Map<String, String> imutableMap = new HashMap<String, String>(this.getHeaders());
         if (null != signer && null != credential) {

@@ -47,6 +47,7 @@ public abstract class AcsRequest<T extends AcsResponse> extends HttpRequest {
     private ProtocolType protocol = ProtocolType.HTTP;
     private final Map<String, String> queryParameters = new HashMap<String, String>();
     private final Map<String, String> domainParameters = new HashMap<String, String>();
+    private final Map<String, String> bodyParameters = new HashMap<String, String>();
 
     private String locationProduct;
     private String endpointType;
@@ -105,11 +106,7 @@ public abstract class AcsRequest<T extends AcsResponse> extends HttpRequest {
         return Collections.unmodifiableMap(queryParameters);
     }
 
-    public <K> void putQueryParameter(String name, K value) {
-        setParameter(this.queryParameters, name, value);
-    }
-
-    protected void putQueryParameter(String name, String value) {
+    public void putQueryParameter(String name, Object value) {
         setParameter(this.queryParameters, name, value);
     }
 
@@ -121,11 +118,15 @@ public abstract class AcsRequest<T extends AcsResponse> extends HttpRequest {
         setParameter(this.domainParameters, name, value);
     }
 
-    protected void putDomainParameter(String name, String value) {
-        setParameter(this.domainParameters, name, value);
+    public Map<String, String> getBodyParameters() {
+        return Collections.unmodifiableMap(bodyParameters);
     }
 
-    protected <K> void setParameter(Map<String, String> map, String name, K value) {
+    protected void putBodyParameter(String name, Object value) {
+        setParameter(this.bodyParameters, name, value);
+    }
+
+    protected void setParameter(Map<String, String> map, String name, Object value) {
         if (null == map || null == name || null == value) {
             return;
         }

@@ -34,6 +34,7 @@ import com.aliyuncs.utils.XmlUtils;
 public class XmlReader implements Reader {
     Map<String, String> map = new HashMap<String, String>();
 
+    @Override
     public Map<String, String> read(String response, String endpoint) throws ClientException {
         Element root;
         try {

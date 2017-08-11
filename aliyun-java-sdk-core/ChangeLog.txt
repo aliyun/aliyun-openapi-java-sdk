@@ -1,3 +1,6 @@
+2017-08-11 Version: 3.2.7
+1, 解决不支持body参数的bug
+
 2017-07-27 Version: 3.2.6
 1, 支持自动寻址，自动寻址endpoint缓存失效时间为1小时
 2, 手工调用addEndpoint方法添加endpoint优先级高于自动寻址

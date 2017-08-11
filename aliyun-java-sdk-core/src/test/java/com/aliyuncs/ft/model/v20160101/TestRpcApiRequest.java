@@ -16,28 +16,23 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package com.aliyuncs.ft.model.v20160102;
+package com.aliyuncs.ft.model.v20160101;
 
-import com.aliyuncs.RoaAcsRequest;
-import com.aliyuncs.http.MethodType;
+import com.aliyuncs.RpcAcsRequest;
 
 /**
  * @author auto create
  * @version 
  */
-public class TestRoaApiRequest extends RoaAcsRequest<TestRoaApiResponse> {
+public class TestRpcApiRequest extends RpcAcsRequest<TestRpcApiResponse> {
 	
-	public TestRoaApiRequest() {
-		super("Ft", "2016-01-02", "TestRoaApi");
-		setUriPattern("/web/cloudapi");
-		setMethod(MethodType.PUT);
+	public TestRpcApiRequest() {
+		super("Ft", "2016-01-01", "TestRpcApi");
 	}
 
 	private String bodyParam;
 
 	private String queryParam;
-
-	private String headerParam;
 
 	public String getBodyParam() {
 		return this.bodyParam;
@@ -45,7 +40,7 @@ public class TestRoaApiRequest extends RoaAcsRequest<TestRoaApiResponse> {
 
 	public void setBodyParam(String bodyParam) {
 		this.bodyParam = bodyParam;
-		if (bodyParam != null) {
+		if(bodyParam != null){
 			putBodyParameter("BodyParam", bodyParam);
 		}
 	}
@@ -61,20 +56,9 @@ public class TestRoaApiRequest extends RoaAcsRequest<TestRoaApiResponse> {
 		}
 	}
 
-	public String getHeaderParam() {
-		return this.headerParam;
-	}
-
-	public void setHeaderParam(String headerParam) {
-		this.headerParam = headerParam;
-		if(headerParam != null){
-			putHeaderParameter("HeaderParam", headerParam);
-		}
-	}
-
 	@Override
-	public Class<TestRoaApiResponse> getResponseClass() {
-		return TestRoaApiResponse.class;
+	public Class<TestRpcApiResponse> getResponseClass() {
+		return TestRpcApiResponse.class;
 	}
 
 }

@@ -50,6 +50,7 @@ public class OssSignatureComposer extends RoaSignatureComposer {
         return queryString;
     }
 
+    @Override
     public String composeStringToSign(MethodType method, String uriPattern,
                                       ISigner signer, Map<String, String> queries,
                                       Map<String, String> headers, Map<String, String> paths) {

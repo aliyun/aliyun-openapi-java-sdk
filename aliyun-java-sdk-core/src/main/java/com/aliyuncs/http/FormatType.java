@@ -18,24 +18,31 @@
  */
 package com.aliyuncs.http;
 
+import java.util.Arrays;
+
 public enum FormatType {
-    XML,
-    JSON,
-    RAW;
+
+    XML("application/xml", "text/xml"),
+    JSON("application/json", "text/json"),
+    RAW("application/octet-stream"),
+    FORM("application/x-www-form-urlencoded");
+
+    private String[] formats;
+
+    FormatType(String... formats) {
+        this.formats = formats;
+    }
 
     public static String mapFormatToAccept(FormatType format) {
-        if (FormatType.XML == format) { return "application/xml"; }
-        if (FormatType.JSON == format) { return "application/json"; }
-
-        return "application/octet-stream";
+        return format.formats[0];
     }
 
     public static FormatType mapAcceptToFormat(String accept) {
-        if (accept.toLowerCase().equals("application/xml") ||
-            accept.toLowerCase().equals("text/xml")) { return FormatType.XML; }
-        if (accept.toLowerCase().equals("application/json") ||
-            accept.toLowerCase().equals("text/json")) { return FormatType.JSON; }
-
+        for (FormatType value : values()) {
+            if (Arrays.asList(value.formats).contains(accept)) {
+                return value;
+            }
+        }
         return FormatType.RAW;
     }
 }

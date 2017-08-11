@@ -32,6 +32,7 @@ public class RoaSignatureComposer implements ISignatureComposer {
     protected final static String QUERY_SEPARATOR = "&";
     protected final static String HEADER_SEPARATOR = "\n";
 
+    @Override
     public Map<String, String> refreshSignParameters(Map<String, String> parameters,
                                                      ISigner signer, String accessKeyId, FormatType format) {
         Map<String, String> immutableMap = new HashMap<String, String>(parameters);
@@ -108,6 +109,7 @@ public class RoaSignatureComposer implements ISignatureComposer {
         return result;
     }
 
+    @Override
     public String composeStringToSign(MethodType method, String uriPattern, ISigner signer,
                                       Map<String, String> queries, Map<String, String> headers,
                                       Map<String, String> paths) {

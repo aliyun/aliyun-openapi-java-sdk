@@ -22,10 +22,16 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.security.NoSuchAlgorithmException;
 
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
+
 import com.aliyuncs.auth.Credential;
+import com.aliyuncs.ft.model.v20160101.TestRpcApiRequest;
+import com.aliyuncs.ft.model.v20160101.TestRpcApiResponse;
 import com.aliyuncs.ft.model.v20160102.TestRoaApiRequest;
 import com.aliyuncs.ft.model.v20160102.TestRoaApiResponse;
 import com.aliyuncs.http.HttpRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.profile.DefaultProfile;
 import org.junit.Assert;
 import org.junit.Test;
@@ -73,9 +79,33 @@ public class DefaultAcsClientTest extends BaseTest {
     public void getAcsResponse_ROA_Test() throws ServerException, ClientException, NoSuchAlgorithmException {
         DefaultProfile.addEndpoint("cn-hangzhou", "cn-hangzhou", "Ft", "ft.aliyuncs.com");
         TestRoaApiRequest request = new TestRoaApiRequest();
+        request.setBodyParam("BODY_PARAM_CONTENT");
+        request.setHeaderParam("HEAD_PARAM_CONTENT");
+        request.setQueryParam("QUERY_PARAM_CONTENT");
         request.setHttpContentType(FormatType.JSON);
-        TestRoaApiResponse response = client.getAcsResponse(request, "cn-hangzhou", dailyEnvCredentail);
+        HttpResponse response = client.doAction(request, "cn-hangzhou", dailyEnvCredentail);
         Assert.assertNotNull(response);
+        String responseContent = new String(response.getHttpContent());
+        JSONObject responseJson = JSON.parseObject(responseContent);
+        Assert.assertEquals("HEAD_PARAM_CONTENT", responseJson.getJSONObject("Headers").getString("HeaderParam"));
+        Assert.assertEquals("QUERY_PARAM_CONTENT", responseJson.getJSONObject("Params").getString("QueryParam"));
+        Assert.assertEquals("BODY_PARAM_CONTENT", responseJson.getJSONObject("Params").getString("BodyParam"));
+    }
+
+    @Test
+    public void getAcsResponse_RPC_Test() throws ServerException, ClientException, NoSuchAlgorithmException {
+        DefaultProfile.addEndpoint("cn-hangzhou", "cn-hangzhou", "Ft", "ft.aliyuncs.com");
+        TestRpcApiRequest request = new TestRpcApiRequest();
+        request.setBodyParam("BODY_PARAM_CONTENT");
+        request.setQueryParam("QUERY_PARAM_CONTENT");
+        request.setAcceptFormat(FormatType.JSON);
+        request.setMethod(MethodType.POST);
+
+        TestRpcApiResponse response = client.getAcsResponse(request, "cn-hangzhou", dailyEnvCredentail);
+        Assert.assertNotNull(response);
+        Assert.assertNotNull(response.getParams());
+        Assert.assertEquals("QUERY_PARAM_CONTENT", response.getParams().getQueryParam());
+        Assert.assertEquals("BODY_PARAM_CONTENT", response.getParams().getBodyParam());
     }
 
     @Test

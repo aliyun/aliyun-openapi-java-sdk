@@ -30,6 +30,7 @@ import com.aliyuncs.http.FormatType;
 import com.aliyuncs.http.HttpRequest;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.regions.ProductDomain;
+import com.aliyuncs.utils.ParameterHelper;
 
 public abstract class RpcAcsRequest<T extends AcsResponse> extends AcsRequest<T> {
 
@@ -98,6 +99,7 @@ public abstract class RpcAcsRequest<T extends AcsResponse> extends AcsRequest<T>
         this.putQueryParameter("Format", acceptFormat.toString());
     }
 
+    @Override
     public String composeUrl(String endpoint, Map<String, String> queries) throws UnsupportedEncodingException {
         Map<String, String> mapQueries = (queries == null) ? this.getQueryParameters() : queries;
         StringBuilder urlBuilder = new StringBuilder("");
@@ -122,7 +124,14 @@ public abstract class RpcAcsRequest<T extends AcsResponse> extends AcsRequest<T>
             }           
             imutableMap = this.composer.refreshSignParameters(this.getQueryParameters(), signer, accessKeyId, format);
             imutableMap.put("RegionId", getRegionId());
-            String strToSign = this.composer.composeStringToSign(this.getMethod(), null, signer, imutableMap, null,
+            Map<String, String> paramsToSign = new HashMap<String, String>(imutableMap);
+            Map<String, String> formParams = this.getBodyParameters();
+            if (formParams != null && !formParams.isEmpty()) {
+                byte[] data = ParameterHelper.getFormData(formParams);
+                this.setHttpContent(data, "UTF-8", FormatType.FORM);
+                paramsToSign.putAll(formParams);
+            }
+            String strToSign = this.composer.composeStringToSign(this.getMethod(), null, signer, paramsToSign, null,
                 null);
             String signature = signer.signString(strToSign, accessSecret + "&");
             imutableMap.put("Signature", signature);
@@ -130,4 +139,6 @@ public abstract class RpcAcsRequest<T extends AcsResponse> extends AcsRequest<T>
         setUrl(this.composeUrl(domain.getDomianName(), imutableMap));
         return this;
     }
+
+
 }

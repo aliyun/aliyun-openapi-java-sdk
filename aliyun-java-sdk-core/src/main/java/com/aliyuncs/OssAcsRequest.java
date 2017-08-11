@@ -99,5 +99,6 @@ public abstract class OssAcsRequest<T extends AcsResponse>
         return request;
     }
 
+    @Override
     public abstract Class<T> getResponseClass();
 }

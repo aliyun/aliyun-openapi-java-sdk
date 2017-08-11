@@ -31,6 +31,7 @@ public class ShaHmac256 implements ISigner {
 
     private final static String AGLORITHM_NAME = "HmacSHA256";
 
+    @Override
     public String signString(String source, String accessSecret)
         throws InvalidKeyException, IllegalStateException {
         try {
@@ -47,10 +48,12 @@ public class ShaHmac256 implements ISigner {
 
     }
 
+    @Override
     public String getSignerName() {
         return "HMAC-SHA256";
     }
 
+    @Override
     public String getSignerVersion() {
         return "1.0";
     }
