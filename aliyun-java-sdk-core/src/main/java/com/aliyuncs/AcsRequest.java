@@ -106,7 +106,11 @@ public abstract class AcsRequest<T extends AcsResponse> extends HttpRequest {
         return Collections.unmodifiableMap(queryParameters);
     }
 
-    public void putQueryParameter(String name, Object value) {
+    public <K> void putQueryParameter(String name, K value) {
+        setParameter(this.queryParameters, name, value);
+    }
+
+    protected void putQueryParameter(String name, String value) {
         setParameter(this.queryParameters, name, value);
     }
 
@@ -120,6 +124,10 @@ public abstract class AcsRequest<T extends AcsResponse> extends HttpRequest {
 
     public Map<String, String> getBodyParameters() {
         return Collections.unmodifiableMap(bodyParameters);
+    }
+
+    protected void putDomainParameter(String name, String value) {
+        setParameter(this.domainParameters, name, value);
     }
 
     protected void putBodyParameter(String name, Object value) {
