@@ -43,6 +43,7 @@ public class DescribeLoadBalancerUDPListenerAttributeResponseUnmarshaller {
 		describeLoadBalancerUDPListenerAttributeResponse.setHealthCheckExp(context.stringValue("DescribeLoadBalancerUDPListenerAttributeResponse.HealthCheckExp"));
 		describeLoadBalancerUDPListenerAttributeResponse.setMaxConnection(context.integerValue("DescribeLoadBalancerUDPListenerAttributeResponse.MaxConnection"));
 		describeLoadBalancerUDPListenerAttributeResponse.setVServerGroupId(context.stringValue("DescribeLoadBalancerUDPListenerAttributeResponse.VServerGroupId"));
+		describeLoadBalancerUDPListenerAttributeResponse.setMasterSlaveServerGroupId(context.stringValue("DescribeLoadBalancerUDPListenerAttributeResponse.MasterSlaveServerGroupId"));
 	 
 	 	return describeLoadBalancerUDPListenerAttributeResponse;
 	}

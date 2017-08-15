@@ -28,6 +28,7 @@ public class CreateLoadBalancerResponseUnmarshaller {
 		
 		createLoadBalancerResponse.setRequestId(context.stringValue("CreateLoadBalancerResponse.RequestId"));
 		createLoadBalancerResponse.setLoadBalancerId(context.stringValue("CreateLoadBalancerResponse.LoadBalancerId"));
+		createLoadBalancerResponse.setResourceGroupId(context.stringValue("CreateLoadBalancerResponse.ResourceGroupId"));
 		createLoadBalancerResponse.setAddress(context.stringValue("CreateLoadBalancerResponse.Address"));
 		createLoadBalancerResponse.setLoadBalancerName(context.stringValue("CreateLoadBalancerResponse.LoadBalancerName"));
 		createLoadBalancerResponse.setVpcId(context.stringValue("CreateLoadBalancerResponse.VpcId"));

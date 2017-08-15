@@ -35,7 +35,9 @@ public class DescribeHealthStatusResponseUnmarshaller {
 		List<BackendServer> backendServers = new ArrayList<BackendServer>();
 		for (int i = 0; i < context.lengthValue("DescribeHealthStatusResponse.BackendServers.Length"); i++) {
 			BackendServer backendServer = new BackendServer();
+			backendServer.setListenerPort(context.integerValue("DescribeHealthStatusResponse.BackendServers["+ i +"].ListenerPort"));
 			backendServer.setServerId(context.stringValue("DescribeHealthStatusResponse.BackendServers["+ i +"].ServerId"));
+			backendServer.setPort(context.integerValue("DescribeHealthStatusResponse.BackendServers["+ i +"].Port"));
 			backendServer.setServerHealthStatus(context.stringValue("DescribeHealthStatusResponse.BackendServers["+ i +"].ServerHealthStatus"));
 
 			backendServers.add(backendServer);

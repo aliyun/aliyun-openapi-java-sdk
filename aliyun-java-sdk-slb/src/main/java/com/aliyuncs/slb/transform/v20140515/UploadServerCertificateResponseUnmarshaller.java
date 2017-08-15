@@ -32,6 +32,12 @@ public class UploadServerCertificateResponseUnmarshaller {
 		uploadServerCertificateResponse.setServerCertificateName(context.stringValue("UploadServerCertificateResponse.ServerCertificateName"));
 		uploadServerCertificateResponse.setRegionId(context.stringValue("UploadServerCertificateResponse.RegionId"));
 		uploadServerCertificateResponse.setRegionIdAlias(context.stringValue("UploadServerCertificateResponse.RegionIdAlias"));
+		uploadServerCertificateResponse.setAliCloudCertificateId(context.stringValue("UploadServerCertificateResponse.AliCloudCertificateId"));
+		uploadServerCertificateResponse.setAliCloudCertificateName(context.stringValue("UploadServerCertificateResponse.AliCloudCertificateName"));
+		uploadServerCertificateResponse.setIsAliCloudCertificate(context.integerValue("UploadServerCertificateResponse.IsAliCloudCertificate"));
+		uploadServerCertificateResponse.setResourceGroupId(context.stringValue("UploadServerCertificateResponse.ResourceGroupId"));
+		uploadServerCertificateResponse.setCreateTime(context.stringValue("UploadServerCertificateResponse.CreateTime"));
+		uploadServerCertificateResponse.setCreateTimeStamp(context.longValue("UploadServerCertificateResponse.CreateTimeStamp"));
 	 
 	 	return uploadServerCertificateResponse;
 	}

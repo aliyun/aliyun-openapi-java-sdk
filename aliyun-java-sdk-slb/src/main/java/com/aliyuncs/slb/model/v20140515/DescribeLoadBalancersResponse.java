@@ -31,6 +31,12 @@ public class DescribeLoadBalancersResponse extends AcsResponse {
 
 	private String requestId;
 
+	private Integer pageNumber;
+
+	private Integer pageSize;
+
+	private Integer totalCount;
+
 	private List<LoadBalancer> loadBalancers;
 
 	public String getRequestId() {
@@ -39,6 +45,30 @@ public class DescribeLoadBalancersResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
+
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public List<LoadBalancer> getLoadBalancers() {
@@ -80,6 +110,10 @@ public class DescribeLoadBalancersResponse extends AcsResponse {
 		private String createTime;
 
 		private Long createTimeStamp;
+
+		private String payType;
+
+		private String resourceGroupId;
 
 		public String getLoadBalancerId() {
 			return this.loadBalancerId;
@@ -199,6 +233,22 @@ public class DescribeLoadBalancersResponse extends AcsResponse {
 
 		public void setCreateTimeStamp(Long createTimeStamp) {
 			this.createTimeStamp = createTimeStamp;
+		}
+
+		public String getPayType() {
+			return this.payType;
+		}
+
+		public void setPayType(String payType) {
+			this.payType = payType;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
 		}
 	}
 

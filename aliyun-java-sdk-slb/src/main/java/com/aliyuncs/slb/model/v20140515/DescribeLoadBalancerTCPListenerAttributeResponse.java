@@ -44,6 +44,8 @@ public class DescribeLoadBalancerTCPListenerAttributeResponse extends AcsRespons
 
 	private Integer persistenceTimeout;
 
+	private Integer establishedTimeout;
+
 	private String healthCheck;
 
 	private Integer healthyThreshold;
@@ -67,6 +69,8 @@ public class DescribeLoadBalancerTCPListenerAttributeResponse extends AcsRespons
 	private Integer maxConnection;
 
 	private String vServerGroupId;
+
+	private String masterSlaveServerGroupId;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -130,6 +134,14 @@ public class DescribeLoadBalancerTCPListenerAttributeResponse extends AcsRespons
 
 	public void setPersistenceTimeout(Integer persistenceTimeout) {
 		this.persistenceTimeout = persistenceTimeout;
+	}
+
+	public Integer getEstablishedTimeout() {
+		return this.establishedTimeout;
+	}
+
+	public void setEstablishedTimeout(Integer establishedTimeout) {
+		this.establishedTimeout = establishedTimeout;
 	}
 
 	public String getHealthCheck() {
@@ -226,6 +238,14 @@ public class DescribeLoadBalancerTCPListenerAttributeResponse extends AcsRespons
 
 	public void setVServerGroupId(String vServerGroupId) {
 		this.vServerGroupId = vServerGroupId;
+	}
+
+	public String getMasterSlaveServerGroupId() {
+		return this.masterSlaveServerGroupId;
+	}
+
+	public void setMasterSlaveServerGroupId(String masterSlaveServerGroupId) {
+		this.masterSlaveServerGroupId = masterSlaveServerGroupId;
 	}
 
 	@Override

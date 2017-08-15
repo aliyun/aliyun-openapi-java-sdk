@@ -27,145 +27,72 @@ import com.aliyuncs.RpcAcsRequest;
 public class SetLoadBalancerTCPListenerAttributeRequest extends RpcAcsRequest<SetLoadBalancerTCPListenerAttributeResponse> {
 	
 	public SetLoadBalancerTCPListenerAttributeRequest() {
-		super("Slb", "2014-05-15", "SetLoadBalancerTCPListenerAttribute");
+		super("Slb", "2014-05-15", "SetLoadBalancerTCPListenerAttribute", "slb");
 	}
-
-	private Long ownerId;
-
-	private String resourceOwnerAccount;
-
-	private Long resourceOwnerId;
-
-	private String loadBalancerId;
-
-	private Integer listenerPort;
-
-	private Integer bandwidth;
-
-	private String scheduler;
-
-	private Integer persistenceTimeout;
-
-	private Integer healthyThreshold;
-
-	private Integer unhealthyThreshold;
-
-	private Integer healthCheckConnectTimeout;
-
-	private Integer healthCheckConnectPort;
-
-	private Integer healthCheckInterval;
-
-	private String healthCheckDomain;
-
-	private String healthCheckURI;
-
-	private String healthCheckHttpCode;
-
-	private String healthCheckType;
-
-	private String synProxy;
-
-	private Integer maxConnection;
-
-	private String ownerAccount;
 
 	private String access_key_id;
 
-	private String tags;
+	private Integer healthCheckConnectTimeout;
 
-	private String vServerGroup;
+	private Long resourceOwnerId;
+
+	private String healthCheckURI;
+
+	private Integer unhealthyThreshold;
+
+	private Integer healthyThreshold;
+
+	private String scheduler;
+
+	private String masterSlaveServerGroup;
+
+	private Integer establishedTimeout;
+
+	private Integer maxConnection;
+
+	private Integer persistenceTimeout;
 
 	private String vServerGroupId;
 
-	public Long getOwnerId() {
-		return this.ownerId;
+	private Integer listenerPort;
+
+	private String healthCheckType;
+
+	private String resourceOwnerAccount;
+
+	private Integer bandwidth;
+
+	private String healthCheckDomain;
+
+	private String ownerAccount;
+
+	private String synProxy;
+
+	private Long ownerId;
+
+	private String tags;
+
+	private String loadBalancerId;
+
+	private String masterSlaveServerGroupId;
+
+	private Integer healthCheckInterval;
+
+	private Integer healthCheckConnectPort;
+
+	private String healthCheckHttpCode;
+
+	private String vServerGroup;
+
+	public String getAccess_key_id() {
+		return this.access_key_id;
 	}
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-	}
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", resourceOwnerId);
-	}
-
-	public String getLoadBalancerId() {
-		return this.loadBalancerId;
-	}
-
-	public void setLoadBalancerId(String loadBalancerId) {
-		this.loadBalancerId = loadBalancerId;
-		putQueryParameter("LoadBalancerId", loadBalancerId);
-	}
-
-	public Integer getListenerPort() {
-		return this.listenerPort;
-	}
-
-	public void setListenerPort(Integer listenerPort) {
-		this.listenerPort = listenerPort;
-		putQueryParameter("ListenerPort", listenerPort);
-	}
-
-	public Integer getBandwidth() {
-		return this.bandwidth;
-	}
-
-	public void setBandwidth(Integer bandwidth) {
-		this.bandwidth = bandwidth;
-		putQueryParameter("Bandwidth", bandwidth);
-	}
-
-	public String getScheduler() {
-		return this.scheduler;
-	}
-
-	public void setScheduler(String scheduler) {
-		this.scheduler = scheduler;
-		putQueryParameter("Scheduler", scheduler);
-	}
-
-	public Integer getPersistenceTimeout() {
-		return this.persistenceTimeout;
-	}
-
-	public void setPersistenceTimeout(Integer persistenceTimeout) {
-		this.persistenceTimeout = persistenceTimeout;
-		putQueryParameter("PersistenceTimeout", persistenceTimeout);
-	}
-
-	public Integer getHealthyThreshold() {
-		return this.healthyThreshold;
-	}
-
-	public void setHealthyThreshold(Integer healthyThreshold) {
-		this.healthyThreshold = healthyThreshold;
-		putQueryParameter("HealthyThreshold", healthyThreshold);
-	}
-
-	public Integer getUnhealthyThreshold() {
-		return this.unhealthyThreshold;
-	}
-
-	public void setUnhealthyThreshold(Integer unhealthyThreshold) {
-		this.unhealthyThreshold = unhealthyThreshold;
-		putQueryParameter("UnhealthyThreshold", unhealthyThreshold);
+	public void setAccess_key_id(String access_key_id) {
+		this.access_key_id = access_key_id;
+		if(access_key_id != null){
+			putQueryParameter("access_key_id", access_key_id);
+		}
 	}
 
 	public Integer getHealthCheckConnectTimeout() {
@@ -174,34 +101,20 @@ public class SetLoadBalancerTCPListenerAttributeRequest extends RpcAcsRequest<Se
 
 	public void setHealthCheckConnectTimeout(Integer healthCheckConnectTimeout) {
 		this.healthCheckConnectTimeout = healthCheckConnectTimeout;
-		putQueryParameter("HealthCheckConnectTimeout", healthCheckConnectTimeout);
+		if(healthCheckConnectTimeout != null){
+			putQueryParameter("HealthCheckConnectTimeout", healthCheckConnectTimeout.toString());
+		}
 	}
 
-	public Integer getHealthCheckConnectPort() {
-		return this.healthCheckConnectPort;
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
 	}
 
-	public void setHealthCheckConnectPort(Integer healthCheckConnectPort) {
-		this.healthCheckConnectPort = healthCheckConnectPort;
-		putQueryParameter("HealthCheckConnectPort", healthCheckConnectPort);
-	}
-
-	public Integer getHealthCheckInterval() {
-		return this.healthCheckInterval;
-	}
-
-	public void setHealthCheckInterval(Integer healthCheckInterval) {
-		this.healthCheckInterval = healthCheckInterval;
-		putQueryParameter("HealthCheckInterval", healthCheckInterval);
-	}
-
-	public String getHealthCheckDomain() {
-		return this.healthCheckDomain;
-	}
-
-	public void setHealthCheckDomain(String healthCheckDomain) {
-		this.healthCheckDomain = healthCheckDomain;
-		putQueryParameter("HealthCheckDomain", healthCheckDomain);
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
 	}
 
 	public String getHealthCheckURI() {
@@ -210,34 +123,64 @@ public class SetLoadBalancerTCPListenerAttributeRequest extends RpcAcsRequest<Se
 
 	public void setHealthCheckURI(String healthCheckURI) {
 		this.healthCheckURI = healthCheckURI;
-		putQueryParameter("HealthCheckURI", healthCheckURI);
+		if(healthCheckURI != null){
+			putQueryParameter("HealthCheckURI", healthCheckURI);
+		}
 	}
 
-	public String getHealthCheckHttpCode() {
-		return this.healthCheckHttpCode;
+	public Integer getUnhealthyThreshold() {
+		return this.unhealthyThreshold;
 	}
 
-	public void setHealthCheckHttpCode(String healthCheckHttpCode) {
-		this.healthCheckHttpCode = healthCheckHttpCode;
-		putQueryParameter("HealthCheckHttpCode", healthCheckHttpCode);
+	public void setUnhealthyThreshold(Integer unhealthyThreshold) {
+		this.unhealthyThreshold = unhealthyThreshold;
+		if(unhealthyThreshold != null){
+			putQueryParameter("UnhealthyThreshold", unhealthyThreshold.toString());
+		}
 	}
 
-	public String getHealthCheckType() {
-		return this.healthCheckType;
+	public Integer getHealthyThreshold() {
+		return this.healthyThreshold;
 	}
 
-	public void setHealthCheckType(String healthCheckType) {
-		this.healthCheckType = healthCheckType;
-		putQueryParameter("HealthCheckType", healthCheckType);
+	public void setHealthyThreshold(Integer healthyThreshold) {
+		this.healthyThreshold = healthyThreshold;
+		if(healthyThreshold != null){
+			putQueryParameter("HealthyThreshold", healthyThreshold.toString());
+		}
 	}
 
-	public String getSynProxy() {
-		return this.synProxy;
+	public String getScheduler() {
+		return this.scheduler;
 	}
 
-	public void setSynProxy(String synProxy) {
-		this.synProxy = synProxy;
-		putQueryParameter("SynProxy", synProxy);
+	public void setScheduler(String scheduler) {
+		this.scheduler = scheduler;
+		if(scheduler != null){
+			putQueryParameter("Scheduler", scheduler);
+		}
+	}
+
+	public String getMasterSlaveServerGroup() {
+		return this.masterSlaveServerGroup;
+	}
+
+	public void setMasterSlaveServerGroup(String masterSlaveServerGroup) {
+		this.masterSlaveServerGroup = masterSlaveServerGroup;
+		if(masterSlaveServerGroup != null){
+			putQueryParameter("MasterSlaveServerGroup", masterSlaveServerGroup);
+		}
+	}
+
+	public Integer getEstablishedTimeout() {
+		return this.establishedTimeout;
+	}
+
+	public void setEstablishedTimeout(Integer establishedTimeout) {
+		this.establishedTimeout = establishedTimeout;
+		if(establishedTimeout != null){
+			putQueryParameter("EstablishedTimeout", establishedTimeout.toString());
+		}
 	}
 
 	public Integer getMaxConnection() {
@@ -246,43 +189,20 @@ public class SetLoadBalancerTCPListenerAttributeRequest extends RpcAcsRequest<Se
 
 	public void setMaxConnection(Integer maxConnection) {
 		this.maxConnection = maxConnection;
-		putQueryParameter("MaxConnection", maxConnection);
+		if(maxConnection != null){
+			putQueryParameter("MaxConnection", maxConnection.toString());
+		}
 	}
 
-	public String getOwnerAccount() {
-		return this.ownerAccount;
+	public Integer getPersistenceTimeout() {
+		return this.persistenceTimeout;
 	}
 
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		putQueryParameter("OwnerAccount", ownerAccount);
-	}
-
-	public String getaccess_key_id() {
-		return this.access_key_id;
-	}
-
-	public void setaccess_key_id(String access_key_id) {
-		this.access_key_id = access_key_id;
-		putQueryParameter("access_key_id", access_key_id);
-	}
-
-	public String getTags() {
-		return this.tags;
-	}
-
-	public void setTags(String tags) {
-		this.tags = tags;
-		putQueryParameter("Tags", tags);
-	}
-
-	public String getVServerGroup() {
-		return this.vServerGroup;
-	}
-
-	public void setVServerGroup(String vServerGroup) {
-		this.vServerGroup = vServerGroup;
-		putQueryParameter("VServerGroup", vServerGroup);
+	public void setPersistenceTimeout(Integer persistenceTimeout) {
+		this.persistenceTimeout = persistenceTimeout;
+		if(persistenceTimeout != null){
+			putQueryParameter("PersistenceTimeout", persistenceTimeout.toString());
+		}
 	}
 
 	public String getVServerGroupId() {
@@ -291,7 +211,174 @@ public class SetLoadBalancerTCPListenerAttributeRequest extends RpcAcsRequest<Se
 
 	public void setVServerGroupId(String vServerGroupId) {
 		this.vServerGroupId = vServerGroupId;
-		putQueryParameter("VServerGroupId", vServerGroupId);
+		if(vServerGroupId != null){
+			putQueryParameter("VServerGroupId", vServerGroupId);
+		}
+	}
+
+	public Integer getListenerPort() {
+		return this.listenerPort;
+	}
+
+	public void setListenerPort(Integer listenerPort) {
+		this.listenerPort = listenerPort;
+		if(listenerPort != null){
+			putQueryParameter("ListenerPort", listenerPort.toString());
+		}
+	}
+
+	public String getHealthCheckType() {
+		return this.healthCheckType;
+	}
+
+	public void setHealthCheckType(String healthCheckType) {
+		this.healthCheckType = healthCheckType;
+		if(healthCheckType != null){
+			putQueryParameter("HealthCheckType", healthCheckType);
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public Integer getBandwidth() {
+		return this.bandwidth;
+	}
+
+	public void setBandwidth(Integer bandwidth) {
+		this.bandwidth = bandwidth;
+		if(bandwidth != null){
+			putQueryParameter("Bandwidth", bandwidth.toString());
+		}
+	}
+
+	public String getHealthCheckDomain() {
+		return this.healthCheckDomain;
+	}
+
+	public void setHealthCheckDomain(String healthCheckDomain) {
+		this.healthCheckDomain = healthCheckDomain;
+		if(healthCheckDomain != null){
+			putQueryParameter("HealthCheckDomain", healthCheckDomain);
+		}
+	}
+
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public String getSynProxy() {
+		return this.synProxy;
+	}
+
+	public void setSynProxy(String synProxy) {
+		this.synProxy = synProxy;
+		if(synProxy != null){
+			putQueryParameter("SynProxy", synProxy);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getTags() {
+		return this.tags;
+	}
+
+	public void setTags(String tags) {
+		this.tags = tags;
+		if(tags != null){
+			putQueryParameter("Tags", tags);
+		}
+	}
+
+	public String getLoadBalancerId() {
+		return this.loadBalancerId;
+	}
+
+	public void setLoadBalancerId(String loadBalancerId) {
+		this.loadBalancerId = loadBalancerId;
+		if(loadBalancerId != null){
+			putQueryParameter("LoadBalancerId", loadBalancerId);
+		}
+	}
+
+	public String getMasterSlaveServerGroupId() {
+		return this.masterSlaveServerGroupId;
+	}
+
+	public void setMasterSlaveServerGroupId(String masterSlaveServerGroupId) {
+		this.masterSlaveServerGroupId = masterSlaveServerGroupId;
+		if(masterSlaveServerGroupId != null){
+			putQueryParameter("MasterSlaveServerGroupId", masterSlaveServerGroupId);
+		}
+	}
+
+	public Integer getHealthCheckInterval() {
+		return this.healthCheckInterval;
+	}
+
+	public void setHealthCheckInterval(Integer healthCheckInterval) {
+		this.healthCheckInterval = healthCheckInterval;
+		if(healthCheckInterval != null){
+			putQueryParameter("HealthCheckInterval", healthCheckInterval.toString());
+		}
+	}
+
+	public Integer getHealthCheckConnectPort() {
+		return this.healthCheckConnectPort;
+	}
+
+	public void setHealthCheckConnectPort(Integer healthCheckConnectPort) {
+		this.healthCheckConnectPort = healthCheckConnectPort;
+		if(healthCheckConnectPort != null){
+			putQueryParameter("HealthCheckConnectPort", healthCheckConnectPort.toString());
+		}
+	}
+
+	public String getHealthCheckHttpCode() {
+		return this.healthCheckHttpCode;
+	}
+
+	public void setHealthCheckHttpCode(String healthCheckHttpCode) {
+		this.healthCheckHttpCode = healthCheckHttpCode;
+		if(healthCheckHttpCode != null){
+			putQueryParameter("HealthCheckHttpCode", healthCheckHttpCode);
+		}
+	}
+
+	public String getVServerGroup() {
+		return this.vServerGroup;
+	}
+
+	public void setVServerGroup(String vServerGroup) {
+		this.vServerGroup = vServerGroup;
+		if(vServerGroup != null){
+			putQueryParameter("VServerGroup", vServerGroup);
+		}
 	}
 
 	@Override

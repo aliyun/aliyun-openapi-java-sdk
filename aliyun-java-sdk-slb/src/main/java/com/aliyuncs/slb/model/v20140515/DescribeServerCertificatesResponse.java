@@ -61,6 +61,18 @@ public class DescribeServerCertificatesResponse extends AcsResponse {
 
 		private String regionIdAlias;
 
+		private String aliCloudCertificateId;
+
+		private String aliCloudCertificateName;
+
+		private Integer isAliCloudCertificate;
+
+		private String resourceGroupId;
+
+		private String createTime;
+
+		private Long createTimeStamp;
+
 		public String getServerCertificateId() {
 			return this.serverCertificateId;
 		}
@@ -99,6 +111,54 @@ public class DescribeServerCertificatesResponse extends AcsResponse {
 
 		public void setRegionIdAlias(String regionIdAlias) {
 			this.regionIdAlias = regionIdAlias;
+		}
+
+		public String getAliCloudCertificateId() {
+			return this.aliCloudCertificateId;
+		}
+
+		public void setAliCloudCertificateId(String aliCloudCertificateId) {
+			this.aliCloudCertificateId = aliCloudCertificateId;
+		}
+
+		public String getAliCloudCertificateName() {
+			return this.aliCloudCertificateName;
+		}
+
+		public void setAliCloudCertificateName(String aliCloudCertificateName) {
+			this.aliCloudCertificateName = aliCloudCertificateName;
+		}
+
+		public Integer getIsAliCloudCertificate() {
+			return this.isAliCloudCertificate;
+		}
+
+		public void setIsAliCloudCertificate(Integer isAliCloudCertificate) {
+			this.isAliCloudCertificate = isAliCloudCertificate;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
+		}
+
+		public String getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
+		}
+
+		public Long getCreateTimeStamp() {
+			return this.createTimeStamp;
+		}
+
+		public void setCreateTimeStamp(Long createTimeStamp) {
+			this.createTimeStamp = createTimeStamp;
 		}
 	}
 

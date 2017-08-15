@@ -27,39 +27,32 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeVServerGroupsRequest extends RpcAcsRequest<DescribeVServerGroupsResponse> {
 	
 	public DescribeVServerGroupsRequest() {
-		super("Slb", "2014-05-15", "DescribeVServerGroups");
+		super("Slb", "2014-05-15", "DescribeVServerGroups", "slb");
 	}
-
-	private Long ownerId;
-
-	private String resourceOwnerAccount;
-
-	private Long resourceOwnerId;
-
-	private String ownerAccount;
 
 	private String access_key_id;
 
-	private String tags;
+	private Long resourceOwnerId;
 
 	private String loadBalancerId;
 
-	public Long getOwnerId() {
-		return this.ownerId;
+	private String resourceOwnerAccount;
+
+	private String ownerAccount;
+
+	private Long ownerId;
+
+	private String tags;
+
+	public String getAccess_key_id() {
+		return this.access_key_id;
 	}
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	public void setAccess_key_id(String access_key_id) {
+		this.access_key_id = access_key_id;
+		if(access_key_id != null){
+			putQueryParameter("access_key_id", access_key_id);
+		}
 	}
 
 	public Long getResourceOwnerId() {
@@ -68,34 +61,9 @@ public class DescribeVServerGroupsRequest extends RpcAcsRequest<DescribeVServerG
 
 	public void setResourceOwnerId(Long resourceOwnerId) {
 		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", resourceOwnerId);
-	}
-
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
-
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		putQueryParameter("OwnerAccount", ownerAccount);
-	}
-
-	public String getaccess_key_id() {
-		return this.access_key_id;
-	}
-
-	public void setaccess_key_id(String access_key_id) {
-		this.access_key_id = access_key_id;
-		putQueryParameter("access_key_id", access_key_id);
-	}
-
-	public String getTags() {
-		return this.tags;
-	}
-
-	public void setTags(String tags) {
-		this.tags = tags;
-		putQueryParameter("Tags", tags);
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
 	}
 
 	public String getLoadBalancerId() {
@@ -104,7 +72,53 @@ public class DescribeVServerGroupsRequest extends RpcAcsRequest<DescribeVServerG
 
 	public void setLoadBalancerId(String loadBalancerId) {
 		this.loadBalancerId = loadBalancerId;
-		putQueryParameter("LoadBalancerId", loadBalancerId);
+		if(loadBalancerId != null){
+			putQueryParameter("LoadBalancerId", loadBalancerId);
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getTags() {
+		return this.tags;
+	}
+
+	public void setTags(String tags) {
+		this.tags = tags;
+		if(tags != null){
+			putQueryParameter("Tags", tags);
+		}
 	}
 
 	@Override

@@ -27,43 +27,36 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifyLoadBalancerInternetSpecRequest extends RpcAcsRequest<ModifyLoadBalancerInternetSpecResponse> {
 	
 	public ModifyLoadBalancerInternetSpecRequest() {
-		super("Slb", "2014-05-15", "ModifyLoadBalancerInternetSpec");
+		super("Slb", "2014-05-15", "ModifyLoadBalancerInternetSpec", "slb");
 	}
 
-	private Long ownerId;
-
-	private String resourceOwnerAccount;
+	private String access_key_id;
 
 	private Long resourceOwnerId;
 
 	private String loadBalancerId;
 
-	private String internetChargeType;
+	private String resourceOwnerAccount;
 
 	private Integer bandwidth;
 
+	private String internetChargeType;
+
 	private String ownerAccount;
 
-	private String access_key_id;
+	private Long ownerId;
 
 	private String tags;
 
-	public Long getOwnerId() {
-		return this.ownerId;
+	public String getAccess_key_id() {
+		return this.access_key_id;
 	}
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	public void setAccess_key_id(String access_key_id) {
+		this.access_key_id = access_key_id;
+		if(access_key_id != null){
+			putQueryParameter("access_key_id", access_key_id);
+		}
 	}
 
 	public Long getResourceOwnerId() {
@@ -72,7 +65,9 @@ public class ModifyLoadBalancerInternetSpecRequest extends RpcAcsRequest<ModifyL
 
 	public void setResourceOwnerId(Long resourceOwnerId) {
 		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", resourceOwnerId);
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
 	}
 
 	public String getLoadBalancerId() {
@@ -81,16 +76,20 @@ public class ModifyLoadBalancerInternetSpecRequest extends RpcAcsRequest<ModifyL
 
 	public void setLoadBalancerId(String loadBalancerId) {
 		this.loadBalancerId = loadBalancerId;
-		putQueryParameter("LoadBalancerId", loadBalancerId);
+		if(loadBalancerId != null){
+			putQueryParameter("LoadBalancerId", loadBalancerId);
+		}
 	}
 
-	public String getInternetChargeType() {
-		return this.internetChargeType;
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
 	}
 
-	public void setInternetChargeType(String internetChargeType) {
-		this.internetChargeType = internetChargeType;
-		putQueryParameter("InternetChargeType", internetChargeType);
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
 	}
 
 	public Integer getBandwidth() {
@@ -99,7 +98,20 @@ public class ModifyLoadBalancerInternetSpecRequest extends RpcAcsRequest<ModifyL
 
 	public void setBandwidth(Integer bandwidth) {
 		this.bandwidth = bandwidth;
-		putQueryParameter("Bandwidth", bandwidth);
+		if(bandwidth != null){
+			putQueryParameter("Bandwidth", bandwidth.toString());
+		}
+	}
+
+	public String getInternetChargeType() {
+		return this.internetChargeType;
+	}
+
+	public void setInternetChargeType(String internetChargeType) {
+		this.internetChargeType = internetChargeType;
+		if(internetChargeType != null){
+			putQueryParameter("InternetChargeType", internetChargeType);
+		}
 	}
 
 	public String getOwnerAccount() {
@@ -108,16 +120,20 @@ public class ModifyLoadBalancerInternetSpecRequest extends RpcAcsRequest<ModifyL
 
 	public void setOwnerAccount(String ownerAccount) {
 		this.ownerAccount = ownerAccount;
-		putQueryParameter("OwnerAccount", ownerAccount);
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
 	}
 
-	public String getaccess_key_id() {
-		return this.access_key_id;
+	public Long getOwnerId() {
+		return this.ownerId;
 	}
 
-	public void setaccess_key_id(String access_key_id) {
-		this.access_key_id = access_key_id;
-		putQueryParameter("access_key_id", access_key_id);
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
 	}
 
 	public String getTags() {
@@ -126,7 +142,9 @@ public class ModifyLoadBalancerInternetSpecRequest extends RpcAcsRequest<ModifyL
 
 	public void setTags(String tags) {
 		this.tags = tags;
-		putQueryParameter("Tags", tags);
+		if(tags != null){
+			putQueryParameter("Tags", tags);
+		}
 	}
 
 	@Override

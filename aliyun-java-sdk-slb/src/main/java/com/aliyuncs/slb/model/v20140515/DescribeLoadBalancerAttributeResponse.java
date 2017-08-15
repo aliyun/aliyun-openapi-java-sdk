@@ -33,6 +33,8 @@ public class DescribeLoadBalancerAttributeResponse extends AcsResponse {
 
 	private String loadBalancerId;
 
+	private String resourceGroupId;
+
 	private String loadBalancerName;
 
 	private String loadBalancerStatus;
@@ -53,11 +55,21 @@ public class DescribeLoadBalancerAttributeResponse extends AcsResponse {
 
 	private String internetChargeType;
 
+	private Long autoReleaseTime;
+
 	private Integer bandwidth;
+
+	private String loadBalancerSpec;
 
 	private String createTime;
 
 	private Long createTimeStamp;
+
+	private String endTime;
+
+	private Long endTimeStamp;
+
+	private String payType;
 
 	private String masterZoneId;
 
@@ -85,6 +97,14 @@ public class DescribeLoadBalancerAttributeResponse extends AcsResponse {
 
 	public void setLoadBalancerId(String loadBalancerId) {
 		this.loadBalancerId = loadBalancerId;
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
 	}
 
 	public String getLoadBalancerName() {
@@ -167,12 +187,28 @@ public class DescribeLoadBalancerAttributeResponse extends AcsResponse {
 		this.internetChargeType = internetChargeType;
 	}
 
+	public Long getAutoReleaseTime() {
+		return this.autoReleaseTime;
+	}
+
+	public void setAutoReleaseTime(Long autoReleaseTime) {
+		this.autoReleaseTime = autoReleaseTime;
+	}
+
 	public Integer getBandwidth() {
 		return this.bandwidth;
 	}
 
 	public void setBandwidth(Integer bandwidth) {
 		this.bandwidth = bandwidth;
+	}
+
+	public String getLoadBalancerSpec() {
+		return this.loadBalancerSpec;
+	}
+
+	public void setLoadBalancerSpec(String loadBalancerSpec) {
+		this.loadBalancerSpec = loadBalancerSpec;
 	}
 
 	public String getCreateTime() {
@@ -189,6 +225,30 @@ public class DescribeLoadBalancerAttributeResponse extends AcsResponse {
 
 	public void setCreateTimeStamp(Long createTimeStamp) {
 		this.createTimeStamp = createTimeStamp;
+	}
+
+	public String getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+	}
+
+	public Long getEndTimeStamp() {
+		return this.endTimeStamp;
+	}
+
+	public void setEndTimeStamp(Long endTimeStamp) {
+		this.endTimeStamp = endTimeStamp;
+	}
+
+	public String getPayType() {
+		return this.payType;
+	}
+
+	public void setPayType(String payType) {
+		this.payType = payType;
 	}
 
 	public String getMasterZoneId() {

@@ -32,6 +32,8 @@ public class CreateLoadBalancerResponse extends AcsResponse {
 
 	private String loadBalancerId;
 
+	private String resourceGroupId;
+
 	private String address;
 
 	private String loadBalancerName;
@@ -56,6 +58,14 @@ public class CreateLoadBalancerResponse extends AcsResponse {
 
 	public void setLoadBalancerId(String loadBalancerId) {
 		this.loadBalancerId = loadBalancerId;
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
 	}
 
 	public String getAddress() {

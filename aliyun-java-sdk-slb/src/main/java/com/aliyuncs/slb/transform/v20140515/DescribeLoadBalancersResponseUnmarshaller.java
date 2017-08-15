@@ -31,6 +31,9 @@ public class DescribeLoadBalancersResponseUnmarshaller {
 	public static DescribeLoadBalancersResponse unmarshall(DescribeLoadBalancersResponse describeLoadBalancersResponse, UnmarshallerContext context) {
 		
 		describeLoadBalancersResponse.setRequestId(context.stringValue("DescribeLoadBalancersResponse.RequestId"));
+		describeLoadBalancersResponse.setPageNumber(context.integerValue("DescribeLoadBalancersResponse.PageNumber"));
+		describeLoadBalancersResponse.setPageSize(context.integerValue("DescribeLoadBalancersResponse.PageSize"));
+		describeLoadBalancersResponse.setTotalCount(context.integerValue("DescribeLoadBalancersResponse.TotalCount"));
 
 		List<LoadBalancer> loadBalancers = new ArrayList<LoadBalancer>();
 		for (int i = 0; i < context.lengthValue("DescribeLoadBalancersResponse.LoadBalancers.Length"); i++) {
@@ -50,6 +53,8 @@ public class DescribeLoadBalancersResponseUnmarshaller {
 			loadBalancer.setInternetChargeType(context.stringValue("DescribeLoadBalancersResponse.LoadBalancers["+ i +"].InternetChargeType"));
 			loadBalancer.setCreateTime(context.stringValue("DescribeLoadBalancersResponse.LoadBalancers["+ i +"].CreateTime"));
 			loadBalancer.setCreateTimeStamp(context.longValue("DescribeLoadBalancersResponse.LoadBalancers["+ i +"].CreateTimeStamp"));
+			loadBalancer.setPayType(context.stringValue("DescribeLoadBalancersResponse.LoadBalancers["+ i +"].PayType"));
+			loadBalancer.setResourceGroupId(context.stringValue("DescribeLoadBalancersResponse.LoadBalancers["+ i +"].ResourceGroupId"));
 
 			loadBalancers.add(loadBalancer);
 		}

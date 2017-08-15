@@ -51,9 +51,21 @@ public class DescribeHealthStatusResponse extends AcsResponse {
 
 	public static class BackendServer {
 
+		private Integer listenerPort;
+
 		private String serverId;
 
+		private Integer port;
+
 		private String serverHealthStatus;
+
+		public Integer getListenerPort() {
+			return this.listenerPort;
+		}
+
+		public void setListenerPort(Integer listenerPort) {
+			this.listenerPort = listenerPort;
+		}
 
 		public String getServerId() {
 			return this.serverId;
@@ -61,6 +73,14 @@ public class DescribeHealthStatusResponse extends AcsResponse {
 
 		public void setServerId(String serverId) {
 			this.serverId = serverId;
+		}
+
+		public Integer getPort() {
+			return this.port;
+		}
+
+		public void setPort(Integer port) {
+			this.port = port;
 		}
 
 		public String getServerHealthStatus() {

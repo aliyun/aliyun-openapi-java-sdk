@@ -34,6 +34,7 @@ public class DescribeLoadBalancerAttributeResponseUnmarshaller {
 		
 		describeLoadBalancerAttributeResponse.setRequestId(context.stringValue("DescribeLoadBalancerAttributeResponse.RequestId"));
 		describeLoadBalancerAttributeResponse.setLoadBalancerId(context.stringValue("DescribeLoadBalancerAttributeResponse.LoadBalancerId"));
+		describeLoadBalancerAttributeResponse.setResourceGroupId(context.stringValue("DescribeLoadBalancerAttributeResponse.ResourceGroupId"));
 		describeLoadBalancerAttributeResponse.setLoadBalancerName(context.stringValue("DescribeLoadBalancerAttributeResponse.LoadBalancerName"));
 		describeLoadBalancerAttributeResponse.setLoadBalancerStatus(context.stringValue("DescribeLoadBalancerAttributeResponse.LoadBalancerStatus"));
 		describeLoadBalancerAttributeResponse.setRegionId(context.stringValue("DescribeLoadBalancerAttributeResponse.RegionId"));
@@ -44,9 +45,14 @@ public class DescribeLoadBalancerAttributeResponseUnmarshaller {
 		describeLoadBalancerAttributeResponse.setVSwitchId(context.stringValue("DescribeLoadBalancerAttributeResponse.VSwitchId"));
 		describeLoadBalancerAttributeResponse.setNetworkType(context.stringValue("DescribeLoadBalancerAttributeResponse.NetworkType"));
 		describeLoadBalancerAttributeResponse.setInternetChargeType(context.stringValue("DescribeLoadBalancerAttributeResponse.InternetChargeType"));
+		describeLoadBalancerAttributeResponse.setAutoReleaseTime(context.longValue("DescribeLoadBalancerAttributeResponse.AutoReleaseTime"));
 		describeLoadBalancerAttributeResponse.setBandwidth(context.integerValue("DescribeLoadBalancerAttributeResponse.Bandwidth"));
+		describeLoadBalancerAttributeResponse.setLoadBalancerSpec(context.stringValue("DescribeLoadBalancerAttributeResponse.LoadBalancerSpec"));
 		describeLoadBalancerAttributeResponse.setCreateTime(context.stringValue("DescribeLoadBalancerAttributeResponse.CreateTime"));
 		describeLoadBalancerAttributeResponse.setCreateTimeStamp(context.longValue("DescribeLoadBalancerAttributeResponse.CreateTimeStamp"));
+		describeLoadBalancerAttributeResponse.setEndTime(context.stringValue("DescribeLoadBalancerAttributeResponse.EndTime"));
+		describeLoadBalancerAttributeResponse.setEndTimeStamp(context.longValue("DescribeLoadBalancerAttributeResponse.EndTimeStamp"));
+		describeLoadBalancerAttributeResponse.setPayType(context.stringValue("DescribeLoadBalancerAttributeResponse.PayType"));
 		describeLoadBalancerAttributeResponse.setMasterZoneId(context.stringValue("DescribeLoadBalancerAttributeResponse.MasterZoneId"));
 		describeLoadBalancerAttributeResponse.setSlaveZoneId(context.stringValue("DescribeLoadBalancerAttributeResponse.SlaveZoneId"));
 

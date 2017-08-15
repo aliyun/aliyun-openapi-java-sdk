@@ -39,6 +39,9 @@ public class DescribeCACertificatesResponseUnmarshaller {
 			cACertificate.setCACertificateId(context.stringValue("DescribeCACertificatesResponse.CACertificates["+ i +"].CACertificateId"));
 			cACertificate.setCACertificateName(context.stringValue("DescribeCACertificatesResponse.CACertificates["+ i +"].CACertificateName"));
 			cACertificate.setFingerprint(context.stringValue("DescribeCACertificatesResponse.CACertificates["+ i +"].Fingerprint"));
+			cACertificate.setResourceGroupId(context.stringValue("DescribeCACertificatesResponse.CACertificates["+ i +"].ResourceGroupId"));
+			cACertificate.setCreateTime(context.stringValue("DescribeCACertificatesResponse.CACertificates["+ i +"].CreateTime"));
+			cACertificate.setCreateTimeStamp(context.longValue("DescribeCACertificatesResponse.CACertificates["+ i +"].CreateTimeStamp"));
 
 			cACertificates.add(cACertificate);
 		}

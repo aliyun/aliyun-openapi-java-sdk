@@ -27,79 +27,36 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifyVServerGroupBackendServersRequest extends RpcAcsRequest<ModifyVServerGroupBackendServersResponse> {
 	
 	public ModifyVServerGroupBackendServersRequest() {
-		super("Slb", "2014-05-15", "ModifyVServerGroupBackendServers");
+		super("Slb", "2014-05-15", "ModifyVServerGroupBackendServers", "slb");
 	}
-
-	private Long ownerId;
-
-	private String resourceOwnerAccount;
-
-	private Long resourceOwnerId;
-
-	private String ownerAccount;
 
 	private String access_key_id;
 
-	private String tags;
-
 	private String vServerGroupId;
+
+	private Long resourceOwnerId;
 
 	private String oldBackendServers;
 
+	private String resourceOwnerAccount;
+
 	private String newBackendServers;
 
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
+	private String ownerAccount;
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
-	}
+	private Long ownerId;
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
+	private String tags;
 
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-	}
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", resourceOwnerId);
-	}
-
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
-
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		putQueryParameter("OwnerAccount", ownerAccount);
-	}
-
-	public String getaccess_key_id() {
+	public String getAccess_key_id() {
 		return this.access_key_id;
 	}
 
-	public void setaccess_key_id(String access_key_id) {
+	public void setAccess_key_id(String access_key_id) {
 		this.access_key_id = access_key_id;
-		putQueryParameter("access_key_id", access_key_id);
-	}
-
-	public String getTags() {
-		return this.tags;
-	}
-
-	public void setTags(String tags) {
-		this.tags = tags;
-		putQueryParameter("Tags", tags);
+		if(access_key_id != null){
+			putQueryParameter("access_key_id", access_key_id);
+		}
 	}
 
 	public String getVServerGroupId() {
@@ -108,7 +65,20 @@ public class ModifyVServerGroupBackendServersRequest extends RpcAcsRequest<Modif
 
 	public void setVServerGroupId(String vServerGroupId) {
 		this.vServerGroupId = vServerGroupId;
-		putQueryParameter("VServerGroupId", vServerGroupId);
+		if(vServerGroupId != null){
+			putQueryParameter("VServerGroupId", vServerGroupId);
+		}
+	}
+
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
+	}
+
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
 	}
 
 	public String getOldBackendServers() {
@@ -117,7 +87,20 @@ public class ModifyVServerGroupBackendServersRequest extends RpcAcsRequest<Modif
 
 	public void setOldBackendServers(String oldBackendServers) {
 		this.oldBackendServers = oldBackendServers;
-		putQueryParameter("OldBackendServers", oldBackendServers);
+		if(oldBackendServers != null){
+			putQueryParameter("OldBackendServers", oldBackendServers);
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
 	}
 
 	public String getNewBackendServers() {
@@ -126,7 +109,42 @@ public class ModifyVServerGroupBackendServersRequest extends RpcAcsRequest<Modif
 
 	public void setNewBackendServers(String newBackendServers) {
 		this.newBackendServers = newBackendServers;
-		putQueryParameter("NewBackendServers", newBackendServers);
+		if(newBackendServers != null){
+			putQueryParameter("NewBackendServers", newBackendServers);
+		}
+	}
+
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getTags() {
+		return this.tags;
+	}
+
+	public void setTags(String tags) {
+		this.tags = tags;
+		if(tags != null){
+			putQueryParameter("Tags", tags);
+		}
 	}
 
 	@Override

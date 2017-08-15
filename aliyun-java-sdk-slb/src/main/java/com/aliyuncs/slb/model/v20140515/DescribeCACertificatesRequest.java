@@ -27,37 +27,43 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeCACertificatesRequest extends RpcAcsRequest<DescribeCACertificatesResponse> {
 	
 	public DescribeCACertificatesRequest() {
-		super("Slb", "2014-05-15", "DescribeCACertificates");
+		super("Slb", "2014-05-15", "DescribeCACertificates", "slb");
 	}
-
-	private Long ownerId;
-
-	private String resourceOwnerAccount;
-
-	private Long resourceOwnerId;
-
-	private String ownerAccount;
 
 	private String access_key_id;
 
+	private String resourceGroupId;
+
+	private Long resourceOwnerId;
+
+	private String resourceOwnerAccount;
+
+	private String ownerAccount;
+
+	private Long ownerId;
+
 	private String cACertificateId;
 
-	public Long getOwnerId() {
-		return this.ownerId;
+	public String getAccess_key_id() {
+		return this.access_key_id;
 	}
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
+	public void setAccess_key_id(String access_key_id) {
+		this.access_key_id = access_key_id;
+		if(access_key_id != null){
+			putQueryParameter("access_key_id", access_key_id);
+		}
 	}
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
 	}
 
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
 	}
 
 	public Long getResourceOwnerId() {
@@ -66,7 +72,20 @@ public class DescribeCACertificatesRequest extends RpcAcsRequest<DescribeCACerti
 
 	public void setResourceOwnerId(Long resourceOwnerId) {
 		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", resourceOwnerId);
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
 	}
 
 	public String getOwnerAccount() {
@@ -75,16 +94,20 @@ public class DescribeCACertificatesRequest extends RpcAcsRequest<DescribeCACerti
 
 	public void setOwnerAccount(String ownerAccount) {
 		this.ownerAccount = ownerAccount;
-		putQueryParameter("OwnerAccount", ownerAccount);
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
 	}
 
-	public String getaccess_key_id() {
-		return this.access_key_id;
+	public Long getOwnerId() {
+		return this.ownerId;
 	}
 
-	public void setaccess_key_id(String access_key_id) {
-		this.access_key_id = access_key_id;
-		putQueryParameter("access_key_id", access_key_id);
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
 	}
 
 	public String getCACertificateId() {
@@ -93,7 +116,9 @@ public class DescribeCACertificatesRequest extends RpcAcsRequest<DescribeCACerti
 
 	public void setCACertificateId(String cACertificateId) {
 		this.cACertificateId = cACertificateId;
-		putQueryParameter("CACertificateId", cACertificateId);
+		if(cACertificateId != null){
+			putQueryParameter("CACertificateId", cACertificateId);
+		}
 	}
 
 	@Override

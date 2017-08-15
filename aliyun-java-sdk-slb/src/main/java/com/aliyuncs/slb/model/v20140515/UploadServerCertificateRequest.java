@@ -27,43 +27,42 @@ import com.aliyuncs.RpcAcsRequest;
 public class UploadServerCertificateRequest extends RpcAcsRequest<UploadServerCertificateResponse> {
 	
 	public UploadServerCertificateRequest() {
-		super("Slb", "2014-05-15", "UploadServerCertificate");
+		super("Slb", "2014-05-15", "UploadServerCertificate", "slb");
 	}
 
-	private Long ownerId;
-
-	private String resourceOwnerAccount;
+	private String access_key_id;
 
 	private Long resourceOwnerId;
 
 	private String serverCertificate;
 
-	private String privateKey;
-
-	private String serverCertificateName;
+	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
-	private String access_key_id;
+	private String aliCloudCertificateName;
+
+	private String aliCloudCertificateId;
+
+	private Long ownerId;
 
 	private String tags;
 
-	public Long getOwnerId() {
-		return this.ownerId;
+	private String privateKey;
+
+	private String resourceGroupId;
+
+	private String serverCertificateName;
+
+	public String getAccess_key_id() {
+		return this.access_key_id;
 	}
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	public void setAccess_key_id(String access_key_id) {
+		this.access_key_id = access_key_id;
+		if(access_key_id != null){
+			putQueryParameter("access_key_id", access_key_id);
+		}
 	}
 
 	public Long getResourceOwnerId() {
@@ -72,7 +71,9 @@ public class UploadServerCertificateRequest extends RpcAcsRequest<UploadServerCe
 
 	public void setResourceOwnerId(Long resourceOwnerId) {
 		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", resourceOwnerId);
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
 	}
 
 	public String getServerCertificate() {
@@ -81,25 +82,20 @@ public class UploadServerCertificateRequest extends RpcAcsRequest<UploadServerCe
 
 	public void setServerCertificate(String serverCertificate) {
 		this.serverCertificate = serverCertificate;
-		putQueryParameter("ServerCertificate", serverCertificate);
+		if(serverCertificate != null){
+			putQueryParameter("ServerCertificate", serverCertificate);
+		}
 	}
 
-	public String getPrivateKey() {
-		return this.privateKey;
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
 	}
 
-	public void setPrivateKey(String privateKey) {
-		this.privateKey = privateKey;
-		putQueryParameter("PrivateKey", privateKey);
-	}
-
-	public String getServerCertificateName() {
-		return this.serverCertificateName;
-	}
-
-	public void setServerCertificateName(String serverCertificateName) {
-		this.serverCertificateName = serverCertificateName;
-		putQueryParameter("ServerCertificateName", serverCertificateName);
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
 	}
 
 	public String getOwnerAccount() {
@@ -108,16 +104,42 @@ public class UploadServerCertificateRequest extends RpcAcsRequest<UploadServerCe
 
 	public void setOwnerAccount(String ownerAccount) {
 		this.ownerAccount = ownerAccount;
-		putQueryParameter("OwnerAccount", ownerAccount);
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
 	}
 
-	public String getaccess_key_id() {
-		return this.access_key_id;
+	public String getAliCloudCertificateName() {
+		return this.aliCloudCertificateName;
 	}
 
-	public void setaccess_key_id(String access_key_id) {
-		this.access_key_id = access_key_id;
-		putQueryParameter("access_key_id", access_key_id);
+	public void setAliCloudCertificateName(String aliCloudCertificateName) {
+		this.aliCloudCertificateName = aliCloudCertificateName;
+		if(aliCloudCertificateName != null){
+			putQueryParameter("AliCloudCertificateName", aliCloudCertificateName);
+		}
+	}
+
+	public String getAliCloudCertificateId() {
+		return this.aliCloudCertificateId;
+	}
+
+	public void setAliCloudCertificateId(String aliCloudCertificateId) {
+		this.aliCloudCertificateId = aliCloudCertificateId;
+		if(aliCloudCertificateId != null){
+			putQueryParameter("AliCloudCertificateId", aliCloudCertificateId);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
 	}
 
 	public String getTags() {
@@ -126,7 +148,42 @@ public class UploadServerCertificateRequest extends RpcAcsRequest<UploadServerCe
 
 	public void setTags(String tags) {
 		this.tags = tags;
-		putQueryParameter("Tags", tags);
+		if(tags != null){
+			putQueryParameter("Tags", tags);
+		}
+	}
+
+	public String getPrivateKey() {
+		return this.privateKey;
+	}
+
+	public void setPrivateKey(String privateKey) {
+		this.privateKey = privateKey;
+		if(privateKey != null){
+			putQueryParameter("PrivateKey", privateKey);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
+	public String getServerCertificateName() {
+		return this.serverCertificateName;
+	}
+
+	public void setServerCertificateName(String serverCertificateName) {
+		this.serverCertificateName = serverCertificateName;
+		if(serverCertificateName != null){
+			putQueryParameter("ServerCertificateName", serverCertificateName);
+		}
 	}
 
 	@Override

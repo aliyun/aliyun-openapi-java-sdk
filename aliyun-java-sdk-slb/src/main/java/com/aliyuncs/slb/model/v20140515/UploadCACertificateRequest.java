@@ -27,39 +27,45 @@ import com.aliyuncs.RpcAcsRequest;
 public class UploadCACertificateRequest extends RpcAcsRequest<UploadCACertificateResponse> {
 	
 	public UploadCACertificateRequest() {
-		super("Slb", "2014-05-15", "UploadCACertificate");
+		super("Slb", "2014-05-15", "UploadCACertificate", "slb");
 	}
 
-	private Long ownerId;
+	private String access_key_id;
 
-	private String resourceOwnerAccount;
+	private String resourceGroupId;
 
 	private Long resourceOwnerId;
-
-	private String ownerAccount;
-
-	private String access_key_id;
 
 	private String cACertificate;
 
 	private String cACertificateName;
 
-	public Long getOwnerId() {
-		return this.ownerId;
+	private String resourceOwnerAccount;
+
+	private String ownerAccount;
+
+	private Long ownerId;
+
+	public String getAccess_key_id() {
+		return this.access_key_id;
 	}
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
+	public void setAccess_key_id(String access_key_id) {
+		this.access_key_id = access_key_id;
+		if(access_key_id != null){
+			putQueryParameter("access_key_id", access_key_id);
+		}
 	}
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
 	}
 
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
 	}
 
 	public Long getResourceOwnerId() {
@@ -68,25 +74,9 @@ public class UploadCACertificateRequest extends RpcAcsRequest<UploadCACertificat
 
 	public void setResourceOwnerId(Long resourceOwnerId) {
 		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", resourceOwnerId);
-	}
-
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
-
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		putQueryParameter("OwnerAccount", ownerAccount);
-	}
-
-	public String getaccess_key_id() {
-		return this.access_key_id;
-	}
-
-	public void setaccess_key_id(String access_key_id) {
-		this.access_key_id = access_key_id;
-		putQueryParameter("access_key_id", access_key_id);
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
 	}
 
 	public String getCACertificate() {
@@ -95,7 +85,9 @@ public class UploadCACertificateRequest extends RpcAcsRequest<UploadCACertificat
 
 	public void setCACertificate(String cACertificate) {
 		this.cACertificate = cACertificate;
-		putQueryParameter("CACertificate", cACertificate);
+		if(cACertificate != null){
+			putQueryParameter("CACertificate", cACertificate);
+		}
 	}
 
 	public String getCACertificateName() {
@@ -104,7 +96,42 @@ public class UploadCACertificateRequest extends RpcAcsRequest<UploadCACertificat
 
 	public void setCACertificateName(String cACertificateName) {
 		this.cACertificateName = cACertificateName;
-		putQueryParameter("CACertificateName", cACertificateName);
+		if(cACertificateName != null){
+			putQueryParameter("CACertificateName", cACertificateName);
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
 	}
 
 	@Override

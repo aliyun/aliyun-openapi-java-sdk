@@ -40,6 +40,12 @@ public class DescribeServerCertificatesResponseUnmarshaller {
 			serverCertificate.setServerCertificateName(context.stringValue("DescribeServerCertificatesResponse.ServerCertificates["+ i +"].ServerCertificateName"));
 			serverCertificate.setRegionId(context.stringValue("DescribeServerCertificatesResponse.ServerCertificates["+ i +"].RegionId"));
 			serverCertificate.setRegionIdAlias(context.stringValue("DescribeServerCertificatesResponse.ServerCertificates["+ i +"].RegionIdAlias"));
+			serverCertificate.setAliCloudCertificateId(context.stringValue("DescribeServerCertificatesResponse.ServerCertificates["+ i +"].AliCloudCertificateId"));
+			serverCertificate.setAliCloudCertificateName(context.stringValue("DescribeServerCertificatesResponse.ServerCertificates["+ i +"].AliCloudCertificateName"));
+			serverCertificate.setIsAliCloudCertificate(context.integerValue("DescribeServerCertificatesResponse.ServerCertificates["+ i +"].IsAliCloudCertificate"));
+			serverCertificate.setResourceGroupId(context.stringValue("DescribeServerCertificatesResponse.ServerCertificates["+ i +"].ResourceGroupId"));
+			serverCertificate.setCreateTime(context.stringValue("DescribeServerCertificatesResponse.ServerCertificates["+ i +"].CreateTime"));
+			serverCertificate.setCreateTimeStamp(context.longValue("DescribeServerCertificatesResponse.ServerCertificates["+ i +"].CreateTimeStamp"));
 
 			serverCertificates.add(serverCertificate);
 		}

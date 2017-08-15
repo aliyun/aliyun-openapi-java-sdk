@@ -74,6 +74,14 @@ public class DescribeLoadBalancerHTTPListenerAttributeResponse extends AcsRespon
 
 	private String vServerGroupId;
 
+	private String gzip;
+
+	private String xForwardedFor_SLBIP;
+
+	private String xForwardedFor_SLBID;
+
+	private String xForwardedFor_proto;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -256,6 +264,38 @@ public class DescribeLoadBalancerHTTPListenerAttributeResponse extends AcsRespon
 
 	public void setVServerGroupId(String vServerGroupId) {
 		this.vServerGroupId = vServerGroupId;
+	}
+
+	public String getGzip() {
+		return this.gzip;
+	}
+
+	public void setGzip(String gzip) {
+		this.gzip = gzip;
+	}
+
+	public String getXForwardedFor_SLBIP() {
+		return this.xForwardedFor_SLBIP;
+	}
+
+	public void setXForwardedFor_SLBIP(String xForwardedFor_SLBIP) {
+		this.xForwardedFor_SLBIP = xForwardedFor_SLBIP;
+	}
+
+	public String getXForwardedFor_SLBID() {
+		return this.xForwardedFor_SLBID;
+	}
+
+	public void setXForwardedFor_SLBID(String xForwardedFor_SLBID) {
+		this.xForwardedFor_SLBID = xForwardedFor_SLBID;
+	}
+
+	public String getXForwardedFor_proto() {
+		return this.xForwardedFor_proto;
+	}
+
+	public void setXForwardedFor_proto(String xForwardedFor_proto) {
+		this.xForwardedFor_proto = xForwardedFor_proto;
 	}
 
 	@Override

@@ -62,6 +62,8 @@ public class DescribeLoadBalancerUDPListenerAttributeResponse extends AcsRespons
 
 	private String vServerGroupId;
 
+	private String masterSlaveServerGroupId;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -196,6 +198,14 @@ public class DescribeLoadBalancerUDPListenerAttributeResponse extends AcsRespons
 
 	public void setVServerGroupId(String vServerGroupId) {
 		this.vServerGroupId = vServerGroupId;
+	}
+
+	public String getMasterSlaveServerGroupId() {
+		return this.masterSlaveServerGroupId;
+	}
+
+	public void setMasterSlaveServerGroupId(String masterSlaveServerGroupId) {
+		this.masterSlaveServerGroupId = masterSlaveServerGroupId;
 	}
 
 	@Override
