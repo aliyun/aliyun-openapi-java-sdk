@@ -24,41 +24,28 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class DeleteAlarmRequest extends RpcAcsRequest<DeleteAlarmResponse> {
+public class AccessKeyGenerateRequest extends RpcAcsRequest<AccessKeyGenerateResponse> {
 	
-	public DeleteAlarmRequest() {
-		super("Cms", "2017-03-01", "DeleteAlarm", "cms");
+	public AccessKeyGenerateRequest() {
+		super("Cms", "2017-03-01", "AccessKeyGenerate", "cms");
 	}
 
-	private String callby_cms_owner;
+	private Long userId;
 
-	private String id;
-
-	public String getCallby_cms_owner() {
-		return this.callby_cms_owner;
+	public Long getUserId() {
+		return this.userId;
 	}
 
-	public void setCallby_cms_owner(String callby_cms_owner) {
-		this.callby_cms_owner = callby_cms_owner;
-		if(callby_cms_owner != null){
-			putQueryParameter("callby_cms_owner", callby_cms_owner);
-		}
-	}
-
-	public String getId() {
-		return this.id;
-	}
-
-	public void setId(String id) {
-		this.id = id;
-		if(id != null){
-			putQueryParameter("Id", id);
+	public void setUserId(Long userId) {
+		this.userId = userId;
+		if(userId != null){
+			putQueryParameter("UserId", userId.toString());
 		}
 	}
 
 	@Override
-	public Class<DeleteAlarmResponse> getResponseClass() {
-		return DeleteAlarmResponse.class;
+	public Class<AccessKeyGenerateResponse> getResponseClass() {
+		return AccessKeyGenerateResponse.class;
 	}
 
 }

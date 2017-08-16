@@ -38,7 +38,9 @@ public class NodeStatusRequest extends RpcAcsRequest<NodeStatusResponse> {
 
 	public void setInstanceId(String instanceId) {
 		this.instanceId = instanceId;
-		putQueryParameter("InstanceId", instanceId);
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
+		}
 	}
 
 	@Override

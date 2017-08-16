@@ -30,29 +30,51 @@ public class QueryMetricListRequest extends RpcAcsRequest<QueryMetricListRespons
 		super("Cms", "2017-03-01", "QueryMetricList", "cms");
 	}
 
-	private Long resourceOwnerId;
+	private String cursor;
 
 	private String callby_cms_owner;
 
-	private String project;
-
-	private String metric;
+	private Long resourceOwnerId;
 
 	private String period;
 
-	private String startTime;
+	private String length;
+
+	private String project;
 
 	private String endTime;
 
-	private String dimensions;
+	private String express;
+
+	private String startTime;
+
+	private String metric;
 
 	private String page;
 
-	private String cursor;
+	private String dimensions;
 
-	private String length;
+	public String getCursor() {
+		return this.cursor;
+	}
 
-	private String express;
+	public void setCursor(String cursor) {
+		this.cursor = cursor;
+		if(cursor != null){
+			putQueryParameter("Cursor", cursor);
+		}
+	}
+
+	public String getCallby_cms_owner() {
+		return this.callby_cms_owner;
+	}
+
+	public void setCallby_cms_owner(String callby_cms_owner) {
+		this.callby_cms_owner = callby_cms_owner;
+		if(callby_cms_owner != null){
+			putQueryParameter("callby_cms_owner", callby_cms_owner);
+		}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -60,34 +82,9 @@ public class QueryMetricListRequest extends RpcAcsRequest<QueryMetricListRespons
 
 	public void setResourceOwnerId(Long resourceOwnerId) {
 		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", resourceOwnerId);
-	}
-
-	public String getcallby_cms_owner() {
-		return this.callby_cms_owner;
-	}
-
-	public void setcallby_cms_owner(String callby_cms_owner) {
-		this.callby_cms_owner = callby_cms_owner;
-		putQueryParameter("callby_cms_owner", callby_cms_owner);
-	}
-
-	public String getProject() {
-		return this.project;
-	}
-
-	public void setProject(String project) {
-		this.project = project;
-		putQueryParameter("Project", project);
-	}
-
-	public String getMetric() {
-		return this.metric;
-	}
-
-	public void setMetric(String metric) {
-		this.metric = metric;
-		putQueryParameter("Metric", metric);
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
 	}
 
 	public String getPeriod() {
@@ -96,52 +93,9 @@ public class QueryMetricListRequest extends RpcAcsRequest<QueryMetricListRespons
 
 	public void setPeriod(String period) {
 		this.period = period;
-		putQueryParameter("Period", period);
-	}
-
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-		putQueryParameter("StartTime", startTime);
-	}
-
-	public String getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
-		putQueryParameter("EndTime", endTime);
-	}
-
-	public String getDimensions() {
-		return this.dimensions;
-	}
-
-	public void setDimensions(String dimensions) {
-		this.dimensions = dimensions;
-		putQueryParameter("Dimensions", dimensions);
-	}
-
-	public String getPage() {
-		return this.page;
-	}
-
-	public void setPage(String page) {
-		this.page = page;
-		putQueryParameter("Page", page);
-	}
-
-	public String getCursor() {
-		return this.cursor;
-	}
-
-	public void setCursor(String cursor) {
-		this.cursor = cursor;
-		putQueryParameter("Cursor", cursor);
+		if(period != null){
+			putQueryParameter("Period", period);
+		}
 	}
 
 	public String getLength() {
@@ -150,7 +104,31 @@ public class QueryMetricListRequest extends RpcAcsRequest<QueryMetricListRespons
 
 	public void setLength(String length) {
 		this.length = length;
-		putQueryParameter("Length", length);
+		if(length != null){
+			putQueryParameter("Length", length);
+		}
+	}
+
+	public String getProject() {
+		return this.project;
+	}
+
+	public void setProject(String project) {
+		this.project = project;
+		if(project != null){
+			putQueryParameter("Project", project);
+		}
+	}
+
+	public String getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime);
+		}
 	}
 
 	public String getExpress() {
@@ -159,7 +137,53 @@ public class QueryMetricListRequest extends RpcAcsRequest<QueryMetricListRespons
 
 	public void setExpress(String express) {
 		this.express = express;
-		putQueryParameter("Express", express);
+		if(express != null){
+			putQueryParameter("Express", express);
+		}
+	}
+
+	public String getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime);
+		}
+	}
+
+	public String getMetric() {
+		return this.metric;
+	}
+
+	public void setMetric(String metric) {
+		this.metric = metric;
+		if(metric != null){
+			putQueryParameter("Metric", metric);
+		}
+	}
+
+	public String getPage() {
+		return this.page;
+	}
+
+	public void setPage(String page) {
+		this.page = page;
+		if(page != null){
+			putQueryParameter("Page", page);
+		}
+	}
+
+	public String getDimensions() {
+		return this.dimensions;
+	}
+
+	public void setDimensions(String dimensions) {
+		this.dimensions = dimensions;
+		if(dimensions != null){
+			putQueryParameter("Dimensions", dimensions);
+		}
 	}
 
 	@Override

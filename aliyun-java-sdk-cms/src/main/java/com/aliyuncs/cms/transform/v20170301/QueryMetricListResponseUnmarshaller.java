@@ -18,12 +18,7 @@
  */
 package com.aliyuncs.cms.transform.v20170301;
 
-import java.util.List;
-
-import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONObject;
 import com.aliyuncs.cms.model.v20170301.QueryMetricListResponse;
-import com.aliyuncs.cms.transform.JSONParser;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -36,12 +31,8 @@ public class QueryMetricListResponseUnmarshaller {
 		queryMetricListResponse.setMessage(context.stringValue("QueryMetricListResponse.Message"));
 		queryMetricListResponse.setSuccess(context.booleanValue("QueryMetricListResponse.Success"));
 		queryMetricListResponse.setCursor(context.stringValue("QueryMetricListResponse.Cursor"));
+		queryMetricListResponse.setDatapoints(context.stringValue("QueryMetricListResponse.Datapoints"));
 		queryMetricListResponse.setPeriod(context.stringValue("QueryMetricListResponse.Period"));
-		
-		List<JSONObject> datapoints = JSONParser.parseJSONArray(context);
-		if ( null != datapoints ) {
-			queryMetricListResponse.setDatapoints(JSON.toJSONString(datapoints));			
-		}
 	 
 	 	return queryMetricListResponse;
 	}

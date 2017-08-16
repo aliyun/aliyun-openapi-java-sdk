@@ -50,12 +50,7 @@ public class ListAlarmHistoryResponseUnmarshaller {
 			alarmHistory.setLastTime(context.longValue("ListAlarmHistoryResponse.AlarmHistoryList["+ i +"].LastTime"));
 			alarmHistory.setState(context.stringValue("ListAlarmHistoryResponse.AlarmHistoryList["+ i +"].State"));
 			alarmHistory.setStatus(context.integerValue("ListAlarmHistoryResponse.AlarmHistoryList["+ i +"].Status"));
-
-			List<String> contactGroups = new ArrayList<String>();
-			for (int j = 0; j < context.lengthValue("ListAlarmHistoryResponse.AlarmHistoryList["+ i +"].ContactGroups.Length"); j++) {
-				contactGroups.add(context.stringValue("ListAlarmHistoryResponse.AlarmHistoryList["+ i +"].ContactGroups["+ j +"]"));
-			}
-			alarmHistory.setContactGroups(contactGroups);
+			alarmHistory.setContactGroups(context.stringValue("ListAlarmHistoryResponse.AlarmHistoryList["+ i +"].ContactGroups"));
 
 			alarmHistoryList.add(alarmHistory);
 		}

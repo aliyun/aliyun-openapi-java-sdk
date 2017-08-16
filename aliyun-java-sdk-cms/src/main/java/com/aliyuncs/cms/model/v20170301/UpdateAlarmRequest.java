@@ -32,55 +32,39 @@ public class UpdateAlarmRequest extends RpcAcsRequest<UpdateAlarmResponse> {
 
 	private String callby_cms_owner;
 
-	private String id;
-
-	private String name;
-
 	private Integer period;
-
-	private String statistics;
-
-	private String comparisonOperator;
-
-	private String threshold;
 
 	private String contactGroups;
 
-	private Integer startTime;
-
 	private Integer endTime;
 
-	private Integer silenceTime;
+	private String threshold;
+
+	private Integer startTime;
+
+	private String name;
 
 	private Integer evaluationCount;
 
+	private Integer silenceTime;
+
+	private String id;
+
 	private Integer notifyType;
 
-	public String getcallby_cms_owner() {
+	private String comparisonOperator;
+
+	private String statistics;
+
+	public String getCallby_cms_owner() {
 		return this.callby_cms_owner;
 	}
 
-	public void setcallby_cms_owner(String callby_cms_owner) {
+	public void setCallby_cms_owner(String callby_cms_owner) {
 		this.callby_cms_owner = callby_cms_owner;
-		putQueryParameter("callby_cms_owner", callby_cms_owner);
-	}
-
-	public String getId() {
-		return this.id;
-	}
-
-	public void setId(String id) {
-		this.id = id;
-		putQueryParameter("Id", id);
-	}
-
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-		putQueryParameter("Name", name);
+		if(callby_cms_owner != null){
+			putQueryParameter("callby_cms_owner", callby_cms_owner);
+		}
 	}
 
 	public Integer getPeriod() {
@@ -89,34 +73,9 @@ public class UpdateAlarmRequest extends RpcAcsRequest<UpdateAlarmResponse> {
 
 	public void setPeriod(Integer period) {
 		this.period = period;
-		putQueryParameter("Period", period);
-	}
-
-	public String getStatistics() {
-		return this.statistics;
-	}
-
-	public void setStatistics(String statistics) {
-		this.statistics = statistics;
-		putQueryParameter("Statistics", statistics);
-	}
-
-	public String getComparisonOperator() {
-		return this.comparisonOperator;
-	}
-
-	public void setComparisonOperator(String comparisonOperator) {
-		this.comparisonOperator = comparisonOperator;
-		putQueryParameter("ComparisonOperator", comparisonOperator);
-	}
-
-	public String getThreshold() {
-		return this.threshold;
-	}
-
-	public void setThreshold(String threshold) {
-		this.threshold = threshold;
-		putQueryParameter("Threshold", threshold);
+		if(period != null){
+			putQueryParameter("Period", period.toString());
+		}
 	}
 
 	public String getContactGroups() {
@@ -125,16 +84,9 @@ public class UpdateAlarmRequest extends RpcAcsRequest<UpdateAlarmResponse> {
 
 	public void setContactGroups(String contactGroups) {
 		this.contactGroups = contactGroups;
-		putQueryParameter("ContactGroups", contactGroups);
-	}
-
-	public Integer getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(Integer startTime) {
-		this.startTime = startTime;
-		putQueryParameter("StartTime", startTime);
+		if(contactGroups != null){
+			putQueryParameter("ContactGroups", contactGroups);
+		}
 	}
 
 	public Integer getEndTime() {
@@ -143,16 +95,42 @@ public class UpdateAlarmRequest extends RpcAcsRequest<UpdateAlarmResponse> {
 
 	public void setEndTime(Integer endTime) {
 		this.endTime = endTime;
-		putQueryParameter("EndTime", endTime);
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime.toString());
+		}
 	}
 
-	public Integer getSilenceTime() {
-		return this.silenceTime;
+	public String getThreshold() {
+		return this.threshold;
 	}
 
-	public void setSilenceTime(Integer silenceTime) {
-		this.silenceTime = silenceTime;
-		putQueryParameter("SilenceTime", silenceTime);
+	public void setThreshold(String threshold) {
+		this.threshold = threshold;
+		if(threshold != null){
+			putQueryParameter("Threshold", threshold);
+		}
+	}
+
+	public Integer getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(Integer startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime.toString());
+		}
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
+		}
 	}
 
 	public Integer getEvaluationCount() {
@@ -161,7 +139,31 @@ public class UpdateAlarmRequest extends RpcAcsRequest<UpdateAlarmResponse> {
 
 	public void setEvaluationCount(Integer evaluationCount) {
 		this.evaluationCount = evaluationCount;
-		putQueryParameter("EvaluationCount", evaluationCount);
+		if(evaluationCount != null){
+			putQueryParameter("EvaluationCount", evaluationCount.toString());
+		}
+	}
+
+	public Integer getSilenceTime() {
+		return this.silenceTime;
+	}
+
+	public void setSilenceTime(Integer silenceTime) {
+		this.silenceTime = silenceTime;
+		if(silenceTime != null){
+			putQueryParameter("SilenceTime", silenceTime.toString());
+		}
+	}
+
+	public String getId() {
+		return this.id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+		if(id != null){
+			putQueryParameter("Id", id);
+		}
 	}
 
 	public Integer getNotifyType() {
@@ -170,7 +172,31 @@ public class UpdateAlarmRequest extends RpcAcsRequest<UpdateAlarmResponse> {
 
 	public void setNotifyType(Integer notifyType) {
 		this.notifyType = notifyType;
-		putQueryParameter("NotifyType", notifyType);
+		if(notifyType != null){
+			putQueryParameter("NotifyType", notifyType.toString());
+		}
+	}
+
+	public String getComparisonOperator() {
+		return this.comparisonOperator;
+	}
+
+	public void setComparisonOperator(String comparisonOperator) {
+		this.comparisonOperator = comparisonOperator;
+		if(comparisonOperator != null){
+			putQueryParameter("ComparisonOperator", comparisonOperator);
+		}
+	}
+
+	public String getStatistics() {
+		return this.statistics;
+	}
+
+	public void setStatistics(String statistics) {
+		this.statistics = statistics;
+		if(statistics != null){
+			putQueryParameter("Statistics", statistics);
+		}
 	}
 
 	@Override

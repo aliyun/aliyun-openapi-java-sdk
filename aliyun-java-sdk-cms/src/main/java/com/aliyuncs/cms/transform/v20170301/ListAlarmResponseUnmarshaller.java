@@ -56,12 +56,7 @@ public class ListAlarmResponseUnmarshaller {
 			alarm.setNotifyType(context.integerValue("ListAlarmResponse.AlarmList["+ i +"].NotifyType"));
 			alarm.setEnable(context.booleanValue("ListAlarmResponse.AlarmList["+ i +"].Enable"));
 			alarm.setState(context.stringValue("ListAlarmResponse.AlarmList["+ i +"].State"));
-
-			List<String> contactGroups = new ArrayList<String>();
-			for (int j = 0; j < context.lengthValue("ListAlarmResponse.AlarmList["+ i +"].ContactGroups.Length"); j++) {
-				contactGroups.add(context.stringValue("ListAlarmResponse.AlarmList["+ i +"].ContactGroups["+ j +"]"));
-			}
-			alarm.setContactGroups(contactGroups);
+			alarm.setContactGroups(context.stringValue("ListAlarmResponse.AlarmList["+ i +"].ContactGroups"));
 
 			alarmList.add(alarm);
 		}

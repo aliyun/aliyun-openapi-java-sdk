@@ -133,7 +133,7 @@ public class ListAlarmResponse extends AcsResponse {
 
 		private String state;
 
-		private List<String> contactGroups;
+		private String contactGroups;
 
 		public String getId() {
 			return this.id;
@@ -263,11 +263,11 @@ public class ListAlarmResponse extends AcsResponse {
 			this.state = state;
 		}
 
-		public List<String> getContactGroups() {
+		public String getContactGroups() {
 			return this.contactGroups;
 		}
 
-		public void setContactGroups(List<String> contactGroups) {
+		public void setContactGroups(String contactGroups) {
 			this.contactGroups = contactGroups;
 		}
 	}

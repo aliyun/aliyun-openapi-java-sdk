@@ -113,7 +113,7 @@ public class ListAlarmHistoryResponse extends AcsResponse {
 
 		private Integer status;
 
-		private List<String> contactGroups;
+		private String contactGroups;
 
 		public String getId() {
 			return this.id;
@@ -203,11 +203,11 @@ public class ListAlarmHistoryResponse extends AcsResponse {
 			this.status = status;
 		}
 
-		public List<String> getContactGroups() {
+		public String getContactGroups() {
 			return this.contactGroups;
 		}
 
-		public void setContactGroups(List<String> contactGroups) {
+		public void setContactGroups(String contactGroups) {
 			this.contactGroups = contactGroups;
 		}
 	}

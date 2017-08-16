@@ -1,3 +1,7 @@
+2017-08-16 Version: 5.0.3
+1, 修改ListAlarmHistory接口返回的alarmHistoryList属性中获取contactGroups为空的bug。
+2, 修改ListAlarm接口返回的alarmList属性中获取contactGroups为空的bug。
+
 2017-08-07 Version: 5.0.2
 1, 修改ListAlarmHistory接口的返回值的alarmHistoryList属性中获取不到dimension值的bug。
 
