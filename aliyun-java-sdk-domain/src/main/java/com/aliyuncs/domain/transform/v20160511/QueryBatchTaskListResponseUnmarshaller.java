@@ -38,7 +38,7 @@ public class QueryBatchTaskListResponseUnmarshaller {
 		queryBatchTaskListResponse.setPrePage(context.booleanValue("QueryBatchTaskListResponse.PrePage"));
 		queryBatchTaskListResponse.setNextPage(context.booleanValue("QueryBatchTaskListResponse.NextPage"));
 
-		List<TaskInfo> dataList = new ArrayList<TaskInfo>();
+		List<TaskInfo> data = new ArrayList<TaskInfo>();
 		for (int i = 0; i < context.lengthValue("QueryBatchTaskListResponse.Data.Length"); i++) {
 			TaskInfo taskInfo = new TaskInfo();
 			taskInfo.setTaskType(context.stringValue("QueryBatchTaskListResponse.Data["+ i +"].TaskType"));
@@ -48,9 +48,9 @@ public class QueryBatchTaskListResponseUnmarshaller {
 			taskInfo.setClientip(context.stringValue("QueryBatchTaskListResponse.Data["+ i +"].Clientip"));
 			taskInfo.setTaskNo(context.stringValue("QueryBatchTaskListResponse.Data["+ i +"].TaskNo"));
 
-			dataList.add(taskInfo);
+			data.add(taskInfo);
 		}
-		queryBatchTaskListResponse.setData(dataList);
+		queryBatchTaskListResponse.setData(data);
 	 
 	 	return queryBatchTaskListResponse;
 	}

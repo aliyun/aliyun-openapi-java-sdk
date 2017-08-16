@@ -24,41 +24,41 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class WhoisProtectionRequest extends RpcAcsRequest<WhoisProtectionResponse> {
+public class SaveContactTemplateCredentialRequest extends RpcAcsRequest<SaveContactTemplateCredentialResponse> {
 	
-	public WhoisProtectionRequest() {
-		super("Domain", "2016-05-11", "WhoisProtection");
+	public SaveContactTemplateCredentialRequest() {
+		super("Domain", "2016-05-11", "SaveContactTemplateCredential");
 	}
 
-	private Boolean whoisProtect;
+	private String credentialNo;
 
-	private Integer dataSource;
+	private String credential;
 
 	private String userClientIp;
 
-	private String dataContent;
-
 	private String lang;
 
-	public Boolean getWhoisProtect() {
-		return this.whoisProtect;
+	private Long contactTemplateId;
+
+	public String getCredentialNo() {
+		return this.credentialNo;
 	}
 
-	public void setWhoisProtect(Boolean whoisProtect) {
-		this.whoisProtect = whoisProtect;
-		if(whoisProtect != null){
-			putQueryParameter("WhoisProtect", whoisProtect.toString());
+	public void setCredentialNo(String credentialNo) {
+		this.credentialNo = credentialNo;
+		if(credentialNo != null){
+			putQueryParameter("CredentialNo", credentialNo);
 		}
 	}
 
-	public Integer getDataSource() {
-		return this.dataSource;
+	public String getCredential() {
+		return this.credential;
 	}
 
-	public void setDataSource(Integer dataSource) {
-		this.dataSource = dataSource;
-		if(dataSource != null){
-			putQueryParameter("DataSource", dataSource.toString());
+	public void setCredential(String credential) {
+		this.credential = credential;
+		if(credential != null){
+			putQueryParameter("Credential", credential);
 		}
 	}
 
@@ -73,17 +73,6 @@ public class WhoisProtectionRequest extends RpcAcsRequest<WhoisProtectionRespons
 		}
 	}
 
-	public String getDataContent() {
-		return this.dataContent;
-	}
-
-	public void setDataContent(String dataContent) {
-		this.dataContent = dataContent;
-		if(dataContent != null){
-			putQueryParameter("DataContent", dataContent);
-		}
-	}
-
 	public String getLang() {
 		return this.lang;
 	}
@@ -95,9 +84,20 @@ public class WhoisProtectionRequest extends RpcAcsRequest<WhoisProtectionRespons
 		}
 	}
 
+	public Long getContactTemplateId() {
+		return this.contactTemplateId;
+	}
+
+	public void setContactTemplateId(Long contactTemplateId) {
+		this.contactTemplateId = contactTemplateId;
+		if(contactTemplateId != null){
+			putQueryParameter("ContactTemplateId", contactTemplateId.toString());
+		}
+	}
+
 	@Override
-	public Class<WhoisProtectionResponse> getResponseClass() {
-		return WhoisProtectionResponse.class;
+	public Class<SaveContactTemplateCredentialResponse> getResponseClass() {
+		return SaveContactTemplateCredentialResponse.class;
 	}
 
 }

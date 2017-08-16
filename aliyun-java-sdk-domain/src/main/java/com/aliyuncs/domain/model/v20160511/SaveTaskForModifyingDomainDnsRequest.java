@@ -19,46 +19,38 @@
 package com.aliyuncs.domain.model.v20160511;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 
 /**
  * @author auto create
  * @version 
  */
-public class WhoisProtectionRequest extends RpcAcsRequest<WhoisProtectionResponse> {
+public class SaveTaskForModifyingDomainDnsRequest extends RpcAcsRequest<SaveTaskForModifyingDomainDnsResponse> {
 	
-	public WhoisProtectionRequest() {
-		super("Domain", "2016-05-11", "WhoisProtection");
+	public SaveTaskForModifyingDomainDnsRequest() {
+		super("Domain", "2016-05-11", "SaveTaskForModifyingDomainDns");
 	}
 
-	private Boolean whoisProtect;
-
-	private Integer dataSource;
+	private String saleId;
 
 	private String userClientIp;
 
-	private String dataContent;
+	private String domainName;
 
 	private String lang;
 
-	public Boolean getWhoisProtect() {
-		return this.whoisProtect;
+	private Boolean aliyunDns;
+
+	private List<String> dnsLists;
+
+	public String getSaleId() {
+		return this.saleId;
 	}
 
-	public void setWhoisProtect(Boolean whoisProtect) {
-		this.whoisProtect = whoisProtect;
-		if(whoisProtect != null){
-			putQueryParameter("WhoisProtect", whoisProtect.toString());
-		}
-	}
-
-	public Integer getDataSource() {
-		return this.dataSource;
-	}
-
-	public void setDataSource(Integer dataSource) {
-		this.dataSource = dataSource;
-		if(dataSource != null){
-			putQueryParameter("DataSource", dataSource.toString());
+	public void setSaleId(String saleId) {
+		this.saleId = saleId;
+		if(saleId != null){
+			putQueryParameter("SaleId", saleId);
 		}
 	}
 
@@ -73,14 +65,14 @@ public class WhoisProtectionRequest extends RpcAcsRequest<WhoisProtectionRespons
 		}
 	}
 
-	public String getDataContent() {
-		return this.dataContent;
+	public String getDomainName() {
+		return this.domainName;
 	}
 
-	public void setDataContent(String dataContent) {
-		this.dataContent = dataContent;
-		if(dataContent != null){
-			putQueryParameter("DataContent", dataContent);
+	public void setDomainName(String domainName) {
+		this.domainName = domainName;
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
 		}
 	}
 
@@ -95,9 +87,31 @@ public class WhoisProtectionRequest extends RpcAcsRequest<WhoisProtectionRespons
 		}
 	}
 
+	public Boolean getAliyunDns() {
+		return this.aliyunDns;
+	}
+
+	public void setAliyunDns(Boolean aliyunDns) {
+		this.aliyunDns = aliyunDns;
+		if(aliyunDns != null){
+			putQueryParameter("AliyunDns", aliyunDns.toString());
+		}
+	}
+
+	public List<String> getDnsLists() {
+		return this.dnsLists;
+	}
+
+	public void setDnsLists(List<String> dnsLists) {
+		this.dnsLists = dnsLists;	
+		for (int i = 0; i < dnsLists.size(); i++) {
+			putQueryParameter("DnsList." + (i + 1) , dnsLists.get(i));
+		}	
+	}
+
 	@Override
-	public Class<WhoisProtectionResponse> getResponseClass() {
-		return WhoisProtectionResponse.class;
+	public Class<SaveTaskForModifyingDomainDnsResponse> getResponseClass() {
+		return SaveTaskForModifyingDomainDnsResponse.class;
 	}
 
 }

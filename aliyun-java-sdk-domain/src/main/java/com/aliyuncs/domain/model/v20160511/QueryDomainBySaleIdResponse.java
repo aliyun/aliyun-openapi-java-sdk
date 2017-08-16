@@ -59,6 +59,10 @@ public class QueryDomainBySaleIdResponse extends AcsResponse {
 
 	private Boolean whoisProtected;
 
+	private Boolean premium;
+
+	private String remark;
+
 	private List<String> dnsList;
 
 	public String getUserId() {
@@ -179,6 +183,22 @@ public class QueryDomainBySaleIdResponse extends AcsResponse {
 
 	public void setWhoisProtected(Boolean whoisProtected) {
 		this.whoisProtected = whoisProtected;
+	}
+
+	public Boolean getPremium() {
+		return this.premium;
+	}
+
+	public void setPremium(Boolean premium) {
+		this.premium = premium;
+	}
+
+	public String getRemark() {
+		return this.remark;
+	}
+
+	public void setRemark(String remark) {
+		this.remark = remark;
 	}
 
 	public List<String> getDnsList() {

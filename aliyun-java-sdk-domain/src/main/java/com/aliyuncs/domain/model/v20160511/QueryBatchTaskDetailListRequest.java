@@ -30,17 +30,43 @@ public class QueryBatchTaskDetailListRequest extends RpcAcsRequest<QueryBatchTas
 		super("Domain", "2016-05-11", "QueryBatchTaskDetailList");
 	}
 
-	private String userClientIp;
+	private Integer taskStatus;
 
-	private String lang;
+	private String saleId;
+
+	private String userClientIp;
 
 	private String taskNo;
 
-	private Integer taskStatus;
+	private String domainName;
+
+	private Integer pageSize;
+
+	private String lang;
 
 	private Integer pageNum;
 
-	private Integer pageSize;
+	public Integer getTaskStatus() {
+		return this.taskStatus;
+	}
+
+	public void setTaskStatus(Integer taskStatus) {
+		this.taskStatus = taskStatus;
+		if(taskStatus != null){
+			putQueryParameter("TaskStatus", taskStatus.toString());
+		}
+	}
+
+	public String getSaleId() {
+		return this.saleId;
+	}
+
+	public void setSaleId(String saleId) {
+		this.saleId = saleId;
+		if(saleId != null){
+			putQueryParameter("SaleId", saleId);
+		}
+	}
 
 	public String getUserClientIp() {
 		return this.userClientIp;
@@ -48,16 +74,9 @@ public class QueryBatchTaskDetailListRequest extends RpcAcsRequest<QueryBatchTas
 
 	public void setUserClientIp(String userClientIp) {
 		this.userClientIp = userClientIp;
-		putQueryParameter("UserClientIp", userClientIp);
-	}
-
-	public String getLang() {
-		return this.lang;
-	}
-
-	public void setLang(String lang) {
-		this.lang = lang;
-		putQueryParameter("Lang", lang);
+		if(userClientIp != null){
+			putQueryParameter("UserClientIp", userClientIp);
+		}
 	}
 
 	public String getTaskNo() {
@@ -66,25 +85,20 @@ public class QueryBatchTaskDetailListRequest extends RpcAcsRequest<QueryBatchTas
 
 	public void setTaskNo(String taskNo) {
 		this.taskNo = taskNo;
-		putQueryParameter("TaskNo", taskNo);
+		if(taskNo != null){
+			putQueryParameter("TaskNo", taskNo);
+		}
 	}
 
-	public Integer getTaskStatus() {
-		return this.taskStatus;
+	public String getDomainName() {
+		return this.domainName;
 	}
 
-	public void setTaskStatus(Integer taskStatus) {
-		this.taskStatus = taskStatus;
-		putQueryParameter("TaskStatus", taskStatus);
-	}
-
-	public Integer getPageNum() {
-		return this.pageNum;
-	}
-
-	public void setPageNum(Integer pageNum) {
-		this.pageNum = pageNum;
-		putQueryParameter("PageNum", pageNum);
+	public void setDomainName(String domainName) {
+		this.domainName = domainName;
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
+		}
 	}
 
 	public Integer getPageSize() {
@@ -93,7 +107,31 @@ public class QueryBatchTaskDetailListRequest extends RpcAcsRequest<QueryBatchTas
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
-		putQueryParameter("PageSize", pageSize);
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getLang() {
+		return this.lang;
+	}
+
+	public void setLang(String lang) {
+		this.lang = lang;
+		if(lang != null){
+			putQueryParameter("Lang", lang);
+		}
+	}
+
+	public Integer getPageNum() {
+		return this.pageNum;
+	}
+
+	public void setPageNum(Integer pageNum) {
+		this.pageNum = pageNum;
+		if(pageNum != null){
+			putQueryParameter("PageNum", pageNum.toString());
+		}
 	}
 
 	@Override

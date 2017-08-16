@@ -18,17 +18,16 @@
  */
 package com.aliyuncs.domain.transform.v20160511;
 
-import com.aliyuncs.domain.model.v20160511.CreateOrderResponse;
+import com.aliyuncs.domain.model.v20160511.SaveContactTemplateCredentialResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class CreateOrderResponseUnmarshaller {
+public class SaveContactTemplateCredentialResponseUnmarshaller {
 
-	public static CreateOrderResponse unmarshall(CreateOrderResponse createOrderResponse, UnmarshallerContext context) {
+	public static SaveContactTemplateCredentialResponse unmarshall(SaveContactTemplateCredentialResponse saveContactTemplateCredentialResponse, UnmarshallerContext context) {
 		
-		createOrderResponse.setRequestId(context.stringValue("CreateOrderResponse.RequestId"));
-		createOrderResponse.setOrderID(context.stringValue("CreateOrderResponse.OrderID"));
+		saveContactTemplateCredentialResponse.setRequestId(context.stringValue("SaveContactTemplateCredentialResponse.RequestId"));
 	 
-	 	return createOrderResponse;
+	 	return saveContactTemplateCredentialResponse;
 	}
 }

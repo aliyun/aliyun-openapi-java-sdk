@@ -44,6 +44,8 @@ public class QueryDomainBySaleIdResponseUnmarshaller {
 		queryDomainBySaleIdResponse.setSafetyLock(context.stringValue("QueryDomainBySaleIdResponse.SafetyLock"));
 		queryDomainBySaleIdResponse.setTransferLock(context.stringValue("QueryDomainBySaleIdResponse.TransferLock"));
 		queryDomainBySaleIdResponse.setWhoisProtected(context.booleanValue("QueryDomainBySaleIdResponse.WhoisProtected"));
+		queryDomainBySaleIdResponse.setPremium(context.booleanValue("QueryDomainBySaleIdResponse.Premium"));
+		queryDomainBySaleIdResponse.setRemark(context.stringValue("QueryDomainBySaleIdResponse.Remark"));
 
 		List<String> dnsList = new ArrayList<String>();
 		for (int i = 0; i < context.lengthValue("QueryDomainBySaleIdResponse.DnsList.Length"); i++) {

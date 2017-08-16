@@ -18,17 +18,17 @@
  */
 package com.aliyuncs.domain.transform.v20160511;
 
-import com.aliyuncs.domain.model.v20160511.CreateOrderResponse;
+import com.aliyuncs.domain.model.v20160511.SaveTaskForSubmittingDomainNameCredentialResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class CreateOrderResponseUnmarshaller {
+public class SaveTaskForSubmittingDomainNameCredentialResponseUnmarshaller {
 
-	public static CreateOrderResponse unmarshall(CreateOrderResponse createOrderResponse, UnmarshallerContext context) {
+	public static SaveTaskForSubmittingDomainNameCredentialResponse unmarshall(SaveTaskForSubmittingDomainNameCredentialResponse saveTaskForSubmittingDomainNameCredentialResponse, UnmarshallerContext context) {
 		
-		createOrderResponse.setRequestId(context.stringValue("CreateOrderResponse.RequestId"));
-		createOrderResponse.setOrderID(context.stringValue("CreateOrderResponse.OrderID"));
+		saveTaskForSubmittingDomainNameCredentialResponse.setRequestId(context.stringValue("SaveTaskForSubmittingDomainNameCredentialResponse.RequestId"));
+		saveTaskForSubmittingDomainNameCredentialResponse.setTaskNo(context.stringValue("SaveTaskForSubmittingDomainNameCredentialResponse.TaskNo"));
 	 
-	 	return createOrderResponse;
+	 	return saveTaskForSubmittingDomainNameCredentialResponse;
 	}
 }

@@ -39,12 +39,12 @@ public class CreateOrderRequest extends RpcAcsRequest<CreateOrderResponse> {
 
 	public void setSubOrderParams(List<SubOrderParam> subOrderParams) {
 		this.subOrderParams = subOrderParams;	
-		for (int i = 0; i < subOrderParams.size(); i++) {
-			putQueryParameter("SubOrderParam." + (i + 1) + ".SaleID" , subOrderParams.get(i).getSaleID());
-			putQueryParameter("SubOrderParam." + (i + 1) + ".RelatedName" , subOrderParams.get(i).getRelatedName());
-			putQueryParameter("SubOrderParam." + (i + 1) + ".Action" , subOrderParams.get(i).getAction());
-			putQueryParameter("SubOrderParam." + (i + 1) + ".Period" , subOrderParams.get(i).getPeriod());
-			putQueryParameter("SubOrderParam." + (i + 1) + ".DomainTemplateID" , subOrderParams.get(i).getDomainTemplateID());
+		for (int depth1 = 0; depth1 < subOrderParams.size(); depth1++) {
+			putQueryParameter("SubOrderParam." + (depth1 + 1) + ".SaleID" , subOrderParams.get(depth1).getSaleID());
+			putQueryParameter("SubOrderParam." + (depth1 + 1) + ".RelatedName" , subOrderParams.get(depth1).getRelatedName());
+			putQueryParameter("SubOrderParam." + (depth1 + 1) + ".Action" , subOrderParams.get(depth1).getAction());
+			putQueryParameter("SubOrderParam." + (depth1 + 1) + ".Period" , subOrderParams.get(depth1).getPeriod());
+			putQueryParameter("SubOrderParam." + (depth1 + 1) + ".DomainTemplateID" , subOrderParams.get(depth1).getDomainTemplateID());
 		}	
 	}
 

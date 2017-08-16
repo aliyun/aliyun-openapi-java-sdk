@@ -16,19 +16,30 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package com.aliyuncs.domain.transform.v20160511;
+package com.aliyuncs.domain.model.v20160511;
 
-import com.aliyuncs.domain.model.v20160511.CreateOrderResponse;
+import com.aliyuncs.AcsResponse;
+import com.aliyuncs.domain.transform.v20160511.SaveContactTemplateCredentialResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
+/**
+ * @author auto create
+ * @version 
+ */
+public class SaveContactTemplateCredentialResponse extends AcsResponse {
 
-public class CreateOrderResponseUnmarshaller {
+	private String requestId;
 
-	public static CreateOrderResponse unmarshall(CreateOrderResponse createOrderResponse, UnmarshallerContext context) {
-		
-		createOrderResponse.setRequestId(context.stringValue("CreateOrderResponse.RequestId"));
-		createOrderResponse.setOrderID(context.stringValue("CreateOrderResponse.OrderID"));
-	 
-	 	return createOrderResponse;
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	@Override
+	public SaveContactTemplateCredentialResponse getInstance(UnmarshallerContext context) {
+		return	SaveContactTemplateCredentialResponseUnmarshaller.unmarshall(this, context);
 	}
 }

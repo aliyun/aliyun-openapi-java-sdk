@@ -42,7 +42,9 @@ public class DeleteContactTemplateRequest extends RpcAcsRequest<DeleteContactTem
 
 	public void setUserClientIp(String userClientIp) {
 		this.userClientIp = userClientIp;
-		putQueryParameter("UserClientIp", userClientIp);
+		if(userClientIp != null){
+			putQueryParameter("UserClientIp", userClientIp);
+		}
 	}
 
 	public String getLang() {
@@ -51,7 +53,9 @@ public class DeleteContactTemplateRequest extends RpcAcsRequest<DeleteContactTem
 
 	public void setLang(String lang) {
 		this.lang = lang;
-		putQueryParameter("Lang", lang);
+		if(lang != null){
+			putQueryParameter("Lang", lang);
+		}
 	}
 
 	public Long getContactTemplateId() {
@@ -60,7 +64,9 @@ public class DeleteContactTemplateRequest extends RpcAcsRequest<DeleteContactTem
 
 	public void setContactTemplateId(Long contactTemplateId) {
 		this.contactTemplateId = contactTemplateId;
-		putQueryParameter("ContactTemplateId", contactTemplateId);
+		if(contactTemplateId != null){
+			putQueryParameter("ContactTemplateId", contactTemplateId.toString());
+		}
 	}
 
 	@Override

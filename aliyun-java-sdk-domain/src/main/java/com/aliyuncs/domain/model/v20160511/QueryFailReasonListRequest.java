@@ -24,41 +24,30 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class WhoisProtectionRequest extends RpcAcsRequest<WhoisProtectionResponse> {
+public class QueryFailReasonListRequest extends RpcAcsRequest<QueryFailReasonListResponse> {
 	
-	public WhoisProtectionRequest() {
-		super("Domain", "2016-05-11", "WhoisProtection");
+	public QueryFailReasonListRequest() {
+		super("Domain", "2016-05-11", "QueryFailReasonList");
 	}
 
-	private Boolean whoisProtect;
-
-	private Integer dataSource;
+	private String saleId;
 
 	private String userClientIp;
 
-	private String dataContent;
+	private String domainName;
 
 	private String lang;
 
-	public Boolean getWhoisProtect() {
-		return this.whoisProtect;
+	private Long contactTemplateId;
+
+	public String getSaleId() {
+		return this.saleId;
 	}
 
-	public void setWhoisProtect(Boolean whoisProtect) {
-		this.whoisProtect = whoisProtect;
-		if(whoisProtect != null){
-			putQueryParameter("WhoisProtect", whoisProtect.toString());
-		}
-	}
-
-	public Integer getDataSource() {
-		return this.dataSource;
-	}
-
-	public void setDataSource(Integer dataSource) {
-		this.dataSource = dataSource;
-		if(dataSource != null){
-			putQueryParameter("DataSource", dataSource.toString());
+	public void setSaleId(String saleId) {
+		this.saleId = saleId;
+		if(saleId != null){
+			putQueryParameter("SaleId", saleId);
 		}
 	}
 
@@ -73,14 +62,14 @@ public class WhoisProtectionRequest extends RpcAcsRequest<WhoisProtectionRespons
 		}
 	}
 
-	public String getDataContent() {
-		return this.dataContent;
+	public String getDomainName() {
+		return this.domainName;
 	}
 
-	public void setDataContent(String dataContent) {
-		this.dataContent = dataContent;
-		if(dataContent != null){
-			putQueryParameter("DataContent", dataContent);
+	public void setDomainName(String domainName) {
+		this.domainName = domainName;
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
 		}
 	}
 
@@ -95,9 +84,20 @@ public class WhoisProtectionRequest extends RpcAcsRequest<WhoisProtectionRespons
 		}
 	}
 
+	public Long getContactTemplateId() {
+		return this.contactTemplateId;
+	}
+
+	public void setContactTemplateId(Long contactTemplateId) {
+		this.contactTemplateId = contactTemplateId;
+		if(contactTemplateId != null){
+			putQueryParameter("ContactTemplateId", contactTemplateId.toString());
+		}
+	}
+
 	@Override
-	public Class<WhoisProtectionResponse> getResponseClass() {
-		return WhoisProtectionResponse.class;
+	public Class<QueryFailReasonListResponse> getResponseClass() {
+		return QueryFailReasonListResponse.class;
 	}
 
 }

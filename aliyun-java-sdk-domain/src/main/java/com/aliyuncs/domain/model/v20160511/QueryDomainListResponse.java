@@ -127,6 +127,20 @@ public class QueryDomainListResponse extends AcsResponse {
 
 		private String domainType;
 
+		private String domainStatus;
+
+		private String deadDateStatus;
+
+		private String productId;
+
+		private Long deadDateLong;
+
+		private Long regDateLong;
+
+		private String remark;
+
+		private Boolean premium;
+
 		public String getDomainName() {
 			return this.domainName;
 		}
@@ -189,6 +203,62 @@ public class QueryDomainListResponse extends AcsResponse {
 
 		public void setDomainType(String domainType) {
 			this.domainType = domainType;
+		}
+
+		public String getDomainStatus() {
+			return this.domainStatus;
+		}
+
+		public void setDomainStatus(String domainStatus) {
+			this.domainStatus = domainStatus;
+		}
+
+		public String getDeadDateStatus() {
+			return this.deadDateStatus;
+		}
+
+		public void setDeadDateStatus(String deadDateStatus) {
+			this.deadDateStatus = deadDateStatus;
+		}
+
+		public String getProductId() {
+			return this.productId;
+		}
+
+		public void setProductId(String productId) {
+			this.productId = productId;
+		}
+
+		public Long getDeadDateLong() {
+			return this.deadDateLong;
+		}
+
+		public void setDeadDateLong(Long deadDateLong) {
+			this.deadDateLong = deadDateLong;
+		}
+
+		public Long getRegDateLong() {
+			return this.regDateLong;
+		}
+
+		public void setRegDateLong(Long regDateLong) {
+			this.regDateLong = regDateLong;
+		}
+
+		public String getRemark() {
+			return this.remark;
+		}
+
+		public void setRemark(String remark) {
+			this.remark = remark;
+		}
+
+		public Boolean getPremium() {
+			return this.premium;
+		}
+
+		public void setPremium(Boolean premium) {
+			this.premium = premium;
 		}
 	}
 

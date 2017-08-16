@@ -30,13 +30,24 @@ public class QueryContactRequest extends RpcAcsRequest<QueryContactResponse> {
 		super("Domain", "2016-05-11", "QueryContact");
 	}
 
-	private String userClientIp;
+	private String contactType;
 
-	private String lang;
+	private String userClientIp;
 
 	private String domainName;
 
-	private String contactType;
+	private String lang;
+
+	public String getContactType() {
+		return this.contactType;
+	}
+
+	public void setContactType(String contactType) {
+		this.contactType = contactType;
+		if(contactType != null){
+			putQueryParameter("ContactType", contactType);
+		}
+	}
 
 	public String getUserClientIp() {
 		return this.userClientIp;
@@ -44,16 +55,9 @@ public class QueryContactRequest extends RpcAcsRequest<QueryContactResponse> {
 
 	public void setUserClientIp(String userClientIp) {
 		this.userClientIp = userClientIp;
-		putQueryParameter("UserClientIp", userClientIp);
-	}
-
-	public String getLang() {
-		return this.lang;
-	}
-
-	public void setLang(String lang) {
-		this.lang = lang;
-		putQueryParameter("Lang", lang);
+		if(userClientIp != null){
+			putQueryParameter("UserClientIp", userClientIp);
+		}
 	}
 
 	public String getDomainName() {
@@ -62,16 +66,20 @@ public class QueryContactRequest extends RpcAcsRequest<QueryContactResponse> {
 
 	public void setDomainName(String domainName) {
 		this.domainName = domainName;
-		putQueryParameter("DomainName", domainName);
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
+		}
 	}
 
-	public String getContactType() {
-		return this.contactType;
+	public String getLang() {
+		return this.lang;
 	}
 
-	public void setContactType(String contactType) {
-		this.contactType = contactType;
-		putQueryParameter("ContactType", contactType);
+	public void setLang(String lang) {
+		this.lang = lang;
+		if(lang != null){
+			putQueryParameter("Lang", lang);
+		}
 	}
 
 	@Override

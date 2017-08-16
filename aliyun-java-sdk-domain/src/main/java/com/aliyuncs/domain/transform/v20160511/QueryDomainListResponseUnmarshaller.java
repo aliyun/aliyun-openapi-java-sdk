@@ -49,6 +49,13 @@ public class QueryDomainListResponseUnmarshaller {
 			domain.setDomainRegType(context.stringValue("QueryDomainListResponse.Data["+ i +"].DomainRegType"));
 			domain.setGroupId(context.stringValue("QueryDomainListResponse.Data["+ i +"].GroupId"));
 			domain.setDomainType(context.stringValue("QueryDomainListResponse.Data["+ i +"].DomainType"));
+			domain.setDomainStatus(context.stringValue("QueryDomainListResponse.Data["+ i +"].DomainStatus"));
+			domain.setDeadDateStatus(context.stringValue("QueryDomainListResponse.Data["+ i +"].DeadDateStatus"));
+			domain.setProductId(context.stringValue("QueryDomainListResponse.Data["+ i +"].ProductId"));
+			domain.setDeadDateLong(context.longValue("QueryDomainListResponse.Data["+ i +"].DeadDateLong"));
+			domain.setRegDateLong(context.longValue("QueryDomainListResponse.Data["+ i +"].RegDateLong"));
+			domain.setRemark(context.stringValue("QueryDomainListResponse.Data["+ i +"].Remark"));
+			domain.setPremium(context.booleanValue("QueryDomainListResponse.Data["+ i +"].Premium"));
 
 			data.add(domain);
 		}

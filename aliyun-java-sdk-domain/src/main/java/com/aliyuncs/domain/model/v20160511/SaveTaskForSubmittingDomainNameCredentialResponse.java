@@ -19,18 +19,18 @@
 package com.aliyuncs.domain.model.v20160511;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.domain.transform.v20160511.CreateOrderResponseUnmarshaller;
+import com.aliyuncs.domain.transform.v20160511.SaveTaskForSubmittingDomainNameCredentialResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CreateOrderResponse extends AcsResponse {
+public class SaveTaskForSubmittingDomainNameCredentialResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String orderID;
+	private String taskNo;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -40,16 +40,16 @@ public class CreateOrderResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getOrderID() {
-		return this.orderID;
+	public String getTaskNo() {
+		return this.taskNo;
 	}
 
-	public void setOrderID(String orderID) {
-		this.orderID = orderID;
+	public void setTaskNo(String taskNo) {
+		this.taskNo = taskNo;
 	}
 
 	@Override
-	public CreateOrderResponse getInstance(UnmarshallerContext context) {
-		return	CreateOrderResponseUnmarshaller.unmarshall(this, context);
+	public SaveTaskForSubmittingDomainNameCredentialResponse getInstance(UnmarshallerContext context) {
+		return	SaveTaskForSubmittingDomainNameCredentialResponseUnmarshaller.unmarshall(this, context);
 	}
 }

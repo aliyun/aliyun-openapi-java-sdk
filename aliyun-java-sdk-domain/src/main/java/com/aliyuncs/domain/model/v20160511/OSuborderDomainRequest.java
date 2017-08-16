@@ -30,15 +30,26 @@ public class OSuborderDomainRequest extends RpcAcsRequest<OSuborderDomainRespons
 		super("Domain", "2016-05-11", "OSuborderDomain");
 	}
 
+	private String endDate;
+
 	private Integer pageSize;
+
+	private String type;
 
 	private String startDate;
 
 	private Integer pageNum;
 
-	private String endDate;
+	public String getEndDate() {
+		return this.endDate;
+	}
 
-	private String type;
+	public void setEndDate(String endDate) {
+		this.endDate = endDate;
+		if(endDate != null){
+			putQueryParameter("endDate", endDate);
+		}
+	}
 
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -48,6 +59,17 @@ public class OSuborderDomainRequest extends RpcAcsRequest<OSuborderDomainRespons
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("pageSize", pageSize.toString());
+		}
+	}
+
+	public String getType() {
+		return this.type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+		if(type != null){
+			putQueryParameter("type", type);
 		}
 	}
 
@@ -70,28 +92,6 @@ public class OSuborderDomainRequest extends RpcAcsRequest<OSuborderDomainRespons
 		this.pageNum = pageNum;
 		if(pageNum != null){
 			putQueryParameter("pageNum", pageNum.toString());
-		}
-	}
-
-	public String getEndDate() {
-		return this.endDate;
-	}
-
-	public void setEndDate(String endDate) {
-		this.endDate = endDate;
-		if(endDate != null){
-			putQueryParameter("endDate", endDate);
-		}
-	}
-
-	public String getType() {
-		return this.type;
-	}
-
-	public void setType(String type) {
-		this.type = type;
-		if(type != null){
-			putQueryParameter("type", type);
 		}
 	}
 

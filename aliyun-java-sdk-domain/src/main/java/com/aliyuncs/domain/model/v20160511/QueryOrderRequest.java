@@ -38,7 +38,9 @@ public class QueryOrderRequest extends RpcAcsRequest<QueryOrderResponse> {
 
 	public void setOrderID(String orderID) {
 		this.orderID = orderID;
-		putQueryParameter("OrderID", orderID);
+		if(orderID != null){
+			putQueryParameter("OrderID", orderID);
+		}
 	}
 
 	@Override

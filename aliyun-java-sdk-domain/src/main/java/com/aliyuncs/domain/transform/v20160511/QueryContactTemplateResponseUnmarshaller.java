@@ -31,6 +31,12 @@ public class QueryContactTemplateResponseUnmarshaller {
 	public static QueryContactTemplateResponse unmarshall(QueryContactTemplateResponse queryContactTemplateResponse, UnmarshallerContext context) {
 		
 		queryContactTemplateResponse.setRequestId(context.stringValue("QueryContactTemplateResponse.RequestId"));
+		queryContactTemplateResponse.setTotalItemNum(context.integerValue("QueryContactTemplateResponse.TotalItemNum"));
+		queryContactTemplateResponse.setCurrentPageNum(context.integerValue("QueryContactTemplateResponse.CurrentPageNum"));
+		queryContactTemplateResponse.setTotalPageNum(context.integerValue("QueryContactTemplateResponse.TotalPageNum"));
+		queryContactTemplateResponse.setPageSize(context.integerValue("QueryContactTemplateResponse.PageSize"));
+		queryContactTemplateResponse.setPrePage(context.booleanValue("QueryContactTemplateResponse.PrePage"));
+		queryContactTemplateResponse.setNextPage(context.booleanValue("QueryContactTemplateResponse.NextPage"));
 
 		List<ContactTemplate> contactTemplates = new ArrayList<ContactTemplate>();
 		for (int i = 0; i < context.lengthValue("QueryContactTemplateResponse.ContactTemplates.Length"); i++) {

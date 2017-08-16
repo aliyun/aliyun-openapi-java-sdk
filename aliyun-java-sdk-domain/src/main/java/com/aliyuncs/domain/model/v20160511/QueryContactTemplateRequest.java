@@ -30,31 +30,25 @@ public class QueryContactTemplateRequest extends RpcAcsRequest<QueryContactTempl
 		super("Domain", "2016-05-11", "QueryContactTemplate");
 	}
 
-	private String userClientIp;
-
-	private String lang;
-
 	private String cCompany;
+
+	private String auditStatus;
+
+	private Boolean defaultTemplate;
 
 	private String eCompany;
 
-	public String getUserClientIp() {
-		return this.userClientIp;
-	}
+	private String userClientIp;
 
-	public void setUserClientIp(String userClientIp) {
-		this.userClientIp = userClientIp;
-		putQueryParameter("UserClientIp", userClientIp);
-	}
+	private Integer pageSize;
 
-	public String getLang() {
-		return this.lang;
-	}
+	private String lang;
 
-	public void setLang(String lang) {
-		this.lang = lang;
-		putQueryParameter("Lang", lang);
-	}
+	private Integer pageNum;
+
+	private Long contactTemplateId;
+
+	private String regType;
 
 	public String getCCompany() {
 		return this.cCompany;
@@ -62,7 +56,31 @@ public class QueryContactTemplateRequest extends RpcAcsRequest<QueryContactTempl
 
 	public void setCCompany(String cCompany) {
 		this.cCompany = cCompany;
-		putQueryParameter("CCompany", cCompany);
+		if(cCompany != null){
+			putQueryParameter("CCompany", cCompany);
+		}
+	}
+
+	public String getAuditStatus() {
+		return this.auditStatus;
+	}
+
+	public void setAuditStatus(String auditStatus) {
+		this.auditStatus = auditStatus;
+		if(auditStatus != null){
+			putQueryParameter("AuditStatus", auditStatus);
+		}
+	}
+
+	public Boolean getDefaultTemplate() {
+		return this.defaultTemplate;
+	}
+
+	public void setDefaultTemplate(Boolean defaultTemplate) {
+		this.defaultTemplate = defaultTemplate;
+		if(defaultTemplate != null){
+			putQueryParameter("DefaultTemplate", defaultTemplate.toString());
+		}
 	}
 
 	public String getECompany() {
@@ -71,7 +89,75 @@ public class QueryContactTemplateRequest extends RpcAcsRequest<QueryContactTempl
 
 	public void setECompany(String eCompany) {
 		this.eCompany = eCompany;
-		putQueryParameter("ECompany", eCompany);
+		if(eCompany != null){
+			putQueryParameter("ECompany", eCompany);
+		}
+	}
+
+	public String getUserClientIp() {
+		return this.userClientIp;
+	}
+
+	public void setUserClientIp(String userClientIp) {
+		this.userClientIp = userClientIp;
+		if(userClientIp != null){
+			putQueryParameter("UserClientIp", userClientIp);
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getLang() {
+		return this.lang;
+	}
+
+	public void setLang(String lang) {
+		this.lang = lang;
+		if(lang != null){
+			putQueryParameter("Lang", lang);
+		}
+	}
+
+	public Integer getPageNum() {
+		return this.pageNum;
+	}
+
+	public void setPageNum(Integer pageNum) {
+		this.pageNum = pageNum;
+		if(pageNum != null){
+			putQueryParameter("PageNum", pageNum.toString());
+		}
+	}
+
+	public Long getContactTemplateId() {
+		return this.contactTemplateId;
+	}
+
+	public void setContactTemplateId(Long contactTemplateId) {
+		this.contactTemplateId = contactTemplateId;
+		if(contactTemplateId != null){
+			putQueryParameter("ContactTemplateId", contactTemplateId.toString());
+		}
+	}
+
+	public String getRegType() {
+		return this.regType;
+	}
+
+	public void setRegType(String regType) {
+		this.regType = regType;
+		if(regType != null){
+			putQueryParameter("RegType", regType);
+		}
 	}
 
 	@Override

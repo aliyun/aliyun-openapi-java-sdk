@@ -38,7 +38,7 @@ public class QueryBatchTaskDetailListResponseUnmarshaller {
 		queryBatchTaskDetailListResponse.setPrePage(context.booleanValue("QueryBatchTaskDetailListResponse.PrePage"));
 		queryBatchTaskDetailListResponse.setNextPage(context.booleanValue("QueryBatchTaskDetailListResponse.NextPage"));
 
-		List<TaskDetail> dataList = new ArrayList<TaskDetail>();
+		List<TaskDetail> data = new ArrayList<TaskDetail>();
 		for (int i = 0; i < context.lengthValue("QueryBatchTaskDetailListResponse.Data.Length"); i++) {
 			TaskDetail taskDetail = new TaskDetail();
 			taskDetail.setTaskNo(context.stringValue("QueryBatchTaskDetailListResponse.Data["+ i +"].TaskNo"));
@@ -49,9 +49,9 @@ public class QueryBatchTaskDetailListResponseUnmarshaller {
 			taskDetail.setTryCount(context.integerValue("QueryBatchTaskDetailListResponse.Data["+ i +"].TryCount"));
 			taskDetail.setErrorMsg(context.stringValue("QueryBatchTaskDetailListResponse.Data["+ i +"].ErrorMsg"));
 
-			dataList.add(taskDetail);
+			data.add(taskDetail);
 		}
-		queryBatchTaskDetailListResponse.setData(dataList);
+		queryBatchTaskDetailListResponse.setData(data);
 	 
 	 	return queryBatchTaskDetailListResponse;
 	}

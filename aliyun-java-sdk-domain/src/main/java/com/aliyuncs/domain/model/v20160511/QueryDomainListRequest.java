@@ -30,89 +30,60 @@ public class QueryDomainListRequest extends RpcAcsRequest<QueryDomainListRespons
 		super("Domain", "2016-05-11", "QueryDomainList");
 	}
 
-	private String userClientIp;
+	private String productDomainType;
 
-	private String lang;
-
-	private String groupId;
-
-	private String startDate;
-
-	private String endDate;
-
-	private String domainName;
-
-	private String orderByType;
+	private Long regStartDate;
 
 	private String orderKeyType;
 
-	private String domainType;
+	private String groupId;
+
+	private Long deadEndDate;
+
+	private String domainName;
+
+	private String startDate;
 
 	private Integer pageNum;
 
+	private String orderByType;
+
+	private Long regEndDate;
+
+	private String endDate;
+
+	private String domainType;
+
+	private Long deadStartDate;
+
+	private String userClientIp;
+
 	private Integer pageSize;
 
-	public String getUserClientIp() {
-		return this.userClientIp;
+	private String lang;
+
+	private String queryType;
+
+	public String getProductDomainType() {
+		return this.productDomainType;
 	}
 
-	public void setUserClientIp(String userClientIp) {
-		this.userClientIp = userClientIp;
-		putQueryParameter("UserClientIp", userClientIp);
+	public void setProductDomainType(String productDomainType) {
+		this.productDomainType = productDomainType;
+		if(productDomainType != null){
+			putQueryParameter("ProductDomainType", productDomainType);
+		}
 	}
 
-	public String getLang() {
-		return this.lang;
+	public Long getRegStartDate() {
+		return this.regStartDate;
 	}
 
-	public void setLang(String lang) {
-		this.lang = lang;
-		putQueryParameter("Lang", lang);
-	}
-
-	public String getGroupId() {
-		return this.groupId;
-	}
-
-	public void setGroupId(String groupId) {
-		this.groupId = groupId;
-		putQueryParameter("GroupId", groupId);
-	}
-
-	public String getStartDate() {
-		return this.startDate;
-	}
-
-	public void setStartDate(String startDate) {
-		this.startDate = startDate;
-		putQueryParameter("StartDate", startDate);
-	}
-
-	public String getEndDate() {
-		return this.endDate;
-	}
-
-	public void setEndDate(String endDate) {
-		this.endDate = endDate;
-		putQueryParameter("EndDate", endDate);
-	}
-
-	public String getDomainName() {
-		return this.domainName;
-	}
-
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
-		putQueryParameter("DomainName", domainName);
-	}
-
-	public String getOrderByType() {
-		return this.orderByType;
-	}
-
-	public void setOrderByType(String orderByType) {
-		this.orderByType = orderByType;
-		putQueryParameter("OrderByType", orderByType);
+	public void setRegStartDate(Long regStartDate) {
+		this.regStartDate = regStartDate;
+		if(regStartDate != null){
+			putQueryParameter("RegStartDate", regStartDate.toString());
+		}
 	}
 
 	public String getOrderKeyType() {
@@ -121,16 +92,53 @@ public class QueryDomainListRequest extends RpcAcsRequest<QueryDomainListRespons
 
 	public void setOrderKeyType(String orderKeyType) {
 		this.orderKeyType = orderKeyType;
-		putQueryParameter("OrderKeyType", orderKeyType);
+		if(orderKeyType != null){
+			putQueryParameter("OrderKeyType", orderKeyType);
+		}
 	}
 
-	public String getDomainType() {
-		return this.domainType;
+	public String getGroupId() {
+		return this.groupId;
 	}
 
-	public void setDomainType(String domainType) {
-		this.domainType = domainType;
-		putQueryParameter("DomainType", domainType);
+	public void setGroupId(String groupId) {
+		this.groupId = groupId;
+		if(groupId != null){
+			putQueryParameter("GroupId", groupId);
+		}
+	}
+
+	public Long getDeadEndDate() {
+		return this.deadEndDate;
+	}
+
+	public void setDeadEndDate(Long deadEndDate) {
+		this.deadEndDate = deadEndDate;
+		if(deadEndDate != null){
+			putQueryParameter("DeadEndDate", deadEndDate.toString());
+		}
+	}
+
+	public String getDomainName() {
+		return this.domainName;
+	}
+
+	public void setDomainName(String domainName) {
+		this.domainName = domainName;
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
+		}
+	}
+
+	public String getStartDate() {
+		return this.startDate;
+	}
+
+	public void setStartDate(String startDate) {
+		this.startDate = startDate;
+		if(startDate != null){
+			putQueryParameter("StartDate", startDate);
+		}
 	}
 
 	public Integer getPageNum() {
@@ -139,7 +147,75 @@ public class QueryDomainListRequest extends RpcAcsRequest<QueryDomainListRespons
 
 	public void setPageNum(Integer pageNum) {
 		this.pageNum = pageNum;
-		putQueryParameter("PageNum", pageNum);
+		if(pageNum != null){
+			putQueryParameter("PageNum", pageNum.toString());
+		}
+	}
+
+	public String getOrderByType() {
+		return this.orderByType;
+	}
+
+	public void setOrderByType(String orderByType) {
+		this.orderByType = orderByType;
+		if(orderByType != null){
+			putQueryParameter("OrderByType", orderByType);
+		}
+	}
+
+	public Long getRegEndDate() {
+		return this.regEndDate;
+	}
+
+	public void setRegEndDate(Long regEndDate) {
+		this.regEndDate = regEndDate;
+		if(regEndDate != null){
+			putQueryParameter("RegEndDate", regEndDate.toString());
+		}
+	}
+
+	public String getEndDate() {
+		return this.endDate;
+	}
+
+	public void setEndDate(String endDate) {
+		this.endDate = endDate;
+		if(endDate != null){
+			putQueryParameter("EndDate", endDate);
+		}
+	}
+
+	public String getDomainType() {
+		return this.domainType;
+	}
+
+	public void setDomainType(String domainType) {
+		this.domainType = domainType;
+		if(domainType != null){
+			putQueryParameter("DomainType", domainType);
+		}
+	}
+
+	public Long getDeadStartDate() {
+		return this.deadStartDate;
+	}
+
+	public void setDeadStartDate(Long deadStartDate) {
+		this.deadStartDate = deadStartDate;
+		if(deadStartDate != null){
+			putQueryParameter("DeadStartDate", deadStartDate.toString());
+		}
+	}
+
+	public String getUserClientIp() {
+		return this.userClientIp;
+	}
+
+	public void setUserClientIp(String userClientIp) {
+		this.userClientIp = userClientIp;
+		if(userClientIp != null){
+			putQueryParameter("UserClientIp", userClientIp);
+		}
 	}
 
 	public Integer getPageSize() {
@@ -148,7 +224,31 @@ public class QueryDomainListRequest extends RpcAcsRequest<QueryDomainListRespons
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
-		putQueryParameter("PageSize", pageSize);
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getLang() {
+		return this.lang;
+	}
+
+	public void setLang(String lang) {
+		this.lang = lang;
+		if(lang != null){
+			putQueryParameter("Lang", lang);
+		}
+	}
+
+	public String getQueryType() {
+		return this.queryType;
+	}
+
+	public void setQueryType(String queryType) {
+		this.queryType = queryType;
+		if(queryType != null){
+			putQueryParameter("QueryType", queryType);
+		}
 	}
 
 	@Override

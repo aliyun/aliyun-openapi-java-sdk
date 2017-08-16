@@ -24,17 +24,25 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class QueryDomainBySaleIdRequest extends RpcAcsRequest<QueryDomainBySaleIdResponse> {
+public class SaveTaskForUpdatingContactByTemplateIdRequest extends RpcAcsRequest<SaveTaskForUpdatingContactByTemplateIdResponse> {
 	
-	public QueryDomainBySaleIdRequest() {
-		super("Domain", "2016-05-11", "QueryDomainBySaleId");
+	public SaveTaskForUpdatingContactByTemplateIdRequest() {
+		super("Domain", "2016-05-11", "SaveTaskForUpdatingContactByTemplateId");
 	}
 
 	private String saleId;
 
+	private String contactType;
+
 	private String userClientIp;
 
+	private String domainName;
+
+	private Boolean addTransferLock;
+
 	private String lang;
+
+	private Long contactTemplateId;
 
 	public String getSaleId() {
 		return this.saleId;
@@ -44,6 +52,17 @@ public class QueryDomainBySaleIdRequest extends RpcAcsRequest<QueryDomainBySaleI
 		this.saleId = saleId;
 		if(saleId != null){
 			putQueryParameter("SaleId", saleId);
+		}
+	}
+
+	public String getContactType() {
+		return this.contactType;
+	}
+
+	public void setContactType(String contactType) {
+		this.contactType = contactType;
+		if(contactType != null){
+			putQueryParameter("ContactType", contactType);
 		}
 	}
 
@@ -58,6 +77,28 @@ public class QueryDomainBySaleIdRequest extends RpcAcsRequest<QueryDomainBySaleI
 		}
 	}
 
+	public String getDomainName() {
+		return this.domainName;
+	}
+
+	public void setDomainName(String domainName) {
+		this.domainName = domainName;
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
+		}
+	}
+
+	public Boolean getAddTransferLock() {
+		return this.addTransferLock;
+	}
+
+	public void setAddTransferLock(Boolean addTransferLock) {
+		this.addTransferLock = addTransferLock;
+		if(addTransferLock != null){
+			putQueryParameter("AddTransferLock", addTransferLock.toString());
+		}
+	}
+
 	public String getLang() {
 		return this.lang;
 	}
@@ -69,9 +110,20 @@ public class QueryDomainBySaleIdRequest extends RpcAcsRequest<QueryDomainBySaleI
 		}
 	}
 
+	public Long getContactTemplateId() {
+		return this.contactTemplateId;
+	}
+
+	public void setContactTemplateId(Long contactTemplateId) {
+		this.contactTemplateId = contactTemplateId;
+		if(contactTemplateId != null){
+			putQueryParameter("ContactTemplateId", contactTemplateId.toString());
+		}
+	}
+
 	@Override
-	public Class<QueryDomainBySaleIdResponse> getResponseClass() {
-		return QueryDomainBySaleIdResponse.class;
+	public Class<SaveTaskForUpdatingContactByTemplateIdResponse> getResponseClass() {
+		return SaveTaskForUpdatingContactByTemplateIdResponse.class;
 	}
 
 }

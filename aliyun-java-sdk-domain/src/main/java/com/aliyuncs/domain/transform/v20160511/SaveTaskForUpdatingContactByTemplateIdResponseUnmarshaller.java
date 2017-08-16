@@ -18,17 +18,18 @@
  */
 package com.aliyuncs.domain.transform.v20160511;
 
-import com.aliyuncs.domain.model.v20160511.CreateOrderResponse;
+import com.aliyuncs.domain.model.v20160511.SaveTaskForUpdatingContactByTemplateIdResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class CreateOrderResponseUnmarshaller {
+public class SaveTaskForUpdatingContactByTemplateIdResponseUnmarshaller {
 
-	public static CreateOrderResponse unmarshall(CreateOrderResponse createOrderResponse, UnmarshallerContext context) {
+	public static SaveTaskForUpdatingContactByTemplateIdResponse unmarshall(SaveTaskForUpdatingContactByTemplateIdResponse saveTaskForUpdatingContactByTemplateIdResponse, UnmarshallerContext context) {
 		
-		createOrderResponse.setRequestId(context.stringValue("CreateOrderResponse.RequestId"));
-		createOrderResponse.setOrderID(context.stringValue("CreateOrderResponse.OrderID"));
+		saveTaskForUpdatingContactByTemplateIdResponse.setRequestId(context.stringValue("SaveTaskForUpdatingContactByTemplateIdResponse.RequestId"));
+		saveTaskForUpdatingContactByTemplateIdResponse.setSuccess(context.booleanValue("SaveTaskForUpdatingContactByTemplateIdResponse.Success"));
+		saveTaskForUpdatingContactByTemplateIdResponse.setTaskNo(context.stringValue("SaveTaskForUpdatingContactByTemplateIdResponse.TaskNo"));
 	 
-	 	return createOrderResponse;
+	 	return saveTaskForUpdatingContactByTemplateIdResponse;
 	}
 }

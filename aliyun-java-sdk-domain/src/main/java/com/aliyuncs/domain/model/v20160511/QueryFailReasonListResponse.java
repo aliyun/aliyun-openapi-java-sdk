@@ -18,19 +18,20 @@
  */
 package com.aliyuncs.domain.model.v20160511;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.domain.transform.v20160511.CreateOrderResponseUnmarshaller;
+import com.aliyuncs.domain.transform.v20160511.QueryFailReasonListResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CreateOrderResponse extends AcsResponse {
+public class QueryFailReasonListResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String orderID;
+	private List<FailRecord> data;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -40,16 +41,39 @@ public class CreateOrderResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getOrderID() {
-		return this.orderID;
+	public List<FailRecord> getData() {
+		return this.data;
 	}
 
-	public void setOrderID(String orderID) {
-		this.orderID = orderID;
+	public void setData(List<FailRecord> data) {
+		this.data = data;
+	}
+
+	public static class FailRecord {
+
+		private String date;
+
+		private String failReason;
+
+		public String getDate() {
+			return this.date;
+		}
+
+		public void setDate(String date) {
+			this.date = date;
+		}
+
+		public String getFailReason() {
+			return this.failReason;
+		}
+
+		public void setFailReason(String failReason) {
+			this.failReason = failReason;
+		}
 	}
 
 	@Override
-	public CreateOrderResponse getInstance(UnmarshallerContext context) {
-		return	CreateOrderResponseUnmarshaller.unmarshall(this, context);
+	public QueryFailReasonListResponse getInstance(UnmarshallerContext context) {
+		return	QueryFailReasonListResponseUnmarshaller.unmarshall(this, context);
 	}
 }

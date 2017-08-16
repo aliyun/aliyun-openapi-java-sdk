@@ -30,35 +30,17 @@ public class QueryBatchTaskListRequest extends RpcAcsRequest<QueryBatchTaskListR
 		super("Domain", "2016-05-11", "QueryBatchTaskList");
 	}
 
-	private String userClientIp;
-
-	private String lang;
-
 	private String beginCreateTime;
 
 	private String endCreateTime;
 
-	private Integer pageNum;
+	private String userClientIp;
 
 	private Integer pageSize;
 
-	public String getUserClientIp() {
-		return this.userClientIp;
-	}
+	private String lang;
 
-	public void setUserClientIp(String userClientIp) {
-		this.userClientIp = userClientIp;
-		putQueryParameter("UserClientIp", userClientIp);
-	}
-
-	public String getLang() {
-		return this.lang;
-	}
-
-	public void setLang(String lang) {
-		this.lang = lang;
-		putQueryParameter("Lang", lang);
-	}
+	private Integer pageNum;
 
 	public String getBeginCreateTime() {
 		return this.beginCreateTime;
@@ -66,7 +48,9 @@ public class QueryBatchTaskListRequest extends RpcAcsRequest<QueryBatchTaskListR
 
 	public void setBeginCreateTime(String beginCreateTime) {
 		this.beginCreateTime = beginCreateTime;
-		putQueryParameter("BeginCreateTime", beginCreateTime);
+		if(beginCreateTime != null){
+			putQueryParameter("BeginCreateTime", beginCreateTime);
+		}
 	}
 
 	public String getEndCreateTime() {
@@ -75,16 +59,20 @@ public class QueryBatchTaskListRequest extends RpcAcsRequest<QueryBatchTaskListR
 
 	public void setEndCreateTime(String endCreateTime) {
 		this.endCreateTime = endCreateTime;
-		putQueryParameter("EndCreateTime", endCreateTime);
+		if(endCreateTime != null){
+			putQueryParameter("EndCreateTime", endCreateTime);
+		}
 	}
 
-	public Integer getPageNum() {
-		return this.pageNum;
+	public String getUserClientIp() {
+		return this.userClientIp;
 	}
 
-	public void setPageNum(Integer pageNum) {
-		this.pageNum = pageNum;
-		putQueryParameter("PageNum", pageNum);
+	public void setUserClientIp(String userClientIp) {
+		this.userClientIp = userClientIp;
+		if(userClientIp != null){
+			putQueryParameter("UserClientIp", userClientIp);
+		}
 	}
 
 	public Integer getPageSize() {
@@ -93,7 +81,31 @@ public class QueryBatchTaskListRequest extends RpcAcsRequest<QueryBatchTaskListR
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
-		putQueryParameter("PageSize", pageSize);
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getLang() {
+		return this.lang;
+	}
+
+	public void setLang(String lang) {
+		this.lang = lang;
+		if(lang != null){
+			putQueryParameter("Lang", lang);
+		}
+	}
+
+	public Integer getPageNum() {
+		return this.pageNum;
+	}
+
+	public void setPageNum(Integer pageNum) {
+		this.pageNum = pageNum;
+		if(pageNum != null){
+			putQueryParameter("PageNum", pageNum.toString());
+		}
 	}
 
 	@Override

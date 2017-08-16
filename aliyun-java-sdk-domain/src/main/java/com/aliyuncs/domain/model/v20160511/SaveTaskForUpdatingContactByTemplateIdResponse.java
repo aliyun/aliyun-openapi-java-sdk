@@ -19,18 +19,20 @@
 package com.aliyuncs.domain.model.v20160511;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.domain.transform.v20160511.CreateOrderResponseUnmarshaller;
+import com.aliyuncs.domain.transform.v20160511.SaveTaskForUpdatingContactByTemplateIdResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CreateOrderResponse extends AcsResponse {
+public class SaveTaskForUpdatingContactByTemplateIdResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String orderID;
+	private Boolean success;
+
+	private String taskNo;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -40,16 +42,24 @@ public class CreateOrderResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getOrderID() {
-		return this.orderID;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setOrderID(String orderID) {
-		this.orderID = orderID;
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
+	public String getTaskNo() {
+		return this.taskNo;
+	}
+
+	public void setTaskNo(String taskNo) {
+		this.taskNo = taskNo;
 	}
 
 	@Override
-	public CreateOrderResponse getInstance(UnmarshallerContext context) {
-		return	CreateOrderResponseUnmarshaller.unmarshall(this, context);
+	public SaveTaskForUpdatingContactByTemplateIdResponse getInstance(UnmarshallerContext context) {
+		return	SaveTaskForUpdatingContactByTemplateIdResponseUnmarshaller.unmarshall(this, context);
 	}
 }

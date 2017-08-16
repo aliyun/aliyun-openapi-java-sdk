@@ -38,7 +38,9 @@ public class GetWhoisInfoRequest extends RpcAcsRequest<GetWhoisInfoResponse> {
 
 	public void setDomainName(String domainName) {
 		this.domainName = domainName;
-		putQueryParameter("DomainName", domainName);
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
+		}
 	}
 
 	@Override
