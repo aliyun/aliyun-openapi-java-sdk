@@ -60,6 +60,7 @@ public class DescribeDeployedApiResponseUnmarshaller {
 		requestConfig.setRequestPath(context.stringValue("DescribeDeployedApiResponse.RequestConfig.RequestPath"));
 		requestConfig.setBodyFormat(context.stringValue("DescribeDeployedApiResponse.RequestConfig.BodyFormat"));
 		requestConfig.setPostBodyDescription(context.stringValue("DescribeDeployedApiResponse.RequestConfig.PostBodyDescription"));
+		requestConfig.setRequestMode(context.stringValue("DescribeDeployedApiResponse.RequestConfig.RequestMode"));
 		describeDeployedApiResponse.setRequestConfig(requestConfig);
 
 		ServiceConfig serviceConfig = new ServiceConfig();

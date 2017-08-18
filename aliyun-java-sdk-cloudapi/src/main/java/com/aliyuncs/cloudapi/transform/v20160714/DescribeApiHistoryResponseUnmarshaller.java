@@ -62,6 +62,7 @@ public class DescribeApiHistoryResponseUnmarshaller {
 		requestConfig.setRequestPath(context.stringValue("DescribeApiHistoryResponse.RequestConfig.RequestPath"));
 		requestConfig.setBodyFormat(context.stringValue("DescribeApiHistoryResponse.RequestConfig.BodyFormat"));
 		requestConfig.setPostBodyDescription(context.stringValue("DescribeApiHistoryResponse.RequestConfig.PostBodyDescription"));
+		requestConfig.setRequestMode(context.stringValue("DescribeApiHistoryResponse.RequestConfig.RequestMode"));
 		describeApiHistoryResponse.setRequestConfig(requestConfig);
 
 		ServiceConfig serviceConfig = new ServiceConfig();

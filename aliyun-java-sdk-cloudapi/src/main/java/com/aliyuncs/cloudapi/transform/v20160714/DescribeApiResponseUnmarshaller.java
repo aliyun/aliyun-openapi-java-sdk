@@ -61,6 +61,7 @@ public class DescribeApiResponseUnmarshaller {
 		requestConfig.setRequestPath(context.stringValue("DescribeApiResponse.RequestConfig.RequestPath"));
 		requestConfig.setBodyFormat(context.stringValue("DescribeApiResponse.RequestConfig.BodyFormat"));
 		requestConfig.setPostBodyDescription(context.stringValue("DescribeApiResponse.RequestConfig.PostBodyDescription"));
+		requestConfig.setRequestMode(context.stringValue("DescribeApiResponse.RequestConfig.RequestMode"));
 		describeApiResponse.setRequestConfig(requestConfig);
 
 		ServiceConfig serviceConfig = new ServiceConfig();

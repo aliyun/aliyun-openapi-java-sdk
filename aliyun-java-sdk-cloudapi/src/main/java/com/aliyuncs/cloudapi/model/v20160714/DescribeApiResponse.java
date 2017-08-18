@@ -673,6 +673,8 @@ public class DescribeApiResponse extends AcsResponse {
 
         private String postBodyDescription;
 
+        private String requestMode;
+
         public String getRequestProtocol() {
             return this.requestProtocol;
         }
@@ -711,6 +713,14 @@ public class DescribeApiResponse extends AcsResponse {
 
         public void setPostBodyDescription(String postBodyDescription) {
             this.postBodyDescription = postBodyDescription;
+        }
+
+        public String getRequestMode() {
+            return requestMode;
+        }
+
+        public void setRequestMode(String requestMode) {
+            this.requestMode = requestMode;
         }
     }
 

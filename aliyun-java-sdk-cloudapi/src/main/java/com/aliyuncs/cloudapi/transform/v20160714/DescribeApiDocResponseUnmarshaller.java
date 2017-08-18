@@ -53,6 +53,7 @@ public class DescribeApiDocResponseUnmarshaller {
 		requestConfig.setRequestPath(context.stringValue("DescribeApiDocResponse.RequestConfig.RequestPath"));
 		requestConfig.setBodyFormat(context.stringValue("DescribeApiDocResponse.RequestConfig.BodyFormat"));
 		requestConfig.setPostBodyDescription(context.stringValue("DescribeApiDocResponse.RequestConfig.PostBodyDescription"));
+		requestConfig.setRequestMode(context.stringValue("DescribeApiDocResponse.RequestConfig.RequestMode"));
 		describeApiDocResponse.setRequestConfig(requestConfig);
 
 		List<RequestParameter> requestParameters = new ArrayList<RequestParameter>();
