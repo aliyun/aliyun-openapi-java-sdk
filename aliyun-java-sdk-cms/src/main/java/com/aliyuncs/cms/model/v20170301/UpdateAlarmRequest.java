@@ -32,127 +32,37 @@ public class UpdateAlarmRequest extends RpcAcsRequest<UpdateAlarmResponse> {
 
 	private String callby_cms_owner;
 
-	private Integer period;
-
-	private String contactGroups;
-
-	private Integer endTime;
-
-	private String threshold;
-
-	private Integer startTime;
+	private String id;
 
 	private String name;
 
-	private Integer evaluationCount;
-
-	private Integer silenceTime;
-
-	private String id;
-
-	private Integer notifyType;
-
-	private String comparisonOperator;
+	private Integer period;
 
 	private String statistics;
 
-	public String getCallby_cms_owner() {
+	private String comparisonOperator;
+
+	private String threshold;
+
+	private String contactGroups;
+
+	private Integer startTime;
+
+	private Integer endTime;
+
+	private Integer silenceTime;
+
+	private Integer evaluationCount;
+
+	private Integer notifyType;
+
+	public String getcallby_cms_owner() {
 		return this.callby_cms_owner;
 	}
 
-	public void setCallby_cms_owner(String callby_cms_owner) {
+	public void setcallby_cms_owner(String callby_cms_owner) {
 		this.callby_cms_owner = callby_cms_owner;
-		if(callby_cms_owner != null){
-			putQueryParameter("callby_cms_owner", callby_cms_owner);
-		}
-	}
-
-	public Integer getPeriod() {
-		return this.period;
-	}
-
-	public void setPeriod(Integer period) {
-		this.period = period;
-		if(period != null){
-			putQueryParameter("Period", period.toString());
-		}
-	}
-
-	public String getContactGroups() {
-		return this.contactGroups;
-	}
-
-	public void setContactGroups(String contactGroups) {
-		this.contactGroups = contactGroups;
-		if(contactGroups != null){
-			putQueryParameter("ContactGroups", contactGroups);
-		}
-	}
-
-	public Integer getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(Integer endTime) {
-		this.endTime = endTime;
-		if(endTime != null){
-			putQueryParameter("EndTime", endTime.toString());
-		}
-	}
-
-	public String getThreshold() {
-		return this.threshold;
-	}
-
-	public void setThreshold(String threshold) {
-		this.threshold = threshold;
-		if(threshold != null){
-			putQueryParameter("Threshold", threshold);
-		}
-	}
-
-	public Integer getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(Integer startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("StartTime", startTime.toString());
-		}
-	}
-
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putQueryParameter("Name", name);
-		}
-	}
-
-	public Integer getEvaluationCount() {
-		return this.evaluationCount;
-	}
-
-	public void setEvaluationCount(Integer evaluationCount) {
-		this.evaluationCount = evaluationCount;
-		if(evaluationCount != null){
-			putQueryParameter("EvaluationCount", evaluationCount.toString());
-		}
-	}
-
-	public Integer getSilenceTime() {
-		return this.silenceTime;
-	}
-
-	public void setSilenceTime(Integer silenceTime) {
-		this.silenceTime = silenceTime;
-		if(silenceTime != null){
-			putQueryParameter("SilenceTime", silenceTime.toString());
-		}
+		putQueryParameter("callby_cms_owner", callby_cms_owner);
 	}
 
 	public String getId() {
@@ -161,31 +71,25 @@ public class UpdateAlarmRequest extends RpcAcsRequest<UpdateAlarmResponse> {
 
 	public void setId(String id) {
 		this.id = id;
-		if(id != null){
-			putQueryParameter("Id", id);
-		}
+		putQueryParameter("Id", id);
 	}
 
-	public Integer getNotifyType() {
-		return this.notifyType;
+	public String getName() {
+		return this.name;
 	}
 
-	public void setNotifyType(Integer notifyType) {
-		this.notifyType = notifyType;
-		if(notifyType != null){
-			putQueryParameter("NotifyType", notifyType.toString());
-		}
+	public void setName(String name) {
+		this.name = name;
+		putQueryParameter("Name", name);
 	}
 
-	public String getComparisonOperator() {
-		return this.comparisonOperator;
+	public Integer getPeriod() {
+		return this.period;
 	}
 
-	public void setComparisonOperator(String comparisonOperator) {
-		this.comparisonOperator = comparisonOperator;
-		if(comparisonOperator != null){
-			putQueryParameter("ComparisonOperator", comparisonOperator);
-		}
+	public void setPeriod(Integer period) {
+		this.period = period;
+		putQueryParameter("Period", period);
 	}
 
 	public String getStatistics() {
@@ -194,9 +98,79 @@ public class UpdateAlarmRequest extends RpcAcsRequest<UpdateAlarmResponse> {
 
 	public void setStatistics(String statistics) {
 		this.statistics = statistics;
-		if(statistics != null){
-			putQueryParameter("Statistics", statistics);
-		}
+		putQueryParameter("Statistics", statistics);
+	}
+
+	public String getComparisonOperator() {
+		return this.comparisonOperator;
+	}
+
+	public void setComparisonOperator(String comparisonOperator) {
+		this.comparisonOperator = comparisonOperator;
+		putQueryParameter("ComparisonOperator", comparisonOperator);
+	}
+
+	public String getThreshold() {
+		return this.threshold;
+	}
+
+	public void setThreshold(String threshold) {
+		this.threshold = threshold;
+		putQueryParameter("Threshold", threshold);
+	}
+
+	public String getContactGroups() {
+		return this.contactGroups;
+	}
+
+	public void setContactGroups(String contactGroups) {
+		this.contactGroups = contactGroups;
+		putQueryParameter("ContactGroups", contactGroups);
+	}
+
+	public Integer getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(Integer startTime) {
+		this.startTime = startTime;
+		putQueryParameter("StartTime", startTime);
+	}
+
+	public Integer getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(Integer endTime) {
+		this.endTime = endTime;
+		putQueryParameter("EndTime", endTime);
+	}
+
+	public Integer getSilenceTime() {
+		return this.silenceTime;
+	}
+
+	public void setSilenceTime(Integer silenceTime) {
+		this.silenceTime = silenceTime;
+		putQueryParameter("SilenceTime", silenceTime);
+	}
+
+	public Integer getEvaluationCount() {
+		return this.evaluationCount;
+	}
+
+	public void setEvaluationCount(Integer evaluationCount) {
+		this.evaluationCount = evaluationCount;
+		putQueryParameter("EvaluationCount", evaluationCount);
+	}
+
+	public Integer getNotifyType() {
+		return this.notifyType;
+	}
+
+	public void setNotifyType(Integer notifyType) {
+		this.notifyType = notifyType;
+		putQueryParameter("NotifyType", notifyType);
 	}
 
 	@Override

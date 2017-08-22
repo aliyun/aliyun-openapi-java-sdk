@@ -30,77 +30,31 @@ public class ListAlarmRequest extends RpcAcsRequest<ListAlarmResponse> {
 		super("Cms", "2017-03-01", "ListAlarm", "cms");
 	}
 
-	private Boolean isEnable;
-
 	private String callby_cms_owner;
+
+	private String id;
 
 	private String name;
 
 	private String namespace;
 
-	private Integer pageSize;
-
-	private String id;
+	private String dimension;
 
 	private String state;
 
-	private String dimension;
+	private Boolean isEnable;
 
 	private Integer pageNumber;
 
-	public Boolean getIsEnable() {
-		return this.isEnable;
-	}
+	private Integer pageSize;
 
-	public void setIsEnable(Boolean isEnable) {
-		this.isEnable = isEnable;
-		if(isEnable != null){
-			putQueryParameter("IsEnable", isEnable.toString());
-		}
-	}
-
-	public String getCallby_cms_owner() {
+	public String getcallby_cms_owner() {
 		return this.callby_cms_owner;
 	}
 
-	public void setCallby_cms_owner(String callby_cms_owner) {
+	public void setcallby_cms_owner(String callby_cms_owner) {
 		this.callby_cms_owner = callby_cms_owner;
-		if(callby_cms_owner != null){
-			putQueryParameter("callby_cms_owner", callby_cms_owner);
-		}
-	}
-
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putQueryParameter("Name", name);
-		}
-	}
-
-	public String getNamespace() {
-		return this.namespace;
-	}
-
-	public void setNamespace(String namespace) {
-		this.namespace = namespace;
-		if(namespace != null){
-			putQueryParameter("Namespace", namespace);
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
+		putQueryParameter("callby_cms_owner", callby_cms_owner);
 	}
 
 	public String getId() {
@@ -109,20 +63,25 @@ public class ListAlarmRequest extends RpcAcsRequest<ListAlarmResponse> {
 
 	public void setId(String id) {
 		this.id = id;
-		if(id != null){
-			putQueryParameter("Id", id);
-		}
+		putQueryParameter("Id", id);
 	}
 
-	public String getState() {
-		return this.state;
+	public String getName() {
+		return this.name;
 	}
 
-	public void setState(String state) {
-		this.state = state;
-		if(state != null){
-			putQueryParameter("State", state);
-		}
+	public void setName(String name) {
+		this.name = name;
+		putQueryParameter("Name", name);
+	}
+
+	public String getNamespace() {
+		return this.namespace;
+	}
+
+	public void setNamespace(String namespace) {
+		this.namespace = namespace;
+		putQueryParameter("Namespace", namespace);
 	}
 
 	public String getDimension() {
@@ -131,9 +90,25 @@ public class ListAlarmRequest extends RpcAcsRequest<ListAlarmResponse> {
 
 	public void setDimension(String dimension) {
 		this.dimension = dimension;
-		if(dimension != null){
-			putQueryParameter("Dimension", dimension);
-		}
+		putQueryParameter("Dimension", dimension);
+	}
+
+	public String getState() {
+		return this.state;
+	}
+
+	public void setState(String state) {
+		this.state = state;
+		putQueryParameter("State", state);
+	}
+
+	public Boolean getIsEnable() {
+		return this.isEnable;
+	}
+
+	public void setIsEnable(Boolean isEnable) {
+		this.isEnable = isEnable;
+		putQueryParameter("IsEnable", isEnable);
 	}
 
 	public Integer getPageNumber() {
@@ -142,9 +117,16 @@ public class ListAlarmRequest extends RpcAcsRequest<ListAlarmResponse> {
 
 	public void setPageNumber(Integer pageNumber) {
 		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
-		}
+		putQueryParameter("PageNumber", pageNumber);
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		putQueryParameter("PageSize", pageSize);
 	}
 
 	@Override
