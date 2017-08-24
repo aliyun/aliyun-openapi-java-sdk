@@ -116,9 +116,4 @@ public class MergeFacesResponse extends AcsResponse {
 	public MergeFacesResponse getInstance(UnmarshallerContext context) {
 		return	MergeFacesResponseUnmarshaller.unmarshall(this, context);
 	}
-
-	@Override
-	public boolean checkShowJsonItemName() {
-		return false;
-	}
 }

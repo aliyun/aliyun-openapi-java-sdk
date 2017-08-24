@@ -55,6 +55,7 @@ public class ListAlbumsResponseUnmarshaller {
 			cover.setState(context.stringValue("ListAlbumsResponse.Albums["+ i +"].Cover.State"));
 			cover.setMd5(context.stringValue("ListAlbumsResponse.Albums["+ i +"].Cover.Md5"));
 			cover.setIsVideo(context.booleanValue("ListAlbumsResponse.Albums["+ i +"].Cover.IsVideo"));
+			cover.setRemark(context.stringValue("ListAlbumsResponse.Albums["+ i +"].Cover.Remark"));
 			cover.setWidth(context.longValue("ListAlbumsResponse.Albums["+ i +"].Cover.Width"));
 			cover.setHeight(context.longValue("ListAlbumsResponse.Albums["+ i +"].Cover.Height"));
 			cover.setCtime(context.longValue("ListAlbumsResponse.Albums["+ i +"].Cover.Ctime"));

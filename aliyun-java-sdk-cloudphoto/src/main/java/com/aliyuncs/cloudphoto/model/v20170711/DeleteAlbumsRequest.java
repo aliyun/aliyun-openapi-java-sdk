@@ -41,10 +41,10 @@ public class DeleteAlbumsRequest extends RpcAcsRequest<DeleteAlbumsResponse> {
 		return this.albumIds;
 	}
 
-	public void setAlbumIds(List<Long> albumId) {
-		this.albumIds = albumId;	
-		for (int i = 0; i < albumId.size(); i++) {
-			putQueryParameter("AlbumId." + (i + 1) , albumId.get(i));
+	public void setAlbumIds(List<Long> albumIds) {
+		this.albumIds = albumIds;	
+		for (int i = 0; i < albumIds.size(); i++) {
+			putQueryParameter("AlbumId." + (i + 1) , albumIds.get(i));
 		}	
 	}
 

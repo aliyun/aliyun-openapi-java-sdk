@@ -36,6 +36,8 @@ public class CreateAlbumRequest extends RpcAcsRequest<CreateAlbumResponse> {
 
 	private String storeName;
 
+	private String remark;
+
 	public String getAlbumName() {
 		return this.albumName;
 	}
@@ -55,6 +57,17 @@ public class CreateAlbumRequest extends RpcAcsRequest<CreateAlbumResponse> {
 		this.storeName = storeName;
 		if(storeName != null){
 			putQueryParameter("StoreName", storeName);
+		}
+	}
+
+	public String getRemark() {
+		return this.remark;
+	}
+
+	public void setRemark(String remark) {
+		this.remark = remark;
+		if(remark != null){
+			putQueryParameter("Remark", remark);
 		}
 	}
 

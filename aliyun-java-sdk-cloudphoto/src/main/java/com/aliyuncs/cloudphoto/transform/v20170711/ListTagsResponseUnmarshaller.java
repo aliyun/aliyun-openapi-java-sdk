@@ -41,6 +41,8 @@ public class ListTagsResponseUnmarshaller {
 			Tag tag = new Tag();
 			tag.setId(context.longValue("ListTagsResponse.Tags["+ i +"].Id"));
 			tag.setName(context.stringValue("ListTagsResponse.Tags["+ i +"].Name"));
+			tag.setIsSubTag(context.booleanValue("ListTagsResponse.Tags["+ i +"].IsSubTag"));
+			tag.setParentTag(context.stringValue("ListTagsResponse.Tags["+ i +"].ParentTag"));
 
 			Cover cover = new Cover();
 			cover.setId(context.longValue("ListTagsResponse.Tags["+ i +"].Cover.Id"));
@@ -49,6 +51,7 @@ public class ListTagsResponseUnmarshaller {
 			cover.setState(context.stringValue("ListTagsResponse.Tags["+ i +"].Cover.State"));
 			cover.setMd5(context.stringValue("ListTagsResponse.Tags["+ i +"].Cover.Md5"));
 			cover.setIsVideo(context.booleanValue("ListTagsResponse.Tags["+ i +"].Cover.IsVideo"));
+			cover.setRemark(context.stringValue("ListTagsResponse.Tags["+ i +"].Cover.Remark"));
 			cover.setWidth(context.longValue("ListTagsResponse.Tags["+ i +"].Cover.Width"));
 			cover.setHeight(context.longValue("ListTagsResponse.Tags["+ i +"].Cover.Height"));
 			cover.setCtime(context.longValue("ListTagsResponse.Tags["+ i +"].Cover.Ctime"));

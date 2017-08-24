@@ -85,6 +85,10 @@ public class ListTagsResponse extends AcsResponse {
 
 		private String name;
 
+		private Boolean isSubTag;
+
+		private String parentTag;
+
 		private Cover cover;
 
 		public Long getId() {
@@ -101,6 +105,22 @@ public class ListTagsResponse extends AcsResponse {
 
 		public void setName(String name) {
 			this.name = name;
+		}
+
+		public Boolean getIsSubTag() {
+			return this.isSubTag;
+		}
+
+		public void setIsSubTag(Boolean isSubTag) {
+			this.isSubTag = isSubTag;
+		}
+
+		public String getParentTag() {
+			return this.parentTag;
+		}
+
+		public void setParentTag(String parentTag) {
+			this.parentTag = parentTag;
 		}
 
 		public Cover getCover() {
@@ -124,6 +144,8 @@ public class ListTagsResponse extends AcsResponse {
 			private String md5;
 
 			private Boolean isVideo;
+
+			private String remark;
 
 			private Long width;
 
@@ -179,6 +201,14 @@ public class ListTagsResponse extends AcsResponse {
 
 			public void setIsVideo(Boolean isVideo) {
 				this.isVideo = isVideo;
+			}
+
+			public String getRemark() {
+				return this.remark;
+			}
+
+			public void setRemark(String remark) {
+				this.remark = remark;
 			}
 
 			public Long getWidth() {

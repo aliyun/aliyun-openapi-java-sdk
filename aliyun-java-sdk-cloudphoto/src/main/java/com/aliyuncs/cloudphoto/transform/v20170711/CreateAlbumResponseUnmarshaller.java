@@ -37,6 +37,7 @@ public class CreateAlbumResponseUnmarshaller {
 		album.setId(context.longValue("CreateAlbumResponse.Album.Id"));
 		album.setName(context.stringValue("CreateAlbumResponse.Album.Name"));
 		album.setState(context.stringValue("CreateAlbumResponse.Album.State"));
+		album.setRemark(context.stringValue("CreateAlbumResponse.Album.Remark"));
 		album.setPhotosCount(context.longValue("CreateAlbumResponse.Album.PhotosCount"));
 		album.setCtime(context.longValue("CreateAlbumResponse.Album.Ctime"));
 		album.setMtime(context.longValue("CreateAlbumResponse.Album.Mtime"));
@@ -52,6 +53,7 @@ public class CreateAlbumResponseUnmarshaller {
 		cover.setHeight(context.longValue("CreateAlbumResponse.Album.Cover.Height"));
 		cover.setCtime(context.longValue("CreateAlbumResponse.Album.Cover.Ctime"));
 		cover.setMtime(context.longValue("CreateAlbumResponse.Album.Cover.Mtime"));
+		cover.setRemark(context.stringValue("CreateAlbumResponse.Album.Cover.Remark"));
 		album.setCover(cover);
 		createAlbumResponse.setAlbum(album);
 	 

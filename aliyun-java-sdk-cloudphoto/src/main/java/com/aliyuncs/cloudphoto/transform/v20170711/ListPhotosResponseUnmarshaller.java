@@ -46,6 +46,7 @@ public class ListPhotosResponseUnmarshaller {
 			photo.setState(context.stringValue("ListPhotosResponse.Photos["+ i +"].State"));
 			photo.setMd5(context.stringValue("ListPhotosResponse.Photos["+ i +"].Md5"));
 			photo.setIsVideo(context.booleanValue("ListPhotosResponse.Photos["+ i +"].IsVideo"));
+			photo.setRemark(context.stringValue("ListPhotosResponse.Photos["+ i +"].Remark"));
 			photo.setWidth(context.longValue("ListPhotosResponse.Photos["+ i +"].Width"));
 			photo.setHeight(context.longValue("ListPhotosResponse.Photos["+ i +"].Height"));
 			photo.setCtime(context.longValue("ListPhotosResponse.Photos["+ i +"].Ctime"));

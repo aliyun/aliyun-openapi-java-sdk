@@ -65,10 +65,10 @@ public class MergeFacesRequest extends RpcAcsRequest<MergeFacesResponse> {
 		return this.faceIds;
 	}
 
-	public void setFaceIds(List<Long> faceId) {
-		this.faceIds = faceId;	
-		for (int i = 0; i < faceId.size(); i++) {
-			putQueryParameter("FaceId." + (i + 1) , faceId.get(i));
+	public void setFaceIds(List<Long> faceIds) {
+		this.faceIds = faceIds;	
+		for (int i = 0; i < faceIds.size(); i++) {
+			putQueryParameter("FaceId." + (i + 1) , faceIds.get(i));
 		}	
 	}
 

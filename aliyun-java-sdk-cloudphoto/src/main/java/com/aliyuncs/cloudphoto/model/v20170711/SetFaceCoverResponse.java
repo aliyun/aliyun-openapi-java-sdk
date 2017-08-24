@@ -72,9 +72,4 @@ public class SetFaceCoverResponse extends AcsResponse {
 	public SetFaceCoverResponse getInstance(UnmarshallerContext context) {
 		return	SetFaceCoverResponseUnmarshaller.unmarshall(this, context);
 	}
-
-	@Override
-	public boolean checkShowJsonItemName() {
-		return false;
-	}
 }

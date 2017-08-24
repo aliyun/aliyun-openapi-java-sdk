@@ -38,6 +38,8 @@ public class CreatePhotoRequest extends RpcAcsRequest<CreatePhotoResponse> {
 
 	private String uploadType;
 
+	private String remark;
+
 	private String sessionId;
 
 	private String fileId;
@@ -72,6 +74,17 @@ public class CreatePhotoRequest extends RpcAcsRequest<CreatePhotoResponse> {
 		this.uploadType = uploadType;
 		if(uploadType != null){
 			putQueryParameter("UploadType", uploadType);
+		}
+	}
+
+	public String getRemark() {
+		return this.remark;
+	}
+
+	public void setRemark(String remark) {
+		this.remark = remark;
+		if(remark != null){
+			putQueryParameter("Remark", remark);
 		}
 	}
 

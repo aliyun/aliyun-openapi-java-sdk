@@ -1,3 +1,11 @@
+2017-08-24 Version: 1.1.2
+1, 获取地址给算法打标服务使用时，使用内网或跨域域名
+2, 鉴权相关代码 clients 改为 libraries
+3, 修复CreatePhoto超时
+4, 支持返回大类标签
+5, 支持设置Remark
+6, GetPhotoStore返回quota单位修正为byte
+
 2017-08-03 Version: 1.1.1
 1, 智能云相册首次发布
 

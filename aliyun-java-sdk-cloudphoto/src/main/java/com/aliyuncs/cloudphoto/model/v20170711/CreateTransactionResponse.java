@@ -178,9 +178,4 @@ public class CreateTransactionResponse extends AcsResponse {
 	public CreateTransactionResponse getInstance(UnmarshallerContext context) {
 		return	CreateTransactionResponseUnmarshaller.unmarshall(this, context);
 	}
-
-	@Override
-	public boolean checkShowJsonItemName() {
-		return false;
-	}
 }

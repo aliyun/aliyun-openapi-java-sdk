@@ -44,6 +44,7 @@ public class GetPhotosResponseUnmarshaller {
 			photo.setState(context.stringValue("GetPhotosResponse.Photos["+ i +"].State"));
 			photo.setMd5(context.stringValue("GetPhotosResponse.Photos["+ i +"].Md5"));
 			photo.setIsVideo(context.booleanValue("GetPhotosResponse.Photos["+ i +"].IsVideo"));
+			photo.setRemark(context.stringValue("GetPhotosResponse.Photos["+ i +"].Remark"));
 			photo.setWidth(context.longValue("GetPhotosResponse.Photos["+ i +"].Width"));
 			photo.setHeight(context.longValue("GetPhotosResponse.Photos["+ i +"].Height"));
 			photo.setCtime(context.longValue("GetPhotosResponse.Photos["+ i +"].Ctime"));

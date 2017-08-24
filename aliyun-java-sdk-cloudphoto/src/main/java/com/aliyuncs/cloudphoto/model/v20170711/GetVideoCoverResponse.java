@@ -82,9 +82,4 @@ public class GetVideoCoverResponse extends AcsResponse {
 	public GetVideoCoverResponse getInstance(UnmarshallerContext context) {
 		return	GetVideoCoverResponseUnmarshaller.unmarshall(this, context);
 	}
-
-	@Override
-	public boolean checkShowJsonItemName() {
-		return false;
-	}
 }

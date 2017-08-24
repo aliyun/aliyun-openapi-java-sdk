@@ -72,9 +72,4 @@ public class SetQuotaResponse extends AcsResponse {
 	public SetQuotaResponse getInstance(UnmarshallerContext context) {
 		return	SetQuotaResponseUnmarshaller.unmarshall(this, context);
 	}
-
-	@Override
-	public boolean checkShowJsonItemName() {
-		return false;
-	}
 }

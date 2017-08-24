@@ -72,9 +72,4 @@ public class SetAlbumCoverResponse extends AcsResponse {
 	public SetAlbumCoverResponse getInstance(UnmarshallerContext context) {
 		return	SetAlbumCoverResponseUnmarshaller.unmarshall(this, context);
 	}
-
-	@Override
-	public boolean checkShowJsonItemName() {
-		return false;
-	}
 }

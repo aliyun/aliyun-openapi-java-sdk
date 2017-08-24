@@ -82,9 +82,4 @@ public class GetDownloadUrlResponse extends AcsResponse {
 	public GetDownloadUrlResponse getInstance(UnmarshallerContext context) {
 		return	GetDownloadUrlResponseUnmarshaller.unmarshall(this, context);
 	}
-
-	@Override
-	public boolean checkShowJsonItemName() {
-		return false;
-	}
 }

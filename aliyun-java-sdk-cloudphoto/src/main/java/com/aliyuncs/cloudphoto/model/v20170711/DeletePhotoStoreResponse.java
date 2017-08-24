@@ -72,9 +72,4 @@ public class DeletePhotoStoreResponse extends AcsResponse {
 	public DeletePhotoStoreResponse getInstance(UnmarshallerContext context) {
 		return	DeletePhotoStoreResponseUnmarshaller.unmarshall(this, context);
 	}
-
-	@Override
-	public boolean checkShowJsonItemName() {
-		return false;
-	}
 }

@@ -92,6 +92,8 @@ public class CreatePhotoResponse extends AcsResponse {
 
 		private Boolean isVideo;
 
+		private String remark;
+
 		private Long width;
 
 		private Long height;
@@ -148,6 +150,14 @@ public class CreatePhotoResponse extends AcsResponse {
 			this.isVideo = isVideo;
 		}
 
+		public String getRemark() {
+			return this.remark;
+		}
+
+		public void setRemark(String remark) {
+			this.remark = remark;
+		}
+
 		public Long getWidth() {
 			return this.width;
 		}
@@ -184,10 +194,5 @@ public class CreatePhotoResponse extends AcsResponse {
 	@Override
 	public CreatePhotoResponse getInstance(UnmarshallerContext context) {
 		return	CreatePhotoResponseUnmarshaller.unmarshall(this, context);
-	}
-
-	@Override
-	public boolean checkShowJsonItemName() {
-		return false;
 	}
 }

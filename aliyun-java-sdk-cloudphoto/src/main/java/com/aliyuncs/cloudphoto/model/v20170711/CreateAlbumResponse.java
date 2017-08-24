@@ -86,6 +86,8 @@ public class CreateAlbumResponse extends AcsResponse {
 
 		private String state;
 
+		private String remark;
+
 		private Long photosCount;
 
 		private Long ctime;
@@ -116,6 +118,14 @@ public class CreateAlbumResponse extends AcsResponse {
 
 		public void setState(String state) {
 			this.state = state;
+		}
+
+		public String getRemark() {
+			return this.remark;
+		}
+
+		public void setRemark(String remark) {
+			this.remark = remark;
 		}
 
 		public Long getPhotosCount() {
@@ -171,6 +181,8 @@ public class CreateAlbumResponse extends AcsResponse {
 			private Long ctime;
 
 			private Long mtime;
+
+			private String remark;
 
 			public Long getId() {
 				return this.id;
@@ -251,16 +263,19 @@ public class CreateAlbumResponse extends AcsResponse {
 			public void setMtime(Long mtime) {
 				this.mtime = mtime;
 			}
+
+			public String getRemark() {
+				return this.remark;
+			}
+
+			public void setRemark(String remark) {
+				this.remark = remark;
+			}
 		}
 	}
 
 	@Override
 	public CreateAlbumResponse getInstance(UnmarshallerContext context) {
 		return	CreateAlbumResponseUnmarshaller.unmarshall(this, context);
-	}
-
-	@Override
-	public boolean checkShowJsonItemName() {
-		return false;
 	}
 }

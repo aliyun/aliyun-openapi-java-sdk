@@ -185,6 +185,8 @@ public class ListAlbumsResponse extends AcsResponse {
 
 			private Boolean isVideo;
 
+			private String remark;
+
 			private Long width;
 
 			private Long height;
@@ -239,6 +241,14 @@ public class ListAlbumsResponse extends AcsResponse {
 
 			public void setIsVideo(Boolean isVideo) {
 				this.isVideo = isVideo;
+			}
+
+			public String getRemark() {
+				return this.remark;
+			}
+
+			public void setRemark(String remark) {
+				this.remark = remark;
 			}
 
 			public Long getWidth() {

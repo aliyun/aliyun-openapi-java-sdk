@@ -82,9 +82,4 @@ public class GetThumbnailResponse extends AcsResponse {
 	public GetThumbnailResponse getInstance(UnmarshallerContext context) {
 		return	GetThumbnailResponseUnmarshaller.unmarshall(this, context);
 	}
-
-	@Override
-	public boolean checkShowJsonItemName() {
-		return false;
-	}
 }

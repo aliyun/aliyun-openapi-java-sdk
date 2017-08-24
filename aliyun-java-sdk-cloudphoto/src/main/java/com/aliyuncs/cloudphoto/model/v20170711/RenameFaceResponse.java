@@ -72,9 +72,4 @@ public class RenameFaceResponse extends AcsResponse {
 	public RenameFaceResponse getInstance(UnmarshallerContext context) {
 		return	RenameFaceResponseUnmarshaller.unmarshall(this, context);
 	}
-
-	@Override
-	public boolean checkShowJsonItemName() {
-		return false;
-	}
 }

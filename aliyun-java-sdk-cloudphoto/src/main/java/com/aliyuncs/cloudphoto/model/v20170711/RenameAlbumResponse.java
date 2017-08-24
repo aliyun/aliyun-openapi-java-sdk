@@ -72,9 +72,4 @@ public class RenameAlbumResponse extends AcsResponse {
 	public RenameAlbumResponse getInstance(UnmarshallerContext context) {
 		return	RenameAlbumResponseUnmarshaller.unmarshall(this, context);
 	}
-
-	@Override
-	public boolean checkShowJsonItemName() {
-		return false;
-	}
 }

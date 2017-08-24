@@ -39,6 +39,7 @@ public class CreatePhotoResponseUnmarshaller {
 		photo.setState(context.stringValue("CreatePhotoResponse.Photo.State"));
 		photo.setMd5(context.stringValue("CreatePhotoResponse.Photo.Md5"));
 		photo.setIsVideo(context.booleanValue("CreatePhotoResponse.Photo.IsVideo"));
+		photo.setRemark(context.stringValue("CreatePhotoResponse.Photo.Remark"));
 		photo.setWidth(context.longValue("CreatePhotoResponse.Photo.Width"));
 		photo.setHeight(context.longValue("CreatePhotoResponse.Photo.Height"));
 		photo.setCtime(context.longValue("CreatePhotoResponse.Photo.Ctime"));
