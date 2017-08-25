@@ -4722,6 +4722,10 @@
                 <ProductName>Slb</ProductName>
                 <DomainName>slb.eu-central-1.aliyuncs.com</DomainName>
             </Product>
+            <Product>
+                <ProductName>Emr</ProductName>
+                <DomainName>emr.eu-central-1.aliyuncs.com</DomainName>
+            </Product>
         </Products>
     </Endpoint>
     <Endpoint name="cn-zhangjiakou">
@@ -4748,6 +4752,10 @@
             <Product>
                 <ProductName>Slb</ProductName>
                 <DomainName>slb.cn-zhangjiakou.aliyuncs.com</DomainName>
+            </Product>
+            <Product>
+                <ProductName>Emr</ProductName>
+                <DomainName>emr.cn-zhangjiakou.aliyuncs.com</DomainName>
             </Product>
         </Products>
     </Endpoint>
