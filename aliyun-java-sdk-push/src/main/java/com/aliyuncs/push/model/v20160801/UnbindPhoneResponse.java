@@ -16,18 +16,30 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package com.aliyuncs.push.transform.v20160801;
+package com.aliyuncs.push.model.v20160801;
 
-import com.aliyuncs.push.model.v20160801.RemoveTagResponse;
+import com.aliyuncs.AcsResponse;
+import com.aliyuncs.push.transform.v20160801.UnbindPhoneResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
+/**
+ * @author auto create
+ * @version 
+ */
+public class UnbindPhoneResponse extends AcsResponse {
 
-public class RemoveTagResponseUnmarshaller {
+	private String requestId;
 
-	public static RemoveTagResponse unmarshall(RemoveTagResponse removeTagResponse, UnmarshallerContext context) {
-		
-		removeTagResponse.setRequestId(context.stringValue("RemoveTagResponse.RequestId"));
-	 
-	 	return removeTagResponse;
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	@Override
+	public UnbindPhoneResponse getInstance(UnmarshallerContext context) {
+		return	UnbindPhoneResponseUnmarshaller.unmarshall(this, context);
 	}
 }

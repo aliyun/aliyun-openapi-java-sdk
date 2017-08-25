@@ -18,16 +18,16 @@
  */
 package com.aliyuncs.push.transform.v20160801;
 
-import com.aliyuncs.push.model.v20160801.RemoveTagResponse;
+import com.aliyuncs.push.model.v20160801.UnbindPhoneResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class RemoveTagResponseUnmarshaller {
+public class UnbindPhoneResponseUnmarshaller {
 
-	public static RemoveTagResponse unmarshall(RemoveTagResponse removeTagResponse, UnmarshallerContext context) {
+	public static UnbindPhoneResponse unmarshall(UnbindPhoneResponse unbindPhoneResponse, UnmarshallerContext context) {
 		
-		removeTagResponse.setRequestId(context.stringValue("RemoveTagResponse.RequestId"));
+		unbindPhoneResponse.setRequestId(context.stringValue("UnbindPhoneResponse.RequestId"));
 	 
-	 	return removeTagResponse;
+	 	return unbindPhoneResponse;
 	}
 }

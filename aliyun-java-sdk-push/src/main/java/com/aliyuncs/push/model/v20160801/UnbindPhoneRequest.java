@@ -24,41 +24,15 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class QueryUniqueDeviceStatRequest extends RpcAcsRequest<QueryUniqueDeviceStatResponse> {
+public class UnbindPhoneRequest extends RpcAcsRequest<UnbindPhoneResponse> {
 	
-	public QueryUniqueDeviceStatRequest() {
-		super("Push", "2016-08-01", "QueryUniqueDeviceStat");
+	public UnbindPhoneRequest() {
+		super("Push", "2016-08-01", "UnbindPhone");
 	}
-
-	private String granularity;
-
-	private String endTime;
 
 	private Long appKey;
 
-	private String startTime;
-
-	public String getGranularity() {
-		return this.granularity;
-	}
-
-	public void setGranularity(String granularity) {
-		this.granularity = granularity;
-		if(granularity != null){
-			putQueryParameter("Granularity", granularity);
-		}
-	}
-
-	public String getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
-		if(endTime != null){
-			putQueryParameter("EndTime", endTime);
-		}
-	}
+	private String deviceId;
 
 	public Long getAppKey() {
 		return this.appKey;
@@ -71,20 +45,20 @@ public class QueryUniqueDeviceStatRequest extends RpcAcsRequest<QueryUniqueDevic
 		}
 	}
 
-	public String getStartTime() {
-		return this.startTime;
+	public String getDeviceId() {
+		return this.deviceId;
 	}
 
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("StartTime", startTime);
+	public void setDeviceId(String deviceId) {
+		this.deviceId = deviceId;
+		if(deviceId != null){
+			putQueryParameter("DeviceId", deviceId);
 		}
 	}
 
 	@Override
-	public Class<QueryUniqueDeviceStatResponse> getResponseClass() {
-		return QueryUniqueDeviceStatResponse.class;
+	public Class<UnbindPhoneResponse> getResponseClass() {
+		return UnbindPhoneResponse.class;
 	}
 
 }
