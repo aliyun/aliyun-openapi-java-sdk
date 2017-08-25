@@ -30,11 +30,15 @@ public class DescribeUserDomainsRequest extends RpcAcsRequest<DescribeUserDomain
 		super("Cdn", "2014-11-11", "DescribeUserDomains");
 	}
 
+	private String funcFilter;
+
 	private String sources;
 
 	private String domainName;
 
 	private Long ownerId;
+
+	private String funcId;
 
 	private Integer pageNumber;
 
@@ -51,6 +55,17 @@ public class DescribeUserDomainsRequest extends RpcAcsRequest<DescribeUserDomain
 	private String cdnType;
 
 	private Integer pageSize;
+
+	public String getFuncFilter() {
+		return this.funcFilter;
+	}
+
+	public void setFuncFilter(String funcFilter) {
+		this.funcFilter = funcFilter;
+		if(funcFilter != null){
+			putQueryParameter("FuncFilter", funcFilter);
+		}
+	}
 
 	public String getSources() {
 		return this.sources;
@@ -82,6 +97,17 @@ public class DescribeUserDomainsRequest extends RpcAcsRequest<DescribeUserDomain
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getFuncId() {
+		return this.funcId;
+	}
+
+	public void setFuncId(String funcId) {
+		this.funcId = funcId;
+		if(funcId != null){
+			putQueryParameter("FuncId", funcId);
 		}
 	}
 

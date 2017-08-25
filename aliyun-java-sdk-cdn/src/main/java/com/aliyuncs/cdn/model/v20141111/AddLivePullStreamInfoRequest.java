@@ -32,8 +32,6 @@ public class AddLivePullStreamInfoRequest extends RpcAcsRequest<AddLivePullStrea
 
 	private String sourceUrl;
 
-	private String always;
-
 	private String appName;
 
 	private String securityToken;
@@ -56,17 +54,6 @@ public class AddLivePullStreamInfoRequest extends RpcAcsRequest<AddLivePullStrea
 		this.sourceUrl = sourceUrl;
 		if(sourceUrl != null){
 			putQueryParameter("SourceUrl", sourceUrl);
-		}
-	}
-
-	public String getAlways() {
-		return this.always;
-	}
-
-	public void setAlways(String always) {
-		this.always = always;
-		if(always != null){
-			putQueryParameter("Always", always);
 		}
 	}
 

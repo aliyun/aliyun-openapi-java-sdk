@@ -93,6 +93,8 @@ public class DescribeDomainConfigsResponse extends AcsResponse {
 
 		private L2OssKeyConfig l2OssKeyConfig;
 
+		private MacServiceConfig macServiceConfig;
+
 		public List<CacheExpiredConfig> getCacheExpiredConfigs() {
 			return this.cacheExpiredConfigs;
 		}
@@ -259,6 +261,14 @@ public class DescribeDomainConfigsResponse extends AcsResponse {
 
 		public void setL2OssKeyConfig(L2OssKeyConfig l2OssKeyConfig) {
 			this.l2OssKeyConfig = l2OssKeyConfig;
+		}
+
+		public MacServiceConfig getMacServiceConfig() {
+			return this.macServiceConfig;
+		}
+
+		public void setMacServiceConfig(MacServiceConfig macServiceConfig) {
+			this.macServiceConfig = macServiceConfig;
 		}
 
 		public static class CacheExpiredConfig {
@@ -1175,6 +1185,59 @@ public class DescribeDomainConfigsResponse extends AcsResponse {
 
 			public void setPrivateOssAuth(String privateOssAuth) {
 				this.privateOssAuth = privateOssAuth;
+			}
+
+			public String getConfigId() {
+				return this.configId;
+			}
+
+			public void setConfigId(String configId) {
+				this.configId = configId;
+			}
+
+			public String getStatus() {
+				return this.status;
+			}
+
+			public void setStatus(String status) {
+				this.status = status;
+			}
+		}
+
+		public static class MacServiceConfig {
+
+			private String appList;
+
+			private String enabled;
+
+			private String processResult;
+
+			private String configId;
+
+			private String status;
+
+			public String getAppList() {
+				return this.appList;
+			}
+
+			public void setAppList(String appList) {
+				this.appList = appList;
+			}
+
+			public String getEnabled() {
+				return this.enabled;
+			}
+
+			public void setEnabled(String enabled) {
+				this.enabled = enabled;
+			}
+
+			public String getProcessResult() {
+				return this.processResult;
+			}
+
+			public void setProcessResult(String processResult) {
+				this.processResult = processResult;
 			}
 
 			public String getConfigId() {

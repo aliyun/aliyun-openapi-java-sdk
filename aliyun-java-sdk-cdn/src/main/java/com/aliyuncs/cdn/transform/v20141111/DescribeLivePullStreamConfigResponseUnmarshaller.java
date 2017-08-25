@@ -38,7 +38,6 @@ public class DescribeLivePullStreamConfigResponseUnmarshaller {
 			liveAppRecord.setDomainName(context.stringValue("DescribeLivePullStreamConfigResponse.LiveAppRecordList["+ i +"].DomainName"));
 			liveAppRecord.setStreamName(context.stringValue("DescribeLivePullStreamConfigResponse.LiveAppRecordList["+ i +"].StreamName"));
 			liveAppRecord.setSourceUrl(context.stringValue("DescribeLivePullStreamConfigResponse.LiveAppRecordList["+ i +"].SourceUrl"));
-			liveAppRecord.setAlways(context.stringValue("DescribeLivePullStreamConfigResponse.LiveAppRecordList["+ i +"].Always"));
 			liveAppRecord.setStartTime(context.stringValue("DescribeLivePullStreamConfigResponse.LiveAppRecordList["+ i +"].StartTime"));
 			liveAppRecord.setEndTime(context.stringValue("DescribeLivePullStreamConfigResponse.LiveAppRecordList["+ i +"].EndTime"));
 

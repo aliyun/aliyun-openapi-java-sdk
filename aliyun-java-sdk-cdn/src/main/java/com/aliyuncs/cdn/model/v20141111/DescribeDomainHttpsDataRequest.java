@@ -32,6 +32,8 @@ public class DescribeDomainHttpsDataRequest extends RpcAcsRequest<DescribeDomain
 
 	private String domainType;
 
+	private String fixTimeGap;
+
 	private String securityToken;
 
 	private String timeMerge;
@@ -56,6 +58,17 @@ public class DescribeDomainHttpsDataRequest extends RpcAcsRequest<DescribeDomain
 		this.domainType = domainType;
 		if(domainType != null){
 			putQueryParameter("DomainType", domainType);
+		}
+	}
+
+	public String getFixTimeGap() {
+		return this.fixTimeGap;
+	}
+
+	public void setFixTimeGap(String fixTimeGap) {
+		this.fixTimeGap = fixTimeGap;
+		if(fixTimeGap != null){
+			putQueryParameter("FixTimeGap", fixTimeGap);
 		}
 	}
 

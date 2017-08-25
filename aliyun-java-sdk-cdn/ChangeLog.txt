@@ -1,3 +1,7 @@
+2017-08-25 Version: 2.5.0
+1, 新增接口DescribeDomainsUsageByDay。
+2, 新增接口DescribeTopDomainsByFlow。
+
 2017-08-09 Version: 2.4.1
 1, 修复SDK中Service Code设置错误的Bug。该Bug会导致SDK会发起一次对域名管理服务的无效访问。
 

@@ -32,6 +32,7 @@ import com.aliyuncs.cdn.model.v20141111.DescribeDomainConfigsResponse.DomainConf
 import com.aliyuncs.cdn.model.v20141111.DescribeDomainConfigsResponse.DomainConfigs.HttpHeaderConfig;
 import com.aliyuncs.cdn.model.v20141111.DescribeDomainConfigsResponse.DomainConfigs.IgnoreQueryStringConfig;
 import com.aliyuncs.cdn.model.v20141111.DescribeDomainConfigsResponse.DomainConfigs.L2OssKeyConfig;
+import com.aliyuncs.cdn.model.v20141111.DescribeDomainConfigsResponse.DomainConfigs.MacServiceConfig;
 import com.aliyuncs.cdn.model.v20141111.DescribeDomainConfigsResponse.DomainConfigs.NotifyUrlConfig;
 import com.aliyuncs.cdn.model.v20141111.DescribeDomainConfigsResponse.DomainConfigs.OptimizeConfig;
 import com.aliyuncs.cdn.model.v20141111.DescribeDomainConfigsResponse.DomainConfigs.PageCompressConfig;
@@ -164,6 +165,14 @@ public class DescribeDomainConfigsResponseUnmarshaller {
 		l2OssKeyConfig.setConfigId(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.L2OssKeyConfig.ConfigId"));
 		l2OssKeyConfig.setStatus(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.L2OssKeyConfig.Status"));
 		domainConfigs.setL2OssKeyConfig(l2OssKeyConfig);
+
+		MacServiceConfig macServiceConfig = new MacServiceConfig();
+		macServiceConfig.setAppList(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.MacServiceConfig.AppList"));
+		macServiceConfig.setEnabled(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.MacServiceConfig.Enabled"));
+		macServiceConfig.setProcessResult(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.MacServiceConfig.ProcessResult"));
+		macServiceConfig.setConfigId(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.MacServiceConfig.ConfigId"));
+		macServiceConfig.setStatus(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.MacServiceConfig.Status"));
+		domainConfigs.setMacServiceConfig(macServiceConfig);
 
 		List<CacheExpiredConfig> cacheExpiredConfigs = new ArrayList<CacheExpiredConfig>();
 		for (int i = 0; i < context.lengthValue("DescribeDomainConfigsResponse.DomainConfigs.CacheExpiredConfigs.Length"); i++) {

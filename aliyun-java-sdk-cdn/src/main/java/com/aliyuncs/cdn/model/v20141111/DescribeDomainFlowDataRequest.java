@@ -30,9 +30,7 @@ public class DescribeDomainFlowDataRequest extends RpcAcsRequest<DescribeDomainF
 		super("Cdn", "2014-11-11", "DescribeDomainFlowData");
 	}
 
-	private String domainType;
-
-	private String securityToken;
+	private String fixTimeGap;
 
 	private String timeMerge;
 
@@ -42,33 +40,26 @@ public class DescribeDomainFlowDataRequest extends RpcAcsRequest<DescribeDomainF
 
 	private String locationNameEn;
 
-	private String interval;
-
 	private String startTime;
 
 	private String ispNameEn;
 
 	private Long ownerId;
 
-	public String getDomainType() {
-		return this.domainType;
+	private String domainType;
+
+	private String securityToken;
+
+	private String interval;
+
+	public String getFixTimeGap() {
+		return this.fixTimeGap;
 	}
 
-	public void setDomainType(String domainType) {
-		this.domainType = domainType;
-		if(domainType != null){
-			putQueryParameter("DomainType", domainType);
-		}
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
+	public void setFixTimeGap(String fixTimeGap) {
+		this.fixTimeGap = fixTimeGap;
+		if(fixTimeGap != null){
+			putQueryParameter("FixTimeGap", fixTimeGap);
 		}
 	}
 
@@ -116,17 +107,6 @@ public class DescribeDomainFlowDataRequest extends RpcAcsRequest<DescribeDomainF
 		}
 	}
 
-	public String getInterval() {
-		return this.interval;
-	}
-
-	public void setInterval(String interval) {
-		this.interval = interval;
-		if(interval != null){
-			putQueryParameter("Interval", interval);
-		}
-	}
-
 	public String getStartTime() {
 		return this.startTime;
 	}
@@ -157,6 +137,39 @@ public class DescribeDomainFlowDataRequest extends RpcAcsRequest<DescribeDomainF
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getDomainType() {
+		return this.domainType;
+	}
+
+	public void setDomainType(String domainType) {
+		this.domainType = domainType;
+		if(domainType != null){
+			putQueryParameter("DomainType", domainType);
+		}
+	}
+
+	public String getSecurityToken() {
+		return this.securityToken;
+	}
+
+	public void setSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	public String getInterval() {
+		return this.interval;
+	}
+
+	public void setInterval(String interval) {
+		this.interval = interval;
+		if(interval != null){
+			putQueryParameter("Interval", interval);
 		}
 	}
 

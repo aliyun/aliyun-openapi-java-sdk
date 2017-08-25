@@ -30,6 +30,8 @@ public class DescribeDomainSrcBpsDataRequest extends RpcAcsRequest<DescribeDomai
 		super("Cdn", "2014-11-11", "DescribeDomainSrcBpsData");
 	}
 
+	private String fixTimeGap;
+
 	private String securityToken;
 
 	private String timeMerge;
@@ -43,6 +45,17 @@ public class DescribeDomainSrcBpsDataRequest extends RpcAcsRequest<DescribeDomai
 	private String startTime;
 
 	private Long ownerId;
+
+	public String getFixTimeGap() {
+		return this.fixTimeGap;
+	}
+
+	public void setFixTimeGap(String fixTimeGap) {
+		this.fixTimeGap = fixTimeGap;
+		if(fixTimeGap != null){
+			putQueryParameter("FixTimeGap", fixTimeGap);
+		}
+	}
 
 	public String getSecurityToken() {
 		return this.securityToken;
