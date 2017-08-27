@@ -27,27 +27,16 @@ import com.aliyuncs.RpcAcsRequest;
 public class RefreshUploadVideoRequest extends RpcAcsRequest<RefreshUploadVideoResponse> {
 	
 	public RefreshUploadVideoRequest() {
-		super("vod", "2017-03-21", "RefreshUploadVideo");
+		super("vod", "2017-03-21", "RefreshUploadVideo", "vod");
 	}
-
-	private String resourceOwnerAccount;
 
 	private Long resourceOwnerId;
 
-	private Long ownerId;
+	private String resourceOwnerAccount;
 
 	private String videoId;
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
+	private Long ownerId;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -60,14 +49,14 @@ public class RefreshUploadVideoRequest extends RpcAcsRequest<RefreshUploadVideoR
 		}
 	}
 
-	public Long getOwnerId() {
-		return this.ownerId;
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
 	}
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
 		}
 	}
 
@@ -79,6 +68,17 @@ public class RefreshUploadVideoRequest extends RpcAcsRequest<RefreshUploadVideoR
 		this.videoId = videoId;
 		if(videoId != null){
 			putQueryParameter("VideoId", videoId);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 

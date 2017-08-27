@@ -27,42 +27,20 @@ import com.aliyuncs.RpcAcsRequest;
 public class AddCategoryRequest extends RpcAcsRequest<AddCategoryResponse> {
 	
 	public AddCategoryRequest() {
-		super("vod", "2017-03-21", "AddCategory");
+		super("vod", "2017-03-21", "AddCategory", "vod");
 	}
 
-	private String resourceOwnerAccount;
-
-	private Long parentId;
-
 	private String resourceOwnerId;
+
+	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
 	private String ownerId;
 
+	private Long parentId;
+
 	private String cateName;
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public Long getParentId() {
-		return this.parentId;
-	}
-
-	public void setParentId(Long parentId) {
-		this.parentId = parentId;
-		if(parentId != null){
-			putQueryParameter("ParentId", parentId.toString());
-		}
-	}
 
 	public String getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -72,6 +50,17 @@ public class AddCategoryRequest extends RpcAcsRequest<AddCategoryResponse> {
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId);
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
 		}
 	}
 
@@ -94,6 +83,17 @@ public class AddCategoryRequest extends RpcAcsRequest<AddCategoryResponse> {
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId);
+		}
+	}
+
+	public Long getParentId() {
+		return this.parentId;
+	}
+
+	public void setParentId(Long parentId) {
+		this.parentId = parentId;
+		if(parentId != null){
+			putQueryParameter("ParentId", parentId.toString());
 		}
 	}
 

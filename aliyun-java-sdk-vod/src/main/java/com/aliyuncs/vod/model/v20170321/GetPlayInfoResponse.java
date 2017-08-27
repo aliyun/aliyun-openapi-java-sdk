@@ -160,6 +160,7 @@ public class GetPlayInfoResponse extends AcsResponse {
 		public void setEncrypt(Long encrypt) {
 			this.encrypt = encrypt;
 		}
+
 	}
 
 	public static class VideoBase {

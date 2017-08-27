@@ -27,27 +27,27 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeleteCategoryRequest extends RpcAcsRequest<DeleteCategoryResponse> {
 	
 	public DeleteCategoryRequest() {
-		super("vod", "2017-03-21", "DeleteCategory");
+		super("vod", "2017-03-21", "DeleteCategory", "vod");
 	}
 
-	private Long cateId;
+	private String resourceOwnerId;
 
 	private String resourceOwnerAccount;
 
-	private String resourceOwnerId;
+	private Long cateId;
 
 	private String ownerAccount;
 
 	private String ownerId;
 
-	public Long getCateId() {
-		return this.cateId;
+	public String getResourceOwnerId() {
+		return this.resourceOwnerId;
 	}
 
-	public void setCateId(Long cateId) {
-		this.cateId = cateId;
-		if(cateId != null){
-			putQueryParameter("CateId", cateId.toString());
+	public void setResourceOwnerId(String resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId);
 		}
 	}
 
@@ -62,14 +62,14 @@ public class DeleteCategoryRequest extends RpcAcsRequest<DeleteCategoryResponse>
 		}
 	}
 
-	public String getResourceOwnerId() {
-		return this.resourceOwnerId;
+	public Long getCateId() {
+		return this.cateId;
 	}
 
-	public void setResourceOwnerId(String resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId);
+	public void setCateId(Long cateId) {
+		this.cateId = cateId;
+		if(cateId != null){
+			putQueryParameter("CateId", cateId.toString());
 		}
 	}
 

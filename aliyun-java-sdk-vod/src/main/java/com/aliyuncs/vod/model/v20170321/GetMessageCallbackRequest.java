@@ -27,27 +27,16 @@ import com.aliyuncs.RpcAcsRequest;
 public class GetMessageCallbackRequest extends RpcAcsRequest<GetMessageCallbackResponse> {
 	
 	public GetMessageCallbackRequest() {
-		super("vod", "2017-03-21", "GetMessageCallback");
+		super("vod", "2017-03-21", "GetMessageCallback", "vod");
 	}
 
-	private String resourceOwnerAccount;
-
 	private String resourceOwnerId;
+
+	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
 	private String ownerId;
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
 
 	public String getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -57,6 +46,17 @@ public class GetMessageCallbackRequest extends RpcAcsRequest<GetMessageCallbackR
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId);
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
 		}
 	}
 

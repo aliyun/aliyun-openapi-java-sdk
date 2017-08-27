@@ -27,14 +27,14 @@ import com.aliyuncs.RpcAcsRequest;
 public class UpdateCategoryRequest extends RpcAcsRequest<UpdateCategoryResponse> {
 	
 	public UpdateCategoryRequest() {
-		super("vod", "2017-03-21", "UpdateCategory");
+		super("vod", "2017-03-21", "UpdateCategory", "vod");
 	}
 
-	private Long cateId;
+	private String resourceOwnerId;
 
 	private String resourceOwnerAccount;
 
-	private String resourceOwnerId;
+	private Long cateId;
 
 	private String ownerAccount;
 
@@ -42,14 +42,14 @@ public class UpdateCategoryRequest extends RpcAcsRequest<UpdateCategoryResponse>
 
 	private String cateName;
 
-	public Long getCateId() {
-		return this.cateId;
+	public String getResourceOwnerId() {
+		return this.resourceOwnerId;
 	}
 
-	public void setCateId(Long cateId) {
-		this.cateId = cateId;
-		if(cateId != null){
-			putQueryParameter("CateId", cateId.toString());
+	public void setResourceOwnerId(String resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId);
 		}
 	}
 
@@ -64,14 +64,14 @@ public class UpdateCategoryRequest extends RpcAcsRequest<UpdateCategoryResponse>
 		}
 	}
 
-	public String getResourceOwnerId() {
-		return this.resourceOwnerId;
+	public Long getCateId() {
+		return this.cateId;
 	}
 
-	public void setResourceOwnerId(String resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId);
+	public void setCateId(Long cateId) {
+		this.cateId = cateId;
+		if(cateId != null){
+			putQueryParameter("CateId", cateId.toString());
 		}
 	}
 

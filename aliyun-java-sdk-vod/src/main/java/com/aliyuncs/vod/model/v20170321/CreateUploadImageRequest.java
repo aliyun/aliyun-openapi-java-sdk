@@ -27,29 +27,29 @@ import com.aliyuncs.RpcAcsRequest;
 public class CreateUploadImageRequest extends RpcAcsRequest<CreateUploadImageResponse> {
 	
 	public CreateUploadImageRequest() {
-		super("vod", "2017-03-21", "CreateUploadImage");
+		super("vod", "2017-03-21", "CreateUploadImage", "vod");
 	}
 
-	private String resourceOwnerAccount;
+	private String resourceOwnerId;
 
 	private String imageType;
 
-	private String resourceOwnerId;
+	private String resourceOwnerAccount;
+
+	private String imageExt;
 
 	private String ownerAccount;
 
 	private String ownerId;
 
-	private String imageExt;
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
+	public String getResourceOwnerId() {
+		return this.resourceOwnerId;
 	}
 
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	public void setResourceOwnerId(String resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId);
 		}
 	}
 
@@ -64,14 +64,25 @@ public class CreateUploadImageRequest extends RpcAcsRequest<CreateUploadImageRes
 		}
 	}
 
-	public String getResourceOwnerId() {
-		return this.resourceOwnerId;
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
 	}
 
-	public void setResourceOwnerId(String resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId);
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getImageExt() {
+		return this.imageExt;
+	}
+
+	public void setImageExt(String imageExt) {
+		this.imageExt = imageExt;
+		if(imageExt != null){
+			putQueryParameter("ImageExt", imageExt);
 		}
 	}
 
@@ -94,17 +105,6 @@ public class CreateUploadImageRequest extends RpcAcsRequest<CreateUploadImageRes
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId);
-		}
-	}
-
-	public String getImageExt() {
-		return this.imageExt;
-	}
-
-	public void setImageExt(String imageExt) {
-		this.imageExt = imageExt;
-		if(imageExt != null){
-			putQueryParameter("ImageExt", imageExt);
 		}
 	}
 

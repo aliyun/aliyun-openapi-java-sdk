@@ -27,37 +27,26 @@ import com.aliyuncs.RpcAcsRequest;
 public class GetVideoPlayInfoRequest extends RpcAcsRequest<GetVideoPlayInfoResponse> {
 	
 	public GetVideoPlayInfoRequest() {
-		super("vod", "2017-03-21", "GetVideoPlayInfo");
+		super("vod", "2017-03-21", "GetVideoPlayInfo", "vod");
 	}
-
-	private String clientVersion;
 
 	private String signVersion;
 
-	private String resourceOwnerAccount;
-
-	private Long clientTS;
-
 	private Long resourceOwnerId;
 
-	private Long ownerId;
+	private String clientVersion;
 
-	private String videoId;
+	private String resourceOwnerAccount;
 
 	private String channel;
 
 	private String playSign;
 
-	public String getClientVersion() {
-		return this.clientVersion;
-	}
+	private String videoId;
 
-	public void setClientVersion(String clientVersion) {
-		this.clientVersion = clientVersion;
-		if(clientVersion != null){
-			putQueryParameter("ClientVersion", clientVersion);
-		}
-	}
+	private Long ownerId;
+
+	private Long clientTS;
 
 	public String getSignVersion() {
 		return this.signVersion;
@@ -67,28 +56,6 @@ public class GetVideoPlayInfoRequest extends RpcAcsRequest<GetVideoPlayInfoRespo
 		this.signVersion = signVersion;
 		if(signVersion != null){
 			putQueryParameter("SignVersion", signVersion);
-		}
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public Long getClientTS() {
-		return this.clientTS;
-	}
-
-	public void setClientTS(Long clientTS) {
-		this.clientTS = clientTS;
-		if(clientTS != null){
-			putQueryParameter("ClientTS", clientTS.toString());
 		}
 	}
 
@@ -103,25 +70,25 @@ public class GetVideoPlayInfoRequest extends RpcAcsRequest<GetVideoPlayInfoRespo
 		}
 	}
 
-	public Long getOwnerId() {
-		return this.ownerId;
+	public String getClientVersion() {
+		return this.clientVersion;
 	}
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
+	public void setClientVersion(String clientVersion) {
+		this.clientVersion = clientVersion;
+		if(clientVersion != null){
+			putQueryParameter("ClientVersion", clientVersion);
 		}
 	}
 
-	public String getVideoId() {
-		return this.videoId;
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
 	}
 
-	public void setVideoId(String videoId) {
-		this.videoId = videoId;
-		if(videoId != null){
-			putQueryParameter("VideoId", videoId);
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
 		}
 	}
 
@@ -144,6 +111,39 @@ public class GetVideoPlayInfoRequest extends RpcAcsRequest<GetVideoPlayInfoRespo
 		this.playSign = playSign;
 		if(playSign != null){
 			putQueryParameter("PlaySign", playSign);
+		}
+	}
+
+	public String getVideoId() {
+		return this.videoId;
+	}
+
+	public void setVideoId(String videoId) {
+		this.videoId = videoId;
+		if(videoId != null){
+			putQueryParameter("VideoId", videoId);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public Long getClientTS() {
+		return this.clientTS;
+	}
+
+	public void setClientTS(Long clientTS) {
+		this.clientTS = clientTS;
+		if(clientTS != null){
+			putQueryParameter("ClientTS", clientTS.toString());
 		}
 	}
 

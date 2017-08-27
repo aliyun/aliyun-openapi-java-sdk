@@ -27,94 +27,43 @@ import com.aliyuncs.RpcAcsRequest;
 public class CreateUploadVideoRequest extends RpcAcsRequest<CreateUploadVideoResponse> {
 	
 	public CreateUploadVideoRequest() {
-		super("vod", "2017-03-21", "CreateUploadVideo");
+		super("vod", "2017-03-21", "CreateUploadVideo", "vod");
 	}
-
-	private String tags;
-
-	private Integer cateId;
-
-	private Long ownerId;
-
-	private String iP;
-
-	private Long fileSize;
-
-	private String title;
-
-	private String resourceOwnerAccount;
-
-	private String description;
-
-	private String fileName;
-
-	private String coverURL;
 
 	private Long resourceOwnerId;
 
-	public String getTags() {
-		return this.tags;
+	private String resourceOwnerAccount;
+
+	private String transcodeMode;
+
+	private String iP;
+
+	private String description;
+
+	private Long fileSize;
+
+	private Long ownerId;
+
+	private String title;
+
+	private String tags;
+
+	private String coverURL;
+
+	private String userData;
+
+	private String fileName;
+
+	private Integer cateId;
+
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
 	}
 
-	public void setTags(String tags) {
-		this.tags = tags;
-		if(tags != null){
-			putQueryParameter("Tags", tags);
-		}
-	}
-
-	public Integer getCateId() {
-		return this.cateId;
-	}
-
-	public void setCateId(Integer cateId) {
-		this.cateId = cateId;
-		if(cateId != null){
-			putQueryParameter("CateId", cateId.toString());
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getIP() {
-		return this.iP;
-	}
-
-	public void setIP(String iP) {
-		this.iP = iP;
-		if(iP != null){
-			putQueryParameter("IP", iP);
-		}
-	}
-
-	public Long getFileSize() {
-		return this.fileSize;
-	}
-
-	public void setFileSize(Long fileSize) {
-		this.fileSize = fileSize;
-		if(fileSize != null){
-			putQueryParameter("FileSize", fileSize.toString());
-		}
-	}
-
-	public String getTitle() {
-		return this.title;
-	}
-
-	public void setTitle(String title) {
-		this.title = title;
-		if(title != null){
-			putQueryParameter("Title", title);
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
 		}
 	}
 
@@ -129,6 +78,28 @@ public class CreateUploadVideoRequest extends RpcAcsRequest<CreateUploadVideoRes
 		}
 	}
 
+	public String getTranscodeMode() {
+		return this.transcodeMode;
+	}
+
+	public void setTranscodeMode(String transcodeMode) {
+		this.transcodeMode = transcodeMode;
+		if(transcodeMode != null){
+			putQueryParameter("TranscodeMode", transcodeMode);
+		}
+	}
+
+	public String getIP() {
+		return this.iP;
+	}
+
+	public void setIP(String iP) {
+		this.iP = iP;
+		if(iP != null){
+			putQueryParameter("IP", iP);
+		}
+	}
+
 	public String getDescription() {
 		return this.description;
 	}
@@ -140,14 +111,47 @@ public class CreateUploadVideoRequest extends RpcAcsRequest<CreateUploadVideoRes
 		}
 	}
 
-	public String getFileName() {
-		return this.fileName;
+	public Long getFileSize() {
+		return this.fileSize;
 	}
 
-	public void setFileName(String fileName) {
-		this.fileName = fileName;
-		if(fileName != null){
-			putQueryParameter("FileName", fileName);
+	public void setFileSize(Long fileSize) {
+		this.fileSize = fileSize;
+		if(fileSize != null){
+			putQueryParameter("FileSize", fileSize.toString());
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getTitle() {
+		return this.title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+		if(title != null){
+			putQueryParameter("Title", title);
+		}
+	}
+
+	public String getTags() {
+		return this.tags;
+	}
+
+	public void setTags(String tags) {
+		this.tags = tags;
+		if(tags != null){
+			putQueryParameter("Tags", tags);
 		}
 	}
 
@@ -162,14 +166,36 @@ public class CreateUploadVideoRequest extends RpcAcsRequest<CreateUploadVideoRes
 		}
 	}
 
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
+	public String getUserData() {
+		return this.userData;
 	}
 
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+	public void setUserData(String userData) {
+		this.userData = userData;
+		if(userData != null){
+			putQueryParameter("UserData", userData);
+		}
+	}
+
+	public String getFileName() {
+		return this.fileName;
+	}
+
+	public void setFileName(String fileName) {
+		this.fileName = fileName;
+		if(fileName != null){
+			putQueryParameter("FileName", fileName);
+		}
+	}
+
+	public Integer getCateId() {
+		return this.cateId;
+	}
+
+	public void setCateId(Integer cateId) {
+		this.cateId = cateId;
+		if(cateId != null){
+			putQueryParameter("CateId", cateId.toString());
 		}
 	}
 

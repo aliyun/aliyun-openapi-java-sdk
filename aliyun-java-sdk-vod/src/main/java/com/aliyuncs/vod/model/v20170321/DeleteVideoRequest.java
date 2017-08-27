@@ -27,27 +27,16 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeleteVideoRequest extends RpcAcsRequest<DeleteVideoResponse> {
 	
 	public DeleteVideoRequest() {
-		super("vod", "2017-03-21", "DeleteVideo");
+		super("vod", "2017-03-21", "DeleteVideo", "vod");
 	}
-
-	private String resourceOwnerAccount;
 
 	private Long resourceOwnerId;
 
-	private String videoIds;
+	private String resourceOwnerAccount;
 
 	private Long ownerId;
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
+	private String videoIds;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -60,14 +49,14 @@ public class DeleteVideoRequest extends RpcAcsRequest<DeleteVideoResponse> {
 		}
 	}
 
-	public String getVideoIds() {
-		return this.videoIds;
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
 	}
 
-	public void setVideoIds(String videoIds) {
-		this.videoIds = videoIds;
-		if(videoIds != null){
-			putQueryParameter("VideoIds", videoIds);
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
 		}
 	}
 
@@ -79,6 +68,17 @@ public class DeleteVideoRequest extends RpcAcsRequest<DeleteVideoResponse> {
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getVideoIds() {
+		return this.videoIds;
+	}
+
+	public void setVideoIds(String videoIds) {
+		this.videoIds = videoIds;
+		if(videoIds != null){
+			putQueryParameter("VideoIds", videoIds);
 		}
 	}
 

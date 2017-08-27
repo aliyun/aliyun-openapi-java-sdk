@@ -56,7 +56,6 @@ public class GetPlayInfoResponseUnmarshaller {
 			playInfo.setFormat(context.stringValue("GetPlayInfoResponse.PlayInfoList["+ i +"].Format"));
 			playInfo.setFps(context.stringValue("GetPlayInfoResponse.PlayInfoList["+ i +"].Fps"));
 			playInfo.setEncrypt(context.longValue("GetPlayInfoResponse.PlayInfoList["+ i +"].Encrypt"));
-
 			playInfoList.add(playInfo);
 		}
 		getPlayInfoResponse.setPlayInfoList(playInfoList);

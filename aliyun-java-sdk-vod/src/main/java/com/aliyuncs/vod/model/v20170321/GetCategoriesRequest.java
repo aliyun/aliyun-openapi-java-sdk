@@ -27,42 +27,31 @@ import com.aliyuncs.RpcAcsRequest;
 public class GetCategoriesRequest extends RpcAcsRequest<GetCategoriesResponse> {
 	
 	public GetCategoriesRequest() {
-		super("vod", "2017-03-21", "GetCategories");
+		super("vod", "2017-03-21", "GetCategories", "vod");
 	}
 
-	private Long pageSize;
-
-	private Long cateId;
+	private String resourceOwnerId;
 
 	private String resourceOwnerAccount;
 
-	private String resourceOwnerId;
+	private Long cateId;
 
 	private Long pageNo;
 
 	private String ownerAccount;
 
+	private Long pageSize;
+
 	private String ownerId;
 
-	public Long getPageSize() {
-		return this.pageSize;
+	public String getResourceOwnerId() {
+		return this.resourceOwnerId;
 	}
 
-	public void setPageSize(Long pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
-	public Long getCateId() {
-		return this.cateId;
-	}
-
-	public void setCateId(Long cateId) {
-		this.cateId = cateId;
-		if(cateId != null){
-			putQueryParameter("CateId", cateId.toString());
+	public void setResourceOwnerId(String resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId);
 		}
 	}
 
@@ -77,14 +66,14 @@ public class GetCategoriesRequest extends RpcAcsRequest<GetCategoriesResponse> {
 		}
 	}
 
-	public String getResourceOwnerId() {
-		return this.resourceOwnerId;
+	public Long getCateId() {
+		return this.cateId;
 	}
 
-	public void setResourceOwnerId(String resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId);
+	public void setCateId(Long cateId) {
+		this.cateId = cateId;
+		if(cateId != null){
+			putQueryParameter("CateId", cateId.toString());
 		}
 	}
 
@@ -107,6 +96,17 @@ public class GetCategoriesRequest extends RpcAcsRequest<GetCategoriesResponse> {
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public Long getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Long pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 

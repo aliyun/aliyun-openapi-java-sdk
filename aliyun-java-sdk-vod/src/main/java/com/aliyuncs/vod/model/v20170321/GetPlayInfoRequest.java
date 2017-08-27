@@ -27,20 +27,44 @@ import com.aliyuncs.RpcAcsRequest;
 public class GetPlayInfoRequest extends RpcAcsRequest<GetPlayInfoResponse> {
 	
 	public GetPlayInfoRequest() {
-		super("vod", "2017-03-21", "GetPlayInfo");
+		super("vod", "2017-03-21", "GetPlayInfo", "vod");
 	}
+
+
+	private Long resourceOwnerId;
+
+	private String formats;
 
 	private String resourceOwnerAccount;
 
-	private Long resourceOwnerId;
+	private String videoId;
 
 	private Long ownerId;
 
 	private Long authTimeout;
 
-	private String videoId;
 
-	private String formats;
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
+	}
+
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getFormats() {
+		return this.formats;
+	}
+
+	public void setFormats(String formats) {
+		this.formats = formats;
+		if(formats != null){
+			putQueryParameter("Formats", formats);
+		}
+	}
 
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
@@ -53,14 +77,14 @@ public class GetPlayInfoRequest extends RpcAcsRequest<GetPlayInfoResponse> {
 		}
 	}
 
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
+	public String getVideoId() {
+		return this.videoId;
 	}
 
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+	public void setVideoId(String videoId) {
+		this.videoId = videoId;
+		if(videoId != null){
+			putQueryParameter("VideoId", videoId);
 		}
 	}
 
@@ -83,28 +107,6 @@ public class GetPlayInfoRequest extends RpcAcsRequest<GetPlayInfoResponse> {
 		this.authTimeout = authTimeout;
 		if(authTimeout != null){
 			putQueryParameter("AuthTimeout", authTimeout.toString());
-		}
-	}
-
-	public String getVideoId() {
-		return this.videoId;
-	}
-
-	public void setVideoId(String videoId) {
-		this.videoId = videoId;
-		if(videoId != null){
-			putQueryParameter("VideoId", videoId);
-		}
-	}
-
-	public String getFormats() {
-		return this.formats;
-	}
-
-	public void setFormats(String formats) {
-		this.formats = formats;
-		if(formats != null){
-			putQueryParameter("Formats", formats);
 		}
 	}
 

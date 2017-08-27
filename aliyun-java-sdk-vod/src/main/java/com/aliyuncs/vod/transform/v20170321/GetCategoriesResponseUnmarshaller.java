@@ -20,11 +20,9 @@ package com.aliyuncs.vod.transform.v20170321;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import com.aliyuncs.vod.model.v20170321.GetCategoriesResponse;
 import com.aliyuncs.vod.model.v20170321.GetCategoriesResponse.Category;
 import com.aliyuncs.transform.UnmarshallerContext;
-
 
 public class GetCategoriesResponseUnmarshaller {
 
@@ -33,25 +31,25 @@ public class GetCategoriesResponseUnmarshaller {
 		getCategoriesResponse.setRequestId(context.stringValue("GetCategoriesResponse.RequestId"));
 		getCategoriesResponse.setSubTotal(context.longValue("GetCategoriesResponse.SubTotal"));
 
-		Category category = new Category();
-		category.setCateId(context.longValue("GetCategoriesResponse.Category.CateId"));
-		category.setCateName(context.stringValue("GetCategoriesResponse.Category.CateName"));
-		category.setLevel(context.longValue("GetCategoriesResponse.Category.Level"));
-		category.setParentId(context.longValue("GetCategoriesResponse.Category.ParentId"));
-		getCategoriesResponse.setCategory(category);
+		Category category1 = new Category();
+		category1.setCateId(context.longValue("GetCategoriesResponse.Category.CateId"));
+		category1.setCateName(context.stringValue("GetCategoriesResponse.Category.CateName"));
+		category1.setLevel(context.longValue("GetCategoriesResponse.Category.Level"));
+		category1.setParentId(context.longValue("GetCategoriesResponse.Category.ParentId"));
+		getCategoriesResponse.setCategory(category1);
 
 		List<Category> subCategories = new ArrayList<Category>();
 		for (int i = 0; i < context.lengthValue("GetCategoriesResponse.SubCategories.Length"); i++) {
-			Category category1 = new Category();
-			category1.setCateId(context.longValue("GetCategoriesResponse.SubCategories["+ i +"].CateId"));
-			category1.setCateName(context.stringValue("GetCategoriesResponse.SubCategories["+ i +"].CateName"));
-			category1.setLevel(context.longValue("GetCategoriesResponse.SubCategories["+ i +"].Level"));
-			category1.setParentId(context.longValue("GetCategoriesResponse.SubCategories["+ i +"].ParentId"));
+			Category category = new Category();
+			category.setCateId(context.longValue("GetCategoriesResponse.SubCategories["+ i +"].CateId"));
+			category.setCateName(context.stringValue("GetCategoriesResponse.SubCategories["+ i +"].CateName"));
+			category.setLevel(context.longValue("GetCategoriesResponse.SubCategories["+ i +"].Level"));
+			category.setParentId(context.longValue("GetCategoriesResponse.SubCategories["+ i +"].ParentId"));
 
-			subCategories.add(category1);
+			subCategories.add(category);
 		}
 		getCategoriesResponse.setSubCategories(subCategories);
-
+	 
 	 	return getCategoriesResponse;
 	}
 }

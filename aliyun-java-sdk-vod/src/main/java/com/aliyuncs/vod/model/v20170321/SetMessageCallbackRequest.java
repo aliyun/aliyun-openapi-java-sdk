@@ -27,68 +27,24 @@ import com.aliyuncs.RpcAcsRequest;
 public class SetMessageCallbackRequest extends RpcAcsRequest<SetMessageCallbackResponse> {
 	
 	public SetMessageCallbackRequest() {
-		super("vod", "2017-03-21", "SetMessageCallback");
+		super("vod", "2017-03-21", "SetMessageCallback", "vod");
 	}
-
-	private String eventTypeList;
-
-	private String resourceOwnerAccount;
-
-	private String callbackURL;
-
-	private String callbackSwitch;
 
 	private String callbackType;
 
 	private String resourceOwnerId;
 
+	private String callbackSwitch;
+
+	private String resourceOwnerAccount;
+
 	private String ownerAccount;
 
+	private String eventTypeList;
+
+	private String callbackURL;
+
 	private String ownerId;
-
-	public String getEventTypeList() {
-		return this.eventTypeList;
-	}
-
-	public void setEventTypeList(String eventTypeList) {
-		this.eventTypeList = eventTypeList;
-		if(eventTypeList != null){
-			putQueryParameter("EventTypeList", eventTypeList);
-		}
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public String getCallbackURL() {
-		return this.callbackURL;
-	}
-
-	public void setCallbackURL(String callbackURL) {
-		this.callbackURL = callbackURL;
-		if(callbackURL != null){
-			putQueryParameter("CallbackURL", callbackURL);
-		}
-	}
-
-	public String getCallbackSwitch() {
-		return this.callbackSwitch;
-	}
-
-	public void setCallbackSwitch(String callbackSwitch) {
-		this.callbackSwitch = callbackSwitch;
-		if(callbackSwitch != null){
-			putQueryParameter("CallbackSwitch", callbackSwitch);
-		}
-	}
 
 	public String getCallbackType() {
 		return this.callbackType;
@@ -112,6 +68,28 @@ public class SetMessageCallbackRequest extends RpcAcsRequest<SetMessageCallbackR
 		}
 	}
 
+	public String getCallbackSwitch() {
+		return this.callbackSwitch;
+	}
+
+	public void setCallbackSwitch(String callbackSwitch) {
+		this.callbackSwitch = callbackSwitch;
+		if(callbackSwitch != null){
+			putQueryParameter("CallbackSwitch", callbackSwitch);
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
 	public String getOwnerAccount() {
 		return this.ownerAccount;
 	}
@@ -120,6 +98,28 @@ public class SetMessageCallbackRequest extends RpcAcsRequest<SetMessageCallbackR
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public String getEventTypeList() {
+		return this.eventTypeList;
+	}
+
+	public void setEventTypeList(String eventTypeList) {
+		this.eventTypeList = eventTypeList;
+		if(eventTypeList != null){
+			putQueryParameter("EventTypeList", eventTypeList);
+		}
+	}
+
+	public String getCallbackURL() {
+		return this.callbackURL;
+	}
+
+	public void setCallbackURL(String callbackURL) {
+		this.callbackURL = callbackURL;
+		if(callbackURL != null){
+			putQueryParameter("CallbackURL", callbackURL);
 		}
 	}
 
