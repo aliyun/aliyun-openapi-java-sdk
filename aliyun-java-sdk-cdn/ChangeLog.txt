@@ -1,3 +1,6 @@
+2017-08-30 Version: 2.6.0
+1, 新增接口DescribeDomainPnoData
+
 2017-08-25 Version: 2.5.0
 1, 新增接口DescribeDomainsUsageByDay。
 2, 新增接口DescribeTopDomainsByFlow。
