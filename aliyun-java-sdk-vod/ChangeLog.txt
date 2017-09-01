@@ -1,3 +1,10 @@
+2017-09-01 Version: 2.3.1
+1, 增加了提交视频智能首图作业SubmitAIVideoCoverJob接口。
+2, 增加了获取视频智能首图作业ListAIVideoCoverJob接口。
+3, 提交视频智能鉴黄作业SubmitAIVideoPornRecogJob接口。
+4, 获取视频智能鉴黄作业ListAIVideoPornRecogJob接口。
+5, 获取视频上传地址和凭证CreateUploadVideo接口增加TranscodeMode和UserData参数。
+
 2017-08-27 Version: 2.3.0
 1, 增加了提交视频智能首图作业SubmitAIVideoCoverJob接口。
 2, 增加了获取视频智能首图作业ListAIVideoCoverJob接口。
