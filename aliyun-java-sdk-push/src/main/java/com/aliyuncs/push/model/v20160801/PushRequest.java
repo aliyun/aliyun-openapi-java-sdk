@@ -38,6 +38,8 @@ public class PushRequest extends RpcAcsRequest<PushResponse> {
 
 	private Integer iOSBadge;
 
+	private Boolean iOSBadgeAutoIncrement;
+
 	private String androidOpenType;
 
 	private String title;
@@ -155,6 +157,17 @@ public class PushRequest extends RpcAcsRequest<PushResponse> {
 		this.iOSBadge = iOSBadge;
 		if(iOSBadge != null){
 			putQueryParameter("iOSBadge", iOSBadge.toString());
+		}
+	}
+
+	public Boolean getIOSBadgeAutoIncrement() {
+		return this.iOSBadgeAutoIncrement;
+	}
+
+	public void setIOSBadgeAutoIncrement(Boolean iOSBadgeAutoIncrement) {
+		this.iOSBadgeAutoIncrement = iOSBadgeAutoIncrement;
+		if(iOSBadgeAutoIncrement != null){
+			putQueryParameter("iOSBadgeAutoIncrement", iOSBadgeAutoIncrement.toString());
 		}
 	}
 
