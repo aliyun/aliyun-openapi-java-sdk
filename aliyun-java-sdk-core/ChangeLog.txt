@@ -1,3 +1,6 @@
+2017-09-06 Version: 3.2.10
+1, 修改IoT套件美西和新加坡节点的endpoint
+
 2017-08-25 Version: 3.2.9
 1,  EMR增加德国和张北region的SDK endpoint
 

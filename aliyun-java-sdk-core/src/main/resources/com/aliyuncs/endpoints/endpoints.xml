@@ -1778,7 +1778,7 @@
             </Product>
             <Product>
                 <ProductName>Iot</ProductName>
-                <DomainName>iot.aliyuncs.com</DomainName>
+                <DomainName>iot.us-west-1.aliyuncs.com</DomainName>
             </Product>
             <Product>
                 <ProductName>Alert</ProductName>
@@ -4518,7 +4518,7 @@
             </Product>
             <Product>
                 <ProductName>Iot</ProductName>
-                <DomainName>iot.aliyuncs.com</DomainName>
+                <DomainName>iot.ap-southeast-1.aliyuncs.com</DomainName>
             </Product>
             <Product>
                 <ProductName>HPC</ProductName>
