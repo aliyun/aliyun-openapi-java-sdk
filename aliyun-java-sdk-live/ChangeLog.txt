@@ -1,3 +1,8 @@
+2017-09-06 Version: 2.7.0
+1, 增加拉流配置接口AddLivePullStreamInfoConfig。
+2, 增加删除拉流配置接口DeleteLivePullStreamInfoConfig。
+3, 增加查询拉流配置接口DescribeLivePullStreamConfig。
+
 2017-08-09 Version: 2.6.1
 1, 修复SDK中Service Code设置错误的Bug。该Bug会导致SDK会发起一次对域名管理服务的无效访问。
 

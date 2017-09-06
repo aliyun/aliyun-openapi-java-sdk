@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class AddLiveMixConfigRequest extends RpcAcsRequest<AddLiveMixConfigResponse> {
 	
 	public AddLiveMixConfigRequest() {
-		super("live", "2016-11-01", "AddLiveMixConfig");
+		super("live", "2016-11-01", "AddLiveMixConfig", "live");
 	}
 
 	private String template;

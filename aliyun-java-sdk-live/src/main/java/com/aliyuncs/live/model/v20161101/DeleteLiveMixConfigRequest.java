@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeleteLiveMixConfigRequest extends RpcAcsRequest<DeleteLiveMixConfigResponse> {
 	
 	public DeleteLiveMixConfigRequest() {
-		super("live", "2016-11-01", "DeleteLiveMixConfig");
+		super("live", "2016-11-01", "DeleteLiveMixConfig", "live");
 	}
 
 	private String appName;

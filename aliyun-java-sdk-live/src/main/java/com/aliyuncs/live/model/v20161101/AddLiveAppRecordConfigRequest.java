@@ -28,7 +28,7 @@ import java.util.List;
 public class AddLiveAppRecordConfigRequest extends RpcAcsRequest<AddLiveAppRecordConfigResponse> {
 	
 	public AddLiveAppRecordConfigRequest() {
-		super("live", "2016-11-01", "AddLiveAppRecordConfig");
+		super("live", "2016-11-01", "AddLiveAppRecordConfig", "live");
 	}
 
 	private String ossBucket;
@@ -82,13 +82,13 @@ public class AddLiveAppRecordConfigRequest extends RpcAcsRequest<AddLiveAppRecor
 		return this.recordFormats;
 	}
 
-	public void setRecordFormats(List<RecordFormat> recordFormat) {
-		this.recordFormats = recordFormat;	
-		for (int i = 0; i < recordFormat.size(); i++) {
-			putQueryParameter("RecordFormat." + (i + 1) + ".Format" , recordFormat.get(i).getFormat());
-			putQueryParameter("RecordFormat." + (i + 1) + ".OssObjectPrefix" , recordFormat.get(i).getOssObjectPrefix());
-			putQueryParameter("RecordFormat." + (i + 1) + ".SliceOssObjectPrefix" , recordFormat.get(i).getSliceOssObjectPrefix());
-			putQueryParameter("RecordFormat." + (i + 1) + ".CycleDuration" , recordFormat.get(i).getCycleDuration());
+	public void setRecordFormats(List<RecordFormat> recordFormats) {
+		this.recordFormats = recordFormats;	
+		for (int depth1 = 0; depth1 < recordFormats.size(); depth1++) {
+			putQueryParameter("RecordFormat." + (depth1 + 1) + ".Format" , recordFormats.get(depth1).getFormat());
+			putQueryParameter("RecordFormat." + (depth1 + 1) + ".OssObjectPrefix" , recordFormats.get(depth1).getOssObjectPrefix());
+			putQueryParameter("RecordFormat." + (depth1 + 1) + ".SliceOssObjectPrefix" , recordFormats.get(depth1).getSliceOssObjectPrefix());
+			putQueryParameter("RecordFormat." + (depth1 + 1) + ".CycleDuration" , recordFormats.get(depth1).getCycleDuration());
 		}	
 	}
 
