@@ -103,6 +103,8 @@ public class GetPhotosResponse extends AcsResponse {
 
 		private Long mtime;
 
+		private Long takenAt;
+
 		public Long getId() {
 			return this.id;
 		}
@@ -189,6 +191,14 @@ public class GetPhotosResponse extends AcsResponse {
 
 		public void setMtime(Long mtime) {
 			this.mtime = mtime;
+		}
+
+		public Long getTakenAt() {
+			return this.takenAt;
+		}
+
+		public void setTakenAt(Long takenAt) {
+			this.takenAt = takenAt;
 		}
 	}
 

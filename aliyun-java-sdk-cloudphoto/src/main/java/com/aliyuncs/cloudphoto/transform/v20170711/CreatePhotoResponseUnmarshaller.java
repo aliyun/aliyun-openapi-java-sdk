@@ -44,6 +44,7 @@ public class CreatePhotoResponseUnmarshaller {
 		photo.setHeight(context.longValue("CreatePhotoResponse.Photo.Height"));
 		photo.setCtime(context.longValue("CreatePhotoResponse.Photo.Ctime"));
 		photo.setMtime(context.longValue("CreatePhotoResponse.Photo.Mtime"));
+		photo.setTakenAt(context.longValue("CreatePhotoResponse.Photo.TakenAt"));
 		createPhotoResponse.setPhoto(photo);
 	 
 	 	return createPhotoResponse;

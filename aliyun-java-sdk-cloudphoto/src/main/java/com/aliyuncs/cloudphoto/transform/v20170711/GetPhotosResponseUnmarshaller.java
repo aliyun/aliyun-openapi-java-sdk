@@ -49,6 +49,7 @@ public class GetPhotosResponseUnmarshaller {
 			photo.setHeight(context.longValue("GetPhotosResponse.Photos["+ i +"].Height"));
 			photo.setCtime(context.longValue("GetPhotosResponse.Photos["+ i +"].Ctime"));
 			photo.setMtime(context.longValue("GetPhotosResponse.Photos["+ i +"].Mtime"));
+			photo.setTakenAt(context.longValue("GetPhotosResponse.Photos["+ i +"].TakenAt"));
 
 			photos.add(photo);
 		}

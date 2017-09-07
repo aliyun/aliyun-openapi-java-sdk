@@ -51,6 +51,7 @@ public class ListPhotosResponseUnmarshaller {
 			photo.setHeight(context.longValue("ListPhotosResponse.Photos["+ i +"].Height"));
 			photo.setCtime(context.longValue("ListPhotosResponse.Photos["+ i +"].Ctime"));
 			photo.setMtime(context.longValue("ListPhotosResponse.Photos["+ i +"].Mtime"));
+			photo.setTakenAt(context.longValue("ListPhotosResponse.Photos["+ i +"].TakenAt"));
 
 			photos.add(photo);
 		}
