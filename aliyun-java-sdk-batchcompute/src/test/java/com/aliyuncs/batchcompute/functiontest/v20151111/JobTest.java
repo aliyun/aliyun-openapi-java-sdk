@@ -55,9 +55,11 @@ public class JobTest extends TestCase {
         BatchComputeClient.addRequestHeader("x-acs-secure-transport", "true");
 
         gImageId = "img-ubuntu";
-        gInstanceType = cfg.getInstanceType();
 
         client = new BatchComputeClient(cfg.getRegionId(), cfg.getAccessId(), cfg.getAccessKey());
+
+        List<String> arr = client.getQuotas().getQuotas().getAvailableClusterInstanceType();
+        gInstanceType = arr.get(0);
     }
     @Test
     public void testListInstance() throws ClientException {

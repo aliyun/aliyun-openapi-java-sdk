@@ -28,6 +28,8 @@ import com.aliyuncs.exceptions.ClientException;
 import junit.framework.TestCase;
 import org.junit.Test;
 
+import java.util.List;
+
 
 /**
  * Created by guangchun.luo on 15/4/14.
@@ -53,9 +55,12 @@ public class JobMountsTest extends TestCase {
         BatchComputeClient.addRequestHeader("x-acs-secure-transport", "true");
 
         gImageId = "img-ubuntu";
-        gInstanceType = cfg.getInstanceType();
+
 
         client = new BatchComputeClient(cfg.getRegionId(), cfg.getAccessId(), cfg.getAccessKey());
+
+        List<String> arr = client.getQuotas().getQuotas().getAvailableClusterInstanceType();
+        gInstanceType = arr.get(0);
     }
 
     @Test

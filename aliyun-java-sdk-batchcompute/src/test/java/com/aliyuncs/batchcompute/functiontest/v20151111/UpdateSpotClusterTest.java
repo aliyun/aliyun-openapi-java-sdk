@@ -21,7 +21,10 @@ package com.aliyuncs.batchcompute.functiontest.v20151111;
 
 import com.aliyuncs.batchcompute.main.v20151111.BatchCompute;
 import com.aliyuncs.batchcompute.main.v20151111.BatchComputeClient;
-import com.aliyuncs.batchcompute.model.v20151111.*;
+import com.aliyuncs.batchcompute.model.v20151111.CreateClusterResponse;
+import com.aliyuncs.batchcompute.model.v20151111.DeleteClusterResponse;
+import com.aliyuncs.batchcompute.model.v20151111.GetClusterResponse;
+import com.aliyuncs.batchcompute.model.v20151111.UpdateClusterRequest;
 import com.aliyuncs.batchcompute.pojo.v20151111.*;
 import com.aliyuncs.batchcompute.util.Config;
 import com.aliyuncs.exceptions.ClientException;
@@ -32,9 +35,9 @@ import java.util.List;
 
 
 /**
- * Created by guangchun.luo on 15/4/14.
+ * Created by guangchun.luo on 2017/9/6.
  */
-public class ClusterCreateTest extends TestCase {
+public class UpdateSpotClusterTest extends TestCase {
 
     private static BatchCompute client;
 
@@ -56,7 +59,8 @@ public class ClusterCreateTest extends TestCase {
 
         client = new BatchComputeClient(cfg.getRegionId(), cfg.getAccessId(), cfg.getAccessKey());
 
-        List<String> arr = client.getQuotas().getQuotas().getAvailableClusterInstanceType();
+
+        List<String> arr = client.getQuotas().getQuotas().getAvailableSpotInstanceType();
         gInstanceType = arr.get(0);
     }
 
@@ -89,6 +93,34 @@ public class ClusterCreateTest extends TestCase {
 
         assertTrue(0 == cluster.getGroups().get("group1").getDesiredVMCount());
 
+        //3. update
+        UpdateClusterRequest updateClusterRequest = new UpdateClusterRequest();
+
+        updateClusterRequest.setClusterId(clusterId);
+
+        ClusterDescription updateDesc = new ClusterDescription();
+        GroupDescription updateGroupDesc = new GroupDescription();
+        updateGroupDesc.setDesiredVMCount(2);
+        updateGroupDesc.setSpotStrategy("SpotWithPriceLimit");
+        updateGroupDesc.setSpotPriceLimit(0.6f);
+        updateDesc.addGroup("group1", updateGroupDesc);
+
+        updateClusterRequest.setClusterDescription(updateDesc);
+
+        client.updateCluster(updateClusterRequest);
+
+
+        //4. get cluster
+
+        GetClusterResponse getClusterResponse2 = client.getCluster(clusterId);
+        Cluster cluster2  = getClusterResponse2.getCluster();
+
+        assertTrue(2 == cluster2.getGroups().get("group1").getDesiredVMCount());
+        assertTrue(0.6f == cluster2.getGroups().get("group1").getSpotPriceLimit());
+        assertEquals("SpotWithPriceLimit", cluster2.getGroups().get("group1").getSpotStrategy());
+
+
+
 
         // 6. delete cluster
         DeleteClusterResponse deleteClusterResponse = client.deleteCluster(clusterId);
@@ -112,7 +144,7 @@ public class ClusterCreateTest extends TestCase {
         GroupDescription groupDesc = new GroupDescription();
         groupDesc.setDesiredVMCount(0);
         groupDesc.setInstanceType(gInstanceType);
-        groupDesc.setResourceType("OnDemand");
+        groupDesc.setResourceType("Spot");
         desc.addGroup("group1", groupDesc);
 
 //        DataDisk dataDisk = new DataDisk();

@@ -37,6 +37,8 @@ public interface BatchCompute {
 
     CreateJobResponse createJob(JobDescription jobDescription) throws ClientException;
 
+    UpdateClusterResponse updateCluster(UpdateClusterRequest req) throws ClientException;
+
     ChangeJobPriorityResponse changeJobPriority(ChangeJobPriorityRequest req) throws ClientException;
 
     ChangeJobPriorityResponse changeJobPriority(String jobId, int priority) throws ClientException;

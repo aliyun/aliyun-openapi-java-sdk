@@ -168,6 +168,11 @@ public class BatchComputeClient implements BatchCompute {
     }
 
     @Override
+    public UpdateClusterResponse updateCluster(UpdateClusterRequest request) throws ClientException {
+        return getAcsResponse(request);
+    }
+
+    @Override
     public ChangeJobPriorityResponse changeJobPriority(ChangeJobPriorityRequest req) throws ClientException {
         req._useInteger = true;
         try{

@@ -52,9 +52,11 @@ public class ClusterMountTest extends TestCase {
         BatchComputeClient.addRequestHeader("x-acs-source-ip", "127.0.0.1");
         BatchComputeClient.addRequestHeader("x-acs-secure-transport", "true");
 
-        gInstanceType = cfg.getInstanceType();
 
         client = new BatchComputeClient(cfg.getRegionId(), cfg.getAccessId(), cfg.getAccessKey());
+
+        List<String> arr = client.getQuotas().getQuotas().getAvailableClusterInstanceType();
+        gInstanceType = arr.get(0);
     }
 
     @Test

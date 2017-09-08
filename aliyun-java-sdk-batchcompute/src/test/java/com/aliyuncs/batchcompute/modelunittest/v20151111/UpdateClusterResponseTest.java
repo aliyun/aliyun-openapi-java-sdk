@@ -17,39 +17,37 @@
  * under the License.
  */
 
+package com.aliyuncs.batchcompute.modelunittest.v20151111;
 
-package com.aliyuncs.batchcompute.modelunittest.v20150630;
-
-import com.aliyuncs.batchcompute.model.v20150630.StartJobResponse;
+import com.aliyuncs.batchcompute.model.v20151111.ChangeClusterDesiredVMCountResponse;
+import com.aliyuncs.batchcompute.model.v20151111.UpdateClusterResponse;
 import com.aliyuncs.http.HttpResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 import junit.framework.TestCase;
 import org.junit.Test;
 
-import java.io.IOException;
-import java.security.NoSuchAlgorithmException;
-
 /**
- * Created by guangchun.luo on 15/4/14.
+ * Created by guangchun.luo on 2017/9/6.
  */
-public class StartJobResponseTest extends TestCase {
+public class UpdateClusterResponseTest extends TestCase {
 
 
     @Test
-    public void testSetContent() throws NoSuchAlgorithmException, IOException {
+    public void testSetResourceId() {
+
         String REQUEST_ID = "xx000111";
 
-        StartJobResponse res = new StartJobResponse();
+        UpdateClusterResponse res = new UpdateClusterResponse();
         res.setRequestId(REQUEST_ID);
         res.setStatusCode(200);
 
         assertEquals(res.getRequestId(), REQUEST_ID);
-
     }
+
 
     @Test
     public void testGetInstance() {
-        StartJobResponse res = new StartJobResponse();
+        UpdateClusterResponse res = new UpdateClusterResponse();
 
 
         UnmarshallerContext context = new UnmarshallerContext();
@@ -61,9 +59,11 @@ public class StartJobResponseTest extends TestCase {
         context.setHttpResponse(httpResponse);
         res.getInstance(context);
 
+        //res.setStatusCode(200);
+
         res.setRequestId("aaaa");
-        res.setStatusCode(200);
 
         assertEquals(res.getRequestId(), "aaaa");
+        assertTrue(res.getStatusCode()== 200);
     }
 }
