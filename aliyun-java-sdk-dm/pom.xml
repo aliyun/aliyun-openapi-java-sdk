@@ -3,7 +3,7 @@
   <groupId>com.aliyun</groupId>
   <artifactId>aliyun-java-sdk-dm</artifactId>
   <packaging>jar</packaging>
-  <version>3.1.0</version>
+  <version>3.1.1</version>
   <name>aliyun-java-sdk-dm</name>
   <url>http://www.aliyun.com</url>
   <description>Aliyun Open API SDK for Java
@@ -14,13 +14,36 @@ All rights reserved.
 版权所有 （C）阿里云计算有限公司
 
 http://www.aliyun.com</description>
-  <dependencies> 
+
+	<distributionManagement>
+		<snapshotRepository>
+			<id>sonatype-nexus-snapshots</id>
+			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
+		</snapshotRepository>
+		<repository>
+			<id>sonatype-nexus-staging</id>
+			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+		</repository>
+	</distributionManagement>
+
+	<dependencies>
   	<dependency>
   		<groupId>com.aliyun</groupId>
   		<artifactId>aliyun-java-sdk-core</artifactId>
 		<optional>true</optional>
   		<version>3.0.0</version>
   	</dependency>
+    <dependency>
+        <groupId>com.sun.mail</groupId>
+        <artifactId>javax.mail</artifactId>
+        <version>1.5.5</version>
+    </dependency>
+	  <dependency>
+		  <groupId>junit</groupId>
+		  <artifactId>junit</artifactId>
+		  <version>4.11</version>
+		  <scope>test</scope>
+	  </dependency>
   </dependencies>
 	<licenses>
 		<license>
@@ -39,7 +62,7 @@ http://www.aliyun.com</description>
 			<name>Aliyun SDK</name>
 			<email>aliyunsdk@aliyun.com</email>
 		</developer>
-	</developers>  
+	</developers>
   <build>
 		<plugins>
 			<plugin>
@@ -66,6 +89,7 @@ http://www.aliyun.com</description>
 				<version>2.10</version>
 				<configuration>
 					<argLine>-Dfile.encoding=UTF-8</argLine>
+					<skipTests>true</skipTests>
 				</configuration>
 			</plugin>
 			<plugin>
@@ -74,6 +98,31 @@ http://www.aliyun.com</description>
 				<version>2.8</version>
 				<configuration>
 					<encoding>UTF-8</encoding>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-gpg-plugin</artifactId>
+				<version>1.5</version>
+				<executions>
+					<execution>
+						<id>sign-artifacts</id>
+						<phase>verify</phase>
+						<goals>
+							<goal>sign</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.sonatype.plugins</groupId>
+				<artifactId>nexus-staging-maven-plugin</artifactId>
+				<version>1.6.3</version>
+				<extensions>true</extensions>
+				<configuration>
+					<serverId>sonatype-nexus-staging</serverId>
+					<nexusUrl>https://oss.sonatype.org/</nexusUrl>
+					<autoReleaseAfterClose>true</autoReleaseAfterClose>
 				</configuration>
 			</plugin>
 		</plugins>
