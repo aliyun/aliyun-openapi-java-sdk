@@ -45,6 +45,30 @@ public class AutoCluster{
     @JsonProperty("UserData")
     private Map<String, String> userData;
 
+    @JsonProperty("SpotStrategy")
+    private String spotStrategy;
+
+    @JsonProperty("SpotPriceLimit")
+    private float spotPriceLimit;
+
+    @JsonIgnore
+    public String getSpotStrategy() {
+        return spotStrategy;
+    }
+    @JsonIgnore
+    public void setSpotStrategy(String spotStrategy) {
+        this.spotStrategy = spotStrategy;
+    }
+    @JsonIgnore
+    public float getSpotPriceLimit() {
+        return spotPriceLimit;
+    }
+    @JsonIgnore
+    public void setSpotPriceLimit(float spotPriceLimit) {
+        this.spotPriceLimit = spotPriceLimit;
+    }
+
+
     @JsonIgnore
     public Configs getConfigs() {
         return configs;

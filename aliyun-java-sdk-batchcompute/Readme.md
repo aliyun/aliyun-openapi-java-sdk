@@ -20,7 +20,7 @@ Batchcompute SDK For Java
 <dependency>
     <groupId>com.aliyun</groupId>
     <artifactId>aliyun-java-sdk-batchcompute</artifactId>
-    <version>4.5.0</version>
+    <version>4.6.0</version>
 </dependency>
 ```
 
@@ -99,6 +99,11 @@ try {
 
 
 ### 5. release note
+
+4.6.0
+```
+1. AutoCluster增加竞价策略属性。
+```
 
 4.5.0
 ```

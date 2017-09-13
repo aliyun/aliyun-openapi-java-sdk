@@ -6,6 +6,7 @@ java/io
 .project
 .classpath
 .settings
+src/test/resources/config_test.properties
 
 archive
 archive.zip
