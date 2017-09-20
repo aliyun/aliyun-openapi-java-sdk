@@ -18,6 +18,7 @@
  */
 package com.aliyuncs.vod.model.v20170321;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.vod.transform.v20170321.ListAIVideoCoverJobResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -30,7 +31,9 @@ public class ListAIVideoCoverJobResponse extends AcsResponse {
 
 	private String requestId;
 
-	private AIVideoCoverJob aIVideoCoverJob;
+	private List<AIVideoCoverJob> aIVideoCoverJobList;
+
+	private List<String> nonExistAIVideoCoverJobIds;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -40,17 +43,27 @@ public class ListAIVideoCoverJobResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public AIVideoCoverJob getAIVideoCoverJob() {
-		return this.aIVideoCoverJob;
+	public List<AIVideoCoverJob> getAIVideoCoverJobList() {
+		return this.aIVideoCoverJobList;
 	}
 
-	public void setAIVideoCoverJob(AIVideoCoverJob aIVideoCoverJob) {
-		this.aIVideoCoverJob = aIVideoCoverJob;
+	public void setAIVideoCoverJobList(List<AIVideoCoverJob> aIVideoCoverJobList) {
+		this.aIVideoCoverJobList = aIVideoCoverJobList;
+	}
+
+	public List<String> getNonExistAIVideoCoverJobIds() {
+		return this.nonExistAIVideoCoverJobIds;
+	}
+
+	public void setNonExistAIVideoCoverJobIds(List<String> nonExistAIVideoCoverJobIds) {
+		this.nonExistAIVideoCoverJobIds = nonExistAIVideoCoverJobIds;
 	}
 
 	public static class AIVideoCoverJob {
 
 		private String id;
+
+		private String mediaId;
 
 		private String status;
 
@@ -68,6 +81,14 @@ public class ListAIVideoCoverJobResponse extends AcsResponse {
 
 		public void setId(String id) {
 			this.id = id;
+		}
+
+		public String getMediaId() {
+			return this.mediaId;
+		}
+
+		public void setMediaId(String mediaId) {
+			this.mediaId = mediaId;
 		}
 
 		public String getStatus() {

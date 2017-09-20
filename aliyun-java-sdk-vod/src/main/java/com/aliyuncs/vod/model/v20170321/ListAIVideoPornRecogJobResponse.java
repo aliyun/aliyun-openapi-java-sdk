@@ -63,6 +63,8 @@ public class ListAIVideoPornRecogJobResponse extends AcsResponse {
 
 		private String id;
 
+		private String mediaId;
+
 		private String status;
 
 		private String code;
@@ -79,6 +81,14 @@ public class ListAIVideoPornRecogJobResponse extends AcsResponse {
 
 		public void setId(String id) {
 			this.id = id;
+		}
+
+		public String getMediaId() {
+			return this.mediaId;
+		}
+
+		public void setMediaId(String mediaId) {
+			this.mediaId = mediaId;
 		}
 
 		public String getStatus() {

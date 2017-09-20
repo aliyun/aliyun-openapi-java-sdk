@@ -20,9 +20,11 @@ package com.aliyuncs.vod.transform.v20170321;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import com.aliyuncs.vod.model.v20170321.GetCategoriesResponse;
 import com.aliyuncs.vod.model.v20170321.GetCategoriesResponse.Category;
 import com.aliyuncs.transform.UnmarshallerContext;
+
 
 public class GetCategoriesResponseUnmarshaller {
 

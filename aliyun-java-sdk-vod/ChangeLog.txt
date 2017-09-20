@@ -1,3 +1,10 @@
+2017-09-20 Version: 2.4.0
+1, 增加了获取源文件地址接口GetMezzanineInfo接口。
+2, 提交视频智能首图服务SubmitAIVideoCoverJob：请求参数增加MediaId字段，废弃Input字段（之前尚无使用），将原Input字段放在AIVideoCoverConfig之下 ；返回值中的Job参数增加MediaId字段。
+3, 查询视频智能首图服务ListAIVideoCoverJob：返回参数的层级调整：AIVideoCoverJobList作为数组返回，返回值中的Job参数增加MediaId字段。
+4, ​提交视频鉴黄服务SubmitAIVideoPornRecogJob：接口的请求参数，VideoId字段改名为MediaId；返回值中的Job参数增加MediaId字段。
+5, 查询视频鉴黄服务ListAIVideoPornRecogJob：返回值中的Job参数增加MediaId字段。 
+
 2017-09-01 Version: 2.3.1
 1, 增加了提交视频智能首图作业SubmitAIVideoCoverJob接口。
 2, 增加了获取视频智能首图作业ListAIVideoCoverJob接口。

@@ -38,11 +38,11 @@ public class SubmitAIVideoPornRecogJobRequest extends RpcAcsRequest<SubmitAIVide
 
 	private String ownerAccount;
 
-	private String videoId;
-
 	private String aIVideoPornRecogConfig;
 
 	private String ownerId;
+
+	private String mediaId;
 
 	public String getUserData() {
 		return this.userData;
@@ -88,17 +88,6 @@ public class SubmitAIVideoPornRecogJobRequest extends RpcAcsRequest<SubmitAIVide
 		}
 	}
 
-	public String getVideoId() {
-		return this.videoId;
-	}
-
-	public void setVideoId(String videoId) {
-		this.videoId = videoId;
-		if(videoId != null){
-			putQueryParameter("VideoId", videoId);
-		}
-	}
-
 	public String getAIVideoPornRecogConfig() {
 		return this.aIVideoPornRecogConfig;
 	}
@@ -118,6 +107,17 @@ public class SubmitAIVideoPornRecogJobRequest extends RpcAcsRequest<SubmitAIVide
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId);
+		}
+	}
+
+	public String getMediaId() {
+		return this.mediaId;
+	}
+
+	public void setMediaId(String mediaId) {
+		this.mediaId = mediaId;
+		if(mediaId != null){
+			putQueryParameter("MediaId", mediaId);
 		}
 	}
 

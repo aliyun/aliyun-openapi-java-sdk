@@ -81,6 +81,10 @@ public class GetPlayInfoResponse extends AcsResponse {
 
 		private Long encrypt;
 
+		private String plaintext;
+
+		private String complexity;
+
 		public Long getWidth() {
 			return this.width;
 		}
@@ -161,6 +165,21 @@ public class GetPlayInfoResponse extends AcsResponse {
 			this.encrypt = encrypt;
 		}
 
+		public String getPlaintext() {
+			return this.plaintext;
+		}
+
+		public void setPlaintext(String plaintext) {
+			this.plaintext = plaintext;
+		}
+
+		public String getComplexity() {
+			return this.complexity;
+		}
+
+		public void setComplexity(String complexity) {
+			this.complexity = complexity;
+		}
 	}
 
 	public static class VideoBase {

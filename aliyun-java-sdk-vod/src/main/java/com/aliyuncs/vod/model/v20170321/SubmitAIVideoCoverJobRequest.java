@@ -30,7 +30,7 @@ public class SubmitAIVideoCoverJobRequest extends RpcAcsRequest<SubmitAIVideoCov
 		super("vod", "2017-03-21", "SubmitAIVideoCoverJob", "vod");
 	}
 
-	private String input;
+	private String userData;
 
 	private String resourceOwnerId;
 
@@ -40,16 +40,18 @@ public class SubmitAIVideoCoverJobRequest extends RpcAcsRequest<SubmitAIVideoCov
 
 	private String ownerId;
 
+	private String mediaId;
+
 	private String aIVideoCoverConfig;
 
-	public String getInput() {
-		return this.input;
+	public String getUserData() {
+		return this.userData;
 	}
 
-	public void setInput(String input) {
-		this.input = input;
-		if(input != null){
-			putQueryParameter("Input", input);
+	public void setUserData(String userData) {
+		this.userData = userData;
+		if(userData != null){
+			putQueryParameter("UserData", userData);
 		}
 	}
 
@@ -94,6 +96,17 @@ public class SubmitAIVideoCoverJobRequest extends RpcAcsRequest<SubmitAIVideoCov
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId);
+		}
+	}
+
+	public String getMediaId() {
+		return this.mediaId;
+	}
+
+	public void setMediaId(String mediaId) {
+		this.mediaId = mediaId;
+		if(mediaId != null){
+			putQueryParameter("MediaId", mediaId);
 		}
 	}
 

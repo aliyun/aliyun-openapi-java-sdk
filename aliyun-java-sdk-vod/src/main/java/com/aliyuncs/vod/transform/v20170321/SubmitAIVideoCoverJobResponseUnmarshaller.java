@@ -31,6 +31,7 @@ public class SubmitAIVideoCoverJobResponseUnmarshaller {
 
 		AIVideoCoverJob aIVideoCoverJob = new AIVideoCoverJob();
 		aIVideoCoverJob.setId(context.stringValue("SubmitAIVideoCoverJobResponse.AIVideoCoverJob.Id"));
+		aIVideoCoverJob.setMediaId(context.stringValue("SubmitAIVideoCoverJobResponse.AIVideoCoverJob.MediaId"));
 		aIVideoCoverJob.setStatus(context.stringValue("SubmitAIVideoCoverJobResponse.AIVideoCoverJob.Status"));
 		aIVideoCoverJob.setCode(context.stringValue("SubmitAIVideoCoverJobResponse.AIVideoCoverJob.Code"));
 		aIVideoCoverJob.setMessage(context.stringValue("SubmitAIVideoCoverJobResponse.AIVideoCoverJob.Message"));

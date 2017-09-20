@@ -18,6 +18,9 @@
  */
 package com.aliyuncs.vod.transform.v20170321;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.vod.model.v20170321.ListAIVideoCoverJobResponse;
 import com.aliyuncs.vod.model.v20170321.ListAIVideoCoverJobResponse.AIVideoCoverJob;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -29,14 +32,26 @@ public class ListAIVideoCoverJobResponseUnmarshaller {
 		
 		listAIVideoCoverJobResponse.setRequestId(context.stringValue("ListAIVideoCoverJobResponse.RequestId"));
 
-		AIVideoCoverJob aIVideoCoverJob = new AIVideoCoverJob();
-		aIVideoCoverJob.setId(context.stringValue("ListAIVideoCoverJobResponse.AIVideoCoverJob.Id"));
-		aIVideoCoverJob.setStatus(context.stringValue("ListAIVideoCoverJobResponse.AIVideoCoverJob.Status"));
-		aIVideoCoverJob.setCode(context.stringValue("ListAIVideoCoverJobResponse.AIVideoCoverJob.Code"));
-		aIVideoCoverJob.setMessage(context.stringValue("ListAIVideoCoverJobResponse.AIVideoCoverJob.Message"));
-		aIVideoCoverJob.setCreationTime(context.stringValue("ListAIVideoCoverJobResponse.AIVideoCoverJob.CreationTime"));
-		aIVideoCoverJob.setData(context.stringValue("ListAIVideoCoverJobResponse.AIVideoCoverJob.Data"));
-		listAIVideoCoverJobResponse.setAIVideoCoverJob(aIVideoCoverJob);
+		List<String> nonExistAIVideoCoverJobIds = new ArrayList<String>();
+		for (int i = 0; i < context.lengthValue("ListAIVideoCoverJobResponse.NonExistAIVideoCoverJobIds.Length"); i++) {
+			nonExistAIVideoCoverJobIds.add(context.stringValue("ListAIVideoCoverJobResponse.NonExistAIVideoCoverJobIds["+ i +"]"));
+		}
+		listAIVideoCoverJobResponse.setNonExistAIVideoCoverJobIds(nonExistAIVideoCoverJobIds);
+
+		List<AIVideoCoverJob> aIVideoCoverJobList = new ArrayList<AIVideoCoverJob>();
+		for (int i = 0; i < context.lengthValue("ListAIVideoCoverJobResponse.AIVideoCoverJobList.Length"); i++) {
+			AIVideoCoverJob aIVideoCoverJob = new AIVideoCoverJob();
+			aIVideoCoverJob.setId(context.stringValue("ListAIVideoCoverJobResponse.AIVideoCoverJobList["+ i +"].Id"));
+			aIVideoCoverJob.setMediaId(context.stringValue("ListAIVideoCoverJobResponse.AIVideoCoverJobList["+ i +"].MediaId"));
+			aIVideoCoverJob.setStatus(context.stringValue("ListAIVideoCoverJobResponse.AIVideoCoverJobList["+ i +"].Status"));
+			aIVideoCoverJob.setCode(context.stringValue("ListAIVideoCoverJobResponse.AIVideoCoverJobList["+ i +"].Code"));
+			aIVideoCoverJob.setMessage(context.stringValue("ListAIVideoCoverJobResponse.AIVideoCoverJobList["+ i +"].Message"));
+			aIVideoCoverJob.setCreationTime(context.stringValue("ListAIVideoCoverJobResponse.AIVideoCoverJobList["+ i +"].CreationTime"));
+			aIVideoCoverJob.setData(context.stringValue("ListAIVideoCoverJobResponse.AIVideoCoverJobList["+ i +"].Data"));
+
+			aIVideoCoverJobList.add(aIVideoCoverJob);
+		}
+		listAIVideoCoverJobResponse.setAIVideoCoverJobList(aIVideoCoverJobList);
 	 
 	 	return listAIVideoCoverJobResponse;
 	}

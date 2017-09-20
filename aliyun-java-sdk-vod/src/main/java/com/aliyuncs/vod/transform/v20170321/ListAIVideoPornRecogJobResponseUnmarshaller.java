@@ -42,6 +42,7 @@ public class ListAIVideoPornRecogJobResponseUnmarshaller {
 		for (int i = 0; i < context.lengthValue("ListAIVideoPornRecogJobResponse.AIVideoPornRecogJobList.Length"); i++) {
 			AIVideoPornRecogJob aIVideoPornRecogJob = new AIVideoPornRecogJob();
 			aIVideoPornRecogJob.setId(context.stringValue("ListAIVideoPornRecogJobResponse.AIVideoPornRecogJobList["+ i +"].Id"));
+			aIVideoPornRecogJob.setMediaId(context.stringValue("ListAIVideoPornRecogJobResponse.AIVideoPornRecogJobList["+ i +"].MediaId"));
 			aIVideoPornRecogJob.setStatus(context.stringValue("ListAIVideoPornRecogJobResponse.AIVideoPornRecogJobList["+ i +"].Status"));
 			aIVideoPornRecogJob.setCode(context.stringValue("ListAIVideoPornRecogJobResponse.AIVideoPornRecogJobList["+ i +"].Code"));
 			aIVideoPornRecogJob.setMessage(context.stringValue("ListAIVideoPornRecogJobResponse.AIVideoPornRecogJobList["+ i +"].Message"));

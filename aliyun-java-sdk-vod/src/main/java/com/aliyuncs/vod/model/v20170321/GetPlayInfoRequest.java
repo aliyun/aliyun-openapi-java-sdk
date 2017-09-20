@@ -30,7 +30,6 @@ public class GetPlayInfoRequest extends RpcAcsRequest<GetPlayInfoResponse> {
 		super("vod", "2017-03-21", "GetPlayInfo", "vod");
 	}
 
-
 	private Long resourceOwnerId;
 
 	private String formats;
@@ -42,7 +41,6 @@ public class GetPlayInfoRequest extends RpcAcsRequest<GetPlayInfoResponse> {
 	private Long ownerId;
 
 	private Long authTimeout;
-
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
