@@ -32,11 +32,24 @@ public class GetVideoCoverRequest extends RpcAcsRequest<GetVideoCoverResponse> {
 		setProtocol(ProtocolType.HTTPS);
 	}
 
+	private String libraryId;
+
 	private Long photoId;
 
 	private String storeName;
 
 	private String zoomType;
+
+	public String getLibraryId() {
+		return this.libraryId;
+	}
+
+	public void setLibraryId(String libraryId) {
+		this.libraryId = libraryId;
+		if(libraryId != null){
+			putQueryParameter("LibraryId", libraryId);
+		}
+	}
 
 	public Long getPhotoId() {
 		return this.photoId;

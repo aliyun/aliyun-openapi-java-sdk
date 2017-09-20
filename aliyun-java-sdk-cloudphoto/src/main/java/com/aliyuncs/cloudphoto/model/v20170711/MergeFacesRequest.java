@@ -33,11 +33,24 @@ public class MergeFacesRequest extends RpcAcsRequest<MergeFacesResponse> {
 		setProtocol(ProtocolType.HTTPS);
 	}
 
+	private String libraryId;
+
 	private Long targetFaceId;
 
 	private String storeName;
 
 	private List<Long> faceIds;
+
+	public String getLibraryId() {
+		return this.libraryId;
+	}
+
+	public void setLibraryId(String libraryId) {
+		this.libraryId = libraryId;
+		if(libraryId != null){
+			putQueryParameter("LibraryId", libraryId);
+		}
+	}
 
 	public Long getTargetFaceId() {
 		return this.targetFaceId;

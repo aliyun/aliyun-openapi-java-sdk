@@ -32,7 +32,20 @@ public class ListTagsRequest extends RpcAcsRequest<ListTagsResponse> {
 		setProtocol(ProtocolType.HTTPS);
 	}
 
+	private String libraryId;
+
 	private String storeName;
+
+	public String getLibraryId() {
+		return this.libraryId;
+	}
+
+	public void setLibraryId(String libraryId) {
+		this.libraryId = libraryId;
+		if(libraryId != null){
+			putQueryParameter("LibraryId", libraryId);
+		}
+	}
 
 	public String getStoreName() {
 		return this.storeName;

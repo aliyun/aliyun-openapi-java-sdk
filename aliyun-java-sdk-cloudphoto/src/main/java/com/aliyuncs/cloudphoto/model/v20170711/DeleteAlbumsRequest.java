@@ -33,9 +33,22 @@ public class DeleteAlbumsRequest extends RpcAcsRequest<DeleteAlbumsResponse> {
 		setProtocol(ProtocolType.HTTPS);
 	}
 
+	private String libraryId;
+
 	private List<Long> albumIds;
 
 	private String storeName;
+
+	public String getLibraryId() {
+		return this.libraryId;
+	}
+
+	public void setLibraryId(String libraryId) {
+		this.libraryId = libraryId;
+		if(libraryId != null){
+			putQueryParameter("LibraryId", libraryId);
+		}
+	}
 
 	public List<Long> getAlbumIds() {
 		return this.albumIds;

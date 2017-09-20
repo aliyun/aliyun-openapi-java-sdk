@@ -32,9 +32,22 @@ public class GetDownloadUrlRequest extends RpcAcsRequest<GetDownloadUrlResponse>
 		setProtocol(ProtocolType.HTTPS);
 	}
 
+	private String libraryId;
+
 	private Long photoId;
 
 	private String storeName;
+
+	public String getLibraryId() {
+		return this.libraryId;
+	}
+
+	public void setLibraryId(String libraryId) {
+		this.libraryId = libraryId;
+		if(libraryId != null){
+			putQueryParameter("LibraryId", libraryId);
+		}
+	}
 
 	public Long getPhotoId() {
 		return this.photoId;

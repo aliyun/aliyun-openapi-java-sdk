@@ -32,9 +32,22 @@ public class SetMeRequest extends RpcAcsRequest<SetMeResponse> {
 		setProtocol(ProtocolType.HTTPS);
 	}
 
+	private String libraryId;
+
 	private String storeName;
 
 	private Long faceId;
+
+	public String getLibraryId() {
+		return this.libraryId;
+	}
+
+	public void setLibraryId(String libraryId) {
+		this.libraryId = libraryId;
+		if(libraryId != null){
+			putQueryParameter("LibraryId", libraryId);
+		}
+	}
 
 	public String getStoreName() {
 		return this.storeName;

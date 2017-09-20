@@ -33,6 +33,8 @@ public class MoveFacePhotosRequest extends RpcAcsRequest<MoveFacePhotosResponse>
 		setProtocol(ProtocolType.HTTPS);
 	}
 
+	private String libraryId;
+
 	private Long targetFaceId;
 
 	private List<Long> photoIds;
@@ -40,6 +42,17 @@ public class MoveFacePhotosRequest extends RpcAcsRequest<MoveFacePhotosResponse>
 	private String storeName;
 
 	private Long sourceFaceId;
+
+	public String getLibraryId() {
+		return this.libraryId;
+	}
+
+	public void setLibraryId(String libraryId) {
+		this.libraryId = libraryId;
+		if(libraryId != null){
+			putQueryParameter("LibraryId", libraryId);
+		}
+	}
 
 	public Long getTargetFaceId() {
 		return this.targetFaceId;

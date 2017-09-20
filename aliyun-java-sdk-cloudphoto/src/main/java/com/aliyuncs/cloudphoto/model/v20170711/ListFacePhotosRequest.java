@@ -36,6 +36,8 @@ public class ListFacePhotosRequest extends RpcAcsRequest<ListFacePhotosResponse>
 
 	private Integer size;
 
+	private String libraryId;
+
 	private String storeName;
 
 	private Long faceId;
@@ -63,6 +65,17 @@ public class ListFacePhotosRequest extends RpcAcsRequest<ListFacePhotosResponse>
 		this.size = size;
 		if(size != null){
 			putQueryParameter("Size", size.toString());
+		}
+	}
+
+	public String getLibraryId() {
+		return this.libraryId;
+	}
+
+	public void setLibraryId(String libraryId) {
+		this.libraryId = libraryId;
+		if(libraryId != null){
+			putQueryParameter("LibraryId", libraryId);
 		}
 	}
 

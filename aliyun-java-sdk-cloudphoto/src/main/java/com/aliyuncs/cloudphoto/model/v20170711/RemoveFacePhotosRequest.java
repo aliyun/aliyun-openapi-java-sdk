@@ -33,11 +33,24 @@ public class RemoveFacePhotosRequest extends RpcAcsRequest<RemoveFacePhotosRespo
 		setProtocol(ProtocolType.HTTPS);
 	}
 
+	private String libraryId;
+
 	private List<Long> photoIds;
 
 	private String storeName;
 
 	private Long faceId;
+
+	public String getLibraryId() {
+		return this.libraryId;
+	}
+
+	public void setLibraryId(String libraryId) {
+		this.libraryId = libraryId;
+		if(libraryId != null){
+			putQueryParameter("LibraryId", libraryId);
+		}
+	}
 
 	public List<Long> getPhotoIds() {
 		return this.photoIds;

@@ -34,6 +34,8 @@ public class RenameAlbumRequest extends RpcAcsRequest<RenameAlbumResponse> {
 
 	private String albumName;
 
+	private String libraryId;
+
 	private Long albumId;
 
 	private String storeName;
@@ -46,6 +48,17 @@ public class RenameAlbumRequest extends RpcAcsRequest<RenameAlbumResponse> {
 		this.albumName = albumName;
 		if(albumName != null){
 			putQueryParameter("AlbumName", albumName);
+		}
+	}
+
+	public String getLibraryId() {
+		return this.libraryId;
+	}
+
+	public void setLibraryId(String libraryId) {
+		this.libraryId = libraryId;
+		if(libraryId != null){
+			putQueryParameter("LibraryId", libraryId);
 		}
 	}
 

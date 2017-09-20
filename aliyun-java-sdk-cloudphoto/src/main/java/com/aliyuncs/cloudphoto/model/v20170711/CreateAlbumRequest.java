@@ -34,6 +34,8 @@ public class CreateAlbumRequest extends RpcAcsRequest<CreateAlbumResponse> {
 
 	private String albumName;
 
+	private String libraryId;
+
 	private String storeName;
 
 	private String remark;
@@ -46,6 +48,17 @@ public class CreateAlbumRequest extends RpcAcsRequest<CreateAlbumResponse> {
 		this.albumName = albumName;
 		if(albumName != null){
 			putQueryParameter("AlbumName", albumName);
+		}
+	}
+
+	public String getLibraryId() {
+		return this.libraryId;
+	}
+
+	public void setLibraryId(String libraryId) {
+		this.libraryId = libraryId;
+		if(libraryId != null){
+			putQueryParameter("LibraryId", libraryId);
 		}
 	}
 

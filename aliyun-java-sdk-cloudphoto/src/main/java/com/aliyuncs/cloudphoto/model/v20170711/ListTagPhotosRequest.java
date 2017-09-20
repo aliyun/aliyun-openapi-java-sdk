@@ -38,6 +38,8 @@ public class ListTagPhotosRequest extends RpcAcsRequest<ListTagPhotosResponse> {
 
 	private Long tagId;
 
+	private String libraryId;
+
 	private String storeName;
 
 	private String state;
@@ -74,6 +76,17 @@ public class ListTagPhotosRequest extends RpcAcsRequest<ListTagPhotosResponse> {
 		this.tagId = tagId;
 		if(tagId != null){
 			putQueryParameter("TagId", tagId.toString());
+		}
+	}
+
+	public String getLibraryId() {
+		return this.libraryId;
+	}
+
+	public void setLibraryId(String libraryId) {
+		this.libraryId = libraryId;
+		if(libraryId != null){
+			putQueryParameter("LibraryId", libraryId);
 		}
 	}
 

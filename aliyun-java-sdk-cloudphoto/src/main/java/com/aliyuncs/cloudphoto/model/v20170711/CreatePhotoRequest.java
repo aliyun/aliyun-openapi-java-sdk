@@ -34,6 +34,8 @@ public class CreatePhotoRequest extends RpcAcsRequest<CreatePhotoResponse> {
 
 	private String photoTitle;
 
+	private String libraryId;
+
 	private String storeName;
 
 	private String uploadType;
@@ -52,6 +54,17 @@ public class CreatePhotoRequest extends RpcAcsRequest<CreatePhotoResponse> {
 		this.photoTitle = photoTitle;
 		if(photoTitle != null){
 			putQueryParameter("PhotoTitle", photoTitle);
+		}
+	}
+
+	public String getLibraryId() {
+		return this.libraryId;
+	}
+
+	public void setLibraryId(String libraryId) {
+		this.libraryId = libraryId;
+		if(libraryId != null){
+			putQueryParameter("LibraryId", libraryId);
 		}
 	}
 

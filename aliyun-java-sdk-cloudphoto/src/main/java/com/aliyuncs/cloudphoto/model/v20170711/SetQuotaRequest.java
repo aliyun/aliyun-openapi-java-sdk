@@ -34,6 +34,8 @@ public class SetQuotaRequest extends RpcAcsRequest<SetQuotaResponse> {
 
 	private Long totalQuota;
 
+	private String libraryId;
+
 	private String storeName;
 
 	public Long getTotalQuota() {
@@ -44,6 +46,17 @@ public class SetQuotaRequest extends RpcAcsRequest<SetQuotaResponse> {
 		this.totalQuota = totalQuota;
 		if(totalQuota != null){
 			putQueryParameter("TotalQuota", totalQuota.toString());
+		}
+	}
+
+	public String getLibraryId() {
+		return this.libraryId;
+	}
+
+	public void setLibraryId(String libraryId) {
+		this.libraryId = libraryId;
+		if(libraryId != null){
+			putQueryParameter("LibraryId", libraryId);
 		}
 	}
 

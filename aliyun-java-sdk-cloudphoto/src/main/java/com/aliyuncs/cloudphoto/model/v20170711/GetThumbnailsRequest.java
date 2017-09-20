@@ -33,11 +33,24 @@ public class GetThumbnailsRequest extends RpcAcsRequest<GetThumbnailsResponse> {
 		setProtocol(ProtocolType.HTTPS);
 	}
 
+	private String libraryId;
+
 	private List<Long> photoIds;
 
 	private String storeName;
 
 	private String zoomType;
+
+	public String getLibraryId() {
+		return this.libraryId;
+	}
+
+	public void setLibraryId(String libraryId) {
+		this.libraryId = libraryId;
+		if(libraryId != null){
+			putQueryParameter("LibraryId", libraryId);
+		}
+	}
 
 	public List<Long> getPhotoIds() {
 		return this.photoIds;

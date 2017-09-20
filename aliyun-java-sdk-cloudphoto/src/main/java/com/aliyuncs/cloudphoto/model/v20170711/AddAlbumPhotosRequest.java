@@ -33,11 +33,24 @@ public class AddAlbumPhotosRequest extends RpcAcsRequest<AddAlbumPhotosResponse>
 		setProtocol(ProtocolType.HTTPS);
 	}
 
+	private String libraryId;
+
 	private Long albumId;
 
 	private List<Long> photoIds;
 
 	private String storeName;
+
+	public String getLibraryId() {
+		return this.libraryId;
+	}
+
+	public void setLibraryId(String libraryId) {
+		this.libraryId = libraryId;
+		if(libraryId != null){
+			putQueryParameter("LibraryId", libraryId);
+		}
+	}
 
 	public Long getAlbumId() {
 		return this.albumId;

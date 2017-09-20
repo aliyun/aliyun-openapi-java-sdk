@@ -33,9 +33,22 @@ public class DeleteFacesRequest extends RpcAcsRequest<DeleteFacesResponse> {
 		setProtocol(ProtocolType.HTTPS);
 	}
 
+	private String libraryId;
+
 	private String storeName;
 
 	private List<Long> faceIds;
+
+	public String getLibraryId() {
+		return this.libraryId;
+	}
+
+	public void setLibraryId(String libraryId) {
+		this.libraryId = libraryId;
+		if(libraryId != null){
+			putQueryParameter("LibraryId", libraryId);
+		}
+	}
 
 	public String getStoreName() {
 		return this.storeName;

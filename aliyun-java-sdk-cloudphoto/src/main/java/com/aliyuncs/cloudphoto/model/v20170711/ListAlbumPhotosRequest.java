@@ -36,6 +36,8 @@ public class ListAlbumPhotosRequest extends RpcAcsRequest<ListAlbumPhotosRespons
 
 	private Integer size;
 
+	private String libraryId;
+
 	private Long albumId;
 
 	private String storeName;
@@ -63,6 +65,17 @@ public class ListAlbumPhotosRequest extends RpcAcsRequest<ListAlbumPhotosRespons
 		this.size = size;
 		if(size != null){
 			putQueryParameter("Size", size.toString());
+		}
+	}
+
+	public String getLibraryId() {
+		return this.libraryId;
+	}
+
+	public void setLibraryId(String libraryId) {
+		this.libraryId = libraryId;
+		if(libraryId != null){
+			putQueryParameter("LibraryId", libraryId);
 		}
 	}
 
