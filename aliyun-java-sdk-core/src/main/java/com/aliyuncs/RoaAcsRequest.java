@@ -25,6 +25,8 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.aliyuncs.auth.AlibabaCloudCredentials;
+import com.aliyuncs.auth.BasicSessionCredentials;
 import com.aliyuncs.auth.Credential;
 import com.aliyuncs.auth.ISigner;
 import com.aliyuncs.auth.RoaSignatureComposer;
@@ -134,7 +136,7 @@ public abstract class RoaAcsRequest<T extends AcsResponse> extends AcsRequest<T>
     }
 
     @Override
-    public HttpRequest signRequest(ISigner signer, Credential credential, FormatType format, ProductDomain domain)
+    public HttpRequest signRequest(ISigner signer, AlibabaCloudCredentials credentials, FormatType format, ProductDomain domain)
         throws InvalidKeyException, IllegalStateException, UnsupportedEncodingException, NoSuchAlgorithmException {
 
         Map<String, String> formParams = this.getBodyParameters();
@@ -144,12 +146,12 @@ public abstract class RoaAcsRequest<T extends AcsResponse> extends AcsRequest<T>
         }
 
         Map<String, String> imutableMap = new HashMap<String, String>(this.getHeaders());
-        if (null != signer && null != credential) {
-            String accessKeyId = credential.getAccessKeyId();
-            String accessSecret = credential.getAccessSecret();
+        if (null != signer && null != credentials) {
+            String accessKeyId = credentials.getAccessKeyId();
+            String accessSecret = credentials.getAccessKeySecret();
             imutableMap = this.composer.refreshSignParameters(this.getHeaders(), signer, accessKeyId, format);
-            if (null != credential.getSecurityToken()) {
-                imutableMap.put("SecurityToken", credential.getSecurityToken()); 
+            if (credentials instanceof BasicSessionCredentials) {
+                imutableMap.put("x-acs-security-token", ((BasicSessionCredentials)credentials).getSessionToken());
             } 
             String strToSign = this.composer.composeStringToSign(this.getMethod(), this.getUriPattern(), signer,
                 this.getQueryParameters(), imutableMap, this.getPathParameters());

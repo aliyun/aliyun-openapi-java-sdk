@@ -27,7 +27,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import com.aliyuncs.auth.AlibabaCloudCredentials;
+import com.aliyuncs.auth.AlibabaCloudCredentialsProvider;
 import com.aliyuncs.auth.Credential;
+import com.aliyuncs.auth.CredentialsBackupCompatibilityAdaptor;
 import com.aliyuncs.auth.ICredentialProvider;
 import com.aliyuncs.auth.ISigner;
 import com.aliyuncs.auth.ShaHmac1Singleton;
@@ -60,6 +63,11 @@ public class DefaultProfile implements IClientProfile {
         this.locationConfig = new LocationConfig();
         this.iendpoints = new InternalEndpointsParser();
         this.remoteProvider = RemoteEndpointsParser.initRemoteEndpointsParser();
+    }
+
+    private DefaultProfile(String regionId) {
+        this();
+        this.regionId = regionId;
     }
 
     private DefaultProfile(String region, Credential creden) {
@@ -246,6 +254,10 @@ public class DefaultProfile implements IClientProfile {
         return profile;
     }
 
+    public synchronized static DefaultProfile getProfile(String regionId) {
+        return new DefaultProfile(regionId);
+    }
+
     public synchronized static void addEndpoint(String endpointName, String regionId, String product, String domain)
         throws ClientException {
         addEndpoint(endpointName, regionId, product, domain, true);
@@ -319,6 +331,14 @@ public class DefaultProfile implements IClientProfile {
     
     public void mockRemoteProvider(IEndpointsProvider remoteProvider) {
         this.remoteProvider = remoteProvider;
+    }
+
+    @Override
+    public void setCredentialsProvider(AlibabaCloudCredentialsProvider credentialsProvider) {
+        if (credential != null) {
+            return;
+        }
+        credential = new CredentialsBackupCompatibilityAdaptor(credentialsProvider);
     }
 
 }

@@ -16,11 +16,31 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+
 package com.aliyuncs.auth;
 
-@Deprecated
-public interface ICredentialProvider{
+/**
+ * Created by haowei.yao on 2017/9/13.
+ */
+/**
+ * Simple credentials with AccessKeyID and AccessKeySecret
+ */
+public class LegacyCredentials implements AlibabaCloudCredentials {
 
-    public Credential fresh();
+    private final Credential legacyCredential;
+
+    public LegacyCredentials(Credential legacyCrendential) {
+        this.legacyCredential = legacyCrendential;
+    }
+
+    @Override
+    public String getAccessKeyId() {
+        return legacyCredential.getAccessKeyId();
+    }
+
+    @Override
+    public String getAccessKeySecret() {
+        return legacyCredential.getAccessSecret();
+    }
 
 }

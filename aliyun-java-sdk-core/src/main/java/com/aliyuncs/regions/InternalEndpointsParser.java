@@ -70,6 +70,19 @@ public class InternalEndpointsParser implements IEndpointsProvider {
         return endpoints;
     }
 
+    public List<Endpoint> getEndpoints() throws ClientException {
+        InputStream stream = this.getClass().getResourceAsStream(BUNDLED_ENDPOINTS_RESOURCE_PATH);
+        try {
+            return parseEndpoints(stream);
+        } catch (IOException e) {
+            throw new ClientException("SDK.MissingEndpointsFile", "Internal endpoints file is missing.");
+        } catch (ParserConfigurationException e) {
+            throw new ClientException("SDK.InvalidEndpointsFile", "Internal endpoints file is missing.");
+        } catch (SAXException e) {
+            throw new ClientException("SDK.EndpointsFileMalformed", "Internal endpoints file is missing.");
+        }
+    }
+
     @Override
     public Endpoint getEndpoint(String region, String product) throws ClientException {
         InputStream stream = this.getClass().getResourceAsStream(BUNDLED_ENDPOINTS_RESOURCE_PATH);

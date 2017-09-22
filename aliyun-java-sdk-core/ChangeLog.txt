@@ -1,3 +1,8 @@
+2017-09-22 Version: 3.3.0
+1,  支持使用STS Token调用SDK访问API。
+2,  支持使用RoleArn调用SDK，SDK进行AssumeRole获取授权信息并自动Rotate。
+3,  支持在ECS上利用Metadata Service进行“无AK”访问。
+
 2017-09-06 Version: 3.2.10
 1, 修改IoT套件美西和新加坡节点的endpoint
 

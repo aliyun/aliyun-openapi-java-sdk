@@ -153,8 +153,12 @@ public class HttpRequest {
     public HttpURLConnection getHttpConnection() throws IOException {
         Map<String, String> mappedHeaders = this.headers;
         String strUrl = url;
-        if (null == strUrl || null == this.method) {
-            return null;
+
+        if (null == strUrl) {
+            throw new IllegalArgumentException("URL is null for HttpRequest.");
+        }
+        if (null == this.method) {
+            throw new IllegalArgumentException("Method is not set for HttpRequest.");
         }
         URL url = null;
         String[] urlArray = null;

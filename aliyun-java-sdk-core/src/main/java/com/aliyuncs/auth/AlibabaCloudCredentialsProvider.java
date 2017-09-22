@@ -16,11 +16,27 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+
 package com.aliyuncs.auth;
 
-@Deprecated
-public interface ICredentialProvider{
+/**
+ * Created by haowei.yao on 2017/9/12.
+ */
 
-    public Credential fresh();
+import java.io.IOException;
 
+import com.aliyuncs.exceptions.ClientException;
+import com.aliyuncs.exceptions.ServerException;
+import com.sun.corba.se.spi.activation.Server;
+
+/**
+ * Interface for providing alibaba cloud credentials.
+ * Implementations will provide credentials in a particular approach.
+ */
+public interface AlibabaCloudCredentialsProvider {
+
+    /**
+     * @return credentials for the client to authorize a request
+     */
+    public AlibabaCloudCredentials getCredentials() throws ClientException, ServerException;
 }

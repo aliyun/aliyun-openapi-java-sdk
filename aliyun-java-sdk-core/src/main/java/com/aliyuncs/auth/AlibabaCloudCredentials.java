@@ -16,11 +16,27 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+
 package com.aliyuncs.auth;
 
-@Deprecated
-public interface ICredentialProvider{
+/**
+ * Created by haowei.yao on 2017/9/12.
+ */
 
-    public Credential fresh();
+/**
+ * Provides AccessKeyId and AccessKeySecret to authorize a
+ * request, for accessing Alibaba Cloud services. The AK pair
+ * is used to sign requests.
+ */
+public interface AlibabaCloudCredentials {
 
+    /**
+     * @return the Access Key Id for this credential
+     */
+    public String getAccessKeyId();
+
+    /**
+     * @return the Access Key Secret for this credential
+     */
+    public String getAccessKeySecret();
 }

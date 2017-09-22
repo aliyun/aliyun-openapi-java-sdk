@@ -21,6 +21,7 @@ package com.aliyuncs.auth;
 import java.util.Calendar;
 import java.util.Date;
 
+@Deprecated
 public class Credential {
 
     private final Date refreshDate;

@@ -24,6 +24,7 @@ import java.security.NoSuchAlgorithmException;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.aliyuncs.auth.AlibabaCloudCredentials;
 import com.aliyuncs.auth.Credential;
 import com.aliyuncs.auth.ISigner;
 import com.aliyuncs.auth.OssSignatureComposer;
@@ -72,14 +73,14 @@ public abstract class OssAcsRequest<T extends AcsResponse>
     }
 
     @Override
-    public HttpRequest signRequest(ISigner signer, Credential credential,
+    public HttpRequest signRequest(ISigner signer, AlibabaCloudCredentials credentials,
                                    FormatType format, ProductDomain domain)
         throws InvalidKeyException, IllegalStateException,
         UnsupportedEncodingException, NoSuchAlgorithmException {
         Map<String, String> imutableMap = new HashMap<String, String>(this.getHeaders());
-        if (null != signer && null != credential) {
-            String accessKeyId = credential.getAccessKeyId();
-            String accessSecret = credential.getAccessSecret();
+        if (null != signer && null != credentials) {
+            String accessKeyId = credentials.getAccessKeyId();
+            String accessSecret = credentials.getAccessKeySecret();
             imutableMap = this.composer.refreshSignParameters
                 (this.getHeaders(), signer, accessKeyId, format);
             String uri = this.uriPattern;

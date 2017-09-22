@@ -62,6 +62,7 @@ public interface IAcsClient {
                                                          int maxRetryCounts, IClientProfile profile)
         throws ClientException, ServerException;
 
+    @Deprecated
     public <T extends AcsResponse> HttpResponse doAction(AcsRequest<T> request,
                                                          boolean autoRetry, int maxRetryNumber,
                                                          String regionId, Credential credential,

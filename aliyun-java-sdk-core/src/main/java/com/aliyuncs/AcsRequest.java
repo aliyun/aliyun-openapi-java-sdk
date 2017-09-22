@@ -27,9 +27,11 @@ import java.util.Map;
 import java.util.Map.Entry;
 
 import com.aliyuncs.auth.AcsURLEncoder;
+import com.aliyuncs.auth.AlibabaCloudCredentials;
 import com.aliyuncs.auth.Credential;
 import com.aliyuncs.auth.ISignatureComposer;
 import com.aliyuncs.auth.ISigner;
+import com.aliyuncs.auth.LegacyCredentials;
 import com.aliyuncs.http.FormatType;
 import com.aliyuncs.http.HttpRequest;
 import com.aliyuncs.http.ProtocolType;
@@ -197,7 +199,14 @@ public abstract class AcsRequest<T extends AcsResponse> extends HttpRequest {
         return urlBuilder.toString();
     }
 
-    public abstract HttpRequest signRequest(ISigner signer, Credential credential,
+    public HttpRequest signRequest(ISigner signer, Credential credential,
+                                            FormatType format, ProductDomain domain)
+        throws InvalidKeyException, IllegalStateException,
+        UnsupportedEncodingException, NoSuchAlgorithmException {
+        return signRequest(signer, new LegacyCredentials(credential), format, domain);
+    }
+
+    public abstract HttpRequest signRequest(ISigner signer, AlibabaCloudCredentials credentials,
                                             FormatType format, ProductDomain domain)
         throws InvalidKeyException, IllegalStateException,
         UnsupportedEncodingException, NoSuchAlgorithmException;

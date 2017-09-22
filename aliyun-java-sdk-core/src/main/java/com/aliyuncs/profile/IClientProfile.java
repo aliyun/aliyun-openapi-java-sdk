@@ -20,6 +20,7 @@ package com.aliyuncs.profile;
 
 import java.util.List;
 
+import com.aliyuncs.auth.AlibabaCloudCredentialsProvider;
 import com.aliyuncs.auth.Credential;
 import com.aliyuncs.auth.ISigner;
 import com.aliyuncs.exceptions.ClientException;
@@ -34,6 +35,7 @@ public interface IClientProfile {
 
     public FormatType getFormat();
 
+    @Deprecated
     public Credential getCredential();
 
     public void setLocationConfig(String regionId, String product, String endpoint);
@@ -44,4 +46,10 @@ public interface IClientProfile {
 
     public List<Endpoint> getEndpoints(String product, String regionId, String serviceCode, String endpointType)
         throws ClientException;
+
+    /**
+     * This method exists because ClientProfile holds too much modules like endpoint management
+     * @param credentialsProvider
+     */
+    public void setCredentialsProvider(AlibabaCloudCredentialsProvider credentialsProvider);
 }
