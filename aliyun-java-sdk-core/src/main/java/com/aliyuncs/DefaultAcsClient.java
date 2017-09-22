@@ -213,6 +213,7 @@ public class DefaultAcsClient implements IAcsClient {
                                                          ISigner signer, FormatType format,
                                                          List<Endpoint> endpoints)
         throws ClientException, ServerException {
+
         try {
             FormatType requestFormatType = request.getAcceptFormat();
             if (null != requestFormatType) {
@@ -222,20 +223,31 @@ public class DefaultAcsClient implements IAcsClient {
             if (null == domain) {
                 throw new ClientException("SDK.InvalidRegionId", "Can not find endpoint to access.");
             }
-            HttpRequest httpRequest = request.signRequest(signer, credentials, format, domain);
 
-            if (this.urlTestFlag) {
-                throw new ClientException("URLTestFlagIsSet", httpRequest.getUrl());
-            }
+            boolean shouldRetry = true;
+            for (int retryTimes = 0; shouldRetry; retryTimes ++) {
 
-            int retryTimes = 1;
-            HttpResponse response = HttpResponse.getResponse(httpRequest);
-            while (500 <= response.getStatus() && autoRetry && retryTimes < maxRetryNumber) {
-                httpRequest = request.signRequest(signer, credentials, format, domain);
+                shouldRetry = autoRetry && retryTimes < maxRetryNumber;
+
+                HttpRequest httpRequest = request.signRequest(signer, credentials, format, domain);
+
+                HttpResponse response;
                 response = HttpResponse.getResponse(httpRequest);
-                retryTimes++;
+                if (response.getHttpContent() == null) {
+                    if (shouldRetry) {
+                        continue;
+                    } else {
+                        throw new ClientException("SDK.ConnectionReset", "Connection reset.");
+                    }
+                }
+
+                if (500 <= response.getStatus() && shouldRetry) {
+                    continue;
+                }
+
+                return response;
             }
-            return response;
+
         } catch (InvalidKeyException exp) {
             throw new ClientException("SDK.InvalidAccessSecret", "Speicified access secret is not valid.");
         } catch (SocketTimeoutException exp) {
@@ -246,6 +258,8 @@ public class DefaultAcsClient implements IAcsClient {
         } catch (NoSuchAlgorithmException exp) {
             throw new ClientException("SDK.InvalidMD5Algorithm", "MD5 hash is not supported by client side.");
         }
+
+        return null;
     }
 
     private <T extends AcsResponse> T readResponse(Class<T> clasz, HttpResponse httpResponse, FormatType format)

@@ -1,3 +1,6 @@
+2017-09-22 Version: 3.3.1
+1,  修正在网络连接发生重置时抛出 NullPointerException的问题。在连接重置时SDK执行默认重试策略。
+
 2017-09-22 Version: 3.3.0
 1,  支持使用STS Token调用SDK访问API。
 2,  支持使用RoleArn调用SDK，SDK进行AssumeRole获取授权信息并自动Rotate。
