@@ -30,75 +30,42 @@ public class ModifyVirtualBorderRouterAttributeRequest extends RpcAcsRequest<Mod
 		super("Ecs", "2014-05-26", "ModifyVirtualBorderRouterAttribute", "ecs");
 	}
 
-	private Integer vlanId;
-
-	private String clientToken;
-
-	private String userCidr;
-
-	private Long ownerId;
+	private Long resourceOwnerId;
 
 	private String circuitCode;
 
-	private String localGatewayIp;
+	private Integer vlanId;
 
 	private String resourceOwnerAccount;
 
-	private String description;
-
-	private String peerGatewayIp;
-
-	private String name;
-
-	private String peeringSubnetMask;
-
-	private Long resourceOwnerId;
+	private String clientToken;
 
 	private String ownerAccount;
 
+	private String description;
+
 	private String vbrId;
 
-	public Integer getVlanId() {
-		return this.vlanId;
+	private Long ownerId;
+
+	private String peerGatewayIp;
+
+	private String peeringSubnetMask;
+
+	private String name;
+
+	private String localGatewayIp;
+
+	private String userCidr;
+
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
 	}
 
-	public void setVlanId(Integer vlanId) {
-		this.vlanId = vlanId;
-		if(vlanId != null){
-			putQueryParameter("VlanId", vlanId.toString());
-		}
-	}
-
-	public String getClientToken() {
-		return this.clientToken;
-	}
-
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putQueryParameter("ClientToken", clientToken);
-		}
-	}
-
-	public String getUserCidr() {
-		return this.userCidr;
-	}
-
-	public void setUserCidr(String userCidr) {
-		this.userCidr = userCidr;
-		if(userCidr != null){
-			putQueryParameter("UserCidr", userCidr);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
 		}
 	}
 
@@ -113,14 +80,14 @@ public class ModifyVirtualBorderRouterAttributeRequest extends RpcAcsRequest<Mod
 		}
 	}
 
-	public String getLocalGatewayIp() {
-		return this.localGatewayIp;
+	public Integer getVlanId() {
+		return this.vlanId;
 	}
 
-	public void setLocalGatewayIp(String localGatewayIp) {
-		this.localGatewayIp = localGatewayIp;
-		if(localGatewayIp != null){
-			putQueryParameter("LocalGatewayIp", localGatewayIp);
+	public void setVlanId(Integer vlanId) {
+		this.vlanId = vlanId;
+		if(vlanId != null){
+			putQueryParameter("VlanId", vlanId.toString());
 		}
 	}
 
@@ -135,58 +102,14 @@ public class ModifyVirtualBorderRouterAttributeRequest extends RpcAcsRequest<Mod
 		}
 	}
 
-	public String getDescription() {
-		return this.description;
+	public String getClientToken() {
+		return this.clientToken;
 	}
 
-	public void setDescription(String description) {
-		this.description = description;
-		if(description != null){
-			putQueryParameter("Description", description);
-		}
-	}
-
-	public String getPeerGatewayIp() {
-		return this.peerGatewayIp;
-	}
-
-	public void setPeerGatewayIp(String peerGatewayIp) {
-		this.peerGatewayIp = peerGatewayIp;
-		if(peerGatewayIp != null){
-			putQueryParameter("PeerGatewayIp", peerGatewayIp);
-		}
-	}
-
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putQueryParameter("Name", name);
-		}
-	}
-
-	public String getPeeringSubnetMask() {
-		return this.peeringSubnetMask;
-	}
-
-	public void setPeeringSubnetMask(String peeringSubnetMask) {
-		this.peeringSubnetMask = peeringSubnetMask;
-		if(peeringSubnetMask != null){
-			putQueryParameter("PeeringSubnetMask", peeringSubnetMask);
-		}
-	}
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
 		}
 	}
 
@@ -201,6 +124,17 @@ public class ModifyVirtualBorderRouterAttributeRequest extends RpcAcsRequest<Mod
 		}
 	}
 
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+		if(description != null){
+			putQueryParameter("Description", description);
+		}
+	}
+
 	public String getVbrId() {
 		return this.vbrId;
 	}
@@ -209,6 +143,72 @@ public class ModifyVirtualBorderRouterAttributeRequest extends RpcAcsRequest<Mod
 		this.vbrId = vbrId;
 		if(vbrId != null){
 			putQueryParameter("VbrId", vbrId);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getPeerGatewayIp() {
+		return this.peerGatewayIp;
+	}
+
+	public void setPeerGatewayIp(String peerGatewayIp) {
+		this.peerGatewayIp = peerGatewayIp;
+		if(peerGatewayIp != null){
+			putQueryParameter("PeerGatewayIp", peerGatewayIp);
+		}
+	}
+
+	public String getPeeringSubnetMask() {
+		return this.peeringSubnetMask;
+	}
+
+	public void setPeeringSubnetMask(String peeringSubnetMask) {
+		this.peeringSubnetMask = peeringSubnetMask;
+		if(peeringSubnetMask != null){
+			putQueryParameter("PeeringSubnetMask", peeringSubnetMask);
+		}
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
+		}
+	}
+
+	public String getLocalGatewayIp() {
+		return this.localGatewayIp;
+	}
+
+	public void setLocalGatewayIp(String localGatewayIp) {
+		this.localGatewayIp = localGatewayIp;
+		if(localGatewayIp != null){
+			putQueryParameter("LocalGatewayIp", localGatewayIp);
+		}
+	}
+
+	public String getUserCidr() {
+		return this.userCidr;
+	}
+
+	public void setUserCidr(String userCidr) {
+		this.userCidr = userCidr;
+		if(userCidr != null){
+			putQueryParameter("UserCidr", userCidr);
 		}
 	}
 

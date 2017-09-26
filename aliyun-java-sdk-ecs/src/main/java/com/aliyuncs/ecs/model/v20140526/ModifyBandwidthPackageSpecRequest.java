@@ -30,17 +30,39 @@ public class ModifyBandwidthPackageSpecRequest extends RpcAcsRequest<ModifyBandw
 		super("Ecs", "2014-05-26", "ModifyBandwidthPackageSpec", "ecs");
 	}
 
+	private Long resourceOwnerId;
+
+	private String bandwidthPackageId;
+
 	private String resourceOwnerAccount;
 
-	private Long resourceOwnerId;
+	private String bandwidth;
 
 	private String ownerAccount;
 
 	private Long ownerId;
 
-	private String bandwidth;
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
+	}
 
-	private String bandwidthPackageId;
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getBandwidthPackageId() {
+		return this.bandwidthPackageId;
+	}
+
+	public void setBandwidthPackageId(String bandwidthPackageId) {
+		this.bandwidthPackageId = bandwidthPackageId;
+		if(bandwidthPackageId != null){
+			putQueryParameter("BandwidthPackageId", bandwidthPackageId);
+		}
+	}
 
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
@@ -53,14 +75,14 @@ public class ModifyBandwidthPackageSpecRequest extends RpcAcsRequest<ModifyBandw
 		}
 	}
 
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
+	public String getBandwidth() {
+		return this.bandwidth;
 	}
 
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+	public void setBandwidth(String bandwidth) {
+		this.bandwidth = bandwidth;
+		if(bandwidth != null){
+			putQueryParameter("Bandwidth", bandwidth);
 		}
 	}
 
@@ -83,28 +105,6 @@ public class ModifyBandwidthPackageSpecRequest extends RpcAcsRequest<ModifyBandw
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getBandwidth() {
-		return this.bandwidth;
-	}
-
-	public void setBandwidth(String bandwidth) {
-		this.bandwidth = bandwidth;
-		if(bandwidth != null){
-			putQueryParameter("Bandwidth", bandwidth);
-		}
-	}
-
-	public String getBandwidthPackageId() {
-		return this.bandwidthPackageId;
-	}
-
-	public void setBandwidthPackageId(String bandwidthPackageId) {
-		this.bandwidthPackageId = bandwidthPackageId;
-		if(bandwidthPackageId != null){
-			putQueryParameter("BandwidthPackageId", bandwidthPackageId);
 		}
 	}
 

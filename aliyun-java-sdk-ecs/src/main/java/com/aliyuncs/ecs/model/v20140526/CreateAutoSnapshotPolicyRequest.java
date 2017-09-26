@@ -30,9 +30,7 @@ public class CreateAutoSnapshotPolicyRequest extends RpcAcsRequest<CreateAutoSna
 		super("Ecs", "2014-05-26", "CreateAutoSnapshotPolicy", "ecs");
 	}
 
-	private String repeatWeekdays;
-
-	private String autoSnapshotPolicyName;
+	private Long resourceOwnerId;
 
 	private String resourceOwnerAccount;
 
@@ -40,29 +38,20 @@ public class CreateAutoSnapshotPolicyRequest extends RpcAcsRequest<CreateAutoSna
 
 	private Integer retentionDays;
 
-	private Long resourceOwnerId;
-
 	private Long ownerId;
 
-	public String getRepeatWeekdays() {
-		return this.repeatWeekdays;
+	private String repeatWeekdays;
+
+	private String autoSnapshotPolicyName;
+
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
 	}
 
-	public void setRepeatWeekdays(String repeatWeekdays) {
-		this.repeatWeekdays = repeatWeekdays;
-		if(repeatWeekdays != null){
-			putQueryParameter("repeatWeekdays", repeatWeekdays);
-		}
-	}
-
-	public String getAutoSnapshotPolicyName() {
-		return this.autoSnapshotPolicyName;
-	}
-
-	public void setAutoSnapshotPolicyName(String autoSnapshotPolicyName) {
-		this.autoSnapshotPolicyName = autoSnapshotPolicyName;
-		if(autoSnapshotPolicyName != null){
-			putQueryParameter("autoSnapshotPolicyName", autoSnapshotPolicyName);
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
 		}
 	}
 
@@ -99,17 +88,6 @@ public class CreateAutoSnapshotPolicyRequest extends RpcAcsRequest<CreateAutoSna
 		}
 	}
 
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -118,6 +96,28 @@ public class CreateAutoSnapshotPolicyRequest extends RpcAcsRequest<CreateAutoSna
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getRepeatWeekdays() {
+		return this.repeatWeekdays;
+	}
+
+	public void setRepeatWeekdays(String repeatWeekdays) {
+		this.repeatWeekdays = repeatWeekdays;
+		if(repeatWeekdays != null){
+			putQueryParameter("repeatWeekdays", repeatWeekdays);
+		}
+	}
+
+	public String getAutoSnapshotPolicyName() {
+		return this.autoSnapshotPolicyName;
+	}
+
+	public void setAutoSnapshotPolicyName(String autoSnapshotPolicyName) {
+		this.autoSnapshotPolicyName = autoSnapshotPolicyName;
+		if(autoSnapshotPolicyName != null){
+			putQueryParameter("autoSnapshotPolicyName", autoSnapshotPolicyName);
 		}
 	}
 

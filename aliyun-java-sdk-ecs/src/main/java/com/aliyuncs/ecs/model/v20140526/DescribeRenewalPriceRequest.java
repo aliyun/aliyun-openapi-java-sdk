@@ -30,54 +30,21 @@ public class DescribeRenewalPriceRequest extends RpcAcsRequest<DescribeRenewalPr
 		super("Ecs", "2014-05-26", "DescribeRenewalPrice", "ecs");
 	}
 
-	private String resourceOwnerAccount;
-
-	private String resourceType;
-
-	private String priceUnit;
-
 	private Long resourceOwnerId;
-
-	private Integer period;
 
 	private String resourceId;
 
+	private Integer period;
+
+	private String resourceOwnerAccount;
+
 	private String ownerAccount;
+
+	private String priceUnit;
 
 	private Long ownerId;
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public String getResourceType() {
-		return this.resourceType;
-	}
-
-	public void setResourceType(String resourceType) {
-		this.resourceType = resourceType;
-		if(resourceType != null){
-			putQueryParameter("ResourceType", resourceType);
-		}
-	}
-
-	public String getPriceUnit() {
-		return this.priceUnit;
-	}
-
-	public void setPriceUnit(String priceUnit) {
-		this.priceUnit = priceUnit;
-		if(priceUnit != null){
-			putQueryParameter("PriceUnit", priceUnit);
-		}
-	}
+	private String resourceType;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -87,17 +54,6 @@ public class DescribeRenewalPriceRequest extends RpcAcsRequest<DescribeRenewalPr
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public Integer getPeriod() {
-		return this.period;
-	}
-
-	public void setPeriod(Integer period) {
-		this.period = period;
-		if(period != null){
-			putQueryParameter("Period", period.toString());
 		}
 	}
 
@@ -112,6 +68,28 @@ public class DescribeRenewalPriceRequest extends RpcAcsRequest<DescribeRenewalPr
 		}
 	}
 
+	public Integer getPeriod() {
+		return this.period;
+	}
+
+	public void setPeriod(Integer period) {
+		this.period = period;
+		if(period != null){
+			putQueryParameter("Period", period.toString());
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
 	public String getOwnerAccount() {
 		return this.ownerAccount;
 	}
@@ -123,6 +101,17 @@ public class DescribeRenewalPriceRequest extends RpcAcsRequest<DescribeRenewalPr
 		}
 	}
 
+	public String getPriceUnit() {
+		return this.priceUnit;
+	}
+
+	public void setPriceUnit(String priceUnit) {
+		this.priceUnit = priceUnit;
+		if(priceUnit != null){
+			putQueryParameter("PriceUnit", priceUnit);
+		}
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -131,6 +120,17 @@ public class DescribeRenewalPriceRequest extends RpcAcsRequest<DescribeRenewalPr
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getResourceType() {
+		return this.resourceType;
+	}
+
+	public void setResourceType(String resourceType) {
+		this.resourceType = resourceType;
+		if(resourceType != null){
+			putQueryParameter("ResourceType", resourceType);
 		}
 	}
 

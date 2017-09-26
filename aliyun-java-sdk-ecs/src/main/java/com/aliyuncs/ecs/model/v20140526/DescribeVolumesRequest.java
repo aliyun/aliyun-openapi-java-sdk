@@ -30,163 +30,64 @@ public class DescribeVolumesRequest extends RpcAcsRequest<DescribeVolumesRespons
 		super("Ecs", "2014-05-26", "DescribeVolumes", "ecs");
 	}
 
-	private Boolean enableAutomatedSnapshotPolicy;
-
-	private Integer pageSize;
-
-	private String zoneId;
-
-	private String tag5Value;
-
-	private String tag3Key;
-
-	private String resourceOwnerAccount;
-
-	private String snapshotId;
-
-	private String tag1Key;
-
-	private String tag1Value;
-
-	private String volumeIds;
+	private String tag4Value;
 
 	private Long resourceOwnerId;
 
-	private String tag4Value;
-
-	private String ownerAccount;
-
-	private String status;
-
-	private Integer pageNumber;
-
-	private Long ownerId;
-
-	private String tag5Key;
-
-	private String lockReason;
-
-	private String category;
+	private String snapshotId;
 
 	private String tag2Key;
 
 	private String autoSnapshotPolicyId;
 
-	private String instanceId;
+	private String tag3Key;
+
+	private Integer pageNumber;
+
+	private String tag1Value;
+
+	private String lockReason;
+
+	private Integer pageSize;
 
 	private String tag3Value;
 
-	private String tag4Key;
+	private String tag5Key;
+
+	private String resourceOwnerAccount;
+
+	private String ownerAccount;
+
+	private Boolean enableAutomatedSnapshotPolicy;
+
+	private Long ownerId;
+
+	private String tag5Value;
+
+	private String tag1Key;
+
+	private String instanceId;
 
 	private String tag2Value;
 
-	public Boolean getEnableAutomatedSnapshotPolicy() {
-		return this.enableAutomatedSnapshotPolicy;
+	private String zoneId;
+
+	private String tag4Key;
+
+	private String volumeIds;
+
+	private String category;
+
+	private String status;
+
+	public String getTag4Value() {
+		return this.tag4Value;
 	}
 
-	public void setEnableAutomatedSnapshotPolicy(Boolean enableAutomatedSnapshotPolicy) {
-		this.enableAutomatedSnapshotPolicy = enableAutomatedSnapshotPolicy;
-		if(enableAutomatedSnapshotPolicy != null){
-			putQueryParameter("EnableAutomatedSnapshotPolicy", enableAutomatedSnapshotPolicy.toString());
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
-	public String getZoneId() {
-		return this.zoneId;
-	}
-
-	public void setZoneId(String zoneId) {
-		this.zoneId = zoneId;
-		if(zoneId != null){
-			putQueryParameter("ZoneId", zoneId);
-		}
-	}
-
-	public String getTag5Value() {
-		return this.tag5Value;
-	}
-
-	public void setTag5Value(String tag5Value) {
-		this.tag5Value = tag5Value;
-		if(tag5Value != null){
-			putQueryParameter("Tag.5.Value", tag5Value);
-		}
-	}
-
-	public String getTag3Key() {
-		return this.tag3Key;
-	}
-
-	public void setTag3Key(String tag3Key) {
-		this.tag3Key = tag3Key;
-		if(tag3Key != null){
-			putQueryParameter("Tag.3.Key", tag3Key);
-		}
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public String getSnapshotId() {
-		return this.snapshotId;
-	}
-
-	public void setSnapshotId(String snapshotId) {
-		this.snapshotId = snapshotId;
-		if(snapshotId != null){
-			putQueryParameter("SnapshotId", snapshotId);
-		}
-	}
-
-	public String getTag1Key() {
-		return this.tag1Key;
-	}
-
-	public void setTag1Key(String tag1Key) {
-		this.tag1Key = tag1Key;
-		if(tag1Key != null){
-			putQueryParameter("Tag.1.Key", tag1Key);
-		}
-	}
-
-	public String getTag1Value() {
-		return this.tag1Value;
-	}
-
-	public void setTag1Value(String tag1Value) {
-		this.tag1Value = tag1Value;
-		if(tag1Value != null){
-			putQueryParameter("Tag.1.Value", tag1Value);
-		}
-	}
-
-	public String getVolumeIds() {
-		return this.volumeIds;
-	}
-
-	public void setVolumeIds(String volumeIds) {
-		this.volumeIds = volumeIds;
-		if(volumeIds != null){
-			putQueryParameter("VolumeIds", volumeIds);
+	public void setTag4Value(String tag4Value) {
+		this.tag4Value = tag4Value;
+		if(tag4Value != null){
+			putQueryParameter("Tag.4.Value", tag4Value);
 		}
 	}
 
@@ -201,91 +102,14 @@ public class DescribeVolumesRequest extends RpcAcsRequest<DescribeVolumesRespons
 		}
 	}
 
-	public String getTag4Value() {
-		return this.tag4Value;
+	public String getSnapshotId() {
+		return this.snapshotId;
 	}
 
-	public void setTag4Value(String tag4Value) {
-		this.tag4Value = tag4Value;
-		if(tag4Value != null){
-			putQueryParameter("Tag.4.Value", tag4Value);
-		}
-	}
-
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
-
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		if(ownerAccount != null){
-			putQueryParameter("OwnerAccount", ownerAccount);
-		}
-	}
-
-	public String getStatus() {
-		return this.status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
-		if(status != null){
-			putQueryParameter("Status", status);
-		}
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getTag5Key() {
-		return this.tag5Key;
-	}
-
-	public void setTag5Key(String tag5Key) {
-		this.tag5Key = tag5Key;
-		if(tag5Key != null){
-			putQueryParameter("Tag.5.Key", tag5Key);
-		}
-	}
-
-	public String getLockReason() {
-		return this.lockReason;
-	}
-
-	public void setLockReason(String lockReason) {
-		this.lockReason = lockReason;
-		if(lockReason != null){
-			putQueryParameter("LockReason", lockReason);
-		}
-	}
-
-	public String getCategory() {
-		return this.category;
-	}
-
-	public void setCategory(String category) {
-		this.category = category;
-		if(category != null){
-			putQueryParameter("Category", category);
+	public void setSnapshotId(String snapshotId) {
+		this.snapshotId = snapshotId;
+		if(snapshotId != null){
+			putQueryParameter("SnapshotId", snapshotId);
 		}
 	}
 
@@ -311,14 +135,58 @@ public class DescribeVolumesRequest extends RpcAcsRequest<DescribeVolumesRespons
 		}
 	}
 
-	public String getInstanceId() {
-		return this.instanceId;
+	public String getTag3Key() {
+		return this.tag3Key;
 	}
 
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
+	public void setTag3Key(String tag3Key) {
+		this.tag3Key = tag3Key;
+		if(tag3Key != null){
+			putQueryParameter("Tag.3.Key", tag3Key);
+		}
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public String getTag1Value() {
+		return this.tag1Value;
+	}
+
+	public void setTag1Value(String tag1Value) {
+		this.tag1Value = tag1Value;
+		if(tag1Value != null){
+			putQueryParameter("Tag.1.Value", tag1Value);
+		}
+	}
+
+	public String getLockReason() {
+		return this.lockReason;
+	}
+
+	public void setLockReason(String lockReason) {
+		this.lockReason = lockReason;
+		if(lockReason != null){
+			putQueryParameter("LockReason", lockReason);
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 
@@ -333,14 +201,91 @@ public class DescribeVolumesRequest extends RpcAcsRequest<DescribeVolumesRespons
 		}
 	}
 
-	public String getTag4Key() {
-		return this.tag4Key;
+	public String getTag5Key() {
+		return this.tag5Key;
 	}
 
-	public void setTag4Key(String tag4Key) {
-		this.tag4Key = tag4Key;
-		if(tag4Key != null){
-			putQueryParameter("Tag.4.Key", tag4Key);
+	public void setTag5Key(String tag5Key) {
+		this.tag5Key = tag5Key;
+		if(tag5Key != null){
+			putQueryParameter("Tag.5.Key", tag5Key);
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public Boolean getEnableAutomatedSnapshotPolicy() {
+		return this.enableAutomatedSnapshotPolicy;
+	}
+
+	public void setEnableAutomatedSnapshotPolicy(Boolean enableAutomatedSnapshotPolicy) {
+		this.enableAutomatedSnapshotPolicy = enableAutomatedSnapshotPolicy;
+		if(enableAutomatedSnapshotPolicy != null){
+			putQueryParameter("EnableAutomatedSnapshotPolicy", enableAutomatedSnapshotPolicy.toString());
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getTag5Value() {
+		return this.tag5Value;
+	}
+
+	public void setTag5Value(String tag5Value) {
+		this.tag5Value = tag5Value;
+		if(tag5Value != null){
+			putQueryParameter("Tag.5.Value", tag5Value);
+		}
+	}
+
+	public String getTag1Key() {
+		return this.tag1Key;
+	}
+
+	public void setTag1Key(String tag1Key) {
+		this.tag1Key = tag1Key;
+		if(tag1Key != null){
+			putQueryParameter("Tag.1.Key", tag1Key);
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 
@@ -352,6 +297,61 @@ public class DescribeVolumesRequest extends RpcAcsRequest<DescribeVolumesRespons
 		this.tag2Value = tag2Value;
 		if(tag2Value != null){
 			putQueryParameter("Tag.2.Value", tag2Value);
+		}
+	}
+
+	public String getZoneId() {
+		return this.zoneId;
+	}
+
+	public void setZoneId(String zoneId) {
+		this.zoneId = zoneId;
+		if(zoneId != null){
+			putQueryParameter("ZoneId", zoneId);
+		}
+	}
+
+	public String getTag4Key() {
+		return this.tag4Key;
+	}
+
+	public void setTag4Key(String tag4Key) {
+		this.tag4Key = tag4Key;
+		if(tag4Key != null){
+			putQueryParameter("Tag.4.Key", tag4Key);
+		}
+	}
+
+	public String getVolumeIds() {
+		return this.volumeIds;
+	}
+
+	public void setVolumeIds(String volumeIds) {
+		this.volumeIds = volumeIds;
+		if(volumeIds != null){
+			putQueryParameter("VolumeIds", volumeIds);
+		}
+	}
+
+	public String getCategory() {
+		return this.category;
+	}
+
+	public void setCategory(String category) {
+		this.category = category;
+		if(category != null){
+			putQueryParameter("Category", category);
+		}
+	}
+
+	public String getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+		if(status != null){
+			putQueryParameter("Status", status);
 		}
 	}
 

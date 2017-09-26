@@ -30,28 +30,39 @@ public class AddBandwidthPackageIpsRequest extends RpcAcsRequest<AddBandwidthPac
 		super("Ecs", "2014-05-26", "AddBandwidthPackageIps", "ecs");
 	}
 
-	private String clientToken;
+	private Long resourceOwnerId;
+
+	private String bandwidthPackageId;
 
 	private String resourceOwnerAccount;
 
-	private String ipCount;
-
-	private Long resourceOwnerId;
+	private String clientToken;
 
 	private String ownerAccount;
 
 	private Long ownerId;
 
-	private String bandwidthPackageId;
+	private String ipCount;
 
-	public String getClientToken() {
-		return this.clientToken;
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
 	}
 
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putQueryParameter("ClientToken", clientToken);
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getBandwidthPackageId() {
+		return this.bandwidthPackageId;
+	}
+
+	public void setBandwidthPackageId(String bandwidthPackageId) {
+		this.bandwidthPackageId = bandwidthPackageId;
+		if(bandwidthPackageId != null){
+			putQueryParameter("BandwidthPackageId", bandwidthPackageId);
 		}
 	}
 
@@ -66,25 +77,14 @@ public class AddBandwidthPackageIpsRequest extends RpcAcsRequest<AddBandwidthPac
 		}
 	}
 
-	public String getIpCount() {
-		return this.ipCount;
+	public String getClientToken() {
+		return this.clientToken;
 	}
 
-	public void setIpCount(String ipCount) {
-		this.ipCount = ipCount;
-		if(ipCount != null){
-			putQueryParameter("IpCount", ipCount);
-		}
-	}
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
 		}
 	}
 
@@ -110,14 +110,14 @@ public class AddBandwidthPackageIpsRequest extends RpcAcsRequest<AddBandwidthPac
 		}
 	}
 
-	public String getBandwidthPackageId() {
-		return this.bandwidthPackageId;
+	public String getIpCount() {
+		return this.ipCount;
 	}
 
-	public void setBandwidthPackageId(String bandwidthPackageId) {
-		this.bandwidthPackageId = bandwidthPackageId;
-		if(bandwidthPackageId != null){
-			putQueryParameter("BandwidthPackageId", bandwidthPackageId);
+	public void setIpCount(String ipCount) {
+		this.ipCount = ipCount;
+		if(ipCount != null){
+			putQueryParameter("IpCount", ipCount);
 		}
 	}
 

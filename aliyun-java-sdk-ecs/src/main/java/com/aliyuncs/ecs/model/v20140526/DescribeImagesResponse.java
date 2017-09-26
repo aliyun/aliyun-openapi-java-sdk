@@ -319,6 +319,8 @@ public class DescribeImagesResponse extends AcsResponse {
 
 			private String device;
 
+			private String type;
+
 			private String format;
 
 			private String importOSSBucket;
@@ -347,6 +349,14 @@ public class DescribeImagesResponse extends AcsResponse {
 
 			public void setDevice(String device) {
 				this.device = device;
+			}
+
+			public String getType() {
+				return this.type;
+			}
+
+			public void setType(String type) {
+				this.type = type;
 			}
 
 			public String getFormat() {

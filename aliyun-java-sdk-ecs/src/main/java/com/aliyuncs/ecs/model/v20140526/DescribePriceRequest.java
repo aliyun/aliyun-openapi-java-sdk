@@ -30,11 +30,21 @@ public class DescribePriceRequest extends RpcAcsRequest<DescribePriceResponse> {
 		super("Ecs", "2014-05-26", "DescribePrice", "ecs");
 	}
 
-	private String systemDiskCategory;
-
 	private Integer dataDisk3Size;
 
-	private String resourceType;
+	private Long resourceOwnerId;
+
+	private String imageId;
+
+	private String dataDisk3Category;
+
+	private String ioOptimized;
+
+	private Integer internetMaxBandwidthOut;
+
+	private String systemDiskCategory;
+
+	private String dataDisk4Category;
 
 	private Integer dataDisk4Size;
 
@@ -42,52 +52,31 @@ public class DescribePriceRequest extends RpcAcsRequest<DescribePriceResponse> {
 
 	private String instanceType;
 
+	private String dataDisk2Category;
+
+	private Integer dataDisk1Size;
+
+	private Integer period;
+
 	private Integer amount;
 
 	private String resourceOwnerAccount;
 
-	private String dataDisk2Category;
-
-	private Long resourceOwnerId;
-
 	private String ownerAccount;
-
-	private Integer systemDiskSize;
 
 	private Integer dataDisk2Size;
 
-	private Integer internetMaxBandwidthOut;
-
-	private String internetChargeType;
-
-	private String dataDisk4Category;
-
 	private Long ownerId;
 
-	private Integer period;
-
-	private String imageId;
-
-	private String ioOptimized;
+	private String resourceType;
 
 	private String dataDisk1Category;
 
-	private Integer dataDisk1Size;
+	private Integer systemDiskSize;
 
-	private String dataDisk3Category;
+	private String internetChargeType;
 
 	private String instanceNetworkType;
-
-	public String getSystemDiskCategory() {
-		return this.systemDiskCategory;
-	}
-
-	public void setSystemDiskCategory(String systemDiskCategory) {
-		this.systemDiskCategory = systemDiskCategory;
-		if(systemDiskCategory != null){
-			putQueryParameter("SystemDisk.Category", systemDiskCategory);
-		}
-	}
 
 	public Integer getDataDisk3Size() {
 		return this.dataDisk3Size;
@@ -100,14 +89,80 @@ public class DescribePriceRequest extends RpcAcsRequest<DescribePriceResponse> {
 		}
 	}
 
-	public String getResourceType() {
-		return this.resourceType;
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
 	}
 
-	public void setResourceType(String resourceType) {
-		this.resourceType = resourceType;
-		if(resourceType != null){
-			putQueryParameter("ResourceType", resourceType);
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getImageId() {
+		return this.imageId;
+	}
+
+	public void setImageId(String imageId) {
+		this.imageId = imageId;
+		if(imageId != null){
+			putQueryParameter("ImageId", imageId);
+		}
+	}
+
+	public String getDataDisk3Category() {
+		return this.dataDisk3Category;
+	}
+
+	public void setDataDisk3Category(String dataDisk3Category) {
+		this.dataDisk3Category = dataDisk3Category;
+		if(dataDisk3Category != null){
+			putQueryParameter("DataDisk.3.Category", dataDisk3Category);
+		}
+	}
+
+	public String getIoOptimized() {
+		return this.ioOptimized;
+	}
+
+	public void setIoOptimized(String ioOptimized) {
+		this.ioOptimized = ioOptimized;
+		if(ioOptimized != null){
+			putQueryParameter("IoOptimized", ioOptimized);
+		}
+	}
+
+	public Integer getInternetMaxBandwidthOut() {
+		return this.internetMaxBandwidthOut;
+	}
+
+	public void setInternetMaxBandwidthOut(Integer internetMaxBandwidthOut) {
+		this.internetMaxBandwidthOut = internetMaxBandwidthOut;
+		if(internetMaxBandwidthOut != null){
+			putQueryParameter("InternetMaxBandwidthOut", internetMaxBandwidthOut.toString());
+		}
+	}
+
+	public String getSystemDiskCategory() {
+		return this.systemDiskCategory;
+	}
+
+	public void setSystemDiskCategory(String systemDiskCategory) {
+		this.systemDiskCategory = systemDiskCategory;
+		if(systemDiskCategory != null){
+			putQueryParameter("SystemDisk.Category", systemDiskCategory);
+		}
+	}
+
+	public String getDataDisk4Category() {
+		return this.dataDisk4Category;
+	}
+
+	public void setDataDisk4Category(String dataDisk4Category) {
+		this.dataDisk4Category = dataDisk4Category;
+		if(dataDisk4Category != null){
+			putQueryParameter("DataDisk.4.Category", dataDisk4Category);
 		}
 	}
 
@@ -144,6 +199,39 @@ public class DescribePriceRequest extends RpcAcsRequest<DescribePriceResponse> {
 		}
 	}
 
+	public String getDataDisk2Category() {
+		return this.dataDisk2Category;
+	}
+
+	public void setDataDisk2Category(String dataDisk2Category) {
+		this.dataDisk2Category = dataDisk2Category;
+		if(dataDisk2Category != null){
+			putQueryParameter("DataDisk.2.Category", dataDisk2Category);
+		}
+	}
+
+	public Integer getDataDisk1Size() {
+		return this.dataDisk1Size;
+	}
+
+	public void setDataDisk1Size(Integer dataDisk1Size) {
+		this.dataDisk1Size = dataDisk1Size;
+		if(dataDisk1Size != null){
+			putQueryParameter("DataDisk.1.Size", dataDisk1Size.toString());
+		}
+	}
+
+	public Integer getPeriod() {
+		return this.period;
+	}
+
+	public void setPeriod(Integer period) {
+		this.period = period;
+		if(period != null){
+			putQueryParameter("Period", period.toString());
+		}
+	}
+
 	public Integer getAmount() {
 		return this.amount;
 	}
@@ -166,28 +254,6 @@ public class DescribePriceRequest extends RpcAcsRequest<DescribePriceResponse> {
 		}
 	}
 
-	public String getDataDisk2Category() {
-		return this.dataDisk2Category;
-	}
-
-	public void setDataDisk2Category(String dataDisk2Category) {
-		this.dataDisk2Category = dataDisk2Category;
-		if(dataDisk2Category != null){
-			putQueryParameter("DataDisk.2.Category", dataDisk2Category);
-		}
-	}
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
 	public String getOwnerAccount() {
 		return this.ownerAccount;
 	}
@@ -196,17 +262,6 @@ public class DescribePriceRequest extends RpcAcsRequest<DescribePriceResponse> {
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
-		}
-	}
-
-	public Integer getSystemDiskSize() {
-		return this.systemDiskSize;
-	}
-
-	public void setSystemDiskSize(Integer systemDiskSize) {
-		this.systemDiskSize = systemDiskSize;
-		if(systemDiskSize != null){
-			putQueryParameter("SystemDisk.Size", systemDiskSize.toString());
 		}
 	}
 
@@ -221,39 +276,6 @@ public class DescribePriceRequest extends RpcAcsRequest<DescribePriceResponse> {
 		}
 	}
 
-	public Integer getInternetMaxBandwidthOut() {
-		return this.internetMaxBandwidthOut;
-	}
-
-	public void setInternetMaxBandwidthOut(Integer internetMaxBandwidthOut) {
-		this.internetMaxBandwidthOut = internetMaxBandwidthOut;
-		if(internetMaxBandwidthOut != null){
-			putQueryParameter("InternetMaxBandwidthOut", internetMaxBandwidthOut.toString());
-		}
-	}
-
-	public String getInternetChargeType() {
-		return this.internetChargeType;
-	}
-
-	public void setInternetChargeType(String internetChargeType) {
-		this.internetChargeType = internetChargeType;
-		if(internetChargeType != null){
-			putQueryParameter("InternetChargeType", internetChargeType);
-		}
-	}
-
-	public String getDataDisk4Category() {
-		return this.dataDisk4Category;
-	}
-
-	public void setDataDisk4Category(String dataDisk4Category) {
-		this.dataDisk4Category = dataDisk4Category;
-		if(dataDisk4Category != null){
-			putQueryParameter("DataDisk.4.Category", dataDisk4Category);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -265,36 +287,14 @@ public class DescribePriceRequest extends RpcAcsRequest<DescribePriceResponse> {
 		}
 	}
 
-	public Integer getPeriod() {
-		return this.period;
+	public String getResourceType() {
+		return this.resourceType;
 	}
 
-	public void setPeriod(Integer period) {
-		this.period = period;
-		if(period != null){
-			putQueryParameter("Period", period.toString());
-		}
-	}
-
-	public String getImageId() {
-		return this.imageId;
-	}
-
-	public void setImageId(String imageId) {
-		this.imageId = imageId;
-		if(imageId != null){
-			putQueryParameter("ImageId", imageId);
-		}
-	}
-
-	public String getIoOptimized() {
-		return this.ioOptimized;
-	}
-
-	public void setIoOptimized(String ioOptimized) {
-		this.ioOptimized = ioOptimized;
-		if(ioOptimized != null){
-			putQueryParameter("IoOptimized", ioOptimized);
+	public void setResourceType(String resourceType) {
+		this.resourceType = resourceType;
+		if(resourceType != null){
+			putQueryParameter("ResourceType", resourceType);
 		}
 	}
 
@@ -309,25 +309,25 @@ public class DescribePriceRequest extends RpcAcsRequest<DescribePriceResponse> {
 		}
 	}
 
-	public Integer getDataDisk1Size() {
-		return this.dataDisk1Size;
+	public Integer getSystemDiskSize() {
+		return this.systemDiskSize;
 	}
 
-	public void setDataDisk1Size(Integer dataDisk1Size) {
-		this.dataDisk1Size = dataDisk1Size;
-		if(dataDisk1Size != null){
-			putQueryParameter("DataDisk.1.Size", dataDisk1Size.toString());
+	public void setSystemDiskSize(Integer systemDiskSize) {
+		this.systemDiskSize = systemDiskSize;
+		if(systemDiskSize != null){
+			putQueryParameter("SystemDisk.Size", systemDiskSize.toString());
 		}
 	}
 
-	public String getDataDisk3Category() {
-		return this.dataDisk3Category;
+	public String getInternetChargeType() {
+		return this.internetChargeType;
 	}
 
-	public void setDataDisk3Category(String dataDisk3Category) {
-		this.dataDisk3Category = dataDisk3Category;
-		if(dataDisk3Category != null){
-			putQueryParameter("DataDisk.3.Category", dataDisk3Category);
+	public void setInternetChargeType(String internetChargeType) {
+		this.internetChargeType = internetChargeType;
+		if(internetChargeType != null){
+			putQueryParameter("InternetChargeType", internetChargeType);
 		}
 	}
 

@@ -30,15 +30,26 @@ public class ImportKeyPairRequest extends RpcAcsRequest<ImportKeyPairResponse> {
 		super("Ecs", "2014-05-26", "ImportKeyPair", "ecs");
 	}
 
+	private Long resourceOwnerId;
+
 	private String resourceOwnerAccount;
 
 	private String publicKeyBody;
 
 	private String keyPairName;
 
-	private Long resourceOwnerId;
-
 	private Long ownerId;
+
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
+	}
+
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
 
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
@@ -70,17 +81,6 @@ public class ImportKeyPairRequest extends RpcAcsRequest<ImportKeyPairResponse> {
 		this.keyPairName = keyPairName;
 		if(keyPairName != null){
 			putQueryParameter("KeyPairName", keyPairName);
-		}
-	}
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
 		}
 	}
 

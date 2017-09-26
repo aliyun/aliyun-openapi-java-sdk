@@ -30,30 +30,41 @@ public class DescribeBandwidthPackagesRequest extends RpcAcsRequest<DescribeBand
 		super("Ecs", "2014-05-26", "DescribeBandwidthPackages", "ecs");
 	}
 
-	private Integer pageSize;
-
-	private String resourceOwnerAccount;
-
-	private Integer pageNumber;
-
 	private Long resourceOwnerId;
-
-	private String ownerAccount;
-
-	private Long ownerId;
-
-	private String natGatewayId;
 
 	private String bandwidthPackageId;
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	private String resourceOwnerAccount;
+
+	private String ownerAccount;
+
+	private Integer pageSize;
+
+	private String natGatewayId;
+
+	private Long ownerId;
+
+	private Integer pageNumber;
+
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getBandwidthPackageId() {
+		return this.bandwidthPackageId;
+	}
+
+	public void setBandwidthPackageId(String bandwidthPackageId) {
+		this.bandwidthPackageId = bandwidthPackageId;
+		if(bandwidthPackageId != null){
+			putQueryParameter("BandwidthPackageId", bandwidthPackageId);
 		}
 	}
 
@@ -68,28 +79,6 @@ public class DescribeBandwidthPackagesRequest extends RpcAcsRequest<DescribeBand
 		}
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
-		}
-	}
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
 	public String getOwnerAccount() {
 		return this.ownerAccount;
 	}
@@ -101,14 +90,14 @@ public class DescribeBandwidthPackagesRequest extends RpcAcsRequest<DescribeBand
 		}
 	}
 
-	public Long getOwnerId() {
-		return this.ownerId;
+	public Integer getPageSize() {
+		return this.pageSize;
 	}
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 
@@ -123,14 +112,25 @@ public class DescribeBandwidthPackagesRequest extends RpcAcsRequest<DescribeBand
 		}
 	}
 
-	public String getBandwidthPackageId() {
-		return this.bandwidthPackageId;
+	public Long getOwnerId() {
+		return this.ownerId;
 	}
 
-	public void setBandwidthPackageId(String bandwidthPackageId) {
-		this.bandwidthPackageId = bandwidthPackageId;
-		if(bandwidthPackageId != null){
-			putQueryParameter("BandwidthPackageId", bandwidthPackageId);
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
 		}
 	}
 

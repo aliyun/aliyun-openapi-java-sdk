@@ -38,6 +38,7 @@ public class DescribeInstanceAutoRenewAttributeResponseUnmarshaller {
 			instanceRenewAttribute.setInstanceId(context.stringValue("DescribeInstanceAutoRenewAttributeResponse.InstanceRenewAttributes["+ i +"].InstanceId"));
 			instanceRenewAttribute.setAutoRenewEnabled(context.booleanValue("DescribeInstanceAutoRenewAttributeResponse.InstanceRenewAttributes["+ i +"].AutoRenewEnabled"));
 			instanceRenewAttribute.setDuration(context.integerValue("DescribeInstanceAutoRenewAttributeResponse.InstanceRenewAttributes["+ i +"].Duration"));
+			instanceRenewAttribute.setPeriodUnit(context.stringValue("DescribeInstanceAutoRenewAttributeResponse.InstanceRenewAttributes["+ i +"].PeriodUnit"));
 
 			instanceRenewAttributes.add(instanceRenewAttribute);
 		}

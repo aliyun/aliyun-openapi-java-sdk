@@ -30,30 +30,19 @@ public class AssociateEipAddressRequest extends RpcAcsRequest<AssociateEipAddres
 		super("Ecs", "2014-05-26", "AssociateEipAddress", "ecs");
 	}
 
-	private String resourceOwnerAccount;
-
 	private Long resourceOwnerId;
-
-	private String ownerAccount;
-
-	private Long ownerId;
-
-	private String allocationId;
 
 	private String instanceId;
 
+	private String resourceOwnerAccount;
+
+	private String ownerAccount;
+
 	private String instanceType;
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
+	private String allocationId;
 
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
+	private Long ownerId;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -63,39 +52,6 @@ public class AssociateEipAddressRequest extends RpcAcsRequest<AssociateEipAddres
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
-
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		if(ownerAccount != null){
-			putQueryParameter("OwnerAccount", ownerAccount);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getAllocationId() {
-		return this.allocationId;
-	}
-
-	public void setAllocationId(String allocationId) {
-		this.allocationId = allocationId;
-		if(allocationId != null){
-			putQueryParameter("AllocationId", allocationId);
 		}
 	}
 
@@ -110,6 +66,28 @@ public class AssociateEipAddressRequest extends RpcAcsRequest<AssociateEipAddres
 		}
 	}
 
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
 	public String getInstanceType() {
 		return this.instanceType;
 	}
@@ -118,6 +96,28 @@ public class AssociateEipAddressRequest extends RpcAcsRequest<AssociateEipAddres
 		this.instanceType = instanceType;
 		if(instanceType != null){
 			putQueryParameter("InstanceType", instanceType);
+		}
+	}
+
+	public String getAllocationId() {
+		return this.allocationId;
+	}
+
+	public void setAllocationId(String allocationId) {
+		this.allocationId = allocationId;
+		if(allocationId != null){
+			putQueryParameter("AllocationId", allocationId);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 

@@ -30,70 +30,37 @@ public class CreatePhysicalConnectionRequest extends RpcAcsRequest<CreatePhysica
 		super("Ecs", "2014-05-26", "CreatePhysicalConnection", "ecs");
 	}
 
-	private String peerLocation;
-
-	private String clientToken;
-
-	private String userCidr;
-
 	private String accessPointId;
 
 	private String redundantPhysicalConnectionId;
 
-	private Long ownerId;
-
-	private String type;
-
-	private Integer bandwidth;
-
-	private String lineOperator;
-
-	private String circuitCode;
-
-	private String resourceOwnerAccount;
-
-	private String description;
-
-	private String portType;
-
-	private String name;
+	private String peerLocation;
 
 	private Long resourceOwnerId;
 
+	private String portType;
+
+	private String circuitCode;
+
+	private Integer bandwidth;
+
+	private String clientToken;
+
+	private String resourceOwnerAccount;
+
 	private String ownerAccount;
 
-	public String getPeerLocation() {
-		return this.peerLocation;
-	}
+	private String description;
 
-	public void setPeerLocation(String peerLocation) {
-		this.peerLocation = peerLocation;
-		if(peerLocation != null){
-			putQueryParameter("PeerLocation", peerLocation);
-		}
-	}
+	private String type;
 
-	public String getClientToken() {
-		return this.clientToken;
-	}
+	private Long ownerId;
 
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putQueryParameter("ClientToken", clientToken);
-		}
-	}
+	private String lineOperator;
 
-	public String getUserCidr() {
-		return this.userCidr;
-	}
+	private String name;
 
-	public void setUserCidr(String userCidr) {
-		this.userCidr = userCidr;
-		if(userCidr != null){
-			putQueryParameter("UserCidr", userCidr);
-		}
-	}
+	private String userCidr;
 
 	public String getAccessPointId() {
 		return this.accessPointId;
@@ -117,102 +84,14 @@ public class CreatePhysicalConnectionRequest extends RpcAcsRequest<CreatePhysica
 		}
 	}
 
-	public Long getOwnerId() {
-		return this.ownerId;
+	public String getPeerLocation() {
+		return this.peerLocation;
 	}
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getType() {
-		return this.type;
-	}
-
-	public void setType(String type) {
-		this.type = type;
-		if(type != null){
-			putQueryParameter("Type", type);
-		}
-	}
-
-	public Integer getBandwidth() {
-		return this.bandwidth;
-	}
-
-	public void setBandwidth(Integer bandwidth) {
-		this.bandwidth = bandwidth;
-		if(bandwidth != null){
-			putQueryParameter("bandwidth", bandwidth.toString());
-		}
-	}
-
-	public String getLineOperator() {
-		return this.lineOperator;
-	}
-
-	public void setLineOperator(String lineOperator) {
-		this.lineOperator = lineOperator;
-		if(lineOperator != null){
-			putQueryParameter("LineOperator", lineOperator);
-		}
-	}
-
-	public String getCircuitCode() {
-		return this.circuitCode;
-	}
-
-	public void setCircuitCode(String circuitCode) {
-		this.circuitCode = circuitCode;
-		if(circuitCode != null){
-			putQueryParameter("CircuitCode", circuitCode);
-		}
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public String getDescription() {
-		return this.description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-		if(description != null){
-			putQueryParameter("Description", description);
-		}
-	}
-
-	public String getPortType() {
-		return this.portType;
-	}
-
-	public void setPortType(String portType) {
-		this.portType = portType;
-		if(portType != null){
-			putQueryParameter("PortType", portType);
-		}
-	}
-
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putQueryParameter("Name", name);
+	public void setPeerLocation(String peerLocation) {
+		this.peerLocation = peerLocation;
+		if(peerLocation != null){
+			putQueryParameter("PeerLocation", peerLocation);
 		}
 	}
 
@@ -227,6 +106,61 @@ public class CreatePhysicalConnectionRequest extends RpcAcsRequest<CreatePhysica
 		}
 	}
 
+	public String getPortType() {
+		return this.portType;
+	}
+
+	public void setPortType(String portType) {
+		this.portType = portType;
+		if(portType != null){
+			putQueryParameter("PortType", portType);
+		}
+	}
+
+	public String getCircuitCode() {
+		return this.circuitCode;
+	}
+
+	public void setCircuitCode(String circuitCode) {
+		this.circuitCode = circuitCode;
+		if(circuitCode != null){
+			putQueryParameter("CircuitCode", circuitCode);
+		}
+	}
+
+	public Integer getBandwidth() {
+		return this.bandwidth;
+	}
+
+	public void setBandwidth(Integer bandwidth) {
+		this.bandwidth = bandwidth;
+		if(bandwidth != null){
+			putQueryParameter("bandwidth", bandwidth.toString());
+		}
+	}
+
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
 	public String getOwnerAccount() {
 		return this.ownerAccount;
 	}
@@ -235,6 +169,72 @@ public class CreatePhysicalConnectionRequest extends RpcAcsRequest<CreatePhysica
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+		if(description != null){
+			putQueryParameter("Description", description);
+		}
+	}
+
+	public String getType() {
+		return this.type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+		if(type != null){
+			putQueryParameter("Type", type);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getLineOperator() {
+		return this.lineOperator;
+	}
+
+	public void setLineOperator(String lineOperator) {
+		this.lineOperator = lineOperator;
+		if(lineOperator != null){
+			putQueryParameter("LineOperator", lineOperator);
+		}
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
+		}
+	}
+
+	public String getUserCidr() {
+		return this.userCidr;
+	}
+
+	public void setUserCidr(String userCidr) {
+		this.userCidr = userCidr;
+		if(userCidr != null){
+			putQueryParameter("UserCidr", userCidr);
 		}
 	}
 

@@ -30,27 +30,49 @@ public class CreateDeploymentSetRequest extends RpcAcsRequest<CreateDeploymentSe
 		super("Ecs", "2014-05-26", "CreateDeploymentSet", "ecs");
 	}
 
+	private Long resourceOwnerId;
+
+	private String resourceOwnerAccount;
+
 	private String clientToken;
 
-	private String zoneId;
+	private String ownerAccount;
 
-	private String strategy;
+	private String description;
 
 	private String deploymentSetName;
 
 	private Long ownerId;
 
-	private String resourceOwnerAccount;
-
-	private String description;
-
 	private String granularity;
 
 	private String domain;
 
-	private Long resourceOwnerId;
+	private String zoneId;
 
-	private String ownerAccount;
+	private String strategy;
+
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
+	}
+
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
 
 	public String getClientToken() {
 		return this.clientToken;
@@ -63,25 +85,25 @@ public class CreateDeploymentSetRequest extends RpcAcsRequest<CreateDeploymentSe
 		}
 	}
 
-	public String getZoneId() {
-		return this.zoneId;
+	public String getOwnerAccount() {
+		return this.ownerAccount;
 	}
 
-	public void setZoneId(String zoneId) {
-		this.zoneId = zoneId;
-		if(zoneId != null){
-			putQueryParameter("ZoneId", zoneId);
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
 		}
 	}
 
-	public String getStrategy() {
-		return this.strategy;
+	public String getDescription() {
+		return this.description;
 	}
 
-	public void setStrategy(String strategy) {
-		this.strategy = strategy;
-		if(strategy != null){
-			putQueryParameter("Strategy", strategy);
+	public void setDescription(String description) {
+		this.description = description;
+		if(description != null){
+			putQueryParameter("Description", description);
 		}
 	}
 
@@ -107,28 +129,6 @@ public class CreateDeploymentSetRequest extends RpcAcsRequest<CreateDeploymentSe
 		}
 	}
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public String getDescription() {
-		return this.description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-		if(description != null){
-			putQueryParameter("Description", description);
-		}
-	}
-
 	public String getGranularity() {
 		return this.granularity;
 	}
@@ -151,25 +151,25 @@ public class CreateDeploymentSetRequest extends RpcAcsRequest<CreateDeploymentSe
 		}
 	}
 
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
+	public String getZoneId() {
+		return this.zoneId;
 	}
 
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+	public void setZoneId(String zoneId) {
+		this.zoneId = zoneId;
+		if(zoneId != null){
+			putQueryParameter("ZoneId", zoneId);
 		}
 	}
 
-	public String getOwnerAccount() {
-		return this.ownerAccount;
+	public String getStrategy() {
+		return this.strategy;
 	}
 
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		if(ownerAccount != null){
-			putQueryParameter("OwnerAccount", ownerAccount);
+	public void setStrategy(String strategy) {
+		this.strategy = strategy;
+		if(strategy != null){
+			putQueryParameter("Strategy", strategy);
 		}
 	}
 

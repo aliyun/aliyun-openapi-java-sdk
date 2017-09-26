@@ -30,28 +30,28 @@ public class DescribeAutoSnapshotPolicyExRequest extends RpcAcsRequest<DescribeA
 		super("Ecs", "2014-05-26", "DescribeAutoSnapshotPolicyEx", "ecs");
 	}
 
-	private Integer pageSize;
+	private Long resourceOwnerId;
 
 	private String resourceOwnerAccount;
 
-	private Integer pageNumber;
-
 	private String autoSnapshotPolicyId;
-
-	private Long resourceOwnerId;
 
 	private String ownerAccount;
 
+	private Integer pageSize;
+
 	private Long ownerId;
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	private Integer pageNumber;
+
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
 		}
 	}
 
@@ -66,17 +66,6 @@ public class DescribeAutoSnapshotPolicyExRequest extends RpcAcsRequest<DescribeA
 		}
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
-		}
-	}
-
 	public String getAutoSnapshotPolicyId() {
 		return this.autoSnapshotPolicyId;
 	}
@@ -85,17 +74,6 @@ public class DescribeAutoSnapshotPolicyExRequest extends RpcAcsRequest<DescribeA
 		this.autoSnapshotPolicyId = autoSnapshotPolicyId;
 		if(autoSnapshotPolicyId != null){
 			putQueryParameter("AutoSnapshotPolicyId", autoSnapshotPolicyId);
-		}
-	}
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
 		}
 	}
 
@@ -110,6 +88,17 @@ public class DescribeAutoSnapshotPolicyExRequest extends RpcAcsRequest<DescribeA
 		}
 	}
 
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -118,6 +107,17 @@ public class DescribeAutoSnapshotPolicyExRequest extends RpcAcsRequest<DescribeA
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
 		}
 	}
 

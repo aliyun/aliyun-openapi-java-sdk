@@ -30,17 +30,28 @@ public class ModifyEipAddressAttributeRequest extends RpcAcsRequest<ModifyEipAdd
 		super("Ecs", "2014-05-26", "ModifyEipAddressAttribute", "ecs");
 	}
 
+	private Long resourceOwnerId;
+
 	private String resourceOwnerAccount;
 
-	private Long resourceOwnerId;
+	private String bandwidth;
 
 	private String ownerAccount;
 
-	private Long ownerId;
-
 	private String allocationId;
 
-	private String bandwidth;
+	private Long ownerId;
+
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
+	}
+
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
 
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
@@ -53,14 +64,14 @@ public class ModifyEipAddressAttributeRequest extends RpcAcsRequest<ModifyEipAdd
 		}
 	}
 
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
+	public String getBandwidth() {
+		return this.bandwidth;
 	}
 
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+	public void setBandwidth(String bandwidth) {
+		this.bandwidth = bandwidth;
+		if(bandwidth != null){
+			putQueryParameter("Bandwidth", bandwidth);
 		}
 	}
 
@@ -75,17 +86,6 @@ public class ModifyEipAddressAttributeRequest extends RpcAcsRequest<ModifyEipAdd
 		}
 	}
 
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
 	public String getAllocationId() {
 		return this.allocationId;
 	}
@@ -97,14 +97,14 @@ public class ModifyEipAddressAttributeRequest extends RpcAcsRequest<ModifyEipAdd
 		}
 	}
 
-	public String getBandwidth() {
-		return this.bandwidth;
+	public Long getOwnerId() {
+		return this.ownerId;
 	}
 
-	public void setBandwidth(String bandwidth) {
-		this.bandwidth = bandwidth;
-		if(bandwidth != null){
-			putQueryParameter("Bandwidth", bandwidth);
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 

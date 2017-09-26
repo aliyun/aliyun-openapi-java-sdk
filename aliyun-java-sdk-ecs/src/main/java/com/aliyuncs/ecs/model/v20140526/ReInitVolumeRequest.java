@@ -30,39 +30,17 @@ public class ReInitVolumeRequest extends RpcAcsRequest<ReInitVolumeResponse> {
 		super("Ecs", "2014-05-26", "ReInitVolume", "ecs");
 	}
 
-	private String resourceOwnerAccount;
-
-	private String volumeId;
-
 	private Long resourceOwnerId;
-
-	private String ownerAccount;
-
-	private Long ownerId;
 
 	private String password;
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
+	private String resourceOwnerAccount;
 
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
+	private String ownerAccount;
 
-	public String getVolumeId() {
-		return this.volumeId;
-	}
+	private String volumeId;
 
-	public void setVolumeId(String volumeId) {
-		this.volumeId = volumeId;
-		if(volumeId != null){
-			putQueryParameter("VolumeId", volumeId);
-		}
-	}
+	private Long ownerId;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -72,6 +50,28 @@ public class ReInitVolumeRequest extends RpcAcsRequest<ReInitVolumeResponse> {
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getPassword() {
+		return this.password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+		if(password != null){
+			putQueryParameter("Password", password);
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
 		}
 	}
 
@@ -86,6 +86,17 @@ public class ReInitVolumeRequest extends RpcAcsRequest<ReInitVolumeResponse> {
 		}
 	}
 
+	public String getVolumeId() {
+		return this.volumeId;
+	}
+
+	public void setVolumeId(String volumeId) {
+		this.volumeId = volumeId;
+		if(volumeId != null){
+			putQueryParameter("VolumeId", volumeId);
+		}
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -94,17 +105,6 @@ public class ReInitVolumeRequest extends RpcAcsRequest<ReInitVolumeResponse> {
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getPassword() {
-		return this.password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
-		if(password != null){
-			putQueryParameter("Password", password);
 		}
 	}
 

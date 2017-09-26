@@ -30,34 +30,45 @@ public class CreateVSwitchRequest extends RpcAcsRequest<CreateVSwitchResponse> {
 		super("Ecs", "2014-05-26", "CreateVSwitch", "ecs");
 	}
 
-	private String vSwitchName;
+	private Long resourceOwnerId;
+
+	private String resourceOwnerAccount;
 
 	private String clientToken;
 
-	private String resourceOwnerAccount;
+	private String vpcId;
+
+	private String vSwitchName;
+
+	private String ownerAccount;
+
+	private String cidrBlock;
 
 	private String zoneId;
 
 	private String description;
 
-	private Long resourceOwnerId;
-
-	private String ownerAccount;
-
-	private String vpcId;
-
-	private String cidrBlock;
-
 	private Long ownerId;
 
-	public String getVSwitchName() {
-		return this.vSwitchName;
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
 	}
 
-	public void setVSwitchName(String vSwitchName) {
-		this.vSwitchName = vSwitchName;
-		if(vSwitchName != null){
-			putQueryParameter("VSwitchName", vSwitchName);
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
 		}
 	}
 
@@ -72,14 +83,47 @@ public class CreateVSwitchRequest extends RpcAcsRequest<CreateVSwitchResponse> {
 		}
 	}
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
+	public String getVpcId() {
+		return this.vpcId;
 	}
 
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	public void setVpcId(String vpcId) {
+		this.vpcId = vpcId;
+		if(vpcId != null){
+			putQueryParameter("VpcId", vpcId);
+		}
+	}
+
+	public String getVSwitchName() {
+		return this.vSwitchName;
+	}
+
+	public void setVSwitchName(String vSwitchName) {
+		this.vSwitchName = vSwitchName;
+		if(vSwitchName != null){
+			putQueryParameter("VSwitchName", vSwitchName);
+		}
+	}
+
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public String getCidrBlock() {
+		return this.cidrBlock;
+	}
+
+	public void setCidrBlock(String cidrBlock) {
+		this.cidrBlock = cidrBlock;
+		if(cidrBlock != null){
+			putQueryParameter("CidrBlock", cidrBlock);
 		}
 	}
 
@@ -102,50 +146,6 @@ public class CreateVSwitchRequest extends RpcAcsRequest<CreateVSwitchResponse> {
 		this.description = description;
 		if(description != null){
 			putQueryParameter("Description", description);
-		}
-	}
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
-
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		if(ownerAccount != null){
-			putQueryParameter("OwnerAccount", ownerAccount);
-		}
-	}
-
-	public String getVpcId() {
-		return this.vpcId;
-	}
-
-	public void setVpcId(String vpcId) {
-		this.vpcId = vpcId;
-		if(vpcId != null){
-			putQueryParameter("VpcId", vpcId);
-		}
-	}
-
-	public String getCidrBlock() {
-		return this.cidrBlock;
-	}
-
-	public void setCidrBlock(String cidrBlock) {
-		this.cidrBlock = cidrBlock;
-		if(cidrBlock != null){
-			putQueryParameter("CidrBlock", cidrBlock);
 		}
 	}
 

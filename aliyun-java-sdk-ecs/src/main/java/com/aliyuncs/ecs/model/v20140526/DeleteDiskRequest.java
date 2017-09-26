@@ -30,37 +30,15 @@ public class DeleteDiskRequest extends RpcAcsRequest<DeleteDiskResponse> {
 		super("Ecs", "2014-05-26", "DeleteDisk", "ecs");
 	}
 
-	private String resourceOwnerAccount;
-
-	private String diskId;
-
 	private Long resourceOwnerId;
+
+	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
+	private String diskId;
+
 	private Long ownerId;
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public String getDiskId() {
-		return this.diskId;
-	}
-
-	public void setDiskId(String diskId) {
-		this.diskId = diskId;
-		if(diskId != null){
-			putQueryParameter("DiskId", diskId);
-		}
-	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -73,6 +51,17 @@ public class DeleteDiskRequest extends RpcAcsRequest<DeleteDiskResponse> {
 		}
 	}
 
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
 	public String getOwnerAccount() {
 		return this.ownerAccount;
 	}
@@ -81,6 +70,17 @@ public class DeleteDiskRequest extends RpcAcsRequest<DeleteDiskResponse> {
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public String getDiskId() {
+		return this.diskId;
+	}
+
+	public void setDiskId(String diskId) {
+		this.diskId = diskId;
+		if(diskId != null){
+			putQueryParameter("DiskId", diskId);
 		}
 	}
 

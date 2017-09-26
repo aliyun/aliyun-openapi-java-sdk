@@ -31,45 +31,34 @@ public class CreateRouteEntryRequest extends RpcAcsRequest<CreateRouteEntryRespo
 		super("Ecs", "2014-05-26", "CreateRouteEntry", "ecs");
 	}
 
-	private String nextHopType;
-
-	private String clientToken;
+	private Long resourceOwnerId;
 
 	private String resourceOwnerAccount;
 
-	private List<NextHopList> nextHopLists;
-
-	private String nextHopId;
-
-	private String routeTableId;
-
-	private Long resourceOwnerId;
-
-	private String ownerAccount;
-
-	private Long ownerId;
+	private String clientToken;
 
 	private String destinationCidrBlock;
 
-	public String getNextHopType() {
-		return this.nextHopType;
+	private String ownerAccount;
+
+	private String nextHopId;
+
+	private Long ownerId;
+
+	private String nextHopType;
+
+	private List<NextHopList> nextHopLists;
+
+	private String routeTableId;
+
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
 	}
 
-	public void setNextHopType(String nextHopType) {
-		this.nextHopType = nextHopType;
-		if(nextHopType != null){
-			putQueryParameter("NextHopType", nextHopType);
-		}
-	}
-
-	public String getClientToken() {
-		return this.clientToken;
-	}
-
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putQueryParameter("ClientToken", clientToken);
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
 		}
 	}
 
@@ -84,48 +73,25 @@ public class CreateRouteEntryRequest extends RpcAcsRequest<CreateRouteEntryRespo
 		}
 	}
 
-	public List<NextHopList> getNextHopLists() {
-		return this.nextHopLists;
+	public String getClientToken() {
+		return this.clientToken;
 	}
 
-	public void setNextHopLists(List<NextHopList> nextHopList) {
-		this.nextHopLists = nextHopList;	
-		for (int i = 0; i < nextHopList.size(); i++) {
-			putQueryParameter("NextHopList." + (i + 1) + ".NextHopType" , nextHopList.get(i).getNextHopType());
-			putQueryParameter("NextHopList." + (i + 1) + ".NextHopId" , nextHopList.get(i).getNextHopId());
-		}	
-	}
-
-	public String getNextHopId() {
-		return this.nextHopId;
-	}
-
-	public void setNextHopId(String nextHopId) {
-		this.nextHopId = nextHopId;
-		if(nextHopId != null){
-			putQueryParameter("NextHopId", nextHopId);
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
 		}
 	}
 
-	public String getRouteTableId() {
-		return this.routeTableId;
+	public String getDestinationCidrBlock() {
+		return this.destinationCidrBlock;
 	}
 
-	public void setRouteTableId(String routeTableId) {
-		this.routeTableId = routeTableId;
-		if(routeTableId != null){
-			putQueryParameter("RouteTableId", routeTableId);
-		}
-	}
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+	public void setDestinationCidrBlock(String destinationCidrBlock) {
+		this.destinationCidrBlock = destinationCidrBlock;
+		if(destinationCidrBlock != null){
+			putQueryParameter("DestinationCidrBlock", destinationCidrBlock);
 		}
 	}
 
@@ -140,6 +106,17 @@ public class CreateRouteEntryRequest extends RpcAcsRequest<CreateRouteEntryRespo
 		}
 	}
 
+	public String getNextHopId() {
+		return this.nextHopId;
+	}
+
+	public void setNextHopId(String nextHopId) {
+		this.nextHopId = nextHopId;
+		if(nextHopId != null){
+			putQueryParameter("NextHopId", nextHopId);
+		}
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -151,14 +128,37 @@ public class CreateRouteEntryRequest extends RpcAcsRequest<CreateRouteEntryRespo
 		}
 	}
 
-	public String getDestinationCidrBlock() {
-		return this.destinationCidrBlock;
+	public String getNextHopType() {
+		return this.nextHopType;
 	}
 
-	public void setDestinationCidrBlock(String destinationCidrBlock) {
-		this.destinationCidrBlock = destinationCidrBlock;
-		if(destinationCidrBlock != null){
-			putQueryParameter("DestinationCidrBlock", destinationCidrBlock);
+	public void setNextHopType(String nextHopType) {
+		this.nextHopType = nextHopType;
+		if(nextHopType != null){
+			putQueryParameter("NextHopType", nextHopType);
+		}
+	}
+
+	public List<NextHopList> getNextHopLists() {
+		return this.nextHopLists;
+	}
+
+	public void setNextHopLists(List<NextHopList> nextHopLists) {
+		this.nextHopLists = nextHopLists;	
+		for (int depth1 = 0; depth1 < nextHopLists.size(); depth1++) {
+			putQueryParameter("NextHopList." + (depth1 + 1) + ".NextHopType" , nextHopLists.get(depth1).getNextHopType());
+			putQueryParameter("NextHopList." + (depth1 + 1) + ".NextHopId" , nextHopLists.get(depth1).getNextHopId());
+		}	
+	}
+
+	public String getRouteTableId() {
+		return this.routeTableId;
+	}
+
+	public void setRouteTableId(String routeTableId) {
+		this.routeTableId = routeTableId;
+		if(routeTableId != null){
+			putQueryParameter("RouteTableId", routeTableId);
 		}
 	}
 

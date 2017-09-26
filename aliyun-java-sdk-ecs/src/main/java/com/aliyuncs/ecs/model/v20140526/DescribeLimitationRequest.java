@@ -30,26 +30,15 @@ public class DescribeLimitationRequest extends RpcAcsRequest<DescribeLimitationR
 		super("Ecs", "2014-05-26", "DescribeLimitation", "ecs");
 	}
 
-	private String resourceOwnerAccount;
-
 	private String limitation;
 
 	private Long resourceOwnerId;
 
+	private String resourceOwnerAccount;
+
 	private String ownerAccount;
 
 	private Long ownerId;
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
 
 	public String getLimitation() {
 		return this.limitation;
@@ -70,6 +59,17 @@ public class DescribeLimitationRequest extends RpcAcsRequest<DescribeLimitationR
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
 		}
 	}
 

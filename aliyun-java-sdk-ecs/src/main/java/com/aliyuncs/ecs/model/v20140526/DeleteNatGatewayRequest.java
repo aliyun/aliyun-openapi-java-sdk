@@ -30,26 +30,15 @@ public class DeleteNatGatewayRequest extends RpcAcsRequest<DeleteNatGatewayRespo
 		super("Ecs", "2014-05-26", "DeleteNatGateway", "ecs");
 	}
 
-	private String resourceOwnerAccount;
-
 	private Long resourceOwnerId;
+
+	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
-	private Long ownerId;
-
 	private String natGatewayId;
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
+	private Long ownerId;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -59,6 +48,17 @@ public class DeleteNatGatewayRequest extends RpcAcsRequest<DeleteNatGatewayRespo
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
 		}
 	}
 
@@ -73,17 +73,6 @@ public class DeleteNatGatewayRequest extends RpcAcsRequest<DeleteNatGatewayRespo
 		}
 	}
 
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
 	public String getNatGatewayId() {
 		return this.natGatewayId;
 	}
@@ -92,6 +81,17 @@ public class DeleteNatGatewayRequest extends RpcAcsRequest<DeleteNatGatewayRespo
 		this.natGatewayId = natGatewayId;
 		if(natGatewayId != null){
 			putQueryParameter("NatGatewayId", natGatewayId);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 

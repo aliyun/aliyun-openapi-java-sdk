@@ -30,69 +30,36 @@ public class ModifyForwardEntryRequest extends RpcAcsRequest<ModifyForwardEntryR
 		super("Ecs", "2014-05-26", "ModifyForwardEntry", "ecs");
 	}
 
-	private String internalIp;
-
-	private String externalIp;
-
-	private Long ownerId;
-
-	private String ipProtocol;
+	private Long resourceOwnerId;
 
 	private String resourceOwnerAccount;
 
-	private String forwardTableId;
-
-	private Long resourceOwnerId;
-
-	private String forwardEntryId;
+	private String ipProtocol;
 
 	private String ownerAccount;
 
-	private String externalPort;
+	private String forwardTableId;
+
+	private Long ownerId;
+
+	private String internalIp;
+
+	private String forwardEntryId;
 
 	private String internalPort;
 
-	public String getInternalIp() {
-		return this.internalIp;
+	private String externalIp;
+
+	private String externalPort;
+
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
 	}
 
-	public void setInternalIp(String internalIp) {
-		this.internalIp = internalIp;
-		if(internalIp != null){
-			putQueryParameter("InternalIp", internalIp);
-		}
-	}
-
-	public String getExternalIp() {
-		return this.externalIp;
-	}
-
-	public void setExternalIp(String externalIp) {
-		this.externalIp = externalIp;
-		if(externalIp != null){
-			putQueryParameter("ExternalIp", externalIp);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getIpProtocol() {
-		return this.ipProtocol;
-	}
-
-	public void setIpProtocol(String ipProtocol) {
-		this.ipProtocol = ipProtocol;
-		if(ipProtocol != null){
-			putQueryParameter("IpProtocol", ipProtocol);
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
 		}
 	}
 
@@ -107,36 +74,14 @@ public class ModifyForwardEntryRequest extends RpcAcsRequest<ModifyForwardEntryR
 		}
 	}
 
-	public String getForwardTableId() {
-		return this.forwardTableId;
+	public String getIpProtocol() {
+		return this.ipProtocol;
 	}
 
-	public void setForwardTableId(String forwardTableId) {
-		this.forwardTableId = forwardTableId;
-		if(forwardTableId != null){
-			putQueryParameter("ForwardTableId", forwardTableId);
-		}
-	}
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getForwardEntryId() {
-		return this.forwardEntryId;
-	}
-
-	public void setForwardEntryId(String forwardEntryId) {
-		this.forwardEntryId = forwardEntryId;
-		if(forwardEntryId != null){
-			putQueryParameter("ForwardEntryId", forwardEntryId);
+	public void setIpProtocol(String ipProtocol) {
+		this.ipProtocol = ipProtocol;
+		if(ipProtocol != null){
+			putQueryParameter("IpProtocol", ipProtocol);
 		}
 	}
 
@@ -151,14 +96,47 @@ public class ModifyForwardEntryRequest extends RpcAcsRequest<ModifyForwardEntryR
 		}
 	}
 
-	public String getExternalPort() {
-		return this.externalPort;
+	public String getForwardTableId() {
+		return this.forwardTableId;
 	}
 
-	public void setExternalPort(String externalPort) {
-		this.externalPort = externalPort;
-		if(externalPort != null){
-			putQueryParameter("ExternalPort", externalPort);
+	public void setForwardTableId(String forwardTableId) {
+		this.forwardTableId = forwardTableId;
+		if(forwardTableId != null){
+			putQueryParameter("ForwardTableId", forwardTableId);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getInternalIp() {
+		return this.internalIp;
+	}
+
+	public void setInternalIp(String internalIp) {
+		this.internalIp = internalIp;
+		if(internalIp != null){
+			putQueryParameter("InternalIp", internalIp);
+		}
+	}
+
+	public String getForwardEntryId() {
+		return this.forwardEntryId;
+	}
+
+	public void setForwardEntryId(String forwardEntryId) {
+		this.forwardEntryId = forwardEntryId;
+		if(forwardEntryId != null){
+			putQueryParameter("ForwardEntryId", forwardEntryId);
 		}
 	}
 
@@ -170,6 +148,28 @@ public class ModifyForwardEntryRequest extends RpcAcsRequest<ModifyForwardEntryR
 		this.internalPort = internalPort;
 		if(internalPort != null){
 			putQueryParameter("InternalPort", internalPort);
+		}
+	}
+
+	public String getExternalIp() {
+		return this.externalIp;
+	}
+
+	public void setExternalIp(String externalIp) {
+		this.externalIp = externalIp;
+		if(externalIp != null){
+			putQueryParameter("ExternalIp", externalIp);
+		}
+	}
+
+	public String getExternalPort() {
+		return this.externalPort;
+	}
+
+	public void setExternalPort(String externalPort) {
+		this.externalPort = externalPort;
+		if(externalPort != null){
+			putQueryParameter("ExternalPort", externalPort);
 		}
 	}
 

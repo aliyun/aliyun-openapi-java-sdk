@@ -30,28 +30,28 @@ public class RecoverVirtualBorderRouterRequest extends RpcAcsRequest<RecoverVirt
 		super("Ecs", "2014-05-26", "RecoverVirtualBorderRouter", "ecs");
 	}
 
-	private String clientToken;
+	private Long resourceOwnerId;
 
 	private String resourceOwnerAccount;
 
-	private String userCidr;
-
-	private Long resourceOwnerId;
+	private String clientToken;
 
 	private String ownerAccount;
 
-	private Long ownerId;
+	private String userCidr;
 
 	private String vbrId;
 
-	public String getClientToken() {
-		return this.clientToken;
+	private Long ownerId;
+
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
 	}
 
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putQueryParameter("ClientToken", clientToken);
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
 		}
 	}
 
@@ -66,25 +66,14 @@ public class RecoverVirtualBorderRouterRequest extends RpcAcsRequest<RecoverVirt
 		}
 	}
 
-	public String getUserCidr() {
-		return this.userCidr;
+	public String getClientToken() {
+		return this.clientToken;
 	}
 
-	public void setUserCidr(String userCidr) {
-		this.userCidr = userCidr;
-		if(userCidr != null){
-			putQueryParameter("UserCidr", userCidr);
-		}
-	}
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
 		}
 	}
 
@@ -99,14 +88,14 @@ public class RecoverVirtualBorderRouterRequest extends RpcAcsRequest<RecoverVirt
 		}
 	}
 
-	public Long getOwnerId() {
-		return this.ownerId;
+	public String getUserCidr() {
+		return this.userCidr;
 	}
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
+	public void setUserCidr(String userCidr) {
+		this.userCidr = userCidr;
+		if(userCidr != null){
+			putQueryParameter("UserCidr", userCidr);
 		}
 	}
 
@@ -118,6 +107,17 @@ public class RecoverVirtualBorderRouterRequest extends RpcAcsRequest<RecoverVirt
 		this.vbrId = vbrId;
 		if(vbrId != null){
 			putQueryParameter("VbrId", vbrId);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 

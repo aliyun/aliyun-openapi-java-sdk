@@ -111,6 +111,8 @@ public class DescribeVolumesResponse extends AcsResponse {
 
 		private Integer mountInstanceNum;
 
+		private Boolean encrypted;
+
 		private List<OperationLock> operationLocks;
 
 		private List<MountInstance> mountInstances;
@@ -235,6 +237,14 @@ public class DescribeVolumesResponse extends AcsResponse {
 
 		public void setMountInstanceNum(Integer mountInstanceNum) {
 			this.mountInstanceNum = mountInstanceNum;
+		}
+
+		public Boolean getEncrypted() {
+			return this.encrypted;
+		}
+
+		public void setEncrypted(Boolean encrypted) {
+			this.encrypted = encrypted;
 		}
 
 		public List<OperationLock> getOperationLocks() {

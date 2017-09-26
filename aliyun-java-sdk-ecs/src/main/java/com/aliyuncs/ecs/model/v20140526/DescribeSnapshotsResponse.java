@@ -93,6 +93,8 @@ public class DescribeSnapshotsResponse extends AcsResponse {
 
 		private String sourceDiskType;
 
+		private Boolean encrypted;
+
 		private String sourceDiskSize;
 
 		private String description;
@@ -153,6 +155,14 @@ public class DescribeSnapshotsResponse extends AcsResponse {
 
 		public void setSourceDiskType(String sourceDiskType) {
 			this.sourceDiskType = sourceDiskType;
+		}
+
+		public Boolean getEncrypted() {
+			return this.encrypted;
+		}
+
+		public void setEncrypted(Boolean encrypted) {
+			this.encrypted = encrypted;
 		}
 
 		public String getSourceDiskSize() {

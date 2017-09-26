@@ -30,19 +30,41 @@ public class ModifySnapshotAttributeRequest extends RpcAcsRequest<ModifySnapshot
 		super("Ecs", "2014-05-26", "ModifySnapshotAttribute", "ecs");
 	}
 
-	private String resourceOwnerAccount;
+	private Long resourceOwnerId;
 
 	private String snapshotId;
+
+	private String resourceOwnerAccount;
+
+	private String ownerAccount;
 
 	private String description;
 
 	private String snapshotName;
 
-	private Long resourceOwnerId;
-
-	private String ownerAccount;
-
 	private Long ownerId;
+
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
+	}
+
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getSnapshotId() {
+		return this.snapshotId;
+	}
+
+	public void setSnapshotId(String snapshotId) {
+		this.snapshotId = snapshotId;
+		if(snapshotId != null){
+			putQueryParameter("SnapshotId", snapshotId);
+		}
+	}
 
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
@@ -55,14 +77,14 @@ public class ModifySnapshotAttributeRequest extends RpcAcsRequest<ModifySnapshot
 		}
 	}
 
-	public String getSnapshotId() {
-		return this.snapshotId;
+	public String getOwnerAccount() {
+		return this.ownerAccount;
 	}
 
-	public void setSnapshotId(String snapshotId) {
-		this.snapshotId = snapshotId;
-		if(snapshotId != null){
-			putQueryParameter("SnapshotId", snapshotId);
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
 		}
 	}
 
@@ -85,28 +107,6 @@ public class ModifySnapshotAttributeRequest extends RpcAcsRequest<ModifySnapshot
 		this.snapshotName = snapshotName;
 		if(snapshotName != null){
 			putQueryParameter("SnapshotName", snapshotName);
-		}
-	}
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
-
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		if(ownerAccount != null){
-			putQueryParameter("OwnerAccount", ownerAccount);
 		}
 	}
 

@@ -31,17 +31,69 @@ public class DescribeSecurityGroupReferencesRequest extends RpcAcsRequest<Descri
 		super("Ecs", "2014-05-26", "DescribeSecurityGroupReferences", "ecs");
 	}
 
+	private Long resourceOwnerId;
+
+	private String resourceOwnerAccount;
+
+	private String ownerAccount;
+
 	private List<String> securityGroupIds;
+
+	private Long ownerId;
+
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
+	}
+
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
 
 	public List<String> getSecurityGroupIds() {
 		return this.securityGroupIds;
 	}
 
-	public void setSecurityGroupIds(List<String> securityGroupId) {
-		this.securityGroupIds = securityGroupId;	
-		for (int i = 0; i < securityGroupId.size(); i++) {
-			putQueryParameter("SecurityGroupId." + (i + 1) , securityGroupId.get(i));
+	public void setSecurityGroupIds(List<String> securityGroupIds) {
+		this.securityGroupIds = securityGroupIds;	
+		for (int i = 0; i < securityGroupIds.size(); i++) {
+			putQueryParameter("SecurityGroupId." + (i + 1) , securityGroupIds.get(i));
 		}	
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
 	}
 
 	@Override

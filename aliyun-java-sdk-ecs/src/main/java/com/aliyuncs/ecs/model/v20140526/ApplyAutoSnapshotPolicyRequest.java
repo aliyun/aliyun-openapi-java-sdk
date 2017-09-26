@@ -30,24 +30,24 @@ public class ApplyAutoSnapshotPolicyRequest extends RpcAcsRequest<ApplyAutoSnaps
 		super("Ecs", "2014-05-26", "ApplyAutoSnapshotPolicy", "ecs");
 	}
 
-	private String diskIds;
+	private Long resourceOwnerId;
 
 	private String resourceOwnerAccount;
 
 	private String autoSnapshotPolicyId;
 
-	private Long resourceOwnerId;
+	private String diskIds;
 
 	private Long ownerId;
 
-	public String getDiskIds() {
-		return this.diskIds;
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
 	}
 
-	public void setDiskIds(String diskIds) {
-		this.diskIds = diskIds;
-		if(diskIds != null){
-			putQueryParameter("diskIds", diskIds);
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
 		}
 	}
 
@@ -73,14 +73,14 @@ public class ApplyAutoSnapshotPolicyRequest extends RpcAcsRequest<ApplyAutoSnaps
 		}
 	}
 
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
+	public String getDiskIds() {
+		return this.diskIds;
 	}
 
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+	public void setDiskIds(String diskIds) {
+		this.diskIds = diskIds;
+		if(diskIds != null){
+			putQueryParameter("diskIds", diskIds);
 		}
 	}
 

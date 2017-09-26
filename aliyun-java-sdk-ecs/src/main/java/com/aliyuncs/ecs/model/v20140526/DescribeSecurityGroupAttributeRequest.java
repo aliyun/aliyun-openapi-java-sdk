@@ -30,52 +30,19 @@ public class DescribeSecurityGroupAttributeRequest extends RpcAcsRequest<Describ
 		super("Ecs", "2014-05-26", "DescribeSecurityGroupAttribute", "ecs");
 	}
 
-	private String resourceOwnerAccount;
-
-	private String securityGroupId;
-
-	private String direction;
-
 	private String nicType;
 
 	private Long resourceOwnerId;
 
+	private String resourceOwnerAccount;
+
 	private String ownerAccount;
+
+	private String securityGroupId;
 
 	private Long ownerId;
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public String getSecurityGroupId() {
-		return this.securityGroupId;
-	}
-
-	public void setSecurityGroupId(String securityGroupId) {
-		this.securityGroupId = securityGroupId;
-		if(securityGroupId != null){
-			putQueryParameter("SecurityGroupId", securityGroupId);
-		}
-	}
-
-	public String getDirection() {
-		return this.direction;
-	}
-
-	public void setDirection(String direction) {
-		this.direction = direction;
-		if(direction != null){
-			putQueryParameter("Direction", direction);
-		}
-	}
+	private String direction;
 
 	public String getNicType() {
 		return this.nicType;
@@ -99,6 +66,17 @@ public class DescribeSecurityGroupAttributeRequest extends RpcAcsRequest<Describ
 		}
 	}
 
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
 	public String getOwnerAccount() {
 		return this.ownerAccount;
 	}
@@ -110,6 +88,17 @@ public class DescribeSecurityGroupAttributeRequest extends RpcAcsRequest<Describ
 		}
 	}
 
+	public String getSecurityGroupId() {
+		return this.securityGroupId;
+	}
+
+	public void setSecurityGroupId(String securityGroupId) {
+		this.securityGroupId = securityGroupId;
+		if(securityGroupId != null){
+			putQueryParameter("SecurityGroupId", securityGroupId);
+		}
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -118,6 +107,17 @@ public class DescribeSecurityGroupAttributeRequest extends RpcAcsRequest<Describ
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getDirection() {
+		return this.direction;
+	}
+
+	public void setDirection(String direction) {
+		this.direction = direction;
+		if(direction != null){
+			putQueryParameter("Direction", direction);
 		}
 	}
 

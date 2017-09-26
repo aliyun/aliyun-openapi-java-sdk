@@ -27,6 +27,7 @@ public class ModifyInstanceNetworkSpecResponseUnmarshaller {
 	public static ModifyInstanceNetworkSpecResponse unmarshall(ModifyInstanceNetworkSpecResponse modifyInstanceNetworkSpecResponse, UnmarshallerContext context) {
 		
 		modifyInstanceNetworkSpecResponse.setRequestId(context.stringValue("ModifyInstanceNetworkSpecResponse.RequestId"));
+		modifyInstanceNetworkSpecResponse.setOrderId(context.stringValue("ModifyInstanceNetworkSpecResponse.OrderId"));
 	 
 	 	return modifyInstanceNetworkSpecResponse;
 	}

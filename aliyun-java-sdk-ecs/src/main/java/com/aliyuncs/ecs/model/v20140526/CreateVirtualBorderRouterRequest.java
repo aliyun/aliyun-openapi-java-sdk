@@ -30,35 +30,57 @@ public class CreateVirtualBorderRouterRequest extends RpcAcsRequest<CreateVirtua
 		super("Ecs", "2014-05-26", "CreateVirtualBorderRouter", "ecs");
 	}
 
+	private Long resourceOwnerId;
+
+	private String circuitCode;
+
 	private Integer vlanId;
 
 	private String clientToken;
 
-	private String userCidr;
-
-	private String physicalConnectionId;
-
-	private Long ownerId;
-
-	private Long vbrOwnerId;
-
-	private String circuitCode;
-
 	private String resourceOwnerAccount;
 
-	private String localGatewayIp;
+	private String ownerAccount;
 
 	private String description;
 
-	private String peerGatewayIp;
+	private Long ownerId;
 
-	private String name;
+	private String peerGatewayIp;
 
 	private String peeringSubnetMask;
 
-	private Long resourceOwnerId;
+	private String physicalConnectionId;
 
-	private String ownerAccount;
+	private String name;
+
+	private String localGatewayIp;
+
+	private String userCidr;
+
+	private Long vbrOwnerId;
+
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
+	}
+
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getCircuitCode() {
+		return this.circuitCode;
+	}
+
+	public void setCircuitCode(String circuitCode) {
+		this.circuitCode = circuitCode;
+		if(circuitCode != null){
+			putQueryParameter("CircuitCode", circuitCode);
+		}
+	}
 
 	public Integer getVlanId() {
 		return this.vlanId;
@@ -82,61 +104,6 @@ public class CreateVirtualBorderRouterRequest extends RpcAcsRequest<CreateVirtua
 		}
 	}
 
-	public String getUserCidr() {
-		return this.userCidr;
-	}
-
-	public void setUserCidr(String userCidr) {
-		this.userCidr = userCidr;
-		if(userCidr != null){
-			putQueryParameter("UserCidr", userCidr);
-		}
-	}
-
-	public String getPhysicalConnectionId() {
-		return this.physicalConnectionId;
-	}
-
-	public void setPhysicalConnectionId(String physicalConnectionId) {
-		this.physicalConnectionId = physicalConnectionId;
-		if(physicalConnectionId != null){
-			putQueryParameter("PhysicalConnectionId", physicalConnectionId);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public Long getVbrOwnerId() {
-		return this.vbrOwnerId;
-	}
-
-	public void setVbrOwnerId(Long vbrOwnerId) {
-		this.vbrOwnerId = vbrOwnerId;
-		if(vbrOwnerId != null){
-			putQueryParameter("VbrOwnerId", vbrOwnerId.toString());
-		}
-	}
-
-	public String getCircuitCode() {
-		return this.circuitCode;
-	}
-
-	public void setCircuitCode(String circuitCode) {
-		this.circuitCode = circuitCode;
-		if(circuitCode != null){
-			putQueryParameter("CircuitCode", circuitCode);
-		}
-	}
-
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
 	}
@@ -148,14 +115,14 @@ public class CreateVirtualBorderRouterRequest extends RpcAcsRequest<CreateVirtua
 		}
 	}
 
-	public String getLocalGatewayIp() {
-		return this.localGatewayIp;
+	public String getOwnerAccount() {
+		return this.ownerAccount;
 	}
 
-	public void setLocalGatewayIp(String localGatewayIp) {
-		this.localGatewayIp = localGatewayIp;
-		if(localGatewayIp != null){
-			putQueryParameter("LocalGatewayIp", localGatewayIp);
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
 		}
 	}
 
@@ -170,6 +137,17 @@ public class CreateVirtualBorderRouterRequest extends RpcAcsRequest<CreateVirtua
 		}
 	}
 
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
 	public String getPeerGatewayIp() {
 		return this.peerGatewayIp;
 	}
@@ -178,17 +156,6 @@ public class CreateVirtualBorderRouterRequest extends RpcAcsRequest<CreateVirtua
 		this.peerGatewayIp = peerGatewayIp;
 		if(peerGatewayIp != null){
 			putQueryParameter("PeerGatewayIp", peerGatewayIp);
-		}
-	}
-
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putQueryParameter("Name", name);
 		}
 	}
 
@@ -203,25 +170,58 @@ public class CreateVirtualBorderRouterRequest extends RpcAcsRequest<CreateVirtua
 		}
 	}
 
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
+	public String getPhysicalConnectionId() {
+		return this.physicalConnectionId;
 	}
 
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+	public void setPhysicalConnectionId(String physicalConnectionId) {
+		this.physicalConnectionId = physicalConnectionId;
+		if(physicalConnectionId != null){
+			putQueryParameter("PhysicalConnectionId", physicalConnectionId);
 		}
 	}
 
-	public String getOwnerAccount() {
-		return this.ownerAccount;
+	public String getName() {
+		return this.name;
 	}
 
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		if(ownerAccount != null){
-			putQueryParameter("OwnerAccount", ownerAccount);
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
+		}
+	}
+
+	public String getLocalGatewayIp() {
+		return this.localGatewayIp;
+	}
+
+	public void setLocalGatewayIp(String localGatewayIp) {
+		this.localGatewayIp = localGatewayIp;
+		if(localGatewayIp != null){
+			putQueryParameter("LocalGatewayIp", localGatewayIp);
+		}
+	}
+
+	public String getUserCidr() {
+		return this.userCidr;
+	}
+
+	public void setUserCidr(String userCidr) {
+		this.userCidr = userCidr;
+		if(userCidr != null){
+			putQueryParameter("UserCidr", userCidr);
+		}
+	}
+
+	public Long getVbrOwnerId() {
+		return this.vbrOwnerId;
+	}
+
+	public void setVbrOwnerId(Long vbrOwnerId) {
+		this.vbrOwnerId = vbrOwnerId;
+		if(vbrOwnerId != null){
+			putQueryParameter("VbrOwnerId", vbrOwnerId.toString());
 		}
 	}
 

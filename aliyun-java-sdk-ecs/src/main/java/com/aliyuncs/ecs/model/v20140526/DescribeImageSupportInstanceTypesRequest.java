@@ -30,24 +30,13 @@ public class DescribeImageSupportInstanceTypesRequest extends RpcAcsRequest<Desc
 		super("Ecs", "2014-05-26", "DescribeImageSupportInstanceTypes", "ecs");
 	}
 
-	private String resourceOwnerAccount;
-
 	private Long resourceOwnerId;
-
-	private Long ownerId;
 
 	private String imageId;
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
+	private String resourceOwnerAccount;
 
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
+	private Long ownerId;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -60,17 +49,6 @@ public class DescribeImageSupportInstanceTypesRequest extends RpcAcsRequest<Desc
 		}
 	}
 
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
 	public String getImageId() {
 		return this.imageId;
 	}
@@ -79,6 +57,28 @@ public class DescribeImageSupportInstanceTypesRequest extends RpcAcsRequest<Desc
 		this.imageId = imageId;
 		if(imageId != null){
 			putQueryParameter("ImageId", imageId);
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 

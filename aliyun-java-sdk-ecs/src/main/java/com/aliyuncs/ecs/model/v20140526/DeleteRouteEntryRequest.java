@@ -31,21 +31,32 @@ public class DeleteRouteEntryRequest extends RpcAcsRequest<DeleteRouteEntryRespo
 		super("Ecs", "2014-05-26", "DeleteRouteEntry", "ecs");
 	}
 
+	private Long resourceOwnerId;
+
 	private String resourceOwnerAccount;
 
-	private List<NextHopList> nextHopLists;
-
-	private String nextHopId;
-
-	private String routeTableId;
-
-	private Long resourceOwnerId;
+	private String destinationCidrBlock;
 
 	private String ownerAccount;
 
+	private String nextHopId;
+
 	private Long ownerId;
 
-	private String destinationCidrBlock;
+	private List<NextHopList> nextHopLists;
+
+	private String routeTableId;
+
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
+	}
+
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
 
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
@@ -58,48 +69,14 @@ public class DeleteRouteEntryRequest extends RpcAcsRequest<DeleteRouteEntryRespo
 		}
 	}
 
-	public List<NextHopList> getNextHopLists() {
-		return this.nextHopLists;
+	public String getDestinationCidrBlock() {
+		return this.destinationCidrBlock;
 	}
 
-	public void setNextHopLists(List<NextHopList> nextHopList) {
-		this.nextHopLists = nextHopList;	
-		for (int i = 0; i < nextHopList.size(); i++) {
-			putQueryParameter("NextHopList." + (i + 1) + ".NextHopType" , nextHopList.get(i).getNextHopType());
-			putQueryParameter("NextHopList." + (i + 1) + ".NextHopId" , nextHopList.get(i).getNextHopId());
-		}	
-	}
-
-	public String getNextHopId() {
-		return this.nextHopId;
-	}
-
-	public void setNextHopId(String nextHopId) {
-		this.nextHopId = nextHopId;
-		if(nextHopId != null){
-			putQueryParameter("NextHopId", nextHopId);
-		}
-	}
-
-	public String getRouteTableId() {
-		return this.routeTableId;
-	}
-
-	public void setRouteTableId(String routeTableId) {
-		this.routeTableId = routeTableId;
-		if(routeTableId != null){
-			putQueryParameter("RouteTableId", routeTableId);
-		}
-	}
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+	public void setDestinationCidrBlock(String destinationCidrBlock) {
+		this.destinationCidrBlock = destinationCidrBlock;
+		if(destinationCidrBlock != null){
+			putQueryParameter("DestinationCidrBlock", destinationCidrBlock);
 		}
 	}
 
@@ -114,6 +91,17 @@ public class DeleteRouteEntryRequest extends RpcAcsRequest<DeleteRouteEntryRespo
 		}
 	}
 
+	public String getNextHopId() {
+		return this.nextHopId;
+	}
+
+	public void setNextHopId(String nextHopId) {
+		this.nextHopId = nextHopId;
+		if(nextHopId != null){
+			putQueryParameter("NextHopId", nextHopId);
+		}
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -125,14 +113,26 @@ public class DeleteRouteEntryRequest extends RpcAcsRequest<DeleteRouteEntryRespo
 		}
 	}
 
-	public String getDestinationCidrBlock() {
-		return this.destinationCidrBlock;
+	public List<NextHopList> getNextHopLists() {
+		return this.nextHopLists;
 	}
 
-	public void setDestinationCidrBlock(String destinationCidrBlock) {
-		this.destinationCidrBlock = destinationCidrBlock;
-		if(destinationCidrBlock != null){
-			putQueryParameter("DestinationCidrBlock", destinationCidrBlock);
+	public void setNextHopLists(List<NextHopList> nextHopLists) {
+		this.nextHopLists = nextHopLists;	
+		for (int depth1 = 0; depth1 < nextHopLists.size(); depth1++) {
+			putQueryParameter("NextHopList." + (depth1 + 1) + ".NextHopType" , nextHopLists.get(depth1).getNextHopType());
+			putQueryParameter("NextHopList." + (depth1 + 1) + ".NextHopId" , nextHopLists.get(depth1).getNextHopId());
+		}	
+	}
+
+	public String getRouteTableId() {
+		return this.routeTableId;
+	}
+
+	public void setRouteTableId(String routeTableId) {
+		this.routeTableId = routeTableId;
+		if(routeTableId != null){
+			putQueryParameter("RouteTableId", routeTableId);
 		}
 	}
 

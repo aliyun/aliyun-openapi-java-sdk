@@ -32,9 +32,9 @@ public class DeleteVSwitchRequest extends RpcAcsRequest<DeleteVSwitchResponse> {
 
 	private String vSwitchId;
 
-	private String resourceOwnerAccount;
-
 	private Long resourceOwnerId;
+
+	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
@@ -51,17 +51,6 @@ public class DeleteVSwitchRequest extends RpcAcsRequest<DeleteVSwitchResponse> {
 		}
 	}
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
 	}
@@ -70,6 +59,17 @@ public class DeleteVSwitchRequest extends RpcAcsRequest<DeleteVSwitchResponse> {
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
 		}
 	}
 

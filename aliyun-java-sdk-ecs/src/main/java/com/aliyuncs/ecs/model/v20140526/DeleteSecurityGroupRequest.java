@@ -30,37 +30,15 @@ public class DeleteSecurityGroupRequest extends RpcAcsRequest<DeleteSecurityGrou
 		super("Ecs", "2014-05-26", "DeleteSecurityGroup", "ecs");
 	}
 
-	private String resourceOwnerAccount;
-
-	private String securityGroupId;
-
 	private Long resourceOwnerId;
+
+	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
+	private String securityGroupId;
+
 	private Long ownerId;
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public String getSecurityGroupId() {
-		return this.securityGroupId;
-	}
-
-	public void setSecurityGroupId(String securityGroupId) {
-		this.securityGroupId = securityGroupId;
-		if(securityGroupId != null){
-			putQueryParameter("SecurityGroupId", securityGroupId);
-		}
-	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -73,6 +51,17 @@ public class DeleteSecurityGroupRequest extends RpcAcsRequest<DeleteSecurityGrou
 		}
 	}
 
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
 	public String getOwnerAccount() {
 		return this.ownerAccount;
 	}
@@ -81,6 +70,17 @@ public class DeleteSecurityGroupRequest extends RpcAcsRequest<DeleteSecurityGrou
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public String getSecurityGroupId() {
+		return this.securityGroupId;
+	}
+
+	public void setSecurityGroupId(String securityGroupId) {
+		this.securityGroupId = securityGroupId;
+		if(securityGroupId != null){
+			putQueryParameter("SecurityGroupId", securityGroupId);
 		}
 	}
 

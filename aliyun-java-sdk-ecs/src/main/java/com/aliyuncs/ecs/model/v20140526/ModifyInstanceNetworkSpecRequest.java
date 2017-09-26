@@ -30,28 +30,51 @@ public class ModifyInstanceNetworkSpecRequest extends RpcAcsRequest<ModifyInstan
 		super("Ecs", "2014-05-26", "ModifyInstanceNetworkSpec", "ecs");
 	}
 
-	private Integer internetMaxBandwidthOut;
+	private Long resourceOwnerId;
+
+	private Boolean autoPay;
 
 	private String resourceOwnerAccount;
 
-	private Integer internetMaxBandwidthIn;
-
-	private Long resourceOwnerId;
+	private String clientToken;
 
 	private String ownerAccount;
+
+	private Integer internetMaxBandwidthOut;
+
+	private String endTime;
+
+	private String startTime;
 
 	private Long ownerId;
 
 	private String instanceId;
 
-	public Integer getInternetMaxBandwidthOut() {
-		return this.internetMaxBandwidthOut;
+	private String networkChargeType;
+
+	private Integer internetMaxBandwidthIn;
+
+	private Boolean allocatePublicIp;
+
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
 	}
 
-	public void setInternetMaxBandwidthOut(Integer internetMaxBandwidthOut) {
-		this.internetMaxBandwidthOut = internetMaxBandwidthOut;
-		if(internetMaxBandwidthOut != null){
-			putQueryParameter("InternetMaxBandwidthOut", internetMaxBandwidthOut.toString());
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public Boolean getAutoPay() {
+		return this.autoPay;
+	}
+
+	public void setAutoPay(Boolean autoPay) {
+		this.autoPay = autoPay;
+		if(autoPay != null){
+			putQueryParameter("AutoPay", autoPay.toString());
 		}
 	}
 
@@ -66,25 +89,14 @@ public class ModifyInstanceNetworkSpecRequest extends RpcAcsRequest<ModifyInstan
 		}
 	}
 
-	public Integer getInternetMaxBandwidthIn() {
-		return this.internetMaxBandwidthIn;
+	public String getClientToken() {
+		return this.clientToken;
 	}
 
-	public void setInternetMaxBandwidthIn(Integer internetMaxBandwidthIn) {
-		this.internetMaxBandwidthIn = internetMaxBandwidthIn;
-		if(internetMaxBandwidthIn != null){
-			putQueryParameter("InternetMaxBandwidthIn", internetMaxBandwidthIn.toString());
-		}
-	}
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
 		}
 	}
 
@@ -96,6 +108,39 @@ public class ModifyInstanceNetworkSpecRequest extends RpcAcsRequest<ModifyInstan
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public Integer getInternetMaxBandwidthOut() {
+		return this.internetMaxBandwidthOut;
+	}
+
+	public void setInternetMaxBandwidthOut(Integer internetMaxBandwidthOut) {
+		this.internetMaxBandwidthOut = internetMaxBandwidthOut;
+		if(internetMaxBandwidthOut != null){
+			putQueryParameter("InternetMaxBandwidthOut", internetMaxBandwidthOut.toString());
+		}
+	}
+
+	public String getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime);
+		}
+	}
+
+	public String getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime);
 		}
 	}
 
@@ -118,6 +163,39 @@ public class ModifyInstanceNetworkSpecRequest extends RpcAcsRequest<ModifyInstan
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public String getNetworkChargeType() {
+		return this.networkChargeType;
+	}
+
+	public void setNetworkChargeType(String networkChargeType) {
+		this.networkChargeType = networkChargeType;
+		if(networkChargeType != null){
+			putQueryParameter("NetworkChargeType", networkChargeType);
+		}
+	}
+
+	public Integer getInternetMaxBandwidthIn() {
+		return this.internetMaxBandwidthIn;
+	}
+
+	public void setInternetMaxBandwidthIn(Integer internetMaxBandwidthIn) {
+		this.internetMaxBandwidthIn = internetMaxBandwidthIn;
+		if(internetMaxBandwidthIn != null){
+			putQueryParameter("InternetMaxBandwidthIn", internetMaxBandwidthIn.toString());
+		}
+	}
+
+	public Boolean getAllocatePublicIp() {
+		return this.allocatePublicIp;
+	}
+
+	public void setAllocatePublicIp(Boolean allocatePublicIp) {
+		this.allocatePublicIp = allocatePublicIp;
+		if(allocatePublicIp != null){
+			putQueryParameter("AllocatePublicIp", allocatePublicIp.toString());
 		}
 	}
 

@@ -56,6 +56,7 @@ public class DescribeVolumesResponseUnmarshaller {
 			volume.setCreationTime(context.stringValue("DescribeVolumesResponse.Volumes["+ i +"].CreationTime"));
 			volume.setVolumeChargeType(context.stringValue("DescribeVolumesResponse.Volumes["+ i +"].VolumeChargeType"));
 			volume.setMountInstanceNum(context.integerValue("DescribeVolumesResponse.Volumes["+ i +"].MountInstanceNum"));
+			volume.setEncrypted(context.booleanValue("DescribeVolumesResponse.Volumes["+ i +"].Encrypted"));
 
 			List<OperationLock> operationLocks = new ArrayList<OperationLock>();
 			for (int j = 0; j < context.lengthValue("DescribeVolumesResponse.Volumes["+ i +"].OperationLocks.Length"); j++) {

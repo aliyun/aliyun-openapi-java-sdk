@@ -30,13 +30,24 @@ public class DescribeInstanceRamRoleRequest extends RpcAcsRequest<DescribeInstan
 		super("Ecs", "2014-05-26", "DescribeInstanceRamRole", "ecs");
 	}
 
+	private Long resourceOwnerId;
+
 	private String resourceOwnerAccount;
 
 	private String instanceIds;
 
-	private Long resourceOwnerId;
-
 	private Long ownerId;
+
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
+	}
+
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
 
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
@@ -57,17 +68,6 @@ public class DescribeInstanceRamRoleRequest extends RpcAcsRequest<DescribeInstan
 		this.instanceIds = instanceIds;
 		if(instanceIds != null){
 			putQueryParameter("InstanceIds", instanceIds);
-		}
-	}
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
 		}
 	}
 

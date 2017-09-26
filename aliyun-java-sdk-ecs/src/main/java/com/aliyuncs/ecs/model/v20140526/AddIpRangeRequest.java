@@ -30,37 +30,26 @@ public class AddIpRangeRequest extends RpcAcsRequest<AddIpRangeResponse> {
 		super("Ecs", "2014-05-26", "AddIpRange", "ecs");
 	}
 
-	private String resourceOwnerAccount;
-
-	private String zoneId;
+	private String ipAddress;
 
 	private Long resourceOwnerId;
 
+	private String resourceOwnerAccount;
+
 	private String ownerAccount;
 
-	private String ipAddress;
+	private String zoneId;
 
 	private Long ownerId;
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
+	public String getIpAddress() {
+		return this.ipAddress;
 	}
 
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public String getZoneId() {
-		return this.zoneId;
-	}
-
-	public void setZoneId(String zoneId) {
-		this.zoneId = zoneId;
-		if(zoneId != null){
-			putQueryParameter("ZoneId", zoneId);
+	public void setIpAddress(String ipAddress) {
+		this.ipAddress = ipAddress;
+		if(ipAddress != null){
+			putQueryParameter("IpAddress", ipAddress);
 		}
 	}
 
@@ -75,6 +64,17 @@ public class AddIpRangeRequest extends RpcAcsRequest<AddIpRangeResponse> {
 		}
 	}
 
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
 	public String getOwnerAccount() {
 		return this.ownerAccount;
 	}
@@ -86,14 +86,14 @@ public class AddIpRangeRequest extends RpcAcsRequest<AddIpRangeResponse> {
 		}
 	}
 
-	public String getIpAddress() {
-		return this.ipAddress;
+	public String getZoneId() {
+		return this.zoneId;
 	}
 
-	public void setIpAddress(String ipAddress) {
-		this.ipAddress = ipAddress;
-		if(ipAddress != null){
-			putQueryParameter("IpAddress", ipAddress);
+	public void setZoneId(String zoneId) {
+		this.zoneId = zoneId;
+		if(zoneId != null){
+			putQueryParameter("ZoneId", zoneId);
 		}
 	}
 

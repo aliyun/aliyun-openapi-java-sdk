@@ -30,44 +30,76 @@ public class AuthorizeSecurityGroupEgressRequest extends RpcAcsRequest<Authorize
 		super("Ecs", "2014-05-26", "AuthorizeSecurityGroupEgress", "ecs");
 	}
 
-	private String destGroupId;
+	private String nicType;
+
+	private Long resourceOwnerId;
+
+	private String sourcePortRange;
 
 	private String clientToken;
 
 	private String securityGroupId;
 
+	private String description;
+
+	private Long callerUid;
+
+	private String policy;
+
 	private String portRange;
 
-	private Long ownerId;
-
-	private String destCidrIp;
+	private String resourceOwnerAccount;
 
 	private String ipProtocol;
 
-	private String resourceOwnerAccount;
+	private String ownerAccount;
+
+	private String sourceCidrIp;
+
+	private String callerBid;
+
+	private String destGroupId;
+
+	private Long ownerId;
 
 	private String destGroupOwnerAccount;
 
 	private String priority;
 
+	private String destCidrIp;
+
 	private Long destGroupOwnerId;
 
-	private String nicType;
-
-	private String policy;
-
-	private Long resourceOwnerId;
-
-	private String ownerAccount;
-
-	public String getDestGroupId() {
-		return this.destGroupId;
+	public String getNicType() {
+		return this.nicType;
 	}
 
-	public void setDestGroupId(String destGroupId) {
-		this.destGroupId = destGroupId;
-		if(destGroupId != null){
-			putQueryParameter("DestGroupId", destGroupId);
+	public void setNicType(String nicType) {
+		this.nicType = nicType;
+		if(nicType != null){
+			putQueryParameter("NicType", nicType);
+		}
+	}
+
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
+	}
+
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getSourcePortRange() {
+		return this.sourcePortRange;
+	}
+
+	public void setSourcePortRange(String sourcePortRange) {
+		this.sourcePortRange = sourcePortRange;
+		if(sourcePortRange != null){
+			putQueryParameter("SourcePortRange", sourcePortRange);
 		}
 	}
 
@@ -93,6 +125,39 @@ public class AuthorizeSecurityGroupEgressRequest extends RpcAcsRequest<Authorize
 		}
 	}
 
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+		if(description != null){
+			putQueryParameter("Description", description);
+		}
+	}
+
+	public Long getCallerUid() {
+		return this.callerUid;
+	}
+
+	public void setCallerUid(Long callerUid) {
+		this.callerUid = callerUid;
+		if(callerUid != null){
+			putQueryParameter("callerUid", callerUid.toString());
+		}
+	}
+
+	public String getPolicy() {
+		return this.policy;
+	}
+
+	public void setPolicy(String policy) {
+		this.policy = policy;
+		if(policy != null){
+			putQueryParameter("Policy", policy);
+		}
+	}
+
 	public String getPortRange() {
 		return this.portRange;
 	}
@@ -104,25 +169,14 @@ public class AuthorizeSecurityGroupEgressRequest extends RpcAcsRequest<Authorize
 		}
 	}
 
-	public Long getOwnerId() {
-		return this.ownerId;
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
 	}
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getDestCidrIp() {
-		return this.destCidrIp;
-	}
-
-	public void setDestCidrIp(String destCidrIp) {
-		this.destCidrIp = destCidrIp;
-		if(destCidrIp != null){
-			putQueryParameter("DestCidrIp", destCidrIp);
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
 		}
 	}
 
@@ -137,14 +191,58 @@ public class AuthorizeSecurityGroupEgressRequest extends RpcAcsRequest<Authorize
 		}
 	}
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
+	public String getOwnerAccount() {
+		return this.ownerAccount;
 	}
 
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public String getSourceCidrIp() {
+		return this.sourceCidrIp;
+	}
+
+	public void setSourceCidrIp(String sourceCidrIp) {
+		this.sourceCidrIp = sourceCidrIp;
+		if(sourceCidrIp != null){
+			putQueryParameter("SourceCidrIp", sourceCidrIp);
+		}
+	}
+
+	public String getCallerBid() {
+		return this.callerBid;
+	}
+
+	public void setCallerBid(String callerBid) {
+		this.callerBid = callerBid;
+		if(callerBid != null){
+			putQueryParameter("callerBid", callerBid);
+		}
+	}
+
+	public String getDestGroupId() {
+		return this.destGroupId;
+	}
+
+	public void setDestGroupId(String destGroupId) {
+		this.destGroupId = destGroupId;
+		if(destGroupId != null){
+			putQueryParameter("DestGroupId", destGroupId);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 
@@ -170,6 +268,17 @@ public class AuthorizeSecurityGroupEgressRequest extends RpcAcsRequest<Authorize
 		}
 	}
 
+	public String getDestCidrIp() {
+		return this.destCidrIp;
+	}
+
+	public void setDestCidrIp(String destCidrIp) {
+		this.destCidrIp = destCidrIp;
+		if(destCidrIp != null){
+			putQueryParameter("DestCidrIp", destCidrIp);
+		}
+	}
+
 	public Long getDestGroupOwnerId() {
 		return this.destGroupOwnerId;
 	}
@@ -178,50 +287,6 @@ public class AuthorizeSecurityGroupEgressRequest extends RpcAcsRequest<Authorize
 		this.destGroupOwnerId = destGroupOwnerId;
 		if(destGroupOwnerId != null){
 			putQueryParameter("DestGroupOwnerId", destGroupOwnerId.toString());
-		}
-	}
-
-	public String getNicType() {
-		return this.nicType;
-	}
-
-	public void setNicType(String nicType) {
-		this.nicType = nicType;
-		if(nicType != null){
-			putQueryParameter("NicType", nicType);
-		}
-	}
-
-	public String getPolicy() {
-		return this.policy;
-	}
-
-	public void setPolicy(String policy) {
-		this.policy = policy;
-		if(policy != null){
-			putQueryParameter("Policy", policy);
-		}
-	}
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
-
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		if(ownerAccount != null){
-			putQueryParameter("OwnerAccount", ownerAccount);
 		}
 	}
 

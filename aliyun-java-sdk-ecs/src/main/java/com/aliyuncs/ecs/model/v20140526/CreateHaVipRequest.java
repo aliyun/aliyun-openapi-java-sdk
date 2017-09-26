@@ -32,17 +32,17 @@ public class CreateHaVipRequest extends RpcAcsRequest<CreateHaVipResponse> {
 
 	private String vSwitchId;
 
-	private String clientToken;
-
-	private String resourceOwnerAccount;
-
-	private String description;
+	private String ipAddress;
 
 	private Long resourceOwnerId;
 
-	private String ipAddress;
+	private String resourceOwnerAccount;
+
+	private String clientToken;
 
 	private String ownerAccount;
+
+	private String description;
 
 	private Long ownerId;
 
@@ -57,36 +57,14 @@ public class CreateHaVipRequest extends RpcAcsRequest<CreateHaVipResponse> {
 		}
 	}
 
-	public String getClientToken() {
-		return this.clientToken;
+	public String getIpAddress() {
+		return this.ipAddress;
 	}
 
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putQueryParameter("ClientToken", clientToken);
-		}
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public String getDescription() {
-		return this.description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-		if(description != null){
-			putQueryParameter("Description", description);
+	public void setIpAddress(String ipAddress) {
+		this.ipAddress = ipAddress;
+		if(ipAddress != null){
+			putQueryParameter("IpAddress", ipAddress);
 		}
 	}
 
@@ -101,14 +79,25 @@ public class CreateHaVipRequest extends RpcAcsRequest<CreateHaVipResponse> {
 		}
 	}
 
-	public String getIpAddress() {
-		return this.ipAddress;
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
 	}
 
-	public void setIpAddress(String ipAddress) {
-		this.ipAddress = ipAddress;
-		if(ipAddress != null){
-			putQueryParameter("IpAddress", ipAddress);
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
 		}
 	}
 
@@ -120,6 +109,17 @@ public class CreateHaVipRequest extends RpcAcsRequest<CreateHaVipResponse> {
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+		if(description != null){
+			putQueryParameter("Description", description);
 		}
 	}
 

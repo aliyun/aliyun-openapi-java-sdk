@@ -30,9 +30,9 @@ public class ExportImageRequest extends RpcAcsRequest<ExportImageResponse> {
 		super("Ecs", "2014-05-26", "ExportImage", "ecs");
 	}
 
-	private String imageFormat;
+	private Long resourceOwnerId;
 
-	private String roleName;
+	private String imageId;
 
 	private String oSSBucket;
 
@@ -40,31 +40,31 @@ public class ExportImageRequest extends RpcAcsRequest<ExportImageResponse> {
 
 	private String oSSPrefix;
 
-	private Long resourceOwnerId;
+	private String roleName;
 
 	private Long ownerId;
 
-	private String imageId;
+	private String imageFormat;
 
-	public String getImageFormat() {
-		return this.imageFormat;
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
 	}
 
-	public void setImageFormat(String imageFormat) {
-		this.imageFormat = imageFormat;
-		if(imageFormat != null){
-			putQueryParameter("ImageFormat", imageFormat);
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
 		}
 	}
 
-	public String getRoleName() {
-		return this.roleName;
+	public String getImageId() {
+		return this.imageId;
 	}
 
-	public void setRoleName(String roleName) {
-		this.roleName = roleName;
-		if(roleName != null){
-			putQueryParameter("RoleName", roleName);
+	public void setImageId(String imageId) {
+		this.imageId = imageId;
+		if(imageId != null){
+			putQueryParameter("ImageId", imageId);
 		}
 	}
 
@@ -101,14 +101,14 @@ public class ExportImageRequest extends RpcAcsRequest<ExportImageResponse> {
 		}
 	}
 
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
+	public String getRoleName() {
+		return this.roleName;
 	}
 
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+	public void setRoleName(String roleName) {
+		this.roleName = roleName;
+		if(roleName != null){
+			putQueryParameter("RoleName", roleName);
 		}
 	}
 
@@ -123,14 +123,14 @@ public class ExportImageRequest extends RpcAcsRequest<ExportImageResponse> {
 		}
 	}
 
-	public String getImageId() {
-		return this.imageId;
+	public String getImageFormat() {
+		return this.imageFormat;
 	}
 
-	public void setImageId(String imageId) {
-		this.imageId = imageId;
-		if(imageId != null){
-			putQueryParameter("ImageId", imageId);
+	public void setImageFormat(String imageFormat) {
+		this.imageFormat = imageFormat;
+		if(imageFormat != null){
+			putQueryParameter("ImageFormat", imageFormat);
 		}
 	}
 

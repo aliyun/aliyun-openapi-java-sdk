@@ -30,52 +30,19 @@ public class ModifyVolumeAttributeRequest extends RpcAcsRequest<ModifyVolumeAttr
 		super("Ecs", "2014-05-26", "ModifyVolumeAttribute", "ecs");
 	}
 
-	private String resourceOwnerAccount;
-
-	private String description;
-
-	private String volumeId;
-
 	private Long resourceOwnerId;
-
-	private String ownerAccount;
 
 	private String volumeName;
 
+	private String resourceOwnerAccount;
+
+	private String ownerAccount;
+
+	private String volumeId;
+
+	private String description;
+
 	private Long ownerId;
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public String getDescription() {
-		return this.description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-		if(description != null){
-			putQueryParameter("Description", description);
-		}
-	}
-
-	public String getVolumeId() {
-		return this.volumeId;
-	}
-
-	public void setVolumeId(String volumeId) {
-		this.volumeId = volumeId;
-		if(volumeId != null){
-			putQueryParameter("VolumeId", volumeId);
-		}
-	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -85,6 +52,28 @@ public class ModifyVolumeAttributeRequest extends RpcAcsRequest<ModifyVolumeAttr
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getVolumeName() {
+		return this.volumeName;
+	}
+
+	public void setVolumeName(String volumeName) {
+		this.volumeName = volumeName;
+		if(volumeName != null){
+			putQueryParameter("VolumeName", volumeName);
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
 		}
 	}
 
@@ -99,14 +88,25 @@ public class ModifyVolumeAttributeRequest extends RpcAcsRequest<ModifyVolumeAttr
 		}
 	}
 
-	public String getVolumeName() {
-		return this.volumeName;
+	public String getVolumeId() {
+		return this.volumeId;
 	}
 
-	public void setVolumeName(String volumeName) {
-		this.volumeName = volumeName;
-		if(volumeName != null){
-			putQueryParameter("VolumeName", volumeName);
+	public void setVolumeId(String volumeId) {
+		this.volumeId = volumeId;
+		if(volumeId != null){
+			putQueryParameter("VolumeId", volumeId);
+		}
+	}
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+		if(description != null){
+			putQueryParameter("Description", description);
 		}
 	}
 

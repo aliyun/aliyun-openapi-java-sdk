@@ -30,223 +30,60 @@ public class CreateDiskRequest extends RpcAcsRequest<CreateDiskResponse> {
 		super("Ecs", "2014-05-26", "CreateDisk", "ecs");
 	}
 
-	private String diskName;
-
-	private String resourceGroupId;
-
-	private String clientToken;
-
-	private String zoneId;
-
-	private Long ownerId;
-
-	private String tag5Key;
-
-	private Integer size;
-
-	private String diskCategory;
-
-	private String tag5Value;
-
-	private String tag3Key;
-
-	private String resourceOwnerAccount;
-
-	private String snapshotId;
-
-	private String description;
-
-	private String tag2Key;
-
-	private String tag1Key;
-
-	private String tag1Value;
+	private String tag4Value;
 
 	private Long resourceOwnerId;
 
-	private String tag4Value;
+	private String snapshotId;
 
-	private String ownerAccount;
+	private String tag2Key;
+
+	private String clientToken;
+
+	private String description;
+
+	private String tag3Key;
+
+	private String diskName;
+
+	private String tag1Value;
+
+	private String resourceGroupId;
+
+	private String diskCategory;
 
 	private String tag3Value;
 
+	private String tag5Key;
+
+	private String resourceOwnerAccount;
+
+	private String ownerAccount;
+
+	private Long ownerId;
+
+	private String tag5Value;
+
+	private String tag1Key;
+
+	private Integer size;
+
+	private Boolean encrypted;
+
 	private String tag2Value;
+
+	private String zoneId;
 
 	private String tag4Key;
 
-	public String getDiskName() {
-		return this.diskName;
+	public String getTag4Value() {
+		return this.tag4Value;
 	}
 
-	public void setDiskName(String diskName) {
-		this.diskName = diskName;
-		if(diskName != null){
-			putQueryParameter("DiskName", diskName);
-		}
-	}
-
-	public String getResourceGroupId() {
-		return this.resourceGroupId;
-	}
-
-	public void setResourceGroupId(String resourceGroupId) {
-		this.resourceGroupId = resourceGroupId;
-		if(resourceGroupId != null){
-			putQueryParameter("ResourceGroupId", resourceGroupId);
-		}
-	}
-
-	public String getClientToken() {
-		return this.clientToken;
-	}
-
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putQueryParameter("ClientToken", clientToken);
-		}
-	}
-
-	public String getZoneId() {
-		return this.zoneId;
-	}
-
-	public void setZoneId(String zoneId) {
-		this.zoneId = zoneId;
-		if(zoneId != null){
-			putQueryParameter("ZoneId", zoneId);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getTag5Key() {
-		return this.tag5Key;
-	}
-
-	public void setTag5Key(String tag5Key) {
-		this.tag5Key = tag5Key;
-		if(tag5Key != null){
-			putQueryParameter("Tag.5.Key", tag5Key);
-		}
-	}
-
-	public Integer getSize() {
-		return this.size;
-	}
-
-	public void setSize(Integer size) {
-		this.size = size;
-		if(size != null){
-			putQueryParameter("Size", size.toString());
-		}
-	}
-
-	public String getDiskCategory() {
-		return this.diskCategory;
-	}
-
-	public void setDiskCategory(String diskCategory) {
-		this.diskCategory = diskCategory;
-		if(diskCategory != null){
-			putQueryParameter("DiskCategory", diskCategory);
-		}
-	}
-
-	public String getTag5Value() {
-		return this.tag5Value;
-	}
-
-	public void setTag5Value(String tag5Value) {
-		this.tag5Value = tag5Value;
-		if(tag5Value != null){
-			putQueryParameter("Tag.5.Value", tag5Value);
-		}
-	}
-
-	public String getTag3Key() {
-		return this.tag3Key;
-	}
-
-	public void setTag3Key(String tag3Key) {
-		this.tag3Key = tag3Key;
-		if(tag3Key != null){
-			putQueryParameter("Tag.3.Key", tag3Key);
-		}
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public String getSnapshotId() {
-		return this.snapshotId;
-	}
-
-	public void setSnapshotId(String snapshotId) {
-		this.snapshotId = snapshotId;
-		if(snapshotId != null){
-			putQueryParameter("SnapshotId", snapshotId);
-		}
-	}
-
-	public String getDescription() {
-		return this.description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-		if(description != null){
-			putQueryParameter("Description", description);
-		}
-	}
-
-	public String getTag2Key() {
-		return this.tag2Key;
-	}
-
-	public void setTag2Key(String tag2Key) {
-		this.tag2Key = tag2Key;
-		if(tag2Key != null){
-			putQueryParameter("Tag.2.Key", tag2Key);
-		}
-	}
-
-	public String getTag1Key() {
-		return this.tag1Key;
-	}
-
-	public void setTag1Key(String tag1Key) {
-		this.tag1Key = tag1Key;
-		if(tag1Key != null){
-			putQueryParameter("Tag.1.Key", tag1Key);
-		}
-	}
-
-	public String getTag1Value() {
-		return this.tag1Value;
-	}
-
-	public void setTag1Value(String tag1Value) {
-		this.tag1Value = tag1Value;
-		if(tag1Value != null){
-			putQueryParameter("Tag.1.Value", tag1Value);
+	public void setTag4Value(String tag4Value) {
+		this.tag4Value = tag4Value;
+		if(tag4Value != null){
+			putQueryParameter("Tag.4.Value", tag4Value);
 		}
 	}
 
@@ -261,25 +98,102 @@ public class CreateDiskRequest extends RpcAcsRequest<CreateDiskResponse> {
 		}
 	}
 
-	public String getTag4Value() {
-		return this.tag4Value;
+	public String getSnapshotId() {
+		return this.snapshotId;
 	}
 
-	public void setTag4Value(String tag4Value) {
-		this.tag4Value = tag4Value;
-		if(tag4Value != null){
-			putQueryParameter("Tag.4.Value", tag4Value);
+	public void setSnapshotId(String snapshotId) {
+		this.snapshotId = snapshotId;
+		if(snapshotId != null){
+			putQueryParameter("SnapshotId", snapshotId);
 		}
 	}
 
-	public String getOwnerAccount() {
-		return this.ownerAccount;
+	public String getTag2Key() {
+		return this.tag2Key;
 	}
 
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		if(ownerAccount != null){
-			putQueryParameter("OwnerAccount", ownerAccount);
+	public void setTag2Key(String tag2Key) {
+		this.tag2Key = tag2Key;
+		if(tag2Key != null){
+			putQueryParameter("Tag.2.Key", tag2Key);
+		}
+	}
+
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+		if(description != null){
+			putQueryParameter("Description", description);
+		}
+	}
+
+	public String getTag3Key() {
+		return this.tag3Key;
+	}
+
+	public void setTag3Key(String tag3Key) {
+		this.tag3Key = tag3Key;
+		if(tag3Key != null){
+			putQueryParameter("Tag.3.Key", tag3Key);
+		}
+	}
+
+	public String getDiskName() {
+		return this.diskName;
+	}
+
+	public void setDiskName(String diskName) {
+		this.diskName = diskName;
+		if(diskName != null){
+			putQueryParameter("DiskName", diskName);
+		}
+	}
+
+	public String getTag1Value() {
+		return this.tag1Value;
+	}
+
+	public void setTag1Value(String tag1Value) {
+		this.tag1Value = tag1Value;
+		if(tag1Value != null){
+			putQueryParameter("Tag.1.Value", tag1Value);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
+	public String getDiskCategory() {
+		return this.diskCategory;
+	}
+
+	public void setDiskCategory(String diskCategory) {
+		this.diskCategory = diskCategory;
+		if(diskCategory != null){
+			putQueryParameter("DiskCategory", diskCategory);
 		}
 	}
 
@@ -294,6 +208,94 @@ public class CreateDiskRequest extends RpcAcsRequest<CreateDiskResponse> {
 		}
 	}
 
+	public String getTag5Key() {
+		return this.tag5Key;
+	}
+
+	public void setTag5Key(String tag5Key) {
+		this.tag5Key = tag5Key;
+		if(tag5Key != null){
+			putQueryParameter("Tag.5.Key", tag5Key);
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getTag5Value() {
+		return this.tag5Value;
+	}
+
+	public void setTag5Value(String tag5Value) {
+		this.tag5Value = tag5Value;
+		if(tag5Value != null){
+			putQueryParameter("Tag.5.Value", tag5Value);
+		}
+	}
+
+	public String getTag1Key() {
+		return this.tag1Key;
+	}
+
+	public void setTag1Key(String tag1Key) {
+		this.tag1Key = tag1Key;
+		if(tag1Key != null){
+			putQueryParameter("Tag.1.Key", tag1Key);
+		}
+	}
+
+	public Integer getSize() {
+		return this.size;
+	}
+
+	public void setSize(Integer size) {
+		this.size = size;
+		if(size != null){
+			putQueryParameter("Size", size.toString());
+		}
+	}
+
+	public Boolean getEncrypted() {
+		return this.encrypted;
+	}
+
+	public void setEncrypted(Boolean encrypted) {
+		this.encrypted = encrypted;
+		if(encrypted != null){
+			putQueryParameter("Encrypted", encrypted.toString());
+		}
+	}
+
 	public String getTag2Value() {
 		return this.tag2Value;
 	}
@@ -302,6 +304,17 @@ public class CreateDiskRequest extends RpcAcsRequest<CreateDiskResponse> {
 		this.tag2Value = tag2Value;
 		if(tag2Value != null){
 			putQueryParameter("Tag.2.Value", tag2Value);
+		}
+	}
+
+	public String getZoneId() {
+		return this.zoneId;
+	}
+
+	public void setZoneId(String zoneId) {
+		this.zoneId = zoneId;
+		if(zoneId != null){
+			putQueryParameter("ZoneId", zoneId);
 		}
 	}
 

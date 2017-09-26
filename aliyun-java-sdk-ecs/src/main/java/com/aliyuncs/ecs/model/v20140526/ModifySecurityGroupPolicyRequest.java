@@ -30,11 +30,30 @@ public class ModifySecurityGroupPolicyRequest extends RpcAcsRequest<ModifySecuri
 		super("Ecs", "2014-05-26", "ModifySecurityGroupPolicy", "ecs");
 	}
 
+	private Long resourceOwnerId;
+
 	private String clientToken;
+
+	private String resourceOwnerAccount;
+
+	private String ownerAccount;
 
 	private String securityGroupId;
 
+	private Long ownerId;
+
 	private String innerAccessPolicy;
+
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
+	}
+
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
 
 	public String getClientToken() {
 		return this.clientToken;
@@ -47,6 +66,28 @@ public class ModifySecurityGroupPolicyRequest extends RpcAcsRequest<ModifySecuri
 		}
 	}
 
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
 	public String getSecurityGroupId() {
 		return this.securityGroupId;
 	}
@@ -55,6 +96,17 @@ public class ModifySecurityGroupPolicyRequest extends RpcAcsRequest<ModifySecuri
 		this.securityGroupId = securityGroupId;
 		if(securityGroupId != null){
 			putQueryParameter("SecurityGroupId", securityGroupId);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 

@@ -63,6 +63,8 @@ public class DescribeZonesResponse extends AcsResponse {
 
 		private List<String> availableInstanceTypes;
 
+		private List<String> availableVolumeCategories;
+
 		public String getZoneId() {
 			return this.zoneId;
 		}
@@ -109,6 +111,14 @@ public class DescribeZonesResponse extends AcsResponse {
 
 		public void setAvailableInstanceTypes(List<String> availableInstanceTypes) {
 			this.availableInstanceTypes = availableInstanceTypes;
+		}
+
+		public List<String> getAvailableVolumeCategories() {
+			return this.availableVolumeCategories;
+		}
+
+		public void setAvailableVolumeCategories(List<String> availableVolumeCategories) {
+			this.availableVolumeCategories = availableVolumeCategories;
 		}
 
 		public static class ResourcesInfo {

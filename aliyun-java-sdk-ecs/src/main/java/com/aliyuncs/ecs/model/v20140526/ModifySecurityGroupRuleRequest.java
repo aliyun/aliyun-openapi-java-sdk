@@ -30,42 +30,76 @@ public class ModifySecurityGroupRuleRequest extends RpcAcsRequest<ModifySecurity
 		super("Ecs", "2014-05-26", "ModifySecurityGroupRule", "ecs");
 	}
 
-	private String sourceGroupOwnerAccount;
+	private String nicType;
+
+	private Long resourceOwnerId;
+
+	private String sourcePortRange;
 
 	private String clientToken;
 
 	private String securityGroupId;
 
-	private String portRange;
+	private String description;
 
-	private Long ownerId;
+	private Long sourceGroupOwnerId;
 
-	private String ipProtocol;
+	private String sourceGroupOwnerAccount;
 
-	private String resourceOwnerAccount;
-
-	private Integer priority;
-
-	private String sourceGroupId;
-
-	private String nicType;
+	private Long callerUid;
 
 	private String policy;
 
-	private Long resourceOwnerId;
+	private String portRange;
+
+	private String resourceOwnerAccount;
+
+	private String ipProtocol;
 
 	private String ownerAccount;
 
 	private String sourceCidrIp;
 
-	public String getSourceGroupOwnerAccount() {
-		return this.sourceGroupOwnerAccount;
+	private String callerBid;
+
+	private Long ownerId;
+
+	private String priority;
+
+	private String destCidrIp;
+
+	private String sourceGroupId;
+
+	public String getNicType() {
+		return this.nicType;
 	}
 
-	public void setSourceGroupOwnerAccount(String sourceGroupOwnerAccount) {
-		this.sourceGroupOwnerAccount = sourceGroupOwnerAccount;
-		if(sourceGroupOwnerAccount != null){
-			putQueryParameter("SourceGroupOwnerAccount", sourceGroupOwnerAccount);
+	public void setNicType(String nicType) {
+		this.nicType = nicType;
+		if(nicType != null){
+			putQueryParameter("NicType", nicType);
+		}
+	}
+
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
+	}
+
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getSourcePortRange() {
+		return this.sourcePortRange;
+	}
+
+	public void setSourcePortRange(String sourcePortRange) {
+		this.sourcePortRange = sourcePortRange;
+		if(sourcePortRange != null){
+			putQueryParameter("SourcePortRange", sourcePortRange);
 		}
 	}
 
@@ -91,80 +125,47 @@ public class ModifySecurityGroupRuleRequest extends RpcAcsRequest<ModifySecurity
 		}
 	}
 
-	public String getPortRange() {
-		return this.portRange;
+	public String getDescription() {
+		return this.description;
 	}
 
-	public void setPortRange(String portRange) {
-		this.portRange = portRange;
-		if(portRange != null){
-			putQueryParameter("PortRange", portRange);
+	public void setDescription(String description) {
+		this.description = description;
+		if(description != null){
+			putQueryParameter("Description", description);
 		}
 	}
 
-	public Long getOwnerId() {
-		return this.ownerId;
+	public Long getSourceGroupOwnerId() {
+		return this.sourceGroupOwnerId;
 	}
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
+	public void setSourceGroupOwnerId(Long sourceGroupOwnerId) {
+		this.sourceGroupOwnerId = sourceGroupOwnerId;
+		if(sourceGroupOwnerId != null){
+			putQueryParameter("SourceGroupOwnerId", sourceGroupOwnerId.toString());
 		}
 	}
 
-	public String getIpProtocol() {
-		return this.ipProtocol;
+	public String getSourceGroupOwnerAccount() {
+		return this.sourceGroupOwnerAccount;
 	}
 
-	public void setIpProtocol(String ipProtocol) {
-		this.ipProtocol = ipProtocol;
-		if(ipProtocol != null){
-			putQueryParameter("IpProtocol", ipProtocol);
+	public void setSourceGroupOwnerAccount(String sourceGroupOwnerAccount) {
+		this.sourceGroupOwnerAccount = sourceGroupOwnerAccount;
+		if(sourceGroupOwnerAccount != null){
+			putQueryParameter("SourceGroupOwnerAccount", sourceGroupOwnerAccount);
 		}
 	}
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
+	public Long getCallerUid() {
+		return this.callerUid;
 	}
 
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public Integer getPriority() {
-		return this.priority;
-	}
-
-	public void setPriority(Integer priority) {
-		this.priority = priority;
-		if(priority != null){
-			putQueryParameter("Priority", priority.toString());
-		}
-	}
-
-	public String getSourceGroupId() {
-		return this.sourceGroupId;
-	}
-
-	public void setSourceGroupId(String sourceGroupId) {
-		this.sourceGroupId = sourceGroupId;
-		if(sourceGroupId != null){
-			putQueryParameter("SourceGroupId", sourceGroupId);
-		}
-	}
-
-	public String getNicType() {
-		return this.nicType;
-	}
-
-	public void setNicType(String nicType) {
-		this.nicType = nicType;
-		if(nicType != null){
-			putQueryParameter("NicType", nicType);
+	public void setCallerUid(Long callerUid) {
+		this.callerUid = callerUid;
+		if(callerUid != null){
+			putQueryParameter("callerUid", callerUid.toString());
 		}
 	}
 
@@ -179,14 +180,36 @@ public class ModifySecurityGroupRuleRequest extends RpcAcsRequest<ModifySecurity
 		}
 	}
 
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
+	public String getPortRange() {
+		return this.portRange;
 	}
 
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+	public void setPortRange(String portRange) {
+		this.portRange = portRange;
+		if(portRange != null){
+			putQueryParameter("PortRange", portRange);
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getIpProtocol() {
+		return this.ipProtocol;
+	}
+
+	public void setIpProtocol(String ipProtocol) {
+		this.ipProtocol = ipProtocol;
+		if(ipProtocol != null){
+			putQueryParameter("IpProtocol", ipProtocol);
 		}
 	}
 
@@ -209,6 +232,61 @@ public class ModifySecurityGroupRuleRequest extends RpcAcsRequest<ModifySecurity
 		this.sourceCidrIp = sourceCidrIp;
 		if(sourceCidrIp != null){
 			putQueryParameter("SourceCidrIp", sourceCidrIp);
+		}
+	}
+
+	public String getCallerBid() {
+		return this.callerBid;
+	}
+
+	public void setCallerBid(String callerBid) {
+		this.callerBid = callerBid;
+		if(callerBid != null){
+			putQueryParameter("callerBid", callerBid);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getPriority() {
+		return this.priority;
+	}
+
+	public void setPriority(String priority) {
+		this.priority = priority;
+		if(priority != null){
+			putQueryParameter("Priority", priority);
+		}
+	}
+
+	public String getDestCidrIp() {
+		return this.destCidrIp;
+	}
+
+	public void setDestCidrIp(String destCidrIp) {
+		this.destCidrIp = destCidrIp;
+		if(destCidrIp != null){
+			putQueryParameter("DestCidrIp", destCidrIp);
+		}
+	}
+
+	public String getSourceGroupId() {
+		return this.sourceGroupId;
+	}
+
+	public void setSourceGroupId(String sourceGroupId) {
+		this.sourceGroupId = sourceGroupId;
+		if(sourceGroupId != null){
+			putQueryParameter("SourceGroupId", sourceGroupId);
 		}
 	}
 

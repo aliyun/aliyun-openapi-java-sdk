@@ -30,39 +30,17 @@ public class RebootInstanceRequest extends RpcAcsRequest<RebootInstanceResponse>
 		super("Ecs", "2014-05-26", "RebootInstance", "ecs");
 	}
 
-	private String resourceOwnerAccount;
-
-	private Boolean forceStop;
-
 	private Long resourceOwnerId;
+
+	private String instanceId;
+
+	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
 	private Long ownerId;
 
-	private String instanceId;
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public Boolean getForceStop() {
-		return this.forceStop;
-	}
-
-	public void setForceStop(Boolean forceStop) {
-		this.forceStop = forceStop;
-		if(forceStop != null){
-			putQueryParameter("ForceStop", forceStop.toString());
-		}
-	}
+	private Boolean forceStop;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -72,6 +50,28 @@ public class RebootInstanceRequest extends RpcAcsRequest<RebootInstanceResponse>
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
 		}
 	}
 
@@ -97,14 +97,14 @@ public class RebootInstanceRequest extends RpcAcsRequest<RebootInstanceResponse>
 		}
 	}
 
-	public String getInstanceId() {
-		return this.instanceId;
+	public Boolean getForceStop() {
+		return this.forceStop;
 	}
 
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
+	public void setForceStop(Boolean forceStop) {
+		this.forceStop = forceStop;
+		if(forceStop != null){
+			putQueryParameter("ForceStop", forceStop.toString());
 		}
 	}
 

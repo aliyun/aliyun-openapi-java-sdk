@@ -125,6 +125,8 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		private String instanceChargeType;
 
+		private String saleCycle;
+
 		private String expiredTime;
 
 		private String autoReleaseTime;
@@ -145,9 +147,13 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		private String spotStrategy;
 
+		private Float spotPriceLimit;
+
 		private String resourceGroupId;
 
 		private String keyPairName;
+
+		private List<NetworkInterface> networkInterfaces;
 
 		private List<LockReason> operationLocks;
 
@@ -341,6 +347,14 @@ public class DescribeInstancesResponse extends AcsResponse {
 			this.instanceChargeType = instanceChargeType;
 		}
 
+		public String getSaleCycle() {
+			return this.saleCycle;
+		}
+
+		public void setSaleCycle(String saleCycle) {
+			this.saleCycle = saleCycle;
+		}
+
 		public String getExpiredTime() {
 			return this.expiredTime;
 		}
@@ -421,6 +435,14 @@ public class DescribeInstancesResponse extends AcsResponse {
 			this.spotStrategy = spotStrategy;
 		}
 
+		public Float getSpotPriceLimit() {
+			return this.spotPriceLimit;
+		}
+
+		public void setSpotPriceLimit(Float spotPriceLimit) {
+			this.spotPriceLimit = spotPriceLimit;
+		}
+
 		public String getResourceGroupId() {
 			return this.resourceGroupId;
 		}
@@ -435,6 +457,14 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		public void setKeyPairName(String keyPairName) {
 			this.keyPairName = keyPairName;
+		}
+
+		public List<NetworkInterface> getNetworkInterfaces() {
+			return this.networkInterfaces;
+		}
+
+		public void setNetworkInterfaces(List<NetworkInterface> networkInterfaces) {
+			this.networkInterfaces = networkInterfaces;
 		}
 
 		public List<LockReason> getOperationLocks() {
@@ -499,6 +529,39 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		public void setEipAddress(EipAddress eipAddress) {
 			this.eipAddress = eipAddress;
+		}
+
+		public static class NetworkInterface {
+
+			private String networkInterfaceId;
+
+			private String macAddress;
+
+			private String primaryIpAddress;
+
+			public String getNetworkInterfaceId() {
+				return this.networkInterfaceId;
+			}
+
+			public void setNetworkInterfaceId(String networkInterfaceId) {
+				this.networkInterfaceId = networkInterfaceId;
+			}
+
+			public String getMacAddress() {
+				return this.macAddress;
+			}
+
+			public void setMacAddress(String macAddress) {
+				this.macAddress = macAddress;
+			}
+
+			public String getPrimaryIpAddress() {
+				return this.primaryIpAddress;
+			}
+
+			public void setPrimaryIpAddress(String primaryIpAddress) {
+				this.primaryIpAddress = primaryIpAddress;
+			}
 		}
 
 		public static class LockReason {

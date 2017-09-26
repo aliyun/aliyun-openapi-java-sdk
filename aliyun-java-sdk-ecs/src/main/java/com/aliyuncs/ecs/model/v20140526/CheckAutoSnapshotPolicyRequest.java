@@ -30,38 +30,49 @@ public class CheckAutoSnapshotPolicyRequest extends RpcAcsRequest<CheckAutoSnaps
 		super("Ecs", "2014-05-26", "CheckAutoSnapshotPolicy", "ecs");
 	}
 
-	private Boolean dataDiskPolicyRetentionLastWeek;
+	private Boolean dataDiskPolicyEnabled;
+
+	private Long resourceOwnerId;
 
 	private Integer dataDiskPolicyRetentionDays;
 
-	private Integer dataDiskPolicyTimePeriod;
+	private String resourceOwnerAccount;
 
 	private Boolean systemDiskPolicyRetentionLastWeek;
+
+	private String ownerAccount;
 
 	private Integer systemDiskPolicyTimePeriod;
 
 	private Long ownerId;
 
-	private String resourceOwnerAccount;
-
-	private Boolean systemDiskPolicyEnabled;
-
-	private Long resourceOwnerId;
-
-	private String ownerAccount;
+	private Boolean dataDiskPolicyRetentionLastWeek;
 
 	private Integer systemDiskPolicyRetentionDays;
 
-	private Boolean dataDiskPolicyEnabled;
+	private Integer dataDiskPolicyTimePeriod;
 
-	public Boolean getDataDiskPolicyRetentionLastWeek() {
-		return this.dataDiskPolicyRetentionLastWeek;
+	private Boolean systemDiskPolicyEnabled;
+
+	public Boolean getDataDiskPolicyEnabled() {
+		return this.dataDiskPolicyEnabled;
 	}
 
-	public void setDataDiskPolicyRetentionLastWeek(Boolean dataDiskPolicyRetentionLastWeek) {
-		this.dataDiskPolicyRetentionLastWeek = dataDiskPolicyRetentionLastWeek;
-		if(dataDiskPolicyRetentionLastWeek != null){
-			putQueryParameter("DataDiskPolicyRetentionLastWeek", dataDiskPolicyRetentionLastWeek.toString());
+	public void setDataDiskPolicyEnabled(Boolean dataDiskPolicyEnabled) {
+		this.dataDiskPolicyEnabled = dataDiskPolicyEnabled;
+		if(dataDiskPolicyEnabled != null){
+			putQueryParameter("DataDiskPolicyEnabled", dataDiskPolicyEnabled.toString());
+		}
+	}
+
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
+	}
+
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
 		}
 	}
 
@@ -76,14 +87,14 @@ public class CheckAutoSnapshotPolicyRequest extends RpcAcsRequest<CheckAutoSnaps
 		}
 	}
 
-	public Integer getDataDiskPolicyTimePeriod() {
-		return this.dataDiskPolicyTimePeriod;
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
 	}
 
-	public void setDataDiskPolicyTimePeriod(Integer dataDiskPolicyTimePeriod) {
-		this.dataDiskPolicyTimePeriod = dataDiskPolicyTimePeriod;
-		if(dataDiskPolicyTimePeriod != null){
-			putQueryParameter("DataDiskPolicyTimePeriod", dataDiskPolicyTimePeriod.toString());
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
 		}
 	}
 
@@ -95,6 +106,17 @@ public class CheckAutoSnapshotPolicyRequest extends RpcAcsRequest<CheckAutoSnaps
 		this.systemDiskPolicyRetentionLastWeek = systemDiskPolicyRetentionLastWeek;
 		if(systemDiskPolicyRetentionLastWeek != null){
 			putQueryParameter("SystemDiskPolicyRetentionLastWeek", systemDiskPolicyRetentionLastWeek.toString());
+		}
+	}
+
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
 		}
 	}
 
@@ -120,47 +142,14 @@ public class CheckAutoSnapshotPolicyRequest extends RpcAcsRequest<CheckAutoSnaps
 		}
 	}
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
+	public Boolean getDataDiskPolicyRetentionLastWeek() {
+		return this.dataDiskPolicyRetentionLastWeek;
 	}
 
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public Boolean getSystemDiskPolicyEnabled() {
-		return this.systemDiskPolicyEnabled;
-	}
-
-	public void setSystemDiskPolicyEnabled(Boolean systemDiskPolicyEnabled) {
-		this.systemDiskPolicyEnabled = systemDiskPolicyEnabled;
-		if(systemDiskPolicyEnabled != null){
-			putQueryParameter("SystemDiskPolicyEnabled", systemDiskPolicyEnabled.toString());
-		}
-	}
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
-
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		if(ownerAccount != null){
-			putQueryParameter("OwnerAccount", ownerAccount);
+	public void setDataDiskPolicyRetentionLastWeek(Boolean dataDiskPolicyRetentionLastWeek) {
+		this.dataDiskPolicyRetentionLastWeek = dataDiskPolicyRetentionLastWeek;
+		if(dataDiskPolicyRetentionLastWeek != null){
+			putQueryParameter("DataDiskPolicyRetentionLastWeek", dataDiskPolicyRetentionLastWeek.toString());
 		}
 	}
 
@@ -175,14 +164,25 @@ public class CheckAutoSnapshotPolicyRequest extends RpcAcsRequest<CheckAutoSnaps
 		}
 	}
 
-	public Boolean getDataDiskPolicyEnabled() {
-		return this.dataDiskPolicyEnabled;
+	public Integer getDataDiskPolicyTimePeriod() {
+		return this.dataDiskPolicyTimePeriod;
 	}
 
-	public void setDataDiskPolicyEnabled(Boolean dataDiskPolicyEnabled) {
-		this.dataDiskPolicyEnabled = dataDiskPolicyEnabled;
-		if(dataDiskPolicyEnabled != null){
-			putQueryParameter("DataDiskPolicyEnabled", dataDiskPolicyEnabled.toString());
+	public void setDataDiskPolicyTimePeriod(Integer dataDiskPolicyTimePeriod) {
+		this.dataDiskPolicyTimePeriod = dataDiskPolicyTimePeriod;
+		if(dataDiskPolicyTimePeriod != null){
+			putQueryParameter("DataDiskPolicyTimePeriod", dataDiskPolicyTimePeriod.toString());
+		}
+	}
+
+	public Boolean getSystemDiskPolicyEnabled() {
+		return this.systemDiskPolicyEnabled;
+	}
+
+	public void setSystemDiskPolicyEnabled(Boolean systemDiskPolicyEnabled) {
+		this.systemDiskPolicyEnabled = systemDiskPolicyEnabled;
+		if(systemDiskPolicyEnabled != null){
+			putQueryParameter("SystemDiskPolicyEnabled", systemDiskPolicyEnabled.toString());
 		}
 	}
 

@@ -1,3 +1,9 @@
+2017-09-26 Version: 4.2.0
+1, CreateInstance 新增参数支持sopt竞价实例可以出价参数
+2, DescribeZones 新增参数查询是否有竞价实例的资源
+3, 新增接口DescribeSpotPriceHistory 查询竞价实例历史价格
+4, DescribeInstances新增返回用户出价
+
 2017-08-03 Version: 4.0.0
 1, 修改sdk中对空参数的处理
 2, 增加ClassicLinkVpc相关接口，提供ClassicLinkVpc相关功能

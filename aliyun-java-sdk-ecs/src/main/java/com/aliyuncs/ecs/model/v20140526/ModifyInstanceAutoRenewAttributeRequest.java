@@ -32,17 +32,17 @@ public class ModifyInstanceAutoRenewAttributeRequest extends RpcAcsRequest<Modif
 
 	private Integer duration;
 
-	private String resourceOwnerAccount;
-
 	private Long resourceOwnerId;
 
+	private String instanceId;
+
 	private Boolean autoRenew;
+
+	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
 	private Long ownerId;
-
-	private String instanceId;
 
 	public Integer getDuration() {
 		return this.duration;
@@ -52,17 +52,6 @@ public class ModifyInstanceAutoRenewAttributeRequest extends RpcAcsRequest<Modif
 		this.duration = duration;
 		if(duration != null){
 			putQueryParameter("Duration", duration.toString());
-		}
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
 		}
 	}
 
@@ -77,6 +66,17 @@ public class ModifyInstanceAutoRenewAttributeRequest extends RpcAcsRequest<Modif
 		}
 	}
 
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
 	public Boolean getAutoRenew() {
 		return this.autoRenew;
 	}
@@ -85,6 +85,17 @@ public class ModifyInstanceAutoRenewAttributeRequest extends RpcAcsRequest<Modif
 		this.autoRenew = autoRenew;
 		if(autoRenew != null){
 			putQueryParameter("AutoRenew", autoRenew.toString());
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
 		}
 	}
 
@@ -107,17 +118,6 @@ public class ModifyInstanceAutoRenewAttributeRequest extends RpcAcsRequest<Modif
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 

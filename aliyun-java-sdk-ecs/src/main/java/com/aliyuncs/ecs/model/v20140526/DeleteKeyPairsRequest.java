@@ -30,13 +30,24 @@ public class DeleteKeyPairsRequest extends RpcAcsRequest<DeleteKeyPairsResponse>
 		super("Ecs", "2014-05-26", "DeleteKeyPairs", "ecs");
 	}
 
+	private Long resourceOwnerId;
+
 	private String resourceOwnerAccount;
 
 	private String keyPairNames;
 
-	private Long resourceOwnerId;
-
 	private Long ownerId;
+
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
+	}
+
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
 
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
@@ -57,17 +68,6 @@ public class DeleteKeyPairsRequest extends RpcAcsRequest<DeleteKeyPairsResponse>
 		this.keyPairNames = keyPairNames;
 		if(keyPairNames != null){
 			putQueryParameter("KeyPairNames", keyPairNames);
-		}
-	}
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
 		}
 	}
 

@@ -30,26 +30,37 @@ public class DeleteHaVipRequest extends RpcAcsRequest<DeleteHaVipResponse> {
 		super("Ecs", "2014-05-26", "DeleteHaVip", "ecs");
 	}
 
-	private String clientToken;
+	private String haVipId;
+
+	private Long resourceOwnerId;
 
 	private String resourceOwnerAccount;
 
-	private Long resourceOwnerId;
+	private String clientToken;
 
 	private String ownerAccount;
 
 	private Long ownerId;
 
-	private String haVipId;
-
-	public String getClientToken() {
-		return this.clientToken;
+	public String getHaVipId() {
+		return this.haVipId;
 	}
 
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putQueryParameter("ClientToken", clientToken);
+	public void setHaVipId(String haVipId) {
+		this.haVipId = haVipId;
+		if(haVipId != null){
+			putQueryParameter("HaVipId", haVipId);
+		}
+	}
+
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
+	}
+
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
 		}
 	}
 
@@ -64,14 +75,14 @@ public class DeleteHaVipRequest extends RpcAcsRequest<DeleteHaVipResponse> {
 		}
 	}
 
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
+	public String getClientToken() {
+		return this.clientToken;
 	}
 
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
 		}
 	}
 
@@ -94,17 +105,6 @@ public class DeleteHaVipRequest extends RpcAcsRequest<DeleteHaVipResponse> {
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getHaVipId() {
-		return this.haVipId;
-	}
-
-	public void setHaVipId(String haVipId) {
-		this.haVipId = haVipId;
-		if(haVipId != null){
-			putQueryParameter("HaVipId", haVipId);
 		}
 	}
 

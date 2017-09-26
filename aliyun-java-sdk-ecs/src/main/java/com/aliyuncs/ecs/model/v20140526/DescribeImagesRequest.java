@@ -30,232 +30,78 @@ public class DescribeImagesRequest extends RpcAcsRequest<DescribeImagesResponse>
 		super("Ecs", "2014-05-26", "DescribeImages", "ecs");
 	}
 
-	private Integer pageSize;
-
-	private String oSType;
-
-	private Boolean isSupportIoOptimized;
-
-	private String filter2Key;
-
-	private String architecture;
-
-	private String instanceType;
-
-	private String tag5Value;
-
-	private String tag3Key;
-
-	private String filter2Value;
-
-	private String resourceOwnerAccount;
-
-	private String snapshotId;
-
-	private String filter1Value;
-
-	private String tag1Key;
-
-	private String tag1Value;
-
-	private Boolean isSupportCloudinit;
+	private String tag4Value;
 
 	private Long resourceOwnerId;
 
-	private String tag4Value;
-
-	private String ownerAccount;
-
-	private String imageOwnerAlias;
-
-	private String status;
-
-	private Integer pageNumber;
-
-	private Long ownerId;
-
-	private String tag5Key;
-
 	private String imageId;
 
-	private String imageName;
+	private String snapshotId;
 
 	private String tag2Key;
 
-	private String filter1Key;
+	private String filter2Value;
 
 	private String usage;
 
+	private String tag3Key;
+
+	private Integer pageNumber;
+
+	private String imageOwnerAlias;
+
+	private String tag1Value;
+
+	private Boolean isSupportIoOptimized;
+
+	private String filter1Key;
+
+	private String imageName;
+
+	private Boolean isSupportCloudinit;
+
+	private Integer pageSize;
+
+	private String instanceType;
+
 	private String tag3Value;
 
+	private String architecture;
+
+	private String tag5Key;
+
+	private String resourceOwnerAccount;
+
+	private String ownerAccount;
+
 	private Boolean showExpired;
+
+	private String filter1Value;
+
+	private String oSType;
+
+	private String filter2Key;
+
+	private Long ownerId;
+
+	private String tag5Value;
+
+	private String tag1Key;
 
 	private String tag2Value;
 
 	private String tag4Key;
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	private String status;
+
+	public String getTag4Value() {
+		return this.tag4Value;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
-	public String getOSType() {
-		return this.oSType;
-	}
-
-	public void setOSType(String oSType) {
-		this.oSType = oSType;
-		if(oSType != null){
-			putQueryParameter("OSType", oSType);
-		}
-	}
-
-	public Boolean getIsSupportIoOptimized() {
-		return this.isSupportIoOptimized;
-	}
-
-	public void setIsSupportIoOptimized(Boolean isSupportIoOptimized) {
-		this.isSupportIoOptimized = isSupportIoOptimized;
-		if(isSupportIoOptimized != null){
-			putQueryParameter("IsSupportIoOptimized", isSupportIoOptimized.toString());
-		}
-	}
-
-	public String getFilter2Key() {
-		return this.filter2Key;
-	}
-
-	public void setFilter2Key(String filter2Key) {
-		this.filter2Key = filter2Key;
-		if(filter2Key != null){
-			putQueryParameter("Filter.2.Key", filter2Key);
-		}
-	}
-
-	public String getArchitecture() {
-		return this.architecture;
-	}
-
-	public void setArchitecture(String architecture) {
-		this.architecture = architecture;
-		if(architecture != null){
-			putQueryParameter("Architecture", architecture);
-		}
-	}
-
-	public String getInstanceType() {
-		return this.instanceType;
-	}
-
-	public void setInstanceType(String instanceType) {
-		this.instanceType = instanceType;
-		if(instanceType != null){
-			putQueryParameter("InstanceType", instanceType);
-		}
-	}
-
-	public String getTag5Value() {
-		return this.tag5Value;
-	}
-
-	public void setTag5Value(String tag5Value) {
-		this.tag5Value = tag5Value;
-		if(tag5Value != null){
-			putQueryParameter("Tag.5.Value", tag5Value);
-		}
-	}
-
-	public String getTag3Key() {
-		return this.tag3Key;
-	}
-
-	public void setTag3Key(String tag3Key) {
-		this.tag3Key = tag3Key;
-		if(tag3Key != null){
-			putQueryParameter("Tag.3.Key", tag3Key);
-		}
-	}
-
-	public String getFilter2Value() {
-		return this.filter2Value;
-	}
-
-	public void setFilter2Value(String filter2Value) {
-		this.filter2Value = filter2Value;
-		if(filter2Value != null){
-			putQueryParameter("Filter.2.Value", filter2Value);
-		}
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public String getSnapshotId() {
-		return this.snapshotId;
-	}
-
-	public void setSnapshotId(String snapshotId) {
-		this.snapshotId = snapshotId;
-		if(snapshotId != null){
-			putQueryParameter("SnapshotId", snapshotId);
-		}
-	}
-
-	public String getFilter1Value() {
-		return this.filter1Value;
-	}
-
-	public void setFilter1Value(String filter1Value) {
-		this.filter1Value = filter1Value;
-		if(filter1Value != null){
-			putQueryParameter("Filter.1.Value", filter1Value);
-		}
-	}
-
-	public String getTag1Key() {
-		return this.tag1Key;
-	}
-
-	public void setTag1Key(String tag1Key) {
-		this.tag1Key = tag1Key;
-		if(tag1Key != null){
-			putQueryParameter("Tag.1.Key", tag1Key);
-		}
-	}
-
-	public String getTag1Value() {
-		return this.tag1Value;
-	}
-
-	public void setTag1Value(String tag1Value) {
-		this.tag1Value = tag1Value;
-		if(tag1Value != null){
-			putQueryParameter("Tag.1.Value", tag1Value);
-		}
-	}
-
-	public Boolean getIsSupportCloudinit() {
-		return this.isSupportCloudinit;
-	}
-
-	public void setIsSupportCloudinit(Boolean isSupportCloudinit) {
-		this.isSupportCloudinit = isSupportCloudinit;
-		if(isSupportCloudinit != null){
-			putQueryParameter("IsSupportCloudinit", isSupportCloudinit.toString());
+	public void setTag4Value(String tag4Value) {
+		this.tag4Value = tag4Value;
+		if(tag4Value != null){
+			putQueryParameter("Tag.4.Value", tag4Value);
 		}
 	}
 
@@ -270,83 +116,6 @@ public class DescribeImagesRequest extends RpcAcsRequest<DescribeImagesResponse>
 		}
 	}
 
-	public String getTag4Value() {
-		return this.tag4Value;
-	}
-
-	public void setTag4Value(String tag4Value) {
-		this.tag4Value = tag4Value;
-		if(tag4Value != null){
-			putQueryParameter("Tag.4.Value", tag4Value);
-		}
-	}
-
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
-
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		if(ownerAccount != null){
-			putQueryParameter("OwnerAccount", ownerAccount);
-		}
-	}
-
-	public String getImageOwnerAlias() {
-		return this.imageOwnerAlias;
-	}
-
-	public void setImageOwnerAlias(String imageOwnerAlias) {
-		this.imageOwnerAlias = imageOwnerAlias;
-		if(imageOwnerAlias != null){
-			putQueryParameter("ImageOwnerAlias", imageOwnerAlias);
-		}
-	}
-
-	public String getStatus() {
-		return this.status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
-		if(status != null){
-			putQueryParameter("Status", status);
-		}
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getTag5Key() {
-		return this.tag5Key;
-	}
-
-	public void setTag5Key(String tag5Key) {
-		this.tag5Key = tag5Key;
-		if(tag5Key != null){
-			putQueryParameter("Tag.5.Key", tag5Key);
-		}
-	}
-
 	public String getImageId() {
 		return this.imageId;
 	}
@@ -358,14 +127,14 @@ public class DescribeImagesRequest extends RpcAcsRequest<DescribeImagesResponse>
 		}
 	}
 
-	public String getImageName() {
-		return this.imageName;
+	public String getSnapshotId() {
+		return this.snapshotId;
 	}
 
-	public void setImageName(String imageName) {
-		this.imageName = imageName;
-		if(imageName != null){
-			putQueryParameter("ImageName", imageName);
+	public void setSnapshotId(String snapshotId) {
+		this.snapshotId = snapshotId;
+		if(snapshotId != null){
+			putQueryParameter("SnapshotId", snapshotId);
 		}
 	}
 
@@ -380,14 +149,14 @@ public class DescribeImagesRequest extends RpcAcsRequest<DescribeImagesResponse>
 		}
 	}
 
-	public String getFilter1Key() {
-		return this.filter1Key;
+	public String getFilter2Value() {
+		return this.filter2Value;
 	}
 
-	public void setFilter1Key(String filter1Key) {
-		this.filter1Key = filter1Key;
-		if(filter1Key != null){
-			putQueryParameter("Filter.1.Key", filter1Key);
+	public void setFilter2Value(String filter2Value) {
+		this.filter2Value = filter2Value;
+		if(filter2Value != null){
+			putQueryParameter("Filter.2.Value", filter2Value);
 		}
 	}
 
@@ -402,6 +171,116 @@ public class DescribeImagesRequest extends RpcAcsRequest<DescribeImagesResponse>
 		}
 	}
 
+	public String getTag3Key() {
+		return this.tag3Key;
+	}
+
+	public void setTag3Key(String tag3Key) {
+		this.tag3Key = tag3Key;
+		if(tag3Key != null){
+			putQueryParameter("Tag.3.Key", tag3Key);
+		}
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public String getImageOwnerAlias() {
+		return this.imageOwnerAlias;
+	}
+
+	public void setImageOwnerAlias(String imageOwnerAlias) {
+		this.imageOwnerAlias = imageOwnerAlias;
+		if(imageOwnerAlias != null){
+			putQueryParameter("ImageOwnerAlias", imageOwnerAlias);
+		}
+	}
+
+	public String getTag1Value() {
+		return this.tag1Value;
+	}
+
+	public void setTag1Value(String tag1Value) {
+		this.tag1Value = tag1Value;
+		if(tag1Value != null){
+			putQueryParameter("Tag.1.Value", tag1Value);
+		}
+	}
+
+	public Boolean getIsSupportIoOptimized() {
+		return this.isSupportIoOptimized;
+	}
+
+	public void setIsSupportIoOptimized(Boolean isSupportIoOptimized) {
+		this.isSupportIoOptimized = isSupportIoOptimized;
+		if(isSupportIoOptimized != null){
+			putQueryParameter("IsSupportIoOptimized", isSupportIoOptimized.toString());
+		}
+	}
+
+	public String getFilter1Key() {
+		return this.filter1Key;
+	}
+
+	public void setFilter1Key(String filter1Key) {
+		this.filter1Key = filter1Key;
+		if(filter1Key != null){
+			putQueryParameter("Filter.1.Key", filter1Key);
+		}
+	}
+
+	public String getImageName() {
+		return this.imageName;
+	}
+
+	public void setImageName(String imageName) {
+		this.imageName = imageName;
+		if(imageName != null){
+			putQueryParameter("ImageName", imageName);
+		}
+	}
+
+	public Boolean getIsSupportCloudinit() {
+		return this.isSupportCloudinit;
+	}
+
+	public void setIsSupportCloudinit(Boolean isSupportCloudinit) {
+		this.isSupportCloudinit = isSupportCloudinit;
+		if(isSupportCloudinit != null){
+			putQueryParameter("IsSupportCloudinit", isSupportCloudinit.toString());
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getInstanceType() {
+		return this.instanceType;
+	}
+
+	public void setInstanceType(String instanceType) {
+		this.instanceType = instanceType;
+		if(instanceType != null){
+			putQueryParameter("InstanceType", instanceType);
+		}
+	}
+
 	public String getTag3Value() {
 		return this.tag3Value;
 	}
@@ -413,6 +292,50 @@ public class DescribeImagesRequest extends RpcAcsRequest<DescribeImagesResponse>
 		}
 	}
 
+	public String getArchitecture() {
+		return this.architecture;
+	}
+
+	public void setArchitecture(String architecture) {
+		this.architecture = architecture;
+		if(architecture != null){
+			putQueryParameter("Architecture", architecture);
+		}
+	}
+
+	public String getTag5Key() {
+		return this.tag5Key;
+	}
+
+	public void setTag5Key(String tag5Key) {
+		this.tag5Key = tag5Key;
+		if(tag5Key != null){
+			putQueryParameter("Tag.5.Key", tag5Key);
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
 	public Boolean getShowExpired() {
 		return this.showExpired;
 	}
@@ -421,6 +344,72 @@ public class DescribeImagesRequest extends RpcAcsRequest<DescribeImagesResponse>
 		this.showExpired = showExpired;
 		if(showExpired != null){
 			putQueryParameter("ShowExpired", showExpired.toString());
+		}
+	}
+
+	public String getFilter1Value() {
+		return this.filter1Value;
+	}
+
+	public void setFilter1Value(String filter1Value) {
+		this.filter1Value = filter1Value;
+		if(filter1Value != null){
+			putQueryParameter("Filter.1.Value", filter1Value);
+		}
+	}
+
+	public String getOSType() {
+		return this.oSType;
+	}
+
+	public void setOSType(String oSType) {
+		this.oSType = oSType;
+		if(oSType != null){
+			putQueryParameter("OSType", oSType);
+		}
+	}
+
+	public String getFilter2Key() {
+		return this.filter2Key;
+	}
+
+	public void setFilter2Key(String filter2Key) {
+		this.filter2Key = filter2Key;
+		if(filter2Key != null){
+			putQueryParameter("Filter.2.Key", filter2Key);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getTag5Value() {
+		return this.tag5Value;
+	}
+
+	public void setTag5Value(String tag5Value) {
+		this.tag5Value = tag5Value;
+		if(tag5Value != null){
+			putQueryParameter("Tag.5.Value", tag5Value);
+		}
+	}
+
+	public String getTag1Key() {
+		return this.tag1Key;
+	}
+
+	public void setTag1Key(String tag1Key) {
+		this.tag1Key = tag1Key;
+		if(tag1Key != null){
+			putQueryParameter("Tag.1.Key", tag1Key);
 		}
 	}
 
@@ -443,6 +432,17 @@ public class DescribeImagesRequest extends RpcAcsRequest<DescribeImagesResponse>
 		this.tag4Key = tag4Key;
 		if(tag4Key != null){
 			putQueryParameter("Tag.4.Key", tag4Key);
+		}
+	}
+
+	public String getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+		if(status != null){
+			putQueryParameter("Status", status);
 		}
 	}
 

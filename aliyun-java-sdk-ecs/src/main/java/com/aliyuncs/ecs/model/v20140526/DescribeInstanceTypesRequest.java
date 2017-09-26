@@ -30,24 +30,24 @@ public class DescribeInstanceTypesRequest extends RpcAcsRequest<DescribeInstance
 		super("Ecs", "2014-05-26", "DescribeInstanceTypes", "ecs");
 	}
 
-	private String instanceTypeFamily;
+	private Long resourceOwnerId;
 
 	private String resourceOwnerAccount;
 
-	private Long resourceOwnerId;
-
 	private String ownerAccount;
+
+	private String instanceTypeFamily;
 
 	private Long ownerId;
 
-	public String getInstanceTypeFamily() {
-		return this.instanceTypeFamily;
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
 	}
 
-	public void setInstanceTypeFamily(String instanceTypeFamily) {
-		this.instanceTypeFamily = instanceTypeFamily;
-		if(instanceTypeFamily != null){
-			putQueryParameter("InstanceTypeFamily", instanceTypeFamily);
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
 		}
 	}
 
@@ -62,17 +62,6 @@ public class DescribeInstanceTypesRequest extends RpcAcsRequest<DescribeInstance
 		}
 	}
 
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
 	public String getOwnerAccount() {
 		return this.ownerAccount;
 	}
@@ -81,6 +70,17 @@ public class DescribeInstanceTypesRequest extends RpcAcsRequest<DescribeInstance
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public String getInstanceTypeFamily() {
+		return this.instanceTypeFamily;
+	}
+
+	public void setInstanceTypeFamily(String instanceTypeFamily) {
+		this.instanceTypeFamily = instanceTypeFamily;
+		if(instanceTypeFamily != null){
+			putQueryParameter("InstanceTypeFamily", instanceTypeFamily);
 		}
 	}
 

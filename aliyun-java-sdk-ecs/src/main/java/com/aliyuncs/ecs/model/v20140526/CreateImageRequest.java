@@ -31,151 +31,74 @@ public class CreateImageRequest extends RpcAcsRequest<CreateImageResponse> {
 		super("Ecs", "2014-05-26", "CreateImage", "ecs");
 	}
 
-	private String architecture;
-
-	private String tag3Key;
-
-	private String tag5Value;
-
-	private String resourceOwnerAccount;
-
-	private String snapshotId;
-
-	private String description;
-
 	private List<DiskDeviceMapping> diskDeviceMappings;
-
-	private String tag1Key;
-
-	private String tag1Value;
-
-	private Long resourceOwnerId;
-
-	private String ownerAccount;
 
 	private String tag4Value;
 
-	private String platform;
+	private Long resourceOwnerId;
 
-	private String clientToken;
-
-	private String imageVersion;
-
-	private Long ownerId;
-
-	private String tag5Key;
-
-	private String imageName;
+	private String snapshotId;
 
 	private String tag2Key;
 
-	private String instanceId;
+	private String clientToken;
+
+	private String description;
+
+	private String tag3Key;
+
+	private String platform;
+
+	private String tag1Value;
+
+	private String imageName;
 
 	private String tag3Value;
 
-	private String tag4Key;
+	private String architecture;
+
+	private String tag5Key;
+
+	private String resourceOwnerAccount;
+
+	private String ownerAccount;
+
+	private Long ownerId;
+
+	private String tag5Value;
+
+	private String tag1Key;
+
+	private String instanceId;
 
 	private String tag2Value;
 
-	public String getArchitecture() {
-		return this.architecture;
-	}
+	private String imageVersion;
 
-	public void setArchitecture(String architecture) {
-		this.architecture = architecture;
-		if(architecture != null){
-			putQueryParameter("Architecture", architecture);
-		}
-	}
-
-	public String getTag3Key() {
-		return this.tag3Key;
-	}
-
-	public void setTag3Key(String tag3Key) {
-		this.tag3Key = tag3Key;
-		if(tag3Key != null){
-			putQueryParameter("Tag.3.Key", tag3Key);
-		}
-	}
-
-	public String getTag5Value() {
-		return this.tag5Value;
-	}
-
-	public void setTag5Value(String tag5Value) {
-		this.tag5Value = tag5Value;
-		if(tag5Value != null){
-			putQueryParameter("Tag.5.Value", tag5Value);
-		}
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public String getSnapshotId() {
-		return this.snapshotId;
-	}
-
-	public void setSnapshotId(String snapshotId) {
-		this.snapshotId = snapshotId;
-		if(snapshotId != null){
-			putQueryParameter("SnapshotId", snapshotId);
-		}
-	}
-
-	public String getDescription() {
-		return this.description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-		if(description != null){
-			putQueryParameter("Description", description);
-		}
-	}
+	private String tag4Key;
 
 	public List<DiskDeviceMapping> getDiskDeviceMappings() {
 		return this.diskDeviceMappings;
 	}
 
-	public void setDiskDeviceMappings(List<DiskDeviceMapping> diskDeviceMapping) {
-		this.diskDeviceMappings = diskDeviceMapping;	
-		for (int i = 0; i < diskDeviceMapping.size(); i++) {
-			putQueryParameter("DiskDeviceMapping." + (i + 1) + ".Size" , diskDeviceMapping.get(i).getSize());
-			putQueryParameter("DiskDeviceMapping." + (i + 1) + ".SnapshotId" , diskDeviceMapping.get(i).getSnapshotId());
-			putQueryParameter("DiskDeviceMapping." + (i + 1) + ".Device" , diskDeviceMapping.get(i).getDevice());
-			putQueryParameter("DiskDeviceMapping." + (i + 1) + ".DiskType" , diskDeviceMapping.get(i).getDiskType());
+	public void setDiskDeviceMappings(List<DiskDeviceMapping> diskDeviceMappings) {
+		this.diskDeviceMappings = diskDeviceMappings;	
+		for (int depth1 = 0; depth1 < diskDeviceMappings.size(); depth1++) {
+			putQueryParameter("DiskDeviceMapping." + (depth1 + 1) + ".Size" , diskDeviceMappings.get(depth1).getSize());
+			putQueryParameter("DiskDeviceMapping." + (depth1 + 1) + ".SnapshotId" , diskDeviceMappings.get(depth1).getSnapshotId());
+			putQueryParameter("DiskDeviceMapping." + (depth1 + 1) + ".Device" , diskDeviceMappings.get(depth1).getDevice());
+			putQueryParameter("DiskDeviceMapping." + (depth1 + 1) + ".DiskType" , diskDeviceMappings.get(depth1).getDiskType());
 		}	
 	}
 
-	public String getTag1Key() {
-		return this.tag1Key;
+	public String getTag4Value() {
+		return this.tag4Value;
 	}
 
-	public void setTag1Key(String tag1Key) {
-		this.tag1Key = tag1Key;
-		if(tag1Key != null){
-			putQueryParameter("Tag.1.Key", tag1Key);
-		}
-	}
-
-	public String getTag1Value() {
-		return this.tag1Value;
-	}
-
-	public void setTag1Value(String tag1Value) {
-		this.tag1Value = tag1Value;
-		if(tag1Value != null){
-			putQueryParameter("Tag.1.Value", tag1Value);
+	public void setTag4Value(String tag4Value) {
+		this.tag4Value = tag4Value;
+		if(tag4Value != null){
+			putQueryParameter("Tag.4.Value", tag4Value);
 		}
 	}
 
@@ -190,91 +113,14 @@ public class CreateImageRequest extends RpcAcsRequest<CreateImageResponse> {
 		}
 	}
 
-	public String getOwnerAccount() {
-		return this.ownerAccount;
+	public String getSnapshotId() {
+		return this.snapshotId;
 	}
 
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		if(ownerAccount != null){
-			putQueryParameter("OwnerAccount", ownerAccount);
-		}
-	}
-
-	public String getTag4Value() {
-		return this.tag4Value;
-	}
-
-	public void setTag4Value(String tag4Value) {
-		this.tag4Value = tag4Value;
-		if(tag4Value != null){
-			putQueryParameter("Tag.4.Value", tag4Value);
-		}
-	}
-
-	public String getPlatform() {
-		return this.platform;
-	}
-
-	public void setPlatform(String platform) {
-		this.platform = platform;
-		if(platform != null){
-			putQueryParameter("Platform", platform);
-		}
-	}
-
-	public String getClientToken() {
-		return this.clientToken;
-	}
-
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putQueryParameter("ClientToken", clientToken);
-		}
-	}
-
-	public String getImageVersion() {
-		return this.imageVersion;
-	}
-
-	public void setImageVersion(String imageVersion) {
-		this.imageVersion = imageVersion;
-		if(imageVersion != null){
-			putQueryParameter("ImageVersion", imageVersion);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getTag5Key() {
-		return this.tag5Key;
-	}
-
-	public void setTag5Key(String tag5Key) {
-		this.tag5Key = tag5Key;
-		if(tag5Key != null){
-			putQueryParameter("Tag.5.Key", tag5Key);
-		}
-	}
-
-	public String getImageName() {
-		return this.imageName;
-	}
-
-	public void setImageName(String imageName) {
-		this.imageName = imageName;
-		if(imageName != null){
-			putQueryParameter("ImageName", imageName);
+	public void setSnapshotId(String snapshotId) {
+		this.snapshotId = snapshotId;
+		if(snapshotId != null){
+			putQueryParameter("SnapshotId", snapshotId);
 		}
 	}
 
@@ -289,14 +135,69 @@ public class CreateImageRequest extends RpcAcsRequest<CreateImageResponse> {
 		}
 	}
 
-	public String getInstanceId() {
-		return this.instanceId;
+	public String getClientToken() {
+		return this.clientToken;
 	}
 
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+		if(description != null){
+			putQueryParameter("Description", description);
+		}
+	}
+
+	public String getTag3Key() {
+		return this.tag3Key;
+	}
+
+	public void setTag3Key(String tag3Key) {
+		this.tag3Key = tag3Key;
+		if(tag3Key != null){
+			putQueryParameter("Tag.3.Key", tag3Key);
+		}
+	}
+
+	public String getPlatform() {
+		return this.platform;
+	}
+
+	public void setPlatform(String platform) {
+		this.platform = platform;
+		if(platform != null){
+			putQueryParameter("Platform", platform);
+		}
+	}
+
+	public String getTag1Value() {
+		return this.tag1Value;
+	}
+
+	public void setTag1Value(String tag1Value) {
+		this.tag1Value = tag1Value;
+		if(tag1Value != null){
+			putQueryParameter("Tag.1.Value", tag1Value);
+		}
+	}
+
+	public String getImageName() {
+		return this.imageName;
+	}
+
+	public void setImageName(String imageName) {
+		this.imageName = imageName;
+		if(imageName != null){
+			putQueryParameter("ImageName", imageName);
 		}
 	}
 
@@ -311,14 +212,91 @@ public class CreateImageRequest extends RpcAcsRequest<CreateImageResponse> {
 		}
 	}
 
-	public String getTag4Key() {
-		return this.tag4Key;
+	public String getArchitecture() {
+		return this.architecture;
 	}
 
-	public void setTag4Key(String tag4Key) {
-		this.tag4Key = tag4Key;
-		if(tag4Key != null){
-			putQueryParameter("Tag.4.Key", tag4Key);
+	public void setArchitecture(String architecture) {
+		this.architecture = architecture;
+		if(architecture != null){
+			putQueryParameter("Architecture", architecture);
+		}
+	}
+
+	public String getTag5Key() {
+		return this.tag5Key;
+	}
+
+	public void setTag5Key(String tag5Key) {
+		this.tag5Key = tag5Key;
+		if(tag5Key != null){
+			putQueryParameter("Tag.5.Key", tag5Key);
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getTag5Value() {
+		return this.tag5Value;
+	}
+
+	public void setTag5Value(String tag5Value) {
+		this.tag5Value = tag5Value;
+		if(tag5Value != null){
+			putQueryParameter("Tag.5.Value", tag5Value);
+		}
+	}
+
+	public String getTag1Key() {
+		return this.tag1Key;
+	}
+
+	public void setTag1Key(String tag1Key) {
+		this.tag1Key = tag1Key;
+		if(tag1Key != null){
+			putQueryParameter("Tag.1.Key", tag1Key);
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 
@@ -330,6 +308,28 @@ public class CreateImageRequest extends RpcAcsRequest<CreateImageResponse> {
 		this.tag2Value = tag2Value;
 		if(tag2Value != null){
 			putQueryParameter("Tag.2.Value", tag2Value);
+		}
+	}
+
+	public String getImageVersion() {
+		return this.imageVersion;
+	}
+
+	public void setImageVersion(String imageVersion) {
+		this.imageVersion = imageVersion;
+		if(imageVersion != null){
+			putQueryParameter("ImageVersion", imageVersion);
+		}
+	}
+
+	public String getTag4Key() {
+		return this.tag4Key;
+	}
+
+	public void setTag4Key(String tag4Key) {
+		this.tag4Key = tag4Key;
+		if(tag4Key != null){
+			putQueryParameter("Tag.4.Key", tag4Key);
 		}
 	}
 

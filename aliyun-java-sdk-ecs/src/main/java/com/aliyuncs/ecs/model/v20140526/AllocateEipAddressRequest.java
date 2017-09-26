@@ -30,19 +30,52 @@ public class AllocateEipAddressRequest extends RpcAcsRequest<AllocateEipAddressR
 		super("Ecs", "2014-05-26", "AllocateEipAddress", "ecs");
 	}
 
-	private String clientToken;
-
-	private String internetChargeType;
+	private Long resourceOwnerId;
 
 	private String resourceOwnerAccount;
 
-	private Long resourceOwnerId;
+	private String bandwidth;
+
+	private String clientToken;
+
+	private String internetChargeType;
 
 	private String ownerAccount;
 
 	private Long ownerId;
 
-	private String bandwidth;
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
+	}
+
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getBandwidth() {
+		return this.bandwidth;
+	}
+
+	public void setBandwidth(String bandwidth) {
+		this.bandwidth = bandwidth;
+		if(bandwidth != null){
+			putQueryParameter("Bandwidth", bandwidth);
+		}
+	}
 
 	public String getClientToken() {
 		return this.clientToken;
@@ -66,28 +99,6 @@ public class AllocateEipAddressRequest extends RpcAcsRequest<AllocateEipAddressR
 		}
 	}
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
 	public String getOwnerAccount() {
 		return this.ownerAccount;
 	}
@@ -107,17 +118,6 @@ public class AllocateEipAddressRequest extends RpcAcsRequest<AllocateEipAddressR
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getBandwidth() {
-		return this.bandwidth;
-	}
-
-	public void setBandwidth(String bandwidth) {
-		this.bandwidth = bandwidth;
-		if(bandwidth != null){
-			putQueryParameter("Bandwidth", bandwidth);
 		}
 	}
 

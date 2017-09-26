@@ -30,32 +30,43 @@ public class CreateVpcRequest extends RpcAcsRequest<CreateVpcResponse> {
 		super("Ecs", "2014-05-26", "CreateVpc", "ecs");
 	}
 
-	private String clientToken;
+	private String vpcName;
+
+	private Long resourceOwnerId;
 
 	private String resourceOwnerAccount;
 
-	private String description;
-
-	private String vpcName;
-
-	private String userCidr;
-
-	private Long resourceOwnerId;
+	private String clientToken;
 
 	private String ownerAccount;
 
 	private String cidrBlock;
 
+	private String description;
+
+	private String userCidr;
+
 	private Long ownerId;
 
-	public String getClientToken() {
-		return this.clientToken;
+	public String getVpcName() {
+		return this.vpcName;
 	}
 
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putQueryParameter("ClientToken", clientToken);
+	public void setVpcName(String vpcName) {
+		this.vpcName = vpcName;
+		if(vpcName != null){
+			putQueryParameter("VpcName", vpcName);
+		}
+	}
+
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
+	}
+
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
 		}
 	}
 
@@ -70,47 +81,14 @@ public class CreateVpcRequest extends RpcAcsRequest<CreateVpcResponse> {
 		}
 	}
 
-	public String getDescription() {
-		return this.description;
+	public String getClientToken() {
+		return this.clientToken;
 	}
 
-	public void setDescription(String description) {
-		this.description = description;
-		if(description != null){
-			putQueryParameter("Description", description);
-		}
-	}
-
-	public String getVpcName() {
-		return this.vpcName;
-	}
-
-	public void setVpcName(String vpcName) {
-		this.vpcName = vpcName;
-		if(vpcName != null){
-			putQueryParameter("VpcName", vpcName);
-		}
-	}
-
-	public String getUserCidr() {
-		return this.userCidr;
-	}
-
-	public void setUserCidr(String userCidr) {
-		this.userCidr = userCidr;
-		if(userCidr != null){
-			putQueryParameter("UserCidr", userCidr);
-		}
-	}
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
 		}
 	}
 
@@ -133,6 +111,28 @@ public class CreateVpcRequest extends RpcAcsRequest<CreateVpcResponse> {
 		this.cidrBlock = cidrBlock;
 		if(cidrBlock != null){
 			putQueryParameter("CidrBlock", cidrBlock);
+		}
+	}
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+		if(description != null){
+			putQueryParameter("Description", description);
+		}
+	}
+
+	public String getUserCidr() {
+		return this.userCidr;
+	}
+
+	public void setUserCidr(String userCidr) {
+		this.userCidr = userCidr;
+		if(userCidr != null){
+			putQueryParameter("UserCidr", userCidr);
 		}
 	}
 

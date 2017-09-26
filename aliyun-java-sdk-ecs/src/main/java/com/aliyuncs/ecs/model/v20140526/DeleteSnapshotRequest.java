@@ -30,26 +30,26 @@ public class DeleteSnapshotRequest extends RpcAcsRequest<DeleteSnapshotResponse>
 		super("Ecs", "2014-05-26", "DeleteSnapshot", "ecs");
 	}
 
-	private String resourceOwnerAccount;
+	private Long resourceOwnerId;
 
 	private String snapshotId;
 
-	private Boolean force;
-
-	private Long resourceOwnerId;
+	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
+	private Boolean force;
+
 	private Long ownerId;
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
 	}
 
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
 		}
 	}
 
@@ -64,25 +64,14 @@ public class DeleteSnapshotRequest extends RpcAcsRequest<DeleteSnapshotResponse>
 		}
 	}
 
-	public Boolean getForce() {
-		return this.force;
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
 	}
 
-	public void setForce(Boolean force) {
-		this.force = force;
-		if(force != null){
-			putQueryParameter("Force", force.toString());
-		}
-	}
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
 		}
 	}
 
@@ -94,6 +83,17 @@ public class DeleteSnapshotRequest extends RpcAcsRequest<DeleteSnapshotResponse>
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public Boolean getForce() {
+		return this.force;
+	}
+
+	public void setForce(Boolean force) {
+		this.force = force;
+		if(force != null){
+			putQueryParameter("Force", force.toString());
 		}
 	}
 

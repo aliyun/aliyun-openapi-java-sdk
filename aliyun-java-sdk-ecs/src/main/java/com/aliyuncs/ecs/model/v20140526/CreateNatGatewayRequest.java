@@ -31,45 +31,32 @@ public class CreateNatGatewayRequest extends RpcAcsRequest<CreateNatGatewayRespo
 		super("Ecs", "2014-05-26", "CreateNatGateway", "ecs");
 	}
 
-	private List<BandwidthPackage> bandwidthPackages;
-
-	private String clientToken;
+	private Long resourceOwnerId;
 
 	private String resourceOwnerAccount;
 
-	private String description;
-
-	private String name;
-
-	private Long resourceOwnerId;
-
-	private String vpcId;
+	private String clientToken;
 
 	private String ownerAccount;
 
+	private String vpcId;
+
+	private String name;
+
+	private String description;
+
 	private Long ownerId;
 
-	public List<BandwidthPackage> getBandwidthPackages() {
-		return this.bandwidthPackages;
+	private List<BandwidthPackage> bandwidthPackages;
+
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
 	}
 
-	public void setBandwidthPackages(List<BandwidthPackage> bandwidthPackage) {
-		this.bandwidthPackages = bandwidthPackage;	
-		for (int i = 0; i < bandwidthPackage.size(); i++) {
-			putQueryParameter("BandwidthPackage." + (i + 1) + ".IpCount" , bandwidthPackage.get(i).getIpCount());
-			putQueryParameter("BandwidthPackage." + (i + 1) + ".Bandwidth" , bandwidthPackage.get(i).getBandwidth());
-			putQueryParameter("BandwidthPackage." + (i + 1) + ".Zone" , bandwidthPackage.get(i).getZone());
-		}	
-	}
-
-	public String getClientToken() {
-		return this.clientToken;
-	}
-
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putQueryParameter("ClientToken", clientToken);
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
 		}
 	}
 
@@ -84,47 +71,14 @@ public class CreateNatGatewayRequest extends RpcAcsRequest<CreateNatGatewayRespo
 		}
 	}
 
-	public String getDescription() {
-		return this.description;
+	public String getClientToken() {
+		return this.clientToken;
 	}
 
-	public void setDescription(String description) {
-		this.description = description;
-		if(description != null){
-			putQueryParameter("Description", description);
-		}
-	}
-
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putQueryParameter("Name", name);
-		}
-	}
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getVpcId() {
-		return this.vpcId;
-	}
-
-	public void setVpcId(String vpcId) {
-		this.vpcId = vpcId;
-		if(vpcId != null){
-			putQueryParameter("VpcId", vpcId);
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
 		}
 	}
 
@@ -139,6 +93,39 @@ public class CreateNatGatewayRequest extends RpcAcsRequest<CreateNatGatewayRespo
 		}
 	}
 
+	public String getVpcId() {
+		return this.vpcId;
+	}
+
+	public void setVpcId(String vpcId) {
+		this.vpcId = vpcId;
+		if(vpcId != null){
+			putQueryParameter("VpcId", vpcId);
+		}
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
+		}
+	}
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+		if(description != null){
+			putQueryParameter("Description", description);
+		}
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -148,6 +135,19 @@ public class CreateNatGatewayRequest extends RpcAcsRequest<CreateNatGatewayRespo
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
 		}
+	}
+
+	public List<BandwidthPackage> getBandwidthPackages() {
+		return this.bandwidthPackages;
+	}
+
+	public void setBandwidthPackages(List<BandwidthPackage> bandwidthPackages) {
+		this.bandwidthPackages = bandwidthPackages;	
+		for (int depth1 = 0; depth1 < bandwidthPackages.size(); depth1++) {
+			putQueryParameter("BandwidthPackage." + (depth1 + 1) + ".IpCount" , bandwidthPackages.get(depth1).getIpCount());
+			putQueryParameter("BandwidthPackage." + (depth1 + 1) + ".Bandwidth" , bandwidthPackages.get(depth1).getBandwidth());
+			putQueryParameter("BandwidthPackage." + (depth1 + 1) + ".Zone" , bandwidthPackages.get(depth1).getZone());
+		}	
 	}
 
 	public static class BandwidthPackage {

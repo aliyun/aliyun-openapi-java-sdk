@@ -33,37 +33,48 @@ public class RemoveBandwidthPackageIpsRequest extends RpcAcsRequest<RemoveBandwi
 
 	private List<String> removedIpAddressess;
 
-	private String clientToken;
+	private Long resourceOwnerId;
+
+	private String bandwidthPackageId;
 
 	private String resourceOwnerAccount;
 
-	private Long resourceOwnerId;
+	private String clientToken;
 
 	private String ownerAccount;
 
 	private Long ownerId;
 
-	private String bandwidthPackageId;
-
 	public List<String> getRemovedIpAddressess() {
 		return this.removedIpAddressess;
 	}
 
-	public void setRemovedIpAddressess(List<String> removedIpAddresses) {
-		this.removedIpAddressess = removedIpAddresses;	
-		for (int i = 0; i < removedIpAddresses.size(); i++) {
-			putQueryParameter("RemovedIpAddresses." + (i + 1) , removedIpAddresses.get(i));
+	public void setRemovedIpAddressess(List<String> removedIpAddressess) {
+		this.removedIpAddressess = removedIpAddressess;	
+		for (int i = 0; i < removedIpAddressess.size(); i++) {
+			putQueryParameter("RemovedIpAddresses." + (i + 1) , removedIpAddressess.get(i));
 		}	
 	}
 
-	public String getClientToken() {
-		return this.clientToken;
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
 	}
 
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putQueryParameter("ClientToken", clientToken);
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getBandwidthPackageId() {
+		return this.bandwidthPackageId;
+	}
+
+	public void setBandwidthPackageId(String bandwidthPackageId) {
+		this.bandwidthPackageId = bandwidthPackageId;
+		if(bandwidthPackageId != null){
+			putQueryParameter("BandwidthPackageId", bandwidthPackageId);
 		}
 	}
 
@@ -78,14 +89,14 @@ public class RemoveBandwidthPackageIpsRequest extends RpcAcsRequest<RemoveBandwi
 		}
 	}
 
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
+	public String getClientToken() {
+		return this.clientToken;
 	}
 
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
 		}
 	}
 
@@ -108,17 +119,6 @@ public class RemoveBandwidthPackageIpsRequest extends RpcAcsRequest<RemoveBandwi
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getBandwidthPackageId() {
-		return this.bandwidthPackageId;
-	}
-
-	public void setBandwidthPackageId(String bandwidthPackageId) {
-		this.bandwidthPackageId = bandwidthPackageId;
-		if(bandwidthPackageId != null){
-			putQueryParameter("BandwidthPackageId", bandwidthPackageId);
 		}
 	}
 

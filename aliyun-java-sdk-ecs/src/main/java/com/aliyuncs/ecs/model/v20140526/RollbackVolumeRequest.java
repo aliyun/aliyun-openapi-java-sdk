@@ -30,26 +30,26 @@ public class RollbackVolumeRequest extends RpcAcsRequest<RollbackVolumeResponse>
 		super("Ecs", "2014-05-26", "RollbackVolume", "ecs");
 	}
 
-	private String resourceOwnerAccount;
+	private Long resourceOwnerId;
 
 	private String snapshotId;
 
-	private String volumeId;
-
-	private Long resourceOwnerId;
+	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
+	private String volumeId;
+
 	private Long ownerId;
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
 	}
 
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
 		}
 	}
 
@@ -64,25 +64,14 @@ public class RollbackVolumeRequest extends RpcAcsRequest<RollbackVolumeResponse>
 		}
 	}
 
-	public String getVolumeId() {
-		return this.volumeId;
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
 	}
 
-	public void setVolumeId(String volumeId) {
-		this.volumeId = volumeId;
-		if(volumeId != null){
-			putQueryParameter("VolumeId", volumeId);
-		}
-	}
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
 		}
 	}
 
@@ -94,6 +83,17 @@ public class RollbackVolumeRequest extends RpcAcsRequest<RollbackVolumeResponse>
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public String getVolumeId() {
+		return this.volumeId;
+	}
+
+	public void setVolumeId(String volumeId) {
+		this.volumeId = volumeId;
+		if(volumeId != null){
+			putQueryParameter("VolumeId", volumeId);
 		}
 	}
 

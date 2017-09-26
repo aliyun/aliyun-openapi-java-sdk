@@ -30,39 +30,17 @@ public class ModifyInstanceAutoReleaseTimeRequest extends RpcAcsRequest<ModifyIn
 		super("Ecs", "2014-05-26", "ModifyInstanceAutoReleaseTime", "ecs");
 	}
 
-	private String resourceOwnerAccount;
-
-	private String autoReleaseTime;
-
 	private Long resourceOwnerId;
-
-	private String ownerAccount;
-
-	private Long ownerId;
 
 	private String instanceId;
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
+	private String resourceOwnerAccount;
 
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
+	private String ownerAccount;
 
-	public String getAutoReleaseTime() {
-		return this.autoReleaseTime;
-	}
+	private String autoReleaseTime;
 
-	public void setAutoReleaseTime(String autoReleaseTime) {
-		this.autoReleaseTime = autoReleaseTime;
-		if(autoReleaseTime != null){
-			putQueryParameter("AutoReleaseTime", autoReleaseTime);
-		}
-	}
+	private Long ownerId;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -72,6 +50,28 @@ public class ModifyInstanceAutoReleaseTimeRequest extends RpcAcsRequest<ModifyIn
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
 		}
 	}
 
@@ -86,6 +86,17 @@ public class ModifyInstanceAutoReleaseTimeRequest extends RpcAcsRequest<ModifyIn
 		}
 	}
 
+	public String getAutoReleaseTime() {
+		return this.autoReleaseTime;
+	}
+
+	public void setAutoReleaseTime(String autoReleaseTime) {
+		this.autoReleaseTime = autoReleaseTime;
+		if(autoReleaseTime != null){
+			putQueryParameter("AutoReleaseTime", autoReleaseTime);
+		}
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -94,17 +105,6 @@ public class ModifyInstanceAutoReleaseTimeRequest extends RpcAcsRequest<ModifyIn
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 

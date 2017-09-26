@@ -133,6 +133,8 @@ public class DescribeDisksResponse extends AcsResponse {
 
 		private String resourceGroupId;
 
+		private Boolean encrypted;
+
 		private List<OperationLock> operationLocks;
 
 		private List<Tag> tags;
@@ -343,6 +345,14 @@ public class DescribeDisksResponse extends AcsResponse {
 
 		public void setResourceGroupId(String resourceGroupId) {
 			this.resourceGroupId = resourceGroupId;
+		}
+
+		public Boolean getEncrypted() {
+			return this.encrypted;
+		}
+
+		public void setEncrypted(Boolean encrypted) {
+			this.encrypted = encrypted;
 		}
 
 		public List<OperationLock> getOperationLocks() {

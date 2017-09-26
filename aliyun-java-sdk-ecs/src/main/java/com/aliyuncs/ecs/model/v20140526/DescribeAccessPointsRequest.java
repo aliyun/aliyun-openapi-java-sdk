@@ -31,28 +31,42 @@ public class DescribeAccessPointsRequest extends RpcAcsRequest<DescribeAccessPoi
 		super("Ecs", "2014-05-26", "DescribeAccessPoints", "ecs");
 	}
 
-	private Integer pageSize;
-
-	private String resourceOwnerAccount;
-
-	private Integer pageNumber;
+	private List<Filter> filters;
 
 	private Long resourceOwnerId;
 
-	private String type;
+	private String resourceOwnerAccount;
+
+	private Integer pageSize;
 
 	private Long ownerId;
 
-	private List<Filter> filters;
+	private String type;
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	private Integer pageNumber;
+
+	public List<Filter> getFilters() {
+		return this.filters;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
+	public void setFilters(List<Filter> filters) {
+		this.filters = filters;	
+		for (int depth1 = 0; depth1 < filters.size(); depth1++) {
+			putQueryParameter("Filter." + (depth1 + 1) + ".Key" , filters.get(depth1).getKey());
+			for (int i = 0; i < filters.get(depth1).getValues().size(); i++) {
+				putQueryParameter("Filter." + (depth1 + 1) + ".Value." + (i + 1) , filters.get(depth1).getValues().get(i));
+			}
+		}	
+	}
+
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
+	}
+
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
 		}
 	}
 
@@ -67,36 +81,14 @@ public class DescribeAccessPointsRequest extends RpcAcsRequest<DescribeAccessPoi
 		}
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
+	public Integer getPageSize() {
+		return this.pageSize;
 	}
 
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
-		}
-	}
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getType() {
-		return this.type;
-	}
-
-	public void setType(String type) {
-		this.type = type;
-		if(type != null){
-			putQueryParameter("Type", type);
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 
@@ -111,18 +103,26 @@ public class DescribeAccessPointsRequest extends RpcAcsRequest<DescribeAccessPoi
 		}
 	}
 
-	public List<Filter> getFilters() {
-		return this.filters;
+	public String getType() {
+		return this.type;
 	}
 
-	public void setFilters(List<Filter> filter) {
-		this.filters = filter;	
-		for (int i = 0; i < filter.size(); i++) {
-			putQueryParameter("Filter." + (i + 1) + ".Key" , filter.get(i).getKey());
-			for (int j = 0; j < filter.get(i).getValues().size(); j++) {
-				putQueryParameter("Filter." + (i + 1) + ".Value." +(j + 1), filter.get(i).getValues().get(j));
-			}
-		}	
+	public void setType(String type) {
+		this.type = type;
+		if(type != null){
+			putQueryParameter("Type", type);
+		}
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
 	}
 
 	public static class Filter {

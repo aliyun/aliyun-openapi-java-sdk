@@ -30,39 +30,39 @@ public class ModifyImageShareGroupPermissionRequest extends RpcAcsRequest<Modify
 		super("Ecs", "2014-05-26", "ModifyImageShareGroupPermission", "ecs");
 	}
 
-	private String removeGroup1;
-
-	private String resourceOwnerAccount;
-
-	private String addGroup1;
-
 	private Long resourceOwnerId;
-
-	private String ownerAccount;
-
-	private Long ownerId;
 
 	private String imageId;
 
-	public String getRemoveGroup1() {
-		return this.removeGroup1;
+	private String addGroup1;
+
+	private String resourceOwnerAccount;
+
+	private String ownerAccount;
+
+	private String removeGroup1;
+
+	private Long ownerId;
+
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
 	}
 
-	public void setRemoveGroup1(String removeGroup1) {
-		this.removeGroup1 = removeGroup1;
-		if(removeGroup1 != null){
-			putQueryParameter("RemoveGroup.1", removeGroup1);
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
 		}
 	}
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
+	public String getImageId() {
+		return this.imageId;
 	}
 
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	public void setImageId(String imageId) {
+		this.imageId = imageId;
+		if(imageId != null){
+			putQueryParameter("ImageId", imageId);
 		}
 	}
 
@@ -77,14 +77,14 @@ public class ModifyImageShareGroupPermissionRequest extends RpcAcsRequest<Modify
 		}
 	}
 
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
 	}
 
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
 		}
 	}
 
@@ -99,6 +99,17 @@ public class ModifyImageShareGroupPermissionRequest extends RpcAcsRequest<Modify
 		}
 	}
 
+	public String getRemoveGroup1() {
+		return this.removeGroup1;
+	}
+
+	public void setRemoveGroup1(String removeGroup1) {
+		this.removeGroup1 = removeGroup1;
+		if(removeGroup1 != null){
+			putQueryParameter("RemoveGroup.1", removeGroup1);
+		}
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -107,17 +118,6 @@ public class ModifyImageShareGroupPermissionRequest extends RpcAcsRequest<Modify
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getImageId() {
-		return this.imageId;
-	}
-
-	public void setImageId(String imageId) {
-		this.imageId = imageId;
-		if(imageId != null){
-			putQueryParameter("ImageId", imageId);
 		}
 	}
 

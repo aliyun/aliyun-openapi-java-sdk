@@ -30,23 +30,45 @@ public class DescribeDeploymentSetTopologyRequest extends RpcAcsRequest<Describe
 		super("Ecs", "2014-05-26", "DescribeDeploymentSetTopology", "ecs");
 	}
 
+	private String deploymentSetId;
+
+	private Long resourceOwnerId;
+
 	private String resourceOwnerAccount;
 
 	private String granularity;
 
 	private String domain;
 
-	private String strategy;
+	private String networkType;
 
 	private String deploymentSetName;
 
-	private String deploymentSetId;
-
-	private Long resourceOwnerId;
-
-	private String networkType;
-
 	private Long ownerId;
+
+	private String strategy;
+
+	public String getDeploymentSetId() {
+		return this.deploymentSetId;
+	}
+
+	public void setDeploymentSetId(String deploymentSetId) {
+		this.deploymentSetId = deploymentSetId;
+		if(deploymentSetId != null){
+			putQueryParameter("DeploymentSetId", deploymentSetId);
+		}
+	}
+
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
+	}
+
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
 
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
@@ -81,14 +103,14 @@ public class DescribeDeploymentSetTopologyRequest extends RpcAcsRequest<Describe
 		}
 	}
 
-	public String getStrategy() {
-		return this.strategy;
+	public String getNetworkType() {
+		return this.networkType;
 	}
 
-	public void setStrategy(String strategy) {
-		this.strategy = strategy;
-		if(strategy != null){
-			putQueryParameter("Strategy", strategy);
+	public void setNetworkType(String networkType) {
+		this.networkType = networkType;
+		if(networkType != null){
+			putQueryParameter("NetworkType", networkType);
 		}
 	}
 
@@ -103,39 +125,6 @@ public class DescribeDeploymentSetTopologyRequest extends RpcAcsRequest<Describe
 		}
 	}
 
-	public String getDeploymentSetId() {
-		return this.deploymentSetId;
-	}
-
-	public void setDeploymentSetId(String deploymentSetId) {
-		this.deploymentSetId = deploymentSetId;
-		if(deploymentSetId != null){
-			putQueryParameter("DeploymentSetId", deploymentSetId);
-		}
-	}
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getNetworkType() {
-		return this.networkType;
-	}
-
-	public void setNetworkType(String networkType) {
-		this.networkType = networkType;
-		if(networkType != null){
-			putQueryParameter("NetworkType", networkType);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -144,6 +133,17 @@ public class DescribeDeploymentSetTopologyRequest extends RpcAcsRequest<Describe
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getStrategy() {
+		return this.strategy;
+	}
+
+	public void setStrategy(String strategy) {
+		this.strategy = strategy;
+		if(strategy != null){
+			putQueryParameter("Strategy", strategy);
 		}
 	}
 

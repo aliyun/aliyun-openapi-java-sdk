@@ -57,6 +57,12 @@ public class DescribeZonesResponseUnmarshaller {
 			}
 			zone.setAvailableInstanceTypes(availableInstanceTypes);
 
+			List<String> availableVolumeCategories = new ArrayList<String>();
+			for (int j = 0; j < context.lengthValue("DescribeZonesResponse.Zones["+ i +"].AvailableVolumeCategories.Length"); j++) {
+				availableVolumeCategories.add(context.stringValue("DescribeZonesResponse.Zones["+ i +"].AvailableVolumeCategories["+ j +"]"));
+			}
+			zone.setAvailableVolumeCategories(availableVolumeCategories);
+
 			List<ResourcesInfo> availableResources = new ArrayList<ResourcesInfo>();
 			for (int j = 0; j < context.lengthValue("DescribeZonesResponse.Zones["+ i +"].AvailableResources.Length"); j++) {
 				ResourcesInfo resourcesInfo = new ResourcesInfo();

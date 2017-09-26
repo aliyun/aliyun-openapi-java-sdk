@@ -30,71 +30,71 @@ public class DescribeDeploymentSetsRequest extends RpcAcsRequest<DescribeDeploym
 		super("Ecs", "2014-05-26", "DescribeDeploymentSets", "ecs");
 	}
 
-	private Integer pageSize;
+	private Long resourceOwnerId;
 
-	private String deploymentSetIds;
+	private String resourceOwnerAccount;
 
-	private Integer pageNumber;
+	private String ownerAccount;
 
-	private String strategy;
+	private String networkType;
 
 	private String deploymentSetName;
 
 	private Long ownerId;
 
-	private String networkType;
+	private Integer pageNumber;
 
-	private String resourceOwnerAccount;
+	private String deploymentSetIds;
 
 	private String granularity;
 
 	private String domain;
 
-	private Long resourceOwnerId;
+	private Integer pageSize;
 
-	private String ownerAccount;
+	private String strategy;
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
 		}
 	}
 
-	public String getDeploymentSetIds() {
-		return this.deploymentSetIds;
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
 	}
 
-	public void setDeploymentSetIds(String deploymentSetIds) {
-		this.deploymentSetIds = deploymentSetIds;
-		if(deploymentSetIds != null){
-			putQueryParameter("DeploymentSetIds", deploymentSetIds);
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
 		}
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
+	public String getOwnerAccount() {
+		return this.ownerAccount;
 	}
 
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
 		}
 	}
 
-	public String getStrategy() {
-		return this.strategy;
+	public String getNetworkType() {
+		return this.networkType;
 	}
 
-	public void setStrategy(String strategy) {
-		this.strategy = strategy;
-		if(strategy != null){
-			putQueryParameter("Strategy", strategy);
+	public void setNetworkType(String networkType) {
+		this.networkType = networkType;
+		if(networkType != null){
+			putQueryParameter("NetworkType", networkType);
 		}
 	}
 
@@ -120,25 +120,25 @@ public class DescribeDeploymentSetsRequest extends RpcAcsRequest<DescribeDeploym
 		}
 	}
 
-	public String getNetworkType() {
-		return this.networkType;
+	public Integer getPageNumber() {
+		return this.pageNumber;
 	}
 
-	public void setNetworkType(String networkType) {
-		this.networkType = networkType;
-		if(networkType != null){
-			putQueryParameter("NetworkType", networkType);
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
 		}
 	}
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
+	public String getDeploymentSetIds() {
+		return this.deploymentSetIds;
 	}
 
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	public void setDeploymentSetIds(String deploymentSetIds) {
+		this.deploymentSetIds = deploymentSetIds;
+		if(deploymentSetIds != null){
+			putQueryParameter("DeploymentSetIds", deploymentSetIds);
 		}
 	}
 
@@ -164,25 +164,25 @@ public class DescribeDeploymentSetsRequest extends RpcAcsRequest<DescribeDeploym
 		}
 	}
 
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
+	public Integer getPageSize() {
+		return this.pageSize;
 	}
 
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 
-	public String getOwnerAccount() {
-		return this.ownerAccount;
+	public String getStrategy() {
+		return this.strategy;
 	}
 
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		if(ownerAccount != null){
-			putQueryParameter("OwnerAccount", ownerAccount);
+	public void setStrategy(String strategy) {
+		this.strategy = strategy;
+		if(strategy != null){
+			putQueryParameter("Strategy", strategy);
 		}
 	}
 

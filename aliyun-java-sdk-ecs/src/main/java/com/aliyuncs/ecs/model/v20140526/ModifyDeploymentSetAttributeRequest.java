@@ -30,52 +30,19 @@ public class ModifyDeploymentSetAttributeRequest extends RpcAcsRequest<ModifyDep
 		super("Ecs", "2014-05-26", "ModifyDeploymentSetAttribute", "ecs");
 	}
 
+	private String deploymentSetId;
+
+	private Long resourceOwnerId;
+
 	private String resourceOwnerAccount;
+
+	private String ownerAccount;
 
 	private String description;
 
 	private String deploymentSetName;
 
-	private String deploymentSetId;
-
-	private Long resourceOwnerId;
-
-	private String ownerAccount;
-
 	private Long ownerId;
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public String getDescription() {
-		return this.description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-		if(description != null){
-			putQueryParameter("Description", description);
-		}
-	}
-
-	public String getDeploymentSetName() {
-		return this.deploymentSetName;
-	}
-
-	public void setDeploymentSetName(String deploymentSetName) {
-		this.deploymentSetName = deploymentSetName;
-		if(deploymentSetName != null){
-			putQueryParameter("DeploymentSetName", deploymentSetName);
-		}
-	}
 
 	public String getDeploymentSetId() {
 		return this.deploymentSetId;
@@ -99,6 +66,17 @@ public class ModifyDeploymentSetAttributeRequest extends RpcAcsRequest<ModifyDep
 		}
 	}
 
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
 	public String getOwnerAccount() {
 		return this.ownerAccount;
 	}
@@ -107,6 +85,28 @@ public class ModifyDeploymentSetAttributeRequest extends RpcAcsRequest<ModifyDep
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+		if(description != null){
+			putQueryParameter("Description", description);
+		}
+	}
+
+	public String getDeploymentSetName() {
+		return this.deploymentSetName;
+	}
+
+	public void setDeploymentSetName(String deploymentSetName) {
+		this.deploymentSetName = deploymentSetName;
+		if(deploymentSetName != null){
+			putQueryParameter("DeploymentSetName", deploymentSetName);
 		}
 	}
 

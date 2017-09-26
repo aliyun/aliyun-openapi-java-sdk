@@ -85,6 +85,8 @@ public class DescribeSnapshotLinksResponse extends AcsResponse {
 
 		private String regionId;
 
+		private String instanceId;
+
 		private String sourceDiskId;
 
 		private Integer sourceDiskSize;
@@ -109,6 +111,14 @@ public class DescribeSnapshotLinksResponse extends AcsResponse {
 
 		public void setRegionId(String regionId) {
 			this.regionId = regionId;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
 		}
 
 		public String getSourceDiskId() {

@@ -30,35 +30,13 @@ public class CancelTaskRequest extends RpcAcsRequest<CancelTaskResponse> {
 		super("Ecs", "2014-05-26", "CancelTask", "ecs");
 	}
 
-	private String resourceOwnerAccount;
-
-	private String taskId;
-
 	private Long resourceOwnerId;
+
+	private String resourceOwnerAccount;
 
 	private Long ownerId;
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public String getTaskId() {
-		return this.taskId;
-	}
-
-	public void setTaskId(String taskId) {
-		this.taskId = taskId;
-		if(taskId != null){
-			putQueryParameter("TaskId", taskId);
-		}
-	}
+	private String taskId;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -71,6 +49,17 @@ public class CancelTaskRequest extends RpcAcsRequest<CancelTaskResponse> {
 		}
 	}
 
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -79,6 +68,17 @@ public class CancelTaskRequest extends RpcAcsRequest<CancelTaskResponse> {
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getTaskId() {
+		return this.taskId;
+	}
+
+	public void setTaskId(String taskId) {
+		this.taskId = taskId;
+		if(taskId != null){
+			putQueryParameter("TaskId", taskId);
 		}
 	}
 

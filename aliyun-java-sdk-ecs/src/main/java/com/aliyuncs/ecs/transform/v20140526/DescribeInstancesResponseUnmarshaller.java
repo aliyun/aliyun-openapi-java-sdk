@@ -25,6 +25,7 @@ import com.aliyuncs.ecs.model.v20140526.DescribeInstancesResponse;
 import com.aliyuncs.ecs.model.v20140526.DescribeInstancesResponse.Instance;
 import com.aliyuncs.ecs.model.v20140526.DescribeInstancesResponse.Instance.EipAddress;
 import com.aliyuncs.ecs.model.v20140526.DescribeInstancesResponse.Instance.LockReason;
+import com.aliyuncs.ecs.model.v20140526.DescribeInstancesResponse.Instance.NetworkInterface;
 import com.aliyuncs.ecs.model.v20140526.DescribeInstancesResponse.Instance.Tag;
 import com.aliyuncs.ecs.model.v20140526.DescribeInstancesResponse.Instance.VpcAttributes;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -64,6 +65,7 @@ public class DescribeInstancesResponseUnmarshaller {
 			instance.setCreationTime(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].CreationTime"));
 			instance.setInstanceNetworkType(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].InstanceNetworkType"));
 			instance.setInstanceChargeType(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].InstanceChargeType"));
+			instance.setSaleCycle(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].SaleCycle"));
 			instance.setExpiredTime(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].ExpiredTime"));
 			instance.setAutoReleaseTime(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].AutoReleaseTime"));
 			instance.setIoOptimized(context.booleanValue("DescribeInstancesResponse.Instances["+ i +"].IoOptimized"));
@@ -74,6 +76,7 @@ public class DescribeInstancesResponseUnmarshaller {
 			instance.setGPUAmount(context.integerValue("DescribeInstancesResponse.Instances["+ i +"].GPUAmount"));
 			instance.setGPUSpec(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].GPUSpec"));
 			instance.setSpotStrategy(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].SpotStrategy"));
+			instance.setSpotPriceLimit(context.floatValue("DescribeInstancesResponse.Instances["+ i +"].SpotPriceLimit"));
 			instance.setResourceGroupId(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].ResourceGroupId"));
 			instance.setKeyPairName(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].KeyPairName"));
 
@@ -120,6 +123,17 @@ public class DescribeInstancesResponseUnmarshaller {
 			eipAddress.setInternetChargeType(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].EipAddress.InternetChargeType"));
 			eipAddress.setIsSupportUnassociate(context.booleanValue("DescribeInstancesResponse.Instances["+ i +"].EipAddress.IsSupportUnassociate"));
 			instance.setEipAddress(eipAddress);
+
+			List<NetworkInterface> networkInterfaces = new ArrayList<NetworkInterface>();
+			for (int j = 0; j < context.lengthValue("DescribeInstancesResponse.Instances["+ i +"].NetworkInterfaces.Length"); j++) {
+				NetworkInterface networkInterface = new NetworkInterface();
+				networkInterface.setNetworkInterfaceId(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].NetworkInterfaces["+ j +"].NetworkInterfaceId"));
+				networkInterface.setMacAddress(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].NetworkInterfaces["+ j +"].MacAddress"));
+				networkInterface.setPrimaryIpAddress(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].NetworkInterfaces["+ j +"].PrimaryIpAddress"));
+
+				networkInterfaces.add(networkInterface);
+			}
+			instance.setNetworkInterfaces(networkInterfaces);
 
 			List<LockReason> operationLocks = new ArrayList<LockReason>();
 			for (int j = 0; j < context.lengthValue("DescribeInstancesResponse.Instances["+ i +"].OperationLocks.Length"); j++) {

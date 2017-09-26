@@ -32,17 +32,17 @@ public class JoinResourceGroupRequest extends RpcAcsRequest<JoinResourceGroupRes
 
 	private String resourceGroupId;
 
-	private String resourceOwnerAccount;
-
-	private String resourceType;
-
 	private Long resourceOwnerId;
 
 	private String resourceId;
 
+	private String resourceOwnerAccount;
+
 	private String ownerAccount;
 
 	private Long ownerId;
+
+	private String resourceType;
 
 	public String getResourceGroupId() {
 		return this.resourceGroupId;
@@ -52,28 +52,6 @@ public class JoinResourceGroupRequest extends RpcAcsRequest<JoinResourceGroupRes
 		this.resourceGroupId = resourceGroupId;
 		if(resourceGroupId != null){
 			putQueryParameter("ResourceGroupId", resourceGroupId);
-		}
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public String getResourceType() {
-		return this.resourceType;
-	}
-
-	public void setResourceType(String resourceType) {
-		this.resourceType = resourceType;
-		if(resourceType != null){
-			putQueryParameter("ResourceType", resourceType);
 		}
 	}
 
@@ -99,6 +77,17 @@ public class JoinResourceGroupRequest extends RpcAcsRequest<JoinResourceGroupRes
 		}
 	}
 
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
 	public String getOwnerAccount() {
 		return this.ownerAccount;
 	}
@@ -118,6 +107,17 @@ public class JoinResourceGroupRequest extends RpcAcsRequest<JoinResourceGroupRes
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getResourceType() {
+		return this.resourceType;
+	}
+
+	public void setResourceType(String resourceType) {
+		this.resourceType = resourceType;
+		if(resourceType != null){
+			putQueryParameter("ResourceType", resourceType);
 		}
 	}
 

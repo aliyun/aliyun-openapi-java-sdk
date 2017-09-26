@@ -30,35 +30,28 @@ public class DescribeZonesRequest extends RpcAcsRequest<DescribeZonesResponse> {
 		super("Ecs", "2014-05-26", "DescribeZones", "ecs");
 	}
 
-	private String resourceOwnerAccount;
-
-	private Boolean verbose;
+	private String spotStrategy;
 
 	private Long resourceOwnerId;
+
+	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
 	private Long ownerId;
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
+	private String instanceChargeType;
+
+	private Boolean verbose;
+
+	public String getSpotStrategy() {
+		return this.spotStrategy;
 	}
 
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public Boolean getVerbose() {
-		return this.verbose;
-	}
-
-	public void setVerbose(Boolean verbose) {
-		this.verbose = verbose;
-		if(verbose != null){
-			putQueryParameter("Verbose", verbose.toString());
+	public void setSpotStrategy(String spotStrategy) {
+		this.spotStrategy = spotStrategy;
+		if(spotStrategy != null){
+			putQueryParameter("SpotStrategy", spotStrategy);
 		}
 	}
 
@@ -70,6 +63,17 @@ public class DescribeZonesRequest extends RpcAcsRequest<DescribeZonesResponse> {
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
 		}
 	}
 
@@ -92,6 +96,28 @@ public class DescribeZonesRequest extends RpcAcsRequest<DescribeZonesResponse> {
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getInstanceChargeType() {
+		return this.instanceChargeType;
+	}
+
+	public void setInstanceChargeType(String instanceChargeType) {
+		this.instanceChargeType = instanceChargeType;
+		if(instanceChargeType != null){
+			putQueryParameter("InstanceChargeType", instanceChargeType);
+		}
+	}
+
+	public Boolean getVerbose() {
+		return this.verbose;
+	}
+
+	public void setVerbose(Boolean verbose) {
+		this.verbose = verbose;
+		if(verbose != null){
+			putQueryParameter("Verbose", verbose.toString());
 		}
 	}
 

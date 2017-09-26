@@ -30,30 +30,30 @@ public class DescribeNatGatewaysRequest extends RpcAcsRequest<DescribeNatGateway
 		super("Ecs", "2014-05-26", "DescribeNatGateways", "ecs");
 	}
 
-	private Integer pageSize;
+	private Long resourceOwnerId;
 
 	private String resourceOwnerAccount;
 
-	private Integer pageNumber;
-
-	private Long resourceOwnerId;
+	private String ownerAccount;
 
 	private String vpcId;
 
-	private String ownerAccount;
-
-	private Long ownerId;
+	private Integer pageSize;
 
 	private String natGatewayId;
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	private Long ownerId;
+
+	private Integer pageNumber;
+
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
 		}
 	}
 
@@ -68,25 +68,14 @@ public class DescribeNatGatewaysRequest extends RpcAcsRequest<DescribeNatGateway
 		}
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
+	public String getOwnerAccount() {
+		return this.ownerAccount;
 	}
 
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
-		}
-	}
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
 		}
 	}
 
@@ -101,14 +90,25 @@ public class DescribeNatGatewaysRequest extends RpcAcsRequest<DescribeNatGateway
 		}
 	}
 
-	public String getOwnerAccount() {
-		return this.ownerAccount;
+	public Integer getPageSize() {
+		return this.pageSize;
 	}
 
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		if(ownerAccount != null){
-			putQueryParameter("OwnerAccount", ownerAccount);
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getNatGatewayId() {
+		return this.natGatewayId;
+	}
+
+	public void setNatGatewayId(String natGatewayId) {
+		this.natGatewayId = natGatewayId;
+		if(natGatewayId != null){
+			putQueryParameter("NatGatewayId", natGatewayId);
 		}
 	}
 
@@ -123,14 +123,14 @@ public class DescribeNatGatewaysRequest extends RpcAcsRequest<DescribeNatGateway
 		}
 	}
 
-	public String getNatGatewayId() {
-		return this.natGatewayId;
+	public Integer getPageNumber() {
+		return this.pageNumber;
 	}
 
-	public void setNatGatewayId(String natGatewayId) {
-		this.natGatewayId = natGatewayId;
-		if(natGatewayId != null){
-			putQueryParameter("NatGatewayId", natGatewayId);
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
 		}
 	}
 

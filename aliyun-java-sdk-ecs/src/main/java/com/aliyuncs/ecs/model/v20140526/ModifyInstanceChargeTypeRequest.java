@@ -30,58 +30,36 @@ public class ModifyInstanceChargeTypeRequest extends RpcAcsRequest<ModifyInstanc
 		super("Ecs", "2014-05-26", "ModifyInstanceChargeType", "ecs");
 	}
 
-	private String clientToken;
-
-	private String instanceIds;
-
-	private Long ownerId;
+	private Long resourceOwnerId;
 
 	private Integer period;
 
-	private String periodUnit;
-
-	private String resourceOwnerAccount;
+	private Boolean dryRun;
 
 	private Boolean autoPay;
 
 	private Boolean includeDataDisks;
 
-	private Long resourceOwnerId;
+	private String resourceOwnerAccount;
+
+	private String clientToken;
 
 	private String ownerAccount;
 
-	private Boolean dryRun;
+	private Long ownerId;
 
-	public String getClientToken() {
-		return this.clientToken;
+	private String periodUnit;
+
+	private String instanceIds;
+
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
 	}
 
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putQueryParameter("ClientToken", clientToken);
-		}
-	}
-
-	public String getInstanceIds() {
-		return this.instanceIds;
-	}
-
-	public void setInstanceIds(String instanceIds) {
-		this.instanceIds = instanceIds;
-		if(instanceIds != null){
-			putQueryParameter("InstanceIds", instanceIds);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
 		}
 	}
 
@@ -96,25 +74,14 @@ public class ModifyInstanceChargeTypeRequest extends RpcAcsRequest<ModifyInstanc
 		}
 	}
 
-	public String getPeriodUnit() {
-		return this.periodUnit;
+	public Boolean getDryRun() {
+		return this.dryRun;
 	}
 
-	public void setPeriodUnit(String periodUnit) {
-		this.periodUnit = periodUnit;
-		if(periodUnit != null){
-			putQueryParameter("PeriodUnit", periodUnit);
-		}
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	public void setDryRun(Boolean dryRun) {
+		this.dryRun = dryRun;
+		if(dryRun != null){
+			putQueryParameter("DryRun", dryRun.toString());
 		}
 	}
 
@@ -140,14 +107,25 @@ public class ModifyInstanceChargeTypeRequest extends RpcAcsRequest<ModifyInstanc
 		}
 	}
 
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
 	}
 
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
 		}
 	}
 
@@ -162,14 +140,36 @@ public class ModifyInstanceChargeTypeRequest extends RpcAcsRequest<ModifyInstanc
 		}
 	}
 
-	public Boolean getDryRun() {
-		return this.dryRun;
+	public Long getOwnerId() {
+		return this.ownerId;
 	}
 
-	public void setDryRun(Boolean dryRun) {
-		this.dryRun = dryRun;
-		if(dryRun != null){
-			putQueryParameter("DryRun", dryRun.toString());
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getPeriodUnit() {
+		return this.periodUnit;
+	}
+
+	public void setPeriodUnit(String periodUnit) {
+		this.periodUnit = periodUnit;
+		if(periodUnit != null){
+			putQueryParameter("PeriodUnit", periodUnit);
+		}
+	}
+
+	public String getInstanceIds() {
+		return this.instanceIds;
+	}
+
+	public void setInstanceIds(String instanceIds) {
+		this.instanceIds = instanceIds;
+		if(instanceIds != null){
+			putQueryParameter("InstanceIds", instanceIds);
 		}
 	}
 

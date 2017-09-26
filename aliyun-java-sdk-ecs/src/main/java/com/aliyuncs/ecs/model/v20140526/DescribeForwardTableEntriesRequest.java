@@ -30,30 +30,30 @@ public class DescribeForwardTableEntriesRequest extends RpcAcsRequest<DescribeFo
 		super("Ecs", "2014-05-26", "DescribeForwardTableEntries", "ecs");
 	}
 
-	private Integer pageSize;
+	private Long resourceOwnerId;
 
 	private String resourceOwnerAccount;
 
-	private Integer pageNumber;
-
-	private String forwardTableId;
-
 	private String forwardEntryId;
-
-	private Long resourceOwnerId;
 
 	private String ownerAccount;
 
+	private String forwardTableId;
+
+	private Integer pageSize;
+
 	private Long ownerId;
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	private Integer pageNumber;
+
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
 		}
 	}
 
@@ -68,28 +68,6 @@ public class DescribeForwardTableEntriesRequest extends RpcAcsRequest<DescribeFo
 		}
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
-		}
-	}
-
-	public String getForwardTableId() {
-		return this.forwardTableId;
-	}
-
-	public void setForwardTableId(String forwardTableId) {
-		this.forwardTableId = forwardTableId;
-		if(forwardTableId != null){
-			putQueryParameter("ForwardTableId", forwardTableId);
-		}
-	}
-
 	public String getForwardEntryId() {
 		return this.forwardEntryId;
 	}
@@ -98,17 +76,6 @@ public class DescribeForwardTableEntriesRequest extends RpcAcsRequest<DescribeFo
 		this.forwardEntryId = forwardEntryId;
 		if(forwardEntryId != null){
 			putQueryParameter("ForwardEntryId", forwardEntryId);
-		}
-	}
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
 		}
 	}
 
@@ -123,6 +90,28 @@ public class DescribeForwardTableEntriesRequest extends RpcAcsRequest<DescribeFo
 		}
 	}
 
+	public String getForwardTableId() {
+		return this.forwardTableId;
+	}
+
+	public void setForwardTableId(String forwardTableId) {
+		this.forwardTableId = forwardTableId;
+		if(forwardTableId != null){
+			putQueryParameter("ForwardTableId", forwardTableId);
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -131,6 +120,17 @@ public class DescribeForwardTableEntriesRequest extends RpcAcsRequest<DescribeFo
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
 		}
 	}
 

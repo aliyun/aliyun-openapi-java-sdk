@@ -30,26 +30,26 @@ public class DescribeSnapshotPackageRequest extends RpcAcsRequest<DescribeSnapsh
 		super("Ecs", "2014-05-26", "DescribeSnapshotPackage", "ecs");
 	}
 
-	private Integer pageSize;
+	private Long resourceOwnerId;
 
 	private String resourceOwnerAccount;
 
-	private Integer pageNumber;
-
-	private Long resourceOwnerId;
-
 	private String ownerAccount;
+
+	private Integer pageSize;
 
 	private Long ownerId;
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	private Integer pageNumber;
+
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
 		}
 	}
 
@@ -64,28 +64,6 @@ public class DescribeSnapshotPackageRequest extends RpcAcsRequest<DescribeSnapsh
 		}
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
-		}
-	}
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
 	public String getOwnerAccount() {
 		return this.ownerAccount;
 	}
@@ -97,6 +75,17 @@ public class DescribeSnapshotPackageRequest extends RpcAcsRequest<DescribeSnapsh
 		}
 	}
 
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -105,6 +94,17 @@ public class DescribeSnapshotPackageRequest extends RpcAcsRequest<DescribeSnapsh
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
 		}
 	}
 

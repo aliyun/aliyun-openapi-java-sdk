@@ -30,50 +30,28 @@ public class ModifyVRouterAttributeRequest extends RpcAcsRequest<ModifyVRouterAt
 		super("Ecs", "2014-05-26", "ModifyVRouterAttribute", "ecs");
 	}
 
-	private String resourceOwnerAccount;
-
-	private String vRouterId;
-
-	private String description;
+	private String vRouterName;
 
 	private Long resourceOwnerId;
 
+	private String vRouterId;
+
+	private String resourceOwnerAccount;
+
 	private String ownerAccount;
+
+	private String description;
 
 	private Long ownerId;
 
-	private String vRouterName;
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
+	public String getVRouterName() {
+		return this.vRouterName;
 	}
 
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public String getVRouterId() {
-		return this.vRouterId;
-	}
-
-	public void setVRouterId(String vRouterId) {
-		this.vRouterId = vRouterId;
-		if(vRouterId != null){
-			putQueryParameter("VRouterId", vRouterId);
-		}
-	}
-
-	public String getDescription() {
-		return this.description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-		if(description != null){
-			putQueryParameter("Description", description);
+	public void setVRouterName(String vRouterName) {
+		this.vRouterName = vRouterName;
+		if(vRouterName != null){
+			putQueryParameter("VRouterName", vRouterName);
 		}
 	}
 
@@ -88,6 +66,28 @@ public class ModifyVRouterAttributeRequest extends RpcAcsRequest<ModifyVRouterAt
 		}
 	}
 
+	public String getVRouterId() {
+		return this.vRouterId;
+	}
+
+	public void setVRouterId(String vRouterId) {
+		this.vRouterId = vRouterId;
+		if(vRouterId != null){
+			putQueryParameter("VRouterId", vRouterId);
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
 	public String getOwnerAccount() {
 		return this.ownerAccount;
 	}
@@ -99,6 +99,17 @@ public class ModifyVRouterAttributeRequest extends RpcAcsRequest<ModifyVRouterAt
 		}
 	}
 
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+		if(description != null){
+			putQueryParameter("Description", description);
+		}
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -107,17 +118,6 @@ public class ModifyVRouterAttributeRequest extends RpcAcsRequest<ModifyVRouterAt
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getVRouterName() {
-		return this.vRouterName;
-	}
-
-	public void setVRouterName(String vRouterName) {
-		this.vRouterName = vRouterName;
-		if(vRouterName != null){
-			putQueryParameter("VRouterName", vRouterName);
 		}
 	}
 

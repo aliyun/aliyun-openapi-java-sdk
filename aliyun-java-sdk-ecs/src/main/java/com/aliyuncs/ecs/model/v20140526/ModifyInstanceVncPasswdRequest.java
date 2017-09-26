@@ -30,26 +30,37 @@ public class ModifyInstanceVncPasswdRequest extends RpcAcsRequest<ModifyInstance
 		super("Ecs", "2014-05-26", "ModifyInstanceVncPasswd", "ecs");
 	}
 
-	private String vncPassword;
+	private Long resourceOwnerId;
+
+	private String instanceId;
 
 	private String resourceOwnerAccount;
-
-	private Long resourceOwnerId;
 
 	private String ownerAccount;
 
 	private Long ownerId;
 
-	private String instanceId;
+	private String vncPassword;
 
-	public String getVncPassword() {
-		return this.vncPassword;
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
 	}
 
-	public void setVncPassword(String vncPassword) {
-		this.vncPassword = vncPassword;
-		if(vncPassword != null){
-			putQueryParameter("VncPassword", vncPassword);
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 
@@ -61,17 +72,6 @@ public class ModifyInstanceVncPasswdRequest extends RpcAcsRequest<ModifyInstance
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
 		}
 	}
 
@@ -97,14 +97,14 @@ public class ModifyInstanceVncPasswdRequest extends RpcAcsRequest<ModifyInstance
 		}
 	}
 
-	public String getInstanceId() {
-		return this.instanceId;
+	public String getVncPassword() {
+		return this.vncPassword;
 	}
 
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
+	public void setVncPassword(String vncPassword) {
+		this.vncPassword = vncPassword;
+		if(vncPassword != null){
+			putQueryParameter("VncPassword", vncPassword);
 		}
 	}
 

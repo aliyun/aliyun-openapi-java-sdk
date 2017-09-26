@@ -30,28 +30,28 @@ public class DeleteRouterInterfaceRequest extends RpcAcsRequest<DeleteRouterInte
 		super("Ecs", "2014-05-26", "DeleteRouterInterface", "ecs");
 	}
 
-	private String clientToken;
+	private Long resourceOwnerId;
 
 	private String resourceOwnerAccount;
 
-	private String routerInterfaceId;
-
-	private String userCidr;
-
-	private Long resourceOwnerId;
+	private String clientToken;
 
 	private String ownerAccount;
 
+	private String userCidr;
+
+	private String routerInterfaceId;
+
 	private Long ownerId;
 
-	public String getClientToken() {
-		return this.clientToken;
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
 	}
 
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putQueryParameter("ClientToken", clientToken);
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
 		}
 	}
 
@@ -66,14 +66,25 @@ public class DeleteRouterInterfaceRequest extends RpcAcsRequest<DeleteRouterInte
 		}
 	}
 
-	public String getRouterInterfaceId() {
-		return this.routerInterfaceId;
+	public String getClientToken() {
+		return this.clientToken;
 	}
 
-	public void setRouterInterfaceId(String routerInterfaceId) {
-		this.routerInterfaceId = routerInterfaceId;
-		if(routerInterfaceId != null){
-			putQueryParameter("RouterInterfaceId", routerInterfaceId);
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
 		}
 	}
 
@@ -88,25 +99,14 @@ public class DeleteRouterInterfaceRequest extends RpcAcsRequest<DeleteRouterInte
 		}
 	}
 
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
+	public String getRouterInterfaceId() {
+		return this.routerInterfaceId;
 	}
 
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
-
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		if(ownerAccount != null){
-			putQueryParameter("OwnerAccount", ownerAccount);
+	public void setRouterInterfaceId(String routerInterfaceId) {
+		this.routerInterfaceId = routerInterfaceId;
+		if(routerInterfaceId != null){
+			putQueryParameter("RouterInterfaceId", routerInterfaceId);
 		}
 	}
 

@@ -31,45 +31,50 @@ public class ImportImageRequest extends RpcAcsRequest<ImportImageResponse> {
 		super("Ecs", "2014-05-26", "ImportImage", "ecs");
 	}
 
-	private String platform;
-
-	private String roleName;
-
-	private String resourceOwnerAccount;
-
-	private String oSType;
-
-	private String description;
-
 	private List<DiskDeviceMapping> diskDeviceMappings;
-
-	private String architecture;
 
 	private Long resourceOwnerId;
 
-	private Long ownerId;
+	private String resourceOwnerAccount;
 
 	private String imageName;
 
-	public String getPlatform() {
-		return this.platform;
+	private String roleName;
+
+	private String description;
+
+	private String oSType;
+
+	private Long ownerId;
+
+	private String platform;
+
+	private String architecture;
+
+	public List<DiskDeviceMapping> getDiskDeviceMappings() {
+		return this.diskDeviceMappings;
 	}
 
-	public void setPlatform(String platform) {
-		this.platform = platform;
-		if(platform != null){
-			putQueryParameter("Platform", platform);
-		}
+	public void setDiskDeviceMappings(List<DiskDeviceMapping> diskDeviceMappings) {
+		this.diskDeviceMappings = diskDeviceMappings;	
+		for (int depth1 = 0; depth1 < diskDeviceMappings.size(); depth1++) {
+			putQueryParameter("DiskDeviceMapping." + (depth1 + 1) + ".Format" , diskDeviceMappings.get(depth1).getFormat());
+			putQueryParameter("DiskDeviceMapping." + (depth1 + 1) + ".OSSBucket" , diskDeviceMappings.get(depth1).getOSSBucket());
+			putQueryParameter("DiskDeviceMapping." + (depth1 + 1) + ".OSSObject" , diskDeviceMappings.get(depth1).getOSSObject());
+			putQueryParameter("DiskDeviceMapping." + (depth1 + 1) + ".DiskImSize" , diskDeviceMappings.get(depth1).getDiskImSize());
+			putQueryParameter("DiskDeviceMapping." + (depth1 + 1) + ".DiskImageSize" , diskDeviceMappings.get(depth1).getDiskImageSize());
+			putQueryParameter("DiskDeviceMapping." + (depth1 + 1) + ".Device" , diskDeviceMappings.get(depth1).getDevice());
+		}	
 	}
 
-	public String getRoleName() {
-		return this.roleName;
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
 	}
 
-	public void setRoleName(String roleName) {
-		this.roleName = roleName;
-		if(roleName != null){
-			putQueryParameter("RoleName", roleName);
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
 		}
 	}
 
@@ -84,14 +89,25 @@ public class ImportImageRequest extends RpcAcsRequest<ImportImageResponse> {
 		}
 	}
 
-	public String getOSType() {
-		return this.oSType;
+	public String getImageName() {
+		return this.imageName;
 	}
 
-	public void setOSType(String oSType) {
-		this.oSType = oSType;
-		if(oSType != null){
-			putQueryParameter("OSType", oSType);
+	public void setImageName(String imageName) {
+		this.imageName = imageName;
+		if(imageName != null){
+			putQueryParameter("ImageName", imageName);
+		}
+	}
+
+	public String getRoleName() {
+		return this.roleName;
+	}
+
+	public void setRoleName(String roleName) {
+		this.roleName = roleName;
+		if(roleName != null){
+			putQueryParameter("RoleName", roleName);
 		}
 	}
 
@@ -106,41 +122,14 @@ public class ImportImageRequest extends RpcAcsRequest<ImportImageResponse> {
 		}
 	}
 
-	public List<DiskDeviceMapping> getDiskDeviceMappings() {
-		return this.diskDeviceMappings;
+	public String getOSType() {
+		return this.oSType;
 	}
 
-	public void setDiskDeviceMappings(List<DiskDeviceMapping> diskDeviceMapping) {
-		this.diskDeviceMappings = diskDeviceMapping;	
-		for (int i = 0; i < diskDeviceMapping.size(); i++) {
-			putQueryParameter("DiskDeviceMapping." + (i + 1) + ".Format" , diskDeviceMapping.get(i).getFormat());
-			putQueryParameter("DiskDeviceMapping." + (i + 1) + ".OSSBucket" , diskDeviceMapping.get(i).getOSSBucket());
-			putQueryParameter("DiskDeviceMapping." + (i + 1) + ".OSSObject" , diskDeviceMapping.get(i).getOSSObject());
-			putQueryParameter("DiskDeviceMapping." + (i + 1) + ".DiskImSize" , diskDeviceMapping.get(i).getDiskImSize());
-			putQueryParameter("DiskDeviceMapping." + (i + 1) + ".DiskImageSize" , diskDeviceMapping.get(i).getDiskImageSize());
-			putQueryParameter("DiskDeviceMapping." + (i + 1) + ".Device" , diskDeviceMapping.get(i).getDevice());
-		}	
-	}
-
-	public String getArchitecture() {
-		return this.architecture;
-	}
-
-	public void setArchitecture(String architecture) {
-		this.architecture = architecture;
-		if(architecture != null){
-			putQueryParameter("Architecture", architecture);
-		}
-	}
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+	public void setOSType(String oSType) {
+		this.oSType = oSType;
+		if(oSType != null){
+			putQueryParameter("OSType", oSType);
 		}
 	}
 
@@ -155,14 +144,25 @@ public class ImportImageRequest extends RpcAcsRequest<ImportImageResponse> {
 		}
 	}
 
-	public String getImageName() {
-		return this.imageName;
+	public String getPlatform() {
+		return this.platform;
 	}
 
-	public void setImageName(String imageName) {
-		this.imageName = imageName;
-		if(imageName != null){
-			putQueryParameter("ImageName", imageName);
+	public void setPlatform(String platform) {
+		this.platform = platform;
+		if(platform != null){
+			putQueryParameter("Platform", platform);
+		}
+	}
+
+	public String getArchitecture() {
+		return this.architecture;
+	}
+
+	public void setArchitecture(String architecture) {
+		this.architecture = architecture;
+		if(architecture != null){
+			putQueryParameter("Architecture", architecture);
 		}
 	}
 

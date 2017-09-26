@@ -30,37 +30,15 @@ public class DeleteVolumeRequest extends RpcAcsRequest<DeleteVolumeResponse> {
 		super("Ecs", "2014-05-26", "DeleteVolume", "ecs");
 	}
 
-	private String resourceOwnerAccount;
-
-	private String volumeId;
-
 	private Long resourceOwnerId;
+
+	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
+	private String volumeId;
+
 	private Long ownerId;
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public String getVolumeId() {
-		return this.volumeId;
-	}
-
-	public void setVolumeId(String volumeId) {
-		this.volumeId = volumeId;
-		if(volumeId != null){
-			putQueryParameter("VolumeId", volumeId);
-		}
-	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -73,6 +51,17 @@ public class DeleteVolumeRequest extends RpcAcsRequest<DeleteVolumeResponse> {
 		}
 	}
 
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
 	public String getOwnerAccount() {
 		return this.ownerAccount;
 	}
@@ -81,6 +70,17 @@ public class DeleteVolumeRequest extends RpcAcsRequest<DeleteVolumeResponse> {
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public String getVolumeId() {
+		return this.volumeId;
+	}
+
+	public void setVolumeId(String volumeId) {
+		this.volumeId = volumeId;
+		if(volumeId != null){
+			putQueryParameter("VolumeId", volumeId);
 		}
 	}
 

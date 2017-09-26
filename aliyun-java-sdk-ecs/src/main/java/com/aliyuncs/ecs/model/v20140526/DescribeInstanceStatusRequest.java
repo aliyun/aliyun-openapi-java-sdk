@@ -30,30 +30,30 @@ public class DescribeInstanceStatusRequest extends RpcAcsRequest<DescribeInstanc
 		super("Ecs", "2014-05-26", "DescribeInstanceStatus", "ecs");
 	}
 
-	private Integer pageSize;
+	private Long resourceOwnerId;
 
 	private String resourceOwnerAccount;
 
-	private Integer pageNumber;
+	private String ownerAccount;
+
+	private Integer pageSize;
 
 	private String zoneId;
 
 	private String clusterId;
 
-	private Long resourceOwnerId;
-
-	private String ownerAccount;
-
 	private Long ownerId;
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	private Integer pageNumber;
+
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
 		}
 	}
 
@@ -68,14 +68,25 @@ public class DescribeInstanceStatusRequest extends RpcAcsRequest<DescribeInstanc
 		}
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
+	public String getOwnerAccount() {
+		return this.ownerAccount;
 	}
 
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 
@@ -101,28 +112,6 @@ public class DescribeInstanceStatusRequest extends RpcAcsRequest<DescribeInstanc
 		}
 	}
 
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
-
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		if(ownerAccount != null){
-			putQueryParameter("OwnerAccount", ownerAccount);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -131,6 +120,17 @@ public class DescribeInstanceStatusRequest extends RpcAcsRequest<DescribeInstanc
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
 		}
 	}
 

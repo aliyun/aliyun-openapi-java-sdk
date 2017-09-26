@@ -30,17 +30,28 @@ public class DeleteForwardEntryRequest extends RpcAcsRequest<DeleteForwardEntryR
 		super("Ecs", "2014-05-26", "DeleteForwardEntry", "ecs");
 	}
 
-	private String resourceOwnerAccount;
+	private Long resourceOwnerId;
 
-	private String forwardTableId;
+	private String resourceOwnerAccount;
 
 	private String forwardEntryId;
 
-	private Long resourceOwnerId;
-
 	private String ownerAccount;
 
+	private String forwardTableId;
+
 	private Long ownerId;
+
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
+	}
+
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
 
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
@@ -50,17 +61,6 @@ public class DeleteForwardEntryRequest extends RpcAcsRequest<DeleteForwardEntryR
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public String getForwardTableId() {
-		return this.forwardTableId;
-	}
-
-	public void setForwardTableId(String forwardTableId) {
-		this.forwardTableId = forwardTableId;
-		if(forwardTableId != null){
-			putQueryParameter("ForwardTableId", forwardTableId);
 		}
 	}
 
@@ -75,17 +75,6 @@ public class DeleteForwardEntryRequest extends RpcAcsRequest<DeleteForwardEntryR
 		}
 	}
 
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
 	public String getOwnerAccount() {
 		return this.ownerAccount;
 	}
@@ -94,6 +83,17 @@ public class DeleteForwardEntryRequest extends RpcAcsRequest<DeleteForwardEntryR
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public String getForwardTableId() {
+		return this.forwardTableId;
+	}
+
+	public void setForwardTableId(String forwardTableId) {
+		this.forwardTableId = forwardTableId;
+		if(forwardTableId != null){
+			putQueryParameter("ForwardTableId", forwardTableId);
 		}
 	}
 

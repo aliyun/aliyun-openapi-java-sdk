@@ -30,52 +30,30 @@ public class UnassociateHaVipRequest extends RpcAcsRequest<UnassociateHaVipRespo
 		super("Ecs", "2014-05-26", "UnassociateHaVip", "ecs");
 	}
 
-	private String clientToken;
-
-	private String resourceOwnerAccount;
-
-	private String force;
+	private String haVipId;
 
 	private Long resourceOwnerId;
 
+	private String instanceId;
+
+	private String resourceOwnerAccount;
+
+	private String clientToken;
+
 	private String ownerAccount;
+
+	private String force;
 
 	private Long ownerId;
 
-	private String instanceId;
-
-	private String haVipId;
-
-	public String getClientToken() {
-		return this.clientToken;
+	public String getHaVipId() {
+		return this.haVipId;
 	}
 
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putQueryParameter("ClientToken", clientToken);
-		}
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public String getForce() {
-		return this.force;
-	}
-
-	public void setForce(String force) {
-		this.force = force;
-		if(force != null){
-			putQueryParameter("Force", force);
+	public void setHaVipId(String haVipId) {
+		this.haVipId = haVipId;
+		if(haVipId != null){
+			putQueryParameter("HaVipId", haVipId);
 		}
 	}
 
@@ -90,28 +68,6 @@ public class UnassociateHaVipRequest extends RpcAcsRequest<UnassociateHaVipRespo
 		}
 	}
 
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
-
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		if(ownerAccount != null){
-			putQueryParameter("OwnerAccount", ownerAccount);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
 	public String getInstanceId() {
 		return this.instanceId;
 	}
@@ -123,14 +79,58 @@ public class UnassociateHaVipRequest extends RpcAcsRequest<UnassociateHaVipRespo
 		}
 	}
 
-	public String getHaVipId() {
-		return this.haVipId;
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
 	}
 
-	public void setHaVipId(String haVipId) {
-		this.haVipId = haVipId;
-		if(haVipId != null){
-			putQueryParameter("HaVipId", haVipId);
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public String getForce() {
+		return this.force;
+	}
+
+	public void setForce(String force) {
+		this.force = force;
+		if(force != null){
+			putQueryParameter("Force", force);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 

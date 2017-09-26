@@ -30,35 +30,13 @@ public class ConnectRouterInterfaceRequest extends RpcAcsRequest<ConnectRouterIn
 		super("Ecs", "2014-05-26", "ConnectRouterInterface", "ecs");
 	}
 
-	private String resourceOwnerAccount;
-
-	private String routerInterfaceId;
-
 	private Long resourceOwnerId;
+
+	private String resourceOwnerAccount;
 
 	private Long ownerId;
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public String getRouterInterfaceId() {
-		return this.routerInterfaceId;
-	}
-
-	public void setRouterInterfaceId(String routerInterfaceId) {
-		this.routerInterfaceId = routerInterfaceId;
-		if(routerInterfaceId != null){
-			putQueryParameter("RouterInterfaceId", routerInterfaceId);
-		}
-	}
+	private String routerInterfaceId;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -71,6 +49,17 @@ public class ConnectRouterInterfaceRequest extends RpcAcsRequest<ConnectRouterIn
 		}
 	}
 
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -79,6 +68,17 @@ public class ConnectRouterInterfaceRequest extends RpcAcsRequest<ConnectRouterIn
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getRouterInterfaceId() {
+		return this.routerInterfaceId;
+	}
+
+	public void setRouterInterfaceId(String routerInterfaceId) {
+		this.routerInterfaceId = routerInterfaceId;
+		if(routerInterfaceId != null){
+			putQueryParameter("RouterInterfaceId", routerInterfaceId);
 		}
 	}
 

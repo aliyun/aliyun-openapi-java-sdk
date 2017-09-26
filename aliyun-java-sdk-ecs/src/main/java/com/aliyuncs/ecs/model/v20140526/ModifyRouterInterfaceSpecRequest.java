@@ -30,41 +30,30 @@ public class ModifyRouterInterfaceSpecRequest extends RpcAcsRequest<ModifyRouter
 		super("Ecs", "2014-05-26", "ModifyRouterInterfaceSpec", "ecs");
 	}
 
-	private String spec;
-
-	private String clientToken;
+	private Long resourceOwnerId;
 
 	private String resourceOwnerAccount;
 
-	private String routerInterfaceId;
-
-	private String userCidr;
-
-	private Long resourceOwnerId;
+	private String clientToken;
 
 	private String ownerAccount;
 
+	private String userCidr;
+
+	private String routerInterfaceId;
+
 	private Long ownerId;
 
-	public String getSpec() {
-		return this.spec;
+	private String spec;
+
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
 	}
 
-	public void setSpec(String spec) {
-		this.spec = spec;
-		if(spec != null){
-			putQueryParameter("Spec", spec);
-		}
-	}
-
-	public String getClientToken() {
-		return this.clientToken;
-	}
-
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putQueryParameter("ClientToken", clientToken);
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
 		}
 	}
 
@@ -79,36 +68,14 @@ public class ModifyRouterInterfaceSpecRequest extends RpcAcsRequest<ModifyRouter
 		}
 	}
 
-	public String getRouterInterfaceId() {
-		return this.routerInterfaceId;
+	public String getClientToken() {
+		return this.clientToken;
 	}
 
-	public void setRouterInterfaceId(String routerInterfaceId) {
-		this.routerInterfaceId = routerInterfaceId;
-		if(routerInterfaceId != null){
-			putQueryParameter("RouterInterfaceId", routerInterfaceId);
-		}
-	}
-
-	public String getUserCidr() {
-		return this.userCidr;
-	}
-
-	public void setUserCidr(String userCidr) {
-		this.userCidr = userCidr;
-		if(userCidr != null){
-			putQueryParameter("UserCidr", userCidr);
-		}
-	}
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
 		}
 	}
 
@@ -123,6 +90,28 @@ public class ModifyRouterInterfaceSpecRequest extends RpcAcsRequest<ModifyRouter
 		}
 	}
 
+	public String getUserCidr() {
+		return this.userCidr;
+	}
+
+	public void setUserCidr(String userCidr) {
+		this.userCidr = userCidr;
+		if(userCidr != null){
+			putQueryParameter("UserCidr", userCidr);
+		}
+	}
+
+	public String getRouterInterfaceId() {
+		return this.routerInterfaceId;
+	}
+
+	public void setRouterInterfaceId(String routerInterfaceId) {
+		this.routerInterfaceId = routerInterfaceId;
+		if(routerInterfaceId != null){
+			putQueryParameter("RouterInterfaceId", routerInterfaceId);
+		}
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -131,6 +120,17 @@ public class ModifyRouterInterfaceSpecRequest extends RpcAcsRequest<ModifyRouter
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getSpec() {
+		return this.spec;
+	}
+
+	public void setSpec(String spec) {
+		this.spec = spec;
+		if(spec != null){
+			putQueryParameter("Spec", spec);
 		}
 	}
 

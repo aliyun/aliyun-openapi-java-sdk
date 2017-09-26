@@ -30,21 +30,87 @@ public class ModifyAutoSnapshotPolicyExRequest extends RpcAcsRequest<ModifyAutoS
 		super("Ecs", "2014-05-26", "ModifyAutoSnapshotPolicyEx", "ecs");
 	}
 
+	private Long resourceOwnerId;
+
+	private String resourceOwnerAccount;
+
+	private String autoSnapshotPolicyId;
+
+	private String timePoints;
+
+	private Integer retentionDays;
+
+	private Long ownerId;
+
 	private String repeatWeekdays;
 
 	private String autoSnapshotPolicyName;
 
-	private String resourceOwnerAccount;
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
+	}
 
-	private String timePoints;
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
 
-	private String autoSnapshotPolicyId;
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
 
-	private Integer retentionDays;
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
 
-	private Long resourceOwnerId;
+	public String getAutoSnapshotPolicyId() {
+		return this.autoSnapshotPolicyId;
+	}
 
-	private Long ownerId;
+	public void setAutoSnapshotPolicyId(String autoSnapshotPolicyId) {
+		this.autoSnapshotPolicyId = autoSnapshotPolicyId;
+		if(autoSnapshotPolicyId != null){
+			putQueryParameter("autoSnapshotPolicyId", autoSnapshotPolicyId);
+		}
+	}
+
+	public String getTimePoints() {
+		return this.timePoints;
+	}
+
+	public void setTimePoints(String timePoints) {
+		this.timePoints = timePoints;
+		if(timePoints != null){
+			putQueryParameter("timePoints", timePoints);
+		}
+	}
+
+	public Integer getRetentionDays() {
+		return this.retentionDays;
+	}
+
+	public void setRetentionDays(Integer retentionDays) {
+		this.retentionDays = retentionDays;
+		if(retentionDays != null){
+			putQueryParameter("retentionDays", retentionDays.toString());
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
 
 	public String getRepeatWeekdays() {
 		return this.repeatWeekdays;
@@ -65,72 +131,6 @@ public class ModifyAutoSnapshotPolicyExRequest extends RpcAcsRequest<ModifyAutoS
 		this.autoSnapshotPolicyName = autoSnapshotPolicyName;
 		if(autoSnapshotPolicyName != null){
 			putQueryParameter("autoSnapshotPolicyName", autoSnapshotPolicyName);
-		}
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public String getTimePoints() {
-		return this.timePoints;
-	}
-
-	public void setTimePoints(String timePoints) {
-		this.timePoints = timePoints;
-		if(timePoints != null){
-			putQueryParameter("timePoints", timePoints);
-		}
-	}
-
-	public String getAutoSnapshotPolicyId() {
-		return this.autoSnapshotPolicyId;
-	}
-
-	public void setAutoSnapshotPolicyId(String autoSnapshotPolicyId) {
-		this.autoSnapshotPolicyId = autoSnapshotPolicyId;
-		if(autoSnapshotPolicyId != null){
-			putQueryParameter("autoSnapshotPolicyId", autoSnapshotPolicyId);
-		}
-	}
-
-	public Integer getRetentionDays() {
-		return this.retentionDays;
-	}
-
-	public void setRetentionDays(Integer retentionDays) {
-		this.retentionDays = retentionDays;
-		if(retentionDays != null){
-			putQueryParameter("retentionDays", retentionDays.toString());
-		}
-	}
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 
