@@ -52,6 +52,8 @@ public class PushRequest extends RpcAcsRequest<PushResponse> {
 
 	private Integer smsDelaySecs;
 
+	private Integer sendSpeed;
+
 	private String androidPopupActivity;
 
 	private String iOSRemindBody;
@@ -234,6 +236,17 @@ public class PushRequest extends RpcAcsRequest<PushResponse> {
 		this.smsDelaySecs = smsDelaySecs;
 		if(smsDelaySecs != null){
 			putQueryParameter("SmsDelaySecs", smsDelaySecs.toString());
+		}
+	}
+
+	public Integer getSendSpeed() {
+		return this.sendSpeed;
+	}
+
+	public void setSendSpeed(Integer sendSpeed) {
+		this.sendSpeed = sendSpeed;
+		if(sendSpeed != null){
+			putQueryParameter("SendSpeed", sendSpeed.toString());
 		}
 	}
 
