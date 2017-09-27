@@ -30,47 +30,29 @@ public class PreCheckBeforeImportDataRequest extends RpcAcsRequest<PreCheckBefor
 		super("Rds", "2014-08-15", "PreCheckBeforeImportData", "rds");
 	}
 
-	private Long ownerId;
+	private Long resourceOwnerId;
+
+	private String importDataType;
 
 	private String resourceOwnerAccount;
 
-	private Long resourceOwnerId;
-
 	private String clientToken;
 
-	private String dBInstanceId;
+	private String ownerAccount;
+
+	private String sourceDatabaseDBNames;
 
 	private String sourceDatabaseIp;
+
+	private Long ownerId;
+
+	private String sourceDatabasePassword;
 
 	private String sourceDatabasePort;
 
 	private String sourceDatabaseUserName;
 
-	private String sourceDatabasePassword;
-
-	private String importDataType;
-
-	private String sourceDatabaseDBNames;
-
-	private String ownerAccount;
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-	}
+	private String dBInstanceId;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -78,61 +60,9 @@ public class PreCheckBeforeImportDataRequest extends RpcAcsRequest<PreCheckBefor
 
 	public void setResourceOwnerId(Long resourceOwnerId) {
 		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", resourceOwnerId);
-	}
-
-	public String getClientToken() {
-		return this.clientToken;
-	}
-
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		putQueryParameter("ClientToken", clientToken);
-	}
-
-	public String getDBInstanceId() {
-		return this.dBInstanceId;
-	}
-
-	public void setDBInstanceId(String dBInstanceId) {
-		this.dBInstanceId = dBInstanceId;
-		putQueryParameter("DBInstanceId", dBInstanceId);
-	}
-
-	public String getSourceDatabaseIp() {
-		return this.sourceDatabaseIp;
-	}
-
-	public void setSourceDatabaseIp(String sourceDatabaseIp) {
-		this.sourceDatabaseIp = sourceDatabaseIp;
-		putQueryParameter("SourceDatabaseIp", sourceDatabaseIp);
-	}
-
-	public String getSourceDatabasePort() {
-		return this.sourceDatabasePort;
-	}
-
-	public void setSourceDatabasePort(String sourceDatabasePort) {
-		this.sourceDatabasePort = sourceDatabasePort;
-		putQueryParameter("SourceDatabasePort", sourceDatabasePort);
-	}
-
-	public String getSourceDatabaseUserName() {
-		return this.sourceDatabaseUserName;
-	}
-
-	public void setSourceDatabaseUserName(String sourceDatabaseUserName) {
-		this.sourceDatabaseUserName = sourceDatabaseUserName;
-		putQueryParameter("SourceDatabaseUserName", sourceDatabaseUserName);
-	}
-
-	public String getSourceDatabasePassword() {
-		return this.sourceDatabasePassword;
-	}
-
-	public void setSourceDatabasePassword(String sourceDatabasePassword) {
-		this.sourceDatabasePassword = sourceDatabasePassword;
-		putQueryParameter("SourceDatabasePassword", sourceDatabasePassword);
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
 	}
 
 	public String getImportDataType() {
@@ -141,16 +71,31 @@ public class PreCheckBeforeImportDataRequest extends RpcAcsRequest<PreCheckBefor
 
 	public void setImportDataType(String importDataType) {
 		this.importDataType = importDataType;
-		putQueryParameter("ImportDataType", importDataType);
+		if(importDataType != null){
+			putQueryParameter("ImportDataType", importDataType);
+		}
 	}
 
-	public String getSourceDatabaseDBNames() {
-		return this.sourceDatabaseDBNames;
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
 	}
 
-	public void setSourceDatabaseDBNames(String sourceDatabaseDBNames) {
-		this.sourceDatabaseDBNames = sourceDatabaseDBNames;
-		putQueryParameter("SourceDatabaseDBNames", sourceDatabaseDBNames);
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
+		}
 	}
 
 	public String getOwnerAccount() {
@@ -159,7 +104,86 @@ public class PreCheckBeforeImportDataRequest extends RpcAcsRequest<PreCheckBefor
 
 	public void setOwnerAccount(String ownerAccount) {
 		this.ownerAccount = ownerAccount;
-		putQueryParameter("OwnerAccount", ownerAccount);
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public String getSourceDatabaseDBNames() {
+		return this.sourceDatabaseDBNames;
+	}
+
+	public void setSourceDatabaseDBNames(String sourceDatabaseDBNames) {
+		this.sourceDatabaseDBNames = sourceDatabaseDBNames;
+		if(sourceDatabaseDBNames != null){
+			putQueryParameter("SourceDatabaseDBNames", sourceDatabaseDBNames);
+		}
+	}
+
+	public String getSourceDatabaseIp() {
+		return this.sourceDatabaseIp;
+	}
+
+	public void setSourceDatabaseIp(String sourceDatabaseIp) {
+		this.sourceDatabaseIp = sourceDatabaseIp;
+		if(sourceDatabaseIp != null){
+			putQueryParameter("SourceDatabaseIp", sourceDatabaseIp);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getSourceDatabasePassword() {
+		return this.sourceDatabasePassword;
+	}
+
+	public void setSourceDatabasePassword(String sourceDatabasePassword) {
+		this.sourceDatabasePassword = sourceDatabasePassword;
+		if(sourceDatabasePassword != null){
+			putQueryParameter("SourceDatabasePassword", sourceDatabasePassword);
+		}
+	}
+
+	public String getSourceDatabasePort() {
+		return this.sourceDatabasePort;
+	}
+
+	public void setSourceDatabasePort(String sourceDatabasePort) {
+		this.sourceDatabasePort = sourceDatabasePort;
+		if(sourceDatabasePort != null){
+			putQueryParameter("SourceDatabasePort", sourceDatabasePort);
+		}
+	}
+
+	public String getSourceDatabaseUserName() {
+		return this.sourceDatabaseUserName;
+	}
+
+	public void setSourceDatabaseUserName(String sourceDatabaseUserName) {
+		this.sourceDatabaseUserName = sourceDatabaseUserName;
+		if(sourceDatabaseUserName != null){
+			putQueryParameter("SourceDatabaseUserName", sourceDatabaseUserName);
+		}
+	}
+
+	public String getDBInstanceId() {
+		return this.dBInstanceId;
+	}
+
+	public void setDBInstanceId(String dBInstanceId) {
+		this.dBInstanceId = dBInstanceId;
+		if(dBInstanceId != null){
+			putQueryParameter("DBInstanceId", dBInstanceId);
+		}
 	}
 
 	@Override

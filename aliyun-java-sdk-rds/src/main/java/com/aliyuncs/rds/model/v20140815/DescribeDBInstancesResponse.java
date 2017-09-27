@@ -89,21 +89,23 @@ public class DescribeDBInstancesResponse extends AcsResponse {
 
 		private String payType;
 
-		private DBInstanceType dBInstanceType;
+		private String dBInstanceType;
 
 		private String regionId;
 
 		private String expireTime;
 
-		private DBInstanceStatus dBInstanceStatus;
+		private String dBInstanceStatus;
 
 		private String engine;
 
-		private DBInstanceNetType dBInstanceNetType;
+		private String dBInstanceNetType;
 
-		private ConnectionMode connectionMode;
+		private String connectionMode;
 
-		private LockMode lockMode;
+		private String lockMode;
+
+		private String dBInstanceClass;
 
 		private String instanceNetworkType;
 
@@ -124,6 +126,10 @@ public class DescribeDBInstancesResponse extends AcsResponse {
 		private String masterInstanceId;
 
 		private String vpcId;
+
+		private String vSwitchId;
+
+		private String resourceGroupId;
 
 		private List<ReadOnlyDBInstanceId> readOnlyDBInstanceIds;
 
@@ -159,11 +165,11 @@ public class DescribeDBInstancesResponse extends AcsResponse {
 			this.payType = payType;
 		}
 
-		public DBInstanceType getDBInstanceType() {
+		public String getDBInstanceType() {
 			return this.dBInstanceType;
 		}
 
-		public void setDBInstanceType(DBInstanceType dBInstanceType) {
+		public void setDBInstanceType(String dBInstanceType) {
 			this.dBInstanceType = dBInstanceType;
 		}
 
@@ -183,11 +189,11 @@ public class DescribeDBInstancesResponse extends AcsResponse {
 			this.expireTime = expireTime;
 		}
 
-		public DBInstanceStatus getDBInstanceStatus() {
+		public String getDBInstanceStatus() {
 			return this.dBInstanceStatus;
 		}
 
-		public void setDBInstanceStatus(DBInstanceStatus dBInstanceStatus) {
+		public void setDBInstanceStatus(String dBInstanceStatus) {
 			this.dBInstanceStatus = dBInstanceStatus;
 		}
 
@@ -199,28 +205,36 @@ public class DescribeDBInstancesResponse extends AcsResponse {
 			this.engine = engine;
 		}
 
-		public DBInstanceNetType getDBInstanceNetType() {
+		public String getDBInstanceNetType() {
 			return this.dBInstanceNetType;
 		}
 
-		public void setDBInstanceNetType(DBInstanceNetType dBInstanceNetType) {
+		public void setDBInstanceNetType(String dBInstanceNetType) {
 			this.dBInstanceNetType = dBInstanceNetType;
 		}
 
-		public ConnectionMode getConnectionMode() {
+		public String getConnectionMode() {
 			return this.connectionMode;
 		}
 
-		public void setConnectionMode(ConnectionMode connectionMode) {
+		public void setConnectionMode(String connectionMode) {
 			this.connectionMode = connectionMode;
 		}
 
-		public LockMode getLockMode() {
+		public String getLockMode() {
 			return this.lockMode;
 		}
 
-		public void setLockMode(LockMode lockMode) {
+		public void setLockMode(String lockMode) {
 			this.lockMode = lockMode;
+		}
+
+		public String getDBInstanceClass() {
+			return this.dBInstanceClass;
+		}
+
+		public void setDBInstanceClass(String dBInstanceClass) {
+			this.dBInstanceClass = dBInstanceClass;
 		}
 
 		public String getInstanceNetworkType() {
@@ -303,6 +317,22 @@ public class DescribeDBInstancesResponse extends AcsResponse {
 			this.vpcId = vpcId;
 		}
 
+		public String getVSwitchId() {
+			return this.vSwitchId;
+		}
+
+		public void setVSwitchId(String vSwitchId) {
+			this.vSwitchId = vSwitchId;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
+		}
+
 		public List<ReadOnlyDBInstanceId> getReadOnlyDBInstanceIds() {
 			return this.readOnlyDBInstanceIds;
 		}
@@ -310,191 +340,6 @@ public class DescribeDBInstancesResponse extends AcsResponse {
 		public void setReadOnlyDBInstanceIds(List<ReadOnlyDBInstanceId> readOnlyDBInstanceIds) {
 			this.readOnlyDBInstanceIds = readOnlyDBInstanceIds;
 		}
-
-public enum DBInstanceType {
-
-			SHARED("Shared"),
-			GUARD("Guard"),
-			PRIMARY("Primary"),
-			READONLY("Readonly"),
-			TEMP("Temp"),;
-	
-    private String stringValue;
-
-	DBInstanceType(String stringValue) {
-        setStringValue(stringValue);
-    }
-
-    public String getStringValue() {
-        return stringValue;
-    }
-
-    public void setStringValue(String stringValue) {
-        this.stringValue = stringValue;
-    }
-    
-    public static DBInstanceType getEnum(String stringValue){
-    	if(null == stringValue){
-    		return null;
-    	}
-    	
-    	for (DBInstanceType dBInstanceType : DBInstanceType.values()) {
-			if(dBInstanceType.getStringValue().equals(stringValue)){
-				return dBInstanceType;
-			}
-		}
-    	return null;
-    }
-}
-
-public enum DBInstanceStatus {
-
-			TEMP_D_B_INSTANCE_CREATING("TempDBInstanceCreating"),
-			RUNNING("Running"),
-			DELETING("Deleting"),
-			D_B_INSTANCE_CLASS_CHANGING("DBInstanceClassChanging"),
-			CREATING("Creating"),
-			REBOOTING("Rebooting"),
-			GUARD_SWITCHING("GuardSwitching"),
-			LING_SWITCHING("LingSwitching"),
-			TRANSING("Transing"),
-			TRANSING_TO_OTHERS("TransingToOthers"),
-			IMPORTING_FROM_OTHERS("ImportingFromOthers"),
-			ENGINE_VERSION_UPGRADING("EngineVersionUpgrading"),
-			D_B_INSTANCE_NET_TYPE_CHANGING("DBInstanceNetTypeChanging"),
-			IMPORTING("Importing"),
-			RESTORING("Restoring"),;
-	
-    private String stringValue;
-
-	DBInstanceStatus(String stringValue) {
-        setStringValue(stringValue);
-    }
-
-    public String getStringValue() {
-        return stringValue;
-    }
-
-    public void setStringValue(String stringValue) {
-        this.stringValue = stringValue;
-    }
-    
-    public static DBInstanceStatus getEnum(String stringValue){
-    	if(null == stringValue){
-    		return null;
-    	}
-    	
-    	for (DBInstanceStatus dBInstanceStatus : DBInstanceStatus.values()) {
-			if(dBInstanceStatus.getStringValue().equals(stringValue)){
-				return dBInstanceStatus;
-			}
-		}
-    	return null;
-    }
-}
-
-public enum DBInstanceNetType {
-
-			INTRANET("Intranet"),
-			INTERNET("Internet"),;
-	
-    private String stringValue;
-
-	DBInstanceNetType(String stringValue) {
-        setStringValue(stringValue);
-    }
-
-    public String getStringValue() {
-        return stringValue;
-    }
-
-    public void setStringValue(String stringValue) {
-        this.stringValue = stringValue;
-    }
-    
-    public static DBInstanceNetType getEnum(String stringValue){
-    	if(null == stringValue){
-    		return null;
-    	}
-    	
-    	for (DBInstanceNetType dBInstanceNetType : DBInstanceNetType.values()) {
-			if(dBInstanceNetType.getStringValue().equals(stringValue)){
-				return dBInstanceNetType;
-			}
-		}
-    	return null;
-    }
-}
-
-public enum ConnectionMode {
-
-			STANDARD("Standard"),
-			SAFE("Safe"),;
-	
-    private String stringValue;
-
-	ConnectionMode(String stringValue) {
-        setStringValue(stringValue);
-    }
-
-    public String getStringValue() {
-        return stringValue;
-    }
-
-    public void setStringValue(String stringValue) {
-        this.stringValue = stringValue;
-    }
-    
-    public static ConnectionMode getEnum(String stringValue){
-    	if(null == stringValue){
-    		return null;
-    	}
-    	
-    	for (ConnectionMode connectionMode : ConnectionMode.values()) {
-			if(connectionMode.getStringValue().equals(stringValue)){
-				return connectionMode;
-			}
-		}
-    	return null;
-    }
-}
-
-public enum LockMode {
-
-			LOCK_BY_EXPIRATION("LockByExpiration"),
-			LOCK_BY_RESTORATION("LockByRestoration"),
-			LOCK_READ_INSTANCE_BY_DISK_QUOTA("LockReadInstanceByDiskQuota"),
-			MANUAL_LOCK("ManualLock"),
-			LOCK_BY_DISK_QUOTA("LockByDiskQuota"),
-			UNLOCK("Unlock"),;
-	
-    private String stringValue;
-
-	LockMode(String stringValue) {
-        setStringValue(stringValue);
-    }
-
-    public String getStringValue() {
-        return stringValue;
-    }
-
-    public void setStringValue(String stringValue) {
-        this.stringValue = stringValue;
-    }
-    
-    public static LockMode getEnum(String stringValue){
-    	if(null == stringValue){
-    		return null;
-    	}
-    	
-    	for (LockMode lockMode : LockMode.values()) {
-			if(lockMode.getStringValue().equals(stringValue)){
-				return lockMode;
-			}
-		}
-    	return null;
-    }
-}
 
 		public static class ReadOnlyDBInstanceId {
 

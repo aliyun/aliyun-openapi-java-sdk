@@ -30,29 +30,31 @@ public class ModifyParameterRequest extends RpcAcsRequest<ModifyParameterRespons
 		super("Rds", "2014-08-15", "ModifyParameter", "rds");
 	}
 
-	private Long ownerId;
+	private Long resourceOwnerId;
 
 	private String resourceOwnerAccount;
 
-	private Long resourceOwnerId;
-
 	private String clientToken;
-
-	private String dBInstanceId;
-
-	private String parameters;
-
-	private Boolean forcerestart;
 
 	private String ownerAccount;
 
-	public Long getOwnerId() {
-		return this.ownerId;
+	private String dBInstanceId;
+
+	private Boolean forcerestart;
+
+	private Long ownerId;
+
+	private String parameters;
+
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
 	}
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
 	}
 
 	public String getResourceOwnerAccount() {
@@ -61,16 +63,9 @@ public class ModifyParameterRequest extends RpcAcsRequest<ModifyParameterRespons
 
 	public void setResourceOwnerAccount(String resourceOwnerAccount) {
 		this.resourceOwnerAccount = resourceOwnerAccount;
-		putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-	}
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", resourceOwnerId);
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
 	}
 
 	public String getClientToken() {
@@ -79,34 +74,9 @@ public class ModifyParameterRequest extends RpcAcsRequest<ModifyParameterRespons
 
 	public void setClientToken(String clientToken) {
 		this.clientToken = clientToken;
-		putQueryParameter("ClientToken", clientToken);
-	}
-
-	public String getDBInstanceId() {
-		return this.dBInstanceId;
-	}
-
-	public void setDBInstanceId(String dBInstanceId) {
-		this.dBInstanceId = dBInstanceId;
-		putQueryParameter("DBInstanceId", dBInstanceId);
-	}
-
-	public String getParameters() {
-		return this.parameters;
-	}
-
-	public void setParameters(String parameters) {
-		this.parameters = parameters;
-		putQueryParameter("Parameters", parameters);
-	}
-
-	public Boolean getForcerestart() {
-		return this.forcerestart;
-	}
-
-	public void setForcerestart(Boolean forcerestart) {
-		this.forcerestart = forcerestart;
-		putQueryParameter("Forcerestart", forcerestart);
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
+		}
 	}
 
 	public String getOwnerAccount() {
@@ -115,7 +85,53 @@ public class ModifyParameterRequest extends RpcAcsRequest<ModifyParameterRespons
 
 	public void setOwnerAccount(String ownerAccount) {
 		this.ownerAccount = ownerAccount;
-		putQueryParameter("OwnerAccount", ownerAccount);
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public String getDBInstanceId() {
+		return this.dBInstanceId;
+	}
+
+	public void setDBInstanceId(String dBInstanceId) {
+		this.dBInstanceId = dBInstanceId;
+		if(dBInstanceId != null){
+			putQueryParameter("DBInstanceId", dBInstanceId);
+		}
+	}
+
+	public Boolean getForcerestart() {
+		return this.forcerestart;
+	}
+
+	public void setForcerestart(Boolean forcerestart) {
+		this.forcerestart = forcerestart;
+		if(forcerestart != null){
+			putQueryParameter("Forcerestart", forcerestart.toString());
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getParameters() {
+		return this.parameters;
+	}
+
+	public void setParameters(String parameters) {
+		this.parameters = parameters;
+		if(parameters != null){
+			putQueryParameter("Parameters", parameters);
+		}
 	}
 
 	@Override

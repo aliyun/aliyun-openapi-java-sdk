@@ -109,7 +109,7 @@ public class DescribeFilesForSQLServerResponse extends AcsResponse {
 
 		private String password;
 
-		private FileStatus fileStatus;
+		private String fileStatus;
 
 		private String description;
 
@@ -187,11 +187,11 @@ public class DescribeFilesForSQLServerResponse extends AcsResponse {
 			this.password = password;
 		}
 
-		public FileStatus getFileStatus() {
+		public String getFileStatus() {
 			return this.fileStatus;
 		}
 
-		public void setFileStatus(FileStatus fileStatus) {
+		public void setFileStatus(String fileStatus) {
 			this.fileStatus = fileStatus;
 		}
 
@@ -210,39 +210,6 @@ public class DescribeFilesForSQLServerResponse extends AcsResponse {
 		public void setCreationTime(String creationTime) {
 			this.creationTime = creationTime;
 		}
-
-public enum FileStatus {
-
-			AVAILABLE("Available"),
-			UNAVAILABLE("Unavailable"),;
-	
-    private String stringValue;
-
-	FileStatus(String stringValue) {
-        setStringValue(stringValue);
-    }
-
-    public String getStringValue() {
-        return stringValue;
-    }
-
-    public void setStringValue(String stringValue) {
-        this.stringValue = stringValue;
-    }
-    
-    public static FileStatus getEnum(String stringValue){
-    	if(null == stringValue){
-    		return null;
-    	}
-    	
-    	for (FileStatus fileStatus : FileStatus.values()) {
-			if(fileStatus.getStringValue().equals(stringValue)){
-				return fileStatus;
-			}
-		}
-    	return null;
-    }
-}
 	}
 
 	@Override

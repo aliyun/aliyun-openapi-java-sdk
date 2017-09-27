@@ -30,38 +30,31 @@ public class CreateBackupRequest extends RpcAcsRequest<CreateBackupResponse> {
 		super("Rds", "2014-08-15", "CreateBackup", "rds");
 	}
 
-	private Long ownerId;
-
-	private String resourceOwnerAccount;
+	private String backupMethod;
 
 	private Long resourceOwnerId;
 
-	private String dBInstanceId;
-
 	private String dBName;
 
-	private String backupMethod;
-
-	private String backupType;
+	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
-	public Long getOwnerId() {
-		return this.ownerId;
+	private String dBInstanceId;
+
+	private Long ownerId;
+
+	private String backupType;
+
+	public String getBackupMethod() {
+		return this.backupMethod;
 	}
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	public void setBackupMethod(String backupMethod) {
+		this.backupMethod = backupMethod;
+		if(backupMethod != null){
+			putQueryParameter("BackupMethod", backupMethod);
+		}
 	}
 
 	public Long getResourceOwnerId() {
@@ -70,16 +63,9 @@ public class CreateBackupRequest extends RpcAcsRequest<CreateBackupResponse> {
 
 	public void setResourceOwnerId(Long resourceOwnerId) {
 		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", resourceOwnerId);
-	}
-
-	public String getDBInstanceId() {
-		return this.dBInstanceId;
-	}
-
-	public void setDBInstanceId(String dBInstanceId) {
-		this.dBInstanceId = dBInstanceId;
-		putQueryParameter("DBInstanceId", dBInstanceId);
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
 	}
 
 	public String getDBName() {
@@ -88,25 +74,20 @@ public class CreateBackupRequest extends RpcAcsRequest<CreateBackupResponse> {
 
 	public void setDBName(String dBName) {
 		this.dBName = dBName;
-		putQueryParameter("DBName", dBName);
+		if(dBName != null){
+			putQueryParameter("DBName", dBName);
+		}
 	}
 
-	public String getBackupMethod() {
-		return this.backupMethod;
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
 	}
 
-	public void setBackupMethod(String backupMethod) {
-		this.backupMethod = backupMethod;
-		putQueryParameter("BackupMethod", backupMethod);
-	}
-
-	public String getBackupType() {
-		return this.backupType;
-	}
-
-	public void setBackupType(String backupType) {
-		this.backupType = backupType;
-		putQueryParameter("BackupType", backupType);
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
 	}
 
 	public String getOwnerAccount() {
@@ -115,7 +96,42 @@ public class CreateBackupRequest extends RpcAcsRequest<CreateBackupResponse> {
 
 	public void setOwnerAccount(String ownerAccount) {
 		this.ownerAccount = ownerAccount;
-		putQueryParameter("OwnerAccount", ownerAccount);
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public String getDBInstanceId() {
+		return this.dBInstanceId;
+	}
+
+	public void setDBInstanceId(String dBInstanceId) {
+		this.dBInstanceId = dBInstanceId;
+		if(dBInstanceId != null){
+			putQueryParameter("DBInstanceId", dBInstanceId);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getBackupType() {
+		return this.backupType;
+	}
+
+	public void setBackupType(String backupType) {
+		this.backupType = backupType;
+		if(backupType != null){
+			putQueryParameter("BackupType", backupType);
+		}
 	}
 
 	@Override

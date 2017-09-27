@@ -23,7 +23,6 @@ import java.util.List;
 
 import com.aliyuncs.rds.model.v20140815.DescribeBackupTasksResponse;
 import com.aliyuncs.rds.model.v20140815.DescribeBackupTasksResponse.BackupJob;
-import com.aliyuncs.rds.model.v20140815.DescribeBackupTasksResponse.BackupJob.JobMode;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -37,7 +36,7 @@ public class DescribeBackupTasksResponseUnmarshaller {
 		for (int i = 0; i < context.lengthValue("DescribeBackupTasksResponse.Items.Length"); i++) {
 			BackupJob backupJob = new BackupJob();
 			backupJob.setBackupProgressStatus(context.stringValue("DescribeBackupTasksResponse.Items["+ i +"].BackupProgressStatus"));
-			backupJob.setJobMode(JobMode.getEnum(context.stringValue("DescribeBackupTasksResponse.Items["+ i +"].JobMode")));
+			backupJob.setJobMode(context.stringValue("DescribeBackupTasksResponse.Items["+ i +"].JobMode"));
 			backupJob.setProcess(context.stringValue("DescribeBackupTasksResponse.Items["+ i +"].Process"));
 			backupJob.setTaskAction(context.stringValue("DescribeBackupTasksResponse.Items["+ i +"].TaskAction"));
 			backupJob.setBackupjobId(context.stringValue("DescribeBackupTasksResponse.Items["+ i +"].BackupjobId"));

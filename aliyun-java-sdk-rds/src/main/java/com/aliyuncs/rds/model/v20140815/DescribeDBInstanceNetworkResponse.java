@@ -37,7 +37,7 @@ public class DescribeDBInstanceNetworkResponse extends AcsResponse {
 
 	private String endTime;
 
-	private List<Topology> topology;
+	private List<TopologyItem> topology;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -71,15 +71,15 @@ public class DescribeDBInstanceNetworkResponse extends AcsResponse {
 		this.endTime = endTime;
 	}
 
-	public List<Topology> getTopology() {
+	public List<TopologyItem> getTopology() {
 		return this.topology;
 	}
 
-	public void setTopology(List<Topology> topology) {
+	public void setTopology(List<TopologyItem> topology) {
 		this.topology = topology;
 	}
 
-	public static class Topology {
+	public static class TopologyItem {
 
 		private String startPoint;
 

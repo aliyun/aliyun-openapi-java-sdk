@@ -30,27 +30,29 @@ public class ModifyDBInstanceHAConfigRequest extends RpcAcsRequest<ModifyDBInsta
 		super("Rds", "2014-08-15", "ModifyDBInstanceHAConfig", "rds");
 	}
 
-	private Long ownerId;
+	private Long resourceOwnerId;
 
 	private String resourceOwnerAccount;
 
-	private Long resourceOwnerId;
+	private String ownerAccount;
 
 	private String syncMode;
 
-	private String hAMode;
-
 	private String dbInstanceId;
 
-	private String ownerAccount;
+	private Long ownerId;
 
-	public Long getOwnerId() {
-		return this.ownerId;
+	private String hAMode;
+
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
 	}
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
 	}
 
 	public String getResourceOwnerAccount() {
@@ -59,43 +61,9 @@ public class ModifyDBInstanceHAConfigRequest extends RpcAcsRequest<ModifyDBInsta
 
 	public void setResourceOwnerAccount(String resourceOwnerAccount) {
 		this.resourceOwnerAccount = resourceOwnerAccount;
-		putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-	}
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", resourceOwnerId);
-	}
-
-	public String getSyncMode() {
-		return this.syncMode;
-	}
-
-	public void setSyncMode(String syncMode) {
-		this.syncMode = syncMode;
-		putQueryParameter("SyncMode", syncMode);
-	}
-
-	public String getHAMode() {
-		return this.hAMode;
-	}
-
-	public void setHAMode(String hAMode) {
-		this.hAMode = hAMode;
-		putQueryParameter("HAMode", hAMode);
-	}
-
-	public String getDbInstanceId() {
-		return this.dbInstanceId;
-	}
-
-	public void setDbInstanceId(String dbInstanceId) {
-		this.dbInstanceId = dbInstanceId;
-		putQueryParameter("DbInstanceId", dbInstanceId);
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
 	}
 
 	public String getOwnerAccount() {
@@ -104,7 +72,53 @@ public class ModifyDBInstanceHAConfigRequest extends RpcAcsRequest<ModifyDBInsta
 
 	public void setOwnerAccount(String ownerAccount) {
 		this.ownerAccount = ownerAccount;
-		putQueryParameter("OwnerAccount", ownerAccount);
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public String getSyncMode() {
+		return this.syncMode;
+	}
+
+	public void setSyncMode(String syncMode) {
+		this.syncMode = syncMode;
+		if(syncMode != null){
+			putQueryParameter("SyncMode", syncMode);
+		}
+	}
+
+	public String getDbInstanceId() {
+		return this.dbInstanceId;
+	}
+
+	public void setDbInstanceId(String dbInstanceId) {
+		this.dbInstanceId = dbInstanceId;
+		if(dbInstanceId != null){
+			putQueryParameter("DbInstanceId", dbInstanceId);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getHAMode() {
+		return this.hAMode;
+	}
+
+	public void setHAMode(String hAMode) {
+		this.hAMode = hAMode;
+		if(hAMode != null){
+			putQueryParameter("HAMode", hAMode);
+		}
 	}
 
 	@Override

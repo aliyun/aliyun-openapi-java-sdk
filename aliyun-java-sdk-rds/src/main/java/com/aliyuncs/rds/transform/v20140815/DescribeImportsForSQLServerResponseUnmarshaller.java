@@ -23,7 +23,6 @@ import java.util.List;
 
 import com.aliyuncs.rds.model.v20140815.DescribeImportsForSQLServerResponse;
 import com.aliyuncs.rds.model.v20140815.DescribeImportsForSQLServerResponse.SQLServerImport;
-import com.aliyuncs.rds.model.v20140815.DescribeImportsForSQLServerResponse.SQLServerImport.ImportStatus;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -42,7 +41,7 @@ public class DescribeImportsForSQLServerResponseUnmarshaller {
 			sQLServerImport.setImportId(context.integerValue("DescribeImportsForSQLServerResponse.Items["+ i +"].ImportId"));
 			sQLServerImport.setFileName(context.stringValue("DescribeImportsForSQLServerResponse.Items["+ i +"].FileName"));
 			sQLServerImport.setDBName(context.stringValue("DescribeImportsForSQLServerResponse.Items["+ i +"].DBName"));
-			sQLServerImport.setImportStatus(ImportStatus.getEnum(context.stringValue("DescribeImportsForSQLServerResponse.Items["+ i +"].ImportStatus")));
+			sQLServerImport.setImportStatus(context.stringValue("DescribeImportsForSQLServerResponse.Items["+ i +"].ImportStatus"));
 			sQLServerImport.setStartTime(context.stringValue("DescribeImportsForSQLServerResponse.Items["+ i +"].StartTime"));
 
 			items.add(sQLServerImport);

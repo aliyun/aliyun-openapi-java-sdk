@@ -85,9 +85,9 @@ public class DescribeParameterTemplatesResponse extends AcsResponse {
 
 		private String parameterValue;
 
-		private ForceModify forceModify;
+		private String forceModify;
 
-		private ForceRestart forceRestart;
+		private String forceRestart;
 
 		private String checkingCode;
 
@@ -109,19 +109,19 @@ public class DescribeParameterTemplatesResponse extends AcsResponse {
 			this.parameterValue = parameterValue;
 		}
 
-		public ForceModify getForceModify() {
+		public String getForceModify() {
 			return this.forceModify;
 		}
 
-		public void setForceModify(ForceModify forceModify) {
+		public void setForceModify(String forceModify) {
 			this.forceModify = forceModify;
 		}
 
-		public ForceRestart getForceRestart() {
+		public String getForceRestart() {
 			return this.forceRestart;
 		}
 
-		public void setForceRestart(ForceRestart forceRestart) {
+		public void setForceRestart(String forceRestart) {
 			this.forceRestart = forceRestart;
 		}
 
@@ -140,72 +140,6 @@ public class DescribeParameterTemplatesResponse extends AcsResponse {
 		public void setParameterDescription(String parameterDescription) {
 			this.parameterDescription = parameterDescription;
 		}
-
-public enum ForceModify {
-
-			TRUE("true"),
-			FALSE("false"),;
-	
-    private String stringValue;
-
-	ForceModify(String stringValue) {
-        setStringValue(stringValue);
-    }
-
-    public String getStringValue() {
-        return stringValue;
-    }
-
-    public void setStringValue(String stringValue) {
-        this.stringValue = stringValue;
-    }
-    
-    public static ForceModify getEnum(String stringValue){
-    	if(null == stringValue){
-    		return null;
-    	}
-    	
-    	for (ForceModify forceModify : ForceModify.values()) {
-			if(forceModify.getStringValue().equals(stringValue)){
-				return forceModify;
-			}
-		}
-    	return null;
-    }
-}
-
-public enum ForceRestart {
-
-			FALSE("false"),
-			TRUE("true"),;
-	
-    private String stringValue;
-
-	ForceRestart(String stringValue) {
-        setStringValue(stringValue);
-    }
-
-    public String getStringValue() {
-        return stringValue;
-    }
-
-    public void setStringValue(String stringValue) {
-        this.stringValue = stringValue;
-    }
-    
-    public static ForceRestart getEnum(String stringValue){
-    	if(null == stringValue){
-    		return null;
-    	}
-    	
-    	for (ForceRestart forceRestart : ForceRestart.values()) {
-			if(forceRestart.getStringValue().equals(stringValue)){
-				return forceRestart;
-			}
-		}
-    	return null;
-    }
-}
 	}
 
 	@Override

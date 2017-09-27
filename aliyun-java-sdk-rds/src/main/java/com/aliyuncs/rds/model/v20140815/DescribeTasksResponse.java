@@ -97,7 +97,7 @@ public class DescribeTasksResponse extends AcsResponse {
 
 		private String expectedFinishTime;
 
-		private Status status;
+		private String status;
 
 		private String taskErrorCode;
 
@@ -167,11 +167,11 @@ public class DescribeTasksResponse extends AcsResponse {
 			this.expectedFinishTime = expectedFinishTime;
 		}
 
-		public Status getStatus() {
+		public String getStatus() {
 			return this.status;
 		}
 
-		public void setStatus(Status status) {
+		public void setStatus(String status) {
 			this.status = status;
 		}
 
@@ -190,42 +190,6 @@ public class DescribeTasksResponse extends AcsResponse {
 		public void setTaskErrorMessage(String taskErrorMessage) {
 			this.taskErrorMessage = taskErrorMessage;
 		}
-
-public enum Status {
-
-			PROCESSING("Processing"),
-			NO_START("NoStart"),
-			FAILED("Failed"),
-			SUCCESS("Success"),
-			PENDING("Pending"),;
-	
-    private String stringValue;
-
-	Status(String stringValue) {
-        setStringValue(stringValue);
-    }
-
-    public String getStringValue() {
-        return stringValue;
-    }
-
-    public void setStringValue(String stringValue) {
-        this.stringValue = stringValue;
-    }
-    
-    public static Status getEnum(String stringValue){
-    	if(null == stringValue){
-    		return null;
-    	}
-    	
-    	for (Status status : Status.values()) {
-			if(status.getStringValue().equals(stringValue)){
-				return status;
-			}
-		}
-    	return null;
-    }
-}
 	}
 
 	@Override

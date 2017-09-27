@@ -27,6 +27,7 @@ public class ModifyDBInstanceNetworkTypeResponseUnmarshaller {
 	public static ModifyDBInstanceNetworkTypeResponse unmarshall(ModifyDBInstanceNetworkTypeResponse modifyDBInstanceNetworkTypeResponse, UnmarshallerContext context) {
 		
 		modifyDBInstanceNetworkTypeResponse.setRequestId(context.stringValue("ModifyDBInstanceNetworkTypeResponse.RequestId"));
+		modifyDBInstanceNetworkTypeResponse.setTaskId(context.stringValue("ModifyDBInstanceNetworkTypeResponse.TaskId"));
 	 
 	 	return modifyDBInstanceNetworkTypeResponse;
 	}

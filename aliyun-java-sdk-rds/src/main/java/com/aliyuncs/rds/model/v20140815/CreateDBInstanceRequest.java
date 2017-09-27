@@ -30,66 +30,61 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 		super("Rds", "2014-08-15", "CreateDBInstance", "rds");
 	}
 
-	private Long ownerId;
-
-	private String resourceOwnerAccount;
+	private String connectionMode;
 
 	private Long resourceOwnerId;
-
-	private String engine;
-
-	private String engineVersion;
-
-	private String dBInstanceClass;
 
 	private Integer dBInstanceStorage;
 
 	private String systemDBCharset;
 
-	private String dBInstanceNetType;
+	private String clientToken;
+
+	private String engineVersion;
+
+	private String resourceGroupId;
+
+	private String engine;
 
 	private String dBInstanceDescription;
 
+	private String dBInstanceNetType;
+
+	private String period;
+
+	private String resourceOwnerAccount;
+
+	private String ownerAccount;
+
+	private Long ownerId;
+
+	private String usedTime;
+
+	private String dBInstanceClass;
+
 	private String securityIPList;
-
-	private String clientToken;
-
-	private String payType;
-
-	private String zoneId;
-
-	private String instanceNetworkType;
-
-	private String connectionMode;
-
-	private String vPCId;
 
 	private String vSwitchId;
 
 	private String privateIpAddress;
 
-	private String ownerAccount;
+	private String vPCId;
 
-	private String usedTime;
+	private String zoneId;
 
-	private String period;
+	private String payType;
 
-	public Long getOwnerId() {
-		return this.ownerId;
+	private String instanceNetworkType;
+
+	public String getConnectionMode() {
+		return this.connectionMode;
 	}
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	public void setConnectionMode(String connectionMode) {
+		this.connectionMode = connectionMode;
+		if(connectionMode != null){
+			putQueryParameter("ConnectionMode", connectionMode);
+		}
 	}
 
 	public Long getResourceOwnerId() {
@@ -98,34 +93,9 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 
 	public void setResourceOwnerId(Long resourceOwnerId) {
 		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", resourceOwnerId);
-	}
-
-	public String getEngine() {
-		return this.engine;
-	}
-
-	public void setEngine(String engine) {
-		this.engine = engine;
-		putQueryParameter("Engine", engine);
-	}
-
-	public String getEngineVersion() {
-		return this.engineVersion;
-	}
-
-	public void setEngineVersion(String engineVersion) {
-		this.engineVersion = engineVersion;
-		putQueryParameter("EngineVersion", engineVersion);
-	}
-
-	public String getDBInstanceClass() {
-		return this.dBInstanceClass;
-	}
-
-	public void setDBInstanceClass(String dBInstanceClass) {
-		this.dBInstanceClass = dBInstanceClass;
-		putQueryParameter("DBInstanceClass", dBInstanceClass);
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
 	}
 
 	public Integer getDBInstanceStorage() {
@@ -134,7 +104,9 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 
 	public void setDBInstanceStorage(Integer dBInstanceStorage) {
 		this.dBInstanceStorage = dBInstanceStorage;
-		putQueryParameter("DBInstanceStorage", dBInstanceStorage);
+		if(dBInstanceStorage != null){
+			putQueryParameter("DBInstanceStorage", dBInstanceStorage.toString());
+		}
 	}
 
 	public String getSystemDBCharset() {
@@ -143,34 +115,9 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 
 	public void setSystemDBCharset(String systemDBCharset) {
 		this.systemDBCharset = systemDBCharset;
-		putQueryParameter("SystemDBCharset", systemDBCharset);
-	}
-
-	public String getDBInstanceNetType() {
-		return this.dBInstanceNetType;
-	}
-
-	public void setDBInstanceNetType(String dBInstanceNetType) {
-		this.dBInstanceNetType = dBInstanceNetType;
-		putQueryParameter("DBInstanceNetType", dBInstanceNetType);
-	}
-
-	public String getDBInstanceDescription() {
-		return this.dBInstanceDescription;
-	}
-
-	public void setDBInstanceDescription(String dBInstanceDescription) {
-		this.dBInstanceDescription = dBInstanceDescription;
-		putQueryParameter("DBInstanceDescription", dBInstanceDescription);
-	}
-
-	public String getSecurityIPList() {
-		return this.securityIPList;
-	}
-
-	public void setSecurityIPList(String securityIPList) {
-		this.securityIPList = securityIPList;
-		putQueryParameter("SecurityIPList", securityIPList);
+		if(systemDBCharset != null){
+			putQueryParameter("SystemDBCharset", systemDBCharset);
+		}
 	}
 
 	public String getClientToken() {
@@ -179,88 +126,64 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 
 	public void setClientToken(String clientToken) {
 		this.clientToken = clientToken;
-		putQueryParameter("ClientToken", clientToken);
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
+		}
 	}
 
-	public String getPayType() {
-		return this.payType;
+	public String getEngineVersion() {
+		return this.engineVersion;
 	}
 
-	public void setPayType(String payType) {
-		this.payType = payType;
-		putQueryParameter("PayType", payType);
+	public void setEngineVersion(String engineVersion) {
+		this.engineVersion = engineVersion;
+		if(engineVersion != null){
+			putQueryParameter("EngineVersion", engineVersion);
+		}
 	}
 
-	public String getZoneId() {
-		return this.zoneId;
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
 	}
 
-	public void setZoneId(String zoneId) {
-		this.zoneId = zoneId;
-		putQueryParameter("ZoneId", zoneId);
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
 	}
 
-	public String getInstanceNetworkType() {
-		return this.instanceNetworkType;
+	public String getEngine() {
+		return this.engine;
 	}
 
-	public void setInstanceNetworkType(String instanceNetworkType) {
-		this.instanceNetworkType = instanceNetworkType;
-		putQueryParameter("InstanceNetworkType", instanceNetworkType);
+	public void setEngine(String engine) {
+		this.engine = engine;
+		if(engine != null){
+			putQueryParameter("Engine", engine);
+		}
 	}
 
-	public String getConnectionMode() {
-		return this.connectionMode;
+	public String getDBInstanceDescription() {
+		return this.dBInstanceDescription;
 	}
 
-	public void setConnectionMode(String connectionMode) {
-		this.connectionMode = connectionMode;
-		putQueryParameter("ConnectionMode", connectionMode);
+	public void setDBInstanceDescription(String dBInstanceDescription) {
+		this.dBInstanceDescription = dBInstanceDescription;
+		if(dBInstanceDescription != null){
+			putQueryParameter("DBInstanceDescription", dBInstanceDescription);
+		}
 	}
 
-	public String getVPCId() {
-		return this.vPCId;
+	public String getDBInstanceNetType() {
+		return this.dBInstanceNetType;
 	}
 
-	public void setVPCId(String vPCId) {
-		this.vPCId = vPCId;
-		putQueryParameter("VPCId", vPCId);
-	}
-
-	public String getVSwitchId() {
-		return this.vSwitchId;
-	}
-
-	public void setVSwitchId(String vSwitchId) {
-		this.vSwitchId = vSwitchId;
-		putQueryParameter("VSwitchId", vSwitchId);
-	}
-
-	public String getPrivateIpAddress() {
-		return this.privateIpAddress;
-	}
-
-	public void setPrivateIpAddress(String privateIpAddress) {
-		this.privateIpAddress = privateIpAddress;
-		putQueryParameter("PrivateIpAddress", privateIpAddress);
-	}
-
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
-
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		putQueryParameter("OwnerAccount", ownerAccount);
-	}
-
-	public String getUsedTime() {
-		return this.usedTime;
-	}
-
-	public void setUsedTime(String usedTime) {
-		this.usedTime = usedTime;
-		putQueryParameter("UsedTime", usedTime);
+	public void setDBInstanceNetType(String dBInstanceNetType) {
+		this.dBInstanceNetType = dBInstanceNetType;
+		if(dBInstanceNetType != null){
+			putQueryParameter("DBInstanceNetType", dBInstanceNetType);
+		}
 	}
 
 	public String getPeriod() {
@@ -269,7 +192,141 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 
 	public void setPeriod(String period) {
 		this.period = period;
-		putQueryParameter("Period", period);
+		if(period != null){
+			putQueryParameter("Period", period);
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getUsedTime() {
+		return this.usedTime;
+	}
+
+	public void setUsedTime(String usedTime) {
+		this.usedTime = usedTime;
+		if(usedTime != null){
+			putQueryParameter("UsedTime", usedTime);
+		}
+	}
+
+	public String getDBInstanceClass() {
+		return this.dBInstanceClass;
+	}
+
+	public void setDBInstanceClass(String dBInstanceClass) {
+		this.dBInstanceClass = dBInstanceClass;
+		if(dBInstanceClass != null){
+			putQueryParameter("DBInstanceClass", dBInstanceClass);
+		}
+	}
+
+	public String getSecurityIPList() {
+		return this.securityIPList;
+	}
+
+	public void setSecurityIPList(String securityIPList) {
+		this.securityIPList = securityIPList;
+		if(securityIPList != null){
+			putQueryParameter("SecurityIPList", securityIPList);
+		}
+	}
+
+	public String getVSwitchId() {
+		return this.vSwitchId;
+	}
+
+	public void setVSwitchId(String vSwitchId) {
+		this.vSwitchId = vSwitchId;
+		if(vSwitchId != null){
+			putQueryParameter("VSwitchId", vSwitchId);
+		}
+	}
+
+	public String getPrivateIpAddress() {
+		return this.privateIpAddress;
+	}
+
+	public void setPrivateIpAddress(String privateIpAddress) {
+		this.privateIpAddress = privateIpAddress;
+		if(privateIpAddress != null){
+			putQueryParameter("PrivateIpAddress", privateIpAddress);
+		}
+	}
+
+	public String getVPCId() {
+		return this.vPCId;
+	}
+
+	public void setVPCId(String vPCId) {
+		this.vPCId = vPCId;
+		if(vPCId != null){
+			putQueryParameter("VPCId", vPCId);
+		}
+	}
+
+	public String getZoneId() {
+		return this.zoneId;
+	}
+
+	public void setZoneId(String zoneId) {
+		this.zoneId = zoneId;
+		if(zoneId != null){
+			putQueryParameter("ZoneId", zoneId);
+		}
+	}
+
+	public String getPayType() {
+		return this.payType;
+	}
+
+	public void setPayType(String payType) {
+		this.payType = payType;
+		if(payType != null){
+			putQueryParameter("PayType", payType);
+		}
+	}
+
+	public String getInstanceNetworkType() {
+		return this.instanceNetworkType;
+	}
+
+	public void setInstanceNetworkType(String instanceNetworkType) {
+		this.instanceNetworkType = instanceNetworkType;
+		if(instanceNetworkType != null){
+			putQueryParameter("InstanceNetworkType", instanceNetworkType);
+		}
 	}
 
 	@Override

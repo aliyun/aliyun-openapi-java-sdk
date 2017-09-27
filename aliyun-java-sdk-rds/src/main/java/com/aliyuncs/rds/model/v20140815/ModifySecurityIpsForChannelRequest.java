@@ -30,42 +30,35 @@ public class ModifySecurityIpsForChannelRequest extends RpcAcsRequest<ModifySecu
 		super("Rds", "2014-08-15", "ModifySecurityIpsForChannel", "rds");
 	}
 
-	private Long ownerId;
-
-	private String resourceOwnerAccount;
+	private String dBInstanceIPArrayName;
 
 	private Long resourceOwnerId;
 
-	private String clientToken;
-
-	private String dBInstanceId;
-
-	private String securityIps;
-
-	private String dBInstanceIPArrayName;
-
-	private String dBInstanceIPArrayAttribute;
-
 	private String modifyMode;
+
+	private String resourceOwnerAccount;
+
+	private String clientToken;
 
 	private String ownerAccount;
 
-	public Long getOwnerId() {
-		return this.ownerId;
+	private String securityIps;
+
+	private String dBInstanceIPArrayAttribute;
+
+	private String dBInstanceId;
+
+	private Long ownerId;
+
+	public String getDBInstanceIPArrayName() {
+		return this.dBInstanceIPArrayName;
 	}
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	public void setDBInstanceIPArrayName(String dBInstanceIPArrayName) {
+		this.dBInstanceIPArrayName = dBInstanceIPArrayName;
+		if(dBInstanceIPArrayName != null){
+			putQueryParameter("DBInstanceIPArrayName", dBInstanceIPArrayName);
+		}
 	}
 
 	public Long getResourceOwnerId() {
@@ -74,52 +67,9 @@ public class ModifySecurityIpsForChannelRequest extends RpcAcsRequest<ModifySecu
 
 	public void setResourceOwnerId(Long resourceOwnerId) {
 		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", resourceOwnerId);
-	}
-
-	public String getClientToken() {
-		return this.clientToken;
-	}
-
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		putQueryParameter("ClientToken", clientToken);
-	}
-
-	public String getDBInstanceId() {
-		return this.dBInstanceId;
-	}
-
-	public void setDBInstanceId(String dBInstanceId) {
-		this.dBInstanceId = dBInstanceId;
-		putQueryParameter("DBInstanceId", dBInstanceId);
-	}
-
-	public String getSecurityIps() {
-		return this.securityIps;
-	}
-
-	public void setSecurityIps(String securityIps) {
-		this.securityIps = securityIps;
-		putQueryParameter("SecurityIps", securityIps);
-	}
-
-	public String getDBInstanceIPArrayName() {
-		return this.dBInstanceIPArrayName;
-	}
-
-	public void setDBInstanceIPArrayName(String dBInstanceIPArrayName) {
-		this.dBInstanceIPArrayName = dBInstanceIPArrayName;
-		putQueryParameter("DBInstanceIPArrayName", dBInstanceIPArrayName);
-	}
-
-	public String getDBInstanceIPArrayAttribute() {
-		return this.dBInstanceIPArrayAttribute;
-	}
-
-	public void setDBInstanceIPArrayAttribute(String dBInstanceIPArrayAttribute) {
-		this.dBInstanceIPArrayAttribute = dBInstanceIPArrayAttribute;
-		putQueryParameter("DBInstanceIPArrayAttribute", dBInstanceIPArrayAttribute);
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
 	}
 
 	public String getModifyMode() {
@@ -128,7 +78,31 @@ public class ModifySecurityIpsForChannelRequest extends RpcAcsRequest<ModifySecu
 
 	public void setModifyMode(String modifyMode) {
 		this.modifyMode = modifyMode;
-		putQueryParameter("ModifyMode", modifyMode);
+		if(modifyMode != null){
+			putQueryParameter("ModifyMode", modifyMode);
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
+		}
 	}
 
 	public String getOwnerAccount() {
@@ -137,7 +111,53 @@ public class ModifySecurityIpsForChannelRequest extends RpcAcsRequest<ModifySecu
 
 	public void setOwnerAccount(String ownerAccount) {
 		this.ownerAccount = ownerAccount;
-		putQueryParameter("OwnerAccount", ownerAccount);
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public String getSecurityIps() {
+		return this.securityIps;
+	}
+
+	public void setSecurityIps(String securityIps) {
+		this.securityIps = securityIps;
+		if(securityIps != null){
+			putQueryParameter("SecurityIps", securityIps);
+		}
+	}
+
+	public String getDBInstanceIPArrayAttribute() {
+		return this.dBInstanceIPArrayAttribute;
+	}
+
+	public void setDBInstanceIPArrayAttribute(String dBInstanceIPArrayAttribute) {
+		this.dBInstanceIPArrayAttribute = dBInstanceIPArrayAttribute;
+		if(dBInstanceIPArrayAttribute != null){
+			putQueryParameter("DBInstanceIPArrayAttribute", dBInstanceIPArrayAttribute);
+		}
+	}
+
+	public String getDBInstanceId() {
+		return this.dBInstanceId;
+	}
+
+	public void setDBInstanceId(String dBInstanceId) {
+		this.dBInstanceId = dBInstanceId;
+		if(dBInstanceId != null){
+			putQueryParameter("DBInstanceId", dBInstanceId);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
 	}
 
 	@Override

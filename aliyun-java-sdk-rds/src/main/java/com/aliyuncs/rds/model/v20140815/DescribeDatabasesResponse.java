@@ -57,7 +57,7 @@ public class DescribeDatabasesResponse extends AcsResponse {
 
 		private String engine;
 
-		private DBStatus dBStatus;
+		private String dBStatus;
 
 		private String characterSetName;
 
@@ -89,11 +89,11 @@ public class DescribeDatabasesResponse extends AcsResponse {
 			this.engine = engine;
 		}
 
-		public DBStatus getDBStatus() {
+		public String getDBStatus() {
 			return this.dBStatus;
 		}
 
-		public void setDBStatus(DBStatus dBStatus) {
+		public void setDBStatus(String dBStatus) {
 			this.dBStatus = dBStatus;
 		}
 
@@ -120,40 +120,6 @@ public class DescribeDatabasesResponse extends AcsResponse {
 		public void setAccounts(List<AccountPrivilegeInfo> accounts) {
 			this.accounts = accounts;
 		}
-
-public enum DBStatus {
-
-			DELETING("Deleting"),
-			RUNNING("Running"),
-			CREATING("Creating"),;
-	
-    private String stringValue;
-
-	DBStatus(String stringValue) {
-        setStringValue(stringValue);
-    }
-
-    public String getStringValue() {
-        return stringValue;
-    }
-
-    public void setStringValue(String stringValue) {
-        this.stringValue = stringValue;
-    }
-    
-    public static DBStatus getEnum(String stringValue){
-    	if(null == stringValue){
-    		return null;
-    	}
-    	
-    	for (DBStatus dBStatus : DBStatus.values()) {
-			if(dBStatus.getStringValue().equals(stringValue)){
-				return dBStatus;
-			}
-		}
-    	return null;
-    }
-}
 
 		public static class AccountPrivilegeInfo {
 

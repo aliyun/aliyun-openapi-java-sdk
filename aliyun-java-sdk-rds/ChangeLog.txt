@@ -1,0 +1,9 @@
+2017-09-27 Version: 2.1.1
+1, 修改了ModifyDBInstanceNetworkType接口，支持将Classic切换到VPC，设置经典网络保留期限。
+2, 修改了DescribeDBInstanceNetInfo 接口，返回值增加经典网络保留期限属性ExpiredTime。
+3, 增加了UpgradeDBInstanceNetWorkInfo接口。
+4, 增加了ModifyDBInstanceNetExpireTime 接口，支持Classic 实例网络保留期限。
+5, 增加了RenewInstance接口，支持实例到期续费。
+6, 增加了DescribeRenewalPrice接口，支持查询实例续费费用。
+7, 增加了DescribePrice接口，支持新购实例的续费计算。
+

@@ -27,6 +27,7 @@ public class ModifySecurityIpsResponseUnmarshaller {
 	public static ModifySecurityIpsResponse unmarshall(ModifySecurityIpsResponse modifySecurityIpsResponse, UnmarshallerContext context) {
 		
 		modifySecurityIpsResponse.setRequestId(context.stringValue("ModifySecurityIpsResponse.RequestId"));
+		modifySecurityIpsResponse.setTaskId(context.stringValue("ModifySecurityIpsResponse.TaskId"));
 	 
 	 	return modifySecurityIpsResponse;
 	}

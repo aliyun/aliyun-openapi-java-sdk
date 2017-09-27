@@ -61,6 +61,10 @@ public class DescribeDBInstanceNetInfoResponse extends AcsResponse {
 
 	public static class DBInstanceNetInfo {
 
+		private String upgradeable;
+
+		private String expiredTime;
+
 		private String connectionString;
 
 		private String iPAddress;
@@ -73,7 +77,31 @@ public class DescribeDBInstanceNetInfoResponse extends AcsResponse {
 
 		private String vSwitchId;
 
-		private List<securityIPGroup> securityIPGroups;
+		private String connectionStringType;
+
+		private String maxDelayTime;
+
+		private String distributionType;
+
+		private List<SecurityIPGroup> securityIPGroups;
+
+		private List<DBInstanceWeight> dBInstanceWeights;
+
+		public String getUpgradeable() {
+			return this.upgradeable;
+		}
+
+		public void setUpgradeable(String upgradeable) {
+			this.upgradeable = upgradeable;
+		}
+
+		public String getExpiredTime() {
+			return this.expiredTime;
+		}
+
+		public void setExpiredTime(String expiredTime) {
+			this.expiredTime = expiredTime;
+		}
 
 		public String getConnectionString() {
 			return this.connectionString;
@@ -123,15 +151,47 @@ public class DescribeDBInstanceNetInfoResponse extends AcsResponse {
 			this.vSwitchId = vSwitchId;
 		}
 
-		public List<securityIPGroup> getSecurityIPGroups() {
+		public String getConnectionStringType() {
+			return this.connectionStringType;
+		}
+
+		public void setConnectionStringType(String connectionStringType) {
+			this.connectionStringType = connectionStringType;
+		}
+
+		public String getMaxDelayTime() {
+			return this.maxDelayTime;
+		}
+
+		public void setMaxDelayTime(String maxDelayTime) {
+			this.maxDelayTime = maxDelayTime;
+		}
+
+		public String getDistributionType() {
+			return this.distributionType;
+		}
+
+		public void setDistributionType(String distributionType) {
+			this.distributionType = distributionType;
+		}
+
+		public List<SecurityIPGroup> getSecurityIPGroups() {
 			return this.securityIPGroups;
 		}
 
-		public void setSecurityIPGroups(List<securityIPGroup> securityIPGroups) {
+		public void setSecurityIPGroups(List<SecurityIPGroup> securityIPGroups) {
 			this.securityIPGroups = securityIPGroups;
 		}
 
-		public static class securityIPGroup {
+		public List<DBInstanceWeight> getDBInstanceWeights() {
+			return this.dBInstanceWeights;
+		}
+
+		public void setDBInstanceWeights(List<DBInstanceWeight> dBInstanceWeights) {
+			this.dBInstanceWeights = dBInstanceWeights;
+		}
+
+		public static class SecurityIPGroup {
 
 			private String securityIPGroupName;
 
@@ -151,6 +211,49 @@ public class DescribeDBInstanceNetInfoResponse extends AcsResponse {
 
 			public void setSecurityIPs(String securityIPs) {
 				this.securityIPs = securityIPs;
+			}
+		}
+
+		public static class DBInstanceWeight {
+
+			private String dBInstanceId;
+
+			private String dBInstanceType;
+
+			private String availability;
+
+			private String weight;
+
+			public String getDBInstanceId() {
+				return this.dBInstanceId;
+			}
+
+			public void setDBInstanceId(String dBInstanceId) {
+				this.dBInstanceId = dBInstanceId;
+			}
+
+			public String getDBInstanceType() {
+				return this.dBInstanceType;
+			}
+
+			public void setDBInstanceType(String dBInstanceType) {
+				this.dBInstanceType = dBInstanceType;
+			}
+
+			public String getAvailability() {
+				return this.availability;
+			}
+
+			public void setAvailability(String availability) {
+				this.availability = availability;
+			}
+
+			public String getWeight() {
+				return this.weight;
+			}
+
+			public void setWeight(String weight) {
+				this.weight = weight;
 			}
 		}
 	}

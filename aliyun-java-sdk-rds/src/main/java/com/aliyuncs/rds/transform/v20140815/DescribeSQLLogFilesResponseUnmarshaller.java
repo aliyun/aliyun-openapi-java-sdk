@@ -23,7 +23,6 @@ import java.util.List;
 
 import com.aliyuncs.rds.model.v20140815.DescribeSQLLogFilesResponse;
 import com.aliyuncs.rds.model.v20140815.DescribeSQLLogFilesResponse.LogFile;
-import com.aliyuncs.rds.model.v20140815.DescribeSQLLogFilesResponse.LogFile.LogStatus;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -40,7 +39,7 @@ public class DescribeSQLLogFilesResponseUnmarshaller {
 		for (int i = 0; i < context.lengthValue("DescribeSQLLogFilesResponse.Items.Length"); i++) {
 			LogFile logFile = new LogFile();
 			logFile.setFileID(context.stringValue("DescribeSQLLogFilesResponse.Items["+ i +"].FileID"));
-			logFile.setLogStatus(LogStatus.getEnum(context.stringValue("DescribeSQLLogFilesResponse.Items["+ i +"].LogStatus")));
+			logFile.setLogStatus(context.stringValue("DescribeSQLLogFilesResponse.Items["+ i +"].LogStatus"));
 			logFile.setLogDownloadURL(context.stringValue("DescribeSQLLogFilesResponse.Items["+ i +"].LogDownloadURL"));
 			logFile.setLogSize(context.stringValue("DescribeSQLLogFilesResponse.Items["+ i +"].LogSize"));
 			logFile.setLogStartTime(context.stringValue("DescribeSQLLogFilesResponse.Items["+ i +"].LogStartTime"));

@@ -38,7 +38,9 @@ public class DescribeDiagnosticReportListRequest extends RpcAcsRequest<DescribeD
 
 	public void setDBInstanceId(String dBInstanceId) {
 		this.dBInstanceId = dBInstanceId;
-		putQueryParameter("DBInstanceId", dBInstanceId);
+		if(dBInstanceId != null){
+			putQueryParameter("DBInstanceId", dBInstanceId);
+		}
 	}
 
 	@Override

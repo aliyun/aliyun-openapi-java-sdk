@@ -23,14 +23,7 @@ import java.util.List;
 
 import com.aliyuncs.rds.model.v20140815.DescribeDBInstanceAttributeResponse;
 import com.aliyuncs.rds.model.v20140815.DescribeDBInstanceAttributeResponse.DBInstanceAttribute;
-import com.aliyuncs.rds.model.v20140815.DescribeDBInstanceAttributeResponse.DBInstanceAttribute.AccountType;
-import com.aliyuncs.rds.model.v20140815.DescribeDBInstanceAttributeResponse.DBInstanceAttribute.ConnectionMode;
-import com.aliyuncs.rds.model.v20140815.DescribeDBInstanceAttributeResponse.DBInstanceAttribute.DBInstanceNetType;
-import com.aliyuncs.rds.model.v20140815.DescribeDBInstanceAttributeResponse.DBInstanceAttribute.DBInstanceStatus;
-import com.aliyuncs.rds.model.v20140815.DescribeDBInstanceAttributeResponse.DBInstanceAttribute.DBInstanceType;
-import com.aliyuncs.rds.model.v20140815.DescribeDBInstanceAttributeResponse.DBInstanceAttribute.LockMode;
 import com.aliyuncs.rds.model.v20140815.DescribeDBInstanceAttributeResponse.DBInstanceAttribute.ReadOnlyDBInstanceId;
-import com.aliyuncs.rds.model.v20140815.DescribeDBInstanceAttributeResponse.DBInstanceAttribute.SupportUpgradeAccountType;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -47,7 +40,7 @@ public class DescribeDBInstanceAttributeResponseUnmarshaller {
 			dBInstanceAttribute.setDBInstanceId(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].DBInstanceId"));
 			dBInstanceAttribute.setPayType(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].PayType"));
 			dBInstanceAttribute.setDBInstanceClassType(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].DBInstanceClassType"));
-			dBInstanceAttribute.setDBInstanceType(DBInstanceType.getEnum(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].DBInstanceType")));
+			dBInstanceAttribute.setDBInstanceType(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].DBInstanceType"));
 			dBInstanceAttribute.setRegionId(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].RegionId"));
 			dBInstanceAttribute.setConnectionString(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].ConnectionString"));
 			dBInstanceAttribute.setPort(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].Port"));
@@ -56,10 +49,10 @@ public class DescribeDBInstanceAttributeResponseUnmarshaller {
 			dBInstanceAttribute.setDBInstanceClass(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].DBInstanceClass"));
 			dBInstanceAttribute.setDBInstanceMemory(context.longValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].DBInstanceMemory"));
 			dBInstanceAttribute.setDBInstanceStorage(context.integerValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].DBInstanceStorage"));
-			dBInstanceAttribute.setDBInstanceNetType(DBInstanceNetType.getEnum(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].DBInstanceNetType")));
-			dBInstanceAttribute.setDBInstanceStatus(DBInstanceStatus.getEnum(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].DBInstanceStatus")));
+			dBInstanceAttribute.setDBInstanceNetType(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].DBInstanceNetType"));
+			dBInstanceAttribute.setDBInstanceStatus(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].DBInstanceStatus"));
 			dBInstanceAttribute.setDBInstanceDescription(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].DBInstanceDescription"));
-			dBInstanceAttribute.setLockMode(LockMode.getEnum(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].LockMode")));
+			dBInstanceAttribute.setLockMode(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].LockMode"));
 			dBInstanceAttribute.setLockReason(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].LockReason"));
 			dBInstanceAttribute.setReadDelayTime(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].ReadDelayTime"));
 			dBInstanceAttribute.setDBMaxQuantity(context.integerValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].DBMaxQuantity"));
@@ -78,10 +71,13 @@ public class DescribeDBInstanceAttributeResponseUnmarshaller {
 			dBInstanceAttribute.setSecurityIPList(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].SecurityIPList"));
 			dBInstanceAttribute.setZoneId(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].ZoneId"));
 			dBInstanceAttribute.setInstanceNetworkType(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].InstanceNetworkType"));
-			dBInstanceAttribute.setAccountType(AccountType.getEnum(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].AccountType")));
-			dBInstanceAttribute.setSupportUpgradeAccountType(SupportUpgradeAccountType.getEnum(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].SupportUpgradeAccountType")));
+			dBInstanceAttribute.setCategory(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].Category"));
+			dBInstanceAttribute.setAccountType(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].AccountType"));
+			dBInstanceAttribute.setSupportUpgradeAccountType(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].SupportUpgradeAccountType"));
 			dBInstanceAttribute.setVpcId(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].VpcId"));
-			dBInstanceAttribute.setConnectionMode(ConnectionMode.getEnum(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].ConnectionMode")));
+			dBInstanceAttribute.setVSwitchId(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].VSwitchId"));
+			dBInstanceAttribute.setConnectionMode(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].ConnectionMode"));
+			dBInstanceAttribute.setResourceGroupId(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].ResourceGroupId"));
 
 			List<ReadOnlyDBInstanceId> readOnlyDBInstanceIds = new ArrayList<ReadOnlyDBInstanceId>();
 			for (int j = 0; j < context.lengthValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].ReadOnlyDBInstanceIds.Length"); j++) {

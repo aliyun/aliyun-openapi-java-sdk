@@ -83,9 +83,9 @@ public class DescibeImportsFromDatabaseResponse extends AcsResponse {
 
 		private Integer importId;
 
-		private ImportDataType importDataType;
+		private String importDataType;
 
-		private ImportDataStatus importDataStatus;
+		private String importDataStatus;
 
 		private String importDataStatusDescription;
 
@@ -99,19 +99,19 @@ public class DescibeImportsFromDatabaseResponse extends AcsResponse {
 			this.importId = importId;
 		}
 
-		public ImportDataType getImportDataType() {
+		public String getImportDataType() {
 			return this.importDataType;
 		}
 
-		public void setImportDataType(ImportDataType importDataType) {
+		public void setImportDataType(String importDataType) {
 			this.importDataType = importDataType;
 		}
 
-		public ImportDataStatus getImportDataStatus() {
+		public String getImportDataStatus() {
 			return this.importDataStatus;
 		}
 
-		public void setImportDataStatus(ImportDataStatus importDataStatus) {
+		public void setImportDataStatus(String importDataStatus) {
 			this.importDataStatus = importDataStatus;
 		}
 
@@ -130,80 +130,6 @@ public class DescibeImportsFromDatabaseResponse extends AcsResponse {
 		public void setIncrementalImportingTime(String incrementalImportingTime) {
 			this.incrementalImportingTime = incrementalImportingTime;
 		}
-
-public enum ImportDataType {
-
-			INCREMENTAL("Incremental"),
-			FULL("Full"),;
-	
-    private String stringValue;
-
-	ImportDataType(String stringValue) {
-        setStringValue(stringValue);
-    }
-
-    public String getStringValue() {
-        return stringValue;
-    }
-
-    public void setStringValue(String stringValue) {
-        this.stringValue = stringValue;
-    }
-    
-    public static ImportDataType getEnum(String stringValue){
-    	if(null == stringValue){
-    		return null;
-    	}
-    	
-    	for (ImportDataType importDataType : ImportDataType.values()) {
-			if(importDataType.getStringValue().equals(stringValue)){
-				return importDataType;
-			}
-		}
-    	return null;
-    }
-}
-
-public enum ImportDataStatus {
-
-			INCREMENTAL_IMPORTING("IncrementalImporting"),
-			STOP_SYNCING("StopSyncing"),
-			CANCELED("Canceled"),
-			INCREMENTAL_WAITING("IncrementalWaiting"),
-			CANCELING("Canceling"),
-			FAILED("Failed"),
-			FULL_IMPORTING("FullImporting"),
-			SUCCESS("Success"),
-			NOT_START("NotStart"),
-			FULL_EXPORTING("FullExporting"),;
-	
-    private String stringValue;
-
-	ImportDataStatus(String stringValue) {
-        setStringValue(stringValue);
-    }
-
-    public String getStringValue() {
-        return stringValue;
-    }
-
-    public void setStringValue(String stringValue) {
-        this.stringValue = stringValue;
-    }
-    
-    public static ImportDataStatus getEnum(String stringValue){
-    	if(null == stringValue){
-    		return null;
-    	}
-    	
-    	for (ImportDataStatus importDataStatus : ImportDataStatus.values()) {
-			if(importDataStatus.getStringValue().equals(stringValue)){
-				return importDataStatus;
-			}
-		}
-    	return null;
-    }
-}
 	}
 
 	@Override

@@ -30,58 +30,51 @@ public class AddTagsToResourceRequest extends RpcAcsRequest<AddTagsToResourceRes
 		super("Rds", "2014-08-15", "AddTagsToResource", "rds");
 	}
 
-	private Long ownerId;
-
-	private String resourceOwnerAccount;
+	private String tag4value;
 
 	private Long resourceOwnerId;
 
+	private String tag2key;
+
+	private String tag5key;
+
+	private String resourceOwnerAccount;
+
 	private String clientToken;
 
-	private String proxyId;
+	private String ownerAccount;
 
-	private String dBInstanceId;
+	private String tag3key;
+
+	private Long ownerId;
+
+	private String tag5value;
 
 	private String tags;
 
 	private String tag1key;
 
-	private String tag2key;
-
-	private String tag3key;
-
-	private String tag4key;
-
-	private String tag5key;
-
 	private String tag1value;
 
 	private String tag2value;
 
+	private String tag4key;
+
+	private String dBInstanceId;
+
 	private String tag3value;
 
-	private String tag4value;
+	private String proxyId;
 
-	private String tag5value;
-
-	private String ownerAccount;
-
-	public Long getOwnerId() {
-		return this.ownerId;
+	public String getTag4value() {
+		return this.tag4value;
 	}
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	public void setTag4value(String tag4value) {
+		this.tag4value = tag4value;
+		if(tag4value != null){
+			putQueryParameter("Tag.4.value", tag4value);
+		}
 	}
 
 	public Long getResourceOwnerId() {
@@ -90,52 +83,9 @@ public class AddTagsToResourceRequest extends RpcAcsRequest<AddTagsToResourceRes
 
 	public void setResourceOwnerId(Long resourceOwnerId) {
 		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", resourceOwnerId);
-	}
-
-	public String getClientToken() {
-		return this.clientToken;
-	}
-
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		putQueryParameter("ClientToken", clientToken);
-	}
-
-	public String getproxyId() {
-		return this.proxyId;
-	}
-
-	public void setproxyId(String proxyId) {
-		this.proxyId = proxyId;
-		putQueryParameter("proxyId", proxyId);
-	}
-
-	public String getDBInstanceId() {
-		return this.dBInstanceId;
-	}
-
-	public void setDBInstanceId(String dBInstanceId) {
-		this.dBInstanceId = dBInstanceId;
-		putQueryParameter("DBInstanceId", dBInstanceId);
-	}
-
-	public String getTags() {
-		return this.tags;
-	}
-
-	public void setTags(String tags) {
-		this.tags = tags;
-		putQueryParameter("Tags", tags);
-	}
-
-	public String getTag1key() {
-		return this.tag1key;
-	}
-
-	public void setTag1key(String tag1key) {
-		this.tag1key = tag1key;
-		putQueryParameter("Tag.1.key", tag1key);
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
 	}
 
 	public String getTag2key() {
@@ -144,25 +94,9 @@ public class AddTagsToResourceRequest extends RpcAcsRequest<AddTagsToResourceRes
 
 	public void setTag2key(String tag2key) {
 		this.tag2key = tag2key;
-		putQueryParameter("Tag.2.key", tag2key);
-	}
-
-	public String getTag3key() {
-		return this.tag3key;
-	}
-
-	public void setTag3key(String tag3key) {
-		this.tag3key = tag3key;
-		putQueryParameter("Tag.3.key", tag3key);
-	}
-
-	public String getTag4key() {
-		return this.tag4key;
-	}
-
-	public void setTag4key(String tag4key) {
-		this.tag4key = tag4key;
-		putQueryParameter("Tag.4.key", tag4key);
+		if(tag2key != null){
+			putQueryParameter("Tag.2.key", tag2key);
+		}
 	}
 
 	public String getTag5key() {
@@ -171,52 +105,31 @@ public class AddTagsToResourceRequest extends RpcAcsRequest<AddTagsToResourceRes
 
 	public void setTag5key(String tag5key) {
 		this.tag5key = tag5key;
-		putQueryParameter("Tag.5.key", tag5key);
+		if(tag5key != null){
+			putQueryParameter("Tag.5.key", tag5key);
+		}
 	}
 
-	public String getTag1value() {
-		return this.tag1value;
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
 	}
 
-	public void setTag1value(String tag1value) {
-		this.tag1value = tag1value;
-		putQueryParameter("Tag.1.value", tag1value);
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
 	}
 
-	public String getTag2value() {
-		return this.tag2value;
+	public String getClientToken() {
+		return this.clientToken;
 	}
 
-	public void setTag2value(String tag2value) {
-		this.tag2value = tag2value;
-		putQueryParameter("Tag.2.value", tag2value);
-	}
-
-	public String getTag3value() {
-		return this.tag3value;
-	}
-
-	public void setTag3value(String tag3value) {
-		this.tag3value = tag3value;
-		putQueryParameter("Tag.3.value", tag3value);
-	}
-
-	public String getTag4value() {
-		return this.tag4value;
-	}
-
-	public void setTag4value(String tag4value) {
-		this.tag4value = tag4value;
-		putQueryParameter("Tag.4.value", tag4value);
-	}
-
-	public String getTag5value() {
-		return this.tag5value;
-	}
-
-	public void setTag5value(String tag5value) {
-		this.tag5value = tag5value;
-		putQueryParameter("Tag.5.value", tag5value);
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
+		}
 	}
 
 	public String getOwnerAccount() {
@@ -225,7 +138,130 @@ public class AddTagsToResourceRequest extends RpcAcsRequest<AddTagsToResourceRes
 
 	public void setOwnerAccount(String ownerAccount) {
 		this.ownerAccount = ownerAccount;
-		putQueryParameter("OwnerAccount", ownerAccount);
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public String getTag3key() {
+		return this.tag3key;
+	}
+
+	public void setTag3key(String tag3key) {
+		this.tag3key = tag3key;
+		if(tag3key != null){
+			putQueryParameter("Tag.3.key", tag3key);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getTag5value() {
+		return this.tag5value;
+	}
+
+	public void setTag5value(String tag5value) {
+		this.tag5value = tag5value;
+		if(tag5value != null){
+			putQueryParameter("Tag.5.value", tag5value);
+		}
+	}
+
+	public String getTags() {
+		return this.tags;
+	}
+
+	public void setTags(String tags) {
+		this.tags = tags;
+		if(tags != null){
+			putQueryParameter("Tags", tags);
+		}
+	}
+
+	public String getTag1key() {
+		return this.tag1key;
+	}
+
+	public void setTag1key(String tag1key) {
+		this.tag1key = tag1key;
+		if(tag1key != null){
+			putQueryParameter("Tag.1.key", tag1key);
+		}
+	}
+
+	public String getTag1value() {
+		return this.tag1value;
+	}
+
+	public void setTag1value(String tag1value) {
+		this.tag1value = tag1value;
+		if(tag1value != null){
+			putQueryParameter("Tag.1.value", tag1value);
+		}
+	}
+
+	public String getTag2value() {
+		return this.tag2value;
+	}
+
+	public void setTag2value(String tag2value) {
+		this.tag2value = tag2value;
+		if(tag2value != null){
+			putQueryParameter("Tag.2.value", tag2value);
+		}
+	}
+
+	public String getTag4key() {
+		return this.tag4key;
+	}
+
+	public void setTag4key(String tag4key) {
+		this.tag4key = tag4key;
+		if(tag4key != null){
+			putQueryParameter("Tag.4.key", tag4key);
+		}
+	}
+
+	public String getDBInstanceId() {
+		return this.dBInstanceId;
+	}
+
+	public void setDBInstanceId(String dBInstanceId) {
+		this.dBInstanceId = dBInstanceId;
+		if(dBInstanceId != null){
+			putQueryParameter("DBInstanceId", dBInstanceId);
+		}
+	}
+
+	public String getTag3value() {
+		return this.tag3value;
+	}
+
+	public void setTag3value(String tag3value) {
+		this.tag3value = tag3value;
+		if(tag3value != null){
+			putQueryParameter("Tag.3.value", tag3value);
+		}
+	}
+
+	public String getProxyId() {
+		return this.proxyId;
+	}
+
+	public void setProxyId(String proxyId) {
+		this.proxyId = proxyId;
+		if(proxyId != null){
+			putQueryParameter("proxyId", proxyId);
+		}
 	}
 
 	@Override

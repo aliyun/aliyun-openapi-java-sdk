@@ -23,11 +23,6 @@ import java.util.List;
 
 import com.aliyuncs.rds.model.v20140815.DescribeDBInstancesResponse;
 import com.aliyuncs.rds.model.v20140815.DescribeDBInstancesResponse.DBInstance;
-import com.aliyuncs.rds.model.v20140815.DescribeDBInstancesResponse.DBInstance.ConnectionMode;
-import com.aliyuncs.rds.model.v20140815.DescribeDBInstancesResponse.DBInstance.DBInstanceNetType;
-import com.aliyuncs.rds.model.v20140815.DescribeDBInstancesResponse.DBInstance.DBInstanceStatus;
-import com.aliyuncs.rds.model.v20140815.DescribeDBInstancesResponse.DBInstance.DBInstanceType;
-import com.aliyuncs.rds.model.v20140815.DescribeDBInstancesResponse.DBInstance.LockMode;
 import com.aliyuncs.rds.model.v20140815.DescribeDBInstancesResponse.DBInstance.ReadOnlyDBInstanceId;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -48,14 +43,15 @@ public class DescribeDBInstancesResponseUnmarshaller {
 			dBInstance.setDBInstanceId(context.stringValue("DescribeDBInstancesResponse.Items["+ i +"].DBInstanceId"));
 			dBInstance.setDBInstanceDescription(context.stringValue("DescribeDBInstancesResponse.Items["+ i +"].DBInstanceDescription"));
 			dBInstance.setPayType(context.stringValue("DescribeDBInstancesResponse.Items["+ i +"].PayType"));
-			dBInstance.setDBInstanceType(DBInstanceType.getEnum(context.stringValue("DescribeDBInstancesResponse.Items["+ i +"].DBInstanceType")));
+			dBInstance.setDBInstanceType(context.stringValue("DescribeDBInstancesResponse.Items["+ i +"].DBInstanceType"));
 			dBInstance.setRegionId(context.stringValue("DescribeDBInstancesResponse.Items["+ i +"].RegionId"));
 			dBInstance.setExpireTime(context.stringValue("DescribeDBInstancesResponse.Items["+ i +"].ExpireTime"));
-			dBInstance.setDBInstanceStatus(DBInstanceStatus.getEnum(context.stringValue("DescribeDBInstancesResponse.Items["+ i +"].DBInstanceStatus")));
+			dBInstance.setDBInstanceStatus(context.stringValue("DescribeDBInstancesResponse.Items["+ i +"].DBInstanceStatus"));
 			dBInstance.setEngine(context.stringValue("DescribeDBInstancesResponse.Items["+ i +"].Engine"));
-			dBInstance.setDBInstanceNetType(DBInstanceNetType.getEnum(context.stringValue("DescribeDBInstancesResponse.Items["+ i +"].DBInstanceNetType")));
-			dBInstance.setConnectionMode(ConnectionMode.getEnum(context.stringValue("DescribeDBInstancesResponse.Items["+ i +"].ConnectionMode")));
-			dBInstance.setLockMode(LockMode.getEnum(context.stringValue("DescribeDBInstancesResponse.Items["+ i +"].LockMode")));
+			dBInstance.setDBInstanceNetType(context.stringValue("DescribeDBInstancesResponse.Items["+ i +"].DBInstanceNetType"));
+			dBInstance.setConnectionMode(context.stringValue("DescribeDBInstancesResponse.Items["+ i +"].ConnectionMode"));
+			dBInstance.setLockMode(context.stringValue("DescribeDBInstancesResponse.Items["+ i +"].LockMode"));
+			dBInstance.setDBInstanceClass(context.stringValue("DescribeDBInstancesResponse.Items["+ i +"].DBInstanceClass"));
 			dBInstance.setInstanceNetworkType(context.stringValue("DescribeDBInstancesResponse.Items["+ i +"].InstanceNetworkType"));
 			dBInstance.setLockReason(context.stringValue("DescribeDBInstancesResponse.Items["+ i +"].LockReason"));
 			dBInstance.setZoneId(context.stringValue("DescribeDBInstancesResponse.Items["+ i +"].ZoneId"));
@@ -66,6 +62,8 @@ public class DescribeDBInstancesResponseUnmarshaller {
 			dBInstance.setTempDBInstanceId(context.stringValue("DescribeDBInstancesResponse.Items["+ i +"].TempDBInstanceId"));
 			dBInstance.setMasterInstanceId(context.stringValue("DescribeDBInstancesResponse.Items["+ i +"].MasterInstanceId"));
 			dBInstance.setVpcId(context.stringValue("DescribeDBInstancesResponse.Items["+ i +"].VpcId"));
+			dBInstance.setVSwitchId(context.stringValue("DescribeDBInstancesResponse.Items["+ i +"].VSwitchId"));
+			dBInstance.setResourceGroupId(context.stringValue("DescribeDBInstancesResponse.Items["+ i +"].ResourceGroupId"));
 
 			List<ReadOnlyDBInstanceId> readOnlyDBInstanceIds = new ArrayList<ReadOnlyDBInstanceId>();
 			for (int j = 0; j < context.lengthValue("DescribeDBInstancesResponse.Items["+ i +"].ReadOnlyDBInstanceIds.Length"); j++) {

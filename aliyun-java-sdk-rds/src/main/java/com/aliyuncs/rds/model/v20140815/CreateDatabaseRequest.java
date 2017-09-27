@@ -30,39 +30,21 @@ public class CreateDatabaseRequest extends RpcAcsRequest<CreateDatabaseResponse>
 		super("Rds", "2014-08-15", "CreateDatabase", "rds");
 	}
 
-	private Long ownerId;
-
-	private String resourceOwnerAccount;
-
 	private Long resourceOwnerId;
-
-	private String dBInstanceId;
 
 	private String dBName;
 
-	private String characterSetName;
-
-	private String dBDescription;
+	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
+	private String dBInstanceId;
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
-	}
+	private String dBDescription;
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
+	private Long ownerId;
 
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-	}
+	private String characterSetName;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -70,16 +52,9 @@ public class CreateDatabaseRequest extends RpcAcsRequest<CreateDatabaseResponse>
 
 	public void setResourceOwnerId(Long resourceOwnerId) {
 		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", resourceOwnerId);
-	}
-
-	public String getDBInstanceId() {
-		return this.dBInstanceId;
-	}
-
-	public void setDBInstanceId(String dBInstanceId) {
-		this.dBInstanceId = dBInstanceId;
-		putQueryParameter("DBInstanceId", dBInstanceId);
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
 	}
 
 	public String getDBName() {
@@ -88,25 +63,20 @@ public class CreateDatabaseRequest extends RpcAcsRequest<CreateDatabaseResponse>
 
 	public void setDBName(String dBName) {
 		this.dBName = dBName;
-		putQueryParameter("DBName", dBName);
+		if(dBName != null){
+			putQueryParameter("DBName", dBName);
+		}
 	}
 
-	public String getCharacterSetName() {
-		return this.characterSetName;
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
 	}
 
-	public void setCharacterSetName(String characterSetName) {
-		this.characterSetName = characterSetName;
-		putQueryParameter("CharacterSetName", characterSetName);
-	}
-
-	public String getDBDescription() {
-		return this.dBDescription;
-	}
-
-	public void setDBDescription(String dBDescription) {
-		this.dBDescription = dBDescription;
-		putQueryParameter("DBDescription", dBDescription);
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
 	}
 
 	public String getOwnerAccount() {
@@ -115,7 +85,53 @@ public class CreateDatabaseRequest extends RpcAcsRequest<CreateDatabaseResponse>
 
 	public void setOwnerAccount(String ownerAccount) {
 		this.ownerAccount = ownerAccount;
-		putQueryParameter("OwnerAccount", ownerAccount);
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public String getDBInstanceId() {
+		return this.dBInstanceId;
+	}
+
+	public void setDBInstanceId(String dBInstanceId) {
+		this.dBInstanceId = dBInstanceId;
+		if(dBInstanceId != null){
+			putQueryParameter("DBInstanceId", dBInstanceId);
+		}
+	}
+
+	public String getDBDescription() {
+		return this.dBDescription;
+	}
+
+	public void setDBDescription(String dBDescription) {
+		this.dBDescription = dBDescription;
+		if(dBDescription != null){
+			putQueryParameter("DBDescription", dBDescription);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getCharacterSetName() {
+		return this.characterSetName;
+	}
+
+	public void setCharacterSetName(String characterSetName) {
+		this.characterSetName = characterSetName;
+		if(characterSetName != null){
+			putQueryParameter("CharacterSetName", characterSetName);
+		}
 	}
 
 	@Override

@@ -23,7 +23,6 @@ import java.util.List;
 
 import com.aliyuncs.rds.model.v20140815.DescribeFilesForSQLServerResponse;
 import com.aliyuncs.rds.model.v20140815.DescribeFilesForSQLServerResponse.SQLServerUploadFile;
-import com.aliyuncs.rds.model.v20140815.DescribeFilesForSQLServerResponse.SQLServerUploadFile.FileStatus;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -49,7 +48,7 @@ public class DescribeFilesForSQLServerResponseUnmarshaller {
 			sQLServerUploadFile.setIntranetport(context.integerValue("DescribeFilesForSQLServerResponse.Items["+ i +"].Intranetport"));
 			sQLServerUploadFile.setUserName(context.stringValue("DescribeFilesForSQLServerResponse.Items["+ i +"].UserName"));
 			sQLServerUploadFile.setPassword(context.stringValue("DescribeFilesForSQLServerResponse.Items["+ i +"].Password"));
-			sQLServerUploadFile.setFileStatus(FileStatus.getEnum(context.stringValue("DescribeFilesForSQLServerResponse.Items["+ i +"].FileStatus")));
+			sQLServerUploadFile.setFileStatus(context.stringValue("DescribeFilesForSQLServerResponse.Items["+ i +"].FileStatus"));
 			sQLServerUploadFile.setDescription(context.stringValue("DescribeFilesForSQLServerResponse.Items["+ i +"].Description"));
 			sQLServerUploadFile.setCreationTime(context.stringValue("DescribeFilesForSQLServerResponse.Items["+ i +"].CreationTime"));
 

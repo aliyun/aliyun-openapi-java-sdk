@@ -23,7 +23,6 @@ import java.util.List;
 
 import com.aliyuncs.rds.model.v20140815.DescribeModifyParameterLogResponse;
 import com.aliyuncs.rds.model.v20140815.DescribeModifyParameterLogResponse.ParameterChangeLog;
-import com.aliyuncs.rds.model.v20140815.DescribeModifyParameterLogResponse.ParameterChangeLog.Status;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -46,7 +45,7 @@ public class DescribeModifyParameterLogResponseUnmarshaller {
 			parameterChangeLog.setOldParameterValue(context.stringValue("DescribeModifyParameterLogResponse.Items["+ i +"].OldParameterValue"));
 			parameterChangeLog.setNewParameterValue(context.stringValue("DescribeModifyParameterLogResponse.Items["+ i +"].NewParameterValue"));
 			parameterChangeLog.setParameterName(context.stringValue("DescribeModifyParameterLogResponse.Items["+ i +"].ParameterName"));
-			parameterChangeLog.setStatus(Status.getEnum(context.stringValue("DescribeModifyParameterLogResponse.Items["+ i +"].Status")));
+			parameterChangeLog.setStatus(context.stringValue("DescribeModifyParameterLogResponse.Items["+ i +"].Status"));
 
 			items.add(parameterChangeLog);
 		}

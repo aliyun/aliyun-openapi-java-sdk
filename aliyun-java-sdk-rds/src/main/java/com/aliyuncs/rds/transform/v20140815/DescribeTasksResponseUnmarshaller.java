@@ -23,7 +23,6 @@ import java.util.List;
 
 import com.aliyuncs.rds.model.v20140815.DescribeTasksResponse;
 import com.aliyuncs.rds.model.v20140815.DescribeTasksResponse.TaskProgressInfo;
-import com.aliyuncs.rds.model.v20140815.DescribeTasksResponse.TaskProgressInfo.Status;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -47,7 +46,7 @@ public class DescribeTasksResponseUnmarshaller {
 			taskProgressInfo.setTaskId(context.stringValue("DescribeTasksResponse.Items["+ i +"].TaskId"));
 			taskProgressInfo.setProgress(context.stringValue("DescribeTasksResponse.Items["+ i +"].Progress"));
 			taskProgressInfo.setExpectedFinishTime(context.stringValue("DescribeTasksResponse.Items["+ i +"].ExpectedFinishTime"));
-			taskProgressInfo.setStatus(Status.getEnum(context.stringValue("DescribeTasksResponse.Items["+ i +"].Status")));
+			taskProgressInfo.setStatus(context.stringValue("DescribeTasksResponse.Items["+ i +"].Status"));
 			taskProgressInfo.setTaskErrorCode(context.stringValue("DescribeTasksResponse.Items["+ i +"].TaskErrorCode"));
 			taskProgressInfo.setTaskErrorMessage(context.stringValue("DescribeTasksResponse.Items["+ i +"].TaskErrorMessage"));
 

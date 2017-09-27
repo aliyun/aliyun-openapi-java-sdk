@@ -87,7 +87,7 @@ public class DescribeImportsForSQLServerResponse extends AcsResponse {
 
 		private String dBName;
 
-		private ImportStatus importStatus;
+		private String importStatus;
 
 		private String startTime;
 
@@ -115,11 +115,11 @@ public class DescribeImportsForSQLServerResponse extends AcsResponse {
 			this.dBName = dBName;
 		}
 
-		public ImportStatus getImportStatus() {
+		public String getImportStatus() {
 			return this.importStatus;
 		}
 
-		public void setImportStatus(ImportStatus importStatus) {
+		public void setImportStatus(String importStatus) {
 			this.importStatus = importStatus;
 		}
 
@@ -130,43 +130,6 @@ public class DescribeImportsForSQLServerResponse extends AcsResponse {
 		public void setStartTime(String startTime) {
 			this.startTime = startTime;
 		}
-
-public enum ImportStatus {
-
-			CANCELLING("Cancelling"),
-			FAILED("Failed"),
-			CANCELLED("Cancelled"),
-			SUCCESS("Success"),
-			IMPORTING("Importing"),
-			PENDING("Pending"),;
-	
-    private String stringValue;
-
-	ImportStatus(String stringValue) {
-        setStringValue(stringValue);
-    }
-
-    public String getStringValue() {
-        return stringValue;
-    }
-
-    public void setStringValue(String stringValue) {
-        this.stringValue = stringValue;
-    }
-    
-    public static ImportStatus getEnum(String stringValue){
-    	if(null == stringValue){
-    		return null;
-    	}
-    	
-    	for (ImportStatus importStatus : ImportStatus.values()) {
-			if(importStatus.getStringValue().equals(stringValue)){
-				return importStatus;
-			}
-		}
-    	return null;
-    }
-}
 	}
 
 	@Override

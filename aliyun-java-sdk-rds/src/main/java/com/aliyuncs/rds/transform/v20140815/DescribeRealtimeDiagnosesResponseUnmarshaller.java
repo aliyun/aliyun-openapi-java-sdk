@@ -23,7 +23,6 @@ import java.util.List;
 
 import com.aliyuncs.rds.model.v20140815.DescribeRealtimeDiagnosesResponse;
 import com.aliyuncs.rds.model.v20140815.DescribeRealtimeDiagnosesResponse.RealtimeDiagnoseTasks;
-import com.aliyuncs.rds.model.v20140815.DescribeRealtimeDiagnosesResponse.RealtimeDiagnoseTasks.Status;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -43,7 +42,7 @@ public class DescribeRealtimeDiagnosesResponseUnmarshaller {
 			realtimeDiagnoseTasks.setCreateTime(context.stringValue("DescribeRealtimeDiagnosesResponse.Tasks["+ i +"].CreateTime"));
 			realtimeDiagnoseTasks.setTaskId(context.stringValue("DescribeRealtimeDiagnosesResponse.Tasks["+ i +"].TaskId"));
 			realtimeDiagnoseTasks.setHealthScore(context.stringValue("DescribeRealtimeDiagnosesResponse.Tasks["+ i +"].HealthScore"));
-			realtimeDiagnoseTasks.setStatus(Status.getEnum(context.stringValue("DescribeRealtimeDiagnosesResponse.Tasks["+ i +"].Status")));
+			realtimeDiagnoseTasks.setStatus(context.stringValue("DescribeRealtimeDiagnosesResponse.Tasks["+ i +"].Status"));
 
 			tasks.add(realtimeDiagnoseTasks);
 		}

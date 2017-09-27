@@ -22,7 +22,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.rds.model.v20140815.DescribeDBInstanceNetworkResponse;
-import com.aliyuncs.rds.model.v20140815.DescribeDBInstanceNetworkResponse.Topology;
+import com.aliyuncs.rds.model.v20140815.DescribeDBInstanceNetworkResponse.TopologyItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -35,20 +35,20 @@ public class DescribeDBInstanceNetworkResponseUnmarshaller {
 		describeDBInstanceNetworkResponse.setStartTime(context.stringValue("DescribeDBInstanceNetworkResponse.StartTime"));
 		describeDBInstanceNetworkResponse.setEndTime(context.stringValue("DescribeDBInstanceNetworkResponse.EndTime"));
 
-		List<Topology> topologys = new ArrayList<Topology>();
+		List<TopologyItem> topology = new ArrayList<TopologyItem>();
 		for (int i = 0; i < context.lengthValue("DescribeDBInstanceNetworkResponse.Topology.Length"); i++) {
-			Topology topology = new Topology();
-			topology.setStartPoint(context.stringValue("DescribeDBInstanceNetworkResponse.Topology["+ i +"].StartPoint"));
-			topology.setEndPoint(context.stringValue("DescribeDBInstanceNetworkResponse.Topology["+ i +"].EndPoint"));
-			topology.setNetworkTrafficIn(context.stringValue("DescribeDBInstanceNetworkResponse.Topology["+ i +"].NetworkTrafficIn"));
-			topology.setNetworkTrafficOut(context.stringValue("DescribeDBInstanceNetworkResponse.Topology["+ i +"].NetworkTrafficOut"));
-			topology.setNetworkLatency(context.stringValue("DescribeDBInstanceNetworkResponse.Topology["+ i +"].NetworkLatency"));
-			topology.setBackendLatency(context.stringValue("DescribeDBInstanceNetworkResponse.Topology["+ i +"].BackendLatency"));
-			topology.setNetworkErrors(context.stringValue("DescribeDBInstanceNetworkResponse.Topology["+ i +"].NetworkErrors"));
+			TopologyItem topologyItem = new TopologyItem();
+			topologyItem.setStartPoint(context.stringValue("DescribeDBInstanceNetworkResponse.Topology["+ i +"].StartPoint"));
+			topologyItem.setEndPoint(context.stringValue("DescribeDBInstanceNetworkResponse.Topology["+ i +"].EndPoint"));
+			topologyItem.setNetworkTrafficIn(context.stringValue("DescribeDBInstanceNetworkResponse.Topology["+ i +"].NetworkTrafficIn"));
+			topologyItem.setNetworkTrafficOut(context.stringValue("DescribeDBInstanceNetworkResponse.Topology["+ i +"].NetworkTrafficOut"));
+			topologyItem.setNetworkLatency(context.stringValue("DescribeDBInstanceNetworkResponse.Topology["+ i +"].NetworkLatency"));
+			topologyItem.setBackendLatency(context.stringValue("DescribeDBInstanceNetworkResponse.Topology["+ i +"].BackendLatency"));
+			topologyItem.setNetworkErrors(context.stringValue("DescribeDBInstanceNetworkResponse.Topology["+ i +"].NetworkErrors"));
 
-			topologys.add(topology);
+			topology.add(topologyItem);
 		}
-		describeDBInstanceNetworkResponse.setTopology(topologys);
+		describeDBInstanceNetworkResponse.setTopology(topology);
 	 
 	 	return describeDBInstanceNetworkResponse;
 	}

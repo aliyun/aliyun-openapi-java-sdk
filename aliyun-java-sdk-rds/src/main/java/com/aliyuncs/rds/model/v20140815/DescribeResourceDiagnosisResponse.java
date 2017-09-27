@@ -113,4 +113,9 @@ public class DescribeResourceDiagnosisResponse extends AcsResponse {
 	public DescribeResourceDiagnosisResponse getInstance(UnmarshallerContext context) {
 		return	DescribeResourceDiagnosisResponseUnmarshaller.unmarshall(this, context);
 	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
+	}
 }

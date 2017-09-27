@@ -30,41 +30,25 @@ public class DescribeDBInstanceNetworkDetailRequest extends RpcAcsRequest<Descri
 		super("Rds", "2014-08-15", "DescribeDBInstanceNetworkDetail", "rds");
 	}
 
+	private String endPoint;
+
+	private String startPoint;
+
+	private String endTime;
+
 	private String dBInstanceId;
 
 	private String startTime;
 
-	private String endTime;
-
-	private String startPoint;
-
-	private String endPoint;
-
-	public String getDBInstanceId() {
-		return this.dBInstanceId;
+	public String getEndPoint() {
+		return this.endPoint;
 	}
 
-	public void setDBInstanceId(String dBInstanceId) {
-		this.dBInstanceId = dBInstanceId;
-		putQueryParameter("DBInstanceId", dBInstanceId);
-	}
-
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-		putQueryParameter("StartTime", startTime);
-	}
-
-	public String getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
-		putQueryParameter("EndTime", endTime);
+	public void setEndPoint(String endPoint) {
+		this.endPoint = endPoint;
+		if(endPoint != null){
+			putQueryParameter("EndPoint", endPoint);
+		}
 	}
 
 	public String getStartPoint() {
@@ -73,16 +57,42 @@ public class DescribeDBInstanceNetworkDetailRequest extends RpcAcsRequest<Descri
 
 	public void setStartPoint(String startPoint) {
 		this.startPoint = startPoint;
-		putQueryParameter("StartPoint", startPoint);
+		if(startPoint != null){
+			putQueryParameter("StartPoint", startPoint);
+		}
 	}
 
-	public String getEndPoint() {
-		return this.endPoint;
+	public String getEndTime() {
+		return this.endTime;
 	}
 
-	public void setEndPoint(String endPoint) {
-		this.endPoint = endPoint;
-		putQueryParameter("EndPoint", endPoint);
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime);
+		}
+	}
+
+	public String getDBInstanceId() {
+		return this.dBInstanceId;
+	}
+
+	public void setDBInstanceId(String dBInstanceId) {
+		this.dBInstanceId = dBInstanceId;
+		if(dBInstanceId != null){
+			putQueryParameter("DBInstanceId", dBInstanceId);
+		}
+	}
+
+	public String getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime);
+		}
 	}
 
 	@Override

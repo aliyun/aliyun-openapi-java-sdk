@@ -53,7 +53,7 @@ public class DescribeBackupTasksResponse extends AcsResponse {
 
 		private String backupProgressStatus;
 
-		private JobMode jobMode;
+		private String jobMode;
 
 		private String process;
 
@@ -69,11 +69,11 @@ public class DescribeBackupTasksResponse extends AcsResponse {
 			this.backupProgressStatus = backupProgressStatus;
 		}
 
-		public JobMode getJobMode() {
+		public String getJobMode() {
 			return this.jobMode;
 		}
 
-		public void setJobMode(JobMode jobMode) {
+		public void setJobMode(String jobMode) {
 			this.jobMode = jobMode;
 		}
 
@@ -100,39 +100,6 @@ public class DescribeBackupTasksResponse extends AcsResponse {
 		public void setBackupjobId(String backupjobId) {
 			this.backupjobId = backupjobId;
 		}
-
-public enum JobMode {
-
-			MANUAL("Manual"),
-			AUTOMATED("Automated"),;
-	
-    private String stringValue;
-
-	JobMode(String stringValue) {
-        setStringValue(stringValue);
-    }
-
-    public String getStringValue() {
-        return stringValue;
-    }
-
-    public void setStringValue(String stringValue) {
-        this.stringValue = stringValue;
-    }
-    
-    public static JobMode getEnum(String stringValue){
-    	if(null == stringValue){
-    		return null;
-    	}
-    	
-    	for (JobMode jobMode : JobMode.values()) {
-			if(jobMode.getStringValue().equals(stringValue)){
-				return jobMode;
-			}
-		}
-    	return null;
-    }
-}
 	}
 
 	@Override

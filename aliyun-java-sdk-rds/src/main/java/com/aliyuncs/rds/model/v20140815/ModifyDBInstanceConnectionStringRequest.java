@@ -30,39 +30,21 @@ public class ModifyDBInstanceConnectionStringRequest extends RpcAcsRequest<Modif
 		super("Rds", "2014-08-15", "ModifyDBInstanceConnectionString", "rds");
 	}
 
-	private Long ownerId;
-
-	private String resourceOwnerAccount;
-
 	private Long resourceOwnerId;
 
-	private String dBInstanceId;
-
-	private String currentConnectionString;
-
 	private String connectionStringPrefix;
+
+	private String resourceOwnerAccount;
 
 	private String port;
 
 	private String ownerAccount;
 
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
+	private String dBInstanceId;
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
-	}
+	private Long ownerId;
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-	}
+	private String currentConnectionString;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -70,25 +52,9 @@ public class ModifyDBInstanceConnectionStringRequest extends RpcAcsRequest<Modif
 
 	public void setResourceOwnerId(Long resourceOwnerId) {
 		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", resourceOwnerId);
-	}
-
-	public String getDBInstanceId() {
-		return this.dBInstanceId;
-	}
-
-	public void setDBInstanceId(String dBInstanceId) {
-		this.dBInstanceId = dBInstanceId;
-		putQueryParameter("DBInstanceId", dBInstanceId);
-	}
-
-	public String getCurrentConnectionString() {
-		return this.currentConnectionString;
-	}
-
-	public void setCurrentConnectionString(String currentConnectionString) {
-		this.currentConnectionString = currentConnectionString;
-		putQueryParameter("CurrentConnectionString", currentConnectionString);
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
 	}
 
 	public String getConnectionStringPrefix() {
@@ -97,7 +63,20 @@ public class ModifyDBInstanceConnectionStringRequest extends RpcAcsRequest<Modif
 
 	public void setConnectionStringPrefix(String connectionStringPrefix) {
 		this.connectionStringPrefix = connectionStringPrefix;
-		putQueryParameter("ConnectionStringPrefix", connectionStringPrefix);
+		if(connectionStringPrefix != null){
+			putQueryParameter("ConnectionStringPrefix", connectionStringPrefix);
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
 	}
 
 	public String getPort() {
@@ -106,7 +85,9 @@ public class ModifyDBInstanceConnectionStringRequest extends RpcAcsRequest<Modif
 
 	public void setPort(String port) {
 		this.port = port;
-		putQueryParameter("Port", port);
+		if(port != null){
+			putQueryParameter("Port", port);
+		}
 	}
 
 	public String getOwnerAccount() {
@@ -115,7 +96,42 @@ public class ModifyDBInstanceConnectionStringRequest extends RpcAcsRequest<Modif
 
 	public void setOwnerAccount(String ownerAccount) {
 		this.ownerAccount = ownerAccount;
-		putQueryParameter("OwnerAccount", ownerAccount);
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public String getDBInstanceId() {
+		return this.dBInstanceId;
+	}
+
+	public void setDBInstanceId(String dBInstanceId) {
+		this.dBInstanceId = dBInstanceId;
+		if(dBInstanceId != null){
+			putQueryParameter("DBInstanceId", dBInstanceId);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getCurrentConnectionString() {
+		return this.currentConnectionString;
+	}
+
+	public void setCurrentConnectionString(String currentConnectionString) {
+		this.currentConnectionString = currentConnectionString;
+		if(currentConnectionString != null){
+			putQueryParameter("CurrentConnectionString", currentConnectionString);
+		}
 	}
 
 	@Override

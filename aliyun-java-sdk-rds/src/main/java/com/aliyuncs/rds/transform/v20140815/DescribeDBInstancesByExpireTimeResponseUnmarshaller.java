@@ -41,6 +41,8 @@ public class DescribeDBInstancesByExpireTimeResponseUnmarshaller {
 			dBInstanceExpireTime.setDBInstanceId(context.stringValue("DescribeDBInstancesByExpireTimeResponse.Items["+ i +"].DBInstanceId"));
 			dBInstanceExpireTime.setDBInstanceDescription(context.stringValue("DescribeDBInstancesByExpireTimeResponse.Items["+ i +"].DBInstanceDescription"));
 			dBInstanceExpireTime.setExpireTime(context.stringValue("DescribeDBInstancesByExpireTimeResponse.Items["+ i +"].ExpireTime"));
+			dBInstanceExpireTime.setDBInstanceStatus(context.stringValue("DescribeDBInstancesByExpireTimeResponse.Items["+ i +"].DBInstanceStatus"));
+			dBInstanceExpireTime.setLockMode(context.stringValue("DescribeDBInstancesByExpireTimeResponse.Items["+ i +"].LockMode"));
 
 			items.add(dBInstanceExpireTime);
 		}

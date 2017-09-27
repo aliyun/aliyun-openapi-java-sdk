@@ -23,8 +23,6 @@ import java.util.List;
 
 import com.aliyuncs.rds.model.v20140815.DescribeAccountsResponse;
 import com.aliyuncs.rds.model.v20140815.DescribeAccountsResponse.DBInstanceAccount;
-import com.aliyuncs.rds.model.v20140815.DescribeAccountsResponse.DBInstanceAccount.AccountStatus;
-import com.aliyuncs.rds.model.v20140815.DescribeAccountsResponse.DBInstanceAccount.AccountType;
 import com.aliyuncs.rds.model.v20140815.DescribeAccountsResponse.DBInstanceAccount.DatabasePrivilege;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -40,8 +38,8 @@ public class DescribeAccountsResponseUnmarshaller {
 			DBInstanceAccount dBInstanceAccount = new DBInstanceAccount();
 			dBInstanceAccount.setDBInstanceId(context.stringValue("DescribeAccountsResponse.Accounts["+ i +"].DBInstanceId"));
 			dBInstanceAccount.setAccountName(context.stringValue("DescribeAccountsResponse.Accounts["+ i +"].AccountName"));
-			dBInstanceAccount.setAccountStatus(AccountStatus.getEnum(context.stringValue("DescribeAccountsResponse.Accounts["+ i +"].AccountStatus")));
-			dBInstanceAccount.setAccountType(AccountType.getEnum(context.stringValue("DescribeAccountsResponse.Accounts["+ i +"].AccountType")));
+			dBInstanceAccount.setAccountStatus(context.stringValue("DescribeAccountsResponse.Accounts["+ i +"].AccountStatus"));
+			dBInstanceAccount.setAccountType(context.stringValue("DescribeAccountsResponse.Accounts["+ i +"].AccountType"));
 			dBInstanceAccount.setAccountDescription(context.stringValue("DescribeAccountsResponse.Accounts["+ i +"].AccountDescription"));
 
 			List<DatabasePrivilege> databasePrivileges = new ArrayList<DatabasePrivilege>();

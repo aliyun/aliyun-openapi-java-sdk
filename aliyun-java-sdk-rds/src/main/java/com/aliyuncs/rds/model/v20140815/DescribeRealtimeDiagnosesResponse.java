@@ -97,7 +97,7 @@ public class DescribeRealtimeDiagnosesResponse extends AcsResponse {
 
 		private String healthScore;
 
-		private Status status;
+		private String status;
 
 		public String getCreateTime() {
 			return this.createTime;
@@ -123,47 +123,13 @@ public class DescribeRealtimeDiagnosesResponse extends AcsResponse {
 			this.healthScore = healthScore;
 		}
 
-		public Status getStatus() {
+		public String getStatus() {
 			return this.status;
 		}
 
-		public void setStatus(Status status) {
+		public void setStatus(String status) {
 			this.status = status;
 		}
-
-public enum Status {
-
-			RUNNING("Running"),
-			NO_START("NoStart"),
-			SUCCESS("Success"),;
-	
-    private String stringValue;
-
-	Status(String stringValue) {
-        setStringValue(stringValue);
-    }
-
-    public String getStringValue() {
-        return stringValue;
-    }
-
-    public void setStringValue(String stringValue) {
-        this.stringValue = stringValue;
-    }
-    
-    public static Status getEnum(String stringValue){
-    	if(null == stringValue){
-    		return null;
-    	}
-    	
-    	for (Status status : Status.values()) {
-			if(status.getStringValue().equals(stringValue)){
-				return status;
-			}
-		}
-    	return null;
-    }
-}
 	}
 
 	@Override

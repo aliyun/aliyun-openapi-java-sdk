@@ -83,7 +83,7 @@ public class DescribeSQLLogFilesResponse extends AcsResponse {
 
 		private String fileID;
 
-		private LogStatus logStatus;
+		private String logStatus;
 
 		private String logDownloadURL;
 
@@ -101,11 +101,11 @@ public class DescribeSQLLogFilesResponse extends AcsResponse {
 			this.fileID = fileID;
 		}
 
-		public LogStatus getLogStatus() {
+		public String getLogStatus() {
 			return this.logStatus;
 		}
 
-		public void setLogStatus(LogStatus logStatus) {
+		public void setLogStatus(String logStatus) {
 			this.logStatus = logStatus;
 		}
 
@@ -140,41 +140,6 @@ public class DescribeSQLLogFilesResponse extends AcsResponse {
 		public void setLogEndTime(String logEndTime) {
 			this.logEndTime = logEndTime;
 		}
-
-public enum LogStatus {
-
-			GENERATING("Generating"),
-			NO_START("NoStart"),
-			FAILED("Failed"),
-			SUCCESS("Success"),;
-	
-    private String stringValue;
-
-	LogStatus(String stringValue) {
-        setStringValue(stringValue);
-    }
-
-    public String getStringValue() {
-        return stringValue;
-    }
-
-    public void setStringValue(String stringValue) {
-        this.stringValue = stringValue;
-    }
-    
-    public static LogStatus getEnum(String stringValue){
-    	if(null == stringValue){
-    		return null;
-    	}
-    	
-    	for (LogStatus logStatus : LogStatus.values()) {
-			if(logStatus.getStringValue().equals(stringValue)){
-				return logStatus;
-			}
-		}
-    	return null;
-    }
-}
 	}
 
 	@Override

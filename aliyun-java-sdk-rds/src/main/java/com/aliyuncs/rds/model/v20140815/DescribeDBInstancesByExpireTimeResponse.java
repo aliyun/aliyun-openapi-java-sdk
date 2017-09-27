@@ -87,6 +87,10 @@ public class DescribeDBInstancesByExpireTimeResponse extends AcsResponse {
 
 		private String expireTime;
 
+		private String dBInstanceStatus;
+
+		private String lockMode;
+
 		public String getDBInstanceId() {
 			return this.dBInstanceId;
 		}
@@ -109,6 +113,22 @@ public class DescribeDBInstancesByExpireTimeResponse extends AcsResponse {
 
 		public void setExpireTime(String expireTime) {
 			this.expireTime = expireTime;
+		}
+
+		public String getDBInstanceStatus() {
+			return this.dBInstanceStatus;
+		}
+
+		public void setDBInstanceStatus(String dBInstanceStatus) {
+			this.dBInstanceStatus = dBInstanceStatus;
+		}
+
+		public String getLockMode() {
+			return this.lockMode;
+		}
+
+		public void setLockMode(String lockMode) {
+			this.lockMode = lockMode;
 		}
 	}
 

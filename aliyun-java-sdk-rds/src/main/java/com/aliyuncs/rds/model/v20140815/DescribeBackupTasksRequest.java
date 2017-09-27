@@ -30,42 +30,35 @@ public class DescribeBackupTasksRequest extends RpcAcsRequest<DescribeBackupTask
 		super("Rds", "2014-08-15", "DescribeBackupTasks", "rds");
 	}
 
-	private Long ownerId;
-
-	private String resourceOwnerAccount;
+	private String backupJobId;
 
 	private Long resourceOwnerId;
 
-	private String clientToken;
-
 	private String flag;
+
+	private String resourceOwnerAccount;
+
+	private String clientToken;
 
 	private String ownerAccount;
 
 	private String dBInstanceId;
 
-	private String backupJobId;
-
 	private String backupMode;
+
+	private Long ownerId;
 
 	private String backupJobStatus;
 
-	public Long getOwnerId() {
-		return this.ownerId;
+	public String getBackupJobId() {
+		return this.backupJobId;
 	}
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	public void setBackupJobId(String backupJobId) {
+		this.backupJobId = backupJobId;
+		if(backupJobId != null){
+			putQueryParameter("BackupJobId", backupJobId);
+		}
 	}
 
 	public Long getResourceOwnerId() {
@@ -74,16 +67,9 @@ public class DescribeBackupTasksRequest extends RpcAcsRequest<DescribeBackupTask
 
 	public void setResourceOwnerId(Long resourceOwnerId) {
 		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", resourceOwnerId);
-	}
-
-	public String getClientToken() {
-		return this.clientToken;
-	}
-
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		putQueryParameter("ClientToken", clientToken);
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
 	}
 
 	public String getFlag() {
@@ -92,7 +78,31 @@ public class DescribeBackupTasksRequest extends RpcAcsRequest<DescribeBackupTask
 
 	public void setFlag(String flag) {
 		this.flag = flag;
-		putQueryParameter("Flag", flag);
+		if(flag != null){
+			putQueryParameter("Flag", flag);
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
+		}
 	}
 
 	public String getOwnerAccount() {
@@ -101,7 +111,9 @@ public class DescribeBackupTasksRequest extends RpcAcsRequest<DescribeBackupTask
 
 	public void setOwnerAccount(String ownerAccount) {
 		this.ownerAccount = ownerAccount;
-		putQueryParameter("OwnerAccount", ownerAccount);
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
 	}
 
 	public String getDBInstanceId() {
@@ -110,16 +122,9 @@ public class DescribeBackupTasksRequest extends RpcAcsRequest<DescribeBackupTask
 
 	public void setDBInstanceId(String dBInstanceId) {
 		this.dBInstanceId = dBInstanceId;
-		putQueryParameter("DBInstanceId", dBInstanceId);
-	}
-
-	public String getBackupJobId() {
-		return this.backupJobId;
-	}
-
-	public void setBackupJobId(String backupJobId) {
-		this.backupJobId = backupJobId;
-		putQueryParameter("BackupJobId", backupJobId);
+		if(dBInstanceId != null){
+			putQueryParameter("DBInstanceId", dBInstanceId);
+		}
 	}
 
 	public String getBackupMode() {
@@ -128,7 +133,20 @@ public class DescribeBackupTasksRequest extends RpcAcsRequest<DescribeBackupTask
 
 	public void setBackupMode(String backupMode) {
 		this.backupMode = backupMode;
-		putQueryParameter("BackupMode", backupMode);
+		if(backupMode != null){
+			putQueryParameter("BackupMode", backupMode);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
 	}
 
 	public String getBackupJobStatus() {
@@ -137,7 +155,9 @@ public class DescribeBackupTasksRequest extends RpcAcsRequest<DescribeBackupTask
 
 	public void setBackupJobStatus(String backupJobStatus) {
 		this.backupJobStatus = backupJobStatus;
-		putQueryParameter("BackupJobStatus", backupJobStatus);
+		if(backupJobStatus != null){
+			putQueryParameter("BackupJobStatus", backupJobStatus);
+		}
 	}
 
 	@Override

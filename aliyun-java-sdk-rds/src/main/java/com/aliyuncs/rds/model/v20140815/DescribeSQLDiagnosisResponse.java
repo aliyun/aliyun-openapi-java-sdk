@@ -53,4 +53,9 @@ public class DescribeSQLDiagnosisResponse extends AcsResponse {
 	public DescribeSQLDiagnosisResponse getInstance(UnmarshallerContext context) {
 		return	DescribeSQLDiagnosisResponseUnmarshaller.unmarshall(this, context);
 	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
+	}
 }

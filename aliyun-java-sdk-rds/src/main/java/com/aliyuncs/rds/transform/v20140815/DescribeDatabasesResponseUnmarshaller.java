@@ -24,7 +24,6 @@ import java.util.List;
 import com.aliyuncs.rds.model.v20140815.DescribeDatabasesResponse;
 import com.aliyuncs.rds.model.v20140815.DescribeDatabasesResponse.Database;
 import com.aliyuncs.rds.model.v20140815.DescribeDatabasesResponse.Database.AccountPrivilegeInfo;
-import com.aliyuncs.rds.model.v20140815.DescribeDatabasesResponse.Database.DBStatus;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -40,7 +39,7 @@ public class DescribeDatabasesResponseUnmarshaller {
 			database.setDBName(context.stringValue("DescribeDatabasesResponse.Databases["+ i +"].DBName"));
 			database.setDBInstanceId(context.stringValue("DescribeDatabasesResponse.Databases["+ i +"].DBInstanceId"));
 			database.setEngine(context.stringValue("DescribeDatabasesResponse.Databases["+ i +"].Engine"));
-			database.setDBStatus(DBStatus.getEnum(context.stringValue("DescribeDatabasesResponse.Databases["+ i +"].DBStatus")));
+			database.setDBStatus(context.stringValue("DescribeDatabasesResponse.Databases["+ i +"].DBStatus"));
 			database.setCharacterSetName(context.stringValue("DescribeDatabasesResponse.Databases["+ i +"].CharacterSetName"));
 			database.setDBDescription(context.stringValue("DescribeDatabasesResponse.Databases["+ i +"].DBDescription"));
 

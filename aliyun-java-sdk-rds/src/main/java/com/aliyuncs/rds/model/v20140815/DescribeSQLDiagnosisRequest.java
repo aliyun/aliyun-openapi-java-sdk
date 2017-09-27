@@ -30,18 +30,9 @@ public class DescribeSQLDiagnosisRequest extends RpcAcsRequest<DescribeSQLDiagno
 		super("Rds", "2014-08-15", "DescribeSQLDiagnosis", "rds");
 	}
 
-	private String dBInstanceId;
-
 	private String sQLDiagId;
 
-	public String getDBInstanceId() {
-		return this.dBInstanceId;
-	}
-
-	public void setDBInstanceId(String dBInstanceId) {
-		this.dBInstanceId = dBInstanceId;
-		putQueryParameter("DBInstanceId", dBInstanceId);
-	}
+	private String dBInstanceId;
 
 	public String getSQLDiagId() {
 		return this.sQLDiagId;
@@ -49,7 +40,20 @@ public class DescribeSQLDiagnosisRequest extends RpcAcsRequest<DescribeSQLDiagno
 
 	public void setSQLDiagId(String sQLDiagId) {
 		this.sQLDiagId = sQLDiagId;
-		putQueryParameter("SQLDiagId", sQLDiagId);
+		if(sQLDiagId != null){
+			putQueryParameter("SQLDiagId", sQLDiagId);
+		}
+	}
+
+	public String getDBInstanceId() {
+		return this.dBInstanceId;
+	}
+
+	public void setDBInstanceId(String dBInstanceId) {
+		this.dBInstanceId = dBInstanceId;
+		if(dBInstanceId != null){
+			putQueryParameter("DBInstanceId", dBInstanceId);
+		}
 	}
 
 	@Override
