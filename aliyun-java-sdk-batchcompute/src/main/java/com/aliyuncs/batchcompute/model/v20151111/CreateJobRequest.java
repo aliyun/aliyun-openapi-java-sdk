@@ -36,6 +36,17 @@ public class CreateJobRequest extends BatchComputeRequest<CreateJobResponse> {
 		setMethod(MethodType.POST);
 	}
 
+	private String IdempotentToken;
+
+	public String getIdempotentToken() {
+		return IdempotentToken;
+	}
+
+	public void setIdempotentToken(String idempotentToken) {
+		IdempotentToken = idempotentToken;
+		this.putQueryParameter("IdempotentToken",idempotentToken);
+	}
+
 
 	private JobDescription jobDescription;
 

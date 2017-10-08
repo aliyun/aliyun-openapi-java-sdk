@@ -168,6 +168,14 @@ public class BatchComputeClient implements BatchCompute {
     }
 
     @Override
+    public CreateJobResponse createJob(JobDescription jobDescription, String idempotentToken) throws ClientException {
+        CreateJobRequest request = new CreateJobRequest();
+        request.setJobDescription(jobDescription);
+        request.setIdempotentToken(idempotentToken);
+        return createJob(request);
+    }
+
+    @Override
     public UpdateClusterResponse updateCluster(UpdateClusterRequest request) throws ClientException {
         return getAcsResponse(request);
     }
@@ -371,6 +379,15 @@ public class BatchComputeClient implements BatchCompute {
         return createCluster(req);
     }
 
+
+    @Override
+    public CreateClusterResponse createCluster(ClusterDescription clusterDescription, String idempotentToken) throws ClientException {
+        CreateClusterRequest req = new CreateClusterRequest();
+        req.setClusterDescription(clusterDescription);
+        req.setIdempotentToken(idempotentToken);
+        return createCluster(req);
+    }
+
     @Override
     public ListClustersResponse listClusters(ListClustersRequest request) throws ClientException {
         return getAcsResponse(request);
@@ -514,6 +531,14 @@ public class BatchComputeClient implements BatchCompute {
     public CreateImageResponse createImage(CreateImageRequest req) throws ClientException {
         return getAcsResponse(req);
     }
+    @Override
+    public CreateImageResponse createImage(ImageDescription imageDescription,String idempotentToken) throws ClientException {
+        CreateImageRequest req = new CreateImageRequest();
+        req.setImageDescription(imageDescription);
+        req.setIdempotentToken(idempotentToken);
+        return createImage(req);
+    }
+
 
     @Override
     public DeleteImageResponse deleteImage(String imageId) throws ClientException {

@@ -28,6 +28,7 @@ import junit.framework.TestCase;
 import org.junit.Test;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 
@@ -127,7 +128,7 @@ public class JobTest extends TestCase {
         // 2. create job
         JobDescription jobDesc = getJobDesc();
 
-        CreateJobResponse createJobResponse = client.createJob(jobDesc);
+        CreateJobResponse createJobResponse = client.createJob(jobDesc, "sss-"+new Date().getTime());
         gJobId = createJobResponse.getJobId();
         assertTrue(201 == createJobResponse.getStatusCode());
 

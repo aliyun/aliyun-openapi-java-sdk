@@ -37,6 +37,8 @@ public interface BatchCompute {
 
     CreateJobResponse createJob(JobDescription jobDescription) throws ClientException;
 
+    CreateJobResponse createJob(JobDescription jobDescription, String idempotentToken) throws ClientException;
+
     UpdateClusterResponse updateCluster(UpdateClusterRequest req) throws ClientException;
 
     ChangeJobPriorityResponse changeJobPriority(ChangeJobPriorityRequest req) throws ClientException;
@@ -104,6 +106,7 @@ public interface BatchCompute {
     CreateClusterResponse createCluster(CreateClusterRequest request) throws ClientException;
 
     CreateClusterResponse createCluster(ClusterDescription clusterDescription) throws ClientException;
+    CreateClusterResponse createCluster(ClusterDescription clusterDescription, String idempotentToken) throws ClientException;
 
 
     ListClustersResponse listClusters(ListClustersRequest request) throws ClientException;
@@ -147,6 +150,7 @@ public interface BatchCompute {
 
     CreateImageResponse createImage(ImageDescription imageDescription) throws ClientException;
     CreateImageResponse createImage(CreateImageRequest req) throws ClientException;
+    CreateImageResponse createImage(ImageDescription imageDescription, String idempotentToken) throws ClientException;
 
     DeleteImageResponse deleteImage(String imageId) throws ClientException;
     DeleteImageResponse deleteImage(DeleteImageRequest req) throws ClientException;

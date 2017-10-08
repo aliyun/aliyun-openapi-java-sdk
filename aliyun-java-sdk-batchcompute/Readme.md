@@ -13,14 +13,14 @@ Batchcompute SDK For Java
 <dependency>
     <groupId>com.aliyun</groupId>
     <artifactId>aliyun-java-sdk-core</artifactId>
-    <version>3.2.1</version>
+    <version>3.2.3</version>
 </dependency>
 
 
 <dependency>
     <groupId>com.aliyun</groupId>
     <artifactId>aliyun-java-sdk-batchcompute</artifactId>
-    <version>4.6.0</version>
+    <version>4.7.0</version>
 </dependency>
 ```
 
@@ -99,6 +99,11 @@ try {
 
 
 ### 5. release note
+
+4.7.0
+```
+1. 增加幂等token
+```
 
 4.6.0
 ```
