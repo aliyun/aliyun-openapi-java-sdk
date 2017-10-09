@@ -20,7 +20,10 @@ package com.aliyuncs.ram.transform.v20150501;
 
 import com.aliyuncs.ram.model.v20150501.GetSecurityPreferenceResponse;
 import com.aliyuncs.ram.model.v20150501.GetSecurityPreferenceResponse.SecurityPreference;
+import com.aliyuncs.ram.model.v20150501.GetSecurityPreferenceResponse.SecurityPreference.AccessKeyPreference;
 import com.aliyuncs.ram.model.v20150501.GetSecurityPreferenceResponse.SecurityPreference.LoginProfilePreference;
+import com.aliyuncs.ram.model.v20150501.GetSecurityPreferenceResponse.SecurityPreference.MFAPreference;
+import com.aliyuncs.ram.model.v20150501.GetSecurityPreferenceResponse.SecurityPreference.PublicKeyPreference;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -34,7 +37,20 @@ public class GetSecurityPreferenceResponseUnmarshaller {
 
 		LoginProfilePreference loginProfilePreference = new LoginProfilePreference();
 		loginProfilePreference.setEnableSaveMFATicket(context.booleanValue("GetSecurityPreferenceResponse.SecurityPreference.LoginProfilePreference.EnableSaveMFATicket"));
+		loginProfilePreference.setAllowUserToChangePassword(context.booleanValue("GetSecurityPreferenceResponse.SecurityPreference.LoginProfilePreference.AllowUserToChangePassword"));
 		securityPreference.setLoginProfilePreference(loginProfilePreference);
+
+		AccessKeyPreference accessKeyPreference = new AccessKeyPreference();
+		accessKeyPreference.setAllowUserToManageAccessKeys(context.booleanValue("GetSecurityPreferenceResponse.SecurityPreference.AccessKeyPreference.AllowUserToManageAccessKeys"));
+		securityPreference.setAccessKeyPreference(accessKeyPreference);
+
+		PublicKeyPreference publicKeyPreference = new PublicKeyPreference();
+		publicKeyPreference.setAllowUserToManagePublicKeys(context.booleanValue("GetSecurityPreferenceResponse.SecurityPreference.PublicKeyPreference.AllowUserToManagePublicKeys"));
+		securityPreference.setPublicKeyPreference(publicKeyPreference);
+
+		MFAPreference mFAPreference = new MFAPreference();
+		mFAPreference.setAllowUserToManageMFADevices(context.booleanValue("GetSecurityPreferenceResponse.SecurityPreference.MFAPreference.AllowUserToManageMFADevices"));
+		securityPreference.setMFAPreference(mFAPreference);
 		getSecurityPreferenceResponse.setSecurityPreference(securityPreference);
 	 
 	 	return getSecurityPreferenceResponse;

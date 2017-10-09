@@ -40,7 +40,9 @@ public class DeleteGroupRequest extends RpcAcsRequest<DeleteGroupResponse> {
 
 	public void setGroupName(String groupName) {
 		this.groupName = groupName;
-		putQueryParameter("GroupName", groupName);
+		if(groupName != null){
+			putQueryParameter("GroupName", groupName);
+		}
 	}
 
 	@Override

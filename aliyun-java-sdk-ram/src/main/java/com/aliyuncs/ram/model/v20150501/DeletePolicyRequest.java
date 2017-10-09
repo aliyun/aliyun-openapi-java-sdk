@@ -40,7 +40,9 @@ public class DeletePolicyRequest extends RpcAcsRequest<DeletePolicyResponse> {
 
 	public void setPolicyName(String policyName) {
 		this.policyName = policyName;
-		putQueryParameter("PolicyName", policyName);
+		if(policyName != null){
+			putQueryParameter("PolicyName", policyName);
+		}
 	}
 
 	@Override

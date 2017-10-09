@@ -44,7 +44,9 @@ public class ListPoliciesRequest extends RpcAcsRequest<ListPoliciesResponse> {
 
 	public void setPolicyType(String policyType) {
 		this.policyType = policyType;
-		putQueryParameter("PolicyType", policyType);
+		if(policyType != null){
+			putQueryParameter("PolicyType", policyType);
+		}
 	}
 
 	public String getMarker() {
@@ -53,7 +55,9 @@ public class ListPoliciesRequest extends RpcAcsRequest<ListPoliciesResponse> {
 
 	public void setMarker(String marker) {
 		this.marker = marker;
-		putQueryParameter("Marker", marker);
+		if(marker != null){
+			putQueryParameter("Marker", marker);
+		}
 	}
 
 	public Integer getMaxItems() {
@@ -62,7 +66,9 @@ public class ListPoliciesRequest extends RpcAcsRequest<ListPoliciesResponse> {
 
 	public void setMaxItems(Integer maxItems) {
 		this.maxItems = maxItems;
-		putQueryParameter("MaxItems", String.valueOf(maxItems));
+		if(maxItems != null){
+			putQueryParameter("MaxItems", maxItems.toString());
+		}
 	}
 
 	@Override

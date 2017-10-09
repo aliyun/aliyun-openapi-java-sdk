@@ -40,7 +40,9 @@ public class GetRoleRequest extends RpcAcsRequest<GetRoleResponse> {
 
 	public void setRoleName(String roleName) {
 		this.roleName = roleName;
-		putQueryParameter("RoleName", roleName);
+		if(roleName != null){
+			putQueryParameter("RoleName", roleName);
+		}
 	}
 
 	@Override

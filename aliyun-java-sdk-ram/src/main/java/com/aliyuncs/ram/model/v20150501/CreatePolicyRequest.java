@@ -32,20 +32,11 @@ public class CreatePolicyRequest extends RpcAcsRequest<CreatePolicyResponse> {
 		setProtocol(ProtocolType.HTTPS);
 	}
 
-	private String policyName;
-
 	private String description;
 
+	private String policyName;
+
 	private String policyDocument;
-
-	public String getPolicyName() {
-		return this.policyName;
-	}
-
-	public void setPolicyName(String policyName) {
-		this.policyName = policyName;
-		putQueryParameter("PolicyName", policyName);
-	}
 
 	public String getDescription() {
 		return this.description;
@@ -53,7 +44,20 @@ public class CreatePolicyRequest extends RpcAcsRequest<CreatePolicyResponse> {
 
 	public void setDescription(String description) {
 		this.description = description;
-		putQueryParameter("Description", description);
+		if(description != null){
+			putQueryParameter("Description", description);
+		}
+	}
+
+	public String getPolicyName() {
+		return this.policyName;
+	}
+
+	public void setPolicyName(String policyName) {
+		this.policyName = policyName;
+		if(policyName != null){
+			putQueryParameter("PolicyName", policyName);
+		}
 	}
 
 	public String getPolicyDocument() {
@@ -62,7 +66,9 @@ public class CreatePolicyRequest extends RpcAcsRequest<CreatePolicyResponse> {
 
 	public void setPolicyDocument(String policyDocument) {
 		this.policyDocument = policyDocument;
-		putQueryParameter("PolicyDocument", policyDocument);
+		if(policyDocument != null){
+			putQueryParameter("PolicyDocument", policyDocument);
+		}
 	}
 
 	@Override

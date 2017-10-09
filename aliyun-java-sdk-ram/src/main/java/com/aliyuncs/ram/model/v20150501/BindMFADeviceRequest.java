@@ -34,11 +34,11 @@ public class BindMFADeviceRequest extends RpcAcsRequest<BindMFADeviceResponse> {
 
 	private String serialNumber;
 
-	private String userName;
+	private String authenticationCode2;
 
 	private String authenticationCode1;
 
-	private String authenticationCode2;
+	private String userName;
 
 	public String getSerialNumber() {
 		return this.serialNumber;
@@ -46,25 +46,9 @@ public class BindMFADeviceRequest extends RpcAcsRequest<BindMFADeviceResponse> {
 
 	public void setSerialNumber(String serialNumber) {
 		this.serialNumber = serialNumber;
-		putQueryParameter("SerialNumber", serialNumber);
-	}
-
-	public String getUserName() {
-		return this.userName;
-	}
-
-	public void setUserName(String userName) {
-		this.userName = userName;
-		putQueryParameter("UserName", userName);
-	}
-
-	public String getAuthenticationCode1() {
-		return this.authenticationCode1;
-	}
-
-	public void setAuthenticationCode1(String authenticationCode1) {
-		this.authenticationCode1 = authenticationCode1;
-		putQueryParameter("AuthenticationCode1", authenticationCode1);
+		if(serialNumber != null){
+			putQueryParameter("SerialNumber", serialNumber);
+		}
 	}
 
 	public String getAuthenticationCode2() {
@@ -73,7 +57,31 @@ public class BindMFADeviceRequest extends RpcAcsRequest<BindMFADeviceResponse> {
 
 	public void setAuthenticationCode2(String authenticationCode2) {
 		this.authenticationCode2 = authenticationCode2;
-		putQueryParameter("AuthenticationCode2", authenticationCode2);
+		if(authenticationCode2 != null){
+			putQueryParameter("AuthenticationCode2", authenticationCode2);
+		}
+	}
+
+	public String getAuthenticationCode1() {
+		return this.authenticationCode1;
+	}
+
+	public void setAuthenticationCode1(String authenticationCode1) {
+		this.authenticationCode1 = authenticationCode1;
+		if(authenticationCode1 != null){
+			putQueryParameter("AuthenticationCode1", authenticationCode1);
+		}
+	}
+
+	public String getUserName() {
+		return this.userName;
+	}
+
+	public void setUserName(String userName) {
+		this.userName = userName;
+		if(userName != null){
+			putQueryParameter("UserName", userName);
+		}
 	}
 
 	@Override

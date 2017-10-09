@@ -30,12 +30,35 @@ public class UnbindMFADeviceResponse extends AcsResponse {
 
 	private String requestId;
 
+	private MFADevice mFADevice;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public MFADevice getMFADevice() {
+		return this.mFADevice;
+	}
+
+	public void setMFADevice(MFADevice mFADevice) {
+		this.mFADevice = mFADevice;
+	}
+
+	public static class MFADevice {
+
+		private String serialNumber;
+
+		public String getSerialNumber() {
+			return this.serialNumber;
+		}
+
+		public void setSerialNumber(String serialNumber) {
+			this.serialNumber = serialNumber;
+		}
 	}
 
 	@Override

@@ -32,20 +32,11 @@ public class UpdateGroupRequest extends RpcAcsRequest<UpdateGroupResponse> {
 		setProtocol(ProtocolType.HTTPS);
 	}
 
-	private String groupName;
-
 	private String newGroupName;
 
 	private String newComments;
 
-	public String getGroupName() {
-		return this.groupName;
-	}
-
-	public void setGroupName(String groupName) {
-		this.groupName = groupName;
-		putQueryParameter("GroupName", groupName);
-	}
+	private String groupName;
 
 	public String getNewGroupName() {
 		return this.newGroupName;
@@ -53,7 +44,9 @@ public class UpdateGroupRequest extends RpcAcsRequest<UpdateGroupResponse> {
 
 	public void setNewGroupName(String newGroupName) {
 		this.newGroupName = newGroupName;
-		putQueryParameter("NewGroupName", newGroupName);
+		if(newGroupName != null){
+			putQueryParameter("NewGroupName", newGroupName);
+		}
 	}
 
 	public String getNewComments() {
@@ -62,7 +55,20 @@ public class UpdateGroupRequest extends RpcAcsRequest<UpdateGroupResponse> {
 
 	public void setNewComments(String newComments) {
 		this.newComments = newComments;
-		putQueryParameter("NewComments", newComments);
+		if(newComments != null){
+			putQueryParameter("NewComments", newComments);
+		}
+	}
+
+	public String getGroupName() {
+		return this.groupName;
+	}
+
+	public void setGroupName(String groupName) {
+		this.groupName = groupName;
+		if(groupName != null){
+			putQueryParameter("GroupName", groupName);
+		}
 	}
 
 	@Override

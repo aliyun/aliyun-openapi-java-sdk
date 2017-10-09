@@ -32,7 +32,7 @@ public class CreateUserRequest extends RpcAcsRequest<CreateUserResponse> {
 		setProtocol(ProtocolType.HTTPS);
 	}
 
-	private String userName;
+	private String comments;
 
 	private String displayName;
 
@@ -40,15 +40,17 @@ public class CreateUserRequest extends RpcAcsRequest<CreateUserResponse> {
 
 	private String email;
 
-	private String comments;
+	private String userName;
 
-	public String getUserName() {
-		return this.userName;
+	public String getComments() {
+		return this.comments;
 	}
 
-	public void setUserName(String userName) {
-		this.userName = userName;
-		putQueryParameter("UserName", userName);
+	public void setComments(String comments) {
+		this.comments = comments;
+		if(comments != null){
+			putQueryParameter("Comments", comments);
+		}
 	}
 
 	public String getDisplayName() {
@@ -57,7 +59,9 @@ public class CreateUserRequest extends RpcAcsRequest<CreateUserResponse> {
 
 	public void setDisplayName(String displayName) {
 		this.displayName = displayName;
-		putQueryParameter("DisplayName", displayName);
+		if(displayName != null){
+			putQueryParameter("DisplayName", displayName);
+		}
 	}
 
 	public String getMobilePhone() {
@@ -66,7 +70,9 @@ public class CreateUserRequest extends RpcAcsRequest<CreateUserResponse> {
 
 	public void setMobilePhone(String mobilePhone) {
 		this.mobilePhone = mobilePhone;
-		putQueryParameter("MobilePhone", mobilePhone);
+		if(mobilePhone != null){
+			putQueryParameter("MobilePhone", mobilePhone);
+		}
 	}
 
 	public String getEmail() {
@@ -75,16 +81,20 @@ public class CreateUserRequest extends RpcAcsRequest<CreateUserResponse> {
 
 	public void setEmail(String email) {
 		this.email = email;
-		putQueryParameter("Email", email);
+		if(email != null){
+			putQueryParameter("Email", email);
+		}
 	}
 
-	public String getComments() {
-		return this.comments;
+	public String getUserName() {
+		return this.userName;
 	}
 
-	public void setComments(String comments) {
-		this.comments = comments;
-		putQueryParameter("Comments", comments);
+	public void setUserName(String userName) {
+		this.userName = userName;
+		if(userName != null){
+			putQueryParameter("UserName", userName);
+		}
 	}
 
 	@Override

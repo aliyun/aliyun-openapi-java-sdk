@@ -52,6 +52,12 @@ public class SetSecurityPreferenceResponse extends AcsResponse {
 
 		private LoginProfilePreference loginProfilePreference;
 
+		private AccessKeyPreference accessKeyPreference;
+
+		private PublicKeyPreference publicKeyPreference;
+
+		private MFAPreference mFAPreference;
+
 		public LoginProfilePreference getLoginProfilePreference() {
 			return this.loginProfilePreference;
 		}
@@ -60,9 +66,35 @@ public class SetSecurityPreferenceResponse extends AcsResponse {
 			this.loginProfilePreference = loginProfilePreference;
 		}
 
+		public AccessKeyPreference getAccessKeyPreference() {
+			return this.accessKeyPreference;
+		}
+
+		public void setAccessKeyPreference(AccessKeyPreference accessKeyPreference) {
+			this.accessKeyPreference = accessKeyPreference;
+		}
+
+		public PublicKeyPreference getPublicKeyPreference() {
+			return this.publicKeyPreference;
+		}
+
+		public void setPublicKeyPreference(PublicKeyPreference publicKeyPreference) {
+			this.publicKeyPreference = publicKeyPreference;
+		}
+
+		public MFAPreference getMFAPreference() {
+			return this.mFAPreference;
+		}
+
+		public void setMFAPreference(MFAPreference mFAPreference) {
+			this.mFAPreference = mFAPreference;
+		}
+
 		public static class LoginProfilePreference {
 
 			private Boolean enableSaveMFATicket;
+
+			private Boolean allowUserToChangePassword;
 
 			public Boolean getEnableSaveMFATicket() {
 				return this.enableSaveMFATicket;
@@ -70,6 +102,53 @@ public class SetSecurityPreferenceResponse extends AcsResponse {
 
 			public void setEnableSaveMFATicket(Boolean enableSaveMFATicket) {
 				this.enableSaveMFATicket = enableSaveMFATicket;
+			}
+
+			public Boolean getAllowUserToChangePassword() {
+				return this.allowUserToChangePassword;
+			}
+
+			public void setAllowUserToChangePassword(Boolean allowUserToChangePassword) {
+				this.allowUserToChangePassword = allowUserToChangePassword;
+			}
+		}
+
+		public static class AccessKeyPreference {
+
+			private Boolean allowUserToManageAccessKeys;
+
+			public Boolean getAllowUserToManageAccessKeys() {
+				return this.allowUserToManageAccessKeys;
+			}
+
+			public void setAllowUserToManageAccessKeys(Boolean allowUserToManageAccessKeys) {
+				this.allowUserToManageAccessKeys = allowUserToManageAccessKeys;
+			}
+		}
+
+		public static class PublicKeyPreference {
+
+			private Boolean allowUserToManagePublicKeys;
+
+			public Boolean getAllowUserToManagePublicKeys() {
+				return this.allowUserToManagePublicKeys;
+			}
+
+			public void setAllowUserToManagePublicKeys(Boolean allowUserToManagePublicKeys) {
+				this.allowUserToManagePublicKeys = allowUserToManagePublicKeys;
+			}
+		}
+
+		public static class MFAPreference {
+
+			private Boolean allowUserToManageMFADevices;
+
+			public Boolean getAllowUserToManageMFADevices() {
+				return this.allowUserToManageMFADevices;
+			}
+
+			public void setAllowUserToManageMFADevices(Boolean allowUserToManageMFADevices) {
+				this.allowUserToManageMFADevices = allowUserToManageMFADevices;
 			}
 		}
 	}

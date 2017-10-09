@@ -32,18 +32,9 @@ public class UpdateRoleRequest extends RpcAcsRequest<UpdateRoleResponse> {
 		setProtocol(ProtocolType.HTTPS);
 	}
 
-	private String roleName;
-
 	private String newAssumeRolePolicyDocument;
 
-	public String getRoleName() {
-		return this.roleName;
-	}
-
-	public void setRoleName(String roleName) {
-		this.roleName = roleName;
-		putQueryParameter("RoleName", roleName);
-	}
+	private String roleName;
 
 	public String getNewAssumeRolePolicyDocument() {
 		return this.newAssumeRolePolicyDocument;
@@ -51,7 +42,20 @@ public class UpdateRoleRequest extends RpcAcsRequest<UpdateRoleResponse> {
 
 	public void setNewAssumeRolePolicyDocument(String newAssumeRolePolicyDocument) {
 		this.newAssumeRolePolicyDocument = newAssumeRolePolicyDocument;
-		putQueryParameter("NewAssumeRolePolicyDocument", newAssumeRolePolicyDocument);
+		if(newAssumeRolePolicyDocument != null){
+			putQueryParameter("NewAssumeRolePolicyDocument", newAssumeRolePolicyDocument);
+		}
+	}
+
+	public String getRoleName() {
+		return this.roleName;
+	}
+
+	public void setRoleName(String roleName) {
+		this.roleName = roleName;
+		if(roleName != null){
+			putQueryParameter("RoleName", roleName);
+		}
 	}
 
 	@Override

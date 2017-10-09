@@ -32,7 +32,48 @@ public class SetSecurityPreferenceRequest extends RpcAcsRequest<SetSecurityPrefe
 		setProtocol(ProtocolType.HTTPS);
 	}
 
+	private Boolean allowUserToManageAccessKeys;
+
+	private Boolean allowUserToManageMFADevices;
+
+	private Boolean allowUserToManagePublicKeys;
+
 	private Boolean enableSaveMFATicket;
+
+	private Boolean allowUserToChangePassword;
+
+	public Boolean getAllowUserToManageAccessKeys() {
+		return this.allowUserToManageAccessKeys;
+	}
+
+	public void setAllowUserToManageAccessKeys(Boolean allowUserToManageAccessKeys) {
+		this.allowUserToManageAccessKeys = allowUserToManageAccessKeys;
+		if(allowUserToManageAccessKeys != null){
+			putQueryParameter("AllowUserToManageAccessKeys", allowUserToManageAccessKeys.toString());
+		}
+	}
+
+	public Boolean getAllowUserToManageMFADevices() {
+		return this.allowUserToManageMFADevices;
+	}
+
+	public void setAllowUserToManageMFADevices(Boolean allowUserToManageMFADevices) {
+		this.allowUserToManageMFADevices = allowUserToManageMFADevices;
+		if(allowUserToManageMFADevices != null){
+			putQueryParameter("AllowUserToManageMFADevices", allowUserToManageMFADevices.toString());
+		}
+	}
+
+	public Boolean getAllowUserToManagePublicKeys() {
+		return this.allowUserToManagePublicKeys;
+	}
+
+	public void setAllowUserToManagePublicKeys(Boolean allowUserToManagePublicKeys) {
+		this.allowUserToManagePublicKeys = allowUserToManagePublicKeys;
+		if(allowUserToManagePublicKeys != null){
+			putQueryParameter("AllowUserToManagePublicKeys", allowUserToManagePublicKeys.toString());
+		}
+	}
 
 	public Boolean getEnableSaveMFATicket() {
 		return this.enableSaveMFATicket;
@@ -40,7 +81,20 @@ public class SetSecurityPreferenceRequest extends RpcAcsRequest<SetSecurityPrefe
 
 	public void setEnableSaveMFATicket(Boolean enableSaveMFATicket) {
 		this.enableSaveMFATicket = enableSaveMFATicket;
-		putQueryParameter("EnableSaveMFATicket", String.valueOf(enableSaveMFATicket));
+		if(enableSaveMFATicket != null){
+			putQueryParameter("EnableSaveMFATicket", enableSaveMFATicket.toString());
+		}
+	}
+
+	public Boolean getAllowUserToChangePassword() {
+		return this.allowUserToChangePassword;
+	}
+
+	public void setAllowUserToChangePassword(Boolean allowUserToChangePassword) {
+		this.allowUserToChangePassword = allowUserToChangePassword;
+		if(allowUserToChangePassword != null){
+			putQueryParameter("AllowUserToChangePassword", allowUserToChangePassword.toString());
+		}
 	}
 
 	@Override

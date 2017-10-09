@@ -40,7 +40,9 @@ public class ListPoliciesForRoleRequest extends RpcAcsRequest<ListPoliciesForRol
 
 	public void setRoleName(String roleName) {
 		this.roleName = roleName;
-		putQueryParameter("RoleName", roleName);
+		if(roleName != null){
+			putQueryParameter("RoleName", roleName);
+		}
 	}
 
 	@Override

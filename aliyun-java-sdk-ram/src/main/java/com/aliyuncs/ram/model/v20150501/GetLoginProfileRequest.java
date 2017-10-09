@@ -40,7 +40,9 @@ public class GetLoginProfileRequest extends RpcAcsRequest<GetLoginProfileRespons
 
 	public void setUserName(String userName) {
 		this.userName = userName;
-		putQueryParameter("UserName", userName);
+		if(userName != null){
+			putQueryParameter("UserName", userName);
+		}
 	}
 
 	@Override

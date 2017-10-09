@@ -42,7 +42,9 @@ public class ListUsersRequest extends RpcAcsRequest<ListUsersResponse> {
 
 	public void setMarker(String marker) {
 		this.marker = marker;
-		putQueryParameter("Marker", marker);
+		if(marker != null){
+			putQueryParameter("Marker", marker);
+		}
 	}
 
 	public Integer getMaxItems() {
@@ -51,7 +53,9 @@ public class ListUsersRequest extends RpcAcsRequest<ListUsersResponse> {
 
 	public void setMaxItems(Integer maxItems) {
 		this.maxItems = maxItems;
-		putQueryParameter("MaxItems", String.valueOf(maxItems));
+		if(maxItems != null){
+			putQueryParameter("MaxItems", maxItems.toString());
+		}
 	}
 
 	@Override

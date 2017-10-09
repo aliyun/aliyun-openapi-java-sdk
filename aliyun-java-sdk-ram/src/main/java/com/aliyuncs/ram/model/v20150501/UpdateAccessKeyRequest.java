@@ -32,20 +32,11 @@ public class UpdateAccessKeyRequest extends RpcAcsRequest<UpdateAccessKeyRespons
 		setProtocol(ProtocolType.HTTPS);
 	}
 
-	private String userName;
-
 	private String userAccessKeyId;
 
+	private String userName;
+
 	private String status;
-
-	public String getUserName() {
-		return this.userName;
-	}
-
-	public void setUserName(String userName) {
-		this.userName = userName;
-		putQueryParameter("UserName", userName);
-	}
 
 	public String getUserAccessKeyId() {
 		return this.userAccessKeyId;
@@ -53,7 +44,20 @@ public class UpdateAccessKeyRequest extends RpcAcsRequest<UpdateAccessKeyRespons
 
 	public void setUserAccessKeyId(String userAccessKeyId) {
 		this.userAccessKeyId = userAccessKeyId;
-		putQueryParameter("UserAccessKeyId", userAccessKeyId);
+		if(userAccessKeyId != null){
+			putQueryParameter("UserAccessKeyId", userAccessKeyId);
+		}
+	}
+
+	public String getUserName() {
+		return this.userName;
+	}
+
+	public void setUserName(String userName) {
+		this.userName = userName;
+		if(userName != null){
+			putQueryParameter("UserName", userName);
+		}
 	}
 
 	public String getStatus() {
@@ -62,7 +66,9 @@ public class UpdateAccessKeyRequest extends RpcAcsRequest<UpdateAccessKeyRespons
 
 	public void setStatus(String status) {
 		this.status = status;
-		putQueryParameter("Status", status);
+		if(status != null){
+			putQueryParameter("Status", status);
+		}
 	}
 
 	@Override

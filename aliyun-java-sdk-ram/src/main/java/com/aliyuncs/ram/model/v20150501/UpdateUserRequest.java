@@ -32,26 +32,17 @@ public class UpdateUserRequest extends RpcAcsRequest<UpdateUserResponse> {
 		setProtocol(ProtocolType.HTTPS);
 	}
 
-	private String userName;
-
 	private String newUserName;
 
 	private String newDisplayName;
 
 	private String newMobilePhone;
 
-	private String newEmail;
-
 	private String newComments;
 
-	public String getUserName() {
-		return this.userName;
-	}
+	private String newEmail;
 
-	public void setUserName(String userName) {
-		this.userName = userName;
-		putQueryParameter("UserName", userName);
-	}
+	private String userName;
 
 	public String getNewUserName() {
 		return this.newUserName;
@@ -59,7 +50,9 @@ public class UpdateUserRequest extends RpcAcsRequest<UpdateUserResponse> {
 
 	public void setNewUserName(String newUserName) {
 		this.newUserName = newUserName;
-		putQueryParameter("NewUserName", newUserName);
+		if(newUserName != null){
+			putQueryParameter("NewUserName", newUserName);
+		}
 	}
 
 	public String getNewDisplayName() {
@@ -68,7 +61,9 @@ public class UpdateUserRequest extends RpcAcsRequest<UpdateUserResponse> {
 
 	public void setNewDisplayName(String newDisplayName) {
 		this.newDisplayName = newDisplayName;
-		putQueryParameter("NewDisplayName", newDisplayName);
+		if(newDisplayName != null){
+			putQueryParameter("NewDisplayName", newDisplayName);
+		}
 	}
 
 	public String getNewMobilePhone() {
@@ -77,16 +72,9 @@ public class UpdateUserRequest extends RpcAcsRequest<UpdateUserResponse> {
 
 	public void setNewMobilePhone(String newMobilePhone) {
 		this.newMobilePhone = newMobilePhone;
-		putQueryParameter("NewMobilePhone", newMobilePhone);
-	}
-
-	public String getNewEmail() {
-		return this.newEmail;
-	}
-
-	public void setNewEmail(String newEmail) {
-		this.newEmail = newEmail;
-		putQueryParameter("NewEmail", newEmail);
+		if(newMobilePhone != null){
+			putQueryParameter("NewMobilePhone", newMobilePhone);
+		}
 	}
 
 	public String getNewComments() {
@@ -95,7 +83,31 @@ public class UpdateUserRequest extends RpcAcsRequest<UpdateUserResponse> {
 
 	public void setNewComments(String newComments) {
 		this.newComments = newComments;
-		putQueryParameter("NewComments", newComments);
+		if(newComments != null){
+			putQueryParameter("NewComments", newComments);
+		}
+	}
+
+	public String getNewEmail() {
+		return this.newEmail;
+	}
+
+	public void setNewEmail(String newEmail) {
+		this.newEmail = newEmail;
+		if(newEmail != null){
+			putQueryParameter("NewEmail", newEmail);
+		}
+	}
+
+	public String getUserName() {
+		return this.userName;
+	}
+
+	public void setUserName(String userName) {
+		this.userName = userName;
+		if(userName != null){
+			putQueryParameter("UserName", userName);
+		}
 	}
 
 	@Override

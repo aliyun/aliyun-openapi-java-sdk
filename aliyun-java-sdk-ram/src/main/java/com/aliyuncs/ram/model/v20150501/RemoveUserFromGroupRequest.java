@@ -32,18 +32,9 @@ public class RemoveUserFromGroupRequest extends RpcAcsRequest<RemoveUserFromGrou
 		setProtocol(ProtocolType.HTTPS);
 	}
 
-	private String userName;
-
 	private String groupName;
 
-	public String getUserName() {
-		return this.userName;
-	}
-
-	public void setUserName(String userName) {
-		this.userName = userName;
-		putQueryParameter("UserName", userName);
-	}
+	private String userName;
 
 	public String getGroupName() {
 		return this.groupName;
@@ -51,7 +42,20 @@ public class RemoveUserFromGroupRequest extends RpcAcsRequest<RemoveUserFromGrou
 
 	public void setGroupName(String groupName) {
 		this.groupName = groupName;
-		putQueryParameter("GroupName", groupName);
+		if(groupName != null){
+			putQueryParameter("GroupName", groupName);
+		}
+	}
+
+	public String getUserName() {
+		return this.userName;
+	}
+
+	public void setUserName(String userName) {
+		this.userName = userName;
+		if(userName != null){
+			putQueryParameter("UserName", userName);
+		}
 	}
 
 	@Override

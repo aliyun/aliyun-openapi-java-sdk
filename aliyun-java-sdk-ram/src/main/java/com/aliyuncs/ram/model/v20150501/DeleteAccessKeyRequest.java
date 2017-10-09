@@ -32,18 +32,9 @@ public class DeleteAccessKeyRequest extends RpcAcsRequest<DeleteAccessKeyRespons
 		setProtocol(ProtocolType.HTTPS);
 	}
 
-	private String userName;
-
 	private String userAccessKeyId;
 
-	public String getUserName() {
-		return this.userName;
-	}
-
-	public void setUserName(String userName) {
-		this.userName = userName;
-		putQueryParameter("UserName", userName);
-	}
+	private String userName;
 
 	public String getUserAccessKeyId() {
 		return this.userAccessKeyId;
@@ -51,7 +42,20 @@ public class DeleteAccessKeyRequest extends RpcAcsRequest<DeleteAccessKeyRespons
 
 	public void setUserAccessKeyId(String userAccessKeyId) {
 		this.userAccessKeyId = userAccessKeyId;
-		putQueryParameter("UserAccessKeyId", userAccessKeyId);
+		if(userAccessKeyId != null){
+			putQueryParameter("UserAccessKeyId", userAccessKeyId);
+		}
+	}
+
+	public String getUserName() {
+		return this.userName;
+	}
+
+	public void setUserName(String userName) {
+		this.userName = userName;
+		if(userName != null){
+			putQueryParameter("UserName", userName);
+		}
 	}
 
 	@Override

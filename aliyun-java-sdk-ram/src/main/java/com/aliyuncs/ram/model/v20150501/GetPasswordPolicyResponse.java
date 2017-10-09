@@ -60,6 +60,14 @@ public class GetPasswordPolicyResponse extends AcsResponse {
 
 		private Boolean requireSymbols;
 
+		private Boolean hardExpiry;
+
+		private Integer maxPasswordAge;
+
+		private Integer passwordReusePrevention;
+
+		private Integer maxLoginAttemps;
+
 		public Integer getMinimumPasswordLength() {
 			return this.minimumPasswordLength;
 		}
@@ -98,6 +106,38 @@ public class GetPasswordPolicyResponse extends AcsResponse {
 
 		public void setRequireSymbols(Boolean requireSymbols) {
 			this.requireSymbols = requireSymbols;
+		}
+
+		public Boolean getHardExpiry() {
+			return this.hardExpiry;
+		}
+
+		public void setHardExpiry(Boolean hardExpiry) {
+			this.hardExpiry = hardExpiry;
+		}
+
+		public Integer getMaxPasswordAge() {
+			return this.maxPasswordAge;
+		}
+
+		public void setMaxPasswordAge(Integer maxPasswordAge) {
+			this.maxPasswordAge = maxPasswordAge;
+		}
+
+		public Integer getPasswordReusePrevention() {
+			return this.passwordReusePrevention;
+		}
+
+		public void setPasswordReusePrevention(Integer passwordReusePrevention) {
+			this.passwordReusePrevention = passwordReusePrevention;
+		}
+
+		public Integer getMaxLoginAttemps() {
+			return this.maxLoginAttemps;
+		}
+
+		public void setMaxLoginAttemps(Integer maxLoginAttemps) {
+			this.maxLoginAttemps = maxLoginAttemps;
 		}
 	}
 

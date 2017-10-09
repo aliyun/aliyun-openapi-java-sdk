@@ -40,7 +40,9 @@ public class DeleteVirtualMFADeviceRequest extends RpcAcsRequest<DeleteVirtualMF
 
 	public void setSerialNumber(String serialNumber) {
 		this.serialNumber = serialNumber;
-		putQueryParameter("SerialNumber", serialNumber);
+		if(serialNumber != null){
+			putQueryParameter("SerialNumber", serialNumber);
+		}
 	}
 
 	@Override

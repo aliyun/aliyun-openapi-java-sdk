@@ -32,22 +32,13 @@ public class CreateLoginProfileRequest extends RpcAcsRequest<CreateLoginProfileR
 		setProtocol(ProtocolType.HTTPS);
 	}
 
-	private String userName;
-
 	private String password;
 
 	private Boolean passwordResetRequired;
 
 	private Boolean mFABindRequired;
 
-	public String getUserName() {
-		return this.userName;
-	}
-
-	public void setUserName(String userName) {
-		this.userName = userName;
-		putQueryParameter("UserName", userName);
-	}
+	private String userName;
 
 	public String getPassword() {
 		return this.password;
@@ -55,7 +46,9 @@ public class CreateLoginProfileRequest extends RpcAcsRequest<CreateLoginProfileR
 
 	public void setPassword(String password) {
 		this.password = password;
-		putQueryParameter("Password", password);
+		if(password != null){
+			putQueryParameter("Password", password);
+		}
 	}
 
 	public Boolean getPasswordResetRequired() {
@@ -64,7 +57,9 @@ public class CreateLoginProfileRequest extends RpcAcsRequest<CreateLoginProfileR
 
 	public void setPasswordResetRequired(Boolean passwordResetRequired) {
 		this.passwordResetRequired = passwordResetRequired;
-		putQueryParameter("PasswordResetRequired", String.valueOf(passwordResetRequired));
+		if(passwordResetRequired != null){
+			putQueryParameter("PasswordResetRequired", passwordResetRequired.toString());
+		}
 	}
 
 	public Boolean getMFABindRequired() {
@@ -73,7 +68,20 @@ public class CreateLoginProfileRequest extends RpcAcsRequest<CreateLoginProfileR
 
 	public void setMFABindRequired(Boolean mFABindRequired) {
 		this.mFABindRequired = mFABindRequired;
-		putQueryParameter("MFABindRequired", String.valueOf(mFABindRequired));
+		if(mFABindRequired != null){
+			putQueryParameter("MFABindRequired", mFABindRequired.toString());
+		}
+	}
+
+	public String getUserName() {
+		return this.userName;
+	}
+
+	public void setUserName(String userName) {
+		this.userName = userName;
+		if(userName != null){
+			putQueryParameter("UserName", userName);
+		}
 	}
 
 	@Override

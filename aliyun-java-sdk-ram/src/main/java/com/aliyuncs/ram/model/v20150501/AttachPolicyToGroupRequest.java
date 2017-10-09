@@ -44,7 +44,9 @@ public class AttachPolicyToGroupRequest extends RpcAcsRequest<AttachPolicyToGrou
 
 	public void setPolicyType(String policyType) {
 		this.policyType = policyType;
-		putQueryParameter("PolicyType", policyType);
+		if(policyType != null){
+			putQueryParameter("PolicyType", policyType);
+		}
 	}
 
 	public String getPolicyName() {
@@ -53,7 +55,9 @@ public class AttachPolicyToGroupRequest extends RpcAcsRequest<AttachPolicyToGrou
 
 	public void setPolicyName(String policyName) {
 		this.policyName = policyName;
-		putQueryParameter("PolicyName", policyName);
+		if(policyName != null){
+			putQueryParameter("PolicyName", policyName);
+		}
 	}
 
 	public String getGroupName() {
@@ -62,7 +66,9 @@ public class AttachPolicyToGroupRequest extends RpcAcsRequest<AttachPolicyToGrou
 
 	public void setGroupName(String groupName) {
 		this.groupName = groupName;
-		putQueryParameter("GroupName", groupName);
+		if(groupName != null){
+			putQueryParameter("GroupName", groupName);
+		}
 	}
 
 	@Override

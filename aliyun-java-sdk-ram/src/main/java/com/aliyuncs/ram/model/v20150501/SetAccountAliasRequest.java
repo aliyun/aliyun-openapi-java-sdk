@@ -40,7 +40,9 @@ public class SetAccountAliasRequest extends RpcAcsRequest<SetAccountAliasRespons
 
 	public void setAccountAlias(String accountAlias) {
 		this.accountAlias = accountAlias;
-		putQueryParameter("AccountAlias", accountAlias);
+		if(accountAlias != null){
+			putQueryParameter("AccountAlias", accountAlias);
+		}
 	}
 
 	@Override

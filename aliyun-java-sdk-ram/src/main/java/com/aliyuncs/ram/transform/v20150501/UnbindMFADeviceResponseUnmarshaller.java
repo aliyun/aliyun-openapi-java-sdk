@@ -19,6 +19,7 @@
 package com.aliyuncs.ram.transform.v20150501;
 
 import com.aliyuncs.ram.model.v20150501.UnbindMFADeviceResponse;
+import com.aliyuncs.ram.model.v20150501.UnbindMFADeviceResponse.MFADevice;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -27,6 +28,10 @@ public class UnbindMFADeviceResponseUnmarshaller {
 	public static UnbindMFADeviceResponse unmarshall(UnbindMFADeviceResponse unbindMFADeviceResponse, UnmarshallerContext context) {
 		
 		unbindMFADeviceResponse.setRequestId(context.stringValue("UnbindMFADeviceResponse.RequestId"));
+
+		MFADevice mFADevice = new MFADevice();
+		mFADevice.setSerialNumber(context.stringValue("UnbindMFADeviceResponse.MFADevice.SerialNumber"));
+		unbindMFADeviceResponse.setMFADevice(mFADevice);
 	 
 	 	return unbindMFADeviceResponse;
 	}

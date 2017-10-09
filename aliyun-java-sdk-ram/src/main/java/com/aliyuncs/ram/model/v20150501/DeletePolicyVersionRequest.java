@@ -32,18 +32,9 @@ public class DeletePolicyVersionRequest extends RpcAcsRequest<DeletePolicyVersio
 		setProtocol(ProtocolType.HTTPS);
 	}
 
-	private String policyName;
-
 	private String versionId;
 
-	public String getPolicyName() {
-		return this.policyName;
-	}
-
-	public void setPolicyName(String policyName) {
-		this.policyName = policyName;
-		putQueryParameter("PolicyName", policyName);
-	}
+	private String policyName;
 
 	public String getVersionId() {
 		return this.versionId;
@@ -51,7 +42,20 @@ public class DeletePolicyVersionRequest extends RpcAcsRequest<DeletePolicyVersio
 
 	public void setVersionId(String versionId) {
 		this.versionId = versionId;
-		putQueryParameter("VersionId", versionId);
+		if(versionId != null){
+			putQueryParameter("VersionId", versionId);
+		}
+	}
+
+	public String getPolicyName() {
+		return this.policyName;
+	}
+
+	public void setPolicyName(String policyName) {
+		this.policyName = policyName;
+		if(policyName != null){
+			putQueryParameter("PolicyName", policyName);
+		}
 	}
 
 	@Override

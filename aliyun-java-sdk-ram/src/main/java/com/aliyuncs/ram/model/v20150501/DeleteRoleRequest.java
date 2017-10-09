@@ -40,7 +40,9 @@ public class DeleteRoleRequest extends RpcAcsRequest<DeleteRoleResponse> {
 
 	public void setRoleName(String roleName) {
 		this.roleName = roleName;
-		putQueryParameter("RoleName", roleName);
+		if(roleName != null){
+			putQueryParameter("RoleName", roleName);
+		}
 	}
 
 	@Override

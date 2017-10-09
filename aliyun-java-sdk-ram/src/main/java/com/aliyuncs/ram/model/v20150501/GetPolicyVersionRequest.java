@@ -32,11 +32,22 @@ public class GetPolicyVersionRequest extends RpcAcsRequest<GetPolicyVersionRespo
 		setProtocol(ProtocolType.HTTPS);
 	}
 
+	private String versionId;
+
 	private String policyType;
 
 	private String policyName;
 
-	private String versionId;
+	public String getVersionId() {
+		return this.versionId;
+	}
+
+	public void setVersionId(String versionId) {
+		this.versionId = versionId;
+		if(versionId != null){
+			putQueryParameter("VersionId", versionId);
+		}
+	}
 
 	public String getPolicyType() {
 		return this.policyType;
@@ -44,7 +55,9 @@ public class GetPolicyVersionRequest extends RpcAcsRequest<GetPolicyVersionRespo
 
 	public void setPolicyType(String policyType) {
 		this.policyType = policyType;
-		putQueryParameter("PolicyType", policyType);
+		if(policyType != null){
+			putQueryParameter("PolicyType", policyType);
+		}
 	}
 
 	public String getPolicyName() {
@@ -53,16 +66,9 @@ public class GetPolicyVersionRequest extends RpcAcsRequest<GetPolicyVersionRespo
 
 	public void setPolicyName(String policyName) {
 		this.policyName = policyName;
-		putQueryParameter("PolicyName", policyName);
-	}
-
-	public String getVersionId() {
-		return this.versionId;
-	}
-
-	public void setVersionId(String versionId) {
-		this.versionId = versionId;
-		putQueryParameter("VersionId", versionId);
+		if(policyName != null){
+			putQueryParameter("PolicyName", policyName);
+		}
 	}
 
 	@Override

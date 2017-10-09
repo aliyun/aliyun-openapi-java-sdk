@@ -32,11 +32,22 @@ public class CreatePolicyVersionRequest extends RpcAcsRequest<CreatePolicyVersio
 		setProtocol(ProtocolType.HTTPS);
 	}
 
+	private Boolean setAsDefault;
+
 	private String policyName;
 
 	private String policyDocument;
 
-	private Boolean setAsDefault;
+	public Boolean getSetAsDefault() {
+		return this.setAsDefault;
+	}
+
+	public void setSetAsDefault(Boolean setAsDefault) {
+		this.setAsDefault = setAsDefault;
+		if(setAsDefault != null){
+			putQueryParameter("SetAsDefault", setAsDefault.toString());
+		}
+	}
 
 	public String getPolicyName() {
 		return this.policyName;
@@ -44,7 +55,9 @@ public class CreatePolicyVersionRequest extends RpcAcsRequest<CreatePolicyVersio
 
 	public void setPolicyName(String policyName) {
 		this.policyName = policyName;
-		putQueryParameter("PolicyName", policyName);
+		if(policyName != null){
+			putQueryParameter("PolicyName", policyName);
+		}
 	}
 
 	public String getPolicyDocument() {
@@ -53,16 +66,9 @@ public class CreatePolicyVersionRequest extends RpcAcsRequest<CreatePolicyVersio
 
 	public void setPolicyDocument(String policyDocument) {
 		this.policyDocument = policyDocument;
-		putQueryParameter("PolicyDocument", policyDocument);
-	}
-
-	public Boolean getSetAsDefault() {
-		return this.setAsDefault;
-	}
-
-	public void setSetAsDefault(Boolean setAsDefault) {
-		this.setAsDefault = setAsDefault;
-		putQueryParameter("SetAsDefault", String.valueOf(setAsDefault));
+		if(policyDocument != null){
+			putQueryParameter("PolicyDocument", policyDocument);
+		}
 	}
 
 	@Override

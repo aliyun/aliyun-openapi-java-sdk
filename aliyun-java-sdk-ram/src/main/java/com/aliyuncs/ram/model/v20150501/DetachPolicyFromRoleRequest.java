@@ -34,9 +34,9 @@ public class DetachPolicyFromRoleRequest extends RpcAcsRequest<DetachPolicyFromR
 
 	private String policyType;
 
-	private String policyName;
-
 	private String roleName;
+
+	private String policyName;
 
 	public String getPolicyType() {
 		return this.policyType;
@@ -44,16 +44,9 @@ public class DetachPolicyFromRoleRequest extends RpcAcsRequest<DetachPolicyFromR
 
 	public void setPolicyType(String policyType) {
 		this.policyType = policyType;
-		putQueryParameter("PolicyType", policyType);
-	}
-
-	public String getPolicyName() {
-		return this.policyName;
-	}
-
-	public void setPolicyName(String policyName) {
-		this.policyName = policyName;
-		putQueryParameter("PolicyName", policyName);
+		if(policyType != null){
+			putQueryParameter("PolicyType", policyType);
+		}
 	}
 
 	public String getRoleName() {
@@ -62,7 +55,20 @@ public class DetachPolicyFromRoleRequest extends RpcAcsRequest<DetachPolicyFromR
 
 	public void setRoleName(String roleName) {
 		this.roleName = roleName;
-		putQueryParameter("RoleName", roleName);
+		if(roleName != null){
+			putQueryParameter("RoleName", roleName);
+		}
+	}
+
+	public String getPolicyName() {
+		return this.policyName;
+	}
+
+	public void setPolicyName(String policyName) {
+		this.policyName = policyName;
+		if(policyName != null){
+			putQueryParameter("PolicyName", policyName);
+		}
 	}
 
 	@Override

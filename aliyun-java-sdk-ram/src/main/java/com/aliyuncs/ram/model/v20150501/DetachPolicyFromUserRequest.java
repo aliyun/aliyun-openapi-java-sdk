@@ -44,7 +44,9 @@ public class DetachPolicyFromUserRequest extends RpcAcsRequest<DetachPolicyFromU
 
 	public void setPolicyType(String policyType) {
 		this.policyType = policyType;
-		putQueryParameter("PolicyType", policyType);
+		if(policyType != null){
+			putQueryParameter("PolicyType", policyType);
+		}
 	}
 
 	public String getPolicyName() {
@@ -53,7 +55,9 @@ public class DetachPolicyFromUserRequest extends RpcAcsRequest<DetachPolicyFromU
 
 	public void setPolicyName(String policyName) {
 		this.policyName = policyName;
-		putQueryParameter("PolicyName", policyName);
+		if(policyName != null){
+			putQueryParameter("PolicyName", policyName);
+		}
 	}
 
 	public String getUserName() {
@@ -62,7 +66,9 @@ public class DetachPolicyFromUserRequest extends RpcAcsRequest<DetachPolicyFromU
 
 	public void setUserName(String userName) {
 		this.userName = userName;
-		putQueryParameter("UserName", userName);
+		if(userName != null){
+			putQueryParameter("UserName", userName);
+		}
 	}
 
 	@Override

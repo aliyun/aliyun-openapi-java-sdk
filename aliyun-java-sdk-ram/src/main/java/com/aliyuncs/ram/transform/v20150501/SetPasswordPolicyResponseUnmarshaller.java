@@ -35,6 +35,10 @@ public class SetPasswordPolicyResponseUnmarshaller {
 		passwordPolicy.setRequireUppercaseCharacters(context.booleanValue("SetPasswordPolicyResponse.PasswordPolicy.RequireUppercaseCharacters"));
 		passwordPolicy.setRequireNumbers(context.booleanValue("SetPasswordPolicyResponse.PasswordPolicy.RequireNumbers"));
 		passwordPolicy.setRequireSymbols(context.booleanValue("SetPasswordPolicyResponse.PasswordPolicy.RequireSymbols"));
+		passwordPolicy.setHardExpiry(context.booleanValue("SetPasswordPolicyResponse.PasswordPolicy.HardExpiry"));
+		passwordPolicy.setMaxPasswordAge(context.integerValue("SetPasswordPolicyResponse.PasswordPolicy.MaxPasswordAge"));
+		passwordPolicy.setPasswordReusePrevention(context.integerValue("SetPasswordPolicyResponse.PasswordPolicy.PasswordReusePrevention"));
+		passwordPolicy.setMaxLoginAttemps(context.integerValue("SetPasswordPolicyResponse.PasswordPolicy.MaxLoginAttemps"));
 		setPasswordPolicyResponse.setPasswordPolicy(passwordPolicy);
 	 
 	 	return setPasswordPolicyResponse;

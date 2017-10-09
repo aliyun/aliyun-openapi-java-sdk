@@ -40,7 +40,9 @@ public class CreateVirtualMFADeviceRequest extends RpcAcsRequest<CreateVirtualMF
 
 	public void setVirtualMFADeviceName(String virtualMFADeviceName) {
 		this.virtualMFADeviceName = virtualMFADeviceName;
-		putQueryParameter("VirtualMFADeviceName", virtualMFADeviceName);
+		if(virtualMFADeviceName != null){
+			putQueryParameter("VirtualMFADeviceName", virtualMFADeviceName);
+		}
 	}
 
 	@Override

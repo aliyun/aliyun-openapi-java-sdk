@@ -42,7 +42,9 @@ public class ListEntitiesForPolicyRequest extends RpcAcsRequest<ListEntitiesForP
 
 	public void setPolicyType(String policyType) {
 		this.policyType = policyType;
-		putQueryParameter("PolicyType", policyType);
+		if(policyType != null){
+			putQueryParameter("PolicyType", policyType);
+		}
 	}
 
 	public String getPolicyName() {
@@ -51,7 +53,9 @@ public class ListEntitiesForPolicyRequest extends RpcAcsRequest<ListEntitiesForP
 
 	public void setPolicyName(String policyName) {
 		this.policyName = policyName;
-		putQueryParameter("PolicyName", policyName);
+		if(policyName != null){
+			putQueryParameter("PolicyName", policyName);
+		}
 	}
 
 	@Override

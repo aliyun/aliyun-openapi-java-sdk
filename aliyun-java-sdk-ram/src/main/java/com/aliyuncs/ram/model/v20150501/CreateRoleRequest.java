@@ -44,7 +44,9 @@ public class CreateRoleRequest extends RpcAcsRequest<CreateRoleResponse> {
 
 	public void setRoleName(String roleName) {
 		this.roleName = roleName;
-		putQueryParameter("RoleName", roleName);
+		if(roleName != null){
+			putQueryParameter("RoleName", roleName);
+		}
 	}
 
 	public String getDescription() {
@@ -53,7 +55,9 @@ public class CreateRoleRequest extends RpcAcsRequest<CreateRoleResponse> {
 
 	public void setDescription(String description) {
 		this.description = description;
-		putQueryParameter("Description", description);
+		if(description != null){
+			putQueryParameter("Description", description);
+		}
 	}
 
 	public String getAssumeRolePolicyDocument() {
@@ -62,7 +66,9 @@ public class CreateRoleRequest extends RpcAcsRequest<CreateRoleResponse> {
 
 	public void setAssumeRolePolicyDocument(String assumeRolePolicyDocument) {
 		this.assumeRolePolicyDocument = assumeRolePolicyDocument;
-		putQueryParameter("AssumeRolePolicyDocument", assumeRolePolicyDocument);
+		if(assumeRolePolicyDocument != null){
+			putQueryParameter("AssumeRolePolicyDocument", assumeRolePolicyDocument);
+		}
 	}
 
 	@Override
