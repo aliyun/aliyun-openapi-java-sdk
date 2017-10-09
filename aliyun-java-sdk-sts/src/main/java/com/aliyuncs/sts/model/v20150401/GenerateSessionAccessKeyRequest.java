@@ -25,42 +25,14 @@ import com.aliyuncs.http.ProtocolType;
  * @author auto create
  * @version 
  */
-public class AssumeRoleRequest extends RpcAcsRequest<AssumeRoleResponse> {
+public class GenerateSessionAccessKeyRequest extends RpcAcsRequest<GenerateSessionAccessKeyResponse> {
 	
-	public AssumeRoleRequest() {
-		super("Sts", "2015-04-01", "AssumeRole");
+	public GenerateSessionAccessKeyRequest() {
+		super("Sts", "2015-04-01", "GenerateSessionAccessKey");
 		setProtocol(ProtocolType.HTTPS);
 	}
 
-	private String roleArn;
-
-	private String roleSessionName;
-
 	private Long durationSeconds;
-
-	private String policy;
-
-	public String getRoleArn() {
-		return this.roleArn;
-	}
-
-	public void setRoleArn(String roleArn) {
-		this.roleArn = roleArn;
-		if(roleArn != null){
-			putQueryParameter("RoleArn", roleArn);
-		}
-	}
-
-	public String getRoleSessionName() {
-		return this.roleSessionName;
-	}
-
-	public void setRoleSessionName(String roleSessionName) {
-		this.roleSessionName = roleSessionName;
-		if(roleSessionName != null){
-			putQueryParameter("RoleSessionName", roleSessionName);
-		}
-	}
 
 	public Long getDurationSeconds() {
 		return this.durationSeconds;
@@ -73,20 +45,9 @@ public class AssumeRoleRequest extends RpcAcsRequest<AssumeRoleResponse> {
 		}
 	}
 
-	public String getPolicy() {
-		return this.policy;
-	}
-
-	public void setPolicy(String policy) {
-		this.policy = policy;
-		if(policy != null){
-			putQueryParameter("Policy", policy);
-		}
-	}
-
 	@Override
-	public Class<AssumeRoleResponse> getResponseClass() {
-		return AssumeRoleResponse.class;
+	public Class<GenerateSessionAccessKeyResponse> getResponseClass() {
+		return GenerateSessionAccessKeyResponse.class;
 	}
 
 }

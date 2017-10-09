@@ -19,8 +19,8 @@
 package com.aliyuncs.sts.transform.v20150401;
 
 import com.aliyuncs.sts.model.v20150401.AssumeRoleResponse;
-import com.aliyuncs.sts.model.v20150401.AssumeRoleResponse.Credentials;
 import com.aliyuncs.sts.model.v20150401.AssumeRoleResponse.AssumedRoleUser;
+import com.aliyuncs.sts.model.v20150401.AssumeRoleResponse.Credentials;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -30,14 +30,14 @@ public class AssumeRoleResponseUnmarshaller {
 		
 		assumeRoleResponse.setRequestId(context.stringValue("AssumeRoleResponse.RequestId"));
 
-		Credentials  credentials = new Credentials();
+		Credentials credentials = new Credentials();
 		credentials.setSecurityToken(context.stringValue("AssumeRoleResponse.Credentials.SecurityToken"));
 		credentials.setAccessKeySecret(context.stringValue("AssumeRoleResponse.Credentials.AccessKeySecret"));
 		credentials.setAccessKeyId(context.stringValue("AssumeRoleResponse.Credentials.AccessKeyId"));
 		credentials.setExpiration(context.stringValue("AssumeRoleResponse.Credentials.Expiration"));
 		assumeRoleResponse.setCredentials(credentials);
 
-		AssumedRoleUser  assumedRoleUser = new AssumedRoleUser();
+		AssumedRoleUser assumedRoleUser = new AssumedRoleUser();
 		assumedRoleUser.setArn(context.stringValue("AssumeRoleResponse.AssumedRoleUser.Arn"));
 		assumedRoleUser.setAssumedRoleId(context.stringValue("AssumeRoleResponse.AssumedRoleUser.AssumedRoleId"));
 		assumeRoleResponse.setAssumedRoleUser(assumedRoleUser);
