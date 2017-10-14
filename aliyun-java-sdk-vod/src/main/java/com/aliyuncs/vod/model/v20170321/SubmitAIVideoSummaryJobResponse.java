@@ -19,18 +19,18 @@
 package com.aliyuncs.vod.model.v20170321;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.vod.transform.v20170321.SubmitAIVideoPornRecogJobResponseUnmarshaller;
+import com.aliyuncs.vod.transform.v20170321.SubmitAIVideoSummaryJobResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class SubmitAIVideoPornRecogJobResponse extends AcsResponse {
+public class SubmitAIVideoSummaryJobResponse extends AcsResponse {
 
 	private String requestId;
 
-	private AIVideoPornRecogJob aIVideoPornRecogJob;
+	private AIVideoSummaryJob aIVideoSummaryJob;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -40,15 +40,15 @@ public class SubmitAIVideoPornRecogJobResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public AIVideoPornRecogJob getAIVideoPornRecogJob() {
-		return this.aIVideoPornRecogJob;
+	public AIVideoSummaryJob getAIVideoSummaryJob() {
+		return this.aIVideoSummaryJob;
 	}
 
-	public void setAIVideoPornRecogJob(AIVideoPornRecogJob aIVideoPornRecogJob) {
-		this.aIVideoPornRecogJob = aIVideoPornRecogJob;
+	public void setAIVideoSummaryJob(AIVideoSummaryJob aIVideoSummaryJob) {
+		this.aIVideoSummaryJob = aIVideoSummaryJob;
 	}
 
-	public static class AIVideoPornRecogJob {
+	public static class AIVideoSummaryJob {
 
 		private String jobId;
 
@@ -122,7 +122,7 @@ public class SubmitAIVideoPornRecogJobResponse extends AcsResponse {
 	}
 
 	@Override
-	public SubmitAIVideoPornRecogJobResponse getInstance(UnmarshallerContext context) {
-		return	SubmitAIVideoPornRecogJobResponseUnmarshaller.unmarshall(this, context);
+	public SubmitAIVideoSummaryJobResponse getInstance(UnmarshallerContext context) {
+		return	SubmitAIVideoSummaryJobResponseUnmarshaller.unmarshall(this, context);
 	}
 }

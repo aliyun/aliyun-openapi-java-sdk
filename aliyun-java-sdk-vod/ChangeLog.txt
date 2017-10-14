@@ -1,3 +1,9 @@
+2017-10-15 Version: 2.5.0
+1, 新增语音识别文本相关接口，包括提交语音识别作业SubmitAIASRJob、查询语音识别作业ListAIASRJob
+2, 新增视频摘要相关接口，包括提交视频摘要作业SubmitAIVideoSummaryJob、查询视频摘要作业ListAIVideoSummaryJob
+3, 视频AI智能首图和视频鉴黄相关接口SubmitAIVideoCoverJob、ListAIVideoCoverJob、SubmitAIVideoPornRecogJob、ListAIVideoPornRecogJob, 返回结构体Job中，将Id字段重命名为JobId。
+4, 获取视频播放地址接口GetPlayInfo，返回结构体PlayInfo中, 增加流类型StreamType, 如果输出为视频流, 取值: video, 输出为音频流, 取值: audio。
+
 2017-09-20 Version: 2.4.0
 1, 增加了获取源文件地址接口GetMezzanineInfo接口。
 2, 提交视频智能首图服务SubmitAIVideoCoverJob：请求参数增加MediaId字段，废弃Input字段（之前尚无使用），将原Input字段放在AIVideoCoverConfig之下 ；返回值中的Job参数增加MediaId字段。

@@ -85,6 +85,10 @@ public class GetPlayInfoResponse extends AcsResponse {
 
 		private String complexity;
 
+		private String streamType;
+
+		private String rand;
+
 		public Long getWidth() {
 			return this.width;
 		}
@@ -179,6 +183,22 @@ public class GetPlayInfoResponse extends AcsResponse {
 
 		public void setComplexity(String complexity) {
 			this.complexity = complexity;
+		}
+
+		public String getStreamType() {
+			return this.streamType;
+		}
+
+		public void setStreamType(String streamType) {
+			this.streamType = streamType;
+		}
+
+		public String getRand() {
+			return this.rand;
+		}
+
+		public void setRand(String rand) {
+			this.rand = rand;
 		}
 	}
 

@@ -18,19 +18,22 @@
  */
 package com.aliyuncs.vod.model.v20170321;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.vod.transform.v20170321.SubmitAIVideoPornRecogJobResponseUnmarshaller;
+import com.aliyuncs.vod.transform.v20170321.ListAIASRJobResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class SubmitAIVideoPornRecogJobResponse extends AcsResponse {
+public class ListAIASRJobResponse extends AcsResponse {
 
 	private String requestId;
 
-	private AIVideoPornRecogJob aIVideoPornRecogJob;
+	private List<AIASRJob> aIASRJobList;
+
+	private List<String> nonExistAIASRJobIds;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -40,15 +43,23 @@ public class SubmitAIVideoPornRecogJobResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public AIVideoPornRecogJob getAIVideoPornRecogJob() {
-		return this.aIVideoPornRecogJob;
+	public List<AIASRJob> getAIASRJobList() {
+		return this.aIASRJobList;
 	}
 
-	public void setAIVideoPornRecogJob(AIVideoPornRecogJob aIVideoPornRecogJob) {
-		this.aIVideoPornRecogJob = aIVideoPornRecogJob;
+	public void setAIASRJobList(List<AIASRJob> aIASRJobList) {
+		this.aIASRJobList = aIASRJobList;
 	}
 
-	public static class AIVideoPornRecogJob {
+	public List<String> getNonExistAIASRJobIds() {
+		return this.nonExistAIASRJobIds;
+	}
+
+	public void setNonExistAIASRJobIds(List<String> nonExistAIASRJobIds) {
+		this.nonExistAIASRJobIds = nonExistAIASRJobIds;
+	}
+
+	public static class AIASRJob {
 
 		private String jobId;
 
@@ -122,7 +133,7 @@ public class SubmitAIVideoPornRecogJobResponse extends AcsResponse {
 	}
 
 	@Override
-	public SubmitAIVideoPornRecogJobResponse getInstance(UnmarshallerContext context) {
-		return	SubmitAIVideoPornRecogJobResponseUnmarshaller.unmarshall(this, context);
+	public ListAIASRJobResponse getInstance(UnmarshallerContext context) {
+		return	ListAIASRJobResponseUnmarshaller.unmarshall(this, context);
 	}
 }

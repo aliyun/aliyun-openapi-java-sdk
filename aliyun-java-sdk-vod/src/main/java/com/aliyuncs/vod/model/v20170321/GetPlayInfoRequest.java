@@ -30,17 +30,36 @@ public class GetPlayInfoRequest extends RpcAcsRequest<GetPlayInfoResponse> {
 		super("vod", "2017-03-21", "GetPlayInfo", "vod");
 	}
 
+	private String rand;
+
 	private Long resourceOwnerId;
 
 	private String formats;
 
 	private String resourceOwnerAccount;
 
+	private String channel;
+
 	private String videoId;
+
+	private String playerVersion;
 
 	private Long ownerId;
 
 	private Long authTimeout;
+
+	private String authInfo;
+
+	public String getRand() {
+		return this.rand;
+	}
+
+	public void setRand(String rand) {
+		this.rand = rand;
+		if(rand != null){
+			putQueryParameter("Rand", rand);
+		}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -75,6 +94,17 @@ public class GetPlayInfoRequest extends RpcAcsRequest<GetPlayInfoResponse> {
 		}
 	}
 
+	public String getChannel() {
+		return this.channel;
+	}
+
+	public void setChannel(String channel) {
+		this.channel = channel;
+		if(channel != null){
+			putQueryParameter("Channel", channel);
+		}
+	}
+
 	public String getVideoId() {
 		return this.videoId;
 	}
@@ -83,6 +113,17 @@ public class GetPlayInfoRequest extends RpcAcsRequest<GetPlayInfoResponse> {
 		this.videoId = videoId;
 		if(videoId != null){
 			putQueryParameter("VideoId", videoId);
+		}
+	}
+
+	public String getPlayerVersion() {
+		return this.playerVersion;
+	}
+
+	public void setPlayerVersion(String playerVersion) {
+		this.playerVersion = playerVersion;
+		if(playerVersion != null){
+			putQueryParameter("PlayerVersion", playerVersion);
 		}
 	}
 
@@ -105,6 +146,17 @@ public class GetPlayInfoRequest extends RpcAcsRequest<GetPlayInfoResponse> {
 		this.authTimeout = authTimeout;
 		if(authTimeout != null){
 			putQueryParameter("AuthTimeout", authTimeout.toString());
+		}
+	}
+
+	public String getAuthInfo() {
+		return this.authInfo;
+	}
+
+	public void setAuthInfo(String authInfo) {
+		this.authInfo = authInfo;
+		if(authInfo != null){
+			putQueryParameter("AuthInfo", authInfo);
 		}
 	}
 

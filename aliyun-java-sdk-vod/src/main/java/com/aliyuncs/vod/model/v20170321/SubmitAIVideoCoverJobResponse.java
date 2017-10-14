@@ -50,7 +50,7 @@ public class SubmitAIVideoCoverJobResponse extends AcsResponse {
 
 	public static class AIVideoCoverJob {
 
-		private String id;
+		private String jobId;
 
 		private String mediaId;
 
@@ -64,12 +64,12 @@ public class SubmitAIVideoCoverJobResponse extends AcsResponse {
 
 		private String data;
 
-		public String getId() {
-			return this.id;
+		public String getJobId() {
+			return this.jobId;
 		}
 
-		public void setId(String id) {
-			this.id = id;
+		public void setJobId(String jobId) {
+			this.jobId = jobId;
 		}
 
 		public String getMediaId() {

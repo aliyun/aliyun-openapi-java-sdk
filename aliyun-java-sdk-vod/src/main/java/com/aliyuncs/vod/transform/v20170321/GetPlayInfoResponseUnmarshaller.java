@@ -58,6 +58,8 @@ public class GetPlayInfoResponseUnmarshaller {
 			playInfo.setEncrypt(context.longValue("GetPlayInfoResponse.PlayInfoList["+ i +"].Encrypt"));
 			playInfo.setPlaintext(context.stringValue("GetPlayInfoResponse.PlayInfoList["+ i +"].Plaintext"));
 			playInfo.setComplexity(context.stringValue("GetPlayInfoResponse.PlayInfoList["+ i +"].Complexity"));
+			playInfo.setStreamType(context.stringValue("GetPlayInfoResponse.PlayInfoList["+ i +"].StreamType"));
+			playInfo.setRand(context.stringValue("GetPlayInfoResponse.PlayInfoList["+ i +"].Rand"));
 
 			playInfoList.add(playInfo);
 		}

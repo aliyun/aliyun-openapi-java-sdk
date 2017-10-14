@@ -41,7 +41,7 @@ public class ListAIVideoCoverJobResponseUnmarshaller {
 		List<AIVideoCoverJob> aIVideoCoverJobList = new ArrayList<AIVideoCoverJob>();
 		for (int i = 0; i < context.lengthValue("ListAIVideoCoverJobResponse.AIVideoCoverJobList.Length"); i++) {
 			AIVideoCoverJob aIVideoCoverJob = new AIVideoCoverJob();
-			aIVideoCoverJob.setId(context.stringValue("ListAIVideoCoverJobResponse.AIVideoCoverJobList["+ i +"].Id"));
+			aIVideoCoverJob.setJobId(context.stringValue("ListAIVideoCoverJobResponse.AIVideoCoverJobList["+ i +"].JobId"));
 			aIVideoCoverJob.setMediaId(context.stringValue("ListAIVideoCoverJobResponse.AIVideoCoverJobList["+ i +"].MediaId"));
 			aIVideoCoverJob.setStatus(context.stringValue("ListAIVideoCoverJobResponse.AIVideoCoverJobList["+ i +"].Status"));
 			aIVideoCoverJob.setCode(context.stringValue("ListAIVideoCoverJobResponse.AIVideoCoverJobList["+ i +"].Code"));

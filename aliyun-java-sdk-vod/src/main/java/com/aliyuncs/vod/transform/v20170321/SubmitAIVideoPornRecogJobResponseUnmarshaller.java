@@ -30,7 +30,7 @@ public class SubmitAIVideoPornRecogJobResponseUnmarshaller {
 		submitAIVideoPornRecogJobResponse.setRequestId(context.stringValue("SubmitAIVideoPornRecogJobResponse.RequestId"));
 
 		AIVideoPornRecogJob aIVideoPornRecogJob = new AIVideoPornRecogJob();
-		aIVideoPornRecogJob.setId(context.stringValue("SubmitAIVideoPornRecogJobResponse.AIVideoPornRecogJob.Id"));
+		aIVideoPornRecogJob.setJobId(context.stringValue("SubmitAIVideoPornRecogJobResponse.AIVideoPornRecogJob.JobId"));
 		aIVideoPornRecogJob.setMediaId(context.stringValue("SubmitAIVideoPornRecogJobResponse.AIVideoPornRecogJob.MediaId"));
 		aIVideoPornRecogJob.setStatus(context.stringValue("SubmitAIVideoPornRecogJobResponse.AIVideoPornRecogJob.Status"));
 		aIVideoPornRecogJob.setCode(context.stringValue("SubmitAIVideoPornRecogJobResponse.AIVideoPornRecogJob.Code"));

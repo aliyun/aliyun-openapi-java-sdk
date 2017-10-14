@@ -18,19 +18,22 @@
  */
 package com.aliyuncs.vod.model.v20170321;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.vod.transform.v20170321.SubmitAIVideoPornRecogJobResponseUnmarshaller;
+import com.aliyuncs.vod.transform.v20170321.ListAIVideoSummaryJobResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class SubmitAIVideoPornRecogJobResponse extends AcsResponse {
+public class ListAIVideoSummaryJobResponse extends AcsResponse {
 
 	private String requestId;
 
-	private AIVideoPornRecogJob aIVideoPornRecogJob;
+	private List<AIVideoSummaryJob> aIVideoSummaryJobList;
+
+	private List<String> nonExistAIVideoSummaryJobIds;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -40,15 +43,23 @@ public class SubmitAIVideoPornRecogJobResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public AIVideoPornRecogJob getAIVideoPornRecogJob() {
-		return this.aIVideoPornRecogJob;
+	public List<AIVideoSummaryJob> getAIVideoSummaryJobList() {
+		return this.aIVideoSummaryJobList;
 	}
 
-	public void setAIVideoPornRecogJob(AIVideoPornRecogJob aIVideoPornRecogJob) {
-		this.aIVideoPornRecogJob = aIVideoPornRecogJob;
+	public void setAIVideoSummaryJobList(List<AIVideoSummaryJob> aIVideoSummaryJobList) {
+		this.aIVideoSummaryJobList = aIVideoSummaryJobList;
 	}
 
-	public static class AIVideoPornRecogJob {
+	public List<String> getNonExistAIVideoSummaryJobIds() {
+		return this.nonExistAIVideoSummaryJobIds;
+	}
+
+	public void setNonExistAIVideoSummaryJobIds(List<String> nonExistAIVideoSummaryJobIds) {
+		this.nonExistAIVideoSummaryJobIds = nonExistAIVideoSummaryJobIds;
+	}
+
+	public static class AIVideoSummaryJob {
 
 		private String jobId;
 
@@ -122,7 +133,7 @@ public class SubmitAIVideoPornRecogJobResponse extends AcsResponse {
 	}
 
 	@Override
-	public SubmitAIVideoPornRecogJobResponse getInstance(UnmarshallerContext context) {
-		return	SubmitAIVideoPornRecogJobResponseUnmarshaller.unmarshall(this, context);
+	public ListAIVideoSummaryJobResponse getInstance(UnmarshallerContext context) {
+		return	ListAIVideoSummaryJobResponseUnmarshaller.unmarshall(this, context);
 	}
 }
