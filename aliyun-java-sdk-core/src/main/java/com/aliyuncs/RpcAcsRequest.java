@@ -25,9 +25,9 @@ import java.util.Map;
 
 import com.aliyuncs.auth.AlibabaCloudCredentials;
 import com.aliyuncs.auth.BasicSessionCredentials;
-import com.aliyuncs.auth.Credential;
-import com.aliyuncs.auth.ISigner;
+import com.aliyuncs.auth.KeyPairCredentials;
 import com.aliyuncs.auth.RpcSignatureComposer;
+import com.aliyuncs.auth.Signer;
 import com.aliyuncs.http.FormatType;
 import com.aliyuncs.http.HttpRequest;
 import com.aliyuncs.http.MethodType;
@@ -115,15 +115,20 @@ public abstract class RpcAcsRequest<T extends AcsResponse> extends AcsRequest<T>
     }
 
     @Override
-    public HttpRequest signRequest(ISigner signer, AlibabaCloudCredentials credentials, FormatType format, ProductDomain domain)
+    public HttpRequest signRequest(Signer signer, AlibabaCloudCredentials credentials,
+                                   FormatType format, ProductDomain domain)
         throws InvalidKeyException, IllegalStateException, UnsupportedEncodingException {
+
         Map<String, String> imutableMap = new HashMap<String, String>(this.getQueryParameters());
         if (null != signer && null != credentials) {
             String accessKeyId = credentials.getAccessKeyId();
             String accessSecret = credentials.getAccessKeySecret();
             if (credentials instanceof BasicSessionCredentials) {
-                this.putQueryParameter("SecurityToken", ((BasicSessionCredentials)credentials).getSessionToken());
-            }           
+                String sessionToken = ((BasicSessionCredentials)credentials).getSessionToken();
+                if (null != sessionToken) {
+                    this.putQueryParameter("SecurityToken", sessionToken);
+                }
+            }
             imutableMap = this.composer.refreshSignParameters(this.getQueryParameters(), signer, accessKeyId, format);
             imutableMap.put("RegionId", getRegionId());
             Map<String, String> paramsToSign = new HashMap<String, String>(imutableMap);
@@ -133,14 +138,18 @@ public abstract class RpcAcsRequest<T extends AcsResponse> extends AcsRequest<T>
                 this.setHttpContent(data, "UTF-8", FormatType.FORM);
                 paramsToSign.putAll(formParams);
             }
-            String strToSign = this.composer.composeStringToSign(this.getMethod(), null, signer, paramsToSign, null,
-                null);
-            String signature = signer.signString(strToSign, accessSecret + "&");
+            String strToSign = this.composer.composeStringToSign(
+                this.getMethod(), null, signer, paramsToSign, null,null);
+
+            String signature;
+            if (credentials instanceof KeyPairCredentials) {
+                signature = signer.signString(strToSign, credentials);
+            } else {
+                signature = signer.signString(strToSign, accessSecret + "&");
+            }
             imutableMap.put("Signature", signature);
         }
         setUrl(this.composeUrl(domain.getDomianName(), imutableMap));
         return this;
     }
-
-
 }

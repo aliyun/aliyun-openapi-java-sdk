@@ -27,6 +27,7 @@ import javax.crypto.spec.SecretKeySpec;
 
 import com.aliyuncs.utils.Base64Helper;
 
+@Deprecated
 public class ShaHmac1 implements ISigner {
 
     private final static String AGLORITHM_NAME = "HmacSHA1";

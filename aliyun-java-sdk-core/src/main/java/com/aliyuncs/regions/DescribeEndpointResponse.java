@@ -5,8 +5,6 @@ import com.aliyuncs.exceptions.ClientException;
 import com.aliyuncs.exceptions.ServerException;
 import com.aliyuncs.transform.UnmarshallerContext;
 
-import java.io.Serializable;
-
 /**
  * Created by hi.yan.li on 2016/3/29.
  */

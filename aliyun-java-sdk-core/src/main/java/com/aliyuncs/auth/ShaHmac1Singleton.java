@@ -3,6 +3,7 @@ package com.aliyuncs.auth;
 /**
  * Created by hi.yan.li on 2016/4/1.
  */
+@Deprecated
 public enum ShaHmac1Singleton {
     INSTANCE;
 

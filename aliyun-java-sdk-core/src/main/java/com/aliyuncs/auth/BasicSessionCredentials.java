@@ -48,9 +48,6 @@ public class BasicSessionCredentials implements AlibabaCloudCredentials {
         if (accessKeySecret == null) {
             throw new IllegalArgumentException("Access key secret cannot be null.");
         }
-        if (sessionToken == null) {
-            throw new IllegalArgumentException("Session token cannot be null.");
-        }
 
         this.accessKeyId = accessKeyId;
         this.accessKeySecret = accessKeySecret;

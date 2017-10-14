@@ -16,40 +16,49 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package com.aliyuncs.ecs.v20140526.model;
+package com.aliyuncs.ft.model;
 
-import com.aliyuncs.AcsResponse;
-
-import com.aliyuncs.ecs.v20140526.transform.CreateInstanceResponseUnmarshaller;
-import com.aliyuncs.transform.UnmarshallerContext;
+import com.aliyuncs.RpcAcsRequest;
 
 /**
  * @author auto create
+ * @version 
  */
-public class CreateInstanceResponse extends AcsResponse {
+public class TestRpcApiRequest extends RpcAcsRequest<TestRpcApiResponse> {
+	
+	public TestRpcApiRequest() {
+		super("Ft", "2016-01-01", "TestRpcApi");
+	}
 
-    private String requestId;
+	private String bodyParam;
 
-    private String instanceId;
+	private String queryParam;
 
-    public String getRequestId() {
-        return this.requestId;
-    }
+	public String getBodyParam() {
+		return this.bodyParam;
+	}
 
-    public void setRequestId(String requestId) {
-        this.requestId = requestId;
-    }
+	public void setBodyParam(String bodyParam) {
+		this.bodyParam = bodyParam;
+		if(bodyParam != null){
+			putBodyParameter("BodyParam", bodyParam);
+		}
+	}
 
-    public String getInstanceId() {
-        return this.instanceId;
-    }
+	public String getQueryParam() {
+		return this.queryParam;
+	}
 
-    public void setInstanceId(String instanceId) {
-        this.instanceId = instanceId;
-    }
+	public void setQueryParam(String queryParam) {
+		this.queryParam = queryParam;
+		if(queryParam != null){
+			putQueryParameter("QueryParam", queryParam);
+		}
+	}
 
-    @Override
-    public CreateInstanceResponse getInstance(UnmarshallerContext context) {
-        return CreateInstanceResponseUnmarshaller.unmarshall(this, context);
-    }
+	@Override
+	public Class<TestRpcApiResponse> getResponseClass() {
+		return TestRpcApiResponse.class;
+	}
+
 }

@@ -21,7 +21,6 @@ package com.aliyuncs.utils;
 import static org.junit.Assert.*;
 
 import java.io.UnsupportedEncodingException;
-import java.security.NoSuchAlgorithmException;
 
 import org.junit.Test;
 

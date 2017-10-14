@@ -38,7 +38,7 @@ public class RpcSignatureComposer implements ISignatureComposer {
 
     @Override
     public Map<String, String> refreshSignParameters(Map<String, String> parameters,
-                                                     ISigner signer, String accessKeyId, FormatType format) {
+                                                     Signer signer, String accessKeyId, FormatType format) {
         Map<String, String> immutableMap = new HashMap<String, String>(parameters);
         immutableMap.put("Timestamp", ParameterHelper.getISO8601Time(null));
         immutableMap.put("SignatureMethod", signer.getSignerName());
@@ -48,12 +48,15 @@ public class RpcSignatureComposer implements ISignatureComposer {
         if (null != format) {
             immutableMap.put("Format", format.toString());
         }
+        if (signer.getSignerType() != null) {
+            immutableMap.put("SignatureType", signer.getSignerType());
+        }
         return immutableMap;
     }
 
     @Override
     public String composeStringToSign(MethodType method, String uriPattern,
-                                      ISigner signer, Map<String, String> queries,
+                                      Signer signer, Map<String, String> queries,
                                       Map<String, String> headers, Map<String, String> paths) {
 
         String[] sortedKeys = queries.keySet().toArray(new String[] {});

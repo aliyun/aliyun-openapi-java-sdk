@@ -34,13 +34,16 @@ public class RoaSignatureComposer implements ISignatureComposer {
 
     @Override
     public Map<String, String> refreshSignParameters(Map<String, String> parameters,
-                                                     ISigner signer, String accessKeyId, FormatType format) {
+                                                     Signer signer, String accessKeyId, FormatType format) {
         Map<String, String> immutableMap = new HashMap<String, String>(parameters);
         immutableMap.put("Date", ParameterHelper.getRFC2616Date(null));
         if (null == format) { format = FormatType.RAW; }
         immutableMap.put("Accept", FormatType.mapFormatToAccept(format));
         immutableMap.put("x-acs-signature-method", signer.getSignerName());
         immutableMap.put("x-acs-signature-version", signer.getSignerVersion());
+        if (signer.getSignerType() != null) {
+            immutableMap.put("x-acs-signature-type", signer.getSignerType());
+        }
         return immutableMap;
     }
 
@@ -110,7 +113,7 @@ public class RoaSignatureComposer implements ISignatureComposer {
     }
 
     @Override
-    public String composeStringToSign(MethodType method, String uriPattern, ISigner signer,
+    public String composeStringToSign(MethodType method, String uriPattern, Signer signer,
                                       Map<String, String> queries, Map<String, String> headers,
                                       Map<String, String> paths) {
         StringBuilder sb = new StringBuilder();

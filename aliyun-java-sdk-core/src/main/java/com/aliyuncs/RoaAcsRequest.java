@@ -27,9 +27,8 @@ import java.util.Map;
 
 import com.aliyuncs.auth.AlibabaCloudCredentials;
 import com.aliyuncs.auth.BasicSessionCredentials;
-import com.aliyuncs.auth.Credential;
-import com.aliyuncs.auth.ISigner;
 import com.aliyuncs.auth.RoaSignatureComposer;
+import com.aliyuncs.auth.Signer;
 import com.aliyuncs.http.FormatType;
 import com.aliyuncs.http.HttpRequest;
 import com.aliyuncs.regions.ProductDomain;
@@ -136,7 +135,8 @@ public abstract class RoaAcsRequest<T extends AcsResponse> extends AcsRequest<T>
     }
 
     @Override
-    public HttpRequest signRequest(ISigner signer, AlibabaCloudCredentials credentials, FormatType format, ProductDomain domain)
+    public HttpRequest signRequest(Signer signer, AlibabaCloudCredentials credentials,
+                                   FormatType format, ProductDomain domain)
         throws InvalidKeyException, IllegalStateException, UnsupportedEncodingException, NoSuchAlgorithmException {
 
         Map<String, String> formParams = this.getBodyParameters();
@@ -151,16 +151,18 @@ public abstract class RoaAcsRequest<T extends AcsResponse> extends AcsRequest<T>
             String accessSecret = credentials.getAccessKeySecret();
             imutableMap = this.composer.refreshSignParameters(this.getHeaders(), signer, accessKeyId, format);
             if (credentials instanceof BasicSessionCredentials) {
-                imutableMap.put("x-acs-security-token", ((BasicSessionCredentials)credentials).getSessionToken());
+                String sessionToken = ((BasicSessionCredentials)credentials).getSessionToken();
+                if (null != sessionToken) {
+                    imutableMap.put("x-acs-security-token", sessionToken);
+                }
             } 
             String strToSign = this.composer.composeStringToSign(this.getMethod(), this.getUriPattern(), signer,
                 this.getQueryParameters(), imutableMap, this.getPathParameters());
-            String signature = signer.signString(strToSign, accessSecret);
+            String signature = signer.signString(strToSign, credentials);
             imutableMap.put("Authorization", "acs " + accessKeyId + ":" + signature);
         }
         this.setUrl(this.composeUrl(domain.getDomianName(), this.getQueryParameters()));
         this.headers = imutableMap;
         return this;
     }
-
 }

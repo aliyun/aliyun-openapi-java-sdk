@@ -18,8 +18,6 @@
  */
 package com.aliyuncs;
 
-import java.io.UnsupportedEncodingException;
-
 import static org.junit.Assert.*;
 
 import com.aliyuncs.http.HttpResponse;
@@ -27,7 +25,6 @@ import org.junit.FixMethodOrder;
 import org.junit.Test;
 
 import com.aliyuncs.auth.Credential;
-import com.aliyuncs.ecs.v20140526.model.CreateInstanceRequest;
 import com.aliyuncs.ecs.v20140526.model.DescribeRegionsRequest;
 import com.aliyuncs.exceptions.ClientException;
 import com.aliyuncs.exceptions.ServerException;
@@ -37,6 +34,7 @@ import org.junit.runners.MethodSorters;
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class ClientExceptionTest extends BaseTest {
 
+    @SuppressWarnings({ "rawtypes", "unchecked" })
     @Test(expected = ClientException.class)
     public void test1_InvalidProfile() throws ClientException {
         DefaultAcsClient client = new DefaultAcsClient(null);
@@ -52,6 +50,7 @@ public class ClientExceptionTest extends BaseTest {
         }
     }
 
+    @SuppressWarnings({ "rawtypes", "unchecked" })
     @Test(expected = ClientException.class)
     public void test2_InvalidRegionId() throws ClientException {
         DefaultAcsClient client = new DefaultAcsClient(DefaultProfile.getProfile());
@@ -67,6 +66,7 @@ public class ClientExceptionTest extends BaseTest {
         }
     }
 
+    @SuppressWarnings({ "rawtypes", "unchecked" })
     @Test
     public void test3_InvalidAccessKeyId() throws ClientException {
         DefaultAcsClient client = new DefaultAcsClient(DefaultProfile.getProfile());
@@ -82,18 +82,7 @@ public class ClientExceptionTest extends BaseTest {
         }
     }
 
-    @Test(expected = ClientException.class)
-    public void test4_RequestIdNotNull() throws ClientException {
-        AcsRequest request = new CreateInstanceRequest();
-        try {
-            client.getAcsResponse(request);
-        } catch (ClientException e) {
-            assertNotNull(e.getRequestId());
-            throw e;
-        }
-
-    }
-
+    @SuppressWarnings({ "rawtypes", "unchecked" })
     @Test(expected = ClientException.class)
     public void test5_ServerUnreachable() throws ClientException {
         DefaultAcsClient client = new DefaultAcsClient(DefaultProfile.getProfile());
@@ -101,7 +90,7 @@ public class ClientExceptionTest extends BaseTest {
 
         try {
             DefaultProfile.addEndpoint("cn-hangzhou", "cn-beijing", "Ecs", "unreachable.aliyuncs.com");
-            HttpResponse response = client.doAction(request, "cn-beijing", new Credential("testid", "testsecret"));
+            client.doAction(request, "cn-beijing", new Credential("testid", "testsecret"));
         } catch (ClientException e) {
             assertEquals("SDK.ServerUnreachable", e.getErrCode());
             throw e;

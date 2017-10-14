@@ -21,7 +21,7 @@ package com.aliyuncs;
 import java.util.List;
 
 import com.aliyuncs.auth.Credential;
-import com.aliyuncs.auth.ISigner;
+import com.aliyuncs.auth.Signer;
 import com.aliyuncs.exceptions.ClientException;
 import com.aliyuncs.exceptions.ServerException;
 import com.aliyuncs.http.FormatType;
@@ -66,7 +66,7 @@ public interface IAcsClient {
     public <T extends AcsResponse> HttpResponse doAction(AcsRequest<T> request,
                                                          boolean autoRetry, int maxRetryNumber,
                                                          String regionId, Credential credential,
-                                                         ISigner signer, FormatType format,
+                                                         Signer signer, FormatType format,
                                                          List<Endpoint> endpoints)
         throws ClientException, ServerException;
 

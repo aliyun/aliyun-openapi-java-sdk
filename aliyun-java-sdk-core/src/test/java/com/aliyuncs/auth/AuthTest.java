@@ -37,7 +37,7 @@ public class AuthTest {
 
     @Test
     public void testRPCComposer() {
-        ISigner signer = new ShaHmac1();
+        Signer signer = new HmacSHA1Signer();
         @SuppressWarnings("rawtypes")
         AcsRequest request = new DescribeRegionsRequest();
 
@@ -52,7 +52,7 @@ public class AuthTest {
 
     @Test
     public void testRoaComposer() {
-        ISigner signer = new ShaHmac1();
+        Signer signer = new HmacSHA1Signer();
         RoaAcsRequest request = new GetRegionsRequest();
 
         ISignatureComposer composer = RoaSignatureComposer.getComposer();

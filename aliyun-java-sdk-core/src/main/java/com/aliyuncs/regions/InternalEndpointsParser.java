@@ -27,13 +27,14 @@ import java.util.Set;
 
 import javax.xml.parsers.ParserConfigurationException;
 
+import com.aliyuncs.auth.Credential;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
-import com.aliyuncs.auth.Credential;
+import com.aliyuncs.auth.ISigner;
 import com.aliyuncs.exceptions.ClientException;
 import com.aliyuncs.utils.XmlUtils;
 

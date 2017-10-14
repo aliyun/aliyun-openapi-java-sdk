@@ -1,3 +1,6 @@
+2017-10-15 Version: 3.4.0
+1, 加入了KeyPairCredentials 和 STSGetSessionAccessKeyCredentialsProvider，支持 PublicKey (即AK2.0)功能。
+
 2017-09-22 Version: 3.3.1
 1,  修正在网络连接发生重置时抛出 NullPointerException的问题。在连接重置时SDK执行默认重试策略。
 

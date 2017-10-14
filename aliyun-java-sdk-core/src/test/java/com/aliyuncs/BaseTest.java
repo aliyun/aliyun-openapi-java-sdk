@@ -25,6 +25,8 @@ import java.io.InputStream;
 import java.util.Properties;
 
 import com.aliyuncs.auth.Credential;
+import com.aliyuncs.exceptions.ClientException;
+
 import org.junit.Before;
 
 import com.aliyuncs.profile.DefaultProfile;
@@ -32,26 +34,35 @@ import com.aliyuncs.profile.IClientProfile;
 
 public class BaseTest {
 
-    protected IAcsClient client = null;
+    protected IAcsClient        client             = null;
 
-    protected Credential dailyEnvCredentail = null;
+    protected IAcsClient        clientV2           = null;
 
-    private static final String SETTINGS_FILE_NAME =
-        System.getProperty("user.home") +
-            System.getProperty("file.separator") +
-            "aliyun-sdk.properties";
+    protected Credential        dailyEnvCredentail = null;
+
+    protected Properties        properties;
+
+    private static final String SETTINGS_FILE_NAME = System.getProperty("user.home")
+            + System.getProperty("file.separator") + "aliyun-sdk.properties";
 
     @Before
     public void init() {
-        Properties properties = getProperties();
-        IClientProfile profile = DefaultProfile.getProfile("cn-hangzhou", properties.getProperty("accessKeyId"),
-            properties.getProperty("accessSecret"));
+        try {
+            DefaultProfile.addEndpoint("cn-hangzhou", "cn-hangzhou", "Ft", "ft.aliyuncs.com");
+            DefaultProfile.addEndpoint("cn-hangzhou", "cn-hangzhou", "Sts", "sts.aliyuncs.com");
+        } catch (ClientException e) {
+        }
+        properties = getProperties();
+        IClientProfile profile = DefaultProfile.getProfile("cn-hangzhou", properties.getProperty("daily_accessKeyId"),
+                properties.getProperty("daily_accessSecret"));
         client = new DefaultAcsClient(profile);
 
-        dailyEnvCredentail = new Credential(properties.getProperty("daily_accessKeyId"), properties.getProperty("daily_accessSecret"));
+        dailyEnvCredentail = new Credential(properties.getProperty("daily_accessKeyId"),
+                properties.getProperty("daily_accessSecret"));
 
         System.setProperty("http.proxyHost", "127.0.0.1");
         System.setProperty("http.proxyPort", "8888");
+
     }
 
     private Properties getProperties() {
@@ -68,5 +79,5 @@ public class BaseTest {
         }
         return pr;
     }
-
+ 
 }

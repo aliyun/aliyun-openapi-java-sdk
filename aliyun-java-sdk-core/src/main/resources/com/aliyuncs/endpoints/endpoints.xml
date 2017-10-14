@@ -358,6 +358,14 @@
                 <ProductName>Slb</ProductName>
                 <DomainName>slb.ap-northeast-1.aliyuncs.com</DomainName>
             </Product>
+            <Product>
+                <ProductName>Sts</ProductName>
+                <DomainName>sts.ap-northeast-1.aliyuncs.com</DomainName>
+            </Product>
+            <Product>
+                <ProductName>Ram</ProductName>
+                <DomainName>ram.aliyuncs.com</DomainName>
+            </Product>
         </Products>
     </Endpoint>
     <Endpoint name="cn-hangzhou-bj-b01">

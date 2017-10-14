@@ -20,6 +20,7 @@ package com.aliyuncs.auth;
 
 import java.security.InvalidKeyException;
 
+@Deprecated
 public interface ISigner {
 
     public String getSignerName();

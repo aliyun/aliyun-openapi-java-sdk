@@ -29,6 +29,7 @@ import com.aliyuncs.regions.Endpoint;
 
 public interface IClientProfile {
 
+    @Deprecated
     public ISigner getSigner();
 
     public String getRegionId();

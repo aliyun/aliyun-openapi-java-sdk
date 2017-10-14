@@ -16,10 +16,10 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package com.aliyuncs.ft.transform.v20160101;
+package com.aliyuncs.ft.transform;
 
-import com.aliyuncs.ft.model.v20160101.TestRpcApiResponse;
-import com.aliyuncs.ft.model.v20160101.TestRpcApiResponse.Params;
+import com.aliyuncs.ft.model.TestRpcApiResponse;
+import com.aliyuncs.ft.model.TestRpcApiResponse.Params;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

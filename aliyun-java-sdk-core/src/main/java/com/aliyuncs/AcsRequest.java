@@ -21,6 +21,7 @@ package com.aliyuncs;
 import java.io.UnsupportedEncodingException;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
+import java.security.SignatureException;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
@@ -30,8 +31,8 @@ import com.aliyuncs.auth.AcsURLEncoder;
 import com.aliyuncs.auth.AlibabaCloudCredentials;
 import com.aliyuncs.auth.Credential;
 import com.aliyuncs.auth.ISignatureComposer;
-import com.aliyuncs.auth.ISigner;
 import com.aliyuncs.auth.LegacyCredentials;
+import com.aliyuncs.auth.Signer;
 import com.aliyuncs.http.FormatType;
 import com.aliyuncs.http.HttpRequest;
 import com.aliyuncs.http.ProtocolType;
@@ -199,14 +200,14 @@ public abstract class AcsRequest<T extends AcsResponse> extends HttpRequest {
         return urlBuilder.toString();
     }
 
-    public HttpRequest signRequest(ISigner signer, Credential credential,
-                                            FormatType format, ProductDomain domain)
+    public HttpRequest signRequest(Signer signer, Credential credential,
+                                   FormatType format, ProductDomain domain)
         throws InvalidKeyException, IllegalStateException,
         UnsupportedEncodingException, NoSuchAlgorithmException {
         return signRequest(signer, new LegacyCredentials(credential), format, domain);
     }
 
-    public abstract HttpRequest signRequest(ISigner signer, AlibabaCloudCredentials credentials,
+    public abstract HttpRequest signRequest(Signer signer, AlibabaCloudCredentials credentials,
                                             FormatType format, ProductDomain domain)
         throws InvalidKeyException, IllegalStateException,
         UnsupportedEncodingException, NoSuchAlgorithmException;

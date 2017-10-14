@@ -3,9 +3,12 @@ package com.aliyuncs.regions;
 import java.io.UnsupportedEncodingException;
 
 import com.aliyuncs.AcsError;
+import com.aliyuncs.IAcsClient;
+import com.aliyuncs.auth.AlibabaCloudCredentials;
 import com.aliyuncs.auth.Credential;
 import com.aliyuncs.auth.ISigner;
-import com.aliyuncs.auth.ShaHmac1Singleton;
+import com.aliyuncs.auth.LegacyCredentials;
+import com.aliyuncs.auth.Signer;
 import com.aliyuncs.exceptions.ClientException;
 import com.aliyuncs.http.FormatType;
 import com.aliyuncs.http.HttpRequest;
@@ -42,7 +45,7 @@ public class DescribeEndpointServiceImpl implements DescribeEndpointService {
         }
         request.setEndpointType(endpointType);
 
-        ISigner signer = ShaHmac1Singleton.INSTANCE.getInstance();
+        Signer signer = Signer.getSigner(new LegacyCredentials(credential));
         ProductDomain domain = new ProductDomain(locationConfig.getProduct(), locationConfig.getEndpoint());
 
         try {

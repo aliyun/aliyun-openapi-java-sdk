@@ -23,6 +23,7 @@ import com.aliyuncs.auth.AlibabaCloudCredentialsProvider;
 import com.aliyuncs.auth.Credential;
 import com.aliyuncs.auth.ISigner;
 import com.aliyuncs.auth.LegacyCredentials;
+import com.aliyuncs.auth.Signer;
 import com.aliyuncs.auth.StaticCredentialsProvider;
 import com.aliyuncs.exceptions.ClientException;
 import com.aliyuncs.exceptions.ServerException;
@@ -97,14 +98,13 @@ public class DefaultAcsClient implements IAcsClient {
         throws ClientException, ServerException {
         boolean retry = this.autoRetry;
         int retryNumber = this.maxRetryNumber;
-        ISigner signer = null;
+        Signer signer = Signer.getSigner(new LegacyCredentials(credential));
         FormatType format = null;
         List<Endpoint> endpoints = null;
         if (null == request.getRegionId()) {
             request.setRegionId(regionId);
         }
         if (null != this.clientProfile) {
-            signer = clientProfile.getSigner();
             format = clientProfile.getFormat();
             try {
                 endpoints = clientProfile.getEndpoints(request.getProduct(), request.getRegionId(),
@@ -162,7 +162,7 @@ public class DefaultAcsClient implements IAcsClient {
         }
 
         AlibabaCloudCredentials credentials = this.credentialsProvider.getCredentials();
-        ISigner signer = profile.getSigner();
+        Signer signer = Signer.getSigner(credentials);
         FormatType format = profile.getFormat();
         List<Endpoint> endpoints;
         try {
@@ -197,7 +197,7 @@ public class DefaultAcsClient implements IAcsClient {
     public <T extends AcsResponse> HttpResponse doAction(AcsRequest<T> request,
                                                          boolean autoRetry, int maxRetryNumber,
                                                          String regionId, Credential credential,
-                                                         ISigner signer, FormatType format,
+                                                         Signer signer, FormatType format,
                                                          List<Endpoint> endpoints)
         throws ClientException, ServerException {
         return doAction(
@@ -207,11 +207,11 @@ public class DefaultAcsClient implements IAcsClient {
     }
 
     private  <T extends AcsResponse> HttpResponse doAction(AcsRequest<T> request,
-                                                         boolean autoRetry, int maxRetryNumber,
-                                                         String regionId,
-                                                         AlibabaCloudCredentials credentials,
-                                                         ISigner signer, FormatType format,
-                                                         List<Endpoint> endpoints)
+                                                           boolean autoRetry, int maxRetryNumber,
+                                                           String regionId,
+                                                           AlibabaCloudCredentials credentials,
+                                                           Signer signer, FormatType format,
+                                                           List<Endpoint> endpoints)
         throws ClientException, ServerException {
 
         try {

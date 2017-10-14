@@ -18,8 +18,6 @@
  */
 package com.aliyuncs.profile;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashSet;
@@ -27,7 +25,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import com.aliyuncs.auth.AlibabaCloudCredentials;
 import com.aliyuncs.auth.AlibabaCloudCredentialsProvider;
 import com.aliyuncs.auth.Credential;
 import com.aliyuncs.auth.CredentialsBackupCompatibilityAdaptor;
@@ -50,13 +47,12 @@ public class DefaultProfile implements IClientProfile {
     private static DefaultProfile profile = null;
     private static List<Endpoint> endpoints = null;
 
-    private Credential credential = null;
     private String regionId = null;
     private FormatType acceptFormat = null;
-    private ISigner isigner = null;
     private IEndpointsProvider iendpoints = null;
     private IEndpointsProvider remoteProvider = null;
     private ICredentialProvider icredential = null;
+    private Credential credential;
     private LocationConfig locationConfig = new LocationConfig();
 
     private DefaultProfile() {
@@ -111,12 +107,6 @@ public class DefaultProfile implements IClientProfile {
     }
 
     @Override
-    public synchronized ISigner getSigner() {
-        if (null == isigner) { this.isigner = ShaHmac1Singleton.INSTANCE.getInstance(); }
-        return isigner;
-    }
-
-    @Override
     public synchronized String getRegionId() {
         return regionId;
     }
@@ -132,6 +122,12 @@ public class DefaultProfile implements IClientProfile {
         return credential;
     }
 
+    @Override
+    @Deprecated
+    public ISigner getSigner() {
+        return null;
+    }
+    
     @Override
     public synchronized void setLocationConfig(String regionId, String product, String endpoint) {
         this.locationConfig = LocationConfig.createLocationConfig(regionId, product, endpoint);
@@ -214,7 +210,7 @@ public class DefaultProfile implements IClientProfile {
         profile = new DefaultProfile(regionId, creden);
         return profile;
     }
-
+    
     /**
      * <pre>
      * 给个性化用户使用的，CustomizedEndpointsParser 通过这个去解析endpoint,
@@ -332,7 +328,7 @@ public class DefaultProfile implements IClientProfile {
     public void mockRemoteProvider(IEndpointsProvider remoteProvider) {
         this.remoteProvider = remoteProvider;
     }
-
+    
     @Override
     public void setCredentialsProvider(AlibabaCloudCredentialsProvider credentialsProvider) {
         if (credential != null) {

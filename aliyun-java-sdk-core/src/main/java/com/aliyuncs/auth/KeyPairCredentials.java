@@ -16,19 +16,31 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package com.aliyuncs.ecs.v20140526.transform;
+package com.aliyuncs.auth;
 
-import com.aliyuncs.ecs.v20140526.model.CreateInstanceResponse;
-import com.aliyuncs.transform.UnmarshallerContext;
+public class KeyPairCredentials implements AlibabaCloudCredentials {
 
-public class CreateInstanceResponseUnmarshaller {
+    private String     privateKeySecret;
+    private String     publicKeyId;
 
-    public static CreateInstanceResponse unmarshall(CreateInstanceResponse createInstanceResponse,
-                                                    UnmarshallerContext context) {
+    public KeyPairCredentials(String publicKeyId, String privateKeySecret) {
+        if (publicKeyId == null || privateKeySecret == null) {
+            throw new IllegalArgumentException(
+                "You must provide a valid pair of Public Key ID and Private Key Secret."
+            );
+        }
 
-        createInstanceResponse.setRequestId(context.stringValue("CreateInstanceResponse.RequestId"));
-        createInstanceResponse.setInstanceId(context.stringValue("CreateInstanceResponse.InstanceId"));
+        this.publicKeyId = publicKeyId;
+        this.privateKeySecret = privateKeySecret;
+    }
 
-        return createInstanceResponse;
+    @Override
+    public String getAccessKeyId() {
+        return publicKeyId;
+    }
+
+    @Override
+    public String getAccessKeySecret() {
+        return privateKeySecret;
     }
 }

@@ -6,9 +6,8 @@ import java.util.List;
 import java.util.Set;
 
 import com.aliyuncs.auth.Credential;
+import com.aliyuncs.auth.ISigner;
 import com.aliyuncs.exceptions.ClientException;
-import com.aliyuncs.profile.DefaultProfile;
-import com.aliyuncs.profile.IClientProfile;
 
 public class RemoteEndpointsParser implements IEndpointsProvider {
 
@@ -47,16 +46,9 @@ public class RemoteEndpointsParser implements IEndpointsProvider {
 
         List<ProductDomain> productDomainList = new ArrayList<ProductDomain>();
         productDomainList.add(new ProductDomain(product, response.getEndpoint()));
+
         endpoint = new Endpoint(response.getRegionId(), regionIds, productDomainList);
         return endpoint;
-    }
-
-    public static void main(String[] args) throws ClientException {
-
-        IClientProfile profile = DefaultProfile.getProfile("cn-qingdao", "account", "secret");
-        List<Endpoint> list = profile.getEndpoints("Ecs", "cn-qingdao", "ecs", "");
-        System.out.println(list.get(0));
-
     }
 
 }

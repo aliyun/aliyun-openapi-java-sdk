@@ -16,49 +16,20 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package com.aliyuncs.ft.model.v20160101;
+package com.aliyuncs.ft.model;
 
-import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.AcsResponse;
+import com.aliyuncs.ft.transform.TestRoaApiResponseUnmarshaller;
+import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class TestRpcApiRequest extends RpcAcsRequest<TestRpcApiResponse> {
-	
-	public TestRpcApiRequest() {
-		super("Ft", "2016-01-01", "TestRpcApi");
-	}
-
-	private String bodyParam;
-
-	private String queryParam;
-
-	public String getBodyParam() {
-		return this.bodyParam;
-	}
-
-	public void setBodyParam(String bodyParam) {
-		this.bodyParam = bodyParam;
-		if(bodyParam != null){
-			putBodyParameter("BodyParam", bodyParam);
-		}
-	}
-
-	public String getQueryParam() {
-		return this.queryParam;
-	}
-
-	public void setQueryParam(String queryParam) {
-		this.queryParam = queryParam;
-		if(queryParam != null){
-			putQueryParameter("QueryParam", queryParam);
-		}
-	}
+public class TestRoaApiResponse extends AcsResponse {
 
 	@Override
-	public Class<TestRpcApiResponse> getResponseClass() {
-		return TestRpcApiResponse.class;
+	public TestRoaApiResponse getInstance(UnmarshallerContext context) {
+		return	TestRoaApiResponseUnmarshaller.unmarshall(this, context);
 	}
-
 }

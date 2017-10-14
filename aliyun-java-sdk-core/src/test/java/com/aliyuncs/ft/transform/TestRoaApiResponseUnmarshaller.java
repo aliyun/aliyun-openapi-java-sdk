@@ -16,20 +16,17 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package com.aliyuncs.ft.model.v20160102;
+package com.aliyuncs.ft.transform;
 
-import com.aliyuncs.AcsResponse;
-import com.aliyuncs.ft.transform.v20160102.TestRoaApiResponseUnmarshaller;
+import com.aliyuncs.ft.model.TestRoaApiResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
-/**
- * @author auto create
- * @version 
- */
-public class TestRoaApiResponse extends AcsResponse {
 
-	@Override
-	public TestRoaApiResponse getInstance(UnmarshallerContext context) {
-		return	TestRoaApiResponseUnmarshaller.unmarshall(this, context);
+public class TestRoaApiResponseUnmarshaller {
+
+	public static TestRoaApiResponse unmarshall(TestRoaApiResponse testRoaApiResponse, UnmarshallerContext context) {
+		
+	 
+	 	return testRoaApiResponse;
 	}
 }

@@ -16,6 +16,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+
 package com.aliyuncs.auth;
 
 import java.io.UnsupportedEncodingException;
@@ -24,38 +25,53 @@ import java.security.NoSuchAlgorithmException;
 
 import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;
+import javax.xml.bind.DatatypeConverter;
 
-import com.aliyuncs.utils.Base64Helper;
+/**
+ * Created by haowei.yao on 2017/9/28.
+ */
 
-@Deprecated
-public class ShaHmac256 implements ISigner {
+public class HmacSHA1Signer extends Signer{
 
-    private final static String AGLORITHM_NAME = "HmacSHA256";
+    private static final String ALGORITHM_NAME = "HmacSHA1";
+    public static final String ENCODING = "UTF-8";
 
     @Override
-    public String signString(String source, String accessSecret)
-        throws InvalidKeyException, IllegalStateException {
+    public String signString(String stringToSign, String accessKeySecret) {
         try {
-            Mac mac = Mac.getInstance(AGLORITHM_NAME);
+            Mac mac = Mac.getInstance(ALGORITHM_NAME);
             mac.init(new SecretKeySpec(
-                accessSecret.getBytes(AcsURLEncoder.URL_ENCODING), AGLORITHM_NAME));
-            byte[] signData = mac.doFinal(source.getBytes(AcsURLEncoder.URL_ENCODING));
-            return Base64Helper.encode(signData);
+                accessKeySecret.getBytes(ENCODING),
+                ALGORITHM_NAME
+            ));
+            byte[] signData = mac.doFinal(stringToSign.getBytes(ENCODING));
+            return DatatypeConverter.printBase64Binary(signData);
         } catch (NoSuchAlgorithmException e) {
-            throw new RuntimeException("HMAC-SHA1 not supported.");
+            throw new IllegalArgumentException(e.toString());
         } catch (UnsupportedEncodingException e) {
-            throw new RuntimeException("UTF-8 not supported.");
+            throw new IllegalArgumentException(e.toString());
+        } catch (InvalidKeyException e) {
+            throw new IllegalArgumentException(e.toString());
         }
+    }
 
+    @Override
+    public String signString(String stringToSign, AlibabaCloudCredentials credentials) {
+        return signString(stringToSign, credentials.getAccessKeySecret());
     }
 
     @Override
     public String getSignerName() {
-        return "HMAC-SHA256";
+        return "HMAC-SHA1";
     }
 
     @Override
     public String getSignerVersion() {
         return "1.0";
+    }
+
+    @Override
+    public String getSignerType() {
+        return null;
     }
 }

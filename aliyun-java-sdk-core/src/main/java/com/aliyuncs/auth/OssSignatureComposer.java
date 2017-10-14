@@ -30,7 +30,7 @@ public class OssSignatureComposer extends RoaSignatureComposer {
 
     @Override
     public Map<String, String> refreshSignParameters(Map<String, String> parameters,
-                                                     ISigner signer, String accessKeyId, FormatType format) {
+                                                     Signer signer, String accessKeyId, FormatType format) {
         Map<String, String> immutableMap = new HashMap<String, String>(parameters);
         immutableMap.put("Date", ParameterHelper.getRFC2616Date(null));
         return immutableMap;
@@ -52,7 +52,7 @@ public class OssSignatureComposer extends RoaSignatureComposer {
 
     @Override
     public String composeStringToSign(MethodType method, String uriPattern,
-                                      ISigner signer, Map<String, String> queries,
+                                      Signer signer, Map<String, String> queries,
                                       Map<String, String> headers, Map<String, String> paths) {
         StringBuilder sb = new StringBuilder();
         sb.append(method).append(HEADER_SEPARATOR);

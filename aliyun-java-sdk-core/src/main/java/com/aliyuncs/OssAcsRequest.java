@@ -25,10 +25,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 import com.aliyuncs.auth.AlibabaCloudCredentials;
-import com.aliyuncs.auth.Credential;
-import com.aliyuncs.auth.ISigner;
 import com.aliyuncs.auth.OssSignatureComposer;
 import com.aliyuncs.auth.RoaSignatureComposer;
+import com.aliyuncs.auth.Signer;
 import com.aliyuncs.http.FormatType;
 import com.aliyuncs.http.HttpRequest;
 import com.aliyuncs.regions.ProductDomain;
@@ -73,7 +72,7 @@ public abstract class OssAcsRequest<T extends AcsResponse>
     }
 
     @Override
-    public HttpRequest signRequest(ISigner signer, AlibabaCloudCredentials credentials,
+    public HttpRequest signRequest(Signer signer, AlibabaCloudCredentials credentials,
                                    FormatType format, ProductDomain domain)
         throws InvalidKeyException, IllegalStateException,
         UnsupportedEncodingException, NoSuchAlgorithmException {
@@ -89,7 +88,7 @@ public abstract class OssAcsRequest<T extends AcsResponse>
             }
             String strToSign = this.composer.composeStringToSign(this.getMethod(), uri, signer,
                 this.getQueryParameters(), imutableMap, this.getPathParameters());
-            String signature = signer.signString(strToSign, accessSecret);
+            String signature = signer.signString(strToSign, credentials);
             imutableMap.put("Authorization", "OSS " + accessKeyId + ":" + signature);
         }
         HttpRequest request = new HttpRequest(
