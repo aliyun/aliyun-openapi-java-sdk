@@ -1,0 +1,4 @@
+2017-10-17 Version: 2.3.0
+1, 修改了CreateDrdsInstance接口，增加了instanceSeries入参，用来创建多规格实例指定其系列
+2, 修改了DescribeRegions接口，增加了对实例系列集合的返回值：specList、seriesName
+
