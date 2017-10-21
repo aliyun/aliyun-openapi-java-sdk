@@ -1,0 +1,4 @@
+2017-10-21 Version: 1.0.0
+1, Alibaba Cloud Intelligent Chatbot SDK initial release.
+2, Added 'Chat' API. Using this api, you are able make a conversation with you chatbot by programming.
+
