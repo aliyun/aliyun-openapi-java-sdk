@@ -18,19 +18,20 @@
  */
 package com.aliyuncs.qualitycheck.transform.v20160801;
 
-import com.aliyuncs.qualitycheck.model.v20160801.RegisterNoticeResponse;
+import com.aliyuncs.qualitycheck.model.v20160801.UploadAudioData4PreResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class RegisterNoticeResponseUnmarshaller {
+public class UploadAudioData4PreResponseUnmarshaller {
 
-	public static RegisterNoticeResponse unmarshall(RegisterNoticeResponse registerNoticeResponse, UnmarshallerContext context) {
+	public static UploadAudioData4PreResponse unmarshall(UploadAudioData4PreResponse uploadAudioData4PreResponse, UnmarshallerContext context) {
 		
-		registerNoticeResponse.setRequestId(context.stringValue("RegisterNoticeResponse.RequestId"));
-		registerNoticeResponse.setSuccess(context.booleanValue("RegisterNoticeResponse.Success"));
-		registerNoticeResponse.setCode(context.stringValue("RegisterNoticeResponse.Code"));
-		registerNoticeResponse.setMessage(context.stringValue("RegisterNoticeResponse.Message"));
+		uploadAudioData4PreResponse.setRequestId(context.stringValue("UploadAudioData4PreResponse.RequestId"));
+		uploadAudioData4PreResponse.setSuccess(context.booleanValue("UploadAudioData4PreResponse.Success"));
+		uploadAudioData4PreResponse.setCode(context.stringValue("UploadAudioData4PreResponse.Code"));
+		uploadAudioData4PreResponse.setMessage(context.stringValue("UploadAudioData4PreResponse.Message"));
+		uploadAudioData4PreResponse.setData(context.stringValue("UploadAudioData4PreResponse.Data"));
 	 
-	 	return registerNoticeResponse;
+	 	return uploadAudioData4PreResponse;
 	}
 }

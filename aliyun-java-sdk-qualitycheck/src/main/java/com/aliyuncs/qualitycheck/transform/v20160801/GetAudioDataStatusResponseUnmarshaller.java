@@ -57,6 +57,12 @@ public class GetAudioDataStatusResponseUnmarshaller {
 				sentenceResult.setEndTime(context.integerValue("GetAudioDataStatusResponse.Data["+ i +"].AsrResult.SentenceResults["+ j +"].EndTime"));
 				sentenceResult.setChannelId(context.integerValue("GetAudioDataStatusResponse.Data["+ i +"].AsrResult.SentenceResults["+ j +"].ChannelId"));
 				sentenceResult.setText(context.stringValue("GetAudioDataStatusResponse.Data["+ i +"].AsrResult.SentenceResults["+ j +"].Text"));
+				sentenceResult.setEmotionValue(context.integerValue("GetAudioDataStatusResponse.Data["+ i +"].AsrResult.SentenceResults["+ j +"].emotionValue"));
+				sentenceResult.setSilenceDuration(context.integerValue("GetAudioDataStatusResponse.Data["+ i +"].AsrResult.SentenceResults["+ j +"].silenceDuration"));
+				sentenceResult.setSpeechRate(context.integerValue("GetAudioDataStatusResponse.Data["+ i +"].AsrResult.SentenceResults["+ j +"].speechRate"));
+				sentenceResult.setSpeakerId(context.stringValue("GetAudioDataStatusResponse.Data["+ i +"].AsrResult.SentenceResults["+ j +"].speakerId"));
+				sentenceResult.setAgentId(context.stringValue("GetAudioDataStatusResponse.Data["+ i +"].AsrResult.SentenceResults["+ j +"].agentId"));
+				sentenceResult.setChannelKey(context.stringValue("GetAudioDataStatusResponse.Data["+ i +"].AsrResult.SentenceResults["+ j +"].channelKey"));
 
 				sentenceResults.add(sentenceResult);
 			}

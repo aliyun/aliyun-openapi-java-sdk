@@ -183,6 +183,18 @@ public class GetAudioDataStatusResponse extends AcsResponse {
 
 				private String text;
 
+				private Integer emotionValue;
+
+				private Integer silenceDuration;
+
+				private Integer speechRate;
+
+				private String speakerId;
+
+				private String agentId;
+
+				private String channelKey;
+
 				public Integer getBeginTime() {
 					return this.beginTime;
 				}
@@ -213,6 +225,54 @@ public class GetAudioDataStatusResponse extends AcsResponse {
 
 				public void setText(String text) {
 					this.text = text;
+				}
+
+				public Integer getEmotionValue() {
+					return this.emotionValue;
+				}
+
+				public void setEmotionValue(Integer emotionValue) {
+					this.emotionValue = emotionValue;
+				}
+
+				public Integer getSilenceDuration() {
+					return this.silenceDuration;
+				}
+
+				public void setSilenceDuration(Integer silenceDuration) {
+					this.silenceDuration = silenceDuration;
+				}
+
+				public Integer getSpeechRate() {
+					return this.speechRate;
+				}
+
+				public void setSpeechRate(Integer speechRate) {
+					this.speechRate = speechRate;
+				}
+
+				public String getSpeakerId() {
+					return this.speakerId;
+				}
+
+				public void setSpeakerId(String speakerId) {
+					this.speakerId = speakerId;
+				}
+
+				public String getAgentId() {
+					return this.agentId;
+				}
+
+				public void setAgentId(String agentId) {
+					this.agentId = agentId;
+				}
+
+				public String getChannelKey() {
+					return this.channelKey;
+				}
+
+				public void setChannelKey(String channelKey) {
+					this.channelKey = channelKey;
 				}
 			}
 		}
