@@ -93,7 +93,7 @@ public class GetAccAsrResultResponse extends AcsResponse {
 
 		private String recordId;
 
-		private Integer status;
+		private String status;
 
 		private String statusCode;
 
@@ -109,11 +109,11 @@ public class GetAccAsrResultResponse extends AcsResponse {
 			this.recordId = recordId;
 		}
 
-		public Integer getStatus() {
+		public String getStatus() {
 			return this.status;
 		}
 
-		public void setStatus(Integer status) {
+		public void setStatus(String status) {
 			this.status = status;
 		}
 

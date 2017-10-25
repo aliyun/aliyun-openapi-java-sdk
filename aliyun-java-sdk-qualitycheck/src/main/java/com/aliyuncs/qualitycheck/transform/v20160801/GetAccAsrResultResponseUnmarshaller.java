@@ -41,7 +41,7 @@ public class GetAccAsrResultResponseUnmarshaller {
 		for (int i = 0; i < context.lengthValue("GetAccAsrResultResponse.Data.Length"); i++) {
 			AccAsrSentenceResult accAsrSentenceResult = new AccAsrSentenceResult();
 			accAsrSentenceResult.setRecordId(context.stringValue("GetAccAsrResultResponse.Data["+ i +"].RecordId"));
-			accAsrSentenceResult.setStatus(context.integerValue("GetAccAsrResultResponse.Data["+ i +"].Status"));
+			accAsrSentenceResult.setStatus(context.stringValue("GetAccAsrResultResponse.Data["+ i +"].Status"));
 			accAsrSentenceResult.setStatusCode(context.stringValue("GetAccAsrResultResponse.Data["+ i +"].StatusCode"));
 			accAsrSentenceResult.setErrorMessage(context.stringValue("GetAccAsrResultResponse.Data["+ i +"].ErrorMessage"));
 
