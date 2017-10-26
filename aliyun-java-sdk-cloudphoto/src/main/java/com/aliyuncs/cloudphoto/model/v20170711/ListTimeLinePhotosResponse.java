@@ -18,25 +18,28 @@
  */
 package com.aliyuncs.cloudphoto.model.v20170711;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.cloudphoto.transform.v20170711.CreatePhotoResponseUnmarshaller;
+import com.aliyuncs.cloudphoto.transform.v20170711.ListTimeLinePhotosResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CreatePhotoResponse extends AcsResponse {
+public class ListTimeLinePhotosResponse extends AcsResponse {
 
 	private String code;
 
 	private String message;
 
+	private Integer totalCount;
+
 	private String requestId;
 
 	private String action;
 
-	private Photo photo;
+	private List<Photo> photos;
 
 	public String getCode() {
 		return this.code;
@@ -52,6 +55,14 @@ public class CreatePhotoResponse extends AcsResponse {
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public String getRequestId() {
@@ -70,12 +81,12 @@ public class CreatePhotoResponse extends AcsResponse {
 		this.action = action;
 	}
 
-	public Photo getPhoto() {
-		return this.photo;
+	public List<Photo> getPhotos() {
+		return this.photos;
 	}
 
-	public void setPhoto(Photo photo) {
-		this.photo = photo;
+	public void setPhotos(List<Photo> photos) {
+		this.photos = photos;
 	}
 
 	public static class Photo {
@@ -105,6 +116,8 @@ public class CreatePhotoResponse extends AcsResponse {
 		private Long takenAt;
 
 		private Long shareExpireTime;
+
+		private Long like;
 
 		public Long getId() {
 			return this.id;
@@ -209,10 +222,23 @@ public class CreatePhotoResponse extends AcsResponse {
 		public void setShareExpireTime(Long shareExpireTime) {
 			this.shareExpireTime = shareExpireTime;
 		}
+
+		public Long getLike() {
+			return this.like;
+		}
+
+		public void setLike(Long like) {
+			this.like = like;
+		}
 	}
 
 	@Override
-	public CreatePhotoResponse getInstance(UnmarshallerContext context) {
-		return	CreatePhotoResponseUnmarshaller.unmarshall(this, context);
+	public ListTimeLinePhotosResponse getInstance(UnmarshallerContext context) {
+		return	ListTimeLinePhotosResponseUnmarshaller.unmarshall(this, context);
+	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }

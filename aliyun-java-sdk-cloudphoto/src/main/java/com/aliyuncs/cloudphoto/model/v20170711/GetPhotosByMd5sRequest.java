@@ -26,18 +26,20 @@ import com.aliyuncs.http.ProtocolType;
  * @author auto create
  * @version 
  */
-public class DeleteAlbumsRequest extends RpcAcsRequest<DeleteAlbumsResponse> {
+public class GetPhotosByMd5sRequest extends RpcAcsRequest<GetPhotosByMd5sResponse> {
 	
-	public DeleteAlbumsRequest() {
-		super("CloudPhoto", "2017-07-11", "DeleteAlbums", "cloudphoto");
+	public GetPhotosByMd5sRequest() {
+		super("CloudPhoto", "2017-07-11", "GetPhotosByMd5s", "cloudphoto");
 		setProtocol(ProtocolType.HTTPS);
 	}
 
 	private String libraryId;
 
-	private List<Long> albumIds;
-
 	private String storeName;
+
+	private String state;
+
+	private List<String> md5s;
 
 	public String getLibraryId() {
 		return this.libraryId;
@@ -48,19 +50,6 @@ public class DeleteAlbumsRequest extends RpcAcsRequest<DeleteAlbumsResponse> {
 		if(libraryId != null){
 			putQueryParameter("LibraryId", libraryId);
 		}
-	}
-
-	public List<Long> getAlbumIds() {
-		return this.albumIds;
-	}
-
-	public void setAlbumIds(List<Long> albumIds) {
-		this.albumIds = albumIds;	
-		if (albumIds != null) {
-			for (int i = 0; i < albumIds.size(); i++) {
-				putQueryParameter("AlbumId." + (i + 1) , albumIds.get(i));
-			}
-		}	
 	}
 
 	public String getStoreName() {
@@ -74,9 +63,33 @@ public class DeleteAlbumsRequest extends RpcAcsRequest<DeleteAlbumsResponse> {
 		}
 	}
 
+	public String getState() {
+		return this.state;
+	}
+
+	public void setState(String state) {
+		this.state = state;
+		if(state != null){
+			putQueryParameter("State", state);
+		}
+	}
+
+	public List<String> getMd5s() {
+		return this.md5s;
+	}
+
+	public void setMd5s(List<String> md5s) {
+		this.md5s = md5s;	
+		if (md5s != null) {
+			for (int i = 0; i < md5s.size(); i++) {
+				putQueryParameter("Md5." + (i + 1) , md5s.get(i));
+			}
+		}	
+	}
+
 	@Override
-	public Class<DeleteAlbumsResponse> getResponseClass() {
-		return DeleteAlbumsResponse.class;
+	public Class<GetPhotosByMd5sResponse> getResponseClass() {
+		return GetPhotosByMd5sResponse.class;
 	}
 
 }

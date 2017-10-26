@@ -80,8 +80,10 @@ public class MergeFacesRequest extends RpcAcsRequest<MergeFacesResponse> {
 
 	public void setFaceIds(List<Long> faceIds) {
 		this.faceIds = faceIds;	
-		for (int i = 0; i < faceIds.size(); i++) {
-			putQueryParameter("FaceId." + (i + 1) , faceIds.get(i));
+		if (faceIds != null) {
+			for (int i = 0; i < faceIds.size(); i++) {
+				putQueryParameter("FaceId." + (i + 1) , faceIds.get(i));
+			}
 		}	
 	}
 

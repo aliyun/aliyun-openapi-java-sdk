@@ -26,18 +26,24 @@ import com.aliyuncs.http.ProtocolType;
  * @author auto create
  * @version 
  */
-public class DeleteAlbumsRequest extends RpcAcsRequest<DeleteAlbumsResponse> {
+public class EditPhotosRequest extends RpcAcsRequest<EditPhotosResponse> {
 	
-	public DeleteAlbumsRequest() {
-		super("CloudPhoto", "2017-07-11", "DeleteAlbums", "cloudphoto");
+	public EditPhotosRequest() {
+		super("CloudPhoto", "2017-07-11", "EditPhotos", "cloudphoto");
 		setProtocol(ProtocolType.HTTPS);
 	}
 
 	private String libraryId;
 
-	private List<Long> albumIds;
+	private Long shareExpireTime;
+
+	private List<Long> photoIds;
 
 	private String storeName;
+
+	private String remark;
+
+	private String title;
 
 	public String getLibraryId() {
 		return this.libraryId;
@@ -50,15 +56,26 @@ public class DeleteAlbumsRequest extends RpcAcsRequest<DeleteAlbumsResponse> {
 		}
 	}
 
-	public List<Long> getAlbumIds() {
-		return this.albumIds;
+	public Long getShareExpireTime() {
+		return this.shareExpireTime;
 	}
 
-	public void setAlbumIds(List<Long> albumIds) {
-		this.albumIds = albumIds;	
-		if (albumIds != null) {
-			for (int i = 0; i < albumIds.size(); i++) {
-				putQueryParameter("AlbumId." + (i + 1) , albumIds.get(i));
+	public void setShareExpireTime(Long shareExpireTime) {
+		this.shareExpireTime = shareExpireTime;
+		if(shareExpireTime != null){
+			putQueryParameter("ShareExpireTime", shareExpireTime.toString());
+		}
+	}
+
+	public List<Long> getPhotoIds() {
+		return this.photoIds;
+	}
+
+	public void setPhotoIds(List<Long> photoIds) {
+		this.photoIds = photoIds;	
+		if (photoIds != null) {
+			for (int i = 0; i < photoIds.size(); i++) {
+				putQueryParameter("PhotoId." + (i + 1) , photoIds.get(i));
 			}
 		}	
 	}
@@ -74,9 +91,31 @@ public class DeleteAlbumsRequest extends RpcAcsRequest<DeleteAlbumsResponse> {
 		}
 	}
 
+	public String getRemark() {
+		return this.remark;
+	}
+
+	public void setRemark(String remark) {
+		this.remark = remark;
+		if(remark != null){
+			putQueryParameter("Remark", remark);
+		}
+	}
+
+	public String getTitle() {
+		return this.title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+		if(title != null){
+			putQueryParameter("Title", title);
+		}
+	}
+
 	@Override
-	public Class<DeleteAlbumsResponse> getResponseClass() {
-		return DeleteAlbumsResponse.class;
+	public Class<EditPhotosResponse> getResponseClass() {
+		return EditPhotosResponse.class;
 	}
 
 }

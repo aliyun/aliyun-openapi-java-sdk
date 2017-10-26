@@ -26,16 +26,16 @@ import com.aliyuncs.http.ProtocolType;
  * @author auto create
  * @version 
  */
-public class DeleteAlbumsRequest extends RpcAcsRequest<DeleteAlbumsResponse> {
+public class ActivatePhotosRequest extends RpcAcsRequest<ActivatePhotosResponse> {
 	
-	public DeleteAlbumsRequest() {
-		super("CloudPhoto", "2017-07-11", "DeleteAlbums", "cloudphoto");
+	public ActivatePhotosRequest() {
+		super("CloudPhoto", "2017-07-11", "ActivatePhotos", "cloudphoto");
 		setProtocol(ProtocolType.HTTPS);
 	}
 
 	private String libraryId;
 
-	private List<Long> albumIds;
+	private List<Long> photoIds;
 
 	private String storeName;
 
@@ -50,15 +50,15 @@ public class DeleteAlbumsRequest extends RpcAcsRequest<DeleteAlbumsResponse> {
 		}
 	}
 
-	public List<Long> getAlbumIds() {
-		return this.albumIds;
+	public List<Long> getPhotoIds() {
+		return this.photoIds;
 	}
 
-	public void setAlbumIds(List<Long> albumIds) {
-		this.albumIds = albumIds;	
-		if (albumIds != null) {
-			for (int i = 0; i < albumIds.size(); i++) {
-				putQueryParameter("AlbumId." + (i + 1) , albumIds.get(i));
+	public void setPhotoIds(List<Long> photoIds) {
+		this.photoIds = photoIds;	
+		if (photoIds != null) {
+			for (int i = 0; i < photoIds.size(); i++) {
+				putQueryParameter("PhotoId." + (i + 1) , photoIds.get(i));
 			}
 		}	
 	}
@@ -75,8 +75,8 @@ public class DeleteAlbumsRequest extends RpcAcsRequest<DeleteAlbumsResponse> {
 	}
 
 	@Override
-	public Class<DeleteAlbumsResponse> getResponseClass() {
-		return DeleteAlbumsResponse.class;
+	public Class<ActivatePhotosResponse> getResponseClass() {
+		return ActivatePhotosResponse.class;
 	}
 
 }

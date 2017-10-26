@@ -213,6 +213,8 @@ public class ListFacesResponse extends AcsResponse {
 
 			private Long mtime;
 
+			private String remark;
+
 			public Long getId() {
 				return this.id;
 			}
@@ -291,6 +293,14 @@ public class ListFacesResponse extends AcsResponse {
 
 			public void setMtime(Long mtime) {
 				this.mtime = mtime;
+			}
+
+			public String getRemark() {
+				return this.remark;
+			}
+
+			public void setRemark(String remark) {
+				this.remark = remark;
 			}
 		}
 	}

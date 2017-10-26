@@ -36,6 +36,8 @@ public class CreatePhotoRequest extends RpcAcsRequest<CreatePhotoResponse> {
 
 	private String libraryId;
 
+	private Long shareExpireTime;
+
 	private String storeName;
 
 	private String uploadType;
@@ -43,6 +45,8 @@ public class CreatePhotoRequest extends RpcAcsRequest<CreatePhotoResponse> {
 	private String remark;
 
 	private String sessionId;
+
+	private String staging;
 
 	private String fileId;
 
@@ -65,6 +69,17 @@ public class CreatePhotoRequest extends RpcAcsRequest<CreatePhotoResponse> {
 		this.libraryId = libraryId;
 		if(libraryId != null){
 			putQueryParameter("LibraryId", libraryId);
+		}
+	}
+
+	public Long getShareExpireTime() {
+		return this.shareExpireTime;
+	}
+
+	public void setShareExpireTime(Long shareExpireTime) {
+		this.shareExpireTime = shareExpireTime;
+		if(shareExpireTime != null){
+			putQueryParameter("ShareExpireTime", shareExpireTime.toString());
 		}
 	}
 
@@ -109,6 +124,17 @@ public class CreatePhotoRequest extends RpcAcsRequest<CreatePhotoResponse> {
 		this.sessionId = sessionId;
 		if(sessionId != null){
 			putQueryParameter("SessionId", sessionId);
+		}
+	}
+
+	public String getStaging() {
+		return this.staging;
+	}
+
+	public void setStaging(String staging) {
+		this.staging = staging;
+		if(staging != null){
+			putQueryParameter("Staging", staging);
 		}
 	}
 

@@ -66,6 +66,7 @@ public class ListFacesResponseUnmarshaller {
 			cover.setHeight(context.longValue("ListFacesResponse.Faces["+ i +"].Cover.Height"));
 			cover.setCtime(context.longValue("ListFacesResponse.Faces["+ i +"].Cover.Ctime"));
 			cover.setMtime(context.longValue("ListFacesResponse.Faces["+ i +"].Cover.Mtime"));
+			cover.setRemark(context.stringValue("ListFacesResponse.Faces["+ i +"].Cover.Remark"));
 			face.setCover(cover);
 
 			faces.add(face);

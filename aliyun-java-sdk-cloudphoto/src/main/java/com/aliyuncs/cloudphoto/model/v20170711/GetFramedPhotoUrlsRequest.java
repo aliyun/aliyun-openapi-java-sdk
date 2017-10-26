@@ -26,18 +26,31 @@ import com.aliyuncs.http.ProtocolType;
  * @author auto create
  * @version 
  */
-public class DeleteAlbumsRequest extends RpcAcsRequest<DeleteAlbumsResponse> {
+public class GetFramedPhotoUrlsRequest extends RpcAcsRequest<GetFramedPhotoUrlsResponse> {
 	
-	public DeleteAlbumsRequest() {
-		super("CloudPhoto", "2017-07-11", "DeleteAlbums", "cloudphoto");
+	public GetFramedPhotoUrlsRequest() {
+		super("CloudPhoto", "2017-07-11", "GetFramedPhotoUrls", "cloudphoto");
 		setProtocol(ProtocolType.HTTPS);
 	}
 
+	private String frameId;
+
 	private String libraryId;
 
-	private List<Long> albumIds;
+	private List<Long> photoIds;
 
 	private String storeName;
+
+	public String getFrameId() {
+		return this.frameId;
+	}
+
+	public void setFrameId(String frameId) {
+		this.frameId = frameId;
+		if(frameId != null){
+			putQueryParameter("FrameId", frameId);
+		}
+	}
 
 	public String getLibraryId() {
 		return this.libraryId;
@@ -50,15 +63,15 @@ public class DeleteAlbumsRequest extends RpcAcsRequest<DeleteAlbumsResponse> {
 		}
 	}
 
-	public List<Long> getAlbumIds() {
-		return this.albumIds;
+	public List<Long> getPhotoIds() {
+		return this.photoIds;
 	}
 
-	public void setAlbumIds(List<Long> albumIds) {
-		this.albumIds = albumIds;	
-		if (albumIds != null) {
-			for (int i = 0; i < albumIds.size(); i++) {
-				putQueryParameter("AlbumId." + (i + 1) , albumIds.get(i));
+	public void setPhotoIds(List<Long> photoIds) {
+		this.photoIds = photoIds;	
+		if (photoIds != null) {
+			for (int i = 0; i < photoIds.size(); i++) {
+				putQueryParameter("PhotoId." + (i + 1) , photoIds.get(i));
 			}
 		}	
 	}
@@ -75,8 +88,8 @@ public class DeleteAlbumsRequest extends RpcAcsRequest<DeleteAlbumsResponse> {
 	}
 
 	@Override
-	public Class<DeleteAlbumsResponse> getResponseClass() {
-		return DeleteAlbumsResponse.class;
+	public Class<GetFramedPhotoUrlsResponse> getResponseClass() {
+		return GetFramedPhotoUrlsResponse.class;
 	}
 
 }

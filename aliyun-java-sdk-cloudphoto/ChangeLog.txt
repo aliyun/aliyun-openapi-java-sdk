@@ -1,3 +1,8 @@
+2017-10-26 Version: 1.1.5
+1, 支持照片分享、照片审核和CDN加速
+2, ActivatePhotos，EditPhotos，GetPhotosByMd5s，GetPrivateAccessUrls，GetPublicAccessUrls，ListPhotoFaces，ListPhotoTags
+3, Java SDK中之前需要传入boolean类型参数的API对应参数类型改为String，老版本的SDK可以继续使用
+
 2017-09-20 Version: 1.1.4
 1, 支持主子AK访问
 2, 读写quota加缓存

@@ -36,7 +36,7 @@ public class GetQuotaResponseUnmarshaller {
 		quota.setTotalQuota(context.longValue("GetQuotaResponse.Quota.TotalQuota"));
 		quota.setFacesCount(context.integerValue("GetQuotaResponse.Quota.FacesCount"));
 		quota.setPhotosCount(context.integerValue("GetQuotaResponse.Quota.PhotosCount"));
-		quota.setUsedQutoa(context.longValue("GetQuotaResponse.Quota.UsedQutoa"));
+		quota.setUsedQuota(context.longValue("GetQuotaResponse.Quota.UsedQuota"));
 		quota.setVideosCount(context.integerValue("GetQuotaResponse.Quota.VideosCount"));
 		getQuotaResponse.setQuota(quota);
 	 

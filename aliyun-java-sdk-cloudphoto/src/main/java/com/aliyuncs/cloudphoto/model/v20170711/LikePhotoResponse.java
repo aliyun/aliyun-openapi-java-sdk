@@ -19,14 +19,14 @@
 package com.aliyuncs.cloudphoto.model.v20170711;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.cloudphoto.transform.v20170711.GetQuotaResponseUnmarshaller;
+import com.aliyuncs.cloudphoto.transform.v20170711.LikePhotoResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class GetQuotaResponse extends AcsResponse {
+public class LikePhotoResponse extends AcsResponse {
 
 	private String code;
 
@@ -35,8 +35,6 @@ public class GetQuotaResponse extends AcsResponse {
 	private String requestId;
 
 	private String action;
-
-	private Quota quota;
 
 	public String getCode() {
 		return this.code;
@@ -70,69 +68,13 @@ public class GetQuotaResponse extends AcsResponse {
 		this.action = action;
 	}
 
-	public Quota getQuota() {
-		return this.quota;
-	}
-
-	public void setQuota(Quota quota) {
-		this.quota = quota;
-	}
-
-	public static class Quota {
-
-		private Long totalQuota;
-
-		private Integer facesCount;
-
-		private Integer photosCount;
-
-		private Long usedQuota;
-
-		private Integer videosCount;
-
-		public Long getTotalQuota() {
-			return this.totalQuota;
-		}
-
-		public void setTotalQuota(Long totalQuota) {
-			this.totalQuota = totalQuota;
-		}
-
-		public Integer getFacesCount() {
-			return this.facesCount;
-		}
-
-		public void setFacesCount(Integer facesCount) {
-			this.facesCount = facesCount;
-		}
-
-		public Integer getPhotosCount() {
-			return this.photosCount;
-		}
-
-		public void setPhotosCount(Integer photosCount) {
-			this.photosCount = photosCount;
-		}
-
-		public Long getUsedQuota() {
-			return this.usedQuota;
-		}
-
-		public void setUsedQuota(Long usedQuota) {
-			this.usedQuota = usedQuota;
-		}
-
-		public Integer getVideosCount() {
-			return this.videosCount;
-		}
-
-		public void setVideosCount(Integer videosCount) {
-			this.videosCount = videosCount;
-		}
+	@Override
+	public LikePhotoResponse getInstance(UnmarshallerContext context) {
+		return	LikePhotoResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override
-	public GetQuotaResponse getInstance(UnmarshallerContext context) {
-		return	GetQuotaResponseUnmarshaller.unmarshall(this, context);
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }

@@ -26,18 +26,22 @@ import com.aliyuncs.http.ProtocolType;
  * @author auto create
  * @version 
  */
-public class DeleteAlbumsRequest extends RpcAcsRequest<DeleteAlbumsResponse> {
+public class GetPrivateAccessUrlsRequest extends RpcAcsRequest<GetPrivateAccessUrlsResponse> {
 	
-	public DeleteAlbumsRequest() {
-		super("CloudPhoto", "2017-07-11", "DeleteAlbums", "cloudphoto");
+	public GetPrivateAccessUrlsRequest() {
+		super("CloudPhoto", "2017-07-11", "GetPrivateAccessUrls", "cloudphoto");
 		setProtocol(ProtocolType.HTTPS);
 	}
 
 	private String libraryId;
 
-	private List<Long> albumIds;
+	private List<Long> photoIds;
 
 	private String storeName;
+
+	private String zoomType;
+
+	private String accessMode;
 
 	public String getLibraryId() {
 		return this.libraryId;
@@ -50,15 +54,15 @@ public class DeleteAlbumsRequest extends RpcAcsRequest<DeleteAlbumsResponse> {
 		}
 	}
 
-	public List<Long> getAlbumIds() {
-		return this.albumIds;
+	public List<Long> getPhotoIds() {
+		return this.photoIds;
 	}
 
-	public void setAlbumIds(List<Long> albumIds) {
-		this.albumIds = albumIds;	
-		if (albumIds != null) {
-			for (int i = 0; i < albumIds.size(); i++) {
-				putQueryParameter("AlbumId." + (i + 1) , albumIds.get(i));
+	public void setPhotoIds(List<Long> photoIds) {
+		this.photoIds = photoIds;	
+		if (photoIds != null) {
+			for (int i = 0; i < photoIds.size(); i++) {
+				putQueryParameter("PhotoId." + (i + 1) , photoIds.get(i));
 			}
 		}	
 	}
@@ -74,9 +78,31 @@ public class DeleteAlbumsRequest extends RpcAcsRequest<DeleteAlbumsResponse> {
 		}
 	}
 
+	public String getZoomType() {
+		return this.zoomType;
+	}
+
+	public void setZoomType(String zoomType) {
+		this.zoomType = zoomType;
+		if(zoomType != null){
+			putQueryParameter("ZoomType", zoomType);
+		}
+	}
+
+	public String getAccessMode() {
+		return this.accessMode;
+	}
+
+	public void setAccessMode(String accessMode) {
+		this.accessMode = accessMode;
+		if(accessMode != null){
+			putQueryParameter("AccessMode", accessMode);
+		}
+	}
+
 	@Override
-	public Class<DeleteAlbumsResponse> getResponseClass() {
-		return DeleteAlbumsResponse.class;
+	public Class<GetPrivateAccessUrlsResponse> getResponseClass() {
+		return GetPrivateAccessUrlsResponse.class;
 	}
 
 }

@@ -40,7 +40,7 @@ public class CreateTransactionRequest extends RpcAcsRequest<CreateTransactionRes
 
 	private String storeName;
 
-	private Boolean force;
+	private String force;
 
 	private String md5;
 
@@ -88,14 +88,14 @@ public class CreateTransactionRequest extends RpcAcsRequest<CreateTransactionRes
 		}
 	}
 
-	public Boolean getForce() {
+	public String getForce() {
 		return this.force;
 	}
 
-	public void setForce(Boolean force) {
+	public void setForce(String force) {
 		this.force = force;
 		if(force != null){
-			putQueryParameter("Force", force.toString());
+			putQueryParameter("Force", force);
 		}
 	}
 

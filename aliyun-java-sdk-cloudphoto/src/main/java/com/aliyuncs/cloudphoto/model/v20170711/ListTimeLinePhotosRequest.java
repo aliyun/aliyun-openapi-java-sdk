@@ -25,48 +25,30 @@ import com.aliyuncs.http.ProtocolType;
  * @author auto create
  * @version 
  */
-public class ListFacesRequest extends RpcAcsRequest<ListFacesResponse> {
+public class ListTimeLinePhotosRequest extends RpcAcsRequest<ListTimeLinePhotosResponse> {
 	
-	public ListFacesRequest() {
-		super("CloudPhoto", "2017-07-11", "ListFaces", "cloudphoto");
+	public ListTimeLinePhotosRequest() {
+		super("CloudPhoto", "2017-07-11", "ListTimeLinePhotos", "cloudphoto");
 		setProtocol(ProtocolType.HTTPS);
 	}
-
-	private String cursor;
-
-	private String hasFaceName;
 
 	private Integer size;
 
 	private String libraryId;
 
+	private Long endTime;
+
 	private String storeName;
 
-	private String state;
+	private Integer page;
+
+	private Long startTime;
+
+	private String filterBy;
 
 	private String direction;
 
-	public String getCursor() {
-		return this.cursor;
-	}
-
-	public void setCursor(String cursor) {
-		this.cursor = cursor;
-		if(cursor != null){
-			putQueryParameter("Cursor", cursor);
-		}
-	}
-
-	public String getHasFaceName() {
-		return this.hasFaceName;
-	}
-
-	public void setHasFaceName(String hasFaceName) {
-		this.hasFaceName = hasFaceName;
-		if(hasFaceName != null){
-			putQueryParameter("HasFaceName", hasFaceName);
-		}
-	}
+	private String order;
 
 	public Integer getSize() {
 		return this.size;
@@ -90,6 +72,17 @@ public class ListFacesRequest extends RpcAcsRequest<ListFacesResponse> {
 		}
 	}
 
+	public Long getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(Long endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime.toString());
+		}
+	}
+
 	public String getStoreName() {
 		return this.storeName;
 	}
@@ -101,14 +94,36 @@ public class ListFacesRequest extends RpcAcsRequest<ListFacesResponse> {
 		}
 	}
 
-	public String getState() {
-		return this.state;
+	public Integer getPage() {
+		return this.page;
 	}
 
-	public void setState(String state) {
-		this.state = state;
-		if(state != null){
-			putQueryParameter("State", state);
+	public void setPage(Integer page) {
+		this.page = page;
+		if(page != null){
+			putQueryParameter("Page", page.toString());
+		}
+	}
+
+	public Long getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(Long startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime.toString());
+		}
+	}
+
+	public String getFilterBy() {
+		return this.filterBy;
+	}
+
+	public void setFilterBy(String filterBy) {
+		this.filterBy = filterBy;
+		if(filterBy != null){
+			putQueryParameter("FilterBy", filterBy);
 		}
 	}
 
@@ -123,9 +138,20 @@ public class ListFacesRequest extends RpcAcsRequest<ListFacesResponse> {
 		}
 	}
 
+	public String getOrder() {
+		return this.order;
+	}
+
+	public void setOrder(String order) {
+		this.order = order;
+		if(order != null){
+			putQueryParameter("Order", order);
+		}
+	}
+
 	@Override
-	public Class<ListFacesResponse> getResponseClass() {
-		return ListFacesResponse.class;
+	public Class<ListTimeLinePhotosResponse> getResponseClass() {
+		return ListTimeLinePhotosResponse.class;
 	}
 
 }

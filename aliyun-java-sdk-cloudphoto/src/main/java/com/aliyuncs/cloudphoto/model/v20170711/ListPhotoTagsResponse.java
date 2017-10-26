@@ -18,15 +18,16 @@
  */
 package com.aliyuncs.cloudphoto.model.v20170711;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.cloudphoto.transform.v20170711.GetQuotaResponseUnmarshaller;
+import com.aliyuncs.cloudphoto.transform.v20170711.ListPhotoTagsResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class GetQuotaResponse extends AcsResponse {
+public class ListPhotoTagsResponse extends AcsResponse {
 
 	private String code;
 
@@ -36,7 +37,7 @@ public class GetQuotaResponse extends AcsResponse {
 
 	private String action;
 
-	private Quota quota;
+	private List<Tag> tags;
 
 	public String getCode() {
 		return this.code;
@@ -70,69 +71,64 @@ public class GetQuotaResponse extends AcsResponse {
 		this.action = action;
 	}
 
-	public Quota getQuota() {
-		return this.quota;
+	public List<Tag> getTags() {
+		return this.tags;
 	}
 
-	public void setQuota(Quota quota) {
-		this.quota = quota;
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;
 	}
 
-	public static class Quota {
+	public static class Tag {
 
-		private Long totalQuota;
+		private Long id;
 
-		private Integer facesCount;
+		private Boolean isSubTag;
 
-		private Integer photosCount;
+		private String name;
 
-		private Long usedQuota;
+		private String parentTag;
 
-		private Integer videosCount;
-
-		public Long getTotalQuota() {
-			return this.totalQuota;
+		public Long getId() {
+			return this.id;
 		}
 
-		public void setTotalQuota(Long totalQuota) {
-			this.totalQuota = totalQuota;
+		public void setId(Long id) {
+			this.id = id;
 		}
 
-		public Integer getFacesCount() {
-			return this.facesCount;
+		public Boolean getIsSubTag() {
+			return this.isSubTag;
 		}
 
-		public void setFacesCount(Integer facesCount) {
-			this.facesCount = facesCount;
+		public void setIsSubTag(Boolean isSubTag) {
+			this.isSubTag = isSubTag;
 		}
 
-		public Integer getPhotosCount() {
-			return this.photosCount;
+		public String getName() {
+			return this.name;
 		}
 
-		public void setPhotosCount(Integer photosCount) {
-			this.photosCount = photosCount;
+		public void setName(String name) {
+			this.name = name;
 		}
 
-		public Long getUsedQuota() {
-			return this.usedQuota;
+		public String getParentTag() {
+			return this.parentTag;
 		}
 
-		public void setUsedQuota(Long usedQuota) {
-			this.usedQuota = usedQuota;
-		}
-
-		public Integer getVideosCount() {
-			return this.videosCount;
-		}
-
-		public void setVideosCount(Integer videosCount) {
-			this.videosCount = videosCount;
+		public void setParentTag(String parentTag) {
+			this.parentTag = parentTag;
 		}
 	}
 
 	@Override
-	public GetQuotaResponse getInstance(UnmarshallerContext context) {
-		return	GetQuotaResponseUnmarshaller.unmarshall(this, context);
+	public ListPhotoTagsResponse getInstance(UnmarshallerContext context) {
+		return	ListPhotoTagsResponseUnmarshaller.unmarshall(this, context);
+	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }

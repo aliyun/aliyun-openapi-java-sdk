@@ -19,23 +19,22 @@
 package com.aliyuncs.cloudphoto.model.v20170711;
 
 import com.aliyuncs.RpcAcsRequest;
-import java.util.List;
 import com.aliyuncs.http.ProtocolType;
 
 /**
  * @author auto create
  * @version 
  */
-public class DeleteAlbumsRequest extends RpcAcsRequest<DeleteAlbumsResponse> {
+public class LikePhotoRequest extends RpcAcsRequest<LikePhotoResponse> {
 	
-	public DeleteAlbumsRequest() {
-		super("CloudPhoto", "2017-07-11", "DeleteAlbums", "cloudphoto");
+	public LikePhotoRequest() {
+		super("CloudPhoto", "2017-07-11", "LikePhoto", "cloudphoto");
 		setProtocol(ProtocolType.HTTPS);
 	}
 
 	private String libraryId;
 
-	private List<Long> albumIds;
+	private Long photoId;
 
 	private String storeName;
 
@@ -50,17 +49,15 @@ public class DeleteAlbumsRequest extends RpcAcsRequest<DeleteAlbumsResponse> {
 		}
 	}
 
-	public List<Long> getAlbumIds() {
-		return this.albumIds;
+	public Long getPhotoId() {
+		return this.photoId;
 	}
 
-	public void setAlbumIds(List<Long> albumIds) {
-		this.albumIds = albumIds;	
-		if (albumIds != null) {
-			for (int i = 0; i < albumIds.size(); i++) {
-				putQueryParameter("AlbumId." + (i + 1) , albumIds.get(i));
-			}
-		}	
+	public void setPhotoId(Long photoId) {
+		this.photoId = photoId;
+		if(photoId != null){
+			putQueryParameter("PhotoId", photoId.toString());
+		}
 	}
 
 	public String getStoreName() {
@@ -75,8 +72,8 @@ public class DeleteAlbumsRequest extends RpcAcsRequest<DeleteAlbumsResponse> {
 	}
 
 	@Override
-	public Class<DeleteAlbumsResponse> getResponseClass() {
-		return DeleteAlbumsResponse.class;
+	public Class<LikePhotoResponse> getResponseClass() {
+		return LikePhotoResponse.class;
 	}
 
 }

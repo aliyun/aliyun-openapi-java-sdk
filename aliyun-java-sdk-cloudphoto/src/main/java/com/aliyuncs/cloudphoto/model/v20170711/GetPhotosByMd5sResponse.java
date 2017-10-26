@@ -18,15 +18,16 @@
  */
 package com.aliyuncs.cloudphoto.model.v20170711;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.cloudphoto.transform.v20170711.CreatePhotoResponseUnmarshaller;
+import com.aliyuncs.cloudphoto.transform.v20170711.GetPhotosByMd5sResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CreatePhotoResponse extends AcsResponse {
+public class GetPhotosByMd5sResponse extends AcsResponse {
 
 	private String code;
 
@@ -36,7 +37,7 @@ public class CreatePhotoResponse extends AcsResponse {
 
 	private String action;
 
-	private Photo photo;
+	private List<Photo> photos;
 
 	public String getCode() {
 		return this.code;
@@ -70,12 +71,12 @@ public class CreatePhotoResponse extends AcsResponse {
 		this.action = action;
 	}
 
-	public Photo getPhoto() {
-		return this.photo;
+	public List<Photo> getPhotos() {
+		return this.photos;
 	}
 
-	public void setPhoto(Photo photo) {
-		this.photo = photo;
+	public void setPhotos(List<Photo> photos) {
+		this.photos = photos;
 	}
 
 	public static class Photo {
@@ -212,7 +213,12 @@ public class CreatePhotoResponse extends AcsResponse {
 	}
 
 	@Override
-	public CreatePhotoResponse getInstance(UnmarshallerContext context) {
-		return	CreatePhotoResponseUnmarshaller.unmarshall(this, context);
+	public GetPhotosByMd5sResponse getInstance(UnmarshallerContext context) {
+		return	GetPhotosByMd5sResponseUnmarshaller.unmarshall(this, context);
+	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }

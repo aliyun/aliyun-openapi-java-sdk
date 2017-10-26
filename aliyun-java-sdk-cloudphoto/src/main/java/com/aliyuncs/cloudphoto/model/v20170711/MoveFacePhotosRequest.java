@@ -71,8 +71,10 @@ public class MoveFacePhotosRequest extends RpcAcsRequest<MoveFacePhotosResponse>
 
 	public void setPhotoIds(List<Long> photoIds) {
 		this.photoIds = photoIds;	
-		for (int i = 0; i < photoIds.size(); i++) {
-			putQueryParameter("PhotoId." + (i + 1) , photoIds.get(i));
+		if (photoIds != null) {
+			for (int i = 0; i < photoIds.size(); i++) {
+				putQueryParameter("PhotoId." + (i + 1) , photoIds.get(i));
+			}
 		}	
 	}
 
