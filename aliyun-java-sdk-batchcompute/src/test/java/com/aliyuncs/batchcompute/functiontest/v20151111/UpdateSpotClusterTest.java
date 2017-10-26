@@ -41,6 +41,8 @@ public class UpdateSpotClusterTest extends TestCase {
 
     private static BatchCompute client;
 
+    private String gMnsEndpoint;
+
     private String gImageId =  "img-ubuntu";
 
     private String gClusterId;
@@ -56,7 +58,7 @@ public class UpdateSpotClusterTest extends TestCase {
         BatchComputeClient.addRequestHeader("x-acs-source-ip", "127.0.0.1");
         BatchComputeClient.addRequestHeader("x-acs-secure-transport", "true");
 
-
+        gMnsEndpoint = "mns."+cfg.getRegionId()+".aliyuncs.com";
         client = new BatchComputeClient(cfg.getRegionId(), cfg.getAccessId(), cfg.getAccessKey());
 
 
@@ -166,7 +168,9 @@ public class UpdateSpotClusterTest extends TestCase {
         topic.addEvent(Topic.ON_CLUSTER_INSTANCE_ACTIVE);
         noti.setTopic(topic);
         topic.setName("tp_n2");
-        topic.setEndpoint("xxxx");
+
+        Config cfg = Config.getInstance();
+        topic.setEndpoint(gMnsEndpoint);
         desc.setNotification(noti);
 
         return desc;

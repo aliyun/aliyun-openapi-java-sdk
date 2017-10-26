@@ -19,48 +19,46 @@
 package com.aliyuncs.batchcompute.model.v20151111;
 
 import com.aliyuncs.batchcompute.main.v20151111.BatchComputeRequest;
-import com.aliyuncs.batchcompute.pojo.v20151111.JobDescription;
-import com.aliyuncs.batchcompute.transform.v20151111.CreateJobRequestMarshaller;
-import com.aliyuncs.exceptions.ClientException;
 import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
-public class CreateJobRequest extends BatchComputeRequest<CreateJobResponse> {
-	
-	public CreateJobRequest() {
-		super("BatchCompute", "2015-11-11", "CreateJob");
-		setUriPattern("/jobs");
-		setMethod(MethodType.POST);
+public class DeleteAppRequest extends BatchComputeRequest<DeleteAppResponse> {
+
+	public DeleteAppRequest() {
+		super("BatchCompute", "2015-11-11", "DeleteApp");
+		setUriPattern("/apps/[ResourceName]");
+		setMethod(MethodType.DELETE);
 	}
 
-	private String IdempotentToken;
 
-	public String getIdempotentToken() {
-		return IdempotentToken;
+	private String appName;
+
+	public String getAppName() {
+		return this.appName;
 	}
 
-	public void setIdempotentToken(String idempotentToken) {
-		IdempotentToken = idempotentToken;
-		this.putQueryParameter("IdempotentToken",idempotentToken);
+	public void setAppName(String appName) {
+		this.appName = appName;
+		putPathParameter("ResourceName", appName);
 	}
 
-	private JobDescription jobDescription;
+	private String qualifier;
 
-	public JobDescription getJobDescription() {
-		return jobDescription;
+	public String getQualifier() {
+		return this.qualifier;
 	}
 
-	public void setJobDescription(JobDescription jobDescription) throws ClientException {
-		this.jobDescription = jobDescription;
-		CreateJobRequestMarshaller.marshall(this);
+	public void setQualifier(String qualifier) {
+		this.qualifier = qualifier;
+		putPathParameter("Qualifier", qualifier);
 	}
 
 	@Override
-	public Class<CreateJobResponse> getResponseClass() {
-		return CreateJobResponse.class;
+	public Class<DeleteAppResponse> getResponseClass() {
+		return DeleteAppResponse.class;
 	}
 
 }

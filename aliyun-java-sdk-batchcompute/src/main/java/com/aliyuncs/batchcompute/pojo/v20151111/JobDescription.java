@@ -41,11 +41,14 @@ public class JobDescription {
     private String description;
 
 
+    @JsonProperty("App")
+    private AppJobDescription app;
+
     @JsonProperty("DAG")
     private DAG dag;
 
     @JsonProperty("JobFailOnInstanceFail")
-    private boolean jobFailOnInstanceFail;
+    private boolean jobFailOnInstanceFail=true;
 
     @JsonProperty("AutoRelease")
     private boolean autoRelease;
@@ -78,6 +81,14 @@ public class JobDescription {
         this.notification = notification;
     }
 
+    @JsonIgnore
+    public AppJobDescription getApp() {
+        return app;
+    }
+    @JsonIgnore
+    public void setApp(AppJobDescription app) {
+        this.app = app;
+    }
 
     @JsonIgnore
     public String getName() {

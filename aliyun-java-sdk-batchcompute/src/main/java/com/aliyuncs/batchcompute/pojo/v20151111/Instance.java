@@ -26,6 +26,7 @@ import org.codehaus.jackson.annotate.JsonProperty;
 import org.codehaus.jackson.map.annotate.JsonDeserialize;
 
 import java.util.Date;
+import java.util.Map;
 
 
 /**
@@ -66,6 +67,29 @@ public class Instance{
     @JsonProperty("Result")
     private InstanceResult result;
 
+    @JsonProperty("Error")
+    private InstanceError error;
+
+    @JsonProperty("Outputs")
+    private Map<String,  Object> outputs;
+
+    @JsonIgnore
+    public Map<String, Object> getOutputs() {
+        return outputs;
+    }
+    @JsonIgnore
+    public void setOutputs(Map<String, Object> outputs) {
+        this.outputs = outputs;
+    }
+
+    @JsonIgnore
+    public InstanceError getError() {
+        return error;
+    }
+    @JsonIgnore
+    public void setError(InstanceError error) {
+        this.error = error;
+    }
 
     @JsonIgnore
     public int getInstanceId() {

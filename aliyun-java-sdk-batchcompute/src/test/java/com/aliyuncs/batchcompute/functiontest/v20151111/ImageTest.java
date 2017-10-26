@@ -38,7 +38,6 @@ public class ImageTest extends TestCase {
     private String gEcsImageId;
 
 
-
     @Override
     public void setUp() throws Exception {
         Config cfg = Config.getInstance();

@@ -19,18 +19,43 @@
 package com.aliyuncs.batchcompute.model.v20151111;
 
 import com.aliyuncs.batchcompute.main.v20151111.BatchComputeResponse;
-import com.aliyuncs.batchcompute.transform.v20151111.UpdateClusterResponseUnmarshaller;
+import com.aliyuncs.batchcompute.pojo.v20151111.App;
+import com.aliyuncs.batchcompute.pojo.v20151111.Image;
+import com.aliyuncs.batchcompute.transform.v20151111.ListAppsResponseUnmarshaller;
+import com.aliyuncs.batchcompute.transform.v20151111.ListImagesResponseUnmarshaller;
+import com.aliyuncs.exceptions.ServerException;
 import com.aliyuncs.transform.UnmarshallerContext;
+
+import java.util.List;
 
 /**
  * @author auto create
  * @version 
  */
-public class UpdateClusterResponse extends BatchComputeResponse {
+public class ListAppsResponse extends BatchComputeResponse {
+
+	public String getNextMarker() {
+		return nextMarker;
+	}
+
+	public void setNextMarker(String nextMarker) {
+		this.nextMarker = nextMarker;
+	}
+
+	public List<App> getItems() {
+		return items;
+	}
+
+	public void setItems(List<App> items) {
+		this.items = items;
+	}
+
+	private String nextMarker;
+	private List<App> items;
 
 
 	@Override
-	public UpdateClusterResponse getInstance(UnmarshallerContext context) {
-		return UpdateClusterResponseUnmarshaller.unmarshall(this, context);
+	public ListAppsResponse getInstance(UnmarshallerContext context) throws ServerException {
+		return	ListAppsResponseUnmarshaller.unmarshall(this, context);
 	}
 }

@@ -16,21 +16,16 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package com.aliyuncs.batchcompute.model.v20151111;
+package com.aliyuncs.batchcompute.transform.v20151111;
 
-import com.aliyuncs.batchcompute.main.v20151111.BatchComputeResponse;
-import com.aliyuncs.batchcompute.transform.v20151111.UpdateClusterResponseUnmarshaller;
+import com.aliyuncs.batchcompute.model.v20151111.DeleteAppResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
-/**
- * @author auto create
- * @version 
- */
-public class UpdateClusterResponse extends BatchComputeResponse {
 
+public class DeleteAppResponseUnmarshaller {
 
-	@Override
-	public UpdateClusterResponse getInstance(UnmarshallerContext context) {
-		return UpdateClusterResponseUnmarshaller.unmarshall(this, context);
+	public static DeleteAppResponse unmarshall(DeleteAppResponse deleteAppResponse, UnmarshallerContext context) {
+		deleteAppResponse.setHttpResponse(context.getHttpResponse());
+	 	return deleteAppResponse;
 	}
 }

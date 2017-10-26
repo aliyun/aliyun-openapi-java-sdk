@@ -19,48 +19,62 @@
 package com.aliyuncs.batchcompute.model.v20151111;
 
 import com.aliyuncs.batchcompute.main.v20151111.BatchComputeRequest;
-import com.aliyuncs.batchcompute.pojo.v20151111.JobDescription;
-import com.aliyuncs.batchcompute.transform.v20151111.CreateJobRequestMarshaller;
-import com.aliyuncs.exceptions.ClientException;
 import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
-public class CreateJobRequest extends BatchComputeRequest<CreateJobResponse> {
-	
-	public CreateJobRequest() {
-		super("BatchCompute", "2015-11-11", "CreateJob");
-		setUriPattern("/jobs");
-		setMethod(MethodType.POST);
+public class ListAppsRequest extends BatchComputeRequest<ListAppsResponse> {
+
+
+	public ListAppsRequest() {
+		super("BatchCompute", "2015-11-11", "ListApps");
+		setUriPattern("/apps");
+		setMethod(MethodType.GET);
 	}
 
-	private String IdempotentToken;
 
-	public String getIdempotentToken() {
-		return IdempotentToken;
+	private String marker;
+	private int maxItemCount= 50;
+
+	public String getScope() {
+		return scope;
 	}
 
-	public void setIdempotentToken(String idempotentToken) {
-		IdempotentToken = idempotentToken;
-		this.putQueryParameter("IdempotentToken",idempotentToken);
+	public void setScope(String scope) {
+		this.scope = scope;
+		if(scope!=null && !scope.equals("")) {
+			this.putQueryParameter("Scope", scope);
+		}
 	}
 
-	private JobDescription jobDescription;
+	private String scope;
 
-	public JobDescription getJobDescription() {
-		return jobDescription;
+
+	public String getMarker() {
+		return marker;
 	}
 
-	public void setJobDescription(JobDescription jobDescription) throws ClientException {
-		this.jobDescription = jobDescription;
-		CreateJobRequestMarshaller.marshall(this);
+	public void setMarker(String marker) {
+		this.marker = marker;
+		if(marker!=null && !marker.equals("")) {
+			this.putQueryParameter("Marker", marker);
+		}
+	}
+
+	public int getMaxItemCount() {
+		return maxItemCount;
+	}
+
+	public void setMaxItemCount(int maxItemCount) {
+		this.maxItemCount = maxItemCount;
+		this.putQueryParameter("MaxItemCount",maxItemCount);
 	}
 
 	@Override
-	public Class<CreateJobResponse> getResponseClass() {
-		return CreateJobResponse.class;
+	public Class<ListAppsResponse> getResponseClass() {
+		return ListAppsResponse.class;
 	}
 
 }

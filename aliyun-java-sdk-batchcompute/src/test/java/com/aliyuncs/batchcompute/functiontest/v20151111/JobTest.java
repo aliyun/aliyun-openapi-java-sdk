@@ -40,6 +40,7 @@ public class JobTest extends TestCase {
     private static BatchCompute client;
 
     private String gImageId;
+    private String gMnsEndpoint;
 
     private String gClusterId;
 
@@ -54,7 +55,7 @@ public class JobTest extends TestCase {
         BatchComputeClient.verbose = true;
         BatchComputeClient.addRequestHeader("x-acs-source-ip", "127.0.0.1");
         BatchComputeClient.addRequestHeader("x-acs-secure-transport", "true");
-
+        gMnsEndpoint = "mns."+cfg.getRegionId()+".aliyuncs.com";
         gImageId = "img-ubuntu";
 
         client = new BatchComputeClient(cfg.getRegionId(), cfg.getAccessId(), cfg.getAccessKey());
@@ -182,6 +183,8 @@ public class JobTest extends TestCase {
 
         assertEquals("testJob", jobDesc2.getName());
         assertTrue(jobDesc2.getPriority() == 1);
+        assertTrue(jobDesc2.isJobFailOnInstanceFail() == false);
+        assertTrue(jobDesc2.isAutoRelease() == true);
 
         TaskDescription taskDesc2 = jobDesc2.getDag().getTasks().get("task_1");
         assertEquals(gClusterId, taskDesc2.getClusterId());
@@ -189,7 +192,7 @@ public class JobTest extends TestCase {
         Topic tp = jobDesc2.getNotification().getTopic();
 
         assertEquals(tp.getName(),"tp_n1");
-        assertEquals(tp.getEndpoint(),"xxxxx");
+        assertEquals(tp.getEndpoint(),gMnsEndpoint);
         assertEquals(tp.getEvents().size(), 2);
 
 
@@ -308,8 +311,8 @@ public class JobTest extends TestCase {
         desc.setPriority(1);
         desc.setDescription("JAVA SDK TEST");
         desc.setType("DAG");
-        desc.setJobFailOnInstanceFail(true);
-        desc.setAutoRelease(false);
+        desc.setJobFailOnInstanceFail(false);
+        desc.setAutoRelease(true);
 
 
         DAG dag = new DAG();
@@ -324,7 +327,8 @@ public class JobTest extends TestCase {
         topic.addEvent(Topic.ON_JOB_FINISHED);
         noti.setTopic(topic);
         topic.setName("tp_n1");
-        topic.setEndpoint("xxxxx");
+
+        topic.setEndpoint(gMnsEndpoint);
         desc.setNotification(noti);
 
         return desc;

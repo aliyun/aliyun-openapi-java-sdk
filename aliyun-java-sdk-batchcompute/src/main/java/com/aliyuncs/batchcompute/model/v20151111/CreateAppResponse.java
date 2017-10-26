@@ -19,18 +19,28 @@
 package com.aliyuncs.batchcompute.model.v20151111;
 
 import com.aliyuncs.batchcompute.main.v20151111.BatchComputeResponse;
-import com.aliyuncs.batchcompute.transform.v20151111.UpdateClusterResponseUnmarshaller;
+import com.aliyuncs.batchcompute.transform.v20151111.CreateAppResponseUnmarshaller;
+import com.aliyuncs.exceptions.ServerException;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class UpdateClusterResponse extends BatchComputeResponse {
+public class CreateAppResponse extends BatchComputeResponse {
 
+	private String appName;
+
+	public String getAppName() {
+		return appName;
+	}
+
+	public void setAppName(String appName) {
+		this.appName = appName;
+	}
 
 	@Override
-	public UpdateClusterResponse getInstance(UnmarshallerContext context) {
-		return UpdateClusterResponseUnmarshaller.unmarshall(this, context);
+	public CreateAppResponse getInstance(UnmarshallerContext context) throws ServerException {
+		return	CreateAppResponseUnmarshaller.unmarshall(this, context);
 	}
 }

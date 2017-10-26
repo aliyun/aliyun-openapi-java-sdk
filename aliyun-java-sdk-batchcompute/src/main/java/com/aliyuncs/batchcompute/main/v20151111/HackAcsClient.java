@@ -64,7 +64,9 @@ public class HackAcsClient {
         }
 
         String responseEndpoint = clasz.getName().substring(clasz.getName().lastIndexOf(".") + 1);
-        context.setResponseMap(reader.read(stringContent, responseEndpoint));
+        try {
+            context.setResponseMap(reader.read(stringContent, responseEndpoint));
+        }catch(StringIndexOutOfBoundsException ee){}
         context.setHttpResponse(httpResponse);
         response.getInstance(context);
         return (T) response;

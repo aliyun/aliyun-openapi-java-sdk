@@ -44,6 +44,7 @@ public class ClusterCreateTest extends TestCase {
 
     private String gInstanceType;
 
+    private String gMnsEndpoint;
 
     @Override
     public void setUp() throws Exception {
@@ -53,6 +54,7 @@ public class ClusterCreateTest extends TestCase {
         BatchComputeClient.addRequestHeader("x-acs-source-ip", "127.0.0.1");
         BatchComputeClient.addRequestHeader("x-acs-secure-transport", "true");
 
+        gMnsEndpoint  = "mns."+cfg.getRegionId()+".aliyuncs.com";
 
         client = new BatchComputeClient(cfg.getRegionId(), cfg.getAccessId(), cfg.getAccessKey());
 
@@ -134,7 +136,7 @@ public class ClusterCreateTest extends TestCase {
         topic.addEvent(Topic.ON_CLUSTER_INSTANCE_ACTIVE);
         noti.setTopic(topic);
         topic.setName("tp_n2");
-        topic.setEndpoint("xxxx");
+        topic.setEndpoint(gMnsEndpoint);
         desc.setNotification(noti);
 
         return desc;

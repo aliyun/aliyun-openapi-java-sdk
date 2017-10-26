@@ -25,6 +25,7 @@ import com.aliyuncs.AcsResponse;
 import com.aliyuncs.DefaultAcsClient;
 import com.aliyuncs.IAcsClient;
 import com.aliyuncs.batchcompute.model.v20151111.*;
+import com.aliyuncs.batchcompute.pojo.v20151111.AppDescription;
 import com.aliyuncs.batchcompute.pojo.v20151111.ClusterDescription;
 import com.aliyuncs.batchcompute.pojo.v20151111.ImageDescription;
 import com.aliyuncs.batchcompute.pojo.v20151111.JobDescription;
@@ -178,6 +179,11 @@ public class BatchComputeClient implements BatchCompute {
     @Override
     public UpdateClusterResponse updateCluster(UpdateClusterRequest request) throws ClientException {
         return getAcsResponse(request);
+    }
+
+    @Override
+    public UpdateClusterResponse updateCluster(ClusterDescription desc) throws ClientException {
+        return null;
     }
 
     @Override
@@ -581,6 +587,126 @@ public class BatchComputeClient implements BatchCompute {
 
     @Override
     public ListImagesResponse listImages(ListImagesRequest req) throws ClientException {
+        return getAcsResponse(req);
+    }
+
+    @Override
+    public GetAppResponse getApp(String appName) throws ClientException {
+        GetAppRequest req = new GetAppRequest();
+        req.setAppName(appName);
+        req.setScope("Private");
+        return getApp(req);
+    }
+
+    @Override
+    public GetAppResponse getApp(String appName, String scope) throws ClientException {
+        GetAppRequest req = new GetAppRequest();
+        req.setAppName(appName);
+        req.setScope(scope);
+        return getApp(req);
+    }
+
+    @Override
+    public GetAppResponse getApp(GetAppRequest req) throws ClientException {
+        return getAcsResponse(req);
+    }
+
+    @Override
+    public GetAppRevisionsResponse getAppRevisions(String appName) throws ClientException {
+        GetAppRevisionsRequest req = new GetAppRevisionsRequest();
+        req.setAppName(appName);
+        return getAppRevisions(req);
+    }
+
+    @Override
+    public GetAppRevisionsResponse getAppRevisions(GetAppRevisionsRequest req) throws ClientException {
+        return getAcsResponse(req);
+    }
+
+    @Override
+    public GetAppDetailResponse getAppDetail(String appName, String qualifier) throws ClientException {
+        GetAppDetailRequest req = new GetAppDetailRequest();
+        req.setAppName(appName);
+        req.setQualifier(qualifier);
+        return getAppDetail(req);
+    }
+
+    @Override
+    public GetAppDetailResponse getAppDetail(GetAppDetailRequest req) throws ClientException {
+        return getAcsResponse(req);
+    }
+
+    @Override
+    public CreateAppResponse createApp(AppDescription appDescription) throws ClientException {
+        CreateAppRequest req = new CreateAppRequest();
+        req.setAppDescription(appDescription);
+        return createApp(req);
+    }
+
+    @Override
+    public CreateAppResponse createApp(CreateAppRequest req) throws ClientException {
+        return getAcsResponse(req);
+    }
+
+    @Override
+    public CreateAppResponse createApp(AppDescription appDescription, String idempotentToken) throws ClientException {
+        CreateAppRequest req = new CreateAppRequest();
+        req.setAppDescription(appDescription);
+        req.setIdempotentToken(idempotentToken);
+        return createApp(req);
+    }
+
+    @Override
+    public UpdateAppResponse updateApp(AppDescription appDescription) throws ClientException {
+        UpdateAppRequest req = new UpdateAppRequest();
+        req.setAppDescription(appDescription);
+        return updateApp(req);
+    }
+
+    @Override
+    public UpdateAppResponse updateApp(UpdateAppRequest req) throws ClientException {
+        return getAcsResponse(req);
+    }
+
+    @Override
+    public DeleteAppResponse deleteApp(String appName) throws ClientException {
+        DeleteAppRequest req = new DeleteAppRequest();
+        req.setAppName(appName);
+        return deleteApp(req);
+    }
+
+    @Override
+    public DeleteAppResponse deleteApp(String appName, String qualifier) throws ClientException {
+        DeleteAppRequest req = new DeleteAppRequest();
+        req.setAppName(appName);
+        req.setQualifier(qualifier);
+        return deleteApp(req);
+    }
+
+    @Override
+    public DeleteAppResponse deleteApp(DeleteAppRequest req) throws ClientException {
+        return getAcsResponse(req);
+    }
+
+
+    @Override
+    public ListAppsResponse listApps(String scope) throws ClientException {
+        ListAppsRequest req = new ListAppsRequest();
+        req.setScope(scope);
+        return listApps(req);
+    }
+
+    @Override
+    public ListAppsResponse listApps(String scope, String marker, int maxItemCount) throws ClientException {
+        ListAppsRequest req = new ListAppsRequest();
+        req.setMaxItemCount(maxItemCount);
+        req.setMarker(marker);
+        req.setScope(scope);
+        return listApps(req);
+    }
+
+    @Override
+    public ListAppsResponse listApps(ListAppsRequest req) throws ClientException {
         return getAcsResponse(req);
     }
 

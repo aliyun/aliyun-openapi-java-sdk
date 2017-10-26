@@ -44,6 +44,8 @@ public class ClusterTest extends TestCase {
 
     private String gInstanceType;
 
+    private String gMnsEndpoint;
+
 
     @Override
     public void setUp() throws Exception {
@@ -52,6 +54,8 @@ public class ClusterTest extends TestCase {
         BatchComputeClient.verbose = true;
         BatchComputeClient.addRequestHeader("x-acs-source-ip", "127.0.0.1");
         BatchComputeClient.addRequestHeader("x-acs-secure-transport", "true");
+
+        gMnsEndpoint = "mns."+cfg.getRegionId()+".aliyuncs.com";
 
         client = new BatchComputeClient(cfg.getRegionId(), cfg.getAccessId(), cfg.getAccessKey());
 
@@ -98,14 +102,14 @@ public class ClusterTest extends TestCase {
         DataDisk dataDisk = disks.getDataDisk();
         assertEquals(400, dataDisk.getSize());
         assertEquals("/home/admin/xxx", dataDisk.getMountPoint());
-        assertEquals("cloud", dataDisk.getType());
+        //assertEquals("cloud", dataDisk.getType());
 
         SystemDisk systemDisk = disks.getSystemDisk();
         assertEquals(80, systemDisk.getSize());
 
         Topic topic = cluster.getNotification().getTopic();
         assertEquals("tp_n2", topic.getName());
-        assertEquals("xxxx", topic.getEndpoint());
+        assertEquals(gMnsEndpoint, topic.getEndpoint());
         assertEquals(2, topic.getEvents().size());
 
 
@@ -186,7 +190,7 @@ public class ClusterTest extends TestCase {
         int delStatusCode = deleteClusterResponse.getStatusCode();
         System.out.println("--------delete status code:"+ delStatusCode);
 
-        assertTrue( 202 == delStatusCode);
+        assertTrue( 200 == delStatusCode);
     }
 
 
@@ -207,13 +211,13 @@ public class ClusterTest extends TestCase {
 
         DataDisk dataDisk = new DataDisk();
         dataDisk.setSize(400);
-        dataDisk.setType("cloud");
+        //dataDisk.setType("cloud");
         dataDisk.setMountPoint("/home/admin/xxx");
         desc.mountDataDisk(dataDisk);
 
         SystemDisk systemDisk = new SystemDisk();
         systemDisk.setSize(80); //GB
-        systemDisk.setType("cloud");
+        //systemDisk.setType("cloud");
         desc.mountSystemDisk(systemDisk);
 
         desc.addUserData("a","bb");
@@ -224,7 +228,7 @@ public class ClusterTest extends TestCase {
         topic.addEvent(Topic.ON_CLUSTER_INSTANCE_ACTIVE);
         noti.setTopic(topic);
         topic.setName("tp_n2");
-        topic.setEndpoint("xxxx");
+        topic.setEndpoint(gMnsEndpoint);
         desc.setNotification(noti);
 
         return desc;

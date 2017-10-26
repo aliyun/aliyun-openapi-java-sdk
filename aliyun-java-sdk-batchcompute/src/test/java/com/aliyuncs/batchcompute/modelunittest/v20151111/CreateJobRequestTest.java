@@ -26,6 +26,7 @@ import com.aliyuncs.exceptions.ClientException;
 import com.aliyuncs.http.MethodType;
 import junit.framework.TestCase;
 import org.codehaus.jackson.map.ObjectMapper;
+import org.codehaus.jackson.map.annotate.JsonSerialize;
 import org.junit.Test;
 
 import java.io.IOException;
@@ -63,12 +64,14 @@ public class CreateJobRequestTest extends TestCase {
         String contentString = null;
         try {
             contentString = new String(req.getContent(), "utf-8");
+            System.out.println(contentString);
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         }
 
 
         ObjectMapper objectMapper = new ObjectMapper();
+
         JobDescription jobDesc = objectMapper.readValue(contentString, JobDescription.class);
 
 
@@ -78,6 +81,8 @@ public class CreateJobRequestTest extends TestCase {
         assertEquals("DAG", jobDesc.getType());
         assertEquals("testJob", jobDesc.getDescription());
         assertTrue(1==jobDesc.getPriority());
+        assertTrue(false==jobDesc.isJobFailOnInstanceFail());
+        assertTrue(true==jobDesc.isAutoRelease());
 
 
 
@@ -142,6 +147,8 @@ public class CreateJobRequestTest extends TestCase {
         job.setPriority(1);
         job.setDescription("testJob");
         job.setType("DAG");
+        job.setJobFailOnInstanceFail(false);
+        job.setAutoRelease(true);
         return job;
     }
 

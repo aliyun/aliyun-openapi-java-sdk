@@ -20,7 +20,7 @@ Batchcompute SDK For Java
 <dependency>
     <groupId>com.aliyun</groupId>
     <artifactId>aliyun-java-sdk-batchcompute</artifactId>
-    <version>4.7.0</version>
+    <version>5.0.0</version>
 </dependency>
 ```
 
@@ -96,9 +96,21 @@ try {
 | 2. | getImage(String imageId) | 获取 Image 信息 |
 | 2. | deleteImage(String imageId) | 删除Image |
 | 2. | createImage(ImageDescription imageDescription) | 创建Image |
-
+| | *App相关* | |
+| 1. | listApps(String scope, String marker, int maxItemCount) | 列举 Apps |
+| 2. | getApp(String appName, String scope) | 获取 App 信息 |
+| 2. | getAppRevisions(String appName) | 获取 App 所有修订版本 |
+| 2. | getAppDetail(String appName) | 获取 App 详情 |
+| 2. | deleteApp(String appName) | 删除 App |
+| 2. | createApp(AppDescription appDescription) | 创建App |
+| 2. | updateApp(AppDescription appDescription) | 修改App |
 
 ### 5. release note
+
+5.0.0
+```
+1. 支持App
+```
 
 4.7.0
 ```

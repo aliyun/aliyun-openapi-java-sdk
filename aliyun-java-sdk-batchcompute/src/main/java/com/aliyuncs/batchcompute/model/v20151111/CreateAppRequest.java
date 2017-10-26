@@ -19,8 +19,8 @@
 package com.aliyuncs.batchcompute.model.v20151111;
 
 import com.aliyuncs.batchcompute.main.v20151111.BatchComputeRequest;
-import com.aliyuncs.batchcompute.pojo.v20151111.JobDescription;
-import com.aliyuncs.batchcompute.transform.v20151111.CreateJobRequestMarshaller;
+import com.aliyuncs.batchcompute.pojo.v20151111.AppDescription;
+import com.aliyuncs.batchcompute.transform.v20151111.CreateAppRequestMarshaller;
 import com.aliyuncs.exceptions.ClientException;
 import com.aliyuncs.http.MethodType;
 
@@ -28,11 +28,11 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class CreateJobRequest extends BatchComputeRequest<CreateJobResponse> {
-	
-	public CreateJobRequest() {
-		super("BatchCompute", "2015-11-11", "CreateJob");
-		setUriPattern("/jobs");
+public class CreateAppRequest extends BatchComputeRequest<CreateAppResponse> {
+
+	public CreateAppRequest() {
+		super("BatchCompute", "2015-11-11", "CreateApp");
+		setUriPattern("/apps");
 		setMethod(MethodType.POST);
 	}
 
@@ -47,20 +47,22 @@ public class CreateJobRequest extends BatchComputeRequest<CreateJobResponse> {
 		this.putQueryParameter("IdempotentToken",idempotentToken);
 	}
 
-	private JobDescription jobDescription;
 
-	public JobDescription getJobDescription() {
-		return jobDescription;
+	private AppDescription appDescription;
+
+	public AppDescription getAppDescription() {
+		return appDescription;
 	}
 
-	public void setJobDescription(JobDescription jobDescription) throws ClientException {
-		this.jobDescription = jobDescription;
-		CreateJobRequestMarshaller.marshall(this);
+	public void setAppDescription(AppDescription appDescription) throws ClientException {
+		this.appDescription = appDescription;
+		CreateAppRequestMarshaller.marshall(this);
 	}
+
 
 	@Override
-	public Class<CreateJobResponse> getResponseClass() {
-		return CreateJobResponse.class;
+	public Class<CreateAppResponse> getResponseClass() {
+		return CreateAppResponse.class;
 	}
 
 }

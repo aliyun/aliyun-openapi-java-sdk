@@ -20,6 +20,7 @@ package com.aliyuncs.batchcompute.main.v20151111;
 
 
 import com.aliyuncs.batchcompute.model.v20151111.*;
+import com.aliyuncs.batchcompute.pojo.v20151111.AppDescription;
 import com.aliyuncs.batchcompute.pojo.v20151111.ClusterDescription;
 import com.aliyuncs.batchcompute.pojo.v20151111.ImageDescription;
 import com.aliyuncs.batchcompute.pojo.v20151111.JobDescription;
@@ -39,7 +40,6 @@ public interface BatchCompute {
 
     CreateJobResponse createJob(JobDescription jobDescription, String idempotentToken) throws ClientException;
 
-    UpdateClusterResponse updateCluster(UpdateClusterRequest req) throws ClientException;
 
     ChangeJobPriorityResponse changeJobPriority(ChangeJobPriorityRequest req) throws ClientException;
 
@@ -128,6 +128,9 @@ public interface BatchCompute {
     ChangeClusterDesiredVMCountResponse changeClusterDesiredVMCount(String clusterId, ClusterDescription clusterDesc) throws ClientException;
     ChangeClusterDesiredVMCountResponse changeClusterDesiredVMCount(String clusterId, String groupName, int count) throws ClientException;
 
+    UpdateClusterResponse updateCluster(UpdateClusterRequest req) throws ClientException;
+    UpdateClusterResponse updateCluster(ClusterDescription desc) throws ClientException;
+
 
     /** cluster instance **/
 
@@ -160,6 +163,34 @@ public interface BatchCompute {
     ListImagesResponse listImages(String type, String marker, int maxItemCount) throws ClientException;
     ListImagesResponse listImages(String marker, int maxItemCount) throws ClientException;
     ListImagesResponse listImages(ListImagesRequest req) throws ClientException;
+
+
+    //app
+    GetAppResponse getApp(String appName) throws ClientException;
+    GetAppResponse getApp(String appName, String scope) throws ClientException;
+    GetAppResponse getApp(GetAppRequest req) throws ClientException;
+
+    GetAppRevisionsResponse getAppRevisions(String appName) throws ClientException;
+    GetAppRevisionsResponse getAppRevisions(GetAppRevisionsRequest req) throws ClientException;
+
+    GetAppDetailResponse getAppDetail(String appName, String qualifier) throws ClientException;
+    GetAppDetailResponse getAppDetail(GetAppDetailRequest req) throws ClientException;
+
+    CreateAppResponse createApp(AppDescription appDescription) throws ClientException;
+    CreateAppResponse createApp(CreateAppRequest req) throws ClientException;
+    CreateAppResponse createApp(AppDescription appDescription, String idempotentToken) throws ClientException;
+
+    UpdateAppResponse updateApp(AppDescription appDescription) throws ClientException;
+    UpdateAppResponse updateApp(UpdateAppRequest req) throws ClientException;
+
+    DeleteAppResponse deleteApp(String appName) throws ClientException;
+    DeleteAppResponse deleteApp(String appName, String qualifier) throws ClientException;
+    DeleteAppResponse deleteApp(DeleteAppRequest req) throws ClientException;
+
+    ListAppsResponse listApps(String scope) throws ClientException;
+    ListAppsResponse listApps(String scope, String marker, int maxItemCount) throws ClientException;
+    ListAppsResponse listApps(ListAppsRequest req) throws ClientException;
+
 
 
     /** Quotas **/
