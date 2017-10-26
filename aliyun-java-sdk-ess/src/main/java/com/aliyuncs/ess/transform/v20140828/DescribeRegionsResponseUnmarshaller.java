@@ -35,6 +35,8 @@ public class DescribeRegionsResponseUnmarshaller {
 		for (int i = 0; i < context.lengthValue("DescribeRegionsResponse.Regions.Length"); i++) {
 			Region region = new Region();
 			region.setRegionId(context.stringValue("DescribeRegionsResponse.Regions["+ i +"].RegionId"));
+			region.setClassicUnavailable(context.booleanValue("DescribeRegionsResponse.Regions["+ i +"].ClassicUnavailable"));
+			region.setVpcUnavailable(context.booleanValue("DescribeRegionsResponse.Regions["+ i +"].VpcUnavailable"));
 
 			regions.add(region);
 		}

@@ -27,20 +27,24 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifyScalingGroupRequest extends RpcAcsRequest<ModifyScalingGroupResponse> {
 	
 	public ModifyScalingGroupRequest() {
-		super("Ess", "2014-08-28", "ModifyScalingGroup");
+		super("Ess", "2014-08-28", "ModifyScalingGroup", "ess");
 	}
-
-	private Long ownerId;
-
-	private String resourceOwnerAccount;
 
 	private Long resourceOwnerId;
 
-	private String scalingGroupId;
+	private String resourceOwnerAccount;
 
 	private String scalingGroupName;
 
+	private String scalingGroupId;
+
+	private String ownerAccount;
+
+	private String activeScalingConfigurationId;
+
 	private Integer minSize;
+
+	private Long ownerId;
 
 	private Integer maxSize;
 
@@ -50,17 +54,15 @@ public class ModifyScalingGroupRequest extends RpcAcsRequest<ModifyScalingGroupR
 
 	private String removalPolicy2;
 
-	private String activeScalingConfigurationId;
-
-	private String ownerAccount;
-
-	public Long getOwnerId() {
-		return this.ownerId;
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
 	}
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
 	}
 
 	public String getResourceOwnerAccount() {
@@ -69,25 +71,9 @@ public class ModifyScalingGroupRequest extends RpcAcsRequest<ModifyScalingGroupR
 
 	public void setResourceOwnerAccount(String resourceOwnerAccount) {
 		this.resourceOwnerAccount = resourceOwnerAccount;
-		putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-	}
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", resourceOwnerId);
-	}
-
-	public String getScalingGroupId() {
-		return this.scalingGroupId;
-	}
-
-	public void setScalingGroupId(String scalingGroupId) {
-		this.scalingGroupId = scalingGroupId;
-		putQueryParameter("ScalingGroupId", scalingGroupId);
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
 	}
 
 	public String getScalingGroupName() {
@@ -96,61 +82,20 @@ public class ModifyScalingGroupRequest extends RpcAcsRequest<ModifyScalingGroupR
 
 	public void setScalingGroupName(String scalingGroupName) {
 		this.scalingGroupName = scalingGroupName;
-		putQueryParameter("ScalingGroupName", scalingGroupName);
+		if(scalingGroupName != null){
+			putQueryParameter("ScalingGroupName", scalingGroupName);
+		}
 	}
 
-	public Integer getMinSize() {
-		return this.minSize;
+	public String getScalingGroupId() {
+		return this.scalingGroupId;
 	}
 
-	public void setMinSize(Integer minSize) {
-		this.minSize = minSize;
-		putQueryParameter("MinSize", minSize);
-	}
-
-	public Integer getMaxSize() {
-		return this.maxSize;
-	}
-
-	public void setMaxSize(Integer maxSize) {
-		this.maxSize = maxSize;
-		putQueryParameter("MaxSize", maxSize);
-	}
-
-	public Integer getDefaultCooldown() {
-		return this.defaultCooldown;
-	}
-
-	public void setDefaultCooldown(Integer defaultCooldown) {
-		this.defaultCooldown = defaultCooldown;
-		putQueryParameter("DefaultCooldown", defaultCooldown);
-	}
-
-	public String getRemovalPolicy1() {
-		return this.removalPolicy1;
-	}
-
-	public void setRemovalPolicy1(String removalPolicy1) {
-		this.removalPolicy1 = removalPolicy1;
-		putQueryParameter("RemovalPolicy.1", removalPolicy1);
-	}
-
-	public String getRemovalPolicy2() {
-		return this.removalPolicy2;
-	}
-
-	public void setRemovalPolicy2(String removalPolicy2) {
-		this.removalPolicy2 = removalPolicy2;
-		putQueryParameter("RemovalPolicy.2", removalPolicy2);
-	}
-
-	public String getActiveScalingConfigurationId() {
-		return this.activeScalingConfigurationId;
-	}
-
-	public void setActiveScalingConfigurationId(String activeScalingConfigurationId) {
-		this.activeScalingConfigurationId = activeScalingConfigurationId;
-		putQueryParameter("ActiveScalingConfigurationId", activeScalingConfigurationId);
+	public void setScalingGroupId(String scalingGroupId) {
+		this.scalingGroupId = scalingGroupId;
+		if(scalingGroupId != null){
+			putQueryParameter("ScalingGroupId", scalingGroupId);
+		}
 	}
 
 	public String getOwnerAccount() {
@@ -159,7 +104,86 @@ public class ModifyScalingGroupRequest extends RpcAcsRequest<ModifyScalingGroupR
 
 	public void setOwnerAccount(String ownerAccount) {
 		this.ownerAccount = ownerAccount;
-		putQueryParameter("OwnerAccount", ownerAccount);
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public String getActiveScalingConfigurationId() {
+		return this.activeScalingConfigurationId;
+	}
+
+	public void setActiveScalingConfigurationId(String activeScalingConfigurationId) {
+		this.activeScalingConfigurationId = activeScalingConfigurationId;
+		if(activeScalingConfigurationId != null){
+			putQueryParameter("ActiveScalingConfigurationId", activeScalingConfigurationId);
+		}
+	}
+
+	public Integer getMinSize() {
+		return this.minSize;
+	}
+
+	public void setMinSize(Integer minSize) {
+		this.minSize = minSize;
+		if(minSize != null){
+			putQueryParameter("MinSize", minSize.toString());
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public Integer getMaxSize() {
+		return this.maxSize;
+	}
+
+	public void setMaxSize(Integer maxSize) {
+		this.maxSize = maxSize;
+		if(maxSize != null){
+			putQueryParameter("MaxSize", maxSize.toString());
+		}
+	}
+
+	public Integer getDefaultCooldown() {
+		return this.defaultCooldown;
+	}
+
+	public void setDefaultCooldown(Integer defaultCooldown) {
+		this.defaultCooldown = defaultCooldown;
+		if(defaultCooldown != null){
+			putQueryParameter("DefaultCooldown", defaultCooldown.toString());
+		}
+	}
+
+	public String getRemovalPolicy1() {
+		return this.removalPolicy1;
+	}
+
+	public void setRemovalPolicy1(String removalPolicy1) {
+		this.removalPolicy1 = removalPolicy1;
+		if(removalPolicy1 != null){
+			putQueryParameter("RemovalPolicy.1", removalPolicy1);
+		}
+	}
+
+	public String getRemovalPolicy2() {
+		return this.removalPolicy2;
+	}
+
+	public void setRemovalPolicy2(String removalPolicy2) {
+		this.removalPolicy2 = removalPolicy2;
+		if(removalPolicy2 != null){
+			putQueryParameter("RemovalPolicy.2", removalPolicy2);
+		}
 	}
 
 	@Override

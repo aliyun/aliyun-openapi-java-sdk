@@ -27,26 +27,26 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeleteScalingConfigurationRequest extends RpcAcsRequest<DeleteScalingConfigurationResponse> {
 	
 	public DeleteScalingConfigurationRequest() {
-		super("Ess", "2014-08-28", "DeleteScalingConfiguration");
+		super("Ess", "2014-08-28", "DeleteScalingConfiguration", "ess");
 	}
-
-	private Long ownerId;
-
-	private String resourceOwnerAccount;
-
-	private Long resourceOwnerId;
 
 	private String scalingConfigurationId;
 
+	private String resourceOwnerAccount;
+
 	private String ownerAccount;
 
-	public Long getOwnerId() {
-		return this.ownerId;
+	private Long ownerId;
+
+	public String getScalingConfigurationId() {
+		return this.scalingConfigurationId;
 	}
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
+	public void setScalingConfigurationId(String scalingConfigurationId) {
+		this.scalingConfigurationId = scalingConfigurationId;
+		if(scalingConfigurationId != null){
+			putQueryParameter("ScalingConfigurationId", scalingConfigurationId);
+		}
 	}
 
 	public String getResourceOwnerAccount() {
@@ -55,25 +55,9 @@ public class DeleteScalingConfigurationRequest extends RpcAcsRequest<DeleteScali
 
 	public void setResourceOwnerAccount(String resourceOwnerAccount) {
 		this.resourceOwnerAccount = resourceOwnerAccount;
-		putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-	}
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", resourceOwnerId);
-	}
-
-	public String getScalingConfigurationId() {
-		return this.scalingConfigurationId;
-	}
-
-	public void setScalingConfigurationId(String scalingConfigurationId) {
-		this.scalingConfigurationId = scalingConfigurationId;
-		putQueryParameter("ScalingConfigurationId", scalingConfigurationId);
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
 	}
 
 	public String getOwnerAccount() {
@@ -82,7 +66,20 @@ public class DeleteScalingConfigurationRequest extends RpcAcsRequest<DeleteScali
 
 	public void setOwnerAccount(String ownerAccount) {
 		this.ownerAccount = ownerAccount;
-		putQueryParameter("OwnerAccount", ownerAccount);
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
 	}
 
 	@Override

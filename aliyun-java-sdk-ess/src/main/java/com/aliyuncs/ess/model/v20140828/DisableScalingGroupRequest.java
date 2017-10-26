@@ -27,26 +27,28 @@ import com.aliyuncs.RpcAcsRequest;
 public class DisableScalingGroupRequest extends RpcAcsRequest<DisableScalingGroupResponse> {
 	
 	public DisableScalingGroupRequest() {
-		super("Ess", "2014-08-28", "DisableScalingGroup");
+		super("Ess", "2014-08-28", "DisableScalingGroup", "ess");
 	}
 
-	private Long ownerId;
+	private Long resourceOwnerId;
 
 	private String resourceOwnerAccount;
-
-	private Long resourceOwnerId;
 
 	private String scalingGroupId;
 
 	private String ownerAccount;
 
-	public Long getOwnerId() {
-		return this.ownerId;
+	private Long ownerId;
+
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
 	}
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
 	}
 
 	public String getResourceOwnerAccount() {
@@ -55,16 +57,9 @@ public class DisableScalingGroupRequest extends RpcAcsRequest<DisableScalingGrou
 
 	public void setResourceOwnerAccount(String resourceOwnerAccount) {
 		this.resourceOwnerAccount = resourceOwnerAccount;
-		putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-	}
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", resourceOwnerId);
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
 	}
 
 	public String getScalingGroupId() {
@@ -73,7 +68,9 @@ public class DisableScalingGroupRequest extends RpcAcsRequest<DisableScalingGrou
 
 	public void setScalingGroupId(String scalingGroupId) {
 		this.scalingGroupId = scalingGroupId;
-		putQueryParameter("ScalingGroupId", scalingGroupId);
+		if(scalingGroupId != null){
+			putQueryParameter("ScalingGroupId", scalingGroupId);
+		}
 	}
 
 	public String getOwnerAccount() {
@@ -82,7 +79,20 @@ public class DisableScalingGroupRequest extends RpcAcsRequest<DisableScalingGrou
 
 	public void setOwnerAccount(String ownerAccount) {
 		this.ownerAccount = ownerAccount;
-		putQueryParameter("OwnerAccount", ownerAccount);
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
 	}
 
 	@Override

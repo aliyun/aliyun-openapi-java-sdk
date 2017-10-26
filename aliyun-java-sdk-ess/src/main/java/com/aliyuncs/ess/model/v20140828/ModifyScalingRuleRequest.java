@@ -27,43 +27,36 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifyScalingRuleRequest extends RpcAcsRequest<ModifyScalingRuleResponse> {
 	
 	public ModifyScalingRuleRequest() {
-		super("Ess", "2014-08-28", "ModifyScalingRule");
+		super("Ess", "2014-08-28", "ModifyScalingRule", "ess");
 	}
-
-	private Long ownerId;
-
-	private String resourceOwnerAccount;
-
-	private Long resourceOwnerId;
-
-	private String scalingRuleId;
 
 	private String scalingRuleName;
 
-	private Integer cooldown;
+	private Long resourceOwnerId;
 
-	private String adjustmentType;
+	private String resourceOwnerAccount;
 
 	private Integer adjustmentValue;
 
 	private String ownerAccount;
 
-	public Long getOwnerId() {
-		return this.ownerId;
+	private Integer cooldown;
+
+	private String adjustmentType;
+
+	private Long ownerId;
+
+	private String scalingRuleId;
+
+	public String getScalingRuleName() {
+		return this.scalingRuleName;
 	}
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	public void setScalingRuleName(String scalingRuleName) {
+		this.scalingRuleName = scalingRuleName;
+		if(scalingRuleName != null){
+			putQueryParameter("ScalingRuleName", scalingRuleName);
+		}
 	}
 
 	public Long getResourceOwnerId() {
@@ -72,43 +65,20 @@ public class ModifyScalingRuleRequest extends RpcAcsRequest<ModifyScalingRuleRes
 
 	public void setResourceOwnerId(Long resourceOwnerId) {
 		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", resourceOwnerId);
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
 	}
 
-	public String getScalingRuleId() {
-		return this.scalingRuleId;
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
 	}
 
-	public void setScalingRuleId(String scalingRuleId) {
-		this.scalingRuleId = scalingRuleId;
-		putQueryParameter("ScalingRuleId", scalingRuleId);
-	}
-
-	public String getScalingRuleName() {
-		return this.scalingRuleName;
-	}
-
-	public void setScalingRuleName(String scalingRuleName) {
-		this.scalingRuleName = scalingRuleName;
-		putQueryParameter("ScalingRuleName", scalingRuleName);
-	}
-
-	public Integer getCooldown() {
-		return this.cooldown;
-	}
-
-	public void setCooldown(Integer cooldown) {
-		this.cooldown = cooldown;
-		putQueryParameter("Cooldown", cooldown);
-	}
-
-	public String getAdjustmentType() {
-		return this.adjustmentType;
-	}
-
-	public void setAdjustmentType(String adjustmentType) {
-		this.adjustmentType = adjustmentType;
-		putQueryParameter("AdjustmentType", adjustmentType);
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
 	}
 
 	public Integer getAdjustmentValue() {
@@ -117,7 +87,9 @@ public class ModifyScalingRuleRequest extends RpcAcsRequest<ModifyScalingRuleRes
 
 	public void setAdjustmentValue(Integer adjustmentValue) {
 		this.adjustmentValue = adjustmentValue;
-		putQueryParameter("AdjustmentValue", adjustmentValue);
+		if(adjustmentValue != null){
+			putQueryParameter("AdjustmentValue", adjustmentValue.toString());
+		}
 	}
 
 	public String getOwnerAccount() {
@@ -126,7 +98,53 @@ public class ModifyScalingRuleRequest extends RpcAcsRequest<ModifyScalingRuleRes
 
 	public void setOwnerAccount(String ownerAccount) {
 		this.ownerAccount = ownerAccount;
-		putQueryParameter("OwnerAccount", ownerAccount);
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public Integer getCooldown() {
+		return this.cooldown;
+	}
+
+	public void setCooldown(Integer cooldown) {
+		this.cooldown = cooldown;
+		if(cooldown != null){
+			putQueryParameter("Cooldown", cooldown.toString());
+		}
+	}
+
+	public String getAdjustmentType() {
+		return this.adjustmentType;
+	}
+
+	public void setAdjustmentType(String adjustmentType) {
+		this.adjustmentType = adjustmentType;
+		if(adjustmentType != null){
+			putQueryParameter("AdjustmentType", adjustmentType);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getScalingRuleId() {
+		return this.scalingRuleId;
+	}
+
+	public void setScalingRuleId(String scalingRuleId) {
+		this.scalingRuleId = scalingRuleId;
+		if(scalingRuleId != null){
+			putQueryParameter("ScalingRuleId", scalingRuleId);
+		}
 	}
 
 	@Override

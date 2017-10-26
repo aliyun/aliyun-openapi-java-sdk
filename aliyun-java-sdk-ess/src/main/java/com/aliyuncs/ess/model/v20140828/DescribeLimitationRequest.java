@@ -27,23 +27,12 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeLimitationRequest extends RpcAcsRequest<DescribeLimitationResponse> {
 	
 	public DescribeLimitationRequest() {
-		super("Ess", "2014-08-28", "DescribeLimitation");
+		super("Ess", "2014-08-28", "DescribeLimitation", "ess");
 	}
-
-	private Long ownerId;
 
 	private String resourceOwnerAccount;
 
-	private Long resourceOwnerId;
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
-	}
+	private Long ownerId;
 
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
@@ -51,16 +40,20 @@ public class DescribeLimitationRequest extends RpcAcsRequest<DescribeLimitationR
 
 	public void setResourceOwnerAccount(String resourceOwnerAccount) {
 		this.resourceOwnerAccount = resourceOwnerAccount;
-		putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
 	}
 
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
+	public Long getOwnerId() {
+		return this.ownerId;
 	}
 
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", resourceOwnerId);
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
 	}
 
 	@Override

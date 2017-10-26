@@ -51,6 +51,7 @@ public class DescribeScalingGroupsResponseUnmarshaller {
 			scalingGroup.setMinSize(context.integerValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].MinSize"));
 			scalingGroup.setLifecycleState(context.stringValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].LifecycleState"));
 			scalingGroup.setCreationTime(context.stringValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].CreationTime"));
+			scalingGroup.setVpcId(context.stringValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].VpcId"));
 			scalingGroup.setVSwitchId(context.stringValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].VSwitchId"));
 
 			List<String> removalPolicies = new ArrayList<String>();

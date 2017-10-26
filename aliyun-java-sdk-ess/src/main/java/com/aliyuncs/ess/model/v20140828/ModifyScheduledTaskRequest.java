@@ -27,53 +27,46 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifyScheduledTaskRequest extends RpcAcsRequest<ModifyScheduledTaskResponse> {
 	
 	public ModifyScheduledTaskRequest() {
-		super("Ess", "2014-08-28", "ModifyScheduledTask");
+		super("Ess", "2014-08-28", "ModifyScheduledTask", "ess");
 	}
-
-	private Long ownerId;
-
-	private String resourceOwnerAccount;
-
-	private Long resourceOwnerId;
-
-	private String scheduledTaskId;
-
-	private String scheduledTaskName;
-
-	private String description;
-
-	private String scheduledAction;
-
-	private String recurrenceEndTime;
 
 	private String launchTime;
 
-	private String recurrenceType;
+	private Long resourceOwnerId;
 
-	private String recurrenceValue;
+	private String scheduledAction;
 
-	private Boolean taskEnabled;
-
-	private Integer launchExpirationTime;
+	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
-	public Long getOwnerId() {
-		return this.ownerId;
+	private String description;
+
+	private Long ownerId;
+
+	private String recurrenceValue;
+
+	private Integer launchExpirationTime;
+
+	private String recurrenceEndTime;
+
+	private String scheduledTaskName;
+
+	private Boolean taskEnabled;
+
+	private String scheduledTaskId;
+
+	private String recurrenceType;
+
+	public String getLaunchTime() {
+		return this.launchTime;
 	}
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	public void setLaunchTime(String launchTime) {
+		this.launchTime = launchTime;
+		if(launchTime != null){
+			putQueryParameter("LaunchTime", launchTime);
+		}
 	}
 
 	public Long getResourceOwnerId() {
@@ -82,34 +75,9 @@ public class ModifyScheduledTaskRequest extends RpcAcsRequest<ModifyScheduledTas
 
 	public void setResourceOwnerId(Long resourceOwnerId) {
 		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", resourceOwnerId);
-	}
-
-	public String getScheduledTaskId() {
-		return this.scheduledTaskId;
-	}
-
-	public void setScheduledTaskId(String scheduledTaskId) {
-		this.scheduledTaskId = scheduledTaskId;
-		putQueryParameter("ScheduledTaskId", scheduledTaskId);
-	}
-
-	public String getScheduledTaskName() {
-		return this.scheduledTaskName;
-	}
-
-	public void setScheduledTaskName(String scheduledTaskName) {
-		this.scheduledTaskName = scheduledTaskName;
-		putQueryParameter("ScheduledTaskName", scheduledTaskName);
-	}
-
-	public String getDescription() {
-		return this.description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-		putQueryParameter("Description", description);
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
 	}
 
 	public String getScheduledAction() {
@@ -118,61 +86,20 @@ public class ModifyScheduledTaskRequest extends RpcAcsRequest<ModifyScheduledTas
 
 	public void setScheduledAction(String scheduledAction) {
 		this.scheduledAction = scheduledAction;
-		putQueryParameter("ScheduledAction", scheduledAction);
+		if(scheduledAction != null){
+			putQueryParameter("ScheduledAction", scheduledAction);
+		}
 	}
 
-	public String getRecurrenceEndTime() {
-		return this.recurrenceEndTime;
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
 	}
 
-	public void setRecurrenceEndTime(String recurrenceEndTime) {
-		this.recurrenceEndTime = recurrenceEndTime;
-		putQueryParameter("RecurrenceEndTime", recurrenceEndTime);
-	}
-
-	public String getLaunchTime() {
-		return this.launchTime;
-	}
-
-	public void setLaunchTime(String launchTime) {
-		this.launchTime = launchTime;
-		putQueryParameter("LaunchTime", launchTime);
-	}
-
-	public String getRecurrenceType() {
-		return this.recurrenceType;
-	}
-
-	public void setRecurrenceType(String recurrenceType) {
-		this.recurrenceType = recurrenceType;
-		putQueryParameter("RecurrenceType", recurrenceType);
-	}
-
-	public String getRecurrenceValue() {
-		return this.recurrenceValue;
-	}
-
-	public void setRecurrenceValue(String recurrenceValue) {
-		this.recurrenceValue = recurrenceValue;
-		putQueryParameter("RecurrenceValue", recurrenceValue);
-	}
-
-	public Boolean getTaskEnabled() {
-		return this.taskEnabled;
-	}
-
-	public void setTaskEnabled(Boolean taskEnabled) {
-		this.taskEnabled = taskEnabled;
-		putQueryParameter("TaskEnabled", taskEnabled);
-	}
-
-	public Integer getLaunchExpirationTime() {
-		return this.launchExpirationTime;
-	}
-
-	public void setLaunchExpirationTime(Integer launchExpirationTime) {
-		this.launchExpirationTime = launchExpirationTime;
-		putQueryParameter("LaunchExpirationTime", launchExpirationTime);
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
 	}
 
 	public String getOwnerAccount() {
@@ -181,7 +108,108 @@ public class ModifyScheduledTaskRequest extends RpcAcsRequest<ModifyScheduledTas
 
 	public void setOwnerAccount(String ownerAccount) {
 		this.ownerAccount = ownerAccount;
-		putQueryParameter("OwnerAccount", ownerAccount);
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+		if(description != null){
+			putQueryParameter("Description", description);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getRecurrenceValue() {
+		return this.recurrenceValue;
+	}
+
+	public void setRecurrenceValue(String recurrenceValue) {
+		this.recurrenceValue = recurrenceValue;
+		if(recurrenceValue != null){
+			putQueryParameter("RecurrenceValue", recurrenceValue);
+		}
+	}
+
+	public Integer getLaunchExpirationTime() {
+		return this.launchExpirationTime;
+	}
+
+	public void setLaunchExpirationTime(Integer launchExpirationTime) {
+		this.launchExpirationTime = launchExpirationTime;
+		if(launchExpirationTime != null){
+			putQueryParameter("LaunchExpirationTime", launchExpirationTime.toString());
+		}
+	}
+
+	public String getRecurrenceEndTime() {
+		return this.recurrenceEndTime;
+	}
+
+	public void setRecurrenceEndTime(String recurrenceEndTime) {
+		this.recurrenceEndTime = recurrenceEndTime;
+		if(recurrenceEndTime != null){
+			putQueryParameter("RecurrenceEndTime", recurrenceEndTime);
+		}
+	}
+
+	public String getScheduledTaskName() {
+		return this.scheduledTaskName;
+	}
+
+	public void setScheduledTaskName(String scheduledTaskName) {
+		this.scheduledTaskName = scheduledTaskName;
+		if(scheduledTaskName != null){
+			putQueryParameter("ScheduledTaskName", scheduledTaskName);
+		}
+	}
+
+	public Boolean getTaskEnabled() {
+		return this.taskEnabled;
+	}
+
+	public void setTaskEnabled(Boolean taskEnabled) {
+		this.taskEnabled = taskEnabled;
+		if(taskEnabled != null){
+			putQueryParameter("TaskEnabled", taskEnabled.toString());
+		}
+	}
+
+	public String getScheduledTaskId() {
+		return this.scheduledTaskId;
+	}
+
+	public void setScheduledTaskId(String scheduledTaskId) {
+		this.scheduledTaskId = scheduledTaskId;
+		if(scheduledTaskId != null){
+			putQueryParameter("ScheduledTaskId", scheduledTaskId);
+		}
+	}
+
+	public String getRecurrenceType() {
+		return this.recurrenceType;
+	}
+
+	public void setRecurrenceType(String recurrenceType) {
+		this.recurrenceType = recurrenceType;
+		if(recurrenceType != null){
+			putQueryParameter("RecurrenceType", recurrenceType);
+		}
 	}
 
 	@Override

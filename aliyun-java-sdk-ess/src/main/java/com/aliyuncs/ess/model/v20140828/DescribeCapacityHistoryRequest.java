@@ -27,33 +27,22 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeCapacityHistoryRequest extends RpcAcsRequest<DescribeCapacityHistoryResponse> {
 	
 	public DescribeCapacityHistoryRequest() {
-		super("Ess", "2014-08-28", "DescribeCapacityHistory");
+		super("Ess", "2014-08-28", "DescribeCapacityHistory", "ess");
 	}
-
-	private Long ownerId;
 
 	private String resourceOwnerAccount;
 
-	private Long resourceOwnerId;
-
 	private String scalingGroupId;
-
-	private String startTime;
-
-	private String endTime;
-
-	private Integer pageNumber;
 
 	private Integer pageSize;
 
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
+	private String endTime;
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
-	}
+	private String startTime;
+
+	private Long ownerId;
+
+	private Integer pageNumber;
 
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
@@ -61,16 +50,9 @@ public class DescribeCapacityHistoryRequest extends RpcAcsRequest<DescribeCapaci
 
 	public void setResourceOwnerAccount(String resourceOwnerAccount) {
 		this.resourceOwnerAccount = resourceOwnerAccount;
-		putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-	}
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", resourceOwnerId);
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
 	}
 
 	public String getScalingGroupId() {
@@ -79,34 +61,9 @@ public class DescribeCapacityHistoryRequest extends RpcAcsRequest<DescribeCapaci
 
 	public void setScalingGroupId(String scalingGroupId) {
 		this.scalingGroupId = scalingGroupId;
-		putQueryParameter("ScalingGroupId", scalingGroupId);
-	}
-
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-		putQueryParameter("StartTime", startTime);
-	}
-
-	public String getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
-		putQueryParameter("EndTime", endTime);
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		putQueryParameter("PageNumber", pageNumber);
+		if(scalingGroupId != null){
+			putQueryParameter("ScalingGroupId", scalingGroupId);
+		}
 	}
 
 	public Integer getPageSize() {
@@ -115,7 +72,53 @@ public class DescribeCapacityHistoryRequest extends RpcAcsRequest<DescribeCapaci
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
-		putQueryParameter("PageSize", pageSize);
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime);
+		}
+	}
+
+	public String getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
 	}
 
 	@Override

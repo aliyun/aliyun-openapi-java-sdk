@@ -51,8 +51,10 @@ public class DescribeScalingConfigurationsResponseUnmarshaller {
 			scalingConfiguration.setInternetMaxBandwidthIn(context.integerValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].InternetMaxBandwidthIn"));
 			scalingConfiguration.setInternetMaxBandwidthOut(context.integerValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].InternetMaxBandwidthOut"));
 			scalingConfiguration.setSystemDiskCategory(context.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].SystemDiskCategory"));
+			scalingConfiguration.setSystemDiskSize(context.integerValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].SystemDiskSize"));
 			scalingConfiguration.setLifecycleState(context.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].LifecycleState"));
 			scalingConfiguration.setCreationTime(context.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].CreationTime"));
+			scalingConfiguration.setLoadBalancerWeight(context.integerValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].LoadBalancerWeight"));
 
 			List<DataDisk> dataDisks = new ArrayList<DataDisk>();
 			for (int j = 0; j < context.lengthValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].DataDisks.Length"); j++) {

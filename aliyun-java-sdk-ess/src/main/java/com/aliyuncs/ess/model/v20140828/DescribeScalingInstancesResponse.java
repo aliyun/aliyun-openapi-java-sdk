@@ -89,6 +89,8 @@ public class DescribeScalingInstancesResponse extends AcsResponse {
 
 		private String healthStatus;
 
+		private Integer loadBalancerWeight;
+
 		private String lifecycleState;
 
 		private String creationTime;
@@ -125,6 +127,14 @@ public class DescribeScalingInstancesResponse extends AcsResponse {
 
 		public void setHealthStatus(String healthStatus) {
 			this.healthStatus = healthStatus;
+		}
+
+		public Integer getLoadBalancerWeight() {
+			return this.loadBalancerWeight;
+		}
+
+		public void setLoadBalancerWeight(Integer loadBalancerWeight) {
+			this.loadBalancerWeight = loadBalancerWeight;
 		}
 
 		public String getLifecycleState() {

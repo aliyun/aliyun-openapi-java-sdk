@@ -105,9 +105,13 @@ public class DescribeScalingConfigurationsResponse extends AcsResponse {
 
 		private String systemDiskCategory;
 
+		private Integer systemDiskSize;
+
 		private String lifecycleState;
 
 		private String creationTime;
+
+		private Integer loadBalancerWeight;
 
 		private List<DataDisk> dataDisks;
 
@@ -207,6 +211,14 @@ public class DescribeScalingConfigurationsResponse extends AcsResponse {
 			this.systemDiskCategory = systemDiskCategory;
 		}
 
+		public Integer getSystemDiskSize() {
+			return this.systemDiskSize;
+		}
+
+		public void setSystemDiskSize(Integer systemDiskSize) {
+			this.systemDiskSize = systemDiskSize;
+		}
+
 		public String getLifecycleState() {
 			return this.lifecycleState;
 		}
@@ -221,6 +233,14 @@ public class DescribeScalingConfigurationsResponse extends AcsResponse {
 
 		public void setCreationTime(String creationTime) {
 			this.creationTime = creationTime;
+		}
+
+		public Integer getLoadBalancerWeight() {
+			return this.loadBalancerWeight;
+		}
+
+		public void setLoadBalancerWeight(Integer loadBalancerWeight) {
+			this.loadBalancerWeight = loadBalancerWeight;
 		}
 
 		public List<DataDisk> getDataDisks() {

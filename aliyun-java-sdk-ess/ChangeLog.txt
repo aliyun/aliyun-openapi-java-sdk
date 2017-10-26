@@ -1,0 +1,5 @@
+2017-10-26 Version: 2.1.0
+1, ESS支持蚂蚁金融云。
+2, 调整ScalingConfiguration组件，新增userData，keyPairName，ramRoleName，deploymentSetId，securityEnhancementStrategy，tags共6个字段，增强伸缩组的弹性能力。
+3, SDK接入日本、德国、迪拜、澳洲等地域，Region化的区域也可以使用当前版本SDK。
+

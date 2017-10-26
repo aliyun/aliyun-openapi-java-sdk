@@ -27,27 +27,16 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeleteScalingRuleRequest extends RpcAcsRequest<DeleteScalingRuleResponse> {
 	
 	public DeleteScalingRuleRequest() {
-		super("Ess", "2014-08-28", "DeleteScalingRule");
+		super("Ess", "2014-08-28", "DeleteScalingRule", "ess");
 	}
-
-	private Long ownerId;
 
 	private String resourceOwnerAccount;
 
-	private Long resourceOwnerId;
-
-	private String scalingRuleId;
-
 	private String ownerAccount;
 
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
+	private Long ownerId;
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
-	}
+	private String scalingRuleId;
 
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
@@ -55,25 +44,9 @@ public class DeleteScalingRuleRequest extends RpcAcsRequest<DeleteScalingRuleRes
 
 	public void setResourceOwnerAccount(String resourceOwnerAccount) {
 		this.resourceOwnerAccount = resourceOwnerAccount;
-		putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-	}
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", resourceOwnerId);
-	}
-
-	public String getScalingRuleId() {
-		return this.scalingRuleId;
-	}
-
-	public void setScalingRuleId(String scalingRuleId) {
-		this.scalingRuleId = scalingRuleId;
-		putQueryParameter("ScalingRuleId", scalingRuleId);
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
 	}
 
 	public String getOwnerAccount() {
@@ -82,7 +55,31 @@ public class DeleteScalingRuleRequest extends RpcAcsRequest<DeleteScalingRuleRes
 
 	public void setOwnerAccount(String ownerAccount) {
 		this.ownerAccount = ownerAccount;
-		putQueryParameter("OwnerAccount", ownerAccount);
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getScalingRuleId() {
+		return this.scalingRuleId;
+	}
+
+	public void setScalingRuleId(String scalingRuleId) {
+		this.scalingRuleId = scalingRuleId;
+		if(scalingRuleId != null){
+			putQueryParameter("ScalingRuleId", scalingRuleId);
+		}
 	}
 
 	@Override

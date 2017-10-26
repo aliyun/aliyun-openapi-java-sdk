@@ -27,75 +27,68 @@ import com.aliyuncs.RpcAcsRequest;
 public class RemoveInstancesRequest extends RpcAcsRequest<RemoveInstancesResponse> {
 	
 	public RemoveInstancesRequest() {
-		super("Ess", "2014-08-28", "RemoveInstances");
+		super("Ess", "2014-08-28", "RemoveInstances", "ess");
 	}
-
-	private Long ownerId;
-
-	private String resourceOwnerAccount;
-
-	private Long resourceOwnerId;
-
-	private String scalingGroupId;
-
-	private String instanceId1;
-
-	private String instanceId2;
-
-	private String instanceId3;
-
-	private String instanceId4;
-
-	private String instanceId5;
-
-	private String instanceId6;
-
-	private String instanceId7;
-
-	private String instanceId8;
-
-	private String instanceId9;
 
 	private String instanceId10;
 
-	private String instanceId11;
+	private Long resourceOwnerId;
 
 	private String instanceId12;
 
-	private String instanceId13;
+	private String instanceId11;
 
-	private String instanceId14;
-
-	private String instanceId15;
-
-	private String instanceId16;
-
-	private String instanceId17;
-
-	private String instanceId18;
-
-	private String instanceId19;
+	private String scalingGroupId;
 
 	private String instanceId20;
 
+	private String instanceId1;
+
+	private String instanceId3;
+
+	private String resourceOwnerAccount;
+
+	private String instanceId2;
+
+	private String instanceId5;
+
+	private String instanceId4;
+
 	private String ownerAccount;
 
-	public Long getOwnerId() {
-		return this.ownerId;
+	private String instanceId7;
+
+	private String instanceId6;
+
+	private String instanceId9;
+
+	private String instanceId8;
+
+	private Long ownerId;
+
+	private String instanceId18;
+
+	private String instanceId17;
+
+	private String instanceId19;
+
+	private String instanceId14;
+
+	private String instanceId13;
+
+	private String instanceId16;
+
+	private String instanceId15;
+
+	public String getInstanceId10() {
+		return this.instanceId10;
 	}
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	public void setInstanceId10(String instanceId10) {
+		this.instanceId10 = instanceId10;
+		if(instanceId10 != null){
+			putQueryParameter("InstanceId.10", instanceId10);
+		}
 	}
 
 	public Long getResourceOwnerId() {
@@ -104,115 +97,9 @@ public class RemoveInstancesRequest extends RpcAcsRequest<RemoveInstancesRespons
 
 	public void setResourceOwnerId(Long resourceOwnerId) {
 		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", resourceOwnerId);
-	}
-
-	public String getScalingGroupId() {
-		return this.scalingGroupId;
-	}
-
-	public void setScalingGroupId(String scalingGroupId) {
-		this.scalingGroupId = scalingGroupId;
-		putQueryParameter("ScalingGroupId", scalingGroupId);
-	}
-
-	public String getInstanceId1() {
-		return this.instanceId1;
-	}
-
-	public void setInstanceId1(String instanceId1) {
-		this.instanceId1 = instanceId1;
-		putQueryParameter("InstanceId.1", instanceId1);
-	}
-
-	public String getInstanceId2() {
-		return this.instanceId2;
-	}
-
-	public void setInstanceId2(String instanceId2) {
-		this.instanceId2 = instanceId2;
-		putQueryParameter("InstanceId.2", instanceId2);
-	}
-
-	public String getInstanceId3() {
-		return this.instanceId3;
-	}
-
-	public void setInstanceId3(String instanceId3) {
-		this.instanceId3 = instanceId3;
-		putQueryParameter("InstanceId.3", instanceId3);
-	}
-
-	public String getInstanceId4() {
-		return this.instanceId4;
-	}
-
-	public void setInstanceId4(String instanceId4) {
-		this.instanceId4 = instanceId4;
-		putQueryParameter("InstanceId.4", instanceId4);
-	}
-
-	public String getInstanceId5() {
-		return this.instanceId5;
-	}
-
-	public void setInstanceId5(String instanceId5) {
-		this.instanceId5 = instanceId5;
-		putQueryParameter("InstanceId.5", instanceId5);
-	}
-
-	public String getInstanceId6() {
-		return this.instanceId6;
-	}
-
-	public void setInstanceId6(String instanceId6) {
-		this.instanceId6 = instanceId6;
-		putQueryParameter("InstanceId.6", instanceId6);
-	}
-
-	public String getInstanceId7() {
-		return this.instanceId7;
-	}
-
-	public void setInstanceId7(String instanceId7) {
-		this.instanceId7 = instanceId7;
-		putQueryParameter("InstanceId.7", instanceId7);
-	}
-
-	public String getInstanceId8() {
-		return this.instanceId8;
-	}
-
-	public void setInstanceId8(String instanceId8) {
-		this.instanceId8 = instanceId8;
-		putQueryParameter("InstanceId.8", instanceId8);
-	}
-
-	public String getInstanceId9() {
-		return this.instanceId9;
-	}
-
-	public void setInstanceId9(String instanceId9) {
-		this.instanceId9 = instanceId9;
-		putQueryParameter("InstanceId.9", instanceId9);
-	}
-
-	public String getInstanceId10() {
-		return this.instanceId10;
-	}
-
-	public void setInstanceId10(String instanceId10) {
-		this.instanceId10 = instanceId10;
-		putQueryParameter("InstanceId.10", instanceId10);
-	}
-
-	public String getInstanceId11() {
-		return this.instanceId11;
-	}
-
-	public void setInstanceId11(String instanceId11) {
-		this.instanceId11 = instanceId11;
-		putQueryParameter("InstanceId.11", instanceId11);
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
 	}
 
 	public String getInstanceId12() {
@@ -221,70 +108,31 @@ public class RemoveInstancesRequest extends RpcAcsRequest<RemoveInstancesRespons
 
 	public void setInstanceId12(String instanceId12) {
 		this.instanceId12 = instanceId12;
-		putQueryParameter("InstanceId.12", instanceId12);
+		if(instanceId12 != null){
+			putQueryParameter("InstanceId.12", instanceId12);
+		}
 	}
 
-	public String getInstanceId13() {
-		return this.instanceId13;
+	public String getInstanceId11() {
+		return this.instanceId11;
 	}
 
-	public void setInstanceId13(String instanceId13) {
-		this.instanceId13 = instanceId13;
-		putQueryParameter("InstanceId.13", instanceId13);
+	public void setInstanceId11(String instanceId11) {
+		this.instanceId11 = instanceId11;
+		if(instanceId11 != null){
+			putQueryParameter("InstanceId.11", instanceId11);
+		}
 	}
 
-	public String getInstanceId14() {
-		return this.instanceId14;
+	public String getScalingGroupId() {
+		return this.scalingGroupId;
 	}
 
-	public void setInstanceId14(String instanceId14) {
-		this.instanceId14 = instanceId14;
-		putQueryParameter("InstanceId.14", instanceId14);
-	}
-
-	public String getInstanceId15() {
-		return this.instanceId15;
-	}
-
-	public void setInstanceId15(String instanceId15) {
-		this.instanceId15 = instanceId15;
-		putQueryParameter("InstanceId.15", instanceId15);
-	}
-
-	public String getInstanceId16() {
-		return this.instanceId16;
-	}
-
-	public void setInstanceId16(String instanceId16) {
-		this.instanceId16 = instanceId16;
-		putQueryParameter("InstanceId.16", instanceId16);
-	}
-
-	public String getInstanceId17() {
-		return this.instanceId17;
-	}
-
-	public void setInstanceId17(String instanceId17) {
-		this.instanceId17 = instanceId17;
-		putQueryParameter("InstanceId.17", instanceId17);
-	}
-
-	public String getInstanceId18() {
-		return this.instanceId18;
-	}
-
-	public void setInstanceId18(String instanceId18) {
-		this.instanceId18 = instanceId18;
-		putQueryParameter("InstanceId.18", instanceId18);
-	}
-
-	public String getInstanceId19() {
-		return this.instanceId19;
-	}
-
-	public void setInstanceId19(String instanceId19) {
-		this.instanceId19 = instanceId19;
-		putQueryParameter("InstanceId.19", instanceId19);
+	public void setScalingGroupId(String scalingGroupId) {
+		this.scalingGroupId = scalingGroupId;
+		if(scalingGroupId != null){
+			putQueryParameter("ScalingGroupId", scalingGroupId);
+		}
 	}
 
 	public String getInstanceId20() {
@@ -293,7 +141,75 @@ public class RemoveInstancesRequest extends RpcAcsRequest<RemoveInstancesRespons
 
 	public void setInstanceId20(String instanceId20) {
 		this.instanceId20 = instanceId20;
-		putQueryParameter("InstanceId.20", instanceId20);
+		if(instanceId20 != null){
+			putQueryParameter("InstanceId.20", instanceId20);
+		}
+	}
+
+	public String getInstanceId1() {
+		return this.instanceId1;
+	}
+
+	public void setInstanceId1(String instanceId1) {
+		this.instanceId1 = instanceId1;
+		if(instanceId1 != null){
+			putQueryParameter("InstanceId.1", instanceId1);
+		}
+	}
+
+	public String getInstanceId3() {
+		return this.instanceId3;
+	}
+
+	public void setInstanceId3(String instanceId3) {
+		this.instanceId3 = instanceId3;
+		if(instanceId3 != null){
+			putQueryParameter("InstanceId.3", instanceId3);
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getInstanceId2() {
+		return this.instanceId2;
+	}
+
+	public void setInstanceId2(String instanceId2) {
+		this.instanceId2 = instanceId2;
+		if(instanceId2 != null){
+			putQueryParameter("InstanceId.2", instanceId2);
+		}
+	}
+
+	public String getInstanceId5() {
+		return this.instanceId5;
+	}
+
+	public void setInstanceId5(String instanceId5) {
+		this.instanceId5 = instanceId5;
+		if(instanceId5 != null){
+			putQueryParameter("InstanceId.5", instanceId5);
+		}
+	}
+
+	public String getInstanceId4() {
+		return this.instanceId4;
+	}
+
+	public void setInstanceId4(String instanceId4) {
+		this.instanceId4 = instanceId4;
+		if(instanceId4 != null){
+			putQueryParameter("InstanceId.4", instanceId4);
+		}
 	}
 
 	public String getOwnerAccount() {
@@ -302,7 +218,141 @@ public class RemoveInstancesRequest extends RpcAcsRequest<RemoveInstancesRespons
 
 	public void setOwnerAccount(String ownerAccount) {
 		this.ownerAccount = ownerAccount;
-		putQueryParameter("OwnerAccount", ownerAccount);
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public String getInstanceId7() {
+		return this.instanceId7;
+	}
+
+	public void setInstanceId7(String instanceId7) {
+		this.instanceId7 = instanceId7;
+		if(instanceId7 != null){
+			putQueryParameter("InstanceId.7", instanceId7);
+		}
+	}
+
+	public String getInstanceId6() {
+		return this.instanceId6;
+	}
+
+	public void setInstanceId6(String instanceId6) {
+		this.instanceId6 = instanceId6;
+		if(instanceId6 != null){
+			putQueryParameter("InstanceId.6", instanceId6);
+		}
+	}
+
+	public String getInstanceId9() {
+		return this.instanceId9;
+	}
+
+	public void setInstanceId9(String instanceId9) {
+		this.instanceId9 = instanceId9;
+		if(instanceId9 != null){
+			putQueryParameter("InstanceId.9", instanceId9);
+		}
+	}
+
+	public String getInstanceId8() {
+		return this.instanceId8;
+	}
+
+	public void setInstanceId8(String instanceId8) {
+		this.instanceId8 = instanceId8;
+		if(instanceId8 != null){
+			putQueryParameter("InstanceId.8", instanceId8);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getInstanceId18() {
+		return this.instanceId18;
+	}
+
+	public void setInstanceId18(String instanceId18) {
+		this.instanceId18 = instanceId18;
+		if(instanceId18 != null){
+			putQueryParameter("InstanceId.18", instanceId18);
+		}
+	}
+
+	public String getInstanceId17() {
+		return this.instanceId17;
+	}
+
+	public void setInstanceId17(String instanceId17) {
+		this.instanceId17 = instanceId17;
+		if(instanceId17 != null){
+			putQueryParameter("InstanceId.17", instanceId17);
+		}
+	}
+
+	public String getInstanceId19() {
+		return this.instanceId19;
+	}
+
+	public void setInstanceId19(String instanceId19) {
+		this.instanceId19 = instanceId19;
+		if(instanceId19 != null){
+			putQueryParameter("InstanceId.19", instanceId19);
+		}
+	}
+
+	public String getInstanceId14() {
+		return this.instanceId14;
+	}
+
+	public void setInstanceId14(String instanceId14) {
+		this.instanceId14 = instanceId14;
+		if(instanceId14 != null){
+			putQueryParameter("InstanceId.14", instanceId14);
+		}
+	}
+
+	public String getInstanceId13() {
+		return this.instanceId13;
+	}
+
+	public void setInstanceId13(String instanceId13) {
+		this.instanceId13 = instanceId13;
+		if(instanceId13 != null){
+			putQueryParameter("InstanceId.13", instanceId13);
+		}
+	}
+
+	public String getInstanceId16() {
+		return this.instanceId16;
+	}
+
+	public void setInstanceId16(String instanceId16) {
+		this.instanceId16 = instanceId16;
+		if(instanceId16 != null){
+			putQueryParameter("InstanceId.16", instanceId16);
+		}
+	}
+
+	public String getInstanceId15() {
+		return this.instanceId15;
+	}
+
+	public void setInstanceId15(String instanceId15) {
+		this.instanceId15 = instanceId15;
+		if(instanceId15 != null){
+			putQueryParameter("InstanceId.15", instanceId15);
+		}
 	}
 
 	@Override

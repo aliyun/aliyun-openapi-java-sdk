@@ -27,14 +27,10 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeleteScalingGroupRequest extends RpcAcsRequest<DeleteScalingGroupResponse> {
 	
 	public DeleteScalingGroupRequest() {
-		super("Ess", "2014-08-28", "DeleteScalingGroup");
+		super("Ess", "2014-08-28", "DeleteScalingGroup", "ess");
 	}
 
-	private Long ownerId;
-
 	private String resourceOwnerAccount;
-
-	private Long resourceOwnerId;
 
 	private String scalingGroupId;
 
@@ -42,14 +38,7 @@ public class DeleteScalingGroupRequest extends RpcAcsRequest<DeleteScalingGroupR
 
 	private String ownerAccount;
 
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
-	}
+	private Long ownerId;
 
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
@@ -57,16 +46,9 @@ public class DeleteScalingGroupRequest extends RpcAcsRequest<DeleteScalingGroupR
 
 	public void setResourceOwnerAccount(String resourceOwnerAccount) {
 		this.resourceOwnerAccount = resourceOwnerAccount;
-		putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-	}
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", resourceOwnerId);
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
 	}
 
 	public String getScalingGroupId() {
@@ -75,7 +57,9 @@ public class DeleteScalingGroupRequest extends RpcAcsRequest<DeleteScalingGroupR
 
 	public void setScalingGroupId(String scalingGroupId) {
 		this.scalingGroupId = scalingGroupId;
-		putQueryParameter("ScalingGroupId", scalingGroupId);
+		if(scalingGroupId != null){
+			putQueryParameter("ScalingGroupId", scalingGroupId);
+		}
 	}
 
 	public Boolean getForceDelete() {
@@ -84,7 +68,9 @@ public class DeleteScalingGroupRequest extends RpcAcsRequest<DeleteScalingGroupR
 
 	public void setForceDelete(Boolean forceDelete) {
 		this.forceDelete = forceDelete;
-		putQueryParameter("ForceDelete", forceDelete);
+		if(forceDelete != null){
+			putQueryParameter("ForceDelete", forceDelete.toString());
+		}
 	}
 
 	public String getOwnerAccount() {
@@ -93,7 +79,20 @@ public class DeleteScalingGroupRequest extends RpcAcsRequest<DeleteScalingGroupR
 
 	public void setOwnerAccount(String ownerAccount) {
 		this.ownerAccount = ownerAccount;
-		putQueryParameter("OwnerAccount", ownerAccount);
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
 	}
 
 	@Override

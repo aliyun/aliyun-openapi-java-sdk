@@ -42,6 +42,7 @@ public class DescribeScalingInstancesResponseUnmarshaller {
 			scalingInstance.setScalingConfigurationId(context.stringValue("DescribeScalingInstancesResponse.ScalingInstances["+ i +"].ScalingConfigurationId"));
 			scalingInstance.setScalingGroupId(context.stringValue("DescribeScalingInstancesResponse.ScalingInstances["+ i +"].ScalingGroupId"));
 			scalingInstance.setHealthStatus(context.stringValue("DescribeScalingInstancesResponse.ScalingInstances["+ i +"].HealthStatus"));
+			scalingInstance.setLoadBalancerWeight(context.integerValue("DescribeScalingInstancesResponse.ScalingInstances["+ i +"].LoadBalancerWeight"));
 			scalingInstance.setLifecycleState(context.stringValue("DescribeScalingInstancesResponse.ScalingInstances["+ i +"].LifecycleState"));
 			scalingInstance.setCreationTime(context.stringValue("DescribeScalingInstancesResponse.ScalingInstances["+ i +"].CreationTime"));
 			scalingInstance.setCreationType(context.stringValue("DescribeScalingInstancesResponse.ScalingInstances["+ i +"].CreationType"));

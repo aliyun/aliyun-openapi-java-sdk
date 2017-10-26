@@ -27,38 +27,20 @@ import com.aliyuncs.RpcAcsRequest;
 public class ExecuteScalingRuleRequest extends RpcAcsRequest<ExecuteScalingRuleResponse> {
 	
 	public ExecuteScalingRuleRequest() {
-		super("Ess", "2014-08-28", "ExecuteScalingRule");
+		super("Ess", "2014-08-28", "ExecuteScalingRule", "ess");
 	}
-
-	private Long ownerId;
-
-	private String resourceOwnerAccount;
 
 	private Long resourceOwnerId;
 
 	private String scalingRuleAri;
 
+	private String resourceOwnerAccount;
+
 	private String clientToken;
 
 	private String ownerAccount;
 
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-	}
+	private Long ownerId;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -66,7 +48,9 @@ public class ExecuteScalingRuleRequest extends RpcAcsRequest<ExecuteScalingRuleR
 
 	public void setResourceOwnerId(Long resourceOwnerId) {
 		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", resourceOwnerId);
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
 	}
 
 	public String getScalingRuleAri() {
@@ -75,7 +59,20 @@ public class ExecuteScalingRuleRequest extends RpcAcsRequest<ExecuteScalingRuleR
 
 	public void setScalingRuleAri(String scalingRuleAri) {
 		this.scalingRuleAri = scalingRuleAri;
-		putQueryParameter("ScalingRuleAri", scalingRuleAri);
+		if(scalingRuleAri != null){
+			putQueryParameter("ScalingRuleAri", scalingRuleAri);
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
 	}
 
 	public String getClientToken() {
@@ -84,7 +81,9 @@ public class ExecuteScalingRuleRequest extends RpcAcsRequest<ExecuteScalingRuleR
 
 	public void setClientToken(String clientToken) {
 		this.clientToken = clientToken;
-		putQueryParameter("ClientToken", clientToken);
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
+		}
 	}
 
 	public String getOwnerAccount() {
@@ -93,7 +92,20 @@ public class ExecuteScalingRuleRequest extends RpcAcsRequest<ExecuteScalingRuleR
 
 	public void setOwnerAccount(String ownerAccount) {
 		this.ownerAccount = ownerAccount;
-		putQueryParameter("OwnerAccount", ownerAccount);
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
 	}
 
 	@Override

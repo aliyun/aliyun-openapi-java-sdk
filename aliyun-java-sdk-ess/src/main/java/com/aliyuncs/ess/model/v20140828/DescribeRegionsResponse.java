@@ -43,12 +43,32 @@ public class DescribeRegionsResponse extends AcsResponse {
 
 		private String regionId;
 
+		private Boolean classicUnavailable;
+
+		private Boolean vpcUnavailable;
+
 		public String getRegionId() {
 			return this.regionId;
 		}
 
 		public void setRegionId(String regionId) {
 			this.regionId = regionId;
+		}
+
+		public Boolean getClassicUnavailable() {
+			return this.classicUnavailable;
+		}
+
+		public void setClassicUnavailable(Boolean classicUnavailable) {
+			this.classicUnavailable = classicUnavailable;
+		}
+
+		public Boolean getVpcUnavailable() {
+			return this.vpcUnavailable;
+		}
+
+		public void setVpcUnavailable(Boolean vpcUnavailable) {
+			this.vpcUnavailable = vpcUnavailable;
 		}
 	}
 

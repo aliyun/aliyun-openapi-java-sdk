@@ -107,6 +107,8 @@ public class DescribeScalingGroupsResponse extends AcsResponse {
 
 		private String creationTime;
 
+		private String vpcId;
+
 		private String vSwitchId;
 
 		private List<String> removalPolicies;
@@ -217,6 +219,14 @@ public class DescribeScalingGroupsResponse extends AcsResponse {
 
 		public void setCreationTime(String creationTime) {
 			this.creationTime = creationTime;
+		}
+
+		public String getVpcId() {
+			return this.vpcId;
+		}
+
+		public void setVpcId(String vpcId) {
+			this.vpcId = vpcId;
 		}
 
 		public String getVSwitchId() {

@@ -27,24 +27,26 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeScalingActivityDetailRequest extends RpcAcsRequest<DescribeScalingActivityDetailResponse> {
 	
 	public DescribeScalingActivityDetailRequest() {
-		super("Ess", "2014-08-28", "DescribeScalingActivityDetail");
+		super("Ess", "2014-08-28", "DescribeScalingActivityDetail", "ess");
 	}
-
-	private Long ownerId;
-
-	private String resourceOwnerAccount;
 
 	private Long resourceOwnerId;
 
+	private String resourceOwnerAccount;
+
+	private Long ownerId;
+
 	private String scalingActivityId;
 
-	public Long getOwnerId() {
-		return this.ownerId;
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
 	}
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
 	}
 
 	public String getResourceOwnerAccount() {
@@ -53,16 +55,20 @@ public class DescribeScalingActivityDetailRequest extends RpcAcsRequest<Describe
 
 	public void setResourceOwnerAccount(String resourceOwnerAccount) {
 		this.resourceOwnerAccount = resourceOwnerAccount;
-		putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
 	}
 
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
+	public Long getOwnerId() {
+		return this.ownerId;
 	}
 
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", resourceOwnerId);
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
 	}
 
 	public String getScalingActivityId() {
@@ -71,7 +77,9 @@ public class DescribeScalingActivityDetailRequest extends RpcAcsRequest<Describe
 
 	public void setScalingActivityId(String scalingActivityId) {
 		this.scalingActivityId = scalingActivityId;
-		putQueryParameter("ScalingActivityId", scalingActivityId);
+		if(scalingActivityId != null){
+			putQueryParameter("ScalingActivityId", scalingActivityId);
+		}
 	}
 
 	@Override

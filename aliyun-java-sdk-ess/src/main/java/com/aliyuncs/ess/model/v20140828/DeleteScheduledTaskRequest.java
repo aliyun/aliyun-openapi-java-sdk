@@ -27,27 +27,16 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeleteScheduledTaskRequest extends RpcAcsRequest<DeleteScheduledTaskResponse> {
 	
 	public DeleteScheduledTaskRequest() {
-		super("Ess", "2014-08-28", "DeleteScheduledTask");
+		super("Ess", "2014-08-28", "DeleteScheduledTask", "ess");
 	}
-
-	private Long ownerId;
 
 	private String resourceOwnerAccount;
 
-	private Long resourceOwnerId;
-
-	private String scheduledTaskId;
-
 	private String ownerAccount;
 
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
+	private Long ownerId;
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
-	}
+	private String scheduledTaskId;
 
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
@@ -55,25 +44,9 @@ public class DeleteScheduledTaskRequest extends RpcAcsRequest<DeleteScheduledTas
 
 	public void setResourceOwnerAccount(String resourceOwnerAccount) {
 		this.resourceOwnerAccount = resourceOwnerAccount;
-		putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-	}
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", resourceOwnerId);
-	}
-
-	public String getScheduledTaskId() {
-		return this.scheduledTaskId;
-	}
-
-	public void setScheduledTaskId(String scheduledTaskId) {
-		this.scheduledTaskId = scheduledTaskId;
-		putQueryParameter("ScheduledTaskId", scheduledTaskId);
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
 	}
 
 	public String getOwnerAccount() {
@@ -82,7 +55,31 @@ public class DeleteScheduledTaskRequest extends RpcAcsRequest<DeleteScheduledTas
 
 	public void setOwnerAccount(String ownerAccount) {
 		this.ownerAccount = ownerAccount;
-		putQueryParameter("OwnerAccount", ownerAccount);
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getScheduledTaskId() {
+		return this.scheduledTaskId;
+	}
+
+	public void setScheduledTaskId(String scheduledTaskId) {
+		this.scheduledTaskId = scheduledTaskId;
+		if(scheduledTaskId != null){
+			putQueryParameter("ScheduledTaskId", scheduledTaskId);
+		}
 	}
 
 	@Override
