@@ -33,15 +33,11 @@ public class StopInvocationRequest extends RpcAcsRequest<StopInvocationResponse>
 
 	private Long resourceOwnerId;
 
-	private Long callerUid;
-
 	private String invokeId;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
-
-	private String callerBid;
 
 	private Long ownerId;
 
@@ -55,17 +51,6 @@ public class StopInvocationRequest extends RpcAcsRequest<StopInvocationResponse>
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public Long getCallerUid() {
-		return this.callerUid;
-	}
-
-	public void setCallerUid(Long callerUid) {
-		this.callerUid = callerUid;
-		if(callerUid != null){
-			putQueryParameter("callerUid", callerUid.toString());
 		}
 	}
 
@@ -102,17 +87,6 @@ public class StopInvocationRequest extends RpcAcsRequest<StopInvocationResponse>
 		}
 	}
 
-	public String getCallerBid() {
-		return this.callerBid;
-	}
-
-	public void setCallerBid(String callerBid) {
-		this.callerBid = callerBid;
-		if(callerBid != null){
-			putQueryParameter("callerBid", callerBid);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -130,8 +104,10 @@ public class StopInvocationRequest extends RpcAcsRequest<StopInvocationResponse>
 
 	public void setInstanceIds(List<String> instanceIds) {
 		this.instanceIds = instanceIds;	
-		for (int i = 0; i < instanceIds.size(); i++) {
-			putQueryParameter("InstanceId." + (i + 1) , instanceIds.get(i));
+		if (instanceIds != null) {
+			for (int i = 0; i < instanceIds.size(); i++) {
+				putQueryParameter("InstanceId." + (i + 1) , instanceIds.get(i));
+			}
 		}	
 	}
 

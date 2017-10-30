@@ -44,6 +44,8 @@ public class DescribeInstanceTypesResponseUnmarshaller {
 			instanceType.setLocalStorageCategory(context.stringValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].LocalStorageCategory"));
 			instanceType.setGPUAmount(context.integerValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].GPUAmount"));
 			instanceType.setGPUSpec(context.stringValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].GPUSpec"));
+			instanceType.setInitialCredit(context.integerValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].InitialCredit"));
+			instanceType.setBaselineCredit(context.integerValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].BaselineCredit"));
 
 			instanceTypes.add(instanceType);
 		}

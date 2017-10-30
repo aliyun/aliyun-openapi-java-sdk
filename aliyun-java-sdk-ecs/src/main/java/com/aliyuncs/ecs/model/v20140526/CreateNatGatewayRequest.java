@@ -143,10 +143,12 @@ public class CreateNatGatewayRequest extends RpcAcsRequest<CreateNatGatewayRespo
 
 	public void setBandwidthPackages(List<BandwidthPackage> bandwidthPackages) {
 		this.bandwidthPackages = bandwidthPackages;	
-		for (int depth1 = 0; depth1 < bandwidthPackages.size(); depth1++) {
-			putQueryParameter("BandwidthPackage." + (depth1 + 1) + ".IpCount" , bandwidthPackages.get(depth1).getIpCount());
-			putQueryParameter("BandwidthPackage." + (depth1 + 1) + ".Bandwidth" , bandwidthPackages.get(depth1).getBandwidth());
-			putQueryParameter("BandwidthPackage." + (depth1 + 1) + ".Zone" , bandwidthPackages.get(depth1).getZone());
+		if (bandwidthPackages != null) {
+			for (int depth1 = 0; depth1 < bandwidthPackages.size(); depth1++) {
+				putQueryParameter("BandwidthPackage." + (depth1 + 1) + ".IpCount" , bandwidthPackages.get(depth1).getIpCount());
+				putQueryParameter("BandwidthPackage." + (depth1 + 1) + ".Bandwidth" , bandwidthPackages.get(depth1).getBandwidth());
+				putQueryParameter("BandwidthPackage." + (depth1 + 1) + ".Zone" , bandwidthPackages.get(depth1).getZone());
+			}
 		}	
 	}
 

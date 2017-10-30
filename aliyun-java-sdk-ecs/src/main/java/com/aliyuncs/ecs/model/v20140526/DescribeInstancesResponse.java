@@ -153,6 +153,10 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		private String keyPairName;
 
+		private Boolean recyclable;
+
+		private String hpcClusterId;
+
 		private List<NetworkInterface> networkInterfaces;
 
 		private List<LockReason> operationLocks;
@@ -161,11 +165,11 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		private List<String> securityGroupIds;
 
-		private List<String> networkInterfaceIds;
-
 		private List<String> publicIpAddress;
 
 		private List<String> innerIpAddress;
+
+		private List<String> rdmaIpAddress;
 
 		private VpcAttributes vpcAttributes;
 
@@ -459,6 +463,22 @@ public class DescribeInstancesResponse extends AcsResponse {
 			this.keyPairName = keyPairName;
 		}
 
+		public Boolean getRecyclable() {
+			return this.recyclable;
+		}
+
+		public void setRecyclable(Boolean recyclable) {
+			this.recyclable = recyclable;
+		}
+
+		public String getHpcClusterId() {
+			return this.hpcClusterId;
+		}
+
+		public void setHpcClusterId(String hpcClusterId) {
+			this.hpcClusterId = hpcClusterId;
+		}
+
 		public List<NetworkInterface> getNetworkInterfaces() {
 			return this.networkInterfaces;
 		}
@@ -491,14 +511,6 @@ public class DescribeInstancesResponse extends AcsResponse {
 			this.securityGroupIds = securityGroupIds;
 		}
 
-		public List<String> getNetworkInterfaceIds() {
-			return this.networkInterfaceIds;
-		}
-
-		public void setNetworkInterfaceIds(List<String> networkInterfaceIds) {
-			this.networkInterfaceIds = networkInterfaceIds;
-		}
-
 		public List<String> getPublicIpAddress() {
 			return this.publicIpAddress;
 		}
@@ -513,6 +525,14 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		public void setInnerIpAddress(List<String> innerIpAddress) {
 			this.innerIpAddress = innerIpAddress;
+		}
+
+		public List<String> getRdmaIpAddress() {
+			return this.rdmaIpAddress;
+		}
+
+		public void setRdmaIpAddress(List<String> rdmaIpAddress) {
+			this.rdmaIpAddress = rdmaIpAddress;
 		}
 
 		public VpcAttributes getVpcAttributes() {

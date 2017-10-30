@@ -40,8 +40,6 @@ public class DescribeInvocationsRequest extends RpcAcsRequest<DescribeInvocation
 
 	private Long pageSize;
 
-	private Long callerUid;
-
 	private String invokeId;
 
 	private Boolean timed;
@@ -51,8 +49,6 @@ public class DescribeInvocationsRequest extends RpcAcsRequest<DescribeInvocation
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
-
-	private String callerBid;
 
 	private Long ownerId;
 
@@ -115,17 +111,6 @@ public class DescribeInvocationsRequest extends RpcAcsRequest<DescribeInvocation
 		}
 	}
 
-	public Long getCallerUid() {
-		return this.callerUid;
-	}
-
-	public void setCallerUid(Long callerUid) {
-		this.callerUid = callerUid;
-		if(callerUid != null){
-			putQueryParameter("callerUid", callerUid.toString());
-		}
-	}
-
 	public String getInvokeId() {
 		return this.invokeId;
 	}
@@ -178,17 +163,6 @@ public class DescribeInvocationsRequest extends RpcAcsRequest<DescribeInvocation
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
-		}
-	}
-
-	public String getCallerBid() {
-		return this.callerBid;
-	}
-
-	public void setCallerBid(String callerBid) {
-		this.callerBid = callerBid;
-		if(callerBid != null){
-			putQueryParameter("callerBid", callerBid);
 		}
 	}
 

@@ -75,6 +75,10 @@ public class DescribeInstanceMonitorDataResponse extends AcsResponse {
 
 		private Integer bPSWrite;
 
+		private Float cPUCreditUsage;
+
+		private Float cPUCreditBalance;
+
 		private String timeStamp;
 
 		public String getInstanceId() {
@@ -171,6 +175,22 @@ public class DescribeInstanceMonitorDataResponse extends AcsResponse {
 
 		public void setBPSWrite(Integer bPSWrite) {
 			this.bPSWrite = bPSWrite;
+		}
+
+		public Float getCPUCreditUsage() {
+			return this.cPUCreditUsage;
+		}
+
+		public void setCPUCreditUsage(Float cPUCreditUsage) {
+			this.cPUCreditUsage = cPUCreditUsage;
+		}
+
+		public Float getCPUCreditBalance() {
+			return this.cPUCreditBalance;
+		}
+
+		public void setCPUCreditBalance(Float cPUCreditBalance) {
+			this.cPUCreditBalance = cPUCreditBalance;
 		}
 
 		public String getTimeStamp() {

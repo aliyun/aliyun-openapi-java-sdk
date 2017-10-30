@@ -44,6 +44,8 @@ public class ModifyInstanceAttributeRequest extends RpcAcsRequest<ModifyInstance
 
 	private String resourceOwnerAccount;
 
+	private Boolean recyclable;
+
 	private String ownerAccount;
 
 	private String description;
@@ -124,6 +126,17 @@ public class ModifyInstanceAttributeRequest extends RpcAcsRequest<ModifyInstance
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public Boolean getRecyclable() {
+		return this.recyclable;
+	}
+
+	public void setRecyclable(Boolean recyclable) {
+		this.recyclable = recyclable;
+		if(recyclable != null){
+			putQueryParameter("Recyclable", recyclable.toString());
 		}
 	}
 

@@ -57,13 +57,15 @@ public class ImportImageRequest extends RpcAcsRequest<ImportImageResponse> {
 
 	public void setDiskDeviceMappings(List<DiskDeviceMapping> diskDeviceMappings) {
 		this.diskDeviceMappings = diskDeviceMappings;	
-		for (int depth1 = 0; depth1 < diskDeviceMappings.size(); depth1++) {
-			putQueryParameter("DiskDeviceMapping." + (depth1 + 1) + ".Format" , diskDeviceMappings.get(depth1).getFormat());
-			putQueryParameter("DiskDeviceMapping." + (depth1 + 1) + ".OSSBucket" , diskDeviceMappings.get(depth1).getOSSBucket());
-			putQueryParameter("DiskDeviceMapping." + (depth1 + 1) + ".OSSObject" , diskDeviceMappings.get(depth1).getOSSObject());
-			putQueryParameter("DiskDeviceMapping." + (depth1 + 1) + ".DiskImSize" , diskDeviceMappings.get(depth1).getDiskImSize());
-			putQueryParameter("DiskDeviceMapping." + (depth1 + 1) + ".DiskImageSize" , diskDeviceMappings.get(depth1).getDiskImageSize());
-			putQueryParameter("DiskDeviceMapping." + (depth1 + 1) + ".Device" , diskDeviceMappings.get(depth1).getDevice());
+		if (diskDeviceMappings != null) {
+			for (int depth1 = 0; depth1 < diskDeviceMappings.size(); depth1++) {
+				putQueryParameter("DiskDeviceMapping." + (depth1 + 1) + ".Format" , diskDeviceMappings.get(depth1).getFormat());
+				putQueryParameter("DiskDeviceMapping." + (depth1 + 1) + ".OSSBucket" , diskDeviceMappings.get(depth1).getOSSBucket());
+				putQueryParameter("DiskDeviceMapping." + (depth1 + 1) + ".OSSObject" , diskDeviceMappings.get(depth1).getOSSObject());
+				putQueryParameter("DiskDeviceMapping." + (depth1 + 1) + ".DiskImSize" , diskDeviceMappings.get(depth1).getDiskImSize());
+				putQueryParameter("DiskDeviceMapping." + (depth1 + 1) + ".DiskImageSize" , diskDeviceMappings.get(depth1).getDiskImageSize());
+				putQueryParameter("DiskDeviceMapping." + (depth1 + 1) + ".Device" , diskDeviceMappings.get(depth1).getDevice());
+			}
 		}	
 	}
 

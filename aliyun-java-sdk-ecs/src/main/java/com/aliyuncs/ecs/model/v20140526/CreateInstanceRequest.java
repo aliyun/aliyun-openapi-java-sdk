@@ -37,6 +37,8 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 
 	private String tag2Key;
 
+	private String hpcClusterId;
+
 	private String tag3Key;
 
 	private String securityEnhancementStrategy;
@@ -163,6 +165,17 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 		this.tag2Key = tag2Key;
 		if(tag2Key != null){
 			putQueryParameter("Tag.2.Key", tag2Key);
+		}
+	}
+
+	public String getHpcClusterId() {
+		return this.hpcClusterId;
+	}
+
+	public void setHpcClusterId(String hpcClusterId) {
+		this.hpcClusterId = hpcClusterId;
+		if(hpcClusterId != null){
+			putQueryParameter("HpcClusterId", hpcClusterId);
 		}
 	}
 
@@ -634,15 +647,17 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 
 	public void setDataDisks(List<DataDisk> dataDisks) {
 		this.dataDisks = dataDisks;	
-		for (int depth1 = 0; depth1 < dataDisks.size(); depth1++) {
-			putQueryParameter("DataDisk." + (depth1 + 1) + ".Size" , dataDisks.get(depth1).getSize());
-			putQueryParameter("DataDisk." + (depth1 + 1) + ".SnapshotId" , dataDisks.get(depth1).getSnapshotId());
-			putQueryParameter("DataDisk." + (depth1 + 1) + ".Category" , dataDisks.get(depth1).getCategory());
-			putQueryParameter("DataDisk." + (depth1 + 1) + ".DiskName" , dataDisks.get(depth1).getDiskName());
-			putQueryParameter("DataDisk." + (depth1 + 1) + ".Description" , dataDisks.get(depth1).getDescription());
-			putQueryParameter("DataDisk." + (depth1 + 1) + ".Device" , dataDisks.get(depth1).getDevice());
-			putQueryParameter("DataDisk." + (depth1 + 1) + ".DeleteWithInstance" , dataDisks.get(depth1).getDeleteWithInstance());
-			putQueryParameter("DataDisk." + (depth1 + 1) + ".Encrypted" , dataDisks.get(depth1).getEncrypted());
+		if (dataDisks != null) {
+			for (int depth1 = 0; depth1 < dataDisks.size(); depth1++) {
+				putQueryParameter("DataDisk." + (depth1 + 1) + ".Size" , dataDisks.get(depth1).getSize());
+				putQueryParameter("DataDisk." + (depth1 + 1) + ".SnapshotId" , dataDisks.get(depth1).getSnapshotId());
+				putQueryParameter("DataDisk." + (depth1 + 1) + ".Category" , dataDisks.get(depth1).getCategory());
+				putQueryParameter("DataDisk." + (depth1 + 1) + ".DiskName" , dataDisks.get(depth1).getDiskName());
+				putQueryParameter("DataDisk." + (depth1 + 1) + ".Description" , dataDisks.get(depth1).getDescription());
+				putQueryParameter("DataDisk." + (depth1 + 1) + ".Device" , dataDisks.get(depth1).getDevice());
+				putQueryParameter("DataDisk." + (depth1 + 1) + ".DeleteWithInstance" , dataDisks.get(depth1).getDeleteWithInstance());
+				putQueryParameter("DataDisk." + (depth1 + 1) + ".Encrypted" , dataDisks.get(depth1).getEncrypted());
+			}
 		}	
 	}
 

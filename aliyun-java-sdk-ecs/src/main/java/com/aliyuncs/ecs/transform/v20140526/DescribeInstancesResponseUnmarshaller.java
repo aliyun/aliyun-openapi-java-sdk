@@ -79,18 +79,14 @@ public class DescribeInstancesResponseUnmarshaller {
 			instance.setSpotPriceLimit(context.floatValue("DescribeInstancesResponse.Instances["+ i +"].SpotPriceLimit"));
 			instance.setResourceGroupId(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].ResourceGroupId"));
 			instance.setKeyPairName(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].KeyPairName"));
+			instance.setRecyclable(context.booleanValue("DescribeInstancesResponse.Instances["+ i +"].Recyclable"));
+			instance.setHpcClusterId(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].HpcClusterId"));
 
 			List<String> securityGroupIds = new ArrayList<String>();
 			for (int j = 0; j < context.lengthValue("DescribeInstancesResponse.Instances["+ i +"].SecurityGroupIds.Length"); j++) {
 				securityGroupIds.add(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].SecurityGroupIds["+ j +"]"));
 			}
 			instance.setSecurityGroupIds(securityGroupIds);
-
-			List<String> networkInterfaceIds = new ArrayList<String>();
-			for (int j = 0; j < context.lengthValue("DescribeInstancesResponse.Instances["+ i +"].NetworkInterfaceIds.Length"); j++) {
-				networkInterfaceIds.add(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].NetworkInterfaceIds["+ j +"]"));
-			}
-			instance.setNetworkInterfaceIds(networkInterfaceIds);
 
 			List<String> publicIpAddress = new ArrayList<String>();
 			for (int j = 0; j < context.lengthValue("DescribeInstancesResponse.Instances["+ i +"].PublicIpAddress.Length"); j++) {
@@ -103,6 +99,12 @@ public class DescribeInstancesResponseUnmarshaller {
 				innerIpAddress.add(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].InnerIpAddress["+ j +"]"));
 			}
 			instance.setInnerIpAddress(innerIpAddress);
+
+			List<String> rdmaIpAddress = new ArrayList<String>();
+			for (int j = 0; j < context.lengthValue("DescribeInstancesResponse.Instances["+ i +"].RdmaIpAddress.Length"); j++) {
+				rdmaIpAddress.add(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].RdmaIpAddress["+ j +"]"));
+			}
+			instance.setRdmaIpAddress(rdmaIpAddress);
 
 			VpcAttributes vpcAttributes = new VpcAttributes();
 			vpcAttributes.setVpcId(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].VpcAttributes.VpcId"));

@@ -80,8 +80,10 @@ public class DescribeSecurityGroupReferencesRequest extends RpcAcsRequest<Descri
 
 	public void setSecurityGroupIds(List<String> securityGroupIds) {
 		this.securityGroupIds = securityGroupIds;	
-		for (int i = 0; i < securityGroupIds.size(); i++) {
-			putQueryParameter("SecurityGroupId." + (i + 1) , securityGroupIds.get(i));
+		if (securityGroupIds != null) {
+			for (int i = 0; i < securityGroupIds.size(); i++) {
+				putQueryParameter("SecurityGroupId." + (i + 1) , securityGroupIds.get(i));
+			}
 		}	
 	}
 

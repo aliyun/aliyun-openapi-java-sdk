@@ -39,13 +39,9 @@ public class ModifyNetworkInterfaceAttributeRequest extends RpcAcsRequest<Modify
 
 	private String networkInterfaceName;
 
-	private Long callerUid;
-
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
-
-	private String callerBid;
 
 	private Long ownerId;
 
@@ -68,8 +64,10 @@ public class ModifyNetworkInterfaceAttributeRequest extends RpcAcsRequest<Modify
 
 	public void setSecurityGroupIds(List<String> securityGroupIds) {
 		this.securityGroupIds = securityGroupIds;	
-		for (int i = 0; i < securityGroupIds.size(); i++) {
-			putQueryParameter("SecurityGroupId." + (i + 1) , securityGroupIds.get(i));
+		if (securityGroupIds != null) {
+			for (int i = 0; i < securityGroupIds.size(); i++) {
+				putQueryParameter("SecurityGroupId." + (i + 1) , securityGroupIds.get(i));
+			}
 		}	
 	}
 
@@ -95,17 +93,6 @@ public class ModifyNetworkInterfaceAttributeRequest extends RpcAcsRequest<Modify
 		}
 	}
 
-	public Long getCallerUid() {
-		return this.callerUid;
-	}
-
-	public void setCallerUid(Long callerUid) {
-		this.callerUid = callerUid;
-		if(callerUid != null){
-			putQueryParameter("callerUid", callerUid.toString());
-		}
-	}
-
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
 	}
@@ -125,17 +112,6 @@ public class ModifyNetworkInterfaceAttributeRequest extends RpcAcsRequest<Modify
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
-		}
-	}
-
-	public String getCallerBid() {
-		return this.callerBid;
-	}
-
-	public void setCallerBid(String callerBid) {
-		this.callerBid = callerBid;
-		if(callerBid != null){
-			putQueryParameter("callerBid", callerBid);
 		}
 	}
 

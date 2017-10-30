@@ -43,13 +43,9 @@ public class DescribeNetworkInterfacesRequest extends RpcAcsRequest<DescribeNetw
 
 	private String networkInterfaceName;
 
-	private Long callerUid;
-
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
-
-	private String callerBid;
 
 	private Long ownerId;
 
@@ -127,17 +123,6 @@ public class DescribeNetworkInterfacesRequest extends RpcAcsRequest<DescribeNetw
 		}
 	}
 
-	public Long getCallerUid() {
-		return this.callerUid;
-	}
-
-	public void setCallerUid(Long callerUid) {
-		this.callerUid = callerUid;
-		if(callerUid != null){
-			putQueryParameter("callerUid", callerUid.toString());
-		}
-	}
-
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
 	}
@@ -157,17 +142,6 @@ public class DescribeNetworkInterfacesRequest extends RpcAcsRequest<DescribeNetw
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
-		}
-	}
-
-	public String getCallerBid() {
-		return this.callerBid;
-	}
-
-	public void setCallerBid(String callerBid) {
-		this.callerBid = callerBid;
-		if(callerBid != null){
-			putQueryParameter("callerBid", callerBid);
 		}
 	}
 
@@ -221,8 +195,10 @@ public class DescribeNetworkInterfacesRequest extends RpcAcsRequest<DescribeNetw
 
 	public void setNetworkInterfaceIds(List<String> networkInterfaceIds) {
 		this.networkInterfaceIds = networkInterfaceIds;	
-		for (int i = 0; i < networkInterfaceIds.size(); i++) {
-			putQueryParameter("NetworkInterfaceId." + (i + 1) , networkInterfaceIds.get(i));
+		if (networkInterfaceIds != null) {
+			for (int i = 0; i < networkInterfaceIds.size(); i++) {
+				putQueryParameter("NetworkInterfaceId." + (i + 1) , networkInterfaceIds.get(i));
+			}
 		}	
 	}
 

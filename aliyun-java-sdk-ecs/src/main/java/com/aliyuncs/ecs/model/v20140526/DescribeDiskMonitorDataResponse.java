@@ -75,6 +75,10 @@ public class DescribeDiskMonitorDataResponse extends AcsResponse {
 
 		private Integer bPSTotal;
 
+		private Integer latencyRead;
+
+		private Integer latencyWrite;
+
 		private String timeStamp;
 
 		public String getDiskId() {
@@ -131,6 +135,22 @@ public class DescribeDiskMonitorDataResponse extends AcsResponse {
 
 		public void setBPSTotal(Integer bPSTotal) {
 			this.bPSTotal = bPSTotal;
+		}
+
+		public Integer getLatencyRead() {
+			return this.latencyRead;
+		}
+
+		public void setLatencyRead(Integer latencyRead) {
+			this.latencyRead = latencyRead;
+		}
+
+		public Integer getLatencyWrite() {
+			return this.latencyWrite;
+		}
+
+		public void setLatencyWrite(Integer latencyWrite) {
+			this.latencyWrite = latencyWrite;
 		}
 
 		public String getTimeStamp() {

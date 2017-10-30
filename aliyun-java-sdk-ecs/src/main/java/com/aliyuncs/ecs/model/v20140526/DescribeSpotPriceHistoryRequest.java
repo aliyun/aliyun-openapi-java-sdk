@@ -40,8 +40,6 @@ public class DescribeSpotPriceHistoryRequest extends RpcAcsRequest<DescribeSpotP
 
 	private String instanceType;
 
-	private Long callerUid;
-
 	private Integer offset;
 
 	private String resourceOwnerAccount;
@@ -49,8 +47,6 @@ public class DescribeSpotPriceHistoryRequest extends RpcAcsRequest<DescribeSpotP
 	private String ownerAccount;
 
 	private String endTime;
-
-	private String callerBid;
 
 	private Long ownerId;
 
@@ -111,17 +107,6 @@ public class DescribeSpotPriceHistoryRequest extends RpcAcsRequest<DescribeSpotP
 		}
 	}
 
-	public Long getCallerUid() {
-		return this.callerUid;
-	}
-
-	public void setCallerUid(Long callerUid) {
-		this.callerUid = callerUid;
-		if(callerUid != null){
-			putQueryParameter("callerUid", callerUid.toString());
-		}
-	}
-
 	public Integer getOffset() {
 		return this.offset;
 	}
@@ -163,17 +148,6 @@ public class DescribeSpotPriceHistoryRequest extends RpcAcsRequest<DescribeSpotP
 		this.endTime = endTime;
 		if(endTime != null){
 			putQueryParameter("EndTime", endTime);
-		}
-	}
-
-	public String getCallerBid() {
-		return this.callerBid;
-	}
-
-	public void setCallerBid(String callerBid) {
-		this.callerBid = callerBid;
-		if(callerBid != null){
-			putQueryParameter("callerBid", callerBid);
 		}
 	}
 

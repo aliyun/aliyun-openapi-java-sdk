@@ -83,11 +83,13 @@ public class CreateImageRequest extends RpcAcsRequest<CreateImageResponse> {
 
 	public void setDiskDeviceMappings(List<DiskDeviceMapping> diskDeviceMappings) {
 		this.diskDeviceMappings = diskDeviceMappings;	
-		for (int depth1 = 0; depth1 < diskDeviceMappings.size(); depth1++) {
-			putQueryParameter("DiskDeviceMapping." + (depth1 + 1) + ".Size" , diskDeviceMappings.get(depth1).getSize());
-			putQueryParameter("DiskDeviceMapping." + (depth1 + 1) + ".SnapshotId" , diskDeviceMappings.get(depth1).getSnapshotId());
-			putQueryParameter("DiskDeviceMapping." + (depth1 + 1) + ".Device" , diskDeviceMappings.get(depth1).getDevice());
-			putQueryParameter("DiskDeviceMapping." + (depth1 + 1) + ".DiskType" , diskDeviceMappings.get(depth1).getDiskType());
+		if (diskDeviceMappings != null) {
+			for (int depth1 = 0; depth1 < diskDeviceMappings.size(); depth1++) {
+				putQueryParameter("DiskDeviceMapping." + (depth1 + 1) + ".Size" , diskDeviceMappings.get(depth1).getSize());
+				putQueryParameter("DiskDeviceMapping." + (depth1 + 1) + ".SnapshotId" , diskDeviceMappings.get(depth1).getSnapshotId());
+				putQueryParameter("DiskDeviceMapping." + (depth1 + 1) + ".Device" , diskDeviceMappings.get(depth1).getDevice());
+				putQueryParameter("DiskDeviceMapping." + (depth1 + 1) + ".DiskType" , diskDeviceMappings.get(depth1).getDiskType());
+			}
 		}	
 	}
 

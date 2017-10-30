@@ -36,27 +36,17 @@ public class DescribeInstancesRequest extends RpcAcsRequest<DescribeInstancesRes
 
 	private Long resourceOwnerId;
 
-	private String imageId;
-
 	private String tag2Key;
 
 	private String privateIpAddresses;
 
+	private String hpcClusterId;
+
 	private String filter2Value;
-
-	private String filter4Value;
-
-	private Boolean ioOptimized;
-
-	private String securityGroupId;
 
 	private String tag3Key;
 
 	private String keyPairName;
-
-	private String filter4Key;
-
-	private Integer pageNumber;
 
 	private String tag1Value;
 
@@ -68,6 +58,44 @@ public class DescribeInstancesRequest extends RpcAcsRequest<DescribeInstancesRes
 
 	private Boolean deviceAvailable;
 
+	private String filter3Value;
+
+	private String tag5Key;
+
+	private String filter1Value;
+
+	private Long ownerId;
+
+	private String vSwitchId;
+
+	private String instanceName;
+
+	private String instanceIds;
+
+	private String internetChargeType;
+
+	private String zoneId;
+
+	private String tag4Key;
+
+	private String instanceNetworkType;
+
+	private String status;
+
+	private String imageId;
+
+	private String filter4Value;
+
+	private Boolean ioOptimized;
+
+	private String securityGroupId;
+
+	private String filter4Key;
+
+	private Integer pageNumber;
+
+	private String rdmaIpAddresses;
+
 	private Integer pageSize;
 
 	private String publicIpAddresses;
@@ -78,49 +106,25 @@ public class DescribeInstancesRequest extends RpcAcsRequest<DescribeInstancesRes
 
 	private String tag3Value;
 
-	private String filter3Value;
-
-	private String tag5Key;
-
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
 	private String instanceTypeFamily;
 
-	private String filter1Value;
-
 	private String filter2Key;
 
-	private Long ownerId;
-
 	private String tag5Value;
-
-	private String vSwitchId;
 
 	private String tag1Key;
 
 	private String eipAddresses;
 
-	private String instanceName;
-
-	private String instanceIds;
-
-	private String internetChargeType;
-
 	private String vpcId;
 
 	private String tag2Value;
 
-	private String zoneId;
-
-	private String tag4Key;
-
 	private String filter3Key;
-
-	private String instanceNetworkType;
-
-	private String status;
 
 	public String getTag4Value() {
 		return this.tag4Value;
@@ -155,17 +159,6 @@ public class DescribeInstancesRequest extends RpcAcsRequest<DescribeInstancesRes
 		}
 	}
 
-	public String getImageId() {
-		return this.imageId;
-	}
-
-	public void setImageId(String imageId) {
-		this.imageId = imageId;
-		if(imageId != null){
-			putQueryParameter("ImageId", imageId);
-		}
-	}
-
 	public String getTag2Key() {
 		return this.tag2Key;
 	}
@@ -188,6 +181,17 @@ public class DescribeInstancesRequest extends RpcAcsRequest<DescribeInstancesRes
 		}
 	}
 
+	public String getHpcClusterId() {
+		return this.hpcClusterId;
+	}
+
+	public void setHpcClusterId(String hpcClusterId) {
+		this.hpcClusterId = hpcClusterId;
+		if(hpcClusterId != null){
+			putQueryParameter("HpcClusterId", hpcClusterId);
+		}
+	}
+
 	public String getFilter2Value() {
 		return this.filter2Value;
 	}
@@ -196,39 +200,6 @@ public class DescribeInstancesRequest extends RpcAcsRequest<DescribeInstancesRes
 		this.filter2Value = filter2Value;
 		if(filter2Value != null){
 			putQueryParameter("Filter.2.Value", filter2Value);
-		}
-	}
-
-	public String getFilter4Value() {
-		return this.filter4Value;
-	}
-
-	public void setFilter4Value(String filter4Value) {
-		this.filter4Value = filter4Value;
-		if(filter4Value != null){
-			putQueryParameter("Filter.4.Value", filter4Value);
-		}
-	}
-
-	public Boolean getIoOptimized() {
-		return this.ioOptimized;
-	}
-
-	public void setIoOptimized(Boolean ioOptimized) {
-		this.ioOptimized = ioOptimized;
-		if(ioOptimized != null){
-			putQueryParameter("IoOptimized", ioOptimized.toString());
-		}
-	}
-
-	public String getSecurityGroupId() {
-		return this.securityGroupId;
-	}
-
-	public void setSecurityGroupId(String securityGroupId) {
-		this.securityGroupId = securityGroupId;
-		if(securityGroupId != null){
-			putQueryParameter("SecurityGroupId", securityGroupId);
 		}
 	}
 
@@ -251,28 +222,6 @@ public class DescribeInstancesRequest extends RpcAcsRequest<DescribeInstancesRes
 		this.keyPairName = keyPairName;
 		if(keyPairName != null){
 			putQueryParameter("KeyPairName", keyPairName);
-		}
-	}
-
-	public String getFilter4Key() {
-		return this.filter4Key;
-	}
-
-	public void setFilter4Key(String filter4Key) {
-		this.filter4Key = filter4Key;
-		if(filter4Key != null){
-			putQueryParameter("Filter.4.Key", filter4Key);
-		}
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
 		}
 	}
 
@@ -331,6 +280,215 @@ public class DescribeInstancesRequest extends RpcAcsRequest<DescribeInstancesRes
 		}
 	}
 
+	public String getFilter3Value() {
+		return this.filter3Value;
+	}
+
+	public void setFilter3Value(String filter3Value) {
+		this.filter3Value = filter3Value;
+		if(filter3Value != null){
+			putQueryParameter("Filter.3.Value", filter3Value);
+		}
+	}
+
+	public String getTag5Key() {
+		return this.tag5Key;
+	}
+
+	public void setTag5Key(String tag5Key) {
+		this.tag5Key = tag5Key;
+		if(tag5Key != null){
+			putQueryParameter("Tag.5.Key", tag5Key);
+		}
+	}
+
+	public String getFilter1Value() {
+		return this.filter1Value;
+	}
+
+	public void setFilter1Value(String filter1Value) {
+		this.filter1Value = filter1Value;
+		if(filter1Value != null){
+			putQueryParameter("Filter.1.Value", filter1Value);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getVSwitchId() {
+		return this.vSwitchId;
+	}
+
+	public void setVSwitchId(String vSwitchId) {
+		this.vSwitchId = vSwitchId;
+		if(vSwitchId != null){
+			putQueryParameter("VSwitchId", vSwitchId);
+		}
+	}
+
+	public String getInstanceName() {
+		return this.instanceName;
+	}
+
+	public void setInstanceName(String instanceName) {
+		this.instanceName = instanceName;
+		if(instanceName != null){
+			putQueryParameter("InstanceName", instanceName);
+		}
+	}
+
+	public String getInstanceIds() {
+		return this.instanceIds;
+	}
+
+	public void setInstanceIds(String instanceIds) {
+		this.instanceIds = instanceIds;
+		if(instanceIds != null){
+			putQueryParameter("InstanceIds", instanceIds);
+		}
+	}
+
+	public String getInternetChargeType() {
+		return this.internetChargeType;
+	}
+
+	public void setInternetChargeType(String internetChargeType) {
+		this.internetChargeType = internetChargeType;
+		if(internetChargeType != null){
+			putQueryParameter("InternetChargeType", internetChargeType);
+		}
+	}
+
+	public String getZoneId() {
+		return this.zoneId;
+	}
+
+	public void setZoneId(String zoneId) {
+		this.zoneId = zoneId;
+		if(zoneId != null){
+			putQueryParameter("ZoneId", zoneId);
+		}
+	}
+
+	public String getTag4Key() {
+		return this.tag4Key;
+	}
+
+	public void setTag4Key(String tag4Key) {
+		this.tag4Key = tag4Key;
+		if(tag4Key != null){
+			putQueryParameter("Tag.4.Key", tag4Key);
+		}
+	}
+
+	public String getInstanceNetworkType() {
+		return this.instanceNetworkType;
+	}
+
+	public void setInstanceNetworkType(String instanceNetworkType) {
+		this.instanceNetworkType = instanceNetworkType;
+		if(instanceNetworkType != null){
+			putQueryParameter("InstanceNetworkType", instanceNetworkType);
+		}
+	}
+
+	public String getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+		if(status != null){
+			putQueryParameter("Status", status);
+		}
+	}
+
+	public String getImageId() {
+		return this.imageId;
+	}
+
+	public void setImageId(String imageId) {
+		this.imageId = imageId;
+		if(imageId != null){
+			putQueryParameter("ImageId", imageId);
+		}
+	}
+
+	public String getFilter4Value() {
+		return this.filter4Value;
+	}
+
+	public void setFilter4Value(String filter4Value) {
+		this.filter4Value = filter4Value;
+		if(filter4Value != null){
+			putQueryParameter("Filter.4.Value", filter4Value);
+		}
+	}
+
+	public Boolean getIoOptimized() {
+		return this.ioOptimized;
+	}
+
+	public void setIoOptimized(Boolean ioOptimized) {
+		this.ioOptimized = ioOptimized;
+		if(ioOptimized != null){
+			putQueryParameter("IoOptimized", ioOptimized.toString());
+		}
+	}
+
+	public String getSecurityGroupId() {
+		return this.securityGroupId;
+	}
+
+	public void setSecurityGroupId(String securityGroupId) {
+		this.securityGroupId = securityGroupId;
+		if(securityGroupId != null){
+			putQueryParameter("SecurityGroupId", securityGroupId);
+		}
+	}
+
+	public String getFilter4Key() {
+		return this.filter4Key;
+	}
+
+	public void setFilter4Key(String filter4Key) {
+		this.filter4Key = filter4Key;
+		if(filter4Key != null){
+			putQueryParameter("Filter.4.Key", filter4Key);
+		}
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public String getRdmaIpAddresses() {
+		return this.rdmaIpAddresses;
+	}
+
+	public void setRdmaIpAddresses(String rdmaIpAddresses) {
+		this.rdmaIpAddresses = rdmaIpAddresses;
+		if(rdmaIpAddresses != null){
+			putQueryParameter("RdmaIpAddresses", rdmaIpAddresses);
+		}
+	}
+
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
@@ -386,28 +544,6 @@ public class DescribeInstancesRequest extends RpcAcsRequest<DescribeInstancesRes
 		}
 	}
 
-	public String getFilter3Value() {
-		return this.filter3Value;
-	}
-
-	public void setFilter3Value(String filter3Value) {
-		this.filter3Value = filter3Value;
-		if(filter3Value != null){
-			putQueryParameter("Filter.3.Value", filter3Value);
-		}
-	}
-
-	public String getTag5Key() {
-		return this.tag5Key;
-	}
-
-	public void setTag5Key(String tag5Key) {
-		this.tag5Key = tag5Key;
-		if(tag5Key != null){
-			putQueryParameter("Tag.5.Key", tag5Key);
-		}
-	}
-
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
 	}
@@ -441,17 +577,6 @@ public class DescribeInstancesRequest extends RpcAcsRequest<DescribeInstancesRes
 		}
 	}
 
-	public String getFilter1Value() {
-		return this.filter1Value;
-	}
-
-	public void setFilter1Value(String filter1Value) {
-		this.filter1Value = filter1Value;
-		if(filter1Value != null){
-			putQueryParameter("Filter.1.Value", filter1Value);
-		}
-	}
-
 	public String getFilter2Key() {
 		return this.filter2Key;
 	}
@@ -463,17 +588,6 @@ public class DescribeInstancesRequest extends RpcAcsRequest<DescribeInstancesRes
 		}
 	}
 
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
 	public String getTag5Value() {
 		return this.tag5Value;
 	}
@@ -482,17 +596,6 @@ public class DescribeInstancesRequest extends RpcAcsRequest<DescribeInstancesRes
 		this.tag5Value = tag5Value;
 		if(tag5Value != null){
 			putQueryParameter("Tag.5.Value", tag5Value);
-		}
-	}
-
-	public String getVSwitchId() {
-		return this.vSwitchId;
-	}
-
-	public void setVSwitchId(String vSwitchId) {
-		this.vSwitchId = vSwitchId;
-		if(vSwitchId != null){
-			putQueryParameter("VSwitchId", vSwitchId);
 		}
 	}
 
@@ -518,39 +621,6 @@ public class DescribeInstancesRequest extends RpcAcsRequest<DescribeInstancesRes
 		}
 	}
 
-	public String getInstanceName() {
-		return this.instanceName;
-	}
-
-	public void setInstanceName(String instanceName) {
-		this.instanceName = instanceName;
-		if(instanceName != null){
-			putQueryParameter("InstanceName", instanceName);
-		}
-	}
-
-	public String getInstanceIds() {
-		return this.instanceIds;
-	}
-
-	public void setInstanceIds(String instanceIds) {
-		this.instanceIds = instanceIds;
-		if(instanceIds != null){
-			putQueryParameter("InstanceIds", instanceIds);
-		}
-	}
-
-	public String getInternetChargeType() {
-		return this.internetChargeType;
-	}
-
-	public void setInternetChargeType(String internetChargeType) {
-		this.internetChargeType = internetChargeType;
-		if(internetChargeType != null){
-			putQueryParameter("InternetChargeType", internetChargeType);
-		}
-	}
-
 	public String getVpcId() {
 		return this.vpcId;
 	}
@@ -573,28 +643,6 @@ public class DescribeInstancesRequest extends RpcAcsRequest<DescribeInstancesRes
 		}
 	}
 
-	public String getZoneId() {
-		return this.zoneId;
-	}
-
-	public void setZoneId(String zoneId) {
-		this.zoneId = zoneId;
-		if(zoneId != null){
-			putQueryParameter("ZoneId", zoneId);
-		}
-	}
-
-	public String getTag4Key() {
-		return this.tag4Key;
-	}
-
-	public void setTag4Key(String tag4Key) {
-		this.tag4Key = tag4Key;
-		if(tag4Key != null){
-			putQueryParameter("Tag.4.Key", tag4Key);
-		}
-	}
-
 	public String getFilter3Key() {
 		return this.filter3Key;
 	}
@@ -603,28 +651,6 @@ public class DescribeInstancesRequest extends RpcAcsRequest<DescribeInstancesRes
 		this.filter3Key = filter3Key;
 		if(filter3Key != null){
 			putQueryParameter("Filter.3.Key", filter3Key);
-		}
-	}
-
-	public String getInstanceNetworkType() {
-		return this.instanceNetworkType;
-	}
-
-	public void setInstanceNetworkType(String instanceNetworkType) {
-		this.instanceNetworkType = instanceNetworkType;
-		if(instanceNetworkType != null){
-			putQueryParameter("InstanceNetworkType", instanceNetworkType);
-		}
-	}
-
-	public String getStatus() {
-		return this.status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
-		if(status != null){
-			putQueryParameter("Status", status);
 		}
 	}
 

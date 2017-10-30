@@ -47,6 +47,8 @@ public class DescribeInstanceMonitorDataResponseUnmarshaller {
 			instanceMonitorData.setIOPSWrite(context.integerValue("DescribeInstanceMonitorDataResponse.MonitorData["+ i +"].IOPSWrite"));
 			instanceMonitorData.setBPSRead(context.integerValue("DescribeInstanceMonitorDataResponse.MonitorData["+ i +"].BPSRead"));
 			instanceMonitorData.setBPSWrite(context.integerValue("DescribeInstanceMonitorDataResponse.MonitorData["+ i +"].BPSWrite"));
+			instanceMonitorData.setCPUCreditUsage(context.floatValue("DescribeInstanceMonitorDataResponse.MonitorData["+ i +"].CPUCreditUsage"));
+			instanceMonitorData.setCPUCreditBalance(context.floatValue("DescribeInstanceMonitorDataResponse.MonitorData["+ i +"].CPUCreditBalance"));
 			instanceMonitorData.setTimeStamp(context.stringValue("DescribeInstanceMonitorDataResponse.MonitorData["+ i +"].TimeStamp"));
 
 			monitorData.add(instanceMonitorData);

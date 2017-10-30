@@ -69,6 +69,10 @@ public class DescribeInstanceTypesResponse extends AcsResponse {
 
 		private String gPUSpec;
 
+		private Integer initialCredit;
+
+		private Integer baselineCredit;
+
 		public String getInstanceTypeId() {
 			return this.instanceTypeId;
 		}
@@ -139,6 +143,22 @@ public class DescribeInstanceTypesResponse extends AcsResponse {
 
 		public void setGPUSpec(String gPUSpec) {
 			this.gPUSpec = gPUSpec;
+		}
+
+		public Integer getInitialCredit() {
+			return this.initialCredit;
+		}
+
+		public void setInitialCredit(Integer initialCredit) {
+			this.initialCredit = initialCredit;
+		}
+
+		public Integer getBaselineCredit() {
+			return this.baselineCredit;
+		}
+
+		public void setBaselineCredit(Integer baselineCredit) {
+			this.baselineCredit = baselineCredit;
 		}
 	}
 

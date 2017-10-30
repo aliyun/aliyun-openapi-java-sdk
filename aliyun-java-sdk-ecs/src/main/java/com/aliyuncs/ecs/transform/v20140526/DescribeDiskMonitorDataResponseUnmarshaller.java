@@ -43,6 +43,8 @@ public class DescribeDiskMonitorDataResponseUnmarshaller {
 			diskMonitorData.setBPSRead(context.integerValue("DescribeDiskMonitorDataResponse.MonitorData["+ i +"].BPSRead"));
 			diskMonitorData.setBPSWrite(context.integerValue("DescribeDiskMonitorDataResponse.MonitorData["+ i +"].BPSWrite"));
 			diskMonitorData.setBPSTotal(context.integerValue("DescribeDiskMonitorDataResponse.MonitorData["+ i +"].BPSTotal"));
+			diskMonitorData.setLatencyRead(context.integerValue("DescribeDiskMonitorDataResponse.MonitorData["+ i +"].LatencyRead"));
+			diskMonitorData.setLatencyWrite(context.integerValue("DescribeDiskMonitorDataResponse.MonitorData["+ i +"].LatencyWrite"));
 			diskMonitorData.setTimeStamp(context.stringValue("DescribeDiskMonitorDataResponse.MonitorData["+ i +"].TimeStamp"));
 
 			monitorData.add(diskMonitorData);

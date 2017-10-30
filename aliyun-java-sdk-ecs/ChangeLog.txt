@@ -1,3 +1,6 @@
+2017-10-30 Version: 4.3.0
+1, 新增接口ConvertNatPublicIpToEip 支持VPC ECS 的公网IP转弹性公网IP。
+
 2017-09-26 Version: 4.2.0
 1, CreateInstance 新增参数支持sopt竞价实例可以出价参数
 2, DescribeZones 新增参数查询是否有竞价实例的资源

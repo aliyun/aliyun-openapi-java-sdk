@@ -145,9 +145,11 @@ public class CreateRouteEntryRequest extends RpcAcsRequest<CreateRouteEntryRespo
 
 	public void setNextHopLists(List<NextHopList> nextHopLists) {
 		this.nextHopLists = nextHopLists;	
-		for (int depth1 = 0; depth1 < nextHopLists.size(); depth1++) {
-			putQueryParameter("NextHopList." + (depth1 + 1) + ".NextHopType" , nextHopLists.get(depth1).getNextHopType());
-			putQueryParameter("NextHopList." + (depth1 + 1) + ".NextHopId" , nextHopLists.get(depth1).getNextHopId());
+		if (nextHopLists != null) {
+			for (int depth1 = 0; depth1 < nextHopLists.size(); depth1++) {
+				putQueryParameter("NextHopList." + (depth1 + 1) + ".NextHopType" , nextHopLists.get(depth1).getNextHopType());
+				putQueryParameter("NextHopList." + (depth1 + 1) + ".NextHopId" , nextHopLists.get(depth1).getNextHopId());
+			}
 		}	
 	}
 

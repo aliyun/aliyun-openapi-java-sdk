@@ -32,13 +32,9 @@ public class DeleteNetworkInterfaceRequest extends RpcAcsRequest<DeleteNetworkIn
 
 	private Long resourceOwnerId;
 
-	private Long callerUid;
-
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
-
-	private String callerBid;
 
 	private Long ownerId;
 
@@ -52,17 +48,6 @@ public class DeleteNetworkInterfaceRequest extends RpcAcsRequest<DeleteNetworkIn
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public Long getCallerUid() {
-		return this.callerUid;
-	}
-
-	public void setCallerUid(Long callerUid) {
-		this.callerUid = callerUid;
-		if(callerUid != null){
-			putQueryParameter("callerUid", callerUid.toString());
 		}
 	}
 
@@ -85,17 +70,6 @@ public class DeleteNetworkInterfaceRequest extends RpcAcsRequest<DeleteNetworkIn
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
-		}
-	}
-
-	public String getCallerBid() {
-		return this.callerBid;
-	}
-
-	public void setCallerBid(String callerBid) {
-		this.callerBid = callerBid;
-		if(callerBid != null){
-			putQueryParameter("callerBid", callerBid);
 		}
 	}
 

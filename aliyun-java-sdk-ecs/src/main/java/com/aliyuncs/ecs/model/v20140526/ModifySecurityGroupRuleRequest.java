@@ -46,8 +46,6 @@ public class ModifySecurityGroupRuleRequest extends RpcAcsRequest<ModifySecurity
 
 	private String sourceGroupOwnerAccount;
 
-	private Long callerUid;
-
 	private String policy;
 
 	private String portRange;
@@ -59,8 +57,6 @@ public class ModifySecurityGroupRuleRequest extends RpcAcsRequest<ModifySecurity
 	private String ownerAccount;
 
 	private String sourceCidrIp;
-
-	private String callerBid;
 
 	private Long ownerId;
 
@@ -158,17 +154,6 @@ public class ModifySecurityGroupRuleRequest extends RpcAcsRequest<ModifySecurity
 		}
 	}
 
-	public Long getCallerUid() {
-		return this.callerUid;
-	}
-
-	public void setCallerUid(Long callerUid) {
-		this.callerUid = callerUid;
-		if(callerUid != null){
-			putQueryParameter("callerUid", callerUid.toString());
-		}
-	}
-
 	public String getPolicy() {
 		return this.policy;
 	}
@@ -232,17 +217,6 @@ public class ModifySecurityGroupRuleRequest extends RpcAcsRequest<ModifySecurity
 		this.sourceCidrIp = sourceCidrIp;
 		if(sourceCidrIp != null){
 			putQueryParameter("SourceCidrIp", sourceCidrIp);
-		}
-	}
-
-	public String getCallerBid() {
-		return this.callerBid;
-	}
-
-	public void setCallerBid(String callerBid) {
-		this.callerBid = callerBid;
-		if(callerBid != null){
-			putQueryParameter("callerBid", callerBid);
 		}
 	}
 
