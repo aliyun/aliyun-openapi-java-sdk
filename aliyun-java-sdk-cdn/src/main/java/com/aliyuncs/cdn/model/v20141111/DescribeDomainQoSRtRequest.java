@@ -24,13 +24,13 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class DescribeRefreshTasksRequest extends RpcAcsRequest<DescribeRefreshTasksResponse> {
+public class DescribeDomainQoSRtRequest extends RpcAcsRequest<DescribeDomainQoSRtResponse> {
 	
-	public DescribeRefreshTasksRequest() {
-		super("Cdn", "2014-11-11", "DescribeRefreshTasks");
+	public DescribeDomainQoSRtRequest() {
+		super("Cdn", "2014-11-11", "DescribeDomainQoSRt");
 	}
 
-	private String objectPath;
+	private String ip;
 
 	private String domainName;
 
@@ -40,28 +40,18 @@ public class DescribeRefreshTasksRequest extends RpcAcsRequest<DescribeRefreshTa
 
 	private Long ownerId;
 
-	private Integer pageNumber;
-
-	private String resourceGroupId;
+	private String version;
 
 	private String securityToken;
 
-	private Integer pageSize;
-
-	private String objectType;
-
-	private String taskId;
-
-	private String status;
-
-	public String getObjectPath() {
-		return this.objectPath;
+	public String getIp() {
+		return this.ip;
 	}
 
-	public void setObjectPath(String objectPath) {
-		this.objectPath = objectPath;
-		if(objectPath != null){
-			putQueryParameter("ObjectPath", objectPath);
+	public void setIp(String ip) {
+		this.ip = ip;
+		if(ip != null){
+			putQueryParameter("Ip", ip);
 		}
 	}
 
@@ -109,25 +99,14 @@ public class DescribeRefreshTasksRequest extends RpcAcsRequest<DescribeRefreshTa
 		}
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
+	public String getVersion() {
+		return this.version;
 	}
 
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
-		}
-	}
-
-	public String getResourceGroupId() {
-		return this.resourceGroupId;
-	}
-
-	public void setResourceGroupId(String resourceGroupId) {
-		this.resourceGroupId = resourceGroupId;
-		if(resourceGroupId != null){
-			putQueryParameter("ResourceGroupId", resourceGroupId);
+	public void setVersion(String version) {
+		this.version = version;
+		if(version != null){
+			putQueryParameter("Version", version);
 		}
 	}
 
@@ -142,53 +121,9 @@ public class DescribeRefreshTasksRequest extends RpcAcsRequest<DescribeRefreshTa
 		}
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
-	public String getObjectType() {
-		return this.objectType;
-	}
-
-	public void setObjectType(String objectType) {
-		this.objectType = objectType;
-		if(objectType != null){
-			putQueryParameter("ObjectType", objectType);
-		}
-	}
-
-	public String getTaskId() {
-		return this.taskId;
-	}
-
-	public void setTaskId(String taskId) {
-		this.taskId = taskId;
-		if(taskId != null){
-			putQueryParameter("TaskId", taskId);
-		}
-	}
-
-	public String getStatus() {
-		return this.status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
-		if(status != null){
-			putQueryParameter("Status", status);
-		}
-	}
-
 	@Override
-	public Class<DescribeRefreshTasksResponse> getResponseClass() {
-		return DescribeRefreshTasksResponse.class;
+	public Class<DescribeDomainQoSRtResponse> getResponseClass() {
+		return DescribeDomainQoSRtResponse.class;
 	}
 
 }

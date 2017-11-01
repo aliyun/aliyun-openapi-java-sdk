@@ -52,12 +52,22 @@ public class DescribeUserConfigsResponse extends AcsResponse {
 
 		private OssLogConfig ossLogConfig;
 
+		private GreenManagerConfig greenManagerConfig;
+
 		public OssLogConfig getOssLogConfig() {
 			return this.ossLogConfig;
 		}
 
 		public void setOssLogConfig(OssLogConfig ossLogConfig) {
 			this.ossLogConfig = ossLogConfig;
+		}
+
+		public GreenManagerConfig getGreenManagerConfig() {
+			return this.greenManagerConfig;
+		}
+
+		public void setGreenManagerConfig(GreenManagerConfig greenManagerConfig) {
+			this.greenManagerConfig = greenManagerConfig;
 		}
 
 		public static class OssLogConfig {
@@ -90,6 +100,29 @@ public class DescribeUserConfigsResponse extends AcsResponse {
 
 			public void setPrefix(String prefix) {
 				this.prefix = prefix;
+			}
+		}
+
+		public static class GreenManagerConfig {
+
+			private String quota;
+
+			private String ratio;
+
+			public String getQuota() {
+				return this.quota;
+			}
+
+			public void setQuota(String quota) {
+				this.quota = quota;
+			}
+
+			public String getRatio() {
+				return this.ratio;
+			}
+
+			public void setRatio(String ratio) {
+				this.ratio = ratio;
 			}
 		}
 	}

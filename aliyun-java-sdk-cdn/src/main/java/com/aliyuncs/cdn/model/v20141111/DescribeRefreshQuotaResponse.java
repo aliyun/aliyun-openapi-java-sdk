@@ -38,6 +38,14 @@ public class DescribeRefreshQuotaResponse extends AcsResponse {
 
 	private String dirRemain;
 
+	private String preloadQuota;
+
+	private String blockQuota;
+
+	private String preloadRemain;
+
+	private String blockRemain;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -76,6 +84,38 @@ public class DescribeRefreshQuotaResponse extends AcsResponse {
 
 	public void setDirRemain(String dirRemain) {
 		this.dirRemain = dirRemain;
+	}
+
+	public String getPreloadQuota() {
+		return this.preloadQuota;
+	}
+
+	public void setPreloadQuota(String preloadQuota) {
+		this.preloadQuota = preloadQuota;
+	}
+
+	public String getBlockQuota() {
+		return this.blockQuota;
+	}
+
+	public void setBlockQuota(String blockQuota) {
+		this.blockQuota = blockQuota;
+	}
+
+	public String getPreloadRemain() {
+		return this.preloadRemain;
+	}
+
+	public void setPreloadRemain(String preloadRemain) {
+		this.preloadRemain = preloadRemain;
+	}
+
+	public String getBlockRemain() {
+		return this.blockRemain;
+	}
+
+	public void setBlockRemain(String blockRemain) {
+		this.blockRemain = blockRemain;
 	}
 
 	@Override

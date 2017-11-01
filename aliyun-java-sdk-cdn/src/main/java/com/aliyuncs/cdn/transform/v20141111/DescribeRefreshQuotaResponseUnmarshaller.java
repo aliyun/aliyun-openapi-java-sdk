@@ -31,6 +31,10 @@ public class DescribeRefreshQuotaResponseUnmarshaller {
 		describeRefreshQuotaResponse.setDirQuota(context.stringValue("DescribeRefreshQuotaResponse.DirQuota"));
 		describeRefreshQuotaResponse.setUrlRemain(context.stringValue("DescribeRefreshQuotaResponse.UrlRemain"));
 		describeRefreshQuotaResponse.setDirRemain(context.stringValue("DescribeRefreshQuotaResponse.DirRemain"));
+		describeRefreshQuotaResponse.setPreloadQuota(context.stringValue("DescribeRefreshQuotaResponse.PreloadQuota"));
+		describeRefreshQuotaResponse.setBlockQuota(context.stringValue("DescribeRefreshQuotaResponse.BlockQuota"));
+		describeRefreshQuotaResponse.setPreloadRemain(context.stringValue("DescribeRefreshQuotaResponse.PreloadRemain"));
+		describeRefreshQuotaResponse.setBlockRemain(context.stringValue("DescribeRefreshQuotaResponse.blockRemain"));
 	 
 	 	return describeRefreshQuotaResponse;
 	}

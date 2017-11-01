@@ -23,13 +23,16 @@ import java.util.List;
 
 import com.aliyuncs.cdn.model.v20141111.DescribeDomainConfigsResponse;
 import com.aliyuncs.cdn.model.v20141111.DescribeDomainConfigsResponse.DomainConfigs;
+import com.aliyuncs.cdn.model.v20141111.DescribeDomainConfigsResponse.DomainConfigs.AliBusinessConfig;
 import com.aliyuncs.cdn.model.v20141111.DescribeDomainConfigsResponse.DomainConfigs.CacheExpiredConfig;
 import com.aliyuncs.cdn.model.v20141111.DescribeDomainConfigsResponse.DomainConfigs.CcConfig;
 import com.aliyuncs.cdn.model.v20141111.DescribeDomainConfigsResponse.DomainConfigs.DynamicConfig;
 import com.aliyuncs.cdn.model.v20141111.DescribeDomainConfigsResponse.DomainConfigs.ErrorPageConfig;
 import com.aliyuncs.cdn.model.v20141111.DescribeDomainConfigsResponse.DomainConfigs.ForwardSchemeConfig;
+import com.aliyuncs.cdn.model.v20141111.DescribeDomainConfigsResponse.DomainConfigs.GreenManagerConfig;
 import com.aliyuncs.cdn.model.v20141111.DescribeDomainConfigsResponse.DomainConfigs.HttpErrorPageConfig;
 import com.aliyuncs.cdn.model.v20141111.DescribeDomainConfigsResponse.DomainConfigs.HttpHeaderConfig;
+import com.aliyuncs.cdn.model.v20141111.DescribeDomainConfigsResponse.DomainConfigs.HttpsOptionConfig;
 import com.aliyuncs.cdn.model.v20141111.DescribeDomainConfigsResponse.DomainConfigs.IgnoreQueryStringConfig;
 import com.aliyuncs.cdn.model.v20141111.DescribeDomainConfigsResponse.DomainConfigs.L2OssKeyConfig;
 import com.aliyuncs.cdn.model.v20141111.DescribeDomainConfigsResponse.DomainConfigs.MacServiceConfig;
@@ -42,6 +45,7 @@ import com.aliyuncs.cdn.model.v20141111.DescribeDomainConfigsResponse.DomainConf
 import com.aliyuncs.cdn.model.v20141111.DescribeDomainConfigsResponse.DomainConfigs.RemoveQueryStringConfig;
 import com.aliyuncs.cdn.model.v20141111.DescribeDomainConfigsResponse.DomainConfigs.ReqAuthConfig;
 import com.aliyuncs.cdn.model.v20141111.DescribeDomainConfigsResponse.DomainConfigs.ReqHeaderConfig;
+import com.aliyuncs.cdn.model.v20141111.DescribeDomainConfigsResponse.DomainConfigs.SetVarsConfig;
 import com.aliyuncs.cdn.model.v20141111.DescribeDomainConfigsResponse.DomainConfigs.SrcHostConfig;
 import com.aliyuncs.cdn.model.v20141111.DescribeDomainConfigsResponse.DomainConfigs.VideoSeekConfig;
 import com.aliyuncs.cdn.model.v20141111.DescribeDomainConfigsResponse.DomainConfigs.WafConfig;
@@ -174,6 +178,25 @@ public class DescribeDomainConfigsResponseUnmarshaller {
 		macServiceConfig.setStatus(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.MacServiceConfig.Status"));
 		domainConfigs.setMacServiceConfig(macServiceConfig);
 
+		GreenManagerConfig greenManagerConfig = new GreenManagerConfig();
+		greenManagerConfig.setEnabled(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.GreenManagerConfig.Enabled"));
+		greenManagerConfig.setConfigId(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.GreenManagerConfig.ConfigId"));
+		greenManagerConfig.setStatus(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.GreenManagerConfig.Status"));
+		domainConfigs.setGreenManagerConfig(greenManagerConfig);
+
+		HttpsOptionConfig httpsOptionConfig = new HttpsOptionConfig();
+		httpsOptionConfig.setHttp2(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.HttpsOptionConfig.Http2"));
+		httpsOptionConfig.setConfigId(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.HttpsOptionConfig.ConfigId"));
+		httpsOptionConfig.setStatus(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.HttpsOptionConfig.Status"));
+		domainConfigs.setHttpsOptionConfig(httpsOptionConfig);
+
+		AliBusinessConfig aliBusinessConfig = new AliBusinessConfig();
+		aliBusinessConfig.setAliBusinessTable(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.AliBusinessConfig.AliBusinessTable"));
+		aliBusinessConfig.setAliBusinessType(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.AliBusinessConfig.AliBusinessType"));
+		aliBusinessConfig.setConfigId(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.AliBusinessConfig.ConfigId"));
+		aliBusinessConfig.setStatus(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.AliBusinessConfig.Status"));
+		domainConfigs.setAliBusinessConfig(aliBusinessConfig);
+
 		List<CacheExpiredConfig> cacheExpiredConfigs = new ArrayList<CacheExpiredConfig>();
 		for (int i = 0; i < context.lengthValue("DescribeDomainConfigsResponse.DomainConfigs.CacheExpiredConfigs.Length"); i++) {
 			CacheExpiredConfig cacheExpiredConfig = new CacheExpiredConfig();
@@ -238,6 +261,18 @@ public class DescribeDomainConfigsResponseUnmarshaller {
 			reqHeaderConfigs.add(reqHeaderConfig);
 		}
 		domainConfigs.setReqHeaderConfigs(reqHeaderConfigs);
+
+		List<SetVarsConfig> setVarsConfigs = new ArrayList<SetVarsConfig>();
+		for (int i = 0; i < context.lengthValue("DescribeDomainConfigsResponse.DomainConfigs.SetVarsConfigs.Length"); i++) {
+			SetVarsConfig setVarsConfig = new SetVarsConfig();
+			setVarsConfig.setConfigId(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.SetVarsConfigs["+ i +"].ConfigId"));
+			setVarsConfig.setVarName(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.SetVarsConfigs["+ i +"].VarName"));
+			setVarsConfig.setVarValue(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.SetVarsConfigs["+ i +"].VarValue"));
+			setVarsConfig.setStatus(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.SetVarsConfigs["+ i +"].Status"));
+
+			setVarsConfigs.add(setVarsConfig);
+		}
+		domainConfigs.setSetVarsConfigs(setVarsConfigs);
 		describeDomainConfigsResponse.setDomainConfigs(domainConfigs);
 	 
 	 	return describeDomainConfigsResponse;

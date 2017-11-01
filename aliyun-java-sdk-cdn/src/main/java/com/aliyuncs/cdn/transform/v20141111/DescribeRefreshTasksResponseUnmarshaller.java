@@ -44,6 +44,7 @@ public class DescribeRefreshTasksResponseUnmarshaller {
 			cDNTask.setStatus(context.stringValue("DescribeRefreshTasksResponse.Tasks["+ i +"].Status"));
 			cDNTask.setCreationTime(context.stringValue("DescribeRefreshTasksResponse.Tasks["+ i +"].CreationTime"));
 			cDNTask.setDescription(context.stringValue("DescribeRefreshTasksResponse.Tasks["+ i +"].Description"));
+			cDNTask.setObjectType(context.stringValue("DescribeRefreshTasksResponse.Tasks["+ i +"].ObjectType"));
 
 			tasks.add(cDNTask);
 		}

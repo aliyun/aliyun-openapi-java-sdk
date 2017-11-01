@@ -61,6 +61,8 @@ public class DescribeDomainConfigsResponse extends AcsResponse {
 
 		private List<ReqHeaderConfig> reqHeaderConfigs;
 
+		private List<SetVarsConfig> setVarsConfigs;
+
 		private CcConfig ccConfig;
 
 		private ErrorPageConfig errorPageConfig;
@@ -94,6 +96,12 @@ public class DescribeDomainConfigsResponse extends AcsResponse {
 		private L2OssKeyConfig l2OssKeyConfig;
 
 		private MacServiceConfig macServiceConfig;
+
+		private GreenManagerConfig greenManagerConfig;
+
+		private HttpsOptionConfig httpsOptionConfig;
+
+		private AliBusinessConfig aliBusinessConfig;
 
 		public List<CacheExpiredConfig> getCacheExpiredConfigs() {
 			return this.cacheExpiredConfigs;
@@ -133,6 +141,14 @@ public class DescribeDomainConfigsResponse extends AcsResponse {
 
 		public void setReqHeaderConfigs(List<ReqHeaderConfig> reqHeaderConfigs) {
 			this.reqHeaderConfigs = reqHeaderConfigs;
+		}
+
+		public List<SetVarsConfig> getSetVarsConfigs() {
+			return this.setVarsConfigs;
+		}
+
+		public void setSetVarsConfigs(List<SetVarsConfig> setVarsConfigs) {
+			this.setVarsConfigs = setVarsConfigs;
 		}
 
 		public CcConfig getCcConfig() {
@@ -269,6 +285,30 @@ public class DescribeDomainConfigsResponse extends AcsResponse {
 
 		public void setMacServiceConfig(MacServiceConfig macServiceConfig) {
 			this.macServiceConfig = macServiceConfig;
+		}
+
+		public GreenManagerConfig getGreenManagerConfig() {
+			return this.greenManagerConfig;
+		}
+
+		public void setGreenManagerConfig(GreenManagerConfig greenManagerConfig) {
+			this.greenManagerConfig = greenManagerConfig;
+		}
+
+		public HttpsOptionConfig getHttpsOptionConfig() {
+			return this.httpsOptionConfig;
+		}
+
+		public void setHttpsOptionConfig(HttpsOptionConfig httpsOptionConfig) {
+			this.httpsOptionConfig = httpsOptionConfig;
+		}
+
+		public AliBusinessConfig getAliBusinessConfig() {
+			return this.aliBusinessConfig;
+		}
+
+		public void setAliBusinessConfig(AliBusinessConfig aliBusinessConfig) {
+			this.aliBusinessConfig = aliBusinessConfig;
 		}
 
 		public static class CacheExpiredConfig {
@@ -525,6 +565,49 @@ public class DescribeDomainConfigsResponse extends AcsResponse {
 
 			public void setValue(String value) {
 				this.value = value;
+			}
+
+			public String getStatus() {
+				return this.status;
+			}
+
+			public void setStatus(String status) {
+				this.status = status;
+			}
+		}
+
+		public static class SetVarsConfig {
+
+			private String configId;
+
+			private String varName;
+
+			private String varValue;
+
+			private String status;
+
+			public String getConfigId() {
+				return this.configId;
+			}
+
+			public void setConfigId(String configId) {
+				this.configId = configId;
+			}
+
+			public String getVarName() {
+				return this.varName;
+			}
+
+			public void setVarName(String varName) {
+				this.varName = varName;
+			}
+
+			public String getVarValue() {
+				return this.varValue;
+			}
+
+			public void setVarValue(String varValue) {
+				this.varValue = varValue;
 			}
 
 			public String getStatus() {
@@ -1238,6 +1321,115 @@ public class DescribeDomainConfigsResponse extends AcsResponse {
 
 			public void setProcessResult(String processResult) {
 				this.processResult = processResult;
+			}
+
+			public String getConfigId() {
+				return this.configId;
+			}
+
+			public void setConfigId(String configId) {
+				this.configId = configId;
+			}
+
+			public String getStatus() {
+				return this.status;
+			}
+
+			public void setStatus(String status) {
+				this.status = status;
+			}
+		}
+
+		public static class GreenManagerConfig {
+
+			private String enabled;
+
+			private String configId;
+
+			private String status;
+
+			public String getEnabled() {
+				return this.enabled;
+			}
+
+			public void setEnabled(String enabled) {
+				this.enabled = enabled;
+			}
+
+			public String getConfigId() {
+				return this.configId;
+			}
+
+			public void setConfigId(String configId) {
+				this.configId = configId;
+			}
+
+			public String getStatus() {
+				return this.status;
+			}
+
+			public void setStatus(String status) {
+				this.status = status;
+			}
+		}
+
+		public static class HttpsOptionConfig {
+
+			private String http2;
+
+			private String configId;
+
+			private String status;
+
+			public String getHttp2() {
+				return this.http2;
+			}
+
+			public void setHttp2(String http2) {
+				this.http2 = http2;
+			}
+
+			public String getConfigId() {
+				return this.configId;
+			}
+
+			public void setConfigId(String configId) {
+				this.configId = configId;
+			}
+
+			public String getStatus() {
+				return this.status;
+			}
+
+			public void setStatus(String status) {
+				this.status = status;
+			}
+		}
+
+		public static class AliBusinessConfig {
+
+			private String aliBusinessTable;
+
+			private String aliBusinessType;
+
+			private String configId;
+
+			private String status;
+
+			public String getAliBusinessTable() {
+				return this.aliBusinessTable;
+			}
+
+			public void setAliBusinessTable(String aliBusinessTable) {
+				this.aliBusinessTable = aliBusinessTable;
+			}
+
+			public String getAliBusinessType() {
+				return this.aliBusinessType;
+			}
+
+			public void setAliBusinessType(String aliBusinessType) {
+				this.aliBusinessType = aliBusinessType;
 			}
 
 			public String getConfigId() {

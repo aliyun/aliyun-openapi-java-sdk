@@ -93,6 +93,8 @@ public class DescribeRefreshTasksResponse extends AcsResponse {
 
 		private String description;
 
+		private String objectType;
+
 		public String getTaskId() {
 			return this.taskId;
 		}
@@ -139,6 +141,14 @@ public class DescribeRefreshTasksResponse extends AcsResponse {
 
 		public void setDescription(String description) {
 			this.description = description;
+		}
+
+		public String getObjectType() {
+			return this.objectType;
+		}
+
+		public void setObjectType(String objectType) {
+			this.objectType = objectType;
 		}
 	}
 

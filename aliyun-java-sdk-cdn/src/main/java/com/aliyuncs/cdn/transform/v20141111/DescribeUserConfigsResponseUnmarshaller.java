@@ -20,6 +20,7 @@ package com.aliyuncs.cdn.transform.v20141111;
 
 import com.aliyuncs.cdn.model.v20141111.DescribeUserConfigsResponse;
 import com.aliyuncs.cdn.model.v20141111.DescribeUserConfigsResponse.Configs;
+import com.aliyuncs.cdn.model.v20141111.DescribeUserConfigsResponse.Configs.GreenManagerConfig;
 import com.aliyuncs.cdn.model.v20141111.DescribeUserConfigsResponse.Configs.OssLogConfig;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -37,6 +38,11 @@ public class DescribeUserConfigsResponseUnmarshaller {
 		ossLogConfig.setBucket(context.stringValue("DescribeUserConfigsResponse.Configs.OssLogConfig.Bucket"));
 		ossLogConfig.setPrefix(context.stringValue("DescribeUserConfigsResponse.Configs.OssLogConfig.Prefix"));
 		configs.setOssLogConfig(ossLogConfig);
+
+		GreenManagerConfig greenManagerConfig = new GreenManagerConfig();
+		greenManagerConfig.setQuota(context.stringValue("DescribeUserConfigsResponse.Configs.GreenManagerConfig.Quota"));
+		greenManagerConfig.setRatio(context.stringValue("DescribeUserConfigsResponse.Configs.GreenManagerConfig.Ratio"));
+		configs.setGreenManagerConfig(greenManagerConfig);
 		describeUserConfigsResponse.setConfigs(configs);
 	 
 	 	return describeUserConfigsResponse;

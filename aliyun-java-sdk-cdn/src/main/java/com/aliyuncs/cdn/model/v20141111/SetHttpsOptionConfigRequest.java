@@ -24,23 +24,30 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class DescribeDomainPnoDataRequest extends RpcAcsRequest<DescribeDomainPnoDataResponse> {
+public class SetHttpsOptionConfigRequest extends RpcAcsRequest<SetHttpsOptionConfigResponse> {
 	
-	public DescribeDomainPnoDataRequest() {
-		super("Cdn", "2014-11-11", "DescribeDomainPnoData");
+	public SetHttpsOptionConfigRequest() {
+		super("Cdn", "2014-11-11", "SetHttpsOptionConfig");
 	}
+
+	private String securityToken;
 
 	private String domainName;
 
-	private String endTime;
-
-	private String startTime;
+	private String http2;
 
 	private Long ownerId;
 
-	private String version;
+	public String getSecurityToken() {
+		return this.securityToken;
+	}
 
-	private String securityToken;
+	public void setSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
 
 	public String getDomainName() {
 		return this.domainName;
@@ -53,25 +60,14 @@ public class DescribeDomainPnoDataRequest extends RpcAcsRequest<DescribeDomainPn
 		}
 	}
 
-	public String getEndTime() {
-		return this.endTime;
+	public String getHttp2() {
+		return this.http2;
 	}
 
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
-		if(endTime != null){
-			putQueryParameter("EndTime", endTime);
-		}
-	}
-
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("StartTime", startTime);
+	public void setHttp2(String http2) {
+		this.http2 = http2;
+		if(http2 != null){
+			putQueryParameter("Http2", http2);
 		}
 	}
 
@@ -86,31 +82,9 @@ public class DescribeDomainPnoDataRequest extends RpcAcsRequest<DescribeDomainPn
 		}
 	}
 
-	public String getVersion() {
-		return this.version;
-	}
-
-	public void setVersion(String version) {
-		this.version = version;
-		if(version != null){
-			putQueryParameter("Version", version);
-		}
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
 	@Override
-	public Class<DescribeDomainPnoDataResponse> getResponseClass() {
-		return DescribeDomainPnoDataResponse.class;
+	public Class<SetHttpsOptionConfigResponse> getResponseClass() {
+		return SetHttpsOptionConfigResponse.class;
 	}
 
 }
