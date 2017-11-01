@@ -23,8 +23,6 @@ public class CacheTimeHelper {
         long elapsedTime = (currentTime.getTime() - lastClearTime.getTime())/1000L;
         if (endPointCacheTime < elapsedTime)
         {
-            lastClearTime = new Date();
-            lastClearTimeMap.put(key, lastClearTime);
             return true;
         }
 

@@ -31,24 +31,9 @@ import com.aliyuncs.exceptions.ServerException;
 import com.aliyuncs.profile.DefaultProfile;
 import org.junit.runners.MethodSorters;
 
+@SuppressWarnings("deprecation")
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class ClientExceptionTest extends BaseTest {
-
-    @SuppressWarnings({ "rawtypes", "unchecked" })
-    @Test(expected = ClientException.class)
-    public void test1_InvalidProfile() throws ClientException {
-        DefaultAcsClient client = new DefaultAcsClient(null);
-        AcsRequest request = new DescribeRegionsRequest();
-
-        try {
-            client.doAction(request, null);
-        } catch (ServerException e) {
-            fail(e.toString());
-        } catch (ClientException e) {
-            assertEquals("SDK.InvalidProfile", e.getErrCode());
-            throw e;
-        }
-    }
 
     @SuppressWarnings({ "rawtypes", "unchecked" })
     @Test(expected = ClientException.class)

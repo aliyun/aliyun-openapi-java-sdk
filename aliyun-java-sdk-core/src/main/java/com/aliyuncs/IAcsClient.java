@@ -29,6 +29,7 @@ import com.aliyuncs.http.HttpResponse;
 import com.aliyuncs.profile.IClientProfile;
 import com.aliyuncs.regions.Endpoint;
 
+@SuppressWarnings("deprecation")
 public interface IAcsClient {
 
     public <T extends AcsResponse> HttpResponse doAction(AcsRequest<T> request)
@@ -57,6 +58,8 @@ public interface IAcsClient {
     public <T extends AcsResponse> T getAcsResponse(AcsRequest<T> request,
                                                     String regionId, Credential credential)
         throws ServerException, ClientException;
+    
+    public CommonResponse getCommonResponse(CommonRequest request) throws ServerException, ClientException;
 
     public <T extends AcsResponse> HttpResponse doAction(AcsRequest<T> request, boolean autoRetry,
                                                          int maxRetryCounts, IClientProfile profile)

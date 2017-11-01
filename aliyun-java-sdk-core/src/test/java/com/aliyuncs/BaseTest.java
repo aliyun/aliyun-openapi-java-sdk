@@ -25,13 +25,17 @@ import java.io.InputStream;
 import java.util.Properties;
 
 import com.aliyuncs.auth.Credential;
+import com.aliyuncs.auth.KeyPairCredentials;
+import com.aliyuncs.auth.STSGetSessionAccessKeyCredentialsProvider;
 import com.aliyuncs.exceptions.ClientException;
 
 import org.junit.Before;
 
 import com.aliyuncs.profile.DefaultProfile;
 import com.aliyuncs.profile.IClientProfile;
+import com.aliyuncs.utils.SslUtils;
 
+@SuppressWarnings("deprecation")
 public class BaseTest {
 
     protected IAcsClient        client             = null;
@@ -48,6 +52,10 @@ public class BaseTest {
     @Before
     public void init() {
         try {
+            SslUtils.ignoreSsl();
+        } catch (Exception e) {
+        }
+        try {
             DefaultProfile.addEndpoint("cn-hangzhou", "cn-hangzhou", "Ft", "ft.aliyuncs.com");
             DefaultProfile.addEndpoint("cn-hangzhou", "cn-hangzhou", "Sts", "sts.aliyuncs.com");
         } catch (ClientException e) {
@@ -62,6 +70,12 @@ public class BaseTest {
 
         System.setProperty("http.proxyHost", "127.0.0.1");
         System.setProperty("http.proxyPort", "8888");
+        
+        DefaultProfile profileV2 = DefaultProfile.getProfile("cn-hangzhou");
+        KeyPairCredentials keyPairCredentials = new KeyPairCredentials(properties.getProperty("publicKeyId"), properties.getProperty("privateKey"));
+        STSGetSessionAccessKeyCredentialsProvider provider = new STSGetSessionAccessKeyCredentialsProvider(keyPairCredentials, profileV2);
+        
+        clientV2 = new DefaultAcsClient(profileV2, provider);
 
     }
 

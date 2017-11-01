@@ -3,10 +3,7 @@ package com.aliyuncs.regions;
 import java.io.UnsupportedEncodingException;
 
 import com.aliyuncs.AcsError;
-import com.aliyuncs.IAcsClient;
-import com.aliyuncs.auth.AlibabaCloudCredentials;
 import com.aliyuncs.auth.Credential;
-import com.aliyuncs.auth.ISigner;
 import com.aliyuncs.auth.LegacyCredentials;
 import com.aliyuncs.auth.Signer;
 import com.aliyuncs.exceptions.ClientException;
@@ -20,6 +17,7 @@ import com.aliyuncs.transform.UnmarshallerContext;
 /**
  * Created by hi.yan.li on 2016/4/26.
  */
+@SuppressWarnings("deprecation")
 public class DescribeEndpointServiceImpl implements DescribeEndpointService {
     private static final String DEFAULT_ENDPOINT_TYPE = "openAPI";
 

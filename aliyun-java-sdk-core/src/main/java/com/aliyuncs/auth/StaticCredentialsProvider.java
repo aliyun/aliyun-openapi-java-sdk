@@ -23,9 +23,6 @@ package com.aliyuncs.auth;
  * Created by haowei.yao on 2017/9/12.
  */
 
-import javax.security.auth.login.CredentialNotFoundException;
-
-import com.aliyuncs.profile.DefaultProfile;
 import com.aliyuncs.profile.IClientProfile;
 
 /**
@@ -41,6 +38,7 @@ public class StaticCredentialsProvider implements AlibabaCloudCredentialsProvide
         this.credentials = credentials;
     }
 
+    @SuppressWarnings("deprecation")
     public StaticCredentialsProvider(IClientProfile clientProfile) {
         this.clientProfile = clientProfile;
         Credential legacyCredential = this.clientProfile.getCredential();

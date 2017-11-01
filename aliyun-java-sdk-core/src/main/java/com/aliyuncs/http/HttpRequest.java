@@ -150,7 +150,7 @@ public class HttpRequest {
         return Collections.unmodifiableMap(headers);
     }
 
-    public HttpURLConnection getHttpConnection() throws IOException {
+    public HttpURLConnection buildHttpConnection() throws IOException {
         Map<String, String> mappedHeaders = this.headers;
         String strUrl = url;
 

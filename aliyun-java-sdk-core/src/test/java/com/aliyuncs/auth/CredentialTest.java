@@ -26,6 +26,7 @@ import org.junit.Test;
 
 public class CredentialTest {
 
+    @SuppressWarnings("deprecation")
     @Test
     public void setExpiredDateTest() {
         Credential credential = new Credential("<accessKeyId>", "<accessSecret>");

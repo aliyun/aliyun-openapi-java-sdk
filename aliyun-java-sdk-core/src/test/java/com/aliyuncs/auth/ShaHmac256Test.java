@@ -25,6 +25,7 @@ import org.junit.Test;
 
 public class ShaHmac256Test {
 
+    @SuppressWarnings("deprecation")
     @Test
     public void signStringTest() {
         ShaHmac256 shaHmac256 = new ShaHmac256();

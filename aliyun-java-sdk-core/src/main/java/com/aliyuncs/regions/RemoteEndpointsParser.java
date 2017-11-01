@@ -6,9 +6,9 @@ import java.util.List;
 import java.util.Set;
 
 import com.aliyuncs.auth.Credential;
-import com.aliyuncs.auth.ISigner;
 import com.aliyuncs.exceptions.ClientException;
 
+@SuppressWarnings("deprecation")
 public class RemoteEndpointsParser implements IEndpointsProvider {
 
     private DescribeEndpointService describeEndpointService;

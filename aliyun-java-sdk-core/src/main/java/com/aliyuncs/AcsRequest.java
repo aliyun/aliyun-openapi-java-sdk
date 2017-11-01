@@ -21,7 +21,6 @@ package com.aliyuncs;
 import java.io.UnsupportedEncodingException;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
-import java.security.SignatureException;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
@@ -38,6 +37,7 @@ import com.aliyuncs.http.HttpRequest;
 import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.regions.ProductDomain;
 
+@SuppressWarnings("deprecation")
 public abstract class AcsRequest<T extends AcsResponse> extends HttpRequest {
 
     private String version = null;
@@ -54,17 +54,13 @@ public abstract class AcsRequest<T extends AcsResponse> extends HttpRequest {
 
     private String locationProduct;
     private String endpointType;
+    private ProductDomain productDomain = null;
 
     public AcsRequest(String product) {
         super(null);
         this.headers.put("x-sdk-client", "Java/2.0.0");
+        this.headers.put("x-sdk-invoke-type", "normal");
         this.product = product;
-    }
-
-    public AcsRequest(String product, String version) {
-        super(null);
-        this.product = product;
-        this.setVersion(version);
     }
 
     public String getLocationProduct() {
@@ -216,5 +212,13 @@ public abstract class AcsRequest<T extends AcsResponse> extends HttpRequest {
         throws UnsupportedEncodingException;
 
     public abstract Class<T> getResponseClass();
+
+    public ProductDomain getProductDomain() {
+        return productDomain;
+    }
+
+    public void setProductDomain(ProductDomain productDomain) {
+        this.productDomain = productDomain;
+    }
 
 }

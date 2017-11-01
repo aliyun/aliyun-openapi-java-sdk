@@ -45,7 +45,7 @@ public abstract class RoaAcsRequest<T extends AcsResponse> extends AcsRequest<T>
     }
 
     public RoaAcsRequest(String product, String version) {
-        super(product, version);
+        super(product);
         this.setVersion(version);
         initialize();
     }
@@ -148,7 +148,6 @@ public abstract class RoaAcsRequest<T extends AcsResponse> extends AcsRequest<T>
         Map<String, String> imutableMap = new HashMap<String, String>(this.getHeaders());
         if (null != signer && null != credentials) {
             String accessKeyId = credentials.getAccessKeyId();
-            String accessSecret = credentials.getAccessKeySecret();
             imutableMap = this.composer.refreshSignParameters(this.getHeaders(), signer, accessKeyId, format);
             if (credentials instanceof BasicSessionCredentials) {
                 String sessionToken = ((BasicSessionCredentials)credentials).getSessionToken();

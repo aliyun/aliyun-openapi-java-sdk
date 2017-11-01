@@ -21,6 +21,7 @@ package com.aliyuncs.regions;
 import com.aliyuncs.auth.Credential;
 import com.aliyuncs.exceptions.ClientException;
 
+@SuppressWarnings("deprecation")
 public interface IEndpointsProvider {
     //  Endpoint getEndpoints() throws ClientException;
 

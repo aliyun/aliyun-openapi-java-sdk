@@ -71,7 +71,7 @@ public class SHA256withRSASigner extends Signer{
 
     @Override
     public String getSignerName() {
-        return "SHA256withRSA";
+        return ALGORITHM_NAME;
     }
 
     @Override

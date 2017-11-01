@@ -20,7 +20,6 @@ package com.aliyuncs.auth;
 
 import static org.junit.Assert.*;
 
-import java.net.Authenticator.RequestorType;
 import java.security.InvalidKeyException;
 import java.util.Map;
 
@@ -31,10 +30,10 @@ import com.aliyuncs.RoaAcsRequest;
 import com.aliyuncs.ecs.v20140526.model.DescribeRegionsRequest;
 import com.aliyuncs.ecs.v20140526.model.GetRegionsRequest;
 import com.aliyuncs.http.FormatType;
-import com.aliyuncs.regions.Endpoint;
 
+@SuppressWarnings("unchecked")
 public class AuthTest {
-
+   
     @Test
     public void testRPCComposer() {
         Signer signer = new HmacSHA1Signer();
@@ -50,6 +49,7 @@ public class AuthTest {
         assertEquals(true, strToSign.endsWith("Version%3D2014-05-26"));
     }
 
+    @SuppressWarnings("rawtypes")
     @Test
     public void testRoaComposer() {
         Signer signer = new HmacSHA1Signer();
@@ -63,6 +63,7 @@ public class AuthTest {
         assertEquals(true, strToSign.endsWith("\nx-acs-signature-method:HMAC-SHA1\nx-acs-signature-version:1.0\nx-acs-version:2015-01-01\n/"));
     }
 
+    @SuppressWarnings("deprecation")
     @Test
     public void testHmac1() {
         ISigner signer = new ShaHmac1();

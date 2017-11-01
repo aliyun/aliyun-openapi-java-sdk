@@ -27,6 +27,7 @@ import com.aliyuncs.exceptions.ClientException;
 import com.aliyuncs.http.FormatType;
 import com.aliyuncs.regions.Endpoint;
 
+@SuppressWarnings("deprecation")
 public interface IClientProfile {
 
     @Deprecated

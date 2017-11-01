@@ -37,6 +37,7 @@ import org.junit.runners.MethodSorters;
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class DefaultProfileTest {
 
+    @SuppressWarnings("deprecation")
     @Test
     public void testProfileCredential() {
         IClientProfile iprofile = DefaultProfile.getProfile("cn-beijing", "testid", "testsecret");

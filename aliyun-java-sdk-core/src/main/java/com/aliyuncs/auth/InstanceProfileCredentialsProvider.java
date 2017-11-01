@@ -23,17 +23,7 @@ package com.aliyuncs.auth;
  * Created by haowei.yao on 2017/9/12.
  */
 
-import java.io.IOException;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URL;
-
-import org.json.JSONException;
-import org.json.JSONObject;
 import com.aliyuncs.exceptions.ClientException;
-import com.aliyuncs.http.HttpRequest;
-import com.aliyuncs.http.HttpResponse;
-import com.aliyuncs.http.MethodType;
 
 /**
  * This implementation of AlibabaCloudCredentialsProvider accesses Alibaba Cloud STS service to assume a Role and get

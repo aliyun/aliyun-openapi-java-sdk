@@ -23,15 +23,11 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import javax.accessibility.AccessibleKeyBinding;
-
 import org.junit.Assert;
 import org.junit.Test;
 
 import com.aliyuncs.exceptions.ClientException;
 import com.aliyuncs.profile.DefaultProfile;
-import com.aliyuncs.profile.IClientProfile;
-import com.aliyuncs.reader.JsonReader;
 
 public class EndpointTest {
 

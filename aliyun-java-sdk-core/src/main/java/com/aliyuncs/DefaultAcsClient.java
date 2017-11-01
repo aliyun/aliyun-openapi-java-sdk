@@ -21,7 +21,6 @@ package com.aliyuncs;
 import com.aliyuncs.auth.AlibabaCloudCredentials;
 import com.aliyuncs.auth.AlibabaCloudCredentialsProvider;
 import com.aliyuncs.auth.Credential;
-import com.aliyuncs.auth.ISigner;
 import com.aliyuncs.auth.LegacyCredentials;
 import com.aliyuncs.auth.Signer;
 import com.aliyuncs.auth.StaticCredentialsProvider;
@@ -45,11 +44,11 @@ import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
 import java.util.List;
 
+@SuppressWarnings("deprecation")
 public class DefaultAcsClient implements IAcsClient {
     private int maxRetryNumber = 3;
     private boolean autoRetry = true;
     private IClientProfile clientProfile = null;
-    private boolean urlTestFlag = false;
     private AlibabaCloudCredentialsProvider credentialsProvider;
 
     public DefaultAcsClient() {
@@ -146,6 +145,20 @@ public class DefaultAcsClient implements IAcsClient {
         HttpResponse baseResponse = this.doAction(request, regionId, credential);
         return parseAcsResponse(request.getResponseClass(), baseResponse);
     }
+    
+    @SuppressWarnings("unchecked")
+    @Override
+    public CommonResponse getCommonResponse(CommonRequest request) 
+            throws ServerException, ClientException{
+        HttpResponse baseResponse = this.doAction(request.buildRequest());
+        String stringContent = getResponseContent(baseResponse);
+        CommonResponse response = new CommonResponse();
+        response.setData(stringContent);
+        response.setHttpStatus(baseResponse.getStatus());
+        response.setHttpResponse(baseResponse);
+        
+        return response;
+    }
 
     @Override
     public <T extends AcsResponse> HttpResponse doAction(AcsRequest<T> request, boolean autoRetry,
@@ -219,7 +232,12 @@ public class DefaultAcsClient implements IAcsClient {
             if (null != requestFormatType) {
                 format = requestFormatType;
             }
-            ProductDomain domain = Endpoint.findProductDomain(regionId, request.getProduct(), endpoints);
+            ProductDomain domain = null;
+            if (request.getProductDomain() != null) {
+                domain = request.getProductDomain();
+            } else {
+                domain = Endpoint.findProductDomain(regionId, request.getProduct(), endpoints);
+            }
             if (null == domain) {
                 throw new ClientException("SDK.InvalidRegionId", "Can not find endpoint to access.");
             }
@@ -327,7 +345,4 @@ public class DefaultAcsClient implements IAcsClient {
         this.maxRetryNumber = maxRetryNumber;
     }
 
-    public void setUrlTestFlag(boolean flag) {
-        this.urlTestFlag = flag;
-    }
 }

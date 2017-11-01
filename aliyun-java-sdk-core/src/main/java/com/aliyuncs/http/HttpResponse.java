@@ -106,7 +106,7 @@ public class HttpResponse extends HttpRequest {
         OutputStream out = null;
         InputStream content = null;
         HttpResponse response = null;
-        HttpURLConnection httpConn = request.getHttpConnection();
+        HttpURLConnection httpConn = request.buildHttpConnection();
 
         try {
             httpConn.connect();

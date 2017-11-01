@@ -30,7 +30,6 @@ import com.aliyuncs.auth.Credential;
 import com.aliyuncs.auth.CredentialsBackupCompatibilityAdaptor;
 import com.aliyuncs.auth.ICredentialProvider;
 import com.aliyuncs.auth.ISigner;
-import com.aliyuncs.auth.ShaHmac1Singleton;
 import com.aliyuncs.exceptions.ClientException;
 import com.aliyuncs.http.FormatType;
 import com.aliyuncs.regions.CustomizedEndpointsParser;
@@ -42,6 +41,7 @@ import com.aliyuncs.regions.ProductDomain;
 import com.aliyuncs.regions.RemoteEndpointsParser;
 import com.aliyuncs.utils.CacheTimeHelper;
 
+@SuppressWarnings("deprecation")
 public class DefaultProfile implements IClientProfile {
 
     private static DefaultProfile profile = null;
@@ -154,6 +154,10 @@ public class DefaultProfile implements IClientProfile {
     @Override
     public synchronized List<Endpoint> getEndpoints(String product, String regionId, String serviceCode,
                                                     String endpointType) throws ClientException {
+        if (product == null) {
+            return endpoints;
+        }
+        
         if (null == endpoints) {
             Endpoint endpoint = null;
             if (serviceCode != null) {
@@ -166,6 +170,7 @@ public class DefaultProfile implements IClientProfile {
             if (endpoint != null) {
                 endpoints = new ArrayList<Endpoint>();
                 endpoints.add(endpoint);
+                CacheTimeHelper.addLastClearTimePerProduct(product, regionId, new Date());
             }
         } else if (Endpoint.findProductDomain(regionId, product, endpoints) == null || CacheTimeHelper.CheckEndPointCacheIsExpire(product, regionId)) {
             Endpoint endpoint = null;
@@ -180,6 +185,7 @@ public class DefaultProfile implements IClientProfile {
                 for (String region : endpoint.getRegionIds()) {
                     for (ProductDomain productDomain : endpoint.getProductDomains()) {
                         addEndpoint(endpoint.getName(), region, product, productDomain.getDomianName(), false);
+                        CacheTimeHelper.addLastClearTimePerProduct(product, region, new Date());
                     }
                 }
             }

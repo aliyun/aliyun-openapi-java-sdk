@@ -8,6 +8,7 @@ import java.util.Set;
 import com.aliyuncs.auth.Credential;
 import com.aliyuncs.exceptions.ClientException;
 
+@SuppressWarnings("deprecation")
 public class MockRemoteEndpointsParser implements IEndpointsProvider {
 
     @Override

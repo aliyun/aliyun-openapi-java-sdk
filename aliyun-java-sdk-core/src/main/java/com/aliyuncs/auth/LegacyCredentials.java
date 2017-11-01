@@ -25,6 +25,7 @@ package com.aliyuncs.auth;
 /**
  * Simple credentials with AccessKeyID and AccessKeySecret
  */
+@SuppressWarnings("deprecation")
 public class LegacyCredentials implements AlibabaCloudCredentials {
 
     private final Credential legacyCredential;

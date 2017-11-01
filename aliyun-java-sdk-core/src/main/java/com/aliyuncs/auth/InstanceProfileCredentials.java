@@ -23,13 +23,10 @@ package com.aliyuncs.auth;
  * Created by haowei.yao on 2017/9/13.
  */
 
-import java.sql.Timestamp;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.TimeZone;
-
-import com.aliyuncs.exceptions.ClientException;
 
 /**
  * Simple session credentials with AccessKeyID, AccessKeySecret and session token.
@@ -37,7 +34,6 @@ import com.aliyuncs.exceptions.ClientException;
 public class InstanceProfileCredentials extends BasicSessionCredentials {
 
     private final long expiration;
-    private long sessionStartedTimeInMilliSeconds = 0;
     private final double expireFact = 0.9;
     private final long refreshIntervalInMillSeconds = 10000; // 10 sec
     private long lastFailedRefreshTime = 0;

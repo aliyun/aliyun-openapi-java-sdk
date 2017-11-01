@@ -30,7 +30,6 @@ import com.aliyuncs.oss.OssTest;
 import com.aliyuncs.profile.DefaultProfileTest;
 import com.aliyuncs.reader.JsonReaderTest;
 import com.aliyuncs.reader.XmlReaderTest;
-import com.aliyuncs.regions.EndpointTest;
 import com.aliyuncs.regions.RegionsTest;
 import com.aliyuncs.transform.UnmarshallerContextTest;
 import com.aliyuncs.utils.ParameterHelperTest;
@@ -39,8 +38,8 @@ import com.aliyuncs.utils.UtilsTest;
 @RunWith(Suite.class)
 @SuiteClasses({HttpTest.class, UtilsTest.class, RegionsTest.class, DefaultProfileTest.class,
     AuthTest.class, ClientExceptionTest.class, DefaultAcsClientTest.class, OssTest.class,
-    UnmarshallerContextTest.class, JsonReaderTest.class, XmlReaderTest.class,
-    ShaHmac256Test.class, CredentialTest.class, ParameterHelperTest.class, EndpointTest.class})
+    UnmarshallerContextTest.class, JsonReaderTest.class, XmlReaderTest.class, CommonTests.class,
+    ShaHmac256Test.class, CredentialTest.class, ParameterHelperTest.class})
 public class AllTests {
 
 }

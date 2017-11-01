@@ -79,7 +79,6 @@ public abstract class OssAcsRequest<T extends AcsResponse>
         Map<String, String> imutableMap = new HashMap<String, String>(this.getHeaders());
         if (null != signer && null != credentials) {
             String accessKeyId = credentials.getAccessKeyId();
-            String accessSecret = credentials.getAccessKeySecret();
             imutableMap = this.composer.refreshSignParameters
                 (this.getHeaders(), signer, accessKeyId, format);
             String uri = this.uriPattern;

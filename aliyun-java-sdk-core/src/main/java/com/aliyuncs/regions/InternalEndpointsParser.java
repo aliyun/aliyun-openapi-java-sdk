@@ -34,10 +34,10 @@ import org.w3c.dom.NodeList;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
-import com.aliyuncs.auth.ISigner;
 import com.aliyuncs.exceptions.ClientException;
 import com.aliyuncs.utils.XmlUtils;
 
+@SuppressWarnings("deprecation")
 public class InternalEndpointsParser implements IEndpointsProvider {
 
     private final static String BUNDLED_ENDPOINTS_RESOURCE_PATH = "/com/aliyuncs/endpoints/endpoints.xml";

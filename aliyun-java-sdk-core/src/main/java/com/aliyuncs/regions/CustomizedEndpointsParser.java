@@ -9,6 +9,7 @@ import java.util.Set;
 import com.aliyuncs.auth.Credential;
 import com.aliyuncs.exceptions.ClientException;
 
+@SuppressWarnings("deprecation")
 public class CustomizedEndpointsParser implements IEndpointsProvider {
     private Endpoint endpoint;
 

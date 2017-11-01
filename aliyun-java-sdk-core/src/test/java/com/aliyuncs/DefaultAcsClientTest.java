@@ -26,17 +26,13 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.profile.DefaultProfile;
-import com.aliyuncs.profile.IClientProfile;
 
 import org.junit.Assert;
 import org.junit.Test;
 
 import com.aliyuncs.ecs.v20140526.model.DescribeRegionsRequest;
-import com.aliyuncs.ecs.v20140526.model.DescribeRegionsResponse;
-import com.aliyuncs.ecs.v20140526.model.DescribeRegionsResponse.Region;
 import com.aliyuncs.exceptions.ClientException;
 import com.aliyuncs.exceptions.ServerException;
-import com.aliyuncs.ft.model.RpcDubboApiRequest;
 import com.aliyuncs.ft.model.TestRoaApiRequest;
 import com.aliyuncs.ft.model.TestRpcApiRequest;
 import com.aliyuncs.ft.model.TestRpcApiResponse;
@@ -44,32 +40,6 @@ import com.aliyuncs.http.FormatType;
 import com.aliyuncs.http.HttpResponse;
 
 public class DefaultAcsClientTest extends BaseTest {
-
-    @Test
-    public void getAcsResponse_RPC_JSON_Test() throws ServerException, ClientException {
-        DescribeRegionsRequest describeRegionsRequest = new DescribeRegionsRequest();
-        describeRegionsRequest.setAcceptFormat(FormatType.JSON);
-        DescribeRegionsResponse describeRegionsResponse = client.getAcsResponse(describeRegionsRequest);
-        Assert.assertNotNull(describeRegionsResponse.getRequestId());
-        Assert.assertNotNull(describeRegionsResponse.getRegions());
-        for (Region region : describeRegionsResponse.getRegions()) {
-            Assert.assertNotNull(region.getRegionId());
-            Assert.assertNotNull(region.getLocalName());
-        }
-    }
-
-    @Test
-    public void getAcsResponse_RPC_XML_Test() throws ServerException, ClientException {
-        DescribeRegionsRequest describeRegionsRequest = new DescribeRegionsRequest();
-        describeRegionsRequest.setAcceptFormat(FormatType.XML);
-        DescribeRegionsResponse describeRegionsResponse = client.getAcsResponse(describeRegionsRequest);
-        Assert.assertNotNull(describeRegionsResponse.getRequestId());
-        Assert.assertNotNull(describeRegionsResponse.getRegions());
-        for (Region region : describeRegionsResponse.getRegions()) {
-            Assert.assertNotNull(region.getRegionId());
-            Assert.assertNotNull(region.getLocalName());
-        }
-    }
 
     @Test
     public void getAcsResponse_ROA_Test() throws ServerException, ClientException, NoSuchAlgorithmException {
@@ -86,6 +56,7 @@ public class DefaultAcsClientTest extends BaseTest {
         Assert.assertEquals("HEAD_PARAM_CONTENT", responseJson.getJSONObject("Headers").getString("HeaderParam"));
         Assert.assertEquals("QUERY_PARAM_CONTENT", responseJson.getJSONObject("Params").getString("QueryParam"));
         Assert.assertEquals("BODY_PARAM_CONTENT", responseJson.getJSONObject("Params").getString("BodyParam"));
+        Assert.assertEquals("normal", responseJson.getJSONObject("Headers").getString("x-sdk-invoke-type")); 
     }
     
     @Test
@@ -100,6 +71,7 @@ public class DefaultAcsClientTest extends BaseTest {
         String responseContent = new String(response.getHttpContent());
         JSONObject responseJson = JSON.parseObject(responseContent);
         Assert.assertEquals("QUERY_PARAM_CONTENT", responseJson.getJSONObject("Params").getString("QueryParam"));
+        Assert.assertEquals("normal", responseJson.getJSONObject("Headers").getString("x-sdk-invoke-type")); 
     }
 
     @Test
@@ -182,37 +154,6 @@ public class DefaultAcsClientTest extends BaseTest {
     }
     
     @Test
-    public void rpcDubboApiTest() {
-        IClientProfile profile = DefaultProfile.getProfile("cn-hangzhou", properties.getProperty("publicKeyId"),
-                properties.getProperty("privateKey"));
-        clientV2 = new DefaultAcsClient(profile);
-        
-        RpcDubboApiRequest rpcDubboApiRequest = new RpcDubboApiRequest();
-        try {
-            HttpResponse httpResponse = clientV2.doAction(rpcDubboApiRequest);
-            Method method = DefaultAcsClient.class.getDeclaredMethod("getResponseContent", HttpResponse.class);
-            method.setAccessible(true);
-            String stringContent = (String) method.invoke(client, httpResponse);
-            Assert.assertEquals(200, httpResponse.getStatus());
-            Assert.assertNotNull(stringContent);
-        } catch (ServerException e) {
-            Assert.fail(e.toString());
-        } catch (ClientException e) {
-            Assert.fail(e.toString());
-        } catch (SecurityException e) {
-            Assert.fail(e.toString());
-        } catch (NoSuchMethodException e) {
-            Assert.fail(e.toString());
-        } catch (IllegalArgumentException e) {
-            Assert.fail(e.toString());
-        } catch (IllegalAccessException e) {
-            Assert.fail(e.toString());
-        } catch (InvocationTargetException e) {
-            Assert.fail(e.toString());
-        }      
-    }
-    
-    @Test
     public void getAcsResponse_RPC_V2_Test()
         throws ServerException, ClientException, NoSuchAlgorithmException, InterruptedException {
 
@@ -230,29 +171,6 @@ public class DefaultAcsClientTest extends BaseTest {
     }
     
     @Test
-    public void getAcsResponse_RPC_V2_Location_Test()
-        throws ServerException, ClientException, NoSuchAlgorithmException, InterruptedException {
-
-        TestRpcApiRequest request = new TestRpcApiRequest();
-        request.setLocationProduct("ft");
-        request.setBodyParam("BODY_PARAM_CONTENT");
-        request.setQueryParam("QUERY_PARAM_CONTENT");
-        request.setAcceptFormat(FormatType.JSON);
-        request.setMethod(MethodType.POST);
-        request.setRegionId("cn-shanghai");
-
-        try {
-            TestRpcApiResponse response = clientV2.getAcsResponse(request);
-            Assert.assertNotNull(response);
-            Assert.assertNotNull(response.getParams());
-            Assert.assertEquals("QUERY_PARAM_CONTENT", response.getParams().getQueryParam());
-            Assert.assertEquals("BODY_PARAM_CONTENT", response.getParams().getBodyParam());
-        } catch (ClientException e) {
-            Assert.assertEquals("SDK.InvalidRegionId", e.getErrCode());
-        }        
-    }
-    
-    @Test
     public void getAcsResponse_ROA_V2_Test() throws ServerException, ClientException, NoSuchAlgorithmException {
         DefaultProfile.addEndpoint("cn-hangzhou", "cn-hangzhou", "Ft", "ft.aliyuncs.com");
         TestRoaApiRequest request = new TestRoaApiRequest();
@@ -267,77 +185,6 @@ public class DefaultAcsClientTest extends BaseTest {
         Assert.assertEquals("HEAD_PARAM_CONTENT", responseJson.getJSONObject("Headers").getString("HeaderParam"));
         Assert.assertEquals("QUERY_PARAM_CONTENT", responseJson.getJSONObject("Params").getString("QueryParam"));
         Assert.assertEquals("BODY_PARAM_CONTENT", responseJson.getJSONObject("Params").getString("BodyParam"));
+        Assert.assertEquals("normal", responseJson.getJSONObject("Headers").getString("x-sdk-invoke-type")); 
     }
-    
-    @Test
-    public void getAcsResponse_RPC_V2_Bad_Sign_Test()
-        throws ServerException, ClientException, NoSuchAlgorithmException, InterruptedException {
-
-        TestRpcApiRequest request = new TestRpcApiRequest();
-        request.setActionName("Test RpcApi");
-        request.setBodyParam("BODY_PARAM_CONTENT");
-        request.setQueryParam("QUERY_PARAM_CONTENT");
-        request.setAcceptFormat(FormatType.JSON);
-        request.setMethod(MethodType.POST);
-      
-        try {
-            TestRpcApiResponse response = clientV2.getAcsResponse(request);
-            Assert.assertNotNull(response);
-            Assert.assertNotNull(response.getParams());
-            Assert.assertEquals("QUERY_PARAM_CONTENT", response.getParams().getQueryParam());
-            Assert.assertEquals("BODY_PARAM_CONTENT", response.getParams().getBodyParam());
-        } catch (ClientException e) {
-            Assert.assertEquals("InvalidAction.NotFound", e.getErrCode());
-        }
-        
-        request.setActionName("Test测试RpcApi");
-      
-        try {
-            TestRpcApiResponse response = clientV2.getAcsResponse(request);
-            Assert.assertNotNull(response);
-            Assert.assertNotNull(response.getParams());
-            Assert.assertEquals("QUERY_PARAM_CONTENT", response.getParams().getQueryParam());
-            Assert.assertEquals("BODY_PARAM_CONTENT", response.getParams().getBodyParam());
-        } catch (ClientException e) {
-            Assert.assertEquals("InvalidAction.NotFound", e.getErrCode());
-        }
-    }
-    
-
-    @Test
-    public void getAcsResponse_RPC_JSON_V2_Test() throws ServerException, ClientException {
-        DescribeRegionsRequest describeRegionsRequest = new DescribeRegionsRequest();
-        describeRegionsRequest.setAcceptFormat(FormatType.JSON);
-        DescribeRegionsResponse describeRegionsResponse = clientV2.getAcsResponse(describeRegionsRequest);
-        Assert.assertNotNull(describeRegionsResponse.getRequestId());
-        Assert.assertNotNull(describeRegionsResponse.getRegions());
-        for (Region region : describeRegionsResponse.getRegions()) {
-            Assert.assertNotNull(region.getRegionId());
-            Assert.assertNotNull(region.getLocalName());
-        }
-    }
-    
-    private int appearNumber(String srcText, String findText) {
-        int count = 0;
-        int index = 0;
-        while ((index = srcText.indexOf(findText, index)) != -1) {
-            index = index + findText.length();
-            count++;
-        }
-        return count;
-    }
-
-    //	@Test
-    //	public void doAction_ExceptionTest () throws ServerException {
-    //		IClientProfile profile = DefaultProfile.getProfile("cn-hangzhou","testAccesskey", "testAccessSecret");
-    //		client = new DefaultAcsClient(profile);
-    //
-    //		DescribeRegionsRequest describeRegionsRequest = new DescribeRegionsRequest();
-    //		try {
-    //			DescribeRegionsResponse describeRegionsResponse = client.getAcsResponse(describeRegionsRequest);
-    //		} catch (ClientException e) {
-    //			Assert.assertEquals("SDK.InvalidAccessSecret", e.getErrCode());
-    //		}
-    //	}
-
 }
