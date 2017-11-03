@@ -1,3 +1,13 @@
+2017-11-03 Version: 2.6.0
+1, 获取视频播放地址接口GetPlayInfo，增加二次鉴权参数，返回结构体PlayInfo中增加JobId。
+2, 获取视频播放凭证接口GetVideoPlayAuth，增加二次鉴权参数，支持用户自定义AuthInfo过期时间。
+3, 新增删除流信息接口DeleteStream，根据JobId删除某一路媒体流文件及信息。
+4, 新增提交截图作业接口SubmitSnapshotJob。
+5, 新增云剪辑工程及视频合成相关接口，创建云剪辑工程AddEditingProject、修改云剪辑工程UpdateEditingProject、合成成品视频ProduceEditingProjectVideo、设置云剪辑工程素材  SetEditingProjectMaterials、获取云剪辑工程素材GetEditingProjectMaterials、获取单个云剪辑工程GetEditingProject、搜索云剪辑工程SearchEditingProject、删除云剪辑工程DeleteEditingProject。
+6, 新增点播cdn资源监控及日志下载相关接口，日志信息－下载域名日志​DescribeCdnDomainLogs、资源监控－查询网络带宽DescribeDomainBpsData、资源监控－查询流量数据DescribeDomainFlowData。
+7, 新增视频暴恐涉政鉴别(AI)相关接口，提交视频暴恐涉政鉴别作业SubmitAIVideoTerrorismRecogJob、查询视频暴恐涉政鉴别作业ListAIVideoTerrorismRecogJob。
+8, 新增视频内容审核(AI)相关接口，提交视频内容审核作业SubmitAIVideoCensorJob、查询视频内容审核作业ListAIVideoCensorJob​​。
+
 2017-10-15 Version: 2.5.0
 1, 新增语音识别文本相关接口，包括提交语音识别作业SubmitAIASRJob、查询语音识别作业ListAIASRJob
 2, 新增视频摘要相关接口，包括提交视频摘要作业SubmitAIVideoSummaryJob、查询视频摘要作业ListAIVideoSummaryJob

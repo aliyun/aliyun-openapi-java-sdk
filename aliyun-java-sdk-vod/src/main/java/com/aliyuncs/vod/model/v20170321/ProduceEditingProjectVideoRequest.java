@@ -24,21 +24,38 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class GetVideoConfigRequest extends RpcAcsRequest<GetVideoConfigResponse> {
+public class ProduceEditingProjectVideoRequest extends RpcAcsRequest<ProduceEditingProjectVideoResponse> {
 	
-	public GetVideoConfigRequest() {
-		super("vod", "2017-03-21", "GetVideoConfig", "vod");
+	public ProduceEditingProjectVideoRequest() {
+		super("vod", "2017-03-21", "ProduceEditingProjectVideo", "vod");
 	}
+
+	private String coverURL;
 
 	private Long resourceOwnerId;
 
 	private String resourceOwnerAccount;
 
-	private String videoId;
+	private String timeline;
+
+	private String description;
 
 	private Long ownerId;
 
-	private String authInfo;
+	private String title;
+
+	private String projectId;
+
+	public String getCoverURL() {
+		return this.coverURL;
+	}
+
+	public void setCoverURL(String coverURL) {
+		this.coverURL = coverURL;
+		if(coverURL != null){
+			putQueryParameter("CoverURL", coverURL);
+		}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -62,14 +79,25 @@ public class GetVideoConfigRequest extends RpcAcsRequest<GetVideoConfigResponse>
 		}
 	}
 
-	public String getVideoId() {
-		return this.videoId;
+	public String getTimeline() {
+		return this.timeline;
 	}
 
-	public void setVideoId(String videoId) {
-		this.videoId = videoId;
-		if(videoId != null){
-			putQueryParameter("VideoId", videoId);
+	public void setTimeline(String timeline) {
+		this.timeline = timeline;
+		if(timeline != null){
+			putQueryParameter("Timeline", timeline);
+		}
+	}
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+		if(description != null){
+			putQueryParameter("Description", description);
 		}
 	}
 
@@ -84,20 +112,31 @@ public class GetVideoConfigRequest extends RpcAcsRequest<GetVideoConfigResponse>
 		}
 	}
 
-	public String getAuthInfo() {
-		return this.authInfo;
+	public String getTitle() {
+		return this.title;
 	}
 
-	public void setAuthInfo(String authInfo) {
-		this.authInfo = authInfo;
-		if(authInfo != null){
-			putQueryParameter("AuthInfo", authInfo);
+	public void setTitle(String title) {
+		this.title = title;
+		if(title != null){
+			putQueryParameter("Title", title);
+		}
+	}
+
+	public String getProjectId() {
+		return this.projectId;
+	}
+
+	public void setProjectId(String projectId) {
+		this.projectId = projectId;
+		if(projectId != null){
+			putQueryParameter("ProjectId", projectId);
 		}
 	}
 
 	@Override
-	public Class<GetVideoConfigResponse> getResponseClass() {
-		return GetVideoConfigResponse.class;
+	public Class<ProduceEditingProjectVideoResponse> getResponseClass() {
+		return ProduceEditingProjectVideoResponse.class;
 	}
 
 }

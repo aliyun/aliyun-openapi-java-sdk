@@ -89,6 +89,8 @@ public class GetPlayInfoResponse extends AcsResponse {
 
 		private String rand;
 
+		private String jobId;
+
 		public Long getWidth() {
 			return this.width;
 		}
@@ -199,6 +201,14 @@ public class GetPlayInfoResponse extends AcsResponse {
 
 		public void setRand(String rand) {
 			this.rand = rand;
+		}
+
+		public String getJobId() {
+			return this.jobId;
+		}
+
+		public void setJobId(String jobId) {
+			this.jobId = jobId;
 		}
 	}
 

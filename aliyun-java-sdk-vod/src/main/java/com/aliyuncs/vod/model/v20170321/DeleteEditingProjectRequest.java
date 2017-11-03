@@ -24,30 +24,30 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class GetVideoConfigRequest extends RpcAcsRequest<GetVideoConfigResponse> {
+public class DeleteEditingProjectRequest extends RpcAcsRequest<DeleteEditingProjectResponse> {
 	
-	public GetVideoConfigRequest() {
-		super("vod", "2017-03-21", "GetVideoConfig", "vod");
+	public DeleteEditingProjectRequest() {
+		super("vod", "2017-03-21", "DeleteEditingProject", "vod");
 	}
 
-	private Long resourceOwnerId;
+	private String resourceOwnerId;
 
 	private String resourceOwnerAccount;
 
-	private String videoId;
+	private String ownerAccount;
 
-	private Long ownerId;
+	private String projectIds;
 
-	private String authInfo;
+	private String ownerId;
 
-	public Long getResourceOwnerId() {
+	public String getResourceOwnerId() {
 		return this.resourceOwnerId;
 	}
 
-	public void setResourceOwnerId(Long resourceOwnerId) {
+	public void setResourceOwnerId(String resourceOwnerId) {
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+			putQueryParameter("ResourceOwnerId", resourceOwnerId);
 		}
 	}
 
@@ -62,42 +62,42 @@ public class GetVideoConfigRequest extends RpcAcsRequest<GetVideoConfigResponse>
 		}
 	}
 
-	public String getVideoId() {
-		return this.videoId;
+	public String getOwnerAccount() {
+		return this.ownerAccount;
 	}
 
-	public void setVideoId(String videoId) {
-		this.videoId = videoId;
-		if(videoId != null){
-			putQueryParameter("VideoId", videoId);
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
 		}
 	}
 
-	public Long getOwnerId() {
+	public String getProjectIds() {
+		return this.projectIds;
+	}
+
+	public void setProjectIds(String projectIds) {
+		this.projectIds = projectIds;
+		if(projectIds != null){
+			putQueryParameter("ProjectIds", projectIds);
+		}
+	}
+
+	public String getOwnerId() {
 		return this.ownerId;
 	}
 
-	public void setOwnerId(Long ownerId) {
+	public void setOwnerId(String ownerId) {
 		this.ownerId = ownerId;
 		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getAuthInfo() {
-		return this.authInfo;
-	}
-
-	public void setAuthInfo(String authInfo) {
-		this.authInfo = authInfo;
-		if(authInfo != null){
-			putQueryParameter("AuthInfo", authInfo);
+			putQueryParameter("OwnerId", ownerId);
 		}
 	}
 
 	@Override
-	public Class<GetVideoConfigResponse> getResponseClass() {
-		return GetVideoConfigResponse.class;
+	public Class<DeleteEditingProjectResponse> getResponseClass() {
+		return DeleteEditingProjectResponse.class;
 	}
 
 }

@@ -24,35 +24,31 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class GetPlayInfoRequest extends RpcAcsRequest<GetPlayInfoResponse> {
+public class SubmitSnapshotJobRequest extends RpcAcsRequest<SubmitSnapshotJobResponse> {
 	
-	public GetPlayInfoRequest() {
-		super("vod", "2017-03-21", "GetPlayInfo", "vod");
+	public SubmitSnapshotJobRequest() {
+		super("vod", "2017-03-21", "SubmitSnapshotJob", "vod");
 	}
 
 	private Long resourceOwnerId;
 
-	private String streamType;
-
-	private String formats;
+	private Long specifiedOffsetTime;
 
 	private String resourceOwnerAccount;
 
-	private String channel;
+	private String width;
+
+	private Long count;
 
 	private String videoId;
 
-	private String playerVersion;
+	private Long interval;
 
 	private Long ownerId;
 
-	private String rand;
+	private String spriteSnapshotConfig;
 
-	private String reAuthInfo;
-
-	private Long authTimeout;
-
-	private String authInfo;
+	private String height;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -65,25 +61,14 @@ public class GetPlayInfoRequest extends RpcAcsRequest<GetPlayInfoResponse> {
 		}
 	}
 
-	public String getStreamType() {
-		return this.streamType;
+	public Long getSpecifiedOffsetTime() {
+		return this.specifiedOffsetTime;
 	}
 
-	public void setStreamType(String streamType) {
-		this.streamType = streamType;
-		if(streamType != null){
-			putQueryParameter("StreamType", streamType);
-		}
-	}
-
-	public String getFormats() {
-		return this.formats;
-	}
-
-	public void setFormats(String formats) {
-		this.formats = formats;
-		if(formats != null){
-			putQueryParameter("Formats", formats);
+	public void setSpecifiedOffsetTime(Long specifiedOffsetTime) {
+		this.specifiedOffsetTime = specifiedOffsetTime;
+		if(specifiedOffsetTime != null){
+			putQueryParameter("SpecifiedOffsetTime", specifiedOffsetTime.toString());
 		}
 	}
 
@@ -98,14 +83,25 @@ public class GetPlayInfoRequest extends RpcAcsRequest<GetPlayInfoResponse> {
 		}
 	}
 
-	public String getChannel() {
-		return this.channel;
+	public String getWidth() {
+		return this.width;
 	}
 
-	public void setChannel(String channel) {
-		this.channel = channel;
-		if(channel != null){
-			putQueryParameter("Channel", channel);
+	public void setWidth(String width) {
+		this.width = width;
+		if(width != null){
+			putQueryParameter("Width", width);
+		}
+	}
+
+	public Long getCount() {
+		return this.count;
+	}
+
+	public void setCount(Long count) {
+		this.count = count;
+		if(count != null){
+			putQueryParameter("Count", count.toString());
 		}
 	}
 
@@ -120,14 +116,14 @@ public class GetPlayInfoRequest extends RpcAcsRequest<GetPlayInfoResponse> {
 		}
 	}
 
-	public String getPlayerVersion() {
-		return this.playerVersion;
+	public Long getInterval() {
+		return this.interval;
 	}
 
-	public void setPlayerVersion(String playerVersion) {
-		this.playerVersion = playerVersion;
-		if(playerVersion != null){
-			putQueryParameter("PlayerVersion", playerVersion);
+	public void setInterval(Long interval) {
+		this.interval = interval;
+		if(interval != null){
+			putQueryParameter("Interval", interval.toString());
 		}
 	}
 
@@ -142,53 +138,31 @@ public class GetPlayInfoRequest extends RpcAcsRequest<GetPlayInfoResponse> {
 		}
 	}
 
-	public String getRand() {
-		return this.rand;
+	public String getSpriteSnapshotConfig() {
+		return this.spriteSnapshotConfig;
 	}
 
-	public void setRand(String rand) {
-		this.rand = rand;
-		if(rand != null){
-			putQueryParameter("Rand", rand);
+	public void setSpriteSnapshotConfig(String spriteSnapshotConfig) {
+		this.spriteSnapshotConfig = spriteSnapshotConfig;
+		if(spriteSnapshotConfig != null){
+			putQueryParameter("SpriteSnapshotConfig", spriteSnapshotConfig);
 		}
 	}
 
-	public String getReAuthInfo() {
-		return this.reAuthInfo;
+	public String getHeight() {
+		return this.height;
 	}
 
-	public void setReAuthInfo(String reAuthInfo) {
-		this.reAuthInfo = reAuthInfo;
-		if(reAuthInfo != null){
-			putQueryParameter("ReAuthInfo", reAuthInfo);
-		}
-	}
-
-	public Long getAuthTimeout() {
-		return this.authTimeout;
-	}
-
-	public void setAuthTimeout(Long authTimeout) {
-		this.authTimeout = authTimeout;
-		if(authTimeout != null){
-			putQueryParameter("AuthTimeout", authTimeout.toString());
-		}
-	}
-
-	public String getAuthInfo() {
-		return this.authInfo;
-	}
-
-	public void setAuthInfo(String authInfo) {
-		this.authInfo = authInfo;
-		if(authInfo != null){
-			putQueryParameter("AuthInfo", authInfo);
+	public void setHeight(String height) {
+		this.height = height;
+		if(height != null){
+			putQueryParameter("Height", height);
 		}
 	}
 
 	@Override
-	public Class<GetPlayInfoResponse> getResponseClass() {
-		return GetPlayInfoResponse.class;
+	public Class<SubmitSnapshotJobResponse> getResponseClass() {
+		return SubmitSnapshotJobResponse.class;
 	}
 
 }

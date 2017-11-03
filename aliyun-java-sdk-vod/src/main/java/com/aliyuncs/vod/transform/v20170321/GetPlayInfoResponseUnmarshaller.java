@@ -60,6 +60,7 @@ public class GetPlayInfoResponseUnmarshaller {
 			playInfo.setComplexity(context.stringValue("GetPlayInfoResponse.PlayInfoList["+ i +"].Complexity"));
 			playInfo.setStreamType(context.stringValue("GetPlayInfoResponse.PlayInfoList["+ i +"].StreamType"));
 			playInfo.setRand(context.stringValue("GetPlayInfoResponse.PlayInfoList["+ i +"].Rand"));
+			playInfo.setJobId(context.stringValue("GetPlayInfoResponse.PlayInfoList["+ i +"].JobId"));
 
 			playInfoList.add(playInfo);
 		}

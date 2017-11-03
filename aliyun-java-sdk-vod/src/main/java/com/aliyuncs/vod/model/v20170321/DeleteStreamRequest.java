@@ -24,21 +24,21 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class GetVideoConfigRequest extends RpcAcsRequest<GetVideoConfigResponse> {
+public class DeleteStreamRequest extends RpcAcsRequest<DeleteStreamResponse> {
 	
-	public GetVideoConfigRequest() {
-		super("vod", "2017-03-21", "GetVideoConfig", "vod");
+	public DeleteStreamRequest() {
+		super("vod", "2017-03-21", "DeleteStream", "vod");
 	}
 
 	private Long resourceOwnerId;
 
 	private String resourceOwnerAccount;
 
+	private String jobIds;
+
 	private String videoId;
 
 	private Long ownerId;
-
-	private String authInfo;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -59,6 +59,17 @@ public class GetVideoConfigRequest extends RpcAcsRequest<GetVideoConfigResponse>
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getJobIds() {
+		return this.jobIds;
+	}
+
+	public void setJobIds(String jobIds) {
+		this.jobIds = jobIds;
+		if(jobIds != null){
+			putQueryParameter("JobIds", jobIds);
 		}
 	}
 
@@ -84,20 +95,9 @@ public class GetVideoConfigRequest extends RpcAcsRequest<GetVideoConfigResponse>
 		}
 	}
 
-	public String getAuthInfo() {
-		return this.authInfo;
-	}
-
-	public void setAuthInfo(String authInfo) {
-		this.authInfo = authInfo;
-		if(authInfo != null){
-			putQueryParameter("AuthInfo", authInfo);
-		}
-	}
-
 	@Override
-	public Class<GetVideoConfigResponse> getResponseClass() {
-		return GetVideoConfigResponse.class;
+	public Class<DeleteStreamResponse> getResponseClass() {
+		return DeleteStreamResponse.class;
 	}
 
 }
