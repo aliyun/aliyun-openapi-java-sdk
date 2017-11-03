@@ -32,6 +32,7 @@ public class DescribeSpotPriceHistoryResponseUnmarshaller {
 		
 		describeSpotPriceHistoryResponse.setRequestId(context.stringValue("DescribeSpotPriceHistoryResponse.RequestId"));
 		describeSpotPriceHistoryResponse.setNextOffset(context.integerValue("DescribeSpotPriceHistoryResponse.NextOffset"));
+		describeSpotPriceHistoryResponse.setCurrency(context.stringValue("DescribeSpotPriceHistoryResponse.Currency"));
 
 		List<SpotPriceType> spotPrices = new ArrayList<SpotPriceType>();
 		for (int i = 0; i < context.lengthValue("DescribeSpotPriceHistoryResponse.SpotPrices.Length"); i++) {

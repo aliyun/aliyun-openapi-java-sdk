@@ -33,6 +33,8 @@ public class DescribeSpotPriceHistoryResponse extends AcsResponse {
 
 	private Integer nextOffset;
 
+	private String currency;
+
 	private List<SpotPriceType> spotPrices;
 
 	public String getRequestId() {
@@ -49,6 +51,14 @@ public class DescribeSpotPriceHistoryResponse extends AcsResponse {
 
 	public void setNextOffset(Integer nextOffset) {
 		this.nextOffset = nextOffset;
+	}
+
+	public String getCurrency() {
+		return this.currency;
+	}
+
+	public void setCurrency(String currency) {
+		this.currency = currency;
 	}
 
 	public List<SpotPriceType> getSpotPrices() {

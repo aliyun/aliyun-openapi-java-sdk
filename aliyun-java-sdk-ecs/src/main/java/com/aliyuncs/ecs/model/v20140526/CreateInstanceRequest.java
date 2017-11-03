@@ -71,6 +71,8 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 
 	private String spotStrategy;
 
+	private String periodUnit;
+
 	private String instanceName;
 
 	private Boolean autoRenew;
@@ -352,6 +354,17 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 		this.spotStrategy = spotStrategy;
 		if(spotStrategy != null){
 			putQueryParameter("SpotStrategy", spotStrategy);
+		}
+	}
+
+	public String getPeriodUnit() {
+		return this.periodUnit;
+	}
+
+	public void setPeriodUnit(String periodUnit) {
+		this.periodUnit = periodUnit;
+		if(periodUnit != null){
+			putQueryParameter("PeriodUnit", periodUnit);
 		}
 	}
 

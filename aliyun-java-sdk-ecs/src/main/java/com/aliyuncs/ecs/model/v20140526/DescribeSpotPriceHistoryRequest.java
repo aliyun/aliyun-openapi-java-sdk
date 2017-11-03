@@ -48,6 +48,8 @@ public class DescribeSpotPriceHistoryRequest extends RpcAcsRequest<DescribeSpotP
 
 	private String endTime;
 
+	private String oSType;
+
 	private Long ownerId;
 
 	private String zoneId;
@@ -148,6 +150,17 @@ public class DescribeSpotPriceHistoryRequest extends RpcAcsRequest<DescribeSpotP
 		this.endTime = endTime;
 		if(endTime != null){
 			putQueryParameter("EndTime", endTime);
+		}
+	}
+
+	public String getOSType() {
+		return this.oSType;
+	}
+
+	public void setOSType(String oSType) {
+		this.oSType = oSType;
+		if(oSType != null){
+			putQueryParameter("OSType", oSType);
 		}
 	}
 

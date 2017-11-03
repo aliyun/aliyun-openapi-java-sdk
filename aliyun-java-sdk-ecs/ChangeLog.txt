@@ -1,3 +1,6 @@
+2017-11-03 Version: 4.4.1
+1, CreateInstance支持周期单位，periodUnit 其可填值（Month/月，Week/周）
+
 2017-11-01 Version: 4.4.0
 1, Python C# PHP sdk支持location路由（动态endpoint）
 2, 清除sdk中无用参数
