@@ -40,50 +40,51 @@ public class GetResultResponseUnmarshaller {
 
 	public static GetResultResponse unmarshall(GetResultResponse getResultResponse, UnmarshallerContext context) {
 		
-		getResultResponse.setRequestId(context.stringValue("GetResultResponse.RequestId"));
-		getResultResponse.setSuccess(context.booleanValue("GetResultResponse.Success"));
-		getResultResponse.setCode(context.stringValue("GetResultResponse.Code"));
-		getResultResponse.setMessage(context.stringValue("GetResultResponse.Message"));
-		getResultResponse.setCount(context.integerValue("GetResultResponse.Count"));
+		getResultResponse.setRequestId(context.stringValue("GetResultResponse.requestId"));
+		getResultResponse.setSuccess(context.booleanValue("GetResultResponse.success"));
+		getResultResponse.setCode(context.stringValue("GetResultResponse.code"));
+		getResultResponse.setMessage(context.stringValue("GetResultResponse.message"));
+		getResultResponse.setCount(context.integerValue("GetResultResponse.count"));
 
 		List<ResultInfo> data = new ArrayList<ResultInfo>();
-		for (int i = 0; i < context.lengthValue("GetResultResponse.Data.Length"); i++) {
+		for (int i = 0; i < context.lengthValue("GetResultResponse.data.Length"); i++) {
 			ResultInfo resultInfo = new ResultInfo();
-			resultInfo.setTid(context.stringValue("GetResultResponse.Data["+ i +"].Tid"));
+			resultInfo.setTid(context.stringValue("GetResultResponse.data["+ i +"].tid"));
+			resultInfo.setScore(context.integerValue("GetResultResponse.data["+ i +"].score"));
 
 			List<RuleHitInfo> rules = new ArrayList<RuleHitInfo>();
-			for (int j = 0; j < context.lengthValue("GetResultResponse.Data["+ i +"].Rules.Length"); j++) {
+			for (int j = 0; j < context.lengthValue("GetResultResponse.data["+ i +"].rules.Length"); j++) {
 				RuleHitInfo ruleHitInfo = new RuleHitInfo();
-				ruleHitInfo.setRid(context.stringValue("GetResultResponse.Data["+ i +"].Rules["+ j +"].Rid"));
+				ruleHitInfo.setRid(context.stringValue("GetResultResponse.data["+ i +"].rules["+ j +"].rid"));
 
 				List<ConditionHitInfo> hit = new ArrayList<ConditionHitInfo>();
-				for (int k = 0; k < context.lengthValue("GetResultResponse.Data["+ i +"].Rules["+ j +"].Hit.Length"); k++) {
+				for (int k = 0; k < context.lengthValue("GetResultResponse.data["+ i +"].rules["+ j +"].hit.Length"); k++) {
 					ConditionHitInfo conditionHitInfo = new ConditionHitInfo();
 
 					List<String> hitCids = new ArrayList<String>();
-					for (int l = 0; l < context.lengthValue("GetResultResponse.Data["+ i +"].Rules["+ j +"].Hit["+ k +"].HitCids.Length"); l++) {
-						hitCids.add(context.stringValue("GetResultResponse.Data["+ i +"].Rules["+ j +"].Hit["+ k +"].HitCids["+ l +"]"));
+					for (int l = 0; l < context.lengthValue("GetResultResponse.data["+ i +"].rules["+ j +"].hit["+ k +"].hitCids.Length"); l++) {
+						hitCids.add(context.stringValue("GetResultResponse.data["+ i +"].rules["+ j +"].hit["+ k +"].hitCids["+ l +"]"));
 					}
 					conditionHitInfo.setHitCids(hitCids);
 
 					Phrase phrase = new Phrase();
-					phrase.setRole(context.stringValue("GetResultResponse.Data["+ i +"].Rules["+ j +"].Hit["+ k +"].Phrase.Role"));
-					phrase.setIdentity(context.stringValue("GetResultResponse.Data["+ i +"].Rules["+ j +"].Hit["+ k +"].Phrase.Identity"));
-					phrase.setWords(context.stringValue("GetResultResponse.Data["+ i +"].Rules["+ j +"].Hit["+ k +"].Phrase.Words"));
-					phrase.setBegin(context.longValue("GetResultResponse.Data["+ i +"].Rules["+ j +"].Hit["+ k +"].Phrase.Begin"));
-					phrase.setEnd(context.longValue("GetResultResponse.Data["+ i +"].Rules["+ j +"].Hit["+ k +"].Phrase.End"));
-					phrase.setBeginTime(context.stringValue("GetResultResponse.Data["+ i +"].Rules["+ j +"].Hit["+ k +"].Phrase.BeginTime"));
-					phrase.setHourMinSec(context.stringValue("GetResultResponse.Data["+ i +"].Rules["+ j +"].Hit["+ k +"].Phrase.hourMinSec"));
+					phrase.setRole(context.stringValue("GetResultResponse.data["+ i +"].rules["+ j +"].hit["+ k +"].phrase.role"));
+					phrase.setIdentity(context.stringValue("GetResultResponse.data["+ i +"].rules["+ j +"].hit["+ k +"].phrase.identity"));
+					phrase.setWords(context.stringValue("GetResultResponse.data["+ i +"].rules["+ j +"].hit["+ k +"].phrase.words"));
+					phrase.setBegin(context.longValue("GetResultResponse.data["+ i +"].rules["+ j +"].hit["+ k +"].phrase.begin"));
+					phrase.setEnd(context.longValue("GetResultResponse.data["+ i +"].rules["+ j +"].hit["+ k +"].phrase.end"));
+					phrase.setBeginTime(context.stringValue("GetResultResponse.data["+ i +"].rules["+ j +"].hit["+ k +"].phrase.beginTime"));
+					phrase.setHourMinSec(context.stringValue("GetResultResponse.data["+ i +"].rules["+ j +"].hit["+ k +"].phrase.hourMinSec"));
 					conditionHitInfo.setPhrase(phrase);
 
 					List<HitKeyWord> hitKeyWords = new ArrayList<HitKeyWord>();
-					for (int l = 0; l < context.lengthValue("GetResultResponse.Data["+ i +"].Rules["+ j +"].Hit["+ k +"].HitKeyWords.Length"); l++) {
+					for (int l = 0; l < context.lengthValue("GetResultResponse.data["+ i +"].rules["+ j +"].hit["+ k +"].hitKeyWords.Length"); l++) {
 						HitKeyWord hitKeyWord = new HitKeyWord();
-						hitKeyWord.setVal(context.stringValue("GetResultResponse.Data["+ i +"].Rules["+ j +"].Hit["+ k +"].HitKeyWords["+ l +"].Val"));
-						hitKeyWord.setPid(context.integerValue("GetResultResponse.Data["+ i +"].Rules["+ j +"].Hit["+ k +"].HitKeyWords["+ l +"].Pid"));
-						hitKeyWord.setFrom(context.integerValue("GetResultResponse.Data["+ i +"].Rules["+ j +"].Hit["+ k +"].HitKeyWords["+ l +"].From"));
-						hitKeyWord.setTo(context.integerValue("GetResultResponse.Data["+ i +"].Rules["+ j +"].Hit["+ k +"].HitKeyWords["+ l +"].To"));
-						hitKeyWord.setTid(context.stringValue("GetResultResponse.Data["+ i +"].Rules["+ j +"].Hit["+ k +"].HitKeyWords["+ l +"].Tid"));
+						hitKeyWord.setVal(context.stringValue("GetResultResponse.data["+ i +"].rules["+ j +"].hit["+ k +"].hitKeyWords["+ l +"].val"));
+						hitKeyWord.setPid(context.integerValue("GetResultResponse.data["+ i +"].rules["+ j +"].hit["+ k +"].hitKeyWords["+ l +"].pid"));
+						hitKeyWord.setFrom(context.integerValue("GetResultResponse.data["+ i +"].rules["+ j +"].hit["+ k +"].hitKeyWords["+ l +"].from"));
+						hitKeyWord.setTo(context.integerValue("GetResultResponse.data["+ i +"].rules["+ j +"].hit["+ k +"].hitKeyWords["+ l +"].to"));
+						hitKeyWord.setTid(context.stringValue("GetResultResponse.data["+ i +"].rules["+ j +"].hit["+ k +"].hitKeyWords["+ l +"].tid"));
 
 						hitKeyWords.add(hitKeyWord);
 					}
@@ -94,53 +95,53 @@ public class GetResultResponseUnmarshaller {
 				ruleHitInfo.setHit(hit);
 
 				List<ConditionBasicInfo> conditionInfo = new ArrayList<ConditionBasicInfo>();
-				for (int k = 0; k < context.lengthValue("GetResultResponse.Data["+ i +"].Rules["+ j +"].ConditionInfo.Length"); k++) {
+				for (int k = 0; k < context.lengthValue("GetResultResponse.data["+ i +"].rules["+ j +"].conditionInfo.Length"); k++) {
 					ConditionBasicInfo conditionBasicInfo = new ConditionBasicInfo();
-					conditionBasicInfo.setConditionInfoCid(context.stringValue("GetResultResponse.Data["+ i +"].Rules["+ j +"].ConditionInfo["+ k +"].ConditionInfoCid"));
-					conditionBasicInfo.setLambda(context.stringValue("GetResultResponse.Data["+ i +"].Rules["+ j +"].ConditionInfo["+ k +"].Lambda"));
+					conditionBasicInfo.setConditionInfoCid(context.stringValue("GetResultResponse.data["+ i +"].rules["+ j +"].conditionInfo["+ k +"].conditionInfoCid"));
+					conditionBasicInfo.setLambda(context.stringValue("GetResultResponse.data["+ i +"].rules["+ j +"].conditionInfo["+ k +"].lambda"));
 
 					CheckRange checkRange = new CheckRange();
-					checkRange.setRole(context.stringValue("GetResultResponse.Data["+ i +"].Rules["+ j +"].ConditionInfo["+ k +"].CheckRange.Role"));
+					checkRange.setRole(context.stringValue("GetResultResponse.data["+ i +"].rules["+ j +"].conditionInfo["+ k +"].checkRange.role"));
 
 					Anchor anchor = new Anchor();
-					anchor.setAnchorCid(context.stringValue("GetResultResponse.Data["+ i +"].Rules["+ j +"].ConditionInfo["+ k +"].CheckRange.Anchor.AnchorCid"));
-					anchor.setLocation(context.stringValue("GetResultResponse.Data["+ i +"].Rules["+ j +"].ConditionInfo["+ k +"].CheckRange.Anchor.Location"));
-					anchor.setHitTime(context.integerValue("GetResultResponse.Data["+ i +"].Rules["+ j +"].ConditionInfo["+ k +"].CheckRange.Anchor.HitTime"));
+					anchor.setAnchorCid(context.stringValue("GetResultResponse.data["+ i +"].rules["+ j +"].conditionInfo["+ k +"].checkRange.anchor.anchorCid"));
+					anchor.setLocation(context.stringValue("GetResultResponse.data["+ i +"].rules["+ j +"].conditionInfo["+ k +"].checkRange.anchor.location"));
+					anchor.setHitTime(context.integerValue("GetResultResponse.data["+ i +"].rules["+ j +"].conditionInfo["+ k +"].checkRange.anchor.hitTime"));
 					checkRange.setAnchor(anchor);
 
 					Range range = new Range();
-					range.setFrom(context.integerValue("GetResultResponse.Data["+ i +"].Rules["+ j +"].ConditionInfo["+ k +"].CheckRange.Range.From"));
-					range.setTo(context.integerValue("GetResultResponse.Data["+ i +"].Rules["+ j +"].ConditionInfo["+ k +"].CheckRange.Range.To"));
+					range.setFrom(context.integerValue("GetResultResponse.data["+ i +"].rules["+ j +"].conditionInfo["+ k +"].checkRange.range.from"));
+					range.setTo(context.integerValue("GetResultResponse.data["+ i +"].rules["+ j +"].conditionInfo["+ k +"].checkRange.range.to"));
 					checkRange.setRange(range);
 					conditionBasicInfo.setCheckRange(checkRange);
 
 					List<OperatorBasicInfo> operators = new ArrayList<OperatorBasicInfo>();
-					for (int l = 0; l < context.lengthValue("GetResultResponse.Data["+ i +"].Rules["+ j +"].ConditionInfo["+ k +"].Operators.Length"); l++) {
+					for (int l = 0; l < context.lengthValue("GetResultResponse.data["+ i +"].rules["+ j +"].conditionInfo["+ k +"].operators.Length"); l++) {
 						OperatorBasicInfo operatorBasicInfo = new OperatorBasicInfo();
-						operatorBasicInfo.setOid(context.stringValue("GetResultResponse.Data["+ i +"].Rules["+ j +"].ConditionInfo["+ k +"].Operators["+ l +"].Oid"));
-						operatorBasicInfo.setType(context.stringValue("GetResultResponse.Data["+ i +"].Rules["+ j +"].ConditionInfo["+ k +"].Operators["+ l +"].Type"));
-						operatorBasicInfo.setName(context.stringValue("GetResultResponse.Data["+ i +"].Rules["+ j +"].ConditionInfo["+ k +"].Operators["+ l +"].Name"));
+						operatorBasicInfo.setOid(context.stringValue("GetResultResponse.data["+ i +"].rules["+ j +"].conditionInfo["+ k +"].operators["+ l +"].oid"));
+						operatorBasicInfo.setType(context.stringValue("GetResultResponse.data["+ i +"].rules["+ j +"].conditionInfo["+ k +"].operators["+ l +"].type"));
+						operatorBasicInfo.setName(context.stringValue("GetResultResponse.data["+ i +"].rules["+ j +"].conditionInfo["+ k +"].operators["+ l +"].name"));
 
 						Param param = new Param();
-						param.setRegex(context.stringValue("GetResultResponse.Data["+ i +"].Rules["+ j +"].ConditionInfo["+ k +"].Operators["+ l +"].Param.Regex"));
-						param.setPhrase(context.stringValue("GetResultResponse.Data["+ i +"].Rules["+ j +"].ConditionInfo["+ k +"].Operators["+ l +"].Param.Phrase"));
-						param.setInterval(context.integerValue("GetResultResponse.Data["+ i +"].Rules["+ j +"].ConditionInfo["+ k +"].Operators["+ l +"].Param.Interval"));
-						param.setThreshold(context.floatValue("GetResultResponse.Data["+ i +"].Rules["+ j +"].ConditionInfo["+ k +"].Operators["+ l +"].Param.Threshold"));
-						param.setInSentence(context.booleanValue("GetResultResponse.Data["+ i +"].Rules["+ j +"].ConditionInfo["+ k +"].Operators["+ l +"].Param.InSentence"));
-						param.setTarget(context.integerValue("GetResultResponse.Data["+ i +"].Rules["+ j +"].ConditionInfo["+ k +"].Operators["+ l +"].Param.Target"));
-						param.setFromEnd(context.booleanValue("GetResultResponse.Data["+ i +"].Rules["+ j +"].ConditionInfo["+ k +"].Operators["+ l +"].Param.FromEnd"));
-						param.setDifferentRole(context.booleanValue("GetResultResponse.Data["+ i +"].Rules["+ j +"].ConditionInfo["+ k +"].Operators["+ l +"].Param.DifferentRole"));
-						param.setTargetRole(context.stringValue("GetResultResponse.Data["+ i +"].Rules["+ j +"].ConditionInfo["+ k +"].Operators["+ l +"].Param.TargetRole"));
+						param.setRegex(context.stringValue("GetResultResponse.data["+ i +"].rules["+ j +"].conditionInfo["+ k +"].operators["+ l +"].param.regex"));
+						param.setPhrase(context.stringValue("GetResultResponse.data["+ i +"].rules["+ j +"].conditionInfo["+ k +"].operators["+ l +"].param.phrase"));
+						param.setInterval(context.integerValue("GetResultResponse.data["+ i +"].rules["+ j +"].conditionInfo["+ k +"].operators["+ l +"].param.interval"));
+						param.setThreshold(context.floatValue("GetResultResponse.data["+ i +"].rules["+ j +"].conditionInfo["+ k +"].operators["+ l +"].param.threshold"));
+						param.setInSentence(context.booleanValue("GetResultResponse.data["+ i +"].rules["+ j +"].conditionInfo["+ k +"].operators["+ l +"].param.inSentence"));
+						param.setTarget(context.integerValue("GetResultResponse.data["+ i +"].rules["+ j +"].conditionInfo["+ k +"].operators["+ l +"].param.target"));
+						param.setFromEnd(context.booleanValue("GetResultResponse.data["+ i +"].rules["+ j +"].conditionInfo["+ k +"].operators["+ l +"].param.fromEnd"));
+						param.setDifferentRole(context.booleanValue("GetResultResponse.data["+ i +"].rules["+ j +"].conditionInfo["+ k +"].operators["+ l +"].param.differentRole"));
+						param.setTargetRole(context.stringValue("GetResultResponse.data["+ i +"].rules["+ j +"].conditionInfo["+ k +"].operators["+ l +"].param.targetRole"));
 
 						List<String> operKeyWords = new ArrayList<String>();
-						for (int m = 0; m < context.lengthValue("GetResultResponse.Data["+ i +"].Rules["+ j +"].ConditionInfo["+ k +"].Operators["+ l +"].Param.OperKeyWords.Length"); m++) {
-							operKeyWords.add(context.stringValue("GetResultResponse.Data["+ i +"].Rules["+ j +"].ConditionInfo["+ k +"].Operators["+ l +"].Param.OperKeyWords["+ m +"]"));
+						for (int m = 0; m < context.lengthValue("GetResultResponse.data["+ i +"].rules["+ j +"].conditionInfo["+ k +"].operators["+ l +"].param.operKeyWords.Length"); m++) {
+							operKeyWords.add(context.stringValue("GetResultResponse.data["+ i +"].rules["+ j +"].conditionInfo["+ k +"].operators["+ l +"].param.operKeyWords["+ m +"]"));
 						}
 						param.setOperKeyWords(operKeyWords);
 
 						List<String> references = new ArrayList<String>();
-						for (int m = 0; m < context.lengthValue("GetResultResponse.Data["+ i +"].Rules["+ j +"].ConditionInfo["+ k +"].Operators["+ l +"].Param.References.Length"); m++) {
-							references.add(context.stringValue("GetResultResponse.Data["+ i +"].Rules["+ j +"].ConditionInfo["+ k +"].Operators["+ l +"].Param.References["+ m +"]"));
+						for (int m = 0; m < context.lengthValue("GetResultResponse.data["+ i +"].rules["+ j +"].conditionInfo["+ k +"].operators["+ l +"].param.references.Length"); m++) {
+							references.add(context.stringValue("GetResultResponse.data["+ i +"].rules["+ j +"].conditionInfo["+ k +"].operators["+ l +"].param.references["+ m +"]"));
 						}
 						param.setReferences(references);
 						operatorBasicInfo.setParam(param);

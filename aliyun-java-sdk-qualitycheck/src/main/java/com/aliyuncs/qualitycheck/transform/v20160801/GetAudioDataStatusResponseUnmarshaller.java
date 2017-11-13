@@ -32,37 +32,37 @@ public class GetAudioDataStatusResponseUnmarshaller {
 
 	public static GetAudioDataStatusResponse unmarshall(GetAudioDataStatusResponse getAudioDataStatusResponse, UnmarshallerContext context) {
 		
-		getAudioDataStatusResponse.setRequestId(context.stringValue("GetAudioDataStatusResponse.RequestId"));
-		getAudioDataStatusResponse.setSuccess(context.booleanValue("GetAudioDataStatusResponse.Success"));
-		getAudioDataStatusResponse.setCode(context.stringValue("GetAudioDataStatusResponse.Code"));
-		getAudioDataStatusResponse.setMessage(context.stringValue("GetAudioDataStatusResponse.Message"));
-		getAudioDataStatusResponse.setCount(context.integerValue("GetAudioDataStatusResponse.Count"));
+		getAudioDataStatusResponse.setRequestId(context.stringValue("GetAudioDataStatusResponse.requestId"));
+		getAudioDataStatusResponse.setSuccess(context.booleanValue("GetAudioDataStatusResponse.success"));
+		getAudioDataStatusResponse.setCode(context.stringValue("GetAudioDataStatusResponse.code"));
+		getAudioDataStatusResponse.setMessage(context.stringValue("GetAudioDataStatusResponse.message"));
+		getAudioDataStatusResponse.setCount(context.integerValue("GetAudioDataStatusResponse.count"));
 
 		List<TaskAsrResult> data = new ArrayList<TaskAsrResult>();
-		for (int i = 0; i < context.lengthValue("GetAudioDataStatusResponse.Data.Length"); i++) {
+		for (int i = 0; i < context.lengthValue("GetAudioDataStatusResponse.data.Length"); i++) {
 			TaskAsrResult taskAsrResult = new TaskAsrResult();
-			taskAsrResult.setTid(context.stringValue("GetAudioDataStatusResponse.Data["+ i +"].Tid"));
-			taskAsrResult.setStatusCode(context.integerValue("GetAudioDataStatusResponse.Data["+ i +"].StatusCode"));
-			taskAsrResult.setStatusMsg(context.stringValue("GetAudioDataStatusResponse.Data["+ i +"].StatusMsg"));
+			taskAsrResult.setTid(context.stringValue("GetAudioDataStatusResponse.data["+ i +"].tid"));
+			taskAsrResult.setStatusCode(context.integerValue("GetAudioDataStatusResponse.data["+ i +"].statusCode"));
+			taskAsrResult.setStatusMsg(context.stringValue("GetAudioDataStatusResponse.data["+ i +"].statusMsg"));
 
 			AsrResult asrResult = new AsrResult();
-			asrResult.setAsrstatus(context.stringValue("GetAudioDataStatusResponse.Data["+ i +"].AsrResult.Asrstatus"));
-			asrResult.setAsrStatusCode(context.stringValue("GetAudioDataStatusResponse.Data["+ i +"].AsrResult.AsrStatusCode"));
-			asrResult.setErrorMessage(context.stringValue("GetAudioDataStatusResponse.Data["+ i +"].AsrResult.ErrorMessage"));
+			asrResult.setAsrstatus(context.stringValue("GetAudioDataStatusResponse.data["+ i +"].asrResult.asrstatus"));
+			asrResult.setAsrStatusCode(context.stringValue("GetAudioDataStatusResponse.data["+ i +"].asrResult.asrStatusCode"));
+			asrResult.setErrorMessage(context.stringValue("GetAudioDataStatusResponse.data["+ i +"].asrResult.errorMessage"));
 
 			List<SentenceResult> sentenceResults = new ArrayList<SentenceResult>();
-			for (int j = 0; j < context.lengthValue("GetAudioDataStatusResponse.Data["+ i +"].AsrResult.SentenceResults.Length"); j++) {
+			for (int j = 0; j < context.lengthValue("GetAudioDataStatusResponse.data["+ i +"].asrResult.sentenceResults.Length"); j++) {
 				SentenceResult sentenceResult = new SentenceResult();
-				sentenceResult.setBeginTime(context.integerValue("GetAudioDataStatusResponse.Data["+ i +"].AsrResult.SentenceResults["+ j +"].BeginTime"));
-				sentenceResult.setEndTime(context.integerValue("GetAudioDataStatusResponse.Data["+ i +"].AsrResult.SentenceResults["+ j +"].EndTime"));
-				sentenceResult.setChannelId(context.integerValue("GetAudioDataStatusResponse.Data["+ i +"].AsrResult.SentenceResults["+ j +"].ChannelId"));
-				sentenceResult.setText(context.stringValue("GetAudioDataStatusResponse.Data["+ i +"].AsrResult.SentenceResults["+ j +"].Text"));
-				sentenceResult.setEmotionValue(context.integerValue("GetAudioDataStatusResponse.Data["+ i +"].AsrResult.SentenceResults["+ j +"].emotionValue"));
-				sentenceResult.setSilenceDuration(context.integerValue("GetAudioDataStatusResponse.Data["+ i +"].AsrResult.SentenceResults["+ j +"].silenceDuration"));
-				sentenceResult.setSpeechRate(context.integerValue("GetAudioDataStatusResponse.Data["+ i +"].AsrResult.SentenceResults["+ j +"].speechRate"));
-				sentenceResult.setSpeakerId(context.stringValue("GetAudioDataStatusResponse.Data["+ i +"].AsrResult.SentenceResults["+ j +"].speakerId"));
-				sentenceResult.setAgentId(context.stringValue("GetAudioDataStatusResponse.Data["+ i +"].AsrResult.SentenceResults["+ j +"].agentId"));
-				sentenceResult.setChannelKey(context.stringValue("GetAudioDataStatusResponse.Data["+ i +"].AsrResult.SentenceResults["+ j +"].channelKey"));
+				sentenceResult.setBeginTime(context.integerValue("GetAudioDataStatusResponse.data["+ i +"].asrResult.sentenceResults["+ j +"].beginTime"));
+				sentenceResult.setEndTime(context.integerValue("GetAudioDataStatusResponse.data["+ i +"].asrResult.sentenceResults["+ j +"].endTime"));
+				sentenceResult.setChannelId(context.integerValue("GetAudioDataStatusResponse.data["+ i +"].asrResult.sentenceResults["+ j +"].channelId"));
+				sentenceResult.setText(context.stringValue("GetAudioDataStatusResponse.data["+ i +"].asrResult.sentenceResults["+ j +"].text"));
+				sentenceResult.setEmotionValue(context.integerValue("GetAudioDataStatusResponse.data["+ i +"].asrResult.sentenceResults["+ j +"].emotionValue"));
+				sentenceResult.setSilenceDuration(context.integerValue("GetAudioDataStatusResponse.data["+ i +"].asrResult.sentenceResults["+ j +"].silenceDuration"));
+				sentenceResult.setSpeechRate(context.integerValue("GetAudioDataStatusResponse.data["+ i +"].asrResult.sentenceResults["+ j +"].speechRate"));
+				sentenceResult.setSpeakerId(context.stringValue("GetAudioDataStatusResponse.data["+ i +"].asrResult.sentenceResults["+ j +"].speakerId"));
+				sentenceResult.setAgentId(context.stringValue("GetAudioDataStatusResponse.data["+ i +"].asrResult.sentenceResults["+ j +"].agentId"));
+				sentenceResult.setChannelKey(context.stringValue("GetAudioDataStatusResponse.data["+ i +"].asrResult.sentenceResults["+ j +"].channelKey"));
 
 				sentenceResults.add(sentenceResult);
 			}

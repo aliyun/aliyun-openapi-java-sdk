@@ -26,11 +26,11 @@ public class UploadAudioData4PreResponseUnmarshaller {
 
 	public static UploadAudioData4PreResponse unmarshall(UploadAudioData4PreResponse uploadAudioData4PreResponse, UnmarshallerContext context) {
 		
-		uploadAudioData4PreResponse.setRequestId(context.stringValue("UploadAudioData4PreResponse.RequestId"));
-		uploadAudioData4PreResponse.setSuccess(context.booleanValue("UploadAudioData4PreResponse.Success"));
-		uploadAudioData4PreResponse.setCode(context.stringValue("UploadAudioData4PreResponse.Code"));
-		uploadAudioData4PreResponse.setMessage(context.stringValue("UploadAudioData4PreResponse.Message"));
-		uploadAudioData4PreResponse.setData(context.stringValue("UploadAudioData4PreResponse.Data"));
+		uploadAudioData4PreResponse.setRequestId(context.stringValue("UploadAudioData4PreResponse.requestId"));
+		uploadAudioData4PreResponse.setSuccess(context.booleanValue("UploadAudioData4PreResponse.success"));
+		uploadAudioData4PreResponse.setCode(context.stringValue("UploadAudioData4PreResponse.code"));
+		uploadAudioData4PreResponse.setMessage(context.stringValue("UploadAudioData4PreResponse.message"));
+		uploadAudioData4PreResponse.setData(context.stringValue("UploadAudioData4PreResponse.data"));
 	 
 	 	return uploadAudioData4PreResponse;
 	}

@@ -93,6 +93,8 @@ public class GetResultResponse extends AcsResponse {
 
 		private String tid;
 
+		private Integer score;
+
 		private List<RuleHitInfo> rules;
 
 		public String getTid() {
@@ -101,6 +103,14 @@ public class GetResultResponse extends AcsResponse {
 
 		public void setTid(String tid) {
 			this.tid = tid;
+		}
+
+		public Integer getScore() {
+			return this.score;
+		}
+
+		public void setScore(Integer score) {
+			this.score = score;
 		}
 
 		public List<RuleHitInfo> getRules() {

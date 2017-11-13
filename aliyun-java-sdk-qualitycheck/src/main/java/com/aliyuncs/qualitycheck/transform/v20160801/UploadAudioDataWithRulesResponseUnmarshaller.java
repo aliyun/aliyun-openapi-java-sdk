@@ -26,11 +26,11 @@ public class UploadAudioDataWithRulesResponseUnmarshaller {
 
 	public static UploadAudioDataWithRulesResponse unmarshall(UploadAudioDataWithRulesResponse uploadAudioDataWithRulesResponse, UnmarshallerContext context) {
 		
-		uploadAudioDataWithRulesResponse.setRequestId(context.stringValue("UploadAudioDataWithRulesResponse.RequestId"));
-		uploadAudioDataWithRulesResponse.setSuccess(context.booleanValue("UploadAudioDataWithRulesResponse.Success"));
-		uploadAudioDataWithRulesResponse.setCode(context.stringValue("UploadAudioDataWithRulesResponse.Code"));
-		uploadAudioDataWithRulesResponse.setMessage(context.stringValue("UploadAudioDataWithRulesResponse.Message"));
-		uploadAudioDataWithRulesResponse.setData(context.stringValue("UploadAudioDataWithRulesResponse.Data"));
+		uploadAudioDataWithRulesResponse.setRequestId(context.stringValue("UploadAudioDataWithRulesResponse.requestId"));
+		uploadAudioDataWithRulesResponse.setSuccess(context.booleanValue("UploadAudioDataWithRulesResponse.success"));
+		uploadAudioDataWithRulesResponse.setCode(context.stringValue("UploadAudioDataWithRulesResponse.code"));
+		uploadAudioDataWithRulesResponse.setMessage(context.stringValue("UploadAudioDataWithRulesResponse.message"));
+		uploadAudioDataWithRulesResponse.setData(context.stringValue("UploadAudioDataWithRulesResponse.data"));
 	 
 	 	return uploadAudioDataWithRulesResponse;
 	}

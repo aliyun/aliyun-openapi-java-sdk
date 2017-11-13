@@ -26,11 +26,11 @@ public class UploadDataWithRulesResponseUnmarshaller {
 
 	public static UploadDataWithRulesResponse unmarshall(UploadDataWithRulesResponse uploadDataWithRulesResponse, UnmarshallerContext context) {
 		
-		uploadDataWithRulesResponse.setRequestId(context.stringValue("UploadDataWithRulesResponse.RequestId"));
-		uploadDataWithRulesResponse.setSuccess(context.booleanValue("UploadDataWithRulesResponse.Success"));
-		uploadDataWithRulesResponse.setCode(context.stringValue("UploadDataWithRulesResponse.Code"));
-		uploadDataWithRulesResponse.setMessage(context.stringValue("UploadDataWithRulesResponse.Message"));
-		uploadDataWithRulesResponse.setData(context.stringValue("UploadDataWithRulesResponse.Data"));
+		uploadDataWithRulesResponse.setRequestId(context.stringValue("UploadDataWithRulesResponse.requestId"));
+		uploadDataWithRulesResponse.setSuccess(context.booleanValue("UploadDataWithRulesResponse.success"));
+		uploadDataWithRulesResponse.setCode(context.stringValue("UploadDataWithRulesResponse.code"));
+		uploadDataWithRulesResponse.setMessage(context.stringValue("UploadDataWithRulesResponse.message"));
+		uploadDataWithRulesResponse.setData(context.stringValue("UploadDataWithRulesResponse.data"));
 	 
 	 	return uploadDataWithRulesResponse;
 	}

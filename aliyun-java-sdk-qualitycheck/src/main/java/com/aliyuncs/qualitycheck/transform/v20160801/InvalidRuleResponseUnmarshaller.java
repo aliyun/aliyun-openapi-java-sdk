@@ -26,11 +26,11 @@ public class InvalidRuleResponseUnmarshaller {
 
 	public static InvalidRuleResponse unmarshall(InvalidRuleResponse invalidRuleResponse, UnmarshallerContext context) {
 		
-		invalidRuleResponse.setRequestId(context.stringValue("InvalidRuleResponse.RequestId"));
-		invalidRuleResponse.setSuccess(context.booleanValue("InvalidRuleResponse.Success"));
-		invalidRuleResponse.setCode(context.stringValue("InvalidRuleResponse.Code"));
-		invalidRuleResponse.setMessage(context.stringValue("InvalidRuleResponse.Message"));
-		invalidRuleResponse.setData(context.booleanValue("InvalidRuleResponse.Data"));
+		invalidRuleResponse.setRequestId(context.stringValue("InvalidRuleResponse.requestId"));
+		invalidRuleResponse.setSuccess(context.booleanValue("InvalidRuleResponse.success"));
+		invalidRuleResponse.setCode(context.stringValue("InvalidRuleResponse.code"));
+		invalidRuleResponse.setMessage(context.stringValue("InvalidRuleResponse.message"));
+		invalidRuleResponse.setData(context.booleanValue("InvalidRuleResponse.data"));
 	 
 	 	return invalidRuleResponse;
 	}

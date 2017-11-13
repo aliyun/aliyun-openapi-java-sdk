@@ -26,11 +26,11 @@ public class GetResultCountResponseUnmarshaller {
 
 	public static GetResultCountResponse unmarshall(GetResultCountResponse getResultCountResponse, UnmarshallerContext context) {
 		
-		getResultCountResponse.setRequestId(context.stringValue("GetResultCountResponse.RequestId"));
-		getResultCountResponse.setSuccess(context.booleanValue("GetResultCountResponse.Success"));
-		getResultCountResponse.setCode(context.stringValue("GetResultCountResponse.Code"));
-		getResultCountResponse.setMessage(context.stringValue("GetResultCountResponse.Message"));
-		getResultCountResponse.setData(context.integerValue("GetResultCountResponse.Data"));
+		getResultCountResponse.setRequestId(context.stringValue("GetResultCountResponse.requestId"));
+		getResultCountResponse.setSuccess(context.booleanValue("GetResultCountResponse.success"));
+		getResultCountResponse.setCode(context.stringValue("GetResultCountResponse.code"));
+		getResultCountResponse.setMessage(context.stringValue("GetResultCountResponse.message"));
+		getResultCountResponse.setData(context.integerValue("GetResultCountResponse.data"));
 	 
 	 	return getResultCountResponse;
 	}

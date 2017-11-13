@@ -16,21 +16,36 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package com.aliyuncs.qualitycheck.transform.v20160801;
+package com.aliyuncs.qualitycheck.model.v20160801;
 
-import com.aliyuncs.qualitycheck.model.v20160801.RegisterNoticeResponse;
-import com.aliyuncs.transform.UnmarshallerContext;
+import com.aliyuncs.RpcAcsRequest;
 
-
-public class RegisterNoticeResponseUnmarshaller {
-
-	public static RegisterNoticeResponse unmarshall(RegisterNoticeResponse registerNoticeResponse, UnmarshallerContext context) {
-		
-		registerNoticeResponse.setRequestId(context.stringValue("RegisterNoticeResponse.requestId"));
-		registerNoticeResponse.setSuccess(context.booleanValue("RegisterNoticeResponse.success"));
-		registerNoticeResponse.setCode(context.stringValue("RegisterNoticeResponse.code"));
-		registerNoticeResponse.setMessage(context.stringValue("RegisterNoticeResponse.message"));
-	 
-	 	return registerNoticeResponse;
+/**
+ * @author auto create
+ * @version 
+ */
+public class GetDataSetListRequest extends RpcAcsRequest<GetDataSetListResponse> {
+	
+	public GetDataSetListRequest() {
+		super("Qualitycheck", "2016-08-01", "GetDataSetList");
 	}
+
+	private String jsonStr;
+
+	public String getJsonStr() {
+		return this.jsonStr;
+	}
+
+	public void setJsonStr(String jsonStr) {
+		this.jsonStr = jsonStr;
+		if(jsonStr != null){
+			putQueryParameter("JsonStr", jsonStr);
+		}
+	}
+
+	@Override
+	public Class<GetDataSetListResponse> getResponseClass() {
+		return GetDataSetListResponse.class;
+	}
+
 }

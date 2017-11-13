@@ -31,33 +31,33 @@ public class GetAccAsrResultResponseUnmarshaller {
 
 	public static GetAccAsrResultResponse unmarshall(GetAccAsrResultResponse getAccAsrResultResponse, UnmarshallerContext context) {
 		
-		getAccAsrResultResponse.setRequestId(context.stringValue("GetAccAsrResultResponse.RequestId"));
-		getAccAsrResultResponse.setSuccess(context.booleanValue("GetAccAsrResultResponse.Success"));
-		getAccAsrResultResponse.setCode(context.stringValue("GetAccAsrResultResponse.Code"));
-		getAccAsrResultResponse.setMessage(context.stringValue("GetAccAsrResultResponse.Message"));
-		getAccAsrResultResponse.setCount(context.integerValue("GetAccAsrResultResponse.Count"));
+		getAccAsrResultResponse.setRequestId(context.stringValue("GetAccAsrResultResponse.requestId"));
+		getAccAsrResultResponse.setSuccess(context.booleanValue("GetAccAsrResultResponse.success"));
+		getAccAsrResultResponse.setCode(context.stringValue("GetAccAsrResultResponse.code"));
+		getAccAsrResultResponse.setMessage(context.stringValue("GetAccAsrResultResponse.message"));
+		getAccAsrResultResponse.setCount(context.integerValue("GetAccAsrResultResponse.count"));
 
 		List<AccAsrSentenceResult> data = new ArrayList<AccAsrSentenceResult>();
-		for (int i = 0; i < context.lengthValue("GetAccAsrResultResponse.Data.Length"); i++) {
+		for (int i = 0; i < context.lengthValue("GetAccAsrResultResponse.data.Length"); i++) {
 			AccAsrSentenceResult accAsrSentenceResult = new AccAsrSentenceResult();
-			accAsrSentenceResult.setRecordId(context.stringValue("GetAccAsrResultResponse.Data["+ i +"].RecordId"));
-			accAsrSentenceResult.setStatus(context.stringValue("GetAccAsrResultResponse.Data["+ i +"].Status"));
-			accAsrSentenceResult.setStatusCode(context.stringValue("GetAccAsrResultResponse.Data["+ i +"].StatusCode"));
-			accAsrSentenceResult.setErrorMessage(context.stringValue("GetAccAsrResultResponse.Data["+ i +"].ErrorMessage"));
+			accAsrSentenceResult.setRecordId(context.stringValue("GetAccAsrResultResponse.data["+ i +"].recordId"));
+			accAsrSentenceResult.setStatus(context.stringValue("GetAccAsrResultResponse.data["+ i +"].status"));
+			accAsrSentenceResult.setStatusCode(context.stringValue("GetAccAsrResultResponse.data["+ i +"].statusCode"));
+			accAsrSentenceResult.setErrorMessage(context.stringValue("GetAccAsrResultResponse.data["+ i +"].errorMessage"));
 
 			List<SentenceResult> results = new ArrayList<SentenceResult>();
-			for (int j = 0; j < context.lengthValue("GetAccAsrResultResponse.Data["+ i +"].Results.Length"); j++) {
+			for (int j = 0; j < context.lengthValue("GetAccAsrResultResponse.data["+ i +"].results.Length"); j++) {
 				SentenceResult sentenceResult = new SentenceResult();
-				sentenceResult.setBeginTime(context.integerValue("GetAccAsrResultResponse.Data["+ i +"].Results["+ j +"].BeginTime"));
-				sentenceResult.setEndTime(context.integerValue("GetAccAsrResultResponse.Data["+ i +"].Results["+ j +"].EndTime"));
-				sentenceResult.setChannelId(context.integerValue("GetAccAsrResultResponse.Data["+ i +"].Results["+ j +"].ChannelId"));
-				sentenceResult.setText(context.stringValue("GetAccAsrResultResponse.Data["+ i +"].Results["+ j +"].Text"));
-				sentenceResult.setEmotionValue(context.integerValue("GetAccAsrResultResponse.Data["+ i +"].Results["+ j +"].EmotionValue"));
-				sentenceResult.setSilenceDuration(context.integerValue("GetAccAsrResultResponse.Data["+ i +"].Results["+ j +"].SilenceDuration"));
-				sentenceResult.setSpeechRate(context.integerValue("GetAccAsrResultResponse.Data["+ i +"].Results["+ j +"].SpeechRate"));
-				sentenceResult.setSpeakerId(context.stringValue("GetAccAsrResultResponse.Data["+ i +"].Results["+ j +"].SpeakerId"));
-				sentenceResult.setAgentId(context.stringValue("GetAccAsrResultResponse.Data["+ i +"].Results["+ j +"].AgentId"));
-				sentenceResult.setChannelKey(context.stringValue("GetAccAsrResultResponse.Data["+ i +"].Results["+ j +"].ChannelKey"));
+				sentenceResult.setBeginTime(context.integerValue("GetAccAsrResultResponse.data["+ i +"].results["+ j +"].beginTime"));
+				sentenceResult.setEndTime(context.integerValue("GetAccAsrResultResponse.data["+ i +"].results["+ j +"].endTime"));
+				sentenceResult.setChannelId(context.integerValue("GetAccAsrResultResponse.data["+ i +"].results["+ j +"].channelId"));
+				sentenceResult.setText(context.stringValue("GetAccAsrResultResponse.data["+ i +"].results["+ j +"].text"));
+				sentenceResult.setEmotionValue(context.integerValue("GetAccAsrResultResponse.data["+ i +"].results["+ j +"].emotionValue"));
+				sentenceResult.setSilenceDuration(context.integerValue("GetAccAsrResultResponse.data["+ i +"].results["+ j +"].silenceDuration"));
+				sentenceResult.setSpeechRate(context.integerValue("GetAccAsrResultResponse.data["+ i +"].results["+ j +"].speechRate"));
+				sentenceResult.setSpeakerId(context.stringValue("GetAccAsrResultResponse.data["+ i +"].results["+ j +"].speakerId"));
+				sentenceResult.setAgentId(context.stringValue("GetAccAsrResultResponse.data["+ i +"].results["+ j +"].agentId"));
+				sentenceResult.setChannelKey(context.stringValue("GetAccAsrResultResponse.data["+ i +"].results["+ j +"].channelKey"));
 
 				results.add(sentenceResult);
 			}

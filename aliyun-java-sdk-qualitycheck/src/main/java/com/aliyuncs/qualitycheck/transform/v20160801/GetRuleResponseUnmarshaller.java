@@ -31,31 +31,31 @@ public class GetRuleResponseUnmarshaller {
 
 	public static GetRuleResponse unmarshall(GetRuleResponse getRuleResponse, UnmarshallerContext context) {
 		
-		getRuleResponse.setRequestId(context.stringValue("GetRuleResponse.RequestId"));
-		getRuleResponse.setSuccess(context.booleanValue("GetRuleResponse.Success"));
-		getRuleResponse.setCode(context.stringValue("GetRuleResponse.Code"));
-		getRuleResponse.setMessage(context.stringValue("GetRuleResponse.Message"));
+		getRuleResponse.setRequestId(context.stringValue("GetRuleResponse.requestId"));
+		getRuleResponse.setSuccess(context.booleanValue("GetRuleResponse.success"));
+		getRuleResponse.setCode(context.stringValue("GetRuleResponse.code"));
+		getRuleResponse.setMessage(context.stringValue("GetRuleResponse.message"));
 
 		Data data = new Data();
 
 		List<RuleInfo> rules = new ArrayList<RuleInfo>();
-		for (int i = 0; i < context.lengthValue("GetRuleResponse.Data.Rules.Length"); i++) {
+		for (int i = 0; i < context.lengthValue("GetRuleResponse.data.rules.Length"); i++) {
 			RuleInfo ruleInfo = new RuleInfo();
-			ruleInfo.setRid(context.stringValue("GetRuleResponse.Data.Rules["+ i +"].Rid"));
-			ruleInfo.setRuleLambda(context.stringValue("GetRuleResponse.Data.Rules["+ i +"].RuleLambda"));
-			ruleInfo.setName(context.stringValue("GetRuleResponse.Data.Rules["+ i +"].Name"));
-			ruleInfo.setType(context.integerValue("GetRuleResponse.Data.Rules["+ i +"].Type"));
-			ruleInfo.setStatus(context.integerValue("GetRuleResponse.Data.Rules["+ i +"].Status"));
-			ruleInfo.setIsDelete(context.integerValue("GetRuleResponse.Data.Rules["+ i +"].IsDelete"));
-			ruleInfo.setStartTime(context.stringValue("GetRuleResponse.Data.Rules["+ i +"].startTime"));
-			ruleInfo.setEndTime(context.stringValue("GetRuleResponse.Data.Rules["+ i +"].endTime"));
-			ruleInfo.setWeight(context.stringValue("GetRuleResponse.Data.Rules["+ i +"].Weight"));
-			ruleInfo.setIsOnline(context.integerValue("GetRuleResponse.Data.Rules["+ i +"].IsOnline"));
-			ruleInfo.setCreateEmpid(context.stringValue("GetRuleResponse.Data.Rules["+ i +"].CreateEmpid"));
-			ruleInfo.setCreateTime(context.stringValue("GetRuleResponse.Data.Rules["+ i +"].CreateTime"));
-			ruleInfo.setLastUpdateTime(context.stringValue("GetRuleResponse.Data.Rules["+ i +"].LastUpdateTime"));
-			ruleInfo.setLastUpdateEmpid(context.stringValue("GetRuleResponse.Data.Rules["+ i +"].LastUpdateEmpid"));
-			ruleInfo.setComments(context.stringValue("GetRuleResponse.Data.Rules["+ i +"].Comments"));
+			ruleInfo.setRid(context.stringValue("GetRuleResponse.data.rules["+ i +"].rid"));
+			ruleInfo.setRuleLambda(context.stringValue("GetRuleResponse.data.rules["+ i +"].ruleLambda"));
+			ruleInfo.setName(context.stringValue("GetRuleResponse.data.rules["+ i +"].name"));
+			ruleInfo.setType(context.integerValue("GetRuleResponse.data.rules["+ i +"].type"));
+			ruleInfo.setStatus(context.integerValue("GetRuleResponse.data.rules["+ i +"].status"));
+			ruleInfo.setIsDelete(context.integerValue("GetRuleResponse.data.rules["+ i +"].isDelete"));
+			ruleInfo.setStartTime(context.stringValue("GetRuleResponse.data.rules["+ i +"].startTime"));
+			ruleInfo.setEndTime(context.stringValue("GetRuleResponse.data.rules["+ i +"].endTime"));
+			ruleInfo.setWeight(context.stringValue("GetRuleResponse.data.rules["+ i +"].weight"));
+			ruleInfo.setIsOnline(context.integerValue("GetRuleResponse.data.rules["+ i +"].isOnline"));
+			ruleInfo.setCreateEmpid(context.stringValue("GetRuleResponse.data.rules["+ i +"].createEmpid"));
+			ruleInfo.setCreateTime(context.stringValue("GetRuleResponse.data.rules["+ i +"].createTime"));
+			ruleInfo.setLastUpdateTime(context.stringValue("GetRuleResponse.data.rules["+ i +"].lastUpdateTime"));
+			ruleInfo.setLastUpdateEmpid(context.stringValue("GetRuleResponse.data.rules["+ i +"].lastUpdateEmpid"));
+			ruleInfo.setComments(context.stringValue("GetRuleResponse.data.rules["+ i +"].comments"));
 
 			rules.add(ruleInfo);
 		}
