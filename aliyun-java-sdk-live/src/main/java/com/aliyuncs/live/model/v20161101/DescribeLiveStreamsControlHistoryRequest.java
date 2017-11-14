@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeLiveStreamsControlHistoryRequest extends RpcAcsRequest<DescribeLiveStreamsControlHistoryResponse> {
 	
 	public DescribeLiveStreamsControlHistoryRequest() {
-		super("live", "2016-11-01", "DescribeLiveStreamsControlHistory", "live");
+		super("live", "2016-11-01", "DescribeLiveStreamsControlHistory");
 	}
 
 	private String appName;

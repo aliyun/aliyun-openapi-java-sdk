@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeLiveSnapshotConfigRequest extends RpcAcsRequest<DescribeLiveSnapshotConfigResponse> {
 	
 	public DescribeLiveSnapshotConfigRequest() {
-		super("live", "2016-11-01", "DescribeLiveSnapshotConfig", "live");
+		super("live", "2016-11-01", "DescribeLiveSnapshotConfig");
 	}
 
 	private String appName;

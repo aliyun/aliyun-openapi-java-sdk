@@ -1,3 +1,9 @@
+2017-11-14 Version: 3.0.0
+1, 增加导播台相关接口(接口名称包含caster)
+2, 增加查询流历史在线人数接口DescribeLiveStreamHistoryUserNum
+3, 修改添加鉴黄配置接口AddLiveSnapshotDetectPornConfig，增加scenes参数
+4, 修改更新鉴黄配置接口UpdateLiveSnapshotDetectPornConfig，增加scenes参数
+
 2017-09-06 Version: 2.7.0
 1, 增加拉流配置接口AddLivePullStreamInfoConfig。
 2, 增加删除拉流配置接口DeleteLivePullStreamInfoConfig。

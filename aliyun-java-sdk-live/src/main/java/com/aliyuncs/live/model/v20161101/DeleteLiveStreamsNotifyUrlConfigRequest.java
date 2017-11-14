@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeleteLiveStreamsNotifyUrlConfigRequest extends RpcAcsRequest<DeleteLiveStreamsNotifyUrlConfigResponse> {
 	
 	public DeleteLiveStreamsNotifyUrlConfigRequest() {
-		super("live", "2016-11-01", "DeleteLiveStreamsNotifyUrlConfig", "live");
+		super("live", "2016-11-01", "DeleteLiveStreamsNotifyUrlConfig");
 	}
 
 	private String securityToken;

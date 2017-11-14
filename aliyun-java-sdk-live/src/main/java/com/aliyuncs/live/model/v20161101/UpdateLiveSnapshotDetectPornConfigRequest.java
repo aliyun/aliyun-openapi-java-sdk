@@ -19,6 +19,7 @@
 package com.aliyuncs.live.model.v20161101;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 
 /**
  * @author auto create
@@ -27,7 +28,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class UpdateLiveSnapshotDetectPornConfigRequest extends RpcAcsRequest<UpdateLiveSnapshotDetectPornConfigResponse> {
 	
 	public UpdateLiveSnapshotDetectPornConfigRequest() {
-		super("live", "2016-11-01", "UpdateLiveSnapshotDetectPornConfig", "live");
+		super("live", "2016-11-01", "UpdateLiveSnapshotDetectPornConfig");
 	}
 
 	private String ossBucket;
@@ -45,6 +46,8 @@ public class UpdateLiveSnapshotDetectPornConfigRequest extends RpcAcsRequest<Upd
 	private Long ownerId;
 
 	private String ossObject;
+
+	private List<String> scenes;
 
 	public String getOssBucket() {
 		return this.ossBucket;
@@ -132,6 +135,19 @@ public class UpdateLiveSnapshotDetectPornConfigRequest extends RpcAcsRequest<Upd
 		if(ossObject != null){
 			putQueryParameter("OssObject", ossObject);
 		}
+	}
+
+	public List<String> getScenes() {
+		return this.scenes;
+	}
+
+	public void setScenes(List<String> scenes) {
+		this.scenes = scenes;	
+		if (scenes != null) {
+			for (int i = 0; i < scenes.size(); i++) {
+				putQueryParameter("Scene." + (i + 1) , scenes.get(i));
+			}
+		}	
 	}
 
 	@Override

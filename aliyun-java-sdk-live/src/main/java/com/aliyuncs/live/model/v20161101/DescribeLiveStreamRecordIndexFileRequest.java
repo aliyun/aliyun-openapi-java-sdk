@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeLiveStreamRecordIndexFileRequest extends RpcAcsRequest<DescribeLiveStreamRecordIndexFileResponse> {
 	
 	public DescribeLiveStreamRecordIndexFileRequest() {
-		super("live", "2016-11-01", "DescribeLiveStreamRecordIndexFile", "live");
+		super("live", "2016-11-01", "DescribeLiveStreamRecordIndexFile");
 	}
 
 	private String recordId;
