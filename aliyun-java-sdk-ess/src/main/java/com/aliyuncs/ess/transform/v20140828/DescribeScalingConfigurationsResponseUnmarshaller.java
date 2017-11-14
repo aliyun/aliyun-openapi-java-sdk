@@ -24,6 +24,7 @@ import java.util.List;
 import com.aliyuncs.ess.model.v20140828.DescribeScalingConfigurationsResponse;
 import com.aliyuncs.ess.model.v20140828.DescribeScalingConfigurationsResponse.ScalingConfiguration;
 import com.aliyuncs.ess.model.v20140828.DescribeScalingConfigurationsResponse.ScalingConfiguration.DataDisk;
+import com.aliyuncs.ess.model.v20140828.DescribeScalingConfigurationsResponse.ScalingConfiguration.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -55,6 +56,11 @@ public class DescribeScalingConfigurationsResponseUnmarshaller {
 			scalingConfiguration.setLifecycleState(context.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].LifecycleState"));
 			scalingConfiguration.setCreationTime(context.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].CreationTime"));
 			scalingConfiguration.setLoadBalancerWeight(context.integerValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].LoadBalancerWeight"));
+			scalingConfiguration.setUserData(context.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].UserData"));
+			scalingConfiguration.setKeyPairName(context.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].KeyPairName"));
+			scalingConfiguration.setRamRoleName(context.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].RamRoleName"));
+			scalingConfiguration.setDeploymentSetId(context.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].DeploymentSetId"));
+			scalingConfiguration.setSecurityEnhancementStrategy(context.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].SecurityEnhancementStrategy"));
 
 			List<DataDisk> dataDisks = new ArrayList<DataDisk>();
 			for (int j = 0; j < context.lengthValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].DataDisks.Length"); j++) {
@@ -67,6 +73,16 @@ public class DescribeScalingConfigurationsResponseUnmarshaller {
 				dataDisks.add(dataDisk);
 			}
 			scalingConfiguration.setDataDisks(dataDisks);
+
+			List<Tag> tags = new ArrayList<Tag>();
+			for (int j = 0; j < context.lengthValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].Tags.Length"); j++) {
+				Tag tag = new Tag();
+				tag.setKey(context.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].Tags["+ j +"].Key"));
+				tag.setValue(context.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].Tags["+ j +"].Value"));
+
+				tags.add(tag);
+			}
+			scalingConfiguration.setTags(tags);
 
 			scalingConfigurations.add(scalingConfiguration);
 		}

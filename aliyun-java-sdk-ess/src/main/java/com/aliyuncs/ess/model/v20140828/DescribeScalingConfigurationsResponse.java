@@ -113,7 +113,19 @@ public class DescribeScalingConfigurationsResponse extends AcsResponse {
 
 		private Integer loadBalancerWeight;
 
+		private String userData;
+
+		private String keyPairName;
+
+		private String ramRoleName;
+
+		private String deploymentSetId;
+
+		private String securityEnhancementStrategy;
+
 		private List<DataDisk> dataDisks;
+
+		private List<Tag> tags;
 
 		public String getScalingConfigurationId() {
 			return this.scalingConfigurationId;
@@ -243,12 +255,60 @@ public class DescribeScalingConfigurationsResponse extends AcsResponse {
 			this.loadBalancerWeight = loadBalancerWeight;
 		}
 
+		public String getUserData() {
+			return this.userData;
+		}
+
+		public void setUserData(String userData) {
+			this.userData = userData;
+		}
+
+		public String getKeyPairName() {
+			return this.keyPairName;
+		}
+
+		public void setKeyPairName(String keyPairName) {
+			this.keyPairName = keyPairName;
+		}
+
+		public String getRamRoleName() {
+			return this.ramRoleName;
+		}
+
+		public void setRamRoleName(String ramRoleName) {
+			this.ramRoleName = ramRoleName;
+		}
+
+		public String getDeploymentSetId() {
+			return this.deploymentSetId;
+		}
+
+		public void setDeploymentSetId(String deploymentSetId) {
+			this.deploymentSetId = deploymentSetId;
+		}
+
+		public String getSecurityEnhancementStrategy() {
+			return this.securityEnhancementStrategy;
+		}
+
+		public void setSecurityEnhancementStrategy(String securityEnhancementStrategy) {
+			this.securityEnhancementStrategy = securityEnhancementStrategy;
+		}
+
 		public List<DataDisk> getDataDisks() {
 			return this.dataDisks;
 		}
 
 		public void setDataDisks(List<DataDisk> dataDisks) {
 			this.dataDisks = dataDisks;
+		}
+
+		public List<Tag> getTags() {
+			return this.tags;
+		}
+
+		public void setTags(List<Tag> tags) {
+			this.tags = tags;
 		}
 
 		public static class DataDisk {
@@ -291,6 +351,29 @@ public class DescribeScalingConfigurationsResponse extends AcsResponse {
 
 			public void setDevice(String device) {
 				this.device = device;
+			}
+		}
+
+		public static class Tag {
+
+			private String key;
+
+			private String value;
+
+			public String getKey() {
+				return this.key;
+			}
+
+			public void setKey(String key) {
+				this.key = key;
+			}
+
+			public String getValue() {
+				return this.value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
 			}
 		}
 	}
