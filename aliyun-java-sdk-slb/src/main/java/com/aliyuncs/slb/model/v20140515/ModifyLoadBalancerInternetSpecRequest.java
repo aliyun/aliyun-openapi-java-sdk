@@ -34,19 +34,21 @@ public class ModifyLoadBalancerInternetSpecRequest extends RpcAcsRequest<ModifyL
 
 	private Long resourceOwnerId;
 
-	private String loadBalancerId;
+	private Boolean autoPay;
 
 	private String resourceOwnerAccount;
 
 	private Integer bandwidth;
-
-	private String internetChargeType;
 
 	private String ownerAccount;
 
 	private Long ownerId;
 
 	private String tags;
+
+	private String loadBalancerId;
+
+	private String internetChargeType;
 
 	public String getAccess_key_id() {
 		return this.access_key_id;
@@ -70,14 +72,14 @@ public class ModifyLoadBalancerInternetSpecRequest extends RpcAcsRequest<ModifyL
 		}
 	}
 
-	public String getLoadBalancerId() {
-		return this.loadBalancerId;
+	public Boolean getAutoPay() {
+		return this.autoPay;
 	}
 
-	public void setLoadBalancerId(String loadBalancerId) {
-		this.loadBalancerId = loadBalancerId;
-		if(loadBalancerId != null){
-			putQueryParameter("LoadBalancerId", loadBalancerId);
+	public void setAutoPay(Boolean autoPay) {
+		this.autoPay = autoPay;
+		if(autoPay != null){
+			putQueryParameter("AutoPay", autoPay.toString());
 		}
 	}
 
@@ -100,17 +102,6 @@ public class ModifyLoadBalancerInternetSpecRequest extends RpcAcsRequest<ModifyL
 		this.bandwidth = bandwidth;
 		if(bandwidth != null){
 			putQueryParameter("Bandwidth", bandwidth.toString());
-		}
-	}
-
-	public String getInternetChargeType() {
-		return this.internetChargeType;
-	}
-
-	public void setInternetChargeType(String internetChargeType) {
-		this.internetChargeType = internetChargeType;
-		if(internetChargeType != null){
-			putQueryParameter("InternetChargeType", internetChargeType);
 		}
 	}
 
@@ -144,6 +135,28 @@ public class ModifyLoadBalancerInternetSpecRequest extends RpcAcsRequest<ModifyL
 		this.tags = tags;
 		if(tags != null){
 			putQueryParameter("Tags", tags);
+		}
+	}
+
+	public String getLoadBalancerId() {
+		return this.loadBalancerId;
+	}
+
+	public void setLoadBalancerId(String loadBalancerId) {
+		this.loadBalancerId = loadBalancerId;
+		if(loadBalancerId != null){
+			putQueryParameter("LoadBalancerId", loadBalancerId);
+		}
+	}
+
+	public String getInternetChargeType() {
+		return this.internetChargeType;
+	}
+
+	public void setInternetChargeType(String internetChargeType) {
+		this.internetChargeType = internetChargeType;
+		if(internetChargeType != null){
+			putQueryParameter("InternetChargeType", internetChargeType);
 		}
 	}
 

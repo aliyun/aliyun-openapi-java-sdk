@@ -27,6 +27,7 @@ public class ModifyLoadBalancerInternetSpecResponseUnmarshaller {
 	public static ModifyLoadBalancerInternetSpecResponse unmarshall(ModifyLoadBalancerInternetSpecResponse modifyLoadBalancerInternetSpecResponse, UnmarshallerContext context) {
 		
 		modifyLoadBalancerInternetSpecResponse.setRequestId(context.stringValue("ModifyLoadBalancerInternetSpecResponse.RequestId"));
+		modifyLoadBalancerInternetSpecResponse.setOrderId(context.longValue("ModifyLoadBalancerInternetSpecResponse.OrderId"));
 	 
 	 	return modifyLoadBalancerInternetSpecResponse;
 	}

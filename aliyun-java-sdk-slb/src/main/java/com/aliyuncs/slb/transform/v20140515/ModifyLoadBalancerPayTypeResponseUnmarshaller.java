@@ -27,6 +27,7 @@ public class ModifyLoadBalancerPayTypeResponseUnmarshaller {
 	public static ModifyLoadBalancerPayTypeResponse unmarshall(ModifyLoadBalancerPayTypeResponse modifyLoadBalancerPayTypeResponse, UnmarshallerContext context) {
 		
 		modifyLoadBalancerPayTypeResponse.setRequestId(context.stringValue("ModifyLoadBalancerPayTypeResponse.RequestId"));
+		modifyLoadBalancerPayTypeResponse.setOrderId(context.longValue("ModifyLoadBalancerPayTypeResponse.OrderId"));
 	 
 	 	return modifyLoadBalancerPayTypeResponse;
 	}

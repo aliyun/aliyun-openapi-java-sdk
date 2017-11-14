@@ -34,6 +34,8 @@ public class ModifyLoadBalancerPayTypeRequest extends RpcAcsRequest<ModifyLoadBa
 
 	private Long resourceOwnerId;
 
+	private Boolean autoPay;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
@@ -69,6 +71,17 @@ public class ModifyLoadBalancerPayTypeRequest extends RpcAcsRequest<ModifyLoadBa
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public Boolean getAutoPay() {
+		return this.autoPay;
+	}
+
+	public void setAutoPay(Boolean autoPay) {
+		this.autoPay = autoPay;
+		if(autoPay != null){
+			putQueryParameter("AutoPay", autoPay.toString());
 		}
 	}
 

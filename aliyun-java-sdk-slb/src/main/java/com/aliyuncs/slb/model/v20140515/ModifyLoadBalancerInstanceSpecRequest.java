@@ -38,6 +38,8 @@ public class ModifyLoadBalancerInstanceSpecRequest extends RpcAcsRequest<ModifyL
 
 	private String loadBalancerId;
 
+	private Boolean autoPay;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
@@ -87,6 +89,17 @@ public class ModifyLoadBalancerInstanceSpecRequest extends RpcAcsRequest<ModifyL
 		this.loadBalancerId = loadBalancerId;
 		if(loadBalancerId != null){
 			putQueryParameter("LoadBalancerId", loadBalancerId);
+		}
+	}
+
+	public Boolean getAutoPay() {
+		return this.autoPay;
+	}
+
+	public void setAutoPay(Boolean autoPay) {
+		this.autoPay = autoPay;
+		if(autoPay != null){
+			putQueryParameter("AutoPay", autoPay.toString());
 		}
 	}
 

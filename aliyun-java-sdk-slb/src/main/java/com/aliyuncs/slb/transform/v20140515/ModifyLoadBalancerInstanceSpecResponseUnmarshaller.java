@@ -27,6 +27,7 @@ public class ModifyLoadBalancerInstanceSpecResponseUnmarshaller {
 	public static ModifyLoadBalancerInstanceSpecResponse unmarshall(ModifyLoadBalancerInstanceSpecResponse modifyLoadBalancerInstanceSpecResponse, UnmarshallerContext context) {
 		
 		modifyLoadBalancerInstanceSpecResponse.setRequestId(context.stringValue("ModifyLoadBalancerInstanceSpecResponse.RequestId"));
+		modifyLoadBalancerInstanceSpecResponse.setOrderId(context.longValue("ModifyLoadBalancerInstanceSpecResponse.OrderId"));
 	 
 	 	return modifyLoadBalancerInstanceSpecResponse;
 	}

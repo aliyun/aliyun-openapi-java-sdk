@@ -24,17 +24,17 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class DescribeCACertificatesRequest extends RpcAcsRequest<DescribeCACertificatesResponse> {
+public class DescribeLoadBalancersRelatedEcsRequest extends RpcAcsRequest<DescribeLoadBalancersRelatedEcsResponse> {
 	
-	public DescribeCACertificatesRequest() {
-		super("Slb", "2014-05-15", "DescribeCACertificates", "slb");
+	public DescribeLoadBalancersRelatedEcsRequest() {
+		super("Slb", "2014-05-15", "DescribeLoadBalancersRelatedEcs", "slb");
 	}
 
 	private String access_key_id;
 
-	private String resourceGroupId;
-
 	private Long resourceOwnerId;
+
+	private String loadBalancerId;
 
 	private String resourceOwnerAccount;
 
@@ -42,7 +42,7 @@ public class DescribeCACertificatesRequest extends RpcAcsRequest<DescribeCACerti
 
 	private Long ownerId;
 
-	private String cACertificateId;
+	private String tags;
 
 	public String getAccess_key_id() {
 		return this.access_key_id;
@@ -55,17 +55,6 @@ public class DescribeCACertificatesRequest extends RpcAcsRequest<DescribeCACerti
 		}
 	}
 
-	public String getResourceGroupId() {
-		return this.resourceGroupId;
-	}
-
-	public void setResourceGroupId(String resourceGroupId) {
-		this.resourceGroupId = resourceGroupId;
-		if(resourceGroupId != null){
-			putQueryParameter("ResourceGroupId", resourceGroupId);
-		}
-	}
-
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
 	}
@@ -74,6 +63,17 @@ public class DescribeCACertificatesRequest extends RpcAcsRequest<DescribeCACerti
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getLoadBalancerId() {
+		return this.loadBalancerId;
+	}
+
+	public void setLoadBalancerId(String loadBalancerId) {
+		this.loadBalancerId = loadBalancerId;
+		if(loadBalancerId != null){
+			putQueryParameter("LoadBalancerId", loadBalancerId);
 		}
 	}
 
@@ -110,20 +110,20 @@ public class DescribeCACertificatesRequest extends RpcAcsRequest<DescribeCACerti
 		}
 	}
 
-	public String getCACertificateId() {
-		return this.cACertificateId;
+	public String getTags() {
+		return this.tags;
 	}
 
-	public void setCACertificateId(String cACertificateId) {
-		this.cACertificateId = cACertificateId;
-		if(cACertificateId != null){
-			putQueryParameter("CACertificateId", cACertificateId);
+	public void setTags(String tags) {
+		this.tags = tags;
+		if(tags != null){
+			putQueryParameter("Tags", tags);
 		}
 	}
 
 	@Override
-	public Class<DescribeCACertificatesResponse> getResponseClass() {
-		return DescribeCACertificatesResponse.class;
+	public Class<DescribeLoadBalancersRelatedEcsResponse> getResponseClass() {
+		return DescribeLoadBalancersRelatedEcsResponse.class;
 	}
 
 }

@@ -30,12 +30,22 @@ public class ModifyLoadBalancerInstanceSpecResponse extends AcsResponse {
 
 	private String requestId;
 
+	private Long orderId;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Long getOrderId() {
+		return this.orderId;
+	}
+
+	public void setOrderId(Long orderId) {
+		this.orderId = orderId;
 	}
 
 	@Override

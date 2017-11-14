@@ -44,6 +44,8 @@ public class CreateLoadBalancerResponse extends AcsResponse {
 
 	private String networkType;
 
+	private Long orderId;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -106,6 +108,14 @@ public class CreateLoadBalancerResponse extends AcsResponse {
 
 	public void setNetworkType(String networkType) {
 		this.networkType = networkType;
+	}
+
+	public Long getOrderId() {
+		return this.orderId;
+	}
+
+	public void setOrderId(Long orderId) {
+		this.orderId = orderId;
 	}
 
 	@Override

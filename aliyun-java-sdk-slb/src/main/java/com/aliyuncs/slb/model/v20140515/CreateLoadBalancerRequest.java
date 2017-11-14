@@ -32,29 +32,37 @@ public class CreateLoadBalancerRequest extends RpcAcsRequest<CreateLoadBalancerR
 
 	private String access_key_id;
 
+	private Long resourceOwnerId;
+
+	private String clientToken;
+
+	private String masterZoneId;
+
+	private Integer duration;
+
+	private String resourceGroupId;
+
+	private String loadBalancerName;
+
+	private String addressType;
+
+	private String slaveZoneId;
+
 	private String loadBalancerSpec;
 
-	private Long resourceOwnerId;
+	private Boolean autoPay;
 
 	private String resourceOwnerAccount;
 
 	private Integer bandwidth;
 
-	private String clientToken;
-
 	private String ownerAccount;
 
 	private Long ownerId;
 
-	private String masterZoneId;
-
 	private String tags;
 
 	private String vSwitchId;
-
-	private String resourceGroupId;
-
-	private String loadBalancerName;
 
 	private String enableVpcVipFlow;
 
@@ -62,9 +70,9 @@ public class CreateLoadBalancerRequest extends RpcAcsRequest<CreateLoadBalancerR
 
 	private String vpcId;
 
-	private String addressType;
+	private String payType;
 
-	private String slaveZoneId;
+	private String pricingCycle;
 
 	public String getAccess_key_id() {
 		return this.access_key_id;
@@ -74,6 +82,94 @@ public class CreateLoadBalancerRequest extends RpcAcsRequest<CreateLoadBalancerR
 		this.access_key_id = access_key_id;
 		if(access_key_id != null){
 			putQueryParameter("access_key_id", access_key_id);
+		}
+	}
+
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
+	}
+
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public String getMasterZoneId() {
+		return this.masterZoneId;
+	}
+
+	public void setMasterZoneId(String masterZoneId) {
+		this.masterZoneId = masterZoneId;
+		if(masterZoneId != null){
+			putQueryParameter("MasterZoneId", masterZoneId);
+		}
+	}
+
+	public Integer getDuration() {
+		return this.duration;
+	}
+
+	public void setDuration(Integer duration) {
+		this.duration = duration;
+		if(duration != null){
+			putQueryParameter("Duration", duration.toString());
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
+	public String getLoadBalancerName() {
+		return this.loadBalancerName;
+	}
+
+	public void setLoadBalancerName(String loadBalancerName) {
+		this.loadBalancerName = loadBalancerName;
+		if(loadBalancerName != null){
+			putQueryParameter("LoadBalancerName", loadBalancerName);
+		}
+	}
+
+	public String getAddressType() {
+		return this.addressType;
+	}
+
+	public void setAddressType(String addressType) {
+		this.addressType = addressType;
+		if(addressType != null){
+			putQueryParameter("AddressType", addressType);
+		}
+	}
+
+	public String getSlaveZoneId() {
+		return this.slaveZoneId;
+	}
+
+	public void setSlaveZoneId(String slaveZoneId) {
+		this.slaveZoneId = slaveZoneId;
+		if(slaveZoneId != null){
+			putQueryParameter("SlaveZoneId", slaveZoneId);
 		}
 	}
 
@@ -88,14 +184,14 @@ public class CreateLoadBalancerRequest extends RpcAcsRequest<CreateLoadBalancerR
 		}
 	}
 
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
+	public Boolean getAutoPay() {
+		return this.autoPay;
 	}
 
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+	public void setAutoPay(Boolean autoPay) {
+		this.autoPay = autoPay;
+		if(autoPay != null){
+			putQueryParameter("AutoPay", autoPay.toString());
 		}
 	}
 
@@ -121,17 +217,6 @@ public class CreateLoadBalancerRequest extends RpcAcsRequest<CreateLoadBalancerR
 		}
 	}
 
-	public String getClientToken() {
-		return this.clientToken;
-	}
-
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putQueryParameter("ClientToken", clientToken);
-		}
-	}
-
 	public String getOwnerAccount() {
 		return this.ownerAccount;
 	}
@@ -154,17 +239,6 @@ public class CreateLoadBalancerRequest extends RpcAcsRequest<CreateLoadBalancerR
 		}
 	}
 
-	public String getMasterZoneId() {
-		return this.masterZoneId;
-	}
-
-	public void setMasterZoneId(String masterZoneId) {
-		this.masterZoneId = masterZoneId;
-		if(masterZoneId != null){
-			putQueryParameter("MasterZoneId", masterZoneId);
-		}
-	}
-
 	public String getTags() {
 		return this.tags;
 	}
@@ -184,28 +258,6 @@ public class CreateLoadBalancerRequest extends RpcAcsRequest<CreateLoadBalancerR
 		this.vSwitchId = vSwitchId;
 		if(vSwitchId != null){
 			putQueryParameter("VSwitchId", vSwitchId);
-		}
-	}
-
-	public String getResourceGroupId() {
-		return this.resourceGroupId;
-	}
-
-	public void setResourceGroupId(String resourceGroupId) {
-		this.resourceGroupId = resourceGroupId;
-		if(resourceGroupId != null){
-			putQueryParameter("ResourceGroupId", resourceGroupId);
-		}
-	}
-
-	public String getLoadBalancerName() {
-		return this.loadBalancerName;
-	}
-
-	public void setLoadBalancerName(String loadBalancerName) {
-		this.loadBalancerName = loadBalancerName;
-		if(loadBalancerName != null){
-			putQueryParameter("LoadBalancerName", loadBalancerName);
 		}
 	}
 
@@ -242,25 +294,25 @@ public class CreateLoadBalancerRequest extends RpcAcsRequest<CreateLoadBalancerR
 		}
 	}
 
-	public String getAddressType() {
-		return this.addressType;
+	public String getPayType() {
+		return this.payType;
 	}
 
-	public void setAddressType(String addressType) {
-		this.addressType = addressType;
-		if(addressType != null){
-			putQueryParameter("AddressType", addressType);
+	public void setPayType(String payType) {
+		this.payType = payType;
+		if(payType != null){
+			putQueryParameter("PayType", payType);
 		}
 	}
 
-	public String getSlaveZoneId() {
-		return this.slaveZoneId;
+	public String getPricingCycle() {
+		return this.pricingCycle;
 	}
 
-	public void setSlaveZoneId(String slaveZoneId) {
-		this.slaveZoneId = slaveZoneId;
-		if(slaveZoneId != null){
-			putQueryParameter("SlaveZoneId", slaveZoneId);
+	public void setPricingCycle(String pricingCycle) {
+		this.pricingCycle = pricingCycle;
+		if(pricingCycle != null){
+			putQueryParameter("PricingCycle", pricingCycle);
 		}
 	}
 
