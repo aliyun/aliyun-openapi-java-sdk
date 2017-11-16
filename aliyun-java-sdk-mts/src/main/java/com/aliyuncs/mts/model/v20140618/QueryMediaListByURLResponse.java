@@ -283,7 +283,9 @@ public class QueryMediaListByURLResponse extends AcsResponse {
 
 			private String fps;
 
-			private File file;
+			private String encryption;
+
+			private File1 file1;
 
 			public String getActivityName() {
 				return this.activityName;
@@ -365,15 +367,23 @@ public class QueryMediaListByURLResponse extends AcsResponse {
 				this.fps = fps;
 			}
 
-			public File getFile() {
-				return this.file;
+			public String getEncryption() {
+				return this.encryption;
 			}
 
-			public void setFile(File file) {
-				this.file = file;
+			public void setEncryption(String encryption) {
+				this.encryption = encryption;
 			}
 
-			public static class File {
+			public File1 getFile1() {
+				return this.file1;
+			}
+
+			public void setFile1(File1 file1) {
+				this.file1 = file1;
+			}
+
+			public static class File1 {
 
 				private String uRL;
 
@@ -409,7 +419,7 @@ public class QueryMediaListByURLResponse extends AcsResponse {
 
 			private String count;
 
-			private File file;
+			private File2 file2;
 
 			public String getType() {
 				return this.type;
@@ -451,15 +461,15 @@ public class QueryMediaListByURLResponse extends AcsResponse {
 				this.count = count;
 			}
 
-			public File getFile() {
-				return this.file;
+			public File2 getFile2() {
+				return this.file2;
 			}
 
-			public void setFile(File file) {
-				this.file = file;
+			public void setFile2(File2 file2) {
+				this.file2 = file2;
 			}
 
-			public static class File {
+			public static class File2 {
 
 				private String uRL;
 

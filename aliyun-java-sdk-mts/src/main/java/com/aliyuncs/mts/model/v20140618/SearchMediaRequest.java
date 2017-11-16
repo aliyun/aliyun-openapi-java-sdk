@@ -30,41 +30,43 @@ public class SearchMediaRequest extends RpcAcsRequest<SearchMediaResponse> {
 		super("Mts", "2014-06-18", "SearchMedia");
 	}
 
-	private Long ownerId;
+	private Long resourceOwnerId;
 
 	private String resourceOwnerAccount;
 
-	private Long resourceOwnerId;
-
-	private String from;
-
-	private String to;
-
-	private String keyWord;
-
-	private String title;
+	private String ownerAccount;
 
 	private String description;
 
-	private String tag;
+	private Long ownerId;
 
-	private String cateId;
-
-	private String sortBy;
-
-	private Long pageSize;
+	private String title;
 
 	private Long pageNumber;
 
-	private String ownerAccount;
+	private String cateId;
 
-	public Long getOwnerId() {
-		return this.ownerId;
+	private Long pageSize;
+
+	private String from;
+
+	private String sortBy;
+
+	private String to;
+
+	private String tag;
+
+	private String keyWord;
+
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
 	}
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
 	}
 
 	public String getResourceOwnerAccount() {
@@ -73,106 +75,9 @@ public class SearchMediaRequest extends RpcAcsRequest<SearchMediaResponse> {
 
 	public void setResourceOwnerAccount(String resourceOwnerAccount) {
 		this.resourceOwnerAccount = resourceOwnerAccount;
-		putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-	}
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", resourceOwnerId);
-	}
-
-	public String getFrom() {
-		return this.from;
-	}
-
-	public void setFrom(String from) {
-		this.from = from;
-		putQueryParameter("From", from);
-	}
-
-	public String getTo() {
-		return this.to;
-	}
-
-	public void setTo(String to) {
-		this.to = to;
-		putQueryParameter("To", to);
-	}
-
-	public String getKeyWord() {
-		return this.keyWord;
-	}
-
-	public void setKeyWord(String keyWord) {
-		this.keyWord = keyWord;
-		putQueryParameter("KeyWord", keyWord);
-	}
-
-	public String getTitle() {
-		return this.title;
-	}
-
-	public void setTitle(String title) {
-		this.title = title;
-		putQueryParameter("Title", title);
-	}
-
-	public String getDescription() {
-		return this.description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-		putQueryParameter("Description", description);
-	}
-
-	public String getTag() {
-		return this.tag;
-	}
-
-	public void setTag(String tag) {
-		this.tag = tag;
-		putQueryParameter("Tag", tag);
-	}
-
-	public String getCateId() {
-		return this.cateId;
-	}
-
-	public void setCateId(String cateId) {
-		this.cateId = cateId;
-		putQueryParameter("CateId", cateId);
-	}
-
-	public String getSortBy() {
-		return this.sortBy;
-	}
-
-	public void setSortBy(String sortBy) {
-		this.sortBy = sortBy;
-		putQueryParameter("SortBy", sortBy);
-	}
-
-	public Long getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Long pageSize) {
-		this.pageSize = pageSize;
-		putQueryParameter("PageSize", pageSize);
-	}
-
-	public Long getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Long pageNumber) {
-		this.pageNumber = pageNumber;
-		putQueryParameter("PageNumber", pageNumber);
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
 	}
 
 	public String getOwnerAccount() {
@@ -181,7 +86,130 @@ public class SearchMediaRequest extends RpcAcsRequest<SearchMediaResponse> {
 
 	public void setOwnerAccount(String ownerAccount) {
 		this.ownerAccount = ownerAccount;
-		putQueryParameter("OwnerAccount", ownerAccount);
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+		if(description != null){
+			putQueryParameter("Description", description);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getTitle() {
+		return this.title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+		if(title != null){
+			putQueryParameter("Title", title);
+		}
+	}
+
+	public Long getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Long pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public String getCateId() {
+		return this.cateId;
+	}
+
+	public void setCateId(String cateId) {
+		this.cateId = cateId;
+		if(cateId != null){
+			putQueryParameter("CateId", cateId);
+		}
+	}
+
+	public Long getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Long pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getFrom() {
+		return this.from;
+	}
+
+	public void setFrom(String from) {
+		this.from = from;
+		if(from != null){
+			putQueryParameter("From", from);
+		}
+	}
+
+	public String getSortBy() {
+		return this.sortBy;
+	}
+
+	public void setSortBy(String sortBy) {
+		this.sortBy = sortBy;
+		if(sortBy != null){
+			putQueryParameter("SortBy", sortBy);
+		}
+	}
+
+	public String getTo() {
+		return this.to;
+	}
+
+	public void setTo(String to) {
+		this.to = to;
+		if(to != null){
+			putQueryParameter("To", to);
+		}
+	}
+
+	public String getTag() {
+		return this.tag;
+	}
+
+	public void setTag(String tag) {
+		this.tag = tag;
+		if(tag != null){
+			putQueryParameter("Tag", tag);
+		}
+	}
+
+	public String getKeyWord() {
+		return this.keyWord;
+	}
+
+	public void setKeyWord(String keyWord) {
+		this.keyWord = keyWord;
+		if(keyWord != null){
+			putQueryParameter("KeyWord", keyWord);
+		}
 	}
 
 	@Override

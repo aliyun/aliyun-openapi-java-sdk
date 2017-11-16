@@ -30,32 +30,27 @@ public class BindInputBucketRequest extends RpcAcsRequest<BindInputBucketRespons
 		super("Mts", "2014-06-18", "BindInputBucket");
 	}
 
-	private Long ownerId;
-
-	private String resourceOwnerAccount;
+	private String bucket;
 
 	private Long resourceOwnerId;
 
-	private String bucket;
+	private String resourceOwnerAccount;
+
+	private String roleArn;
 
 	private String ownerAccount;
 
-	public Long getOwnerId() {
-		return this.ownerId;
+	private Long ownerId;
+
+	public String getBucket() {
+		return this.bucket;
 	}
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	public void setBucket(String bucket) {
+		this.bucket = bucket;
+		if(bucket != null){
+			putQueryParameter("Bucket", bucket);
+		}
 	}
 
 	public Long getResourceOwnerId() {
@@ -64,16 +59,31 @@ public class BindInputBucketRequest extends RpcAcsRequest<BindInputBucketRespons
 
 	public void setResourceOwnerId(Long resourceOwnerId) {
 		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", resourceOwnerId);
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
 	}
 
-	public String getBucket() {
-		return this.bucket;
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
 	}
 
-	public void setBucket(String bucket) {
-		this.bucket = bucket;
-		putQueryParameter("Bucket", bucket);
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getRoleArn() {
+		return this.roleArn;
+	}
+
+	public void setRoleArn(String roleArn) {
+		this.roleArn = roleArn;
+		if(roleArn != null){
+			putQueryParameter("RoleArn", roleArn);
+		}
 	}
 
 	public String getOwnerAccount() {
@@ -82,7 +92,20 @@ public class BindInputBucketRequest extends RpcAcsRequest<BindInputBucketRespons
 
 	public void setOwnerAccount(String ownerAccount) {
 		this.ownerAccount = ownerAccount;
-		putQueryParameter("OwnerAccount", ownerAccount);
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
 	}
 
 	@Override

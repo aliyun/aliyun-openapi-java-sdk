@@ -30,7 +30,9 @@ public class SetAuthConfigRequest extends RpcAcsRequest<SetAuthConfigResponse> {
 		super("Mts", "2014-06-18", "SetAuthConfig");
 	}
 
-	private String ownerId;
+	private String key1;
+
+	private String key2;
 
 	private String resourceOwnerId;
 
@@ -38,45 +40,7 @@ public class SetAuthConfigRequest extends RpcAcsRequest<SetAuthConfigResponse> {
 
 	private String ownerAccount;
 
-	private String key1;
-
-	private String key2;
-
-	public String getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(String ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
-	}
-
-	public String getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(String resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", resourceOwnerId);
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-	}
-
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
-
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		putQueryParameter("OwnerAccount", ownerAccount);
-	}
+	private String ownerId;
 
 	public String getKey1() {
 		return this.key1;
@@ -84,7 +48,9 @@ public class SetAuthConfigRequest extends RpcAcsRequest<SetAuthConfigResponse> {
 
 	public void setKey1(String key1) {
 		this.key1 = key1;
-		putQueryParameter("Key1", key1);
+		if(key1 != null){
+			putQueryParameter("Key1", key1);
+		}
 	}
 
 	public String getKey2() {
@@ -93,7 +59,53 @@ public class SetAuthConfigRequest extends RpcAcsRequest<SetAuthConfigResponse> {
 
 	public void setKey2(String key2) {
 		this.key2 = key2;
-		putQueryParameter("Key2", key2);
+		if(key2 != null){
+			putQueryParameter("Key2", key2);
+		}
+	}
+
+	public String getResourceOwnerId() {
+		return this.resourceOwnerId;
+	}
+
+	public void setResourceOwnerId(String resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId);
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public String getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(String ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId);
+		}
 	}
 
 	@Override

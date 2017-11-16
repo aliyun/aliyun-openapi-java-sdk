@@ -30,42 +30,35 @@ public class UpdateMediaRequest extends RpcAcsRequest<UpdateMediaResponse> {
 		super("Mts", "2014-06-18", "UpdateMedia");
 	}
 
-	private Long ownerId;
+	private String coverURL;
+
+	private Long resourceOwnerId;
 
 	private String resourceOwnerAccount;
 
-	private Long resourceOwnerId;
+	private Long cateId;
+
+	private String ownerAccount;
+
+	private String description;
+
+	private Long ownerId;
 
 	private String mediaId;
 
 	private String title;
 
-	private String description;
-
-	private String coverURL;
-
-	private Long cateId;
-
 	private String tags;
 
-	private String ownerAccount;
-
-	public Long getOwnerId() {
-		return this.ownerId;
+	public String getCoverURL() {
+		return this.coverURL;
 	}
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	public void setCoverURL(String coverURL) {
+		this.coverURL = coverURL;
+		if(coverURL != null){
+			putQueryParameter("CoverURL", coverURL);
+		}
 	}
 
 	public Long getResourceOwnerId() {
@@ -74,43 +67,20 @@ public class UpdateMediaRequest extends RpcAcsRequest<UpdateMediaResponse> {
 
 	public void setResourceOwnerId(Long resourceOwnerId) {
 		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", resourceOwnerId);
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
 	}
 
-	public String getMediaId() {
-		return this.mediaId;
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
 	}
 
-	public void setMediaId(String mediaId) {
-		this.mediaId = mediaId;
-		putQueryParameter("MediaId", mediaId);
-	}
-
-	public String getTitle() {
-		return this.title;
-	}
-
-	public void setTitle(String title) {
-		this.title = title;
-		putQueryParameter("Title", title);
-	}
-
-	public String getDescription() {
-		return this.description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-		putQueryParameter("Description", description);
-	}
-
-	public String getCoverURL() {
-		return this.coverURL;
-	}
-
-	public void setCoverURL(String coverURL) {
-		this.coverURL = coverURL;
-		putQueryParameter("CoverURL", coverURL);
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
 	}
 
 	public Long getCateId() {
@@ -119,16 +89,9 @@ public class UpdateMediaRequest extends RpcAcsRequest<UpdateMediaResponse> {
 
 	public void setCateId(Long cateId) {
 		this.cateId = cateId;
-		putQueryParameter("CateId", cateId);
-	}
-
-	public String getTags() {
-		return this.tags;
-	}
-
-	public void setTags(String tags) {
-		this.tags = tags;
-		putQueryParameter("Tags", tags);
+		if(cateId != null){
+			putQueryParameter("CateId", cateId.toString());
+		}
 	}
 
 	public String getOwnerAccount() {
@@ -137,7 +100,64 @@ public class UpdateMediaRequest extends RpcAcsRequest<UpdateMediaResponse> {
 
 	public void setOwnerAccount(String ownerAccount) {
 		this.ownerAccount = ownerAccount;
-		putQueryParameter("OwnerAccount", ownerAccount);
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+		if(description != null){
+			putQueryParameter("Description", description);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getMediaId() {
+		return this.mediaId;
+	}
+
+	public void setMediaId(String mediaId) {
+		this.mediaId = mediaId;
+		if(mediaId != null){
+			putQueryParameter("MediaId", mediaId);
+		}
+	}
+
+	public String getTitle() {
+		return this.title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+		if(title != null){
+			putQueryParameter("Title", title);
+		}
+	}
+
+	public String getTags() {
+		return this.tags;
+	}
+
+	public void setTags(String tags) {
+		this.tags = tags;
+		if(tags != null){
+			putQueryParameter("Tags", tags);
+		}
 	}
 
 	@Override

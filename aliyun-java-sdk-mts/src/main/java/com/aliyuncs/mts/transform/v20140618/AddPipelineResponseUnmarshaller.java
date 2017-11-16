@@ -35,6 +35,7 @@ public class AddPipelineResponseUnmarshaller {
 		pipeline.setName(context.stringValue("AddPipelineResponse.Pipeline.Name"));
 		pipeline.setState(context.stringValue("AddPipelineResponse.Pipeline.State"));
 		pipeline.setSpeed(context.stringValue("AddPipelineResponse.Pipeline.Speed"));
+		pipeline.setSpeedLevel(context.longValue("AddPipelineResponse.Pipeline.SpeedLevel"));
 		pipeline.setRole(context.stringValue("AddPipelineResponse.Pipeline.Role"));
 
 		NotifyConfig notifyConfig = new NotifyConfig();

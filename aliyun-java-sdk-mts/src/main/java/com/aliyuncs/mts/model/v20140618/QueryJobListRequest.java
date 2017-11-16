@@ -30,23 +30,25 @@ public class QueryJobListRequest extends RpcAcsRequest<QueryJobListResponse> {
 		super("Mts", "2014-06-18", "QueryJobList");
 	}
 
-	private Long ownerId;
+	private Long resourceOwnerId;
 
 	private String resourceOwnerAccount;
-
-	private Long resourceOwnerId;
 
 	private String jobIds;
 
 	private String ownerAccount;
 
-	public Long getOwnerId() {
-		return this.ownerId;
+	private Long ownerId;
+
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
 	}
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
 	}
 
 	public String getResourceOwnerAccount() {
@@ -55,16 +57,9 @@ public class QueryJobListRequest extends RpcAcsRequest<QueryJobListResponse> {
 
 	public void setResourceOwnerAccount(String resourceOwnerAccount) {
 		this.resourceOwnerAccount = resourceOwnerAccount;
-		putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-	}
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", resourceOwnerId);
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
 	}
 
 	public String getJobIds() {
@@ -73,7 +68,9 @@ public class QueryJobListRequest extends RpcAcsRequest<QueryJobListResponse> {
 
 	public void setJobIds(String jobIds) {
 		this.jobIds = jobIds;
-		putQueryParameter("JobIds", jobIds);
+		if(jobIds != null){
+			putQueryParameter("JobIds", jobIds);
+		}
 	}
 
 	public String getOwnerAccount() {
@@ -82,7 +79,20 @@ public class QueryJobListRequest extends RpcAcsRequest<QueryJobListResponse> {
 
 	public void setOwnerAccount(String ownerAccount) {
 		this.ownerAccount = ownerAccount;
-		putQueryParameter("OwnerAccount", ownerAccount);
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
 	}
 
 	@Override

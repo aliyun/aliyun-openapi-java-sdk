@@ -32,7 +32,9 @@ import com.aliyuncs.mts.model.v20140618.QueryMediaListResponse.Media.MediaInfo.S
 import com.aliyuncs.mts.model.v20140618.QueryMediaListResponse.Media.MediaInfo.Streams.VideoStream;
 import com.aliyuncs.mts.model.v20140618.QueryMediaListResponse.Media.MediaInfo.Streams.VideoStream.NetworkCost;
 import com.aliyuncs.mts.model.v20140618.QueryMediaListResponse.Media.Play;
+import com.aliyuncs.mts.model.v20140618.QueryMediaListResponse.Media.Play.File1;
 import com.aliyuncs.mts.model.v20140618.QueryMediaListResponse.Media.Snapshot;
+import com.aliyuncs.mts.model.v20140618.QueryMediaListResponse.Media.Snapshot.File2;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -184,11 +186,12 @@ public class QueryMediaListResponseUnmarshaller {
 				play.setWidth(context.stringValue("QueryMediaListResponse.MediaList["+ i +"].PlayList["+ j +"].Width"));
 				play.setHeight(context.stringValue("QueryMediaListResponse.MediaList["+ i +"].PlayList["+ j +"].Height"));
 				play.setFps(context.stringValue("QueryMediaListResponse.MediaList["+ i +"].PlayList["+ j +"].Fps"));
+				play.setEncryption(context.stringValue("QueryMediaListResponse.MediaList["+ i +"].PlayList["+ j +"].Encryption"));
 
-				com.aliyuncs.mts.model.v20140618.QueryMediaListResponse.Media.Play.File playFile = new com.aliyuncs.mts.model.v20140618.QueryMediaListResponse.Media.Play.File();
-				playFile.setURL(context.stringValue("QueryMediaListResponse.MediaList["+ i +"].PlayList["+ j +"].File.URL"));
-				playFile.setState(context.stringValue("QueryMediaListResponse.MediaList["+ i +"].PlayList["+ j +"].File.State"));
-				play.setFile(playFile);
+				File1 file1 = new File1();
+				file1.setURL(context.stringValue("QueryMediaListResponse.MediaList["+ i +"].PlayList["+ j +"].File.URL"));
+				file1.setState(context.stringValue("QueryMediaListResponse.MediaList["+ i +"].PlayList["+ j +"].File.State"));
+				play.setFile1(file1);
 
 				playList.add(play);
 			}
@@ -203,10 +206,10 @@ public class QueryMediaListResponseUnmarshaller {
 				snapshot.setActivityName(context.stringValue("QueryMediaListResponse.MediaList["+ i +"].SnapshotList["+ j +"].ActivityName"));
 				snapshot.setCount(context.stringValue("QueryMediaListResponse.MediaList["+ i +"].SnapshotList["+ j +"].Count"));
 
-				com.aliyuncs.mts.model.v20140618.QueryMediaListResponse.Media.Snapshot.File snapshotFile = new com.aliyuncs.mts.model.v20140618.QueryMediaListResponse.Media.Snapshot.File();
-				snapshotFile.setURL(context.stringValue("QueryMediaListResponse.MediaList["+ i +"].SnapshotList["+ j +"].File.URL"));
-				snapshotFile.setState(context.stringValue("QueryMediaListResponse.MediaList["+ i +"].SnapshotList["+ j +"].File.State"));
-				snapshot.setFile(snapshotFile);
+				File2 file2 = new File2();
+				file2.setURL(context.stringValue("QueryMediaListResponse.MediaList["+ i +"].SnapshotList["+ j +"].File.URL"));
+				file2.setState(context.stringValue("QueryMediaListResponse.MediaList["+ i +"].SnapshotList["+ j +"].File.State"));
+				snapshot.setFile2(file2);
 
 				snapshotList.add(snapshot);
 			}

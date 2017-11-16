@@ -24,29 +24,31 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class QueryMediaWorkflowListByNameRequest extends RpcAcsRequest<QueryMediaWorkflowListByNameResponse> {
+public class QueryPornJobListRequest extends RpcAcsRequest<QueryPornJobListResponse> {
 	
-	public QueryMediaWorkflowListByNameRequest() {
-		super("Mts", "2014-06-18", "QueryMediaWorkflowListByName");
+	public QueryPornJobListRequest() {
+		super("Mts", "2014-06-18", "QueryPornJobList");
 	}
-
-	private Long ownerId;
-
-	private String resourceOwnerAccount;
 
 	private Long resourceOwnerId;
 
-	private String names;
+	private String resourceOwnerAccount;
+
+	private String jobIds;
 
 	private String ownerAccount;
 
-	public Long getOwnerId() {
-		return this.ownerId;
+	private Long ownerId;
+
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
 	}
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
 	}
 
 	public String getResourceOwnerAccount() {
@@ -55,25 +57,20 @@ public class QueryMediaWorkflowListByNameRequest extends RpcAcsRequest<QueryMedi
 
 	public void setResourceOwnerAccount(String resourceOwnerAccount) {
 		this.resourceOwnerAccount = resourceOwnerAccount;
-		putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
 	}
 
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
+	public String getJobIds() {
+		return this.jobIds;
 	}
 
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", resourceOwnerId);
-	}
-
-	public String getNames() {
-		return this.names;
-	}
-
-	public void setNames(String names) {
-		this.names = names;
-		putQueryParameter("Names", names);
+	public void setJobIds(String jobIds) {
+		this.jobIds = jobIds;
+		if(jobIds != null){
+			putQueryParameter("JobIds", jobIds);
+		}
 	}
 
 	public String getOwnerAccount() {
@@ -82,12 +79,25 @@ public class QueryMediaWorkflowListByNameRequest extends RpcAcsRequest<QueryMedi
 
 	public void setOwnerAccount(String ownerAccount) {
 		this.ownerAccount = ownerAccount;
-		putQueryParameter("OwnerAccount", ownerAccount);
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
 	}
 
 	@Override
-	public Class<QueryMediaWorkflowListByNameResponse> getResponseClass() {
-		return QueryMediaWorkflowListByNameResponse.class;
+	public Class<QueryPornJobListResponse> getResponseClass() {
+		return QueryPornJobListResponse.class;
 	}
 
 }

@@ -30,31 +30,33 @@ public class ListMediaWorkflowExecutionsRequest extends RpcAcsRequest<ListMediaW
 		super("Mts", "2014-06-18", "ListMediaWorkflowExecutions");
 	}
 
-	private Long ownerId;
-
-	private String resourceOwnerAccount;
-
 	private Long resourceOwnerId;
 
-	private String mediaWorkflowId;
-
-	private String mediaWorkflowName;
+	private String resourceOwnerAccount;
 
 	private String inputFileURL;
 
 	private String nextPageToken;
 
-	private Long maximumPageSize;
-
 	private String ownerAccount;
 
-	public Long getOwnerId() {
-		return this.ownerId;
+	private Long maximumPageSize;
+
+	private String mediaWorkflowId;
+
+	private Long ownerId;
+
+	private String mediaWorkflowName;
+
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
 	}
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
 	}
 
 	public String getResourceOwnerAccount() {
@@ -63,34 +65,9 @@ public class ListMediaWorkflowExecutionsRequest extends RpcAcsRequest<ListMediaW
 
 	public void setResourceOwnerAccount(String resourceOwnerAccount) {
 		this.resourceOwnerAccount = resourceOwnerAccount;
-		putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-	}
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", resourceOwnerId);
-	}
-
-	public String getMediaWorkflowId() {
-		return this.mediaWorkflowId;
-	}
-
-	public void setMediaWorkflowId(String mediaWorkflowId) {
-		this.mediaWorkflowId = mediaWorkflowId;
-		putQueryParameter("MediaWorkflowId", mediaWorkflowId);
-	}
-
-	public String getMediaWorkflowName() {
-		return this.mediaWorkflowName;
-	}
-
-	public void setMediaWorkflowName(String mediaWorkflowName) {
-		this.mediaWorkflowName = mediaWorkflowName;
-		putQueryParameter("MediaWorkflowName", mediaWorkflowName);
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
 	}
 
 	public String getInputFileURL() {
@@ -99,7 +76,9 @@ public class ListMediaWorkflowExecutionsRequest extends RpcAcsRequest<ListMediaW
 
 	public void setInputFileURL(String inputFileURL) {
 		this.inputFileURL = inputFileURL;
-		putQueryParameter("InputFileURL", inputFileURL);
+		if(inputFileURL != null){
+			putQueryParameter("InputFileURL", inputFileURL);
+		}
 	}
 
 	public String getNextPageToken() {
@@ -108,16 +87,9 @@ public class ListMediaWorkflowExecutionsRequest extends RpcAcsRequest<ListMediaW
 
 	public void setNextPageToken(String nextPageToken) {
 		this.nextPageToken = nextPageToken;
-		putQueryParameter("NextPageToken", nextPageToken);
-	}
-
-	public Long getMaximumPageSize() {
-		return this.maximumPageSize;
-	}
-
-	public void setMaximumPageSize(Long maximumPageSize) {
-		this.maximumPageSize = maximumPageSize;
-		putQueryParameter("MaximumPageSize", maximumPageSize);
+		if(nextPageToken != null){
+			putQueryParameter("NextPageToken", nextPageToken);
+		}
 	}
 
 	public String getOwnerAccount() {
@@ -126,7 +98,53 @@ public class ListMediaWorkflowExecutionsRequest extends RpcAcsRequest<ListMediaW
 
 	public void setOwnerAccount(String ownerAccount) {
 		this.ownerAccount = ownerAccount;
-		putQueryParameter("OwnerAccount", ownerAccount);
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public Long getMaximumPageSize() {
+		return this.maximumPageSize;
+	}
+
+	public void setMaximumPageSize(Long maximumPageSize) {
+		this.maximumPageSize = maximumPageSize;
+		if(maximumPageSize != null){
+			putQueryParameter("MaximumPageSize", maximumPageSize.toString());
+		}
+	}
+
+	public String getMediaWorkflowId() {
+		return this.mediaWorkflowId;
+	}
+
+	public void setMediaWorkflowId(String mediaWorkflowId) {
+		this.mediaWorkflowId = mediaWorkflowId;
+		if(mediaWorkflowId != null){
+			putQueryParameter("MediaWorkflowId", mediaWorkflowId);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getMediaWorkflowName() {
+		return this.mediaWorkflowName;
+	}
+
+	public void setMediaWorkflowName(String mediaWorkflowName) {
+		this.mediaWorkflowName = mediaWorkflowName;
+		if(mediaWorkflowName != null){
+			putQueryParameter("MediaWorkflowName", mediaWorkflowName);
+		}
 	}
 
 	@Override

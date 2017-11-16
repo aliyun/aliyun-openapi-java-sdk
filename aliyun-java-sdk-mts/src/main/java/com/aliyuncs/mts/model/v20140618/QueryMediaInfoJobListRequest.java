@@ -30,33 +30,15 @@ public class QueryMediaInfoJobListRequest extends RpcAcsRequest<QueryMediaInfoJo
 		super("Mts", "2014-06-18", "QueryMediaInfoJobList");
 	}
 
-	private Long ownerId;
-
-	private String resourceOwnerAccount;
-
 	private Long resourceOwnerId;
 
 	private String mediaInfoJobIds;
 
+	private String resourceOwnerAccount;
+
 	private String ownerAccount;
 
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-	}
+	private Long ownerId;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -64,7 +46,9 @@ public class QueryMediaInfoJobListRequest extends RpcAcsRequest<QueryMediaInfoJo
 
 	public void setResourceOwnerId(Long resourceOwnerId) {
 		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", resourceOwnerId);
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
 	}
 
 	public String getMediaInfoJobIds() {
@@ -73,7 +57,20 @@ public class QueryMediaInfoJobListRequest extends RpcAcsRequest<QueryMediaInfoJo
 
 	public void setMediaInfoJobIds(String mediaInfoJobIds) {
 		this.mediaInfoJobIds = mediaInfoJobIds;
-		putQueryParameter("MediaInfoJobIds", mediaInfoJobIds);
+		if(mediaInfoJobIds != null){
+			putQueryParameter("MediaInfoJobIds", mediaInfoJobIds);
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
 	}
 
 	public String getOwnerAccount() {
@@ -82,7 +79,20 @@ public class QueryMediaInfoJobListRequest extends RpcAcsRequest<QueryMediaInfoJo
 
 	public void setOwnerAccount(String ownerAccount) {
 		this.ownerAccount = ownerAccount;
-		putQueryParameter("OwnerAccount", ownerAccount);
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
 	}
 
 	@Override

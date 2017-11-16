@@ -30,49 +30,33 @@ public class SubmitJobsRequest extends RpcAcsRequest<SubmitJobsResponse> {
 		super("Mts", "2014-06-18", "SubmitJobs");
 	}
 
-	private Long ownerId;
-
-	private String resourceOwnerAccount;
-
-	private Long resourceOwnerId;
+	private String outputs;
 
 	private String input;
 
-	private String outputs;
-
 	private String outputBucket;
 
-	private String outputLocation;
+	private Long resourceOwnerId;
 
-	private String pipelineId;
+	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
-	public Long getOwnerId() {
-		return this.ownerId;
+	private String outputLocation;
+
+	private Long ownerId;
+
+	private String pipelineId;
+
+	public String getOutputs() {
+		return this.outputs;
 	}
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-	}
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", resourceOwnerId);
+	public void setOutputs(String outputs) {
+		this.outputs = outputs;
+		if(outputs != null){
+			putQueryParameter("Outputs", outputs);
+		}
 	}
 
 	public String getInput() {
@@ -81,16 +65,9 @@ public class SubmitJobsRequest extends RpcAcsRequest<SubmitJobsResponse> {
 
 	public void setInput(String input) {
 		this.input = input;
-		putQueryParameter("Input", input);
-	}
-
-	public String getOutputs() {
-		return this.outputs;
-	}
-
-	public void setOutputs(String outputs) {
-		this.outputs = outputs;
-		putQueryParameter("Outputs", outputs);
+		if(input != null){
+			putQueryParameter("Input", input);
+		}
 	}
 
 	public String getOutputBucket() {
@@ -99,25 +76,31 @@ public class SubmitJobsRequest extends RpcAcsRequest<SubmitJobsResponse> {
 
 	public void setOutputBucket(String outputBucket) {
 		this.outputBucket = outputBucket;
-		putQueryParameter("OutputBucket", outputBucket);
+		if(outputBucket != null){
+			putQueryParameter("OutputBucket", outputBucket);
+		}
 	}
 
-	public String getOutputLocation() {
-		return this.outputLocation;
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
 	}
 
-	public void setOutputLocation(String outputLocation) {
-		this.outputLocation = outputLocation;
-		putQueryParameter("OutputLocation", outputLocation);
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
 	}
 
-	public String getPipelineId() {
-		return this.pipelineId;
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
 	}
 
-	public void setPipelineId(String pipelineId) {
-		this.pipelineId = pipelineId;
-		putQueryParameter("PipelineId", pipelineId);
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
 	}
 
 	public String getOwnerAccount() {
@@ -126,7 +109,42 @@ public class SubmitJobsRequest extends RpcAcsRequest<SubmitJobsResponse> {
 
 	public void setOwnerAccount(String ownerAccount) {
 		this.ownerAccount = ownerAccount;
-		putQueryParameter("OwnerAccount", ownerAccount);
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public String getOutputLocation() {
+		return this.outputLocation;
+	}
+
+	public void setOutputLocation(String outputLocation) {
+		this.outputLocation = outputLocation;
+		if(outputLocation != null){
+			putQueryParameter("OutputLocation", outputLocation);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getPipelineId() {
+		return this.pipelineId;
+	}
+
+	public void setPipelineId(String pipelineId) {
+		this.pipelineId = pipelineId;
+		if(pipelineId != null){
+			putQueryParameter("PipelineId", pipelineId);
+		}
 	}
 
 	@Override

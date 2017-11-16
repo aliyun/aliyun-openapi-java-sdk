@@ -30,13 +30,13 @@ public class ListMediaRequest extends RpcAcsRequest<ListMediaResponse> {
 		super("Mts", "2014-06-18", "ListMedia");
 	}
 
-	private Long ownerId;
+	private Long resourceOwnerId;
 
 	private String resourceOwnerAccount;
 
-	private Long resourceOwnerId;
-
 	private String nextPageToken;
+
+	private String ownerAccount;
 
 	private Long maximumPageSize;
 
@@ -44,15 +44,17 @@ public class ListMediaRequest extends RpcAcsRequest<ListMediaResponse> {
 
 	private String to;
 
-	private String ownerAccount;
+	private Long ownerId;
 
-	public Long getOwnerId() {
-		return this.ownerId;
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
 	}
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
 	}
 
 	public String getResourceOwnerAccount() {
@@ -61,16 +63,9 @@ public class ListMediaRequest extends RpcAcsRequest<ListMediaResponse> {
 
 	public void setResourceOwnerAccount(String resourceOwnerAccount) {
 		this.resourceOwnerAccount = resourceOwnerAccount;
-		putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-	}
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", resourceOwnerId);
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
 	}
 
 	public String getNextPageToken() {
@@ -79,34 +74,9 @@ public class ListMediaRequest extends RpcAcsRequest<ListMediaResponse> {
 
 	public void setNextPageToken(String nextPageToken) {
 		this.nextPageToken = nextPageToken;
-		putQueryParameter("NextPageToken", nextPageToken);
-	}
-
-	public Long getMaximumPageSize() {
-		return this.maximumPageSize;
-	}
-
-	public void setMaximumPageSize(Long maximumPageSize) {
-		this.maximumPageSize = maximumPageSize;
-		putQueryParameter("MaximumPageSize", maximumPageSize);
-	}
-
-	public String getFrom() {
-		return this.from;
-	}
-
-	public void setFrom(String from) {
-		this.from = from;
-		putQueryParameter("From", from);
-	}
-
-	public String getTo() {
-		return this.to;
-	}
-
-	public void setTo(String to) {
-		this.to = to;
-		putQueryParameter("To", to);
+		if(nextPageToken != null){
+			putQueryParameter("NextPageToken", nextPageToken);
+		}
 	}
 
 	public String getOwnerAccount() {
@@ -115,7 +85,53 @@ public class ListMediaRequest extends RpcAcsRequest<ListMediaResponse> {
 
 	public void setOwnerAccount(String ownerAccount) {
 		this.ownerAccount = ownerAccount;
-		putQueryParameter("OwnerAccount", ownerAccount);
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public Long getMaximumPageSize() {
+		return this.maximumPageSize;
+	}
+
+	public void setMaximumPageSize(Long maximumPageSize) {
+		this.maximumPageSize = maximumPageSize;
+		if(maximumPageSize != null){
+			putQueryParameter("MaximumPageSize", maximumPageSize.toString());
+		}
+	}
+
+	public String getFrom() {
+		return this.from;
+	}
+
+	public void setFrom(String from) {
+		this.from = from;
+		if(from != null){
+			putQueryParameter("From", from);
+		}
+	}
+
+	public String getTo() {
+		return this.to;
+	}
+
+	public void setTo(String to) {
+		this.to = to;
+		if(to != null){
+			putQueryParameter("To", to);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
 	}
 
 	@Override

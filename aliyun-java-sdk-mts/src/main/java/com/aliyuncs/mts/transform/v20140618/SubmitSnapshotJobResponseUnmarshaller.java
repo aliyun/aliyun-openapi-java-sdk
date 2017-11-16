@@ -24,6 +24,8 @@ import com.aliyuncs.mts.model.v20140618.SubmitSnapshotJobResponse.SnapshotJob.In
 import com.aliyuncs.mts.model.v20140618.SubmitSnapshotJobResponse.SnapshotJob.MNSMessageResult;
 import com.aliyuncs.mts.model.v20140618.SubmitSnapshotJobResponse.SnapshotJob.SnapshotConfig;
 import com.aliyuncs.mts.model.v20140618.SubmitSnapshotJobResponse.SnapshotJob.SnapshotConfig.OutputFile;
+import com.aliyuncs.mts.model.v20140618.SubmitSnapshotJobResponse.SnapshotJob.SnapshotConfig.TileOut;
+import com.aliyuncs.mts.model.v20140618.SubmitSnapshotJobResponse.SnapshotJob.SnapshotConfig.TileOutputFile;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -40,6 +42,7 @@ public class SubmitSnapshotJobResponseUnmarshaller {
 		snapshotJob.setState(context.stringValue("SubmitSnapshotJobResponse.SnapshotJob.State"));
 		snapshotJob.setCode(context.stringValue("SubmitSnapshotJobResponse.SnapshotJob.Code"));
 		snapshotJob.setCount(context.stringValue("SubmitSnapshotJobResponse.SnapshotJob.Count"));
+		snapshotJob.setTileCount(context.stringValue("SubmitSnapshotJobResponse.SnapshotJob.TileCount"));
 		snapshotJob.setMessage(context.stringValue("SubmitSnapshotJobResponse.SnapshotJob.Message"));
 		snapshotJob.setCreationTime(context.stringValue("SubmitSnapshotJobResponse.SnapshotJob.CreationTime"));
 
@@ -47,6 +50,7 @@ public class SubmitSnapshotJobResponseUnmarshaller {
 		input.setBucket(context.stringValue("SubmitSnapshotJobResponse.SnapshotJob.Input.Bucket"));
 		input.setLocation(context.stringValue("SubmitSnapshotJobResponse.SnapshotJob.Input.Location"));
 		input.setObject(context.stringValue("SubmitSnapshotJobResponse.SnapshotJob.Input.Object"));
+		input.setRoleArn(context.stringValue("SubmitSnapshotJobResponse.SnapshotJob.Input.RoleArn"));
 		snapshotJob.setInput(input);
 
 		SnapshotConfig snapshotConfig = new SnapshotConfig();
@@ -61,7 +65,26 @@ public class SubmitSnapshotJobResponseUnmarshaller {
 		outputFile.setBucket(context.stringValue("SubmitSnapshotJobResponse.SnapshotJob.SnapshotConfig.OutputFile.Bucket"));
 		outputFile.setLocation(context.stringValue("SubmitSnapshotJobResponse.SnapshotJob.SnapshotConfig.OutputFile.Location"));
 		outputFile.setObject(context.stringValue("SubmitSnapshotJobResponse.SnapshotJob.SnapshotConfig.OutputFile.Object"));
+		outputFile.setRoleArn(context.stringValue("SubmitSnapshotJobResponse.SnapshotJob.SnapshotConfig.OutputFile.RoleArn"));
 		snapshotConfig.setOutputFile(outputFile);
+
+		TileOutputFile tileOutputFile = new TileOutputFile();
+		tileOutputFile.setBucket(context.stringValue("SubmitSnapshotJobResponse.SnapshotJob.SnapshotConfig.TileOutputFile.Bucket"));
+		tileOutputFile.setLocation(context.stringValue("SubmitSnapshotJobResponse.SnapshotJob.SnapshotConfig.TileOutputFile.Location"));
+		tileOutputFile.setObject(context.stringValue("SubmitSnapshotJobResponse.SnapshotJob.SnapshotConfig.TileOutputFile.Object"));
+		tileOutputFile.setRoleArn(context.stringValue("SubmitSnapshotJobResponse.SnapshotJob.SnapshotConfig.TileOutputFile.RoleArn"));
+		snapshotConfig.setTileOutputFile(tileOutputFile);
+
+		TileOut tileOut = new TileOut();
+		tileOut.setLines(context.stringValue("SubmitSnapshotJobResponse.SnapshotJob.SnapshotConfig.TileOut.Lines"));
+		tileOut.setColumns(context.stringValue("SubmitSnapshotJobResponse.SnapshotJob.SnapshotConfig.TileOut.Columns"));
+		tileOut.setCellWidth(context.stringValue("SubmitSnapshotJobResponse.SnapshotJob.SnapshotConfig.TileOut.CellWidth"));
+		tileOut.setCellHeight(context.stringValue("SubmitSnapshotJobResponse.SnapshotJob.SnapshotConfig.TileOut.CellHeight"));
+		tileOut.setMargin(context.stringValue("SubmitSnapshotJobResponse.SnapshotJob.SnapshotConfig.TileOut.Margin"));
+		tileOut.setPadding(context.stringValue("SubmitSnapshotJobResponse.SnapshotJob.SnapshotConfig.TileOut.Padding"));
+		tileOut.setColor(context.stringValue("SubmitSnapshotJobResponse.SnapshotJob.SnapshotConfig.TileOut.Color"));
+		tileOut.setIsKeepCellPic(context.stringValue("SubmitSnapshotJobResponse.SnapshotJob.SnapshotConfig.TileOut.IsKeepCellPic"));
+		snapshotConfig.setTileOut(tileOut);
 		snapshotJob.setSnapshotConfig(snapshotConfig);
 
 		MNSMessageResult mNSMessageResult = new MNSMessageResult();

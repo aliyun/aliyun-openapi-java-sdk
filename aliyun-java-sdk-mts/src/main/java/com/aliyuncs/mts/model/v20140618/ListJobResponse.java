@@ -75,6 +75,8 @@ public class ListJobResponse extends AcsResponse {
 
 		private String creationTime;
 
+		private String finishTime;
+
 		private Input input;
 
 		private Output output;
@@ -135,6 +137,14 @@ public class ListJobResponse extends AcsResponse {
 
 		public void setCreationTime(String creationTime) {
 			this.creationTime = creationTime;
+		}
+
+		public String getFinishTime() {
+			return this.finishTime;
+		}
+
+		public void setFinishTime(String finishTime) {
+			this.finishTime = finishTime;
 		}
 
 		public Input getInput() {
@@ -210,11 +220,21 @@ public class ListJobResponse extends AcsResponse {
 
 			private String priority;
 
+			private String waterMarkConfigUrl;
+
+			private String mergeConfigUrl;
+
 			private List<WaterMark> waterMarkList;
 
 			private List<Merge> mergeList;
 
+			private List<Merge1> openingList;
+
+			private List<Merge2> tailSlateList;
+
 			private OutputFile outputFile;
+
+			private M3U8NonStandardSupport m3U8NonStandardSupport;
 
 			private Properties properties;
 
@@ -233,6 +253,8 @@ public class ListJobResponse extends AcsResponse {
 			private Video video;
 
 			private Container container;
+
+			private Encryption encryption;
 
 			public String getTemplateId() {
 				return this.templateId;
@@ -290,6 +312,22 @@ public class ListJobResponse extends AcsResponse {
 				this.priority = priority;
 			}
 
+			public String getWaterMarkConfigUrl() {
+				return this.waterMarkConfigUrl;
+			}
+
+			public void setWaterMarkConfigUrl(String waterMarkConfigUrl) {
+				this.waterMarkConfigUrl = waterMarkConfigUrl;
+			}
+
+			public String getMergeConfigUrl() {
+				return this.mergeConfigUrl;
+			}
+
+			public void setMergeConfigUrl(String mergeConfigUrl) {
+				this.mergeConfigUrl = mergeConfigUrl;
+			}
+
 			public List<WaterMark> getWaterMarkList() {
 				return this.waterMarkList;
 			}
@@ -306,12 +344,36 @@ public class ListJobResponse extends AcsResponse {
 				this.mergeList = mergeList;
 			}
 
+			public List<Merge1> getOpeningList() {
+				return this.openingList;
+			}
+
+			public void setOpeningList(List<Merge1> openingList) {
+				this.openingList = openingList;
+			}
+
+			public List<Merge2> getTailSlateList() {
+				return this.tailSlateList;
+			}
+
+			public void setTailSlateList(List<Merge2> tailSlateList) {
+				this.tailSlateList = tailSlateList;
+			}
+
 			public OutputFile getOutputFile() {
 				return this.outputFile;
 			}
 
 			public void setOutputFile(OutputFile outputFile) {
 				this.outputFile = outputFile;
+			}
+
+			public M3U8NonStandardSupport getM3U8NonStandardSupport() {
+				return this.m3U8NonStandardSupport;
+			}
+
+			public void setM3U8NonStandardSupport(M3U8NonStandardSupport m3U8NonStandardSupport) {
+				this.m3U8NonStandardSupport = m3U8NonStandardSupport;
 			}
 
 			public Properties getProperties() {
@@ -384,6 +446,14 @@ public class ListJobResponse extends AcsResponse {
 
 			public void setContainer(Container container) {
 				this.container = container;
+			}
+
+			public Encryption getEncryption() {
+				return this.encryption;
+			}
+
+			public void setEncryption(Encryption encryption) {
+				this.encryption = encryption;
 			}
 
 			public static class WaterMark {
@@ -510,6 +580,8 @@ public class ListJobResponse extends AcsResponse {
 
 				private String duration;
 
+				private String roleArn;
+
 				public String getMergeURL() {
 					return this.mergeURL;
 				}
@@ -533,6 +605,130 @@ public class ListJobResponse extends AcsResponse {
 				public void setDuration(String duration) {
 					this.duration = duration;
 				}
+
+				public String getRoleArn() {
+					return this.roleArn;
+				}
+
+				public void setRoleArn(String roleArn) {
+					this.roleArn = roleArn;
+				}
+			}
+
+			public static class Merge1 {
+
+				private String openUrl;
+
+				private String start;
+
+				private String width;
+
+				private String height;
+
+				public String getOpenUrl() {
+					return this.openUrl;
+				}
+
+				public void setOpenUrl(String openUrl) {
+					this.openUrl = openUrl;
+				}
+
+				public String getStart() {
+					return this.start;
+				}
+
+				public void setStart(String start) {
+					this.start = start;
+				}
+
+				public String getWidth() {
+					return this.width;
+				}
+
+				public void setWidth(String width) {
+					this.width = width;
+				}
+
+				public String getHeight() {
+					return this.height;
+				}
+
+				public void setHeight(String height) {
+					this.height = height;
+				}
+			}
+
+			public static class Merge2 {
+
+				private String tailUrl;
+
+				private String start;
+
+				private String blendDuration;
+
+				private String width;
+
+				private String height;
+
+				private Boolean isMergeAudio;
+
+				private String bgColor;
+
+				public String getTailUrl() {
+					return this.tailUrl;
+				}
+
+				public void setTailUrl(String tailUrl) {
+					this.tailUrl = tailUrl;
+				}
+
+				public String getStart() {
+					return this.start;
+				}
+
+				public void setStart(String start) {
+					this.start = start;
+				}
+
+				public String getBlendDuration() {
+					return this.blendDuration;
+				}
+
+				public void setBlendDuration(String blendDuration) {
+					this.blendDuration = blendDuration;
+				}
+
+				public String getWidth() {
+					return this.width;
+				}
+
+				public void setWidth(String width) {
+					this.width = width;
+				}
+
+				public String getHeight() {
+					return this.height;
+				}
+
+				public void setHeight(String height) {
+					this.height = height;
+				}
+
+				public Boolean getIsMergeAudio() {
+					return this.isMergeAudio;
+				}
+
+				public void setIsMergeAudio(Boolean isMergeAudio) {
+					this.isMergeAudio = isMergeAudio;
+				}
+
+				public String getBgColor() {
+					return this.bgColor;
+				}
+
+				public void setBgColor(String bgColor) {
+					this.bgColor = bgColor;
+				}
 			}
 
 			public static class OutputFile {
@@ -542,6 +738,8 @@ public class ListJobResponse extends AcsResponse {
 				private String location;
 
 				private String object;
+
+				private String roleArn;
 
 				public String getBucket() {
 					return this.bucket;
@@ -565,6 +763,50 @@ public class ListJobResponse extends AcsResponse {
 
 				public void setObject(String object) {
 					this.object = object;
+				}
+
+				public String getRoleArn() {
+					return this.roleArn;
+				}
+
+				public void setRoleArn(String roleArn) {
+					this.roleArn = roleArn;
+				}
+			}
+
+			public static class M3U8NonStandardSupport {
+
+				private TS tS;
+
+				public TS getTS() {
+					return this.tS;
+				}
+
+				public void setTS(TS tS) {
+					this.tS = tS;
+				}
+
+				public static class TS {
+
+					private Boolean md5Support;
+
+					private Boolean sizeSupport;
+
+					public Boolean getMd5Support() {
+						return this.md5Support;
+					}
+
+					public void setMd5Support(Boolean md5Support) {
+						this.md5Support = md5Support;
+					}
+
+					public Boolean getSizeSupport() {
+						return this.sizeSupport;
+					}
+
+					public void setSizeSupport(Boolean sizeSupport) {
+						this.sizeSupport = sizeSupport;
+					}
 				}
 			}
 
@@ -1315,17 +1557,37 @@ public class ListJobResponse extends AcsResponse {
 
 				public static class ExtSubtitle {
 
-					private Input input;
+					private String fontName;
 
-					public Input getInput() {
-						return this.input;
+					private String charEnc;
+
+					private Input3 input3;
+
+					public String getFontName() {
+						return this.fontName;
 					}
 
-					public void setInput(Input input) {
-						this.input = input;
+					public void setFontName(String fontName) {
+						this.fontName = fontName;
 					}
 
-					public static class Input {
+					public String getCharEnc() {
+						return this.charEnc;
+					}
+
+					public void setCharEnc(String charEnc) {
+						this.charEnc = charEnc;
+					}
+
+					public Input3 getInput3() {
+						return this.input3;
+					}
+
+					public void setInput3(Input3 input3) {
+						this.input3 = input3;
+					}
+
+					public static class Input3 {
 
 						private String bucket;
 
@@ -1374,6 +1636,10 @@ public class ListJobResponse extends AcsResponse {
 
 				private String adjDarMethod;
 
+				private String isCheckVideoBitrateFail;
+
+				private String isCheckAudioBitrateFail;
+
 				public String getTransMode() {
 					return this.transMode;
 				}
@@ -1420,6 +1686,22 @@ public class ListJobResponse extends AcsResponse {
 
 				public void setAdjDarMethod(String adjDarMethod) {
 					this.adjDarMethod = adjDarMethod;
+				}
+
+				public String getIsCheckVideoBitrateFail() {
+					return this.isCheckVideoBitrateFail;
+				}
+
+				public void setIsCheckVideoBitrateFail(String isCheckVideoBitrateFail) {
+					this.isCheckVideoBitrateFail = isCheckVideoBitrateFail;
+				}
+
+				public String getIsCheckAudioBitrateFail() {
+					return this.isCheckAudioBitrateFail;
+				}
+
+				public void setIsCheckAudioBitrateFail(String isCheckAudioBitrateFail) {
+					this.isCheckAudioBitrateFail = isCheckAudioBitrateFail;
 				}
 			}
 
@@ -1516,6 +1798,8 @@ public class ListJobResponse extends AcsResponse {
 
 				private String qscale;
 
+				private Volume volume;
+
 				public String getCodec() {
 					return this.codec;
 				}
@@ -1562,6 +1846,37 @@ public class ListJobResponse extends AcsResponse {
 
 				public void setQscale(String qscale) {
 					this.qscale = qscale;
+				}
+
+				public Volume getVolume() {
+					return this.volume;
+				}
+
+				public void setVolume(Volume volume) {
+					this.volume = volume;
+				}
+
+				public static class Volume {
+
+					private String level;
+
+					private String method;
+
+					public String getLevel() {
+						return this.level;
+					}
+
+					public void setLevel(String level) {
+						this.level = level;
+					}
+
+					public String getMethod() {
+						return this.method;
+					}
+
+					public void setMethod(String method) {
+						this.method = method;
+					}
 				}
 			}
 
@@ -1791,6 +2106,69 @@ public class ListJobResponse extends AcsResponse {
 
 				public void setFormat(String format) {
 					this.format = format;
+				}
+			}
+
+			public static class Encryption {
+
+				private String type;
+
+				private String id;
+
+				private String key;
+
+				private String keyUri;
+
+				private String keyType;
+
+				private String skipCnt;
+
+				public String getType() {
+					return this.type;
+				}
+
+				public void setType(String type) {
+					this.type = type;
+				}
+
+				public String getId() {
+					return this.id;
+				}
+
+				public void setId(String id) {
+					this.id = id;
+				}
+
+				public String getKey() {
+					return this.key;
+				}
+
+				public void setKey(String key) {
+					this.key = key;
+				}
+
+				public String getKeyUri() {
+					return this.keyUri;
+				}
+
+				public void setKeyUri(String keyUri) {
+					this.keyUri = keyUri;
+				}
+
+				public String getKeyType() {
+					return this.keyType;
+				}
+
+				public void setKeyType(String keyType) {
+					this.keyType = keyType;
+				}
+
+				public String getSkipCnt() {
+					return this.skipCnt;
+				}
+
+				public void setSkipCnt(String skipCnt) {
+					this.skipCnt = skipCnt;
 				}
 			}
 		}

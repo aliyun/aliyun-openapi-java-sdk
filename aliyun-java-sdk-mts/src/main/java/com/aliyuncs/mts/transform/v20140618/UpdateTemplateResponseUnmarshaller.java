@@ -90,6 +90,8 @@ public class UpdateTemplateResponseUnmarshaller {
 		transConfig.setIsCheckVideoBitrate(context.stringValue("UpdateTemplateResponse.Template.TransConfig.IsCheckVideoBitrate"));
 		transConfig.setIsCheckAudioBitrate(context.stringValue("UpdateTemplateResponse.Template.TransConfig.IsCheckAudioBitrate"));
 		transConfig.setAdjDarMethod(context.stringValue("UpdateTemplateResponse.Template.TransConfig.AdjDarMethod"));
+		transConfig.setIsCheckVideoBitrateFail(context.stringValue("UpdateTemplateResponse.Template.TransConfig.IsCheckVideoBitrateFail"));
+		transConfig.setIsCheckAudioBitrateFail(context.stringValue("UpdateTemplateResponse.Template.TransConfig.IsCheckAudioBitrateFail"));
 		template.setTransConfig(transConfig);
 
 		MuxConfig muxConfig = new MuxConfig();

@@ -21,6 +21,7 @@ package com.aliyuncs.mts.transform.v20140618;
 import com.aliyuncs.mts.model.v20140618.AddTemplateResponse;
 import com.aliyuncs.mts.model.v20140618.AddTemplateResponse.Template;
 import com.aliyuncs.mts.model.v20140618.AddTemplateResponse.Template.Audio;
+import com.aliyuncs.mts.model.v20140618.AddTemplateResponse.Template.Audio.Volume;
 import com.aliyuncs.mts.model.v20140618.AddTemplateResponse.Template.Container;
 import com.aliyuncs.mts.model.v20140618.AddTemplateResponse.Template.MuxConfig;
 import com.aliyuncs.mts.model.v20140618.AddTemplateResponse.Template.MuxConfig.Gif;
@@ -81,6 +82,11 @@ public class AddTemplateResponseUnmarshaller {
 		audio.setChannels(context.stringValue("AddTemplateResponse.Template.Audio.Channels"));
 		audio.setQscale(context.stringValue("AddTemplateResponse.Template.Audio.Qscale"));
 		audio.setRemove(context.stringValue("AddTemplateResponse.Template.Audio.Remove"));
+
+		Volume volume = new Volume();
+		volume.setLevel(context.stringValue("AddTemplateResponse.Template.Audio.Volume.Level"));
+		volume.setMethod(context.stringValue("AddTemplateResponse.Template.Audio.Volume.Method"));
+		audio.setVolume(volume);
 		template.setAudio(audio);
 
 		TransConfig transConfig = new TransConfig();
@@ -90,6 +96,8 @@ public class AddTemplateResponseUnmarshaller {
 		transConfig.setIsCheckVideoBitrate(context.stringValue("AddTemplateResponse.Template.TransConfig.IsCheckVideoBitrate"));
 		transConfig.setIsCheckAudioBitrate(context.stringValue("AddTemplateResponse.Template.TransConfig.IsCheckAudioBitrate"));
 		transConfig.setAdjDarMethod(context.stringValue("AddTemplateResponse.Template.TransConfig.AdjDarMethod"));
+		transConfig.setIsCheckVideoBitrateFail(context.stringValue("AddTemplateResponse.Template.TransConfig.IsCheckVideoBitrateFail"));
+		transConfig.setIsCheckAudioBitrateFail(context.stringValue("AddTemplateResponse.Template.TransConfig.IsCheckAudioBitrateFail"));
 		template.setTransConfig(transConfig);
 
 		MuxConfig muxConfig = new MuxConfig();

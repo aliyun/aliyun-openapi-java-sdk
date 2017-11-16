@@ -30,25 +30,27 @@ public class AddMediaWorkflowRequest extends RpcAcsRequest<AddMediaWorkflowRespo
 		super("Mts", "2014-06-18", "AddMediaWorkflow");
 	}
 
-	private Long ownerId;
-
-	private String resourceOwnerAccount;
-
 	private Long resourceOwnerId;
 
-	private String name;
+	private String resourceOwnerAccount;
 
 	private String topology;
 
 	private String ownerAccount;
 
-	public Long getOwnerId() {
-		return this.ownerId;
+	private String name;
+
+	private Long ownerId;
+
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
 	}
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
 	}
 
 	public String getResourceOwnerAccount() {
@@ -57,25 +59,9 @@ public class AddMediaWorkflowRequest extends RpcAcsRequest<AddMediaWorkflowRespo
 
 	public void setResourceOwnerAccount(String resourceOwnerAccount) {
 		this.resourceOwnerAccount = resourceOwnerAccount;
-		putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-	}
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", resourceOwnerId);
-	}
-
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-		putQueryParameter("Name", name);
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
 	}
 
 	public String getTopology() {
@@ -84,7 +70,9 @@ public class AddMediaWorkflowRequest extends RpcAcsRequest<AddMediaWorkflowRespo
 
 	public void setTopology(String topology) {
 		this.topology = topology;
-		putQueryParameter("Topology", topology);
+		if(topology != null){
+			putQueryParameter("Topology", topology);
+		}
 	}
 
 	public String getOwnerAccount() {
@@ -93,7 +81,31 @@ public class AddMediaWorkflowRequest extends RpcAcsRequest<AddMediaWorkflowRespo
 
 	public void setOwnerAccount(String ownerAccount) {
 		this.ownerAccount = ownerAccount;
-		putQueryParameter("OwnerAccount", ownerAccount);
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
 	}
 
 	@Override

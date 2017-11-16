@@ -385,6 +385,8 @@ public class AddTemplateResponse extends AcsResponse {
 
 			private String remove;
 
+			private Volume volume;
+
 			public String getCodec() {
 				return this.codec;
 			}
@@ -440,6 +442,37 @@ public class AddTemplateResponse extends AcsResponse {
 			public void setRemove(String remove) {
 				this.remove = remove;
 			}
+
+			public Volume getVolume() {
+				return this.volume;
+			}
+
+			public void setVolume(Volume volume) {
+				this.volume = volume;
+			}
+
+			public static class Volume {
+
+				private String level;
+
+				private String method;
+
+				public String getLevel() {
+					return this.level;
+				}
+
+				public void setLevel(String level) {
+					this.level = level;
+				}
+
+				public String getMethod() {
+					return this.method;
+				}
+
+				public void setMethod(String method) {
+					this.method = method;
+				}
+			}
 		}
 
 		public static class TransConfig {
@@ -455,6 +488,10 @@ public class AddTemplateResponse extends AcsResponse {
 			private String isCheckAudioBitrate;
 
 			private String adjDarMethod;
+
+			private String isCheckVideoBitrateFail;
+
+			private String isCheckAudioBitrateFail;
 
 			public String getTransMode() {
 				return this.transMode;
@@ -502,6 +539,22 @@ public class AddTemplateResponse extends AcsResponse {
 
 			public void setAdjDarMethod(String adjDarMethod) {
 				this.adjDarMethod = adjDarMethod;
+			}
+
+			public String getIsCheckVideoBitrateFail() {
+				return this.isCheckVideoBitrateFail;
+			}
+
+			public void setIsCheckVideoBitrateFail(String isCheckVideoBitrateFail) {
+				this.isCheckVideoBitrateFail = isCheckVideoBitrateFail;
+			}
+
+			public String getIsCheckAudioBitrateFail() {
+				return this.isCheckAudioBitrateFail;
+			}
+
+			public void setIsCheckAudioBitrateFail(String isCheckAudioBitrateFail) {
+				this.isCheckAudioBitrateFail = isCheckAudioBitrateFail;
 			}
 		}
 

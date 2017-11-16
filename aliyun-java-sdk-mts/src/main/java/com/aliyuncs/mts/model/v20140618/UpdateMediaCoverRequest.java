@@ -30,34 +30,27 @@ public class UpdateMediaCoverRequest extends RpcAcsRequest<UpdateMediaCoverRespo
 		super("Mts", "2014-06-18", "UpdateMediaCover");
 	}
 
-	private Long ownerId;
-
-	private String resourceOwnerAccount;
+	private String coverURL;
 
 	private Long resourceOwnerId;
 
-	private String mediaId;
-
-	private String coverURL;
+	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
-	public Long getOwnerId() {
-		return this.ownerId;
+	private Long ownerId;
+
+	private String mediaId;
+
+	public String getCoverURL() {
+		return this.coverURL;
 	}
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	public void setCoverURL(String coverURL) {
+		this.coverURL = coverURL;
+		if(coverURL != null){
+			putQueryParameter("CoverURL", coverURL);
+		}
 	}
 
 	public Long getResourceOwnerId() {
@@ -66,25 +59,20 @@ public class UpdateMediaCoverRequest extends RpcAcsRequest<UpdateMediaCoverRespo
 
 	public void setResourceOwnerId(Long resourceOwnerId) {
 		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", resourceOwnerId);
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
 	}
 
-	public String getMediaId() {
-		return this.mediaId;
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
 	}
 
-	public void setMediaId(String mediaId) {
-		this.mediaId = mediaId;
-		putQueryParameter("MediaId", mediaId);
-	}
-
-	public String getCoverURL() {
-		return this.coverURL;
-	}
-
-	public void setCoverURL(String coverURL) {
-		this.coverURL = coverURL;
-		putQueryParameter("CoverURL", coverURL);
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
 	}
 
 	public String getOwnerAccount() {
@@ -93,7 +81,31 @@ public class UpdateMediaCoverRequest extends RpcAcsRequest<UpdateMediaCoverRespo
 
 	public void setOwnerAccount(String ownerAccount) {
 		this.ownerAccount = ownerAccount;
-		putQueryParameter("OwnerAccount", ownerAccount);
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getMediaId() {
+		return this.mediaId;
+	}
+
+	public void setMediaId(String mediaId) {
+		this.mediaId = mediaId;
+		if(mediaId != null){
+			putQueryParameter("MediaId", mediaId);
+		}
 	}
 
 	@Override

@@ -30,8 +30,6 @@ public class RefreshCdnDomainConfigsCacheRequest extends RpcAcsRequest<RefreshCd
 		super("Mts", "2014-06-18", "RefreshCdnDomainConfigsCache");
 	}
 
-	private String ownerId;
-
 	private String resourceOwnerId;
 
 	private String resourceOwnerAccount;
@@ -40,14 +38,7 @@ public class RefreshCdnDomainConfigsCacheRequest extends RpcAcsRequest<RefreshCd
 
 	private String domains;
 
-	public String getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(String ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
-	}
+	private String ownerId;
 
 	public String getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -55,7 +46,9 @@ public class RefreshCdnDomainConfigsCacheRequest extends RpcAcsRequest<RefreshCd
 
 	public void setResourceOwnerId(String resourceOwnerId) {
 		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", resourceOwnerId);
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId);
+		}
 	}
 
 	public String getResourceOwnerAccount() {
@@ -64,7 +57,9 @@ public class RefreshCdnDomainConfigsCacheRequest extends RpcAcsRequest<RefreshCd
 
 	public void setResourceOwnerAccount(String resourceOwnerAccount) {
 		this.resourceOwnerAccount = resourceOwnerAccount;
-		putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
 	}
 
 	public String getOwnerAccount() {
@@ -73,7 +68,9 @@ public class RefreshCdnDomainConfigsCacheRequest extends RpcAcsRequest<RefreshCd
 
 	public void setOwnerAccount(String ownerAccount) {
 		this.ownerAccount = ownerAccount;
-		putQueryParameter("OwnerAccount", ownerAccount);
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
 	}
 
 	public String getDomains() {
@@ -82,7 +79,20 @@ public class RefreshCdnDomainConfigsCacheRequest extends RpcAcsRequest<RefreshCd
 
 	public void setDomains(String domains) {
 		this.domains = domains;
-		putQueryParameter("Domains", domains);
+		if(domains != null){
+			putQueryParameter("Domains", domains);
+		}
+	}
+
+	public String getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(String ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId);
+		}
 	}
 
 	@Override

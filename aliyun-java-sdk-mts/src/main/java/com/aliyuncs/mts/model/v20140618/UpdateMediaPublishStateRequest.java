@@ -30,25 +30,27 @@ public class UpdateMediaPublishStateRequest extends RpcAcsRequest<UpdateMediaPub
 		super("Mts", "2014-06-18", "UpdateMediaPublishState");
 	}
 
-	private Long ownerId;
-
-	private String resourceOwnerAccount;
-
 	private Long resourceOwnerId;
 
-	private String mediaId;
+	private String resourceOwnerAccount;
 
 	private Boolean publish;
 
 	private String ownerAccount;
 
-	public Long getOwnerId() {
-		return this.ownerId;
+	private Long ownerId;
+
+	private String mediaId;
+
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
 	}
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
 	}
 
 	public String getResourceOwnerAccount() {
@@ -57,25 +59,9 @@ public class UpdateMediaPublishStateRequest extends RpcAcsRequest<UpdateMediaPub
 
 	public void setResourceOwnerAccount(String resourceOwnerAccount) {
 		this.resourceOwnerAccount = resourceOwnerAccount;
-		putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-	}
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", resourceOwnerId);
-	}
-
-	public String getMediaId() {
-		return this.mediaId;
-	}
-
-	public void setMediaId(String mediaId) {
-		this.mediaId = mediaId;
-		putQueryParameter("MediaId", mediaId);
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
 	}
 
 	public Boolean getPublish() {
@@ -84,7 +70,9 @@ public class UpdateMediaPublishStateRequest extends RpcAcsRequest<UpdateMediaPub
 
 	public void setPublish(Boolean publish) {
 		this.publish = publish;
-		putQueryParameter("Publish", publish);
+		if(publish != null){
+			putQueryParameter("Publish", publish.toString());
+		}
 	}
 
 	public String getOwnerAccount() {
@@ -93,7 +81,31 @@ public class UpdateMediaPublishStateRequest extends RpcAcsRequest<UpdateMediaPub
 
 	public void setOwnerAccount(String ownerAccount) {
 		this.ownerAccount = ownerAccount;
-		putQueryParameter("OwnerAccount", ownerAccount);
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getMediaId() {
+		return this.mediaId;
+	}
+
+	public void setMediaId(String mediaId) {
+		this.mediaId = mediaId;
+		if(mediaId != null){
+			putQueryParameter("MediaId", mediaId);
+		}
 	}
 
 	@Override

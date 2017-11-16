@@ -58,6 +58,8 @@ public class AddPipelineResponse extends AcsResponse {
 
 		private String speed;
 
+		private Long speedLevel;
+
 		private String role;
 
 		private NotifyConfig notifyConfig;
@@ -92,6 +94,14 @@ public class AddPipelineResponse extends AcsResponse {
 
 		public void setSpeed(String speed) {
 			this.speed = speed;
+		}
+
+		public Long getSpeedLevel() {
+			return this.speedLevel;
+		}
+
+		public void setSpeedLevel(Long speedLevel) {
+			this.speedLevel = speedLevel;
 		}
 
 		public String getRole() {

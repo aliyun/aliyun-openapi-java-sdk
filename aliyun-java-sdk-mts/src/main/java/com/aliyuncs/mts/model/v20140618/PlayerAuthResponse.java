@@ -33,7 +33,7 @@ public class PlayerAuthResponse extends AcsResponse {
 
 	private String logURL;
 
-	private List<Switch> switchList;
+	private List<_Switch> switchList;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -51,15 +51,15 @@ public class PlayerAuthResponse extends AcsResponse {
 		this.logURL = logURL;
 	}
 
-	public List<Switch> getSwitchList() {
+	public List<_Switch> getSwitchList() {
 		return this.switchList;
 	}
 
-	public void setSwitchList(List<Switch> switchList) {
+	public void setSwitchList(List<_Switch> switchList) {
 		this.switchList = switchList;
 	}
 
-	public static class Switch {
+	public static class _Switch {
 
 		private String state;
 

@@ -30,39 +30,23 @@ public class AddPipelineRequest extends RpcAcsRequest<AddPipelineResponse> {
 		super("Mts", "2014-06-18", "AddPipeline");
 	}
 
-	private Long ownerId;
-
-	private String resourceOwnerAccount;
-
 	private Long resourceOwnerId;
-
-	private String name;
-
-	private String speed;
-
-	private String notifyConfig;
 
 	private String role;
 
+	private String resourceOwnerAccount;
+
 	private String ownerAccount;
 
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
+	private String name;
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
-	}
+	private String notifyConfig;
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
+	private Long ownerId;
 
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-	}
+	private Long speedLevel;
+
+	private String speed;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -70,34 +54,9 @@ public class AddPipelineRequest extends RpcAcsRequest<AddPipelineResponse> {
 
 	public void setResourceOwnerId(Long resourceOwnerId) {
 		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", resourceOwnerId);
-	}
-
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-		putQueryParameter("Name", name);
-	}
-
-	public String getSpeed() {
-		return this.speed;
-	}
-
-	public void setSpeed(String speed) {
-		this.speed = speed;
-		putQueryParameter("Speed", speed);
-	}
-
-	public String getNotifyConfig() {
-		return this.notifyConfig;
-	}
-
-	public void setNotifyConfig(String notifyConfig) {
-		this.notifyConfig = notifyConfig;
-		putQueryParameter("NotifyConfig", notifyConfig);
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
 	}
 
 	public String getRole() {
@@ -106,7 +65,20 @@ public class AddPipelineRequest extends RpcAcsRequest<AddPipelineResponse> {
 
 	public void setRole(String role) {
 		this.role = role;
-		putQueryParameter("Role", role);
+		if(role != null){
+			putQueryParameter("Role", role);
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
 	}
 
 	public String getOwnerAccount() {
@@ -115,7 +87,64 @@ public class AddPipelineRequest extends RpcAcsRequest<AddPipelineResponse> {
 
 	public void setOwnerAccount(String ownerAccount) {
 		this.ownerAccount = ownerAccount;
-		putQueryParameter("OwnerAccount", ownerAccount);
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
+		}
+	}
+
+	public String getNotifyConfig() {
+		return this.notifyConfig;
+	}
+
+	public void setNotifyConfig(String notifyConfig) {
+		this.notifyConfig = notifyConfig;
+		if(notifyConfig != null){
+			putQueryParameter("NotifyConfig", notifyConfig);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public Long getSpeedLevel() {
+		return this.speedLevel;
+	}
+
+	public void setSpeedLevel(Long speedLevel) {
+		this.speedLevel = speedLevel;
+		if(speedLevel != null){
+			putQueryParameter("SpeedLevel", speedLevel.toString());
+		}
+	}
+
+	public String getSpeed() {
+		return this.speed;
+	}
+
+	public void setSpeed(String speed) {
+		this.speed = speed;
+		if(speed != null){
+			putQueryParameter("Speed", speed);
+		}
 	}
 
 	@Override

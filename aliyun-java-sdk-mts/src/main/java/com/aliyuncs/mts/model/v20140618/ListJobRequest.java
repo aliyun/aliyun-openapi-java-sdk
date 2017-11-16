@@ -30,33 +30,35 @@ public class ListJobRequest extends RpcAcsRequest<ListJobResponse> {
 		super("Mts", "2014-06-18", "ListJob");
 	}
 
-	private Long ownerId;
+	private Long resourceOwnerId;
 
 	private String resourceOwnerAccount;
 
-	private Long resourceOwnerId;
-
 	private String nextPageToken;
+
+	private String startOfJobCreatedTimeRange;
+
+	private String ownerAccount;
 
 	private Long maximumPageSize;
 
 	private String state;
 
-	private String startOfJobCreatedTimeRange;
+	private Long ownerId;
 
 	private String endOfJobCreatedTimeRange;
 
 	private String pipelineId;
 
-	private String ownerAccount;
-
-	public Long getOwnerId() {
-		return this.ownerId;
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
 	}
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
 	}
 
 	public String getResourceOwnerAccount() {
@@ -65,16 +67,9 @@ public class ListJobRequest extends RpcAcsRequest<ListJobResponse> {
 
 	public void setResourceOwnerAccount(String resourceOwnerAccount) {
 		this.resourceOwnerAccount = resourceOwnerAccount;
-		putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-	}
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", resourceOwnerId);
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
 	}
 
 	public String getNextPageToken() {
@@ -83,25 +78,9 @@ public class ListJobRequest extends RpcAcsRequest<ListJobResponse> {
 
 	public void setNextPageToken(String nextPageToken) {
 		this.nextPageToken = nextPageToken;
-		putQueryParameter("NextPageToken", nextPageToken);
-	}
-
-	public Long getMaximumPageSize() {
-		return this.maximumPageSize;
-	}
-
-	public void setMaximumPageSize(Long maximumPageSize) {
-		this.maximumPageSize = maximumPageSize;
-		putQueryParameter("MaximumPageSize", maximumPageSize);
-	}
-
-	public String getState() {
-		return this.state;
-	}
-
-	public void setState(String state) {
-		this.state = state;
-		putQueryParameter("State", state);
+		if(nextPageToken != null){
+			putQueryParameter("NextPageToken", nextPageToken);
+		}
 	}
 
 	public String getStartOfJobCreatedTimeRange() {
@@ -110,25 +89,9 @@ public class ListJobRequest extends RpcAcsRequest<ListJobResponse> {
 
 	public void setStartOfJobCreatedTimeRange(String startOfJobCreatedTimeRange) {
 		this.startOfJobCreatedTimeRange = startOfJobCreatedTimeRange;
-		putQueryParameter("StartOfJobCreatedTimeRange", startOfJobCreatedTimeRange);
-	}
-
-	public String getEndOfJobCreatedTimeRange() {
-		return this.endOfJobCreatedTimeRange;
-	}
-
-	public void setEndOfJobCreatedTimeRange(String endOfJobCreatedTimeRange) {
-		this.endOfJobCreatedTimeRange = endOfJobCreatedTimeRange;
-		putQueryParameter("EndOfJobCreatedTimeRange", endOfJobCreatedTimeRange);
-	}
-
-	public String getPipelineId() {
-		return this.pipelineId;
-	}
-
-	public void setPipelineId(String pipelineId) {
-		this.pipelineId = pipelineId;
-		putQueryParameter("PipelineId", pipelineId);
+		if(startOfJobCreatedTimeRange != null){
+			putQueryParameter("StartOfJobCreatedTimeRange", startOfJobCreatedTimeRange);
+		}
 	}
 
 	public String getOwnerAccount() {
@@ -137,7 +100,64 @@ public class ListJobRequest extends RpcAcsRequest<ListJobResponse> {
 
 	public void setOwnerAccount(String ownerAccount) {
 		this.ownerAccount = ownerAccount;
-		putQueryParameter("OwnerAccount", ownerAccount);
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public Long getMaximumPageSize() {
+		return this.maximumPageSize;
+	}
+
+	public void setMaximumPageSize(Long maximumPageSize) {
+		this.maximumPageSize = maximumPageSize;
+		if(maximumPageSize != null){
+			putQueryParameter("MaximumPageSize", maximumPageSize.toString());
+		}
+	}
+
+	public String getState() {
+		return this.state;
+	}
+
+	public void setState(String state) {
+		this.state = state;
+		if(state != null){
+			putQueryParameter("State", state);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getEndOfJobCreatedTimeRange() {
+		return this.endOfJobCreatedTimeRange;
+	}
+
+	public void setEndOfJobCreatedTimeRange(String endOfJobCreatedTimeRange) {
+		this.endOfJobCreatedTimeRange = endOfJobCreatedTimeRange;
+		if(endOfJobCreatedTimeRange != null){
+			putQueryParameter("EndOfJobCreatedTimeRange", endOfJobCreatedTimeRange);
+		}
+	}
+
+	public String getPipelineId() {
+		return this.pipelineId;
+	}
+
+	public void setPipelineId(String pipelineId) {
+		this.pipelineId = pipelineId;
+		if(pipelineId != null){
+			putQueryParameter("PipelineId", pipelineId);
+		}
 	}
 
 	@Override

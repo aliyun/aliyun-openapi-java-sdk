@@ -43,6 +43,7 @@ public class SearchPipelineResponseUnmarshaller {
 			pipeline.setName(context.stringValue("SearchPipelineResponse.PipelineList["+ i +"].Name"));
 			pipeline.setState(context.stringValue("SearchPipelineResponse.PipelineList["+ i +"].State"));
 			pipeline.setSpeed(context.stringValue("SearchPipelineResponse.PipelineList["+ i +"].Speed"));
+			pipeline.setSpeedLevel(context.longValue("SearchPipelineResponse.PipelineList["+ i +"].SpeedLevel"));
 			pipeline.setRole(context.stringValue("SearchPipelineResponse.PipelineList["+ i +"].Role"));
 
 			NotifyConfig notifyConfig = new NotifyConfig();

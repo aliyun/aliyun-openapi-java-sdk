@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class PlayInfoRequest extends RpcAcsRequest<PlayInfoResponse> {
 	
 	public PlayInfoRequest() {
-		super("Mts", "2014-06-18", "PlayInfo", "mts");
+		super("Mts", "2014-06-18", "PlayInfo");
 	}
 
 	private String playDomain;

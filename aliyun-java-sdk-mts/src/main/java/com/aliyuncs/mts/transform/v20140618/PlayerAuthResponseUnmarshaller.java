@@ -22,7 +22,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.mts.model.v20140618.PlayerAuthResponse;
-import com.aliyuncs.mts.model.v20140618.PlayerAuthResponse.Switch;
+import com.aliyuncs.mts.model.v20140618.PlayerAuthResponse._Switch;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -33,15 +33,15 @@ public class PlayerAuthResponseUnmarshaller {
 		playerAuthResponse.setRequestId(context.stringValue("PlayerAuthResponse.RequestId"));
 		playerAuthResponse.setLogURL(context.stringValue("PlayerAuthResponse.LogURL"));
 
-		List<Switch> switchList = new ArrayList<Switch>();
+		List<_Switch> switchList = new ArrayList<_Switch>();
 		for (int i = 0; i < context.lengthValue("PlayerAuthResponse.SwitchList.Length"); i++) {
-			Switch switch_ = new Switch();
-			switch_.setState(context.stringValue("PlayerAuthResponse.SwitchList["+ i +"].State"));
-			switch_.setFunctionId(context.stringValue("PlayerAuthResponse.SwitchList["+ i +"].FunctionId"));
-			switch_.setSwitchId(context.stringValue("PlayerAuthResponse.SwitchList["+ i +"].SwitchId"));
-			switch_.setFunctionName(context.stringValue("PlayerAuthResponse.SwitchList["+ i +"].FunctionName"));
+			_Switch _switch = new _Switch();
+			_switch.setState(context.stringValue("PlayerAuthResponse.SwitchList["+ i +"].State"));
+			_switch.setFunctionId(context.stringValue("PlayerAuthResponse.SwitchList["+ i +"].FunctionId"));
+			_switch.setSwitchId(context.stringValue("PlayerAuthResponse.SwitchList["+ i +"].SwitchId"));
+			_switch.setFunctionName(context.stringValue("PlayerAuthResponse.SwitchList["+ i +"].FunctionName"));
 
-			switchList.add(switch_);
+			switchList.add(_switch);
 		}
 		playerAuthResponse.setSwitchList(switchList);
 	 

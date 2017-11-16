@@ -30,23 +30,25 @@ public class QueryAnalysisJobListRequest extends RpcAcsRequest<QueryAnalysisJobL
 		super("Mts", "2014-06-18", "QueryAnalysisJobList");
 	}
 
-	private Long ownerId;
+	private Long resourceOwnerId;
 
 	private String resourceOwnerAccount;
 
-	private Long resourceOwnerId;
+	private String ownerAccount;
+
+	private Long ownerId;
 
 	private String analysisJobIds;
 
-	private String ownerAccount;
-
-	public Long getOwnerId() {
-		return this.ownerId;
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
 	}
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
 	}
 
 	public String getResourceOwnerAccount() {
@@ -55,25 +57,9 @@ public class QueryAnalysisJobListRequest extends RpcAcsRequest<QueryAnalysisJobL
 
 	public void setResourceOwnerAccount(String resourceOwnerAccount) {
 		this.resourceOwnerAccount = resourceOwnerAccount;
-		putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-	}
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", resourceOwnerId);
-	}
-
-	public String getAnalysisJobIds() {
-		return this.analysisJobIds;
-	}
-
-	public void setAnalysisJobIds(String analysisJobIds) {
-		this.analysisJobIds = analysisJobIds;
-		putQueryParameter("AnalysisJobIds", analysisJobIds);
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
 	}
 
 	public String getOwnerAccount() {
@@ -82,7 +68,31 @@ public class QueryAnalysisJobListRequest extends RpcAcsRequest<QueryAnalysisJobL
 
 	public void setOwnerAccount(String ownerAccount) {
 		this.ownerAccount = ownerAccount;
-		putQueryParameter("OwnerAccount", ownerAccount);
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getAnalysisJobIds() {
+		return this.analysisJobIds;
+	}
+
+	public void setAnalysisJobIds(String analysisJobIds) {
+		this.analysisJobIds = analysisJobIds;
+		if(analysisJobIds != null){
+			putQueryParameter("AnalysisJobIds", analysisJobIds);
+		}
 	}
 
 	@Override

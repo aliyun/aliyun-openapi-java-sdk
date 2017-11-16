@@ -30,22 +30,13 @@ public class PlayerAuthRequest extends RpcAcsRequest<PlayerAuthResponse> {
 		super("Mts", "2014-06-18", "PlayerAuth");
 	}
 
-	private String ownerId;
-
 	private String resourceOwnerId;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
-	public String getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(String ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
-	}
+	private String ownerId;
 
 	public String getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -53,7 +44,9 @@ public class PlayerAuthRequest extends RpcAcsRequest<PlayerAuthResponse> {
 
 	public void setResourceOwnerId(String resourceOwnerId) {
 		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", resourceOwnerId);
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId);
+		}
 	}
 
 	public String getResourceOwnerAccount() {
@@ -62,7 +55,9 @@ public class PlayerAuthRequest extends RpcAcsRequest<PlayerAuthResponse> {
 
 	public void setResourceOwnerAccount(String resourceOwnerAccount) {
 		this.resourceOwnerAccount = resourceOwnerAccount;
-		putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
 	}
 
 	public String getOwnerAccount() {
@@ -71,7 +66,20 @@ public class PlayerAuthRequest extends RpcAcsRequest<PlayerAuthResponse> {
 
 	public void setOwnerAccount(String ownerAccount) {
 		this.ownerAccount = ownerAccount;
-		putQueryParameter("OwnerAccount", ownerAccount);
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public String getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(String ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId);
+		}
 	}
 
 	@Override

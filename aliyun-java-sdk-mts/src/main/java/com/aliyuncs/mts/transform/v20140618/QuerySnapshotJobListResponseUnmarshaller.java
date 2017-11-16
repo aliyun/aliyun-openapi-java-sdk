@@ -27,6 +27,8 @@ import com.aliyuncs.mts.model.v20140618.QuerySnapshotJobListResponse.SnapshotJob
 import com.aliyuncs.mts.model.v20140618.QuerySnapshotJobListResponse.SnapshotJob.MNSMessageResult;
 import com.aliyuncs.mts.model.v20140618.QuerySnapshotJobListResponse.SnapshotJob.SnapshotConfig;
 import com.aliyuncs.mts.model.v20140618.QuerySnapshotJobListResponse.SnapshotJob.SnapshotConfig.OutputFile;
+import com.aliyuncs.mts.model.v20140618.QuerySnapshotJobListResponse.SnapshotJob.SnapshotConfig.TileOut;
+import com.aliyuncs.mts.model.v20140618.QuerySnapshotJobListResponse.SnapshotJob.SnapshotConfig.TileOutputFile;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -51,6 +53,7 @@ public class QuerySnapshotJobListResponseUnmarshaller {
 			snapshotJob.setState(context.stringValue("QuerySnapshotJobListResponse.SnapshotJobList["+ i +"].State"));
 			snapshotJob.setCode(context.stringValue("QuerySnapshotJobListResponse.SnapshotJobList["+ i +"].Code"));
 			snapshotJob.setCount(context.stringValue("QuerySnapshotJobListResponse.SnapshotJobList["+ i +"].Count"));
+			snapshotJob.setTileCount(context.stringValue("QuerySnapshotJobListResponse.SnapshotJobList["+ i +"].TileCount"));
 			snapshotJob.setMessage(context.stringValue("QuerySnapshotJobListResponse.SnapshotJobList["+ i +"].Message"));
 			snapshotJob.setCreationTime(context.stringValue("QuerySnapshotJobListResponse.SnapshotJobList["+ i +"].CreationTime"));
 
@@ -58,6 +61,7 @@ public class QuerySnapshotJobListResponseUnmarshaller {
 			input.setBucket(context.stringValue("QuerySnapshotJobListResponse.SnapshotJobList["+ i +"].Input.Bucket"));
 			input.setLocation(context.stringValue("QuerySnapshotJobListResponse.SnapshotJobList["+ i +"].Input.Location"));
 			input.setObject(context.stringValue("QuerySnapshotJobListResponse.SnapshotJobList["+ i +"].Input.Object"));
+			input.setRoleArn(context.stringValue("QuerySnapshotJobListResponse.SnapshotJobList["+ i +"].Input.RoleArn"));
 			snapshotJob.setInput(input);
 
 			SnapshotConfig snapshotConfig = new SnapshotConfig();
@@ -72,7 +76,26 @@ public class QuerySnapshotJobListResponseUnmarshaller {
 			outputFile.setBucket(context.stringValue("QuerySnapshotJobListResponse.SnapshotJobList["+ i +"].SnapshotConfig.OutputFile.Bucket"));
 			outputFile.setLocation(context.stringValue("QuerySnapshotJobListResponse.SnapshotJobList["+ i +"].SnapshotConfig.OutputFile.Location"));
 			outputFile.setObject(context.stringValue("QuerySnapshotJobListResponse.SnapshotJobList["+ i +"].SnapshotConfig.OutputFile.Object"));
+			outputFile.setRoleArn(context.stringValue("QuerySnapshotJobListResponse.SnapshotJobList["+ i +"].SnapshotConfig.OutputFile.RoleArn"));
 			snapshotConfig.setOutputFile(outputFile);
+
+			TileOutputFile tileOutputFile = new TileOutputFile();
+			tileOutputFile.setBucket(context.stringValue("QuerySnapshotJobListResponse.SnapshotJobList["+ i +"].SnapshotConfig.TileOutputFile.Bucket"));
+			tileOutputFile.setLocation(context.stringValue("QuerySnapshotJobListResponse.SnapshotJobList["+ i +"].SnapshotConfig.TileOutputFile.Location"));
+			tileOutputFile.setObject(context.stringValue("QuerySnapshotJobListResponse.SnapshotJobList["+ i +"].SnapshotConfig.TileOutputFile.Object"));
+			tileOutputFile.setRoleArn(context.stringValue("QuerySnapshotJobListResponse.SnapshotJobList["+ i +"].SnapshotConfig.TileOutputFile.RoleArn"));
+			snapshotConfig.setTileOutputFile(tileOutputFile);
+
+			TileOut tileOut = new TileOut();
+			tileOut.setLines(context.stringValue("QuerySnapshotJobListResponse.SnapshotJobList["+ i +"].SnapshotConfig.TileOut.Lines"));
+			tileOut.setColumns(context.stringValue("QuerySnapshotJobListResponse.SnapshotJobList["+ i +"].SnapshotConfig.TileOut.Columns"));
+			tileOut.setCellWidth(context.stringValue("QuerySnapshotJobListResponse.SnapshotJobList["+ i +"].SnapshotConfig.TileOut.CellWidth"));
+			tileOut.setCellHeight(context.stringValue("QuerySnapshotJobListResponse.SnapshotJobList["+ i +"].SnapshotConfig.TileOut.CellHeight"));
+			tileOut.setMargin(context.stringValue("QuerySnapshotJobListResponse.SnapshotJobList["+ i +"].SnapshotConfig.TileOut.Margin"));
+			tileOut.setPadding(context.stringValue("QuerySnapshotJobListResponse.SnapshotJobList["+ i +"].SnapshotConfig.TileOut.Padding"));
+			tileOut.setColor(context.stringValue("QuerySnapshotJobListResponse.SnapshotJobList["+ i +"].SnapshotConfig.TileOut.Color"));
+			tileOut.setIsKeepCellPic(context.stringValue("QuerySnapshotJobListResponse.SnapshotJobList["+ i +"].SnapshotConfig.TileOut.IsKeepCellPic"));
+			snapshotConfig.setTileOut(tileOut);
 			snapshotJob.setSnapshotConfig(snapshotConfig);
 
 			MNSMessageResult mNSMessageResult = new MNSMessageResult();

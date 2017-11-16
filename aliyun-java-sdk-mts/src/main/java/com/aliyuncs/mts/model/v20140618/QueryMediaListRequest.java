@@ -30,29 +30,31 @@ public class QueryMediaListRequest extends RpcAcsRequest<QueryMediaListResponse>
 		super("Mts", "2014-06-18", "QueryMediaList");
 	}
 
-	private Long ownerId;
+	private Long resourceOwnerId;
 
 	private String resourceOwnerAccount;
 
-	private Long resourceOwnerId;
-
-	private String mediaIds;
-
-	private Boolean includePlayList;
-
 	private Boolean includeSnapshotList;
-
-	private Boolean includeMediaInfo;
 
 	private String ownerAccount;
 
-	public Long getOwnerId() {
-		return this.ownerId;
+	private String mediaIds;
+
+	private Long ownerId;
+
+	private Boolean includePlayList;
+
+	private Boolean includeMediaInfo;
+
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
 	}
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
 	}
 
 	public String getResourceOwnerAccount() {
@@ -61,34 +63,9 @@ public class QueryMediaListRequest extends RpcAcsRequest<QueryMediaListResponse>
 
 	public void setResourceOwnerAccount(String resourceOwnerAccount) {
 		this.resourceOwnerAccount = resourceOwnerAccount;
-		putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-	}
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", resourceOwnerId);
-	}
-
-	public String getMediaIds() {
-		return this.mediaIds;
-	}
-
-	public void setMediaIds(String mediaIds) {
-		this.mediaIds = mediaIds;
-		putQueryParameter("MediaIds", mediaIds);
-	}
-
-	public Boolean getIncludePlayList() {
-		return this.includePlayList;
-	}
-
-	public void setIncludePlayList(Boolean includePlayList) {
-		this.includePlayList = includePlayList;
-		putQueryParameter("IncludePlayList", includePlayList);
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
 	}
 
 	public Boolean getIncludeSnapshotList() {
@@ -97,16 +74,9 @@ public class QueryMediaListRequest extends RpcAcsRequest<QueryMediaListResponse>
 
 	public void setIncludeSnapshotList(Boolean includeSnapshotList) {
 		this.includeSnapshotList = includeSnapshotList;
-		putQueryParameter("IncludeSnapshotList", includeSnapshotList);
-	}
-
-	public Boolean getIncludeMediaInfo() {
-		return this.includeMediaInfo;
-	}
-
-	public void setIncludeMediaInfo(Boolean includeMediaInfo) {
-		this.includeMediaInfo = includeMediaInfo;
-		putQueryParameter("IncludeMediaInfo", includeMediaInfo);
+		if(includeSnapshotList != null){
+			putQueryParameter("IncludeSnapshotList", includeSnapshotList.toString());
+		}
 	}
 
 	public String getOwnerAccount() {
@@ -115,7 +85,53 @@ public class QueryMediaListRequest extends RpcAcsRequest<QueryMediaListResponse>
 
 	public void setOwnerAccount(String ownerAccount) {
 		this.ownerAccount = ownerAccount;
-		putQueryParameter("OwnerAccount", ownerAccount);
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public String getMediaIds() {
+		return this.mediaIds;
+	}
+
+	public void setMediaIds(String mediaIds) {
+		this.mediaIds = mediaIds;
+		if(mediaIds != null){
+			putQueryParameter("MediaIds", mediaIds);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public Boolean getIncludePlayList() {
+		return this.includePlayList;
+	}
+
+	public void setIncludePlayList(Boolean includePlayList) {
+		this.includePlayList = includePlayList;
+		if(includePlayList != null){
+			putQueryParameter("IncludePlayList", includePlayList.toString());
+		}
+	}
+
+	public Boolean getIncludeMediaInfo() {
+		return this.includeMediaInfo;
+	}
+
+	public void setIncludeMediaInfo(Boolean includeMediaInfo) {
+		this.includeMediaInfo = includeMediaInfo;
+		if(includeMediaInfo != null){
+			putQueryParameter("IncludeMediaInfo", includeMediaInfo.toString());
+		}
 	}
 
 	@Override

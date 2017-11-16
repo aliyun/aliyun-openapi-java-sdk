@@ -30,27 +30,29 @@ public class UpdateWaterMarkTemplateRequest extends RpcAcsRequest<UpdateWaterMar
 		super("Mts", "2014-06-18", "UpdateWaterMarkTemplate");
 	}
 
-	private Long ownerId;
+	private Long resourceOwnerId;
 
 	private String resourceOwnerAccount;
 
-	private Long resourceOwnerId;
-
-	private String waterMarkTemplateId;
+	private String ownerAccount;
 
 	private String name;
 
+	private Long ownerId;
+
+	private String waterMarkTemplateId;
+
 	private String config;
 
-	private String ownerAccount;
-
-	public Long getOwnerId() {
-		return this.ownerId;
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
 	}
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
 	}
 
 	public String getResourceOwnerAccount() {
@@ -59,43 +61,9 @@ public class UpdateWaterMarkTemplateRequest extends RpcAcsRequest<UpdateWaterMar
 
 	public void setResourceOwnerAccount(String resourceOwnerAccount) {
 		this.resourceOwnerAccount = resourceOwnerAccount;
-		putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-	}
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", resourceOwnerId);
-	}
-
-	public String getWaterMarkTemplateId() {
-		return this.waterMarkTemplateId;
-	}
-
-	public void setWaterMarkTemplateId(String waterMarkTemplateId) {
-		this.waterMarkTemplateId = waterMarkTemplateId;
-		putQueryParameter("WaterMarkTemplateId", waterMarkTemplateId);
-	}
-
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-		putQueryParameter("Name", name);
-	}
-
-	public String getConfig() {
-		return this.config;
-	}
-
-	public void setConfig(String config) {
-		this.config = config;
-		putQueryParameter("Config", config);
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
 	}
 
 	public String getOwnerAccount() {
@@ -104,7 +72,53 @@ public class UpdateWaterMarkTemplateRequest extends RpcAcsRequest<UpdateWaterMar
 
 	public void setOwnerAccount(String ownerAccount) {
 		this.ownerAccount = ownerAccount;
-		putQueryParameter("OwnerAccount", ownerAccount);
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getWaterMarkTemplateId() {
+		return this.waterMarkTemplateId;
+	}
+
+	public void setWaterMarkTemplateId(String waterMarkTemplateId) {
+		this.waterMarkTemplateId = waterMarkTemplateId;
+		if(waterMarkTemplateId != null){
+			putQueryParameter("WaterMarkTemplateId", waterMarkTemplateId);
+		}
+	}
+
+	public String getConfig() {
+		return this.config;
+	}
+
+	public void setConfig(String config) {
+		this.config = config;
+		if(config != null){
+			putQueryParameter("Config", config);
+		}
 	}
 
 	@Override

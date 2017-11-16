@@ -18,22 +18,19 @@
  */
 package com.aliyuncs.mts.model.v20140618;
 
-import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.mts.transform.v20140618.QueryMediaWorkflowListByNameResponseUnmarshaller;
+import com.aliyuncs.mts.transform.v20140618.AddPornPipelineResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class QueryMediaWorkflowListByNameResponse extends AcsResponse {
+public class AddPornPipelineResponse extends AcsResponse {
 
 	private String requestId;
 
-	private List<MediaWorkflow> mediaWorkflowList;
-
-	private List<String> nonExistMediaWorkflowNames;
+	private Pipeline pipeline;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -43,40 +40,32 @@ public class QueryMediaWorkflowListByNameResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public List<MediaWorkflow> getMediaWorkflowList() {
-		return this.mediaWorkflowList;
+	public Pipeline getPipeline() {
+		return this.pipeline;
 	}
 
-	public void setMediaWorkflowList(List<MediaWorkflow> mediaWorkflowList) {
-		this.mediaWorkflowList = mediaWorkflowList;
+	public void setPipeline(Pipeline pipeline) {
+		this.pipeline = pipeline;
 	}
 
-	public List<String> getNonExistMediaWorkflowNames() {
-		return this.nonExistMediaWorkflowNames;
-	}
+	public static class Pipeline {
 
-	public void setNonExistMediaWorkflowNames(List<String> nonExistMediaWorkflowNames) {
-		this.nonExistMediaWorkflowNames = nonExistMediaWorkflowNames;
-	}
-
-	public static class MediaWorkflow {
-
-		private String mediaWorkflowId;
+		private String id;
 
 		private String name;
 
-		private String topology;
+		private Integer priority;
 
 		private String state;
 
-		private String creationTime;
+		private NotifyConfig notifyConfig;
 
-		public String getMediaWorkflowId() {
-			return this.mediaWorkflowId;
+		public String getId() {
+			return this.id;
 		}
 
-		public void setMediaWorkflowId(String mediaWorkflowId) {
-			this.mediaWorkflowId = mediaWorkflowId;
+		public void setId(String id) {
+			this.id = id;
 		}
 
 		public String getName() {
@@ -87,12 +76,12 @@ public class QueryMediaWorkflowListByNameResponse extends AcsResponse {
 			this.name = name;
 		}
 
-		public String getTopology() {
-			return this.topology;
+		public Integer getPriority() {
+			return this.priority;
 		}
 
-		public void setTopology(String topology) {
-			this.topology = topology;
+		public void setPriority(Integer priority) {
+			this.priority = priority;
 		}
 
 		public String getState() {
@@ -103,17 +92,40 @@ public class QueryMediaWorkflowListByNameResponse extends AcsResponse {
 			this.state = state;
 		}
 
-		public String getCreationTime() {
-			return this.creationTime;
+		public NotifyConfig getNotifyConfig() {
+			return this.notifyConfig;
 		}
 
-		public void setCreationTime(String creationTime) {
-			this.creationTime = creationTime;
+		public void setNotifyConfig(NotifyConfig notifyConfig) {
+			this.notifyConfig = notifyConfig;
+		}
+
+		public static class NotifyConfig {
+
+			private String topic;
+
+			private String queue;
+
+			public String getTopic() {
+				return this.topic;
+			}
+
+			public void setTopic(String topic) {
+				this.topic = topic;
+			}
+
+			public String getQueue() {
+				return this.queue;
+			}
+
+			public void setQueue(String queue) {
+				this.queue = queue;
+			}
 		}
 	}
 
 	@Override
-	public QueryMediaWorkflowListByNameResponse getInstance(UnmarshallerContext context) {
-		return	QueryMediaWorkflowListByNameResponseUnmarshaller.unmarshall(this, context);
+	public AddPornPipelineResponse getInstance(UnmarshallerContext context) {
+		return	AddPornPipelineResponseUnmarshaller.unmarshall(this, context);
 	}
 }

@@ -27,16 +27,22 @@ import com.aliyuncs.mts.model.v20140618.QueryJobListResponse.Job.Input;
 import com.aliyuncs.mts.model.v20140618.QueryJobListResponse.Job.MNSMessageResult;
 import com.aliyuncs.mts.model.v20140618.QueryJobListResponse.Job.Output;
 import com.aliyuncs.mts.model.v20140618.QueryJobListResponse.Job.Output.Audio;
+import com.aliyuncs.mts.model.v20140618.QueryJobListResponse.Job.Output.Audio.Volume;
 import com.aliyuncs.mts.model.v20140618.QueryJobListResponse.Job.Output.Clip;
 import com.aliyuncs.mts.model.v20140618.QueryJobListResponse.Job.Output.Clip.TimeSpan;
 import com.aliyuncs.mts.model.v20140618.QueryJobListResponse.Job.Output.Container;
+import com.aliyuncs.mts.model.v20140618.QueryJobListResponse.Job.Output.Encryption;
+import com.aliyuncs.mts.model.v20140618.QueryJobListResponse.Job.Output.M3U8NonStandardSupport;
+import com.aliyuncs.mts.model.v20140618.QueryJobListResponse.Job.Output.M3U8NonStandardSupport.TS;
 import com.aliyuncs.mts.model.v20140618.QueryJobListResponse.Job.Output.Merge;
 import com.aliyuncs.mts.model.v20140618.QueryJobListResponse.Job.Output.MuxConfig;
 import com.aliyuncs.mts.model.v20140618.QueryJobListResponse.Job.Output.MuxConfig.Gif;
 import com.aliyuncs.mts.model.v20140618.QueryJobListResponse.Job.Output.MuxConfig.Segment;
+import com.aliyuncs.mts.model.v20140618.QueryJobListResponse.Job.Output.Opening;
 import com.aliyuncs.mts.model.v20140618.QueryJobListResponse.Job.Output.OutputFile;
 import com.aliyuncs.mts.model.v20140618.QueryJobListResponse.Job.Output.Properties;
 import com.aliyuncs.mts.model.v20140618.QueryJobListResponse.Job.Output.Properties.Format;
+import com.aliyuncs.mts.model.v20140618.QueryJobListResponse.Job.Output.Properties.SourceLogo;
 import com.aliyuncs.mts.model.v20140618.QueryJobListResponse.Job.Output.Properties.Streams;
 import com.aliyuncs.mts.model.v20140618.QueryJobListResponse.Job.Output.Properties.Streams.AudioStream;
 import com.aliyuncs.mts.model.v20140618.QueryJobListResponse.Job.Output.Properties.Streams.SubtitleStream;
@@ -44,8 +50,10 @@ import com.aliyuncs.mts.model.v20140618.QueryJobListResponse.Job.Output.Properti
 import com.aliyuncs.mts.model.v20140618.QueryJobListResponse.Job.Output.Properties.Streams.VideoStream.NetworkCost;
 import com.aliyuncs.mts.model.v20140618.QueryJobListResponse.Job.Output.SubtitleConfig;
 import com.aliyuncs.mts.model.v20140618.QueryJobListResponse.Job.Output.SubtitleConfig.ExtSubtitle;
+import com.aliyuncs.mts.model.v20140618.QueryJobListResponse.Job.Output.SubtitleConfig.ExtSubtitle.Input1;
 import com.aliyuncs.mts.model.v20140618.QueryJobListResponse.Job.Output.SubtitleConfig.Subtitle;
 import com.aliyuncs.mts.model.v20140618.QueryJobListResponse.Job.Output.SuperReso;
+import com.aliyuncs.mts.model.v20140618.QueryJobListResponse.Job.Output.TailSlate;
 import com.aliyuncs.mts.model.v20140618.QueryJobListResponse.Job.Output.TransConfig;
 import com.aliyuncs.mts.model.v20140618.QueryJobListResponse.Job.Output.Video;
 import com.aliyuncs.mts.model.v20140618.QueryJobListResponse.Job.Output.Video.BitrateBnd;
@@ -76,6 +84,7 @@ public class QueryJobListResponseUnmarshaller {
 			job.setPercent(context.longValue("QueryJobListResponse.JobList["+ i +"].Percent"));
 			job.setPipelineId(context.stringValue("QueryJobListResponse.JobList["+ i +"].PipelineId"));
 			job.setCreationTime(context.stringValue("QueryJobListResponse.JobList["+ i +"].CreationTime"));
+			job.setFinishTime(context.stringValue("QueryJobListResponse.JobList["+ i +"].FinishTime"));
 
 			Input input = new Input();
 			input.setBucket(context.stringValue("QueryJobListResponse.JobList["+ i +"].Input.Bucket"));
@@ -91,12 +100,23 @@ public class QueryJobListResponseUnmarshaller {
 			output.setAudioStreamMap(context.stringValue("QueryJobListResponse.JobList["+ i +"].Output.AudioStreamMap"));
 			output.setDeWatermark(context.stringValue("QueryJobListResponse.JobList["+ i +"].Output.DeWatermark"));
 			output.setPriority(context.stringValue("QueryJobListResponse.JobList["+ i +"].Output.Priority"));
+			output.setWaterMarkConfigUrl(context.stringValue("QueryJobListResponse.JobList["+ i +"].Output.WaterMarkConfigUrl"));
+			output.setMergeConfigUrl(context.stringValue("QueryJobListResponse.JobList["+ i +"].Output.MergeConfigUrl"));
 
 			OutputFile outputFile = new OutputFile();
 			outputFile.setBucket(context.stringValue("QueryJobListResponse.JobList["+ i +"].Output.OutputFile.Bucket"));
 			outputFile.setLocation(context.stringValue("QueryJobListResponse.JobList["+ i +"].Output.OutputFile.Location"));
 			outputFile.setObject(context.stringValue("QueryJobListResponse.JobList["+ i +"].Output.OutputFile.Object"));
+			outputFile.setRoleArn(context.stringValue("QueryJobListResponse.JobList["+ i +"].Output.OutputFile.RoleArn"));
 			output.setOutputFile(outputFile);
+
+			M3U8NonStandardSupport m3U8NonStandardSupport = new M3U8NonStandardSupport();
+
+			TS tS = new TS();
+			tS.setMd5Support(context.booleanValue("QueryJobListResponse.JobList["+ i +"].Output.M3U8NonStandardSupport.TS.Md5Support"));
+			tS.setSizeSupport(context.booleanValue("QueryJobListResponse.JobList["+ i +"].Output.M3U8NonStandardSupport.TS.SizeSupport"));
+			m3U8NonStandardSupport.setTS(tS);
+			output.setM3U8NonStandardSupport(m3U8NonStandardSupport);
 
 			Properties properties = new Properties();
 			properties.setWidth(context.stringValue("QueryJobListResponse.JobList["+ i +"].Output.Properties.Width"));
@@ -190,6 +210,15 @@ public class QueryJobListResponseUnmarshaller {
 			format.setSize(context.stringValue("QueryJobListResponse.JobList["+ i +"].Output.Properties.Format.Size"));
 			format.setBitrate(context.stringValue("QueryJobListResponse.JobList["+ i +"].Output.Properties.Format.Bitrate"));
 			properties.setFormat(format);
+
+			List<SourceLogo> sourceLogos = new ArrayList<SourceLogo>();
+			for (int j = 0; j < context.lengthValue("QueryJobListResponse.JobList["+ i +"].Output.Properties.SourceLogos.Length"); j++) {
+				SourceLogo sourceLogo = new SourceLogo();
+				sourceLogo.setSource(context.stringValue("QueryJobListResponse.JobList["+ i +"].Output.Properties.SourceLogos["+ j +"].Source"));
+
+				sourceLogos.add(sourceLogo);
+			}
+			properties.setSourceLogos(sourceLogos);
 			output.setProperties(properties);
 
 			Clip clip = new Clip();
@@ -218,12 +247,14 @@ public class QueryJobListResponseUnmarshaller {
 			List<ExtSubtitle> extSubtitleList = new ArrayList<ExtSubtitle>();
 			for (int j = 0; j < context.lengthValue("QueryJobListResponse.JobList["+ i +"].Output.SubtitleConfig.ExtSubtitleList.Length"); j++) {
 				ExtSubtitle extSubtitle = new ExtSubtitle();
+				extSubtitle.setFontName(context.stringValue("QueryJobListResponse.JobList["+ i +"].Output.SubtitleConfig.ExtSubtitleList["+ j +"].FontName"));
+				extSubtitle.setCharEnc(context.stringValue("QueryJobListResponse.JobList["+ i +"].Output.SubtitleConfig.ExtSubtitleList["+ j +"].CharEnc"));
 
-				com.aliyuncs.mts.model.v20140618.QueryJobListResponse.Job.Output.SubtitleConfig.ExtSubtitle.Input extSubtitleInput = new com.aliyuncs.mts.model.v20140618.QueryJobListResponse.Job.Output.SubtitleConfig.ExtSubtitle.Input();
-				extSubtitleInput.setBucket(context.stringValue("QueryJobListResponse.JobList["+ i +"].Output.SubtitleConfig.ExtSubtitleList["+ j +"].Input.Bucket"));
-				extSubtitleInput.setLocation(context.stringValue("QueryJobListResponse.JobList["+ i +"].Output.SubtitleConfig.ExtSubtitleList["+ j +"].Input.Location"));
-				extSubtitleInput.setObject(context.stringValue("QueryJobListResponse.JobList["+ i +"].Output.SubtitleConfig.ExtSubtitleList["+ j +"].Input.Object"));
-				extSubtitle.setInput(extSubtitleInput);
+				Input1 input1 = new Input1();
+				input1.setBucket(context.stringValue("QueryJobListResponse.JobList["+ i +"].Output.SubtitleConfig.ExtSubtitleList["+ j +"].Input.Bucket"));
+				input1.setLocation(context.stringValue("QueryJobListResponse.JobList["+ i +"].Output.SubtitleConfig.ExtSubtitleList["+ j +"].Input.Location"));
+				input1.setObject(context.stringValue("QueryJobListResponse.JobList["+ i +"].Output.SubtitleConfig.ExtSubtitleList["+ j +"].Input.Object"));
+				extSubtitle.setInput1(input1);
 
 				extSubtitleList.add(extSubtitle);
 			}
@@ -237,6 +268,8 @@ public class QueryJobListResponseUnmarshaller {
 			transConfig.setIsCheckVideoBitrate(context.stringValue("QueryJobListResponse.JobList["+ i +"].Output.TransConfig.IsCheckVideoBitrate"));
 			transConfig.setIsCheckAudioBitrate(context.stringValue("QueryJobListResponse.JobList["+ i +"].Output.TransConfig.IsCheckAudioBitrate"));
 			transConfig.setAdjDarMethod(context.stringValue("QueryJobListResponse.JobList["+ i +"].Output.TransConfig.AdjDarMethod"));
+			transConfig.setIsCheckVideoBitrateFail(context.stringValue("QueryJobListResponse.JobList["+ i +"].Output.TransConfig.IsCheckVideoBitrateFail"));
+			transConfig.setIsCheckAudioBitrateFail(context.stringValue("QueryJobListResponse.JobList["+ i +"].Output.TransConfig.IsCheckAudioBitrateFail"));
 			output.setTransConfig(transConfig);
 
 			MuxConfig muxConfig = new MuxConfig();
@@ -260,6 +293,11 @@ public class QueryJobListResponseUnmarshaller {
 			audio.setBitrate(context.stringValue("QueryJobListResponse.JobList["+ i +"].Output.Audio.Bitrate"));
 			audio.setChannels(context.stringValue("QueryJobListResponse.JobList["+ i +"].Output.Audio.Channels"));
 			audio.setQscale(context.stringValue("QueryJobListResponse.JobList["+ i +"].Output.Audio.Qscale"));
+
+			Volume volume = new Volume();
+			volume.setLevel(context.stringValue("QueryJobListResponse.JobList["+ i +"].Output.Audio.Volume.Level"));
+			volume.setMethod(context.stringValue("QueryJobListResponse.JobList["+ i +"].Output.Audio.Volume.Method"));
+			audio.setVolume(volume);
 			output.setAudio(audio);
 
 			Video video = new Video();
@@ -292,6 +330,15 @@ public class QueryJobListResponseUnmarshaller {
 			container.setFormat(context.stringValue("QueryJobListResponse.JobList["+ i +"].Output.Container.Format"));
 			output.setContainer(container);
 
+			Encryption encryption = new Encryption();
+			encryption.setType(context.stringValue("QueryJobListResponse.JobList["+ i +"].Output.Encryption.Type"));
+			encryption.setId(context.stringValue("QueryJobListResponse.JobList["+ i +"].Output.Encryption.Id"));
+			encryption.setKey(context.stringValue("QueryJobListResponse.JobList["+ i +"].Output.Encryption.Key"));
+			encryption.setKeyUri(context.stringValue("QueryJobListResponse.JobList["+ i +"].Output.Encryption.KeyUri"));
+			encryption.setKeyType(context.stringValue("QueryJobListResponse.JobList["+ i +"].Output.Encryption.KeyType"));
+			encryption.setSkipCnt(context.stringValue("QueryJobListResponse.JobList["+ i +"].Output.Encryption.SkipCnt"));
+			output.setEncryption(encryption);
+
 			List<WaterMark> waterMarkList = new ArrayList<WaterMark>();
 			for (int j = 0; j < context.lengthValue("QueryJobListResponse.JobList["+ i +"].Output.WaterMarkList.Length"); j++) {
 				WaterMark waterMark = new WaterMark();
@@ -319,10 +366,38 @@ public class QueryJobListResponseUnmarshaller {
 				merge.setMergeURL(context.stringValue("QueryJobListResponse.JobList["+ i +"].Output.MergeList["+ j +"].MergeURL"));
 				merge.setStart(context.stringValue("QueryJobListResponse.JobList["+ i +"].Output.MergeList["+ j +"].Start"));
 				merge.setDuration(context.stringValue("QueryJobListResponse.JobList["+ i +"].Output.MergeList["+ j +"].Duration"));
+				merge.setRoleArn(context.stringValue("QueryJobListResponse.JobList["+ i +"].Output.MergeList["+ j +"].RoleArn"));
 
 				mergeList.add(merge);
 			}
 			output.setMergeList(mergeList);
+
+			List<Opening> openingList = new ArrayList<Opening>();
+			for (int j = 0; j < context.lengthValue("QueryJobListResponse.JobList["+ i +"].Output.OpeningList.Length"); j++) {
+				Opening opening = new Opening();
+				opening.setOpenUrl(context.stringValue("QueryJobListResponse.JobList["+ i +"].Output.OpeningList["+ j +"].openUrl"));
+				opening.setStart(context.stringValue("QueryJobListResponse.JobList["+ i +"].Output.OpeningList["+ j +"].Start"));
+				opening.setWidth(context.stringValue("QueryJobListResponse.JobList["+ i +"].Output.OpeningList["+ j +"].Width"));
+				opening.setHeight(context.stringValue("QueryJobListResponse.JobList["+ i +"].Output.OpeningList["+ j +"].Height"));
+
+				openingList.add(opening);
+			}
+			output.setOpeningList(openingList);
+
+			List<TailSlate> tailSlateList = new ArrayList<TailSlate>();
+			for (int j = 0; j < context.lengthValue("QueryJobListResponse.JobList["+ i +"].Output.TailSlateList.Length"); j++) {
+				TailSlate tailSlate = new TailSlate();
+				tailSlate.setTailUrl(context.stringValue("QueryJobListResponse.JobList["+ i +"].Output.TailSlateList["+ j +"].TailUrl"));
+				tailSlate.setStart(context.stringValue("QueryJobListResponse.JobList["+ i +"].Output.TailSlateList["+ j +"].Start"));
+				tailSlate.setBlendDuration(context.stringValue("QueryJobListResponse.JobList["+ i +"].Output.TailSlateList["+ j +"].BlendDuration"));
+				tailSlate.setWidth(context.stringValue("QueryJobListResponse.JobList["+ i +"].Output.TailSlateList["+ j +"].Width"));
+				tailSlate.setHeight(context.stringValue("QueryJobListResponse.JobList["+ i +"].Output.TailSlateList["+ j +"].Height"));
+				tailSlate.setIsMergeAudio(context.booleanValue("QueryJobListResponse.JobList["+ i +"].Output.TailSlateList["+ j +"].IsMergeAudio"));
+				tailSlate.setBgColor(context.stringValue("QueryJobListResponse.JobList["+ i +"].Output.TailSlateList["+ j +"].BgColor"));
+
+				tailSlateList.add(tailSlate);
+			}
+			output.setTailSlateList(tailSlateList);
 			job.setOutput(output);
 
 			MNSMessageResult mNSMessageResult = new MNSMessageResult();

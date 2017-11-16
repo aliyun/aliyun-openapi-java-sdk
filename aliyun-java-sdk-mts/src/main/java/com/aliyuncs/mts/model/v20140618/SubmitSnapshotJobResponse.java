@@ -62,6 +62,8 @@ public class SubmitSnapshotJobResponse extends AcsResponse {
 
 		private String count;
 
+		private String tileCount;
+
 		private String message;
 
 		private String creationTime;
@@ -120,6 +122,14 @@ public class SubmitSnapshotJobResponse extends AcsResponse {
 			this.count = count;
 		}
 
+		public String getTileCount() {
+			return this.tileCount;
+		}
+
+		public void setTileCount(String tileCount) {
+			this.tileCount = tileCount;
+		}
+
 		public String getMessage() {
 			return this.message;
 		}
@@ -168,6 +178,8 @@ public class SubmitSnapshotJobResponse extends AcsResponse {
 
 			private String object;
 
+			private String roleArn;
+
 			public String getBucket() {
 				return this.bucket;
 			}
@@ -191,6 +203,14 @@ public class SubmitSnapshotJobResponse extends AcsResponse {
 			public void setObject(String object) {
 				this.object = object;
 			}
+
+			public String getRoleArn() {
+				return this.roleArn;
+			}
+
+			public void setRoleArn(String roleArn) {
+				this.roleArn = roleArn;
+			}
 		}
 
 		public static class SnapshotConfig {
@@ -208,6 +228,10 @@ public class SubmitSnapshotJobResponse extends AcsResponse {
 			private String frameType;
 
 			private OutputFile outputFile;
+
+			private TileOutputFile tileOutputFile;
+
+			private TileOut tileOut;
 
 			public String getTime() {
 				return this.time;
@@ -265,6 +289,22 @@ public class SubmitSnapshotJobResponse extends AcsResponse {
 				this.outputFile = outputFile;
 			}
 
+			public TileOutputFile getTileOutputFile() {
+				return this.tileOutputFile;
+			}
+
+			public void setTileOutputFile(TileOutputFile tileOutputFile) {
+				this.tileOutputFile = tileOutputFile;
+			}
+
+			public TileOut getTileOut() {
+				return this.tileOut;
+			}
+
+			public void setTileOut(TileOut tileOut) {
+				this.tileOut = tileOut;
+			}
+
 			public static class OutputFile {
 
 				private String bucket;
@@ -272,6 +312,8 @@ public class SubmitSnapshotJobResponse extends AcsResponse {
 				private String location;
 
 				private String object;
+
+				private String roleArn;
 
 				public String getBucket() {
 					return this.bucket;
@@ -295,6 +337,140 @@ public class SubmitSnapshotJobResponse extends AcsResponse {
 
 				public void setObject(String object) {
 					this.object = object;
+				}
+
+				public String getRoleArn() {
+					return this.roleArn;
+				}
+
+				public void setRoleArn(String roleArn) {
+					this.roleArn = roleArn;
+				}
+			}
+
+			public static class TileOutputFile {
+
+				private String bucket;
+
+				private String location;
+
+				private String object;
+
+				private String roleArn;
+
+				public String getBucket() {
+					return this.bucket;
+				}
+
+				public void setBucket(String bucket) {
+					this.bucket = bucket;
+				}
+
+				public String getLocation() {
+					return this.location;
+				}
+
+				public void setLocation(String location) {
+					this.location = location;
+				}
+
+				public String getObject() {
+					return this.object;
+				}
+
+				public void setObject(String object) {
+					this.object = object;
+				}
+
+				public String getRoleArn() {
+					return this.roleArn;
+				}
+
+				public void setRoleArn(String roleArn) {
+					this.roleArn = roleArn;
+				}
+			}
+
+			public static class TileOut {
+
+				private String lines;
+
+				private String columns;
+
+				private String cellWidth;
+
+				private String cellHeight;
+
+				private String margin;
+
+				private String padding;
+
+				private String color;
+
+				private String isKeepCellPic;
+
+				public String getLines() {
+					return this.lines;
+				}
+
+				public void setLines(String lines) {
+					this.lines = lines;
+				}
+
+				public String getColumns() {
+					return this.columns;
+				}
+
+				public void setColumns(String columns) {
+					this.columns = columns;
+				}
+
+				public String getCellWidth() {
+					return this.cellWidth;
+				}
+
+				public void setCellWidth(String cellWidth) {
+					this.cellWidth = cellWidth;
+				}
+
+				public String getCellHeight() {
+					return this.cellHeight;
+				}
+
+				public void setCellHeight(String cellHeight) {
+					this.cellHeight = cellHeight;
+				}
+
+				public String getMargin() {
+					return this.margin;
+				}
+
+				public void setMargin(String margin) {
+					this.margin = margin;
+				}
+
+				public String getPadding() {
+					return this.padding;
+				}
+
+				public void setPadding(String padding) {
+					this.padding = padding;
+				}
+
+				public String getColor() {
+					return this.color;
+				}
+
+				public void setColor(String color) {
+					this.color = color;
+				}
+
+				public String getIsKeepCellPic() {
+					return this.isKeepCellPic;
+				}
+
+				public void setIsKeepCellPic(String isKeepCellPic) {
+					this.isKeepCellPic = isKeepCellPic;
 				}
 			}
 		}

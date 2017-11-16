@@ -30,13 +30,13 @@ public class UpdatePipelineRequest extends RpcAcsRequest<UpdatePipelineResponse>
 		super("Mts", "2014-06-18", "UpdatePipeline");
 	}
 
-	private Long ownerId;
+	private Long resourceOwnerId;
+
+	private String role;
 
 	private String resourceOwnerAccount;
 
-	private Long resourceOwnerId;
-
-	private String pipelineId;
+	private String ownerAccount;
 
 	private String name;
 
@@ -44,27 +44,9 @@ public class UpdatePipelineRequest extends RpcAcsRequest<UpdatePipelineResponse>
 
 	private String notifyConfig;
 
-	private String role;
+	private Long ownerId;
 
-	private String ownerAccount;
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-	}
+	private String pipelineId;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -72,43 +54,9 @@ public class UpdatePipelineRequest extends RpcAcsRequest<UpdatePipelineResponse>
 
 	public void setResourceOwnerId(Long resourceOwnerId) {
 		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", resourceOwnerId);
-	}
-
-	public String getPipelineId() {
-		return this.pipelineId;
-	}
-
-	public void setPipelineId(String pipelineId) {
-		this.pipelineId = pipelineId;
-		putQueryParameter("PipelineId", pipelineId);
-	}
-
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-		putQueryParameter("Name", name);
-	}
-
-	public String getState() {
-		return this.state;
-	}
-
-	public void setState(String state) {
-		this.state = state;
-		putQueryParameter("State", state);
-	}
-
-	public String getNotifyConfig() {
-		return this.notifyConfig;
-	}
-
-	public void setNotifyConfig(String notifyConfig) {
-		this.notifyConfig = notifyConfig;
-		putQueryParameter("NotifyConfig", notifyConfig);
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
 	}
 
 	public String getRole() {
@@ -117,7 +65,20 @@ public class UpdatePipelineRequest extends RpcAcsRequest<UpdatePipelineResponse>
 
 	public void setRole(String role) {
 		this.role = role;
-		putQueryParameter("Role", role);
+		if(role != null){
+			putQueryParameter("Role", role);
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
 	}
 
 	public String getOwnerAccount() {
@@ -126,7 +87,64 @@ public class UpdatePipelineRequest extends RpcAcsRequest<UpdatePipelineResponse>
 
 	public void setOwnerAccount(String ownerAccount) {
 		this.ownerAccount = ownerAccount;
-		putQueryParameter("OwnerAccount", ownerAccount);
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
+		}
+	}
+
+	public String getState() {
+		return this.state;
+	}
+
+	public void setState(String state) {
+		this.state = state;
+		if(state != null){
+			putQueryParameter("State", state);
+		}
+	}
+
+	public String getNotifyConfig() {
+		return this.notifyConfig;
+	}
+
+	public void setNotifyConfig(String notifyConfig) {
+		this.notifyConfig = notifyConfig;
+		if(notifyConfig != null){
+			putQueryParameter("NotifyConfig", notifyConfig);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getPipelineId() {
+		return this.pipelineId;
+	}
+
+	public void setPipelineId(String pipelineId) {
+		this.pipelineId = pipelineId;
+		if(pipelineId != null){
+			putQueryParameter("PipelineId", pipelineId);
+		}
 	}
 
 	@Override

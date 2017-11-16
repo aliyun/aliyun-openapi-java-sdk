@@ -456,6 +456,10 @@ public class UpdateTemplateResponse extends AcsResponse {
 
 			private String adjDarMethod;
 
+			private String isCheckVideoBitrateFail;
+
+			private String isCheckAudioBitrateFail;
+
 			public String getTransMode() {
 				return this.transMode;
 			}
@@ -502,6 +506,22 @@ public class UpdateTemplateResponse extends AcsResponse {
 
 			public void setAdjDarMethod(String adjDarMethod) {
 				this.adjDarMethod = adjDarMethod;
+			}
+
+			public String getIsCheckVideoBitrateFail() {
+				return this.isCheckVideoBitrateFail;
+			}
+
+			public void setIsCheckVideoBitrateFail(String isCheckVideoBitrateFail) {
+				this.isCheckVideoBitrateFail = isCheckVideoBitrateFail;
+			}
+
+			public String getIsCheckAudioBitrateFail() {
+				return this.isCheckAudioBitrateFail;
+			}
+
+			public void setIsCheckAudioBitrateFail(String isCheckAudioBitrateFail) {
+				this.isCheckAudioBitrateFail = isCheckAudioBitrateFail;
 			}
 		}
 

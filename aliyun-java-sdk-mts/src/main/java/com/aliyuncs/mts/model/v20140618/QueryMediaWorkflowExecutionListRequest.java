@@ -30,32 +30,25 @@ public class QueryMediaWorkflowExecutionListRequest extends RpcAcsRequest<QueryM
 		super("Mts", "2014-06-18", "QueryMediaWorkflowExecutionList");
 	}
 
-	private Long ownerId;
-
-	private String resourceOwnerAccount;
+	private String runIds;
 
 	private Long resourceOwnerId;
 
-	private String runIds;
+	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
-	public Long getOwnerId() {
-		return this.ownerId;
+	private Long ownerId;
+
+	public String getRunIds() {
+		return this.runIds;
 	}
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	public void setRunIds(String runIds) {
+		this.runIds = runIds;
+		if(runIds != null){
+			putQueryParameter("RunIds", runIds);
+		}
 	}
 
 	public Long getResourceOwnerId() {
@@ -64,16 +57,20 @@ public class QueryMediaWorkflowExecutionListRequest extends RpcAcsRequest<QueryM
 
 	public void setResourceOwnerId(Long resourceOwnerId) {
 		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", resourceOwnerId);
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
 	}
 
-	public String getRunIds() {
-		return this.runIds;
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
 	}
 
-	public void setRunIds(String runIds) {
-		this.runIds = runIds;
-		putQueryParameter("RunIds", runIds);
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
 	}
 
 	public String getOwnerAccount() {
@@ -82,7 +79,20 @@ public class QueryMediaWorkflowExecutionListRequest extends RpcAcsRequest<QueryM
 
 	public void setOwnerAccount(String ownerAccount) {
 		this.ownerAccount = ownerAccount;
-		putQueryParameter("OwnerAccount", ownerAccount);
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
 	}
 
 	@Override

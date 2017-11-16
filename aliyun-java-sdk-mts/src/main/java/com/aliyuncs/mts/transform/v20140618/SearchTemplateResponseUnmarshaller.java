@@ -98,6 +98,8 @@ public class SearchTemplateResponseUnmarshaller {
 			transConfig.setIsCheckVideoBitrate(context.stringValue("SearchTemplateResponse.TemplateList["+ i +"].TransConfig.IsCheckVideoBitrate"));
 			transConfig.setIsCheckAudioBitrate(context.stringValue("SearchTemplateResponse.TemplateList["+ i +"].TransConfig.IsCheckAudioBitrate"));
 			transConfig.setAdjDarMethod(context.stringValue("SearchTemplateResponse.TemplateList["+ i +"].TransConfig.AdjDarMethod"));
+			transConfig.setIsCheckVideoBitrateFail(context.stringValue("SearchTemplateResponse.TemplateList["+ i +"].TransConfig.IsCheckVideoBitrateFail"));
+			transConfig.setIsCheckAudioBitrateFail(context.stringValue("SearchTemplateResponse.TemplateList["+ i +"].TransConfig.IsCheckAudioBitrateFail"));
 			template.setTransConfig(transConfig);
 
 			MuxConfig muxConfig = new MuxConfig();

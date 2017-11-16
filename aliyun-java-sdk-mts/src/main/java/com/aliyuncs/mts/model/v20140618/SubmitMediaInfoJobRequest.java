@@ -30,46 +30,19 @@ public class SubmitMediaInfoJobRequest extends RpcAcsRequest<SubmitMediaInfoJobR
 		super("Mts", "2014-06-18", "SubmitMediaInfoJob");
 	}
 
-	private Long ownerId;
-
-	private String resourceOwnerAccount;
-
-	private Long resourceOwnerId;
-
 	private String input;
 
 	private String userData;
 
-	private String pipelineId;
+	private Long resourceOwnerId;
+
+	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
+	private Long ownerId;
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", ownerId);
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-	}
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", resourceOwnerId);
-	}
+	private String pipelineId;
 
 	public String getInput() {
 		return this.input;
@@ -77,7 +50,9 @@ public class SubmitMediaInfoJobRequest extends RpcAcsRequest<SubmitMediaInfoJobR
 
 	public void setInput(String input) {
 		this.input = input;
-		putQueryParameter("Input", input);
+		if(input != null){
+			putQueryParameter("Input", input);
+		}
 	}
 
 	public String getUserData() {
@@ -86,16 +61,31 @@ public class SubmitMediaInfoJobRequest extends RpcAcsRequest<SubmitMediaInfoJobR
 
 	public void setUserData(String userData) {
 		this.userData = userData;
-		putQueryParameter("UserData", userData);
+		if(userData != null){
+			putQueryParameter("UserData", userData);
+		}
 	}
 
-	public String getPipelineId() {
-		return this.pipelineId;
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
 	}
 
-	public void setPipelineId(String pipelineId) {
-		this.pipelineId = pipelineId;
-		putQueryParameter("PipelineId", pipelineId);
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
 	}
 
 	public String getOwnerAccount() {
@@ -104,7 +94,31 @@ public class SubmitMediaInfoJobRequest extends RpcAcsRequest<SubmitMediaInfoJobR
 
 	public void setOwnerAccount(String ownerAccount) {
 		this.ownerAccount = ownerAccount;
-		putQueryParameter("OwnerAccount", ownerAccount);
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getPipelineId() {
+		return this.pipelineId;
+	}
+
+	public void setPipelineId(String pipelineId) {
+		this.pipelineId = pipelineId;
+		if(pipelineId != null){
+			putQueryParameter("PipelineId", pipelineId);
+		}
 	}
 
 	@Override
