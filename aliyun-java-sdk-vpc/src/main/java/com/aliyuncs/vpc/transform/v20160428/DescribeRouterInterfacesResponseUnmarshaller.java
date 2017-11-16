@@ -63,6 +63,8 @@ public class DescribeRouterInterfacesResponseUnmarshaller {
 			routerInterfaceType.setOppositeAccessPointId(context.stringValue("DescribeRouterInterfacesResponse.RouterInterfaceSet["+ i +"].OppositeAccessPointId"));
 			routerInterfaceType.setHealthCheckSourceIp(context.stringValue("DescribeRouterInterfacesResponse.RouterInterfaceSet["+ i +"].HealthCheckSourceIp"));
 			routerInterfaceType.setHealthCheckTargetIp(context.stringValue("DescribeRouterInterfacesResponse.RouterInterfaceSet["+ i +"].HealthCheckTargetIp"));
+			routerInterfaceType.setOppositeVpcInstanceId(context.stringValue("DescribeRouterInterfacesResponse.RouterInterfaceSet["+ i +"].OppositeVpcInstanceId"));
+			routerInterfaceType.setVpcInstanceId(context.stringValue("DescribeRouterInterfacesResponse.RouterInterfaceSet["+ i +"].VpcInstanceId"));
 
 			routerInterfaceSet.add(routerInterfaceType);
 		}

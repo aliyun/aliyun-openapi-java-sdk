@@ -131,6 +131,10 @@ public class DescribeRouterInterfacesResponse extends AcsResponse {
 
 		private String healthCheckTargetIp;
 
+		private String oppositeVpcInstanceId;
+
+		private String vpcInstanceId;
+
 		public String getRouterInterfaceId() {
 			return this.routerInterfaceId;
 		}
@@ -329,6 +333,22 @@ public class DescribeRouterInterfacesResponse extends AcsResponse {
 
 		public void setHealthCheckTargetIp(String healthCheckTargetIp) {
 			this.healthCheckTargetIp = healthCheckTargetIp;
+		}
+
+		public String getOppositeVpcInstanceId() {
+			return this.oppositeVpcInstanceId;
+		}
+
+		public void setOppositeVpcInstanceId(String oppositeVpcInstanceId) {
+			this.oppositeVpcInstanceId = oppositeVpcInstanceId;
+		}
+
+		public String getVpcInstanceId() {
+			return this.vpcInstanceId;
+		}
+
+		public void setVpcInstanceId(String vpcInstanceId) {
+			this.vpcInstanceId = vpcInstanceId;
 		}
 	}
 

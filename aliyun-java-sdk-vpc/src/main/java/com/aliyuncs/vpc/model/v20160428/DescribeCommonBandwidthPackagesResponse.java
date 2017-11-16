@@ -99,6 +99,8 @@ public class DescribeCommonBandwidthPackagesResponse extends AcsResponse {
 
 		private String creationTime;
 
+		private String expiredTime;
+
 		private String status;
 
 		private Integer ratio;
@@ -175,6 +177,14 @@ public class DescribeCommonBandwidthPackagesResponse extends AcsResponse {
 
 		public void setCreationTime(String creationTime) {
 			this.creationTime = creationTime;
+		}
+
+		public String getExpiredTime() {
+			return this.expiredTime;
+		}
+
+		public void setExpiredTime(String expiredTime) {
+			this.expiredTime = expiredTime;
 		}
 
 		public String getStatus() {

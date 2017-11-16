@@ -48,6 +48,7 @@ public class DescribeCommonBandwidthPackagesResponseUnmarshaller {
 			commonBandwidthPackage.setInternetChargeType(context.stringValue("DescribeCommonBandwidthPackagesResponse.CommonBandwidthPackages["+ i +"].InternetChargeType"));
 			commonBandwidthPackage.setBusinessStatus(context.stringValue("DescribeCommonBandwidthPackagesResponse.CommonBandwidthPackages["+ i +"].BusinessStatus"));
 			commonBandwidthPackage.setCreationTime(context.stringValue("DescribeCommonBandwidthPackagesResponse.CommonBandwidthPackages["+ i +"].CreationTime"));
+			commonBandwidthPackage.setExpiredTime(context.stringValue("DescribeCommonBandwidthPackagesResponse.CommonBandwidthPackages["+ i +"].ExpiredTime"));
 			commonBandwidthPackage.setStatus(context.stringValue("DescribeCommonBandwidthPackagesResponse.CommonBandwidthPackages["+ i +"].Status"));
 			commonBandwidthPackage.setRatio(context.integerValue("DescribeCommonBandwidthPackagesResponse.CommonBandwidthPackages["+ i +"].Ratio"));
 

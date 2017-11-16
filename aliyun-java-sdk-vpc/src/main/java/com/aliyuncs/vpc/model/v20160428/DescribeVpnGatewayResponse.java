@@ -52,6 +52,8 @@ public class DescribeVpnGatewayResponse extends AcsResponse {
 
 	private String businessStatus;
 
+	private String chargeType;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -146,6 +148,14 @@ public class DescribeVpnGatewayResponse extends AcsResponse {
 
 	public void setBusinessStatus(String businessStatus) {
 		this.businessStatus = businessStatus;
+	}
+
+	public String getChargeType() {
+		return this.chargeType;
+	}
+
+	public void setChargeType(String chargeType) {
+		this.chargeType = chargeType;
 	}
 
 	@Override

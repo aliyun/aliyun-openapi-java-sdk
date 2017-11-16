@@ -33,7 +33,6 @@ public class DescribeVpnConnectionResponseUnmarshaller {
 		describeVpnConnectionResponse.setCustomerGatewayId(context.stringValue("DescribeVpnConnectionResponse.CustomerGatewayId"));
 		describeVpnConnectionResponse.setVpnGatewayId(context.stringValue("DescribeVpnConnectionResponse.VpnGatewayId"));
 		describeVpnConnectionResponse.setName(context.stringValue("DescribeVpnConnectionResponse.Name"));
-		describeVpnConnectionResponse.setDescription(context.stringValue("DescribeVpnConnectionResponse.Description"));
 		describeVpnConnectionResponse.setLocalSubnet(context.stringValue("DescribeVpnConnectionResponse.LocalSubnet"));
 		describeVpnConnectionResponse.setRemoteSubnet(context.stringValue("DescribeVpnConnectionResponse.RemoteSubnet"));
 		describeVpnConnectionResponse.setCreateTime(context.longValue("DescribeVpnConnectionResponse.CreateTime"));

@@ -49,10 +49,14 @@ public class DescribeRouterInterfacesRequest extends RpcAcsRequest<DescribeRoute
 
 	public void setFilters(List<Filter> filters) {
 		this.filters = filters;	
-		for (int depth1 = 0; depth1 < filters.size(); depth1++) {
-			putQueryParameter("Filter." + (depth1 + 1) + ".Key" , filters.get(depth1).getKey());
-			for (int i = 0; i < filters.get(depth1).getValues().size(); i++) {
-				putQueryParameter("Filter." + (depth1 + 1) + ".Value." + (i + 1) , filters.get(depth1).getValues().get(i));
+		if (filters != null) {
+			for (int depth1 = 0; depth1 < filters.size(); depth1++) {
+				putQueryParameter("Filter." + (depth1 + 1) + ".Key" , filters.get(depth1).getKey());
+				if (filters.get(depth1).getValues() != null) {
+					for (int i = 0; i < filters.get(depth1).getValues().size(); i++) {
+						putQueryParameter("Filter." + (depth1 + 1) + ".Value." + (i + 1) , filters.get(depth1).getValues().get(i));
+					}
+				}
 			}
 		}	
 	}

@@ -38,8 +38,6 @@ public class DescribeVpnConnectionResponse extends AcsResponse {
 
 	private String name;
 
-	private String description;
-
 	private String localSubnet;
 
 	private String remoteSubnet;
@@ -92,14 +90,6 @@ public class DescribeVpnConnectionResponse extends AcsResponse {
 
 	public void setName(String name) {
 		this.name = name;
-	}
-
-	public String getDescription() {
-		return this.description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
 	}
 
 	public String getLocalSubnet() {

@@ -103,6 +103,10 @@ public class DescribeVpcsResponse extends AcsResponse {
 
 		private List<String> userCidrs;
 
+		private List<String> natGatewayIds;
+
+		private List<String> routerTableIds;
+
 		public String getVpcId() {
 			return this.vpcId;
 		}
@@ -189,6 +193,22 @@ public class DescribeVpcsResponse extends AcsResponse {
 
 		public void setUserCidrs(List<String> userCidrs) {
 			this.userCidrs = userCidrs;
+		}
+
+		public List<String> getNatGatewayIds() {
+			return this.natGatewayIds;
+		}
+
+		public void setNatGatewayIds(List<String> natGatewayIds) {
+			this.natGatewayIds = natGatewayIds;
+		}
+
+		public List<String> getRouterTableIds() {
+			return this.routerTableIds;
+		}
+
+		public void setRouterTableIds(List<String> routerTableIds) {
+			this.routerTableIds = routerTableIds;
 		}
 	}
 

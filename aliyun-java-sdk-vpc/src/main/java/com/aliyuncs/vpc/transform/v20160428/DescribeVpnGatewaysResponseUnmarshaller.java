@@ -49,6 +49,7 @@ public class DescribeVpnGatewaysResponseUnmarshaller {
 			vpnGateway.setDescription(context.stringValue("DescribeVpnGatewaysResponse.VpnGateways["+ i +"].Description"));
 			vpnGateway.setStatus(context.stringValue("DescribeVpnGatewaysResponse.VpnGateways["+ i +"].Status"));
 			vpnGateway.setBusinessStatus(context.stringValue("DescribeVpnGatewaysResponse.VpnGateways["+ i +"].BusinessStatus"));
+			vpnGateway.setChargeType(context.stringValue("DescribeVpnGatewaysResponse.VpnGateways["+ i +"].ChargeType"));
 
 			vpnGateways.add(vpnGateway);
 		}

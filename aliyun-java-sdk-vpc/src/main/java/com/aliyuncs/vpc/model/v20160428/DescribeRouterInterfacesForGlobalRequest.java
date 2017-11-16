@@ -24,27 +24,25 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class DescribeBandwidthPackageMonitorDataRequest extends RpcAcsRequest<DescribeBandwidthPackageMonitorDataResponse> {
+public class DescribeRouterInterfacesForGlobalRequest extends RpcAcsRequest<DescribeRouterInterfacesForGlobalResponse> {
 	
-	public DescribeBandwidthPackageMonitorDataRequest() {
-		super("Vpc", "2016-04-28", "DescribeBandwidthPackageMonitorData", "vpc");
+	public DescribeRouterInterfacesForGlobalRequest() {
+		super("Vpc", "2016-04-28", "DescribeRouterInterfacesForGlobal", "vpc");
 	}
 
 	private Long resourceOwnerId;
-
-	private Integer period;
-
-	private String bandwidthPackageId;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
-	private String endTime;
-
-	private String startTime;
+	private Integer pageSize;
 
 	private Long ownerId;
+
+	private Integer pageNumber;
+
+	private String status;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -54,28 +52,6 @@ public class DescribeBandwidthPackageMonitorDataRequest extends RpcAcsRequest<De
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public Integer getPeriod() {
-		return this.period;
-	}
-
-	public void setPeriod(Integer period) {
-		this.period = period;
-		if(period != null){
-			putQueryParameter("Period", period.toString());
-		}
-	}
-
-	public String getBandwidthPackageId() {
-		return this.bandwidthPackageId;
-	}
-
-	public void setBandwidthPackageId(String bandwidthPackageId) {
-		this.bandwidthPackageId = bandwidthPackageId;
-		if(bandwidthPackageId != null){
-			putQueryParameter("BandwidthPackageId", bandwidthPackageId);
 		}
 	}
 
@@ -101,25 +77,14 @@ public class DescribeBandwidthPackageMonitorDataRequest extends RpcAcsRequest<De
 		}
 	}
 
-	public String getEndTime() {
-		return this.endTime;
+	public Integer getPageSize() {
+		return this.pageSize;
 	}
 
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
-		if(endTime != null){
-			putQueryParameter("EndTime", endTime);
-		}
-	}
-
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("StartTime", startTime);
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 
@@ -134,9 +99,31 @@ public class DescribeBandwidthPackageMonitorDataRequest extends RpcAcsRequest<De
 		}
 	}
 
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public String getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+		if(status != null){
+			putQueryParameter("Status", status);
+		}
+	}
+
 	@Override
-	public Class<DescribeBandwidthPackageMonitorDataResponse> getResponseClass() {
-		return DescribeBandwidthPackageMonitorDataResponse.class;
+	public Class<DescribeRouterInterfacesForGlobalResponse> getResponseClass() {
+		return DescribeRouterInterfacesForGlobalResponse.class;
 	}
 
 }

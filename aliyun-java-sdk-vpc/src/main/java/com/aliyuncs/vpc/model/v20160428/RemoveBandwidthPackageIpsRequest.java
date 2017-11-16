@@ -51,8 +51,10 @@ public class RemoveBandwidthPackageIpsRequest extends RpcAcsRequest<RemoveBandwi
 
 	public void setRemovedIpAddressess(List<String> removedIpAddressess) {
 		this.removedIpAddressess = removedIpAddressess;	
-		for (int i = 0; i < removedIpAddressess.size(); i++) {
-			putQueryParameter("RemovedIpAddresses." + (i + 1) , removedIpAddressess.get(i));
+		if (removedIpAddressess != null) {
+			for (int i = 0; i < removedIpAddressess.size(); i++) {
+				putQueryParameter("RemovedIpAddresses." + (i + 1) , removedIpAddressess.get(i));
+			}
 		}	
 	}
 

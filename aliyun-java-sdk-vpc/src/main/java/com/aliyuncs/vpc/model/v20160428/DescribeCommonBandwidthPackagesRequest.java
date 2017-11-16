@@ -38,6 +38,8 @@ public class DescribeCommonBandwidthPackagesRequest extends RpcAcsRequest<Descri
 
 	private String ownerAccount;
 
+	private String name;
+
 	private Integer pageSize;
 
 	private Long ownerId;
@@ -85,6 +87,17 @@ public class DescribeCommonBandwidthPackagesRequest extends RpcAcsRequest<Descri
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
 		}
 	}
 

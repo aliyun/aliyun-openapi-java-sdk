@@ -46,7 +46,7 @@ public class ModifyBgpGroupAttributeRequest extends RpcAcsRequest<ModifyBgpGroup
 
 	private Long ownerId;
 
-	private Integer peerAsn;
+	private Long peerAsn;
 
 	private Boolean isFakeAsn;
 
@@ -140,11 +140,11 @@ public class ModifyBgpGroupAttributeRequest extends RpcAcsRequest<ModifyBgpGroup
 		}
 	}
 
-	public Integer getPeerAsn() {
+	public Long getPeerAsn() {
 		return this.peerAsn;
 	}
 
-	public void setPeerAsn(Integer peerAsn) {
+	public void setPeerAsn(Long peerAsn) {
 		this.peerAsn = peerAsn;
 		if(peerAsn != null){
 			putQueryParameter("PeerAsn", peerAsn.toString());

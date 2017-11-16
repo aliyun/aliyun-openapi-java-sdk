@@ -60,6 +60,18 @@ public class DescribeVpcsResponseUnmarshaller {
 			}
 			vpc.setUserCidrs(userCidrs);
 
+			List<String> natGatewayIds = new ArrayList<String>();
+			for (int j = 0; j < context.lengthValue("DescribeVpcsResponse.Vpcs["+ i +"].NatGatewayIds.Length"); j++) {
+				natGatewayIds.add(context.stringValue("DescribeVpcsResponse.Vpcs["+ i +"].NatGatewayIds["+ j +"]"));
+			}
+			vpc.setNatGatewayIds(natGatewayIds);
+
+			List<String> routerTableIds = new ArrayList<String>();
+			for (int j = 0; j < context.lengthValue("DescribeVpcsResponse.Vpcs["+ i +"].RouterTableIds.Length"); j++) {
+				routerTableIds.add(context.stringValue("DescribeVpcsResponse.Vpcs["+ i +"].RouterTableIds["+ j +"]"));
+			}
+			vpc.setRouterTableIds(routerTableIds);
+
 			vpcs.add(vpc);
 		}
 		describeVpcsResponse.setVpcs(vpcs);
