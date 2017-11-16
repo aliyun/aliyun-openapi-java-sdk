@@ -1,3 +1,7 @@
+2017-11-16 Version: 2.5.0
+1, BindInputBucket/BindOutputBucket/UnBindInputBucket，添加RoleArn参数，支持bucket托管及解除托管。
+2, 工作流定义中支持对转码输入、输出、拼接输入、截图输入及输出设置RoleArn，支持托管bucket
+
 2017-11-16 Version: 2.4.0
 1, 这是一个发布日志样例。
 2, 请严格按照这种格式编辑。
