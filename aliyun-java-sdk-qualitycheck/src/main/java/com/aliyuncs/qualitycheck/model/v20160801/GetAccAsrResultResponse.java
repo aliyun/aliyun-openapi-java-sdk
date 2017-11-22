@@ -143,9 +143,9 @@ public class GetAccAsrResultResponse extends AcsResponse {
 
 		public static class SentenceResult {
 
-			private Integer beginTime;
+			private Long beginTime;
 
-			private Integer endTime;
+			private Long endTime;
 
 			private Integer channelId;
 
@@ -163,19 +163,19 @@ public class GetAccAsrResultResponse extends AcsResponse {
 
 			private String channelKey;
 
-			public Integer getBeginTime() {
+			public Long getBeginTime() {
 				return this.beginTime;
 			}
 
-			public void setBeginTime(Integer beginTime) {
+			public void setBeginTime(Long beginTime) {
 				this.beginTime = beginTime;
 			}
 
-			public Integer getEndTime() {
+			public Long getEndTime() {
 				return this.endTime;
 			}
 
-			public void setEndTime(Integer endTime) {
+			public void setEndTime(Long endTime) {
 				this.endTime = endTime;
 			}
 

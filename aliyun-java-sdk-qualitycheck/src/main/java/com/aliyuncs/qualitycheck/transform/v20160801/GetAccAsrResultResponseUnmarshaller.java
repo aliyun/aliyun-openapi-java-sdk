@@ -48,8 +48,8 @@ public class GetAccAsrResultResponseUnmarshaller {
 			List<SentenceResult> results = new ArrayList<SentenceResult>();
 			for (int j = 0; j < context.lengthValue("GetAccAsrResultResponse.data["+ i +"].results.Length"); j++) {
 				SentenceResult sentenceResult = new SentenceResult();
-				sentenceResult.setBeginTime(context.integerValue("GetAccAsrResultResponse.data["+ i +"].results["+ j +"].beginTime"));
-				sentenceResult.setEndTime(context.integerValue("GetAccAsrResultResponse.data["+ i +"].results["+ j +"].endTime"));
+				sentenceResult.setBeginTime(context.longValue("GetAccAsrResultResponse.data["+ i +"].results["+ j +"].beginTime"));
+				sentenceResult.setEndTime(context.longValue("GetAccAsrResultResponse.data["+ i +"].results["+ j +"].endTime"));
 				sentenceResult.setChannelId(context.integerValue("GetAccAsrResultResponse.data["+ i +"].results["+ j +"].channelId"));
 				sentenceResult.setText(context.stringValue("GetAccAsrResultResponse.data["+ i +"].results["+ j +"].text"));
 				sentenceResult.setEmotionValue(context.integerValue("GetAccAsrResultResponse.data["+ i +"].results["+ j +"].emotionValue"));
