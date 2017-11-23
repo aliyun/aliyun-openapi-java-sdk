@@ -26,41 +26,28 @@ import com.aliyuncs.http.ProtocolType;
  * @author auto create
  * @version 
  */
-public class GetPrivateAccessUrlsRequest extends RpcAcsRequest<GetPrivateAccessUrlsResponse> {
+public class ToggleFeaturesRequest extends RpcAcsRequest<ToggleFeaturesResponse> {
 	
-	public GetPrivateAccessUrlsRequest() {
-		super("CloudPhoto", "2017-07-11", "GetPrivateAccessUrls", "cloudphoto");
+	public ToggleFeaturesRequest() {
+		super("CloudPhoto", "2017-07-11", "ToggleFeatures", "cloudphoto");
 		setProtocol(ProtocolType.HTTPS);
 	}
 
-	private String libraryId;
-
-	private List<Long> photoIds;
+	private List<String> disabledFeaturess;
 
 	private String storeName;
 
-	private String zoomType;
+	private List<String> enabledFeaturess;
 
-	public String getLibraryId() {
-		return this.libraryId;
+	public List<String> getDisabledFeaturess() {
+		return this.disabledFeaturess;
 	}
 
-	public void setLibraryId(String libraryId) {
-		this.libraryId = libraryId;
-		if(libraryId != null){
-			putQueryParameter("LibraryId", libraryId);
-		}
-	}
-
-	public List<Long> getPhotoIds() {
-		return this.photoIds;
-	}
-
-	public void setPhotoIds(List<Long> photoIds) {
-		this.photoIds = photoIds;	
-		if (photoIds != null) {
-			for (int i = 0; i < photoIds.size(); i++) {
-				putQueryParameter("PhotoId." + (i + 1) , photoIds.get(i));
+	public void setDisabledFeaturess(List<String> disabledFeaturess) {
+		this.disabledFeaturess = disabledFeaturess;	
+		if (disabledFeaturess != null) {
+			for (int i = 0; i < disabledFeaturess.size(); i++) {
+				putQueryParameter("DisabledFeatures." + (i + 1) , disabledFeaturess.get(i));
 			}
 		}	
 	}
@@ -76,20 +63,22 @@ public class GetPrivateAccessUrlsRequest extends RpcAcsRequest<GetPrivateAccessU
 		}
 	}
 
-	public String getZoomType() {
-		return this.zoomType;
+	public List<String> getEnabledFeaturess() {
+		return this.enabledFeaturess;
 	}
 
-	public void setZoomType(String zoomType) {
-		this.zoomType = zoomType;
-		if(zoomType != null){
-			putQueryParameter("ZoomType", zoomType);
-		}
+	public void setEnabledFeaturess(List<String> enabledFeaturess) {
+		this.enabledFeaturess = enabledFeaturess;	
+		if (enabledFeaturess != null) {
+			for (int i = 0; i < enabledFeaturess.size(); i++) {
+				putQueryParameter("EnabledFeatures." + (i + 1) , enabledFeaturess.get(i));
+			}
+		}	
 	}
 
 	@Override
-	public Class<GetPrivateAccessUrlsResponse> getResponseClass() {
-		return GetPrivateAccessUrlsResponse.class;
+	public Class<ToggleFeaturesResponse> getResponseClass() {
+		return ToggleFeaturesResponse.class;
 	}
 
 }

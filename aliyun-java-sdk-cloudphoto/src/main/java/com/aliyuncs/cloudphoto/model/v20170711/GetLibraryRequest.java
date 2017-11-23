@@ -19,27 +19,22 @@
 package com.aliyuncs.cloudphoto.model.v20170711;
 
 import com.aliyuncs.RpcAcsRequest;
-import java.util.List;
 import com.aliyuncs.http.ProtocolType;
 
 /**
  * @author auto create
  * @version 
  */
-public class GetPrivateAccessUrlsRequest extends RpcAcsRequest<GetPrivateAccessUrlsResponse> {
+public class GetLibraryRequest extends RpcAcsRequest<GetLibraryResponse> {
 	
-	public GetPrivateAccessUrlsRequest() {
-		super("CloudPhoto", "2017-07-11", "GetPrivateAccessUrls", "cloudphoto");
+	public GetLibraryRequest() {
+		super("CloudPhoto", "2017-07-11", "GetLibrary", "cloudphoto");
 		setProtocol(ProtocolType.HTTPS);
 	}
 
 	private String libraryId;
 
-	private List<Long> photoIds;
-
 	private String storeName;
-
-	private String zoomType;
 
 	public String getLibraryId() {
 		return this.libraryId;
@@ -50,19 +45,6 @@ public class GetPrivateAccessUrlsRequest extends RpcAcsRequest<GetPrivateAccessU
 		if(libraryId != null){
 			putQueryParameter("LibraryId", libraryId);
 		}
-	}
-
-	public List<Long> getPhotoIds() {
-		return this.photoIds;
-	}
-
-	public void setPhotoIds(List<Long> photoIds) {
-		this.photoIds = photoIds;	
-		if (photoIds != null) {
-			for (int i = 0; i < photoIds.size(); i++) {
-				putQueryParameter("PhotoId." + (i + 1) , photoIds.get(i));
-			}
-		}	
 	}
 
 	public String getStoreName() {
@@ -76,20 +58,9 @@ public class GetPrivateAccessUrlsRequest extends RpcAcsRequest<GetPrivateAccessU
 		}
 	}
 
-	public String getZoomType() {
-		return this.zoomType;
-	}
-
-	public void setZoomType(String zoomType) {
-		this.zoomType = zoomType;
-		if(zoomType != null){
-			putQueryParameter("ZoomType", zoomType);
-		}
-	}
-
 	@Override
-	public Class<GetPrivateAccessUrlsResponse> getResponseClass() {
-		return GetPrivateAccessUrlsResponse.class;
+	public Class<GetLibraryResponse> getResponseClass() {
+		return GetLibraryResponse.class;
 	}
 
 }

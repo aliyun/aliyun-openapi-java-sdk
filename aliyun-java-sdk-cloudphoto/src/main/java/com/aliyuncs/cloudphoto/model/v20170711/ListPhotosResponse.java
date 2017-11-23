@@ -125,6 +125,8 @@ public class ListPhotosResponse extends AcsResponse {
 
 		private Long takenAt;
 
+		private Long inactiveTime;
+
 		private Long shareExpireTime;
 
 		public Long getId() {
@@ -221,6 +223,14 @@ public class ListPhotosResponse extends AcsResponse {
 
 		public void setTakenAt(Long takenAt) {
 			this.takenAt = takenAt;
+		}
+
+		public Long getInactiveTime() {
+			return this.inactiveTime;
+		}
+
+		public void setInactiveTime(Long inactiveTime) {
+			this.inactiveTime = inactiveTime;
 		}
 
 		public Long getShareExpireTime() {

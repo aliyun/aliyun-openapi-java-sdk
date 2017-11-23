@@ -42,6 +42,8 @@ public class ListPhotoStoresResponseUnmarshaller {
 			photoStore.setId(context.longValue("ListPhotoStoresResponse.PhotoStores["+ i +"].Id"));
 			photoStore.setName(context.stringValue("ListPhotoStoresResponse.PhotoStores["+ i +"].Name"));
 			photoStore.setRemark(context.stringValue("ListPhotoStoresResponse.PhotoStores["+ i +"].Remark"));
+			photoStore.setAutoCleanEnabled(context.booleanValue("ListPhotoStoresResponse.PhotoStores["+ i +"].AutoCleanEnabled"));
+			photoStore.setAutoCleanDays(context.integerValue("ListPhotoStoresResponse.PhotoStores["+ i +"].AutoCleanDays"));
 			photoStore.setDefaultQuota(context.longValue("ListPhotoStoresResponse.PhotoStores["+ i +"].DefaultQuota"));
 			photoStore.setCtime(context.longValue("ListPhotoStoresResponse.PhotoStores["+ i +"].Ctime"));
 			photoStore.setMtime(context.longValue("ListPhotoStoresResponse.PhotoStores["+ i +"].Mtime"));

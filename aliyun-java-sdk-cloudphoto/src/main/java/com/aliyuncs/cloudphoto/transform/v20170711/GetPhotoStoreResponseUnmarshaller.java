@@ -40,6 +40,8 @@ public class GetPhotoStoreResponseUnmarshaller {
 		photoStore.setId(context.longValue("GetPhotoStoreResponse.PhotoStore.Id"));
 		photoStore.setName(context.stringValue("GetPhotoStoreResponse.PhotoStore.Name"));
 		photoStore.setRemark(context.stringValue("GetPhotoStoreResponse.PhotoStore.Remark"));
+		photoStore.setAutoCleanEnabled(context.booleanValue("GetPhotoStoreResponse.PhotoStore.AutoCleanEnabled"));
+		photoStore.setAutoCleanDays(context.integerValue("GetPhotoStoreResponse.PhotoStore.AutoCleanDays"));
 		photoStore.setDefaultQuota(context.longValue("GetPhotoStoreResponse.PhotoStore.DefaultQuota"));
 		photoStore.setCtime(context.longValue("GetPhotoStoreResponse.PhotoStore.Ctime"));
 		photoStore.setMtime(context.longValue("GetPhotoStoreResponse.PhotoStore.Mtime"));

@@ -87,6 +87,10 @@ public class GetPhotoStoreResponse extends AcsResponse {
 
 		private String remark;
 
+		private Boolean autoCleanEnabled;
+
+		private Integer autoCleanDays;
+
 		private Long defaultQuota;
 
 		private Long ctime;
@@ -117,6 +121,22 @@ public class GetPhotoStoreResponse extends AcsResponse {
 
 		public void setRemark(String remark) {
 			this.remark = remark;
+		}
+
+		public Boolean getAutoCleanEnabled() {
+			return this.autoCleanEnabled;
+		}
+
+		public void setAutoCleanEnabled(Boolean autoCleanEnabled) {
+			this.autoCleanEnabled = autoCleanEnabled;
+		}
+
+		public Integer getAutoCleanDays() {
+			return this.autoCleanDays;
+		}
+
+		public void setAutoCleanDays(Integer autoCleanDays) {
+			this.autoCleanDays = autoCleanDays;
 		}
 
 		public Long getDefaultQuota() {

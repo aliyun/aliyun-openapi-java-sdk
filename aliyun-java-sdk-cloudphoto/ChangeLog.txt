@@ -1,3 +1,9 @@
+2017-11-23 Version: 1.1.6
+1, 新增EditPhotoStore、ToggleFeatures
+2, 自动清理回收站
+3, 自定义开关
+4, 优化CreatePhoto
+
 2017-10-26 Version: 1.1.5
 1, 支持照片分享、照片审核和CDN加速
 2, ActivatePhotos，EditPhotos，GetPhotosByMd5s，GetPrivateAccessUrls，GetPublicAccessUrls，ListPhotoFaces，ListPhotoTags

@@ -50,6 +50,7 @@ public class GetPhotosResponseUnmarshaller {
 			photo.setCtime(context.longValue("GetPhotosResponse.Photos["+ i +"].Ctime"));
 			photo.setMtime(context.longValue("GetPhotosResponse.Photos["+ i +"].Mtime"));
 			photo.setTakenAt(context.longValue("GetPhotosResponse.Photos["+ i +"].TakenAt"));
+			photo.setInactiveTime(context.longValue("GetPhotosResponse.Photos["+ i +"].InactiveTime"));
 			photo.setShareExpireTime(context.longValue("GetPhotosResponse.Photos["+ i +"].ShareExpireTime"));
 			photo.setLike(context.longValue("GetPhotosResponse.Photos["+ i +"].Like"));
 
