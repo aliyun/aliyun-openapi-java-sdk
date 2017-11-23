@@ -1,0 +1,10 @@
+2017-11-23 Version: 1.0.0
+1, 增加了GetJob接口，用于获取指定的Job信息。
+2, 增加了GetJobs接口，用于获取多个Job信息。
+3, 增加了GetBuild接口，用于获取指定Job的指定Build信息。
+4, 增加了GetBuilds接口，用于获取指定Job的多个Build信息。
+5, 增加了DeleteJob接口，用于删除指定Job信息。
+6, 增加了DeleteBuild接口，用于删除指定Job的指定Build信息。
+7, 增加了RunJob接口，用于开始指定Job的构建。
+8, 增加了StopBuild接口，用停止指定的当前构建Build。
+
