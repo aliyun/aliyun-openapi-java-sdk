@@ -123,6 +123,14 @@ public class GetRuleResponse extends AcsResponse {
 
 			private String comments;
 
+			private Integer autoReview;
+
+			private Integer ruleScoreType;
+
+			private String scoreName;
+
+			private String scoreSubName;
+
 			public String getRid() {
 				return this.rid;
 			}
@@ -241,6 +249,38 @@ public class GetRuleResponse extends AcsResponse {
 
 			public void setComments(String comments) {
 				this.comments = comments;
+			}
+
+			public Integer getAutoReview() {
+				return this.autoReview;
+			}
+
+			public void setAutoReview(Integer autoReview) {
+				this.autoReview = autoReview;
+			}
+
+			public Integer getRuleScoreType() {
+				return this.ruleScoreType;
+			}
+
+			public void setRuleScoreType(Integer ruleScoreType) {
+				this.ruleScoreType = ruleScoreType;
+			}
+
+			public String getScoreName() {
+				return this.scoreName;
+			}
+
+			public void setScoreName(String scoreName) {
+				this.scoreName = scoreName;
+			}
+
+			public String getScoreSubName() {
+				return this.scoreSubName;
+			}
+
+			public void setScoreSubName(String scoreSubName) {
+				this.scoreSubName = scoreSubName;
 			}
 		}
 	}

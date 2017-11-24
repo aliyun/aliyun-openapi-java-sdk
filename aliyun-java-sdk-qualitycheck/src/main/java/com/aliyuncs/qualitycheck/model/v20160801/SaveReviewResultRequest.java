@@ -24,10 +24,10 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class GetAudioDataStatusRequest extends RpcAcsRequest<GetAudioDataStatusResponse> {
+public class SaveReviewResultRequest extends RpcAcsRequest<SaveReviewResultResponse> {
 	
-	public GetAudioDataStatusRequest() {
-		super("Qualitycheck", "2016-08-01", "GetAudioDataStatus");
+	public SaveReviewResultRequest() {
+		super("Qualitycheck", "2016-08-01", "SaveReviewResult");
 	}
 
 	private String jsonStr;
@@ -44,8 +44,8 @@ public class GetAudioDataStatusRequest extends RpcAcsRequest<GetAudioDataStatusR
 	}
 
 	@Override
-	public Class<GetAudioDataStatusResponse> getResponseClass() {
-		return GetAudioDataStatusResponse.class;
+	public Class<SaveReviewResultResponse> getResponseClass() {
+		return SaveReviewResultResponse.class;
 	}
 
 }

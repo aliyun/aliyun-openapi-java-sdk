@@ -18,20 +18,20 @@
  */
 package com.aliyuncs.qualitycheck.transform.v20160801;
 
-import com.aliyuncs.qualitycheck.model.v20160801.UploadAudioDataWithRulesResponse;
+import com.aliyuncs.qualitycheck.model.v20160801.SaveReviewResultResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class UploadAudioDataWithRulesResponseUnmarshaller {
+public class SaveReviewResultResponseUnmarshaller {
 
-	public static UploadAudioDataWithRulesResponse unmarshall(UploadAudioDataWithRulesResponse uploadAudioDataWithRulesResponse, UnmarshallerContext context) {
+	public static SaveReviewResultResponse unmarshall(SaveReviewResultResponse saveReviewResultResponse, UnmarshallerContext context) {
 		
-		uploadAudioDataWithRulesResponse.setRequestId(context.stringValue("UploadAudioDataWithRulesResponse.requestId"));
-		uploadAudioDataWithRulesResponse.setSuccess(context.booleanValue("UploadAudioDataWithRulesResponse.success"));
-		uploadAudioDataWithRulesResponse.setCode(context.stringValue("UploadAudioDataWithRulesResponse.code"));
-		uploadAudioDataWithRulesResponse.setMessage(context.stringValue("UploadAudioDataWithRulesResponse.message"));
-		uploadAudioDataWithRulesResponse.setData(context.stringValue("UploadAudioDataWithRulesResponse.data"));
+		saveReviewResultResponse.setRequestId(context.stringValue("SaveReviewResultResponse.requestId"));
+		saveReviewResultResponse.setSuccess(context.booleanValue("SaveReviewResultResponse.success"));
+		saveReviewResultResponse.setCode(context.stringValue("SaveReviewResultResponse.code"));
+		saveReviewResultResponse.setMessage(context.stringValue("SaveReviewResultResponse.message"));
+		saveReviewResultResponse.setData(context.stringValue("SaveReviewResultResponse.data"));
 	 
-	 	return uploadAudioDataWithRulesResponse;
+	 	return saveReviewResultResponse;
 	}
 }

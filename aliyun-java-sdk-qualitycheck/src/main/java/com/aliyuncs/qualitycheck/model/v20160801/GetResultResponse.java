@@ -95,6 +95,10 @@ public class GetResultResponse extends AcsResponse {
 
 		private Integer score;
 
+		private Integer reviewStatus;
+
+		private Integer hitStatus;
+
 		private List<RuleHitInfo> rules;
 
 		public String getTid() {
@@ -111,6 +115,22 @@ public class GetResultResponse extends AcsResponse {
 
 		public void setScore(Integer score) {
 			this.score = score;
+		}
+
+		public Integer getReviewStatus() {
+			return this.reviewStatus;
+		}
+
+		public void setReviewStatus(Integer reviewStatus) {
+			this.reviewStatus = reviewStatus;
+		}
+
+		public Integer getHitStatus() {
+			return this.hitStatus;
+		}
+
+		public void setHitStatus(Integer hitStatus) {
+			this.hitStatus = hitStatus;
 		}
 
 		public List<RuleHitInfo> getRules() {

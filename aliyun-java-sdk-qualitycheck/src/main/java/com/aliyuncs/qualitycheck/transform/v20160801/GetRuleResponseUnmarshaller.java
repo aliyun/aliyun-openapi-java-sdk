@@ -56,6 +56,10 @@ public class GetRuleResponseUnmarshaller {
 			ruleInfo.setLastUpdateTime(context.stringValue("GetRuleResponse.data.rules["+ i +"].lastUpdateTime"));
 			ruleInfo.setLastUpdateEmpid(context.stringValue("GetRuleResponse.data.rules["+ i +"].lastUpdateEmpid"));
 			ruleInfo.setComments(context.stringValue("GetRuleResponse.data.rules["+ i +"].comments"));
+			ruleInfo.setAutoReview(context.integerValue("GetRuleResponse.data.rules["+ i +"].autoReview"));
+			ruleInfo.setRuleScoreType(context.integerValue("GetRuleResponse.data.rules["+ i +"].ruleScoreType"));
+			ruleInfo.setScoreName(context.stringValue("GetRuleResponse.data.rules["+ i +"].scoreName"));
+			ruleInfo.setScoreSubName(context.stringValue("GetRuleResponse.data.rules["+ i +"].scoreSubName"));
 
 			rules.add(ruleInfo);
 		}

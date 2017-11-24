@@ -19,14 +19,14 @@
 package com.aliyuncs.qualitycheck.model.v20160801;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.qualitycheck.transform.v20160801.UploadAudioData4PreResponseUnmarshaller;
+import com.aliyuncs.qualitycheck.transform.v20160801.SaveReviewResultResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class UploadAudioData4PreResponse extends AcsResponse {
+public class SaveReviewResultResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -79,7 +79,7 @@ public class UploadAudioData4PreResponse extends AcsResponse {
 	}
 
 	@Override
-	public UploadAudioData4PreResponse getInstance(UnmarshallerContext context) {
-		return	UploadAudioData4PreResponseUnmarshaller.unmarshall(this, context);
+	public SaveReviewResultResponse getInstance(UnmarshallerContext context) {
+		return	SaveReviewResultResponseUnmarshaller.unmarshall(this, context);
 	}
 }
