@@ -19,6 +19,7 @@
 package com.aliyuncs.live.model.v20161101;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 
 /**
  * @author auto create
@@ -29,6 +30,8 @@ public class UpdateCasterSceneConfigRequest extends RpcAcsRequest<UpdateCasterSc
 	public UpdateCasterSceneConfigRequest() {
 		super("live", "2016-11-01", "UpdateCasterSceneConfig");
 	}
+
+	private List<String> componentIds;
 
 	private String securityToken;
 
@@ -41,6 +44,19 @@ public class UpdateCasterSceneConfigRequest extends RpcAcsRequest<UpdateCasterSc
 	private String version;
 
 	private String layoutId;
+
+	public List<String> getComponentIds() {
+		return this.componentIds;
+	}
+
+	public void setComponentIds(List<String> componentIds) {
+		this.componentIds = componentIds;	
+		if (componentIds != null) {
+			for (int i = 0; i < componentIds.size(); i++) {
+				putQueryParameter("ComponentId." + (i + 1) , componentIds.get(i));
+			}
+		}	
+	}
 
 	public String getSecurityToken() {
 		return this.securityToken;

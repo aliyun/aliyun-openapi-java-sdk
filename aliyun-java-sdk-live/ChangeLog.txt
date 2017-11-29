@@ -1,3 +1,8 @@
+2017-11-29 Version: 3.1.0
+1, add API AddCasterComponent,DeleteCasterComponent,DescribeCasterComponents
+2, update API UpdateCasterSceneConfig,SetCasterSceneConfig,DescribeCasterScenes  
+3, optimize API DescribeCasterComponents,DescribeCasterVideoResources,DescribeCasterLayouts  
+
 2017-11-14 Version: 3.0.0
 1, 增加导播台相关接口(接口名称包含caster)
 2, 增加查询流历史在线人数接口DescribeLiveStreamHistoryUserNum

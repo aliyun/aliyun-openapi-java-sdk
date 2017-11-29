@@ -19,43 +19,36 @@
 package com.aliyuncs.live.model.v20161101;
 
 import com.aliyuncs.RpcAcsRequest;
-import java.util.List;
 
 /**
  * @author auto create
  * @version 
  */
-public class SetCasterSceneConfigRequest extends RpcAcsRequest<SetCasterSceneConfigResponse> {
+public class DescribeCasterComponentsRequest extends RpcAcsRequest<DescribeCasterComponentsResponse> {
 	
-	public SetCasterSceneConfigRequest() {
-		super("live", "2016-11-01", "SetCasterSceneConfig");
+	public DescribeCasterComponentsRequest() {
+		super("live", "2016-11-01", "DescribeCasterComponents");
 	}
 
-	private List<String> componentIds;
+	private String componentId;
 
 	private String securityToken;
 
 	private String casterId;
 
-	private String sceneId;
-
 	private Long ownerId;
 
 	private String version;
 
-	private String layoutId;
-
-	public List<String> getComponentIds() {
-		return this.componentIds;
+	public String getComponentId() {
+		return this.componentId;
 	}
 
-	public void setComponentIds(List<String> componentIds) {
-		this.componentIds = componentIds;	
-		if (componentIds != null) {
-			for (int i = 0; i < componentIds.size(); i++) {
-				putQueryParameter("ComponentId." + (i + 1) , componentIds.get(i));
-			}
-		}	
+	public void setComponentId(String componentId) {
+		this.componentId = componentId;
+		if(componentId != null){
+			putQueryParameter("ComponentId", componentId);
+		}
 	}
 
 	public String getSecurityToken() {
@@ -77,17 +70,6 @@ public class SetCasterSceneConfigRequest extends RpcAcsRequest<SetCasterSceneCon
 		this.casterId = casterId;
 		if(casterId != null){
 			putQueryParameter("CasterId", casterId);
-		}
-	}
-
-	public String getSceneId() {
-		return this.sceneId;
-	}
-
-	public void setSceneId(String sceneId) {
-		this.sceneId = sceneId;
-		if(sceneId != null){
-			putQueryParameter("SceneId", sceneId);
 		}
 	}
 
@@ -113,20 +95,9 @@ public class SetCasterSceneConfigRequest extends RpcAcsRequest<SetCasterSceneCon
 		}
 	}
 
-	public String getLayoutId() {
-		return this.layoutId;
-	}
-
-	public void setLayoutId(String layoutId) {
-		this.layoutId = layoutId;
-		if(layoutId != null){
-			putQueryParameter("LayoutId", layoutId);
-		}
-	}
-
 	@Override
-	public Class<SetCasterSceneConfigResponse> getResponseClass() {
-		return SetCasterSceneConfigResponse.class;
+	public Class<DescribeCasterComponentsResponse> getResponseClass() {
+		return DescribeCasterComponentsResponse.class;
 	}
 
 }
