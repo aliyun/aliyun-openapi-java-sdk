@@ -1,3 +1,13 @@
+2017-11-29 Version: 2.7.0
+1, 获取视频播放地址接口GetPlayInfo, 增加按清晰度筛选媒体流地址。
+2, 刷新视频上传凭证接口RefreshUploadVideo, 返回数据增加UploadAddress。
+3, 获取视频上传凭证和地址接口CreateUploadVideo, 增加模板组ID(TemplateGroupId)参数, 支持用户自定义模板组功能。
+4, 获取视频信息接口GetVideoInfo, 增加指定返回数据类型(ResultTypes)参数, 返回AI处理结果。
+5, 新增视频分类相关接口, 包括提交视频分类作业SubmitAIASRJob和查询视频分类作业ListAIASRJob。 
+6, 新增提交AI作业的通用接口SubmitAIJob, 增加5项新的AI能力(视频标注,视频文本识别,名人识别,政治人物识别敏感人物识别), 并支持针对单个资源一次提交多个AI Feature。
+7, 获取图片上传地址和凭证接口CreateUploadImage, 输入参数增加Title(标题), Tags(标签), OriginalFileName(图片原始文件名)字段, 输出参数增加ImageId(图片Id)字段。
+8, 新增获取图片信息接口GetImageInfo。
+
 2017-11-03 Version: 2.6.0
 1, 获取视频播放地址接口GetPlayInfo，增加二次鉴权参数，返回结构体PlayInfo中增加JobId。
 2, 获取视频播放凭证接口GetVideoPlayAuth，增加二次鉴权参数，支持用户自定义AuthInfo过期时间。

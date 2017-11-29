@@ -18,18 +18,19 @@
  */
 package com.aliyuncs.vod.transform.v20170321;
 
-import com.aliyuncs.vod.model.v20170321.RefreshUploadVideoResponse;
+import com.aliyuncs.vod.model.v20170321.OpenVodServiceResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class RefreshUploadVideoResponseUnmarshaller {
+public class OpenVodServiceResponseUnmarshaller {
 
-	public static RefreshUploadVideoResponse unmarshall(RefreshUploadVideoResponse refreshUploadVideoResponse, UnmarshallerContext context) {
+	public static OpenVodServiceResponse unmarshall(OpenVodServiceResponse openVodServiceResponse, UnmarshallerContext context) {
 		
-		refreshUploadVideoResponse.setRequestId(context.stringValue("RefreshUploadVideoResponse.RequestId"));
-		refreshUploadVideoResponse.setUploadAuth(context.stringValue("RefreshUploadVideoResponse.UploadAuth"));
-		refreshUploadVideoResponse.setUploadAddress(context.stringValue("RefreshUploadVideoResponse.UploadAddress"));
+		openVodServiceResponse.setRequestId(context.stringValue("OpenVodServiceResponse.requestId"));
+		openVodServiceResponse.setSuccess(context.booleanValue("OpenVodServiceResponse.success"));
+		openVodServiceResponse.setCode(context.stringValue("OpenVodServiceResponse.code"));
+		openVodServiceResponse.setMessage(context.stringValue("OpenVodServiceResponse.message"));
 	 
-	 	return refreshUploadVideoResponse;
+	 	return openVodServiceResponse;
 	}
 }

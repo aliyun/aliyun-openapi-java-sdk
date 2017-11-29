@@ -54,6 +54,8 @@ public class CreateUploadVideoRequest extends RpcAcsRequest<CreateUploadVideoRes
 
 	private String fileName;
 
+	private String templateGroupId;
+
 	private Integer cateId;
 
 	public Long getResourceOwnerId() {
@@ -185,6 +187,17 @@ public class CreateUploadVideoRequest extends RpcAcsRequest<CreateUploadVideoRes
 		this.fileName = fileName;
 		if(fileName != null){
 			putQueryParameter("FileName", fileName);
+		}
+	}
+
+	public String getTemplateGroupId() {
+		return this.templateGroupId;
+	}
+
+	public void setTemplateGroupId(String templateGroupId) {
+		this.templateGroupId = templateGroupId;
+		if(templateGroupId != null){
+			putQueryParameter("TemplateGroupId", templateGroupId);
 		}
 	}
 

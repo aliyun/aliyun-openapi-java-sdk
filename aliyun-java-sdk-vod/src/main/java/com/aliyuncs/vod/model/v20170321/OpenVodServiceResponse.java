@@ -19,24 +19,22 @@
 package com.aliyuncs.vod.model.v20170321;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.vod.transform.v20170321.CreateUploadImageResponseUnmarshaller;
+import com.aliyuncs.vod.transform.v20170321.OpenVodServiceResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CreateUploadImageResponse extends AcsResponse {
+public class OpenVodServiceResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String imageId;
+	private Boolean success;
 
-	private String imageURL;
+	private String code;
 
-	private String uploadAddress;
-
-	private String uploadAuth;
+	private String message;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -46,40 +44,32 @@ public class CreateUploadImageResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getImageId() {
-		return this.imageId;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setImageId(String imageId) {
-		this.imageId = imageId;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
-	public String getImageURL() {
-		return this.imageURL;
+	public String getCode() {
+		return this.code;
 	}
 
-	public void setImageURL(String imageURL) {
-		this.imageURL = imageURL;
+	public void setCode(String code) {
+		this.code = code;
 	}
 
-	public String getUploadAddress() {
-		return this.uploadAddress;
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setUploadAddress(String uploadAddress) {
-		this.uploadAddress = uploadAddress;
-	}
-
-	public String getUploadAuth() {
-		return this.uploadAuth;
-	}
-
-	public void setUploadAuth(String uploadAuth) {
-		this.uploadAuth = uploadAuth;
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	@Override
-	public CreateUploadImageResponse getInstance(UnmarshallerContext context) {
-		return	CreateUploadImageResponseUnmarshaller.unmarshall(this, context);
+	public OpenVodServiceResponse getInstance(UnmarshallerContext context) {
+		return	OpenVodServiceResponseUnmarshaller.unmarshall(this, context);
 	}
 }

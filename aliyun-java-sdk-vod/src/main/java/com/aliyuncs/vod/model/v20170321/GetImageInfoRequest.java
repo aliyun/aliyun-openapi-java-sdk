@@ -24,21 +24,21 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class GetVideoInfoRequest extends RpcAcsRequest<GetVideoInfoResponse> {
+public class GetImageInfoRequest extends RpcAcsRequest<GetImageInfoResponse> {
 	
-	public GetVideoInfoRequest() {
-		super("vod", "2017-03-21", "GetVideoInfo", "vod");
+	public GetImageInfoRequest() {
+		super("vod", "2017-03-21", "GetImageInfo", "vod");
 	}
 
 	private Long resourceOwnerId;
 
+	private String imageId;
+
 	private String resourceOwnerAccount;
 
-	private String videoId;
-
-	private String resultTypes;
-
 	private Long ownerId;
+
+	private Long authTimeout;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -48,6 +48,17 @@ public class GetVideoInfoRequest extends RpcAcsRequest<GetVideoInfoResponse> {
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getImageId() {
+		return this.imageId;
+	}
+
+	public void setImageId(String imageId) {
+		this.imageId = imageId;
+		if(imageId != null){
+			putQueryParameter("ImageId", imageId);
 		}
 	}
 
@@ -62,28 +73,6 @@ public class GetVideoInfoRequest extends RpcAcsRequest<GetVideoInfoResponse> {
 		}
 	}
 
-	public String getVideoId() {
-		return this.videoId;
-	}
-
-	public void setVideoId(String videoId) {
-		this.videoId = videoId;
-		if(videoId != null){
-			putQueryParameter("VideoId", videoId);
-		}
-	}
-
-	public String getResultTypes() {
-		return this.resultTypes;
-	}
-
-	public void setResultTypes(String resultTypes) {
-		this.resultTypes = resultTypes;
-		if(resultTypes != null){
-			putQueryParameter("ResultTypes", resultTypes);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -95,9 +84,20 @@ public class GetVideoInfoRequest extends RpcAcsRequest<GetVideoInfoResponse> {
 		}
 	}
 
+	public Long getAuthTimeout() {
+		return this.authTimeout;
+	}
+
+	public void setAuthTimeout(Long authTimeout) {
+		this.authTimeout = authTimeout;
+		if(authTimeout != null){
+			putQueryParameter("AuthTimeout", authTimeout.toString());
+		}
+	}
+
 	@Override
-	public Class<GetVideoInfoResponse> getResponseClass() {
-		return GetVideoInfoResponse.class;
+	public Class<GetImageInfoResponse> getResponseClass() {
+		return GetImageInfoResponse.class;
 	}
 
 }

@@ -30,26 +30,30 @@ public class CreateUploadImageRequest extends RpcAcsRequest<CreateUploadImageRes
 		super("vod", "2017-03-21", "CreateUploadImage", "vod");
 	}
 
-	private String resourceOwnerId;
+	private Long resourceOwnerId;
 
 	private String imageType;
+
+	private String originalFileName;
 
 	private String resourceOwnerAccount;
 
 	private String imageExt;
 
-	private String ownerAccount;
+	private Long ownerId;
 
-	private String ownerId;
+	private String title;
 
-	public String getResourceOwnerId() {
+	private String tags;
+
+	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
 	}
 
-	public void setResourceOwnerId(String resourceOwnerId) {
+	public void setResourceOwnerId(Long resourceOwnerId) {
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId);
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
 		}
 	}
 
@@ -61,6 +65,17 @@ public class CreateUploadImageRequest extends RpcAcsRequest<CreateUploadImageRes
 		this.imageType = imageType;
 		if(imageType != null){
 			putQueryParameter("ImageType", imageType);
+		}
+	}
+
+	public String getOriginalFileName() {
+		return this.originalFileName;
+	}
+
+	public void setOriginalFileName(String originalFileName) {
+		this.originalFileName = originalFileName;
+		if(originalFileName != null){
+			putQueryParameter("OriginalFileName", originalFileName);
 		}
 	}
 
@@ -86,25 +101,36 @@ public class CreateUploadImageRequest extends RpcAcsRequest<CreateUploadImageRes
 		}
 	}
 
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
-
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		if(ownerAccount != null){
-			putQueryParameter("OwnerAccount", ownerAccount);
-		}
-	}
-
-	public String getOwnerId() {
+	public Long getOwnerId() {
 		return this.ownerId;
 	}
 
-	public void setOwnerId(String ownerId) {
+	public void setOwnerId(Long ownerId) {
 		this.ownerId = ownerId;
 		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId);
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getTitle() {
+		return this.title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+		if(title != null){
+			putQueryParameter("Title", title);
+		}
+	}
+
+	public String getTags() {
+		return this.tags;
+	}
+
+	public void setTags(String tags) {
+		this.tags = tags;
+		if(tags != null){
+			putQueryParameter("Tags", tags);
 		}
 	}
 

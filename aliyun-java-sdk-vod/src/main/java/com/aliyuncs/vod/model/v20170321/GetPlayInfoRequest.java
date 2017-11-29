@@ -50,6 +50,8 @@ public class GetPlayInfoRequest extends RpcAcsRequest<GetPlayInfoResponse> {
 
 	private String reAuthInfo;
 
+	private String definition;
+
 	private Long authTimeout;
 
 	private String authInfo;
@@ -161,6 +163,17 @@ public class GetPlayInfoRequest extends RpcAcsRequest<GetPlayInfoResponse> {
 		this.reAuthInfo = reAuthInfo;
 		if(reAuthInfo != null){
 			putQueryParameter("ReAuthInfo", reAuthInfo);
+		}
+	}
+
+	public String getDefinition() {
+		return this.definition;
+	}
+
+	public void setDefinition(String definition) {
+		this.definition = definition;
+		if(definition != null){
+			putQueryParameter("Definition", definition);
 		}
 	}
 

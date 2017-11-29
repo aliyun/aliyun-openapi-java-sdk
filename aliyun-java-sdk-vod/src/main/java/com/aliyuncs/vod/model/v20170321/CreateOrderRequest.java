@@ -24,30 +24,28 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class GetVideoInfoRequest extends RpcAcsRequest<GetVideoInfoResponse> {
+public class CreateOrderRequest extends RpcAcsRequest<CreateOrderResponse> {
 	
-	public GetVideoInfoRequest() {
-		super("vod", "2017-03-21", "GetVideoInfo", "vod");
+	public CreateOrderRequest() {
+		super("vod", "2017-03-21", "CreateOrder", "vod");
 	}
 
-	private Long resourceOwnerId;
+	private String resourceOwnerId;
 
 	private String resourceOwnerAccount;
 
-	private String videoId;
+	private String ownerAccount;
 
-	private String resultTypes;
+	private String ownerId;
 
-	private Long ownerId;
-
-	public Long getResourceOwnerId() {
+	public String getResourceOwnerId() {
 		return this.resourceOwnerId;
 	}
 
-	public void setResourceOwnerId(Long resourceOwnerId) {
+	public void setResourceOwnerId(String resourceOwnerId) {
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+			putQueryParameter("ResourceOwnerId", resourceOwnerId);
 		}
 	}
 
@@ -62,42 +60,31 @@ public class GetVideoInfoRequest extends RpcAcsRequest<GetVideoInfoResponse> {
 		}
 	}
 
-	public String getVideoId() {
-		return this.videoId;
+	public String getOwnerAccount() {
+		return this.ownerAccount;
 	}
 
-	public void setVideoId(String videoId) {
-		this.videoId = videoId;
-		if(videoId != null){
-			putQueryParameter("VideoId", videoId);
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
 		}
 	}
 
-	public String getResultTypes() {
-		return this.resultTypes;
-	}
-
-	public void setResultTypes(String resultTypes) {
-		this.resultTypes = resultTypes;
-		if(resultTypes != null){
-			putQueryParameter("ResultTypes", resultTypes);
-		}
-	}
-
-	public Long getOwnerId() {
+	public String getOwnerId() {
 		return this.ownerId;
 	}
 
-	public void setOwnerId(Long ownerId) {
+	public void setOwnerId(String ownerId) {
 		this.ownerId = ownerId;
 		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
+			putQueryParameter("OwnerId", ownerId);
 		}
 	}
 
 	@Override
-	public Class<GetVideoInfoResponse> getResponseClass() {
-		return GetVideoInfoResponse.class;
+	public Class<CreateOrderResponse> getResponseClass() {
+		return CreateOrderResponse.class;
 	}
 
 }

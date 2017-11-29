@@ -27,9 +27,10 @@ public class CreateUploadImageResponseUnmarshaller {
 	public static CreateUploadImageResponse unmarshall(CreateUploadImageResponse createUploadImageResponse, UnmarshallerContext context) {
 		
 		createUploadImageResponse.setRequestId(context.stringValue("CreateUploadImageResponse.RequestId"));
+		createUploadImageResponse.setImageId(context.stringValue("CreateUploadImageResponse.ImageId"));
+		createUploadImageResponse.setImageURL(context.stringValue("CreateUploadImageResponse.ImageURL"));
 		createUploadImageResponse.setUploadAddress(context.stringValue("CreateUploadImageResponse.UploadAddress"));
 		createUploadImageResponse.setUploadAuth(context.stringValue("CreateUploadImageResponse.UploadAuth"));
-		createUploadImageResponse.setImageURL(context.stringValue("CreateUploadImageResponse.ImageURL"));
 	 
 	 	return createUploadImageResponse;
 	}

@@ -31,6 +31,8 @@ public class GetVideoInfoResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String aI;
+
 	private Video video;
 
 	public String getRequestId() {
@@ -39,6 +41,14 @@ public class GetVideoInfoResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getAI() {
+		return this.aI;
+	}
+
+	public void setAI(String aI) {
+		this.aI = aI;
 	}
 
 	public Video getVideo() {
