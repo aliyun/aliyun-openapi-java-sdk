@@ -1,3 +1,6 @@
+2017-11-30 Version: 2.6.0
+1, 2.6.0 Version add by new interface 
+
 2017-11-24 Version: 2.5.7
 1, add new interface
 

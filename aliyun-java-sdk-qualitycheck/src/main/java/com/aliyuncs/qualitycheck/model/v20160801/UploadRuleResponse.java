@@ -18,6 +18,7 @@
  */
 package com.aliyuncs.qualitycheck.model.v20160801;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.qualitycheck.transform.v20160801.UploadRuleResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -35,6 +36,8 @@ public class UploadRuleResponse extends AcsResponse {
 	private String code;
 
 	private String message;
+
+	private List<String> data;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -66,6 +69,14 @@ public class UploadRuleResponse extends AcsResponse {
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public List<String> getData() {
+		return this.data;
+	}
+
+	public void setData(List<String> data) {
+		this.data = data;
 	}
 
 	@Override

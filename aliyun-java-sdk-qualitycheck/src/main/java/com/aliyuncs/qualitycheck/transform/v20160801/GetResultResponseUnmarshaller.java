@@ -52,11 +52,12 @@ public class GetResultResponseUnmarshaller {
 			resultInfo.setTid(context.stringValue("GetResultResponse.data["+ i +"].tid"));
 			resultInfo.setScore(context.integerValue("GetResultResponse.data["+ i +"].score"));
 			resultInfo.setReviewStatus(context.integerValue("GetResultResponse.data["+ i +"].reviewStatus"));
-			resultInfo.setHitStatus(context.integerValue("GetResultResponse.data["+ i +"].hitStatus"));
+			resultInfo.setHitId(context.stringValue("GetResultResponse.data["+ i +"].hitId"));
 
 			List<RuleHitInfo> rules = new ArrayList<RuleHitInfo>();
 			for (int j = 0; j < context.lengthValue("GetResultResponse.data["+ i +"].rules.Length"); j++) {
 				RuleHitInfo ruleHitInfo = new RuleHitInfo();
+				ruleHitInfo.setHitStatus(context.integerValue("GetResultResponse.data["+ i +"].rules["+ j +"].hitStatus"));
 				ruleHitInfo.setRid(context.stringValue("GetResultResponse.data["+ i +"].rules["+ j +"].rid"));
 
 				List<ConditionHitInfo> hit = new ArrayList<ConditionHitInfo>();

@@ -18,6 +18,9 @@
  */
 package com.aliyuncs.qualitycheck.transform.v20160801;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.qualitycheck.model.v20160801.UploadRuleResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -30,6 +33,12 @@ public class UploadRuleResponseUnmarshaller {
 		uploadRuleResponse.setSuccess(context.booleanValue("UploadRuleResponse.success"));
 		uploadRuleResponse.setCode(context.stringValue("UploadRuleResponse.code"));
 		uploadRuleResponse.setMessage(context.stringValue("UploadRuleResponse.message"));
+
+		List<String> data = new ArrayList<String>();
+		for (int i = 0; i < context.lengthValue("UploadRuleResponse.data.Length"); i++) {
+			data.add(context.stringValue("UploadRuleResponse.data["+ i +"]"));
+		}
+		uploadRuleResponse.setData(data);
 	 
 	 	return uploadRuleResponse;
 	}

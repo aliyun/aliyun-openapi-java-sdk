@@ -97,7 +97,7 @@ public class GetResultResponse extends AcsResponse {
 
 		private Integer reviewStatus;
 
-		private Integer hitStatus;
+		private String hitId;
 
 		private List<RuleHitInfo> rules;
 
@@ -125,12 +125,12 @@ public class GetResultResponse extends AcsResponse {
 			this.reviewStatus = reviewStatus;
 		}
 
-		public Integer getHitStatus() {
-			return this.hitStatus;
+		public String getHitId() {
+			return this.hitId;
 		}
 
-		public void setHitStatus(Integer hitStatus) {
-			this.hitStatus = hitStatus;
+		public void setHitId(String hitId) {
+			this.hitId = hitId;
 		}
 
 		public List<RuleHitInfo> getRules() {
@@ -143,11 +143,21 @@ public class GetResultResponse extends AcsResponse {
 
 		public static class RuleHitInfo {
 
+			private Integer hitStatus;
+
 			private String rid;
 
 			private List<ConditionHitInfo> hit;
 
 			private List<ConditionBasicInfo> conditionInfo;
+
+			public Integer getHitStatus() {
+				return this.hitStatus;
+			}
+
+			public void setHitStatus(Integer hitStatus) {
+				this.hitStatus = hitStatus;
+			}
 
 			public String getRid() {
 				return this.rid;
