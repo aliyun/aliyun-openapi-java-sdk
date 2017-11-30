@@ -43,6 +43,7 @@ public class DescribeScalingConfigurationsResponseUnmarshaller {
 			scalingConfiguration.setScalingConfigurationId(context.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].ScalingConfigurationId"));
 			scalingConfiguration.setScalingConfigurationName(context.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].ScalingConfigurationName"));
 			scalingConfiguration.setScalingGroupId(context.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].ScalingGroupId"));
+			scalingConfiguration.setInstanceName(context.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].InstanceName"));
 			scalingConfiguration.setImageId(context.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].ImageId"));
 			scalingConfiguration.setInstanceType(context.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].InstanceType"));
 			scalingConfiguration.setInstanceGeneration(context.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].InstanceGeneration"));
@@ -61,6 +62,12 @@ public class DescribeScalingConfigurationsResponseUnmarshaller {
 			scalingConfiguration.setRamRoleName(context.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].RamRoleName"));
 			scalingConfiguration.setDeploymentSetId(context.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].DeploymentSetId"));
 			scalingConfiguration.setSecurityEnhancementStrategy(context.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].SecurityEnhancementStrategy"));
+
+			List<String> instanceTypes = new ArrayList<String>();
+			for (int j = 0; j < context.lengthValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].InstanceTypes.Length"); j++) {
+				instanceTypes.add(context.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].InstanceTypes["+ j +"]"));
+			}
+			scalingConfiguration.setInstanceTypes(instanceTypes);
 
 			List<DataDisk> dataDisks = new ArrayList<DataDisk>();
 			for (int j = 0; j < context.lengthValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].DataDisks.Length"); j++) {

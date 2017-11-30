@@ -19,6 +19,7 @@
 package com.aliyuncs.ess.model.v20140828;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 
 /**
  * @author auto create
@@ -43,6 +44,8 @@ public class CreateScalingConfigurationRequest extends RpcAcsRequest<CreateScali
 	private String scalingGroupId;
 
 	private String dataDisk2Device;
+
+	private List<String> instanceTypess;
 
 	private String ioOptimized;
 
@@ -93,6 +96,8 @@ public class CreateScalingConfigurationRequest extends RpcAcsRequest<CreateScali
 	private String dataDisk3DeleteWithInstance;
 
 	private Integer loadBalancerWeight;
+
+	private String instanceName;
 
 	private Integer systemDiskSize;
 
@@ -185,6 +190,19 @@ public class CreateScalingConfigurationRequest extends RpcAcsRequest<CreateScali
 		if(dataDisk2Device != null){
 			putQueryParameter("DataDisk.2.Device", dataDisk2Device);
 		}
+	}
+
+	public List<String> getInstanceTypess() {
+		return this.instanceTypess;
+	}
+
+	public void setInstanceTypess(List<String> instanceTypess) {
+		this.instanceTypess = instanceTypess;	
+		if (instanceTypess != null) {
+			for (int i = 0; i < instanceTypess.size(); i++) {
+				putQueryParameter("InstanceTypes." + (i + 1) , instanceTypess.get(i));
+			}
+		}	
 	}
 
 	public String getIoOptimized() {
@@ -459,6 +477,17 @@ public class CreateScalingConfigurationRequest extends RpcAcsRequest<CreateScali
 		this.loadBalancerWeight = loadBalancerWeight;
 		if(loadBalancerWeight != null){
 			putQueryParameter("LoadBalancerWeight", loadBalancerWeight.toString());
+		}
+	}
+
+	public String getInstanceName() {
+		return this.instanceName;
+	}
+
+	public void setInstanceName(String instanceName) {
+		this.instanceName = instanceName;
+		if(instanceName != null){
+			putQueryParameter("InstanceName", instanceName);
 		}
 	}
 

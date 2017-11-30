@@ -1,3 +1,7 @@
+2017-11-30 Version: 2.1.2
+1, Add multi zones in scalingGroup.
+2, Add multi instanceTypes in scalingConfiguration.
+
 2017-11-14 Version: 2.1.1
 1, 重新开放DescribeScalingActivities接口。
 

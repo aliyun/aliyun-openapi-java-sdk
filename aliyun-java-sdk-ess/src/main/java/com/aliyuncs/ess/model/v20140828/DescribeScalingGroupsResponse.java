@@ -111,6 +111,8 @@ public class DescribeScalingGroupsResponse extends AcsResponse {
 
 		private String vSwitchId;
 
+		private List<String> vSwitchIds;
+
 		private List<String> removalPolicies;
 
 		private List<String> dBInstanceIds;
@@ -235,6 +237,14 @@ public class DescribeScalingGroupsResponse extends AcsResponse {
 
 		public void setVSwitchId(String vSwitchId) {
 			this.vSwitchId = vSwitchId;
+		}
+
+		public List<String> getVSwitchIds() {
+			return this.vSwitchIds;
+		}
+
+		public void setVSwitchIds(List<String> vSwitchIds) {
+			this.vSwitchIds = vSwitchIds;
 		}
 
 		public List<String> getRemovalPolicies() {

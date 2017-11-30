@@ -54,6 +54,12 @@ public class DescribeScalingGroupsResponseUnmarshaller {
 			scalingGroup.setVpcId(context.stringValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].VpcId"));
 			scalingGroup.setVSwitchId(context.stringValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].VSwitchId"));
 
+			List<String> vSwitchIds = new ArrayList<String>();
+			for (int j = 0; j < context.lengthValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].VSwitchIds.Length"); j++) {
+				vSwitchIds.add(context.stringValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].VSwitchIds["+ j +"]"));
+			}
+			scalingGroup.setVSwitchIds(vSwitchIds);
+
 			List<String> removalPolicies = new ArrayList<String>();
 			for (int j = 0; j < context.lengthValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].RemovalPolicies.Length"); j++) {
 				removalPolicies.add(context.stringValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].RemovalPolicies["+ j +"]"));

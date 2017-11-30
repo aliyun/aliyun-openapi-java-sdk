@@ -87,6 +87,8 @@ public class DescribeScalingConfigurationsResponse extends AcsResponse {
 
 		private String scalingGroupId;
 
+		private String instanceName;
+
 		private String imageId;
 
 		private String instanceType;
@@ -127,6 +129,8 @@ public class DescribeScalingConfigurationsResponse extends AcsResponse {
 
 		private List<Tag> tags;
 
+		private List<String> instanceTypes;
+
 		public String getScalingConfigurationId() {
 			return this.scalingConfigurationId;
 		}
@@ -149,6 +153,14 @@ public class DescribeScalingConfigurationsResponse extends AcsResponse {
 
 		public void setScalingGroupId(String scalingGroupId) {
 			this.scalingGroupId = scalingGroupId;
+		}
+
+		public String getInstanceName() {
+			return this.instanceName;
+		}
+
+		public void setInstanceName(String instanceName) {
+			this.instanceName = instanceName;
 		}
 
 		public String getImageId() {
@@ -309,6 +321,14 @@ public class DescribeScalingConfigurationsResponse extends AcsResponse {
 
 		public void setTags(List<Tag> tags) {
 			this.tags = tags;
+		}
+
+		public List<String> getInstanceTypes() {
+			return this.instanceTypes;
+		}
+
+		public void setInstanceTypes(List<String> instanceTypes) {
+			this.instanceTypes = instanceTypes;
 		}
 
 		public static class DataDisk {

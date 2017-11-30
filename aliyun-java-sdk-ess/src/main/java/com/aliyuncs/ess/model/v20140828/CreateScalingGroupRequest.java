@@ -19,6 +19,7 @@
 package com.aliyuncs.ess.model.v20140828;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 
 /**
  * @author auto create
@@ -37,6 +38,8 @@ public class CreateScalingGroupRequest extends RpcAcsRequest<CreateScalingGroupR
 	private String resourceOwnerAccount;
 
 	private String scalingGroupName;
+
+	private List<String> vSwitchIdss;
 
 	private String ownerAccount;
 
@@ -96,6 +99,19 @@ public class CreateScalingGroupRequest extends RpcAcsRequest<CreateScalingGroupR
 		if(scalingGroupName != null){
 			putQueryParameter("ScalingGroupName", scalingGroupName);
 		}
+	}
+
+	public List<String> getVSwitchIdss() {
+		return this.vSwitchIdss;
+	}
+
+	public void setVSwitchIdss(List<String> vSwitchIdss) {
+		this.vSwitchIdss = vSwitchIdss;	
+		if (vSwitchIdss != null) {
+			for (int i = 0; i < vSwitchIdss.size(); i++) {
+				putQueryParameter("VSwitchIds." + (i + 1) , vSwitchIdss.get(i));
+			}
+		}	
 	}
 
 	public String getOwnerAccount() {
