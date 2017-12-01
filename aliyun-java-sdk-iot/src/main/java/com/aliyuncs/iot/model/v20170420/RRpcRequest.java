@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class RRpcRequest extends RpcAcsRequest<RRpcResponse> {
 	
 	public RRpcRequest() {
-		super("Iot", "2017-04-20", "RRpc", "iot");
+		super("Iot", "2017-04-20", "RRpc");
 	}
 
 	private String requestBase64Byte;

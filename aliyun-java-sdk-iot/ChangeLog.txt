@@ -1,3 +1,7 @@
+2017-12-01 Version: 4.0.0
+1, Add apis, including QueryDeviceProp, UpdateDeviceProp, DeleteDeviceProp
+2, remove apis of v20170620 and v20170820 version
+
 2017-07-27 Version: 3.0.0
 1, 新增基于MQTT协议的RRPC接口，可以发消息给设备并同步返回响应。
 2, 新的3.0.0版本开始删除杭州节点的2016-05-30和2016-01-04两个版本。

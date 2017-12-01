@@ -18,19 +18,19 @@
  */
 package com.aliyuncs.iot.transform.v20170420;
 
-import com.aliyuncs.iot.model.v20170420.PubResponse;
+import com.aliyuncs.iot.model.v20170420.QueryDevicePropResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class PubResponseUnmarshaller {
+public class QueryDevicePropResponseUnmarshaller {
 
-	public static PubResponse unmarshall(PubResponse pubResponse, UnmarshallerContext context) {
+	public static QueryDevicePropResponse unmarshall(QueryDevicePropResponse queryDevicePropResponse, UnmarshallerContext context) {
 		
-		pubResponse.setRequestId(context.stringValue("PubResponse.RequestId"));
-		pubResponse.setSuccess(context.booleanValue("PubResponse.Success"));
-		pubResponse.setErrorMessage(context.stringValue("PubResponse.ErrorMessage"));
-		pubResponse.setMessageId(context.stringValue("PubResponse.MessageId"));
+		queryDevicePropResponse.setRequestId(context.stringValue("QueryDevicePropResponse.RequestId"));
+		queryDevicePropResponse.setSuccess(context.booleanValue("QueryDevicePropResponse.Success"));
+		queryDevicePropResponse.setErrorMessage(context.stringValue("QueryDevicePropResponse.ErrorMessage"));
+		queryDevicePropResponse.setProps(context.stringValue("QueryDevicePropResponse.Props"));
 	 
-	 	return pubResponse;
+	 	return queryDevicePropResponse;
 	}
 }

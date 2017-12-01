@@ -18,48 +18,47 @@
  */
 package com.aliyuncs.iot.model.v20170420;
 
-import com.aliyuncs.AcsResponse;
-import com.aliyuncs.iot.transform.v20170420.UpdateProductResponseUnmarshaller;
-import com.aliyuncs.transform.UnmarshallerContext;
+import com.aliyuncs.RpcAcsRequest;
 
 /**
  * @author auto create
  * @version 
  */
-public class UpdateProductResponse extends AcsResponse {
-
-	private String requestId;
-
-	private Boolean success;
-
-	private String errorMessage;
-
-	public String getRequestId() {
-		return this.requestId;
+public class QueryDevicePropRequest extends RpcAcsRequest<QueryDevicePropResponse> {
+	
+	public QueryDevicePropRequest() {
+		super("Iot", "2017-04-20", "QueryDeviceProp");
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	private String deviceName;
+
+	private String productKey;
+
+	public String getDeviceName() {
+		return this.deviceName;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public void setDeviceName(String deviceName) {
+		this.deviceName = deviceName;
+		if(deviceName != null){
+			putQueryParameter("DeviceName", deviceName);
+		}
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public String getProductKey() {
+		return this.productKey;
 	}
 
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
+	public void setProductKey(String productKey) {
+		this.productKey = productKey;
+		if(productKey != null){
+			putQueryParameter("ProductKey", productKey);
+		}
 	}
 
 	@Override
-	public UpdateProductResponse getInstance(UnmarshallerContext context) {
-		return	UpdateProductResponseUnmarshaller.unmarshall(this, context);
+	public Class<QueryDevicePropResponse> getResponseClass() {
+		return QueryDevicePropResponse.class;
 	}
+
 }

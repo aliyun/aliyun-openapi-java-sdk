@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class UpdateDeviceShadowRequest extends RpcAcsRequest<UpdateDeviceShadowResponse> {
 	
 	public UpdateDeviceShadowRequest() {
-		super("Iot", "2017-04-20", "UpdateDeviceShadow", "iot");
+		super("Iot", "2017-04-20", "UpdateDeviceShadow");
 	}
 
 	private String shadowMessage;

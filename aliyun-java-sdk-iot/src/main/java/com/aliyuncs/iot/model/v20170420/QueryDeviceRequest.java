@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class QueryDeviceRequest extends RpcAcsRequest<QueryDeviceResponse> {
 	
 	public QueryDeviceRequest() {
-		super("Iot", "2017-04-20", "QueryDevice", "iot");
+		super("Iot", "2017-04-20", "QueryDevice");
 	}
 
 	private Integer pageSize;

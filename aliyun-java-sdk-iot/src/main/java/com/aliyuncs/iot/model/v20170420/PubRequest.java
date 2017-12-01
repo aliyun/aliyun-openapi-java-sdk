@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class PubRequest extends RpcAcsRequest<PubResponse> {
 	
 	public PubRequest() {
-		super("Iot", "2017-04-20", "Pub", "iot");
+		super("Iot", "2017-04-20", "Pub");
 	}
 
 	private String topicFullName;

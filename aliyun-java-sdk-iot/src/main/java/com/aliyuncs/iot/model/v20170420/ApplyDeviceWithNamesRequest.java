@@ -28,7 +28,7 @@ import java.util.List;
 public class ApplyDeviceWithNamesRequest extends RpcAcsRequest<ApplyDeviceWithNamesResponse> {
 	
 	public ApplyDeviceWithNamesRequest() {
-		super("Iot", "2017-04-20", "ApplyDeviceWithNames", "iot");
+		super("Iot", "2017-04-20", "ApplyDeviceWithNames");
 	}
 
 	private List<String> deviceNames;
@@ -39,10 +39,12 @@ public class ApplyDeviceWithNamesRequest extends RpcAcsRequest<ApplyDeviceWithNa
 		return this.deviceNames;
 	}
 
-	public void setDeviceNames(List<String> deviceName) {
-		this.deviceNames = deviceName;	
-		for (int i = 0; i < deviceName.size(); i++) {
-			putQueryParameter("DeviceName." + (i + 1) , deviceName.get(i));
+	public void setDeviceNames(List<String> deviceNames) {
+		this.deviceNames = deviceNames;	
+		if (deviceNames != null) {
+			for (int i = 0; i < deviceNames.size(); i++) {
+				putQueryParameter("DeviceName." + (i + 1) , deviceNames.get(i));
+			}
 		}	
 	}
 

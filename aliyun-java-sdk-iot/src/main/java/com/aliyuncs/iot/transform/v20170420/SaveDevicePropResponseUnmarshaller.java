@@ -18,19 +18,18 @@
  */
 package com.aliyuncs.iot.transform.v20170420;
 
-import com.aliyuncs.iot.model.v20170420.PubResponse;
+import com.aliyuncs.iot.model.v20170420.SaveDevicePropResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class PubResponseUnmarshaller {
+public class SaveDevicePropResponseUnmarshaller {
 
-	public static PubResponse unmarshall(PubResponse pubResponse, UnmarshallerContext context) {
+	public static SaveDevicePropResponse unmarshall(SaveDevicePropResponse saveDevicePropResponse, UnmarshallerContext context) {
 		
-		pubResponse.setRequestId(context.stringValue("PubResponse.RequestId"));
-		pubResponse.setSuccess(context.booleanValue("PubResponse.Success"));
-		pubResponse.setErrorMessage(context.stringValue("PubResponse.ErrorMessage"));
-		pubResponse.setMessageId(context.stringValue("PubResponse.MessageId"));
+		saveDevicePropResponse.setRequestId(context.stringValue("SaveDevicePropResponse.RequestId"));
+		saveDevicePropResponse.setSuccess(context.booleanValue("SaveDevicePropResponse.Success"));
+		saveDevicePropResponse.setErrorMessage(context.stringValue("SaveDevicePropResponse.ErrorMessage"));
 	 
-	 	return pubResponse;
+	 	return saveDevicePropResponse;
 	}
 }

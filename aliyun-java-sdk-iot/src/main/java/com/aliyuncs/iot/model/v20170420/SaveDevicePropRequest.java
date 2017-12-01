@@ -24,28 +24,17 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class GetDeviceShadowRequest extends RpcAcsRequest<GetDeviceShadowResponse> {
+public class SaveDevicePropRequest extends RpcAcsRequest<SaveDevicePropResponse> {
 	
-	public GetDeviceShadowRequest() {
-		super("Iot", "2017-04-20", "GetDeviceShadow");
+	public SaveDevicePropRequest() {
+		super("Iot", "2017-04-20", "SaveDeviceProp");
 	}
-
-	private String shadowMessage;
 
 	private String deviceName;
 
 	private String productKey;
 
-	public String getShadowMessage() {
-		return this.shadowMessage;
-	}
-
-	public void setShadowMessage(String shadowMessage) {
-		this.shadowMessage = shadowMessage;
-		if(shadowMessage != null){
-			putQueryParameter("ShadowMessage", shadowMessage);
-		}
-	}
+	private String props;
 
 	public String getDeviceName() {
 		return this.deviceName;
@@ -69,9 +58,20 @@ public class GetDeviceShadowRequest extends RpcAcsRequest<GetDeviceShadowRespons
 		}
 	}
 
+	public String getProps() {
+		return this.props;
+	}
+
+	public void setProps(String props) {
+		this.props = props;
+		if(props != null){
+			putQueryParameter("Props", props);
+		}
+	}
+
 	@Override
-	public Class<GetDeviceShadowResponse> getResponseClass() {
-		return GetDeviceShadowResponse.class;
+	public Class<SaveDevicePropResponse> getResponseClass() {
+		return SaveDevicePropResponse.class;
 	}
 
 }

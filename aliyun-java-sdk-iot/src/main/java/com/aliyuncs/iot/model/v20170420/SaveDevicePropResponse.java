@@ -19,14 +19,14 @@
 package com.aliyuncs.iot.model.v20170420;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.iot.transform.v20170420.UpdateProductResponseUnmarshaller;
+import com.aliyuncs.iot.transform.v20170420.SaveDevicePropResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class UpdateProductResponse extends AcsResponse {
+public class SaveDevicePropResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -59,7 +59,7 @@ public class UpdateProductResponse extends AcsResponse {
 	}
 
 	@Override
-	public UpdateProductResponse getInstance(UnmarshallerContext context) {
-		return	UpdateProductResponseUnmarshaller.unmarshall(this, context);
+	public SaveDevicePropResponse getInstance(UnmarshallerContext context) {
+		return	SaveDevicePropResponseUnmarshaller.unmarshall(this, context);
 	}
 }

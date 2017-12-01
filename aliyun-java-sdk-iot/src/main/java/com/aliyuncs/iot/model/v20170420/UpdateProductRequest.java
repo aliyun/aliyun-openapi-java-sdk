@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class UpdateProductRequest extends RpcAcsRequest<UpdateProductResponse> {
 	
 	public UpdateProductRequest() {
-		super("Iot", "2017-04-20", "UpdateProduct", "iot");
+		super("Iot", "2017-04-20", "UpdateProduct");
 	}
 
 	private Long catId;

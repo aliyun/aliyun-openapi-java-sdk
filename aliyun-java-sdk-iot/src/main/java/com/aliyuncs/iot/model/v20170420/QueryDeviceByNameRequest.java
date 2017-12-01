@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class QueryDeviceByNameRequest extends RpcAcsRequest<QueryDeviceByNameResponse> {
 	
 	public QueryDeviceByNameRequest() {
-		super("Iot", "2017-04-20", "QueryDeviceByName", "iot");
+		super("Iot", "2017-04-20", "QueryDeviceByName");
 	}
 
 	private String deviceName;

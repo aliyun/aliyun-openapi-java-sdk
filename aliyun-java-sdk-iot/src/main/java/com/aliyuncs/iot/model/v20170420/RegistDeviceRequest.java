@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class RegistDeviceRequest extends RpcAcsRequest<RegistDeviceResponse> {
 	
 	public RegistDeviceRequest() {
-		super("Iot", "2017-04-20", "RegistDevice", "iot");
+		super("Iot", "2017-04-20", "RegistDevice");
 	}
 
 	private String deviceName;

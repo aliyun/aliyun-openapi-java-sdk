@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class QueryPageByApplyIdRequest extends RpcAcsRequest<QueryPageByApplyIdResponse> {
 	
 	public QueryPageByApplyIdRequest() {
-		super("Iot", "2017-04-20", "QueryPageByApplyId", "iot");
+		super("Iot", "2017-04-20", "QueryPageByApplyId");
 	}
 
 	private Long applyId;
