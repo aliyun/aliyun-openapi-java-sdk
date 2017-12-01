@@ -89,6 +89,8 @@ public class DetachInstanceRamRoleResponse extends AcsResponse {
 
 		private String message;
 
+		private List<InstanceRamRoleSet> instanceRamRoleSets;
+
 		public String getInstanceId() {
 			return this.instanceId;
 		}
@@ -119,6 +121,37 @@ public class DetachInstanceRamRoleResponse extends AcsResponse {
 
 		public void setMessage(String message) {
 			this.message = message;
+		}
+
+		public List<InstanceRamRoleSet> getInstanceRamRoleSets() {
+			return this.instanceRamRoleSets;
+		}
+
+		public void setInstanceRamRoleSets(List<InstanceRamRoleSet> instanceRamRoleSets) {
+			this.instanceRamRoleSets = instanceRamRoleSets;
+		}
+
+		public static class InstanceRamRoleSet {
+
+			private String instanceId;
+
+			private String ramRoleName;
+
+			public String getInstanceId() {
+				return this.instanceId;
+			}
+
+			public void setInstanceId(String instanceId) {
+				this.instanceId = instanceId;
+			}
+
+			public String getRamRoleName() {
+				return this.ramRoleName;
+			}
+
+			public void setRamRoleName(String ramRoleName) {
+				this.ramRoleName = ramRoleName;
+			}
 		}
 	}
 

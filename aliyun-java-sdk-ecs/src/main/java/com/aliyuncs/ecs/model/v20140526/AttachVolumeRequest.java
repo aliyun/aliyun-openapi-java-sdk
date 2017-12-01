@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class AttachVolumeRequest extends RpcAcsRequest<AttachVolumeResponse> {
 	
 	public AttachVolumeRequest() {
-		super("Ecs", "2014-05-26", "AttachVolume", "ecs");
+		super("Ecs", "2014-05-26", "AttachVolume");
 	}
 
 	private Long resourceOwnerId;

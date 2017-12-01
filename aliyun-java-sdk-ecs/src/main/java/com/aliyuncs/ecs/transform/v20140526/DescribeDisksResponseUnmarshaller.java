@@ -67,6 +67,9 @@ public class DescribeDisksResponseUnmarshaller {
 			disk.setExpiredTime(context.stringValue("DescribeDisksResponse.Disks["+ i +"].ExpiredTime"));
 			disk.setResourceGroupId(context.stringValue("DescribeDisksResponse.Disks["+ i +"].ResourceGroupId"));
 			disk.setEncrypted(context.booleanValue("DescribeDisksResponse.Disks["+ i +"].Encrypted"));
+			disk.setIOPS(context.integerValue("DescribeDisksResponse.Disks["+ i +"].IOPS"));
+			disk.setIOPSRead(context.integerValue("DescribeDisksResponse.Disks["+ i +"].IOPSRead"));
+			disk.setIOPSWrite(context.integerValue("DescribeDisksResponse.Disks["+ i +"].IOPSWrite"));
 
 			List<OperationLock> operationLocks = new ArrayList<OperationLock>();
 			for (int j = 0; j < context.lengthValue("DescribeDisksResponse.Disks["+ i +"].OperationLocks.Length"); j++) {

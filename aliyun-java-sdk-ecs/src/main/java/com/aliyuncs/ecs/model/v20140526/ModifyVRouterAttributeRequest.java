@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifyVRouterAttributeRequest extends RpcAcsRequest<ModifyVRouterAttributeResponse> {
 	
 	public ModifyVRouterAttributeRequest() {
-		super("Ecs", "2014-05-26", "ModifyVRouterAttribute", "ecs");
+		super("Ecs", "2014-05-26", "ModifyVRouterAttribute");
 	}
 
 	private String vRouterName;

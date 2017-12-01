@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifyPrepayInstanceSpecRequest extends RpcAcsRequest<ModifyPrepayInstanceSpecResponse> {
 	
 	public ModifyPrepayInstanceSpecRequest() {
-		super("Ecs", "2014-05-26", "ModifyPrepayInstanceSpec", "ecs");
+		super("Ecs", "2014-05-26", "ModifyPrepayInstanceSpec");
 	}
 
 	private Long resourceOwnerId;

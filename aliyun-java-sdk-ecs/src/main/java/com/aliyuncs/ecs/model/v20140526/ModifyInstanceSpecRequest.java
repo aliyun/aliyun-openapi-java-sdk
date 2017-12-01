@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifyInstanceSpecRequest extends RpcAcsRequest<ModifyInstanceSpecResponse> {
 	
 	public ModifyInstanceSpecRequest() {
-		super("Ecs", "2014-05-26", "ModifyInstanceSpec", "ecs");
+		super("Ecs", "2014-05-26", "ModifyInstanceSpec");
 	}
 
 	private Long resourceOwnerId;

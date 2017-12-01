@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ActivateRouterInterfaceRequest extends RpcAcsRequest<ActivateRouterInterfaceResponse> {
 	
 	public ActivateRouterInterfaceRequest() {
-		super("Ecs", "2014-05-26", "ActivateRouterInterface", "ecs");
+		super("Ecs", "2014-05-26", "ActivateRouterInterface");
 	}
 
 	private Long resourceOwnerId;

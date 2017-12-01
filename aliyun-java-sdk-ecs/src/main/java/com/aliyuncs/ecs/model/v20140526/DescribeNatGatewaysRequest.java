@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeNatGatewaysRequest extends RpcAcsRequest<DescribeNatGatewaysResponse> {
 	
 	public DescribeNatGatewaysRequest() {
-		super("Ecs", "2014-05-26", "DescribeNatGateways", "ecs");
+		super("Ecs", "2014-05-26", "DescribeNatGateways");
 	}
 
 	private Long resourceOwnerId;

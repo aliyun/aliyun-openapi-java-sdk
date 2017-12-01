@@ -23,6 +23,7 @@ import java.util.List;
 
 import com.aliyuncs.ecs.model.v20140526.DetachInstanceRamRoleResponse;
 import com.aliyuncs.ecs.model.v20140526.DetachInstanceRamRoleResponse.DetachInstanceRamRoleResult;
+import com.aliyuncs.ecs.model.v20140526.DetachInstanceRamRoleResponse.DetachInstanceRamRoleResult.InstanceRamRoleSet;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -42,6 +43,16 @@ public class DetachInstanceRamRoleResponseUnmarshaller {
 			detachInstanceRamRoleResult.setSuccess(context.booleanValue("DetachInstanceRamRoleResponse.DetachInstanceRamRoleResults["+ i +"].Success"));
 			detachInstanceRamRoleResult.setCode(context.stringValue("DetachInstanceRamRoleResponse.DetachInstanceRamRoleResults["+ i +"].Code"));
 			detachInstanceRamRoleResult.setMessage(context.stringValue("DetachInstanceRamRoleResponse.DetachInstanceRamRoleResults["+ i +"].Message"));
+
+			List<InstanceRamRoleSet> instanceRamRoleSets = new ArrayList<InstanceRamRoleSet>();
+			for (int j = 0; j < context.lengthValue("DetachInstanceRamRoleResponse.DetachInstanceRamRoleResults["+ i +"].InstanceRamRoleSets.Length"); j++) {
+				InstanceRamRoleSet instanceRamRoleSet = new InstanceRamRoleSet();
+				instanceRamRoleSet.setInstanceId(context.stringValue("DetachInstanceRamRoleResponse.DetachInstanceRamRoleResults["+ i +"].InstanceRamRoleSets["+ j +"].InstanceId"));
+				instanceRamRoleSet.setRamRoleName(context.stringValue("DetachInstanceRamRoleResponse.DetachInstanceRamRoleResults["+ i +"].InstanceRamRoleSets["+ j +"].RamRoleName"));
+
+				instanceRamRoleSets.add(instanceRamRoleSet);
+			}
+			detachInstanceRamRoleResult.setInstanceRamRoleSets(instanceRamRoleSets);
 
 			detachInstanceRamRoleResults.add(detachInstanceRamRoleResult);
 		}

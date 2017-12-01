@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeNewProjectEipMonitorDataRequest extends RpcAcsRequest<DescribeNewProjectEipMonitorDataResponse> {
 	
 	public DescribeNewProjectEipMonitorDataRequest() {
-		super("Ecs", "2014-05-26", "DescribeNewProjectEipMonitorData", "ecs");
+		super("Ecs", "2014-05-26", "DescribeNewProjectEipMonitorData");
 	}
 
 	private Long resourceOwnerId;

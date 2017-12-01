@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeactivateRouterInterfaceRequest extends RpcAcsRequest<DeactivateRouterInterfaceResponse> {
 	
 	public DeactivateRouterInterfaceRequest() {
-		super("Ecs", "2014-05-26", "DeactivateRouterInterface", "ecs");
+		super("Ecs", "2014-05-26", "DeactivateRouterInterface");
 	}
 
 	private Long resourceOwnerId;

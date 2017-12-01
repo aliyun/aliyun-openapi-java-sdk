@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeRenewalPriceRequest extends RpcAcsRequest<DescribeRenewalPriceResponse> {
 	
 	public DescribeRenewalPriceRequest() {
-		super("Ecs", "2014-05-26", "DescribeRenewalPrice", "ecs");
+		super("Ecs", "2014-05-26", "DescribeRenewalPrice");
 	}
 
 	private Long resourceOwnerId;

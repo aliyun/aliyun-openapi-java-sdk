@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeDeploymentSetTopologyRequest extends RpcAcsRequest<DescribeDeploymentSetTopologyResponse> {
 	
 	public DescribeDeploymentSetTopologyRequest() {
-		super("Ecs", "2014-05-26", "DescribeDeploymentSetTopology", "ecs");
+		super("Ecs", "2014-05-26", "DescribeDeploymentSetTopology");
 	}
 
 	private String deploymentSetId;

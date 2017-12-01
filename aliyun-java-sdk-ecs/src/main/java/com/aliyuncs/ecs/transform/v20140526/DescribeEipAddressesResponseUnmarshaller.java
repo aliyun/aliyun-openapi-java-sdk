@@ -45,6 +45,7 @@ public class DescribeEipAddressesResponseUnmarshaller {
 			eipAddress.setStatus(context.stringValue("DescribeEipAddressesResponse.EipAddresses["+ i +"].Status"));
 			eipAddress.setInstanceId(context.stringValue("DescribeEipAddressesResponse.EipAddresses["+ i +"].InstanceId"));
 			eipAddress.setBandwidth(context.stringValue("DescribeEipAddressesResponse.EipAddresses["+ i +"].Bandwidth"));
+			eipAddress.setEipBandwidth(context.stringValue("DescribeEipAddressesResponse.EipAddresses["+ i +"].EipBandwidth"));
 			eipAddress.setInternetChargeType(context.stringValue("DescribeEipAddressesResponse.EipAddresses["+ i +"].InternetChargeType"));
 			eipAddress.setAllocationTime(context.stringValue("DescribeEipAddressesResponse.EipAddresses["+ i +"].AllocationTime"));
 			eipAddress.setInstanceType(context.stringValue("DescribeEipAddressesResponse.EipAddresses["+ i +"].InstanceType"));

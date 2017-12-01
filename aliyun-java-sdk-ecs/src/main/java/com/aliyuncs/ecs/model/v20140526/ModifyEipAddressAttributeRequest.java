@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifyEipAddressAttributeRequest extends RpcAcsRequest<ModifyEipAddressAttributeResponse> {
 	
 	public ModifyEipAddressAttributeRequest() {
-		super("Ecs", "2014-05-26", "ModifyEipAddressAttribute", "ecs");
+		super("Ecs", "2014-05-26", "ModifyEipAddressAttribute");
 	}
 
 	private Long resourceOwnerId;

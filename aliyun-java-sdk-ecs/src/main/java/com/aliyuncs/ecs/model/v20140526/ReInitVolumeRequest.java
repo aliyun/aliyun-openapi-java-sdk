@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ReInitVolumeRequest extends RpcAcsRequest<ReInitVolumeResponse> {
 	
 	public ReInitVolumeRequest() {
-		super("Ecs", "2014-05-26", "ReInitVolume", "ecs");
+		super("Ecs", "2014-05-26", "ReInitVolume");
 	}
 
 	private Long resourceOwnerId;

@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class CreateDiskRequest extends RpcAcsRequest<CreateDiskResponse> {
 	
 	public CreateDiskRequest() {
-		super("Ecs", "2014-05-26", "CreateDisk", "ecs");
+		super("Ecs", "2014-05-26", "CreateDisk");
 	}
 
 	private String tag4Value;

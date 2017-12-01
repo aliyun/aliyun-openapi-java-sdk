@@ -135,6 +135,12 @@ public class DescribeDisksResponse extends AcsResponse {
 
 		private Boolean encrypted;
 
+		private Integer iOPS;
+
+		private Integer iOPSRead;
+
+		private Integer iOPSWrite;
+
 		private List<OperationLock> operationLocks;
 
 		private List<Tag> tags;
@@ -353,6 +359,30 @@ public class DescribeDisksResponse extends AcsResponse {
 
 		public void setEncrypted(Boolean encrypted) {
 			this.encrypted = encrypted;
+		}
+
+		public Integer getIOPS() {
+			return this.iOPS;
+		}
+
+		public void setIOPS(Integer iOPS) {
+			this.iOPS = iOPS;
+		}
+
+		public Integer getIOPSRead() {
+			return this.iOPSRead;
+		}
+
+		public void setIOPSRead(Integer iOPSRead) {
+			this.iOPSRead = iOPSRead;
+		}
+
+		public Integer getIOPSWrite() {
+			return this.iOPSWrite;
+		}
+
+		public void setIOPSWrite(Integer iOPSWrite) {
+			this.iOPSWrite = iOPSWrite;
 		}
 
 		public List<OperationLock> getOperationLocks() {

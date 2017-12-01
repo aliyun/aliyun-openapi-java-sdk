@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class CreateDeploymentSetRequest extends RpcAcsRequest<CreateDeploymentSetResponse> {
 	
 	public CreateDeploymentSetRequest() {
-		super("Ecs", "2014-05-26", "CreateDeploymentSet", "ecs");
+		super("Ecs", "2014-05-26", "CreateDeploymentSet");
 	}
 
 	private Long resourceOwnerId;

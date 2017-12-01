@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifyRouterInterfaceSpecRequest extends RpcAcsRequest<ModifyRouterInterfaceSpecResponse> {
 	
 	public ModifyRouterInterfaceSpecRequest() {
-		super("Ecs", "2014-05-26", "ModifyRouterInterfaceSpec", "ecs");
+		super("Ecs", "2014-05-26", "ModifyRouterInterfaceSpec");
 	}
 
 	private Long resourceOwnerId;

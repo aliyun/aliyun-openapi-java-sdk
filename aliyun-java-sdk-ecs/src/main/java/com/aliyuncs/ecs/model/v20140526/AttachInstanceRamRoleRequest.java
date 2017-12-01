@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class AttachInstanceRamRoleRequest extends RpcAcsRequest<AttachInstanceRamRoleResponse> {
 	
 	public AttachInstanceRamRoleRequest() {
-		super("Ecs", "2014-05-26", "AttachInstanceRamRole", "ecs");
+		super("Ecs", "2014-05-26", "AttachInstanceRamRole");
 	}
 
 	private Long resourceOwnerId;

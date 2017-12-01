@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeleteForwardEntryRequest extends RpcAcsRequest<DeleteForwardEntryResponse> {
 	
 	public DeleteForwardEntryRequest() {
-		super("Ecs", "2014-05-26", "DeleteForwardEntry", "ecs");
+		super("Ecs", "2014-05-26", "DeleteForwardEntry");
 	}
 
 	private Long resourceOwnerId;

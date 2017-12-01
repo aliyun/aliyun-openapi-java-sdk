@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeSpotPriceHistoryRequest extends RpcAcsRequest<DescribeSpotPriceHistoryResponse> {
 	
 	public DescribeSpotPriceHistoryRequest() {
-		super("Ecs", "2014-05-26", "DescribeSpotPriceHistory", "ecs");
+		super("Ecs", "2014-05-26", "DescribeSpotPriceHistory");
 	}
 
 	private Long resourceOwnerId;

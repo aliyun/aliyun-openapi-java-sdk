@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ConvertNatPublicIpToEipRequest extends RpcAcsRequest<ConvertNatPublicIpToEipResponse> {
 	
 	public ConvertNatPublicIpToEipRequest() {
-		super("Ecs", "2014-05-26", "ConvertNatPublicIpToEip", "ecs");
+		super("Ecs", "2014-05-26", "ConvertNatPublicIpToEip");
 	}
 
 	private Long resourceOwnerId;

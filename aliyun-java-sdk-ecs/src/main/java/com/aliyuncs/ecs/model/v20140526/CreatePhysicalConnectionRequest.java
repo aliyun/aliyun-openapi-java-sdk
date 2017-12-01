@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class CreatePhysicalConnectionRequest extends RpcAcsRequest<CreatePhysicalConnectionResponse> {
 	
 	public CreatePhysicalConnectionRequest() {
-		super("Ecs", "2014-05-26", "CreatePhysicalConnection", "ecs");
+		super("Ecs", "2014-05-26", "CreatePhysicalConnection");
 	}
 
 	private String accessPointId;

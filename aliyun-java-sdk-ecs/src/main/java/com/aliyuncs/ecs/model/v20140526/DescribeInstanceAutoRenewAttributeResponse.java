@@ -59,6 +59,8 @@ public class DescribeInstanceAutoRenewAttributeResponse extends AcsResponse {
 
 		private String periodUnit;
 
+		private String renewalStatus;
+
 		public String getInstanceId() {
 			return this.instanceId;
 		}
@@ -89,6 +91,14 @@ public class DescribeInstanceAutoRenewAttributeResponse extends AcsResponse {
 
 		public void setPeriodUnit(String periodUnit) {
 			this.periodUnit = periodUnit;
+		}
+
+		public String getRenewalStatus() {
+			return this.renewalStatus;
+		}
+
+		public void setRenewalStatus(String renewalStatus) {
+			this.renewalStatus = renewalStatus;
 		}
 	}
 

@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DetachDiskRequest extends RpcAcsRequest<DetachDiskResponse> {
 	
 	public DetachDiskRequest() {
-		super("Ecs", "2014-05-26", "DetachDisk", "ecs");
+		super("Ecs", "2014-05-26", "DetachDisk");
 	}
 
 	private Long resourceOwnerId;

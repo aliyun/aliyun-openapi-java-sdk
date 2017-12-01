@@ -27,12 +27,14 @@ import com.aliyuncs.RpcAcsRequest;
 public class RenewInstanceRequest extends RpcAcsRequest<RenewInstanceResponse> {
 	
 	public RenewInstanceRequest() {
-		super("Ecs", "2014-05-26", "RenewInstance", "ecs");
+		super("Ecs", "2014-05-26", "RenewInstance");
 	}
 
 	private Long resourceOwnerId;
 
 	private Integer period;
+
+	private String periodUnit;
 
 	private String instanceId;
 
@@ -63,6 +65,17 @@ public class RenewInstanceRequest extends RpcAcsRequest<RenewInstanceResponse> {
 		this.period = period;
 		if(period != null){
 			putQueryParameter("Period", period.toString());
+		}
+	}
+
+	public String getPeriodUnit() {
+		return this.periodUnit;
+	}
+
+	public void setPeriodUnit(String periodUnit) {
+		this.periodUnit = periodUnit;
+		if(periodUnit != null){
+			putQueryParameter("PeriodUnit", periodUnit);
 		}
 	}
 

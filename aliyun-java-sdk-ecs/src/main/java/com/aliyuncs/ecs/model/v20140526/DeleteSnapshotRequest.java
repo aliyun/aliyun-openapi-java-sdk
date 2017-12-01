@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeleteSnapshotRequest extends RpcAcsRequest<DeleteSnapshotResponse> {
 	
 	public DeleteSnapshotRequest() {
-		super("Ecs", "2014-05-26", "DeleteSnapshot", "ecs");
+		super("Ecs", "2014-05-26", "DeleteSnapshot");
 	}
 
 	private Long resourceOwnerId;

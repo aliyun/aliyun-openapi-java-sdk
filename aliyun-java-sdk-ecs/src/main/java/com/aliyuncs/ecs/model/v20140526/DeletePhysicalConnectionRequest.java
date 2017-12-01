@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeletePhysicalConnectionRequest extends RpcAcsRequest<DeletePhysicalConnectionResponse> {
 	
 	public DeletePhysicalConnectionRequest() {
-		super("Ecs", "2014-05-26", "DeletePhysicalConnection", "ecs");
+		super("Ecs", "2014-05-26", "DeletePhysicalConnection");
 	}
 
 	private Long resourceOwnerId;

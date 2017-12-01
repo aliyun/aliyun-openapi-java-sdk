@@ -19,6 +19,7 @@
 package com.aliyuncs.ecs.model.v20140526;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 
 /**
  * @author auto create
@@ -27,7 +28,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeDisksRequest extends RpcAcsRequest<DescribeDisksResponse> {
 	
 	public DescribeDisksRequest() {
-		super("Ecs", "2014-05-26", "DescribeDisks", "ecs");
+		super("Ecs", "2014-05-26", "DescribeDisks");
 	}
 
 	private String tag4Value;
@@ -91,6 +92,8 @@ public class DescribeDisksRequest extends RpcAcsRequest<DescribeDisksResponse> {
 	private String tag5Value;
 
 	private String tag1Key;
+
+	private List<Long> additionalAttributess;
 
 	private Boolean enableShared;
 
@@ -447,6 +450,19 @@ public class DescribeDisksRequest extends RpcAcsRequest<DescribeDisksResponse> {
 		if(tag1Key != null){
 			putQueryParameter("Tag.1.Key", tag1Key);
 		}
+	}
+
+	public List<Long> getAdditionalAttributess() {
+		return this.additionalAttributess;
+	}
+
+	public void setAdditionalAttributess(List<Long> additionalAttributess) {
+		this.additionalAttributess = additionalAttributess;	
+		if (additionalAttributess != null) {
+			for (int i = 0; i < additionalAttributess.size(); i++) {
+				putQueryParameter("AdditionalAttributes." + (i + 1) , additionalAttributess.get(i));
+			}
+		}	
 	}
 
 	public Boolean getEnableShared() {

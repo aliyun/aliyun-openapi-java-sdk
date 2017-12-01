@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifyInstanceVpcAttributeRequest extends RpcAcsRequest<ModifyInstanceVpcAttributeResponse> {
 	
 	public ModifyInstanceVpcAttributeRequest() {
-		super("Ecs", "2014-05-26", "ModifyInstanceVpcAttribute", "ecs");
+		super("Ecs", "2014-05-26", "ModifyInstanceVpcAttribute");
 	}
 
 	private String vSwitchId;

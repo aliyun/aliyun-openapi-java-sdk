@@ -28,7 +28,7 @@ import java.util.List;
 public class DescribeHaVipsRequest extends RpcAcsRequest<DescribeHaVipsResponse> {
 	
 	public DescribeHaVipsRequest() {
-		super("Ecs", "2014-05-26", "DescribeHaVips", "ecs");
+		super("Ecs", "2014-05-26", "DescribeHaVips");
 	}
 
 	private List<Filter> filters;

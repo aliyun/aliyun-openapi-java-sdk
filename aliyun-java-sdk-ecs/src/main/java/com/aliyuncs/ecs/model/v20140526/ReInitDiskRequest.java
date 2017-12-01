@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ReInitDiskRequest extends RpcAcsRequest<ReInitDiskResponse> {
 	
 	public ReInitDiskRequest() {
-		super("Ecs", "2014-05-26", "ReInitDisk", "ecs");
+		super("Ecs", "2014-05-26", "ReInitDisk");
 	}
 
 	private Long resourceOwnerId;

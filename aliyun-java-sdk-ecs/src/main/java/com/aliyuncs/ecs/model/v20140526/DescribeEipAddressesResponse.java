@@ -93,6 +93,8 @@ public class DescribeEipAddressesResponse extends AcsResponse {
 
 		private String bandwidth;
 
+		private String eipBandwidth;
+
 		private String internetChargeType;
 
 		private String allocationTime;
@@ -151,6 +153,14 @@ public class DescribeEipAddressesResponse extends AcsResponse {
 
 		public void setBandwidth(String bandwidth) {
 			this.bandwidth = bandwidth;
+		}
+
+		public String getEipBandwidth() {
+			return this.eipBandwidth;
+		}
+
+		public void setEipBandwidth(String eipBandwidth) {
+			this.eipBandwidth = eipBandwidth;
 		}
 
 		public String getInternetChargeType() {

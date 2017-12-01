@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class AddBandwidthPackageIpsRequest extends RpcAcsRequest<AddBandwidthPackageIpsResponse> {
 	
 	public AddBandwidthPackageIpsRequest() {
-		super("Ecs", "2014-05-26", "AddBandwidthPackageIps", "ecs");
+		super("Ecs", "2014-05-26", "AddBandwidthPackageIps");
 	}
 
 	private Long resourceOwnerId;

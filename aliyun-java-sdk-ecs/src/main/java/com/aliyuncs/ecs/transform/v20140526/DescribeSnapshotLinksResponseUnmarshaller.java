@@ -41,6 +41,7 @@ public class DescribeSnapshotLinksResponseUnmarshaller {
 			snapshotLink.setSnapshotLinkId(context.stringValue("DescribeSnapshotLinksResponse.SnapshotLinks["+ i +"].SnapshotLinkId"));
 			snapshotLink.setRegionId(context.stringValue("DescribeSnapshotLinksResponse.SnapshotLinks["+ i +"].RegionId"));
 			snapshotLink.setInstanceId(context.stringValue("DescribeSnapshotLinksResponse.SnapshotLinks["+ i +"].InstanceId"));
+			snapshotLink.setInstanceName(context.stringValue("DescribeSnapshotLinksResponse.SnapshotLinks["+ i +"].InstanceName"));
 			snapshotLink.setSourceDiskId(context.stringValue("DescribeSnapshotLinksResponse.SnapshotLinks["+ i +"].SourceDiskId"));
 			snapshotLink.setSourceDiskSize(context.integerValue("DescribeSnapshotLinksResponse.SnapshotLinks["+ i +"].SourceDiskSize"));
 			snapshotLink.setSourceDiskType(context.stringValue("DescribeSnapshotLinksResponse.SnapshotLinks["+ i +"].SourceDiskType"));

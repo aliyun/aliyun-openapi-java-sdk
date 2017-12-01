@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifyInstanceAutoRenewAttributeRequest extends RpcAcsRequest<ModifyInstanceAutoRenewAttributeResponse> {
 	
 	public ModifyInstanceAutoRenewAttributeRequest() {
-		super("Ecs", "2014-05-26", "ModifyInstanceAutoRenewAttribute", "ecs");
+		super("Ecs", "2014-05-26", "ModifyInstanceAutoRenewAttribute");
 	}
 
 	private Integer duration;
@@ -41,6 +41,8 @@ public class ModifyInstanceAutoRenewAttributeRequest extends RpcAcsRequest<Modif
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
+
+	private String renewalStatus;
 
 	private Long ownerId;
 
@@ -107,6 +109,17 @@ public class ModifyInstanceAutoRenewAttributeRequest extends RpcAcsRequest<Modif
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public String getRenewalStatus() {
+		return this.renewalStatus;
+	}
+
+	public void setRenewalStatus(String renewalStatus) {
+		this.renewalStatus = renewalStatus;
+		if(renewalStatus != null){
+			putQueryParameter("RenewalStatus", renewalStatus);
 		}
 	}
 

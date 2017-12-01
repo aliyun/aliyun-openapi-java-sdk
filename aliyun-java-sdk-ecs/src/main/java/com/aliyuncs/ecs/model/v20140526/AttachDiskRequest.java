@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class AttachDiskRequest extends RpcAcsRequest<AttachDiskResponse> {
 	
 	public AttachDiskRequest() {
-		super("Ecs", "2014-05-26", "AttachDisk", "ecs");
+		super("Ecs", "2014-05-26", "AttachDisk");
 	}
 
 	private Long resourceOwnerId;

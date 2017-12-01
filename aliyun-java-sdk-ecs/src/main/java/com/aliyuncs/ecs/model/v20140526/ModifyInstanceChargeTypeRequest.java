@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifyInstanceChargeTypeRequest extends RpcAcsRequest<ModifyInstanceChargeTypeResponse> {
 	
 	public ModifyInstanceChargeTypeRequest() {
-		super("Ecs", "2014-05-26", "ModifyInstanceChargeType", "ecs");
+		super("Ecs", "2014-05-26", "ModifyInstanceChargeType");
 	}
 
 	private Long resourceOwnerId;

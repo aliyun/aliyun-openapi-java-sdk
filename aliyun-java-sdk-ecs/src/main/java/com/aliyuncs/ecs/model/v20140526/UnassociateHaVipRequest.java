@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class UnassociateHaVipRequest extends RpcAcsRequest<UnassociateHaVipResponse> {
 	
 	public UnassociateHaVipRequest() {
-		super("Ecs", "2014-05-26", "UnassociateHaVip", "ecs");
+		super("Ecs", "2014-05-26", "UnassociateHaVip");
 	}
 
 	private String haVipId;

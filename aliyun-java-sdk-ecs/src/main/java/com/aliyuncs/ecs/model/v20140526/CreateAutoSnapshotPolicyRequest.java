@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class CreateAutoSnapshotPolicyRequest extends RpcAcsRequest<CreateAutoSnapshotPolicyResponse> {
 	
 	public CreateAutoSnapshotPolicyRequest() {
-		super("Ecs", "2014-05-26", "CreateAutoSnapshotPolicy", "ecs");
+		super("Ecs", "2014-05-26", "CreateAutoSnapshotPolicy");
 	}
 
 	private Long resourceOwnerId;

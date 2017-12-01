@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifyInstanceVncPasswdRequest extends RpcAcsRequest<ModifyInstanceVncPasswdResponse> {
 	
 	public ModifyInstanceVncPasswdRequest() {
-		super("Ecs", "2014-05-26", "ModifyInstanceVncPasswd", "ecs");
+		super("Ecs", "2014-05-26", "ModifyInstanceVncPasswd");
 	}
 
 	private Long resourceOwnerId;

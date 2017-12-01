@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeSecurityGroupAttributeRequest extends RpcAcsRequest<DescribeSecurityGroupAttributeResponse> {
 	
 	public DescribeSecurityGroupAttributeRequest() {
-		super("Ecs", "2014-05-26", "DescribeSecurityGroupAttribute", "ecs");
+		super("Ecs", "2014-05-26", "DescribeSecurityGroupAttribute");
 	}
 
 	private String nicType;

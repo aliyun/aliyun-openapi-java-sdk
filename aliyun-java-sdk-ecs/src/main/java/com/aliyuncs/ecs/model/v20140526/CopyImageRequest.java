@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class CopyImageRequest extends RpcAcsRequest<CopyImageResponse> {
 	
 	public CopyImageRequest() {
-		super("Ecs", "2014-05-26", "CopyImage", "ecs");
+		super("Ecs", "2014-05-26", "CopyImage");
 	}
 
 	private String tag4Value;
@@ -57,6 +57,8 @@ public class CopyImageRequest extends RpcAcsRequest<CopyImageResponse> {
 	private String tag1Key;
 
 	private String tag1Value;
+
+	private Boolean encrypted;
 
 	private String tag2Value;
 
@@ -217,6 +219,17 @@ public class CopyImageRequest extends RpcAcsRequest<CopyImageResponse> {
 		this.tag1Value = tag1Value;
 		if(tag1Value != null){
 			putQueryParameter("Tag.1.Value", tag1Value);
+		}
+	}
+
+	public Boolean getEncrypted() {
+		return this.encrypted;
+	}
+
+	public void setEncrypted(Boolean encrypted) {
+		this.encrypted = encrypted;
+		if(encrypted != null){
+			putQueryParameter("Encrypted", encrypted.toString());
 		}
 	}
 

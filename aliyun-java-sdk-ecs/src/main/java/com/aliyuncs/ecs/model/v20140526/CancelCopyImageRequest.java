@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class CancelCopyImageRequest extends RpcAcsRequest<CancelCopyImageResponse> {
 	
 	public CancelCopyImageRequest() {
-		super("Ecs", "2014-05-26", "CancelCopyImage", "ecs");
+		super("Ecs", "2014-05-26", "CancelCopyImage");
 	}
 
 	private Long resourceOwnerId;

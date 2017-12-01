@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ResizeVolumeRequest extends RpcAcsRequest<ResizeVolumeResponse> {
 	
 	public ResizeVolumeRequest() {
-		super("Ecs", "2014-05-26", "ResizeVolume", "ecs");
+		super("Ecs", "2014-05-26", "ResizeVolume");
 	}
 
 	private Long resourceOwnerId;

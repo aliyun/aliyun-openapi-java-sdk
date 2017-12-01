@@ -28,7 +28,7 @@ import java.util.List;
 public class ModifyNetworkInterfaceAttributeRequest extends RpcAcsRequest<ModifyNetworkInterfaceAttributeResponse> {
 	
 	public ModifyNetworkInterfaceAttributeRequest() {
-		super("Ecs", "2014-05-26", "ModifyNetworkInterfaceAttribute", "ecs");
+		super("Ecs", "2014-05-26", "ModifyNetworkInterfaceAttribute");
 	}
 
 	private Long resourceOwnerId;
