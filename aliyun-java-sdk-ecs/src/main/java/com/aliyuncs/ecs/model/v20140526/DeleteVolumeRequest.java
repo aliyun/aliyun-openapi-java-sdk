@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeleteVolumeRequest extends RpcAcsRequest<DeleteVolumeResponse> {
 	
 	public DeleteVolumeRequest() {
-		super("Ecs", "2014-05-26", "DeleteVolume");
+		super("Ecs", "2014-05-26", "DeleteVolume", "ecs");
 	}
 
 	private Long resourceOwnerId;

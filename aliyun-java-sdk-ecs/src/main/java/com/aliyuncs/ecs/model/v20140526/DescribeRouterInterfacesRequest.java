@@ -28,7 +28,7 @@ import java.util.List;
 public class DescribeRouterInterfacesRequest extends RpcAcsRequest<DescribeRouterInterfacesResponse> {
 	
 	public DescribeRouterInterfacesRequest() {
-		super("Ecs", "2014-05-26", "DescribeRouterInterfaces");
+		super("Ecs", "2014-05-26", "DescribeRouterInterfaces", "ecs");
 	}
 
 	private List<Filter> filters;

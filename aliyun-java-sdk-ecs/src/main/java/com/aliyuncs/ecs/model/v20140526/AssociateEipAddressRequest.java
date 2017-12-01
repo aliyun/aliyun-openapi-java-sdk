@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class AssociateEipAddressRequest extends RpcAcsRequest<AssociateEipAddressResponse> {
 	
 	public AssociateEipAddressRequest() {
-		super("Ecs", "2014-05-26", "AssociateEipAddress");
+		super("Ecs", "2014-05-26", "AssociateEipAddress", "ecs");
 	}
 
 	private Long resourceOwnerId;

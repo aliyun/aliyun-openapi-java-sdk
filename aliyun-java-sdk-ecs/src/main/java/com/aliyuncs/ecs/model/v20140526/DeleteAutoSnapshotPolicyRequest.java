@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeleteAutoSnapshotPolicyRequest extends RpcAcsRequest<DeleteAutoSnapshotPolicyResponse> {
 	
 	public DeleteAutoSnapshotPolicyRequest() {
-		super("Ecs", "2014-05-26", "DeleteAutoSnapshotPolicy");
+		super("Ecs", "2014-05-26", "DeleteAutoSnapshotPolicy", "ecs");
 	}
 
 	private Long resourceOwnerId;

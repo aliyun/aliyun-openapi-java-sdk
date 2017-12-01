@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ImportKeyPairRequest extends RpcAcsRequest<ImportKeyPairResponse> {
 	
 	public ImportKeyPairRequest() {
-		super("Ecs", "2014-05-26", "ImportKeyPair");
+		super("Ecs", "2014-05-26", "ImportKeyPair", "ecs");
 	}
 
 	private Long resourceOwnerId;

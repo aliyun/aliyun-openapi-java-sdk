@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DetachKeyPairRequest extends RpcAcsRequest<DetachKeyPairResponse> {
 	
 	public DetachKeyPairRequest() {
-		super("Ecs", "2014-05-26", "DetachKeyPair");
+		super("Ecs", "2014-05-26", "DetachKeyPair", "ecs");
 	}
 
 	private Long resourceOwnerId;

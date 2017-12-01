@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class RollbackVolumeRequest extends RpcAcsRequest<RollbackVolumeResponse> {
 	
 	public RollbackVolumeRequest() {
-		super("Ecs", "2014-05-26", "RollbackVolume");
+		super("Ecs", "2014-05-26", "RollbackVolume", "ecs");
 	}
 
 	private Long resourceOwnerId;

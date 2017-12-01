@@ -28,7 +28,7 @@ import java.util.List;
 public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse> {
 	
 	public CreateInstanceRequest() {
-		super("Ecs", "2014-05-26", "CreateInstance");
+		super("Ecs", "2014-05-26", "CreateInstance", "ecs");
 	}
 
 	private String tag4Value;

@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class CreateSecurityGroupRequest extends RpcAcsRequest<CreateSecurityGroupResponse> {
 	
 	public CreateSecurityGroupRequest() {
-		super("Ecs", "2014-05-26", "CreateSecurityGroup");
+		super("Ecs", "2014-05-26", "CreateSecurityGroup", "ecs");
 	}
 
 	private String tag4Value;

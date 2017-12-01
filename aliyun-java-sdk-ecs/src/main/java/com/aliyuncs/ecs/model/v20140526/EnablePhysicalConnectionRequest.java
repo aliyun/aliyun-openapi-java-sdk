@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class EnablePhysicalConnectionRequest extends RpcAcsRequest<EnablePhysicalConnectionResponse> {
 	
 	public EnablePhysicalConnectionRequest() {
-		super("Ecs", "2014-05-26", "EnablePhysicalConnection");
+		super("Ecs", "2014-05-26", "EnablePhysicalConnection", "ecs");
 	}
 
 	private Long resourceOwnerId;

@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeleteImageRequest extends RpcAcsRequest<DeleteImageResponse> {
 	
 	public DeleteImageRequest() {
-		super("Ecs", "2014-05-26", "DeleteImage");
+		super("Ecs", "2014-05-26", "DeleteImage", "ecs");
 	}
 
 	private Long resourceOwnerId;

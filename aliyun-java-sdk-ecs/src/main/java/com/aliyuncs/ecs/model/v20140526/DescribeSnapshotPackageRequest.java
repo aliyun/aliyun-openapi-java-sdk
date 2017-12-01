@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeSnapshotPackageRequest extends RpcAcsRequest<DescribeSnapshotPackageResponse> {
 	
 	public DescribeSnapshotPackageRequest() {
-		super("Ecs", "2014-05-26", "DescribeSnapshotPackage");
+		super("Ecs", "2014-05-26", "DescribeSnapshotPackage", "ecs");
 	}
 
 	private Long resourceOwnerId;

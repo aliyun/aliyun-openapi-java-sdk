@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class CreateRouterInterfaceRequest extends RpcAcsRequest<CreateRouterInterfaceResponse> {
 	
 	public CreateRouterInterfaceRequest() {
-		super("Ecs", "2014-05-26", "CreateRouterInterface");
+		super("Ecs", "2014-05-26", "CreateRouterInterface", "ecs");
 	}
 
 	private String accessPointId;

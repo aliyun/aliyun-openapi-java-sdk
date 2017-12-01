@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class StopInstanceRequest extends RpcAcsRequest<StopInstanceResponse> {
 	
 	public StopInstanceRequest() {
-		super("Ecs", "2014-05-26", "StopInstance");
+		super("Ecs", "2014-05-26", "StopInstance", "ecs");
 	}
 
 	private Long resourceOwnerId;

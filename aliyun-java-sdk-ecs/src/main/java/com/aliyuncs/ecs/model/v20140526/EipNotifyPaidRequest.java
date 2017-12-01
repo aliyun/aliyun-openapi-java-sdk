@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class EipNotifyPaidRequest extends RpcAcsRequest<EipNotifyPaidResponse> {
 	
 	public EipNotifyPaidRequest() {
-		super("Ecs", "2014-05-26", "EipNotifyPaid");
+		super("Ecs", "2014-05-26", "EipNotifyPaid", "ecs");
 	}
 
 	private Long resourceOwnerId;

@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class RemoveTagsRequest extends RpcAcsRequest<RemoveTagsResponse> {
 	
 	public RemoveTagsRequest() {
-		super("Ecs", "2014-05-26", "RemoveTags");
+		super("Ecs", "2014-05-26", "RemoveTags", "ecs");
 	}
 
 	private String tag4Value;

@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeEipMonitorDataRequest extends RpcAcsRequest<DescribeEipMonitorDataResponse> {
 	
 	public DescribeEipMonitorDataRequest() {
-		super("Ecs", "2014-05-26", "DescribeEipMonitorData");
+		super("Ecs", "2014-05-26", "DescribeEipMonitorData", "ecs");
 	}
 
 	private Long resourceOwnerId;

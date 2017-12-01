@@ -28,7 +28,7 @@ import java.util.List;
 public class DescribeVirtualBorderRoutersRequest extends RpcAcsRequest<DescribeVirtualBorderRoutersResponse> {
 	
 	public DescribeVirtualBorderRoutersRequest() {
-		super("Ecs", "2014-05-26", "DescribeVirtualBorderRouters");
+		super("Ecs", "2014-05-26", "DescribeVirtualBorderRouters", "ecs");
 	}
 
 	private List<Filter> filters;

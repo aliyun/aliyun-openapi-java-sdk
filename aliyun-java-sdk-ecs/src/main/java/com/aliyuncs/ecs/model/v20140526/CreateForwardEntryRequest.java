@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class CreateForwardEntryRequest extends RpcAcsRequest<CreateForwardEntryResponse> {
 	
 	public CreateForwardEntryRequest() {
-		super("Ecs", "2014-05-26", "CreateForwardEntry");
+		super("Ecs", "2014-05-26", "CreateForwardEntry", "ecs");
 	}
 
 	private Long resourceOwnerId;

@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class AttachClassicLinkVpcRequest extends RpcAcsRequest<AttachClassicLinkVpcResponse> {
 	
 	public AttachClassicLinkVpcRequest() {
-		super("Ecs", "2014-05-26", "AttachClassicLinkVpc");
+		super("Ecs", "2014-05-26", "AttachClassicLinkVpc", "ecs");
 	}
 
 	private Long resourceOwnerId;

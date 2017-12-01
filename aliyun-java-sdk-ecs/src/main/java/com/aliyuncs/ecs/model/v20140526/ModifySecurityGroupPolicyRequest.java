@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifySecurityGroupPolicyRequest extends RpcAcsRequest<ModifySecurityGroupPolicyResponse> {
 	
 	public ModifySecurityGroupPolicyRequest() {
-		super("Ecs", "2014-05-26", "ModifySecurityGroupPolicy");
+		super("Ecs", "2014-05-26", "ModifySecurityGroupPolicy", "ecs");
 	}
 
 	private Long resourceOwnerId;

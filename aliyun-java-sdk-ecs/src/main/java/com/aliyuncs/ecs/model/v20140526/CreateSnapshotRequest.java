@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class CreateSnapshotRequest extends RpcAcsRequest<CreateSnapshotResponse> {
 	
 	public CreateSnapshotRequest() {
-		super("Ecs", "2014-05-26", "CreateSnapshot");
+		super("Ecs", "2014-05-26", "CreateSnapshot", "ecs");
 	}
 
 	private String tag4Value;

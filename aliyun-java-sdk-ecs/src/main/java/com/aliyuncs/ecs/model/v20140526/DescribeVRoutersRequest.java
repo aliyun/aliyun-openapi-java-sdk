@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeVRoutersRequest extends RpcAcsRequest<DescribeVRoutersResponse> {
 	
 	public DescribeVRoutersRequest() {
-		super("Ecs", "2014-05-26", "DescribeVRouters");
+		super("Ecs", "2014-05-26", "DescribeVRouters", "ecs");
 	}
 
 	private Long resourceOwnerId;

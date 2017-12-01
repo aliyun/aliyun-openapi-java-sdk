@@ -28,7 +28,7 @@ import java.util.List;
 public class DescribeDisksRequest extends RpcAcsRequest<DescribeDisksResponse> {
 	
 	public DescribeDisksRequest() {
-		super("Ecs", "2014-05-26", "DescribeDisks");
+		super("Ecs", "2014-05-26", "DescribeDisks", "ecs");
 	}
 
 	private String tag4Value;

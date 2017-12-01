@@ -28,7 +28,7 @@ import java.util.List;
 public class CreateNatGatewayRequest extends RpcAcsRequest<CreateNatGatewayResponse> {
 	
 	public CreateNatGatewayRequest() {
-		super("Ecs", "2014-05-26", "CreateNatGateway");
+		super("Ecs", "2014-05-26", "CreateNatGateway", "ecs");
 	}
 
 	private Long resourceOwnerId;

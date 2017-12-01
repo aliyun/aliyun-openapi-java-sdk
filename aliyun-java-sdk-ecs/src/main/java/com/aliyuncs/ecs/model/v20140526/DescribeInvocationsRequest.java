@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeInvocationsRequest extends RpcAcsRequest<DescribeInvocationsResponse> {
 	
 	public DescribeInvocationsRequest() {
-		super("Ecs", "2014-05-26", "DescribeInvocations");
+		super("Ecs", "2014-05-26", "DescribeInvocations", "ecs");
 	}
 
 	private Long resourceOwnerId;

@@ -28,7 +28,7 @@ import java.util.List;
 public class ImportImageRequest extends RpcAcsRequest<ImportImageResponse> {
 	
 	public ImportImageRequest() {
-		super("Ecs", "2014-05-26", "ImportImage");
+		super("Ecs", "2014-05-26", "ImportImage", "ecs");
 	}
 
 	private List<DiskDeviceMapping> diskDeviceMappings;

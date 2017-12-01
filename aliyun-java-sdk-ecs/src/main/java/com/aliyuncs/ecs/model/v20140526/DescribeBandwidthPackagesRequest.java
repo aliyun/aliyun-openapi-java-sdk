@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeBandwidthPackagesRequest extends RpcAcsRequest<DescribeBandwidthPackagesResponse> {
 	
 	public DescribeBandwidthPackagesRequest() {
-		super("Ecs", "2014-05-26", "DescribeBandwidthPackages");
+		super("Ecs", "2014-05-26", "DescribeBandwidthPackages", "ecs");
 	}
 
 	private Long resourceOwnerId;

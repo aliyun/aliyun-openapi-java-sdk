@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeVolumesRequest extends RpcAcsRequest<DescribeVolumesResponse> {
 	
 	public DescribeVolumesRequest() {
-		super("Ecs", "2014-05-26", "DescribeVolumes");
+		super("Ecs", "2014-05-26", "DescribeVolumes", "ecs");
 	}
 
 	private String tag4Value;

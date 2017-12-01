@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeTagsRequest extends RpcAcsRequest<DescribeTagsResponse> {
 	
 	public DescribeTagsRequest() {
-		super("Ecs", "2014-05-26", "DescribeTags");
+		super("Ecs", "2014-05-26", "DescribeTags", "ecs");
 	}
 
 	private String tag4Value;

@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DetachVolumeRequest extends RpcAcsRequest<DetachVolumeResponse> {
 	
 	public DetachVolumeRequest() {
-		super("Ecs", "2014-05-26", "DetachVolume");
+		super("Ecs", "2014-05-26", "DetachVolume", "ecs");
 	}
 
 	private Long resourceOwnerId;

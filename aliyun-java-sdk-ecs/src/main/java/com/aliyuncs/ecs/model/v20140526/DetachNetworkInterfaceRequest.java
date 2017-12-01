@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DetachNetworkInterfaceRequest extends RpcAcsRequest<DetachNetworkInterfaceResponse> {
 	
 	public DetachNetworkInterfaceRequest() {
-		super("Ecs", "2014-05-26", "DetachNetworkInterface");
+		super("Ecs", "2014-05-26", "DetachNetworkInterface", "ecs");
 	}
 
 	private Long resourceOwnerId;

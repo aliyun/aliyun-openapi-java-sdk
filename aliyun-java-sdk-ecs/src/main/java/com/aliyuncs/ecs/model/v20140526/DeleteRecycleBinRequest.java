@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeleteRecycleBinRequest extends RpcAcsRequest<DeleteRecycleBinResponse> {
 	
 	public DeleteRecycleBinRequest() {
-		super("Ecs", "2014-05-26", "DeleteRecycleBin");
+		super("Ecs", "2014-05-26", "DeleteRecycleBin", "ecs");
 	}
 
 	private Long resourceOwnerId;

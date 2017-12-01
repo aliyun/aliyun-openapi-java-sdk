@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifyVolumeAttributeRequest extends RpcAcsRequest<ModifyVolumeAttributeResponse> {
 	
 	public ModifyVolumeAttributeRequest() {
-		super("Ecs", "2014-05-26", "ModifyVolumeAttribute");
+		super("Ecs", "2014-05-26", "ModifyVolumeAttribute", "ecs");
 	}
 
 	private Long resourceOwnerId;

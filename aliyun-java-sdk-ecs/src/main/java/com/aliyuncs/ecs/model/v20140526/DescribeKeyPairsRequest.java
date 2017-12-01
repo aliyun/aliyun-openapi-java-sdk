@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeKeyPairsRequest extends RpcAcsRequest<DescribeKeyPairsResponse> {
 	
 	public DescribeKeyPairsRequest() {
-		super("Ecs", "2014-05-26", "DescribeKeyPairs");
+		super("Ecs", "2014-05-26", "DescribeKeyPairs", "ecs");
 	}
 
 	private Long resourceOwnerId;

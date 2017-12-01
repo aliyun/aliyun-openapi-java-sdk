@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifyImageAttributeRequest extends RpcAcsRequest<ModifyImageAttributeResponse> {
 	
 	public ModifyImageAttributeRequest() {
-		super("Ecs", "2014-05-26", "ModifyImageAttribute");
+		super("Ecs", "2014-05-26", "ModifyImageAttribute", "ecs");
 	}
 
 	private Long resourceOwnerId;

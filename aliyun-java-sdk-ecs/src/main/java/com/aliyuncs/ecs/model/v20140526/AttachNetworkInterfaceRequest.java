@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class AttachNetworkInterfaceRequest extends RpcAcsRequest<AttachNetworkInterfaceResponse> {
 	
 	public AttachNetworkInterfaceRequest() {
-		super("Ecs", "2014-05-26", "AttachNetworkInterface");
+		super("Ecs", "2014-05-26", "AttachNetworkInterface", "ecs");
 	}
 
 	private Long resourceOwnerId;

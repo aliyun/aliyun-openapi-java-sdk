@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeHpcClustersRequest extends RpcAcsRequest<DescribeHpcClustersResponse> {
 	
 	public DescribeHpcClustersRequest() {
-		super("Ecs", "2014-05-26", "DescribeHpcClusters");
+		super("Ecs", "2014-05-26", "DescribeHpcClusters", "ecs");
 	}
 
 	private Long resourceOwnerId;

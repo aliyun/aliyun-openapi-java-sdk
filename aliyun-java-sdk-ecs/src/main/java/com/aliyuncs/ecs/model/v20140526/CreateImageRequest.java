@@ -28,7 +28,7 @@ import java.util.List;
 public class CreateImageRequest extends RpcAcsRequest<CreateImageResponse> {
 	
 	public CreateImageRequest() {
-		super("Ecs", "2014-05-26", "CreateImage");
+		super("Ecs", "2014-05-26", "CreateImage", "ecs");
 	}
 
 	private List<DiskDeviceMapping> diskDeviceMappings;

@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeleteNetworkInterfaceRequest extends RpcAcsRequest<DeleteNetworkInterfaceResponse> {
 	
 	public DeleteNetworkInterfaceRequest() {
-		super("Ecs", "2014-05-26", "DeleteNetworkInterface");
+		super("Ecs", "2014-05-26", "DeleteNetworkInterface", "ecs");
 	}
 
 	private Long resourceOwnerId;

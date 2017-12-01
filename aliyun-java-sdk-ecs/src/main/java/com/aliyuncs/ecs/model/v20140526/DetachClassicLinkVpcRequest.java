@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DetachClassicLinkVpcRequest extends RpcAcsRequest<DetachClassicLinkVpcResponse> {
 	
 	public DetachClassicLinkVpcRequest() {
-		super("Ecs", "2014-05-26", "DetachClassicLinkVpc");
+		super("Ecs", "2014-05-26", "DetachClassicLinkVpc", "ecs");
 	}
 
 	private Long resourceOwnerId;

@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeRecycleBinRequest extends RpcAcsRequest<DescribeRecycleBinResponse> {
 	
 	public DescribeRecycleBinRequest() {
-		super("Ecs", "2014-05-26", "DescribeRecycleBin");
+		super("Ecs", "2014-05-26", "DescribeRecycleBin", "ecs");
 	}
 
 	private Long resourceOwnerId;

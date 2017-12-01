@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ResizeDiskRequest extends RpcAcsRequest<ResizeDiskResponse> {
 	
 	public ResizeDiskRequest() {
-		super("Ecs", "2014-05-26", "ResizeDisk");
+		super("Ecs", "2014-05-26", "ResizeDisk", "ecs");
 	}
 
 	private Long resourceOwnerId;
