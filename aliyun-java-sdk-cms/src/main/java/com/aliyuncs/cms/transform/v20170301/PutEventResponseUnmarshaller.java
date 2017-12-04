@@ -16,36 +16,20 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package com.aliyuncs.cms.model.v20170301;
+package com.aliyuncs.cms.transform.v20170301;
 
-import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.cms.model.v20170301.PutEventResponse;
+import com.aliyuncs.transform.UnmarshallerContext;
 
-/**
- * @author auto create
- * @version 
- */
-public class ProfileGetRequest extends RpcAcsRequest<ProfileGetResponse> {
-	
-	public ProfileGetRequest() {
-		super("Cms", "2017-03-01", "ProfileGet", "cms");
+
+public class PutEventResponseUnmarshaller {
+
+	public static PutEventResponse unmarshall(PutEventResponse putEventResponse, UnmarshallerContext context) {
+		
+		putEventResponse.setCode(context.stringValue("PutEventResponse.Code"));
+		putEventResponse.setMessage(context.stringValue("PutEventResponse.Message"));
+		putEventResponse.setData(context.stringValue("PutEventResponse.Data"));
+	 
+	 	return putEventResponse;
 	}
-
-	private Long userId;
-
-	public Long getUserId() {
-		return this.userId;
-	}
-
-	public void setUserId(Long userId) {
-		this.userId = userId;
-		if(userId != null){
-			putQueryParameter("UserId", userId.toString());
-		}
-	}
-
-	@Override
-	public Class<ProfileGetResponse> getResponseClass() {
-		return ProfileGetResponse.class;
-	}
-
 }

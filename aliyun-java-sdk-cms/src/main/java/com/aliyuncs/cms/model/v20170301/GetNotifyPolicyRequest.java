@@ -24,24 +24,39 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class DeleteAlarmRequest extends RpcAcsRequest<DeleteAlarmResponse> {
+public class GetNotifyPolicyRequest extends RpcAcsRequest<GetNotifyPolicyResponse> {
 	
-	public DeleteAlarmRequest() {
-		super("Cms", "2017-03-01", "DeleteAlarm", "cms");
+	public GetNotifyPolicyRequest() {
+		super("Cms", "2017-03-01", "GetNotifyPolicy", "cms");
 	}
 
-	private String callby_cms_owner;
+	private String policyType;
+
+	private String alertName;
 
 	private String id;
 
-	public String getCallby_cms_owner() {
-		return this.callby_cms_owner;
+	private String dimensions;
+
+	public String getPolicyType() {
+		return this.policyType;
 	}
 
-	public void setCallby_cms_owner(String callby_cms_owner) {
-		this.callby_cms_owner = callby_cms_owner;
-		if(callby_cms_owner != null){
-			putQueryParameter("callby_cms_owner", callby_cms_owner);
+	public void setPolicyType(String policyType) {
+		this.policyType = policyType;
+		if(policyType != null){
+			putQueryParameter("PolicyType", policyType);
+		}
+	}
+
+	public String getAlertName() {
+		return this.alertName;
+	}
+
+	public void setAlertName(String alertName) {
+		this.alertName = alertName;
+		if(alertName != null){
+			putQueryParameter("AlertName", alertName);
 		}
 	}
 
@@ -56,9 +71,20 @@ public class DeleteAlarmRequest extends RpcAcsRequest<DeleteAlarmResponse> {
 		}
 	}
 
+	public String getDimensions() {
+		return this.dimensions;
+	}
+
+	public void setDimensions(String dimensions) {
+		this.dimensions = dimensions;
+		if(dimensions != null){
+			putQueryParameter("Dimensions", dimensions);
+		}
+	}
+
 	@Override
-	public Class<DeleteAlarmResponse> getResponseClass() {
-		return DeleteAlarmResponse.class;
+	public Class<GetNotifyPolicyResponse> getResponseClass() {
+		return GetNotifyPolicyResponse.class;
 	}
 
 }

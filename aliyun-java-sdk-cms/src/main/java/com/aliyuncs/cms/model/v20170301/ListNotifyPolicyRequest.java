@@ -24,26 +24,41 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class ListContactGroupRequest extends RpcAcsRequest<ListContactGroupResponse> {
+public class ListNotifyPolicyRequest extends RpcAcsRequest<ListNotifyPolicyResponse> {
 	
-	public ListContactGroupRequest() {
-		super("Cms", "2017-03-01", "ListContactGroup", "cms");
+	public ListNotifyPolicyRequest() {
+		super("Cms", "2017-03-01", "ListNotifyPolicy", "cms");
 	}
 
-	private String callby_cms_owner;
+	private String policyType;
+
+	private String alertName;
 
 	private Integer pageSize;
 
-	private Integer pageNumber;
+	private String id;
 
-	public String getCallby_cms_owner() {
-		return this.callby_cms_owner;
+	private String dimensions;
+
+	public String getPolicyType() {
+		return this.policyType;
 	}
 
-	public void setCallby_cms_owner(String callby_cms_owner) {
-		this.callby_cms_owner = callby_cms_owner;
-		if(callby_cms_owner != null){
-			putQueryParameter("callby_cms_owner", callby_cms_owner);
+	public void setPolicyType(String policyType) {
+		this.policyType = policyType;
+		if(policyType != null){
+			putQueryParameter("PolicyType", policyType);
+		}
+	}
+
+	public String getAlertName() {
+		return this.alertName;
+	}
+
+	public void setAlertName(String alertName) {
+		this.alertName = alertName;
+		if(alertName != null){
+			putQueryParameter("AlertName", alertName);
 		}
 	}
 
@@ -58,20 +73,31 @@ public class ListContactGroupRequest extends RpcAcsRequest<ListContactGroupRespo
 		}
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
+	public String getId() {
+		return this.id;
 	}
 
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
+	public void setId(String id) {
+		this.id = id;
+		if(id != null){
+			putQueryParameter("Id", id);
+		}
+	}
+
+	public String getDimensions() {
+		return this.dimensions;
+	}
+
+	public void setDimensions(String dimensions) {
+		this.dimensions = dimensions;
+		if(dimensions != null){
+			putQueryParameter("Dimensions", dimensions);
 		}
 	}
 
 	@Override
-	public Class<ListContactGroupResponse> getResponseClass() {
-		return ListContactGroupResponse.class;
+	public Class<ListNotifyPolicyResponse> getResponseClass() {
+		return ListNotifyPolicyResponse.class;
 	}
 
 }

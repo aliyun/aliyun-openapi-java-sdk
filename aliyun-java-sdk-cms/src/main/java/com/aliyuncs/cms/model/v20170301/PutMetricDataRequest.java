@@ -34,13 +34,15 @@ public class PutMetricDataRequest extends RpcAcsRequest<PutMetricDataResponse> {
 
 	private String body;
 
-	public String getcallby_cms_owner() {
+	public String getCallby_cms_owner() {
 		return this.callby_cms_owner;
 	}
 
-	public void setcallby_cms_owner(String callby_cms_owner) {
+	public void setCallby_cms_owner(String callby_cms_owner) {
 		this.callby_cms_owner = callby_cms_owner;
-		putQueryParameter("callby_cms_owner", callby_cms_owner);
+		if(callby_cms_owner != null){
+			putQueryParameter("callby_cms_owner", callby_cms_owner);
+		}
 	}
 
 	public String getBody() {
@@ -49,7 +51,9 @@ public class PutMetricDataRequest extends RpcAcsRequest<PutMetricDataResponse> {
 
 	public void setBody(String body) {
 		this.body = body;
-		putQueryParameter("Body", body);
+		if(body != null){
+			putQueryParameter("Body", body);
+		}
 	}
 
 	@Override

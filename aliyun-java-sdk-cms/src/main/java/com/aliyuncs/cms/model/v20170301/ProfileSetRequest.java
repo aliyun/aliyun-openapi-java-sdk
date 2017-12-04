@@ -30,18 +30,9 @@ public class ProfileSetRequest extends RpcAcsRequest<ProfileSetResponse> {
 		super("Cms", "2017-03-01", "ProfileSet", "cms");
 	}
 
-	private Long userId;
-
 	private Boolean autoInstall;
 
-	public Long getUserId() {
-		return this.userId;
-	}
-
-	public void setUserId(Long userId) {
-		this.userId = userId;
-		putQueryParameter("UserId", userId);
-	}
+	private Long userId;
 
 	public Boolean getAutoInstall() {
 		return this.autoInstall;
@@ -49,7 +40,20 @@ public class ProfileSetRequest extends RpcAcsRequest<ProfileSetResponse> {
 
 	public void setAutoInstall(Boolean autoInstall) {
 		this.autoInstall = autoInstall;
-		putQueryParameter("AutoInstall", autoInstall);
+		if(autoInstall != null){
+			putQueryParameter("AutoInstall", autoInstall.toString());
+		}
+	}
+
+	public Long getUserId() {
+		return this.userId;
+	}
+
+	public void setUserId(Long userId) {
+		this.userId = userId;
+		if(userId != null){
+			putQueryParameter("UserId", userId.toString());
+		}
 	}
 
 	@Override

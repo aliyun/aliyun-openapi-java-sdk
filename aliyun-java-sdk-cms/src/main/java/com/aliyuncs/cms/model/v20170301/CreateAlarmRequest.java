@@ -19,7 +19,6 @@
 package com.aliyuncs.cms.model.v20170301;
 
 import com.aliyuncs.RpcAcsRequest;
-import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
@@ -29,82 +28,47 @@ public class CreateAlarmRequest extends RpcAcsRequest<CreateAlarmResponse> {
 	
 	public CreateAlarmRequest() {
 		super("Cms", "2017-03-01", "CreateAlarm", "cms");
-		setMethod(MethodType.POST);
 	}
 
 	private String callby_cms_owner;
+
+	private Integer period;
+
+	private String contactGroups;
+
+	private Integer endTime;
+
+	private String threshold;
+
+	private Integer startTime;
 
 	private String name;
 
 	private String namespace;
 
-	private String metricName;
-
-	private String dimensions;
-
-	private Integer period;
-
-	private String statistics;
-
-	private String comparisonOperator;
-
-	private String threshold;
-
 	private Integer evaluationCount;
-
-	private String contactGroups;
-
-	private Integer startTime;
-
-	private Integer endTime;
 
 	private Integer silenceTime;
 
+	private String metricName;
+
 	private Integer notifyType;
 
-	public String getcallby_cms_owner() {
+	private String comparisonOperator;
+
+	private String dimensions;
+
+	private String statistics;
+
+	public String getCallby_cms_owner() {
 		return this.callby_cms_owner;
 	}
 
-	public void setcallby_cms_owner(String callby_cms_owner) {
+	public void setCallby_cms_owner(String callby_cms_owner) {
 		this.callby_cms_owner = callby_cms_owner;
-		putQueryParameter("callby_cms_owner", callby_cms_owner);
-	}
-
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-		putQueryParameter("Name", name);
-	}
-
-	public String getNamespace() {
-		return this.namespace;
-	}
-
-	public void setNamespace(String namespace) {
-		this.namespace = namespace;
-		putQueryParameter("Namespace", namespace);
-	}
-
-	public String getMetricName() {
-		return this.metricName;
-	}
-
-	public void setMetricName(String metricName) {
-		this.metricName = metricName;
-		putQueryParameter("MetricName", metricName);
-	}
-
-	public String getDimensions() {
-		return this.dimensions;
-	}
-
-	public void setDimensions(String dimensions) {
-		this.dimensions = dimensions;
-		putQueryParameter("Dimensions", dimensions);
+		if(callby_cms_owner != null){
+			putQueryParameter("callby_cms_owner", callby_cms_owner);
+		}
 	}
 
 	public Integer getPeriod() {
@@ -113,43 +77,9 @@ public class CreateAlarmRequest extends RpcAcsRequest<CreateAlarmResponse> {
 
 	public void setPeriod(Integer period) {
 		this.period = period;
-		putQueryParameter("Period", period);
-	}
-
-	public String getStatistics() {
-		return this.statistics;
-	}
-
-	public void setStatistics(String statistics) {
-		this.statistics = statistics;
-		putQueryParameter("Statistics", statistics);
-	}
-
-	public String getComparisonOperator() {
-		return this.comparisonOperator;
-	}
-
-	public void setComparisonOperator(String comparisonOperator) {
-		this.comparisonOperator = comparisonOperator;
-		putQueryParameter("ComparisonOperator", comparisonOperator);
-	}
-
-	public String getThreshold() {
-		return this.threshold;
-	}
-
-	public void setThreshold(String threshold) {
-		this.threshold = threshold;
-		putQueryParameter("Threshold", threshold);
-	}
-
-	public Integer getEvaluationCount() {
-		return this.evaluationCount;
-	}
-
-	public void setEvaluationCount(Integer evaluationCount) {
-		this.evaluationCount = evaluationCount;
-		putQueryParameter("EvaluationCount", evaluationCount);
+		if(period != null){
+			putQueryParameter("Period", period.toString());
+		}
 	}
 
 	public String getContactGroups() {
@@ -158,16 +88,9 @@ public class CreateAlarmRequest extends RpcAcsRequest<CreateAlarmResponse> {
 
 	public void setContactGroups(String contactGroups) {
 		this.contactGroups = contactGroups;
-		putQueryParameter("ContactGroups", contactGroups);
-	}
-
-	public Integer getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(Integer startTime) {
-		this.startTime = startTime;
-		putQueryParameter("StartTime", startTime);
+		if(contactGroups != null){
+			putQueryParameter("ContactGroups", contactGroups);
+		}
 	}
 
 	public Integer getEndTime() {
@@ -176,7 +99,64 @@ public class CreateAlarmRequest extends RpcAcsRequest<CreateAlarmResponse> {
 
 	public void setEndTime(Integer endTime) {
 		this.endTime = endTime;
-		putQueryParameter("EndTime", endTime);
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime.toString());
+		}
+	}
+
+	public String getThreshold() {
+		return this.threshold;
+	}
+
+	public void setThreshold(String threshold) {
+		this.threshold = threshold;
+		if(threshold != null){
+			putQueryParameter("Threshold", threshold);
+		}
+	}
+
+	public Integer getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(Integer startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime.toString());
+		}
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
+		}
+	}
+
+	public String getNamespace() {
+		return this.namespace;
+	}
+
+	public void setNamespace(String namespace) {
+		this.namespace = namespace;
+		if(namespace != null){
+			putQueryParameter("Namespace", namespace);
+		}
+	}
+
+	public Integer getEvaluationCount() {
+		return this.evaluationCount;
+	}
+
+	public void setEvaluationCount(Integer evaluationCount) {
+		this.evaluationCount = evaluationCount;
+		if(evaluationCount != null){
+			putQueryParameter("EvaluationCount", evaluationCount.toString());
+		}
 	}
 
 	public Integer getSilenceTime() {
@@ -185,7 +165,20 @@ public class CreateAlarmRequest extends RpcAcsRequest<CreateAlarmResponse> {
 
 	public void setSilenceTime(Integer silenceTime) {
 		this.silenceTime = silenceTime;
-		putQueryParameter("SilenceTime", silenceTime);
+		if(silenceTime != null){
+			putQueryParameter("SilenceTime", silenceTime.toString());
+		}
+	}
+
+	public String getMetricName() {
+		return this.metricName;
+	}
+
+	public void setMetricName(String metricName) {
+		this.metricName = metricName;
+		if(metricName != null){
+			putQueryParameter("MetricName", metricName);
+		}
 	}
 
 	public Integer getNotifyType() {
@@ -194,7 +187,42 @@ public class CreateAlarmRequest extends RpcAcsRequest<CreateAlarmResponse> {
 
 	public void setNotifyType(Integer notifyType) {
 		this.notifyType = notifyType;
-		putQueryParameter("NotifyType", notifyType);
+		if(notifyType != null){
+			putQueryParameter("NotifyType", notifyType.toString());
+		}
+	}
+
+	public String getComparisonOperator() {
+		return this.comparisonOperator;
+	}
+
+	public void setComparisonOperator(String comparisonOperator) {
+		this.comparisonOperator = comparisonOperator;
+		if(comparisonOperator != null){
+			putQueryParameter("ComparisonOperator", comparisonOperator);
+		}
+	}
+
+	public String getDimensions() {
+		return this.dimensions;
+	}
+
+	public void setDimensions(String dimensions) {
+		this.dimensions = dimensions;
+		if(dimensions != null){
+			putQueryParameter("Dimensions", dimensions);
+		}
+	}
+
+	public String getStatistics() {
+		return this.statistics;
+	}
+
+	public void setStatistics(String statistics) {
+		this.statistics = statistics;
+		if(statistics != null){
+			putQueryParameter("Statistics", statistics);
+		}
 	}
 
 	@Override

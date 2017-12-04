@@ -18,47 +18,48 @@
  */
 package com.aliyuncs.cms.model.v20170301;
 
-import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.AcsResponse;
+import com.aliyuncs.cms.transform.v20170301.PutEventResponseUnmarshaller;
+import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DeleteAlarmRequest extends RpcAcsRequest<DeleteAlarmResponse> {
-	
-	public DeleteAlarmRequest() {
-		super("Cms", "2017-03-01", "DeleteAlarm", "cms");
+public class PutEventResponse extends AcsResponse {
+
+	private String code;
+
+	private String message;
+
+	private String data;
+
+	public String getCode() {
+		return this.code;
 	}
 
-	private String callby_cms_owner;
-
-	private String id;
-
-	public String getCallby_cms_owner() {
-		return this.callby_cms_owner;
+	public void setCode(String code) {
+		this.code = code;
 	}
 
-	public void setCallby_cms_owner(String callby_cms_owner) {
-		this.callby_cms_owner = callby_cms_owner;
-		if(callby_cms_owner != null){
-			putQueryParameter("callby_cms_owner", callby_cms_owner);
-		}
+	public String getMessage() {
+		return this.message;
 	}
 
-	public String getId() {
-		return this.id;
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
-	public void setId(String id) {
-		this.id = id;
-		if(id != null){
-			putQueryParameter("Id", id);
-		}
+	public String getData() {
+		return this.data;
+	}
+
+	public void setData(String data) {
+		this.data = data;
 	}
 
 	@Override
-	public Class<DeleteAlarmResponse> getResponseClass() {
-		return DeleteAlarmResponse.class;
+	public PutEventResponse getInstance(UnmarshallerContext context) {
+		return	PutEventResponseUnmarshaller.unmarshall(this, context);
 	}
-
 }

@@ -38,7 +38,9 @@ public class NodeUninstallRequest extends RpcAcsRequest<NodeUninstallResponse> {
 
 	public void setInstanceId(String instanceId) {
 		this.instanceId = instanceId;
-		putQueryParameter("InstanceId", instanceId);
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
+		}
 	}
 
 	@Override

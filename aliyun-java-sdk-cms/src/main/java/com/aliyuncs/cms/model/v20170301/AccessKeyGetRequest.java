@@ -38,7 +38,9 @@ public class AccessKeyGetRequest extends RpcAcsRequest<AccessKeyGetResponse> {
 
 	public void setUserId(Long userId) {
 		this.userId = userId;
-		putQueryParameter("UserId", userId);
+		if(userId != null){
+			putQueryParameter("UserId", userId.toString());
+		}
 	}
 
 	@Override
