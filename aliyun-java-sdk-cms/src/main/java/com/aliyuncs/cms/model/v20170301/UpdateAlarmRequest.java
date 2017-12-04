@@ -34,6 +34,8 @@ public class UpdateAlarmRequest extends RpcAcsRequest<UpdateAlarmResponse> {
 
 	private Integer period;
 
+	private String webhook;
+
 	private String contactGroups;
 
 	private Integer endTime;
@@ -75,6 +77,17 @@ public class UpdateAlarmRequest extends RpcAcsRequest<UpdateAlarmResponse> {
 		this.period = period;
 		if(period != null){
 			putQueryParameter("Period", period.toString());
+		}
+	}
+
+	public String getWebhook() {
+		return this.webhook;
+	}
+
+	public void setWebhook(String webhook) {
+		this.webhook = webhook;
+		if(webhook != null){
+			putQueryParameter("Webhook", webhook);
 		}
 	}
 

@@ -42,9 +42,7 @@ public class NodeProcessDeleteRequest extends RpcAcsRequest<NodeProcessDeleteRes
 
 	public void setInstanceId(String instanceId) {
 		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
-		}
+		putQueryParameter("InstanceId", instanceId);
 	}
 
 	public String getName() {
@@ -53,9 +51,7 @@ public class NodeProcessDeleteRequest extends RpcAcsRequest<NodeProcessDeleteRes
 
 	public void setName(String name) {
 		this.name = name;
-		if(name != null){
-			putQueryParameter("Name", name);
-		}
+		putQueryParameter("Name", name);
 	}
 
 	public String getId() {
@@ -64,9 +60,7 @@ public class NodeProcessDeleteRequest extends RpcAcsRequest<NodeProcessDeleteRes
 
 	public void setId(String id) {
 		this.id = id;
-		if(id != null){
-			putQueryParameter("Id", id);
-		}
+		putQueryParameter("Id", id);
 	}
 
 	@Override

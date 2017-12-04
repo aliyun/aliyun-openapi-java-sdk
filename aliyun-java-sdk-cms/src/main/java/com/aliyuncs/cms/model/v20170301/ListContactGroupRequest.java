@@ -32,30 +32,17 @@ public class ListContactGroupRequest extends RpcAcsRequest<ListContactGroupRespo
 
 	private String callby_cms_owner;
 
-	private Integer pageSize;
-
 	private Integer pageNumber;
 
-	public String getCallby_cms_owner() {
+	private Integer pageSize;
+
+	public String getcallby_cms_owner() {
 		return this.callby_cms_owner;
 	}
 
-	public void setCallby_cms_owner(String callby_cms_owner) {
+	public void setcallby_cms_owner(String callby_cms_owner) {
 		this.callby_cms_owner = callby_cms_owner;
-		if(callby_cms_owner != null){
-			putQueryParameter("callby_cms_owner", callby_cms_owner);
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
+		putQueryParameter("callby_cms_owner", callby_cms_owner);
 	}
 
 	public Integer getPageNumber() {
@@ -64,9 +51,16 @@ public class ListContactGroupRequest extends RpcAcsRequest<ListContactGroupRespo
 
 	public void setPageNumber(Integer pageNumber) {
 		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
-		}
+		putQueryParameter("PageNumber", pageNumber);
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		putQueryParameter("PageSize", pageSize);
 	}
 
 	@Override

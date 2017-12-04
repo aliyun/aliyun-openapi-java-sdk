@@ -1,3 +1,6 @@
+2017-12-04 Version: 5.0.6
+1, CreateAlarm,UpdateAlarm add "webhook" parameter,ListAlarm add "webhook" return value. 
+
 2017-12-04 Version: 5.0.5
 1, Add webhook
 2, Include CreateAlarm,UpdateAlarm,ListAlarm

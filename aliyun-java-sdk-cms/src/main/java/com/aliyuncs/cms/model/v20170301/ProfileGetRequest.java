@@ -38,9 +38,7 @@ public class ProfileGetRequest extends RpcAcsRequest<ProfileGetResponse> {
 
 	public void setUserId(Long userId) {
 		this.userId = userId;
-		if(userId != null){
-			putQueryParameter("UserId", userId.toString());
-		}
+		putQueryParameter("UserId", userId);
 	}
 
 	@Override

@@ -30,11 +30,20 @@ public class NodeInstallRequest extends RpcAcsRequest<NodeInstallResponse> {
 		super("Cms", "2017-03-01", "NodeInstall", "cms");
 	}
 
+	private String userId;
+
 	private String instanceId;
 
 	private Boolean force;
 
-	private String userId;
+	public String getUserId() {
+		return this.userId;
+	}
+
+	public void setUserId(String userId) {
+		this.userId = userId;
+		putQueryParameter("UserId", userId);
+	}
 
 	public String getInstanceId() {
 		return this.instanceId;
@@ -42,9 +51,7 @@ public class NodeInstallRequest extends RpcAcsRequest<NodeInstallResponse> {
 
 	public void setInstanceId(String instanceId) {
 		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
-		}
+		putQueryParameter("InstanceId", instanceId);
 	}
 
 	public Boolean getForce() {
@@ -53,20 +60,7 @@ public class NodeInstallRequest extends RpcAcsRequest<NodeInstallResponse> {
 
 	public void setForce(Boolean force) {
 		this.force = force;
-		if(force != null){
-			putQueryParameter("Force", force.toString());
-		}
-	}
-
-	public String getUserId() {
-		return this.userId;
-	}
-
-	public void setUserId(String userId) {
-		this.userId = userId;
-		if(userId != null){
-			putQueryParameter("UserId", userId);
-		}
+		putQueryParameter("Force", force);
 	}
 
 	@Override

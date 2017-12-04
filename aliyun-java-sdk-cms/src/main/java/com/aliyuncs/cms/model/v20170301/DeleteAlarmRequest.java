@@ -34,15 +34,13 @@ public class DeleteAlarmRequest extends RpcAcsRequest<DeleteAlarmResponse> {
 
 	private String id;
 
-	public String getCallby_cms_owner() {
+	public String getcallby_cms_owner() {
 		return this.callby_cms_owner;
 	}
 
-	public void setCallby_cms_owner(String callby_cms_owner) {
+	public void setcallby_cms_owner(String callby_cms_owner) {
 		this.callby_cms_owner = callby_cms_owner;
-		if(callby_cms_owner != null){
-			putQueryParameter("callby_cms_owner", callby_cms_owner);
-		}
+		putQueryParameter("callby_cms_owner", callby_cms_owner);
 	}
 
 	public String getId() {
@@ -51,9 +49,7 @@ public class DeleteAlarmRequest extends RpcAcsRequest<DeleteAlarmResponse> {
 
 	public void setId(String id) {
 		this.id = id;
-		if(id != null){
-			putQueryParameter("Id", id);
-		}
+		putQueryParameter("Id", id);
 	}
 
 	@Override

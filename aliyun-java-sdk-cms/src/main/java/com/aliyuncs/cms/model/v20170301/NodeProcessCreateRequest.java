@@ -32,9 +32,9 @@ public class NodeProcessCreateRequest extends RpcAcsRequest<NodeProcessCreateRes
 
 	private String instanceId;
 
-	private String processName;
-
 	private String name;
+
+	private String processName;
 
 	private String processUser;
 
@@ -46,20 +46,7 @@ public class NodeProcessCreateRequest extends RpcAcsRequest<NodeProcessCreateRes
 
 	public void setInstanceId(String instanceId) {
 		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
-		}
-	}
-
-	public String getProcessName() {
-		return this.processName;
-	}
-
-	public void setProcessName(String processName) {
-		this.processName = processName;
-		if(processName != null){
-			putQueryParameter("ProcessName", processName);
-		}
+		putQueryParameter("InstanceId", instanceId);
 	}
 
 	public String getName() {
@@ -68,9 +55,16 @@ public class NodeProcessCreateRequest extends RpcAcsRequest<NodeProcessCreateRes
 
 	public void setName(String name) {
 		this.name = name;
-		if(name != null){
-			putQueryParameter("Name", name);
-		}
+		putQueryParameter("Name", name);
+	}
+
+	public String getProcessName() {
+		return this.processName;
+	}
+
+	public void setProcessName(String processName) {
+		this.processName = processName;
+		putQueryParameter("ProcessName", processName);
 	}
 
 	public String getProcessUser() {
@@ -79,9 +73,7 @@ public class NodeProcessCreateRequest extends RpcAcsRequest<NodeProcessCreateRes
 
 	public void setProcessUser(String processUser) {
 		this.processUser = processUser;
-		if(processUser != null){
-			putQueryParameter("ProcessUser", processUser);
-		}
+		putQueryParameter("ProcessUser", processUser);
 	}
 
 	public String getCommand() {
@@ -90,9 +82,7 @@ public class NodeProcessCreateRequest extends RpcAcsRequest<NodeProcessCreateRes
 
 	public void setCommand(String command) {
 		this.command = command;
-		if(command != null){
-			putQueryParameter("Command", command);
-		}
+		putQueryParameter("Command", command);
 	}
 
 	@Override

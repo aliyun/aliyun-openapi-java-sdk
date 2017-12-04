@@ -57,6 +57,7 @@ public class ListAlarmResponseUnmarshaller {
 			alarm.setEnable(context.booleanValue("ListAlarmResponse.AlarmList["+ i +"].Enable"));
 			alarm.setState(context.stringValue("ListAlarmResponse.AlarmList["+ i +"].State"));
 			alarm.setContactGroups(context.stringValue("ListAlarmResponse.AlarmList["+ i +"].ContactGroups"));
+			alarm.setWebhook(context.stringValue("ListAlarmResponse.AlarmList["+ i +"].Webhook"));
 
 			alarmList.add(alarm);
 		}

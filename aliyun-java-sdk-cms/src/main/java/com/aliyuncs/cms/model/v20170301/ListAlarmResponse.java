@@ -135,6 +135,8 @@ public class ListAlarmResponse extends AcsResponse {
 
 		private String contactGroups;
 
+		private String webhook;
+
 		public String getId() {
 			return this.id;
 		}
@@ -269,6 +271,14 @@ public class ListAlarmResponse extends AcsResponse {
 
 		public void setContactGroups(String contactGroups) {
 			this.contactGroups = contactGroups;
+		}
+
+		public String getWebhook() {
+			return this.webhook;
+		}
+
+		public void setWebhook(String webhook) {
+			this.webhook = webhook;
 		}
 	}
 

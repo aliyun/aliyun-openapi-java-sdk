@@ -30,21 +30,30 @@ public class NodeListRequest extends RpcAcsRequest<NodeListResponse> {
 		super("Cms", "2017-03-01", "NodeList", "cms");
 	}
 
+	private Long userId;
+
 	private String hostName;
-
-	private String instanceIds;
-
-	private Integer pageSize;
 
 	private String keyWord;
 
-	private Long userId;
+	private String instanceIds;
 
 	private String serialNumbers;
 
 	private Integer pageNumber;
 
+	private Integer pageSize;
+
 	private String status;
+
+	public Long getUserId() {
+		return this.userId;
+	}
+
+	public void setUserId(Long userId) {
+		this.userId = userId;
+		putQueryParameter("UserId", userId);
+	}
 
 	public String getHostName() {
 		return this.hostName;
@@ -52,31 +61,7 @@ public class NodeListRequest extends RpcAcsRequest<NodeListResponse> {
 
 	public void setHostName(String hostName) {
 		this.hostName = hostName;
-		if(hostName != null){
-			putQueryParameter("HostName", hostName);
-		}
-	}
-
-	public String getInstanceIds() {
-		return this.instanceIds;
-	}
-
-	public void setInstanceIds(String instanceIds) {
-		this.instanceIds = instanceIds;
-		if(instanceIds != null){
-			putQueryParameter("InstanceIds", instanceIds);
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
+		putQueryParameter("HostName", hostName);
 	}
 
 	public String getKeyWord() {
@@ -85,20 +70,16 @@ public class NodeListRequest extends RpcAcsRequest<NodeListResponse> {
 
 	public void setKeyWord(String keyWord) {
 		this.keyWord = keyWord;
-		if(keyWord != null){
-			putQueryParameter("KeyWord", keyWord);
-		}
+		putQueryParameter("KeyWord", keyWord);
 	}
 
-	public Long getUserId() {
-		return this.userId;
+	public String getInstanceIds() {
+		return this.instanceIds;
 	}
 
-	public void setUserId(Long userId) {
-		this.userId = userId;
-		if(userId != null){
-			putQueryParameter("UserId", userId.toString());
-		}
+	public void setInstanceIds(String instanceIds) {
+		this.instanceIds = instanceIds;
+		putQueryParameter("InstanceIds", instanceIds);
 	}
 
 	public String getSerialNumbers() {
@@ -107,9 +88,7 @@ public class NodeListRequest extends RpcAcsRequest<NodeListResponse> {
 
 	public void setSerialNumbers(String serialNumbers) {
 		this.serialNumbers = serialNumbers;
-		if(serialNumbers != null){
-			putQueryParameter("SerialNumbers", serialNumbers);
-		}
+		putQueryParameter("SerialNumbers", serialNumbers);
 	}
 
 	public Integer getPageNumber() {
@@ -118,9 +97,16 @@ public class NodeListRequest extends RpcAcsRequest<NodeListResponse> {
 
 	public void setPageNumber(Integer pageNumber) {
 		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
-		}
+		putQueryParameter("PageNumber", pageNumber);
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		putQueryParameter("PageSize", pageSize);
 	}
 
 	public String getStatus() {
@@ -129,9 +115,7 @@ public class NodeListRequest extends RpcAcsRequest<NodeListResponse> {
 
 	public void setStatus(String status) {
 		this.status = status;
-		if(status != null){
-			putQueryParameter("Status", status);
-		}
+		putQueryParameter("Status", status);
 	}
 
 	@Override
