@@ -24,25 +24,21 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class DescribeInstanceRamRoleRequest extends RpcAcsRequest<DescribeInstanceRamRoleResponse> {
+public class DescribeInstancePhysicalAttributeRequest extends RpcAcsRequest<DescribeInstancePhysicalAttributeResponse> {
 	
-	public DescribeInstanceRamRoleRequest() {
-		super("Ecs", "2014-05-26", "DescribeInstanceRamRole", "ecs");
+	public DescribeInstancePhysicalAttributeRequest() {
+		super("Ecs", "2014-05-26", "DescribeInstancePhysicalAttribute", "ecs");
 	}
 
 	private Long resourceOwnerId;
 
+	private String instanceId;
+
 	private String resourceOwnerAccount;
 
-	private String instanceIds;
-
-	private Integer pageSize;
-
-	private String ramRoleName;
+	private String ownerAccount;
 
 	private Long ownerId;
-
-	private Integer pageNumber;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -52,6 +48,17 @@ public class DescribeInstanceRamRoleRequest extends RpcAcsRequest<DescribeInstan
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 
@@ -66,36 +73,14 @@ public class DescribeInstanceRamRoleRequest extends RpcAcsRequest<DescribeInstan
 		}
 	}
 
-	public String getInstanceIds() {
-		return this.instanceIds;
+	public String getOwnerAccount() {
+		return this.ownerAccount;
 	}
 
-	public void setInstanceIds(String instanceIds) {
-		this.instanceIds = instanceIds;
-		if(instanceIds != null){
-			putQueryParameter("InstanceIds", instanceIds);
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
-	public String getRamRoleName() {
-		return this.ramRoleName;
-	}
-
-	public void setRamRoleName(String ramRoleName) {
-		this.ramRoleName = ramRoleName;
-		if(ramRoleName != null){
-			putQueryParameter("RamRoleName", ramRoleName);
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
 		}
 	}
 
@@ -110,20 +95,9 @@ public class DescribeInstanceRamRoleRequest extends RpcAcsRequest<DescribeInstan
 		}
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
-		}
-	}
-
 	@Override
-	public Class<DescribeInstanceRamRoleResponse> getResponseClass() {
-		return DescribeInstanceRamRoleResponse.class;
+	public Class<DescribeInstancePhysicalAttributeResponse> getResponseClass() {
+		return DescribeInstancePhysicalAttributeResponse.class;
 	}
 
 }

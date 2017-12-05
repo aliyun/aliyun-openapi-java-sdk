@@ -24,25 +24,38 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class DescribeInstanceRamRoleRequest extends RpcAcsRequest<DescribeInstanceRamRoleResponse> {
+public class DescribeIpRangesRequest extends RpcAcsRequest<DescribeIpRangesResponse> {
 	
-	public DescribeInstanceRamRoleRequest() {
-		super("Ecs", "2014-05-26", "DescribeInstanceRamRole", "ecs");
+	public DescribeIpRangesRequest() {
+		super("Ecs", "2014-05-26", "DescribeIpRanges", "ecs");
 	}
+
+	private String nicType;
 
 	private Long resourceOwnerId;
 
 	private String resourceOwnerAccount;
 
-	private String instanceIds;
+	private String ownerAccount;
 
 	private Integer pageSize;
 
-	private String ramRoleName;
+	private String clusterId;
 
 	private Long ownerId;
 
 	private Integer pageNumber;
+
+	public String getNicType() {
+		return this.nicType;
+	}
+
+	public void setNicType(String nicType) {
+		this.nicType = nicType;
+		if(nicType != null){
+			putQueryParameter("NicType", nicType);
+		}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -66,14 +79,14 @@ public class DescribeInstanceRamRoleRequest extends RpcAcsRequest<DescribeInstan
 		}
 	}
 
-	public String getInstanceIds() {
-		return this.instanceIds;
+	public String getOwnerAccount() {
+		return this.ownerAccount;
 	}
 
-	public void setInstanceIds(String instanceIds) {
-		this.instanceIds = instanceIds;
-		if(instanceIds != null){
-			putQueryParameter("InstanceIds", instanceIds);
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
 		}
 	}
 
@@ -88,14 +101,14 @@ public class DescribeInstanceRamRoleRequest extends RpcAcsRequest<DescribeInstan
 		}
 	}
 
-	public String getRamRoleName() {
-		return this.ramRoleName;
+	public String getClusterId() {
+		return this.clusterId;
 	}
 
-	public void setRamRoleName(String ramRoleName) {
-		this.ramRoleName = ramRoleName;
-		if(ramRoleName != null){
-			putQueryParameter("RamRoleName", ramRoleName);
+	public void setClusterId(String clusterId) {
+		this.clusterId = clusterId;
+		if(clusterId != null){
+			putQueryParameter("ClusterId", clusterId);
 		}
 	}
 
@@ -122,8 +135,8 @@ public class DescribeInstanceRamRoleRequest extends RpcAcsRequest<DescribeInstan
 	}
 
 	@Override
-	public Class<DescribeInstanceRamRoleResponse> getResponseClass() {
-		return DescribeInstanceRamRoleResponse.class;
+	public Class<DescribeIpRangesResponse> getResponseClass() {
+		return DescribeIpRangesResponse.class;
 	}
 
 }

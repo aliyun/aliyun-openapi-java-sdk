@@ -1,3 +1,6 @@
+2017-12-05 Version: 4.4.3
+1, RenewInstance add parameter PeriodUnit
+
 2017-12-01 Version: 4.4.2
 1, DescribeSpotPriceHistory Interface support new parameters OsType.
 2, DescribeSpotPriceHistory interface to modify the ZoneId into non-mandatory parameters.
