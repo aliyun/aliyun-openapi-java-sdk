@@ -54,6 +54,12 @@ public class GetResultResponseUnmarshaller {
 			resultInfo.setReviewStatus(context.integerValue("GetResultResponse.data["+ i +"].reviewStatus"));
 			resultInfo.setHitId(context.stringValue("GetResultResponse.data["+ i +"].hitId"));
 
+			List<String> handScoreIdList = new ArrayList<String>();
+			for (int j = 0; j < context.lengthValue("GetResultResponse.data["+ i +"].handScoreIdList.Length"); j++) {
+				handScoreIdList.add(context.stringValue("GetResultResponse.data["+ i +"].handScoreIdList["+ j +"]"));
+			}
+			resultInfo.setHandScoreIdList(handScoreIdList);
+
 			List<RuleHitInfo> rules = new ArrayList<RuleHitInfo>();
 			for (int j = 0; j < context.lengthValue("GetResultResponse.data["+ i +"].rules.Length"); j++) {
 				RuleHitInfo ruleHitInfo = new RuleHitInfo();

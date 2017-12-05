@@ -101,6 +101,8 @@ public class GetResultResponse extends AcsResponse {
 
 		private List<RuleHitInfo> rules;
 
+		private List<String> handScoreIdList;
+
 		public String getTid() {
 			return this.tid;
 		}
@@ -139,6 +141,14 @@ public class GetResultResponse extends AcsResponse {
 
 		public void setRules(List<RuleHitInfo> rules) {
 			this.rules = rules;
+		}
+
+		public List<String> getHandScoreIdList() {
+			return this.handScoreIdList;
+		}
+
+		public void setHandScoreIdList(List<String> handScoreIdList) {
+			this.handScoreIdList = handScoreIdList;
 		}
 
 		public static class RuleHitInfo {

@@ -1,3 +1,6 @@
+2017-12-05 Version: 2.6.1
+1, add handScoreList interface
+
 2017-11-30 Version: 2.6.0
 1, 2.6.0 Version add by new interface 
 
