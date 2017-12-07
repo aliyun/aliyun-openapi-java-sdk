@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class CreateOrderRequest extends RpcAcsRequest<CreateOrderResponse> {
 	
 	public CreateOrderRequest() {
-		super("vod", "2017-03-21", "CreateOrder", "vod");
+		super("vod", "2017-03-21", "CreateOrder");
 	}
 
 	private String resourceOwnerId;

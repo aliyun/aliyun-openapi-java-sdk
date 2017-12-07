@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class GetVideoPlayInfoRequest extends RpcAcsRequest<GetVideoPlayInfoResponse> {
 	
 	public GetVideoPlayInfoRequest() {
-		super("vod", "2017-03-21", "GetVideoPlayInfo", "vod");
+		super("vod", "2017-03-21", "GetVideoPlayInfo");
 	}
 
 	private String signVersion;

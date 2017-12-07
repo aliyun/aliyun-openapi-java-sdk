@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class RefreshUploadVideoRequest extends RpcAcsRequest<RefreshUploadVideoResponse> {
 	
 	public RefreshUploadVideoRequest() {
-		super("vod", "2017-03-21", "RefreshUploadVideo", "vod");
+		super("vod", "2017-03-21", "RefreshUploadVideo");
 	}
 
 	private Long resourceOwnerId;

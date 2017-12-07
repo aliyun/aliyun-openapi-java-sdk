@@ -1,3 +1,6 @@
+2017-12-07 Version: 2.8.0
+1, Added the ListAIJob API, a common api to query multiple types of AI job
+
 2017-11-29 Version: 2.7.0
 1, 获取视频播放地址接口GetPlayInfo, 增加按清晰度筛选媒体流地址。
 2, 刷新视频上传凭证接口RefreshUploadVideo, 返回数据增加UploadAddress。

@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class SubmitAIVideoCensorJobRequest extends RpcAcsRequest<SubmitAIVideoCensorJobResponse> {
 	
 	public SubmitAIVideoCensorJobRequest() {
-		super("vod", "2017-03-21", "SubmitAIVideoCensorJob", "vod");
+		super("vod", "2017-03-21", "SubmitAIVideoCensorJob");
 	}
 
 	private String userData;

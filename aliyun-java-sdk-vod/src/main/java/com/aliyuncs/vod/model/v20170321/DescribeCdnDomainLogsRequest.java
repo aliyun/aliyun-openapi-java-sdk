@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeCdnDomainLogsRequest extends RpcAcsRequest<DescribeCdnDomainLogsResponse> {
 	
 	public DescribeCdnDomainLogsRequest() {
-		super("vod", "2017-03-21", "DescribeCdnDomainLogs", "vod");
+		super("vod", "2017-03-21", "DescribeCdnDomainLogs");
 	}
 
 	private String resourceOwnerId;

@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class GetMessageCallbackRequest extends RpcAcsRequest<GetMessageCallbackResponse> {
 	
 	public GetMessageCallbackRequest() {
-		super("vod", "2017-03-21", "GetMessageCallback", "vod");
+		super("vod", "2017-03-21", "GetMessageCallback");
 	}
 
 	private String resourceOwnerId;

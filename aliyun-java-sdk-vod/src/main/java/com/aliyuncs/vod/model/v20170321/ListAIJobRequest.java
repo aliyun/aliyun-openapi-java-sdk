@@ -24,33 +24,21 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class DescribeDomainFlowDataRequest extends RpcAcsRequest<DescribeDomainFlowDataResponse> {
+public class ListAIJobRequest extends RpcAcsRequest<ListAIJobResponse> {
 	
-	public DescribeDomainFlowDataRequest() {
-		super("vod", "2017-03-21", "DescribeDomainFlowData");
+	public ListAIJobRequest() {
+		super("vod", "2017-03-21", "ListAIJob");
 	}
 
 	private String resourceOwnerId;
 
 	private String resourceOwnerAccount;
 
-	private String timeMerge;
-
 	private String ownerAccount;
 
-	private String domainName;
-
-	private String endTime;
-
-	private String locationNameEn;
-
-	private String startTime;
-
-	private String ispNameEn;
+	private String jobIds;
 
 	private String ownerId;
-
-	private String interval;
 
 	public String getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -74,17 +62,6 @@ public class DescribeDomainFlowDataRequest extends RpcAcsRequest<DescribeDomainF
 		}
 	}
 
-	public String getTimeMerge() {
-		return this.timeMerge;
-	}
-
-	public void setTimeMerge(String timeMerge) {
-		this.timeMerge = timeMerge;
-		if(timeMerge != null){
-			putQueryParameter("TimeMerge", timeMerge);
-		}
-	}
-
 	public String getOwnerAccount() {
 		return this.ownerAccount;
 	}
@@ -96,58 +73,14 @@ public class DescribeDomainFlowDataRequest extends RpcAcsRequest<DescribeDomainF
 		}
 	}
 
-	public String getDomainName() {
-		return this.domainName;
+	public String getJobIds() {
+		return this.jobIds;
 	}
 
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
-		if(domainName != null){
-			putQueryParameter("DomainName", domainName);
-		}
-	}
-
-	public String getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
-		if(endTime != null){
-			putQueryParameter("EndTime", endTime);
-		}
-	}
-
-	public String getLocationNameEn() {
-		return this.locationNameEn;
-	}
-
-	public void setLocationNameEn(String locationNameEn) {
-		this.locationNameEn = locationNameEn;
-		if(locationNameEn != null){
-			putQueryParameter("LocationNameEn", locationNameEn);
-		}
-	}
-
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("StartTime", startTime);
-		}
-	}
-
-	public String getIspNameEn() {
-		return this.ispNameEn;
-	}
-
-	public void setIspNameEn(String ispNameEn) {
-		this.ispNameEn = ispNameEn;
-		if(ispNameEn != null){
-			putQueryParameter("IspNameEn", ispNameEn);
+	public void setJobIds(String jobIds) {
+		this.jobIds = jobIds;
+		if(jobIds != null){
+			putQueryParameter("JobIds", jobIds);
 		}
 	}
 
@@ -162,20 +95,9 @@ public class DescribeDomainFlowDataRequest extends RpcAcsRequest<DescribeDomainF
 		}
 	}
 
-	public String getInterval() {
-		return this.interval;
-	}
-
-	public void setInterval(String interval) {
-		this.interval = interval;
-		if(interval != null){
-			putQueryParameter("Interval", interval);
-		}
-	}
-
 	@Override
-	public Class<DescribeDomainFlowDataResponse> getResponseClass() {
-		return DescribeDomainFlowDataResponse.class;
+	public Class<ListAIJobResponse> getResponseClass() {
+		return ListAIJobResponse.class;
 	}
 
 }

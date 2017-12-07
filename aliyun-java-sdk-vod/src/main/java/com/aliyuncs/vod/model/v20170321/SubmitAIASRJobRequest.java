@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class SubmitAIASRJobRequest extends RpcAcsRequest<SubmitAIASRJobResponse> {
 	
 	public SubmitAIASRJobRequest() {
-		super("vod", "2017-03-21", "SubmitAIASRJob", "vod");
+		super("vod", "2017-03-21", "SubmitAIASRJob");
 	}
 
 	private String userData;

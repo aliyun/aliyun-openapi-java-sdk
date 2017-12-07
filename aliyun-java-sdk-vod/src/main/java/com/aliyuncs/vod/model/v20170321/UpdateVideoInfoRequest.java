@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class UpdateVideoInfoRequest extends RpcAcsRequest<UpdateVideoInfoResponse> {
 	
 	public UpdateVideoInfoRequest() {
-		super("vod", "2017-03-21", "UpdateVideoInfo", "vod");
+		super("vod", "2017-03-21", "UpdateVideoInfo");
 	}
 
 	private String coverURL;
