@@ -17,6 +17,9 @@ public class VPC {
     @JsonProperty("CidrBlock")
     private String cidrBlock;
 
+    @JsonProperty("VpcId")
+    private String vpcId;
+
     @JsonProperty("ExpressConnectSpec")
     private String expressConnectSpec;
 
@@ -34,6 +37,16 @@ public class VPC {
 
     @JsonProperty("OppositeInterfaceId")
     private String oppositeInterfaceId;
+
+    @JsonIgnore
+    public String getVpcId() {
+        return vpcId;
+    }
+
+    @JsonIgnore
+    public void setVpcId(String vpcId) {
+        this.vpcId = vpcId;
+    }
 
 
     @JsonIgnore

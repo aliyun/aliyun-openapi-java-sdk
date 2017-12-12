@@ -3,6 +3,13 @@
     "Dependencies": {},
     "Tasks": {"task_1": {
       "AutoCluster": {
+        "Configs": {
+          "Networks": {
+            "VPC": {
+              "VpcId": "vpc-xxx"
+            }
+          }
+        },
         "ECSImageId": "",
         "ImageId": "",
         "InstanceType": "",

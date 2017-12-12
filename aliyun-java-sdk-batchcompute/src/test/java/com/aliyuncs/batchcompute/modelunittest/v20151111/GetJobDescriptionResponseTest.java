@@ -64,6 +64,8 @@ public class GetJobDescriptionResponseTest extends TestCase {
         assertEquals(topic.getEvents().size(), 16);
         assertEquals(topic.getEvents().get(0), "OnJobWaiting");
 
+        assertEquals(desc.getDag().getTasks().get("task_1").getAutoCluster().getConfigs().getNetworks().getVpc().getVpcId(),"vpc-xxx");
+
     }
     public void testGetInstanceMoreFields() throws ServerException {
 

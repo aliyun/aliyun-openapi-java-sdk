@@ -130,7 +130,7 @@ public class UpdateSpotClusterTest extends TestCase {
         int delStatusCode = deleteClusterResponse.getStatusCode();
         System.out.println("--------delete status code:"+ delStatusCode);
 
-        assertTrue( 202 == delStatusCode);
+        assertTrue( 200 == delStatusCode);
     }
 
 

@@ -20,7 +20,7 @@ Batchcompute SDK For Java
 <dependency>
     <groupId>com.aliyun</groupId>
     <artifactId>aliyun-java-sdk-batchcompute</artifactId>
-    <version>5.0.0</version>
+    <version>5.1.0</version>
 </dependency>
 ```
 
@@ -106,6 +106,11 @@ try {
 | 2. | updateApp(AppDescription appDescription) | 修改App |
 
 ### 5. release note
+
+5.1.0
+```
+1. 支持VpcId
+```
 
 5.0.0
 ```
