@@ -1,3 +1,7 @@
+2017-12-14 Version: 5.0.8
+1, Fixed DescribeAlarmHistory subuser access probelm
+2, Add both api, PutSystemEvent and PutCustomMetric
+
 2017-12-04 Version: 5.0.6
 1, CreateAlarm,UpdateAlarm add "webhook" parameter,ListAlarm add "webhook" return value. 
 
