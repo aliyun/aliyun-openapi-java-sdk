@@ -75,6 +75,8 @@ public class DescribeInstanceAttributeResponse extends AcsResponse {
 
 	private String expiredTime;
 
+	private String stoppedMode;
+
 	private List<LockReason> operationLocks;
 
 	private List<String> securityGroupIds;
@@ -269,6 +271,14 @@ public class DescribeInstanceAttributeResponse extends AcsResponse {
 
 	public void setExpiredTime(String expiredTime) {
 		this.expiredTime = expiredTime;
+	}
+
+	public String getStoppedMode() {
+		return this.stoppedMode;
+	}
+
+	public void setStoppedMode(String stoppedMode) {
+		this.stoppedMode = stoppedMode;
 	}
 
 	public List<LockReason> getOperationLocks() {

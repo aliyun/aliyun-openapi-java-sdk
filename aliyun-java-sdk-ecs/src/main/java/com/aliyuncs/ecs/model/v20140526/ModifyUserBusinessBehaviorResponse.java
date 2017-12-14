@@ -18,20 +18,17 @@
  */
 package com.aliyuncs.ecs.model.v20140526;
 
-import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.ecs.transform.v20140526.DescribeRegionsResponseUnmarshaller;
+import com.aliyuncs.ecs.transform.v20140526.ModifyUserBusinessBehaviorResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DescribeRegionsResponse extends AcsResponse {
+public class ModifyUserBusinessBehaviorResponse extends AcsResponse {
 
 	private String requestId;
-
-	private List<Region> regions;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -41,49 +38,8 @@ public class DescribeRegionsResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public List<Region> getRegions() {
-		return this.regions;
-	}
-
-	public void setRegions(List<Region> regions) {
-		this.regions = regions;
-	}
-
-	public static class Region {
-
-		private String regionId;
-
-		private String localName;
-
-		private String status;
-
-		public String getRegionId() {
-			return this.regionId;
-		}
-
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
-		public String getLocalName() {
-			return this.localName;
-		}
-
-		public void setLocalName(String localName) {
-			this.localName = localName;
-		}
-
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
-		}
-	}
-
 	@Override
-	public DescribeRegionsResponse getInstance(UnmarshallerContext context) {
-		return	DescribeRegionsResponseUnmarshaller.unmarshall(this, context);
+	public ModifyUserBusinessBehaviorResponse getInstance(UnmarshallerContext context) {
+		return	ModifyUserBusinessBehaviorResponseUnmarshaller.unmarshall(this, context);
 	}
 }

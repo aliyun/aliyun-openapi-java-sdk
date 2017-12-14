@@ -47,6 +47,7 @@ public class DescribeAutoSnapshotPolicyExResponseUnmarshaller {
 			autoSnapshotPolicy.setDiskNums(context.integerValue("DescribeAutoSnapshotPolicyExResponse.AutoSnapshotPolicies["+ i +"].DiskNums"));
 			autoSnapshotPolicy.setVolumeNums(context.integerValue("DescribeAutoSnapshotPolicyExResponse.AutoSnapshotPolicies["+ i +"].VolumeNums"));
 			autoSnapshotPolicy.setCreationTime(context.stringValue("DescribeAutoSnapshotPolicyExResponse.AutoSnapshotPolicies["+ i +"].CreationTime"));
+			autoSnapshotPolicy.setStatus(context.stringValue("DescribeAutoSnapshotPolicyExResponse.AutoSnapshotPolicies["+ i +"].Status"));
 
 			autoSnapshotPolicies.add(autoSnapshotPolicy);
 		}

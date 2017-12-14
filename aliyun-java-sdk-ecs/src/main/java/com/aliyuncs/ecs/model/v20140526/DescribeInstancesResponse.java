@@ -157,6 +157,8 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		private String hpcClusterId;
 
+		private String stoppedMode;
+
 		private List<NetworkInterface> networkInterfaces;
 
 		private List<LockReason> operationLocks;
@@ -477,6 +479,14 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		public void setHpcClusterId(String hpcClusterId) {
 			this.hpcClusterId = hpcClusterId;
+		}
+
+		public String getStoppedMode() {
+			return this.stoppedMode;
+		}
+
+		public void setStoppedMode(String stoppedMode) {
+			this.stoppedMode = stoppedMode;
 		}
 
 		public List<NetworkInterface> getNetworkInterfaces() {

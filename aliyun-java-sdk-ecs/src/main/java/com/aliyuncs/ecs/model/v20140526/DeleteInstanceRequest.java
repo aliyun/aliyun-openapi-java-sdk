@@ -38,6 +38,8 @@ public class DeleteInstanceRequest extends RpcAcsRequest<DeleteInstanceResponse>
 
 	private String ownerAccount;
 
+	private Boolean terminateSubscription;
+
 	private Boolean force;
 
 	private Long ownerId;
@@ -83,6 +85,17 @@ public class DeleteInstanceRequest extends RpcAcsRequest<DeleteInstanceResponse>
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public Boolean getTerminateSubscription() {
+		return this.terminateSubscription;
+	}
+
+	public void setTerminateSubscription(Boolean terminateSubscription) {
+		this.terminateSubscription = terminateSubscription;
+		if(terminateSubscription != null){
+			putQueryParameter("TerminateSubscription", terminateSubscription.toString());
 		}
 	}
 

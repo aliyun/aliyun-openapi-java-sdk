@@ -24,10 +24,10 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class DescribeRegionsRequest extends RpcAcsRequest<DescribeRegionsResponse> {
+public class DescribeUserBusinessBehaviorRequest extends RpcAcsRequest<DescribeUserBusinessBehaviorResponse> {
 	
-	public DescribeRegionsRequest() {
-		super("Ecs", "2014-05-26", "DescribeRegions", "ecs");
+	public DescribeUserBusinessBehaviorRequest() {
+		super("Ecs", "2014-05-26", "DescribeUserBusinessBehavior", "ecs");
 	}
 
 	private Long resourceOwnerId;
@@ -38,9 +38,7 @@ public class DescribeRegionsRequest extends RpcAcsRequest<DescribeRegionsRespons
 
 	private Long ownerId;
 
-	private String instanceChargeType;
-
-	private String resourceType;
+	private String statusKey;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -86,31 +84,20 @@ public class DescribeRegionsRequest extends RpcAcsRequest<DescribeRegionsRespons
 		}
 	}
 
-	public String getInstanceChargeType() {
-		return this.instanceChargeType;
+	public String getStatusKey() {
+		return this.statusKey;
 	}
 
-	public void setInstanceChargeType(String instanceChargeType) {
-		this.instanceChargeType = instanceChargeType;
-		if(instanceChargeType != null){
-			putQueryParameter("InstanceChargeType", instanceChargeType);
-		}
-	}
-
-	public String getResourceType() {
-		return this.resourceType;
-	}
-
-	public void setResourceType(String resourceType) {
-		this.resourceType = resourceType;
-		if(resourceType != null){
-			putQueryParameter("ResourceType", resourceType);
+	public void setStatusKey(String statusKey) {
+		this.statusKey = statusKey;
+		if(statusKey != null){
+			putQueryParameter("statusKey", statusKey);
 		}
 	}
 
 	@Override
-	public Class<DescribeRegionsResponse> getResponseClass() {
-		return DescribeRegionsResponse.class;
+	public Class<DescribeUserBusinessBehaviorResponse> getResponseClass() {
+		return DescribeUserBusinessBehaviorResponse.class;
 	}
 
 }

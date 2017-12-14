@@ -40,6 +40,8 @@ public class StopInstanceRequest extends RpcAcsRequest<StopInstanceResponse> {
 
 	private String ownerAccount;
 
+	private String stoppedMode;
+
 	private Long ownerId;
 
 	private Boolean forceStop;
@@ -96,6 +98,17 @@ public class StopInstanceRequest extends RpcAcsRequest<StopInstanceResponse> {
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public String getStoppedMode() {
+		return this.stoppedMode;
+	}
+
+	public void setStoppedMode(String stoppedMode) {
+		this.stoppedMode = stoppedMode;
+		if(stoppedMode != null){
+			putQueryParameter("StoppedMode", stoppedMode);
 		}
 	}
 

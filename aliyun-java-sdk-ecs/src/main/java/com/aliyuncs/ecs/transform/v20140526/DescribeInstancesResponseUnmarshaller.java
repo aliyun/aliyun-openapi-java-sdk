@@ -81,6 +81,7 @@ public class DescribeInstancesResponseUnmarshaller {
 			instance.setKeyPairName(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].KeyPairName"));
 			instance.setRecyclable(context.booleanValue("DescribeInstancesResponse.Instances["+ i +"].Recyclable"));
 			instance.setHpcClusterId(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].HpcClusterId"));
+			instance.setStoppedMode(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].StoppedMode"));
 
 			List<String> securityGroupIds = new ArrayList<String>();
 			for (int j = 0; j < context.lengthValue("DescribeInstancesResponse.Instances["+ i +"].SecurityGroupIds.Length"); j++) {

@@ -99,6 +99,8 @@ public class DescribeAutoSnapshotPolicyExResponse extends AcsResponse {
 
 		private String creationTime;
 
+		private String status;
+
 		public String getAutoSnapshotPolicyId() {
 			return this.autoSnapshotPolicyId;
 		}
@@ -169,6 +171,14 @@ public class DescribeAutoSnapshotPolicyExResponse extends AcsResponse {
 
 		public void setCreationTime(String creationTime) {
 			this.creationTime = creationTime;
+		}
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
 		}
 	}
 

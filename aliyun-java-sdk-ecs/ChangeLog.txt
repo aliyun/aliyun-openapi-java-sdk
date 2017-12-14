@@ -1,3 +1,6 @@
+2017-12-14 Version: 4.5.0
+1, Add three interfaces  DescribeInstancesFullStatus DescribeInstanceHistoryEvents DescribeDisksFullStatus
+
 2017-12-05 Version: 4.4.3
 1, RenewInstance add parameter PeriodUnit
 
