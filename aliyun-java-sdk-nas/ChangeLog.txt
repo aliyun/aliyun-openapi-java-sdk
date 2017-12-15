@@ -1,3 +1,7 @@
+2017-12-15 Version: 3.1.1
+1, This release is for Aliyun Location service.
+2, User no longer needs to addEndpoint in the initialization code.
+
 2017-11-20 Version: 3.1.0
 1, Nas Open API正式发布版本
 2, 支持Nas文件系统的增删改查等17个管控接口
