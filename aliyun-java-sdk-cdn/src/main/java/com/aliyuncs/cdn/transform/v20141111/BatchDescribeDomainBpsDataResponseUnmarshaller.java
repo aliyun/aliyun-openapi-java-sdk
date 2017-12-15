@@ -33,6 +33,7 @@ public class BatchDescribeDomainBpsDataResponseUnmarshaller {
 		batchDescribeDomainBpsDataResponse.setRequestId(context.stringValue("BatchDescribeDomainBpsDataResponse.RequestId"));
 		batchDescribeDomainBpsDataResponse.setPageNumber(context.integerValue("BatchDescribeDomainBpsDataResponse.PageNumber"));
 		batchDescribeDomainBpsDataResponse.setPageSize(context.integerValue("BatchDescribeDomainBpsDataResponse.PageSize"));
+		batchDescribeDomainBpsDataResponse.setTotalCount(context.integerValue("BatchDescribeDomainBpsDataResponse.TotalCount"));
 
 		List<DataModule> bpsDatas = new ArrayList<DataModule>();
 		for (int i = 0; i < context.lengthValue("BatchDescribeDomainBpsDataResponse.BpsDatas.Length"); i++) {

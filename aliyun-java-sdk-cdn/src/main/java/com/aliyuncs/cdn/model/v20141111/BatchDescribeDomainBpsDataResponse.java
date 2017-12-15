@@ -35,6 +35,8 @@ public class BatchDescribeDomainBpsDataResponse extends AcsResponse {
 
 	private Integer pageSize;
 
+	private Integer totalCount;
+
 	private List<DataModule> bpsDatas;
 
 	public String getRequestId() {
@@ -59,6 +61,14 @@ public class BatchDescribeDomainBpsDataResponse extends AcsResponse {
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
+	}
+
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public List<DataModule> getBpsDatas() {

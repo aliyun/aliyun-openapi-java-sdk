@@ -1,3 +1,7 @@
+2017-12-15 Version: 2.6.0
+1, Add scdn API.
+2, Update SetReqAuthConfig.
+
 2017-11-01 Version: 2.5.1
 1, 更新PurgeObjectCaches和PreloadObjectCaches接口，修复域名校验。
 2, 更新DescribeCdnDomainLogs接口，修复错误码。

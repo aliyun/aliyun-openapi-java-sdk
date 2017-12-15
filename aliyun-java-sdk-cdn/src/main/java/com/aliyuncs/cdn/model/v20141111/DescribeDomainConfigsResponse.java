@@ -103,6 +103,8 @@ public class DescribeDomainConfigsResponse extends AcsResponse {
 
 		private AliBusinessConfig aliBusinessConfig;
 
+		private IpAllowListConfig ipAllowListConfig;
+
 		public List<CacheExpiredConfig> getCacheExpiredConfigs() {
 			return this.cacheExpiredConfigs;
 		}
@@ -309,6 +311,14 @@ public class DescribeDomainConfigsResponse extends AcsResponse {
 
 		public void setAliBusinessConfig(AliBusinessConfig aliBusinessConfig) {
 			this.aliBusinessConfig = aliBusinessConfig;
+		}
+
+		public IpAllowListConfig getIpAllowListConfig() {
+			return this.ipAllowListConfig;
+		}
+
+		public void setIpAllowListConfig(IpAllowListConfig ipAllowListConfig) {
+			this.ipAllowListConfig = ipAllowListConfig;
 		}
 
 		public static class CacheExpiredConfig {
@@ -1438,6 +1448,49 @@ public class DescribeDomainConfigsResponse extends AcsResponse {
 
 			public void setConfigId(String configId) {
 				this.configId = configId;
+			}
+
+			public String getStatus() {
+				return this.status;
+			}
+
+			public void setStatus(String status) {
+				this.status = status;
+			}
+		}
+
+		public static class IpAllowListConfig {
+
+			private String configId;
+
+			private String ipList;
+
+			private String ipAclXfwd;
+
+			private String status;
+
+			public String getConfigId() {
+				return this.configId;
+			}
+
+			public void setConfigId(String configId) {
+				this.configId = configId;
+			}
+
+			public String getIpList() {
+				return this.ipList;
+			}
+
+			public void setIpList(String ipList) {
+				this.ipList = ipList;
+			}
+
+			public String getIpAclXfwd() {
+				return this.ipAclXfwd;
+			}
+
+			public void setIpAclXfwd(String ipAclXfwd) {
+				this.ipAclXfwd = ipAclXfwd;
 			}
 
 			public String getStatus() {

@@ -34,6 +34,7 @@ import com.aliyuncs.cdn.model.v20141111.DescribeDomainConfigsResponse.DomainConf
 import com.aliyuncs.cdn.model.v20141111.DescribeDomainConfigsResponse.DomainConfigs.HttpHeaderConfig;
 import com.aliyuncs.cdn.model.v20141111.DescribeDomainConfigsResponse.DomainConfigs.HttpsOptionConfig;
 import com.aliyuncs.cdn.model.v20141111.DescribeDomainConfigsResponse.DomainConfigs.IgnoreQueryStringConfig;
+import com.aliyuncs.cdn.model.v20141111.DescribeDomainConfigsResponse.DomainConfigs.IpAllowListConfig;
 import com.aliyuncs.cdn.model.v20141111.DescribeDomainConfigsResponse.DomainConfigs.L2OssKeyConfig;
 import com.aliyuncs.cdn.model.v20141111.DescribeDomainConfigsResponse.DomainConfigs.MacServiceConfig;
 import com.aliyuncs.cdn.model.v20141111.DescribeDomainConfigsResponse.DomainConfigs.NotifyUrlConfig;
@@ -196,6 +197,13 @@ public class DescribeDomainConfigsResponseUnmarshaller {
 		aliBusinessConfig.setConfigId(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.AliBusinessConfig.ConfigId"));
 		aliBusinessConfig.setStatus(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.AliBusinessConfig.Status"));
 		domainConfigs.setAliBusinessConfig(aliBusinessConfig);
+
+		IpAllowListConfig ipAllowListConfig = new IpAllowListConfig();
+		ipAllowListConfig.setConfigId(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.IpAllowListConfig.ConfigId"));
+		ipAllowListConfig.setIpList(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.IpAllowListConfig.IpList"));
+		ipAllowListConfig.setIpAclXfwd(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.IpAllowListConfig.IpAclXfwd"));
+		ipAllowListConfig.setStatus(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.IpAllowListConfig.Status"));
+		domainConfigs.setIpAllowListConfig(ipAllowListConfig);
 
 		List<CacheExpiredConfig> cacheExpiredConfigs = new ArrayList<CacheExpiredConfig>();
 		for (int i = 0; i < context.lengthValue("DescribeDomainConfigsResponse.DomainConfigs.CacheExpiredConfigs.Length"); i++) {
