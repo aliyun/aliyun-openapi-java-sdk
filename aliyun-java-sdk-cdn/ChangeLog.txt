@@ -1,4 +1,7 @@
 2017-12-15 Version: 2.6.1
+1, Update SetReqAuthConfig.
+
+2017-12-15 Version: 2.6.1
 1, Update version.
 
 2017-12-15 Version: 2.6.0
