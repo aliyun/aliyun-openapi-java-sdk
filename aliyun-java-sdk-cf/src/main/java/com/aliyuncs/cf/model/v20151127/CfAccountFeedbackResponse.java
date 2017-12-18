@@ -19,24 +19,24 @@
 package com.aliyuncs.cf.model.v20151127;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.cf.transform.v20151127.QuerySimpleResponseUnmarshaller;
+import com.aliyuncs.cf.transform.v20151127.CfAccountFeedbackResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class QuerySimpleResponse extends AcsResponse {
+public class CfAccountFeedbackResponse extends AcsResponse {
 
 	private String requestId;
 
 	private Boolean success;
 
-	private String msg;
+	private String message;
 
-	private Integer code;
+	private String detailMessage;
 
-	private CollinadataQueryResult collinadataQueryResult;
+	private AccountFeedbackResponse accountFeedbackResponse;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -54,65 +54,55 @@ public class QuerySimpleResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public String getMsg() {
-		return this.msg;
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setMsg(String msg) {
-		this.msg = msg;
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
-	public Integer getCode() {
-		return this.code;
+	public String getDetailMessage() {
+		return this.detailMessage;
 	}
 
-	public void setCode(Integer code) {
-		this.code = code;
+	public void setDetailMessage(String detailMessage) {
+		this.detailMessage = detailMessage;
 	}
 
-	public CollinadataQueryResult getCollinadataQueryResult() {
-		return this.collinadataQueryResult;
+	public AccountFeedbackResponse getAccountFeedbackResponse() {
+		return this.accountFeedbackResponse;
 	}
 
-	public void setCollinadataQueryResult(CollinadataQueryResult collinadataQueryResult) {
-		this.collinadataQueryResult = collinadataQueryResult;
+	public void setAccountFeedbackResponse(AccountFeedbackResponse accountFeedbackResponse) {
+		this.accountFeedbackResponse = accountFeedbackResponse;
 	}
 
-	public static class CollinadataQueryResult {
+	public static class AccountFeedbackResponse {
 
-		private String score;
+		private Integer errorCode;
 
-		private String detail;
+		private String errorMessage;
 
-		private String risklevel;
-
-		public String getScore() {
-			return this.score;
+		public Integer getErrorCode() {
+			return this.errorCode;
 		}
 
-		public void setScore(String score) {
-			this.score = score;
+		public void setErrorCode(Integer errorCode) {
+			this.errorCode = errorCode;
 		}
 
-		public String getDetail() {
-			return this.detail;
+		public String getErrorMessage() {
+			return this.errorMessage;
 		}
 
-		public void setDetail(String detail) {
-			this.detail = detail;
-		}
-
-		public String getRisklevel() {
-			return this.risklevel;
-		}
-
-		public void setRisklevel(String risklevel) {
-			this.risklevel = risklevel;
+		public void setErrorMessage(String errorMessage) {
+			this.errorMessage = errorMessage;
 		}
 	}
 
 	@Override
-	public QuerySimpleResponse getInstance(UnmarshallerContext context) {
-		return	QuerySimpleResponseUnmarshaller.unmarshall(this, context);
+	public CfAccountFeedbackResponse getInstance(UnmarshallerContext context) {
+		return	CfAccountFeedbackResponseUnmarshaller.unmarshall(this, context);
 	}
 }

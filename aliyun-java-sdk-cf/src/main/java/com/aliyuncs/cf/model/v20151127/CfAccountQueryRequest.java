@@ -25,41 +25,34 @@ import com.aliyuncs.http.ProtocolType;
  * @author auto create
  * @version 
  */
-public class QuerySimpleRequest extends RpcAcsRequest<QuerySimpleResponse> {
+public class CfAccountQueryRequest extends RpcAcsRequest<CfAccountQueryResponse> {
 	
-	public QuerySimpleRequest() {
-		super("CF", "2015-11-27", "QuerySimple");
+	public CfAccountQueryRequest() {
+		super("CF", "2015-11-27", "CfAccountQuery");
 		setProtocol(ProtocolType.HTTPS);
 	}
 
-	private String serialNo;
-
-	private String tokenId;
+	private String appKey;
 
 	private String sceneId;
 
-	private Long timeStamp;
+	private String ip;
+
+	private String phoneNumber;
 
 	private String trans;
 
-	private String appKey;
+	private String cFTimestamp;
 
-	public String getSerialNo() {
-		return this.serialNo;
+	private String appToken;
+
+	public String getAppKey() {
+		return this.appKey;
 	}
 
-	public void setSerialNo(String serialNo) {
-		this.serialNo = serialNo;
-		putQueryParameter("SerialNo", serialNo);
-	}
-
-	public String getTokenId() {
-		return this.tokenId;
-	}
-
-	public void setTokenId(String tokenId) {
-		this.tokenId = tokenId;
-		putQueryParameter("TokenId", tokenId);
+	public void setAppKey(String appKey) {
+		this.appKey = appKey;
+		putQueryParameter("AppKey", appKey);
 	}
 
 	public String getSceneId() {
@@ -71,13 +64,22 @@ public class QuerySimpleRequest extends RpcAcsRequest<QuerySimpleResponse> {
 		putQueryParameter("SceneId", sceneId);
 	}
 
-	public Long getTimeStamp() {
-		return this.timeStamp;
+	public String getIp() {
+		return this.ip;
 	}
 
-	public void setTimeStamp(Long timeStamp) {
-		this.timeStamp = timeStamp;
-		putQueryParameter("TimeStamp", timeStamp);
+	public void setIp(String ip) {
+		this.ip = ip;
+		putQueryParameter("Ip", ip);
+	}
+
+	public String getPhoneNumber() {
+		return this.phoneNumber;
+	}
+
+	public void setPhoneNumber(String phoneNumber) {
+		this.phoneNumber = phoneNumber;
+		putQueryParameter("PhoneNumber", phoneNumber);
 	}
 
 	public String getTrans() {
@@ -89,18 +91,27 @@ public class QuerySimpleRequest extends RpcAcsRequest<QuerySimpleResponse> {
 		putQueryParameter("Trans", trans);
 	}
 
-	public String getAppKey() {
-		return this.appKey;
+	public String getCFTimestamp() {
+		return this.cFTimestamp;
 	}
 
-	public void setAppKey(String appKey) {
-		this.appKey = appKey;
-		putQueryParameter("AppKey", appKey);
+	public void setCFTimestamp(String cFTimestamp) {
+		this.cFTimestamp = cFTimestamp;
+		putQueryParameter("CFTimestamp", cFTimestamp);
+	}
+
+	public String getAppToken() {
+		return this.appToken;
+	}
+
+	public void setAppToken(String appToken) {
+		this.appToken = appToken;
+		putQueryParameter("AppToken", appToken);
 	}
 
 	@Override
-	public Class<QuerySimpleResponse> getResponseClass() {
-		return QuerySimpleResponse.class;
+	public Class<CfAccountQueryResponse> getResponseClass() {
+		return CfAccountQueryResponse.class;
 	}
 
 }

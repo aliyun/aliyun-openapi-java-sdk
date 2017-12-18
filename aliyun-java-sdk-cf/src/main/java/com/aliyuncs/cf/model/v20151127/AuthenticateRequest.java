@@ -19,6 +19,7 @@
 package com.aliyuncs.cf.model.v20151127;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.ProtocolType;
 
 /**
  * @author auto create
@@ -28,9 +29,10 @@ public class AuthenticateRequest extends RpcAcsRequest<AuthenticateResponse> {
 	
 	public AuthenticateRequest() {
 		super("CF", "2015-11-27", "Authenticate");
+		setProtocol(ProtocolType.HTTPS);
 	}
 
-	private String accessKey;
+	private String serno;
 
 	private String token;
 
@@ -42,13 +44,15 @@ public class AuthenticateRequest extends RpcAcsRequest<AuthenticateResponse> {
 
 	private String appKey;
 
-	public String getAccessKey() {
-		return this.accessKey;
+	private String sceneId;
+
+	public String getSerno() {
+		return this.serno;
 	}
 
-	public void setAccessKey(String accessKey) {
-		this.accessKey = accessKey;
-		putQueryParameter("AccessKey", accessKey);
+	public void setSerno(String serno) {
+		this.serno = serno;
+		putQueryParameter("Serno", serno);
 	}
 
 	public String getToken() {
@@ -94,6 +98,15 @@ public class AuthenticateRequest extends RpcAcsRequest<AuthenticateResponse> {
 	public void setAppKey(String appKey) {
 		this.appKey = appKey;
 		putQueryParameter("AppKey", appKey);
+	}
+
+	public String getSceneId() {
+		return this.sceneId;
+	}
+
+	public void setSceneId(String sceneId) {
+		this.sceneId = sceneId;
+		putQueryParameter("SceneId", sceneId);
 	}
 
 	@Override

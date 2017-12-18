@@ -16,10 +16,10 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package com.aliyuncs.cf.model.v20151127;
+package com.aliyuncs.cf.model.v20151208;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.cf.transform.v20151127.AuthenticateResponseUnmarshaller;
+import com.aliyuncs.cf.transform.v20151208.AuthenticateResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
