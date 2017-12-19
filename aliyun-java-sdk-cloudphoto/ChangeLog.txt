@@ -1,3 +1,8 @@
+2017-12-19 Version: 1.1.7
+1, InactivatePhotos support customer inactiveTime
+2, support customer tags
+3, ListPhotoTags、ListTags add param lang
+
 2017-11-23 Version: 1.1.6
 1, 新增EditPhotoStore、ToggleFeatures
 2, 自动清理回收站

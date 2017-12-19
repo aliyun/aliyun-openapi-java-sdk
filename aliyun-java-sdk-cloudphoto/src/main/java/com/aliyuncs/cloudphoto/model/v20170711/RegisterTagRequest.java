@@ -25,29 +25,20 @@ import com.aliyuncs.http.ProtocolType;
  * @author auto create
  * @version 
  */
-public class ListTagsRequest extends RpcAcsRequest<ListTagsResponse> {
+public class RegisterTagRequest extends RpcAcsRequest<RegisterTagResponse> {
 	
-	public ListTagsRequest() {
-		super("CloudPhoto", "2017-07-11", "ListTags", "cloudphoto");
+	public RegisterTagRequest() {
+		super("CloudPhoto", "2017-07-11", "RegisterTag", "cloudphoto");
 		setProtocol(ProtocolType.HTTPS);
 	}
 
-	private String libraryId;
-
 	private String storeName;
 
+	private String text;
+
+	private String tagKey;
+
 	private String lang;
-
-	public String getLibraryId() {
-		return this.libraryId;
-	}
-
-	public void setLibraryId(String libraryId) {
-		this.libraryId = libraryId;
-		if(libraryId != null){
-			putQueryParameter("LibraryId", libraryId);
-		}
-	}
 
 	public String getStoreName() {
 		return this.storeName;
@@ -57,6 +48,28 @@ public class ListTagsRequest extends RpcAcsRequest<ListTagsResponse> {
 		this.storeName = storeName;
 		if(storeName != null){
 			putQueryParameter("StoreName", storeName);
+		}
+	}
+
+	public String getText() {
+		return this.text;
+	}
+
+	public void setText(String text) {
+		this.text = text;
+		if(text != null){
+			putQueryParameter("Text", text);
+		}
+	}
+
+	public String getTagKey() {
+		return this.tagKey;
+	}
+
+	public void setTagKey(String tagKey) {
+		this.tagKey = tagKey;
+		if(tagKey != null){
+			putQueryParameter("TagKey", tagKey);
 		}
 	}
 
@@ -72,8 +85,8 @@ public class ListTagsRequest extends RpcAcsRequest<ListTagsResponse> {
 	}
 
 	@Override
-	public Class<ListTagsResponse> getResponseClass() {
-		return ListTagsResponse.class;
+	public Class<RegisterTagResponse> getResponseClass() {
+		return RegisterTagResponse.class;
 	}
 
 }

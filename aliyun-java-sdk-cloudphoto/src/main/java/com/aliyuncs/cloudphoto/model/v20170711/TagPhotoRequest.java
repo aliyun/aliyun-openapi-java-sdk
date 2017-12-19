@@ -26,20 +26,22 @@ import com.aliyuncs.http.ProtocolType;
  * @author auto create
  * @version 
  */
-public class InactivatePhotosRequest extends RpcAcsRequest<InactivatePhotosResponse> {
+public class TagPhotoRequest extends RpcAcsRequest<TagPhotoResponse> {
 	
-	public InactivatePhotosRequest() {
-		super("CloudPhoto", "2017-07-11", "InactivatePhotos", "cloudphoto");
+	public TagPhotoRequest() {
+		super("CloudPhoto", "2017-07-11", "TagPhoto", "cloudphoto");
 		setProtocol(ProtocolType.HTTPS);
 	}
 
 	private String libraryId;
 
-	private List<Long> photoIds;
+	private List<Float> confidences;
 
 	private String storeName;
 
-	private Long inactiveTime;
+	private Long photoId;
+
+	private List<String> tagKeys;
 
 	public String getLibraryId() {
 		return this.libraryId;
@@ -52,15 +54,15 @@ public class InactivatePhotosRequest extends RpcAcsRequest<InactivatePhotosRespo
 		}
 	}
 
-	public List<Long> getPhotoIds() {
-		return this.photoIds;
+	public List<Float> getConfidences() {
+		return this.confidences;
 	}
 
-	public void setPhotoIds(List<Long> photoIds) {
-		this.photoIds = photoIds;	
-		if (photoIds != null) {
-			for (int i = 0; i < photoIds.size(); i++) {
-				putQueryParameter("PhotoId." + (i + 1) , photoIds.get(i));
+	public void setConfidences(List<Float> confidences) {
+		this.confidences = confidences;	
+		if (confidences != null) {
+			for (int i = 0; i < confidences.size(); i++) {
+				putQueryParameter("Confidence." + (i + 1) , confidences.get(i));
 			}
 		}	
 	}
@@ -76,20 +78,33 @@ public class InactivatePhotosRequest extends RpcAcsRequest<InactivatePhotosRespo
 		}
 	}
 
-	public Long getInactiveTime() {
-		return this.inactiveTime;
+	public Long getPhotoId() {
+		return this.photoId;
 	}
 
-	public void setInactiveTime(Long inactiveTime) {
-		this.inactiveTime = inactiveTime;
-		if(inactiveTime != null){
-			putQueryParameter("InactiveTime", inactiveTime.toString());
+	public void setPhotoId(Long photoId) {
+		this.photoId = photoId;
+		if(photoId != null){
+			putQueryParameter("PhotoId", photoId.toString());
 		}
 	}
 
+	public List<String> getTagKeys() {
+		return this.tagKeys;
+	}
+
+	public void setTagKeys(List<String> tagKeys) {
+		this.tagKeys = tagKeys;	
+		if (tagKeys != null) {
+			for (int i = 0; i < tagKeys.size(); i++) {
+				putQueryParameter("TagKey." + (i + 1) , tagKeys.get(i));
+			}
+		}	
+	}
+
 	@Override
-	public Class<InactivatePhotosResponse> getResponseClass() {
-		return InactivatePhotosResponse.class;
+	public Class<TagPhotoResponse> getResponseClass() {
+		return TagPhotoResponse.class;
 	}
 
 }

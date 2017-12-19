@@ -26,44 +26,16 @@ import com.aliyuncs.http.ProtocolType;
  * @author auto create
  * @version 
  */
-public class InactivatePhotosRequest extends RpcAcsRequest<InactivatePhotosResponse> {
+public class ListRegisteredTagsRequest extends RpcAcsRequest<ListRegisteredTagsResponse> {
 	
-	public InactivatePhotosRequest() {
-		super("CloudPhoto", "2017-07-11", "InactivatePhotos", "cloudphoto");
+	public ListRegisteredTagsRequest() {
+		super("CloudPhoto", "2017-07-11", "ListRegisteredTags", "cloudphoto");
 		setProtocol(ProtocolType.HTTPS);
 	}
 
-	private String libraryId;
-
-	private List<Long> photoIds;
-
 	private String storeName;
 
-	private Long inactiveTime;
-
-	public String getLibraryId() {
-		return this.libraryId;
-	}
-
-	public void setLibraryId(String libraryId) {
-		this.libraryId = libraryId;
-		if(libraryId != null){
-			putQueryParameter("LibraryId", libraryId);
-		}
-	}
-
-	public List<Long> getPhotoIds() {
-		return this.photoIds;
-	}
-
-	public void setPhotoIds(List<Long> photoIds) {
-		this.photoIds = photoIds;	
-		if (photoIds != null) {
-			for (int i = 0; i < photoIds.size(); i++) {
-				putQueryParameter("PhotoId." + (i + 1) , photoIds.get(i));
-			}
-		}	
-	}
+	private List<String> langs;
 
 	public String getStoreName() {
 		return this.storeName;
@@ -76,20 +48,22 @@ public class InactivatePhotosRequest extends RpcAcsRequest<InactivatePhotosRespo
 		}
 	}
 
-	public Long getInactiveTime() {
-		return this.inactiveTime;
+	public List<String> getLangs() {
+		return this.langs;
 	}
 
-	public void setInactiveTime(Long inactiveTime) {
-		this.inactiveTime = inactiveTime;
-		if(inactiveTime != null){
-			putQueryParameter("InactiveTime", inactiveTime.toString());
-		}
+	public void setLangs(List<String> langs) {
+		this.langs = langs;	
+		if (langs != null) {
+			for (int i = 0; i < langs.size(); i++) {
+				putQueryParameter("Lang." + (i + 1) , langs.get(i));
+			}
+		}	
 	}
 
 	@Override
-	public Class<InactivatePhotosResponse> getResponseClass() {
-		return InactivatePhotosResponse.class;
+	public Class<ListRegisteredTagsResponse> getResponseClass() {
+		return ListRegisteredTagsResponse.class;
 	}
 
 }

@@ -38,6 +38,8 @@ public class ListPhotoTagsRequest extends RpcAcsRequest<ListPhotoTagsResponse> {
 
 	private String storeName;
 
+	private String lang;
+
 	public String getLibraryId() {
 		return this.libraryId;
 	}
@@ -68,6 +70,17 @@ public class ListPhotoTagsRequest extends RpcAcsRequest<ListPhotoTagsResponse> {
 		this.storeName = storeName;
 		if(storeName != null){
 			putQueryParameter("StoreName", storeName);
+		}
+	}
+
+	public String getLang() {
+		return this.lang;
+	}
+
+	public void setLang(String lang) {
+		this.lang = lang;
+		if(lang != null){
+			putQueryParameter("Lang", lang);
 		}
 	}
 
