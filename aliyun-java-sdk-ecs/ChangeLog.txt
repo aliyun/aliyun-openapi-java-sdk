@@ -1,3 +1,6 @@
+2017-12-19 Version: 4.6.0
+1, Offline volume API .
+
 2017-12-14 Version: 4.5.0
 1, Add three interfaces  DescribeInstancesFullStatus DescribeInstanceHistoryEvents DescribeDisksFullStatus
 
