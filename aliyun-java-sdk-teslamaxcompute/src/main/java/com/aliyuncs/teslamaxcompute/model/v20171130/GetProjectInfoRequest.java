@@ -36,6 +36,8 @@ public class GetProjectInfoRequest extends RpcAcsRequest<GetProjectInfoResponse>
 
 	private Integer pageNum;
 
+	private String status;
+
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
@@ -66,6 +68,17 @@ public class GetProjectInfoRequest extends RpcAcsRequest<GetProjectInfoResponse>
 		this.pageNum = pageNum;
 		if(pageNum != null){
 			putQueryParameter("PageNum", pageNum.toString());
+		}
+	}
+
+	public String getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+		if(status != null){
+			putQueryParameter("Status", status);
 		}
 	}
 

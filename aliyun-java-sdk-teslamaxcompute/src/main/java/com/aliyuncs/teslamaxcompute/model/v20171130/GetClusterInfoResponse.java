@@ -33,7 +33,7 @@ public class GetClusterInfoResponse extends AcsResponse {
 
 	private String message;
 
-	private String request_id;
+	private String requestId;
 
 	private Data data;
 
@@ -53,12 +53,12 @@ public class GetClusterInfoResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getRequest_id() {
-		return this.request_id;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setRequest_id(String request_id) {
-		this.request_id = request_id;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Data getData() {
@@ -95,13 +95,13 @@ public class GetClusterInfoResponse extends AcsResponse {
 
 			private String project;
 
-			private String instanceid;
+			private String instanceId;
 
 			private String status;
 
 			private String userAccount;
 
-			private String chName;
+			private String nickName;
 
 			private String cluster;
 
@@ -115,12 +115,12 @@ public class GetClusterInfoResponse extends AcsResponse {
 				this.project = project;
 			}
 
-			public String getInstanceid() {
-				return this.instanceid;
+			public String getInstanceId() {
+				return this.instanceId;
 			}
 
-			public void setInstanceid(String instanceid) {
-				this.instanceid = instanceid;
+			public void setInstanceId(String instanceId) {
+				this.instanceId = instanceId;
 			}
 
 			public String getStatus() {
@@ -139,12 +139,12 @@ public class GetClusterInfoResponse extends AcsResponse {
 				this.userAccount = userAccount;
 			}
 
-			public String getChName() {
-				return this.chName;
+			public String getNickName() {
+				return this.nickName;
 			}
 
-			public void setChName(String chName) {
-				this.chName = chName;
+			public void setNickName(String nickName) {
+				this.nickName = nickName;
 			}
 
 			public String getCluster() {

@@ -31,23 +31,23 @@ public class GetClusterInfoResponseUnmarshaller {
 
 	public static GetClusterInfoResponse unmarshall(GetClusterInfoResponse getClusterInfoResponse, UnmarshallerContext context) {
 		
-		getClusterInfoResponse.setCode(context.integerValue("GetClusterInfoResponse.code"));
-		getClusterInfoResponse.setMessage(context.stringValue("GetClusterInfoResponse.message"));
-		getClusterInfoResponse.setRequest_id(context.stringValue("GetClusterInfoResponse.request_id"));
+		getClusterInfoResponse.setRequestId(context.stringValue("GetClusterInfoResponse.RequestId"));
+		getClusterInfoResponse.setCode(context.integerValue("GetClusterInfoResponse.Code"));
+		getClusterInfoResponse.setMessage(context.stringValue("GetClusterInfoResponse.Message"));
 
 		Data data = new Data();
-		data.setTotal(context.integerValue("GetClusterInfoResponse.data.total"));
+		data.setTotal(context.integerValue("GetClusterInfoResponse.Data.Total"));
 
 		List<Instance> detail = new ArrayList<Instance>();
-		for (int i = 0; i < context.lengthValue("GetClusterInfoResponse.data.detail.Length"); i++) {
+		for (int i = 0; i < context.lengthValue("GetClusterInfoResponse.Data.Detail.Length"); i++) {
 			Instance instance = new Instance();
-			instance.setProject(context.stringValue("GetClusterInfoResponse.data.detail["+ i +"].project"));
-			instance.setInstanceid(context.stringValue("GetClusterInfoResponse.data.detail["+ i +"].instanceid"));
-			instance.setStatus(context.stringValue("GetClusterInfoResponse.data.detail["+ i +"].status"));
-			instance.setUserAccount(context.stringValue("GetClusterInfoResponse.data.detail["+ i +"].userAccount"));
-			instance.setChName(context.stringValue("GetClusterInfoResponse.data.detail["+ i +"].chName"));
-			instance.setCluster(context.stringValue("GetClusterInfoResponse.data.detail["+ i +"].cluster"));
-			instance.setRunTime(context.stringValue("GetClusterInfoResponse.data.detail["+ i +"].runTime"));
+			instance.setProject(context.stringValue("GetClusterInfoResponse.Data.Detail["+ i +"].Project"));
+			instance.setInstanceId(context.stringValue("GetClusterInfoResponse.Data.Detail["+ i +"].InstanceId"));
+			instance.setStatus(context.stringValue("GetClusterInfoResponse.Data.Detail["+ i +"].Status"));
+			instance.setUserAccount(context.stringValue("GetClusterInfoResponse.Data.Detail["+ i +"].UserAccount"));
+			instance.setNickName(context.stringValue("GetClusterInfoResponse.Data.Detail["+ i +"].NickName"));
+			instance.setCluster(context.stringValue("GetClusterInfoResponse.Data.Detail["+ i +"].Cluster"));
+			instance.setRunTime(context.stringValue("GetClusterInfoResponse.Data.Detail["+ i +"].RunTime"));
 
 			detail.add(instance);
 		}

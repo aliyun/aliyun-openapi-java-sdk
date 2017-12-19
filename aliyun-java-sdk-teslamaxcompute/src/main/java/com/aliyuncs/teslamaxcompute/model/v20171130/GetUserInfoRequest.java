@@ -36,6 +36,8 @@ public class GetUserInfoRequest extends RpcAcsRequest<GetUserInfoResponse> {
 
 	private String user;
 
+	private String status;
+
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
@@ -66,6 +68,17 @@ public class GetUserInfoRequest extends RpcAcsRequest<GetUserInfoResponse> {
 		this.user = user;
 		if(user != null){
 			putQueryParameter("User", user);
+		}
+	}
+
+	public String getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+		if(status != null){
+			putQueryParameter("Status", status);
 		}
 	}
 

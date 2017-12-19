@@ -31,23 +31,23 @@ public class GetQuotaInfoResponseUnmarshaller {
 
 	public static GetQuotaInfoResponse unmarshall(GetQuotaInfoResponse getQuotaInfoResponse, UnmarshallerContext context) {
 		
-		getQuotaInfoResponse.setCode(context.integerValue("GetQuotaInfoResponse.code"));
-		getQuotaInfoResponse.setMessage(context.stringValue("GetQuotaInfoResponse.message"));
-		getQuotaInfoResponse.setRequest_id(context.stringValue("GetQuotaInfoResponse.request_id"));
+		getQuotaInfoResponse.setRequestId(context.stringValue("GetQuotaInfoResponse.RequestId"));
+		getQuotaInfoResponse.setCode(context.integerValue("GetQuotaInfoResponse.Code"));
+		getQuotaInfoResponse.setMessage(context.stringValue("GetQuotaInfoResponse.Message"));
 
 		Data data = new Data();
-		data.setTotal(context.integerValue("GetQuotaInfoResponse.data.total"));
+		data.setTotal(context.integerValue("GetQuotaInfoResponse.Data.Total"));
 
 		List<Instance> detail = new ArrayList<Instance>();
-		for (int i = 0; i < context.lengthValue("GetQuotaInfoResponse.data.detail.Length"); i++) {
+		for (int i = 0; i < context.lengthValue("GetQuotaInfoResponse.Data.Detail.Length"); i++) {
 			Instance instance = new Instance();
-			instance.setProject(context.stringValue("GetQuotaInfoResponse.data.detail["+ i +"].project"));
-			instance.setInstanceid(context.stringValue("GetQuotaInfoResponse.data.detail["+ i +"].instanceid"));
-			instance.setStatus(context.stringValue("GetQuotaInfoResponse.data.detail["+ i +"].status"));
-			instance.setUserAccount(context.stringValue("GetQuotaInfoResponse.data.detail["+ i +"].userAccount"));
-			instance.setChName(context.stringValue("GetQuotaInfoResponse.data.detail["+ i +"].chName"));
-			instance.setCluster(context.stringValue("GetQuotaInfoResponse.data.detail["+ i +"].cluster"));
-			instance.setRunTime(context.stringValue("GetQuotaInfoResponse.data.detail["+ i +"].runTime"));
+			instance.setProject(context.stringValue("GetQuotaInfoResponse.Data.Detail["+ i +"].Project"));
+			instance.setInstanceId(context.stringValue("GetQuotaInfoResponse.Data.Detail["+ i +"].InstanceId"));
+			instance.setStatus(context.stringValue("GetQuotaInfoResponse.Data.Detail["+ i +"].Status"));
+			instance.setUserAccount(context.stringValue("GetQuotaInfoResponse.Data.Detail["+ i +"].UserAccount"));
+			instance.setNickName(context.stringValue("GetQuotaInfoResponse.Data.Detail["+ i +"].NickName"));
+			instance.setCluster(context.stringValue("GetQuotaInfoResponse.Data.Detail["+ i +"].Cluster"));
+			instance.setRunTime(context.stringValue("GetQuotaInfoResponse.Data.Detail["+ i +"].RunTime"));
 
 			detail.add(instance);
 		}

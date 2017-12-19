@@ -1,3 +1,6 @@
+2017-12-19 Version: 1.0.1
+1, Add Status argument, support get cluster info by status.
+
 2017-12-11 Version: 1.0.0
 1, Add GetClusterInfo interface，Support fetch cluster instance info by cluster name.
 2, Add GetProjectInfo interface，Support fetch cluster instance info by project.

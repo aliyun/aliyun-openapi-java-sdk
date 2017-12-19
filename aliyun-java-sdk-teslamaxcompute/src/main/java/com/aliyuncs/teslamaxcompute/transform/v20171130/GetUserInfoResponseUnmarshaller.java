@@ -31,23 +31,23 @@ public class GetUserInfoResponseUnmarshaller {
 
 	public static GetUserInfoResponse unmarshall(GetUserInfoResponse getUserInfoResponse, UnmarshallerContext context) {
 		
-		getUserInfoResponse.setCode(context.integerValue("GetUserInfoResponse.code"));
-		getUserInfoResponse.setMessage(context.stringValue("GetUserInfoResponse.message"));
-		getUserInfoResponse.setRequest_id(context.stringValue("GetUserInfoResponse.request_id"));
+		getUserInfoResponse.setRequestId(context.stringValue("GetUserInfoResponse.RequestId"));
+		getUserInfoResponse.setCode(context.integerValue("GetUserInfoResponse.Code"));
+		getUserInfoResponse.setMessage(context.stringValue("GetUserInfoResponse.Message"));
 
 		Data data = new Data();
-		data.setTotal(context.integerValue("GetUserInfoResponse.data.total"));
+		data.setTotal(context.integerValue("GetUserInfoResponse.Data.Total"));
 
 		List<Instance> detail = new ArrayList<Instance>();
-		for (int i = 0; i < context.lengthValue("GetUserInfoResponse.data.detail.Length"); i++) {
+		for (int i = 0; i < context.lengthValue("GetUserInfoResponse.Data.Detail.Length"); i++) {
 			Instance instance = new Instance();
-			instance.setProject(context.stringValue("GetUserInfoResponse.data.detail["+ i +"].project"));
-			instance.setInstanceid(context.stringValue("GetUserInfoResponse.data.detail["+ i +"].instanceid"));
-			instance.setStatus(context.stringValue("GetUserInfoResponse.data.detail["+ i +"].status"));
-			instance.setUserAccount(context.stringValue("GetUserInfoResponse.data.detail["+ i +"].userAccount"));
-			instance.setChName(context.stringValue("GetUserInfoResponse.data.detail["+ i +"].chName"));
-			instance.setCluster(context.stringValue("GetUserInfoResponse.data.detail["+ i +"].cluster"));
-			instance.setRunTime(context.stringValue("GetUserInfoResponse.data.detail["+ i +"].runTime"));
+			instance.setProject(context.stringValue("GetUserInfoResponse.Data.Detail["+ i +"].Project"));
+			instance.setInstanceId(context.stringValue("GetUserInfoResponse.Data.Detail["+ i +"].InstanceId"));
+			instance.setStatus(context.stringValue("GetUserInfoResponse.Data.Detail["+ i +"].Status"));
+			instance.setUserAccount(context.stringValue("GetUserInfoResponse.Data.Detail["+ i +"].UserAccount"));
+			instance.setNickName(context.stringValue("GetUserInfoResponse.Data.Detail["+ i +"].NickName"));
+			instance.setCluster(context.stringValue("GetUserInfoResponse.Data.Detail["+ i +"].Cluster"));
+			instance.setRunTime(context.stringValue("GetUserInfoResponse.Data.Detail["+ i +"].RunTime"));
 
 			detail.add(instance);
 		}

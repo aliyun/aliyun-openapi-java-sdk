@@ -38,6 +38,8 @@ public class GetQuotaInfoRequest extends RpcAcsRequest<GetQuotaInfoResponse> {
 
 	private Integer pageNum;
 
+	private String status;
+
 	public String getCluster() {
 		return this.cluster;
 	}
@@ -79,6 +81,17 @@ public class GetQuotaInfoRequest extends RpcAcsRequest<GetQuotaInfoResponse> {
 		this.pageNum = pageNum;
 		if(pageNum != null){
 			putQueryParameter("PageNum", pageNum.toString());
+		}
+	}
+
+	public String getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+		if(status != null){
+			putQueryParameter("Status", status);
 		}
 	}
 
