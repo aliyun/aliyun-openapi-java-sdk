@@ -1,3 +1,7 @@
+2017-12-20 Version: 2.0.1
+1, support tile dataset
+2, use dimension value type to replace isDrillDown
+
 2017-12-20 Version: 2.0.0
 1, support tile dataset
 2, use dimension value type to replace isDrillDown
