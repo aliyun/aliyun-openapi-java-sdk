@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class SubmitAIVideoPornRecogJobRequest extends RpcAcsRequest<SubmitAIVideoPornRecogJobResponse> {
 	
 	public SubmitAIVideoPornRecogJobRequest() {
-		super("vod", "2017-03-21", "SubmitAIVideoPornRecogJob");
+		super("vod", "2017-03-21", "SubmitAIVideoPornRecogJob", "vod");
 	}
 
 	private String userData;

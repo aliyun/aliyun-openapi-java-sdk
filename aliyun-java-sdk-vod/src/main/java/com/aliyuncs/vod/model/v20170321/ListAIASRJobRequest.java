@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ListAIASRJobRequest extends RpcAcsRequest<ListAIASRJobResponse> {
 	
 	public ListAIASRJobRequest() {
-		super("vod", "2017-03-21", "ListAIASRJob");
+		super("vod", "2017-03-21", "ListAIASRJob", "vod");
 	}
 
 	private String resourceOwnerId;

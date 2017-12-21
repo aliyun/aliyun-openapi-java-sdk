@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class GetMezzanineInfoRequest extends RpcAcsRequest<GetMezzanineInfoResponse> {
 	
 	public GetMezzanineInfoRequest() {
-		super("vod", "2017-03-21", "GetMezzanineInfo");
+		super("vod", "2017-03-21", "GetMezzanineInfo", "vod");
 	}
 
 	private Long resourceOwnerId;

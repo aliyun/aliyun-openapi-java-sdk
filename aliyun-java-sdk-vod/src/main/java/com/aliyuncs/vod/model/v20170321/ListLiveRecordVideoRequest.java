@@ -24,31 +24,35 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class GetVideoListRequest extends RpcAcsRequest<GetVideoListResponse> {
+public class ListLiveRecordVideoRequest extends RpcAcsRequest<ListLiveRecordVideoResponse> {
 	
-	public GetVideoListRequest() {
-		super("vod", "2017-03-21", "GetVideoList", "vod");
+	public ListLiveRecordVideoRequest() {
+		super("vod", "2017-03-21", "ListLiveRecordVideo", "vod");
 	}
 
 	private Long resourceOwnerId;
 
 	private String resourceOwnerAccount;
 
-	private Integer cateId;
-
-	private Integer pageNo;
-
-	private Integer pageSize;
+	private String domainName;
 
 	private String endTime;
-
-	private String sortBy;
 
 	private String startTime;
 
 	private Long ownerId;
 
-	private String status;
+	private String appName;
+
+	private Integer pageNo;
+
+	private Integer pageSize;
+
+	private String sortBy;
+
+	private String streamName;
+
+	private String queryType;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -72,36 +76,14 @@ public class GetVideoListRequest extends RpcAcsRequest<GetVideoListResponse> {
 		}
 	}
 
-	public Integer getCateId() {
-		return this.cateId;
+	public String getDomainName() {
+		return this.domainName;
 	}
 
-	public void setCateId(Integer cateId) {
-		this.cateId = cateId;
-		if(cateId != null){
-			putQueryParameter("CateId", cateId.toString());
-		}
-	}
-
-	public Integer getPageNo() {
-		return this.pageNo;
-	}
-
-	public void setPageNo(Integer pageNo) {
-		this.pageNo = pageNo;
-		if(pageNo != null){
-			putQueryParameter("PageNo", pageNo.toString());
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
+	public void setDomainName(String domainName) {
+		this.domainName = domainName;
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
 		}
 	}
 
@@ -113,17 +95,6 @@ public class GetVideoListRequest extends RpcAcsRequest<GetVideoListResponse> {
 		this.endTime = endTime;
 		if(endTime != null){
 			putQueryParameter("EndTime", endTime);
-		}
-	}
-
-	public String getSortBy() {
-		return this.sortBy;
-	}
-
-	public void setSortBy(String sortBy) {
-		this.sortBy = sortBy;
-		if(sortBy != null){
-			putQueryParameter("SortBy", sortBy);
 		}
 	}
 
@@ -149,20 +120,75 @@ public class GetVideoListRequest extends RpcAcsRequest<GetVideoListResponse> {
 		}
 	}
 
-	public String getStatus() {
-		return this.status;
+	public String getAppName() {
+		return this.appName;
 	}
 
-	public void setStatus(String status) {
-		this.status = status;
-		if(status != null){
-			putQueryParameter("Status", status);
+	public void setAppName(String appName) {
+		this.appName = appName;
+		if(appName != null){
+			putQueryParameter("AppName", appName);
+		}
+	}
+
+	public Integer getPageNo() {
+		return this.pageNo;
+	}
+
+	public void setPageNo(Integer pageNo) {
+		this.pageNo = pageNo;
+		if(pageNo != null){
+			putQueryParameter("PageNo", pageNo.toString());
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getSortBy() {
+		return this.sortBy;
+	}
+
+	public void setSortBy(String sortBy) {
+		this.sortBy = sortBy;
+		if(sortBy != null){
+			putQueryParameter("SortBy", sortBy);
+		}
+	}
+
+	public String getStreamName() {
+		return this.streamName;
+	}
+
+	public void setStreamName(String streamName) {
+		this.streamName = streamName;
+		if(streamName != null){
+			putQueryParameter("StreamName", streamName);
+		}
+	}
+
+	public String getQueryType() {
+		return this.queryType;
+	}
+
+	public void setQueryType(String queryType) {
+		this.queryType = queryType;
+		if(queryType != null){
+			putQueryParameter("QueryType", queryType);
 		}
 	}
 
 	@Override
-	public Class<GetVideoListResponse> getResponseClass() {
-		return GetVideoListResponse.class;
+	public Class<ListLiveRecordVideoResponse> getResponseClass() {
+		return ListLiveRecordVideoResponse.class;
 	}
 
 }

@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class UpdateCategoryRequest extends RpcAcsRequest<UpdateCategoryResponse> {
 	
 	public UpdateCategoryRequest() {
-		super("vod", "2017-03-21", "UpdateCategory");
+		super("vod", "2017-03-21", "UpdateCategory", "vod");
 	}
 
 	private String resourceOwnerId;
@@ -35,8 +35,6 @@ public class UpdateCategoryRequest extends RpcAcsRequest<UpdateCategoryResponse>
 	private String resourceOwnerAccount;
 
 	private Long cateId;
-
-	private String ownerAccount;
 
 	private String ownerId;
 
@@ -72,17 +70,6 @@ public class UpdateCategoryRequest extends RpcAcsRequest<UpdateCategoryResponse>
 		this.cateId = cateId;
 		if(cateId != null){
 			putQueryParameter("CateId", cateId.toString());
-		}
-	}
-
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
-
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		if(ownerAccount != null){
-			putQueryParameter("OwnerAccount", ownerAccount);
 		}
 	}
 

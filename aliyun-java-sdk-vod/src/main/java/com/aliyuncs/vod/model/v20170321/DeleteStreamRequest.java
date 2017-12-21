@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeleteStreamRequest extends RpcAcsRequest<DeleteStreamResponse> {
 	
 	public DeleteStreamRequest() {
-		super("vod", "2017-03-21", "DeleteStream");
+		super("vod", "2017-03-21", "DeleteStream", "vod");
 	}
 
 	private Long resourceOwnerId;

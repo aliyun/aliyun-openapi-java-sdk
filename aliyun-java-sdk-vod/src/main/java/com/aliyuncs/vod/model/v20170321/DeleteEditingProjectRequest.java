@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeleteEditingProjectRequest extends RpcAcsRequest<DeleteEditingProjectResponse> {
 	
 	public DeleteEditingProjectRequest() {
-		super("vod", "2017-03-21", "DeleteEditingProject");
+		super("vod", "2017-03-21", "DeleteEditingProject", "vod");
 	}
 
 	private String resourceOwnerId;

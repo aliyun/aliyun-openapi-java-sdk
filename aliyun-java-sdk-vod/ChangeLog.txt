@@ -1,3 +1,6 @@
+2017-12-21 Version: 2.9.0
+1, Add a new api named "ListLiveRecordVideo", which supports the user to query the live recorded video list based on StreamName, DomainName, AppName and so on
+
 2017-12-07 Version: 2.8.0
 1, Added the ListAIJob API, a common api to query multiple types of AI job
 

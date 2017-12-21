@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeDomainFlowDataRequest extends RpcAcsRequest<DescribeDomainFlowDataResponse> {
 	
 	public DescribeDomainFlowDataRequest() {
-		super("vod", "2017-03-21", "DescribeDomainFlowData");
+		super("vod", "2017-03-21", "DescribeDomainFlowData", "vod");
 	}
 
 	private String resourceOwnerId;

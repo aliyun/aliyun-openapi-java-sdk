@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ListAIVideoSummaryJobRequest extends RpcAcsRequest<ListAIVideoSummaryJobResponse> {
 	
 	public ListAIVideoSummaryJobRequest() {
-		super("vod", "2017-03-21", "ListAIVideoSummaryJob");
+		super("vod", "2017-03-21", "ListAIVideoSummaryJob", "vod");
 	}
 
 	private String resourceOwnerId;

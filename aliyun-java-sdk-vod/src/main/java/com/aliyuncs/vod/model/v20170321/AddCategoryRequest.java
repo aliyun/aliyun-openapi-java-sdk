@@ -27,14 +27,12 @@ import com.aliyuncs.RpcAcsRequest;
 public class AddCategoryRequest extends RpcAcsRequest<AddCategoryResponse> {
 	
 	public AddCategoryRequest() {
-		super("vod", "2017-03-21", "AddCategory");
+		super("vod", "2017-03-21", "AddCategory", "vod");
 	}
 
 	private String resourceOwnerId;
 
 	private String resourceOwnerAccount;
-
-	private String ownerAccount;
 
 	private String ownerId;
 
@@ -61,17 +59,6 @@ public class AddCategoryRequest extends RpcAcsRequest<AddCategoryResponse> {
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
-
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		if(ownerAccount != null){
-			putQueryParameter("OwnerAccount", ownerAccount);
 		}
 	}
 

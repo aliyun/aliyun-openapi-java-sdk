@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeleteVideoRequest extends RpcAcsRequest<DeleteVideoResponse> {
 	
 	public DeleteVideoRequest() {
-		super("vod", "2017-03-21", "DeleteVideo");
+		super("vod", "2017-03-21", "DeleteVideo", "vod");
 	}
 
 	private Long resourceOwnerId;

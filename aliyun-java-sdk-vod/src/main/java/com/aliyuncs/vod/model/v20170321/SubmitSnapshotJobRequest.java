@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class SubmitSnapshotJobRequest extends RpcAcsRequest<SubmitSnapshotJobResponse> {
 	
 	public SubmitSnapshotJobRequest() {
-		super("vod", "2017-03-21", "SubmitSnapshotJob");
+		super("vod", "2017-03-21", "SubmitSnapshotJob", "vod");
 	}
 
 	private Long resourceOwnerId;

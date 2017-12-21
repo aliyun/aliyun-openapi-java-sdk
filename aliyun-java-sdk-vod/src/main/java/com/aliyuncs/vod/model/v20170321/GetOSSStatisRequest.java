@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class GetOSSStatisRequest extends RpcAcsRequest<GetOSSStatisResponse> {
 	
 	public GetOSSStatisRequest() {
-		super("vod", "2017-03-21", "GetOSSStatis");
+		super("vod", "2017-03-21", "GetOSSStatis", "vod");
 	}
 
 	private String resourceOwnerId;

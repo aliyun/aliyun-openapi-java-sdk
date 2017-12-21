@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeleteCategoryRequest extends RpcAcsRequest<DeleteCategoryResponse> {
 	
 	public DeleteCategoryRequest() {
-		super("vod", "2017-03-21", "DeleteCategory");
+		super("vod", "2017-03-21", "DeleteCategory", "vod");
 	}
 
 	private String resourceOwnerId;
@@ -35,8 +35,6 @@ public class DeleteCategoryRequest extends RpcAcsRequest<DeleteCategoryResponse>
 	private String resourceOwnerAccount;
 
 	private Long cateId;
-
-	private String ownerAccount;
 
 	private String ownerId;
 
@@ -70,17 +68,6 @@ public class DeleteCategoryRequest extends RpcAcsRequest<DeleteCategoryResponse>
 		this.cateId = cateId;
 		if(cateId != null){
 			putQueryParameter("CateId", cateId.toString());
-		}
-	}
-
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
-
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		if(ownerAccount != null){
-			putQueryParameter("OwnerAccount", ownerAccount);
 		}
 	}
 

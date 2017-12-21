@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeDomainBpsDataRequest extends RpcAcsRequest<DescribeDomainBpsDataResponse> {
 	
 	public DescribeDomainBpsDataRequest() {
-		super("vod", "2017-03-21", "DescribeDomainBpsData");
+		super("vod", "2017-03-21", "DescribeDomainBpsData", "vod");
 	}
 
 	private String resourceOwnerId;

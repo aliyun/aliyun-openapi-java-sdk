@@ -31,7 +31,6 @@ public class GetVideoInfoResponseUnmarshaller {
 	public static GetVideoInfoResponse unmarshall(GetVideoInfoResponse getVideoInfoResponse, UnmarshallerContext context) {
 		
 		getVideoInfoResponse.setRequestId(context.stringValue("GetVideoInfoResponse.RequestId"));
-		getVideoInfoResponse.setAI(context.stringValue("GetVideoInfoResponse.AI"));
 
 		Video video = new Video();
 		video.setVideoId(context.stringValue("GetVideoInfoResponse.Video.VideoId"));
