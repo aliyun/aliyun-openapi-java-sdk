@@ -71,6 +71,8 @@ public class DescribeCastersResponse extends AcsResponse {
 
 		private String createTime;
 
+		private String startTime;
+
 		private Integer period;
 
 		private String chargeType;
@@ -115,6 +117,14 @@ public class DescribeCastersResponse extends AcsResponse {
 
 		public void setCreateTime(String createTime) {
 			this.createTime = createTime;
+		}
+
+		public String getStartTime() {
+			return this.startTime;
+		}
+
+		public void setStartTime(String startTime) {
+			this.startTime = startTime;
 		}
 
 		public Integer getPeriod() {

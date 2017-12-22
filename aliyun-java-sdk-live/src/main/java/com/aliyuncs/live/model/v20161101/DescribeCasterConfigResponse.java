@@ -41,6 +41,10 @@ public class DescribeCasterConfigResponse extends AcsResponse {
 
 	private String urgentMaterialId;
 
+	private String sideOutputUrl;
+
+	private String callbackUrl;
+
 	private TranscodeConfig transcodeConfig;
 
 	private RecordConfig recordConfig;
@@ -91,6 +95,22 @@ public class DescribeCasterConfigResponse extends AcsResponse {
 
 	public void setUrgentMaterialId(String urgentMaterialId) {
 		this.urgentMaterialId = urgentMaterialId;
+	}
+
+	public String getSideOutputUrl() {
+		return this.sideOutputUrl;
+	}
+
+	public void setSideOutputUrl(String sideOutputUrl) {
+		this.sideOutputUrl = sideOutputUrl;
+	}
+
+	public String getCallbackUrl() {
+		return this.callbackUrl;
+	}
+
+	public void setCallbackUrl(String callbackUrl) {
+		this.callbackUrl = callbackUrl;
 	}
 
 	public TranscodeConfig getTranscodeConfig() {

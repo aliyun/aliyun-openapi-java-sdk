@@ -38,6 +38,8 @@ public class DescribeCasterConfigResponseUnmarshaller {
 		describeCasterConfigResponse.setDomainName(context.stringValue("DescribeCasterConfigResponse.DomainName"));
 		describeCasterConfigResponse.setDelay(context.floatValue("DescribeCasterConfigResponse.Delay"));
 		describeCasterConfigResponse.setUrgentMaterialId(context.stringValue("DescribeCasterConfigResponse.UrgentMaterialId"));
+		describeCasterConfigResponse.setSideOutputUrl(context.stringValue("DescribeCasterConfigResponse.SideOutputUrl"));
+		describeCasterConfigResponse.setCallbackUrl(context.stringValue("DescribeCasterConfigResponse.CallbackUrl"));
 
 		TranscodeConfig transcodeConfig = new TranscodeConfig();
 		transcodeConfig.setCasterTemplate(context.stringValue("DescribeCasterConfigResponse.TranscodeConfig.CasterTemplate"));

@@ -30,15 +30,7 @@ public class SetCasterConfigRequest extends RpcAcsRequest<SetCasterConfigRespons
 		super("live", "2016-11-01", "SetCasterConfig");
 	}
 
-	private String urgentMaterialId;
-
-	private String transcodeConfig;
-
-	private Float delay;
-
-	private String securityToken;
-
-	private String casterName;
+	private String sideOutputUrl;
 
 	private String casterId;
 
@@ -49,6 +41,84 @@ public class SetCasterConfigRequest extends RpcAcsRequest<SetCasterConfigRespons
 	private String version;
 
 	private String recordConfig;
+
+	private String urgentMaterialId;
+
+	private String transcodeConfig;
+
+	private Float delay;
+
+	private String securityToken;
+
+	private String casterName;
+
+	private String callbackUrl;
+
+	public String getSideOutputUrl() {
+		return this.sideOutputUrl;
+	}
+
+	public void setSideOutputUrl(String sideOutputUrl) {
+		this.sideOutputUrl = sideOutputUrl;
+		if(sideOutputUrl != null){
+			putQueryParameter("SideOutputUrl", sideOutputUrl);
+		}
+	}
+
+	public String getCasterId() {
+		return this.casterId;
+	}
+
+	public void setCasterId(String casterId) {
+		this.casterId = casterId;
+		if(casterId != null){
+			putQueryParameter("CasterId", casterId);
+		}
+	}
+
+	public String getDomainName() {
+		return this.domainName;
+	}
+
+	public void setDomainName(String domainName) {
+		this.domainName = domainName;
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getVersion() {
+		return this.version;
+	}
+
+	public void setVersion(String version) {
+		this.version = version;
+		if(version != null){
+			putQueryParameter("Version", version);
+		}
+	}
+
+	public String getRecordConfig() {
+		return this.recordConfig;
+	}
+
+	public void setRecordConfig(String recordConfig) {
+		this.recordConfig = recordConfig;
+		if(recordConfig != null){
+			putQueryParameter("RecordConfig", recordConfig);
+		}
+	}
 
 	public String getUrgentMaterialId() {
 		return this.urgentMaterialId;
@@ -105,58 +175,14 @@ public class SetCasterConfigRequest extends RpcAcsRequest<SetCasterConfigRespons
 		}
 	}
 
-	public String getCasterId() {
-		return this.casterId;
+	public String getCallbackUrl() {
+		return this.callbackUrl;
 	}
 
-	public void setCasterId(String casterId) {
-		this.casterId = casterId;
-		if(casterId != null){
-			putQueryParameter("CasterId", casterId);
-		}
-	}
-
-	public String getDomainName() {
-		return this.domainName;
-	}
-
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
-		if(domainName != null){
-			putQueryParameter("DomainName", domainName);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getVersion() {
-		return this.version;
-	}
-
-	public void setVersion(String version) {
-		this.version = version;
-		if(version != null){
-			putQueryParameter("Version", version);
-		}
-	}
-
-	public String getRecordConfig() {
-		return this.recordConfig;
-	}
-
-	public void setRecordConfig(String recordConfig) {
-		this.recordConfig = recordConfig;
-		if(recordConfig != null){
-			putQueryParameter("RecordConfig", recordConfig);
+	public void setCallbackUrl(String callbackUrl) {
+		this.callbackUrl = callbackUrl;
+		if(callbackUrl != null){
+			putQueryParameter("CallbackUrl", callbackUrl);
 		}
 	}
 

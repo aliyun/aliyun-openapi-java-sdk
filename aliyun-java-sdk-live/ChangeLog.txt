@@ -1,3 +1,12 @@
+2017-12-22 Version: 3.2.0
+1, Add Input parameter StartTime for DescribeCasters.
+2, Add return value CallbackUrl, SideOutputUrl for DescribeCasterConfig.
+3, Add Callback Event SideOutputUrlInvalid for Callback.
+4, Add Input parameter SideOutputUrl for SetCasterConfig.
+5, Add api DeleteLiveRecordVodConfig.
+6, Add api AddLiveRecordVodConfig.
+7, Add api DescribeLiveRecordVodConfigs.
+
 2017-11-29 Version: 3.1.0
 1, add API AddCasterComponent,DeleteCasterComponent,DescribeCasterComponents
 2, update API UpdateCasterSceneConfig,SetCasterSceneConfig,DescribeCasterScenes  
