@@ -1,3 +1,6 @@
+2017-12-22 Version: 1.0.2
+1, Add GetInstance API, support get instance.
+
 2017-12-19 Version: 1.0.1
 1, Add Status argument, support get cluster info by status.
 
