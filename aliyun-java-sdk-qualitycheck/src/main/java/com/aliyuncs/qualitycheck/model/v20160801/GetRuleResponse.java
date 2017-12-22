@@ -131,6 +131,8 @@ public class GetRuleResponse extends AcsResponse {
 
 			private String scoreSubName;
 
+			private List<String> businessCategoryNameList;
+
 			public String getRid() {
 				return this.rid;
 			}
@@ -281,6 +283,14 @@ public class GetRuleResponse extends AcsResponse {
 
 			public void setScoreSubName(String scoreSubName) {
 				this.scoreSubName = scoreSubName;
+			}
+
+			public List<String> getBusinessCategoryNameList() {
+				return this.businessCategoryNameList;
+			}
+
+			public void setBusinessCategoryNameList(List<String> businessCategoryNameList) {
+				this.businessCategoryNameList = businessCategoryNameList;
 			}
 		}
 	}
