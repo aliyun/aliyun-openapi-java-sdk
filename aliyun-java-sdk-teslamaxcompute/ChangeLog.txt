@@ -1,3 +1,6 @@
+2017-12-24 Version: 1.0.3
+1, Add get instance by cluster, project and user.
+
 2017-12-22 Version: 1.0.2
 1, Add GetInstance API, support get instance.
 
