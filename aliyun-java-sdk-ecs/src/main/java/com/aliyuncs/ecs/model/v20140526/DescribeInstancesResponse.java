@@ -121,6 +121,8 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		private String creationTime;
 
+		private String startTime;
+
 		private String instanceNetworkType;
 
 		private String instanceChargeType;
@@ -335,6 +337,14 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		public void setCreationTime(String creationTime) {
 			this.creationTime = creationTime;
+		}
+
+		public String getStartTime() {
+			return this.startTime;
+		}
+
+		public void setStartTime(String startTime) {
+			this.startTime = startTime;
 		}
 
 		public String getInstanceNetworkType() {

@@ -63,6 +63,7 @@ public class DescribeInstancesResponseUnmarshaller {
 			instance.setInternetMaxBandwidthOut(context.integerValue("DescribeInstancesResponse.Instances["+ i +"].InternetMaxBandwidthOut"));
 			instance.setVlanId(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].VlanId"));
 			instance.setCreationTime(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].CreationTime"));
+			instance.setStartTime(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].StartTime"));
 			instance.setInstanceNetworkType(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].InstanceNetworkType"));
 			instance.setInstanceChargeType(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].InstanceChargeType"));
 			instance.setSaleCycle(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].SaleCycle"));

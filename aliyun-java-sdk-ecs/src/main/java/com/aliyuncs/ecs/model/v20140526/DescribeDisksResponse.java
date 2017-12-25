@@ -135,6 +135,8 @@ public class DescribeDisksResponse extends AcsResponse {
 
 		private Boolean encrypted;
 
+		private Integer mountInstanceNum;
+
 		private Integer iOPS;
 
 		private Integer iOPSRead;
@@ -142,6 +144,8 @@ public class DescribeDisksResponse extends AcsResponse {
 		private Integer iOPSWrite;
 
 		private List<OperationLock> operationLocks;
+
+		private List<MountInstance> mountInstances;
 
 		private List<Tag> tags;
 
@@ -361,6 +365,14 @@ public class DescribeDisksResponse extends AcsResponse {
 			this.encrypted = encrypted;
 		}
 
+		public Integer getMountInstanceNum() {
+			return this.mountInstanceNum;
+		}
+
+		public void setMountInstanceNum(Integer mountInstanceNum) {
+			this.mountInstanceNum = mountInstanceNum;
+		}
+
 		public Integer getIOPS() {
 			return this.iOPS;
 		}
@@ -393,6 +405,14 @@ public class DescribeDisksResponse extends AcsResponse {
 			this.operationLocks = operationLocks;
 		}
 
+		public List<MountInstance> getMountInstances() {
+			return this.mountInstances;
+		}
+
+		public void setMountInstances(List<MountInstance> mountInstances) {
+			this.mountInstances = mountInstances;
+		}
+
 		public List<Tag> getTags() {
 			return this.tags;
 		}
@@ -411,6 +431,39 @@ public class DescribeDisksResponse extends AcsResponse {
 
 			public void setLockReason(String lockReason) {
 				this.lockReason = lockReason;
+			}
+		}
+
+		public static class MountInstance {
+
+			private String instanceId;
+
+			private String device;
+
+			private String attachedTime;
+
+			public String getInstanceId() {
+				return this.instanceId;
+			}
+
+			public void setInstanceId(String instanceId) {
+				this.instanceId = instanceId;
+			}
+
+			public String getDevice() {
+				return this.device;
+			}
+
+			public void setDevice(String device) {
+				this.device = device;
+			}
+
+			public String getAttachedTime() {
+				return this.attachedTime;
+			}
+
+			public void setAttachedTime(String attachedTime) {
+				this.attachedTime = attachedTime;
 			}
 		}
 

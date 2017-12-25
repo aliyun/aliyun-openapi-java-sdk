@@ -60,6 +60,8 @@ public class DescribeInstancesRequest extends RpcAcsRequest<DescribeInstancesRes
 
 	private String filter3Value;
 
+	private Boolean dryRun;
+
 	private String tag5Key;
 
 	private String filter1Value;
@@ -288,6 +290,17 @@ public class DescribeInstancesRequest extends RpcAcsRequest<DescribeInstancesRes
 		this.filter3Value = filter3Value;
 		if(filter3Value != null){
 			putQueryParameter("Filter.3.Value", filter3Value);
+		}
+	}
+
+	public Boolean getDryRun() {
+		return this.dryRun;
+	}
+
+	public void setDryRun(Boolean dryRun) {
+		this.dryRun = dryRun;
+		if(dryRun != null){
+			putQueryParameter("DryRun", dryRun.toString());
 		}
 	}
 

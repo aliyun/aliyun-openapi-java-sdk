@@ -56,6 +56,8 @@ public class DescribeSecurityGroupsRequest extends RpcAcsRequest<DescribeSecurit
 
 	private String tag3Value;
 
+	private Boolean dryRun;
+
 	private String tag5Key;
 
 	private String resourceOwnerAccount;
@@ -216,6 +218,17 @@ public class DescribeSecurityGroupsRequest extends RpcAcsRequest<DescribeSecurit
 		this.tag3Value = tag3Value;
 		if(tag3Value != null){
 			putQueryParameter("Tag.3.Value", tag3Value);
+		}
+	}
+
+	public Boolean getDryRun() {
+		return this.dryRun;
+	}
+
+	public void setDryRun(Boolean dryRun) {
+		this.dryRun = dryRun;
+		if(dryRun != null){
+			putQueryParameter("DryRun", dryRun.toString());
 		}
 	}
 

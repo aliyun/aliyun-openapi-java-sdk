@@ -68,6 +68,8 @@ public class DescribeImagesRequest extends RpcAcsRequest<DescribeImagesResponse>
 
 	private String architecture;
 
+	private Boolean dryRun;
+
 	private String tag5Key;
 
 	private String resourceOwnerAccount;
@@ -300,6 +302,17 @@ public class DescribeImagesRequest extends RpcAcsRequest<DescribeImagesResponse>
 		this.architecture = architecture;
 		if(architecture != null){
 			putQueryParameter("Architecture", architecture);
+		}
+	}
+
+	public Boolean getDryRun() {
+		return this.dryRun;
+	}
+
+	public void setDryRun(Boolean dryRun) {
+		this.dryRun = dryRun;
+		if(dryRun != null){
+			putQueryParameter("DryRun", dryRun.toString());
 		}
 	}
 

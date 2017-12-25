@@ -23,6 +23,7 @@ import java.util.List;
 
 import com.aliyuncs.ecs.model.v20140526.DescribeDisksResponse;
 import com.aliyuncs.ecs.model.v20140526.DescribeDisksResponse.Disk;
+import com.aliyuncs.ecs.model.v20140526.DescribeDisksResponse.Disk.MountInstance;
 import com.aliyuncs.ecs.model.v20140526.DescribeDisksResponse.Disk.OperationLock;
 import com.aliyuncs.ecs.model.v20140526.DescribeDisksResponse.Disk.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -67,6 +68,7 @@ public class DescribeDisksResponseUnmarshaller {
 			disk.setExpiredTime(context.stringValue("DescribeDisksResponse.Disks["+ i +"].ExpiredTime"));
 			disk.setResourceGroupId(context.stringValue("DescribeDisksResponse.Disks["+ i +"].ResourceGroupId"));
 			disk.setEncrypted(context.booleanValue("DescribeDisksResponse.Disks["+ i +"].Encrypted"));
+			disk.setMountInstanceNum(context.integerValue("DescribeDisksResponse.Disks["+ i +"].MountInstanceNum"));
 			disk.setIOPS(context.integerValue("DescribeDisksResponse.Disks["+ i +"].IOPS"));
 			disk.setIOPSRead(context.integerValue("DescribeDisksResponse.Disks["+ i +"].IOPSRead"));
 			disk.setIOPSWrite(context.integerValue("DescribeDisksResponse.Disks["+ i +"].IOPSWrite"));
@@ -79,6 +81,17 @@ public class DescribeDisksResponseUnmarshaller {
 				operationLocks.add(operationLock);
 			}
 			disk.setOperationLocks(operationLocks);
+
+			List<MountInstance> mountInstances = new ArrayList<MountInstance>();
+			for (int j = 0; j < context.lengthValue("DescribeDisksResponse.Disks["+ i +"].MountInstances.Length"); j++) {
+				MountInstance mountInstance = new MountInstance();
+				mountInstance.setInstanceId(context.stringValue("DescribeDisksResponse.Disks["+ i +"].MountInstances["+ j +"].InstanceId"));
+				mountInstance.setDevice(context.stringValue("DescribeDisksResponse.Disks["+ i +"].MountInstances["+ j +"].Device"));
+				mountInstance.setAttachedTime(context.stringValue("DescribeDisksResponse.Disks["+ i +"].MountInstances["+ j +"].AttachedTime"));
+
+				mountInstances.add(mountInstance);
+			}
+			disk.setMountInstances(mountInstances);
 
 			List<Tag> tags = new ArrayList<Tag>();
 			for (int j = 0; j < context.lengthValue("DescribeDisksResponse.Disks["+ i +"].Tags.Length"); j++) {

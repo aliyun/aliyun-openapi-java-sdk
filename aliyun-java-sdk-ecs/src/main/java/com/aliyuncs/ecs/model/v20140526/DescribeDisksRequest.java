@@ -71,6 +71,8 @@ public class DescribeDisksRequest extends RpcAcsRequest<DescribeDisksResponse> {
 
 	private Boolean enableAutoSnapshot;
 
+	private Boolean dryRun;
+
 	private String tag5Key;
 
 	private String resourceOwnerAccount;
@@ -328,6 +330,17 @@ public class DescribeDisksRequest extends RpcAcsRequest<DescribeDisksResponse> {
 		this.enableAutoSnapshot = enableAutoSnapshot;
 		if(enableAutoSnapshot != null){
 			putQueryParameter("EnableAutoSnapshot", enableAutoSnapshot.toString());
+		}
+	}
+
+	public Boolean getDryRun() {
+		return this.dryRun;
+	}
+
+	public void setDryRun(Boolean dryRun) {
+		this.dryRun = dryRun;
+		if(dryRun != null){
+			putQueryParameter("DryRun", dryRun.toString());
 		}
 	}
 
