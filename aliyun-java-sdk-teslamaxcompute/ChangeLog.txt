@@ -1,3 +1,6 @@
+2017-12-26 Version: 1.0.4
+1, Fix response field type.
+
 2017-12-24 Version: 1.0.3
 1, Add get instance by cluster, project and user.
 

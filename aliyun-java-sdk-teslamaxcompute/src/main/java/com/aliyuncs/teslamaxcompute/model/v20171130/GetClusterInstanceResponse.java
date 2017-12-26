@@ -107,21 +107,21 @@ public class GetClusterInstanceResponse extends AcsResponse {
 
 			private String runTime;
 
-			private Integer cpuUsed;
+			private Long cpuUsed;
 
-			private Integer cpuRequest;
+			private Long cpuRequest;
 
-			private Integer cpuUsedTotal;
+			private Long cpuUsedTotal;
 
 			private Float cpuUsedRatioMax;
 
 			private Float cpuUsedRatioMin;
 
-			private Integer memUsed;
+			private Long memUsed;
 
-			private Integer memRequest;
+			private Long memRequest;
 
-			private Integer memUsedTotal;
+			private Long memUsedTotal;
 
 			private Float memUsedRatioMax;
 
@@ -130,6 +130,10 @@ public class GetClusterInstanceResponse extends AcsResponse {
 			private String taskType;
 
 			private String skynetId;
+
+			private String quotaName;
+
+			private Integer quotaId;
 
 			public String getProject() {
 				return this.project;
@@ -187,27 +191,27 @@ public class GetClusterInstanceResponse extends AcsResponse {
 				this.runTime = runTime;
 			}
 
-			public Integer getCpuUsed() {
+			public Long getCpuUsed() {
 				return this.cpuUsed;
 			}
 
-			public void setCpuUsed(Integer cpuUsed) {
+			public void setCpuUsed(Long cpuUsed) {
 				this.cpuUsed = cpuUsed;
 			}
 
-			public Integer getCpuRequest() {
+			public Long getCpuRequest() {
 				return this.cpuRequest;
 			}
 
-			public void setCpuRequest(Integer cpuRequest) {
+			public void setCpuRequest(Long cpuRequest) {
 				this.cpuRequest = cpuRequest;
 			}
 
-			public Integer getCpuUsedTotal() {
+			public Long getCpuUsedTotal() {
 				return this.cpuUsedTotal;
 			}
 
-			public void setCpuUsedTotal(Integer cpuUsedTotal) {
+			public void setCpuUsedTotal(Long cpuUsedTotal) {
 				this.cpuUsedTotal = cpuUsedTotal;
 			}
 
@@ -227,27 +231,27 @@ public class GetClusterInstanceResponse extends AcsResponse {
 				this.cpuUsedRatioMin = cpuUsedRatioMin;
 			}
 
-			public Integer getMemUsed() {
+			public Long getMemUsed() {
 				return this.memUsed;
 			}
 
-			public void setMemUsed(Integer memUsed) {
+			public void setMemUsed(Long memUsed) {
 				this.memUsed = memUsed;
 			}
 
-			public Integer getMemRequest() {
+			public Long getMemRequest() {
 				return this.memRequest;
 			}
 
-			public void setMemRequest(Integer memRequest) {
+			public void setMemRequest(Long memRequest) {
 				this.memRequest = memRequest;
 			}
 
-			public Integer getMemUsedTotal() {
+			public Long getMemUsedTotal() {
 				return this.memUsedTotal;
 			}
 
-			public void setMemUsedTotal(Integer memUsedTotal) {
+			public void setMemUsedTotal(Long memUsedTotal) {
 				this.memUsedTotal = memUsedTotal;
 			}
 
@@ -281,6 +285,22 @@ public class GetClusterInstanceResponse extends AcsResponse {
 
 			public void setSkynetId(String skynetId) {
 				this.skynetId = skynetId;
+			}
+
+			public String getQuotaName() {
+				return this.quotaName;
+			}
+
+			public void setQuotaName(String quotaName) {
+				this.quotaName = quotaName;
+			}
+
+			public Integer getQuotaId() {
+				return this.quotaId;
+			}
+
+			public void setQuotaId(Integer quotaId) {
+				this.quotaId = quotaId;
 			}
 		}
 	}

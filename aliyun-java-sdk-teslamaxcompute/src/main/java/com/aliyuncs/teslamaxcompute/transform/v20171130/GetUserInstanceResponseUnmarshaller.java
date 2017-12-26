@@ -48,18 +48,20 @@ public class GetUserInstanceResponseUnmarshaller {
 			instance.setNickName(context.stringValue("GetUserInstanceResponse.Data.Detail["+ i +"].NickName"));
 			instance.setCluster(context.stringValue("GetUserInstanceResponse.Data.Detail["+ i +"].Cluster"));
 			instance.setRunTime(context.stringValue("GetUserInstanceResponse.Data.Detail["+ i +"].RunTime"));
-			instance.setCpuUsed(context.integerValue("GetUserInstanceResponse.Data.Detail["+ i +"].CpuUsed"));
-			instance.setCpuRequest(context.integerValue("GetUserInstanceResponse.Data.Detail["+ i +"].CpuRequest"));
-			instance.setCpuUsedTotal(context.integerValue("GetUserInstanceResponse.Data.Detail["+ i +"].CpuUsedTotal"));
+			instance.setCpuUsed(context.longValue("GetUserInstanceResponse.Data.Detail["+ i +"].CpuUsed"));
+			instance.setCpuRequest(context.longValue("GetUserInstanceResponse.Data.Detail["+ i +"].CpuRequest"));
+			instance.setCpuUsedTotal(context.longValue("GetUserInstanceResponse.Data.Detail["+ i +"].CpuUsedTotal"));
 			instance.setCpuUsedRatioMax(context.floatValue("GetUserInstanceResponse.Data.Detail["+ i +"].CpuUsedRatioMax"));
 			instance.setCpuUsedRatioMin(context.floatValue("GetUserInstanceResponse.Data.Detail["+ i +"].CpuUsedRatioMin"));
-			instance.setMemUsed(context.integerValue("GetUserInstanceResponse.Data.Detail["+ i +"].MemUsed"));
-			instance.setMemRequest(context.integerValue("GetUserInstanceResponse.Data.Detail["+ i +"].MemRequest"));
-			instance.setMemUsedTotal(context.integerValue("GetUserInstanceResponse.Data.Detail["+ i +"].MemUsedTotal"));
+			instance.setMemUsed(context.longValue("GetUserInstanceResponse.Data.Detail["+ i +"].MemUsed"));
+			instance.setMemRequest(context.longValue("GetUserInstanceResponse.Data.Detail["+ i +"].MemRequest"));
+			instance.setMemUsedTotal(context.longValue("GetUserInstanceResponse.Data.Detail["+ i +"].MemUsedTotal"));
 			instance.setMemUsedRatioMax(context.floatValue("GetUserInstanceResponse.Data.Detail["+ i +"].MemUsedRatioMax"));
 			instance.setMemUsedRatioMin(context.floatValue("GetUserInstanceResponse.Data.Detail["+ i +"].MemUsedRatioMin"));
 			instance.setTaskType(context.stringValue("GetUserInstanceResponse.Data.Detail["+ i +"].TaskType"));
 			instance.setSkynetId(context.stringValue("GetUserInstanceResponse.Data.Detail["+ i +"].SkynetId"));
+			instance.setQuotaName(context.stringValue("GetUserInstanceResponse.Data.Detail["+ i +"].QuotaName"));
+			instance.setQuotaId(context.integerValue("GetUserInstanceResponse.Data.Detail["+ i +"].QuotaId"));
 
 			detail.add(instance);
 		}
