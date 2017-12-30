@@ -19,6 +19,7 @@
 package com.aliyuncs.csb.model.v20171118;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 
 /**
@@ -29,6 +30,7 @@ public class UpdateServiceRequest extends RpcAcsRequest<UpdateServiceResponse> {
 	
 	public UpdateServiceRequest() {
 		super("CSB", "2017-11-18", "UpdateService", "CSB");
+		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
 

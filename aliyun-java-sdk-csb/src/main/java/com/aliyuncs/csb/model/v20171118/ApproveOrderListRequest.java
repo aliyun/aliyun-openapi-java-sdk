@@ -26,43 +26,30 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class DeleteServiceRequest extends RpcAcsRequest<DeleteServiceResponse> {
+public class ApproveOrderListRequest extends RpcAcsRequest<ApproveOrderListResponse> {
 	
-	public DeleteServiceRequest() {
-		super("CSB", "2017-11-18", "DeleteService", "CSB");
+	public ApproveOrderListRequest() {
+		super("CSB", "2017-11-18", "ApproveOrderList", "CSB");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
 
-	private String serviceName;
+	private String data;
 
-	private Long serviceId;
-
-	public String getServiceName() {
-		return this.serviceName;
+	public String getData() {
+		return this.data;
 	}
 
-	public void setServiceName(String serviceName) {
-		this.serviceName = serviceName;
-		if(serviceName != null){
-			putQueryParameter("ServiceName", serviceName);
-		}
-	}
-
-	public Long getServiceId() {
-		return this.serviceId;
-	}
-
-	public void setServiceId(Long serviceId) {
-		this.serviceId = serviceId;
-		if(serviceId != null){
-			putQueryParameter("ServiceId", serviceId.toString());
+	public void setData(String data) {
+		this.data = data;
+		if(data != null){
+			putBodyParameter("Data", data);
 		}
 	}
 
 	@Override
-	public Class<DeleteServiceResponse> getResponseClass() {
-		return DeleteServiceResponse.class;
+	public Class<ApproveOrderListResponse> getResponseClass() {
+		return ApproveOrderListResponse.class;
 	}
 
 }

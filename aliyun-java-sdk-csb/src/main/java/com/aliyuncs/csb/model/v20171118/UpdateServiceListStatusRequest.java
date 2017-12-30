@@ -26,43 +26,43 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class DeleteServiceRequest extends RpcAcsRequest<DeleteServiceResponse> {
+public class UpdateServiceListStatusRequest extends RpcAcsRequest<UpdateServiceListStatusResponse> {
 	
-	public DeleteServiceRequest() {
-		super("CSB", "2017-11-18", "DeleteService", "CSB");
+	public UpdateServiceListStatusRequest() {
+		super("CSB", "2017-11-18", "UpdateServiceListStatus", "CSB");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
 
-	private String serviceName;
+	private String data;
 
-	private Long serviceId;
+	private Long csbId;
 
-	public String getServiceName() {
-		return this.serviceName;
+	public String getData() {
+		return this.data;
 	}
 
-	public void setServiceName(String serviceName) {
-		this.serviceName = serviceName;
-		if(serviceName != null){
-			putQueryParameter("ServiceName", serviceName);
+	public void setData(String data) {
+		this.data = data;
+		if(data != null){
+			putBodyParameter("Data", data);
 		}
 	}
 
-	public Long getServiceId() {
-		return this.serviceId;
+	public Long getCsbId() {
+		return this.csbId;
 	}
 
-	public void setServiceId(Long serviceId) {
-		this.serviceId = serviceId;
-		if(serviceId != null){
-			putQueryParameter("ServiceId", serviceId.toString());
+	public void setCsbId(Long csbId) {
+		this.csbId = csbId;
+		if(csbId != null){
+			putQueryParameter("CsbId", csbId.toString());
 		}
 	}
 
 	@Override
-	public Class<DeleteServiceResponse> getResponseClass() {
-		return DeleteServiceResponse.class;
+	public Class<UpdateServiceListStatusResponse> getResponseClass() {
+		return UpdateServiceListStatusResponse.class;
 	}
 
 }

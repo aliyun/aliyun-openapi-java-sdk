@@ -26,26 +26,26 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class DeleteServiceRequest extends RpcAcsRequest<DeleteServiceResponse> {
+public class UpdateServiceQPSRequest extends RpcAcsRequest<UpdateServiceQPSResponse> {
 	
-	public DeleteServiceRequest() {
-		super("CSB", "2017-11-18", "DeleteService", "CSB");
+	public UpdateServiceQPSRequest() {
+		super("CSB", "2017-11-18", "UpdateServiceQPS", "CSB");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
 
-	private String serviceName;
+	private String qps;
 
 	private Long serviceId;
 
-	public String getServiceName() {
-		return this.serviceName;
+	public String getQps() {
+		return this.qps;
 	}
 
-	public void setServiceName(String serviceName) {
-		this.serviceName = serviceName;
-		if(serviceName != null){
-			putQueryParameter("ServiceName", serviceName);
+	public void setQps(String qps) {
+		this.qps = qps;
+		if(qps != null){
+			putQueryParameter("Qps", qps);
 		}
 	}
 
@@ -61,8 +61,8 @@ public class DeleteServiceRequest extends RpcAcsRequest<DeleteServiceResponse> {
 	}
 
 	@Override
-	public Class<DeleteServiceResponse> getResponseClass() {
-		return DeleteServiceResponse.class;
+	public Class<UpdateServiceQPSResponse> getResponseClass() {
+		return UpdateServiceQPSResponse.class;
 	}
 
 }
