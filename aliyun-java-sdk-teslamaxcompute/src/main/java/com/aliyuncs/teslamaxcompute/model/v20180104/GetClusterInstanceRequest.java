@@ -16,7 +16,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package com.aliyuncs.teslamaxcompute.model.v20171130;
+package com.aliyuncs.teslamaxcompute.model.v20180104;
 
 import com.aliyuncs.RpcAcsRequest;
 
@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class GetClusterInstanceRequest extends RpcAcsRequest<GetClusterInstanceResponse> {
 	
 	public GetClusterInstanceRequest() {
-		super("TeslaMaxCompute", "2017-11-30", "GetClusterInstance");
+		super("TeslaMaxCompute", "2018-01-04", "GetClusterInstance");
 	}
 
 	private String cluster;
@@ -35,6 +35,8 @@ public class GetClusterInstanceRequest extends RpcAcsRequest<GetClusterInstanceR
 	private Integer pageSize;
 
 	private Integer pageNum;
+
+	private String region;
 
 	private String status;
 
@@ -68,6 +70,17 @@ public class GetClusterInstanceRequest extends RpcAcsRequest<GetClusterInstanceR
 		this.pageNum = pageNum;
 		if(pageNum != null){
 			putQueryParameter("PageNum", pageNum.toString());
+		}
+	}
+
+	public String getRegion() {
+		return this.region;
+	}
+
+	public void setRegion(String region) {
+		this.region = region;
+		if(region != null){
+			putQueryParameter("Region", region);
 		}
 	}
 

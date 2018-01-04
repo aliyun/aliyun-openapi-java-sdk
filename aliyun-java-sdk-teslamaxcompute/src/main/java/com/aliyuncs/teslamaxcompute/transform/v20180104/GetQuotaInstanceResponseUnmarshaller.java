@@ -16,14 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package com.aliyuncs.teslamaxcompute.transform.v20171130;
+package com.aliyuncs.teslamaxcompute.transform.v20180104;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import com.aliyuncs.teslamaxcompute.model.v20171130.GetQuotaInstanceResponse;
-import com.aliyuncs.teslamaxcompute.model.v20171130.GetQuotaInstanceResponse.Data;
-import com.aliyuncs.teslamaxcompute.model.v20171130.GetQuotaInstanceResponse.Data.Instance;
+import com.aliyuncs.teslamaxcompute.model.v20180104.GetQuotaInstanceResponse;
+import com.aliyuncs.teslamaxcompute.model.v20180104.GetQuotaInstanceResponse.Data;
+import com.aliyuncs.teslamaxcompute.model.v20180104.GetQuotaInstanceResponse.Data.Instance;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

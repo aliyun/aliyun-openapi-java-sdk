@@ -16,18 +16,18 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package com.aliyuncs.teslamaxcompute.model.v20171130;
+package com.aliyuncs.teslamaxcompute.model.v20180104;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.teslamaxcompute.transform.v20171130.GetUserInstanceResponseUnmarshaller;
+import com.aliyuncs.teslamaxcompute.transform.v20180104.GetClusterInstanceResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class GetUserInstanceResponse extends AcsResponse {
+public class GetClusterInstanceResponse extends AcsResponse {
 
 	private Integer code;
 
@@ -306,8 +306,8 @@ public class GetUserInstanceResponse extends AcsResponse {
 	}
 
 	@Override
-	public GetUserInstanceResponse getInstance(UnmarshallerContext context) {
-		return	GetUserInstanceResponseUnmarshaller.unmarshall(this, context);
+	public GetClusterInstanceResponse getInstance(UnmarshallerContext context) {
+		return	GetClusterInstanceResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

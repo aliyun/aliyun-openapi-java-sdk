@@ -1,3 +1,6 @@
+2018-01-04 Version: 1.1.0
+1, Remove get entity info API, replaced by get entity instance.
+
 2017-12-26 Version: 1.0.4
 1, Fix response field type.
 

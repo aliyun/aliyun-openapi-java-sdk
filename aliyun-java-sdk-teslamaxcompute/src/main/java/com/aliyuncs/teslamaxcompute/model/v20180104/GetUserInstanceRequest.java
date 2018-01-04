@@ -16,7 +16,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package com.aliyuncs.teslamaxcompute.model.v20171130;
+package com.aliyuncs.teslamaxcompute.model.v20180104;
 
 import com.aliyuncs.RpcAcsRequest;
 
@@ -24,15 +24,17 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class GetUserInfoRequest extends RpcAcsRequest<GetUserInfoResponse> {
+public class GetUserInstanceRequest extends RpcAcsRequest<GetUserInstanceResponse> {
 	
-	public GetUserInfoRequest() {
-		super("TeslaMaxCompute", "2017-11-30", "GetUserInfo");
+	public GetUserInstanceRequest() {
+		super("TeslaMaxCompute", "2018-01-04", "GetUserInstance");
 	}
 
 	private Integer pageSize;
 
 	private Integer pageNum;
+
+	private String region;
 
 	private String user;
 
@@ -60,6 +62,17 @@ public class GetUserInfoRequest extends RpcAcsRequest<GetUserInfoResponse> {
 		}
 	}
 
+	public String getRegion() {
+		return this.region;
+	}
+
+	public void setRegion(String region) {
+		this.region = region;
+		if(region != null){
+			putQueryParameter("Region", region);
+		}
+	}
+
 	public String getUser() {
 		return this.user;
 	}
@@ -83,8 +96,8 @@ public class GetUserInfoRequest extends RpcAcsRequest<GetUserInfoResponse> {
 	}
 
 	@Override
-	public Class<GetUserInfoResponse> getResponseClass() {
-		return GetUserInfoResponse.class;
+	public Class<GetUserInstanceResponse> getResponseClass() {
+		return GetUserInstanceResponse.class;
 	}
 
 }

@@ -16,14 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package com.aliyuncs.teslamaxcompute.transform.v20171130;
+package com.aliyuncs.teslamaxcompute.transform.v20180104;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import com.aliyuncs.teslamaxcompute.model.v20171130.GetClusterInstanceResponse;
-import com.aliyuncs.teslamaxcompute.model.v20171130.GetClusterInstanceResponse.Data;
-import com.aliyuncs.teslamaxcompute.model.v20171130.GetClusterInstanceResponse.Data.Instance;
+import com.aliyuncs.teslamaxcompute.model.v20180104.GetClusterInstanceResponse;
+import com.aliyuncs.teslamaxcompute.model.v20180104.GetClusterInstanceResponse.Data;
+import com.aliyuncs.teslamaxcompute.model.v20180104.GetClusterInstanceResponse.Data.Instance;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

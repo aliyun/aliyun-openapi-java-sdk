@@ -16,7 +16,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package com.aliyuncs.teslamaxcompute.model.v20171130;
+package com.aliyuncs.teslamaxcompute.model.v20180104;
 
 import com.aliyuncs.RpcAcsRequest;
 
@@ -24,19 +24,15 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class GetClusterInfoRequest extends RpcAcsRequest<GetClusterInfoResponse> {
+public class GetInstancesStatusCountRequest extends RpcAcsRequest<GetInstancesStatusCountResponse> {
 	
-	public GetClusterInfoRequest() {
-		super("TeslaMaxCompute", "2017-11-30", "GetClusterInfo");
+	public GetInstancesStatusCountRequest() {
+		super("TeslaMaxCompute", "2018-01-04", "GetInstancesStatusCount");
 	}
 
 	private String cluster;
 
-	private Integer pageSize;
-
-	private Integer pageNum;
-
-	private String status;
+	private String region;
 
 	public String getCluster() {
 		return this.cluster;
@@ -49,42 +45,20 @@ public class GetClusterInfoRequest extends RpcAcsRequest<GetClusterInfoResponse>
 		}
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public String getRegion() {
+		return this.region;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
-	public Integer getPageNum() {
-		return this.pageNum;
-	}
-
-	public void setPageNum(Integer pageNum) {
-		this.pageNum = pageNum;
-		if(pageNum != null){
-			putQueryParameter("PageNum", pageNum.toString());
-		}
-	}
-
-	public String getStatus() {
-		return this.status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
-		if(status != null){
-			putQueryParameter("Status", status);
+	public void setRegion(String region) {
+		this.region = region;
+		if(region != null){
+			putQueryParameter("Region", region);
 		}
 	}
 
 	@Override
-	public Class<GetClusterInfoResponse> getResponseClass() {
-		return GetClusterInfoResponse.class;
+	public Class<GetInstancesStatusCountResponse> getResponseClass() {
+		return GetInstancesStatusCountResponse.class;
 	}
 
 }

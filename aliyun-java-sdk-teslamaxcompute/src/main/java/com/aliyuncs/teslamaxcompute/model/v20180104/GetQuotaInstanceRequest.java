@@ -16,7 +16,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package com.aliyuncs.teslamaxcompute.model.v20171130;
+package com.aliyuncs.teslamaxcompute.model.v20180104;
 
 import com.aliyuncs.RpcAcsRequest;
 
@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class GetQuotaInstanceRequest extends RpcAcsRequest<GetQuotaInstanceResponse> {
 	
 	public GetQuotaInstanceRequest() {
-		super("TeslaMaxCompute", "2017-11-30", "GetQuotaInstance");
+		super("TeslaMaxCompute", "2018-01-04", "GetQuotaInstance");
 	}
 
 	private String cluster;

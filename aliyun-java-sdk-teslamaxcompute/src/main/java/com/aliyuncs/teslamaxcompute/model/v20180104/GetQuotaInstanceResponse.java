@@ -16,18 +16,18 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package com.aliyuncs.teslamaxcompute.model.v20171130;
+package com.aliyuncs.teslamaxcompute.model.v20180104;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.teslamaxcompute.transform.v20171130.GetProjectInfoResponseUnmarshaller;
+import com.aliyuncs.teslamaxcompute.transform.v20180104.GetQuotaInstanceResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class GetProjectInfoResponse extends AcsResponse {
+public class GetQuotaInstanceResponse extends AcsResponse {
 
 	private Integer code;
 
@@ -107,6 +107,34 @@ public class GetProjectInfoResponse extends AcsResponse {
 
 			private String runTime;
 
+			private Long cpuUsed;
+
+			private Long cpuRequest;
+
+			private Long cpuUsedTotal;
+
+			private Float cpuUsedRatioMax;
+
+			private Float cpuUsedRatioMin;
+
+			private Long memUsed;
+
+			private Long memRequest;
+
+			private Long memUsedTotal;
+
+			private Float memUsedRatioMax;
+
+			private Float memUsedRatioMin;
+
+			private String taskType;
+
+			private String skynetId;
+
+			private String quotaName;
+
+			private Integer quotaId;
+
 			public String getProject() {
 				return this.project;
 			}
@@ -162,12 +190,124 @@ public class GetProjectInfoResponse extends AcsResponse {
 			public void setRunTime(String runTime) {
 				this.runTime = runTime;
 			}
+
+			public Long getCpuUsed() {
+				return this.cpuUsed;
+			}
+
+			public void setCpuUsed(Long cpuUsed) {
+				this.cpuUsed = cpuUsed;
+			}
+
+			public Long getCpuRequest() {
+				return this.cpuRequest;
+			}
+
+			public void setCpuRequest(Long cpuRequest) {
+				this.cpuRequest = cpuRequest;
+			}
+
+			public Long getCpuUsedTotal() {
+				return this.cpuUsedTotal;
+			}
+
+			public void setCpuUsedTotal(Long cpuUsedTotal) {
+				this.cpuUsedTotal = cpuUsedTotal;
+			}
+
+			public Float getCpuUsedRatioMax() {
+				return this.cpuUsedRatioMax;
+			}
+
+			public void setCpuUsedRatioMax(Float cpuUsedRatioMax) {
+				this.cpuUsedRatioMax = cpuUsedRatioMax;
+			}
+
+			public Float getCpuUsedRatioMin() {
+				return this.cpuUsedRatioMin;
+			}
+
+			public void setCpuUsedRatioMin(Float cpuUsedRatioMin) {
+				this.cpuUsedRatioMin = cpuUsedRatioMin;
+			}
+
+			public Long getMemUsed() {
+				return this.memUsed;
+			}
+
+			public void setMemUsed(Long memUsed) {
+				this.memUsed = memUsed;
+			}
+
+			public Long getMemRequest() {
+				return this.memRequest;
+			}
+
+			public void setMemRequest(Long memRequest) {
+				this.memRequest = memRequest;
+			}
+
+			public Long getMemUsedTotal() {
+				return this.memUsedTotal;
+			}
+
+			public void setMemUsedTotal(Long memUsedTotal) {
+				this.memUsedTotal = memUsedTotal;
+			}
+
+			public Float getMemUsedRatioMax() {
+				return this.memUsedRatioMax;
+			}
+
+			public void setMemUsedRatioMax(Float memUsedRatioMax) {
+				this.memUsedRatioMax = memUsedRatioMax;
+			}
+
+			public Float getMemUsedRatioMin() {
+				return this.memUsedRatioMin;
+			}
+
+			public void setMemUsedRatioMin(Float memUsedRatioMin) {
+				this.memUsedRatioMin = memUsedRatioMin;
+			}
+
+			public String getTaskType() {
+				return this.taskType;
+			}
+
+			public void setTaskType(String taskType) {
+				this.taskType = taskType;
+			}
+
+			public String getSkynetId() {
+				return this.skynetId;
+			}
+
+			public void setSkynetId(String skynetId) {
+				this.skynetId = skynetId;
+			}
+
+			public String getQuotaName() {
+				return this.quotaName;
+			}
+
+			public void setQuotaName(String quotaName) {
+				this.quotaName = quotaName;
+			}
+
+			public Integer getQuotaId() {
+				return this.quotaId;
+			}
+
+			public void setQuotaId(Integer quotaId) {
+				this.quotaId = quotaId;
+			}
 		}
 	}
 
 	@Override
-	public GetProjectInfoResponse getInstance(UnmarshallerContext context) {
-		return	GetProjectInfoResponseUnmarshaller.unmarshall(this, context);
+	public GetQuotaInstanceResponse getInstance(UnmarshallerContext context) {
+		return	GetQuotaInstanceResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

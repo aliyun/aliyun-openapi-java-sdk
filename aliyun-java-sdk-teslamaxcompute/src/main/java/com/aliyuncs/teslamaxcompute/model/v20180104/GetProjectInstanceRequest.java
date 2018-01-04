@@ -16,7 +16,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package com.aliyuncs.teslamaxcompute.model.v20171130;
+package com.aliyuncs.teslamaxcompute.model.v20180104;
 
 import com.aliyuncs.RpcAcsRequest;
 
@@ -24,32 +24,21 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class GetQuotaInfoRequest extends RpcAcsRequest<GetQuotaInfoResponse> {
+public class GetProjectInstanceRequest extends RpcAcsRequest<GetProjectInstanceResponse> {
 	
-	public GetQuotaInfoRequest() {
-		super("TeslaMaxCompute", "2017-11-30", "GetQuotaInfo");
+	public GetProjectInstanceRequest() {
+		super("TeslaMaxCompute", "2018-01-04", "GetProjectInstance");
 	}
-
-	private String cluster;
 
 	private Integer pageSize;
 
-	private String quotaId;
+	private String project;
 
 	private Integer pageNum;
 
+	private String region;
+
 	private String status;
-
-	public String getCluster() {
-		return this.cluster;
-	}
-
-	public void setCluster(String cluster) {
-		this.cluster = cluster;
-		if(cluster != null){
-			putQueryParameter("Cluster", cluster);
-		}
-	}
 
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -62,14 +51,14 @@ public class GetQuotaInfoRequest extends RpcAcsRequest<GetQuotaInfoResponse> {
 		}
 	}
 
-	public String getQuotaId() {
-		return this.quotaId;
+	public String getProject() {
+		return this.project;
 	}
 
-	public void setQuotaId(String quotaId) {
-		this.quotaId = quotaId;
-		if(quotaId != null){
-			putQueryParameter("QuotaId", quotaId);
+	public void setProject(String project) {
+		this.project = project;
+		if(project != null){
+			putQueryParameter("Project", project);
 		}
 	}
 
@@ -81,6 +70,17 @@ public class GetQuotaInfoRequest extends RpcAcsRequest<GetQuotaInfoResponse> {
 		this.pageNum = pageNum;
 		if(pageNum != null){
 			putQueryParameter("PageNum", pageNum.toString());
+		}
+	}
+
+	public String getRegion() {
+		return this.region;
+	}
+
+	public void setRegion(String region) {
+		this.region = region;
+		if(region != null){
+			putQueryParameter("Region", region);
 		}
 	}
 
@@ -96,8 +96,8 @@ public class GetQuotaInfoRequest extends RpcAcsRequest<GetQuotaInfoResponse> {
 	}
 
 	@Override
-	public Class<GetQuotaInfoResponse> getResponseClass() {
-		return GetQuotaInfoResponse.class;
+	public Class<GetProjectInstanceResponse> getResponseClass() {
+		return GetProjectInstanceResponse.class;
 	}
 
 }
