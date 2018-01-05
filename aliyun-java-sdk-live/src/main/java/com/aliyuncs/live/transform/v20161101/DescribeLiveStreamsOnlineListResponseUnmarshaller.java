@@ -40,6 +40,7 @@ public class DescribeLiveStreamsOnlineListResponseUnmarshaller {
 			liveStreamOnlineInfo.setStreamName(context.stringValue("DescribeLiveStreamsOnlineListResponse.OnlineInfo["+ i +"].StreamName"));
 			liveStreamOnlineInfo.setPublishTime(context.stringValue("DescribeLiveStreamsOnlineListResponse.OnlineInfo["+ i +"].PublishTime"));
 			liveStreamOnlineInfo.setPublishUrl(context.stringValue("DescribeLiveStreamsOnlineListResponse.OnlineInfo["+ i +"].PublishUrl"));
+			liveStreamOnlineInfo.setPublishDomain(context.stringValue("DescribeLiveStreamsOnlineListResponse.OnlineInfo["+ i +"].PublishDomain"));
 
 			onlineInfo.add(liveStreamOnlineInfo);
 		}

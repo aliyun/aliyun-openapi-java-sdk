@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class AddLiveRecordVodConfigRequest extends RpcAcsRequest<AddLiveRecordVodConfigResponse> {
 	
 	public AddLiveRecordVodConfigRequest() {
-		super("live", "2016-11-01", "AddLiveRecordVodConfig");
+		super("live", "2016-11-01", "AddLiveRecordVodConfig", "live");
 	}
 
 	private String appName;
@@ -41,6 +41,8 @@ public class AddLiveRecordVodConfigRequest extends RpcAcsRequest<AddLiveRecordVo
 	private Long ownerId;
 
 	private String version;
+
+	private String streamName;
 
 	private String vodTranscodeGroupId;
 
@@ -107,6 +109,17 @@ public class AddLiveRecordVodConfigRequest extends RpcAcsRequest<AddLiveRecordVo
 		this.version = version;
 		if(version != null){
 			putQueryParameter("Version", version);
+		}
+	}
+
+	public String getStreamName() {
+		return this.streamName;
+	}
+
+	public void setStreamName(String streamName) {
+		this.streamName = streamName;
+		if(streamName != null){
+			putQueryParameter("StreamName", streamName);
 		}
 	}
 

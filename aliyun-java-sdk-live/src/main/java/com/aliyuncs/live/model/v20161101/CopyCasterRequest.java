@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class CopyCasterRequest extends RpcAcsRequest<CopyCasterResponse> {
 	
 	public CopyCasterRequest() {
-		super("live", "2016-11-01", "CopyCaster");
+		super("live", "2016-11-01", "CopyCaster", "live");
 	}
 
 	private String srcCasterId;

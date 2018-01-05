@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class AddCasterComponentRequest extends RpcAcsRequest<AddCasterComponentResponse> {
 	
 	public AddCasterComponentRequest() {
-		super("live", "2016-11-01", "AddCasterComponent");
+		super("live", "2016-11-01", "AddCasterComponent", "live");
 	}
 
 	private String imageLayerContent;

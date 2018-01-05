@@ -41,6 +41,7 @@ public class DescribeLiveRecordVodConfigsResponseUnmarshaller {
 			liveRecordVodConfig.setCreateTime(context.stringValue("DescribeLiveRecordVodConfigsResponse.LiveRecordVodConfigs["+ i +"].CreateTime"));
 			liveRecordVodConfig.setDomainName(context.stringValue("DescribeLiveRecordVodConfigsResponse.LiveRecordVodConfigs["+ i +"].DomainName"));
 			liveRecordVodConfig.setAppName(context.stringValue("DescribeLiveRecordVodConfigsResponse.LiveRecordVodConfigs["+ i +"].AppName"));
+			liveRecordVodConfig.setStreamName(context.stringValue("DescribeLiveRecordVodConfigsResponse.LiveRecordVodConfigs["+ i +"].StreamName"));
 			liveRecordVodConfig.setVodTranscodeGroupId(context.stringValue("DescribeLiveRecordVodConfigsResponse.LiveRecordVodConfigs["+ i +"].VodTranscodeGroupId"));
 			liveRecordVodConfig.setCycleDuration(context.integerValue("DescribeLiveRecordVodConfigsResponse.LiveRecordVodConfigs["+ i +"].CycleDuration"));
 

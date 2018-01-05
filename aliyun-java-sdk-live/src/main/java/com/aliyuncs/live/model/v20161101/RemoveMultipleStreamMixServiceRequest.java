@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class RemoveMultipleStreamMixServiceRequest extends RpcAcsRequest<RemoveMultipleStreamMixServiceResponse> {
 	
 	public RemoveMultipleStreamMixServiceRequest() {
-		super("live", "2016-11-01", "RemoveMultipleStreamMixService");
+		super("live", "2016-11-01", "RemoveMultipleStreamMixService", "live");
 	}
 
 	private String appName;

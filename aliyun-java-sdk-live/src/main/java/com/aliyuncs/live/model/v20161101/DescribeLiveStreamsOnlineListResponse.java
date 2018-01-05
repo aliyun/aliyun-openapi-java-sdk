@@ -61,6 +61,8 @@ public class DescribeLiveStreamsOnlineListResponse extends AcsResponse {
 
 		private String publishUrl;
 
+		private String publishDomain;
+
 		public String getDomainName() {
 			return this.domainName;
 		}
@@ -99,6 +101,14 @@ public class DescribeLiveStreamsOnlineListResponse extends AcsResponse {
 
 		public void setPublishUrl(String publishUrl) {
 			this.publishUrl = publishUrl;
+		}
+
+		public String getPublishDomain() {
+			return this.publishDomain;
+		}
+
+		public void setPublishDomain(String publishDomain) {
+			this.publishDomain = publishDomain;
 		}
 	}
 

@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class StopMultipleStreamMixServiceRequest extends RpcAcsRequest<StopMultipleStreamMixServiceResponse> {
 	
 	public StopMultipleStreamMixServiceRequest() {
-		super("live", "2016-11-01", "StopMultipleStreamMixService");
+		super("live", "2016-11-01", "StopMultipleStreamMixService", "live");
 	}
 
 	private String appName;

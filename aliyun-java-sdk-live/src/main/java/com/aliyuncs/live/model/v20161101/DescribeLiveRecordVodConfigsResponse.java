@@ -87,6 +87,8 @@ public class DescribeLiveRecordVodConfigsResponse extends AcsResponse {
 
 		private String appName;
 
+		private String streamName;
+
 		private String vodTranscodeGroupId;
 
 		private Integer cycleDuration;
@@ -113,6 +115,14 @@ public class DescribeLiveRecordVodConfigsResponse extends AcsResponse {
 
 		public void setAppName(String appName) {
 			this.appName = appName;
+		}
+
+		public String getStreamName() {
+			return this.streamName;
+		}
+
+		public void setStreamName(String streamName) {
+			this.streamName = streamName;
 		}
 
 		public String getVodTranscodeGroupId() {

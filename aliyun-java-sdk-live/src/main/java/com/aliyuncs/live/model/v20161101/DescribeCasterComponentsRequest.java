@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeCasterComponentsRequest extends RpcAcsRequest<DescribeCasterComponentsResponse> {
 	
 	public DescribeCasterComponentsRequest() {
-		super("live", "2016-11-01", "DescribeCasterComponents");
+		super("live", "2016-11-01", "DescribeCasterComponents", "live");
 	}
 
 	private String componentId;

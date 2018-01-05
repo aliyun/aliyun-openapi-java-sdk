@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeLiveRecordVodConfigsRequest extends RpcAcsRequest<DescribeLiveRecordVodConfigsResponse> {
 	
 	public DescribeLiveRecordVodConfigsRequest() {
-		super("live", "2016-11-01", "DescribeLiveRecordVodConfigs");
+		super("live", "2016-11-01", "DescribeLiveRecordVodConfigs", "live");
 	}
 
 	private String appName;
@@ -43,6 +43,8 @@ public class DescribeLiveRecordVodConfigsRequest extends RpcAcsRequest<DescribeL
 	private Long pageNum;
 
 	private String version;
+
+	private String streamName;
 
 	public String getAppName() {
 		return this.appName;
@@ -118,6 +120,17 @@ public class DescribeLiveRecordVodConfigsRequest extends RpcAcsRequest<DescribeL
 		this.version = version;
 		if(version != null){
 			putQueryParameter("Version", version);
+		}
+	}
+
+	public String getStreamName() {
+		return this.streamName;
+	}
+
+	public void setStreamName(String streamName) {
+		this.streamName = streamName;
+		if(streamName != null){
+			putQueryParameter("StreamName", streamName);
 		}
 	}
 

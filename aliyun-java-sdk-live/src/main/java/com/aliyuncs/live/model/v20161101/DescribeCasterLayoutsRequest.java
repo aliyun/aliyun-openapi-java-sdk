@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeCasterLayoutsRequest extends RpcAcsRequest<DescribeCasterLayoutsResponse> {
 	
 	public DescribeCasterLayoutsRequest() {
-		super("live", "2016-11-01", "DescribeCasterLayouts");
+		super("live", "2016-11-01", "DescribeCasterLayouts", "live");
 	}
 
 	private String securityToken;
@@ -37,6 +37,8 @@ public class DescribeCasterLayoutsRequest extends RpcAcsRequest<DescribeCasterLa
 	private Long ownerId;
 
 	private String version;
+
+	private String layoutId;
 
 	public String getSecurityToken() {
 		return this.securityToken;
@@ -79,6 +81,17 @@ public class DescribeCasterLayoutsRequest extends RpcAcsRequest<DescribeCasterLa
 		this.version = version;
 		if(version != null){
 			putQueryParameter("Version", version);
+		}
+	}
+
+	public String getLayoutId() {
+		return this.layoutId;
+	}
+
+	public void setLayoutId(String layoutId) {
+		this.layoutId = layoutId;
+		if(layoutId != null){
+			putQueryParameter("LayoutId", layoutId);
 		}
 	}
 

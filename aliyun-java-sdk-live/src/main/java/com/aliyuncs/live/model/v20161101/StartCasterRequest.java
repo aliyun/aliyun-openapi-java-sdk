@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class StartCasterRequest extends RpcAcsRequest<StartCasterResponse> {
 	
 	public StartCasterRequest() {
-		super("live", "2016-11-01", "StartCaster");
+		super("live", "2016-11-01", "StartCaster", "live");
 	}
 
 	private String securityToken;

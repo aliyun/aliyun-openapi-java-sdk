@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeleteCasterComponentRequest extends RpcAcsRequest<DeleteCasterComponentResponse> {
 	
 	public DeleteCasterComponentRequest() {
-		super("live", "2016-11-01", "DeleteCasterComponent");
+		super("live", "2016-11-01", "DeleteCasterComponent", "live");
 	}
 
 	private String componentId;

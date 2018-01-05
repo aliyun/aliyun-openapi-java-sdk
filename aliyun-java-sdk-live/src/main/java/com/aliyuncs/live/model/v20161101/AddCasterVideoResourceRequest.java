@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class AddCasterVideoResourceRequest extends RpcAcsRequest<AddCasterVideoResourceResponse> {
 	
 	public AddCasterVideoResourceRequest() {
-		super("live", "2016-11-01", "AddCasterVideoResource");
+		super("live", "2016-11-01", "AddCasterVideoResource", "live");
 	}
 
 	private String liveStreamUrl;

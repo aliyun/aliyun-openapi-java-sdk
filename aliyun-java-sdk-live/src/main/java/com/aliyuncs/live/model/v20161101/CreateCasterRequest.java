@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class CreateCasterRequest extends RpcAcsRequest<CreateCasterResponse> {
 	
 	public CreateCasterRequest() {
-		super("live", "2016-11-01", "CreateCaster");
+		super("live", "2016-11-01", "CreateCaster", "live");
 	}
 
 	private String casterTemplate;

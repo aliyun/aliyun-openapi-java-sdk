@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class EffectCasterUrgentRequest extends RpcAcsRequest<EffectCasterUrgentResponse> {
 	
 	public EffectCasterUrgentRequest() {
-		super("live", "2016-11-01", "EffectCasterUrgent");
+		super("live", "2016-11-01", "EffectCasterUrgent", "live");
 	}
 
 	private String securityToken;

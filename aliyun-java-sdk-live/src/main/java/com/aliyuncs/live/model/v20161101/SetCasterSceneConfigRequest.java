@@ -28,7 +28,7 @@ import java.util.List;
 public class SetCasterSceneConfigRequest extends RpcAcsRequest<SetCasterSceneConfigResponse> {
 	
 	public SetCasterSceneConfigRequest() {
-		super("live", "2016-11-01", "SetCasterSceneConfig");
+		super("live", "2016-11-01", "SetCasterSceneConfig", "live");
 	}
 
 	private List<String> componentIds;

@@ -1,3 +1,7 @@
+2018-01-05 Version: 3.3.0
+1, add parameter streamName to AddLiveRecordVodConfig,DeleteLiveRecordVodConfig,DescribeLiveRecordVodConfigs
+2, add return value publishDomain for DescribeLiveStreamsOnlineList,DescribeLiveStreamsPublishList
+
 2017-12-22 Version: 3.2.0
 1, Add Input parameter StartTime for DescribeCasters.
 2, Add return value CallbackUrl, SideOutputUrl for DescribeCasterConfig.

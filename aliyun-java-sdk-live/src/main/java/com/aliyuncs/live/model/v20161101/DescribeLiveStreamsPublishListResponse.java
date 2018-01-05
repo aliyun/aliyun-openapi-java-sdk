@@ -69,6 +69,8 @@ public class DescribeLiveStreamsPublishListResponse extends AcsResponse {
 
 		private String edgeNodeAddr;
 
+		private String publishDomain;
+
 		public String getDomainName() {
 			return this.domainName;
 		}
@@ -139,6 +141,14 @@ public class DescribeLiveStreamsPublishListResponse extends AcsResponse {
 
 		public void setEdgeNodeAddr(String edgeNodeAddr) {
 			this.edgeNodeAddr = edgeNodeAddr;
+		}
+
+		public String getPublishDomain() {
+			return this.publishDomain;
+		}
+
+		public void setPublishDomain(String publishDomain) {
+			this.publishDomain = publishDomain;
 		}
 	}
 

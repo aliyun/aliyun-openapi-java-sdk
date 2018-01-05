@@ -24,34 +24,23 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class DeleteLiveRecordVodConfigRequest extends RpcAcsRequest<DeleteLiveRecordVodConfigResponse> {
+public class DeleteCasterSceneConfigRequest extends RpcAcsRequest<DeleteCasterSceneConfigResponse> {
 	
-	public DeleteLiveRecordVodConfigRequest() {
-		super("live", "2016-11-01", "DeleteLiveRecordVodConfig", "live");
+	public DeleteCasterSceneConfigRequest() {
+		super("live", "2016-11-01", "DeleteCasterSceneConfig", "live");
 	}
-
-	private String appName;
 
 	private String securityToken;
 
-	private String domainName;
+	private String casterId;
+
+	private String sceneId;
 
 	private Long ownerId;
 
+	private String type;
+
 	private String version;
-
-	private String streamName;
-
-	public String getAppName() {
-		return this.appName;
-	}
-
-	public void setAppName(String appName) {
-		this.appName = appName;
-		if(appName != null){
-			putQueryParameter("AppName", appName);
-		}
-	}
 
 	public String getSecurityToken() {
 		return this.securityToken;
@@ -64,14 +53,25 @@ public class DeleteLiveRecordVodConfigRequest extends RpcAcsRequest<DeleteLiveRe
 		}
 	}
 
-	public String getDomainName() {
-		return this.domainName;
+	public String getCasterId() {
+		return this.casterId;
 	}
 
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
-		if(domainName != null){
-			putQueryParameter("DomainName", domainName);
+	public void setCasterId(String casterId) {
+		this.casterId = casterId;
+		if(casterId != null){
+			putQueryParameter("CasterId", casterId);
+		}
+	}
+
+	public String getSceneId() {
+		return this.sceneId;
+	}
+
+	public void setSceneId(String sceneId) {
+		this.sceneId = sceneId;
+		if(sceneId != null){
+			putQueryParameter("SceneId", sceneId);
 		}
 	}
 
@@ -86,6 +86,17 @@ public class DeleteLiveRecordVodConfigRequest extends RpcAcsRequest<DeleteLiveRe
 		}
 	}
 
+	public String getType() {
+		return this.type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+		if(type != null){
+			putQueryParameter("Type", type);
+		}
+	}
+
 	public String getVersion() {
 		return this.version;
 	}
@@ -97,20 +108,9 @@ public class DeleteLiveRecordVodConfigRequest extends RpcAcsRequest<DeleteLiveRe
 		}
 	}
 
-	public String getStreamName() {
-		return this.streamName;
-	}
-
-	public void setStreamName(String streamName) {
-		this.streamName = streamName;
-		if(streamName != null){
-			putQueryParameter("StreamName", streamName);
-		}
-	}
-
 	@Override
-	public Class<DeleteLiveRecordVodConfigResponse> getResponseClass() {
-		return DeleteLiveRecordVodConfigResponse.class;
+	public Class<DeleteCasterSceneConfigResponse> getResponseClass() {
+		return DeleteCasterSceneConfigResponse.class;
 	}
 
 }
