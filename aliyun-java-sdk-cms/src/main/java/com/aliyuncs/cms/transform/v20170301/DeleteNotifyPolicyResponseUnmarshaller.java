@@ -18,22 +18,20 @@
  */
 package com.aliyuncs.cms.transform.v20170301;
 
-import com.aliyuncs.cms.model.v20170301.ProfileGetResponse;
+import com.aliyuncs.cms.model.v20170301.DeleteNotifyPolicyResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class ProfileGetResponseUnmarshaller {
+public class DeleteNotifyPolicyResponseUnmarshaller {
 
-	public static ProfileGetResponse unmarshall(ProfileGetResponse profileGetResponse, UnmarshallerContext context) {
+	public static DeleteNotifyPolicyResponse unmarshall(DeleteNotifyPolicyResponse deleteNotifyPolicyResponse, UnmarshallerContext context) {
 		
-		profileGetResponse.setRequestId(context.stringValue("ProfileGetResponse.RequestId"));
-		profileGetResponse.setErrorCode(context.integerValue("ProfileGetResponse.ErrorCode"));
-		profileGetResponse.setErrorMessage(context.stringValue("ProfileGetResponse.ErrorMessage"));
-		profileGetResponse.setSuccess(context.booleanValue("ProfileGetResponse.Success"));
-		profileGetResponse.setUserId(context.longValue("ProfileGetResponse.UserId"));
-		profileGetResponse.setAutoInstall(context.booleanValue("ProfileGetResponse.AutoInstall"));
-		profileGetResponse.setEnableInstallAgentNewECS(context.booleanValue("ProfileGetResponse.EnableInstallAgentNewECS"));
+		deleteNotifyPolicyResponse.setCode(context.stringValue("DeleteNotifyPolicyResponse.code"));
+		deleteNotifyPolicyResponse.setMessage(context.stringValue("DeleteNotifyPolicyResponse.message"));
+		deleteNotifyPolicyResponse.setSuccess(context.stringValue("DeleteNotifyPolicyResponse.success"));
+		deleteNotifyPolicyResponse.setTraceId(context.stringValue("DeleteNotifyPolicyResponse.traceId"));
+		deleteNotifyPolicyResponse.setResult(context.integerValue("DeleteNotifyPolicyResponse.result"));
 	 
-	 	return profileGetResponse;
+	 	return deleteNotifyPolicyResponse;
 	}
 }

@@ -18,22 +18,19 @@
  */
 package com.aliyuncs.cms.transform.v20170301;
 
-import com.aliyuncs.cms.model.v20170301.ProfileGetResponse;
+import com.aliyuncs.cms.model.v20170301.UpdateMyGroupInstancesResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class ProfileGetResponseUnmarshaller {
+public class UpdateMyGroupInstancesResponseUnmarshaller {
 
-	public static ProfileGetResponse unmarshall(ProfileGetResponse profileGetResponse, UnmarshallerContext context) {
+	public static UpdateMyGroupInstancesResponse unmarshall(UpdateMyGroupInstancesResponse updateMyGroupInstancesResponse, UnmarshallerContext context) {
 		
-		profileGetResponse.setRequestId(context.stringValue("ProfileGetResponse.RequestId"));
-		profileGetResponse.setErrorCode(context.integerValue("ProfileGetResponse.ErrorCode"));
-		profileGetResponse.setErrorMessage(context.stringValue("ProfileGetResponse.ErrorMessage"));
-		profileGetResponse.setSuccess(context.booleanValue("ProfileGetResponse.Success"));
-		profileGetResponse.setUserId(context.longValue("ProfileGetResponse.UserId"));
-		profileGetResponse.setAutoInstall(context.booleanValue("ProfileGetResponse.AutoInstall"));
-		profileGetResponse.setEnableInstallAgentNewECS(context.booleanValue("ProfileGetResponse.EnableInstallAgentNewECS"));
+		updateMyGroupInstancesResponse.setRequestId(context.stringValue("UpdateMyGroupInstancesResponse.RequestId"));
+		updateMyGroupInstancesResponse.setSuccess(context.booleanValue("UpdateMyGroupInstancesResponse.Success"));
+		updateMyGroupInstancesResponse.setErrorCode(context.integerValue("UpdateMyGroupInstancesResponse.ErrorCode"));
+		updateMyGroupInstancesResponse.setErrorMessage(context.stringValue("UpdateMyGroupInstancesResponse.ErrorMessage"));
 	 
-	 	return profileGetResponse;
+	 	return updateMyGroupInstancesResponse;
 	}
 }

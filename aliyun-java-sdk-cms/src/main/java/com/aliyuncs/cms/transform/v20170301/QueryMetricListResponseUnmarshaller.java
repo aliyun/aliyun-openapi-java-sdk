@@ -36,13 +36,14 @@ public class QueryMetricListResponseUnmarshaller {
 		queryMetricListResponse.setMessage(context.stringValue("QueryMetricListResponse.Message"));
 		queryMetricListResponse.setSuccess(context.booleanValue("QueryMetricListResponse.Success"));
 		queryMetricListResponse.setCursor(context.stringValue("QueryMetricListResponse.Cursor"));
+		queryMetricListResponse.setDatapoints(context.stringValue("QueryMetricListResponse.Datapoints"));
 		queryMetricListResponse.setPeriod(context.stringValue("QueryMetricListResponse.Period"));
-		
-		List<JSONObject> datapoints = JSONParser.parseJSONArray(context);
+	 
+	 	List<JSONObject> datapoints = JSONParser.parseJSONArray(context);
 		if ( null != datapoints ) {
 			queryMetricListResponse.setDatapoints(JSON.toJSONString(datapoints));			
 		}
-	 
+		
 	 	return queryMetricListResponse;
 	}
 }

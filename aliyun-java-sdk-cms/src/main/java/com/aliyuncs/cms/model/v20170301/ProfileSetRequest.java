@@ -30,9 +30,22 @@ public class ProfileSetRequest extends RpcAcsRequest<ProfileSetResponse> {
 		super("Cms", "2017-03-01", "ProfileSet", "cms");
 	}
 
+	private Boolean enableInstallAgentNewECS;
+
 	private Boolean autoInstall;
 
 	private Long userId;
+
+	public Boolean getEnableInstallAgentNewECS() {
+		return this.enableInstallAgentNewECS;
+	}
+
+	public void setEnableInstallAgentNewECS(Boolean enableInstallAgentNewECS) {
+		this.enableInstallAgentNewECS = enableInstallAgentNewECS;
+		if(enableInstallAgentNewECS != null){
+			putQueryParameter("EnableInstallAgentNewECS", enableInstallAgentNewECS.toString());
+		}
+	}
 
 	public Boolean getAutoInstall() {
 		return this.autoInstall;

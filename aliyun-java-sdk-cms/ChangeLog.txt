@@ -1,3 +1,6 @@
+2018-01-05 Version: 5.1.1
+1, Add the application group to manage API.
+
 2017-12-14 Version: 5.0.8
 1, Fixed DescribeAlarmHistory subuser access probelm
 2, Add both api, PutSystemEvent and PutCustomMetric

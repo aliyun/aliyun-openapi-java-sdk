@@ -18,22 +18,20 @@
  */
 package com.aliyuncs.cms.transform.v20170301;
 
-import com.aliyuncs.cms.model.v20170301.ProfileGetResponse;
+import com.aliyuncs.cms.model.v20170301.CreateMyGroupsResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class ProfileGetResponseUnmarshaller {
+public class CreateMyGroupsResponseUnmarshaller {
 
-	public static ProfileGetResponse unmarshall(ProfileGetResponse profileGetResponse, UnmarshallerContext context) {
+	public static CreateMyGroupsResponse unmarshall(CreateMyGroupsResponse createMyGroupsResponse, UnmarshallerContext context) {
 		
-		profileGetResponse.setRequestId(context.stringValue("ProfileGetResponse.RequestId"));
-		profileGetResponse.setErrorCode(context.integerValue("ProfileGetResponse.ErrorCode"));
-		profileGetResponse.setErrorMessage(context.stringValue("ProfileGetResponse.ErrorMessage"));
-		profileGetResponse.setSuccess(context.booleanValue("ProfileGetResponse.Success"));
-		profileGetResponse.setUserId(context.longValue("ProfileGetResponse.UserId"));
-		profileGetResponse.setAutoInstall(context.booleanValue("ProfileGetResponse.AutoInstall"));
-		profileGetResponse.setEnableInstallAgentNewECS(context.booleanValue("ProfileGetResponse.EnableInstallAgentNewECS"));
+		createMyGroupsResponse.setRequestId(context.stringValue("CreateMyGroupsResponse.RequestId"));
+		createMyGroupsResponse.setSuccess(context.booleanValue("CreateMyGroupsResponse.Success"));
+		createMyGroupsResponse.setErrorCode(context.integerValue("CreateMyGroupsResponse.ErrorCode"));
+		createMyGroupsResponse.setErrorMessage(context.stringValue("CreateMyGroupsResponse.ErrorMessage"));
+		createMyGroupsResponse.setGroupId(context.longValue("CreateMyGroupsResponse.GroupId"));
 	 
-	 	return profileGetResponse;
+	 	return createMyGroupsResponse;
 	}
 }

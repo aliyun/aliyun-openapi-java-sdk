@@ -40,6 +40,8 @@ public class ProfileGetResponse extends AcsResponse {
 
 	private Boolean autoInstall;
 
+	private Boolean enableInstallAgentNewECS;
+
 	public Integer getErrorCode() {
 		return this.errorCode;
 	}
@@ -86,6 +88,14 @@ public class ProfileGetResponse extends AcsResponse {
 
 	public void setAutoInstall(Boolean autoInstall) {
 		this.autoInstall = autoInstall;
+	}
+
+	public Boolean getEnableInstallAgentNewECS() {
+		return this.enableInstallAgentNewECS;
+	}
+
+	public void setEnableInstallAgentNewECS(Boolean enableInstallAgentNewECS) {
+		this.enableInstallAgentNewECS = enableInstallAgentNewECS;
 	}
 
 	@Override
