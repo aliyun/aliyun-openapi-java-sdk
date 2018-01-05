@@ -39,6 +39,8 @@ public class GetAudioDataStatusResponse extends AcsResponse {
 
 	private Integer count;
 
+	private Integer overallStatus;
+
 	private List<TaskAsrResult> data;
 
 	public String getRequestId() {
@@ -79,6 +81,14 @@ public class GetAudioDataStatusResponse extends AcsResponse {
 
 	public void setCount(Integer count) {
 		this.count = count;
+	}
+
+	public Integer getOverallStatus() {
+		return this.overallStatus;
+	}
+
+	public void setOverallStatus(Integer overallStatus) {
+		this.overallStatus = overallStatus;
 	}
 
 	public List<TaskAsrResult> getData() {

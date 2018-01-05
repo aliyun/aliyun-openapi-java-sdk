@@ -30,6 +30,7 @@ import com.aliyuncs.qualitycheck.model.v20160801.GetRuleDetailResponse.Data.Cond
 import com.aliyuncs.qualitycheck.model.v20160801.GetRuleDetailResponse.Data.ConditionBasicInfo.OperatorBasicInfo;
 import com.aliyuncs.qualitycheck.model.v20160801.GetRuleDetailResponse.Data.ConditionBasicInfo.OperatorBasicInfo.Param;
 import com.aliyuncs.qualitycheck.model.v20160801.GetRuleDetailResponse.Data.RuleBasicInfo;
+import com.aliyuncs.qualitycheck.model.v20160801.GetRuleDetailResponse.Data.RuleBasicInfo.BusinessCategoryBasicInfo;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -115,6 +116,17 @@ public class GetRuleDetailResponseUnmarshaller {
 				triggers.add(context.stringValue("GetRuleDetailResponse.data.rules["+ i +"].triggers["+ j +"]"));
 			}
 			ruleBasicInfo.setTriggers(triggers);
+
+			List<BusinessCategoryBasicInfo> businessCategories = new ArrayList<BusinessCategoryBasicInfo>();
+			for (int j = 0; j < context.lengthValue("GetRuleDetailResponse.data.rules["+ i +"].BusinessCategories.Length"); j++) {
+				BusinessCategoryBasicInfo businessCategoryBasicInfo = new BusinessCategoryBasicInfo();
+				businessCategoryBasicInfo.setBid(context.integerValue("GetRuleDetailResponse.data.rules["+ i +"].BusinessCategories["+ j +"].Bid"));
+				businessCategoryBasicInfo.setServiceType(context.integerValue("GetRuleDetailResponse.data.rules["+ i +"].BusinessCategories["+ j +"].ServiceType"));
+				businessCategoryBasicInfo.setBusinessName(context.stringValue("GetRuleDetailResponse.data.rules["+ i +"].BusinessCategories["+ j +"].BusinessName"));
+
+				businessCategories.add(businessCategoryBasicInfo);
+			}
+			ruleBasicInfo.setBusinessCategories(businessCategories);
 
 			rules.add(ruleBasicInfo);
 		}

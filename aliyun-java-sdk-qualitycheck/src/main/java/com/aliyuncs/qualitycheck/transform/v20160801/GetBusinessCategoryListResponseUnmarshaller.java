@@ -22,8 +22,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.qualitycheck.model.v20160801.GetBusinessCategoryListResponse;
-import com.aliyuncs.qualitycheck.model.v20160801.GetBusinessCategoryListResponse.Data;
-import com.aliyuncs.qualitycheck.model.v20160801.GetBusinessCategoryListResponse.Data.BusinessCategoryBasicInfo;
+import com.aliyuncs.qualitycheck.model.v20160801.GetBusinessCategoryListResponse.BusinessCategoryBasicInfo;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -36,19 +35,15 @@ public class GetBusinessCategoryListResponseUnmarshaller {
 		getBusinessCategoryListResponse.setCode(context.stringValue("GetBusinessCategoryListResponse.Code"));
 		getBusinessCategoryListResponse.setMessage(context.stringValue("GetBusinessCategoryListResponse.Message"));
 
-		Data data = new Data();
-
-		List<BusinessCategoryBasicInfo> businessCategorys = new ArrayList<BusinessCategoryBasicInfo>();
-		for (int i = 0; i < context.lengthValue("GetBusinessCategoryListResponse.Data.BusinessCategorys.Length"); i++) {
+		List<BusinessCategoryBasicInfo> data = new ArrayList<BusinessCategoryBasicInfo>();
+		for (int i = 0; i < context.lengthValue("GetBusinessCategoryListResponse.Data.Length"); i++) {
 			BusinessCategoryBasicInfo businessCategoryBasicInfo = new BusinessCategoryBasicInfo();
-			businessCategoryBasicInfo.setBid(context.integerValue("GetBusinessCategoryListResponse.Data.BusinessCategorys["+ i +"].Bid"));
-			businessCategoryBasicInfo.setServiceType(context.integerValue("GetBusinessCategoryListResponse.Data.BusinessCategorys["+ i +"].ServiceType"));
-			businessCategoryBasicInfo.setName(context.stringValue("GetBusinessCategoryListResponse.Data.BusinessCategorys["+ i +"].Name"));
-			businessCategoryBasicInfo.setOriginalId(context.integerValue("GetBusinessCategoryListResponse.Data.BusinessCategorys["+ i +"].OriginalId"));
+			businessCategoryBasicInfo.setBid(context.integerValue("GetBusinessCategoryListResponse.Data["+ i +"].Bid"));
+			businessCategoryBasicInfo.setServiceType(context.integerValue("GetBusinessCategoryListResponse.Data["+ i +"].ServiceType"));
+			businessCategoryBasicInfo.setBusinessName(context.stringValue("GetBusinessCategoryListResponse.Data["+ i +"].BusinessName"));
 
-			businessCategorys.add(businessCategoryBasicInfo);
+			data.add(businessCategoryBasicInfo);
 		}
-		data.setBusinessCategorys(businessCategorys);
 		getBusinessCategoryListResponse.setData(data);
 	 
 	 	return getBusinessCategoryListResponse;

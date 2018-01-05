@@ -395,6 +395,8 @@ public class GetRuleDetailResponse extends AcsResponse {
 
 			private String ruleLambda;
 
+			private List<BusinessCategoryBasicInfo> businessCategories;
+
 			private List<String> triggers;
 
 			public String getRid() {
@@ -413,12 +415,53 @@ public class GetRuleDetailResponse extends AcsResponse {
 				this.ruleLambda = ruleLambda;
 			}
 
+			public List<BusinessCategoryBasicInfo> getBusinessCategories() {
+				return this.businessCategories;
+			}
+
+			public void setBusinessCategories(List<BusinessCategoryBasicInfo> businessCategories) {
+				this.businessCategories = businessCategories;
+			}
+
 			public List<String> getTriggers() {
 				return this.triggers;
 			}
 
 			public void setTriggers(List<String> triggers) {
 				this.triggers = triggers;
+			}
+
+			public static class BusinessCategoryBasicInfo {
+
+				private Integer bid;
+
+				private Integer serviceType;
+
+				private String businessName;
+
+				public Integer getBid() {
+					return this.bid;
+				}
+
+				public void setBid(Integer bid) {
+					this.bid = bid;
+				}
+
+				public Integer getServiceType() {
+					return this.serviceType;
+				}
+
+				public void setServiceType(Integer serviceType) {
+					this.serviceType = serviceType;
+				}
+
+				public String getBusinessName() {
+					return this.businessName;
+				}
+
+				public void setBusinessName(String businessName) {
+					this.businessName = businessName;
+				}
 			}
 		}
 	}

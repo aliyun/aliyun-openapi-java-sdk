@@ -37,7 +37,7 @@ public class GetBusinessCategoryListResponse extends AcsResponse {
 
 	private String message;
 
-	private Data data;
+	private List<BusinessCategoryBasicInfo> data;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -71,67 +71,44 @@ public class GetBusinessCategoryListResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public Data getData() {
+	public List<BusinessCategoryBasicInfo> getData() {
 		return this.data;
 	}
 
-	public void setData(Data data) {
+	public void setData(List<BusinessCategoryBasicInfo> data) {
 		this.data = data;
 	}
 
-	public static class Data {
+	public static class BusinessCategoryBasicInfo {
 
-		private List<BusinessCategoryBasicInfo> businessCategorys;
+		private Integer bid;
 
-		public List<BusinessCategoryBasicInfo> getBusinessCategorys() {
-			return this.businessCategorys;
+		private Integer serviceType;
+
+		private String businessName;
+
+		public Integer getBid() {
+			return this.bid;
 		}
 
-		public void setBusinessCategorys(List<BusinessCategoryBasicInfo> businessCategorys) {
-			this.businessCategorys = businessCategorys;
+		public void setBid(Integer bid) {
+			this.bid = bid;
 		}
 
-		public static class BusinessCategoryBasicInfo {
+		public Integer getServiceType() {
+			return this.serviceType;
+		}
 
-			private Integer bid;
+		public void setServiceType(Integer serviceType) {
+			this.serviceType = serviceType;
+		}
 
-			private Integer serviceType;
+		public String getBusinessName() {
+			return this.businessName;
+		}
 
-			private String name;
-
-			private Integer originalId;
-
-			public Integer getBid() {
-				return this.bid;
-			}
-
-			public void setBid(Integer bid) {
-				this.bid = bid;
-			}
-
-			public Integer getServiceType() {
-				return this.serviceType;
-			}
-
-			public void setServiceType(Integer serviceType) {
-				this.serviceType = serviceType;
-			}
-
-			public String getName() {
-				return this.name;
-			}
-
-			public void setName(String name) {
-				this.name = name;
-			}
-
-			public Integer getOriginalId() {
-				return this.originalId;
-			}
-
-			public void setOriginalId(Integer originalId) {
-				this.originalId = originalId;
-			}
+		public void setBusinessName(String businessName) {
+			this.businessName = businessName;
 		}
 	}
 

@@ -37,6 +37,7 @@ public class GetAudioDataStatusResponseUnmarshaller {
 		getAudioDataStatusResponse.setCode(context.stringValue("GetAudioDataStatusResponse.code"));
 		getAudioDataStatusResponse.setMessage(context.stringValue("GetAudioDataStatusResponse.message"));
 		getAudioDataStatusResponse.setCount(context.integerValue("GetAudioDataStatusResponse.count"));
+		getAudioDataStatusResponse.setOverallStatus(context.integerValue("GetAudioDataStatusResponse.overallStatus"));
 
 		List<TaskAsrResult> data = new ArrayList<TaskAsrResult>();
 		for (int i = 0; i < context.lengthValue("GetAudioDataStatusResponse.data.Length"); i++) {
