@@ -34,6 +34,8 @@ public class SavePortalConfigResponse extends AcsResponse {
 
 	private String message;
 
+	private String data;
+
 	private Integer errorCode;
 
 	private String errorMsg;
@@ -60,6 +62,14 @@ public class SavePortalConfigResponse extends AcsResponse {
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getData() {
+		return this.data;
+	}
+
+	public void setData(String data) {
+		this.data = data;
 	}
 
 	public Integer getErrorCode() {

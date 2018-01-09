@@ -30,15 +30,25 @@ public class SaveApRadioSsidConfigRequest extends RpcAcsRequest<SaveApRadioSsidC
 		super("cloudwf", "2017-03-28", "SaveApRadioSsidConfig");
 	}
 
+	private String nasid;
+
+	private Integer authPort;
+
 	private Integer hidden;
 
 	private Integer dynamicVlan;
+
+	private String authServer;
+
+	private String secondaryAcctServer;
 
 	private String ssid;
 
 	private Integer cir;
 
 	private String mac;
+
+	private String secondaryAcctSecret;
 
 	private Integer ieee80211w;
 
@@ -68,11 +78,29 @@ public class SaveApRadioSsidConfigRequest extends RpcAcsRequest<SaveApRadioSsidC
 
 	private Integer maxassoc;
 
+	private String acctServer;
+
+	private String secondaryAuthServer;
+
+	private String daeClient;
+
+	private String daeSecret;
+
 	private Integer disassocLowAck;
+
+	private Integer secondaryAuthPort;
+
+	private String acctSecret;
 
 	private Integer disassocWeakRssi;
 
+	private Integer secondaryAcctPort;
+
+	private Integer daePort;
+
 	private Integer ssidLb;
+
+	private Integer acctPort;
 
 	private Integer maxInactivity;
 
@@ -81,6 +109,34 @@ public class SaveApRadioSsidConfigRequest extends RpcAcsRequest<SaveApRadioSsidC
 	private Integer instantlyEffective;
 
 	private Integer shortPreamble;
+
+	private String authSecret;
+
+	private String secondaryAuthSecret;
+
+	private String ownip;
+
+	public String getNasid() {
+		return this.nasid;
+	}
+
+	public void setNasid(String nasid) {
+		this.nasid = nasid;
+		if(nasid != null){
+			putQueryParameter("Nasid", nasid);
+		}
+	}
+
+	public Integer getAuthPort() {
+		return this.authPort;
+	}
+
+	public void setAuthPort(Integer authPort) {
+		this.authPort = authPort;
+		if(authPort != null){
+			putQueryParameter("AuthPort", authPort.toString());
+		}
+	}
 
 	public Integer getHidden() {
 		return this.hidden;
@@ -101,6 +157,28 @@ public class SaveApRadioSsidConfigRequest extends RpcAcsRequest<SaveApRadioSsidC
 		this.dynamicVlan = dynamicVlan;
 		if(dynamicVlan != null){
 			putQueryParameter("DynamicVlan", dynamicVlan.toString());
+		}
+	}
+
+	public String getAuthServer() {
+		return this.authServer;
+	}
+
+	public void setAuthServer(String authServer) {
+		this.authServer = authServer;
+		if(authServer != null){
+			putQueryParameter("AuthServer", authServer);
+		}
+	}
+
+	public String getSecondaryAcctServer() {
+		return this.secondaryAcctServer;
+	}
+
+	public void setSecondaryAcctServer(String secondaryAcctServer) {
+		this.secondaryAcctServer = secondaryAcctServer;
+		if(secondaryAcctServer != null){
+			putQueryParameter("SecondaryAcctServer", secondaryAcctServer);
 		}
 	}
 
@@ -134,6 +212,17 @@ public class SaveApRadioSsidConfigRequest extends RpcAcsRequest<SaveApRadioSsidC
 		this.mac = mac;
 		if(mac != null){
 			putQueryParameter("Mac", mac);
+		}
+	}
+
+	public String getSecondaryAcctSecret() {
+		return this.secondaryAcctSecret;
+	}
+
+	public void setSecondaryAcctSecret(String secondaryAcctSecret) {
+		this.secondaryAcctSecret = secondaryAcctSecret;
+		if(secondaryAcctSecret != null){
+			putQueryParameter("SecondaryAcctSecret", secondaryAcctSecret);
 		}
 	}
 
@@ -291,6 +380,50 @@ public class SaveApRadioSsidConfigRequest extends RpcAcsRequest<SaveApRadioSsidC
 		}
 	}
 
+	public String getAcctServer() {
+		return this.acctServer;
+	}
+
+	public void setAcctServer(String acctServer) {
+		this.acctServer = acctServer;
+		if(acctServer != null){
+			putQueryParameter("AcctServer", acctServer);
+		}
+	}
+
+	public String getSecondaryAuthServer() {
+		return this.secondaryAuthServer;
+	}
+
+	public void setSecondaryAuthServer(String secondaryAuthServer) {
+		this.secondaryAuthServer = secondaryAuthServer;
+		if(secondaryAuthServer != null){
+			putQueryParameter("SecondaryAuthServer", secondaryAuthServer);
+		}
+	}
+
+	public String getDaeClient() {
+		return this.daeClient;
+	}
+
+	public void setDaeClient(String daeClient) {
+		this.daeClient = daeClient;
+		if(daeClient != null){
+			putQueryParameter("DaeClient", daeClient);
+		}
+	}
+
+	public String getDaeSecret() {
+		return this.daeSecret;
+	}
+
+	public void setDaeSecret(String daeSecret) {
+		this.daeSecret = daeSecret;
+		if(daeSecret != null){
+			putQueryParameter("DaeSecret", daeSecret);
+		}
+	}
+
 	public Integer getDisassocLowAck() {
 		return this.disassocLowAck;
 	}
@@ -299,6 +432,28 @@ public class SaveApRadioSsidConfigRequest extends RpcAcsRequest<SaveApRadioSsidC
 		this.disassocLowAck = disassocLowAck;
 		if(disassocLowAck != null){
 			putQueryParameter("DisassocLowAck", disassocLowAck.toString());
+		}
+	}
+
+	public Integer getSecondaryAuthPort() {
+		return this.secondaryAuthPort;
+	}
+
+	public void setSecondaryAuthPort(Integer secondaryAuthPort) {
+		this.secondaryAuthPort = secondaryAuthPort;
+		if(secondaryAuthPort != null){
+			putQueryParameter("SecondaryAuthPort", secondaryAuthPort.toString());
+		}
+	}
+
+	public String getAcctSecret() {
+		return this.acctSecret;
+	}
+
+	public void setAcctSecret(String acctSecret) {
+		this.acctSecret = acctSecret;
+		if(acctSecret != null){
+			putQueryParameter("AcctSecret", acctSecret);
 		}
 	}
 
@@ -313,6 +468,28 @@ public class SaveApRadioSsidConfigRequest extends RpcAcsRequest<SaveApRadioSsidC
 		}
 	}
 
+	public Integer getSecondaryAcctPort() {
+		return this.secondaryAcctPort;
+	}
+
+	public void setSecondaryAcctPort(Integer secondaryAcctPort) {
+		this.secondaryAcctPort = secondaryAcctPort;
+		if(secondaryAcctPort != null){
+			putQueryParameter("SecondaryAcctPort", secondaryAcctPort.toString());
+		}
+	}
+
+	public Integer getDaePort() {
+		return this.daePort;
+	}
+
+	public void setDaePort(Integer daePort) {
+		this.daePort = daePort;
+		if(daePort != null){
+			putQueryParameter("DaePort", daePort.toString());
+		}
+	}
+
 	public Integer getSsidLb() {
 		return this.ssidLb;
 	}
@@ -321,6 +498,17 @@ public class SaveApRadioSsidConfigRequest extends RpcAcsRequest<SaveApRadioSsidC
 		this.ssidLb = ssidLb;
 		if(ssidLb != null){
 			putQueryParameter("SsidLb", ssidLb.toString());
+		}
+	}
+
+	public Integer getAcctPort() {
+		return this.acctPort;
+	}
+
+	public void setAcctPort(Integer acctPort) {
+		this.acctPort = acctPort;
+		if(acctPort != null){
+			putQueryParameter("AcctPort", acctPort.toString());
 		}
 	}
 
@@ -365,6 +553,39 @@ public class SaveApRadioSsidConfigRequest extends RpcAcsRequest<SaveApRadioSsidC
 		this.shortPreamble = shortPreamble;
 		if(shortPreamble != null){
 			putQueryParameter("ShortPreamble", shortPreamble.toString());
+		}
+	}
+
+	public String getAuthSecret() {
+		return this.authSecret;
+	}
+
+	public void setAuthSecret(String authSecret) {
+		this.authSecret = authSecret;
+		if(authSecret != null){
+			putQueryParameter("AuthSecret", authSecret);
+		}
+	}
+
+	public String getSecondaryAuthSecret() {
+		return this.secondaryAuthSecret;
+	}
+
+	public void setSecondaryAuthSecret(String secondaryAuthSecret) {
+		this.secondaryAuthSecret = secondaryAuthSecret;
+		if(secondaryAuthSecret != null){
+			putQueryParameter("SecondaryAuthSecret", secondaryAuthSecret);
+		}
+	}
+
+	public String getOwnip() {
+		return this.ownip;
+	}
+
+	public void setOwnip(String ownip) {
+		this.ownip = ownip;
+		if(ownip != null){
+			putQueryParameter("Ownip", ownip);
 		}
 	}
 

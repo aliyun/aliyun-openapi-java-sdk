@@ -29,6 +29,7 @@ public class SaveApRadioConfigResponseUnmarshaller {
 		saveApRadioConfigResponse.setRequestId(context.stringValue("SaveApRadioConfigResponse.RequestId"));
 		saveApRadioConfigResponse.setSuccess(context.booleanValue("SaveApRadioConfigResponse.Success"));
 		saveApRadioConfigResponse.setMessage(context.stringValue("SaveApRadioConfigResponse.Message"));
+		saveApRadioConfigResponse.setData(context.stringValue("SaveApRadioConfigResponse.Data"));
 		saveApRadioConfigResponse.setErrorCode(context.integerValue("SaveApRadioConfigResponse.ErrorCode"));
 		saveApRadioConfigResponse.setErrorMsg(context.stringValue("SaveApRadioConfigResponse.ErrorMsg"));
 	 

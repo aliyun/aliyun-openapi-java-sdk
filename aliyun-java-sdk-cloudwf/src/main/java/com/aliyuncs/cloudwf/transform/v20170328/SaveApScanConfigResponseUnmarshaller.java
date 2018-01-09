@@ -29,6 +29,7 @@ public class SaveApScanConfigResponseUnmarshaller {
 		saveApScanConfigResponse.setRequestId(context.stringValue("SaveApScanConfigResponse.RequestId"));
 		saveApScanConfigResponse.setSuccess(context.booleanValue("SaveApScanConfigResponse.Success"));
 		saveApScanConfigResponse.setMessage(context.stringValue("SaveApScanConfigResponse.Message"));
+		saveApScanConfigResponse.setData(context.stringValue("SaveApScanConfigResponse.Data"));
 		saveApScanConfigResponse.setErrorCode(context.integerValue("SaveApScanConfigResponse.ErrorCode"));
 		saveApScanConfigResponse.setErrorMsg(context.stringValue("SaveApScanConfigResponse.ErrorMsg"));
 	 

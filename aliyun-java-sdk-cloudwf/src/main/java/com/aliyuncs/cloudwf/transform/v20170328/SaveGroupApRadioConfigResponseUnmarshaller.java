@@ -29,6 +29,7 @@ public class SaveGroupApRadioConfigResponseUnmarshaller {
 		saveGroupApRadioConfigResponse.setRequestId(context.stringValue("SaveGroupApRadioConfigResponse.RequestId"));
 		saveGroupApRadioConfigResponse.setSuccess(context.booleanValue("SaveGroupApRadioConfigResponse.Success"));
 		saveGroupApRadioConfigResponse.setMessage(context.stringValue("SaveGroupApRadioConfigResponse.Message"));
+		saveGroupApRadioConfigResponse.setData(context.stringValue("SaveGroupApRadioConfigResponse.Data"));
 		saveGroupApRadioConfigResponse.setErrorCode(context.integerValue("SaveGroupApRadioConfigResponse.ErrorCode"));
 		saveGroupApRadioConfigResponse.setErrorMsg(context.stringValue("SaveGroupApRadioConfigResponse.ErrorMsg"));
 	 

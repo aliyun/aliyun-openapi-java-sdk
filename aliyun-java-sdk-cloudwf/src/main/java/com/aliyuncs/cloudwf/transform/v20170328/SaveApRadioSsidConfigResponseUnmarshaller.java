@@ -29,6 +29,7 @@ public class SaveApRadioSsidConfigResponseUnmarshaller {
 		saveApRadioSsidConfigResponse.setRequestId(context.stringValue("SaveApRadioSsidConfigResponse.RequestId"));
 		saveApRadioSsidConfigResponse.setSuccess(context.booleanValue("SaveApRadioSsidConfigResponse.Success"));
 		saveApRadioSsidConfigResponse.setMessage(context.stringValue("SaveApRadioSsidConfigResponse.Message"));
+		saveApRadioSsidConfigResponse.setData(context.stringValue("SaveApRadioSsidConfigResponse.Data"));
 		saveApRadioSsidConfigResponse.setErrorCode(context.integerValue("SaveApRadioSsidConfigResponse.ErrorCode"));
 		saveApRadioSsidConfigResponse.setErrorMsg(context.stringValue("SaveApRadioSsidConfigResponse.ErrorMsg"));
 	 

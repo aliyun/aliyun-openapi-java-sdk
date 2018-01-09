@@ -38,6 +38,8 @@ public class SaveApRadioConfigRequest extends RpcAcsRequest<SaveApRadioConfigRes
 
 	private Integer minrate;
 
+	private Integer mcastRate;
+
 	private Integer probereq;
 
 	private Integer channel;
@@ -109,6 +111,17 @@ public class SaveApRadioConfigRequest extends RpcAcsRequest<SaveApRadioConfigRes
 		this.minrate = minrate;
 		if(minrate != null){
 			putQueryParameter("Minrate", minrate.toString());
+		}
+	}
+
+	public Integer getMcastRate() {
+		return this.mcastRate;
+	}
+
+	public void setMcastRate(Integer mcastRate) {
+		this.mcastRate = mcastRate;
+		if(mcastRate != null){
+			putQueryParameter("McastRate", mcastRate.toString());
 		}
 	}
 

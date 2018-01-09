@@ -1,3 +1,6 @@
+2018-01-09 Version: 1.0.2
+1, add SDK to external github.
+
 2017-09-07 Version: 0.0.2
 1, SetScanMode/GetScanMode两个接口增加探针一分钟上传数据量。
 

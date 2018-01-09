@@ -29,6 +29,7 @@ public class SaveApPortalConfigResponseUnmarshaller {
 		saveApPortalConfigResponse.setRequestId(context.stringValue("SaveApPortalConfigResponse.RequestId"));
 		saveApPortalConfigResponse.setSuccess(context.booleanValue("SaveApPortalConfigResponse.Success"));
 		saveApPortalConfigResponse.setMessage(context.stringValue("SaveApPortalConfigResponse.Message"));
+		saveApPortalConfigResponse.setData(context.stringValue("SaveApPortalConfigResponse.Data"));
 		saveApPortalConfigResponse.setErrorCode(context.integerValue("SaveApPortalConfigResponse.ErrorCode"));
 		saveApPortalConfigResponse.setErrorMsg(context.stringValue("SaveApPortalConfigResponse.ErrorMsg"));
 	 

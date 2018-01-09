@@ -29,6 +29,7 @@ public class SaveApgroupScanConfigResponseUnmarshaller {
 		saveApgroupScanConfigResponse.setRequestId(context.stringValue("SaveApgroupScanConfigResponse.RequestId"));
 		saveApgroupScanConfigResponse.setSuccess(context.booleanValue("SaveApgroupScanConfigResponse.Success"));
 		saveApgroupScanConfigResponse.setMessage(context.stringValue("SaveApgroupScanConfigResponse.Message"));
+		saveApgroupScanConfigResponse.setData(context.stringValue("SaveApgroupScanConfigResponse.Data"));
 		saveApgroupScanConfigResponse.setErrorCode(context.integerValue("SaveApgroupScanConfigResponse.ErrorCode"));
 		saveApgroupScanConfigResponse.setErrorMsg(context.stringValue("SaveApgroupScanConfigResponse.ErrorMsg"));
 	 
