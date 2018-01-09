@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeleteLiveSnapshotDetectPornConfigRequest extends RpcAcsRequest<DeleteLiveSnapshotDetectPornConfigResponse> {
 	
 	public DeleteLiveSnapshotDetectPornConfigRequest() {
-		super("live", "2016-11-01", "DeleteLiveSnapshotDetectPornConfig", "live");
+		super("live", "2016-11-01", "DeleteLiveSnapshotDetectPornConfig");
 	}
 
 	private String appName;

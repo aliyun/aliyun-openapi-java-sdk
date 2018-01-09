@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class StopCasterRequest extends RpcAcsRequest<StopCasterResponse> {
 	
 	public StopCasterRequest() {
-		super("live", "2016-11-01", "StopCaster", "live");
+		super("live", "2016-11-01", "StopCaster");
 	}
 
 	private String securityToken;

@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeCasterConfigRequest extends RpcAcsRequest<DescribeCasterConfigResponse> {
 	
 	public DescribeCasterConfigRequest() {
-		super("live", "2016-11-01", "DescribeCasterConfig", "live");
+		super("live", "2016-11-01", "DescribeCasterConfig");
 	}
 
 	private String securityToken;

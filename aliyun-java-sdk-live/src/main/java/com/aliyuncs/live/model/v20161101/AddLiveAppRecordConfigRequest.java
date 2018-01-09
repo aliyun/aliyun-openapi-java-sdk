@@ -28,7 +28,7 @@ import java.util.List;
 public class AddLiveAppRecordConfigRequest extends RpcAcsRequest<AddLiveAppRecordConfigResponse> {
 	
 	public AddLiveAppRecordConfigRequest() {
-		super("live", "2016-11-01", "AddLiveAppRecordConfig", "live");
+		super("live", "2016-11-01", "AddLiveAppRecordConfig");
 	}
 
 	private String ossBucket;

@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeCasterStreamUrlRequest extends RpcAcsRequest<DescribeCasterStreamUrlResponse> {
 	
 	public DescribeCasterStreamUrlRequest() {
-		super("live", "2016-11-01", "DescribeCasterStreamUrl", "live");
+		super("live", "2016-11-01", "DescribeCasterStreamUrl");
 	}
 
 	private String securityToken;

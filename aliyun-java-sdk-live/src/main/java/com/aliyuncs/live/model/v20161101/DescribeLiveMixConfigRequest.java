@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeLiveMixConfigRequest extends RpcAcsRequest<DescribeLiveMixConfigResponse> {
 	
 	public DescribeLiveMixConfigRequest() {
-		super("live", "2016-11-01", "DescribeLiveMixConfig", "live");
+		super("live", "2016-11-01", "DescribeLiveMixConfig");
 	}
 
 	private String securityToken;

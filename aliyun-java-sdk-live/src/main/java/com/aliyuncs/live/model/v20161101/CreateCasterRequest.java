@@ -27,14 +27,14 @@ import com.aliyuncs.RpcAcsRequest;
 public class CreateCasterRequest extends RpcAcsRequest<CreateCasterResponse> {
 	
 	public CreateCasterRequest() {
-		super("live", "2016-11-01", "CreateCaster", "live");
+		super("live", "2016-11-01", "CreateCaster");
 	}
 
 	private String casterTemplate;
 
-	private Integer normType;
+	private String expireTime;
 
-	private Integer period;
+	private Integer normType;
 
 	private String securityToken;
 
@@ -45,6 +45,8 @@ public class CreateCasterRequest extends RpcAcsRequest<CreateCasterResponse> {
 	private String chargeType;
 
 	private Long ownerId;
+
+	private String purchaseTime;
 
 	private String version;
 
@@ -59,6 +61,17 @@ public class CreateCasterRequest extends RpcAcsRequest<CreateCasterResponse> {
 		}
 	}
 
+	public String getExpireTime() {
+		return this.expireTime;
+	}
+
+	public void setExpireTime(String expireTime) {
+		this.expireTime = expireTime;
+		if(expireTime != null){
+			putQueryParameter("ExpireTime", expireTime);
+		}
+	}
+
 	public Integer getNormType() {
 		return this.normType;
 	}
@@ -67,17 +80,6 @@ public class CreateCasterRequest extends RpcAcsRequest<CreateCasterResponse> {
 		this.normType = normType;
 		if(normType != null){
 			putQueryParameter("NormType", normType.toString());
-		}
-	}
-
-	public Integer getPeriod() {
-		return this.period;
-	}
-
-	public void setPeriod(Integer period) {
-		this.period = period;
-		if(period != null){
-			putQueryParameter("Period", period.toString());
 		}
 	}
 
@@ -133,6 +135,17 @@ public class CreateCasterRequest extends RpcAcsRequest<CreateCasterResponse> {
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getPurchaseTime() {
+		return this.purchaseTime;
+	}
+
+	public void setPurchaseTime(String purchaseTime) {
+		this.purchaseTime = purchaseTime;
+		if(purchaseTime != null){
+			putQueryParameter("PurchaseTime", purchaseTime);
 		}
 	}
 

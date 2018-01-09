@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class CreateLiveStreamRecordIndexFilesRequest extends RpcAcsRequest<CreateLiveStreamRecordIndexFilesResponse> {
 	
 	public CreateLiveStreamRecordIndexFilesRequest() {
-		super("live", "2016-11-01", "CreateLiveStreamRecordIndexFiles", "live");
+		super("live", "2016-11-01", "CreateLiveStreamRecordIndexFiles");
 	}
 
 	private String ossBucket;

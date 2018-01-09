@@ -42,7 +42,8 @@ public class DescribeCastersResponseUnmarshaller {
 			caster.setCasterName(context.stringValue("DescribeCastersResponse.CasterList["+ i +"].CasterName"));
 			caster.setCreateTime(context.stringValue("DescribeCastersResponse.CasterList["+ i +"].CreateTime"));
 			caster.setStartTime(context.stringValue("DescribeCastersResponse.CasterList["+ i +"].StartTime"));
-			caster.setPeriod(context.integerValue("DescribeCastersResponse.CasterList["+ i +"].Period"));
+			caster.setPurchaseTime(context.stringValue("DescribeCastersResponse.CasterList["+ i +"].PurchaseTime"));
+			caster.setExpireTime(context.stringValue("DescribeCastersResponse.CasterList["+ i +"].ExpireTime"));
 			caster.setChargeType(context.stringValue("DescribeCastersResponse.CasterList["+ i +"].ChargeType"));
 			caster.setCasterTemplate(context.stringValue("DescribeCastersResponse.CasterList["+ i +"].CasterTemplate"));
 

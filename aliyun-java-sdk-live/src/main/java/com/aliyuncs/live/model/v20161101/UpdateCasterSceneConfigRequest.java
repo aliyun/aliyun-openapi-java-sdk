@@ -28,7 +28,7 @@ import java.util.List;
 public class UpdateCasterSceneConfigRequest extends RpcAcsRequest<UpdateCasterSceneConfigResponse> {
 	
 	public UpdateCasterSceneConfigRequest() {
-		super("live", "2016-11-01", "UpdateCasterSceneConfig", "live");
+		super("live", "2016-11-01", "UpdateCasterSceneConfig");
 	}
 
 	private List<String> componentIds;

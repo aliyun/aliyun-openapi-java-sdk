@@ -1,3 +1,7 @@
+2018-01-09 Version: 3.3.1
+1, Add caster transcode template for vertical screen
+2, Add PurchaseTime and ExpireTime for CreateCaster and DescribeCasters
+
 2018-01-05 Version: 3.3.0
 1, add parameter streamName to AddLiveRecordVodConfig,DeleteLiveRecordVodConfig,DescribeLiveRecordVodConfigs
 2, add return value publishDomain for DescribeLiveStreamsOnlineList,DescribeLiveStreamsPublishList

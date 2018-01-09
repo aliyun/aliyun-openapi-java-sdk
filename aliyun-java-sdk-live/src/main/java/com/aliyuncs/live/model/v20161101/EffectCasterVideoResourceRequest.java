@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class EffectCasterVideoResourceRequest extends RpcAcsRequest<EffectCasterVideoResourceResponse> {
 	
 	public EffectCasterVideoResourceRequest() {
-		super("live", "2016-11-01", "EffectCasterVideoResource", "live");
+		super("live", "2016-11-01", "EffectCasterVideoResource");
 	}
 
 	private String resourceId;

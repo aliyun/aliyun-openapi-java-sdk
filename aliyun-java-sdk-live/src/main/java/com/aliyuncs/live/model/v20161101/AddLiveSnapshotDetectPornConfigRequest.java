@@ -28,7 +28,7 @@ import java.util.List;
 public class AddLiveSnapshotDetectPornConfigRequest extends RpcAcsRequest<AddLiveSnapshotDetectPornConfigResponse> {
 	
 	public AddLiveSnapshotDetectPornConfigRequest() {
-		super("live", "2016-11-01", "AddLiveSnapshotDetectPornConfig", "live");
+		super("live", "2016-11-01", "AddLiveSnapshotDetectPornConfig");
 	}
 
 	private String ossBucket;

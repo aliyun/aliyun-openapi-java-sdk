@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class CopyCasterSceneConfigRequest extends RpcAcsRequest<CopyCasterSceneConfigResponse> {
 	
 	public CopyCasterSceneConfigRequest() {
-		super("live", "2016-11-01", "CopyCasterSceneConfig", "live");
+		super("live", "2016-11-01", "CopyCasterSceneConfig");
 	}
 
 	private String fromSceneId;

@@ -73,7 +73,9 @@ public class DescribeCastersResponse extends AcsResponse {
 
 		private String startTime;
 
-		private Integer period;
+		private String purchaseTime;
+
+		private String expireTime;
 
 		private String chargeType;
 
@@ -127,12 +129,20 @@ public class DescribeCastersResponse extends AcsResponse {
 			this.startTime = startTime;
 		}
 
-		public Integer getPeriod() {
-			return this.period;
+		public String getPurchaseTime() {
+			return this.purchaseTime;
 		}
 
-		public void setPeriod(Integer period) {
-			this.period = period;
+		public void setPurchaseTime(String purchaseTime) {
+			this.purchaseTime = purchaseTime;
+		}
+
+		public String getExpireTime() {
+			return this.expireTime;
+		}
+
+		public void setExpireTime(String expireTime) {
+			this.expireTime = expireTime;
 		}
 
 		public String getChargeType() {

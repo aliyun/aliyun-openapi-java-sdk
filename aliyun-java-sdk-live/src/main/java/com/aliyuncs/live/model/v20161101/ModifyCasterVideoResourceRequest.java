@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifyCasterVideoResourceRequest extends RpcAcsRequest<ModifyCasterVideoResourceResponse> {
 	
 	public ModifyCasterVideoResourceRequest() {
-		super("live", "2016-11-01", "ModifyCasterVideoResource", "live");
+		super("live", "2016-11-01", "ModifyCasterVideoResource");
 	}
 
 	private String resourceId;

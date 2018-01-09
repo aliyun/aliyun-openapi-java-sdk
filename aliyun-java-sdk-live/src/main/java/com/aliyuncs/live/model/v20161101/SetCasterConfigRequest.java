@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class SetCasterConfigRequest extends RpcAcsRequest<SetCasterConfigResponse> {
 	
 	public SetCasterConfigRequest() {
-		super("live", "2016-11-01", "SetCasterConfig", "live");
+		super("live", "2016-11-01", "SetCasterConfig");
 	}
 
 	private String sideOutputUrl;
