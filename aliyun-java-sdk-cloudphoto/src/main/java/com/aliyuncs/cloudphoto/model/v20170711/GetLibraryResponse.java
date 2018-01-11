@@ -104,6 +104,8 @@ public class GetLibraryResponse extends AcsResponse {
 
 			private Long totalQuota;
 
+			private Long totalTrashQuota;
+
 			private Integer facesCount;
 
 			private Integer photosCount;
@@ -112,12 +114,24 @@ public class GetLibraryResponse extends AcsResponse {
 
 			private Integer videosCount;
 
+			private Long activeSize;
+
+			private Long inactiveSize;
+
 			public Long getTotalQuota() {
 				return this.totalQuota;
 			}
 
 			public void setTotalQuota(Long totalQuota) {
 				this.totalQuota = totalQuota;
+			}
+
+			public Long getTotalTrashQuota() {
+				return this.totalTrashQuota;
+			}
+
+			public void setTotalTrashQuota(Long totalTrashQuota) {
+				this.totalTrashQuota = totalTrashQuota;
 			}
 
 			public Integer getFacesCount() {
@@ -150,6 +164,22 @@ public class GetLibraryResponse extends AcsResponse {
 
 			public void setVideosCount(Integer videosCount) {
 				this.videosCount = videosCount;
+			}
+
+			public Long getActiveSize() {
+				return this.activeSize;
+			}
+
+			public void setActiveSize(Long activeSize) {
+				this.activeSize = activeSize;
+			}
+
+			public Long getInactiveSize() {
+				return this.inactiveSize;
+			}
+
+			public void setInactiveSize(Long inactiveSize) {
+				this.inactiveSize = inactiveSize;
 			}
 		}
 

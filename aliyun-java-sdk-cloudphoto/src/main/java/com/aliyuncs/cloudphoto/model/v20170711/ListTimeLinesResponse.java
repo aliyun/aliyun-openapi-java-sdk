@@ -147,6 +147,8 @@ public class ListTimeLinesResponse extends AcsResponse {
 
 			private String title;
 
+			private String location;
+
 			private String fileId;
 
 			private String state;
@@ -156,6 +158,8 @@ public class ListTimeLinesResponse extends AcsResponse {
 			private Boolean isVideo;
 
 			private String remark;
+
+			private Long size;
 
 			private Long width;
 
@@ -185,6 +189,14 @@ public class ListTimeLinesResponse extends AcsResponse {
 
 			public void setTitle(String title) {
 				this.title = title;
+			}
+
+			public String getLocation() {
+				return this.location;
+			}
+
+			public void setLocation(String location) {
+				this.location = location;
 			}
 
 			public String getFileId() {
@@ -225,6 +237,14 @@ public class ListTimeLinesResponse extends AcsResponse {
 
 			public void setRemark(String remark) {
 				this.remark = remark;
+			}
+
+			public Long getSize() {
+				return this.size;
+			}
+
+			public void setSize(Long size) {
+				this.size = size;
 			}
 
 			public Long getWidth() {

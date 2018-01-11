@@ -20,14 +20,14 @@ package com.aliyuncs.cloudphoto.model.v20170711;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.cloudphoto.transform.v20170711.GetPhotosResponseUnmarshaller;
+import com.aliyuncs.cloudphoto.transform.v20170711.GetSimilarPhotosResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class GetPhotosResponse extends AcsResponse {
+public class GetSimilarPhotosResponse extends AcsResponse {
 
 	private String code;
 
@@ -97,11 +97,11 @@ public class GetPhotosResponse extends AcsResponse {
 
 		private String remark;
 
+		private Long size;
+
 		private Long width;
 
 		private Long height;
-
-		private Long size;
 
 		private Long ctime;
 
@@ -179,6 +179,14 @@ public class GetPhotosResponse extends AcsResponse {
 			this.remark = remark;
 		}
 
+		public Long getSize() {
+			return this.size;
+		}
+
+		public void setSize(Long size) {
+			this.size = size;
+		}
+
 		public Long getWidth() {
 			return this.width;
 		}
@@ -193,14 +201,6 @@ public class GetPhotosResponse extends AcsResponse {
 
 		public void setHeight(Long height) {
 			this.height = height;
-		}
-
-		public Long getSize() {
-			return this.size;
-		}
-
-		public void setSize(Long size) {
-			this.size = size;
 		}
 
 		public Long getCtime() {
@@ -253,8 +253,8 @@ public class GetPhotosResponse extends AcsResponse {
 	}
 
 	@Override
-	public GetPhotosResponse getInstance(UnmarshallerContext context) {
-		return	GetPhotosResponseUnmarshaller.unmarshall(this, context);
+	public GetSimilarPhotosResponse getInstance(UnmarshallerContext context) {
+		return	GetSimilarPhotosResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

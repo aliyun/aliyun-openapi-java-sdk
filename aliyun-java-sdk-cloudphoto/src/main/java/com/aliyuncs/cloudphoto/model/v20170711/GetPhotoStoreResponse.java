@@ -93,6 +93,8 @@ public class GetPhotoStoreResponse extends AcsResponse {
 
 		private Long defaultQuota;
 
+		private Long defaultTrashQuota;
+
 		private Long ctime;
 
 		private Long mtime;
@@ -145,6 +147,14 @@ public class GetPhotoStoreResponse extends AcsResponse {
 
 		public void setDefaultQuota(Long defaultQuota) {
 			this.defaultQuota = defaultQuota;
+		}
+
+		public Long getDefaultTrashQuota() {
+			return this.defaultTrashQuota;
+		}
+
+		public void setDefaultTrashQuota(Long defaultTrashQuota) {
+			this.defaultTrashQuota = defaultTrashQuota;
 		}
 
 		public Long getCtime() {

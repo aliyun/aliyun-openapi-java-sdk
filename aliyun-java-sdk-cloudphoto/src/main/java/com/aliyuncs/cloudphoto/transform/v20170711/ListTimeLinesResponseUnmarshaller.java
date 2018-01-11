@@ -50,11 +50,13 @@ public class ListTimeLinesResponseUnmarshaller {
 				Photo photo = new Photo();
 				photo.setId(context.longValue("ListTimeLinesResponse.TimeLines["+ i +"].Photos["+ j +"].Id"));
 				photo.setTitle(context.stringValue("ListTimeLinesResponse.TimeLines["+ i +"].Photos["+ j +"].Title"));
+				photo.setLocation(context.stringValue("ListTimeLinesResponse.TimeLines["+ i +"].Photos["+ j +"].Location"));
 				photo.setFileId(context.stringValue("ListTimeLinesResponse.TimeLines["+ i +"].Photos["+ j +"].FileId"));
 				photo.setState(context.stringValue("ListTimeLinesResponse.TimeLines["+ i +"].Photos["+ j +"].State"));
 				photo.setMd5(context.stringValue("ListTimeLinesResponse.TimeLines["+ i +"].Photos["+ j +"].Md5"));
 				photo.setIsVideo(context.booleanValue("ListTimeLinesResponse.TimeLines["+ i +"].Photos["+ j +"].IsVideo"));
 				photo.setRemark(context.stringValue("ListTimeLinesResponse.TimeLines["+ i +"].Photos["+ j +"].Remark"));
+				photo.setSize(context.longValue("ListTimeLinesResponse.TimeLines["+ i +"].Photos["+ j +"].Size"));
 				photo.setWidth(context.longValue("ListTimeLinesResponse.TimeLines["+ i +"].Photos["+ j +"].Width"));
 				photo.setHeight(context.longValue("ListTimeLinesResponse.TimeLines["+ i +"].Photos["+ j +"].Height"));
 				photo.setCtime(context.longValue("ListTimeLinesResponse.TimeLines["+ i +"].Photos["+ j +"].Ctime"));

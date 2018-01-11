@@ -42,10 +42,12 @@ public class ListTimeLinePhotosResponseUnmarshaller {
 			photo.setId(context.longValue("ListTimeLinePhotosResponse.Photos["+ i +"].Id"));
 			photo.setTitle(context.stringValue("ListTimeLinePhotosResponse.Photos["+ i +"].Title"));
 			photo.setFileId(context.stringValue("ListTimeLinePhotosResponse.Photos["+ i +"].FileId"));
+			photo.setLocation(context.stringValue("ListTimeLinePhotosResponse.Photos["+ i +"].Location"));
 			photo.setState(context.stringValue("ListTimeLinePhotosResponse.Photos["+ i +"].State"));
 			photo.setMd5(context.stringValue("ListTimeLinePhotosResponse.Photos["+ i +"].Md5"));
 			photo.setIsVideo(context.booleanValue("ListTimeLinePhotosResponse.Photos["+ i +"].IsVideo"));
 			photo.setRemark(context.stringValue("ListTimeLinePhotosResponse.Photos["+ i +"].Remark"));
+			photo.setSize(context.longValue("ListTimeLinePhotosResponse.Photos["+ i +"].Size"));
 			photo.setWidth(context.longValue("ListTimeLinePhotosResponse.Photos["+ i +"].Width"));
 			photo.setHeight(context.longValue("ListTimeLinePhotosResponse.Photos["+ i +"].Height"));
 			photo.setCtime(context.longValue("ListTimeLinePhotosResponse.Photos["+ i +"].Ctime"));

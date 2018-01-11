@@ -18,16 +18,15 @@
  */
 package com.aliyuncs.cloudphoto.model.v20170711;
 
-import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.cloudphoto.transform.v20170711.GetPhotosResponseUnmarshaller;
+import com.aliyuncs.cloudphoto.transform.v20170711.RegisterPhotoResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class GetPhotosResponse extends AcsResponse {
+public class RegisterPhotoResponse extends AcsResponse {
 
 	private String code;
 
@@ -37,7 +36,7 @@ public class GetPhotosResponse extends AcsResponse {
 
 	private String action;
 
-	private List<Photo> photos;
+	private Photo photo;
 
 	public String getCode() {
 		return this.code;
@@ -71,12 +70,12 @@ public class GetPhotosResponse extends AcsResponse {
 		this.action = action;
 	}
 
-	public List<Photo> getPhotos() {
-		return this.photos;
+	public Photo getPhoto() {
+		return this.photo;
 	}
 
-	public void setPhotos(List<Photo> photos) {
-		this.photos = photos;
+	public void setPhoto(Photo photo) {
+		this.photo = photo;
 	}
 
 	public static class Photo {
@@ -85,9 +84,9 @@ public class GetPhotosResponse extends AcsResponse {
 
 		private String title;
 
-		private String fileId;
-
 		private String location;
+
+		private String fileId;
 
 		private String state;
 
@@ -95,13 +94,13 @@ public class GetPhotosResponse extends AcsResponse {
 
 		private Boolean isVideo;
 
+		private Long size;
+
 		private String remark;
 
 		private Long width;
 
 		private Long height;
-
-		private Long size;
 
 		private Long ctime;
 
@@ -109,11 +108,7 @@ public class GetPhotosResponse extends AcsResponse {
 
 		private Long takenAt;
 
-		private Long inactiveTime;
-
 		private Long shareExpireTime;
-
-		private Long like;
 
 		public Long getId() {
 			return this.id;
@@ -131,20 +126,20 @@ public class GetPhotosResponse extends AcsResponse {
 			this.title = title;
 		}
 
-		public String getFileId() {
-			return this.fileId;
-		}
-
-		public void setFileId(String fileId) {
-			this.fileId = fileId;
-		}
-
 		public String getLocation() {
 			return this.location;
 		}
 
 		public void setLocation(String location) {
 			this.location = location;
+		}
+
+		public String getFileId() {
+			return this.fileId;
+		}
+
+		public void setFileId(String fileId) {
+			this.fileId = fileId;
 		}
 
 		public String getState() {
@@ -171,6 +166,14 @@ public class GetPhotosResponse extends AcsResponse {
 			this.isVideo = isVideo;
 		}
 
+		public Long getSize() {
+			return this.size;
+		}
+
+		public void setSize(Long size) {
+			this.size = size;
+		}
+
 		public String getRemark() {
 			return this.remark;
 		}
@@ -193,14 +196,6 @@ public class GetPhotosResponse extends AcsResponse {
 
 		public void setHeight(Long height) {
 			this.height = height;
-		}
-
-		public Long getSize() {
-			return this.size;
-		}
-
-		public void setSize(Long size) {
-			this.size = size;
 		}
 
 		public Long getCtime() {
@@ -227,14 +222,6 @@ public class GetPhotosResponse extends AcsResponse {
 			this.takenAt = takenAt;
 		}
 
-		public Long getInactiveTime() {
-			return this.inactiveTime;
-		}
-
-		public void setInactiveTime(Long inactiveTime) {
-			this.inactiveTime = inactiveTime;
-		}
-
 		public Long getShareExpireTime() {
 			return this.shareExpireTime;
 		}
@@ -242,23 +229,10 @@ public class GetPhotosResponse extends AcsResponse {
 		public void setShareExpireTime(Long shareExpireTime) {
 			this.shareExpireTime = shareExpireTime;
 		}
-
-		public Long getLike() {
-			return this.like;
-		}
-
-		public void setLike(Long like) {
-			this.like = like;
-		}
 	}
 
 	@Override
-	public GetPhotosResponse getInstance(UnmarshallerContext context) {
-		return	GetPhotosResponseUnmarshaller.unmarshall(this, context);
-	}
-
-	@Override
-	public boolean checkShowJsonItemName() {
-		return false;
+	public RegisterPhotoResponse getInstance(UnmarshallerContext context) {
+		return	RegisterPhotoResponseUnmarshaller.unmarshall(this, context);
 	}
 }

@@ -34,6 +34,8 @@ public class EditPhotoStoreRequest extends RpcAcsRequest<EditPhotoStoreResponse>
 
 	private String autoCleanEnabled;
 
+	private Long defaultTrashQuota;
+
 	private String storeName;
 
 	private String remark;
@@ -50,6 +52,17 @@ public class EditPhotoStoreRequest extends RpcAcsRequest<EditPhotoStoreResponse>
 		this.autoCleanEnabled = autoCleanEnabled;
 		if(autoCleanEnabled != null){
 			putQueryParameter("AutoCleanEnabled", autoCleanEnabled);
+		}
+	}
+
+	public Long getDefaultTrashQuota() {
+		return this.defaultTrashQuota;
+	}
+
+	public void setDefaultTrashQuota(Long defaultTrashQuota) {
+		this.defaultTrashQuota = defaultTrashQuota;
+		if(defaultTrashQuota != null){
+			putQueryParameter("DefaultTrashQuota", defaultTrashQuota.toString());
 		}
 	}
 

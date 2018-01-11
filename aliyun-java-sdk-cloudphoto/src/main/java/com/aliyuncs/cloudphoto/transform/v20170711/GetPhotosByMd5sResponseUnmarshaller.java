@@ -41,10 +41,12 @@ public class GetPhotosByMd5sResponseUnmarshaller {
 			photo.setId(context.longValue("GetPhotosByMd5sResponse.Photos["+ i +"].Id"));
 			photo.setTitle(context.stringValue("GetPhotosByMd5sResponse.Photos["+ i +"].Title"));
 			photo.setFileId(context.stringValue("GetPhotosByMd5sResponse.Photos["+ i +"].FileId"));
+			photo.setLocation(context.stringValue("GetPhotosByMd5sResponse.Photos["+ i +"].Location"));
 			photo.setState(context.stringValue("GetPhotosByMd5sResponse.Photos["+ i +"].State"));
 			photo.setMd5(context.stringValue("GetPhotosByMd5sResponse.Photos["+ i +"].Md5"));
 			photo.setIsVideo(context.booleanValue("GetPhotosByMd5sResponse.Photos["+ i +"].IsVideo"));
 			photo.setRemark(context.stringValue("GetPhotosByMd5sResponse.Photos["+ i +"].Remark"));
+			photo.setSize(context.longValue("GetPhotosByMd5sResponse.Photos["+ i +"].Size"));
 			photo.setWidth(context.longValue("GetPhotosByMd5sResponse.Photos["+ i +"].Width"));
 			photo.setHeight(context.longValue("GetPhotosByMd5sResponse.Photos["+ i +"].Height"));
 			photo.setCtime(context.longValue("GetPhotosByMd5sResponse.Photos["+ i +"].Ctime"));

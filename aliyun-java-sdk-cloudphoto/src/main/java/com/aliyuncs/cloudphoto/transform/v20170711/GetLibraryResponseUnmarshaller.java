@@ -38,10 +38,13 @@ public class GetLibraryResponseUnmarshaller {
 
 		Quota quota = new Quota();
 		quota.setTotalQuota(context.longValue("GetLibraryResponse.Library.Quota.TotalQuota"));
+		quota.setTotalTrashQuota(context.longValue("GetLibraryResponse.Library.Quota.TotalTrashQuota"));
 		quota.setFacesCount(context.integerValue("GetLibraryResponse.Library.Quota.FacesCount"));
 		quota.setPhotosCount(context.integerValue("GetLibraryResponse.Library.Quota.PhotosCount"));
 		quota.setUsedQuota(context.longValue("GetLibraryResponse.Library.Quota.UsedQuota"));
 		quota.setVideosCount(context.integerValue("GetLibraryResponse.Library.Quota.VideosCount"));
+		quota.setActiveSize(context.longValue("GetLibraryResponse.Library.Quota.ActiveSize"));
+		quota.setInactiveSize(context.longValue("GetLibraryResponse.Library.Quota.InactiveSize"));
 		library.setQuota(quota);
 
 		AutoCleanConfig autoCleanConfig = new AutoCleanConfig();

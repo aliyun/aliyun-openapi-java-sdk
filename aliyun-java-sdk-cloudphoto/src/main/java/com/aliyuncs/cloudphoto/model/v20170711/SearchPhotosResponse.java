@@ -97,11 +97,15 @@ public class SearchPhotosResponse extends AcsResponse {
 
 		private String fileId;
 
+		private String location;
+
 		private String state;
 
 		private String md5;
 
 		private Boolean isVideo;
+
+		private Long size;
 
 		private Long width;
 
@@ -139,6 +143,14 @@ public class SearchPhotosResponse extends AcsResponse {
 			this.fileId = fileId;
 		}
 
+		public String getLocation() {
+			return this.location;
+		}
+
+		public void setLocation(String location) {
+			this.location = location;
+		}
+
 		public String getState() {
 			return this.state;
 		}
@@ -161,6 +173,14 @@ public class SearchPhotosResponse extends AcsResponse {
 
 		public void setIsVideo(Boolean isVideo) {
 			this.isVideo = isVideo;
+		}
+
+		public Long getSize() {
+			return this.size;
+		}
+
+		public void setSize(Long size) {
+			this.size = size;
 		}
 
 		public Long getWidth() {

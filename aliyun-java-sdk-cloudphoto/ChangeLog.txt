@@ -1,3 +1,7 @@
+2018-01-11 Version: 1.1.8
+1, replace photo tag 2000 upgrade to 5000
+2, add TrashQuota
+
 2017-12-19 Version: 1.1.7
 1, InactivatePhotos support customer inactiveTime
 2, support customer tags

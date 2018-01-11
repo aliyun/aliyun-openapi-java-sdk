@@ -42,9 +42,11 @@ public class SearchPhotosResponseUnmarshaller {
 			photo.setId(context.longValue("SearchPhotosResponse.Photos["+ i +"].Id"));
 			photo.setTitle(context.stringValue("SearchPhotosResponse.Photos["+ i +"].Title"));
 			photo.setFileId(context.stringValue("SearchPhotosResponse.Photos["+ i +"].FileId"));
+			photo.setLocation(context.stringValue("SearchPhotosResponse.Photos["+ i +"].Location"));
 			photo.setState(context.stringValue("SearchPhotosResponse.Photos["+ i +"].State"));
 			photo.setMd5(context.stringValue("SearchPhotosResponse.Photos["+ i +"].Md5"));
 			photo.setIsVideo(context.booleanValue("SearchPhotosResponse.Photos["+ i +"].IsVideo"));
+			photo.setSize(context.longValue("SearchPhotosResponse.Photos["+ i +"].Size"));
 			photo.setWidth(context.longValue("SearchPhotosResponse.Photos["+ i +"].Width"));
 			photo.setHeight(context.longValue("SearchPhotosResponse.Photos["+ i +"].Height"));
 			photo.setCtime(context.longValue("SearchPhotosResponse.Photos["+ i +"].Ctime"));
