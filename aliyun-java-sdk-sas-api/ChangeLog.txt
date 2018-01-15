@@ -1,3 +1,6 @@
+2018-01-15 Version: 2.1.0
+1, Add four new apis: GetApplicationAttackList/GetCrackList/GetSecurityEventList/GetThreatAnalyseList
+
 2017-09-21 Version: 2.0.2
 1, 新增查询业务安全情报接口
 
