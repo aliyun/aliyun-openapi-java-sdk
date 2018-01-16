@@ -35,20 +35,20 @@ public class DescribeCommandsResponseUnmarshaller {
 		describeCommandsResponse.setPageNumber(context.longValue("DescribeCommandsResponse.PageNumber"));
 		describeCommandsResponse.setPageSize(context.longValue("DescribeCommandsResponse.PageSize"));
 
-		List<Command> commandList = new ArrayList<Command>();
-		for (int i = 0; i < context.lengthValue("DescribeCommandsResponse.CommandList.Length"); i++) {
+		List<Command> commands = new ArrayList<Command>();
+		for (int i = 0; i < context.lengthValue("DescribeCommandsResponse.Commands.Length"); i++) {
 			Command command = new Command();
-			command.setCommandId(context.stringValue("DescribeCommandsResponse.CommandList["+ i +"].CommandId"));
-			command.setName(context.stringValue("DescribeCommandsResponse.CommandList["+ i +"].Name"));
-			command.setType(context.stringValue("DescribeCommandsResponse.CommandList["+ i +"].Type"));
-			command.setDescription(context.stringValue("DescribeCommandsResponse.CommandList["+ i +"].Description"));
-			command.setCommandContent(context.stringValue("DescribeCommandsResponse.CommandList["+ i +"].CommandContent"));
-			command.setWorkingDir(context.stringValue("DescribeCommandsResponse.CommandList["+ i +"].WorkingDir"));
-			command.setTimeout(context.longValue("DescribeCommandsResponse.CommandList["+ i +"].Timeout"));
+			command.setCommandId(context.stringValue("DescribeCommandsResponse.Commands["+ i +"].CommandId"));
+			command.setName(context.stringValue("DescribeCommandsResponse.Commands["+ i +"].Name"));
+			command.setType(context.stringValue("DescribeCommandsResponse.Commands["+ i +"].Type"));
+			command.setDescription(context.stringValue("DescribeCommandsResponse.Commands["+ i +"].Description"));
+			command.setCommandContent(context.stringValue("DescribeCommandsResponse.Commands["+ i +"].CommandContent"));
+			command.setWorkingDir(context.stringValue("DescribeCommandsResponse.Commands["+ i +"].WorkingDir"));
+			command.setTimeout(context.longValue("DescribeCommandsResponse.Commands["+ i +"].Timeout"));
 
-			commandList.add(command);
+			commands.add(command);
 		}
-		describeCommandsResponse.setCommandList(commandList);
+		describeCommandsResponse.setCommands(commands);
 	 
 	 	return describeCommandsResponse;
 	}

@@ -22,8 +22,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.ecs.model.v20140526.DescribeInvocationsResponse;
-import com.aliyuncs.ecs.model.v20140526.DescribeInvocationsResponse.InvocationItem;
-import com.aliyuncs.ecs.model.v20140526.DescribeInvocationsResponse.InvocationItem.InvokeItemItem;
+import com.aliyuncs.ecs.model.v20140526.DescribeInvocationsResponse.Invocation;
+import com.aliyuncs.ecs.model.v20140526.DescribeInvocationsResponse.Invocation.InvokeInstance;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -36,29 +36,30 @@ public class DescribeInvocationsResponseUnmarshaller {
 		describeInvocationsResponse.setPageNumber(context.longValue("DescribeInvocationsResponse.PageNumber"));
 		describeInvocationsResponse.setPageSize(context.longValue("DescribeInvocationsResponse.PageSize"));
 
-		List<InvocationItem> invocation = new ArrayList<InvocationItem>();
-		for (int i = 0; i < context.lengthValue("DescribeInvocationsResponse.Invocation.Length"); i++) {
-			InvocationItem invocationItem = new InvocationItem();
-			invocationItem.setInvokeId(context.stringValue("DescribeInvocationsResponse.Invocation["+ i +"].InvokeId"));
-			invocationItem.setCommandId(context.stringValue("DescribeInvocationsResponse.Invocation["+ i +"].CommandId"));
-			invocationItem.setCommandType(context.stringValue("DescribeInvocationsResponse.Invocation["+ i +"].CommandType"));
-			invocationItem.setCommandName(context.stringValue("DescribeInvocationsResponse.Invocation["+ i +"].CommandName"));
-			invocationItem.setTimed(context.booleanValue("DescribeInvocationsResponse.Invocation["+ i +"].Timed"));
-			invocationItem.setInvokeStatus(context.stringValue("DescribeInvocationsResponse.Invocation["+ i +"].InvokeStatus"));
+		List<Invocation> invocations = new ArrayList<Invocation>();
+		for (int i = 0; i < context.lengthValue("DescribeInvocationsResponse.Invocations.Length"); i++) {
+			Invocation invocation = new Invocation();
+			invocation.setInvokeId(context.stringValue("DescribeInvocationsResponse.Invocations["+ i +"].InvokeId"));
+			invocation.setCommandId(context.stringValue("DescribeInvocationsResponse.Invocations["+ i +"].CommandId"));
+			invocation.setCommandType(context.stringValue("DescribeInvocationsResponse.Invocations["+ i +"].CommandType"));
+			invocation.setCommandName(context.stringValue("DescribeInvocationsResponse.Invocations["+ i +"].CommandName"));
+			invocation.setFrequency(context.stringValue("DescribeInvocationsResponse.Invocations["+ i +"].Frequency"));
+			invocation.setTimed(context.booleanValue("DescribeInvocationsResponse.Invocations["+ i +"].Timed"));
+			invocation.setInvokeStatus(context.stringValue("DescribeInvocationsResponse.Invocations["+ i +"].InvokeStatus"));
 
-			List<InvokeItemItem> invokeItem = new ArrayList<InvokeItemItem>();
-			for (int j = 0; j < context.lengthValue("DescribeInvocationsResponse.Invocation["+ i +"].InvokeItem.Length"); j++) {
-				InvokeItemItem invokeItemItem = new InvokeItemItem();
-				invokeItemItem.setInstanceId(context.stringValue("DescribeInvocationsResponse.Invocation["+ i +"].InvokeItem["+ j +"].InstanceId"));
-				invokeItemItem.setStatus(context.stringValue("DescribeInvocationsResponse.Invocation["+ i +"].InvokeItem["+ j +"].Status"));
+			List<InvokeInstance> invokeInstances = new ArrayList<InvokeInstance>();
+			for (int j = 0; j < context.lengthValue("DescribeInvocationsResponse.Invocations["+ i +"].InvokeInstances.Length"); j++) {
+				InvokeInstance invokeInstance = new InvokeInstance();
+				invokeInstance.setInstanceId(context.stringValue("DescribeInvocationsResponse.Invocations["+ i +"].InvokeInstances["+ j +"].InstanceId"));
+				invokeInstance.setInstanceInvokeStatus(context.stringValue("DescribeInvocationsResponse.Invocations["+ i +"].InvokeInstances["+ j +"].InstanceInvokeStatus"));
 
-				invokeItem.add(invokeItemItem);
+				invokeInstances.add(invokeInstance);
 			}
-			invocationItem.setInvokeItem(invokeItem);
+			invocation.setInvokeInstances(invokeInstances);
 
-			invocation.add(invocationItem);
+			invocations.add(invocation);
 		}
-		describeInvocationsResponse.setInvocation(invocation);
+		describeInvocationsResponse.setInvocations(invocations);
 	 
 	 	return describeInvocationsResponse;
 	}

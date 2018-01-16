@@ -23,7 +23,7 @@ import java.util.List;
 
 import com.aliyuncs.ecs.model.v20140526.DescribeInvocationResultsResponse;
 import com.aliyuncs.ecs.model.v20140526.DescribeInvocationResultsResponse.Invocation;
-import com.aliyuncs.ecs.model.v20140526.DescribeInvocationResultsResponse.Invocation.ResultItem;
+import com.aliyuncs.ecs.model.v20140526.DescribeInvocationResultsResponse.Invocation.InvocationResult;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -34,23 +34,24 @@ public class DescribeInvocationResultsResponseUnmarshaller {
 		describeInvocationResultsResponse.setRequestId(context.stringValue("DescribeInvocationResultsResponse.RequestId"));
 
 		Invocation invocation = new Invocation();
-		invocation.setInvokeId(context.stringValue("DescribeInvocationResultsResponse.Invocation.InvokeId"));
 		invocation.setPageSize(context.longValue("DescribeInvocationResultsResponse.Invocation.PageSize"));
 		invocation.setPageNumber(context.longValue("DescribeInvocationResultsResponse.Invocation.PageNumber"));
 		invocation.setTotalCount(context.longValue("DescribeInvocationResultsResponse.Invocation.TotalCount"));
-		invocation.setStatus(context.stringValue("DescribeInvocationResultsResponse.Invocation.Status"));
 
-		List<ResultItem> resultLists = new ArrayList<ResultItem>();
-		for (int i = 0; i < context.lengthValue("DescribeInvocationResultsResponse.Invocation.ResultLists.Length"); i++) {
-			ResultItem resultItem = new ResultItem();
-			resultItem.setInstanceId(context.stringValue("DescribeInvocationResultsResponse.Invocation.ResultLists["+ i +"].InstanceId"));
-			resultItem.setFinishedTime(context.stringValue("DescribeInvocationResultsResponse.Invocation.ResultLists["+ i +"].FinishedTime"));
-			resultItem.setOutput(context.stringValue("DescribeInvocationResultsResponse.Invocation.ResultLists["+ i +"].Output"));
-			resultItem.setExitCode(context.longValue("DescribeInvocationResultsResponse.Invocation.ResultLists["+ i +"].ExitCode"));
+		List<InvocationResult> invocationResults = new ArrayList<InvocationResult>();
+		for (int i = 0; i < context.lengthValue("DescribeInvocationResultsResponse.Invocation.InvocationResults.Length"); i++) {
+			InvocationResult invocationResult = new InvocationResult();
+			invocationResult.setCommandId(context.stringValue("DescribeInvocationResultsResponse.Invocation.InvocationResults["+ i +"].CommandId"));
+			invocationResult.setInvokeId(context.stringValue("DescribeInvocationResultsResponse.Invocation.InvocationResults["+ i +"].InvokeId"));
+			invocationResult.setInstanceId(context.stringValue("DescribeInvocationResultsResponse.Invocation.InvocationResults["+ i +"].InstanceId"));
+			invocationResult.setFinishedTime(context.stringValue("DescribeInvocationResultsResponse.Invocation.InvocationResults["+ i +"].FinishedTime"));
+			invocationResult.setOutput(context.stringValue("DescribeInvocationResultsResponse.Invocation.InvocationResults["+ i +"].Output"));
+			invocationResult.setInvokeRecordStatus(context.stringValue("DescribeInvocationResultsResponse.Invocation.InvocationResults["+ i +"].InvokeRecordStatus"));
+			invocationResult.setExitCode(context.longValue("DescribeInvocationResultsResponse.Invocation.InvocationResults["+ i +"].ExitCode"));
 
-			resultLists.add(resultItem);
+			invocationResults.add(invocationResult);
 		}
-		invocation.setResultLists(resultLists);
+		invocation.setInvocationResults(invocationResults);
 		describeInvocationResultsResponse.setInvocation(invocation);
 	 
 	 	return describeInvocationResultsResponse;

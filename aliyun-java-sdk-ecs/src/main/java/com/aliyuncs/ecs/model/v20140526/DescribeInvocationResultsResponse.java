@@ -51,25 +51,13 @@ public class DescribeInvocationResultsResponse extends AcsResponse {
 
 	public static class Invocation {
 
-		private String invokeId;
-
 		private Long pageSize;
 
 		private Long pageNumber;
 
 		private Long totalCount;
 
-		private String status;
-
-		private List<ResultItem> resultLists;
-
-		public String getInvokeId() {
-			return this.invokeId;
-		}
-
-		public void setInvokeId(String invokeId) {
-			this.invokeId = invokeId;
-		}
+		private List<InvocationResult> invocationResults;
 
 		public Long getPageSize() {
 			return this.pageSize;
@@ -95,23 +83,19 @@ public class DescribeInvocationResultsResponse extends AcsResponse {
 			this.totalCount = totalCount;
 		}
 
-		public String getStatus() {
-			return this.status;
+		public List<InvocationResult> getInvocationResults() {
+			return this.invocationResults;
 		}
 
-		public void setStatus(String status) {
-			this.status = status;
+		public void setInvocationResults(List<InvocationResult> invocationResults) {
+			this.invocationResults = invocationResults;
 		}
 
-		public List<ResultItem> getResultLists() {
-			return this.resultLists;
-		}
+		public static class InvocationResult {
 
-		public void setResultLists(List<ResultItem> resultLists) {
-			this.resultLists = resultLists;
-		}
+			private String commandId;
 
-		public static class ResultItem {
+			private String invokeId;
 
 			private String instanceId;
 
@@ -119,7 +103,25 @@ public class DescribeInvocationResultsResponse extends AcsResponse {
 
 			private String output;
 
+			private String invokeRecordStatus;
+
 			private Long exitCode;
+
+			public String getCommandId() {
+				return this.commandId;
+			}
+
+			public void setCommandId(String commandId) {
+				this.commandId = commandId;
+			}
+
+			public String getInvokeId() {
+				return this.invokeId;
+			}
+
+			public void setInvokeId(String invokeId) {
+				this.invokeId = invokeId;
+			}
 
 			public String getInstanceId() {
 				return this.instanceId;
@@ -143,6 +145,14 @@ public class DescribeInvocationResultsResponse extends AcsResponse {
 
 			public void setOutput(String output) {
 				this.output = output;
+			}
+
+			public String getInvokeRecordStatus() {
+				return this.invokeRecordStatus;
+			}
+
+			public void setInvokeRecordStatus(String invokeRecordStatus) {
+				this.invokeRecordStatus = invokeRecordStatus;
 			}
 
 			public Long getExitCode() {

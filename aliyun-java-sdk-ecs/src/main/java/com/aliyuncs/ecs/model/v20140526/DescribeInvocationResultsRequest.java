@@ -32,6 +32,8 @@ public class DescribeInvocationResultsRequest extends RpcAcsRequest<DescribeInvo
 
 	private Long resourceOwnerId;
 
+	private String commandId;
+
 	private Long pageNumber;
 
 	private Long pageSize;
@@ -46,6 +48,8 @@ public class DescribeInvocationResultsRequest extends RpcAcsRequest<DescribeInvo
 
 	private String instanceId;
 
+	private String invokeRecordStatus;
+
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
 	}
@@ -54,6 +58,17 @@ public class DescribeInvocationResultsRequest extends RpcAcsRequest<DescribeInvo
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getCommandId() {
+		return this.commandId;
+	}
+
+	public void setCommandId(String commandId) {
+		this.commandId = commandId;
+		if(commandId != null){
+			putQueryParameter("CommandId", commandId);
 		}
 	}
 
@@ -131,6 +146,17 @@ public class DescribeInvocationResultsRequest extends RpcAcsRequest<DescribeInvo
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public String getInvokeRecordStatus() {
+		return this.invokeRecordStatus;
+	}
+
+	public void setInvokeRecordStatus(String invokeRecordStatus) {
+		this.invokeRecordStatus = invokeRecordStatus;
+		if(invokeRecordStatus != null){
+			putQueryParameter("InvokeRecordStatus", invokeRecordStatus);
 		}
 	}
 

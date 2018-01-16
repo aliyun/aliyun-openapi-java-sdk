@@ -19,54 +19,26 @@
 package com.aliyuncs.ecs.model.v20140526;
 
 import com.aliyuncs.RpcAcsRequest;
-import java.util.List;
 
 /**
  * @author auto create
  * @version 
  */
-public class DescribeImageSupportInstanceTypesRequest extends RpcAcsRequest<DescribeImageSupportInstanceTypesResponse> {
+public class ReActivateInstancesRequest extends RpcAcsRequest<ReActivateInstancesResponse> {
 	
-	public DescribeImageSupportInstanceTypesRequest() {
-		super("Ecs", "2014-05-26", "DescribeImageSupportInstanceTypes", "ecs");
+	public ReActivateInstancesRequest() {
+		super("Ecs", "2014-05-26", "ReActivateInstances", "ecs");
 	}
-
-	private String actionType;
-
-	private List<Filter> filters;
 
 	private Long resourceOwnerId;
 
-	private String imageId;
+	private String instanceId;
 
 	private String resourceOwnerAccount;
 
+	private String ownerAccount;
+
 	private Long ownerId;
-
-	public String getActionType() {
-		return this.actionType;
-	}
-
-	public void setActionType(String actionType) {
-		this.actionType = actionType;
-		if(actionType != null){
-			putQueryParameter("ActionType", actionType);
-		}
-	}
-
-	public List<Filter> getFilters() {
-		return this.filters;
-	}
-
-	public void setFilters(List<Filter> filters) {
-		this.filters = filters;	
-		if (filters != null) {
-			for (int depth1 = 0; depth1 < filters.size(); depth1++) {
-				putQueryParameter("Filter." + (depth1 + 1) + ".Key" , filters.get(depth1).getKey());
-				putQueryParameter("Filter." + (depth1 + 1) + ".Value" , filters.get(depth1).getValue());
-			}
-		}	
-	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -79,14 +51,14 @@ public class DescribeImageSupportInstanceTypesRequest extends RpcAcsRequest<Desc
 		}
 	}
 
-	public String getImageId() {
-		return this.imageId;
+	public String getInstanceId() {
+		return this.instanceId;
 	}
 
-	public void setImageId(String imageId) {
-		this.imageId = imageId;
-		if(imageId != null){
-			putQueryParameter("ImageId", imageId);
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 
@@ -101,6 +73,17 @@ public class DescribeImageSupportInstanceTypesRequest extends RpcAcsRequest<Desc
 		}
 	}
 
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -112,32 +95,9 @@ public class DescribeImageSupportInstanceTypesRequest extends RpcAcsRequest<Desc
 		}
 	}
 
-	public static class Filter {
-
-		private String key;
-
-		private String value;
-
-		public String getKey() {
-			return this.key;
-		}
-
-		public void setKey(String key) {
-			this.key = key;
-		}
-
-		public String getValue() {
-			return this.value;
-		}
-
-		public void setValue(String value) {
-			this.value = value;
-		}
-	}
-
 	@Override
-	public Class<DescribeImageSupportInstanceTypesResponse> getResponseClass() {
-		return DescribeImageSupportInstanceTypesResponse.class;
+	public Class<ReActivateInstancesResponse> getResponseClass() {
+		return ReActivateInstancesResponse.class;
 	}
 
 }

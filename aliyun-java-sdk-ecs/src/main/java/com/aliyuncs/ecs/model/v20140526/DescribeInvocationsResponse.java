@@ -37,7 +37,7 @@ public class DescribeInvocationsResponse extends AcsResponse {
 
 	private Long pageSize;
 
-	private List<InvocationItem> invocation;
+	private List<Invocation> invocations;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -71,15 +71,15 @@ public class DescribeInvocationsResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
-	public List<InvocationItem> getInvocation() {
-		return this.invocation;
+	public List<Invocation> getInvocations() {
+		return this.invocations;
 	}
 
-	public void setInvocation(List<InvocationItem> invocation) {
-		this.invocation = invocation;
+	public void setInvocations(List<Invocation> invocations) {
+		this.invocations = invocations;
 	}
 
-	public static class InvocationItem {
+	public static class Invocation {
 
 		private String invokeId;
 
@@ -89,11 +89,13 @@ public class DescribeInvocationsResponse extends AcsResponse {
 
 		private String commandName;
 
+		private String frequency;
+
 		private Boolean timed;
 
 		private String invokeStatus;
 
-		private List<InvokeItemItem> invokeItem;
+		private List<InvokeInstance> invokeInstances;
 
 		public String getInvokeId() {
 			return this.invokeId;
@@ -127,6 +129,14 @@ public class DescribeInvocationsResponse extends AcsResponse {
 			this.commandName = commandName;
 		}
 
+		public String getFrequency() {
+			return this.frequency;
+		}
+
+		public void setFrequency(String frequency) {
+			this.frequency = frequency;
+		}
+
 		public Boolean getTimed() {
 			return this.timed;
 		}
@@ -143,19 +153,19 @@ public class DescribeInvocationsResponse extends AcsResponse {
 			this.invokeStatus = invokeStatus;
 		}
 
-		public List<InvokeItemItem> getInvokeItem() {
-			return this.invokeItem;
+		public List<InvokeInstance> getInvokeInstances() {
+			return this.invokeInstances;
 		}
 
-		public void setInvokeItem(List<InvokeItemItem> invokeItem) {
-			this.invokeItem = invokeItem;
+		public void setInvokeInstances(List<InvokeInstance> invokeInstances) {
+			this.invokeInstances = invokeInstances;
 		}
 
-		public static class InvokeItemItem {
+		public static class InvokeInstance {
 
 			private String instanceId;
 
-			private String status;
+			private String instanceInvokeStatus;
 
 			public String getInstanceId() {
 				return this.instanceId;
@@ -165,12 +175,12 @@ public class DescribeInvocationsResponse extends AcsResponse {
 				this.instanceId = instanceId;
 			}
 
-			public String getStatus() {
-				return this.status;
+			public String getInstanceInvokeStatus() {
+				return this.instanceInvokeStatus;
 			}
 
-			public void setStatus(String status) {
-				this.status = status;
+			public void setInstanceInvokeStatus(String instanceInvokeStatus) {
+				this.instanceInvokeStatus = instanceInvokeStatus;
 			}
 		}
 	}

@@ -37,7 +37,7 @@ public class DescribeCommandsResponse extends AcsResponse {
 
 	private Long pageSize;
 
-	private List<Command> commandList;
+	private List<Command> commands;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -71,12 +71,12 @@ public class DescribeCommandsResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
-	public List<Command> getCommandList() {
-		return this.commandList;
+	public List<Command> getCommands() {
+		return this.commands;
 	}
 
-	public void setCommandList(List<Command> commandList) {
-		this.commandList = commandList;
+	public void setCommands(List<Command> commands) {
+		this.commands = commands;
 	}
 
 	public static class Command {

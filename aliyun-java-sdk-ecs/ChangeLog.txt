@@ -1,3 +1,6 @@
+2018-01-16 Version: 4.6.1
+1, DescribeImageSupportInstanceTypes add new param Filter and ActionType
+
 2017-12-25 Version: 4.5.1
 1, Add disk category mapping and mount information for DescribeDisks
 
