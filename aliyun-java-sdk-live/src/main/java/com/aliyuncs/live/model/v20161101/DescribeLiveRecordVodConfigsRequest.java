@@ -42,8 +42,6 @@ public class DescribeLiveRecordVodConfigsRequest extends RpcAcsRequest<DescribeL
 
 	private Long pageNum;
 
-	private String version;
-
 	private String streamName;
 
 	public String getAppName() {
@@ -109,17 +107,6 @@ public class DescribeLiveRecordVodConfigsRequest extends RpcAcsRequest<DescribeL
 		this.pageNum = pageNum;
 		if(pageNum != null){
 			putQueryParameter("PageNum", pageNum.toString());
-		}
-	}
-
-	public String getVersion() {
-		return this.version;
-	}
-
-	public void setVersion(String version) {
-		this.version = version;
-		if(version != null){
-			putQueryParameter("Version", version);
 		}
 	}
 

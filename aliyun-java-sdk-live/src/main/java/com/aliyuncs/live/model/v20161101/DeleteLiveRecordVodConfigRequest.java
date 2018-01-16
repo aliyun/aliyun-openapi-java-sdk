@@ -38,8 +38,6 @@ public class DeleteLiveRecordVodConfigRequest extends RpcAcsRequest<DeleteLiveRe
 
 	private Long ownerId;
 
-	private String version;
-
 	private String streamName;
 
 	public String getAppName() {
@@ -83,17 +81,6 @@ public class DeleteLiveRecordVodConfigRequest extends RpcAcsRequest<DeleteLiveRe
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getVersion() {
-		return this.version;
-	}
-
-	public void setVersion(String version) {
-		this.version = version;
-		if(version != null){
-			putQueryParameter("Version", version);
 		}
 	}
 

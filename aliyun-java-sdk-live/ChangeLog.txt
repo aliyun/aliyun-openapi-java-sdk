@@ -1,3 +1,6 @@
+2018-01-16 Version: 3.3.2
+1, Fixed AddLiveRecordVodConfig, DeleteLiveRecordVodConfig, DescribeLiveRecordVodConfigs php sdk bug with parameter version.
+
 2018-01-09 Version: 3.3.1
 1, Add caster transcode template for vertical screen
 2, Add PurchaseTime and ExpireTime for CreateCaster and DescribeCasters
