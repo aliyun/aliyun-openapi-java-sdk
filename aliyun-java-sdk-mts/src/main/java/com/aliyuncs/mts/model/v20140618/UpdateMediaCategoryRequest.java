@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class UpdateMediaCategoryRequest extends RpcAcsRequest<UpdateMediaCategoryResponse> {
 	
 	public UpdateMediaCategoryRequest() {
-		super("Mts", "2014-06-18", "UpdateMediaCategory");
+		super("Mts", "2014-06-18", "UpdateMediaCategory", "mts");
 	}
 
 	private Long resourceOwnerId;

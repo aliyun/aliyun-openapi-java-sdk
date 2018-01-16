@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class UpdateTemplateRequest extends RpcAcsRequest<UpdateTemplateResponse> {
 	
 	public UpdateTemplateRequest() {
-		super("Mts", "2014-06-18", "UpdateTemplate");
+		super("Mts", "2014-06-18", "UpdateTemplate", "mts");
 	}
 
 	private String container;

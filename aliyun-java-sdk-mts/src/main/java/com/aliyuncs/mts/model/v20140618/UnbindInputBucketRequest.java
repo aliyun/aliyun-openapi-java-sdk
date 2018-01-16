@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class UnbindInputBucketRequest extends RpcAcsRequest<UnbindInputBucketResponse> {
 	
 	public UnbindInputBucketRequest() {
-		super("Mts", "2014-06-18", "UnbindInputBucket");
+		super("Mts", "2014-06-18", "UnbindInputBucket", "mts");
 	}
 
 	private String bucket;

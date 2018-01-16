@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class UpdateCategoryNameRequest extends RpcAcsRequest<UpdateCategoryNameResponse> {
 	
 	public UpdateCategoryNameRequest() {
-		super("Mts", "2014-06-18", "UpdateCategoryName");
+		super("Mts", "2014-06-18", "UpdateCategoryName", "mts");
 	}
 
 	private Long resourceOwnerId;

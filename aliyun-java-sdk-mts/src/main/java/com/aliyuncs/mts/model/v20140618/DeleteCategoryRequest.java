@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeleteCategoryRequest extends RpcAcsRequest<DeleteCategoryResponse> {
 	
 	public DeleteCategoryRequest() {
-		super("Mts", "2014-06-18", "DeleteCategory");
+		super("Mts", "2014-06-18", "DeleteCategory", "mts");
 	}
 
 	private Long resourceOwnerId;

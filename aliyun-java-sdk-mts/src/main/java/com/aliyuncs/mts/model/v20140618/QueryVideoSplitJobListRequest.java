@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class QueryVideoSplitJobListRequest extends RpcAcsRequest<QueryVideoSplitJobListResponse> {
 	
 	public QueryVideoSplitJobListRequest() {
-		super("Mts", "2014-06-18", "QueryVideoSplitJobList");
+		super("Mts", "2014-06-18", "QueryVideoSplitJobList", "mts");
 	}
 
 	private Long resourceOwnerId;

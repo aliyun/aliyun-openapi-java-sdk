@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ListMediaWorkflowExecutionsRequest extends RpcAcsRequest<ListMediaWorkflowExecutionsResponse> {
 	
 	public ListMediaWorkflowExecutionsRequest() {
-		super("Mts", "2014-06-18", "ListMediaWorkflowExecutions");
+		super("Mts", "2014-06-18", "ListMediaWorkflowExecutions", "mts");
 	}
 
 	private Long resourceOwnerId;

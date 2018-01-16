@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class SearchTemplateRequest extends RpcAcsRequest<SearchTemplateResponse> {
 	
 	public SearchTemplateRequest() {
-		super("Mts", "2014-06-18", "SearchTemplate");
+		super("Mts", "2014-06-18", "SearchTemplate", "mts");
 	}
 
 	private Long resourceOwnerId;

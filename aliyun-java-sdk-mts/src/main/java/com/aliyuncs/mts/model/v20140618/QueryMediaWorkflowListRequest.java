@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class QueryMediaWorkflowListRequest extends RpcAcsRequest<QueryMediaWorkflowListResponse> {
 	
 	public QueryMediaWorkflowListRequest() {
-		super("Mts", "2014-06-18", "QueryMediaWorkflowList");
+		super("Mts", "2014-06-18", "QueryMediaWorkflowList", "mts");
 	}
 
 	private String mediaWorkflowIds;

@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class UpdateTerrorismPipelineRequest extends RpcAcsRequest<UpdateTerrorismPipelineResponse> {
 	
 	public UpdateTerrorismPipelineRequest() {
-		super("Mts", "2014-06-18", "UpdateTerrorismPipeline");
+		super("Mts", "2014-06-18", "UpdateTerrorismPipeline", "mts");
 	}
 
 	private Long resourceOwnerId;

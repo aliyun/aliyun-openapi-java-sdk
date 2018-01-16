@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ReportMediaDetailJobResultRequest extends RpcAcsRequest<ReportMediaDetailJobResultResponse> {
 	
 	public ReportMediaDetailJobResultRequest() {
-		super("Mts", "2014-06-18", "ReportMediaDetailJobResult");
+		super("Mts", "2014-06-18", "ReportMediaDetailJobResult", "mts");
 	}
 
 	private String jobId;

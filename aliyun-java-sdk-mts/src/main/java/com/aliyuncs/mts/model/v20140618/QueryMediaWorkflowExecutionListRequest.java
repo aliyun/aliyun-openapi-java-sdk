@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class QueryMediaWorkflowExecutionListRequest extends RpcAcsRequest<QueryMediaWorkflowExecutionListResponse> {
 	
 	public QueryMediaWorkflowExecutionListRequest() {
-		super("Mts", "2014-06-18", "QueryMediaWorkflowExecutionList");
+		super("Mts", "2014-06-18", "QueryMediaWorkflowExecutionList", "mts");
 	}
 
 	private String runIds;

@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class PlayerAuthRequest extends RpcAcsRequest<PlayerAuthResponse> {
 	
 	public PlayerAuthRequest() {
-		super("Mts", "2014-06-18", "PlayerAuth");
+		super("Mts", "2014-06-18", "PlayerAuth", "mts");
 	}
 
 	private String resourceOwnerId;

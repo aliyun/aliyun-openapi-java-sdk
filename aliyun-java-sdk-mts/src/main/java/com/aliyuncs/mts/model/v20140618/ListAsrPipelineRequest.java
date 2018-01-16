@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ListAsrPipelineRequest extends RpcAcsRequest<ListAsrPipelineResponse> {
 	
 	public ListAsrPipelineRequest() {
-		super("Mts", "2014-06-18", "ListAsrPipeline");
+		super("Mts", "2014-06-18", "ListAsrPipeline", "mts");
 	}
 
 	private Long resourceOwnerId;

@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class SubmitPornJobRequest extends RpcAcsRequest<SubmitPornJobResponse> {
 	
 	public SubmitPornJobRequest() {
-		super("Mts", "2014-06-18", "SubmitPornJob");
+		super("Mts", "2014-06-18", "SubmitPornJob", "mts");
 	}
 
 	private String input;

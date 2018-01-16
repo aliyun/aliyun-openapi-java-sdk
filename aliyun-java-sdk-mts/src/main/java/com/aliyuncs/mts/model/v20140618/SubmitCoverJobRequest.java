@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class SubmitCoverJobRequest extends RpcAcsRequest<SubmitCoverJobResponse> {
 	
 	public SubmitCoverJobRequest() {
-		super("Mts", "2014-06-18", "SubmitCoverJob");
+		super("Mts", "2014-06-18", "SubmitCoverJob", "mts");
 	}
 
 	private String input;

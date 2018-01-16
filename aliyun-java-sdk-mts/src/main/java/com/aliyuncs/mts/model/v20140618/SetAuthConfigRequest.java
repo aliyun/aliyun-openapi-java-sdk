@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class SetAuthConfigRequest extends RpcAcsRequest<SetAuthConfigResponse> {
 	
 	public SetAuthConfigRequest() {
-		super("Mts", "2014-06-18", "SetAuthConfig");
+		super("Mts", "2014-06-18", "SetAuthConfig", "mts");
 	}
 
 	private String key1;

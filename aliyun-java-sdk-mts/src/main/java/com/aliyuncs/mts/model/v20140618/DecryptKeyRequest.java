@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DecryptKeyRequest extends RpcAcsRequest<DecryptKeyResponse> {
 	
 	public DecryptKeyRequest() {
-		super("Mts", "2014-06-18", "DecryptKey");
+		super("Mts", "2014-06-18", "DecryptKey", "mts");
 	}
 
 	private String rand;

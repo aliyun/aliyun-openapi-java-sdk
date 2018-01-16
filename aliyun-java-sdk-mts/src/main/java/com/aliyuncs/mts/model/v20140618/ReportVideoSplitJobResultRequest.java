@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ReportVideoSplitJobResultRequest extends RpcAcsRequest<ReportVideoSplitJobResultResponse> {
 	
 	public ReportVideoSplitJobResultRequest() {
-		super("Mts", "2014-06-18", "ReportVideoSplitJobResult");
+		super("Mts", "2014-06-18", "ReportVideoSplitJobResult", "mts");
 	}
 
 	private String result;

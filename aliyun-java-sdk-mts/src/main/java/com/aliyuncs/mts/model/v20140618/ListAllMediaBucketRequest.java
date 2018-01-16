@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ListAllMediaBucketRequest extends RpcAcsRequest<ListAllMediaBucketResponse> {
 	
 	public ListAllMediaBucketRequest() {
-		super("Mts", "2014-06-18", "ListAllMediaBucket");
+		super("Mts", "2014-06-18", "ListAllMediaBucket", "mts");
 	}
 
 	private Long resourceOwnerId;

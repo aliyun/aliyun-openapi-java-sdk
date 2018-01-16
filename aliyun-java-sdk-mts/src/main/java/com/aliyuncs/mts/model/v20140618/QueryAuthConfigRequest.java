@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class QueryAuthConfigRequest extends RpcAcsRequest<QueryAuthConfigResponse> {
 	
 	public QueryAuthConfigRequest() {
-		super("Mts", "2014-06-18", "QueryAuthConfig");
+		super("Mts", "2014-06-18", "QueryAuthConfig", "mts");
 	}
 
 	private String resourceOwnerId;

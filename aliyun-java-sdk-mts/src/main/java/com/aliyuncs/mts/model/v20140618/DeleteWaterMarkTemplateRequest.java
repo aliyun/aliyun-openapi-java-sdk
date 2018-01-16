@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeleteWaterMarkTemplateRequest extends RpcAcsRequest<DeleteWaterMarkTemplateResponse> {
 	
 	public DeleteWaterMarkTemplateRequest() {
-		super("Mts", "2014-06-18", "DeleteWaterMarkTemplate");
+		super("Mts", "2014-06-18", "DeleteWaterMarkTemplate", "mts");
 	}
 
 	private Long resourceOwnerId;

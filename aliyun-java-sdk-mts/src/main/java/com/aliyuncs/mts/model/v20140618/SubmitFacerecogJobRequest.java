@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class SubmitFacerecogJobRequest extends RpcAcsRequest<SubmitFacerecogJobResponse> {
 	
 	public SubmitFacerecogJobRequest() {
-		super("Mts", "2014-06-18", "SubmitFacerecogJob");
+		super("Mts", "2014-06-18", "SubmitFacerecogJob", "mts");
 	}
 
 	private String input;

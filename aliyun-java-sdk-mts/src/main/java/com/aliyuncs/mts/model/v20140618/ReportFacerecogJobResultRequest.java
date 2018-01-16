@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ReportFacerecogJobResultRequest extends RpcAcsRequest<ReportFacerecogJobResultResponse> {
 	
 	public ReportFacerecogJobResultRequest() {
-		super("Mts", "2014-06-18", "ReportFacerecogJobResult");
+		super("Mts", "2014-06-18", "ReportFacerecogJobResult", "mts");
 	}
 
 	private String jobId;

@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ListAllCategoryRequest extends RpcAcsRequest<ListAllCategoryResponse> {
 	
 	public ListAllCategoryRequest() {
-		super("Mts", "2014-06-18", "ListAllCategory");
+		super("Mts", "2014-06-18", "ListAllCategory", "mts");
 	}
 
 	private Long resourceOwnerId;

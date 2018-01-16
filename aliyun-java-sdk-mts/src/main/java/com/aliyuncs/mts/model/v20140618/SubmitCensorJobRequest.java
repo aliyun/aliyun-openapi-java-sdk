@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class SubmitCensorJobRequest extends RpcAcsRequest<SubmitCensorJobResponse> {
 	
 	public SubmitCensorJobRequest() {
-		super("Mts", "2014-06-18", "SubmitCensorJob");
+		super("Mts", "2014-06-18", "SubmitCensorJob", "mts");
 	}
 
 	private String input;

@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class AddWaterMarkTemplateRequest extends RpcAcsRequest<AddWaterMarkTemplateResponse> {
 	
 	public AddWaterMarkTemplateRequest() {
-		super("Mts", "2014-06-18", "AddWaterMarkTemplate");
+		super("Mts", "2014-06-18", "AddWaterMarkTemplate", "mts");
 	}
 
 	private Long resourceOwnerId;

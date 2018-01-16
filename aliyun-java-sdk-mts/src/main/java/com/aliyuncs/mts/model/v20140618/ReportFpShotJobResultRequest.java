@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ReportFpShotJobResultRequest extends RpcAcsRequest<ReportFpShotJobResultResponse> {
 	
 	public ReportFpShotJobResultRequest() {
-		super("Mts", "2014-06-18", "ReportFpShotJobResult");
+		super("Mts", "2014-06-18", "ReportFpShotJobResult", "mts");
 	}
 
 	private String result;

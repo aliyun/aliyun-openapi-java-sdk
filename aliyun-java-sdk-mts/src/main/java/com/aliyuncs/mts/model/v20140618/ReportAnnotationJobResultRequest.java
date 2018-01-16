@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ReportAnnotationJobResultRequest extends RpcAcsRequest<ReportAnnotationJobResultResponse> {
 	
 	public ReportAnnotationJobResultRequest() {
-		super("Mts", "2014-06-18", "ReportAnnotationJobResult");
+		super("Mts", "2014-06-18", "ReportAnnotationJobResult", "mts");
 	}
 
 	private String annotation;

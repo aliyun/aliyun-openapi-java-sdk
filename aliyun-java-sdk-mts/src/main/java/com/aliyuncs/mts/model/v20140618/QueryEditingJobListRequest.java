@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class QueryEditingJobListRequest extends RpcAcsRequest<QueryEditingJobListResponse> {
 	
 	public QueryEditingJobListRequest() {
-		super("Mts", "2014-06-18", "QueryEditingJobList");
+		super("Mts", "2014-06-18", "QueryEditingJobList", "mts");
 	}
 
 	private Long resourceOwnerId;

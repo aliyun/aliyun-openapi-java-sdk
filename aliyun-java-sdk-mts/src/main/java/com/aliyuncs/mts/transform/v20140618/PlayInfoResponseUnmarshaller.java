@@ -55,6 +55,8 @@ public class PlayInfoResponseUnmarshaller {
 			playInfo.setPlaintext(context.stringValue("PlayInfoResponse.PlayInfoList["+ i +"].plaintext"));
 			playInfo.setComplexity(context.stringValue("PlayInfoResponse.PlayInfoList["+ i +"].complexity"));
 			playInfo.setActivityName(context.stringValue("PlayInfoResponse.PlayInfoList["+ i +"].activityName"));
+			playInfo.setEncryptionType(context.stringValue("PlayInfoResponse.PlayInfoList["+ i +"].encryptionType"));
+			playInfo.setDownloadType(context.stringValue("PlayInfoResponse.PlayInfoList["+ i +"].downloadType"));
 
 			playInfoList.add(playInfo);
 		}

@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeactivateMediaWorkflowRequest extends RpcAcsRequest<DeactivateMediaWorkflowResponse> {
 	
 	public DeactivateMediaWorkflowRequest() {
-		super("Mts", "2014-06-18", "DeactivateMediaWorkflow");
+		super("Mts", "2014-06-18", "DeactivateMediaWorkflow", "mts");
 	}
 
 	private Long resourceOwnerId;

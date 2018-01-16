@@ -89,6 +89,10 @@ public class PlayInfoResponse extends AcsResponse {
 
 		private String activityName;
 
+		private String encryptionType;
+
+		private String downloadType;
+
 		public String getUrl() {
 			return this.url;
 		}
@@ -199,6 +203,22 @@ public class PlayInfoResponse extends AcsResponse {
 
 		public void setActivityName(String activityName) {
 			this.activityName = activityName;
+		}
+
+		public String getEncryptionType() {
+			return this.encryptionType;
+		}
+
+		public void setEncryptionType(String encryptionType) {
+			this.encryptionType = encryptionType;
+		}
+
+		public String getDownloadType() {
+			return this.downloadType;
+		}
+
+		public void setDownloadType(String downloadType) {
+			this.downloadType = downloadType;
 		}
 	}
 

@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class CancelJobRequest extends RpcAcsRequest<CancelJobResponse> {
 	
 	public CancelJobRequest() {
-		super("Mts", "2014-06-18", "CancelJob");
+		super("Mts", "2014-06-18", "CancelJob", "mts");
 	}
 
 	private String jobId;

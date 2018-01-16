@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class RefreshCdnDomainConfigsCacheRequest extends RpcAcsRequest<RefreshCdnDomainConfigsCacheResponse> {
 	
 	public RefreshCdnDomainConfigsCacheRequest() {
-		super("Mts", "2014-06-18", "RefreshCdnDomainConfigsCache");
+		super("Mts", "2014-06-18", "RefreshCdnDomainConfigsCache", "mts");
 	}
 
 	private String resourceOwnerId;

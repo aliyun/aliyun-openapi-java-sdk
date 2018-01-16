@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class QueryCoverJobListRequest extends RpcAcsRequest<QueryCoverJobListResponse> {
 	
 	public QueryCoverJobListRequest() {
-		super("Mts", "2014-06-18", "QueryCoverJobList");
+		super("Mts", "2014-06-18", "QueryCoverJobList", "mts");
 	}
 
 	private Long resourceOwnerId;

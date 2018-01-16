@@ -1,3 +1,8 @@
+2018-01-16 Version: 2.5.2
+1,  Add TriggerMode param in AddMediaWorkflow.
+2, Add TriggerMode param in QueryMediaWorkflowList/SearchMediaWorkflow/UpdateMediaWorkflow.
+3, Add interface UpdateMediaWorkflowTriggerMode.
+
 2017-12-26 Version: 2.5.1
 1, Add video AI service interface.
 

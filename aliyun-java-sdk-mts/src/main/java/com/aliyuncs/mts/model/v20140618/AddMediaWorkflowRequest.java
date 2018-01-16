@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class AddMediaWorkflowRequest extends RpcAcsRequest<AddMediaWorkflowResponse> {
 	
 	public AddMediaWorkflowRequest() {
-		super("Mts", "2014-06-18", "AddMediaWorkflow");
+		super("Mts", "2014-06-18", "AddMediaWorkflow", "mts");
 	}
 
 	private Long resourceOwnerId;
@@ -41,6 +41,8 @@ public class AddMediaWorkflowRequest extends RpcAcsRequest<AddMediaWorkflowRespo
 	private String name;
 
 	private Long ownerId;
+
+	private String triggerMode;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -105,6 +107,17 @@ public class AddMediaWorkflowRequest extends RpcAcsRequest<AddMediaWorkflowRespo
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getTriggerMode() {
+		return this.triggerMode;
+	}
+
+	public void setTriggerMode(String triggerMode) {
+		this.triggerMode = triggerMode;
+		if(triggerMode != null){
+			putQueryParameter("TriggerMode", triggerMode);
 		}
 	}
 

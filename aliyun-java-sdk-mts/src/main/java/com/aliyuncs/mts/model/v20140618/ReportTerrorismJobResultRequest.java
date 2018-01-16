@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ReportTerrorismJobResultRequest extends RpcAcsRequest<ReportTerrorismJobResultResponse> {
 	
 	public ReportTerrorismJobResultRequest() {
-		super("Mts", "2014-06-18", "ReportTerrorismJobResult");
+		super("Mts", "2014-06-18", "ReportTerrorismJobResult", "mts");
 	}
 
 	private String jobId;

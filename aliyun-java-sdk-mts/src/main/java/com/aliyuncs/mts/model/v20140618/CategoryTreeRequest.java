@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class CategoryTreeRequest extends RpcAcsRequest<CategoryTreeResponse> {
 	
 	public CategoryTreeRequest() {
-		super("Mts", "2014-06-18", "CategoryTree");
+		super("Mts", "2014-06-18", "CategoryTree", "mts");
 	}
 
 	private Long resourceOwnerId;

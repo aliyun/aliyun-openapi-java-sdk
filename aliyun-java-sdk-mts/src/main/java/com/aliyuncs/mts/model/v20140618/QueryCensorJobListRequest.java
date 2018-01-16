@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class QueryCensorJobListRequest extends RpcAcsRequest<QueryCensorJobListResponse> {
 	
 	public QueryCensorJobListRequest() {
-		super("Mts", "2014-06-18", "QueryCensorJobList");
+		super("Mts", "2014-06-18", "QueryCensorJobList", "mts");
 	}
 
 	private Long resourceOwnerId;

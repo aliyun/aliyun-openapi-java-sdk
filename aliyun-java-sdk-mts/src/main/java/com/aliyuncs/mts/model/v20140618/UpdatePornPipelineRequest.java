@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class UpdatePornPipelineRequest extends RpcAcsRequest<UpdatePornPipelineResponse> {
 	
 	public UpdatePornPipelineRequest() {
-		super("Mts", "2014-06-18", "UpdatePornPipeline");
+		super("Mts", "2014-06-18", "UpdatePornPipeline", "mts");
 	}
 
 	private Long resourceOwnerId;

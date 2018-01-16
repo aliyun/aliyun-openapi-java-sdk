@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class UpdateMediaPublishStateRequest extends RpcAcsRequest<UpdateMediaPublishStateResponse> {
 	
 	public UpdateMediaPublishStateRequest() {
-		super("Mts", "2014-06-18", "UpdateMediaPublishState");
+		super("Mts", "2014-06-18", "UpdateMediaPublishState", "mts");
 	}
 
 	private Long resourceOwnerId;

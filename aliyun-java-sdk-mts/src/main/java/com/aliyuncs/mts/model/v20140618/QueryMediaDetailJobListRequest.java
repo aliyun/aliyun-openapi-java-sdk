@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class QueryMediaDetailJobListRequest extends RpcAcsRequest<QueryMediaDetailJobListResponse> {
 	
 	public QueryMediaDetailJobListRequest() {
-		super("Mts", "2014-06-18", "QueryMediaDetailJobList");
+		super("Mts", "2014-06-18", "QueryMediaDetailJobList", "mts");
 	}
 
 	private Long resourceOwnerId;

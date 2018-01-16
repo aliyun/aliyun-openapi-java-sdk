@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeleteMediaRequest extends RpcAcsRequest<DeleteMediaResponse> {
 	
 	public DeleteMediaRequest() {
-		super("Mts", "2014-06-18", "DeleteMedia");
+		super("Mts", "2014-06-18", "DeleteMedia", "mts");
 	}
 
 	private Long resourceOwnerId;

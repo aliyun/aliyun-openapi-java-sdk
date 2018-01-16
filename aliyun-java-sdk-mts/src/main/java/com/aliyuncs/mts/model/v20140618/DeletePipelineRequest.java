@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeletePipelineRequest extends RpcAcsRequest<DeletePipelineResponse> {
 	
 	public DeletePipelineRequest() {
-		super("Mts", "2014-06-18", "DeletePipeline");
+		super("Mts", "2014-06-18", "DeletePipeline", "mts");
 	}
 
 	private Long resourceOwnerId;

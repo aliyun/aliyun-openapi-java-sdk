@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class QueryFacerecogJobListRequest extends RpcAcsRequest<QueryFacerecogJobListResponse> {
 	
 	public QueryFacerecogJobListRequest() {
-		super("Mts", "2014-06-18", "QueryFacerecogJobList");
+		super("Mts", "2014-06-18", "QueryFacerecogJobList", "mts");
 	}
 
 	private Long resourceOwnerId;

@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class QueryFpShotJobListRequest extends RpcAcsRequest<QueryFpShotJobListResponse> {
 	
 	public QueryFpShotJobListRequest() {
-		super("Mts", "2014-06-18", "QueryFpShotJobList");
+		super("Mts", "2014-06-18", "QueryFpShotJobList", "mts");
 	}
 
 	private Long resourceOwnerId;

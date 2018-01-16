@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ReportPornJobResultRequest extends RpcAcsRequest<ReportPornJobResultResponse> {
 	
 	public ReportPornJobResultRequest() {
-		super("Mts", "2014-06-18", "ReportPornJobResult");
+		super("Mts", "2014-06-18", "ReportPornJobResult", "mts");
 	}
 
 	private String jobId;

@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class SubmitVideoSummaryJobRequest extends RpcAcsRequest<SubmitVideoSummaryJobResponse> {
 	
 	public SubmitVideoSummaryJobRequest() {
-		super("Mts", "2014-06-18", "SubmitVideoSummaryJob");
+		super("Mts", "2014-06-18", "SubmitVideoSummaryJob", "mts");
 	}
 
 	private String input;

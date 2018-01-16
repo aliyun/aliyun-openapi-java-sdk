@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class RegisterMediaDetailScenarioRequest extends RpcAcsRequest<RegisterMediaDetailScenarioResponse> {
 	
 	public RegisterMediaDetailScenarioRequest() {
-		super("Mts", "2014-06-18", "RegisterMediaDetailScenario");
+		super("Mts", "2014-06-18", "RegisterMediaDetailScenario", "mts");
 	}
 
 	private String jobId;

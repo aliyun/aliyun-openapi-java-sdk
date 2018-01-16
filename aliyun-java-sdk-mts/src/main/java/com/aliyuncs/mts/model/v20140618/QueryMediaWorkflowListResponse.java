@@ -67,6 +67,8 @@ public class QueryMediaWorkflowListResponse extends AcsResponse {
 
 		private String topology;
 
+		private String triggerMode;
+
 		private String state;
 
 		private String creationTime;
@@ -93,6 +95,14 @@ public class QueryMediaWorkflowListResponse extends AcsResponse {
 
 		public void setTopology(String topology) {
 			this.topology = topology;
+		}
+
+		public String getTriggerMode() {
+			return this.triggerMode;
+		}
+
+		public void setTriggerMode(String triggerMode) {
+			this.triggerMode = triggerMode;
 		}
 
 		public String getState() {

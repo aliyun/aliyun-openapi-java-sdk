@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ReportCensorJobResultRequest extends RpcAcsRequest<ReportCensorJobResultResponse> {
 	
 	public ReportCensorJobResultRequest() {
-		super("Mts", "2014-06-18", "ReportCensorJobResult");
+		super("Mts", "2014-06-18", "ReportCensorJobResult", "mts");
 	}
 
 	private String jobId;

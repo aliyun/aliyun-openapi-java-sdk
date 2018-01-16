@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class AddCoverPipelineRequest extends RpcAcsRequest<AddCoverPipelineResponse> {
 	
 	public AddCoverPipelineRequest() {
-		super("Mts", "2014-06-18", "AddCoverPipeline");
+		super("Mts", "2014-06-18", "AddCoverPipeline", "mts");
 	}
 
 	private Long resourceOwnerId;

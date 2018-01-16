@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeleteTemplateRequest extends RpcAcsRequest<DeleteTemplateResponse> {
 	
 	public DeleteTemplateRequest() {
-		super("Mts", "2014-06-18", "DeleteTemplate");
+		super("Mts", "2014-06-18", "DeleteTemplate", "mts");
 	}
 
 	private Long resourceOwnerId;

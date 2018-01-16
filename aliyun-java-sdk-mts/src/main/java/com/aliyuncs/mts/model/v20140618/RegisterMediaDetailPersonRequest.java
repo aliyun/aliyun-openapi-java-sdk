@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class RegisterMediaDetailPersonRequest extends RpcAcsRequest<RegisterMediaDetailPersonResponse> {
 	
 	public RegisterMediaDetailPersonRequest() {
-		super("Mts", "2014-06-18", "RegisterMediaDetailPerson");
+		super("Mts", "2014-06-18", "RegisterMediaDetailPerson", "mts");
 	}
 
 	private Long resourceOwnerId;

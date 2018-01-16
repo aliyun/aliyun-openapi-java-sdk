@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class SubmitMediaDetailJobRequest extends RpcAcsRequest<SubmitMediaDetailJobResponse> {
 	
 	public SubmitMediaDetailJobRequest() {
-		super("Mts", "2014-06-18", "SubmitMediaDetailJob");
+		super("Mts", "2014-06-18", "SubmitMediaDetailJob", "mts");
 	}
 
 	private String input;

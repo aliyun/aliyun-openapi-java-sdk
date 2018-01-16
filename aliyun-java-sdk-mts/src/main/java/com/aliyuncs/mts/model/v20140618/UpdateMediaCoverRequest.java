@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class UpdateMediaCoverRequest extends RpcAcsRequest<UpdateMediaCoverResponse> {
 	
 	public UpdateMediaCoverRequest() {
-		super("Mts", "2014-06-18", "UpdateMediaCover");
+		super("Mts", "2014-06-18", "UpdateMediaCover", "mts");
 	}
 
 	private String coverURL;

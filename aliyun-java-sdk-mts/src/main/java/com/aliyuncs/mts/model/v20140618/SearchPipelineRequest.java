@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class SearchPipelineRequest extends RpcAcsRequest<SearchPipelineResponse> {
 	
 	public SearchPipelineRequest() {
-		super("Mts", "2014-06-18", "SearchPipeline");
+		super("Mts", "2014-06-18", "SearchPipeline", "mts");
 	}
 
 	private Long resourceOwnerId;

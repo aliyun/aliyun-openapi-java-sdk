@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class QueryVideoSummaryPipelineListRequest extends RpcAcsRequest<QueryVideoSummaryPipelineListResponse> {
 	
 	public QueryVideoSummaryPipelineListRequest() {
-		super("Mts", "2014-06-18", "QueryVideoSummaryPipelineList");
+		super("Mts", "2014-06-18", "QueryVideoSummaryPipelineList", "mts");
 	}
 
 	private Long resourceOwnerId;

@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class QueryTemplateListRequest extends RpcAcsRequest<QueryTemplateListResponse> {
 	
 	public QueryTemplateListRequest() {
-		super("Mts", "2014-06-18", "QueryTemplateList");
+		super("Mts", "2014-06-18", "QueryTemplateList", "mts");
 	}
 
 	private Long resourceOwnerId;

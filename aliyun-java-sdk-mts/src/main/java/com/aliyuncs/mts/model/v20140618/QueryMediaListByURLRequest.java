@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class QueryMediaListByURLRequest extends RpcAcsRequest<QueryMediaListByURLResponse> {
 	
 	public QueryMediaListByURLRequest() {
-		super("Mts", "2014-06-18", "QueryMediaListByURL");
+		super("Mts", "2014-06-18", "QueryMediaListByURL", "mts");
 	}
 
 	private Long resourceOwnerId;

@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class AddMediaRequest extends RpcAcsRequest<AddMediaResponse> {
 	
 	public AddMediaRequest() {
-		super("Mts", "2014-06-18", "AddMedia");
+		super("Mts", "2014-06-18", "AddMedia", "mts");
 	}
 
 	private Long resourceOwnerId;

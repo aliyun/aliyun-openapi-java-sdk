@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class QueryWaterMarkTemplateListRequest extends RpcAcsRequest<QueryWaterMarkTemplateListResponse> {
 	
 	public QueryWaterMarkTemplateListRequest() {
-		super("Mts", "2014-06-18", "QueryWaterMarkTemplateList");
+		super("Mts", "2014-06-18", "QueryWaterMarkTemplateList", "mts");
 	}
 
 	private Long resourceOwnerId;

@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ListCensorPipelineRequest extends RpcAcsRequest<ListCensorPipelineResponse> {
 	
 	public ListCensorPipelineRequest() {
-		super("Mts", "2014-06-18", "ListCensorPipeline");
+		super("Mts", "2014-06-18", "ListCensorPipeline", "mts");
 	}
 
 	private Long resourceOwnerId;

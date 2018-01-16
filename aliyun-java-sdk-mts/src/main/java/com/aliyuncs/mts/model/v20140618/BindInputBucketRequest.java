@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class BindInputBucketRequest extends RpcAcsRequest<BindInputBucketResponse> {
 	
 	public BindInputBucketRequest() {
-		super("Mts", "2014-06-18", "BindInputBucket");
+		super("Mts", "2014-06-18", "BindInputBucket", "mts");
 	}
 
 	private String bucket;

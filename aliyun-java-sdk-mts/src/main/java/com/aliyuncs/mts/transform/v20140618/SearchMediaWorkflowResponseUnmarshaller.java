@@ -41,6 +41,7 @@ public class SearchMediaWorkflowResponseUnmarshaller {
 			mediaWorkflow.setMediaWorkflowId(context.stringValue("SearchMediaWorkflowResponse.MediaWorkflowList["+ i +"].MediaWorkflowId"));
 			mediaWorkflow.setName(context.stringValue("SearchMediaWorkflowResponse.MediaWorkflowList["+ i +"].Name"));
 			mediaWorkflow.setTopology(context.stringValue("SearchMediaWorkflowResponse.MediaWorkflowList["+ i +"].Topology"));
+			mediaWorkflow.setTriggerMode(context.stringValue("SearchMediaWorkflowResponse.MediaWorkflowList["+ i +"].TriggerMode"));
 			mediaWorkflow.setState(context.stringValue("SearchMediaWorkflowResponse.MediaWorkflowList["+ i +"].State"));
 			mediaWorkflow.setCreationTime(context.stringValue("SearchMediaWorkflowResponse.MediaWorkflowList["+ i +"].CreationTime"));
 

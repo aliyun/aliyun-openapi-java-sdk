@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class QueryAnnotationJobListRequest extends RpcAcsRequest<QueryAnnotationJobListResponse> {
 	
 	public QueryAnnotationJobListRequest() {
-		super("Mts", "2014-06-18", "QueryAnnotationJobList");
+		super("Mts", "2014-06-18", "QueryAnnotationJobList", "mts");
 	}
 
 	private Long resourceOwnerId;
