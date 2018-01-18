@@ -1,3 +1,6 @@
+2018-01-18 Version: 2.6.5
+1, add new interface
+
 2018-01-05 Version: 2.6.4
 1, add interface accResult
 
