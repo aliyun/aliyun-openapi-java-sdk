@@ -18,19 +18,12 @@
  */
 package com.aliyuncs.cloudapi.model.v20160714;
 
-import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.cloudapi.model.v20160714.DescribeApiResponse.ErrorCodeSample;
-import com.aliyuncs.cloudapi.model.v20160714.DescribeApiResponse.ConstantParameter;
-import com.aliyuncs.cloudapi.model.v20160714.DescribeApiResponse.OpenIdConnectConfig;
-import com.aliyuncs.cloudapi.model.v20160714.DescribeApiResponse.RequestConfig;
-import com.aliyuncs.cloudapi.model.v20160714.DescribeApiResponse.RequestParameter;
-import com.aliyuncs.cloudapi.model.v20160714.DescribeApiResponse.ServiceConfig;
-import com.aliyuncs.cloudapi.model.v20160714.DescribeApiResponse.ServiceParameter;
-import com.aliyuncs.cloudapi.model.v20160714.DescribeApiResponse.ServiceParameterMap;
-import com.aliyuncs.cloudapi.model.v20160714.DescribeApiResponse.SystemParameter;
+import com.aliyuncs.cloudapi.model.v20160714.DescribeApiResponse.*;
 import com.aliyuncs.cloudapi.transform.v20160714.DescribeDeployedApiResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
+
+import java.util.List;
 
 /**
  * @author auto create
@@ -65,6 +58,8 @@ public class DescribeDeployedApiResponse extends AcsResponse {
     private String                    failResultSample;
 
     private String                    deployedTime;
+    
+    private String                    allowSignatureMethod;
 
     private List<ErrorCodeSample>     errorCodeSamples;
 
@@ -80,11 +75,11 @@ public class DescribeDeployedApiResponse extends AcsResponse {
 
     private List<ServiceParameterMap> serviceParametersMap;
 
-    private RequestConfig             requestConfig;
+    private RequestConfig requestConfig;
 
-    private ServiceConfig             serviceConfig;
+    private ServiceConfig serviceConfig;
 
-    private OpenIdConnectConfig       openIdConnectConfig;
+    private OpenIdConnectConfig openIdConnectConfig;
 
     public String getRequestId() {
         return this.requestId;
@@ -188,6 +183,14 @@ public class DescribeDeployedApiResponse extends AcsResponse {
 
     public void setDeployedTime(String deployedTime) {
         this.deployedTime = deployedTime;
+    }
+
+    public String getAllowSignatureMethod() {
+        return allowSignatureMethod;
+    }
+
+    public void setAllowSignatureMethod(String allowSignatureMethod) {
+        this.allowSignatureMethod = allowSignatureMethod;
     }
 
     public List<SystemParameter> getSystemParameters() {

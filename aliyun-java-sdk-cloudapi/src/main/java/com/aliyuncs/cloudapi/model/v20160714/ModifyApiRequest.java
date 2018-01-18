@@ -18,20 +18,12 @@
  */
 package com.aliyuncs.cloudapi.model.v20160714;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.alibaba.fastjson.JSON;
 import com.aliyuncs.RpcAcsRequest;
-import com.aliyuncs.cloudapi.model.v20160714.DescribeApiResponse.ConstantParameter;
-import com.aliyuncs.cloudapi.model.v20160714.DescribeApiResponse.ErrorCodeSample;
-import com.aliyuncs.cloudapi.model.v20160714.DescribeApiResponse.OpenIdConnectConfig;
-import com.aliyuncs.cloudapi.model.v20160714.DescribeApiResponse.RequestConfig;
-import com.aliyuncs.cloudapi.model.v20160714.DescribeApiResponse.RequestParameter;
-import com.aliyuncs.cloudapi.model.v20160714.DescribeApiResponse.ServiceConfig;
-import com.aliyuncs.cloudapi.model.v20160714.DescribeApiResponse.ServiceParameter;
-import com.aliyuncs.cloudapi.model.v20160714.DescribeApiResponse.ServiceParameterMap;
-import com.aliyuncs.cloudapi.model.v20160714.DescribeApiResponse.SystemParameter;
+import com.aliyuncs.cloudapi.model.v20160714.DescribeApiResponse.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author auto create
@@ -78,6 +70,8 @@ public class ModifyApiRequest extends RpcAcsRequest<ModifyApiResponse> {
 	private String errorCodeSamples;
 	
 	private String openIdConnectConfig;
+	
+	private String allowSignatureMethod;
 
 	public String getGroupId() {
 		return this.groupId;
@@ -396,7 +390,7 @@ public class ModifyApiRequest extends RpcAcsRequest<ModifyApiResponse> {
 		if (null != this.serviceParameters) {
 			list = JSON.parseArray(this.serviceParameters, ServiceParameter.class);
 			if (null != list) {
-				for(ServiceParameter sp : list) {					
+				for(ServiceParameter sp : list) {
 					if (sp.getServiceParameterName().equals(serviceParameter.getServiceParameterName())) {
 						list.remove(sp);
 						break;
@@ -491,7 +485,7 @@ public class ModifyApiRequest extends RpcAcsRequest<ModifyApiResponse> {
 		if (null != this.errorCodeSamples) {
 			list = JSON.parseArray(this.errorCodeSamples, ErrorCodeSample.class);
 			if (null != list) {
-				for(ErrorCodeSample es : list) {					
+				for(ErrorCodeSample es : list) {
 					if (es.getCode().equals(errorCodeSample.getCode())) {
 						list.remove(es);
 						break;
@@ -539,6 +533,15 @@ public class ModifyApiRequest extends RpcAcsRequest<ModifyApiResponse> {
     public void setOpenIdConnectConfig(String openIdConnectConfig) {
         this.openIdConnectConfig = openIdConnectConfig;
         putQueryParameter("OpenIdConnectConfig", openIdConnectConfig);
+    }
+    
+    public String getAllowSignatureMethod() {
+        return allowSignatureMethod;
+    }
+
+    public void setAllowSignatureMethod(String allowSignatureMethod) {
+        this.allowSignatureMethod = allowSignatureMethod;
+        putQueryParameter("AllowSignatureMethod", allowSignatureMethod);
     }
 
     @Override

@@ -3,7 +3,7 @@
   <groupId>com.aliyun</groupId>
   <artifactId>aliyun-java-sdk-cloudapi</artifactId>
   <packaging>jar</packaging>
-  <version>4.3.0</version>
+  <version>4.5.0</version>
     <name>aliyun-java-sdk-cloudapi</name>
   <url>http://www.aliyun.com</url>
   <description>Aliyun Open API SDK for Java
@@ -31,12 +31,12 @@ http://www.aliyun.com</description>
   		<groupId>com.aliyun</groupId>
   		<artifactId>aliyun-java-sdk-core</artifactId>
 		<optional>true</optional>
-  		<version>3.2.8</version>
+  		<version>3.5.0</version>
   	</dependency>
-  	<dependency>
-		<groupId>com.alibaba</groupId>
-		<artifactId>fastjson</artifactId>
-		<version>1.2.15</version>
+	<dependency>
+	  <groupId>com.alibaba</groupId>
+	  <artifactId>fastjson</artifactId>
+	  <version>1.2.15</version>
 	</dependency>
   </dependencies>
 	<licenses>

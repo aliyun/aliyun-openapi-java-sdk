@@ -18,21 +18,12 @@
  */
 package com.aliyuncs.cloudapi.transform.v20160714;
 
+import com.aliyuncs.cloudapi.model.v20160714.DescribeApiHistoryResponse;
+import com.aliyuncs.cloudapi.model.v20160714.DescribeApiResponse.*;
+import com.aliyuncs.transform.UnmarshallerContext;
+
 import java.util.ArrayList;
 import java.util.List;
-
-import com.aliyuncs.cloudapi.model.v20160714.DescribeApiHistoryResponse;
-import com.aliyuncs.cloudapi.model.v20160714.DescribeApiResponse.ErrorCodeSample;
-import com.aliyuncs.cloudapi.model.v20160714.DescribeApiResponse.ConstantParameter;
-import com.aliyuncs.cloudapi.model.v20160714.DescribeApiResponse.OpenIdConnectConfig;
-import com.aliyuncs.cloudapi.model.v20160714.DescribeApiResponse.RequestConfig;
-import com.aliyuncs.cloudapi.model.v20160714.DescribeApiResponse.RequestParameter;
-import com.aliyuncs.cloudapi.model.v20160714.DescribeApiResponse.ServiceConfig;
-import com.aliyuncs.cloudapi.model.v20160714.DescribeApiResponse.ServiceParameter;
-import com.aliyuncs.cloudapi.model.v20160714.DescribeApiResponse.ServiceParameterMap;
-import com.aliyuncs.cloudapi.model.v20160714.DescribeApiResponse.SystemParameter;
-import com.aliyuncs.cloudapi.model.v20160714.DescribeApiResponse.VpcConfig;
-import com.aliyuncs.transform.UnmarshallerContext;
 
 
 public class DescribeApiHistoryResponseUnmarshaller {
@@ -55,6 +46,7 @@ public class DescribeApiHistoryResponseUnmarshaller {
 		describeApiHistoryResponse.setResultSample(context.stringValue("DescribeApiHistoryResponse.ResultSample"));
 		describeApiHistoryResponse.setFailResultSample(context.stringValue("DescribeApiHistoryResponse.FailResultSample"));
 		describeApiHistoryResponse.setDeployedTime(context.stringValue("DescribeApiHistoryResponse.DeployedTime"));
+		describeApiHistoryResponse.setAllowSignatureMethod(context.stringValue("DescribeApiHistoryResponse.AllowSignatureMethod"));
 
 		RequestConfig requestConfig = new RequestConfig();
 		requestConfig.setRequestProtocol(context.stringValue("DescribeApiHistoryResponse.RequestConfig.RequestProtocol"));

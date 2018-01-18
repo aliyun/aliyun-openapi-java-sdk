@@ -18,14 +18,14 @@
  */
 package com.aliyuncs.cloudapi.transform.v20160714;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.aliyuncs.cloudapi.model.v20160714.DescribeApiDocResponse;
 import com.aliyuncs.cloudapi.model.v20160714.DescribeApiResponse.ErrorCodeSample;
 import com.aliyuncs.cloudapi.model.v20160714.DescribeApiResponse.RequestConfig;
 import com.aliyuncs.cloudapi.model.v20160714.DescribeApiResponse.RequestParameter;
 import com.aliyuncs.transform.UnmarshallerContext;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class DescribeApiDocResponseUnmarshaller {

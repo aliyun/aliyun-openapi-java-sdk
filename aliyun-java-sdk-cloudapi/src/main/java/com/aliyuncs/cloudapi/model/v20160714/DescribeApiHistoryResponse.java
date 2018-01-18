@@ -18,270 +18,273 @@
  */
 package com.aliyuncs.cloudapi.model.v20160714;
 
-import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.cloudapi.model.v20160714.DescribeApiResponse.ErrorCodeSample;
-import com.aliyuncs.cloudapi.model.v20160714.DescribeApiResponse.ConstantParameter;
-import com.aliyuncs.cloudapi.model.v20160714.DescribeApiResponse.OpenIdConnectConfig;
-import com.aliyuncs.cloudapi.model.v20160714.DescribeApiResponse.RequestConfig;
-import com.aliyuncs.cloudapi.model.v20160714.DescribeApiResponse.RequestParameter;
-import com.aliyuncs.cloudapi.model.v20160714.DescribeApiResponse.ServiceConfig;
-import com.aliyuncs.cloudapi.model.v20160714.DescribeApiResponse.ServiceParameter;
-import com.aliyuncs.cloudapi.model.v20160714.DescribeApiResponse.ServiceParameterMap;
-import com.aliyuncs.cloudapi.model.v20160714.DescribeApiResponse.SystemParameter;
+import com.aliyuncs.cloudapi.model.v20160714.DescribeApiResponse.*;
 import com.aliyuncs.cloudapi.transform.v20160714.DescribeApiHistoryResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
+import java.util.List;
+
 /**
  * @author auto create
- * @version 
+ * @version
  */
 public class DescribeApiHistoryResponse extends AcsResponse {
 
-	private String requestId;
+    private String                    requestId;
 
-	private String regionId;
+    private String                    regionId;
 
-	private String groupId;
+    private String                    groupId;
 
-	private String groupName;
+    private String                    groupName;
 
-	private String stageName;
+    private String                    stageName;
 
-	private String apiId;
+    private String                    apiId;
 
-	private String apiName;
+    private String                    apiName;
 
-	private String description;
+    private String                    description;
 
-	private String historyVersion;
+    private String                    historyVersion;
 
-	private String status;
+    private String                    status;
 
-	private String visibility;
+    private String                    visibility;
 
-	private String authType;
+    private String                    authType;
 
-	private String resultType;
+    private String                    resultType;
 
-	private String resultSample;
+    private String                    resultSample;
 
-	private String failResultSample;
+    private String                    failResultSample;
 
-	private String deployedTime;
+    private String                    deployedTime;
 
-	private List<ErrorCodeSample> errorCodeSamples;
+    private String                    allowSignatureMethod;
 
-	private List<SystemParameter> systemParameters;
-	
-	private List<SystemParameter> customSystemParameters;
+    private List<ErrorCodeSample>     errorCodeSamples;
 
-	private List<ConstantParameter> constantParameters;
+    private List<SystemParameter>     systemParameters;
 
-	private List<RequestParameter> requestParameters;
+    private List<SystemParameter>     customSystemParameters;
 
-	private List<ServiceParameter> serviceParameters;
+    private List<ConstantParameter>   constantParameters;
 
-	private List<ServiceParameterMap> serviceParametersMap;
+    private List<RequestParameter>    requestParameters;
 
-	private RequestConfig requestConfig;
+    private List<ServiceParameter>    serviceParameters;
 
-	private ServiceConfig serviceConfig;
-	
-	private OpenIdConnectConfig openIdConnectConfig;
+    private List<ServiceParameterMap> serviceParametersMap;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
+    private RequestConfig requestConfig;
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+    private ServiceConfig serviceConfig;
 
-	public String getRegionId() {
-		return this.regionId;
-	}
+    private OpenIdConnectConfig openIdConnectConfig;
 
-	public void setRegionId(String regionId) {
-		this.regionId = regionId;
-	}
+    public String getRequestId() {
+        return this.requestId;
+    }
 
-	public String getGroupId() {
-		return this.groupId;
-	}
+    public void setRequestId(String requestId) {
+        this.requestId = requestId;
+    }
 
-	public void setGroupId(String groupId) {
-		this.groupId = groupId;
-	}
+    public String getRegionId() {
+        return this.regionId;
+    }
 
-	public String getGroupName() {
-		return this.groupName;
-	}
+    public void setRegionId(String regionId) {
+        this.regionId = regionId;
+    }
 
-	public void setGroupName(String groupName) {
-		this.groupName = groupName;
-	}
+    public String getGroupId() {
+        return this.groupId;
+    }
 
-	public String getStageName() {
-		return this.stageName;
-	}
+    public void setGroupId(String groupId) {
+        this.groupId = groupId;
+    }
 
-	public void setStageName(String stageName) {
-		this.stageName = stageName;
-	}
+    public String getGroupName() {
+        return this.groupName;
+    }
 
-	public String getApiId() {
-		return this.apiId;
-	}
+    public void setGroupName(String groupName) {
+        this.groupName = groupName;
+    }
 
-	public void setApiId(String apiId) {
-		this.apiId = apiId;
-	}
+    public String getStageName() {
+        return this.stageName;
+    }
 
-	public String getApiName() {
-		return this.apiName;
-	}
-
-	public void setApiName(String apiName) {
-		this.apiName = apiName;
-	}
-
-	public String getDescription() {
-		return this.description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-	}
-
-	public String getHistoryVersion() {
-		return this.historyVersion;
-	}
-
-	public void setHistoryVersion(String historyVersion) {
-		this.historyVersion = historyVersion;
-	}
-
-	public String getStatus() {
-		return this.status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
-	}
-
-	public String getVisibility() {
-		return this.visibility;
-	}
-
-	public void setVisibility(String visibility) {
-		this.visibility = visibility;
-	}
-
-	public String getAuthType() {
-		return this.authType;
-	}
-
-	public void setAuthType(String authType) {
-		this.authType = authType;
-	}
-
-	public String getResultType() {
-		return this.resultType;
-	}
-
-	public void setResultType(String resultType) {
-		this.resultType = resultType;
-	}
-
-	public String getResultSample() {
-		return this.resultSample;
-	}
-
-	public void setResultSample(String resultSample) {
-		this.resultSample = resultSample;
-	}
-
-	public String getDeployedTime() {
-		return this.deployedTime;
-	}
-
-	public void setDeployedTime(String deployedTime) {
-		this.deployedTime = deployedTime;
-	}
-
-	public List<SystemParameter> getSystemParameters() {
-		return this.systemParameters;
-	}
-
-	public void setSystemParameters(List<SystemParameter> systemParameters) {
-		this.systemParameters = systemParameters;
-	}
-
-	public List<ConstantParameter> getConstantParameters() {
-		return this.constantParameters;
-	}
-
-	public void setConstantParameters(List<ConstantParameter> constantParameters) {
-		this.constantParameters = constantParameters;
-	}
-
-	public List<RequestParameter> getRequestParameters() {
-		return this.requestParameters;
-	}
-
-	public void setRequestParameters(List<RequestParameter> requestParameters) {
-		this.requestParameters = requestParameters;
-	}
-
-	public List<ServiceParameter> getServiceParameters() {
-		return this.serviceParameters;
-	}
-
-	public void setServiceParameters(List<ServiceParameter> serviceParameters) {
-		this.serviceParameters = serviceParameters;
-	}
-
-	public List<ServiceParameterMap> getServiceParametersMap() {
-		return this.serviceParametersMap;
-	}
-
-	public void setServiceParametersMap(List<ServiceParameterMap> serviceParametersMap) {
-		this.serviceParametersMap = serviceParametersMap;
-	}
-
-	public RequestConfig getRequestConfig() {
-		return this.requestConfig;
-	}
-
-	public void setRequestConfig(RequestConfig requestConfig) {
-		this.requestConfig = requestConfig;
-	}
-
-	public ServiceConfig getServiceConfig() {
-		return this.serviceConfig;
-	}
-
-	public void setServiceConfig(ServiceConfig serviceConfig) {
-		this.serviceConfig = serviceConfig;
-	}
-	
-	public String getFailResultSample() {
-		return failResultSample;
-	}
-
-	public void setFailResultSample(String failResultSample) {
-		this.failResultSample = failResultSample;
-	}
-
-	public List<ErrorCodeSample> getErrorCodeSamples() {
-		return errorCodeSamples;
-	}
-
-	public void setErrorCodeSamples(List<ErrorCodeSample> errorCodeSamples) {
-		this.errorCodeSamples = errorCodeSamples;
-	}
-	
+    public void setStageName(String stageName) {
+        this.stageName = stageName;
+    }
+
+    public String getApiId() {
+        return this.apiId;
+    }
+
+    public void setApiId(String apiId) {
+        this.apiId = apiId;
+    }
+
+    public String getApiName() {
+        return this.apiName;
+    }
+
+    public void setApiName(String apiName) {
+        this.apiName = apiName;
+    }
+
+    public String getDescription() {
+        return this.description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getHistoryVersion() {
+        return this.historyVersion;
+    }
+
+    public void setHistoryVersion(String historyVersion) {
+        this.historyVersion = historyVersion;
+    }
+
+    public String getStatus() {
+        return this.status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public String getVisibility() {
+        return this.visibility;
+    }
+
+    public void setVisibility(String visibility) {
+        this.visibility = visibility;
+    }
+
+    public String getAuthType() {
+        return this.authType;
+    }
+
+    public void setAuthType(String authType) {
+        this.authType = authType;
+    }
+
+    public String getResultType() {
+        return this.resultType;
+    }
+
+    public void setResultType(String resultType) {
+        this.resultType = resultType;
+    }
+
+    public String getResultSample() {
+        return this.resultSample;
+    }
+
+    public void setResultSample(String resultSample) {
+        this.resultSample = resultSample;
+    }
+
+    public String getDeployedTime() {
+        return this.deployedTime;
+    }
+
+    public void setDeployedTime(String deployedTime) {
+        this.deployedTime = deployedTime;
+    }
+
+    public String getAllowSignatureMethod() {
+        return allowSignatureMethod;
+    }
+
+    public void setAllowSignatureMethod(String allowSignatureMethod) {
+        this.allowSignatureMethod = allowSignatureMethod;
+    }
+
+    public List<SystemParameter> getSystemParameters() {
+        return this.systemParameters;
+    }
+
+    public void setSystemParameters(List<SystemParameter> systemParameters) {
+        this.systemParameters = systemParameters;
+    }
+
+    public List<ConstantParameter> getConstantParameters() {
+        return this.constantParameters;
+    }
+
+    public void setConstantParameters(List<ConstantParameter> constantParameters) {
+        this.constantParameters = constantParameters;
+    }
+
+    public List<RequestParameter> getRequestParameters() {
+        return this.requestParameters;
+    }
+
+    public void setRequestParameters(List<RequestParameter> requestParameters) {
+        this.requestParameters = requestParameters;
+    }
+
+    public List<ServiceParameter> getServiceParameters() {
+        return this.serviceParameters;
+    }
+
+    public void setServiceParameters(List<ServiceParameter> serviceParameters) {
+        this.serviceParameters = serviceParameters;
+    }
+
+    public List<ServiceParameterMap> getServiceParametersMap() {
+        return this.serviceParametersMap;
+    }
+
+    public void setServiceParametersMap(List<ServiceParameterMap> serviceParametersMap) {
+        this.serviceParametersMap = serviceParametersMap;
+    }
+
+    public RequestConfig getRequestConfig() {
+        return this.requestConfig;
+    }
+
+    public void setRequestConfig(RequestConfig requestConfig) {
+        this.requestConfig = requestConfig;
+    }
+
+    public ServiceConfig getServiceConfig() {
+        return this.serviceConfig;
+    }
+
+    public void setServiceConfig(ServiceConfig serviceConfig) {
+        this.serviceConfig = serviceConfig;
+    }
+
+    public String getFailResultSample() {
+        return failResultSample;
+    }
+
+    public void setFailResultSample(String failResultSample) {
+        this.failResultSample = failResultSample;
+    }
+
+    public List<ErrorCodeSample> getErrorCodeSamples() {
+        return errorCodeSamples;
+    }
+
+    public void setErrorCodeSamples(List<ErrorCodeSample> errorCodeSamples) {
+        this.errorCodeSamples = errorCodeSamples;
+    }
+
     public List<SystemParameter> getCustomSystemParameters() {
         return customSystemParameters;
     }
@@ -298,9 +301,9 @@ public class DescribeApiHistoryResponse extends AcsResponse {
         this.openIdConnectConfig = openIdConnectConfig;
     }
 
-	@Override
-	public DescribeApiHistoryResponse getInstance(UnmarshallerContext context) {
-		return	DescribeApiHistoryResponseUnmarshaller.unmarshall(this, context);
-	}
+    @Override
+    public DescribeApiHistoryResponse getInstance(UnmarshallerContext context) {
+        return DescribeApiHistoryResponseUnmarshaller.unmarshall(this, context);
+    }
 
 }

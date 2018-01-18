@@ -18,10 +18,11 @@
  */
 package com.aliyuncs.cloudapi.model.v20160714;
 
-import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.cloudapi.transform.v20160714.DescribeApiStageResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
+
+import java.util.List;
 
 /**
  * @author auto create
@@ -131,6 +132,7 @@ public class DescribeApiStageResponse extends AcsResponse {
 			this.variableValue = variableValue;
 		}
 	}
+
 
 	@Override
 	public DescribeApiStageResponse getInstance(UnmarshallerContext context) {

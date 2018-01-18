@@ -18,11 +18,11 @@
  */
 package com.aliyuncs.cloudapi.model.v20160714;
 
-import java.util.List;
-
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.cloudapi.transform.v20160714.DescribeApiResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
+
+import java.util.List;
 
 /**
  * @author auto create
@@ -57,6 +57,8 @@ public class DescribeApiResponse extends AcsResponse {
     private String                    modifiedTime;
 
     private String                    description;
+    
+    private String                    allowSignatureMethod;
 
     private List<SystemParameter>     systemParameters;
 
@@ -278,6 +280,14 @@ public class DescribeApiResponse extends AcsResponse {
 
     public void setOpenIdConnectConfig(OpenIdConnectConfig openIdConnectConfig) {
         this.openIdConnectConfig = openIdConnectConfig;
+    }
+
+    public String getAllowSignatureMethod() {
+        return allowSignatureMethod;
+    }
+
+    public void setAllowSignatureMethod(String allowSignatureMethod) {
+        this.allowSignatureMethod = allowSignatureMethod;
     }
 
     public static class SystemParameter {
@@ -740,9 +750,24 @@ public class DescribeApiResponse extends AcsResponse {
 
         private String    mockResult;
 
-        private boolean   serviceVpcEnable = false;
+        private Boolean   serviceVpcEnable = false;
 
         private VpcConfig vpcConfig;
+
+        /**
+         * 用户定义给后端的ContentType的类型：
+         * DEFAULT:服务器默认
+         * CUSTOM:用户自定义
+         * CLIENT:透传客户端的ContentType头
+         */
+        private String contentTypeCatagory;
+
+        /**
+         * 用户定义的ContentType头的值
+         */
+        private String contentTypeValue;
+
+        private String aoneAppName;
 
         public String getServiceProtocol() {
             return this.serviceProtocol;
@@ -799,7 +824,7 @@ public class DescribeApiResponse extends AcsResponse {
         public void setMockResult(String mockResult) {
             this.mockResult = mockResult;
         }
-        
+
         public VpcConfig getVpcConfig() {
             return vpcConfig;
         }
@@ -808,12 +833,36 @@ public class DescribeApiResponse extends AcsResponse {
             this.vpcConfig = vpcConfig;
         }
 
-        public boolean isServiceVpcEnable() {
+        public Boolean isServiceVpcEnable() {
             return serviceVpcEnable;
         }
 
-        public void setServiceVpcEnable(boolean serviceVpcEnable) {
+        public void setServiceVpcEnable(Boolean serviceVpcEnable) {
             this.serviceVpcEnable = serviceVpcEnable;
+        }
+
+        public String getContentTypeCatagory() {
+            return contentTypeCatagory;
+        }
+
+        public void setContentTypeCatagory(String contentTypeCatagory) {
+            this.contentTypeCatagory = contentTypeCatagory;
+        }
+
+        public String getContentTypeValue() {
+            return contentTypeValue;
+        }
+
+        public void setContentTypeValue(String contentTypeValue) {
+            this.contentTypeValue = contentTypeValue;
+        }
+
+        public String getAoneAppName() {
+            return aoneAppName;
+        }
+
+        public void setAoneAppName(String aoneAppName) {
+            this.aoneAppName = aoneAppName;
         }
     }
 

@@ -18,13 +18,13 @@
  */
 package com.aliyuncs.cloudapi.transform.v20160714;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.aliyuncs.cloudapi.model.v20160714.DescribeHistoryApisResponse;
 import com.aliyuncs.cloudapi.model.v20160714.DescribeHistoryApisResponse.ApiHisItem;
 import com.aliyuncs.cloudapi.model.v20160714.DescribeHistoryApisResponse.ApiHisItem.Status;
 import com.aliyuncs.transform.UnmarshallerContext;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class DescribeHistoryApisResponseUnmarshaller {
@@ -46,7 +46,7 @@ public class DescribeHistoryApisResponseUnmarshaller {
 			apiHisItem.setGroupName(context.stringValue("DescribeHistoryApisResponse.ApiHisItems["+ i +"].GroupName"));
 			apiHisItem.setStageName(context.stringValue("DescribeHistoryApisResponse.ApiHisItems["+ i +"].StageName"));
 			apiHisItem.setHistoryVersion(context.stringValue("DescribeHistoryApisResponse.ApiHisItems["+ i +"].HistoryVersion"));
-			apiHisItem.setStatus(Status.getEnum(context.stringValue("DescribeHistoryApisResponse.ApiHisItems["+ i +"].Status")));
+			apiHisItem.setStatus(Status.getEnum(context.stringValue("DescribeHistoryApisResponse.ApiHisItems[" + i + "].Status")));
 			apiHisItem.setDescription(context.stringValue("DescribeHistoryApisResponse.ApiHisItems["+ i +"].Description"));
 			apiHisItem.setDeployedTime(context.stringValue("DescribeHistoryApisResponse.ApiHisItems["+ i +"].DeployedTime"));
 

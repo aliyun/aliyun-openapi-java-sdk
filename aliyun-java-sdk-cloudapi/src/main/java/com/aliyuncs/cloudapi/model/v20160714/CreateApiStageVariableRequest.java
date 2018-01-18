@@ -18,6 +18,7 @@
  */
 package com.aliyuncs.cloudapi.model.v20160714;
 
+import com.alibaba.fastjson.JSON;
 import com.aliyuncs.RpcAcsRequest;
 
 /**

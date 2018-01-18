@@ -18,14 +18,14 @@
  */
 package com.aliyuncs.cloudapi.transform.v20160714;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.aliyuncs.cloudapi.model.v20160714.DescribeApiGroupsResponse;
 import com.aliyuncs.cloudapi.model.v20160714.DescribeApiGroupsResponse.ApiGroupAttribute;
 import com.aliyuncs.cloudapi.model.v20160714.DescribeApiGroupsResponse.ApiGroupAttribute.BillingStatus;
 import com.aliyuncs.cloudapi.model.v20160714.DescribeApiGroupsResponse.ApiGroupAttribute.IllegalStatus;
 import com.aliyuncs.transform.UnmarshallerContext;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class DescribeApiGroupsResponseUnmarshaller {
@@ -48,8 +48,8 @@ public class DescribeApiGroupsResponseUnmarshaller {
 			apiGroupAttribute.setModifiedTime(context.stringValue("DescribeApiGroupsResponse.ApiGroupAttributes["+ i +"].ModifiedTime"));
 			apiGroupAttribute.setRegionId(context.stringValue("DescribeApiGroupsResponse.ApiGroupAttributes["+ i +"].RegionId"));
 			apiGroupAttribute.setTrafficLimit(context.integerValue("DescribeApiGroupsResponse.ApiGroupAttributes["+ i +"].TrafficLimit"));
-			apiGroupAttribute.setBillingStatus(BillingStatus.getEnum(context.stringValue("DescribeApiGroupsResponse.ApiGroupAttributes["+ i +"].BillingStatus")));
-			apiGroupAttribute.setIllegalStatus(IllegalStatus.getEnum(context.stringValue("DescribeApiGroupsResponse.ApiGroupAttributes["+ i +"].IllegalStatus")));
+			apiGroupAttribute.setBillingStatus(BillingStatus.getEnum(context.stringValue("DescribeApiGroupsResponse.ApiGroupAttributes[" + i + "].BillingStatus")));
+			apiGroupAttribute.setIllegalStatus(IllegalStatus.getEnum(context.stringValue("DescribeApiGroupsResponse.ApiGroupAttributes[" + i + "].IllegalStatus")));
 
 			apiGroupAttributes.add(apiGroupAttribute);
 		}

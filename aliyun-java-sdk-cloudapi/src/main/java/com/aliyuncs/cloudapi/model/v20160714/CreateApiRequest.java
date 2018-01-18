@@ -18,19 +18,11 @@
  */
 package com.aliyuncs.cloudapi.model.v20160714;
 
-import java.util.List;
-
 import com.alibaba.fastjson.JSON;
 import com.aliyuncs.RpcAcsRequest;
-import com.aliyuncs.cloudapi.model.v20160714.DescribeApiResponse.ErrorCodeSample;
-import com.aliyuncs.cloudapi.model.v20160714.DescribeApiResponse.ConstantParameter;
-import com.aliyuncs.cloudapi.model.v20160714.DescribeApiResponse.OpenIdConnectConfig;
-import com.aliyuncs.cloudapi.model.v20160714.DescribeApiResponse.RequestConfig;
-import com.aliyuncs.cloudapi.model.v20160714.DescribeApiResponse.RequestParameter;
-import com.aliyuncs.cloudapi.model.v20160714.DescribeApiResponse.ServiceConfig;
-import com.aliyuncs.cloudapi.model.v20160714.DescribeApiResponse.ServiceParameter;
-import com.aliyuncs.cloudapi.model.v20160714.DescribeApiResponse.ServiceParameterMap;
-import com.aliyuncs.cloudapi.model.v20160714.DescribeApiResponse.SystemParameter;
+import com.aliyuncs.cloudapi.model.v20160714.DescribeApiResponse.*;
+
+import java.util.List;
 
 /**
  * @author auto create
@@ -75,6 +67,8 @@ public class CreateApiRequest extends RpcAcsRequest<CreateApiResponse> {
 	private String errorCodeSamples;
 	
 	private String openIdConnectConfig;
+	
+	private String allowSignatureMethod;
 
 	public String getGroupId() {
 		return this.groupId;
@@ -281,6 +275,15 @@ public class CreateApiRequest extends RpcAcsRequest<CreateApiResponse> {
     public void setOpenIdConnectConfig(String openIdConnectConfig) {
         this.openIdConnectConfig = openIdConnectConfig;
         putQueryParameter("OpenIdConnectConfig", openIdConnectConfig);
+    }
+
+    public String getAllowSignatureMethod() {
+        return allowSignatureMethod;
+    }
+
+    public void setAllowSignatureMethod(String allowSignatureMethod) {
+        this.allowSignatureMethod = allowSignatureMethod;
+        putQueryParameter("AllowSignatureMethod", allowSignatureMethod);
     }
 
     @Override

@@ -18,21 +18,12 @@
  */
 package com.aliyuncs.cloudapi.transform.v20160714;
 
+import com.aliyuncs.cloudapi.model.v20160714.DescribeApiResponse.*;
+import com.aliyuncs.cloudapi.model.v20160714.DescribeDeployedApiResponse;
+import com.aliyuncs.transform.UnmarshallerContext;
+
 import java.util.ArrayList;
 import java.util.List;
-
-import com.aliyuncs.cloudapi.model.v20160714.DescribeDeployedApiResponse;
-import com.aliyuncs.cloudapi.model.v20160714.DescribeApiResponse.ErrorCodeSample;
-import com.aliyuncs.cloudapi.model.v20160714.DescribeApiResponse.ConstantParameter;
-import com.aliyuncs.cloudapi.model.v20160714.DescribeApiResponse.OpenIdConnectConfig;
-import com.aliyuncs.cloudapi.model.v20160714.DescribeApiResponse.RequestConfig;
-import com.aliyuncs.cloudapi.model.v20160714.DescribeApiResponse.RequestParameter;
-import com.aliyuncs.cloudapi.model.v20160714.DescribeApiResponse.ServiceConfig;
-import com.aliyuncs.cloudapi.model.v20160714.DescribeApiResponse.ServiceParameter;
-import com.aliyuncs.cloudapi.model.v20160714.DescribeApiResponse.ServiceParameterMap;
-import com.aliyuncs.cloudapi.model.v20160714.DescribeApiResponse.SystemParameter;
-import com.aliyuncs.cloudapi.model.v20160714.DescribeApiResponse.VpcConfig;
-import com.aliyuncs.transform.UnmarshallerContext;
 
 
 public class DescribeDeployedApiResponseUnmarshaller {
@@ -53,6 +44,7 @@ public class DescribeDeployedApiResponseUnmarshaller {
 		describeDeployedApiResponse.setResultSample(context.stringValue("DescribeDeployedApiResponse.ResultSample"));
 		describeDeployedApiResponse.setFailResultSample(context.stringValue("DescribeDeployedApiResponse.FailResultSample"));
 		describeDeployedApiResponse.setDeployedTime(context.stringValue("DescribeDeployedApiResponse.DeployedTime"));
+		describeDeployedApiResponse.setAllowSignatureMethod(context.stringValue("DescribeDeployedApiResponse.AllowSignatureMethod"));
 
 		RequestConfig requestConfig = new RequestConfig();
 		requestConfig.setRequestProtocol(context.stringValue("DescribeDeployedApiResponse.RequestConfig.RequestProtocol"));

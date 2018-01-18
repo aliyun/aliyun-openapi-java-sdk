@@ -18,22 +18,12 @@
  */
 package com.aliyuncs.cloudapi.transform.v20160714;
 
+import com.aliyuncs.cloudapi.model.v20160714.DescribeApiResponse;
+import com.aliyuncs.cloudapi.model.v20160714.DescribeApiResponse.*;
+import com.aliyuncs.transform.UnmarshallerContext;
+
 import java.util.ArrayList;
 import java.util.List;
-
-import com.aliyuncs.cloudapi.model.v20160714.DescribeApiResponse;
-import com.aliyuncs.cloudapi.model.v20160714.DescribeApiResponse.ErrorCodeSample;
-import com.aliyuncs.cloudapi.model.v20160714.DescribeApiResponse.ConstantParameter;
-import com.aliyuncs.cloudapi.model.v20160714.DescribeApiResponse.DeployedInfo;
-import com.aliyuncs.cloudapi.model.v20160714.DescribeApiResponse.OpenIdConnectConfig;
-import com.aliyuncs.cloudapi.model.v20160714.DescribeApiResponse.RequestConfig;
-import com.aliyuncs.cloudapi.model.v20160714.DescribeApiResponse.RequestParameter;
-import com.aliyuncs.cloudapi.model.v20160714.DescribeApiResponse.ServiceConfig;
-import com.aliyuncs.cloudapi.model.v20160714.DescribeApiResponse.ServiceParameter;
-import com.aliyuncs.cloudapi.model.v20160714.DescribeApiResponse.ServiceParameterMap;
-import com.aliyuncs.cloudapi.model.v20160714.DescribeApiResponse.SystemParameter;
-import com.aliyuncs.cloudapi.model.v20160714.DescribeApiResponse.VpcConfig;
-import com.aliyuncs.transform.UnmarshallerContext;
 
 
 public class DescribeApiResponseUnmarshaller {
@@ -54,6 +44,7 @@ public class DescribeApiResponseUnmarshaller {
 		describeApiResponse.setCreatedTime(context.stringValue("DescribeApiResponse.CreatedTime"));
 		describeApiResponse.setModifiedTime(context.stringValue("DescribeApiResponse.ModifiedTime"));
 		describeApiResponse.setDescription(context.stringValue("DescribeApiResponse.Description"));
+		describeApiResponse.setAllowSignatureMethod(context.stringValue("DescribeApiResponse.AllowSignatureMethod"));
 
 		RequestConfig requestConfig = new RequestConfig();
 		requestConfig.setRequestProtocol(context.stringValue("DescribeApiResponse.RequestConfig.RequestProtocol"));
@@ -78,6 +69,8 @@ public class DescribeApiResponseUnmarshaller {
 		vpcConfig.setInstanceId(context.stringValue("DescribeApiResponse.ServiceConfig.VpcConfig.InstanceId"));
 		vpcConfig.setPort(context.integerValue("DescribeApiResponse.ServiceConfig.VpcConfig.Port"));
 		serviceConfig.setVpcConfig(vpcConfig);
+		serviceConfig.setContentTypeCatagory(context.stringValue("DescribeApiResponse.ServiceConfig.ContentTypeCatagory"));
+		serviceConfig.setContentTypeValue(context.stringValue("DescribeApiResponse.ServiceConfig.ContentTypeValue"));
 		describeApiResponse.setServiceConfig(serviceConfig);
 		
 		OpenIdConnectConfig openIdConnectConfig = new OpenIdConnectConfig();

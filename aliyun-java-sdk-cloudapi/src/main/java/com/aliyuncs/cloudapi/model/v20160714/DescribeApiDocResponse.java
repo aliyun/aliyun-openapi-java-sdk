@@ -18,13 +18,14 @@
  */
 package com.aliyuncs.cloudapi.model.v20160714;
 
-import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.cloudapi.model.v20160714.DescribeApiResponse.ErrorCodeSample;
 import com.aliyuncs.cloudapi.model.v20160714.DescribeApiResponse.RequestConfig;
 import com.aliyuncs.cloudapi.model.v20160714.DescribeApiResponse.RequestParameter;
 import com.aliyuncs.cloudapi.transform.v20160714.DescribeApiDocResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
+
+import java.util.List;
 
 /**
  * @author auto create
