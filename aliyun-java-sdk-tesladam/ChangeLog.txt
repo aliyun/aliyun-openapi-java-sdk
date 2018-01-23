@@ -1,0 +1,4 @@
+2018-01-23 Version: 1.0.0
+1, Tesla Dam API release.
+2, Add ActionDiskCheck, ActionDiskMask, ActionDiskRma, HostGets.
+
