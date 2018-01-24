@@ -18,20 +18,20 @@
  */
 package com.aliyuncs.cms.transform.v20170301;
 
-import com.aliyuncs.cms.model.v20170301.ListProductOfActiceAlertResponse;
+import com.aliyuncs.cms.model.v20170301.ListProductOfActiveAlertResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class ListProductOfActiceAlertResponseUnmarshaller {
+public class ListProductOfActiveAlertResponseUnmarshaller {
 
-	public static ListProductOfActiceAlertResponse unmarshall(ListProductOfActiceAlertResponse listProductOfActiceAlertResponse, UnmarshallerContext context) {
+	public static ListProductOfActiveAlertResponse unmarshall(ListProductOfActiveAlertResponse listProductOfActiveAlertResponse, UnmarshallerContext context) {
 		
-		listProductOfActiceAlertResponse.setRequestId(context.stringValue("ListProductOfActiceAlertResponse.RequestId"));
-		listProductOfActiceAlertResponse.setSuccess(context.booleanValue("ListProductOfActiceAlertResponse.Success"));
-		listProductOfActiceAlertResponse.setCode(context.integerValue("ListProductOfActiceAlertResponse.Code"));
-		listProductOfActiceAlertResponse.setMessage(context.stringValue("ListProductOfActiceAlertResponse.Message"));
-		listProductOfActiceAlertResponse.setDatapoints(context.stringValue("ListProductOfActiceAlertResponse.Datapoints"));
+		listProductOfActiveAlertResponse.setRequestId(context.stringValue("ListProductOfActiveAlertResponse.RequestId"));
+		listProductOfActiveAlertResponse.setSuccess(context.booleanValue("ListProductOfActiveAlertResponse.Success"));
+		listProductOfActiveAlertResponse.setCode(context.integerValue("ListProductOfActiveAlertResponse.Code"));
+		listProductOfActiveAlertResponse.setMessage(context.stringValue("ListProductOfActiveAlertResponse.Message"));
+		listProductOfActiveAlertResponse.setDatapoints(context.stringValue("ListProductOfActiveAlertResponse.Datapoints"));
 	 
-	 	return listProductOfActiceAlertResponse;
+	 	return listProductOfActiveAlertResponse;
 	}
 }

@@ -24,13 +24,26 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class ListProductOfActiceAlertRequest extends RpcAcsRequest<ListProductOfActiceAlertResponse> {
+public class DisableActiveAlertRequest extends RpcAcsRequest<DisableActiveAlertResponse> {
 	
-	public ListProductOfActiceAlertRequest() {
-		super("Cms", "2017-03-01", "ListProductOfActiceAlert", "cms");
+	public DisableActiveAlertRequest() {
+		super("Cms", "2017-03-01", "DisableActiveAlert", "cms");
 	}
 
+	private String product;
+
 	private String userId;
+
+	public String getProduct() {
+		return this.product;
+	}
+
+	public void setProduct(String product) {
+		this.product = product;
+		if(product != null){
+			putQueryParameter("Product", product);
+		}
+	}
 
 	public String getUserId() {
 		return this.userId;
@@ -44,8 +57,8 @@ public class ListProductOfActiceAlertRequest extends RpcAcsRequest<ListProductOf
 	}
 
 	@Override
-	public Class<ListProductOfActiceAlertResponse> getResponseClass() {
-		return ListProductOfActiceAlertResponse.class;
+	public Class<DisableActiveAlertResponse> getResponseClass() {
+		return DisableActiveAlertResponse.class;
 	}
 
 }

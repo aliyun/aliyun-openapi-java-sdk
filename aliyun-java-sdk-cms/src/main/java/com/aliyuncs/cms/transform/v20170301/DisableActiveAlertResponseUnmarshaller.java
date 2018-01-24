@@ -18,18 +18,19 @@
  */
 package com.aliyuncs.cms.transform.v20170301;
 
-import com.aliyuncs.cms.model.v20170301.EnableActiceAlertResponse;
+import com.aliyuncs.cms.model.v20170301.DisableActiveAlertResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class EnableActiceAlertResponseUnmarshaller {
+public class DisableActiveAlertResponseUnmarshaller {
 
-	public static EnableActiceAlertResponse unmarshall(EnableActiceAlertResponse enableActiceAlertResponse, UnmarshallerContext context) {
+	public static DisableActiveAlertResponse unmarshall(DisableActiveAlertResponse disableActiveAlertResponse, UnmarshallerContext context) {
 		
-		enableActiceAlertResponse.setSuccess(context.booleanValue("EnableActiceAlertResponse.Success"));
-		enableActiceAlertResponse.setCode(context.stringValue("EnableActiceAlertResponse.Code"));
-		enableActiceAlertResponse.setMessage(context.stringValue("EnableActiceAlertResponse.Message"));
+		disableActiveAlertResponse.setRequestId(context.stringValue("DisableActiveAlertResponse.RequestId"));
+		disableActiveAlertResponse.setSuccess(context.booleanValue("DisableActiveAlertResponse.Success"));
+		disableActiveAlertResponse.setCode(context.stringValue("DisableActiveAlertResponse.Code"));
+		disableActiveAlertResponse.setMessage(context.stringValue("DisableActiveAlertResponse.Message"));
 	 
-	 	return enableActiceAlertResponse;
+	 	return disableActiveAlertResponse;
 	}
 }

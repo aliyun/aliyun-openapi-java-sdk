@@ -19,20 +19,32 @@
 package com.aliyuncs.cms.model.v20170301;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.cms.transform.v20170301.EnableActiceAlertResponseUnmarshaller;
+import com.aliyuncs.cms.transform.v20170301.ListProductOfActiveAlertResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class EnableActiceAlertResponse extends AcsResponse {
+public class ListProductOfActiveAlertResponse extends AcsResponse {
+
+	private String requestId;
 
 	private Boolean success;
 
-	private String code;
+	private Integer code;
 
 	private String message;
+
+	private String datapoints;
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
 
 	public Boolean getSuccess() {
 		return this.success;
@@ -42,11 +54,11 @@ public class EnableActiceAlertResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public String getCode() {
+	public Integer getCode() {
 		return this.code;
 	}
 
-	public void setCode(String code) {
+	public void setCode(Integer code) {
 		this.code = code;
 	}
 
@@ -58,8 +70,16 @@ public class EnableActiceAlertResponse extends AcsResponse {
 		this.message = message;
 	}
 
+	public String getDatapoints() {
+		return this.datapoints;
+	}
+
+	public void setDatapoints(String datapoints) {
+		this.datapoints = datapoints;
+	}
+
 	@Override
-	public EnableActiceAlertResponse getInstance(UnmarshallerContext context) {
-		return	EnableActiceAlertResponseUnmarshaller.unmarshall(this, context);
+	public ListProductOfActiveAlertResponse getInstance(UnmarshallerContext context) {
+		return	ListProductOfActiveAlertResponseUnmarshaller.unmarshall(this, context);
 	}
 }

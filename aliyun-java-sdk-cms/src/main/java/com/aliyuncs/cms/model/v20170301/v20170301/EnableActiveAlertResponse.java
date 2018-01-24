@@ -19,30 +19,20 @@
 package com.aliyuncs.cms.model.v20170301;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.cms.transform.v20170301.DisableActiceAlertResponseUnmarshaller;
+import com.aliyuncs.cms.transform.v20170301.EnableActiveAlertResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DisableActiceAlertResponse extends AcsResponse {
-
-	private String requestId;
+public class EnableActiveAlertResponse extends AcsResponse {
 
 	private Boolean success;
 
 	private String code;
 
 	private String message;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Boolean getSuccess() {
 		return this.success;
@@ -69,7 +59,7 @@ public class DisableActiceAlertResponse extends AcsResponse {
 	}
 
 	@Override
-	public DisableActiceAlertResponse getInstance(UnmarshallerContext context) {
-		return	DisableActiceAlertResponseUnmarshaller.unmarshall(this, context);
+	public EnableActiveAlertResponse getInstance(UnmarshallerContext context) {
+		return	EnableActiveAlertResponseUnmarshaller.unmarshall(this, context);
 	}
 }

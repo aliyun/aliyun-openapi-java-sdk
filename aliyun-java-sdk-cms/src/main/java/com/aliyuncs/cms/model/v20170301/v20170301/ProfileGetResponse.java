@@ -42,6 +42,8 @@ public class ProfileGetResponse extends AcsResponse {
 
 	private Boolean enableInstallAgentNewECS;
 
+	private String enableActiveAlert;
+
 	public Integer getErrorCode() {
 		return this.errorCode;
 	}
@@ -96,6 +98,14 @@ public class ProfileGetResponse extends AcsResponse {
 
 	public void setEnableInstallAgentNewECS(Boolean enableInstallAgentNewECS) {
 		this.enableInstallAgentNewECS = enableInstallAgentNewECS;
+	}
+
+	public String getEnableActiveAlert() {
+		return this.enableActiveAlert;
+	}
+
+	public void setEnableActiveAlert(String enableActiveAlert) {
+		this.enableActiveAlert = enableActiveAlert;
 	}
 
 	@Override

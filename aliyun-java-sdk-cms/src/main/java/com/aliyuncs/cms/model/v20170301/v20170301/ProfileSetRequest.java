@@ -32,6 +32,8 @@ public class ProfileSetRequest extends RpcAcsRequest<ProfileSetResponse> {
 
 	private Boolean enableInstallAgentNewECS;
 
+	private String enableActiveAlert;
+
 	private Boolean autoInstall;
 
 	private Long userId;
@@ -44,6 +46,17 @@ public class ProfileSetRequest extends RpcAcsRequest<ProfileSetResponse> {
 		this.enableInstallAgentNewECS = enableInstallAgentNewECS;
 		if(enableInstallAgentNewECS != null){
 			putQueryParameter("EnableInstallAgentNewECS", enableInstallAgentNewECS.toString());
+		}
+	}
+
+	public String getEnableActiveAlert() {
+		return this.enableActiveAlert;
+	}
+
+	public void setEnableActiveAlert(String enableActiveAlert) {
+		this.enableActiveAlert = enableActiveAlert;
+		if(enableActiveAlert != null){
+			putQueryParameter("EnableActiveAlert", enableActiveAlert);
 		}
 	}
 

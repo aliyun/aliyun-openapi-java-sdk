@@ -24,10 +24,10 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class EnableActiceAlertRequest extends RpcAcsRequest<EnableActiceAlertResponse> {
+public class EnableActiveAlertRequest extends RpcAcsRequest<EnableActiveAlertResponse> {
 	
-	public EnableActiceAlertRequest() {
-		super("Cms", "2017-03-01", "EnableActiceAlert", "cms");
+	public EnableActiveAlertRequest() {
+		super("Cms", "2017-03-01", "EnableActiveAlert", "cms");
 	}
 
 	private String product;
@@ -57,8 +57,8 @@ public class EnableActiceAlertRequest extends RpcAcsRequest<EnableActiceAlertRes
 	}
 
 	@Override
-	public Class<EnableActiceAlertResponse> getResponseClass() {
-		return EnableActiceAlertResponse.class;
+	public Class<EnableActiveAlertResponse> getResponseClass() {
+		return EnableActiveAlertResponse.class;
 	}
 
 }
