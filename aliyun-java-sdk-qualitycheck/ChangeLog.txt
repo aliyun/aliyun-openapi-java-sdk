@@ -1,3 +1,6 @@
+2018-01-25 Version: 2.6.7
+1, add new interface
+
 2018-01-25 Version: 2.6.6
 1, add new interface
 
