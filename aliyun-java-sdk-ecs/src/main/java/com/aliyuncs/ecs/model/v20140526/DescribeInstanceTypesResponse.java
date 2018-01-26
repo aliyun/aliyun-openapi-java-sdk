@@ -73,6 +73,8 @@ public class DescribeInstanceTypesResponse extends AcsResponse {
 
 		private Integer baselineCredit;
 
+		private Integer eniQuantity;
+
 		public String getInstanceTypeId() {
 			return this.instanceTypeId;
 		}
@@ -159,6 +161,14 @@ public class DescribeInstanceTypesResponse extends AcsResponse {
 
 		public void setBaselineCredit(Integer baselineCredit) {
 			this.baselineCredit = baselineCredit;
+		}
+
+		public Integer getEniQuantity() {
+			return this.eniQuantity;
+		}
+
+		public void setEniQuantity(Integer eniQuantity) {
+			this.eniQuantity = eniQuantity;
 		}
 	}
 

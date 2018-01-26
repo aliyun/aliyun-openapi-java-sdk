@@ -46,6 +46,7 @@ public class DescribeInstanceTypesResponseUnmarshaller {
 			instanceType.setGPUSpec(context.stringValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].GPUSpec"));
 			instanceType.setInitialCredit(context.integerValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].InitialCredit"));
 			instanceType.setBaselineCredit(context.integerValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].BaselineCredit"));
+			instanceType.setEniQuantity(context.integerValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].EniQuantity"));
 
 			instanceTypes.add(instanceType);
 		}

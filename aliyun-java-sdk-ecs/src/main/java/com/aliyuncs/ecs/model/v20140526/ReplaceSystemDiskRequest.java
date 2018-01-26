@@ -46,13 +46,19 @@ public class ReplaceSystemDiskRequest extends RpcAcsRequest<ReplaceSystemDiskRes
 
 	private Long ownerId;
 
+	private String platform;
+
 	private String password;
 
 	private String instanceId;
 
 	private Integer systemDiskSize;
 
+	private String diskId;
+
 	private Boolean useAdditionalService;
+
+	private String architecture;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -142,6 +148,17 @@ public class ReplaceSystemDiskRequest extends RpcAcsRequest<ReplaceSystemDiskRes
 		}
 	}
 
+	public String getPlatform() {
+		return this.platform;
+	}
+
+	public void setPlatform(String platform) {
+		this.platform = platform;
+		if(platform != null){
+			putQueryParameter("Platform", platform);
+		}
+	}
+
 	public String getPassword() {
 		return this.password;
 	}
@@ -175,6 +192,17 @@ public class ReplaceSystemDiskRequest extends RpcAcsRequest<ReplaceSystemDiskRes
 		}
 	}
 
+	public String getDiskId() {
+		return this.diskId;
+	}
+
+	public void setDiskId(String diskId) {
+		this.diskId = diskId;
+		if(diskId != null){
+			putQueryParameter("DiskId", diskId);
+		}
+	}
+
 	public Boolean getUseAdditionalService() {
 		return this.useAdditionalService;
 	}
@@ -183,6 +211,17 @@ public class ReplaceSystemDiskRequest extends RpcAcsRequest<ReplaceSystemDiskRes
 		this.useAdditionalService = useAdditionalService;
 		if(useAdditionalService != null){
 			putQueryParameter("UseAdditionalService", useAdditionalService.toString());
+		}
+	}
+
+	public String getArchitecture() {
+		return this.architecture;
+	}
+
+	public void setArchitecture(String architecture) {
+		this.architecture = architecture;
+		if(architecture != null){
+			putQueryParameter("Architecture", architecture);
 		}
 	}
 
