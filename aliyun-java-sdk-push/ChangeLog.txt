@@ -1,3 +1,6 @@
+2018-01-29 Version: 3.9.0
+1, Add 'notificationChannel' parameter to Push API
+
 2017-09-27 Version: 3.8.0
 1, 高级推送接口支持Android全推限速功能。
 

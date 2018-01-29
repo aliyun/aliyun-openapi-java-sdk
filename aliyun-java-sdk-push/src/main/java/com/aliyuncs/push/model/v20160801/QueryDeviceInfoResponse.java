@@ -66,6 +66,10 @@ public class QueryDeviceInfoResponse extends AcsResponse {
 
 		private Boolean online;
 
+		private String phoneNumber;
+
+		private Boolean pushEnabled;
+
 		public String getDeviceId() {
 			return this.deviceId;
 		}
@@ -128,6 +132,22 @@ public class QueryDeviceInfoResponse extends AcsResponse {
 
 		public void setOnline(Boolean online) {
 			this.online = online;
+		}
+
+		public String getPhoneNumber() {
+			return this.phoneNumber;
+		}
+
+		public void setPhoneNumber(String phoneNumber) {
+			this.phoneNumber = phoneNumber;
+		}
+
+		public Boolean getPushEnabled() {
+			return this.pushEnabled;
+		}
+
+		public void setPushEnabled(Boolean pushEnabled) {
+			this.pushEnabled = pushEnabled;
 		}
 	}
 

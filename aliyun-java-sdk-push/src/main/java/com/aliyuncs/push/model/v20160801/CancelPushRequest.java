@@ -30,18 +30,18 @@ public class CancelPushRequest extends RpcAcsRequest<CancelPushResponse> {
 		super("Push", "2016-08-01", "CancelPush");
 	}
 
-	private String messageId;
+	private Long messageId;
 
 	private Long appKey;
 
-	public String getMessageId() {
+	public Long getMessageId() {
 		return this.messageId;
 	}
 
-	public void setMessageId(String messageId) {
+	public void setMessageId(Long messageId) {
 		this.messageId = messageId;
 		if(messageId != null){
-			putQueryParameter("MessageId", messageId);
+			putQueryParameter("MessageId", messageId.toString());
 		}
 	}
 

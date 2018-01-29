@@ -94,6 +94,8 @@ public class PushRequest extends RpcAcsRequest<PushResponse> {
 
 	private String androidOpenUrl;
 
+	private String androidNotificationChannel;
+
 	private Boolean androidRemind;
 
 	private String androidActivity;
@@ -467,6 +469,17 @@ public class PushRequest extends RpcAcsRequest<PushResponse> {
 		this.androidOpenUrl = androidOpenUrl;
 		if(androidOpenUrl != null){
 			putQueryParameter("AndroidOpenUrl", androidOpenUrl);
+		}
+	}
+
+	public String getAndroidNotificationChannel() {
+		return this.androidNotificationChannel;
+	}
+
+	public void setAndroidNotificationChannel(String androidNotificationChannel) {
+		this.androidNotificationChannel = androidNotificationChannel;
+		if(androidNotificationChannel != null){
+			putQueryParameter("AndroidNotificationChannel", androidNotificationChannel);
 		}
 	}
 

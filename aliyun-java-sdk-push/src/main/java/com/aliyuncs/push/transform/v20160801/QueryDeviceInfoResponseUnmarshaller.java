@@ -38,6 +38,8 @@ public class QueryDeviceInfoResponseUnmarshaller {
 		deviceInfo.setAlias(context.stringValue("QueryDeviceInfoResponse.DeviceInfo.Alias"));
 		deviceInfo.setLastOnlineTime(context.stringValue("QueryDeviceInfoResponse.DeviceInfo.LastOnlineTime"));
 		deviceInfo.setOnline(context.booleanValue("QueryDeviceInfoResponse.DeviceInfo.Online"));
+		deviceInfo.setPhoneNumber(context.stringValue("QueryDeviceInfoResponse.DeviceInfo.PhoneNumber"));
+		deviceInfo.setPushEnabled(context.booleanValue("QueryDeviceInfoResponse.DeviceInfo.PushEnabled"));
 		queryDeviceInfoResponse.setDeviceInfo(deviceInfo);
 	 
 	 	return queryDeviceInfoResponse;
