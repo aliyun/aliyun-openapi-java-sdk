@@ -1,3 +1,6 @@
+2018-01-31 Version: 3.5.1
+1, Adding the setEndpoint method to the Request.
+
 2017-11-01 Version: 3.5.0
 1, 支持common调用
 

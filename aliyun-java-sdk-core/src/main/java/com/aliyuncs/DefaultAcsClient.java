@@ -42,6 +42,7 @@ import java.io.UnsupportedEncodingException;
 import java.net.SocketTimeoutException;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
+import java.util.ArrayList;
 import java.util.List;
 
 @SuppressWarnings("deprecation")
@@ -179,9 +180,7 @@ public class DefaultAcsClient implements IAcsClient {
         FormatType format = profile.getFormat();
         List<Endpoint> endpoints;
         try {
-            endpoints = clientProfile.getEndpoints(request.getProduct(), request.getRegionId(),
-                request.getLocationProduct(),
-                request.getEndpointType());
+            endpoints = getEndpoints(request);
         } catch (Throwable e) {
             endpoints = clientProfile.getEndpoints(request.getRegionId(), request.getProduct());
         }
@@ -327,6 +326,16 @@ public class DefaultAcsClient implements IAcsClient {
         String stringContent = getResponseContent(httpResponse);
         context.setResponseMap(reader.read(stringContent, responseEndpoint));
         return error.getInstance(context);
+    }
+    
+    @SuppressWarnings("rawtypes")
+    private List<Endpoint> getEndpoints(AcsRequest request) throws ClientException {
+        if (request.getProductDomain() != null && request.getProductDomain().getDomianName() != null) {
+            return new ArrayList<Endpoint>();
+        }
+
+        return clientProfile.getEndpoints(request.getProduct(), request.getRegionId(), request.getLocationProduct(),
+                request.getEndpointType());
     }
 
     public boolean isAutoRetry() {
