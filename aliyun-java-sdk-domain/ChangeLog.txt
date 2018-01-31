@@ -1,3 +1,7 @@
+2018-01-31 Version: 3.0.0
+1, New version SDK for domains, standardizing api name.
+2, Provide api for domain registration and management.
+
 2017-08-16 Version: 2.3.0
 1, 增加了提交图片进行域名/信息模板实名认证的接口。
 2, 增加了根据已经实名认证信息模板来进行域名实名认证的接口。
