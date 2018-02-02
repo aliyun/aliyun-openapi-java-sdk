@@ -1,0 +1,3 @@
+2018-02-02 Version: 1.0.0
+1, this version is new of captcha management and nvc analyze
+
