@@ -1,0 +1,4 @@
+2018-02-02 Version: 1.1.0
+1, Allow passing "ImageId" in CreateCluster and AddNodes
+2, Provide more information in ListClusters, ListNodes and DescribeCluster
+

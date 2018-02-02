@@ -1,0 +1,411 @@
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+package com.aliyuncs.ehpc.model.v20170714;
+
+import java.util.List;
+import com.aliyuncs.AcsResponse;
+import com.aliyuncs.ehpc.transform.v20170714.ListClustersResponseUnmarshaller;
+import com.aliyuncs.transform.UnmarshallerContext;
+
+/**
+ * @author auto create
+ * @version 
+ */
+public class ListClustersResponse extends AcsResponse {
+
+	private String requestId;
+
+	private Integer totalCount;
+
+	private Integer pageNumber;
+
+	private Integer pageSize;
+
+	private List<ClusterInfoSimple> clusters;
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
+
+	public List<ClusterInfoSimple> getClusters() {
+		return this.clusters;
+	}
+
+	public void setClusters(List<ClusterInfoSimple> clusters) {
+		this.clusters = clusters;
+	}
+
+	public static class ClusterInfoSimple {
+
+		private String id;
+
+		private String regionId;
+
+		private String zoneId;
+
+		private String name;
+
+		private String description;
+
+		private String status;
+
+		private String osTag;
+
+		private String accountType;
+
+		private String schedulerType;
+
+		private Integer count;
+
+		private String instanceType;
+
+		private String loginNodes;
+
+		private String createTime;
+
+		private String imageOwnerAlias;
+
+		private String imageId;
+
+		private Managers managers;
+
+		private Computes computes;
+
+		private TotalResources totalResources;
+
+		private UsedResources usedResources;
+
+		public String getId() {
+			return this.id;
+		}
+
+		public void setId(String id) {
+			this.id = id;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
+		}
+
+		public String getZoneId() {
+			return this.zoneId;
+		}
+
+		public void setZoneId(String zoneId) {
+			this.zoneId = zoneId;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
+		}
+
+		public String getOsTag() {
+			return this.osTag;
+		}
+
+		public void setOsTag(String osTag) {
+			this.osTag = osTag;
+		}
+
+		public String getAccountType() {
+			return this.accountType;
+		}
+
+		public void setAccountType(String accountType) {
+			this.accountType = accountType;
+		}
+
+		public String getSchedulerType() {
+			return this.schedulerType;
+		}
+
+		public void setSchedulerType(String schedulerType) {
+			this.schedulerType = schedulerType;
+		}
+
+		public Integer getCount() {
+			return this.count;
+		}
+
+		public void setCount(Integer count) {
+			this.count = count;
+		}
+
+		public String getInstanceType() {
+			return this.instanceType;
+		}
+
+		public void setInstanceType(String instanceType) {
+			this.instanceType = instanceType;
+		}
+
+		public String getLoginNodes() {
+			return this.loginNodes;
+		}
+
+		public void setLoginNodes(String loginNodes) {
+			this.loginNodes = loginNodes;
+		}
+
+		public String getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
+		}
+
+		public String getImageOwnerAlias() {
+			return this.imageOwnerAlias;
+		}
+
+		public void setImageOwnerAlias(String imageOwnerAlias) {
+			this.imageOwnerAlias = imageOwnerAlias;
+		}
+
+		public String getImageId() {
+			return this.imageId;
+		}
+
+		public void setImageId(String imageId) {
+			this.imageId = imageId;
+		}
+
+		public Managers getManagers() {
+			return this.managers;
+		}
+
+		public void setManagers(Managers managers) {
+			this.managers = managers;
+		}
+
+		public Computes getComputes() {
+			return this.computes;
+		}
+
+		public void setComputes(Computes computes) {
+			this.computes = computes;
+		}
+
+		public TotalResources getTotalResources() {
+			return this.totalResources;
+		}
+
+		public void setTotalResources(TotalResources totalResources) {
+			this.totalResources = totalResources;
+		}
+
+		public UsedResources getUsedResources() {
+			return this.usedResources;
+		}
+
+		public void setUsedResources(UsedResources usedResources) {
+			this.usedResources = usedResources;
+		}
+
+		public static class Managers {
+
+			private Integer toatal;
+
+			private Integer normalCount;
+
+			private Integer exceptionCount;
+
+			public Integer getToatal() {
+				return this.toatal;
+			}
+
+			public void setToatal(Integer toatal) {
+				this.toatal = toatal;
+			}
+
+			public Integer getNormalCount() {
+				return this.normalCount;
+			}
+
+			public void setNormalCount(Integer normalCount) {
+				this.normalCount = normalCount;
+			}
+
+			public Integer getExceptionCount() {
+				return this.exceptionCount;
+			}
+
+			public void setExceptionCount(Integer exceptionCount) {
+				this.exceptionCount = exceptionCount;
+			}
+		}
+
+		public static class Computes {
+
+			private Integer toatal;
+
+			private Integer normalCount;
+
+			private Integer exceptionCount;
+
+			public Integer getToatal() {
+				return this.toatal;
+			}
+
+			public void setToatal(Integer toatal) {
+				this.toatal = toatal;
+			}
+
+			public Integer getNormalCount() {
+				return this.normalCount;
+			}
+
+			public void setNormalCount(Integer normalCount) {
+				this.normalCount = normalCount;
+			}
+
+			public Integer getExceptionCount() {
+				return this.exceptionCount;
+			}
+
+			public void setExceptionCount(Integer exceptionCount) {
+				this.exceptionCount = exceptionCount;
+			}
+		}
+
+		public static class TotalResources {
+
+			private Integer cpu;
+
+			private Integer memory;
+
+			private Integer gpu;
+
+			public Integer getCpu() {
+				return this.cpu;
+			}
+
+			public void setCpu(Integer cpu) {
+				this.cpu = cpu;
+			}
+
+			public Integer getMemory() {
+				return this.memory;
+			}
+
+			public void setMemory(Integer memory) {
+				this.memory = memory;
+			}
+
+			public Integer getGpu() {
+				return this.gpu;
+			}
+
+			public void setGpu(Integer gpu) {
+				this.gpu = gpu;
+			}
+		}
+
+		public static class UsedResources {
+
+			private Integer cpu;
+
+			private Integer memory;
+
+			private Integer gpu;
+
+			public Integer getCpu() {
+				return this.cpu;
+			}
+
+			public void setCpu(Integer cpu) {
+				this.cpu = cpu;
+			}
+
+			public Integer getMemory() {
+				return this.memory;
+			}
+
+			public void setMemory(Integer memory) {
+				this.memory = memory;
+			}
+
+			public Integer getGpu() {
+				return this.gpu;
+			}
+
+			public void setGpu(Integer gpu) {
+				this.gpu = gpu;
+			}
+		}
+	}
+
+	@Override
+	public ListClustersResponse getInstance(UnmarshallerContext context) {
+		return	ListClustersResponseUnmarshaller.unmarshall(this, context);
+	}
+}
