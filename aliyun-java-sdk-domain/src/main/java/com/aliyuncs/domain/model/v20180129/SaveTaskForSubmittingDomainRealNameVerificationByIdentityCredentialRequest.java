@@ -20,6 +20,7 @@ package com.aliyuncs.domain.model.v20180129;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
@@ -29,6 +30,7 @@ public class SaveTaskForSubmittingDomainRealNameVerificationByIdentityCredential
 	
 	public SaveTaskForSubmittingDomainRealNameVerificationByIdentityCredentialRequest() {
 		super("Domain", "2018-01-29", "SaveTaskForSubmittingDomainRealNameVerificationByIdentityCredential");
+		setMethod(MethodType.POST);
 	}
 
 	private String identityCredentialType;
@@ -72,7 +74,7 @@ public class SaveTaskForSubmittingDomainRealNameVerificationByIdentityCredential
 	public void setIdentityCredential(String identityCredential) {
 		this.identityCredential = identityCredential;
 		if(identityCredential != null){
-			putQueryParameter("IdentityCredential", identityCredential);
+			putBodyParameter("IdentityCredential", identityCredential);
 		}
 	}
 

@@ -1,3 +1,6 @@
+2018-02-05 Version: 3.0.1
+1, Set POST as default method type for RegistrantProfileRealNameVerification, SaveTaskForUpdatingRegistrantInfoByIdentityCredential and SaveTaskForSubmittingDomainRealNameVerificationByIdentityCredential
+
 2018-01-31 Version: 3.0.0
 1, New version SDK for domains, standardizing api name.
 2, Provide api for domain registration and management.

@@ -19,6 +19,7 @@
 package com.aliyuncs.domain.model.v20180129;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
@@ -28,6 +29,7 @@ public class RegistrantProfileRealNameVerificationRequest extends RpcAcsRequest<
 	
 	public RegistrantProfileRealNameVerificationRequest() {
 		super("Domain", "2018-01-29", "RegistrantProfileRealNameVerification");
+		setMethod(MethodType.POST);
 	}
 
 	private String identityCredentialType;
@@ -82,7 +84,7 @@ public class RegistrantProfileRealNameVerificationRequest extends RpcAcsRequest<
 	public void setIdentityCredential(String identityCredential) {
 		this.identityCredential = identityCredential;
 		if(identityCredential != null){
-			putQueryParameter("IdentityCredential", identityCredential);
+			putBodyParameter("IdentityCredential", identityCredential);
 		}
 	}
 
