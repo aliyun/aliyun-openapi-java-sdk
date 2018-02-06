@@ -19,6 +19,7 @@
 package com.aliyuncs.ecs.model.v20140526;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 
 /**
  * @author auto create
@@ -32,6 +33,8 @@ public class DescribeImagesRequest extends RpcAcsRequest<DescribeImagesResponse>
 
 	private String tag4Value;
 
+	private String actionType;
+
 	private Long resourceOwnerId;
 
 	private String imageId;
@@ -39,8 +42,6 @@ public class DescribeImagesRequest extends RpcAcsRequest<DescribeImagesResponse>
 	private String snapshotId;
 
 	private String tag2Key;
-
-	private String filter2Value;
 
 	private String usage;
 
@@ -53,8 +54,6 @@ public class DescribeImagesRequest extends RpcAcsRequest<DescribeImagesResponse>
 	private String tag1Value;
 
 	private Boolean isSupportIoOptimized;
-
-	private String filter1Key;
 
 	private String imageName;
 
@@ -78,17 +77,15 @@ public class DescribeImagesRequest extends RpcAcsRequest<DescribeImagesResponse>
 
 	private Boolean showExpired;
 
-	private String filter1Value;
-
 	private String oSType;
-
-	private String filter2Key;
 
 	private Long ownerId;
 
 	private String tag5Value;
 
 	private String tag1Key;
+
+	private List<Filter> filters;
 
 	private String tag2Value;
 
@@ -104,6 +101,17 @@ public class DescribeImagesRequest extends RpcAcsRequest<DescribeImagesResponse>
 		this.tag4Value = tag4Value;
 		if(tag4Value != null){
 			putQueryParameter("Tag.4.Value", tag4Value);
+		}
+	}
+
+	public String getActionType() {
+		return this.actionType;
+	}
+
+	public void setActionType(String actionType) {
+		this.actionType = actionType;
+		if(actionType != null){
+			putQueryParameter("ActionType", actionType);
 		}
 	}
 
@@ -148,17 +156,6 @@ public class DescribeImagesRequest extends RpcAcsRequest<DescribeImagesResponse>
 		this.tag2Key = tag2Key;
 		if(tag2Key != null){
 			putQueryParameter("Tag.2.Key", tag2Key);
-		}
-	}
-
-	public String getFilter2Value() {
-		return this.filter2Value;
-	}
-
-	public void setFilter2Value(String filter2Value) {
-		this.filter2Value = filter2Value;
-		if(filter2Value != null){
-			putQueryParameter("Filter.2.Value", filter2Value);
 		}
 	}
 
@@ -225,17 +222,6 @@ public class DescribeImagesRequest extends RpcAcsRequest<DescribeImagesResponse>
 		this.isSupportIoOptimized = isSupportIoOptimized;
 		if(isSupportIoOptimized != null){
 			putQueryParameter("IsSupportIoOptimized", isSupportIoOptimized.toString());
-		}
-	}
-
-	public String getFilter1Key() {
-		return this.filter1Key;
-	}
-
-	public void setFilter1Key(String filter1Key) {
-		this.filter1Key = filter1Key;
-		if(filter1Key != null){
-			putQueryParameter("Filter.1.Key", filter1Key);
 		}
 	}
 
@@ -360,17 +346,6 @@ public class DescribeImagesRequest extends RpcAcsRequest<DescribeImagesResponse>
 		}
 	}
 
-	public String getFilter1Value() {
-		return this.filter1Value;
-	}
-
-	public void setFilter1Value(String filter1Value) {
-		this.filter1Value = filter1Value;
-		if(filter1Value != null){
-			putQueryParameter("Filter.1.Value", filter1Value);
-		}
-	}
-
 	public String getOSType() {
 		return this.oSType;
 	}
@@ -379,17 +354,6 @@ public class DescribeImagesRequest extends RpcAcsRequest<DescribeImagesResponse>
 		this.oSType = oSType;
 		if(oSType != null){
 			putQueryParameter("OSType", oSType);
-		}
-	}
-
-	public String getFilter2Key() {
-		return this.filter2Key;
-	}
-
-	public void setFilter2Key(String filter2Key) {
-		this.filter2Key = filter2Key;
-		if(filter2Key != null){
-			putQueryParameter("Filter.2.Key", filter2Key);
 		}
 	}
 
@@ -426,6 +390,20 @@ public class DescribeImagesRequest extends RpcAcsRequest<DescribeImagesResponse>
 		}
 	}
 
+	public List<Filter> getFilters() {
+		return this.filters;
+	}
+
+	public void setFilters(List<Filter> filters) {
+		this.filters = filters;	
+		if (filters != null) {
+			for (int depth1 = 0; depth1 < filters.size(); depth1++) {
+				putQueryParameter("Filter." + (depth1 + 1) + ".Key" , filters.get(depth1).getKey());
+				putQueryParameter("Filter." + (depth1 + 1) + ".Value" , filters.get(depth1).getValue());
+			}
+		}	
+	}
+
 	public String getTag2Value() {
 		return this.tag2Value;
 	}
@@ -456,6 +434,29 @@ public class DescribeImagesRequest extends RpcAcsRequest<DescribeImagesResponse>
 		this.status = status;
 		if(status != null){
 			putQueryParameter("Status", status);
+		}
+	}
+
+	public static class Filter {
+
+		private String key;
+
+		private String value;
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
+		}
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
 		}
 	}
 

@@ -24,29 +24,29 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class ModifyPrepayInstanceSpecRequest extends RpcAcsRequest<ModifyPrepayInstanceSpecResponse> {
+public class DescribeBandwidthLimitationRequest extends RpcAcsRequest<DescribeBandwidthLimitationResponse> {
 	
-	public ModifyPrepayInstanceSpecRequest() {
-		super("Ecs", "2014-05-26", "ModifyPrepayInstanceSpec", "ecs");
+	public DescribeBandwidthLimitationRequest() {
+		super("Ecs", "2014-05-26", "DescribeBandwidthLimitation", "ecs");
 	}
 
 	private Long resourceOwnerId;
 
-	private String instanceId;
+	private String instanceType;
 
-	private Boolean autoPay;
+	private String instanceChargeType;
+
+	private String resourceId;
 
 	private String resourceOwnerAccount;
 
-	private String clientToken;
-
 	private String ownerAccount;
 
-	private String instanceType;
+	private String operationType;
 
 	private Long ownerId;
 
-	private String operatorType;
+	private String spotStrategy;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -56,61 +56,6 @@ public class ModifyPrepayInstanceSpecRequest extends RpcAcsRequest<ModifyPrepayI
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
-		}
-	}
-
-	public Boolean getAutoPay() {
-		return this.autoPay;
-	}
-
-	public void setAutoPay(Boolean autoPay) {
-		this.autoPay = autoPay;
-		if(autoPay != null){
-			putQueryParameter("AutoPay", autoPay.toString());
-		}
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public String getClientToken() {
-		return this.clientToken;
-	}
-
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putQueryParameter("ClientToken", clientToken);
-		}
-	}
-
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
-
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		if(ownerAccount != null){
-			putQueryParameter("OwnerAccount", ownerAccount);
 		}
 	}
 
@@ -125,6 +70,61 @@ public class ModifyPrepayInstanceSpecRequest extends RpcAcsRequest<ModifyPrepayI
 		}
 	}
 
+	public String getInstanceChargeType() {
+		return this.instanceChargeType;
+	}
+
+	public void setInstanceChargeType(String instanceChargeType) {
+		this.instanceChargeType = instanceChargeType;
+		if(instanceChargeType != null){
+			putQueryParameter("InstanceChargeType", instanceChargeType);
+		}
+	}
+
+	public String getResourceId() {
+		return this.resourceId;
+	}
+
+	public void setResourceId(String resourceId) {
+		this.resourceId = resourceId;
+		if(resourceId != null){
+			putQueryParameter("ResourceId", resourceId);
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public String getOperationType() {
+		return this.operationType;
+	}
+
+	public void setOperationType(String operationType) {
+		this.operationType = operationType;
+		if(operationType != null){
+			putQueryParameter("OperationType", operationType);
+		}
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -136,20 +136,20 @@ public class ModifyPrepayInstanceSpecRequest extends RpcAcsRequest<ModifyPrepayI
 		}
 	}
 
-	public String getOperatorType() {
-		return this.operatorType;
+	public String getSpotStrategy() {
+		return this.spotStrategy;
 	}
 
-	public void setOperatorType(String operatorType) {
-		this.operatorType = operatorType;
-		if(operatorType != null){
-			putQueryParameter("OperatorType", operatorType);
+	public void setSpotStrategy(String spotStrategy) {
+		this.spotStrategy = spotStrategy;
+		if(spotStrategy != null){
+			putQueryParameter("SpotStrategy", spotStrategy);
 		}
 	}
 
 	@Override
-	public Class<ModifyPrepayInstanceSpecResponse> getResponseClass() {
-		return ModifyPrepayInstanceSpecResponse.class;
+	public Class<DescribeBandwidthLimitationResponse> getResponseClass() {
+		return DescribeBandwidthLimitationResponse.class;
 	}
 
 }

@@ -52,6 +52,8 @@ public class ModifyInstanceChargeTypeRequest extends RpcAcsRequest<ModifyInstanc
 
 	private String instanceIds;
 
+	private String instanceChargeType;
+
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
 	}
@@ -170,6 +172,17 @@ public class ModifyInstanceChargeTypeRequest extends RpcAcsRequest<ModifyInstanc
 		this.instanceIds = instanceIds;
 		if(instanceIds != null){
 			putQueryParameter("InstanceIds", instanceIds);
+		}
+	}
+
+	public String getInstanceChargeType() {
+		return this.instanceChargeType;
+	}
+
+	public void setInstanceChargeType(String instanceChargeType) {
+		this.instanceChargeType = instanceChargeType;
+		if(instanceChargeType != null){
+			putQueryParameter("InstanceChargeType", instanceChargeType);
 		}
 	}
 
