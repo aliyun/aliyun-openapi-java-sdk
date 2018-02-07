@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class QueryLoginEventRequest extends RpcAcsRequest<QueryLoginEventResponse> {
 	
 	public QueryLoginEventRequest() {
-		super("aegis", "2016-11-11", "QueryLoginEvent");
+		super("aegis", "2016-11-11", "QueryLoginEvent", "vipaegis");
 	}
 
 	private String endTime;

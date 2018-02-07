@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse> {
 	
 	public CreateInstanceRequest() {
-		super("aegis", "2016-11-11", "CreateInstance");
+		super("aegis", "2016-11-11", "CreateInstance", "vipaegis");
 	}
 
 	private Integer duration;

@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class GetCrackStatisticsRequest extends RpcAcsRequest<GetCrackStatisticsResponse> {
 	
 	public GetCrackStatisticsRequest() {
-		super("aegis", "2016-11-11", "GetCrackStatistics");
+		super("aegis", "2016-11-11", "GetCrackStatistics", "vipaegis");
 	}
 
 	private String endTime;

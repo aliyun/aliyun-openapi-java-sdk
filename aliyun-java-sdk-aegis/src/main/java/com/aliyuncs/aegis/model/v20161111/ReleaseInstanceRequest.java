@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ReleaseInstanceRequest extends RpcAcsRequest<ReleaseInstanceResponse> {
 	
 	public ReleaseInstanceRequest() {
-		super("aegis", "2016-11-11", "ReleaseInstance");
+		super("aegis", "2016-11-11", "ReleaseInstance", "vipaegis");
 	}
 
 	private String instanceId;

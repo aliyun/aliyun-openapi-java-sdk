@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class GetStatisticsRequest extends RpcAcsRequest<GetStatisticsResponse> {
 	
 	public GetStatisticsRequest() {
-		super("aegis", "2016-11-11", "GetStatistics");
+		super("aegis", "2016-11-11", "GetStatistics", "vipaegis");
 	}
 
 	private String endTime;

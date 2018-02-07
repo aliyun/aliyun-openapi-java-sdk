@@ -16,36 +16,20 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package com.aliyuncs.aegis.model.v20161111;
+package com.aliyuncs.aegis.transform.v20161111;
 
-import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.aegis.model.v20161111.ModifyBatchIgnoreVulResponse;
+import com.aliyuncs.transform.UnmarshallerContext;
 
-/**
- * @author auto create
- * @version 
- */
-public class GetStatisticsByUuidRequest extends RpcAcsRequest<GetStatisticsByUuidResponse> {
-	
-	public GetStatisticsByUuidRequest() {
-		super("aegis", "2016-11-11", "GetStatisticsByUuid", "vipaegis");
+
+public class ModifyBatchIgnoreVulResponseUnmarshaller {
+
+	public static ModifyBatchIgnoreVulResponse unmarshall(ModifyBatchIgnoreVulResponse modifyBatchIgnoreVulResponse, UnmarshallerContext context) {
+		
+		modifyBatchIgnoreVulResponse.setRequestId(context.stringValue("ModifyBatchIgnoreVulResponse.RequestId"));
+		modifyBatchIgnoreVulResponse.setSuccess(context.booleanValue("ModifyBatchIgnoreVulResponse.Success"));
+		modifyBatchIgnoreVulResponse.setHttpStatusCode(context.integerValue("ModifyBatchIgnoreVulResponse.HttpStatusCode"));
+	 
+	 	return modifyBatchIgnoreVulResponse;
 	}
-
-	private String uuid;
-
-	public String getUuid() {
-		return this.uuid;
-	}
-
-	public void setUuid(String uuid) {
-		this.uuid = uuid;
-		if(uuid != null){
-			putQueryParameter("Uuid", uuid);
-		}
-	}
-
-	@Override
-	public Class<GetStatisticsByUuidResponse> getResponseClass() {
-		return GetStatisticsByUuidResponse.class;
-	}
-
 }

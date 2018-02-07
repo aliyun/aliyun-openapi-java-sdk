@@ -16,36 +16,18 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package com.aliyuncs.aegis.model.v20161111;
+package com.aliyuncs.aegis.transform.v20161111;
 
-import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.aegis.model.v20161111.ModifyStrategyTargetResponse;
+import com.aliyuncs.transform.UnmarshallerContext;
 
-/**
- * @author auto create
- * @version 
- */
-public class GetStatisticsByUuidRequest extends RpcAcsRequest<GetStatisticsByUuidResponse> {
-	
-	public GetStatisticsByUuidRequest() {
-		super("aegis", "2016-11-11", "GetStatisticsByUuid", "vipaegis");
+
+public class ModifyStrategyTargetResponseUnmarshaller {
+
+	public static ModifyStrategyTargetResponse unmarshall(ModifyStrategyTargetResponse modifyStrategyTargetResponse, UnmarshallerContext context) {
+		
+		modifyStrategyTargetResponse.setRequestId(context.stringValue("ModifyStrategyTargetResponse.RequestId"));
+	 
+	 	return modifyStrategyTargetResponse;
 	}
-
-	private String uuid;
-
-	public String getUuid() {
-		return this.uuid;
-	}
-
-	public void setUuid(String uuid) {
-		this.uuid = uuid;
-		if(uuid != null){
-			putQueryParameter("Uuid", uuid);
-		}
-	}
-
-	@Override
-	public Class<GetStatisticsByUuidResponse> getResponseClass() {
-		return GetStatisticsByUuidResponse.class;
-	}
-
 }

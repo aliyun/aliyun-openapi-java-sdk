@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class RenewInstanceRequest extends RpcAcsRequest<RenewInstanceResponse> {
 	
 	public RenewInstanceRequest() {
-		super("aegis", "2016-11-11", "RenewInstance");
+		super("aegis", "2016-11-11", "RenewInstance", "vipaegis");
 	}
 
 	private Integer duration;
@@ -35,6 +35,8 @@ public class RenewInstanceRequest extends RpcAcsRequest<RenewInstanceResponse> {
 	private String instanceId;
 
 	private String clientToken;
+
+	private String vmNumber;
 
 	private Long ownerId;
 
@@ -70,6 +72,17 @@ public class RenewInstanceRequest extends RpcAcsRequest<RenewInstanceResponse> {
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public String getVmNumber() {
+		return this.vmNumber;
+	}
+
+	public void setVmNumber(String vmNumber) {
+		this.vmNumber = vmNumber;
+		if(vmNumber != null){
+			putQueryParameter("VmNumber", vmNumber);
 		}
 	}
 

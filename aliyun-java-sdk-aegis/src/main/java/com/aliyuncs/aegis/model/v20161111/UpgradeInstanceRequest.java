@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class UpgradeInstanceRequest extends RpcAcsRequest<UpgradeInstanceResponse> {
 	
 	public UpgradeInstanceRequest() {
-		super("aegis", "2016-11-11", "UpgradeInstance");
+		super("aegis", "2016-11-11", "UpgradeInstance", "vipaegis");
 	}
 
 	private String instanceId;

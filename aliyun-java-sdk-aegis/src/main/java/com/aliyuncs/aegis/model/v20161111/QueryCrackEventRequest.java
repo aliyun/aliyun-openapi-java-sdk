@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class QueryCrackEventRequest extends RpcAcsRequest<QueryCrackEventResponse> {
 	
 	public QueryCrackEventRequest() {
-		super("aegis", "2016-11-11", "QueryCrackEvent");
+		super("aegis", "2016-11-11", "QueryCrackEvent", "vipaegis");
 	}
 
 	private String endTime;

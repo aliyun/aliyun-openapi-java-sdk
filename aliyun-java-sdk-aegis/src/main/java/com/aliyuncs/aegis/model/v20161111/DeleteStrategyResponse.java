@@ -18,34 +18,33 @@
  */
 package com.aliyuncs.aegis.model.v20161111;
 
-import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.AcsResponse;
+import com.aliyuncs.aegis.transform.v20161111.DeleteStrategyResponseUnmarshaller;
+import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class GetStatisticsByUuidRequest extends RpcAcsRequest<GetStatisticsByUuidResponse> {
-	
-	public GetStatisticsByUuidRequest() {
-		super("aegis", "2016-11-11", "GetStatisticsByUuid", "vipaegis");
+public class DeleteStrategyResponse extends AcsResponse {
+
+	private String requestId;
+
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	private String uuid;
-
-	public String getUuid() {
-		return this.uuid;
-	}
-
-	public void setUuid(String uuid) {
-		this.uuid = uuid;
-		if(uuid != null){
-			putQueryParameter("Uuid", uuid);
-		}
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override
-	public Class<GetStatisticsByUuidResponse> getResponseClass() {
-		return GetStatisticsByUuidResponse.class;
+	public DeleteStrategyResponse getInstance(UnmarshallerContext context) {
+		return	DeleteStrategyResponseUnmarshaller.unmarshall(this, context);
 	}
 
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
+	}
 }

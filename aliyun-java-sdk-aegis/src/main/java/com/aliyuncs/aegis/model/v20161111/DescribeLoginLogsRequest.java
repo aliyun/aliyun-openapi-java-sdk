@@ -24,32 +24,39 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class GetEntityListRequest extends RpcAcsRequest<GetEntityListResponse> {
+public class DescribeLoginLogsRequest extends RpcAcsRequest<DescribeLoginLogsResponse> {
 	
-	public GetEntityListRequest() {
-		super("aegis", "2016-11-11", "GetEntityList", "vipaegis");
+	public DescribeLoginLogsRequest() {
+		super("aegis", "2016-11-11", "DescribeLoginLogs", "vipaegis");
 	}
 
-	private Long groupId;
+	private Long resourceOwnerId;
+
+	private String sourceIp;
 
 	private Integer pageSize;
 
-	private String remark;
-
-	private String eventType;
-
 	private Integer currentPage;
 
-	private String regionNo;
-
-	public Long getGroupId() {
-		return this.groupId;
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
 	}
 
-	public void setGroupId(Long groupId) {
-		this.groupId = groupId;
-		if(groupId != null){
-			putQueryParameter("GroupId", groupId.toString());
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getSourceIp() {
+		return this.sourceIp;
+	}
+
+	public void setSourceIp(String sourceIp) {
+		this.sourceIp = sourceIp;
+		if(sourceIp != null){
+			putQueryParameter("SourceIp", sourceIp);
 		}
 	}
 
@@ -64,28 +71,6 @@ public class GetEntityListRequest extends RpcAcsRequest<GetEntityListResponse> {
 		}
 	}
 
-	public String getRemark() {
-		return this.remark;
-	}
-
-	public void setRemark(String remark) {
-		this.remark = remark;
-		if(remark != null){
-			putQueryParameter("Remark", remark);
-		}
-	}
-
-	public String getEventType() {
-		return this.eventType;
-	}
-
-	public void setEventType(String eventType) {
-		this.eventType = eventType;
-		if(eventType != null){
-			putQueryParameter("EventType", eventType);
-		}
-	}
-
 	public Integer getCurrentPage() {
 		return this.currentPage;
 	}
@@ -97,20 +82,9 @@ public class GetEntityListRequest extends RpcAcsRequest<GetEntityListResponse> {
 		}
 	}
 
-	public String getRegionNo() {
-		return this.regionNo;
-	}
-
-	public void setRegionNo(String regionNo) {
-		this.regionNo = regionNo;
-		if(regionNo != null){
-			putQueryParameter("RegionNo", regionNo);
-		}
-	}
-
 	@Override
-	public Class<GetEntityListResponse> getResponseClass() {
-		return GetEntityListResponse.class;
+	public Class<DescribeLoginLogsResponse> getResponseClass() {
+		return DescribeLoginLogsResponse.class;
 	}
 
 }

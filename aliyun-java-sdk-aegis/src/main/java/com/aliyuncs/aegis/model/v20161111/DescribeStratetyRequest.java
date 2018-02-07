@@ -24,28 +24,41 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class GetStatisticsByUuidRequest extends RpcAcsRequest<GetStatisticsByUuidResponse> {
+public class DescribeStratetyRequest extends RpcAcsRequest<DescribeStratetyResponse> {
 	
-	public GetStatisticsByUuidRequest() {
-		super("aegis", "2016-11-11", "GetStatisticsByUuid", "vipaegis");
+	public DescribeStratetyRequest() {
+		super("aegis", "2016-11-11", "DescribeStratety", "vipaegis");
 	}
 
-	private String uuid;
+	private Long resourceOwnerId;
 
-	public String getUuid() {
-		return this.uuid;
+	private String sourceIp;
+
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
 	}
 
-	public void setUuid(String uuid) {
-		this.uuid = uuid;
-		if(uuid != null){
-			putQueryParameter("Uuid", uuid);
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getSourceIp() {
+		return this.sourceIp;
+	}
+
+	public void setSourceIp(String sourceIp) {
+		this.sourceIp = sourceIp;
+		if(sourceIp != null){
+			putQueryParameter("SourceIp", sourceIp);
 		}
 	}
 
 	@Override
-	public Class<GetStatisticsByUuidResponse> getResponseClass() {
-		return GetStatisticsByUuidResponse.class;
+	public Class<DescribeStratetyResponse> getResponseClass() {
+		return DescribeStratetyResponse.class;
 	}
 
 }
