@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeCasterVideoResourcesRequest extends RpcAcsRequest<DescribeCasterVideoResourcesResponse> {
 	
 	public DescribeCasterVideoResourcesRequest() {
-		super("live", "2016-11-01", "DescribeCasterVideoResources");
+		super("live", "2016-11-01", "DescribeCasterVideoResources", "live");
 	}
 
 	private String securityToken;

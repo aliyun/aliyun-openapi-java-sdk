@@ -57,6 +57,8 @@ public class DescribeLiveStreamTranscodeInfoResponse extends AcsResponse {
 
 		private String transcodeTemplate;
 
+		private CustomTranscodeParameters customTranscodeParameters;
+
 		public String getTranscodeApp() {
 			return this.transcodeApp;
 		}
@@ -79,6 +81,67 @@ public class DescribeLiveStreamTranscodeInfoResponse extends AcsResponse {
 
 		public void setTranscodeTemplate(String transcodeTemplate) {
 			this.transcodeTemplate = transcodeTemplate;
+		}
+
+		public CustomTranscodeParameters getCustomTranscodeParameters() {
+			return this.customTranscodeParameters;
+		}
+
+		public void setCustomTranscodeParameters(CustomTranscodeParameters customTranscodeParameters) {
+			this.customTranscodeParameters = customTranscodeParameters;
+		}
+
+		public static class CustomTranscodeParameters {
+
+			private Integer videoBitrate;
+
+			private Integer fPS;
+
+			private Integer height;
+
+			private Integer width;
+
+			private String templateType;
+
+			public Integer getVideoBitrate() {
+				return this.videoBitrate;
+			}
+
+			public void setVideoBitrate(Integer videoBitrate) {
+				this.videoBitrate = videoBitrate;
+			}
+
+			public Integer getFPS() {
+				return this.fPS;
+			}
+
+			public void setFPS(Integer fPS) {
+				this.fPS = fPS;
+			}
+
+			public Integer getHeight() {
+				return this.height;
+			}
+
+			public void setHeight(Integer height) {
+				this.height = height;
+			}
+
+			public Integer getWidth() {
+				return this.width;
+			}
+
+			public void setWidth(Integer width) {
+				this.width = width;
+			}
+
+			public String getTemplateType() {
+				return this.templateType;
+			}
+
+			public void setTemplateType(String templateType) {
+				this.templateType = templateType;
+			}
 		}
 	}
 

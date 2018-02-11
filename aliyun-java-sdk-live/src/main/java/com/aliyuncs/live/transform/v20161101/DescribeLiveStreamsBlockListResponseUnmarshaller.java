@@ -31,6 +31,10 @@ public class DescribeLiveStreamsBlockListResponseUnmarshaller {
 		
 		describeLiveStreamsBlockListResponse.setRequestId(context.stringValue("DescribeLiveStreamsBlockListResponse.RequestId"));
 		describeLiveStreamsBlockListResponse.setDomainName(context.stringValue("DescribeLiveStreamsBlockListResponse.DomainName"));
+		describeLiveStreamsBlockListResponse.setPageNum(context.integerValue("DescribeLiveStreamsBlockListResponse.PageNum"));
+		describeLiveStreamsBlockListResponse.setPageSize(context.integerValue("DescribeLiveStreamsBlockListResponse.PageSize"));
+		describeLiveStreamsBlockListResponse.setTotalNum(context.integerValue("DescribeLiveStreamsBlockListResponse.TotalNum"));
+		describeLiveStreamsBlockListResponse.setTotalPage(context.integerValue("DescribeLiveStreamsBlockListResponse.TotalPage"));
 
 		List<String> streamUrls = new ArrayList<String>();
 		for (int i = 0; i < context.lengthValue("DescribeLiveStreamsBlockListResponse.StreamUrls.Length"); i++) {

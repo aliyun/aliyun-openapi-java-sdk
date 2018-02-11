@@ -27,8 +27,10 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeLiveStreamsOnlineListRequest extends RpcAcsRequest<DescribeLiveStreamsOnlineListResponse> {
 	
 	public DescribeLiveStreamsOnlineListRequest() {
-		super("live", "2016-11-01", "DescribeLiveStreamsOnlineList");
+		super("live", "2016-11-01", "DescribeLiveStreamsOnlineList", "live");
 	}
+
+	private String streamType;
 
 	private String appName;
 
@@ -36,7 +38,22 @@ public class DescribeLiveStreamsOnlineListRequest extends RpcAcsRequest<Describe
 
 	private String domainName;
 
+	private Integer pageSize;
+
 	private Long ownerId;
+
+	private Integer pageNum;
+
+	public String getStreamType() {
+		return this.streamType;
+	}
+
+	public void setStreamType(String streamType) {
+		this.streamType = streamType;
+		if(streamType != null){
+			putQueryParameter("StreamType", streamType);
+		}
+	}
 
 	public String getAppName() {
 		return this.appName;
@@ -71,6 +88,17 @@ public class DescribeLiveStreamsOnlineListRequest extends RpcAcsRequest<Describe
 		}
 	}
 
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -79,6 +107,17 @@ public class DescribeLiveStreamsOnlineListRequest extends RpcAcsRequest<Describe
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public Integer getPageNum() {
+		return this.pageNum;
+	}
+
+	public void setPageNum(Integer pageNum) {
+		this.pageNum = pageNum;
+		if(pageNum != null){
+			putQueryParameter("PageNum", pageNum.toString());
 		}
 	}
 

@@ -1,3 +1,11 @@
+2018-02-11 Version: 3.4.0
+1, Optimized interface DescribeLiveStreamsBlockList, paging support.
+2, Increase the return value for DescribeLiveStreamsPublishList.
+3, Optimized interface DescribeLiveStreamsOnlineList, paging support.
+4, Increase the return value  CustomTranscodeParameters for DescribeLiveStreamTranscodeInfo.
+5, Add api AddTrancodeSEI.
+6, Add api AddCustomLiveStreamTranscode.
+
 2018-01-16 Version: 3.3.2
 1, Fixed AddLiveRecordVodConfig, DeleteLiveRecordVodConfig, DescribeLiveRecordVodConfigs php sdk bug with parameter version.
 

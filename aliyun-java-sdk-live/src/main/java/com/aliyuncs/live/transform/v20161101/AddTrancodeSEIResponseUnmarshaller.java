@@ -18,17 +18,16 @@
  */
 package com.aliyuncs.live.transform.v20161101;
 
-import com.aliyuncs.live.model.v20161101.CreateCasterResponse;
+import com.aliyuncs.live.model.v20161101.AddTrancodeSEIResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class CreateCasterResponseUnmarshaller {
+public class AddTrancodeSEIResponseUnmarshaller {
 
-	public static CreateCasterResponse unmarshall(CreateCasterResponse createCasterResponse, UnmarshallerContext context) {
+	public static AddTrancodeSEIResponse unmarshall(AddTrancodeSEIResponse addTrancodeSEIResponse, UnmarshallerContext context) {
 		
-		createCasterResponse.setRequestId(context.stringValue("CreateCasterResponse.RequestId"));
-		createCasterResponse.setCasterId(context.stringValue("CreateCasterResponse.CasterId"));
+		addTrancodeSEIResponse.setRequestId(context.stringValue("AddTrancodeSEIResponse.RequestId"));
 	 
-	 	return createCasterResponse;
+	 	return addTrancodeSEIResponse;
 	}
 }

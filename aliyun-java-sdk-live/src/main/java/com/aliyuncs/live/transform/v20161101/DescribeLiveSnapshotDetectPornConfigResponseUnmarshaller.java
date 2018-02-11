@@ -47,6 +47,12 @@ public class DescribeLiveSnapshotDetectPornConfigResponseUnmarshaller {
 			liveSnapshotDetectPornConfig.setOssObject(context.stringValue("DescribeLiveSnapshotDetectPornConfigResponse.LiveSnapshotDetectPornConfigList["+ i +"].OssObject"));
 			liveSnapshotDetectPornConfig.setInterval(context.integerValue("DescribeLiveSnapshotDetectPornConfigResponse.LiveSnapshotDetectPornConfigList["+ i +"].Interval"));
 
+			List<String> scenes = new ArrayList<String>();
+			for (int j = 0; j < context.lengthValue("DescribeLiveSnapshotDetectPornConfigResponse.LiveSnapshotDetectPornConfigList["+ i +"].Scenes.Length"); j++) {
+				scenes.add(context.stringValue("DescribeLiveSnapshotDetectPornConfigResponse.LiveSnapshotDetectPornConfigList["+ i +"].Scenes["+ j +"]"));
+			}
+			liveSnapshotDetectPornConfig.setScenes(scenes);
+
 			liveSnapshotDetectPornConfigList.add(liveSnapshotDetectPornConfig);
 		}
 		describeLiveSnapshotDetectPornConfigResponse.setLiveSnapshotDetectPornConfigList(liveSnapshotDetectPornConfigList);

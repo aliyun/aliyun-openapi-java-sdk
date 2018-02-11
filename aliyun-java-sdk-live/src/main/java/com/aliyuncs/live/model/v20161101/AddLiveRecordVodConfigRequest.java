@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class AddLiveRecordVodConfigRequest extends RpcAcsRequest<AddLiveRecordVodConfigResponse> {
 	
 	public AddLiveRecordVodConfigRequest() {
-		super("live", "2016-11-01", "AddLiveRecordVodConfig");
+		super("live", "2016-11-01", "AddLiveRecordVodConfig", "live");
 	}
 
 	private String appName;

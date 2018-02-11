@@ -31,6 +31,10 @@ public class DescribeLiveStreamsPublishListResponseUnmarshaller {
 	public static DescribeLiveStreamsPublishListResponse unmarshall(DescribeLiveStreamsPublishListResponse describeLiveStreamsPublishListResponse, UnmarshallerContext context) {
 		
 		describeLiveStreamsPublishListResponse.setRequestId(context.stringValue("DescribeLiveStreamsPublishListResponse.RequestId"));
+		describeLiveStreamsPublishListResponse.setPageNum(context.integerValue("DescribeLiveStreamsPublishListResponse.PageNum"));
+		describeLiveStreamsPublishListResponse.setPageSize(context.integerValue("DescribeLiveStreamsPublishListResponse.PageSize"));
+		describeLiveStreamsPublishListResponse.setTotalNum(context.integerValue("DescribeLiveStreamsPublishListResponse.TotalNum"));
+		describeLiveStreamsPublishListResponse.setTotalPage(context.integerValue("DescribeLiveStreamsPublishListResponse.TotalPage"));
 
 		List<LiveStreamPublishInfo> publishInfo = new ArrayList<LiveStreamPublishInfo>();
 		for (int i = 0; i < context.lengthValue("DescribeLiveStreamsPublishListResponse.PublishInfo.Length"); i++) {

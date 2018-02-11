@@ -28,7 +28,7 @@ import java.util.List;
 public class ModifyCasterLayoutRequest extends RpcAcsRequest<ModifyCasterLayoutResponse> {
 	
 	public ModifyCasterLayoutRequest() {
-		super("live", "2016-11-01", "ModifyCasterLayout");
+		super("live", "2016-11-01", "ModifyCasterLayout", "live");
 	}
 
 	private List<String> blendLists;

@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class AddLiveDetectNotifyConfigRequest extends RpcAcsRequest<AddLiveDetectNotifyConfigResponse> {
 	
 	public AddLiveDetectNotifyConfigRequest() {
-		super("live", "2016-11-01", "AddLiveDetectNotifyConfig");
+		super("live", "2016-11-01", "AddLiveDetectNotifyConfig", "live");
 	}
 
 	private String securityToken;

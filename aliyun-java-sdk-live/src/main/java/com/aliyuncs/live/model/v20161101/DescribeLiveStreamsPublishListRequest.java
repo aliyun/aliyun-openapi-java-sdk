@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeLiveStreamsPublishListRequest extends RpcAcsRequest<DescribeLiveStreamsPublishListResponse> {
 	
 	public DescribeLiveStreamsPublishListRequest() {
-		super("live", "2016-11-01", "DescribeLiveStreamsPublishList");
+		super("live", "2016-11-01", "DescribeLiveStreamsPublishList", "live");
 	}
 
 	private String appName;
@@ -36,7 +36,7 @@ public class DescribeLiveStreamsPublishListRequest extends RpcAcsRequest<Describ
 
 	private String domainName;
 
-	private Long pageSize;
+	private Integer pageSize;
 
 	private String endTime;
 
@@ -46,7 +46,7 @@ public class DescribeLiveStreamsPublishListRequest extends RpcAcsRequest<Describ
 
 	private String streamName;
 
-	private Long pageNumber;
+	private Integer pageNumber;
 
 	public String getAppName() {
 		return this.appName;
@@ -81,11 +81,11 @@ public class DescribeLiveStreamsPublishListRequest extends RpcAcsRequest<Describ
 		}
 	}
 
-	public Long getPageSize() {
+	public Integer getPageSize() {
 		return this.pageSize;
 	}
 
-	public void setPageSize(Long pageSize) {
+	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
@@ -136,11 +136,11 @@ public class DescribeLiveStreamsPublishListRequest extends RpcAcsRequest<Describ
 		}
 	}
 
-	public Long getPageNumber() {
+	public Integer getPageNumber() {
 		return this.pageNumber;
 	}
 
-	public void setPageNumber(Long pageNumber) {
+	public void setPageNumber(Integer pageNumber) {
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());

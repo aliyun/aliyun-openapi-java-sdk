@@ -19,18 +19,16 @@
 package com.aliyuncs.live.model.v20161101;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.live.transform.v20161101.CreateCasterResponseUnmarshaller;
+import com.aliyuncs.live.transform.v20161101.AddTrancodeSEIResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CreateCasterResponse extends AcsResponse {
+public class AddTrancodeSEIResponse extends AcsResponse {
 
 	private String requestId;
-
-	private String casterId;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -40,16 +38,8 @@ public class CreateCasterResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getCasterId() {
-		return this.casterId;
-	}
-
-	public void setCasterId(String casterId) {
-		this.casterId = casterId;
-	}
-
 	@Override
-	public CreateCasterResponse getInstance(UnmarshallerContext context) {
-		return	CreateCasterResponseUnmarshaller.unmarshall(this, context);
+	public AddTrancodeSEIResponse getInstance(UnmarshallerContext context) {
+		return	AddTrancodeSEIResponseUnmarshaller.unmarshall(this, context);
 	}
 }

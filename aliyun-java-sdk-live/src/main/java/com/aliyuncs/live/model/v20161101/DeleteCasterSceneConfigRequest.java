@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeleteCasterSceneConfigRequest extends RpcAcsRequest<DeleteCasterSceneConfigResponse> {
 	
 	public DeleteCasterSceneConfigRequest() {
-		super("live", "2016-11-01", "DeleteCasterSceneConfig");
+		super("live", "2016-11-01", "DeleteCasterSceneConfig", "live");
 	}
 
 	private String securityToken;

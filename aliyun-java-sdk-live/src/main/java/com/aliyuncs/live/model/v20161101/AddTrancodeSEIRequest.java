@@ -24,19 +24,38 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class DeleteLiveAppRecordConfigRequest extends RpcAcsRequest<DeleteLiveAppRecordConfigResponse> {
+public class AddTrancodeSEIRequest extends RpcAcsRequest<AddTrancodeSEIResponse> {
 	
-	public DeleteLiveAppRecordConfigRequest() {
-		super("live", "2016-11-01", "DeleteLiveAppRecordConfig", "live");
+	public AddTrancodeSEIRequest() {
+		super("live", "2016-11-01", "AddTrancodeSEI", "live");
 	}
+
+	private Integer delay;
 
 	private String appName;
 
-	private String securityToken;
+	private Integer repeat;
 
 	private String domainName;
 
+	private String pattern;
+
+	private String text;
+
 	private Long ownerId;
+
+	private String streamName;
+
+	public Integer getDelay() {
+		return this.delay;
+	}
+
+	public void setDelay(Integer delay) {
+		this.delay = delay;
+		if(delay != null){
+			putQueryParameter("Delay", delay.toString());
+		}
+	}
 
 	public String getAppName() {
 		return this.appName;
@@ -49,14 +68,14 @@ public class DeleteLiveAppRecordConfigRequest extends RpcAcsRequest<DeleteLiveAp
 		}
 	}
 
-	public String getSecurityToken() {
-		return this.securityToken;
+	public Integer getRepeat() {
+		return this.repeat;
 	}
 
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
+	public void setRepeat(Integer repeat) {
+		this.repeat = repeat;
+		if(repeat != null){
+			putQueryParameter("Repeat", repeat.toString());
 		}
 	}
 
@@ -71,6 +90,28 @@ public class DeleteLiveAppRecordConfigRequest extends RpcAcsRequest<DeleteLiveAp
 		}
 	}
 
+	public String getPattern() {
+		return this.pattern;
+	}
+
+	public void setPattern(String pattern) {
+		this.pattern = pattern;
+		if(pattern != null){
+			putQueryParameter("Pattern", pattern);
+		}
+	}
+
+	public String getText() {
+		return this.text;
+	}
+
+	public void setText(String text) {
+		this.text = text;
+		if(text != null){
+			putQueryParameter("Text", text);
+		}
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -82,9 +123,20 @@ public class DeleteLiveAppRecordConfigRequest extends RpcAcsRequest<DeleteLiveAp
 		}
 	}
 
+	public String getStreamName() {
+		return this.streamName;
+	}
+
+	public void setStreamName(String streamName) {
+		this.streamName = streamName;
+		if(streamName != null){
+			putQueryParameter("StreamName", streamName);
+		}
+	}
+
 	@Override
-	public Class<DeleteLiveAppRecordConfigResponse> getResponseClass() {
-		return DeleteLiveAppRecordConfigResponse.class;
+	public Class<AddTrancodeSEIResponse> getResponseClass() {
+		return AddTrancodeSEIResponse.class;
 	}
 
 }

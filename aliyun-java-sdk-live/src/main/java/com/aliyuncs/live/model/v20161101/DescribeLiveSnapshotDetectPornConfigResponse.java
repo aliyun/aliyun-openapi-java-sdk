@@ -113,6 +113,8 @@ public class DescribeLiveSnapshotDetectPornConfigResponse extends AcsResponse {
 
 		private Integer interval;
 
+		private List<String> scenes;
+
 		public String getDomainName() {
 			return this.domainName;
 		}
@@ -159,6 +161,14 @@ public class DescribeLiveSnapshotDetectPornConfigResponse extends AcsResponse {
 
 		public void setInterval(Integer interval) {
 			this.interval = interval;
+		}
+
+		public List<String> getScenes() {
+			return this.scenes;
+		}
+
+		public void setScenes(List<String> scenes) {
+			this.scenes = scenes;
 		}
 	}
 

@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeleteLiveRecordVodConfigRequest extends RpcAcsRequest<DeleteLiveRecordVodConfigResponse> {
 	
 	public DeleteLiveRecordVodConfigRequest() {
-		super("live", "2016-11-01", "DeleteLiveRecordVodConfig");
+		super("live", "2016-11-01", "DeleteLiveRecordVodConfig", "live");
 	}
 
 	private String appName;

@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class AddLiveMixNotifyConfigRequest extends RpcAcsRequest<AddLiveMixNotifyConfigResponse> {
 	
 	public AddLiveMixNotifyConfigRequest() {
-		super("live", "2016-11-01", "AddLiveMixNotifyConfig");
+		super("live", "2016-11-01", "AddLiveMixNotifyConfig", "live");
 	}
 
 	private String securityToken;

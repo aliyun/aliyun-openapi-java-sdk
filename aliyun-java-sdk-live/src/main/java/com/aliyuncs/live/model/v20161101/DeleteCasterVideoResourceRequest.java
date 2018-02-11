@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeleteCasterVideoResourceRequest extends RpcAcsRequest<DeleteCasterVideoResourceResponse> {
 	
 	public DeleteCasterVideoResourceRequest() {
-		super("live", "2016-11-01", "DeleteCasterVideoResource");
+		super("live", "2016-11-01", "DeleteCasterVideoResource", "live");
 	}
 
 	private String resourceId;

@@ -33,6 +33,14 @@ public class DescribeLiveStreamsBlockListResponse extends AcsResponse {
 
 	private String domainName;
 
+	private Integer pageNum;
+
+	private Integer pageSize;
+
+	private Integer totalNum;
+
+	private Integer totalPage;
+
 	private List<String> streamUrls;
 
 	public String getRequestId() {
@@ -49,6 +57,38 @@ public class DescribeLiveStreamsBlockListResponse extends AcsResponse {
 
 	public void setDomainName(String domainName) {
 		this.domainName = domainName;
+	}
+
+	public Integer getPageNum() {
+		return this.pageNum;
+	}
+
+	public void setPageNum(Integer pageNum) {
+		this.pageNum = pageNum;
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
+
+	public Integer getTotalNum() {
+		return this.totalNum;
+	}
+
+	public void setTotalNum(Integer totalNum) {
+		this.totalNum = totalNum;
+	}
+
+	public Integer getTotalPage() {
+		return this.totalPage;
+	}
+
+	public void setTotalPage(Integer totalPage) {
+		this.totalPage = totalPage;
 	}
 
 	public List<String> getStreamUrls() {

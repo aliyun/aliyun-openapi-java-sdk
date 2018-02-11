@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeleteCasterLayoutRequest extends RpcAcsRequest<DeleteCasterLayoutResponse> {
 	
 	public DeleteCasterLayoutRequest() {
-		super("live", "2016-11-01", "DeleteCasterLayout");
+		super("live", "2016-11-01", "DeleteCasterLayout", "live");
 	}
 
 	private String securityToken;

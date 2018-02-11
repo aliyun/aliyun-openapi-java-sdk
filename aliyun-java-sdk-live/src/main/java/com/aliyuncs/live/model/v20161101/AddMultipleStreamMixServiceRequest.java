@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class AddMultipleStreamMixServiceRequest extends RpcAcsRequest<AddMultipleStreamMixServiceResponse> {
 	
 	public AddMultipleStreamMixServiceRequest() {
-		super("live", "2016-11-01", "AddMultipleStreamMixService");
+		super("live", "2016-11-01", "AddMultipleStreamMixService", "live");
 	}
 
 	private String appName;

@@ -27,14 +27,18 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeLiveStreamsBlockListRequest extends RpcAcsRequest<DescribeLiveStreamsBlockListResponse> {
 	
 	public DescribeLiveStreamsBlockListRequest() {
-		super("live", "2016-11-01", "DescribeLiveStreamsBlockList");
+		super("live", "2016-11-01", "DescribeLiveStreamsBlockList", "live");
 	}
 
 	private String securityToken;
 
 	private String domainName;
 
+	private Integer pageSize;
+
 	private Long ownerId;
+
+	private Integer pageNum;
 
 	public String getSecurityToken() {
 		return this.securityToken;
@@ -58,6 +62,17 @@ public class DescribeLiveStreamsBlockListRequest extends RpcAcsRequest<DescribeL
 		}
 	}
 
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -66,6 +81,17 @@ public class DescribeLiveStreamsBlockListRequest extends RpcAcsRequest<DescribeL
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public Integer getPageNum() {
+		return this.pageNum;
+	}
+
+	public void setPageNum(Integer pageNum) {
+		this.pageNum = pageNum;
+		if(pageNum != null){
+			putQueryParameter("PageNum", pageNum.toString());
 		}
 	}
 

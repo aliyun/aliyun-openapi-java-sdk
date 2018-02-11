@@ -23,6 +23,7 @@ import java.util.List;
 
 import com.aliyuncs.live.model.v20161101.DescribeLiveStreamTranscodeInfoResponse;
 import com.aliyuncs.live.model.v20161101.DescribeLiveStreamTranscodeInfoResponse.DomainTranscodeInfo;
+import com.aliyuncs.live.model.v20161101.DescribeLiveStreamTranscodeInfoResponse.DomainTranscodeInfo.CustomTranscodeParameters;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -38,6 +39,14 @@ public class DescribeLiveStreamTranscodeInfoResponseUnmarshaller {
 			domainTranscodeInfo.setTranscodeApp(context.stringValue("DescribeLiveStreamTranscodeInfoResponse.DomainTranscodeList["+ i +"].TranscodeApp"));
 			domainTranscodeInfo.setTranscodeName(context.stringValue("DescribeLiveStreamTranscodeInfoResponse.DomainTranscodeList["+ i +"].TranscodeName"));
 			domainTranscodeInfo.setTranscodeTemplate(context.stringValue("DescribeLiveStreamTranscodeInfoResponse.DomainTranscodeList["+ i +"].TranscodeTemplate"));
+
+			CustomTranscodeParameters customTranscodeParameters = new CustomTranscodeParameters();
+			customTranscodeParameters.setVideoBitrate(context.integerValue("DescribeLiveStreamTranscodeInfoResponse.DomainTranscodeList["+ i +"].CustomTranscodeParameters.VideoBitrate"));
+			customTranscodeParameters.setFPS(context.integerValue("DescribeLiveStreamTranscodeInfoResponse.DomainTranscodeList["+ i +"].CustomTranscodeParameters.FPS"));
+			customTranscodeParameters.setHeight(context.integerValue("DescribeLiveStreamTranscodeInfoResponse.DomainTranscodeList["+ i +"].CustomTranscodeParameters.Height"));
+			customTranscodeParameters.setWidth(context.integerValue("DescribeLiveStreamTranscodeInfoResponse.DomainTranscodeList["+ i +"].CustomTranscodeParameters.Width"));
+			customTranscodeParameters.setTemplateType(context.stringValue("DescribeLiveStreamTranscodeInfoResponse.DomainTranscodeList["+ i +"].CustomTranscodeParameters.TemplateType"));
+			domainTranscodeInfo.setCustomTranscodeParameters(customTranscodeParameters);
 
 			domainTranscodeList.add(domainTranscodeInfo);
 		}
