@@ -24,7 +24,11 @@ import java.util.List;
 import com.aliyuncs.qualitycheck.model.v20160801.GetAudioDataStatusResponse;
 import com.aliyuncs.qualitycheck.model.v20160801.GetAudioDataStatusResponse.TaskAsrResult;
 import com.aliyuncs.qualitycheck.model.v20160801.GetAudioDataStatusResponse.TaskAsrResult.AsrResult;
+import com.aliyuncs.qualitycheck.model.v20160801.GetAudioDataStatusResponse.TaskAsrResult.AsrResult.ClientEvStat;
+import com.aliyuncs.qualitycheck.model.v20160801.GetAudioDataStatusResponse.TaskAsrResult.AsrResult.ClientSrStat;
 import com.aliyuncs.qualitycheck.model.v20160801.GetAudioDataStatusResponse.TaskAsrResult.AsrResult.SentenceResult;
+import com.aliyuncs.qualitycheck.model.v20160801.GetAudioDataStatusResponse.TaskAsrResult.AsrResult.ServiceEvStat;
+import com.aliyuncs.qualitycheck.model.v20160801.GetAudioDataStatusResponse.TaskAsrResult.AsrResult.ServiceSrStat;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -50,6 +54,36 @@ public class GetAudioDataStatusResponseUnmarshaller {
 			asrResult.setAsrstatus(context.stringValue("GetAudioDataStatusResponse.data["+ i +"].asrResult.asrstatus"));
 			asrResult.setAsrStatusCode(context.stringValue("GetAudioDataStatusResponse.data["+ i +"].asrResult.asrStatusCode"));
 			asrResult.setErrorMessage(context.stringValue("GetAudioDataStatusResponse.data["+ i +"].asrResult.errorMessage"));
+			asrResult.setDuration(context.longValue("GetAudioDataStatusResponse.data["+ i +"].asrResult.duration"));
+			asrResult.setInteractiveCount(context.integerValue("GetAudioDataStatusResponse.data["+ i +"].asrResult.interactiveCount"));
+
+			ServiceEvStat serviceEvStat = new ServiceEvStat();
+			serviceEvStat.setSrole(context.integerValue("GetAudioDataStatusResponse.data["+ i +"].asrResult.serviceEvStat.srole"));
+			serviceEvStat.setSmaxEmotionValue(context.floatValue("GetAudioDataStatusResponse.data["+ i +"].asrResult.serviceEvStat.smaxEmotionValue"));
+			serviceEvStat.setSminEmotionValue(context.floatValue("GetAudioDataStatusResponse.data["+ i +"].asrResult.serviceEvStat.sminEmotionValue"));
+			serviceEvStat.setSavgEmotionValue(context.floatValue("GetAudioDataStatusResponse.data["+ i +"].asrResult.serviceEvStat.savgEmotionValue"));
+			asrResult.setServiceEvStat(serviceEvStat);
+
+			ClientEvStat clientEvStat = new ClientEvStat();
+			clientEvStat.setCrole(context.integerValue("GetAudioDataStatusResponse.data["+ i +"].asrResult.clientEvStat.crole"));
+			clientEvStat.setCmaxEmotionValue(context.floatValue("GetAudioDataStatusResponse.data["+ i +"].asrResult.clientEvStat.cmaxEmotionValue"));
+			clientEvStat.setCminEmotionValue(context.floatValue("GetAudioDataStatusResponse.data["+ i +"].asrResult.clientEvStat.cminEmotionValue"));
+			clientEvStat.setCavgEmotionValue(context.floatValue("GetAudioDataStatusResponse.data["+ i +"].asrResult.clientEvStat.cavgEmotionValue"));
+			asrResult.setClientEvStat(clientEvStat);
+
+			ServiceSrStat serviceSrStat = new ServiceSrStat();
+			serviceSrStat.setSrole(context.integerValue("GetAudioDataStatusResponse.data["+ i +"].asrResult.serviceSrStat.srole"));
+			serviceSrStat.setSmaxSpeechRate(context.floatValue("GetAudioDataStatusResponse.data["+ i +"].asrResult.serviceSrStat.smaxSpeechRate"));
+			serviceSrStat.setSminSpeechRate(context.floatValue("GetAudioDataStatusResponse.data["+ i +"].asrResult.serviceSrStat.sminSpeechRate"));
+			serviceSrStat.setSavgSpeechRate(context.floatValue("GetAudioDataStatusResponse.data["+ i +"].asrResult.serviceSrStat.savgSpeechRate"));
+			asrResult.setServiceSrStat(serviceSrStat);
+
+			ClientSrStat clientSrStat = new ClientSrStat();
+			clientSrStat.setCrole(context.integerValue("GetAudioDataStatusResponse.data["+ i +"].asrResult.clientSrStat.crole"));
+			clientSrStat.setCmaxSpeechRate(context.floatValue("GetAudioDataStatusResponse.data["+ i +"].asrResult.clientSrStat.cmaxSpeechRate"));
+			clientSrStat.setCminSpeechRate(context.floatValue("GetAudioDataStatusResponse.data["+ i +"].asrResult.clientSrStat.cminSpeechRate"));
+			clientSrStat.setCavgSpeechRate(context.floatValue("GetAudioDataStatusResponse.data["+ i +"].asrResult.clientSrStat.cavgSpeechRate"));
+			asrResult.setClientSrStat(clientSrStat);
 
 			List<SentenceResult> sentenceResults = new ArrayList<SentenceResult>();
 			for (int j = 0; j < context.lengthValue("GetAudioDataStatusResponse.data["+ i +"].asrResult.sentenceResults.Length"); j++) {

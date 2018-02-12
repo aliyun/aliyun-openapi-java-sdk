@@ -149,7 +149,19 @@ public class GetAudioDataStatusResponse extends AcsResponse {
 
 			private String errorMessage;
 
+			private Long duration;
+
+			private Integer interactiveCount;
+
 			private List<SentenceResult> sentenceResults;
+
+			private ServiceEvStat serviceEvStat;
+
+			private ClientEvStat clientEvStat;
+
+			private ServiceSrStat serviceSrStat;
+
+			private ClientSrStat clientSrStat;
 
 			public String getAsrstatus() {
 				return this.asrstatus;
@@ -175,12 +187,60 @@ public class GetAudioDataStatusResponse extends AcsResponse {
 				this.errorMessage = errorMessage;
 			}
 
+			public Long getDuration() {
+				return this.duration;
+			}
+
+			public void setDuration(Long duration) {
+				this.duration = duration;
+			}
+
+			public Integer getInteractiveCount() {
+				return this.interactiveCount;
+			}
+
+			public void setInteractiveCount(Integer interactiveCount) {
+				this.interactiveCount = interactiveCount;
+			}
+
 			public List<SentenceResult> getSentenceResults() {
 				return this.sentenceResults;
 			}
 
 			public void setSentenceResults(List<SentenceResult> sentenceResults) {
 				this.sentenceResults = sentenceResults;
+			}
+
+			public ServiceEvStat getServiceEvStat() {
+				return this.serviceEvStat;
+			}
+
+			public void setServiceEvStat(ServiceEvStat serviceEvStat) {
+				this.serviceEvStat = serviceEvStat;
+			}
+
+			public ClientEvStat getClientEvStat() {
+				return this.clientEvStat;
+			}
+
+			public void setClientEvStat(ClientEvStat clientEvStat) {
+				this.clientEvStat = clientEvStat;
+			}
+
+			public ServiceSrStat getServiceSrStat() {
+				return this.serviceSrStat;
+			}
+
+			public void setServiceSrStat(ServiceSrStat serviceSrStat) {
+				this.serviceSrStat = serviceSrStat;
+			}
+
+			public ClientSrStat getClientSrStat() {
+				return this.clientSrStat;
+			}
+
+			public void setClientSrStat(ClientSrStat clientSrStat) {
+				this.clientSrStat = clientSrStat;
 			}
 
 			public static class SentenceResult {
@@ -283,6 +343,178 @@ public class GetAudioDataStatusResponse extends AcsResponse {
 
 				public void setChannelKey(String channelKey) {
 					this.channelKey = channelKey;
+				}
+			}
+
+			public static class ServiceEvStat {
+
+				private Integer srole;
+
+				private Float smaxEmotionValue;
+
+				private Float sminEmotionValue;
+
+				private Float savgEmotionValue;
+
+				public Integer getSrole() {
+					return this.srole;
+				}
+
+				public void setSrole(Integer srole) {
+					this.srole = srole;
+				}
+
+				public Float getSmaxEmotionValue() {
+					return this.smaxEmotionValue;
+				}
+
+				public void setSmaxEmotionValue(Float smaxEmotionValue) {
+					this.smaxEmotionValue = smaxEmotionValue;
+				}
+
+				public Float getSminEmotionValue() {
+					return this.sminEmotionValue;
+				}
+
+				public void setSminEmotionValue(Float sminEmotionValue) {
+					this.sminEmotionValue = sminEmotionValue;
+				}
+
+				public Float getSavgEmotionValue() {
+					return this.savgEmotionValue;
+				}
+
+				public void setSavgEmotionValue(Float savgEmotionValue) {
+					this.savgEmotionValue = savgEmotionValue;
+				}
+			}
+
+			public static class ClientEvStat {
+
+				private Integer crole;
+
+				private Float cmaxEmotionValue;
+
+				private Float cminEmotionValue;
+
+				private Float cavgEmotionValue;
+
+				public Integer getCrole() {
+					return this.crole;
+				}
+
+				public void setCrole(Integer crole) {
+					this.crole = crole;
+				}
+
+				public Float getCmaxEmotionValue() {
+					return this.cmaxEmotionValue;
+				}
+
+				public void setCmaxEmotionValue(Float cmaxEmotionValue) {
+					this.cmaxEmotionValue = cmaxEmotionValue;
+				}
+
+				public Float getCminEmotionValue() {
+					return this.cminEmotionValue;
+				}
+
+				public void setCminEmotionValue(Float cminEmotionValue) {
+					this.cminEmotionValue = cminEmotionValue;
+				}
+
+				public Float getCavgEmotionValue() {
+					return this.cavgEmotionValue;
+				}
+
+				public void setCavgEmotionValue(Float cavgEmotionValue) {
+					this.cavgEmotionValue = cavgEmotionValue;
+				}
+			}
+
+			public static class ServiceSrStat {
+
+				private Integer srole;
+
+				private Float smaxSpeechRate;
+
+				private Float sminSpeechRate;
+
+				private Float savgSpeechRate;
+
+				public Integer getSrole() {
+					return this.srole;
+				}
+
+				public void setSrole(Integer srole) {
+					this.srole = srole;
+				}
+
+				public Float getSmaxSpeechRate() {
+					return this.smaxSpeechRate;
+				}
+
+				public void setSmaxSpeechRate(Float smaxSpeechRate) {
+					this.smaxSpeechRate = smaxSpeechRate;
+				}
+
+				public Float getSminSpeechRate() {
+					return this.sminSpeechRate;
+				}
+
+				public void setSminSpeechRate(Float sminSpeechRate) {
+					this.sminSpeechRate = sminSpeechRate;
+				}
+
+				public Float getSavgSpeechRate() {
+					return this.savgSpeechRate;
+				}
+
+				public void setSavgSpeechRate(Float savgSpeechRate) {
+					this.savgSpeechRate = savgSpeechRate;
+				}
+			}
+
+			public static class ClientSrStat {
+
+				private Integer crole;
+
+				private Float cmaxSpeechRate;
+
+				private Float cminSpeechRate;
+
+				private Float cavgSpeechRate;
+
+				public Integer getCrole() {
+					return this.crole;
+				}
+
+				public void setCrole(Integer crole) {
+					this.crole = crole;
+				}
+
+				public Float getCmaxSpeechRate() {
+					return this.cmaxSpeechRate;
+				}
+
+				public void setCmaxSpeechRate(Float cmaxSpeechRate) {
+					this.cmaxSpeechRate = cmaxSpeechRate;
+				}
+
+				public Float getCminSpeechRate() {
+					return this.cminSpeechRate;
+				}
+
+				public void setCminSpeechRate(Float cminSpeechRate) {
+					this.cminSpeechRate = cminSpeechRate;
+				}
+
+				public Float getCavgSpeechRate() {
+					return this.cavgSpeechRate;
+				}
+
+				public void setCavgSpeechRate(Float cavgSpeechRate) {
+					this.cavgSpeechRate = cavgSpeechRate;
 				}
 			}
 		}
