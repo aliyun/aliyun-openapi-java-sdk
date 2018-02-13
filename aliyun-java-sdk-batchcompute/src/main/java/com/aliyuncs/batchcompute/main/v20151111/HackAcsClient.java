@@ -37,7 +37,7 @@ import java.util.Map;
 public class HackAcsClient {
 
     protected static <T extends AcsResponse> T parseAcsResponse(Class<T> clasz, HttpResponse baseResponse) throws ServerException, ClientException {
-        FormatType format = baseResponse.getContentType();
+        FormatType format = baseResponse.getHttpContentType();
         if (baseResponse.isSuccess()) {
             return readResponse(clasz, baseResponse, format);
         } else {
@@ -87,7 +87,7 @@ public class HackAcsClient {
         String stringContent = null;
 
         try {
-            stringContent = new String(httpResponse.getContent(), httpResponse.getEncoding());
+            stringContent = new String(httpResponse.getHttpContent(), httpResponse.getEncoding());
             return stringContent;
         } catch (UnsupportedEncodingException var4) {
             throw new ClientException("SDK.UnsupportedEncoding", "Can not parse response due to un supported encoding.",

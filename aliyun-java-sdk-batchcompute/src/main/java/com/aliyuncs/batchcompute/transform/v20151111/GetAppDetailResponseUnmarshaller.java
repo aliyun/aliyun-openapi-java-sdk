@@ -39,7 +39,7 @@ public class GetAppDetailResponseUnmarshaller {
 		getAppDetailResponse.setHttpResponse(httpResponse);
 
 		try {
-			String body = new String(httpResponse.getContent(), httpResponse.getEncoding());
+			String body = new String(httpResponse.getHttpContent(), httpResponse.getEncoding());
 
 			ObjectMapper mapper = new ObjectMapper();
 			AppDescription appDetail = mapper.readValue(body, AppDescription.class);

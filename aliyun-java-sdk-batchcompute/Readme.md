@@ -13,14 +13,14 @@ Batchcompute SDK For Java
 <dependency>
     <groupId>com.aliyun</groupId>
     <artifactId>aliyun-java-sdk-core</artifactId>
-    <version>3.2.3</version>
+    <version>3.5.1</version>
 </dependency>
 
 
 <dependency>
     <groupId>com.aliyun</groupId>
     <artifactId>aliyun-java-sdk-batchcompute</artifactId>
-    <version>5.1.0</version>
+    <version>5.3.0</version>
 </dependency>
 ```
 
@@ -37,6 +37,8 @@ String accessKeySecret="${your_access_key_secret}";
 
 /** 构造 BatchCompute 客户端 */
 BatchCompute client = new BatchComputeClient(regionId, accessKeyId, accessKeySecret);
+
+//BatchCompute client = new BatchComputeClient(regionId, accessKeyId, accessKeySecret, securityToken);
 ```
 
 #### (3) 使用 client 对象的方法:
@@ -106,6 +108,19 @@ try {
 | 2. | updateApp(AppDescription appDescription) | 修改App |
 
 ### 5. release note
+
+5.3.0
+
+```
+1. 修复SecurityToken支持。升级依赖core版本到3.5.1.
+```
+
+
+5.2.0
+```
+1. 创建集群时增加ScheduleType支持。
+2. 查询集群状态增加ErrorCode字段。
+```
 
 5.1.0
 ```

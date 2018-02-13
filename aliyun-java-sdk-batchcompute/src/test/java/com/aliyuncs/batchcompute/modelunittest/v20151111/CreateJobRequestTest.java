@@ -63,7 +63,7 @@ public class CreateJobRequestTest extends TestCase {
 
         String contentString = null;
         try {
-            contentString = new String(req.getContent(), "utf-8");
+            contentString = new String(req.getHttpContent(), "utf-8");
             System.out.println(contentString);
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();

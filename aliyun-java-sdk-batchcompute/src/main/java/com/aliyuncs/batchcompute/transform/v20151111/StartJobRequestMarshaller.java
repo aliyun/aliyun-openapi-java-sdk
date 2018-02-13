@@ -27,7 +27,7 @@ public class StartJobRequestMarshaller {
 
     public static StartJobRequest marshall(StartJobRequest startJobRequest) {
 
-        startJobRequest.setContent(new byte[]{}, startJobRequest.getEncoding(), startJobRequest.getAcceptFormat());
+        startJobRequest.setHttpContent(new byte[]{}, startJobRequest.getEncoding(), startJobRequest.getAcceptFormat());
 
         return startJobRequest;
     }

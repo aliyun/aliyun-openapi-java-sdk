@@ -38,7 +38,7 @@ public class ListInstancesResponseUnmarshaller {
 		listInstancesResponse.setHttpResponse(httpResponse);
 
 		try {
-			String body = new String(httpResponse.getContent(), httpResponse.getEncoding());
+			String body = new String(httpResponse.getHttpContent(), httpResponse.getEncoding());
 			setContent(body, listInstancesResponse);
 		} catch (IOException e) {
 			throw new ServerException("API.EncodeError", "encode response body error", listInstancesResponse.getRequestId());

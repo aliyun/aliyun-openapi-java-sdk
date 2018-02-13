@@ -37,7 +37,7 @@ public class ListImagesResponseUnmarshaller {
 		listImagesResponse.setHttpResponse(httpResponse);
 
 		try {
-			String body = new String(httpResponse.getContent(), httpResponse.getEncoding());
+			String body = new String(httpResponse.getHttpContent(), httpResponse.getEncoding());
 			setContent(body, listImagesResponse);
 		} catch (IOException e) {
 			throw new ServerException("API.EncodeError", "encode response body error", listImagesResponse.getRequestId());

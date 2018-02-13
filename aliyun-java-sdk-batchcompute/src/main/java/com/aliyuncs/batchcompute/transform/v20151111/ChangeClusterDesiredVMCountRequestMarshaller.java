@@ -27,7 +27,7 @@ public class ChangeClusterDesiredVMCountRequestMarshaller {
         }
 
 
-        req.setContent(contentString.getBytes(), req.getEncoding(), req.getAcceptFormat());
+        req.setHttpContent(contentString.getBytes(), req.getEncoding(), req.getAcceptFormat());
 
         return req;
     }

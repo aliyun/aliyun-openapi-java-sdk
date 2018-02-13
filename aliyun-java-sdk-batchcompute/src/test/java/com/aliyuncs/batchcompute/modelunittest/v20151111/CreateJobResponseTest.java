@@ -59,7 +59,7 @@ public class CreateJobResponseTest extends TestCase {
         HttpResponse httpResponse = new HttpResponse("");
 
         httpResponse.setStatus(201);
-        httpResponse.setContent("{\"Id\":\"job-001\"}".getBytes(), "UTF-8", FormatType.JSON);
+        httpResponse.setHttpContent("{\"Id\":\"job-001\"}".getBytes(), "UTF-8", FormatType.JSON);
 
         context.setHttpResponse(httpResponse);
 

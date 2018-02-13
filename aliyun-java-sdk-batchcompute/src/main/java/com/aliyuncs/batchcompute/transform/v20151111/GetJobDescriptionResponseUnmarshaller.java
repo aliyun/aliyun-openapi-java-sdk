@@ -39,7 +39,7 @@ public class GetJobDescriptionResponseUnmarshaller {
 		getJobDescriptionResponse.setHttpResponse(httpResponse);
 
 		try {
-			String body = new String(httpResponse.getContent(), httpResponse.getEncoding());
+			String body = new String(httpResponse.getHttpContent(), httpResponse.getEncoding());
 
 			ObjectMapper mapper = new ObjectMapper();
 			JobDescription desc = mapper.readValue(body, JobDescription.class);

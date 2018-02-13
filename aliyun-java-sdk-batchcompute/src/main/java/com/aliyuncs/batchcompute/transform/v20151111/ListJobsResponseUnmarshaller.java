@@ -38,7 +38,7 @@ public class ListJobsResponseUnmarshaller {
         listJobsResponse.setHttpResponse(httpResponse);
 
         try {
-            String body = new String(httpResponse.getContent(), httpResponse.getEncoding());
+            String body = new String(httpResponse.getHttpContent(), httpResponse.getEncoding());
             setContent(body, listJobsResponse);
         } catch (IOException e) {
             throw new ServerException("API.EncodeError", "encode response body error", listJobsResponse.getRequestId());

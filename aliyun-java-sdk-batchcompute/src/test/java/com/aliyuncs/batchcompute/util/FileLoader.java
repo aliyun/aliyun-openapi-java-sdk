@@ -61,9 +61,20 @@ public class FileLoader {
         Properties prop = new Properties();
         for (int i = 0, len = path.length; i < len; i++) {
             System.out.println("load properties:" + path[i]);
-            InputStream in =
-                    FileLoader.class.getClassLoader()
-                            .getResourceAsStream(path[i]);
+            InputStream  in = null;
+
+            if(path[i].startsWith("/") || path[i].matches("^[A-Z]:\\\\")  ){
+                try {
+                    in = new FileInputStream(new File(path[i]));
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                }
+            }
+            else{
+                in =
+                        FileLoader.class.getClassLoader()
+                                .getResourceAsStream(path[i]);
+            }
 
             try {
                 prop.load(in);

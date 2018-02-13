@@ -43,7 +43,7 @@ public class CreateAppRequestMarshaller {
             throw new ClientException("API.EncodeError", "encode request body error");
         }
 
-        req.setContent(contentString.getBytes(), req.getEncoding(), req.getAcceptFormat());
+        req.setHttpContent(contentString.getBytes(), req.getEncoding(), req.getAcceptFormat());
 
         return req;
     }

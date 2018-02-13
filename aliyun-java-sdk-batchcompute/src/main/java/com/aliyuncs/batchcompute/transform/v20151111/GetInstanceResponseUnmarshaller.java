@@ -36,7 +36,7 @@ public class GetInstanceResponseUnmarshaller {
 		getInstanceResponse.setHttpResponse(httpResponse);
 
 		try {
-			String body = new String(httpResponse.getContent(), httpResponse.getEncoding());
+			String body = new String(httpResponse.getHttpContent(), httpResponse.getEncoding());
 
 			ObjectMapper mapper = new ObjectMapper();
 			Instance instance = mapper.readValue(body, Instance.class);

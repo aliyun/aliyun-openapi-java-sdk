@@ -48,7 +48,7 @@ public class ListClustersResponseTest extends TestCase {
         HttpResponse httpResponse = new HttpResponse("");
         String body = FileLoader.loadFile("resources/v20151111/listClusters.json");
 
-        httpResponse.setContent(body.getBytes(), "utf-8", FormatType.JSON);
+        httpResponse.setHttpContent(body.getBytes(), "utf-8", FormatType.JSON);
 
         context.setHttpResponse(httpResponse);
 
@@ -88,7 +88,7 @@ public class ListClustersResponseTest extends TestCase {
         HttpResponse httpResponse = new HttpResponse("");
         String body = FileLoader.loadFile("resources/v20151111/listClusters.json");
 
-        httpResponse.setContent(body.getBytes(), "xxx", FormatType.JSON);
+        httpResponse.setHttpContent(body.getBytes(), "xxx", FormatType.JSON);
 
         context.setHttpResponse(httpResponse);
         try {
@@ -108,7 +108,7 @@ public class ListClustersResponseTest extends TestCase {
         HttpResponse httpResponse = new HttpResponse("");
         String str = "{\"ResourceId\":\"xxxooo";
 
-        httpResponse.setContent(str.getBytes(), "utf-8", FormatType.JSON);
+        httpResponse.setHttpContent(str.getBytes(), "utf-8", FormatType.JSON);
 
         context.setHttpResponse(httpResponse);
         try {

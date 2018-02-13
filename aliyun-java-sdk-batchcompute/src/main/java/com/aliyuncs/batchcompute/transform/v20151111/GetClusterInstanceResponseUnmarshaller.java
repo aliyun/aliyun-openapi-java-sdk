@@ -37,7 +37,7 @@ public class GetClusterInstanceResponseUnmarshaller {
 		res.setHttpResponse(httpResponse);
 
 		try {
-			String body = new String(httpResponse.getContent(), httpResponse.getEncoding());
+			String body = new String(httpResponse.getHttpContent(), httpResponse.getEncoding());
 
 			ObjectMapper mapper = new ObjectMapper();
 			ClusterInstance ins = mapper.readValue(body, ClusterInstance.class);

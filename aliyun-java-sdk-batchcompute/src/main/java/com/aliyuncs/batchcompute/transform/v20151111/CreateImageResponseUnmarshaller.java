@@ -37,7 +37,7 @@ public class CreateImageResponseUnmarshaller {
 		res.setHttpResponse(httpResponse);
 
 		try {
-			String body = new String(httpResponse.getContent(), httpResponse.getEncoding());
+			String body = new String(httpResponse.getHttpContent(), httpResponse.getEncoding());
 			ObjectMapper mapper = new ObjectMapper();
 			Map<String, String> map = mapper.readValue(body, Map.class);
 			res.setImageId(map.get("Id"));

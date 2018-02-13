@@ -18,6 +18,7 @@
  */
 package com.aliyuncs.batchcompute.util;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
@@ -29,7 +30,9 @@ public class Config {
 
     private Config() {
 
+        String homestr = System.getProperty("user.home");
         String[] arr = new String[]{
+                homestr + File.separator + ".aliyun-java-sdk-batchcompute-test.properties",
                 "resources/config_test.properties",
                 "resources/config.properties"
         };

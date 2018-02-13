@@ -37,7 +37,7 @@ public class GetClusterResponseUnmarshaller {
 		getClusterResponse.setHttpResponse(httpResponse);
 
 		try {
-			String body = new String(httpResponse.getContent(), httpResponse.getEncoding());
+			String body = new String(httpResponse.getHttpContent(), httpResponse.getEncoding());
 
 			ObjectMapper mapper = new ObjectMapper();
 			Cluster cluster = mapper.readValue(body, Cluster.class);

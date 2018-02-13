@@ -61,7 +61,7 @@ public class CreateClusterRequestTest extends TestCase {
 
         String contentString = null;
         try {
-            contentString = new String(req.getContent(), "utf-8");
+            contentString = new String(req.getHttpContent(), "utf-8");
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         }

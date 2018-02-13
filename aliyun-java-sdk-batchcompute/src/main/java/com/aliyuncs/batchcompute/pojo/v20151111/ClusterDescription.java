@@ -45,6 +45,19 @@ public class ClusterDescription {
     @JsonProperty("InstanceType")
     private String instanceType;
 
+    @JsonIgnore
+    public String getScheduleType() {
+        return scheduleType;
+    }
+
+    @JsonIgnore
+    public void setScheduleType(String scheduleType) {
+        this.scheduleType = scheduleType;
+    }
+
+    @JsonProperty("ScheduleType")
+    private String scheduleType;
+
     @JsonProperty("Groups")
     private Map<String, GroupDescription> groups;
 

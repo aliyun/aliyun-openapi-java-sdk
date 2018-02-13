@@ -75,6 +75,18 @@ public class Cluster {
     private String state;
 
     @JsonIgnore
+    public String getErrorCode() {
+        return this.errorCode;
+    }
+    @JsonIgnore
+    public void setErrorCode(String errorCode) {
+        this.errorCode = errorCode;
+    }
+
+    @JsonProperty("ErrorCode")
+    private String errorCode;
+
+    @JsonIgnore
     public String getInstanceType() {
         return instanceType;
     }

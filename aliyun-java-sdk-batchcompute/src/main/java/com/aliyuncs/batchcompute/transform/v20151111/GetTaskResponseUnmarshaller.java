@@ -37,7 +37,7 @@ public class GetTaskResponseUnmarshaller {
 		getTaskResponse.setHttpResponse(httpResponse);
 
 		try {
-			String body = new String(httpResponse.getContent(), httpResponse.getEncoding());
+			String body = new String(httpResponse.getHttpContent(), httpResponse.getEncoding());
 
 			ObjectMapper mapper = new ObjectMapper();
 			Task task = mapper.readValue(body, Task.class);

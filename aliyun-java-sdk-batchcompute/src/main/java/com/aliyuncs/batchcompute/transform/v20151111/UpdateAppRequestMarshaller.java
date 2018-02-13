@@ -25,7 +25,7 @@ public class UpdateAppRequestMarshaller {
             e.printStackTrace();
         }
 
-        req.setContent(contentString.getBytes(), req.getEncoding(), req.getAcceptFormat());
+        req.setHttpContent(contentString.getBytes(), req.getEncoding(), req.getAcceptFormat());
 
         return req;
     }

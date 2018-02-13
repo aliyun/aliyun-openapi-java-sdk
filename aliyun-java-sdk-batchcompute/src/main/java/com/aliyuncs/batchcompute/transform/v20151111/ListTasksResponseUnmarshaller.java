@@ -37,7 +37,7 @@ public class ListTasksResponseUnmarshaller {
 		listTasksResponse.setHttpResponse(httpResponse);
 
 		try {
-			String body = new String(httpResponse.getContent(), httpResponse.getEncoding());
+			String body = new String(httpResponse.getHttpContent(), httpResponse.getEncoding());
 			setContent(body, listTasksResponse);
 		} catch (IOException e) {
 			throw new ServerException("API.EncodeError", "encode response body error", listTasksResponse.getRequestId());

@@ -27,7 +27,7 @@ public class StopJobRequestMarshaller {
 
     public static StopJobRequest marshall(StopJobRequest stopJobRequest) {
 
-        stopJobRequest.setContent("".getBytes(), stopJobRequest.getEncoding(), stopJobRequest.getAcceptFormat());
+        stopJobRequest.setHttpContent("".getBytes(), stopJobRequest.getEncoding(), stopJobRequest.getAcceptFormat());
 
         return stopJobRequest;
     }

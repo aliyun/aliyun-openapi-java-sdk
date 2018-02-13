@@ -27,7 +27,7 @@ public class RecreateClusterInstanceRequestMarshaller {
 
     public static RecreateClusterInstanceRequest marshall(RecreateClusterInstanceRequest req) {
 
-        req.setContent("{}".getBytes(), req.getEncoding(), req.getAcceptFormat());
+        req.setHttpContent("{}".getBytes(), req.getEncoding(), req.getAcceptFormat());
 
         return req;
     }

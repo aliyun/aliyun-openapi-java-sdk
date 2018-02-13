@@ -67,6 +67,13 @@ public class BatchComputeClient implements BatchCompute {
         this.client = new DefaultAcsClient(DefaultProfile.getProfile(regionId, accessKeyId, accessKeySecret));
     }
 
+    public BatchComputeClient(String regionId, String accessKeyId, String accessKeySecret, String stsToken) {
+        if(regionMap.get(regionId)==null){
+            BatchComputeClient.addEndpoint(regionId, "batchcompute."+regionId+".aliyuncs.com");
+        }
+        this.client = new DefaultAcsClient(DefaultProfile.getProfile(regionId, accessKeyId, accessKeySecret, stsToken));
+    }
+
 
     /**
      * add region domain mapping
@@ -131,7 +138,7 @@ public class BatchComputeClient implements BatchCompute {
                 System.out.println("\t" + key + ":" + reqHeaders.get(key));
             }
 
-            byte[] bs = request.getContent();
+            byte[] bs = request.getHttpContent();
             if (bs == null) bs = new byte[]{};
             System.out.println("--->Request.Action:"+request.getActionName());
             System.out.println("--->Request.Body:->" +  new String(bs)+"<-");
@@ -152,7 +159,7 @@ public class BatchComputeClient implements BatchCompute {
                 System.out.println("\t" + key + ":" + headers.get(key));
             }
 
-            System.out.println("--->Response.body:" + new String(baseResponse.getContent()));
+            System.out.println("--->Response.body:" + new String(baseResponse.getHttpContent()));
         }
         return HackAcsClient.parseAcsResponse(request.getResponseClass(), baseResponse);
     }

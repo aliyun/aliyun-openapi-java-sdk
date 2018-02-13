@@ -57,7 +57,7 @@ public class CreateClusterResponseTest extends TestCase {
         HttpResponse httpResponse = new HttpResponse("");
 
         httpResponse.setStatus(201);
-        httpResponse.setContent("{\"Id\":\"cls-001\"}".getBytes(), "UTF-8", FormatType.JSON);
+        httpResponse.setHttpContent("{\"Id\":\"cls-001\"}".getBytes(), "UTF-8", FormatType.JSON);
 
         context.setHttpResponse(httpResponse);
 

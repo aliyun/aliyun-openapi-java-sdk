@@ -49,7 +49,7 @@ public class GetClusterResponseTest extends TestCase {
         HttpResponse httpResponse = new HttpResponse("");
         String body = FileLoader.loadFile("resources/v20151111/getCluster.json");
 
-        httpResponse.setContent(body.getBytes(), "utf-8", FormatType.JSON);
+        httpResponse.setHttpContent(body.getBytes(), "utf-8", FormatType.JSON);
 
         context.setHttpResponse(httpResponse);
 
@@ -105,7 +105,7 @@ public class GetClusterResponseTest extends TestCase {
         HttpResponse httpResponse = new HttpResponse("");
         String body = FileLoader.loadFile("resources/v20151111/getCluster2.json");
 
-        httpResponse.setContent(body.getBytes(), "utf-8", FormatType.JSON);
+        httpResponse.setHttpContent(body.getBytes(), "utf-8", FormatType.JSON);
 
         context.setHttpResponse(httpResponse);
 
@@ -137,7 +137,7 @@ public class GetClusterResponseTest extends TestCase {
         HttpResponse httpResponse = new HttpResponse("");
         String body = FileLoader.loadFile("resources/v20151111/getCluster.json");
 
-        httpResponse.setContent(body.getBytes(), "xxx", FormatType.JSON);
+        httpResponse.setHttpContent(body.getBytes(), "xxx", FormatType.JSON);
 
         context.setHttpResponse(httpResponse);
         try {
@@ -157,7 +157,7 @@ public class GetClusterResponseTest extends TestCase {
         HttpResponse httpResponse = new HttpResponse("");
         String str = "{\"Id\":\"xxxooo";
 
-        httpResponse.setContent(str.getBytes(), "utf-8", FormatType.JSON);
+        httpResponse.setHttpContent(str.getBytes(), "utf-8", FormatType.JSON);
 
         context.setHttpResponse(httpResponse);
         try {
