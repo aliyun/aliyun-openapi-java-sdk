@@ -1,3 +1,6 @@
+2018-02-24 Version: 5.3.1
+1, Repair ststoken support.
+
 2018-02-13 Version: 5.3.0
 1, Fix SecurityToken supported, and upgrade version of aliyun-java-sdk-core to 3.5.1.
 

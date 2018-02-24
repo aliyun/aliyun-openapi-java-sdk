@@ -20,7 +20,7 @@ Batchcompute SDK For Java
 <dependency>
     <groupId>com.aliyun</groupId>
     <artifactId>aliyun-java-sdk-batchcompute</artifactId>
-    <version>5.3.0</version>
+    <version>5.3.1</version>
 </dependency>
 ```
 
@@ -109,12 +109,16 @@ try {
 
 ### 5. release note
 
+5.3.1
+```
+1. 修复SecurityToken支持。
+```
+
 5.3.0
 
 ```
 1. 修复SecurityToken支持。升级依赖core版本到3.5.1.
 ```
-
 
 5.2.0
 ```

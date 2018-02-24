@@ -46,6 +46,7 @@ import java.util.Set;
 public class BatchComputeClient implements BatchCompute {
 
     private IAcsClient client;
+    private String accessKeyId;
 
     private final static String PRODUCT_CODE = "BatchCompute";
 
@@ -64,6 +65,7 @@ public class BatchComputeClient implements BatchCompute {
         if(regionMap.get(regionId)==null){
             BatchComputeClient.addEndpoint(regionId, "batchcompute."+regionId+".aliyuncs.com");
         }
+        this.accessKeyId = accessKeyId;
         this.client = new DefaultAcsClient(DefaultProfile.getProfile(regionId, accessKeyId, accessKeySecret));
     }
 
@@ -71,6 +73,7 @@ public class BatchComputeClient implements BatchCompute {
         if(regionMap.get(regionId)==null){
             BatchComputeClient.addEndpoint(regionId, "batchcompute."+regionId+".aliyuncs.com");
         }
+        this.accessKeyId = accessKeyId;
         this.client = new DefaultAcsClient(DefaultProfile.getProfile(regionId, accessKeyId, accessKeySecret, stsToken));
     }
 
@@ -129,6 +132,9 @@ public class BatchComputeClient implements BatchCompute {
 
     //hack一下，处理 ErrorCode 的兼容
     private <T extends AcsResponse> T getAcsResponse(AcsRequest<T> request) throws ClientException {
+
+        request.putHeaderParameter("x-acs-access-key-id", this.accessKeyId);
+
         if (verbose) {
             Map<String, String> reqHeaders = request.getHeaders();
 
