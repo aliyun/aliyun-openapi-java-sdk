@@ -55,6 +55,8 @@ public class QueryFailReasonForDomainRealNameVerificationResponse extends AcsRes
 
 		private String failReason;
 
+		private String domainNameVerificationStatus;
+
 		public String getDate() {
 			return this.date;
 		}
@@ -69,6 +71,14 @@ public class QueryFailReasonForDomainRealNameVerificationResponse extends AcsRes
 
 		public void setFailReason(String failReason) {
 			this.failReason = failReason;
+		}
+
+		public String getDomainNameVerificationStatus() {
+			return this.domainNameVerificationStatus;
+		}
+
+		public void setDomainNameVerificationStatus(String domainNameVerificationStatus) {
+			this.domainNameVerificationStatus = domainNameVerificationStatus;
 		}
 	}
 

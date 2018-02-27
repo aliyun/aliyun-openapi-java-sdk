@@ -37,6 +37,7 @@ public class QueryFailReasonForDomainRealNameVerificationResponseUnmarshaller {
 			FailRecord failRecord = new FailRecord();
 			failRecord.setDate(context.stringValue("QueryFailReasonForDomainRealNameVerificationResponse.Data["+ i +"].Date"));
 			failRecord.setFailReason(context.stringValue("QueryFailReasonForDomainRealNameVerificationResponse.Data["+ i +"].FailReason"));
+			failRecord.setDomainNameVerificationStatus(context.stringValue("QueryFailReasonForDomainRealNameVerificationResponse.Data["+ i +"].DomainNameVerificationStatus"));
 
 			data.add(failRecord);
 		}

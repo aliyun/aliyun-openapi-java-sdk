@@ -65,6 +65,8 @@ public class QueryDomainByInstanceIdResponse extends AcsResponse {
 
 	private String registrantType;
 
+	private String domainNameVerificationStatus;
+
 	private List<String> dnsList;
 
 	public String getUserId() {
@@ -209,6 +211,14 @@ public class QueryDomainByInstanceIdResponse extends AcsResponse {
 
 	public void setRegistrantType(String registrantType) {
 		this.registrantType = registrantType;
+	}
+
+	public String getDomainNameVerificationStatus() {
+		return this.domainNameVerificationStatus;
+	}
+
+	public void setDomainNameVerificationStatus(String domainNameVerificationStatus) {
+		this.domainNameVerificationStatus = domainNameVerificationStatus;
 	}
 
 	public List<String> getDnsList() {
