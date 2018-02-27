@@ -41,7 +41,9 @@ public class GetClusterProjectsRequest extends RoaAcsRequest<GetClusterProjectsR
 
 	public void setClusterId(String clusterId) {
 		this.clusterId = clusterId;
-		putPathParameter("ClusterId", clusterId);
+		if(clusterId != null){
+			putPathParameter("ClusterId", clusterId);
+		}
 	}
 
 	@Override

@@ -41,7 +41,9 @@ public class DescribeClusterCertsRequest extends RoaAcsRequest<DescribeClusterCe
 
 	public void setClusterId(String clusterId) {
 		this.clusterId = clusterId;
-		putPathParameter("ClusterId", clusterId);
+		if(clusterId != null){
+			putPathParameter("ClusterId", clusterId);
+		}
 	}
 
 	@Override

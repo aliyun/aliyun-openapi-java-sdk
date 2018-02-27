@@ -43,7 +43,9 @@ public class DescribeServiceContainersRequest extends RoaAcsRequest<DescribeServ
 
 	public void setClusterId(String clusterId) {
 		this.clusterId = clusterId;
-		putPathParameter("ClusterId", clusterId);
+		if(clusterId != null){
+			putPathParameter("ClusterId", clusterId);
+		}
 	}
 
 	public String getServiceId() {
@@ -52,7 +54,9 @@ public class DescribeServiceContainersRequest extends RoaAcsRequest<DescribeServ
 
 	public void setServiceId(String serviceId) {
 		this.serviceId = serviceId;
-		putPathParameter("ServiceId", serviceId);
+		if(serviceId != null){
+			putPathParameter("ServiceId", serviceId);
+		}
 	}
 
 	@Override

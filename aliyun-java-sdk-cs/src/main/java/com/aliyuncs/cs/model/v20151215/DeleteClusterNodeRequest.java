@@ -33,19 +33,23 @@ public class DeleteClusterNodeRequest extends RoaAcsRequest<DeleteClusterNodeRes
 		setMethod(MethodType.DELETE);
 	}
 
-	private String clusterId;
+	private String releaseInstance;
 
 	private String ip;
 
 	private String force;
 
-	public String getClusterId() {
-		return this.clusterId;
+	private String clusterId;
+
+	public String getReleaseInstance() {
+		return this.releaseInstance;
 	}
 
-	public void setClusterId(String clusterId) {
-		this.clusterId = clusterId;
-		putPathParameter("ClusterId", clusterId);
+	public void setReleaseInstance(String releaseInstance) {
+		this.releaseInstance = releaseInstance;
+		if(releaseInstance != null){
+			putQueryParameter("releaseInstance", releaseInstance);
+		}
 	}
 
 	public String getIp() {
@@ -54,7 +58,9 @@ public class DeleteClusterNodeRequest extends RoaAcsRequest<DeleteClusterNodeRes
 
 	public void setIp(String ip) {
 		this.ip = ip;
-		putPathParameter("Ip", ip);
+		if(ip != null){
+			putPathParameter("Ip", ip);
+		}
 	}
 
 	public String getForce() {
@@ -63,7 +69,20 @@ public class DeleteClusterNodeRequest extends RoaAcsRequest<DeleteClusterNodeRes
 
 	public void setForce(String force) {
 		this.force = force;
-		putQueryParameter("Force", force);
+		if(force != null){
+			putQueryParameter("force", force);
+		}
+	}
+
+	public String getClusterId() {
+		return this.clusterId;
+	}
+
+	public void setClusterId(String clusterId) {
+		this.clusterId = clusterId;
+		if(clusterId != null){
+			putPathParameter("ClusterId", clusterId);
+		}
 	}
 
 	@Override

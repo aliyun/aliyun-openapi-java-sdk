@@ -41,7 +41,9 @@ public class DescribeUserContainersRequest extends RoaAcsRequest<DescribeUserCon
 
 	public void setServiceId(String serviceId) {
 		this.serviceId = serviceId;
-		putQueryParameter("ServiceId", serviceId);
+		if(serviceId != null){
+			putQueryParameter("ServiceId", serviceId);
+		}
 	}
 
 	@Override

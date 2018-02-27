@@ -33,18 +33,9 @@ public class DescribeClusterNodeInfoWithInstanceRequest extends RoaAcsRequest<De
 		setMethod(MethodType.GET);
 	}
 
-	private String token;
-
 	private String instanceId;
 
-	public String getToken() {
-		return this.token;
-	}
-
-	public void setToken(String token) {
-		this.token = token;
-		putPathParameter("Token", token);
-	}
+	private String token;
 
 	public String getInstanceId() {
 		return this.instanceId;
@@ -52,7 +43,20 @@ public class DescribeClusterNodeInfoWithInstanceRequest extends RoaAcsRequest<De
 
 	public void setInstanceId(String instanceId) {
 		this.instanceId = instanceId;
-		putPathParameter("InstanceId", instanceId);
+		if(instanceId != null){
+			putPathParameter("InstanceId", instanceId);
+		}
+	}
+
+	public String getToken() {
+		return this.token;
+	}
+
+	public void setToken(String token) {
+		this.token = token;
+		if(token != null){
+			putPathParameter("Token", token);
+		}
 	}
 
 	@Override

@@ -43,7 +43,9 @@ public class GetProjectEventsRequest extends RoaAcsRequest<GetProjectEventsRespo
 
 	public void setClusterId(String clusterId) {
 		this.clusterId = clusterId;
-		putPathParameter("ClusterId", clusterId);
+		if(clusterId != null){
+			putPathParameter("ClusterId", clusterId);
+		}
 	}
 
 	public String getProjectId() {
@@ -52,7 +54,9 @@ public class GetProjectEventsRequest extends RoaAcsRequest<GetProjectEventsRespo
 
 	public void setProjectId(String projectId) {
 		this.projectId = projectId;
-		putPathParameter("ProjectId", projectId);
+		if(projectId != null){
+			putPathParameter("ProjectId", projectId);
+		}
 	}
 
 	@Override

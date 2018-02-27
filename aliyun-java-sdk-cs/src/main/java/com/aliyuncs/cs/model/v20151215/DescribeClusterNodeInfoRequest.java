@@ -41,7 +41,9 @@ public class DescribeClusterNodeInfoRequest extends RoaAcsRequest<DescribeCluste
 
 	public void setToken(String token) {
 		this.token = token;
-		putPathParameter("Token", token);
+		if(token != null){
+			putPathParameter("Token", token);
+		}
 	}
 
 	@Override

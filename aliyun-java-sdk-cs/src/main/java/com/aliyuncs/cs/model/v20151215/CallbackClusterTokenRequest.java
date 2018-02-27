@@ -33,18 +33,9 @@ public class CallbackClusterTokenRequest extends RoaAcsRequest<CallbackClusterTo
 		setMethod(MethodType.POST);
 	}
 
-	private String token;
-
 	private String reqOnce;
 
-	public String getToken() {
-		return this.token;
-	}
-
-	public void setToken(String token) {
-		this.token = token;
-		putPathParameter("Token", token);
-	}
+	private String token;
 
 	public String getReqOnce() {
 		return this.reqOnce;
@@ -52,7 +43,20 @@ public class CallbackClusterTokenRequest extends RoaAcsRequest<CallbackClusterTo
 
 	public void setReqOnce(String reqOnce) {
 		this.reqOnce = reqOnce;
-		putPathParameter("ReqOnce", reqOnce);
+		if(reqOnce != null){
+			putPathParameter("ReqOnce", reqOnce);
+		}
+	}
+
+	public String getToken() {
+		return this.token;
+	}
+
+	public void setToken(String token) {
+		this.token = token;
+		if(token != null){
+			putPathParameter("Token", token);
+		}
 	}
 
 	@Override

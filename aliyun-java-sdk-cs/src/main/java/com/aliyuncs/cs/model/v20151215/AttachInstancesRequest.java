@@ -41,7 +41,9 @@ public class AttachInstancesRequest extends RoaAcsRequest<AttachInstancesRespons
 
 	public void setClusterId(String clusterId) {
 		this.clusterId = clusterId;
-		putPathParameter("ClusterId", clusterId);
+		if(clusterId != null){
+			putPathParameter("ClusterId", clusterId);
+		}
 	}
 
 	@Override

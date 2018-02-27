@@ -33,7 +33,20 @@ public class DescribeClustersRequest extends RoaAcsRequest<DescribeClustersRespo
 		setMethod(MethodType.GET);
 	}
 
+	private String clusterType;
+
 	private String name;
+
+	public String getClusterType() {
+		return this.clusterType;
+	}
+
+	public void setClusterType(String clusterType) {
+		this.clusterType = clusterType;
+		if(clusterType != null){
+			putQueryParameter("clusterType", clusterType);
+		}
+	}
 
 	public String getName() {
 		return this.name;
@@ -41,7 +54,9 @@ public class DescribeClustersRequest extends RoaAcsRequest<DescribeClustersRespo
 
 	public void setName(String name) {
 		this.name = name;
-		putQueryParameter("Name", name);
+		if(name != null){
+			putQueryParameter("Name", name);
+		}
 	}
 
 	@Override

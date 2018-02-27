@@ -41,7 +41,9 @@ public class DescribeTemplateAttributeRequest extends RoaAcsRequest<DescribeTemp
 
 	public void setTemplateId(String templateId) {
 		this.templateId = templateId;
-		putPathParameter("TemplateId", templateId);
+		if(templateId != null){
+			putPathParameter("TemplateId", templateId);
+		}
 	}
 
 	@Override

@@ -33,18 +33,9 @@ public class DownloadClusterNodeCertsRequest extends RoaAcsRequest<DownloadClust
 		setMethod(MethodType.GET);
 	}
 
-	private String token;
-
 	private String nodeId;
 
-	public String getToken() {
-		return this.token;
-	}
-
-	public void setToken(String token) {
-		this.token = token;
-		putPathParameter("Token", token);
-	}
+	private String token;
 
 	public String getNodeId() {
 		return this.nodeId;
@@ -52,7 +43,20 @@ public class DownloadClusterNodeCertsRequest extends RoaAcsRequest<DownloadClust
 
 	public void setNodeId(String nodeId) {
 		this.nodeId = nodeId;
-		putPathParameter("NodeId", nodeId);
+		if(nodeId != null){
+			putPathParameter("NodeId", nodeId);
+		}
+	}
+
+	public String getToken() {
+		return this.token;
+	}
+
+	public void setToken(String token) {
+		this.token = token;
+		if(token != null){
+			putPathParameter("Token", token);
+		}
 	}
 
 	@Override
