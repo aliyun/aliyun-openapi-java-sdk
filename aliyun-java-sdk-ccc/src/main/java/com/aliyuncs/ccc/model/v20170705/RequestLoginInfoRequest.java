@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class RequestLoginInfoRequest extends RpcAcsRequest<RequestLoginInfoResponse> {
 	
 	public RequestLoginInfoRequest() {
-		super("CCC", "2017-07-05", "RequestLoginInfo", "ccc");
+		super("CCC", "2017-07-05", "RequestLoginInfo", "CCC");
 	}
 
 	private String instanceId;

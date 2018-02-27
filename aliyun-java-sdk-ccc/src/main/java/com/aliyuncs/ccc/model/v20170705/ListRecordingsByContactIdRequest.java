@@ -24,13 +24,15 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class ListSkillGroupsRequest extends RpcAcsRequest<ListSkillGroupsResponse> {
+public class ListRecordingsByContactIdRequest extends RpcAcsRequest<ListRecordingsByContactIdResponse> {
 	
-	public ListSkillGroupsRequest() {
-		super("CCC", "2017-07-05", "ListSkillGroups", "CCC");
+	public ListRecordingsByContactIdRequest() {
+		super("CCC", "2017-07-05", "ListRecordingsByContactId", "CCC");
 	}
 
 	private String instanceId;
+
+	private String contactId;
 
 	public String getInstanceId() {
 		return this.instanceId;
@@ -43,9 +45,20 @@ public class ListSkillGroupsRequest extends RpcAcsRequest<ListSkillGroupsRespons
 		}
 	}
 
+	public String getContactId() {
+		return this.contactId;
+	}
+
+	public void setContactId(String contactId) {
+		this.contactId = contactId;
+		if(contactId != null){
+			putQueryParameter("ContactId", contactId);
+		}
+	}
+
 	@Override
-	public Class<ListSkillGroupsResponse> getResponseClass() {
-		return ListSkillGroupsResponse.class;
+	public Class<ListRecordingsByContactIdResponse> getResponseClass() {
+		return ListRecordingsByContactIdResponse.class;
 	}
 
 }

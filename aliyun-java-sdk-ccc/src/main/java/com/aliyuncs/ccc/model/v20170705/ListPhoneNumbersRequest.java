@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ListPhoneNumbersRequest extends RpcAcsRequest<ListPhoneNumbersResponse> {
 	
 	public ListPhoneNumbersRequest() {
-		super("CCC", "2017-07-05", "ListPhoneNumbers", "ccc");
+		super("CCC", "2017-07-05", "ListPhoneNumbers", "CCC");
 	}
 
 	private Boolean outboundOnly;

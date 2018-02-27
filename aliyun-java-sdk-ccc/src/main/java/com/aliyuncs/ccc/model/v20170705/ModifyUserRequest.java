@@ -28,7 +28,7 @@ import java.util.List;
 public class ModifyUserRequest extends RpcAcsRequest<ModifyUserResponse> {
 	
 	public ModifyUserRequest() {
-		super("CCC", "2017-07-05", "ModifyUser", "ccc");
+		super("CCC", "2017-07-05", "ModifyUser", "CCC");
 	}
 
 	private List<Integer> skillLevels;

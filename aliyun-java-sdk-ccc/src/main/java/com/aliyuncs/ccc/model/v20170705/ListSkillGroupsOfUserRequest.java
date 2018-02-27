@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ListSkillGroupsOfUserRequest extends RpcAcsRequest<ListSkillGroupsOfUserResponse> {
 	
 	public ListSkillGroupsOfUserRequest() {
-		super("CCC", "2017-07-05", "ListSkillGroupsOfUser", "ccc");
+		super("CCC", "2017-07-05", "ListSkillGroupsOfUser", "CCC");
 	}
 
 	private String instanceId;

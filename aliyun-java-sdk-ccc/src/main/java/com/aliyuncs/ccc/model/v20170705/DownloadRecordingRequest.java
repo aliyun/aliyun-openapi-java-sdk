@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DownloadRecordingRequest extends RpcAcsRequest<DownloadRecordingResponse> {
 	
 	public DownloadRecordingRequest() {
-		super("CCC", "2017-07-05", "DownloadRecording", "ccc");
+		super("CCC", "2017-07-05", "DownloadRecording", "CCC");
 	}
 
 	private String instanceId;

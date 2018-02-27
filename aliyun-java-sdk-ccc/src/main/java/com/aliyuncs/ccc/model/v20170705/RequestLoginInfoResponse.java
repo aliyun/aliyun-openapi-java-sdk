@@ -94,6 +94,8 @@ public class RequestLoginInfoResponse extends AcsResponse {
 
 		private String displayName;
 
+		private String phoneNumber;
+
 		private String region;
 
 		private String webRtcUrl;
@@ -122,6 +124,14 @@ public class RequestLoginInfoResponse extends AcsResponse {
 
 		public void setDisplayName(String displayName) {
 			this.displayName = displayName;
+		}
+
+		public String getPhoneNumber() {
+			return this.phoneNumber;
+		}
+
+		public void setPhoneNumber(String phoneNumber) {
+			this.phoneNumber = phoneNumber;
 		}
 
 		public String getRegion() {

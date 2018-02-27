@@ -28,7 +28,7 @@ import java.util.List;
 public class CreateSkillGroupRequest extends RpcAcsRequest<CreateSkillGroupResponse> {
 	
 	public CreateSkillGroupRequest() {
-		super("CCC", "2017-07-05", "CreateSkillGroup", "ccc");
+		super("CCC", "2017-07-05", "CreateSkillGroup", "CCC");
 	}
 
 	private List<Integer> skillLevels;

@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class GetServiceExtensionsRequest extends RpcAcsRequest<GetServiceExtensionsResponse> {
 	
 	public GetServiceExtensionsRequest() {
-		super("CCC", "2017-07-05", "GetServiceExtensions", "ccc");
+		super("CCC", "2017-07-05", "GetServiceExtensions", "CCC");
 	}
 
 	private String serviceType;

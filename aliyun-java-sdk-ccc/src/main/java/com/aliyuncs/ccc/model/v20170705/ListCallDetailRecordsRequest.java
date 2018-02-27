@@ -27,10 +27,14 @@ import com.aliyuncs.RpcAcsRequest;
 public class ListCallDetailRecordsRequest extends RpcAcsRequest<ListCallDetailRecordsResponse> {
 	
 	public ListCallDetailRecordsRequest() {
-		super("CCC", "2017-07-05", "ListCallDetailRecords", "ccc");
+		super("CCC", "2017-07-05", "ListCallDetailRecords", "CCC");
 	}
 
 	private String instanceId;
+
+	private String contactDisposition;
+
+	private String contactType;
 
 	private String criteria;
 
@@ -44,6 +48,8 @@ public class ListCallDetailRecordsRequest extends RpcAcsRequest<ListCallDetailRe
 
 	private Integer pageNumber;
 
+	private Boolean withRecording;
+
 	public String getInstanceId() {
 		return this.instanceId;
 	}
@@ -52,6 +58,28 @@ public class ListCallDetailRecordsRequest extends RpcAcsRequest<ListCallDetailRe
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public String getContactDisposition() {
+		return this.contactDisposition;
+	}
+
+	public void setContactDisposition(String contactDisposition) {
+		this.contactDisposition = contactDisposition;
+		if(contactDisposition != null){
+			putQueryParameter("ContactDisposition", contactDisposition);
+		}
+	}
+
+	public String getContactType() {
+		return this.contactType;
+	}
+
+	public void setContactType(String contactType) {
+		this.contactType = contactType;
+		if(contactType != null){
+			putQueryParameter("ContactType", contactType);
 		}
 	}
 
@@ -118,6 +146,17 @@ public class ListCallDetailRecordsRequest extends RpcAcsRequest<ListCallDetailRe
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public Boolean getWithRecording() {
+		return this.withRecording;
+	}
+
+	public void setWithRecording(Boolean withRecording) {
+		this.withRecording = withRecording;
+		if(withRecording != null){
+			putQueryParameter("WithRecording", withRecording.toString());
 		}
 	}
 

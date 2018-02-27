@@ -28,7 +28,7 @@ import java.util.List;
 public class CreateUserRequest extends RpcAcsRequest<CreateUserResponse> {
 	
 	public CreateUserRequest() {
-		super("CCC", "2017-07-05", "CreateUser", "ccc");
+		super("CCC", "2017-07-05", "CreateUser", "CCC");
 	}
 
 	private List<Integer> skillLevels;

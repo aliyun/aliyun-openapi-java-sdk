@@ -139,6 +139,8 @@ public class ListCallDetailRecordsResponse extends AcsResponse {
 
 			private Integer duration;
 
+			private Integer satisfaction;
+
 			private String contactType;
 
 			private String contactDisposition;
@@ -152,6 +154,8 @@ public class ListCallDetailRecordsResponse extends AcsResponse {
 			private String skillGroupNames;
 
 			private String instanceId;
+
+			private String extraAttr;
 
 			private List<CallDetailAgent> agents;
 
@@ -179,6 +183,14 @@ public class ListCallDetailRecordsResponse extends AcsResponse {
 
 			public void setDuration(Integer duration) {
 				this.duration = duration;
+			}
+
+			public Integer getSatisfaction() {
+				return this.satisfaction;
+			}
+
+			public void setSatisfaction(Integer satisfaction) {
+				this.satisfaction = satisfaction;
 			}
 
 			public String getContactType() {
@@ -235,6 +247,14 @@ public class ListCallDetailRecordsResponse extends AcsResponse {
 
 			public void setInstanceId(String instanceId) {
 				this.instanceId = instanceId;
+			}
+
+			public String getExtraAttr() {
+				return this.extraAttr;
+			}
+
+			public void setExtraAttr(String extraAttr) {
+				this.extraAttr = extraAttr;
 			}
 
 			public List<CallDetailAgent> getAgents() {

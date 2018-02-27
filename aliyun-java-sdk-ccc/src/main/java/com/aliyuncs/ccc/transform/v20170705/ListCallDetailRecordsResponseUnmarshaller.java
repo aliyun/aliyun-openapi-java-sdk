@@ -50,6 +50,7 @@ public class ListCallDetailRecordsResponseUnmarshaller {
 			callDetailRecord.setContactId(context.stringValue("ListCallDetailRecordsResponse.CallDetailRecords.List["+ i +"].ContactId"));
 			callDetailRecord.setStartTime(context.longValue("ListCallDetailRecordsResponse.CallDetailRecords.List["+ i +"].StartTime"));
 			callDetailRecord.setDuration(context.integerValue("ListCallDetailRecordsResponse.CallDetailRecords.List["+ i +"].Duration"));
+			callDetailRecord.setSatisfaction(context.integerValue("ListCallDetailRecordsResponse.CallDetailRecords.List["+ i +"].Satisfaction"));
 			callDetailRecord.setContactType(context.stringValue("ListCallDetailRecordsResponse.CallDetailRecords.List["+ i +"].ContactType"));
 			callDetailRecord.setContactDisposition(context.stringValue("ListCallDetailRecordsResponse.CallDetailRecords.List["+ i +"].ContactDisposition"));
 			callDetailRecord.setCallingNumber(context.stringValue("ListCallDetailRecordsResponse.CallDetailRecords.List["+ i +"].CallingNumber"));
@@ -57,6 +58,7 @@ public class ListCallDetailRecordsResponseUnmarshaller {
 			callDetailRecord.setAgentNames(context.stringValue("ListCallDetailRecordsResponse.CallDetailRecords.List["+ i +"].AgentNames"));
 			callDetailRecord.setSkillGroupNames(context.stringValue("ListCallDetailRecordsResponse.CallDetailRecords.List["+ i +"].SkillGroupNames"));
 			callDetailRecord.setInstanceId(context.stringValue("ListCallDetailRecordsResponse.CallDetailRecords.List["+ i +"].InstanceId"));
+			callDetailRecord.setExtraAttr(context.stringValue("ListCallDetailRecordsResponse.CallDetailRecords.List["+ i +"].ExtraAttr"));
 
 			List<CallDetailAgent> agents = new ArrayList<CallDetailAgent>();
 			for (int j = 0; j < context.lengthValue("ListCallDetailRecordsResponse.CallDetailRecords.List["+ i +"].Agents.Length"); j++) {

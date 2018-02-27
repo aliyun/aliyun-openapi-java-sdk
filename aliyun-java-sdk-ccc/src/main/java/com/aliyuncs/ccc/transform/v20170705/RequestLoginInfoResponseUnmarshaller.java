@@ -36,6 +36,7 @@ public class RequestLoginInfoResponseUnmarshaller {
 		LoginInfo loginInfo = new LoginInfo();
 		loginInfo.setUserName(context.stringValue("RequestLoginInfoResponse.LoginInfo.UserName"));
 		loginInfo.setDisplayName(context.stringValue("RequestLoginInfoResponse.LoginInfo.DisplayName"));
+		loginInfo.setPhoneNumber(context.stringValue("RequestLoginInfoResponse.LoginInfo.PhoneNumber"));
 		loginInfo.setRegion(context.stringValue("RequestLoginInfoResponse.LoginInfo.Region"));
 		loginInfo.setWebRtcUrl(context.stringValue("RequestLoginInfoResponse.LoginInfo.WebRtcUrl"));
 		loginInfo.setAgentServerUrl(context.stringValue("RequestLoginInfoResponse.LoginInfo.AgentServerUrl"));

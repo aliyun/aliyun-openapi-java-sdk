@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class GetUserRequest extends RpcAcsRequest<GetUserResponse> {
 	
 	public GetUserRequest() {
-		super("CCC", "2017-07-05", "GetUser", "ccc");
+		super("CCC", "2017-07-05", "GetUser", "CCC");
 	}
 
 	private String instanceId;

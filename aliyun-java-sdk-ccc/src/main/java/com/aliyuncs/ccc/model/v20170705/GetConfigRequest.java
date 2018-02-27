@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class GetConfigRequest extends RpcAcsRequest<GetConfigResponse> {
 	
 	public GetConfigRequest() {
-		super("CCC", "2017-07-05", "GetConfig", "ccc");
+		super("CCC", "2017-07-05", "GetConfig", "CCC");
 	}
 
 	private String instanceId;

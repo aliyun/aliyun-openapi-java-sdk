@@ -28,7 +28,7 @@ import java.util.List;
 public class ModifySkillGroupRequest extends RpcAcsRequest<ModifySkillGroupResponse> {
 	
 	public ModifySkillGroupRequest() {
-		super("CCC", "2017-07-05", "ModifySkillGroup", "ccc");
+		super("CCC", "2017-07-05", "ModifySkillGroup", "CCC");
 	}
 
 	private List<Integer> skillLevels;

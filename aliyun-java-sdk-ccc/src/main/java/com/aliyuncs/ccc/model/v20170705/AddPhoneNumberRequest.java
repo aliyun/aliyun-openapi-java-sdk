@@ -27,7 +27,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class AddPhoneNumberRequest extends RpcAcsRequest<AddPhoneNumberResponse> {
 	
 	public AddPhoneNumberRequest() {
-		super("CCC", "2017-07-05", "AddPhoneNumber", "ccc");
+		super("CCC", "2017-07-05", "AddPhoneNumber", "CCC");
 	}
 
 	private String contactFlowId;
