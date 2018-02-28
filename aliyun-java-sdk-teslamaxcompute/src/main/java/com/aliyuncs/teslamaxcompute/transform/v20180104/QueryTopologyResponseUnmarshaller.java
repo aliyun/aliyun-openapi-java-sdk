@@ -18,10 +18,13 @@
  */
 package com.aliyuncs.teslamaxcompute.transform.v20180104;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.teslamaxcompute.model.v20180104.QueryTopologyResponse;
-import com.aliyuncs.teslamaxcompute.model.v20180104.QueryTopologyResponse.Result;
-import com.aliyuncs.teslamaxcompute.model.v20180104.QueryTopologyResponse.Result.Regions;
-import com.aliyuncs.teslamaxcompute.model.v20180104.QueryTopologyResponse.Result.Regions.Clusters;
+import com.aliyuncs.teslamaxcompute.model.v20180104.QueryTopologyResponse.ResultItem;
+import com.aliyuncs.teslamaxcompute.model.v20180104.QueryTopologyResponse.ResultItem.RegionItem;
+import com.aliyuncs.teslamaxcompute.model.v20180104.QueryTopologyResponse.ResultItem.RegionItem.ClusterItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -33,24 +36,39 @@ public class QueryTopologyResponseUnmarshaller {
 		queryTopologyResponse.setCode(context.integerValue("QueryTopologyResponse.Code"));
 		queryTopologyResponse.setMessage(context.stringValue("QueryTopologyResponse.Message"));
 
-		Result result = new Result();
-		result.setLastUpdate(context.stringValue("QueryTopologyResponse.Result.LastUpdate"));
+		List<ResultItem> result = new ArrayList<ResultItem>();
+		for (int i = 0; i < context.lengthValue("QueryTopologyResponse.Result.Length"); i++) {
+			ResultItem resultItem = new ResultItem();
+			resultItem.setLastUpdate(context.stringValue("QueryTopologyResponse.Result["+ i +"].LastUpdate"));
 
-		Regions regions = new Regions();
-		regions.setRegion(context.stringValue("QueryTopologyResponse.Result.Regions.Region"));
-		regions.setRegionEnName(context.stringValue("QueryTopologyResponse.Result.Regions.RegionEnName"));
-		regions.setRegionCnName(context.stringValue("QueryTopologyResponse.Result.Regions.RegionCnName"));
+			List<RegionItem> regions = new ArrayList<RegionItem>();
+			for (int j = 0; j < context.lengthValue("QueryTopologyResponse.Result["+ i +"].Regions.Length"); j++) {
+				RegionItem regionItem = new RegionItem();
+				regionItem.setRegion(context.stringValue("QueryTopologyResponse.Result["+ i +"].Regions["+ j +"].Region"));
+				regionItem.setRegionEnName(context.stringValue("QueryTopologyResponse.Result["+ i +"].Regions["+ j +"].RegionEnName"));
+				regionItem.setRegionCnName(context.stringValue("QueryTopologyResponse.Result["+ i +"].Regions["+ j +"].RegionCnName"));
 
-		Clusters clusters = new Clusters();
-		clusters.setCluster(context.stringValue("QueryTopologyResponse.Result.Regions.Clusters.Cluster"));
-		clusters.setProductLine(context.stringValue("QueryTopologyResponse.Result.Regions.Clusters.ProductLine"));
-		clusters.setProductClass(context.stringValue("QueryTopologyResponse.Result.Regions.Clusters.ProductClass"));
-		clusters.setNetCode(context.stringValue("QueryTopologyResponse.Result.Regions.Clusters.NetCode"));
-		clusters.setBusiness(context.stringValue("QueryTopologyResponse.Result.Regions.Clusters.Business"));
-		clusters.setMachineRoom(context.stringValue("QueryTopologyResponse.Result.Regions.Clusters.MachineRoom"));
-		clusters.setNetArch(context.stringValue("QueryTopologyResponse.Result.Regions.Clusters.NetArch"));
-		regions.setClusters(clusters);
-		result.setRegions(regions);
+				List<ClusterItem> clusters = new ArrayList<ClusterItem>();
+				for (int k = 0; k < context.lengthValue("QueryTopologyResponse.Result["+ i +"].Regions["+ j +"].Clusters.Length"); k++) {
+					ClusterItem clusterItem = new ClusterItem();
+					clusterItem.setCluster(context.stringValue("QueryTopologyResponse.Result["+ i +"].Regions["+ j +"].Clusters["+ k +"].Cluster"));
+					clusterItem.setProductLine(context.stringValue("QueryTopologyResponse.Result["+ i +"].Regions["+ j +"].Clusters["+ k +"].ProductLine"));
+					clusterItem.setProductClass(context.stringValue("QueryTopologyResponse.Result["+ i +"].Regions["+ j +"].Clusters["+ k +"].ProductClass"));
+					clusterItem.setNetCode(context.stringValue("QueryTopologyResponse.Result["+ i +"].Regions["+ j +"].Clusters["+ k +"].NetCode"));
+					clusterItem.setBusiness(context.stringValue("QueryTopologyResponse.Result["+ i +"].Regions["+ j +"].Clusters["+ k +"].Business"));
+					clusterItem.setMachineRoom(context.stringValue("QueryTopologyResponse.Result["+ i +"].Regions["+ j +"].Clusters["+ k +"].MachineRoom"));
+					clusterItem.setNetArch(context.stringValue("QueryTopologyResponse.Result["+ i +"].Regions["+ j +"].Clusters["+ k +"].NetArch"));
+
+					clusters.add(clusterItem);
+				}
+				regionItem.setClusters(clusters);
+
+				regions.add(regionItem);
+			}
+			resultItem.setRegions(regions);
+
+			result.add(resultItem);
+		}
 		queryTopologyResponse.setResult(result);
 	 
 	 	return queryTopologyResponse;

@@ -18,6 +18,7 @@
  */
 package com.aliyuncs.teslamaxcompute.model.v20180104;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.teslamaxcompute.transform.v20180104.QueryTopologyResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -34,7 +35,7 @@ public class QueryTopologyResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Result result;
+	private List<ResultItem> result;
 
 	public Integer getCode() {
 		return this.code;
@@ -60,19 +61,19 @@ public class QueryTopologyResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Result getResult() {
+	public List<ResultItem> getResult() {
 		return this.result;
 	}
 
-	public void setResult(Result result) {
+	public void setResult(List<ResultItem> result) {
 		this.result = result;
 	}
 
-	public static class Result {
+	public static class ResultItem {
 
 		private String lastUpdate;
 
-		private Regions regions;
+		private List<RegionItem> regions;
 
 		public String getLastUpdate() {
 			return this.lastUpdate;
@@ -82,15 +83,15 @@ public class QueryTopologyResponse extends AcsResponse {
 			this.lastUpdate = lastUpdate;
 		}
 
-		public Regions getRegions() {
+		public List<RegionItem> getRegions() {
 			return this.regions;
 		}
 
-		public void setRegions(Regions regions) {
+		public void setRegions(List<RegionItem> regions) {
 			this.regions = regions;
 		}
 
-		public static class Regions {
+		public static class RegionItem {
 
 			private String region;
 
@@ -98,7 +99,7 @@ public class QueryTopologyResponse extends AcsResponse {
 
 			private String regionCnName;
 
-			private Clusters clusters;
+			private List<ClusterItem> clusters;
 
 			public String getRegion() {
 				return this.region;
@@ -124,15 +125,15 @@ public class QueryTopologyResponse extends AcsResponse {
 				this.regionCnName = regionCnName;
 			}
 
-			public Clusters getClusters() {
+			public List<ClusterItem> getClusters() {
 				return this.clusters;
 			}
 
-			public void setClusters(Clusters clusters) {
+			public void setClusters(List<ClusterItem> clusters) {
 				this.clusters = clusters;
 			}
 
-			public static class Clusters {
+			public static class ClusterItem {
 
 				private String cluster;
 
