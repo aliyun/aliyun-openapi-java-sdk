@@ -27,25 +27,25 @@ import com.aliyuncs.RpcAcsRequest;
 public class DetectPornRequest extends RpcAcsRequest<DetectPornResponse> {
 	
 	public DetectPornRequest() {
-		super("imm", "2017-09-06", "DetectPorn");
+		super("imm", "2017-09-06", "DetectPorn", "imm");
 	}
-
-	private String project;
-
-	private String engine;
 
 	private String srcType;
 
+	private String engine;
+
+	private String project;
+
 	private String url;
 
-	public String getProject() {
-		return this.project;
+	public String getSrcType() {
+		return this.srcType;
 	}
 
-	public void setProject(String project) {
-		this.project = project;
-		if(project != null){
-			putQueryParameter("Project", project);
+	public void setSrcType(String srcType) {
+		this.srcType = srcType;
+		if(srcType != null){
+			putQueryParameter("SrcType", srcType);
 		}
 	}
 
@@ -60,14 +60,14 @@ public class DetectPornRequest extends RpcAcsRequest<DetectPornResponse> {
 		}
 	}
 
-	public String getSrcType() {
-		return this.srcType;
+	public String getProject() {
+		return this.project;
 	}
 
-	public void setSrcType(String srcType) {
-		this.srcType = srcType;
-		if(srcType != null){
-			putQueryParameter("SrcType", srcType);
+	public void setProject(String project) {
+		this.project = project;
+		if(project != null){
+			putQueryParameter("Project", project);
 		}
 	}
 

@@ -115,9 +115,9 @@ public class IndexFaceResponse extends AcsResponse {
 
 			private String faceId;
 
-			private List<FaceRectangleItem> faceRectangle;
+			private FaceRectangle faceRectangle;
 
-			private List<FaceAttributeItem> faceAttribute;
+			private FaceAttribute faceAttribute;
 
 			public String getFaceId() {
 				return this.faceId;
@@ -127,23 +127,23 @@ public class IndexFaceResponse extends AcsResponse {
 				this.faceId = faceId;
 			}
 
-			public List<FaceRectangleItem> getFaceRectangle() {
+			public FaceRectangle getFaceRectangle() {
 				return this.faceRectangle;
 			}
 
-			public void setFaceRectangle(List<FaceRectangleItem> faceRectangle) {
+			public void setFaceRectangle(FaceRectangle faceRectangle) {
 				this.faceRectangle = faceRectangle;
 			}
 
-			public List<FaceAttributeItem> getFaceAttribute() {
+			public FaceAttribute getFaceAttribute() {
 				return this.faceAttribute;
 			}
 
-			public void setFaceAttribute(List<FaceAttributeItem> faceAttribute) {
+			public void setFaceAttribute(FaceAttribute faceAttribute) {
 				this.faceAttribute = faceAttribute;
 			}
 
-			public static class FaceRectangleItem {
+			public static class FaceRectangle {
 
 				private String top;
 
@@ -186,69 +186,69 @@ public class IndexFaceResponse extends AcsResponse {
 				}
 			}
 
-			public static class FaceAttributeItem {
+			public static class FaceAttribute {
 
-				private List<GenderItem> gender;
+				private Gender gender;
 
-				private List<AgeItem> age;
+				private Age age;
 
-				private List<HeadposeItem> headpose;
+				private Headpose headpose;
 
-				private List<EyestatusItem> eyestatus;
+				private Eyestatus eyestatus;
 
-				private List<BlurItem> blur;
+				private Blur blur;
 
-				private List<FacequalityItem> facequality;
+				private Facequality facequality;
 
-				public List<GenderItem> getGender() {
+				public Gender getGender() {
 					return this.gender;
 				}
 
-				public void setGender(List<GenderItem> gender) {
+				public void setGender(Gender gender) {
 					this.gender = gender;
 				}
 
-				public List<AgeItem> getAge() {
+				public Age getAge() {
 					return this.age;
 				}
 
-				public void setAge(List<AgeItem> age) {
+				public void setAge(Age age) {
 					this.age = age;
 				}
 
-				public List<HeadposeItem> getHeadpose() {
+				public Headpose getHeadpose() {
 					return this.headpose;
 				}
 
-				public void setHeadpose(List<HeadposeItem> headpose) {
+				public void setHeadpose(Headpose headpose) {
 					this.headpose = headpose;
 				}
 
-				public List<EyestatusItem> getEyestatus() {
+				public Eyestatus getEyestatus() {
 					return this.eyestatus;
 				}
 
-				public void setEyestatus(List<EyestatusItem> eyestatus) {
+				public void setEyestatus(Eyestatus eyestatus) {
 					this.eyestatus = eyestatus;
 				}
 
-				public List<BlurItem> getBlur() {
+				public Blur getBlur() {
 					return this.blur;
 				}
 
-				public void setBlur(List<BlurItem> blur) {
+				public void setBlur(Blur blur) {
 					this.blur = blur;
 				}
 
-				public List<FacequalityItem> getFacequality() {
+				public Facequality getFacequality() {
 					return this.facequality;
 				}
 
-				public void setFacequality(List<FacequalityItem> facequality) {
+				public void setFacequality(Facequality facequality) {
 					this.facequality = facequality;
 				}
 
-				public static class GenderItem {
+				public static class Gender {
 
 					private String value;
 
@@ -261,7 +261,7 @@ public class IndexFaceResponse extends AcsResponse {
 					}
 				}
 
-				public static class AgeItem {
+				public static class Age {
 
 					private Integer value;
 
@@ -274,7 +274,7 @@ public class IndexFaceResponse extends AcsResponse {
 					}
 				}
 
-				public static class HeadposeItem {
+				public static class Headpose {
 
 					private Float pitch_angle;
 
@@ -307,29 +307,29 @@ public class IndexFaceResponse extends AcsResponse {
 					}
 				}
 
-				public static class EyestatusItem {
+				public static class Eyestatus {
 
-					private List<Left_eye_statusItem> left_eye_status;
+					private Left_eye_status left_eye_status;
 
-					private List<Right_eye_statusItem> right_eye_status;
+					private Right_eye_status right_eye_status;
 
-					public List<Left_eye_statusItem> getLeft_eye_status() {
+					public Left_eye_status getLeft_eye_status() {
 						return this.left_eye_status;
 					}
 
-					public void setLeft_eye_status(List<Left_eye_statusItem> left_eye_status) {
+					public void setLeft_eye_status(Left_eye_status left_eye_status) {
 						this.left_eye_status = left_eye_status;
 					}
 
-					public List<Right_eye_statusItem> getRight_eye_status() {
+					public Right_eye_status getRight_eye_status() {
 						return this.right_eye_status;
 					}
 
-					public void setRight_eye_status(List<Right_eye_statusItem> right_eye_status) {
+					public void setRight_eye_status(Right_eye_status right_eye_status) {
 						this.right_eye_status = right_eye_status;
 					}
 
-					public static class Left_eye_statusItem {
+					public static class Left_eye_status {
 
 						private Float normal_glass_eye_open;
 
@@ -392,7 +392,7 @@ public class IndexFaceResponse extends AcsResponse {
 						}
 					}
 
-					public static class Right_eye_statusItem {
+					public static class Right_eye_status {
 
 						private Float normal_glass_eye_open;
 
@@ -456,19 +456,19 @@ public class IndexFaceResponse extends AcsResponse {
 					}
 				}
 
-				public static class BlurItem {
+				public static class Blur {
 
-					private List<BlurnessItem> blurness;
+					private Blurness blurness;
 
-					public List<BlurnessItem> getBlurness() {
+					public Blurness getBlurness() {
 						return this.blurness;
 					}
 
-					public void setBlurness(List<BlurnessItem> blurness) {
+					public void setBlurness(Blurness blurness) {
 						this.blurness = blurness;
 					}
 
-					public static class BlurnessItem {
+					public static class Blurness {
 
 						private Float value;
 
@@ -492,7 +492,7 @@ public class IndexFaceResponse extends AcsResponse {
 					}
 				}
 
-				public static class FacequalityItem {
+				public static class Facequality {
 
 					private Float value;
 

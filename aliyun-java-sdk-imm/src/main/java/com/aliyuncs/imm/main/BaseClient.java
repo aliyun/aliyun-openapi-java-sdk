@@ -161,7 +161,7 @@ public class BaseClient {
             printRequest(request);
         }
         //request.setMethod(MethodType.POST);
-        //request.setAcceptFormat(FormatType.JSON);
+        request.setAcceptFormat(FormatType.XML);
         attachCommonHeaders(request);
 
         HttpResponse baseResponse = this.client.doAction(request);

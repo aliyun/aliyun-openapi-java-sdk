@@ -1,6 +1,7 @@
 package com.aliyuncs.imm.test.v20170906.ft;
 
 import com.aliyuncs.exceptions.ClientException;
+import com.aliyuncs.http.FormatType;
 import com.aliyuncs.imm.main.IMMClient;
 import com.aliyuncs.imm.model.v20170906.*;
 import com.aliyuncs.imm.test.v20170906.util.Config;
@@ -92,4 +93,23 @@ public class ProjectTest extends TestCase {
 
         return list;
     }
+
+//    @Test
+//    public void test() throws ClientException {
+//
+//        String projectName = "xxx";
+//
+//        String srcUris = "[\"oss://xxx/xxx.png\"]";
+//
+//        IndexFaceRequest req = new IndexFaceRequest();
+//
+//        req.setSetId("FACE-bcfa3d6f-7524-4dce-a19c-37603bbf3c9c");
+//        req.setProject(projectName);
+//        req.setSrcUris(srcUris);
+//
+//        IndexFaceResponse res = client.getResponse(req);
+//
+//        System.out.println(res);
+//
+//    }
 }

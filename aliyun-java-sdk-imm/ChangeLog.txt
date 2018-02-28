@@ -1,3 +1,6 @@
+2018-02-28 Version: 1.2.1
+1, Fix faceDetail structure.
+
 2018-02-27 Version: 1.2.0
 1, Support sts token
 
