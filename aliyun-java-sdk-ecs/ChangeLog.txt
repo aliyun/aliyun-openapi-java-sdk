@@ -1,3 +1,6 @@
+2018-03-01 Version: 4.6.4
+1, DescribeInstanceTypes add eniQuantity vmBandwidthTx vmBandwidthRx attributes.
+
 2018-02-06 Version: 4.6.3
 1, ModifyInstanceChargeType add instanceChargeType param, support prepay instance to postpay instance.
 2, ModifyPrepayInstanceSpec add operatorType param, support downgrade prepay ecs.

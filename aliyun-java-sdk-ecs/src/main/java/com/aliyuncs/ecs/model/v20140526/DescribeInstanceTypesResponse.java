@@ -75,6 +75,10 @@ public class DescribeInstanceTypesResponse extends AcsResponse {
 
 		private Integer eniQuantity;
 
+		private Integer instanceBandwidthRx;
+
+		private Integer instanceBandwidthTx;
+
 		public String getInstanceTypeId() {
 			return this.instanceTypeId;
 		}
@@ -169,6 +173,22 @@ public class DescribeInstanceTypesResponse extends AcsResponse {
 
 		public void setEniQuantity(Integer eniQuantity) {
 			this.eniQuantity = eniQuantity;
+		}
+
+		public Integer getInstanceBandwidthRx() {
+			return this.instanceBandwidthRx;
+		}
+
+		public void setInstanceBandwidthRx(Integer instanceBandwidthRx) {
+			this.instanceBandwidthRx = instanceBandwidthRx;
+		}
+
+		public Integer getInstanceBandwidthTx() {
+			return this.instanceBandwidthTx;
+		}
+
+		public void setInstanceBandwidthTx(Integer instanceBandwidthTx) {
+			this.instanceBandwidthTx = instanceBandwidthTx;
 		}
 	}
 
