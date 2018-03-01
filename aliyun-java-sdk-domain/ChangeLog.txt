@@ -1,3 +1,6 @@
+2018-03-01 Version: 3.2.0
+1, Add GetReserveDomainUrl interface.
+
 2018-02-27 Version: 3.1.0
 1, Add auction APIs.
 2, Add return field DomainNameVerificationStatus to QueryDomainByInstanceId and QueryFailReasonForDomainRealNameVerification.
