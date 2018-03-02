@@ -40,8 +40,6 @@ public class DoCheckResourceRequest extends RpcAcsRequest<DoCheckResourceRespons
 
 	private String message;
 
-	private String url;
-
 	private Boolean success;
 
 	private Boolean interrupt;
@@ -110,17 +108,6 @@ public class DoCheckResourceRequest extends RpcAcsRequest<DoCheckResourceRespons
 		this.message = message;
 		if(message != null){
 			putQueryParameter("Message", message);
-		}
-	}
-
-	public String getUrl() {
-		return this.url;
-	}
-
-	public void setUrl(String url) {
-		this.url = url;
-		if(url != null){
-			putQueryParameter("Url", url);
 		}
 	}
 
