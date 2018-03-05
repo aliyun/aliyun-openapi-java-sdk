@@ -52,8 +52,6 @@ public class DoPhysicalDeleteResourceResponse extends AcsResponse {
 
 	private Long level;
 
-	private String url;
-
 	private String prompt;
 
 	public String getInterrupt() {
@@ -150,14 +148,6 @@ public class DoPhysicalDeleteResourceResponse extends AcsResponse {
 
 	public void setLevel(Long level) {
 		this.level = level;
-	}
-
-	public String getUrl() {
-		return this.url;
-	}
-
-	public void setUrl(String url) {
-		this.url = url;
 	}
 
 	public String getPrompt() {

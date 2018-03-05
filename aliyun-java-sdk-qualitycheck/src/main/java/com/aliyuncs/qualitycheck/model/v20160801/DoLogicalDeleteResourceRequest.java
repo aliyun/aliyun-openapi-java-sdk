@@ -42,8 +42,6 @@ public class DoLogicalDeleteResourceRequest extends RpcAcsRequest<DoLogicalDelet
 
 	private String pk;
 
-	private Long invoker;
-
 	private String bid;
 
 	private String message;
@@ -115,17 +113,6 @@ public class DoLogicalDeleteResourceRequest extends RpcAcsRequest<DoLogicalDelet
 		this.pk = pk;
 		if(pk != null){
 			putQueryParameter("Pk", pk);
-		}
-	}
-
-	public Long getInvoker() {
-		return this.invoker;
-	}
-
-	public void setInvoker(Long invoker) {
-		this.invoker = invoker;
-		if(invoker != null){
-			putQueryParameter("Invoker", invoker.toString());
 		}
 	}
 

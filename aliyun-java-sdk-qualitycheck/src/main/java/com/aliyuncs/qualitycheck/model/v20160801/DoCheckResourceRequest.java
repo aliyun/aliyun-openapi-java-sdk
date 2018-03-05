@@ -36,10 +36,6 @@ public class DoCheckResourceRequest extends RpcAcsRequest<DoCheckResourceRespons
 
 	private Long level;
 
-	private Long invoker;
-
-	private String message;
-
 	private Boolean success;
 
 	private Boolean interrupt;
@@ -49,6 +45,8 @@ public class DoCheckResourceRequest extends RpcAcsRequest<DoCheckResourceRespons
 	private String pk;
 
 	private String bid;
+
+	private String message;
 
 	private String prompt;
 
@@ -86,28 +84,6 @@ public class DoCheckResourceRequest extends RpcAcsRequest<DoCheckResourceRespons
 		this.level = level;
 		if(level != null){
 			putQueryParameter("Level", level.toString());
-		}
-	}
-
-	public Long getInvoker() {
-		return this.invoker;
-	}
-
-	public void setInvoker(Long invoker) {
-		this.invoker = invoker;
-		if(invoker != null){
-			putQueryParameter("Invoker", invoker.toString());
-		}
-	}
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-		if(message != null){
-			putQueryParameter("Message", message);
 		}
 	}
 
@@ -163,6 +139,17 @@ public class DoCheckResourceRequest extends RpcAcsRequest<DoCheckResourceRespons
 		this.bid = bid;
 		if(bid != null){
 			putQueryParameter("Bid", bid);
+		}
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+		if(message != null){
+			putQueryParameter("Message", message);
 		}
 	}
 

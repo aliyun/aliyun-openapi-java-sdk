@@ -38,7 +38,6 @@ public class DoPhysicalDeleteResourceResponseUnmarshaller {
 		doPhysicalDeleteResourceResponse.setSuccess(context.booleanValue("DoPhysicalDeleteResourceResponse.Success"));
 		doPhysicalDeleteResourceResponse.setMessage(context.stringValue("DoPhysicalDeleteResourceResponse.Message"));
 		doPhysicalDeleteResourceResponse.setLevel(context.longValue("DoPhysicalDeleteResourceResponse.Level"));
-		doPhysicalDeleteResourceResponse.setUrl(context.stringValue("DoPhysicalDeleteResourceResponse.Url"));
 		doPhysicalDeleteResourceResponse.setPrompt(context.stringValue("DoPhysicalDeleteResourceResponse.Prompt"));
 	 
 	 	return doPhysicalDeleteResourceResponse;

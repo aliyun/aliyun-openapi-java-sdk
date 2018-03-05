@@ -34,14 +34,6 @@ public class DoPhysicalDeleteResourceRequest extends RpcAcsRequest<DoPhysicalDel
 
 	private Long hid;
 
-	private Long level;
-
-	private Long invoker;
-
-	private String message;
-
-	private String url;
-
 	private Boolean success;
 
 	private Boolean interrupt;
@@ -51,8 +43,6 @@ public class DoPhysicalDeleteResourceRequest extends RpcAcsRequest<DoPhysicalDel
 	private String pk;
 
 	private String bid;
-
-	private String prompt;
 
 	private String taskExtraData;
 
@@ -77,50 +67,6 @@ public class DoPhysicalDeleteResourceRequest extends RpcAcsRequest<DoPhysicalDel
 		this.hid = hid;
 		if(hid != null){
 			putQueryParameter("Hid", hid.toString());
-		}
-	}
-
-	public Long getLevel() {
-		return this.level;
-	}
-
-	public void setLevel(Long level) {
-		this.level = level;
-		if(level != null){
-			putQueryParameter("Level", level.toString());
-		}
-	}
-
-	public Long getInvoker() {
-		return this.invoker;
-	}
-
-	public void setInvoker(Long invoker) {
-		this.invoker = invoker;
-		if(invoker != null){
-			putQueryParameter("Invoker", invoker.toString());
-		}
-	}
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-		if(message != null){
-			putQueryParameter("Message", message);
-		}
-	}
-
-	public String getUrl() {
-		return this.url;
-	}
-
-	public void setUrl(String url) {
-		this.url = url;
-		if(url != null){
-			putQueryParameter("Url", url);
 		}
 	}
 
@@ -176,17 +122,6 @@ public class DoPhysicalDeleteResourceRequest extends RpcAcsRequest<DoPhysicalDel
 		this.bid = bid;
 		if(bid != null){
 			putQueryParameter("Bid", bid);
-		}
-	}
-
-	public String getPrompt() {
-		return this.prompt;
-	}
-
-	public void setPrompt(String prompt) {
-		this.prompt = prompt;
-		if(prompt != null){
-			putQueryParameter("Prompt", prompt);
 		}
 	}
 
