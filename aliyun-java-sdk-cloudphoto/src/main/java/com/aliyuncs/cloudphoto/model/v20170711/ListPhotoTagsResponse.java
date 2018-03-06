@@ -83,6 +83,8 @@ public class ListPhotoTagsResponse extends AcsResponse {
 
 		private Long id;
 
+		private String idStr;
+
 		private Boolean isSubTag;
 
 		private String name;
@@ -95,6 +97,14 @@ public class ListPhotoTagsResponse extends AcsResponse {
 
 		public void setId(Long id) {
 			this.id = id;
+		}
+
+		public String getIdStr() {
+			return this.idStr;
+		}
+
+		public void setIdStr(String idStr) {
+			this.idStr = idStr;
 		}
 
 		public Boolean getIsSubTag() {

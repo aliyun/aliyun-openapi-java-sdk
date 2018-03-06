@@ -38,6 +38,7 @@ public class GetPhotoStoreResponseUnmarshaller {
 
 		PhotoStore photoStore = new PhotoStore();
 		photoStore.setId(context.longValue("GetPhotoStoreResponse.PhotoStore.Id"));
+		photoStore.setIdStr(context.stringValue("GetPhotoStoreResponse.PhotoStore.IdStr"));
 		photoStore.setName(context.stringValue("GetPhotoStoreResponse.PhotoStore.Name"));
 		photoStore.setRemark(context.stringValue("GetPhotoStoreResponse.PhotoStore.Remark"));
 		photoStore.setAutoCleanEnabled(context.booleanValue("GetPhotoStoreResponse.PhotoStore.AutoCleanEnabled"));

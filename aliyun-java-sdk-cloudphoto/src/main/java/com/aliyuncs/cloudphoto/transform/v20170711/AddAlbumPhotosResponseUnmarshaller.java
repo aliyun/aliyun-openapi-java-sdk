@@ -39,6 +39,7 @@ public class AddAlbumPhotosResponseUnmarshaller {
 		for (int i = 0; i < context.lengthValue("AddAlbumPhotosResponse.Results.Length"); i++) {
 			Result result = new Result();
 			result.setId(context.longValue("AddAlbumPhotosResponse.Results["+ i +"].Id"));
+			result.setIdStr(context.stringValue("AddAlbumPhotosResponse.Results["+ i +"].IdStr"));
 			result.setCode(context.stringValue("AddAlbumPhotosResponse.Results["+ i +"].Code"));
 			result.setMessage(context.stringValue("AddAlbumPhotosResponse.Results["+ i +"].Message"));
 

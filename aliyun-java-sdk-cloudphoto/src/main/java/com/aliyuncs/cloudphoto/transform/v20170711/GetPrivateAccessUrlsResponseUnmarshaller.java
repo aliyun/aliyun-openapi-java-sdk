@@ -41,6 +41,7 @@ public class GetPrivateAccessUrlsResponseUnmarshaller {
 			result.setCode(context.stringValue("GetPrivateAccessUrlsResponse.Results["+ i +"].Code"));
 			result.setMessage(context.stringValue("GetPrivateAccessUrlsResponse.Results["+ i +"].Message"));
 			result.setPhotoId(context.longValue("GetPrivateAccessUrlsResponse.Results["+ i +"].PhotoId"));
+			result.setPhotoIdStr(context.stringValue("GetPrivateAccessUrlsResponse.Results["+ i +"].PhotoIdStr"));
 			result.setAccessUrl(context.stringValue("GetPrivateAccessUrlsResponse.Results["+ i +"].AccessUrl"));
 
 			results.add(result);

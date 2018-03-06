@@ -40,6 +40,7 @@ public class ListTimeLinePhotosResponseUnmarshaller {
 		for (int i = 0; i < context.lengthValue("ListTimeLinePhotosResponse.Photos.Length"); i++) {
 			Photo photo = new Photo();
 			photo.setId(context.longValue("ListTimeLinePhotosResponse.Photos["+ i +"].Id"));
+			photo.setIdStr(context.stringValue("ListTimeLinePhotosResponse.Photos["+ i +"].IdStr"));
 			photo.setTitle(context.stringValue("ListTimeLinePhotosResponse.Photos["+ i +"].Title"));
 			photo.setFileId(context.stringValue("ListTimeLinePhotosResponse.Photos["+ i +"].FileId"));
 			photo.setLocation(context.stringValue("ListTimeLinePhotosResponse.Photos["+ i +"].Location"));

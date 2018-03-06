@@ -39,6 +39,7 @@ public class DeletePhotosResponseUnmarshaller {
 		for (int i = 0; i < context.lengthValue("DeletePhotosResponse.Results.Length"); i++) {
 			Result result = new Result();
 			result.setId(context.longValue("DeletePhotosResponse.Results["+ i +"].Id"));
+			result.setIdStr(context.stringValue("DeletePhotosResponse.Results["+ i +"].IdStr"));
 			result.setCode(context.stringValue("DeletePhotosResponse.Results["+ i +"].Code"));
 			result.setMessage(context.stringValue("DeletePhotosResponse.Results["+ i +"].Message"));
 

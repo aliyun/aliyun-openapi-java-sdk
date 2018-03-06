@@ -103,6 +103,8 @@ public class ListPhotosResponse extends AcsResponse {
 
 		private Long id;
 
+		private String idStr;
+
 		private String title;
 
 		private String fileId;
@@ -139,6 +141,14 @@ public class ListPhotosResponse extends AcsResponse {
 
 		public void setId(Long id) {
 			this.id = id;
+		}
+
+		public String getIdStr() {
+			return this.idStr;
+		}
+
+		public void setIdStr(String idStr) {
+			this.idStr = idStr;
 		}
 
 		public String getTitle() {

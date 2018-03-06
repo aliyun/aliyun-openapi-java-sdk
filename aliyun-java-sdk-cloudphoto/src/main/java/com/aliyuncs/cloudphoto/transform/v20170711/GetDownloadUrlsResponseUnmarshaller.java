@@ -41,6 +41,7 @@ public class GetDownloadUrlsResponseUnmarshaller {
 			result.setCode(context.stringValue("GetDownloadUrlsResponse.Results["+ i +"].Code"));
 			result.setMessage(context.stringValue("GetDownloadUrlsResponse.Results["+ i +"].Message"));
 			result.setPhotoId(context.longValue("GetDownloadUrlsResponse.Results["+ i +"].PhotoId"));
+			result.setPhotoIdStr(context.stringValue("GetDownloadUrlsResponse.Results["+ i +"].PhotoIdStr"));
 			result.setDownloadUrl(context.stringValue("GetDownloadUrlsResponse.Results["+ i +"].DownloadUrl"));
 
 			results.add(result);

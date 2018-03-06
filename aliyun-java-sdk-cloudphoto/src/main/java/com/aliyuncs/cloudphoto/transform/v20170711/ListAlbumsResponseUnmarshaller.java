@@ -42,6 +42,7 @@ public class ListAlbumsResponseUnmarshaller {
 		for (int i = 0; i < context.lengthValue("ListAlbumsResponse.Albums.Length"); i++) {
 			Album album = new Album();
 			album.setId(context.longValue("ListAlbumsResponse.Albums["+ i +"].Id"));
+			album.setIdStr(context.stringValue("ListAlbumsResponse.Albums["+ i +"].IdStr"));
 			album.setName(context.stringValue("ListAlbumsResponse.Albums["+ i +"].Name"));
 			album.setState(context.stringValue("ListAlbumsResponse.Albums["+ i +"].State"));
 			album.setPhotosCount(context.longValue("ListAlbumsResponse.Albums["+ i +"].PhotosCount"));
@@ -50,6 +51,7 @@ public class ListAlbumsResponseUnmarshaller {
 
 			Cover cover = new Cover();
 			cover.setId(context.longValue("ListAlbumsResponse.Albums["+ i +"].Cover.Id"));
+			cover.setIdStr(context.stringValue("ListAlbumsResponse.Albums["+ i +"].Cover.IdStr"));
 			cover.setTitle(context.stringValue("ListAlbumsResponse.Albums["+ i +"].Cover.Title"));
 			cover.setFileId(context.stringValue("ListAlbumsResponse.Albums["+ i +"].Cover.FileId"));
 			cover.setState(context.stringValue("ListAlbumsResponse.Albums["+ i +"].Cover.State"));

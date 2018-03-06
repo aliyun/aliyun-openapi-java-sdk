@@ -41,6 +41,7 @@ public class ListPhotosResponseUnmarshaller {
 		for (int i = 0; i < context.lengthValue("ListPhotosResponse.Photos.Length"); i++) {
 			Photo photo = new Photo();
 			photo.setId(context.longValue("ListPhotosResponse.Photos["+ i +"].Id"));
+			photo.setIdStr(context.stringValue("ListPhotosResponse.Photos["+ i +"].IdStr"));
 			photo.setTitle(context.stringValue("ListPhotosResponse.Photos["+ i +"].Title"));
 			photo.setFileId(context.stringValue("ListPhotosResponse.Photos["+ i +"].FileId"));
 			photo.setLocation(context.stringValue("ListPhotosResponse.Photos["+ i +"].Location"));

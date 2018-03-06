@@ -39,6 +39,7 @@ public class ListPhotoFacesResponseUnmarshaller {
 		for (int i = 0; i < context.lengthValue("ListPhotoFacesResponse.Faces.Length"); i++) {
 			Face face = new Face();
 			face.setFaceId(context.longValue("ListPhotoFacesResponse.Faces["+ i +"].FaceId"));
+			face.setFaceIdStr(context.stringValue("ListPhotoFacesResponse.Faces["+ i +"].FaceIdStr"));
 			face.setFaceName(context.stringValue("ListPhotoFacesResponse.Faces["+ i +"].FaceName"));
 
 			List<String> axis = new ArrayList<String>();

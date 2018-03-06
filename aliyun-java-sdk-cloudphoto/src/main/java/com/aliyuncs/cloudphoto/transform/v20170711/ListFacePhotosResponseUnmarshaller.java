@@ -41,6 +41,7 @@ public class ListFacePhotosResponseUnmarshaller {
 		for (int i = 0; i < context.lengthValue("ListFacePhotosResponse.Results.Length"); i++) {
 			Result result = new Result();
 			result.setPhotoId(context.longValue("ListFacePhotosResponse.Results["+ i +"].PhotoId"));
+			result.setPhotoIdStr(context.stringValue("ListFacePhotosResponse.Results["+ i +"].PhotoIdStr"));
 			result.setState(context.stringValue("ListFacePhotosResponse.Results["+ i +"].State"));
 
 			results.add(result);

@@ -40,6 +40,7 @@ public class SearchPhotosResponseUnmarshaller {
 		for (int i = 0; i < context.lengthValue("SearchPhotosResponse.Photos.Length"); i++) {
 			Photo photo = new Photo();
 			photo.setId(context.longValue("SearchPhotosResponse.Photos["+ i +"].Id"));
+			photo.setIdStr(context.stringValue("SearchPhotosResponse.Photos["+ i +"].IdStr"));
 			photo.setTitle(context.stringValue("SearchPhotosResponse.Photos["+ i +"].Title"));
 			photo.setFileId(context.stringValue("SearchPhotosResponse.Photos["+ i +"].FileId"));
 			photo.setLocation(context.stringValue("SearchPhotosResponse.Photos["+ i +"].Location"));

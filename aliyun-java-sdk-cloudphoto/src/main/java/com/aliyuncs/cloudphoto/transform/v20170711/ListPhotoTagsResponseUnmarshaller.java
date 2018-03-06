@@ -39,6 +39,7 @@ public class ListPhotoTagsResponseUnmarshaller {
 		for (int i = 0; i < context.lengthValue("ListPhotoTagsResponse.Tags.Length"); i++) {
 			Tag tag = new Tag();
 			tag.setId(context.longValue("ListPhotoTagsResponse.Tags["+ i +"].Id"));
+			tag.setIdStr(context.stringValue("ListPhotoTagsResponse.Tags["+ i +"].IdStr"));
 			tag.setIsSubTag(context.booleanValue("ListPhotoTagsResponse.Tags["+ i +"].IsSubTag"));
 			tag.setName(context.stringValue("ListPhotoTagsResponse.Tags["+ i +"].Name"));
 			tag.setParentTag(context.stringValue("ListPhotoTagsResponse.Tags["+ i +"].ParentTag"));

@@ -39,6 +39,7 @@ public class MoveFacePhotosResponseUnmarshaller {
 		for (int i = 0; i < context.lengthValue("MoveFacePhotosResponse.Results.Length"); i++) {
 			Result result = new Result();
 			result.setId(context.longValue("MoveFacePhotosResponse.Results["+ i +"].Id"));
+			result.setIdStr(context.stringValue("MoveFacePhotosResponse.Results["+ i +"].IdStr"));
 			result.setCode(context.stringValue("MoveFacePhotosResponse.Results["+ i +"].Code"));
 			result.setMessage(context.stringValue("MoveFacePhotosResponse.Results["+ i +"].Message"));
 

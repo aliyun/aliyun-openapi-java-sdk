@@ -39,6 +39,7 @@ public class GetSimilarPhotosResponseUnmarshaller {
 		for (int i = 0; i < context.lengthValue("GetSimilarPhotosResponse.Photos.Length"); i++) {
 			Photo photo = new Photo();
 			photo.setId(context.longValue("GetSimilarPhotosResponse.Photos["+ i +"].Id"));
+			photo.setIdStr(context.stringValue("GetSimilarPhotosResponse.Photos["+ i +"].IdStr"));
 			photo.setTitle(context.stringValue("GetSimilarPhotosResponse.Photos["+ i +"].Title"));
 			photo.setFileId(context.stringValue("GetSimilarPhotosResponse.Photos["+ i +"].FileId"));
 			photo.setLocation(context.stringValue("GetSimilarPhotosResponse.Photos["+ i +"].Location"));

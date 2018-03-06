@@ -35,6 +35,7 @@ public class CreateAlbumResponseUnmarshaller {
 
 		Album album = new Album();
 		album.setId(context.longValue("CreateAlbumResponse.Album.Id"));
+		album.setIdStr(context.stringValue("CreateAlbumResponse.Album.IdStr"));
 		album.setName(context.stringValue("CreateAlbumResponse.Album.Name"));
 		album.setState(context.stringValue("CreateAlbumResponse.Album.State"));
 		album.setRemark(context.stringValue("CreateAlbumResponse.Album.Remark"));
@@ -44,6 +45,7 @@ public class CreateAlbumResponseUnmarshaller {
 
 		Cover cover = new Cover();
 		cover.setId(context.longValue("CreateAlbumResponse.Album.Cover.Id"));
+		cover.setIdStr(context.stringValue("CreateAlbumResponse.Album.Cover.IdStr"));
 		cover.setTitle(context.stringValue("CreateAlbumResponse.Album.Cover.Title"));
 		cover.setFileId(context.stringValue("CreateAlbumResponse.Album.Cover.FileId"));
 		cover.setState(context.stringValue("CreateAlbumResponse.Album.Cover.State"));

@@ -42,6 +42,7 @@ public class ListFacesResponseUnmarshaller {
 		for (int i = 0; i < context.lengthValue("ListFacesResponse.Faces.Length"); i++) {
 			Face face = new Face();
 			face.setId(context.longValue("ListFacesResponse.Faces["+ i +"].Id"));
+			face.setIdStr(context.stringValue("ListFacesResponse.Faces["+ i +"].IdStr"));
 			face.setName(context.stringValue("ListFacesResponse.Faces["+ i +"].Name"));
 			face.setPhotosCount(context.integerValue("ListFacesResponse.Faces["+ i +"].PhotosCount"));
 			face.setState(context.stringValue("ListFacesResponse.Faces["+ i +"].State"));
@@ -57,6 +58,7 @@ public class ListFacesResponseUnmarshaller {
 
 			Cover cover = new Cover();
 			cover.setId(context.longValue("ListFacesResponse.Faces["+ i +"].Cover.Id"));
+			cover.setIdStr(context.stringValue("ListFacesResponse.Faces["+ i +"].Cover.IdStr"));
 			cover.setTitle(context.stringValue("ListFacesResponse.Faces["+ i +"].Cover.Title"));
 			cover.setFileId(context.stringValue("ListFacesResponse.Faces["+ i +"].Cover.FileId"));
 			cover.setState(context.stringValue("ListFacesResponse.Faces["+ i +"].Cover.State"));

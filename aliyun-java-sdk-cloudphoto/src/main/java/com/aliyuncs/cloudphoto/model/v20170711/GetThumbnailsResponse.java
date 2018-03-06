@@ -87,6 +87,8 @@ public class GetThumbnailsResponse extends AcsResponse {
 
 		private Long photoId;
 
+		private String photoIdStr;
+
 		private String thumbnailUrl;
 
 		public String getCode() {
@@ -111,6 +113,14 @@ public class GetThumbnailsResponse extends AcsResponse {
 
 		public void setPhotoId(Long photoId) {
 			this.photoId = photoId;
+		}
+
+		public String getPhotoIdStr() {
+			return this.photoIdStr;
+		}
+
+		public void setPhotoIdStr(String photoIdStr) {
+			this.photoIdStr = photoIdStr;
 		}
 
 		public String getThumbnailUrl() {

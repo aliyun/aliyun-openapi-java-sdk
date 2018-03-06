@@ -39,6 +39,7 @@ public class ReactivatePhotosResponseUnmarshaller {
 		for (int i = 0; i < context.lengthValue("ReactivatePhotosResponse.Results.Length"); i++) {
 			Result result = new Result();
 			result.setId(context.longValue("ReactivatePhotosResponse.Results["+ i +"].Id"));
+			result.setIdStr(context.stringValue("ReactivatePhotosResponse.Results["+ i +"].IdStr"));
 			result.setCode(context.stringValue("ReactivatePhotosResponse.Results["+ i +"].Code"));
 			result.setMessage(context.stringValue("ReactivatePhotosResponse.Results["+ i +"].Message"));
 

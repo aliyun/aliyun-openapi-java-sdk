@@ -39,6 +39,7 @@ public class GetPhotosByMd5sResponseUnmarshaller {
 		for (int i = 0; i < context.lengthValue("GetPhotosByMd5sResponse.Photos.Length"); i++) {
 			Photo photo = new Photo();
 			photo.setId(context.longValue("GetPhotosByMd5sResponse.Photos["+ i +"].Id"));
+			photo.setIdStr(context.stringValue("GetPhotosByMd5sResponse.Photos["+ i +"].IdStr"));
 			photo.setTitle(context.stringValue("GetPhotosByMd5sResponse.Photos["+ i +"].Title"));
 			photo.setFileId(context.stringValue("GetPhotosByMd5sResponse.Photos["+ i +"].FileId"));
 			photo.setLocation(context.stringValue("GetPhotosByMd5sResponse.Photos["+ i +"].Location"));

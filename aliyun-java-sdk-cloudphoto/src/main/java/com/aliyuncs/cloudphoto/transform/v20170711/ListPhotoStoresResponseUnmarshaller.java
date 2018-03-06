@@ -40,6 +40,7 @@ public class ListPhotoStoresResponseUnmarshaller {
 		for (int i = 0; i < context.lengthValue("ListPhotoStoresResponse.PhotoStores.Length"); i++) {
 			PhotoStore photoStore = new PhotoStore();
 			photoStore.setId(context.longValue("ListPhotoStoresResponse.PhotoStores["+ i +"].Id"));
+			photoStore.setIdStr(context.stringValue("ListPhotoStoresResponse.PhotoStores["+ i +"].IdStr"));
 			photoStore.setName(context.stringValue("ListPhotoStoresResponse.PhotoStores["+ i +"].Name"));
 			photoStore.setRemark(context.stringValue("ListPhotoStoresResponse.PhotoStores["+ i +"].Remark"));
 			photoStore.setAutoCleanEnabled(context.booleanValue("ListPhotoStoresResponse.PhotoStores["+ i +"].AutoCleanEnabled"));

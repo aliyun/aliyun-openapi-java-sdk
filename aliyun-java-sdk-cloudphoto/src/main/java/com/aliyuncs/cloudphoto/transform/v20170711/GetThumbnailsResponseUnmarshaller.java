@@ -41,6 +41,7 @@ public class GetThumbnailsResponseUnmarshaller {
 			result.setCode(context.stringValue("GetThumbnailsResponse.Results["+ i +"].Code"));
 			result.setMessage(context.stringValue("GetThumbnailsResponse.Results["+ i +"].Message"));
 			result.setPhotoId(context.longValue("GetThumbnailsResponse.Results["+ i +"].PhotoId"));
+			result.setPhotoIdStr(context.stringValue("GetThumbnailsResponse.Results["+ i +"].PhotoIdStr"));
 			result.setThumbnailUrl(context.stringValue("GetThumbnailsResponse.Results["+ i +"].ThumbnailUrl"));
 
 			results.add(result);

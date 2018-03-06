@@ -34,6 +34,7 @@ public class CreatePhotoResponseUnmarshaller {
 
 		Photo photo = new Photo();
 		photo.setId(context.longValue("CreatePhotoResponse.Photo.Id"));
+		photo.setIdStr(context.stringValue("CreatePhotoResponse.Photo.IdStr"));
 		photo.setTitle(context.stringValue("CreatePhotoResponse.Photo.Title"));
 		photo.setFileId(context.stringValue("CreatePhotoResponse.Photo.FileId"));
 		photo.setLocation(context.stringValue("CreatePhotoResponse.Photo.Location"));

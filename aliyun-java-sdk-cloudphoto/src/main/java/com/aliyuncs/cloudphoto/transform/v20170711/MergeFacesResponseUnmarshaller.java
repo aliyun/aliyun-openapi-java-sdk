@@ -39,6 +39,7 @@ public class MergeFacesResponseUnmarshaller {
 		for (int i = 0; i < context.lengthValue("MergeFacesResponse.Results.Length"); i++) {
 			Result result = new Result();
 			result.setId(context.longValue("MergeFacesResponse.Results["+ i +"].Id"));
+			result.setIdStr(context.stringValue("MergeFacesResponse.Results["+ i +"].IdStr"));
 			result.setCode(context.stringValue("MergeFacesResponse.Results["+ i +"].Code"));
 			result.setMessage(context.stringValue("MergeFacesResponse.Results["+ i +"].Message"));
 

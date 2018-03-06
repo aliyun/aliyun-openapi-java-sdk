@@ -39,6 +39,7 @@ public class RemoveAlbumPhotosResponseUnmarshaller {
 		for (int i = 0; i < context.lengthValue("RemoveAlbumPhotosResponse.Results.Length"); i++) {
 			Result result = new Result();
 			result.setId(context.longValue("RemoveAlbumPhotosResponse.Results["+ i +"].Id"));
+			result.setIdStr(context.stringValue("RemoveAlbumPhotosResponse.Results["+ i +"].IdStr"));
 			result.setCode(context.stringValue("RemoveAlbumPhotosResponse.Results["+ i +"].Code"));
 			result.setMessage(context.stringValue("RemoveAlbumPhotosResponse.Results["+ i +"].Message"));
 

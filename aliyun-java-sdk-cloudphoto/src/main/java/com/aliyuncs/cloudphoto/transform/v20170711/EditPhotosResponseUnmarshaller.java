@@ -39,6 +39,7 @@ public class EditPhotosResponseUnmarshaller {
 		for (int i = 0; i < context.lengthValue("EditPhotosResponse.Results.Length"); i++) {
 			Result result = new Result();
 			result.setId(context.longValue("EditPhotosResponse.Results["+ i +"].Id"));
+			result.setIdStr(context.stringValue("EditPhotosResponse.Results["+ i +"].IdStr"));
 			result.setCode(context.stringValue("EditPhotosResponse.Results["+ i +"].Code"));
 			result.setMessage(context.stringValue("EditPhotosResponse.Results["+ i +"].Message"));
 

@@ -39,6 +39,7 @@ public class DeleteFacesResponseUnmarshaller {
 		for (int i = 0; i < context.lengthValue("DeleteFacesResponse.Results.Length"); i++) {
 			Result result = new Result();
 			result.setId(context.longValue("DeleteFacesResponse.Results["+ i +"].Id"));
+			result.setIdStr(context.stringValue("DeleteFacesResponse.Results["+ i +"].IdStr"));
 			result.setCode(context.stringValue("DeleteFacesResponse.Results["+ i +"].Code"));
 			result.setMessage(context.stringValue("DeleteFacesResponse.Results["+ i +"].Message"));
 

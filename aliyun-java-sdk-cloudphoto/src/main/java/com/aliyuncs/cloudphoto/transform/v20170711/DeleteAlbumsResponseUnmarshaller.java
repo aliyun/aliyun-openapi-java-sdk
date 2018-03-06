@@ -39,6 +39,7 @@ public class DeleteAlbumsResponseUnmarshaller {
 		for (int i = 0; i < context.lengthValue("DeleteAlbumsResponse.Results.Length"); i++) {
 			Result result = new Result();
 			result.setId(context.longValue("DeleteAlbumsResponse.Results["+ i +"].Id"));
+			result.setIdStr(context.stringValue("DeleteAlbumsResponse.Results["+ i +"].IdStr"));
 			result.setCode(context.stringValue("DeleteAlbumsResponse.Results["+ i +"].Code"));
 			result.setMessage(context.stringValue("DeleteAlbumsResponse.Results["+ i +"].Message"));
 

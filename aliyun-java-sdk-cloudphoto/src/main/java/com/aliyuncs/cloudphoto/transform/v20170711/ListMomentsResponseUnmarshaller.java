@@ -41,6 +41,7 @@ public class ListMomentsResponseUnmarshaller {
 		for (int i = 0; i < context.lengthValue("ListMomentsResponse.Moments.Length"); i++) {
 			Moment moment = new Moment();
 			moment.setId(context.longValue("ListMomentsResponse.Moments["+ i +"].Id"));
+			moment.setIdStr(context.stringValue("ListMomentsResponse.Moments["+ i +"].IdStr"));
 			moment.setLocationName(context.stringValue("ListMomentsResponse.Moments["+ i +"].LocationName"));
 			moment.setPhotosCount(context.integerValue("ListMomentsResponse.Moments["+ i +"].PhotosCount"));
 			moment.setState(context.stringValue("ListMomentsResponse.Moments["+ i +"].State"));

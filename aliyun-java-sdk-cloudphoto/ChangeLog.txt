@@ -1,3 +1,8 @@
+2018-03-06 Version: 1.1.9
+1, add GetAlbumsByNames
+2, add ListEvent/CreateEvent/EditEvent/DeleteEvent/GetEvent
+3, add return IdStr for string
+
 2018-01-11 Version: 1.1.8
 1, replace photo tag 2000 upgrade to 5000
 2, add TrashQuota

@@ -83,6 +83,8 @@ public class MoveAlbumPhotosResponse extends AcsResponse {
 
 		private Long id;
 
+		private String idStr;
+
 		private String code;
 
 		private String message;
@@ -93,6 +95,14 @@ public class MoveAlbumPhotosResponse extends AcsResponse {
 
 		public void setId(Long id) {
 			this.id = id;
+		}
+
+		public String getIdStr() {
+			return this.idStr;
+		}
+
+		public void setIdStr(String idStr) {
+			this.idStr = idStr;
 		}
 
 		public String getCode() {

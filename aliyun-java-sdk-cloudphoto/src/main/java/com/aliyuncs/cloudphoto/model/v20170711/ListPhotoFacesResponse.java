@@ -83,6 +83,8 @@ public class ListPhotoFacesResponse extends AcsResponse {
 
 		private Long faceId;
 
+		private String faceIdStr;
+
 		private String faceName;
 
 		private List<String> axis;
@@ -93,6 +95,14 @@ public class ListPhotoFacesResponse extends AcsResponse {
 
 		public void setFaceId(Long faceId) {
 			this.faceId = faceId;
+		}
+
+		public String getFaceIdStr() {
+			return this.faceIdStr;
+		}
+
+		public void setFaceIdStr(String faceIdStr) {
+			this.faceIdStr = faceIdStr;
 		}
 
 		public String getFaceName() {

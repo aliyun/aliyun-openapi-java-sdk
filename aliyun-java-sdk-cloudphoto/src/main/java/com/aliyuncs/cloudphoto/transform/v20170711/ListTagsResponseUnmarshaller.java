@@ -40,12 +40,14 @@ public class ListTagsResponseUnmarshaller {
 		for (int i = 0; i < context.lengthValue("ListTagsResponse.Tags.Length"); i++) {
 			Tag tag = new Tag();
 			tag.setId(context.longValue("ListTagsResponse.Tags["+ i +"].Id"));
+			tag.setIdStr(context.stringValue("ListTagsResponse.Tags["+ i +"].IdStr"));
 			tag.setName(context.stringValue("ListTagsResponse.Tags["+ i +"].Name"));
 			tag.setIsSubTag(context.booleanValue("ListTagsResponse.Tags["+ i +"].IsSubTag"));
 			tag.setParentTag(context.stringValue("ListTagsResponse.Tags["+ i +"].ParentTag"));
 
 			Cover cover = new Cover();
 			cover.setId(context.longValue("ListTagsResponse.Tags["+ i +"].Cover.Id"));
+			cover.setIdStr(context.stringValue("ListTagsResponse.Tags["+ i +"].Cover.IdStr"));
 			cover.setTitle(context.stringValue("ListTagsResponse.Tags["+ i +"].Cover.Title"));
 			cover.setFileId(context.stringValue("ListTagsResponse.Tags["+ i +"].Cover.FileId"));
 			cover.setState(context.stringValue("ListTagsResponse.Tags["+ i +"].Cover.State"));

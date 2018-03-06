@@ -41,6 +41,7 @@ public class GetFramedPhotoUrlsResponseUnmarshaller {
 			result.setCode(context.stringValue("GetFramedPhotoUrlsResponse.Results["+ i +"].Code"));
 			result.setMessage(context.stringValue("GetFramedPhotoUrlsResponse.Results["+ i +"].Message"));
 			result.setPhotoId(context.longValue("GetFramedPhotoUrlsResponse.Results["+ i +"].PhotoId"));
+			result.setPhotoIdStr(context.stringValue("GetFramedPhotoUrlsResponse.Results["+ i +"].PhotoIdStr"));
 			result.setFramedPhotoUrl(context.stringValue("GetFramedPhotoUrlsResponse.Results["+ i +"].FramedPhotoUrl"));
 
 			results.add(result);

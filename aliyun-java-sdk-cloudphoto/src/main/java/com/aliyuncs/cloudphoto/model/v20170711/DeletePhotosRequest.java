@@ -35,9 +35,9 @@ public class DeletePhotosRequest extends RpcAcsRequest<DeletePhotosResponse> {
 
 	private String libraryId;
 
-	private List<Long> photoIds;
-
 	private String storeName;
+
+	private List<Long> photoIds;
 
 	public String getLibraryId() {
 		return this.libraryId;
@@ -47,6 +47,17 @@ public class DeletePhotosRequest extends RpcAcsRequest<DeletePhotosResponse> {
 		this.libraryId = libraryId;
 		if(libraryId != null){
 			putQueryParameter("LibraryId", libraryId);
+		}
+	}
+
+	public String getStoreName() {
+		return this.storeName;
+	}
+
+	public void setStoreName(String storeName) {
+		this.storeName = storeName;
+		if(storeName != null){
+			putQueryParameter("StoreName", storeName);
 		}
 	}
 
@@ -61,17 +72,6 @@ public class DeletePhotosRequest extends RpcAcsRequest<DeletePhotosResponse> {
 				putQueryParameter("PhotoId." + (i + 1) , photoIds.get(i));
 			}
 		}	
-	}
-
-	public String getStoreName() {
-		return this.storeName;
-	}
-
-	public void setStoreName(String storeName) {
-		this.storeName = storeName;
-		if(storeName != null){
-			putQueryParameter("StoreName", storeName);
-		}
 	}
 
 	@Override

@@ -41,6 +41,7 @@ public class ListAlbumPhotosResponseUnmarshaller {
 		for (int i = 0; i < context.lengthValue("ListAlbumPhotosResponse.Results.Length"); i++) {
 			Result result = new Result();
 			result.setPhotoId(context.longValue("ListAlbumPhotosResponse.Results["+ i +"].PhotoId"));
+			result.setPhotoIdStr(context.stringValue("ListAlbumPhotosResponse.Results["+ i +"].PhotoIdStr"));
 			result.setState(context.stringValue("ListAlbumPhotosResponse.Results["+ i +"].State"));
 
 			results.add(result);

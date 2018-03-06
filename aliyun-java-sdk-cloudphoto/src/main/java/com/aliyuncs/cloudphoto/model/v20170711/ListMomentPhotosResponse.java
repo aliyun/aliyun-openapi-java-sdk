@@ -103,6 +103,8 @@ public class ListMomentPhotosResponse extends AcsResponse {
 
 		private Long photoId;
 
+		private String photoIdStr;
+
 		private String state;
 
 		public Long getPhotoId() {
@@ -111,6 +113,14 @@ public class ListMomentPhotosResponse extends AcsResponse {
 
 		public void setPhotoId(Long photoId) {
 			this.photoId = photoId;
+		}
+
+		public String getPhotoIdStr() {
+			return this.photoIdStr;
+		}
+
+		public void setPhotoIdStr(String photoIdStr) {
+			this.photoIdStr = photoIdStr;
 		}
 
 		public String getState() {
