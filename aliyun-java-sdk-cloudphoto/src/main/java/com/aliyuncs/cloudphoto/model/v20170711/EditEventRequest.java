@@ -38,6 +38,8 @@ public class EditEventRequest extends RpcAcsRequest<EditEventResponse> {
 
 	private String watermarkPhotoId;
 
+	private String identity;
+
 	private String splashPhotoId;
 
 	private String libraryId;
@@ -84,6 +86,17 @@ public class EditEventRequest extends RpcAcsRequest<EditEventResponse> {
 		this.watermarkPhotoId = watermarkPhotoId;
 		if(watermarkPhotoId != null){
 			putQueryParameter("WatermarkPhotoId", watermarkPhotoId);
+		}
+	}
+
+	public String getIdentity() {
+		return this.identity;
+	}
+
+	public void setIdentity(String identity) {
+		this.identity = identity;
+		if(identity != null){
+			putQueryParameter("Identity", identity);
 		}
 	}
 
