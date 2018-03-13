@@ -1,3 +1,8 @@
+2018-03-13 Version: 3.6.0
+1, Supports specifying the https certificate path
+2, Optimize the logic for resolving Endpoint
+3, Bug fixes
+
 2018-01-31 Version: 3.5.1
 1, Adding the setEndpoint method to the Request.
 

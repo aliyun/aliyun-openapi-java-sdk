@@ -23,6 +23,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
+import java.security.GeneralSecurityException;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
@@ -102,7 +103,7 @@ public class HttpResponse extends HttpRequest {
             response.getHttpContentType());
     }
 
-    public static HttpResponse getResponse(HttpRequest request) throws IOException {
+    public static HttpResponse getResponse(HttpRequest request) throws IOException, GeneralSecurityException {
         OutputStream out = null;
         InputStream content = null;
         HttpResponse response = null;

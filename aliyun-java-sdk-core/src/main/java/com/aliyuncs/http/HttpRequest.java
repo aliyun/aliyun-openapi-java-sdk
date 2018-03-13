@@ -21,10 +21,14 @@ package com.aliyuncs.http;
 import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.security.GeneralSecurityException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Collections;
 import java.util.Map.Entry;
+
+import javax.net.ssl.HttpsURLConnection;
+import javax.net.ssl.SSLSocketFactory;
 
 import com.aliyuncs.utils.ParameterHelper;
 
@@ -42,6 +46,8 @@ public class HttpRequest {
     protected Map<String, String> headers = null;
     protected Integer connectTimeout = null;
     protected Integer readTimeout = null;
+
+    protected SSLSocketFactory sslSocketFactory = null;
 
     public HttpRequest(String strUrl) {
         this.url = strUrl;
@@ -150,7 +156,7 @@ public class HttpRequest {
         return Collections.unmodifiableMap(headers);
     }
 
-    public HttpURLConnection buildHttpConnection() throws IOException {
+    public HttpURLConnection buildHttpConnection() throws IOException, GeneralSecurityException {
         Map<String, String> mappedHeaders = this.headers;
         String strUrl = url;
 
@@ -169,11 +175,24 @@ public class HttpRequest {
             url = new URL(strUrl);
         }
         System.setProperty("sun.net.http.allowRestrictedHeaders", "true");
-        HttpURLConnection httpConn = (HttpURLConnection)url.openConnection();
+        HttpURLConnection httpConn = null;
+        if (url.getProtocol().equalsIgnoreCase("https")) {
+            if (sslSocketFactory != null) {
+                HttpsURLConnection httpsConn = (HttpsURLConnection)url.openConnection();
+                httpsConn.setSSLSocketFactory(sslSocketFactory);
+                httpConn = httpsConn;
+            }
+        }
+
+        if (httpConn == null) {
+            httpConn = (HttpURLConnection)url.openConnection();
+        }
+
         httpConn.setRequestMethod(this.method.toString());
         httpConn.setDoOutput(true);
         httpConn.setDoInput(true);
         httpConn.setUseCaches(false);
+
         if (this.getConnectTimeout() != null) {
             httpConn.setConnectTimeout(this.getConnectTimeout());
         }
@@ -198,6 +217,7 @@ public class HttpRequest {
         if (MethodType.POST.equals(this.method) && null != urlArray && urlArray.length == 2) {
             httpConn.getOutputStream().write(urlArray[1].getBytes());
         }
+
         return httpConn;
     }
 
@@ -211,4 +231,11 @@ public class HttpRequest {
         return null;
     }
 
+    public SSLSocketFactory getSslSocketFactory() {
+        return sslSocketFactory;
+    }
+
+    public void setSslSocketFactory(SSLSocketFactory sslSocketFactory) {
+        this.sslSocketFactory = sslSocketFactory;
+    }
 }

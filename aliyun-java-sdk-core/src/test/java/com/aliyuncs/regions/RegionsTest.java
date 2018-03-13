@@ -31,7 +31,7 @@ public class RegionsTest {
 
     @Test
     public void testParseRegions() {
-        InternalEndpointsParser parser = new InternalEndpointsParser();
+        LocalEndpointResolver parser = new LocalEndpointResolver();
         Endpoint endpoint = null;
         try {
             endpoint = parser.getEndpoint("cn-hangzhou", "Rds");

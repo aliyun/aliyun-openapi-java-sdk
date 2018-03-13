@@ -89,7 +89,7 @@ public class ECSMetadataServiceCredentialsFetcher {
 
         try {
             response = HttpResponse.getResponse(request);
-        } catch (IOException e) {
+        } catch (Exception e) {
             throw new ClientException("Failed to connect ECS Metadata Service: " + e.toString());
         }
 
