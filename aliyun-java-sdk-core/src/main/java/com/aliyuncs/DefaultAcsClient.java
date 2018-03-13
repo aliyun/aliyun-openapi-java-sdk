@@ -36,14 +36,19 @@ import com.aliyuncs.reader.ReaderFactory;
 import com.aliyuncs.regions.Endpoint;
 import com.aliyuncs.regions.ProductDomain;
 import com.aliyuncs.transform.UnmarshallerContext;
+import com.aliyuncs.utils.HttpsUtils;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.net.SocketTimeoutException;
+import java.security.GeneralSecurityException;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.List;
+
+import javax.net.ssl.SSLException;
+import javax.net.ssl.SSLSocketFactory;
 
 @SuppressWarnings("deprecation")
 public class DefaultAcsClient implements IAcsClient {
@@ -52,26 +57,41 @@ public class DefaultAcsClient implements IAcsClient {
     private IClientProfile clientProfile = null;
     private AlibabaCloudCredentialsProvider credentialsProvider;
 
+    private SSLSocketFactory sslSocketFactory = null;
+
     public DefaultAcsClient() {
         this.clientProfile = DefaultProfile.getProfile();
+        initSslSocketFactory();
     }
 
     public DefaultAcsClient(IClientProfile profile) {
         this.clientProfile = profile;
         this.credentialsProvider = new StaticCredentialsProvider(profile);
         this.clientProfile.setCredentialsProvider(this.credentialsProvider);
+        initSslSocketFactory();
     }
 
     public DefaultAcsClient(IClientProfile profile, AlibabaCloudCredentials credentials) {
         this.clientProfile = profile;
         this.credentialsProvider = new StaticCredentialsProvider(credentials);
         this.clientProfile.setCredentialsProvider(this.credentialsProvider);
+        initSslSocketFactory();
     }
 
     public DefaultAcsClient(IClientProfile profile, AlibabaCloudCredentialsProvider credentialsProvider) {
         this.clientProfile = profile;
         this.credentialsProvider = credentialsProvider;
         this.clientProfile.setCredentialsProvider(this.credentialsProvider);
+        initSslSocketFactory();
+    }
+
+    private void initSslSocketFactory(){
+        try {
+            this.sslSocketFactory = HttpsUtils.buildJavaSSLSocketFactory(clientProfile.getCertPath());
+        }catch(SSLException e){
+            // keep exceptions for keep compatible
+            System.err.println("buildSSLSocketFactory failed" + e.toString());
+        }
     }
 
     @Override
@@ -146,18 +166,18 @@ public class DefaultAcsClient implements IAcsClient {
         HttpResponse baseResponse = this.doAction(request, regionId, credential);
         return parseAcsResponse(request.getResponseClass(), baseResponse);
     }
-    
+
     @SuppressWarnings("unchecked")
     @Override
-    public CommonResponse getCommonResponse(CommonRequest request) 
-            throws ServerException, ClientException{
+    public CommonResponse getCommonResponse(CommonRequest request)
+        throws ServerException, ClientException {
         HttpResponse baseResponse = this.doAction(request.buildRequest());
         String stringContent = getResponseContent(baseResponse);
         CommonResponse response = new CommonResponse();
         response.setData(stringContent);
         response.setHttpStatus(baseResponse.getStatus());
         response.setHttpResponse(baseResponse);
-        
+
         return response;
     }
 
@@ -218,12 +238,12 @@ public class DefaultAcsClient implements IAcsClient {
         );
     }
 
-    private  <T extends AcsResponse> HttpResponse doAction(AcsRequest<T> request,
-                                                           boolean autoRetry, int maxRetryNumber,
-                                                           String regionId,
-                                                           AlibabaCloudCredentials credentials,
-                                                           Signer signer, FormatType format,
-                                                           List<Endpoint> endpoints)
+    private <T extends AcsResponse> HttpResponse doAction(AcsRequest<T> request,
+                                                          boolean autoRetry, int maxRetryNumber,
+                                                          String regionId,
+                                                          AlibabaCloudCredentials credentials,
+                                                          Signer signer, FormatType format,
+                                                          List<Endpoint> endpoints)
         throws ClientException, ServerException {
 
         try {
@@ -242,11 +262,12 @@ public class DefaultAcsClient implements IAcsClient {
             }
 
             boolean shouldRetry = true;
-            for (int retryTimes = 0; shouldRetry; retryTimes ++) {
+            for (int retryTimes = 0; shouldRetry; retryTimes++) {
 
                 shouldRetry = autoRetry && retryTimes < maxRetryNumber;
 
                 HttpRequest httpRequest = request.signRequest(signer, credentials, format, domain);
+                httpRequest.setSslSocketFactory(this.sslSocketFactory);
 
                 HttpResponse response;
                 response = HttpResponse.getResponse(httpRequest);
@@ -274,6 +295,8 @@ public class DefaultAcsClient implements IAcsClient {
             throw new ClientException("SDK.ServerUnreachable", "Server unreachable: " + exp.toString());
         } catch (NoSuchAlgorithmException exp) {
             throw new ClientException("SDK.InvalidMD5Algorithm", "MD5 hash is not supported by client side.");
+        } catch (GeneralSecurityException exp) {
+            throw new ClientException("SDK.SecureConnectorError", "Send request with specific SecureConnector failed: " + exp.toString());
         }
 
         return null;
@@ -290,14 +313,14 @@ public class DefaultAcsClient implements IAcsClient {
         } catch (Exception e) {
             throw new ClientException("SDK.InvalidResponseClass", "Unable to allocate " + clasz.getName() + " class");
         }
-        
+
         String responseEndpoint = clasz.getName().substring(clasz.getName().lastIndexOf(".") + 1);
         if (response.checkShowJsonItemName()) {
             context.setResponseMap(reader.read(stringContent, responseEndpoint));
         } else {
-            context.setResponseMap(reader.readForHideArrayItem(stringContent, responseEndpoint)); 
+            context.setResponseMap(reader.readForHideArrayItem(stringContent, responseEndpoint));
         }
-        
+
         context.setHttpResponse(httpResponse);
         response.getInstance(context);
         return response;

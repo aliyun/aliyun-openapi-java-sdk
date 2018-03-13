@@ -181,6 +181,7 @@ public class DefaultAcsClientTest extends BaseTest {
         HttpResponse response = clientV2.doAction(request);
         Assert.assertNotNull(response);
         String responseContent = new String(response.getHttpContent());
+        System.out.println(responseContent);
         JSONObject responseJson = JSON.parseObject(responseContent);
         Assert.assertEquals("HEAD_PARAM_CONTENT", responseJson.getJSONObject("Headers").getString("HeaderParam"));
         Assert.assertEquals("QUERY_PARAM_CONTENT", responseJson.getJSONObject("Params").getString("QueryParam"));

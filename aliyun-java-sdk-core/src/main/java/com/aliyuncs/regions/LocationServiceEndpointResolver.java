@@ -1,24 +1,41 @@
 package com.aliyuncs.regions;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 import com.aliyuncs.auth.Credential;
 import com.aliyuncs.exceptions.ClientException;
+import org.json.JSONObject;
 
 @SuppressWarnings("deprecation")
-public class RemoteEndpointsParser implements IEndpointsProvider {
+public class LocationServiceEndpointResolver implements EndpointResolver {
 
     private DescribeEndpointService describeEndpointService;
+
+    private Map<String, String> serviceCodeMap = new HashMap<String, String>();
+
+    public LocationServiceEndpointResolver() {
+        JSONObject endpointData = new JSONObject(EndpointConfig.ENDPOINT_PROFILE);
+        for (Object productDataObj : endpointData.getJSONArray("products")) {
+            JSONObject productData = (JSONObject)productDataObj;
+            String popCode = productData.getString("code");
+            String serviceCode = productData.getString("location_service_code");
+            if (popCode != null && popCode.length() > 0 && serviceCode != null && serviceCode.length() > 0) {
+                serviceCodeMap.put(popCode.toLowerCase(), serviceCode);
+            }
+        }
+    }
 
     public void setDescribeEndpointService(DescribeEndpointService describeEndpointService) {
         this.describeEndpointService = describeEndpointService;
     }
 
-    public static RemoteEndpointsParser initRemoteEndpointsParser() {
-        RemoteEndpointsParser parser = new RemoteEndpointsParser();
+    public static LocationServiceEndpointResolver initRemoteEndpointsParser() {
+        LocationServiceEndpointResolver parser = new LocationServiceEndpointResolver();
         parser.setDescribeEndpointService(new DescribeEndpointServiceImpl());
         return parser;
     }
@@ -32,7 +49,10 @@ public class RemoteEndpointsParser implements IEndpointsProvider {
     public Endpoint getEndpoint(String regionId, String product, String serviceCode, String endpointType,
                                 Credential credential, LocationConfig locationConfig) throws ClientException {
         if (serviceCode == null) {
-            return null;
+            serviceCode = serviceCodeMap.get(product.toLowerCase());
+            if (serviceCode == null) {
+                return null;
+            }
         }
         Endpoint endpoint = null;
 

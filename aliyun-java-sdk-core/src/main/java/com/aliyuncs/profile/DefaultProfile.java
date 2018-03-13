@@ -34,11 +34,11 @@ import com.aliyuncs.exceptions.ClientException;
 import com.aliyuncs.http.FormatType;
 import com.aliyuncs.regions.CustomizedEndpointsParser;
 import com.aliyuncs.regions.Endpoint;
-import com.aliyuncs.regions.IEndpointsProvider;
-import com.aliyuncs.regions.InternalEndpointsParser;
+import com.aliyuncs.regions.EndpointResolver;
+import com.aliyuncs.regions.LocalEndpointResolver;
 import com.aliyuncs.regions.LocationConfig;
 import com.aliyuncs.regions.ProductDomain;
-import com.aliyuncs.regions.RemoteEndpointsParser;
+import com.aliyuncs.regions.LocationServiceEndpointResolver;
 import com.aliyuncs.utils.CacheTimeHelper;
 
 @SuppressWarnings("deprecation")
@@ -49,16 +49,18 @@ public class DefaultProfile implements IClientProfile {
 
     private String regionId = null;
     private FormatType acceptFormat = null;
-    private IEndpointsProvider iendpoints = null;
-    private IEndpointsProvider remoteProvider = null;
+    private EndpointResolver iendpoints = null;
+    private EndpointResolver remoteProvider = null;
     private ICredentialProvider icredential = null;
     private Credential credential;
     private LocationConfig locationConfig = new LocationConfig();
 
+    private String certPath;
+
     private DefaultProfile() {
         this.locationConfig = new LocationConfig();
-        this.iendpoints = new InternalEndpointsParser();
-        this.remoteProvider = RemoteEndpointsParser.initRemoteEndpointsParser();
+        this.iendpoints = new LocalEndpointResolver();
+        this.remoteProvider = LocationServiceEndpointResolver.initRemoteEndpointsParser();
     }
 
     private DefaultProfile(String regionId) {
@@ -67,42 +69,42 @@ public class DefaultProfile implements IClientProfile {
     }
 
     private DefaultProfile(String region, Credential creden) {
-        this.iendpoints = new InternalEndpointsParser();
-        this.remoteProvider = RemoteEndpointsParser.initRemoteEndpointsParser();
+        this.iendpoints = new LocalEndpointResolver();
+        this.remoteProvider = LocationServiceEndpointResolver.initRemoteEndpointsParser();
         this.credential = creden;
         this.regionId = region;
         this.locationConfig = new LocationConfig();
     }
 
-    private DefaultProfile(String region, Credential creden, IEndpointsProvider provider) {
+    private DefaultProfile(String region, Credential creden, EndpointResolver provider) {
         this.iendpoints = provider;
         this.credential = creden;
         this.regionId = region;
         this.locationConfig = new LocationConfig();
-        this.remoteProvider = RemoteEndpointsParser.initRemoteEndpointsParser();
+        this.remoteProvider = LocationServiceEndpointResolver.initRemoteEndpointsParser();
     }
 
     private DefaultProfile(ICredentialProvider icredential) {
         this.icredential = icredential;
-        this.iendpoints = new InternalEndpointsParser();
-        this.remoteProvider = RemoteEndpointsParser.initRemoteEndpointsParser();
+        this.iendpoints = new LocalEndpointResolver();
+        this.remoteProvider = LocationServiceEndpointResolver.initRemoteEndpointsParser();
         this.locationConfig = new LocationConfig();
     }
 
     private DefaultProfile(String region, ICredentialProvider icredential) {
         this.regionId = region;
         this.icredential = icredential;
-        this.iendpoints = new InternalEndpointsParser();
+        this.iendpoints = new LocalEndpointResolver();
         this.locationConfig = new LocationConfig();
-        this.remoteProvider = RemoteEndpointsParser.initRemoteEndpointsParser();
+        this.remoteProvider = LocationServiceEndpointResolver.initRemoteEndpointsParser();
     }
 
     private DefaultProfile(ICredentialProvider icredential, String region, FormatType format) {
         this.regionId = region;
         this.acceptFormat = format;
         this.icredential = icredential;
-        this.iendpoints = new InternalEndpointsParser();
-        this.remoteProvider = RemoteEndpointsParser.initRemoteEndpointsParser();
+        this.iendpoints = new LocalEndpointResolver();
+        this.remoteProvider = LocationServiceEndpointResolver.initRemoteEndpointsParser();
         this.locationConfig = new LocationConfig();
     }
 
@@ -127,7 +129,7 @@ public class DefaultProfile implements IClientProfile {
     public ISigner getSigner() {
         return null;
     }
-    
+
     @Override
     public synchronized void setLocationConfig(String regionId, String product, String endpoint) {
         this.locationConfig = LocationConfig.createLocationConfig(regionId, product, endpoint);
@@ -157,7 +159,7 @@ public class DefaultProfile implements IClientProfile {
         if (product == null) {
             return endpoints;
         }
-        
+
         if (null == endpoints) {
             Endpoint endpoint = null;
             if (serviceCode != null) {
@@ -173,11 +175,9 @@ public class DefaultProfile implements IClientProfile {
                 CacheTimeHelper.addLastClearTimePerProduct(product, regionId, new Date());
             }
         } else if (Endpoint.findProductDomain(regionId, product, endpoints) == null || CacheTimeHelper.CheckEndPointCacheIsExpire(product, regionId)) {
-            Endpoint endpoint = null;
-            if (serviceCode != null) {
-                endpoint = remoteProvider.getEndpoint(regionId, product, serviceCode, endpointType,
-                    credential, locationConfig);
-            }
+            Endpoint endpoint;
+            endpoint = remoteProvider.getEndpoint(regionId, product, serviceCode, endpointType,
+                credential, locationConfig);
             if (endpoint == null) {
                 endpoint = iendpoints.getEndpoint(regionId, product);
             }
@@ -216,7 +216,7 @@ public class DefaultProfile implements IClientProfile {
         profile = new DefaultProfile(regionId, creden);
         return profile;
     }
-    
+
     /**
      * <pre>
      * 给个性化用户使用的，CustomizedEndpointsParser 通过这个去解析endpoint,
@@ -229,7 +229,7 @@ public class DefaultProfile implements IClientProfile {
     public synchronized static DefaultProfile getProfile(String regionId, Map<String, String> productDomainMap,
                                                          String accessKeyId, String secret) {
         Credential creden = new Credential(accessKeyId, secret);
-        IEndpointsProvider provider = CustomizedEndpointsParser.initParser(regionId, productDomainMap);
+        EndpointResolver provider = CustomizedEndpointsParser.initParser(regionId, productDomainMap);
         profile = new DefaultProfile(regionId, creden, provider);
         return profile;
     }
@@ -237,19 +237,19 @@ public class DefaultProfile implements IClientProfile {
     public synchronized static DefaultProfile getProfile(String regionId, Map<String, String> productDomainMap,
                                                          String accessKeyId, String secret, String stsToken) {
         Credential creden = new Credential(accessKeyId, secret, stsToken);
-        IEndpointsProvider provider = CustomizedEndpointsParser.initParser(regionId, productDomainMap);
+        EndpointResolver provider = CustomizedEndpointsParser.initParser(regionId, productDomainMap);
         profile = new DefaultProfile(regionId, creden, provider);
         return profile;
     }
 
-    public synchronized static DefaultProfile getProfile(String regionId, IEndpointsProvider provider,
+    public synchronized static DefaultProfile getProfile(String regionId, EndpointResolver provider,
                                                          String accessKeyId, String secret) {
         Credential creden = new Credential(accessKeyId, secret);
         profile = new DefaultProfile(regionId, creden, provider);
         return profile;
     }
 
-    public synchronized static DefaultProfile getProfile(String regionId, IEndpointsProvider provider,
+    public synchronized static DefaultProfile getProfile(String regionId, EndpointResolver provider,
                                                          String accessKeyId, String secret, String stsToken) {
         Credential creden = new Credential(accessKeyId, secret, stsToken);
         profile = new DefaultProfile(regionId, creden, provider);
@@ -264,9 +264,9 @@ public class DefaultProfile implements IClientProfile {
         throws ClientException {
         addEndpoint(endpointName, regionId, product, domain, true);
     }
-    
+
     public synchronized static void addEndpoint(String endpointName, String regionId, String product, String domain, boolean isNeverExpire)
-            throws ClientException {
+        throws ClientException {
         if (null == endpoints) {
             endpoints = getProfile().getEndpoints(regionId, product);
         }
@@ -280,7 +280,7 @@ public class DefaultProfile implements IClientProfile {
         if (isNeverExpire) {
             Date date = new Date(32472115200000L);
             CacheTimeHelper.addLastClearTimePerProduct(product, regionId, date);
-        }       
+        }
     }
 
     private static void addEndpoint_(String endpointName, String regionId, String product, String domain) {
@@ -330,11 +330,11 @@ public class DefaultProfile implements IClientProfile {
         }
         return null;
     }
-    
-    public void mockRemoteProvider(IEndpointsProvider remoteProvider) {
+
+    public void mockRemoteProvider(EndpointResolver remoteProvider) {
         this.remoteProvider = remoteProvider;
     }
-    
+
     @Override
     public void setCredentialsProvider(AlibabaCloudCredentialsProvider credentialsProvider) {
         if (credential != null) {
@@ -343,4 +343,13 @@ public class DefaultProfile implements IClientProfile {
         credential = new CredentialsBackupCompatibilityAdaptor(credentialsProvider);
     }
 
+    @Override
+    public String getCertPath() {
+        return certPath;
+    }
+
+    @Override
+    public void setCertPath(String certPath) {
+        this.certPath = certPath;
+    }
 }

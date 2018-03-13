@@ -27,30 +27,7 @@ import org.junit.Test;
 public class HttpTest {
 
     @Test
-    public void test() {
-        testHttpGet();
-        testHttpPut();
-        testHttps();
-    }
-
-    private void testHttps() {
-        HttpRequest request = new HttpRequest("https://acs.aliyun-inc.com/");
-        request.setMethod(MethodType.GET);
-        try {
-            X509TrustAll.ignoreSSLCertificate();
-            HttpResponse response = HttpResponse.getResponse(request);
-            String strResult = new String(response.getHttpContent(), response.getEncoding());
-            assertEquals(400, response.getStatus());
-            assertNotNull(strResult);
-        } catch (IOException e) {
-            fail(e.toString());
-            e.printStackTrace();
-        } finally {
-            X509TrustAll.restoreSSLCertificate();
-        }
-    }
-
-    private void testHttpGet() {
+    public void testHttpGet() {
         HttpRequest request = new HttpRequest("http://acs.aliyun-inc.com/");
         request.setMethod(MethodType.GET);
         try {
@@ -58,13 +35,14 @@ public class HttpTest {
             String strResult = new String(response.getHttpContent(), response.getEncoding());
             assertEquals(400, response.getStatus());
             assertNotNull(strResult);
-        } catch (IOException e) {
+        } catch (Exception e) {
             fail(e.toString());
             e.printStackTrace();
         }
     }
 
-    private void testHttpPut() {
+    @Test
+    public void testHttpPut() {
         String content = "<Product name=\"Yundun\" domain=\"yundun.aliyuncs.com\"/>";
         HttpRequest request = new HttpRequest("http://acs.aliyun-inc.com/");
         request.setMethod(MethodType.PUT);
@@ -74,7 +52,7 @@ public class HttpTest {
             String strResult = new String(response.getHttpContent(), response.getEncoding());
             assertEquals(400, response.getStatus());
             assertNotNull(strResult);
-        } catch (IOException e) {
+        } catch (Exception e) {
             fail(e.toString());
             e.printStackTrace();
         }

@@ -22,7 +22,7 @@ import com.aliyuncs.auth.Credential;
 import com.aliyuncs.exceptions.ClientException;
 
 @SuppressWarnings("deprecation")
-public interface IEndpointsProvider {
+public interface EndpointResolver {
     //  Endpoint getEndpoints() throws ClientException;
 
     Endpoint getEndpoint(String region, String product) throws ClientException;

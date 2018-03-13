@@ -9,7 +9,7 @@ import com.aliyuncs.auth.Credential;
 import com.aliyuncs.exceptions.ClientException;
 
 @SuppressWarnings("deprecation")
-public class MockRemoteEndpointsParser implements IEndpointsProvider {
+public class MockRemoteEndpointsParser implements EndpointResolver {
 
     @Override
     public Endpoint getEndpoint(String region, String product) throws ClientException {

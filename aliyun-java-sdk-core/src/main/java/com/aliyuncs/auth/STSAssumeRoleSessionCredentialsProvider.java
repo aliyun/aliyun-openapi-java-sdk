@@ -65,6 +65,7 @@ public class STSAssumeRoleSessionCredentialsProvider implements AlibabaCloudCred
     private BasicSessionCredentials credentials = null;
 
     /**
+     *
      * For test
      * To know how many rounds AssumeRole has been called
      */

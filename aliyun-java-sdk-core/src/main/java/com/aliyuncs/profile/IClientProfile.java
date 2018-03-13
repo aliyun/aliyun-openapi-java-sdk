@@ -54,4 +54,9 @@ public interface IClientProfile {
      * @param credentialsProvider
      */
     public void setCredentialsProvider(AlibabaCloudCredentialsProvider credentialsProvider);
+
+    public void setCertPath(String certPath);
+
+    public String getCertPath();
+
 }

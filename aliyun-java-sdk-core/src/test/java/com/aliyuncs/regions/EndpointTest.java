@@ -101,4 +101,5 @@ public class EndpointTest {
         Assert.assertTrue("Ecs".equals(productDomain.getProductName()));
         Assert.assertTrue("ecs.cn-shanghai-a.aliyuncs.com".equals(productDomain.getDomianName()));
     }
+
 }
