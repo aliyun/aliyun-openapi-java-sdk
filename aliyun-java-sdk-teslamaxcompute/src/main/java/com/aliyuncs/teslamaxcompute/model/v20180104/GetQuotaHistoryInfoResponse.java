@@ -101,6 +101,10 @@ public class GetQuotaHistoryInfoResponse extends AcsResponse {
 
 			private CpuUsed cpuUsed;
 
+			private MemMaxQuota memMaxQuota;
+
+			private MemMinQuota memMinQuota;
+
 			public CpuMaxQuota getCpuMaxQuota() {
 				return this.cpuMaxQuota;
 			}
@@ -133,134 +137,216 @@ public class GetQuotaHistoryInfoResponse extends AcsResponse {
 				this.cpuUsed = cpuUsed;
 			}
 
+			public MemMaxQuota getMemMaxQuota() {
+				return this.memMaxQuota;
+			}
+
+			public void setMemMaxQuota(MemMaxQuota memMaxQuota) {
+				this.memMaxQuota = memMaxQuota;
+			}
+
+			public MemMinQuota getMemMinQuota() {
+				return this.memMinQuota;
+			}
+
+			public void setMemMinQuota(MemMinQuota memMinQuota) {
+				this.memMinQuota = memMinQuota;
+			}
+
 			public static class CpuMaxQuota {
 
-				private Integer min;
+				private Float min;
 
-				private Integer max;
+				private Float max;
 
-				private Integer avg;
+				private Float avg;
 
-				public Integer getMin() {
+				public Float getMin() {
 					return this.min;
 				}
 
-				public void setMin(Integer min) {
+				public void setMin(Float min) {
 					this.min = min;
 				}
 
-				public Integer getMax() {
+				public Float getMax() {
 					return this.max;
 				}
 
-				public void setMax(Integer max) {
+				public void setMax(Float max) {
 					this.max = max;
 				}
 
-				public Integer getAvg() {
+				public Float getAvg() {
 					return this.avg;
 				}
 
-				public void setAvg(Integer avg) {
+				public void setAvg(Float avg) {
 					this.avg = avg;
 				}
 			}
 
 			public static class CpuMinQuota {
 
-				private Integer min;
+				private Float min;
 
-				private Integer max;
+				private Float max;
 
-				private Integer avg;
+				private Float avg;
 
-				public Integer getMin() {
+				public Float getMin() {
 					return this.min;
 				}
 
-				public void setMin(Integer min) {
+				public void setMin(Float min) {
 					this.min = min;
 				}
 
-				public Integer getMax() {
+				public Float getMax() {
 					return this.max;
 				}
 
-				public void setMax(Integer max) {
+				public void setMax(Float max) {
 					this.max = max;
 				}
 
-				public Integer getAvg() {
+				public Float getAvg() {
 					return this.avg;
 				}
 
-				public void setAvg(Integer avg) {
+				public void setAvg(Float avg) {
 					this.avg = avg;
 				}
 			}
 
 			public static class MemUsed {
 
-				private Integer min;
+				private Float min;
 
-				private Integer max;
+				private Float max;
 
-				private Integer avg;
+				private Float avg;
 
-				public Integer getMin() {
+				public Float getMin() {
 					return this.min;
 				}
 
-				public void setMin(Integer min) {
+				public void setMin(Float min) {
 					this.min = min;
 				}
 
-				public Integer getMax() {
+				public Float getMax() {
 					return this.max;
 				}
 
-				public void setMax(Integer max) {
+				public void setMax(Float max) {
 					this.max = max;
 				}
 
-				public Integer getAvg() {
+				public Float getAvg() {
 					return this.avg;
 				}
 
-				public void setAvg(Integer avg) {
+				public void setAvg(Float avg) {
 					this.avg = avg;
 				}
 			}
 
 			public static class CpuUsed {
 
-				private Integer min;
+				private Float min;
 
-				private Integer max;
+				private Float max;
 
-				private Integer avg;
+				private Float avg;
 
-				public Integer getMin() {
+				public Float getMin() {
 					return this.min;
 				}
 
-				public void setMin(Integer min) {
+				public void setMin(Float min) {
 					this.min = min;
 				}
 
-				public Integer getMax() {
+				public Float getMax() {
 					return this.max;
 				}
 
-				public void setMax(Integer max) {
+				public void setMax(Float max) {
 					this.max = max;
 				}
 
-				public Integer getAvg() {
+				public Float getAvg() {
 					return this.avg;
 				}
 
-				public void setAvg(Integer avg) {
+				public void setAvg(Float avg) {
+					this.avg = avg;
+				}
+			}
+
+			public static class MemMaxQuota {
+
+				private Float min;
+
+				private Float max;
+
+				private Float avg;
+
+				public Float getMin() {
+					return this.min;
+				}
+
+				public void setMin(Float min) {
+					this.min = min;
+				}
+
+				public Float getMax() {
+					return this.max;
+				}
+
+				public void setMax(Float max) {
+					this.max = max;
+				}
+
+				public Float getAvg() {
+					return this.avg;
+				}
+
+				public void setAvg(Float avg) {
+					this.avg = avg;
+				}
+			}
+
+			public static class MemMinQuota {
+
+				private Float min;
+
+				private Float max;
+
+				private Float avg;
+
+				public Float getMin() {
+					return this.min;
+				}
+
+				public void setMin(Float min) {
+					this.min = min;
+				}
+
+				public Float getMax() {
+					return this.max;
+				}
+
+				public void setMax(Float max) {
+					this.max = max;
+				}
+
+				public Float getAvg() {
+					return this.avg;
+				}
+
+				public void setAvg(Float avg) {
 					this.avg = avg;
 				}
 			}

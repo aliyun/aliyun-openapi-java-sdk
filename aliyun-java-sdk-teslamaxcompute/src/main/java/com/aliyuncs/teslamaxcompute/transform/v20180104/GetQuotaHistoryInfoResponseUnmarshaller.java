@@ -27,6 +27,8 @@ import com.aliyuncs.teslamaxcompute.model.v20180104.GetQuotaHistoryInfoResponse.
 import com.aliyuncs.teslamaxcompute.model.v20180104.GetQuotaHistoryInfoResponse.DataItem.Point.CpuMaxQuota;
 import com.aliyuncs.teslamaxcompute.model.v20180104.GetQuotaHistoryInfoResponse.DataItem.Point.CpuMinQuota;
 import com.aliyuncs.teslamaxcompute.model.v20180104.GetQuotaHistoryInfoResponse.DataItem.Point.CpuUsed;
+import com.aliyuncs.teslamaxcompute.model.v20180104.GetQuotaHistoryInfoResponse.DataItem.Point.MemMaxQuota;
+import com.aliyuncs.teslamaxcompute.model.v20180104.GetQuotaHistoryInfoResponse.DataItem.Point.MemMinQuota;
 import com.aliyuncs.teslamaxcompute.model.v20180104.GetQuotaHistoryInfoResponse.DataItem.Point.MemUsed;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -47,28 +49,40 @@ public class GetQuotaHistoryInfoResponseUnmarshaller {
 			Point point = new Point();
 
 			CpuMaxQuota cpuMaxQuota = new CpuMaxQuota();
-			cpuMaxQuota.setMin(context.integerValue("GetQuotaHistoryInfoResponse.Data["+ i +"].Point.CpuMaxQuota.Min"));
-			cpuMaxQuota.setMax(context.integerValue("GetQuotaHistoryInfoResponse.Data["+ i +"].Point.CpuMaxQuota.Max"));
-			cpuMaxQuota.setAvg(context.integerValue("GetQuotaHistoryInfoResponse.Data["+ i +"].Point.CpuMaxQuota.Avg"));
+			cpuMaxQuota.setMin(context.floatValue("GetQuotaHistoryInfoResponse.Data["+ i +"].Point.CpuMaxQuota.Min"));
+			cpuMaxQuota.setMax(context.floatValue("GetQuotaHistoryInfoResponse.Data["+ i +"].Point.CpuMaxQuota.Max"));
+			cpuMaxQuota.setAvg(context.floatValue("GetQuotaHistoryInfoResponse.Data["+ i +"].Point.CpuMaxQuota.Avg"));
 			point.setCpuMaxQuota(cpuMaxQuota);
 
 			CpuMinQuota cpuMinQuota = new CpuMinQuota();
-			cpuMinQuota.setMin(context.integerValue("GetQuotaHistoryInfoResponse.Data["+ i +"].Point.CpuMinQuota.Min"));
-			cpuMinQuota.setMax(context.integerValue("GetQuotaHistoryInfoResponse.Data["+ i +"].Point.CpuMinQuota.Max"));
-			cpuMinQuota.setAvg(context.integerValue("GetQuotaHistoryInfoResponse.Data["+ i +"].Point.CpuMinQuota.Avg"));
+			cpuMinQuota.setMin(context.floatValue("GetQuotaHistoryInfoResponse.Data["+ i +"].Point.CpuMinQuota.Min"));
+			cpuMinQuota.setMax(context.floatValue("GetQuotaHistoryInfoResponse.Data["+ i +"].Point.CpuMinQuota.Max"));
+			cpuMinQuota.setAvg(context.floatValue("GetQuotaHistoryInfoResponse.Data["+ i +"].Point.CpuMinQuota.Avg"));
 			point.setCpuMinQuota(cpuMinQuota);
 
 			MemUsed memUsed = new MemUsed();
-			memUsed.setMin(context.integerValue("GetQuotaHistoryInfoResponse.Data["+ i +"].Point.MemUsed.Min"));
-			memUsed.setMax(context.integerValue("GetQuotaHistoryInfoResponse.Data["+ i +"].Point.MemUsed.Max"));
-			memUsed.setAvg(context.integerValue("GetQuotaHistoryInfoResponse.Data["+ i +"].Point.MemUsed.Avg"));
+			memUsed.setMin(context.floatValue("GetQuotaHistoryInfoResponse.Data["+ i +"].Point.MemUsed.Min"));
+			memUsed.setMax(context.floatValue("GetQuotaHistoryInfoResponse.Data["+ i +"].Point.MemUsed.Max"));
+			memUsed.setAvg(context.floatValue("GetQuotaHistoryInfoResponse.Data["+ i +"].Point.MemUsed.Avg"));
 			point.setMemUsed(memUsed);
 
 			CpuUsed cpuUsed = new CpuUsed();
-			cpuUsed.setMin(context.integerValue("GetQuotaHistoryInfoResponse.Data["+ i +"].Point.CpuUsed.Min"));
-			cpuUsed.setMax(context.integerValue("GetQuotaHistoryInfoResponse.Data["+ i +"].Point.CpuUsed.Max"));
-			cpuUsed.setAvg(context.integerValue("GetQuotaHistoryInfoResponse.Data["+ i +"].Point.CpuUsed.Avg"));
+			cpuUsed.setMin(context.floatValue("GetQuotaHistoryInfoResponse.Data["+ i +"].Point.CpuUsed.Min"));
+			cpuUsed.setMax(context.floatValue("GetQuotaHistoryInfoResponse.Data["+ i +"].Point.CpuUsed.Max"));
+			cpuUsed.setAvg(context.floatValue("GetQuotaHistoryInfoResponse.Data["+ i +"].Point.CpuUsed.Avg"));
 			point.setCpuUsed(cpuUsed);
+
+			MemMaxQuota memMaxQuota = new MemMaxQuota();
+			memMaxQuota.setMin(context.floatValue("GetQuotaHistoryInfoResponse.Data["+ i +"].Point.MemMaxQuota.Min"));
+			memMaxQuota.setMax(context.floatValue("GetQuotaHistoryInfoResponse.Data["+ i +"].Point.MemMaxQuota.Max"));
+			memMaxQuota.setAvg(context.floatValue("GetQuotaHistoryInfoResponse.Data["+ i +"].Point.MemMaxQuota.Avg"));
+			point.setMemMaxQuota(memMaxQuota);
+
+			MemMinQuota memMinQuota = new MemMinQuota();
+			memMinQuota.setMin(context.floatValue("GetQuotaHistoryInfoResponse.Data["+ i +"].Point.MemMinQuota.Min"));
+			memMinQuota.setMax(context.floatValue("GetQuotaHistoryInfoResponse.Data["+ i +"].Point.MemMinQuota.Max"));
+			memMinQuota.setAvg(context.floatValue("GetQuotaHistoryInfoResponse.Data["+ i +"].Point.MemMinQuota.Avg"));
+			point.setMemMinQuota(memMinQuota);
 			dataItem.setPoint(point);
 
 			data.add(dataItem);
