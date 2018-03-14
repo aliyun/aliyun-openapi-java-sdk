@@ -1,3 +1,6 @@
+2018-03-14 Version: 2.7.4
+1, add new interfasce
+
 2018-03-05 Version: 2.7.3
 1, add new interface
 

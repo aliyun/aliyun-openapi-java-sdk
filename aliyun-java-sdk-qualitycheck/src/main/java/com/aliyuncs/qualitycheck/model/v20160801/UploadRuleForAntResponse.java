@@ -16,14 +16,14 @@ package com.aliyuncs.qualitycheck.model.v20160801;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.qualitycheck.transform.v20160801.UploadRuleResponseUnmarshaller;
+import com.aliyuncs.qualitycheck.transform.v20160801.UploadRuleForAntResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class UploadRuleResponse extends AcsResponse {
+public class UploadRuleForAntResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -76,7 +76,7 @@ public class UploadRuleResponse extends AcsResponse {
 	}
 
 	@Override
-	public UploadRuleResponse getInstance(UnmarshallerContext context) {
-		return	UploadRuleResponseUnmarshaller.unmarshall(this, context);
+	public UploadRuleForAntResponse getInstance(UnmarshallerContext context) {
+		return	UploadRuleForAntResponseUnmarshaller.unmarshall(this, context);
 	}
 }

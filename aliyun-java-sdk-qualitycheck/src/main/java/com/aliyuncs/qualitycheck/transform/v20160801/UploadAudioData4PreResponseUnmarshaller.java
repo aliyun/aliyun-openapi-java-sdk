@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.qualitycheck.transform.v20160801;
 
 import com.aliyuncs.qualitycheck.model.v20160801.UploadAudioData4PreResponse;
