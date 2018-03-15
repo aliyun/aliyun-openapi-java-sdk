@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.rds.model.v20140815;
 
 import java.util.List;
@@ -52,6 +53,8 @@ public class DescribeDBInstanceIPArrayListResponse extends AcsResponse {
 
 		private String securityIPList;
 
+		private String whitelistNetworkType;
+
 		public String getDBInstanceIPArrayName() {
 			return this.dBInstanceIPArrayName;
 		}
@@ -74,6 +77,14 @@ public class DescribeDBInstanceIPArrayListResponse extends AcsResponse {
 
 		public void setSecurityIPList(String securityIPList) {
 			this.securityIPList = securityIPList;
+		}
+
+		public String getWhitelistNetworkType() {
+			return this.whitelistNetworkType;
+		}
+
+		public void setWhitelistNetworkType(String whitelistNetworkType) {
+			this.whitelistNetworkType = whitelistNetworkType;
 		}
 	}
 

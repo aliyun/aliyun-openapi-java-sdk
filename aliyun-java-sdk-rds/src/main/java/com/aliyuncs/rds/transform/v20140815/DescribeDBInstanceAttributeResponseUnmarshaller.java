@@ -1,21 +1,17 @@
 /*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
+
 package com.aliyuncs.rds.transform.v20140815;
 
 import java.util.ArrayList;
@@ -36,6 +32,17 @@ public class DescribeDBInstanceAttributeResponseUnmarshaller {
 		List<DBInstanceAttribute> items = new ArrayList<DBInstanceAttribute>();
 		for (int i = 0; i < context.lengthValue("DescribeDBInstanceAttributeResponse.Items.Length"); i++) {
 			DBInstanceAttribute dBInstanceAttribute = new DBInstanceAttribute();
+			dBInstanceAttribute.setDBInstanceDiskUsed(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].DBInstanceDiskUsed"));
+			dBInstanceAttribute.setGuardDBInstanceName(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].GuardDBInstanceName"));
+			dBInstanceAttribute.setCanTempUpgrade(context.booleanValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].CanTempUpgrade"));
+			dBInstanceAttribute.setTempUpgradeTimeStart(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].TempUpgradeTimeStart"));
+			dBInstanceAttribute.setTempUpgradeTimeEnd(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].TempUpgradeTimeEnd"));
+			dBInstanceAttribute.setTempUpgradeRecoveryTime(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].TempUpgradeRecoveryTime"));
+			dBInstanceAttribute.setTempUpgradeRecoveryClass(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].TempUpgradeRecoveryClass"));
+			dBInstanceAttribute.setTempUpgradeRecoveryCpu(context.integerValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].TempUpgradeRecoveryCpu"));
+			dBInstanceAttribute.setTempUpgradeRecoveryMemory(context.integerValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].TempUpgradeRecoveryMemory"));
+			dBInstanceAttribute.setTempUpgradeRecoveryMaxIOPS(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].TempUpgradeRecoveryMaxIOPS"));
+			dBInstanceAttribute.setTempUpgradeRecoveryMaxConnections(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].TempUpgradeRecoveryMaxConnections"));
 			dBInstanceAttribute.setInsId(context.integerValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].InsId"));
 			dBInstanceAttribute.setDBInstanceId(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].DBInstanceId"));
 			dBInstanceAttribute.setPayType(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].PayType"));
@@ -49,6 +56,7 @@ public class DescribeDBInstanceAttributeResponseUnmarshaller {
 			dBInstanceAttribute.setDBInstanceClass(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].DBInstanceClass"));
 			dBInstanceAttribute.setDBInstanceMemory(context.longValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].DBInstanceMemory"));
 			dBInstanceAttribute.setDBInstanceStorage(context.integerValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].DBInstanceStorage"));
+			dBInstanceAttribute.setVpcCloudInstanceId(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].VpcCloudInstanceId"));
 			dBInstanceAttribute.setDBInstanceNetType(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].DBInstanceNetType"));
 			dBInstanceAttribute.setDBInstanceStatus(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].DBInstanceStatus"));
 			dBInstanceAttribute.setDBInstanceDescription(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].DBInstanceDescription"));
@@ -67,10 +75,12 @@ public class DescribeDBInstanceAttributeResponseUnmarshaller {
 			dBInstanceAttribute.setDBInstanceCPU(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].DBInstanceCPU"));
 			dBInstanceAttribute.setIncrementSourceDBInstanceId(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].IncrementSourceDBInstanceId"));
 			dBInstanceAttribute.setGuardDBInstanceId(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].GuardDBInstanceId"));
+			dBInstanceAttribute.setReplicateId(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].ReplicateId"));
 			dBInstanceAttribute.setTempDBInstanceId(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].TempDBInstanceId"));
 			dBInstanceAttribute.setSecurityIPList(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].SecurityIPList"));
 			dBInstanceAttribute.setZoneId(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].ZoneId"));
 			dBInstanceAttribute.setInstanceNetworkType(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].InstanceNetworkType"));
+			dBInstanceAttribute.setAdvancedFeatures(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].AdvancedFeatures"));
 			dBInstanceAttribute.setCategory(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].Category"));
 			dBInstanceAttribute.setAccountType(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].AccountType"));
 			dBInstanceAttribute.setSupportUpgradeAccountType(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].SupportUpgradeAccountType"));

@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.rds.transform.v20140815;
 
 import java.util.ArrayList;
@@ -33,6 +34,7 @@ public class DescribeDBInstanceIPArrayListResponseUnmarshaller {
 			dBInstanceIPArray.setDBInstanceIPArrayName(context.stringValue("DescribeDBInstanceIPArrayListResponse.Items["+ i +"].DBInstanceIPArrayName"));
 			dBInstanceIPArray.setDBInstanceIPArrayAttribute(context.stringValue("DescribeDBInstanceIPArrayListResponse.Items["+ i +"].DBInstanceIPArrayAttribute"));
 			dBInstanceIPArray.setSecurityIPList(context.stringValue("DescribeDBInstanceIPArrayListResponse.Items["+ i +"].SecurityIPList"));
+			dBInstanceIPArray.setWhitelistNetworkType(context.stringValue("DescribeDBInstanceIPArrayListResponse.Items["+ i +"].WhitelistNetworkType"));
 
 			items.add(dBInstanceIPArray);
 		}

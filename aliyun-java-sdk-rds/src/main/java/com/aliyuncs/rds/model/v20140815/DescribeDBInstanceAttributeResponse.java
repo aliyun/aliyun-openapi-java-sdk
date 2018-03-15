@@ -1,21 +1,17 @@
 /*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
+
 package com.aliyuncs.rds.model.v20140815;
 
 import java.util.List;
@@ -51,6 +47,28 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 
 	public static class DBInstanceAttribute {
 
+		private String dBInstanceDiskUsed;
+
+		private String guardDBInstanceName;
+
+		private Boolean canTempUpgrade;
+
+		private String tempUpgradeTimeStart;
+
+		private String tempUpgradeTimeEnd;
+
+		private String tempUpgradeRecoveryTime;
+
+		private String tempUpgradeRecoveryClass;
+
+		private Integer tempUpgradeRecoveryCpu;
+
+		private Integer tempUpgradeRecoveryMemory;
+
+		private String tempUpgradeRecoveryMaxIOPS;
+
+		private String tempUpgradeRecoveryMaxConnections;
+
 		private Integer insId;
 
 		private String dBInstanceId;
@@ -76,6 +94,8 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 		private Long dBInstanceMemory;
 
 		private Integer dBInstanceStorage;
+
+		private String vpcCloudInstanceId;
 
 		private String dBInstanceNetType;
 
@@ -113,6 +133,8 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 
 		private String guardDBInstanceId;
 
+		private String replicateId;
+
 		private String tempDBInstanceId;
 
 		private String securityIPList;
@@ -120,6 +142,8 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 		private String zoneId;
 
 		private String instanceNetworkType;
+
+		private String advancedFeatures;
 
 		private String category;
 
@@ -136,6 +160,94 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 		private String resourceGroupId;
 
 		private List<ReadOnlyDBInstanceId> readOnlyDBInstanceIds;
+
+		public String getDBInstanceDiskUsed() {
+			return this.dBInstanceDiskUsed;
+		}
+
+		public void setDBInstanceDiskUsed(String dBInstanceDiskUsed) {
+			this.dBInstanceDiskUsed = dBInstanceDiskUsed;
+		}
+
+		public String getGuardDBInstanceName() {
+			return this.guardDBInstanceName;
+		}
+
+		public void setGuardDBInstanceName(String guardDBInstanceName) {
+			this.guardDBInstanceName = guardDBInstanceName;
+		}
+
+		public Boolean getCanTempUpgrade() {
+			return this.canTempUpgrade;
+		}
+
+		public void setCanTempUpgrade(Boolean canTempUpgrade) {
+			this.canTempUpgrade = canTempUpgrade;
+		}
+
+		public String getTempUpgradeTimeStart() {
+			return this.tempUpgradeTimeStart;
+		}
+
+		public void setTempUpgradeTimeStart(String tempUpgradeTimeStart) {
+			this.tempUpgradeTimeStart = tempUpgradeTimeStart;
+		}
+
+		public String getTempUpgradeTimeEnd() {
+			return this.tempUpgradeTimeEnd;
+		}
+
+		public void setTempUpgradeTimeEnd(String tempUpgradeTimeEnd) {
+			this.tempUpgradeTimeEnd = tempUpgradeTimeEnd;
+		}
+
+		public String getTempUpgradeRecoveryTime() {
+			return this.tempUpgradeRecoveryTime;
+		}
+
+		public void setTempUpgradeRecoveryTime(String tempUpgradeRecoveryTime) {
+			this.tempUpgradeRecoveryTime = tempUpgradeRecoveryTime;
+		}
+
+		public String getTempUpgradeRecoveryClass() {
+			return this.tempUpgradeRecoveryClass;
+		}
+
+		public void setTempUpgradeRecoveryClass(String tempUpgradeRecoveryClass) {
+			this.tempUpgradeRecoveryClass = tempUpgradeRecoveryClass;
+		}
+
+		public Integer getTempUpgradeRecoveryCpu() {
+			return this.tempUpgradeRecoveryCpu;
+		}
+
+		public void setTempUpgradeRecoveryCpu(Integer tempUpgradeRecoveryCpu) {
+			this.tempUpgradeRecoveryCpu = tempUpgradeRecoveryCpu;
+		}
+
+		public Integer getTempUpgradeRecoveryMemory() {
+			return this.tempUpgradeRecoveryMemory;
+		}
+
+		public void setTempUpgradeRecoveryMemory(Integer tempUpgradeRecoveryMemory) {
+			this.tempUpgradeRecoveryMemory = tempUpgradeRecoveryMemory;
+		}
+
+		public String getTempUpgradeRecoveryMaxIOPS() {
+			return this.tempUpgradeRecoveryMaxIOPS;
+		}
+
+		public void setTempUpgradeRecoveryMaxIOPS(String tempUpgradeRecoveryMaxIOPS) {
+			this.tempUpgradeRecoveryMaxIOPS = tempUpgradeRecoveryMaxIOPS;
+		}
+
+		public String getTempUpgradeRecoveryMaxConnections() {
+			return this.tempUpgradeRecoveryMaxConnections;
+		}
+
+		public void setTempUpgradeRecoveryMaxConnections(String tempUpgradeRecoveryMaxConnections) {
+			this.tempUpgradeRecoveryMaxConnections = tempUpgradeRecoveryMaxConnections;
+		}
 
 		public Integer getInsId() {
 			return this.insId;
@@ -239,6 +351,14 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 
 		public void setDBInstanceStorage(Integer dBInstanceStorage) {
 			this.dBInstanceStorage = dBInstanceStorage;
+		}
+
+		public String getVpcCloudInstanceId() {
+			return this.vpcCloudInstanceId;
+		}
+
+		public void setVpcCloudInstanceId(String vpcCloudInstanceId) {
+			this.vpcCloudInstanceId = vpcCloudInstanceId;
 		}
 
 		public String getDBInstanceNetType() {
@@ -385,6 +505,14 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 			this.guardDBInstanceId = guardDBInstanceId;
 		}
 
+		public String getReplicateId() {
+			return this.replicateId;
+		}
+
+		public void setReplicateId(String replicateId) {
+			this.replicateId = replicateId;
+		}
+
 		public String getTempDBInstanceId() {
 			return this.tempDBInstanceId;
 		}
@@ -415,6 +543,14 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 
 		public void setInstanceNetworkType(String instanceNetworkType) {
 			this.instanceNetworkType = instanceNetworkType;
+		}
+
+		public String getAdvancedFeatures() {
+			return this.advancedFeatures;
+		}
+
+		public void setAdvancedFeatures(String advancedFeatures) {
+			this.advancedFeatures = advancedFeatures;
 		}
 
 		public String getCategory() {

@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.rds.model.v20140815;
 
 import com.aliyuncs.AcsResponse;
@@ -27,6 +28,8 @@ public class DescribeSQLCollectorPolicyResponse extends AcsResponse {
 
 	private String sQLCollectorStatus;
 
+	private Integer storagePeriod;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -41,6 +44,14 @@ public class DescribeSQLCollectorPolicyResponse extends AcsResponse {
 
 	public void setSQLCollectorStatus(String sQLCollectorStatus) {
 		this.sQLCollectorStatus = sQLCollectorStatus;
+	}
+
+	public Integer getStoragePeriod() {
+		return this.storagePeriod;
+	}
+
+	public void setStoragePeriod(Integer storagePeriod) {
+		this.storagePeriod = storagePeriod;
 	}
 
 	@Override

@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.rds.transform.v20140815;
 
 import com.aliyuncs.rds.model.v20140815.DescribeSQLCollectorPolicyResponse;
@@ -23,6 +24,7 @@ public class DescribeSQLCollectorPolicyResponseUnmarshaller {
 		
 		describeSQLCollectorPolicyResponse.setRequestId(context.stringValue("DescribeSQLCollectorPolicyResponse.RequestId"));
 		describeSQLCollectorPolicyResponse.setSQLCollectorStatus(context.stringValue("DescribeSQLCollectorPolicyResponse.SQLCollectorStatus"));
+		describeSQLCollectorPolicyResponse.setStoragePeriod(context.integerValue("DescribeSQLCollectorPolicyResponse.StoragePeriod"));
 	 
 	 	return describeSQLCollectorPolicyResponse;
 	}
