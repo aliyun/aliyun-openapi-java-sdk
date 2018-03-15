@@ -1,3 +1,6 @@
+2018-03-15 Version: 3.2.2
+1, Synchronize to the latest api list
+
 2017-11-14 Version: 3.2.1
 1, 发布新版SDK，与open API同步
 
