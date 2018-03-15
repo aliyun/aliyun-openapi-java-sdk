@@ -1,3 +1,6 @@
+2018-03-15 Version: 1.5.0
+1, Add QueryCustomerSaleInfo API.
+
 2018-03-13 Version: 1.4.0
 1, API GetQuotaHistoryInfo fix field error.
 

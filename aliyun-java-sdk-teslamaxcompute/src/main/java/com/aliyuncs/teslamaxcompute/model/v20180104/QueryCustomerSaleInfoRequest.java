@@ -20,15 +20,28 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class QueryTopologyRequest extends RpcAcsRequest<QueryTopologyResponse> {
+public class QueryCustomerSaleInfoRequest extends RpcAcsRequest<QueryCustomerSaleInfoResponse> {
 	
-	public QueryTopologyRequest() {
-		super("TeslaMaxCompute", "2018-01-04", "QueryTopology");
+	public QueryCustomerSaleInfoRequest() {
+		super("TeslaMaxCompute", "2018-01-04", "QueryCustomerSaleInfo");
+	}
+
+	private String region;
+
+	public String getRegion() {
+		return this.region;
+	}
+
+	public void setRegion(String region) {
+		this.region = region;
+		if(region != null){
+			putQueryParameter("Region", region);
+		}
 	}
 
 	@Override
-	public Class<QueryTopologyResponse> getResponseClass() {
-		return QueryTopologyResponse.class;
+	public Class<QueryCustomerSaleInfoResponse> getResponseClass() {
+		return QueryCustomerSaleInfoResponse.class;
 	}
 
 }
