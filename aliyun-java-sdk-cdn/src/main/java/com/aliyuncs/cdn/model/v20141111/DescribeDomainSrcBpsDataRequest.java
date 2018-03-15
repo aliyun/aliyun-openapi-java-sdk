@@ -1,21 +1,17 @@
 /*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
+
 package com.aliyuncs.cdn.model.v20141111;
 
 import com.aliyuncs.RpcAcsRequest;
@@ -30,9 +26,9 @@ public class DescribeDomainSrcBpsDataRequest extends RpcAcsRequest<DescribeDomai
 		super("Cdn", "2014-11-11", "DescribeDomainSrcBpsData");
 	}
 
-	private String fixTimeGap;
+	private String startTime;
 
-	private String securityToken;
+	private String fixTimeGap;
 
 	private String timeMerge;
 
@@ -40,11 +36,20 @@ public class DescribeDomainSrcBpsDataRequest extends RpcAcsRequest<DescribeDomai
 
 	private String endTime;
 
+	private Long ownerId;
+
 	private String interval;
 
-	private String startTime;
+	public String getStartTime() {
+		return this.startTime;
+	}
 
-	private Long ownerId;
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime);
+		}
+	}
 
 	public String getFixTimeGap() {
 		return this.fixTimeGap;
@@ -54,17 +59,6 @@ public class DescribeDomainSrcBpsDataRequest extends RpcAcsRequest<DescribeDomai
 		this.fixTimeGap = fixTimeGap;
 		if(fixTimeGap != null){
 			putQueryParameter("FixTimeGap", fixTimeGap);
-		}
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 
@@ -101,28 +95,6 @@ public class DescribeDomainSrcBpsDataRequest extends RpcAcsRequest<DescribeDomai
 		}
 	}
 
-	public String getInterval() {
-		return this.interval;
-	}
-
-	public void setInterval(String interval) {
-		this.interval = interval;
-		if(interval != null){
-			putQueryParameter("Interval", interval);
-		}
-	}
-
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("StartTime", startTime);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -131,6 +103,17 @@ public class DescribeDomainSrcBpsDataRequest extends RpcAcsRequest<DescribeDomai
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getInterval() {
+		return this.interval;
+	}
+
+	public void setInterval(String interval) {
+		this.interval = interval;
+		if(interval != null){
+			putQueryParameter("Interval", interval);
 		}
 	}
 

@@ -1,21 +1,17 @@
 /*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
+
 package com.aliyuncs.cdn.model.v20141111;
 
 import java.util.List;
@@ -85,6 +81,10 @@ public class BatchDescribeDomainBpsDataResponse extends AcsResponse {
 
 		private Float l1Bps;
 
+		private Float l1InnerBps;
+
+		private Float l1OutBps;
+
 		private String domainName;
 
 		public String getTimestamp() {
@@ -101,6 +101,22 @@ public class BatchDescribeDomainBpsDataResponse extends AcsResponse {
 
 		public void setL1Bps(Float l1Bps) {
 			this.l1Bps = l1Bps;
+		}
+
+		public Float getL1InnerBps() {
+			return this.l1InnerBps;
+		}
+
+		public void setL1InnerBps(Float l1InnerBps) {
+			this.l1InnerBps = l1InnerBps;
+		}
+
+		public Float getL1OutBps() {
+			return this.l1OutBps;
+		}
+
+		public void setL1OutBps(Float l1OutBps) {
+			this.l1OutBps = l1OutBps;
 		}
 
 		public String getDomainName() {

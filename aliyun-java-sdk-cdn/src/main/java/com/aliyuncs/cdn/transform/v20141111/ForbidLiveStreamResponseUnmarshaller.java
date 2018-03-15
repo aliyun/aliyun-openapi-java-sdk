@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.cdn.transform.v20141111;
 
 import com.aliyuncs.cdn.model.v20141111.ForbidLiveStreamResponse;

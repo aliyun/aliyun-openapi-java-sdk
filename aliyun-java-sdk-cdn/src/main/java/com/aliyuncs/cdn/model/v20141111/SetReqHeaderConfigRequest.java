@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.cdn.model.v20141111;
 
 import com.aliyuncs.RpcAcsRequest;
@@ -26,6 +27,8 @@ public class SetReqHeaderConfigRequest extends RpcAcsRequest<SetReqHeaderConfigR
 	}
 
 	private String securityToken;
+
+	private Long configId;
 
 	private String domainName;
 
@@ -43,6 +46,17 @@ public class SetReqHeaderConfigRequest extends RpcAcsRequest<SetReqHeaderConfigR
 		this.securityToken = securityToken;
 		if(securityToken != null){
 			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	public Long getConfigId() {
+		return this.configId;
+	}
+
+	public void setConfigId(Long configId) {
+		this.configId = configId;
+		if(configId != null){
+			putQueryParameter("ConfigId", configId.toString());
 		}
 	}
 

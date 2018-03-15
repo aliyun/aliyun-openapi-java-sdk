@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.cdn.transform.v20141111;
 
 import java.util.ArrayList;
@@ -35,6 +36,8 @@ public class BatchDescribeDomainBpsDataResponseUnmarshaller {
 			DataModule dataModule = new DataModule();
 			dataModule.setTimestamp(context.stringValue("BatchDescribeDomainBpsDataResponse.BpsDatas["+ i +"].Timestamp"));
 			dataModule.setL1Bps(context.floatValue("BatchDescribeDomainBpsDataResponse.BpsDatas["+ i +"].L1Bps"));
+			dataModule.setL1InnerBps(context.floatValue("BatchDescribeDomainBpsDataResponse.BpsDatas["+ i +"].L1InnerBps"));
+			dataModule.setL1OutBps(context.floatValue("BatchDescribeDomainBpsDataResponse.BpsDatas["+ i +"].L1OutBps"));
 			dataModule.setDomainName(context.stringValue("BatchDescribeDomainBpsDataResponse.BpsDatas["+ i +"].DomainName"));
 
 			bpsDatas.add(dataModule);

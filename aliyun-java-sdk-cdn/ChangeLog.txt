@@ -1,3 +1,6 @@
+2018-03-15 Version: 2.6.3
+1, Synchronize to the latest api list
+
 2017-12-15 Version: 2.6.2
 1, Update SetReqAuthConfig.
 2, Add Scdn API.
