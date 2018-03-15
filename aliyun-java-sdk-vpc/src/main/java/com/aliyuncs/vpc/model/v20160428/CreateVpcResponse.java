@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.vpc.model.v20160428;
 
 import com.aliyuncs.AcsResponse;
@@ -30,6 +31,8 @@ public class CreateVpcResponse extends AcsResponse {
 	private String vRouterId;
 
 	private String routeTableId;
+
+	private String resourceGroupId;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -61,6 +64,14 @@ public class CreateVpcResponse extends AcsResponse {
 
 	public void setRouteTableId(String routeTableId) {
 		this.routeTableId = routeTableId;
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
 	}
 
 	@Override

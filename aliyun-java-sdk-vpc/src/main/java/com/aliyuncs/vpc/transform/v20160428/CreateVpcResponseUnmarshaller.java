@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.vpc.transform.v20160428;
 
 import com.aliyuncs.vpc.model.v20160428.CreateVpcResponse;
@@ -25,6 +26,7 @@ public class CreateVpcResponseUnmarshaller {
 		createVpcResponse.setVpcId(context.stringValue("CreateVpcResponse.VpcId"));
 		createVpcResponse.setVRouterId(context.stringValue("CreateVpcResponse.VRouterId"));
 		createVpcResponse.setRouteTableId(context.stringValue("CreateVpcResponse.RouteTableId"));
+		createVpcResponse.setResourceGroupId(context.stringValue("CreateVpcResponse.ResourceGroupId"));
 	 
 	 	return createVpcResponse;
 	}

@@ -1,3 +1,6 @@
+2018-03-15 Version: 3.0.2
+1, Synchronize to the latest api list
+
 2017-11-16 Version: 3.0.1
 1, 修改了一些方法的访问次数。
 2, 新增了错误码。

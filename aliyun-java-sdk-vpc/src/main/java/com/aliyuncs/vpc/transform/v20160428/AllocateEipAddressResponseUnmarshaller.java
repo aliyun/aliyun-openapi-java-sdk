@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.vpc.transform.v20160428;
 
 import com.aliyuncs.vpc.model.v20160428.AllocateEipAddressResponse;
@@ -25,6 +26,7 @@ public class AllocateEipAddressResponseUnmarshaller {
 		allocateEipAddressResponse.setAllocationId(context.stringValue("AllocateEipAddressResponse.AllocationId"));
 		allocateEipAddressResponse.setEipAddress(context.stringValue("AllocateEipAddressResponse.EipAddress"));
 		allocateEipAddressResponse.setOrderId(context.longValue("AllocateEipAddressResponse.OrderId"));
+		allocateEipAddressResponse.setResourceGroupId(context.stringValue("AllocateEipAddressResponse.ResourceGroupId"));
 	 
 	 	return allocateEipAddressResponse;
 	}

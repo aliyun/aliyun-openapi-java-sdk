@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.vpc.transform.v20160428;
 
 import com.aliyuncs.vpc.model.v20160428.DescribeVpnGatewayResponse;
@@ -34,6 +35,9 @@ public class DescribeVpnGatewayResponseUnmarshaller {
 		describeVpnGatewayResponse.setStatus(context.stringValue("DescribeVpnGatewayResponse.Status"));
 		describeVpnGatewayResponse.setBusinessStatus(context.stringValue("DescribeVpnGatewayResponse.BusinessStatus"));
 		describeVpnGatewayResponse.setChargeType(context.stringValue("DescribeVpnGatewayResponse.ChargeType"));
+		describeVpnGatewayResponse.setIpsecVpn(context.stringValue("DescribeVpnGatewayResponse.IpsecVpn"));
+		describeVpnGatewayResponse.setSslVpn(context.stringValue("DescribeVpnGatewayResponse.SslVpn"));
+		describeVpnGatewayResponse.setSslMaxConnections(context.longValue("DescribeVpnGatewayResponse.SslMaxConnections"));
 	 
 	 	return describeVpnGatewayResponse;
 	}

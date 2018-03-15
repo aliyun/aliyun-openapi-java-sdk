@@ -1,21 +1,17 @@
 /*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
+
 package com.aliyuncs.vpc.model.v20160428;
 
 import java.util.List;
@@ -95,6 +91,8 @@ public class DescribeGlobalAccelerationInstancesResponse extends AcsResponse {
 
 		private String chargeType;
 
+		private String bandwidthType;
+
 		private String accelerationLocation;
 
 		private String serviceLocation;
@@ -110,6 +108,8 @@ public class DescribeGlobalAccelerationInstancesResponse extends AcsResponse {
 		private List<LockReason> operationLocks;
 
 		private List<BackendServer> backendServers;
+
+		private List<PublicIpAddress> publicIpAddresses;
 
 		public String getRegionId() {
 			return this.regionId;
@@ -165,6 +165,14 @@ public class DescribeGlobalAccelerationInstancesResponse extends AcsResponse {
 
 		public void setChargeType(String chargeType) {
 			this.chargeType = chargeType;
+		}
+
+		public String getBandwidthType() {
+			return this.bandwidthType;
+		}
+
+		public void setBandwidthType(String bandwidthType) {
+			this.bandwidthType = bandwidthType;
 		}
 
 		public String getAccelerationLocation() {
@@ -231,6 +239,14 @@ public class DescribeGlobalAccelerationInstancesResponse extends AcsResponse {
 			this.backendServers = backendServers;
 		}
 
+		public List<PublicIpAddress> getPublicIpAddresses() {
+			return this.publicIpAddresses;
+		}
+
+		public void setPublicIpAddresses(List<PublicIpAddress> publicIpAddresses) {
+			this.publicIpAddresses = publicIpAddresses;
+		}
+
 		public static class LockReason {
 
 			private String lockReason;
@@ -284,6 +300,29 @@ public class DescribeGlobalAccelerationInstancesResponse extends AcsResponse {
 
 			public void setServerType(String serverType) {
 				this.serverType = serverType;
+			}
+		}
+
+		public static class PublicIpAddress {
+
+			private String allocationId;
+
+			private String ipAddress;
+
+			public String getAllocationId() {
+				return this.allocationId;
+			}
+
+			public void setAllocationId(String allocationId) {
+				this.allocationId = allocationId;
+			}
+
+			public String getIpAddress() {
+				return this.ipAddress;
+			}
+
+			public void setIpAddress(String ipAddress) {
+				this.ipAddress = ipAddress;
 			}
 		}
 	}
