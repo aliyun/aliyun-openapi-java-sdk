@@ -34,6 +34,10 @@ public class GetQuotaInstanceRequest extends RpcAcsRequest<GetQuotaInstanceRespo
 
 	private Integer pageNum;
 
+	private String region;
+
+	private String quotaName;
+
 	private String status;
 
 	public String getCluster() {
@@ -77,6 +81,28 @@ public class GetQuotaInstanceRequest extends RpcAcsRequest<GetQuotaInstanceRespo
 		this.pageNum = pageNum;
 		if(pageNum != null){
 			putQueryParameter("PageNum", pageNum.toString());
+		}
+	}
+
+	public String getRegion() {
+		return this.region;
+	}
+
+	public void setRegion(String region) {
+		this.region = region;
+		if(region != null){
+			putQueryParameter("Region", region);
+		}
+	}
+
+	public String getQuotaName() {
+		return this.quotaName;
+	}
+
+	public void setQuotaName(String quotaName) {
+		this.quotaName = quotaName;
+		if(quotaName != null){
+			putQueryParameter("QuotaName", quotaName);
 		}
 	}
 
