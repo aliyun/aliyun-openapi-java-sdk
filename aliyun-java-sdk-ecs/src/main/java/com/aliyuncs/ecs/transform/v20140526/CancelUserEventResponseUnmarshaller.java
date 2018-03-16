@@ -11,18 +11,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.ecs.transform.v20140526;
 
-import com.aliyuncs.ecs.model.v20140526.ReInitVolumeResponse;
+import com.aliyuncs.ecs.model.v20140526.CancelUserEventResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class ReInitVolumeResponseUnmarshaller {
+public class CancelUserEventResponseUnmarshaller {
 
-	public static ReInitVolumeResponse unmarshall(ReInitVolumeResponse reInitVolumeResponse, UnmarshallerContext context) {
+	public static CancelUserEventResponse unmarshall(CancelUserEventResponse cancelUserEventResponse, UnmarshallerContext context) {
 		
-		reInitVolumeResponse.setRequestId(context.stringValue("ReInitVolumeResponse.RequestId"));
+		cancelUserEventResponse.setRequestId(context.stringValue("CancelUserEventResponse.RequestId"));
+		cancelUserEventResponse.setEventId(context.stringValue("CancelUserEventResponse.EventId"));
 	 
-	 	return reInitVolumeResponse;
+	 	return cancelUserEventResponse;
 	}
 }

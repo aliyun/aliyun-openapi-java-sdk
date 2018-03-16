@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.ecs.transform.v20140526;
 
 import com.aliyuncs.ecs.model.v20140526.ModifyInstanceAutoRenewAttributeResponse;

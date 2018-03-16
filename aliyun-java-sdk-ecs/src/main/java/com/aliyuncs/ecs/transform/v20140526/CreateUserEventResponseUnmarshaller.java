@@ -11,30 +11,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.aliyuncs.ecs.model.v20140526;
 
-import com.aliyuncs.AcsResponse;
-import com.aliyuncs.ecs.transform.v20140526.DeleteVolumeResponseUnmarshaller;
+package com.aliyuncs.ecs.transform.v20140526;
+
+import com.aliyuncs.ecs.model.v20140526.CreateUserEventResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
-/**
- * @author auto create
- * @version 
- */
-public class DeleteVolumeResponse extends AcsResponse {
 
-	private String requestId;
+public class CreateUserEventResponseUnmarshaller {
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	@Override
-	public DeleteVolumeResponse getInstance(UnmarshallerContext context) {
-		return	DeleteVolumeResponseUnmarshaller.unmarshall(this, context);
+	public static CreateUserEventResponse unmarshall(CreateUserEventResponse createUserEventResponse, UnmarshallerContext context) {
+		
+		createUserEventResponse.setRequestId(context.stringValue("CreateUserEventResponse.RequestId"));
+		createUserEventResponse.setEventId(context.stringValue("CreateUserEventResponse.EventId"));
+	 
+	 	return createUserEventResponse;
 	}
 }

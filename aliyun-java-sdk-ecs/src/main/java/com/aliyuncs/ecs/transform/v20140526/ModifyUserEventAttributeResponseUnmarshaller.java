@@ -11,19 +11,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.ecs.transform.v20140526;
 
-import com.aliyuncs.ecs.model.v20140526.CreateVolumeResponse;
+import com.aliyuncs.ecs.model.v20140526.ModifyUserEventAttributeResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class CreateVolumeResponseUnmarshaller {
+public class ModifyUserEventAttributeResponseUnmarshaller {
 
-	public static CreateVolumeResponse unmarshall(CreateVolumeResponse createVolumeResponse, UnmarshallerContext context) {
+	public static ModifyUserEventAttributeResponse unmarshall(ModifyUserEventAttributeResponse modifyUserEventAttributeResponse, UnmarshallerContext context) {
 		
-		createVolumeResponse.setRequestId(context.stringValue("CreateVolumeResponse.RequestId"));
-		createVolumeResponse.setVolumeId(context.stringValue("CreateVolumeResponse.VolumeId"));
+		modifyUserEventAttributeResponse.setRequestId(context.stringValue("ModifyUserEventAttributeResponse.RequestId"));
+		modifyUserEventAttributeResponse.setEventId(context.stringValue("ModifyUserEventAttributeResponse.EventId"));
 	 
-	 	return createVolumeResponse;
+	 	return modifyUserEventAttributeResponse;
 	}
 }
