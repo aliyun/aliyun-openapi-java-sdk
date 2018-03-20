@@ -16,18 +16,20 @@ package com.aliyuncs.cloudphoto.model.v20170711;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.cloudphoto.transform.v20170711.DeleteFacesResponseUnmarshaller;
+import com.aliyuncs.cloudphoto.transform.v20170711.FetchAlbumTagPhotosResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DeleteFacesResponse extends AcsResponse {
+public class FetchAlbumTagPhotosResponse extends AcsResponse {
 
 	private String code;
 
 	private String message;
+
+	private Integer totalCount;
 
 	private String requestId;
 
@@ -49,6 +51,14 @@ public class DeleteFacesResponse extends AcsResponse {
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public String getRequestId() {
@@ -77,50 +87,50 @@ public class DeleteFacesResponse extends AcsResponse {
 
 	public static class Result {
 
-		private Long id;
+		private Long photoId;
 
-		private String idStr;
+		private String photoIdStr;
 
-		private String code;
+		private Long mtime;
 
-		private String message;
+		private String state;
 
-		public Long getId() {
-			return this.id;
+		public Long getPhotoId() {
+			return this.photoId;
 		}
 
-		public void setId(Long id) {
-			this.id = id;
+		public void setPhotoId(Long photoId) {
+			this.photoId = photoId;
 		}
 
-		public String getIdStr() {
-			return this.idStr;
+		public String getPhotoIdStr() {
+			return this.photoIdStr;
 		}
 
-		public void setIdStr(String idStr) {
-			this.idStr = idStr;
+		public void setPhotoIdStr(String photoIdStr) {
+			this.photoIdStr = photoIdStr;
 		}
 
-		public String getCode() {
-			return this.code;
+		public Long getMtime() {
+			return this.mtime;
 		}
 
-		public void setCode(String code) {
-			this.code = code;
+		public void setMtime(Long mtime) {
+			this.mtime = mtime;
 		}
 
-		public String getMessage() {
-			return this.message;
+		public String getState() {
+			return this.state;
 		}
 
-		public void setMessage(String message) {
-			this.message = message;
+		public void setState(String state) {
+			this.state = state;
 		}
 	}
 
 	@Override
-	public DeleteFacesResponse getInstance(UnmarshallerContext context) {
-		return	DeleteFacesResponseUnmarshaller.unmarshall(this, context);
+	public FetchAlbumTagPhotosResponse getInstance(UnmarshallerContext context) {
+		return	FetchAlbumTagPhotosResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

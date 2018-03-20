@@ -15,25 +15,52 @@
 package com.aliyuncs.cloudphoto.model.v20170711;
 
 import com.aliyuncs.RpcAcsRequest;
-import java.util.List;
 import com.aliyuncs.http.ProtocolType;
 
 /**
  * @author auto create
  * @version 
  */
-public class GetAlbumsByNamesRequest extends RpcAcsRequest<GetAlbumsByNamesResponse> {
+public class FetchAlbumTagPhotosRequest extends RpcAcsRequest<FetchAlbumTagPhotosResponse> {
 	
-	public GetAlbumsByNamesRequest() {
-		super("CloudPhoto", "2017-07-11", "GetAlbumsByNames", "cloudphoto");
+	public FetchAlbumTagPhotosRequest() {
+		super("CloudPhoto", "2017-07-11", "FetchAlbumTagPhotos", "cloudphoto");
 		setProtocol(ProtocolType.HTTPS);
 	}
 
+	private Integer size;
+
+	private Long tagId;
+
 	private String libraryId;
 
-	private List<String> names;
+	private Long albumId;
 
 	private String storeName;
+
+	private Integer page;
+
+	public Integer getSize() {
+		return this.size;
+	}
+
+	public void setSize(Integer size) {
+		this.size = size;
+		if(size != null){
+			putQueryParameter("Size", size.toString());
+		}
+	}
+
+	public Long getTagId() {
+		return this.tagId;
+	}
+
+	public void setTagId(Long tagId) {
+		this.tagId = tagId;
+		if(tagId != null){
+			putQueryParameter("TagId", tagId.toString());
+		}
+	}
 
 	public String getLibraryId() {
 		return this.libraryId;
@@ -46,17 +73,15 @@ public class GetAlbumsByNamesRequest extends RpcAcsRequest<GetAlbumsByNamesRespo
 		}
 	}
 
-	public List<String> getNames() {
-		return this.names;
+	public Long getAlbumId() {
+		return this.albumId;
 	}
 
-	public void setNames(List<String> names) {
-		this.names = names;	
-		if (names != null) {
-			for (int i = 0; i < names.size(); i++) {
-				putQueryParameter("Name." + (i + 1) , names.get(i));
-			}
-		}	
+	public void setAlbumId(Long albumId) {
+		this.albumId = albumId;
+		if(albumId != null){
+			putQueryParameter("AlbumId", albumId.toString());
+		}
 	}
 
 	public String getStoreName() {
@@ -70,9 +95,20 @@ public class GetAlbumsByNamesRequest extends RpcAcsRequest<GetAlbumsByNamesRespo
 		}
 	}
 
+	public Integer getPage() {
+		return this.page;
+	}
+
+	public void setPage(Integer page) {
+		this.page = page;
+		if(page != null){
+			putQueryParameter("Page", page.toString());
+		}
+	}
+
 	@Override
-	public Class<GetAlbumsByNamesResponse> getResponseClass() {
-		return GetAlbumsByNamesResponse.class;
+	public Class<FetchAlbumTagPhotosResponse> getResponseClass() {
+		return FetchAlbumTagPhotosResponse.class;
 	}
 
 }

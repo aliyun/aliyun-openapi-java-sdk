@@ -1,3 +1,7 @@
+2018-03-20 Version: 1.1.13
+1, add FetchAlbumTagPhotos
+2, CreatePhoto add optional param TakenAt
+
 2018-03-07 Version: 1.1.11
 1, add GetAlbumsByNames
 2, add ListEvent/CreateEvent/EditEvent/DeleteEvent/GetEvent

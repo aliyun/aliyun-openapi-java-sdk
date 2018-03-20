@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.cloudphoto.transform.v20170711;
 
 import java.util.ArrayList;
@@ -37,6 +38,7 @@ public class ListFacePhotosResponseUnmarshaller {
 			Result result = new Result();
 			result.setPhotoId(context.longValue("ListFacePhotosResponse.Results["+ i +"].PhotoId"));
 			result.setPhotoIdStr(context.stringValue("ListFacePhotosResponse.Results["+ i +"].PhotoIdStr"));
+			result.setMtime(context.longValue("ListFacePhotosResponse.Results["+ i +"].Mtime"));
 			result.setState(context.stringValue("ListFacePhotosResponse.Results["+ i +"].State"));
 
 			results.add(result);

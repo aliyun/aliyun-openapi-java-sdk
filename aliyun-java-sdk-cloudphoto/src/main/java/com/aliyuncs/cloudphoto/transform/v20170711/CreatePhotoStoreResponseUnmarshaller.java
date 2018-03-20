@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.cloudphoto.transform.v20170711;
 
 import com.aliyuncs.cloudphoto.model.v20170711.CreatePhotoStoreResponse;

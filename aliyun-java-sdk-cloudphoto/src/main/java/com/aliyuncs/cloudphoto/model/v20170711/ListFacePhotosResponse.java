@@ -1,21 +1,17 @@
 /*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
+
 package com.aliyuncs.cloudphoto.model.v20170711;
 
 import java.util.List;
@@ -105,6 +101,8 @@ public class ListFacePhotosResponse extends AcsResponse {
 
 		private String photoIdStr;
 
+		private Long mtime;
+
 		private String state;
 
 		public Long getPhotoId() {
@@ -121,6 +119,14 @@ public class ListFacePhotosResponse extends AcsResponse {
 
 		public void setPhotoIdStr(String photoIdStr) {
 			this.photoIdStr = photoIdStr;
+		}
+
+		public Long getMtime() {
+			return this.mtime;
+		}
+
+		public void setMtime(Long mtime) {
+			this.mtime = mtime;
 		}
 
 		public String getState() {
