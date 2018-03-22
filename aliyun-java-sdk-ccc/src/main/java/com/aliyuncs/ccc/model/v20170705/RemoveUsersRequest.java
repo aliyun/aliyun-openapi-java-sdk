@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.ccc.model.v20170705;
 
 import com.aliyuncs.RpcAcsRequest;
@@ -23,7 +24,7 @@ import java.util.List;
 public class RemoveUsersRequest extends RpcAcsRequest<RemoveUsersResponse> {
 	
 	public RemoveUsersRequest() {
-		super("CCC", "2017-07-05", "RemoveUsers", "CCC");
+		super("CCC", "2017-07-05", "RemoveUsers", "ccc");
 	}
 
 	private String instanceId;

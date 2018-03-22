@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.ccc.model.v20170705;
 
 import com.aliyuncs.RpcAcsRequest;
@@ -22,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ListContactFlowsRequest extends RpcAcsRequest<ListContactFlowsResponse> {
 	
 	public ListContactFlowsRequest() {
-		super("CCC", "2017-07-05", "ListContactFlows", "CCC");
+		super("CCC", "2017-07-05", "ListContactFlows", "ccc");
 	}
 
 	private String instanceId;

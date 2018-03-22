@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.ccc.model.v20170705;
 
 import com.aliyuncs.RpcAcsRequest;
@@ -22,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class RemovePhoneNumberRequest extends RpcAcsRequest<RemovePhoneNumberResponse> {
 	
 	public RemovePhoneNumberRequest() {
-		super("CCC", "2017-07-05", "RemovePhoneNumber", "CCC");
+		super("CCC", "2017-07-05", "RemovePhoneNumber", "ccc");
 	}
 
 	private String instanceId;

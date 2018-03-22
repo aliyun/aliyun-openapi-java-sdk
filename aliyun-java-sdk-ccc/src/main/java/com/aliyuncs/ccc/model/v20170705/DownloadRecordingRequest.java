@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.ccc.model.v20170705;
 
 import com.aliyuncs.RpcAcsRequest;
@@ -22,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DownloadRecordingRequest extends RpcAcsRequest<DownloadRecordingResponse> {
 	
 	public DownloadRecordingRequest() {
-		super("CCC", "2017-07-05", "DownloadRecording", "CCC");
+		super("CCC", "2017-07-05", "DownloadRecording", "ccc");
 	}
 
 	private String instanceId;
