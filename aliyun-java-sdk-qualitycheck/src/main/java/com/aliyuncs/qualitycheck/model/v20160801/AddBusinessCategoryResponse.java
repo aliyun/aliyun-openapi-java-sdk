@@ -32,6 +32,8 @@ public class AddBusinessCategoryResponse extends AcsResponse {
 
 	private String message;
 
+	private String data;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -62,6 +64,14 @@ public class AddBusinessCategoryResponse extends AcsResponse {
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getData() {
+		return this.data;
+	}
+
+	public void setData(String data) {
+		this.data = data;
 	}
 
 	@Override

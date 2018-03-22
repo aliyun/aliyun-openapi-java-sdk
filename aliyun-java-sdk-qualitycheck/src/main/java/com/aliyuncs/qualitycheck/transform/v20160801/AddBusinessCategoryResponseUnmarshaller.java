@@ -26,6 +26,7 @@ public class AddBusinessCategoryResponseUnmarshaller {
 		addBusinessCategoryResponse.setSuccess(context.booleanValue("AddBusinessCategoryResponse.Success"));
 		addBusinessCategoryResponse.setCode(context.stringValue("AddBusinessCategoryResponse.Code"));
 		addBusinessCategoryResponse.setMessage(context.stringValue("AddBusinessCategoryResponse.Message"));
+		addBusinessCategoryResponse.setData(context.stringValue("AddBusinessCategoryResponse.Data"));
 	 
 	 	return addBusinessCategoryResponse;
 	}
