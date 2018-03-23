@@ -15,20 +15,18 @@
 package com.aliyuncs.ecs.model.v20140526;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.ecs.transform.v20140526.CreateRouterInterfaceResponseUnmarshaller;
+import com.aliyuncs.ecs.transform.v20140526.CreateVolumeResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CreateRouterInterfaceResponse extends AcsResponse {
+public class CreateVolumeResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String routerInterfaceId;
-
-	private Long orderId;
+	private String volumeId;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -38,24 +36,16 @@ public class CreateRouterInterfaceResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getRouterInterfaceId() {
-		return this.routerInterfaceId;
+	public String getVolumeId() {
+		return this.volumeId;
 	}
 
-	public void setRouterInterfaceId(String routerInterfaceId) {
-		this.routerInterfaceId = routerInterfaceId;
-	}
-
-	public Long getOrderId() {
-		return this.orderId;
-	}
-
-	public void setOrderId(Long orderId) {
-		this.orderId = orderId;
+	public void setVolumeId(String volumeId) {
+		this.volumeId = volumeId;
 	}
 
 	@Override
-	public CreateRouterInterfaceResponse getInstance(UnmarshallerContext context) {
-		return	CreateRouterInterfaceResponseUnmarshaller.unmarshall(this, context);
+	public CreateVolumeResponse getInstance(UnmarshallerContext context) {
+		return	CreateVolumeResponseUnmarshaller.unmarshall(this, context);
 	}
 }

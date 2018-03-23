@@ -75,6 +75,10 @@ public class DescribeInstanceTypesResponse extends AcsResponse {
 
 		private Integer instanceBandwidthTx;
 
+		private Long instancePpsRx;
+
+		private Long instancePpsTx;
+
 		public String getInstanceTypeId() {
 			return this.instanceTypeId;
 		}
@@ -185,6 +189,22 @@ public class DescribeInstanceTypesResponse extends AcsResponse {
 
 		public void setInstanceBandwidthTx(Integer instanceBandwidthTx) {
 			this.instanceBandwidthTx = instanceBandwidthTx;
+		}
+
+		public Long getInstancePpsRx() {
+			return this.instancePpsRx;
+		}
+
+		public void setInstancePpsRx(Long instancePpsRx) {
+			this.instancePpsRx = instancePpsRx;
+		}
+
+		public Long getInstancePpsTx() {
+			return this.instancePpsTx;
+		}
+
+		public void setInstancePpsTx(Long instancePpsTx) {
+			this.instancePpsTx = instancePpsTx;
 		}
 	}
 

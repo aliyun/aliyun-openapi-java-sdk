@@ -14,18 +14,16 @@
 
 package com.aliyuncs.ecs.transform.v20140526;
 
-import com.aliyuncs.ecs.model.v20140526.CreateRouterInterfaceResponse;
+import com.aliyuncs.ecs.model.v20140526.ModifyVolumeAttributeResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class CreateRouterInterfaceResponseUnmarshaller {
+public class ModifyVolumeAttributeResponseUnmarshaller {
 
-	public static CreateRouterInterfaceResponse unmarshall(CreateRouterInterfaceResponse createRouterInterfaceResponse, UnmarshallerContext context) {
+	public static ModifyVolumeAttributeResponse unmarshall(ModifyVolumeAttributeResponse modifyVolumeAttributeResponse, UnmarshallerContext context) {
 		
-		createRouterInterfaceResponse.setRequestId(context.stringValue("CreateRouterInterfaceResponse.RequestId"));
-		createRouterInterfaceResponse.setRouterInterfaceId(context.stringValue("CreateRouterInterfaceResponse.RouterInterfaceId"));
-		createRouterInterfaceResponse.setOrderId(context.longValue("CreateRouterInterfaceResponse.OrderId"));
+		modifyVolumeAttributeResponse.setRequestId(context.stringValue("ModifyVolumeAttributeResponse.RequestId"));
 	 
-	 	return createRouterInterfaceResponse;
+	 	return modifyVolumeAttributeResponse;
 	}
 }

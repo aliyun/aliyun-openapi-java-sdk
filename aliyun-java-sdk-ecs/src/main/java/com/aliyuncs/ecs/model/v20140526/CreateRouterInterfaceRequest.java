@@ -38,19 +38,29 @@ public class CreateRouterInterfaceRequest extends RpcAcsRequest<CreateRouterInte
 
 	private String clientToken;
 
+	private String healthCheckTargetIp;
+
+	private String description;
+
+	private String spec;
+
+	private String userCidr;
+
+	private String oppositeInterfaceId;
+
+	private String instanceChargeType;
+
+	private Integer period;
+
+	private Boolean autoPay;
+
 	private String resourceOwnerAccount;
 
 	private String oppositeRegionId;
 
 	private String ownerAccount;
 
-	private String healthCheckTargetIp;
-
-	private String description;
-
 	private Long ownerId;
-
-	private String spec;
 
 	private String oppositeInterfaceOwnerId;
 
@@ -64,9 +74,7 @@ public class CreateRouterInterfaceRequest extends RpcAcsRequest<CreateRouterInte
 
 	private String name;
 
-	private String userCidr;
-
-	private String oppositeInterfaceId;
+	private String pricingCycle;
 
 	public String getAccessPointId() {
 		return this.accessPointId;
@@ -134,6 +142,94 @@ public class CreateRouterInterfaceRequest extends RpcAcsRequest<CreateRouterInte
 		}
 	}
 
+	public String getHealthCheckTargetIp() {
+		return this.healthCheckTargetIp;
+	}
+
+	public void setHealthCheckTargetIp(String healthCheckTargetIp) {
+		this.healthCheckTargetIp = healthCheckTargetIp;
+		if(healthCheckTargetIp != null){
+			putQueryParameter("HealthCheckTargetIp", healthCheckTargetIp);
+		}
+	}
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+		if(description != null){
+			putQueryParameter("Description", description);
+		}
+	}
+
+	public String getSpec() {
+		return this.spec;
+	}
+
+	public void setSpec(String spec) {
+		this.spec = spec;
+		if(spec != null){
+			putQueryParameter("Spec", spec);
+		}
+	}
+
+	public String getUserCidr() {
+		return this.userCidr;
+	}
+
+	public void setUserCidr(String userCidr) {
+		this.userCidr = userCidr;
+		if(userCidr != null){
+			putQueryParameter("UserCidr", userCidr);
+		}
+	}
+
+	public String getOppositeInterfaceId() {
+		return this.oppositeInterfaceId;
+	}
+
+	public void setOppositeInterfaceId(String oppositeInterfaceId) {
+		this.oppositeInterfaceId = oppositeInterfaceId;
+		if(oppositeInterfaceId != null){
+			putQueryParameter("OppositeInterfaceId", oppositeInterfaceId);
+		}
+	}
+
+	public String getInstanceChargeType() {
+		return this.instanceChargeType;
+	}
+
+	public void setInstanceChargeType(String instanceChargeType) {
+		this.instanceChargeType = instanceChargeType;
+		if(instanceChargeType != null){
+			putQueryParameter("InstanceChargeType", instanceChargeType);
+		}
+	}
+
+	public Integer getPeriod() {
+		return this.period;
+	}
+
+	public void setPeriod(Integer period) {
+		this.period = period;
+		if(period != null){
+			putQueryParameter("Period", period.toString());
+		}
+	}
+
+	public Boolean getAutoPay() {
+		return this.autoPay;
+	}
+
+	public void setAutoPay(Boolean autoPay) {
+		this.autoPay = autoPay;
+		if(autoPay != null){
+			putQueryParameter("AutoPay", autoPay.toString());
+		}
+	}
+
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
 	}
@@ -167,28 +263,6 @@ public class CreateRouterInterfaceRequest extends RpcAcsRequest<CreateRouterInte
 		}
 	}
 
-	public String getHealthCheckTargetIp() {
-		return this.healthCheckTargetIp;
-	}
-
-	public void setHealthCheckTargetIp(String healthCheckTargetIp) {
-		this.healthCheckTargetIp = healthCheckTargetIp;
-		if(healthCheckTargetIp != null){
-			putQueryParameter("HealthCheckTargetIp", healthCheckTargetIp);
-		}
-	}
-
-	public String getDescription() {
-		return this.description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-		if(description != null){
-			putQueryParameter("Description", description);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -197,17 +271,6 @@ public class CreateRouterInterfaceRequest extends RpcAcsRequest<CreateRouterInte
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getSpec() {
-		return this.spec;
-	}
-
-	public void setSpec(String spec) {
-		this.spec = spec;
-		if(spec != null){
-			putQueryParameter("Spec", spec);
 		}
 	}
 
@@ -277,25 +340,14 @@ public class CreateRouterInterfaceRequest extends RpcAcsRequest<CreateRouterInte
 		}
 	}
 
-	public String getUserCidr() {
-		return this.userCidr;
+	public String getPricingCycle() {
+		return this.pricingCycle;
 	}
 
-	public void setUserCidr(String userCidr) {
-		this.userCidr = userCidr;
-		if(userCidr != null){
-			putQueryParameter("UserCidr", userCidr);
-		}
-	}
-
-	public String getOppositeInterfaceId() {
-		return this.oppositeInterfaceId;
-	}
-
-	public void setOppositeInterfaceId(String oppositeInterfaceId) {
-		this.oppositeInterfaceId = oppositeInterfaceId;
-		if(oppositeInterfaceId != null){
-			putQueryParameter("OppositeInterfaceId", oppositeInterfaceId);
+	public void setPricingCycle(String pricingCycle) {
+		this.pricingCycle = pricingCycle;
+		if(pricingCycle != null){
+			putQueryParameter("PricingCycle", pricingCycle);
 		}
 	}
 

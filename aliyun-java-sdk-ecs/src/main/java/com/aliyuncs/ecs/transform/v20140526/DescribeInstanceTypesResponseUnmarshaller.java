@@ -45,6 +45,8 @@ public class DescribeInstanceTypesResponseUnmarshaller {
 			instanceType.setEniQuantity(context.integerValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].EniQuantity"));
 			instanceType.setInstanceBandwidthRx(context.integerValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].InstanceBandwidthRx"));
 			instanceType.setInstanceBandwidthTx(context.integerValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].InstanceBandwidthTx"));
+			instanceType.setInstancePpsRx(context.longValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].InstancePpsRx"));
+			instanceType.setInstancePpsTx(context.longValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].InstancePpsTx"));
 
 			instanceTypes.add(instanceType);
 		}
