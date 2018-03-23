@@ -1,3 +1,6 @@
+2018-03-23 Version: 4.6.6
+1, ModifyPrepayInstanceSpec support migrateAcrossZone.
+
 2018-03-16 Version: 4.6.5
 1, Synchronize to the latest api list
 

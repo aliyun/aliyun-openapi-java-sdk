@@ -28,8 +28,6 @@ public class ModifyPrepayInstanceSpecRequest extends RpcAcsRequest<ModifyPrepayI
 
 	private Long resourceOwnerId;
 
-	private String instanceId;
-
 	private Boolean autoPay;
 
 	private String resourceOwnerAccount;
@@ -38,11 +36,17 @@ public class ModifyPrepayInstanceSpecRequest extends RpcAcsRequest<ModifyPrepayI
 
 	private String ownerAccount;
 
-	private String instanceType;
-
 	private Long ownerId;
 
 	private String operatorType;
+
+	private String systemDiskCategory;
+
+	private String instanceId;
+
+	private Boolean migrateAcrossZone;
+
+	private String instanceType;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -52,17 +56,6 @@ public class ModifyPrepayInstanceSpecRequest extends RpcAcsRequest<ModifyPrepayI
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 
@@ -110,17 +103,6 @@ public class ModifyPrepayInstanceSpecRequest extends RpcAcsRequest<ModifyPrepayI
 		}
 	}
 
-	public String getInstanceType() {
-		return this.instanceType;
-	}
-
-	public void setInstanceType(String instanceType) {
-		this.instanceType = instanceType;
-		if(instanceType != null){
-			putQueryParameter("InstanceType", instanceType);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -140,6 +122,50 @@ public class ModifyPrepayInstanceSpecRequest extends RpcAcsRequest<ModifyPrepayI
 		this.operatorType = operatorType;
 		if(operatorType != null){
 			putQueryParameter("OperatorType", operatorType);
+		}
+	}
+
+	public String getSystemDiskCategory() {
+		return this.systemDiskCategory;
+	}
+
+	public void setSystemDiskCategory(String systemDiskCategory) {
+		this.systemDiskCategory = systemDiskCategory;
+		if(systemDiskCategory != null){
+			putQueryParameter("SystemDisk.Category", systemDiskCategory);
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public Boolean getMigrateAcrossZone() {
+		return this.migrateAcrossZone;
+	}
+
+	public void setMigrateAcrossZone(Boolean migrateAcrossZone) {
+		this.migrateAcrossZone = migrateAcrossZone;
+		if(migrateAcrossZone != null){
+			putQueryParameter("MigrateAcrossZone", migrateAcrossZone.toString());
+		}
+	}
+
+	public String getInstanceType() {
+		return this.instanceType;
+	}
+
+	public void setInstanceType(String instanceType) {
+		this.instanceType = instanceType;
+		if(instanceType != null){
+			putQueryParameter("InstanceType", instanceType);
 		}
 	}
 

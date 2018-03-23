@@ -30,6 +30,8 @@ public class ModifyInstanceAutoRenewAttributeRequest extends RpcAcsRequest<Modif
 
 	private Long resourceOwnerId;
 
+	private String periodUnit;
+
 	private String instanceId;
 
 	private Boolean autoRenew;
@@ -61,6 +63,17 @@ public class ModifyInstanceAutoRenewAttributeRequest extends RpcAcsRequest<Modif
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getPeriodUnit() {
+		return this.periodUnit;
+	}
+
+	public void setPeriodUnit(String periodUnit) {
+		this.periodUnit = periodUnit;
+		if(periodUnit != null){
+			putQueryParameter("PeriodUnit", periodUnit);
 		}
 	}
 
