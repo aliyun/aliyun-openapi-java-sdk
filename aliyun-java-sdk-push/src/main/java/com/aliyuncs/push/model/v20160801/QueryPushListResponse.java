@@ -16,18 +16,18 @@ package com.aliyuncs.push.model.v20160801;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.push.transform.v20160801.ListPushRecordsResponseUnmarshaller;
+import com.aliyuncs.push.transform.v20160801.QueryPushListResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ListPushRecordsResponse extends AcsResponse {
+public class QueryPushListResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Integer total;
+	private Boolean hasNext;
 
 	private Integer page;
 
@@ -43,12 +43,12 @@ public class ListPushRecordsResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Integer getTotal() {
-		return this.total;
+	public Boolean getHasNext() {
+		return this.hasNext;
 	}
 
-	public void setTotal(Integer total) {
-		this.total = total;
+	public void setHasNext(Boolean hasNext) {
+		this.hasNext = hasNext;
 	}
 
 	public Integer getPage() {
@@ -159,7 +159,7 @@ public class ListPushRecordsResponse extends AcsResponse {
 	}
 
 	@Override
-	public ListPushRecordsResponse getInstance(UnmarshallerContext context) {
-		return	ListPushRecordsResponseUnmarshaller.unmarshall(this, context);
+	public QueryPushListResponse getInstance(UnmarshallerContext context) {
+		return	QueryPushListResponseUnmarshaller.unmarshall(this, context);
 	}
 }

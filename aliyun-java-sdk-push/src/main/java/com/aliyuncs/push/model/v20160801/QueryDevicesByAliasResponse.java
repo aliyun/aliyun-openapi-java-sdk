@@ -16,18 +16,18 @@ package com.aliyuncs.push.model.v20160801;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.push.transform.v20160801.CheckDevicesResponseUnmarshaller;
+import com.aliyuncs.push.transform.v20160801.QueryDevicesByAliasResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CheckDevicesResponse extends AcsResponse {
+public class QueryDevicesByAliasResponse extends AcsResponse {
 
 	private String requestId;
 
-	private List<DeviceCheckInfo> deviceCheckInfos;
+	private List<String> deviceIds;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -37,39 +37,16 @@ public class CheckDevicesResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public List<DeviceCheckInfo> getDeviceCheckInfos() {
-		return this.deviceCheckInfos;
+	public List<String> getDeviceIds() {
+		return this.deviceIds;
 	}
 
-	public void setDeviceCheckInfos(List<DeviceCheckInfo> deviceCheckInfos) {
-		this.deviceCheckInfos = deviceCheckInfos;
-	}
-
-	public static class DeviceCheckInfo {
-
-		private String deviceId;
-
-		private Boolean available;
-
-		public String getDeviceId() {
-			return this.deviceId;
-		}
-
-		public void setDeviceId(String deviceId) {
-			this.deviceId = deviceId;
-		}
-
-		public Boolean getAvailable() {
-			return this.available;
-		}
-
-		public void setAvailable(Boolean available) {
-			this.available = available;
-		}
+	public void setDeviceIds(List<String> deviceIds) {
+		this.deviceIds = deviceIds;
 	}
 
 	@Override
-	public CheckDevicesResponse getInstance(UnmarshallerContext context) {
-		return	CheckDevicesResponseUnmarshaller.unmarshall(this, context);
+	public QueryDevicesByAliasResponse getInstance(UnmarshallerContext context) {
+		return	QueryDevicesByAliasResponseUnmarshaller.unmarshall(this, context);
 	}
 }

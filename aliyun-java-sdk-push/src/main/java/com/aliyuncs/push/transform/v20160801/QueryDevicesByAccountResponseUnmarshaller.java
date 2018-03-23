@@ -17,26 +17,22 @@ package com.aliyuncs.push.transform.v20160801;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.aliyuncs.push.model.v20160801.ListTagsResponse;
-import com.aliyuncs.push.model.v20160801.ListTagsResponse.TagInfo;
+import com.aliyuncs.push.model.v20160801.QueryDevicesByAccountResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class ListTagsResponseUnmarshaller {
+public class QueryDevicesByAccountResponseUnmarshaller {
 
-	public static ListTagsResponse unmarshall(ListTagsResponse listTagsResponse, UnmarshallerContext context) {
+	public static QueryDevicesByAccountResponse unmarshall(QueryDevicesByAccountResponse queryDevicesByAccountResponse, UnmarshallerContext context) {
 		
-		listTagsResponse.setRequestId(context.stringValue("ListTagsResponse.RequestId"));
+		queryDevicesByAccountResponse.setRequestId(context.stringValue("QueryDevicesByAccountResponse.RequestId"));
 
-		List<TagInfo> tagInfos = new ArrayList<TagInfo>();
-		for (int i = 0; i < context.lengthValue("ListTagsResponse.TagInfos.Length"); i++) {
-			TagInfo tagInfo = new TagInfo();
-			tagInfo.setTagName(context.stringValue("ListTagsResponse.TagInfos["+ i +"].TagName"));
-
-			tagInfos.add(tagInfo);
+		List<String> deviceIds = new ArrayList<String>();
+		for (int i = 0; i < context.lengthValue("QueryDevicesByAccountResponse.DeviceIds.Length"); i++) {
+			deviceIds.add(context.stringValue("QueryDevicesByAccountResponse.DeviceIds["+ i +"]"));
 		}
-		listTagsResponse.setTagInfos(tagInfos);
+		queryDevicesByAccountResponse.setDeviceIds(deviceIds);
 	 
-	 	return listTagsResponse;
+	 	return queryDevicesByAccountResponse;
 	}
 }

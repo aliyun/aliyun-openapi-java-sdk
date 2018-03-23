@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.push.model.v20160801;
 
 import com.aliyuncs.RpcAcsRequest;
@@ -19,24 +20,24 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class QueryPushDetailRequest extends RpcAcsRequest<QueryPushDetailResponse> {
+public class QueryDevicesByAliasRequest extends RpcAcsRequest<QueryDevicesByAliasResponse> {
 	
-	public QueryPushDetailRequest() {
-		super("Push", "2016-08-01", "QueryPushDetail");
+	public QueryDevicesByAliasRequest() {
+		super("Push", "2016-08-01", "QueryDevicesByAlias");
 	}
 
-	private String messageId;
+	private String alias;
 
 	private Long appKey;
 
-	public String getMessageId() {
-		return this.messageId;
+	public String getAlias() {
+		return this.alias;
 	}
 
-	public void setMessageId(String messageId) {
-		this.messageId = messageId;
-		if(messageId != null){
-			putQueryParameter("MessageId", messageId);
+	public void setAlias(String alias) {
+		this.alias = alias;
+		if(alias != null){
+			putQueryParameter("Alias", alias);
 		}
 	}
 
@@ -52,8 +53,8 @@ public class QueryPushDetailRequest extends RpcAcsRequest<QueryPushDetailRespons
 	}
 
 	@Override
-	public Class<QueryPushDetailResponse> getResponseClass() {
-		return QueryPushDetailResponse.class;
+	public Class<QueryDevicesByAliasResponse> getResponseClass() {
+		return QueryDevicesByAliasResponse.class;
 	}
 
 }

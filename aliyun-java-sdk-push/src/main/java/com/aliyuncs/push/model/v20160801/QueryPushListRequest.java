@@ -20,13 +20,13 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class QueryUniqueDeviceStatRequest extends RpcAcsRequest<QueryUniqueDeviceStatResponse> {
+public class QueryPushListRequest extends RpcAcsRequest<QueryPushListResponse> {
 	
-	public QueryUniqueDeviceStatRequest() {
-		super("Push", "2016-08-01", "QueryUniqueDeviceStat");
+	public QueryPushListRequest() {
+		super("Push", "2016-08-01", "QueryPushList");
 	}
 
-	private String granularity;
+	private Integer pageSize;
 
 	private String endTime;
 
@@ -34,14 +34,18 @@ public class QueryUniqueDeviceStatRequest extends RpcAcsRequest<QueryUniqueDevic
 
 	private String startTime;
 
-	public String getGranularity() {
-		return this.granularity;
+	private Integer page;
+
+	private String pushType;
+
+	public Integer getPageSize() {
+		return this.pageSize;
 	}
 
-	public void setGranularity(String granularity) {
-		this.granularity = granularity;
-		if(granularity != null){
-			putQueryParameter("Granularity", granularity);
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 
@@ -78,9 +82,31 @@ public class QueryUniqueDeviceStatRequest extends RpcAcsRequest<QueryUniqueDevic
 		}
 	}
 
+	public Integer getPage() {
+		return this.page;
+	}
+
+	public void setPage(Integer page) {
+		this.page = page;
+		if(page != null){
+			putQueryParameter("Page", page.toString());
+		}
+	}
+
+	public String getPushType() {
+		return this.pushType;
+	}
+
+	public void setPushType(String pushType) {
+		this.pushType = pushType;
+		if(pushType != null){
+			putQueryParameter("PushType", pushType);
+		}
+	}
+
 	@Override
-	public Class<QueryUniqueDeviceStatResponse> getResponseClass() {
-		return QueryUniqueDeviceStatResponse.class;
+	public Class<QueryPushListResponse> getResponseClass() {
+		return QueryPushListResponse.class;
 	}
 
 }

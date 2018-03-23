@@ -20,28 +20,15 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class QueryTagsRequest extends RpcAcsRequest<QueryTagsResponse> {
+public class QueryDevicesByAccountRequest extends RpcAcsRequest<QueryDevicesByAccountResponse> {
 	
-	public QueryTagsRequest() {
-		super("Push", "2016-08-01", "QueryTags");
+	public QueryDevicesByAccountRequest() {
+		super("Push", "2016-08-01", "QueryDevicesByAccount");
 	}
-
-	private String clientKey;
 
 	private Long appKey;
 
-	private String keyType;
-
-	public String getClientKey() {
-		return this.clientKey;
-	}
-
-	public void setClientKey(String clientKey) {
-		this.clientKey = clientKey;
-		if(clientKey != null){
-			putQueryParameter("ClientKey", clientKey);
-		}
-	}
+	private String account;
 
 	public Long getAppKey() {
 		return this.appKey;
@@ -54,20 +41,20 @@ public class QueryTagsRequest extends RpcAcsRequest<QueryTagsResponse> {
 		}
 	}
 
-	public String getKeyType() {
-		return this.keyType;
+	public String getAccount() {
+		return this.account;
 	}
 
-	public void setKeyType(String keyType) {
-		this.keyType = keyType;
-		if(keyType != null){
-			putQueryParameter("KeyType", keyType);
+	public void setAccount(String account) {
+		this.account = account;
+		if(account != null){
+			putQueryParameter("Account", account);
 		}
 	}
 
 	@Override
-	public Class<QueryTagsResponse> getResponseClass() {
-		return QueryTagsResponse.class;
+	public Class<QueryDevicesByAccountResponse> getResponseClass() {
+		return QueryDevicesByAccountResponse.class;
 	}
 
 }

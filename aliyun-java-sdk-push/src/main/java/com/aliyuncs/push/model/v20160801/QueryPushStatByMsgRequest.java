@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.push.model.v20160801;
 
 import com.aliyuncs.RpcAcsRequest;
@@ -25,18 +26,18 @@ public class QueryPushStatByMsgRequest extends RpcAcsRequest<QueryPushStatByMsgR
 		super("Push", "2016-08-01", "QueryPushStatByMsg");
 	}
 
-	private String messageId;
+	private Long messageId;
 
 	private Long appKey;
 
-	public String getMessageId() {
+	public Long getMessageId() {
 		return this.messageId;
 	}
 
-	public void setMessageId(String messageId) {
+	public void setMessageId(Long messageId) {
 		this.messageId = messageId;
 		if(messageId != null){
-			putQueryParameter("MessageId", messageId);
+			putQueryParameter("MessageId", messageId.toString());
 		}
 	}
 
