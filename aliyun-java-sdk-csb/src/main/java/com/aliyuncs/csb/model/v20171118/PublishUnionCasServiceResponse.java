@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.csb.model.v20171118;
 
 import com.aliyuncs.AcsResponse;
@@ -27,7 +28,7 @@ public class PublishUnionCasServiceResponse extends AcsResponse {
 
 	private String message;
 
-	private String regionId;
+	private String requestId;
 
 	public Integer getCode() {
 		return this.code;
@@ -45,12 +46,12 @@ public class PublishUnionCasServiceResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getRegionId() {
-		return this.regionId;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setRegionId(String regionId) {
-		this.regionId = regionId;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

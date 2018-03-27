@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.csb.transform.v20171118;
 
 import com.aliyuncs.csb.model.v20171118.PublishUnionCasServiceResponse;
@@ -21,9 +22,9 @@ public class PublishUnionCasServiceResponseUnmarshaller {
 
 	public static PublishUnionCasServiceResponse unmarshall(PublishUnionCasServiceResponse publishUnionCasServiceResponse, UnmarshallerContext context) {
 		
+		publishUnionCasServiceResponse.setRequestId(context.stringValue("PublishUnionCasServiceResponse.RequestId"));
 		publishUnionCasServiceResponse.setCode(context.integerValue("PublishUnionCasServiceResponse.Code"));
 		publishUnionCasServiceResponse.setMessage(context.stringValue("PublishUnionCasServiceResponse.Message"));
-		publishUnionCasServiceResponse.setRegionId(context.stringValue("PublishUnionCasServiceResponse.RegionId"));
 	 
 	 	return publishUnionCasServiceResponse;
 	}
