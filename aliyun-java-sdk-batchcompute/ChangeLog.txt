@@ -1,3 +1,6 @@
+2018-03-27 Version: 5.3.2
+1, Add SecurityGroups fields to Cluster Class
+
 2018-02-24 Version: 5.3.1
 1, Repair ststoken support.
 

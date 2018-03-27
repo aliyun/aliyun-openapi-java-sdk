@@ -134,6 +134,19 @@ public class Cluster {
     private String bootstrap;
 
 
+    @JsonIgnore
+    public List<String> getSecurityGroups() {
+        return securityGroups;
+    }
+    @JsonIgnore
+    public void setSecurityGroups(List<String> securityGroups) {
+        this.securityGroups = securityGroups;
+    }
+
+    @JsonProperty("SecurityGroups")
+    private List<String> securityGroups;
+
+
     @JsonProperty("EnvVars")
     private Map<String, String> envVars;
 

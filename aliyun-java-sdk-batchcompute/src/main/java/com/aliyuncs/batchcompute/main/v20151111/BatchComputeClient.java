@@ -133,7 +133,7 @@ public class BatchComputeClient implements BatchCompute {
     //hack一下，处理 ErrorCode 的兼容
     private <T extends AcsResponse> T getAcsResponse(AcsRequest<T> request) throws ClientException {
 
-        request.putHeaderParameter("x-acs-access-key-id", this.accessKeyId);
+        //request.putHeaderParameter("x-acs-access-key-id", this.accessKeyId);
 
         if (verbose) {
             Map<String, String> reqHeaders = request.getHeaders();
