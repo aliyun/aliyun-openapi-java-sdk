@@ -3,7 +3,7 @@
   <groupId>com.aliyun</groupId>
   <artifactId>aliyun-java-sdk-live</artifactId>
   <packaging>jar</packaging>
-  <version>3.4.0</version>
+  <version>3.5.0</version>
     <name>aliyun-java-sdk-live</name>
   <url>http://www.aliyun.com</url>
   <description>Aliyun Open API SDK for Java
@@ -42,8 +42,9 @@ http://www.aliyun.com</description>
 		</license>
 	</licenses>
 	<scm>
-		<url></url>
-		<connection></connection>
+        <connection>scm:git:git://github.com/aliyun/aliyun-openapi-java-sdk.git</connection>
+        <developerConnection>scm:git:git@github.com:aliyun/aliyun-openapi-java-sdk.git</developerConnection>
+        <url>https://github.com/aliyun/aliyun-openapi-java-sdk</url>
 	</scm>
 	<developers>
 		<developer>

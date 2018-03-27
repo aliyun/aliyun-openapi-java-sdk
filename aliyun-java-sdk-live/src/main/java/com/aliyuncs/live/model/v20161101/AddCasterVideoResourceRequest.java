@@ -1,21 +1,17 @@
 /*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
+
 package com.aliyuncs.live.model.v20161101;
 
 import com.aliyuncs.RpcAcsRequest;
@@ -30,13 +26,17 @@ public class AddCasterVideoResourceRequest extends RpcAcsRequest<AddCasterVideoR
 		super("live", "2016-11-01", "AddCasterVideoResource", "live");
 	}
 
-	private String liveStreamUrl;
+	private Integer beginOffset;
 
-	private String securityToken;
+	private String vodUrl;
+
+	private String liveStreamUrl;
 
 	private String locationId;
 
 	private String casterId;
+
+	private Integer endOffset;
 
 	private String resourceName;
 
@@ -46,7 +46,27 @@ public class AddCasterVideoResourceRequest extends RpcAcsRequest<AddCasterVideoR
 
 	private String materialId;
 
-	private String version;
+	public Integer getBeginOffset() {
+		return this.beginOffset;
+	}
+
+	public void setBeginOffset(Integer beginOffset) {
+		this.beginOffset = beginOffset;
+		if(beginOffset != null){
+			putQueryParameter("BeginOffset", beginOffset.toString());
+		}
+	}
+
+	public String getVodUrl() {
+		return this.vodUrl;
+	}
+
+	public void setVodUrl(String vodUrl) {
+		this.vodUrl = vodUrl;
+		if(vodUrl != null){
+			putQueryParameter("VodUrl", vodUrl);
+		}
+	}
 
 	public String getLiveStreamUrl() {
 		return this.liveStreamUrl;
@@ -56,17 +76,6 @@ public class AddCasterVideoResourceRequest extends RpcAcsRequest<AddCasterVideoR
 		this.liveStreamUrl = liveStreamUrl;
 		if(liveStreamUrl != null){
 			putQueryParameter("LiveStreamUrl", liveStreamUrl);
-		}
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 
@@ -89,6 +98,17 @@ public class AddCasterVideoResourceRequest extends RpcAcsRequest<AddCasterVideoR
 		this.casterId = casterId;
 		if(casterId != null){
 			putQueryParameter("CasterId", casterId);
+		}
+	}
+
+	public Integer getEndOffset() {
+		return this.endOffset;
+	}
+
+	public void setEndOffset(Integer endOffset) {
+		this.endOffset = endOffset;
+		if(endOffset != null){
+			putQueryParameter("EndOffset", endOffset.toString());
 		}
 	}
 
@@ -133,17 +153,6 @@ public class AddCasterVideoResourceRequest extends RpcAcsRequest<AddCasterVideoR
 		this.materialId = materialId;
 		if(materialId != null){
 			putQueryParameter("MaterialId", materialId);
-		}
-	}
-
-	public String getVersion() {
-		return this.version;
-	}
-
-	public void setVersion(String version) {
-		this.version = version;
-		if(version != null){
-			putQueryParameter("Version", version);
 		}
 	}
 

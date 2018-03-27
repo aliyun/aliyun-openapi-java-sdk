@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.live.model.v20161101;
 
 import com.aliyuncs.RpcAcsRequest;
@@ -32,6 +33,8 @@ public class DeleteLiveAppRecordConfigRequest extends RpcAcsRequest<DeleteLiveAp
 	private String domainName;
 
 	private Long ownerId;
+
+	private String streamName;
 
 	public String getAppName() {
 		return this.appName;
@@ -74,6 +77,17 @@ public class DeleteLiveAppRecordConfigRequest extends RpcAcsRequest<DeleteLiveAp
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getStreamName() {
+		return this.streamName;
+	}
+
+	public void setStreamName(String streamName) {
+		this.streamName = streamName;
+		if(streamName != null){
+			putQueryParameter("StreamName", streamName);
 		}
 	}
 

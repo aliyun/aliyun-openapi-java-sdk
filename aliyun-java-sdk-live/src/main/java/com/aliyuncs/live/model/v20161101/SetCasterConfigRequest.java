@@ -1,21 +1,17 @@
 /*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
+
 package com.aliyuncs.live.model.v20161101;
 
 import com.aliyuncs.RpcAcsRequest;
@@ -36,9 +32,11 @@ public class SetCasterConfigRequest extends RpcAcsRequest<SetCasterConfigRespons
 
 	private String domainName;
 
-	private Long ownerId;
+	private Integer programEffect;
 
-	private String version;
+	private String programName;
+
+	private Long ownerId;
 
 	private String recordConfig;
 
@@ -47,8 +45,6 @@ public class SetCasterConfigRequest extends RpcAcsRequest<SetCasterConfigRespons
 	private String transcodeConfig;
 
 	private Float delay;
-
-	private String securityToken;
 
 	private String casterName;
 
@@ -87,6 +83,28 @@ public class SetCasterConfigRequest extends RpcAcsRequest<SetCasterConfigRespons
 		}
 	}
 
+	public Integer getProgramEffect() {
+		return this.programEffect;
+	}
+
+	public void setProgramEffect(Integer programEffect) {
+		this.programEffect = programEffect;
+		if(programEffect != null){
+			putQueryParameter("ProgramEffect", programEffect.toString());
+		}
+	}
+
+	public String getProgramName() {
+		return this.programName;
+	}
+
+	public void setProgramName(String programName) {
+		this.programName = programName;
+		if(programName != null){
+			putQueryParameter("ProgramName", programName);
+		}
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -95,17 +113,6 @@ public class SetCasterConfigRequest extends RpcAcsRequest<SetCasterConfigRespons
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getVersion() {
-		return this.version;
-	}
-
-	public void setVersion(String version) {
-		this.version = version;
-		if(version != null){
-			putQueryParameter("Version", version);
 		}
 	}
 
@@ -150,17 +157,6 @@ public class SetCasterConfigRequest extends RpcAcsRequest<SetCasterConfigRespons
 		this.delay = delay;
 		if(delay != null){
 			putQueryParameter("Delay", delay.toString());
-		}
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 

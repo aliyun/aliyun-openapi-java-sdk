@@ -1,21 +1,17 @@
 /*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
+
 package com.aliyuncs.live.transform.v20161101;
 
 import java.util.ArrayList;
@@ -43,9 +39,13 @@ public class DescribeLiveRecordConfigResponseUnmarshaller {
 			LiveAppRecord liveAppRecord = new LiveAppRecord();
 			liveAppRecord.setDomainName(context.stringValue("DescribeLiveRecordConfigResponse.LiveAppRecordList["+ i +"].DomainName"));
 			liveAppRecord.setAppName(context.stringValue("DescribeLiveRecordConfigResponse.LiveAppRecordList["+ i +"].AppName"));
+			liveAppRecord.setStreamName(context.stringValue("DescribeLiveRecordConfigResponse.LiveAppRecordList["+ i +"].StreamName"));
 			liveAppRecord.setOssEndpoint(context.stringValue("DescribeLiveRecordConfigResponse.LiveAppRecordList["+ i +"].OssEndpoint"));
 			liveAppRecord.setOssBucket(context.stringValue("DescribeLiveRecordConfigResponse.LiveAppRecordList["+ i +"].OssBucket"));
 			liveAppRecord.setCreateTime(context.stringValue("DescribeLiveRecordConfigResponse.LiveAppRecordList["+ i +"].CreateTime"));
+			liveAppRecord.setStartTime(context.stringValue("DescribeLiveRecordConfigResponse.LiveAppRecordList["+ i +"].StartTime"));
+			liveAppRecord.setEndTime(context.stringValue("DescribeLiveRecordConfigResponse.LiveAppRecordList["+ i +"].EndTime"));
+			liveAppRecord.setOnDemond(context.integerValue("DescribeLiveRecordConfigResponse.LiveAppRecordList["+ i +"].OnDemond"));
 
 			List<RecordFormat> recordFormatList = new ArrayList<RecordFormat>();
 			for (int j = 0; j < context.lengthValue("DescribeLiveRecordConfigResponse.LiveAppRecordList["+ i +"].RecordFormatList.Length"); j++) {

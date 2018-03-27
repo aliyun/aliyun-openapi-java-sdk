@@ -1,3 +1,11 @@
+2018-03-27 Version: 3.5.0
+1, Add Episode living API AddCasterEpisodeGroup,DeleteCasterEpisodeGroup.
+2, Add voice subtitle API AddCasterComponent,ModifyCasterComponent,DescribeCasterComponent.
+3, Add resouce support initial seek postion API AddCasterVideoResource,ModifyCasterVideoResource,DescribeCasterVideoResource.
+4, Add third-party video source support API AddCasterVideoResource,ModifyCasterVideoResource,DescribeCasterVideoResource.
+5, Optimized API AddLiveAppRecordConfig for support record by stream.
+6, Add API LiveAppRecordCommand.
+
 2018-02-11 Version: 3.4.0
 1, Optimized interface DescribeLiveStreamsBlockList, paging support.
 2, Increase the return value for DescribeLiveStreamsPublishList.

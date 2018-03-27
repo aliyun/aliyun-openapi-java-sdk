@@ -1,21 +1,17 @@
 /*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
+
 package com.aliyuncs.live.transform.v20161101;
 
 import java.util.ArrayList;
@@ -23,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.live.model.v20161101.DescribeCasterComponentsResponse;
 import com.aliyuncs.live.model.v20161101.DescribeCasterComponentsResponse.Component;
+import com.aliyuncs.live.model.v20161101.DescribeCasterComponentsResponse.Component.CaptionLayerContent;
 import com.aliyuncs.live.model.v20161101.DescribeCasterComponentsResponse.Component.ComponentLayer;
 import com.aliyuncs.live.model.v20161101.DescribeCasterComponentsResponse.Component.ImageLayerContent;
 import com.aliyuncs.live.model.v20161101.DescribeCasterComponentsResponse.Component.TextLayerContent;
@@ -69,6 +66,17 @@ public class DescribeCasterComponentsResponseUnmarshaller {
 			ImageLayerContent imageLayerContent = new ImageLayerContent();
 			imageLayerContent.setMaterialId(context.stringValue("DescribeCasterComponentsResponse.Components["+ i +"].ImageLayerContent.MaterialId"));
 			component.setImageLayerContent(imageLayerContent);
+
+			CaptionLayerContent captionLayerContent = new CaptionLayerContent();
+			captionLayerContent.setLocationId(context.stringValue("DescribeCasterComponentsResponse.Components["+ i +"].CaptionLayerContent.LocationId"));
+			captionLayerContent.setPtsOffset(context.integerValue("DescribeCasterComponentsResponse.Components["+ i +"].CaptionLayerContent.PtsOffset"));
+			captionLayerContent.setWordsCount(context.integerValue("DescribeCasterComponentsResponse.Components["+ i +"].CaptionLayerContent.WordsCount"));
+			captionLayerContent.setColor(context.stringValue("DescribeCasterComponentsResponse.Components["+ i +"].CaptionLayerContent.Color"));
+			captionLayerContent.setFontName(context.stringValue("DescribeCasterComponentsResponse.Components["+ i +"].CaptionLayerContent.FontName"));
+			captionLayerContent.setSizeNormalized(context.floatValue("DescribeCasterComponentsResponse.Components["+ i +"].CaptionLayerContent.SizeNormalized"));
+			captionLayerContent.setBorderWidthNormalized(context.floatValue("DescribeCasterComponentsResponse.Components["+ i +"].CaptionLayerContent.BorderWidthNormalized"));
+			captionLayerContent.setBorderColor(context.stringValue("DescribeCasterComponentsResponse.Components["+ i +"].CaptionLayerContent.BorderColor"));
+			component.setCaptionLayerContent(captionLayerContent);
 
 			components.add(component);
 		}

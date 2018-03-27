@@ -1,21 +1,17 @@
 /*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
+
 package com.aliyuncs.live.model.v20161101;
 
 import com.aliyuncs.RpcAcsRequest;
@@ -35,8 +31,6 @@ public class AddCasterLayoutRequest extends RpcAcsRequest<AddCasterLayoutRespons
 
 	private List<AudioLayer> audioLayers;
 
-	private String securityToken;
-
 	private List<VideoLayer> videoLayers;
 
 	private String casterId;
@@ -44,8 +38,6 @@ public class AddCasterLayoutRequest extends RpcAcsRequest<AddCasterLayoutRespons
 	private List<String> mixLists;
 
 	private Long ownerId;
-
-	private String version;
 
 	public List<String> getBlendLists() {
 		return this.blendLists;
@@ -70,19 +62,9 @@ public class AddCasterLayoutRequest extends RpcAcsRequest<AddCasterLayoutRespons
 			for (int depth1 = 0; depth1 < audioLayers.size(); depth1++) {
 				putQueryParameter("AudioLayer." + (depth1 + 1) + ".VolumeRate" , audioLayers.get(depth1).getVolumeRate());
 				putQueryParameter("AudioLayer." + (depth1 + 1) + ".ValidChannel" , audioLayers.get(depth1).getValidChannel());
+				putQueryParameter("AudioLayer." + (depth1 + 1) + ".FixedDelayDuration" , audioLayers.get(depth1).getFixedDelayDuration());
 			}
 		}	
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
 	}
 
 	public List<VideoLayer> getVideoLayers() {
@@ -101,6 +83,7 @@ public class AddCasterLayoutRequest extends RpcAcsRequest<AddCasterLayoutRespons
 						putQueryParameter("VideoLayer." + (depth1 + 1) + ".PositionNormalized." + (i + 1) , videoLayers.get(depth1).getPositionNormalizeds().get(i));
 					}
 				}
+				putQueryParameter("VideoLayer." + (depth1 + 1) + ".FixedDelayDuration" , videoLayers.get(depth1).getFixedDelayDuration());
 			}
 		}	
 	}
@@ -140,22 +123,13 @@ public class AddCasterLayoutRequest extends RpcAcsRequest<AddCasterLayoutRespons
 		}
 	}
 
-	public String getVersion() {
-		return this.version;
-	}
-
-	public void setVersion(String version) {
-		this.version = version;
-		if(version != null){
-			putQueryParameter("Version", version);
-		}
-	}
-
 	public static class AudioLayer {
 
 		private Float volumeRate;
 
 		private String validChannel;
+
+		private Integer fixedDelayDuration;
 
 		public Float getVolumeRate() {
 			return this.volumeRate;
@@ -172,6 +146,14 @@ public class AddCasterLayoutRequest extends RpcAcsRequest<AddCasterLayoutRespons
 		public void setValidChannel(String validChannel) {
 			this.validChannel = validChannel;
 		}
+
+		public Integer getFixedDelayDuration() {
+			return this.fixedDelayDuration;
+		}
+
+		public void setFixedDelayDuration(Integer fixedDelayDuration) {
+			this.fixedDelayDuration = fixedDelayDuration;
+		}
 	}
 
 	public static class VideoLayer {
@@ -183,6 +165,8 @@ public class AddCasterLayoutRequest extends RpcAcsRequest<AddCasterLayoutRespons
 		private String positionRefer;
 
 		private List<Float> positionNormalizeds;
+
+		private Integer fixedDelayDuration;
 
 		public Float getHeightNormalized() {
 			return this.heightNormalized;
@@ -214,6 +198,14 @@ public class AddCasterLayoutRequest extends RpcAcsRequest<AddCasterLayoutRespons
 
 		public void setPositionNormalizeds(List<Float> positionNormalizeds) {
 			this.positionNormalizeds = positionNormalizeds;
+		}
+
+		public Integer getFixedDelayDuration() {
+			return this.fixedDelayDuration;
+		}
+
+		public void setFixedDelayDuration(Integer fixedDelayDuration) {
+			this.fixedDelayDuration = fixedDelayDuration;
 		}
 	}
 

@@ -1,21 +1,17 @@
 /*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
+
 package com.aliyuncs.live.model.v20161101;
 
 import java.util.List;
@@ -119,6 +115,8 @@ public class DescribeCasterLayoutsResponse extends AcsResponse {
 
 			private String positionRefer;
 
+			private Integer fixedDelayDuration;
+
 			private List<String> positionNormalizeds;
 
 			public Float getHeightNormalized() {
@@ -145,6 +143,14 @@ public class DescribeCasterLayoutsResponse extends AcsResponse {
 				this.positionRefer = positionRefer;
 			}
 
+			public Integer getFixedDelayDuration() {
+				return this.fixedDelayDuration;
+			}
+
+			public void setFixedDelayDuration(Integer fixedDelayDuration) {
+				this.fixedDelayDuration = fixedDelayDuration;
+			}
+
 			public List<String> getPositionNormalizeds() {
 				return this.positionNormalizeds;
 			}
@@ -160,6 +166,8 @@ public class DescribeCasterLayoutsResponse extends AcsResponse {
 
 			private String validChannel;
 
+			private Integer fixedDelayDuration;
+
 			public Float getVolumeRate() {
 				return this.volumeRate;
 			}
@@ -174,6 +182,14 @@ public class DescribeCasterLayoutsResponse extends AcsResponse {
 
 			public void setValidChannel(String validChannel) {
 				this.validChannel = validChannel;
+			}
+
+			public Integer getFixedDelayDuration() {
+				return this.fixedDelayDuration;
+			}
+
+			public void setFixedDelayDuration(Integer fixedDelayDuration) {
+				this.fixedDelayDuration = fixedDelayDuration;
 			}
 		}
 	}

@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.live.model.v20161101;
 
 import com.aliyuncs.AcsResponse;
@@ -49,6 +50,8 @@ public class DescribeLiveRecordNotifyConfigResponse extends AcsResponse {
 
 		private String notifyUrl;
 
+		private String onDemandUrl;
+
 		private Boolean needStatusNotify;
 
 		public String getDomainName() {
@@ -65,6 +68,14 @@ public class DescribeLiveRecordNotifyConfigResponse extends AcsResponse {
 
 		public void setNotifyUrl(String notifyUrl) {
 			this.notifyUrl = notifyUrl;
+		}
+
+		public String getOnDemandUrl() {
+			return this.onDemandUrl;
+		}
+
+		public void setOnDemandUrl(String onDemandUrl) {
+			this.onDemandUrl = onDemandUrl;
 		}
 
 		public Boolean getNeedStatusNotify() {

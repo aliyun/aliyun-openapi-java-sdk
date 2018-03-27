@@ -1,21 +1,17 @@
 /*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
+
 package com.aliyuncs.live.model.v20161101;
 
 import java.util.List;
@@ -76,6 +72,8 @@ public class DescribeCasterComponentsResponse extends AcsResponse {
 		private TextLayerContent textLayerContent;
 
 		private ImageLayerContent imageLayerContent;
+
+		private CaptionLayerContent captionLayerContent;
 
 		public String getComponentId() {
 			return this.componentId;
@@ -139,6 +137,14 @@ public class DescribeCasterComponentsResponse extends AcsResponse {
 
 		public void setImageLayerContent(ImageLayerContent imageLayerContent) {
 			this.imageLayerContent = imageLayerContent;
+		}
+
+		public CaptionLayerContent getCaptionLayerContent() {
+			return this.captionLayerContent;
+		}
+
+		public void setCaptionLayerContent(CaptionLayerContent captionLayerContent) {
+			this.captionLayerContent = captionLayerContent;
 		}
 
 		public static class ComponentLayer {
@@ -257,6 +263,89 @@ public class DescribeCasterComponentsResponse extends AcsResponse {
 
 			public void setMaterialId(String materialId) {
 				this.materialId = materialId;
+			}
+		}
+
+		public static class CaptionLayerContent {
+
+			private String locationId;
+
+			private Integer ptsOffset;
+
+			private Integer wordsCount;
+
+			private String color;
+
+			private String fontName;
+
+			private Float sizeNormalized;
+
+			private Float borderWidthNormalized;
+
+			private String borderColor;
+
+			public String getLocationId() {
+				return this.locationId;
+			}
+
+			public void setLocationId(String locationId) {
+				this.locationId = locationId;
+			}
+
+			public Integer getPtsOffset() {
+				return this.ptsOffset;
+			}
+
+			public void setPtsOffset(Integer ptsOffset) {
+				this.ptsOffset = ptsOffset;
+			}
+
+			public Integer getWordsCount() {
+				return this.wordsCount;
+			}
+
+			public void setWordsCount(Integer wordsCount) {
+				this.wordsCount = wordsCount;
+			}
+
+			public String getColor() {
+				return this.color;
+			}
+
+			public void setColor(String color) {
+				this.color = color;
+			}
+
+			public String getFontName() {
+				return this.fontName;
+			}
+
+			public void setFontName(String fontName) {
+				this.fontName = fontName;
+			}
+
+			public Float getSizeNormalized() {
+				return this.sizeNormalized;
+			}
+
+			public void setSizeNormalized(Float sizeNormalized) {
+				this.sizeNormalized = sizeNormalized;
+			}
+
+			public Float getBorderWidthNormalized() {
+				return this.borderWidthNormalized;
+			}
+
+			public void setBorderWidthNormalized(Float borderWidthNormalized) {
+				this.borderWidthNormalized = borderWidthNormalized;
+			}
+
+			public String getBorderColor() {
+				return this.borderColor;
+			}
+
+			public void setBorderColor(String borderColor) {
+				this.borderColor = borderColor;
 			}
 		}
 	}

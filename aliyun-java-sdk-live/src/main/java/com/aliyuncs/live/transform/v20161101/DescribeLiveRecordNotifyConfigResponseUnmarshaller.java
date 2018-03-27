@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.live.transform.v20161101;
 
 import com.aliyuncs.live.model.v20161101.DescribeLiveRecordNotifyConfigResponse;
@@ -27,6 +28,7 @@ public class DescribeLiveRecordNotifyConfigResponseUnmarshaller {
 		LiveRecordNotifyConfig liveRecordNotifyConfig = new LiveRecordNotifyConfig();
 		liveRecordNotifyConfig.setDomainName(context.stringValue("DescribeLiveRecordNotifyConfigResponse.LiveRecordNotifyConfig.DomainName"));
 		liveRecordNotifyConfig.setNotifyUrl(context.stringValue("DescribeLiveRecordNotifyConfigResponse.LiveRecordNotifyConfig.NotifyUrl"));
+		liveRecordNotifyConfig.setOnDemandUrl(context.stringValue("DescribeLiveRecordNotifyConfigResponse.LiveRecordNotifyConfig.OnDemandUrl"));
 		liveRecordNotifyConfig.setNeedStatusNotify(context.booleanValue("DescribeLiveRecordNotifyConfigResponse.LiveRecordNotifyConfig.NeedStatusNotify"));
 		describeLiveRecordNotifyConfigResponse.setLiveRecordNotifyConfig(liveRecordNotifyConfig);
 	 

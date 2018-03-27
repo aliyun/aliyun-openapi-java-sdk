@@ -1,21 +1,17 @@
 /*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
+
 package com.aliyuncs.live.model.v20161101;
 
 import com.aliyuncs.RpcAcsRequest;
@@ -32,13 +28,15 @@ public class AddLiveRecordVodConfigRequest extends RpcAcsRequest<AddLiveRecordVo
 
 	private String appName;
 
-	private String securityToken;
+	private String autoCompose;
 
 	private String domainName;
 
 	private Integer cycleDuration;
 
 	private Long ownerId;
+
+	private String composeVodTranscodeGroupId;
 
 	private String streamName;
 
@@ -55,14 +53,14 @@ public class AddLiveRecordVodConfigRequest extends RpcAcsRequest<AddLiveRecordVo
 		}
 	}
 
-	public String getSecurityToken() {
-		return this.securityToken;
+	public String getAutoCompose() {
+		return this.autoCompose;
 	}
 
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
+	public void setAutoCompose(String autoCompose) {
+		this.autoCompose = autoCompose;
+		if(autoCompose != null){
+			putQueryParameter("AutoCompose", autoCompose);
 		}
 	}
 
@@ -96,6 +94,17 @@ public class AddLiveRecordVodConfigRequest extends RpcAcsRequest<AddLiveRecordVo
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getComposeVodTranscodeGroupId() {
+		return this.composeVodTranscodeGroupId;
+	}
+
+	public void setComposeVodTranscodeGroupId(String composeVodTranscodeGroupId) {
+		this.composeVodTranscodeGroupId = composeVodTranscodeGroupId;
+		if(composeVodTranscodeGroupId != null){
+			putQueryParameter("ComposeVodTranscodeGroupId", composeVodTranscodeGroupId);
 		}
 	}
 

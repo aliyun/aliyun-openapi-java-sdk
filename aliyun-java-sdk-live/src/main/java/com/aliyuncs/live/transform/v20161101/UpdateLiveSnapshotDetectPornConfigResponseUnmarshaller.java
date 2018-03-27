@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.live.transform.v20161101;
 
 import com.aliyuncs.live.model.v20161101.UpdateLiveSnapshotDetectPornConfigResponse;

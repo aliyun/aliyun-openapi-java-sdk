@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.live.model.v20161101;
 
 import com.aliyuncs.RpcAcsRequest;
@@ -25,26 +26,11 @@ public class StartCasterSceneRequest extends RpcAcsRequest<StartCasterSceneRespo
 		super("live", "2016-11-01", "StartCasterScene", "live");
 	}
 
-	private String securityToken;
-
 	private String casterId;
 
 	private String sceneId;
 
 	private Long ownerId;
-
-	private String version;
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
 
 	public String getCasterId() {
 		return this.casterId;
@@ -76,17 +62,6 @@ public class StartCasterSceneRequest extends RpcAcsRequest<StartCasterSceneRespo
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getVersion() {
-		return this.version;
-	}
-
-	public void setVersion(String version) {
-		this.version = version;
-		if(version != null){
-			putQueryParameter("Version", version);
 		}
 	}
 
