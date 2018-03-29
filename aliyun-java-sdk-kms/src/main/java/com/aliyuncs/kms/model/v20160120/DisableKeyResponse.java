@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.kms.model.v20160120;
 
 import com.aliyuncs.AcsResponse;

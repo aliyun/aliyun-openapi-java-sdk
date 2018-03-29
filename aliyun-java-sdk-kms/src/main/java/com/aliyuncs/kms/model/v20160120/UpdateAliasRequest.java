@@ -21,31 +21,27 @@ import com.aliyuncs.http.ProtocolType;
  * @author auto create
  * @version 
  */
-public class GenerateDataKeyRequest extends RpcAcsRequest<GenerateDataKeyResponse> {
+public class UpdateAliasRequest extends RpcAcsRequest<UpdateAliasResponse> {
 	
-	public GenerateDataKeyRequest() {
-		super("Kms", "2016-01-20", "GenerateDataKey", "kms");
+	public UpdateAliasRequest() {
+		super("Kms", "2016-01-20", "UpdateAlias", "kms");
 		setProtocol(ProtocolType.HTTPS);
 	}
 
-	private String encryptionContext;
+	private String aliasName;
 
 	private String keyId;
 
-	private String keySpec;
-
 	private String sTSToken;
 
-	private Integer numberOfBytes;
-
-	public String getEncryptionContext() {
-		return this.encryptionContext;
+	public String getAliasName() {
+		return this.aliasName;
 	}
 
-	public void setEncryptionContext(String encryptionContext) {
-		this.encryptionContext = encryptionContext;
-		if(encryptionContext != null){
-			putQueryParameter("EncryptionContext", encryptionContext);
+	public void setAliasName(String aliasName) {
+		this.aliasName = aliasName;
+		if(aliasName != null){
+			putQueryParameter("AliasName", aliasName);
 		}
 	}
 
@@ -60,17 +56,6 @@ public class GenerateDataKeyRequest extends RpcAcsRequest<GenerateDataKeyRespons
 		}
 	}
 
-	public String getKeySpec() {
-		return this.keySpec;
-	}
-
-	public void setKeySpec(String keySpec) {
-		this.keySpec = keySpec;
-		if(keySpec != null){
-			putQueryParameter("KeySpec", keySpec);
-		}
-	}
-
 	public String getSTSToken() {
 		return this.sTSToken;
 	}
@@ -82,20 +67,9 @@ public class GenerateDataKeyRequest extends RpcAcsRequest<GenerateDataKeyRespons
 		}
 	}
 
-	public Integer getNumberOfBytes() {
-		return this.numberOfBytes;
-	}
-
-	public void setNumberOfBytes(Integer numberOfBytes) {
-		this.numberOfBytes = numberOfBytes;
-		if(numberOfBytes != null){
-			putQueryParameter("NumberOfBytes", numberOfBytes.toString());
-		}
-	}
-
 	@Override
-	public Class<GenerateDataKeyResponse> getResponseClass() {
-		return GenerateDataKeyResponse.class;
+	public Class<UpdateAliasResponse> getResponseClass() {
+		return UpdateAliasResponse.class;
 	}
 
 }

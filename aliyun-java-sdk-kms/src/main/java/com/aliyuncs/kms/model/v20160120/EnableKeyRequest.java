@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.kms.model.v20160120;
 
 import com.aliyuncs.RpcAcsRequest;
@@ -37,7 +38,9 @@ public class EnableKeyRequest extends RpcAcsRequest<EnableKeyResponse> {
 
 	public void setKeyId(String keyId) {
 		this.keyId = keyId;
-		putQueryParameter("KeyId", keyId);
+		if(keyId != null){
+			putQueryParameter("KeyId", keyId);
+		}
 	}
 
 	public String getSTSToken() {
@@ -46,7 +49,9 @@ public class EnableKeyRequest extends RpcAcsRequest<EnableKeyResponse> {
 
 	public void setSTSToken(String sTSToken) {
 		this.sTSToken = sTSToken;
-		putQueryParameter("STSToken", sTSToken);
+		if(sTSToken != null){
+			putQueryParameter("STSToken", sTSToken);
+		}
 	}
 
 	@Override

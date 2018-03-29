@@ -16,14 +16,14 @@ package com.aliyuncs.kms.model.v20160120;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.kms.transform.v20160120.ListKeysResponseUnmarshaller;
+import com.aliyuncs.kms.transform.v20160120.ListAliasesResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ListKeysResponse extends AcsResponse {
+public class ListAliasesResponse extends AcsResponse {
 
 	private Integer totalCount;
 
@@ -33,7 +33,7 @@ public class ListKeysResponse extends AcsResponse {
 
 	private String requestId;
 
-	private List<Key> keys;
+	private List<Alias> aliases;
 
 	public Integer getTotalCount() {
 		return this.totalCount;
@@ -67,19 +67,21 @@ public class ListKeysResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public List<Key> getKeys() {
-		return this.keys;
+	public List<Alias> getAliases() {
+		return this.aliases;
 	}
 
-	public void setKeys(List<Key> keys) {
-		this.keys = keys;
+	public void setAliases(List<Alias> aliases) {
+		this.aliases = aliases;
 	}
 
-	public static class Key {
+	public static class Alias {
 
 		private String keyId;
 
-		private String keyArn;
+		private String aliasName;
+
+		private String aliasArn;
 
 		public String getKeyId() {
 			return this.keyId;
@@ -89,17 +91,25 @@ public class ListKeysResponse extends AcsResponse {
 			this.keyId = keyId;
 		}
 
-		public String getKeyArn() {
-			return this.keyArn;
+		public String getAliasName() {
+			return this.aliasName;
 		}
 
-		public void setKeyArn(String keyArn) {
-			this.keyArn = keyArn;
+		public void setAliasName(String aliasName) {
+			this.aliasName = aliasName;
+		}
+
+		public String getAliasArn() {
+			return this.aliasArn;
+		}
+
+		public void setAliasArn(String aliasArn) {
+			this.aliasArn = aliasArn;
 		}
 	}
 
 	@Override
-	public ListKeysResponse getInstance(UnmarshallerContext context) {
-		return	ListKeysResponseUnmarshaller.unmarshall(this, context);
+	public ListAliasesResponse getInstance(UnmarshallerContext context) {
+		return	ListAliasesResponseUnmarshaller.unmarshall(this, context);
 	}
 }

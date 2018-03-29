@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.kms.model.v20160120;
 
 import com.aliyuncs.RpcAcsRequest;
@@ -27,20 +28,13 @@ public class CreateKeyRequest extends RpcAcsRequest<CreateKeyResponse> {
 		setProtocol(ProtocolType.HTTPS);
 	}
 
-	private String description;
-
 	private String keyUsage;
 
+	private String origin;
+
+	private String description;
+
 	private String sTSToken;
-
-	public String getDescription() {
-		return this.description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-		putQueryParameter("Description", description);
-	}
 
 	public String getKeyUsage() {
 		return this.keyUsage;
@@ -48,7 +42,31 @@ public class CreateKeyRequest extends RpcAcsRequest<CreateKeyResponse> {
 
 	public void setKeyUsage(String keyUsage) {
 		this.keyUsage = keyUsage;
-		putQueryParameter("KeyUsage", keyUsage);
+		if(keyUsage != null){
+			putQueryParameter("KeyUsage", keyUsage);
+		}
+	}
+
+	public String getOrigin() {
+		return this.origin;
+	}
+
+	public void setOrigin(String origin) {
+		this.origin = origin;
+		if(origin != null){
+			putQueryParameter("Origin", origin);
+		}
+	}
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+		if(description != null){
+			putQueryParameter("Description", description);
+		}
 	}
 
 	public String getSTSToken() {
@@ -57,7 +75,9 @@ public class CreateKeyRequest extends RpcAcsRequest<CreateKeyResponse> {
 
 	public void setSTSToken(String sTSToken) {
 		this.sTSToken = sTSToken;
-		putQueryParameter("STSToken", sTSToken);
+		if(sTSToken != null){
+			putQueryParameter("STSToken", sTSToken);
+		}
 	}
 
 	@Override

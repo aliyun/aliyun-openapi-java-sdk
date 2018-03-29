@@ -21,31 +21,29 @@ import com.aliyuncs.http.ProtocolType;
  * @author auto create
  * @version 
  */
-public class GenerateDataKeyRequest extends RpcAcsRequest<GenerateDataKeyResponse> {
+public class ListAliasesByKeyIdRequest extends RpcAcsRequest<ListAliasesByKeyIdResponse> {
 	
-	public GenerateDataKeyRequest() {
-		super("Kms", "2016-01-20", "GenerateDataKey", "kms");
+	public ListAliasesByKeyIdRequest() {
+		super("Kms", "2016-01-20", "ListAliasesByKeyId", "kms");
 		setProtocol(ProtocolType.HTTPS);
 	}
 
-	private String encryptionContext;
+	private Integer pageSize;
 
 	private String keyId;
 
-	private String keySpec;
-
 	private String sTSToken;
 
-	private Integer numberOfBytes;
+	private Integer pageNumber;
 
-	public String getEncryptionContext() {
-		return this.encryptionContext;
+	public Integer getPageSize() {
+		return this.pageSize;
 	}
 
-	public void setEncryptionContext(String encryptionContext) {
-		this.encryptionContext = encryptionContext;
-		if(encryptionContext != null){
-			putQueryParameter("EncryptionContext", encryptionContext);
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 
@@ -60,17 +58,6 @@ public class GenerateDataKeyRequest extends RpcAcsRequest<GenerateDataKeyRespons
 		}
 	}
 
-	public String getKeySpec() {
-		return this.keySpec;
-	}
-
-	public void setKeySpec(String keySpec) {
-		this.keySpec = keySpec;
-		if(keySpec != null){
-			putQueryParameter("KeySpec", keySpec);
-		}
-	}
-
 	public String getSTSToken() {
 		return this.sTSToken;
 	}
@@ -82,20 +69,20 @@ public class GenerateDataKeyRequest extends RpcAcsRequest<GenerateDataKeyRespons
 		}
 	}
 
-	public Integer getNumberOfBytes() {
-		return this.numberOfBytes;
+	public Integer getPageNumber() {
+		return this.pageNumber;
 	}
 
-	public void setNumberOfBytes(Integer numberOfBytes) {
-		this.numberOfBytes = numberOfBytes;
-		if(numberOfBytes != null){
-			putQueryParameter("NumberOfBytes", numberOfBytes.toString());
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
 		}
 	}
 
 	@Override
-	public Class<GenerateDataKeyResponse> getResponseClass() {
-		return GenerateDataKeyResponse.class;
+	public Class<ListAliasesByKeyIdResponse> getResponseClass() {
+		return ListAliasesByKeyIdResponse.class;
 	}
 
 }

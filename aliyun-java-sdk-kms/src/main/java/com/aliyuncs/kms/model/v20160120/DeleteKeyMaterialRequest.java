@@ -21,33 +21,16 @@ import com.aliyuncs.http.ProtocolType;
  * @author auto create
  * @version 
  */
-public class GenerateDataKeyRequest extends RpcAcsRequest<GenerateDataKeyResponse> {
+public class DeleteKeyMaterialRequest extends RpcAcsRequest<DeleteKeyMaterialResponse> {
 	
-	public GenerateDataKeyRequest() {
-		super("Kms", "2016-01-20", "GenerateDataKey", "kms");
+	public DeleteKeyMaterialRequest() {
+		super("Kms", "2016-01-20", "DeleteKeyMaterial", "kms");
 		setProtocol(ProtocolType.HTTPS);
 	}
 
-	private String encryptionContext;
-
 	private String keyId;
 
-	private String keySpec;
-
 	private String sTSToken;
-
-	private Integer numberOfBytes;
-
-	public String getEncryptionContext() {
-		return this.encryptionContext;
-	}
-
-	public void setEncryptionContext(String encryptionContext) {
-		this.encryptionContext = encryptionContext;
-		if(encryptionContext != null){
-			putQueryParameter("EncryptionContext", encryptionContext);
-		}
-	}
 
 	public String getKeyId() {
 		return this.keyId;
@@ -57,17 +40,6 @@ public class GenerateDataKeyRequest extends RpcAcsRequest<GenerateDataKeyRespons
 		this.keyId = keyId;
 		if(keyId != null){
 			putQueryParameter("KeyId", keyId);
-		}
-	}
-
-	public String getKeySpec() {
-		return this.keySpec;
-	}
-
-	public void setKeySpec(String keySpec) {
-		this.keySpec = keySpec;
-		if(keySpec != null){
-			putQueryParameter("KeySpec", keySpec);
 		}
 	}
 
@@ -82,20 +54,9 @@ public class GenerateDataKeyRequest extends RpcAcsRequest<GenerateDataKeyRespons
 		}
 	}
 
-	public Integer getNumberOfBytes() {
-		return this.numberOfBytes;
-	}
-
-	public void setNumberOfBytes(Integer numberOfBytes) {
-		this.numberOfBytes = numberOfBytes;
-		if(numberOfBytes != null){
-			putQueryParameter("NumberOfBytes", numberOfBytes.toString());
-		}
-	}
-
 	@Override
-	public Class<GenerateDataKeyResponse> getResponseClass() {
-		return GenerateDataKeyResponse.class;
+	public Class<DeleteKeyMaterialResponse> getResponseClass() {
+		return DeleteKeyMaterialResponse.class;
 	}
 
 }

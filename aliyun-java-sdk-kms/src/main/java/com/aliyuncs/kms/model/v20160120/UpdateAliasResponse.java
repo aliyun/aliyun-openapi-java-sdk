@@ -14,20 +14,17 @@
 
 package com.aliyuncs.kms.model.v20160120;
 
-import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.kms.transform.v20160120.DescribeRegionsResponseUnmarshaller;
+import com.aliyuncs.kms.transform.v20160120.UpdateAliasResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DescribeRegionsResponse extends AcsResponse {
+public class UpdateAliasResponse extends AcsResponse {
 
 	private String requestId;
-
-	private List<Region> regions;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -37,29 +34,8 @@ public class DescribeRegionsResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public List<Region> getRegions() {
-		return this.regions;
-	}
-
-	public void setRegions(List<Region> regions) {
-		this.regions = regions;
-	}
-
-	public static class Region {
-
-		private String regionId;
-
-		public String getRegionId() {
-			return this.regionId;
-		}
-
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-	}
-
 	@Override
-	public DescribeRegionsResponse getInstance(UnmarshallerContext context) {
-		return	DescribeRegionsResponseUnmarshaller.unmarshall(this, context);
+	public UpdateAliasResponse getInstance(UnmarshallerContext context) {
+		return	UpdateAliasResponseUnmarshaller.unmarshall(this, context);
 	}
 }

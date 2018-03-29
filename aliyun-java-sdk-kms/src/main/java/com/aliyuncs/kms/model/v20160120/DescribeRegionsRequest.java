@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.kms.model.v20160120;
 
 import com.aliyuncs.RpcAcsRequest;
@@ -35,7 +36,9 @@ public class DescribeRegionsRequest extends RpcAcsRequest<DescribeRegionsRespons
 
 	public void setSTSToken(String sTSToken) {
 		this.sTSToken = sTSToken;
-		putQueryParameter("STSToken", sTSToken);
+		if(sTSToken != null){
+			putQueryParameter("STSToken", sTSToken);
+		}
 	}
 
 	@Override

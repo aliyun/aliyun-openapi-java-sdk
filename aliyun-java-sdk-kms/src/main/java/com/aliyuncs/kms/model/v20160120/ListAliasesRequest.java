@@ -21,25 +21,27 @@ import com.aliyuncs.http.ProtocolType;
  * @author auto create
  * @version 
  */
-public class CancelKeyDeletionRequest extends RpcAcsRequest<CancelKeyDeletionResponse> {
+public class ListAliasesRequest extends RpcAcsRequest<ListAliasesResponse> {
 	
-	public CancelKeyDeletionRequest() {
-		super("Kms", "2016-01-20", "CancelKeyDeletion", "kms");
+	public ListAliasesRequest() {
+		super("Kms", "2016-01-20", "ListAliases", "kms");
 		setProtocol(ProtocolType.HTTPS);
 	}
 
-	private String keyId;
+	private Integer pageSize;
 
 	private String sTSToken;
 
-	public String getKeyId() {
-		return this.keyId;
+	private Integer pageNumber;
+
+	public Integer getPageSize() {
+		return this.pageSize;
 	}
 
-	public void setKeyId(String keyId) {
-		this.keyId = keyId;
-		if(keyId != null){
-			putQueryParameter("KeyId", keyId);
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 
@@ -54,9 +56,20 @@ public class CancelKeyDeletionRequest extends RpcAcsRequest<CancelKeyDeletionRes
 		}
 	}
 
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
 	@Override
-	public Class<CancelKeyDeletionResponse> getResponseClass() {
-		return CancelKeyDeletionResponse.class;
+	public Class<ListAliasesResponse> getResponseClass() {
+		return ListAliasesResponse.class;
 	}
 
 }

@@ -21,33 +21,20 @@ import com.aliyuncs.http.ProtocolType;
  * @author auto create
  * @version 
  */
-public class GenerateDataKeyRequest extends RpcAcsRequest<GenerateDataKeyResponse> {
+public class GetParametersForImportRequest extends RpcAcsRequest<GetParametersForImportResponse> {
 	
-	public GenerateDataKeyRequest() {
-		super("Kms", "2016-01-20", "GenerateDataKey", "kms");
+	public GetParametersForImportRequest() {
+		super("Kms", "2016-01-20", "GetParametersForImport", "kms");
 		setProtocol(ProtocolType.HTTPS);
 	}
 
-	private String encryptionContext;
-
 	private String keyId;
-
-	private String keySpec;
 
 	private String sTSToken;
 
-	private Integer numberOfBytes;
+	private String wrappingAlgorithm;
 
-	public String getEncryptionContext() {
-		return this.encryptionContext;
-	}
-
-	public void setEncryptionContext(String encryptionContext) {
-		this.encryptionContext = encryptionContext;
-		if(encryptionContext != null){
-			putQueryParameter("EncryptionContext", encryptionContext);
-		}
-	}
+	private String wrappingKeySpec;
 
 	public String getKeyId() {
 		return this.keyId;
@@ -57,17 +44,6 @@ public class GenerateDataKeyRequest extends RpcAcsRequest<GenerateDataKeyRespons
 		this.keyId = keyId;
 		if(keyId != null){
 			putQueryParameter("KeyId", keyId);
-		}
-	}
-
-	public String getKeySpec() {
-		return this.keySpec;
-	}
-
-	public void setKeySpec(String keySpec) {
-		this.keySpec = keySpec;
-		if(keySpec != null){
-			putQueryParameter("KeySpec", keySpec);
 		}
 	}
 
@@ -82,20 +58,31 @@ public class GenerateDataKeyRequest extends RpcAcsRequest<GenerateDataKeyRespons
 		}
 	}
 
-	public Integer getNumberOfBytes() {
-		return this.numberOfBytes;
+	public String getWrappingAlgorithm() {
+		return this.wrappingAlgorithm;
 	}
 
-	public void setNumberOfBytes(Integer numberOfBytes) {
-		this.numberOfBytes = numberOfBytes;
-		if(numberOfBytes != null){
-			putQueryParameter("NumberOfBytes", numberOfBytes.toString());
+	public void setWrappingAlgorithm(String wrappingAlgorithm) {
+		this.wrappingAlgorithm = wrappingAlgorithm;
+		if(wrappingAlgorithm != null){
+			putQueryParameter("WrappingAlgorithm", wrappingAlgorithm);
+		}
+	}
+
+	public String getWrappingKeySpec() {
+		return this.wrappingKeySpec;
+	}
+
+	public void setWrappingKeySpec(String wrappingKeySpec) {
+		this.wrappingKeySpec = wrappingKeySpec;
+		if(wrappingKeySpec != null){
+			putQueryParameter("WrappingKeySpec", wrappingKeySpec);
 		}
 	}
 
 	@Override
-	public Class<GenerateDataKeyResponse> getResponseClass() {
-		return GenerateDataKeyResponse.class;
+	public Class<GetParametersForImportResponse> getResponseClass() {
+		return GetParametersForImportResponse.class;
 	}
 
 }

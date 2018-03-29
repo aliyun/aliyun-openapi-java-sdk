@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.kms.model.v20160120;
 
 import com.aliyuncs.RpcAcsRequest;
@@ -27,20 +28,11 @@ public class ScheduleKeyDeletionRequest extends RpcAcsRequest<ScheduleKeyDeletio
 		setProtocol(ProtocolType.HTTPS);
 	}
 
-	private String keyId;
-
 	private Integer pendingWindowInDays;
 
+	private String keyId;
+
 	private String sTSToken;
-
-	public String getKeyId() {
-		return this.keyId;
-	}
-
-	public void setKeyId(String keyId) {
-		this.keyId = keyId;
-		putQueryParameter("KeyId", keyId);
-	}
 
 	public Integer getPendingWindowInDays() {
 		return this.pendingWindowInDays;
@@ -48,7 +40,20 @@ public class ScheduleKeyDeletionRequest extends RpcAcsRequest<ScheduleKeyDeletio
 
 	public void setPendingWindowInDays(Integer pendingWindowInDays) {
 		this.pendingWindowInDays = pendingWindowInDays;
-		putQueryParameter("PendingWindowInDays", pendingWindowInDays);
+		if(pendingWindowInDays != null){
+			putQueryParameter("PendingWindowInDays", pendingWindowInDays.toString());
+		}
+	}
+
+	public String getKeyId() {
+		return this.keyId;
+	}
+
+	public void setKeyId(String keyId) {
+		this.keyId = keyId;
+		if(keyId != null){
+			putQueryParameter("KeyId", keyId);
+		}
 	}
 
 	public String getSTSToken() {
@@ -57,7 +62,9 @@ public class ScheduleKeyDeletionRequest extends RpcAcsRequest<ScheduleKeyDeletio
 
 	public void setSTSToken(String sTSToken) {
 		this.sTSToken = sTSToken;
-		putQueryParameter("STSToken", sTSToken);
+		if(sTSToken != null){
+			putQueryParameter("STSToken", sTSToken);
+		}
 	}
 
 	@Override

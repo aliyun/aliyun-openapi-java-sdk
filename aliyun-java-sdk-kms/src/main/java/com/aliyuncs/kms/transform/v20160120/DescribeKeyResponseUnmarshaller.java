@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.kms.transform.v20160120;
 
 import com.aliyuncs.kms.model.v20160120.DescribeKeyResponse;
@@ -33,6 +34,8 @@ public class DescribeKeyResponseUnmarshaller {
 		keyMetadata.setDeleteDate(context.stringValue("DescribeKeyResponse.KeyMetadata.DeleteDate"));
 		keyMetadata.setCreator(context.stringValue("DescribeKeyResponse.KeyMetadata.Creator"));
 		keyMetadata.setArn(context.stringValue("DescribeKeyResponse.KeyMetadata.Arn"));
+		keyMetadata.setOrigin(context.stringValue("DescribeKeyResponse.KeyMetadata.Origin"));
+		keyMetadata.setMaterialExpireTime(context.stringValue("DescribeKeyResponse.KeyMetadata.MaterialExpireTime"));
 		describeKeyResponse.setKeyMetadata(keyMetadata);
 	 
 	 	return describeKeyResponse;

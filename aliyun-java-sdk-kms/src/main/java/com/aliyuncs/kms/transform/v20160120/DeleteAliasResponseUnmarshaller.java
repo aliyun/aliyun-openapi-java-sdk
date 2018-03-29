@@ -14,18 +14,16 @@
 
 package com.aliyuncs.kms.transform.v20160120;
 
-import com.aliyuncs.kms.model.v20160120.DecryptResponse;
+import com.aliyuncs.kms.model.v20160120.DeleteAliasResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class DecryptResponseUnmarshaller {
+public class DeleteAliasResponseUnmarshaller {
 
-	public static DecryptResponse unmarshall(DecryptResponse decryptResponse, UnmarshallerContext context) {
+	public static DeleteAliasResponse unmarshall(DeleteAliasResponse deleteAliasResponse, UnmarshallerContext context) {
 		
-		decryptResponse.setRequestId(context.stringValue("DecryptResponse.RequestId"));
-		decryptResponse.setPlaintext(context.stringValue("DecryptResponse.Plaintext"));
-		decryptResponse.setKeyId(context.stringValue("DecryptResponse.KeyId"));
+		deleteAliasResponse.setRequestId(context.stringValue("DeleteAliasResponse.RequestId"));
 	 
-	 	return decryptResponse;
+	 	return deleteAliasResponse;
 	}
 }

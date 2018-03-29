@@ -15,28 +15,24 @@
 package com.aliyuncs.kms.model.v20160120;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.kms.transform.v20160120.EncryptResponseUnmarshaller;
+import com.aliyuncs.kms.transform.v20160120.GetParametersForImportResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class EncryptResponse extends AcsResponse {
-
-	private String ciphertextBlob;
+public class GetParametersForImportResponse extends AcsResponse {
 
 	private String keyId;
 
 	private String requestId;
 
-	public String getCiphertextBlob() {
-		return this.ciphertextBlob;
-	}
+	private String importToken;
 
-	public void setCiphertextBlob(String ciphertextBlob) {
-		this.ciphertextBlob = ciphertextBlob;
-	}
+	private String publicKey;
+
+	private String tokenExpireTime;
 
 	public String getKeyId() {
 		return this.keyId;
@@ -54,8 +50,32 @@ public class EncryptResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public String getImportToken() {
+		return this.importToken;
+	}
+
+	public void setImportToken(String importToken) {
+		this.importToken = importToken;
+	}
+
+	public String getPublicKey() {
+		return this.publicKey;
+	}
+
+	public void setPublicKey(String publicKey) {
+		this.publicKey = publicKey;
+	}
+
+	public String getTokenExpireTime() {
+		return this.tokenExpireTime;
+	}
+
+	public void setTokenExpireTime(String tokenExpireTime) {
+		this.tokenExpireTime = tokenExpireTime;
+	}
+
 	@Override
-	public EncryptResponse getInstance(UnmarshallerContext context) {
-		return	EncryptResponseUnmarshaller.unmarshall(this, context);
+	public GetParametersForImportResponse getInstance(UnmarshallerContext context) {
+		return	GetParametersForImportResponseUnmarshaller.unmarshall(this, context);
 	}
 }

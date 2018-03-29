@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.kms.model.v20160120;
 
 import com.aliyuncs.RpcAcsRequest;
@@ -27,13 +28,24 @@ public class EncryptRequest extends RpcAcsRequest<EncryptResponse> {
 		setProtocol(ProtocolType.HTTPS);
 	}
 
-	private String keyId;
+	private String encryptionContext;
 
-	private String plaintext;
+	private String keyId;
 
 	private String sTSToken;
 
-	private String encryptionContext;
+	private String plaintext;
+
+	public String getEncryptionContext() {
+		return this.encryptionContext;
+	}
+
+	public void setEncryptionContext(String encryptionContext) {
+		this.encryptionContext = encryptionContext;
+		if(encryptionContext != null){
+			putQueryParameter("EncryptionContext", encryptionContext);
+		}
+	}
 
 	public String getKeyId() {
 		return this.keyId;
@@ -41,16 +53,9 @@ public class EncryptRequest extends RpcAcsRequest<EncryptResponse> {
 
 	public void setKeyId(String keyId) {
 		this.keyId = keyId;
-		putQueryParameter("KeyId", keyId);
-	}
-
-	public String getPlaintext() {
-		return this.plaintext;
-	}
-
-	public void setPlaintext(String plaintext) {
-		this.plaintext = plaintext;
-		putQueryParameter("Plaintext", plaintext);
+		if(keyId != null){
+			putQueryParameter("KeyId", keyId);
+		}
 	}
 
 	public String getSTSToken() {
@@ -59,16 +64,20 @@ public class EncryptRequest extends RpcAcsRequest<EncryptResponse> {
 
 	public void setSTSToken(String sTSToken) {
 		this.sTSToken = sTSToken;
-		putQueryParameter("STSToken", sTSToken);
+		if(sTSToken != null){
+			putQueryParameter("STSToken", sTSToken);
+		}
 	}
 
-	public String getEncryptionContext() {
-		return this.encryptionContext;
+	public String getPlaintext() {
+		return this.plaintext;
 	}
 
-	public void setEncryptionContext(String encryptionContext) {
-		this.encryptionContext = encryptionContext;
-		putQueryParameter("EncryptionContext", encryptionContext);
+	public void setPlaintext(String plaintext) {
+		this.plaintext = plaintext;
+		if(plaintext != null){
+			putQueryParameter("Plaintext", plaintext);
+		}
 	}
 
 	@Override

@@ -21,25 +21,25 @@ import com.aliyuncs.http.ProtocolType;
  * @author auto create
  * @version 
  */
-public class CancelKeyDeletionRequest extends RpcAcsRequest<CancelKeyDeletionResponse> {
+public class DeleteAliasRequest extends RpcAcsRequest<DeleteAliasResponse> {
 	
-	public CancelKeyDeletionRequest() {
-		super("Kms", "2016-01-20", "CancelKeyDeletion", "kms");
+	public DeleteAliasRequest() {
+		super("Kms", "2016-01-20", "DeleteAlias", "kms");
 		setProtocol(ProtocolType.HTTPS);
 	}
 
-	private String keyId;
+	private String aliasName;
 
 	private String sTSToken;
 
-	public String getKeyId() {
-		return this.keyId;
+	public String getAliasName() {
+		return this.aliasName;
 	}
 
-	public void setKeyId(String keyId) {
-		this.keyId = keyId;
-		if(keyId != null){
-			putQueryParameter("KeyId", keyId);
+	public void setAliasName(String aliasName) {
+		this.aliasName = aliasName;
+		if(aliasName != null){
+			putQueryParameter("AliasName", aliasName);
 		}
 	}
 
@@ -55,8 +55,8 @@ public class CancelKeyDeletionRequest extends RpcAcsRequest<CancelKeyDeletionRes
 	}
 
 	@Override
-	public Class<CancelKeyDeletionResponse> getResponseClass() {
-		return CancelKeyDeletionResponse.class;
+	public Class<DeleteAliasResponse> getResponseClass() {
+		return DeleteAliasResponse.class;
 	}
 
 }

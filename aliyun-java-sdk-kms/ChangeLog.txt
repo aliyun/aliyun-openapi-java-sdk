@@ -1,0 +1,5 @@
+2018-03-29 Version: 2.5.0
+1, Add APIs: CreateAlias, UpdateAlias, DeleteAlias, ListAliases, ListAliasesByKeyId.
+2, Add APIs: GetParametersForImport, ImportKeyMaterial, DeleteKeyMaterial.
+3, Update KeyMetadata for CreateKey and DescribeKey.
+

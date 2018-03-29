@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.kms.model.v20160120;
 
 import com.aliyuncs.RpcAcsRequest;
@@ -27,20 +28,11 @@ public class ListKeysRequest extends RpcAcsRequest<ListKeysResponse> {
 		setProtocol(ProtocolType.HTTPS);
 	}
 
-	private Integer pageNumber;
-
 	private Integer pageSize;
 
 	private String sTSToken;
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		putQueryParameter("PageNumber", pageNumber);
-	}
+	private Integer pageNumber;
 
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -48,7 +40,9 @@ public class ListKeysRequest extends RpcAcsRequest<ListKeysResponse> {
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
-		putQueryParameter("PageSize", pageSize);
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
 	}
 
 	public String getSTSToken() {
@@ -57,7 +51,20 @@ public class ListKeysRequest extends RpcAcsRequest<ListKeysResponse> {
 
 	public void setSTSToken(String sTSToken) {
 		this.sTSToken = sTSToken;
-		putQueryParameter("STSToken", sTSToken);
+		if(sTSToken != null){
+			putQueryParameter("STSToken", sTSToken);
+		}
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
 	}
 
 	@Override

@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.kms.model.v20160120;
 
 import com.aliyuncs.RpcAcsRequest;
@@ -27,19 +28,21 @@ public class DecryptRequest extends RpcAcsRequest<DecryptResponse> {
 		setProtocol(ProtocolType.HTTPS);
 	}
 
-	private String ciphertextBlob;
+	private String encryptionContext;
 
 	private String sTSToken;
 
-	private String encryptionContext;
+	private String ciphertextBlob;
 
-	public String getCiphertextBlob() {
-		return this.ciphertextBlob;
+	public String getEncryptionContext() {
+		return this.encryptionContext;
 	}
 
-	public void setCiphertextBlob(String ciphertextBlob) {
-		this.ciphertextBlob = ciphertextBlob;
-		putQueryParameter("CiphertextBlob", ciphertextBlob);
+	public void setEncryptionContext(String encryptionContext) {
+		this.encryptionContext = encryptionContext;
+		if(encryptionContext != null){
+			putQueryParameter("EncryptionContext", encryptionContext);
+		}
 	}
 
 	public String getSTSToken() {
@@ -48,16 +51,20 @@ public class DecryptRequest extends RpcAcsRequest<DecryptResponse> {
 
 	public void setSTSToken(String sTSToken) {
 		this.sTSToken = sTSToken;
-		putQueryParameter("STSToken", sTSToken);
+		if(sTSToken != null){
+			putQueryParameter("STSToken", sTSToken);
+		}
 	}
 
-	public String getEncryptionContext() {
-		return this.encryptionContext;
+	public String getCiphertextBlob() {
+		return this.ciphertextBlob;
 	}
 
-	public void setEncryptionContext(String encryptionContext) {
-		this.encryptionContext = encryptionContext;
-		putQueryParameter("EncryptionContext", encryptionContext);
+	public void setCiphertextBlob(String ciphertextBlob) {
+		this.ciphertextBlob = ciphertextBlob;
+		if(ciphertextBlob != null){
+			putQueryParameter("CiphertextBlob", ciphertextBlob);
+		}
 	}
 
 	@Override
