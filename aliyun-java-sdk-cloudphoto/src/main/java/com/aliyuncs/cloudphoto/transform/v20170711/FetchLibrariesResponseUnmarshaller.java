@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.cloudphoto.model.v20170711.FetchLibrariesResponse;
+import com.aliyuncs.cloudphoto.model.v20170711.FetchLibrariesResponse.Library;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -31,11 +32,14 @@ public class FetchLibrariesResponseUnmarshaller {
 		fetchLibrariesResponse.setTotalCount(context.integerValue("FetchLibrariesResponse.TotalCount"));
 		fetchLibrariesResponse.setAction(context.stringValue("FetchLibrariesResponse.Action"));
 
-		List<String> library = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("FetchLibrariesResponse.Library.Length"); i++) {
-			library.add(context.stringValue("FetchLibrariesResponse.Library["+ i +"]"));
+		List<Library> libraries = new ArrayList<Library>();
+		for (int i = 0; i < context.lengthValue("FetchLibrariesResponse.Libraries.Length"); i++) {
+			Library library = new Library();
+			library.setLibraryId(context.stringValue("FetchLibrariesResponse.Libraries["+ i +"].LibraryId"));
+
+			libraries.add(library);
 		}
-		fetchLibrariesResponse.setLibrary(library);
+		fetchLibrariesResponse.setLibraries(libraries);
 	 
 	 	return fetchLibrariesResponse;
 	}

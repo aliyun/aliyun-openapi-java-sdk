@@ -35,7 +35,7 @@ public class FetchLibrariesResponse extends AcsResponse {
 
 	private String action;
 
-	private List<String> library;
+	private List<Library> libraries;
 
 	public String getCode() {
 		return this.code;
@@ -77,16 +77,34 @@ public class FetchLibrariesResponse extends AcsResponse {
 		this.action = action;
 	}
 
-	public List<String> getLibrary() {
-		return this.library;
+	public List<Library> getLibraries() {
+		return this.libraries;
 	}
 
-	public void setLibrary(List<String> library) {
-		this.library = library;
+	public void setLibraries(List<Library> libraries) {
+		this.libraries = libraries;
+	}
+
+	public static class Library {
+
+		private String libraryId;
+
+		public String getLibraryId() {
+			return this.libraryId;
+		}
+
+		public void setLibraryId(String libraryId) {
+			this.libraryId = libraryId;
+		}
 	}
 
 	@Override
 	public FetchLibrariesResponse getInstance(UnmarshallerContext context) {
 		return	FetchLibrariesResponseUnmarshaller.unmarshall(this, context);
+	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }

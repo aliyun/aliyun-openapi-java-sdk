@@ -1,3 +1,6 @@
+2018-03-29 Version: 1.1.15
+1, edit FetchLibraries return param format
+
 2018-03-27 Version: 1.1.14
 1, add interface FetchLibraries
 
