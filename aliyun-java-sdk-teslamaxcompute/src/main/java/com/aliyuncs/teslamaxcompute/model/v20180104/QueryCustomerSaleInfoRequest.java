@@ -26,16 +26,16 @@ public class QueryCustomerSaleInfoRequest extends RpcAcsRequest<QueryCustomerSal
 		super("TeslaMaxCompute", "2018-01-04", "QueryCustomerSaleInfo");
 	}
 
-	private String region;
+	private String regionName;
 
-	public String getRegion() {
-		return this.region;
+	public String getRegionName() {
+		return this.regionName;
 	}
 
-	public void setRegion(String region) {
-		this.region = region;
-		if(region != null){
-			putQueryParameter("Region", region);
+	public void setRegionName(String regionName) {
+		this.regionName = regionName;
+		if(regionName != null){
+			putQueryParameter("RegionName", regionName);
 		}
 	}
 

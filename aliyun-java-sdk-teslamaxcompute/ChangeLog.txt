@@ -1,3 +1,6 @@
+2018-03-30 Version: 1.5.3
+1, API QueryCustomerSaleInfo arguments update.
+
 2018-03-27 Version: 1.5.2
 1, Rename QueryCustomerSaleInfo to RegionName.
 
