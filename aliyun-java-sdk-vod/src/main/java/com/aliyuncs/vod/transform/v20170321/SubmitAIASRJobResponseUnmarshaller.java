@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.vod.transform.v20170321;
 
 import com.aliyuncs.vod.model.v20170321.SubmitAIASRJobResponse;

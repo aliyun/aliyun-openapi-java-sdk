@@ -1,3 +1,16 @@
+2018-04-01 Version: 2.10.0
+1, Add the DescribePlayTopVideos  API,  to describe the top video statistics of play data.
+2, Add the DescribePlayUserAvg API, to describe the average statistics of play data.
+3, Add the DescribePlayUserTotal API, to describe the total statistics of play data.
+4, Add the DescribePlayVideoStatis API, to describe the single video statistics of play data.
+5, Add the DescribeRefreshQuota API, to get quota of refreshing cache.
+6, Add the DescribeRefreshTasks API, to get status of refreshing cache.
+7, Add the PushObjectCache API, to summit a job of pushing objects to cdn cache.
+8, Add the RefreshObjectCaches API, to refresh cdn cache.
+9, Add the SubmitTranscodeJobs API, to support the user to submit transocde job base with VideoId, TemplateGroupId, EncryptConfig and so on.
+10, Add the SubmitSnapshotJob API, to support the user to submit snapshot job base with VideoId, SpecifiedOffsetTime, Width, Height and so on.
+11, Update the ProduceEditingProjectVideo API, add MediaMetadata field of request to set the produced media metadata, add ProduceConfig field of request to set some customized config options, such as TemplateGroupId and so on.
+
 2017-12-21 Version: 2.9.0
 1, Add a new api named "ListLiveRecordVideo", which supports the user to query the live recorded video list based on StreamName, DomainName, AppName and so on
 

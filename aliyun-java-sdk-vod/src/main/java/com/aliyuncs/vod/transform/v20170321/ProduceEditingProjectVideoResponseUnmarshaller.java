@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.vod.transform.v20170321;
 
 import com.aliyuncs.vod.model.v20170321.ProduceEditingProjectVideoResponse;
@@ -23,6 +24,7 @@ public class ProduceEditingProjectVideoResponseUnmarshaller {
 		
 		produceEditingProjectVideoResponse.setRequestId(context.stringValue("ProduceEditingProjectVideoResponse.RequestId"));
 		produceEditingProjectVideoResponse.setMediaId(context.stringValue("ProduceEditingProjectVideoResponse.MediaId"));
+		produceEditingProjectVideoResponse.setProjectId(context.stringValue("ProduceEditingProjectVideoResponse.ProjectId"));
 	 
 	 	return produceEditingProjectVideoResponse;
 	}

@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.vod.model.v20170321;
 
 import com.aliyuncs.AcsResponse;
@@ -27,6 +28,8 @@ public class ProduceEditingProjectVideoResponse extends AcsResponse {
 
 	private String mediaId;
 
+	private String projectId;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -41,6 +44,14 @@ public class ProduceEditingProjectVideoResponse extends AcsResponse {
 
 	public void setMediaId(String mediaId) {
 		this.mediaId = mediaId;
+	}
+
+	public String getProjectId() {
+		return this.projectId;
+	}
+
+	public void setProjectId(String projectId) {
+		this.projectId = projectId;
 	}
 
 	@Override
