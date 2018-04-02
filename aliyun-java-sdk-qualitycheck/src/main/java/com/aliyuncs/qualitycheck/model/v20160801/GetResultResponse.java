@@ -89,6 +89,8 @@ public class GetResultResponse extends AcsResponse {
 
 		private String tid;
 
+		private String asrMsg;
+
 		private Integer score;
 
 		private Integer reviewStatus;
@@ -105,6 +107,14 @@ public class GetResultResponse extends AcsResponse {
 
 		public void setTid(String tid) {
 			this.tid = tid;
+		}
+
+		public String getAsrMsg() {
+			return this.asrMsg;
+		}
+
+		public void setAsrMsg(String asrMsg) {
+			this.asrMsg = asrMsg;
 		}
 
 		public Integer getScore() {

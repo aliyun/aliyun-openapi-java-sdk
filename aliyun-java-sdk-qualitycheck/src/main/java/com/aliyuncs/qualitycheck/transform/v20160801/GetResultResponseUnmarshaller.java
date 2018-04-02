@@ -46,6 +46,7 @@ public class GetResultResponseUnmarshaller {
 		for (int i = 0; i < context.lengthValue("GetResultResponse.data.Length"); i++) {
 			ResultInfo resultInfo = new ResultInfo();
 			resultInfo.setTid(context.stringValue("GetResultResponse.data["+ i +"].tid"));
+			resultInfo.setAsrMsg(context.stringValue("GetResultResponse.data["+ i +"].asrMsg"));
 			resultInfo.setScore(context.integerValue("GetResultResponse.data["+ i +"].score"));
 			resultInfo.setReviewStatus(context.integerValue("GetResultResponse.data["+ i +"].reviewStatus"));
 			resultInfo.setHitId(context.stringValue("GetResultResponse.data["+ i +"].hitId"));
