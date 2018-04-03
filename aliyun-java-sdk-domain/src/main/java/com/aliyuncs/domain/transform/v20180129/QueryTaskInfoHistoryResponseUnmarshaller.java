@@ -1,21 +1,17 @@
 /*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
+
 package com.aliyuncs.domain.transform.v20180129;
 
 import java.util.ArrayList;
@@ -45,6 +41,7 @@ public class QueryTaskInfoHistoryResponseUnmarshaller {
 		currentPageCursor.setTaskNo(context.stringValue("QueryTaskInfoHistoryResponse.CurrentPageCursor.TaskNo"));
 		currentPageCursor.setCreateTimeLong(context.longValue("QueryTaskInfoHistoryResponse.CurrentPageCursor.CreateTimeLong"));
 		currentPageCursor.setTaskStatusCode(context.integerValue("QueryTaskInfoHistoryResponse.CurrentPageCursor.TaskStatusCode"));
+		currentPageCursor.setTaskTypeDescription(context.stringValue("QueryTaskInfoHistoryResponse.CurrentPageCursor.TaskTypeDescription"));
 		queryTaskInfoHistoryResponse.setCurrentPageCursor(currentPageCursor);
 
 		NextPageCursor nextPageCursor = new NextPageCursor();
@@ -56,6 +53,7 @@ public class QueryTaskInfoHistoryResponseUnmarshaller {
 		nextPageCursor.setTaskNo(context.stringValue("QueryTaskInfoHistoryResponse.NextPageCursor.TaskNo"));
 		nextPageCursor.setCreateTimeLong(context.longValue("QueryTaskInfoHistoryResponse.NextPageCursor.CreateTimeLong"));
 		nextPageCursor.setTaskStatusCode(context.integerValue("QueryTaskInfoHistoryResponse.NextPageCursor.TaskStatusCode"));
+		nextPageCursor.setTaskTypeDescription(context.stringValue("QueryTaskInfoHistoryResponse.NextPageCursor.TaskTypeDescription"));
 		queryTaskInfoHistoryResponse.setNextPageCursor(nextPageCursor);
 
 		PrePageCursor prePageCursor = new PrePageCursor();
@@ -67,6 +65,7 @@ public class QueryTaskInfoHistoryResponseUnmarshaller {
 		prePageCursor.setTaskNo(context.stringValue("QueryTaskInfoHistoryResponse.PrePageCursor.TaskNo"));
 		prePageCursor.setCreateTimeLong(context.longValue("QueryTaskInfoHistoryResponse.PrePageCursor.CreateTimeLong"));
 		prePageCursor.setTaskStatusCode(context.integerValue("QueryTaskInfoHistoryResponse.PrePageCursor.TaskStatusCode"));
+		prePageCursor.setTaskTypeDescription(context.stringValue("QueryTaskInfoHistoryResponse.PrePageCursor.TaskTypeDescription"));
 		queryTaskInfoHistoryResponse.setPrePageCursor(prePageCursor);
 
 		List<TaskInfoHistory> objects = new ArrayList<TaskInfoHistory>();
@@ -80,6 +79,7 @@ public class QueryTaskInfoHistoryResponseUnmarshaller {
 			taskInfoHistory.setTaskNo(context.stringValue("QueryTaskInfoHistoryResponse.Objects["+ i +"].TaskNo"));
 			taskInfoHistory.setCreateTimeLong(context.longValue("QueryTaskInfoHistoryResponse.Objects["+ i +"].CreateTimeLong"));
 			taskInfoHistory.setTaskStatusCode(context.integerValue("QueryTaskInfoHistoryResponse.Objects["+ i +"].TaskStatusCode"));
+			taskInfoHistory.setTaskTypeDescription(context.stringValue("QueryTaskInfoHistoryResponse.Objects["+ i +"].TaskTypeDescription"));
 
 			objects.add(taskInfoHistory);
 		}

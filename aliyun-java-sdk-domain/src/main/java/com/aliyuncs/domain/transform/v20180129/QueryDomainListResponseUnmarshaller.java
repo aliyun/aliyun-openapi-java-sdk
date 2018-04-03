@@ -1,21 +1,17 @@
 /*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
+
 package com.aliyuncs.domain.transform.v20180129;
 
 import java.util.ArrayList;
@@ -51,6 +47,11 @@ public class QueryDomainListResponseUnmarshaller {
 			domain.setExpirationDateLong(context.longValue("QueryDomainListResponse.Data["+ i +"].ExpirationDateLong"));
 			domain.setRegistrationDateLong(context.longValue("QueryDomainListResponse.Data["+ i +"].RegistrationDateLong"));
 			domain.setPremium(context.booleanValue("QueryDomainListResponse.Data["+ i +"].Premium"));
+			domain.setDomainAuditStatus(context.stringValue("QueryDomainListResponse.Data["+ i +"].DomainAuditStatus"));
+			domain.setExpirationDateStatus(context.stringValue("QueryDomainListResponse.Data["+ i +"].ExpirationDateStatus"));
+			domain.setRegistrantType(context.stringValue("QueryDomainListResponse.Data["+ i +"].RegistrantType"));
+			domain.setDomainGroupId(context.stringValue("QueryDomainListResponse.Data["+ i +"].DomainGroupId"));
+			domain.setRemark(context.stringValue("QueryDomainListResponse.Data["+ i +"].Remark"));
 
 			data.add(domain);
 		}

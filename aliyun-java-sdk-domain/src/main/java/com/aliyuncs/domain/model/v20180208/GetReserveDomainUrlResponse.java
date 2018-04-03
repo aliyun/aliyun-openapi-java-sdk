@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.domain.model.v20180208;
 
 import com.aliyuncs.AcsResponse;
