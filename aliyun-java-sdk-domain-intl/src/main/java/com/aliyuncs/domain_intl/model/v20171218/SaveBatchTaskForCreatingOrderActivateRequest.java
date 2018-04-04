@@ -1,21 +1,17 @@
 /*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
+
 package com.aliyuncs.domain_intl.model.v20171218;
 
 import com.aliyuncs.RpcAcsRequest;
@@ -50,6 +46,20 @@ public class SaveBatchTaskForCreatingOrderActivateRequest extends RpcAcsRequest<
 				putQueryParameter("OrderActivateParam." + (depth1 + 1) + ".RegistrantProfileId" , orderActivateParams.get(depth1).getRegistrantProfileId());
 				putQueryParameter("OrderActivateParam." + (depth1 + 1) + ".EnableDomainProxy" , orderActivateParams.get(depth1).getEnableDomainProxy());
 				putQueryParameter("OrderActivateParam." + (depth1 + 1) + ".PermitPremiumActivation" , orderActivateParams.get(depth1).getPermitPremiumActivation());
+				putQueryParameter("OrderActivateParam." + (depth1 + 1) + ".AliyunDns" , orderActivateParams.get(depth1).getAliyunDns());
+				putQueryParameter("OrderActivateParam." + (depth1 + 1) + ".Dns1" , orderActivateParams.get(depth1).getDns1());
+				putQueryParameter("OrderActivateParam." + (depth1 + 1) + ".Dns2" , orderActivateParams.get(depth1).getDns2());
+				putQueryParameter("OrderActivateParam." + (depth1 + 1) + ".Country" , orderActivateParams.get(depth1).getCountry());
+				putQueryParameter("OrderActivateParam." + (depth1 + 1) + ".City" , orderActivateParams.get(depth1).getCity());
+				putQueryParameter("OrderActivateParam." + (depth1 + 1) + ".RegistrantOrganization" , orderActivateParams.get(depth1).getRegistrantOrganization());
+				putQueryParameter("OrderActivateParam." + (depth1 + 1) + ".RegistrantName" , orderActivateParams.get(depth1).getRegistrantName());
+				putQueryParameter("OrderActivateParam." + (depth1 + 1) + ".Province" , orderActivateParams.get(depth1).getProvince());
+				putQueryParameter("OrderActivateParam." + (depth1 + 1) + ".Address" , orderActivateParams.get(depth1).getAddress());
+				putQueryParameter("OrderActivateParam." + (depth1 + 1) + ".Email" , orderActivateParams.get(depth1).getEmail());
+				putQueryParameter("OrderActivateParam." + (depth1 + 1) + ".PostalCode" , orderActivateParams.get(depth1).getPostalCode());
+				putQueryParameter("OrderActivateParam." + (depth1 + 1) + ".TelArea" , orderActivateParams.get(depth1).getTelArea());
+				putQueryParameter("OrderActivateParam." + (depth1 + 1) + ".Telephone" , orderActivateParams.get(depth1).getTelephone());
+				putQueryParameter("OrderActivateParam." + (depth1 + 1) + ".TelExt" , orderActivateParams.get(depth1).getTelExt());
 			}
 		}	
 	}
@@ -87,6 +97,34 @@ public class SaveBatchTaskForCreatingOrderActivateRequest extends RpcAcsRequest<
 		private Boolean enableDomainProxy;
 
 		private Boolean permitPremiumActivation;
+
+		private Boolean aliyunDns;
+
+		private String dns1;
+
+		private String dns2;
+
+		private String country;
+
+		private String city;
+
+		private String registrantOrganization;
+
+		private String registrantName;
+
+		private String province;
+
+		private String address;
+
+		private String email;
+
+		private String postalCode;
+
+		private String telArea;
+
+		private String telephone;
+
+		private String telExt;
 
 		public String getDomainName() {
 			return this.domainName;
@@ -126,6 +164,118 @@ public class SaveBatchTaskForCreatingOrderActivateRequest extends RpcAcsRequest<
 
 		public void setPermitPremiumActivation(Boolean permitPremiumActivation) {
 			this.permitPremiumActivation = permitPremiumActivation;
+		}
+
+		public Boolean getAliyunDns() {
+			return this.aliyunDns;
+		}
+
+		public void setAliyunDns(Boolean aliyunDns) {
+			this.aliyunDns = aliyunDns;
+		}
+
+		public String getDns1() {
+			return this.dns1;
+		}
+
+		public void setDns1(String dns1) {
+			this.dns1 = dns1;
+		}
+
+		public String getDns2() {
+			return this.dns2;
+		}
+
+		public void setDns2(String dns2) {
+			this.dns2 = dns2;
+		}
+
+		public String getCountry() {
+			return this.country;
+		}
+
+		public void setCountry(String country) {
+			this.country = country;
+		}
+
+		public String getCity() {
+			return this.city;
+		}
+
+		public void setCity(String city) {
+			this.city = city;
+		}
+
+		public String getRegistrantOrganization() {
+			return this.registrantOrganization;
+		}
+
+		public void setRegistrantOrganization(String registrantOrganization) {
+			this.registrantOrganization = registrantOrganization;
+		}
+
+		public String getRegistrantName() {
+			return this.registrantName;
+		}
+
+		public void setRegistrantName(String registrantName) {
+			this.registrantName = registrantName;
+		}
+
+		public String getProvince() {
+			return this.province;
+		}
+
+		public void setProvince(String province) {
+			this.province = province;
+		}
+
+		public String getAddress() {
+			return this.address;
+		}
+
+		public void setAddress(String address) {
+			this.address = address;
+		}
+
+		public String getEmail() {
+			return this.email;
+		}
+
+		public void setEmail(String email) {
+			this.email = email;
+		}
+
+		public String getPostalCode() {
+			return this.postalCode;
+		}
+
+		public void setPostalCode(String postalCode) {
+			this.postalCode = postalCode;
+		}
+
+		public String getTelArea() {
+			return this.telArea;
+		}
+
+		public void setTelArea(String telArea) {
+			this.telArea = telArea;
+		}
+
+		public String getTelephone() {
+			return this.telephone;
+		}
+
+		public void setTelephone(String telephone) {
+			this.telephone = telephone;
+		}
+
+		public String getTelExt() {
+			return this.telExt;
+		}
+
+		public void setTelExt(String telExt) {
+			this.telExt = telExt;
 		}
 	}
 
