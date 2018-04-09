@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.emr.model.v20160408;
 
 import com.aliyuncs.RpcAcsRequest;
@@ -27,9 +28,9 @@ public class ReleaseClusterRequest extends RpcAcsRequest<ReleaseClusterResponse>
 
 	private Long resourceOwnerId;
 
-	private String id;
-
 	private Boolean forceRelease;
+
+	private String id;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -37,16 +38,9 @@ public class ReleaseClusterRequest extends RpcAcsRequest<ReleaseClusterResponse>
 
 	public void setResourceOwnerId(Long resourceOwnerId) {
 		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", resourceOwnerId);
-	}
-
-	public String getId() {
-		return this.id;
-	}
-
-	public void setId(String id) {
-		this.id = id;
-		putQueryParameter("Id", id);
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
 	}
 
 	public Boolean getForceRelease() {
@@ -55,7 +49,20 @@ public class ReleaseClusterRequest extends RpcAcsRequest<ReleaseClusterResponse>
 
 	public void setForceRelease(Boolean forceRelease) {
 		this.forceRelease = forceRelease;
-		putQueryParameter("ForceRelease", forceRelease);
+		if(forceRelease != null){
+			putQueryParameter("ForceRelease", forceRelease.toString());
+		}
+	}
+
+	public String getId() {
+		return this.id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+		if(id != null){
+			putQueryParameter("Id", id);
+		}
 	}
 
 	@Override

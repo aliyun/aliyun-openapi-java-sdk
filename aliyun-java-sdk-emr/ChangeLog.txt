@@ -1,0 +1,4 @@
+2018-04-09 Version: 2.3.2
+1, Add E-MapReduce cluster statistical interfaces.
+2, Add new workflow system.
+

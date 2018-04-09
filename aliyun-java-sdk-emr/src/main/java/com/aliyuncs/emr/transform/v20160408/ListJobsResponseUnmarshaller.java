@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.emr.transform.v20160408;
 
 import java.util.ArrayList;
@@ -38,6 +39,8 @@ public class ListJobsResponseUnmarshaller {
 			jobInfo.setType(context.stringValue("ListJobsResponse.Jobs["+ i +"].Type"));
 			jobInfo.setRunParameter(context.stringValue("ListJobsResponse.Jobs["+ i +"].RunParameter"));
 			jobInfo.setFailAct(context.stringValue("ListJobsResponse.Jobs["+ i +"].FailAct"));
+			jobInfo.setMaxRetry(context.integerValue("ListJobsResponse.Jobs["+ i +"].MaxRetry"));
+			jobInfo.setRetryInterval(context.integerValue("ListJobsResponse.Jobs["+ i +"].RetryInterval"));
 
 			jobs.add(jobInfo);
 		}

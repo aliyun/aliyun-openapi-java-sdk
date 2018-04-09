@@ -1,21 +1,17 @@
 /*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
+
 package com.aliyuncs.emr.transform.v20160408;
 
 import java.util.ArrayList;
@@ -38,12 +34,17 @@ public class DescribeExecutionPlanResponseUnmarshaller {
 		describeExecutionPlanResponse.setRequestId(context.stringValue("DescribeExecutionPlanResponse.RequestId"));
 		describeExecutionPlanResponse.setId(context.stringValue("DescribeExecutionPlanResponse.Id"));
 		describeExecutionPlanResponse.setName(context.stringValue("DescribeExecutionPlanResponse.Name"));
+		describeExecutionPlanResponse.setStatus(context.stringValue("DescribeExecutionPlanResponse.Status"));
 		describeExecutionPlanResponse.setStrategy(context.stringValue("DescribeExecutionPlanResponse.Strategy"));
 		describeExecutionPlanResponse.setTimeInterval(context.integerValue("DescribeExecutionPlanResponse.TimeInterval"));
 		describeExecutionPlanResponse.setStartTime(context.longValue("DescribeExecutionPlanResponse.StartTime"));
 		describeExecutionPlanResponse.setTimeUnit(context.stringValue("DescribeExecutionPlanResponse.TimeUnit"));
+		describeExecutionPlanResponse.setDayOfWeek(context.stringValue("DescribeExecutionPlanResponse.DayOfWeek"));
+		describeExecutionPlanResponse.setDayOfMonth(context.stringValue("DescribeExecutionPlanResponse.DayOfMonth"));
 		describeExecutionPlanResponse.setCreateClusterOnDemand(context.booleanValue("DescribeExecutionPlanResponse.CreateClusterOnDemand"));
 		describeExecutionPlanResponse.setClusterId(context.stringValue("DescribeExecutionPlanResponse.ClusterId"));
+		describeExecutionPlanResponse.setClusterName(context.stringValue("DescribeExecutionPlanResponse.ClusterName"));
+		describeExecutionPlanResponse.setWorkflowApp(context.stringValue("DescribeExecutionPlanResponse.WorkflowApp"));
 		describeExecutionPlanResponse.setExecutionPlanVersion(context.longValue("DescribeExecutionPlanResponse.ExecutionPlanVersion"));
 
 		ClusterInfo clusterInfo = new ClusterInfo();
@@ -61,6 +62,8 @@ public class DescribeExecutionPlanResponseUnmarshaller {
 		clusterInfo.setIoOptimized(context.booleanValue("DescribeExecutionPlanResponse.ClusterInfo.IoOptimized"));
 		clusterInfo.setInstanceGeneration(context.stringValue("DescribeExecutionPlanResponse.ClusterInfo.InstanceGeneration"));
 		clusterInfo.setConfigurations(context.stringValue("DescribeExecutionPlanResponse.ClusterInfo.Configurations"));
+		clusterInfo.setEasEnable(context.booleanValue("DescribeExecutionPlanResponse.ClusterInfo.EasEnable"));
+		clusterInfo.setUserDefinedEmrEcsRole(context.stringValue("DescribeExecutionPlanResponse.ClusterInfo.UserDefinedEmrEcsRole"));
 
 		SoftwareInfo softwareInfo = new SoftwareInfo();
 		softwareInfo.setEmrVer(context.stringValue("DescribeExecutionPlanResponse.ClusterInfo.SoftwareInfo.EmrVer"));
@@ -112,6 +115,10 @@ public class DescribeExecutionPlanResponseUnmarshaller {
 		for (int i = 0; i < context.lengthValue("DescribeExecutionPlanResponse.JobInfoList.Length"); i++) {
 			JobInfo jobInfo = new JobInfo();
 			jobInfo.setId(context.stringValue("DescribeExecutionPlanResponse.JobInfoList["+ i +"].Id"));
+			jobInfo.setName(context.stringValue("DescribeExecutionPlanResponse.JobInfoList["+ i +"].Name"));
+			jobInfo.setType(context.stringValue("DescribeExecutionPlanResponse.JobInfoList["+ i +"].Type"));
+			jobInfo.setRunParameter(context.stringValue("DescribeExecutionPlanResponse.JobInfoList["+ i +"].RunParameter"));
+			jobInfo.setFailAct(context.stringValue("DescribeExecutionPlanResponse.JobInfoList["+ i +"].FailAct"));
 
 			jobInfoList.add(jobInfo);
 		}

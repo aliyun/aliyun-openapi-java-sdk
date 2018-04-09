@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.emr.model.v20160408;
 
 import com.aliyuncs.AcsResponse;
@@ -25,7 +26,9 @@ public class RenewClusterResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String clusterId;
+	private String ecsOrderIdList;
+
+	private String emrOrderIdList;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -35,12 +38,20 @@ public class RenewClusterResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getClusterId() {
-		return this.clusterId;
+	public String getEcsOrderIdList() {
+		return this.ecsOrderIdList;
 	}
 
-	public void setClusterId(String clusterId) {
-		this.clusterId = clusterId;
+	public void setEcsOrderIdList(String ecsOrderIdList) {
+		this.ecsOrderIdList = ecsOrderIdList;
+	}
+
+	public String getEmrOrderIdList() {
+		return this.emrOrderIdList;
+	}
+
+	public void setEmrOrderIdList(String emrOrderIdList) {
+		this.emrOrderIdList = emrOrderIdList;
 	}
 
 	@Override

@@ -1,21 +1,17 @@
 /*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
+
 package com.aliyuncs.emr.model.v20160408;
 
 import java.util.List;
@@ -35,6 +31,8 @@ public class DescribeExecutionPlanResponse extends AcsResponse {
 
 	private String name;
 
+	private String status;
+
 	private String strategy;
 
 	private Integer timeInterval;
@@ -43,9 +41,17 @@ public class DescribeExecutionPlanResponse extends AcsResponse {
 
 	private String timeUnit;
 
+	private String dayOfWeek;
+
+	private String dayOfMonth;
+
 	private Boolean createClusterOnDemand;
 
 	private String clusterId;
+
+	private String clusterName;
+
+	private String workflowApp;
 
 	private Long executionPlanVersion;
 
@@ -75,6 +81,14 @@ public class DescribeExecutionPlanResponse extends AcsResponse {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public String getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
 	}
 
 	public String getStrategy() {
@@ -109,6 +123,22 @@ public class DescribeExecutionPlanResponse extends AcsResponse {
 		this.timeUnit = timeUnit;
 	}
 
+	public String getDayOfWeek() {
+		return this.dayOfWeek;
+	}
+
+	public void setDayOfWeek(String dayOfWeek) {
+		this.dayOfWeek = dayOfWeek;
+	}
+
+	public String getDayOfMonth() {
+		return this.dayOfMonth;
+	}
+
+	public void setDayOfMonth(String dayOfMonth) {
+		this.dayOfMonth = dayOfMonth;
+	}
+
 	public Boolean getCreateClusterOnDemand() {
 		return this.createClusterOnDemand;
 	}
@@ -123,6 +153,22 @@ public class DescribeExecutionPlanResponse extends AcsResponse {
 
 	public void setClusterId(String clusterId) {
 		this.clusterId = clusterId;
+	}
+
+	public String getClusterName() {
+		return this.clusterName;
+	}
+
+	public void setClusterName(String clusterName) {
+		this.clusterName = clusterName;
+	}
+
+	public String getWorkflowApp() {
+		return this.workflowApp;
+	}
+
+	public void setWorkflowApp(String workflowApp) {
+		this.workflowApp = workflowApp;
 	}
 
 	public Long getExecutionPlanVersion() {
@@ -153,12 +199,52 @@ public class DescribeExecutionPlanResponse extends AcsResponse {
 
 		private String id;
 
+		private String name;
+
+		private String type;
+
+		private String runParameter;
+
+		private String failAct;
+
 		public String getId() {
 			return this.id;
 		}
 
 		public void setId(String id) {
 			this.id = id;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public String getType() {
+			return this.type;
+		}
+
+		public void setType(String type) {
+			this.type = type;
+		}
+
+		public String getRunParameter() {
+			return this.runParameter;
+		}
+
+		public void setRunParameter(String runParameter) {
+			this.runParameter = runParameter;
+		}
+
+		public String getFailAct() {
+			return this.failAct;
+		}
+
+		public void setFailAct(String failAct) {
+			this.failAct = failAct;
 		}
 	}
 
@@ -191,6 +277,10 @@ public class DescribeExecutionPlanResponse extends AcsResponse {
 		private String instanceGeneration;
 
 		private String configurations;
+
+		private Boolean easEnable;
+
+		private String userDefinedEmrEcsRole;
 
 		private List<EcsOrderInfo> ecsOrders;
 
@@ -308,6 +398,22 @@ public class DescribeExecutionPlanResponse extends AcsResponse {
 
 		public void setConfigurations(String configurations) {
 			this.configurations = configurations;
+		}
+
+		public Boolean getEasEnable() {
+			return this.easEnable;
+		}
+
+		public void setEasEnable(Boolean easEnable) {
+			this.easEnable = easEnable;
+		}
+
+		public String getUserDefinedEmrEcsRole() {
+			return this.userDefinedEmrEcsRole;
+		}
+
+		public void setUserDefinedEmrEcsRole(String userDefinedEmrEcsRole) {
+			this.userDefinedEmrEcsRole = userDefinedEmrEcsRole;
 		}
 
 		public List<EcsOrderInfo> getEcsOrders() {

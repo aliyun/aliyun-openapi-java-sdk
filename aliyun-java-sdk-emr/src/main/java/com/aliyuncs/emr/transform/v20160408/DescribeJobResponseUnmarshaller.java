@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.emr.transform.v20160408;
 
 import com.aliyuncs.emr.model.v20160408.DescribeJobResponse;
@@ -26,6 +27,8 @@ public class DescribeJobResponseUnmarshaller {
 		describeJobResponse.setName(context.stringValue("DescribeJobResponse.Name"));
 		describeJobResponse.setFailAct(context.stringValue("DescribeJobResponse.FailAct"));
 		describeJobResponse.setType(context.stringValue("DescribeJobResponse.Type"));
+		describeJobResponse.setMaxRetry(context.integerValue("DescribeJobResponse.MaxRetry"));
+		describeJobResponse.setRetryInterval(context.integerValue("DescribeJobResponse.RetryInterval"));
 		describeJobResponse.setRunParameter(context.stringValue("DescribeJobResponse.RunParameter"));
 	 
 	 	return describeJobResponse;

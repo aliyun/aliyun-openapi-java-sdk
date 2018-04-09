@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.emr.model.v20160408;
 
 import com.aliyuncs.RpcAcsRequest;
@@ -35,7 +36,9 @@ public class KillExecutionPlanInstanceRequest extends RpcAcsRequest<KillExecutio
 
 	public void setResourceOwnerId(Long resourceOwnerId) {
 		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", resourceOwnerId);
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
 	}
 
 	public String getId() {
@@ -44,7 +47,9 @@ public class KillExecutionPlanInstanceRequest extends RpcAcsRequest<KillExecutio
 
 	public void setId(String id) {
 		this.id = id;
-		putQueryParameter("Id", id);
+		if(id != null){
+			putQueryParameter("Id", id);
+		}
 	}
 
 	@Override

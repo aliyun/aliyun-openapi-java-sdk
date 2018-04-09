@@ -1,21 +1,17 @@
 /*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
+
 package com.aliyuncs.emr.model.v20160408;
 
 import java.util.List;
@@ -69,6 +65,8 @@ public class DescribeClusterResponse extends AcsResponse {
 
 		private String logPath;
 
+		private String userId;
+
 		private String status;
 
 		private Boolean highAvailabilityEnable;
@@ -93,11 +91,17 @@ public class DescribeClusterResponse extends AcsResponse {
 
 		private Integer taskNodeInService;
 
+		private Boolean showSoftwareInterface;
+
+		private String createResource;
+
 		private String vpcId;
 
 		private String vSwitchId;
 
 		private String netType;
+
+		private String userDefinedEmrEcsRole;
 
 		private Boolean ioOptimized;
 
@@ -112,6 +116,8 @@ public class DescribeClusterResponse extends AcsResponse {
 		private Boolean bootstrapFailed;
 
 		private String configurations;
+
+		private Boolean easEnable;
 
 		private List<EcsOrderInfo> ecsOrderInfoList;
 
@@ -191,6 +197,14 @@ public class DescribeClusterResponse extends AcsResponse {
 
 		public void setLogPath(String logPath) {
 			this.logPath = logPath;
+		}
+
+		public String getUserId() {
+			return this.userId;
+		}
+
+		public void setUserId(String userId) {
+			this.userId = userId;
 		}
 
 		public String getStatus() {
@@ -289,6 +303,22 @@ public class DescribeClusterResponse extends AcsResponse {
 			this.taskNodeInService = taskNodeInService;
 		}
 
+		public Boolean getShowSoftwareInterface() {
+			return this.showSoftwareInterface;
+		}
+
+		public void setShowSoftwareInterface(Boolean showSoftwareInterface) {
+			this.showSoftwareInterface = showSoftwareInterface;
+		}
+
+		public String getCreateResource() {
+			return this.createResource;
+		}
+
+		public void setCreateResource(String createResource) {
+			this.createResource = createResource;
+		}
+
 		public String getVpcId() {
 			return this.vpcId;
 		}
@@ -311,6 +341,14 @@ public class DescribeClusterResponse extends AcsResponse {
 
 		public void setNetType(String netType) {
 			this.netType = netType;
+		}
+
+		public String getUserDefinedEmrEcsRole() {
+			return this.userDefinedEmrEcsRole;
+		}
+
+		public void setUserDefinedEmrEcsRole(String userDefinedEmrEcsRole) {
+			this.userDefinedEmrEcsRole = userDefinedEmrEcsRole;
 		}
 
 		public Boolean getIoOptimized() {
@@ -367,6 +405,14 @@ public class DescribeClusterResponse extends AcsResponse {
 
 		public void setConfigurations(String configurations) {
 			this.configurations = configurations;
+		}
+
+		public Boolean getEasEnable() {
+			return this.easEnable;
+		}
+
+		public void setEasEnable(Boolean easEnable) {
+			this.easEnable = easEnable;
 		}
 
 		public List<EcsOrderInfo> getEcsOrderInfoList() {

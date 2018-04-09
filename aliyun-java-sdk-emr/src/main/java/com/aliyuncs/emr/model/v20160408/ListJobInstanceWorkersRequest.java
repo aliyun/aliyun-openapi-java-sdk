@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.emr.model.v20160408;
 
 import com.aliyuncs.RpcAcsRequest;
@@ -35,7 +36,9 @@ public class ListJobInstanceWorkersRequest extends RpcAcsRequest<ListJobInstance
 
 	public void setResourceOwnerId(Long resourceOwnerId) {
 		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", resourceOwnerId);
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
 	}
 
 	public String getJobInstanceId() {
@@ -44,7 +47,9 @@ public class ListJobInstanceWorkersRequest extends RpcAcsRequest<ListJobInstance
 
 	public void setJobInstanceId(String jobInstanceId) {
 		this.jobInstanceId = jobInstanceId;
-		putQueryParameter("JobInstanceId", jobInstanceId);
+		if(jobInstanceId != null){
+			putQueryParameter("JobInstanceId", jobInstanceId);
+		}
 	}
 
 	@Override

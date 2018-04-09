@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.emr.model.v20160408;
 
 import com.aliyuncs.RpcAcsRequest;
@@ -29,11 +30,11 @@ public class ListJobExecutionInstancesRequest extends RpcAcsRequest<ListJobExecu
 
 	private String executionPlanInstanceId;
 
+	private Integer pageSize;
+
 	private Boolean isDesc;
 
 	private Integer pageNumber;
-
-	private Integer pageSize;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -41,7 +42,9 @@ public class ListJobExecutionInstancesRequest extends RpcAcsRequest<ListJobExecu
 
 	public void setResourceOwnerId(Long resourceOwnerId) {
 		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", resourceOwnerId);
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
 	}
 
 	public String getExecutionPlanInstanceId() {
@@ -50,25 +53,9 @@ public class ListJobExecutionInstancesRequest extends RpcAcsRequest<ListJobExecu
 
 	public void setExecutionPlanInstanceId(String executionPlanInstanceId) {
 		this.executionPlanInstanceId = executionPlanInstanceId;
-		putQueryParameter("ExecutionPlanInstanceId", executionPlanInstanceId);
-	}
-
-	public Boolean getIsDesc() {
-		return this.isDesc;
-	}
-
-	public void setIsDesc(Boolean isDesc) {
-		this.isDesc = isDesc;
-		putQueryParameter("IsDesc", isDesc);
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		putQueryParameter("PageNumber", pageNumber);
+		if(executionPlanInstanceId != null){
+			putQueryParameter("ExecutionPlanInstanceId", executionPlanInstanceId);
+		}
 	}
 
 	public Integer getPageSize() {
@@ -77,7 +64,31 @@ public class ListJobExecutionInstancesRequest extends RpcAcsRequest<ListJobExecu
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
-		putQueryParameter("PageSize", pageSize);
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public Boolean getIsDesc() {
+		return this.isDesc;
+	}
+
+	public void setIsDesc(Boolean isDesc) {
+		this.isDesc = isDesc;
+		if(isDesc != null){
+			putQueryParameter("IsDesc", isDesc.toString());
+		}
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
 	}
 
 	@Override

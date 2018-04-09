@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.emr.transform.v20160408;
 
 import com.aliyuncs.emr.model.v20160408.RenewClusterResponse;
@@ -22,7 +23,8 @@ public class RenewClusterResponseUnmarshaller {
 	public static RenewClusterResponse unmarshall(RenewClusterResponse renewClusterResponse, UnmarshallerContext context) {
 		
 		renewClusterResponse.setRequestId(context.stringValue("RenewClusterResponse.RequestId"));
-		renewClusterResponse.setClusterId(context.stringValue("RenewClusterResponse.ClusterId"));
+		renewClusterResponse.setEcsOrderIdList(context.stringValue("RenewClusterResponse.EcsOrderIdList"));
+		renewClusterResponse.setEmrOrderIdList(context.stringValue("RenewClusterResponse.EmrOrderIdList"));
 	 
 	 	return renewClusterResponse;
 	}

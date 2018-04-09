@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.emr.model.v20160408;
 
 import com.aliyuncs.RpcAcsRequest;
@@ -25,17 +26,43 @@ public class ModifyJobRequest extends RpcAcsRequest<ModifyJobResponse> {
 		super("Emr", "2016-04-08", "ModifyJob");
 	}
 
-	private Long resourceOwnerId;
+	private String runParameter;
 
-	private String id;
+	private Integer retryInterval;
+
+	private Long resourceOwnerId;
 
 	private String name;
 
+	private String id;
+
 	private String type;
 
-	private String runParameter;
+	private Integer maxRetry;
 
 	private String failAct;
+
+	public String getRunParameter() {
+		return this.runParameter;
+	}
+
+	public void setRunParameter(String runParameter) {
+		this.runParameter = runParameter;
+		if(runParameter != null){
+			putQueryParameter("RunParameter", runParameter);
+		}
+	}
+
+	public Integer getRetryInterval() {
+		return this.retryInterval;
+	}
+
+	public void setRetryInterval(Integer retryInterval) {
+		this.retryInterval = retryInterval;
+		if(retryInterval != null){
+			putQueryParameter("RetryInterval", retryInterval.toString());
+		}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -43,16 +70,9 @@ public class ModifyJobRequest extends RpcAcsRequest<ModifyJobResponse> {
 
 	public void setResourceOwnerId(Long resourceOwnerId) {
 		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", resourceOwnerId);
-	}
-
-	public String getId() {
-		return this.id;
-	}
-
-	public void setId(String id) {
-		this.id = id;
-		putQueryParameter("Id", id);
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
 	}
 
 	public String getName() {
@@ -61,7 +81,20 @@ public class ModifyJobRequest extends RpcAcsRequest<ModifyJobResponse> {
 
 	public void setName(String name) {
 		this.name = name;
-		putQueryParameter("Name", name);
+		if(name != null){
+			putQueryParameter("Name", name);
+		}
+	}
+
+	public String getId() {
+		return this.id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+		if(id != null){
+			putQueryParameter("Id", id);
+		}
 	}
 
 	public String getType() {
@@ -70,16 +103,20 @@ public class ModifyJobRequest extends RpcAcsRequest<ModifyJobResponse> {
 
 	public void setType(String type) {
 		this.type = type;
-		putQueryParameter("Type", type);
+		if(type != null){
+			putQueryParameter("Type", type);
+		}
 	}
 
-	public String getRunParameter() {
-		return this.runParameter;
+	public Integer getMaxRetry() {
+		return this.maxRetry;
 	}
 
-	public void setRunParameter(String runParameter) {
-		this.runParameter = runParameter;
-		putQueryParameter("RunParameter", runParameter);
+	public void setMaxRetry(Integer maxRetry) {
+		this.maxRetry = maxRetry;
+		if(maxRetry != null){
+			putQueryParameter("MaxRetry", maxRetry.toString());
+		}
 	}
 
 	public String getFailAct() {
@@ -88,7 +125,9 @@ public class ModifyJobRequest extends RpcAcsRequest<ModifyJobResponse> {
 
 	public void setFailAct(String failAct) {
 		this.failAct = failAct;
-		putQueryParameter("FailAct", failAct);
+		if(failAct != null){
+			putQueryParameter("FailAct", failAct);
+		}
 	}
 
 	@Override

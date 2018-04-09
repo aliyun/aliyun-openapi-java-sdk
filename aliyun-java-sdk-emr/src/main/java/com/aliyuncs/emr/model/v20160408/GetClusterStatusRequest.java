@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.emr.model.v20160408;
 
 import com.aliyuncs.RpcAcsRequest;
@@ -27,11 +28,11 @@ public class GetClusterStatusRequest extends RpcAcsRequest<GetClusterStatusRespo
 
 	private Long resourceOwnerId;
 
-	private String id;
-
 	private String itemType;
 
 	private String interval;
+
+	private String id;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -39,16 +40,9 @@ public class GetClusterStatusRequest extends RpcAcsRequest<GetClusterStatusRespo
 
 	public void setResourceOwnerId(Long resourceOwnerId) {
 		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", resourceOwnerId);
-	}
-
-	public String getId() {
-		return this.id;
-	}
-
-	public void setId(String id) {
-		this.id = id;
-		putQueryParameter("Id", id);
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
 	}
 
 	public String getItemType() {
@@ -57,7 +51,9 @@ public class GetClusterStatusRequest extends RpcAcsRequest<GetClusterStatusRespo
 
 	public void setItemType(String itemType) {
 		this.itemType = itemType;
-		putQueryParameter("ItemType", itemType);
+		if(itemType != null){
+			putQueryParameter("ItemType", itemType);
+		}
 	}
 
 	public String getInterval() {
@@ -66,7 +62,20 @@ public class GetClusterStatusRequest extends RpcAcsRequest<GetClusterStatusRespo
 
 	public void setInterval(String interval) {
 		this.interval = interval;
-		putQueryParameter("Interval", interval);
+		if(interval != null){
+			putQueryParameter("Interval", interval);
+		}
+	}
+
+	public String getId() {
+		return this.id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+		if(id != null){
+			putQueryParameter("Id", id);
+		}
 	}
 
 	@Override

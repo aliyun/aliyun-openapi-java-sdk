@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.emr.model.v20160408;
 
 import com.aliyuncs.AcsResponse;
@@ -32,6 +33,10 @@ public class DescribeJobResponse extends AcsResponse {
 	private String failAct;
 
 	private String type;
+
+	private Integer maxRetry;
+
+	private Integer retryInterval;
 
 	private String runParameter;
 
@@ -73,6 +78,22 @@ public class DescribeJobResponse extends AcsResponse {
 
 	public void setType(String type) {
 		this.type = type;
+	}
+
+	public Integer getMaxRetry() {
+		return this.maxRetry;
+	}
+
+	public void setMaxRetry(Integer maxRetry) {
+		this.maxRetry = maxRetry;
+	}
+
+	public Integer getRetryInterval() {
+		return this.retryInterval;
+	}
+
+	public void setRetryInterval(Integer retryInterval) {
+		this.retryInterval = retryInterval;
 	}
 
 	public String getRunParameter() {

@@ -11,9 +11,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.emr.model.v20160408;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 
 /**
  * @author auto create
@@ -27,11 +29,9 @@ public class RenewClusterRequest extends RpcAcsRequest<RenewClusterResponse> {
 
 	private Long resourceOwnerId;
 
-	private String id;
+	private List<RenewEcsDo> renewEcsDos;
 
-	private Boolean eCSIds;
-
-	private String period;
+	private String clusterId;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -39,34 +39,68 @@ public class RenewClusterRequest extends RpcAcsRequest<RenewClusterResponse> {
 
 	public void setResourceOwnerId(Long resourceOwnerId) {
 		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", resourceOwnerId);
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
 	}
 
-	public String getId() {
-		return this.id;
+	public List<RenewEcsDo> getRenewEcsDos() {
+		return this.renewEcsDos;
 	}
 
-	public void setId(String id) {
-		this.id = id;
-		putQueryParameter("Id", id);
+	public void setRenewEcsDos(List<RenewEcsDo> renewEcsDos) {
+		this.renewEcsDos = renewEcsDos;	
+		if (renewEcsDos != null) {
+			for (int depth1 = 0; depth1 < renewEcsDos.size(); depth1++) {
+				putQueryParameter("RenewEcsDo." + (depth1 + 1) + ".EcsId" , renewEcsDos.get(depth1).getEcsId());
+				putQueryParameter("RenewEcsDo." + (depth1 + 1) + ".EcsPeriod" , renewEcsDos.get(depth1).getEcsPeriod());
+				putQueryParameter("RenewEcsDo." + (depth1 + 1) + ".EmrPeriod" , renewEcsDos.get(depth1).getEmrPeriod());
+			}
+		}	
 	}
 
-	public Boolean getECSIds() {
-		return this.eCSIds;
+	public String getClusterId() {
+		return this.clusterId;
 	}
 
-	public void setECSIds(Boolean eCSIds) {
-		this.eCSIds = eCSIds;
-		putQueryParameter("ECSIds", eCSIds);
+	public void setClusterId(String clusterId) {
+		this.clusterId = clusterId;
+		if(clusterId != null){
+			putQueryParameter("ClusterId", clusterId);
+		}
 	}
 
-	public String getPeriod() {
-		return this.period;
-	}
+	public static class RenewEcsDo {
 
-	public void setPeriod(String period) {
-		this.period = period;
-		putQueryParameter("Period", period);
+		private String ecsId;
+
+		private String ecsPeriod;
+
+		private String emrPeriod;
+
+		public String getEcsId() {
+			return this.ecsId;
+		}
+
+		public void setEcsId(String ecsId) {
+			this.ecsId = ecsId;
+		}
+
+		public String getEcsPeriod() {
+			return this.ecsPeriod;
+		}
+
+		public void setEcsPeriod(String ecsPeriod) {
+			this.ecsPeriod = ecsPeriod;
+		}
+
+		public String getEmrPeriod() {
+			return this.emrPeriod;
+		}
+
+		public void setEmrPeriod(String emrPeriod) {
+			this.emrPeriod = emrPeriod;
+		}
 	}
 
 	@Override
