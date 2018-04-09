@@ -3,7 +3,7 @@
   <groupId>com.aliyun</groupId>
   <artifactId>aliyun-java-sdk-cms</artifactId>
   <packaging>jar</packaging>
-  <version>5.2.2</version>
+  <version>6.0.1</version>
     <name>aliyun-java-sdk-cms</name>
   <url>http://www.aliyun.com</url>
   <description>Aliyun Open API SDK for Java
