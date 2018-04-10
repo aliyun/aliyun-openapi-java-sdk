@@ -91,6 +91,8 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 
 	private String vlanId;
 
+	private String spotInterruptionBehavior;
+
 	private String ioOptimized;
 
 	private String securityGroupId;
@@ -484,6 +486,17 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 		this.vlanId = vlanId;
 		if(vlanId != null){
 			putQueryParameter("VlanId", vlanId);
+		}
+	}
+
+	public String getSpotInterruptionBehavior() {
+		return this.spotInterruptionBehavior;
+	}
+
+	public void setSpotInterruptionBehavior(String spotInterruptionBehavior) {
+		this.spotInterruptionBehavior = spotInterruptionBehavior;
+		if(spotInterruptionBehavior != null){
+			putQueryParameter("SpotInterruptionBehavior", spotInterruptionBehavior);
 		}
 	}
 

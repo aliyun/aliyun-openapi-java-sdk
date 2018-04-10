@@ -91,7 +91,7 @@ public class DescribeDisksRequest extends RpcAcsRequest<DescribeDisksResponse> {
 
 	private String tag1Key;
 
-	private List<Long> additionalAttributess;
+	private List<String> additionalAttributess;
 
 	private Boolean enableShared;
 
@@ -461,11 +461,11 @@ public class DescribeDisksRequest extends RpcAcsRequest<DescribeDisksResponse> {
 		}
 	}
 
-	public List<Long> getAdditionalAttributess() {
+	public List<String> getAdditionalAttributess() {
 		return this.additionalAttributess;
 	}
 
-	public void setAdditionalAttributess(List<Long> additionalAttributess) {
+	public void setAdditionalAttributess(List<String> additionalAttributess) {
 		this.additionalAttributess = additionalAttributess;	
 		if (additionalAttributess != null) {
 			for (int i = 0; i < additionalAttributess.size(); i++) {

@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.ecs.model.v20140526.DescribeEventsResponse;
-import com.aliyuncs.ecs.model.v20140526.DescribeEventsResponse.Events;
+import com.aliyuncs.ecs.model.v20140526.DescribeEventsResponse.Event;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -27,25 +27,25 @@ public class DescribeEventsResponseUnmarshaller {
 	public static DescribeEventsResponse unmarshall(DescribeEventsResponse describeEventsResponse, UnmarshallerContext context) {
 		
 		describeEventsResponse.setRequestId(context.stringValue("DescribeEventsResponse.RequestId"));
-		describeEventsResponse.setPageNo(context.integerValue("DescribeEventsResponse.PageNo"));
+		describeEventsResponse.setPageNumber(context.integerValue("DescribeEventsResponse.PageNumber"));
 		describeEventsResponse.setPageSize(context.integerValue("DescribeEventsResponse.PageSize"));
-		describeEventsResponse.setTotal(context.integerValue("DescribeEventsResponse.Total"));
+		describeEventsResponse.setTotalCount(context.integerValue("DescribeEventsResponse.TotalCount"));
 
-		List<Events> data = new ArrayList<Events>();
-		for (int i = 0; i < context.lengthValue("DescribeEventsResponse.Data.Length"); i++) {
-			Events events = new Events();
-			events.setResourceId(context.stringValue("DescribeEventsResponse.Data["+ i +"].ResourceId"));
-			events.setEventType(context.stringValue("DescribeEventsResponse.Data["+ i +"].EventType"));
-			events.setEventCategory(context.stringValue("DescribeEventsResponse.Data["+ i +"].EventCategory"));
-			events.setStatus(context.stringValue("DescribeEventsResponse.Data["+ i +"].Status"));
-			events.setSupportModify(context.stringValue("DescribeEventsResponse.Data["+ i +"].SupportModify"));
-			events.setPlanTime(context.stringValue("DescribeEventsResponse.Data["+ i +"].PlanTime"));
-			events.setExpireTime(context.stringValue("DescribeEventsResponse.Data["+ i +"].ExpireTime"));
-			events.setEventId(context.stringValue("DescribeEventsResponse.Data["+ i +"].EventId"));
+		List<Event> events = new ArrayList<Event>();
+		for (int i = 0; i < context.lengthValue("DescribeEventsResponse.Events.Length"); i++) {
+			Event event = new Event();
+			event.setResourceId(context.stringValue("DescribeEventsResponse.Events["+ i +"].ResourceId"));
+			event.setEventType(context.stringValue("DescribeEventsResponse.Events["+ i +"].EventType"));
+			event.setEventCategory(context.stringValue("DescribeEventsResponse.Events["+ i +"].EventCategory"));
+			event.setStatus(context.stringValue("DescribeEventsResponse.Events["+ i +"].Status"));
+			event.setSupportModify(context.stringValue("DescribeEventsResponse.Events["+ i +"].SupportModify"));
+			event.setPlanTime(context.stringValue("DescribeEventsResponse.Events["+ i +"].PlanTime"));
+			event.setExpireTime(context.stringValue("DescribeEventsResponse.Events["+ i +"].ExpireTime"));
+			event.setEventId(context.stringValue("DescribeEventsResponse.Events["+ i +"].EventId"));
 
-			data.add(events);
+			events.add(event);
 		}
-		describeEventsResponse.setData(data);
+		describeEventsResponse.setEvents(events);
 	 
 	 	return describeEventsResponse;
 	}

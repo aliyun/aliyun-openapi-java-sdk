@@ -27,13 +27,13 @@ public class DescribeEventsResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Integer pageNo;
+	private Integer pageNumber;
 
 	private Integer pageSize;
 
-	private Integer total;
+	private Integer totalCount;
 
-	private List<Events> data;
+	private List<Event> events;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -43,12 +43,12 @@ public class DescribeEventsResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Integer getPageNo() {
-		return this.pageNo;
+	public Integer getPageNumber() {
+		return this.pageNumber;
 	}
 
-	public void setPageNo(Integer pageNo) {
-		this.pageNo = pageNo;
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public Integer getPageSize() {
@@ -59,23 +59,23 @@ public class DescribeEventsResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
-	public Integer getTotal() {
-		return this.total;
+	public Integer getTotalCount() {
+		return this.totalCount;
 	}
 
-	public void setTotal(Integer total) {
-		this.total = total;
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
 	}
 
-	public List<Events> getData() {
-		return this.data;
+	public List<Event> getEvents() {
+		return this.events;
 	}
 
-	public void setData(List<Events> data) {
-		this.data = data;
+	public void setEvents(List<Event> events) {
+		this.events = events;
 	}
 
-	public static class Events {
+	public static class Event {
 
 		private String resourceId;
 

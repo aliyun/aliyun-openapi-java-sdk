@@ -29,6 +29,8 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 
 	private Long resourceOwnerId;
 
+	private String hpcClusterId;
+
 	private String securityEnhancementStrategy;
 
 	private String keyPairName;
@@ -58,6 +60,8 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 	private Integer internetMaxBandwidthIn;
 
 	private String imageId;
+
+	private String spotInterruptionBehavior;
 
 	private String clientToken;
 
@@ -103,6 +107,17 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getHpcClusterId() {
+		return this.hpcClusterId;
+	}
+
+	public void setHpcClusterId(String hpcClusterId) {
+		this.hpcClusterId = hpcClusterId;
+		if(hpcClusterId != null){
+			putQueryParameter("HpcClusterId", hpcClusterId);
 		}
 	}
 
@@ -271,6 +286,17 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 		this.imageId = imageId;
 		if(imageId != null){
 			putQueryParameter("ImageId", imageId);
+		}
+	}
+
+	public String getSpotInterruptionBehavior() {
+		return this.spotInterruptionBehavior;
+	}
+
+	public void setSpotInterruptionBehavior(String spotInterruptionBehavior) {
+		this.spotInterruptionBehavior = spotInterruptionBehavior;
+		if(spotInterruptionBehavior != null){
+			putQueryParameter("SpotInterruptionBehavior", spotInterruptionBehavior);
 		}
 	}
 
