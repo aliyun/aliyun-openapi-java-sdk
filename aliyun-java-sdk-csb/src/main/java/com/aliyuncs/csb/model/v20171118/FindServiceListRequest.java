@@ -30,9 +30,9 @@ public class FindServiceListRequest extends RpcAcsRequest<FindServiceListRespons
 
 	private String projectName;
 
-	private Boolean showDelService;
-
 	private Integer casShowType;
+
+	private Boolean showDelService;
 
 	private Long csbId;
 
@@ -53,17 +53,6 @@ public class FindServiceListRequest extends RpcAcsRequest<FindServiceListRespons
 		}
 	}
 
-	public Boolean getShowDelService() {
-		return this.showDelService;
-	}
-
-	public void setShowDelService(Boolean showDelService) {
-		this.showDelService = showDelService;
-		if(showDelService != null){
-			putQueryParameter("ShowDelService", showDelService.toString());
-		}
-	}
-
 	public Integer getCasShowType() {
 		return this.casShowType;
 	}
@@ -72,6 +61,17 @@ public class FindServiceListRequest extends RpcAcsRequest<FindServiceListRespons
 		this.casShowType = casShowType;
 		if(casShowType != null){
 			putQueryParameter("CasShowType", casShowType.toString());
+		}
+	}
+
+	public Boolean getShowDelService() {
+		return this.showDelService;
+	}
+
+	public void setShowDelService(Boolean showDelService) {
+		this.showDelService = showDelService;
+		if(showDelService != null){
+			putQueryParameter("ShowDelService", showDelService.toString());
 		}
 	}
 

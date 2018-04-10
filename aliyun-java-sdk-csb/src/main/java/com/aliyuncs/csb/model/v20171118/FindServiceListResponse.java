@@ -149,6 +149,8 @@ public class FindServiceListResponse extends AcsResponse {
 
 			private String userId;
 
+			private String casTargets;
+
 			public String getAlias() {
 				return this.alias;
 			}
@@ -307,6 +309,14 @@ public class FindServiceListResponse extends AcsResponse {
 
 			public void setUserId(String userId) {
 				this.userId = userId;
+			}
+
+			public String getCasTargets() {
+				return this.casTargets;
+			}
+
+			public void setCasTargets(String casTargets) {
+				this.casTargets = casTargets;
 			}
 		}
 	}

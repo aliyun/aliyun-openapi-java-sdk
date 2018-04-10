@@ -59,6 +59,7 @@ public class FindServiceListResponseUnmarshaller {
 			service.setStatisticName(context.stringValue("FindServiceListResponse.Data.ServiceList["+ i +"].StatisticName"));
 			service.setStatus(context.integerValue("FindServiceListResponse.Data.ServiceList["+ i +"].Status"));
 			service.setUserId(context.stringValue("FindServiceListResponse.Data.ServiceList["+ i +"].UserId"));
+			service.setCasTargets(context.stringValue("FindServiceListResponse.Data.ServiceList["+ i +"].CasTargets"));
 
 			serviceList.add(service);
 		}

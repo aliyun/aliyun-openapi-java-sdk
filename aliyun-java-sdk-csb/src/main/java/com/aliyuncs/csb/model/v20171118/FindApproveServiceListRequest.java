@@ -28,9 +28,9 @@ public class FindApproveServiceListRequest extends RpcAcsRequest<FindApproveServ
 		setProtocol(ProtocolType.HTTPS);
 	}
 
-	private String projectName;
-
 	private String approveLevel;
+
+	private String projectName;
 
 	private Boolean showDelService;
 
@@ -40,17 +40,6 @@ public class FindApproveServiceListRequest extends RpcAcsRequest<FindApproveServ
 
 	private String serviceName;
 
-	public String getProjectName() {
-		return this.projectName;
-	}
-
-	public void setProjectName(String projectName) {
-		this.projectName = projectName;
-		if(projectName != null){
-			putQueryParameter("projectName", projectName);
-		}
-	}
-
 	public String getApproveLevel() {
 		return this.approveLevel;
 	}
@@ -59,6 +48,17 @@ public class FindApproveServiceListRequest extends RpcAcsRequest<FindApproveServ
 		this.approveLevel = approveLevel;
 		if(approveLevel != null){
 			putQueryParameter("approveLevel", approveLevel);
+		}
+	}
+
+	public String getProjectName() {
+		return this.projectName;
+	}
+
+	public void setProjectName(String projectName) {
+		this.projectName = projectName;
+		if(projectName != null){
+			putQueryParameter("projectName", projectName);
 		}
 	}
 

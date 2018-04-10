@@ -34,9 +34,9 @@ public class FindApprovalOrderListRequest extends RpcAcsRequest<FindApprovalOrde
 
 	private String serviceName;
 
-	private Integer pageNum;
-
 	private Long serviceId;
+
+	private Integer pageNum;
 
 	private Boolean onlyPending;
 
@@ -73,17 +73,6 @@ public class FindApprovalOrderListRequest extends RpcAcsRequest<FindApprovalOrde
 		}
 	}
 
-	public Integer getPageNum() {
-		return this.pageNum;
-	}
-
-	public void setPageNum(Integer pageNum) {
-		this.pageNum = pageNum;
-		if(pageNum != null){
-			putQueryParameter("PageNum", pageNum.toString());
-		}
-	}
-
 	public Long getServiceId() {
 		return this.serviceId;
 	}
@@ -92,6 +81,17 @@ public class FindApprovalOrderListRequest extends RpcAcsRequest<FindApprovalOrde
 		this.serviceId = serviceId;
 		if(serviceId != null){
 			putQueryParameter("ServiceId", serviceId.toString());
+		}
+	}
+
+	public Integer getPageNum() {
+		return this.pageNum;
+	}
+
+	public void setPageNum(Integer pageNum) {
+		this.pageNum = pageNum;
+		if(pageNum != null){
+			putQueryParameter("PageNum", pageNum.toString());
 		}
 	}
 
