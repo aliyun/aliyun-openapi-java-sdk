@@ -29,6 +29,8 @@ public class EditPhotosRequest extends RpcAcsRequest<EditPhotosResponse> {
 		setProtocol(ProtocolType.HTTPS);
 	}
 
+	private Long takenAt;
+
 	private String libraryId;
 
 	private Long shareExpireTime;
@@ -40,6 +42,17 @@ public class EditPhotosRequest extends RpcAcsRequest<EditPhotosResponse> {
 	private String remark;
 
 	private String title;
+
+	public Long getTakenAt() {
+		return this.takenAt;
+	}
+
+	public void setTakenAt(Long takenAt) {
+		this.takenAt = takenAt;
+		if(takenAt != null){
+			putQueryParameter("TakenAt", takenAt.toString());
+		}
+	}
 
 	public String getLibraryId() {
 		return this.libraryId;

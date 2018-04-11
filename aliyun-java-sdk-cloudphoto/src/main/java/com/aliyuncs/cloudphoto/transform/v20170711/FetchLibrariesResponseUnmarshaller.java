@@ -36,6 +36,7 @@ public class FetchLibrariesResponseUnmarshaller {
 		for (int i = 0; i < context.lengthValue("FetchLibrariesResponse.Libraries.Length"); i++) {
 			Library library = new Library();
 			library.setLibraryId(context.stringValue("FetchLibrariesResponse.Libraries["+ i +"].LibraryId"));
+			library.setCtime(context.longValue("FetchLibrariesResponse.Libraries["+ i +"].Ctime"));
 
 			libraries.add(library);
 		}

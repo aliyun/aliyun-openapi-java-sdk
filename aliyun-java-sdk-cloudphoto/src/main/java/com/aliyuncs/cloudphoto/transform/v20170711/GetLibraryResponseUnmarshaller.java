@@ -31,6 +31,7 @@ public class GetLibraryResponseUnmarshaller {
 		getLibraryResponse.setAction(context.stringValue("GetLibraryResponse.Action"));
 
 		Library library = new Library();
+		library.setCtime(context.longValue("GetLibraryResponse.Library.Ctime"));
 
 		Quota quota = new Quota();
 		quota.setTotalQuota(context.longValue("GetLibraryResponse.Library.Quota.TotalQuota"));

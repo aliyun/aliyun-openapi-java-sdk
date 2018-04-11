@@ -76,9 +76,19 @@ public class GetLibraryResponse extends AcsResponse {
 
 	public static class Library {
 
+		private Long ctime;
+
 		private Quota quota;
 
 		private AutoCleanConfig autoCleanConfig;
+
+		public Long getCtime() {
+			return this.ctime;
+		}
+
+		public void setCtime(Long ctime) {
+			this.ctime = ctime;
+		}
 
 		public Quota getQuota() {
 			return this.quota;

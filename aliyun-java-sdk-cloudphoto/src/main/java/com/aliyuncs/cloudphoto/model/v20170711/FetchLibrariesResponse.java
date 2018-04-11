@@ -89,12 +89,22 @@ public class FetchLibrariesResponse extends AcsResponse {
 
 		private String libraryId;
 
+		private Long ctime;
+
 		public String getLibraryId() {
 			return this.libraryId;
 		}
 
 		public void setLibraryId(String libraryId) {
 			this.libraryId = libraryId;
+		}
+
+		public Long getCtime() {
+			return this.ctime;
+		}
+
+		public void setCtime(Long ctime) {
+			this.ctime = ctime;
 		}
 	}
 
