@@ -25,6 +25,7 @@ import java.util.Map;
 
 import com.aliyuncs.auth.AlibabaCloudCredentials;
 import com.aliyuncs.auth.BasicSessionCredentials;
+import com.aliyuncs.auth.BearerTokenCredentials;
 import com.aliyuncs.auth.KeyPairCredentials;
 import com.aliyuncs.auth.RpcSignatureComposer;
 import com.aliyuncs.auth.Signer;
@@ -127,6 +128,12 @@ public abstract class RpcAcsRequest<T extends AcsResponse> extends AcsRequest<T>
                 String sessionToken = ((BasicSessionCredentials)credentials).getSessionToken();
                 if (null != sessionToken) {
                     this.putQueryParameter("SecurityToken", sessionToken);
+                }
+            }
+            if (credentials instanceof BearerTokenCredentials) {
+                String bearerToken = ((BearerTokenCredentials)credentials).getBearerToken();
+                if (null != ((BearerTokenCredentials)credentials).getBearerToken()) {
+                    this.putQueryParameter("BearerToken", bearerToken);
                 }
             }
             imutableMap = this.composer.refreshSignParameters(this.getQueryParameters(), signer, accessKeyId, format);

@@ -236,4 +236,43 @@ public class CommonTests extends BaseTest {
         
         Assert.assertEquals(200, response.getHttpStatus());
     }
+    
+    @Test
+    public void getCommonResponse_Rpc_BearToken_Get_Test() throws ServerException, ClientException {
+        CommonRequest request = new CommonRequest();
+        request.setDomain("ft.aliyuncs.com:18082");
+        request.setVersion("2016-01-01");
+        request.setAction("TestRpcApi");
+        request.putQueryParameter("QueryParam", "QUERY_PARAM_CONTENT");
+        request.putHeadParameter("gateway_channel", "http");
+        
+        CommonResponse response = clientBearerToken.getCommonResponse(request);
+        System.out.println(JSON.toJSONString(response.getData()));
+        
+        JSONObject responseJson = JSON.parseObject(response.getData());
+        Assert.assertEquals("QUERY_PARAM_CONTENT", responseJson.getJSONObject("Params").getString("QueryParam"));
+    }
+    
+    @Test
+    public void getCommonResponse_Roa_BearerToken_Post_Test() throws ServerException, ClientException {
+        CommonRequest request = new CommonRequest();
+        request.setDomain("ft.aliyuncs.com:18082");
+        request.setVersion("2016-01-02");
+        request.setAction("TestRoaApi");
+        request.setUriPattern("/web/cloudapi");
+        request.setMethod(MethodType.POST);
+        request.putQueryParameter("QueryParam", "QUERY_PARAM_CONTENT");
+        request.putBodyParameter("BodyParam", "BODY_PARAM_CONTENT");
+        request.putHeadParameter("HeadParam", "HEAD_PARAM_CONTENT");
+        request.putHeadParameter("gateway_channel", "http");
+        
+        CommonResponse response = clientBearerToken.getCommonResponse(request);
+        System.out.println(response.getData());
+        
+        JSONObject responseJson = JSON.parseObject(response.getData());
+        Assert.assertEquals("QUERY_PARAM_CONTENT", responseJson.getJSONObject("Params").getString("QueryParam"));
+        Assert.assertEquals("BODY_PARAM_CONTENT", responseJson.getJSONObject("Params").getString("BodyParam"));
+        Assert.assertEquals("HEAD_PARAM_CONTENT", responseJson.getJSONObject("Headers").getString("HeadParam"));
+        Assert.assertEquals("common", responseJson.getJSONObject("Headers").getString("x-sdk-invoke-type"));       
+    }
 }

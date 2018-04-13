@@ -85,6 +85,7 @@ public class DefaultAcsClientTest extends BaseTest {
 
         TestRpcApiResponse response = client.getAcsResponse(request, "cn-hangzhou", dailyEnvCredentail);
         Assert.assertNotNull(response);
+        System.out.println(JSON.toJSONString(response));
         Assert.assertNotNull(response.getParams());
         Assert.assertEquals("QUERY_PARAM_CONTENT", response.getParams().getQueryParam());
         Assert.assertEquals("BODY_PARAM_CONTENT", response.getParams().getBodyParam());
@@ -187,5 +188,21 @@ public class DefaultAcsClientTest extends BaseTest {
         Assert.assertEquals("QUERY_PARAM_CONTENT", responseJson.getJSONObject("Params").getString("QueryParam"));
         Assert.assertEquals("BODY_PARAM_CONTENT", responseJson.getJSONObject("Params").getString("BodyParam"));
         Assert.assertEquals("normal", responseJson.getJSONObject("Headers").getString("x-sdk-invoke-type")); 
+    }
+    
+    @Test
+    public void getAcsResponse_RPC_Bearertoken_Test() throws ServerException, ClientException, NoSuchAlgorithmException {
+        DefaultProfile.addEndpoint("cn-hangzhou", "cn-hangzhou", "Ft", "ft.aliyuncs.com");
+        TestRpcApiRequest request = new TestRpcApiRequest();
+        request.setBodyParam("BODY_PARAM_CONTENT");
+        request.setQueryParam("QUERY_PARAM_CONTENT");
+        request.setAcceptFormat(FormatType.JSON);
+        request.setMethod(MethodType.POST);
+
+        TestRpcApiResponse response = clientBearerToken.getAcsResponse(request);
+        Assert.assertNotNull(response);
+        Assert.assertNotNull(response.getParams());
+        Assert.assertEquals("QUERY_PARAM_CONTENT", response.getParams().getQueryParam());
+        Assert.assertEquals("BODY_PARAM_CONTENT", response.getParams().getBodyParam());
     }
 }

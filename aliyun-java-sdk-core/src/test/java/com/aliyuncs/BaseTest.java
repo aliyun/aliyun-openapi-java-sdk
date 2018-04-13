@@ -24,6 +24,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
+import com.aliyuncs.auth.BearerTokenCredentials;
 import com.aliyuncs.auth.Credential;
 import com.aliyuncs.auth.KeyPairCredentials;
 import com.aliyuncs.auth.STSGetSessionAccessKeyCredentialsProvider;
@@ -41,6 +42,8 @@ public class BaseTest {
     protected IAcsClient        client             = null;
 
     protected IAcsClient        clientV2           = null;
+
+    protected IAcsClient        clientBearerToken  = null;
 
     protected Credential        dailyEnvCredentail = null;
 
@@ -62,7 +65,7 @@ public class BaseTest {
         }
         properties = getProperties();
         IClientProfile profile = DefaultProfile.getProfile("cn-hangzhou", properties.getProperty("daily_accessKeyId"),
-                properties.getProperty("daily_accessSecret"));
+                                properties.getProperty("daily_accessSecret"));
         client = new DefaultAcsClient(profile);
 
         dailyEnvCredentail = new Credential(properties.getProperty("daily_accessKeyId"),
@@ -76,7 +79,11 @@ public class BaseTest {
         STSGetSessionAccessKeyCredentialsProvider provider = new STSGetSessionAccessKeyCredentialsProvider(keyPairCredentials, profileV2);
         
         clientV2 = new DefaultAcsClient(profileV2, provider);
-
+        
+        //创建bear token client
+        DefaultProfile profileBear = DefaultProfile.getProfile("cn-hangzhou");
+        BearerTokenCredentials bearerTokenCredentials = new BearerTokenCredentials(properties.getProperty("bearerToken"));
+        clientBearerToken = new DefaultAcsClient(profileBear, bearerTokenCredentials);
     }
 
     private Properties getProperties() {
@@ -93,5 +100,5 @@ public class BaseTest {
         }
         return pr;
     }
- 
+
 }
