@@ -1,3 +1,6 @@
+2018-04-13 Version: 3.7.0
+1, Support bearer Token
+
 2018-03-13 Version: 3.6.0
 1, Supports specifying the https certificate path
 2, Optimize the logic for resolving Endpoint

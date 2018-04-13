@@ -22,7 +22,6 @@ public class SslUtils {
     }
  
     static class miTM implements TrustManager,X509TrustManager {
-        @Override
         public X509Certificate[] getAcceptedIssuers() {
             return null;
         }
@@ -35,13 +34,11 @@ public class SslUtils {
             return true;
         }
  
-        @Override
         public void checkServerTrusted(X509Certificate[] certs, String authType)
                 throws CertificateException {
             return;
         }
  
-        @Override
         public void checkClientTrusted(X509Certificate[] certs, String authType)
                 throws CertificateException {
             return;
@@ -50,7 +47,6 @@ public class SslUtils {
      
     public static void ignoreSsl() throws Exception{
         HostnameVerifier hv = new HostnameVerifier() {
-            @Override
             public boolean verify(String urlHostName, SSLSession session) {
                 return true;
             }

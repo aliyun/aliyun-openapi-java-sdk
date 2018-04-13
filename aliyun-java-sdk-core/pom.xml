@@ -4,7 +4,7 @@
     <groupId>com.aliyun</groupId>
     <artifactId>aliyun-java-sdk-core</artifactId>
     <packaging>jar</packaging>
-    <version>3.6.0</version>
+    <version>3.7.0</version>
     <name>aliyun-java-sdk-core</name>
     <url>http://www.aliyun.com</url>
     <description>Aliyun Open API SDK for Java
@@ -37,8 +37,9 @@
         </license>
     </licenses>
     <scm>
-        <url></url>
-        <connection></connection>
+        <connection>scm:git:git://github.com/aliyun/aliyun-openapi-java-sdk.git</connection>
+        <developerConnection>scm:git:git@github.com:aliyun/aliyun-openapi-java-sdk.git</developerConnection>
+        <url>https://github.com/aliyun/aliyun-openapi-java-sdk</url>
     </scm>
     <developers>
         <developer>
@@ -108,17 +109,17 @@
                     </execution>
                 </executions>
             </plugin>
-            <!--<plugin>-->
-                <!--<groupId>org.sonatype.plugins</groupId>-->
-                <!--<artifactId>nexus-staging-maven-plugin</artifactId>-->
-                <!--<version>1.6.3</version>-->
-                <!--<extensions>true</extensions>-->
-                <!--<configuration>-->
-                    <!--<serverId>sonatype-nexus-staging</serverId>-->
-                    <!--<nexusUrl>https://oss.sonatype.org/</nexusUrl>-->
-                    <!--<autoReleaseAfterClose>true</autoReleaseAfterClose>-->
-                <!--</configuration>-->
-            <!--</plugin>-->
+            <plugin>
+                <groupId>org.sonatype.plugins</groupId>
+                <artifactId>nexus-staging-maven-plugin</artifactId>
+                <version>1.6.3</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <serverId>sonatype-nexus-staging</serverId>
+                    <nexusUrl>https://oss.sonatype.org/</nexusUrl>
+                    <autoReleaseAfterClose>true</autoReleaseAfterClose>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
 </project>
