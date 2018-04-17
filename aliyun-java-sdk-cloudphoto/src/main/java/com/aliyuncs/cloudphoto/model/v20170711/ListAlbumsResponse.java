@@ -105,6 +105,8 @@ public class ListAlbumsResponse extends AcsResponse {
 
 		private String state;
 
+		private String remark;
+
 		private Long photosCount;
 
 		private Long ctime;
@@ -143,6 +145,14 @@ public class ListAlbumsResponse extends AcsResponse {
 
 		public void setState(String state) {
 			this.state = state;
+		}
+
+		public String getRemark() {
+			return this.remark;
+		}
+
+		public void setRemark(String remark) {
+			this.remark = remark;
 		}
 
 		public Long getPhotosCount() {

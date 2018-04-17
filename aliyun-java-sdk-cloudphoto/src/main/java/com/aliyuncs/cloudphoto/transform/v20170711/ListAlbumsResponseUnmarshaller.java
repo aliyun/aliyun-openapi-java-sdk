@@ -41,6 +41,7 @@ public class ListAlbumsResponseUnmarshaller {
 			album.setIdStr(context.stringValue("ListAlbumsResponse.Albums["+ i +"].IdStr"));
 			album.setName(context.stringValue("ListAlbumsResponse.Albums["+ i +"].Name"));
 			album.setState(context.stringValue("ListAlbumsResponse.Albums["+ i +"].State"));
+			album.setRemark(context.stringValue("ListAlbumsResponse.Albums["+ i +"].Remark"));
 			album.setPhotosCount(context.longValue("ListAlbumsResponse.Albums["+ i +"].PhotosCount"));
 			album.setCtime(context.longValue("ListAlbumsResponse.Albums["+ i +"].Ctime"));
 			album.setMtime(context.longValue("ListAlbumsResponse.Albums["+ i +"].Mtime"));

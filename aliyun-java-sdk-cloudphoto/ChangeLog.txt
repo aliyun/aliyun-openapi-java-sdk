@@ -1,3 +1,8 @@
+2018-04-17 Version: 1.1.17
+1, EditPhotos add input param TakenAt
+2, add FetchMomentPhotos
+3, ListAlbums add return param Remark
+
 2018-04-11 Version: 1.1.16
 1, GetLibrary/FetchLibraries add return ctime
 2, Editphotos add input param takenAt
