@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.iot.model.v20170420;
 
 import com.aliyuncs.RpcAcsRequest;
@@ -27,11 +28,17 @@ public class CreateProductRequest extends RpcAcsRequest<CreateProductResponse> {
 
 	private Long catId;
 
+	private Integer nodeType;
+
+	private Boolean id2;
+
 	private String name;
 
 	private String extProps;
 
 	private String securityPolicy;
+
+	private Integer payType;
 
 	private String desc;
 
@@ -43,6 +50,28 @@ public class CreateProductRequest extends RpcAcsRequest<CreateProductResponse> {
 		this.catId = catId;
 		if(catId != null){
 			putQueryParameter("CatId", catId.toString());
+		}
+	}
+
+	public Integer getNodeType() {
+		return this.nodeType;
+	}
+
+	public void setNodeType(Integer nodeType) {
+		this.nodeType = nodeType;
+		if(nodeType != null){
+			putQueryParameter("NodeType", nodeType.toString());
+		}
+	}
+
+	public Boolean getId2() {
+		return this.id2;
+	}
+
+	public void setId2(Boolean id2) {
+		this.id2 = id2;
+		if(id2 != null){
+			putQueryParameter("Id2", id2.toString());
 		}
 	}
 
@@ -76,6 +105,17 @@ public class CreateProductRequest extends RpcAcsRequest<CreateProductResponse> {
 		this.securityPolicy = securityPolicy;
 		if(securityPolicy != null){
 			putQueryParameter("SecurityPolicy", securityPolicy);
+		}
+	}
+
+	public Integer getPayType() {
+		return this.payType;
+	}
+
+	public void setPayType(Integer payType) {
+		this.payType = payType;
+		if(payType != null){
+			putQueryParameter("PayType", payType.toString());
 		}
 	}
 

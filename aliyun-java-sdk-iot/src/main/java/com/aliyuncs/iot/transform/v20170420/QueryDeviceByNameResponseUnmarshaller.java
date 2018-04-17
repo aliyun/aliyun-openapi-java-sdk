@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.iot.transform.v20170420;
 
 import com.aliyuncs.iot.model.v20170420.QueryDeviceByNameResponse;
@@ -33,6 +34,7 @@ public class QueryDeviceByNameResponseUnmarshaller {
 		deviceInfo.setDeviceStatus(context.stringValue("QueryDeviceByNameResponse.DeviceInfo.DeviceStatus"));
 		deviceInfo.setDeviceName(context.stringValue("QueryDeviceByNameResponse.DeviceInfo.DeviceName"));
 		deviceInfo.setDeviceType(context.stringValue("QueryDeviceByNameResponse.DeviceInfo.DeviceType"));
+		deviceInfo.setClientIp(context.stringValue("QueryDeviceByNameResponse.DeviceInfo.ClientIp"));
 		deviceInfo.setGmtCreate(context.stringValue("QueryDeviceByNameResponse.DeviceInfo.GmtCreate"));
 		deviceInfo.setGmtModified(context.stringValue("QueryDeviceByNameResponse.DeviceInfo.GmtModified"));
 		queryDeviceByNameResponse.setDeviceInfo(deviceInfo);

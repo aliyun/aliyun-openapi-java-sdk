@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.iot.transform.v20170420;
 
 import com.aliyuncs.iot.model.v20170420.QueryApplyStatusResponse;

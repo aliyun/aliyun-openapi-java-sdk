@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.iot.model.v20170420;
 
 import com.aliyuncs.RpcAcsRequest;
@@ -26,6 +27,8 @@ public class UpdateProductRequest extends RpcAcsRequest<UpdateProductResponse> {
 	}
 
 	private Long catId;
+
+	private Integer nodeType;
 
 	private String productName;
 
@@ -43,6 +46,17 @@ public class UpdateProductRequest extends RpcAcsRequest<UpdateProductResponse> {
 		this.catId = catId;
 		if(catId != null){
 			putQueryParameter("CatId", catId.toString());
+		}
+	}
+
+	public Integer getNodeType() {
+		return this.nodeType;
+	}
+
+	public void setNodeType(Integer nodeType) {
+		this.nodeType = nodeType;
+		if(nodeType != null){
+			putQueryParameter("NodeType", nodeType.toString());
 		}
 	}
 
