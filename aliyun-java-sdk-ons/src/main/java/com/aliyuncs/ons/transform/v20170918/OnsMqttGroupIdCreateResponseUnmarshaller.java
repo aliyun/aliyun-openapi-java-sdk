@@ -14,17 +14,17 @@
 
 package com.aliyuncs.ons.transform.v20170918;
 
-import com.aliyuncs.ons.model.v20170918.OnsWarnCreateResponse;
+import com.aliyuncs.ons.model.v20170918.OnsMqttGroupIdCreateResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class OnsWarnCreateResponseUnmarshaller {
+public class OnsMqttGroupIdCreateResponseUnmarshaller {
 
-	public static OnsWarnCreateResponse unmarshall(OnsWarnCreateResponse onsWarnCreateResponse, UnmarshallerContext context) {
+	public static OnsMqttGroupIdCreateResponse unmarshall(OnsMqttGroupIdCreateResponse onsMqttGroupIdCreateResponse, UnmarshallerContext context) {
 		
-		onsWarnCreateResponse.setRequestId(context.stringValue("OnsWarnCreateResponse.RequestId"));
-		onsWarnCreateResponse.setHelpUrl(context.stringValue("OnsWarnCreateResponse.HelpUrl"));
+		onsMqttGroupIdCreateResponse.setRequestId(context.stringValue("OnsMqttGroupIdCreateResponse.RequestId"));
+		onsMqttGroupIdCreateResponse.setHelpUrl(context.stringValue("OnsMqttGroupIdCreateResponse.HelpUrl"));
 	 
-	 	return onsWarnCreateResponse;
+	 	return onsMqttGroupIdCreateResponse;
 	}
 }

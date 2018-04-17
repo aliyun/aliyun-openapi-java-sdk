@@ -20,13 +20,11 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class OnsMqttQueryTraceByTraceIdRequest extends RpcAcsRequest<OnsMqttQueryTraceByTraceIdResponse> {
+public class OnsMqttGroupIdCreateRequest extends RpcAcsRequest<OnsMqttGroupIdCreateResponse> {
 	
-	public OnsMqttQueryTraceByTraceIdRequest() {
-		super("Ons", "2017-09-18", "OnsMqttQueryTraceByTraceId");
+	public OnsMqttGroupIdCreateRequest() {
+		super("Ons", "2017-09-18", "OnsMqttGroupIdCreate");
 	}
-
-	private String traceId;
 
 	private Long preventCache;
 
@@ -34,18 +32,9 @@ public class OnsMqttQueryTraceByTraceIdRequest extends RpcAcsRequest<OnsMqttQuer
 
 	private String onsPlatform;
 
+	private String groupId;
+
 	private String topic;
-
-	public String getTraceId() {
-		return this.traceId;
-	}
-
-	public void setTraceId(String traceId) {
-		this.traceId = traceId;
-		if(traceId != null){
-			putQueryParameter("TraceId", traceId);
-		}
-	}
 
 	public Long getPreventCache() {
 		return this.preventCache;
@@ -80,6 +69,17 @@ public class OnsMqttQueryTraceByTraceIdRequest extends RpcAcsRequest<OnsMqttQuer
 		}
 	}
 
+	public String getGroupId() {
+		return this.groupId;
+	}
+
+	public void setGroupId(String groupId) {
+		this.groupId = groupId;
+		if(groupId != null){
+			putQueryParameter("GroupId", groupId);
+		}
+	}
+
 	public String getTopic() {
 		return this.topic;
 	}
@@ -92,8 +92,8 @@ public class OnsMqttQueryTraceByTraceIdRequest extends RpcAcsRequest<OnsMqttQuer
 	}
 
 	@Override
-	public Class<OnsMqttQueryTraceByTraceIdResponse> getResponseClass() {
-		return OnsMqttQueryTraceByTraceIdResponse.class;
+	public Class<OnsMqttGroupIdCreateResponse> getResponseClass() {
+		return OnsMqttGroupIdCreateResponse.class;
 	}
 
 }

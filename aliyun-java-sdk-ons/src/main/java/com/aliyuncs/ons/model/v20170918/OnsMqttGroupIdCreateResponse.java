@@ -15,32 +15,18 @@
 package com.aliyuncs.ons.model.v20170918;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.ons.transform.v20170918.OnsBuyOrdersProduceResponseUnmarshaller;
+import com.aliyuncs.ons.transform.v20170918.OnsMqttGroupIdCreateResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class OnsBuyOrdersProduceResponse extends AcsResponse {
-
-	private Boolean success;
+public class OnsMqttGroupIdCreateResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String code;
-
-	private String message;
-
-	private String data;
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
+	private String helpUrl;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -50,32 +36,16 @@ public class OnsBuyOrdersProduceResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getCode() {
-		return this.code;
+	public String getHelpUrl() {
+		return this.helpUrl;
 	}
 
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
-	public String getData() {
-		return this.data;
-	}
-
-	public void setData(String data) {
-		this.data = data;
+	public void setHelpUrl(String helpUrl) {
+		this.helpUrl = helpUrl;
 	}
 
 	@Override
-	public OnsBuyOrdersProduceResponse getInstance(UnmarshallerContext context) {
-		return	OnsBuyOrdersProduceResponseUnmarshaller.unmarshall(this, context);
+	public OnsMqttGroupIdCreateResponse getInstance(UnmarshallerContext context) {
+		return	OnsMqttGroupIdCreateResponseUnmarshaller.unmarshall(this, context);
 	}
 }
