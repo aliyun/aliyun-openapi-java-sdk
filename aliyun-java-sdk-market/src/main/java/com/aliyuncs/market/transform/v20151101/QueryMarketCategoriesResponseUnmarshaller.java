@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.market.transform.v20151101;
 
 import java.util.ArrayList;
@@ -18,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.market.model.v20151101.QueryMarketCategoriesResponse;
 import com.aliyuncs.market.model.v20151101.QueryMarketCategoriesResponse.Category;
+import com.aliyuncs.market.model.v20151101.QueryMarketCategoriesResponse.Category.ChildCategory;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -36,6 +38,17 @@ public class QueryMarketCategoriesResponseUnmarshaller {
 			category.setId(context.longValue("QueryMarketCategoriesResponse.Categories["+ i +"].Id"));
 			category.setCategoryCode(context.stringValue("QueryMarketCategoriesResponse.Categories["+ i +"].CategoryCode"));
 			category.setCategoryName(context.stringValue("QueryMarketCategoriesResponse.Categories["+ i +"].CategoryName"));
+
+			List<ChildCategory> childCategories = new ArrayList<ChildCategory>();
+			for (int j = 0; j < context.lengthValue("QueryMarketCategoriesResponse.Categories["+ i +"].ChildCategories.Length"); j++) {
+				ChildCategory childCategory = new ChildCategory();
+				childCategory.setId(context.longValue("QueryMarketCategoriesResponse.Categories["+ i +"].ChildCategories["+ j +"].Id"));
+				childCategory.setCategoryCode(context.stringValue("QueryMarketCategoriesResponse.Categories["+ i +"].ChildCategories["+ j +"].CategoryCode"));
+				childCategory.setCategoryName(context.stringValue("QueryMarketCategoriesResponse.Categories["+ i +"].ChildCategories["+ j +"].CategoryName"));
+
+				childCategories.add(childCategory);
+			}
+			category.setChildCategories(childCategories);
 
 			categories.add(category);
 		}

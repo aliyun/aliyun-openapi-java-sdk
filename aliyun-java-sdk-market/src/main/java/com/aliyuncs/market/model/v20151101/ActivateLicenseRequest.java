@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.market.model.v20151101;
 
 import com.aliyuncs.RpcAcsRequest;
@@ -22,21 +23,12 @@ import com.aliyuncs.RpcAcsRequest;
 public class ActivateLicenseRequest extends RpcAcsRequest<ActivateLicenseResponse> {
 	
 	public ActivateLicenseRequest() {
-		super("Market", "2015-11-01", "ActivateLicense");
+		super("Market", "2015-11-01", "ActivateLicense", "yunmarket");
 	}
-
-	private String licenseCode;
 
 	private String identification;
 
-	public String getLicenseCode() {
-		return this.licenseCode;
-	}
-
-	public void setLicenseCode(String licenseCode) {
-		this.licenseCode = licenseCode;
-		putQueryParameter("LicenseCode", licenseCode);
-	}
+	private String licenseCode;
 
 	public String getIdentification() {
 		return this.identification;
@@ -44,7 +36,20 @@ public class ActivateLicenseRequest extends RpcAcsRequest<ActivateLicenseRespons
 
 	public void setIdentification(String identification) {
 		this.identification = identification;
-		putQueryParameter("Identification", identification);
+		if(identification != null){
+			putQueryParameter("Identification", identification);
+		}
+	}
+
+	public String getLicenseCode() {
+		return this.licenseCode;
+	}
+
+	public void setLicenseCode(String licenseCode) {
+		this.licenseCode = licenseCode;
+		if(licenseCode != null){
+			putQueryParameter("LicenseCode", licenseCode);
+		}
 	}
 
 	@Override

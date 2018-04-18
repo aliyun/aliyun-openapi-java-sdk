@@ -1,21 +1,17 @@
 /*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
+
 package com.aliyuncs.market.model.v20151101;
 
 import java.util.List;
@@ -25,7 +21,7 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
- * @version
+ * @version 
  */
 public class DescribeProductResponse extends AcsResponse {
 
@@ -40,6 +36,22 @@ public class DescribeProductResponse extends AcsResponse {
 	private String description;
 
 	private String shortDescription;
+
+	private Long useCount;
+
+	private Float score;
+
+	private String status;
+
+	private String auditStatus;
+
+	private String auditFailMsg;
+
+	private Long auditTime;
+
+	private Long gmtCreated;
+
+	private Long gmtModified;
 
 	private List<ProductSku> productSkus;
 
@@ -95,6 +107,70 @@ public class DescribeProductResponse extends AcsResponse {
 		this.shortDescription = shortDescription;
 	}
 
+	public Long getUseCount() {
+		return this.useCount;
+	}
+
+	public void setUseCount(Long useCount) {
+		this.useCount = useCount;
+	}
+
+	public Float getScore() {
+		return this.score;
+	}
+
+	public void setScore(Float score) {
+		this.score = score;
+	}
+
+	public String getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
+	public String getAuditStatus() {
+		return this.auditStatus;
+	}
+
+	public void setAuditStatus(String auditStatus) {
+		this.auditStatus = auditStatus;
+	}
+
+	public String getAuditFailMsg() {
+		return this.auditFailMsg;
+	}
+
+	public void setAuditFailMsg(String auditFailMsg) {
+		this.auditFailMsg = auditFailMsg;
+	}
+
+	public Long getAuditTime() {
+		return this.auditTime;
+	}
+
+	public void setAuditTime(Long auditTime) {
+		this.auditTime = auditTime;
+	}
+
+	public Long getGmtCreated() {
+		return this.gmtCreated;
+	}
+
+	public void setGmtCreated(Long gmtCreated) {
+		this.gmtCreated = gmtCreated;
+	}
+
+	public Long getGmtModified() {
+		return this.gmtModified;
+	}
+
+	public void setGmtModified(Long gmtModified) {
+		this.gmtModified = gmtModified;
+	}
+
 	public List<ProductSku> getProductSkus() {
 		return this.productSkus;
 	}
@@ -128,6 +204,8 @@ public class DescribeProductResponse extends AcsResponse {
 		private String chargeType;
 
 		private String constraints;
+
+		private Boolean hidden;
 
 		private List<OrderPeriod> orderPeriods;
 
@@ -163,6 +241,14 @@ public class DescribeProductResponse extends AcsResponse {
 
 		public void setConstraints(String constraints) {
 			this.constraints = constraints;
+		}
+
+		public Boolean getHidden() {
+			return this.hidden;
+		}
+
+		public void setHidden(Boolean hidden) {
+			this.hidden = hidden;
 		}
 
 		public List<OrderPeriod> getOrderPeriods() {

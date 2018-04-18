@@ -14,17 +14,17 @@
 
 package com.aliyuncs.market.transform.v20151101;
 
-import com.aliyuncs.market.model.v20151101.BindImagePackageResponse;
+import com.aliyuncs.market.model.v20151101.PushMeteringDataResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class BindImagePackageResponseUnmarshaller {
+public class PushMeteringDataResponseUnmarshaller {
 
-	public static BindImagePackageResponse unmarshall(BindImagePackageResponse bindImagePackageResponse, UnmarshallerContext context) {
+	public static PushMeteringDataResponse unmarshall(PushMeteringDataResponse pushMeteringDataResponse, UnmarshallerContext context) {
 		
-		bindImagePackageResponse.setRequestId(context.stringValue("BindImagePackageResponse.RequestId"));
-		bindImagePackageResponse.setSuccess(context.booleanValue("BindImagePackageResponse.Success"));
+		pushMeteringDataResponse.setRequestId(context.stringValue("PushMeteringDataResponse.RequestId"));
+		pushMeteringDataResponse.setSuccess(context.booleanValue("PushMeteringDataResponse.Success"));
 	 
-	 	return bindImagePackageResponse;
+	 	return pushMeteringDataResponse;
 	}
 }

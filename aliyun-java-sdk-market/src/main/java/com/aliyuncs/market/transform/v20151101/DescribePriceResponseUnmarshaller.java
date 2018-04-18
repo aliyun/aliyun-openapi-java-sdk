@@ -11,14 +11,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.market.transform.v20151101;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import com.aliyuncs.market.model.v20151101.DescribePriceResponse;
 import com.aliyuncs.market.model.v20151101.DescribePriceResponse.PromotionRule;
 import com.aliyuncs.transform.UnmarshallerContext;
-
-import java.util.ArrayList;
-import java.util.List;
 
 
 public class DescribePriceResponseUnmarshaller {
@@ -28,6 +29,7 @@ public class DescribePriceResponseUnmarshaller {
 		describePriceResponse.setProductCode(context.stringValue("DescribePriceResponse.ProductCode"));
 		describePriceResponse.setOriginalPrice(context.floatValue("DescribePriceResponse.OriginalPrice"));
 		describePriceResponse.setTradePrice(context.floatValue("DescribePriceResponse.TradePrice"));
+		describePriceResponse.setDiscountPrice(context.floatValue("DescribePriceResponse.DiscountPrice"));
 
 		List<PromotionRule> promotionRules = new ArrayList<PromotionRule>();
 		for (int i = 0; i < context.lengthValue("DescribePriceResponse.PromotionRules.Length"); i++) {

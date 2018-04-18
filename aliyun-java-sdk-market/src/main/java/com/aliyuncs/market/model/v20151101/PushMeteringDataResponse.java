@@ -15,14 +15,14 @@
 package com.aliyuncs.market.model.v20151101;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.market.transform.v20151101.ActivateLicenseResponseUnmarshaller;
+import com.aliyuncs.market.transform.v20151101.PushMeteringDataResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ActivateLicenseResponse extends AcsResponse {
+public class PushMeteringDataResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -45,7 +45,7 @@ public class ActivateLicenseResponse extends AcsResponse {
 	}
 
 	@Override
-	public ActivateLicenseResponse getInstance(UnmarshallerContext context) {
-		return	ActivateLicenseResponseUnmarshaller.unmarshall(this, context);
+	public PushMeteringDataResponse getInstance(UnmarshallerContext context) {
+		return	PushMeteringDataResponseUnmarshaller.unmarshall(this, context);
 	}
 }

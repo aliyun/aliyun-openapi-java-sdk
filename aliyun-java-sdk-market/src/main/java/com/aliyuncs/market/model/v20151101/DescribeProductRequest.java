@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.market.model.v20151101;
 
 import com.aliyuncs.RpcAcsRequest;
@@ -22,21 +23,14 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeProductRequest extends RpcAcsRequest<DescribeProductResponse> {
 	
 	public DescribeProductRequest() {
-		super("Market", "2015-11-01", "DescribeProduct");
+		super("Market", "2015-11-01", "DescribeProduct", "yunmarket");
 	}
-
-	private String aliUid;
 
 	private String code;
 
-	public String getAliUid() {
-		return this.aliUid;
-	}
+	private Boolean queryDraft;
 
-	public void setAliUid(String aliUid) {
-		this.aliUid = aliUid;
-		putQueryParameter("AliUid", aliUid);
-	}
+	private String aliUid;
 
 	public String getCode() {
 		return this.code;
@@ -44,7 +38,31 @@ public class DescribeProductRequest extends RpcAcsRequest<DescribeProductRespons
 
 	public void setCode(String code) {
 		this.code = code;
-		putQueryParameter("Code", code);
+		if(code != null){
+			putQueryParameter("Code", code);
+		}
+	}
+
+	public Boolean getQueryDraft() {
+		return this.queryDraft;
+	}
+
+	public void setQueryDraft(Boolean queryDraft) {
+		this.queryDraft = queryDraft;
+		if(queryDraft != null){
+			putQueryParameter("QueryDraft", queryDraft.toString());
+		}
+	}
+
+	public String getAliUid() {
+		return this.aliUid;
+	}
+
+	public void setAliUid(String aliUid) {
+		this.aliUid = aliUid;
+		if(aliUid != null){
+			putQueryParameter("AliUid", aliUid);
+		}
 	}
 
 	@Override

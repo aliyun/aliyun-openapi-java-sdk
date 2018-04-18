@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.market.model.v20151101;
 
 import com.aliyuncs.RpcAcsRequest;
@@ -22,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class QueryMarketCategoriesRequest extends RpcAcsRequest<QueryMarketCategoriesResponse> {
 	
 	public QueryMarketCategoriesRequest() {
-		super("Market", "2015-11-01", "QueryMarketCategories");
+		super("Market", "2015-11-01", "QueryMarketCategories", "yunmarket");
 	}
 
 	@Override

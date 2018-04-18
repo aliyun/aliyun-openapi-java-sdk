@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.market.model.v20151101;
 
 import com.aliyuncs.RpcAcsRequest;
@@ -22,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeInstanceRequest extends RpcAcsRequest<DescribeInstanceResponse> {
 	
 	public DescribeInstanceRequest() {
-		super("Market", "2015-11-01", "DescribeInstance");
+		super("Market", "2015-11-01", "DescribeInstance", "yunmarket");
 	}
 
 	private String instanceId;
@@ -33,7 +34,9 @@ public class DescribeInstanceRequest extends RpcAcsRequest<DescribeInstanceRespo
 
 	public void setInstanceId(String instanceId) {
 		this.instanceId = instanceId;
-		putQueryParameter("InstanceId", instanceId);
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
+		}
 	}
 
 	@Override

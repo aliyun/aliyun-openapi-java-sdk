@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.market.model.v20151101;
 
 import com.aliyuncs.RpcAcsRequest;
@@ -22,26 +23,30 @@ import com.aliyuncs.RpcAcsRequest;
 public class CreateOrderRequest extends RpcAcsRequest<CreateOrderResponse> {
 	
 	public CreateOrderRequest() {
-		super("Market", "2015-11-01", "CreateOrder");
+		super("Market", "2015-11-01", "CreateOrder", "yunmarket");
 	}
-
-	private String orderType;
-
-	private String commodity;
 
 	private String orderSouce;
 
-	private String paymentType;
+	private String commodity;
 
 	private String clientToken;
 
-	public String getOrderType() {
-		return this.orderType;
+	private String ownerId;
+
+	private String paymentType;
+
+	private String orderType;
+
+	public String getOrderSouce() {
+		return this.orderSouce;
 	}
 
-	public void setOrderType(String orderType) {
-		this.orderType = orderType;
-		putQueryParameter("OrderType", orderType);
+	public void setOrderSouce(String orderSouce) {
+		this.orderSouce = orderSouce;
+		if(orderSouce != null){
+			putQueryParameter("OrderSouce", orderSouce);
+		}
 	}
 
 	public String getCommodity() {
@@ -50,25 +55,9 @@ public class CreateOrderRequest extends RpcAcsRequest<CreateOrderResponse> {
 
 	public void setCommodity(String commodity) {
 		this.commodity = commodity;
-		putQueryParameter("Commodity", commodity);
-	}
-
-	public String getOrderSouce() {
-		return this.orderSouce;
-	}
-
-	public void setOrderSouce(String orderSouce) {
-		this.orderSouce = orderSouce;
-		putQueryParameter("OrderSouce", orderSouce);
-	}
-
-	public String getPaymentType() {
-		return this.paymentType;
-	}
-
-	public void setPaymentType(String paymentType) {
-		this.paymentType = paymentType;
-		putQueryParameter("PaymentType", paymentType);
+		if(commodity != null){
+			putQueryParameter("Commodity", commodity);
+		}
 	}
 
 	public String getClientToken() {
@@ -77,7 +66,42 @@ public class CreateOrderRequest extends RpcAcsRequest<CreateOrderResponse> {
 
 	public void setClientToken(String clientToken) {
 		this.clientToken = clientToken;
-		putQueryParameter("ClientToken", clientToken);
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public String getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(String ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId);
+		}
+	}
+
+	public String getPaymentType() {
+		return this.paymentType;
+	}
+
+	public void setPaymentType(String paymentType) {
+		this.paymentType = paymentType;
+		if(paymentType != null){
+			putQueryParameter("PaymentType", paymentType);
+		}
+	}
+
+	public String getOrderType() {
+		return this.orderType;
+	}
+
+	public void setOrderType(String orderType) {
+		this.orderType = orderType;
+		if(orderType != null){
+			putQueryParameter("OrderType", orderType);
+		}
 	}
 
 	@Override

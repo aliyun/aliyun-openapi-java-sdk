@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.market.model.v20151101;
 
 import com.aliyuncs.RpcAcsRequest;
@@ -22,21 +23,12 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribePriceRequest extends RpcAcsRequest<DescribePriceResponse> {
 	
 	public DescribePriceRequest() {
-		super("Market", "2015-11-01", "DescribePrice");
+		super("Market", "2015-11-01", "DescribePrice", "yunmarket");
 	}
-
-	private String orderType;
 
 	private String commodity;
 
-	public String getOrderType() {
-		return this.orderType;
-	}
-
-	public void setOrderType(String orderType) {
-		this.orderType = orderType;
-		putQueryParameter("OrderType", orderType);
-	}
+	private String orderType;
 
 	public String getCommodity() {
 		return this.commodity;
@@ -44,7 +36,20 @@ public class DescribePriceRequest extends RpcAcsRequest<DescribePriceResponse> {
 
 	public void setCommodity(String commodity) {
 		this.commodity = commodity;
-		putQueryParameter("Commodity", commodity);
+		if(commodity != null){
+			putQueryParameter("Commodity", commodity);
+		}
+	}
+
+	public String getOrderType() {
+		return this.orderType;
+	}
+
+	public void setOrderType(String orderType) {
+		this.orderType = orderType;
+		if(orderType != null){
+			putQueryParameter("OrderType", orderType);
+		}
 	}
 
 	@Override

@@ -1,21 +1,17 @@
 /*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
+
 package com.aliyuncs.market.transform.v20151101;
 
 import java.util.ArrayList;
@@ -36,13 +32,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
 public class DescribeProductResponseUnmarshaller {
 
 	public static DescribeProductResponse unmarshall(DescribeProductResponse describeProductResponse, UnmarshallerContext context) {
-
+		
 		describeProductResponse.setCode(context.stringValue("DescribeProductResponse.Code"));
 		describeProductResponse.setName(context.stringValue("DescribeProductResponse.Name"));
 		describeProductResponse.setType(context.stringValue("DescribeProductResponse.Type"));
 		describeProductResponse.setPicUrl(context.stringValue("DescribeProductResponse.PicUrl"));
 		describeProductResponse.setDescription(context.stringValue("DescribeProductResponse.Description"));
 		describeProductResponse.setShortDescription(context.stringValue("DescribeProductResponse.ShortDescription"));
+		describeProductResponse.setUseCount(context.longValue("DescribeProductResponse.UseCount"));
+		describeProductResponse.setScore(context.floatValue("DescribeProductResponse.Score"));
+		describeProductResponse.setStatus(context.stringValue("DescribeProductResponse.Status"));
+		describeProductResponse.setAuditStatus(context.stringValue("DescribeProductResponse.AuditStatus"));
+		describeProductResponse.setAuditFailMsg(context.stringValue("DescribeProductResponse.AuditFailMsg"));
+		describeProductResponse.setAuditTime(context.longValue("DescribeProductResponse.AuditTime"));
+		describeProductResponse.setGmtCreated(context.longValue("DescribeProductResponse.GmtCreated"));
+		describeProductResponse.setGmtModified(context.longValue("DescribeProductResponse.GmtModified"));
 
 		ShopInfo shopInfo = new ShopInfo();
 		shopInfo.setId(context.longValue("DescribeProductResponse.ShopInfo.Id"));
@@ -73,6 +77,7 @@ public class DescribeProductResponseUnmarshaller {
 			productSku.setCode(context.stringValue("DescribeProductResponse.ProductSkus["+ i +"].Code"));
 			productSku.setChargeType(context.stringValue("DescribeProductResponse.ProductSkus["+ i +"].ChargeType"));
 			productSku.setConstraints(context.stringValue("DescribeProductResponse.ProductSkus["+ i +"].Constraints"));
+			productSku.setHidden(context.booleanValue("DescribeProductResponse.ProductSkus["+ i +"].Hidden"));
 
 			List<OrderPeriod> orderPeriods = new ArrayList<OrderPeriod>();
 			for (int j = 0; j < context.lengthValue("DescribeProductResponse.ProductSkus["+ i +"].OrderPeriods.Length"); j++) {
@@ -132,7 +137,7 @@ public class DescribeProductResponseUnmarshaller {
 			productExtras.add(productExtra);
 		}
 		describeProductResponse.setProductExtras(productExtras);
-
-		return describeProductResponse;
+	 
+	 	return describeProductResponse;
 	}
 }

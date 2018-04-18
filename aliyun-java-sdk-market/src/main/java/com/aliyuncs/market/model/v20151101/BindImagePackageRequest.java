@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.market.model.v20151101;
 
 import com.aliyuncs.RpcAcsRequest;
@@ -22,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class BindImagePackageRequest extends RpcAcsRequest<BindImagePackageResponse> {
 	
 	public BindImagePackageRequest() {
-		super("Market", "2015-11-01", "BindImagePackage");
+		super("Market", "2015-11-01", "BindImagePackage", "yunmarket");
 	}
 
 	private String ecsInstanceId;
@@ -35,7 +36,9 @@ public class BindImagePackageRequest extends RpcAcsRequest<BindImagePackageRespo
 
 	public void setEcsInstanceId(String ecsInstanceId) {
 		this.ecsInstanceId = ecsInstanceId;
-		putQueryParameter("EcsInstanceId", ecsInstanceId);
+		if(ecsInstanceId != null){
+			putQueryParameter("EcsInstanceId", ecsInstanceId);
+		}
 	}
 
 	public String getImagePackageInstanceId() {
@@ -44,7 +47,9 @@ public class BindImagePackageRequest extends RpcAcsRequest<BindImagePackageRespo
 
 	public void setImagePackageInstanceId(String imagePackageInstanceId) {
 		this.imagePackageInstanceId = imagePackageInstanceId;
-		putQueryParameter("ImagePackageInstanceId", imagePackageInstanceId);
+		if(imagePackageInstanceId != null){
+			putQueryParameter("ImagePackageInstanceId", imagePackageInstanceId);
+		}
 	}
 
 	@Override

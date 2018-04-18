@@ -1,0 +1,4 @@
+2018-04-18 Version: 2.0.7
+1, describeproduct add response parameters usecount and score
+
+

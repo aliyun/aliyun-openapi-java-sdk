@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.market.transform.v20151101;
 
 import com.aliyuncs.market.model.v20151101.SubscribeImageResponse;

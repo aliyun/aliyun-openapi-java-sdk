@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.market.model.v20151101;
 
 import com.aliyuncs.RpcAcsRequest;
@@ -22,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class QueryMarketImagesRequest extends RpcAcsRequest<QueryMarketImagesResponse> {
 	
 	public QueryMarketImagesRequest() {
-		super("Market", "2015-11-01", "QueryMarketImages");
+		super("Market", "2015-11-01", "QueryMarketImages", "yunmarket");
 	}
 
 	private String param;
@@ -33,7 +34,9 @@ public class QueryMarketImagesRequest extends RpcAcsRequest<QueryMarketImagesRes
 
 	public void setParam(String param) {
 		this.param = param;
-		putQueryParameter("Param", param);
+		if(param != null){
+			putQueryParameter("Param", param);
+		}
 	}
 
 	@Override

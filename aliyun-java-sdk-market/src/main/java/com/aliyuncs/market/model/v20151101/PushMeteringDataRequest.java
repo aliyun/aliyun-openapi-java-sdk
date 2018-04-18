@@ -15,33 +15,35 @@
 package com.aliyuncs.market.model.v20151101;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
-public class SubscribeImageRequest extends RpcAcsRequest<SubscribeImageResponse> {
+public class PushMeteringDataRequest extends RpcAcsRequest<PushMeteringDataResponse> {
 	
-	public SubscribeImageRequest() {
-		super("Market", "2015-11-01", "SubscribeImage", "yunmarket");
+	public PushMeteringDataRequest() {
+		super("Market", "2015-11-01", "PushMeteringData", "yunmarket");
+		setMethod(MethodType.POST);
 	}
 
-	private String productCode;
+	private String metering;
 
-	public String getProductCode() {
-		return this.productCode;
+	public String getMetering() {
+		return this.metering;
 	}
 
-	public void setProductCode(String productCode) {
-		this.productCode = productCode;
-		if(productCode != null){
-			putQueryParameter("ProductCode", productCode);
+	public void setMetering(String metering) {
+		this.metering = metering;
+		if(metering != null){
+			putQueryParameter("Metering", metering);
 		}
 	}
 
 	@Override
-	public Class<SubscribeImageResponse> getResponseClass() {
-		return SubscribeImageResponse.class;
+	public Class<PushMeteringDataResponse> getResponseClass() {
+		return PushMeteringDataResponse.class;
 	}
 
 }

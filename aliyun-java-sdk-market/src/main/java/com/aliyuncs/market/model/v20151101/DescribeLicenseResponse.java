@@ -1,23 +1,20 @@
 /*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
+
 package com.aliyuncs.market.model.v20151101;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.market.transform.v20151101.DescribeLicenseResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -67,6 +64,8 @@ public class DescribeLicenseResponse extends AcsResponse {
 		private String productCode;
 
 		private String productName;
+
+		private List<LicenseAttribute> extendArray;
 
 		private ExtendInfo extendInfo;
 
@@ -142,12 +141,43 @@ public class DescribeLicenseResponse extends AcsResponse {
 			this.productName = productName;
 		}
 
+		public List<LicenseAttribute> getExtendArray() {
+			return this.extendArray;
+		}
+
+		public void setExtendArray(List<LicenseAttribute> extendArray) {
+			this.extendArray = extendArray;
+		}
+
 		public ExtendInfo getExtendInfo() {
 			return this.extendInfo;
 		}
 
 		public void setExtendInfo(ExtendInfo extendInfo) {
 			this.extendInfo = extendInfo;
+		}
+
+		public static class LicenseAttribute {
+
+			private String code;
+
+			private String value;
+
+			public String getCode() {
+				return this.code;
+			}
+
+			public void setCode(String code) {
+				this.code = code;
+			}
+
+			public String getValue() {
+				return this.value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
+			}
 		}
 
 		public static class ExtendInfo {

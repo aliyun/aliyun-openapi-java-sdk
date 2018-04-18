@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.market.model.v20151101;
 
 import com.aliyuncs.RpcAcsRequest;
@@ -22,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeOrderRequest extends RpcAcsRequest<DescribeOrderResponse> {
 	
 	public DescribeOrderRequest() {
-		super("Market", "2015-11-01", "DescribeOrder");
+		super("Market", "2015-11-01", "DescribeOrder", "yunmarket");
 	}
 
 	private String orderId;
@@ -33,7 +34,9 @@ public class DescribeOrderRequest extends RpcAcsRequest<DescribeOrderResponse> {
 
 	public void setOrderId(String orderId) {
 		this.orderId = orderId;
-		putQueryParameter("OrderId", orderId);
+		if(orderId != null){
+			putQueryParameter("OrderId", orderId);
+		}
 	}
 
 	@Override
