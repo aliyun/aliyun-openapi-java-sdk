@@ -7,7 +7,7 @@ public class RpcDubboApiResponseUnmarshaller {
 
     public static RpcDubboApiResponse unmarshall(RpcDubboApiResponse rpcDubboApiResponse, UnmarshallerContext context) {
 
-        //rpcDubboApiResponse.setRequestId(context.stringValue("GetSessionAccessKeyResponse.RequestId"));
+        //rpcDubboApiResponse.setRequestId(context.stringValue("GenerateSessionAccessKeyResponse.RequestId"));
 
         return rpcDubboApiResponse;
     }

@@ -31,6 +31,7 @@ import org.xml.sax.SAXException;
 import com.aliyuncs.exceptions.ClientException;
 import com.aliyuncs.utils.XmlUtils;
 
+@Deprecated
 public class XmlReader implements Reader {
     Map<String, String> map = new HashMap<String, String>();
 

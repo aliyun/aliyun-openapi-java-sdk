@@ -21,6 +21,7 @@ package com.aliyuncs.ft.model;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.ft.transform.TestRpcApiResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
+import com.google.gson.annotations.SerializedName;
 
 /**
  * @author auto create
@@ -28,12 +29,16 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class TestRpcApiResponse extends AcsResponse {
 
+	@SerializedName("RemoteAddr")
 	private String remoteAddr;
 
+	@SerializedName("QueryString")
 	private String queryString;
 
+	@SerializedName("RequestURL")
 	private String requestURL;
 
+	@SerializedName("Params")
 	private Params params;
 
 	public String getRemoteAddr() {
@@ -70,8 +75,10 @@ public class TestRpcApiResponse extends AcsResponse {
 
 	public static class Params {
 
+		@SerializedName("QueryParam")
 		private String queryParam;
 
+		@SerializedName("BodyParam")
 		private String bodyParam;
 
 		public String getQueryParam() {

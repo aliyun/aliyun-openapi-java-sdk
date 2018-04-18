@@ -18,8 +18,7 @@
  */
 package com.aliyuncs.auth.sts;
 
-import com.aliyuncs.auth.sts.GetSessionAccessKeyResponse;
-import com.aliyuncs.auth.sts.GetSessionAccessKeyResponse.SessionAccesskey;
+import com.aliyuncs.auth.sts.GenerateSessionAccessKeyResponse.SessionAccessKey;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
@@ -27,17 +26,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetSessionAccessKeyResponseUnmarshaller {
 
-    public static GetSessionAccessKeyResponse unmarshall(GetSessionAccessKeyResponse getSessionAccessKeyResponse,
-                                                         UnmarshallerContext context) {
+    public static GenerateSessionAccessKeyResponse unmarshall(GenerateSessionAccessKeyResponse getSessionAccessKeyResponse,
+                                                              UnmarshallerContext context) {
 
-        getSessionAccessKeyResponse.setRequestId(context.stringValue("GetSessionAccessKeyResponse.RequestId"));
+        getSessionAccessKeyResponse.setRequestId(context.stringValue("GenerateSessionAccessKeyResponse.RequestId"));
 
-        SessionAccesskey credentials = new SessionAccesskey();
-        credentials.setSessionAccessKeyId(context.stringValue("GetSessionAccessKeyResponse.SessionAccessKey.SessionAccessKeyId"));
-        credentials.setSessionAccessKeySecert(context.stringValue("GetSessionAccessKeyResponse.SessionAccessKey.SessionAccessKeySecret"));
-        credentials.setExpiration(context.stringValue("GetSessionAccessKeyResponse.SessionAccessKey.Expiration"));
+        SessionAccessKey credentials = new SessionAccessKey();
+        credentials.setSessionAccessKeyId(context.stringValue("GenerateSessionAccessKeyResponse.SessionAccessKey.SessionAccessKeyId"));
+        credentials.setSessionAccessKeySecert(context.stringValue("GenerateSessionAccessKeyResponse.SessionAccessKey.SessionAccessKeySecret"));
+        credentials.setExpiration(context.stringValue("GenerateSessionAccessKeyResponse.SessionAccessKey.Expiration"));
 
-        getSessionAccessKeyResponse.setSessionAccesskey(credentials);
+        getSessionAccessKeyResponse.setSessionAccessKey(credentials);
 
         return getSessionAccessKeyResponse;
     }

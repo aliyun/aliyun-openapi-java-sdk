@@ -73,4 +73,10 @@ public interface IAcsClient {
                                                          List<Endpoint> endpoints)
         throws ClientException, ServerException;
 
+    public void restoreSSLCertificate() ;
+
+    public void ignoreSSLCertificate() ;
+
+    public abstract void shutdown();
+
 }

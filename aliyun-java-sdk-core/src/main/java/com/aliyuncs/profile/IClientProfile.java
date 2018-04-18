@@ -25,6 +25,7 @@ import com.aliyuncs.auth.Credential;
 import com.aliyuncs.auth.ISigner;
 import com.aliyuncs.exceptions.ClientException;
 import com.aliyuncs.http.FormatType;
+import com.aliyuncs.http.HttpClientConfig;
 import com.aliyuncs.regions.Endpoint;
 
 @SuppressWarnings("deprecation")
@@ -55,8 +56,25 @@ public interface IClientProfile {
      */
     public void setCredentialsProvider(AlibabaCloudCredentialsProvider credentialsProvider);
 
+    /**
+     *  use HttpClientConfig.setCertPath instead
+     * @param certPath
+     */
+    @Deprecated
     public void setCertPath(String certPath);
 
+
+    /**
+     *  use HttpClientConfig.getCertPath instead
+     */
+    @Deprecated
     public String getCertPath();
+
+    /**
+     * http client configs
+     */
+    public HttpClientConfig getHttpClientConfig();
+
+    public void setHttpClientConfig(HttpClientConfig httpClientConfig);
 
 }

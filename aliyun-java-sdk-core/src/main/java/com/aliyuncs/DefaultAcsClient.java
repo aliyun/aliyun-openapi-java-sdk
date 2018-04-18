@@ -18,6 +18,16 @@
  */
 package com.aliyuncs;
 
+import java.io.IOException;
+import java.net.SocketTimeoutException;
+import java.security.InvalidKeyException;
+import java.security.NoSuchAlgorithmException;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.net.ssl.SSLSocketFactory;
+import javax.xml.bind.annotation.XmlRootElement;
+
 import com.aliyuncs.auth.AlibabaCloudCredentials;
 import com.aliyuncs.auth.AlibabaCloudCredentialsProvider;
 import com.aliyuncs.auth.Credential;
@@ -27,8 +37,10 @@ import com.aliyuncs.auth.StaticCredentialsProvider;
 import com.aliyuncs.exceptions.ClientException;
 import com.aliyuncs.exceptions.ServerException;
 import com.aliyuncs.http.FormatType;
+import com.aliyuncs.http.HttpClientFactory;
 import com.aliyuncs.http.HttpRequest;
 import com.aliyuncs.http.HttpResponse;
+import com.aliyuncs.http.IHttpClient;
 import com.aliyuncs.profile.DefaultProfile;
 import com.aliyuncs.profile.IClientProfile;
 import com.aliyuncs.reader.Reader;
@@ -36,19 +48,8 @@ import com.aliyuncs.reader.ReaderFactory;
 import com.aliyuncs.regions.Endpoint;
 import com.aliyuncs.regions.ProductDomain;
 import com.aliyuncs.transform.UnmarshallerContext;
-import com.aliyuncs.utils.HttpsUtils;
-
-import java.io.IOException;
-import java.io.UnsupportedEncodingException;
-import java.net.SocketTimeoutException;
-import java.security.GeneralSecurityException;
-import java.security.InvalidKeyException;
-import java.security.NoSuchAlgorithmException;
-import java.util.ArrayList;
-import java.util.List;
-
-import javax.net.ssl.SSLException;
-import javax.net.ssl.SSLSocketFactory;
+import com.aliyuncs.unmarshaller.UnmarshallerFactory;
+import com.aliyuncs.utils.IOUtils;
 
 @SuppressWarnings("deprecation")
 public class DefaultAcsClient implements IAcsClient {
@@ -56,42 +57,34 @@ public class DefaultAcsClient implements IAcsClient {
     private boolean autoRetry = true;
     private IClientProfile clientProfile = null;
     private AlibabaCloudCredentialsProvider credentialsProvider;
+    private IHttpClient httpClient;
 
     private SSLSocketFactory sslSocketFactory = null;
 
     public DefaultAcsClient() {
         this.clientProfile = DefaultProfile.getProfile();
-        initSslSocketFactory();
+        this.httpClient = HttpClientFactory.buildClient(this.clientProfile);
     }
 
     public DefaultAcsClient(IClientProfile profile) {
         this.clientProfile = profile;
         this.credentialsProvider = new StaticCredentialsProvider(profile);
         this.clientProfile.setCredentialsProvider(this.credentialsProvider);
-        initSslSocketFactory();
+        this.httpClient = HttpClientFactory.buildClient(this.clientProfile);
     }
 
     public DefaultAcsClient(IClientProfile profile, AlibabaCloudCredentials credentials) {
         this.clientProfile = profile;
         this.credentialsProvider = new StaticCredentialsProvider(credentials);
         this.clientProfile.setCredentialsProvider(this.credentialsProvider);
-        initSslSocketFactory();
+        this.httpClient = HttpClientFactory.buildClient(this.clientProfile);
     }
 
     public DefaultAcsClient(IClientProfile profile, AlibabaCloudCredentialsProvider credentialsProvider) {
         this.clientProfile = profile;
         this.credentialsProvider = credentialsProvider;
         this.clientProfile.setCredentialsProvider(this.credentialsProvider);
-        initSslSocketFactory();
-    }
-
-    private void initSslSocketFactory(){
-        try {
-            this.sslSocketFactory = HttpsUtils.buildJavaSSLSocketFactory(clientProfile.getCertPath());
-        }catch(SSLException e){
-            // keep exceptions for keep compatible
-            System.err.println("buildSSLSocketFactory failed" + e.toString());
-        }
+        this.httpClient = HttpClientFactory.buildClient(this.clientProfile);
     }
 
     @Override
@@ -172,13 +165,22 @@ public class DefaultAcsClient implements IAcsClient {
     public CommonResponse getCommonResponse(CommonRequest request)
         throws ServerException, ClientException {
         HttpResponse baseResponse = this.doAction(request.buildRequest());
-        String stringContent = getResponseContent(baseResponse);
-        CommonResponse response = new CommonResponse();
-        response.setData(stringContent);
-        response.setHttpStatus(baseResponse.getStatus());
-        response.setHttpResponse(baseResponse);
-
-        return response;
+        if (baseResponse.isSuccess()) {
+            String stringContent = baseResponse.getHttpContentString();
+            CommonResponse response = new CommonResponse();
+            response.setData(stringContent);
+            response.setHttpStatus(baseResponse.getStatus());
+            response.setHttpResponse(baseResponse);
+            return response;
+        } else {
+            FormatType format = baseResponse.getHttpContentType();
+            AcsError error = readError(baseResponse, format);
+            if (500 <= baseResponse.getStatus()) {
+                throw new ServerException(error.getErrorCode(), error.getErrorMessage(), error.getRequestId());
+            } else {
+                throw new ClientException(error.getErrorCode(), error.getErrorMessage(), error.getRequestId());
+            }
+        }
     }
 
     @Override
@@ -263,40 +265,38 @@ public class DefaultAcsClient implements IAcsClient {
 
             boolean shouldRetry = true;
             for (int retryTimes = 0; shouldRetry; retryTimes++) {
-
                 shouldRetry = autoRetry && retryTimes < maxRetryNumber;
+                try {
+                    HttpRequest httpRequest = request.signRequest(signer, credentials, format, domain);
+                    HttpResponse response;
+                    response = this.httpClient.syncInvoke(httpRequest);
 
-                HttpRequest httpRequest = request.signRequest(signer, credentials, format, domain);
-                httpRequest.setSslSocketFactory(this.sslSocketFactory);
-
-                HttpResponse response;
-                response = HttpResponse.getResponse(httpRequest);
-                if (response.getHttpContent() == null) {
+                    if (500 <= response.getStatus() || response.getHttpContent() == null) {
+                        if (shouldRetry) {
+                            continue;
+                        } else {
+                            throw new ClientException("SDK.UnknownError", response.getHttpContentString());
+                        }
+                    }
+                    return response;
+                } catch (SocketTimeoutException exp) {
                     if (shouldRetry) {
                         continue;
                     } else {
-                        throw new ClientException("SDK.ConnectionReset", "Connection reset.");
+                        throw new ClientException("SDK.ServerUnreachable", "SocketTimeoutException has occurred on a socket read or accept.", exp);
+                    }
+                } catch (IOException exp) {
+                    if (shouldRetry) {
+                        continue;
+                    } else {
+                        throw new ClientException("SDK.ServerUnreachable", "Server unreachable: " + exp.toString(), exp);
                     }
                 }
-
-                if (500 <= response.getStatus() && shouldRetry) {
-                    continue;
-                }
-
-                return response;
             }
-
         } catch (InvalidKeyException exp) {
-            throw new ClientException("SDK.InvalidAccessSecret", "Speicified access secret is not valid.");
-        } catch (SocketTimeoutException exp) {
-            throw new ClientException("SDK.ServerUnreachable",
-                "SocketTimeoutException has occurred on a socket read or accept.");
-        } catch (IOException exp) {
-            throw new ClientException("SDK.ServerUnreachable", "Server unreachable: " + exp.toString());
+            throw new ClientException("SDK.InvalidAccessSecret", "Speicified access secret is not valid.", exp);
         } catch (NoSuchAlgorithmException exp) {
-            throw new ClientException("SDK.InvalidMD5Algorithm", "MD5 hash is not supported by client side.");
-        } catch (GeneralSecurityException exp) {
-            throw new ClientException("SDK.SecureConnectorError", "Send request with specific SecureConnector failed: " + exp.toString());
+            throw new ClientException("SDK.InvalidMD5Algorithm", "MD5 hash is not supported by client side.", exp);
         }
 
         return null;
@@ -304,53 +304,50 @@ public class DefaultAcsClient implements IAcsClient {
 
     private <T extends AcsResponse> T readResponse(Class<T> clasz, HttpResponse httpResponse, FormatType format)
         throws ClientException {
-        Reader reader = ReaderFactory.createInstance(format);
-        UnmarshallerContext context = new UnmarshallerContext();
-        T response = null;
-        String stringContent = getResponseContent(httpResponse);
-        try {
-            response = clasz.newInstance();
-        } catch (Exception e) {
-            throw new ClientException("SDK.InvalidResponseClass", "Unable to allocate " + clasz.getName() + " class");
-        }
-
-        String responseEndpoint = clasz.getName().substring(clasz.getName().lastIndexOf(".") + 1);
-        if (response.checkShowJsonItemName()) {
-            context.setResponseMap(reader.read(stringContent, responseEndpoint));
+        // new version response contains "@XmlRootElement" annotation
+        if (clasz.isAnnotationPresent(XmlRootElement.class) && !clientProfile.getHttpClientConfig().isCompatibleMode()) {
+            com.aliyuncs.unmarshaller.Unmarshaller unmarshaller = UnmarshallerFactory.getUnmarshaller(format);
+            return unmarshaller.unmarshal(clasz, httpResponse);
         } else {
-            context.setResponseMap(reader.readForHideArrayItem(stringContent, responseEndpoint));
-        }
-
-        context.setHttpResponse(httpResponse);
-        response.getInstance(context);
-        return response;
-    }
-
-    private String getResponseContent(HttpResponse httpResponse) throws ClientException {
-        String stringContent = null;
-        try {
-            if (null == httpResponse.getEncoding()) {
-                stringContent = new String(httpResponse.getHttpContent());
-            } else {
-                stringContent = new String(httpResponse.getHttpContent(), httpResponse.getEncoding());
+            Reader reader = ReaderFactory.createInstance(format);
+            UnmarshallerContext context = new UnmarshallerContext();
+            T response = null;
+            String stringContent = httpResponse.getHttpContentString();
+            try {
+                response = clasz.newInstance();
+            } catch (Exception e) {
+                throw new ClientException("SDK.InvalidResponseClass", "Unable to allocate " + clasz.getName() + " class");
             }
-        } catch (UnsupportedEncodingException exp) {
-            throw new ClientException("SDK.UnsupportedEncoding",
-                "Can not parse response due to un supported encoding.");
+
+            String responseEndpoint = clasz.getName().substring(clasz.getName().lastIndexOf(".") + 1);
+            if (response.checkShowJsonItemName()) {
+                context.setResponseMap(reader.read(stringContent, responseEndpoint));
+            } else {
+                context.setResponseMap(reader.readForHideArrayItem(stringContent, responseEndpoint));
+            }
+
+            context.setHttpResponse(httpResponse);
+            response.getInstance(context);
+            return response;
         }
-        return stringContent;
     }
 
     private AcsError readError(HttpResponse httpResponse, FormatType format) throws ClientException {
-        AcsError error = new AcsError();
-        String responseEndpoint = "Error";
-        Reader reader = ReaderFactory.createInstance(format);
-        UnmarshallerContext context = new UnmarshallerContext();
-        String stringContent = getResponseContent(httpResponse);
-        context.setResponseMap(reader.read(stringContent, responseEndpoint));
-        return error.getInstance(context);
+        try {
+            AcsError error = new AcsError();
+            String responseEndpoint = "Error";
+            Reader reader = ReaderFactory.createInstance(format);
+            UnmarshallerContext context = new UnmarshallerContext();
+            String stringContent = httpResponse.getHttpContentString();
+            context.setResponseMap(reader.read(stringContent, responseEndpoint));
+            return error.getInstance(context);
+        } catch (Throwable e) {
+            String message = httpResponse.getHttpContentString();
+            throw new ClientException("SDK.UnknownError", message);
+        }
+
     }
-    
+
     @SuppressWarnings("rawtypes")
     private List<Endpoint> getEndpoints(AcsRequest request) throws ClientException {
         if (request.getProductDomain() != null && request.getProductDomain().getDomianName() != null) {
@@ -358,7 +355,7 @@ public class DefaultAcsClient implements IAcsClient {
         }
 
         return clientProfile.getEndpoints(request.getProduct(), request.getRegionId(), request.getLocationProduct(),
-                request.getEndpointType());
+            request.getEndpointType());
     }
 
     public boolean isAutoRetry() {
@@ -375,6 +372,19 @@ public class DefaultAcsClient implements IAcsClient {
 
     public void setMaxRetryNumber(int maxRetryNumber) {
         this.maxRetryNumber = maxRetryNumber;
+    }
+
+    public void restoreSSLCertificate() {
+        this.httpClient.restoreSSLCertificate();
+    }
+
+    public void ignoreSSLCertificate() {
+        this.httpClient.ignoreSSLCertificate();
+    }
+
+    @Override
+    public void shutdown() {
+        IOUtils.closeQuietly(this.httpClient);
     }
 
 }

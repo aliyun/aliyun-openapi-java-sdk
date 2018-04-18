@@ -1,3 +1,10 @@
+2018-04-18 Version: 4.0.0
+1, Use Apache httpclient as default instead of UrlConnection
+2, Support user custome http client
+3, Support keepalive and connection pool
+4, Support async invoking
+5, In addition to the depedency of Apache Httpclient that may cause problems with maven package conflicts, other parts are backwards compatible.
+
 2018-04-14 Version: 3.7.1
 1, Support bearer Token
 

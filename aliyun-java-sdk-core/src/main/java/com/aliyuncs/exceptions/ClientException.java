@@ -35,6 +35,13 @@ public class ClientException extends Exception {
         this.requestId = requestId;
     }
 
+    public ClientException(String errCode, String errMsg, Throwable cause) {
+        super(errCode + " : " + errMsg, cause);
+        this.errCode = errCode;
+        this.errMsg = errMsg;
+        this.setErrorType(ErrorType.Client);
+    }
+
     public ClientException(String errCode, String errMsg) {
         super(errCode + " : " + errMsg);
         this.errCode = errCode;

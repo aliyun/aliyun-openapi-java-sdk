@@ -18,11 +18,12 @@
  */
 package com.aliyuncs.http;
 
-import static org.junit.Assert.*;
-
-import java.io.IOException;
-
+import com.aliyuncs.http.clients.CompatibleUrlConnClient;
 import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.fail;
 
 public class HttpTest {
 
@@ -31,7 +32,7 @@ public class HttpTest {
         HttpRequest request = new HttpRequest("http://acs.aliyun-inc.com/");
         request.setMethod(MethodType.GET);
         try {
-            HttpResponse response = HttpResponse.getResponse(request);
+            HttpResponse response = CompatibleUrlConnClient.compatibleGetResponse(request);
             String strResult = new String(response.getHttpContent(), response.getEncoding());
             assertEquals(400, response.getStatus());
             assertNotNull(strResult);
@@ -48,7 +49,7 @@ public class HttpTest {
         request.setMethod(MethodType.PUT);
         try {
             request.setHttpContent(content.getBytes("UTF-8"), "UTF-8", FormatType.XML);
-            HttpResponse response = HttpResponse.getResponse(request);
+            HttpResponse response = CompatibleUrlConnClient.compatibleGetResponse(request);
             String strResult = new String(response.getHttpContent(), response.getEncoding());
             assertEquals(400, response.getStatus());
             assertNotNull(strResult);

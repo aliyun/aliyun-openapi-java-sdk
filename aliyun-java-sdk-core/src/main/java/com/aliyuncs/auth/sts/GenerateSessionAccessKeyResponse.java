@@ -18,69 +18,85 @@
  */
 package com.aliyuncs.auth.sts;
 
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
+import com.google.gson.annotations.SerializedName;
 
 /**
  * Created by zhangw on 2017/8/10.
  */
-public class GetSessionAccessKeyResponse extends AcsResponse {
 
+@XmlRootElement(name="GenerateSessionAccessKeyResponse")
+public class GenerateSessionAccessKeyResponse extends AcsResponse {
+
+    @SerializedName("RequestId")
     private String requestId;
 
-    private SessionAccesskey sessionAccesskey;
+    @SerializedName("SessionAccessKey")
+    private SessionAccessKey sessionAccessKey;
 
     public String getRequestId() {
         return requestId;
     }
 
+    @XmlElement(name="RequestId")
     public void setRequestId(String requestId) {
         this.requestId = requestId;
     }
 
-    public SessionAccesskey getSessionAccesskey() {
-        return sessionAccesskey;
+    @XmlElement(name="SessionAccessKey")
+    public SessionAccessKey getSessionAccessKey() {
+        return sessionAccessKey;
     }
 
-    public void setSessionAccesskey(SessionAccesskey sessionAccesskey) {
-        this.sessionAccesskey = sessionAccesskey;
+    public void setSessionAccessKey(SessionAccessKey sessionAccessKey) {
+        this.sessionAccessKey = sessionAccessKey;
     }
 
-    public static class SessionAccesskey {
+    public static class SessionAccessKey {
 
+        @SerializedName("SessionAccessKeyId")
         private String sessionAccessKeyId;
 
-        private String sessionAccessKeySecert;
+        @SerializedName("SessionAccessKeySecret")
+        private String sessionAccessKeySecret;
 
+        @SerializedName("Expiration")
         private String expiration;
 
         public String getSessionAccessKeyId() {
             return sessionAccessKeyId;
         }
 
+        @XmlElement(name="SessionAccessKeyId")
         public void setSessionAccessKeyId(String sessionAccessKeyId) {
             this.sessionAccessKeyId = sessionAccessKeyId;
         }
 
         public String getSessionAccessKeySecert() {
-            return sessionAccessKeySecert;
+            return sessionAccessKeySecret;
         }
 
+        @XmlElement(name="SessionAccessKeySecret")
         public void setSessionAccessKeySecert(String sessionAccessKeySecert) {
-            this.sessionAccessKeySecert = sessionAccessKeySecert;
+            this.sessionAccessKeySecret = sessionAccessKeySecert;
         }
 
         public String getExpiration() {
             return expiration;
         }
 
+        @XmlElement(name="Expiration")
         public void setExpiration(String expiration) {
             this.expiration = expiration;
         }
     }
 
     @Override
-    public GetSessionAccessKeyResponse getInstance(UnmarshallerContext context) {
-        return	GetSessionAccessKeyResponseUnmarshaller.unmarshall(this, context);
+    public GenerateSessionAccessKeyResponse getInstance(UnmarshallerContext context) {
+        return GetSessionAccessKeyResponseUnmarshaller.unmarshall(this, context);
     }
 }

@@ -22,6 +22,7 @@ import java.util.Map;
 
 import com.aliyuncs.exceptions.ClientException;
 
+@Deprecated
 public interface Reader {
 
     public Map<String, String> read(String response, String endpoint) throws ClientException;

@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 /**
  * Created by zhangw on 2017/8/10.
  */
-public class GetSessionAccessKeyRequest extends RpcAcsRequest<GetSessionAccessKeyResponse> {
+public class GetSessionAccessKeyRequest extends RpcAcsRequest<GenerateSessionAccessKeyResponse> {
     
     private static String version = "2015-04-01";
 
@@ -58,8 +58,8 @@ public class GetSessionAccessKeyRequest extends RpcAcsRequest<GetSessionAccessKe
     }
 
     @Override
-    public Class<GetSessionAccessKeyResponse> getResponseClass() {
-        return GetSessionAccessKeyResponse.class;
+    public Class<GenerateSessionAccessKeyResponse> getResponseClass() {
+        return GenerateSessionAccessKeyResponse.class;
     }
 
     public static void setStsVersion(String version) {

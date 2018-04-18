@@ -32,6 +32,7 @@ import com.aliyuncs.auth.ICredentialProvider;
 import com.aliyuncs.auth.ISigner;
 import com.aliyuncs.exceptions.ClientException;
 import com.aliyuncs.http.FormatType;
+import com.aliyuncs.http.HttpClientConfig;
 import com.aliyuncs.regions.CustomizedEndpointsParser;
 import com.aliyuncs.regions.Endpoint;
 import com.aliyuncs.regions.EndpointResolver;
@@ -56,6 +57,8 @@ public class DefaultProfile implements IClientProfile {
     private LocationConfig locationConfig = new LocationConfig();
 
     private String certPath;
+
+    private HttpClientConfig httpClientConfig = HttpClientConfig.getDefault();
 
     private DefaultProfile() {
         this.locationConfig = new LocationConfig();
@@ -351,5 +354,15 @@ public class DefaultProfile implements IClientProfile {
     @Override
     public void setCertPath(String certPath) {
         this.certPath = certPath;
+    }
+
+    @Override
+    public HttpClientConfig getHttpClientConfig() {
+        return httpClientConfig;
+    }
+
+    @Override
+    public void setHttpClientConfig(HttpClientConfig httpClientConfig) {
+        this.httpClientConfig = httpClientConfig;
     }
 }

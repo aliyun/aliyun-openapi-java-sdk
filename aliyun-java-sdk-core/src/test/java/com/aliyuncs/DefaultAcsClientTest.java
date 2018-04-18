@@ -22,14 +22,6 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.security.NoSuchAlgorithmException;
 
-import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONObject;
-import com.aliyuncs.http.MethodType;
-import com.aliyuncs.profile.DefaultProfile;
-
-import org.junit.Assert;
-import org.junit.Test;
-
 import com.aliyuncs.ecs.v20140526.model.DescribeRegionsRequest;
 import com.aliyuncs.exceptions.ClientException;
 import com.aliyuncs.exceptions.ServerException;
@@ -38,6 +30,12 @@ import com.aliyuncs.ft.model.TestRpcApiRequest;
 import com.aliyuncs.ft.model.TestRpcApiResponse;
 import com.aliyuncs.http.FormatType;
 import com.aliyuncs.http.HttpResponse;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.profile.DefaultProfile;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
+import org.junit.Assert;
+import org.junit.Test;
 
 public class DefaultAcsClientTest extends BaseTest {
 
@@ -52,13 +50,13 @@ public class DefaultAcsClientTest extends BaseTest {
         HttpResponse response = client.doAction(request, "cn-hangzhou", dailyEnvCredentail);
         Assert.assertNotNull(response);
         String responseContent = new String(response.getHttpContent());
-        JSONObject responseJson = JSON.parseObject(responseContent);
-        Assert.assertEquals("HEAD_PARAM_CONTENT", responseJson.getJSONObject("Headers").getString("HeaderParam"));
-        Assert.assertEquals("QUERY_PARAM_CONTENT", responseJson.getJSONObject("Params").getString("QueryParam"));
-        Assert.assertEquals("BODY_PARAM_CONTENT", responseJson.getJSONObject("Params").getString("BodyParam"));
-        Assert.assertEquals("normal", responseJson.getJSONObject("Headers").getString("x-sdk-invoke-type")); 
+        JsonObject responseJson = (new JsonParser()).parse(responseContent).getAsJsonObject();
+        Assert.assertEquals("HEAD_PARAM_CONTENT", responseJson.get("Headers").getAsJsonObject().get("HeaderParam").getAsString());
+        Assert.assertEquals("QUERY_PARAM_CONTENT", responseJson.get("Params").getAsJsonObject().get("QueryParam").getAsString());
+        Assert.assertEquals("BODY_PARAM_CONTENT", responseJson.get("Params").getAsJsonObject().get("BodyParam").getAsString());
+        Assert.assertEquals("normal", responseJson.get("Headers").getAsJsonObject().get("x-sdk-invoke-type").getAsString());
     }
-    
+
     @Test
     public void getAcsResponse_ROA_GET_Test() throws ServerException, ClientException, NoSuchAlgorithmException {
         DefaultProfile.addEndpoint("cn-hangzhou", "cn-hangzhou", "Ft", "ft.aliyuncs.com");
@@ -69,9 +67,9 @@ public class DefaultAcsClientTest extends BaseTest {
         HttpResponse response = client.doAction(request, "cn-hangzhou", dailyEnvCredentail);
         Assert.assertNotNull(response);
         String responseContent = new String(response.getHttpContent());
-        JSONObject responseJson = JSON.parseObject(responseContent);
-        Assert.assertEquals("QUERY_PARAM_CONTENT", responseJson.getJSONObject("Params").getString("QueryParam"));
-        Assert.assertEquals("normal", responseJson.getJSONObject("Headers").getString("x-sdk-invoke-type")); 
+        JsonObject responseJson = (new JsonParser()).parse(responseContent).getAsJsonObject();
+        Assert.assertEquals("QUERY_PARAM_CONTENT", responseJson.get("Params").getAsJsonObject().get("QueryParam").getAsString());
+        Assert.assertEquals("normal", responseJson.get("Headers").getAsJsonObject().get("x-sdk-invoke-type").getAsString());
     }
 
     @Test
@@ -85,7 +83,6 @@ public class DefaultAcsClientTest extends BaseTest {
 
         TestRpcApiResponse response = client.getAcsResponse(request, "cn-hangzhou", dailyEnvCredentail);
         Assert.assertNotNull(response);
-        System.out.println(JSON.toJSONString(response));
         Assert.assertNotNull(response.getParams());
         Assert.assertEquals("QUERY_PARAM_CONTENT", response.getParams().getQueryParam());
         Assert.assertEquals("BODY_PARAM_CONTENT", response.getParams().getBodyParam());
@@ -153,7 +150,7 @@ public class DefaultAcsClientTest extends BaseTest {
             }
         }
     }
-    
+
     @Test
     public void getAcsResponse_RPC_V2_Test()
         throws ServerException, ClientException, NoSuchAlgorithmException, InterruptedException {
@@ -170,7 +167,7 @@ public class DefaultAcsClientTest extends BaseTest {
         Assert.assertEquals("QUERY_PARAM_CONTENT", response.getParams().getQueryParam());
         Assert.assertEquals("BODY_PARAM_CONTENT", response.getParams().getBodyParam());
     }
-    
+
     @Test
     public void getAcsResponse_ROA_V2_Test() throws ServerException, ClientException, NoSuchAlgorithmException {
         DefaultProfile.addEndpoint("cn-hangzhou", "cn-hangzhou", "Ft", "ft.aliyuncs.com");
@@ -183,26 +180,27 @@ public class DefaultAcsClientTest extends BaseTest {
         Assert.assertNotNull(response);
         String responseContent = new String(response.getHttpContent());
         System.out.println(responseContent);
-        JSONObject responseJson = JSON.parseObject(responseContent);
-        Assert.assertEquals("HEAD_PARAM_CONTENT", responseJson.getJSONObject("Headers").getString("HeaderParam"));
-        Assert.assertEquals("QUERY_PARAM_CONTENT", responseJson.getJSONObject("Params").getString("QueryParam"));
-        Assert.assertEquals("BODY_PARAM_CONTENT", responseJson.getJSONObject("Params").getString("BodyParam"));
-        Assert.assertEquals("normal", responseJson.getJSONObject("Headers").getString("x-sdk-invoke-type")); 
+        JsonObject responseJson = (new JsonParser()).parse(responseContent).getAsJsonObject();
+        Assert.assertEquals("HEAD_PARAM_CONTENT", responseJson.get("Headers").getAsJsonObject().get("HeaderParam").getAsString());
+        Assert.assertEquals("QUERY_PARAM_CONTENT", responseJson.get("Params").getAsJsonObject().get("QueryParam").getAsString());
+        Assert.assertEquals("BODY_PARAM_CONTENT", responseJson.get("Params").getAsJsonObject().get("BodyParam").getAsString());
+        Assert.assertEquals("normal", responseJson.get("Headers").getAsJsonObject().get("x-sdk-invoke-type").getAsString());
     }
     
-    @Test
-    public void getAcsResponse_RPC_Bearertoken_Test() throws ServerException, ClientException, NoSuchAlgorithmException {
-        DefaultProfile.addEndpoint("cn-hangzhou", "cn-hangzhou", "Ft", "ft.aliyuncs.com");
-        TestRpcApiRequest request = new TestRpcApiRequest();
-        request.setBodyParam("BODY_PARAM_CONTENT");
-        request.setQueryParam("QUERY_PARAM_CONTENT");
-        request.setAcceptFormat(FormatType.JSON);
-        request.setMethod(MethodType.POST);
+    //@Test
+    //public void getAcsResponse_RPC_Bearertoken_Test() throws ServerException, ClientException, NoSuchAlgorithmException {
+    //    DefaultProfile.addEndpoint("cn-hangzhou", "cn-hangzhou", "Ft", "ft.aliyuncs.com");
+    //    TestRpcApiRequest request = new TestRpcApiRequest();
+    //    request.setBodyParam("BODY_PARAM_CONTENT");
+    //    request.setQueryParam("QUERY_PARAM_CONTENT");
+    //    request.setAcceptFormat(FormatType.JSON);
+    //    request.setMethod(MethodType.POST);
+    //
+    //    TestRpcApiResponse response = clientBearerToken.getAcsResponse(request);
+    //    Assert.assertNotNull(response);
+    //    Assert.assertNotNull(response.getParams());
+    //    Assert.assertEquals("QUERY_PARAM_CONTENT", response.getParams().getQueryParam());
+    //    Assert.assertEquals("BODY_PARAM_CONTENT", response.getParams().getBodyParam());
+    //}
 
-        TestRpcApiResponse response = clientBearerToken.getAcsResponse(request);
-        Assert.assertNotNull(response);
-        Assert.assertNotNull(response.getParams());
-        Assert.assertEquals("QUERY_PARAM_CONTENT", response.getParams().getQueryParam());
-        Assert.assertEquals("BODY_PARAM_CONTENT", response.getParams().getBodyParam());
-    }
 }

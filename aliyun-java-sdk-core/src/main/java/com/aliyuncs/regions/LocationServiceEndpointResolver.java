@@ -9,7 +9,9 @@ import java.util.Set;
 
 import com.aliyuncs.auth.Credential;
 import com.aliyuncs.exceptions.ClientException;
-import org.json.JSONObject;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 
 @SuppressWarnings("deprecation")
 public class LocationServiceEndpointResolver implements EndpointResolver {
@@ -19,11 +21,11 @@ public class LocationServiceEndpointResolver implements EndpointResolver {
     private Map<String, String> serviceCodeMap = new HashMap<String, String>();
 
     public LocationServiceEndpointResolver() {
-        JSONObject endpointData = new JSONObject(EndpointConfig.ENDPOINT_PROFILE);
-        for (Object productDataObj : endpointData.getJSONArray("products")) {
-            JSONObject productData = (JSONObject)productDataObj;
-            String popCode = productData.getString("code");
-            String serviceCode = productData.getString("location_service_code");
+        JsonObject endpointData = (new JsonParser()).parse(EndpointConfig.ENDPOINT_PROFILE).getAsJsonObject();
+        for (JsonElement productDataObj : endpointData.get("products").getAsJsonArray()) {
+            JsonObject productData = productDataObj.getAsJsonObject();
+            String popCode = productData.get("code").getAsString();
+            String serviceCode = productData.get("location_service_code").getAsString();
             if (popCode != null && popCode.length() > 0 && serviceCode != null && serviceCode.length() > 0) {
                 serviceCodeMap.put(popCode.toLowerCase(), serviceCode);
             }

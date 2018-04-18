@@ -20,11 +20,12 @@ package com.aliyuncs.reader;
 
 import com.aliyuncs.http.FormatType;
 
+@Deprecated
 public class ReaderFactory {
     public static Reader createInstance(FormatType format) {
         if (FormatType.JSON == format) { return new JsonReader(); }
         if (FormatType.XML == format) { return new XmlReader(); }
 
-        return null;
+        throw new IllegalStateException("Unknown format type : " + format);
     }
 }
