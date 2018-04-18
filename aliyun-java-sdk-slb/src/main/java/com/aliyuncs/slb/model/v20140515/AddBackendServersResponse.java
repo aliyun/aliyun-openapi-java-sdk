@@ -61,6 +61,12 @@ public class AddBackendServersResponse extends AcsResponse {
 
 		private String weight;
 
+		private String serverIp;
+
+		private String vpcId;
+
+		private String type;
+
 		public String getServerId() {
 			return this.serverId;
 		}
@@ -75,6 +81,30 @@ public class AddBackendServersResponse extends AcsResponse {
 
 		public void setWeight(String weight) {
 			this.weight = weight;
+		}
+
+		public String getServerIp() {
+			return this.serverIp;
+		}
+
+		public void setServerIp(String serverIp) {
+			this.serverIp = serverIp;
+		}
+
+		public String getVpcId() {
+			return this.vpcId;
+		}
+
+		public void setVpcId(String vpcId) {
+			this.vpcId = vpcId;
+		}
+
+		public String getType() {
+			return this.type;
+		}
+
+		public void setType(String type) {
+			this.type = type;
 		}
 	}
 

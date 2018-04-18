@@ -324,6 +324,10 @@ public class DescribeLoadBalancerAttributeResponse extends AcsResponse {
 
 		private String listenerProtocol;
 
+		private String listenerForward;
+
+		private Integer forwardPort;
+
 		public Integer getListenerPort() {
 			return this.listenerPort;
 		}
@@ -339,6 +343,22 @@ public class DescribeLoadBalancerAttributeResponse extends AcsResponse {
 		public void setListenerProtocol(String listenerProtocol) {
 			this.listenerProtocol = listenerProtocol;
 		}
+
+		public String getListenerForward() {
+			return this.listenerForward;
+		}
+
+		public void setListenerForward(String listenerForward) {
+			this.listenerForward = listenerForward;
+		}
+
+		public Integer getForwardPort() {
+			return this.forwardPort;
+		}
+
+		public void setForwardPort(Integer forwardPort) {
+			this.forwardPort = forwardPort;
+		}
 	}
 
 	public static class BackendServer {
@@ -346,6 +366,12 @@ public class DescribeLoadBalancerAttributeResponse extends AcsResponse {
 		private String serverId;
 
 		private Integer weight;
+
+		private String type;
+
+		private String serverIp;
+
+		private String vpcId;
 
 		public String getServerId() {
 			return this.serverId;
@@ -361,6 +387,30 @@ public class DescribeLoadBalancerAttributeResponse extends AcsResponse {
 
 		public void setWeight(Integer weight) {
 			this.weight = weight;
+		}
+
+		public String getType() {
+			return this.type;
+		}
+
+		public void setType(String type) {
+			this.type = type;
+		}
+
+		public String getServerIp() {
+			return this.serverIp;
+		}
+
+		public void setServerIp(String serverIp) {
+			this.serverIp = serverIp;
+		}
+
+		public String getVpcId() {
+			return this.vpcId;
+		}
+
+		public void setVpcId(String vpcId) {
+			this.vpcId = vpcId;
 		}
 	}
 

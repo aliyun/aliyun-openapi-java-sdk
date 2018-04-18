@@ -75,6 +75,12 @@ public class DescribeMasterSlaveServerGroupAttributeResponse extends AcsResponse
 
 		private String serverType;
 
+		private String type;
+
+		private String serverIp;
+
+		private String vpcId;
+
 		public String getServerId() {
 			return this.serverId;
 		}
@@ -105,6 +111,30 @@ public class DescribeMasterSlaveServerGroupAttributeResponse extends AcsResponse
 
 		public void setServerType(String serverType) {
 			this.serverType = serverType;
+		}
+
+		public String getType() {
+			return this.type;
+		}
+
+		public void setType(String type) {
+			this.type = type;
+		}
+
+		public String getServerIp() {
+			return this.serverIp;
+		}
+
+		public void setServerIp(String serverIp) {
+			this.serverIp = serverIp;
+		}
+
+		public String getVpcId() {
+			return this.vpcId;
+		}
+
+		public void setVpcId(String vpcId) {
+			this.vpcId = vpcId;
 		}
 	}
 

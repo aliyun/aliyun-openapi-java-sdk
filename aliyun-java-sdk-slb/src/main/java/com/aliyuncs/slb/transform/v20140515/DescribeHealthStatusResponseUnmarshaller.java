@@ -35,6 +35,8 @@ public class DescribeHealthStatusResponseUnmarshaller {
 			backendServer.setServerId(context.stringValue("DescribeHealthStatusResponse.BackendServers["+ i +"].ServerId"));
 			backendServer.setPort(context.integerValue("DescribeHealthStatusResponse.BackendServers["+ i +"].Port"));
 			backendServer.setServerHealthStatus(context.stringValue("DescribeHealthStatusResponse.BackendServers["+ i +"].ServerHealthStatus"));
+			backendServer.setServerIp(context.stringValue("DescribeHealthStatusResponse.BackendServers["+ i +"].ServerIp"));
+			backendServer.setType(context.stringValue("DescribeHealthStatusResponse.BackendServers["+ i +"].Type"));
 
 			backendServers.add(backendServer);
 		}

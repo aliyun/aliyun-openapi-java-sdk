@@ -55,6 +55,10 @@ public class DescribeHealthStatusResponse extends AcsResponse {
 
 		private String serverHealthStatus;
 
+		private String serverIp;
+
+		private String type;
+
 		public Integer getListenerPort() {
 			return this.listenerPort;
 		}
@@ -85,6 +89,22 @@ public class DescribeHealthStatusResponse extends AcsResponse {
 
 		public void setServerHealthStatus(String serverHealthStatus) {
 			this.serverHealthStatus = serverHealthStatus;
+		}
+
+		public String getServerIp() {
+			return this.serverIp;
+		}
+
+		public void setServerIp(String serverIp) {
+			this.serverIp = serverIp;
+		}
+
+		public String getType() {
+			return this.type;
+		}
+
+		public void setType(String type) {
+			this.type = type;
 		}
 	}
 

@@ -40,6 +40,10 @@ public class DescribeLoadBalancerUDPListenerAttributeResponseUnmarshaller {
 		describeLoadBalancerUDPListenerAttributeResponse.setMaxConnection(context.integerValue("DescribeLoadBalancerUDPListenerAttributeResponse.MaxConnection"));
 		describeLoadBalancerUDPListenerAttributeResponse.setVServerGroupId(context.stringValue("DescribeLoadBalancerUDPListenerAttributeResponse.VServerGroupId"));
 		describeLoadBalancerUDPListenerAttributeResponse.setMasterSlaveServerGroupId(context.stringValue("DescribeLoadBalancerUDPListenerAttributeResponse.MasterSlaveServerGroupId"));
+		describeLoadBalancerUDPListenerAttributeResponse.setAclId(context.stringValue("DescribeLoadBalancerUDPListenerAttributeResponse.AclId"));
+		describeLoadBalancerUDPListenerAttributeResponse.setAclType(context.stringValue("DescribeLoadBalancerUDPListenerAttributeResponse.AclType"));
+		describeLoadBalancerUDPListenerAttributeResponse.setAclStatus(context.stringValue("DescribeLoadBalancerUDPListenerAttributeResponse.AclStatus"));
+		describeLoadBalancerUDPListenerAttributeResponse.setVpcIds(context.stringValue("DescribeLoadBalancerUDPListenerAttributeResponse.VpcIds"));
 	 
 	 	return describeLoadBalancerUDPListenerAttributeResponse;
 	}

@@ -60,6 +60,14 @@ public class DescribeLoadBalancerUDPListenerAttributeResponse extends AcsRespons
 
 	private String masterSlaveServerGroupId;
 
+	private String aclId;
+
+	private String aclType;
+
+	private String aclStatus;
+
+	private String vpcIds;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -202,6 +210,38 @@ public class DescribeLoadBalancerUDPListenerAttributeResponse extends AcsRespons
 
 	public void setMasterSlaveServerGroupId(String masterSlaveServerGroupId) {
 		this.masterSlaveServerGroupId = masterSlaveServerGroupId;
+	}
+
+	public String getAclId() {
+		return this.aclId;
+	}
+
+	public void setAclId(String aclId) {
+		this.aclId = aclId;
+	}
+
+	public String getAclType() {
+		return this.aclType;
+	}
+
+	public void setAclType(String aclType) {
+		this.aclType = aclType;
+	}
+
+	public String getAclStatus() {
+		return this.aclStatus;
+	}
+
+	public void setAclStatus(String aclStatus) {
+		this.aclStatus = aclStatus;
+	}
+
+	public String getVpcIds() {
+		return this.vpcIds;
+	}
+
+	public void setVpcIds(String vpcIds) {
+		this.vpcIds = vpcIds;
 	}
 
 	@Override

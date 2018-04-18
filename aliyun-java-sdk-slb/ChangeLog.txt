@@ -1,3 +1,7 @@
+2018-04-18 Version: 3.2.3
+1, upgrade slb sdk from 3.2.2 to 3.2.3
+2, add ACL related APIs
+
 2018-03-15 Version: 3.2.2
 1, Synchronize to the latest api list
 

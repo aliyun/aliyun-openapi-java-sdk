@@ -35,6 +35,9 @@ public class ModifyVServerGroupBackendServersResponseUnmarshaller {
 			backendServer.setServerId(context.stringValue("ModifyVServerGroupBackendServersResponse.BackendServers["+ i +"].ServerId"));
 			backendServer.setPort(context.integerValue("ModifyVServerGroupBackendServersResponse.BackendServers["+ i +"].Port"));
 			backendServer.setWeight(context.integerValue("ModifyVServerGroupBackendServersResponse.BackendServers["+ i +"].Weight"));
+			backendServer.setType(context.stringValue("ModifyVServerGroupBackendServersResponse.BackendServers["+ i +"].Type"));
+			backendServer.setServerIp(context.stringValue("ModifyVServerGroupBackendServersResponse.BackendServers["+ i +"].ServerIp"));
+			backendServer.setVpcId(context.stringValue("ModifyVServerGroupBackendServersResponse.BackendServers["+ i +"].VpcId"));
 
 			backendServers.add(backendServer);
 		}

@@ -73,6 +73,8 @@ public class DescribeLoadBalancerAttributeResponseUnmarshaller {
 			ListenerPortAndProtocol listenerPortAndProtocol = new ListenerPortAndProtocol();
 			listenerPortAndProtocol.setListenerPort(context.integerValue("DescribeLoadBalancerAttributeResponse.ListenerPortsAndProtocol["+ i +"].ListenerPort"));
 			listenerPortAndProtocol.setListenerProtocol(context.stringValue("DescribeLoadBalancerAttributeResponse.ListenerPortsAndProtocol["+ i +"].ListenerProtocol"));
+			listenerPortAndProtocol.setListenerForward(context.stringValue("DescribeLoadBalancerAttributeResponse.ListenerPortsAndProtocol["+ i +"].ListenerForward"));
+			listenerPortAndProtocol.setForwardPort(context.integerValue("DescribeLoadBalancerAttributeResponse.ListenerPortsAndProtocol["+ i +"].ForwardPort"));
 
 			listenerPortsAndProtocol.add(listenerPortAndProtocol);
 		}
@@ -83,6 +85,9 @@ public class DescribeLoadBalancerAttributeResponseUnmarshaller {
 			BackendServer backendServer = new BackendServer();
 			backendServer.setServerId(context.stringValue("DescribeLoadBalancerAttributeResponse.BackendServers["+ i +"].ServerId"));
 			backendServer.setWeight(context.integerValue("DescribeLoadBalancerAttributeResponse.BackendServers["+ i +"].Weight"));
+			backendServer.setType(context.stringValue("DescribeLoadBalancerAttributeResponse.BackendServers["+ i +"].Type"));
+			backendServer.setServerIp(context.stringValue("DescribeLoadBalancerAttributeResponse.BackendServers["+ i +"].ServerIp"));
+			backendServer.setVpcId(context.stringValue("DescribeLoadBalancerAttributeResponse.BackendServers["+ i +"].VpcId"));
 
 			backendServers.add(backendServer);
 		}

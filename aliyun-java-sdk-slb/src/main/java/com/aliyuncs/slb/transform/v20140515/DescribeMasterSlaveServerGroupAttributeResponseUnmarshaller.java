@@ -37,6 +37,9 @@ public class DescribeMasterSlaveServerGroupAttributeResponseUnmarshaller {
 			masterSlaveBackendServer.setPort(context.integerValue("DescribeMasterSlaveServerGroupAttributeResponse.MasterSlaveBackendServers["+ i +"].Port"));
 			masterSlaveBackendServer.setWeight(context.integerValue("DescribeMasterSlaveServerGroupAttributeResponse.MasterSlaveBackendServers["+ i +"].Weight"));
 			masterSlaveBackendServer.setServerType(context.stringValue("DescribeMasterSlaveServerGroupAttributeResponse.MasterSlaveBackendServers["+ i +"].ServerType"));
+			masterSlaveBackendServer.setType(context.stringValue("DescribeMasterSlaveServerGroupAttributeResponse.MasterSlaveBackendServers["+ i +"].Type"));
+			masterSlaveBackendServer.setServerIp(context.stringValue("DescribeMasterSlaveServerGroupAttributeResponse.MasterSlaveBackendServers["+ i +"].ServerIp"));
+			masterSlaveBackendServer.setVpcId(context.stringValue("DescribeMasterSlaveServerGroupAttributeResponse.MasterSlaveBackendServers["+ i +"].VpcId"));
 
 			masterSlaveBackendServers.add(masterSlaveBackendServer);
 		}

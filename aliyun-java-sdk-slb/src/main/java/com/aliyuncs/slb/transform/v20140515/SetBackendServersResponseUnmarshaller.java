@@ -34,6 +34,9 @@ public class SetBackendServersResponseUnmarshaller {
 			BackendServer backendServer = new BackendServer();
 			backendServer.setServerId(context.stringValue("SetBackendServersResponse.BackendServers["+ i +"].ServerId"));
 			backendServer.setWeight(context.stringValue("SetBackendServersResponse.BackendServers["+ i +"].Weight"));
+			backendServer.setServerIp(context.stringValue("SetBackendServersResponse.BackendServers["+ i +"].ServerIp"));
+			backendServer.setVpcId(context.stringValue("SetBackendServersResponse.BackendServers["+ i +"].VpcId"));
+			backendServer.setType(context.stringValue("SetBackendServersResponse.BackendServers["+ i +"].Type"));
 
 			backendServers.add(backendServer);
 		}

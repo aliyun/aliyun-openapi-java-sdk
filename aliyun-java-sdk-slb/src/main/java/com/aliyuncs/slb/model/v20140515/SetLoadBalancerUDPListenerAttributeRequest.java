@@ -36,7 +36,11 @@ public class SetLoadBalancerUDPListenerAttributeRequest extends RpcAcsRequest<Se
 
 	private Integer healthyThreshold;
 
+	private String aclStatus;
+
 	private String scheduler;
+
+	private String aclType;
 
 	private String masterSlaveServerGroup;
 
@@ -44,7 +48,11 @@ public class SetLoadBalancerUDPListenerAttributeRequest extends RpcAcsRequest<Se
 
 	private Integer persistenceTimeout;
 
+	private String vpcIds;
+
 	private String vServerGroupId;
+
+	private String aclId;
 
 	private Integer listenerPort;
 
@@ -127,6 +135,17 @@ public class SetLoadBalancerUDPListenerAttributeRequest extends RpcAcsRequest<Se
 		}
 	}
 
+	public String getAclStatus() {
+		return this.aclStatus;
+	}
+
+	public void setAclStatus(String aclStatus) {
+		this.aclStatus = aclStatus;
+		if(aclStatus != null){
+			putQueryParameter("AclStatus", aclStatus);
+		}
+	}
+
 	public String getScheduler() {
 		return this.scheduler;
 	}
@@ -135,6 +154,17 @@ public class SetLoadBalancerUDPListenerAttributeRequest extends RpcAcsRequest<Se
 		this.scheduler = scheduler;
 		if(scheduler != null){
 			putQueryParameter("Scheduler", scheduler);
+		}
+	}
+
+	public String getAclType() {
+		return this.aclType;
+	}
+
+	public void setAclType(String aclType) {
+		this.aclType = aclType;
+		if(aclType != null){
+			putQueryParameter("AclType", aclType);
 		}
 	}
 
@@ -171,6 +201,17 @@ public class SetLoadBalancerUDPListenerAttributeRequest extends RpcAcsRequest<Se
 		}
 	}
 
+	public String getVpcIds() {
+		return this.vpcIds;
+	}
+
+	public void setVpcIds(String vpcIds) {
+		this.vpcIds = vpcIds;
+		if(vpcIds != null){
+			putQueryParameter("VpcIds", vpcIds);
+		}
+	}
+
 	public String getVServerGroupId() {
 		return this.vServerGroupId;
 	}
@@ -179,6 +220,17 @@ public class SetLoadBalancerUDPListenerAttributeRequest extends RpcAcsRequest<Se
 		this.vServerGroupId = vServerGroupId;
 		if(vServerGroupId != null){
 			putQueryParameter("VServerGroupId", vServerGroupId);
+		}
+	}
+
+	public String getAclId() {
+		return this.aclId;
+	}
+
+	public void setAclId(String aclId) {
+		this.aclId = aclId;
+		if(aclId != null){
+			putQueryParameter("AclId", aclId);
 		}
 	}
 

@@ -32,6 +32,8 @@ public class CreateLoadBalancerHTTPListenerRequest extends RpcAcsRequest<CreateL
 
 	private Integer healthCheckTimeout;
 
+	private String listenerForward;
+
 	private String xForwardedFor;
 
 	private String healthCheckURI;
@@ -40,9 +42,15 @@ public class CreateLoadBalancerHTTPListenerRequest extends RpcAcsRequest<CreateL
 
 	private Integer healthyThreshold;
 
+	private String aclStatus;
+
 	private String scheduler;
 
+	private String aclType;
+
 	private String healthCheck;
+
+	private Integer forwardPort;
 
 	private Integer maxConnection;
 
@@ -50,7 +58,11 @@ public class CreateLoadBalancerHTTPListenerRequest extends RpcAcsRequest<CreateL
 
 	private String stickySessionType;
 
+	private String vpcIds;
+
 	private String vServerGroupId;
+
+	private String aclId;
 
 	private Integer listenerPort;
 
@@ -121,6 +133,17 @@ public class CreateLoadBalancerHTTPListenerRequest extends RpcAcsRequest<CreateL
 		}
 	}
 
+	public String getListenerForward() {
+		return this.listenerForward;
+	}
+
+	public void setListenerForward(String listenerForward) {
+		this.listenerForward = listenerForward;
+		if(listenerForward != null){
+			putQueryParameter("ListenerForward", listenerForward);
+		}
+	}
+
 	public String getXForwardedFor() {
 		return this.xForwardedFor;
 	}
@@ -165,6 +188,17 @@ public class CreateLoadBalancerHTTPListenerRequest extends RpcAcsRequest<CreateL
 		}
 	}
 
+	public String getAclStatus() {
+		return this.aclStatus;
+	}
+
+	public void setAclStatus(String aclStatus) {
+		this.aclStatus = aclStatus;
+		if(aclStatus != null){
+			putQueryParameter("AclStatus", aclStatus);
+		}
+	}
+
 	public String getScheduler() {
 		return this.scheduler;
 	}
@@ -176,6 +210,17 @@ public class CreateLoadBalancerHTTPListenerRequest extends RpcAcsRequest<CreateL
 		}
 	}
 
+	public String getAclType() {
+		return this.aclType;
+	}
+
+	public void setAclType(String aclType) {
+		this.aclType = aclType;
+		if(aclType != null){
+			putQueryParameter("AclType", aclType);
+		}
+	}
+
 	public String getHealthCheck() {
 		return this.healthCheck;
 	}
@@ -184,6 +229,17 @@ public class CreateLoadBalancerHTTPListenerRequest extends RpcAcsRequest<CreateL
 		this.healthCheck = healthCheck;
 		if(healthCheck != null){
 			putQueryParameter("HealthCheck", healthCheck);
+		}
+	}
+
+	public Integer getForwardPort() {
+		return this.forwardPort;
+	}
+
+	public void setForwardPort(Integer forwardPort) {
+		this.forwardPort = forwardPort;
+		if(forwardPort != null){
+			putQueryParameter("ForwardPort", forwardPort.toString());
 		}
 	}
 
@@ -220,6 +276,17 @@ public class CreateLoadBalancerHTTPListenerRequest extends RpcAcsRequest<CreateL
 		}
 	}
 
+	public String getVpcIds() {
+		return this.vpcIds;
+	}
+
+	public void setVpcIds(String vpcIds) {
+		this.vpcIds = vpcIds;
+		if(vpcIds != null){
+			putQueryParameter("VpcIds", vpcIds);
+		}
+	}
+
 	public String getVServerGroupId() {
 		return this.vServerGroupId;
 	}
@@ -228,6 +295,17 @@ public class CreateLoadBalancerHTTPListenerRequest extends RpcAcsRequest<CreateL
 		this.vServerGroupId = vServerGroupId;
 		if(vServerGroupId != null){
 			putQueryParameter("VServerGroupId", vServerGroupId);
+		}
+	}
+
+	public String getAclId() {
+		return this.aclId;
+	}
+
+	public void setAclId(String aclId) {
+		this.aclId = aclId;
+		if(aclId != null){
+			putQueryParameter("AclId", aclId);
 		}
 	}
 

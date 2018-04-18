@@ -44,6 +44,10 @@ public class DescribeLoadBalancerTCPListenerAttributeResponseUnmarshaller {
 		describeLoadBalancerTCPListenerAttributeResponse.setMaxConnection(context.integerValue("DescribeLoadBalancerTCPListenerAttributeResponse.MaxConnection"));
 		describeLoadBalancerTCPListenerAttributeResponse.setVServerGroupId(context.stringValue("DescribeLoadBalancerTCPListenerAttributeResponse.VServerGroupId"));
 		describeLoadBalancerTCPListenerAttributeResponse.setMasterSlaveServerGroupId(context.stringValue("DescribeLoadBalancerTCPListenerAttributeResponse.MasterSlaveServerGroupId"));
+		describeLoadBalancerTCPListenerAttributeResponse.setAclId(context.stringValue("DescribeLoadBalancerTCPListenerAttributeResponse.AclId"));
+		describeLoadBalancerTCPListenerAttributeResponse.setAclType(context.stringValue("DescribeLoadBalancerTCPListenerAttributeResponse.AclType"));
+		describeLoadBalancerTCPListenerAttributeResponse.setAclStatus(context.stringValue("DescribeLoadBalancerTCPListenerAttributeResponse.AclStatus"));
+		describeLoadBalancerTCPListenerAttributeResponse.setVpcIds(context.stringValue("DescribeLoadBalancerTCPListenerAttributeResponse.VpcIds"));
 	 
 	 	return describeLoadBalancerTCPListenerAttributeResponse;
 	}

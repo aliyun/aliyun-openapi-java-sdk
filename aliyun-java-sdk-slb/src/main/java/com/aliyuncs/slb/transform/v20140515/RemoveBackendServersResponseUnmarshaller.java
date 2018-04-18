@@ -34,6 +34,9 @@ public class RemoveBackendServersResponseUnmarshaller {
 			BackendServer backendServer = new BackendServer();
 			backendServer.setServerId(context.stringValue("RemoveBackendServersResponse.BackendServers["+ i +"].ServerId"));
 			backendServer.setWeight(context.integerValue("RemoveBackendServersResponse.BackendServers["+ i +"].Weight"));
+			backendServer.setServerIp(context.stringValue("RemoveBackendServersResponse.BackendServers["+ i +"].ServerIp"));
+			backendServer.setVpcId(context.stringValue("RemoveBackendServersResponse.BackendServers["+ i +"].VpcId"));
+			backendServer.setType(context.stringValue("RemoveBackendServersResponse.BackendServers["+ i +"].Type"));
 
 			backendServers.add(backendServer);
 		}
