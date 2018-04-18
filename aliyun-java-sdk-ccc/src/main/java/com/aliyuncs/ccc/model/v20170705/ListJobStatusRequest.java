@@ -20,33 +20,42 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class ListCallDetailRecordsRequest extends RpcAcsRequest<ListCallDetailRecordsResponse> {
+public class ListJobStatusRequest extends RpcAcsRequest<ListJobStatusResponse> {
 	
-	public ListCallDetailRecordsRequest() {
-		super("CCC", "2017-07-05", "ListCallDetailRecords", "ccc");
+	public ListJobStatusRequest() {
+		super("CCC", "2017-07-05", "ListJobStatus", "ccc");
 	}
+
+	private String contactName;
 
 	private String instanceId;
 
-	private String contactDisposition;
+	private String timeAlignment;
 
-	private String contactType;
-
-	private String criteria;
+	private String groupId;
 
 	private String phoneNumber;
 
 	private Integer pageSize;
 
-	private String orderBy;
+	private Long endTime;
 
 	private Long startTime;
 
-	private Long stopTime;
+	private String scenarioId;
 
 	private Integer pageNumber;
 
-	private Boolean withRecording;
+	public String getContactName() {
+		return this.contactName;
+	}
+
+	public void setContactName(String contactName) {
+		this.contactName = contactName;
+		if(contactName != null){
+			putQueryParameter("ContactName", contactName);
+		}
+	}
 
 	public String getInstanceId() {
 		return this.instanceId;
@@ -59,36 +68,25 @@ public class ListCallDetailRecordsRequest extends RpcAcsRequest<ListCallDetailRe
 		}
 	}
 
-	public String getContactDisposition() {
-		return this.contactDisposition;
+	public String getTimeAlignment() {
+		return this.timeAlignment;
 	}
 
-	public void setContactDisposition(String contactDisposition) {
-		this.contactDisposition = contactDisposition;
-		if(contactDisposition != null){
-			putQueryParameter("ContactDisposition", contactDisposition);
+	public void setTimeAlignment(String timeAlignment) {
+		this.timeAlignment = timeAlignment;
+		if(timeAlignment != null){
+			putQueryParameter("TimeAlignment", timeAlignment);
 		}
 	}
 
-	public String getContactType() {
-		return this.contactType;
+	public String getGroupId() {
+		return this.groupId;
 	}
 
-	public void setContactType(String contactType) {
-		this.contactType = contactType;
-		if(contactType != null){
-			putQueryParameter("ContactType", contactType);
-		}
-	}
-
-	public String getCriteria() {
-		return this.criteria;
-	}
-
-	public void setCriteria(String criteria) {
-		this.criteria = criteria;
-		if(criteria != null){
-			putQueryParameter("Criteria", criteria);
+	public void setGroupId(String groupId) {
+		this.groupId = groupId;
+		if(groupId != null){
+			putQueryParameter("GroupId", groupId);
 		}
 	}
 
@@ -114,14 +112,14 @@ public class ListCallDetailRecordsRequest extends RpcAcsRequest<ListCallDetailRe
 		}
 	}
 
-	public String getOrderBy() {
-		return this.orderBy;
+	public Long getEndTime() {
+		return this.endTime;
 	}
 
-	public void setOrderBy(String orderBy) {
-		this.orderBy = orderBy;
-		if(orderBy != null){
-			putQueryParameter("OrderBy", orderBy);
+	public void setEndTime(Long endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime.toString());
 		}
 	}
 
@@ -136,14 +134,14 @@ public class ListCallDetailRecordsRequest extends RpcAcsRequest<ListCallDetailRe
 		}
 	}
 
-	public Long getStopTime() {
-		return this.stopTime;
+	public String getScenarioId() {
+		return this.scenarioId;
 	}
 
-	public void setStopTime(Long stopTime) {
-		this.stopTime = stopTime;
-		if(stopTime != null){
-			putQueryParameter("StopTime", stopTime.toString());
+	public void setScenarioId(String scenarioId) {
+		this.scenarioId = scenarioId;
+		if(scenarioId != null){
+			putQueryParameter("ScenarioId", scenarioId);
 		}
 	}
 
@@ -158,20 +156,9 @@ public class ListCallDetailRecordsRequest extends RpcAcsRequest<ListCallDetailRe
 		}
 	}
 
-	public Boolean getWithRecording() {
-		return this.withRecording;
-	}
-
-	public void setWithRecording(Boolean withRecording) {
-		this.withRecording = withRecording;
-		if(withRecording != null){
-			putQueryParameter("WithRecording", withRecording.toString());
-		}
-	}
-
 	@Override
-	public Class<ListCallDetailRecordsResponse> getResponseClass() {
-		return ListCallDetailRecordsResponse.class;
+	public Class<ListJobStatusResponse> getResponseClass() {
+		return ListJobStatusResponse.class;
 	}
 
 }

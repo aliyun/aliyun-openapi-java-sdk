@@ -58,6 +58,8 @@ public class ListSkillGroupsOfUserResponseUnmarshaller {
 				phoneNumber.setAllowOutbound(context.booleanValue("ListSkillGroupsOfUserResponse.SkillLevels["+ i +"].Skill.OutboundPhoneNumbers["+ j +"].AllowOutbound"));
 				phoneNumber.setUsage(context.stringValue("ListSkillGroupsOfUserResponse.SkillLevels["+ i +"].Skill.OutboundPhoneNumbers["+ j +"].Usage"));
 				phoneNumber.setTrunks(context.integerValue("ListSkillGroupsOfUserResponse.SkillLevels["+ i +"].Skill.OutboundPhoneNumbers["+ j +"].Trunks"));
+				phoneNumber.setProvince(context.stringValue("ListSkillGroupsOfUserResponse.SkillLevels["+ i +"].Skill.OutboundPhoneNumbers["+ j +"].Province"));
+				phoneNumber.setCity(context.stringValue("ListSkillGroupsOfUserResponse.SkillLevels["+ i +"].Skill.OutboundPhoneNumbers["+ j +"].City"));
 
 				outboundPhoneNumbers.add(phoneNumber);
 			}
