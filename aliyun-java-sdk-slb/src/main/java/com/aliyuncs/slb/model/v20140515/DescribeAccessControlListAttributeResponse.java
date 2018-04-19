@@ -79,7 +79,7 @@ public class DescribeAccessControlListAttributeResponse extends AcsResponse {
 
 		private String aclEntryIP;
 
-		private Integer aclEntryComment;
+		private String aclEntryComment;
 
 		public String getAclEntryIP() {
 			return this.aclEntryIP;
@@ -89,11 +89,11 @@ public class DescribeAccessControlListAttributeResponse extends AcsResponse {
 			this.aclEntryIP = aclEntryIP;
 		}
 
-		public Integer getAclEntryComment() {
+		public String getAclEntryComment() {
 			return this.aclEntryComment;
 		}
 
-		public void setAclEntryComment(Integer aclEntryComment) {
+		public void setAclEntryComment(String aclEntryComment) {
 			this.aclEntryComment = aclEntryComment;
 		}
 	}

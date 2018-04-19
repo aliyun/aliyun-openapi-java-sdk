@@ -72,6 +72,8 @@ public class SetLoadBalancerHTTPSListenerAttributeRequest extends RpcAcsRequest<
 
 	private String healthCheckDomain;
 
+	private Integer requestTimeout;
+
 	private String ownerAccount;
 
 	private String gzip;
@@ -83,6 +85,8 @@ public class SetLoadBalancerHTTPSListenerAttributeRequest extends RpcAcsRequest<
 	private String cACertificateId;
 
 	private String tags;
+
+	private Integer idleTimeout;
 
 	private String loadBalancerId;
 
@@ -353,6 +357,17 @@ public class SetLoadBalancerHTTPSListenerAttributeRequest extends RpcAcsRequest<
 		}
 	}
 
+	public Integer getRequestTimeout() {
+		return this.requestTimeout;
+	}
+
+	public void setRequestTimeout(Integer requestTimeout) {
+		this.requestTimeout = requestTimeout;
+		if(requestTimeout != null){
+			putQueryParameter("RequestTimeout", requestTimeout.toString());
+		}
+	}
+
 	public String getOwnerAccount() {
 		return this.ownerAccount;
 	}
@@ -416,6 +431,17 @@ public class SetLoadBalancerHTTPSListenerAttributeRequest extends RpcAcsRequest<
 		this.tags = tags;
 		if(tags != null){
 			putQueryParameter("Tags", tags);
+		}
+	}
+
+	public Integer getIdleTimeout() {
+		return this.idleTimeout;
+	}
+
+	public void setIdleTimeout(Integer idleTimeout) {
+		this.idleTimeout = idleTimeout;
+		if(idleTimeout != null){
+			putQueryParameter("IdleTimeout", idleTimeout.toString());
 		}
 	}
 

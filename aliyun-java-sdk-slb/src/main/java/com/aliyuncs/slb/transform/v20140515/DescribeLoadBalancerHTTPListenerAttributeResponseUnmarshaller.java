@@ -55,6 +55,8 @@ public class DescribeLoadBalancerHTTPListenerAttributeResponseUnmarshaller {
 		describeLoadBalancerHTTPListenerAttributeResponse.setVpcIds(context.stringValue("DescribeLoadBalancerHTTPListenerAttributeResponse.VpcIds"));
 		describeLoadBalancerHTTPListenerAttributeResponse.setListenerForward(context.stringValue("DescribeLoadBalancerHTTPListenerAttributeResponse.ListenerForward"));
 		describeLoadBalancerHTTPListenerAttributeResponse.setForwardPort(context.integerValue("DescribeLoadBalancerHTTPListenerAttributeResponse.ForwardPort"));
+		describeLoadBalancerHTTPListenerAttributeResponse.setRequestTimeout(context.integerValue("DescribeLoadBalancerHTTPListenerAttributeResponse.RequestTimeout"));
+		describeLoadBalancerHTTPListenerAttributeResponse.setIdleTimeout(context.integerValue("DescribeLoadBalancerHTTPListenerAttributeResponse.IdleTimeout"));
 	 
 	 	return describeLoadBalancerHTTPListenerAttributeResponse;
 	}

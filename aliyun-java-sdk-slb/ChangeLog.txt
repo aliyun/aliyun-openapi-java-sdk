@@ -1,3 +1,7 @@
+2018-04-19 Version: 3.2.4
+1, upgrade slb sdk from 3.2.3 to 3.2.4
+2, fix return value type Integer to String
+
 2018-04-18 Version: 3.2.3
 1, upgrade slb sdk from 3.2.2 to 3.2.3
 2, add ACL related APIs

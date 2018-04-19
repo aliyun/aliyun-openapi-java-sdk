@@ -35,7 +35,7 @@ public class DescribeAccessControlListAttributeResponseUnmarshaller {
 		for (int i = 0; i < context.lengthValue("DescribeAccessControlListAttributeResponse.AclEntrys.Length"); i++) {
 			AclEntry aclEntry = new AclEntry();
 			aclEntry.setAclEntryIP(context.stringValue("DescribeAccessControlListAttributeResponse.AclEntrys["+ i +"].AclEntryIP"));
-			aclEntry.setAclEntryComment(context.integerValue("DescribeAccessControlListAttributeResponse.AclEntrys["+ i +"].AclEntryComment"));
+			aclEntry.setAclEntryComment(context.stringValue("DescribeAccessControlListAttributeResponse.AclEntrys["+ i +"].AclEntryComment"));
 
 			aclEntrys.add(aclEntry);
 		}

@@ -55,6 +55,8 @@ public class DescribeLoadBalancerHTTPSListenerAttributeResponseUnmarshaller {
 		describeLoadBalancerHTTPSListenerAttributeResponse.setAclType(context.stringValue("DescribeLoadBalancerHTTPSListenerAttributeResponse.AclType"));
 		describeLoadBalancerHTTPSListenerAttributeResponse.setAclStatus(context.stringValue("DescribeLoadBalancerHTTPSListenerAttributeResponse.AclStatus"));
 		describeLoadBalancerHTTPSListenerAttributeResponse.setVpcIds(context.stringValue("DescribeLoadBalancerHTTPSListenerAttributeResponse.VpcIds"));
+		describeLoadBalancerHTTPSListenerAttributeResponse.setRequestTimeout(context.integerValue("DescribeLoadBalancerHTTPSListenerAttributeResponse.RequestTimeout"));
+		describeLoadBalancerHTTPSListenerAttributeResponse.setIdleTimeout(context.integerValue("DescribeLoadBalancerHTTPSListenerAttributeResponse.IdleTimeout"));
 	 
 	 	return describeLoadBalancerHTTPSListenerAttributeResponse;
 	}

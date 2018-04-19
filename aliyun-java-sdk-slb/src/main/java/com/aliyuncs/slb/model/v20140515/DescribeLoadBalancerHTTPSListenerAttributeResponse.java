@@ -90,6 +90,10 @@ public class DescribeLoadBalancerHTTPSListenerAttributeResponse extends AcsRespo
 
 	private String vpcIds;
 
+	private Integer requestTimeout;
+
+	private Integer idleTimeout;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -352,6 +356,22 @@ public class DescribeLoadBalancerHTTPSListenerAttributeResponse extends AcsRespo
 
 	public void setVpcIds(String vpcIds) {
 		this.vpcIds = vpcIds;
+	}
+
+	public Integer getRequestTimeout() {
+		return this.requestTimeout;
+	}
+
+	public void setRequestTimeout(Integer requestTimeout) {
+		this.requestTimeout = requestTimeout;
+	}
+
+	public Integer getIdleTimeout() {
+		return this.idleTimeout;
+	}
+
+	public void setIdleTimeout(Integer idleTimeout) {
+		this.idleTimeout = idleTimeout;
 	}
 
 	@Override
