@@ -53,6 +53,7 @@ public class DescribeAlarmHistoryResponseUnmarshaller {
 			alarmHistory.setStatus(context.integerValue("DescribeAlarmHistoryResponse.AlarmHistoryList["+ i +"].Status"));
 			alarmHistory.setUserId(context.stringValue("DescribeAlarmHistoryResponse.AlarmHistoryList["+ i +"].UserId"));
 			alarmHistory.setWebhooks(context.stringValue("DescribeAlarmHistoryResponse.AlarmHistoryList["+ i +"].Webhooks"));
+			alarmHistory.setInstanceName(context.stringValue("DescribeAlarmHistoryResponse.AlarmHistoryList["+ i +"].InstanceName"));
 
 			List<String> contactGroups = new ArrayList<String>();
 			for (int j = 0; j < context.lengthValue("DescribeAlarmHistoryResponse.AlarmHistoryList["+ i +"].ContactGroups.Length"); j++) {

@@ -111,6 +111,8 @@ public class ListAlarmHistoryResponse extends AcsResponse {
 
 		private String contactGroups;
 
+		private String instanceName;
+
 		public String getId() {
 			return this.id;
 		}
@@ -205,6 +207,14 @@ public class ListAlarmHistoryResponse extends AcsResponse {
 
 		public void setContactGroups(String contactGroups) {
 			this.contactGroups = contactGroups;
+		}
+
+		public String getInstanceName() {
+			return this.instanceName;
+		}
+
+		public void setInstanceName(String instanceName) {
+			this.instanceName = instanceName;
 		}
 	}
 

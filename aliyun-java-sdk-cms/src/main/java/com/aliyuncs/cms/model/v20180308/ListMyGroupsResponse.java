@@ -117,6 +117,10 @@ public class ListMyGroupsResponse extends AcsResponse {
 
 		private String type;
 
+		private Long gmtModified;
+
+		private Long gmtCreate;
+
 		private List<ContactGroup> contactGroups;
 
 		public Long getGroupId() {
@@ -157,6 +161,22 @@ public class ListMyGroupsResponse extends AcsResponse {
 
 		public void setType(String type) {
 			this.type = type;
+		}
+
+		public Long getGmtModified() {
+			return this.gmtModified;
+		}
+
+		public void setGmtModified(Long gmtModified) {
+			this.gmtModified = gmtModified;
+		}
+
+		public Long getGmtCreate() {
+			return this.gmtCreate;
+		}
+
+		public void setGmtCreate(Long gmtCreate) {
+			this.gmtCreate = gmtCreate;
 		}
 
 		public List<ContactGroup> getContactGroups() {

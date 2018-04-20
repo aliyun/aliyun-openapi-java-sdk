@@ -47,6 +47,7 @@ public class ListAlarmHistoryResponseUnmarshaller {
 			alarmHistory.setState(context.stringValue("ListAlarmHistoryResponse.AlarmHistoryList["+ i +"].State"));
 			alarmHistory.setStatus(context.integerValue("ListAlarmHistoryResponse.AlarmHistoryList["+ i +"].Status"));
 			alarmHistory.setContactGroups(context.stringValue("ListAlarmHistoryResponse.AlarmHistoryList["+ i +"].ContactGroups"));
+			alarmHistory.setInstanceName(context.stringValue("ListAlarmHistoryResponse.AlarmHistoryList["+ i +"].InstanceName"));
 
 			alarmHistoryList.add(alarmHistory);
 		}

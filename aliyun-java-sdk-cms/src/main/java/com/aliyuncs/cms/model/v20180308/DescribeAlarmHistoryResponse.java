@@ -123,6 +123,8 @@ public class DescribeAlarmHistoryResponse extends AcsResponse {
 
 		private String webhooks;
 
+		private String instanceName;
+
 		private List<String> contactGroups;
 
 		private List<String> contacts;
@@ -275,6 +277,14 @@ public class DescribeAlarmHistoryResponse extends AcsResponse {
 
 		public void setWebhooks(String webhooks) {
 			this.webhooks = webhooks;
+		}
+
+		public String getInstanceName() {
+			return this.instanceName;
+		}
+
+		public void setInstanceName(String instanceName) {
+			this.instanceName = instanceName;
 		}
 
 		public List<String> getContactGroups() {

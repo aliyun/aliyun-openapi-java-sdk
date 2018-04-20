@@ -43,6 +43,8 @@ public class ListMyGroupsResponseUnmarshaller {
 			resource.setServiceId(context.stringValue("ListMyGroupsResponse.Resources["+ i +"].ServiceId"));
 			resource.setBindUrls(context.stringValue("ListMyGroupsResponse.Resources["+ i +"].BindUrls"));
 			resource.setType(context.stringValue("ListMyGroupsResponse.Resources["+ i +"].Type"));
+			resource.setGmtModified(context.longValue("ListMyGroupsResponse.Resources["+ i +"].GmtModified"));
+			resource.setGmtCreate(context.longValue("ListMyGroupsResponse.Resources["+ i +"].GmtCreate"));
 
 			List<ContactGroup> contactGroups = new ArrayList<ContactGroup>();
 			for (int j = 0; j < context.lengthValue("ListMyGroupsResponse.Resources["+ i +"].ContactGroups.Length"); j++) {
