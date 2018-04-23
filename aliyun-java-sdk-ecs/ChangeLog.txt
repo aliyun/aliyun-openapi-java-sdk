@@ -1,3 +1,8 @@
+2018-04-23 Version: 4.7.1
+1, DescribeInstanceHistoryEvents adds parameter instanceEventTypes and instanceEventCycleStatuss.
+2, InstanceId parameter is not necessary for DescribeInstanceHistoryEvents now.
+3, DescribeInstancesFullStatus adds parameter instanceEventTypes.
+
 2018-04-10 Version: 4.7.0
 1, Add three interfaces CreateNetworkInterfacePermission DeleteNetworkInterfacePermission DescribeNetworkInterfacePermissions.
 

@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.ecs.model.v20140526.DescribeInstanceAttributeResponse;
+import com.aliyuncs.ecs.model.v20140526.DescribeInstanceAttributeResponse.DedicatedHostAttribute;
 import com.aliyuncs.ecs.model.v20140526.DescribeInstanceAttributeResponse.EipAddress;
 import com.aliyuncs.ecs.model.v20140526.DescribeInstanceAttributeResponse.LockReason;
 import com.aliyuncs.ecs.model.v20140526.DescribeInstanceAttributeResponse.VpcAttributes;
@@ -89,6 +90,11 @@ public class DescribeInstanceAttributeResponseUnmarshaller {
 		eipAddress.setBandwidth(context.integerValue("DescribeInstanceAttributeResponse.EipAddress.Bandwidth"));
 		eipAddress.setInternetChargeType(context.stringValue("DescribeInstanceAttributeResponse.EipAddress.InternetChargeType"));
 		describeInstanceAttributeResponse.setEipAddress(eipAddress);
+
+		DedicatedHostAttribute dedicatedHostAttribute = new DedicatedHostAttribute();
+		dedicatedHostAttribute.setDedicatedHostId(context.stringValue("DescribeInstanceAttributeResponse.DedicatedHostAttribute.DedicatedHostId"));
+		dedicatedHostAttribute.setDedicatedHostName(context.stringValue("DescribeInstanceAttributeResponse.DedicatedHostAttribute.DedicatedHostName"));
+		describeInstanceAttributeResponse.setDedicatedHostAttribute(dedicatedHostAttribute);
 
 		List<LockReason> operationLocks = new ArrayList<LockReason>();
 		for (int i = 0; i < context.lengthValue("DescribeInstanceAttributeResponse.OperationLocks.Length"); i++) {

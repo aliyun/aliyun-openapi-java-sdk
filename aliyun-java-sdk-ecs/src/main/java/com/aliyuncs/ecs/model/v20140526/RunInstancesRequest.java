@@ -93,6 +93,8 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 
 	private String autoReleaseTime;
 
+	private String dedicatedHostId;
+
 	private List<DataDisk> dataDisks;
 
 	private String systemDiskSize;
@@ -468,6 +470,17 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 		this.autoReleaseTime = autoReleaseTime;
 		if(autoReleaseTime != null){
 			putQueryParameter("AutoReleaseTime", autoReleaseTime);
+		}
+	}
+
+	public String getDedicatedHostId() {
+		return this.dedicatedHostId;
+	}
+
+	public void setDedicatedHostId(String dedicatedHostId) {
+		this.dedicatedHostId = dedicatedHostId;
+		if(dedicatedHostId != null){
+			putQueryParameter("DedicatedHostId", dedicatedHostId);
 		}
 	}
 

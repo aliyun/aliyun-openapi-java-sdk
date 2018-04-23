@@ -175,6 +175,8 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		private EipAddress eipAddress;
 
+		private DedicatedHostAttribute dedicatedHostAttribute;
+
 		public String getInstanceId() {
 			return this.instanceId;
 		}
@@ -567,6 +569,14 @@ public class DescribeInstancesResponse extends AcsResponse {
 			this.eipAddress = eipAddress;
 		}
 
+		public DedicatedHostAttribute getDedicatedHostAttribute() {
+			return this.dedicatedHostAttribute;
+		}
+
+		public void setDedicatedHostAttribute(DedicatedHostAttribute dedicatedHostAttribute) {
+			this.dedicatedHostAttribute = dedicatedHostAttribute;
+		}
+
 		public static class NetworkInterface {
 
 			private String networkInterfaceId;
@@ -739,6 +749,29 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 			public void setIsSupportUnassociate(Boolean isSupportUnassociate) {
 				this.isSupportUnassociate = isSupportUnassociate;
+			}
+		}
+
+		public static class DedicatedHostAttribute {
+
+			private String dedicatedHostId;
+
+			private String dedicatedHostName;
+
+			public String getDedicatedHostId() {
+				return this.dedicatedHostId;
+			}
+
+			public void setDedicatedHostId(String dedicatedHostId) {
+				this.dedicatedHostId = dedicatedHostId;
+			}
+
+			public String getDedicatedHostName() {
+				return this.dedicatedHostName;
+			}
+
+			public void setDedicatedHostName(String dedicatedHostName) {
+				this.dedicatedHostName = dedicatedHostName;
 			}
 		}
 	}

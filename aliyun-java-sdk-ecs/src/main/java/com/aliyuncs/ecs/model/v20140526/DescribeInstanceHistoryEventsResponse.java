@@ -85,7 +85,11 @@ public class DescribeInstanceHistoryEventsResponse extends AcsResponse {
 
 		private String notBefore;
 
+		private String eventFinishTime;
+
 		private EventType eventType;
+
+		private EventCycleStatus eventCycleStatus;
 
 		public String getInstanceId() {
 			return this.instanceId;
@@ -119,6 +123,14 @@ public class DescribeInstanceHistoryEventsResponse extends AcsResponse {
 			this.notBefore = notBefore;
 		}
 
+		public String getEventFinishTime() {
+			return this.eventFinishTime;
+		}
+
+		public void setEventFinishTime(String eventFinishTime) {
+			this.eventFinishTime = eventFinishTime;
+		}
+
 		public EventType getEventType() {
 			return this.eventType;
 		}
@@ -127,7 +139,38 @@ public class DescribeInstanceHistoryEventsResponse extends AcsResponse {
 			this.eventType = eventType;
 		}
 
+		public EventCycleStatus getEventCycleStatus() {
+			return this.eventCycleStatus;
+		}
+
+		public void setEventCycleStatus(EventCycleStatus eventCycleStatus) {
+			this.eventCycleStatus = eventCycleStatus;
+		}
+
 		public static class EventType {
+
+			private Integer code;
+
+			private String name;
+
+			public Integer getCode() {
+				return this.code;
+			}
+
+			public void setCode(Integer code) {
+				this.code = code;
+			}
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
+			}
+		}
+
+		public static class EventCycleStatus {
 
 			private Integer code;
 

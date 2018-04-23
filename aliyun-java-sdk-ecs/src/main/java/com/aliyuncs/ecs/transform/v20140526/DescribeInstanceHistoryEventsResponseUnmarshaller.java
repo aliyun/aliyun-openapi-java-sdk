@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.ecs.model.v20140526.DescribeInstanceHistoryEventsResponse;
 import com.aliyuncs.ecs.model.v20140526.DescribeInstanceHistoryEventsResponse.InstanceSystemEventType;
+import com.aliyuncs.ecs.model.v20140526.DescribeInstanceHistoryEventsResponse.InstanceSystemEventType.EventCycleStatus;
 import com.aliyuncs.ecs.model.v20140526.DescribeInstanceHistoryEventsResponse.InstanceSystemEventType.EventType;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -39,11 +40,17 @@ public class DescribeInstanceHistoryEventsResponseUnmarshaller {
 			instanceSystemEventType.setEventId(context.stringValue("DescribeInstanceHistoryEventsResponse.InstanceSystemEventSet["+ i +"].EventId"));
 			instanceSystemEventType.setEventPublishTime(context.stringValue("DescribeInstanceHistoryEventsResponse.InstanceSystemEventSet["+ i +"].EventPublishTime"));
 			instanceSystemEventType.setNotBefore(context.stringValue("DescribeInstanceHistoryEventsResponse.InstanceSystemEventSet["+ i +"].NotBefore"));
+			instanceSystemEventType.setEventFinishTime(context.stringValue("DescribeInstanceHistoryEventsResponse.InstanceSystemEventSet["+ i +"].EventFinishTime"));
 
 			EventType eventType = new EventType();
 			eventType.setCode(context.integerValue("DescribeInstanceHistoryEventsResponse.InstanceSystemEventSet["+ i +"].EventType.Code"));
 			eventType.setName(context.stringValue("DescribeInstanceHistoryEventsResponse.InstanceSystemEventSet["+ i +"].EventType.Name"));
 			instanceSystemEventType.setEventType(eventType);
+
+			EventCycleStatus eventCycleStatus = new EventCycleStatus();
+			eventCycleStatus.setCode(context.integerValue("DescribeInstanceHistoryEventsResponse.InstanceSystemEventSet["+ i +"].EventCycleStatus.Code"));
+			eventCycleStatus.setName(context.stringValue("DescribeInstanceHistoryEventsResponse.InstanceSystemEventSet["+ i +"].EventCycleStatus.Name"));
+			instanceSystemEventType.setEventCycleStatus(eventCycleStatus);
 
 			instanceSystemEventSet.add(instanceSystemEventType);
 		}

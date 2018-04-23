@@ -37,6 +37,8 @@ public class DescribeInstancesFullStatusRequest extends RpcAcsRequest<DescribeIn
 
 	private String eventPublishTimeEnd;
 
+	private List<String> instanceEventTypes;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
@@ -112,6 +114,19 @@ public class DescribeInstancesFullStatusRequest extends RpcAcsRequest<DescribeIn
 		if(eventPublishTimeEnd != null){
 			putQueryParameter("EventPublishTime.End", eventPublishTimeEnd);
 		}
+	}
+
+	public List<String> getInstanceEventTypes() {
+		return this.instanceEventTypes;
+	}
+
+	public void setInstanceEventTypes(List<String> instanceEventTypes) {
+		this.instanceEventTypes = instanceEventTypes;	
+		if (instanceEventTypes != null) {
+			for (int i = 0; i < instanceEventTypes.size(); i++) {
+				putQueryParameter("InstanceEventType." + (i + 1) , instanceEventTypes.get(i));
+			}
+		}	
 	}
 
 	public String getResourceOwnerAccount() {

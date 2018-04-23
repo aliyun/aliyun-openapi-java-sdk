@@ -61,6 +61,10 @@ public class DescribeZonesResponse extends AcsResponse {
 
 		private List<String> availableVolumeCategories;
 
+		private List<String> availableDedicatedHostTypes;
+
+		private List<String> dedicatedHostGenerations;
+
 		public String getZoneId() {
 			return this.zoneId;
 		}
@@ -115,6 +119,22 @@ public class DescribeZonesResponse extends AcsResponse {
 
 		public void setAvailableVolumeCategories(List<String> availableVolumeCategories) {
 			this.availableVolumeCategories = availableVolumeCategories;
+		}
+
+		public List<String> getAvailableDedicatedHostTypes() {
+			return this.availableDedicatedHostTypes;
+		}
+
+		public void setAvailableDedicatedHostTypes(List<String> availableDedicatedHostTypes) {
+			this.availableDedicatedHostTypes = availableDedicatedHostTypes;
+		}
+
+		public List<String> getDedicatedHostGenerations() {
+			return this.dedicatedHostGenerations;
+		}
+
+		public void setDedicatedHostGenerations(List<String> dedicatedHostGenerations) {
+			this.dedicatedHostGenerations = dedicatedHostGenerations;
 		}
 
 		public static class ResourcesInfo {

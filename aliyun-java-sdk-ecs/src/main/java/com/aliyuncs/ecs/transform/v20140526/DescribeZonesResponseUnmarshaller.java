@@ -59,6 +59,18 @@ public class DescribeZonesResponseUnmarshaller {
 			}
 			zone.setAvailableVolumeCategories(availableVolumeCategories);
 
+			List<String> availableDedicatedHostTypes = new ArrayList<String>();
+			for (int j = 0; j < context.lengthValue("DescribeZonesResponse.Zones["+ i +"].AvailableDedicatedHostTypes.Length"); j++) {
+				availableDedicatedHostTypes.add(context.stringValue("DescribeZonesResponse.Zones["+ i +"].AvailableDedicatedHostTypes["+ j +"]"));
+			}
+			zone.setAvailableDedicatedHostTypes(availableDedicatedHostTypes);
+
+			List<String> dedicatedHostGenerations = new ArrayList<String>();
+			for (int j = 0; j < context.lengthValue("DescribeZonesResponse.Zones["+ i +"].DedicatedHostGenerations.Length"); j++) {
+				dedicatedHostGenerations.add(context.stringValue("DescribeZonesResponse.Zones["+ i +"].DedicatedHostGenerations["+ j +"]"));
+			}
+			zone.setDedicatedHostGenerations(dedicatedHostGenerations);
+
 			List<ResourcesInfo> availableResources = new ArrayList<ResourcesInfo>();
 			for (int j = 0; j < context.lengthValue("DescribeZonesResponse.Zones["+ i +"].AvailableResources.Length"); j++) {
 				ResourcesInfo resourcesInfo = new ResourcesInfo();

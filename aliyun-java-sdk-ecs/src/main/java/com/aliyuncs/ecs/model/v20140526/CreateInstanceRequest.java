@@ -123,6 +123,8 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 
 	private String ramRoleName;
 
+	private String dedicatedHostId;
+
 	private String clusterId;
 
 	private List<DataDisk> dataDisks;
@@ -662,6 +664,17 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 		this.ramRoleName = ramRoleName;
 		if(ramRoleName != null){
 			putQueryParameter("RamRoleName", ramRoleName);
+		}
+	}
+
+	public String getDedicatedHostId() {
+		return this.dedicatedHostId;
+	}
+
+	public void setDedicatedHostId(String dedicatedHostId) {
+		this.dedicatedHostId = dedicatedHostId;
+		if(dedicatedHostId != null){
+			putQueryParameter("DedicatedHostId", dedicatedHostId);
 		}
 	}
 

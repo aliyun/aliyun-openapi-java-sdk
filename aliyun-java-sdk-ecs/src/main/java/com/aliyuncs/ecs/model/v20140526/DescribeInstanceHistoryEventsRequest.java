@@ -37,7 +37,11 @@ public class DescribeInstanceHistoryEventsRequest extends RpcAcsRequest<Describe
 
 	private Integer pageSize;
 
+	private List<String> instanceEventCycleStatuss;
+
 	private String eventPublishTimeEnd;
+
+	private List<String> instanceEventTypes;
 
 	private String resourceOwnerAccount;
 
@@ -112,6 +116,19 @@ public class DescribeInstanceHistoryEventsRequest extends RpcAcsRequest<Describe
 		}
 	}
 
+	public List<String> getInstanceEventCycleStatuss() {
+		return this.instanceEventCycleStatuss;
+	}
+
+	public void setInstanceEventCycleStatuss(List<String> instanceEventCycleStatuss) {
+		this.instanceEventCycleStatuss = instanceEventCycleStatuss;	
+		if (instanceEventCycleStatuss != null) {
+			for (int i = 0; i < instanceEventCycleStatuss.size(); i++) {
+				putQueryParameter("InstanceEventCycleStatus." + (i + 1) , instanceEventCycleStatuss.get(i));
+			}
+		}	
+	}
+
 	public String getEventPublishTimeEnd() {
 		return this.eventPublishTimeEnd;
 	}
@@ -121,6 +138,19 @@ public class DescribeInstanceHistoryEventsRequest extends RpcAcsRequest<Describe
 		if(eventPublishTimeEnd != null){
 			putQueryParameter("EventPublishTime.End", eventPublishTimeEnd);
 		}
+	}
+
+	public List<String> getInstanceEventTypes() {
+		return this.instanceEventTypes;
+	}
+
+	public void setInstanceEventTypes(List<String> instanceEventTypes) {
+		this.instanceEventTypes = instanceEventTypes;	
+		if (instanceEventTypes != null) {
+			for (int i = 0; i < instanceEventTypes.size(); i++) {
+				putQueryParameter("InstanceEventType." + (i + 1) , instanceEventTypes.get(i));
+			}
+		}	
 	}
 
 	public String getResourceOwnerAccount() {

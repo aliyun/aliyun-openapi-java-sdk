@@ -85,6 +85,8 @@ public class DescribeInstanceAttributeResponse extends AcsResponse {
 
 	private EipAddress eipAddress;
 
+	private DedicatedHostAttribute dedicatedHostAttribute;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -325,6 +327,14 @@ public class DescribeInstanceAttributeResponse extends AcsResponse {
 		this.eipAddress = eipAddress;
 	}
 
+	public DedicatedHostAttribute getDedicatedHostAttribute() {
+		return this.dedicatedHostAttribute;
+	}
+
+	public void setDedicatedHostAttribute(DedicatedHostAttribute dedicatedHostAttribute) {
+		this.dedicatedHostAttribute = dedicatedHostAttribute;
+	}
+
 	public static class LockReason {
 
 		private String lockReason;
@@ -421,6 +431,29 @@ public class DescribeInstanceAttributeResponse extends AcsResponse {
 
 		public void setInternetChargeType(String internetChargeType) {
 			this.internetChargeType = internetChargeType;
+		}
+	}
+
+	public static class DedicatedHostAttribute {
+
+		private String dedicatedHostId;
+
+		private String dedicatedHostName;
+
+		public String getDedicatedHostId() {
+			return this.dedicatedHostId;
+		}
+
+		public void setDedicatedHostId(String dedicatedHostId) {
+			this.dedicatedHostId = dedicatedHostId;
+		}
+
+		public String getDedicatedHostName() {
+			return this.dedicatedHostName;
+		}
+
+		public void setDedicatedHostName(String dedicatedHostName) {
+			this.dedicatedHostName = dedicatedHostName;
 		}
 	}
 

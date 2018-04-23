@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.ecs.model.v20140526.DescribeInstancesResponse;
 import com.aliyuncs.ecs.model.v20140526.DescribeInstancesResponse.Instance;
+import com.aliyuncs.ecs.model.v20140526.DescribeInstancesResponse.Instance.DedicatedHostAttribute;
 import com.aliyuncs.ecs.model.v20140526.DescribeInstancesResponse.Instance.EipAddress;
 import com.aliyuncs.ecs.model.v20140526.DescribeInstancesResponse.Instance.LockReason;
 import com.aliyuncs.ecs.model.v20140526.DescribeInstancesResponse.Instance.NetworkInterface;
@@ -123,6 +124,11 @@ public class DescribeInstancesResponseUnmarshaller {
 			eipAddress.setInternetChargeType(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].EipAddress.InternetChargeType"));
 			eipAddress.setIsSupportUnassociate(context.booleanValue("DescribeInstancesResponse.Instances["+ i +"].EipAddress.IsSupportUnassociate"));
 			instance.setEipAddress(eipAddress);
+
+			DedicatedHostAttribute dedicatedHostAttribute = new DedicatedHostAttribute();
+			dedicatedHostAttribute.setDedicatedHostId(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].DedicatedHostAttribute.DedicatedHostId"));
+			dedicatedHostAttribute.setDedicatedHostName(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].DedicatedHostAttribute.DedicatedHostName"));
+			instance.setDedicatedHostAttribute(dedicatedHostAttribute);
 
 			List<NetworkInterface> networkInterfaces = new ArrayList<NetworkInterface>();
 			for (int j = 0; j < context.lengthValue("DescribeInstancesResponse.Instances["+ i +"].NetworkInterfaces.Length"); j++) {
