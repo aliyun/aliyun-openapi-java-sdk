@@ -1,21 +1,17 @@
 /*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
+
 package com.aliyuncs.ess.transform.v20140828;
 
 import java.util.ArrayList;
@@ -24,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.ess.model.v20140828.DescribeScalingConfigurationsResponse;
 import com.aliyuncs.ess.model.v20140828.DescribeScalingConfigurationsResponse.ScalingConfiguration;
 import com.aliyuncs.ess.model.v20140828.DescribeScalingConfigurationsResponse.ScalingConfiguration.DataDisk;
+import com.aliyuncs.ess.model.v20140828.DescribeScalingConfigurationsResponse.ScalingConfiguration.SpotPriceModel;
 import com.aliyuncs.ess.model.v20140828.DescribeScalingConfigurationsResponse.ScalingConfiguration.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -62,6 +59,7 @@ public class DescribeScalingConfigurationsResponseUnmarshaller {
 			scalingConfiguration.setRamRoleName(context.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].RamRoleName"));
 			scalingConfiguration.setDeploymentSetId(context.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].DeploymentSetId"));
 			scalingConfiguration.setSecurityEnhancementStrategy(context.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].SecurityEnhancementStrategy"));
+			scalingConfiguration.setSpotStrategy(context.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].SpotStrategy"));
 
 			List<String> instanceTypes = new ArrayList<String>();
 			for (int j = 0; j < context.lengthValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].InstanceTypes.Length"); j++) {
@@ -90,6 +88,16 @@ public class DescribeScalingConfigurationsResponseUnmarshaller {
 				tags.add(tag);
 			}
 			scalingConfiguration.setTags(tags);
+
+			List<SpotPriceModel> spotPriceLimit = new ArrayList<SpotPriceModel>();
+			for (int j = 0; j < context.lengthValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].SpotPriceLimit.Length"); j++) {
+				SpotPriceModel spotPriceModel = new SpotPriceModel();
+				spotPriceModel.setInstanceType(context.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].SpotPriceLimit["+ j +"].InstanceType"));
+				spotPriceModel.setPriceLimit(context.floatValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].SpotPriceLimit["+ j +"].PriceLimit"));
+
+				spotPriceLimit.add(spotPriceModel);
+			}
+			scalingConfiguration.setSpotPriceLimit(spotPriceLimit);
 
 			scalingConfigurations.add(scalingConfiguration);
 		}

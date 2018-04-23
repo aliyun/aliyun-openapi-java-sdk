@@ -1,3 +1,7 @@
+2018-04-23 Version: 2.1.4
+1, Add notificationConfiguration.
+2, Add standby status.
+
 2017-11-30 Version: 2.1.2
 1, Add multi zones in scalingGroup.
 2, Add multi instanceTypes in scalingConfiguration.

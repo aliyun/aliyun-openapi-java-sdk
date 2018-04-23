@@ -1,21 +1,17 @@
 /*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
+
 package com.aliyuncs.ess.model.v20140828;
 
 import com.aliyuncs.RpcAcsRequest;
@@ -45,7 +41,7 @@ public class CreateScalingConfigurationRequest extends RpcAcsRequest<CreateScali
 
 	private String dataDisk2Device;
 
-	private List<String> instanceTypess;
+	private List<String> instanceTypes;
 
 	private String ioOptimized;
 
@@ -56,6 +52,8 @@ public class CreateScalingConfigurationRequest extends RpcAcsRequest<CreateScali
 	private String securityEnhancementStrategy;
 
 	private String keyPairName;
+
+	private List<String> spotPriceLimits;
 
 	private String systemDiskCategory;
 
@@ -90,6 +88,8 @@ public class CreateScalingConfigurationRequest extends RpcAcsRequest<CreateScali
 	private String tags;
 
 	private String dataDisk2DeleteWithInstance;
+
+	private String spotStrategy;
 
 	private String dataDisk1Category;
 
@@ -192,15 +192,15 @@ public class CreateScalingConfigurationRequest extends RpcAcsRequest<CreateScali
 		}
 	}
 
-	public List<String> getInstanceTypess() {
-		return this.instanceTypess;
+	public List<String> getInstanceTypes() {
+		return this.instanceTypes;
 	}
 
-	public void setInstanceTypess(List<String> instanceTypess) {
-		this.instanceTypess = instanceTypess;	
-		if (instanceTypess != null) {
-			for (int i = 0; i < instanceTypess.size(); i++) {
-				putQueryParameter("InstanceTypes." + (i + 1) , instanceTypess.get(i));
+	public void setInstanceTypes(List<String> instanceTypes) {
+		this.instanceTypes = instanceTypes;	
+		if (instanceTypes != null) {
+			for (int i = 0; i < instanceTypes.size(); i++) {
+				putQueryParameter("InstanceTypes." + (i + 1) , instanceTypes.get(i));
 			}
 		}	
 	}
@@ -258,6 +258,19 @@ public class CreateScalingConfigurationRequest extends RpcAcsRequest<CreateScali
 		if(keyPairName != null){
 			putQueryParameter("KeyPairName", keyPairName);
 		}
+	}
+
+	public List<String> getSpotPriceLimits() {
+		return this.spotPriceLimits;
+	}
+
+	public void setSpotPriceLimits(List<String> spotPriceLimits) {
+		this.spotPriceLimits = spotPriceLimits;	
+		if (spotPriceLimits != null) {
+			for (int i = 0; i < spotPriceLimits.size(); i++) {
+				putQueryParameter("SpotPriceLimit." + (i + 1) , spotPriceLimits.get(i));
+			}
+		}	
 	}
 
 	public String getSystemDiskCategory() {
@@ -444,6 +457,17 @@ public class CreateScalingConfigurationRequest extends RpcAcsRequest<CreateScali
 		this.dataDisk2DeleteWithInstance = dataDisk2DeleteWithInstance;
 		if(dataDisk2DeleteWithInstance != null){
 			putQueryParameter("DataDisk.2.DeleteWithInstance", dataDisk2DeleteWithInstance);
+		}
+	}
+
+	public String getSpotStrategy() {
+		return this.spotStrategy;
+	}
+
+	public void setSpotStrategy(String spotStrategy) {
+		this.spotStrategy = spotStrategy;
+		if(spotStrategy != null){
+			putQueryParameter("SpotStrategy", spotStrategy);
 		}
 	}
 

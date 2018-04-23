@@ -1,21 +1,17 @@
 /*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
+
 package com.aliyuncs.ess.model.v20140828;
 
 import java.util.List;
@@ -125,9 +121,13 @@ public class DescribeScalingConfigurationsResponse extends AcsResponse {
 
 		private String securityEnhancementStrategy;
 
+		private String spotStrategy;
+
 		private List<DataDisk> dataDisks;
 
 		private List<Tag> tags;
+
+		private List<SpotPriceModel> spotPriceLimit;
 
 		private List<String> instanceTypes;
 
@@ -307,6 +307,14 @@ public class DescribeScalingConfigurationsResponse extends AcsResponse {
 			this.securityEnhancementStrategy = securityEnhancementStrategy;
 		}
 
+		public String getSpotStrategy() {
+			return this.spotStrategy;
+		}
+
+		public void setSpotStrategy(String spotStrategy) {
+			this.spotStrategy = spotStrategy;
+		}
+
 		public List<DataDisk> getDataDisks() {
 			return this.dataDisks;
 		}
@@ -321,6 +329,14 @@ public class DescribeScalingConfigurationsResponse extends AcsResponse {
 
 		public void setTags(List<Tag> tags) {
 			this.tags = tags;
+		}
+
+		public List<SpotPriceModel> getSpotPriceLimit() {
+			return this.spotPriceLimit;
+		}
+
+		public void setSpotPriceLimit(List<SpotPriceModel> spotPriceLimit) {
+			this.spotPriceLimit = spotPriceLimit;
 		}
 
 		public List<String> getInstanceTypes() {
@@ -394,6 +410,29 @@ public class DescribeScalingConfigurationsResponse extends AcsResponse {
 
 			public void setValue(String value) {
 				this.value = value;
+			}
+		}
+
+		public static class SpotPriceModel {
+
+			private String instanceType;
+
+			private Float priceLimit;
+
+			public String getInstanceType() {
+				return this.instanceType;
+			}
+
+			public void setInstanceType(String instanceType) {
+				this.instanceType = instanceType;
+			}
+
+			public Float getPriceLimit() {
+				return this.priceLimit;
+			}
+
+			public void setPriceLimit(Float priceLimit) {
+				this.priceLimit = priceLimit;
 			}
 		}
 	}

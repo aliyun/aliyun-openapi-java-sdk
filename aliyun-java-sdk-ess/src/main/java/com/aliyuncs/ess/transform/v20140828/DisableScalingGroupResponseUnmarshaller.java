@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.ess.transform.v20140828;
 
 import com.aliyuncs.ess.model.v20140828.DisableScalingGroupResponse;
