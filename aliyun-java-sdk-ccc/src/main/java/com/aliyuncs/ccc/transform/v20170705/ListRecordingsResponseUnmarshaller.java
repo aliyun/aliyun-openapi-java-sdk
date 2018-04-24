@@ -54,7 +54,6 @@ public class ListRecordingsResponseUnmarshaller {
 			recording.setFileDescription(context.stringValue("ListRecordingsResponse.Recordings.List["+ i +"].FileDescription"));
 			recording.setChannel(context.stringValue("ListRecordingsResponse.Recordings.List["+ i +"].Channel"));
 			recording.setInstanceId(context.stringValue("ListRecordingsResponse.Recordings.List["+ i +"].InstanceId"));
-			recording.setSatisfaction(context.integerValue("ListRecordingsResponse.Recordings.List["+ i +"].Satisfaction"));
 
 			list.add(recording);
 		}

@@ -40,9 +40,9 @@ public class ListCallDetailRecordsRequest extends RpcAcsRequest<ListCallDetailRe
 
 	private String orderBy;
 
-	private Long startTime;
-
 	private Long stopTime;
+
+	private Long startTime;
 
 	private Integer pageNumber;
 
@@ -125,17 +125,6 @@ public class ListCallDetailRecordsRequest extends RpcAcsRequest<ListCallDetailRe
 		}
 	}
 
-	public Long getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(Long startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("StartTime", startTime.toString());
-		}
-	}
-
 	public Long getStopTime() {
 		return this.stopTime;
 	}
@@ -144,6 +133,17 @@ public class ListCallDetailRecordsRequest extends RpcAcsRequest<ListCallDetailRe
 		this.stopTime = stopTime;
 		if(stopTime != null){
 			putQueryParameter("StopTime", stopTime.toString());
+		}
+	}
+
+	public Long getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(Long startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime.toString());
 		}
 	}
 

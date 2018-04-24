@@ -155,8 +155,6 @@ public class ListRecordingsResponse extends AcsResponse {
 
 			private String instanceId;
 
-			private Integer satisfaction;
-
 			public String getContactId() {
 				return this.contactId;
 			}
@@ -259,14 +257,6 @@ public class ListRecordingsResponse extends AcsResponse {
 
 			public void setInstanceId(String instanceId) {
 				this.instanceId = instanceId;
-			}
-
-			public Integer getSatisfaction() {
-				return this.satisfaction;
-			}
-
-			public void setSatisfaction(Integer satisfaction) {
-				this.satisfaction = satisfaction;
 			}
 		}
 	}

@@ -105,6 +105,10 @@ public class ListPhoneNumbersResponse extends AcsResponse {
 
 		private Integer trunks;
 
+		private String province;
+
+		private String city;
+
 		private ContactFlow contactFlow;
 
 		public String getPhoneNumberId() {
@@ -177,6 +181,22 @@ public class ListPhoneNumbersResponse extends AcsResponse {
 
 		public void setTrunks(Integer trunks) {
 			this.trunks = trunks;
+		}
+
+		public String getProvince() {
+			return this.province;
+		}
+
+		public void setProvince(String province) {
+			this.province = province;
+		}
+
+		public String getCity() {
+			return this.city;
+		}
+
+		public void setCity(String city) {
+			this.city = city;
 		}
 
 		public ContactFlow getContactFlow() {

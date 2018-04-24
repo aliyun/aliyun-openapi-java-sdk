@@ -45,6 +45,8 @@ public class ListPhoneNumbersResponseUnmarshaller {
 			phoneNumber.setAllowOutbound(context.booleanValue("ListPhoneNumbersResponse.PhoneNumbers["+ i +"].AllowOutbound"));
 			phoneNumber.setUsage(context.stringValue("ListPhoneNumbersResponse.PhoneNumbers["+ i +"].Usage"));
 			phoneNumber.setTrunks(context.integerValue("ListPhoneNumbersResponse.PhoneNumbers["+ i +"].Trunks"));
+			phoneNumber.setProvince(context.stringValue("ListPhoneNumbersResponse.PhoneNumbers["+ i +"].Province"));
+			phoneNumber.setCity(context.stringValue("ListPhoneNumbersResponse.PhoneNumbers["+ i +"].City"));
 
 			ContactFlow contactFlow = new ContactFlow();
 			contactFlow.setContactFlowId(context.stringValue("ListPhoneNumbersResponse.PhoneNumbers["+ i +"].ContactFlow.ContactFlowId"));

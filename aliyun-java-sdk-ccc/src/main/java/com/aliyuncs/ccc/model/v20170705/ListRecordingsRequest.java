@@ -36,9 +36,9 @@ public class ListRecordingsRequest extends RpcAcsRequest<ListRecordingsResponse>
 
 	private Integer pageSize;
 
-	private Long startTime;
-
 	private Long stopTime;
+
+	private Long startTime;
 
 	private Integer pageNumber;
 
@@ -97,17 +97,6 @@ public class ListRecordingsRequest extends RpcAcsRequest<ListRecordingsResponse>
 		}
 	}
 
-	public Long getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(Long startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("StartTime", startTime.toString());
-		}
-	}
-
 	public Long getStopTime() {
 		return this.stopTime;
 	}
@@ -116,6 +105,17 @@ public class ListRecordingsRequest extends RpcAcsRequest<ListRecordingsResponse>
 		this.stopTime = stopTime;
 		if(stopTime != null){
 			putQueryParameter("StopTime", stopTime.toString());
+		}
+	}
+
+	public Long getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(Long startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime.toString());
 		}
 	}
 
