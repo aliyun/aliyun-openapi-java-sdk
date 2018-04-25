@@ -28,9 +28,11 @@ public class CreateMyGroupsRequest extends RpcAcsRequest<CreateMyGroupsResponse>
 
 	private String contactGroups;
 
-	private Long serviceId;
+	private String options;
 
 	private String type;
+
+	private Long serviceId;
 
 	private String groupName;
 
@@ -47,14 +49,14 @@ public class CreateMyGroupsRequest extends RpcAcsRequest<CreateMyGroupsResponse>
 		}
 	}
 
-	public Long getServiceId() {
-		return this.serviceId;
+	public String getOptions() {
+		return this.options;
 	}
 
-	public void setServiceId(Long serviceId) {
-		this.serviceId = serviceId;
-		if(serviceId != null){
-			putQueryParameter("ServiceId", serviceId.toString());
+	public void setOptions(String options) {
+		this.options = options;
+		if(options != null){
+			putQueryParameter("Options", options);
 		}
 	}
 
@@ -66,6 +68,17 @@ public class CreateMyGroupsRequest extends RpcAcsRequest<CreateMyGroupsResponse>
 		this.type = type;
 		if(type != null){
 			putQueryParameter("Type", type);
+		}
+	}
+
+	public Long getServiceId() {
+		return this.serviceId;
+	}
+
+	public void setServiceId(Long serviceId) {
+		this.serviceId = serviceId;
+		if(serviceId != null){
+			putQueryParameter("ServiceId", serviceId.toString());
 		}
 	}
 
