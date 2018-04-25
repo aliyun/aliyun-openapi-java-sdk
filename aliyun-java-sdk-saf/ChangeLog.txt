@@ -1,0 +1,4 @@
+2018-04-25 Version: 1.0.0
+1, sdk init .version:1.0.0
+2, ExecuteRequestRequest.service .the value must be in (account_abuse,address_validation,email_risk,coupon_abuse) and the product must be paid.
+
