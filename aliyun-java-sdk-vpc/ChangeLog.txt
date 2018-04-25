@@ -1,3 +1,8 @@
+2018-04-25 Version: 3.0.2
+1, Upgrade vpc sdk from 3.0.1 to 3.0.2
+2, Support for prepaid router interface create
+3, Synchronize to the latest api list
+
 2018-03-15 Version: 3.0.2
 1, Synchronize to the latest api list
 

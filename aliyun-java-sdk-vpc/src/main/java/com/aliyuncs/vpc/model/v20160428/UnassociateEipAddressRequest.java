@@ -36,6 +36,8 @@ public class UnassociateEipAddressRequest extends RpcAcsRequest<UnassociateEipAd
 
 	private String instanceType;
 
+	private Boolean force;
+
 	private String allocationId;
 
 	private Long ownerId;
@@ -92,6 +94,17 @@ public class UnassociateEipAddressRequest extends RpcAcsRequest<UnassociateEipAd
 		this.instanceType = instanceType;
 		if(instanceType != null){
 			putQueryParameter("InstanceType", instanceType);
+		}
+	}
+
+	public Boolean getForce() {
+		return this.force;
+	}
+
+	public void setForce(Boolean force) {
+		this.force = force;
+		if(force != null){
+			putQueryParameter("Force", force.toString());
 		}
 	}
 

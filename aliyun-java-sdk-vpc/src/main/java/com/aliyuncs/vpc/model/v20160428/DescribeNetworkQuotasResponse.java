@@ -15,20 +15,22 @@
 package com.aliyuncs.vpc.model.v20160428;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.vpc.transform.v20160428.CreateRouterInterfaceResponseUnmarshaller;
+import com.aliyuncs.vpc.transform.v20160428.DescribeNetworkQuotasResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CreateRouterInterfaceResponse extends AcsResponse {
+public class DescribeNetworkQuotasResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String routerInterfaceId;
+	private String product;
 
-	private Long orderId;
+	private String regionId;
+
+	private String quota;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -38,24 +40,32 @@ public class CreateRouterInterfaceResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getRouterInterfaceId() {
-		return this.routerInterfaceId;
+	public String getProduct() {
+		return this.product;
 	}
 
-	public void setRouterInterfaceId(String routerInterfaceId) {
-		this.routerInterfaceId = routerInterfaceId;
+	public void setProduct(String product) {
+		this.product = product;
 	}
 
-	public Long getOrderId() {
-		return this.orderId;
+	public String getRegionId() {
+		return this.regionId;
 	}
 
-	public void setOrderId(Long orderId) {
-		this.orderId = orderId;
+	public void setRegionId(String regionId) {
+		this.regionId = regionId;
+	}
+
+	public String getQuota() {
+		return this.quota;
+	}
+
+	public void setQuota(String quota) {
+		this.quota = quota;
 	}
 
 	@Override
-	public CreateRouterInterfaceResponse getInstance(UnmarshallerContext context) {
-		return	CreateRouterInterfaceResponseUnmarshaller.unmarshall(this, context);
+	public DescribeNetworkQuotasResponse getInstance(UnmarshallerContext context) {
+		return	DescribeNetworkQuotasResponseUnmarshaller.unmarshall(this, context);
 	}
 }

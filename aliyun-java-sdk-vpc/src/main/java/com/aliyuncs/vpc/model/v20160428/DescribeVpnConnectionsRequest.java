@@ -30,6 +30,8 @@ public class DescribeVpnConnectionsRequest extends RpcAcsRequest<DescribeVpnConn
 
 	private String resourceOwnerAccount;
 
+	private String vpnConnectionId;
+
 	private String ownerAccount;
 
 	private Integer pageSize;
@@ -61,6 +63,17 @@ public class DescribeVpnConnectionsRequest extends RpcAcsRequest<DescribeVpnConn
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getVpnConnectionId() {
+		return this.vpnConnectionId;
+	}
+
+	public void setVpnConnectionId(String vpnConnectionId) {
+		this.vpnConnectionId = vpnConnectionId;
+		if(vpnConnectionId != null){
+			putQueryParameter("VpnConnectionId", vpnConnectionId);
 		}
 	}
 

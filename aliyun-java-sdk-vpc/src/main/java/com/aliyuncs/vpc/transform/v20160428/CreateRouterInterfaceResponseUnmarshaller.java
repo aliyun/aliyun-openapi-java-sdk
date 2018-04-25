@@ -24,6 +24,7 @@ public class CreateRouterInterfaceResponseUnmarshaller {
 		
 		createRouterInterfaceResponse.setRequestId(context.stringValue("CreateRouterInterfaceResponse.RequestId"));
 		createRouterInterfaceResponse.setRouterInterfaceId(context.stringValue("CreateRouterInterfaceResponse.RouterInterfaceId"));
+		createRouterInterfaceResponse.setOrderId(context.longValue("CreateRouterInterfaceResponse.OrderId"));
 	 
 	 	return createRouterInterfaceResponse;
 	}

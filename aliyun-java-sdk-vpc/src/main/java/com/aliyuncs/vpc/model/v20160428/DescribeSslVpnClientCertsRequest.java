@@ -40,6 +40,8 @@ public class DescribeSslVpnClientCertsRequest extends RpcAcsRequest<DescribeSslV
 
 	private Long ownerId;
 
+	private String sslVpnClientCertId;
+
 	private Integer pageNumber;
 
 	public String getSslVpnServerId() {
@@ -116,6 +118,17 @@ public class DescribeSslVpnClientCertsRequest extends RpcAcsRequest<DescribeSslV
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getSslVpnClientCertId() {
+		return this.sslVpnClientCertId;
+	}
+
+	public void setSslVpnClientCertId(String sslVpnClientCertId) {
+		this.sslVpnClientCertId = sslVpnClientCertId;
+		if(sslVpnClientCertId != null){
+			putQueryParameter("SslVpnClientCertId", sslVpnClientCertId);
 		}
 	}
 

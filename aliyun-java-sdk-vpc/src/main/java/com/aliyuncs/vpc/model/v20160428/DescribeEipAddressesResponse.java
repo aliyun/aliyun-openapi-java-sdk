@@ -105,6 +105,8 @@ public class DescribeEipAddressesResponse extends AcsResponse {
 
 		private String name;
 
+		private String iSP;
+
 		private String descritpion;
 
 		private String bandwidthPackageId;
@@ -227,6 +229,14 @@ public class DescribeEipAddressesResponse extends AcsResponse {
 
 		public void setName(String name) {
 			this.name = name;
+		}
+
+		public String getISP() {
+			return this.iSP;
+		}
+
+		public void setISP(String iSP) {
+			this.iSP = iSP;
 		}
 
 		public String getDescritpion() {
