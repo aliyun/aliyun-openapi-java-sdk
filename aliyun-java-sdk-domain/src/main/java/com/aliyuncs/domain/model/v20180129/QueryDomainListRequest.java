@@ -40,6 +40,8 @@ public class QueryDomainListRequest extends RpcAcsRequest<QueryDomainListRespons
 
 	private String orderByType;
 
+	private String domainGroupId;
+
 	private Long endRegistrationDate;
 
 	private String userClientIp;
@@ -126,6 +128,17 @@ public class QueryDomainListRequest extends RpcAcsRequest<QueryDomainListRespons
 		this.orderByType = orderByType;
 		if(orderByType != null){
 			putQueryParameter("OrderByType", orderByType);
+		}
+	}
+
+	public String getDomainGroupId() {
+		return this.domainGroupId;
+	}
+
+	public void setDomainGroupId(String domainGroupId) {
+		this.domainGroupId = domainGroupId;
+		if(domainGroupId != null){
+			putQueryParameter("DomainGroupId", domainGroupId);
 		}
 	}
 

@@ -1,3 +1,7 @@
+2018-04-26 Version: 3.4.0
+1, Add apis for domain group.
+3, Add fields for QueryDomainList.
+
 2018-04-03 Version: 3.3.0
 1, Add APIs for domain transfer in and transfer out.
 2, Add APIs for poll and acknowledge domain task.

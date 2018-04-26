@@ -20,10 +20,10 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class QueryDomainGroupListRequest extends RpcAcsRequest<QueryDomainGroupListResponse> {
+public class SaveDomainGroupRequest extends RpcAcsRequest<SaveDomainGroupResponse> {
 	
-	public QueryDomainGroupListRequest() {
-		super("Domain", "2018-01-29", "QueryDomainGroupList");
+	public SaveDomainGroupRequest() {
+		super("Domain", "2018-01-29", "SaveDomainGroup");
 	}
 
 	private String userClientIp;
@@ -32,7 +32,7 @@ public class QueryDomainGroupListRequest extends RpcAcsRequest<QueryDomainGroupL
 
 	private String lang;
 
-	private Boolean showDeletingGroup;
+	private Long domainGroupId;
 
 	public String getUserClientIp() {
 		return this.userClientIp;
@@ -67,20 +67,20 @@ public class QueryDomainGroupListRequest extends RpcAcsRequest<QueryDomainGroupL
 		}
 	}
 
-	public Boolean getShowDeletingGroup() {
-		return this.showDeletingGroup;
+	public Long getDomainGroupId() {
+		return this.domainGroupId;
 	}
 
-	public void setShowDeletingGroup(Boolean showDeletingGroup) {
-		this.showDeletingGroup = showDeletingGroup;
-		if(showDeletingGroup != null){
-			putQueryParameter("ShowDeletingGroup", showDeletingGroup.toString());
+	public void setDomainGroupId(Long domainGroupId) {
+		this.domainGroupId = domainGroupId;
+		if(domainGroupId != null){
+			putQueryParameter("DomainGroupId", domainGroupId.toString());
 		}
 	}
 
 	@Override
-	public Class<QueryDomainGroupListResponse> getResponseClass() {
-		return QueryDomainGroupListResponse.class;
+	public Class<SaveDomainGroupResponse> getResponseClass() {
+		return SaveDomainGroupResponse.class;
 	}
 
 }

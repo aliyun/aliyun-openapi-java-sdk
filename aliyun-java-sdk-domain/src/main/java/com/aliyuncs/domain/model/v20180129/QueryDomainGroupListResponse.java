@@ -27,7 +27,7 @@ public class QueryDomainGroupListResponse extends AcsResponse {
 
 	private String requestId;
 
-	private List<Domain> data;
+	private List<DomainGroup> data;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -37,15 +37,15 @@ public class QueryDomainGroupListResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public List<Domain> getData() {
+	public List<DomainGroup> getData() {
 		return this.data;
 	}
 
-	public void setData(List<Domain> data) {
+	public void setData(List<DomainGroup> data) {
 		this.data = data;
 	}
 
-	public static class Domain {
+	public static class DomainGroup {
 
 		private String domainGroupId;
 
@@ -56,6 +56,10 @@ public class QueryDomainGroupListResponse extends AcsResponse {
 		private String creationDate;
 
 		private String modificationDate;
+
+		private String domainGroupStatus;
+
+		private Boolean beingDeleted;
 
 		public String getDomainGroupId() {
 			return this.domainGroupId;
@@ -95,6 +99,22 @@ public class QueryDomainGroupListResponse extends AcsResponse {
 
 		public void setModificationDate(String modificationDate) {
 			this.modificationDate = modificationDate;
+		}
+
+		public String getDomainGroupStatus() {
+			return this.domainGroupStatus;
+		}
+
+		public void setDomainGroupStatus(String domainGroupStatus) {
+			this.domainGroupStatus = domainGroupStatus;
+		}
+
+		public Boolean getBeingDeleted() {
+			return this.beingDeleted;
+		}
+
+		public void setBeingDeleted(Boolean beingDeleted) {
+			this.beingDeleted = beingDeleted;
 		}
 	}
 

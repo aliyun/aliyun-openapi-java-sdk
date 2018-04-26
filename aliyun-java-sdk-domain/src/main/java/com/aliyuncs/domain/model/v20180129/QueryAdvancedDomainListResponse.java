@@ -16,14 +16,14 @@ package com.aliyuncs.domain.model.v20180129;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.domain.transform.v20180129.QueryDomainListResponseUnmarshaller;
+import com.aliyuncs.domain.transform.v20180129.QueryAdvancedDomainListResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class QueryDomainListResponse extends AcsResponse {
+public class QueryAdvancedDomainListResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -279,7 +279,7 @@ public class QueryDomainListResponse extends AcsResponse {
 	}
 
 	@Override
-	public QueryDomainListResponse getInstance(UnmarshallerContext context) {
-		return	QueryDomainListResponseUnmarshaller.unmarshall(this, context);
+	public QueryAdvancedDomainListResponse getInstance(UnmarshallerContext context) {
+		return	QueryAdvancedDomainListResponseUnmarshaller.unmarshall(this, context);
 	}
 }

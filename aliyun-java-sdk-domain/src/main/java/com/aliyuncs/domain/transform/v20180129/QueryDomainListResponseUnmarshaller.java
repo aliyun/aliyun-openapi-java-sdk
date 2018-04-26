@@ -52,6 +52,8 @@ public class QueryDomainListResponseUnmarshaller {
 			domain.setRegistrantType(context.stringValue("QueryDomainListResponse.Data["+ i +"].RegistrantType"));
 			domain.setDomainGroupId(context.stringValue("QueryDomainListResponse.Data["+ i +"].DomainGroupId"));
 			domain.setRemark(context.stringValue("QueryDomainListResponse.Data["+ i +"].Remark"));
+			domain.setDomainGroupName(context.stringValue("QueryDomainListResponse.Data["+ i +"].DomainGroupName"));
+			domain.setExpirationCurrDateDiff(context.integerValue("QueryDomainListResponse.Data["+ i +"].ExpirationCurrDateDiff"));
 
 			data.add(domain);
 		}

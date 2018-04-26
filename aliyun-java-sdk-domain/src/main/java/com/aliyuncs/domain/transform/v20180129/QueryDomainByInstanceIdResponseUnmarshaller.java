@@ -25,6 +25,7 @@ public class QueryDomainByInstanceIdResponseUnmarshaller {
 
 	public static QueryDomainByInstanceIdResponse unmarshall(QueryDomainByInstanceIdResponse queryDomainByInstanceIdResponse, UnmarshallerContext context) {
 		
+		queryDomainByInstanceIdResponse.setRequestId(context.stringValue("QueryDomainByInstanceIdResponse.RequestId"));
 		queryDomainByInstanceIdResponse.setUserId(context.stringValue("QueryDomainByInstanceIdResponse.UserId"));
 		queryDomainByInstanceIdResponse.setDomainName(context.stringValue("QueryDomainByInstanceIdResponse.DomainName"));
 		queryDomainByInstanceIdResponse.setInstanceId(context.stringValue("QueryDomainByInstanceIdResponse.InstanceId"));
