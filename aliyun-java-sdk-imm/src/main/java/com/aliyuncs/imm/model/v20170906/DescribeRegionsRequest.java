@@ -20,41 +20,15 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class GetFaceJobRequest extends RpcAcsRequest<GetFaceJobResponse> {
+public class DescribeRegionsRequest extends RpcAcsRequest<DescribeRegionsResponse> {
 	
-	public GetFaceJobRequest() {
-		super("imm", "2017-09-06", "GetFaceJob", "imm");
-	}
-
-	private String jobId;
-
-	private String project;
-
-	public String getJobId() {
-		return this.jobId;
-	}
-
-	public void setJobId(String jobId) {
-		this.jobId = jobId;
-		if(jobId != null){
-			putQueryParameter("JobId", jobId);
-		}
-	}
-
-	public String getProject() {
-		return this.project;
-	}
-
-	public void setProject(String project) {
-		this.project = project;
-		if(project != null){
-			putQueryParameter("Project", project);
-		}
+	public DescribeRegionsRequest() {
+		super("imm", "2017-09-06", "DescribeRegions", "imm");
 	}
 
 	@Override
-	public Class<GetFaceJobResponse> getResponseClass() {
-		return GetFaceJobResponse.class;
+	public Class<DescribeRegionsResponse> getResponseClass() {
+		return DescribeRegionsResponse.class;
 	}
 
 }

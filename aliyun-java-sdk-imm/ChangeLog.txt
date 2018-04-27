@@ -1,3 +1,6 @@
+2018-04-27 Version: 1.2.2
+1, ConvertOfficeFormat API add a few optional fields.
+
 2018-02-28 Version: 1.2.1
 1, Fix faceDetail structure.
 

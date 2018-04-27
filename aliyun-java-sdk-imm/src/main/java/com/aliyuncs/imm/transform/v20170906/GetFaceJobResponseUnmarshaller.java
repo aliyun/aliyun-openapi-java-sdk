@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.imm.transform.v20170906;
 
 import com.aliyuncs.imm.model.v20170906.GetFaceJobResponse;

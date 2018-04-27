@@ -1,21 +1,17 @@
 /*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
+
 package com.aliyuncs.imm.model.v20170906;
 
 import com.aliyuncs.RpcAcsRequest;
@@ -32,15 +28,31 @@ public class ConvertOfficeFormatRequest extends RpcAcsRequest<ConvertOfficeForma
 
 	private String imageSpec;
 
-	private String tgtType;
+	private String srcType;
 
 	private String notifyTopicName;
 
-	private String notifyEndpoint;
+	private String modelId;
 
 	private String project;
 
 	private String externalID;
+
+	private Long maxSheetRow;
+
+	private Long maxSheetCount;
+
+	private Long endPage;
+
+	private Boolean sheetOnePage;
+
+	private Long startPage;
+
+	private Long maxSheetCol;
+
+	private String tgtType;
+
+	private String notifyEndpoint;
 
 	private String srcUri;
 
@@ -57,14 +69,14 @@ public class ConvertOfficeFormatRequest extends RpcAcsRequest<ConvertOfficeForma
 		}
 	}
 
-	public String getTgtType() {
-		return this.tgtType;
+	public String getSrcType() {
+		return this.srcType;
 	}
 
-	public void setTgtType(String tgtType) {
-		this.tgtType = tgtType;
-		if(tgtType != null){
-			putQueryParameter("TgtType", tgtType);
+	public void setSrcType(String srcType) {
+		this.srcType = srcType;
+		if(srcType != null){
+			putQueryParameter("SrcType", srcType);
 		}
 	}
 
@@ -79,14 +91,14 @@ public class ConvertOfficeFormatRequest extends RpcAcsRequest<ConvertOfficeForma
 		}
 	}
 
-	public String getNotifyEndpoint() {
-		return this.notifyEndpoint;
+	public String getModelId() {
+		return this.modelId;
 	}
 
-	public void setNotifyEndpoint(String notifyEndpoint) {
-		this.notifyEndpoint = notifyEndpoint;
-		if(notifyEndpoint != null){
-			putQueryParameter("NotifyEndpoint", notifyEndpoint);
+	public void setModelId(String modelId) {
+		this.modelId = modelId;
+		if(modelId != null){
+			putQueryParameter("ModelId", modelId);
 		}
 	}
 
@@ -109,6 +121,94 @@ public class ConvertOfficeFormatRequest extends RpcAcsRequest<ConvertOfficeForma
 		this.externalID = externalID;
 		if(externalID != null){
 			putQueryParameter("ExternalID", externalID);
+		}
+	}
+
+	public Long getMaxSheetRow() {
+		return this.maxSheetRow;
+	}
+
+	public void setMaxSheetRow(Long maxSheetRow) {
+		this.maxSheetRow = maxSheetRow;
+		if(maxSheetRow != null){
+			putQueryParameter("MaxSheetRow", maxSheetRow.toString());
+		}
+	}
+
+	public Long getMaxSheetCount() {
+		return this.maxSheetCount;
+	}
+
+	public void setMaxSheetCount(Long maxSheetCount) {
+		this.maxSheetCount = maxSheetCount;
+		if(maxSheetCount != null){
+			putQueryParameter("MaxSheetCount", maxSheetCount.toString());
+		}
+	}
+
+	public Long getEndPage() {
+		return this.endPage;
+	}
+
+	public void setEndPage(Long endPage) {
+		this.endPage = endPage;
+		if(endPage != null){
+			putQueryParameter("EndPage", endPage.toString());
+		}
+	}
+
+	public Boolean getSheetOnePage() {
+		return this.sheetOnePage;
+	}
+
+	public void setSheetOnePage(Boolean sheetOnePage) {
+		this.sheetOnePage = sheetOnePage;
+		if(sheetOnePage != null){
+			putQueryParameter("SheetOnePage", sheetOnePage.toString());
+		}
+	}
+
+	public Long getStartPage() {
+		return this.startPage;
+	}
+
+	public void setStartPage(Long startPage) {
+		this.startPage = startPage;
+		if(startPage != null){
+			putQueryParameter("StartPage", startPage.toString());
+		}
+	}
+
+	public Long getMaxSheetCol() {
+		return this.maxSheetCol;
+	}
+
+	public void setMaxSheetCol(Long maxSheetCol) {
+		this.maxSheetCol = maxSheetCol;
+		if(maxSheetCol != null){
+			putQueryParameter("MaxSheetCol", maxSheetCol.toString());
+		}
+	}
+
+	public String getTgtType() {
+		return this.tgtType;
+	}
+
+	public void setTgtType(String tgtType) {
+		this.tgtType = tgtType;
+		if(tgtType != null){
+			putQueryParameter("TgtType", tgtType);
+		}
+	}
+
+	public String getNotifyEndpoint() {
+		return this.notifyEndpoint;
+	}
+
+	public void setNotifyEndpoint(String notifyEndpoint) {
+		this.notifyEndpoint = notifyEndpoint;
+		if(notifyEndpoint != null){
+			putQueryParameter("NotifyEndpoint", notifyEndpoint);
 		}
 	}
 

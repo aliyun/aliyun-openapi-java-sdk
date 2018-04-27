@@ -11,13 +11,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.imm.transform.v20170906;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.imm.model.v20170906.GroupFacesResponse;
-import com.aliyuncs.imm.model.v20170906.GroupFacesResponse. Groups;
+import com.aliyuncs.imm.model.v20170906.GroupFacesResponse.GroupsItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -29,14 +30,14 @@ public class GroupFacesResponseUnmarshaller {
 		groupFacesResponse.setSetId(context.stringValue("GroupFacesResponse.SetId"));
 		groupFacesResponse.setHasMore(context.integerValue("GroupFacesResponse.HasMore"));
 
-		List< Groups> groups = new ArrayList< Groups>();
+		List<GroupsItem> groups = new ArrayList<GroupsItem>();
 		for (int i = 0; i < context.lengthValue("GroupFacesResponse.Groups.Length"); i++) {
-			 Groups  Groups = new  Groups();
-			 Groups.setFaceId(context.stringValue("GroupFacesResponse.Groups["+ i +"].FaceId"));
-			 Groups.setGroupId(context.stringValue("GroupFacesResponse.Groups["+ i +"].GroupId"));
-			 Groups.setUnGroupReason(context.stringValue("GroupFacesResponse.Groups["+ i +"].UnGroupReason"));
+			GroupsItem groupsItem = new GroupsItem();
+			groupsItem.setFaceId(context.stringValue("GroupFacesResponse.Groups["+ i +"].FaceId"));
+			groupsItem.setGroupId(context.stringValue("GroupFacesResponse.Groups["+ i +"].GroupId"));
+			groupsItem.setUnGroupReason(context.stringValue("GroupFacesResponse.Groups["+ i +"].UnGroupReason"));
 
-			groups.add( Groups);
+			groups.add(groupsItem);
 		}
 		groupFacesResponse.setGroups(groups);
 	 

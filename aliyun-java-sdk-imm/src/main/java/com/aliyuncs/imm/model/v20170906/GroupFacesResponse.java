@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.imm.model.v20170906;
 
 import java.util.List;
@@ -30,7 +31,7 @@ public class GroupFacesResponse extends AcsResponse {
 
 	private Integer hasMore;
 
-	private List< Groups> groups;
+	private List<GroupsItem> groups;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -56,15 +57,15 @@ public class GroupFacesResponse extends AcsResponse {
 		this.hasMore = hasMore;
 	}
 
-	public List< Groups> getGroups() {
+	public List<GroupsItem> getGroups() {
 		return this.groups;
 	}
 
-	public void setGroups(List< Groups> groups) {
+	public void setGroups(List<GroupsItem> groups) {
 		this.groups = groups;
 	}
 
-	public static class  Groups {
+	public static class GroupsItem {
 
 		private String faceId;
 

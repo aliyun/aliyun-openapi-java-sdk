@@ -16,20 +16,18 @@ package com.aliyuncs.imm.model.v20170906;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.imm.transform.v20170906.ListFaceGroupsResponseUnmarshaller;
+import com.aliyuncs.imm.transform.v20170906.DescribeRegionsResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ListFaceGroupsResponse extends AcsResponse {
+public class DescribeRegionsResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Integer nextMarker;
-
-	private List<GroupsItem> groups;
+	private List<RegionsItem> regions;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -39,48 +37,50 @@ public class ListFaceGroupsResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Integer getNextMarker() {
-		return this.nextMarker;
+	public List<RegionsItem> getRegions() {
+		return this.regions;
 	}
 
-	public void setNextMarker(Integer nextMarker) {
-		this.nextMarker = nextMarker;
+	public void setRegions(List<RegionsItem> regions) {
+		this.regions = regions;
 	}
 
-	public List<GroupsItem> getGroups() {
-		return this.groups;
-	}
+	public static class RegionsItem {
 
-	public void setGroups(List<GroupsItem> groups) {
-		this.groups = groups;
-	}
+		private String region;
 
-	public static class GroupsItem {
+		private String status;
 
-		private Integer groupId;
+		private String showName;
 
-		private Integer faceNum;
-
-		public Integer getGroupId() {
-			return this.groupId;
+		public String getRegion() {
+			return this.region;
 		}
 
-		public void setGroupId(Integer groupId) {
-			this.groupId = groupId;
+		public void setRegion(String region) {
+			this.region = region;
 		}
 
-		public Integer getFaceNum() {
-			return this.faceNum;
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setFaceNum(Integer faceNum) {
-			this.faceNum = faceNum;
+		public void setStatus(String status) {
+			this.status = status;
+		}
+
+		public String getShowName() {
+			return this.showName;
+		}
+
+		public void setShowName(String showName) {
+			this.showName = showName;
 		}
 	}
 
 	@Override
-	public ListFaceGroupsResponse getInstance(UnmarshallerContext context) {
-		return	ListFaceGroupsResponseUnmarshaller.unmarshall(this, context);
+	public DescribeRegionsResponse getInstance(UnmarshallerContext context) {
+		return	DescribeRegionsResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override
