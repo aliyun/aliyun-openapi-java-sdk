@@ -1,0 +1,4 @@
+2018-04-27 Version: 1.0.0
+1, release hsm open api
+2, hsm open api includes DescribeRegions, DescribeInstances, ModityInstance, ConfigNetwork, ConfigWhiteList
+
