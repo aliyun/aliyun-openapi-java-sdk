@@ -30,6 +30,8 @@ public class NodeListRequest extends RpcAcsRequest<NodeListResponse> {
 
 	private String instanceIds;
 
+	private String instanceRegionId;
+
 	private Integer pageSize;
 
 	private String keyWord;
@@ -61,6 +63,17 @@ public class NodeListRequest extends RpcAcsRequest<NodeListResponse> {
 		this.instanceIds = instanceIds;
 		if(instanceIds != null){
 			putQueryParameter("InstanceIds", instanceIds);
+		}
+	}
+
+	public String getInstanceRegionId() {
+		return this.instanceRegionId;
+	}
+
+	public void setInstanceRegionId(String instanceRegionId) {
+		this.instanceRegionId = instanceRegionId;
+		if(instanceRegionId != null){
+			putQueryParameter("InstanceRegionId", instanceRegionId);
 		}
 	}
 

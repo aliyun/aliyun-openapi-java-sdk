@@ -1,3 +1,6 @@
+2018-04-28 Version: 6.0.5
+1, Add api: DescribeTasks、StartTasks、StopTasks、DeleteTasks、ModifyTask、CreateTask、DescribeTaskDetail、DescribeISPAreaCity.
+
 2018-04-25 Version: 6.0.4
 1, CreateMyGroups add parameter "options"
 
