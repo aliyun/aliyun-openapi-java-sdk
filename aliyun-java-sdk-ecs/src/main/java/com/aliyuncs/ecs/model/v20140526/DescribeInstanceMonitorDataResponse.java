@@ -75,6 +75,10 @@ public class DescribeInstanceMonitorDataResponse extends AcsResponse {
 
 		private Float cPUCreditBalance;
 
+		private Float cPUAdvanceCreditBalance;
+
+		private Float cPUNotpaidSurplusCreditUsage;
+
 		private String timeStamp;
 
 		public String getInstanceId() {
@@ -187,6 +191,22 @@ public class DescribeInstanceMonitorDataResponse extends AcsResponse {
 
 		public void setCPUCreditBalance(Float cPUCreditBalance) {
 			this.cPUCreditBalance = cPUCreditBalance;
+		}
+
+		public Float getCPUAdvanceCreditBalance() {
+			return this.cPUAdvanceCreditBalance;
+		}
+
+		public void setCPUAdvanceCreditBalance(Float cPUAdvanceCreditBalance) {
+			this.cPUAdvanceCreditBalance = cPUAdvanceCreditBalance;
+		}
+
+		public Float getCPUNotpaidSurplusCreditUsage() {
+			return this.cPUNotpaidSurplusCreditUsage;
+		}
+
+		public void setCPUNotpaidSurplusCreditUsage(Float cPUNotpaidSurplusCreditUsage) {
+			this.cPUNotpaidSurplusCreditUsage = cPUNotpaidSurplusCreditUsage;
 		}
 
 		public String getTimeStamp() {
