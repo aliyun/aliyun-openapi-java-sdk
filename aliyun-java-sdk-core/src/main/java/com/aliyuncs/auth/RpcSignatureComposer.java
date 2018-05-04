@@ -65,8 +65,12 @@ public class RpcSignatureComposer implements ISignatureComposer {
         try {
             for (String key : sortedKeys) {
                 canonicalizedQueryString.append("&")
-                    .append(AcsURLEncoder.percentEncode(key)).append("=")
-                    .append(AcsURLEncoder.percentEncode(queries.get(key)));
+                        .append(AcsURLEncoder.percentEncode(key));
+                String value = queries.get(key);
+                if (value == null || value.isEmpty()) {
+                    continue;
+                }
+                canonicalizedQueryString.append("=").append(AcsURLEncoder.percentEncode(value));
             }
 
             StringBuilder stringToSign = new StringBuilder();

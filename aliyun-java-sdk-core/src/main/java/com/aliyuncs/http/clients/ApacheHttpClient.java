@@ -71,6 +71,7 @@ import org.apache.http.util.EntityUtils;
 public class ApacheHttpClient extends IHttpClient {
 
     protected static final String CONTENT_TYPE = "Content-Type";
+    protected static final String ACCEPT_ENCODING = "Accept-Encoding";
 
     private static final String EXT_PARAM_KEY_BUILDER = "apache.httpclient.builder";
     private static final int DEFAULT_THREAD_KEEP_ALIVE_TIME = 60;
@@ -187,6 +188,8 @@ public class ApacheHttpClient extends IHttpClient {
             bodyBuilder.setBinary(apiReq.getHttpContent());
             builder.setEntity(bodyBuilder.build());
         }
+
+        builder.addHeader(ACCEPT_ENCODING, "identity");
 
         for (Map.Entry<String, String> entry : apiReq.getHeaders().entrySet()) {
             if (entry.getKey().equalsIgnoreCase("Content-Length")) {

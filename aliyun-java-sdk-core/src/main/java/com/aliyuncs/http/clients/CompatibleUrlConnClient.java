@@ -41,6 +41,7 @@ public class CompatibleUrlConnClient extends IHttpClient {
     protected static final String CONTENT_TYPE = "Content-Type";
     protected static final String CONTENT_MD5 = "Content-MD5";
     protected static final String CONTENT_LENGTH = "Content-Length";
+    protected static final String ACCEPT_ENCODING = "Accept-Encoding";
 
     private SSLSocketFactory sslSocketFactory;
 
@@ -137,6 +138,7 @@ public class CompatibleUrlConnClient extends IHttpClient {
             httpConn.setReadTimeout(request.getReadTimeout());
         }
 
+        httpConn.setRequestProperty(ACCEPT_ENCODING, "identity");
         for (Entry<String, String> entry : mappedHeaders.entrySet()) {
             httpConn.setRequestProperty(entry.getKey(), entry.getValue());
         }

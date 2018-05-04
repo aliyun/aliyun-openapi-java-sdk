@@ -69,10 +69,13 @@ public class RoaSignatureComposer implements ISignatureComposer {
         }
         for (Map.Entry<String, String> e : sortMap.entrySet()) {
             queryBuilder.append(e.getKey());
-            if (null != e.getValue()) {
-                queryBuilder.append("=").append(e.getValue());
+
+            String value = e.getValue();
+            if (value == null || value.isEmpty()) {
+                queryBuilder.append(QUERY_SEPARATOR);
+                continue;
             }
-            queryBuilder.append(QUERY_SEPARATOR);
+            queryBuilder.append("=").append(e.getValue()).append(QUERY_SEPARATOR);
         }
         String queryString = queryBuilder.toString();
         if (queryString.endsWith(QUERY_SEPARATOR)) {

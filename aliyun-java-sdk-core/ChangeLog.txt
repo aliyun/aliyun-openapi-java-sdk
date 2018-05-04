@@ -1,3 +1,8 @@
+2018-05-04 Version: 4.0.1
+1, fix signatrue when query param contains empty string
+2, set httpclient default Accept-Encoding to "identity"
+
+
 2018-04-18 Version: 4.0.0
 1, Use Apache httpclient as default instead of UrlConnection
 2, Support user custome http client
