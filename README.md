@@ -45,7 +45,7 @@ The following code example shows the three main steps to use Alibaba Cloud Java 
 
 3. Initiate the request and handle the response or exceptions.
 
-	```java
+```java
  package com.testprogram;
  import com.aliyuncs.profile.DefaultProfile;
  import com.aliyuncs.DefaultAcsClient;
