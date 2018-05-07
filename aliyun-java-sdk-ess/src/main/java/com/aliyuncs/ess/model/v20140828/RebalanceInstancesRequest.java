@@ -20,15 +20,32 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class DescribeAccountAttributesRequest extends RpcAcsRequest<DescribeAccountAttributesResponse> {
+public class RebalanceInstancesRequest extends RpcAcsRequest<RebalanceInstancesResponse> {
 	
-	public DescribeAccountAttributesRequest() {
-		super("Ess", "2014-08-28", "DescribeAccountAttributes", "ess");
+	public RebalanceInstancesRequest() {
+		super("Ess", "2014-08-28", "RebalanceInstances", "ess");
 	}
+
+	private Long resourceOwnerId;
 
 	private String resourceOwnerAccount;
 
+	private String scalingGroupId;
+
+	private String ownerAccount;
+
 	private Long ownerId;
+
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
+	}
+
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
 
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
@@ -38,6 +55,28 @@ public class DescribeAccountAttributesRequest extends RpcAcsRequest<DescribeAcco
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getScalingGroupId() {
+		return this.scalingGroupId;
+	}
+
+	public void setScalingGroupId(String scalingGroupId) {
+		this.scalingGroupId = scalingGroupId;
+		if(scalingGroupId != null){
+			putQueryParameter("ScalingGroupId", scalingGroupId);
+		}
+	}
+
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
 		}
 	}
 
@@ -53,8 +92,8 @@ public class DescribeAccountAttributesRequest extends RpcAcsRequest<DescribeAcco
 	}
 
 	@Override
-	public Class<DescribeAccountAttributesResponse> getResponseClass() {
-		return DescribeAccountAttributesResponse.class;
+	public Class<RebalanceInstancesResponse> getResponseClass() {
+		return RebalanceInstancesResponse.class;
 	}
 
 }

@@ -1,3 +1,6 @@
+2018-05-07 Version: 2.1.5
+1, Remove DescribeAccountAttributes.
+
 2018-04-23 Version: 2.1.4
 1, Add notificationConfiguration.
 2, Add standby status.

@@ -41,6 +41,7 @@ public class DescribeScalingGroupsResponseUnmarshaller {
 			scalingGroup.setScalingGroupName(context.stringValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].ScalingGroupName"));
 			scalingGroup.setActiveCapacity(context.integerValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].ActiveCapacity"));
 			scalingGroup.setStandbyCapacity(context.integerValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].StandbyCapacity"));
+			scalingGroup.setProtectedCapacity(context.integerValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].ProtectedCapacity"));
 			scalingGroup.setActiveScalingConfigurationId(context.stringValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].ActiveScalingConfigurationId"));
 			scalingGroup.setScalingGroupId(context.stringValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].ScalingGroupId"));
 			scalingGroup.setRegionId(context.stringValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].RegionId"));
@@ -51,6 +52,7 @@ public class DescribeScalingGroupsResponseUnmarshaller {
 			scalingGroup.setModificationTime(context.stringValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].ModificationTime"));
 			scalingGroup.setVpcId(context.stringValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].VpcId"));
 			scalingGroup.setVSwitchId(context.stringValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].VSwitchId"));
+			scalingGroup.setMultiAZPolicy(context.stringValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].MultiAZPolicy"));
 
 			List<String> vSwitchIds = new ArrayList<String>();
 			for (int j = 0; j < context.lengthValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].VSwitchIds.Length"); j++) {

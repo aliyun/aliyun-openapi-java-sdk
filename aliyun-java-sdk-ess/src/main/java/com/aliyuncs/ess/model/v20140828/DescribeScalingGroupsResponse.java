@@ -91,6 +91,8 @@ public class DescribeScalingGroupsResponse extends AcsResponse {
 
 		private Integer standbyCapacity;
 
+		private Integer protectedCapacity;
+
 		private String activeScalingConfigurationId;
 
 		private String scalingGroupId;
@@ -110,6 +112,8 @@ public class DescribeScalingGroupsResponse extends AcsResponse {
 		private String vpcId;
 
 		private String vSwitchId;
+
+		private String multiAZPolicy;
 
 		private List<String> vSwitchIds;
 
@@ -173,6 +177,14 @@ public class DescribeScalingGroupsResponse extends AcsResponse {
 
 		public void setStandbyCapacity(Integer standbyCapacity) {
 			this.standbyCapacity = standbyCapacity;
+		}
+
+		public Integer getProtectedCapacity() {
+			return this.protectedCapacity;
+		}
+
+		public void setProtectedCapacity(Integer protectedCapacity) {
+			this.protectedCapacity = protectedCapacity;
 		}
 
 		public String getActiveScalingConfigurationId() {
@@ -253,6 +265,14 @@ public class DescribeScalingGroupsResponse extends AcsResponse {
 
 		public void setVSwitchId(String vSwitchId) {
 			this.vSwitchId = vSwitchId;
+		}
+
+		public String getMultiAZPolicy() {
+			return this.multiAZPolicy;
+		}
+
+		public void setMultiAZPolicy(String multiAZPolicy) {
+			this.multiAZPolicy = multiAZPolicy;
 		}
 
 		public List<String> getVSwitchIds() {

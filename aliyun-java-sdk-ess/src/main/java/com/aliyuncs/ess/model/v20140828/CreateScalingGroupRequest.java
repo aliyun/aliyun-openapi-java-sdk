@@ -27,6 +27,8 @@ public class CreateScalingGroupRequest extends RpcAcsRequest<CreateScalingGroupR
 		super("Ess", "2014-08-28", "CreateScalingGroup", "ess");
 	}
 
+	private String multiAZPolicy;
+
 	private String dBInstanceIds;
 
 	private String loadBalancerIds;
@@ -52,6 +54,17 @@ public class CreateScalingGroupRequest extends RpcAcsRequest<CreateScalingGroupR
 	private String removalPolicy1;
 
 	private String removalPolicy2;
+
+	public String getMultiAZPolicy() {
+		return this.multiAZPolicy;
+	}
+
+	public void setMultiAZPolicy(String multiAZPolicy) {
+		this.multiAZPolicy = multiAZPolicy;
+		if(multiAZPolicy != null){
+			putQueryParameter("MultiAZPolicy", multiAZPolicy);
+		}
+	}
 
 	public String getDBInstanceIds() {
 		return this.dBInstanceIds;
