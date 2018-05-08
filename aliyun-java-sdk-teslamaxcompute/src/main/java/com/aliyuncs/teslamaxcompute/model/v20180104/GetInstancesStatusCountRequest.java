@@ -28,7 +28,11 @@ public class GetInstancesStatusCountRequest extends RpcAcsRequest<GetInstancesSt
 
 	private String cluster;
 
+	private String quotaId;
+
 	private String region;
+
+	private String quotaName;
 
 	public String getCluster() {
 		return this.cluster;
@@ -41,6 +45,17 @@ public class GetInstancesStatusCountRequest extends RpcAcsRequest<GetInstancesSt
 		}
 	}
 
+	public String getQuotaId() {
+		return this.quotaId;
+	}
+
+	public void setQuotaId(String quotaId) {
+		this.quotaId = quotaId;
+		if(quotaId != null){
+			putQueryParameter("QuotaId", quotaId);
+		}
+	}
+
 	public String getRegion() {
 		return this.region;
 	}
@@ -49,6 +64,17 @@ public class GetInstancesStatusCountRequest extends RpcAcsRequest<GetInstancesSt
 		this.region = region;
 		if(region != null){
 			putQueryParameter("Region", region);
+		}
+	}
+
+	public String getQuotaName() {
+		return this.quotaName;
+	}
+
+	public void setQuotaName(String quotaName) {
+		this.quotaName = quotaName;
+		if(quotaName != null){
+			putQueryParameter("QuotaName", quotaName);
 		}
 	}
 

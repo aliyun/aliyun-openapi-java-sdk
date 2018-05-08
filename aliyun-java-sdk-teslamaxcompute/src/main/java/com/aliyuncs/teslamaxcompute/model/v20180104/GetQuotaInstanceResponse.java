@@ -131,6 +131,14 @@ public class GetQuotaInstanceResponse extends AcsResponse {
 
 			private Integer quotaId;
 
+			private String user;
+
+			private String isRealOwner;
+
+			private String projectOwner;
+
+			private String collectTime;
+
 			public String getProject() {
 				return this.project;
 			}
@@ -297,6 +305,38 @@ public class GetQuotaInstanceResponse extends AcsResponse {
 
 			public void setQuotaId(Integer quotaId) {
 				this.quotaId = quotaId;
+			}
+
+			public String getUser() {
+				return this.user;
+			}
+
+			public void setUser(String user) {
+				this.user = user;
+			}
+
+			public String getIsRealOwner() {
+				return this.isRealOwner;
+			}
+
+			public void setIsRealOwner(String isRealOwner) {
+				this.isRealOwner = isRealOwner;
+			}
+
+			public String getProjectOwner() {
+				return this.projectOwner;
+			}
+
+			public void setProjectOwner(String projectOwner) {
+				this.projectOwner = projectOwner;
+			}
+
+			public String getCollectTime() {
+				return this.collectTime;
+			}
+
+			public void setCollectTime(String collectTime) {
+				this.collectTime = collectTime;
 			}
 		}
 	}

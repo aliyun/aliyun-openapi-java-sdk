@@ -58,6 +58,10 @@ public class GetQuotaInstanceResponseUnmarshaller {
 			instance.setSkynetId(context.stringValue("GetQuotaInstanceResponse.Data.Detail["+ i +"].SkynetId"));
 			instance.setQuotaName(context.stringValue("GetQuotaInstanceResponse.Data.Detail["+ i +"].QuotaName"));
 			instance.setQuotaId(context.integerValue("GetQuotaInstanceResponse.Data.Detail["+ i +"].QuotaId"));
+			instance.setUser(context.stringValue("GetQuotaInstanceResponse.Data.Detail["+ i +"].User"));
+			instance.setIsRealOwner(context.stringValue("GetQuotaInstanceResponse.Data.Detail["+ i +"].IsRealOwner"));
+			instance.setProjectOwner(context.stringValue("GetQuotaInstanceResponse.Data.Detail["+ i +"].ProjectOwner"));
+			instance.setCollectTime(context.stringValue("GetQuotaInstanceResponse.Data.Detail["+ i +"].CollectTime"));
 
 			detail.add(instance);
 		}

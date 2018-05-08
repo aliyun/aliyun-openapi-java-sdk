@@ -1,3 +1,6 @@
+2018-05-08 Version: 1.5.4
+1, Add instance params.
+
 2018-03-30 Version: 1.5.3
 1, API QueryCustomerSaleInfo arguments update.
 
