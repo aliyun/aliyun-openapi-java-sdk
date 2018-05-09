@@ -3,7 +3,7 @@
   <groupId>com.aliyun</groupId>
   <artifactId>aliyun-java-sdk-domain</artifactId>
   <packaging>jar</packaging>
-  <version>3.4.0</version>
+  <version>3.5.0</version>
     <name>aliyun-java-sdk-domain</name>
   <url>http://www.aliyun.com</url>
   <description>Aliyun Open API SDK for Java
@@ -31,7 +31,7 @@ http://www.aliyun.com</description>
   		<groupId>com.aliyun</groupId>
   		<artifactId>aliyun-java-sdk-core</artifactId>
 		<optional>true</optional>
-  		<version>3.2.8</version>
+  		<version>3.7.1</version>
   	</dependency>
   </dependencies>
 	<licenses>
