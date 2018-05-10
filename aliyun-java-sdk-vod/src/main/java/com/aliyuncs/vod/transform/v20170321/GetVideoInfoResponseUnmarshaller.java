@@ -43,6 +43,7 @@ public class GetVideoInfoResponseUnmarshaller {
 		video.setCoverURL(context.stringValue("GetVideoInfoResponse.Video.CoverURL"));
 		video.setCateId(context.longValue("GetVideoInfoResponse.Video.CateId"));
 		video.setCateName(context.stringValue("GetVideoInfoResponse.Video.CateName"));
+		video.setPreprocessStatus(context.stringValue("GetVideoInfoResponse.Video.PreprocessStatus"));
 
 		List<String> snapshots = new ArrayList<String>();
 		for (int i = 0; i < context.lengthValue("GetVideoInfoResponse.Video.Snapshots.Length"); i++) {

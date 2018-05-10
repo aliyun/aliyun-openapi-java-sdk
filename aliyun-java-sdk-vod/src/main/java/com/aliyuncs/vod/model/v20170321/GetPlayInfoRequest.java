@@ -46,6 +46,8 @@ public class GetPlayInfoRequest extends RpcAcsRequest<GetPlayInfoResponse> {
 
 	private String reAuthInfo;
 
+	private String outputType;
+
 	private String definition;
 
 	private Long authTimeout;
@@ -159,6 +161,17 @@ public class GetPlayInfoRequest extends RpcAcsRequest<GetPlayInfoResponse> {
 		this.reAuthInfo = reAuthInfo;
 		if(reAuthInfo != null){
 			putQueryParameter("ReAuthInfo", reAuthInfo);
+		}
+	}
+
+	public String getOutputType() {
+		return this.outputType;
+	}
+
+	public void setOutputType(String outputType) {
+		this.outputType = outputType;
+		if(outputType != null){
+			putQueryParameter("OutputType", outputType);
 		}
 	}
 

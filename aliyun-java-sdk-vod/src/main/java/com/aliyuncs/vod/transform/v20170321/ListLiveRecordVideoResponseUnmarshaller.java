@@ -52,6 +52,7 @@ public class ListLiveRecordVideoResponseUnmarshaller {
 			video.setDescription(context.stringValue("ListLiveRecordVideoResponse.LiveRecordVideoList["+ i +"].Video.Description"));
 			video.setCustomerId(context.longValue("ListLiveRecordVideoResponse.LiveRecordVideoList["+ i +"].Video.CustomerId"));
 			video.setCreateTime(context.stringValue("ListLiveRecordVideoResponse.LiveRecordVideoList["+ i +"].Video.CreateTime"));
+			video.setCreationTime(context.stringValue("ListLiveRecordVideoResponse.LiveRecordVideoList["+ i +"].Video.CreationTime"));
 			video.setModifyTime(context.stringValue("ListLiveRecordVideoResponse.LiveRecordVideoList["+ i +"].Video.ModifyTime"));
 			video.setCoverURL(context.stringValue("ListLiveRecordVideoResponse.LiveRecordVideoList["+ i +"].Video.CoverURL"));
 			video.setCateId(context.integerValue("ListLiveRecordVideoResponse.LiveRecordVideoList["+ i +"].Video.CateId"));

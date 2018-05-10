@@ -312,6 +312,8 @@ public class ListLiveRecordVideoResponse extends AcsResponse {
 
 			private String createTime;
 
+			private String creationTime;
+
 			private String modifyTime;
 
 			private String coverURL;
@@ -404,6 +406,14 @@ public class ListLiveRecordVideoResponse extends AcsResponse {
 
 			public void setCreateTime(String createTime) {
 				this.createTime = createTime;
+			}
+
+			public String getCreationTime() {
+				return this.creationTime;
+			}
+
+			public void setCreationTime(String creationTime) {
+				this.creationTime = creationTime;
 			}
 
 			public String getModifyTime() {

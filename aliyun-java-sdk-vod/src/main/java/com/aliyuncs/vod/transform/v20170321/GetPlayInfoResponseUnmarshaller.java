@@ -57,6 +57,7 @@ public class GetPlayInfoResponseUnmarshaller {
 			playInfo.setStreamType(context.stringValue("GetPlayInfoResponse.PlayInfoList["+ i +"].StreamType"));
 			playInfo.setRand(context.stringValue("GetPlayInfoResponse.PlayInfoList["+ i +"].Rand"));
 			playInfo.setJobId(context.stringValue("GetPlayInfoResponse.PlayInfoList["+ i +"].JobId"));
+			playInfo.setPreprocessStatus(context.stringValue("GetPlayInfoResponse.PlayInfoList["+ i +"].PreprocessStatus"));
 
 			playInfoList.add(playInfo);
 		}

@@ -38,6 +38,7 @@ public class GetMezzanineInfoResponseUnmarshaller {
 		mezzanine.setFileURL(context.stringValue("GetMezzanineInfoResponse.Mezzanine.FileURL"));
 		mezzanine.setFileName(context.stringValue("GetMezzanineInfoResponse.Mezzanine.FileName"));
 		mezzanine.setCRC64(context.stringValue("GetMezzanineInfoResponse.Mezzanine.CRC64"));
+		mezzanine.setPreprocessStatus(context.stringValue("GetMezzanineInfoResponse.Mezzanine.PreprocessStatus"));
 		getMezzanineInfoResponse.setMezzanine(mezzanine);
 	 
 	 	return getMezzanineInfoResponse;

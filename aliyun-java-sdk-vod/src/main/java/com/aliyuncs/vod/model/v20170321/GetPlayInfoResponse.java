@@ -87,6 +87,8 @@ public class GetPlayInfoResponse extends AcsResponse {
 
 		private String jobId;
 
+		private String preprocessStatus;
+
 		public Long getWidth() {
 			return this.width;
 		}
@@ -205,6 +207,14 @@ public class GetPlayInfoResponse extends AcsResponse {
 
 		public void setJobId(String jobId) {
 			this.jobId = jobId;
+		}
+
+		public String getPreprocessStatus() {
+			return this.preprocessStatus;
+		}
+
+		public void setPreprocessStatus(String preprocessStatus) {
+			this.preprocessStatus = preprocessStatus;
 		}
 	}
 

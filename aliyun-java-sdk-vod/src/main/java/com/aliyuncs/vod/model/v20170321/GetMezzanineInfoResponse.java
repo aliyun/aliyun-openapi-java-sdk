@@ -70,6 +70,8 @@ public class GetMezzanineInfoResponse extends AcsResponse {
 
 		private String cRC64;
 
+		private String preprocessStatus;
+
 		public String getVideoId() {
 			return this.videoId;
 		}
@@ -164,6 +166,14 @@ public class GetMezzanineInfoResponse extends AcsResponse {
 
 		public void setCRC64(String cRC64) {
 			this.cRC64 = cRC64;
+		}
+
+		public String getPreprocessStatus() {
+			return this.preprocessStatus;
+		}
+
+		public void setPreprocessStatus(String preprocessStatus) {
+			this.preprocessStatus = preprocessStatus;
 		}
 	}
 

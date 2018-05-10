@@ -83,6 +83,8 @@ public class GetVideoInfoResponse extends AcsResponse {
 
 		private String cateName;
 
+		private String preprocessStatus;
+
 		private List<String> snapshots;
 
 		public String getVideoId() {
@@ -187,6 +189,14 @@ public class GetVideoInfoResponse extends AcsResponse {
 
 		public void setCateName(String cateName) {
 			this.cateName = cateName;
+		}
+
+		public String getPreprocessStatus() {
+			return this.preprocessStatus;
+		}
+
+		public void setPreprocessStatus(String preprocessStatus) {
+			this.preprocessStatus = preprocessStatus;
 		}
 
 		public List<String> getSnapshots() {

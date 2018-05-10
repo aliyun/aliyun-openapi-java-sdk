@@ -44,6 +44,8 @@ public class CreateUploadVideoRequest extends RpcAcsRequest<CreateUploadVideoRes
 
 	private String tags;
 
+	private String storageLocation;
+
 	private String coverURL;
 
 	private String userData;
@@ -150,6 +152,17 @@ public class CreateUploadVideoRequest extends RpcAcsRequest<CreateUploadVideoRes
 		this.tags = tags;
 		if(tags != null){
 			putQueryParameter("Tags", tags);
+		}
+	}
+
+	public String getStorageLocation() {
+		return this.storageLocation;
+	}
+
+	public void setStorageLocation(String storageLocation) {
+		this.storageLocation = storageLocation;
+		if(storageLocation != null){
+			putQueryParameter("StorageLocation", storageLocation);
 		}
 	}
 
