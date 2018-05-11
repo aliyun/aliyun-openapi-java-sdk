@@ -470,6 +470,8 @@ public class DescribeDomainConfigsResponse extends AcsResponse {
 
 			private String configId;
 
+			private String enable;
+
 			private String dynamicOrigin;
 
 			private String staticType;
@@ -488,6 +490,14 @@ public class DescribeDomainConfigsResponse extends AcsResponse {
 
 			public void setConfigId(String configId) {
 				this.configId = configId;
+			}
+
+			public String getEnable() {
+				return this.enable;
+			}
+
+			public void setEnable(String enable) {
+				this.enable = enable;
 			}
 
 			public String getDynamicOrigin() {

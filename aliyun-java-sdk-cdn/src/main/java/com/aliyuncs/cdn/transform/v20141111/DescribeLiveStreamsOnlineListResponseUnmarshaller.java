@@ -27,6 +27,10 @@ public class DescribeLiveStreamsOnlineListResponseUnmarshaller {
 	public static DescribeLiveStreamsOnlineListResponse unmarshall(DescribeLiveStreamsOnlineListResponse describeLiveStreamsOnlineListResponse, UnmarshallerContext context) {
 		
 		describeLiveStreamsOnlineListResponse.setRequestId(context.stringValue("DescribeLiveStreamsOnlineListResponse.RequestId"));
+		describeLiveStreamsOnlineListResponse.setPageNum(context.integerValue("DescribeLiveStreamsOnlineListResponse.PageNum"));
+		describeLiveStreamsOnlineListResponse.setPageSize(context.integerValue("DescribeLiveStreamsOnlineListResponse.PageSize"));
+		describeLiveStreamsOnlineListResponse.setTotalNum(context.integerValue("DescribeLiveStreamsOnlineListResponse.TotalNum"));
+		describeLiveStreamsOnlineListResponse.setTotalPage(context.integerValue("DescribeLiveStreamsOnlineListResponse.TotalPage"));
 
 		List<LiveStreamOnlineInfo> onlineInfo = new ArrayList<LiveStreamOnlineInfo>();
 		for (int i = 0; i < context.lengthValue("DescribeLiveStreamsOnlineListResponse.OnlineInfo.Length"); i++) {

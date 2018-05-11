@@ -27,6 +27,14 @@ public class DescribeLiveStreamsOnlineListResponse extends AcsResponse {
 
 	private String requestId;
 
+	private Integer pageNum;
+
+	private Integer pageSize;
+
+	private Integer totalNum;
+
+	private Integer totalPage;
+
 	private List<LiveStreamOnlineInfo> onlineInfo;
 
 	public String getRequestId() {
@@ -35,6 +43,38 @@ public class DescribeLiveStreamsOnlineListResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Integer getPageNum() {
+		return this.pageNum;
+	}
+
+	public void setPageNum(Integer pageNum) {
+		this.pageNum = pageNum;
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
+
+	public Integer getTotalNum() {
+		return this.totalNum;
+	}
+
+	public void setTotalNum(Integer totalNum) {
+		this.totalNum = totalNum;
+	}
+
+	public Integer getTotalPage() {
+		return this.totalPage;
+	}
+
+	public void setTotalPage(Integer totalPage) {
+		this.totalPage = totalPage;
 	}
 
 	public List<LiveStreamOnlineInfo> getOnlineInfo() {

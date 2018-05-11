@@ -30,6 +30,8 @@ public class SetHttpHeaderConfigRequest extends RpcAcsRequest<SetHttpHeaderConfi
 
 	private String securityToken;
 
+	private Long configId;
+
 	private String domainName;
 
 	private String headerKey;
@@ -55,6 +57,17 @@ public class SetHttpHeaderConfigRequest extends RpcAcsRequest<SetHttpHeaderConfi
 		this.securityToken = securityToken;
 		if(securityToken != null){
 			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	public Long getConfigId() {
+		return this.configId;
+	}
+
+	public void setConfigId(Long configId) {
+		this.configId = configId;
+		if(configId != null){
+			putQueryParameter("ConfigId", configId.toString());
 		}
 	}
 

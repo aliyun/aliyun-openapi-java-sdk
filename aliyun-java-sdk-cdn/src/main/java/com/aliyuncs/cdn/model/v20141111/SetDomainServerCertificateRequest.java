@@ -34,6 +34,8 @@ public class SetDomainServerCertificateRequest extends RpcAcsRequest<SetDomainSe
 
 	private String securityToken;
 
+	private String certType;
+
 	private String certName;
 
 	private String domainName;
@@ -83,6 +85,17 @@ public class SetDomainServerCertificateRequest extends RpcAcsRequest<SetDomainSe
 		this.securityToken = securityToken;
 		if(securityToken != null){
 			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	public String getCertType() {
+		return this.certType;
+	}
+
+	public void setCertType(String certType) {
+		this.certType = certType;
+		if(certType != null){
+			putQueryParameter("CertType", certType);
 		}
 	}
 

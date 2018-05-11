@@ -243,6 +243,7 @@ public class DescribeDomainConfigsResponseUnmarshaller {
 		for (int i = 0; i < context.lengthValue("DescribeDomainConfigsResponse.DomainConfigs.DynamicConfigs.Length"); i++) {
 			DynamicConfig dynamicConfig = new DynamicConfig();
 			dynamicConfig.setConfigId(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.DynamicConfigs["+ i +"].ConfigId"));
+			dynamicConfig.setEnable(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.DynamicConfigs["+ i +"].Enable"));
 			dynamicConfig.setDynamicOrigin(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.DynamicConfigs["+ i +"].DynamicOrigin"));
 			dynamicConfig.setStaticType(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.DynamicConfigs["+ i +"].StaticType"));
 			dynamicConfig.setStaticUri(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.DynamicConfigs["+ i +"].StaticUri"));

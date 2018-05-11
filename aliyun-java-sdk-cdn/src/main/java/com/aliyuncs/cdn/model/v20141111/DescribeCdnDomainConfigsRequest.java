@@ -20,45 +20,28 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class DescribeLiveStreamsOnlineListRequest extends RpcAcsRequest<DescribeLiveStreamsOnlineListResponse> {
+public class DescribeCdnDomainConfigsRequest extends RpcAcsRequest<DescribeCdnDomainConfigsResponse> {
 	
-	public DescribeLiveStreamsOnlineListRequest() {
-		super("Cdn", "2014-11-11", "DescribeLiveStreamsOnlineList");
+	public DescribeCdnDomainConfigsRequest() {
+		super("Cdn", "2014-11-11", "DescribeCdnDomainConfigs");
 	}
 
-	private String streamType;
-
-	private String appName;
+	private String functionNames;
 
 	private String securityToken;
 
 	private String domainName;
 
-	private Integer pageSize;
-
 	private Long ownerId;
 
-	private Integer pageNum;
-
-	public String getStreamType() {
-		return this.streamType;
+	public String getFunctionNames() {
+		return this.functionNames;
 	}
 
-	public void setStreamType(String streamType) {
-		this.streamType = streamType;
-		if(streamType != null){
-			putQueryParameter("StreamType", streamType);
-		}
-	}
-
-	public String getAppName() {
-		return this.appName;
-	}
-
-	public void setAppName(String appName) {
-		this.appName = appName;
-		if(appName != null){
-			putQueryParameter("AppName", appName);
+	public void setFunctionNames(String functionNames) {
+		this.functionNames = functionNames;
+		if(functionNames != null){
+			putQueryParameter("FunctionNames", functionNames);
 		}
 	}
 
@@ -84,17 +67,6 @@ public class DescribeLiveStreamsOnlineListRequest extends RpcAcsRequest<Describe
 		}
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -106,20 +78,9 @@ public class DescribeLiveStreamsOnlineListRequest extends RpcAcsRequest<Describe
 		}
 	}
 
-	public Integer getPageNum() {
-		return this.pageNum;
-	}
-
-	public void setPageNum(Integer pageNum) {
-		this.pageNum = pageNum;
-		if(pageNum != null){
-			putQueryParameter("PageNum", pageNum.toString());
-		}
-	}
-
 	@Override
-	public Class<DescribeLiveStreamsOnlineListResponse> getResponseClass() {
-		return DescribeLiveStreamsOnlineListResponse.class;
+	public Class<DescribeCdnDomainConfigsResponse> getResponseClass() {
+		return DescribeCdnDomainConfigsResponse.class;
 	}
 
 }
