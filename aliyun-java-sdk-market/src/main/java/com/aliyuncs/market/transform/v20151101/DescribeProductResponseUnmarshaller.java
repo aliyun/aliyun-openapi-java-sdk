@@ -101,6 +101,8 @@ public class DescribeProductResponseUnmarshaller {
 					Property property = new Property();
 					property.setName(context.stringValue("DescribeProductResponse.ProductSkus["+ i +"].Modules["+ j +"].Properties["+ k +"].Name"));
 					property.setKey(context.stringValue("DescribeProductResponse.ProductSkus["+ i +"].Modules["+ j +"].Properties["+ k +"].Key"));
+					property.setShowType(context.stringValue("DescribeProductResponse.ProductSkus["+ i +"].Modules["+ j +"].Properties["+ k +"].ShowType"));
+					property.setDisplayUnit(context.stringValue("DescribeProductResponse.ProductSkus["+ i +"].Modules["+ j +"].Properties["+ k +"].DisplayUnit"));
 
 					List<PropertyValue> propertyValues = new ArrayList<PropertyValue>();
 					for (int l = 0; l < context.lengthValue("DescribeProductResponse.ProductSkus["+ i +"].Modules["+ j +"].Properties["+ k +"].PropertyValues.Length"); l++) {
@@ -108,6 +110,10 @@ public class DescribeProductResponseUnmarshaller {
 						propertyValue.setValue(context.stringValue("DescribeProductResponse.ProductSkus["+ i +"].Modules["+ j +"].Properties["+ k +"].PropertyValues["+ l +"].Value"));
 						propertyValue.setDisplayName(context.stringValue("DescribeProductResponse.ProductSkus["+ i +"].Modules["+ j +"].Properties["+ k +"].PropertyValues["+ l +"].DisplayName"));
 						propertyValue.setType(context.stringValue("DescribeProductResponse.ProductSkus["+ i +"].Modules["+ j +"].Properties["+ k +"].PropertyValues["+ l +"].Type"));
+						propertyValue.setMin(context.stringValue("DescribeProductResponse.ProductSkus["+ i +"].Modules["+ j +"].Properties["+ k +"].PropertyValues["+ l +"].Min"));
+						propertyValue.setMax(context.stringValue("DescribeProductResponse.ProductSkus["+ i +"].Modules["+ j +"].Properties["+ k +"].PropertyValues["+ l +"].Max"));
+						propertyValue.setStep(context.stringValue("DescribeProductResponse.ProductSkus["+ i +"].Modules["+ j +"].Properties["+ k +"].PropertyValues["+ l +"].Step"));
+						propertyValue.setRemark(context.stringValue("DescribeProductResponse.ProductSkus["+ i +"].Modules["+ j +"].Properties["+ k +"].PropertyValues["+ l +"].Remark"));
 
 						propertyValues.add(propertyValue);
 					}

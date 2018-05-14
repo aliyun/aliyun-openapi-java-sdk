@@ -1,3 +1,7 @@
+2018-05-14 Version: 2.0.8
+1, add instanceIds for createorder
+
+
 2018-04-18 Version: 2.0.7
 1, describeproduct add response parameters usecount and score
 

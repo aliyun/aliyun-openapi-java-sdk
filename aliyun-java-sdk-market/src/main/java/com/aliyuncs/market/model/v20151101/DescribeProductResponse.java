@@ -338,6 +338,10 @@ public class DescribeProductResponse extends AcsResponse {
 
 				private String key;
 
+				private String showType;
+
+				private String displayUnit;
+
 				private List<PropertyValue> propertyValues;
 
 				public String getName() {
@@ -356,6 +360,22 @@ public class DescribeProductResponse extends AcsResponse {
 					this.key = key;
 				}
 
+				public String getShowType() {
+					return this.showType;
+				}
+
+				public void setShowType(String showType) {
+					this.showType = showType;
+				}
+
+				public String getDisplayUnit() {
+					return this.displayUnit;
+				}
+
+				public void setDisplayUnit(String displayUnit) {
+					this.displayUnit = displayUnit;
+				}
+
 				public List<PropertyValue> getPropertyValues() {
 					return this.propertyValues;
 				}
@@ -371,6 +391,14 @@ public class DescribeProductResponse extends AcsResponse {
 					private String displayName;
 
 					private String type;
+
+					private String min;
+
+					private String max;
+
+					private String step;
+
+					private String remark;
 
 					public String getValue() {
 						return this.value;
@@ -394,6 +422,38 @@ public class DescribeProductResponse extends AcsResponse {
 
 					public void setType(String type) {
 						this.type = type;
+					}
+
+					public String getMin() {
+						return this.min;
+					}
+
+					public void setMin(String min) {
+						this.min = min;
+					}
+
+					public String getMax() {
+						return this.max;
+					}
+
+					public void setMax(String max) {
+						this.max = max;
+					}
+
+					public String getStep() {
+						return this.step;
+					}
+
+					public void setStep(String step) {
+						this.step = step;
+					}
+
+					public String getRemark() {
+						return this.remark;
+					}
+
+					public void setRemark(String remark) {
+						this.remark = remark;
 					}
 				}
 			}
