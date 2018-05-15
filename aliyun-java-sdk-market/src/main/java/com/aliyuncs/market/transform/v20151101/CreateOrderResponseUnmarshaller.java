@@ -14,6 +14,9 @@
 
 package com.aliyuncs.market.transform.v20151101;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.market.model.v20151101.CreateOrderResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -22,7 +25,14 @@ public class CreateOrderResponseUnmarshaller {
 
 	public static CreateOrderResponse unmarshall(CreateOrderResponse createOrderResponse, UnmarshallerContext context) {
 		
+		createOrderResponse.setRequestId(context.stringValue("CreateOrderResponse.RequestId"));
 		createOrderResponse.setOrderId(context.stringValue("CreateOrderResponse.OrderId"));
+
+		List<String> instanceIds = new ArrayList<String>();
+		for (int i = 0; i < context.lengthValue("CreateOrderResponse.InstanceIds.Length"); i++) {
+			instanceIds.add(context.stringValue("CreateOrderResponse.InstanceIds["+ i +"]"));
+		}
+		createOrderResponse.setInstanceIds(instanceIds);
 	 
 	 	return createOrderResponse;
 	}

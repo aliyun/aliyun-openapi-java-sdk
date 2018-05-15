@@ -14,6 +14,7 @@
 
 package com.aliyuncs.market.model.v20151101;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.market.transform.v20151101.CreateOrderResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -24,7 +25,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateOrderResponse extends AcsResponse {
 
+	private String requestId;
+
 	private String orderId;
+
+	private List<String> instanceIds;
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
 
 	public String getOrderId() {
 		return this.orderId;
@@ -32,6 +45,14 @@ public class CreateOrderResponse extends AcsResponse {
 
 	public void setOrderId(String orderId) {
 		this.orderId = orderId;
+	}
+
+	public List<String> getInstanceIds() {
+		return this.instanceIds;
+	}
+
+	public void setInstanceIds(List<String> instanceIds) {
+		this.instanceIds = instanceIds;
 	}
 
 	@Override
