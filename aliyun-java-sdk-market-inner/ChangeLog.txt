@@ -1,3 +1,6 @@
 2018-05-16 Version: 2.0.8
+1, update api : innerQueryMarketImageByCode
+
+2018-05-16 Version: 2.0.8
 1, add a new api : innerQueryMarketImageByCode
 
