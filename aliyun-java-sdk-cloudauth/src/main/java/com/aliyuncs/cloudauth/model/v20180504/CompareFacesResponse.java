@@ -11,10 +11,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.aliyuncs.cloudauth.model.v20171117;
+
+package com.aliyuncs.cloudauth.model.v20180504;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.cloudauth.transform.v20171117.CompareFacesResponseUnmarshaller;
+import com.aliyuncs.cloudauth.transform.v20180504.CompareFacesResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**

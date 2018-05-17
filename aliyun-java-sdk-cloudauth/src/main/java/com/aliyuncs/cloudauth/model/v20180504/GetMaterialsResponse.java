@@ -1,25 +1,21 @@
 /*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
-package com.aliyuncs.cloudauth.model.v20171117;
+
+package com.aliyuncs.cloudauth.model.v20180504;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.cloudauth.transform.v20171117.GetMaterialsResponseUnmarshaller;
+import com.aliyuncs.cloudauth.transform.v20180504.GetMaterialsResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
@@ -86,6 +82,8 @@ public class GetMaterialsResponse extends AcsResponse {
 
 		private String idCardType;
 
+		private String idCardStartDate;
+
 		private String idCardExpiry;
 
 		private String address;
@@ -97,6 +95,8 @@ public class GetMaterialsResponse extends AcsResponse {
 		private String idCardBackPic;
 
 		private String facePic;
+
+		private String ethnicGroup;
 
 		public String getName() {
 			return this.name;
@@ -120,6 +120,14 @@ public class GetMaterialsResponse extends AcsResponse {
 
 		public void setIdCardType(String idCardType) {
 			this.idCardType = idCardType;
+		}
+
+		public String getIdCardStartDate() {
+			return this.idCardStartDate;
+		}
+
+		public void setIdCardStartDate(String idCardStartDate) {
+			this.idCardStartDate = idCardStartDate;
 		}
 
 		public String getIdCardExpiry() {
@@ -168,6 +176,14 @@ public class GetMaterialsResponse extends AcsResponse {
 
 		public void setFacePic(String facePic) {
 			this.facePic = facePic;
+		}
+
+		public String getEthnicGroup() {
+			return this.ethnicGroup;
+		}
+
+		public void setEthnicGroup(String ethnicGroup) {
+			this.ethnicGroup = ethnicGroup;
 		}
 	}
 
