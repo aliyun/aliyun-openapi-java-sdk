@@ -24,7 +24,7 @@ import com.aliyuncs.http.ProtocolType;
 public class ExecuteRequestRequest extends RpcAcsRequest<ExecuteRequestResponse> {
 	
 	public ExecuteRequestRequest() {
-		super("saf", "2017-03-31", "ExecuteRequest", "saf");
+		super("saf", "2017-03-31", "ExecuteRequest");
 		setProtocol(ProtocolType.HTTPS);
 	}
 

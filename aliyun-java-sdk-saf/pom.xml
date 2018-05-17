@@ -31,7 +31,7 @@ http://www.aliyun.com</description>
   		<groupId>com.aliyun</groupId>
   		<artifactId>aliyun-java-sdk-core</artifactId>
 		<optional>true</optional>
-  		<version>3.2.8</version>
+  		<version>3.7.1</version>
   	</dependency>
   </dependencies>
 	<licenses>
