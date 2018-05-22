@@ -143,6 +143,8 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 
 		private String instanceNetworkType;
 
+		private String dBInstanceStorageType;
+
 		private String advancedFeatures;
 
 		private String category;
@@ -150,6 +152,8 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 		private String accountType;
 
 		private String supportUpgradeAccountType;
+
+		private String supportCreateSuperAccount;
 
 		private String vpcId;
 
@@ -545,6 +549,14 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 			this.instanceNetworkType = instanceNetworkType;
 		}
 
+		public String getDBInstanceStorageType() {
+			return this.dBInstanceStorageType;
+		}
+
+		public void setDBInstanceStorageType(String dBInstanceStorageType) {
+			this.dBInstanceStorageType = dBInstanceStorageType;
+		}
+
 		public String getAdvancedFeatures() {
 			return this.advancedFeatures;
 		}
@@ -575,6 +587,14 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 
 		public void setSupportUpgradeAccountType(String supportUpgradeAccountType) {
 			this.supportUpgradeAccountType = supportUpgradeAccountType;
+		}
+
+		public String getSupportCreateSuperAccount() {
+			return this.supportCreateSuperAccount;
+		}
+
+		public void setSupportCreateSuperAccount(String supportCreateSuperAccount) {
+			this.supportCreateSuperAccount = supportCreateSuperAccount;
 		}
 
 		public String getVpcId() {

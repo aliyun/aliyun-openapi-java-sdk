@@ -15,26 +15,20 @@
 package com.aliyuncs.rds.model.v20140815;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.rds.transform.v20140815.CreateMigrateTaskResponseUnmarshaller;
+import com.aliyuncs.rds.transform.v20140815.DescribeCustinsKernelReleaseNotesResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CreateMigrateTaskResponse extends AcsResponse {
+public class DescribeCustinsKernelReleaseNotesResponse extends AcsResponse {
 
 	private String requestId;
 
 	private String dBInstanceId;
 
-	private String taskId;
-
-	private String dBName;
-
-	private String migrateTaskId;
-
-	private String backupMode;
+	private String dBInstanceDiffReleaseNote;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -52,40 +46,16 @@ public class CreateMigrateTaskResponse extends AcsResponse {
 		this.dBInstanceId = dBInstanceId;
 	}
 
-	public String getTaskId() {
-		return this.taskId;
+	public String getDBInstanceDiffReleaseNote() {
+		return this.dBInstanceDiffReleaseNote;
 	}
 
-	public void setTaskId(String taskId) {
-		this.taskId = taskId;
-	}
-
-	public String getDBName() {
-		return this.dBName;
-	}
-
-	public void setDBName(String dBName) {
-		this.dBName = dBName;
-	}
-
-	public String getMigrateTaskId() {
-		return this.migrateTaskId;
-	}
-
-	public void setMigrateTaskId(String migrateTaskId) {
-		this.migrateTaskId = migrateTaskId;
-	}
-
-	public String getBackupMode() {
-		return this.backupMode;
-	}
-
-	public void setBackupMode(String backupMode) {
-		this.backupMode = backupMode;
+	public void setDBInstanceDiffReleaseNote(String dBInstanceDiffReleaseNote) {
+		this.dBInstanceDiffReleaseNote = dBInstanceDiffReleaseNote;
 	}
 
 	@Override
-	public CreateMigrateTaskResponse getInstance(UnmarshallerContext context) {
-		return	CreateMigrateTaskResponseUnmarshaller.unmarshall(this, context);
+	public DescribeCustinsKernelReleaseNotesResponse getInstance(UnmarshallerContext context) {
+		return	DescribeCustinsKernelReleaseNotesResponseUnmarshaller.unmarshall(this, context);
 	}
 }

@@ -20,10 +20,10 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class DescribeFilesForSQLServerRequest extends RpcAcsRequest<DescribeFilesForSQLServerResponse> {
+public class DescribeReplicaConflictInfoRequest extends RpcAcsRequest<DescribeReplicaConflictInfoResponse> {
 	
-	public DescribeFilesForSQLServerRequest() {
-		super("Rds", "2014-08-15", "DescribeFilesForSQLServer", "rds");
+	public DescribeReplicaConflictInfoRequest() {
+		super("Rds", "2014-08-15", "DescribeReplicaConflictInfo", "rds");
 	}
 
 	private Long resourceOwnerId;
@@ -32,17 +32,19 @@ public class DescribeFilesForSQLServerRequest extends RpcAcsRequest<DescribeFile
 
 	private String ownerAccount;
 
-	private Integer pageSize;
-
 	private String endTime;
-
-	private String dBInstanceId;
 
 	private String startTime;
 
 	private Long ownerId;
 
 	private Integer pageNumber;
+
+	private String securityToken;
+
+	private String replicaId;
+
+	private Integer pageSize;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -77,17 +79,6 @@ public class DescribeFilesForSQLServerRequest extends RpcAcsRequest<DescribeFile
 		}
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
 	public String getEndTime() {
 		return this.endTime;
 	}
@@ -96,17 +87,6 @@ public class DescribeFilesForSQLServerRequest extends RpcAcsRequest<DescribeFile
 		this.endTime = endTime;
 		if(endTime != null){
 			putQueryParameter("EndTime", endTime);
-		}
-	}
-
-	public String getDBInstanceId() {
-		return this.dBInstanceId;
-	}
-
-	public void setDBInstanceId(String dBInstanceId) {
-		this.dBInstanceId = dBInstanceId;
-		if(dBInstanceId != null){
-			putQueryParameter("DBInstanceId", dBInstanceId);
 		}
 	}
 
@@ -143,9 +123,42 @@ public class DescribeFilesForSQLServerRequest extends RpcAcsRequest<DescribeFile
 		}
 	}
 
+	public String getSecurityToken() {
+		return this.securityToken;
+	}
+
+	public void setSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	public String getReplicaId() {
+		return this.replicaId;
+	}
+
+	public void setReplicaId(String replicaId) {
+		this.replicaId = replicaId;
+		if(replicaId != null){
+			putQueryParameter("ReplicaId", replicaId);
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
 	@Override
-	public Class<DescribeFilesForSQLServerResponse> getResponseClass() {
-		return DescribeFilesForSQLServerResponse.class;
+	public Class<DescribeReplicaConflictInfoResponse> getResponseClass() {
+		return DescribeReplicaConflictInfoResponse.class;
 	}
 
 }

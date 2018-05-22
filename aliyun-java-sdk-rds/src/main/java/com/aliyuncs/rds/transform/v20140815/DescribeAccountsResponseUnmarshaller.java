@@ -37,12 +37,14 @@ public class DescribeAccountsResponseUnmarshaller {
 			dBInstanceAccount.setAccountStatus(context.stringValue("DescribeAccountsResponse.Accounts["+ i +"].AccountStatus"));
 			dBInstanceAccount.setAccountType(context.stringValue("DescribeAccountsResponse.Accounts["+ i +"].AccountType"));
 			dBInstanceAccount.setAccountDescription(context.stringValue("DescribeAccountsResponse.Accounts["+ i +"].AccountDescription"));
+			dBInstanceAccount.setPrivExceeded(context.stringValue("DescribeAccountsResponse.Accounts["+ i +"].PrivExceeded"));
 
 			List<DatabasePrivilege> databasePrivileges = new ArrayList<DatabasePrivilege>();
 			for (int j = 0; j < context.lengthValue("DescribeAccountsResponse.Accounts["+ i +"].DatabasePrivileges.Length"); j++) {
 				DatabasePrivilege databasePrivilege = new DatabasePrivilege();
 				databasePrivilege.setDBName(context.stringValue("DescribeAccountsResponse.Accounts["+ i +"].DatabasePrivileges["+ j +"].DBName"));
 				databasePrivilege.setAccountPrivilege(context.stringValue("DescribeAccountsResponse.Accounts["+ i +"].DatabasePrivileges["+ j +"].AccountPrivilege"));
+				databasePrivilege.setAccountPrivilegeDetail(context.stringValue("DescribeAccountsResponse.Accounts["+ i +"].DatabasePrivileges["+ j +"].AccountPrivilegeDetail"));
 
 				databasePrivileges.add(databasePrivilege);
 			}

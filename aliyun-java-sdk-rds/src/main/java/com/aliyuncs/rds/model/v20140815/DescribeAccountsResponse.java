@@ -57,6 +57,8 @@ public class DescribeAccountsResponse extends AcsResponse {
 
 		private String accountDescription;
 
+		private String privExceeded;
+
 		private List<DatabasePrivilege> databasePrivileges;
 
 		public String getDBInstanceId() {
@@ -99,6 +101,14 @@ public class DescribeAccountsResponse extends AcsResponse {
 			this.accountDescription = accountDescription;
 		}
 
+		public String getPrivExceeded() {
+			return this.privExceeded;
+		}
+
+		public void setPrivExceeded(String privExceeded) {
+			this.privExceeded = privExceeded;
+		}
+
 		public List<DatabasePrivilege> getDatabasePrivileges() {
 			return this.databasePrivileges;
 		}
@@ -112,6 +122,8 @@ public class DescribeAccountsResponse extends AcsResponse {
 			private String dBName;
 
 			private String accountPrivilege;
+
+			private String accountPrivilegeDetail;
 
 			public String getDBName() {
 				return this.dBName;
@@ -127,6 +139,14 @@ public class DescribeAccountsResponse extends AcsResponse {
 
 			public void setAccountPrivilege(String accountPrivilege) {
 				this.accountPrivilege = accountPrivilege;
+			}
+
+			public String getAccountPrivilegeDetail() {
+				return this.accountPrivilegeDetail;
+			}
+
+			public void setAccountPrivilegeDetail(String accountPrivilegeDetail) {
+				this.accountPrivilegeDetail = accountPrivilegeDetail;
 			}
 		}
 	}

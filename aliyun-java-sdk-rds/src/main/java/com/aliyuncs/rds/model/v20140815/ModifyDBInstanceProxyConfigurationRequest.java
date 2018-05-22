@@ -20,19 +20,19 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class CreateUploadPathForSQLServerRequest extends RpcAcsRequest<CreateUploadPathForSQLServerResponse> {
+public class ModifyDBInstanceProxyConfigurationRequest extends RpcAcsRequest<ModifyDBInstanceProxyConfigurationResponse> {
 	
-	public CreateUploadPathForSQLServerRequest() {
-		super("Rds", "2014-08-15", "CreateUploadPathForSQLServer", "rds");
+	public ModifyDBInstanceProxyConfigurationRequest() {
+		super("Rds", "2014-08-15", "ModifyDBInstanceProxyConfiguration", "rds");
 	}
 
 	private Long resourceOwnerId;
 
-	private String dBName;
-
 	private String resourceOwnerAccount;
 
-	private String ownerAccount;
+	private String proxyConfigurationKey;
+
+	private String proxyConfigurationValue;
 
 	private String dBInstanceId;
 
@@ -49,17 +49,6 @@ public class CreateUploadPathForSQLServerRequest extends RpcAcsRequest<CreateUpl
 		}
 	}
 
-	public String getDBName() {
-		return this.dBName;
-	}
-
-	public void setDBName(String dBName) {
-		this.dBName = dBName;
-		if(dBName != null){
-			putQueryParameter("DBName", dBName);
-		}
-	}
-
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
 	}
@@ -71,14 +60,25 @@ public class CreateUploadPathForSQLServerRequest extends RpcAcsRequest<CreateUpl
 		}
 	}
 
-	public String getOwnerAccount() {
-		return this.ownerAccount;
+	public String getProxyConfigurationKey() {
+		return this.proxyConfigurationKey;
 	}
 
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		if(ownerAccount != null){
-			putQueryParameter("OwnerAccount", ownerAccount);
+	public void setProxyConfigurationKey(String proxyConfigurationKey) {
+		this.proxyConfigurationKey = proxyConfigurationKey;
+		if(proxyConfigurationKey != null){
+			putQueryParameter("ProxyConfigurationKey", proxyConfigurationKey);
+		}
+	}
+
+	public String getProxyConfigurationValue() {
+		return this.proxyConfigurationValue;
+	}
+
+	public void setProxyConfigurationValue(String proxyConfigurationValue) {
+		this.proxyConfigurationValue = proxyConfigurationValue;
+		if(proxyConfigurationValue != null){
+			putQueryParameter("ProxyConfigurationValue", proxyConfigurationValue);
 		}
 	}
 
@@ -105,8 +105,8 @@ public class CreateUploadPathForSQLServerRequest extends RpcAcsRequest<CreateUpl
 	}
 
 	@Override
-	public Class<CreateUploadPathForSQLServerResponse> getResponseClass() {
-		return CreateUploadPathForSQLServerResponse.class;
+	public Class<ModifyDBInstanceProxyConfigurationResponse> getResponseClass() {
+		return ModifyDBInstanceProxyConfigurationResponse.class;
 	}
 
 }

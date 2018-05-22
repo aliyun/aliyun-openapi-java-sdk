@@ -80,10 +80,12 @@ public class DescribeDBInstanceAttributeResponseUnmarshaller {
 			dBInstanceAttribute.setSecurityIPList(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].SecurityIPList"));
 			dBInstanceAttribute.setZoneId(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].ZoneId"));
 			dBInstanceAttribute.setInstanceNetworkType(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].InstanceNetworkType"));
+			dBInstanceAttribute.setDBInstanceStorageType(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].DBInstanceStorageType"));
 			dBInstanceAttribute.setAdvancedFeatures(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].AdvancedFeatures"));
 			dBInstanceAttribute.setCategory(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].Category"));
 			dBInstanceAttribute.setAccountType(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].AccountType"));
 			dBInstanceAttribute.setSupportUpgradeAccountType(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].SupportUpgradeAccountType"));
+			dBInstanceAttribute.setSupportCreateSuperAccount(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].SupportCreateSuperAccount"));
 			dBInstanceAttribute.setVpcId(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].VpcId"));
 			dBInstanceAttribute.setVSwitchId(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].VSwitchId"));
 			dBInstanceAttribute.setConnectionMode(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].ConnectionMode"));

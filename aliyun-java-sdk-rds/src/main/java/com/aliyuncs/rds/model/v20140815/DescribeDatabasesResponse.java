@@ -123,6 +123,8 @@ public class DescribeDatabasesResponse extends AcsResponse {
 
 			private String accountPrivilege;
 
+			private String accountPrivilegeDetail;
+
 			public String getAccount() {
 				return this.account;
 			}
@@ -137,6 +139,14 @@ public class DescribeDatabasesResponse extends AcsResponse {
 
 			public void setAccountPrivilege(String accountPrivilege) {
 				this.accountPrivilege = accountPrivilege;
+			}
+
+			public String getAccountPrivilegeDetail() {
+				return this.accountPrivilegeDetail;
+			}
+
+			public void setAccountPrivilegeDetail(String accountPrivilegeDetail) {
+				this.accountPrivilegeDetail = accountPrivilegeDetail;
 			}
 		}
 	}

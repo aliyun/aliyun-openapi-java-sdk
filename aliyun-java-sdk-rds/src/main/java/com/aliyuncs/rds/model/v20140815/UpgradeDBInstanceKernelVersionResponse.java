@@ -15,26 +15,22 @@
 package com.aliyuncs.rds.model.v20140815;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.rds.transform.v20140815.CreateMigrateTaskResponseUnmarshaller;
+import com.aliyuncs.rds.transform.v20140815.UpgradeDBInstanceKernelVersionResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CreateMigrateTaskResponse extends AcsResponse {
+public class UpgradeDBInstanceKernelVersionResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String dBInstanceId;
+	private String dBInstanceName;
 
 	private String taskId;
 
-	private String dBName;
-
-	private String migrateTaskId;
-
-	private String backupMode;
+	private String targetMinorVersion;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -44,12 +40,12 @@ public class CreateMigrateTaskResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getDBInstanceId() {
-		return this.dBInstanceId;
+	public String getDBInstanceName() {
+		return this.dBInstanceName;
 	}
 
-	public void setDBInstanceId(String dBInstanceId) {
-		this.dBInstanceId = dBInstanceId;
+	public void setDBInstanceName(String dBInstanceName) {
+		this.dBInstanceName = dBInstanceName;
 	}
 
 	public String getTaskId() {
@@ -60,32 +56,16 @@ public class CreateMigrateTaskResponse extends AcsResponse {
 		this.taskId = taskId;
 	}
 
-	public String getDBName() {
-		return this.dBName;
+	public String getTargetMinorVersion() {
+		return this.targetMinorVersion;
 	}
 
-	public void setDBName(String dBName) {
-		this.dBName = dBName;
-	}
-
-	public String getMigrateTaskId() {
-		return this.migrateTaskId;
-	}
-
-	public void setMigrateTaskId(String migrateTaskId) {
-		this.migrateTaskId = migrateTaskId;
-	}
-
-	public String getBackupMode() {
-		return this.backupMode;
-	}
-
-	public void setBackupMode(String backupMode) {
-		this.backupMode = backupMode;
+	public void setTargetMinorVersion(String targetMinorVersion) {
+		this.targetMinorVersion = targetMinorVersion;
 	}
 
 	@Override
-	public CreateMigrateTaskResponse getInstance(UnmarshallerContext context) {
-		return	CreateMigrateTaskResponseUnmarshaller.unmarshall(this, context);
+	public UpgradeDBInstanceKernelVersionResponse getInstance(UnmarshallerContext context) {
+		return	UpgradeDBInstanceKernelVersionResponseUnmarshaller.unmarshall(this, context);
 	}
 }

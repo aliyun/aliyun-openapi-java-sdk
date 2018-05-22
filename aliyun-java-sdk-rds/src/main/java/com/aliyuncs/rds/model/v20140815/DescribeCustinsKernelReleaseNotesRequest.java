@@ -20,29 +20,19 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class DescribeDatabasesRequest extends RpcAcsRequest<DescribeDatabasesResponse> {
+public class DescribeCustinsKernelReleaseNotesRequest extends RpcAcsRequest<DescribeCustinsKernelReleaseNotesResponse> {
 	
-	public DescribeDatabasesRequest() {
-		super("Rds", "2014-08-15", "DescribeDatabases", "rds");
+	public DescribeCustinsKernelReleaseNotesRequest() {
+		super("Rds", "2014-08-15", "DescribeCustinsKernelReleaseNotes", "rds");
 	}
 
 	private Long resourceOwnerId;
 
-	private String dBName;
-
 	private String resourceOwnerAccount;
-
-	private String dBStatus;
-
-	private String ownerAccount;
-
-	private Integer pageSize;
 
 	private String dBInstanceId;
 
 	private Long ownerId;
-
-	private Integer pageNumber;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -55,17 +45,6 @@ public class DescribeDatabasesRequest extends RpcAcsRequest<DescribeDatabasesRes
 		}
 	}
 
-	public String getDBName() {
-		return this.dBName;
-	}
-
-	public void setDBName(String dBName) {
-		this.dBName = dBName;
-		if(dBName != null){
-			putQueryParameter("DBName", dBName);
-		}
-	}
-
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
 	}
@@ -74,39 +53,6 @@ public class DescribeDatabasesRequest extends RpcAcsRequest<DescribeDatabasesRes
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public String getDBStatus() {
-		return this.dBStatus;
-	}
-
-	public void setDBStatus(String dBStatus) {
-		this.dBStatus = dBStatus;
-		if(dBStatus != null){
-			putQueryParameter("DBStatus", dBStatus);
-		}
-	}
-
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
-
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		if(ownerAccount != null){
-			putQueryParameter("OwnerAccount", ownerAccount);
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 
@@ -132,20 +78,9 @@ public class DescribeDatabasesRequest extends RpcAcsRequest<DescribeDatabasesRes
 		}
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
-		}
-	}
-
 	@Override
-	public Class<DescribeDatabasesResponse> getResponseClass() {
-		return DescribeDatabasesResponse.class;
+	public Class<DescribeCustinsKernelReleaseNotesResponse> getResponseClass() {
+		return DescribeCustinsKernelReleaseNotesResponse.class;
 	}
 
 }

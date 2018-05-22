@@ -20,29 +20,25 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class DescribeDatabasesRequest extends RpcAcsRequest<DescribeDatabasesResponse> {
+public class ModifyReplicaVerificationModeRequest extends RpcAcsRequest<ModifyReplicaVerificationModeResponse> {
 	
-	public DescribeDatabasesRequest() {
-		super("Rds", "2014-08-15", "DescribeDatabases", "rds");
+	public ModifyReplicaVerificationModeRequest() {
+		super("Rds", "2014-08-15", "ModifyReplicaVerificationMode", "rds");
 	}
 
 	private Long resourceOwnerId;
 
-	private String dBName;
+	private String verificationMode;
+
+	private String securityToken;
 
 	private String resourceOwnerAccount;
 
-	private String dBStatus;
-
 	private String ownerAccount;
 
-	private Integer pageSize;
-
-	private String dBInstanceId;
+	private String replicaId;
 
 	private Long ownerId;
-
-	private Integer pageNumber;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -55,14 +51,25 @@ public class DescribeDatabasesRequest extends RpcAcsRequest<DescribeDatabasesRes
 		}
 	}
 
-	public String getDBName() {
-		return this.dBName;
+	public String getVerificationMode() {
+		return this.verificationMode;
 	}
 
-	public void setDBName(String dBName) {
-		this.dBName = dBName;
-		if(dBName != null){
-			putQueryParameter("DBName", dBName);
+	public void setVerificationMode(String verificationMode) {
+		this.verificationMode = verificationMode;
+		if(verificationMode != null){
+			putQueryParameter("VerificationMode", verificationMode);
+		}
+	}
+
+	public String getSecurityToken() {
+		return this.securityToken;
+	}
+
+	public void setSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 
@@ -77,17 +84,6 @@ public class DescribeDatabasesRequest extends RpcAcsRequest<DescribeDatabasesRes
 		}
 	}
 
-	public String getDBStatus() {
-		return this.dBStatus;
-	}
-
-	public void setDBStatus(String dBStatus) {
-		this.dBStatus = dBStatus;
-		if(dBStatus != null){
-			putQueryParameter("DBStatus", dBStatus);
-		}
-	}
-
 	public String getOwnerAccount() {
 		return this.ownerAccount;
 	}
@@ -99,25 +95,14 @@ public class DescribeDatabasesRequest extends RpcAcsRequest<DescribeDatabasesRes
 		}
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public String getReplicaId() {
+		return this.replicaId;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
-	public String getDBInstanceId() {
-		return this.dBInstanceId;
-	}
-
-	public void setDBInstanceId(String dBInstanceId) {
-		this.dBInstanceId = dBInstanceId;
-		if(dBInstanceId != null){
-			putQueryParameter("DBInstanceId", dBInstanceId);
+	public void setReplicaId(String replicaId) {
+		this.replicaId = replicaId;
+		if(replicaId != null){
+			putQueryParameter("ReplicaId", replicaId);
 		}
 	}
 
@@ -132,20 +117,9 @@ public class DescribeDatabasesRequest extends RpcAcsRequest<DescribeDatabasesRes
 		}
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
-		}
-	}
-
 	@Override
-	public Class<DescribeDatabasesResponse> getResponseClass() {
-		return DescribeDatabasesResponse.class;
+	public Class<ModifyReplicaVerificationModeResponse> getResponseClass() {
+		return ModifyReplicaVerificationModeResponse.class;
 	}
 
 }

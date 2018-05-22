@@ -26,7 +26,7 @@ public class CreateMigrateTaskResponseUnmarshaller {
 		createMigrateTaskResponse.setDBInstanceId(context.stringValue("CreateMigrateTaskResponse.DBInstanceId"));
 		createMigrateTaskResponse.setTaskId(context.stringValue("CreateMigrateTaskResponse.TaskId"));
 		createMigrateTaskResponse.setDBName(context.stringValue("CreateMigrateTaskResponse.DBName"));
-		createMigrateTaskResponse.setMigrateIaskId(context.stringValue("CreateMigrateTaskResponse.MigrateIaskId"));
+		createMigrateTaskResponse.setMigrateTaskId(context.stringValue("CreateMigrateTaskResponse.MigrateTaskId"));
 		createMigrateTaskResponse.setBackupMode(context.stringValue("CreateMigrateTaskResponse.BackupMode"));
 	 
 	 	return createMigrateTaskResponse;

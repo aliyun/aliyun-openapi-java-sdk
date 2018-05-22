@@ -28,19 +28,25 @@ public class CreateMigrateTaskRequest extends RpcAcsRequest<CreateMigrateTaskRes
 
 	private Long resourceOwnerId;
 
-	private String dBName;
+	private String migrateTaskId;
 
 	private String resourceOwnerAccount;
 
 	private String isOnlineDB;
 
+	private Long ownerId;
+
+	private String ossObjectPositions;
+
+	private String oSSUrls;
+
+	private String dBName;
+
 	private String dBInstanceId;
 
 	private String backupMode;
 
-	private Long ownerId;
-
-	private String oSSUrls;
+	private String checkDBMode;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -53,14 +59,14 @@ public class CreateMigrateTaskRequest extends RpcAcsRequest<CreateMigrateTaskRes
 		}
 	}
 
-	public String getDBName() {
-		return this.dBName;
+	public String getMigrateTaskId() {
+		return this.migrateTaskId;
 	}
 
-	public void setDBName(String dBName) {
-		this.dBName = dBName;
-		if(dBName != null){
-			putQueryParameter("DBName", dBName);
+	public void setMigrateTaskId(String migrateTaskId) {
+		this.migrateTaskId = migrateTaskId;
+		if(migrateTaskId != null){
+			putQueryParameter("MigrateTaskId", migrateTaskId);
 		}
 	}
 
@@ -86,6 +92,50 @@ public class CreateMigrateTaskRequest extends RpcAcsRequest<CreateMigrateTaskRes
 		}
 	}
 
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getOssObjectPositions() {
+		return this.ossObjectPositions;
+	}
+
+	public void setOssObjectPositions(String ossObjectPositions) {
+		this.ossObjectPositions = ossObjectPositions;
+		if(ossObjectPositions != null){
+			putQueryParameter("OssObjectPositions", ossObjectPositions);
+		}
+	}
+
+	public String getOSSUrls() {
+		return this.oSSUrls;
+	}
+
+	public void setOSSUrls(String oSSUrls) {
+		this.oSSUrls = oSSUrls;
+		if(oSSUrls != null){
+			putQueryParameter("OSSUrls", oSSUrls);
+		}
+	}
+
+	public String getDBName() {
+		return this.dBName;
+	}
+
+	public void setDBName(String dBName) {
+		this.dBName = dBName;
+		if(dBName != null){
+			putQueryParameter("DBName", dBName);
+		}
+	}
+
 	public String getDBInstanceId() {
 		return this.dBInstanceId;
 	}
@@ -108,25 +158,14 @@ public class CreateMigrateTaskRequest extends RpcAcsRequest<CreateMigrateTaskRes
 		}
 	}
 
-	public Long getOwnerId() {
-		return this.ownerId;
+	public String getCheckDBMode() {
+		return this.checkDBMode;
 	}
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getOSSUrls() {
-		return this.oSSUrls;
-	}
-
-	public void setOSSUrls(String oSSUrls) {
-		this.oSSUrls = oSSUrls;
-		if(oSSUrls != null){
-			putQueryParameter("OSSUrls", oSSUrls);
+	public void setCheckDBMode(String checkDBMode) {
+		this.checkDBMode = checkDBMode;
+		if(checkDBMode != null){
+			putQueryParameter("CheckDBMode", checkDBMode);
 		}
 	}
 

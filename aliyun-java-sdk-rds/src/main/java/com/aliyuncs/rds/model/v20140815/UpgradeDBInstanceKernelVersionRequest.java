@@ -20,29 +20,34 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class DescribeDatabasesRequest extends RpcAcsRequest<DescribeDatabasesResponse> {
+public class UpgradeDBInstanceKernelVersionRequest extends RpcAcsRequest<UpgradeDBInstanceKernelVersionResponse> {
 	
-	public DescribeDatabasesRequest() {
-		super("Rds", "2014-08-15", "DescribeDatabases", "rds");
+	public UpgradeDBInstanceKernelVersionRequest() {
+		super("Rds", "2014-08-15", "UpgradeDBInstanceKernelVersion", "rds");
 	}
+
+	private String switchTimeMode;
 
 	private Long resourceOwnerId;
 
-	private String dBName;
-
 	private String resourceOwnerAccount;
-
-	private String dBStatus;
-
-	private String ownerAccount;
-
-	private Integer pageSize;
 
 	private String dBInstanceId;
 
+	private String switchTime;
+
 	private Long ownerId;
 
-	private Integer pageNumber;
+	public String getSwitchTimeMode() {
+		return this.switchTimeMode;
+	}
+
+	public void setSwitchTimeMode(String switchTimeMode) {
+		this.switchTimeMode = switchTimeMode;
+		if(switchTimeMode != null){
+			putQueryParameter("SwitchTimeMode", switchTimeMode);
+		}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -52,17 +57,6 @@ public class DescribeDatabasesRequest extends RpcAcsRequest<DescribeDatabasesRes
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getDBName() {
-		return this.dBName;
-	}
-
-	public void setDBName(String dBName) {
-		this.dBName = dBName;
-		if(dBName != null){
-			putQueryParameter("DBName", dBName);
 		}
 	}
 
@@ -77,39 +71,6 @@ public class DescribeDatabasesRequest extends RpcAcsRequest<DescribeDatabasesRes
 		}
 	}
 
-	public String getDBStatus() {
-		return this.dBStatus;
-	}
-
-	public void setDBStatus(String dBStatus) {
-		this.dBStatus = dBStatus;
-		if(dBStatus != null){
-			putQueryParameter("DBStatus", dBStatus);
-		}
-	}
-
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
-
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		if(ownerAccount != null){
-			putQueryParameter("OwnerAccount", ownerAccount);
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
 	public String getDBInstanceId() {
 		return this.dBInstanceId;
 	}
@@ -118,6 +79,17 @@ public class DescribeDatabasesRequest extends RpcAcsRequest<DescribeDatabasesRes
 		this.dBInstanceId = dBInstanceId;
 		if(dBInstanceId != null){
 			putQueryParameter("DBInstanceId", dBInstanceId);
+		}
+	}
+
+	public String getSwitchTime() {
+		return this.switchTime;
+	}
+
+	public void setSwitchTime(String switchTime) {
+		this.switchTime = switchTime;
+		if(switchTime != null){
+			putQueryParameter("SwitchTime", switchTime);
 		}
 	}
 
@@ -132,20 +104,9 @@ public class DescribeDatabasesRequest extends RpcAcsRequest<DescribeDatabasesRes
 		}
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
-		}
-	}
-
 	@Override
-	public Class<DescribeDatabasesResponse> getResponseClass() {
-		return DescribeDatabasesResponse.class;
+	public Class<UpgradeDBInstanceKernelVersionResponse> getResponseClass() {
+		return UpgradeDBInstanceKernelVersionResponse.class;
 	}
 
 }

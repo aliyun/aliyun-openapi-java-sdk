@@ -20,31 +20,31 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class DescribeImportsForSQLServerRequest extends RpcAcsRequest<DescribeImportsForSQLServerResponse> {
+public class DescribeVerificationListRequest extends RpcAcsRequest<DescribeVerificationListResponse> {
 	
-	public DescribeImportsForSQLServerRequest() {
-		super("Rds", "2014-08-15", "DescribeImportsForSQLServer", "rds");
+	public DescribeVerificationListRequest() {
+		super("Rds", "2014-08-15", "DescribeVerificationList", "rds");
 	}
 
 	private Long resourceOwnerId;
-
-	private Integer importId;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
-	private Integer pageSize;
-
 	private String endTime;
-
-	private String dBInstanceId;
 
 	private String startTime;
 
 	private Long ownerId;
 
 	private Integer pageNumber;
+
+	private String securityToken;
+
+	private String replicaId;
+
+	private Integer pageSize;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -54,17 +54,6 @@ public class DescribeImportsForSQLServerRequest extends RpcAcsRequest<DescribeIm
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public Integer getImportId() {
-		return this.importId;
-	}
-
-	public void setImportId(Integer importId) {
-		this.importId = importId;
-		if(importId != null){
-			putQueryParameter("ImportId", importId.toString());
 		}
 	}
 
@@ -90,17 +79,6 @@ public class DescribeImportsForSQLServerRequest extends RpcAcsRequest<DescribeIm
 		}
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
 	public String getEndTime() {
 		return this.endTime;
 	}
@@ -109,17 +87,6 @@ public class DescribeImportsForSQLServerRequest extends RpcAcsRequest<DescribeIm
 		this.endTime = endTime;
 		if(endTime != null){
 			putQueryParameter("EndTime", endTime);
-		}
-	}
-
-	public String getDBInstanceId() {
-		return this.dBInstanceId;
-	}
-
-	public void setDBInstanceId(String dBInstanceId) {
-		this.dBInstanceId = dBInstanceId;
-		if(dBInstanceId != null){
-			putQueryParameter("DBInstanceId", dBInstanceId);
 		}
 	}
 
@@ -156,9 +123,42 @@ public class DescribeImportsForSQLServerRequest extends RpcAcsRequest<DescribeIm
 		}
 	}
 
+	public String getSecurityToken() {
+		return this.securityToken;
+	}
+
+	public void setSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	public String getReplicaId() {
+		return this.replicaId;
+	}
+
+	public void setReplicaId(String replicaId) {
+		this.replicaId = replicaId;
+		if(replicaId != null){
+			putQueryParameter("ReplicaId", replicaId);
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
 	@Override
-	public Class<DescribeImportsForSQLServerResponse> getResponseClass() {
-		return DescribeImportsForSQLServerResponse.class;
+	public Class<DescribeVerificationListResponse> getResponseClass() {
+		return DescribeVerificationListResponse.class;
 	}
 
 }

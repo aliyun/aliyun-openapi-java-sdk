@@ -35,6 +35,7 @@ public class DescribeOssDownloadsResponseUnmarshaller {
 			OssDownload ossDownload = new OssDownload();
 			ossDownload.setFileName(context.stringValue("DescribeOssDownloadsResponse.Items["+ i +"].FileName"));
 			ossDownload.setCreateTime(context.stringValue("DescribeOssDownloadsResponse.Items["+ i +"].CreateTime"));
+			ossDownload.setEndTime(context.stringValue("DescribeOssDownloadsResponse.Items["+ i +"].EndTime"));
 			ossDownload.setBackupMode(context.stringValue("DescribeOssDownloadsResponse.Items["+ i +"].BackupMode"));
 			ossDownload.setFileSize(context.stringValue("DescribeOssDownloadsResponse.Items["+ i +"].FileSize"));
 			ossDownload.setStatus(context.stringValue("DescribeOssDownloadsResponse.Items["+ i +"].Status"));

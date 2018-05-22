@@ -44,6 +44,7 @@ public class DescribeDatabasesResponseUnmarshaller {
 				AccountPrivilegeInfo accountPrivilegeInfo = new AccountPrivilegeInfo();
 				accountPrivilegeInfo.setAccount(context.stringValue("DescribeDatabasesResponse.Databases["+ i +"].Accounts["+ j +"].Account"));
 				accountPrivilegeInfo.setAccountPrivilege(context.stringValue("DescribeDatabasesResponse.Databases["+ i +"].Accounts["+ j +"].AccountPrivilege"));
+				accountPrivilegeInfo.setAccountPrivilegeDetail(context.stringValue("DescribeDatabasesResponse.Databases["+ i +"].Accounts["+ j +"].AccountPrivilegeDetail"));
 
 				accounts.add(accountPrivilegeInfo);
 			}

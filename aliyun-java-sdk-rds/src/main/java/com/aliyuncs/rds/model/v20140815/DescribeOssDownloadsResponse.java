@@ -71,6 +71,8 @@ public class DescribeOssDownloadsResponse extends AcsResponse {
 
 		private String createTime;
 
+		private String endTime;
+
 		private String backupMode;
 
 		private String fileSize;
@@ -95,6 +97,14 @@ public class DescribeOssDownloadsResponse extends AcsResponse {
 
 		public void setCreateTime(String createTime) {
 			this.createTime = createTime;
+		}
+
+		public String getEndTime() {
+			return this.endTime;
+		}
+
+		public void setEndTime(String endTime) {
+			this.endTime = endTime;
 		}
 
 		public String getBackupMode() {
