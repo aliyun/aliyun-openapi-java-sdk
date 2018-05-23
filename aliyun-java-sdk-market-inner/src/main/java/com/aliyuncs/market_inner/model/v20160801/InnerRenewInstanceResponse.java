@@ -14,29 +14,28 @@
 
 package com.aliyuncs.market_inner.model.v20160801;
 
-import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.market_inner.transform.v20160801.InnerPrevProduceImageInstanceResponseUnmarshaller;
+import com.aliyuncs.market_inner.transform.v20160801.InnerRenewInstanceResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class InnerPrevProduceImageInstanceResponse extends AcsResponse {
+public class InnerRenewInstanceResponse extends AcsResponse {
 
-	private List<String> instanceIdList;
+	private String requestId;
 
-	public List<String> getInstanceIdList() {
-		return this.instanceIdList;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setInstanceIdList(List<String> instanceIdList) {
-		this.instanceIdList = instanceIdList;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override
-	public InnerPrevProduceImageInstanceResponse getInstance(UnmarshallerContext context) {
-		return	InnerPrevProduceImageInstanceResponseUnmarshaller.unmarshall(this, context);
+	public InnerRenewInstanceResponse getInstance(UnmarshallerContext context) {
+		return	InnerRenewInstanceResponseUnmarshaller.unmarshall(this, context);
 	}
 }

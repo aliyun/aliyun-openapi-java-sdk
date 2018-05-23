@@ -24,7 +24,7 @@ import java.util.List;
 public class InnerQueryAvailableImagesRequest extends RpcAcsRequest<InnerQueryAvailableImagesResponse> {
 	
 	public InnerQueryAvailableImagesRequest() {
-		super("Market-Inner", "2016-08-01", "InnerQueryAvailableImages");
+		super("Market-Inner", "2016-08-01", "InnerQueryAvailableImages", "yunmarket", "innerAPI");
 	}
 
 	private Boolean supportIoOptimized;

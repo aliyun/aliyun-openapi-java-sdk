@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class InnerSubmitImageSecurityAuditResultRequest extends RpcAcsRequest<InnerSubmitImageSecurityAuditResultResponse> {
 	
 	public InnerSubmitImageSecurityAuditResultRequest() {
-		super("Market-Inner", "2016-08-01", "InnerSubmitImageSecurityAuditResult");
+		super("Market-Inner", "2016-08-01", "InnerSubmitImageSecurityAuditResult", "yunmarket", "innerAPI");
 	}
 
 	private String productCode;

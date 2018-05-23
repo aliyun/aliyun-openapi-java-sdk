@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class InnerReviewHistoryImageRequest extends RpcAcsRequest<InnerReviewHistoryImageResponse> {
 	
 	public InnerReviewHistoryImageRequest() {
-		super("Market-Inner", "2016-08-01", "InnerReviewHistoryImage");
+		super("Market-Inner", "2016-08-01", "InnerReviewHistoryImage", "yunmarket", "innerAPI");
 	}
 
 	private String productCode;

@@ -20,37 +20,24 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class InnerUnsubscriptionRequest extends RpcAcsRequest<InnerUnsubscriptionResponse> {
+public class InnerQueryMarketImageRequest extends RpcAcsRequest<InnerQueryMarketImageResponse> {
 	
-	public InnerUnsubscriptionRequest() {
-		super("Market-Inner", "2016-08-01", "InnerUnsubscription");
+	public InnerQueryMarketImageRequest() {
+		super("Market-Inner", "2016-08-01", "InnerQueryMarketImage", "yunmarket", "innerAPI");
 	}
 
-	private String requestSource;
-
-	private String produceCode;
+	private String imagePc;
 
 	private Long aliUid;
 
-	public String getRequestSource() {
-		return this.requestSource;
+	public String getImagePc() {
+		return this.imagePc;
 	}
 
-	public void setRequestSource(String requestSource) {
-		this.requestSource = requestSource;
-		if(requestSource != null){
-			putQueryParameter("RequestSource", requestSource);
-		}
-	}
-
-	public String getProduceCode() {
-		return this.produceCode;
-	}
-
-	public void setProduceCode(String produceCode) {
-		this.produceCode = produceCode;
-		if(produceCode != null){
-			putQueryParameter("ProduceCode", produceCode);
+	public void setImagePc(String imagePc) {
+		this.imagePc = imagePc;
+		if(imagePc != null){
+			putQueryParameter("ImagePc", imagePc);
 		}
 	}
 
@@ -66,8 +53,8 @@ public class InnerUnsubscriptionRequest extends RpcAcsRequest<InnerUnsubscriptio
 	}
 
 	@Override
-	public Class<InnerUnsubscriptionResponse> getResponseClass() {
-		return InnerUnsubscriptionResponse.class;
+	public Class<InnerQueryMarketImageResponse> getResponseClass() {
+		return InnerQueryMarketImageResponse.class;
 	}
 
 }

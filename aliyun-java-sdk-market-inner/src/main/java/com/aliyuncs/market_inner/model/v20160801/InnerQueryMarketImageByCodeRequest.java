@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class InnerQueryMarketImageByCodeRequest extends RpcAcsRequest<InnerQueryMarketImageByCodeResponse> {
 	
 	public InnerQueryMarketImageByCodeRequest() {
-		super("Market-Inner", "2016-08-01", "InnerQueryMarketImageByCode");
+		super("Market-Inner", "2016-08-01", "InnerQueryMarketImageByCode", "yunmarket", "innerAPI");
 	}
 
 	private String imagePc;

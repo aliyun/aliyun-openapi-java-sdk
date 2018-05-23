@@ -14,17 +14,16 @@
 
 package com.aliyuncs.market_inner.transform.v20160801;
 
-import com.aliyuncs.market_inner.model.v20160801.InnerSubscriptionResponse;
+import com.aliyuncs.market_inner.model.v20160801.InnerExpiredInstanceResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class InnerSubscriptionResponseUnmarshaller {
+public class InnerExpiredInstanceResponseUnmarshaller {
 
-	public static InnerSubscriptionResponse unmarshall(InnerSubscriptionResponse innerSubscriptionResponse, UnmarshallerContext context) {
+	public static InnerExpiredInstanceResponse unmarshall(InnerExpiredInstanceResponse innerExpiredInstanceResponse, UnmarshallerContext context) {
 		
-		innerSubscriptionResponse.setRequestId(context.stringValue("InnerSubscriptionResponse.RequestId"));
-		innerSubscriptionResponse.setSuccess(context.booleanValue("InnerSubscriptionResponse.Success"));
+		innerExpiredInstanceResponse.setRequestId(context.stringValue("InnerExpiredInstanceResponse.RequestId"));
 	 
-	 	return innerSubscriptionResponse;
+	 	return innerExpiredInstanceResponse;
 	}
 }

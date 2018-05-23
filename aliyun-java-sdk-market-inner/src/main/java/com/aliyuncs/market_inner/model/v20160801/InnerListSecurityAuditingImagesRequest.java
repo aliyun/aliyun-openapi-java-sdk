@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class InnerListSecurityAuditingImagesRequest extends RpcAcsRequest<InnerListSecurityAuditingImagesResponse> {
 	
 	public InnerListSecurityAuditingImagesRequest() {
-		super("Market-Inner", "2016-08-01", "InnerListSecurityAuditingImages");
+		super("Market-Inner", "2016-08-01", "InnerListSecurityAuditingImages", "yunmarket", "innerAPI");
 	}
 
 	private Integer channel;

@@ -14,34 +14,28 @@
 
 package com.aliyuncs.market_inner.model.v20160801;
 
-import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.AcsResponse;
+import com.aliyuncs.market_inner.transform.v20160801.InnerExpiredInstanceResponseUnmarshaller;
+import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class InnerCompleteOrderParamRequest extends RpcAcsRequest<InnerCompleteOrderParamResponse> {
-	
-	public InnerCompleteOrderParamRequest() {
-		super("Market-Inner", "2016-08-01", "InnerCompleteOrderParam");
+public class InnerExpiredInstanceResponse extends AcsResponse {
+
+	private String requestId;
+
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	private String data;
-
-	public String getData() {
-		return this.data;
-	}
-
-	public void setData(String data) {
-		this.data = data;
-		if(data != null){
-			putQueryParameter("data", data);
-		}
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override
-	public Class<InnerCompleteOrderParamResponse> getResponseClass() {
-		return InnerCompleteOrderParamResponse.class;
+	public InnerExpiredInstanceResponse getInstance(UnmarshallerContext context) {
+		return	InnerExpiredInstanceResponseUnmarshaller.unmarshall(this, context);
 	}
-
 }

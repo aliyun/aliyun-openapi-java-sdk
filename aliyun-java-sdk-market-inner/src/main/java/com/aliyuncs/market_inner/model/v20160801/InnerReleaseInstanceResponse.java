@@ -15,22 +15,16 @@
 package com.aliyuncs.market_inner.model.v20160801;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.market_inner.transform.v20160801.InnerPayOrderCallbackResponseUnmarshaller;
+import com.aliyuncs.market_inner.transform.v20160801.InnerReleaseInstanceResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class InnerPayOrderCallbackResponse extends AcsResponse {
+public class InnerReleaseInstanceResponse extends AcsResponse {
 
 	private String requestId;
-
-	private Boolean success;
-
-	private String code;
-
-	private Boolean synchro;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -40,32 +34,8 @@ public class InnerPayOrderCallbackResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public Boolean getSynchro() {
-		return this.synchro;
-	}
-
-	public void setSynchro(Boolean synchro) {
-		this.synchro = synchro;
-	}
-
 	@Override
-	public InnerPayOrderCallbackResponse getInstance(UnmarshallerContext context) {
-		return	InnerPayOrderCallbackResponseUnmarshaller.unmarshall(this, context);
+	public InnerReleaseInstanceResponse getInstance(UnmarshallerContext context) {
+		return	InnerReleaseInstanceResponseUnmarshaller.unmarshall(this, context);
 	}
 }

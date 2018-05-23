@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class InnerQueryPurchaseImageRequest extends RpcAcsRequest<InnerQueryPurchaseImageResponse> {
 	
 	public InnerQueryPurchaseImageRequest() {
-		super("Market-Inner", "2016-08-01", "InnerQueryPurchaseImage");
+		super("Market-Inner", "2016-08-01", "InnerQueryPurchaseImage", "yunmarket", "innerAPI");
 	}
 
 	private String imageId;

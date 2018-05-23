@@ -15,18 +15,18 @@
 package com.aliyuncs.market_inner.model.v20160801;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.market_inner.transform.v20160801.InnerNotifyProduceImageInstanceResponseUnmarshaller;
+import com.aliyuncs.market_inner.transform.v20160801.InnerCreateInstanceResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class InnerNotifyProduceImageInstanceResponse extends AcsResponse {
+public class InnerCreateInstanceResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean success;
+	private String instanceId;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -36,16 +36,16 @@ public class InnerNotifyProduceImageInstanceResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getInstanceId() {
+		return this.instanceId;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
 	}
 
 	@Override
-	public InnerNotifyProduceImageInstanceResponse getInstance(UnmarshallerContext context) {
-		return	InnerNotifyProduceImageInstanceResponseUnmarshaller.unmarshall(this, context);
+	public InnerCreateInstanceResponse getInstance(UnmarshallerContext context) {
+		return	InnerCreateInstanceResponseUnmarshaller.unmarshall(this, context);
 	}
 }

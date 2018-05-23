@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class InnerVerifyOrderRequest extends RpcAcsRequest<InnerVerifyOrderResponse> {
 	
 	public InnerVerifyOrderRequest() {
-		super("Market-Inner", "2016-08-01", "InnerVerifyOrder");
+		super("Market-Inner", "2016-08-01", "InnerVerifyOrder", "yunmarket", "innerAPI");
 	}
 
 	private String data;

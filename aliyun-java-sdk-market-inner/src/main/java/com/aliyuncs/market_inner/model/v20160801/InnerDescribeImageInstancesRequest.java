@@ -24,7 +24,7 @@ import java.util.List;
 public class InnerDescribeImageInstancesRequest extends RpcAcsRequest<InnerDescribeImageInstancesResponse> {
 	
 	public InnerDescribeImageInstancesRequest() {
-		super("Market-Inner", "2016-08-01", "InnerDescribeImageInstances");
+		super("Market-Inner", "2016-08-01", "InnerDescribeImageInstances", "yunmarket", "innerAPI");
 	}
 
 	private String ecsInstanceId;

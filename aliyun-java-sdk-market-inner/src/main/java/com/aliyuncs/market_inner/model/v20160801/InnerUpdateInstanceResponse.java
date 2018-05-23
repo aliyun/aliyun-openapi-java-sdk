@@ -15,38 +15,16 @@
 package com.aliyuncs.market_inner.model.v20160801;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.market_inner.transform.v20160801.InnerCompleteOrderParamResponseUnmarshaller;
+import com.aliyuncs.market_inner.transform.v20160801.InnerUpdateInstanceResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class InnerCompleteOrderParamResponse extends AcsResponse {
-
-	private Boolean success;
-
-	private String data;
+public class InnerUpdateInstanceResponse extends AcsResponse {
 
 	private String requestId;
-
-	private String code;
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
-	public String getData() {
-		return this.data;
-	}
-
-	public void setData(String data) {
-		this.data = data;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -56,16 +34,8 @@ public class InnerCompleteOrderParamResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
 	@Override
-	public InnerCompleteOrderParamResponse getInstance(UnmarshallerContext context) {
-		return	InnerCompleteOrderParamResponseUnmarshaller.unmarshall(this, context);
+	public InnerUpdateInstanceResponse getInstance(UnmarshallerContext context) {
+		return	InnerUpdateInstanceResponseUnmarshaller.unmarshall(this, context);
 	}
 }

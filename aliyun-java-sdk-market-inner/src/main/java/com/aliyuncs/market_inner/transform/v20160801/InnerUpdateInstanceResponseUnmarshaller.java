@@ -14,17 +14,16 @@
 
 package com.aliyuncs.market_inner.transform.v20160801;
 
-import com.aliyuncs.market_inner.model.v20160801.InnerNotifyProduceImageInstanceResponse;
+import com.aliyuncs.market_inner.model.v20160801.InnerUpdateInstanceResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class InnerNotifyProduceImageInstanceResponseUnmarshaller {
+public class InnerUpdateInstanceResponseUnmarshaller {
 
-	public static InnerNotifyProduceImageInstanceResponse unmarshall(InnerNotifyProduceImageInstanceResponse innerNotifyProduceImageInstanceResponse, UnmarshallerContext context) {
+	public static InnerUpdateInstanceResponse unmarshall(InnerUpdateInstanceResponse innerUpdateInstanceResponse, UnmarshallerContext context) {
 		
-		innerNotifyProduceImageInstanceResponse.setRequestId(context.stringValue("InnerNotifyProduceImageInstanceResponse.RequestId"));
-		innerNotifyProduceImageInstanceResponse.setSuccess(context.booleanValue("InnerNotifyProduceImageInstanceResponse.Success"));
+		innerUpdateInstanceResponse.setRequestId(context.stringValue("InnerUpdateInstanceResponse.RequestId"));
 	 
-	 	return innerNotifyProduceImageInstanceResponse;
+	 	return innerUpdateInstanceResponse;
 	}
 }
