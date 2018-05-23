@@ -16,14 +16,14 @@ package com.aliyuncs.drds.model.v20171016;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.drds.transform.v20171016.DescribeDrdsInstanceResponseUnmarshaller;
+import com.aliyuncs.drds.transform.v20171016.QueryInstanceInfoByConnResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DescribeDrdsInstanceResponse extends AcsResponse {
+public class QueryInstanceInfoByConnResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -76,6 +76,10 @@ public class DescribeDrdsInstanceResponse extends AcsResponse {
 		private Long version;
 
 		private String specification;
+
+		private String specTypeId;
+
+		private String specTypeName;
 
 		private String vpcCloudInstanceId;
 
@@ -161,6 +165,22 @@ public class DescribeDrdsInstanceResponse extends AcsResponse {
 			this.specification = specification;
 		}
 
+		public String getSpecTypeId() {
+			return this.specTypeId;
+		}
+
+		public void setSpecTypeId(String specTypeId) {
+			this.specTypeId = specTypeId;
+		}
+
+		public String getSpecTypeName() {
+			return this.specTypeName;
+		}
+
+		public void setSpecTypeName(String specTypeName) {
+			this.specTypeName = specTypeName;
+		}
+
 		public String getVpcCloudInstanceId() {
 			return this.vpcCloudInstanceId;
 		}
@@ -232,7 +252,7 @@ public class DescribeDrdsInstanceResponse extends AcsResponse {
 	}
 
 	@Override
-	public DescribeDrdsInstanceResponse getInstance(UnmarshallerContext context) {
-		return	DescribeDrdsInstanceResponseUnmarshaller.unmarshall(this, context);
+	public QueryInstanceInfoByConnResponse getInstance(UnmarshallerContext context) {
+		return	QueryInstanceInfoByConnResponseUnmarshaller.unmarshall(this, context);
 	}
 }

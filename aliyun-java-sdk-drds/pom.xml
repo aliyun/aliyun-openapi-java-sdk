@@ -3,7 +3,7 @@
   <groupId>com.aliyun</groupId>
   <artifactId>aliyun-java-sdk-drds</artifactId>
   <packaging>jar</packaging>
-  <version>2.3.0</version>
+  <version>2.5.0</version>
     <name>aliyun-java-sdk-drds</name>
   <url>http://www.aliyun.com</url>
   <description>Aliyun Open API SDK for Java
@@ -31,7 +31,7 @@ http://www.aliyun.com</description>
   		<groupId>com.aliyun</groupId>
   		<artifactId>aliyun-java-sdk-core</artifactId>
 		<optional>true</optional>
-  		<version>3.2.8</version>
+  		<version>3.7.1</version>
   	</dependency>
   </dependencies>
 	<licenses>
@@ -42,8 +42,9 @@ http://www.aliyun.com</description>
 		</license>
 	</licenses>
 	<scm>
-		<url></url>
-		<connection></connection>
+        <connection>scm:git:git://github.com/aliyun/aliyun-openapi-java-sdk.git</connection>
+        <developerConnection>scm:git:git@github.com:aliyun/aliyun-openapi-java-sdk.git</developerConnection>
+        <url>https://github.com/aliyun/aliyun-openapi-java-sdk</url>
 	</scm>
 	<developers>
 		<developer>

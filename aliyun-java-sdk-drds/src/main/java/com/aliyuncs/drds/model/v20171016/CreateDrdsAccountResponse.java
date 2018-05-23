@@ -15,14 +15,14 @@
 package com.aliyuncs.drds.model.v20171016;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.drds.transform.v20171016.RemoveReadOnlyAccountResponseUnmarshaller;
+import com.aliyuncs.drds.transform.v20171016.CreateDrdsAccountResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class RemoveReadOnlyAccountResponse extends AcsResponse {
+public class CreateDrdsAccountResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -45,7 +45,7 @@ public class RemoveReadOnlyAccountResponse extends AcsResponse {
 	}
 
 	@Override
-	public RemoveReadOnlyAccountResponse getInstance(UnmarshallerContext context) {
-		return	RemoveReadOnlyAccountResponseUnmarshaller.unmarshall(this, context);
+	public CreateDrdsAccountResponse getInstance(UnmarshallerContext context) {
+		return	CreateDrdsAccountResponseUnmarshaller.unmarshall(this, context);
 	}
 }

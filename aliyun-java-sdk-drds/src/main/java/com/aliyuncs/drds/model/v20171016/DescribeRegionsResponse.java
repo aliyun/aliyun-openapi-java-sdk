@@ -1,21 +1,17 @@
 /*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
+
 package com.aliyuncs.drds.model.v20171016;
 
 import java.util.List;
@@ -113,9 +109,19 @@ public class DescribeRegionsResponse extends AcsResponse {
 
 		public static class InstanceSeries {
 
+			private String seriesId;
+
 			private String seriesName;
 
-			private List<String> specList;
+			private List<Spec> specList;
+
+			public String getSeriesId() {
+				return this.seriesId;
+			}
+
+			public void setSeriesId(String seriesId) {
+				this.seriesId = seriesId;
+			}
 
 			public String getSeriesName() {
 				return this.seriesName;
@@ -125,12 +131,35 @@ public class DescribeRegionsResponse extends AcsResponse {
 				this.seriesName = seriesName;
 			}
 
-			public List<String> getSpecList() {
+			public List<Spec> getSpecList() {
 				return this.specList;
 			}
 
-			public void setSpecList(List<String> specList) {
+			public void setSpecList(List<Spec> specList) {
 				this.specList = specList;
+			}
+
+			public static class Spec {
+
+				private String specId;
+
+				private String specName;
+
+				public String getSpecId() {
+					return this.specId;
+				}
+
+				public void setSpecId(String specId) {
+					this.specId = specId;
+				}
+
+				public String getSpecName() {
+					return this.specName;
+				}
+
+				public void setSpecName(String specName) {
+					this.specName = specName;
+				}
 			}
 		}
 	}

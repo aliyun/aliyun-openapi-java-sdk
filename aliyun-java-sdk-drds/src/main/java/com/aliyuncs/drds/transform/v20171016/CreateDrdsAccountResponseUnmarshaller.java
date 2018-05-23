@@ -14,17 +14,17 @@
 
 package com.aliyuncs.drds.transform.v20171016;
 
-import com.aliyuncs.drds.model.v20171016.DeleteFailedDrdsDBResponse;
+import com.aliyuncs.drds.model.v20171016.CreateDrdsAccountResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class DeleteFailedDrdsDBResponseUnmarshaller {
+public class CreateDrdsAccountResponseUnmarshaller {
 
-	public static DeleteFailedDrdsDBResponse unmarshall(DeleteFailedDrdsDBResponse deleteFailedDrdsDBResponse, UnmarshallerContext context) {
+	public static CreateDrdsAccountResponse unmarshall(CreateDrdsAccountResponse createDrdsAccountResponse, UnmarshallerContext context) {
 		
-		deleteFailedDrdsDBResponse.setRequestId(context.stringValue("DeleteFailedDrdsDBResponse.RequestId"));
-		deleteFailedDrdsDBResponse.setSuccess(context.booleanValue("DeleteFailedDrdsDBResponse.Success"));
+		createDrdsAccountResponse.setRequestId(context.stringValue("CreateDrdsAccountResponse.RequestId"));
+		createDrdsAccountResponse.setSuccess(context.booleanValue("CreateDrdsAccountResponse.Success"));
 	 
-	 	return deleteFailedDrdsDBResponse;
+	 	return createDrdsAccountResponse;
 	}
 }
