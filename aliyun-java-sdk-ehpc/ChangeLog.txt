@@ -1,3 +1,9 @@
+2018-05-23 Version: 1.2.0
+1, Update API version to 2018-04-12. 
+2, New APIs in this new version: StartCluster, StopCluster, RecoverCluster, StartNodes, StopNodes, ListCustomImages. Support stopping a post-paid cluster or partial nodes of a cluster to save cost.
+3, New parameters for CreateCluster API: EcsChargeType. Support creating a pre-paid cluster.
+4, New parameters for CreateCluster API: DeploymentMode. Support creating a cluster with fewer manager nodes.
+
 2018-02-02 Version: 1.1.0
 1, Allow passing "ImageId" in CreateCluster and AddNodes
 2, Provide more information in ListClusters, ListNodes and DescribeCluster
