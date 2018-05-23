@@ -14,15 +14,15 @@
 
 package com.aliyuncs.cr.transform.v20160607;
 
-import com.aliyuncs.cr.model.v20160607.GetRepoListResponse;
+import com.aliyuncs.cr.model.v20160607.GetImageManifestResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class GetRepoListResponseUnmarshaller {
+public class GetImageManifestResponseUnmarshaller {
 
-	public static GetRepoListResponse unmarshall(GetRepoListResponse getRepoListResponse, UnmarshallerContext context) {
+	public static GetImageManifestResponse unmarshall(GetImageManifestResponse getImageManifestResponse, UnmarshallerContext context) {
 		
 	 
-	 	return getRepoListResponse;
+	 	return getImageManifestResponse;
 	}
 }

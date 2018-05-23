@@ -12,17 +12,26 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.cr.transform.v20160607;
+package com.aliyuncs.cr.model.v20160607;
 
-import com.aliyuncs.cr.model.v20160607.GetRepoListResponse;
-import com.aliyuncs.transform.UnmarshallerContext;
+import com.aliyuncs.RoaAcsRequest;
+import com.aliyuncs.http.MethodType;
 
-
-public class GetRepoListResponseUnmarshaller {
-
-	public static GetRepoListResponse unmarshall(GetRepoListResponse getRepoListResponse, UnmarshallerContext context) {
-		
-	 
-	 	return getRepoListResponse;
+/**
+ * @author auto create
+ * @version 
+ */
+public class GetAuthorizationTokenRequest extends RoaAcsRequest<GetAuthorizationTokenResponse> {
+	
+	public GetAuthorizationTokenRequest() {
+		super("cr", "2016-06-07", "GetAuthorizationToken");
+		setUriPattern("/tokens");
+		setMethod(MethodType.GET);
 	}
+
+	@Override
+	public Class<GetAuthorizationTokenResponse> getResponseClass() {
+		return GetAuthorizationTokenResponse.class;
+	}
+
 }

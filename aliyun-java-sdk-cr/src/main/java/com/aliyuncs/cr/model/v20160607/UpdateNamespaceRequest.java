@@ -21,17 +21,30 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class CreateRepoRequest extends RoaAcsRequest<CreateRepoResponse> {
+public class UpdateNamespaceRequest extends RoaAcsRequest<UpdateNamespaceResponse> {
 	
-	public CreateRepoRequest() {
-		super("cr", "2016-06-07", "CreateRepo");
-		setUriPattern("/repos");
-		setMethod(MethodType.PUT);
+	public UpdateNamespaceRequest() {
+		super("cr", "2016-06-07", "UpdateNamespace");
+		setUriPattern("/namespace/[Namespace]");
+		setMethod(MethodType.POST);
+	}
+
+	private String namespace;
+
+	public String getNamespace() {
+		return this.namespace;
+	}
+
+	public void setNamespace(String namespace) {
+		this.namespace = namespace;
+		if(namespace != null){
+			putPathParameter("Namespace", namespace);
+		}
 	}
 
 	@Override
-	public Class<CreateRepoResponse> getResponseClass() {
-		return CreateRepoResponse.class;
+	public Class<UpdateNamespaceResponse> getResponseClass() {
+		return UpdateNamespaceResponse.class;
 	}
 
 }

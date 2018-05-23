@@ -21,17 +21,19 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class GetRepoRequest extends RoaAcsRequest<GetRepoResponse> {
+public class GetImageLayerRequest extends RoaAcsRequest<GetImageLayerResponse> {
 	
-	public GetRepoRequest() {
-		super("cr", "2016-06-07", "GetRepo");
-		setUriPattern("/repos/[RepoNamespace]/[RepoName]");
+	public GetImageLayerRequest() {
+		super("cr", "2016-06-07", "GetImageLayer");
+		setUriPattern("/repos/[RepoNamespace]/[RepoName]/tags/[Tag]/layers");
 		setMethod(MethodType.GET);
 	}
 
 	private String repoNamespace;
 
 	private String repoName;
+
+	private String tag;
 
 	public String getRepoNamespace() {
 		return this.repoNamespace;
@@ -55,9 +57,20 @@ public class GetRepoRequest extends RoaAcsRequest<GetRepoResponse> {
 		}
 	}
 
+	public String getTag() {
+		return this.tag;
+	}
+
+	public void setTag(String tag) {
+		this.tag = tag;
+		if(tag != null){
+			putPathParameter("Tag", tag);
+		}
+	}
+
 	@Override
-	public Class<GetRepoResponse> getResponseClass() {
-		return GetRepoResponse.class;
+	public Class<GetImageLayerResponse> getResponseClass() {
+		return GetImageLayerResponse.class;
 	}
 
 }

@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.cr.model.v20160607;
 
 import com.aliyuncs.RoaAcsRequest;
@@ -38,7 +39,9 @@ public class DeleteRepoRequest extends RoaAcsRequest<DeleteRepoResponse> {
 
 	public void setRepoNamespace(String repoNamespace) {
 		this.repoNamespace = repoNamespace;
-		putPathParameter("RepoNamespace", repoNamespace);
+		if(repoNamespace != null){
+			putPathParameter("RepoNamespace", repoNamespace);
+		}
 	}
 
 	public String getRepoName() {
@@ -47,7 +50,9 @@ public class DeleteRepoRequest extends RoaAcsRequest<DeleteRepoResponse> {
 
 	public void setRepoName(String repoName) {
 		this.repoName = repoName;
-		putPathParameter("RepoName", repoName);
+		if(repoName != null){
+			putPathParameter("RepoName", repoName);
+		}
 	}
 
 	@Override

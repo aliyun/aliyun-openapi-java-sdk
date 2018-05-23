@@ -21,17 +21,21 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class GetRepoRequest extends RoaAcsRequest<GetRepoResponse> {
+public class GetImageManifestRequest extends RoaAcsRequest<GetImageManifestResponse> {
 	
-	public GetRepoRequest() {
-		super("cr", "2016-06-07", "GetRepo");
-		setUriPattern("/repos/[RepoNamespace]/[RepoName]");
+	public GetImageManifestRequest() {
+		super("cr", "2016-06-07", "GetImageManifest");
+		setUriPattern("/repos/[RepoNamespace]/[RepoName]/tags/[Tag]/manifest");
 		setMethod(MethodType.GET);
 	}
 
 	private String repoNamespace;
 
 	private String repoName;
+
+	private String tag;
+
+	private Integer schemaVersion;
 
 	public String getRepoNamespace() {
 		return this.repoNamespace;
@@ -55,9 +59,31 @@ public class GetRepoRequest extends RoaAcsRequest<GetRepoResponse> {
 		}
 	}
 
+	public String getTag() {
+		return this.tag;
+	}
+
+	public void setTag(String tag) {
+		this.tag = tag;
+		if(tag != null){
+			putPathParameter("Tag", tag);
+		}
+	}
+
+	public Integer getSchemaVersion() {
+		return this.schemaVersion;
+	}
+
+	public void setSchemaVersion(Integer schemaVersion) {
+		this.schemaVersion = schemaVersion;
+		if(schemaVersion != null){
+			putQueryParameter("SchemaVersion", schemaVersion.toString());
+		}
+	}
+
 	@Override
-	public Class<GetRepoResponse> getResponseClass() {
-		return GetRepoResponse.class;
+	public Class<GetImageManifestResponse> getResponseClass() {
+		return GetImageManifestResponse.class;
 	}
 
 }

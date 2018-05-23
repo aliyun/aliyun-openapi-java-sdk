@@ -12,17 +12,20 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.cr.transform.v20160607;
+package com.aliyuncs.cr.model.v20160607;
 
-import com.aliyuncs.cr.model.v20160607.GetRepoListResponse;
+import com.aliyuncs.AcsResponse;
+import com.aliyuncs.cr.transform.v20160607.GetAuthorizationTokenResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
+/**
+ * @author auto create
+ * @version 
+ */
+public class GetAuthorizationTokenResponse extends AcsResponse {
 
-public class GetRepoListResponseUnmarshaller {
-
-	public static GetRepoListResponse unmarshall(GetRepoListResponse getRepoListResponse, UnmarshallerContext context) {
-		
-	 
-	 	return getRepoListResponse;
+	@Override
+	public GetAuthorizationTokenResponse getInstance(UnmarshallerContext context) {
+		return	GetAuthorizationTokenResponseUnmarshaller.unmarshall(this, context);
 	}
 }

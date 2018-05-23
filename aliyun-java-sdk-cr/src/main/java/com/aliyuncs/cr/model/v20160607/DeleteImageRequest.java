@@ -21,17 +21,19 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class GetRepoRequest extends RoaAcsRequest<GetRepoResponse> {
+public class DeleteImageRequest extends RoaAcsRequest<DeleteImageResponse> {
 	
-	public GetRepoRequest() {
-		super("cr", "2016-06-07", "GetRepo");
-		setUriPattern("/repos/[RepoNamespace]/[RepoName]");
-		setMethod(MethodType.GET);
+	public DeleteImageRequest() {
+		super("cr", "2016-06-07", "DeleteImage");
+		setUriPattern("/repos/[RepoNamespace]/[RepoName]/tags/[Tag]");
+		setMethod(MethodType.DELETE);
 	}
 
 	private String repoNamespace;
 
 	private String repoName;
+
+	private String tag;
 
 	public String getRepoNamespace() {
 		return this.repoNamespace;
@@ -55,9 +57,20 @@ public class GetRepoRequest extends RoaAcsRequest<GetRepoResponse> {
 		}
 	}
 
+	public String getTag() {
+		return this.tag;
+	}
+
+	public void setTag(String tag) {
+		this.tag = tag;
+		if(tag != null){
+			putPathParameter("Tag", tag);
+		}
+	}
+
 	@Override
-	public Class<GetRepoResponse> getResponseClass() {
-		return GetRepoResponse.class;
+	public Class<DeleteImageResponse> getResponseClass() {
+		return DeleteImageResponse.class;
 	}
 
 }

@@ -21,43 +21,30 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class GetNamespaceListRequest extends RoaAcsRequest<GetNamespaceListResponse> {
+public class GetNamespaceRequest extends RoaAcsRequest<GetNamespaceResponse> {
 	
-	public GetNamespaceListRequest() {
-		super("cr", "2016-06-07", "GetNamespaceList");
-		setUriPattern("/namespace");
+	public GetNamespaceRequest() {
+		super("cr", "2016-06-07", "GetNamespace");
+		setUriPattern("/namespace/[Namespace]");
 		setMethod(MethodType.GET);
 	}
 
-	private String authorize;
+	private String namespace;
 
-	private String status;
-
-	public String getAuthorize() {
-		return this.authorize;
+	public String getNamespace() {
+		return this.namespace;
 	}
 
-	public void setAuthorize(String authorize) {
-		this.authorize = authorize;
-		if(authorize != null){
-			putQueryParameter("Authorize", authorize);
-		}
-	}
-
-	public String getStatus() {
-		return this.status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
-		if(status != null){
-			putQueryParameter("Status", status);
+	public void setNamespace(String namespace) {
+		this.namespace = namespace;
+		if(namespace != null){
+			putPathParameter("Namespace", namespace);
 		}
 	}
 
 	@Override
-	public Class<GetNamespaceListResponse> getResponseClass() {
-		return GetNamespaceListResponse.class;
+	public Class<GetNamespaceResponse> getResponseClass() {
+		return GetNamespaceResponse.class;
 	}
 
 }

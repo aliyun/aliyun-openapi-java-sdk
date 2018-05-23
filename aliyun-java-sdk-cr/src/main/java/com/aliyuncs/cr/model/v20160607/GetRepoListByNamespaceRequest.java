@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.cr.model.v20160607;
 
 import com.aliyuncs.RoaAcsRequest;
@@ -30,9 +31,11 @@ public class GetRepoListByNamespaceRequest extends RoaAcsRequest<GetRepoListByNa
 
 	private String repoNamespace;
 
+	private Integer pageSize;
+
 	private Integer page;
 
-	private Integer pageSize;
+	private String status;
 
 	public String getRepoNamespace() {
 		return this.repoNamespace;
@@ -40,16 +43,9 @@ public class GetRepoListByNamespaceRequest extends RoaAcsRequest<GetRepoListByNa
 
 	public void setRepoNamespace(String repoNamespace) {
 		this.repoNamespace = repoNamespace;
-		putPathParameter("RepoNamespace", repoNamespace);
-	}
-
-	public Integer getPage() {
-		return this.page;
-	}
-
-	public void setPage(Integer page) {
-		this.page = page;
-		putQueryParameter("Page", page);
+		if(repoNamespace != null){
+			putPathParameter("RepoNamespace", repoNamespace);
+		}
 	}
 
 	public Integer getPageSize() {
@@ -58,7 +54,31 @@ public class GetRepoListByNamespaceRequest extends RoaAcsRequest<GetRepoListByNa
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
-		putQueryParameter("PageSize", pageSize);
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public Integer getPage() {
+		return this.page;
+	}
+
+	public void setPage(Integer page) {
+		this.page = page;
+		if(page != null){
+			putQueryParameter("Page", page.toString());
+		}
+	}
+
+	public String getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+		if(status != null){
+			putQueryParameter("Status", status);
+		}
 	}
 
 	@Override

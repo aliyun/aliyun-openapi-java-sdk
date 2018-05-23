@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.cr.model.v20160607;
 
 import com.aliyuncs.RoaAcsRequest;
@@ -28,18 +29,11 @@ public class GetRepoListRequest extends RoaAcsRequest<GetRepoListResponse> {
 		setMethod(MethodType.GET);
 	}
 
-	private Integer page;
-
 	private Integer pageSize;
 
-	public Integer getPage() {
-		return this.page;
-	}
+	private Integer page;
 
-	public void setPage(Integer page) {
-		this.page = page;
-		putQueryParameter("Page", page);
-	}
+	private String status;
 
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -47,7 +41,31 @@ public class GetRepoListRequest extends RoaAcsRequest<GetRepoListResponse> {
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
-		putQueryParameter("PageSize", pageSize);
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public Integer getPage() {
+		return this.page;
+	}
+
+	public void setPage(Integer page) {
+		this.page = page;
+		if(page != null){
+			putQueryParameter("Page", page.toString());
+		}
+	}
+
+	public String getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+		if(status != null){
+			putQueryParameter("Status", status);
+		}
 	}
 
 	@Override

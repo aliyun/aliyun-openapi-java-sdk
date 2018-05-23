@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.cr.model.v20160607;
 
 import com.aliyuncs.RoaAcsRequest;
@@ -32,9 +33,9 @@ public class GetRepoTagsRequest extends RoaAcsRequest<GetRepoTagsResponse> {
 
 	private String repoName;
 
-	private Integer page;
-
 	private Integer pageSize;
+
+	private Integer page;
 
 	public String getRepoNamespace() {
 		return this.repoNamespace;
@@ -42,7 +43,9 @@ public class GetRepoTagsRequest extends RoaAcsRequest<GetRepoTagsResponse> {
 
 	public void setRepoNamespace(String repoNamespace) {
 		this.repoNamespace = repoNamespace;
-		putPathParameter("RepoNamespace", repoNamespace);
+		if(repoNamespace != null){
+			putPathParameter("RepoNamespace", repoNamespace);
+		}
 	}
 
 	public String getRepoName() {
@@ -51,16 +54,9 @@ public class GetRepoTagsRequest extends RoaAcsRequest<GetRepoTagsResponse> {
 
 	public void setRepoName(String repoName) {
 		this.repoName = repoName;
-		putPathParameter("RepoName", repoName);
-	}
-
-	public Integer getPage() {
-		return this.page;
-	}
-
-	public void setPage(Integer page) {
-		this.page = page;
-		putQueryParameter("Page", page);
+		if(repoName != null){
+			putPathParameter("RepoName", repoName);
+		}
 	}
 
 	public Integer getPageSize() {
@@ -69,7 +65,20 @@ public class GetRepoTagsRequest extends RoaAcsRequest<GetRepoTagsResponse> {
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
-		putQueryParameter("PageSize", pageSize);
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public Integer getPage() {
+		return this.page;
+	}
+
+	public void setPage(Integer page) {
+		this.page = page;
+		if(page != null){
+			putQueryParameter("Page", page.toString());
+		}
 	}
 
 	@Override
