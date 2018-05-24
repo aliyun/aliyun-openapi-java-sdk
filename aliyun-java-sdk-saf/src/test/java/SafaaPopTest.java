@@ -28,7 +28,7 @@ public class SafaaPopTest extends BaseSample{
         executeRequestRequest.setHttpContentType(FormatType.JSON);
         executeRequestRequest.setEncoding("utf-8");
         //服务的产品码：address_validation/email_risk/coupon_abuse/account_abuse。
-        executeRequestRequest.setService("account_abuse");
+        executeRequestRequest.setService("email_risk");
 
 
         List<Map<String, Object>> tasks = new ArrayList<Map<String, Object>>();

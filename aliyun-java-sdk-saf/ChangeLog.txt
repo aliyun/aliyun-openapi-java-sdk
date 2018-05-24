@@ -1,3 +1,6 @@
+2018-05-24 Version: 1.0.0
+1, fix  bug，add pom dependency
+
 2018-05-17 Version: 1.0.0
 1, add test case model
 
