@@ -10,6 +10,7 @@ import com.aliyuncs.exceptions.ClientException;
 import com.aliyuncs.http.FormatType;
 import com.aliyuncs.http.HttpRequest;
 import com.aliyuncs.http.HttpResponse;
+import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.clients.CompatibleUrlConnClient;
 import com.aliyuncs.reader.Reader;
 import com.aliyuncs.reader.ReaderFactory;
@@ -34,6 +35,7 @@ public class DescribeEndpointServiceImpl implements DescribeEndpointService {
         }
 
         DescribeEndpointRequest request = new DescribeEndpointRequest();
+        request.setProtocol(ProtocolType.HTTPS);
         request.setAcceptFormat(FormatType.JSON);
         request.setId(regionId);
         request.setRegionId(locationConfig.getRegionId());
@@ -43,7 +45,6 @@ public class DescribeEndpointServiceImpl implements DescribeEndpointService {
             endpointType = DEFAULT_ENDPOINT_TYPE;
         }
         request.setEndpointType(endpointType);
-
         Signer signer = Signer.getSigner(new LegacyCredentials(credential));
         ProductDomain domain = new ProductDomain(locationConfig.getProduct(), locationConfig.getEndpoint());
 
