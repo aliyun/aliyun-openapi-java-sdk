@@ -28,11 +28,15 @@ public class ListMyGroupInstancesDetailsRequest extends RpcAcsRequest<ListMyGrou
 
 	private Boolean total;
 
+	private String instanceIds;
+
 	private Long groupId;
 
 	private Integer pageSize;
 
 	private String category;
+
+	private String keyword;
 
 	private Integer pageNumber;
 
@@ -44,6 +48,17 @@ public class ListMyGroupInstancesDetailsRequest extends RpcAcsRequest<ListMyGrou
 		this.total = total;
 		if(total != null){
 			putQueryParameter("Total", total.toString());
+		}
+	}
+
+	public String getInstanceIds() {
+		return this.instanceIds;
+	}
+
+	public void setInstanceIds(String instanceIds) {
+		this.instanceIds = instanceIds;
+		if(instanceIds != null){
+			putQueryParameter("InstanceIds", instanceIds);
 		}
 	}
 
@@ -77,6 +92,17 @@ public class ListMyGroupInstancesDetailsRequest extends RpcAcsRequest<ListMyGrou
 		this.category = category;
 		if(category != null){
 			putQueryParameter("Category", category);
+		}
+	}
+
+	public String getKeyword() {
+		return this.keyword;
+	}
+
+	public void setKeyword(String keyword) {
+		this.keyword = keyword;
+		if(keyword != null){
+			putQueryParameter("Keyword", keyword);
 		}
 	}
 

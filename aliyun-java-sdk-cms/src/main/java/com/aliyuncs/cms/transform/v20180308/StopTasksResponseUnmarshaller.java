@@ -26,6 +26,7 @@ public class StopTasksResponseUnmarshaller {
 		stopTasksResponse.setCode(context.stringValue("StopTasksResponse.Code"));
 		stopTasksResponse.setMessage(context.stringValue("StopTasksResponse.Message"));
 		stopTasksResponse.setSuccess(context.stringValue("StopTasksResponse.Success"));
+		stopTasksResponse.setData(context.stringValue("StopTasksResponse.Data"));
 	 
 	 	return stopTasksResponse;
 	}

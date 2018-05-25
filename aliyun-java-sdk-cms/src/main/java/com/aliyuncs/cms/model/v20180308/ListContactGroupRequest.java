@@ -26,22 +26,9 @@ public class ListContactGroupRequest extends RpcAcsRequest<ListContactGroupRespo
 		super("Cms", "2018-03-08", "ListContactGroup", "cms");
 	}
 
-	private String callby_cms_owner;
-
 	private Integer pageSize;
 
 	private Integer pageNumber;
-
-	public String getCallby_cms_owner() {
-		return this.callby_cms_owner;
-	}
-
-	public void setCallby_cms_owner(String callby_cms_owner) {
-		this.callby_cms_owner = callby_cms_owner;
-		if(callby_cms_owner != null){
-			putQueryParameter("callby_cms_owner", callby_cms_owner);
-		}
-	}
 
 	public Integer getPageSize() {
 		return this.pageSize;

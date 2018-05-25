@@ -28,11 +28,11 @@ public class QueryMetricLastRequest extends RpcAcsRequest<QueryMetricLastRespons
 
 	private String cursor;
 
-	private String callby_cms_owner;
-
 	private Long resourceOwnerId;
 
 	private String period;
+
+	private String metric;
 
 	private String length;
 
@@ -43,8 +43,6 @@ public class QueryMetricLastRequest extends RpcAcsRequest<QueryMetricLastRespons
 	private String express;
 
 	private String startTime;
-
-	private String metric;
 
 	private String page;
 
@@ -58,17 +56,6 @@ public class QueryMetricLastRequest extends RpcAcsRequest<QueryMetricLastRespons
 		this.cursor = cursor;
 		if(cursor != null){
 			putQueryParameter("Cursor", cursor);
-		}
-	}
-
-	public String getCallby_cms_owner() {
-		return this.callby_cms_owner;
-	}
-
-	public void setCallby_cms_owner(String callby_cms_owner) {
-		this.callby_cms_owner = callby_cms_owner;
-		if(callby_cms_owner != null){
-			putQueryParameter("callby_cms_owner", callby_cms_owner);
 		}
 	}
 
@@ -91,6 +78,17 @@ public class QueryMetricLastRequest extends RpcAcsRequest<QueryMetricLastRespons
 		this.period = period;
 		if(period != null){
 			putQueryParameter("Period", period);
+		}
+	}
+
+	public String getMetric() {
+		return this.metric;
+	}
+
+	public void setMetric(String metric) {
+		this.metric = metric;
+		if(metric != null){
+			putQueryParameter("Metric", metric);
 		}
 	}
 
@@ -146,17 +144,6 @@ public class QueryMetricLastRequest extends RpcAcsRequest<QueryMetricLastRespons
 		this.startTime = startTime;
 		if(startTime != null){
 			putQueryParameter("StartTime", startTime);
-		}
-	}
-
-	public String getMetric() {
-		return this.metric;
-	}
-
-	public void setMetric(String metric) {
-		this.metric = metric;
-		if(metric != null){
-			putQueryParameter("Metric", metric);
 		}
 	}
 

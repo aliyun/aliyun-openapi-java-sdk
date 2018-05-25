@@ -26,11 +26,11 @@ public class QueryMetricTopRequest extends RpcAcsRequest<QueryMetricTopResponse>
 		super("Cms", "2018-03-08", "QueryMetricTop", "cms");
 	}
 
-	private String callby_cms_owner;
+	private Long resourceOwnerId;
 
 	private String period;
 
-	private Long resourceOwnerId;
+	private String metric;
 
 	private String length;
 
@@ -44,20 +44,18 @@ public class QueryMetricTopRequest extends RpcAcsRequest<QueryMetricTopResponse>
 
 	private String startTime;
 
-	private String orderDesc;
-
-	private String metric;
-
 	private String dimensions;
 
-	public String getCallby_cms_owner() {
-		return this.callby_cms_owner;
+	private String orderDesc;
+
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
 	}
 
-	public void setCallby_cms_owner(String callby_cms_owner) {
-		this.callby_cms_owner = callby_cms_owner;
-		if(callby_cms_owner != null){
-			putQueryParameter("callby_cms_owner", callby_cms_owner);
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
 		}
 	}
 
@@ -72,14 +70,14 @@ public class QueryMetricTopRequest extends RpcAcsRequest<QueryMetricTopResponse>
 		}
 	}
 
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
+	public String getMetric() {
+		return this.metric;
 	}
 
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+	public void setMetric(String metric) {
+		this.metric = metric;
+		if(metric != null){
+			putQueryParameter("Metric", metric);
 		}
 	}
 
@@ -149,28 +147,6 @@ public class QueryMetricTopRequest extends RpcAcsRequest<QueryMetricTopResponse>
 		}
 	}
 
-	public String getOrderDesc() {
-		return this.orderDesc;
-	}
-
-	public void setOrderDesc(String orderDesc) {
-		this.orderDesc = orderDesc;
-		if(orderDesc != null){
-			putQueryParameter("OrderDesc", orderDesc);
-		}
-	}
-
-	public String getMetric() {
-		return this.metric;
-	}
-
-	public void setMetric(String metric) {
-		this.metric = metric;
-		if(metric != null){
-			putQueryParameter("Metric", metric);
-		}
-	}
-
 	public String getDimensions() {
 		return this.dimensions;
 	}
@@ -179,6 +155,17 @@ public class QueryMetricTopRequest extends RpcAcsRequest<QueryMetricTopResponse>
 		this.dimensions = dimensions;
 		if(dimensions != null){
 			putQueryParameter("Dimensions", dimensions);
+		}
+	}
+
+	public String getOrderDesc() {
+		return this.orderDesc;
+	}
+
+	public void setOrderDesc(String orderDesc) {
+		this.orderDesc = orderDesc;
+		if(orderDesc != null){
+			putQueryParameter("OrderDesc", orderDesc);
 		}
 	}
 

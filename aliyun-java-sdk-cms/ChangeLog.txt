@@ -1,3 +1,14 @@
+2018-05-25 Version: 6.0.6
+1, CreateAlarm,DeleteAlarm,UpdateAlarm,DisableAlarm,EnableAlarm,ListAlarm,ListAlarmHistory,ListContactGroup,PutMetricData,QueryMetricData,QueryMetricLast,QueryMetricList,QueryMetricTop remove useless parameter: callby_cms_owner. 
+2, QueryMetricList remove useless parameter: Page.
+3, UpdateMyGroupMembers add parameter: Readers.
+4, StopTasks,StartTasks,DeleteTasks add return value: Data.
+5, ModifyTask remove invalid parameter: TaskType.
+6, CreateTask fix bug: TaskName maybe duplicated.
+7, Add lost return value for CreateTask.
+8, DescribeISPAreaCity add parameter: isp and city.
+9, remove api: PutMetricData.
+
 2018-04-28 Version: 6.0.5
 1, Add api: DescribeTasks、StartTasks、StopTasks、DeleteTasks、ModifyTask、CreateTask、DescribeTaskDetail、DescribeISPAreaCity.
 

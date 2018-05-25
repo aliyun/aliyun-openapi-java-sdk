@@ -22,6 +22,7 @@ public class PutCustomMetricResponseUnmarshaller {
 
 	public static PutCustomMetricResponse unmarshall(PutCustomMetricResponse putCustomMetricResponse, UnmarshallerContext context) {
 		
+		putCustomMetricResponse.setRequestId(context.stringValue("PutCustomMetricResponse.RequestId"));
 		putCustomMetricResponse.setCode(context.stringValue("PutCustomMetricResponse.Code"));
 		putCustomMetricResponse.setMessage(context.stringValue("PutCustomMetricResponse.Message"));
 		putCustomMetricResponse.setData(context.stringValue("PutCustomMetricResponse.Data"));

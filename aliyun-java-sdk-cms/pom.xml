@@ -3,7 +3,7 @@
   <groupId>com.aliyun</groupId>
   <artifactId>aliyun-java-sdk-cms</artifactId>
   <packaging>jar</packaging>
-  <version>6.0.5</version>
+  <version>6.0.6</version>
     <name>aliyun-java-sdk-cms</name>
   <url>http://www.aliyun.com</url>
   <description>Aliyun Open API SDK for Java
@@ -27,23 +27,13 @@ http://www.aliyun.com</description>
 </distributionManagement>
 
   <dependencies> 
-    <dependency>
-		<groupId>com.aliyun</groupId>
-		<artifactId>aliyun-java-sdk-core</artifactId>
-		<version>3.2.6</version>
-   </dependency>
-   <dependency>
-     <groupId>junit</groupId>
-     <artifactId>junit</artifactId>
-     <version>4.4</version>
-     <scope>test</scope>
-   </dependency>
-   <dependency>
-     <groupId>com.alibaba</groupId>
-     <artifactId>fastjson</artifactId>
-     <version>1.2.28</version>
-   </dependency>
- </dependencies>
+  	<dependency>
+  		<groupId>com.aliyun</groupId>
+  		<artifactId>aliyun-java-sdk-core</artifactId>
+		<optional>true</optional>
+  		<version>3.7.1</version>
+  	</dependency>
+  </dependencies>
 	<licenses>
 		<license>
 			<name></name>
@@ -52,8 +42,9 @@ http://www.aliyun.com</description>
 		</license>
 	</licenses>
 	<scm>
-		<url></url>
-		<connection></connection>
+        <connection>scm:git:git://github.com/aliyun/aliyun-openapi-java-sdk.git</connection>
+        <developerConnection>scm:git:git@github.com:aliyun/aliyun-openapi-java-sdk.git</developerConnection>
+        <url>https://github.com/aliyun/aliyun-openapi-java-sdk</url>
 	</scm>
 	<developers>
 		<developer>

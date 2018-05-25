@@ -26,8 +26,6 @@ public class QueryMetricDataRequest extends RpcAcsRequest<QueryMetricDataRespons
 		super("Cms", "2018-03-08", "QueryMetricData", "cms");
 	}
 
-	private String callby_cms_owner;
-
 	private Long resourceOwnerId;
 
 	private String period;
@@ -45,17 +43,6 @@ public class QueryMetricDataRequest extends RpcAcsRequest<QueryMetricDataRespons
 	private String startTime;
 
 	private String dimensions;
-
-	public String getCallby_cms_owner() {
-		return this.callby_cms_owner;
-	}
-
-	public void setCallby_cms_owner(String callby_cms_owner) {
-		this.callby_cms_owner = callby_cms_owner;
-		if(callby_cms_owner != null){
-			putQueryParameter("callby_cms_owner", callby_cms_owner);
-		}
-	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;

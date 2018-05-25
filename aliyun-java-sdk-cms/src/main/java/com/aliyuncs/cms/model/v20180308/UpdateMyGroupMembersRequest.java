@@ -26,9 +26,22 @@ public class UpdateMyGroupMembersRequest extends RpcAcsRequest<UpdateMyGroupMemb
 		super("Cms", "2018-03-08", "UpdateMyGroupMembers", "cms");
 	}
 
+	private String readers;
+
 	private Long groupId;
 
 	private String masters;
+
+	public String getReaders() {
+		return this.readers;
+	}
+
+	public void setReaders(String readers) {
+		this.readers = readers;
+		if(readers != null){
+			putQueryParameter("Readers", readers);
+		}
+	}
 
 	public Long getGroupId() {
 		return this.groupId;

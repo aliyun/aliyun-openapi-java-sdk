@@ -26,6 +26,7 @@ public class ModifyTaskResponseUnmarshaller {
 		modifyTaskResponse.setCode(context.stringValue("ModifyTaskResponse.Code"));
 		modifyTaskResponse.setMessage(context.stringValue("ModifyTaskResponse.Message"));
 		modifyTaskResponse.setSuccess(context.stringValue("ModifyTaskResponse.Success"));
+		modifyTaskResponse.setData(context.stringValue("ModifyTaskResponse.Data"));
 	 
 	 	return modifyTaskResponse;
 	}

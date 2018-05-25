@@ -117,6 +117,8 @@ public class ListMyGroupInstancesResponse extends AcsResponse {
 
 		private String category;
 
+		private String instanceName;
+
 		public Long getId() {
 			return this.id;
 		}
@@ -155,6 +157,14 @@ public class ListMyGroupInstancesResponse extends AcsResponse {
 
 		public void setCategory(String category) {
 			this.category = category;
+		}
+
+		public String getInstanceName() {
+			return this.instanceName;
+		}
+
+		public void setInstanceName(String instanceName) {
+			this.instanceName = instanceName;
 		}
 	}
 

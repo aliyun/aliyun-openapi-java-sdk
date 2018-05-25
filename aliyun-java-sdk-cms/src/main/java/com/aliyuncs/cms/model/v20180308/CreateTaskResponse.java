@@ -32,6 +32,8 @@ public class CreateTaskResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String data;
+
 	public String getCode() {
 		return this.code;
 	}
@@ -62,6 +64,14 @@ public class CreateTaskResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getData() {
+		return this.data;
+	}
+
+	public void setData(String data) {
+		this.data = data;
 	}
 
 	@Override

@@ -22,6 +22,7 @@ public class PutEventResponseUnmarshaller {
 
 	public static PutEventResponse unmarshall(PutEventResponse putEventResponse, UnmarshallerContext context) {
 		
+		putEventResponse.setRequestId(context.stringValue("PutEventResponse.RequestId"));
 		putEventResponse.setCode(context.stringValue("PutEventResponse.Code"));
 		putEventResponse.setMessage(context.stringValue("PutEventResponse.Message"));
 		putEventResponse.setData(context.stringValue("PutEventResponse.Data"));

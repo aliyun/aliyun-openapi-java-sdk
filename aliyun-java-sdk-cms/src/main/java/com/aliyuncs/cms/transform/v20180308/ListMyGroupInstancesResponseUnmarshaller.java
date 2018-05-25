@@ -42,6 +42,7 @@ public class ListMyGroupInstancesResponseUnmarshaller {
 			resource.setRegionId(context.stringValue("ListMyGroupInstancesResponse.Resources["+ i +"].RegionId"));
 			resource.setInstanceId(context.stringValue("ListMyGroupInstancesResponse.Resources["+ i +"].InstanceId"));
 			resource.setCategory(context.stringValue("ListMyGroupInstancesResponse.Resources["+ i +"].Category"));
+			resource.setInstanceName(context.stringValue("ListMyGroupInstancesResponse.Resources["+ i +"].InstanceName"));
 
 			resources.add(resource);
 		}

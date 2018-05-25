@@ -36,8 +36,6 @@ public class QueryCustomMetricListRequest extends RpcAcsRequest<QueryCustomMetri
 
 	private String dimension;
 
-	private String uUID;
-
 	private String md5;
 
 	public String getSize() {
@@ -92,17 +90,6 @@ public class QueryCustomMetricListRequest extends RpcAcsRequest<QueryCustomMetri
 		this.dimension = dimension;
 		if(dimension != null){
 			putQueryParameter("Dimension", dimension);
-		}
-	}
-
-	public String getUUID() {
-		return this.uUID;
-	}
-
-	public void setUUID(String uUID) {
-		this.uUID = uUID;
-		if(uUID != null){
-			putQueryParameter("UUID", uUID);
 		}
 	}
 

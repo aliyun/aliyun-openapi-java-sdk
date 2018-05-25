@@ -26,20 +26,7 @@ public class DisableAlarmRequest extends RpcAcsRequest<DisableAlarmResponse> {
 		super("Cms", "2018-03-08", "DisableAlarm", "cms");
 	}
 
-	private String callby_cms_owner;
-
 	private String id;
-
-	public String getCallby_cms_owner() {
-		return this.callby_cms_owner;
-	}
-
-	public void setCallby_cms_owner(String callby_cms_owner) {
-		this.callby_cms_owner = callby_cms_owner;
-		if(callby_cms_owner != null){
-			putQueryParameter("callby_cms_owner", callby_cms_owner);
-		}
-	}
 
 	public String getId() {
 		return this.id;

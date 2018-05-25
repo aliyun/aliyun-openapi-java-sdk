@@ -26,8 +26,6 @@ public class CreateAlarmRequest extends RpcAcsRequest<CreateAlarmResponse> {
 		super("Cms", "2018-03-08", "CreateAlarm", "cms");
 	}
 
-	private String callby_cms_owner;
-
 	private Integer period;
 
 	private String webhook;
@@ -40,9 +38,9 @@ public class CreateAlarmRequest extends RpcAcsRequest<CreateAlarmResponse> {
 
 	private Integer startTime;
 
-	private String name;
-
 	private String namespace;
+
+	private String name;
 
 	private Integer evaluationCount;
 
@@ -57,17 +55,6 @@ public class CreateAlarmRequest extends RpcAcsRequest<CreateAlarmResponse> {
 	private String dimensions;
 
 	private String statistics;
-
-	public String getCallby_cms_owner() {
-		return this.callby_cms_owner;
-	}
-
-	public void setCallby_cms_owner(String callby_cms_owner) {
-		this.callby_cms_owner = callby_cms_owner;
-		if(callby_cms_owner != null){
-			putQueryParameter("callby_cms_owner", callby_cms_owner);
-		}
-	}
 
 	public Integer getPeriod() {
 		return this.period;
@@ -135,17 +122,6 @@ public class CreateAlarmRequest extends RpcAcsRequest<CreateAlarmResponse> {
 		}
 	}
 
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putQueryParameter("Name", name);
-		}
-	}
-
 	public String getNamespace() {
 		return this.namespace;
 	}
@@ -154,6 +130,17 @@ public class CreateAlarmRequest extends RpcAcsRequest<CreateAlarmResponse> {
 		this.namespace = namespace;
 		if(namespace != null){
 			putQueryParameter("Namespace", namespace);
+		}
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
 		}
 	}
 

@@ -28,8 +28,6 @@ public class ListAlarmHistoryRequest extends RpcAcsRequest<ListAlarmHistoryRespo
 
 	private String cursor;
 
-	private String callby_cms_owner;
-
 	private Integer size;
 
 	private String endTime;
@@ -46,17 +44,6 @@ public class ListAlarmHistoryRequest extends RpcAcsRequest<ListAlarmHistoryRespo
 		this.cursor = cursor;
 		if(cursor != null){
 			putQueryParameter("Cursor", cursor);
-		}
-	}
-
-	public String getCallby_cms_owner() {
-		return this.callby_cms_owner;
-	}
-
-	public void setCallby_cms_owner(String callby_cms_owner) {
-		this.callby_cms_owner = callby_cms_owner;
-		if(callby_cms_owner != null){
-			putQueryParameter("callby_cms_owner", callby_cms_owner);
 		}
 	}
 

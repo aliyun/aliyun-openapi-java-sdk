@@ -26,6 +26,32 @@ public class DescribeISPAreaCityRequest extends RpcAcsRequest<DescribeISPAreaCit
 		super("Cms", "2018-03-08", "DescribeISPAreaCity", "cms");
 	}
 
+	private String city;
+
+	private String isp;
+
+	public String getCity() {
+		return this.city;
+	}
+
+	public void setCity(String city) {
+		this.city = city;
+		if(city != null){
+			putQueryParameter("City", city);
+		}
+	}
+
+	public String getIsp() {
+		return this.isp;
+	}
+
+	public void setIsp(String isp) {
+		this.isp = isp;
+		if(isp != null){
+			putQueryParameter("Isp", isp);
+		}
+	}
+
 	@Override
 	public Class<DescribeISPAreaCityResponse> getResponseClass() {
 		return DescribeISPAreaCityResponse.class;
