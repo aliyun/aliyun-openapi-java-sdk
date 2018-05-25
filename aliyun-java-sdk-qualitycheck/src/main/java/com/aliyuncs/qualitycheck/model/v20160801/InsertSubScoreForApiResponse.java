@@ -14,7 +14,6 @@
 
 package com.aliyuncs.qualitycheck.model.v20160801;
 
-import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.qualitycheck.transform.v20160801.InsertSubScoreForApiResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -33,7 +32,7 @@ public class InsertSubScoreForApiResponse extends AcsResponse {
 
 	private String message;
 
-	private List<ScorePo> data;
+	private Data data;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -67,15 +66,15 @@ public class InsertSubScoreForApiResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public List<ScorePo> getData() {
+	public Data getData() {
 		return this.data;
 	}
 
-	public void setData(List<ScorePo> data) {
+	public void setData(Data data) {
 		this.data = data;
 	}
 
-	public static class ScorePo {
+	public static class Data {
 
 		private Long scoreSubId;
 

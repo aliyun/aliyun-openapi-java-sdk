@@ -1,3 +1,6 @@
+2018-05-25 Version: 2.8.2
+1, add new interface
+
 2018-05-24 Version: 2.8.1
 1, add new interface
 

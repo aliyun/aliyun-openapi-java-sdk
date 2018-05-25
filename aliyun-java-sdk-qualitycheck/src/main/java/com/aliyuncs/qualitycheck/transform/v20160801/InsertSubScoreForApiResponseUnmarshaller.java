@@ -14,11 +14,8 @@
 
 package com.aliyuncs.qualitycheck.transform.v20160801;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.aliyuncs.qualitycheck.model.v20160801.InsertSubScoreForApiResponse;
-import com.aliyuncs.qualitycheck.model.v20160801.InsertSubScoreForApiResponse.ScorePo;
+import com.aliyuncs.qualitycheck.model.v20160801.InsertSubScoreForApiResponse.Data;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -31,14 +28,9 @@ public class InsertSubScoreForApiResponseUnmarshaller {
 		insertSubScoreForApiResponse.setCode(context.stringValue("InsertSubScoreForApiResponse.code"));
 		insertSubScoreForApiResponse.setMessage(context.stringValue("InsertSubScoreForApiResponse.message"));
 
-		List<ScorePo> data = new ArrayList<ScorePo>();
-		for (int i = 0; i < context.lengthValue("InsertSubScoreForApiResponse.data.Length"); i++) {
-			ScorePo scorePo = new ScorePo();
-			scorePo.setScoreSubId(context.longValue("InsertSubScoreForApiResponse.data["+ i +"].scoreSubId"));
-			scorePo.setScoreSubName(context.stringValue("InsertSubScoreForApiResponse.data["+ i +"].scoreSubName"));
-
-			data.add(scorePo);
-		}
+		Data data = new Data();
+		data.setScoreSubId(context.longValue("InsertSubScoreForApiResponse.data.scoreSubId"));
+		data.setScoreSubName(context.stringValue("InsertSubScoreForApiResponse.data.scoreSubName"));
 		insertSubScoreForApiResponse.setData(data);
 	 
 	 	return insertSubScoreForApiResponse;
