@@ -25,12 +25,12 @@ import com.aliyuncs.imm.model.v20170906.IndexFaceResponse.SuccessDetailsItem.Fac
 import com.aliyuncs.imm.model.v20170906.IndexFaceResponse.SuccessDetailsItem.FacesItem.FaceAttribute.Age;
 import com.aliyuncs.imm.model.v20170906.IndexFaceResponse.SuccessDetailsItem.FacesItem.FaceAttribute.Blur;
 import com.aliyuncs.imm.model.v20170906.IndexFaceResponse.SuccessDetailsItem.FacesItem.FaceAttribute.Blur.Blurness;
-import com.aliyuncs.imm.model.v20170906.IndexFaceResponse.SuccessDetailsItem.FacesItem.FaceAttribute.Eyestatus;
-import com.aliyuncs.imm.model.v20170906.IndexFaceResponse.SuccessDetailsItem.FacesItem.FaceAttribute.Eyestatus.Left_eye_status;
-import com.aliyuncs.imm.model.v20170906.IndexFaceResponse.SuccessDetailsItem.FacesItem.FaceAttribute.Eyestatus.Right_eye_status;
-import com.aliyuncs.imm.model.v20170906.IndexFaceResponse.SuccessDetailsItem.FacesItem.FaceAttribute.Facequality;
+import com.aliyuncs.imm.model.v20170906.IndexFaceResponse.SuccessDetailsItem.FacesItem.FaceAttribute.EyeStatus;
+import com.aliyuncs.imm.model.v20170906.IndexFaceResponse.SuccessDetailsItem.FacesItem.FaceAttribute.EyeStatus.LeftEyeStatus;
+import com.aliyuncs.imm.model.v20170906.IndexFaceResponse.SuccessDetailsItem.FacesItem.FaceAttribute.EyeStatus.RightEyeStatus;
+import com.aliyuncs.imm.model.v20170906.IndexFaceResponse.SuccessDetailsItem.FacesItem.FaceAttribute.FaceQuality;
 import com.aliyuncs.imm.model.v20170906.IndexFaceResponse.SuccessDetailsItem.FacesItem.FaceAttribute.Gender;
-import com.aliyuncs.imm.model.v20170906.IndexFaceResponse.SuccessDetailsItem.FacesItem.FaceAttribute.Headpose;
+import com.aliyuncs.imm.model.v20170906.IndexFaceResponse.SuccessDetailsItem.FacesItem.FaceAttribute.HeadPose;
 import com.aliyuncs.imm.model.v20170906.IndexFaceResponse.SuccessDetailsItem.FacesItem.FaceRectangle;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -60,61 +60,61 @@ public class IndexFaceResponseUnmarshaller {
 				facesItem.setFaceId(context.stringValue("IndexFaceResponse.SuccessDetails["+ i +"].Faces["+ j +"].FaceId"));
 
 				FaceRectangle faceRectangle = new FaceRectangle();
-				faceRectangle.setTop(context.stringValue("IndexFaceResponse.SuccessDetails["+ i +"].Faces["+ j +"].FaceRectangle.top"));
-				faceRectangle.setLeft(context.stringValue("IndexFaceResponse.SuccessDetails["+ i +"].Faces["+ j +"].FaceRectangle.left"));
-				faceRectangle.setWidth(context.stringValue("IndexFaceResponse.SuccessDetails["+ i +"].Faces["+ j +"].FaceRectangle.width"));
-				faceRectangle.setHeight(context.stringValue("IndexFaceResponse.SuccessDetails["+ i +"].Faces["+ j +"].FaceRectangle.height"));
+				faceRectangle.setTop(context.stringValue("IndexFaceResponse.SuccessDetails["+ i +"].Faces["+ j +"].FaceRectangle.Top"));
+				faceRectangle.setLeft(context.stringValue("IndexFaceResponse.SuccessDetails["+ i +"].Faces["+ j +"].FaceRectangle.Left"));
+				faceRectangle.setWidth(context.stringValue("IndexFaceResponse.SuccessDetails["+ i +"].Faces["+ j +"].FaceRectangle.Width"));
+				faceRectangle.setHeight(context.stringValue("IndexFaceResponse.SuccessDetails["+ i +"].Faces["+ j +"].FaceRectangle.Height"));
 				facesItem.setFaceRectangle(faceRectangle);
 
 				FaceAttribute faceAttribute = new FaceAttribute();
 
 				Gender gender = new Gender();
-				gender.setValue(context.stringValue("IndexFaceResponse.SuccessDetails["+ i +"].Faces["+ j +"].FaceAttribute.gender.value"));
+				gender.setValue(context.stringValue("IndexFaceResponse.SuccessDetails["+ i +"].Faces["+ j +"].FaceAttribute.Gender.Value"));
 				faceAttribute.setGender(gender);
 
 				Age age = new Age();
-				age.setValue(context.integerValue("IndexFaceResponse.SuccessDetails["+ i +"].Faces["+ j +"].FaceAttribute.age.value"));
+				age.setValue(context.integerValue("IndexFaceResponse.SuccessDetails["+ i +"].Faces["+ j +"].FaceAttribute.Age.Value"));
 				faceAttribute.setAge(age);
 
-				Headpose headpose = new Headpose();
-				headpose.setPitch_angle(context.floatValue("IndexFaceResponse.SuccessDetails["+ i +"].Faces["+ j +"].FaceAttribute.headpose.pitch_angle"));
-				headpose.setRoll_angle(context.floatValue("IndexFaceResponse.SuccessDetails["+ i +"].Faces["+ j +"].FaceAttribute.headpose.roll_angle"));
-				headpose.setYaw_angle(context.floatValue("IndexFaceResponse.SuccessDetails["+ i +"].Faces["+ j +"].FaceAttribute.headpose.yaw_angle"));
-				faceAttribute.setHeadpose(headpose);
+				HeadPose headPose = new HeadPose();
+				headPose.setPitchAngle(context.floatValue("IndexFaceResponse.SuccessDetails["+ i +"].Faces["+ j +"].FaceAttribute.HeadPose.PitchAngle"));
+				headPose.setRollAngle(context.floatValue("IndexFaceResponse.SuccessDetails["+ i +"].Faces["+ j +"].FaceAttribute.HeadPose.RollAngle"));
+				headPose.setYawAngle(context.floatValue("IndexFaceResponse.SuccessDetails["+ i +"].Faces["+ j +"].FaceAttribute.HeadPose.YawAngle"));
+				faceAttribute.setHeadPose(headPose);
 
-				Eyestatus eyestatus = new Eyestatus();
+				EyeStatus eyeStatus = new EyeStatus();
 
-				Left_eye_status left_eye_status = new Left_eye_status();
-				left_eye_status.setNormal_glass_eye_open(context.floatValue("IndexFaceResponse.SuccessDetails["+ i +"].Faces["+ j +"].FaceAttribute.eyestatus.left_eye_status.normal_glass_eye_open"));
-				left_eye_status.setNo_glass_eye_close(context.floatValue("IndexFaceResponse.SuccessDetails["+ i +"].Faces["+ j +"].FaceAttribute.eyestatus.left_eye_status.no_glass_eye_close"));
-				left_eye_status.setOcclusion(context.floatValue("IndexFaceResponse.SuccessDetails["+ i +"].Faces["+ j +"].FaceAttribute.eyestatus.left_eye_status.occlusion"));
-				left_eye_status.setNo_glass_eye_open(context.floatValue("IndexFaceResponse.SuccessDetails["+ i +"].Faces["+ j +"].FaceAttribute.eyestatus.left_eye_status.no_glass_eye_open"));
-				left_eye_status.setNormal_glass_eye_close(context.floatValue("IndexFaceResponse.SuccessDetails["+ i +"].Faces["+ j +"].FaceAttribute.eyestatus.left_eye_status.normal_glass_eye_close"));
-				left_eye_status.setDark_glasses(context.floatValue("IndexFaceResponse.SuccessDetails["+ i +"].Faces["+ j +"].FaceAttribute.eyestatus.left_eye_status.dark_glasses"));
-				eyestatus.setLeft_eye_status(left_eye_status);
+				LeftEyeStatus leftEyeStatus = new LeftEyeStatus();
+				leftEyeStatus.setNormalGlassEyeOpen(context.floatValue("IndexFaceResponse.SuccessDetails["+ i +"].Faces["+ j +"].FaceAttribute.EyeStatus.LeftEyeStatus.NormalGlassEyeOpen"));
+				leftEyeStatus.setNoGlassEyeClose(context.floatValue("IndexFaceResponse.SuccessDetails["+ i +"].Faces["+ j +"].FaceAttribute.EyeStatus.LeftEyeStatus.NoGlassEyeClose"));
+				leftEyeStatus.setOcclusion(context.floatValue("IndexFaceResponse.SuccessDetails["+ i +"].Faces["+ j +"].FaceAttribute.EyeStatus.LeftEyeStatus.Occlusion"));
+				leftEyeStatus.setNoGlassEyeOpen(context.floatValue("IndexFaceResponse.SuccessDetails["+ i +"].Faces["+ j +"].FaceAttribute.EyeStatus.LeftEyeStatus.NoGlassEyeOpen"));
+				leftEyeStatus.setNormalGlassEyeClose(context.floatValue("IndexFaceResponse.SuccessDetails["+ i +"].Faces["+ j +"].FaceAttribute.EyeStatus.LeftEyeStatus.NormalGlassEyeClose"));
+				leftEyeStatus.setDarkGlasses(context.floatValue("IndexFaceResponse.SuccessDetails["+ i +"].Faces["+ j +"].FaceAttribute.EyeStatus.LeftEyeStatus.DarkGlasses"));
+				eyeStatus.setLeftEyeStatus(leftEyeStatus);
 
-				Right_eye_status right_eye_status = new Right_eye_status();
-				right_eye_status.setNormal_glass_eye_open(context.floatValue("IndexFaceResponse.SuccessDetails["+ i +"].Faces["+ j +"].FaceAttribute.eyestatus.right_eye_status.normal_glass_eye_open"));
-				right_eye_status.setNo_glass_eye_close(context.floatValue("IndexFaceResponse.SuccessDetails["+ i +"].Faces["+ j +"].FaceAttribute.eyestatus.right_eye_status.no_glass_eye_close"));
-				right_eye_status.setOcclusion(context.floatValue("IndexFaceResponse.SuccessDetails["+ i +"].Faces["+ j +"].FaceAttribute.eyestatus.right_eye_status.occlusion"));
-				right_eye_status.setNo_glass_eye_open(context.floatValue("IndexFaceResponse.SuccessDetails["+ i +"].Faces["+ j +"].FaceAttribute.eyestatus.right_eye_status.no_glass_eye_open"));
-				right_eye_status.setNormal_glass_eye_close(context.floatValue("IndexFaceResponse.SuccessDetails["+ i +"].Faces["+ j +"].FaceAttribute.eyestatus.right_eye_status.normal_glass_eye_close"));
-				right_eye_status.setDark_glasses(context.floatValue("IndexFaceResponse.SuccessDetails["+ i +"].Faces["+ j +"].FaceAttribute.eyestatus.right_eye_status.dark_glasses"));
-				eyestatus.setRight_eye_status(right_eye_status);
-				faceAttribute.setEyestatus(eyestatus);
+				RightEyeStatus rightEyeStatus = new RightEyeStatus();
+				rightEyeStatus.setNormalGlassEyeOpen(context.floatValue("IndexFaceResponse.SuccessDetails["+ i +"].Faces["+ j +"].FaceAttribute.EyeStatus.RightEyeStatus.NormalGlassEyeOpen"));
+				rightEyeStatus.setNoGlassEyeClose(context.floatValue("IndexFaceResponse.SuccessDetails["+ i +"].Faces["+ j +"].FaceAttribute.EyeStatus.RightEyeStatus.NoGlassEyeClose"));
+				rightEyeStatus.setOcclusion(context.floatValue("IndexFaceResponse.SuccessDetails["+ i +"].Faces["+ j +"].FaceAttribute.EyeStatus.RightEyeStatus.Occlusion"));
+				rightEyeStatus.setNoGlassEyeOpen(context.floatValue("IndexFaceResponse.SuccessDetails["+ i +"].Faces["+ j +"].FaceAttribute.EyeStatus.RightEyeStatus.NoGlassEyeOpen"));
+				rightEyeStatus.setNormalGlassEyeClose(context.floatValue("IndexFaceResponse.SuccessDetails["+ i +"].Faces["+ j +"].FaceAttribute.EyeStatus.RightEyeStatus.NormalGlassEyeClose"));
+				rightEyeStatus.setDarkGlasses(context.floatValue("IndexFaceResponse.SuccessDetails["+ i +"].Faces["+ j +"].FaceAttribute.EyeStatus.RightEyeStatus.DarkGlasses"));
+				eyeStatus.setRightEyeStatus(rightEyeStatus);
+				faceAttribute.setEyeStatus(eyeStatus);
 
 				Blur blur = new Blur();
 
 				Blurness blurness = new Blurness();
-				blurness.setValue(context.floatValue("IndexFaceResponse.SuccessDetails["+ i +"].Faces["+ j +"].FaceAttribute.blur.blurness.value"));
-				blurness.setThreshold(context.floatValue("IndexFaceResponse.SuccessDetails["+ i +"].Faces["+ j +"].FaceAttribute.blur.blurness.threshold"));
+				blurness.setBalue(context.floatValue("IndexFaceResponse.SuccessDetails["+ i +"].Faces["+ j +"].FaceAttribute.Blur.Blurness.Balue"));
+				blurness.setThreshold(context.floatValue("IndexFaceResponse.SuccessDetails["+ i +"].Faces["+ j +"].FaceAttribute.Blur.Blurness.Threshold"));
 				blur.setBlurness(blurness);
 				faceAttribute.setBlur(blur);
 
-				Facequality facequality = new Facequality();
-				facequality.setValue(context.floatValue("IndexFaceResponse.SuccessDetails["+ i +"].Faces["+ j +"].FaceAttribute.facequality.value"));
-				facequality.setThreshold(context.floatValue("IndexFaceResponse.SuccessDetails["+ i +"].Faces["+ j +"].FaceAttribute.facequality.threshold"));
-				faceAttribute.setFacequality(facequality);
+				FaceQuality faceQuality = new FaceQuality();
+				faceQuality.setValue(context.floatValue("IndexFaceResponse.SuccessDetails["+ i +"].Faces["+ j +"].FaceAttribute.FaceQuality.Value"));
+				faceQuality.setThreshold(context.floatValue("IndexFaceResponse.SuccessDetails["+ i +"].Faces["+ j +"].FaceAttribute.FaceQuality.Threshold"));
+				faceAttribute.setFaceQuality(faceQuality);
 				facesItem.setFaceAttribute(faceAttribute);
 
 				faces.add(facesItem);

@@ -186,13 +186,13 @@ public class GetFaceSetDetailResponse extends AcsResponse {
 
 			private Age age;
 
-			private Headpose headpose;
+			private HeadPose headPose;
 
-			private Eyestatus eyestatus;
+			private EyeStatus eyeStatus;
 
 			private Blur blur;
 
-			private Facequality facequality;
+			private FaceQuality faceQuality;
 
 			public Gender getGender() {
 				return this.gender;
@@ -210,20 +210,20 @@ public class GetFaceSetDetailResponse extends AcsResponse {
 				this.age = age;
 			}
 
-			public Headpose getHeadpose() {
-				return this.headpose;
+			public HeadPose getHeadPose() {
+				return this.headPose;
 			}
 
-			public void setHeadpose(Headpose headpose) {
-				this.headpose = headpose;
+			public void setHeadPose(HeadPose headPose) {
+				this.headPose = headPose;
 			}
 
-			public Eyestatus getEyestatus() {
-				return this.eyestatus;
+			public EyeStatus getEyeStatus() {
+				return this.eyeStatus;
 			}
 
-			public void setEyestatus(Eyestatus eyestatus) {
-				this.eyestatus = eyestatus;
+			public void setEyeStatus(EyeStatus eyeStatus) {
+				this.eyeStatus = eyeStatus;
 			}
 
 			public Blur getBlur() {
@@ -234,12 +234,12 @@ public class GetFaceSetDetailResponse extends AcsResponse {
 				this.blur = blur;
 			}
 
-			public Facequality getFacequality() {
-				return this.facequality;
+			public FaceQuality getFaceQuality() {
+				return this.faceQuality;
 			}
 
-			public void setFacequality(Facequality facequality) {
-				this.facequality = facequality;
+			public void setFaceQuality(FaceQuality faceQuality) {
+				this.faceQuality = faceQuality;
 			}
 
 			public static class Gender {
@@ -268,89 +268,89 @@ public class GetFaceSetDetailResponse extends AcsResponse {
 				}
 			}
 
-			public static class Headpose {
+			public static class HeadPose {
 
-				private Float pitch_angle;
+				private Float pitchAngle;
 
-				private Float roll_angle;
+				private Float rollAngle;
 
-				private Float yaw_angle;
+				private Float yawAngle;
 
-				public Float getPitch_angle() {
-					return this.pitch_angle;
+				public Float getPitchAngle() {
+					return this.pitchAngle;
 				}
 
-				public void setPitch_angle(Float pitch_angle) {
-					this.pitch_angle = pitch_angle;
+				public void setPitchAngle(Float pitchAngle) {
+					this.pitchAngle = pitchAngle;
 				}
 
-				public Float getRoll_angle() {
-					return this.roll_angle;
+				public Float getRollAngle() {
+					return this.rollAngle;
 				}
 
-				public void setRoll_angle(Float roll_angle) {
-					this.roll_angle = roll_angle;
+				public void setRollAngle(Float rollAngle) {
+					this.rollAngle = rollAngle;
 				}
 
-				public Float getYaw_angle() {
-					return this.yaw_angle;
+				public Float getYawAngle() {
+					return this.yawAngle;
 				}
 
-				public void setYaw_angle(Float yaw_angle) {
-					this.yaw_angle = yaw_angle;
+				public void setYawAngle(Float yawAngle) {
+					this.yawAngle = yawAngle;
 				}
 			}
 
-			public static class Eyestatus {
+			public static class EyeStatus {
 
-				private Left_eye_status left_eye_status;
+				private LeftEyeStatus leftEyeStatus;
 
-				private Right_eye_status right_eye_status;
+				private RightEyeStatus rightEyeStatus;
 
-				public Left_eye_status getLeft_eye_status() {
-					return this.left_eye_status;
+				public LeftEyeStatus getLeftEyeStatus() {
+					return this.leftEyeStatus;
 				}
 
-				public void setLeft_eye_status(Left_eye_status left_eye_status) {
-					this.left_eye_status = left_eye_status;
+				public void setLeftEyeStatus(LeftEyeStatus leftEyeStatus) {
+					this.leftEyeStatus = leftEyeStatus;
 				}
 
-				public Right_eye_status getRight_eye_status() {
-					return this.right_eye_status;
+				public RightEyeStatus getRightEyeStatus() {
+					return this.rightEyeStatus;
 				}
 
-				public void setRight_eye_status(Right_eye_status right_eye_status) {
-					this.right_eye_status = right_eye_status;
+				public void setRightEyeStatus(RightEyeStatus rightEyeStatus) {
+					this.rightEyeStatus = rightEyeStatus;
 				}
 
-				public static class Left_eye_status {
+				public static class LeftEyeStatus {
 
-					private Float normal_glass_eye_open;
+					private Float normalGlassEyeOpen;
 
-					private Float no_glass_eye_close;
+					private Float noGlassEyeClose;
 
 					private Float occlusion;
 
-					private Float no_glass_eye_open;
+					private Float noGlassEyeOpen;
 
-					private Float normal_glass_eye_close;
+					private Float normalGlassEyeClose;
 
-					private Float dark_glasses;
+					private Float darkGlasses;
 
-					public Float getNormal_glass_eye_open() {
-						return this.normal_glass_eye_open;
+					public Float getNormalGlassEyeOpen() {
+						return this.normalGlassEyeOpen;
 					}
 
-					public void setNormal_glass_eye_open(Float normal_glass_eye_open) {
-						this.normal_glass_eye_open = normal_glass_eye_open;
+					public void setNormalGlassEyeOpen(Float normalGlassEyeOpen) {
+						this.normalGlassEyeOpen = normalGlassEyeOpen;
 					}
 
-					public Float getNo_glass_eye_close() {
-						return this.no_glass_eye_close;
+					public Float getNoGlassEyeClose() {
+						return this.noGlassEyeClose;
 					}
 
-					public void setNo_glass_eye_close(Float no_glass_eye_close) {
-						this.no_glass_eye_close = no_glass_eye_close;
+					public void setNoGlassEyeClose(Float noGlassEyeClose) {
+						this.noGlassEyeClose = noGlassEyeClose;
 					}
 
 					public Float getOcclusion() {
@@ -361,59 +361,59 @@ public class GetFaceSetDetailResponse extends AcsResponse {
 						this.occlusion = occlusion;
 					}
 
-					public Float getNo_glass_eye_open() {
-						return this.no_glass_eye_open;
+					public Float getNoGlassEyeOpen() {
+						return this.noGlassEyeOpen;
 					}
 
-					public void setNo_glass_eye_open(Float no_glass_eye_open) {
-						this.no_glass_eye_open = no_glass_eye_open;
+					public void setNoGlassEyeOpen(Float noGlassEyeOpen) {
+						this.noGlassEyeOpen = noGlassEyeOpen;
 					}
 
-					public Float getNormal_glass_eye_close() {
-						return this.normal_glass_eye_close;
+					public Float getNormalGlassEyeClose() {
+						return this.normalGlassEyeClose;
 					}
 
-					public void setNormal_glass_eye_close(Float normal_glass_eye_close) {
-						this.normal_glass_eye_close = normal_glass_eye_close;
+					public void setNormalGlassEyeClose(Float normalGlassEyeClose) {
+						this.normalGlassEyeClose = normalGlassEyeClose;
 					}
 
-					public Float getDark_glasses() {
-						return this.dark_glasses;
+					public Float getDarkGlasses() {
+						return this.darkGlasses;
 					}
 
-					public void setDark_glasses(Float dark_glasses) {
-						this.dark_glasses = dark_glasses;
+					public void setDarkGlasses(Float darkGlasses) {
+						this.darkGlasses = darkGlasses;
 					}
 				}
 
-				public static class Right_eye_status {
+				public static class RightEyeStatus {
 
-					private Float normal_glass_eye_open;
+					private Float normalGlassEyeOpen;
 
-					private Float no_glass_eye_close;
+					private Float noGlassEyeClose;
 
 					private Float occlusion;
 
-					private Float no_glass_eye_open;
+					private Float noGlassEyeOpen;
 
-					private Float normal_glass_eye_close;
+					private Float normalGlassEyeClose;
 
-					private Float dark_glasses;
+					private Float darkGlasses;
 
-					public Float getNormal_glass_eye_open() {
-						return this.normal_glass_eye_open;
+					public Float getNormalGlassEyeOpen() {
+						return this.normalGlassEyeOpen;
 					}
 
-					public void setNormal_glass_eye_open(Float normal_glass_eye_open) {
-						this.normal_glass_eye_open = normal_glass_eye_open;
+					public void setNormalGlassEyeOpen(Float normalGlassEyeOpen) {
+						this.normalGlassEyeOpen = normalGlassEyeOpen;
 					}
 
-					public Float getNo_glass_eye_close() {
-						return this.no_glass_eye_close;
+					public Float getNoGlassEyeClose() {
+						return this.noGlassEyeClose;
 					}
 
-					public void setNo_glass_eye_close(Float no_glass_eye_close) {
-						this.no_glass_eye_close = no_glass_eye_close;
+					public void setNoGlassEyeClose(Float noGlassEyeClose) {
+						this.noGlassEyeClose = noGlassEyeClose;
 					}
 
 					public Float getOcclusion() {
@@ -424,28 +424,28 @@ public class GetFaceSetDetailResponse extends AcsResponse {
 						this.occlusion = occlusion;
 					}
 
-					public Float getNo_glass_eye_open() {
-						return this.no_glass_eye_open;
+					public Float getNoGlassEyeOpen() {
+						return this.noGlassEyeOpen;
 					}
 
-					public void setNo_glass_eye_open(Float no_glass_eye_open) {
-						this.no_glass_eye_open = no_glass_eye_open;
+					public void setNoGlassEyeOpen(Float noGlassEyeOpen) {
+						this.noGlassEyeOpen = noGlassEyeOpen;
 					}
 
-					public Float getNormal_glass_eye_close() {
-						return this.normal_glass_eye_close;
+					public Float getNormalGlassEyeClose() {
+						return this.normalGlassEyeClose;
 					}
 
-					public void setNormal_glass_eye_close(Float normal_glass_eye_close) {
-						this.normal_glass_eye_close = normal_glass_eye_close;
+					public void setNormalGlassEyeClose(Float normalGlassEyeClose) {
+						this.normalGlassEyeClose = normalGlassEyeClose;
 					}
 
-					public Float getDark_glasses() {
-						return this.dark_glasses;
+					public Float getDarkGlasses() {
+						return this.darkGlasses;
 					}
 
-					public void setDark_glasses(Float dark_glasses) {
-						this.dark_glasses = dark_glasses;
+					public void setDarkGlasses(Float darkGlasses) {
+						this.darkGlasses = darkGlasses;
 					}
 				}
 			}
@@ -486,7 +486,7 @@ public class GetFaceSetDetailResponse extends AcsResponse {
 				}
 			}
 
-			public static class Facequality {
+			public static class FaceQuality {
 
 				private Float value;
 

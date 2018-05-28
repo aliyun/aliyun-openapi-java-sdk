@@ -1,0 +1,12 @@
+.idea
+config_test.properties
+aliyun-java-sdk-imm.iml
+.DS_Store
+java/io
+.project
+.classpath
+.settings
+src/test/resources/config_test.properties
+
+archive
+archive.zip
