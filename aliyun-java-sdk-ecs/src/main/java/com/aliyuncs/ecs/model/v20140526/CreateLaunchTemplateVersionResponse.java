@@ -15,16 +15,18 @@
 package com.aliyuncs.ecs.model.v20140526;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.ecs.transform.v20140526.RollbackVolumeResponseUnmarshaller;
+import com.aliyuncs.ecs.transform.v20140526.CreateLaunchTemplateVersionResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class RollbackVolumeResponse extends AcsResponse {
+public class CreateLaunchTemplateVersionResponse extends AcsResponse {
 
 	private String requestId;
+
+	private Long launchTemplateVersionNumber;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -34,8 +36,16 @@ public class RollbackVolumeResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public Long getLaunchTemplateVersionNumber() {
+		return this.launchTemplateVersionNumber;
+	}
+
+	public void setLaunchTemplateVersionNumber(Long launchTemplateVersionNumber) {
+		this.launchTemplateVersionNumber = launchTemplateVersionNumber;
+	}
+
 	@Override
-	public RollbackVolumeResponse getInstance(UnmarshallerContext context) {
-		return	RollbackVolumeResponseUnmarshaller.unmarshall(this, context);
+	public CreateLaunchTemplateVersionResponse getInstance(UnmarshallerContext context) {
+		return	CreateLaunchTemplateVersionResponseUnmarshaller.unmarshall(this, context);
 	}
 }

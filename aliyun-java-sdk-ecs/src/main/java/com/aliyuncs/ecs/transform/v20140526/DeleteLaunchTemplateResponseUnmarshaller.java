@@ -14,17 +14,16 @@
 
 package com.aliyuncs.ecs.transform.v20140526;
 
-import com.aliyuncs.ecs.model.v20140526.CreateUserEventResponse;
+import com.aliyuncs.ecs.model.v20140526.DeleteLaunchTemplateResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class CreateUserEventResponseUnmarshaller {
+public class DeleteLaunchTemplateResponseUnmarshaller {
 
-	public static CreateUserEventResponse unmarshall(CreateUserEventResponse createUserEventResponse, UnmarshallerContext context) {
+	public static DeleteLaunchTemplateResponse unmarshall(DeleteLaunchTemplateResponse deleteLaunchTemplateResponse, UnmarshallerContext context) {
 		
-		createUserEventResponse.setRequestId(context.stringValue("CreateUserEventResponse.RequestId"));
-		createUserEventResponse.setEventId(context.stringValue("CreateUserEventResponse.EventId"));
+		deleteLaunchTemplateResponse.setRequestId(context.stringValue("DeleteLaunchTemplateResponse.RequestId"));
 	 
-	 	return createUserEventResponse;
+	 	return deleteLaunchTemplateResponse;
 	}
 }

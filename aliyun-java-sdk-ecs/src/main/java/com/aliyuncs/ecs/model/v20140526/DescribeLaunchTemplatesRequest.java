@@ -15,28 +15,46 @@
 package com.aliyuncs.ecs.model.v20140526;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 
 /**
  * @author auto create
  * @version 
  */
-public class AttachVolumeRequest extends RpcAcsRequest<AttachVolumeResponse> {
+public class DescribeLaunchTemplatesRequest extends RpcAcsRequest<DescribeLaunchTemplatesResponse> {
 	
-	public AttachVolumeRequest() {
-		super("Ecs", "2014-05-26", "AttachVolume", "ecs");
+	public DescribeLaunchTemplatesRequest() {
+		super("Ecs", "2014-05-26", "DescribeLaunchTemplates", "ecs");
 	}
+
+	private List<String> launchTemplateNames;
 
 	private Long resourceOwnerId;
 
-	private String instanceId;
+	private Integer pageNumber;
+
+	private Integer pageSize;
+
+	private List<String> launchTemplateIds;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
-	private String volumeId;
-
 	private Long ownerId;
+
+	public List<String> getLaunchTemplateNames() {
+		return this.launchTemplateNames;
+	}
+
+	public void setLaunchTemplateNames(List<String> launchTemplateNames) {
+		this.launchTemplateNames = launchTemplateNames;	
+		if (launchTemplateNames != null) {
+			for (int i = 0; i < launchTemplateNames.size(); i++) {
+				putQueryParameter("LaunchTemplateName." + (i + 1) , launchTemplateNames.get(i));
+			}
+		}	
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -49,15 +67,39 @@ public class AttachVolumeRequest extends RpcAcsRequest<AttachVolumeResponse> {
 		}
 	}
 
-	public String getInstanceId() {
-		return this.instanceId;
+	public Integer getPageNumber() {
+		return this.pageNumber;
 	}
 
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
 		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public List<String> getLaunchTemplateIds() {
+		return this.launchTemplateIds;
+	}
+
+	public void setLaunchTemplateIds(List<String> launchTemplateIds) {
+		this.launchTemplateIds = launchTemplateIds;	
+		if (launchTemplateIds != null) {
+			for (int i = 0; i < launchTemplateIds.size(); i++) {
+				putQueryParameter("LaunchTemplateId." + (i + 1) , launchTemplateIds.get(i));
+			}
+		}	
 	}
 
 	public String getResourceOwnerAccount() {
@@ -82,17 +124,6 @@ public class AttachVolumeRequest extends RpcAcsRequest<AttachVolumeResponse> {
 		}
 	}
 
-	public String getVolumeId() {
-		return this.volumeId;
-	}
-
-	public void setVolumeId(String volumeId) {
-		this.volumeId = volumeId;
-		if(volumeId != null){
-			putQueryParameter("VolumeId", volumeId);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -105,8 +136,8 @@ public class AttachVolumeRequest extends RpcAcsRequest<AttachVolumeResponse> {
 	}
 
 	@Override
-	public Class<AttachVolumeResponse> getResponseClass() {
-		return AttachVolumeResponse.class;
+	public Class<DescribeLaunchTemplatesResponse> getResponseClass() {
+		return DescribeLaunchTemplatesResponse.class;
 	}
 
 }

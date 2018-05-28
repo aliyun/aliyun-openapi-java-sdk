@@ -14,16 +14,17 @@
 
 package com.aliyuncs.ecs.transform.v20140526;
 
-import com.aliyuncs.ecs.model.v20140526.RollbackVolumeResponse;
+import com.aliyuncs.ecs.model.v20140526.CreateLaunchTemplateVersionResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class RollbackVolumeResponseUnmarshaller {
+public class CreateLaunchTemplateVersionResponseUnmarshaller {
 
-	public static RollbackVolumeResponse unmarshall(RollbackVolumeResponse rollbackVolumeResponse, UnmarshallerContext context) {
+	public static CreateLaunchTemplateVersionResponse unmarshall(CreateLaunchTemplateVersionResponse createLaunchTemplateVersionResponse, UnmarshallerContext context) {
 		
-		rollbackVolumeResponse.setRequestId(context.stringValue("RollbackVolumeResponse.RequestId"));
+		createLaunchTemplateVersionResponse.setRequestId(context.stringValue("CreateLaunchTemplateVersionResponse.RequestId"));
+		createLaunchTemplateVersionResponse.setLaunchTemplateVersionNumber(context.longValue("CreateLaunchTemplateVersionResponse.LaunchTemplateVersionNumber"));
 	 
-	 	return rollbackVolumeResponse;
+	 	return createLaunchTemplateVersionResponse;
 	}
 }

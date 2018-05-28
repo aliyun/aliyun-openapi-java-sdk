@@ -20,25 +20,36 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class ResizeVolumeRequest extends RpcAcsRequest<ResizeVolumeResponse> {
+public class ModifyLaunchTemplateDefaultVersionRequest extends RpcAcsRequest<ModifyLaunchTemplateDefaultVersionResponse> {
 	
-	public ResizeVolumeRequest() {
-		super("Ecs", "2014-05-26", "ResizeVolume", "ecs");
+	public ModifyLaunchTemplateDefaultVersionRequest() {
+		super("Ecs", "2014-05-26", "ModifyLaunchTemplateDefaultVersion", "ecs");
 	}
+
+	private String launchTemplateName;
 
 	private Long resourceOwnerId;
 
-	private String resourceOwnerAccount;
+	private String launchTemplateId;
 
-	private String clientToken;
+	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
-	private String volumeId;
-
-	private Integer newSize;
-
 	private Long ownerId;
+
+	private Long defaultVersionNumber;
+
+	public String getLaunchTemplateName() {
+		return this.launchTemplateName;
+	}
+
+	public void setLaunchTemplateName(String launchTemplateName) {
+		this.launchTemplateName = launchTemplateName;
+		if(launchTemplateName != null){
+			putQueryParameter("LaunchTemplateName", launchTemplateName);
+		}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -48,6 +59,17 @@ public class ResizeVolumeRequest extends RpcAcsRequest<ResizeVolumeResponse> {
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getLaunchTemplateId() {
+		return this.launchTemplateId;
+	}
+
+	public void setLaunchTemplateId(String launchTemplateId) {
+		this.launchTemplateId = launchTemplateId;
+		if(launchTemplateId != null){
+			putQueryParameter("LaunchTemplateId", launchTemplateId);
 		}
 	}
 
@@ -62,17 +84,6 @@ public class ResizeVolumeRequest extends RpcAcsRequest<ResizeVolumeResponse> {
 		}
 	}
 
-	public String getClientToken() {
-		return this.clientToken;
-	}
-
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putQueryParameter("ClientToken", clientToken);
-		}
-	}
-
 	public String getOwnerAccount() {
 		return this.ownerAccount;
 	}
@@ -81,28 +92,6 @@ public class ResizeVolumeRequest extends RpcAcsRequest<ResizeVolumeResponse> {
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
-		}
-	}
-
-	public String getVolumeId() {
-		return this.volumeId;
-	}
-
-	public void setVolumeId(String volumeId) {
-		this.volumeId = volumeId;
-		if(volumeId != null){
-			putQueryParameter("VolumeId", volumeId);
-		}
-	}
-
-	public Integer getNewSize() {
-		return this.newSize;
-	}
-
-	public void setNewSize(Integer newSize) {
-		this.newSize = newSize;
-		if(newSize != null){
-			putQueryParameter("NewSize", newSize.toString());
 		}
 	}
 
@@ -117,9 +106,20 @@ public class ResizeVolumeRequest extends RpcAcsRequest<ResizeVolumeResponse> {
 		}
 	}
 
+	public Long getDefaultVersionNumber() {
+		return this.defaultVersionNumber;
+	}
+
+	public void setDefaultVersionNumber(Long defaultVersionNumber) {
+		this.defaultVersionNumber = defaultVersionNumber;
+		if(defaultVersionNumber != null){
+			putQueryParameter("DefaultVersionNumber", defaultVersionNumber.toString());
+		}
+	}
+
 	@Override
-	public Class<ResizeVolumeResponse> getResponseClass() {
-		return ResizeVolumeResponse.class;
+	public Class<ModifyLaunchTemplateDefaultVersionResponse> getResponseClass() {
+		return ModifyLaunchTemplateDefaultVersionResponse.class;
 	}
 
 }

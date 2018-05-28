@@ -123,6 +123,8 @@ public class DescribeDisksFullStatusResponse extends AcsResponse {
 
 			private String eventTime;
 
+			private String eventEndTime;
+
 			private EventType eventType;
 
 			public String getEventId() {
@@ -139,6 +141,14 @@ public class DescribeDisksFullStatusResponse extends AcsResponse {
 
 			public void setEventTime(String eventTime) {
 				this.eventTime = eventTime;
+			}
+
+			public String getEventEndTime() {
+				return this.eventEndTime;
+			}
+
+			public void setEventEndTime(String eventEndTime) {
+				this.eventEndTime = eventEndTime;
 			}
 
 			public EventType getEventType() {

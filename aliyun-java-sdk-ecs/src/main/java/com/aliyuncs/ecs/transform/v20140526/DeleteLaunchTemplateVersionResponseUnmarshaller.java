@@ -14,16 +14,16 @@
 
 package com.aliyuncs.ecs.transform.v20140526;
 
-import com.aliyuncs.ecs.model.v20140526.AttachVolumeResponse;
+import com.aliyuncs.ecs.model.v20140526.DeleteLaunchTemplateVersionResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class AttachVolumeResponseUnmarshaller {
+public class DeleteLaunchTemplateVersionResponseUnmarshaller {
 
-	public static AttachVolumeResponse unmarshall(AttachVolumeResponse attachVolumeResponse, UnmarshallerContext context) {
+	public static DeleteLaunchTemplateVersionResponse unmarshall(DeleteLaunchTemplateVersionResponse deleteLaunchTemplateVersionResponse, UnmarshallerContext context) {
 		
-		attachVolumeResponse.setRequestId(context.stringValue("AttachVolumeResponse.RequestId"));
+		deleteLaunchTemplateVersionResponse.setRequestId(context.stringValue("DeleteLaunchTemplateVersionResponse.RequestId"));
 	 
-	 	return attachVolumeResponse;
+	 	return deleteLaunchTemplateVersionResponse;
 	}
 }

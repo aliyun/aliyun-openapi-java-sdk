@@ -15,18 +15,16 @@
 package com.aliyuncs.ecs.model.v20140526;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.ecs.transform.v20140526.CreateUserEventResponseUnmarshaller;
+import com.aliyuncs.ecs.transform.v20140526.DeleteLaunchTemplateVersionResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CreateUserEventResponse extends AcsResponse {
+public class DeleteLaunchTemplateVersionResponse extends AcsResponse {
 
 	private String requestId;
-
-	private String eventId;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -36,16 +34,8 @@ public class CreateUserEventResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getEventId() {
-		return this.eventId;
-	}
-
-	public void setEventId(String eventId) {
-		this.eventId = eventId;
-	}
-
 	@Override
-	public CreateUserEventResponse getInstance(UnmarshallerContext context) {
-		return	CreateUserEventResponseUnmarshaller.unmarshall(this, context);
+	public DeleteLaunchTemplateVersionResponse getInstance(UnmarshallerContext context) {
+		return	DeleteLaunchTemplateVersionResponseUnmarshaller.unmarshall(this, context);
 	}
 }

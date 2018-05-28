@@ -20,34 +20,32 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class ModifyUserEventAttributeRequest extends RpcAcsRequest<ModifyUserEventAttributeResponse> {
+public class DeleteLaunchTemplateRequest extends RpcAcsRequest<DeleteLaunchTemplateResponse> {
 	
-	public ModifyUserEventAttributeRequest() {
-		super("Ecs", "2014-05-26", "ModifyUserEventAttribute", "ecs");
+	public DeleteLaunchTemplateRequest() {
+		super("Ecs", "2014-05-26", "DeleteLaunchTemplate", "ecs");
 	}
 
-	private String eventId;
+	private String launchTemplateName;
 
 	private Long resourceOwnerId;
 
-	private String resourceId;
+	private String launchTemplateId;
 
 	private String resourceOwnerAccount;
 
-	private String newPlanTime;
+	private String ownerAccount;
 
 	private Long ownerId;
 
-	private String newExpireTime;
-
-	public String getEventId() {
-		return this.eventId;
+	public String getLaunchTemplateName() {
+		return this.launchTemplateName;
 	}
 
-	public void setEventId(String eventId) {
-		this.eventId = eventId;
-		if(eventId != null){
-			putQueryParameter("EventId", eventId);
+	public void setLaunchTemplateName(String launchTemplateName) {
+		this.launchTemplateName = launchTemplateName;
+		if(launchTemplateName != null){
+			putQueryParameter("LaunchTemplateName", launchTemplateName);
 		}
 	}
 
@@ -62,14 +60,14 @@ public class ModifyUserEventAttributeRequest extends RpcAcsRequest<ModifyUserEve
 		}
 	}
 
-	public String getResourceId() {
-		return this.resourceId;
+	public String getLaunchTemplateId() {
+		return this.launchTemplateId;
 	}
 
-	public void setResourceId(String resourceId) {
-		this.resourceId = resourceId;
-		if(resourceId != null){
-			putQueryParameter("ResourceId", resourceId);
+	public void setLaunchTemplateId(String launchTemplateId) {
+		this.launchTemplateId = launchTemplateId;
+		if(launchTemplateId != null){
+			putQueryParameter("LaunchTemplateId", launchTemplateId);
 		}
 	}
 
@@ -84,14 +82,14 @@ public class ModifyUserEventAttributeRequest extends RpcAcsRequest<ModifyUserEve
 		}
 	}
 
-	public String getNewPlanTime() {
-		return this.newPlanTime;
+	public String getOwnerAccount() {
+		return this.ownerAccount;
 	}
 
-	public void setNewPlanTime(String newPlanTime) {
-		this.newPlanTime = newPlanTime;
-		if(newPlanTime != null){
-			putQueryParameter("NewPlanTime", newPlanTime);
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
 		}
 	}
 
@@ -106,20 +104,9 @@ public class ModifyUserEventAttributeRequest extends RpcAcsRequest<ModifyUserEve
 		}
 	}
 
-	public String getNewExpireTime() {
-		return this.newExpireTime;
-	}
-
-	public void setNewExpireTime(String newExpireTime) {
-		this.newExpireTime = newExpireTime;
-		if(newExpireTime != null){
-			putQueryParameter("NewExpireTime", newExpireTime);
-		}
-	}
-
 	@Override
-	public Class<ModifyUserEventAttributeResponse> getResponseClass() {
-		return ModifyUserEventAttributeResponse.class;
+	public Class<DeleteLaunchTemplateResponse> getResponseClass() {
+		return DeleteLaunchTemplateResponse.class;
 	}
 
 }

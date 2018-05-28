@@ -15,14 +15,14 @@
 package com.aliyuncs.ecs.model.v20140526;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.ecs.transform.v20140526.ReInitVolumeResponseUnmarshaller;
+import com.aliyuncs.ecs.transform.v20140526.ModifyLaunchTemplateDefaultVersionResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ReInitVolumeResponse extends AcsResponse {
+public class ModifyLaunchTemplateDefaultVersionResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -35,7 +35,7 @@ public class ReInitVolumeResponse extends AcsResponse {
 	}
 
 	@Override
-	public ReInitVolumeResponse getInstance(UnmarshallerContext context) {
-		return	ReInitVolumeResponseUnmarshaller.unmarshall(this, context);
+	public ModifyLaunchTemplateDefaultVersionResponse getInstance(UnmarshallerContext context) {
+		return	ModifyLaunchTemplateDefaultVersionResponseUnmarshaller.unmarshall(this, context);
 	}
 }

@@ -14,16 +14,17 @@
 
 package com.aliyuncs.ecs.transform.v20140526;
 
-import com.aliyuncs.ecs.model.v20140526.DeleteVolumeResponse;
+import com.aliyuncs.ecs.model.v20140526.CreateLaunchTemplateResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class DeleteVolumeResponseUnmarshaller {
+public class CreateLaunchTemplateResponseUnmarshaller {
 
-	public static DeleteVolumeResponse unmarshall(DeleteVolumeResponse deleteVolumeResponse, UnmarshallerContext context) {
+	public static CreateLaunchTemplateResponse unmarshall(CreateLaunchTemplateResponse createLaunchTemplateResponse, UnmarshallerContext context) {
 		
-		deleteVolumeResponse.setRequestId(context.stringValue("DeleteVolumeResponse.RequestId"));
+		createLaunchTemplateResponse.setRequestId(context.stringValue("CreateLaunchTemplateResponse.RequestId"));
+		createLaunchTemplateResponse.setLaunchTemplateId(context.stringValue("CreateLaunchTemplateResponse.LaunchTemplateId"));
 	 
-	 	return deleteVolumeResponse;
+	 	return createLaunchTemplateResponse;
 	}
 }

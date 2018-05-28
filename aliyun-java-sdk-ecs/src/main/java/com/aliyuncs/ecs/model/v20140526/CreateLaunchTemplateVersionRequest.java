@@ -21,31 +21,35 @@ import java.util.List;
  * @author auto create
  * @version 
  */
-public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
+public class CreateLaunchTemplateVersionRequest extends RpcAcsRequest<CreateLaunchTemplateVersionResponse> {
 	
-	public RunInstancesRequest() {
-		super("Ecs", "2014-05-26", "RunInstances", "ecs");
+	public CreateLaunchTemplateVersionRequest() {
+		super("Ecs", "2014-05-26", "CreateLaunchTemplateVersion", "ecs");
 	}
 
 	private String launchTemplateName;
 
 	private Long resourceOwnerId;
 
-	private String hpcClusterId;
-
 	private String securityEnhancementStrategy;
+
+	private String networkType;
 
 	private String keyPairName;
 
 	private Float spotPriceLimit;
 
+	private String imageOwnerAlias;
+
+	private String resourceGroupId;
+
 	private String hostName;
 
-	private String password;
+	private Integer systemDiskIops;
 
 	private List<Tag> tags;
 
-	private Boolean dryRun;
+	private Integer period;
 
 	private String launchTemplateId;
 
@@ -63,11 +67,9 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 
 	private Integer internetMaxBandwidthIn;
 
+	private String versionDescription;
+
 	private String imageId;
-
-	private String spotInterruptionBehavior;
-
-	private String clientToken;
 
 	private String ioOptimized;
 
@@ -83,9 +85,11 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 
 	private String instanceType;
 
-	private List<NetworkInterface> networkInterfaces;
+	private String instanceChargeType;
 
-	private Integer amount;
+	private Boolean enableVmOsConfig;
+
+	private List<NetworkInterface> networkInterfaces;
 
 	private String resourceOwnerAccount;
 
@@ -97,13 +101,13 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 
 	private String autoReleaseTime;
 
-	private String dedicatedHostId;
+	private Integer spotDuration;
 
 	private List<DataDisk> dataDisks;
 
-	private Long launchTemplateVersion;
+	private Integer systemDiskSize;
 
-	private String systemDiskSize;
+	private String vpcId;
 
 	private String systemDiskDescription;
 
@@ -129,17 +133,6 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 		}
 	}
 
-	public String getHpcClusterId() {
-		return this.hpcClusterId;
-	}
-
-	public void setHpcClusterId(String hpcClusterId) {
-		this.hpcClusterId = hpcClusterId;
-		if(hpcClusterId != null){
-			putQueryParameter("HpcClusterId", hpcClusterId);
-		}
-	}
-
 	public String getSecurityEnhancementStrategy() {
 		return this.securityEnhancementStrategy;
 	}
@@ -148,6 +141,17 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 		this.securityEnhancementStrategy = securityEnhancementStrategy;
 		if(securityEnhancementStrategy != null){
 			putQueryParameter("SecurityEnhancementStrategy", securityEnhancementStrategy);
+		}
+	}
+
+	public String getNetworkType() {
+		return this.networkType;
+	}
+
+	public void setNetworkType(String networkType) {
+		this.networkType = networkType;
+		if(networkType != null){
+			putQueryParameter("NetworkType", networkType);
 		}
 	}
 
@@ -173,6 +177,28 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 		}
 	}
 
+	public String getImageOwnerAlias() {
+		return this.imageOwnerAlias;
+	}
+
+	public void setImageOwnerAlias(String imageOwnerAlias) {
+		this.imageOwnerAlias = imageOwnerAlias;
+		if(imageOwnerAlias != null){
+			putQueryParameter("ImageOwnerAlias", imageOwnerAlias);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
 	public String getHostName() {
 		return this.hostName;
 	}
@@ -184,14 +210,14 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 		}
 	}
 
-	public String getPassword() {
-		return this.password;
+	public Integer getSystemDiskIops() {
+		return this.systemDiskIops;
 	}
 
-	public void setPassword(String password) {
-		this.password = password;
-		if(password != null){
-			putQueryParameter("Password", password);
+	public void setSystemDiskIops(Integer systemDiskIops) {
+		this.systemDiskIops = systemDiskIops;
+		if(systemDiskIops != null){
+			putQueryParameter("SystemDisk.Iops", systemDiskIops.toString());
 		}
 	}
 
@@ -209,14 +235,14 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 		}	
 	}
 
-	public Boolean getDryRun() {
-		return this.dryRun;
+	public Integer getPeriod() {
+		return this.period;
 	}
 
-	public void setDryRun(Boolean dryRun) {
-		this.dryRun = dryRun;
-		if(dryRun != null){
-			putQueryParameter("DryRun", dryRun.toString());
+	public void setPeriod(Integer period) {
+		this.period = period;
+		if(period != null){
+			putQueryParameter("Period", period.toString());
 		}
 	}
 
@@ -308,6 +334,17 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 		}
 	}
 
+	public String getVersionDescription() {
+		return this.versionDescription;
+	}
+
+	public void setVersionDescription(String versionDescription) {
+		this.versionDescription = versionDescription;
+		if(versionDescription != null){
+			putQueryParameter("VersionDescription", versionDescription);
+		}
+	}
+
 	public String getImageId() {
 		return this.imageId;
 	}
@@ -316,28 +353,6 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 		this.imageId = imageId;
 		if(imageId != null){
 			putQueryParameter("ImageId", imageId);
-		}
-	}
-
-	public String getSpotInterruptionBehavior() {
-		return this.spotInterruptionBehavior;
-	}
-
-	public void setSpotInterruptionBehavior(String spotInterruptionBehavior) {
-		this.spotInterruptionBehavior = spotInterruptionBehavior;
-		if(spotInterruptionBehavior != null){
-			putQueryParameter("SpotInterruptionBehavior", spotInterruptionBehavior);
-		}
-	}
-
-	public String getClientToken() {
-		return this.clientToken;
-	}
-
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putQueryParameter("ClientToken", clientToken);
 		}
 	}
 
@@ -418,6 +433,28 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 		}
 	}
 
+	public String getInstanceChargeType() {
+		return this.instanceChargeType;
+	}
+
+	public void setInstanceChargeType(String instanceChargeType) {
+		this.instanceChargeType = instanceChargeType;
+		if(instanceChargeType != null){
+			putQueryParameter("InstanceChargeType", instanceChargeType);
+		}
+	}
+
+	public Boolean getEnableVmOsConfig() {
+		return this.enableVmOsConfig;
+	}
+
+	public void setEnableVmOsConfig(Boolean enableVmOsConfig) {
+		this.enableVmOsConfig = enableVmOsConfig;
+		if(enableVmOsConfig != null){
+			putQueryParameter("EnableVmOsConfig", enableVmOsConfig.toString());
+		}
+	}
+
 	public List<NetworkInterface> getNetworkInterfaces() {
 		return this.networkInterfaces;
 	}
@@ -433,17 +470,6 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 				putQueryParameter("NetworkInterface." + (depth1 + 1) + ".Description" , networkInterfaces.get(depth1).getDescription());
 			}
 		}	
-	}
-
-	public Integer getAmount() {
-		return this.amount;
-	}
-
-	public void setAmount(Integer amount) {
-		this.amount = amount;
-		if(amount != null){
-			putQueryParameter("Amount", amount.toString());
-		}
 	}
 
 	public String getResourceOwnerAccount() {
@@ -501,14 +527,14 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 		}
 	}
 
-	public String getDedicatedHostId() {
-		return this.dedicatedHostId;
+	public Integer getSpotDuration() {
+		return this.spotDuration;
 	}
 
-	public void setDedicatedHostId(String dedicatedHostId) {
-		this.dedicatedHostId = dedicatedHostId;
-		if(dedicatedHostId != null){
-			putQueryParameter("DedicatedHostId", dedicatedHostId);
+	public void setSpotDuration(Integer spotDuration) {
+		this.spotDuration = spotDuration;
+		if(spotDuration != null){
+			putQueryParameter("SpotDuration", spotDuration.toString());
 		}
 	}
 
@@ -526,31 +552,30 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 				putQueryParameter("DataDisk." + (depth1 + 1) + ".Encrypted" , dataDisks.get(depth1).getEncrypted());
 				putQueryParameter("DataDisk." + (depth1 + 1) + ".DiskName" , dataDisks.get(depth1).getDiskName());
 				putQueryParameter("DataDisk." + (depth1 + 1) + ".Description" , dataDisks.get(depth1).getDescription());
-				putQueryParameter("DataDisk." + (depth1 + 1) + ".Device" , dataDisks.get(depth1).getDevice());
 				putQueryParameter("DataDisk." + (depth1 + 1) + ".DeleteWithInstance" , dataDisks.get(depth1).getDeleteWithInstance());
 			}
 		}	
 	}
 
-	public Long getLaunchTemplateVersion() {
-		return this.launchTemplateVersion;
-	}
-
-	public void setLaunchTemplateVersion(Long launchTemplateVersion) {
-		this.launchTemplateVersion = launchTemplateVersion;
-		if(launchTemplateVersion != null){
-			putQueryParameter("LaunchTemplateVersion", launchTemplateVersion.toString());
-		}
-	}
-
-	public String getSystemDiskSize() {
+	public Integer getSystemDiskSize() {
 		return this.systemDiskSize;
 	}
 
-	public void setSystemDiskSize(String systemDiskSize) {
+	public void setSystemDiskSize(Integer systemDiskSize) {
 		this.systemDiskSize = systemDiskSize;
 		if(systemDiskSize != null){
-			putQueryParameter("SystemDisk.Size", systemDiskSize);
+			putQueryParameter("SystemDisk.Size", systemDiskSize.toString());
+		}
+	}
+
+	public String getVpcId() {
+		return this.vpcId;
+	}
+
+	public void setVpcId(String vpcId) {
+		this.vpcId = vpcId;
+		if(vpcId != null){
+			putQueryParameter("VpcId", vpcId);
 		}
 	}
 
@@ -655,8 +680,6 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 
 		private String description;
 
-		private String device;
-
 		private Boolean deleteWithInstance;
 
 		public Integer getSize() {
@@ -707,14 +730,6 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 			this.description = description;
 		}
 
-		public String getDevice() {
-			return this.device;
-		}
-
-		public void setDevice(String device) {
-			this.device = device;
-		}
-
 		public Boolean getDeleteWithInstance() {
 			return this.deleteWithInstance;
 		}
@@ -725,8 +740,8 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 	}
 
 	@Override
-	public Class<RunInstancesResponse> getResponseClass() {
-		return RunInstancesResponse.class;
+	public Class<CreateLaunchTemplateVersionResponse> getResponseClass() {
+		return CreateLaunchTemplateVersionResponse.class;
 	}
 
 }

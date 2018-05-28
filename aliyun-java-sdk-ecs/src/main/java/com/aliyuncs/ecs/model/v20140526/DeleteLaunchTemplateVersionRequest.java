@@ -15,28 +15,42 @@
 package com.aliyuncs.ecs.model.v20140526;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 
 /**
  * @author auto create
  * @version 
  */
-public class ReInitVolumeRequest extends RpcAcsRequest<ReInitVolumeResponse> {
+public class DeleteLaunchTemplateVersionRequest extends RpcAcsRequest<DeleteLaunchTemplateVersionResponse> {
 	
-	public ReInitVolumeRequest() {
-		super("Ecs", "2014-05-26", "ReInitVolume", "ecs");
+	public DeleteLaunchTemplateVersionRequest() {
+		super("Ecs", "2014-05-26", "DeleteLaunchTemplateVersion", "ecs");
 	}
+
+	private String launchTemplateName;
 
 	private Long resourceOwnerId;
 
-	private String password;
+	private List<Long> deleteVersions;
+
+	private String launchTemplateId;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
-	private String volumeId;
-
 	private Long ownerId;
+
+	public String getLaunchTemplateName() {
+		return this.launchTemplateName;
+	}
+
+	public void setLaunchTemplateName(String launchTemplateName) {
+		this.launchTemplateName = launchTemplateName;
+		if(launchTemplateName != null){
+			putQueryParameter("LaunchTemplateName", launchTemplateName);
+		}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -49,14 +63,27 @@ public class ReInitVolumeRequest extends RpcAcsRequest<ReInitVolumeResponse> {
 		}
 	}
 
-	public String getPassword() {
-		return this.password;
+	public List<Long> getDeleteVersions() {
+		return this.deleteVersions;
 	}
 
-	public void setPassword(String password) {
-		this.password = password;
-		if(password != null){
-			putQueryParameter("Password", password);
+	public void setDeleteVersions(List<Long> deleteVersions) {
+		this.deleteVersions = deleteVersions;	
+		if (deleteVersions != null) {
+			for (int i = 0; i < deleteVersions.size(); i++) {
+				putQueryParameter("DeleteVersion." + (i + 1) , deleteVersions.get(i));
+			}
+		}	
+	}
+
+	public String getLaunchTemplateId() {
+		return this.launchTemplateId;
+	}
+
+	public void setLaunchTemplateId(String launchTemplateId) {
+		this.launchTemplateId = launchTemplateId;
+		if(launchTemplateId != null){
+			putQueryParameter("LaunchTemplateId", launchTemplateId);
 		}
 	}
 
@@ -82,17 +109,6 @@ public class ReInitVolumeRequest extends RpcAcsRequest<ReInitVolumeResponse> {
 		}
 	}
 
-	public String getVolumeId() {
-		return this.volumeId;
-	}
-
-	public void setVolumeId(String volumeId) {
-		this.volumeId = volumeId;
-		if(volumeId != null){
-			putQueryParameter("VolumeId", volumeId);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -105,8 +121,8 @@ public class ReInitVolumeRequest extends RpcAcsRequest<ReInitVolumeResponse> {
 	}
 
 	@Override
-	public Class<ReInitVolumeResponse> getResponseClass() {
-		return ReInitVolumeResponse.class;
+	public Class<DeleteLaunchTemplateVersionResponse> getResponseClass() {
+		return DeleteLaunchTemplateVersionResponse.class;
 	}
 
 }

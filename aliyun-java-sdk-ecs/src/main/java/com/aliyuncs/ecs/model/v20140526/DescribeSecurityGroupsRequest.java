@@ -48,6 +48,8 @@ public class DescribeSecurityGroupsRequest extends RpcAcsRequest<DescribeSecurit
 
 	private String tag1Value;
 
+	private String resourceGroupId;
+
 	private Integer pageSize;
 
 	private String tag3Value;
@@ -192,6 +194,17 @@ public class DescribeSecurityGroupsRequest extends RpcAcsRequest<DescribeSecurit
 		this.tag1Value = tag1Value;
 		if(tag1Value != null){
 			putQueryParameter("Tag.1.Value", tag1Value);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

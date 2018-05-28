@@ -1,3 +1,6 @@
+2018-05-28 Version: 4.9.0
+1, ValidateSecurityGroup API
+
 2018-05-02 Version: 4.8.0
 1, Add new interface InstallCloudAssistant, support Cloud Assistant client installation.
 2, Add new interface DescribeCloudAssistantStatus, support Cloud Assistant client status detection.
