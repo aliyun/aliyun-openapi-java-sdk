@@ -1,3 +1,6 @@
+2018-05-28 Version: 2.0.2
+1, add new openapi .
+
 2017-10-17 Version: 1.0.0
 1, KvStore open api 开放， sdk 发布
 

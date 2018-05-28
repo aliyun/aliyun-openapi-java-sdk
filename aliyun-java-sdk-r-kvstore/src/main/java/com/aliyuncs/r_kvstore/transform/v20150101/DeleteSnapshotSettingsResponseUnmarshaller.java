@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.r_kvstore.transform.v20150101;
 
 import com.aliyuncs.r_kvstore.model.v20150101.DeleteSnapshotSettingsResponse;
