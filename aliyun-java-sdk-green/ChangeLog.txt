@@ -1,3 +1,6 @@
+2018-05-28 Version: 3.2.0
+1, Add face 1-N,1-1 scan interface.
+
 2018-04-08 Version: 3.1.0
 1, Add voice asynchronous scan interface.
 
