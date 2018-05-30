@@ -26,7 +26,20 @@ public class DeleteTasksRequest extends RpcAcsRequest<DeleteTasksResponse> {
 		super("Cms", "2018-03-08", "DeleteTasks", "cms");
 	}
 
+	private Integer isDeleteAlarms;
+
 	private String taskIds;
+
+	public Integer getIsDeleteAlarms() {
+		return this.isDeleteAlarms;
+	}
+
+	public void setIsDeleteAlarms(Integer isDeleteAlarms) {
+		this.isDeleteAlarms = isDeleteAlarms;
+		if(isDeleteAlarms != null){
+			putQueryParameter("IsDeleteAlarms", isDeleteAlarms.toString());
+		}
+	}
 
 	public String getTaskIds() {
 		return this.taskIds;

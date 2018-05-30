@@ -34,6 +34,8 @@ public class CreateTaskResponse extends AcsResponse {
 
 	private String data;
 
+	private String alertRule;
+
 	public String getCode() {
 		return this.code;
 	}
@@ -72,6 +74,14 @@ public class CreateTaskResponse extends AcsResponse {
 
 	public void setData(String data) {
 		this.data = data;
+	}
+
+	public String getAlertRule() {
+		return this.alertRule;
+	}
+
+	public void setAlertRule(String alertRule) {
+		this.alertRule = alertRule;
 	}
 
 	@Override

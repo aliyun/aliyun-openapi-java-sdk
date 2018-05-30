@@ -27,6 +27,7 @@ public class CreateTaskResponseUnmarshaller {
 		createTaskResponse.setMessage(context.stringValue("CreateTaskResponse.Message"));
 		createTaskResponse.setSuccess(context.stringValue("CreateTaskResponse.Success"));
 		createTaskResponse.setData(context.stringValue("CreateTaskResponse.Data"));
+		createTaskResponse.setAlertRule(context.stringValue("CreateTaskResponse.AlertRule"));
 	 
 	 	return createTaskResponse;
 	}

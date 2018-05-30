@@ -26,6 +26,7 @@ public class DeleteTasksResponseUnmarshaller {
 		deleteTasksResponse.setCode(context.stringValue("DeleteTasksResponse.Code"));
 		deleteTasksResponse.setMessage(context.stringValue("DeleteTasksResponse.Message"));
 		deleteTasksResponse.setSuccess(context.stringValue("DeleteTasksResponse.Success"));
+		deleteTasksResponse.setData(context.stringValue("DeleteTasksResponse.Data"));
 	 
 	 	return deleteTasksResponse;
 	}

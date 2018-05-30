@@ -1,3 +1,7 @@
+2018-05-30 Version: 6.0.7
+1, Add new API: DescribeContact and GetContacts.
+2, Add return value: alertRule for CreateTask.
+
 2018-05-25 Version: 6.0.6
 1, CreateAlarm,DeleteAlarm,UpdateAlarm,DisableAlarm,EnableAlarm,ListAlarm,ListAlarmHistory,ListContactGroup,PutMetricData,QueryMetricData,QueryMetricLast,QueryMetricList,QueryMetricTop remove useless parameter: callby_cms_owner. 
 2, QueryMetricList remove useless parameter: Page.
