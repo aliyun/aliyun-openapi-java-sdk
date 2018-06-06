@@ -30,7 +30,7 @@ public class DescribeDdosDefenseInfoRequest extends RpcAcsRequest<DescribeDdosDe
 
 	private String lang;
 
-	private String srcUid;
+	private Long srcUid;
 
 	private String sourceCode;
 
@@ -56,14 +56,14 @@ public class DescribeDdosDefenseInfoRequest extends RpcAcsRequest<DescribeDdosDe
 		}
 	}
 
-	public String getSrcUid() {
+	public Long getSrcUid() {
 		return this.srcUid;
 	}
 
-	public void setSrcUid(String srcUid) {
+	public void setSrcUid(Long srcUid) {
 		this.srcUid = srcUid;
 		if(srcUid != null){
-			putQueryParameter("srcUid", srcUid);
+			putQueryParameter("srcUid", srcUid.toString());
 		}
 	}
 

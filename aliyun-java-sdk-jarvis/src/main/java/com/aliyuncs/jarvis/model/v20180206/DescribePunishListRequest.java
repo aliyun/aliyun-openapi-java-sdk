@@ -38,7 +38,7 @@ public class DescribePunishListRequest extends RpcAcsRequest<DescribePunishListR
 
 	private String lang;
 
-	private String srcUid;
+	private Long srcUid;
 
 	private String sourceCode;
 
@@ -108,14 +108,14 @@ public class DescribePunishListRequest extends RpcAcsRequest<DescribePunishListR
 		}
 	}
 
-	public String getSrcUid() {
+	public Long getSrcUid() {
 		return this.srcUid;
 	}
 
-	public void setSrcUid(String srcUid) {
+	public void setSrcUid(Long srcUid) {
 		this.srcUid = srcUid;
 		if(srcUid != null){
-			putQueryParameter("srcUid", srcUid);
+			putQueryParameter("srcUid", srcUid.toString());
 		}
 	}
 

@@ -30,17 +30,17 @@ public class DescribeRiskListDetailRequest extends RpcAcsRequest<DescribeRiskLis
 
 	private String sourceIp;
 
-	private String pageSize;
+	private Integer pageSize;
 
 	private String queryProduct;
 
-	private String currentPage;
+	private Integer currentPage;
 
 	private String riskDescribe;
 
 	private String lang;
 
-	private String srcUid;
+	private Long srcUid;
 
 	private String sourceCode;
 
@@ -70,14 +70,14 @@ public class DescribeRiskListDetailRequest extends RpcAcsRequest<DescribeRiskLis
 		}
 	}
 
-	public String getPageSize() {
+	public Integer getPageSize() {
 		return this.pageSize;
 	}
 
-	public void setPageSize(String pageSize) {
+	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
 		if(pageSize != null){
-			putQueryParameter("pageSize", pageSize);
+			putQueryParameter("pageSize", pageSize.toString());
 		}
 	}
 
@@ -92,14 +92,14 @@ public class DescribeRiskListDetailRequest extends RpcAcsRequest<DescribeRiskLis
 		}
 	}
 
-	public String getCurrentPage() {
+	public Integer getCurrentPage() {
 		return this.currentPage;
 	}
 
-	public void setCurrentPage(String currentPage) {
+	public void setCurrentPage(Integer currentPage) {
 		this.currentPage = currentPage;
 		if(currentPage != null){
-			putQueryParameter("currentPage", currentPage);
+			putQueryParameter("currentPage", currentPage.toString());
 		}
 	}
 
@@ -125,14 +125,14 @@ public class DescribeRiskListDetailRequest extends RpcAcsRequest<DescribeRiskLis
 		}
 	}
 
-	public String getSrcUid() {
+	public Long getSrcUid() {
 		return this.srcUid;
 	}
 
-	public void setSrcUid(String srcUid) {
+	public void setSrcUid(Long srcUid) {
 		this.srcUid = srcUid;
 		if(srcUid != null){
-			putQueryParameter("srcUid", srcUid);
+			putQueryParameter("srcUid", srcUid.toString());
 		}
 	}
 
