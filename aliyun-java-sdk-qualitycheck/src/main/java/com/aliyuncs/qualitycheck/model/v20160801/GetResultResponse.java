@@ -97,6 +97,8 @@ public class GetResultResponse extends AcsResponse {
 
 		private String hitId;
 
+		private String taskId;
+
 		private List<RuleHitInfo> rules;
 
 		private List<String> handScoreIdList;
@@ -139,6 +141,14 @@ public class GetResultResponse extends AcsResponse {
 
 		public void setHitId(String hitId) {
 			this.hitId = hitId;
+		}
+
+		public String getTaskId() {
+			return this.taskId;
+		}
+
+		public void setTaskId(String taskId) {
+			this.taskId = taskId;
 		}
 
 		public List<RuleHitInfo> getRules() {

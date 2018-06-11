@@ -50,6 +50,7 @@ public class GetResultResponseUnmarshaller {
 			resultInfo.setScore(context.integerValue("GetResultResponse.data["+ i +"].score"));
 			resultInfo.setReviewStatus(context.integerValue("GetResultResponse.data["+ i +"].reviewStatus"));
 			resultInfo.setHitId(context.stringValue("GetResultResponse.data["+ i +"].hitId"));
+			resultInfo.setTaskId(context.stringValue("GetResultResponse.data["+ i +"].taskId"));
 
 			List<String> handScoreIdList = new ArrayList<String>();
 			for (int j = 0; j < context.lengthValue("GetResultResponse.data["+ i +"].handScoreIdList.Length"); j++) {
