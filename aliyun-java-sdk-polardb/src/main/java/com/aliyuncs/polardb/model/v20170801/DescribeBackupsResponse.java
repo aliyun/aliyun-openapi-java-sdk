@@ -1,21 +1,17 @@
 /*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
+
 package com.aliyuncs.polardb.model.v20170801;
 
 import java.util.List;
@@ -36,8 +32,6 @@ public class DescribeBackupsResponse extends AcsResponse {
 	private String pageNumber;
 
 	private String pageRecordCount;
-
-	private Long totalBackupSize;
 
 	private List<Backup> items;
 
@@ -73,14 +67,6 @@ public class DescribeBackupsResponse extends AcsResponse {
 		this.pageRecordCount = pageRecordCount;
 	}
 
-	public Long getTotalBackupSize() {
-		return this.totalBackupSize;
-	}
-
-	public void setTotalBackupSize(Long totalBackupSize) {
-		this.totalBackupSize = totalBackupSize;
-	}
-
 	public List<Backup> getItems() {
 		return this.items;
 	}
@@ -93,7 +79,7 @@ public class DescribeBackupsResponse extends AcsResponse {
 
 		private String backupId;
 
-		private String dBInstanceId;
+		private String dBClusterId;
 
 		private String backupStatus;
 
@@ -107,24 +93,6 @@ public class DescribeBackupsResponse extends AcsResponse {
 
 		private String backupMethod;
 
-		private String backupDownloadURL;
-
-		private String backupIntranetDownloadURL;
-
-		private String backupLocation;
-
-		private String backupExtractionStatus;
-
-		private String backupScale;
-
-		private String backupDBNames;
-
-		private Long totalBackupSize;
-
-		private Long backupSize;
-
-		private String hostInstanceID;
-
 		private String storeStatus;
 
 		public String getBackupId() {
@@ -135,12 +103,12 @@ public class DescribeBackupsResponse extends AcsResponse {
 			this.backupId = backupId;
 		}
 
-		public String getDBInstanceId() {
-			return this.dBInstanceId;
+		public String getDBClusterId() {
+			return this.dBClusterId;
 		}
 
-		public void setDBInstanceId(String dBInstanceId) {
-			this.dBInstanceId = dBInstanceId;
+		public void setDBClusterId(String dBClusterId) {
+			this.dBClusterId = dBClusterId;
 		}
 
 		public String getBackupStatus() {
@@ -189,78 +157,6 @@ public class DescribeBackupsResponse extends AcsResponse {
 
 		public void setBackupMethod(String backupMethod) {
 			this.backupMethod = backupMethod;
-		}
-
-		public String getBackupDownloadURL() {
-			return this.backupDownloadURL;
-		}
-
-		public void setBackupDownloadURL(String backupDownloadURL) {
-			this.backupDownloadURL = backupDownloadURL;
-		}
-
-		public String getBackupIntranetDownloadURL() {
-			return this.backupIntranetDownloadURL;
-		}
-
-		public void setBackupIntranetDownloadURL(String backupIntranetDownloadURL) {
-			this.backupIntranetDownloadURL = backupIntranetDownloadURL;
-		}
-
-		public String getBackupLocation() {
-			return this.backupLocation;
-		}
-
-		public void setBackupLocation(String backupLocation) {
-			this.backupLocation = backupLocation;
-		}
-
-		public String getBackupExtractionStatus() {
-			return this.backupExtractionStatus;
-		}
-
-		public void setBackupExtractionStatus(String backupExtractionStatus) {
-			this.backupExtractionStatus = backupExtractionStatus;
-		}
-
-		public String getBackupScale() {
-			return this.backupScale;
-		}
-
-		public void setBackupScale(String backupScale) {
-			this.backupScale = backupScale;
-		}
-
-		public String getBackupDBNames() {
-			return this.backupDBNames;
-		}
-
-		public void setBackupDBNames(String backupDBNames) {
-			this.backupDBNames = backupDBNames;
-		}
-
-		public Long getTotalBackupSize() {
-			return this.totalBackupSize;
-		}
-
-		public void setTotalBackupSize(Long totalBackupSize) {
-			this.totalBackupSize = totalBackupSize;
-		}
-
-		public Long getBackupSize() {
-			return this.backupSize;
-		}
-
-		public void setBackupSize(Long backupSize) {
-			this.backupSize = backupSize;
-		}
-
-		public String getHostInstanceID() {
-			return this.hostInstanceID;
-		}
-
-		public void setHostInstanceID(String hostInstanceID) {
-			this.hostInstanceID = hostInstanceID;
 		}
 
 		public String getStoreStatus() {

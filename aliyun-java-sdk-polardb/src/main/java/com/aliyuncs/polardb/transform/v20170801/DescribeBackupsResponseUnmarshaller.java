@@ -1,21 +1,17 @@
 /*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
+
 package com.aliyuncs.polardb.transform.v20170801;
 
 import java.util.ArrayList;
@@ -34,28 +30,18 @@ public class DescribeBackupsResponseUnmarshaller {
 		describeBackupsResponse.setTotalRecordCount(context.stringValue("DescribeBackupsResponse.TotalRecordCount"));
 		describeBackupsResponse.setPageNumber(context.stringValue("DescribeBackupsResponse.PageNumber"));
 		describeBackupsResponse.setPageRecordCount(context.stringValue("DescribeBackupsResponse.PageRecordCount"));
-		describeBackupsResponse.setTotalBackupSize(context.longValue("DescribeBackupsResponse.TotalBackupSize"));
 
 		List<Backup> items = new ArrayList<Backup>();
 		for (int i = 0; i < context.lengthValue("DescribeBackupsResponse.Items.Length"); i++) {
 			Backup backup = new Backup();
 			backup.setBackupId(context.stringValue("DescribeBackupsResponse.Items["+ i +"].BackupId"));
-			backup.setDBInstanceId(context.stringValue("DescribeBackupsResponse.Items["+ i +"].DBInstanceId"));
+			backup.setDBClusterId(context.stringValue("DescribeBackupsResponse.Items["+ i +"].DBClusterId"));
 			backup.setBackupStatus(context.stringValue("DescribeBackupsResponse.Items["+ i +"].BackupStatus"));
 			backup.setBackupStartTime(context.stringValue("DescribeBackupsResponse.Items["+ i +"].BackupStartTime"));
 			backup.setBackupEndTime(context.stringValue("DescribeBackupsResponse.Items["+ i +"].BackupEndTime"));
 			backup.setBackupType(context.stringValue("DescribeBackupsResponse.Items["+ i +"].BackupType"));
 			backup.setBackupMode(context.stringValue("DescribeBackupsResponse.Items["+ i +"].BackupMode"));
 			backup.setBackupMethod(context.stringValue("DescribeBackupsResponse.Items["+ i +"].BackupMethod"));
-			backup.setBackupDownloadURL(context.stringValue("DescribeBackupsResponse.Items["+ i +"].BackupDownloadURL"));
-			backup.setBackupIntranetDownloadURL(context.stringValue("DescribeBackupsResponse.Items["+ i +"].BackupIntranetDownloadURL"));
-			backup.setBackupLocation(context.stringValue("DescribeBackupsResponse.Items["+ i +"].BackupLocation"));
-			backup.setBackupExtractionStatus(context.stringValue("DescribeBackupsResponse.Items["+ i +"].BackupExtractionStatus"));
-			backup.setBackupScale(context.stringValue("DescribeBackupsResponse.Items["+ i +"].BackupScale"));
-			backup.setBackupDBNames(context.stringValue("DescribeBackupsResponse.Items["+ i +"].BackupDBNames"));
-			backup.setTotalBackupSize(context.longValue("DescribeBackupsResponse.Items["+ i +"].TotalBackupSize"));
-			backup.setBackupSize(context.longValue("DescribeBackupsResponse.Items["+ i +"].BackupSize"));
-			backup.setHostInstanceID(context.stringValue("DescribeBackupsResponse.Items["+ i +"].HostInstanceID"));
 			backup.setStoreStatus(context.stringValue("DescribeBackupsResponse.Items["+ i +"].StoreStatus"));
 
 			items.add(backup);
