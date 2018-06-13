@@ -1,3 +1,6 @@
+2018-06-13 Version: 2.1.6
+1, Add lifecycleHook.
+
 2018-05-07 Version: 2.1.5
 1, Remove DescribeAccountAttributes.
 

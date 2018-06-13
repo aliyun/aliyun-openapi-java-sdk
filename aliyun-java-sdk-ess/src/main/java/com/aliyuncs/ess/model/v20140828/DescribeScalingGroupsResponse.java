@@ -115,6 +115,8 @@ public class DescribeScalingGroupsResponse extends AcsResponse {
 
 		private String multiAZPolicy;
 
+		private String healthCheckType;
+
 		private List<String> vSwitchIds;
 
 		private List<String> removalPolicies;
@@ -273,6 +275,14 @@ public class DescribeScalingGroupsResponse extends AcsResponse {
 
 		public void setMultiAZPolicy(String multiAZPolicy) {
 			this.multiAZPolicy = multiAZPolicy;
+		}
+
+		public String getHealthCheckType() {
+			return this.healthCheckType;
+		}
+
+		public void setHealthCheckType(String healthCheckType) {
+			this.healthCheckType = healthCheckType;
 		}
 
 		public List<String> getVSwitchIds() {

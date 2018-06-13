@@ -28,6 +28,8 @@ public class ModifyScalingGroupRequest extends RpcAcsRequest<ModifyScalingGroupR
 
 	private Long resourceOwnerId;
 
+	private String healthCheckType;
+
 	private String resourceOwnerAccount;
 
 	private String scalingGroupName;
@@ -58,6 +60,17 @@ public class ModifyScalingGroupRequest extends RpcAcsRequest<ModifyScalingGroupR
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getHealthCheckType() {
+		return this.healthCheckType;
+	}
+
+	public void setHealthCheckType(String healthCheckType) {
+		this.healthCheckType = healthCheckType;
+		if(healthCheckType != null){
+			putQueryParameter("HealthCheckType", healthCheckType);
 		}
 	}
 

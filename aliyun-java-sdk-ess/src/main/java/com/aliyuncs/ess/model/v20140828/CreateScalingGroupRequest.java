@@ -33,6 +33,8 @@ public class CreateScalingGroupRequest extends RpcAcsRequest<CreateScalingGroupR
 
 	private String loadBalancerIds;
 
+	private String healthCheckType;
+
 	private String resourceOwnerAccount;
 
 	private String scalingGroupName;
@@ -48,6 +50,8 @@ public class CreateScalingGroupRequest extends RpcAcsRequest<CreateScalingGroupR
 	private String vSwitchId;
 
 	private Integer maxSize;
+
+	private List<LifecycleHook> lifecycleHooks;
 
 	private Integer defaultCooldown;
 
@@ -85,6 +89,17 @@ public class CreateScalingGroupRequest extends RpcAcsRequest<CreateScalingGroupR
 		this.loadBalancerIds = loadBalancerIds;
 		if(loadBalancerIds != null){
 			putQueryParameter("LoadBalancerIds", loadBalancerIds);
+		}
+	}
+
+	public String getHealthCheckType() {
+		return this.healthCheckType;
+	}
+
+	public void setHealthCheckType(String healthCheckType) {
+		this.healthCheckType = healthCheckType;
+		if(healthCheckType != null){
+			putQueryParameter("HealthCheckType", healthCheckType);
 		}
 	}
 
@@ -178,6 +193,24 @@ public class CreateScalingGroupRequest extends RpcAcsRequest<CreateScalingGroupR
 		}
 	}
 
+	public List<LifecycleHook> getLifecycleHooks() {
+		return this.lifecycleHooks;
+	}
+
+	public void setLifecycleHooks(List<LifecycleHook> lifecycleHooks) {
+		this.lifecycleHooks = lifecycleHooks;	
+		if (lifecycleHooks != null) {
+			for (int depth1 = 0; depth1 < lifecycleHooks.size(); depth1++) {
+				putQueryParameter("LifecycleHook." + (depth1 + 1) + ".LifecycleHookName" , lifecycleHooks.get(depth1).getLifecycleHookName());
+				putQueryParameter("LifecycleHook." + (depth1 + 1) + ".LifecycleTransition" , lifecycleHooks.get(depth1).getLifecycleTransition());
+				putQueryParameter("LifecycleHook." + (depth1 + 1) + ".DefaultResult" , lifecycleHooks.get(depth1).getDefaultResult());
+				putQueryParameter("LifecycleHook." + (depth1 + 1) + ".HeartbeatTimeout" , lifecycleHooks.get(depth1).getHeartbeatTimeout());
+				putQueryParameter("LifecycleHook." + (depth1 + 1) + ".NotificationMetadata" , lifecycleHooks.get(depth1).getNotificationMetadata());
+				putQueryParameter("LifecycleHook." + (depth1 + 1) + ".NotificationArn" , lifecycleHooks.get(depth1).getNotificationArn());
+			}
+		}	
+	}
+
 	public Integer getDefaultCooldown() {
 		return this.defaultCooldown;
 	}
@@ -208,6 +241,69 @@ public class CreateScalingGroupRequest extends RpcAcsRequest<CreateScalingGroupR
 		this.removalPolicy2 = removalPolicy2;
 		if(removalPolicy2 != null){
 			putQueryParameter("RemovalPolicy.2", removalPolicy2);
+		}
+	}
+
+	public static class LifecycleHook {
+
+		private String lifecycleHookName;
+
+		private String lifecycleTransition;
+
+		private String defaultResult;
+
+		private Integer heartbeatTimeout;
+
+		private String notificationMetadata;
+
+		private String notificationArn;
+
+		public String getLifecycleHookName() {
+			return this.lifecycleHookName;
+		}
+
+		public void setLifecycleHookName(String lifecycleHookName) {
+			this.lifecycleHookName = lifecycleHookName;
+		}
+
+		public String getLifecycleTransition() {
+			return this.lifecycleTransition;
+		}
+
+		public void setLifecycleTransition(String lifecycleTransition) {
+			this.lifecycleTransition = lifecycleTransition;
+		}
+
+		public String getDefaultResult() {
+			return this.defaultResult;
+		}
+
+		public void setDefaultResult(String defaultResult) {
+			this.defaultResult = defaultResult;
+		}
+
+		public Integer getHeartbeatTimeout() {
+			return this.heartbeatTimeout;
+		}
+
+		public void setHeartbeatTimeout(Integer heartbeatTimeout) {
+			this.heartbeatTimeout = heartbeatTimeout;
+		}
+
+		public String getNotificationMetadata() {
+			return this.notificationMetadata;
+		}
+
+		public void setNotificationMetadata(String notificationMetadata) {
+			this.notificationMetadata = notificationMetadata;
+		}
+
+		public String getNotificationArn() {
+			return this.notificationArn;
+		}
+
+		public void setNotificationArn(String notificationArn) {
+			this.notificationArn = notificationArn;
 		}
 	}
 
