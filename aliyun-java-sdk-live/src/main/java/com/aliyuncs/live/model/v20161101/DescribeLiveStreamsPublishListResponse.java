@@ -107,6 +107,12 @@ public class DescribeLiveStreamsPublishListResponse extends AcsResponse {
 
 		private String publishDomain;
 
+		private String publishType;
+
+		private String transcoded;
+
+		private String transcodeId;
+
 		public String getDomainName() {
 			return this.domainName;
 		}
@@ -185,6 +191,30 @@ public class DescribeLiveStreamsPublishListResponse extends AcsResponse {
 
 		public void setPublishDomain(String publishDomain) {
 			this.publishDomain = publishDomain;
+		}
+
+		public String getPublishType() {
+			return this.publishType;
+		}
+
+		public void setPublishType(String publishType) {
+			this.publishType = publishType;
+		}
+
+		public String getTranscoded() {
+			return this.transcoded;
+		}
+
+		public void setTranscoded(String transcoded) {
+			this.transcoded = transcoded;
+		}
+
+		public String getTranscodeId() {
+			return this.transcodeId;
+		}
+
+		public void setTranscodeId(String transcodeId) {
+			this.transcodeId = transcodeId;
 		}
 	}
 

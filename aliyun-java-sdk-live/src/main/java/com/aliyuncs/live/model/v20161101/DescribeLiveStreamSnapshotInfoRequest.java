@@ -42,6 +42,8 @@ public class DescribeLiveStreamSnapshotInfoRequest extends RpcAcsRequest<Describ
 
 	private String streamName;
 
+	private String order;
+
 	public String getAppName() {
 		return this.appName;
 	}
@@ -127,6 +129,17 @@ public class DescribeLiveStreamSnapshotInfoRequest extends RpcAcsRequest<Describ
 		this.streamName = streamName;
 		if(streamName != null){
 			putQueryParameter("StreamName", streamName);
+		}
+	}
+
+	public String getOrder() {
+		return this.order;
+	}
+
+	public void setOrder(String order) {
+		this.order = order;
+		if(order != null){
+			putQueryParameter("Order", order);
 		}
 	}
 

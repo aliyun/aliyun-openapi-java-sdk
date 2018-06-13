@@ -109,6 +109,8 @@ public class DescribeCasterLayoutsResponse extends AcsResponse {
 
 		public static class VideoLayer {
 
+			private String fillMode;
+
 			private Float heightNormalized;
 
 			private Float widthNormalized;
@@ -118,6 +120,14 @@ public class DescribeCasterLayoutsResponse extends AcsResponse {
 			private Integer fixedDelayDuration;
 
 			private List<String> positionNormalizeds;
+
+			public String getFillMode() {
+				return this.fillMode;
+			}
+
+			public void setFillMode(String fillMode) {
+				this.fillMode = fillMode;
+			}
 
 			public Float getHeightNormalized() {
 				return this.heightNormalized;

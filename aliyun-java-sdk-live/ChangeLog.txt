@@ -1,3 +1,11 @@
+2018-06-13 Version: 3.6.0
+1, Add API AddCasterEpisodeGroupContent,CreateCaster.
+2, Add Parameter fillMode for AddCasterLayout,ModifyCasterLayout.
+3, Add return value fillMode DescribeCasterLayouts.
+4, Update ErrorCode for StartCaster,StartCasterScene,DescribeCasters,CopyCaster.
+5, Update ErrorCode for ModifyCasterLayout,DeleteCasterLayout,DeleteLiveAppRecordConfig.
+6, Update ForbidLiveStream,DescribeLiveStreamsPublishList,DescribeLiveStreamsOnlineList.
+
 2018-03-27 Version: 3.5.0
 1, Add Episode living API AddCasterEpisodeGroup,DeleteCasterEpisodeGroup.
 2, Add voice subtitle API AddCasterComponent,ModifyCasterComponent,DescribeCasterComponent.

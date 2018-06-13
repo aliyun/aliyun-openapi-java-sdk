@@ -51,6 +51,7 @@ public class DescribeCasterLayoutsResponseUnmarshaller {
 			List<VideoLayer> videoLayers = new ArrayList<VideoLayer>();
 			for (int j = 0; j < context.lengthValue("DescribeCasterLayoutsResponse.Layouts["+ i +"].VideoLayers.Length"); j++) {
 				VideoLayer videoLayer = new VideoLayer();
+				videoLayer.setFillMode(context.stringValue("DescribeCasterLayoutsResponse.Layouts["+ i +"].VideoLayers["+ j +"].FillMode"));
 				videoLayer.setHeightNormalized(context.floatValue("DescribeCasterLayoutsResponse.Layouts["+ i +"].VideoLayers["+ j +"].HeightNormalized"));
 				videoLayer.setWidthNormalized(context.floatValue("DescribeCasterLayoutsResponse.Layouts["+ i +"].VideoLayers["+ j +"].WidthNormalized"));
 				videoLayer.setPositionRefer(context.stringValue("DescribeCasterLayoutsResponse.Layouts["+ i +"].VideoLayers["+ j +"].PositionRefer"));

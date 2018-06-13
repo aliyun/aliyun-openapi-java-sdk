@@ -41,6 +41,9 @@ public class DescribeLiveStreamsOnlineListResponseUnmarshaller {
 			liveStreamOnlineInfo.setPublishTime(context.stringValue("DescribeLiveStreamsOnlineListResponse.OnlineInfo["+ i +"].PublishTime"));
 			liveStreamOnlineInfo.setPublishUrl(context.stringValue("DescribeLiveStreamsOnlineListResponse.OnlineInfo["+ i +"].PublishUrl"));
 			liveStreamOnlineInfo.setPublishDomain(context.stringValue("DescribeLiveStreamsOnlineListResponse.OnlineInfo["+ i +"].PublishDomain"));
+			liveStreamOnlineInfo.setPublishType(context.stringValue("DescribeLiveStreamsOnlineListResponse.OnlineInfo["+ i +"].PublishType"));
+			liveStreamOnlineInfo.setTranscoded(context.stringValue("DescribeLiveStreamsOnlineListResponse.OnlineInfo["+ i +"].Transcoded"));
+			liveStreamOnlineInfo.setTranscodeId(context.stringValue("DescribeLiveStreamsOnlineListResponse.OnlineInfo["+ i +"].TranscodeId"));
 
 			onlineInfo.add(liveStreamOnlineInfo);
 		}

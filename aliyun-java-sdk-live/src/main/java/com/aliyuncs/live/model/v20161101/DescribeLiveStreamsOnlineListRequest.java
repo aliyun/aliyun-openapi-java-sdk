@@ -36,9 +36,15 @@ public class DescribeLiveStreamsOnlineListRequest extends RpcAcsRequest<Describe
 
 	private Integer pageSize;
 
+	private String endTime;
+
+	private String startTime;
+
 	private Long ownerId;
 
 	private Integer pageNum;
+
+	private String queryType;
 
 	public String getStreamType() {
 		return this.streamType;
@@ -95,6 +101,28 @@ public class DescribeLiveStreamsOnlineListRequest extends RpcAcsRequest<Describe
 		}
 	}
 
+	public String getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime);
+		}
+	}
+
+	public String getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime);
+		}
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -114,6 +142,17 @@ public class DescribeLiveStreamsOnlineListRequest extends RpcAcsRequest<Describe
 		this.pageNum = pageNum;
 		if(pageNum != null){
 			putQueryParameter("PageNum", pageNum.toString());
+		}
+	}
+
+	public String getQueryType() {
+		return this.queryType;
+	}
+
+	public void setQueryType(String queryType) {
+		this.queryType = queryType;
+		if(queryType != null){
+			putQueryParameter("QueryType", queryType);
 		}
 	}
 

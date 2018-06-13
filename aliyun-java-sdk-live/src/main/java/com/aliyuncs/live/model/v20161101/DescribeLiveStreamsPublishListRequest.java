@@ -26,13 +26,9 @@ public class DescribeLiveStreamsPublishListRequest extends RpcAcsRequest<Describ
 		super("live", "2016-11-01", "DescribeLiveStreamsPublishList", "live");
 	}
 
-	private String appName;
-
-	private String securityToken;
+	private String streamType;
 
 	private String domainName;
-
-	private Integer pageSize;
 
 	private String endTime;
 
@@ -40,29 +36,26 @@ public class DescribeLiveStreamsPublishListRequest extends RpcAcsRequest<Describ
 
 	private Long ownerId;
 
-	private String streamName;
-
 	private Integer pageNumber;
 
-	public String getAppName() {
-		return this.appName;
+	private String appName;
+
+	private String securityToken;
+
+	private Integer pageSize;
+
+	private String streamName;
+
+	private String queryType;
+
+	public String getStreamType() {
+		return this.streamType;
 	}
 
-	public void setAppName(String appName) {
-		this.appName = appName;
-		if(appName != null){
-			putQueryParameter("AppName", appName);
-		}
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
+	public void setStreamType(String streamType) {
+		this.streamType = streamType;
+		if(streamType != null){
+			putQueryParameter("StreamType", streamType);
 		}
 	}
 
@@ -74,17 +67,6 @@ public class DescribeLiveStreamsPublishListRequest extends RpcAcsRequest<Describ
 		this.domainName = domainName;
 		if(domainName != null){
 			putQueryParameter("DomainName", domainName);
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 
@@ -121,6 +103,50 @@ public class DescribeLiveStreamsPublishListRequest extends RpcAcsRequest<Describ
 		}
 	}
 
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public String getAppName() {
+		return this.appName;
+	}
+
+	public void setAppName(String appName) {
+		this.appName = appName;
+		if(appName != null){
+			putQueryParameter("AppName", appName);
+		}
+	}
+
+	public String getSecurityToken() {
+		return this.securityToken;
+	}
+
+	public void setSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
 	public String getStreamName() {
 		return this.streamName;
 	}
@@ -132,14 +158,14 @@ public class DescribeLiveStreamsPublishListRequest extends RpcAcsRequest<Describ
 		}
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
+	public String getQueryType() {
+		return this.queryType;
 	}
 
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
+	public void setQueryType(String queryType) {
+		this.queryType = queryType;
+		if(queryType != null){
+			putQueryParameter("QueryType", queryType);
 		}
 	}
 

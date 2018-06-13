@@ -45,6 +45,9 @@ public class DescribeLiveStreamsPublishListResponseUnmarshaller {
 			liveStreamPublishInfo.setClientAddr(context.stringValue("DescribeLiveStreamsPublishListResponse.PublishInfo["+ i +"].ClientAddr"));
 			liveStreamPublishInfo.setEdgeNodeAddr(context.stringValue("DescribeLiveStreamsPublishListResponse.PublishInfo["+ i +"].EdgeNodeAddr"));
 			liveStreamPublishInfo.setPublishDomain(context.stringValue("DescribeLiveStreamsPublishListResponse.PublishInfo["+ i +"].PublishDomain"));
+			liveStreamPublishInfo.setPublishType(context.stringValue("DescribeLiveStreamsPublishListResponse.PublishInfo["+ i +"].PublishType"));
+			liveStreamPublishInfo.setTranscoded(context.stringValue("DescribeLiveStreamsPublishListResponse.PublishInfo["+ i +"].Transcoded"));
+			liveStreamPublishInfo.setTranscodeId(context.stringValue("DescribeLiveStreamsPublishListResponse.PublishInfo["+ i +"].TranscodeId"));
 
 			publishInfo.add(liveStreamPublishInfo);
 		}

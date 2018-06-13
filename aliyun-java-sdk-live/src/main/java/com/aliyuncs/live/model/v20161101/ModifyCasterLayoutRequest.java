@@ -77,6 +77,7 @@ public class ModifyCasterLayoutRequest extends RpcAcsRequest<ModifyCasterLayoutR
 		this.videoLayers = videoLayers;	
 		if (videoLayers != null) {
 			for (int depth1 = 0; depth1 < videoLayers.size(); depth1++) {
+				putQueryParameter("VideoLayer." + (depth1 + 1) + ".FillMode" , videoLayers.get(depth1).getFillMode());
 				putQueryParameter("VideoLayer." + (depth1 + 1) + ".HeightNormalized" , videoLayers.get(depth1).getHeightNormalized());
 				putQueryParameter("VideoLayer." + (depth1 + 1) + ".WidthNormalized" , videoLayers.get(depth1).getWidthNormalized());
 				putQueryParameter("VideoLayer." + (depth1 + 1) + ".PositionRefer" , videoLayers.get(depth1).getPositionRefer());
@@ -171,6 +172,8 @@ public class ModifyCasterLayoutRequest extends RpcAcsRequest<ModifyCasterLayoutR
 
 	public static class VideoLayer {
 
+		private String fillMode;
+
 		private Float heightNormalized;
 
 		private Float widthNormalized;
@@ -180,6 +183,14 @@ public class ModifyCasterLayoutRequest extends RpcAcsRequest<ModifyCasterLayoutR
 		private List<Float> positionNormalizeds;
 
 		private Integer fixedDelayDuration;
+
+		public String getFillMode() {
+			return this.fillMode;
+		}
+
+		public void setFillMode(String fillMode) {
+			this.fillMode = fillMode;
+		}
 
 		public Float getHeightNormalized() {
 			return this.heightNormalized;
