@@ -31,6 +31,8 @@ public class CreateLaunchTemplateRequest extends RpcAcsRequest<CreateLaunchTempl
 
 	private Long resourceOwnerId;
 
+	private String templateTag4Key;
+
 	private String securityEnhancementStrategy;
 
 	private String networkType;
@@ -43,13 +45,21 @@ public class CreateLaunchTemplateRequest extends RpcAcsRequest<CreateLaunchTempl
 
 	private String resourceGroupId;
 
+	private String templateTag3Key;
+
 	private String hostName;
 
 	private Integer systemDiskIops;
 
+	private String templateTag3Value;
+
 	private List<Tag> tags;
 
 	private Integer period;
+
+	private String templateResourceGroupId;
+
+	private String templateTag2Value;
 
 	private Long ownerId;
 
@@ -61,11 +71,15 @@ public class CreateLaunchTemplateRequest extends RpcAcsRequest<CreateLaunchTempl
 
 	private String internetChargeType;
 
+	private String templateTag5Key;
+
 	private String zoneId;
 
 	private Integer internetMaxBandwidthIn;
 
 	private String versionDescription;
+
+	private String templateTag1Value;
 
 	private String imageId;
 
@@ -81,6 +95,8 @@ public class CreateLaunchTemplateRequest extends RpcAcsRequest<CreateLaunchTempl
 
 	private String userData;
 
+	private String templateTag5Value;
+
 	private String instanceType;
 
 	private String instanceChargeType;
@@ -88,6 +104,8 @@ public class CreateLaunchTemplateRequest extends RpcAcsRequest<CreateLaunchTempl
 	private Boolean enableVmOsConfig;
 
 	private List<NetworkInterface> networkInterfaces;
+
+	private String templateTag2Key;
 
 	private String resourceOwnerAccount;
 
@@ -103,9 +121,13 @@ public class CreateLaunchTemplateRequest extends RpcAcsRequest<CreateLaunchTempl
 
 	private List<DataDisk> dataDisks;
 
+	private String templateTag4Value;
+
 	private Integer systemDiskSize;
 
 	private String vpcId;
+
+	private String templateTag1Key;
 
 	private String systemDiskDescription;
 
@@ -128,6 +150,17 @@ public class CreateLaunchTemplateRequest extends RpcAcsRequest<CreateLaunchTempl
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getTemplateTag4Key() {
+		return this.templateTag4Key;
+	}
+
+	public void setTemplateTag4Key(String templateTag4Key) {
+		this.templateTag4Key = templateTag4Key;
+		if(templateTag4Key != null){
+			putQueryParameter("TemplateTag.4.Key", templateTag4Key);
 		}
 	}
 
@@ -197,6 +230,17 @@ public class CreateLaunchTemplateRequest extends RpcAcsRequest<CreateLaunchTempl
 		}
 	}
 
+	public String getTemplateTag3Key() {
+		return this.templateTag3Key;
+	}
+
+	public void setTemplateTag3Key(String templateTag3Key) {
+		this.templateTag3Key = templateTag3Key;
+		if(templateTag3Key != null){
+			putQueryParameter("TemplateTag.3.Key", templateTag3Key);
+		}
+	}
+
 	public String getHostName() {
 		return this.hostName;
 	}
@@ -216,6 +260,17 @@ public class CreateLaunchTemplateRequest extends RpcAcsRequest<CreateLaunchTempl
 		this.systemDiskIops = systemDiskIops;
 		if(systemDiskIops != null){
 			putQueryParameter("SystemDisk.Iops", systemDiskIops.toString());
+		}
+	}
+
+	public String getTemplateTag3Value() {
+		return this.templateTag3Value;
+	}
+
+	public void setTemplateTag3Value(String templateTag3Value) {
+		this.templateTag3Value = templateTag3Value;
+		if(templateTag3Value != null){
+			putQueryParameter("TemplateTag.3.Value", templateTag3Value);
 		}
 	}
 
@@ -241,6 +296,28 @@ public class CreateLaunchTemplateRequest extends RpcAcsRequest<CreateLaunchTempl
 		this.period = period;
 		if(period != null){
 			putQueryParameter("Period", period.toString());
+		}
+	}
+
+	public String getTemplateResourceGroupId() {
+		return this.templateResourceGroupId;
+	}
+
+	public void setTemplateResourceGroupId(String templateResourceGroupId) {
+		this.templateResourceGroupId = templateResourceGroupId;
+		if(templateResourceGroupId != null){
+			putQueryParameter("TemplateResourceGroupId", templateResourceGroupId);
+		}
+	}
+
+	public String getTemplateTag2Value() {
+		return this.templateTag2Value;
+	}
+
+	public void setTemplateTag2Value(String templateTag2Value) {
+		this.templateTag2Value = templateTag2Value;
+		if(templateTag2Value != null){
+			putQueryParameter("TemplateTag.2.Value", templateTag2Value);
 		}
 	}
 
@@ -299,6 +376,17 @@ public class CreateLaunchTemplateRequest extends RpcAcsRequest<CreateLaunchTempl
 		}
 	}
 
+	public String getTemplateTag5Key() {
+		return this.templateTag5Key;
+	}
+
+	public void setTemplateTag5Key(String templateTag5Key) {
+		this.templateTag5Key = templateTag5Key;
+		if(templateTag5Key != null){
+			putQueryParameter("TemplateTag.5.Key", templateTag5Key);
+		}
+	}
+
 	public String getZoneId() {
 		return this.zoneId;
 	}
@@ -329,6 +417,17 @@ public class CreateLaunchTemplateRequest extends RpcAcsRequest<CreateLaunchTempl
 		this.versionDescription = versionDescription;
 		if(versionDescription != null){
 			putQueryParameter("VersionDescription", versionDescription);
+		}
+	}
+
+	public String getTemplateTag1Value() {
+		return this.templateTag1Value;
+	}
+
+	public void setTemplateTag1Value(String templateTag1Value) {
+		this.templateTag1Value = templateTag1Value;
+		if(templateTag1Value != null){
+			putQueryParameter("TemplateTag.1.Value", templateTag1Value);
 		}
 	}
 
@@ -409,6 +508,17 @@ public class CreateLaunchTemplateRequest extends RpcAcsRequest<CreateLaunchTempl
 		}
 	}
 
+	public String getTemplateTag5Value() {
+		return this.templateTag5Value;
+	}
+
+	public void setTemplateTag5Value(String templateTag5Value) {
+		this.templateTag5Value = templateTag5Value;
+		if(templateTag5Value != null){
+			putQueryParameter("TemplateTag.5.Value", templateTag5Value);
+		}
+	}
+
 	public String getInstanceType() {
 		return this.instanceType;
 	}
@@ -457,6 +567,17 @@ public class CreateLaunchTemplateRequest extends RpcAcsRequest<CreateLaunchTempl
 				putQueryParameter("NetworkInterface." + (depth1 + 1) + ".Description" , networkInterfaces.get(depth1).getDescription());
 			}
 		}	
+	}
+
+	public String getTemplateTag2Key() {
+		return this.templateTag2Key;
+	}
+
+	public void setTemplateTag2Key(String templateTag2Key) {
+		this.templateTag2Key = templateTag2Key;
+		if(templateTag2Key != null){
+			putQueryParameter("TemplateTag.2.Key", templateTag2Key);
+		}
 	}
 
 	public String getResourceOwnerAccount() {
@@ -544,6 +665,17 @@ public class CreateLaunchTemplateRequest extends RpcAcsRequest<CreateLaunchTempl
 		}	
 	}
 
+	public String getTemplateTag4Value() {
+		return this.templateTag4Value;
+	}
+
+	public void setTemplateTag4Value(String templateTag4Value) {
+		this.templateTag4Value = templateTag4Value;
+		if(templateTag4Value != null){
+			putQueryParameter("TemplateTag.4.Value", templateTag4Value);
+		}
+	}
+
 	public Integer getSystemDiskSize() {
 		return this.systemDiskSize;
 	}
@@ -563,6 +695,17 @@ public class CreateLaunchTemplateRequest extends RpcAcsRequest<CreateLaunchTempl
 		this.vpcId = vpcId;
 		if(vpcId != null){
 			putQueryParameter("VpcId", vpcId);
+		}
+	}
+
+	public String getTemplateTag1Key() {
+		return this.templateTag1Key;
+	}
+
+	public void setTemplateTag1Key(String templateTag1Key) {
+		this.templateTag1Key = templateTag1Key;
+		if(templateTag1Key != null){
+			putQueryParameter("TemplateTag.1.Key", templateTag1Key);
 		}
 	}
 

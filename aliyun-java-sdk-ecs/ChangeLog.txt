@@ -1,3 +1,6 @@
+2018-06-14 Version: 4.9.1
+1, Add passwordInherit.
+
 2018-05-28 Version: 4.9.0
 1, ValidateSecurityGroup API
 

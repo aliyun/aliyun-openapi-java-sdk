@@ -105,6 +105,8 @@ public class DescribeSnapshotsResponse extends AcsResponse {
 
 		private String sourceStorageType;
 
+		private Integer remainTime;
+
 		private List<Tag> tags;
 
 		public String getSnapshotId() {
@@ -217,6 +219,14 @@ public class DescribeSnapshotsResponse extends AcsResponse {
 
 		public void setSourceStorageType(String sourceStorageType) {
 			this.sourceStorageType = sourceStorageType;
+		}
+
+		public Integer getRemainTime() {
+			return this.remainTime;
+		}
+
+		public void setRemainTime(Integer remainTime) {
+			this.remainTime = remainTime;
 		}
 
 		public List<Tag> getTags() {

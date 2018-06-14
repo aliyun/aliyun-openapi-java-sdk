@@ -47,6 +47,8 @@ public class CreateImageRequest extends RpcAcsRequest<CreateImageResponse> {
 
 	private String tag1Value;
 
+	private String resourceGroupId;
+
 	private String imageName;
 
 	private String tag3Value;
@@ -185,6 +187,17 @@ public class CreateImageRequest extends RpcAcsRequest<CreateImageResponse> {
 		this.tag1Value = tag1Value;
 		if(tag1Value != null){
 			putQueryParameter("Tag.1.Value", tag1Value);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

@@ -49,6 +49,8 @@ public class DescribeImagesRequest extends RpcAcsRequest<DescribeImagesResponse>
 
 	private String tag1Value;
 
+	private String resourceGroupId;
+
 	private Boolean isSupportIoOptimized;
 
 	private String imageName;
@@ -207,6 +209,17 @@ public class DescribeImagesRequest extends RpcAcsRequest<DescribeImagesResponse>
 		this.tag1Value = tag1Value;
 		if(tag1Value != null){
 			putQueryParameter("Tag.1.Value", tag1Value);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 
