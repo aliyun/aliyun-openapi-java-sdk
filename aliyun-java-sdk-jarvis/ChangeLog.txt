@@ -1,6 +1,9 @@
 2018-06-20 Version: 1.2.2
 1, Add InstanceList in product security information query.
 
+2018-06-20 Version: 1.2.2
+1, Add InstanceList in product security information query.
+
 2018-06-06 Version: 1.2.1
 1, Change the type of srcUid to int.
 
