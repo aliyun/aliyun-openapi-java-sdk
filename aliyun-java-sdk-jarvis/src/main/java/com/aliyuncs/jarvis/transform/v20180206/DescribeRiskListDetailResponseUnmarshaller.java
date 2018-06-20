@@ -52,6 +52,12 @@ public class DescribeRiskListDetailResponseUnmarshaller {
 			data.setStatus(context.stringValue("DescribeRiskListDetailResponse.DataList["+ i +"].Status"));
 			data.setIgnoreTime(context.stringValue("DescribeRiskListDetailResponse.DataList["+ i +"].IgnoreTime"));
 
+			List<String> instanceList = new ArrayList<String>();
+			for (int j = 0; j < context.lengthValue("DescribeRiskListDetailResponse.DataList["+ i +"].InstanceList.Length"); j++) {
+				instanceList.add(context.stringValue("DescribeRiskListDetailResponse.DataList["+ i +"].InstanceList["+ j +"]"));
+			}
+			data.setInstanceList(instanceList);
+
 			List<EcsSecGroupRiskItem> ecsSecGroupRisk = new ArrayList<EcsSecGroupRiskItem>();
 			for (int j = 0; j < context.lengthValue("DescribeRiskListDetailResponse.DataList["+ i +"].EcsSecGroupRisk.Length"); j++) {
 				EcsSecGroupRiskItem ecsSecGroupRiskItem = new EcsSecGroupRiskItem();

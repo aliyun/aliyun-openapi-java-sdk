@@ -91,6 +91,8 @@ public class DescribeRiskListDetailResponse extends AcsResponse {
 
 		private List<RdsWhitelistRiskItem> rdsWhitelistRisk;
 
+		private List<String> instanceList;
+
 		public Integer getRiskId() {
 			return this.riskId;
 		}
@@ -185,6 +187,14 @@ public class DescribeRiskListDetailResponse extends AcsResponse {
 
 		public void setRdsWhitelistRisk(List<RdsWhitelistRiskItem> rdsWhitelistRisk) {
 			this.rdsWhitelistRisk = rdsWhitelistRisk;
+		}
+
+		public List<String> getInstanceList() {
+			return this.instanceList;
+		}
+
+		public void setInstanceList(List<String> instanceList) {
+			this.instanceList = instanceList;
 		}
 
 		public static class EcsSecGroupRiskItem {
