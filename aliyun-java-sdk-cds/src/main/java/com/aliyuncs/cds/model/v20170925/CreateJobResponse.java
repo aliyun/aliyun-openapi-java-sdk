@@ -15,14 +15,14 @@
 package com.aliyuncs.cds.model.v20170925;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.cds.transform.v20170925.StopBuildResponseUnmarshaller;
+import com.aliyuncs.cds.transform.v20170925.CreateJobResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class StopBuildResponse extends AcsResponse {
+public class CreateJobResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -35,8 +35,8 @@ public class StopBuildResponse extends AcsResponse {
 	}
 
 	@Override
-	public StopBuildResponse getInstance(UnmarshallerContext context) {
-		return	StopBuildResponseUnmarshaller.unmarshall(this, context);
+	public CreateJobResponse getInstance(UnmarshallerContext context) {
+		return	CreateJobResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

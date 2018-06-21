@@ -21,30 +21,30 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class RunJobRequest extends RoaAcsRequest<RunJobResponse> {
+public class DeleteCredentialRequest extends RoaAcsRequest<DeleteCredentialResponse> {
 	
-	public RunJobRequest() {
-		super("Cds", "2017-09-25", "RunJob", "codepipeline");
-		setUriPattern("/v1/job/[JobName]/run");
+	public DeleteCredentialRequest() {
+		super("Cds", "2017-09-25", "DeleteCredential", "codepipeline");
+		setUriPattern("/v1/credential/delete");
 		setMethod(MethodType.POST);
 	}
 
-	private String jobName;
+	private String credentialId;
 
-	public String getJobName() {
-		return this.jobName;
+	public String getCredentialId() {
+		return this.credentialId;
 	}
 
-	public void setJobName(String jobName) {
-		this.jobName = jobName;
-		if(jobName != null){
-			putPathParameter("JobName", jobName);
+	public void setCredentialId(String credentialId) {
+		this.credentialId = credentialId;
+		if(credentialId != null){
+			putQueryParameter("CredentialId", credentialId);
 		}
 	}
 
 	@Override
-	public Class<RunJobResponse> getResponseClass() {
-		return RunJobResponse.class;
+	public Class<DeleteCredentialResponse> getResponseClass() {
+		return DeleteCredentialResponse.class;
 	}
 
 }

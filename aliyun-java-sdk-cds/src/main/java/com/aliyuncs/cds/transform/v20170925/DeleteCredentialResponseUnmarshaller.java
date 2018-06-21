@@ -14,16 +14,16 @@
 
 package com.aliyuncs.cds.transform.v20170925;
 
-import com.aliyuncs.cds.model.v20170925.StopBuildResponse;
+import com.aliyuncs.cds.model.v20170925.DeleteCredentialResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class StopBuildResponseUnmarshaller {
+public class DeleteCredentialResponseUnmarshaller {
 
-	public static StopBuildResponse unmarshall(StopBuildResponse stopBuildResponse, UnmarshallerContext context) {
+	public static DeleteCredentialResponse unmarshall(DeleteCredentialResponse deleteCredentialResponse, UnmarshallerContext context) {
 		
-		stopBuildResponse.setRequestId(context.stringValue("StopBuildResponse.RequestId"));
+		deleteCredentialResponse.setRequestId(context.stringValue("DeleteCredentialResponse.RequestId"));
 	 
-	 	return stopBuildResponse;
+	 	return deleteCredentialResponse;
 	}
 }

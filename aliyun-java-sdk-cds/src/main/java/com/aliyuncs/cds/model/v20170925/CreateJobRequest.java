@@ -21,26 +21,28 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class StopBuildRequest extends RoaAcsRequest<StopBuildResponse> {
+public class CreateJobRequest extends RoaAcsRequest<CreateJobResponse> {
 	
-	public StopBuildRequest() {
-		super("Cds", "2017-09-25", "StopBuild", "codepipeline");
-		setUriPattern("/v1/job/[JobName]/build/[BuildNumber]/stop");
+	public CreateJobRequest() {
+		super("Cds", "2017-09-25", "CreateJob", "codepipeline");
+		setUriPattern("/v1/job/create");
 		setMethod(MethodType.POST);
 	}
 
-	private Integer buildNumber;
+	private String jsonContent;
 
 	private String jobName;
 
-	public Integer getBuildNumber() {
-		return this.buildNumber;
+	private String deployType;
+
+	public String getJsonContent() {
+		return this.jsonContent;
 	}
 
-	public void setBuildNumber(Integer buildNumber) {
-		this.buildNumber = buildNumber;
-		if(buildNumber != null){
-			putPathParameter("BuildNumber", buildNumber.toString());
+	public void setJsonContent(String jsonContent) {
+		this.jsonContent = jsonContent;
+		if(jsonContent != null){
+			putQueryParameter("JsonContent", jsonContent);
 		}
 	}
 
@@ -51,13 +53,24 @@ public class StopBuildRequest extends RoaAcsRequest<StopBuildResponse> {
 	public void setJobName(String jobName) {
 		this.jobName = jobName;
 		if(jobName != null){
-			putPathParameter("JobName", jobName);
+			putQueryParameter("JobName", jobName);
+		}
+	}
+
+	public String getDeployType() {
+		return this.deployType;
+	}
+
+	public void setDeployType(String deployType) {
+		this.deployType = deployType;
+		if(deployType != null){
+			putQueryParameter("DeployType", deployType);
 		}
 	}
 
 	@Override
-	public Class<StopBuildResponse> getResponseClass() {
-		return StopBuildResponse.class;
+	public Class<CreateJobResponse> getResponseClass() {
+		return CreateJobResponse.class;
 	}
 
 }

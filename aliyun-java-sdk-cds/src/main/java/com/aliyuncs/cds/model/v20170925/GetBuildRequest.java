@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.cds.model.v20170925;
 
 import com.aliyuncs.RoaAcsRequest;
@@ -23,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class GetBuildRequest extends RoaAcsRequest<GetBuildResponse> {
 	
 	public GetBuildRequest() {
-		super("Cds", "2017-09-25", "GetBuild");
+		super("Cds", "2017-09-25", "GetBuild", "codepipeline");
 		setUriPattern("/v1/job/[JobName]/build/[BuildNumber]");
 		setMethod(MethodType.GET);
 	}

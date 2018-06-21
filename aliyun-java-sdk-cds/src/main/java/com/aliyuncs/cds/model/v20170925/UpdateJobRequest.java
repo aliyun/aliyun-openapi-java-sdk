@@ -21,26 +21,26 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class StopBuildRequest extends RoaAcsRequest<StopBuildResponse> {
+public class UpdateJobRequest extends RoaAcsRequest<UpdateJobResponse> {
 	
-	public StopBuildRequest() {
-		super("Cds", "2017-09-25", "StopBuild", "codepipeline");
-		setUriPattern("/v1/job/[JobName]/build/[BuildNumber]/stop");
+	public UpdateJobRequest() {
+		super("Cds", "2017-09-25", "UpdateJob", "codepipeline");
+		setUriPattern("/v1/job/update");
 		setMethod(MethodType.POST);
 	}
 
-	private Integer buildNumber;
+	private String jsonContent;
 
 	private String jobName;
 
-	public Integer getBuildNumber() {
-		return this.buildNumber;
+	public String getJsonContent() {
+		return this.jsonContent;
 	}
 
-	public void setBuildNumber(Integer buildNumber) {
-		this.buildNumber = buildNumber;
-		if(buildNumber != null){
-			putPathParameter("BuildNumber", buildNumber.toString());
+	public void setJsonContent(String jsonContent) {
+		this.jsonContent = jsonContent;
+		if(jsonContent != null){
+			putQueryParameter("JsonContent", jsonContent);
 		}
 	}
 
@@ -51,13 +51,13 @@ public class StopBuildRequest extends RoaAcsRequest<StopBuildResponse> {
 	public void setJobName(String jobName) {
 		this.jobName = jobName;
 		if(jobName != null){
-			putPathParameter("JobName", jobName);
+			putQueryParameter("JobName", jobName);
 		}
 	}
 
 	@Override
-	public Class<StopBuildResponse> getResponseClass() {
-		return StopBuildResponse.class;
+	public Class<UpdateJobResponse> getResponseClass() {
+		return UpdateJobResponse.class;
 	}
 
 }

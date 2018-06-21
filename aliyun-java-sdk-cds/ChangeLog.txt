@@ -1,3 +1,8 @@
+2018-06-21 Version: 1.8.0
+1, add createJob updateJob API.
+2, add create delete update credential API.
+3, add get credentials API
+
 2017-11-23 Version: 1.0.0
 1, 增加了GetJob接口，用于获取指定的Job信息。
 2, 增加了GetJobs接口，用于获取多个Job信息。

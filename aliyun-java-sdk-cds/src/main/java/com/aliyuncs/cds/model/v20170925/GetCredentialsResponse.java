@@ -14,17 +14,20 @@
 
 package com.aliyuncs.cds.model.v20170925;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.cds.transform.v20170925.StopBuildResponseUnmarshaller;
+import com.aliyuncs.cds.transform.v20170925.GetCredentialsResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class StopBuildResponse extends AcsResponse {
+public class GetCredentialsResponse extends AcsResponse {
 
 	private String requestId;
+
+	private List<Credential> credentials;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -34,9 +37,40 @@ public class StopBuildResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public List<Credential> getCredentials() {
+		return this.credentials;
+	}
+
+	public void setCredentials(List<Credential> credentials) {
+		this.credentials = credentials;
+	}
+
+	public static class Credential {
+
+		private String credentialId;
+
+		private String credentialType;
+
+		public String getCredentialId() {
+			return this.credentialId;
+		}
+
+		public void setCredentialId(String credentialId) {
+			this.credentialId = credentialId;
+		}
+
+		public String getCredentialType() {
+			return this.credentialType;
+		}
+
+		public void setCredentialType(String credentialType) {
+			this.credentialType = credentialType;
+		}
+	}
+
 	@Override
-	public StopBuildResponse getInstance(UnmarshallerContext context) {
-		return	StopBuildResponseUnmarshaller.unmarshall(this, context);
+	public GetCredentialsResponse getInstance(UnmarshallerContext context) {
+		return	GetCredentialsResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

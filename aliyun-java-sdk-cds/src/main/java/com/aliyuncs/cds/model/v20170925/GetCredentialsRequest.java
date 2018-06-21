@@ -14,33 +14,24 @@
 
 package com.aliyuncs.cds.model.v20170925;
 
-import com.aliyuncs.AcsResponse;
-import com.aliyuncs.cds.transform.v20170925.StopBuildResponseUnmarshaller;
-import com.aliyuncs.transform.UnmarshallerContext;
+import com.aliyuncs.RoaAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
-public class StopBuildResponse extends AcsResponse {
-
-	private String requestId;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+public class GetCredentialsRequest extends RoaAcsRequest<GetCredentialsResponse> {
+	
+	public GetCredentialsRequest() {
+		super("Cds", "2017-09-25", "GetCredentials", "codepipeline");
+		setUriPattern("/v1/credentials");
+		setMethod(MethodType.GET);
 	}
 
 	@Override
-	public StopBuildResponse getInstance(UnmarshallerContext context) {
-		return	StopBuildResponseUnmarshaller.unmarshall(this, context);
+	public Class<GetCredentialsResponse> getResponseClass() {
+		return GetCredentialsResponse.class;
 	}
 
-	@Override
-	public boolean checkShowJsonItemName() {
-		return false;
-	}
 }

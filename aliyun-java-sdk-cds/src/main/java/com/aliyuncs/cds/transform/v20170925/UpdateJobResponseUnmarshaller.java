@@ -14,16 +14,16 @@
 
 package com.aliyuncs.cds.transform.v20170925;
 
-import com.aliyuncs.cds.model.v20170925.StopBuildResponse;
+import com.aliyuncs.cds.model.v20170925.UpdateJobResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class StopBuildResponseUnmarshaller {
+public class UpdateJobResponseUnmarshaller {
 
-	public static StopBuildResponse unmarshall(StopBuildResponse stopBuildResponse, UnmarshallerContext context) {
+	public static UpdateJobResponse unmarshall(UpdateJobResponse updateJobResponse, UnmarshallerContext context) {
 		
-		stopBuildResponse.setRequestId(context.stringValue("StopBuildResponse.RequestId"));
+		updateJobResponse.setRequestId(context.stringValue("UpdateJobResponse.RequestId"));
 	 
-	 	return stopBuildResponse;
+	 	return updateJobResponse;
 	}
 }

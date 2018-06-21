@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.cds.model.v20170925;
 
 import com.aliyuncs.RoaAcsRequest;
@@ -23,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class DeleteJobRequest extends RoaAcsRequest<DeleteJobResponse> {
 	
 	public DeleteJobRequest() {
-		super("Cds", "2017-09-25", "DeleteJob");
+		super("Cds", "2017-09-25", "DeleteJob", "codepipeline");
 		setUriPattern("/v1/job/[JobName]");
 		setMethod(MethodType.DELETE);
 	}
