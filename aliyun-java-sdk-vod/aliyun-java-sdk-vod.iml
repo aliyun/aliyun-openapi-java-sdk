@@ -10,5 +10,6 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="Maven: com.aliyun:aliyun-java-sdk-core:3.7.1" level="project" />
+    <orderEntry type="library" name="Maven: org.json:json:20170516" level="project" />
   </component>
 </module>

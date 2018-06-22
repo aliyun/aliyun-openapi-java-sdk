@@ -89,6 +89,8 @@ public class GetPlayInfoResponse extends AcsResponse {
 
 		private String preprocessStatus;
 
+		private String watermarkId;
+
 		public Long getWidth() {
 			return this.width;
 		}
@@ -216,6 +218,14 @@ public class GetPlayInfoResponse extends AcsResponse {
 		public void setPreprocessStatus(String preprocessStatus) {
 			this.preprocessStatus = preprocessStatus;
 		}
+
+		public String getWatermarkId() {
+			return this.watermarkId;
+		}
+
+		public void setWatermarkId(String watermarkId) {
+			this.watermarkId = watermarkId;
+		}
 	}
 
 	public static class VideoBase {
@@ -233,6 +243,8 @@ public class GetPlayInfoResponse extends AcsResponse {
 		private String mediaType;
 
 		private String creationTime;
+
+		private List<Thumbnail> thumbnailList;
 
 		public String getCoverURL() {
 			return this.coverURL;
@@ -288,6 +300,27 @@ public class GetPlayInfoResponse extends AcsResponse {
 
 		public void setCreationTime(String creationTime) {
 			this.creationTime = creationTime;
+		}
+
+		public List<Thumbnail> getThumbnailList() {
+			return this.thumbnailList;
+		}
+
+		public void setThumbnailList(List<Thumbnail> thumbnailList) {
+			this.thumbnailList = thumbnailList;
+		}
+
+		public static class Thumbnail {
+
+			private String uRL;
+
+			public String getURL() {
+				return this.uRL;
+			}
+
+			public void setURL(String uRL) {
+				this.uRL = uRL;
+			}
 		}
 	}
 

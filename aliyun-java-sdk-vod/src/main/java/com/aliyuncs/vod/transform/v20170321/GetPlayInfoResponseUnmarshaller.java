@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.vod.model.v20170321.GetPlayInfoResponse;
 import com.aliyuncs.vod.model.v20170321.GetPlayInfoResponse.PlayInfo;
 import com.aliyuncs.vod.model.v20170321.GetPlayInfoResponse.VideoBase;
+import com.aliyuncs.vod.model.v20170321.GetPlayInfoResponse.VideoBase.Thumbnail;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -37,6 +38,15 @@ public class GetPlayInfoResponseUnmarshaller {
 		videoBase.setVideoId(context.stringValue("GetPlayInfoResponse.VideoBase.VideoId"));
 		videoBase.setMediaType(context.stringValue("GetPlayInfoResponse.VideoBase.MediaType"));
 		videoBase.setCreationTime(context.stringValue("GetPlayInfoResponse.VideoBase.CreationTime"));
+
+		List<Thumbnail> thumbnailList = new ArrayList<Thumbnail>();
+		for (int i = 0; i < context.lengthValue("GetPlayInfoResponse.VideoBase.ThumbnailList.Length"); i++) {
+			Thumbnail thumbnail = new Thumbnail();
+			thumbnail.setURL(context.stringValue("GetPlayInfoResponse.VideoBase.ThumbnailList["+ i +"].URL"));
+
+			thumbnailList.add(thumbnail);
+		}
+		videoBase.setThumbnailList(thumbnailList);
 		getPlayInfoResponse.setVideoBase(videoBase);
 
 		List<PlayInfo> playInfoList = new ArrayList<PlayInfo>();
@@ -58,6 +68,7 @@ public class GetPlayInfoResponseUnmarshaller {
 			playInfo.setRand(context.stringValue("GetPlayInfoResponse.PlayInfoList["+ i +"].Rand"));
 			playInfo.setJobId(context.stringValue("GetPlayInfoResponse.PlayInfoList["+ i +"].JobId"));
 			playInfo.setPreprocessStatus(context.stringValue("GetPlayInfoResponse.PlayInfoList["+ i +"].PreprocessStatus"));
+			playInfo.setWatermarkId(context.stringValue("GetPlayInfoResponse.PlayInfoList["+ i +"].WatermarkId"));
 
 			playInfoList.add(playInfo);
 		}

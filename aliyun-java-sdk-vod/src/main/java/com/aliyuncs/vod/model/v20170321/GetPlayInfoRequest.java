@@ -42,6 +42,8 @@ public class GetPlayInfoRequest extends RpcAcsRequest<GetPlayInfoResponse> {
 
 	private Long ownerId;
 
+	private String resultType;
+
 	private String rand;
 
 	private String reAuthInfo;
@@ -139,6 +141,17 @@ public class GetPlayInfoRequest extends RpcAcsRequest<GetPlayInfoResponse> {
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getResultType() {
+		return this.resultType;
+	}
+
+	public void setResultType(String resultType) {
+		this.resultType = resultType;
+		if(resultType != null){
+			putQueryParameter("ResultType", resultType);
 		}
 	}
 
