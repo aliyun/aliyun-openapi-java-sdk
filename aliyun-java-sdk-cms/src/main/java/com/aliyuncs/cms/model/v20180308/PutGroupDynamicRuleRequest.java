@@ -20,39 +20,15 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class DeleteMyGroupInstancesRequest extends RpcAcsRequest<DeleteMyGroupInstancesResponse> {
+public class PutGroupDynamicRuleRequest extends RpcAcsRequest<PutGroupDynamicRuleResponse> {
 	
-	public DeleteMyGroupInstancesRequest() {
-		super("Cms", "2018-03-08", "DeleteMyGroupInstances", "cms");
+	public PutGroupDynamicRuleRequest() {
+		super("Cms", "2018-03-08", "PutGroupDynamicRule", "cms");
 	}
-
-	private String instanceIds;
-
-	private String instanceIdList;
 
 	private Long groupId;
 
-	public String getInstanceIds() {
-		return this.instanceIds;
-	}
-
-	public void setInstanceIds(String instanceIds) {
-		this.instanceIds = instanceIds;
-		if(instanceIds != null){
-			putQueryParameter("InstanceIds", instanceIds);
-		}
-	}
-
-	public String getInstanceIdList() {
-		return this.instanceIdList;
-	}
-
-	public void setInstanceIdList(String instanceIdList) {
-		this.instanceIdList = instanceIdList;
-		if(instanceIdList != null){
-			putQueryParameter("InstanceIdList", instanceIdList);
-		}
-	}
+	private String groupRuleArrayJson;
 
 	public Long getGroupId() {
 		return this.groupId;
@@ -65,9 +41,20 @@ public class DeleteMyGroupInstancesRequest extends RpcAcsRequest<DeleteMyGroupIn
 		}
 	}
 
+	public String getGroupRuleArrayJson() {
+		return this.groupRuleArrayJson;
+	}
+
+	public void setGroupRuleArrayJson(String groupRuleArrayJson) {
+		this.groupRuleArrayJson = groupRuleArrayJson;
+		if(groupRuleArrayJson != null){
+			putQueryParameter("GroupRuleArrayJson", groupRuleArrayJson);
+		}
+	}
+
 	@Override
-	public Class<DeleteMyGroupInstancesResponse> getResponseClass() {
-		return DeleteMyGroupInstancesResponse.class;
+	public Class<PutGroupDynamicRuleResponse> getResponseClass() {
+		return PutGroupDynamicRuleResponse.class;
 	}
 
 }

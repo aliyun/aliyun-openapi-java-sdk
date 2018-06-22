@@ -20,39 +20,15 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class DeleteMyGroupInstancesRequest extends RpcAcsRequest<DeleteMyGroupInstancesResponse> {
+public class DeleteGroupDynamicRuleRequest extends RpcAcsRequest<DeleteGroupDynamicRuleResponse> {
 	
-	public DeleteMyGroupInstancesRequest() {
-		super("Cms", "2018-03-08", "DeleteMyGroupInstances", "cms");
+	public DeleteGroupDynamicRuleRequest() {
+		super("Cms", "2018-03-08", "DeleteGroupDynamicRule", "cms");
 	}
-
-	private String instanceIds;
-
-	private String instanceIdList;
 
 	private Long groupId;
 
-	public String getInstanceIds() {
-		return this.instanceIds;
-	}
-
-	public void setInstanceIds(String instanceIds) {
-		this.instanceIds = instanceIds;
-		if(instanceIds != null){
-			putQueryParameter("InstanceIds", instanceIds);
-		}
-	}
-
-	public String getInstanceIdList() {
-		return this.instanceIdList;
-	}
-
-	public void setInstanceIdList(String instanceIdList) {
-		this.instanceIdList = instanceIdList;
-		if(instanceIdList != null){
-			putQueryParameter("InstanceIdList", instanceIdList);
-		}
-	}
+	private String category;
 
 	public Long getGroupId() {
 		return this.groupId;
@@ -65,9 +41,20 @@ public class DeleteMyGroupInstancesRequest extends RpcAcsRequest<DeleteMyGroupIn
 		}
 	}
 
+	public String getCategory() {
+		return this.category;
+	}
+
+	public void setCategory(String category) {
+		this.category = category;
+		if(category != null){
+			putQueryParameter("Category", category);
+		}
+	}
+
 	@Override
-	public Class<DeleteMyGroupInstancesResponse> getResponseClass() {
-		return DeleteMyGroupInstancesResponse.class;
+	public Class<DeleteGroupDynamicRuleResponse> getResponseClass() {
+		return DeleteGroupDynamicRuleResponse.class;
 	}
 
 }

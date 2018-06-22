@@ -26,11 +26,13 @@ public class CreateTaskRequest extends RpcAcsRequest<CreateTaskResponse> {
 		super("Cms", "2018-03-08", "CreateTask", "cms");
 	}
 
-	private String taskType;
-
 	private String address;
 
+	private String taskType;
+
 	private String ispCity;
+
+	private String alertIds;
 
 	private String options;
 
@@ -39,17 +41,6 @@ public class CreateTaskRequest extends RpcAcsRequest<CreateTaskResponse> {
 	private String interval;
 
 	private String alertRule;
-
-	public String getTaskType() {
-		return this.taskType;
-	}
-
-	public void setTaskType(String taskType) {
-		this.taskType = taskType;
-		if(taskType != null){
-			putQueryParameter("TaskType", taskType);
-		}
-	}
 
 	public String getAddress() {
 		return this.address;
@@ -62,6 +53,17 @@ public class CreateTaskRequest extends RpcAcsRequest<CreateTaskResponse> {
 		}
 	}
 
+	public String getTaskType() {
+		return this.taskType;
+	}
+
+	public void setTaskType(String taskType) {
+		this.taskType = taskType;
+		if(taskType != null){
+			putQueryParameter("TaskType", taskType);
+		}
+	}
+
 	public String getIspCity() {
 		return this.ispCity;
 	}
@@ -70,6 +72,17 @@ public class CreateTaskRequest extends RpcAcsRequest<CreateTaskResponse> {
 		this.ispCity = ispCity;
 		if(ispCity != null){
 			putQueryParameter("IspCity", ispCity);
+		}
+	}
+
+	public String getAlertIds() {
+		return this.alertIds;
+	}
+
+	public void setAlertIds(String alertIds) {
+		this.alertIds = alertIds;
+		if(alertIds != null){
+			putQueryParameter("AlertIds", alertIds);
 		}
 	}
 

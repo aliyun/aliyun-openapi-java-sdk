@@ -32,13 +32,13 @@ public class TaskConfigUnhealthyResponseUnmarshaller {
 		taskConfigUnhealthyResponse.setSuccess(context.booleanValue("TaskConfigUnhealthyResponse.Success"));
 
 		List<NodeTaskInstance> unhealthyList = new ArrayList<NodeTaskInstance>();
-		for (int i = 0; i < context.lengthValue("TaskConfigUnhealthyResponse.unhealthyList.Length"); i++) {
+		for (int i = 0; i < context.lengthValue("TaskConfigUnhealthyResponse.UnhealthyList.Length"); i++) {
 			NodeTaskInstance nodeTaskInstance = new NodeTaskInstance();
-			nodeTaskInstance.setTaskId(context.longValue("TaskConfigUnhealthyResponse.unhealthyList["+ i +"].TaskId"));
+			nodeTaskInstance.setTaskId(context.longValue("TaskConfigUnhealthyResponse.UnhealthyList["+ i +"].TaskId"));
 
 			List<String> instanceList = new ArrayList<String>();
-			for (int j = 0; j < context.lengthValue("TaskConfigUnhealthyResponse.unhealthyList["+ i +"].InstanceList.Length"); j++) {
-				instanceList.add(context.stringValue("TaskConfigUnhealthyResponse.unhealthyList["+ i +"].InstanceList["+ j +"]"));
+			for (int j = 0; j < context.lengthValue("TaskConfigUnhealthyResponse.UnhealthyList["+ i +"].InstanceList.Length"); j++) {
+				instanceList.add(context.stringValue("TaskConfigUnhealthyResponse.UnhealthyList["+ i +"].InstanceList["+ j +"]"));
 			}
 			nodeTaskInstance.setInstanceList(instanceList);
 

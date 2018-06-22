@@ -16,14 +16,14 @@ package com.aliyuncs.cms.model.v20180308;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.cms.transform.v20180308.ListMyGroupsResponseUnmarshaller;
+import com.aliyuncs.cms.transform.v20180308.ListGroupDynamicRuleResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ListMyGroupsResponse extends AcsResponse {
+public class ListGroupDynamicRuleResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -39,7 +39,7 @@ public class ListMyGroupsResponse extends AcsResponse {
 
 	private Integer total;
 
-	private List<Resource> resources;
+	private List<ResourceItem> resource;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -97,33 +97,23 @@ public class ListMyGroupsResponse extends AcsResponse {
 		this.total = total;
 	}
 
-	public List<Resource> getResources() {
-		return this.resources;
+	public List<ResourceItem> getResource() {
+		return this.resource;
 	}
 
-	public void setResources(List<Resource> resources) {
-		this.resources = resources;
+	public void setResource(List<ResourceItem> resource) {
+		this.resource = resource;
 	}
 
-	public static class Resource {
+	public static class ResourceItem {
 
 		private Long groupId;
 
-		private String groupName;
+		private String category;
 
-		private String serviceId;
+		private String filterRelation;
 
-		private String bindUrls;
-
-		private String type;
-
-		private Long gmtModified;
-
-		private Long gmtCreate;
-
-		private String bindUrl;
-
-		private List<ContactGroup> contactGroups;
+		private List<Filter> filters;
 
 		public Long getGroupId() {
 			return this.groupId;
@@ -133,73 +123,45 @@ public class ListMyGroupsResponse extends AcsResponse {
 			this.groupId = groupId;
 		}
 
-		public String getGroupName() {
-			return this.groupName;
+		public String getCategory() {
+			return this.category;
 		}
 
-		public void setGroupName(String groupName) {
-			this.groupName = groupName;
+		public void setCategory(String category) {
+			this.category = category;
 		}
 
-		public String getServiceId() {
-			return this.serviceId;
+		public String getFilterRelation() {
+			return this.filterRelation;
 		}
 
-		public void setServiceId(String serviceId) {
-			this.serviceId = serviceId;
+		public void setFilterRelation(String filterRelation) {
+			this.filterRelation = filterRelation;
 		}
 
-		public String getBindUrls() {
-			return this.bindUrls;
+		public List<Filter> getFilters() {
+			return this.filters;
 		}
 
-		public void setBindUrls(String bindUrls) {
-			this.bindUrls = bindUrls;
+		public void setFilters(List<Filter> filters) {
+			this.filters = filters;
 		}
 
-		public String getType() {
-			return this.type;
-		}
+		public static class Filter {
 
-		public void setType(String type) {
-			this.type = type;
-		}
-
-		public Long getGmtModified() {
-			return this.gmtModified;
-		}
-
-		public void setGmtModified(Long gmtModified) {
-			this.gmtModified = gmtModified;
-		}
-
-		public Long getGmtCreate() {
-			return this.gmtCreate;
-		}
-
-		public void setGmtCreate(Long gmtCreate) {
-			this.gmtCreate = gmtCreate;
-		}
-
-		public String getBindUrl() {
-			return this.bindUrl;
-		}
-
-		public void setBindUrl(String bindUrl) {
-			this.bindUrl = bindUrl;
-		}
-
-		public List<ContactGroup> getContactGroups() {
-			return this.contactGroups;
-		}
-
-		public void setContactGroups(List<ContactGroup> contactGroups) {
-			this.contactGroups = contactGroups;
-		}
-
-		public static class ContactGroup {
+			private String function;
 
 			private String name;
+
+			private String value;
+
+			public String getFunction() {
+				return this.function;
+			}
+
+			public void setFunction(String function) {
+				this.function = function;
+			}
 
 			public String getName() {
 				return this.name;
@@ -208,11 +170,19 @@ public class ListMyGroupsResponse extends AcsResponse {
 			public void setName(String name) {
 				this.name = name;
 			}
+
+			public String getValue() {
+				return this.value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
+			}
 		}
 	}
 
 	@Override
-	public ListMyGroupsResponse getInstance(UnmarshallerContext context) {
-		return	ListMyGroupsResponseUnmarshaller.unmarshall(this, context);
+	public ListGroupDynamicRuleResponse getInstance(UnmarshallerContext context) {
+		return	ListGroupDynamicRuleResponseUnmarshaller.unmarshall(this, context);
 	}
 }

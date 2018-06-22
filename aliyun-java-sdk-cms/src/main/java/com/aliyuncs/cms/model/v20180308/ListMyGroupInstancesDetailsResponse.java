@@ -119,6 +119,8 @@ public class ListMyGroupInstancesDetailsResponse extends AcsResponse {
 
 		private String category;
 
+		private String dimension;
+
 		private List<Tag> tags;
 
 		private Region region;
@@ -171,6 +173,14 @@ public class ListMyGroupInstancesDetailsResponse extends AcsResponse {
 
 		public void setCategory(String category) {
 			this.category = category;
+		}
+
+		public String getDimension() {
+			return this.dimension;
+		}
+
+		public void setDimension(String dimension) {
+			this.dimension = dimension;
 		}
 
 		public List<Tag> getTags() {

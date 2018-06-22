@@ -30,6 +30,8 @@ public class ModifyTaskRequest extends RpcAcsRequest<ModifyTaskResponse> {
 
 	private String ispCity;
 
+	private String alertIds;
+
 	private String options;
 
 	private String taskName;
@@ -59,6 +61,17 @@ public class ModifyTaskRequest extends RpcAcsRequest<ModifyTaskResponse> {
 		this.ispCity = ispCity;
 		if(ispCity != null){
 			putQueryParameter("IspCity", ispCity);
+		}
+	}
+
+	public String getAlertIds() {
+		return this.alertIds;
+	}
+
+	public void setAlertIds(String alertIds) {
+		this.alertIds = alertIds;
+		if(alertIds != null){
+			putQueryParameter("AlertIds", alertIds);
 		}
 	}
 

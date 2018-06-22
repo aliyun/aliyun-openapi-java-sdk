@@ -46,6 +46,7 @@ public class ListMyGroupInstancesDetailsResponseUnmarshaller {
 			resource.setDesc(context.stringValue("ListMyGroupInstancesDetailsResponse.Resources["+ i +"].Desc"));
 			resource.setNetworkType(context.stringValue("ListMyGroupInstancesDetailsResponse.Resources["+ i +"].NetworkType"));
 			resource.setCategory(context.stringValue("ListMyGroupInstancesDetailsResponse.Resources["+ i +"].Category"));
+			resource.setDimension(context.stringValue("ListMyGroupInstancesDetailsResponse.Resources["+ i +"].Dimension"));
 
 			Region region = new Region();
 			region.setRegionId(context.stringValue("ListMyGroupInstancesDetailsResponse.Resources["+ i +"].Region.RegionId"));
