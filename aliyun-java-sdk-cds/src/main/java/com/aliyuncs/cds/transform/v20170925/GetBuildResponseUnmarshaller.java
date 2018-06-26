@@ -28,6 +28,7 @@ public class GetBuildResponseUnmarshaller {
 		getBuildResponse.setDuration(context.integerValue("GetBuildResponse.Duration"));
 		getBuildResponse.setLog(context.stringValue("GetBuildResponse.Log"));
 		getBuildResponse.setStartTime(context.longValue("GetBuildResponse.StartTime"));
+		getBuildResponse.setBuildStatus(context.stringValue("GetBuildResponse.BuildStatus"));
 	 
 	 	return getBuildResponse;
 	}

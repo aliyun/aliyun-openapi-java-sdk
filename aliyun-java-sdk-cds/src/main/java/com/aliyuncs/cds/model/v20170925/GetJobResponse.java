@@ -32,6 +32,8 @@ public class GetJobResponse extends AcsResponse {
 
 	private String requestId;
 
+	private Integer nextBuildNumber;
+
 	private LastSuccessfulBuild lastSuccessfulBuild;
 
 	private LastFailedBuild lastFailedBuild;
@@ -66,6 +68,14 @@ public class GetJobResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Integer getNextBuildNumber() {
+		return this.nextBuildNumber;
+	}
+
+	public void setNextBuildNumber(Integer nextBuildNumber) {
+		this.nextBuildNumber = nextBuildNumber;
 	}
 
 	public LastSuccessfulBuild getLastSuccessfulBuild() {

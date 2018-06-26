@@ -36,6 +36,8 @@ public class GetBuildResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String buildStatus;
+
 	public String getBuildEnv() {
 		return this.buildEnv;
 	}
@@ -82,6 +84,14 @@ public class GetBuildResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getBuildStatus() {
+		return this.buildStatus;
+	}
+
+	public void setBuildStatus(String buildStatus) {
+		this.buildStatus = buildStatus;
 	}
 
 	@Override

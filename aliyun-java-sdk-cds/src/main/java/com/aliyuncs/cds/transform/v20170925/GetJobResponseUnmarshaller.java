@@ -28,6 +28,7 @@ public class GetJobResponseUnmarshaller {
 		getJobResponse.setJobName(context.stringValue("GetJobResponse.JobName"));
 		getJobResponse.setSuccessRate(context.floatValue("GetJobResponse.SuccessRate"));
 		getJobResponse.setTotalBuilds(context.integerValue("GetJobResponse.TotalBuilds"));
+		getJobResponse.setNextBuildNumber(context.integerValue("GetJobResponse.NextBuildNumber"));
 
 		LastSuccessfulBuild lastSuccessfulBuild = new LastSuccessfulBuild();
 		lastSuccessfulBuild.setBuildEnv(context.stringValue("GetJobResponse.LastSuccessfulBuild.BuildEnv"));
