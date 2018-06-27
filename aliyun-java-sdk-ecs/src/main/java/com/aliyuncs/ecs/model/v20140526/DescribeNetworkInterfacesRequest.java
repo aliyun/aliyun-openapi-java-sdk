@@ -69,6 +69,8 @@ public class DescribeNetworkInterfacesRequest extends RpcAcsRequest<DescribeNetw
 
 	private String tag2Value;
 
+	private String vpcId;
+
 	private String tag4Key;
 
 	private String primaryIpAddress;
@@ -303,6 +305,17 @@ public class DescribeNetworkInterfacesRequest extends RpcAcsRequest<DescribeNetw
 		this.tag2Value = tag2Value;
 		if(tag2Value != null){
 			putQueryParameter("Tag.2.Value", tag2Value);
+		}
+	}
+
+	public String getVpcId() {
+		return this.vpcId;
+	}
+
+	public void setVpcId(String vpcId) {
+		this.vpcId = vpcId;
+		if(vpcId != null){
+			putQueryParameter("VpcId", vpcId);
 		}
 	}
 

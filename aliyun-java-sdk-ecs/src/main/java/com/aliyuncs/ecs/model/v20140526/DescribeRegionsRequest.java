@@ -32,6 +32,8 @@ public class DescribeRegionsRequest extends RpcAcsRequest<DescribeRegionsRespons
 
 	private String ownerAccount;
 
+	private String acceptLanguage;
+
 	private Long ownerId;
 
 	private String instanceChargeType;
@@ -68,6 +70,17 @@ public class DescribeRegionsRequest extends RpcAcsRequest<DescribeRegionsRespons
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public String getAcceptLanguage() {
+		return this.acceptLanguage;
+	}
+
+	public void setAcceptLanguage(String acceptLanguage) {
+		this.acceptLanguage = acceptLanguage;
+		if(acceptLanguage != null){
+			putQueryParameter("AcceptLanguage", acceptLanguage);
 		}
 	}
 

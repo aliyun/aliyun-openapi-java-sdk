@@ -30,7 +30,7 @@ public class GetInstanceScreenshotRequest extends RpcAcsRequest<GetInstanceScree
 
 	private String resourceOwnerAccount;
 
-	private Boolean wakeup;
+	private Boolean wakeUp;
 
 	private String ownerAccount;
 
@@ -60,14 +60,14 @@ public class GetInstanceScreenshotRequest extends RpcAcsRequest<GetInstanceScree
 		}
 	}
 
-	public Boolean getWakeup() {
-		return this.wakeup;
+	public Boolean getWakeUp() {
+		return this.wakeUp;
 	}
 
-	public void setWakeup(Boolean wakeup) {
-		this.wakeup = wakeup;
-		if(wakeup != null){
-			putQueryParameter("Wakeup", wakeup.toString());
+	public void setWakeUp(Boolean wakeUp) {
+		this.wakeUp = wakeUp;
+		if(wakeUp != null){
+			putQueryParameter("WakeUp", wakeUp.toString());
 		}
 	}
 

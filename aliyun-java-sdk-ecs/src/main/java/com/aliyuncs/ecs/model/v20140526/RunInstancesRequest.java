@@ -47,6 +47,10 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 
 	private List<Tag> tags;
 
+	private Integer autoRenewPeriod;
+
+	private Integer period;
+
 	private Boolean dryRun;
 
 	private String launchTemplateId;
@@ -57,7 +61,11 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 
 	private String spotStrategy;
 
+	private String periodUnit;
+
 	private String instanceName;
+
+	private Boolean autoRenew;
 
 	private String internetChargeType;
 
@@ -86,6 +94,8 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 	private Boolean passwordInherit;
 
 	private String instanceType;
+
+	private String instanceChargeType;
 
 	private List<NetworkInterface> networkInterfaces;
 
@@ -224,6 +234,28 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 		}	
 	}
 
+	public Integer getAutoRenewPeriod() {
+		return this.autoRenewPeriod;
+	}
+
+	public void setAutoRenewPeriod(Integer autoRenewPeriod) {
+		this.autoRenewPeriod = autoRenewPeriod;
+		if(autoRenewPeriod != null){
+			putQueryParameter("AutoRenewPeriod", autoRenewPeriod.toString());
+		}
+	}
+
+	public Integer getPeriod() {
+		return this.period;
+	}
+
+	public void setPeriod(Integer period) {
+		this.period = period;
+		if(period != null){
+			putQueryParameter("Period", period.toString());
+		}
+	}
+
 	public Boolean getDryRun() {
 		return this.dryRun;
 	}
@@ -279,6 +311,17 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 		}
 	}
 
+	public String getPeriodUnit() {
+		return this.periodUnit;
+	}
+
+	public void setPeriodUnit(String periodUnit) {
+		this.periodUnit = periodUnit;
+		if(periodUnit != null){
+			putQueryParameter("PeriodUnit", periodUnit);
+		}
+	}
+
 	public String getInstanceName() {
 		return this.instanceName;
 	}
@@ -287,6 +330,17 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 		this.instanceName = instanceName;
 		if(instanceName != null){
 			putQueryParameter("InstanceName", instanceName);
+		}
+	}
+
+	public Boolean getAutoRenew() {
+		return this.autoRenew;
+	}
+
+	public void setAutoRenew(Boolean autoRenew) {
+		this.autoRenew = autoRenew;
+		if(autoRenew != null){
+			putQueryParameter("AutoRenew", autoRenew.toString());
 		}
 	}
 
@@ -441,6 +495,17 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 		this.instanceType = instanceType;
 		if(instanceType != null){
 			putQueryParameter("InstanceType", instanceType);
+		}
+	}
+
+	public String getInstanceChargeType() {
+		return this.instanceChargeType;
+	}
+
+	public void setInstanceChargeType(String instanceChargeType) {
+		this.instanceChargeType = instanceChargeType;
+		if(instanceChargeType != null){
+			putQueryParameter("InstanceChargeType", instanceChargeType);
 		}
 	}
 

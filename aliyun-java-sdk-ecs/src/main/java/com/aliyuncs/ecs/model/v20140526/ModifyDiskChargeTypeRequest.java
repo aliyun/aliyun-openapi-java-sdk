@@ -28,6 +28,8 @@ public class ModifyDiskChargeTypeRequest extends RpcAcsRequest<ModifyDiskChargeT
 
 	private Long resourceOwnerId;
 
+	private String diskChargeType;
+
 	private String instanceId;
 
 	private Boolean autoPay;
@@ -50,6 +52,17 @@ public class ModifyDiskChargeTypeRequest extends RpcAcsRequest<ModifyDiskChargeT
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getDiskChargeType() {
+		return this.diskChargeType;
+	}
+
+	public void setDiskChargeType(String diskChargeType) {
+		this.diskChargeType = diskChargeType;
+		if(diskChargeType != null){
+			putQueryParameter("DiskChargeType", diskChargeType);
 		}
 	}
 
