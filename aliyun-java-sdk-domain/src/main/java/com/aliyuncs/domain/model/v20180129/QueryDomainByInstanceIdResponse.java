@@ -65,6 +65,14 @@ public class QueryDomainByInstanceIdResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String zhRegistrantOrganization;
+
+	private String zhRegistrantName;
+
+	private Long registrationDateLong;
+
+	private Long expirationDateLong;
+
 	private List<String> dnsList;
 
 	public String getUserId() {
@@ -225,6 +233,38 @@ public class QueryDomainByInstanceIdResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getZhRegistrantOrganization() {
+		return this.zhRegistrantOrganization;
+	}
+
+	public void setZhRegistrantOrganization(String zhRegistrantOrganization) {
+		this.zhRegistrantOrganization = zhRegistrantOrganization;
+	}
+
+	public String getZhRegistrantName() {
+		return this.zhRegistrantName;
+	}
+
+	public void setZhRegistrantName(String zhRegistrantName) {
+		this.zhRegistrantName = zhRegistrantName;
+	}
+
+	public Long getRegistrationDateLong() {
+		return this.registrationDateLong;
+	}
+
+	public void setRegistrationDateLong(Long registrationDateLong) {
+		this.registrationDateLong = registrationDateLong;
+	}
+
+	public Long getExpirationDateLong() {
+		return this.expirationDateLong;
+	}
+
+	public void setExpirationDateLong(Long expirationDateLong) {
+		this.expirationDateLong = expirationDateLong;
 	}
 
 	public List<String> getDnsList() {

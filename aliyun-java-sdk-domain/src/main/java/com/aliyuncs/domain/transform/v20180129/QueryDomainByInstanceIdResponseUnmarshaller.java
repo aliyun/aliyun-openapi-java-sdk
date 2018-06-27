@@ -45,6 +45,10 @@ public class QueryDomainByInstanceIdResponseUnmarshaller {
 		queryDomainByInstanceIdResponse.setTransferOutStatus(context.stringValue("QueryDomainByInstanceIdResponse.TransferOutStatus"));
 		queryDomainByInstanceIdResponse.setRegistrantType(context.stringValue("QueryDomainByInstanceIdResponse.RegistrantType"));
 		queryDomainByInstanceIdResponse.setDomainNameVerificationStatus(context.stringValue("QueryDomainByInstanceIdResponse.DomainNameVerificationStatus"));
+		queryDomainByInstanceIdResponse.setZhRegistrantOrganization(context.stringValue("QueryDomainByInstanceIdResponse.ZhRegistrantOrganization"));
+		queryDomainByInstanceIdResponse.setZhRegistrantName(context.stringValue("QueryDomainByInstanceIdResponse.ZhRegistrantName"));
+		queryDomainByInstanceIdResponse.setRegistrationDateLong(context.longValue("QueryDomainByInstanceIdResponse.RegistrationDateLong"));
+		queryDomainByInstanceIdResponse.setExpirationDateLong(context.longValue("QueryDomainByInstanceIdResponse.ExpirationDateLong"));
 
 		List<String> dnsList = new ArrayList<String>();
 		for (int i = 0; i < context.lengthValue("QueryDomainByInstanceIdResponse.DnsList.Length"); i++) {

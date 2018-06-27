@@ -15,28 +15,28 @@
 package com.aliyuncs.domain.model.v20180129;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.domain.transform.v20180129.QueryRegistrantProfileRealNameVerificationInfoResponseUnmarshaller;
+import com.aliyuncs.domain.transform.v20180129.QueryDomainRealNameVerificationInfoResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class QueryRegistrantProfileRealNameVerificationInfoResponse extends AcsResponse {
+public class QueryDomainRealNameVerificationInfoResponse extends AcsResponse {
 
 	private String requestId;
 
 	private String submissionDate;
 
-	private String modificationDate;
-
 	private String identityCredential;
-
-	private Long registrantProfileId;
 
 	private String identityCredentialNo;
 
 	private String identityCredentialType;
+
+	private String domainName;
+
+	private String instanceId;
 
 	private String identityCredentialUrl;
 
@@ -56,28 +56,12 @@ public class QueryRegistrantProfileRealNameVerificationInfoResponse extends AcsR
 		this.submissionDate = submissionDate;
 	}
 
-	public String getModificationDate() {
-		return this.modificationDate;
-	}
-
-	public void setModificationDate(String modificationDate) {
-		this.modificationDate = modificationDate;
-	}
-
 	public String getIdentityCredential() {
 		return this.identityCredential;
 	}
 
 	public void setIdentityCredential(String identityCredential) {
 		this.identityCredential = identityCredential;
-	}
-
-	public Long getRegistrantProfileId() {
-		return this.registrantProfileId;
-	}
-
-	public void setRegistrantProfileId(Long registrantProfileId) {
-		this.registrantProfileId = registrantProfileId;
 	}
 
 	public String getIdentityCredentialNo() {
@@ -96,6 +80,22 @@ public class QueryRegistrantProfileRealNameVerificationInfoResponse extends AcsR
 		this.identityCredentialType = identityCredentialType;
 	}
 
+	public String getDomainName() {
+		return this.domainName;
+	}
+
+	public void setDomainName(String domainName) {
+		this.domainName = domainName;
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+	}
+
 	public String getIdentityCredentialUrl() {
 		return this.identityCredentialUrl;
 	}
@@ -105,7 +105,7 @@ public class QueryRegistrantProfileRealNameVerificationInfoResponse extends AcsR
 	}
 
 	@Override
-	public QueryRegistrantProfileRealNameVerificationInfoResponse getInstance(UnmarshallerContext context) {
-		return	QueryRegistrantProfileRealNameVerificationInfoResponseUnmarshaller.unmarshall(this, context);
+	public QueryDomainRealNameVerificationInfoResponse getInstance(UnmarshallerContext context) {
+		return	QueryDomainRealNameVerificationInfoResponseUnmarshaller.unmarshall(this, context);
 	}
 }

@@ -1,3 +1,8 @@
+2018-06-27 Version: 3.6.0
+1, Modify QueryDomainRealNameVerificationInfo Api, add a return value IdentityCredentialUrl, which is domain real name verification image, you can download it via a HTTP get request,It has validity for 30 seconds.
+2, Modify QueryRegistrantProfileRealNameVerificationInfo Api, add a return value IdentityCredentialUrl, which is domain real name verification image, you can download it via a HTTP get request,It has validity for 30 seconds
+
+
 2018-05-09 Version: 3.5.0
 1, Add apis for domain broker.
 
