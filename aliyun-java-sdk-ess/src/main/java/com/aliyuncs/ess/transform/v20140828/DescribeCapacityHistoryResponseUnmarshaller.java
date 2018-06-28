@@ -26,6 +26,7 @@ public class DescribeCapacityHistoryResponseUnmarshaller {
 
 	public static DescribeCapacityHistoryResponse unmarshall(DescribeCapacityHistoryResponse describeCapacityHistoryResponse, UnmarshallerContext context) {
 		
+		describeCapacityHistoryResponse.setRequestId(context.stringValue("DescribeCapacityHistoryResponse.RequestId"));
 		describeCapacityHistoryResponse.setTotalCount(context.integerValue("DescribeCapacityHistoryResponse.TotalCount"));
 		describeCapacityHistoryResponse.setPageNumber(context.integerValue("DescribeCapacityHistoryResponse.PageNumber"));
 		describeCapacityHistoryResponse.setPageSize(context.integerValue("DescribeCapacityHistoryResponse.PageSize"));

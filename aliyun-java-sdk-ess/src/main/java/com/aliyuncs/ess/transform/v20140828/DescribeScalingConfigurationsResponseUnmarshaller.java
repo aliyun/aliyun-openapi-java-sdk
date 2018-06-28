@@ -42,6 +42,7 @@ public class DescribeScalingConfigurationsResponseUnmarshaller {
 			scalingConfiguration.setScalingGroupId(context.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].ScalingGroupId"));
 			scalingConfiguration.setInstanceName(context.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].InstanceName"));
 			scalingConfiguration.setImageId(context.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].ImageId"));
+			scalingConfiguration.setHostName(context.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].HostName"));
 			scalingConfiguration.setInstanceType(context.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].InstanceType"));
 			scalingConfiguration.setInstanceGeneration(context.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].InstanceGeneration"));
 			scalingConfiguration.setSecurityGroupId(context.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].SecurityGroupId"));
@@ -60,6 +61,7 @@ public class DescribeScalingConfigurationsResponseUnmarshaller {
 			scalingConfiguration.setDeploymentSetId(context.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].DeploymentSetId"));
 			scalingConfiguration.setSecurityEnhancementStrategy(context.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].SecurityEnhancementStrategy"));
 			scalingConfiguration.setSpotStrategy(context.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].SpotStrategy"));
+			scalingConfiguration.setPasswordInherit(context.booleanValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].PasswordInherit"));
 
 			List<String> instanceTypes = new ArrayList<String>();
 			for (int j = 0; j < context.lengthValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].InstanceTypes.Length"); j++) {

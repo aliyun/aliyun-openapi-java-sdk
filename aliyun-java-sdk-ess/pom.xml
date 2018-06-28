@@ -3,7 +3,7 @@
   <groupId>com.aliyun</groupId>
   <artifactId>aliyun-java-sdk-ess</artifactId>
   <packaging>jar</packaging>
-  <version>2.1.6</version>
+  <version>2.2.0</version>
     <name>aliyun-java-sdk-ess</name>
   <url>http://www.aliyun.com</url>
   <description>Aliyun Open API SDK for Java

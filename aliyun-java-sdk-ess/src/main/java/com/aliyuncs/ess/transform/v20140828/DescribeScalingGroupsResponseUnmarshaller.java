@@ -36,6 +36,8 @@ public class DescribeScalingGroupsResponseUnmarshaller {
 			ScalingGroup scalingGroup = new ScalingGroup();
 			scalingGroup.setDefaultCooldown(context.integerValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].DefaultCooldown"));
 			scalingGroup.setMaxSize(context.integerValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].MaxSize"));
+			scalingGroup.setPendingWaitCapacity(context.integerValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].PendingWaitCapacity"));
+			scalingGroup.setRemovingWaitCapacity(context.integerValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].RemovingWaitCapacity"));
 			scalingGroup.setPendingCapacity(context.integerValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].PendingCapacity"));
 			scalingGroup.setRemovingCapacity(context.integerValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].RemovingCapacity"));
 			scalingGroup.setScalingGroupName(context.stringValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].ScalingGroupName"));

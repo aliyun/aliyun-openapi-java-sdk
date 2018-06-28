@@ -25,6 +25,8 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeCapacityHistoryResponse extends AcsResponse {
 
+	private String requestId;
+
 	private Integer totalCount;
 
 	private Integer pageNumber;
@@ -32,6 +34,14 @@ public class DescribeCapacityHistoryResponse extends AcsResponse {
 	private Integer pageSize;
 
 	private List<CapacityHistoryModel> capacityHistoryItems;
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
 
 	public Integer getTotalCount() {
 		return this.totalCount;

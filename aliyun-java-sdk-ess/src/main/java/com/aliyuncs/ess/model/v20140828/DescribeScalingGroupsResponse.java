@@ -81,6 +81,10 @@ public class DescribeScalingGroupsResponse extends AcsResponse {
 
 		private Integer maxSize;
 
+		private Integer pendingWaitCapacity;
+
+		private Integer removingWaitCapacity;
+
 		private Integer pendingCapacity;
 
 		private Integer removingCapacity;
@@ -139,6 +143,22 @@ public class DescribeScalingGroupsResponse extends AcsResponse {
 
 		public void setMaxSize(Integer maxSize) {
 			this.maxSize = maxSize;
+		}
+
+		public Integer getPendingWaitCapacity() {
+			return this.pendingWaitCapacity;
+		}
+
+		public void setPendingWaitCapacity(Integer pendingWaitCapacity) {
+			this.pendingWaitCapacity = pendingWaitCapacity;
+		}
+
+		public Integer getRemovingWaitCapacity() {
+			return this.removingWaitCapacity;
+		}
+
+		public void setRemovingWaitCapacity(Integer removingWaitCapacity) {
+			this.removingWaitCapacity = removingWaitCapacity;
 		}
 
 		public Integer getPendingCapacity() {

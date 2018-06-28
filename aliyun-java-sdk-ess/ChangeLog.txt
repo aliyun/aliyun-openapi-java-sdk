@@ -1,3 +1,7 @@
+2018-06-28 Version: 2.2.0
+1, ScalingConfiguration support hostName and passwordInherit
+2, ScalingConfiguration support modify
+
 2018-06-13 Version: 2.1.6
 1, Add lifecycleHook.
 

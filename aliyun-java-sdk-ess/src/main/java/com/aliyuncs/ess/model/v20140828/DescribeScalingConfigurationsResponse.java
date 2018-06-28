@@ -87,6 +87,8 @@ public class DescribeScalingConfigurationsResponse extends AcsResponse {
 
 		private String imageId;
 
+		private String hostName;
+
 		private String instanceType;
 
 		private String instanceGeneration;
@@ -122,6 +124,8 @@ public class DescribeScalingConfigurationsResponse extends AcsResponse {
 		private String securityEnhancementStrategy;
 
 		private String spotStrategy;
+
+		private Boolean passwordInherit;
 
 		private List<DataDisk> dataDisks;
 
@@ -169,6 +173,14 @@ public class DescribeScalingConfigurationsResponse extends AcsResponse {
 
 		public void setImageId(String imageId) {
 			this.imageId = imageId;
+		}
+
+		public String getHostName() {
+			return this.hostName;
+		}
+
+		public void setHostName(String hostName) {
+			this.hostName = hostName;
 		}
 
 		public String getInstanceType() {
@@ -313,6 +325,14 @@ public class DescribeScalingConfigurationsResponse extends AcsResponse {
 
 		public void setSpotStrategy(String spotStrategy) {
 			this.spotStrategy = spotStrategy;
+		}
+
+		public Boolean getPasswordInherit() {
+			return this.passwordInherit;
+		}
+
+		public void setPasswordInherit(Boolean passwordInherit) {
+			this.passwordInherit = passwordInherit;
 		}
 
 		public List<DataDisk> getDataDisks() {

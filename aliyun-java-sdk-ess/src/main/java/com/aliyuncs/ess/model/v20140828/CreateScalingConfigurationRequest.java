@@ -53,7 +53,7 @@ public class CreateScalingConfigurationRequest extends RpcAcsRequest<CreateScali
 
 	private String keyPairName;
 
-	private List<String> spotPriceLimits;
+	private List<SpotPriceLimit> spotPriceLimits;
 
 	private String systemDiskCategory;
 
@@ -61,7 +61,11 @@ public class CreateScalingConfigurationRequest extends RpcAcsRequest<CreateScali
 
 	private String dataDisk4Category;
 
+	private String hostName;
+
 	private String dataDisk2SnapshotId;
+
+	private Boolean passwordInherit;
 
 	private Integer dataDisk4Size;
 
@@ -260,15 +264,16 @@ public class CreateScalingConfigurationRequest extends RpcAcsRequest<CreateScali
 		}
 	}
 
-	public List<String> getSpotPriceLimits() {
+	public List<SpotPriceLimit> getSpotPriceLimits() {
 		return this.spotPriceLimits;
 	}
 
-	public void setSpotPriceLimits(List<String> spotPriceLimits) {
+	public void setSpotPriceLimits(List<SpotPriceLimit> spotPriceLimits) {
 		this.spotPriceLimits = spotPriceLimits;	
 		if (spotPriceLimits != null) {
-			for (int i = 0; i < spotPriceLimits.size(); i++) {
-				putQueryParameter("SpotPriceLimit." + (i + 1) , spotPriceLimits.get(i));
+			for (int depth1 = 0; depth1 < spotPriceLimits.size(); depth1++) {
+				putQueryParameter("SpotPriceLimit." + (depth1 + 1) + ".InstanceType" , spotPriceLimits.get(depth1).getInstanceType());
+				putQueryParameter("SpotPriceLimit." + (depth1 + 1) + ".PriceLimit" , spotPriceLimits.get(depth1).getPriceLimit());
 			}
 		}	
 	}
@@ -306,6 +311,17 @@ public class CreateScalingConfigurationRequest extends RpcAcsRequest<CreateScali
 		}
 	}
 
+	public String getHostName() {
+		return this.hostName;
+	}
+
+	public void setHostName(String hostName) {
+		this.hostName = hostName;
+		if(hostName != null){
+			putQueryParameter("HostName", hostName);
+		}
+	}
+
 	public String getDataDisk2SnapshotId() {
 		return this.dataDisk2SnapshotId;
 	}
@@ -314,6 +330,17 @@ public class CreateScalingConfigurationRequest extends RpcAcsRequest<CreateScali
 		this.dataDisk2SnapshotId = dataDisk2SnapshotId;
 		if(dataDisk2SnapshotId != null){
 			putQueryParameter("DataDisk.2.SnapshotId", dataDisk2SnapshotId);
+		}
+	}
+
+	public Boolean getPasswordInherit() {
+		return this.passwordInherit;
+	}
+
+	public void setPasswordInherit(Boolean passwordInherit) {
+		this.passwordInherit = passwordInherit;
+		if(passwordInherit != null){
+			putQueryParameter("PasswordInherit", passwordInherit.toString());
 		}
 	}
 
@@ -600,6 +627,29 @@ public class CreateScalingConfigurationRequest extends RpcAcsRequest<CreateScali
 		this.dataDisk1DeleteWithInstance = dataDisk1DeleteWithInstance;
 		if(dataDisk1DeleteWithInstance != null){
 			putQueryParameter("DataDisk.1.DeleteWithInstance", dataDisk1DeleteWithInstance);
+		}
+	}
+
+	public static class SpotPriceLimit {
+
+		private String instanceType;
+
+		private Float priceLimit;
+
+		public String getInstanceType() {
+			return this.instanceType;
+		}
+
+		public void setInstanceType(String instanceType) {
+			this.instanceType = instanceType;
+		}
+
+		public Float getPriceLimit() {
+			return this.priceLimit;
+		}
+
+		public void setPriceLimit(Float priceLimit) {
+			this.priceLimit = priceLimit;
 		}
 	}
 
