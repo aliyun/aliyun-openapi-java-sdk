@@ -33,6 +33,8 @@ public class GetProjectResponseUnmarshaller {
 		getProjectResponse.setEndpoint(context.stringValue("GetProjectResponse.Endpoint"));
 		getProjectResponse.setCreateTime(context.stringValue("GetProjectResponse.CreateTime"));
 		getProjectResponse.setModifyTime(context.stringValue("GetProjectResponse.ModifyTime"));
+		getProjectResponse.setType(context.stringValue("GetProjectResponse.Type"));
+		getProjectResponse.setCU(context.integerValue("GetProjectResponse.CU"));
 
 		List<IndexersItem> indexers = new ArrayList<IndexersItem>();
 		for (int i = 0; i < context.lengthValue("GetProjectResponse.Indexers.Length"); i++) {

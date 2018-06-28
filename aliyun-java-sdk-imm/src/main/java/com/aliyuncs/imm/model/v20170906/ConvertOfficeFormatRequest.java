@@ -30,8 +30,6 @@ public class ConvertOfficeFormatRequest extends RpcAcsRequest<ConvertOfficeForma
 
 	private String srcType;
 
-	private String notifyTopicName;
-
 	private String modelId;
 
 	private String project;
@@ -46,13 +44,13 @@ public class ConvertOfficeFormatRequest extends RpcAcsRequest<ConvertOfficeForma
 
 	private Boolean sheetOnePage;
 
+	private String password;
+
 	private Long startPage;
 
 	private Long maxSheetCol;
 
 	private String tgtType;
-
-	private String notifyEndpoint;
 
 	private String srcUri;
 
@@ -77,17 +75,6 @@ public class ConvertOfficeFormatRequest extends RpcAcsRequest<ConvertOfficeForma
 		this.srcType = srcType;
 		if(srcType != null){
 			putQueryParameter("SrcType", srcType);
-		}
-	}
-
-	public String getNotifyTopicName() {
-		return this.notifyTopicName;
-	}
-
-	public void setNotifyTopicName(String notifyTopicName) {
-		this.notifyTopicName = notifyTopicName;
-		if(notifyTopicName != null){
-			putQueryParameter("NotifyTopicName", notifyTopicName);
 		}
 	}
 
@@ -168,6 +155,17 @@ public class ConvertOfficeFormatRequest extends RpcAcsRequest<ConvertOfficeForma
 		}
 	}
 
+	public String getPassword() {
+		return this.password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+		if(password != null){
+			putQueryParameter("Password", password);
+		}
+	}
+
 	public Long getStartPage() {
 		return this.startPage;
 	}
@@ -198,17 +196,6 @@ public class ConvertOfficeFormatRequest extends RpcAcsRequest<ConvertOfficeForma
 		this.tgtType = tgtType;
 		if(tgtType != null){
 			putQueryParameter("TgtType", tgtType);
-		}
-	}
-
-	public String getNotifyEndpoint() {
-		return this.notifyEndpoint;
-	}
-
-	public void setNotifyEndpoint(String notifyEndpoint) {
-		this.notifyEndpoint = notifyEndpoint;
-		if(notifyEndpoint != null){
-			putQueryParameter("NotifyEndpoint", notifyEndpoint);
 		}
 	}
 

@@ -67,6 +67,10 @@ public class ListProjectsResponse extends AcsResponse {
 
 		private String modifyTime;
 
+		private Integer cU;
+
+		private String type;
+
 		private List<EnginesItem> engines;
 
 		private List<IndexersItem> indexers;
@@ -109,6 +113,22 @@ public class ListProjectsResponse extends AcsResponse {
 
 		public void setModifyTime(String modifyTime) {
 			this.modifyTime = modifyTime;
+		}
+
+		public Integer getCU() {
+			return this.cU;
+		}
+
+		public void setCU(Integer cU) {
+			this.cU = cU;
+		}
+
+		public String getType() {
+			return this.type;
+		}
+
+		public void setType(String type) {
+			this.type = type;
 		}
 
 		public List<EnginesItem> getEngines() {

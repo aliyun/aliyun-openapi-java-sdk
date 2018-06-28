@@ -35,6 +35,10 @@ public class PutProjectResponse extends AcsResponse {
 
 	private String serviceRole;
 
+	private Integer cU;
+
+	private String type;
+
 	private List<EnginesItem> engines;
 
 	private List<IndexersItem> indexers;
@@ -77,6 +81,22 @@ public class PutProjectResponse extends AcsResponse {
 
 	public void setServiceRole(String serviceRole) {
 		this.serviceRole = serviceRole;
+	}
+
+	public Integer getCU() {
+		return this.cU;
+	}
+
+	public void setCU(Integer cU) {
+		this.cU = cU;
+	}
+
+	public String getType() {
+		return this.type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
 	}
 
 	public List<EnginesItem> getEngines() {

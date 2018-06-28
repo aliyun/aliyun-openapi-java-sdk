@@ -3,7 +3,7 @@
   <groupId>com.aliyun</groupId>
   <artifactId>aliyun-java-sdk-imm</artifactId>
   <packaging>jar</packaging>
-  <version>1.5.0</version>
+  <version>1.6.0</version>
     <name>aliyun-java-sdk-imm</name>
   <url>http://www.aliyun.com</url>
   <description>Aliyun Open API SDK for Java
@@ -31,15 +31,8 @@ http://www.aliyun.com</description>
   		<groupId>com.aliyun</groupId>
   		<artifactId>aliyun-java-sdk-core</artifactId>
 		<optional>true</optional>
-  		<version>3.5.1</version>
+  		<version>3.7.1</version>
   	</dependency>
-
-	  <dependency>
-		  <groupId>junit</groupId>
-		  <artifactId>junit</artifactId>
-		  <version>4.10</version>
-		  <scope>test</scope>
-	  </dependency>
   </dependencies>
 	<licenses>
 		<license>
@@ -49,8 +42,9 @@ http://www.aliyun.com</description>
 		</license>
 	</licenses>
 	<scm>
-		<url></url>
-		<connection></connection>
+        <connection>scm:git:git://github.com/aliyun/aliyun-openapi-java-sdk.git</connection>
+        <developerConnection>scm:git:git@github.com:aliyun/aliyun-openapi-java-sdk.git</developerConnection>
+        <url>https://github.com/aliyun/aliyun-openapi-java-sdk</url>
 	</scm>
 	<developers>
 		<developer>
@@ -60,70 +54,7 @@ http://www.aliyun.com</description>
 		</developer>
 	</developers>  
   <build>
-	  <testResources>
-		  <testResource>
-			  <directory>src/test/resources</directory>
-			  <targetPath>resources</targetPath>
-			  <filtering>true</filtering>
-		  </testResource>
-	  </testResources>
-
 		<plugins>
-
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-surefire-plugin</artifactId>
-				<version>2.10</version>
-				<configuration>
-					<additionalClasspathElements>
-						<additionalClasspathElement>
-							${basedir}/target/test-classes
-						</additionalClasspathElement>
-					</additionalClasspathElements>
-					<includes>
-						<include>**/imm/test/v20170906/ft/**/*.java</include>
-
-					</includes>
-					<!--<excludes>-->
-						<!--<exclude>**/imm/test/v20170906/ft/ClusterInstanceTest.java</exclude>-->
-					<!--</excludes>-->
-				</configuration>
-			</plugin>
-
-			<!--代码覆盖率-->
-			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>cobertura-maven-plugin</artifactId>
-				<version>2.7</version>
-				<configuration>
-					<check>
-						<branchRate>0</branchRate>
-						<lineRate>0</lineRate>
-						<haltOnFailure>true</haltOnFailure>
-						<totalBranchRate>0</totalBranchRate>
-						<totalLineRate>0</totalLineRate>
-						<packageLineRate>0</packageLineRate>
-						<packageBranchRate>0</packageBranchRate>
-						<regexes>
-							<regex>
-								<pattern>com.aliyuncs.imm.*</pattern>
-								<branchRate>0</branchRate>
-								<lineRate>0</lineRate>
-							</regex>
-						</regexes>
-					</check>
-				</configuration>
-				<executions>
-					<execution>
-						<goals>
-							<goal>clean</goal>
-							<goal>check</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
-
-
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>2.3.2</version>

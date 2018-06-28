@@ -23,11 +23,7 @@ public class ConvertOfficeFormatResponseUnmarshaller {
 	public static ConvertOfficeFormatResponse unmarshall(ConvertOfficeFormatResponse convertOfficeFormatResponse, UnmarshallerContext context) {
 		
 		convertOfficeFormatResponse.setRequestId(context.stringValue("ConvertOfficeFormatResponse.RequestId"));
-		convertOfficeFormatResponse.setTaskId(context.stringValue("ConvertOfficeFormatResponse.TaskId"));
-		convertOfficeFormatResponse.setTgtLoc(context.stringValue("ConvertOfficeFormatResponse.TgtLoc"));
-		convertOfficeFormatResponse.setStatus(context.stringValue("ConvertOfficeFormatResponse.Status"));
-		convertOfficeFormatResponse.setCreateTime(context.stringValue("ConvertOfficeFormatResponse.CreateTime"));
-		convertOfficeFormatResponse.setPercent(context.integerValue("ConvertOfficeFormatResponse.Percent"));
+		convertOfficeFormatResponse.setPageCount(context.integerValue("ConvertOfficeFormatResponse.PageCount"));
 	 
 	 	return convertOfficeFormatResponse;
 	}

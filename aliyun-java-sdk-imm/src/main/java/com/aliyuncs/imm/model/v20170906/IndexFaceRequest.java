@@ -26,6 +26,8 @@ public class IndexFaceRequest extends RpcAcsRequest<IndexFaceResponse> {
 		super("imm", "2017-09-06", "IndexFace", "imm");
 	}
 
+	private String chain;
+
 	private String srcUris;
 
 	private String project;
@@ -33,6 +35,17 @@ public class IndexFaceRequest extends RpcAcsRequest<IndexFaceResponse> {
 	private String setId;
 
 	private String force;
+
+	public String getChain() {
+		return this.chain;
+	}
+
+	public void setChain(String chain) {
+		this.chain = chain;
+		if(chain != null){
+			putQueryParameter("Chain", chain);
+		}
+	}
 
 	public String getSrcUris() {
 		return this.srcUris;

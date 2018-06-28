@@ -39,6 +39,8 @@ public class ListProjectsResponseUnmarshaller {
 			projectsItem.setServiceRole(context.stringValue("ListProjectsResponse.Projects["+ i +"].ServiceRole"));
 			projectsItem.setCreateTime(context.stringValue("ListProjectsResponse.Projects["+ i +"].CreateTime"));
 			projectsItem.setModifyTime(context.stringValue("ListProjectsResponse.Projects["+ i +"].ModifyTime"));
+			projectsItem.setCU(context.integerValue("ListProjectsResponse.Projects["+ i +"].CU"));
+			projectsItem.setType(context.stringValue("ListProjectsResponse.Projects["+ i +"].Type"));
 
 			List<EnginesItem> engines = new ArrayList<EnginesItem>();
 			for (int j = 0; j < context.lengthValue("ListProjectsResponse.Projects["+ i +"].Engines.Length"); j++) {

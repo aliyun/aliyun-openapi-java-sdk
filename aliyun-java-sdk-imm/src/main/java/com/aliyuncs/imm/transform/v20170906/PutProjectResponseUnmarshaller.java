@@ -32,6 +32,8 @@ public class PutProjectResponseUnmarshaller {
 		putProjectResponse.setCreateTime(context.stringValue("PutProjectResponse.CreateTime"));
 		putProjectResponse.setModifyTime(context.stringValue("PutProjectResponse.ModifyTime"));
 		putProjectResponse.setServiceRole(context.stringValue("PutProjectResponse.ServiceRole"));
+		putProjectResponse.setCU(context.integerValue("PutProjectResponse.CU"));
+		putProjectResponse.setType(context.stringValue("PutProjectResponse.Type"));
 
 		List<EnginesItem> engines = new ArrayList<EnginesItem>();
 		for (int i = 0; i < context.lengthValue("PutProjectResponse.Engines.Length"); i++) {

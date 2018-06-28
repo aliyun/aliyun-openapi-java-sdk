@@ -28,11 +28,15 @@ public class PutProjectRequest extends RpcAcsRequest<PutProjectResponse> {
 
 	private String indexers;
 
+	private Integer cU;
+
 	private String engines;
 
 	private String serviceRole;
 
 	private String project;
+
+	private String type;
 
 	public String getIndexers() {
 		return this.indexers;
@@ -42,6 +46,17 @@ public class PutProjectRequest extends RpcAcsRequest<PutProjectResponse> {
 		this.indexers = indexers;
 		if(indexers != null){
 			putQueryParameter("Indexers", indexers);
+		}
+	}
+
+	public Integer getCU() {
+		return this.cU;
+	}
+
+	public void setCU(Integer cU) {
+		this.cU = cU;
+		if(cU != null){
+			putQueryParameter("CU", cU.toString());
 		}
 	}
 
@@ -75,6 +90,17 @@ public class PutProjectRequest extends RpcAcsRequest<PutProjectResponse> {
 		this.project = project;
 		if(project != null){
 			putQueryParameter("Project", project);
+		}
+	}
+
+	public String getType() {
+		return this.type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+		if(type != null){
+			putQueryParameter("Type", type);
 		}
 	}
 

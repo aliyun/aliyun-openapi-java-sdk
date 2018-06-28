@@ -26,15 +26,7 @@ public class ConvertOfficeFormatResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String taskId;
-
-	private String tgtLoc;
-
-	private String status;
-
-	private String createTime;
-
-	private Integer percent;
+	private Integer pageCount;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -44,44 +36,12 @@ public class ConvertOfficeFormatResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getTaskId() {
-		return this.taskId;
+	public Integer getPageCount() {
+		return this.pageCount;
 	}
 
-	public void setTaskId(String taskId) {
-		this.taskId = taskId;
-	}
-
-	public String getTgtLoc() {
-		return this.tgtLoc;
-	}
-
-	public void setTgtLoc(String tgtLoc) {
-		this.tgtLoc = tgtLoc;
-	}
-
-	public String getStatus() {
-		return this.status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
-	}
-
-	public String getCreateTime() {
-		return this.createTime;
-	}
-
-	public void setCreateTime(String createTime) {
-		this.createTime = createTime;
-	}
-
-	public Integer getPercent() {
-		return this.percent;
-	}
-
-	public void setPercent(Integer percent) {
-		this.percent = percent;
+	public void setPageCount(Integer pageCount) {
+		this.pageCount = pageCount;
 	}
 
 	@Override
