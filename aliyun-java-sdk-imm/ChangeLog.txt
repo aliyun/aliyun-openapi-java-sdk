@@ -1,3 +1,6 @@
+2018-06-28 Version: 1.6.1
+1, fix readme
+
 2018-06-28 Version: 1.6.0
 1, Add: ConvertOfficeFormat,PutProject
 2, Update: GetProject,IndexFace,ListProjects
