@@ -26,36 +26,27 @@ public class ProduceEditingProjectVideoRequest extends RpcAcsRequest<ProduceEdit
 		super("vod", "2017-03-21", "ProduceEditingProjectVideo", "vod");
 	}
 
-	private String coverURL;
-
 	private Long resourceOwnerId;
 
 	private String mediaMetadata;
 
 	private String resourceOwnerAccount;
 
-	private String timeline;
-
 	private String description;
-
-	private String produceConfig;
 
 	private Long ownerId;
 
 	private String title;
 
+	private String coverURL;
+
+	private String userData;
+
+	private String timeline;
+
+	private String produceConfig;
+
 	private String projectId;
-
-	public String getCoverURL() {
-		return this.coverURL;
-	}
-
-	public void setCoverURL(String coverURL) {
-		this.coverURL = coverURL;
-		if(coverURL != null){
-			putQueryParameter("CoverURL", coverURL);
-		}
-	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -90,17 +81,6 @@ public class ProduceEditingProjectVideoRequest extends RpcAcsRequest<ProduceEdit
 		}
 	}
 
-	public String getTimeline() {
-		return this.timeline;
-	}
-
-	public void setTimeline(String timeline) {
-		this.timeline = timeline;
-		if(timeline != null){
-			putQueryParameter("Timeline", timeline);
-		}
-	}
-
 	public String getDescription() {
 		return this.description;
 	}
@@ -109,17 +89,6 @@ public class ProduceEditingProjectVideoRequest extends RpcAcsRequest<ProduceEdit
 		this.description = description;
 		if(description != null){
 			putQueryParameter("Description", description);
-		}
-	}
-
-	public String getProduceConfig() {
-		return this.produceConfig;
-	}
-
-	public void setProduceConfig(String produceConfig) {
-		this.produceConfig = produceConfig;
-		if(produceConfig != null){
-			putQueryParameter("ProduceConfig", produceConfig);
 		}
 	}
 
@@ -142,6 +111,50 @@ public class ProduceEditingProjectVideoRequest extends RpcAcsRequest<ProduceEdit
 		this.title = title;
 		if(title != null){
 			putQueryParameter("Title", title);
+		}
+	}
+
+	public String getCoverURL() {
+		return this.coverURL;
+	}
+
+	public void setCoverURL(String coverURL) {
+		this.coverURL = coverURL;
+		if(coverURL != null){
+			putQueryParameter("CoverURL", coverURL);
+		}
+	}
+
+	public String getUserData() {
+		return this.userData;
+	}
+
+	public void setUserData(String userData) {
+		this.userData = userData;
+		if(userData != null){
+			putQueryParameter("UserData", userData);
+		}
+	}
+
+	public String getTimeline() {
+		return this.timeline;
+	}
+
+	public void setTimeline(String timeline) {
+		this.timeline = timeline;
+		if(timeline != null){
+			putQueryParameter("Timeline", timeline);
+		}
+	}
+
+	public String getProduceConfig() {
+		return this.produceConfig;
+	}
+
+	public void setProduceConfig(String produceConfig) {
+		this.produceConfig = produceConfig;
+		if(produceConfig != null){
+			putQueryParameter("ProduceConfig", produceConfig);
 		}
 	}
 

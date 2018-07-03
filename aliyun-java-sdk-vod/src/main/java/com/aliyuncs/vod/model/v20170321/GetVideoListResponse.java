@@ -73,9 +73,11 @@ public class GetVideoListResponse extends AcsResponse {
 
 		private String createTime;
 
-		private String creationTime;
-
 		private String modifyTime;
+
+		private String modificationTime;
+
+		private String creationTime;
 
 		private String coverURL;
 
@@ -149,20 +151,28 @@ public class GetVideoListResponse extends AcsResponse {
 			this.createTime = createTime;
 		}
 
-		public String getCreationTime() {
-			return this.creationTime;
-		}
-
-		public void setCreationTime(String creationTime) {
-			this.creationTime = creationTime;
-		}
-
 		public String getModifyTime() {
 			return this.modifyTime;
 		}
 
 		public void setModifyTime(String modifyTime) {
 			this.modifyTime = modifyTime;
+		}
+
+		public String getModificationTime() {
+			return this.modificationTime;
+		}
+
+		public void setModificationTime(String modificationTime) {
+			this.modificationTime = modificationTime;
+		}
+
+		public String getCreationTime() {
+			return this.creationTime;
+		}
+
+		public void setCreationTime(String creationTime) {
+			this.creationTime = creationTime;
 		}
 
 		public String getCoverURL() {

@@ -32,9 +32,9 @@ public class GetVideoListRequest extends RpcAcsRequest<GetVideoListResponse> {
 
 	private Long cateId;
 
-	private Long pageNo;
+	private Integer pageNo;
 
-	private Long pageSize;
+	private Integer pageSize;
 
 	private String endTime;
 
@@ -79,22 +79,22 @@ public class GetVideoListRequest extends RpcAcsRequest<GetVideoListResponse> {
 		}
 	}
 
-	public Long getPageNo() {
+	public Integer getPageNo() {
 		return this.pageNo;
 	}
 
-	public void setPageNo(Long pageNo) {
+	public void setPageNo(Integer pageNo) {
 		this.pageNo = pageNo;
 		if(pageNo != null){
 			putQueryParameter("PageNo", pageNo.toString());
 		}
 	}
 
-	public Long getPageSize() {
+	public Integer getPageSize() {
 		return this.pageSize;
 	}
 
-	public void setPageSize(Long pageSize) {
+	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());

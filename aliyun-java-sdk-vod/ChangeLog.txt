@@ -1,3 +1,6 @@
+2018-07-03 Version: 2.11.2
+1, Add UserData as request parameter of ProduceEditingProjectVideo API
+
 2018-06-22 Version: 2.11.1
 1, Add the field named ResultType to GetPlayInfo api request.
 2, Add the field named WatermarkId to GetPlayInfo api response.

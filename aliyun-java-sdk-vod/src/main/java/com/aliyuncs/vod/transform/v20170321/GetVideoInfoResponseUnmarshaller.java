@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.vod.model.v20170321.GetVideoInfoResponse;
 import com.aliyuncs.vod.model.v20170321.GetVideoInfoResponse.Video;
+import com.aliyuncs.vod.model.v20170321.GetVideoInfoResponse.Video.Thumbnail;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -38,8 +39,9 @@ public class GetVideoInfoResponseUnmarshaller {
 		video.setDuration(context.floatValue("GetVideoInfoResponse.Video.Duration"));
 		video.setDescription(context.stringValue("GetVideoInfoResponse.Video.Description"));
 		video.setCreateTime(context.stringValue("GetVideoInfoResponse.Video.CreateTime"));
-		video.setCreationTime(context.stringValue("GetVideoInfoResponse.Video.CreationTime"));
 		video.setModifyTime(context.stringValue("GetVideoInfoResponse.Video.ModifyTime"));
+		video.setModificationTime(context.stringValue("GetVideoInfoResponse.Video.ModificationTime"));
+		video.setCreationTime(context.stringValue("GetVideoInfoResponse.Video.CreationTime"));
 		video.setCoverURL(context.stringValue("GetVideoInfoResponse.Video.CoverURL"));
 		video.setCateId(context.longValue("GetVideoInfoResponse.Video.CateId"));
 		video.setCateName(context.stringValue("GetVideoInfoResponse.Video.CateName"));
@@ -50,6 +52,15 @@ public class GetVideoInfoResponseUnmarshaller {
 			snapshots.add(context.stringValue("GetVideoInfoResponse.Video.Snapshots["+ i +"]"));
 		}
 		video.setSnapshots(snapshots);
+
+		List<Thumbnail> thumbnailList = new ArrayList<Thumbnail>();
+		for (int i = 0; i < context.lengthValue("GetVideoInfoResponse.Video.ThumbnailList.Length"); i++) {
+			Thumbnail thumbnail = new Thumbnail();
+			thumbnail.setURL(context.stringValue("GetVideoInfoResponse.Video.ThumbnailList["+ i +"].URL"));
+
+			thumbnailList.add(thumbnail);
+		}
+		video.setThumbnailList(thumbnailList);
 		getVideoInfoResponse.setVideo(video);
 	 
 	 	return getVideoInfoResponse;

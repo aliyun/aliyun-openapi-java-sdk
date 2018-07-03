@@ -73,9 +73,11 @@ public class GetVideoInfoResponse extends AcsResponse {
 
 		private String createTime;
 
-		private String creationTime;
-
 		private String modifyTime;
+
+		private String modificationTime;
+
+		private String creationTime;
 
 		private String coverURL;
 
@@ -84,6 +86,8 @@ public class GetVideoInfoResponse extends AcsResponse {
 		private String cateName;
 
 		private String preprocessStatus;
+
+		private List<Thumbnail> thumbnailList;
 
 		private List<String> snapshots;
 
@@ -151,20 +155,28 @@ public class GetVideoInfoResponse extends AcsResponse {
 			this.createTime = createTime;
 		}
 
-		public String getCreationTime() {
-			return this.creationTime;
-		}
-
-		public void setCreationTime(String creationTime) {
-			this.creationTime = creationTime;
-		}
-
 		public String getModifyTime() {
 			return this.modifyTime;
 		}
 
 		public void setModifyTime(String modifyTime) {
 			this.modifyTime = modifyTime;
+		}
+
+		public String getModificationTime() {
+			return this.modificationTime;
+		}
+
+		public void setModificationTime(String modificationTime) {
+			this.modificationTime = modificationTime;
+		}
+
+		public String getCreationTime() {
+			return this.creationTime;
+		}
+
+		public void setCreationTime(String creationTime) {
+			this.creationTime = creationTime;
 		}
 
 		public String getCoverURL() {
@@ -199,12 +211,33 @@ public class GetVideoInfoResponse extends AcsResponse {
 			this.preprocessStatus = preprocessStatus;
 		}
 
+		public List<Thumbnail> getThumbnailList() {
+			return this.thumbnailList;
+		}
+
+		public void setThumbnailList(List<Thumbnail> thumbnailList) {
+			this.thumbnailList = thumbnailList;
+		}
+
 		public List<String> getSnapshots() {
 			return this.snapshots;
 		}
 
 		public void setSnapshots(List<String> snapshots) {
 			this.snapshots = snapshots;
+		}
+
+		public static class Thumbnail {
+
+			private String uRL;
+
+			public String getURL() {
+				return this.uRL;
+			}
+
+			public void setURL(String uRL) {
+				this.uRL = uRL;
+			}
 		}
 	}
 
