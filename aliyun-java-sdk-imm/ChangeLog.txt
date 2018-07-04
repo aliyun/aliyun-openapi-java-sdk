@@ -1,3 +1,6 @@
+2018-07-04 Version: 1.7.0
+1, Add new function getFaceDetail
+
 2018-06-28 Version: 1.6.1
 1, fix readme
 
