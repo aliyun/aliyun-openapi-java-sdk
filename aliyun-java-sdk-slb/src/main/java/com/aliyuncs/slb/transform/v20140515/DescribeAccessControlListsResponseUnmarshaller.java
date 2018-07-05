@@ -33,6 +33,7 @@ public class DescribeAccessControlListsResponseUnmarshaller {
 			Acl acl = new Acl();
 			acl.setAclId(context.stringValue("DescribeAccessControlListsResponse.Acls["+ i +"].AclId"));
 			acl.setAclName(context.stringValue("DescribeAccessControlListsResponse.Acls["+ i +"].AclName"));
+			acl.setAddressIPVersion(context.stringValue("DescribeAccessControlListsResponse.Acls["+ i +"].AddressIPVersion"));
 
 			acls.add(acl);
 		}

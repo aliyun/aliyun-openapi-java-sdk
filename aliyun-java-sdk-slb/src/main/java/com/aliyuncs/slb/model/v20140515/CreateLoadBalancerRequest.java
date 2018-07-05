@@ -28,27 +28,13 @@ public class CreateLoadBalancerRequest extends RpcAcsRequest<CreateLoadBalancerR
 
 	private String access_key_id;
 
-	private String loadBalancerSpec;
-
 	private Long resourceOwnerId;
-
-	private Boolean autoPay;
-
-	private String resourceOwnerAccount;
-
-	private Integer bandwidth;
 
 	private String clientToken;
 
-	private String ownerAccount;
-
-	private Long ownerId;
+	private String addressIPVersion;
 
 	private String masterZoneId;
-
-	private String tags;
-
-	private String vSwitchId;
 
 	private Integer duration;
 
@@ -56,15 +42,31 @@ public class CreateLoadBalancerRequest extends RpcAcsRequest<CreateLoadBalancerR
 
 	private String loadBalancerName;
 
+	private String addressType;
+
+	private String slaveZoneId;
+
+	private String loadBalancerSpec;
+
+	private Boolean autoPay;
+
+	private String resourceOwnerAccount;
+
+	private Integer bandwidth;
+
+	private String ownerAccount;
+
+	private Long ownerId;
+
+	private String tags;
+
+	private String vSwitchId;
+
 	private String enableVpcVipFlow;
 
 	private String internetChargeType;
 
 	private String vpcId;
-
-	private String addressType;
-
-	private String slaveZoneId;
 
 	private String payType;
 
@@ -81,17 +83,6 @@ public class CreateLoadBalancerRequest extends RpcAcsRequest<CreateLoadBalancerR
 		}
 	}
 
-	public String getLoadBalancerSpec() {
-		return this.loadBalancerSpec;
-	}
-
-	public void setLoadBalancerSpec(String loadBalancerSpec) {
-		this.loadBalancerSpec = loadBalancerSpec;
-		if(loadBalancerSpec != null){
-			putQueryParameter("LoadBalancerSpec", loadBalancerSpec);
-		}
-	}
-
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
 	}
@@ -100,39 +91,6 @@ public class CreateLoadBalancerRequest extends RpcAcsRequest<CreateLoadBalancerR
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public Boolean getAutoPay() {
-		return this.autoPay;
-	}
-
-	public void setAutoPay(Boolean autoPay) {
-		this.autoPay = autoPay;
-		if(autoPay != null){
-			putQueryParameter("AutoPay", autoPay.toString());
-		}
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public Integer getBandwidth() {
-		return this.bandwidth;
-	}
-
-	public void setBandwidth(Integer bandwidth) {
-		this.bandwidth = bandwidth;
-		if(bandwidth != null){
-			putQueryParameter("Bandwidth", bandwidth.toString());
 		}
 	}
 
@@ -147,25 +105,14 @@ public class CreateLoadBalancerRequest extends RpcAcsRequest<CreateLoadBalancerR
 		}
 	}
 
-	public String getOwnerAccount() {
-		return this.ownerAccount;
+	public String getAddressIPVersion() {
+		return this.addressIPVersion;
 	}
 
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		if(ownerAccount != null){
-			putQueryParameter("OwnerAccount", ownerAccount);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
+	public void setAddressIPVersion(String addressIPVersion) {
+		this.addressIPVersion = addressIPVersion;
+		if(addressIPVersion != null){
+			putQueryParameter("AddressIPVersion", addressIPVersion);
 		}
 	}
 
@@ -177,28 +124,6 @@ public class CreateLoadBalancerRequest extends RpcAcsRequest<CreateLoadBalancerR
 		this.masterZoneId = masterZoneId;
 		if(masterZoneId != null){
 			putQueryParameter("MasterZoneId", masterZoneId);
-		}
-	}
-
-	public String getTags() {
-		return this.tags;
-	}
-
-	public void setTags(String tags) {
-		this.tags = tags;
-		if(tags != null){
-			putQueryParameter("Tags", tags);
-		}
-	}
-
-	public String getVSwitchId() {
-		return this.vSwitchId;
-	}
-
-	public void setVSwitchId(String vSwitchId) {
-		this.vSwitchId = vSwitchId;
-		if(vSwitchId != null){
-			putQueryParameter("VSwitchId", vSwitchId);
 		}
 	}
 
@@ -235,6 +160,116 @@ public class CreateLoadBalancerRequest extends RpcAcsRequest<CreateLoadBalancerR
 		}
 	}
 
+	public String getAddressType() {
+		return this.addressType;
+	}
+
+	public void setAddressType(String addressType) {
+		this.addressType = addressType;
+		if(addressType != null){
+			putQueryParameter("AddressType", addressType);
+		}
+	}
+
+	public String getSlaveZoneId() {
+		return this.slaveZoneId;
+	}
+
+	public void setSlaveZoneId(String slaveZoneId) {
+		this.slaveZoneId = slaveZoneId;
+		if(slaveZoneId != null){
+			putQueryParameter("SlaveZoneId", slaveZoneId);
+		}
+	}
+
+	public String getLoadBalancerSpec() {
+		return this.loadBalancerSpec;
+	}
+
+	public void setLoadBalancerSpec(String loadBalancerSpec) {
+		this.loadBalancerSpec = loadBalancerSpec;
+		if(loadBalancerSpec != null){
+			putQueryParameter("LoadBalancerSpec", loadBalancerSpec);
+		}
+	}
+
+	public Boolean getAutoPay() {
+		return this.autoPay;
+	}
+
+	public void setAutoPay(Boolean autoPay) {
+		this.autoPay = autoPay;
+		if(autoPay != null){
+			putQueryParameter("AutoPay", autoPay.toString());
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public Integer getBandwidth() {
+		return this.bandwidth;
+	}
+
+	public void setBandwidth(Integer bandwidth) {
+		this.bandwidth = bandwidth;
+		if(bandwidth != null){
+			putQueryParameter("Bandwidth", bandwidth.toString());
+		}
+	}
+
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getTags() {
+		return this.tags;
+	}
+
+	public void setTags(String tags) {
+		this.tags = tags;
+		if(tags != null){
+			putQueryParameter("Tags", tags);
+		}
+	}
+
+	public String getVSwitchId() {
+		return this.vSwitchId;
+	}
+
+	public void setVSwitchId(String vSwitchId) {
+		this.vSwitchId = vSwitchId;
+		if(vSwitchId != null){
+			putQueryParameter("VSwitchId", vSwitchId);
+		}
+	}
+
 	public String getEnableVpcVipFlow() {
 		return this.enableVpcVipFlow;
 	}
@@ -265,28 +300,6 @@ public class CreateLoadBalancerRequest extends RpcAcsRequest<CreateLoadBalancerR
 		this.vpcId = vpcId;
 		if(vpcId != null){
 			putQueryParameter("VpcId", vpcId);
-		}
-	}
-
-	public String getAddressType() {
-		return this.addressType;
-	}
-
-	public void setAddressType(String addressType) {
-		this.addressType = addressType;
-		if(addressType != null){
-			putQueryParameter("AddressType", addressType);
-		}
-	}
-
-	public String getSlaveZoneId() {
-		return this.slaveZoneId;
-	}
-
-	public void setSlaveZoneId(String slaveZoneId) {
-		this.slaveZoneId = slaveZoneId;
-		if(slaveZoneId != null){
-			putQueryParameter("SlaveZoneId", slaveZoneId);
 		}
 	}
 

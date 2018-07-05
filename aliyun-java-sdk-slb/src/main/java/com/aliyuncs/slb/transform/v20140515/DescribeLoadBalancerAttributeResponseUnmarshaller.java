@@ -51,6 +51,8 @@ public class DescribeLoadBalancerAttributeResponseUnmarshaller {
 		describeLoadBalancerAttributeResponse.setPayType(context.stringValue("DescribeLoadBalancerAttributeResponse.PayType"));
 		describeLoadBalancerAttributeResponse.setMasterZoneId(context.stringValue("DescribeLoadBalancerAttributeResponse.MasterZoneId"));
 		describeLoadBalancerAttributeResponse.setSlaveZoneId(context.stringValue("DescribeLoadBalancerAttributeResponse.SlaveZoneId"));
+		describeLoadBalancerAttributeResponse.setAddressIPVersion(context.stringValue("DescribeLoadBalancerAttributeResponse.AddressIPVersion"));
+		describeLoadBalancerAttributeResponse.setCloudType(context.stringValue("DescribeLoadBalancerAttributeResponse.CloudType"));
 
 		List<String> listenerPorts = new ArrayList<String>();
 		for (int i = 0; i < context.lengthValue("DescribeLoadBalancerAttributeResponse.ListenerPorts.Length"); i++) {
@@ -87,6 +89,7 @@ public class DescribeLoadBalancerAttributeResponseUnmarshaller {
 			backendServer.setWeight(context.integerValue("DescribeLoadBalancerAttributeResponse.BackendServers["+ i +"].Weight"));
 			backendServer.setType(context.stringValue("DescribeLoadBalancerAttributeResponse.BackendServers["+ i +"].Type"));
 			backendServer.setServerIp(context.stringValue("DescribeLoadBalancerAttributeResponse.BackendServers["+ i +"].ServerIp"));
+			backendServer.setEniHost(context.stringValue("DescribeLoadBalancerAttributeResponse.BackendServers["+ i +"].EniHost"));
 			backendServer.setVpcId(context.stringValue("DescribeLoadBalancerAttributeResponse.BackendServers["+ i +"].VpcId"));
 
 			backendServers.add(backendServer);

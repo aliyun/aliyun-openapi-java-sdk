@@ -77,6 +77,8 @@ public class DescribeVServerGroupAttributeResponse extends AcsResponse {
 
 		private String serverIp;
 
+		private String eniHost;
+
 		private String vpcId;
 
 		public String getServerId() {
@@ -117,6 +119,14 @@ public class DescribeVServerGroupAttributeResponse extends AcsResponse {
 
 		public void setServerIp(String serverIp) {
 			this.serverIp = serverIp;
+		}
+
+		public String getEniHost() {
+			return this.eniHost;
+		}
+
+		public void setEniHost(String eniHost) {
+			this.eniHost = eniHost;
 		}
 
 		public String getVpcId() {

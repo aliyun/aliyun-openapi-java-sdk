@@ -38,6 +38,7 @@ public class DescribeVServerGroupAttributeResponseUnmarshaller {
 			backendServer.setWeight(context.integerValue("DescribeVServerGroupAttributeResponse.BackendServers["+ i +"].Weight"));
 			backendServer.setType(context.stringValue("DescribeVServerGroupAttributeResponse.BackendServers["+ i +"].Type"));
 			backendServer.setServerIp(context.stringValue("DescribeVServerGroupAttributeResponse.BackendServers["+ i +"].ServerIp"));
+			backendServer.setEniHost(context.stringValue("DescribeVServerGroupAttributeResponse.BackendServers["+ i +"].EniHost"));
 			backendServer.setVpcId(context.stringValue("DescribeVServerGroupAttributeResponse.BackendServers["+ i +"].VpcId"));
 
 			backendServers.add(backendServer);

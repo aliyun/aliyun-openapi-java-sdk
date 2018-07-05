@@ -19,6 +19,9 @@ import java.util.List;
 
 import com.aliyuncs.slb.model.v20140515.DescribeVServerGroupsResponse;
 import com.aliyuncs.slb.model.v20140515.DescribeVServerGroupsResponse.VServerGroup;
+import com.aliyuncs.slb.model.v20140515.DescribeVServerGroupsResponse.VServerGroup.AssociatedObjects;
+import com.aliyuncs.slb.model.v20140515.DescribeVServerGroupsResponse.VServerGroup.AssociatedObjects.Listener;
+import com.aliyuncs.slb.model.v20140515.DescribeVServerGroupsResponse.VServerGroup.AssociatedObjects.Rule;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -33,6 +36,28 @@ public class DescribeVServerGroupsResponseUnmarshaller {
 			VServerGroup vServerGroup = new VServerGroup();
 			vServerGroup.setVServerGroupId(context.stringValue("DescribeVServerGroupsResponse.VServerGroups["+ i +"].VServerGroupId"));
 			vServerGroup.setVServerGroupName(context.stringValue("DescribeVServerGroupsResponse.VServerGroups["+ i +"].VServerGroupName"));
+
+			AssociatedObjects associatedObjects = new AssociatedObjects();
+
+			List<Listener> listeners = new ArrayList<Listener>();
+			for (int j = 0; j < context.lengthValue("DescribeVServerGroupsResponse.VServerGroups["+ i +"].AssociatedObjects.Listeners.Length"); j++) {
+				Listener listener = new Listener();
+				listener.setProtocol(context.stringValue("DescribeVServerGroupsResponse.VServerGroups["+ i +"].AssociatedObjects.Listeners["+ j +"].Protocol"));
+				listener.setPort(context.integerValue("DescribeVServerGroupsResponse.VServerGroups["+ i +"].AssociatedObjects.Listeners["+ j +"].Port"));
+
+				listeners.add(listener);
+			}
+			associatedObjects.setListeners(listeners);
+
+			List<Rule> rules = new ArrayList<Rule>();
+			for (int j = 0; j < context.lengthValue("DescribeVServerGroupsResponse.VServerGroups["+ i +"].AssociatedObjects.Rules.Length"); j++) {
+				Rule rule = new Rule();
+				rule.setRuleId(context.stringValue("DescribeVServerGroupsResponse.VServerGroups["+ i +"].AssociatedObjects.Rules["+ j +"].RuleId"));
+
+				rules.add(rule);
+			}
+			associatedObjects.setRules(rules);
+			vServerGroup.setAssociatedObjects(associatedObjects);
 
 			vServerGroups.add(vServerGroup);
 		}

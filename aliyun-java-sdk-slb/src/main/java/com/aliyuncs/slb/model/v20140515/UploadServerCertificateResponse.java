@@ -14,6 +14,7 @@
 
 package com.aliyuncs.slb.model.v20140515;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.slb.transform.v20140515.UploadServerCertificateResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -47,6 +48,14 @@ public class UploadServerCertificateResponse extends AcsResponse {
 	private String createTime;
 
 	private Long createTimeStamp;
+
+	private String expireTime;
+
+	private Long expireTimeStamp;
+
+	private String commonName;
+
+	private List<String> subjectAlternativeNames;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -142,6 +151,38 @@ public class UploadServerCertificateResponse extends AcsResponse {
 
 	public void setCreateTimeStamp(Long createTimeStamp) {
 		this.createTimeStamp = createTimeStamp;
+	}
+
+	public String getExpireTime() {
+		return this.expireTime;
+	}
+
+	public void setExpireTime(String expireTime) {
+		this.expireTime = expireTime;
+	}
+
+	public Long getExpireTimeStamp() {
+		return this.expireTimeStamp;
+	}
+
+	public void setExpireTimeStamp(Long expireTimeStamp) {
+		this.expireTimeStamp = expireTimeStamp;
+	}
+
+	public String getCommonName() {
+		return this.commonName;
+	}
+
+	public void setCommonName(String commonName) {
+		this.commonName = commonName;
+	}
+
+	public List<String> getSubjectAlternativeNames() {
+		return this.subjectAlternativeNames;
+	}
+
+	public void setSubjectAlternativeNames(List<String> subjectAlternativeNames) {
+		this.subjectAlternativeNames = subjectAlternativeNames;
 	}
 
 	@Override

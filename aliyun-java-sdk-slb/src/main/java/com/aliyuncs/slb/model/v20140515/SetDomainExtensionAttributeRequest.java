@@ -20,29 +20,27 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class DescribeVServerGroupsRequest extends RpcAcsRequest<DescribeVServerGroupsResponse> {
+public class SetDomainExtensionAttributeRequest extends RpcAcsRequest<SetDomainExtensionAttributeResponse> {
 	
-	public DescribeVServerGroupsRequest() {
-		super("Slb", "2014-05-15", "DescribeVServerGroups", "slb");
+	public SetDomainExtensionAttributeRequest() {
+		super("Slb", "2014-05-15", "SetDomainExtensionAttribute", "slb");
 	}
 
 	private String access_key_id;
 
-	private Boolean includeRule;
-
 	private Long resourceOwnerId;
 
-	private String loadBalancerId;
-
 	private String resourceOwnerAccount;
-
-	private Boolean includeListener;
 
 	private String ownerAccount;
 
 	private Long ownerId;
 
+	private String serverCertificateId;
+
 	private String tags;
+
+	private String domainExtensionId;
 
 	public String getAccess_key_id() {
 		return this.access_key_id;
@@ -52,17 +50,6 @@ public class DescribeVServerGroupsRequest extends RpcAcsRequest<DescribeVServerG
 		this.access_key_id = access_key_id;
 		if(access_key_id != null){
 			putQueryParameter("access_key_id", access_key_id);
-		}
-	}
-
-	public Boolean getIncludeRule() {
-		return this.includeRule;
-	}
-
-	public void setIncludeRule(Boolean includeRule) {
-		this.includeRule = includeRule;
-		if(includeRule != null){
-			putQueryParameter("IncludeRule", includeRule.toString());
 		}
 	}
 
@@ -77,17 +64,6 @@ public class DescribeVServerGroupsRequest extends RpcAcsRequest<DescribeVServerG
 		}
 	}
 
-	public String getLoadBalancerId() {
-		return this.loadBalancerId;
-	}
-
-	public void setLoadBalancerId(String loadBalancerId) {
-		this.loadBalancerId = loadBalancerId;
-		if(loadBalancerId != null){
-			putQueryParameter("LoadBalancerId", loadBalancerId);
-		}
-	}
-
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
 	}
@@ -96,17 +72,6 @@ public class DescribeVServerGroupsRequest extends RpcAcsRequest<DescribeVServerG
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public Boolean getIncludeListener() {
-		return this.includeListener;
-	}
-
-	public void setIncludeListener(Boolean includeListener) {
-		this.includeListener = includeListener;
-		if(includeListener != null){
-			putQueryParameter("IncludeListener", includeListener.toString());
 		}
 	}
 
@@ -132,6 +97,17 @@ public class DescribeVServerGroupsRequest extends RpcAcsRequest<DescribeVServerG
 		}
 	}
 
+	public String getServerCertificateId() {
+		return this.serverCertificateId;
+	}
+
+	public void setServerCertificateId(String serverCertificateId) {
+		this.serverCertificateId = serverCertificateId;
+		if(serverCertificateId != null){
+			putQueryParameter("ServerCertificateId", serverCertificateId);
+		}
+	}
+
 	public String getTags() {
 		return this.tags;
 	}
@@ -143,9 +119,20 @@ public class DescribeVServerGroupsRequest extends RpcAcsRequest<DescribeVServerG
 		}
 	}
 
+	public String getDomainExtensionId() {
+		return this.domainExtensionId;
+	}
+
+	public void setDomainExtensionId(String domainExtensionId) {
+		this.domainExtensionId = domainExtensionId;
+		if(domainExtensionId != null){
+			putQueryParameter("DomainExtensionId", domainExtensionId);
+		}
+	}
+
 	@Override
-	public Class<DescribeVServerGroupsResponse> getResponseClass() {
-		return DescribeVServerGroupsResponse.class;
+	public Class<SetDomainExtensionAttributeResponse> getResponseClass() {
+		return SetDomainExtensionAttributeResponse.class;
 	}
 
 }

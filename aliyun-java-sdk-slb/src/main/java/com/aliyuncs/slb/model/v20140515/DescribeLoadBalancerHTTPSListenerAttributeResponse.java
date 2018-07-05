@@ -14,6 +14,7 @@
 
 package com.aliyuncs.slb.model.v20140515;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.slb.transform.v20140515.DescribeLoadBalancerHTTPSListenerAttributeResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -93,6 +94,14 @@ public class DescribeLoadBalancerHTTPSListenerAttributeResponse extends AcsRespo
 	private Integer requestTimeout;
 
 	private Integer idleTimeout;
+
+	private String enableHttp2;
+
+	private String tLSCipherPolicy;
+
+	private List<Rule> rules;
+
+	private List<DomainExtension> domainExtensions;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -372,6 +381,124 @@ public class DescribeLoadBalancerHTTPSListenerAttributeResponse extends AcsRespo
 
 	public void setIdleTimeout(Integer idleTimeout) {
 		this.idleTimeout = idleTimeout;
+	}
+
+	public String getEnableHttp2() {
+		return this.enableHttp2;
+	}
+
+	public void setEnableHttp2(String enableHttp2) {
+		this.enableHttp2 = enableHttp2;
+	}
+
+	public String getTLSCipherPolicy() {
+		return this.tLSCipherPolicy;
+	}
+
+	public void setTLSCipherPolicy(String tLSCipherPolicy) {
+		this.tLSCipherPolicy = tLSCipherPolicy;
+	}
+
+	public List<Rule> getRules() {
+		return this.rules;
+	}
+
+	public void setRules(List<Rule> rules) {
+		this.rules = rules;
+	}
+
+	public List<DomainExtension> getDomainExtensions() {
+		return this.domainExtensions;
+	}
+
+	public void setDomainExtensions(List<DomainExtension> domainExtensions) {
+		this.domainExtensions = domainExtensions;
+	}
+
+	public static class Rule {
+
+		private String ruleId;
+
+		private String ruleName;
+
+		private String domain;
+
+		private String url;
+
+		private String vServerGroupId;
+
+		public String getRuleId() {
+			return this.ruleId;
+		}
+
+		public void setRuleId(String ruleId) {
+			this.ruleId = ruleId;
+		}
+
+		public String getRuleName() {
+			return this.ruleName;
+		}
+
+		public void setRuleName(String ruleName) {
+			this.ruleName = ruleName;
+		}
+
+		public String getDomain() {
+			return this.domain;
+		}
+
+		public void setDomain(String domain) {
+			this.domain = domain;
+		}
+
+		public String getUrl() {
+			return this.url;
+		}
+
+		public void setUrl(String url) {
+			this.url = url;
+		}
+
+		public String getVServerGroupId() {
+			return this.vServerGroupId;
+		}
+
+		public void setVServerGroupId(String vServerGroupId) {
+			this.vServerGroupId = vServerGroupId;
+		}
+	}
+
+	public static class DomainExtension {
+
+		private String domainExtensionId;
+
+		private String domain;
+
+		private String serverCertificateId;
+
+		public String getDomainExtensionId() {
+			return this.domainExtensionId;
+		}
+
+		public void setDomainExtensionId(String domainExtensionId) {
+			this.domainExtensionId = domainExtensionId;
+		}
+
+		public String getDomain() {
+			return this.domain;
+		}
+
+		public void setDomain(String domain) {
+			this.domain = domain;
+		}
+
+		public String getServerCertificateId() {
+			return this.serverCertificateId;
+		}
+
+		public void setServerCertificateId(String serverCertificateId) {
+			this.serverCertificateId = serverCertificateId;
+		}
 	}
 
 	@Override

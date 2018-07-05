@@ -30,21 +30,37 @@ public class DescribeLoadBalancersRequest extends RpcAcsRequest<DescribeLoadBala
 
 	private Long resourceOwnerId;
 
+	private String networkType;
+
+	private String addressIPVersion;
+
+	private String masterZoneId;
+
+	private Integer pageNumber;
+
+	private String resourceGroupId;
+
+	private String loadBalancerName;
+
+	private Integer pageSize;
+
+	private String addressType;
+
+	private String slaveZoneId;
+
+	private String fuzzy;
+
 	private String address;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
-	private String networkType;
-
 	private Long ownerId;
 
 	private String serverId;
 
-	private String masterZoneId;
-
-	private Integer pageNumber;
+	private String loadBalancerStatus;
 
 	private String tags;
 
@@ -52,21 +68,11 @@ public class DescribeLoadBalancersRequest extends RpcAcsRequest<DescribeLoadBala
 
 	private String vSwitchId;
 
-	private String resourceGroupId;
-
-	private String loadBalancerName;
-
 	private String loadBalancerId;
 
 	private String internetChargeType;
 
 	private String vpcId;
-
-	private Integer pageSize;
-
-	private String addressType;
-
-	private String slaveZoneId;
 
 	private String payType;
 
@@ -89,6 +95,116 @@ public class DescribeLoadBalancersRequest extends RpcAcsRequest<DescribeLoadBala
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getNetworkType() {
+		return this.networkType;
+	}
+
+	public void setNetworkType(String networkType) {
+		this.networkType = networkType;
+		if(networkType != null){
+			putQueryParameter("NetworkType", networkType);
+		}
+	}
+
+	public String getAddressIPVersion() {
+		return this.addressIPVersion;
+	}
+
+	public void setAddressIPVersion(String addressIPVersion) {
+		this.addressIPVersion = addressIPVersion;
+		if(addressIPVersion != null){
+			putQueryParameter("AddressIPVersion", addressIPVersion);
+		}
+	}
+
+	public String getMasterZoneId() {
+		return this.masterZoneId;
+	}
+
+	public void setMasterZoneId(String masterZoneId) {
+		this.masterZoneId = masterZoneId;
+		if(masterZoneId != null){
+			putQueryParameter("MasterZoneId", masterZoneId);
+		}
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
+	public String getLoadBalancerName() {
+		return this.loadBalancerName;
+	}
+
+	public void setLoadBalancerName(String loadBalancerName) {
+		this.loadBalancerName = loadBalancerName;
+		if(loadBalancerName != null){
+			putQueryParameter("LoadBalancerName", loadBalancerName);
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getAddressType() {
+		return this.addressType;
+	}
+
+	public void setAddressType(String addressType) {
+		this.addressType = addressType;
+		if(addressType != null){
+			putQueryParameter("AddressType", addressType);
+		}
+	}
+
+	public String getSlaveZoneId() {
+		return this.slaveZoneId;
+	}
+
+	public void setSlaveZoneId(String slaveZoneId) {
+		this.slaveZoneId = slaveZoneId;
+		if(slaveZoneId != null){
+			putQueryParameter("SlaveZoneId", slaveZoneId);
+		}
+	}
+
+	public String getFuzzy() {
+		return this.fuzzy;
+	}
+
+	public void setFuzzy(String fuzzy) {
+		this.fuzzy = fuzzy;
+		if(fuzzy != null){
+			putQueryParameter("Fuzzy", fuzzy);
 		}
 	}
 
@@ -125,17 +241,6 @@ public class DescribeLoadBalancersRequest extends RpcAcsRequest<DescribeLoadBala
 		}
 	}
 
-	public String getNetworkType() {
-		return this.networkType;
-	}
-
-	public void setNetworkType(String networkType) {
-		this.networkType = networkType;
-		if(networkType != null){
-			putQueryParameter("NetworkType", networkType);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -158,25 +263,14 @@ public class DescribeLoadBalancersRequest extends RpcAcsRequest<DescribeLoadBala
 		}
 	}
 
-	public String getMasterZoneId() {
-		return this.masterZoneId;
+	public String getLoadBalancerStatus() {
+		return this.loadBalancerStatus;
 	}
 
-	public void setMasterZoneId(String masterZoneId) {
-		this.masterZoneId = masterZoneId;
-		if(masterZoneId != null){
-			putQueryParameter("MasterZoneId", masterZoneId);
-		}
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
+	public void setLoadBalancerStatus(String loadBalancerStatus) {
+		this.loadBalancerStatus = loadBalancerStatus;
+		if(loadBalancerStatus != null){
+			putQueryParameter("LoadBalancerStatus", loadBalancerStatus);
 		}
 	}
 
@@ -213,28 +307,6 @@ public class DescribeLoadBalancersRequest extends RpcAcsRequest<DescribeLoadBala
 		}
 	}
 
-	public String getResourceGroupId() {
-		return this.resourceGroupId;
-	}
-
-	public void setResourceGroupId(String resourceGroupId) {
-		this.resourceGroupId = resourceGroupId;
-		if(resourceGroupId != null){
-			putQueryParameter("ResourceGroupId", resourceGroupId);
-		}
-	}
-
-	public String getLoadBalancerName() {
-		return this.loadBalancerName;
-	}
-
-	public void setLoadBalancerName(String loadBalancerName) {
-		this.loadBalancerName = loadBalancerName;
-		if(loadBalancerName != null){
-			putQueryParameter("LoadBalancerName", loadBalancerName);
-		}
-	}
-
 	public String getLoadBalancerId() {
 		return this.loadBalancerId;
 	}
@@ -265,39 +337,6 @@ public class DescribeLoadBalancersRequest extends RpcAcsRequest<DescribeLoadBala
 		this.vpcId = vpcId;
 		if(vpcId != null){
 			putQueryParameter("VpcId", vpcId);
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
-	public String getAddressType() {
-		return this.addressType;
-	}
-
-	public void setAddressType(String addressType) {
-		this.addressType = addressType;
-		if(addressType != null){
-			putQueryParameter("AddressType", addressType);
-		}
-	}
-
-	public String getSlaveZoneId() {
-		return this.slaveZoneId;
-	}
-
-	public void setSlaveZoneId(String slaveZoneId) {
-		this.slaveZoneId = slaveZoneId;
-		if(slaveZoneId != null){
-			putQueryParameter("SlaveZoneId", slaveZoneId);
 		}
 	}
 

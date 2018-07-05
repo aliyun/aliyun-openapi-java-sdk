@@ -38,6 +38,12 @@ public class UploadCACertificateResponse extends AcsResponse {
 
 	private Long createTimeStamp;
 
+	private String expireTime;
+
+	private Long expireTimeStamp;
+
+	private String commonName;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -92,6 +98,30 @@ public class UploadCACertificateResponse extends AcsResponse {
 
 	public void setCreateTimeStamp(Long createTimeStamp) {
 		this.createTimeStamp = createTimeStamp;
+	}
+
+	public String getExpireTime() {
+		return this.expireTime;
+	}
+
+	public void setExpireTime(String expireTime) {
+		this.expireTime = expireTime;
+	}
+
+	public Long getExpireTimeStamp() {
+		return this.expireTimeStamp;
+	}
+
+	public void setExpireTimeStamp(Long expireTimeStamp) {
+		this.expireTimeStamp = expireTimeStamp;
+	}
+
+	public String getCommonName() {
+		return this.commonName;
+	}
+
+	public void setCommonName(String commonName) {
+		this.commonName = commonName;
 	}
 
 	@Override

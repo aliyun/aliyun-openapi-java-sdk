@@ -31,6 +31,7 @@ public class CreateLoadBalancerResponseUnmarshaller {
 		createLoadBalancerResponse.setVSwitchId(context.stringValue("CreateLoadBalancerResponse.VSwitchId"));
 		createLoadBalancerResponse.setNetworkType(context.stringValue("CreateLoadBalancerResponse.NetworkType"));
 		createLoadBalancerResponse.setOrderId(context.longValue("CreateLoadBalancerResponse.OrderId"));
+		createLoadBalancerResponse.setAddressIPVersion(context.stringValue("CreateLoadBalancerResponse.AddressIPVersion"));
 	 
 	 	return createLoadBalancerResponse;
 	}

@@ -37,6 +37,7 @@ public class CreateVServerGroupResponseUnmarshaller {
 			backendServer.setWeight(context.integerValue("CreateVServerGroupResponse.BackendServers["+ i +"].Weight"));
 			backendServer.setType(context.stringValue("CreateVServerGroupResponse.BackendServers["+ i +"].Type"));
 			backendServer.setServerIp(context.stringValue("CreateVServerGroupResponse.BackendServers["+ i +"].ServerIp"));
+			backendServer.setEniHost(context.stringValue("CreateVServerGroupResponse.BackendServers["+ i +"].EniHost"));
 			backendServer.setVpcId(context.stringValue("CreateVServerGroupResponse.BackendServers["+ i +"].VpcId"));
 
 			backendServers.add(backendServer);

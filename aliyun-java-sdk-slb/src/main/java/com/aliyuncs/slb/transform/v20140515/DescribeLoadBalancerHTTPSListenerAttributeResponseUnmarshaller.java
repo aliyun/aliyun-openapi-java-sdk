@@ -14,7 +14,12 @@
 
 package com.aliyuncs.slb.transform.v20140515;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.slb.model.v20140515.DescribeLoadBalancerHTTPSListenerAttributeResponse;
+import com.aliyuncs.slb.model.v20140515.DescribeLoadBalancerHTTPSListenerAttributeResponse.DomainExtension;
+import com.aliyuncs.slb.model.v20140515.DescribeLoadBalancerHTTPSListenerAttributeResponse.Rule;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -57,6 +62,32 @@ public class DescribeLoadBalancerHTTPSListenerAttributeResponseUnmarshaller {
 		describeLoadBalancerHTTPSListenerAttributeResponse.setVpcIds(context.stringValue("DescribeLoadBalancerHTTPSListenerAttributeResponse.VpcIds"));
 		describeLoadBalancerHTTPSListenerAttributeResponse.setRequestTimeout(context.integerValue("DescribeLoadBalancerHTTPSListenerAttributeResponse.RequestTimeout"));
 		describeLoadBalancerHTTPSListenerAttributeResponse.setIdleTimeout(context.integerValue("DescribeLoadBalancerHTTPSListenerAttributeResponse.IdleTimeout"));
+		describeLoadBalancerHTTPSListenerAttributeResponse.setEnableHttp2(context.stringValue("DescribeLoadBalancerHTTPSListenerAttributeResponse.EnableHttp2"));
+		describeLoadBalancerHTTPSListenerAttributeResponse.setTLSCipherPolicy(context.stringValue("DescribeLoadBalancerHTTPSListenerAttributeResponse.TLSCipherPolicy"));
+
+		List<Rule> rules = new ArrayList<Rule>();
+		for (int i = 0; i < context.lengthValue("DescribeLoadBalancerHTTPSListenerAttributeResponse.Rules.Length"); i++) {
+			Rule rule = new Rule();
+			rule.setRuleId(context.stringValue("DescribeLoadBalancerHTTPSListenerAttributeResponse.Rules["+ i +"].RuleId"));
+			rule.setRuleName(context.stringValue("DescribeLoadBalancerHTTPSListenerAttributeResponse.Rules["+ i +"].RuleName"));
+			rule.setDomain(context.stringValue("DescribeLoadBalancerHTTPSListenerAttributeResponse.Rules["+ i +"].Domain"));
+			rule.setUrl(context.stringValue("DescribeLoadBalancerHTTPSListenerAttributeResponse.Rules["+ i +"].Url"));
+			rule.setVServerGroupId(context.stringValue("DescribeLoadBalancerHTTPSListenerAttributeResponse.Rules["+ i +"].VServerGroupId"));
+
+			rules.add(rule);
+		}
+		describeLoadBalancerHTTPSListenerAttributeResponse.setRules(rules);
+
+		List<DomainExtension> domainExtensions = new ArrayList<DomainExtension>();
+		for (int i = 0; i < context.lengthValue("DescribeLoadBalancerHTTPSListenerAttributeResponse.DomainExtensions.Length"); i++) {
+			DomainExtension domainExtension = new DomainExtension();
+			domainExtension.setDomainExtensionId(context.stringValue("DescribeLoadBalancerHTTPSListenerAttributeResponse.DomainExtensions["+ i +"].DomainExtensionId"));
+			domainExtension.setDomain(context.stringValue("DescribeLoadBalancerHTTPSListenerAttributeResponse.DomainExtensions["+ i +"].Domain"));
+			domainExtension.setServerCertificateId(context.stringValue("DescribeLoadBalancerHTTPSListenerAttributeResponse.DomainExtensions["+ i +"].ServerCertificateId"));
+
+			domainExtensions.add(domainExtension);
+		}
+		describeLoadBalancerHTTPSListenerAttributeResponse.setDomainExtensions(domainExtensions);
 	 
 	 	return describeLoadBalancerHTTPSListenerAttributeResponse;
 	}

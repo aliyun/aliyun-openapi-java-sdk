@@ -20,23 +20,23 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class DescribeVServerGroupsRequest extends RpcAcsRequest<DescribeVServerGroupsResponse> {
+public class ModifyLoadBalancerVPCAddressRequest extends RpcAcsRequest<ModifyLoadBalancerVPCAddressResponse> {
 	
-	public DescribeVServerGroupsRequest() {
-		super("Slb", "2014-05-15", "DescribeVServerGroups", "slb");
+	public ModifyLoadBalancerVPCAddressRequest() {
+		super("Slb", "2014-05-15", "ModifyLoadBalancerVPCAddress", "slb");
 	}
 
 	private String access_key_id;
 
-	private Boolean includeRule;
+	private String vSwitchId;
 
 	private Long resourceOwnerId;
 
 	private String loadBalancerId;
 
-	private String resourceOwnerAccount;
+	private String address;
 
-	private Boolean includeListener;
+	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
@@ -55,14 +55,14 @@ public class DescribeVServerGroupsRequest extends RpcAcsRequest<DescribeVServerG
 		}
 	}
 
-	public Boolean getIncludeRule() {
-		return this.includeRule;
+	public String getVSwitchId() {
+		return this.vSwitchId;
 	}
 
-	public void setIncludeRule(Boolean includeRule) {
-		this.includeRule = includeRule;
-		if(includeRule != null){
-			putQueryParameter("IncludeRule", includeRule.toString());
+	public void setVSwitchId(String vSwitchId) {
+		this.vSwitchId = vSwitchId;
+		if(vSwitchId != null){
+			putQueryParameter("VSwitchId", vSwitchId);
 		}
 	}
 
@@ -88,6 +88,17 @@ public class DescribeVServerGroupsRequest extends RpcAcsRequest<DescribeVServerG
 		}
 	}
 
+	public String getAddress() {
+		return this.address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+		if(address != null){
+			putQueryParameter("Address", address);
+		}
+	}
+
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
 	}
@@ -96,17 +107,6 @@ public class DescribeVServerGroupsRequest extends RpcAcsRequest<DescribeVServerG
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public Boolean getIncludeListener() {
-		return this.includeListener;
-	}
-
-	public void setIncludeListener(Boolean includeListener) {
-		this.includeListener = includeListener;
-		if(includeListener != null){
-			putQueryParameter("IncludeListener", includeListener.toString());
 		}
 	}
 
@@ -144,8 +144,8 @@ public class DescribeVServerGroupsRequest extends RpcAcsRequest<DescribeVServerG
 	}
 
 	@Override
-	public Class<DescribeVServerGroupsResponse> getResponseClass() {
-		return DescribeVServerGroupsResponse.class;
+	public Class<ModifyLoadBalancerVPCAddressResponse> getResponseClass() {
+		return ModifyLoadBalancerVPCAddressResponse.class;
 	}
 
 }

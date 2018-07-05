@@ -50,6 +50,8 @@ public class SetLoadBalancerHTTPSListenerAttributeRequest extends RpcAcsRequest<
 
 	private Integer maxConnection;
 
+	private String enableHttp2;
+
 	private Integer cookieTimeout;
 
 	private String stickySessionType;
@@ -77,6 +79,8 @@ public class SetLoadBalancerHTTPSListenerAttributeRequest extends RpcAcsRequest<
 	private String ownerAccount;
 
 	private String gzip;
+
+	private String tLSCipherPolicy;
 
 	private Long ownerId;
 
@@ -236,6 +240,17 @@ public class SetLoadBalancerHTTPSListenerAttributeRequest extends RpcAcsRequest<
 		}
 	}
 
+	public String getEnableHttp2() {
+		return this.enableHttp2;
+	}
+
+	public void setEnableHttp2(String enableHttp2) {
+		this.enableHttp2 = enableHttp2;
+		if(enableHttp2 != null){
+			putQueryParameter("EnableHttp2", enableHttp2);
+		}
+	}
+
 	public Integer getCookieTimeout() {
 		return this.cookieTimeout;
 	}
@@ -387,6 +402,17 @@ public class SetLoadBalancerHTTPSListenerAttributeRequest extends RpcAcsRequest<
 		this.gzip = gzip;
 		if(gzip != null){
 			putQueryParameter("Gzip", gzip);
+		}
+	}
+
+	public String getTLSCipherPolicy() {
+		return this.tLSCipherPolicy;
+	}
+
+	public void setTLSCipherPolicy(String tLSCipherPolicy) {
+		this.tLSCipherPolicy = tLSCipherPolicy;
+		if(tLSCipherPolicy != null){
+			putQueryParameter("TLSCipherPolicy", tLSCipherPolicy);
 		}
 	}
 

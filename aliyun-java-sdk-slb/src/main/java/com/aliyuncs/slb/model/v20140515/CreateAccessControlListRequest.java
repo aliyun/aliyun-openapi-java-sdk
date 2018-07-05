@@ -38,6 +38,8 @@ public class CreateAccessControlListRequest extends RpcAcsRequest<CreateAccessCo
 
 	private Long ownerId;
 
+	private String addressIPVersion;
+
 	private String tags;
 
 	public String getAccess_key_id() {
@@ -103,6 +105,17 @@ public class CreateAccessControlListRequest extends RpcAcsRequest<CreateAccessCo
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getAddressIPVersion() {
+		return this.addressIPVersion;
+	}
+
+	public void setAddressIPVersion(String addressIPVersion) {
+		this.addressIPVersion = addressIPVersion;
+		if(addressIPVersion != null){
+			putQueryParameter("AddressIPVersion", addressIPVersion);
 		}
 	}
 

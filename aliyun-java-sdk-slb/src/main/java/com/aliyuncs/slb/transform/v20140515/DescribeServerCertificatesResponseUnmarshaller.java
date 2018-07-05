@@ -42,6 +42,15 @@ public class DescribeServerCertificatesResponseUnmarshaller {
 			serverCertificate.setResourceGroupId(context.stringValue("DescribeServerCertificatesResponse.ServerCertificates["+ i +"].ResourceGroupId"));
 			serverCertificate.setCreateTime(context.stringValue("DescribeServerCertificatesResponse.ServerCertificates["+ i +"].CreateTime"));
 			serverCertificate.setCreateTimeStamp(context.longValue("DescribeServerCertificatesResponse.ServerCertificates["+ i +"].CreateTimeStamp"));
+			serverCertificate.setExpireTime(context.stringValue("DescribeServerCertificatesResponse.ServerCertificates["+ i +"].ExpireTime"));
+			serverCertificate.setExpireTimeStamp(context.longValue("DescribeServerCertificatesResponse.ServerCertificates["+ i +"].ExpireTimeStamp"));
+			serverCertificate.setCommonName(context.stringValue("DescribeServerCertificatesResponse.ServerCertificates["+ i +"].CommonName"));
+
+			List<String> subjectAlternativeNames = new ArrayList<String>();
+			for (int j = 0; j < context.lengthValue("DescribeServerCertificatesResponse.ServerCertificates["+ i +"].SubjectAlternativeNames.Length"); j++) {
+				subjectAlternativeNames.add(context.stringValue("DescribeServerCertificatesResponse.ServerCertificates["+ i +"].SubjectAlternativeNames["+ j +"]"));
+			}
+			serverCertificate.setSubjectAlternativeNames(subjectAlternativeNames);
 
 			serverCertificates.add(serverCertificate);
 		}

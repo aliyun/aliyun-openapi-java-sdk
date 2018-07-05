@@ -14,6 +14,9 @@
 
 package com.aliyuncs.slb.transform.v20140515;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.slb.model.v20140515.UploadServerCertificateResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -34,6 +37,15 @@ public class UploadServerCertificateResponseUnmarshaller {
 		uploadServerCertificateResponse.setResourceGroupId(context.stringValue("UploadServerCertificateResponse.ResourceGroupId"));
 		uploadServerCertificateResponse.setCreateTime(context.stringValue("UploadServerCertificateResponse.CreateTime"));
 		uploadServerCertificateResponse.setCreateTimeStamp(context.longValue("UploadServerCertificateResponse.CreateTimeStamp"));
+		uploadServerCertificateResponse.setExpireTime(context.stringValue("UploadServerCertificateResponse.ExpireTime"));
+		uploadServerCertificateResponse.setExpireTimeStamp(context.longValue("UploadServerCertificateResponse.ExpireTimeStamp"));
+		uploadServerCertificateResponse.setCommonName(context.stringValue("UploadServerCertificateResponse.CommonName"));
+
+		List<String> subjectAlternativeNames = new ArrayList<String>();
+		for (int i = 0; i < context.lengthValue("UploadServerCertificateResponse.SubjectAlternativeNames.Length"); i++) {
+			subjectAlternativeNames.add(context.stringValue("UploadServerCertificateResponse.SubjectAlternativeNames["+ i +"]"));
+		}
+		uploadServerCertificateResponse.setSubjectAlternativeNames(subjectAlternativeNames);
 	 
 	 	return uploadServerCertificateResponse;
 	}

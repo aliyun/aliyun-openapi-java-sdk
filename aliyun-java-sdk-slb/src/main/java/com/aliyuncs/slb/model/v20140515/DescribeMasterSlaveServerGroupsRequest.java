@@ -34,6 +34,8 @@ public class DescribeMasterSlaveServerGroupsRequest extends RpcAcsRequest<Descri
 
 	private String resourceOwnerAccount;
 
+	private Boolean includeListener;
+
 	private String ownerAccount;
 
 	private Long ownerId;
@@ -81,6 +83,17 @@ public class DescribeMasterSlaveServerGroupsRequest extends RpcAcsRequest<Descri
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public Boolean getIncludeListener() {
+		return this.includeListener;
+	}
+
+	public void setIncludeListener(Boolean includeListener) {
+		this.includeListener = includeListener;
+		if(includeListener != null){
+			putQueryParameter("IncludeListener", includeListener.toString());
 		}
 	}
 

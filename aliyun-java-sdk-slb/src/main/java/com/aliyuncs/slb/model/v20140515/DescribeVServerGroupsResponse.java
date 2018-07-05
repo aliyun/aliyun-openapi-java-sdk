@@ -51,6 +51,8 @@ public class DescribeVServerGroupsResponse extends AcsResponse {
 
 		private String vServerGroupName;
 
+		private AssociatedObjects associatedObjects;
+
 		public String getVServerGroupId() {
 			return this.vServerGroupId;
 		}
@@ -65,6 +67,73 @@ public class DescribeVServerGroupsResponse extends AcsResponse {
 
 		public void setVServerGroupName(String vServerGroupName) {
 			this.vServerGroupName = vServerGroupName;
+		}
+
+		public AssociatedObjects getAssociatedObjects() {
+			return this.associatedObjects;
+		}
+
+		public void setAssociatedObjects(AssociatedObjects associatedObjects) {
+			this.associatedObjects = associatedObjects;
+		}
+
+		public static class AssociatedObjects {
+
+			private List<Listener> listeners;
+
+			private List<Rule> rules;
+
+			public List<Listener> getListeners() {
+				return this.listeners;
+			}
+
+			public void setListeners(List<Listener> listeners) {
+				this.listeners = listeners;
+			}
+
+			public List<Rule> getRules() {
+				return this.rules;
+			}
+
+			public void setRules(List<Rule> rules) {
+				this.rules = rules;
+			}
+
+			public static class Listener {
+
+				private String protocol;
+
+				private Integer port;
+
+				public String getProtocol() {
+					return this.protocol;
+				}
+
+				public void setProtocol(String protocol) {
+					this.protocol = protocol;
+				}
+
+				public Integer getPort() {
+					return this.port;
+				}
+
+				public void setPort(Integer port) {
+					this.port = port;
+				}
+			}
+
+			public static class Rule {
+
+				private String ruleId;
+
+				public String getRuleId() {
+					return this.ruleId;
+				}
+
+				public void setRuleId(String ruleId) {
+					this.ruleId = ruleId;
+				}
+			}
 		}
 	}
 

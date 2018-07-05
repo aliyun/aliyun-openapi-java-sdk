@@ -71,6 +71,10 @@ public class DescribeLoadBalancerAttributeResponse extends AcsResponse {
 
 	private String slaveZoneId;
 
+	private String addressIPVersion;
+
+	private String cloudType;
+
 	private List<ListenerPortAndProtocal> listenerPortsAndProtocal;
 
 	private List<ListenerPortAndProtocol> listenerPortsAndProtocol;
@@ -263,6 +267,22 @@ public class DescribeLoadBalancerAttributeResponse extends AcsResponse {
 		this.slaveZoneId = slaveZoneId;
 	}
 
+	public String getAddressIPVersion() {
+		return this.addressIPVersion;
+	}
+
+	public void setAddressIPVersion(String addressIPVersion) {
+		this.addressIPVersion = addressIPVersion;
+	}
+
+	public String getCloudType() {
+		return this.cloudType;
+	}
+
+	public void setCloudType(String cloudType) {
+		this.cloudType = cloudType;
+	}
+
 	public List<ListenerPortAndProtocal> getListenerPortsAndProtocal() {
 		return this.listenerPortsAndProtocal;
 	}
@@ -371,6 +391,8 @@ public class DescribeLoadBalancerAttributeResponse extends AcsResponse {
 
 		private String serverIp;
 
+		private String eniHost;
+
 		private String vpcId;
 
 		public String getServerId() {
@@ -403,6 +425,14 @@ public class DescribeLoadBalancerAttributeResponse extends AcsResponse {
 
 		public void setServerIp(String serverIp) {
 			this.serverIp = serverIp;
+		}
+
+		public String getEniHost() {
+			return this.eniHost;
+		}
+
+		public void setEniHost(String eniHost) {
+			this.eniHost = eniHost;
 		}
 
 		public String getVpcId() {

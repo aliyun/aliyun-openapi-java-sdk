@@ -42,6 +42,8 @@ public class CreateLoadBalancerResponse extends AcsResponse {
 
 	private Long orderId;
 
+	private String addressIPVersion;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -112,6 +114,14 @@ public class CreateLoadBalancerResponse extends AcsResponse {
 
 	public void setOrderId(Long orderId) {
 		this.orderId = orderId;
+	}
+
+	public String getAddressIPVersion() {
+		return this.addressIPVersion;
+	}
+
+	public void setAddressIPVersion(String addressIPVersion) {
+		this.addressIPVersion = addressIPVersion;
 	}
 
 	@Override

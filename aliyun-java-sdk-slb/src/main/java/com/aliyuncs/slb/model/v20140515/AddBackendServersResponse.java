@@ -65,6 +65,8 @@ public class AddBackendServersResponse extends AcsResponse {
 
 		private String vpcId;
 
+		private String eniHost;
+
 		private String type;
 
 		public String getServerId() {
@@ -97,6 +99,14 @@ public class AddBackendServersResponse extends AcsResponse {
 
 		public void setVpcId(String vpcId) {
 			this.vpcId = vpcId;
+		}
+
+		public String getEniHost() {
+			return this.eniHost;
+		}
+
+		public void setEniHost(String eniHost) {
+			this.eniHost = eniHost;
 		}
 
 		public String getType() {

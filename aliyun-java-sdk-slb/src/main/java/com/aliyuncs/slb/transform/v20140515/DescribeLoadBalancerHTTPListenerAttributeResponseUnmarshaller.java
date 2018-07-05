@@ -14,7 +14,11 @@
 
 package com.aliyuncs.slb.transform.v20140515;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.slb.model.v20140515.DescribeLoadBalancerHTTPListenerAttributeResponse;
+import com.aliyuncs.slb.model.v20140515.DescribeLoadBalancerHTTPListenerAttributeResponse.Rule;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -57,6 +61,19 @@ public class DescribeLoadBalancerHTTPListenerAttributeResponseUnmarshaller {
 		describeLoadBalancerHTTPListenerAttributeResponse.setForwardPort(context.integerValue("DescribeLoadBalancerHTTPListenerAttributeResponse.ForwardPort"));
 		describeLoadBalancerHTTPListenerAttributeResponse.setRequestTimeout(context.integerValue("DescribeLoadBalancerHTTPListenerAttributeResponse.RequestTimeout"));
 		describeLoadBalancerHTTPListenerAttributeResponse.setIdleTimeout(context.integerValue("DescribeLoadBalancerHTTPListenerAttributeResponse.IdleTimeout"));
+
+		List<Rule> rules = new ArrayList<Rule>();
+		for (int i = 0; i < context.lengthValue("DescribeLoadBalancerHTTPListenerAttributeResponse.Rules.Length"); i++) {
+			Rule rule = new Rule();
+			rule.setRuleId(context.stringValue("DescribeLoadBalancerHTTPListenerAttributeResponse.Rules["+ i +"].RuleId"));
+			rule.setRuleName(context.stringValue("DescribeLoadBalancerHTTPListenerAttributeResponse.Rules["+ i +"].RuleName"));
+			rule.setDomain(context.stringValue("DescribeLoadBalancerHTTPListenerAttributeResponse.Rules["+ i +"].Domain"));
+			rule.setUrl(context.stringValue("DescribeLoadBalancerHTTPListenerAttributeResponse.Rules["+ i +"].Url"));
+			rule.setVServerGroupId(context.stringValue("DescribeLoadBalancerHTTPListenerAttributeResponse.Rules["+ i +"].VServerGroupId"));
+
+			rules.add(rule);
+		}
+		describeLoadBalancerHTTPListenerAttributeResponse.setRules(rules);
 	 
 	 	return describeLoadBalancerHTTPListenerAttributeResponse;
 	}

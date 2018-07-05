@@ -51,6 +51,8 @@ public class DescribeMasterSlaveServerGroupsResponse extends AcsResponse {
 
 		private String masterSlaveServerGroupName;
 
+		private AssociatedObjects associatedObjects;
+
 		public String getMasterSlaveServerGroupId() {
 			return this.masterSlaveServerGroupId;
 		}
@@ -65,6 +67,50 @@ public class DescribeMasterSlaveServerGroupsResponse extends AcsResponse {
 
 		public void setMasterSlaveServerGroupName(String masterSlaveServerGroupName) {
 			this.masterSlaveServerGroupName = masterSlaveServerGroupName;
+		}
+
+		public AssociatedObjects getAssociatedObjects() {
+			return this.associatedObjects;
+		}
+
+		public void setAssociatedObjects(AssociatedObjects associatedObjects) {
+			this.associatedObjects = associatedObjects;
+		}
+
+		public static class AssociatedObjects {
+
+			private List<Listener> listeners;
+
+			public List<Listener> getListeners() {
+				return this.listeners;
+			}
+
+			public void setListeners(List<Listener> listeners) {
+				this.listeners = listeners;
+			}
+
+			public static class Listener {
+
+				private String protocol;
+
+				private Integer port;
+
+				public String getProtocol() {
+					return this.protocol;
+				}
+
+				public void setProtocol(String protocol) {
+					this.protocol = protocol;
+				}
+
+				public Integer getPort() {
+					return this.port;
+				}
+
+				public void setPort(Integer port) {
+					this.port = port;
+				}
+			}
 		}
 	}
 

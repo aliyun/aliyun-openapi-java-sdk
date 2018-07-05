@@ -57,6 +57,8 @@ public class DescribeHealthStatusResponse extends AcsResponse {
 
 		private String serverIp;
 
+		private String eniHost;
+
 		private String type;
 
 		public Integer getListenerPort() {
@@ -97,6 +99,14 @@ public class DescribeHealthStatusResponse extends AcsResponse {
 
 		public void setServerIp(String serverIp) {
 			this.serverIp = serverIp;
+		}
+
+		public String getEniHost() {
+			return this.eniHost;
+		}
+
+		public void setEniHost(String eniHost) {
+			this.eniHost = eniHost;
 		}
 
 		public String getType() {

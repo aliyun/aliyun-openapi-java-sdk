@@ -19,6 +19,8 @@ import java.util.List;
 
 import com.aliyuncs.slb.model.v20140515.DescribeMasterSlaveServerGroupsResponse;
 import com.aliyuncs.slb.model.v20140515.DescribeMasterSlaveServerGroupsResponse.MasterSlaveServerGroup;
+import com.aliyuncs.slb.model.v20140515.DescribeMasterSlaveServerGroupsResponse.MasterSlaveServerGroup.AssociatedObjects;
+import com.aliyuncs.slb.model.v20140515.DescribeMasterSlaveServerGroupsResponse.MasterSlaveServerGroup.AssociatedObjects.Listener;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -33,6 +35,19 @@ public class DescribeMasterSlaveServerGroupsResponseUnmarshaller {
 			MasterSlaveServerGroup masterSlaveServerGroup = new MasterSlaveServerGroup();
 			masterSlaveServerGroup.setMasterSlaveServerGroupId(context.stringValue("DescribeMasterSlaveServerGroupsResponse.MasterSlaveServerGroups["+ i +"].MasterSlaveServerGroupId"));
 			masterSlaveServerGroup.setMasterSlaveServerGroupName(context.stringValue("DescribeMasterSlaveServerGroupsResponse.MasterSlaveServerGroups["+ i +"].MasterSlaveServerGroupName"));
+
+			AssociatedObjects associatedObjects = new AssociatedObjects();
+
+			List<Listener> listeners = new ArrayList<Listener>();
+			for (int j = 0; j < context.lengthValue("DescribeMasterSlaveServerGroupsResponse.MasterSlaveServerGroups["+ i +"].AssociatedObjects.Listeners.Length"); j++) {
+				Listener listener = new Listener();
+				listener.setProtocol(context.stringValue("DescribeMasterSlaveServerGroupsResponse.MasterSlaveServerGroups["+ i +"].AssociatedObjects.Listeners["+ j +"].Protocol"));
+				listener.setPort(context.integerValue("DescribeMasterSlaveServerGroupsResponse.MasterSlaveServerGroups["+ i +"].AssociatedObjects.Listeners["+ j +"].Port"));
+
+				listeners.add(listener);
+			}
+			associatedObjects.setListeners(listeners);
+			masterSlaveServerGroup.setAssociatedObjects(associatedObjects);
 
 			masterSlaveServerGroups.add(masterSlaveServerGroup);
 		}

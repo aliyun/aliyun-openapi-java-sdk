@@ -37,6 +37,7 @@ public class RemoveVServerGroupBackendServersResponseUnmarshaller {
 			backendServer.setWeight(context.integerValue("RemoveVServerGroupBackendServersResponse.BackendServers["+ i +"].Weight"));
 			backendServer.setType(context.stringValue("RemoveVServerGroupBackendServersResponse.BackendServers["+ i +"].Type"));
 			backendServer.setServerIp(context.stringValue("RemoveVServerGroupBackendServersResponse.BackendServers["+ i +"].ServerIp"));
+			backendServer.setEniHost(context.stringValue("RemoveVServerGroupBackendServersResponse.BackendServers["+ i +"].EniHost"));
 			backendServer.setVpcId(context.stringValue("RemoveVServerGroupBackendServersResponse.BackendServers["+ i +"].VpcId"));
 
 			backendServers.add(backendServer);

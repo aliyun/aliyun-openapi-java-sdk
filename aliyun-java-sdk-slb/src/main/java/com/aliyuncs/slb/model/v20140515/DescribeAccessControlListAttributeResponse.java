@@ -31,6 +31,8 @@ public class DescribeAccessControlListAttributeResponse extends AcsResponse {
 
 	private String aclName;
 
+	private String addressIPVersion;
+
 	private List<AclEntry> aclEntrys;
 
 	private List<RelatedListener> relatedListeners;
@@ -57,6 +59,14 @@ public class DescribeAccessControlListAttributeResponse extends AcsResponse {
 
 	public void setAclName(String aclName) {
 		this.aclName = aclName;
+	}
+
+	public String getAddressIPVersion() {
+		return this.addressIPVersion;
+	}
+
+	public void setAddressIPVersion(String addressIPVersion) {
+		this.addressIPVersion = addressIPVersion;
 	}
 
 	public List<AclEntry> getAclEntrys() {

@@ -14,6 +14,7 @@
 
 package com.aliyuncs.slb.model.v20140515;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.slb.transform.v20140515.DescribeLoadBalancerHTTPListenerAttributeResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -93,6 +94,8 @@ public class DescribeLoadBalancerHTTPListenerAttributeResponse extends AcsRespon
 	private Integer requestTimeout;
 
 	private Integer idleTimeout;
+
+	private List<Rule> rules;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -372,6 +375,67 @@ public class DescribeLoadBalancerHTTPListenerAttributeResponse extends AcsRespon
 
 	public void setIdleTimeout(Integer idleTimeout) {
 		this.idleTimeout = idleTimeout;
+	}
+
+	public List<Rule> getRules() {
+		return this.rules;
+	}
+
+	public void setRules(List<Rule> rules) {
+		this.rules = rules;
+	}
+
+	public static class Rule {
+
+		private String ruleId;
+
+		private String ruleName;
+
+		private String domain;
+
+		private String url;
+
+		private String vServerGroupId;
+
+		public String getRuleId() {
+			return this.ruleId;
+		}
+
+		public void setRuleId(String ruleId) {
+			this.ruleId = ruleId;
+		}
+
+		public String getRuleName() {
+			return this.ruleName;
+		}
+
+		public void setRuleName(String ruleName) {
+			this.ruleName = ruleName;
+		}
+
+		public String getDomain() {
+			return this.domain;
+		}
+
+		public void setDomain(String domain) {
+			this.domain = domain;
+		}
+
+		public String getUrl() {
+			return this.url;
+		}
+
+		public void setUrl(String url) {
+			this.url = url;
+		}
+
+		public String getVServerGroupId() {
+			return this.vServerGroupId;
+		}
+
+		public void setVServerGroupId(String vServerGroupId) {
+			this.vServerGroupId = vServerGroupId;
+		}
 	}
 
 	@Override

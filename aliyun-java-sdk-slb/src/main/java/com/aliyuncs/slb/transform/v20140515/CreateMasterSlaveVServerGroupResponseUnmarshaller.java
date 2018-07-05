@@ -38,6 +38,7 @@ public class CreateMasterSlaveVServerGroupResponseUnmarshaller {
 			masterSlaveBackendServer.setIsBackup(context.integerValue("CreateMasterSlaveVServerGroupResponse.MasterSlaveBackendServers["+ i +"].IsBackup"));
 			masterSlaveBackendServer.setType(context.stringValue("CreateMasterSlaveVServerGroupResponse.MasterSlaveBackendServers["+ i +"].Type"));
 			masterSlaveBackendServer.setServerIp(context.stringValue("CreateMasterSlaveVServerGroupResponse.MasterSlaveBackendServers["+ i +"].ServerIp"));
+			masterSlaveBackendServer.setEniHost(context.stringValue("CreateMasterSlaveVServerGroupResponse.MasterSlaveBackendServers["+ i +"].EniHost"));
 			masterSlaveBackendServer.setVpcId(context.stringValue("CreateMasterSlaveVServerGroupResponse.MasterSlaveBackendServers["+ i +"].VpcId"));
 
 			masterSlaveBackendServers.add(masterSlaveBackendServer);
