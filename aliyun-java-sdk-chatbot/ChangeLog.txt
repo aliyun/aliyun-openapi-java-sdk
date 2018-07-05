@@ -1,3 +1,6 @@
+2018-07-05 Version: 1.1.0
+1, A new optional parameter 'Perspectives' is introduced to the 'Chat' API. By filling this parameter when calling 'Chat', you'll get the knowledge base content within the specified perspectives.
+
 2017-10-21 Version: 1.0.0
 1, Alibaba Cloud Intelligent Chatbot SDK initial release.
 2, Added 'Chat' API. Using this api, you are able make a conversation with you chatbot by programming.
