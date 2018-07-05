@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeleteScalingGroupRequest extends RpcAcsRequest<DeleteScalingGroupResponse> {
 	
 	public DeleteScalingGroupRequest() {
-		super("Ess", "2014-08-28", "DeleteScalingGroup", "ess");
+		super("Ess", "2014-08-28", "DeleteScalingGroup", "ESS");
 	}
 
 	private String resourceOwnerAccount;

@@ -1,3 +1,6 @@
+2018-07-05 Version: 2.2.1
+1, new function, attach/detach load balancer of scalingGroup
+
 2018-06-28 Version: 2.2.0
 1, ScalingConfiguration support hostName and passwordInherit
 2, ScalingConfiguration support modify

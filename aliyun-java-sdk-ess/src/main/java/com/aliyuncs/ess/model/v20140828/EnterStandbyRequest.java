@@ -24,7 +24,7 @@ import java.util.List;
 public class EnterStandbyRequest extends RpcAcsRequest<EnterStandbyResponse> {
 	
 	public EnterStandbyRequest() {
-		super("Ess", "2014-08-28", "EnterStandby", "ess");
+		super("Ess", "2014-08-28", "EnterStandby", "ESS");
 	}
 
 	private List<String> instanceIds;

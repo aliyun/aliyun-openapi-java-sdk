@@ -24,7 +24,7 @@ import java.util.List;
 public class CreateScalingGroupRequest extends RpcAcsRequest<CreateScalingGroupResponse> {
 	
 	public CreateScalingGroupRequest() {
-		super("Ess", "2014-08-28", "CreateScalingGroup", "ess");
+		super("Ess", "2014-08-28", "CreateScalingGroup", "ESS");
 	}
 
 	private String multiAZPolicy;

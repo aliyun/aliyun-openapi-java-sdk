@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class CompleteLifecycleActionRequest extends RpcAcsRequest<CompleteLifecycleActionResponse> {
 	
 	public CompleteLifecycleActionRequest() {
-		super("Ess", "2014-08-28", "CompleteLifecycleAction", "ess");
+		super("Ess", "2014-08-28", "CompleteLifecycleAction", "ESS");
 	}
 
 	private String lifecycleActionToken;

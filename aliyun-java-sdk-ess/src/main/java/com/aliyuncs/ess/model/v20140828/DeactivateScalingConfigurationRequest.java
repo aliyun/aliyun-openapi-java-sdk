@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeactivateScalingConfigurationRequest extends RpcAcsRequest<DeactivateScalingConfigurationResponse> {
 	
 	public DeactivateScalingConfigurationRequest() {
-		super("Ess", "2014-08-28", "DeactivateScalingConfiguration", "ess");
+		super("Ess", "2014-08-28", "DeactivateScalingConfiguration", "ESS");
 	}
 
 	private String scalingConfigurationId;

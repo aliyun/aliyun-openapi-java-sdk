@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class EnableScalingGroupRequest extends RpcAcsRequest<EnableScalingGroupResponse> {
 	
 	public EnableScalingGroupRequest() {
-		super("Ess", "2014-08-28", "EnableScalingGroup", "ess");
+		super("Ess", "2014-08-28", "EnableScalingGroup", "ESS");
 	}
 
 	private String instanceId10;

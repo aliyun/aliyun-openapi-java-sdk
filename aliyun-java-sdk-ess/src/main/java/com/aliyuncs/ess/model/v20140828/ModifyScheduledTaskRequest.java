@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifyScheduledTaskRequest extends RpcAcsRequest<ModifyScheduledTaskResponse> {
 	
 	public ModifyScheduledTaskRequest() {
-		super("Ess", "2014-08-28", "ModifyScheduledTask", "ess");
+		super("Ess", "2014-08-28", "ModifyScheduledTask", "ESS");
 	}
 
 	private String launchTime;

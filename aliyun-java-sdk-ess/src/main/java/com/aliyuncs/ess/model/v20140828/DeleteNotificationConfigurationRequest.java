@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeleteNotificationConfigurationRequest extends RpcAcsRequest<DeleteNotificationConfigurationResponse> {
 	
 	public DeleteNotificationConfigurationRequest() {
-		super("Ess", "2014-08-28", "DeleteNotificationConfiguration", "ess");
+		super("Ess", "2014-08-28", "DeleteNotificationConfiguration", "ESS");
 	}
 
 	private String resourceOwnerAccount;

@@ -24,7 +24,7 @@ import java.util.List;
 public class CreateScalingConfigurationRequest extends RpcAcsRequest<CreateScalingConfigurationResponse> {
 	
 	public CreateScalingConfigurationRequest() {
-		super("Ess", "2014-08-28", "CreateScalingConfiguration", "ess");
+		super("Ess", "2014-08-28", "CreateScalingConfiguration", "ESS");
 	}
 
 	private Integer dataDisk3Size;

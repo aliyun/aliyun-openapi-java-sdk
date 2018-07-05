@@ -24,7 +24,7 @@ import java.util.List;
 public class ModifyScalingConfigurationRequest extends RpcAcsRequest<ModifyScalingConfigurationResponse> {
 	
 	public ModifyScalingConfigurationRequest() {
-		super("Ess", "2014-08-28", "ModifyScalingConfiguration", "ess");
+		super("Ess", "2014-08-28", "ModifyScalingConfiguration", "ESS");
 	}
 
 	private String imageId;
@@ -33,7 +33,7 @@ public class ModifyScalingConfigurationRequest extends RpcAcsRequest<ModifyScali
 
 	private String ownerAccount;
 
-	private List<String> instanceTypess;
+	private List<String> instanceTypes;
 
 	private Integer internetMaxBandwidthOut;
 
@@ -98,15 +98,15 @@ public class ModifyScalingConfigurationRequest extends RpcAcsRequest<ModifyScali
 		}
 	}
 
-	public List<String> getInstanceTypess() {
-		return this.instanceTypess;
+	public List<String> getinstanceTypes() {
+		return this.instanceTypes;
 	}
 
-	public void setInstanceTypess(List<String> instanceTypess) {
-		this.instanceTypess = instanceTypess;	
-		if (instanceTypess != null) {
-			for (int i = 0; i < instanceTypess.size(); i++) {
-				putQueryParameter("InstanceTypes." + (i + 1) , instanceTypess.get(i));
+	public void setinstanceTypes(List<String> instanceTypes) {
+		this.instanceTypes = instanceTypes;	
+		if (instanceTypes != null) {
+			for (int i = 0; i < instanceTypes.size(); i++) {
+				putQueryParameter("InstanceTypes." + (i + 1) , instanceTypes.get(i));
 			}
 		}	
 	}

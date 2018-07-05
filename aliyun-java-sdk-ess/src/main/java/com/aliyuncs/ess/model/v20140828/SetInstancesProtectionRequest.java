@@ -24,7 +24,7 @@ import java.util.List;
 public class SetInstancesProtectionRequest extends RpcAcsRequest<SetInstancesProtectionResponse> {
 	
 	public SetInstancesProtectionRequest() {
-		super("Ess", "2014-08-28", "SetInstancesProtection", "ess");
+		super("Ess", "2014-08-28", "SetInstancesProtection", "ESS");
 	}
 
 	private List<String> instanceIds;

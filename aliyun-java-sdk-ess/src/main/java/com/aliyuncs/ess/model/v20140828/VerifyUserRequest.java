@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class VerifyUserRequest extends RpcAcsRequest<VerifyUserResponse> {
 	
 	public VerifyUserRequest() {
-		super("Ess", "2014-08-28", "VerifyUser", "ess");
+		super("Ess", "2014-08-28", "VerifyUser", "ESS");
 	}
 
 	private Long resourceOwnerId;
