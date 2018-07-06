@@ -28,9 +28,13 @@ public class DescribeAvailableResourceRequest extends RpcAcsRequest<DescribeAvai
 
 	private Long resourceOwnerId;
 
+	private Integer memory;
+
 	private String ioOptimized;
 
 	private String dataDiskCategory;
+
+	private Integer cores;
 
 	private String systemDiskCategory;
 
@@ -65,6 +69,17 @@ public class DescribeAvailableResourceRequest extends RpcAcsRequest<DescribeAvai
 		}
 	}
 
+	public Integer getMemory() {
+		return this.memory;
+	}
+
+	public void setMemory(Integer memory) {
+		this.memory = memory;
+		if(memory != null){
+			putQueryParameter("Memory", memory.toString());
+		}
+	}
+
 	public String getIoOptimized() {
 		return this.ioOptimized;
 	}
@@ -84,6 +99,17 @@ public class DescribeAvailableResourceRequest extends RpcAcsRequest<DescribeAvai
 		this.dataDiskCategory = dataDiskCategory;
 		if(dataDiskCategory != null){
 			putQueryParameter("DataDiskCategory", dataDiskCategory);
+		}
+	}
+
+	public Integer getCores() {
+		return this.cores;
+	}
+
+	public void setCores(Integer cores) {
+		this.cores = cores;
+		if(cores != null){
+			putQueryParameter("Cores", cores.toString());
 		}
 	}
 

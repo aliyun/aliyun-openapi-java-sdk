@@ -47,6 +47,7 @@ public class DescribeInstanceTypesResponseUnmarshaller {
 			instanceType.setInstanceBandwidthTx(context.integerValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].InstanceBandwidthTx"));
 			instanceType.setInstancePpsRx(context.longValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].InstancePpsRx"));
 			instanceType.setInstancePpsTx(context.longValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].InstancePpsTx"));
+			instanceType.setInstanceFamilyLevel(context.stringValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].InstanceFamilyLevel"));
 
 			instanceTypes.add(instanceType);
 		}

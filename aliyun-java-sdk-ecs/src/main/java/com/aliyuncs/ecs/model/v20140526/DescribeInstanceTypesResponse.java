@@ -79,6 +79,8 @@ public class DescribeInstanceTypesResponse extends AcsResponse {
 
 		private Long instancePpsTx;
 
+		private String instanceFamilyLevel;
+
 		public String getInstanceTypeId() {
 			return this.instanceTypeId;
 		}
@@ -205,6 +207,14 @@ public class DescribeInstanceTypesResponse extends AcsResponse {
 
 		public void setInstancePpsTx(Long instancePpsTx) {
 			this.instancePpsTx = instancePpsTx;
+		}
+
+		public String getInstanceFamilyLevel() {
+			return this.instanceFamilyLevel;
+		}
+
+		public void setInstanceFamilyLevel(String instanceFamilyLevel) {
+			this.instanceFamilyLevel = instanceFamilyLevel;
 		}
 	}
 

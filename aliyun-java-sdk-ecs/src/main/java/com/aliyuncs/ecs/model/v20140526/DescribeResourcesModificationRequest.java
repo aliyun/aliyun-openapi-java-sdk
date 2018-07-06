@@ -28,6 +28,10 @@ public class DescribeResourcesModificationRequest extends RpcAcsRequest<Describe
 
 	private Long resourceOwnerId;
 
+	private Integer memory;
+
+	private Integer cores;
+
 	private Boolean migrateAcrossZone;
 
 	private String instanceType;
@@ -52,6 +56,28 @@ public class DescribeResourcesModificationRequest extends RpcAcsRequest<Describe
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public Integer getMemory() {
+		return this.memory;
+	}
+
+	public void setMemory(Integer memory) {
+		this.memory = memory;
+		if(memory != null){
+			putQueryParameter("Memory", memory.toString());
+		}
+	}
+
+	public Integer getCores() {
+		return this.cores;
+	}
+
+	public void setCores(Integer cores) {
+		this.cores = cores;
+		if(cores != null){
+			putQueryParameter("Cores", cores.toString());
 		}
 	}
 

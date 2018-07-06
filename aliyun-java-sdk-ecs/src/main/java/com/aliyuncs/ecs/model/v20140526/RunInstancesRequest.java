@@ -31,6 +31,8 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 
 	private Long resourceOwnerId;
 
+	private Boolean uniqueSuffix;
+
 	private String hpcClusterId;
 
 	private String securityEnhancementStrategy;
@@ -140,6 +142,17 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public Boolean getUniqueSuffix() {
+		return this.uniqueSuffix;
+	}
+
+	public void setUniqueSuffix(Boolean uniqueSuffix) {
+		this.uniqueSuffix = uniqueSuffix;
+		if(uniqueSuffix != null){
+			putQueryParameter("UniqueSuffix", uniqueSuffix.toString());
 		}
 	}
 

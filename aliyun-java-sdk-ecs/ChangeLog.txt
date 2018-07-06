@@ -1,3 +1,8 @@
+2018-07-06 Version: 4.9.4
+1, The interface DescribeInstanceTypes add the parameter InstanceFamilyLevel of result data
+2, The interface DescribeAvailableResource add two filter fators , there are  cores and memory.
+3, The interface DescribeResourceModification add two filter fators , there are  cores and memory.
+
 2018-06-27 Version: 4.9.2
 1, DescribeNetworkInterfaces support query with vpcId
 
