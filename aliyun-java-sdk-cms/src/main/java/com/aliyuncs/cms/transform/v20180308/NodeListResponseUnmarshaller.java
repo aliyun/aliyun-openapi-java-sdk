@@ -51,6 +51,7 @@ public class NodeListResponseUnmarshaller {
 			node.setAliyunHost(context.booleanValue("NodeListResponse.Nodes["+ i +"].AliyunHost"));
 			node.setNatIp(context.stringValue("NodeListResponse.Nodes["+ i +"].NatIp"));
 			node.setNetworkType(context.stringValue("NodeListResponse.Nodes["+ i +"].NetworkType"));
+			node.setInstanceTypeFamily(context.stringValue("NodeListResponse.Nodes["+ i +"].InstanceTypeFamily"));
 
 			nodes.add(node);
 		}

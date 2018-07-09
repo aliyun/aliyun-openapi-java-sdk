@@ -15,40 +15,24 @@
 package com.aliyuncs.cms.model.v20180308;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.cms.transform.v20180308.NodeProcessCreateResponseUnmarshaller;
+import com.aliyuncs.cms.transform.v20180308.PutEventRuleResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class NodeProcessCreateResponse extends AcsResponse {
-
-	private Integer errorCode;
-
-	private String errorMessage;
+public class PutEventRuleResponse extends AcsResponse {
 
 	private Boolean success;
 
+	private String code;
+
+	private String message;
+
 	private String requestId;
 
-	private Long id;
-
-	public Integer getErrorCode() {
-		return this.errorCode;
-	}
-
-	public void setErrorCode(Integer errorCode) {
-		this.errorCode = errorCode;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
+	private String data;
 
 	public Boolean getSuccess() {
 		return this.success;
@@ -56,6 +40,22 @@ public class NodeProcessCreateResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public String getRequestId() {
@@ -66,16 +66,16 @@ public class NodeProcessCreateResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Long getId() {
-		return this.id;
+	public String getData() {
+		return this.data;
 	}
 
-	public void setId(Long id) {
-		this.id = id;
+	public void setData(String data) {
+		this.data = data;
 	}
 
 	@Override
-	public NodeProcessCreateResponse getInstance(UnmarshallerContext context) {
-		return	NodeProcessCreateResponseUnmarshaller.unmarshall(this, context);
+	public PutEventRuleResponse getInstance(UnmarshallerContext context) {
+		return	PutEventRuleResponseUnmarshaller.unmarshall(this, context);
 	}
 }

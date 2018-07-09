@@ -26,6 +26,7 @@ public class NodeProcessCreateResponseUnmarshaller {
 		nodeProcessCreateResponse.setErrorCode(context.integerValue("NodeProcessCreateResponse.ErrorCode"));
 		nodeProcessCreateResponse.setErrorMessage(context.stringValue("NodeProcessCreateResponse.ErrorMessage"));
 		nodeProcessCreateResponse.setSuccess(context.booleanValue("NodeProcessCreateResponse.Success"));
+		nodeProcessCreateResponse.setId(context.longValue("NodeProcessCreateResponse.Id"));
 	 
 	 	return nodeProcessCreateResponse;
 	}

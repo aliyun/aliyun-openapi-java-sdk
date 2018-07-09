@@ -143,6 +143,8 @@ public class NodeListResponse extends AcsResponse {
 
 		private String networkType;
 
+		private String instanceTypeFamily;
+
 		public String getInstanceId() {
 			return this.instanceId;
 		}
@@ -245,6 +247,14 @@ public class NodeListResponse extends AcsResponse {
 
 		public void setNetworkType(String networkType) {
 			this.networkType = networkType;
+		}
+
+		public String getInstanceTypeFamily() {
+			return this.instanceTypeFamily;
+		}
+
+		public void setInstanceTypeFamily(String instanceTypeFamily) {
+			this.instanceTypeFamily = instanceTypeFamily;
 		}
 	}
 

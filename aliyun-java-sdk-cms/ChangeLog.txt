@@ -1,3 +1,7 @@
+2018-07-09 Version: 6.0.9
+1, Add new API: DescribeEventRule,ListEventTargetsByRule,PutEventRule,PutEventTargets.
+2, Add return value(Id) for NodeProcessCreate.
+
 2018-06-22 Version: 6.0.8
 1, Add new API: DeleteGroupDynamicRule,ListGroupDynamicRule,ApplyTemplate,PutGroupDynamicRule.
 2, Add parameter(AlertIds) for CreateTask and ModifyTask.
