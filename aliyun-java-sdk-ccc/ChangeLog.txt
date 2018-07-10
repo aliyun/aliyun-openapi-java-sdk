@@ -1,3 +1,6 @@
+2018-07-10 Version: 1.0.7
+1, Add new open API for outbound call service, etc.
+
 2018-06-05 Version: 1.0.6
 1, Add new API for Report and Back to Back call
 

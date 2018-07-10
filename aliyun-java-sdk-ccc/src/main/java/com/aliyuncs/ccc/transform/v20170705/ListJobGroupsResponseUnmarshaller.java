@@ -45,9 +45,9 @@ public class ListJobGroupsResponseUnmarshaller {
 		List<JobGroup> list = new ArrayList<JobGroup>();
 		for (int i = 0; i < context.lengthValue("ListJobGroupsResponse.JobGroups.List.Length"); i++) {
 			JobGroup jobGroup = new JobGroup();
-			jobGroup.setJobGroupId(context.stringValue("ListJobGroupsResponse.JobGroups.List["+ i +"].JobGroupId"));
-			jobGroup.setJobGroupName(context.stringValue("ListJobGroupsResponse.JobGroups.List["+ i +"].JobGroupName"));
-			jobGroup.setJobGroupDescription(context.stringValue("ListJobGroupsResponse.JobGroups.List["+ i +"].JobGroupDescription"));
+			jobGroup.setId(context.stringValue("ListJobGroupsResponse.JobGroups.List["+ i +"].Id"));
+			jobGroup.setName(context.stringValue("ListJobGroupsResponse.JobGroups.List["+ i +"].Name"));
+			jobGroup.setDescription(context.stringValue("ListJobGroupsResponse.JobGroups.List["+ i +"].Description"));
 			jobGroup.setScenarioId(context.stringValue("ListJobGroupsResponse.JobGroups.List["+ i +"].ScenarioId"));
 			jobGroup.setJobFilePath(context.stringValue("ListJobGroupsResponse.JobGroups.List["+ i +"].JobFilePath"));
 			jobGroup.setCreationTime(context.longValue("ListJobGroupsResponse.JobGroups.List["+ i +"].CreationTime"));
@@ -59,9 +59,9 @@ public class ListJobGroupsResponseUnmarshaller {
 			jobGroup.setCallingNumbers(callingNumbers);
 
 			Strategy strategy = new Strategy();
-			strategy.setStrategyId(context.stringValue("ListJobGroupsResponse.JobGroups.List["+ i +"].Strategy.StrategyId"));
-			strategy.setStrategyName(context.stringValue("ListJobGroupsResponse.JobGroups.List["+ i +"].Strategy.StrategyName"));
-			strategy.setStrategyDescription(context.stringValue("ListJobGroupsResponse.JobGroups.List["+ i +"].Strategy.StrategyDescription"));
+			strategy.setId(context.stringValue("ListJobGroupsResponse.JobGroups.List["+ i +"].Strategy.Id"));
+			strategy.setName(context.stringValue("ListJobGroupsResponse.JobGroups.List["+ i +"].Strategy.Name"));
+			strategy.setDescription(context.stringValue("ListJobGroupsResponse.JobGroups.List["+ i +"].Strategy.Description"));
 			strategy.setType(context.stringValue("ListJobGroupsResponse.JobGroups.List["+ i +"].Strategy.Type"));
 			strategy.setStartTime(context.longValue("ListJobGroupsResponse.JobGroups.List["+ i +"].Strategy.StartTime"));
 			strategy.setEndTime(context.longValue("ListJobGroupsResponse.JobGroups.List["+ i +"].Strategy.EndTime"));
@@ -82,8 +82,8 @@ public class ListJobGroupsResponseUnmarshaller {
 			List<TimeFrame> workingTime = new ArrayList<TimeFrame>();
 			for (int j = 0; j < context.lengthValue("ListJobGroupsResponse.JobGroups.List["+ i +"].Strategy.WorkingTime.Length"); j++) {
 				TimeFrame timeFrame = new TimeFrame();
-				timeFrame.setFrom(context.stringValue("ListJobGroupsResponse.JobGroups.List["+ i +"].Strategy.WorkingTime["+ j +"].From"));
-				timeFrame.setTo(context.stringValue("ListJobGroupsResponse.JobGroups.List["+ i +"].Strategy.WorkingTime["+ j +"].To"));
+				timeFrame.setBeginTime(context.stringValue("ListJobGroupsResponse.JobGroups.List["+ i +"].Strategy.WorkingTime["+ j +"].BeginTime"));
+				timeFrame.setEndTime(context.stringValue("ListJobGroupsResponse.JobGroups.List["+ i +"].Strategy.WorkingTime["+ j +"].EndTime"));
 
 				workingTime.add(timeFrame);
 			}

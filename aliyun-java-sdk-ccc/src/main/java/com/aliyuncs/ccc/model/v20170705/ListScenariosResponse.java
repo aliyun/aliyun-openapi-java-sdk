@@ -87,11 +87,11 @@ public class ListScenariosResponse extends AcsResponse {
 
 	public static class Scenario {
 
-		private String scenarioId;
+		private String id;
 
-		private String scenarioName;
+		private String name;
 
-		private String scenarioDescription;
+		private String description;
 
 		private String type;
 
@@ -103,28 +103,28 @@ public class ListScenariosResponse extends AcsResponse {
 
 		private Strategy strategy;
 
-		public String getScenarioId() {
-			return this.scenarioId;
+		public String getId() {
+			return this.id;
 		}
 
-		public void setScenarioId(String scenarioId) {
-			this.scenarioId = scenarioId;
+		public void setId(String id) {
+			this.id = id;
 		}
 
-		public String getScenarioName() {
-			return this.scenarioName;
+		public String getName() {
+			return this.name;
 		}
 
-		public void setScenarioName(String scenarioName) {
-			this.scenarioName = scenarioName;
+		public void setName(String name) {
+			this.name = name;
 		}
 
-		public String getScenarioDescription() {
-			return this.scenarioDescription;
+		public String getDescription() {
+			return this.description;
 		}
 
-		public void setScenarioDescription(String scenarioDescription) {
-			this.scenarioDescription = scenarioDescription;
+		public void setDescription(String description) {
+			this.description = description;
 		}
 
 		public String getType() {
@@ -169,11 +169,11 @@ public class ListScenariosResponse extends AcsResponse {
 
 		public static class Survey {
 
-			private String surveyId;
+			private String id;
 
-			private String surveyName;
+			private String name;
 
-			private String surveyDescription;
+			private String description;
 
 			private String role;
 
@@ -183,28 +183,28 @@ public class ListScenariosResponse extends AcsResponse {
 
 			private List<IntentNode> intents;
 
-			public String getSurveyId() {
-				return this.surveyId;
+			public String getId() {
+				return this.id;
 			}
 
-			public void setSurveyId(String surveyId) {
-				this.surveyId = surveyId;
+			public void setId(String id) {
+				this.id = id;
 			}
 
-			public String getSurveyName() {
-				return this.surveyName;
+			public String getName() {
+				return this.name;
 			}
 
-			public void setSurveyName(String surveyName) {
-				this.surveyName = surveyName;
+			public void setName(String name) {
+				this.name = name;
 			}
 
-			public String getSurveyDescription() {
-				return this.surveyDescription;
+			public String getDescription() {
+				return this.description;
 			}
 
-			public void setSurveyDescription(String surveyDescription) {
-				this.surveyDescription = surveyDescription;
+			public void setDescription(String description) {
+				this.description = description;
 			}
 
 			public String getRole() {
@@ -288,11 +288,11 @@ public class ListScenariosResponse extends AcsResponse {
 
 		public static class Strategy {
 
-			private String strategyId;
+			private String id;
 
-			private String strategyName;
+			private String name;
 
-			private String strategyDescription;
+			private String description;
 
 			private String type;
 
@@ -318,28 +318,28 @@ public class ListScenariosResponse extends AcsResponse {
 
 			private List<String> repeatDays;
 
-			public String getStrategyId() {
-				return this.strategyId;
+			public String getId() {
+				return this.id;
 			}
 
-			public void setStrategyId(String strategyId) {
-				this.strategyId = strategyId;
+			public void setId(String id) {
+				this.id = id;
 			}
 
-			public String getStrategyName() {
-				return this.strategyName;
+			public String getName() {
+				return this.name;
 			}
 
-			public void setStrategyName(String strategyName) {
-				this.strategyName = strategyName;
+			public void setName(String name) {
+				this.name = name;
 			}
 
-			public String getStrategyDescription() {
-				return this.strategyDescription;
+			public String getDescription() {
+				return this.description;
 			}
 
-			public void setStrategyDescription(String strategyDescription) {
-				this.strategyDescription = strategyDescription;
+			public void setDescription(String description) {
+				this.description = description;
 			}
 
 			public String getType() {

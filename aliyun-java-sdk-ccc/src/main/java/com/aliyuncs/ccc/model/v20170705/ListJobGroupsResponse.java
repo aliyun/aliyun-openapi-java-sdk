@@ -129,11 +129,11 @@ public class ListJobGroupsResponse extends AcsResponse {
 
 		public static class JobGroup {
 
-			private String jobGroupId;
+			private String id;
 
-			private String jobGroupName;
+			private String name;
 
-			private String jobGroupDescription;
+			private String description;
 
 			private String scenarioId;
 
@@ -147,28 +147,28 @@ public class ListJobGroupsResponse extends AcsResponse {
 
 			private Progress progress;
 
-			public String getJobGroupId() {
-				return this.jobGroupId;
+			public String getId() {
+				return this.id;
 			}
 
-			public void setJobGroupId(String jobGroupId) {
-				this.jobGroupId = jobGroupId;
+			public void setId(String id) {
+				this.id = id;
 			}
 
-			public String getJobGroupName() {
-				return this.jobGroupName;
+			public String getName() {
+				return this.name;
 			}
 
-			public void setJobGroupName(String jobGroupName) {
-				this.jobGroupName = jobGroupName;
+			public void setName(String name) {
+				this.name = name;
 			}
 
-			public String getJobGroupDescription() {
-				return this.jobGroupDescription;
+			public String getDescription() {
+				return this.description;
 			}
 
-			public void setJobGroupDescription(String jobGroupDescription) {
-				this.jobGroupDescription = jobGroupDescription;
+			public void setDescription(String description) {
+				this.description = description;
 			}
 
 			public String getScenarioId() {
@@ -221,11 +221,11 @@ public class ListJobGroupsResponse extends AcsResponse {
 
 			public static class Strategy {
 
-				private String strategyId;
+				private String id;
 
-				private String strategyName;
+				private String name;
 
-				private String strategyDescription;
+				private String description;
 
 				private String type;
 
@@ -251,28 +251,28 @@ public class ListJobGroupsResponse extends AcsResponse {
 
 				private List<String> repeatDays;
 
-				public String getStrategyId() {
-					return this.strategyId;
+				public String getId() {
+					return this.id;
 				}
 
-				public void setStrategyId(String strategyId) {
-					this.strategyId = strategyId;
+				public void setId(String id) {
+					this.id = id;
 				}
 
-				public String getStrategyName() {
-					return this.strategyName;
+				public String getName() {
+					return this.name;
 				}
 
-				public void setStrategyName(String strategyName) {
-					this.strategyName = strategyName;
+				public void setName(String name) {
+					this.name = name;
 				}
 
-				public String getStrategyDescription() {
-					return this.strategyDescription;
+				public String getDescription() {
+					return this.description;
 				}
 
-				public void setStrategyDescription(String strategyDescription) {
-					this.strategyDescription = strategyDescription;
+				public void setDescription(String description) {
+					this.description = description;
 				}
 
 				public String getType() {
@@ -373,24 +373,24 @@ public class ListJobGroupsResponse extends AcsResponse {
 
 				public static class TimeFrame {
 
-					private String from;
+					private String beginTime;
 
-					private String to;
+					private String endTime;
 
-					public String getFrom() {
-						return this.from;
+					public String getBeginTime() {
+						return this.beginTime;
 					}
 
-					public void setFrom(String from) {
-						this.from = from;
+					public void setBeginTime(String beginTime) {
+						this.beginTime = beginTime;
 					}
 
-					public String getTo() {
-						return this.to;
+					public String getEndTime() {
+						return this.endTime;
 					}
 
-					public void setTo(String to) {
-						this.to = to;
+					public void setEndTime(String endTime) {
+						this.endTime = endTime;
 					}
 				}
 			}

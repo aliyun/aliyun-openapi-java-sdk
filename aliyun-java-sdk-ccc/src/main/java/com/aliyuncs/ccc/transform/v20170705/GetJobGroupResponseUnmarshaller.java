@@ -37,9 +37,9 @@ public class GetJobGroupResponseUnmarshaller {
 		getJobGroupResponse.setHttpStatusCode(context.integerValue("GetJobGroupResponse.HttpStatusCode"));
 
 		JobGroup jobGroup = new JobGroup();
-		jobGroup.setJobGroupId(context.stringValue("GetJobGroupResponse.JobGroup.JobGroupId"));
-		jobGroup.setJobGroupName(context.stringValue("GetJobGroupResponse.JobGroup.JobGroupName"));
-		jobGroup.setJobGroupDescription(context.stringValue("GetJobGroupResponse.JobGroup.JobGroupDescription"));
+		jobGroup.setId(context.stringValue("GetJobGroupResponse.JobGroup.Id"));
+		jobGroup.setName(context.stringValue("GetJobGroupResponse.JobGroup.Name"));
+		jobGroup.setDescription(context.stringValue("GetJobGroupResponse.JobGroup.Description"));
 		jobGroup.setScenarioId(context.stringValue("GetJobGroupResponse.JobGroup.ScenarioId"));
 		jobGroup.setJobFilePath(context.stringValue("GetJobGroupResponse.JobGroup.JobFilePath"));
 		jobGroup.setCreationTime(context.longValue("GetJobGroupResponse.JobGroup.CreationTime"));
@@ -51,9 +51,9 @@ public class GetJobGroupResponseUnmarshaller {
 		jobGroup.setCallingNumbers(callingNumbers);
 
 		Strategy strategy = new Strategy();
-		strategy.setStrategyId(context.stringValue("GetJobGroupResponse.JobGroup.Strategy.StrategyId"));
-		strategy.setStrategyName(context.stringValue("GetJobGroupResponse.JobGroup.Strategy.StrategyName"));
-		strategy.setStrategyDescription(context.stringValue("GetJobGroupResponse.JobGroup.Strategy.StrategyDescription"));
+		strategy.setId(context.stringValue("GetJobGroupResponse.JobGroup.Strategy.Id"));
+		strategy.setName(context.stringValue("GetJobGroupResponse.JobGroup.Strategy.Name"));
+		strategy.setDescription(context.stringValue("GetJobGroupResponse.JobGroup.Strategy.Description"));
 		strategy.setType(context.stringValue("GetJobGroupResponse.JobGroup.Strategy.Type"));
 		strategy.setStartTime(context.longValue("GetJobGroupResponse.JobGroup.Strategy.StartTime"));
 		strategy.setEndTime(context.longValue("GetJobGroupResponse.JobGroup.Strategy.EndTime"));

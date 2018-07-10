@@ -37,6 +37,8 @@ public class CreateScenarioRequest extends RpcAcsRequest<CreateScenarioResponse>
 
 	private String description;
 
+	private String type;
+
 	public String getInstanceId() {
 		return this.instanceId;
 	}
@@ -91,6 +93,17 @@ public class CreateScenarioRequest extends RpcAcsRequest<CreateScenarioResponse>
 		this.description = description;
 		if(description != null){
 			putQueryParameter("Description", description);
+		}
+	}
+
+	public String getType() {
+		return this.type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+		if(type != null){
+			putQueryParameter("Type", type);
 		}
 	}
 

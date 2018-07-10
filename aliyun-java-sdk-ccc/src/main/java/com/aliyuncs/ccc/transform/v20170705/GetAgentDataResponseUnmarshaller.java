@@ -19,8 +19,10 @@ import java.util.List;
 
 import com.aliyuncs.ccc.model.v20170705.GetAgentDataResponse;
 import com.aliyuncs.ccc.model.v20170705.GetAgentDataResponse.DataList;
-import com.aliyuncs.ccc.model.v20170705.GetAgentDataResponse.DataList.AgentReportData;
-import com.aliyuncs.ccc.model.v20170705.GetAgentDataResponse.DataList.AgentReportData.AppraiseCountDomain;
+import com.aliyuncs.ccc.model.v20170705.GetAgentDataResponse.DataList.GenerateAgentStatistic;
+import com.aliyuncs.ccc.model.v20170705.GetAgentDataResponse.DataList.GenerateAgentStatistic.Inbound;
+import com.aliyuncs.ccc.model.v20170705.GetAgentDataResponse.DataList.GenerateAgentStatistic.Outbound;
+import com.aliyuncs.ccc.model.v20170705.GetAgentDataResponse.DataList.GenerateAgentStatistic.Overall;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -39,102 +41,83 @@ public class GetAgentDataResponseUnmarshaller {
 		dataList.setPageNumber(context.integerValue("GetAgentDataResponse.DataList.PageNumber"));
 		dataList.setPageSize(context.integerValue("GetAgentDataResponse.DataList.PageSize"));
 
-		List<AgentReportData> list = new ArrayList<AgentReportData>();
+		List<GenerateAgentStatistic> list = new ArrayList<GenerateAgentStatistic>();
 		for (int i = 0; i < context.lengthValue("GetAgentDataResponse.DataList.List.Length"); i++) {
-			AgentReportData agentReportData = new AgentReportData();
-			agentReportData.setUserId(context.stringValue("GetAgentDataResponse.DataList.List["+ i +"].UserId"));
-			agentReportData.setLoginName(context.stringValue("GetAgentDataResponse.DataList.List["+ i +"].LoginName"));
-			agentReportData.setDisplayName(context.stringValue("GetAgentDataResponse.DataList.List["+ i +"].DisplayName"));
-			agentReportData.setSkillGroupIds(context.stringValue("GetAgentDataResponse.DataList.List["+ i +"].SkillGroupIds"));
-			agentReportData.setSkillGroupNames(context.stringValue("GetAgentDataResponse.DataList.List["+ i +"].SkillGroupNames"));
-			agentReportData.setInstanceId(context.stringValue("GetAgentDataResponse.DataList.List["+ i +"].InstanceId"));
-			agentReportData.setRecordDate(context.stringValue("GetAgentDataResponse.DataList.List["+ i +"].RecordDate"));
-			agentReportData.setAgentStatus(context.stringValue("GetAgentDataResponse.DataList.List["+ i +"].AgentStatus"));
-			agentReportData.setTotalCalls(context.stringValue("GetAgentDataResponse.DataList.List["+ i +"].TotalCalls"));
-			agentReportData.setCallsAnswered(context.stringValue("GetAgentDataResponse.DataList.List["+ i +"].CallsAnswered"));
-			agentReportData.setCallsAnsweredRate(context.stringValue("GetAgentDataResponse.DataList.List["+ i +"].CallsAnsweredRate"));
-			agentReportData.setCallsAbandoned(context.stringValue("GetAgentDataResponse.DataList.List["+ i +"].CallsAbandoned"));
-			agentReportData.setCallsAbandonedRate(context.stringValue("GetAgentDataResponse.DataList.List["+ i +"].CallsAbandonedRate"));
-			agentReportData.setAverageTalkTime(context.stringValue("GetAgentDataResponse.DataList.List["+ i +"].AverageTalkTime"));
-			agentReportData.setAverageSpeedOfAnswer(context.stringValue("GetAgentDataResponse.DataList.List["+ i +"].AverageSpeedOfAnswer"));
-			agentReportData.setLoggedInTime(context.stringValue("GetAgentDataResponse.DataList.List["+ i +"].LoggedInTime"));
-			agentReportData.setTalkTime(context.stringValue("GetAgentDataResponse.DataList.List["+ i +"].TalkTime"));
-			agentReportData.setTalkTimeRate(context.stringValue("GetAgentDataResponse.DataList.List["+ i +"].TalkTimeRate"));
-			agentReportData.setBreakTime(context.stringValue("GetAgentDataResponse.DataList.List["+ i +"].BreakTime"));
-			agentReportData.setBreakTimeRate(context.stringValue("GetAgentDataResponse.DataList.List["+ i +"].BreakTimeRate"));
-			agentReportData.setLoginTime(context.stringValue("GetAgentDataResponse.DataList.List["+ i +"].LoginTime"));
-			agentReportData.setLogoutTime(context.stringValue("GetAgentDataResponse.DataList.List["+ i +"].LogoutTime"));
-			agentReportData.setWorkTime(context.stringValue("GetAgentDataResponse.DataList.List["+ i +"].WorkTime"));
-			agentReportData.setInboundCalls(context.stringValue("GetAgentDataResponse.DataList.List["+ i +"].InboundCalls"));
-			agentReportData.setInboundCallsAnswered(context.stringValue("GetAgentDataResponse.DataList.List["+ i +"].InboundCallsAnswered"));
-			agentReportData.setInboundCallsAnsweredRate(context.stringValue("GetAgentDataResponse.DataList.List["+ i +"].InboundCallsAnsweredRate"));
-			agentReportData.setInboundCallsAbandoned(context.stringValue("GetAgentDataResponse.DataList.List["+ i +"].InboundCallsAbandoned"));
-			agentReportData.setInboundCallsAbandonedRate(context.stringValue("GetAgentDataResponse.DataList.List["+ i +"].InboundCallsAbandonedRate"));
-			agentReportData.setInboundRingTime(context.stringValue("GetAgentDataResponse.DataList.List["+ i +"].InboundRingTime"));
-			agentReportData.setInboundTalkTime(context.stringValue("GetAgentDataResponse.DataList.List["+ i +"].InboundTalkTime"));
-			agentReportData.setOutboundCalls(context.stringValue("GetAgentDataResponse.DataList.List["+ i +"].OutboundCalls"));
-			agentReportData.setOutboundCallsAnswered(context.stringValue("GetAgentDataResponse.DataList.List["+ i +"].OutboundCallsAnswered"));
-			agentReportData.setOutboundCallsAnsweredRate(context.stringValue("GetAgentDataResponse.DataList.List["+ i +"].OutboundCallsAnsweredRate"));
-			agentReportData.setOutboundDialingTime(context.stringValue("GetAgentDataResponse.DataList.List["+ i +"].OutboundDialingTime"));
-			agentReportData.setOutboundTalkTime(context.stringValue("GetAgentDataResponse.DataList.List["+ i +"].OutboundTalkTime"));
-			agentReportData.setInboundSatisfactionSurvey(context.stringValue("GetAgentDataResponse.DataList.List["+ i +"].InboundSatisfactionSurvey"));
-			agentReportData.setInboundSatisfactionSurveyRate(context.stringValue("GetAgentDataResponse.DataList.List["+ i +"].InboundSatisfactionSurveyRate"));
-			agentReportData.setInboundTakeSatisfactionSurvey(context.stringValue("GetAgentDataResponse.DataList.List["+ i +"].InboundTakeSatisfactionSurvey"));
-			agentReportData.setInboundTakeSatisfactionSurveyRate(context.stringValue("GetAgentDataResponse.DataList.List["+ i +"].InboundTakeSatisfactionSurveyRate"));
-			agentReportData.setInboundSatisfactionRate(context.stringValue("GetAgentDataResponse.DataList.List["+ i +"].InboundSatisfactionRate"));
-			agentReportData.setInboundFeedbackSumNum(context.stringValue("GetAgentDataResponse.DataList.List["+ i +"].InboundFeedbackSumNum"));
-			agentReportData.setOutboundSatisfactionSurvey(context.stringValue("GetAgentDataResponse.DataList.List["+ i +"].OutboundSatisfactionSurvey"));
-			agentReportData.setOutboundSatisfactionSurveyRate(context.stringValue("GetAgentDataResponse.DataList.List["+ i +"].OutboundSatisfactionSurveyRate"));
-			agentReportData.setOutboundTakeSatisfactionSurvey(context.stringValue("GetAgentDataResponse.DataList.List["+ i +"].OutboundTakeSatisfactionSurvey"));
-			agentReportData.setOutboundTakeSatisfactionSurveyRate(context.stringValue("GetAgentDataResponse.DataList.List["+ i +"].OutboundTakeSatisfactionSurveyRate"));
-			agentReportData.setOutboundSatisfactionRate(context.stringValue("GetAgentDataResponse.DataList.List["+ i +"].OutboundSatisfactionRate"));
-			agentReportData.setOutboundFeedbackSumNum(context.stringValue("GetAgentDataResponse.DataList.List["+ i +"].OutboundFeedbackSumNum"));
+			GenerateAgentStatistic generateAgentStatistic = new GenerateAgentStatistic();
+			generateAgentStatistic.setAgentId(context.stringValue("GetAgentDataResponse.DataList.List["+ i +"].AgentId"));
+			generateAgentStatistic.setLoginName(context.stringValue("GetAgentDataResponse.DataList.List["+ i +"].LoginName"));
+			generateAgentStatistic.setAgentName(context.stringValue("GetAgentDataResponse.DataList.List["+ i +"].AgentName"));
+			generateAgentStatistic.setSkillGroupIds(context.stringValue("GetAgentDataResponse.DataList.List["+ i +"].SkillGroupIds"));
+			generateAgentStatistic.setSkillGroupNames(context.stringValue("GetAgentDataResponse.DataList.List["+ i +"].SkillGroupNames"));
+			generateAgentStatistic.setInstanceId(context.stringValue("GetAgentDataResponse.DataList.List["+ i +"].InstanceId"));
+			generateAgentStatistic.setRecordDate(context.stringValue("GetAgentDataResponse.DataList.List["+ i +"].RecordDate"));
+			generateAgentStatistic.setTotalLoggedInTime(context.longValue("GetAgentDataResponse.DataList.List["+ i +"].TotalLoggedInTime"));
+			generateAgentStatistic.setTotalBreakTime(context.longValue("GetAgentDataResponse.DataList.List["+ i +"].TotalBreakTime"));
+			generateAgentStatistic.setOccupancyRate(context.floatValue("GetAgentDataResponse.DataList.List["+ i +"].OccupancyRate"));
+			generateAgentStatistic.setTotalReadyTime(context.longValue("GetAgentDataResponse.DataList.List["+ i +"].TotalReadyTime"));
+			generateAgentStatistic.setMaxReadyTime(context.longValue("GetAgentDataResponse.DataList.List["+ i +"].MaxReadyTime"));
+			generateAgentStatistic.setAverageReadyTime(context.longValue("GetAgentDataResponse.DataList.List["+ i +"].AverageReadyTime"));
 
-			List<AppraiseCountDomain> inboundSatisfactionDetail = new ArrayList<AppraiseCountDomain>();
-			for (int j = 0; j < context.lengthValue("GetAgentDataResponse.DataList.List["+ i +"].InboundSatisfactionDetail.Length"); j++) {
-				AppraiseCountDomain appraiseCountDomain = new AppraiseCountDomain();
-				appraiseCountDomain.setGroup(context.stringValue("GetAgentDataResponse.DataList.List["+ i +"].InboundSatisfactionDetail["+ j +"].Group"));
-				appraiseCountDomain.setSubgroup(context.stringValue("GetAgentDataResponse.DataList.List["+ i +"].InboundSatisfactionDetail["+ j +"].Subgroup"));
-				appraiseCountDomain.setCount(context.stringValue("GetAgentDataResponse.DataList.List["+ i +"].InboundSatisfactionDetail["+ j +"].Count"));
+			Inbound inbound = new Inbound();
+			inbound.setTotalTalkTime(context.longValue("GetAgentDataResponse.DataList.List["+ i +"].Inbound.TotalTalkTime"));
+			inbound.setMaxTalkTime(context.longValue("GetAgentDataResponse.DataList.List["+ i +"].Inbound.MaxTalkTime"));
+			inbound.setAverageTalkTime(context.longValue("GetAgentDataResponse.DataList.List["+ i +"].Inbound.AverageTalkTime"));
+			inbound.setTotalHoldTime(context.longValue("GetAgentDataResponse.DataList.List["+ i +"].Inbound.TotalHoldTime"));
+			inbound.setMaxHoldTime(context.longValue("GetAgentDataResponse.DataList.List["+ i +"].Inbound.MaxHoldTime"));
+			inbound.setAverageHoldTime(context.longValue("GetAgentDataResponse.DataList.List["+ i +"].Inbound.AverageHoldTime"));
+			inbound.setTotalWorkTime(context.longValue("GetAgentDataResponse.DataList.List["+ i +"].Inbound.TotalWorkTime"));
+			inbound.setMaxWorkTime(context.longValue("GetAgentDataResponse.DataList.List["+ i +"].Inbound.MaxWorkTime"));
+			inbound.setAverageWorkTime(context.longValue("GetAgentDataResponse.DataList.List["+ i +"].Inbound.AverageWorkTime"));
+			inbound.setSatisfactionSurveysOffered(context.longValue("GetAgentDataResponse.DataList.List["+ i +"].Inbound.SatisfactionSurveysOffered"));
+			inbound.setSatisfactionSurveysResponded(context.longValue("GetAgentDataResponse.DataList.List["+ i +"].Inbound.SatisfactionSurveysResponded"));
+			inbound.setSatisfactionIndex(context.floatValue("GetAgentDataResponse.DataList.List["+ i +"].Inbound.SatisfactionIndex"));
+			inbound.setCallsOffered(context.longValue("GetAgentDataResponse.DataList.List["+ i +"].Inbound.CallsOffered"));
+			inbound.setCallsHandled(context.longValue("GetAgentDataResponse.DataList.List["+ i +"].Inbound.CallsHandled"));
+			inbound.setHandleRate(context.floatValue("GetAgentDataResponse.DataList.List["+ i +"].Inbound.HandleRate"));
+			inbound.setTotalRingTime(context.longValue("GetAgentDataResponse.DataList.List["+ i +"].Inbound.TotalRingTime"));
+			inbound.setMaxRingTime(context.longValue("GetAgentDataResponse.DataList.List["+ i +"].Inbound.MaxRingTime"));
+			inbound.setAverageRingTime(context.longValue("GetAgentDataResponse.DataList.List["+ i +"].Inbound.AverageRingTime"));
+			generateAgentStatistic.setInbound(inbound);
 
-				inboundSatisfactionDetail.add(appraiseCountDomain);
-			}
-			agentReportData.setInboundSatisfactionDetail(inboundSatisfactionDetail);
+			Outbound outbound = new Outbound();
+			outbound.setTotalTalkTime(context.longValue("GetAgentDataResponse.DataList.List["+ i +"].Outbound.TotalTalkTime"));
+			outbound.setMaxTalkTime(context.longValue("GetAgentDataResponse.DataList.List["+ i +"].Outbound.MaxTalkTime"));
+			outbound.setAverageTalkTime(context.longValue("GetAgentDataResponse.DataList.List["+ i +"].Outbound.AverageTalkTime"));
+			outbound.setTotalHoldTime(context.longValue("GetAgentDataResponse.DataList.List["+ i +"].Outbound.TotalHoldTime"));
+			outbound.setMaxHoldTime(context.longValue("GetAgentDataResponse.DataList.List["+ i +"].Outbound.MaxHoldTime"));
+			outbound.setAverageHoldTime(context.longValue("GetAgentDataResponse.DataList.List["+ i +"].Outbound.AverageHoldTime"));
+			outbound.setTotalWorkTime(context.longValue("GetAgentDataResponse.DataList.List["+ i +"].Outbound.TotalWorkTime"));
+			outbound.setMaxWorkTime(context.longValue("GetAgentDataResponse.DataList.List["+ i +"].Outbound.MaxWorkTime"));
+			outbound.setAverageWorkTime(context.longValue("GetAgentDataResponse.DataList.List["+ i +"].Outbound.AverageWorkTime"));
+			outbound.setSatisfactionSurveysOffered(context.longValue("GetAgentDataResponse.DataList.List["+ i +"].Outbound.SatisfactionSurveysOffered"));
+			outbound.setSatisfactionSurveysResponded(context.longValue("GetAgentDataResponse.DataList.List["+ i +"].Outbound.SatisfactionSurveysResponded"));
+			outbound.setSatisfactionIndex(context.floatValue("GetAgentDataResponse.DataList.List["+ i +"].Outbound.SatisfactionIndex"));
+			outbound.setCallsDialed(context.longValue("GetAgentDataResponse.DataList.List["+ i +"].Outbound.CallsDialed"));
+			outbound.setCallsAnswered(context.longValue("GetAgentDataResponse.DataList.List["+ i +"].Outbound.CallsAnswered"));
+			outbound.setAnswerRate(context.floatValue("GetAgentDataResponse.DataList.List["+ i +"].Outbound.AnswerRate"));
+			outbound.setTotalDialingTime(context.longValue("GetAgentDataResponse.DataList.List["+ i +"].Outbound.TotalDialingTime"));
+			outbound.setTotalDialingTime1(context.longValue("GetAgentDataResponse.DataList.List["+ i +"].Outbound.TotalDialingTime"));
+			outbound.setMaxDialingTime(context.longValue("GetAgentDataResponse.DataList.List["+ i +"].Outbound.MaxDialingTime"));
+			outbound.setAverageDialingTime(context.longValue("GetAgentDataResponse.DataList.List["+ i +"].Outbound.AverageDialingTime"));
+			generateAgentStatistic.setOutbound(outbound);
 
-			List<AppraiseCountDomain> inboundFeedbackNum = new ArrayList<AppraiseCountDomain>();
-			for (int j = 0; j < context.lengthValue("GetAgentDataResponse.DataList.List["+ i +"].InboundFeedbackNum.Length"); j++) {
-				AppraiseCountDomain appraiseCountDomain = new AppraiseCountDomain();
-				appraiseCountDomain.setGroup(context.stringValue("GetAgentDataResponse.DataList.List["+ i +"].InboundFeedbackNum["+ j +"].Group"));
-				appraiseCountDomain.setSubgroup(context.stringValue("GetAgentDataResponse.DataList.List["+ i +"].InboundFeedbackNum["+ j +"].Subgroup"));
-				appraiseCountDomain.setCount(context.stringValue("GetAgentDataResponse.DataList.List["+ i +"].InboundFeedbackNum["+ j +"].Count"));
+			Overall overall = new Overall();
+			overall.setTotalTalkTime(context.longValue("GetAgentDataResponse.DataList.List["+ i +"].Overall.TotalTalkTime"));
+			overall.setMaxTalkTime(context.longValue("GetAgentDataResponse.DataList.List["+ i +"].Overall.MaxTalkTime"));
+			overall.setAverageTalkTime(context.longValue("GetAgentDataResponse.DataList.List["+ i +"].Overall.AverageTalkTime"));
+			overall.setTotalHoldTime(context.longValue("GetAgentDataResponse.DataList.List["+ i +"].Overall.TotalHoldTime"));
+			overall.setMaxHoldTime(context.longValue("GetAgentDataResponse.DataList.List["+ i +"].Overall.MaxHoldTime"));
+			overall.setAverageHoldTime(context.longValue("GetAgentDataResponse.DataList.List["+ i +"].Overall.AverageHoldTime"));
+			overall.setTotalWorkTime(context.longValue("GetAgentDataResponse.DataList.List["+ i +"].Overall.TotalWorkTime"));
+			overall.setMaxWorkTime(context.longValue("GetAgentDataResponse.DataList.List["+ i +"].Overall.MaxWorkTime"));
+			overall.setAverageWorkTime(context.longValue("GetAgentDataResponse.DataList.List["+ i +"].Overall.AverageWorkTime"));
+			overall.setSatisfactionSurveysOffered(context.longValue("GetAgentDataResponse.DataList.List["+ i +"].Overall.SatisfactionSurveysOffered"));
+			overall.setSatisfactionSurveysResponded(context.longValue("GetAgentDataResponse.DataList.List["+ i +"].Overall.SatisfactionSurveysResponded"));
+			overall.setSatisfactionIndex(context.floatValue("GetAgentDataResponse.DataList.List["+ i +"].Overall.SatisfactionIndex"));
+			overall.setTotalCalls(context.longValue("GetAgentDataResponse.DataList.List["+ i +"].Overall.TotalCalls"));
+			generateAgentStatistic.setOverall(overall);
 
-				inboundFeedbackNum.add(appraiseCountDomain);
-			}
-			agentReportData.setInboundFeedbackNum(inboundFeedbackNum);
-
-			List<AppraiseCountDomain> outboundAppraiseNum = new ArrayList<AppraiseCountDomain>();
-			for (int j = 0; j < context.lengthValue("GetAgentDataResponse.DataList.List["+ i +"].OutboundAppraiseNum.Length"); j++) {
-				AppraiseCountDomain appraiseCountDomain = new AppraiseCountDomain();
-				appraiseCountDomain.setGroup(context.stringValue("GetAgentDataResponse.DataList.List["+ i +"].OutboundAppraiseNum["+ j +"].Group"));
-				appraiseCountDomain.setSubgroup(context.stringValue("GetAgentDataResponse.DataList.List["+ i +"].OutboundAppraiseNum["+ j +"].Subgroup"));
-				appraiseCountDomain.setCount(context.stringValue("GetAgentDataResponse.DataList.List["+ i +"].OutboundAppraiseNum["+ j +"].Count"));
-
-				outboundAppraiseNum.add(appraiseCountDomain);
-			}
-			agentReportData.setOutboundAppraiseNum(outboundAppraiseNum);
-
-			List<AppraiseCountDomain> outboundFeedbackNum = new ArrayList<AppraiseCountDomain>();
-			for (int j = 0; j < context.lengthValue("GetAgentDataResponse.DataList.List["+ i +"].OutboundFeedbackNum.Length"); j++) {
-				AppraiseCountDomain appraiseCountDomain = new AppraiseCountDomain();
-				appraiseCountDomain.setGroup(context.stringValue("GetAgentDataResponse.DataList.List["+ i +"].OutboundFeedbackNum["+ j +"].Group"));
-				appraiseCountDomain.setSubgroup(context.stringValue("GetAgentDataResponse.DataList.List["+ i +"].OutboundFeedbackNum["+ j +"].Subgroup"));
-				appraiseCountDomain.setCount(context.stringValue("GetAgentDataResponse.DataList.List["+ i +"].OutboundFeedbackNum["+ j +"].Count"));
-
-				outboundFeedbackNum.add(appraiseCountDomain);
-			}
-			agentReportData.setOutboundFeedbackNum(outboundFeedbackNum);
-
-			list.add(agentReportData);
+			list.add(generateAgentStatistic);
 		}
 		dataList.setList(list);
 		getAgentDataResponse.setDataList(dataList);

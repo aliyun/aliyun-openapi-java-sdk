@@ -40,16 +40,16 @@ public class ListScenariosResponseUnmarshaller {
 		List<Scenario> scenarios = new ArrayList<Scenario>();
 		for (int i = 0; i < context.lengthValue("ListScenariosResponse.Scenarios.Length"); i++) {
 			Scenario scenario = new Scenario();
-			scenario.setScenarioId(context.stringValue("ListScenariosResponse.Scenarios["+ i +"].ScenarioId"));
-			scenario.setScenarioName(context.stringValue("ListScenariosResponse.Scenarios["+ i +"].ScenarioName"));
-			scenario.setScenarioDescription(context.stringValue("ListScenariosResponse.Scenarios["+ i +"].ScenarioDescription"));
+			scenario.setId(context.stringValue("ListScenariosResponse.Scenarios["+ i +"].Id"));
+			scenario.setName(context.stringValue("ListScenariosResponse.Scenarios["+ i +"].Name"));
+			scenario.setDescription(context.stringValue("ListScenariosResponse.Scenarios["+ i +"].Description"));
 			scenario.setType(context.stringValue("ListScenariosResponse.Scenarios["+ i +"].Type"));
 			scenario.setIsTemplate(context.booleanValue("ListScenariosResponse.Scenarios["+ i +"].IsTemplate"));
 
 			Strategy strategy = new Strategy();
-			strategy.setStrategyId(context.stringValue("ListScenariosResponse.Scenarios["+ i +"].Strategy.StrategyId"));
-			strategy.setStrategyName(context.stringValue("ListScenariosResponse.Scenarios["+ i +"].Strategy.StrategyName"));
-			strategy.setStrategyDescription(context.stringValue("ListScenariosResponse.Scenarios["+ i +"].Strategy.StrategyDescription"));
+			strategy.setId(context.stringValue("ListScenariosResponse.Scenarios["+ i +"].Strategy.Id"));
+			strategy.setName(context.stringValue("ListScenariosResponse.Scenarios["+ i +"].Strategy.Name"));
+			strategy.setDescription(context.stringValue("ListScenariosResponse.Scenarios["+ i +"].Strategy.Description"));
 			strategy.setType(context.stringValue("ListScenariosResponse.Scenarios["+ i +"].Strategy.Type"));
 			strategy.setStartTime(context.longValue("ListScenariosResponse.Scenarios["+ i +"].Strategy.StartTime"));
 			strategy.setEndTime(context.longValue("ListScenariosResponse.Scenarios["+ i +"].Strategy.EndTime"));
@@ -81,9 +81,9 @@ public class ListScenariosResponseUnmarshaller {
 			List<Survey> surveys = new ArrayList<Survey>();
 			for (int j = 0; j < context.lengthValue("ListScenariosResponse.Scenarios["+ i +"].Surveys.Length"); j++) {
 				Survey survey = new Survey();
-				survey.setSurveyId(context.stringValue("ListScenariosResponse.Scenarios["+ i +"].Surveys["+ j +"].SurveyId"));
-				survey.setSurveyName(context.stringValue("ListScenariosResponse.Scenarios["+ i +"].Surveys["+ j +"].SurveyName"));
-				survey.setSurveyDescription(context.stringValue("ListScenariosResponse.Scenarios["+ i +"].Surveys["+ j +"].SurveyDescription"));
+				survey.setId(context.stringValue("ListScenariosResponse.Scenarios["+ i +"].Surveys["+ j +"].Id"));
+				survey.setName(context.stringValue("ListScenariosResponse.Scenarios["+ i +"].Surveys["+ j +"].Name"));
+				survey.setDescription(context.stringValue("ListScenariosResponse.Scenarios["+ i +"].Surveys["+ j +"].Description"));
 				survey.setRole(context.stringValue("ListScenariosResponse.Scenarios["+ i +"].Surveys["+ j +"].Role"));
 				survey.setRound(context.integerValue("ListScenariosResponse.Scenarios["+ i +"].Surveys["+ j +"].Round"));
 				survey.setBeebotId(context.stringValue("ListScenariosResponse.Scenarios["+ i +"].Surveys["+ j +"].BeebotId"));

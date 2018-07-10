@@ -87,11 +87,11 @@ public class ListScenarioTemplatesResponse extends AcsResponse {
 
 	public static class Scenario {
 
-		private String scenarioId;
+		private String id;
 
-		private String scenarioName;
+		private String name;
 
-		private String scenarioDescription;
+		private String description;
 
 		private String type;
 
@@ -101,30 +101,28 @@ public class ListScenarioTemplatesResponse extends AcsResponse {
 
 		private List<KeyValuePair> variables;
 
-		private Strategy strategy;
-
-		public String getScenarioId() {
-			return this.scenarioId;
+		public String getId() {
+			return this.id;
 		}
 
-		public void setScenarioId(String scenarioId) {
-			this.scenarioId = scenarioId;
+		public void setId(String id) {
+			this.id = id;
 		}
 
-		public String getScenarioName() {
-			return this.scenarioName;
+		public String getName() {
+			return this.name;
 		}
 
-		public void setScenarioName(String scenarioName) {
-			this.scenarioName = scenarioName;
+		public void setName(String name) {
+			this.name = name;
 		}
 
-		public String getScenarioDescription() {
-			return this.scenarioDescription;
+		public String getDescription() {
+			return this.description;
 		}
 
-		public void setScenarioDescription(String scenarioDescription) {
-			this.scenarioDescription = scenarioDescription;
+		public void setDescription(String description) {
+			this.description = description;
 		}
 
 		public String getType() {
@@ -159,21 +157,13 @@ public class ListScenarioTemplatesResponse extends AcsResponse {
 			this.variables = variables;
 		}
 
-		public Strategy getStrategy() {
-			return this.strategy;
-		}
-
-		public void setStrategy(Strategy strategy) {
-			this.strategy = strategy;
-		}
-
 		public static class Survey {
 
-			private String surveyId;
+			private String id;
 
-			private String surveyName;
+			private String name;
 
-			private String surveyDescription;
+			private String description;
 
 			private String role;
 
@@ -181,30 +171,34 @@ public class ListScenarioTemplatesResponse extends AcsResponse {
 
 			private String beebotId;
 
+			private String globalQuestions;
+
 			private List<IntentNode> intents;
 
-			public String getSurveyId() {
-				return this.surveyId;
+			private Flow flow;
+
+			public String getId() {
+				return this.id;
 			}
 
-			public void setSurveyId(String surveyId) {
-				this.surveyId = surveyId;
+			public void setId(String id) {
+				this.id = id;
 			}
 
-			public String getSurveyName() {
-				return this.surveyName;
+			public String getName() {
+				return this.name;
 			}
 
-			public void setSurveyName(String surveyName) {
-				this.surveyName = surveyName;
+			public void setName(String name) {
+				this.name = name;
 			}
 
-			public String getSurveyDescription() {
-				return this.surveyDescription;
+			public String getDescription() {
+				return this.description;
 			}
 
-			public void setSurveyDescription(String surveyDescription) {
-				this.surveyDescription = surveyDescription;
+			public void setDescription(String description) {
+				this.description = description;
 			}
 
 			public String getRole() {
@@ -231,12 +225,28 @@ public class ListScenarioTemplatesResponse extends AcsResponse {
 				this.beebotId = beebotId;
 			}
 
+			public String getGlobalQuestions() {
+				return this.globalQuestions;
+			}
+
+			public void setGlobalQuestions(String globalQuestions) {
+				this.globalQuestions = globalQuestions;
+			}
+
 			public List<IntentNode> getIntents() {
 				return this.intents;
 			}
 
 			public void setIntents(List<IntentNode> intents) {
 				this.intents = intents;
+			}
+
+			public Flow getFlow() {
+				return this.flow;
+			}
+
+			public void setFlow(Flow flow) {
+				this.flow = flow;
 			}
 
 			public static class IntentNode {
@@ -261,6 +271,39 @@ public class ListScenarioTemplatesResponse extends AcsResponse {
 					this.intentId = intentId;
 				}
 			}
+
+			public static class Flow {
+
+				private String flowId;
+
+				private Boolean isPublished;
+
+				private String flowJson;
+
+				public String getFlowId() {
+					return this.flowId;
+				}
+
+				public void setFlowId(String flowId) {
+					this.flowId = flowId;
+				}
+
+				public Boolean getIsPublished() {
+					return this.isPublished;
+				}
+
+				public void setIsPublished(Boolean isPublished) {
+					this.isPublished = isPublished;
+				}
+
+				public String getFlowJson() {
+					return this.flowJson;
+				}
+
+				public void setFlowJson(String flowJson) {
+					this.flowJson = flowJson;
+				}
+			}
 		}
 
 		public static class KeyValuePair {
@@ -283,182 +326,6 @@ public class ListScenarioTemplatesResponse extends AcsResponse {
 
 			public void setValue(String value) {
 				this.value = value;
-			}
-		}
-
-		public static class Strategy {
-
-			private String strategyId;
-
-			private String strategyName;
-
-			private String strategyDescription;
-
-			private String type;
-
-			private Long startTime;
-
-			private Long endTime;
-
-			private String repeatBy;
-
-			private Integer maxAttemptsPerDay;
-
-			private Integer minAttemptInterval;
-
-			private String customized;
-
-			private String routingStrategy;
-
-			private String followUpStrategy;
-
-			private Boolean isTemplate;
-
-			private List<TimeFrame> workingTime;
-
-			private List<String> repeatDays;
-
-			public String getStrategyId() {
-				return this.strategyId;
-			}
-
-			public void setStrategyId(String strategyId) {
-				this.strategyId = strategyId;
-			}
-
-			public String getStrategyName() {
-				return this.strategyName;
-			}
-
-			public void setStrategyName(String strategyName) {
-				this.strategyName = strategyName;
-			}
-
-			public String getStrategyDescription() {
-				return this.strategyDescription;
-			}
-
-			public void setStrategyDescription(String strategyDescription) {
-				this.strategyDescription = strategyDescription;
-			}
-
-			public String getType() {
-				return this.type;
-			}
-
-			public void setType(String type) {
-				this.type = type;
-			}
-
-			public Long getStartTime() {
-				return this.startTime;
-			}
-
-			public void setStartTime(Long startTime) {
-				this.startTime = startTime;
-			}
-
-			public Long getEndTime() {
-				return this.endTime;
-			}
-
-			public void setEndTime(Long endTime) {
-				this.endTime = endTime;
-			}
-
-			public String getRepeatBy() {
-				return this.repeatBy;
-			}
-
-			public void setRepeatBy(String repeatBy) {
-				this.repeatBy = repeatBy;
-			}
-
-			public Integer getMaxAttemptsPerDay() {
-				return this.maxAttemptsPerDay;
-			}
-
-			public void setMaxAttemptsPerDay(Integer maxAttemptsPerDay) {
-				this.maxAttemptsPerDay = maxAttemptsPerDay;
-			}
-
-			public Integer getMinAttemptInterval() {
-				return this.minAttemptInterval;
-			}
-
-			public void setMinAttemptInterval(Integer minAttemptInterval) {
-				this.minAttemptInterval = minAttemptInterval;
-			}
-
-			public String getCustomized() {
-				return this.customized;
-			}
-
-			public void setCustomized(String customized) {
-				this.customized = customized;
-			}
-
-			public String getRoutingStrategy() {
-				return this.routingStrategy;
-			}
-
-			public void setRoutingStrategy(String routingStrategy) {
-				this.routingStrategy = routingStrategy;
-			}
-
-			public String getFollowUpStrategy() {
-				return this.followUpStrategy;
-			}
-
-			public void setFollowUpStrategy(String followUpStrategy) {
-				this.followUpStrategy = followUpStrategy;
-			}
-
-			public Boolean getIsTemplate() {
-				return this.isTemplate;
-			}
-
-			public void setIsTemplate(Boolean isTemplate) {
-				this.isTemplate = isTemplate;
-			}
-
-			public List<TimeFrame> getWorkingTime() {
-				return this.workingTime;
-			}
-
-			public void setWorkingTime(List<TimeFrame> workingTime) {
-				this.workingTime = workingTime;
-			}
-
-			public List<String> getRepeatDays() {
-				return this.repeatDays;
-			}
-
-			public void setRepeatDays(List<String> repeatDays) {
-				this.repeatDays = repeatDays;
-			}
-
-			public static class TimeFrame {
-
-				private String beginTime;
-
-				private String endTime;
-
-				public String getBeginTime() {
-					return this.beginTime;
-				}
-
-				public void setBeginTime(String beginTime) {
-					this.beginTime = beginTime;
-				}
-
-				public String getEndTime() {
-					return this.endTime;
-				}
-
-				public void setEndTime(String endTime) {
-					this.endTime = endTime;
-				}
 			}
 		}
 	}

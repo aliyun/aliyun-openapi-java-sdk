@@ -16,14 +16,14 @@ package com.aliyuncs.ccc.model.v20170705;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.ccc.transform.v20170705.GetJobGroupResponseUnmarshaller;
+import com.aliyuncs.ccc.transform.v20170705.GetScenarioResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class GetJobGroupResponse extends AcsResponse {
+public class GetScenarioResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -35,7 +35,7 @@ public class GetJobGroupResponse extends AcsResponse {
 
 	private Integer httpStatusCode;
 
-	private JobGroup jobGroup;
+	private Scenario scenario;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -77,15 +77,15 @@ public class GetJobGroupResponse extends AcsResponse {
 		this.httpStatusCode = httpStatusCode;
 	}
 
-	public JobGroup getJobGroup() {
-		return this.jobGroup;
+	public Scenario getScenario() {
+		return this.scenario;
 	}
 
-	public void setJobGroup(JobGroup jobGroup) {
-		this.jobGroup = jobGroup;
+	public void setScenario(Scenario scenario) {
+		this.scenario = scenario;
 	}
 
-	public static class JobGroup {
+	public static class Scenario {
 
 		private String id;
 
@@ -93,17 +93,15 @@ public class GetJobGroupResponse extends AcsResponse {
 
 		private String description;
 
-		private String scenarioId;
+		private String type;
 
-		private String jobFilePath;
+		private Boolean isTemplate;
 
-		private Long creationTime;
+		private List<Survey> surveys;
 
-		private List<String> callingNumbers;
+		private List<KeyValuePair> variables;
 
 		private Strategy strategy;
-
-		private Progress progress;
 
 		public String getId() {
 			return this.id;
@@ -129,36 +127,36 @@ public class GetJobGroupResponse extends AcsResponse {
 			this.description = description;
 		}
 
-		public String getScenarioId() {
-			return this.scenarioId;
+		public String getType() {
+			return this.type;
 		}
 
-		public void setScenarioId(String scenarioId) {
-			this.scenarioId = scenarioId;
+		public void setType(String type) {
+			this.type = type;
 		}
 
-		public String getJobFilePath() {
-			return this.jobFilePath;
+		public Boolean getIsTemplate() {
+			return this.isTemplate;
 		}
 
-		public void setJobFilePath(String jobFilePath) {
-			this.jobFilePath = jobFilePath;
+		public void setIsTemplate(Boolean isTemplate) {
+			this.isTemplate = isTemplate;
 		}
 
-		public Long getCreationTime() {
-			return this.creationTime;
+		public List<Survey> getSurveys() {
+			return this.surveys;
 		}
 
-		public void setCreationTime(Long creationTime) {
-			this.creationTime = creationTime;
+		public void setSurveys(List<Survey> surveys) {
+			this.surveys = surveys;
 		}
 
-		public List<String> getCallingNumbers() {
-			return this.callingNumbers;
+		public List<KeyValuePair> getVariables() {
+			return this.variables;
 		}
 
-		public void setCallingNumbers(List<String> callingNumbers) {
-			this.callingNumbers = callingNumbers;
+		public void setVariables(List<KeyValuePair> variables) {
+			this.variables = variables;
 		}
 
 		public Strategy getStrategy() {
@@ -169,12 +167,123 @@ public class GetJobGroupResponse extends AcsResponse {
 			this.strategy = strategy;
 		}
 
-		public Progress getProgress() {
-			return this.progress;
+		public static class Survey {
+
+			private String id;
+
+			private String name;
+
+			private String description;
+
+			private String role;
+
+			private Integer round;
+
+			private String beebotId;
+
+			private List<IntentNode> intents;
+
+			public String getId() {
+				return this.id;
+			}
+
+			public void setId(String id) {
+				this.id = id;
+			}
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
+			}
+
+			public String getDescription() {
+				return this.description;
+			}
+
+			public void setDescription(String description) {
+				this.description = description;
+			}
+
+			public String getRole() {
+				return this.role;
+			}
+
+			public void setRole(String role) {
+				this.role = role;
+			}
+
+			public Integer getRound() {
+				return this.round;
+			}
+
+			public void setRound(Integer round) {
+				this.round = round;
+			}
+
+			public String getBeebotId() {
+				return this.beebotId;
+			}
+
+			public void setBeebotId(String beebotId) {
+				this.beebotId = beebotId;
+			}
+
+			public List<IntentNode> getIntents() {
+				return this.intents;
+			}
+
+			public void setIntents(List<IntentNode> intents) {
+				this.intents = intents;
+			}
+
+			public static class IntentNode {
+
+				private String nodeId;
+
+				private String intentId;
+
+				public String getNodeId() {
+					return this.nodeId;
+				}
+
+				public void setNodeId(String nodeId) {
+					this.nodeId = nodeId;
+				}
+
+				public String getIntentId() {
+					return this.intentId;
+				}
+
+				public void setIntentId(String intentId) {
+					this.intentId = intentId;
+				}
+			}
 		}
 
-		public void setProgress(Progress progress) {
-			this.progress = progress;
+		public static class KeyValuePair {
+
+			private String key;
+
+			private String value;
+
+			public String getKey() {
+				return this.key;
+			}
+
+			public void setKey(String key) {
+				this.key = key;
+			}
+
+			public String getValue() {
+				return this.value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
+			}
 		}
 
 		public static class Strategy {
@@ -352,107 +461,11 @@ public class GetJobGroupResponse extends AcsResponse {
 				}
 			}
 		}
-
-		public static class Progress {
-
-			private Integer totalJobs;
-
-			private String status;
-
-			private Integer totalNotAnswered;
-
-			private Integer totalCompleted;
-
-			private Long startTime;
-
-			private Integer duration;
-
-			private List<KeyValuePair> categories;
-
-			public Integer getTotalJobs() {
-				return this.totalJobs;
-			}
-
-			public void setTotalJobs(Integer totalJobs) {
-				this.totalJobs = totalJobs;
-			}
-
-			public String getStatus() {
-				return this.status;
-			}
-
-			public void setStatus(String status) {
-				this.status = status;
-			}
-
-			public Integer getTotalNotAnswered() {
-				return this.totalNotAnswered;
-			}
-
-			public void setTotalNotAnswered(Integer totalNotAnswered) {
-				this.totalNotAnswered = totalNotAnswered;
-			}
-
-			public Integer getTotalCompleted() {
-				return this.totalCompleted;
-			}
-
-			public void setTotalCompleted(Integer totalCompleted) {
-				this.totalCompleted = totalCompleted;
-			}
-
-			public Long getStartTime() {
-				return this.startTime;
-			}
-
-			public void setStartTime(Long startTime) {
-				this.startTime = startTime;
-			}
-
-			public Integer getDuration() {
-				return this.duration;
-			}
-
-			public void setDuration(Integer duration) {
-				this.duration = duration;
-			}
-
-			public List<KeyValuePair> getCategories() {
-				return this.categories;
-			}
-
-			public void setCategories(List<KeyValuePair> categories) {
-				this.categories = categories;
-			}
-
-			public static class KeyValuePair {
-
-				private String key;
-
-				private String value;
-
-				public String getKey() {
-					return this.key;
-				}
-
-				public void setKey(String key) {
-					this.key = key;
-				}
-
-				public String getValue() {
-					return this.value;
-				}
-
-				public void setValue(String value) {
-					this.value = value;
-				}
-			}
-		}
 	}
 
 	@Override
-	public GetJobGroupResponse getInstance(UnmarshallerContext context) {
-		return	GetJobGroupResponseUnmarshaller.unmarshall(this, context);
+	public GetScenarioResponse getInstance(UnmarshallerContext context) {
+		return	GetScenarioResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

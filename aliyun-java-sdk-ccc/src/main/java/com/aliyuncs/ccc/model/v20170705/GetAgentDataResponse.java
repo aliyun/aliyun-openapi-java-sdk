@@ -93,7 +93,7 @@ public class GetAgentDataResponse extends AcsResponse {
 
 		private Integer pageSize;
 
-		private List<AgentReportData> list;
+		private List<GenerateAgentStatistic> list;
 
 		public Integer getTotalCount() {
 			return this.totalCount;
@@ -119,21 +119,21 @@ public class GetAgentDataResponse extends AcsResponse {
 			this.pageSize = pageSize;
 		}
 
-		public List<AgentReportData> getList() {
+		public List<GenerateAgentStatistic> getList() {
 			return this.list;
 		}
 
-		public void setList(List<AgentReportData> list) {
+		public void setList(List<GenerateAgentStatistic> list) {
 			this.list = list;
 		}
 
-		public static class AgentReportData {
+		public static class GenerateAgentStatistic {
 
-			private String userId;
+			private String agentId;
 
 			private String loginName;
 
-			private String displayName;
+			private String agentName;
 
 			private String skillGroupIds;
 
@@ -143,100 +143,30 @@ public class GetAgentDataResponse extends AcsResponse {
 
 			private String recordDate;
 
-			private String agentStatus;
+			private Long totalLoggedInTime;
 
-			private String totalCalls;
+			private Long totalBreakTime;
 
-			private String callsAnswered;
+			private Float occupancyRate;
 
-			private String callsAnsweredRate;
+			private Long totalReadyTime;
 
-			private String callsAbandoned;
+			private Long maxReadyTime;
 
-			private String callsAbandonedRate;
+			private Long averageReadyTime;
 
-			private String averageTalkTime;
+			private Inbound inbound;
 
-			private String averageSpeedOfAnswer;
+			private Outbound outbound;
 
-			private String loggedInTime;
+			private Overall overall;
 
-			private String talkTime;
-
-			private String talkTimeRate;
-
-			private String breakTime;
-
-			private String breakTimeRate;
-
-			private String loginTime;
-
-			private String logoutTime;
-
-			private String workTime;
-
-			private String inboundCalls;
-
-			private String inboundCallsAnswered;
-
-			private String inboundCallsAnsweredRate;
-
-			private String inboundCallsAbandoned;
-
-			private String inboundCallsAbandonedRate;
-
-			private String inboundRingTime;
-
-			private String inboundTalkTime;
-
-			private String outboundCalls;
-
-			private String outboundCallsAnswered;
-
-			private String outboundCallsAnsweredRate;
-
-			private String outboundDialingTime;
-
-			private String outboundTalkTime;
-
-			private String inboundSatisfactionSurvey;
-
-			private String inboundSatisfactionSurveyRate;
-
-			private String inboundTakeSatisfactionSurvey;
-
-			private String inboundTakeSatisfactionSurveyRate;
-
-			private String inboundSatisfactionRate;
-
-			private String inboundFeedbackSumNum;
-
-			private String outboundSatisfactionSurvey;
-
-			private String outboundSatisfactionSurveyRate;
-
-			private String outboundTakeSatisfactionSurvey;
-
-			private String outboundTakeSatisfactionSurveyRate;
-
-			private String outboundSatisfactionRate;
-
-			private String outboundFeedbackSumNum;
-
-			private List<AppraiseCountDomain> inboundSatisfactionDetail;
-
-			private List<AppraiseCountDomain> inboundFeedbackNum;
-
-			private List<AppraiseCountDomain> outboundAppraiseNum;
-
-			private List<AppraiseCountDomain> outboundFeedbackNum;
-
-			public String getUserId() {
-				return this.userId;
+			public String getAgentId() {
+				return this.agentId;
 			}
 
-			public void setUserId(String userId) {
-				this.userId = userId;
+			public void setAgentId(String agentId) {
+				this.agentId = agentId;
 			}
 
 			public String getLoginName() {
@@ -247,12 +177,12 @@ public class GetAgentDataResponse extends AcsResponse {
 				this.loginName = loginName;
 			}
 
-			public String getDisplayName() {
-				return this.displayName;
+			public String getAgentName() {
+				return this.agentName;
 			}
 
-			public void setDisplayName(String displayName) {
-				this.displayName = displayName;
+			public void setAgentName(String agentName) {
+				this.agentName = agentName;
 			}
 
 			public String getSkillGroupIds() {
@@ -287,388 +217,584 @@ public class GetAgentDataResponse extends AcsResponse {
 				this.recordDate = recordDate;
 			}
 
-			public String getAgentStatus() {
-				return this.agentStatus;
+			public Long getTotalLoggedInTime() {
+				return this.totalLoggedInTime;
 			}
 
-			public void setAgentStatus(String agentStatus) {
-				this.agentStatus = agentStatus;
+			public void setTotalLoggedInTime(Long totalLoggedInTime) {
+				this.totalLoggedInTime = totalLoggedInTime;
 			}
 
-			public String getTotalCalls() {
-				return this.totalCalls;
+			public Long getTotalBreakTime() {
+				return this.totalBreakTime;
 			}
 
-			public void setTotalCalls(String totalCalls) {
-				this.totalCalls = totalCalls;
+			public void setTotalBreakTime(Long totalBreakTime) {
+				this.totalBreakTime = totalBreakTime;
 			}
 
-			public String getCallsAnswered() {
-				return this.callsAnswered;
+			public Float getOccupancyRate() {
+				return this.occupancyRate;
 			}
 
-			public void setCallsAnswered(String callsAnswered) {
-				this.callsAnswered = callsAnswered;
+			public void setOccupancyRate(Float occupancyRate) {
+				this.occupancyRate = occupancyRate;
 			}
 
-			public String getCallsAnsweredRate() {
-				return this.callsAnsweredRate;
+			public Long getTotalReadyTime() {
+				return this.totalReadyTime;
 			}
 
-			public void setCallsAnsweredRate(String callsAnsweredRate) {
-				this.callsAnsweredRate = callsAnsweredRate;
+			public void setTotalReadyTime(Long totalReadyTime) {
+				this.totalReadyTime = totalReadyTime;
 			}
 
-			public String getCallsAbandoned() {
-				return this.callsAbandoned;
+			public Long getMaxReadyTime() {
+				return this.maxReadyTime;
 			}
 
-			public void setCallsAbandoned(String callsAbandoned) {
-				this.callsAbandoned = callsAbandoned;
+			public void setMaxReadyTime(Long maxReadyTime) {
+				this.maxReadyTime = maxReadyTime;
 			}
 
-			public String getCallsAbandonedRate() {
-				return this.callsAbandonedRate;
+			public Long getAverageReadyTime() {
+				return this.averageReadyTime;
 			}
 
-			public void setCallsAbandonedRate(String callsAbandonedRate) {
-				this.callsAbandonedRate = callsAbandonedRate;
+			public void setAverageReadyTime(Long averageReadyTime) {
+				this.averageReadyTime = averageReadyTime;
 			}
 
-			public String getAverageTalkTime() {
-				return this.averageTalkTime;
+			public Inbound getInbound() {
+				return this.inbound;
 			}
 
-			public void setAverageTalkTime(String averageTalkTime) {
-				this.averageTalkTime = averageTalkTime;
+			public void setInbound(Inbound inbound) {
+				this.inbound = inbound;
 			}
 
-			public String getAverageSpeedOfAnswer() {
-				return this.averageSpeedOfAnswer;
+			public Outbound getOutbound() {
+				return this.outbound;
 			}
 
-			public void setAverageSpeedOfAnswer(String averageSpeedOfAnswer) {
-				this.averageSpeedOfAnswer = averageSpeedOfAnswer;
+			public void setOutbound(Outbound outbound) {
+				this.outbound = outbound;
 			}
 
-			public String getLoggedInTime() {
-				return this.loggedInTime;
+			public Overall getOverall() {
+				return this.overall;
 			}
 
-			public void setLoggedInTime(String loggedInTime) {
-				this.loggedInTime = loggedInTime;
+			public void setOverall(Overall overall) {
+				this.overall = overall;
 			}
 
-			public String getTalkTime() {
-				return this.talkTime;
-			}
-
-			public void setTalkTime(String talkTime) {
-				this.talkTime = talkTime;
-			}
-
-			public String getTalkTimeRate() {
-				return this.talkTimeRate;
-			}
-
-			public void setTalkTimeRate(String talkTimeRate) {
-				this.talkTimeRate = talkTimeRate;
-			}
-
-			public String getBreakTime() {
-				return this.breakTime;
-			}
-
-			public void setBreakTime(String breakTime) {
-				this.breakTime = breakTime;
-			}
-
-			public String getBreakTimeRate() {
-				return this.breakTimeRate;
-			}
-
-			public void setBreakTimeRate(String breakTimeRate) {
-				this.breakTimeRate = breakTimeRate;
-			}
-
-			public String getLoginTime() {
-				return this.loginTime;
-			}
-
-			public void setLoginTime(String loginTime) {
-				this.loginTime = loginTime;
-			}
-
-			public String getLogoutTime() {
-				return this.logoutTime;
-			}
-
-			public void setLogoutTime(String logoutTime) {
-				this.logoutTime = logoutTime;
-			}
-
-			public String getWorkTime() {
-				return this.workTime;
-			}
-
-			public void setWorkTime(String workTime) {
-				this.workTime = workTime;
-			}
-
-			public String getInboundCalls() {
-				return this.inboundCalls;
-			}
-
-			public void setInboundCalls(String inboundCalls) {
-				this.inboundCalls = inboundCalls;
-			}
-
-			public String getInboundCallsAnswered() {
-				return this.inboundCallsAnswered;
-			}
-
-			public void setInboundCallsAnswered(String inboundCallsAnswered) {
-				this.inboundCallsAnswered = inboundCallsAnswered;
-			}
-
-			public String getInboundCallsAnsweredRate() {
-				return this.inboundCallsAnsweredRate;
-			}
-
-			public void setInboundCallsAnsweredRate(String inboundCallsAnsweredRate) {
-				this.inboundCallsAnsweredRate = inboundCallsAnsweredRate;
-			}
-
-			public String getInboundCallsAbandoned() {
-				return this.inboundCallsAbandoned;
-			}
-
-			public void setInboundCallsAbandoned(String inboundCallsAbandoned) {
-				this.inboundCallsAbandoned = inboundCallsAbandoned;
-			}
-
-			public String getInboundCallsAbandonedRate() {
-				return this.inboundCallsAbandonedRate;
-			}
-
-			public void setInboundCallsAbandonedRate(String inboundCallsAbandonedRate) {
-				this.inboundCallsAbandonedRate = inboundCallsAbandonedRate;
-			}
-
-			public String getInboundRingTime() {
-				return this.inboundRingTime;
-			}
-
-			public void setInboundRingTime(String inboundRingTime) {
-				this.inboundRingTime = inboundRingTime;
-			}
-
-			public String getInboundTalkTime() {
-				return this.inboundTalkTime;
-			}
-
-			public void setInboundTalkTime(String inboundTalkTime) {
-				this.inboundTalkTime = inboundTalkTime;
-			}
-
-			public String getOutboundCalls() {
-				return this.outboundCalls;
-			}
-
-			public void setOutboundCalls(String outboundCalls) {
-				this.outboundCalls = outboundCalls;
-			}
-
-			public String getOutboundCallsAnswered() {
-				return this.outboundCallsAnswered;
-			}
-
-			public void setOutboundCallsAnswered(String outboundCallsAnswered) {
-				this.outboundCallsAnswered = outboundCallsAnswered;
-			}
-
-			public String getOutboundCallsAnsweredRate() {
-				return this.outboundCallsAnsweredRate;
-			}
-
-			public void setOutboundCallsAnsweredRate(String outboundCallsAnsweredRate) {
-				this.outboundCallsAnsweredRate = outboundCallsAnsweredRate;
-			}
-
-			public String getOutboundDialingTime() {
-				return this.outboundDialingTime;
-			}
-
-			public void setOutboundDialingTime(String outboundDialingTime) {
-				this.outboundDialingTime = outboundDialingTime;
-			}
-
-			public String getOutboundTalkTime() {
-				return this.outboundTalkTime;
-			}
-
-			public void setOutboundTalkTime(String outboundTalkTime) {
-				this.outboundTalkTime = outboundTalkTime;
-			}
-
-			public String getInboundSatisfactionSurvey() {
-				return this.inboundSatisfactionSurvey;
-			}
-
-			public void setInboundSatisfactionSurvey(String inboundSatisfactionSurvey) {
-				this.inboundSatisfactionSurvey = inboundSatisfactionSurvey;
-			}
-
-			public String getInboundSatisfactionSurveyRate() {
-				return this.inboundSatisfactionSurveyRate;
-			}
-
-			public void setInboundSatisfactionSurveyRate(String inboundSatisfactionSurveyRate) {
-				this.inboundSatisfactionSurveyRate = inboundSatisfactionSurveyRate;
-			}
-
-			public String getInboundTakeSatisfactionSurvey() {
-				return this.inboundTakeSatisfactionSurvey;
-			}
-
-			public void setInboundTakeSatisfactionSurvey(String inboundTakeSatisfactionSurvey) {
-				this.inboundTakeSatisfactionSurvey = inboundTakeSatisfactionSurvey;
-			}
-
-			public String getInboundTakeSatisfactionSurveyRate() {
-				return this.inboundTakeSatisfactionSurveyRate;
-			}
-
-			public void setInboundTakeSatisfactionSurveyRate(String inboundTakeSatisfactionSurveyRate) {
-				this.inboundTakeSatisfactionSurveyRate = inboundTakeSatisfactionSurveyRate;
-			}
-
-			public String getInboundSatisfactionRate() {
-				return this.inboundSatisfactionRate;
-			}
+			public static class Inbound {
 
-			public void setInboundSatisfactionRate(String inboundSatisfactionRate) {
-				this.inboundSatisfactionRate = inboundSatisfactionRate;
-			}
-
-			public String getInboundFeedbackSumNum() {
-				return this.inboundFeedbackSumNum;
-			}
-
-			public void setInboundFeedbackSumNum(String inboundFeedbackSumNum) {
-				this.inboundFeedbackSumNum = inboundFeedbackSumNum;
-			}
-
-			public String getOutboundSatisfactionSurvey() {
-				return this.outboundSatisfactionSurvey;
-			}
-
-			public void setOutboundSatisfactionSurvey(String outboundSatisfactionSurvey) {
-				this.outboundSatisfactionSurvey = outboundSatisfactionSurvey;
-			}
-
-			public String getOutboundSatisfactionSurveyRate() {
-				return this.outboundSatisfactionSurveyRate;
-			}
-
-			public void setOutboundSatisfactionSurveyRate(String outboundSatisfactionSurveyRate) {
-				this.outboundSatisfactionSurveyRate = outboundSatisfactionSurveyRate;
-			}
-
-			public String getOutboundTakeSatisfactionSurvey() {
-				return this.outboundTakeSatisfactionSurvey;
-			}
-
-			public void setOutboundTakeSatisfactionSurvey(String outboundTakeSatisfactionSurvey) {
-				this.outboundTakeSatisfactionSurvey = outboundTakeSatisfactionSurvey;
-			}
-
-			public String getOutboundTakeSatisfactionSurveyRate() {
-				return this.outboundTakeSatisfactionSurveyRate;
-			}
+				private Long totalTalkTime;
 
-			public void setOutboundTakeSatisfactionSurveyRate(String outboundTakeSatisfactionSurveyRate) {
-				this.outboundTakeSatisfactionSurveyRate = outboundTakeSatisfactionSurveyRate;
-			}
+				private Long maxTalkTime;
 
-			public String getOutboundSatisfactionRate() {
-				return this.outboundSatisfactionRate;
-			}
+				private Long averageTalkTime;
 
-			public void setOutboundSatisfactionRate(String outboundSatisfactionRate) {
-				this.outboundSatisfactionRate = outboundSatisfactionRate;
-			}
+				private Long totalHoldTime;
 
-			public String getOutboundFeedbackSumNum() {
-				return this.outboundFeedbackSumNum;
-			}
+				private Long maxHoldTime;
 
-			public void setOutboundFeedbackSumNum(String outboundFeedbackSumNum) {
-				this.outboundFeedbackSumNum = outboundFeedbackSumNum;
-			}
+				private Long averageHoldTime;
 
-			public List<AppraiseCountDomain> getInboundSatisfactionDetail() {
-				return this.inboundSatisfactionDetail;
-			}
+				private Long totalWorkTime;
 
-			public void setInboundSatisfactionDetail(List<AppraiseCountDomain> inboundSatisfactionDetail) {
-				this.inboundSatisfactionDetail = inboundSatisfactionDetail;
-			}
+				private Long maxWorkTime;
 
-			public List<AppraiseCountDomain> getInboundFeedbackNum() {
-				return this.inboundFeedbackNum;
-			}
+				private Long averageWorkTime;
 
-			public void setInboundFeedbackNum(List<AppraiseCountDomain> inboundFeedbackNum) {
-				this.inboundFeedbackNum = inboundFeedbackNum;
-			}
+				private Long satisfactionSurveysOffered;
 
-			public List<AppraiseCountDomain> getOutboundAppraiseNum() {
-				return this.outboundAppraiseNum;
-			}
+				private Long satisfactionSurveysResponded;
 
-			public void setOutboundAppraiseNum(List<AppraiseCountDomain> outboundAppraiseNum) {
-				this.outboundAppraiseNum = outboundAppraiseNum;
-			}
+				private Float satisfactionIndex;
 
-			public List<AppraiseCountDomain> getOutboundFeedbackNum() {
-				return this.outboundFeedbackNum;
-			}
+				private Long callsOffered;
 
-			public void setOutboundFeedbackNum(List<AppraiseCountDomain> outboundFeedbackNum) {
-				this.outboundFeedbackNum = outboundFeedbackNum;
-			}
+				private Long callsHandled;
 
-			public static class AppraiseCountDomain {
+				private Float handleRate;
 
-				private String group;
+				private Long totalRingTime;
 
-				private String subgroup;
+				private Long maxRingTime;
 
-				private String count;
+				private Long averageRingTime;
 
-				public String getGroup() {
-					return this.group;
+				public Long getTotalTalkTime() {
+					return this.totalTalkTime;
 				}
 
-				public void setGroup(String group) {
-					this.group = group;
+				public void setTotalTalkTime(Long totalTalkTime) {
+					this.totalTalkTime = totalTalkTime;
 				}
 
-				public String getSubgroup() {
-					return this.subgroup;
+				public Long getMaxTalkTime() {
+					return this.maxTalkTime;
 				}
 
-				public void setSubgroup(String subgroup) {
-					this.subgroup = subgroup;
+				public void setMaxTalkTime(Long maxTalkTime) {
+					this.maxTalkTime = maxTalkTime;
 				}
 
-				public String getCount() {
-					return this.count;
+				public Long getAverageTalkTime() {
+					return this.averageTalkTime;
 				}
 
-				public void setCount(String count) {
-					this.count = count;
+				public void setAverageTalkTime(Long averageTalkTime) {
+					this.averageTalkTime = averageTalkTime;
+				}
+
+				public Long getTotalHoldTime() {
+					return this.totalHoldTime;
+				}
+
+				public void setTotalHoldTime(Long totalHoldTime) {
+					this.totalHoldTime = totalHoldTime;
+				}
+
+				public Long getMaxHoldTime() {
+					return this.maxHoldTime;
+				}
+
+				public void setMaxHoldTime(Long maxHoldTime) {
+					this.maxHoldTime = maxHoldTime;
+				}
+
+				public Long getAverageHoldTime() {
+					return this.averageHoldTime;
+				}
+
+				public void setAverageHoldTime(Long averageHoldTime) {
+					this.averageHoldTime = averageHoldTime;
+				}
+
+				public Long getTotalWorkTime() {
+					return this.totalWorkTime;
+				}
+
+				public void setTotalWorkTime(Long totalWorkTime) {
+					this.totalWorkTime = totalWorkTime;
+				}
+
+				public Long getMaxWorkTime() {
+					return this.maxWorkTime;
+				}
+
+				public void setMaxWorkTime(Long maxWorkTime) {
+					this.maxWorkTime = maxWorkTime;
+				}
+
+				public Long getAverageWorkTime() {
+					return this.averageWorkTime;
+				}
+
+				public void setAverageWorkTime(Long averageWorkTime) {
+					this.averageWorkTime = averageWorkTime;
+				}
+
+				public Long getSatisfactionSurveysOffered() {
+					return this.satisfactionSurveysOffered;
+				}
+
+				public void setSatisfactionSurveysOffered(Long satisfactionSurveysOffered) {
+					this.satisfactionSurveysOffered = satisfactionSurveysOffered;
+				}
+
+				public Long getSatisfactionSurveysResponded() {
+					return this.satisfactionSurveysResponded;
+				}
+
+				public void setSatisfactionSurveysResponded(Long satisfactionSurveysResponded) {
+					this.satisfactionSurveysResponded = satisfactionSurveysResponded;
+				}
+
+				public Float getSatisfactionIndex() {
+					return this.satisfactionIndex;
+				}
+
+				public void setSatisfactionIndex(Float satisfactionIndex) {
+					this.satisfactionIndex = satisfactionIndex;
+				}
+
+				public Long getCallsOffered() {
+					return this.callsOffered;
+				}
+
+				public void setCallsOffered(Long callsOffered) {
+					this.callsOffered = callsOffered;
+				}
+
+				public Long getCallsHandled() {
+					return this.callsHandled;
+				}
+
+				public void setCallsHandled(Long callsHandled) {
+					this.callsHandled = callsHandled;
+				}
+
+				public Float getHandleRate() {
+					return this.handleRate;
+				}
+
+				public void setHandleRate(Float handleRate) {
+					this.handleRate = handleRate;
+				}
+
+				public Long getTotalRingTime() {
+					return this.totalRingTime;
+				}
+
+				public void setTotalRingTime(Long totalRingTime) {
+					this.totalRingTime = totalRingTime;
+				}
+
+				public Long getMaxRingTime() {
+					return this.maxRingTime;
+				}
+
+				public void setMaxRingTime(Long maxRingTime) {
+					this.maxRingTime = maxRingTime;
+				}
+
+				public Long getAverageRingTime() {
+					return this.averageRingTime;
+				}
+
+				public void setAverageRingTime(Long averageRingTime) {
+					this.averageRingTime = averageRingTime;
+				}
+			}
+
+			public static class Outbound {
+
+				private Long totalTalkTime;
+
+				private Long maxTalkTime;
+
+				private Long averageTalkTime;
+
+				private Long totalHoldTime;
+
+				private Long maxHoldTime;
+
+				private Long averageHoldTime;
+
+				private Long totalWorkTime;
+
+				private Long maxWorkTime;
+
+				private Long averageWorkTime;
+
+				private Long satisfactionSurveysOffered;
+
+				private Long satisfactionSurveysResponded;
+
+				private Float satisfactionIndex;
+
+				private Long callsDialed;
+
+				private Long callsAnswered;
+
+				private Float answerRate;
+
+				private Long totalDialingTime;
+
+				private Long totalDialingTime1;
+
+				private Long maxDialingTime;
+
+				private Long averageDialingTime;
+
+				public Long getTotalTalkTime() {
+					return this.totalTalkTime;
+				}
+
+				public void setTotalTalkTime(Long totalTalkTime) {
+					this.totalTalkTime = totalTalkTime;
+				}
+
+				public Long getMaxTalkTime() {
+					return this.maxTalkTime;
+				}
+
+				public void setMaxTalkTime(Long maxTalkTime) {
+					this.maxTalkTime = maxTalkTime;
+				}
+
+				public Long getAverageTalkTime() {
+					return this.averageTalkTime;
+				}
+
+				public void setAverageTalkTime(Long averageTalkTime) {
+					this.averageTalkTime = averageTalkTime;
+				}
+
+				public Long getTotalHoldTime() {
+					return this.totalHoldTime;
+				}
+
+				public void setTotalHoldTime(Long totalHoldTime) {
+					this.totalHoldTime = totalHoldTime;
+				}
+
+				public Long getMaxHoldTime() {
+					return this.maxHoldTime;
+				}
+
+				public void setMaxHoldTime(Long maxHoldTime) {
+					this.maxHoldTime = maxHoldTime;
+				}
+
+				public Long getAverageHoldTime() {
+					return this.averageHoldTime;
+				}
+
+				public void setAverageHoldTime(Long averageHoldTime) {
+					this.averageHoldTime = averageHoldTime;
+				}
+
+				public Long getTotalWorkTime() {
+					return this.totalWorkTime;
+				}
+
+				public void setTotalWorkTime(Long totalWorkTime) {
+					this.totalWorkTime = totalWorkTime;
+				}
+
+				public Long getMaxWorkTime() {
+					return this.maxWorkTime;
+				}
+
+				public void setMaxWorkTime(Long maxWorkTime) {
+					this.maxWorkTime = maxWorkTime;
+				}
+
+				public Long getAverageWorkTime() {
+					return this.averageWorkTime;
+				}
+
+				public void setAverageWorkTime(Long averageWorkTime) {
+					this.averageWorkTime = averageWorkTime;
+				}
+
+				public Long getSatisfactionSurveysOffered() {
+					return this.satisfactionSurveysOffered;
+				}
+
+				public void setSatisfactionSurveysOffered(Long satisfactionSurveysOffered) {
+					this.satisfactionSurveysOffered = satisfactionSurveysOffered;
+				}
+
+				public Long getSatisfactionSurveysResponded() {
+					return this.satisfactionSurveysResponded;
+				}
+
+				public void setSatisfactionSurveysResponded(Long satisfactionSurveysResponded) {
+					this.satisfactionSurveysResponded = satisfactionSurveysResponded;
+				}
+
+				public Float getSatisfactionIndex() {
+					return this.satisfactionIndex;
+				}
+
+				public void setSatisfactionIndex(Float satisfactionIndex) {
+					this.satisfactionIndex = satisfactionIndex;
+				}
+
+				public Long getCallsDialed() {
+					return this.callsDialed;
+				}
+
+				public void setCallsDialed(Long callsDialed) {
+					this.callsDialed = callsDialed;
+				}
+
+				public Long getCallsAnswered() {
+					return this.callsAnswered;
+				}
+
+				public void setCallsAnswered(Long callsAnswered) {
+					this.callsAnswered = callsAnswered;
+				}
+
+				public Float getAnswerRate() {
+					return this.answerRate;
+				}
+
+				public void setAnswerRate(Float answerRate) {
+					this.answerRate = answerRate;
+				}
+
+				public Long getTotalDialingTime() {
+					return this.totalDialingTime;
+				}
+
+				public void setTotalDialingTime(Long totalDialingTime) {
+					this.totalDialingTime = totalDialingTime;
+				}
+
+				public Long getTotalDialingTime1() {
+					return this.totalDialingTime1;
+				}
+
+				public void setTotalDialingTime1(Long totalDialingTime1) {
+					this.totalDialingTime1 = totalDialingTime1;
+				}
+
+				public Long getMaxDialingTime() {
+					return this.maxDialingTime;
+				}
+
+				public void setMaxDialingTime(Long maxDialingTime) {
+					this.maxDialingTime = maxDialingTime;
+				}
+
+				public Long getAverageDialingTime() {
+					return this.averageDialingTime;
+				}
+
+				public void setAverageDialingTime(Long averageDialingTime) {
+					this.averageDialingTime = averageDialingTime;
+				}
+			}
+
+			public static class Overall {
+
+				private Long totalTalkTime;
+
+				private Long maxTalkTime;
+
+				private Long averageTalkTime;
+
+				private Long totalHoldTime;
+
+				private Long maxHoldTime;
+
+				private Long averageHoldTime;
+
+				private Long totalWorkTime;
+
+				private Long maxWorkTime;
+
+				private Long averageWorkTime;
+
+				private Long satisfactionSurveysOffered;
+
+				private Long satisfactionSurveysResponded;
+
+				private Float satisfactionIndex;
+
+				private Long totalCalls;
+
+				public Long getTotalTalkTime() {
+					return this.totalTalkTime;
+				}
+
+				public void setTotalTalkTime(Long totalTalkTime) {
+					this.totalTalkTime = totalTalkTime;
+				}
+
+				public Long getMaxTalkTime() {
+					return this.maxTalkTime;
+				}
+
+				public void setMaxTalkTime(Long maxTalkTime) {
+					this.maxTalkTime = maxTalkTime;
+				}
+
+				public Long getAverageTalkTime() {
+					return this.averageTalkTime;
+				}
+
+				public void setAverageTalkTime(Long averageTalkTime) {
+					this.averageTalkTime = averageTalkTime;
+				}
+
+				public Long getTotalHoldTime() {
+					return this.totalHoldTime;
+				}
+
+				public void setTotalHoldTime(Long totalHoldTime) {
+					this.totalHoldTime = totalHoldTime;
+				}
+
+				public Long getMaxHoldTime() {
+					return this.maxHoldTime;
+				}
+
+				public void setMaxHoldTime(Long maxHoldTime) {
+					this.maxHoldTime = maxHoldTime;
+				}
+
+				public Long getAverageHoldTime() {
+					return this.averageHoldTime;
+				}
+
+				public void setAverageHoldTime(Long averageHoldTime) {
+					this.averageHoldTime = averageHoldTime;
+				}
+
+				public Long getTotalWorkTime() {
+					return this.totalWorkTime;
+				}
+
+				public void setTotalWorkTime(Long totalWorkTime) {
+					this.totalWorkTime = totalWorkTime;
+				}
+
+				public Long getMaxWorkTime() {
+					return this.maxWorkTime;
+				}
+
+				public void setMaxWorkTime(Long maxWorkTime) {
+					this.maxWorkTime = maxWorkTime;
+				}
+
+				public Long getAverageWorkTime() {
+					return this.averageWorkTime;
+				}
+
+				public void setAverageWorkTime(Long averageWorkTime) {
+					this.averageWorkTime = averageWorkTime;
+				}
+
+				public Long getSatisfactionSurveysOffered() {
+					return this.satisfactionSurveysOffered;
+				}
+
+				public void setSatisfactionSurveysOffered(Long satisfactionSurveysOffered) {
+					this.satisfactionSurveysOffered = satisfactionSurveysOffered;
+				}
+
+				public Long getSatisfactionSurveysResponded() {
+					return this.satisfactionSurveysResponded;
+				}
+
+				public void setSatisfactionSurveysResponded(Long satisfactionSurveysResponded) {
+					this.satisfactionSurveysResponded = satisfactionSurveysResponded;
+				}
+
+				public Float getSatisfactionIndex() {
+					return this.satisfactionIndex;
+				}
+
+				public void setSatisfactionIndex(Float satisfactionIndex) {
+					this.satisfactionIndex = satisfactionIndex;
+				}
+
+				public Long getTotalCalls() {
+					return this.totalCalls;
+				}
+
+				public void setTotalCalls(Long totalCalls) {
+					this.totalCalls = totalCalls;
 				}
 			}
 		}
