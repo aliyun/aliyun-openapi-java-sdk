@@ -14,16 +14,16 @@
 
 package com.aliyuncs.slb.transform.v20140515;
 
-import com.aliyuncs.slb.model.v20140515.ModifyLoadBalancerVPCAddressResponse;
+import com.aliyuncs.slb.model.v20140515.SetAutoRenewStatusResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class ModifyLoadBalancerVPCAddressResponseUnmarshaller {
+public class SetAutoRenewStatusResponseUnmarshaller {
 
-	public static ModifyLoadBalancerVPCAddressResponse unmarshall(ModifyLoadBalancerVPCAddressResponse modifyLoadBalancerVPCAddressResponse, UnmarshallerContext context) {
+	public static SetAutoRenewStatusResponse unmarshall(SetAutoRenewStatusResponse setAutoRenewStatusResponse, UnmarshallerContext context) {
 		
-		modifyLoadBalancerVPCAddressResponse.setRequestId(context.stringValue("ModifyLoadBalancerVPCAddressResponse.RequestId"));
+		setAutoRenewStatusResponse.setRequestId(context.stringValue("SetAutoRenewStatusResponse.RequestId"));
 	 
-	 	return modifyLoadBalancerVPCAddressResponse;
+	 	return setAutoRenewStatusResponse;
 	}
 }

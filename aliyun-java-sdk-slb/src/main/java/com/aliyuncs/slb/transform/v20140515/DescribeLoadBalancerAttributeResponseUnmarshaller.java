@@ -53,6 +53,9 @@ public class DescribeLoadBalancerAttributeResponseUnmarshaller {
 		describeLoadBalancerAttributeResponse.setSlaveZoneId(context.stringValue("DescribeLoadBalancerAttributeResponse.SlaveZoneId"));
 		describeLoadBalancerAttributeResponse.setAddressIPVersion(context.stringValue("DescribeLoadBalancerAttributeResponse.AddressIPVersion"));
 		describeLoadBalancerAttributeResponse.setCloudType(context.stringValue("DescribeLoadBalancerAttributeResponse.CloudType"));
+		describeLoadBalancerAttributeResponse.setRenewalDuration(context.integerValue("DescribeLoadBalancerAttributeResponse.RenewalDuration"));
+		describeLoadBalancerAttributeResponse.setRenewalStatus(context.stringValue("DescribeLoadBalancerAttributeResponse.RenewalStatus"));
+		describeLoadBalancerAttributeResponse.setRenewalCycUnit(context.stringValue("DescribeLoadBalancerAttributeResponse.RenewalCycUnit"));
 
 		List<String> listenerPorts = new ArrayList<String>();
 		for (int i = 0; i < context.lengthValue("DescribeLoadBalancerAttributeResponse.ListenerPorts.Length"); i++) {

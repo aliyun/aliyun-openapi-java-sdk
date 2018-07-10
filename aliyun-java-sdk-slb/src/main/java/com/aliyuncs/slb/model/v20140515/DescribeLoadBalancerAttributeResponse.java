@@ -75,6 +75,12 @@ public class DescribeLoadBalancerAttributeResponse extends AcsResponse {
 
 	private String cloudType;
 
+	private Integer renewalDuration;
+
+	private String renewalStatus;
+
+	private String renewalCycUnit;
+
 	private List<ListenerPortAndProtocal> listenerPortsAndProtocal;
 
 	private List<ListenerPortAndProtocol> listenerPortsAndProtocol;
@@ -281,6 +287,30 @@ public class DescribeLoadBalancerAttributeResponse extends AcsResponse {
 
 	public void setCloudType(String cloudType) {
 		this.cloudType = cloudType;
+	}
+
+	public Integer getRenewalDuration() {
+		return this.renewalDuration;
+	}
+
+	public void setRenewalDuration(Integer renewalDuration) {
+		this.renewalDuration = renewalDuration;
+	}
+
+	public String getRenewalStatus() {
+		return this.renewalStatus;
+	}
+
+	public void setRenewalStatus(String renewalStatus) {
+		this.renewalStatus = renewalStatus;
+	}
+
+	public String getRenewalCycUnit() {
+		return this.renewalCycUnit;
+	}
+
+	public void setRenewalCycUnit(String renewalCycUnit) {
+		this.renewalCycUnit = renewalCycUnit;
 	}
 
 	public List<ListenerPortAndProtocal> getListenerPortsAndProtocal() {

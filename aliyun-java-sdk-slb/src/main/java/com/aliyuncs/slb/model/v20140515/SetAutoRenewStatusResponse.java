@@ -15,14 +15,14 @@
 package com.aliyuncs.slb.model.v20140515;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.slb.transform.v20140515.ModifyLoadBalancerVPCAddressResponseUnmarshaller;
+import com.aliyuncs.slb.transform.v20140515.SetAutoRenewStatusResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ModifyLoadBalancerVPCAddressResponse extends AcsResponse {
+public class SetAutoRenewStatusResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -35,7 +35,7 @@ public class ModifyLoadBalancerVPCAddressResponse extends AcsResponse {
 	}
 
 	@Override
-	public ModifyLoadBalancerVPCAddressResponse getInstance(UnmarshallerContext context) {
-		return	ModifyLoadBalancerVPCAddressResponseUnmarshaller.unmarshall(this, context);
+	public SetAutoRenewStatusResponse getInstance(UnmarshallerContext context) {
+		return	SetAutoRenewStatusResponseUnmarshaller.unmarshall(this, context);
 	}
 }

@@ -20,25 +20,27 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class ModifyLoadBalancerVPCAddressRequest extends RpcAcsRequest<ModifyLoadBalancerVPCAddressResponse> {
+public class SetAutoRenewStatusRequest extends RpcAcsRequest<SetAutoRenewStatusResponse> {
 	
-	public ModifyLoadBalancerVPCAddressRequest() {
-		super("Slb", "2014-05-15", "ModifyLoadBalancerVPCAddress", "slb");
+	public SetAutoRenewStatusRequest() {
+		super("Slb", "2014-05-15", "SetAutoRenewStatus", "slb");
 	}
 
 	private String access_key_id;
 
-	private String vSwitchId;
-
 	private Long resourceOwnerId;
 
-	private String loadBalancerId;
+	private Integer renewalDuration;
 
-	private String address;
+	private String loadBalancerId;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
+
+	private String renewalStatus;
+
+	private String renewalCycUnit;
 
 	private Long ownerId;
 
@@ -55,17 +57,6 @@ public class ModifyLoadBalancerVPCAddressRequest extends RpcAcsRequest<ModifyLoa
 		}
 	}
 
-	public String getVSwitchId() {
-		return this.vSwitchId;
-	}
-
-	public void setVSwitchId(String vSwitchId) {
-		this.vSwitchId = vSwitchId;
-		if(vSwitchId != null){
-			putQueryParameter("VSwitchId", vSwitchId);
-		}
-	}
-
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
 	}
@@ -77,6 +68,17 @@ public class ModifyLoadBalancerVPCAddressRequest extends RpcAcsRequest<ModifyLoa
 		}
 	}
 
+	public Integer getRenewalDuration() {
+		return this.renewalDuration;
+	}
+
+	public void setRenewalDuration(Integer renewalDuration) {
+		this.renewalDuration = renewalDuration;
+		if(renewalDuration != null){
+			putQueryParameter("RenewalDuration", renewalDuration.toString());
+		}
+	}
+
 	public String getLoadBalancerId() {
 		return this.loadBalancerId;
 	}
@@ -85,17 +87,6 @@ public class ModifyLoadBalancerVPCAddressRequest extends RpcAcsRequest<ModifyLoa
 		this.loadBalancerId = loadBalancerId;
 		if(loadBalancerId != null){
 			putQueryParameter("LoadBalancerId", loadBalancerId);
-		}
-	}
-
-	public String getAddress() {
-		return this.address;
-	}
-
-	public void setAddress(String address) {
-		this.address = address;
-		if(address != null){
-			putQueryParameter("Address", address);
 		}
 	}
 
@@ -118,6 +109,28 @@ public class ModifyLoadBalancerVPCAddressRequest extends RpcAcsRequest<ModifyLoa
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public String getRenewalStatus() {
+		return this.renewalStatus;
+	}
+
+	public void setRenewalStatus(String renewalStatus) {
+		this.renewalStatus = renewalStatus;
+		if(renewalStatus != null){
+			putQueryParameter("RenewalStatus", renewalStatus);
+		}
+	}
+
+	public String getRenewalCycUnit() {
+		return this.renewalCycUnit;
+	}
+
+	public void setRenewalCycUnit(String renewalCycUnit) {
+		this.renewalCycUnit = renewalCycUnit;
+		if(renewalCycUnit != null){
+			putQueryParameter("RenewalCycUnit", renewalCycUnit);
 		}
 	}
 
@@ -144,8 +157,8 @@ public class ModifyLoadBalancerVPCAddressRequest extends RpcAcsRequest<ModifyLoa
 	}
 
 	@Override
-	public Class<ModifyLoadBalancerVPCAddressResponse> getResponseClass() {
-		return ModifyLoadBalancerVPCAddressResponse.class;
+	public Class<SetAutoRenewStatusResponse> getResponseClass() {
+		return SetAutoRenewStatusResponse.class;
 	}
 
 }
