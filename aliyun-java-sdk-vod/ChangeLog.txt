@@ -1,3 +1,11 @@
+2018-07-10 Version: 2.11.3
+1, Add new apis called "CreateAudit","GetAuditHistory" and "GetAuditResult" which support auditing feature.
+2, Add a new api called GetVideoInfos to bulk query video information.
+3, Add a new api called UpdateVideoInfos to update video information.
+4, Add a new api called SearchMedia to get video based on the specified filter.
+5, Add a new api called ListSnapshots to get the snapshot data.
+6, Add the field called VideoStreamList and AudioStreamList to GetMezzanineInfo api response.
+
 2018-07-03 Version: 2.11.2
 1, Add UserData as request parameter of ProduceEditingProjectVideo API
 

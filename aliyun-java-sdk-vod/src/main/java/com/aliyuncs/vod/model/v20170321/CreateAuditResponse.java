@@ -15,22 +15,16 @@
 package com.aliyuncs.vod.model.v20170321;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.vod.transform.v20170321.RefreshUploadVideoResponseUnmarshaller;
+import com.aliyuncs.vod.transform.v20170321.CreateAuditResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class RefreshUploadVideoResponse extends AcsResponse {
+public class CreateAuditResponse extends AcsResponse {
 
 	private String requestId;
-
-	private String uploadAuth;
-
-	private String uploadAddress;
-
-	private String videoId;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -40,32 +34,8 @@ public class RefreshUploadVideoResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getUploadAuth() {
-		return this.uploadAuth;
-	}
-
-	public void setUploadAuth(String uploadAuth) {
-		this.uploadAuth = uploadAuth;
-	}
-
-	public String getUploadAddress() {
-		return this.uploadAddress;
-	}
-
-	public void setUploadAddress(String uploadAddress) {
-		this.uploadAddress = uploadAddress;
-	}
-
-	public String getVideoId() {
-		return this.videoId;
-	}
-
-	public void setVideoId(String videoId) {
-		this.videoId = videoId;
-	}
-
 	@Override
-	public RefreshUploadVideoResponse getInstance(UnmarshallerContext context) {
-		return	RefreshUploadVideoResponseUnmarshaller.unmarshall(this, context);
+	public CreateAuditResponse getInstance(UnmarshallerContext context) {
+		return	CreateAuditResponseUnmarshaller.unmarshall(this, context);
 	}
 }

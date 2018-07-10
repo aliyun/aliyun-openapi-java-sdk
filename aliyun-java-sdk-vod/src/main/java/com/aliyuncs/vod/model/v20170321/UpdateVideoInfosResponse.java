@@ -14,23 +14,20 @@
 
 package com.aliyuncs.vod.model.v20170321;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.vod.transform.v20170321.RefreshUploadVideoResponseUnmarshaller;
+import com.aliyuncs.vod.transform.v20170321.UpdateVideoInfosResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class RefreshUploadVideoResponse extends AcsResponse {
+public class UpdateVideoInfosResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String uploadAuth;
-
-	private String uploadAddress;
-
-	private String videoId;
+	private List<String> nonExistVideoIds;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -40,32 +37,21 @@ public class RefreshUploadVideoResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getUploadAuth() {
-		return this.uploadAuth;
+	public List<String> getNonExistVideoIds() {
+		return this.nonExistVideoIds;
 	}
 
-	public void setUploadAuth(String uploadAuth) {
-		this.uploadAuth = uploadAuth;
-	}
-
-	public String getUploadAddress() {
-		return this.uploadAddress;
-	}
-
-	public void setUploadAddress(String uploadAddress) {
-		this.uploadAddress = uploadAddress;
-	}
-
-	public String getVideoId() {
-		return this.videoId;
-	}
-
-	public void setVideoId(String videoId) {
-		this.videoId = videoId;
+	public void setNonExistVideoIds(List<String> nonExistVideoIds) {
+		this.nonExistVideoIds = nonExistVideoIds;
 	}
 
 	@Override
-	public RefreshUploadVideoResponse getInstance(UnmarshallerContext context) {
-		return	RefreshUploadVideoResponseUnmarshaller.unmarshall(this, context);
+	public UpdateVideoInfosResponse getInstance(UnmarshallerContext context) {
+		return	UpdateVideoInfosResponseUnmarshaller.unmarshall(this, context);
+	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }

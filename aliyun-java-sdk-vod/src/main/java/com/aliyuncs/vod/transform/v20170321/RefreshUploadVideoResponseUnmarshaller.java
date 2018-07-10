@@ -25,6 +25,7 @@ public class RefreshUploadVideoResponseUnmarshaller {
 		refreshUploadVideoResponse.setRequestId(context.stringValue("RefreshUploadVideoResponse.RequestId"));
 		refreshUploadVideoResponse.setUploadAuth(context.stringValue("RefreshUploadVideoResponse.UploadAuth"));
 		refreshUploadVideoResponse.setUploadAddress(context.stringValue("RefreshUploadVideoResponse.UploadAddress"));
+		refreshUploadVideoResponse.setVideoId(context.stringValue("RefreshUploadVideoResponse.VideoId"));
 	 
 	 	return refreshUploadVideoResponse;
 	}
