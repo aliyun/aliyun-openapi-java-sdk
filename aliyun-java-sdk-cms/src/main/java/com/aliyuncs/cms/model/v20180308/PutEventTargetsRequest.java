@@ -27,6 +27,8 @@ public class PutEventTargetsRequest extends RpcAcsRequest<PutEventTargetsRespons
 		super("Cms", "2018-03-08", "PutEventTargets", "cms");
 	}
 
+	private List<WebhookParameters> webhookParameterss;
+
 	private List<ContactParameters> contactParameterss;
 
 	private List<FcParameters> fcParameterss;
@@ -34,6 +36,22 @@ public class PutEventTargetsRequest extends RpcAcsRequest<PutEventTargetsRespons
 	private String ruleName;
 
 	private List<MnsParameters> mnsParameterss;
+
+	public List<WebhookParameters> getWebhookParameterss() {
+		return this.webhookParameterss;
+	}
+
+	public void setWebhookParameterss(List<WebhookParameters> webhookParameterss) {
+		this.webhookParameterss = webhookParameterss;	
+		if (webhookParameterss != null) {
+			for (int depth1 = 0; depth1 < webhookParameterss.size(); depth1++) {
+				putQueryParameter("WebhookParameters." + (depth1 + 1) + ".Id" , webhookParameterss.get(depth1).getId());
+				putQueryParameter("WebhookParameters." + (depth1 + 1) + ".Protocol" , webhookParameterss.get(depth1).getProtocol());
+				putQueryParameter("WebhookParameters." + (depth1 + 1) + ".Url" , webhookParameterss.get(depth1).getUrl());
+				putQueryParameter("WebhookParameters." + (depth1 + 1) + ".Method" , webhookParameterss.get(depth1).getMethod());
+			}
+		}	
+	}
 
 	public List<ContactParameters> getContactParameterss() {
 		return this.contactParameterss;
@@ -90,6 +108,49 @@ public class PutEventTargetsRequest extends RpcAcsRequest<PutEventTargetsRespons
 				putQueryParameter("MnsParameters." + (depth1 + 1) + ".Queue" , mnsParameterss.get(depth1).getQueue());
 			}
 		}	
+	}
+
+	public static class WebhookParameters {
+
+		private String id;
+
+		private String protocol;
+
+		private String url;
+
+		private String method;
+
+		public String getId() {
+			return this.id;
+		}
+
+		public void setId(String id) {
+			this.id = id;
+		}
+
+		public String getProtocol() {
+			return this.protocol;
+		}
+
+		public void setProtocol(String protocol) {
+			this.protocol = protocol;
+		}
+
+		public String getUrl() {
+			return this.url;
+		}
+
+		public void setUrl(String url) {
+			this.url = url;
+		}
+
+		public String getMethod() {
+			return this.method;
+		}
+
+		public void setMethod(String method) {
+			this.method = method;
+		}
 	}
 
 	public static class ContactParameters {

@@ -14,8 +14,12 @@
 
 package com.aliyuncs.cms.transform.v20180308;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.cms.model.v20180308.DescribeEventRuleResponse;
 import com.aliyuncs.cms.model.v20180308.DescribeEventRuleResponse.Result;
+import com.aliyuncs.cms.model.v20180308.DescribeEventRuleResponse.Result.EventPattern;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -29,7 +33,33 @@ public class DescribeEventRuleResponseUnmarshaller {
 		describeEventRuleResponse.setMessage(context.stringValue("DescribeEventRuleResponse.Message"));
 
 		Result result = new Result();
-		result.setEventPattern(context.stringValue("DescribeEventRuleResponse.Result.EventPattern"));
+		result.setDescription(context.stringValue("DescribeEventRuleResponse.Result.Description"));
+		result.setName(context.stringValue("DescribeEventRuleResponse.Result.Name"));
+		result.setEventType(context.stringValue("DescribeEventRuleResponse.Result.EventType"));
+		result.setGroupId(context.stringValue("DescribeEventRuleResponse.Result.GroupId"));
+		result.setState(context.stringValue("DescribeEventRuleResponse.Result.State"));
+
+		EventPattern eventPattern = new EventPattern();
+		eventPattern.setProduct(context.stringValue("DescribeEventRuleResponse.Result.EventPattern.Product"));
+
+		List<String> nameList = new ArrayList<String>();
+		for (int i = 0; i < context.lengthValue("DescribeEventRuleResponse.Result.EventPattern.NameList.Length"); i++) {
+			nameList.add(context.stringValue("DescribeEventRuleResponse.Result.EventPattern.NameList["+ i +"]"));
+		}
+		eventPattern.setNameList(nameList);
+
+		List<String> statusList = new ArrayList<String>();
+		for (int i = 0; i < context.lengthValue("DescribeEventRuleResponse.Result.EventPattern.StatusList.Length"); i++) {
+			statusList.add(context.stringValue("DescribeEventRuleResponse.Result.EventPattern.StatusList["+ i +"]"));
+		}
+		eventPattern.setStatusList(statusList);
+
+		List<String> levelList = new ArrayList<String>();
+		for (int i = 0; i < context.lengthValue("DescribeEventRuleResponse.Result.EventPattern.LevelList.Length"); i++) {
+			levelList.add(context.stringValue("DescribeEventRuleResponse.Result.EventPattern.LevelList["+ i +"]"));
+		}
+		eventPattern.setLevelList(levelList);
+		result.setEventPattern(eventPattern);
 		describeEventRuleResponse.setResult(result);
 	 
 	 	return describeEventRuleResponse;

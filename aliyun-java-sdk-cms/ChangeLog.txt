@@ -1,3 +1,7 @@
+2018-07-10 Version: 6.0.10
+1, Add new API: EnableEventRule,DisableEventRule,DeleteEventTargets,DeleteEventRule,ListEventRules.
+2, Modify the structured parameters for API: PutEventTargets,PutEventRule,DescribeEventRule.
+
 2018-07-09 Version: 6.0.9
 1, Add new API: DescribeEventRule,ListEventTargetsByRule,PutEventRule,PutEventTargets.
 2, Add return value(Id) for NodeProcessCreate.

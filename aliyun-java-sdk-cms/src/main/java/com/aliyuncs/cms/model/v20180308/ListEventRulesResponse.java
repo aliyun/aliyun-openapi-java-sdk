@@ -16,14 +16,14 @@ package com.aliyuncs.cms.model.v20180308;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.cms.transform.v20180308.DescribeEventRuleResponseUnmarshaller;
+import com.aliyuncs.cms.transform.v20180308.ListEventRulesResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DescribeEventRuleResponse extends AcsResponse {
+public class ListEventRulesResponse extends AcsResponse {
 
 	private Boolean success;
 
@@ -33,7 +33,13 @@ public class DescribeEventRuleResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Result result;
+	private Integer total;
+
+	private Integer currentPage;
+
+	private String nextToken;
+
+	private List<EventRule> datapoints;
 
 	public Boolean getSuccess() {
 		return this.success;
@@ -67,35 +73,51 @@ public class DescribeEventRuleResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Result getResult() {
-		return this.result;
+	public Integer getTotal() {
+		return this.total;
 	}
 
-	public void setResult(Result result) {
-		this.result = result;
+	public void setTotal(Integer total) {
+		this.total = total;
 	}
 
-	public static class Result {
+	public Integer getCurrentPage() {
+		return this.currentPage;
+	}
 
-		private String description;
+	public void setCurrentPage(Integer currentPage) {
+		this.currentPage = currentPage;
+	}
+
+	public String getNextToken() {
+		return this.nextToken;
+	}
+
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
+	}
+
+	public List<EventRule> getDatapoints() {
+		return this.datapoints;
+	}
+
+	public void setDatapoints(List<EventRule> datapoints) {
+		this.datapoints = datapoints;
+	}
+
+	public static class EventRule {
 
 		private String name;
 
-		private String eventType;
-
 		private String groupId;
+
+		private String eventType;
 
 		private String state;
 
-		private EventPattern eventPattern;
+		private String description;
 
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
-		}
+		private List<EventPatternItem> eventPattern;
 
 		public String getName() {
 			return this.name;
@@ -103,14 +125,6 @@ public class DescribeEventRuleResponse extends AcsResponse {
 
 		public void setName(String name) {
 			this.name = name;
-		}
-
-		public String getEventType() {
-			return this.eventType;
-		}
-
-		public void setEventType(String eventType) {
-			this.eventType = eventType;
 		}
 
 		public String getGroupId() {
@@ -121,6 +135,14 @@ public class DescribeEventRuleResponse extends AcsResponse {
 			this.groupId = groupId;
 		}
 
+		public String getEventType() {
+			return this.eventType;
+		}
+
+		public void setEventType(String eventType) {
+			this.eventType = eventType;
+		}
+
 		public String getState() {
 			return this.state;
 		}
@@ -129,15 +151,23 @@ public class DescribeEventRuleResponse extends AcsResponse {
 			this.state = state;
 		}
 
-		public EventPattern getEventPattern() {
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public List<EventPatternItem> getEventPattern() {
 			return this.eventPattern;
 		}
 
-		public void setEventPattern(EventPattern eventPattern) {
+		public void setEventPattern(List<EventPatternItem> eventPattern) {
 			this.eventPattern = eventPattern;
 		}
 
-		public static class EventPattern {
+		public static class EventPatternItem {
 
 			private String product;
 
@@ -182,7 +212,7 @@ public class DescribeEventRuleResponse extends AcsResponse {
 	}
 
 	@Override
-	public DescribeEventRuleResponse getInstance(UnmarshallerContext context) {
-		return	DescribeEventRuleResponseUnmarshaller.unmarshall(this, context);
+	public ListEventRulesResponse getInstance(UnmarshallerContext context) {
+		return	ListEventRulesResponseUnmarshaller.unmarshall(this, context);
 	}
 }
