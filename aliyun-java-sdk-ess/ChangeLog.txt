@@ -1,3 +1,7 @@
+2018-07-11 Version: 2.2.2
+1, new function: Attach and Detach Rds instance of scalingGroup.
+
+
 2018-07-05 Version: 2.2.1
 1, new function, attach/detach load balancer of scalingGroup
 

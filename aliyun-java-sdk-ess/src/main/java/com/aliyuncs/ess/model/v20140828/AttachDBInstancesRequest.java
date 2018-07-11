@@ -21,32 +21,21 @@ import java.util.List;
  * @author auto create
  * @version 
  */
-public class ExitStandbyRequest extends RpcAcsRequest<ExitStandbyResponse> {
+public class AttachDBInstancesRequest extends RpcAcsRequest<AttachDBInstancesResponse> {
 	
-	public ExitStandbyRequest() {
-		super("Ess", "2014-08-28", "ExitStandby", "ess");
+	public AttachDBInstancesRequest() {
+		super("Ess", "2014-08-28", "AttachDBInstances", "ess");
 	}
-
-	private List<String> instanceIds;
 
 	private String resourceOwnerAccount;
 
 	private String scalingGroupId;
 
+	private Boolean forceAttach;
+
+	private List<String> dBInstances;
+
 	private Long ownerId;
-
-	public List<String> getInstanceIds() {
-		return this.instanceIds;
-	}
-
-	public void setInstanceIds(List<String> instanceIds) {
-		this.instanceIds = instanceIds;	
-		if (instanceIds != null) {
-			for (int i = 0; i < instanceIds.size(); i++) {
-				putQueryParameter("InstanceId." + (i + 1) , instanceIds.get(i));
-			}
-		}	
-	}
 
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
@@ -70,6 +59,30 @@ public class ExitStandbyRequest extends RpcAcsRequest<ExitStandbyResponse> {
 		}
 	}
 
+	public Boolean getForceAttach() {
+		return this.forceAttach;
+	}
+
+	public void setForceAttach(Boolean forceAttach) {
+		this.forceAttach = forceAttach;
+		if(forceAttach != null){
+			putQueryParameter("ForceAttach", forceAttach.toString());
+		}
+	}
+
+	public List<String> getDBInstances() {
+		return this.dBInstances;
+	}
+
+	public void setDBInstances(List<String> dBInstances) {
+		this.dBInstances = dBInstances;	
+		if (dBInstances != null) {
+			for (int i = 0; i < dBInstances.size(); i++) {
+				putQueryParameter("DBInstance." + (i + 1) , dBInstances.get(i));
+			}
+		}	
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -82,8 +95,8 @@ public class ExitStandbyRequest extends RpcAcsRequest<ExitStandbyResponse> {
 	}
 
 	@Override
-	public Class<ExitStandbyResponse> getResponseClass() {
-		return ExitStandbyResponse.class;
+	public Class<AttachDBInstancesResponse> getResponseClass() {
+		return AttachDBInstancesResponse.class;
 	}
 
 }

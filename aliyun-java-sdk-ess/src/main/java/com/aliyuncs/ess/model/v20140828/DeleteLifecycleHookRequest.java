@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeleteLifecycleHookRequest extends RpcAcsRequest<DeleteLifecycleHookResponse> {
 	
 	public DeleteLifecycleHookRequest() {
-		super("Ess", "2014-08-28", "DeleteLifecycleHook", "ESS");
+		super("Ess", "2014-08-28", "DeleteLifecycleHook", "ess");
 	}
 
 	private String lifecycleHookName;

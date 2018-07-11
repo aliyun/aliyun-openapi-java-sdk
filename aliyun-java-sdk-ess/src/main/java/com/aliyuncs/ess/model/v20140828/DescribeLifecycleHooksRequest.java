@@ -24,7 +24,7 @@ import java.util.List;
 public class DescribeLifecycleHooksRequest extends RpcAcsRequest<DescribeLifecycleHooksResponse> {
 	
 	public DescribeLifecycleHooksRequest() {
-		super("Ess", "2014-08-28", "DescribeLifecycleHooks", "ESS");
+		super("Ess", "2014-08-28", "DescribeLifecycleHooks", "ess");
 	}
 
 	private String lifecycleHookName;

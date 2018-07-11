@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeAccountAttributesRequest extends RpcAcsRequest<DescribeAccountAttributesResponse> {
 	
 	public DescribeAccountAttributesRequest() {
-		super("Ess", "2014-08-28", "DescribeAccountAttributes", "ESS");
+		super("Ess", "2014-08-28", "DescribeAccountAttributes", "ess");
 	}
 
 	private String resourceOwnerAccount;

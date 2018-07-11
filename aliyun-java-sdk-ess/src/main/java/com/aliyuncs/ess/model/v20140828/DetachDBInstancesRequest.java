@@ -21,32 +21,21 @@ import java.util.List;
  * @author auto create
  * @version 
  */
-public class ExitStandbyRequest extends RpcAcsRequest<ExitStandbyResponse> {
+public class DetachDBInstancesRequest extends RpcAcsRequest<DetachDBInstancesResponse> {
 	
-	public ExitStandbyRequest() {
-		super("Ess", "2014-08-28", "ExitStandby", "ess");
+	public DetachDBInstancesRequest() {
+		super("Ess", "2014-08-28", "DetachDBInstances", "ess");
 	}
-
-	private List<String> instanceIds;
 
 	private String resourceOwnerAccount;
 
 	private String scalingGroupId;
 
+	private List<String> dBInstances;
+
+	private Boolean forceDetach;
+
 	private Long ownerId;
-
-	public List<String> getInstanceIds() {
-		return this.instanceIds;
-	}
-
-	public void setInstanceIds(List<String> instanceIds) {
-		this.instanceIds = instanceIds;	
-		if (instanceIds != null) {
-			for (int i = 0; i < instanceIds.size(); i++) {
-				putQueryParameter("InstanceId." + (i + 1) , instanceIds.get(i));
-			}
-		}	
-	}
 
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
@@ -70,6 +59,30 @@ public class ExitStandbyRequest extends RpcAcsRequest<ExitStandbyResponse> {
 		}
 	}
 
+	public List<String> getDBInstances() {
+		return this.dBInstances;
+	}
+
+	public void setDBInstances(List<String> dBInstances) {
+		this.dBInstances = dBInstances;	
+		if (dBInstances != null) {
+			for (int i = 0; i < dBInstances.size(); i++) {
+				putQueryParameter("DBInstance." + (i + 1) , dBInstances.get(i));
+			}
+		}	
+	}
+
+	public Boolean getForceDetach() {
+		return this.forceDetach;
+	}
+
+	public void setForceDetach(Boolean forceDetach) {
+		this.forceDetach = forceDetach;
+		if(forceDetach != null){
+			putQueryParameter("ForceDetach", forceDetach.toString());
+		}
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -82,8 +95,8 @@ public class ExitStandbyRequest extends RpcAcsRequest<ExitStandbyResponse> {
 	}
 
 	@Override
-	public Class<ExitStandbyResponse> getResponseClass() {
-		return ExitStandbyResponse.class;
+	public Class<DetachDBInstancesResponse> getResponseClass() {
+		return DetachDBInstancesResponse.class;
 	}
 
 }

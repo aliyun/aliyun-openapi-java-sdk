@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifyScalingGroupRequest extends RpcAcsRequest<ModifyScalingGroupResponse> {
 	
 	public ModifyScalingGroupRequest() {
-		super("Ess", "2014-08-28", "ModifyScalingGroup", "ESS");
+		super("Ess", "2014-08-28", "ModifyScalingGroup", "ess");
 	}
 
 	private Long resourceOwnerId;

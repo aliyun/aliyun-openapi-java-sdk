@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifyAlertConfigRequest extends RpcAcsRequest<ModifyAlertConfigResponse> {
 	
 	public ModifyAlertConfigRequest() {
-		super("Ess", "2014-08-28", "ModifyAlertConfig", "ESS");
+		super("Ess", "2014-08-28", "ModifyAlertConfig", "ess");
 	}
 
 	private Integer successConfig;

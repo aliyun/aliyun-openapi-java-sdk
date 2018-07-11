@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeleteScalingConfigurationRequest extends RpcAcsRequest<DeleteScalingConfigurationResponse> {
 	
 	public DeleteScalingConfigurationRequest() {
-		super("Ess", "2014-08-28", "DeleteScalingConfiguration", "ESS");
+		super("Ess", "2014-08-28", "DeleteScalingConfiguration", "ess");
 	}
 
 	private String scalingConfigurationId;

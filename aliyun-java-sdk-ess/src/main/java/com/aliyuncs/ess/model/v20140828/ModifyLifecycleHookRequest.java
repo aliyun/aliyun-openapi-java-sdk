@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifyLifecycleHookRequest extends RpcAcsRequest<ModifyLifecycleHookResponse> {
 	
 	public ModifyLifecycleHookRequest() {
-		super("Ess", "2014-08-28", "ModifyLifecycleHook", "ESS");
+		super("Ess", "2014-08-28", "ModifyLifecycleHook", "ess");
 	}
 
 	private String defaultResult;
