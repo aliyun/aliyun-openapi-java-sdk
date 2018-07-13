@@ -67,6 +67,8 @@ public class DescribeClusterResponse extends AcsResponse {
 
 		private String securityGroupId;
 
+		private String vpcId;
+
 		private String vSwitchId;
 
 		private String volumeType;
@@ -94,6 +96,8 @@ public class DescribeClusterResponse extends AcsResponse {
 		private String imageOwnerAlias;
 
 		private String imageId;
+
+		private String location;
 
 		private List<ApplicationInfo> applications;
 
@@ -177,6 +181,14 @@ public class DescribeClusterResponse extends AcsResponse {
 
 		public void setSecurityGroupId(String securityGroupId) {
 			this.securityGroupId = securityGroupId;
+		}
+
+		public String getVpcId() {
+			return this.vpcId;
+		}
+
+		public void setVpcId(String vpcId) {
+			this.vpcId = vpcId;
 		}
 
 		public String getVSwitchId() {
@@ -289,6 +301,14 @@ public class DescribeClusterResponse extends AcsResponse {
 
 		public void setImageId(String imageId) {
 			this.imageId = imageId;
+		}
+
+		public String getLocation() {
+			return this.location;
+		}
+
+		public void setLocation(String location) {
+			this.location = location;
 		}
 
 		public List<ApplicationInfo> getApplications() {

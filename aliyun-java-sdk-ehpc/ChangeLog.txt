@@ -1,3 +1,8 @@
+2018-07-13 Version: 1.3.0
+1, New APIs for batch executing commands in cluster: InvokeShellCommand, ListCommands, etc.
+2, New APIs for HybridCluster (link E-HPC with cluster in local IDC): CreateHybridCluster, etc.
+3, New APIs for Container applications: AddContainerApp, etc.
+
 2018-05-23 Version: 1.2.0
 1, Update API version to 2018-04-12. 
 2, New APIs in this new version: StartCluster, StopCluster, RecoverCluster, StartNodes, StopNodes, ListCustomImages. Support stopping a post-paid cluster or partial nodes of a cluster to save cost.

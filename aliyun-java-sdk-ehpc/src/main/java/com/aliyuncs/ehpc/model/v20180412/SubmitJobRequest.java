@@ -32,6 +32,8 @@ public class SubmitJobRequest extends RpcAcsRequest<SubmitJobResponse> {
 
 	private String runasUserPassword;
 
+	private String postCmdLine;
+
 	private String runasUser;
 
 	private String clusterId;
@@ -44,11 +46,17 @@ public class SubmitJobRequest extends RpcAcsRequest<SubmitJobResponse> {
 
 	private String arrayRequest;
 
+	private String unzipCmd;
+
 	private String packagePath;
+
+	private String inputFileUrl;
 
 	private String name;
 
 	private String stdoutRedirectPath;
+
+	private String containerId;
 
 	public String getStderrRedirectPath() {
 		return this.stderrRedirectPath;
@@ -80,6 +88,17 @@ public class SubmitJobRequest extends RpcAcsRequest<SubmitJobResponse> {
 		this.runasUserPassword = runasUserPassword;
 		if(runasUserPassword != null){
 			putQueryParameter("RunasUserPassword", runasUserPassword);
+		}
+	}
+
+	public String getPostCmdLine() {
+		return this.postCmdLine;
+	}
+
+	public void setPostCmdLine(String postCmdLine) {
+		this.postCmdLine = postCmdLine;
+		if(postCmdLine != null){
+			putQueryParameter("PostCmdLine", postCmdLine);
 		}
 	}
 
@@ -149,6 +168,17 @@ public class SubmitJobRequest extends RpcAcsRequest<SubmitJobResponse> {
 		}
 	}
 
+	public String getUnzipCmd() {
+		return this.unzipCmd;
+	}
+
+	public void setUnzipCmd(String unzipCmd) {
+		this.unzipCmd = unzipCmd;
+		if(unzipCmd != null){
+			putQueryParameter("UnzipCmd", unzipCmd);
+		}
+	}
+
 	public String getPackagePath() {
 		return this.packagePath;
 	}
@@ -157,6 +187,17 @@ public class SubmitJobRequest extends RpcAcsRequest<SubmitJobResponse> {
 		this.packagePath = packagePath;
 		if(packagePath != null){
 			putQueryParameter("PackagePath", packagePath);
+		}
+	}
+
+	public String getInputFileUrl() {
+		return this.inputFileUrl;
+	}
+
+	public void setInputFileUrl(String inputFileUrl) {
+		this.inputFileUrl = inputFileUrl;
+		if(inputFileUrl != null){
+			putQueryParameter("InputFileUrl", inputFileUrl);
 		}
 	}
 
@@ -179,6 +220,17 @@ public class SubmitJobRequest extends RpcAcsRequest<SubmitJobResponse> {
 		this.stdoutRedirectPath = stdoutRedirectPath;
 		if(stdoutRedirectPath != null){
 			putQueryParameter("StdoutRedirectPath", stdoutRedirectPath);
+		}
+	}
+
+	public String getContainerId() {
+		return this.containerId;
+	}
+
+	public void setContainerId(String containerId) {
+		this.containerId = containerId;
+		if(containerId != null){
+			putQueryParameter("ContainerId", containerId);
 		}
 	}
 

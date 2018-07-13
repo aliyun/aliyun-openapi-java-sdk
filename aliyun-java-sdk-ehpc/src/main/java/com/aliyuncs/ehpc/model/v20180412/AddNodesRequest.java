@@ -46,6 +46,8 @@ public class AddNodesRequest extends RpcAcsRequest<AddNodesResponse> {
 
 	private String ecsChargeType;
 
+	private String instanceType;
+
 	private String computeSpotPriceLimit;
 
 	public Integer getAutoRenewPeriod() {
@@ -155,6 +157,17 @@ public class AddNodesRequest extends RpcAcsRequest<AddNodesResponse> {
 		this.ecsChargeType = ecsChargeType;
 		if(ecsChargeType != null){
 			putQueryParameter("EcsChargeType", ecsChargeType);
+		}
+	}
+
+	public String getInstanceType() {
+		return this.instanceType;
+	}
+
+	public void setInstanceType(String instanceType) {
+		this.instanceType = instanceType;
+		if(instanceType != null){
+			putQueryParameter("InstanceType", instanceType);
 		}
 	}
 

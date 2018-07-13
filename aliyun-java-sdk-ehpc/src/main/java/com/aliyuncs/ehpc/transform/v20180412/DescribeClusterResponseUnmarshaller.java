@@ -44,6 +44,7 @@ public class DescribeClusterResponseUnmarshaller {
 		clusterInfo.setSchedulerType(context.stringValue("DescribeClusterResponse.ClusterInfo.SchedulerType"));
 		clusterInfo.setCreateTime(context.stringValue("DescribeClusterResponse.ClusterInfo.CreateTime"));
 		clusterInfo.setSecurityGroupId(context.stringValue("DescribeClusterResponse.ClusterInfo.SecurityGroupId"));
+		clusterInfo.setVpcId(context.stringValue("DescribeClusterResponse.ClusterInfo.VpcId"));
 		clusterInfo.setVSwitchId(context.stringValue("DescribeClusterResponse.ClusterInfo.VSwitchId"));
 		clusterInfo.setVolumeType(context.stringValue("DescribeClusterResponse.ClusterInfo.VolumeType"));
 		clusterInfo.setVolumeId(context.stringValue("DescribeClusterResponse.ClusterInfo.VolumeId"));
@@ -58,6 +59,7 @@ public class DescribeClusterResponseUnmarshaller {
 		clusterInfo.setClientVersion(context.stringValue("DescribeClusterResponse.ClusterInfo.ClientVersion"));
 		clusterInfo.setImageOwnerAlias(context.stringValue("DescribeClusterResponse.ClusterInfo.ImageOwnerAlias"));
 		clusterInfo.setImageId(context.stringValue("DescribeClusterResponse.ClusterInfo.ImageId"));
+		clusterInfo.setLocation(context.stringValue("DescribeClusterResponse.ClusterInfo.Location"));
 
 		EcsInfo ecsInfo = new EcsInfo();
 

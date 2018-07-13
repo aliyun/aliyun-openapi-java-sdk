@@ -109,6 +109,8 @@ public class ListClustersResponse extends AcsResponse {
 
 		private String imageId;
 
+		private String location;
+
 		private Managers managers;
 
 		private Computes computes;
@@ -243,6 +245,14 @@ public class ListClustersResponse extends AcsResponse {
 
 		public void setImageId(String imageId) {
 			this.imageId = imageId;
+		}
+
+		public String getLocation() {
+			return this.location;
+		}
+
+		public void setLocation(String location) {
+			this.location = location;
 		}
 
 		public Managers getManagers() {

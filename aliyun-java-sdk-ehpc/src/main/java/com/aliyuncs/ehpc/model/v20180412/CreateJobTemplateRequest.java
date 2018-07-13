@@ -28,23 +28,23 @@ public class CreateJobTemplateRequest extends RpcAcsRequest<CreateJobTemplateRes
 
 	private String stderrRedirectPath;
 
+	private String arrayRequest;
+
+	private String packagePath;
+
 	private String variables;
 
+	private String name;
+
 	private String runasUser;
+
+	private String stdoutRedirectPath;
 
 	private Boolean reRunable;
 
 	private Integer priority;
 
 	private String commandLine;
-
-	private String arrayRequest;
-
-	private String packagePath;
-
-	private String name;
-
-	private String stdoutRedirectPath;
 
 	public String getStderrRedirectPath() {
 		return this.stderrRedirectPath;
@@ -54,6 +54,28 @@ public class CreateJobTemplateRequest extends RpcAcsRequest<CreateJobTemplateRes
 		this.stderrRedirectPath = stderrRedirectPath;
 		if(stderrRedirectPath != null){
 			putQueryParameter("StderrRedirectPath", stderrRedirectPath);
+		}
+	}
+
+	public String getArrayRequest() {
+		return this.arrayRequest;
+	}
+
+	public void setArrayRequest(String arrayRequest) {
+		this.arrayRequest = arrayRequest;
+		if(arrayRequest != null){
+			putQueryParameter("ArrayRequest", arrayRequest);
+		}
+	}
+
+	public String getPackagePath() {
+		return this.packagePath;
+	}
+
+	public void setPackagePath(String packagePath) {
+		this.packagePath = packagePath;
+		if(packagePath != null){
+			putQueryParameter("PackagePath", packagePath);
 		}
 	}
 
@@ -68,6 +90,17 @@ public class CreateJobTemplateRequest extends RpcAcsRequest<CreateJobTemplateRes
 		}
 	}
 
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
+		}
+	}
+
 	public String getRunasUser() {
 		return this.runasUser;
 	}
@@ -76,6 +109,17 @@ public class CreateJobTemplateRequest extends RpcAcsRequest<CreateJobTemplateRes
 		this.runasUser = runasUser;
 		if(runasUser != null){
 			putQueryParameter("RunasUser", runasUser);
+		}
+	}
+
+	public String getStdoutRedirectPath() {
+		return this.stdoutRedirectPath;
+	}
+
+	public void setStdoutRedirectPath(String stdoutRedirectPath) {
+		this.stdoutRedirectPath = stdoutRedirectPath;
+		if(stdoutRedirectPath != null){
+			putQueryParameter("StdoutRedirectPath", stdoutRedirectPath);
 		}
 	}
 
@@ -109,50 +153,6 @@ public class CreateJobTemplateRequest extends RpcAcsRequest<CreateJobTemplateRes
 		this.commandLine = commandLine;
 		if(commandLine != null){
 			putQueryParameter("CommandLine", commandLine);
-		}
-	}
-
-	public String getArrayRequest() {
-		return this.arrayRequest;
-	}
-
-	public void setArrayRequest(String arrayRequest) {
-		this.arrayRequest = arrayRequest;
-		if(arrayRequest != null){
-			putQueryParameter("ArrayRequest", arrayRequest);
-		}
-	}
-
-	public String getPackagePath() {
-		return this.packagePath;
-	}
-
-	public void setPackagePath(String packagePath) {
-		this.packagePath = packagePath;
-		if(packagePath != null){
-			putQueryParameter("PackagePath", packagePath);
-		}
-	}
-
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putQueryParameter("Name", name);
-		}
-	}
-
-	public String getStdoutRedirectPath() {
-		return this.stdoutRedirectPath;
-	}
-
-	public void setStdoutRedirectPath(String stdoutRedirectPath) {
-		this.stdoutRedirectPath = stdoutRedirectPath;
-		if(stdoutRedirectPath != null){
-			putQueryParameter("StdoutRedirectPath", stdoutRedirectPath);
 		}
 	}
 

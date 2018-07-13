@@ -27,22 +27,9 @@ public class AddUsersRequest extends RpcAcsRequest<AddUsersResponse> {
 		super("EHPC", "2018-04-12", "AddUsers", "ehs");
 	}
 
-	private Boolean releaseInstance;
-
 	private String clusterId;
 
 	private List<User> users;
-
-	public Boolean getReleaseInstance() {
-		return this.releaseInstance;
-	}
-
-	public void setReleaseInstance(Boolean releaseInstance) {
-		this.releaseInstance = releaseInstance;
-		if(releaseInstance != null){
-			putQueryParameter("ReleaseInstance", releaseInstance.toString());
-		}
-	}
 
 	public String getClusterId() {
 		return this.clusterId;

@@ -54,6 +54,7 @@ public class ListClustersResponseUnmarshaller {
 			clusterInfoSimple.setCreateTime(context.stringValue("ListClustersResponse.Clusters["+ i +"].CreateTime"));
 			clusterInfoSimple.setImageOwnerAlias(context.stringValue("ListClustersResponse.Clusters["+ i +"].ImageOwnerAlias"));
 			clusterInfoSimple.setImageId(context.stringValue("ListClustersResponse.Clusters["+ i +"].ImageId"));
+			clusterInfoSimple.setLocation(context.stringValue("ListClustersResponse.Clusters["+ i +"].Location"));
 
 			Managers managers = new Managers();
 			managers.setTotal(context.integerValue("ListClustersResponse.Clusters["+ i +"].Managers.Total"));
