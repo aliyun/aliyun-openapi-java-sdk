@@ -20,40 +20,23 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class CreateBackupRequest extends RpcAcsRequest<CreateBackupResponse> {
+public class DestroyDBInstanceRequest extends RpcAcsRequest<DestroyDBInstanceResponse> {
 	
-	public CreateBackupRequest() {
-		super("Rds", "2014-08-15", "CreateBackup", "rds");
+	public DestroyDBInstanceRequest() {
+		super("Rds", "2014-08-15", "DestroyDBInstance", "rds");
 	}
-
-	private String backupMethod;
 
 	private Long resourceOwnerId;
 
-	private String backupStrategy;
-
-	private String dBName;
-
 	private String resourceOwnerAccount;
+
+	private String clientToken;
 
 	private String ownerAccount;
 
 	private String dBInstanceId;
 
 	private Long ownerId;
-
-	private String backupType;
-
-	public String getBackupMethod() {
-		return this.backupMethod;
-	}
-
-	public void setBackupMethod(String backupMethod) {
-		this.backupMethod = backupMethod;
-		if(backupMethod != null){
-			putQueryParameter("BackupMethod", backupMethod);
-		}
-	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -66,28 +49,6 @@ public class CreateBackupRequest extends RpcAcsRequest<CreateBackupResponse> {
 		}
 	}
 
-	public String getBackupStrategy() {
-		return this.backupStrategy;
-	}
-
-	public void setBackupStrategy(String backupStrategy) {
-		this.backupStrategy = backupStrategy;
-		if(backupStrategy != null){
-			putQueryParameter("BackupStrategy", backupStrategy);
-		}
-	}
-
-	public String getDBName() {
-		return this.dBName;
-	}
-
-	public void setDBName(String dBName) {
-		this.dBName = dBName;
-		if(dBName != null){
-			putQueryParameter("DBName", dBName);
-		}
-	}
-
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
 	}
@@ -96,6 +57,17 @@ public class CreateBackupRequest extends RpcAcsRequest<CreateBackupResponse> {
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
 		}
 	}
 
@@ -132,20 +104,9 @@ public class CreateBackupRequest extends RpcAcsRequest<CreateBackupResponse> {
 		}
 	}
 
-	public String getBackupType() {
-		return this.backupType;
-	}
-
-	public void setBackupType(String backupType) {
-		this.backupType = backupType;
-		if(backupType != null){
-			putQueryParameter("BackupType", backupType);
-		}
-	}
-
 	@Override
-	public Class<CreateBackupResponse> getResponseClass() {
-		return CreateBackupResponse.class;
+	public Class<DestroyDBInstanceResponse> getResponseClass() {
+		return DestroyDBInstanceResponse.class;
 	}
 
 }

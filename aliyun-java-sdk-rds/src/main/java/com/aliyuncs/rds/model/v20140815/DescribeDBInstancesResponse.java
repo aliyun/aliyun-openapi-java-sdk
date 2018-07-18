@@ -91,6 +91,8 @@ public class DescribeDBInstancesResponse extends AcsResponse {
 
 		private String expireTime;
 
+		private String destroyTime;
+
 		private String dBInstanceStatus;
 
 		private String engine;
@@ -100,6 +102,10 @@ public class DescribeDBInstancesResponse extends AcsResponse {
 		private String connectionMode;
 
 		private String lockMode;
+
+		private String category;
+
+		private String dBInstanceStorageType;
 
 		private String dBInstanceClass;
 
@@ -189,6 +195,14 @@ public class DescribeDBInstancesResponse extends AcsResponse {
 			this.expireTime = expireTime;
 		}
 
+		public String getDestroyTime() {
+			return this.destroyTime;
+		}
+
+		public void setDestroyTime(String destroyTime) {
+			this.destroyTime = destroyTime;
+		}
+
 		public String getDBInstanceStatus() {
 			return this.dBInstanceStatus;
 		}
@@ -227,6 +241,22 @@ public class DescribeDBInstancesResponse extends AcsResponse {
 
 		public void setLockMode(String lockMode) {
 			this.lockMode = lockMode;
+		}
+
+		public String getCategory() {
+			return this.category;
+		}
+
+		public void setCategory(String category) {
+			this.category = category;
+		}
+
+		public String getDBInstanceStorageType() {
+			return this.dBInstanceStorageType;
+		}
+
+		public void setDBInstanceStorageType(String dBInstanceStorageType) {
+			this.dBInstanceStorageType = dBInstanceStorageType;
 		}
 
 		public String getDBInstanceClass() {

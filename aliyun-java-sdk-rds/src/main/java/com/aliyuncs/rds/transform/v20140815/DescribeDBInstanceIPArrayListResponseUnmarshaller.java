@@ -33,6 +33,7 @@ public class DescribeDBInstanceIPArrayListResponseUnmarshaller {
 			DBInstanceIPArray dBInstanceIPArray = new DBInstanceIPArray();
 			dBInstanceIPArray.setDBInstanceIPArrayName(context.stringValue("DescribeDBInstanceIPArrayListResponse.Items["+ i +"].DBInstanceIPArrayName"));
 			dBInstanceIPArray.setDBInstanceIPArrayAttribute(context.stringValue("DescribeDBInstanceIPArrayListResponse.Items["+ i +"].DBInstanceIPArrayAttribute"));
+			dBInstanceIPArray.setSecurityIPType(context.stringValue("DescribeDBInstanceIPArrayListResponse.Items["+ i +"].SecurityIPType"));
 			dBInstanceIPArray.setSecurityIPList(context.stringValue("DescribeDBInstanceIPArrayListResponse.Items["+ i +"].SecurityIPList"));
 			dBInstanceIPArray.setWhitelistNetworkType(context.stringValue("DescribeDBInstanceIPArrayListResponse.Items["+ i +"].WhitelistNetworkType"));
 

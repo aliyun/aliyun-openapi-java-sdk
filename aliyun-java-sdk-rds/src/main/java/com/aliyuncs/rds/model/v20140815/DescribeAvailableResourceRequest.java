@@ -20,40 +20,31 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class CreateBackupRequest extends RpcAcsRequest<CreateBackupResponse> {
+public class DescribeAvailableResourceRequest extends RpcAcsRequest<DescribeAvailableResourceResponse> {
 	
-	public CreateBackupRequest() {
-		super("Rds", "2014-08-15", "CreateBackup", "rds");
+	public DescribeAvailableResourceRequest() {
+		super("Rds", "2014-08-15", "DescribeAvailableResource", "rds");
 	}
 
-	private String backupMethod;
-
 	private Long resourceOwnerId;
-
-	private String backupStrategy;
-
-	private String dBName;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
-	private String dBInstanceId;
+	private String engineVersion;
 
 	private Long ownerId;
 
-	private String backupType;
+	private String engine;
 
-	public String getBackupMethod() {
-		return this.backupMethod;
-	}
+	private String zoneId;
 
-	public void setBackupMethod(String backupMethod) {
-		this.backupMethod = backupMethod;
-		if(backupMethod != null){
-			putQueryParameter("BackupMethod", backupMethod);
-		}
-	}
+	private String dBInstanceId;
+
+	private String instanceChargeType;
+
+	private String orderType;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -63,28 +54,6 @@ public class CreateBackupRequest extends RpcAcsRequest<CreateBackupResponse> {
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getBackupStrategy() {
-		return this.backupStrategy;
-	}
-
-	public void setBackupStrategy(String backupStrategy) {
-		this.backupStrategy = backupStrategy;
-		if(backupStrategy != null){
-			putQueryParameter("BackupStrategy", backupStrategy);
-		}
-	}
-
-	public String getDBName() {
-		return this.dBName;
-	}
-
-	public void setDBName(String dBName) {
-		this.dBName = dBName;
-		if(dBName != null){
-			putQueryParameter("DBName", dBName);
 		}
 	}
 
@@ -110,14 +79,14 @@ public class CreateBackupRequest extends RpcAcsRequest<CreateBackupResponse> {
 		}
 	}
 
-	public String getDBInstanceId() {
-		return this.dBInstanceId;
+	public String getEngineVersion() {
+		return this.engineVersion;
 	}
 
-	public void setDBInstanceId(String dBInstanceId) {
-		this.dBInstanceId = dBInstanceId;
-		if(dBInstanceId != null){
-			putQueryParameter("DBInstanceId", dBInstanceId);
+	public void setEngineVersion(String engineVersion) {
+		this.engineVersion = engineVersion;
+		if(engineVersion != null){
+			putQueryParameter("EngineVersion", engineVersion);
 		}
 	}
 
@@ -132,20 +101,64 @@ public class CreateBackupRequest extends RpcAcsRequest<CreateBackupResponse> {
 		}
 	}
 
-	public String getBackupType() {
-		return this.backupType;
+	public String getEngine() {
+		return this.engine;
 	}
 
-	public void setBackupType(String backupType) {
-		this.backupType = backupType;
-		if(backupType != null){
-			putQueryParameter("BackupType", backupType);
+	public void setEngine(String engine) {
+		this.engine = engine;
+		if(engine != null){
+			putQueryParameter("Engine", engine);
+		}
+	}
+
+	public String getZoneId() {
+		return this.zoneId;
+	}
+
+	public void setZoneId(String zoneId) {
+		this.zoneId = zoneId;
+		if(zoneId != null){
+			putQueryParameter("ZoneId", zoneId);
+		}
+	}
+
+	public String getDBInstanceId() {
+		return this.dBInstanceId;
+	}
+
+	public void setDBInstanceId(String dBInstanceId) {
+		this.dBInstanceId = dBInstanceId;
+		if(dBInstanceId != null){
+			putQueryParameter("DBInstanceId", dBInstanceId);
+		}
+	}
+
+	public String getInstanceChargeType() {
+		return this.instanceChargeType;
+	}
+
+	public void setInstanceChargeType(String instanceChargeType) {
+		this.instanceChargeType = instanceChargeType;
+		if(instanceChargeType != null){
+			putQueryParameter("InstanceChargeType", instanceChargeType);
+		}
+	}
+
+	public String getOrderType() {
+		return this.orderType;
+	}
+
+	public void setOrderType(String orderType) {
+		this.orderType = orderType;
+		if(orderType != null){
+			putQueryParameter("OrderType", orderType);
 		}
 	}
 
 	@Override
-	public Class<CreateBackupResponse> getResponseClass() {
-		return CreateBackupResponse.class;
+	public Class<DescribeAvailableResourceResponse> getResponseClass() {
+		return DescribeAvailableResourceResponse.class;
 	}
 
 }

@@ -15,18 +15,16 @@
 package com.aliyuncs.rds.model.v20140815;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.rds.transform.v20140815.CreateBackupResponseUnmarshaller;
+import com.aliyuncs.rds.transform.v20140815.DestroyDBInstanceResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CreateBackupResponse extends AcsResponse {
+public class DestroyDBInstanceResponse extends AcsResponse {
 
 	private String requestId;
-
-	private String backupJobId;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -36,16 +34,8 @@ public class CreateBackupResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getBackupJobId() {
-		return this.backupJobId;
-	}
-
-	public void setBackupJobId(String backupJobId) {
-		this.backupJobId = backupJobId;
-	}
-
 	@Override
-	public CreateBackupResponse getInstance(UnmarshallerContext context) {
-		return	CreateBackupResponseUnmarshaller.unmarshall(this, context);
+	public DestroyDBInstanceResponse getInstance(UnmarshallerContext context) {
+		return	DestroyDBInstanceResponseUnmarshaller.unmarshall(this, context);
 	}
 }

@@ -42,11 +42,14 @@ public class DescribeDBInstancesResponseUnmarshaller {
 			dBInstance.setDBInstanceType(context.stringValue("DescribeDBInstancesResponse.Items["+ i +"].DBInstanceType"));
 			dBInstance.setRegionId(context.stringValue("DescribeDBInstancesResponse.Items["+ i +"].RegionId"));
 			dBInstance.setExpireTime(context.stringValue("DescribeDBInstancesResponse.Items["+ i +"].ExpireTime"));
+			dBInstance.setDestroyTime(context.stringValue("DescribeDBInstancesResponse.Items["+ i +"].DestroyTime"));
 			dBInstance.setDBInstanceStatus(context.stringValue("DescribeDBInstancesResponse.Items["+ i +"].DBInstanceStatus"));
 			dBInstance.setEngine(context.stringValue("DescribeDBInstancesResponse.Items["+ i +"].Engine"));
 			dBInstance.setDBInstanceNetType(context.stringValue("DescribeDBInstancesResponse.Items["+ i +"].DBInstanceNetType"));
 			dBInstance.setConnectionMode(context.stringValue("DescribeDBInstancesResponse.Items["+ i +"].ConnectionMode"));
 			dBInstance.setLockMode(context.stringValue("DescribeDBInstancesResponse.Items["+ i +"].LockMode"));
+			dBInstance.setCategory(context.stringValue("DescribeDBInstancesResponse.Items["+ i +"].Category"));
+			dBInstance.setDBInstanceStorageType(context.stringValue("DescribeDBInstancesResponse.Items["+ i +"].DBInstanceStorageType"));
 			dBInstance.setDBInstanceClass(context.stringValue("DescribeDBInstancesResponse.Items["+ i +"].DBInstanceClass"));
 			dBInstance.setInstanceNetworkType(context.stringValue("DescribeDBInstancesResponse.Items["+ i +"].InstanceNetworkType"));
 			dBInstance.setVpcCloudInstanceId(context.stringValue("DescribeDBInstancesResponse.Items["+ i +"].VpcCloudInstanceId"));

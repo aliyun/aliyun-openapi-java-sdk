@@ -40,9 +40,13 @@ public class DescribeDBInstancesRequest extends RpcAcsRequest<DescribeDBInstance
 
 	private String tag3key;
 
+	private String engineVersion;
+
 	private Integer pageNumber;
 
 	private String tag1value;
+
+	private String expired;
 
 	private String engine;
 
@@ -68,6 +72,8 @@ public class DescribeDBInstancesRequest extends RpcAcsRequest<DescribeDBInstance
 
 	private String dBInstanceType;
 
+	private String dBInstanceClass;
+
 	private String tags;
 
 	private String vSwitchId;
@@ -78,7 +84,11 @@ public class DescribeDBInstancesRequest extends RpcAcsRequest<DescribeDBInstance
 
 	private String tag2value;
 
+	private String zoneId;
+
 	private String tag4key;
+
+	private String payType;
 
 	private String instanceNetworkType;
 
@@ -159,6 +169,17 @@ public class DescribeDBInstancesRequest extends RpcAcsRequest<DescribeDBInstance
 		}
 	}
 
+	public String getEngineVersion() {
+		return this.engineVersion;
+	}
+
+	public void setEngineVersion(String engineVersion) {
+		this.engineVersion = engineVersion;
+		if(engineVersion != null){
+			putQueryParameter("EngineVersion", engineVersion);
+		}
+	}
+
 	public Integer getPageNumber() {
 		return this.pageNumber;
 	}
@@ -178,6 +199,17 @@ public class DescribeDBInstancesRequest extends RpcAcsRequest<DescribeDBInstance
 		this.tag1value = tag1value;
 		if(tag1value != null){
 			putQueryParameter("Tag.1.value", tag1value);
+		}
+	}
+
+	public String getExpired() {
+		return this.expired;
+	}
+
+	public void setExpired(String expired) {
+		this.expired = expired;
+		if(expired != null){
+			putQueryParameter("Expired", expired);
 		}
 	}
 
@@ -313,6 +345,17 @@ public class DescribeDBInstancesRequest extends RpcAcsRequest<DescribeDBInstance
 		}
 	}
 
+	public String getDBInstanceClass() {
+		return this.dBInstanceClass;
+	}
+
+	public void setDBInstanceClass(String dBInstanceClass) {
+		this.dBInstanceClass = dBInstanceClass;
+		if(dBInstanceClass != null){
+			putQueryParameter("DBInstanceClass", dBInstanceClass);
+		}
+	}
+
 	public String getTags() {
 		return this.tags;
 	}
@@ -368,6 +411,17 @@ public class DescribeDBInstancesRequest extends RpcAcsRequest<DescribeDBInstance
 		}
 	}
 
+	public String getZoneId() {
+		return this.zoneId;
+	}
+
+	public void setZoneId(String zoneId) {
+		this.zoneId = zoneId;
+		if(zoneId != null){
+			putQueryParameter("ZoneId", zoneId);
+		}
+	}
+
 	public String getTag4key() {
 		return this.tag4key;
 	}
@@ -376,6 +430,17 @@ public class DescribeDBInstancesRequest extends RpcAcsRequest<DescribeDBInstance
 		this.tag4key = tag4key;
 		if(tag4key != null){
 			putQueryParameter("Tag.4.key", tag4key);
+		}
+	}
+
+	public String getPayType() {
+		return this.payType;
+	}
+
+	public void setPayType(String payType) {
+		this.payType = payType;
+		if(payType != null){
+			putQueryParameter("PayType", payType);
 		}
 	}
 

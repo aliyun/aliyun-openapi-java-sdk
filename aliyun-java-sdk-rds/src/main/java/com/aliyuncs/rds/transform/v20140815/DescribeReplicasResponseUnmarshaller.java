@@ -47,6 +47,11 @@ public class DescribeReplicasResponseUnmarshaller {
 				items1.setDBInstanceId(context.stringValue("DescribeReplicasResponse.Replicas["+ i +"].DBInstances["+ j +"].DBInstanceId"));
 				items1.setRole(context.stringValue("DescribeReplicasResponse.Replicas["+ i +"].DBInstances["+ j +"].Role"));
 				items1.setReadWriteType(context.stringValue("DescribeReplicasResponse.Replicas["+ i +"].DBInstances["+ j +"].ReadWriteType"));
+				items1.setInstanceNetworkType(context.stringValue("DescribeReplicasResponse.Replicas["+ i +"].DBInstances["+ j +"].InstanceNetworkType"));
+				items1.setDBInstanceDescription(context.stringValue("DescribeReplicasResponse.Replicas["+ i +"].DBInstances["+ j +"].DBInstanceDescription"));
+				items1.setDBInstanceStatus(context.stringValue("DescribeReplicasResponse.Replicas["+ i +"].DBInstances["+ j +"].DBInstanceStatus"));
+				items1.setEngine(context.stringValue("DescribeReplicasResponse.Replicas["+ i +"].DBInstances["+ j +"].Engine"));
+				items1.setRegionId(context.stringValue("DescribeReplicasResponse.Replicas["+ i +"].DBInstances["+ j +"].RegionId"));
 
 				dBInstances.add(items1);
 			}

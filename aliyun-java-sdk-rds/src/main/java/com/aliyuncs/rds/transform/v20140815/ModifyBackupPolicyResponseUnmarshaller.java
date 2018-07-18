@@ -23,6 +23,11 @@ public class ModifyBackupPolicyResponseUnmarshaller {
 	public static ModifyBackupPolicyResponse unmarshall(ModifyBackupPolicyResponse modifyBackupPolicyResponse, UnmarshallerContext context) {
 		
 		modifyBackupPolicyResponse.setRequestId(context.stringValue("ModifyBackupPolicyResponse.RequestId"));
+		modifyBackupPolicyResponse.setDBInstanceID(context.stringValue("ModifyBackupPolicyResponse.DBInstanceID"));
+		modifyBackupPolicyResponse.setEnableBackupLog(context.stringValue("ModifyBackupPolicyResponse.EnableBackupLog"));
+		modifyBackupPolicyResponse.setLocalLogRetentionHours(context.integerValue("ModifyBackupPolicyResponse.LocalLogRetentionHours"));
+		modifyBackupPolicyResponse.setLocalLogRetentionSpace(context.stringValue("ModifyBackupPolicyResponse.LocalLogRetentionSpace"));
+		modifyBackupPolicyResponse.setHighSpaceUsageProtection(context.stringValue("ModifyBackupPolicyResponse.HighSpaceUsageProtection"));
 	 
 	 	return modifyBackupPolicyResponse;
 	}

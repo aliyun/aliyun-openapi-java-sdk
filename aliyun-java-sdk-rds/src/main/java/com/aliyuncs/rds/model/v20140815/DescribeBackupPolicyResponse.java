@@ -38,6 +38,20 @@ public class DescribeBackupPolicyResponse extends AcsResponse {
 
 	private Integer logBackupRetentionPeriod;
 
+	private String enableBackupLog;
+
+	private Integer localLogRetentionHours;
+
+	private String localLogRetentionSpace;
+
+	private String duplication;
+
+	private String duplicationContent;
+
+	private String highSpaceUsageProtection;
+
+	private DuplicationLocation duplicationLocation;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -92,6 +106,108 @@ public class DescribeBackupPolicyResponse extends AcsResponse {
 
 	public void setLogBackupRetentionPeriod(Integer logBackupRetentionPeriod) {
 		this.logBackupRetentionPeriod = logBackupRetentionPeriod;
+	}
+
+	public String getEnableBackupLog() {
+		return this.enableBackupLog;
+	}
+
+	public void setEnableBackupLog(String enableBackupLog) {
+		this.enableBackupLog = enableBackupLog;
+	}
+
+	public Integer getLocalLogRetentionHours() {
+		return this.localLogRetentionHours;
+	}
+
+	public void setLocalLogRetentionHours(Integer localLogRetentionHours) {
+		this.localLogRetentionHours = localLogRetentionHours;
+	}
+
+	public String getLocalLogRetentionSpace() {
+		return this.localLogRetentionSpace;
+	}
+
+	public void setLocalLogRetentionSpace(String localLogRetentionSpace) {
+		this.localLogRetentionSpace = localLogRetentionSpace;
+	}
+
+	public String getDuplication() {
+		return this.duplication;
+	}
+
+	public void setDuplication(String duplication) {
+		this.duplication = duplication;
+	}
+
+	public String getDuplicationContent() {
+		return this.duplicationContent;
+	}
+
+	public void setDuplicationContent(String duplicationContent) {
+		this.duplicationContent = duplicationContent;
+	}
+
+	public String getHighSpaceUsageProtection() {
+		return this.highSpaceUsageProtection;
+	}
+
+	public void setHighSpaceUsageProtection(String highSpaceUsageProtection) {
+		this.highSpaceUsageProtection = highSpaceUsageProtection;
+	}
+
+	public DuplicationLocation getDuplicationLocation() {
+		return this.duplicationLocation;
+	}
+
+	public void setDuplicationLocation(DuplicationLocation duplicationLocation) {
+		this.duplicationLocation = duplicationLocation;
+	}
+
+	public static class DuplicationLocation {
+
+		private String sotrage;
+
+		private Location location;
+
+		public String getSotrage() {
+			return this.sotrage;
+		}
+
+		public void setSotrage(String sotrage) {
+			this.sotrage = sotrage;
+		}
+
+		public Location getLocation() {
+			return this.location;
+		}
+
+		public void setLocation(Location location) {
+			this.location = location;
+		}
+
+		public static class Location {
+
+			private String endpoint;
+
+			private String bucket;
+
+			public String getEndpoint() {
+				return this.endpoint;
+			}
+
+			public void setEndpoint(String endpoint) {
+				this.endpoint = endpoint;
+			}
+
+			public String getBucket() {
+				return this.bucket;
+			}
+
+			public void setBucket(String bucket) {
+				this.bucket = bucket;
+			}
+		}
 	}
 
 	@Override

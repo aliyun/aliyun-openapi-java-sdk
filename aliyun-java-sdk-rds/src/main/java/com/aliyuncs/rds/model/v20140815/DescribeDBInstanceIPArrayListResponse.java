@@ -51,6 +51,8 @@ public class DescribeDBInstanceIPArrayListResponse extends AcsResponse {
 
 		private String dBInstanceIPArrayAttribute;
 
+		private String securityIPType;
+
 		private String securityIPList;
 
 		private String whitelistNetworkType;
@@ -69,6 +71,14 @@ public class DescribeDBInstanceIPArrayListResponse extends AcsResponse {
 
 		public void setDBInstanceIPArrayAttribute(String dBInstanceIPArrayAttribute) {
 			this.dBInstanceIPArrayAttribute = dBInstanceIPArrayAttribute;
+		}
+
+		public String getSecurityIPType() {
+			return this.securityIPType;
+		}
+
+		public void setSecurityIPType(String securityIPType) {
+			this.securityIPType = securityIPType;
 		}
 
 		public String getSecurityIPList() {

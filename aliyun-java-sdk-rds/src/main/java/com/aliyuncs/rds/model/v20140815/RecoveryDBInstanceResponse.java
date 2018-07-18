@@ -15,18 +15,20 @@
 package com.aliyuncs.rds.model.v20140815;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.rds.transform.v20140815.CreateBackupResponseUnmarshaller;
+import com.aliyuncs.rds.transform.v20140815.RecoveryDBInstanceResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CreateBackupResponse extends AcsResponse {
+public class RecoveryDBInstanceResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String backupJobId;
+	private String dBInstanceId;
+
+	private String orderId;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -36,16 +38,24 @@ public class CreateBackupResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getBackupJobId() {
-		return this.backupJobId;
+	public String getDBInstanceId() {
+		return this.dBInstanceId;
 	}
 
-	public void setBackupJobId(String backupJobId) {
-		this.backupJobId = backupJobId;
+	public void setDBInstanceId(String dBInstanceId) {
+		this.dBInstanceId = dBInstanceId;
+	}
+
+	public String getOrderId() {
+		return this.orderId;
+	}
+
+	public void setOrderId(String orderId) {
+		this.orderId = orderId;
 	}
 
 	@Override
-	public CreateBackupResponse getInstance(UnmarshallerContext context) {
-		return	CreateBackupResponseUnmarshaller.unmarshall(this, context);
+	public RecoveryDBInstanceResponse getInstance(UnmarshallerContext context) {
+		return	RecoveryDBInstanceResponseUnmarshaller.unmarshall(this, context);
 	}
 }

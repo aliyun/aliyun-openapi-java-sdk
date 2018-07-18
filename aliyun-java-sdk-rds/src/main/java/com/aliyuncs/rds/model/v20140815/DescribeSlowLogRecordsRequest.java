@@ -32,6 +32,8 @@ public class DescribeSlowLogRecordsRequest extends RpcAcsRequest<DescribeSlowLog
 
 	private String resourceOwnerAccount;
 
+	private String queryTimeFormat;
+
 	private String ownerAccount;
 
 	private String endTime;
@@ -78,6 +80,17 @@ public class DescribeSlowLogRecordsRequest extends RpcAcsRequest<DescribeSlowLog
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getQueryTimeFormat() {
+		return this.queryTimeFormat;
+	}
+
+	public void setQueryTimeFormat(String queryTimeFormat) {
+		this.queryTimeFormat = queryTimeFormat;
+		if(queryTimeFormat != null){
+			putQueryParameter("QueryTimeFormat", queryTimeFormat);
 		}
 	}
 

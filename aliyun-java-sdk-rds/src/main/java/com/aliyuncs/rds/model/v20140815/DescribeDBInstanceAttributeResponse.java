@@ -47,6 +47,8 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 
 	public static class DBInstanceAttribute {
 
+		private String iPType;
+
 		private String dBInstanceDiskUsed;
 
 		private String guardDBInstanceName;
@@ -161,9 +163,23 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 
 		private String connectionMode;
 
+		private String currentKernelVersion;
+
+		private String latestKernelVersion;
+
 		private String resourceGroupId;
 
+		private String readonlyInstanceSQLDelayedTime;
+
 		private List<ReadOnlyDBInstanceId> readOnlyDBInstanceIds;
+
+		public String getIPType() {
+			return this.iPType;
+		}
+
+		public void setIPType(String iPType) {
+			this.iPType = iPType;
+		}
 
 		public String getDBInstanceDiskUsed() {
 			return this.dBInstanceDiskUsed;
@@ -621,12 +637,36 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 			this.connectionMode = connectionMode;
 		}
 
+		public String getCurrentKernelVersion() {
+			return this.currentKernelVersion;
+		}
+
+		public void setCurrentKernelVersion(String currentKernelVersion) {
+			this.currentKernelVersion = currentKernelVersion;
+		}
+
+		public String getLatestKernelVersion() {
+			return this.latestKernelVersion;
+		}
+
+		public void setLatestKernelVersion(String latestKernelVersion) {
+			this.latestKernelVersion = latestKernelVersion;
+		}
+
 		public String getResourceGroupId() {
 			return this.resourceGroupId;
 		}
 
 		public void setResourceGroupId(String resourceGroupId) {
 			this.resourceGroupId = resourceGroupId;
+		}
+
+		public String getReadonlyInstanceSQLDelayedTime() {
+			return this.readonlyInstanceSQLDelayedTime;
+		}
+
+		public void setReadonlyInstanceSQLDelayedTime(String readonlyInstanceSQLDelayedTime) {
+			this.readonlyInstanceSQLDelayedTime = readonlyInstanceSQLDelayedTime;
 		}
 
 		public List<ReadOnlyDBInstanceId> getReadOnlyDBInstanceIds() {

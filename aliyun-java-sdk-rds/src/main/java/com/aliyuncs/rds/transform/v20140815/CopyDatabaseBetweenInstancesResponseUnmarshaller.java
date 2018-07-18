@@ -14,17 +14,17 @@
 
 package com.aliyuncs.rds.transform.v20140815;
 
-import com.aliyuncs.rds.model.v20140815.CreateBackupResponse;
+import com.aliyuncs.rds.model.v20140815.CopyDatabaseBetweenInstancesResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class CreateBackupResponseUnmarshaller {
+public class CopyDatabaseBetweenInstancesResponseUnmarshaller {
 
-	public static CreateBackupResponse unmarshall(CreateBackupResponse createBackupResponse, UnmarshallerContext context) {
+	public static CopyDatabaseBetweenInstancesResponse unmarshall(CopyDatabaseBetweenInstancesResponse copyDatabaseBetweenInstancesResponse, UnmarshallerContext context) {
 		
-		createBackupResponse.setRequestId(context.stringValue("CreateBackupResponse.RequestId"));
-		createBackupResponse.setBackupJobId(context.stringValue("CreateBackupResponse.BackupJobId"));
+		copyDatabaseBetweenInstancesResponse.setRequestId(context.stringValue("CopyDatabaseBetweenInstancesResponse.RequestId"));
+		copyDatabaseBetweenInstancesResponse.setDBInstanceId(context.stringValue("CopyDatabaseBetweenInstancesResponse.DBInstanceId"));
 	 
-	 	return createBackupResponse;
+	 	return copyDatabaseBetweenInstancesResponse;
 	}
 }

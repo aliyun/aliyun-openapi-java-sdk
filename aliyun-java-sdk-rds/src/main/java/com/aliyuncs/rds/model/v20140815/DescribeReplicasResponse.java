@@ -145,6 +145,16 @@ public class DescribeReplicasResponse extends AcsResponse {
 
 			private String readWriteType;
 
+			private String instanceNetworkType;
+
+			private String dBInstanceDescription;
+
+			private String dBInstanceStatus;
+
+			private String engine;
+
+			private String regionId;
+
 			public String getDBInstanceId() {
 				return this.dBInstanceId;
 			}
@@ -167,6 +177,46 @@ public class DescribeReplicasResponse extends AcsResponse {
 
 			public void setReadWriteType(String readWriteType) {
 				this.readWriteType = readWriteType;
+			}
+
+			public String getInstanceNetworkType() {
+				return this.instanceNetworkType;
+			}
+
+			public void setInstanceNetworkType(String instanceNetworkType) {
+				this.instanceNetworkType = instanceNetworkType;
+			}
+
+			public String getDBInstanceDescription() {
+				return this.dBInstanceDescription;
+			}
+
+			public void setDBInstanceDescription(String dBInstanceDescription) {
+				this.dBInstanceDescription = dBInstanceDescription;
+			}
+
+			public String getDBInstanceStatus() {
+				return this.dBInstanceStatus;
+			}
+
+			public void setDBInstanceStatus(String dBInstanceStatus) {
+				this.dBInstanceStatus = dBInstanceStatus;
+			}
+
+			public String getEngine() {
+				return this.engine;
+			}
+
+			public void setEngine(String engine) {
+				this.engine = engine;
+			}
+
+			public String getRegionId() {
+				return this.regionId;
+			}
+
+			public void setRegionId(String regionId) {
+				this.regionId = regionId;
 			}
 		}
 	}

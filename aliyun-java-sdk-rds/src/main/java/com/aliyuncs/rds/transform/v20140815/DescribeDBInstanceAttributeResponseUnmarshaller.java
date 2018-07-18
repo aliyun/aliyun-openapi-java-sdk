@@ -32,6 +32,7 @@ public class DescribeDBInstanceAttributeResponseUnmarshaller {
 		List<DBInstanceAttribute> items = new ArrayList<DBInstanceAttribute>();
 		for (int i = 0; i < context.lengthValue("DescribeDBInstanceAttributeResponse.Items.Length"); i++) {
 			DBInstanceAttribute dBInstanceAttribute = new DBInstanceAttribute();
+			dBInstanceAttribute.setIPType(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].IPType"));
 			dBInstanceAttribute.setDBInstanceDiskUsed(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].DBInstanceDiskUsed"));
 			dBInstanceAttribute.setGuardDBInstanceName(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].GuardDBInstanceName"));
 			dBInstanceAttribute.setCanTempUpgrade(context.booleanValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].CanTempUpgrade"));
@@ -89,7 +90,10 @@ public class DescribeDBInstanceAttributeResponseUnmarshaller {
 			dBInstanceAttribute.setVpcId(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].VpcId"));
 			dBInstanceAttribute.setVSwitchId(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].VSwitchId"));
 			dBInstanceAttribute.setConnectionMode(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].ConnectionMode"));
+			dBInstanceAttribute.setCurrentKernelVersion(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].CurrentKernelVersion"));
+			dBInstanceAttribute.setLatestKernelVersion(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].LatestKernelVersion"));
 			dBInstanceAttribute.setResourceGroupId(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].ResourceGroupId"));
+			dBInstanceAttribute.setReadonlyInstanceSQLDelayedTime(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].ReadonlyInstanceSQLDelayedTime"));
 
 			List<ReadOnlyDBInstanceId> readOnlyDBInstanceIds = new ArrayList<ReadOnlyDBInstanceId>();
 			for (int j = 0; j < context.lengthValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].ReadOnlyDBInstanceIds.Length"); j++) {

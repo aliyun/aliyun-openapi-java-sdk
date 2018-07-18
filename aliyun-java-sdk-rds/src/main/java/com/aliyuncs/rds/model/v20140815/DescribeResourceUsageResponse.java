@@ -38,6 +38,10 @@ public class DescribeResourceUsageResponse extends AcsResponse {
 
 	private Long backupSize;
 
+	private Long backupOssDataSize;
+
+	private Long backupOssLogSize;
+
 	private Long sQLSize;
 
 	private Long coldBackupSize;
@@ -96,6 +100,22 @@ public class DescribeResourceUsageResponse extends AcsResponse {
 
 	public void setBackupSize(Long backupSize) {
 		this.backupSize = backupSize;
+	}
+
+	public Long getBackupOssDataSize() {
+		return this.backupOssDataSize;
+	}
+
+	public void setBackupOssDataSize(Long backupOssDataSize) {
+		this.backupOssDataSize = backupOssDataSize;
+	}
+
+	public Long getBackupOssLogSize() {
+		return this.backupOssLogSize;
+	}
+
+	public void setBackupOssLogSize(Long backupOssLogSize) {
+		this.backupOssLogSize = backupOssLogSize;
 	}
 
 	public Long getSQLSize() {

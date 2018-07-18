@@ -14,17 +14,16 @@
 
 package com.aliyuncs.rds.transform.v20140815;
 
-import com.aliyuncs.rds.model.v20140815.CreateBackupResponse;
+import com.aliyuncs.rds.model.v20140815.DestroyDBInstanceResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class CreateBackupResponseUnmarshaller {
+public class DestroyDBInstanceResponseUnmarshaller {
 
-	public static CreateBackupResponse unmarshall(CreateBackupResponse createBackupResponse, UnmarshallerContext context) {
+	public static DestroyDBInstanceResponse unmarshall(DestroyDBInstanceResponse destroyDBInstanceResponse, UnmarshallerContext context) {
 		
-		createBackupResponse.setRequestId(context.stringValue("CreateBackupResponse.RequestId"));
-		createBackupResponse.setBackupJobId(context.stringValue("CreateBackupResponse.BackupJobId"));
+		destroyDBInstanceResponse.setRequestId(context.stringValue("DestroyDBInstanceResponse.RequestId"));
 	 
-	 	return createBackupResponse;
+	 	return destroyDBInstanceResponse;
 	}
 }

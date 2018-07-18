@@ -20,40 +20,21 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class CreateBackupRequest extends RpcAcsRequest<CreateBackupResponse> {
+public class ModifyReadonlyInstanceDelayReplicationTimeRequest extends RpcAcsRequest<ModifyReadonlyInstanceDelayReplicationTimeResponse> {
 	
-	public CreateBackupRequest() {
-		super("Rds", "2014-08-15", "CreateBackup", "rds");
+	public ModifyReadonlyInstanceDelayReplicationTimeRequest() {
+		super("Rds", "2014-08-15", "ModifyReadonlyInstanceDelayReplicationTime", "rds");
 	}
-
-	private String backupMethod;
 
 	private Long resourceOwnerId;
 
-	private String backupStrategy;
-
-	private String dBName;
+	private String readSQLReplicationTime;
 
 	private String resourceOwnerAccount;
-
-	private String ownerAccount;
 
 	private String dBInstanceId;
 
 	private Long ownerId;
-
-	private String backupType;
-
-	public String getBackupMethod() {
-		return this.backupMethod;
-	}
-
-	public void setBackupMethod(String backupMethod) {
-		this.backupMethod = backupMethod;
-		if(backupMethod != null){
-			putQueryParameter("BackupMethod", backupMethod);
-		}
-	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -66,25 +47,14 @@ public class CreateBackupRequest extends RpcAcsRequest<CreateBackupResponse> {
 		}
 	}
 
-	public String getBackupStrategy() {
-		return this.backupStrategy;
+	public String getReadSQLReplicationTime() {
+		return this.readSQLReplicationTime;
 	}
 
-	public void setBackupStrategy(String backupStrategy) {
-		this.backupStrategy = backupStrategy;
-		if(backupStrategy != null){
-			putQueryParameter("BackupStrategy", backupStrategy);
-		}
-	}
-
-	public String getDBName() {
-		return this.dBName;
-	}
-
-	public void setDBName(String dBName) {
-		this.dBName = dBName;
-		if(dBName != null){
-			putQueryParameter("DBName", dBName);
+	public void setReadSQLReplicationTime(String readSQLReplicationTime) {
+		this.readSQLReplicationTime = readSQLReplicationTime;
+		if(readSQLReplicationTime != null){
+			putQueryParameter("ReadSQLReplicationTime", readSQLReplicationTime);
 		}
 	}
 
@@ -96,17 +66,6 @@ public class CreateBackupRequest extends RpcAcsRequest<CreateBackupResponse> {
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
-
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		if(ownerAccount != null){
-			putQueryParameter("OwnerAccount", ownerAccount);
 		}
 	}
 
@@ -132,20 +91,9 @@ public class CreateBackupRequest extends RpcAcsRequest<CreateBackupResponse> {
 		}
 	}
 
-	public String getBackupType() {
-		return this.backupType;
-	}
-
-	public void setBackupType(String backupType) {
-		this.backupType = backupType;
-		if(backupType != null){
-			putQueryParameter("BackupType", backupType);
-		}
-	}
-
 	@Override
-	public Class<CreateBackupResponse> getResponseClass() {
-		return CreateBackupResponse.class;
+	public Class<ModifyReadonlyInstanceDelayReplicationTimeResponse> getResponseClass() {
+		return ModifyReadonlyInstanceDelayReplicationTimeResponse.class;
 	}
 
 }

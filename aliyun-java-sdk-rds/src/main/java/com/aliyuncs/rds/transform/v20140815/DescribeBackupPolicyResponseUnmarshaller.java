@@ -15,6 +15,8 @@
 package com.aliyuncs.rds.transform.v20140815;
 
 import com.aliyuncs.rds.model.v20140815.DescribeBackupPolicyResponse;
+import com.aliyuncs.rds.model.v20140815.DescribeBackupPolicyResponse.DuplicationLocation;
+import com.aliyuncs.rds.model.v20140815.DescribeBackupPolicyResponse.DuplicationLocation.Location;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -29,6 +31,21 @@ public class DescribeBackupPolicyResponseUnmarshaller {
 		describeBackupPolicyResponse.setPreferredBackupPeriod(context.stringValue("DescribeBackupPolicyResponse.PreferredBackupPeriod"));
 		describeBackupPolicyResponse.setBackupLog(context.stringValue("DescribeBackupPolicyResponse.BackupLog"));
 		describeBackupPolicyResponse.setLogBackupRetentionPeriod(context.integerValue("DescribeBackupPolicyResponse.LogBackupRetentionPeriod"));
+		describeBackupPolicyResponse.setEnableBackupLog(context.stringValue("DescribeBackupPolicyResponse.EnableBackupLog"));
+		describeBackupPolicyResponse.setLocalLogRetentionHours(context.integerValue("DescribeBackupPolicyResponse.LocalLogRetentionHours"));
+		describeBackupPolicyResponse.setLocalLogRetentionSpace(context.stringValue("DescribeBackupPolicyResponse.LocalLogRetentionSpace"));
+		describeBackupPolicyResponse.setDuplication(context.stringValue("DescribeBackupPolicyResponse.Duplication"));
+		describeBackupPolicyResponse.setDuplicationContent(context.stringValue("DescribeBackupPolicyResponse.DuplicationContent"));
+		describeBackupPolicyResponse.setHighSpaceUsageProtection(context.stringValue("DescribeBackupPolicyResponse.HighSpaceUsageProtection"));
+
+		DuplicationLocation duplicationLocation = new DuplicationLocation();
+		duplicationLocation.setSotrage(context.stringValue("DescribeBackupPolicyResponse.DuplicationLocation.Sotrage"));
+
+		Location location = new Location();
+		location.setEndpoint(context.stringValue("DescribeBackupPolicyResponse.DuplicationLocation.Location.Endpoint"));
+		location.setBucket(context.stringValue("DescribeBackupPolicyResponse.DuplicationLocation.Location.Bucket"));
+		duplicationLocation.setLocation(location);
+		describeBackupPolicyResponse.setDuplicationLocation(duplicationLocation);
 	 
 	 	return describeBackupPolicyResponse;
 	}

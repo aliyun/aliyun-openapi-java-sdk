@@ -111,6 +111,8 @@ public class DescribeSlowLogsResponse extends AcsResponse {
 
 		private Long sQLId;
 
+		private String sQLIdStr;
+
 		private String dBName;
 
 		private String sQLText;
@@ -161,6 +163,14 @@ public class DescribeSlowLogsResponse extends AcsResponse {
 
 		public void setSQLId(Long sQLId) {
 			this.sQLId = sQLId;
+		}
+
+		public String getSQLIdStr() {
+			return this.sQLIdStr;
+		}
+
+		public void setSQLIdStr(String sQLIdStr) {
+			this.sQLIdStr = sQLIdStr;
 		}
 
 		public String getDBName() {

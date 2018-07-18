@@ -32,6 +32,8 @@ public class DescribeReplicasRequest extends RpcAcsRequest<DescribeReplicasRespo
 
 	private String resourceOwnerAccount;
 
+	private Boolean attachDbInstanceData;
+
 	private String ownerAccount;
 
 	private String replicaId;
@@ -72,6 +74,17 @@ public class DescribeReplicasRequest extends RpcAcsRequest<DescribeReplicasRespo
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public Boolean getAttachDbInstanceData() {
+		return this.attachDbInstanceData;
+	}
+
+	public void setAttachDbInstanceData(Boolean attachDbInstanceData) {
+		this.attachDbInstanceData = attachDbInstanceData;
+		if(attachDbInstanceData != null){
+			putQueryParameter("AttachDbInstanceData", attachDbInstanceData.toString());
 		}
 	}
 

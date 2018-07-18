@@ -38,7 +38,7 @@ public class DescribeSlowLogRecordsResponseUnmarshaller {
 			sQLSlowRecord.setHostAddress(context.stringValue("DescribeSlowLogRecordsResponse.Items["+ i +"].HostAddress"));
 			sQLSlowRecord.setDBName(context.stringValue("DescribeSlowLogRecordsResponse.Items["+ i +"].DBName"));
 			sQLSlowRecord.setSQLText(context.stringValue("DescribeSlowLogRecordsResponse.Items["+ i +"].SQLText"));
-			sQLSlowRecord.setQueryTimes(context.longValue("DescribeSlowLogRecordsResponse.Items["+ i +"].QueryTimes"));
+			sQLSlowRecord.setQueryTimes(context.stringValue("DescribeSlowLogRecordsResponse.Items["+ i +"].QueryTimes"));
 			sQLSlowRecord.setLockTimes(context.longValue("DescribeSlowLogRecordsResponse.Items["+ i +"].LockTimes"));
 			sQLSlowRecord.setParseRowCounts(context.longValue("DescribeSlowLogRecordsResponse.Items["+ i +"].ParseRowCounts"));
 			sQLSlowRecord.setReturnRowCounts(context.longValue("DescribeSlowLogRecordsResponse.Items["+ i +"].ReturnRowCounts"));

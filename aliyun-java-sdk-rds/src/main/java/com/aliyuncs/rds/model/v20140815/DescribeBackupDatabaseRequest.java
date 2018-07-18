@@ -20,40 +20,21 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class CreateBackupRequest extends RpcAcsRequest<CreateBackupResponse> {
+public class DescribeBackupDatabaseRequest extends RpcAcsRequest<DescribeBackupDatabaseResponse> {
 	
-	public CreateBackupRequest() {
-		super("Rds", "2014-08-15", "CreateBackup", "rds");
+	public DescribeBackupDatabaseRequest() {
+		super("Rds", "2014-08-15", "DescribeBackupDatabase", "rds");
 	}
-
-	private String backupMethod;
 
 	private Long resourceOwnerId;
 
-	private String backupStrategy;
-
-	private String dBName;
-
 	private String resourceOwnerAccount;
 
-	private String ownerAccount;
+	private String backupId;
 
 	private String dBInstanceId;
 
 	private Long ownerId;
-
-	private String backupType;
-
-	public String getBackupMethod() {
-		return this.backupMethod;
-	}
-
-	public void setBackupMethod(String backupMethod) {
-		this.backupMethod = backupMethod;
-		if(backupMethod != null){
-			putQueryParameter("BackupMethod", backupMethod);
-		}
-	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -63,28 +44,6 @@ public class CreateBackupRequest extends RpcAcsRequest<CreateBackupResponse> {
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getBackupStrategy() {
-		return this.backupStrategy;
-	}
-
-	public void setBackupStrategy(String backupStrategy) {
-		this.backupStrategy = backupStrategy;
-		if(backupStrategy != null){
-			putQueryParameter("BackupStrategy", backupStrategy);
-		}
-	}
-
-	public String getDBName() {
-		return this.dBName;
-	}
-
-	public void setDBName(String dBName) {
-		this.dBName = dBName;
-		if(dBName != null){
-			putQueryParameter("DBName", dBName);
 		}
 	}
 
@@ -99,14 +58,14 @@ public class CreateBackupRequest extends RpcAcsRequest<CreateBackupResponse> {
 		}
 	}
 
-	public String getOwnerAccount() {
-		return this.ownerAccount;
+	public String getBackupId() {
+		return this.backupId;
 	}
 
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		if(ownerAccount != null){
-			putQueryParameter("OwnerAccount", ownerAccount);
+	public void setBackupId(String backupId) {
+		this.backupId = backupId;
+		if(backupId != null){
+			putQueryParameter("BackupId", backupId);
 		}
 	}
 
@@ -132,20 +91,9 @@ public class CreateBackupRequest extends RpcAcsRequest<CreateBackupResponse> {
 		}
 	}
 
-	public String getBackupType() {
-		return this.backupType;
-	}
-
-	public void setBackupType(String backupType) {
-		this.backupType = backupType;
-		if(backupType != null){
-			putQueryParameter("BackupType", backupType);
-		}
-	}
-
 	@Override
-	public Class<CreateBackupResponse> getResponseClass() {
-		return CreateBackupResponse.class;
+	public Class<DescribeBackupDatabaseResponse> getResponseClass() {
+		return DescribeBackupDatabaseResponse.class;
 	}
 
 }

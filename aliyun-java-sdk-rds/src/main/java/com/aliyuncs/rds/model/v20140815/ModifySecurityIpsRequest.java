@@ -44,9 +44,11 @@ public class ModifySecurityIpsRequest extends RpcAcsRequest<ModifySecurityIpsRes
 
 	private Long ownerId;
 
-	private String whitelistNetworkType;
+	private String whitelistNetType;
 
 	private String dBInstanceIPArrayAttribute;
+
+	private String securityIPType;
 
 	private String dBInstanceId;
 
@@ -149,14 +151,14 @@ public class ModifySecurityIpsRequest extends RpcAcsRequest<ModifySecurityIpsRes
 		}
 	}
 
-	public String getWhitelistNetworkType() {
-		return this.whitelistNetworkType;
+	public String getWhitelistNetType() {
+		return this.whitelistNetType;
 	}
 
-	public void setWhitelistNetworkType(String whitelistNetworkType) {
-		this.whitelistNetworkType = whitelistNetworkType;
-		if(whitelistNetworkType != null){
-			putQueryParameter("WhitelistNetworkType", whitelistNetworkType);
+	public void setWhitelistNetType(String whitelistNetType) {
+		this.whitelistNetType = whitelistNetType;
+		if(whitelistNetType != null){
+			putQueryParameter("WhitelistNetType", whitelistNetType);
 		}
 	}
 
@@ -168,6 +170,17 @@ public class ModifySecurityIpsRequest extends RpcAcsRequest<ModifySecurityIpsRes
 		this.dBInstanceIPArrayAttribute = dBInstanceIPArrayAttribute;
 		if(dBInstanceIPArrayAttribute != null){
 			putQueryParameter("DBInstanceIPArrayAttribute", dBInstanceIPArrayAttribute);
+		}
+	}
+
+	public String getSecurityIPType() {
+		return this.securityIPType;
+	}
+
+	public void setSecurityIPType(String securityIPType) {
+		this.securityIPType = securityIPType;
+		if(securityIPType != null){
+			putQueryParameter("SecurityIPType", securityIPType);
 		}
 	}
 

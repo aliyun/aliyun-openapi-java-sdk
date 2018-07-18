@@ -39,6 +39,7 @@ public class DescribeSlowLogsResponseUnmarshaller {
 			SQLSlowLog sQLSlowLog = new SQLSlowLog();
 			sQLSlowLog.setSlowLogId(context.longValue("DescribeSlowLogsResponse.Items["+ i +"].SlowLogId"));
 			sQLSlowLog.setSQLId(context.longValue("DescribeSlowLogsResponse.Items["+ i +"].SQLId"));
+			sQLSlowLog.setSQLIdStr(context.stringValue("DescribeSlowLogsResponse.Items["+ i +"].SQLIdStr"));
 			sQLSlowLog.setDBName(context.stringValue("DescribeSlowLogsResponse.Items["+ i +"].DBName"));
 			sQLSlowLog.setSQLText(context.stringValue("DescribeSlowLogsResponse.Items["+ i +"].SQLText"));
 			sQLSlowLog.setMySQLTotalExecutionCounts(context.longValue("DescribeSlowLogsResponse.Items["+ i +"].MySQLTotalExecutionCounts"));

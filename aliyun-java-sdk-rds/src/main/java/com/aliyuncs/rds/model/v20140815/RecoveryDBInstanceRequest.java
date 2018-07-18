@@ -20,10 +20,10 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class CloneDBInstanceRequest extends RpcAcsRequest<CloneDBInstanceResponse> {
+public class RecoveryDBInstanceRequest extends RpcAcsRequest<RecoveryDBInstanceResponse> {
 	
-	public CloneDBInstanceRequest() {
-		super("Rds", "2014-08-15", "CloneDBInstance", "rds");
+	public RecoveryDBInstanceRequest() {
+		super("Rds", "2014-08-15", "RecoveryDBInstance", "rds");
 	}
 
 	private Long resourceOwnerId;
@@ -56,9 +56,9 @@ public class CloneDBInstanceRequest extends RpcAcsRequest<CloneDBInstanceRespons
 
 	private String resourceGroupId;
 
-	private String vPCId;
+	private String targetDBInstanceId;
 
-	private String zoneId;
+	private String vPCId;
 
 	private String dBInstanceDescription;
 
@@ -233,6 +233,17 @@ public class CloneDBInstanceRequest extends RpcAcsRequest<CloneDBInstanceRespons
 		}
 	}
 
+	public String getTargetDBInstanceId() {
+		return this.targetDBInstanceId;
+	}
+
+	public void setTargetDBInstanceId(String targetDBInstanceId) {
+		this.targetDBInstanceId = targetDBInstanceId;
+		if(targetDBInstanceId != null){
+			putQueryParameter("TargetDBInstanceId", targetDBInstanceId);
+		}
+	}
+
 	public String getVPCId() {
 		return this.vPCId;
 	}
@@ -241,17 +252,6 @@ public class CloneDBInstanceRequest extends RpcAcsRequest<CloneDBInstanceRespons
 		this.vPCId = vPCId;
 		if(vPCId != null){
 			putQueryParameter("VPCId", vPCId);
-		}
-	}
-
-	public String getZoneId() {
-		return this.zoneId;
-	}
-
-	public void setZoneId(String zoneId) {
-		this.zoneId = zoneId;
-		if(zoneId != null){
-			putQueryParameter("ZoneId", zoneId);
 		}
 	}
 
@@ -300,8 +300,8 @@ public class CloneDBInstanceRequest extends RpcAcsRequest<CloneDBInstanceRespons
 	}
 
 	@Override
-	public Class<CloneDBInstanceResponse> getResponseClass() {
-		return CloneDBInstanceResponse.class;
+	public Class<RecoveryDBInstanceResponse> getResponseClass() {
+		return RecoveryDBInstanceResponse.class;
 	}
 
 }

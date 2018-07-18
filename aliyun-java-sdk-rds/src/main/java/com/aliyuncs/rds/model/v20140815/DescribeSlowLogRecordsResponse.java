@@ -93,7 +93,7 @@ public class DescribeSlowLogRecordsResponse extends AcsResponse {
 
 		private String sQLText;
 
-		private Long queryTimes;
+		private String queryTimes;
 
 		private Long lockTimes;
 
@@ -127,11 +127,11 @@ public class DescribeSlowLogRecordsResponse extends AcsResponse {
 			this.sQLText = sQLText;
 		}
 
-		public Long getQueryTimes() {
+		public String getQueryTimes() {
 			return this.queryTimes;
 		}
 
-		public void setQueryTimes(Long queryTimes) {
+		public void setQueryTimes(String queryTimes) {
 			this.queryTimes = queryTimes;
 		}
 

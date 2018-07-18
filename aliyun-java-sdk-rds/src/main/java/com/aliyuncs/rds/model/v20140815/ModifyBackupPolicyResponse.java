@@ -26,12 +26,62 @@ public class ModifyBackupPolicyResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String dBInstanceID;
+
+	private String enableBackupLog;
+
+	private Integer localLogRetentionHours;
+
+	private String localLogRetentionSpace;
+
+	private String highSpaceUsageProtection;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getDBInstanceID() {
+		return this.dBInstanceID;
+	}
+
+	public void setDBInstanceID(String dBInstanceID) {
+		this.dBInstanceID = dBInstanceID;
+	}
+
+	public String getEnableBackupLog() {
+		return this.enableBackupLog;
+	}
+
+	public void setEnableBackupLog(String enableBackupLog) {
+		this.enableBackupLog = enableBackupLog;
+	}
+
+	public Integer getLocalLogRetentionHours() {
+		return this.localLogRetentionHours;
+	}
+
+	public void setLocalLogRetentionHours(Integer localLogRetentionHours) {
+		this.localLogRetentionHours = localLogRetentionHours;
+	}
+
+	public String getLocalLogRetentionSpace() {
+		return this.localLogRetentionSpace;
+	}
+
+	public void setLocalLogRetentionSpace(String localLogRetentionSpace) {
+		this.localLogRetentionSpace = localLogRetentionSpace;
+	}
+
+	public String getHighSpaceUsageProtection() {
+		return this.highSpaceUsageProtection;
+	}
+
+	public void setHighSpaceUsageProtection(String highSpaceUsageProtection) {
+		this.highSpaceUsageProtection = highSpaceUsageProtection;
 	}
 
 	@Override

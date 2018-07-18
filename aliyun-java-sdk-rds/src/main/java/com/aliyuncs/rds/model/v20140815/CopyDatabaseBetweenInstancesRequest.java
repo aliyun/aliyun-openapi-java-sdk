@@ -20,19 +20,15 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class CloneDBInstanceRequest extends RpcAcsRequest<CloneDBInstanceResponse> {
+public class CopyDatabaseBetweenInstancesRequest extends RpcAcsRequest<CopyDatabaseBetweenInstancesResponse> {
 	
-	public CloneDBInstanceRequest() {
-		super("Rds", "2014-08-15", "CloneDBInstance", "rds");
+	public CopyDatabaseBetweenInstancesRequest() {
+		super("Rds", "2014-08-15", "CopyDatabaseBetweenInstances", "rds");
 	}
 
 	private Long resourceOwnerId;
 
 	private String restoreTime;
-
-	private String period;
-
-	private Integer dBInstanceStorage;
 
 	private String resourceOwnerAccount;
 
@@ -44,29 +40,15 @@ public class CloneDBInstanceRequest extends RpcAcsRequest<CloneDBInstanceRespons
 
 	private Long ownerId;
 
-	private String usedTime;
-
-	private String dBInstanceClass;
-
 	private String dbNames;
-
-	private String vSwitchId;
-
-	private String privateIpAddress;
 
 	private String resourceGroupId;
 
-	private String vPCId;
-
-	private String zoneId;
-
-	private String dBInstanceDescription;
+	private String targetDBInstanceId;
 
 	private String dBInstanceId;
 
 	private String payType;
-
-	private String instanceNetworkType;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -87,28 +69,6 @@ public class CloneDBInstanceRequest extends RpcAcsRequest<CloneDBInstanceRespons
 		this.restoreTime = restoreTime;
 		if(restoreTime != null){
 			putQueryParameter("RestoreTime", restoreTime);
-		}
-	}
-
-	public String getPeriod() {
-		return this.period;
-	}
-
-	public void setPeriod(String period) {
-		this.period = period;
-		if(period != null){
-			putQueryParameter("Period", period);
-		}
-	}
-
-	public Integer getDBInstanceStorage() {
-		return this.dBInstanceStorage;
-	}
-
-	public void setDBInstanceStorage(Integer dBInstanceStorage) {
-		this.dBInstanceStorage = dBInstanceStorage;
-		if(dBInstanceStorage != null){
-			putQueryParameter("DBInstanceStorage", dBInstanceStorage.toString());
 		}
 	}
 
@@ -167,28 +127,6 @@ public class CloneDBInstanceRequest extends RpcAcsRequest<CloneDBInstanceRespons
 		}
 	}
 
-	public String getUsedTime() {
-		return this.usedTime;
-	}
-
-	public void setUsedTime(String usedTime) {
-		this.usedTime = usedTime;
-		if(usedTime != null){
-			putQueryParameter("UsedTime", usedTime);
-		}
-	}
-
-	public String getDBInstanceClass() {
-		return this.dBInstanceClass;
-	}
-
-	public void setDBInstanceClass(String dBInstanceClass) {
-		this.dBInstanceClass = dBInstanceClass;
-		if(dBInstanceClass != null){
-			putQueryParameter("DBInstanceClass", dBInstanceClass);
-		}
-	}
-
 	public String getDbNames() {
 		return this.dbNames;
 	}
@@ -197,28 +135,6 @@ public class CloneDBInstanceRequest extends RpcAcsRequest<CloneDBInstanceRespons
 		this.dbNames = dbNames;
 		if(dbNames != null){
 			putQueryParameter("DbNames", dbNames);
-		}
-	}
-
-	public String getVSwitchId() {
-		return this.vSwitchId;
-	}
-
-	public void setVSwitchId(String vSwitchId) {
-		this.vSwitchId = vSwitchId;
-		if(vSwitchId != null){
-			putQueryParameter("VSwitchId", vSwitchId);
-		}
-	}
-
-	public String getPrivateIpAddress() {
-		return this.privateIpAddress;
-	}
-
-	public void setPrivateIpAddress(String privateIpAddress) {
-		this.privateIpAddress = privateIpAddress;
-		if(privateIpAddress != null){
-			putQueryParameter("PrivateIpAddress", privateIpAddress);
 		}
 	}
 
@@ -233,36 +149,14 @@ public class CloneDBInstanceRequest extends RpcAcsRequest<CloneDBInstanceRespons
 		}
 	}
 
-	public String getVPCId() {
-		return this.vPCId;
+	public String getTargetDBInstanceId() {
+		return this.targetDBInstanceId;
 	}
 
-	public void setVPCId(String vPCId) {
-		this.vPCId = vPCId;
-		if(vPCId != null){
-			putQueryParameter("VPCId", vPCId);
-		}
-	}
-
-	public String getZoneId() {
-		return this.zoneId;
-	}
-
-	public void setZoneId(String zoneId) {
-		this.zoneId = zoneId;
-		if(zoneId != null){
-			putQueryParameter("ZoneId", zoneId);
-		}
-	}
-
-	public String getDBInstanceDescription() {
-		return this.dBInstanceDescription;
-	}
-
-	public void setDBInstanceDescription(String dBInstanceDescription) {
-		this.dBInstanceDescription = dBInstanceDescription;
-		if(dBInstanceDescription != null){
-			putQueryParameter("DBInstanceDescription", dBInstanceDescription);
+	public void setTargetDBInstanceId(String targetDBInstanceId) {
+		this.targetDBInstanceId = targetDBInstanceId;
+		if(targetDBInstanceId != null){
+			putQueryParameter("TargetDBInstanceId", targetDBInstanceId);
 		}
 	}
 
@@ -288,20 +182,9 @@ public class CloneDBInstanceRequest extends RpcAcsRequest<CloneDBInstanceRespons
 		}
 	}
 
-	public String getInstanceNetworkType() {
-		return this.instanceNetworkType;
-	}
-
-	public void setInstanceNetworkType(String instanceNetworkType) {
-		this.instanceNetworkType = instanceNetworkType;
-		if(instanceNetworkType != null){
-			putQueryParameter("InstanceNetworkType", instanceNetworkType);
-		}
-	}
-
 	@Override
-	public Class<CloneDBInstanceResponse> getResponseClass() {
-		return CloneDBInstanceResponse.class;
+	public Class<CopyDatabaseBetweenInstancesResponse> getResponseClass() {
+		return CopyDatabaseBetweenInstancesResponse.class;
 	}
 
 }

@@ -36,6 +36,8 @@ public class DescribeBackupPolicyRequest extends RpcAcsRequest<DescribeBackupPol
 
 	private Long ownerId;
 
+	private String backupPolicyMode;
+
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
 	}
@@ -88,6 +90,17 @@ public class DescribeBackupPolicyRequest extends RpcAcsRequest<DescribeBackupPol
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getBackupPolicyMode() {
+		return this.backupPolicyMode;
+	}
+
+	public void setBackupPolicyMode(String backupPolicyMode) {
+		this.backupPolicyMode = backupPolicyMode;
+		if(backupPolicyMode != null){
+			putQueryParameter("BackupPolicyMode", backupPolicyMode);
 		}
 	}
 

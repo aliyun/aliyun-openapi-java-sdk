@@ -30,6 +30,8 @@ public class DescribeDBInstanceAttributeRequest extends RpcAcsRequest<DescribeDB
 
 	private Long resourceOwnerId;
 
+	private String expired;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
@@ -57,6 +59,17 @@ public class DescribeDBInstanceAttributeRequest extends RpcAcsRequest<DescribeDB
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getExpired() {
+		return this.expired;
+	}
+
+	public void setExpired(String expired) {
+		this.expired = expired;
+		if(expired != null){
+			putQueryParameter("Expired", expired);
 		}
 	}
 
