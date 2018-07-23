@@ -34,12 +34,13 @@ public class ProjectTest extends TestCase {
     @Test
     public void testAll() throws ClientException {
 
-        String projectName = "myproject1";
+        String projectName = "myproject2";
 
         //create project
         PutProjectRequest putProjectRequest = new PutProjectRequest();
         putProjectRequest.setProject(projectName);
         putProjectRequest.setServiceRole("test");
+        putProjectRequest.setType("DocStarter");
         String enginesStr = "[{\"Name\":\"CONVERT_OFFICE_FORMAT\",\"JobTtl\":100000},{\"Name\":\"PHOTO_PROCESS\",\"JobTtl\":100000}]";
         putProjectRequest.setEngines(enginesStr);
         String indexerStr = "[{\"Name\":\"FACE_GROUP\",\"Status\":\"Enable\"},{\"Name\":\"TAG\",\"Status\":\"Enable\"}]";

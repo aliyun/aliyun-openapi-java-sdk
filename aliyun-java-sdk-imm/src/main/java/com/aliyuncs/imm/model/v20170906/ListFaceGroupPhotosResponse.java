@@ -14,6 +14,7 @@
 
 package com.aliyuncs.imm.model.v20170906;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.imm.transform.v20170906.ListFaceGroupPhotosResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -26,9 +27,9 @@ public class ListFaceGroupPhotosResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String photos;
-
 	private String nextMarker;
+
+	private List<PhotosItem> photos;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -38,20 +39,43 @@ public class ListFaceGroupPhotosResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getPhotos() {
-		return this.photos;
-	}
-
-	public void setPhotos(String photos) {
-		this.photos = photos;
-	}
-
 	public String getNextMarker() {
 		return this.nextMarker;
 	}
 
 	public void setNextMarker(String nextMarker) {
 		this.nextMarker = nextMarker;
+	}
+
+	public List<PhotosItem> getPhotos() {
+		return this.photos;
+	}
+
+	public void setPhotos(List<PhotosItem> photos) {
+		this.photos = photos;
+	}
+
+	public static class PhotosItem {
+
+		private String photoUri;
+
+		private String faceId;
+
+		public String getPhotoUri() {
+			return this.photoUri;
+		}
+
+		public void setPhotoUri(String photoUri) {
+			this.photoUri = photoUri;
+		}
+
+		public String getFaceId() {
+			return this.faceId;
+		}
+
+		public void setFaceId(String faceId) {
+			this.faceId = faceId;
+		}
 	}
 
 	@Override

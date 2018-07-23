@@ -1,3 +1,6 @@
+2018-07-23 Version: 1.7.1
+1, CreateOfficeConversionTask add two fields: TgtFilePrefix and TgtFileSuffix, for setting up the definition of the converted object name.
+
 2018-07-04 Version: 1.7.0
 1, Add new function getFaceDetail
 

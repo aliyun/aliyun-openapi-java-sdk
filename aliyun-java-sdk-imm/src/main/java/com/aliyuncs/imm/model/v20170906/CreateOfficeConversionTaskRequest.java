@@ -44,6 +44,8 @@ public class CreateOfficeConversionTaskRequest extends RpcAcsRequest<CreateOffic
 
 	private Long endPage;
 
+	private String tgtFileSuffix;
+
 	private Boolean sheetOnePage;
 
 	private String password;
@@ -55,6 +57,8 @@ public class CreateOfficeConversionTaskRequest extends RpcAcsRequest<CreateOffic
 	private String tgtType;
 
 	private String notifyEndpoint;
+
+	private String tgtFilePrefix;
 
 	private String srcUri;
 
@@ -159,6 +163,17 @@ public class CreateOfficeConversionTaskRequest extends RpcAcsRequest<CreateOffic
 		}
 	}
 
+	public String getTgtFileSuffix() {
+		return this.tgtFileSuffix;
+	}
+
+	public void setTgtFileSuffix(String tgtFileSuffix) {
+		this.tgtFileSuffix = tgtFileSuffix;
+		if(tgtFileSuffix != null){
+			putQueryParameter("TgtFileSuffix", tgtFileSuffix);
+		}
+	}
+
 	public Boolean getSheetOnePage() {
 		return this.sheetOnePage;
 	}
@@ -222,6 +237,17 @@ public class CreateOfficeConversionTaskRequest extends RpcAcsRequest<CreateOffic
 		this.notifyEndpoint = notifyEndpoint;
 		if(notifyEndpoint != null){
 			putQueryParameter("NotifyEndpoint", notifyEndpoint);
+		}
+	}
+
+	public String getTgtFilePrefix() {
+		return this.tgtFilePrefix;
+	}
+
+	public void setTgtFilePrefix(String tgtFilePrefix) {
+		this.tgtFilePrefix = tgtFilePrefix;
+		if(tgtFilePrefix != null){
+			putQueryParameter("TgtFilePrefix", tgtFilePrefix);
 		}
 	}
 

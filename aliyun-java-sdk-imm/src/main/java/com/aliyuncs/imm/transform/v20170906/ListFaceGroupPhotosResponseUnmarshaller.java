@@ -14,7 +14,11 @@
 
 package com.aliyuncs.imm.transform.v20170906;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.imm.model.v20170906.ListFaceGroupPhotosResponse;
+import com.aliyuncs.imm.model.v20170906.ListFaceGroupPhotosResponse.PhotosItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -23,8 +27,17 @@ public class ListFaceGroupPhotosResponseUnmarshaller {
 	public static ListFaceGroupPhotosResponse unmarshall(ListFaceGroupPhotosResponse listFaceGroupPhotosResponse, UnmarshallerContext context) {
 		
 		listFaceGroupPhotosResponse.setRequestId(context.stringValue("ListFaceGroupPhotosResponse.RequestId"));
-		listFaceGroupPhotosResponse.setPhotos(context.stringValue("ListFaceGroupPhotosResponse.Photos"));
 		listFaceGroupPhotosResponse.setNextMarker(context.stringValue("ListFaceGroupPhotosResponse.NextMarker"));
+
+		List<PhotosItem> photos = new ArrayList<PhotosItem>();
+		for (int i = 0; i < context.lengthValue("ListFaceGroupPhotosResponse.Photos.Length"); i++) {
+			PhotosItem photosItem = new PhotosItem();
+			photosItem.setPhotoUri(context.stringValue("ListFaceGroupPhotosResponse.Photos["+ i +"].PhotoUri"));
+			photosItem.setFaceId(context.stringValue("ListFaceGroupPhotosResponse.Photos["+ i +"].FaceId"));
+
+			photos.add(photosItem);
+		}
+		listFaceGroupPhotosResponse.setPhotos(photos);
 	 
 	 	return listFaceGroupPhotosResponse;
 	}
