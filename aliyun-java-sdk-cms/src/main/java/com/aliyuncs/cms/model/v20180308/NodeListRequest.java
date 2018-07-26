@@ -38,9 +38,9 @@ public class NodeListRequest extends RpcAcsRequest<NodeListResponse> {
 
 	private Long userId;
 
-	private Integer pageNumber;
-
 	private String serialNumbers;
+
+	private Integer pageNumber;
 
 	private String status;
 
@@ -110,17 +110,6 @@ public class NodeListRequest extends RpcAcsRequest<NodeListResponse> {
 		}
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
-		}
-	}
-
 	public String getSerialNumbers() {
 		return this.serialNumbers;
 	}
@@ -129,6 +118,17 @@ public class NodeListRequest extends RpcAcsRequest<NodeListResponse> {
 		this.serialNumbers = serialNumbers;
 		if(serialNumbers != null){
 			putQueryParameter("SerialNumbers", serialNumbers);
+		}
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
 		}
 	}
 

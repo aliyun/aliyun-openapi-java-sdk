@@ -26,11 +26,24 @@ public class ListEventRulesRequest extends RpcAcsRequest<ListEventRulesResponse>
 		super("Cms", "2018-03-08", "ListEventRules", "cms");
 	}
 
+	private String groupId;
+
 	private String pageSize;
 
 	private String namePrefix;
 
 	private String page;
+
+	public String getGroupId() {
+		return this.groupId;
+	}
+
+	public void setGroupId(String groupId) {
+		this.groupId = groupId;
+		if(groupId != null){
+			putQueryParameter("GroupId", groupId);
+		}
+	}
 
 	public String getPageSize() {
 		return this.pageSize;

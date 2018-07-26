@@ -15,14 +15,14 @@
 package com.aliyuncs.cms.model.v20180308;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.cms.transform.v20180308.EnableActiveAlertResponseUnmarshaller;
+import com.aliyuncs.cms.transform.v20180308.PutMetricAlarmResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class EnableActiveAlertResponse extends AcsResponse {
+public class PutMetricAlarmResponse extends AcsResponse {
 
 	private Boolean success;
 
@@ -31,6 +31,8 @@ public class EnableActiveAlertResponse extends AcsResponse {
 	private String message;
 
 	private String requestId;
+
+	private String datapoints;
 
 	public Boolean getSuccess() {
 		return this.success;
@@ -64,8 +66,16 @@ public class EnableActiveAlertResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public String getDatapoints() {
+		return this.datapoints;
+	}
+
+	public void setDatapoints(String datapoints) {
+		this.datapoints = datapoints;
+	}
+
 	@Override
-	public EnableActiveAlertResponse getInstance(UnmarshallerContext context) {
-		return	EnableActiveAlertResponseUnmarshaller.unmarshall(this, context);
+	public PutMetricAlarmResponse getInstance(UnmarshallerContext context) {
+		return	PutMetricAlarmResponseUnmarshaller.unmarshall(this, context);
 	}
 }

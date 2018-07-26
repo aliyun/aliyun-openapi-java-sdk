@@ -15,6 +15,7 @@
 package com.aliyuncs.cms.model.v20180308;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 
 /**
  * @author auto create
@@ -26,7 +27,22 @@ public class DisableEventRuleRequest extends RpcAcsRequest<DisableEventRuleRespo
 		super("Cms", "2018-03-08", "DisableEventRule", "cms");
 	}
 
+	private List<String> ruleNamess;
+
 	private String ruleName;
+
+	public List<String> getRuleNamess() {
+		return this.ruleNamess;
+	}
+
+	public void setRuleNamess(List<String> ruleNamess) {
+		this.ruleNamess = ruleNamess;	
+		if (ruleNamess != null) {
+			for (int i = 0; i < ruleNamess.size(); i++) {
+				putQueryParameter("RuleNames." + (i + 1) , ruleNamess.get(i));
+			}
+		}	
+	}
 
 	public String getRuleName() {
 		return this.ruleName;

@@ -22,6 +22,7 @@ public class EnableActiveAlertResponseUnmarshaller {
 
 	public static EnableActiveAlertResponse unmarshall(EnableActiveAlertResponse enableActiveAlertResponse, UnmarshallerContext context) {
 		
+		enableActiveAlertResponse.setRequestId(context.stringValue("EnableActiveAlertResponse.RequestId"));
 		enableActiveAlertResponse.setSuccess(context.booleanValue("EnableActiveAlertResponse.Success"));
 		enableActiveAlertResponse.setCode(context.stringValue("EnableActiveAlertResponse.Code"));
 		enableActiveAlertResponse.setMessage(context.stringValue("EnableActiveAlertResponse.Message"));

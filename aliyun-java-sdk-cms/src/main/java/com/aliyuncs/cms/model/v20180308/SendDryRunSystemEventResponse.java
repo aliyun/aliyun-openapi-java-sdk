@@ -15,30 +15,24 @@
 package com.aliyuncs.cms.model.v20180308;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.cms.transform.v20180308.EnableActiveAlertResponseUnmarshaller;
+import com.aliyuncs.cms.transform.v20180308.SendDryRunSystemEventResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class EnableActiveAlertResponse extends AcsResponse {
-
-	private Boolean success;
+public class SendDryRunSystemEventResponse extends AcsResponse {
 
 	private String code;
 
 	private String message;
 
+	private String data;
+
 	private String requestId;
 
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
+	private String success;
 
 	public String getCode() {
 		return this.code;
@@ -56,6 +50,14 @@ public class EnableActiveAlertResponse extends AcsResponse {
 		this.message = message;
 	}
 
+	public String getData() {
+		return this.data;
+	}
+
+	public void setData(String data) {
+		this.data = data;
+	}
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -64,8 +66,16 @@ public class EnableActiveAlertResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public String getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(String success) {
+		this.success = success;
+	}
+
 	@Override
-	public EnableActiveAlertResponse getInstance(UnmarshallerContext context) {
-		return	EnableActiveAlertResponseUnmarshaller.unmarshall(this, context);
+	public SendDryRunSystemEventResponse getInstance(UnmarshallerContext context) {
+		return	SendDryRunSystemEventResponseUnmarshaller.unmarshall(this, context);
 	}
 }

@@ -26,9 +26,9 @@ public class QueryMetricTopRequest extends RpcAcsRequest<QueryMetricTopResponse>
 		super("Cms", "2018-03-08", "QueryMetricTop", "cms");
 	}
 
-	private Long resourceOwnerId;
-
 	private String period;
+
+	private Long resourceOwnerId;
 
 	private String metric;
 
@@ -48,17 +48,6 @@ public class QueryMetricTopRequest extends RpcAcsRequest<QueryMetricTopResponse>
 
 	private String orderDesc;
 
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
 	public String getPeriod() {
 		return this.period;
 	}
@@ -67,6 +56,17 @@ public class QueryMetricTopRequest extends RpcAcsRequest<QueryMetricTopResponse>
 		this.period = period;
 		if(period != null){
 			putQueryParameter("Period", period);
+		}
+	}
+
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
+	}
+
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
 		}
 	}
 

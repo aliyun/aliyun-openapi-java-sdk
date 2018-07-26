@@ -32,9 +32,9 @@ public class ListMyGroupsRequest extends RpcAcsRequest<ListMyGroupsResponse> {
 
 	private Integer pageSize;
 
-	private String type;
-
 	private String keyword;
+
+	private String type;
 
 	private String groupName;
 
@@ -75,17 +75,6 @@ public class ListMyGroupsRequest extends RpcAcsRequest<ListMyGroupsResponse> {
 		}
 	}
 
-	public String getType() {
-		return this.type;
-	}
-
-	public void setType(String type) {
-		this.type = type;
-		if(type != null){
-			putQueryParameter("Type", type);
-		}
-	}
-
 	public String getKeyword() {
 		return this.keyword;
 	}
@@ -94,6 +83,17 @@ public class ListMyGroupsRequest extends RpcAcsRequest<ListMyGroupsResponse> {
 		this.keyword = keyword;
 		if(keyword != null){
 			putQueryParameter("Keyword", keyword);
+		}
+	}
+
+	public String getType() {
+		return this.type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+		if(type != null){
+			putQueryParameter("Type", type);
 		}
 	}
 
