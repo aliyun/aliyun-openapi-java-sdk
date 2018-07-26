@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifyDrdsDBPasswdRequest extends RpcAcsRequest<ModifyDrdsDBPasswdResponse> {
 	
 	public ModifyDrdsDBPasswdRequest() {
-		super("Drds", "2017-10-16", "ModifyDrdsDBPasswd");
+		super("Drds", "2017-10-16", "ModifyDrdsDBPasswd", "Drds");
 	}
 
 	private String newPasswd;

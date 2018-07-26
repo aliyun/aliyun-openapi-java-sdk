@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeReadOnlyAccountRequest extends RpcAcsRequest<DescribeReadOnlyAccountResponse> {
 	
 	public DescribeReadOnlyAccountRequest() {
-		super("Drds", "2017-10-16", "DescribeReadOnlyAccount");
+		super("Drds", "2017-10-16", "DescribeReadOnlyAccount", "Drds");
 	}
 
 	private String dbName;

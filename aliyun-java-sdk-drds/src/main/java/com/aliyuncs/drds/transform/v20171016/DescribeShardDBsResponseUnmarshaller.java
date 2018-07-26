@@ -34,6 +34,7 @@ public class DescribeShardDBsResponseUnmarshaller {
 			DbIntancePair dbIntancePair = new DbIntancePair();
 			dbIntancePair.setSubDbName(context.stringValue("DescribeShardDBsResponse.Data["+ i +"].SubDbName"));
 			dbIntancePair.setInstanceName(context.stringValue("DescribeShardDBsResponse.Data["+ i +"].InstanceName"));
+			dbIntancePair.setGroupName(context.stringValue("DescribeShardDBsResponse.Data["+ i +"].GroupName"));
 
 			data.add(dbIntancePair);
 		}

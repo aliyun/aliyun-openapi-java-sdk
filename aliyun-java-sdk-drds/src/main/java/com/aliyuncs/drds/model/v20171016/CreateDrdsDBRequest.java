@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class CreateDrdsDBRequest extends RpcAcsRequest<CreateDrdsDBResponse> {
 	
 	public CreateDrdsDBRequest() {
-		super("Drds", "2017-10-16", "CreateDrdsDB");
+		super("Drds", "2017-10-16", "CreateDrdsDB", "Drds");
 	}
 
 	private String encode;

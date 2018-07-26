@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifyRdsReadWeightRequest extends RpcAcsRequest<ModifyRdsReadWeightResponse> {
 	
 	public ModifyRdsReadWeightRequest() {
-		super("Drds", "2017-10-16", "ModifyRdsReadWeight");
+		super("Drds", "2017-10-16", "ModifyRdsReadWeight", "Drds");
 	}
 
 	private String instanceNames;

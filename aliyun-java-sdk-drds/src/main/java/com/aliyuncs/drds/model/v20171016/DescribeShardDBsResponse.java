@@ -61,6 +61,8 @@ public class DescribeShardDBsResponse extends AcsResponse {
 
 		private String instanceName;
 
+		private String groupName;
+
 		public String getSubDbName() {
 			return this.subDbName;
 		}
@@ -75,6 +77,14 @@ public class DescribeShardDBsResponse extends AcsResponse {
 
 		public void setInstanceName(String instanceName) {
 			this.instanceName = instanceName;
+		}
+
+		public String getGroupName() {
+			return this.groupName;
+		}
+
+		public void setGroupName(String groupName) {
+			this.groupName = groupName;
 		}
 	}
 

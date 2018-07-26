@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeDrdsInstanceNetInfoForInnerRequest extends RpcAcsRequest<DescribeDrdsInstanceNetInfoForInnerResponse> {
 	
 	public DescribeDrdsInstanceNetInfoForInnerRequest() {
-		super("Drds", "2017-10-16", "DescribeDrdsInstanceNetInfoForInner");
+		super("Drds", "2017-10-16", "DescribeDrdsInstanceNetInfoForInner", "Drds");
 	}
 
 	private String drdsInstanceId;

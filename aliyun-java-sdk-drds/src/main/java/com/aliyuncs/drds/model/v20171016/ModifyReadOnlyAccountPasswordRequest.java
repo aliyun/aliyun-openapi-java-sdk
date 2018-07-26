@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifyReadOnlyAccountPasswordRequest extends RpcAcsRequest<ModifyReadOnlyAccountPasswordResponse> {
 	
 	public ModifyReadOnlyAccountPasswordRequest() {
-		super("Drds", "2017-10-16", "ModifyReadOnlyAccountPassword");
+		super("Drds", "2017-10-16", "ModifyReadOnlyAccountPassword", "Drds");
 	}
 
 	private String newPasswd;

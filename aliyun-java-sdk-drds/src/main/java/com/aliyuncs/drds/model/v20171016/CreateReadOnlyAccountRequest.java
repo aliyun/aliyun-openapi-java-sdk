@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class CreateReadOnlyAccountRequest extends RpcAcsRequest<CreateReadOnlyAccountResponse> {
 	
 	public CreateReadOnlyAccountRequest() {
-		super("Drds", "2017-10-16", "CreateReadOnlyAccount");
+		super("Drds", "2017-10-16", "CreateReadOnlyAccount", "Drds");
 	}
 
 	private String password;

@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifyDrdsIpWhiteListRequest extends RpcAcsRequest<ModifyDrdsIpWhiteListResponse> {
 	
 	public ModifyDrdsIpWhiteListRequest() {
-		super("Drds", "2017-10-16", "ModifyDrdsIpWhiteList");
+		super("Drds", "2017-10-16", "ModifyDrdsIpWhiteList", "Drds");
 	}
 
 	private Boolean mode;

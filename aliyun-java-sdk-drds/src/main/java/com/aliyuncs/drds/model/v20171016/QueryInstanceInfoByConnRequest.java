@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class QueryInstanceInfoByConnRequest extends RpcAcsRequest<QueryInstanceInfoByConnResponse> {
 	
 	public QueryInstanceInfoByConnRequest() {
-		super("Drds", "2017-10-16", "QueryInstanceInfoByConn");
+		super("Drds", "2017-10-16", "QueryInstanceInfoByConn", "Drds");
 	}
 
 	private Integer port;

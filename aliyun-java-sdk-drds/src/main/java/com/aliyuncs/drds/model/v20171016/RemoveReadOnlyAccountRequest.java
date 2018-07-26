@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class RemoveReadOnlyAccountRequest extends RpcAcsRequest<RemoveReadOnlyAccountResponse> {
 	
 	public RemoveReadOnlyAccountRequest() {
-		super("Drds", "2017-10-16", "RemoveReadOnlyAccount");
+		super("Drds", "2017-10-16", "RemoveReadOnlyAccount", "Drds");
 	}
 
 	private String dbName;

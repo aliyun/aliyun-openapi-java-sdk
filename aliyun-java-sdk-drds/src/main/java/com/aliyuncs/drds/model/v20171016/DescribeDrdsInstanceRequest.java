@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeDrdsInstanceRequest extends RpcAcsRequest<DescribeDrdsInstanceResponse> {
 	
 	public DescribeDrdsInstanceRequest() {
-		super("Drds", "2017-10-16", "DescribeDrdsInstance");
+		super("Drds", "2017-10-16", "DescribeDrdsInstance", "Drds");
 	}
 
 	private String drdsInstanceId;

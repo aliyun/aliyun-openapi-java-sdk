@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeShardDbConnectionInfoRequest extends RpcAcsRequest<DescribeShardDbConnectionInfoResponse> {
 	
 	public DescribeShardDbConnectionInfoRequest() {
-		super("Drds", "2017-10-16", "DescribeShardDbConnectionInfo");
+		super("Drds", "2017-10-16", "DescribeShardDbConnectionInfo", "Drds");
 	}
 
 	private String dbName;

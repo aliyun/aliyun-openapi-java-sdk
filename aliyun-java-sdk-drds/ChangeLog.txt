@@ -1,3 +1,6 @@
+2018-07-26 Version: 2.5.1
+1, add groupName parameter for DescribeShardDbs interface.
+
 2018-05-23 Version: 2.5.0
 1, Add CreateDrdsAccount API, to support creating account for all databases of a DRDS instance.
 

@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class CreateDrdsInstanceRequest extends RpcAcsRequest<CreateDrdsInstanceResponse> {
 	
 	public CreateDrdsInstanceRequest() {
-		super("Drds", "2017-10-16", "CreateDrdsInstance");
+		super("Drds", "2017-10-16", "CreateDrdsInstance", "Drds");
 	}
 
 	private Integer quantity;

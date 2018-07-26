@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeleteDrdsDBRequest extends RpcAcsRequest<DeleteDrdsDBResponse> {
 	
 	public DeleteDrdsDBRequest() {
-		super("Drds", "2017-10-16", "DeleteDrdsDB");
+		super("Drds", "2017-10-16", "DeleteDrdsDB", "Drds");
 	}
 
 	private String dbName;

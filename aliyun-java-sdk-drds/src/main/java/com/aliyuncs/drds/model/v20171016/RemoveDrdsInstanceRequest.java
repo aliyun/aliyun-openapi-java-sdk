@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class RemoveDrdsInstanceRequest extends RpcAcsRequest<RemoveDrdsInstanceResponse> {
 	
 	public RemoveDrdsInstanceRequest() {
-		super("Drds", "2017-10-16", "RemoveDrdsInstance");
+		super("Drds", "2017-10-16", "RemoveDrdsInstance", "Drds");
 	}
 
 	private String drdsInstanceId;

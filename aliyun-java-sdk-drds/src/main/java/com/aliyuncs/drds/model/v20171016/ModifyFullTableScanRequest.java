@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifyFullTableScanRequest extends RpcAcsRequest<ModifyFullTableScanResponse> {
 	
 	public ModifyFullTableScanRequest() {
-		super("Drds", "2017-10-16", "ModifyFullTableScan");
+		super("Drds", "2017-10-16", "ModifyFullTableScan", "Drds");
 	}
 
 	private String dbName;
