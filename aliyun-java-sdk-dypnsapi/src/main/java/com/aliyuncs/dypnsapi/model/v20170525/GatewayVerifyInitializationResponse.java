@@ -73,6 +73,8 @@ public class GatewayVerifyInitializationResponse extends AcsResponse {
 
 		private String vendorAccessSecret;
 
+		private String keyParam;
+
 		public String getVendorKey() {
 			return this.vendorKey;
 		}
@@ -95,6 +97,14 @@ public class GatewayVerifyInitializationResponse extends AcsResponse {
 
 		public void setVendorAccessSecret(String vendorAccessSecret) {
 			this.vendorAccessSecret = vendorAccessSecret;
+		}
+
+		public String getKeyParam() {
+			return this.keyParam;
+		}
+
+		public void setKeyParam(String keyParam) {
+			this.keyParam = keyParam;
 		}
 	}
 

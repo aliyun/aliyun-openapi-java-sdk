@@ -36,6 +36,7 @@ public class GatewayVerifyInitializationResponseUnmarshaller {
 			vendorConfigDTO.setVendorKey(context.stringValue("GatewayVerifyInitializationResponse.VendorConfigDTOs["+ i +"].VendorKey"));
 			vendorConfigDTO.setVendorAccessId(context.stringValue("GatewayVerifyInitializationResponse.VendorConfigDTOs["+ i +"].VendorAccessId"));
 			vendorConfigDTO.setVendorAccessSecret(context.stringValue("GatewayVerifyInitializationResponse.VendorConfigDTOs["+ i +"].VendorAccessSecret"));
+			vendorConfigDTO.setKeyParam(context.stringValue("GatewayVerifyInitializationResponse.VendorConfigDTOs["+ i +"].KeyParam"));
 
 			vendorConfigDTOs.add(vendorConfigDTO);
 		}
