@@ -1,0 +1,6 @@
+2018-07-26 Version: 1.8.0
+1, manual biz dag api
+2, get manual biz dag instance info 
+3, supply data api
+4, get supply data instance info
+
