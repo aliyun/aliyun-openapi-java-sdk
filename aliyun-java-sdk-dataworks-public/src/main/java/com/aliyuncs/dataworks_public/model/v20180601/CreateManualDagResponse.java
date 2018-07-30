@@ -32,7 +32,7 @@ public class CreateManualDagResponse extends AcsResponse {
 
 	private String returnMessage;
 
-	private String returnValue;
+	private Long returnValue;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -66,11 +66,11 @@ public class CreateManualDagResponse extends AcsResponse {
 		this.returnMessage = returnMessage;
 	}
 
-	public String getReturnValue() {
+	public Long getReturnValue() {
 		return this.returnValue;
 	}
 
-	public void setReturnValue(String returnValue) {
+	public void setReturnValue(Long returnValue) {
 		this.returnValue = returnValue;
 	}
 

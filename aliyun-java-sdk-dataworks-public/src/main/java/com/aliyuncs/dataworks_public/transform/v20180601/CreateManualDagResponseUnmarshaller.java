@@ -26,7 +26,7 @@ public class CreateManualDagResponseUnmarshaller {
 		createManualDagResponse.setReturnCode(context.stringValue("CreateManualDagResponse.ReturnCode"));
 		createManualDagResponse.setReturnErrorSolution(context.stringValue("CreateManualDagResponse.ReturnErrorSolution"));
 		createManualDagResponse.setReturnMessage(context.stringValue("CreateManualDagResponse.ReturnMessage"));
-		createManualDagResponse.setReturnValue(context.stringValue("CreateManualDagResponse.ReturnValue"));
+		createManualDagResponse.setReturnValue(context.longValue("CreateManualDagResponse.ReturnValue"));
 	 
 	 	return createManualDagResponse;
 	}

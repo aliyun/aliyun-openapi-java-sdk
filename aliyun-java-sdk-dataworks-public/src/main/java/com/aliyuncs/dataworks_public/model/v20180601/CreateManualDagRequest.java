@@ -15,7 +15,6 @@
 package com.aliyuncs.dataworks_public.model.v20180601;
 
 import com.aliyuncs.RpcAcsRequest;
-import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 
 /**
@@ -26,7 +25,6 @@ public class CreateManualDagRequest extends RpcAcsRequest<CreateManualDagRespons
 	
 	public CreateManualDagRequest() {
 		super("dataworks-public", "2018-06-01", "CreateManualDag");
-		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
 

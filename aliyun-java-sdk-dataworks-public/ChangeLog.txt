@@ -1,3 +1,6 @@
+2018-07-30 Version: 1.8.1
+1, nodePara
+
 2018-07-26 Version: 1.8.0
 1, manual biz dag api
 2, get manual biz dag instance info 
