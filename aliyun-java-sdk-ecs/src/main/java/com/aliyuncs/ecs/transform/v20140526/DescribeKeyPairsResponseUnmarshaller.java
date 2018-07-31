@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.ecs.model.v20140526.DescribeKeyPairsResponse;
 import com.aliyuncs.ecs.model.v20140526.DescribeKeyPairsResponse.KeyPair;
+import com.aliyuncs.ecs.model.v20140526.DescribeKeyPairsResponse.KeyPair.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -36,6 +37,17 @@ public class DescribeKeyPairsResponseUnmarshaller {
 			KeyPair keyPair = new KeyPair();
 			keyPair.setKeyPairName(context.stringValue("DescribeKeyPairsResponse.KeyPairs["+ i +"].KeyPairName"));
 			keyPair.setKeyPairFingerPrint(context.stringValue("DescribeKeyPairsResponse.KeyPairs["+ i +"].KeyPairFingerPrint"));
+			keyPair.setResourceGroupId(context.stringValue("DescribeKeyPairsResponse.KeyPairs["+ i +"].ResourceGroupId"));
+
+			List<Tag> tags = new ArrayList<Tag>();
+			for (int j = 0; j < context.lengthValue("DescribeKeyPairsResponse.KeyPairs["+ i +"].Tags.Length"); j++) {
+				Tag tag = new Tag();
+				tag.setTagKey(context.stringValue("DescribeKeyPairsResponse.KeyPairs["+ i +"].Tags["+ j +"].TagKey"));
+				tag.setTagValue(context.stringValue("DescribeKeyPairsResponse.KeyPairs["+ i +"].Tags["+ j +"].TagValue"));
+
+				tags.add(tag);
+			}
+			keyPair.setTags(tags);
 
 			keyPairs.add(keyPair);
 		}

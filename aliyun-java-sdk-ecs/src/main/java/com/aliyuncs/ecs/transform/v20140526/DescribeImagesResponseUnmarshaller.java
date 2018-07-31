@@ -57,6 +57,7 @@ public class DescribeImagesResponseUnmarshaller {
 			image.setPlatform(context.stringValue("DescribeImagesResponse.Images["+ i +"].Platform"));
 			image.setUsage(context.stringValue("DescribeImagesResponse.Images["+ i +"].Usage"));
 			image.setIsCopied(context.booleanValue("DescribeImagesResponse.Images["+ i +"].IsCopied"));
+			image.setResourceGroupId(context.stringValue("DescribeImagesResponse.Images["+ i +"].ResourceGroupId"));
 
 			List<DiskDeviceMapping> diskDeviceMappings = new ArrayList<DiskDeviceMapping>();
 			for (int j = 0; j < context.lengthValue("DescribeImagesResponse.Images["+ i +"].DiskDeviceMappings.Length"); j++) {

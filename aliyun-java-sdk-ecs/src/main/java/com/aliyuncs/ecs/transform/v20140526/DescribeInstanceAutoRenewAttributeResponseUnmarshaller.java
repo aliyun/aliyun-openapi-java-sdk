@@ -27,6 +27,9 @@ public class DescribeInstanceAutoRenewAttributeResponseUnmarshaller {
 	public static DescribeInstanceAutoRenewAttributeResponse unmarshall(DescribeInstanceAutoRenewAttributeResponse describeInstanceAutoRenewAttributeResponse, UnmarshallerContext context) {
 		
 		describeInstanceAutoRenewAttributeResponse.setRequestId(context.stringValue("DescribeInstanceAutoRenewAttributeResponse.RequestId"));
+		describeInstanceAutoRenewAttributeResponse.setPageNumber(context.integerValue("DescribeInstanceAutoRenewAttributeResponse.PageNumber"));
+		describeInstanceAutoRenewAttributeResponse.setPageSize(context.integerValue("DescribeInstanceAutoRenewAttributeResponse.PageSize"));
+		describeInstanceAutoRenewAttributeResponse.setTotalCount(context.integerValue("DescribeInstanceAutoRenewAttributeResponse.TotalCount"));
 
 		List<InstanceRenewAttribute> instanceRenewAttributes = new ArrayList<InstanceRenewAttribute>();
 		for (int i = 0; i < context.lengthValue("DescribeInstanceAutoRenewAttributeResponse.InstanceRenewAttributes.Length"); i++) {

@@ -101,6 +101,8 @@ public class DescribeSecurityGroupsResponse extends AcsResponse {
 
 		private Integer ecsCount;
 
+		private String resourceGroupId;
+
 		private List<Tag> tags;
 
 		public String getSecurityGroupId() {
@@ -157,6 +159,14 @@ public class DescribeSecurityGroupsResponse extends AcsResponse {
 
 		public void setEcsCount(Integer ecsCount) {
 			this.ecsCount = ecsCount;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
 		}
 
 		public List<Tag> getTags() {

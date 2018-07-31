@@ -20,6 +20,8 @@ import java.util.List;
 import com.aliyuncs.ecs.model.v20140526.DescribeRenewalPriceResponse;
 import com.aliyuncs.ecs.model.v20140526.DescribeRenewalPriceResponse.PriceInfo;
 import com.aliyuncs.ecs.model.v20140526.DescribeRenewalPriceResponse.PriceInfo.Price;
+import com.aliyuncs.ecs.model.v20140526.DescribeRenewalPriceResponse.PriceInfo.Price.ResourcePriceModel;
+import com.aliyuncs.ecs.model.v20140526.DescribeRenewalPriceResponse.PriceInfo.Price.ResourcePriceModel.Rule1;
 import com.aliyuncs.ecs.model.v20140526.DescribeRenewalPriceResponse.PriceInfo.Rule;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -37,6 +39,28 @@ public class DescribeRenewalPriceResponseUnmarshaller {
 		price.setDiscountPrice(context.floatValue("DescribeRenewalPriceResponse.PriceInfo.Price.DiscountPrice"));
 		price.setTradePrice(context.floatValue("DescribeRenewalPriceResponse.PriceInfo.Price.TradePrice"));
 		price.setCurrency(context.stringValue("DescribeRenewalPriceResponse.PriceInfo.Price.Currency"));
+
+		List<ResourcePriceModel> detailInfos = new ArrayList<ResourcePriceModel>();
+		for (int i = 0; i < context.lengthValue("DescribeRenewalPriceResponse.PriceInfo.Price.DetailInfos.Length"); i++) {
+			ResourcePriceModel resourcePriceModel = new ResourcePriceModel();
+			resourcePriceModel.setResource(context.stringValue("DescribeRenewalPriceResponse.PriceInfo.Price.DetailInfos["+ i +"].Resource"));
+			resourcePriceModel.setOriginalPrice(context.floatValue("DescribeRenewalPriceResponse.PriceInfo.Price.DetailInfos["+ i +"].OriginalPrice"));
+			resourcePriceModel.setDiscountPrice(context.floatValue("DescribeRenewalPriceResponse.PriceInfo.Price.DetailInfos["+ i +"].DiscountPrice"));
+			resourcePriceModel.setTradePrice(context.floatValue("DescribeRenewalPriceResponse.PriceInfo.Price.DetailInfos["+ i +"].TradePrice"));
+
+			List<Rule1> subRules = new ArrayList<Rule1>();
+			for (int j = 0; j < context.lengthValue("DescribeRenewalPriceResponse.PriceInfo.Price.DetailInfos["+ i +"].SubRules.Length"); j++) {
+				Rule1 rule1 = new Rule1();
+				rule1.setRuleId(context.longValue("DescribeRenewalPriceResponse.PriceInfo.Price.DetailInfos["+ i +"].SubRules["+ j +"].RuleId"));
+				rule1.setDescription(context.stringValue("DescribeRenewalPriceResponse.PriceInfo.Price.DetailInfos["+ i +"].SubRules["+ j +"].Description"));
+
+				subRules.add(rule1);
+			}
+			resourcePriceModel.setSubRules(subRules);
+
+			detailInfos.add(resourcePriceModel);
+		}
+		price.setDetailInfos(detailInfos);
 		priceInfo.setPrice(price);
 
 		List<Rule> rules = new ArrayList<Rule>();

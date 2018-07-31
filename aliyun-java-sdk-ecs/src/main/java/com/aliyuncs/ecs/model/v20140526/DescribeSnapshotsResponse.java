@@ -107,6 +107,8 @@ public class DescribeSnapshotsResponse extends AcsResponse {
 
 		private Integer remainTime;
 
+		private String resourceGroupId;
+
 		private List<Tag> tags;
 
 		public String getSnapshotId() {
@@ -227,6 +229,14 @@ public class DescribeSnapshotsResponse extends AcsResponse {
 
 		public void setRemainTime(Integer remainTime) {
 			this.remainTime = remainTime;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
 		}
 
 		public List<Tag> getTags() {

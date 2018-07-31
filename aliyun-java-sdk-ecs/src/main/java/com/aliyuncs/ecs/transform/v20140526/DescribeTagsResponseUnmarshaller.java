@@ -45,6 +45,10 @@ public class DescribeTagsResponseUnmarshaller {
 			resourceTypeCount.setImage(context.integerValue("DescribeTagsResponse.Tags["+ i +"].ResourceTypeCount.Image"));
 			resourceTypeCount.setSnapshot(context.integerValue("DescribeTagsResponse.Tags["+ i +"].ResourceTypeCount.Snapshot"));
 			resourceTypeCount.setSecuritygroup(context.integerValue("DescribeTagsResponse.Tags["+ i +"].ResourceTypeCount.Securitygroup"));
+			resourceTypeCount.setLaunchTemplate(context.integerValue("DescribeTagsResponse.Tags["+ i +"].ResourceTypeCount.LaunchTemplate"));
+			resourceTypeCount.setEni(context.integerValue("DescribeTagsResponse.Tags["+ i +"].ResourceTypeCount.Eni"));
+			resourceTypeCount.setDdh(context.integerValue("DescribeTagsResponse.Tags["+ i +"].ResourceTypeCount.Ddh"));
+			resourceTypeCount.setKeyPair(context.integerValue("DescribeTagsResponse.Tags["+ i +"].ResourceTypeCount.KeyPair"));
 			tag.setResourceTypeCount(resourceTypeCount);
 
 			tags.add(tag);

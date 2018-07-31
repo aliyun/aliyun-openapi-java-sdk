@@ -39,6 +39,7 @@ public class DescribeSecurityGroupAttributeResponseUnmarshaller {
 			Permission permission = new Permission();
 			permission.setIpProtocol(context.stringValue("DescribeSecurityGroupAttributeResponse.Permissions["+ i +"].IpProtocol"));
 			permission.setPortRange(context.stringValue("DescribeSecurityGroupAttributeResponse.Permissions["+ i +"].PortRange"));
+			permission.setSourcePortRange(context.stringValue("DescribeSecurityGroupAttributeResponse.Permissions["+ i +"].SourcePortRange"));
 			permission.setSourceGroupId(context.stringValue("DescribeSecurityGroupAttributeResponse.Permissions["+ i +"].SourceGroupId"));
 			permission.setSourceGroupName(context.stringValue("DescribeSecurityGroupAttributeResponse.Permissions["+ i +"].SourceGroupName"));
 			permission.setSourceCidrIp(context.stringValue("DescribeSecurityGroupAttributeResponse.Permissions["+ i +"].SourceCidrIp"));

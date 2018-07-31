@@ -127,6 +127,8 @@ public class DescribeImagesResponse extends AcsResponse {
 
 		private Boolean isCopied;
 
+		private String resourceGroupId;
+
 		private List<DiskDeviceMapping> diskDeviceMappings;
 
 		private List<Tag> tags;
@@ -289,6 +291,14 @@ public class DescribeImagesResponse extends AcsResponse {
 
 		public void setIsCopied(Boolean isCopied) {
 			this.isCopied = isCopied;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
 		}
 
 		public List<DiskDeviceMapping> getDiskDeviceMappings() {

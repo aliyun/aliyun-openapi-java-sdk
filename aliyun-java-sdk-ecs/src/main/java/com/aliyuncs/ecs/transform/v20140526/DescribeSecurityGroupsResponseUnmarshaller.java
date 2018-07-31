@@ -43,6 +43,7 @@ public class DescribeSecurityGroupsResponseUnmarshaller {
 			securityGroup.setCreationTime(context.stringValue("DescribeSecurityGroupsResponse.SecurityGroups["+ i +"].CreationTime"));
 			securityGroup.setAvailableInstanceAmount(context.integerValue("DescribeSecurityGroupsResponse.SecurityGroups["+ i +"].AvailableInstanceAmount"));
 			securityGroup.setEcsCount(context.integerValue("DescribeSecurityGroupsResponse.SecurityGroups["+ i +"].EcsCount"));
+			securityGroup.setResourceGroupId(context.stringValue("DescribeSecurityGroupsResponse.SecurityGroups["+ i +"].ResourceGroupId"));
 
 			List<Tag> tags = new ArrayList<Tag>();
 			for (int j = 0; j < context.lengthValue("DescribeSecurityGroupsResponse.SecurityGroups["+ i +"].Tags.Length"); j++) {

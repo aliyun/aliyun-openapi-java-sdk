@@ -48,6 +48,8 @@ public class DescribeSnapshotsRequest extends RpcAcsRequest<DescribeSnapshotsRes
 
 	private String tag1Value;
 
+	private String resourceGroupId;
+
 	private String filter1Key;
 
 	private Integer pageSize;
@@ -206,6 +208,17 @@ public class DescribeSnapshotsRequest extends RpcAcsRequest<DescribeSnapshotsRes
 		this.tag1Value = tag1Value;
 		if(tag1Value != null){
 			putQueryParameter("Tag.1.Value", tag1Value);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

@@ -22,6 +22,7 @@ import com.aliyuncs.ecs.model.v20140526.DescribeNetworkInterfacesResponse.Networ
 import com.aliyuncs.ecs.model.v20140526.DescribeNetworkInterfacesResponse.NetworkInterfaceSet.AssociatedPublicIp;
 import com.aliyuncs.ecs.model.v20140526.DescribeNetworkInterfacesResponse.NetworkInterfaceSet.PrivateIpSet;
 import com.aliyuncs.ecs.model.v20140526.DescribeNetworkInterfacesResponse.NetworkInterfaceSet.PrivateIpSet.AssociatedPublicIp1;
+import com.aliyuncs.ecs.model.v20140526.DescribeNetworkInterfacesResponse.NetworkInterfaceSet.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -49,6 +50,7 @@ public class DescribeNetworkInterfacesResponseUnmarshaller {
 			networkInterfaceSet.setDescription(context.stringValue("DescribeNetworkInterfacesResponse.NetworkInterfaceSets["+ i +"].Description"));
 			networkInterfaceSet.setInstanceId(context.stringValue("DescribeNetworkInterfacesResponse.NetworkInterfaceSets["+ i +"].InstanceId"));
 			networkInterfaceSet.setCreationTime(context.stringValue("DescribeNetworkInterfacesResponse.NetworkInterfaceSets["+ i +"].CreationTime"));
+			networkInterfaceSet.setResourceGroupId(context.stringValue("DescribeNetworkInterfacesResponse.NetworkInterfaceSets["+ i +"].ResourceGroupId"));
 
 			List<String> securityGroupIds = new ArrayList<String>();
 			for (int j = 0; j < context.lengthValue("DescribeNetworkInterfacesResponse.NetworkInterfaceSets["+ i +"].SecurityGroupIds.Length"); j++) {
@@ -75,6 +77,16 @@ public class DescribeNetworkInterfacesResponseUnmarshaller {
 				privateIpSets.add(privateIpSet);
 			}
 			networkInterfaceSet.setPrivateIpSets(privateIpSets);
+
+			List<Tag> tags = new ArrayList<Tag>();
+			for (int j = 0; j < context.lengthValue("DescribeNetworkInterfacesResponse.NetworkInterfaceSets["+ i +"].Tags.Length"); j++) {
+				Tag tag = new Tag();
+				tag.setTagKey(context.stringValue("DescribeNetworkInterfacesResponse.NetworkInterfaceSets["+ i +"].Tags["+ j +"].TagKey"));
+				tag.setTagValue(context.stringValue("DescribeNetworkInterfacesResponse.NetworkInterfaceSets["+ i +"].Tags["+ j +"].TagValue"));
+
+				tags.add(tag);
+			}
+			networkInterfaceSet.setTags(tags);
 
 			networkInterfaceSets.add(networkInterfaceSet);
 		}

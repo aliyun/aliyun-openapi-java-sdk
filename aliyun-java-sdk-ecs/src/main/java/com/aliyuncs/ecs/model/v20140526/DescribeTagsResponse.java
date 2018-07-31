@@ -121,6 +121,14 @@ public class DescribeTagsResponse extends AcsResponse {
 
 			private Integer securitygroup;
 
+			private Integer launchTemplate;
+
+			private Integer eni;
+
+			private Integer ddh;
+
+			private Integer keyPair;
+
 			public Integer getInstance() {
 				return this.instance;
 			}
@@ -167,6 +175,38 @@ public class DescribeTagsResponse extends AcsResponse {
 
 			public void setSecuritygroup(Integer securitygroup) {
 				this.securitygroup = securitygroup;
+			}
+
+			public Integer getLaunchTemplate() {
+				return this.launchTemplate;
+			}
+
+			public void setLaunchTemplate(Integer launchTemplate) {
+				this.launchTemplate = launchTemplate;
+			}
+
+			public Integer getEni() {
+				return this.eni;
+			}
+
+			public void setEni(Integer eni) {
+				this.eni = eni;
+			}
+
+			public Integer getDdh() {
+				return this.ddh;
+			}
+
+			public void setDdh(Integer ddh) {
+				this.ddh = ddh;
+			}
+
+			public Integer getKeyPair() {
+				return this.keyPair;
+			}
+
+			public void setKeyPair(Integer keyPair) {
+				this.keyPair = keyPair;
 			}
 		}
 	}

@@ -101,7 +101,11 @@ public class DescribeNetworkInterfacesResponse extends AcsResponse {
 
 		private String creationTime;
 
+		private String resourceGroupId;
+
 		private List<PrivateIpSet> privateIpSets;
+
+		private List<Tag> tags;
 
 		private List<String> securityGroupIds;
 
@@ -203,12 +207,28 @@ public class DescribeNetworkInterfacesResponse extends AcsResponse {
 			this.creationTime = creationTime;
 		}
 
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
+		}
+
 		public List<PrivateIpSet> getPrivateIpSets() {
 			return this.privateIpSets;
 		}
 
 		public void setPrivateIpSets(List<PrivateIpSet> privateIpSets) {
 			this.privateIpSets = privateIpSets;
+		}
+
+		public List<Tag> getTags() {
+			return this.tags;
+		}
+
+		public void setTags(List<Tag> tags) {
+			this.tags = tags;
 		}
 
 		public List<String> getSecurityGroupIds() {
@@ -280,6 +300,29 @@ public class DescribeNetworkInterfacesResponse extends AcsResponse {
 				public void setAllocationId(String allocationId) {
 					this.allocationId = allocationId;
 				}
+			}
+		}
+
+		public static class Tag {
+
+			private String tagKey;
+
+			private String tagValue;
+
+			public String getTagKey() {
+				return this.tagKey;
+			}
+
+			public void setTagKey(String tagKey) {
+				this.tagKey = tagKey;
+			}
+
+			public String getTagValue() {
+				return this.tagValue;
+			}
+
+			public void setTagValue(String tagValue) {
+				this.tagValue = tagValue;
 			}
 		}
 

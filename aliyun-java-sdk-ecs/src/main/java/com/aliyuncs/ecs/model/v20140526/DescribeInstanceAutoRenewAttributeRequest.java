@@ -34,7 +34,13 @@ public class DescribeInstanceAutoRenewAttributeRequest extends RpcAcsRequest<Des
 
 	private String ownerAccount;
 
+	private String renewalStatus;
+
+	private String pageSize;
+
 	private Long ownerId;
+
+	private String pageNumber;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -80,6 +86,28 @@ public class DescribeInstanceAutoRenewAttributeRequest extends RpcAcsRequest<Des
 		}
 	}
 
+	public String getRenewalStatus() {
+		return this.renewalStatus;
+	}
+
+	public void setRenewalStatus(String renewalStatus) {
+		this.renewalStatus = renewalStatus;
+		if(renewalStatus != null){
+			putQueryParameter("RenewalStatus", renewalStatus);
+		}
+	}
+
+	public String getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(String pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize);
+		}
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -88,6 +116,17 @@ public class DescribeInstanceAutoRenewAttributeRequest extends RpcAcsRequest<Des
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(String pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber);
 		}
 	}
 

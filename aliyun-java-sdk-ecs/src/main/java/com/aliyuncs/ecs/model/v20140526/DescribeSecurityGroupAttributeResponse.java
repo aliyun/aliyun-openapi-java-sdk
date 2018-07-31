@@ -111,6 +111,8 @@ public class DescribeSecurityGroupAttributeResponse extends AcsResponse {
 
 		private String portRange;
 
+		private String sourcePortRange;
+
 		private String sourceGroupId;
 
 		private String sourceGroupName;
@@ -153,6 +155,14 @@ public class DescribeSecurityGroupAttributeResponse extends AcsResponse {
 
 		public void setPortRange(String portRange) {
 			this.portRange = portRange;
+		}
+
+		public String getSourcePortRange() {
+			return this.sourcePortRange;
+		}
+
+		public void setSourcePortRange(String sourcePortRange) {
+			this.sourcePortRange = sourcePortRange;
 		}
 
 		public String getSourceGroupId() {

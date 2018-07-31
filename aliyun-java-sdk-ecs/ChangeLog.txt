@@ -1,3 +1,6 @@
+2018-07-31 Version: 4.9.5
+1, Support describePrice for market image, add return detailInfo in interface describePrice
+
 2018-07-06 Version: 4.9.4
 1, The interface DescribeInstanceTypes add the parameter InstanceFamilyLevel of result data
 2, The interface DescribeAvailableResource add two filter fators , there are  cores and memory.

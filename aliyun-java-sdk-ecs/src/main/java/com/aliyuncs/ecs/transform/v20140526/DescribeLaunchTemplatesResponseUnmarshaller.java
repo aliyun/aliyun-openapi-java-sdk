@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.ecs.model.v20140526.DescribeLaunchTemplatesResponse;
 import com.aliyuncs.ecs.model.v20140526.DescribeLaunchTemplatesResponse.LaunchTemplateSet;
+import com.aliyuncs.ecs.model.v20140526.DescribeLaunchTemplatesResponse.LaunchTemplateSet.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -41,6 +42,17 @@ public class DescribeLaunchTemplatesResponseUnmarshaller {
 			launchTemplateSet.setDefaultVersionNumber(context.longValue("DescribeLaunchTemplatesResponse.LaunchTemplateSets["+ i +"].DefaultVersionNumber"));
 			launchTemplateSet.setLatestVersionNumber(context.longValue("DescribeLaunchTemplatesResponse.LaunchTemplateSets["+ i +"].LatestVersionNumber"));
 			launchTemplateSet.setCreatedBy(context.stringValue("DescribeLaunchTemplatesResponse.LaunchTemplateSets["+ i +"].CreatedBy"));
+			launchTemplateSet.setResourceGroupId(context.stringValue("DescribeLaunchTemplatesResponse.LaunchTemplateSets["+ i +"].ResourceGroupId"));
+
+			List<Tag> tags = new ArrayList<Tag>();
+			for (int j = 0; j < context.lengthValue("DescribeLaunchTemplatesResponse.LaunchTemplateSets["+ i +"].Tags.Length"); j++) {
+				Tag tag = new Tag();
+				tag.setTagKey(context.stringValue("DescribeLaunchTemplatesResponse.LaunchTemplateSets["+ i +"].Tags["+ j +"].TagKey"));
+				tag.setTagValue(context.stringValue("DescribeLaunchTemplatesResponse.LaunchTemplateSets["+ i +"].Tags["+ j +"].TagValue"));
+
+				tags.add(tag);
+			}
+			launchTemplateSet.setTags(tags);
 
 			launchTemplateSets.add(launchTemplateSet);
 		}
