@@ -1,0 +1,5 @@
+2018-07-31 Version: 2.0.0713
+1, This is 2.0.0713 version log.
+2, This version only supports user certificate list queries.
+3,  Add DescribeUserCertificateDetail,DescribeUserCertificateList API .
+
