@@ -30,6 +30,8 @@ public class CreateAlarmRequest extends RpcAcsRequest<CreateAlarmResponse> {
 
 	private String webhook;
 
+	private Boolean dryRun;
+
 	private String contactGroups;
 
 	private Integer endTime;
@@ -38,9 +40,9 @@ public class CreateAlarmRequest extends RpcAcsRequest<CreateAlarmResponse> {
 
 	private Integer startTime;
 
-	private String namespace;
-
 	private String name;
+
+	private String namespace;
 
 	private Integer evaluationCount;
 
@@ -75,6 +77,17 @@ public class CreateAlarmRequest extends RpcAcsRequest<CreateAlarmResponse> {
 		this.webhook = webhook;
 		if(webhook != null){
 			putQueryParameter("Webhook", webhook);
+		}
+	}
+
+	public Boolean getDryRun() {
+		return this.dryRun;
+	}
+
+	public void setDryRun(Boolean dryRun) {
+		this.dryRun = dryRun;
+		if(dryRun != null){
+			putQueryParameter("DryRun", dryRun.toString());
 		}
 	}
 
@@ -122,17 +135,6 @@ public class CreateAlarmRequest extends RpcAcsRequest<CreateAlarmResponse> {
 		}
 	}
 
-	public String getNamespace() {
-		return this.namespace;
-	}
-
-	public void setNamespace(String namespace) {
-		this.namespace = namespace;
-		if(namespace != null){
-			putQueryParameter("Namespace", namespace);
-		}
-	}
-
 	public String getName() {
 		return this.name;
 	}
@@ -141,6 +143,17 @@ public class CreateAlarmRequest extends RpcAcsRequest<CreateAlarmResponse> {
 		this.name = name;
 		if(name != null){
 			putQueryParameter("Name", name);
+		}
+	}
+
+	public String getNamespace() {
+		return this.namespace;
+	}
+
+	public void setNamespace(String namespace) {
+		this.namespace = namespace;
+		if(namespace != null){
+			putQueryParameter("Namespace", namespace);
 		}
 	}
 

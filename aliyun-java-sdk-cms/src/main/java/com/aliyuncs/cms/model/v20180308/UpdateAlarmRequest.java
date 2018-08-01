@@ -30,6 +30,8 @@ public class UpdateAlarmRequest extends RpcAcsRequest<UpdateAlarmResponse> {
 
 	private String webhook;
 
+	private Boolean dryRun;
+
 	private String contactGroups;
 
 	private Integer endTime;
@@ -71,6 +73,17 @@ public class UpdateAlarmRequest extends RpcAcsRequest<UpdateAlarmResponse> {
 		this.webhook = webhook;
 		if(webhook != null){
 			putQueryParameter("Webhook", webhook);
+		}
+	}
+
+	public Boolean getDryRun() {
+		return this.dryRun;
+	}
+
+	public void setDryRun(Boolean dryRun) {
+		this.dryRun = dryRun;
+		if(dryRun != null){
+			putQueryParameter("DryRun", dryRun.toString());
 		}
 	}
 
