@@ -27,12 +27,6 @@ public class CreateHybridClusterRequest extends RpcAcsRequest<CreateHybridCluste
 		super("EHPC", "2018-04-12", "CreateHybridCluster", "ehs");
 	}
 
-	private String volumeProtocol;
-
-	private String osTag;
-
-	private String remoteDirectory;
-
 	private String ehpcVersion;
 
 	private String securityGroupId;
@@ -45,11 +39,25 @@ public class CreateHybridClusterRequest extends RpcAcsRequest<CreateHybridCluste
 
 	private String ecsOrderComputeInstanceType;
 
-	private String vSwitchId;
+	private String onPremiseVolumeRemotePath;
 
 	private String volumeType;
 
 	private String password;
+
+	private String onPremiseVolumeMountPoint;
+
+	private String onPremiseVolumeProtocol;
+
+	private String volumeProtocol;
+
+	private String onPremiseVolumeLocalPath;
+
+	private String osTag;
+
+	private String remoteDirectory;
+
+	private String vSwitchId;
 
 	private String nodes;
 
@@ -68,39 +76,6 @@ public class CreateHybridClusterRequest extends RpcAcsRequest<CreateHybridCluste
 	private String zoneId;
 
 	private String location;
-
-	public String getVolumeProtocol() {
-		return this.volumeProtocol;
-	}
-
-	public void setVolumeProtocol(String volumeProtocol) {
-		this.volumeProtocol = volumeProtocol;
-		if(volumeProtocol != null){
-			putQueryParameter("VolumeProtocol", volumeProtocol);
-		}
-	}
-
-	public String getOsTag() {
-		return this.osTag;
-	}
-
-	public void setOsTag(String osTag) {
-		this.osTag = osTag;
-		if(osTag != null){
-			putQueryParameter("OsTag", osTag);
-		}
-	}
-
-	public String getRemoteDirectory() {
-		return this.remoteDirectory;
-	}
-
-	public void setRemoteDirectory(String remoteDirectory) {
-		this.remoteDirectory = remoteDirectory;
-		if(remoteDirectory != null){
-			putQueryParameter("RemoteDirectory", remoteDirectory);
-		}
-	}
 
 	public String getEhpcVersion() {
 		return this.ehpcVersion;
@@ -168,14 +143,14 @@ public class CreateHybridClusterRequest extends RpcAcsRequest<CreateHybridCluste
 		}
 	}
 
-	public String getVSwitchId() {
-		return this.vSwitchId;
+	public String getOnPremiseVolumeRemotePath() {
+		return this.onPremiseVolumeRemotePath;
 	}
 
-	public void setVSwitchId(String vSwitchId) {
-		this.vSwitchId = vSwitchId;
-		if(vSwitchId != null){
-			putQueryParameter("VSwitchId", vSwitchId);
+	public void setOnPremiseVolumeRemotePath(String onPremiseVolumeRemotePath) {
+		this.onPremiseVolumeRemotePath = onPremiseVolumeRemotePath;
+		if(onPremiseVolumeRemotePath != null){
+			putQueryParameter("OnPremiseVolumeRemotePath", onPremiseVolumeRemotePath);
 		}
 	}
 
@@ -198,6 +173,83 @@ public class CreateHybridClusterRequest extends RpcAcsRequest<CreateHybridCluste
 		this.password = password;
 		if(password != null){
 			putQueryParameter("Password", password);
+		}
+	}
+
+	public String getOnPremiseVolumeMountPoint() {
+		return this.onPremiseVolumeMountPoint;
+	}
+
+	public void setOnPremiseVolumeMountPoint(String onPremiseVolumeMountPoint) {
+		this.onPremiseVolumeMountPoint = onPremiseVolumeMountPoint;
+		if(onPremiseVolumeMountPoint != null){
+			putQueryParameter("OnPremiseVolumeMountPoint", onPremiseVolumeMountPoint);
+		}
+	}
+
+	public String getOnPremiseVolumeProtocol() {
+		return this.onPremiseVolumeProtocol;
+	}
+
+	public void setOnPremiseVolumeProtocol(String onPremiseVolumeProtocol) {
+		this.onPremiseVolumeProtocol = onPremiseVolumeProtocol;
+		if(onPremiseVolumeProtocol != null){
+			putQueryParameter("OnPremiseVolumeProtocol", onPremiseVolumeProtocol);
+		}
+	}
+
+	public String getVolumeProtocol() {
+		return this.volumeProtocol;
+	}
+
+	public void setVolumeProtocol(String volumeProtocol) {
+		this.volumeProtocol = volumeProtocol;
+		if(volumeProtocol != null){
+			putQueryParameter("VolumeProtocol", volumeProtocol);
+		}
+	}
+
+	public String getOnPremiseVolumeLocalPath() {
+		return this.onPremiseVolumeLocalPath;
+	}
+
+	public void setOnPremiseVolumeLocalPath(String onPremiseVolumeLocalPath) {
+		this.onPremiseVolumeLocalPath = onPremiseVolumeLocalPath;
+		if(onPremiseVolumeLocalPath != null){
+			putQueryParameter("OnPremiseVolumeLocalPath", onPremiseVolumeLocalPath);
+		}
+	}
+
+	public String getOsTag() {
+		return this.osTag;
+	}
+
+	public void setOsTag(String osTag) {
+		this.osTag = osTag;
+		if(osTag != null){
+			putQueryParameter("OsTag", osTag);
+		}
+	}
+
+	public String getRemoteDirectory() {
+		return this.remoteDirectory;
+	}
+
+	public void setRemoteDirectory(String remoteDirectory) {
+		this.remoteDirectory = remoteDirectory;
+		if(remoteDirectory != null){
+			putQueryParameter("RemoteDirectory", remoteDirectory);
+		}
+	}
+
+	public String getVSwitchId() {
+		return this.vSwitchId;
+	}
+
+	public void setVSwitchId(String vSwitchId) {
+		this.vSwitchId = vSwitchId;
+		if(vSwitchId != null){
+			putQueryParameter("VSwitchId", vSwitchId);
 		}
 	}
 

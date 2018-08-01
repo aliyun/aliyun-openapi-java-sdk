@@ -36,6 +36,8 @@ public class GetAutoScaleConfigResponseUnmarshaller {
 		getAutoScaleConfigResponse.setGrowRatio(context.integerValue("GetAutoScaleConfigResponse.GrowRatio"));
 		getAutoScaleConfigResponse.setMaxNodesInCluster(context.integerValue("GetAutoScaleConfigResponse.MaxNodesInCluster"));
 		getAutoScaleConfigResponse.setExcludeNodes(context.stringValue("GetAutoScaleConfigResponse.ExcludeNodes"));
+		getAutoScaleConfigResponse.setSpotStrategy(context.stringValue("GetAutoScaleConfigResponse.SpotStrategy"));
+		getAutoScaleConfigResponse.setSpotPriceLimit(context.stringValue("GetAutoScaleConfigResponse.SpotPriceLimit"));
 	 
 	 	return getAutoScaleConfigResponse;
 	}

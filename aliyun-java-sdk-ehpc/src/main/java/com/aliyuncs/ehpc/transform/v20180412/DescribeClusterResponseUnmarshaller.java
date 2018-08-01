@@ -24,6 +24,7 @@ import com.aliyuncs.ehpc.model.v20180412.DescribeClusterResponse.ClusterInfo.Ecs
 import com.aliyuncs.ehpc.model.v20180412.DescribeClusterResponse.ClusterInfo.EcsInfo.Compute;
 import com.aliyuncs.ehpc.model.v20180412.DescribeClusterResponse.ClusterInfo.EcsInfo.Login;
 import com.aliyuncs.ehpc.model.v20180412.DescribeClusterResponse.ClusterInfo.EcsInfo.Manager;
+import com.aliyuncs.ehpc.model.v20180412.DescribeClusterResponse.ClusterInfo.PostInstallScriptInfo;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -89,6 +90,16 @@ public class DescribeClusterResponseUnmarshaller {
 			applications.add(applicationInfo);
 		}
 		clusterInfo.setApplications(applications);
+
+		List<PostInstallScriptInfo> postInstallScripts = new ArrayList<PostInstallScriptInfo>();
+		for (int i = 0; i < context.lengthValue("DescribeClusterResponse.ClusterInfo.PostInstallScripts.Length"); i++) {
+			PostInstallScriptInfo postInstallScriptInfo = new PostInstallScriptInfo();
+			postInstallScriptInfo.setUrl(context.stringValue("DescribeClusterResponse.ClusterInfo.PostInstallScripts["+ i +"].Url"));
+			postInstallScriptInfo.setArgs(context.stringValue("DescribeClusterResponse.ClusterInfo.PostInstallScripts["+ i +"].Args"));
+
+			postInstallScripts.add(postInstallScriptInfo);
+		}
+		clusterInfo.setPostInstallScripts(postInstallScripts);
 		describeClusterResponse.setClusterInfo(clusterInfo);
 	 
 	 	return describeClusterResponse;

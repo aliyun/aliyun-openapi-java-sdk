@@ -83,6 +83,8 @@ public class ListJobsResponse extends AcsResponse {
 
 		private String owner;
 
+		private String nodeList;
+
 		private Integer priority;
 
 		private String state;
@@ -127,6 +129,14 @@ public class ListJobsResponse extends AcsResponse {
 
 		public void setOwner(String owner) {
 			this.owner = owner;
+		}
+
+		public String getNodeList() {
+			return this.nodeList;
+		}
+
+		public void setNodeList(String nodeList) {
+			this.nodeList = nodeList;
 		}
 
 		public Integer getPriority() {

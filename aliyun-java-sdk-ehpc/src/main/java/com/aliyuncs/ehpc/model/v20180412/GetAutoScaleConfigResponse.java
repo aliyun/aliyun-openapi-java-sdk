@@ -52,6 +52,10 @@ public class GetAutoScaleConfigResponse extends AcsResponse {
 
 	private String excludeNodes;
 
+	private String spotStrategy;
+
+	private String spotPriceLimit;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -162,6 +166,22 @@ public class GetAutoScaleConfigResponse extends AcsResponse {
 
 	public void setExcludeNodes(String excludeNodes) {
 		this.excludeNodes = excludeNodes;
+	}
+
+	public String getSpotStrategy() {
+		return this.spotStrategy;
+	}
+
+	public void setSpotStrategy(String spotStrategy) {
+		this.spotStrategy = spotStrategy;
+	}
+
+	public String getSpotPriceLimit() {
+		return this.spotPriceLimit;
+	}
+
+	public void setSpotPriceLimit(String spotPriceLimit) {
+		this.spotPriceLimit = spotPriceLimit;
 	}
 
 	@Override

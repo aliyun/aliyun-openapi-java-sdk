@@ -1,3 +1,7 @@
+2018-08-01 Version: 1.4.0
+1, New API GetCloudMetricLogs: a new feature of monitoring and profiling applications on E-HPC cluster.
+2, Modify parameters of CreateHybridCluster.
+
 2018-07-13 Version: 1.3.0
 1, New APIs for batch executing commands in cluster: InvokeShellCommand, ListCommands, etc.
 2, New APIs for HybridCluster (link E-HPC with cluster in local IDC): CreateHybridCluster, etc.

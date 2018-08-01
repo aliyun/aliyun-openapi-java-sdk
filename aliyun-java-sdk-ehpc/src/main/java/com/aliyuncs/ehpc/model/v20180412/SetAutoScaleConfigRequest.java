@@ -34,7 +34,11 @@ public class SetAutoScaleConfigRequest extends RpcAcsRequest<SetAutoScaleConfigR
 
 	private Boolean enableAutoGrow;
 
+	private String spotPriceLimit;
+
 	private Boolean enableAutoShrink;
+
+	private String spotStrategy;
 
 	private Integer maxNodesInCluster;
 
@@ -92,6 +96,17 @@ public class SetAutoScaleConfigRequest extends RpcAcsRequest<SetAutoScaleConfigR
 		}
 	}
 
+	public String getSpotPriceLimit() {
+		return this.spotPriceLimit;
+	}
+
+	public void setSpotPriceLimit(String spotPriceLimit) {
+		this.spotPriceLimit = spotPriceLimit;
+		if(spotPriceLimit != null){
+			putQueryParameter("SpotPriceLimit", spotPriceLimit);
+		}
+	}
+
 	public Boolean getEnableAutoShrink() {
 		return this.enableAutoShrink;
 	}
@@ -100,6 +115,17 @@ public class SetAutoScaleConfigRequest extends RpcAcsRequest<SetAutoScaleConfigR
 		this.enableAutoShrink = enableAutoShrink;
 		if(enableAutoShrink != null){
 			putQueryParameter("EnableAutoShrink", enableAutoShrink.toString());
+		}
+	}
+
+	public String getSpotStrategy() {
+		return this.spotStrategy;
+	}
+
+	public void setSpotStrategy(String spotStrategy) {
+		this.spotStrategy = spotStrategy;
+		if(spotStrategy != null){
+			putQueryParameter("SpotStrategy", spotStrategy);
 		}
 	}
 

@@ -38,6 +38,7 @@ public class ListJobsResponseUnmarshaller {
 			jobInfo.setId(context.stringValue("ListJobsResponse.Jobs["+ i +"].Id"));
 			jobInfo.setName(context.stringValue("ListJobsResponse.Jobs["+ i +"].Name"));
 			jobInfo.setOwner(context.stringValue("ListJobsResponse.Jobs["+ i +"].Owner"));
+			jobInfo.setNodeList(context.stringValue("ListJobsResponse.Jobs["+ i +"].NodeList"));
 			jobInfo.setPriority(context.integerValue("ListJobsResponse.Jobs["+ i +"].Priority"));
 			jobInfo.setState(context.stringValue("ListJobsResponse.Jobs["+ i +"].State"));
 			jobInfo.setSubmitTime(context.stringValue("ListJobsResponse.Jobs["+ i +"].SubmitTime"));

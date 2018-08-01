@@ -87,6 +87,8 @@ public class CreateClusterRequest extends RpcAcsRequest<CreateClusterResponse> {
 
 	private String ecsChargeType;
 
+	private String inputFileUrl;
+
 	private String vpcId;
 
 	private Boolean haEnable;
@@ -435,6 +437,17 @@ public class CreateClusterRequest extends RpcAcsRequest<CreateClusterResponse> {
 		this.ecsChargeType = ecsChargeType;
 		if(ecsChargeType != null){
 			putQueryParameter("EcsChargeType", ecsChargeType);
+		}
+	}
+
+	public String getInputFileUrl() {
+		return this.inputFileUrl;
+	}
+
+	public void setInputFileUrl(String inputFileUrl) {
+		this.inputFileUrl = inputFileUrl;
+		if(inputFileUrl != null){
+			putQueryParameter("InputFileUrl", inputFileUrl);
 		}
 	}
 

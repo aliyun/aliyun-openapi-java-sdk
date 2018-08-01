@@ -101,6 +101,8 @@ public class DescribeClusterResponse extends AcsResponse {
 
 		private List<ApplicationInfo> applications;
 
+		private List<PostInstallScriptInfo> postInstallScripts;
+
 		private EcsInfo ecsInfo;
 
 		public String getId() {
@@ -319,6 +321,14 @@ public class DescribeClusterResponse extends AcsResponse {
 			this.applications = applications;
 		}
 
+		public List<PostInstallScriptInfo> getPostInstallScripts() {
+			return this.postInstallScripts;
+		}
+
+		public void setPostInstallScripts(List<PostInstallScriptInfo> postInstallScripts) {
+			this.postInstallScripts = postInstallScripts;
+		}
+
 		public EcsInfo getEcsInfo() {
 			return this.ecsInfo;
 		}
@@ -357,6 +367,29 @@ public class DescribeClusterResponse extends AcsResponse {
 
 			public void setVersion(String version) {
 				this.version = version;
+			}
+		}
+
+		public static class PostInstallScriptInfo {
+
+			private String url;
+
+			private String args;
+
+			public String getUrl() {
+				return this.url;
+			}
+
+			public void setUrl(String url) {
+				this.url = url;
+			}
+
+			public String getArgs() {
+				return this.args;
+			}
+
+			public void setArgs(String args) {
+				this.args = args;
 			}
 		}
 
