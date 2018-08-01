@@ -30,7 +30,7 @@ public class CreateNotifyPolicyResponse extends AcsResponse {
 
 	private String success;
 
-	private String traceId;
+	private String requestId;
 
 	private Integer result;
 
@@ -58,12 +58,12 @@ public class CreateNotifyPolicyResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public String getTraceId() {
-		return this.traceId;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setTraceId(String traceId) {
-		this.traceId = traceId;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getResult() {

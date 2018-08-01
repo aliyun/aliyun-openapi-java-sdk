@@ -22,11 +22,11 @@ public class CreateNotifyPolicyResponseUnmarshaller {
 
 	public static CreateNotifyPolicyResponse unmarshall(CreateNotifyPolicyResponse createNotifyPolicyResponse, UnmarshallerContext context) {
 		
-		createNotifyPolicyResponse.setCode(context.stringValue("CreateNotifyPolicyResponse.code"));
-		createNotifyPolicyResponse.setMessage(context.stringValue("CreateNotifyPolicyResponse.message"));
-		createNotifyPolicyResponse.setSuccess(context.stringValue("CreateNotifyPolicyResponse.success"));
-		createNotifyPolicyResponse.setTraceId(context.stringValue("CreateNotifyPolicyResponse.traceId"));
-		createNotifyPolicyResponse.setResult(context.integerValue("CreateNotifyPolicyResponse.result"));
+		createNotifyPolicyResponse.setRequestId(context.stringValue("CreateNotifyPolicyResponse.RequestId"));
+		createNotifyPolicyResponse.setCode(context.stringValue("CreateNotifyPolicyResponse.Code"));
+		createNotifyPolicyResponse.setMessage(context.stringValue("CreateNotifyPolicyResponse.Message"));
+		createNotifyPolicyResponse.setSuccess(context.stringValue("CreateNotifyPolicyResponse.Success"));
+		createNotifyPolicyResponse.setResult(context.integerValue("CreateNotifyPolicyResponse.Result"));
 	 
 	 	return createNotifyPolicyResponse;
 	}

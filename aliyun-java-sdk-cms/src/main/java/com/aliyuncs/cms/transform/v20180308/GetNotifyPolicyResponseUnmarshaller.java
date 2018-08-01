@@ -23,10 +23,10 @@ public class GetNotifyPolicyResponseUnmarshaller {
 
 	public static GetNotifyPolicyResponse unmarshall(GetNotifyPolicyResponse getNotifyPolicyResponse, UnmarshallerContext context) {
 		
-		getNotifyPolicyResponse.setCode(context.stringValue("GetNotifyPolicyResponse.code"));
-		getNotifyPolicyResponse.setMessage(context.stringValue("GetNotifyPolicyResponse.message"));
-		getNotifyPolicyResponse.setSuccess(context.stringValue("GetNotifyPolicyResponse.success"));
-		getNotifyPolicyResponse.setTraceId(context.stringValue("GetNotifyPolicyResponse.traceId"));
+		getNotifyPolicyResponse.setRequestId(context.stringValue("GetNotifyPolicyResponse.RequestId"));
+		getNotifyPolicyResponse.setCode(context.stringValue("GetNotifyPolicyResponse.Code"));
+		getNotifyPolicyResponse.setMessage(context.stringValue("GetNotifyPolicyResponse.Message"));
+		getNotifyPolicyResponse.setSuccess(context.stringValue("GetNotifyPolicyResponse.Success"));
 
 		Result result = new Result();
 		result.setAlertName(context.stringValue("GetNotifyPolicyResponse.Result.AlertName"));
@@ -35,6 +35,7 @@ public class GetNotifyPolicyResponseUnmarshaller {
 		result.setId(context.stringValue("GetNotifyPolicyResponse.Result.Id"));
 		result.setStartTime(context.longValue("GetNotifyPolicyResponse.Result.StartTime"));
 		result.setEndTime(context.longValue("GetNotifyPolicyResponse.Result.EndTime"));
+		result.setGroupId(context.stringValue("GetNotifyPolicyResponse.Result.GroupId"));
 		getNotifyPolicyResponse.setResult(result);
 	 
 	 	return getNotifyPolicyResponse;

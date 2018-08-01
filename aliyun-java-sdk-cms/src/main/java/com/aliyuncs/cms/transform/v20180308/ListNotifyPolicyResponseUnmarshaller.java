@@ -26,11 +26,11 @@ public class ListNotifyPolicyResponseUnmarshaller {
 
 	public static ListNotifyPolicyResponse unmarshall(ListNotifyPolicyResponse listNotifyPolicyResponse, UnmarshallerContext context) {
 		
-		listNotifyPolicyResponse.setCode(context.stringValue("ListNotifyPolicyResponse.code"));
-		listNotifyPolicyResponse.setMessage(context.stringValue("ListNotifyPolicyResponse.message"));
-		listNotifyPolicyResponse.setSuccess(context.stringValue("ListNotifyPolicyResponse.success"));
-		listNotifyPolicyResponse.setTraceId(context.stringValue("ListNotifyPolicyResponse.traceId"));
-		listNotifyPolicyResponse.setTotal(context.integerValue("ListNotifyPolicyResponse.total"));
+		listNotifyPolicyResponse.setRequestId(context.stringValue("ListNotifyPolicyResponse.RequestId"));
+		listNotifyPolicyResponse.setCode(context.stringValue("ListNotifyPolicyResponse.Code"));
+		listNotifyPolicyResponse.setMessage(context.stringValue("ListNotifyPolicyResponse.Message"));
+		listNotifyPolicyResponse.setSuccess(context.stringValue("ListNotifyPolicyResponse.Success"));
+		listNotifyPolicyResponse.setTotal(context.integerValue("ListNotifyPolicyResponse.Total"));
 
 		List<NotifyPolicy> notifyPolicyList = new ArrayList<NotifyPolicy>();
 		for (int i = 0; i < context.lengthValue("ListNotifyPolicyResponse.NotifyPolicyList.Length"); i++) {
@@ -41,6 +41,7 @@ public class ListNotifyPolicyResponseUnmarshaller {
 			notifyPolicy.setId(context.stringValue("ListNotifyPolicyResponse.NotifyPolicyList["+ i +"].Id"));
 			notifyPolicy.setStartTime(context.longValue("ListNotifyPolicyResponse.NotifyPolicyList["+ i +"].StartTime"));
 			notifyPolicy.setEndTime(context.longValue("ListNotifyPolicyResponse.NotifyPolicyList["+ i +"].EndTime"));
+			notifyPolicy.setGroupId(context.stringValue("ListNotifyPolicyResponse.NotifyPolicyList["+ i +"].GroupId"));
 
 			notifyPolicyList.add(notifyPolicy);
 		}

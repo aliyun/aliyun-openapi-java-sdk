@@ -30,6 +30,8 @@ public class DeleteNotifyPolicyRequest extends RpcAcsRequest<DeleteNotifyPolicyR
 
 	private String alertName;
 
+	private String groupId;
+
 	private String id;
 
 	private String dimensions;
@@ -53,6 +55,17 @@ public class DeleteNotifyPolicyRequest extends RpcAcsRequest<DeleteNotifyPolicyR
 		this.alertName = alertName;
 		if(alertName != null){
 			putQueryParameter("AlertName", alertName);
+		}
+	}
+
+	public String getGroupId() {
+		return this.groupId;
+	}
+
+	public void setGroupId(String groupId) {
+		this.groupId = groupId;
+		if(groupId != null){
+			putQueryParameter("GroupId", groupId);
 		}
 	}
 

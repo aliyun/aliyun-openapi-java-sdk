@@ -30,6 +30,8 @@ public class CreateNotifyPolicyRequest extends RpcAcsRequest<CreateNotifyPolicyR
 
 	private String alertName;
 
+	private String groupId;
+
 	private Long endTime;
 
 	private Long startTime;
@@ -55,6 +57,17 @@ public class CreateNotifyPolicyRequest extends RpcAcsRequest<CreateNotifyPolicyR
 		this.alertName = alertName;
 		if(alertName != null){
 			putQueryParameter("AlertName", alertName);
+		}
+	}
+
+	public String getGroupId() {
+		return this.groupId;
+	}
+
+	public void setGroupId(String groupId) {
+		this.groupId = groupId;
+		if(groupId != null){
+			putQueryParameter("GroupId", groupId);
 		}
 	}
 

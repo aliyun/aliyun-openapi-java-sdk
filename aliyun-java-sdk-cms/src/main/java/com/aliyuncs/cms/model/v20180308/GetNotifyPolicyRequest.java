@@ -30,6 +30,8 @@ public class GetNotifyPolicyRequest extends RpcAcsRequest<GetNotifyPolicyRespons
 
 	private String alertName;
 
+	private String groupId;
+
 	private String id;
 
 	private String dimensions;
@@ -53,6 +55,17 @@ public class GetNotifyPolicyRequest extends RpcAcsRequest<GetNotifyPolicyRespons
 		this.alertName = alertName;
 		if(alertName != null){
 			putQueryParameter("AlertName", alertName);
+		}
+	}
+
+	public String getGroupId() {
+		return this.groupId;
+	}
+
+	public void setGroupId(String groupId) {
+		this.groupId = groupId;
+		if(groupId != null){
+			putQueryParameter("GroupId", groupId);
 		}
 	}
 

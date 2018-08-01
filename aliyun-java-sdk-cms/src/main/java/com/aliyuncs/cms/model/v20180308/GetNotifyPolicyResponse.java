@@ -30,7 +30,7 @@ public class GetNotifyPolicyResponse extends AcsResponse {
 
 	private String success;
 
-	private String traceId;
+	private String requestId;
 
 	private Result result;
 
@@ -58,12 +58,12 @@ public class GetNotifyPolicyResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public String getTraceId() {
-		return this.traceId;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setTraceId(String traceId) {
-		this.traceId = traceId;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Result getResult() {
@@ -87,6 +87,8 @@ public class GetNotifyPolicyResponse extends AcsResponse {
 		private Long startTime;
 
 		private Long endTime;
+
+		private String groupId;
 
 		public String getAlertName() {
 			return this.alertName;
@@ -134,6 +136,14 @@ public class GetNotifyPolicyResponse extends AcsResponse {
 
 		public void setEndTime(Long endTime) {
 			this.endTime = endTime;
+		}
+
+		public String getGroupId() {
+			return this.groupId;
+		}
+
+		public void setGroupId(String groupId) {
+			this.groupId = groupId;
 		}
 	}
 

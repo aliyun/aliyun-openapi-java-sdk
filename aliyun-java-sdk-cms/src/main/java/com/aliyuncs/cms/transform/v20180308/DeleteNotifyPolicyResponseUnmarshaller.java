@@ -22,11 +22,11 @@ public class DeleteNotifyPolicyResponseUnmarshaller {
 
 	public static DeleteNotifyPolicyResponse unmarshall(DeleteNotifyPolicyResponse deleteNotifyPolicyResponse, UnmarshallerContext context) {
 		
-		deleteNotifyPolicyResponse.setCode(context.stringValue("DeleteNotifyPolicyResponse.code"));
-		deleteNotifyPolicyResponse.setMessage(context.stringValue("DeleteNotifyPolicyResponse.message"));
-		deleteNotifyPolicyResponse.setSuccess(context.stringValue("DeleteNotifyPolicyResponse.success"));
-		deleteNotifyPolicyResponse.setTraceId(context.stringValue("DeleteNotifyPolicyResponse.traceId"));
-		deleteNotifyPolicyResponse.setResult(context.integerValue("DeleteNotifyPolicyResponse.result"));
+		deleteNotifyPolicyResponse.setRequestId(context.stringValue("DeleteNotifyPolicyResponse.RequestId"));
+		deleteNotifyPolicyResponse.setCode(context.stringValue("DeleteNotifyPolicyResponse.Code"));
+		deleteNotifyPolicyResponse.setMessage(context.stringValue("DeleteNotifyPolicyResponse.Message"));
+		deleteNotifyPolicyResponse.setSuccess(context.stringValue("DeleteNotifyPolicyResponse.Success"));
+		deleteNotifyPolicyResponse.setResult(context.integerValue("DeleteNotifyPolicyResponse.Result"));
 	 
 	 	return deleteNotifyPolicyResponse;
 	}

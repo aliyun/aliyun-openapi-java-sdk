@@ -30,6 +30,8 @@ public class ListNotifyPolicyRequest extends RpcAcsRequest<ListNotifyPolicyRespo
 
 	private String alertName;
 
+	private String groupId;
+
 	private Integer pageSize;
 
 	private String id;
@@ -55,6 +57,17 @@ public class ListNotifyPolicyRequest extends RpcAcsRequest<ListNotifyPolicyRespo
 		this.alertName = alertName;
 		if(alertName != null){
 			putQueryParameter("AlertName", alertName);
+		}
+	}
+
+	public String getGroupId() {
+		return this.groupId;
+	}
+
+	public void setGroupId(String groupId) {
+		this.groupId = groupId;
+		if(groupId != null){
+			putQueryParameter("GroupId", groupId);
 		}
 	}
 
