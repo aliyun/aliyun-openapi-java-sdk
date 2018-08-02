@@ -1,3 +1,6 @@
+2018-08-02 Version: 6.0.13
+1, Add parameter(GroupId) for CreateNotifyPolicy,GetNotifyPolicy,DeleteNotifyPolicy,ListNotifyPolicy.
+
 2018-08-01 Version: 6.0.13
 1, Add parameter(GroupId) for CreateNotifyPolicy,GetNotifyPolicy,DeleteNotifyPolicy,ListNotifyPolicy.
 
