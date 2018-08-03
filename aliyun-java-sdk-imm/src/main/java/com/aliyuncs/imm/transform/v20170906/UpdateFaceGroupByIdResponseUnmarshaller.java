@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.imm.model.v20170906.UpdateFaceGroupByIdResponse;
 import com.aliyuncs.imm.model.v20170906.UpdateFaceGroupByIdResponse.FacesItem;
 import com.aliyuncs.imm.model.v20170906.UpdateFaceGroupByIdResponse.FailUpdateDetailItem;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

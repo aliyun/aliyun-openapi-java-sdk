@@ -32,6 +32,7 @@ import com.aliyuncs.imm.model.v20170906.IndexFaceResponse.SuccessDetailsItem.Fac
 import com.aliyuncs.imm.model.v20170906.IndexFaceResponse.SuccessDetailsItem.FacesItem.FaceAttribute.Gender;
 import com.aliyuncs.imm.model.v20170906.IndexFaceResponse.SuccessDetailsItem.FacesItem.FaceAttribute.HeadPose;
 import com.aliyuncs.imm.model.v20170906.IndexFaceResponse.SuccessDetailsItem.FacesItem.FaceRectangle;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

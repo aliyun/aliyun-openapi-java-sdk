@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.imm.model.v20170906.ListFaceGroupPhotosResponse;
 import com.aliyuncs.imm.model.v20170906.ListFaceGroupPhotosResponse.PhotosItem;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

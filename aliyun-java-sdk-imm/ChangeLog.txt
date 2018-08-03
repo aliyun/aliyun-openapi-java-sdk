@@ -1,3 +1,6 @@
+2018-08-04 Version: 1.7.2
+1, CreateOfficeConversionTask add TgtFilePages field to specify the final uploaded page
+
 2018-07-23 Version: 1.7.1
 1, CreateOfficeConversionTask add two fields: TgtFilePrefix and TgtFileSuffix, for setting up the definition of the converted object name.
 

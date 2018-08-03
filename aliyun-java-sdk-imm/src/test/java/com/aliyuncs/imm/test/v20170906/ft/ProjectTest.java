@@ -34,7 +34,7 @@ public class ProjectTest extends TestCase {
     @Test
     public void testAll() throws ClientException {
 
-        String projectName = "myproject2";
+        String projectName = "myproject1";
 
         //create project
         PutProjectRequest putProjectRequest = new PutProjectRequest();

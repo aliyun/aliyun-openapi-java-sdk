@@ -62,6 +62,8 @@ public class CreateOfficeConversionTaskRequest extends RpcAcsRequest<CreateOffic
 
 	private String srcUri;
 
+	private String tgtFilePages;
+
 	private String tgtUri;
 
 	public String getImageSpec() {
@@ -259,6 +261,17 @@ public class CreateOfficeConversionTaskRequest extends RpcAcsRequest<CreateOffic
 		this.srcUri = srcUri;
 		if(srcUri != null){
 			putQueryParameter("SrcUri", srcUri);
+		}
+	}
+
+	public String getTgtFilePages() {
+		return this.tgtFilePages;
+	}
+
+	public void setTgtFilePages(String tgtFilePages) {
+		this.tgtFilePages = tgtFilePages;
+		if(tgtFilePages != null){
+			putQueryParameter("TgtFilePages", tgtFilePages);
 		}
 	}
 
