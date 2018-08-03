@@ -20,24 +20,24 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class GetHybridClusterConfigRequest extends RpcAcsRequest<GetHybridClusterConfigResponse> {
+public class AddLocalNodesRequest extends RpcAcsRequest<AddLocalNodesResponse> {
 	
-	public GetHybridClusterConfigRequest() {
-		super("EHPC", "2018-04-12", "GetHybridClusterConfig", "ehs");
+	public AddLocalNodesRequest() {
+		super("EHPC", "2018-04-12", "AddLocalNodes", "ehs");
 	}
 
-	private String node;
+	private String nodes;
 
 	private String clusterId;
 
-	public String getNode() {
-		return this.node;
+	public String getNodes() {
+		return this.nodes;
 	}
 
-	public void setNode(String node) {
-		this.node = node;
-		if(node != null){
-			putQueryParameter("Node", node);
+	public void setNodes(String nodes) {
+		this.nodes = nodes;
+		if(nodes != null){
+			putQueryParameter("Nodes", nodes);
 		}
 	}
 
@@ -53,8 +53,8 @@ public class GetHybridClusterConfigRequest extends RpcAcsRequest<GetHybridCluste
 	}
 
 	@Override
-	public Class<GetHybridClusterConfigResponse> getResponseClass() {
-		return GetHybridClusterConfigResponse.class;
+	public Class<AddLocalNodesResponse> getResponseClass() {
+		return AddLocalNodesResponse.class;
 	}
 
 }

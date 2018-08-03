@@ -34,8 +34,6 @@ public class GetCloudMetricLogsResponseUnmarshaller {
 			metricLog.setTime(context.integerValue("GetCloudMetricLogsResponse.MetricLogs["+ i +"].Time"));
 			metricLog.setInstanceId(context.stringValue("GetCloudMetricLogsResponse.MetricLogs["+ i +"].InstanceId"));
 			metricLog.setHostname(context.stringValue("GetCloudMetricLogsResponse.MetricLogs["+ i +"].Hostname"));
-			metricLog.setProcessId(context.integerValue("GetCloudMetricLogsResponse.MetricLogs["+ i +"].ProcessId"));
-			metricLog.setProcessName(context.stringValue("GetCloudMetricLogsResponse.MetricLogs["+ i +"].ProcessName"));
 			metricLog.setNetworkInterface(context.stringValue("GetCloudMetricLogsResponse.MetricLogs["+ i +"].NetworkInterface"));
 			metricLog.setDiskDevice(context.stringValue("GetCloudMetricLogsResponse.MetricLogs["+ i +"].DiskDevice"));
 			metricLog.setMetricData(context.stringValue("GetCloudMetricLogsResponse.MetricLogs["+ i +"].MetricData"));

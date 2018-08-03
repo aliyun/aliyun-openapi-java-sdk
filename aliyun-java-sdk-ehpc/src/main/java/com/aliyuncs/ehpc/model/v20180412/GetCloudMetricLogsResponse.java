@@ -53,10 +53,6 @@ public class GetCloudMetricLogsResponse extends AcsResponse {
 
 		private String hostname;
 
-		private Integer processId;
-
-		private String processName;
-
 		private String networkInterface;
 
 		private String diskDevice;
@@ -85,22 +81,6 @@ public class GetCloudMetricLogsResponse extends AcsResponse {
 
 		public void setHostname(String hostname) {
 			this.hostname = hostname;
-		}
-
-		public Integer getProcessId() {
-			return this.processId;
-		}
-
-		public void setProcessId(Integer processId) {
-			this.processId = processId;
-		}
-
-		public String getProcessName() {
-			return this.processName;
-		}
-
-		public void setProcessName(String processName) {
-			this.processName = processName;
 		}
 
 		public String getNetworkInterface() {
