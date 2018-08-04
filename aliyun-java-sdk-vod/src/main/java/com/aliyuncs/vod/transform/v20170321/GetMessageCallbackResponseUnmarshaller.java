@@ -26,9 +26,12 @@ public class GetMessageCallbackResponseUnmarshaller {
 		getMessageCallbackResponse.setRequestId(context.stringValue("GetMessageCallbackResponse.RequestId"));
 
 		MessageCallback messageCallback = new MessageCallback();
+		messageCallback.setCallbackType(context.stringValue("GetMessageCallbackResponse.MessageCallback.CallbackType"));
 		messageCallback.setCallbackSwitch(context.stringValue("GetMessageCallbackResponse.MessageCallback.CallbackSwitch"));
 		messageCallback.setCallbackURL(context.stringValue("GetMessageCallbackResponse.MessageCallback.CallbackURL"));
 		messageCallback.setEventTypeList(context.stringValue("GetMessageCallbackResponse.MessageCallback.EventTypeList"));
+		messageCallback.setAuthSwitch(context.stringValue("GetMessageCallbackResponse.MessageCallback.AuthSwitch"));
+		messageCallback.setAuthKey(context.stringValue("GetMessageCallbackResponse.MessageCallback.AuthKey"));
 		getMessageCallbackResponse.setMessageCallback(messageCallback);
 	 
 	 	return getMessageCallbackResponse;

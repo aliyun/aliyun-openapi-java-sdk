@@ -20,27 +20,27 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class CreateUploadImageRequest extends RpcAcsRequest<CreateUploadImageResponse> {
+public class UploadMediaByURLRequest extends RpcAcsRequest<UploadMediaByURLResponse> {
 	
-	public CreateUploadImageRequest() {
-		super("vod", "2017-03-21", "CreateUploadImage", "vod");
+	public UploadMediaByURLRequest() {
+		super("vod", "2017-03-21", "UploadMediaByURL", "vod");
 	}
 
 	private Long resourceOwnerId;
 
-	private String imageType;
+	private String templateGroupId;
 
-	private String originalFileName;
+	private String uploadMetadatas;
 
 	private String resourceOwnerAccount;
 
-	private String imageExt;
+	private String uploadURLs;
+
+	private String messageCallback;
 
 	private Long ownerId;
 
-	private String title;
-
-	private String tags;
+	private String priority;
 
 	private String storageLocation;
 
@@ -55,25 +55,25 @@ public class CreateUploadImageRequest extends RpcAcsRequest<CreateUploadImageRes
 		}
 	}
 
-	public String getImageType() {
-		return this.imageType;
+	public String getTemplateGroupId() {
+		return this.templateGroupId;
 	}
 
-	public void setImageType(String imageType) {
-		this.imageType = imageType;
-		if(imageType != null){
-			putQueryParameter("ImageType", imageType);
+	public void setTemplateGroupId(String templateGroupId) {
+		this.templateGroupId = templateGroupId;
+		if(templateGroupId != null){
+			putQueryParameter("TemplateGroupId", templateGroupId);
 		}
 	}
 
-	public String getOriginalFileName() {
-		return this.originalFileName;
+	public String getUploadMetadatas() {
+		return this.uploadMetadatas;
 	}
 
-	public void setOriginalFileName(String originalFileName) {
-		this.originalFileName = originalFileName;
-		if(originalFileName != null){
-			putQueryParameter("OriginalFileName", originalFileName);
+	public void setUploadMetadatas(String uploadMetadatas) {
+		this.uploadMetadatas = uploadMetadatas;
+		if(uploadMetadatas != null){
+			putQueryParameter("UploadMetadatas", uploadMetadatas);
 		}
 	}
 
@@ -88,14 +88,25 @@ public class CreateUploadImageRequest extends RpcAcsRequest<CreateUploadImageRes
 		}
 	}
 
-	public String getImageExt() {
-		return this.imageExt;
+	public String getUploadURLs() {
+		return this.uploadURLs;
 	}
 
-	public void setImageExt(String imageExt) {
-		this.imageExt = imageExt;
-		if(imageExt != null){
-			putQueryParameter("ImageExt", imageExt);
+	public void setUploadURLs(String uploadURLs) {
+		this.uploadURLs = uploadURLs;
+		if(uploadURLs != null){
+			putQueryParameter("UploadURLs", uploadURLs);
+		}
+	}
+
+	public String getMessageCallback() {
+		return this.messageCallback;
+	}
+
+	public void setMessageCallback(String messageCallback) {
+		this.messageCallback = messageCallback;
+		if(messageCallback != null){
+			putQueryParameter("MessageCallback", messageCallback);
 		}
 	}
 
@@ -110,25 +121,14 @@ public class CreateUploadImageRequest extends RpcAcsRequest<CreateUploadImageRes
 		}
 	}
 
-	public String getTitle() {
-		return this.title;
+	public String getPriority() {
+		return this.priority;
 	}
 
-	public void setTitle(String title) {
-		this.title = title;
-		if(title != null){
-			putQueryParameter("Title", title);
-		}
-	}
-
-	public String getTags() {
-		return this.tags;
-	}
-
-	public void setTags(String tags) {
-		this.tags = tags;
-		if(tags != null){
-			putQueryParameter("Tags", tags);
+	public void setPriority(String priority) {
+		this.priority = priority;
+		if(priority != null){
+			putQueryParameter("Priority", priority);
 		}
 	}
 
@@ -144,8 +144,8 @@ public class CreateUploadImageRequest extends RpcAcsRequest<CreateUploadImageRes
 	}
 
 	@Override
-	public Class<CreateUploadImageResponse> getResponseClass() {
-		return CreateUploadImageResponse.class;
+	public Class<UploadMediaByURLResponse> getResponseClass() {
+		return UploadMediaByURLResponse.class;
 	}
 
 }

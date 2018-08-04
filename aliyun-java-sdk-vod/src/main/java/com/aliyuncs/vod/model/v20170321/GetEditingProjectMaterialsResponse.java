@@ -73,6 +73,8 @@ public class GetEditingProjectMaterialsResponse extends AcsResponse {
 
 		private String source;
 
+		private String spriteConfig;
+
 		private List<String> snapshots;
 
 		private List<String> sprites;
@@ -179,6 +181,14 @@ public class GetEditingProjectMaterialsResponse extends AcsResponse {
 
 		public void setSource(String source) {
 			this.source = source;
+		}
+
+		public String getSpriteConfig() {
+			return this.spriteConfig;
+		}
+
+		public void setSpriteConfig(String spriteConfig) {
+			this.spriteConfig = spriteConfig;
 		}
 
 		public List<String> getSnapshots() {

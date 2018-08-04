@@ -19,6 +19,8 @@ import java.util.List;
 
 import com.aliyuncs.vod.model.v20170321.GetVideoInfosResponse;
 import com.aliyuncs.vod.model.v20170321.GetVideoInfosResponse.Video;
+import com.aliyuncs.vod.model.v20170321.GetVideoInfosResponse.Video.Thumbnail;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -49,12 +51,26 @@ public class GetVideoInfosResponseUnmarshaller {
 			video.setCoverURL(context.stringValue("GetVideoInfosResponse.VideoList["+ i +"].CoverURL"));
 			video.setCateId(context.longValue("GetVideoInfosResponse.VideoList["+ i +"].CateId"));
 			video.setCateName(context.stringValue("GetVideoInfosResponse.VideoList["+ i +"].CateName"));
+			video.setDownloadSwitch(context.stringValue("GetVideoInfosResponse.VideoList["+ i +"].DownloadSwitch"));
+			video.setTemplateGroupId(context.stringValue("GetVideoInfosResponse.VideoList["+ i +"].TemplateGroupId"));
+			video.setPreprocessStatus(context.stringValue("GetVideoInfosResponse.VideoList["+ i +"].PreprocessStatus"));
+			video.setStorageLocation(context.stringValue("GetVideoInfosResponse.VideoList["+ i +"].StorageLocation"));
+			video.setRegionId(context.stringValue("GetVideoInfosResponse.VideoList["+ i +"].RegionId"));
 
 			List<String> snapshots = new ArrayList<String>();
 			for (int j = 0; j < context.lengthValue("GetVideoInfosResponse.VideoList["+ i +"].Snapshots.Length"); j++) {
 				snapshots.add(context.stringValue("GetVideoInfosResponse.VideoList["+ i +"].Snapshots["+ j +"]"));
 			}
 			video.setSnapshots(snapshots);
+
+			List<Thumbnail> thumbnailList = new ArrayList<Thumbnail>();
+			for (int j = 0; j < context.lengthValue("GetVideoInfosResponse.VideoList["+ i +"].ThumbnailList.Length"); j++) {
+				Thumbnail thumbnail = new Thumbnail();
+				thumbnail.setURL(context.stringValue("GetVideoInfosResponse.VideoList["+ i +"].ThumbnailList["+ j +"].URL"));
+
+				thumbnailList.add(thumbnail);
+			}
+			video.setThumbnailList(thumbnailList);
 
 			videoList.add(video);
 		}

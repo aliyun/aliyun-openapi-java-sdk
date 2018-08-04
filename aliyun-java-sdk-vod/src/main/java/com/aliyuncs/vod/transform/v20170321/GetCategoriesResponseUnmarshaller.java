@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.vod.model.v20170321.GetCategoriesResponse;
 import com.aliyuncs.vod.model.v20170321.GetCategoriesResponse.Category;
 import com.aliyuncs.vod.model.v20170321.GetCategoriesResponse.Category1;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

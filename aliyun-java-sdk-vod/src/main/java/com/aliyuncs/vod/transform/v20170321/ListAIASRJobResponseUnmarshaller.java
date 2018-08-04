@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.vod.model.v20170321.ListAIASRJobResponse;
 import com.aliyuncs.vod.model.v20170321.ListAIASRJobResponse.AIASRJob;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

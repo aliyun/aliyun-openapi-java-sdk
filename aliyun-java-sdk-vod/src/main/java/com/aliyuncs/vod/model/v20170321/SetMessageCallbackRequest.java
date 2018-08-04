@@ -28,6 +28,8 @@ public class SetMessageCallbackRequest extends RpcAcsRequest<SetMessageCallbackR
 
 	private String callbackType;
 
+	private String authKey;
+
 	private String resourceOwnerId;
 
 	private String callbackSwitch;
@@ -37,6 +39,8 @@ public class SetMessageCallbackRequest extends RpcAcsRequest<SetMessageCallbackR
 	private String ownerAccount;
 
 	private String eventTypeList;
+
+	private String authSwitch;
 
 	private String callbackURL;
 
@@ -50,6 +54,17 @@ public class SetMessageCallbackRequest extends RpcAcsRequest<SetMessageCallbackR
 		this.callbackType = callbackType;
 		if(callbackType != null){
 			putQueryParameter("CallbackType", callbackType);
+		}
+	}
+
+	public String getAuthKey() {
+		return this.authKey;
+	}
+
+	public void setAuthKey(String authKey) {
+		this.authKey = authKey;
+		if(authKey != null){
+			putQueryParameter("AuthKey", authKey);
 		}
 	}
 
@@ -105,6 +120,17 @@ public class SetMessageCallbackRequest extends RpcAcsRequest<SetMessageCallbackR
 		this.eventTypeList = eventTypeList;
 		if(eventTypeList != null){
 			putQueryParameter("EventTypeList", eventTypeList);
+		}
+	}
+
+	public String getAuthSwitch() {
+		return this.authSwitch;
+	}
+
+	public void setAuthSwitch(String authSwitch) {
+		this.authSwitch = authSwitch;
+		if(authSwitch != null){
+			putQueryParameter("AuthSwitch", authSwitch);
 		}
 	}
 

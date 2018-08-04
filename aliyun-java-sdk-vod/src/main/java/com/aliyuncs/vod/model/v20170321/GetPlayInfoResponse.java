@@ -15,6 +15,7 @@
 package com.aliyuncs.vod.model.v20170321;
 
 import java.util.List;
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.vod.transform.v20170321.GetPlayInfoResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -90,6 +91,8 @@ public class GetPlayInfoResponse extends AcsResponse {
 		private String preprocessStatus;
 
 		private String watermarkId;
+
+		private String status;
 
 		public Long getWidth() {
 			return this.width;
@@ -226,9 +229,19 @@ public class GetPlayInfoResponse extends AcsResponse {
 		public void setWatermarkId(String watermarkId) {
 			this.watermarkId = watermarkId;
 		}
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
+		}
 	}
 
 	public static class VideoBase {
+
+		private String outputType;
 
 		private String coverURL;
 
@@ -244,7 +257,17 @@ public class GetPlayInfoResponse extends AcsResponse {
 
 		private String creationTime;
 
+		private String transcodeMode;
+
 		private List<Thumbnail> thumbnailList;
+
+		public String getOutputType() {
+			return this.outputType;
+		}
+
+		public void setOutputType(String outputType) {
+			this.outputType = outputType;
+		}
 
 		public String getCoverURL() {
 			return this.coverURL;
@@ -300,6 +323,14 @@ public class GetPlayInfoResponse extends AcsResponse {
 
 		public void setCreationTime(String creationTime) {
 			this.creationTime = creationTime;
+		}
+
+		public String getTranscodeMode() {
+			return this.transcodeMode;
+		}
+
+		public void setTranscodeMode(String transcodeMode) {
+			this.transcodeMode = transcodeMode;
 		}
 
 		public List<Thumbnail> getThumbnailList() {

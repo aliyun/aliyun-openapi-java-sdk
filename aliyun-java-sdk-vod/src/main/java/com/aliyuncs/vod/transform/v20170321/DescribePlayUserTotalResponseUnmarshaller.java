@@ -21,6 +21,7 @@ import com.aliyuncs.vod.model.v20170321.DescribePlayUserTotalResponse;
 import com.aliyuncs.vod.model.v20170321.DescribePlayUserTotalResponse.UserPlayStatisTotal;
 import com.aliyuncs.vod.model.v20170321.DescribePlayUserTotalResponse.UserPlayStatisTotal.UV;
 import com.aliyuncs.vod.model.v20170321.DescribePlayUserTotalResponse.UserPlayStatisTotal.VV;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

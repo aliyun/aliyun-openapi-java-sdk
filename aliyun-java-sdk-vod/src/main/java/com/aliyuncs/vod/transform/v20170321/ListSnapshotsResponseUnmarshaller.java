@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.vod.model.v20170321.ListSnapshotsResponse;
 import com.aliyuncs.vod.model.v20170321.ListSnapshotsResponse.MediaSnapshot;
 import com.aliyuncs.vod.model.v20170321.ListSnapshotsResponse.MediaSnapshot.Snapshot;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

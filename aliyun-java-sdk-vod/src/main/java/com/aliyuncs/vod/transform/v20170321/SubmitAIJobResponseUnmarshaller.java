@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.vod.model.v20170321.SubmitAIJobResponse;
 import com.aliyuncs.vod.model.v20170321.SubmitAIJobResponse.AIJob;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

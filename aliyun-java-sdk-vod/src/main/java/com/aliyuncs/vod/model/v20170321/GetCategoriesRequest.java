@@ -36,6 +36,8 @@ public class GetCategoriesRequest extends RpcAcsRequest<GetCategoriesResponse> {
 
 	private Long pageSize;
 
+	private String sortBy;
+
 	private String ownerId;
 
 	public String getResourceOwnerId() {
@@ -90,6 +92,17 @@ public class GetCategoriesRequest extends RpcAcsRequest<GetCategoriesResponse> {
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getSortBy() {
+		return this.sortBy;
+	}
+
+	public void setSortBy(String sortBy) {
+		this.sortBy = sortBy;
+		if(sortBy != null){
+			putQueryParameter("SortBy", sortBy);
 		}
 	}
 

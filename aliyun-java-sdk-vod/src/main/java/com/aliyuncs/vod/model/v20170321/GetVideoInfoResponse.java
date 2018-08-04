@@ -15,6 +15,7 @@
 package com.aliyuncs.vod.model.v20170321;
 
 import java.util.List;
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.vod.transform.v20170321.GetVideoInfoResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -85,7 +86,15 @@ public class GetVideoInfoResponse extends AcsResponse {
 
 		private String cateName;
 
+		private String downloadSwitch;
+
+		private String templateGroupId;
+
 		private String preprocessStatus;
+
+		private String storageLocation;
+
+		private String regionId;
 
 		private List<Thumbnail> thumbnailList;
 
@@ -203,12 +212,44 @@ public class GetVideoInfoResponse extends AcsResponse {
 			this.cateName = cateName;
 		}
 
+		public String getDownloadSwitch() {
+			return this.downloadSwitch;
+		}
+
+		public void setDownloadSwitch(String downloadSwitch) {
+			this.downloadSwitch = downloadSwitch;
+		}
+
+		public String getTemplateGroupId() {
+			return this.templateGroupId;
+		}
+
+		public void setTemplateGroupId(String templateGroupId) {
+			this.templateGroupId = templateGroupId;
+		}
+
 		public String getPreprocessStatus() {
 			return this.preprocessStatus;
 		}
 
 		public void setPreprocessStatus(String preprocessStatus) {
 			this.preprocessStatus = preprocessStatus;
+		}
+
+		public String getStorageLocation() {
+			return this.storageLocation;
+		}
+
+		public void setStorageLocation(String storageLocation) {
+			this.storageLocation = storageLocation;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
 		}
 
 		public List<Thumbnail> getThumbnailList() {

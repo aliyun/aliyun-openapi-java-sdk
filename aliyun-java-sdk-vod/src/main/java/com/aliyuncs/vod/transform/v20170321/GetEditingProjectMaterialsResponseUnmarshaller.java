@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.vod.model.v20170321.GetEditingProjectMaterialsResponse;
 import com.aliyuncs.vod.model.v20170321.GetEditingProjectMaterialsResponse.Material;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -44,6 +45,7 @@ public class GetEditingProjectMaterialsResponseUnmarshaller {
 			material.setCateId(context.integerValue("GetEditingProjectMaterialsResponse.MaterialList["+ i +"].CateId"));
 			material.setCateName(context.stringValue("GetEditingProjectMaterialsResponse.MaterialList["+ i +"].CateName"));
 			material.setSource(context.stringValue("GetEditingProjectMaterialsResponse.MaterialList["+ i +"].Source"));
+			material.setSpriteConfig(context.stringValue("GetEditingProjectMaterialsResponse.MaterialList["+ i +"].SpriteConfig"));
 
 			List<String> snapshots = new ArrayList<String>();
 			for (int j = 0; j < context.lengthValue("GetEditingProjectMaterialsResponse.MaterialList["+ i +"].Snapshots.Length"); j++) {

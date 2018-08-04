@@ -29,7 +29,7 @@ public class GetAuditHistoryResponse extends AcsResponse {
 
 	private String status;
 
-	private String total;
+	private Long total;
 
 	private List<History> histories;
 
@@ -49,11 +49,11 @@ public class GetAuditHistoryResponse extends AcsResponse {
 		this.status = status;
 	}
 
-	public String getTotal() {
+	public Long getTotal() {
 		return this.total;
 	}
 
-	public void setTotal(String total) {
+	public void setTotal(Long total) {
 		this.total = total;
 	}
 
@@ -74,6 +74,8 @@ public class GetAuditHistoryResponse extends AcsResponse {
 		private String reason;
 
 		private String comment;
+
+		private String auditor;
 
 		public String getCreationTime() {
 			return this.creationTime;
@@ -105,6 +107,14 @@ public class GetAuditHistoryResponse extends AcsResponse {
 
 		public void setComment(String comment) {
 			this.comment = comment;
+		}
+
+		public String getAuditor() {
+			return this.auditor;
+		}
+
+		public void setAuditor(String auditor) {
+			this.auditor = auditor;
 		}
 	}
 

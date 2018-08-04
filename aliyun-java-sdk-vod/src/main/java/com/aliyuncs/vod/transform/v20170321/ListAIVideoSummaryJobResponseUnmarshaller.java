@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.vod.model.v20170321.ListAIVideoSummaryJobResponse;
 import com.aliyuncs.vod.model.v20170321.ListAIVideoSummaryJobResponse.AIVideoSummaryJob;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

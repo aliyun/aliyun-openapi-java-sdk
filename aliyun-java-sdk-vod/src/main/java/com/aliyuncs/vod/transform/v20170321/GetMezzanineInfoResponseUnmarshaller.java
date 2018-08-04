@@ -21,6 +21,7 @@ import com.aliyuncs.vod.model.v20170321.GetMezzanineInfoResponse;
 import com.aliyuncs.vod.model.v20170321.GetMezzanineInfoResponse.Mezzanine;
 import com.aliyuncs.vod.model.v20170321.GetMezzanineInfoResponse.Mezzanine.AudioStream;
 import com.aliyuncs.vod.model.v20170321.GetMezzanineInfoResponse.Mezzanine.VideoStream;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

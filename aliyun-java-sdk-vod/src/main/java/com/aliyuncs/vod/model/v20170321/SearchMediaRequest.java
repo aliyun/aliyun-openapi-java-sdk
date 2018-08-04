@@ -32,6 +32,8 @@ public class SearchMediaRequest extends RpcAcsRequest<SearchMediaResponse> {
 
 	private Integer pageNo;
 
+	private String searchType;
+
 	private String match;
 
 	private Integer pageSize;
@@ -41,8 +43,6 @@ public class SearchMediaRequest extends RpcAcsRequest<SearchMediaResponse> {
 	private Long ownerId;
 
 	private String fields;
-
-	private String mediaType;
 
 	private String scrollToken;
 
@@ -76,6 +76,17 @@ public class SearchMediaRequest extends RpcAcsRequest<SearchMediaResponse> {
 		this.pageNo = pageNo;
 		if(pageNo != null){
 			putQueryParameter("PageNo", pageNo.toString());
+		}
+	}
+
+	public String getSearchType() {
+		return this.searchType;
+	}
+
+	public void setSearchType(String searchType) {
+		this.searchType = searchType;
+		if(searchType != null){
+			putQueryParameter("SearchType", searchType);
 		}
 	}
 
@@ -131,17 +142,6 @@ public class SearchMediaRequest extends RpcAcsRequest<SearchMediaResponse> {
 		this.fields = fields;
 		if(fields != null){
 			putQueryParameter("Fields", fields);
-		}
-	}
-
-	public String getMediaType() {
-		return this.mediaType;
-	}
-
-	public void setMediaType(String mediaType) {
-		this.mediaType = mediaType;
-		if(mediaType != null){
-			putQueryParameter("MediaType", mediaType);
 		}
 	}
 

@@ -81,6 +81,18 @@ public class GetVideoInfosResponse extends AcsResponse {
 
 		private String cateName;
 
+		private String downloadSwitch;
+
+		private String templateGroupId;
+
+		private String preprocessStatus;
+
+		private String storageLocation;
+
+		private String regionId;
+
+		private List<Thumbnail> thumbnailList;
+
 		private List<String> snapshots;
 
 		public String getVideoId() {
@@ -179,12 +191,73 @@ public class GetVideoInfosResponse extends AcsResponse {
 			this.cateName = cateName;
 		}
 
+		public String getDownloadSwitch() {
+			return this.downloadSwitch;
+		}
+
+		public void setDownloadSwitch(String downloadSwitch) {
+			this.downloadSwitch = downloadSwitch;
+		}
+
+		public String getTemplateGroupId() {
+			return this.templateGroupId;
+		}
+
+		public void setTemplateGroupId(String templateGroupId) {
+			this.templateGroupId = templateGroupId;
+		}
+
+		public String getPreprocessStatus() {
+			return this.preprocessStatus;
+		}
+
+		public void setPreprocessStatus(String preprocessStatus) {
+			this.preprocessStatus = preprocessStatus;
+		}
+
+		public String getStorageLocation() {
+			return this.storageLocation;
+		}
+
+		public void setStorageLocation(String storageLocation) {
+			this.storageLocation = storageLocation;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
+		}
+
+		public List<Thumbnail> getThumbnailList() {
+			return this.thumbnailList;
+		}
+
+		public void setThumbnailList(List<Thumbnail> thumbnailList) {
+			this.thumbnailList = thumbnailList;
+		}
+
 		public List<String> getSnapshots() {
 			return this.snapshots;
 		}
 
 		public void setSnapshots(List<String> snapshots) {
 			this.snapshots = snapshots;
+		}
+
+		public static class Thumbnail {
+
+			private String uRL;
+
+			public String getURL() {
+				return this.uRL;
+			}
+
+			public void setURL(String uRL) {
+				this.uRL = uRL;
+			}
 		}
 	}
 

@@ -30,8 +30,6 @@ public class GetVideoPlayAuthRequest extends RpcAcsRequest<GetVideoPlayAuthRespo
 
 	private String resourceOwnerAccount;
 
-	private String reAuthInfo;
-
 	private Long authInfoTimeout;
 
 	private String videoId;
@@ -57,17 +55,6 @@ public class GetVideoPlayAuthRequest extends RpcAcsRequest<GetVideoPlayAuthRespo
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public String getReAuthInfo() {
-		return this.reAuthInfo;
-	}
-
-	public void setReAuthInfo(String reAuthInfo) {
-		this.reAuthInfo = reAuthInfo;
-		if(reAuthInfo != null){
-			putQueryParameter("ReAuthInfo", reAuthInfo);
 		}
 	}
 

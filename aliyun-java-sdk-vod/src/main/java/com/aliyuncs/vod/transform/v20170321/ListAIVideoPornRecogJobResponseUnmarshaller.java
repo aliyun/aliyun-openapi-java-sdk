@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.vod.model.v20170321.ListAIVideoPornRecogJobResponse;
 import com.aliyuncs.vod.model.v20170321.ListAIVideoPornRecogJobResponse.AIVideoPornRecogJob;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

@@ -21,6 +21,7 @@ import com.aliyuncs.vod.model.v20170321.GetPlayInfoResponse;
 import com.aliyuncs.vod.model.v20170321.GetPlayInfoResponse.PlayInfo;
 import com.aliyuncs.vod.model.v20170321.GetPlayInfoResponse.VideoBase;
 import com.aliyuncs.vod.model.v20170321.GetPlayInfoResponse.VideoBase.Thumbnail;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -31,6 +32,7 @@ public class GetPlayInfoResponseUnmarshaller {
 		getPlayInfoResponse.setRequestId(context.stringValue("GetPlayInfoResponse.RequestId"));
 
 		VideoBase videoBase = new VideoBase();
+		videoBase.setOutputType(context.stringValue("GetPlayInfoResponse.VideoBase.OutputType"));
 		videoBase.setCoverURL(context.stringValue("GetPlayInfoResponse.VideoBase.CoverURL"));
 		videoBase.setDuration(context.stringValue("GetPlayInfoResponse.VideoBase.Duration"));
 		videoBase.setStatus(context.stringValue("GetPlayInfoResponse.VideoBase.Status"));
@@ -38,6 +40,7 @@ public class GetPlayInfoResponseUnmarshaller {
 		videoBase.setVideoId(context.stringValue("GetPlayInfoResponse.VideoBase.VideoId"));
 		videoBase.setMediaType(context.stringValue("GetPlayInfoResponse.VideoBase.MediaType"));
 		videoBase.setCreationTime(context.stringValue("GetPlayInfoResponse.VideoBase.CreationTime"));
+		videoBase.setTranscodeMode(context.stringValue("GetPlayInfoResponse.VideoBase.TranscodeMode"));
 
 		List<Thumbnail> thumbnailList = new ArrayList<Thumbnail>();
 		for (int i = 0; i < context.lengthValue("GetPlayInfoResponse.VideoBase.ThumbnailList.Length"); i++) {
@@ -69,6 +72,7 @@ public class GetPlayInfoResponseUnmarshaller {
 			playInfo.setJobId(context.stringValue("GetPlayInfoResponse.PlayInfoList["+ i +"].JobId"));
 			playInfo.setPreprocessStatus(context.stringValue("GetPlayInfoResponse.PlayInfoList["+ i +"].PreprocessStatus"));
 			playInfo.setWatermarkId(context.stringValue("GetPlayInfoResponse.PlayInfoList["+ i +"].WatermarkId"));
+			playInfo.setStatus(context.stringValue("GetPlayInfoResponse.PlayInfoList["+ i +"].Status"));
 
 			playInfoList.add(playInfo);
 		}

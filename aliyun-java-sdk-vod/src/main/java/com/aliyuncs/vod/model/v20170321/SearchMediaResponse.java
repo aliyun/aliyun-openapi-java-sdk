@@ -71,11 +71,11 @@ public class SearchMediaResponse extends AcsResponse {
 
 		private String creationTime;
 
-		private String mediaType1;
-
 		private String mediaId;
 
 		private Video video;
+
+		private Audio audio;
 
 		public String getMediaType() {
 			return this.mediaType;
@@ -93,14 +93,6 @@ public class SearchMediaResponse extends AcsResponse {
 			this.creationTime = creationTime;
 		}
 
-		public String getMediaType1() {
-			return this.mediaType1;
-		}
-
-		public void setMediaType1(String mediaType1) {
-			this.mediaType1 = mediaType1;
-		}
-
 		public String getMediaId() {
 			return this.mediaId;
 		}
@@ -115,6 +107,14 @@ public class SearchMediaResponse extends AcsResponse {
 
 		public void setVideo(Video video) {
 			this.video = video;
+		}
+
+		public Audio getAudio() {
+			return this.audio;
+		}
+
+		public void setAudio(Audio audio) {
+			this.audio = audio;
 		}
 
 		public static class Video {
@@ -137,8 +137,6 @@ public class SearchMediaResponse extends AcsResponse {
 
 			private String description;
 
-			private Long customerId;
-
 			private String modificationTime;
 
 			private String creationTime;
@@ -156,6 +154,8 @@ public class SearchMediaResponse extends AcsResponse {
 			private String storageLocation;
 
 			private String regionId;
+
+			private String transcodeMode;
 
 			private List<String> snapshots;
 
@@ -233,12 +233,207 @@ public class SearchMediaResponse extends AcsResponse {
 				this.description = description;
 			}
 
-			public Long getCustomerId() {
-				return this.customerId;
+			public String getModificationTime() {
+				return this.modificationTime;
 			}
 
-			public void setCustomerId(Long customerId) {
-				this.customerId = customerId;
+			public void setModificationTime(String modificationTime) {
+				this.modificationTime = modificationTime;
+			}
+
+			public String getCreationTime() {
+				return this.creationTime;
+			}
+
+			public void setCreationTime(String creationTime) {
+				this.creationTime = creationTime;
+			}
+
+			public String getCoverURL() {
+				return this.coverURL;
+			}
+
+			public void setCoverURL(String coverURL) {
+				this.coverURL = coverURL;
+			}
+
+			public Long getCateId() {
+				return this.cateId;
+			}
+
+			public void setCateId(Long cateId) {
+				this.cateId = cateId;
+			}
+
+			public String getCateName() {
+				return this.cateName;
+			}
+
+			public void setCateName(String cateName) {
+				this.cateName = cateName;
+			}
+
+			public String getDownloadSwitch() {
+				return this.downloadSwitch;
+			}
+
+			public void setDownloadSwitch(String downloadSwitch) {
+				this.downloadSwitch = downloadSwitch;
+			}
+
+			public String getPreprocessStatus() {
+				return this.preprocessStatus;
+			}
+
+			public void setPreprocessStatus(String preprocessStatus) {
+				this.preprocessStatus = preprocessStatus;
+			}
+
+			public String getStorageLocation() {
+				return this.storageLocation;
+			}
+
+			public void setStorageLocation(String storageLocation) {
+				this.storageLocation = storageLocation;
+			}
+
+			public String getRegionId() {
+				return this.regionId;
+			}
+
+			public void setRegionId(String regionId) {
+				this.regionId = regionId;
+			}
+
+			public String getTranscodeMode() {
+				return this.transcodeMode;
+			}
+
+			public void setTranscodeMode(String transcodeMode) {
+				this.transcodeMode = transcodeMode;
+			}
+
+			public List<String> getSnapshots() {
+				return this.snapshots;
+			}
+
+			public void setSnapshots(List<String> snapshots) {
+				this.snapshots = snapshots;
+			}
+
+			public List<String> getSpriteSnapshots() {
+				return this.spriteSnapshots;
+			}
+
+			public void setSpriteSnapshots(List<String> spriteSnapshots) {
+				this.spriteSnapshots = spriteSnapshots;
+			}
+		}
+
+		public static class Audio {
+
+			private String audioId;
+
+			private String mediaSource;
+
+			private String title;
+
+			private String tags;
+
+			private String status;
+
+			private Long size;
+
+			private Float duration;
+
+			private String description;
+
+			private String modificationTime;
+
+			private String creationTime;
+
+			private String coverURL;
+
+			private Long cateId;
+
+			private String cateName;
+
+			private String downloadSwitch;
+
+			private String preprocessStatus;
+
+			private String storageLocation;
+
+			private String regionId;
+
+			private String transcodeMode;
+
+			private List<String> snapshots2;
+
+			private List<String> spriteSnapshots3;
+
+			public String getAudioId() {
+				return this.audioId;
+			}
+
+			public void setAudioId(String audioId) {
+				this.audioId = audioId;
+			}
+
+			public String getMediaSource() {
+				return this.mediaSource;
+			}
+
+			public void setMediaSource(String mediaSource) {
+				this.mediaSource = mediaSource;
+			}
+
+			public String getTitle() {
+				return this.title;
+			}
+
+			public void setTitle(String title) {
+				this.title = title;
+			}
+
+			public String getTags() {
+				return this.tags;
+			}
+
+			public void setTags(String tags) {
+				this.tags = tags;
+			}
+
+			public String getStatus() {
+				return this.status;
+			}
+
+			public void setStatus(String status) {
+				this.status = status;
+			}
+
+			public Long getSize() {
+				return this.size;
+			}
+
+			public void setSize(Long size) {
+				this.size = size;
+			}
+
+			public Float getDuration() {
+				return this.duration;
+			}
+
+			public void setDuration(Float duration) {
+				this.duration = duration;
+			}
+
+			public String getDescription() {
+				return this.description;
+			}
+
+			public void setDescription(String description) {
+				this.description = description;
 			}
 
 			public String getModificationTime() {
@@ -313,20 +508,28 @@ public class SearchMediaResponse extends AcsResponse {
 				this.regionId = regionId;
 			}
 
-			public List<String> getSnapshots() {
-				return this.snapshots;
+			public String getTranscodeMode() {
+				return this.transcodeMode;
 			}
 
-			public void setSnapshots(List<String> snapshots) {
-				this.snapshots = snapshots;
+			public void setTranscodeMode(String transcodeMode) {
+				this.transcodeMode = transcodeMode;
 			}
 
-			public List<String> getSpriteSnapshots() {
-				return this.spriteSnapshots;
+			public List<String> getSnapshots2() {
+				return this.snapshots2;
 			}
 
-			public void setSpriteSnapshots(List<String> spriteSnapshots) {
-				this.spriteSnapshots = spriteSnapshots;
+			public void setSnapshots2(List<String> snapshots2) {
+				this.snapshots2 = snapshots2;
+			}
+
+			public List<String> getSpriteSnapshots3() {
+				return this.spriteSnapshots3;
+			}
+
+			public void setSpriteSnapshots3(List<String> spriteSnapshots3) {
+				this.spriteSnapshots3 = spriteSnapshots3;
 			}
 		}
 	}

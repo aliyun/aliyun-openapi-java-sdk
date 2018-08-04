@@ -1,3 +1,11 @@
+2018-08-04 Version: 2.11.4
+1, Add a new api called SetAuditSecurityIp to set audit security ip.
+2, Add a new api called ListAuditSecurityIp to query audit security ip list.
+3, Add a new api called UploadMediaByURL to bulk upload media based on urls.
+4, Add the field called StorageLocation and TemplateGroupId to GetVideoInfo api response.
+5, Add the field called StorageLocation and TemplateGroupId to GetVideoInfos api response.
+6, Add the field called OutputType and Status to GetPlayInfo api response.
+
 2018-07-10 Version: 2.11.3
 1, Add new apis called "CreateAudit","GetAuditHistory" and "GetAuditResult" which support auditing feature.
 2, Add a new api called GetVideoInfos to bulk query video information.

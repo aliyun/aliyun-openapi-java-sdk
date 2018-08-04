@@ -46,11 +46,25 @@ public class GetMessageCallbackResponse extends AcsResponse {
 
 	public static class MessageCallback {
 
+		private String callbackType;
+
 		private String callbackSwitch;
 
 		private String callbackURL;
 
 		private String eventTypeList;
+
+		private String authSwitch;
+
+		private String authKey;
+
+		public String getCallbackType() {
+			return this.callbackType;
+		}
+
+		public void setCallbackType(String callbackType) {
+			this.callbackType = callbackType;
+		}
 
 		public String getCallbackSwitch() {
 			return this.callbackSwitch;
@@ -74,6 +88,22 @@ public class GetMessageCallbackResponse extends AcsResponse {
 
 		public void setEventTypeList(String eventTypeList) {
 			this.eventTypeList = eventTypeList;
+		}
+
+		public String getAuthSwitch() {
+			return this.authSwitch;
+		}
+
+		public void setAuthSwitch(String authSwitch) {
+			this.authSwitch = authSwitch;
+		}
+
+		public String getAuthKey() {
+			return this.authKey;
+		}
+
+		public void setAuthKey(String authKey) {
+			this.authKey = authKey;
 		}
 	}
 

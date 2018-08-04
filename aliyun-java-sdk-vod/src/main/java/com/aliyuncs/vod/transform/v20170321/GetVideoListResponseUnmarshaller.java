@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.vod.model.v20170321.GetVideoListResponse;
 import com.aliyuncs.vod.model.v20170321.GetVideoListResponse.Video;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

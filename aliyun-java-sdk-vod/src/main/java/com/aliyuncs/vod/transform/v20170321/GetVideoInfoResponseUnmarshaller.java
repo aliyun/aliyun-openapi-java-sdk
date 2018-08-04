@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.vod.model.v20170321.GetVideoInfoResponse;
 import com.aliyuncs.vod.model.v20170321.GetVideoInfoResponse.Video;
 import com.aliyuncs.vod.model.v20170321.GetVideoInfoResponse.Video.Thumbnail;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -45,7 +46,11 @@ public class GetVideoInfoResponseUnmarshaller {
 		video.setCoverURL(context.stringValue("GetVideoInfoResponse.Video.CoverURL"));
 		video.setCateId(context.longValue("GetVideoInfoResponse.Video.CateId"));
 		video.setCateName(context.stringValue("GetVideoInfoResponse.Video.CateName"));
+		video.setDownloadSwitch(context.stringValue("GetVideoInfoResponse.Video.DownloadSwitch"));
+		video.setTemplateGroupId(context.stringValue("GetVideoInfoResponse.Video.TemplateGroupId"));
 		video.setPreprocessStatus(context.stringValue("GetVideoInfoResponse.Video.PreprocessStatus"));
+		video.setStorageLocation(context.stringValue("GetVideoInfoResponse.Video.StorageLocation"));
+		video.setRegionId(context.stringValue("GetVideoInfoResponse.Video.RegionId"));
 
 		List<String> snapshots = new ArrayList<String>();
 		for (int i = 0; i < context.lengthValue("GetVideoInfoResponse.Video.Snapshots.Length"); i++) {

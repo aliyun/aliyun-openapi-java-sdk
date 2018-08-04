@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.vod.model.v20170321.GetAuditHistoryResponse;
 import com.aliyuncs.vod.model.v20170321.GetAuditHistoryResponse.History;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -28,7 +29,7 @@ public class GetAuditHistoryResponseUnmarshaller {
 		
 		getAuditHistoryResponse.setRequestId(context.stringValue("GetAuditHistoryResponse.RequestId"));
 		getAuditHistoryResponse.setStatus(context.stringValue("GetAuditHistoryResponse.Status"));
-		getAuditHistoryResponse.setTotal(context.stringValue("GetAuditHistoryResponse.Total"));
+		getAuditHistoryResponse.setTotal(context.longValue("GetAuditHistoryResponse.Total"));
 
 		List<History> histories = new ArrayList<History>();
 		for (int i = 0; i < context.lengthValue("GetAuditHistoryResponse.Histories.Length"); i++) {
@@ -37,6 +38,7 @@ public class GetAuditHistoryResponseUnmarshaller {
 			history.setStatus(context.stringValue("GetAuditHistoryResponse.Histories["+ i +"].Status"));
 			history.setReason(context.stringValue("GetAuditHistoryResponse.Histories["+ i +"].Reason"));
 			history.setComment(context.stringValue("GetAuditHistoryResponse.Histories["+ i +"].Comment"));
+			history.setAuditor(context.stringValue("GetAuditHistoryResponse.Histories["+ i +"].Auditor"));
 
 			histories.add(history);
 		}
