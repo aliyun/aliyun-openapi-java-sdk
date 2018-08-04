@@ -1,21 +1,17 @@
 /*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
+
 package com.aliyuncs.mts.model.v20140618;
 
 import java.util.List;
@@ -67,6 +63,8 @@ public class QueryMediaInfoJobListResponse extends AcsResponse {
 
 		private String pipelineId;
 
+		private Boolean async;
+
 		private String state;
 
 		private String code;
@@ -103,6 +101,14 @@ public class QueryMediaInfoJobListResponse extends AcsResponse {
 
 		public void setPipelineId(String pipelineId) {
 			this.pipelineId = pipelineId;
+		}
+
+		public Boolean getAsync() {
+			return this.async;
+		}
+
+		public void setAsync(Boolean async) {
+			this.async = async;
 		}
 
 		public String getState() {
@@ -761,6 +767,22 @@ public class QueryMediaInfoJobListResponse extends AcsResponse {
 
 					private String index;
 
+					private String codecName;
+
+					private String codecTimeBase;
+
+					private String codecLongName;
+
+					private String codecTagString;
+
+					private String codecTag;
+
+					private String timebase;
+
+					private String startTime;
+
+					private String duration;
+
 					private String lang;
 
 					public String getIndex() {
@@ -769,6 +791,70 @@ public class QueryMediaInfoJobListResponse extends AcsResponse {
 
 					public void setIndex(String index) {
 						this.index = index;
+					}
+
+					public String getCodecName() {
+						return this.codecName;
+					}
+
+					public void setCodecName(String codecName) {
+						this.codecName = codecName;
+					}
+
+					public String getCodecTimeBase() {
+						return this.codecTimeBase;
+					}
+
+					public void setCodecTimeBase(String codecTimeBase) {
+						this.codecTimeBase = codecTimeBase;
+					}
+
+					public String getCodecLongName() {
+						return this.codecLongName;
+					}
+
+					public void setCodecLongName(String codecLongName) {
+						this.codecLongName = codecLongName;
+					}
+
+					public String getCodecTagString() {
+						return this.codecTagString;
+					}
+
+					public void setCodecTagString(String codecTagString) {
+						this.codecTagString = codecTagString;
+					}
+
+					public String getCodecTag() {
+						return this.codecTag;
+					}
+
+					public void setCodecTag(String codecTag) {
+						this.codecTag = codecTag;
+					}
+
+					public String getTimebase() {
+						return this.timebase;
+					}
+
+					public void setTimebase(String timebase) {
+						this.timebase = timebase;
+					}
+
+					public String getStartTime() {
+						return this.startTime;
+					}
+
+					public void setStartTime(String startTime) {
+						this.startTime = startTime;
+					}
+
+					public String getDuration() {
+						return this.duration;
+					}
+
+					public void setDuration(String duration) {
+						this.duration = duration;
 					}
 
 					public String getLang() {

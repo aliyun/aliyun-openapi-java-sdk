@@ -1,21 +1,17 @@
 /*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
+
 package com.aliyuncs.mts.model.v20140618;
 
 import java.util.List;
@@ -74,6 +70,16 @@ public class QueryCensorJobListResponse extends AcsResponse {
 		private String message;
 
 		private String creationTime;
+
+		private String titleCensorResult;
+
+		private String descCensorResult;
+
+		private String barrageCensorResult;
+
+		private String resultSaveObject;
+
+		private List<ImageCensorResult> imageCensorResults;
 
 		private Input input;
 
@@ -139,6 +145,46 @@ public class QueryCensorJobListResponse extends AcsResponse {
 			this.creationTime = creationTime;
 		}
 
+		public String getTitleCensorResult() {
+			return this.titleCensorResult;
+		}
+
+		public void setTitleCensorResult(String titleCensorResult) {
+			this.titleCensorResult = titleCensorResult;
+		}
+
+		public String getDescCensorResult() {
+			return this.descCensorResult;
+		}
+
+		public void setDescCensorResult(String descCensorResult) {
+			this.descCensorResult = descCensorResult;
+		}
+
+		public String getBarrageCensorResult() {
+			return this.barrageCensorResult;
+		}
+
+		public void setBarrageCensorResult(String barrageCensorResult) {
+			this.barrageCensorResult = barrageCensorResult;
+		}
+
+		public String getResultSaveObject() {
+			return this.resultSaveObject;
+		}
+
+		public void setResultSaveObject(String resultSaveObject) {
+			this.resultSaveObject = resultSaveObject;
+		}
+
+		public List<ImageCensorResult> getImageCensorResults() {
+			return this.imageCensorResults;
+		}
+
+		public void setImageCensorResults(List<ImageCensorResult> imageCensorResults) {
+			this.imageCensorResults = imageCensorResults;
+		}
+
 		public Input getInput() {
 			return this.input;
 		}
@@ -169,6 +215,49 @@ public class QueryCensorJobListResponse extends AcsResponse {
 
 		public void setCensorTerrorismResult(CensorTerrorismResult censorTerrorismResult) {
 			this.censorTerrorismResult = censorTerrorismResult;
+		}
+
+		public static class ImageCensorResult {
+
+			private String imageLocation;
+
+			private String imageBucket;
+
+			private String imageObject;
+
+			private String result;
+
+			public String getImageLocation() {
+				return this.imageLocation;
+			}
+
+			public void setImageLocation(String imageLocation) {
+				this.imageLocation = imageLocation;
+			}
+
+			public String getImageBucket() {
+				return this.imageBucket;
+			}
+
+			public void setImageBucket(String imageBucket) {
+				this.imageBucket = imageBucket;
+			}
+
+			public String getImageObject() {
+				return this.imageObject;
+			}
+
+			public void setImageObject(String imageObject) {
+				this.imageObject = imageObject;
+			}
+
+			public String getResult() {
+				return this.result;
+			}
+
+			public void setResult(String result) {
+				this.result = result;
+			}
 		}
 
 		public static class Input {
@@ -210,6 +299,10 @@ public class QueryCensorJobListResponse extends AcsResponse {
 
 			private String bizType;
 
+			private String saveType;
+
+			private String scenes;
+
 			private OutputFile outputFile;
 
 			public String getInterval() {
@@ -226,6 +319,22 @@ public class QueryCensorJobListResponse extends AcsResponse {
 
 			public void setBizType(String bizType) {
 				this.bizType = bizType;
+			}
+
+			public String getSaveType() {
+				return this.saveType;
+			}
+
+			public void setSaveType(String saveType) {
+				this.saveType = saveType;
+			}
+
+			public String getScenes() {
+				return this.scenes;
+			}
+
+			public void setScenes(String scenes) {
+				this.scenes = scenes;
 			}
 
 			public OutputFile getOutputFile() {

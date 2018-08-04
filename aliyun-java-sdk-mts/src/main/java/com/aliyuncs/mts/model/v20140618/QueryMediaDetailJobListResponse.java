@@ -1,21 +1,17 @@
 /*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
+
 package com.aliyuncs.mts.model.v20140618;
 
 import java.util.List;
@@ -308,6 +304,8 @@ public class QueryMediaDetailJobListResponse extends AcsResponse {
 
 				private List<FrameTagInfo> frameTagInfos;
 
+				private List<Custom> customs;
+
 				private List<String> frameTags;
 
 				public String getImageUrl() {
@@ -364,6 +362,14 @@ public class QueryMediaDetailJobListResponse extends AcsResponse {
 
 				public void setFrameTagInfos(List<FrameTagInfo> frameTagInfos) {
 					this.frameTagInfos = frameTagInfos;
+				}
+
+				public List<Custom> getCustoms() {
+					return this.customs;
+				}
+
+				public void setCustoms(List<Custom> customs) {
+					this.customs = customs;
 				}
 
 				public List<String> getFrameTags() {
@@ -503,6 +509,102 @@ public class QueryMediaDetailJobListResponse extends AcsResponse {
 
 					public void setCategory(String category) {
 						this.category = category;
+					}
+				}
+
+				public static class Custom {
+
+					private String name;
+
+					private List<Clip> clips;
+
+					public String getName() {
+						return this.name;
+					}
+
+					public void setName(String name) {
+						this.name = name;
+					}
+
+					public List<Clip> getClips() {
+						return this.clips;
+					}
+
+					public void setClips(List<Clip> clips) {
+						this.clips = clips;
+					}
+
+					public static class Clip {
+
+						private String minScore;
+
+						private String maxScore;
+
+						private String avgScore;
+
+						private String startTarget;
+
+						private String endTarget;
+
+						private String startTime;
+
+						private String endTime;
+
+						public String getMinScore() {
+							return this.minScore;
+						}
+
+						public void setMinScore(String minScore) {
+							this.minScore = minScore;
+						}
+
+						public String getMaxScore() {
+							return this.maxScore;
+						}
+
+						public void setMaxScore(String maxScore) {
+							this.maxScore = maxScore;
+						}
+
+						public String getAvgScore() {
+							return this.avgScore;
+						}
+
+						public void setAvgScore(String avgScore) {
+							this.avgScore = avgScore;
+						}
+
+						public String getStartTarget() {
+							return this.startTarget;
+						}
+
+						public void setStartTarget(String startTarget) {
+							this.startTarget = startTarget;
+						}
+
+						public String getEndTarget() {
+							return this.endTarget;
+						}
+
+						public void setEndTarget(String endTarget) {
+							this.endTarget = endTarget;
+						}
+
+						public String getStartTime() {
+							return this.startTime;
+						}
+
+						public void setStartTime(String startTime) {
+							this.startTime = startTime;
+						}
+
+						public String getEndTime() {
+							return this.endTime;
+						}
+
+						public void setEndTime(String endTime) {
+							this.endTime = endTime;
+						}
 					}
 				}
 			}

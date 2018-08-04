@@ -1,21 +1,17 @@
 /*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
+
 package com.aliyuncs.mts.model.v20140618;
 
 import com.aliyuncs.RpcAcsRequest;
@@ -38,7 +34,13 @@ public class GetLicenseRequest extends RpcAcsRequest<GetLicenseResponse> {
 
 	private String ownerAccount;
 
+	private String header;
+
 	private String ownerId;
+
+	private String mediaId;
+
+	private String type;
 
 	private String licenseUrl;
 
@@ -86,6 +88,17 @@ public class GetLicenseRequest extends RpcAcsRequest<GetLicenseResponse> {
 		}
 	}
 
+	public String getHeader() {
+		return this.header;
+	}
+
+	public void setHeader(String header) {
+		this.header = header;
+		if(header != null){
+			putQueryParameter("Header", header);
+		}
+	}
+
 	public String getOwnerId() {
 		return this.ownerId;
 	}
@@ -94,6 +107,28 @@ public class GetLicenseRequest extends RpcAcsRequest<GetLicenseResponse> {
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId);
+		}
+	}
+
+	public String getMediaId() {
+		return this.mediaId;
+	}
+
+	public void setMediaId(String mediaId) {
+		this.mediaId = mediaId;
+		if(mediaId != null){
+			putQueryParameter("MediaId", mediaId);
+		}
+	}
+
+	public String getType() {
+		return this.type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+		if(type != null){
+			putQueryParameter("Type", type);
 		}
 	}
 

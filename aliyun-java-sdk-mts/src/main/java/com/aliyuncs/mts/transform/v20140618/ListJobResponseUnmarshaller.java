@@ -1,21 +1,17 @@
 /*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
+
 package com.aliyuncs.mts.transform.v20140618;
 
 import java.util.ArrayList;
@@ -35,11 +31,13 @@ import com.aliyuncs.mts.model.v20140618.ListJobResponse.Job.Output.Encryption;
 import com.aliyuncs.mts.model.v20140618.ListJobResponse.Job.Output.M3U8NonStandardSupport;
 import com.aliyuncs.mts.model.v20140618.ListJobResponse.Job.Output.M3U8NonStandardSupport.TS;
 import com.aliyuncs.mts.model.v20140618.ListJobResponse.Job.Output.Merge;
-import com.aliyuncs.mts.model.v20140618.ListJobResponse.Job.Output.Merge1;
-import com.aliyuncs.mts.model.v20140618.ListJobResponse.Job.Output.Merge2;
 import com.aliyuncs.mts.model.v20140618.ListJobResponse.Job.Output.MuxConfig;
 import com.aliyuncs.mts.model.v20140618.ListJobResponse.Job.Output.MuxConfig.Gif;
 import com.aliyuncs.mts.model.v20140618.ListJobResponse.Job.Output.MuxConfig.Segment;
+import com.aliyuncs.mts.model.v20140618.ListJobResponse.Job.Output.MuxConfig.Webp;
+import com.aliyuncs.mts.model.v20140618.ListJobResponse.Job.Output.Opening;
+import com.aliyuncs.mts.model.v20140618.ListJobResponse.Job.Output.OutSubtitle;
+import com.aliyuncs.mts.model.v20140618.ListJobResponse.Job.Output.OutSubtitle.OutSubtitleFile;
 import com.aliyuncs.mts.model.v20140618.ListJobResponse.Job.Output.OutputFile;
 import com.aliyuncs.mts.model.v20140618.ListJobResponse.Job.Output.Properties;
 import com.aliyuncs.mts.model.v20140618.ListJobResponse.Job.Output.Properties.Format;
@@ -50,14 +48,16 @@ import com.aliyuncs.mts.model.v20140618.ListJobResponse.Job.Output.Properties.St
 import com.aliyuncs.mts.model.v20140618.ListJobResponse.Job.Output.Properties.Streams.VideoStream.NetworkCost;
 import com.aliyuncs.mts.model.v20140618.ListJobResponse.Job.Output.SubtitleConfig;
 import com.aliyuncs.mts.model.v20140618.ListJobResponse.Job.Output.SubtitleConfig.ExtSubtitle;
-import com.aliyuncs.mts.model.v20140618.ListJobResponse.Job.Output.SubtitleConfig.ExtSubtitle.Input3;
+import com.aliyuncs.mts.model.v20140618.ListJobResponse.Job.Output.SubtitleConfig.ExtSubtitle.Input1;
 import com.aliyuncs.mts.model.v20140618.ListJobResponse.Job.Output.SubtitleConfig.Subtitle;
 import com.aliyuncs.mts.model.v20140618.ListJobResponse.Job.Output.SuperReso;
+import com.aliyuncs.mts.model.v20140618.ListJobResponse.Job.Output.TailSlate;
 import com.aliyuncs.mts.model.v20140618.ListJobResponse.Job.Output.TransConfig;
 import com.aliyuncs.mts.model.v20140618.ListJobResponse.Job.Output.Video;
 import com.aliyuncs.mts.model.v20140618.ListJobResponse.Job.Output.Video.BitrateBnd;
 import com.aliyuncs.mts.model.v20140618.ListJobResponse.Job.Output.WaterMark;
 import com.aliyuncs.mts.model.v20140618.ListJobResponse.Job.Output.WaterMark.InputFile;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -235,11 +235,11 @@ public class ListJobResponseUnmarshaller {
 				extSubtitle.setFontName(context.stringValue("ListJobResponse.JobList["+ i +"].Output.SubtitleConfig.ExtSubtitleList["+ j +"].FontName"));
 				extSubtitle.setCharEnc(context.stringValue("ListJobResponse.JobList["+ i +"].Output.SubtitleConfig.ExtSubtitleList["+ j +"].CharEnc"));
 
-				Input3 input3 = new Input3();
-				input3.setBucket(context.stringValue("ListJobResponse.JobList["+ i +"].Output.SubtitleConfig.ExtSubtitleList["+ j +"].Input.Bucket"));
-				input3.setLocation(context.stringValue("ListJobResponse.JobList["+ i +"].Output.SubtitleConfig.ExtSubtitleList["+ j +"].Input.Location"));
-				input3.setObject(context.stringValue("ListJobResponse.JobList["+ i +"].Output.SubtitleConfig.ExtSubtitleList["+ j +"].Input.Object"));
-				extSubtitle.setInput3(input3);
+				Input1 input1 = new Input1();
+				input1.setBucket(context.stringValue("ListJobResponse.JobList["+ i +"].Output.SubtitleConfig.ExtSubtitleList["+ j +"].Input.Bucket"));
+				input1.setLocation(context.stringValue("ListJobResponse.JobList["+ i +"].Output.SubtitleConfig.ExtSubtitleList["+ j +"].Input.Location"));
+				input1.setObject(context.stringValue("ListJobResponse.JobList["+ i +"].Output.SubtitleConfig.ExtSubtitleList["+ j +"].Input.Object"));
+				extSubtitle.setInput1(input1);
 
 				extSubtitleList.add(extSubtitle);
 			}
@@ -269,6 +269,10 @@ public class ListJobResponseUnmarshaller {
 			gif.setIsCustomPalette(context.stringValue("ListJobResponse.JobList["+ i +"].Output.MuxConfig.Gif.IsCustomPalette"));
 			gif.setDitherMode(context.stringValue("ListJobResponse.JobList["+ i +"].Output.MuxConfig.Gif.DitherMode"));
 			muxConfig.setGif(gif);
+
+			Webp webp = new Webp();
+			webp.setLoop(context.stringValue("ListJobResponse.JobList["+ i +"].Output.MuxConfig.Webp.Loop"));
+			muxConfig.setWebp(webp);
 			output.setMuxConfig(muxConfig);
 
 			Audio audio = new Audio();
@@ -304,6 +308,7 @@ public class ListJobResponseUnmarshaller {
 			video.setCrop(context.stringValue("ListJobResponse.JobList["+ i +"].Output.Video.Crop"));
 			video.setPad(context.stringValue("ListJobResponse.JobList["+ i +"].Output.Video.Pad"));
 			video.setMaxFps(context.stringValue("ListJobResponse.JobList["+ i +"].Output.Video.MaxFps"));
+			video.setResoPriority(context.stringValue("ListJobResponse.JobList["+ i +"].Output.Video.ResoPriority"));
 
 			BitrateBnd bitrateBnd = new BitrateBnd();
 			bitrateBnd.setMax(context.stringValue("ListJobResponse.JobList["+ i +"].Output.Video.BitrateBnd.Max"));
@@ -357,32 +362,50 @@ public class ListJobResponseUnmarshaller {
 			}
 			output.setMergeList(mergeList);
 
-			List<Merge1> openingList = new ArrayList<Merge1>();
+			List<Opening> openingList = new ArrayList<Opening>();
 			for (int j = 0; j < context.lengthValue("ListJobResponse.JobList["+ i +"].Output.OpeningList.Length"); j++) {
-				Merge1 merge1 = new Merge1();
-				merge1.setOpenUrl(context.stringValue("ListJobResponse.JobList["+ i +"].Output.OpeningList["+ j +"].openUrl"));
-				merge1.setStart(context.stringValue("ListJobResponse.JobList["+ i +"].Output.OpeningList["+ j +"].Start"));
-				merge1.setWidth(context.stringValue("ListJobResponse.JobList["+ i +"].Output.OpeningList["+ j +"].Width"));
-				merge1.setHeight(context.stringValue("ListJobResponse.JobList["+ i +"].Output.OpeningList["+ j +"].Height"));
+				Opening opening = new Opening();
+				opening.setOpenUrl(context.stringValue("ListJobResponse.JobList["+ i +"].Output.OpeningList["+ j +"].openUrl"));
+				opening.setStart(context.stringValue("ListJobResponse.JobList["+ i +"].Output.OpeningList["+ j +"].Start"));
+				opening.setWidth(context.stringValue("ListJobResponse.JobList["+ i +"].Output.OpeningList["+ j +"].Width"));
+				opening.setHeight(context.stringValue("ListJobResponse.JobList["+ i +"].Output.OpeningList["+ j +"].Height"));
 
-				openingList.add(merge1);
+				openingList.add(opening);
 			}
 			output.setOpeningList(openingList);
 
-			List<Merge2> tailSlateList = new ArrayList<Merge2>();
+			List<TailSlate> tailSlateList = new ArrayList<TailSlate>();
 			for (int j = 0; j < context.lengthValue("ListJobResponse.JobList["+ i +"].Output.TailSlateList.Length"); j++) {
-				Merge2 merge2 = new Merge2();
-				merge2.setTailUrl(context.stringValue("ListJobResponse.JobList["+ i +"].Output.TailSlateList["+ j +"].TailUrl"));
-				merge2.setStart(context.stringValue("ListJobResponse.JobList["+ i +"].Output.TailSlateList["+ j +"].Start"));
-				merge2.setBlendDuration(context.stringValue("ListJobResponse.JobList["+ i +"].Output.TailSlateList["+ j +"].BlendDuration"));
-				merge2.setWidth(context.stringValue("ListJobResponse.JobList["+ i +"].Output.TailSlateList["+ j +"].Width"));
-				merge2.setHeight(context.stringValue("ListJobResponse.JobList["+ i +"].Output.TailSlateList["+ j +"].Height"));
-				merge2.setIsMergeAudio(context.booleanValue("ListJobResponse.JobList["+ i +"].Output.TailSlateList["+ j +"].IsMergeAudio"));
-				merge2.setBgColor(context.stringValue("ListJobResponse.JobList["+ i +"].Output.TailSlateList["+ j +"].BgColor"));
+				TailSlate tailSlate = new TailSlate();
+				tailSlate.setTailUrl(context.stringValue("ListJobResponse.JobList["+ i +"].Output.TailSlateList["+ j +"].TailUrl"));
+				tailSlate.setStart(context.stringValue("ListJobResponse.JobList["+ i +"].Output.TailSlateList["+ j +"].Start"));
+				tailSlate.setBlendDuration(context.stringValue("ListJobResponse.JobList["+ i +"].Output.TailSlateList["+ j +"].BlendDuration"));
+				tailSlate.setWidth(context.stringValue("ListJobResponse.JobList["+ i +"].Output.TailSlateList["+ j +"].Width"));
+				tailSlate.setHeight(context.stringValue("ListJobResponse.JobList["+ i +"].Output.TailSlateList["+ j +"].Height"));
+				tailSlate.setIsMergeAudio(context.booleanValue("ListJobResponse.JobList["+ i +"].Output.TailSlateList["+ j +"].IsMergeAudio"));
+				tailSlate.setBgColor(context.stringValue("ListJobResponse.JobList["+ i +"].Output.TailSlateList["+ j +"].BgColor"));
 
-				tailSlateList.add(merge2);
+				tailSlateList.add(tailSlate);
 			}
 			output.setTailSlateList(tailSlateList);
+
+			List<OutSubtitle> outSubtitleList = new ArrayList<OutSubtitle>();
+			for (int j = 0; j < context.lengthValue("ListJobResponse.JobList["+ i +"].Output.OutSubtitleList.Length"); j++) {
+				OutSubtitle outSubtitle = new OutSubtitle();
+				outSubtitle.setMap(context.stringValue("ListJobResponse.JobList["+ i +"].Output.OutSubtitleList["+ j +"].Map"));
+				outSubtitle.setSuccess(context.booleanValue("ListJobResponse.JobList["+ i +"].Output.OutSubtitleList["+ j +"].Success"));
+				outSubtitle.setMessage(context.stringValue("ListJobResponse.JobList["+ i +"].Output.OutSubtitleList["+ j +"].Message"));
+
+				OutSubtitleFile outSubtitleFile = new OutSubtitleFile();
+				outSubtitleFile.setBucket(context.stringValue("ListJobResponse.JobList["+ i +"].Output.OutSubtitleList["+ j +"].OutSubtitleFile.Bucket"));
+				outSubtitleFile.setLocation(context.stringValue("ListJobResponse.JobList["+ i +"].Output.OutSubtitleList["+ j +"].OutSubtitleFile.Location"));
+				outSubtitleFile.setObject(context.stringValue("ListJobResponse.JobList["+ i +"].Output.OutSubtitleList["+ j +"].OutSubtitleFile.Object"));
+				outSubtitleFile.setRoleArn(context.stringValue("ListJobResponse.JobList["+ i +"].Output.OutSubtitleList["+ j +"].OutSubtitleFile.RoleArn"));
+				outSubtitle.setOutSubtitleFile(outSubtitleFile);
+
+				outSubtitleList.add(outSubtitle);
+			}
+			output.setOutSubtitleList(outSubtitleList);
 			job.setOutput(output);
 
 			MNSMessageResult mNSMessageResult = new MNSMessageResult();

@@ -1,21 +1,17 @@
 /*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
+
 package com.aliyuncs.mts.transform.v20140618;
 
 import java.util.ArrayList;
@@ -35,6 +31,9 @@ import com.aliyuncs.mts.model.v20140618.QueryMediaListResponse.Media.Play;
 import com.aliyuncs.mts.model.v20140618.QueryMediaListResponse.Media.Play.File1;
 import com.aliyuncs.mts.model.v20140618.QueryMediaListResponse.Media.Snapshot;
 import com.aliyuncs.mts.model.v20140618.QueryMediaListResponse.Media.Snapshot.File2;
+import com.aliyuncs.mts.model.v20140618.QueryMediaListResponse.Media.Summary;
+import com.aliyuncs.mts.model.v20140618.QueryMediaListResponse.Media.Summary.File3;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -66,6 +65,7 @@ public class QueryMediaListResponseUnmarshaller {
 			media.setHeight(context.stringValue("QueryMediaListResponse.MediaList["+ i +"].Height"));
 			media.setFps(context.stringValue("QueryMediaListResponse.MediaList["+ i +"].Fps"));
 			media.setPublishState(context.stringValue("QueryMediaListResponse.MediaList["+ i +"].PublishState"));
+			media.setCensorState(context.stringValue("QueryMediaListResponse.MediaList["+ i +"].CensorState"));
 			media.setCreationTime(context.stringValue("QueryMediaListResponse.MediaList["+ i +"].CreationTime"));
 
 			List<String> tags = new ArrayList<String>();
@@ -214,6 +214,23 @@ public class QueryMediaListResponseUnmarshaller {
 				snapshotList.add(snapshot);
 			}
 			media.setSnapshotList(snapshotList);
+
+			List<Summary> summaryList = new ArrayList<Summary>();
+			for (int j = 0; j < context.lengthValue("QueryMediaListResponse.MediaList["+ i +"].SummaryList.Length"); j++) {
+				Summary summary = new Summary();
+				summary.setType(context.stringValue("QueryMediaListResponse.MediaList["+ i +"].SummaryList["+ j +"].Type"));
+				summary.setMediaWorkflowId(context.stringValue("QueryMediaListResponse.MediaList["+ i +"].SummaryList["+ j +"].MediaWorkflowId"));
+				summary.setMediaWorkflowName(context.stringValue("QueryMediaListResponse.MediaList["+ i +"].SummaryList["+ j +"].MediaWorkflowName"));
+				summary.setActivityName(context.stringValue("QueryMediaListResponse.MediaList["+ i +"].SummaryList["+ j +"].ActivityName"));
+
+				File3 file3 = new File3();
+				file3.setURL(context.stringValue("QueryMediaListResponse.MediaList["+ i +"].SummaryList["+ j +"].File.URL"));
+				file3.setState(context.stringValue("QueryMediaListResponse.MediaList["+ i +"].SummaryList["+ j +"].File.State"));
+				summary.setFile3(file3);
+
+				summaryList.add(summary);
+			}
+			media.setSummaryList(summaryList);
 
 			mediaList.add(media);
 		}

@@ -1,21 +1,17 @@
 /*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
+
 package com.aliyuncs.mts.transform.v20140618;
 
 import java.util.ArrayList;
@@ -32,6 +28,7 @@ import com.aliyuncs.mts.model.v20140618.SubmitMediaInfoJobResponse.MediaInfoJob.
 import com.aliyuncs.mts.model.v20140618.SubmitMediaInfoJobResponse.MediaInfoJob.Properties.Streams.SubtitleStream;
 import com.aliyuncs.mts.model.v20140618.SubmitMediaInfoJobResponse.MediaInfoJob.Properties.Streams.VideoStream;
 import com.aliyuncs.mts.model.v20140618.SubmitMediaInfoJobResponse.MediaInfoJob.Properties.Streams.VideoStream.NetworkCost;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -45,6 +42,7 @@ public class SubmitMediaInfoJobResponseUnmarshaller {
 		mediaInfoJob.setJobId(context.stringValue("SubmitMediaInfoJobResponse.MediaInfoJob.JobId"));
 		mediaInfoJob.setUserData(context.stringValue("SubmitMediaInfoJobResponse.MediaInfoJob.UserData"));
 		mediaInfoJob.setPipelineId(context.stringValue("SubmitMediaInfoJobResponse.MediaInfoJob.PipelineId"));
+		mediaInfoJob.setAsync(context.booleanValue("SubmitMediaInfoJobResponse.MediaInfoJob.Async"));
 		mediaInfoJob.setState(context.stringValue("SubmitMediaInfoJobResponse.MediaInfoJob.State"));
 		mediaInfoJob.setCode(context.stringValue("SubmitMediaInfoJobResponse.MediaInfoJob.Code"));
 		mediaInfoJob.setMessage(context.stringValue("SubmitMediaInfoJobResponse.MediaInfoJob.Message"));
@@ -132,6 +130,14 @@ public class SubmitMediaInfoJobResponseUnmarshaller {
 		for (int i = 0; i < context.lengthValue("SubmitMediaInfoJobResponse.MediaInfoJob.Properties.Streams.SubtitleStreamList.Length"); i++) {
 			SubtitleStream subtitleStream = new SubtitleStream();
 			subtitleStream.setIndex(context.stringValue("SubmitMediaInfoJobResponse.MediaInfoJob.Properties.Streams.SubtitleStreamList["+ i +"].Index"));
+			subtitleStream.setCodecName(context.stringValue("SubmitMediaInfoJobResponse.MediaInfoJob.Properties.Streams.SubtitleStreamList["+ i +"].CodecName"));
+			subtitleStream.setCodecTimeBase(context.stringValue("SubmitMediaInfoJobResponse.MediaInfoJob.Properties.Streams.SubtitleStreamList["+ i +"].CodecTimeBase"));
+			subtitleStream.setCodecLongName(context.stringValue("SubmitMediaInfoJobResponse.MediaInfoJob.Properties.Streams.SubtitleStreamList["+ i +"].CodecLongName"));
+			subtitleStream.setCodecTagString(context.stringValue("SubmitMediaInfoJobResponse.MediaInfoJob.Properties.Streams.SubtitleStreamList["+ i +"].CodecTagString"));
+			subtitleStream.setCodecTag(context.stringValue("SubmitMediaInfoJobResponse.MediaInfoJob.Properties.Streams.SubtitleStreamList["+ i +"].CodecTag"));
+			subtitleStream.setTimebase(context.stringValue("SubmitMediaInfoJobResponse.MediaInfoJob.Properties.Streams.SubtitleStreamList["+ i +"].Timebase"));
+			subtitleStream.setStartTime(context.stringValue("SubmitMediaInfoJobResponse.MediaInfoJob.Properties.Streams.SubtitleStreamList["+ i +"].StartTime"));
+			subtitleStream.setDuration(context.stringValue("SubmitMediaInfoJobResponse.MediaInfoJob.Properties.Streams.SubtitleStreamList["+ i +"].Duration"));
 			subtitleStream.setLang(context.stringValue("SubmitMediaInfoJobResponse.MediaInfoJob.Properties.Streams.SubtitleStreamList["+ i +"].Lang"));
 
 			subtitleStreamList.add(subtitleStream);

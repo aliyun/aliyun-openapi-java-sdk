@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.mts.model.v20140618;
 
 import com.aliyuncs.AcsResponse;
@@ -25,7 +26,9 @@ public class CreateSessionResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String session;
+	private String sessionId;
+
+	private String ticket;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -35,12 +38,20 @@ public class CreateSessionResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getSession() {
-		return this.session;
+	public String getSessionId() {
+		return this.sessionId;
 	}
 
-	public void setSession(String session) {
-		this.session = session;
+	public void setSessionId(String sessionId) {
+		this.sessionId = sessionId;
+	}
+
+	public String getTicket() {
+		return this.ticket;
+	}
+
+	public void setTicket(String ticket) {
+		this.ticket = ticket;
 	}
 
 	@Override

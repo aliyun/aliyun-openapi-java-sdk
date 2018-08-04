@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.mts.transform.v20140618;
 
 import com.aliyuncs.mts.model.v20140618.CreateSessionResponse;
@@ -22,7 +23,8 @@ public class CreateSessionResponseUnmarshaller {
 	public static CreateSessionResponse unmarshall(CreateSessionResponse createSessionResponse, UnmarshallerContext context) {
 		
 		createSessionResponse.setRequestId(context.stringValue("CreateSessionResponse.RequestId"));
-		createSessionResponse.setSession(context.stringValue("CreateSessionResponse.Session"));
+		createSessionResponse.setSessionId(context.stringValue("CreateSessionResponse.SessionId"));
+		createSessionResponse.setTicket(context.stringValue("CreateSessionResponse.Ticket"));
 	 
 	 	return createSessionResponse;
 	}

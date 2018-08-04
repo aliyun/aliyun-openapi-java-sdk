@@ -1,21 +1,17 @@
 /*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
+
 package com.aliyuncs.mts.transform.v20140618;
 
 import java.util.ArrayList;
@@ -72,6 +68,7 @@ import com.aliyuncs.mts.model.v20140618.SubmitEditingJobsResponse.JobResult.Job.
 import com.aliyuncs.mts.model.v20140618.SubmitEditingJobsResponse.JobResult.Job.EditingInput.InputConfig;
 import com.aliyuncs.mts.model.v20140618.SubmitEditingJobsResponse.JobResult.Job.EditingInput.InputFile;
 import com.aliyuncs.mts.model.v20140618.SubmitEditingJobsResponse.JobResult.Job.MNSMessageResult;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -359,6 +356,10 @@ public class SubmitEditingJobsResponseUnmarshaller {
 			timelineConfigVideo.setHeight(context.stringValue("SubmitEditingJobsResponse.JobResultList["+ i +"].Job.EditingConfig.Editing.Timeline.TimelineConfig.TimelineConfigVideo.Height"));
 			timelineConfigVideo.setBgColor(context.stringValue("SubmitEditingJobsResponse.JobResultList["+ i +"].Job.EditingConfig.Editing.Timeline.TimelineConfig.TimelineConfigVideo.BgColor"));
 			timelineConfigVideo.setFps(context.stringValue("SubmitEditingJobsResponse.JobResultList["+ i +"].Job.EditingConfig.Editing.Timeline.TimelineConfig.TimelineConfigVideo.Fps"));
+			timelineConfigVideo.setRenderRatio(context.stringValue("SubmitEditingJobsResponse.JobResultList["+ i +"].Job.EditingConfig.Editing.Timeline.TimelineConfig.TimelineConfigVideo.RenderRatio"));
+			timelineConfigVideo.setReclosePrec(context.stringValue("SubmitEditingJobsResponse.JobResultList["+ i +"].Job.EditingConfig.Editing.Timeline.TimelineConfig.TimelineConfigVideo.ReclosePrec"));
+			timelineConfigVideo.setIsGpuData(context.stringValue("SubmitEditingJobsResponse.JobResultList["+ i +"].Job.EditingConfig.Editing.Timeline.TimelineConfig.TimelineConfigVideo.IsGpuData"));
+			timelineConfigVideo.setIsOneTrackData(context.stringValue("SubmitEditingJobsResponse.JobResultList["+ i +"].Job.EditingConfig.Editing.Timeline.TimelineConfig.TimelineConfigVideo.IsOneTrackData"));
 			timelineConfig.setTimelineConfigVideo(timelineConfigVideo);
 
 			TimelineConfigAudio timelineConfigAudio = new TimelineConfigAudio();

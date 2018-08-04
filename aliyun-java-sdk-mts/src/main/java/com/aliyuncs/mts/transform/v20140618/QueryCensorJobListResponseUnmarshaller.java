@@ -1,21 +1,17 @@
 /*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
+
 package com.aliyuncs.mts.transform.v20140618;
 
 import java.util.ArrayList;
@@ -31,7 +27,9 @@ import com.aliyuncs.mts.model.v20140618.QueryCensorJobListResponse.CensorJob.Cen
 import com.aliyuncs.mts.model.v20140618.QueryCensorJobListResponse.CensorJob.CensorTerrorismResult;
 import com.aliyuncs.mts.model.v20140618.QueryCensorJobListResponse.CensorJob.CensorTerrorismResult.Counter1;
 import com.aliyuncs.mts.model.v20140618.QueryCensorJobListResponse.CensorJob.CensorTerrorismResult.Top2;
+import com.aliyuncs.mts.model.v20140618.QueryCensorJobListResponse.CensorJob.ImageCensorResult;
 import com.aliyuncs.mts.model.v20140618.QueryCensorJobListResponse.CensorJob.Input;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -57,6 +55,10 @@ public class QueryCensorJobListResponseUnmarshaller {
 			censorJob.setCode(context.stringValue("QueryCensorJobListResponse.CensorJobList["+ i +"].Code"));
 			censorJob.setMessage(context.stringValue("QueryCensorJobListResponse.CensorJobList["+ i +"].Message"));
 			censorJob.setCreationTime(context.stringValue("QueryCensorJobListResponse.CensorJobList["+ i +"].CreationTime"));
+			censorJob.setTitleCensorResult(context.stringValue("QueryCensorJobListResponse.CensorJobList["+ i +"].TitleCensorResult"));
+			censorJob.setDescCensorResult(context.stringValue("QueryCensorJobListResponse.CensorJobList["+ i +"].DescCensorResult"));
+			censorJob.setBarrageCensorResult(context.stringValue("QueryCensorJobListResponse.CensorJobList["+ i +"].BarrageCensorResult"));
+			censorJob.setResultSaveObject(context.stringValue("QueryCensorJobListResponse.CensorJobList["+ i +"].ResultSaveObject"));
 
 			Input input = new Input();
 			input.setBucket(context.stringValue("QueryCensorJobListResponse.CensorJobList["+ i +"].Input.Bucket"));
@@ -67,6 +69,8 @@ public class QueryCensorJobListResponseUnmarshaller {
 			CensorConfig censorConfig = new CensorConfig();
 			censorConfig.setInterval(context.stringValue("QueryCensorJobListResponse.CensorJobList["+ i +"].CensorConfig.Interval"));
 			censorConfig.setBizType(context.stringValue("QueryCensorJobListResponse.CensorJobList["+ i +"].CensorConfig.BizType"));
+			censorConfig.setSaveType(context.stringValue("QueryCensorJobListResponse.CensorJobList["+ i +"].CensorConfig.SaveType"));
+			censorConfig.setScenes(context.stringValue("QueryCensorJobListResponse.CensorJobList["+ i +"].CensorConfig.Scenes"));
 
 			OutputFile outputFile = new OutputFile();
 			outputFile.setBucket(context.stringValue("QueryCensorJobListResponse.CensorJobList["+ i +"].CensorConfig.OutputFile.Bucket"));
@@ -134,6 +138,18 @@ public class QueryCensorJobListResponseUnmarshaller {
 			}
 			censorTerrorismResult.setTerrorismTopList(terrorismTopList);
 			censorJob.setCensorTerrorismResult(censorTerrorismResult);
+
+			List<ImageCensorResult> imageCensorResults = new ArrayList<ImageCensorResult>();
+			for (int j = 0; j < context.lengthValue("QueryCensorJobListResponse.CensorJobList["+ i +"].ImageCensorResults.Length"); j++) {
+				ImageCensorResult imageCensorResult = new ImageCensorResult();
+				imageCensorResult.setImageLocation(context.stringValue("QueryCensorJobListResponse.CensorJobList["+ i +"].ImageCensorResults["+ j +"].ImageLocation"));
+				imageCensorResult.setImageBucket(context.stringValue("QueryCensorJobListResponse.CensorJobList["+ i +"].ImageCensorResults["+ j +"].ImageBucket"));
+				imageCensorResult.setImageObject(context.stringValue("QueryCensorJobListResponse.CensorJobList["+ i +"].ImageCensorResults["+ j +"].ImageObject"));
+				imageCensorResult.setResult(context.stringValue("QueryCensorJobListResponse.CensorJobList["+ i +"].ImageCensorResults["+ j +"].Result"));
+
+				imageCensorResults.add(imageCensorResult);
+			}
+			censorJob.setImageCensorResults(imageCensorResults);
 
 			censorJobList.add(censorJob);
 		}

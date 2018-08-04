@@ -1,21 +1,17 @@
 /*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
+
 package com.aliyuncs.mts.transform.v20140618;
 
 import java.util.ArrayList;
@@ -29,9 +25,12 @@ import com.aliyuncs.mts.model.v20140618.QueryMediaDetailJobListResponse.Job.Medi
 import com.aliyuncs.mts.model.v20140618.QueryMediaDetailJobListResponse.Job.MediaDetailResult;
 import com.aliyuncs.mts.model.v20140618.QueryMediaDetailJobListResponse.Job.MediaDetailResult.MediaDetailRecgResult;
 import com.aliyuncs.mts.model.v20140618.QueryMediaDetailJobListResponse.Job.MediaDetailResult.MediaDetailRecgResult.Celebrity;
+import com.aliyuncs.mts.model.v20140618.QueryMediaDetailJobListResponse.Job.MediaDetailResult.MediaDetailRecgResult.Custom;
+import com.aliyuncs.mts.model.v20140618.QueryMediaDetailJobListResponse.Job.MediaDetailResult.MediaDetailRecgResult.Custom.Clip;
 import com.aliyuncs.mts.model.v20140618.QueryMediaDetailJobListResponse.Job.MediaDetailResult.MediaDetailRecgResult.FrameTagInfo;
 import com.aliyuncs.mts.model.v20140618.QueryMediaDetailJobListResponse.Job.MediaDetailResult.MediaDetailRecgResult.Politician;
 import com.aliyuncs.mts.model.v20140618.QueryMediaDetailJobListResponse.Job.MediaDetailResult.MediaDetailRecgResult.Sensitive;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -140,6 +139,30 @@ public class QueryMediaDetailJobListResponseUnmarshaller {
 					frameTagInfos.add(frameTagInfo);
 				}
 				mediaDetailRecgResult.setFrameTagInfos(frameTagInfos);
+
+				List<Custom> customs = new ArrayList<Custom>();
+				for (int k = 0; k < context.lengthValue("QueryMediaDetailJobListResponse.JobList["+ i +"].MediaDetailResult.MediaDetailRecgResults["+ j +"].Customs.Length"); k++) {
+					Custom custom = new Custom();
+					custom.setName(context.stringValue("QueryMediaDetailJobListResponse.JobList["+ i +"].MediaDetailResult.MediaDetailRecgResults["+ j +"].Customs["+ k +"].Name"));
+
+					List<Clip> clips = new ArrayList<Clip>();
+					for (int l = 0; l < context.lengthValue("QueryMediaDetailJobListResponse.JobList["+ i +"].MediaDetailResult.MediaDetailRecgResults["+ j +"].Customs["+ k +"].Clips.Length"); l++) {
+						Clip clip = new Clip();
+						clip.setMinScore(context.stringValue("QueryMediaDetailJobListResponse.JobList["+ i +"].MediaDetailResult.MediaDetailRecgResults["+ j +"].Customs["+ k +"].Clips["+ l +"].MinScore"));
+						clip.setMaxScore(context.stringValue("QueryMediaDetailJobListResponse.JobList["+ i +"].MediaDetailResult.MediaDetailRecgResults["+ j +"].Customs["+ k +"].Clips["+ l +"].MaxScore"));
+						clip.setAvgScore(context.stringValue("QueryMediaDetailJobListResponse.JobList["+ i +"].MediaDetailResult.MediaDetailRecgResults["+ j +"].Customs["+ k +"].Clips["+ l +"].AvgScore"));
+						clip.setStartTarget(context.stringValue("QueryMediaDetailJobListResponse.JobList["+ i +"].MediaDetailResult.MediaDetailRecgResults["+ j +"].Customs["+ k +"].Clips["+ l +"].StartTarget"));
+						clip.setEndTarget(context.stringValue("QueryMediaDetailJobListResponse.JobList["+ i +"].MediaDetailResult.MediaDetailRecgResults["+ j +"].Customs["+ k +"].Clips["+ l +"].EndTarget"));
+						clip.setStartTime(context.stringValue("QueryMediaDetailJobListResponse.JobList["+ i +"].MediaDetailResult.MediaDetailRecgResults["+ j +"].Customs["+ k +"].Clips["+ l +"].StartTime"));
+						clip.setEndTime(context.stringValue("QueryMediaDetailJobListResponse.JobList["+ i +"].MediaDetailResult.MediaDetailRecgResults["+ j +"].Customs["+ k +"].Clips["+ l +"].EndTime"));
+
+						clips.add(clip);
+					}
+					custom.setClips(clips);
+
+					customs.add(custom);
+				}
+				mediaDetailRecgResult.setCustoms(customs);
 
 				mediaDetailRecgResults.add(mediaDetailRecgResult);
 			}

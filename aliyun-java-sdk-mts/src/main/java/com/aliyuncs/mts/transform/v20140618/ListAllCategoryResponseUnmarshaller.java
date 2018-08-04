@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.mts.transform.v20140618;
 
 import java.util.ArrayList;
@@ -18,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.mts.model.v20140618.ListAllCategoryResponse;
 import com.aliyuncs.mts.model.v20140618.ListAllCategoryResponse.Category;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

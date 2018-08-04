@@ -1,21 +1,17 @@
 /*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
+
 package com.aliyuncs.mts.model.v20140618;
 
 import java.util.List;
@@ -87,11 +83,15 @@ public class QueryMediaListResponse extends AcsResponse {
 
 		private String publishState;
 
+		private String censorState;
+
 		private String creationTime;
 
 		private List<Play> playList;
 
 		private List<Snapshot> snapshotList;
+
+		private List<Summary> summaryList;
 
 		private List<String> tags;
 
@@ -205,6 +205,14 @@ public class QueryMediaListResponse extends AcsResponse {
 			this.publishState = publishState;
 		}
 
+		public String getCensorState() {
+			return this.censorState;
+		}
+
+		public void setCensorState(String censorState) {
+			this.censorState = censorState;
+		}
+
 		public String getCreationTime() {
 			return this.creationTime;
 		}
@@ -227,6 +235,14 @@ public class QueryMediaListResponse extends AcsResponse {
 
 		public void setSnapshotList(List<Snapshot> snapshotList) {
 			this.snapshotList = snapshotList;
+		}
+
+		public List<Summary> getSummaryList() {
+			return this.summaryList;
+		}
+
+		public void setSummaryList(List<Summary> summaryList) {
+			this.summaryList = summaryList;
 		}
 
 		public List<String> getTags() {
@@ -470,6 +486,82 @@ public class QueryMediaListResponse extends AcsResponse {
 			}
 
 			public static class File2 {
+
+				private String uRL;
+
+				private String state;
+
+				public String getURL() {
+					return this.uRL;
+				}
+
+				public void setURL(String uRL) {
+					this.uRL = uRL;
+				}
+
+				public String getState() {
+					return this.state;
+				}
+
+				public void setState(String state) {
+					this.state = state;
+				}
+			}
+		}
+
+		public static class Summary {
+
+			private String type;
+
+			private String mediaWorkflowId;
+
+			private String mediaWorkflowName;
+
+			private String activityName;
+
+			private File3 file3;
+
+			public String getType() {
+				return this.type;
+			}
+
+			public void setType(String type) {
+				this.type = type;
+			}
+
+			public String getMediaWorkflowId() {
+				return this.mediaWorkflowId;
+			}
+
+			public void setMediaWorkflowId(String mediaWorkflowId) {
+				this.mediaWorkflowId = mediaWorkflowId;
+			}
+
+			public String getMediaWorkflowName() {
+				return this.mediaWorkflowName;
+			}
+
+			public void setMediaWorkflowName(String mediaWorkflowName) {
+				this.mediaWorkflowName = mediaWorkflowName;
+			}
+
+			public String getActivityName() {
+				return this.activityName;
+			}
+
+			public void setActivityName(String activityName) {
+				this.activityName = activityName;
+			}
+
+			public File3 getFile3() {
+				return this.file3;
+			}
+
+			public void setFile3(File3 file3) {
+				this.file3 = file3;
+			}
+
+			public static class File3 {
 
 				private String uRL;
 

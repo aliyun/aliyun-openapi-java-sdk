@@ -1,21 +1,17 @@
 /*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
+
 package com.aliyuncs.mts.model.v20140618;
 
 import java.util.List;
@@ -264,6 +260,8 @@ public class SubmitJobsResponse extends AcsResponse {
 
 				private List<TailSlate> tailSlateList;
 
+				private List<OutSubtitle> outSubtitleList;
+
 				private DigiWaterMark digiWaterMark;
 
 				private OutputFile outputFile;
@@ -392,6 +390,14 @@ public class SubmitJobsResponse extends AcsResponse {
 
 				public void setTailSlateList(List<TailSlate> tailSlateList) {
 					this.tailSlateList = tailSlateList;
+				}
+
+				public List<OutSubtitle> getOutSubtitleList() {
+					return this.outSubtitleList;
+				}
+
+				public void setOutSubtitleList(List<OutSubtitle> outSubtitleList) {
+					this.outSubtitleList = outSubtitleList;
 				}
 
 				public DigiWaterMark getDigiWaterMark() {
@@ -770,6 +776,92 @@ public class SubmitJobsResponse extends AcsResponse {
 
 					public void setBgColor(String bgColor) {
 						this.bgColor = bgColor;
+					}
+				}
+
+				public static class OutSubtitle {
+
+					private String map;
+
+					private Boolean success;
+
+					private String message;
+
+					private OutSubtitleFile outSubtitleFile;
+
+					public String getMap() {
+						return this.map;
+					}
+
+					public void setMap(String map) {
+						this.map = map;
+					}
+
+					public Boolean getSuccess() {
+						return this.success;
+					}
+
+					public void setSuccess(Boolean success) {
+						this.success = success;
+					}
+
+					public String getMessage() {
+						return this.message;
+					}
+
+					public void setMessage(String message) {
+						this.message = message;
+					}
+
+					public OutSubtitleFile getOutSubtitleFile() {
+						return this.outSubtitleFile;
+					}
+
+					public void setOutSubtitleFile(OutSubtitleFile outSubtitleFile) {
+						this.outSubtitleFile = outSubtitleFile;
+					}
+
+					public static class OutSubtitleFile {
+
+						private String bucket;
+
+						private String location;
+
+						private String object;
+
+						private String roleArn;
+
+						public String getBucket() {
+							return this.bucket;
+						}
+
+						public void setBucket(String bucket) {
+							this.bucket = bucket;
+						}
+
+						public String getLocation() {
+							return this.location;
+						}
+
+						public void setLocation(String location) {
+							this.location = location;
+						}
+
+						public String getObject() {
+							return this.object;
+						}
+
+						public void setObject(String object) {
+							this.object = object;
+						}
+
+						public String getRoleArn() {
+							return this.roleArn;
+						}
+
+						public void setRoleArn(String roleArn) {
+							this.roleArn = roleArn;
+						}
 					}
 				}
 
@@ -1819,6 +1911,8 @@ public class SubmitJobsResponse extends AcsResponse {
 
 					private Gif gif;
 
+					private Webp webp;
+
 					public Segment getSegment() {
 						return this.segment;
 					}
@@ -1833,6 +1927,14 @@ public class SubmitJobsResponse extends AcsResponse {
 
 					public void setGif(Gif gif) {
 						this.gif = gif;
+					}
+
+					public Webp getWebp() {
+						return this.webp;
+					}
+
+					public void setWebp(Webp webp) {
+						this.webp = webp;
 					}
 
 					public static class Segment {
@@ -1888,6 +1990,19 @@ public class SubmitJobsResponse extends AcsResponse {
 
 						public void setDitherMode(String ditherMode) {
 							this.ditherMode = ditherMode;
+						}
+					}
+
+					public static class Webp {
+
+						private String loop;
+
+						public String getLoop() {
+							return this.loop;
+						}
+
+						public void setLoop(String loop) {
+							this.loop = loop;
 						}
 					}
 				}
@@ -2025,6 +2140,8 @@ public class SubmitJobsResponse extends AcsResponse {
 					private String pad;
 
 					private String maxFps;
+
+					private String resoPriority;
 
 					private BitrateBnd bitrateBnd;
 
@@ -2170,6 +2287,14 @@ public class SubmitJobsResponse extends AcsResponse {
 
 					public void setMaxFps(String maxFps) {
 						this.maxFps = maxFps;
+					}
+
+					public String getResoPriority() {
+						return this.resoPriority;
+					}
+
+					public void setResoPriority(String resoPriority) {
+						this.resoPriority = resoPriority;
 					}
 
 					public BitrateBnd getBitrateBnd() {
