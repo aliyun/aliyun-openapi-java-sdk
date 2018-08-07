@@ -26,9 +26,11 @@ public class InvokeThingServiceResponseUnmarshaller {
 		invokeThingServiceResponse.setRequestId(context.stringValue("InvokeThingServiceResponse.RequestId"));
 		invokeThingServiceResponse.setSuccess(context.booleanValue("InvokeThingServiceResponse.Success"));
 		invokeThingServiceResponse.setErrorMessage(context.stringValue("InvokeThingServiceResponse.ErrorMessage"));
+		invokeThingServiceResponse.setCode(context.stringValue("InvokeThingServiceResponse.Code"));
 
 		Data data = new Data();
 		data.setResult(context.stringValue("InvokeThingServiceResponse.Data.Result"));
+		data.setMessageId(context.stringValue("InvokeThingServiceResponse.Data.MessageId"));
 		invokeThingServiceResponse.setData(data);
 	 
 	 	return invokeThingServiceResponse;

@@ -15,6 +15,7 @@
 package com.aliyuncs.iot.transform.v20180120;
 
 import com.aliyuncs.iot.model.v20180120.SetDevicePropertyResponse;
+import com.aliyuncs.iot.model.v20180120.SetDevicePropertyResponse.Data;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -25,6 +26,11 @@ public class SetDevicePropertyResponseUnmarshaller {
 		setDevicePropertyResponse.setRequestId(context.stringValue("SetDevicePropertyResponse.RequestId"));
 		setDevicePropertyResponse.setSuccess(context.booleanValue("SetDevicePropertyResponse.Success"));
 		setDevicePropertyResponse.setErrorMessage(context.stringValue("SetDevicePropertyResponse.ErrorMessage"));
+		setDevicePropertyResponse.setCode(context.stringValue("SetDevicePropertyResponse.Code"));
+
+		Data data = new Data();
+		data.setMessageId(context.stringValue("SetDevicePropertyResponse.Data.MessageId"));
+		setDevicePropertyResponse.setData(data);
 	 
 	 	return setDevicePropertyResponse;
 	}

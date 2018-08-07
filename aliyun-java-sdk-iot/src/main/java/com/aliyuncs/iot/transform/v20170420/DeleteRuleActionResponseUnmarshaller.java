@@ -24,6 +24,7 @@ public class DeleteRuleActionResponseUnmarshaller {
 		
 		deleteRuleActionResponse.setRequestId(context.stringValue("DeleteRuleActionResponse.RequestId"));
 		deleteRuleActionResponse.setSuccess(context.booleanValue("DeleteRuleActionResponse.Success"));
+		deleteRuleActionResponse.setCode(context.stringValue("DeleteRuleActionResponse.Code"));
 		deleteRuleActionResponse.setErrorMessage(context.stringValue("DeleteRuleActionResponse.ErrorMessage"));
 	 
 	 	return deleteRuleActionResponse;

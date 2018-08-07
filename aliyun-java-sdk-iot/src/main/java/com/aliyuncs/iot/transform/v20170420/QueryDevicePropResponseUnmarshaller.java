@@ -24,6 +24,7 @@ public class QueryDevicePropResponseUnmarshaller {
 		
 		queryDevicePropResponse.setRequestId(context.stringValue("QueryDevicePropResponse.RequestId"));
 		queryDevicePropResponse.setSuccess(context.booleanValue("QueryDevicePropResponse.Success"));
+		queryDevicePropResponse.setCode(context.stringValue("QueryDevicePropResponse.Code"));
 		queryDevicePropResponse.setErrorMessage(context.stringValue("QueryDevicePropResponse.ErrorMessage"));
 		queryDevicePropResponse.setProps(context.stringValue("QueryDevicePropResponse.Props"));
 	 

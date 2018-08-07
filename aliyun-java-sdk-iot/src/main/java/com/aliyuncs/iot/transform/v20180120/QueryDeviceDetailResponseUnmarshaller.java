@@ -25,6 +25,7 @@ public class QueryDeviceDetailResponseUnmarshaller {
 		
 		queryDeviceDetailResponse.setRequestId(context.stringValue("QueryDeviceDetailResponse.RequestId"));
 		queryDeviceDetailResponse.setSuccess(context.booleanValue("QueryDeviceDetailResponse.Success"));
+		queryDeviceDetailResponse.setCode(context.stringValue("QueryDeviceDetailResponse.Code"));
 		queryDeviceDetailResponse.setErrorMessage(context.stringValue("QueryDeviceDetailResponse.ErrorMessage"));
 
 		Data data = new Data();
@@ -35,8 +36,11 @@ public class QueryDeviceDetailResponseUnmarshaller {
 		data.setDeviceSecret(context.stringValue("QueryDeviceDetailResponse.Data.DeviceSecret"));
 		data.setFirmwareVersion(context.stringValue("QueryDeviceDetailResponse.Data.FirmwareVersion"));
 		data.setGmtCreate(context.stringValue("QueryDeviceDetailResponse.Data.GmtCreate"));
+		data.setUtcCreate(context.stringValue("QueryDeviceDetailResponse.Data.UtcCreate"));
 		data.setGmtActive(context.stringValue("QueryDeviceDetailResponse.Data.GmtActive"));
+		data.setUtcActive(context.stringValue("QueryDeviceDetailResponse.Data.UtcActive"));
 		data.setGmtOnline(context.stringValue("QueryDeviceDetailResponse.Data.GmtOnline"));
+		data.setUtcOnline(context.stringValue("QueryDeviceDetailResponse.Data.UtcOnline"));
 		data.setStatus(context.stringValue("QueryDeviceDetailResponse.Data.Status"));
 		data.setIpAddress(context.stringValue("QueryDeviceDetailResponse.Data.IpAddress"));
 		data.setNodeType(context.integerValue("QueryDeviceDetailResponse.Data.NodeType"));

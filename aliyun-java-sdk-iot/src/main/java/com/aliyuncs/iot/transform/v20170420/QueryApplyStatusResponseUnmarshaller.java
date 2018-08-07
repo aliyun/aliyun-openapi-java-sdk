@@ -24,6 +24,7 @@ public class QueryApplyStatusResponseUnmarshaller {
 		
 		queryApplyStatusResponse.setRequestId(context.stringValue("QueryApplyStatusResponse.RequestId"));
 		queryApplyStatusResponse.setSuccess(context.booleanValue("QueryApplyStatusResponse.Success"));
+		queryApplyStatusResponse.setCode(context.stringValue("QueryApplyStatusResponse.Code"));
 		queryApplyStatusResponse.setErrorMessage(context.stringValue("QueryApplyStatusResponse.ErrorMessage"));
 		queryApplyStatusResponse.setFinish(context.booleanValue("QueryApplyStatusResponse.Finish"));
 	 

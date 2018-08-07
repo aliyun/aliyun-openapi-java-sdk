@@ -24,6 +24,7 @@ public class UpdateProductResponseUnmarshaller {
 		
 		updateProductResponse.setRequestId(context.stringValue("UpdateProductResponse.RequestId"));
 		updateProductResponse.setSuccess(context.booleanValue("UpdateProductResponse.Success"));
+		updateProductResponse.setCode(context.stringValue("UpdateProductResponse.Code"));
 		updateProductResponse.setErrorMessage(context.stringValue("UpdateProductResponse.ErrorMessage"));
 	 
 	 	return updateProductResponse;

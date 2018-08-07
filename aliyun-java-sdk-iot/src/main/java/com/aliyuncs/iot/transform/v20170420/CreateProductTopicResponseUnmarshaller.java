@@ -24,6 +24,7 @@ public class CreateProductTopicResponseUnmarshaller {
 		
 		createProductTopicResponse.setRequestId(context.stringValue("CreateProductTopicResponse.RequestId"));
 		createProductTopicResponse.setSuccess(context.booleanValue("CreateProductTopicResponse.Success"));
+		createProductTopicResponse.setCode(context.stringValue("CreateProductTopicResponse.Code"));
 		createProductTopicResponse.setErrorMessage(context.stringValue("CreateProductTopicResponse.ErrorMessage"));
 		createProductTopicResponse.setTopicId(context.longValue("CreateProductTopicResponse.TopicId"));
 	 

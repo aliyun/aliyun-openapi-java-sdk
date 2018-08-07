@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.iot.model.v20170420.BatchGetDeviceStateResponse;
 import com.aliyuncs.iot.model.v20170420.BatchGetDeviceStateResponse.DeviceStatus;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -28,6 +29,7 @@ public class BatchGetDeviceStateResponseUnmarshaller {
 		
 		batchGetDeviceStateResponse.setRequestId(context.stringValue("BatchGetDeviceStateResponse.RequestId"));
 		batchGetDeviceStateResponse.setSuccess(context.booleanValue("BatchGetDeviceStateResponse.Success"));
+		batchGetDeviceStateResponse.setCode(context.stringValue("BatchGetDeviceStateResponse.Code"));
 		batchGetDeviceStateResponse.setErrorMessage(context.stringValue("BatchGetDeviceStateResponse.ErrorMessage"));
 
 		List<DeviceStatus> deviceStatusList = new ArrayList<DeviceStatus>();

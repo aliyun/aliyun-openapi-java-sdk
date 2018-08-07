@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.iot.model.v20180120.QueryProductListResponse;
 import com.aliyuncs.iot.model.v20180120.QueryProductListResponse.Data;
 import com.aliyuncs.iot.model.v20180120.QueryProductListResponse.Data.ProductInfo;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -29,6 +30,7 @@ public class QueryProductListResponseUnmarshaller {
 		
 		queryProductListResponse.setRequestId(context.stringValue("QueryProductListResponse.RequestId"));
 		queryProductListResponse.setSuccess(context.booleanValue("QueryProductListResponse.Success"));
+		queryProductListResponse.setCode(context.stringValue("QueryProductListResponse.Code"));
 		queryProductListResponse.setErrorMessage(context.stringValue("QueryProductListResponse.ErrorMessage"));
 
 		Data data = new Data();
@@ -40,7 +42,7 @@ public class QueryProductListResponseUnmarshaller {
 		List<ProductInfo> list = new ArrayList<ProductInfo>();
 		for (int i = 0; i < context.lengthValue("QueryProductListResponse.Data.List.Length"); i++) {
 			ProductInfo productInfo = new ProductInfo();
-			productInfo.setGmtCreate(context.stringValue("QueryProductListResponse.Data.List["+ i +"].GmtCreate"));
+			productInfo.setGmtCreate(context.longValue("QueryProductListResponse.Data.List["+ i +"].GmtCreate"));
 			productInfo.setDataFormat(context.integerValue("QueryProductListResponse.Data.List["+ i +"].DataFormat"));
 			productInfo.setDescription(context.stringValue("QueryProductListResponse.Data.List["+ i +"].Description"));
 			productInfo.setDeviceCount(context.integerValue("QueryProductListResponse.Data.List["+ i +"].DeviceCount"));

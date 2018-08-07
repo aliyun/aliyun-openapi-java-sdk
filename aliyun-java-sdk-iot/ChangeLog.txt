@@ -1,3 +1,8 @@
+2018-08-07 Version: 5.1.0
+1, Add api GetGatewayBySubDevice.
+2, Modified the time related response parameters.
+3, Add messageId in response with InvokeThingService，SetDeviceProperty and NotifyAddThingTopo.
+
 2018-04-17 Version: 5.0.0
 1, Add plenty of product management interfaces and device management interfaces
 2, Support for thing model and data storage

@@ -28,6 +28,8 @@ public class DeleteProductTopicResponse extends AcsResponse {
 
 	private Boolean success;
 
+	private String code;
+
 	private String errorMessage;
 
 	public String getRequestId() {
@@ -44,6 +46,14 @@ public class DeleteProductTopicResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public String getErrorMessage() {

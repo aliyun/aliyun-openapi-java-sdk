@@ -25,6 +25,7 @@ public class QueryDeviceByNameResponseUnmarshaller {
 		
 		queryDeviceByNameResponse.setRequestId(context.stringValue("QueryDeviceByNameResponse.RequestId"));
 		queryDeviceByNameResponse.setSuccess(context.booleanValue("QueryDeviceByNameResponse.Success"));
+		queryDeviceByNameResponse.setCode(context.stringValue("QueryDeviceByNameResponse.Code"));
 		queryDeviceByNameResponse.setErrorMessage(context.stringValue("QueryDeviceByNameResponse.ErrorMessage"));
 
 		DeviceInfo deviceInfo = new DeviceInfo();

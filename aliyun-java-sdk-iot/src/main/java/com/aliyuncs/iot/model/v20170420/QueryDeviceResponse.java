@@ -29,6 +29,8 @@ public class QueryDeviceResponse extends AcsResponse {
 
 	private Boolean success;
 
+	private String code;
+
 	private String errorMessage;
 
 	private Integer total;
@@ -55,6 +57,14 @@ public class QueryDeviceResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public String getErrorMessage() {

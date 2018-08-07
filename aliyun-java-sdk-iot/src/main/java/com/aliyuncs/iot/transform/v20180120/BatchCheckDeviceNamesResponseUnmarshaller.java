@@ -25,6 +25,7 @@ public class BatchCheckDeviceNamesResponseUnmarshaller {
 		
 		batchCheckDeviceNamesResponse.setRequestId(context.stringValue("BatchCheckDeviceNamesResponse.RequestId"));
 		batchCheckDeviceNamesResponse.setSuccess(context.booleanValue("BatchCheckDeviceNamesResponse.Success"));
+		batchCheckDeviceNamesResponse.setCode(context.stringValue("BatchCheckDeviceNamesResponse.Code"));
 		batchCheckDeviceNamesResponse.setErrorMessage(context.stringValue("BatchCheckDeviceNamesResponse.ErrorMessage"));
 
 		Data data = new Data();

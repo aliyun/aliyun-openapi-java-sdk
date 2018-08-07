@@ -24,6 +24,7 @@ public class CreateRuleActionResponseUnmarshaller {
 		
 		createRuleActionResponse.setRequestId(context.stringValue("CreateRuleActionResponse.RequestId"));
 		createRuleActionResponse.setSuccess(context.booleanValue("CreateRuleActionResponse.Success"));
+		createRuleActionResponse.setCode(context.stringValue("CreateRuleActionResponse.Code"));
 		createRuleActionResponse.setErrorMessage(context.stringValue("CreateRuleActionResponse.ErrorMessage"));
 		createRuleActionResponse.setActionId(context.longValue("CreateRuleActionResponse.ActionId"));
 	 

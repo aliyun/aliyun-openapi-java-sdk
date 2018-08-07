@@ -24,6 +24,7 @@ public class PubBroadcastResponseUnmarshaller {
 		
 		pubBroadcastResponse.setRequestId(context.stringValue("PubBroadcastResponse.RequestId"));
 		pubBroadcastResponse.setSuccess(context.booleanValue("PubBroadcastResponse.Success"));
+		pubBroadcastResponse.setCode(context.stringValue("PubBroadcastResponse.Code"));
 		pubBroadcastResponse.setErrorMessage(context.stringValue("PubBroadcastResponse.ErrorMessage"));
 	 
 	 	return pubBroadcastResponse;

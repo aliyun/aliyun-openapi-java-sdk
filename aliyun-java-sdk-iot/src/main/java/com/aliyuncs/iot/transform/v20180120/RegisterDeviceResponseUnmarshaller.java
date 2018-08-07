@@ -25,6 +25,7 @@ public class RegisterDeviceResponseUnmarshaller {
 		
 		registerDeviceResponse.setRequestId(context.stringValue("RegisterDeviceResponse.RequestId"));
 		registerDeviceResponse.setSuccess(context.booleanValue("RegisterDeviceResponse.Success"));
+		registerDeviceResponse.setCode(context.stringValue("RegisterDeviceResponse.Code"));
 		registerDeviceResponse.setErrorMessage(context.stringValue("RegisterDeviceResponse.ErrorMessage"));
 
 		Data data = new Data();

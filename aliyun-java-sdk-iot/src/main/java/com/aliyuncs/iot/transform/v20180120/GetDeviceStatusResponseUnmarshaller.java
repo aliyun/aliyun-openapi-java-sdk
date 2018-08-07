@@ -25,6 +25,7 @@ public class GetDeviceStatusResponseUnmarshaller {
 		
 		getDeviceStatusResponse.setRequestId(context.stringValue("GetDeviceStatusResponse.RequestId"));
 		getDeviceStatusResponse.setSuccess(context.booleanValue("GetDeviceStatusResponse.Success"));
+		getDeviceStatusResponse.setCode(context.stringValue("GetDeviceStatusResponse.Code"));
 		getDeviceStatusResponse.setErrorMessage(context.stringValue("GetDeviceStatusResponse.ErrorMessage"));
 
 		Data data = new Data();

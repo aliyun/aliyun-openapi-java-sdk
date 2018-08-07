@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.iot.model.v20170420.QueryTopicRouteTableResponse;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -27,6 +28,7 @@ public class QueryTopicRouteTableResponseUnmarshaller {
 		
 		queryTopicRouteTableResponse.setRequestId(context.stringValue("QueryTopicRouteTableResponse.RequestId"));
 		queryTopicRouteTableResponse.setSuccess(context.booleanValue("QueryTopicRouteTableResponse.Success"));
+		queryTopicRouteTableResponse.setCode(context.stringValue("QueryTopicRouteTableResponse.Code"));
 		queryTopicRouteTableResponse.setErrorMessage(context.stringValue("QueryTopicRouteTableResponse.ErrorMessage"));
 
 		List<String> dstTopics = new ArrayList<String>();

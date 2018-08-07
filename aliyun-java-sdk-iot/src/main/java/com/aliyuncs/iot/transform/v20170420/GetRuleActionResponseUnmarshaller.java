@@ -25,6 +25,7 @@ public class GetRuleActionResponseUnmarshaller {
 		
 		getRuleActionResponse.setRequestId(context.stringValue("GetRuleActionResponse.RequestId"));
 		getRuleActionResponse.setSuccess(context.booleanValue("GetRuleActionResponse.Success"));
+		getRuleActionResponse.setCode(context.stringValue("GetRuleActionResponse.Code"));
 		getRuleActionResponse.setErrorMessage(context.stringValue("GetRuleActionResponse.ErrorMessage"));
 
 		RuleActionInfo ruleActionInfo = new RuleActionInfo();

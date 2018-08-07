@@ -24,6 +24,7 @@ public class EnableThingResponseUnmarshaller {
 		
 		enableThingResponse.setRequestId(context.stringValue("EnableThingResponse.RequestId"));
 		enableThingResponse.setSuccess(context.booleanValue("EnableThingResponse.Success"));
+		enableThingResponse.setCode(context.stringValue("EnableThingResponse.Code"));
 		enableThingResponse.setErrorMessage(context.stringValue("EnableThingResponse.ErrorMessage"));
 	 
 	 	return enableThingResponse;

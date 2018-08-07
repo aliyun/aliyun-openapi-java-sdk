@@ -29,6 +29,8 @@ public class DeleteTopicRouteTableResponse extends AcsResponse {
 
 	private Boolean success;
 
+	private String code;
+
 	private Boolean isAllSucceed;
 
 	private String errorMessage;
@@ -49,6 +51,14 @@ public class DeleteTopicRouteTableResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public Boolean getIsAllSucceed() {

@@ -24,6 +24,7 @@ public class DeleteDeviceResponseUnmarshaller {
 		
 		deleteDeviceResponse.setRequestId(context.stringValue("DeleteDeviceResponse.RequestId"));
 		deleteDeviceResponse.setSuccess(context.booleanValue("DeleteDeviceResponse.Success"));
+		deleteDeviceResponse.setCode(context.stringValue("DeleteDeviceResponse.Code"));
 		deleteDeviceResponse.setErrorMessage(context.stringValue("DeleteDeviceResponse.ErrorMessage"));
 	 
 	 	return deleteDeviceResponse;

@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.iot.model.v20170420.ListRuleActionsResponse;
 import com.aliyuncs.iot.model.v20170420.ListRuleActionsResponse.RuleActionInfo;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -28,6 +29,7 @@ public class ListRuleActionsResponseUnmarshaller {
 		
 		listRuleActionsResponse.setRequestId(context.stringValue("ListRuleActionsResponse.RequestId"));
 		listRuleActionsResponse.setSuccess(context.booleanValue("ListRuleActionsResponse.Success"));
+		listRuleActionsResponse.setCode(context.stringValue("ListRuleActionsResponse.Code"));
 		listRuleActionsResponse.setErrorMessage(context.stringValue("ListRuleActionsResponse.ErrorMessage"));
 
 		List<RuleActionInfo> ruleActionList = new ArrayList<RuleActionInfo>();

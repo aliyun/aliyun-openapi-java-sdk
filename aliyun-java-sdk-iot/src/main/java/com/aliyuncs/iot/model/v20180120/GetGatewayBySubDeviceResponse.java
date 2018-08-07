@@ -15,14 +15,14 @@
 package com.aliyuncs.iot.model.v20180120;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.iot.transform.v20180120.QueryDeviceDetailResponseUnmarshaller;
+import com.aliyuncs.iot.transform.v20180120.GetGatewayBySubDeviceResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class QueryDeviceDetailResponse extends AcsResponse {
+public class GetGatewayBySubDeviceResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -76,15 +76,13 @@ public class QueryDeviceDetailResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String iotId;
-
 		private String productKey;
 
 		private String productName;
 
-		private String deviceName;
-
 		private String deviceSecret;
+
+		private String deviceName;
 
 		private String firmwareVersion;
 
@@ -104,17 +102,11 @@ public class QueryDeviceDetailResponse extends AcsResponse {
 
 		private String ipAddress;
 
-		private Integer nodeType;
+		private String nodeType;
 
 		private String region;
 
-		public String getIotId() {
-			return this.iotId;
-		}
-
-		public void setIotId(String iotId) {
-			this.iotId = iotId;
-		}
+		private String iotId;
 
 		public String getProductKey() {
 			return this.productKey;
@@ -132,20 +124,20 @@ public class QueryDeviceDetailResponse extends AcsResponse {
 			this.productName = productName;
 		}
 
-		public String getDeviceName() {
-			return this.deviceName;
-		}
-
-		public void setDeviceName(String deviceName) {
-			this.deviceName = deviceName;
-		}
-
 		public String getDeviceSecret() {
 			return this.deviceSecret;
 		}
 
 		public void setDeviceSecret(String deviceSecret) {
 			this.deviceSecret = deviceSecret;
+		}
+
+		public String getDeviceName() {
+			return this.deviceName;
+		}
+
+		public void setDeviceName(String deviceName) {
+			this.deviceName = deviceName;
 		}
 
 		public String getFirmwareVersion() {
@@ -220,11 +212,11 @@ public class QueryDeviceDetailResponse extends AcsResponse {
 			this.ipAddress = ipAddress;
 		}
 
-		public Integer getNodeType() {
+		public String getNodeType() {
 			return this.nodeType;
 		}
 
-		public void setNodeType(Integer nodeType) {
+		public void setNodeType(String nodeType) {
 			this.nodeType = nodeType;
 		}
 
@@ -235,10 +227,18 @@ public class QueryDeviceDetailResponse extends AcsResponse {
 		public void setRegion(String region) {
 			this.region = region;
 		}
+
+		public String getIotId() {
+			return this.iotId;
+		}
+
+		public void setIotId(String iotId) {
+			this.iotId = iotId;
+		}
 	}
 
 	@Override
-	public QueryDeviceDetailResponse getInstance(UnmarshallerContext context) {
-		return	QueryDeviceDetailResponseUnmarshaller.unmarshall(this, context);
+	public GetGatewayBySubDeviceResponse getInstance(UnmarshallerContext context) {
+		return	GetGatewayBySubDeviceResponseUnmarshaller.unmarshall(this, context);
 	}
 }

@@ -24,6 +24,7 @@ public class DeleteProductTopicResponseUnmarshaller {
 		
 		deleteProductTopicResponse.setRequestId(context.stringValue("DeleteProductTopicResponse.RequestId"));
 		deleteProductTopicResponse.setSuccess(context.booleanValue("DeleteProductTopicResponse.Success"));
+		deleteProductTopicResponse.setCode(context.stringValue("DeleteProductTopicResponse.Code"));
 		deleteProductTopicResponse.setErrorMessage(context.stringValue("DeleteProductTopicResponse.ErrorMessage"));
 	 
 	 	return deleteProductTopicResponse;

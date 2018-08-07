@@ -15,6 +15,7 @@
 package com.aliyuncs.iot.model.v20180120;
 
 import java.util.List;
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.iot.transform.v20180120.QueryDevicePropertyStatusResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -28,6 +29,8 @@ public class QueryDevicePropertyStatusResponse extends AcsResponse {
 	private String requestId;
 
 	private Boolean success;
+
+	private String code;
 
 	private String errorMessage;
 
@@ -47,6 +50,14 @@ public class QueryDevicePropertyStatusResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public String getErrorMessage() {

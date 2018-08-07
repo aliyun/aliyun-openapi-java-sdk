@@ -24,6 +24,7 @@ public class UpdateDeviceShadowResponseUnmarshaller {
 		
 		updateDeviceShadowResponse.setRequestId(context.stringValue("UpdateDeviceShadowResponse.RequestId"));
 		updateDeviceShadowResponse.setSuccess(context.booleanValue("UpdateDeviceShadowResponse.Success"));
+		updateDeviceShadowResponse.setCode(context.stringValue("UpdateDeviceShadowResponse.Code"));
 		updateDeviceShadowResponse.setErrorMessage(context.stringValue("UpdateDeviceShadowResponse.ErrorMessage"));
 	 
 	 	return updateDeviceShadowResponse;

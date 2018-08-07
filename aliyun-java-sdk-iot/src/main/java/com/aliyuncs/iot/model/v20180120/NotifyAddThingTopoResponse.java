@@ -30,6 +30,10 @@ public class NotifyAddThingTopoResponse extends AcsResponse {
 
 	private String errorMessage;
 
+	private String code;
+
+	private Data data;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -52,6 +56,35 @@ public class NotifyAddThingTopoResponse extends AcsResponse {
 
 	public void setErrorMessage(String errorMessage) {
 		this.errorMessage = errorMessage;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public Data getData() {
+		return this.data;
+	}
+
+	public void setData(Data data) {
+		this.data = data;
+	}
+
+	public static class Data {
+
+		private String messageId;
+
+		public String getMessageId() {
+			return this.messageId;
+		}
+
+		public void setMessageId(String messageId) {
+			this.messageId = messageId;
+		}
 	}
 
 	@Override

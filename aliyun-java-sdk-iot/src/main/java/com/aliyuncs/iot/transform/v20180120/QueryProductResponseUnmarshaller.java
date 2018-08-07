@@ -25,16 +25,22 @@ public class QueryProductResponseUnmarshaller {
 		
 		queryProductResponse.setRequestId(context.stringValue("QueryProductResponse.RequestId"));
 		queryProductResponse.setSuccess(context.booleanValue("QueryProductResponse.Success"));
+		queryProductResponse.setCode(context.stringValue("QueryProductResponse.Code"));
 		queryProductResponse.setErrorMessage(context.stringValue("QueryProductResponse.ErrorMessage"));
 
 		Data data = new Data();
-		data.setGmtCreate(context.stringValue("QueryProductResponse.Data.GmtCreate"));
+		data.setGmtCreate(context.longValue("QueryProductResponse.Data.GmtCreate"));
 		data.setDataFormat(context.integerValue("QueryProductResponse.Data.DataFormat"));
 		data.setDescription(context.stringValue("QueryProductResponse.Data.Description"));
 		data.setDeviceCount(context.integerValue("QueryProductResponse.Data.DeviceCount"));
 		data.setNodeType(context.integerValue("QueryProductResponse.Data.NodeType"));
 		data.setProductKey(context.stringValue("QueryProductResponse.Data.ProductKey"));
 		data.setProductName(context.stringValue("QueryProductResponse.Data.ProductName"));
+		data.setProductSecret(context.stringValue("QueryProductResponse.Data.ProductSecret"));
+		data.setCategoryName(context.stringValue("QueryProductResponse.Data.CategoryName"));
+		data.setCategoryKey(context.stringValue("QueryProductResponse.Data.CategoryKey"));
+		data.setAliyunCommodityCode(context.stringValue("QueryProductResponse.Data.AliyunCommodityCode"));
+		data.setId2(context.booleanValue("QueryProductResponse.Data.Id2"));
 		queryProductResponse.setData(data);
 	 
 	 	return queryProductResponse;

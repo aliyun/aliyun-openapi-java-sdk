@@ -25,6 +25,7 @@ public class QueryDeviceStatisticsResponseUnmarshaller {
 		
 		queryDeviceStatisticsResponse.setRequestId(context.stringValue("QueryDeviceStatisticsResponse.RequestId"));
 		queryDeviceStatisticsResponse.setSuccess(context.booleanValue("QueryDeviceStatisticsResponse.Success"));
+		queryDeviceStatisticsResponse.setCode(context.stringValue("QueryDeviceStatisticsResponse.Code"));
 		queryDeviceStatisticsResponse.setErrorMessage(context.stringValue("QueryDeviceStatisticsResponse.ErrorMessage"));
 
 		Data data = new Data();

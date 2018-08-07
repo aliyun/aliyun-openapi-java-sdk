@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.iot.model.v20170420.ListRuleResponse;
 import com.aliyuncs.iot.model.v20170420.ListRuleResponse.RuleInfo;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -28,6 +29,7 @@ public class ListRuleResponseUnmarshaller {
 		
 		listRuleResponse.setRequestId(context.stringValue("ListRuleResponse.RequestId"));
 		listRuleResponse.setSuccess(context.booleanValue("ListRuleResponse.Success"));
+		listRuleResponse.setCode(context.stringValue("ListRuleResponse.Code"));
 		listRuleResponse.setErrorMessage(context.stringValue("ListRuleResponse.ErrorMessage"));
 		listRuleResponse.setPageSize(context.integerValue("ListRuleResponse.PageSize"));
 		listRuleResponse.setPage(context.integerValue("ListRuleResponse.Page"));

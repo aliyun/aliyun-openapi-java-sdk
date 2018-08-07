@@ -28,6 +28,8 @@ public class QueryProductResponse extends AcsResponse {
 
 	private Boolean success;
 
+	private String code;
+
 	private String errorMessage;
 
 	private Data data;
@@ -48,6 +50,14 @@ public class QueryProductResponse extends AcsResponse {
 		this.success = success;
 	}
 
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
 	public String getErrorMessage() {
 		return this.errorMessage;
 	}
@@ -66,7 +76,7 @@ public class QueryProductResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String gmtCreate;
+		private Long gmtCreate;
 
 		private Integer dataFormat;
 
@@ -80,11 +90,21 @@ public class QueryProductResponse extends AcsResponse {
 
 		private String productName;
 
-		public String getGmtCreate() {
+		private String productSecret;
+
+		private String categoryName;
+
+		private String categoryKey;
+
+		private String aliyunCommodityCode;
+
+		private Boolean id2;
+
+		public Long getGmtCreate() {
 			return this.gmtCreate;
 		}
 
-		public void setGmtCreate(String gmtCreate) {
+		public void setGmtCreate(Long gmtCreate) {
 			this.gmtCreate = gmtCreate;
 		}
 
@@ -134,6 +154,46 @@ public class QueryProductResponse extends AcsResponse {
 
 		public void setProductName(String productName) {
 			this.productName = productName;
+		}
+
+		public String getProductSecret() {
+			return this.productSecret;
+		}
+
+		public void setProductSecret(String productSecret) {
+			this.productSecret = productSecret;
+		}
+
+		public String getCategoryName() {
+			return this.categoryName;
+		}
+
+		public void setCategoryName(String categoryName) {
+			this.categoryName = categoryName;
+		}
+
+		public String getCategoryKey() {
+			return this.categoryKey;
+		}
+
+		public void setCategoryKey(String categoryKey) {
+			this.categoryKey = categoryKey;
+		}
+
+		public String getAliyunCommodityCode() {
+			return this.aliyunCommodityCode;
+		}
+
+		public void setAliyunCommodityCode(String aliyunCommodityCode) {
+			this.aliyunCommodityCode = aliyunCommodityCode;
+		}
+
+		public Boolean getId2() {
+			return this.id2;
+		}
+
+		public void setId2(Boolean id2) {
+			this.id2 = id2;
 		}
 	}
 

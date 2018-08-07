@@ -24,6 +24,7 @@ public class StartRuleResponseUnmarshaller {
 		
 		startRuleResponse.setRequestId(context.stringValue("StartRuleResponse.RequestId"));
 		startRuleResponse.setSuccess(context.booleanValue("StartRuleResponse.Success"));
+		startRuleResponse.setCode(context.stringValue("StartRuleResponse.Code"));
 		startRuleResponse.setErrorMessage(context.stringValue("StartRuleResponse.ErrorMessage"));
 	 
 	 	return startRuleResponse;

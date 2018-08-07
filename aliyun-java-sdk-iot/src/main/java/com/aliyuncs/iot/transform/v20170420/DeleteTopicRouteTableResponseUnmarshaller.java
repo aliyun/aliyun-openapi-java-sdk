@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.iot.model.v20170420.DeleteTopicRouteTableResponse;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -27,6 +28,7 @@ public class DeleteTopicRouteTableResponseUnmarshaller {
 		
 		deleteTopicRouteTableResponse.setRequestId(context.stringValue("DeleteTopicRouteTableResponse.RequestId"));
 		deleteTopicRouteTableResponse.setSuccess(context.booleanValue("DeleteTopicRouteTableResponse.Success"));
+		deleteTopicRouteTableResponse.setCode(context.stringValue("DeleteTopicRouteTableResponse.Code"));
 		deleteTopicRouteTableResponse.setIsAllSucceed(context.booleanValue("DeleteTopicRouteTableResponse.IsAllSucceed"));
 		deleteTopicRouteTableResponse.setErrorMessage(context.stringValue("DeleteTopicRouteTableResponse.ErrorMessage"));
 

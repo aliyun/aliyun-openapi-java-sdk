@@ -28,6 +28,8 @@ public class QueryApplyStatusResponse extends AcsResponse {
 
 	private Boolean success;
 
+	private String code;
+
 	private String errorMessage;
 
 	private Boolean finish;
@@ -46,6 +48,14 @@ public class QueryApplyStatusResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public String getErrorMessage() {

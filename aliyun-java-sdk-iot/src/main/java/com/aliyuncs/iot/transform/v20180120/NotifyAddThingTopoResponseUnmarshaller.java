@@ -15,6 +15,7 @@
 package com.aliyuncs.iot.transform.v20180120;
 
 import com.aliyuncs.iot.model.v20180120.NotifyAddThingTopoResponse;
+import com.aliyuncs.iot.model.v20180120.NotifyAddThingTopoResponse.Data;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -25,6 +26,11 @@ public class NotifyAddThingTopoResponseUnmarshaller {
 		notifyAddThingTopoResponse.setRequestId(context.stringValue("NotifyAddThingTopoResponse.RequestId"));
 		notifyAddThingTopoResponse.setSuccess(context.booleanValue("NotifyAddThingTopoResponse.Success"));
 		notifyAddThingTopoResponse.setErrorMessage(context.stringValue("NotifyAddThingTopoResponse.ErrorMessage"));
+		notifyAddThingTopoResponse.setCode(context.stringValue("NotifyAddThingTopoResponse.Code"));
+
+		Data data = new Data();
+		data.setMessageId(context.stringValue("NotifyAddThingTopoResponse.Data.MessageId"));
+		notifyAddThingTopoResponse.setData(data);
 	 
 	 	return notifyAddThingTopoResponse;
 	}

@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.iot.model.v20170420.QueryProductTopicResponse;
 import com.aliyuncs.iot.model.v20170420.QueryProductTopicResponse.ProductTopicInfo;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -28,6 +29,7 @@ public class QueryProductTopicResponseUnmarshaller {
 		
 		queryProductTopicResponse.setRequestId(context.stringValue("QueryProductTopicResponse.RequestId"));
 		queryProductTopicResponse.setSuccess(context.booleanValue("QueryProductTopicResponse.Success"));
+		queryProductTopicResponse.setCode(context.stringValue("QueryProductTopicResponse.Code"));
 		queryProductTopicResponse.setErrorMessage(context.stringValue("QueryProductTopicResponse.ErrorMessage"));
 
 		List<ProductTopicInfo> data = new ArrayList<ProductTopicInfo>();

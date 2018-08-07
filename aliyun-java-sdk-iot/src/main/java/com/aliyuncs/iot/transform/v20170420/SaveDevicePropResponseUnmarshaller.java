@@ -24,6 +24,7 @@ public class SaveDevicePropResponseUnmarshaller {
 		
 		saveDevicePropResponse.setRequestId(context.stringValue("SaveDevicePropResponse.RequestId"));
 		saveDevicePropResponse.setSuccess(context.booleanValue("SaveDevicePropResponse.Success"));
+		saveDevicePropResponse.setCode(context.stringValue("SaveDevicePropResponse.Code"));
 		saveDevicePropResponse.setErrorMessage(context.stringValue("SaveDevicePropResponse.ErrorMessage"));
 	 
 	 	return saveDevicePropResponse;

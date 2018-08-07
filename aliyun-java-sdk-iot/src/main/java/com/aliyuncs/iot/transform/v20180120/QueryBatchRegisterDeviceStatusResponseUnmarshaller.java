@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.iot.model.v20180120.QueryBatchRegisterDeviceStatusResponse;
 import com.aliyuncs.iot.model.v20180120.QueryBatchRegisterDeviceStatusResponse.Data;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -28,6 +29,7 @@ public class QueryBatchRegisterDeviceStatusResponseUnmarshaller {
 		
 		queryBatchRegisterDeviceStatusResponse.setRequestId(context.stringValue("QueryBatchRegisterDeviceStatusResponse.RequestId"));
 		queryBatchRegisterDeviceStatusResponse.setSuccess(context.booleanValue("QueryBatchRegisterDeviceStatusResponse.Success"));
+		queryBatchRegisterDeviceStatusResponse.setCode(context.stringValue("QueryBatchRegisterDeviceStatusResponse.Code"));
 		queryBatchRegisterDeviceStatusResponse.setErrorMessage(context.stringValue("QueryBatchRegisterDeviceStatusResponse.ErrorMessage"));
 
 		Data data = new Data();

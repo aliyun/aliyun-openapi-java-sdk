@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.iot.model.v20180120.QueryDeviceEventDataResponse;
 import com.aliyuncs.iot.model.v20180120.QueryDeviceEventDataResponse.Data;
 import com.aliyuncs.iot.model.v20180120.QueryDeviceEventDataResponse.Data.EventInfo;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -29,6 +30,7 @@ public class QueryDeviceEventDataResponseUnmarshaller {
 		
 		queryDeviceEventDataResponse.setRequestId(context.stringValue("QueryDeviceEventDataResponse.RequestId"));
 		queryDeviceEventDataResponse.setSuccess(context.booleanValue("QueryDeviceEventDataResponse.Success"));
+		queryDeviceEventDataResponse.setCode(context.stringValue("QueryDeviceEventDataResponse.Code"));
 		queryDeviceEventDataResponse.setErrorMessage(context.stringValue("QueryDeviceEventDataResponse.ErrorMessage"));
 
 		Data data = new Data();

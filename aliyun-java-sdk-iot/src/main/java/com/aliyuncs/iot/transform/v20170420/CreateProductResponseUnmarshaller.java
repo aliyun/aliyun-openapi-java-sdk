@@ -25,6 +25,7 @@ public class CreateProductResponseUnmarshaller {
 		
 		createProductResponse.setRequestId(context.stringValue("CreateProductResponse.RequestId"));
 		createProductResponse.setSuccess(context.booleanValue("CreateProductResponse.Success"));
+		createProductResponse.setCode(context.stringValue("CreateProductResponse.Code"));
 		createProductResponse.setErrorMessage(context.stringValue("CreateProductResponse.ErrorMessage"));
 
 		ProductInfo productInfo = new ProductInfo();

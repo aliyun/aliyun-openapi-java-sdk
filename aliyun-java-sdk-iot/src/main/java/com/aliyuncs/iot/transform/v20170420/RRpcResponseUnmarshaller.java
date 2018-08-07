@@ -24,6 +24,7 @@ public class RRpcResponseUnmarshaller {
 		
 		rRpcResponse.setRequestId(context.stringValue("RRpcResponse.RequestId"));
 		rRpcResponse.setSuccess(context.booleanValue("RRpcResponse.Success"));
+		rRpcResponse.setCode(context.stringValue("RRpcResponse.Code"));
 		rRpcResponse.setErrorMessage(context.stringValue("RRpcResponse.ErrorMessage"));
 		rRpcResponse.setRrpcCode(context.stringValue("RRpcResponse.RrpcCode"));
 		rRpcResponse.setPayloadBase64Byte(context.stringValue("RRpcResponse.PayloadBase64Byte"));

@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.iot.model.v20180120.GetThingTopoResponse;
 import com.aliyuncs.iot.model.v20180120.GetThingTopoResponse.Data;
 import com.aliyuncs.iot.model.v20180120.GetThingTopoResponse.Data.DeviceInfo;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -29,6 +30,7 @@ public class GetThingTopoResponseUnmarshaller {
 		
 		getThingTopoResponse.setRequestId(context.stringValue("GetThingTopoResponse.RequestId"));
 		getThingTopoResponse.setSuccess(context.booleanValue("GetThingTopoResponse.Success"));
+		getThingTopoResponse.setCode(context.stringValue("GetThingTopoResponse.Code"));
 		getThingTopoResponse.setErrorMessage(context.stringValue("GetThingTopoResponse.ErrorMessage"));
 
 		Data data = new Data();

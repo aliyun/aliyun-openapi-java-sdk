@@ -24,6 +24,7 @@ public class ApplyDeviceWithNamesResponseUnmarshaller {
 		
 		applyDeviceWithNamesResponse.setRequestId(context.stringValue("ApplyDeviceWithNamesResponse.RequestId"));
 		applyDeviceWithNamesResponse.setSuccess(context.booleanValue("ApplyDeviceWithNamesResponse.Success"));
+		applyDeviceWithNamesResponse.setCode(context.stringValue("ApplyDeviceWithNamesResponse.Code"));
 		applyDeviceWithNamesResponse.setErrorMessage(context.stringValue("ApplyDeviceWithNamesResponse.ErrorMessage"));
 		applyDeviceWithNamesResponse.setApplyId(context.longValue("ApplyDeviceWithNamesResponse.ApplyId"));
 	 

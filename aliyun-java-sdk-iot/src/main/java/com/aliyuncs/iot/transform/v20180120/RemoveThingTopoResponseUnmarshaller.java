@@ -24,6 +24,7 @@ public class RemoveThingTopoResponseUnmarshaller {
 		
 		removeThingTopoResponse.setRequestId(context.stringValue("RemoveThingTopoResponse.RequestId"));
 		removeThingTopoResponse.setSuccess(context.booleanValue("RemoveThingTopoResponse.Success"));
+		removeThingTopoResponse.setCode(context.stringValue("RemoveThingTopoResponse.Code"));
 		removeThingTopoResponse.setErrorMessage(context.stringValue("RemoveThingTopoResponse.ErrorMessage"));
 		removeThingTopoResponse.setData(context.booleanValue("RemoveThingTopoResponse.Data"));
 	 
