@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.cdn.model.v20141111.DescribeCdnTypesResponse;
 import com.aliyuncs.cdn.model.v20141111.DescribeCdnTypesResponse.CdnType;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.cdn.model.v20141111.DescribeLiveStreamPushDataResponse;
 import com.aliyuncs.cdn.model.v20141111.DescribeLiveStreamPushDataResponse.PushStreamModel;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

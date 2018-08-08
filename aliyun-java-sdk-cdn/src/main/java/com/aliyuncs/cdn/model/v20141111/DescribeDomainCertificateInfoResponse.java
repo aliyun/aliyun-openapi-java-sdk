@@ -65,6 +65,16 @@ public class DescribeDomainCertificateInfoResponse extends AcsResponse {
 
 		private String status;
 
+		private String serverCertificate;
+
+		private String certUpdateTime;
+
+		private String certStartTime;
+
+		private String certCommonName;
+
+		private String domainCnameStatus;
+
 		public String getDomainName() {
 			return this.domainName;
 		}
@@ -135,6 +145,46 @@ public class DescribeDomainCertificateInfoResponse extends AcsResponse {
 
 		public void setStatus(String status) {
 			this.status = status;
+		}
+
+		public String getServerCertificate() {
+			return this.serverCertificate;
+		}
+
+		public void setServerCertificate(String serverCertificate) {
+			this.serverCertificate = serverCertificate;
+		}
+
+		public String getCertUpdateTime() {
+			return this.certUpdateTime;
+		}
+
+		public void setCertUpdateTime(String certUpdateTime) {
+			this.certUpdateTime = certUpdateTime;
+		}
+
+		public String getCertStartTime() {
+			return this.certStartTime;
+		}
+
+		public void setCertStartTime(String certStartTime) {
+			this.certStartTime = certStartTime;
+		}
+
+		public String getCertCommonName() {
+			return this.certCommonName;
+		}
+
+		public void setCertCommonName(String certCommonName) {
+			this.certCommonName = certCommonName;
+		}
+
+		public String getDomainCnameStatus() {
+			return this.domainCnameStatus;
+		}
+
+		public void setDomainCnameStatus(String domainCnameStatus) {
+			this.domainCnameStatus = domainCnameStatus;
 		}
 	}
 

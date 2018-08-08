@@ -47,7 +47,7 @@ public class AddFCTriggerRequest extends RpcAcsRequest<AddFCTriggerResponse> {
 	public void setNotes(String notes) {
 		this.notes = notes;
 		if(notes != null){
-			putQueryParameter("Notes", notes);
+			putBodyParameter("Notes", notes);
 		}
 	}
 
@@ -58,7 +58,7 @@ public class AddFCTriggerRequest extends RpcAcsRequest<AddFCTriggerResponse> {
 	public void setEventMetaVersion(String eventMetaVersion) {
 		this.eventMetaVersion = eventMetaVersion;
 		if(eventMetaVersion != null){
-			putQueryParameter("EventMetaVersion", eventMetaVersion);
+			putBodyParameter("EventMetaVersion", eventMetaVersion);
 		}
 	}
 
@@ -80,7 +80,7 @@ public class AddFCTriggerRequest extends RpcAcsRequest<AddFCTriggerResponse> {
 	public void setSourceARN(String sourceARN) {
 		this.sourceARN = sourceARN;
 		if(sourceARN != null){
-			putQueryParameter("SourceARN", sourceARN);
+			putBodyParameter("SourceARN", sourceARN);
 		}
 	}
 
@@ -102,7 +102,7 @@ public class AddFCTriggerRequest extends RpcAcsRequest<AddFCTriggerResponse> {
 	public void setRoleARN(String roleARN) {
 		this.roleARN = roleARN;
 		if(roleARN != null){
-			putQueryParameter("RoleARN", roleARN);
+			putBodyParameter("RoleARN", roleARN);
 		}
 	}
 
@@ -113,7 +113,7 @@ public class AddFCTriggerRequest extends RpcAcsRequest<AddFCTriggerResponse> {
 	public void setEventMetaName(String eventMetaName) {
 		this.eventMetaName = eventMetaName;
 		if(eventMetaName != null){
-			putQueryParameter("EventMetaName", eventMetaName);
+			putBodyParameter("EventMetaName", eventMetaName);
 		}
 	}
 

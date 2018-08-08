@@ -46,6 +46,7 @@ import com.aliyuncs.cdn.model.v20141111.DescribeDomainConfigsResponse.DomainConf
 import com.aliyuncs.cdn.model.v20141111.DescribeDomainConfigsResponse.DomainConfigs.SrcHostConfig;
 import com.aliyuncs.cdn.model.v20141111.DescribeDomainConfigsResponse.DomainConfigs.VideoSeekConfig;
 import com.aliyuncs.cdn.model.v20141111.DescribeDomainConfigsResponse.DomainConfigs.WafConfig;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

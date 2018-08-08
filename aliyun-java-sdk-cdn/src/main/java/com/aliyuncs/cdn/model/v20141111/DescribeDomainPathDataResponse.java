@@ -25,6 +25,8 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDomainPathDataResponse extends AcsResponse {
 
+	private String requestId;
+
 	private String domainName;
 
 	private String startTime;
@@ -40,6 +42,14 @@ public class DescribeDomainPathDataResponse extends AcsResponse {
 	private Integer totalCount;
 
 	private List<UsageData> pathDataPerInterval;
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
 
 	public String getDomainName() {
 		return this.domainName;

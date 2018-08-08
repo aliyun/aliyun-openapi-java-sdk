@@ -1,3 +1,6 @@
+2018-08-08 Version: 2.8.0
+1, Update FC apis.
+
 2018-05-11 Version: 2.7.0
 1, Add Function Compute interface,support Function Compute.
 

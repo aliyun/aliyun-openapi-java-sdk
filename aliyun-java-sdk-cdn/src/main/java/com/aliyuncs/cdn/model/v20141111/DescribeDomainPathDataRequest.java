@@ -32,8 +32,6 @@ public class DescribeDomainPathDataRequest extends RpcAcsRequest<DescribeDomainP
 
 	private String path;
 
-	private String securityToken;
-
 	private Integer pageSize;
 
 	private String domainName;
@@ -41,8 +39,6 @@ public class DescribeDomainPathDataRequest extends RpcAcsRequest<DescribeDomainP
 	private String endTime;
 
 	private Long ownerId;
-
-	private String version;
 
 	public String getStartTime() {
 		return this.startTime;
@@ -74,17 +70,6 @@ public class DescribeDomainPathDataRequest extends RpcAcsRequest<DescribeDomainP
 		this.path = path;
 		if(path != null){
 			putQueryParameter("Path", path);
-		}
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 
@@ -129,17 +114,6 @@ public class DescribeDomainPathDataRequest extends RpcAcsRequest<DescribeDomainP
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getVersion() {
-		return this.version;
-	}
-
-	public void setVersion(String version) {
-		this.version = version;
-		if(version != null){
-			putQueryParameter("Version", version);
 		}
 	}
 

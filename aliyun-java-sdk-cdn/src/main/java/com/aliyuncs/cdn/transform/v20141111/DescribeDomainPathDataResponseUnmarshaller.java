@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.cdn.model.v20141111.DescribeDomainPathDataResponse;
 import com.aliyuncs.cdn.model.v20141111.DescribeDomainPathDataResponse.UsageData;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -26,6 +27,7 @@ public class DescribeDomainPathDataResponseUnmarshaller {
 
 	public static DescribeDomainPathDataResponse unmarshall(DescribeDomainPathDataResponse describeDomainPathDataResponse, UnmarshallerContext context) {
 		
+		describeDomainPathDataResponse.setRequestId(context.stringValue("DescribeDomainPathDataResponse.RequestId"));
 		describeDomainPathDataResponse.setDomainName(context.stringValue("DescribeDomainPathDataResponse.DomainName"));
 		describeDomainPathDataResponse.setStartTime(context.stringValue("DescribeDomainPathDataResponse.StartTime"));
 		describeDomainPathDataResponse.setEndTime(context.stringValue("DescribeDomainPathDataResponse.EndTime"));

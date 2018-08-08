@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.cdn.model.v20141111.DescribeDomainUvDataResponse;
 import com.aliyuncs.cdn.model.v20141111.DescribeDomainUvDataResponse.UsageData;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

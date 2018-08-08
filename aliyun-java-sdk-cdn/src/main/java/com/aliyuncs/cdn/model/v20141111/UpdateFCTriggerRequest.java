@@ -43,7 +43,7 @@ public class UpdateFCTriggerRequest extends RpcAcsRequest<UpdateFCTriggerRespons
 	public void setNotes(String notes) {
 		this.notes = notes;
 		if(notes != null){
-			putQueryParameter("Notes", notes);
+			putBodyParameter("Notes", notes);
 		}
 	}
 
@@ -65,7 +65,7 @@ public class UpdateFCTriggerRequest extends RpcAcsRequest<UpdateFCTriggerRespons
 	public void setSourceARN(String sourceARN) {
 		this.sourceARN = sourceARN;
 		if(sourceARN != null){
-			putQueryParameter("SourceARN", sourceARN);
+			putBodyParameter("SourceARN", sourceARN);
 		}
 	}
 
@@ -87,7 +87,7 @@ public class UpdateFCTriggerRequest extends RpcAcsRequest<UpdateFCTriggerRespons
 	public void setRoleARN(String roleARN) {
 		this.roleARN = roleARN;
 		if(roleARN != null){
-			putQueryParameter("RoleARN", roleARN);
+			putBodyParameter("RoleARN", roleARN);
 		}
 	}
 

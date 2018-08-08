@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.cdn.model.v20141111.DescribeUserVipsByDomainResponse;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

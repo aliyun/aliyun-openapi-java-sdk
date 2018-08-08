@@ -26,11 +26,24 @@ public class PushObjectCacheRequest extends RpcAcsRequest<PushObjectCacheRespons
 		super("Cdn", "2014-11-11", "PushObjectCache");
 	}
 
+	private String area;
+
 	private String securityToken;
 
 	private String objectPath;
 
 	private Long ownerId;
+
+	public String getArea() {
+		return this.area;
+	}
+
+	public void setArea(String area) {
+		this.area = area;
+		if(area != null){
+			putQueryParameter("Area", area);
+		}
+	}
 
 	public String getSecurityToken() {
 		return this.securityToken;

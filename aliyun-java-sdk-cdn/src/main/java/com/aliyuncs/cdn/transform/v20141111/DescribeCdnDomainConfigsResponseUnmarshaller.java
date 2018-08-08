@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.cdn.model.v20141111.DescribeCdnDomainConfigsResponse;
 import com.aliyuncs.cdn.model.v20141111.DescribeCdnDomainConfigsResponse.DomainConfig;
 import com.aliyuncs.cdn.model.v20141111.DescribeCdnDomainConfigsResponse.DomainConfig.FunctionArg;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

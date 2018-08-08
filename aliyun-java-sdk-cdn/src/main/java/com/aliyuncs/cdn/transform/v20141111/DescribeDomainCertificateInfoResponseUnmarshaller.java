@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.cdn.model.v20141111.DescribeDomainCertificateInfoResponse;
 import com.aliyuncs.cdn.model.v20141111.DescribeDomainCertificateInfoResponse.CertInfo;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -40,6 +41,11 @@ public class DescribeDomainCertificateInfoResponseUnmarshaller {
 			certInfo.setCertType(context.stringValue("DescribeDomainCertificateInfoResponse.CertInfos["+ i +"].CertType"));
 			certInfo.setServerCertificateStatus(context.stringValue("DescribeDomainCertificateInfoResponse.CertInfos["+ i +"].ServerCertificateStatus"));
 			certInfo.setStatus(context.stringValue("DescribeDomainCertificateInfoResponse.CertInfos["+ i +"].Status"));
+			certInfo.setServerCertificate(context.stringValue("DescribeDomainCertificateInfoResponse.CertInfos["+ i +"].ServerCertificate"));
+			certInfo.setCertUpdateTime(context.stringValue("DescribeDomainCertificateInfoResponse.CertInfos["+ i +"].CertUpdateTime"));
+			certInfo.setCertStartTime(context.stringValue("DescribeDomainCertificateInfoResponse.CertInfos["+ i +"].CertStartTime"));
+			certInfo.setCertCommonName(context.stringValue("DescribeDomainCertificateInfoResponse.CertInfos["+ i +"].CertCommonName"));
+			certInfo.setDomainCnameStatus(context.stringValue("DescribeDomainCertificateInfoResponse.CertInfos["+ i +"].DomainCnameStatus"));
 
 			certInfos.add(certInfo);
 		}

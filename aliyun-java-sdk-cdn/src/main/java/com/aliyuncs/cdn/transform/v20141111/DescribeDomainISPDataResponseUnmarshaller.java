@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.cdn.model.v20141111.DescribeDomainISPDataResponse;
 import com.aliyuncs.cdn.model.v20141111.DescribeDomainISPDataResponse.ISPProportionData;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

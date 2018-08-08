@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.cdn.model.v20141111.DescribeLiveStreamFrameAndBitRateByDomainResponse;
 import com.aliyuncs.cdn.model.v20141111.DescribeLiveStreamFrameAndBitRateByDomainResponse.FrameRateAndBitRateInfo;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

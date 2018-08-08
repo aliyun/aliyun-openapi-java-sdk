@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.cdn.model.v20141111.DescribeLiveStreamsOnlineListResponse;
 import com.aliyuncs.cdn.model.v20141111.DescribeLiveStreamsOnlineListResponse.LiveStreamOnlineInfo;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

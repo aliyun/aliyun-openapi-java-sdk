@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.cdn.model.v20141111.DescribeCdnRegionAndIspResponse;
 import com.aliyuncs.cdn.model.v20141111.DescribeCdnRegionAndIspResponse.Isp;
 import com.aliyuncs.cdn.model.v20141111.DescribeCdnRegionAndIspResponse.Region;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

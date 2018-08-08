@@ -26,22 +26,7 @@ public class DescribeUserCustomLogConfigRequest extends RpcAcsRequest<DescribeUs
 		super("Cdn", "2014-11-11", "DescribeUserCustomLogConfig");
 	}
 
-	private String securityToken;
-
 	private Long ownerId;
-
-	private String version;
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
 
 	public Long getOwnerId() {
 		return this.ownerId;
@@ -51,17 +36,6 @@ public class DescribeUserCustomLogConfigRequest extends RpcAcsRequest<DescribeUs
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getVersion() {
-		return this.version;
-	}
-
-	public void setVersion(String version) {
-		this.version = version;
-		if(version != null){
-			putQueryParameter("Version", version);
 		}
 	}
 

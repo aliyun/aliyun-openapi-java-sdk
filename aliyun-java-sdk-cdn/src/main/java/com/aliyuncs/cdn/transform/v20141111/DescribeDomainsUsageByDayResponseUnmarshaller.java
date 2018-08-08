@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.cdn.model.v20141111.DescribeDomainsUsageByDayResponse;
 import com.aliyuncs.cdn.model.v20141111.DescribeDomainsUsageByDayResponse.UsageByDay;
 import com.aliyuncs.cdn.model.v20141111.DescribeDomainsUsageByDayResponse.UsageTotal;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
