@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class AttachKeyPairRequest extends RpcAcsRequest<AttachKeyPairResponse> {
 	
 	public AttachKeyPairRequest() {
-		super("Ecs", "2014-05-26", "AttachKeyPair", "ecs");
+		super("Ecs", "2014-05-26", "AttachKeyPair");
 	}
 
 	private Long resourceOwnerId;

@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifyInstanceAttributeRequest extends RpcAcsRequest<ModifyInstanceAttributeResponse> {
 	
 	public ModifyInstanceAttributeRequest() {
-		super("Ecs", "2014-05-26", "ModifyInstanceAttribute", "ecs");
+		super("Ecs", "2014-05-26", "ModifyInstanceAttribute");
 	}
 
 	private String userData;

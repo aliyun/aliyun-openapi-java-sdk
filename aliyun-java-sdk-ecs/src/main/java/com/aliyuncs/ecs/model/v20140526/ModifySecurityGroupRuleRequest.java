@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifySecurityGroupRuleRequest extends RpcAcsRequest<ModifySecurityGroupRuleResponse> {
 	
 	public ModifySecurityGroupRuleRequest() {
-		super("Ecs", "2014-05-26", "ModifySecurityGroupRule", "ecs");
+		super("Ecs", "2014-05-26", "ModifySecurityGroupRule");
 	}
 
 	private String nicType;

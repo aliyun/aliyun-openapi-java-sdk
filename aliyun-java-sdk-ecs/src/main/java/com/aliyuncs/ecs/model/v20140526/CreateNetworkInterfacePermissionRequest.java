@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class CreateNetworkInterfacePermissionRequest extends RpcAcsRequest<CreateNetworkInterfacePermissionResponse> {
 	
 	public CreateNetworkInterfacePermissionRequest() {
-		super("Ecs", "2014-05-26", "CreateNetworkInterfacePermission", "ecs");
+		super("Ecs", "2014-05-26", "CreateNetworkInterfacePermission");
 	}
 
 	private Long resourceOwnerId;

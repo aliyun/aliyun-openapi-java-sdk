@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribePriceRequest extends RpcAcsRequest<DescribePriceResponse> {
 	
 	public DescribePriceRequest() {
-		super("Ecs", "2014-05-26", "DescribePrice", "ecs");
+		super("Ecs", "2014-05-26", "DescribePrice");
 	}
 
 	private Integer dataDisk3Size;

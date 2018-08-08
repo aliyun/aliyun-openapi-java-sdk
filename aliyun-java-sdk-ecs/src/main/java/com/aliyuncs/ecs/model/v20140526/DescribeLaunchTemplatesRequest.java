@@ -24,7 +24,7 @@ import java.util.List;
 public class DescribeLaunchTemplatesRequest extends RpcAcsRequest<DescribeLaunchTemplatesResponse> {
 	
 	public DescribeLaunchTemplatesRequest() {
-		super("Ecs", "2014-05-26", "DescribeLaunchTemplates", "ecs");
+		super("Ecs", "2014-05-26", "DescribeLaunchTemplates");
 	}
 
 	private String templateTag1Value;

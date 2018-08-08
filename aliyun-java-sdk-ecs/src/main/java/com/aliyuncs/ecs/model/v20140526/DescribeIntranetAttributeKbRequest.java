@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeIntranetAttributeKbRequest extends RpcAcsRequest<DescribeIntranetAttributeKbResponse> {
 	
 	public DescribeIntranetAttributeKbRequest() {
-		super("Ecs", "2014-05-26", "DescribeIntranetAttributeKb", "ecs");
+		super("Ecs", "2014-05-26", "DescribeIntranetAttributeKb");
 	}
 
 	private Long resourceOwnerId;

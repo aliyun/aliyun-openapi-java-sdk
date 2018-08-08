@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifyLaunchTemplateDefaultVersionRequest extends RpcAcsRequest<ModifyLaunchTemplateDefaultVersionResponse> {
 	
 	public ModifyLaunchTemplateDefaultVersionRequest() {
-		super("Ecs", "2014-05-26", "ModifyLaunchTemplateDefaultVersion", "ecs");
+		super("Ecs", "2014-05-26", "ModifyLaunchTemplateDefaultVersion");
 	}
 
 	private String launchTemplateName;

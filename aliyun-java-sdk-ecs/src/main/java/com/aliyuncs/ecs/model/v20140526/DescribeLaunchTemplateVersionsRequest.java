@@ -24,7 +24,7 @@ import java.util.List;
 public class DescribeLaunchTemplateVersionsRequest extends RpcAcsRequest<DescribeLaunchTemplateVersionsResponse> {
 	
 	public DescribeLaunchTemplateVersionsRequest() {
-		super("Ecs", "2014-05-26", "DescribeLaunchTemplateVersions", "ecs");
+		super("Ecs", "2014-05-26", "DescribeLaunchTemplateVersions");
 	}
 
 	private String launchTemplateName;

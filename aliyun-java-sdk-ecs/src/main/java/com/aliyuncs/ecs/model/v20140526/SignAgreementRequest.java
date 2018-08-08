@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class SignAgreementRequest extends RpcAcsRequest<SignAgreementResponse> {
 	
 	public SignAgreementRequest() {
-		super("Ecs", "2014-05-26", "SignAgreement", "ecs");
+		super("Ecs", "2014-05-26", "SignAgreement");
 	}
 
 	private Long resourceOwnerId;

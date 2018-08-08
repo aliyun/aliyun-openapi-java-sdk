@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class CreateVSwitchRequest extends RpcAcsRequest<CreateVSwitchResponse> {
 	
 	public CreateVSwitchRequest() {
-		super("Ecs", "2014-05-26", "CreateVSwitch", "ecs");
+		super("Ecs", "2014-05-26", "CreateVSwitch");
 	}
 
 	private Long resourceOwnerId;

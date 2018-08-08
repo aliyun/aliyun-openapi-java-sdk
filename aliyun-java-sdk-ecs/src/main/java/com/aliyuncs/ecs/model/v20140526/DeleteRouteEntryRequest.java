@@ -24,7 +24,7 @@ import java.util.List;
 public class DeleteRouteEntryRequest extends RpcAcsRequest<DeleteRouteEntryResponse> {
 	
 	public DeleteRouteEntryRequest() {
-		super("Ecs", "2014-05-26", "DeleteRouteEntry", "ecs");
+		super("Ecs", "2014-05-26", "DeleteRouteEntry");
 	}
 
 	private Long resourceOwnerId;

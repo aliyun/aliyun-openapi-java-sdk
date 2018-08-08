@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeResourceByTagsRequest extends RpcAcsRequest<DescribeResourceByTagsResponse> {
 	
 	public DescribeResourceByTagsRequest() {
-		super("Ecs", "2014-05-26", "DescribeResourceByTags", "ecs");
+		super("Ecs", "2014-05-26", "DescribeResourceByTags");
 	}
 
 	private String tag4Value;

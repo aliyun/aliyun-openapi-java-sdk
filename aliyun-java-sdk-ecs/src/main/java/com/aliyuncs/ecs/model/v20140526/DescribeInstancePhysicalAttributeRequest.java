@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeInstancePhysicalAttributeRequest extends RpcAcsRequest<DescribeInstancePhysicalAttributeResponse> {
 	
 	public DescribeInstancePhysicalAttributeRequest() {
-		super("Ecs", "2014-05-26", "DescribeInstancePhysicalAttribute", "ecs");
+		super("Ecs", "2014-05-26", "DescribeInstancePhysicalAttribute");
 	}
 
 	private Long resourceOwnerId;

@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifySnapshotAttributeRequest extends RpcAcsRequest<ModifySnapshotAttributeResponse> {
 	
 	public ModifySnapshotAttributeRequest() {
-		super("Ecs", "2014-05-26", "ModifySnapshotAttribute", "ecs");
+		super("Ecs", "2014-05-26", "ModifySnapshotAttribute");
 	}
 
 	private Long resourceOwnerId;

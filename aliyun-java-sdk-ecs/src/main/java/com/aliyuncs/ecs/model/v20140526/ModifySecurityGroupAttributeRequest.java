@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifySecurityGroupAttributeRequest extends RpcAcsRequest<ModifySecurityGroupAttributeResponse> {
 	
 	public ModifySecurityGroupAttributeRequest() {
-		super("Ecs", "2014-05-26", "ModifySecurityGroupAttribute", "ecs");
+		super("Ecs", "2014-05-26", "ModifySecurityGroupAttribute");
 	}
 
 	private Long resourceOwnerId;

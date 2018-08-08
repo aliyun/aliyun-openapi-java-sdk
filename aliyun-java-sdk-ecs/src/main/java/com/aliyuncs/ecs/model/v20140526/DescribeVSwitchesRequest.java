@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeVSwitchesRequest extends RpcAcsRequest<DescribeVSwitchesResponse> {
 	
 	public DescribeVSwitchesRequest() {
-		super("Ecs", "2014-05-26", "DescribeVSwitches", "ecs");
+		super("Ecs", "2014-05-26", "DescribeVSwitches");
 	}
 
 	private String vSwitchId;

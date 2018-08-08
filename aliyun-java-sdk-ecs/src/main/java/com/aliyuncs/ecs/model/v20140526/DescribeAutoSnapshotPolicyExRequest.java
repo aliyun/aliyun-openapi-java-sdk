@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeAutoSnapshotPolicyExRequest extends RpcAcsRequest<DescribeAutoSnapshotPolicyExResponse> {
 	
 	public DescribeAutoSnapshotPolicyExRequest() {
-		super("Ecs", "2014-05-26", "DescribeAutoSnapshotPolicyEx", "ecs");
+		super("Ecs", "2014-05-26", "DescribeAutoSnapshotPolicyEx");
 	}
 
 	private Long resourceOwnerId;

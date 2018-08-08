@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeInstanceAttributeRequest extends RpcAcsRequest<DescribeInstanceAttributeResponse> {
 	
 	public DescribeInstanceAttributeRequest() {
-		super("Ecs", "2014-05-26", "DescribeInstanceAttribute", "ecs");
+		super("Ecs", "2014-05-26", "DescribeInstanceAttribute");
 	}
 
 	private Long resourceOwnerId;

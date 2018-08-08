@@ -24,7 +24,7 @@ import java.util.List;
 public class CreateRouteEntryRequest extends RpcAcsRequest<CreateRouteEntryResponse> {
 	
 	public CreateRouteEntryRequest() {
-		super("Ecs", "2014-05-26", "CreateRouteEntry", "ecs");
+		super("Ecs", "2014-05-26", "CreateRouteEntry");
 	}
 
 	private Long resourceOwnerId;

@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeleteNatGatewayRequest extends RpcAcsRequest<DeleteNatGatewayResponse> {
 	
 	public DeleteNatGatewayRequest() {
-		super("Ecs", "2014-05-26", "DeleteNatGateway", "ecs");
+		super("Ecs", "2014-05-26", "DeleteNatGateway");
 	}
 
 	private Long resourceOwnerId;

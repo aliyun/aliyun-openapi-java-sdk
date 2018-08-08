@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeIpRangesRequest extends RpcAcsRequest<DescribeIpRangesResponse> {
 	
 	public DescribeIpRangesRequest() {
-		super("Ecs", "2014-05-26", "DescribeIpRanges", "ecs");
+		super("Ecs", "2014-05-26", "DescribeIpRanges");
 	}
 
 	private String nicType;

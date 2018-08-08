@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifyVSwitchAttributeRequest extends RpcAcsRequest<ModifyVSwitchAttributeResponse> {
 	
 	public ModifyVSwitchAttributeRequest() {
-		super("Ecs", "2014-05-26", "ModifyVSwitchAttribute", "ecs");
+		super("Ecs", "2014-05-26", "ModifyVSwitchAttribute");
 	}
 
 	private String vSwitchId;

@@ -24,7 +24,7 @@ import java.util.List;
 public class RemoveBandwidthPackageIpsRequest extends RpcAcsRequest<RemoveBandwidthPackageIpsResponse> {
 	
 	public RemoveBandwidthPackageIpsRequest() {
-		super("Ecs", "2014-05-26", "RemoveBandwidthPackageIps", "ecs");
+		super("Ecs", "2014-05-26", "RemoveBandwidthPackageIps");
 	}
 
 	private List<String> removedIpAddressess;

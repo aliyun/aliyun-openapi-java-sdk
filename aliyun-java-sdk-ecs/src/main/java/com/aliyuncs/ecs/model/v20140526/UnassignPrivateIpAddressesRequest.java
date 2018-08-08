@@ -24,7 +24,7 @@ import java.util.List;
 public class UnassignPrivateIpAddressesRequest extends RpcAcsRequest<UnassignPrivateIpAddressesResponse> {
 	
 	public UnassignPrivateIpAddressesRequest() {
-		super("Ecs", "2014-05-26", "UnassignPrivateIpAddresses", "ecs");
+		super("Ecs", "2014-05-26", "UnassignPrivateIpAddresses");
 	}
 
 	private Long resourceOwnerId;

@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class JoinSecurityGroupRequest extends RpcAcsRequest<JoinSecurityGroupResponse> {
 	
 	public JoinSecurityGroupRequest() {
-		super("Ecs", "2014-05-26", "JoinSecurityGroup", "ecs");
+		super("Ecs", "2014-05-26", "JoinSecurityGroup");
 	}
 
 	private Long resourceOwnerId;

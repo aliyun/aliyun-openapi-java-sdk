@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class StartInstanceRequest extends RpcAcsRequest<StartInstanceResponse> {
 	
 	public StartInstanceRequest() {
-		super("Ecs", "2014-05-26", "StartInstance", "ecs");
+		super("Ecs", "2014-05-26", "StartInstance");
 	}
 
 	private Boolean initLocalDisk;

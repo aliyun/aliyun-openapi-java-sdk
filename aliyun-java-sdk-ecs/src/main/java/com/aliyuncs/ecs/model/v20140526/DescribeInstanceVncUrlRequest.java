@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeInstanceVncUrlRequest extends RpcAcsRequest<DescribeInstanceVncUrlResponse> {
 	
 	public DescribeInstanceVncUrlRequest() {
-		super("Ecs", "2014-05-26", "DescribeInstanceVncUrl", "ecs");
+		super("Ecs", "2014-05-26", "DescribeInstanceVncUrl");
 	}
 
 	private Long resourceOwnerId;

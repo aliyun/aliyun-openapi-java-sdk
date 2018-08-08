@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class RenewInstanceRequest extends RpcAcsRequest<RenewInstanceResponse> {
 	
 	public RenewInstanceRequest() {
-		super("Ecs", "2014-05-26", "RenewInstance", "ecs");
+		super("Ecs", "2014-05-26", "RenewInstance");
 	}
 
 	private Long resourceOwnerId;

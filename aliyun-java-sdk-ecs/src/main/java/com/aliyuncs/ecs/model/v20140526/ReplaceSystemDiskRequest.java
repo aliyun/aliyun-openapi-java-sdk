@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ReplaceSystemDiskRequest extends RpcAcsRequest<ReplaceSystemDiskResponse> {
 	
 	public ReplaceSystemDiskRequest() {
-		super("Ecs", "2014-05-26", "ReplaceSystemDisk", "ecs");
+		super("Ecs", "2014-05-26", "ReplaceSystemDisk");
 	}
 
 	private Long resourceOwnerId;

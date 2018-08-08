@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifyInstanceAutoRenewAttributeRequest extends RpcAcsRequest<ModifyInstanceAutoRenewAttributeResponse> {
 	
 	public ModifyInstanceAutoRenewAttributeRequest() {
-		super("Ecs", "2014-05-26", "ModifyInstanceAutoRenewAttribute", "ecs");
+		super("Ecs", "2014-05-26", "ModifyInstanceAutoRenewAttribute");
 	}
 
 	private Integer duration;

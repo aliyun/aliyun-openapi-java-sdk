@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifyDeploymentSetAttributeRequest extends RpcAcsRequest<ModifyDeploymentSetAttributeResponse> {
 	
 	public ModifyDeploymentSetAttributeRequest() {
-		super("Ecs", "2014-05-26", "ModifyDeploymentSetAttribute", "ecs");
+		super("Ecs", "2014-05-26", "ModifyDeploymentSetAttribute");
 	}
 
 	private String deploymentSetId;

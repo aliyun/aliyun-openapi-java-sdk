@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class BindIpRangeRequest extends RpcAcsRequest<BindIpRangeResponse> {
 	
 	public BindIpRangeRequest() {
-		super("Ecs", "2014-05-26", "BindIpRange", "ecs");
+		super("Ecs", "2014-05-26", "BindIpRange");
 	}
 
 	private String ipAddress;

@@ -24,7 +24,7 @@ import java.util.List;
 public class DescribeInstanceHistoryEventsRequest extends RpcAcsRequest<DescribeInstanceHistoryEventsResponse> {
 	
 	public DescribeInstanceHistoryEventsRequest() {
-		super("Ecs", "2014-05-26", "DescribeInstanceHistoryEvents", "ecs");
+		super("Ecs", "2014-05-26", "DescribeInstanceHistoryEvents");
 	}
 
 	private List<String> eventIds;

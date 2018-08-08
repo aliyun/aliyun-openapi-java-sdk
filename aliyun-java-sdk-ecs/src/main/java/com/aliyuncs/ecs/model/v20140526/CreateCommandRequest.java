@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class CreateCommandRequest extends RpcAcsRequest<CreateCommandResponse> {
 	
 	public CreateCommandRequest() {
-		super("Ecs", "2014-05-26", "CreateCommand", "ecs");
+		super("Ecs", "2014-05-26", "CreateCommand");
 	}
 
 	private Long resourceOwnerId;

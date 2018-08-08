@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class CreateHaVipRequest extends RpcAcsRequest<CreateHaVipResponse> {
 	
 	public CreateHaVipRequest() {
-		super("Ecs", "2014-05-26", "CreateHaVip", "ecs");
+		super("Ecs", "2014-05-26", "CreateHaVip");
 	}
 
 	private String vSwitchId;

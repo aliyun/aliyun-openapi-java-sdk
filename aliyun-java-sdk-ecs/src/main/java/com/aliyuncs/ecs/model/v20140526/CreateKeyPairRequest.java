@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class CreateKeyPairRequest extends RpcAcsRequest<CreateKeyPairResponse> {
 	
 	public CreateKeyPairRequest() {
-		super("Ecs", "2014-05-26", "CreateKeyPair", "ecs");
+		super("Ecs", "2014-05-26", "CreateKeyPair");
 	}
 
 	private String tag4Value;

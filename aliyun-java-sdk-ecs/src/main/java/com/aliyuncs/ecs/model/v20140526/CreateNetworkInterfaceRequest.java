@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class CreateNetworkInterfaceRequest extends RpcAcsRequest<CreateNetworkInterfaceResponse> {
 	
 	public CreateNetworkInterfaceRequest() {
-		super("Ecs", "2014-05-26", "CreateNetworkInterface", "ecs");
+		super("Ecs", "2014-05-26", "CreateNetworkInterface");
 	}
 
 	private String tag4Value;

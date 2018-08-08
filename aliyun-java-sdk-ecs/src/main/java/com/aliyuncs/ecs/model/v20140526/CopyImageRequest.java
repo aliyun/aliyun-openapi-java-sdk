@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class CopyImageRequest extends RpcAcsRequest<CopyImageResponse> {
 	
 	public CopyImageRequest() {
-		super("Ecs", "2014-05-26", "CopyImage", "ecs");
+		super("Ecs", "2014-05-26", "CopyImage");
 	}
 
 	private String tag4Value;

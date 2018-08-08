@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeClassicLinkInstancesRequest extends RpcAcsRequest<DescribeClassicLinkInstancesResponse> {
 	
 	public DescribeClassicLinkInstancesRequest() {
-		super("Ecs", "2014-05-26", "DescribeClassicLinkInstances", "ecs");
+		super("Ecs", "2014-05-26", "DescribeClassicLinkInstances");
 	}
 
 	private Long resourceOwnerId;

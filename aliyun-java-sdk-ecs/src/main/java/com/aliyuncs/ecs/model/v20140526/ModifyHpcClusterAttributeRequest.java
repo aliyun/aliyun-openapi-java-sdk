@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifyHpcClusterAttributeRequest extends RpcAcsRequest<ModifyHpcClusterAttributeResponse> {
 	
 	public ModifyHpcClusterAttributeRequest() {
-		super("Ecs", "2014-05-26", "ModifyHpcClusterAttribute", "ecs");
+		super("Ecs", "2014-05-26", "ModifyHpcClusterAttribute");
 	}
 
 	private Long resourceOwnerId;

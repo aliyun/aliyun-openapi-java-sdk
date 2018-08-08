@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class AssociateHaVipRequest extends RpcAcsRequest<AssociateHaVipResponse> {
 	
 	public AssociateHaVipRequest() {
-		super("Ecs", "2014-05-26", "AssociateHaVip", "ecs");
+		super("Ecs", "2014-05-26", "AssociateHaVip");
 	}
 
 	private String haVipId;

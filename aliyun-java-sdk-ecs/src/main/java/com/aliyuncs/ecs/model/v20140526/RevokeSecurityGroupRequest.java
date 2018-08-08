@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class RevokeSecurityGroupRequest extends RpcAcsRequest<RevokeSecurityGroupResponse> {
 	
 	public RevokeSecurityGroupRequest() {
-		super("Ecs", "2014-05-26", "RevokeSecurityGroup", "ecs");
+		super("Ecs", "2014-05-26", "RevokeSecurityGroup");
 	}
 
 	private String nicType;

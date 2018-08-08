@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class GetInstanceScreenshotRequest extends RpcAcsRequest<GetInstanceScreenshotResponse> {
 	
 	public GetInstanceScreenshotRequest() {
-		super("Ecs", "2014-05-26", "GetInstanceScreenshot", "ecs");
+		super("Ecs", "2014-05-26", "GetInstanceScreenshot");
 	}
 
 	private Long resourceOwnerId;

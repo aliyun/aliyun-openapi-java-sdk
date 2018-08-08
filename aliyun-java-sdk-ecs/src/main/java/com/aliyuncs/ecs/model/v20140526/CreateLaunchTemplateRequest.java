@@ -24,7 +24,7 @@ import java.util.List;
 public class CreateLaunchTemplateRequest extends RpcAcsRequest<CreateLaunchTemplateResponse> {
 	
 	public CreateLaunchTemplateRequest() {
-		super("Ecs", "2014-05-26", "CreateLaunchTemplate", "ecs");
+		super("Ecs", "2014-05-26", "CreateLaunchTemplate");
 	}
 
 	private String launchTemplateName;

@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class UnbindIpRangeRequest extends RpcAcsRequest<UnbindIpRangeResponse> {
 	
 	public UnbindIpRangeRequest() {
-		super("Ecs", "2014-05-26", "UnbindIpRange", "ecs");
+		super("Ecs", "2014-05-26", "UnbindIpRange");
 	}
 
 	private String ipAddress;

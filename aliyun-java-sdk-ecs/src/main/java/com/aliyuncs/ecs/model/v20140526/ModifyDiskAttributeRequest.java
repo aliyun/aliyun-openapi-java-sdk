@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifyDiskAttributeRequest extends RpcAcsRequest<ModifyDiskAttributeResponse> {
 	
 	public ModifyDiskAttributeRequest() {
-		super("Ecs", "2014-05-26", "ModifyDiskAttribute", "ecs");
+		super("Ecs", "2014-05-26", "ModifyDiskAttribute");
 	}
 
 	private String diskName;

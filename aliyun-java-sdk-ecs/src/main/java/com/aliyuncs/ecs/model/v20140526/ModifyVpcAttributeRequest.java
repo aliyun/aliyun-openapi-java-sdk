@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifyVpcAttributeRequest extends RpcAcsRequest<ModifyVpcAttributeResponse> {
 	
 	public ModifyVpcAttributeRequest() {
-		super("Ecs", "2014-05-26", "ModifyVpcAttribute", "ecs");
+		super("Ecs", "2014-05-26", "ModifyVpcAttribute");
 	}
 
 	private String vpcName;
@@ -35,6 +35,8 @@ public class ModifyVpcAttributeRequest extends RpcAcsRequest<ModifyVpcAttributeR
 	private String vpcId;
 
 	private String ownerAccount;
+
+	private String cidrBlock;
 
 	private String description;
 
@@ -94,6 +96,17 @@ public class ModifyVpcAttributeRequest extends RpcAcsRequest<ModifyVpcAttributeR
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public String getCidrBlock() {
+		return this.cidrBlock;
+	}
+
+	public void setCidrBlock(String cidrBlock) {
+		this.cidrBlock = cidrBlock;
+		if(cidrBlock != null){
+			putQueryParameter("CidrBlock", cidrBlock);
 		}
 	}
 

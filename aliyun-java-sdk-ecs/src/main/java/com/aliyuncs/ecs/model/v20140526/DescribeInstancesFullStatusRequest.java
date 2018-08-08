@@ -24,7 +24,7 @@ import java.util.List;
 public class DescribeInstancesFullStatusRequest extends RpcAcsRequest<DescribeInstancesFullStatusResponse> {
 	
 	public DescribeInstancesFullStatusRequest() {
-		super("Ecs", "2014-05-26", "DescribeInstancesFullStatus", "ecs");
+		super("Ecs", "2014-05-26", "DescribeInstancesFullStatus");
 	}
 
 	private List<String> eventIds;

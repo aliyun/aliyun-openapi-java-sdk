@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeBandwidthLimitationRequest extends RpcAcsRequest<DescribeBandwidthLimitationResponse> {
 	
 	public DescribeBandwidthLimitationRequest() {
-		super("Ecs", "2014-05-26", "DescribeBandwidthLimitation", "ecs");
+		super("Ecs", "2014-05-26", "DescribeBandwidthLimitation");
 	}
 
 	private Long resourceOwnerId;

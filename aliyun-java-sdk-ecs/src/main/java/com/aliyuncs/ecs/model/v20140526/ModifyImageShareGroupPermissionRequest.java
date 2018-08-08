@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifyImageShareGroupPermissionRequest extends RpcAcsRequest<ModifyImageShareGroupPermissionResponse> {
 	
 	public ModifyImageShareGroupPermissionRequest() {
-		super("Ecs", "2014-05-26", "ModifyImageShareGroupPermission", "ecs");
+		super("Ecs", "2014-05-26", "ModifyImageShareGroupPermission");
 	}
 
 	private Long resourceOwnerId;

@@ -24,7 +24,7 @@ import java.util.List;
 public class InvokeCommandRequest extends RpcAcsRequest<InvokeCommandResponse> {
 	
 	public InvokeCommandRequest() {
-		super("Ecs", "2014-05-26", "InvokeCommand", "ecs");
+		super("Ecs", "2014-05-26", "InvokeCommand");
 	}
 
 	private Long resourceOwnerId;

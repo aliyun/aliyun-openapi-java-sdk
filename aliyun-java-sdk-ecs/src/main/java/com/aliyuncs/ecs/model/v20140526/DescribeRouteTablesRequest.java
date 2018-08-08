@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeRouteTablesRequest extends RpcAcsRequest<DescribeRouteTablesResponse> {
 	
 	public DescribeRouteTablesRequest() {
-		super("Ecs", "2014-05-26", "DescribeRouteTables", "ecs");
+		super("Ecs", "2014-05-26", "DescribeRouteTables");
 	}
 
 	private String routerType;

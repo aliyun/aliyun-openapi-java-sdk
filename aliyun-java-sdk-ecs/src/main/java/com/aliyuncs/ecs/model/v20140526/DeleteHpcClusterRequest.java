@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeleteHpcClusterRequest extends RpcAcsRequest<DeleteHpcClusterResponse> {
 	
 	public DeleteHpcClusterRequest() {
-		super("Ecs", "2014-05-26", "DeleteHpcCluster", "ecs");
+		super("Ecs", "2014-05-26", "DeleteHpcCluster");
 	}
 
 	private Long resourceOwnerId;

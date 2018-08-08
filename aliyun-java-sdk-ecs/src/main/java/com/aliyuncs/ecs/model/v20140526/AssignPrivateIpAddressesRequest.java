@@ -24,7 +24,7 @@ import java.util.List;
 public class AssignPrivateIpAddressesRequest extends RpcAcsRequest<AssignPrivateIpAddressesResponse> {
 	
 	public AssignPrivateIpAddressesRequest() {
-		super("Ecs", "2014-05-26", "AssignPrivateIpAddresses", "ecs");
+		super("Ecs", "2014-05-26", "AssignPrivateIpAddresses");
 	}
 
 	private Long resourceOwnerId;

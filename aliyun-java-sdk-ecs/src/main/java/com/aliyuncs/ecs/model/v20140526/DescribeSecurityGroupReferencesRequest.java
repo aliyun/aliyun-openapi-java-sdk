@@ -24,7 +24,7 @@ import java.util.List;
 public class DescribeSecurityGroupReferencesRequest extends RpcAcsRequest<DescribeSecurityGroupReferencesResponse> {
 	
 	public DescribeSecurityGroupReferencesRequest() {
-		super("Ecs", "2014-05-26", "DescribeSecurityGroupReferences", "ecs");
+		super("Ecs", "2014-05-26", "DescribeSecurityGroupReferences");
 	}
 
 	private Long resourceOwnerId;

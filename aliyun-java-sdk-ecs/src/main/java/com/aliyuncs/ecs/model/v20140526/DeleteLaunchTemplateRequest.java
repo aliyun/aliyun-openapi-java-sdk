@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeleteLaunchTemplateRequest extends RpcAcsRequest<DeleteLaunchTemplateResponse> {
 	
 	public DeleteLaunchTemplateRequest() {
-		super("Ecs", "2014-05-26", "DeleteLaunchTemplate", "ecs");
+		super("Ecs", "2014-05-26", "DeleteLaunchTemplate");
 	}
 
 	private String launchTemplateName;

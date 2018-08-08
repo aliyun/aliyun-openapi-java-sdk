@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class AllocatePublicIpAddressRequest extends RpcAcsRequest<AllocatePublicIpAddressResponse> {
 	
 	public AllocatePublicIpAddressRequest() {
-		super("Ecs", "2014-05-26", "AllocatePublicIpAddress", "ecs");
+		super("Ecs", "2014-05-26", "AllocatePublicIpAddress");
 	}
 
 	private String ipAddress;
