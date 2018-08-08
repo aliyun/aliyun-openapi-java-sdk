@@ -11,17 +11,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.aliyuncs.ots.model.v20130912;
+
+package com.aliyuncs.ots.model.v20160620;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.ots.transform.v20130912.GetInstanceResponseUnmarshaller;
+import com.aliyuncs.ots.transform.v20160620.DeleteInstanceResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class GetInstanceResponse extends AcsResponse {
+public class DeleteInstanceResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -34,7 +35,7 @@ public class GetInstanceResponse extends AcsResponse {
 	}
 
 	@Override
-	public GetInstanceResponse getInstance(UnmarshallerContext context) {
-		return	GetInstanceResponseUnmarshaller.unmarshall(this, context);
+	public DeleteInstanceResponse getInstance(UnmarshallerContext context) {
+		return	DeleteInstanceResponseUnmarshaller.unmarshall(this, context);
 	}
 }

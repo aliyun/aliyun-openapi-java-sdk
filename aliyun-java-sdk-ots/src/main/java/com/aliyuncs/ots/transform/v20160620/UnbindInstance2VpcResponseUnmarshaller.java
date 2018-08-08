@@ -11,18 +11,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.aliyuncs.ots.transform.v20130912;
 
-import com.aliyuncs.ots.model.v20130912.GetInstanceResponse;
+package com.aliyuncs.ots.transform.v20160620;
+
+import com.aliyuncs.ots.model.v20160620.UnbindInstance2VpcResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class GetInstanceResponseUnmarshaller {
+public class UnbindInstance2VpcResponseUnmarshaller {
 
-	public static GetInstanceResponse unmarshall(GetInstanceResponse getInstanceResponse, UnmarshallerContext context) {
+	public static UnbindInstance2VpcResponse unmarshall(UnbindInstance2VpcResponse unbindInstance2VpcResponse, UnmarshallerContext context) {
 		
-		getInstanceResponse.setRequestId(context.stringValue("GetInstanceResponse.RequestId"));
+		unbindInstance2VpcResponse.setRequestId(context.stringValue("UnbindInstance2VpcResponse.RequestId"));
 	 
-	 	return getInstanceResponse;
+	 	return unbindInstance2VpcResponse;
 	}
 }
