@@ -32,11 +32,7 @@ public class CreateDBClusterRequest extends RpcAcsRequest<CreateDBClusterRespons
 
 	private String period;
 
-	private String dBInstanceStorage;
-
 	private String resourceOwnerAccount;
-
-	private String clientToken;
 
 	private String ownerAccount;
 
@@ -51,8 +47,6 @@ public class CreateDBClusterRequest extends RpcAcsRequest<CreateDBClusterRespons
 	private String securityIPList;
 
 	private String vSwitchId;
-
-	private String privateIpAddress;
 
 	private String engine;
 
@@ -99,17 +93,6 @@ public class CreateDBClusterRequest extends RpcAcsRequest<CreateDBClusterRespons
 		}
 	}
 
-	public String getDBInstanceStorage() {
-		return this.dBInstanceStorage;
-	}
-
-	public void setDBInstanceStorage(String dBInstanceStorage) {
-		this.dBInstanceStorage = dBInstanceStorage;
-		if(dBInstanceStorage != null){
-			putQueryParameter("DBInstanceStorage", dBInstanceStorage);
-		}
-	}
-
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
 	}
@@ -118,17 +101,6 @@ public class CreateDBClusterRequest extends RpcAcsRequest<CreateDBClusterRespons
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public String getClientToken() {
-		return this.clientToken;
-	}
-
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putQueryParameter("ClientToken", clientToken);
 		}
 	}
 
@@ -206,17 +178,6 @@ public class CreateDBClusterRequest extends RpcAcsRequest<CreateDBClusterRespons
 		this.vSwitchId = vSwitchId;
 		if(vSwitchId != null){
 			putQueryParameter("VSwitchId", vSwitchId);
-		}
-	}
-
-	public String getPrivateIpAddress() {
-		return this.privateIpAddress;
-	}
-
-	public void setPrivateIpAddress(String privateIpAddress) {
-		this.privateIpAddress = privateIpAddress;
-		if(privateIpAddress != null){
-			putQueryParameter("PrivateIpAddress", privateIpAddress);
 		}
 	}
 

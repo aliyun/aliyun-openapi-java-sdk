@@ -28,6 +28,8 @@ public class DescribeDBClusterNetInfoRequest extends RpcAcsRequest<DescribeDBClu
 
 	private Long resourceOwnerId;
 
+	private String connectionStringType;
+
 	private String resourceOwnerAccount;
 
 	private String dBClusterId;
@@ -44,6 +46,17 @@ public class DescribeDBClusterNetInfoRequest extends RpcAcsRequest<DescribeDBClu
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getConnectionStringType() {
+		return this.connectionStringType;
+	}
+
+	public void setConnectionStringType(String connectionStringType) {
+		this.connectionStringType = connectionStringType;
+		if(connectionStringType != null){
+			putQueryParameter("ConnectionStringType", connectionStringType);
 		}
 	}
 

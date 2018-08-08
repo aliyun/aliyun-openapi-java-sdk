@@ -69,6 +69,8 @@ public class DescribeDBClusterNetInfoResponse extends AcsResponse {
 
 		private String vSwitchId;
 
+		private String connectionStringType;
+
 		public String getConnectionString() {
 			return this.connectionString;
 		}
@@ -115,6 +117,14 @@ public class DescribeDBClusterNetInfoResponse extends AcsResponse {
 
 		public void setVSwitchId(String vSwitchId) {
 			this.vSwitchId = vSwitchId;
+		}
+
+		public String getConnectionStringType() {
+			return this.connectionStringType;
+		}
+
+		public void setConnectionStringType(String connectionStringType) {
+			this.connectionStringType = connectionStringType;
 		}
 	}
 

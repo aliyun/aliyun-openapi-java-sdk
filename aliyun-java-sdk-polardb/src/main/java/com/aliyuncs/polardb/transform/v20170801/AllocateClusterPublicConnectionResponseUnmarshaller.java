@@ -23,7 +23,7 @@ public class AllocateClusterPublicConnectionResponseUnmarshaller {
 	public static AllocateClusterPublicConnectionResponse unmarshall(AllocateClusterPublicConnectionResponse allocateClusterPublicConnectionResponse, UnmarshallerContext context) {
 		
 		allocateClusterPublicConnectionResponse.setRequestId(context.stringValue("AllocateClusterPublicConnectionResponse.RequestId"));
-		allocateClusterPublicConnectionResponse.setDBInstanceId(context.stringValue("AllocateClusterPublicConnectionResponse.DBInstanceId"));
+		allocateClusterPublicConnectionResponse.setDBClusterId(context.stringValue("AllocateClusterPublicConnectionResponse.DBClusterId"));
 		allocateClusterPublicConnectionResponse.setConnectionString(context.stringValue("AllocateClusterPublicConnectionResponse.ConnectionString"));
 		allocateClusterPublicConnectionResponse.setIPType(context.stringValue("AllocateClusterPublicConnectionResponse.IPType"));
 		allocateClusterPublicConnectionResponse.setPort(context.stringValue("AllocateClusterPublicConnectionResponse.Port"));

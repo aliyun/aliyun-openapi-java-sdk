@@ -20,25 +20,29 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class DescribeDBInstancesRequest extends RpcAcsRequest<DescribeDBInstancesResponse> {
+public class DescribeSQLLogRecordsRequest extends RpcAcsRequest<DescribeSQLLogRecordsResponse> {
 	
-	public DescribeDBInstancesRequest() {
-		super("polardb", "2017-08-01", "DescribeDBInstances", "polardb");
+	public DescribeSQLLogRecordsRequest() {
+		super("polardb", "2017-08-01", "DescribeSQLLogRecords", "polardb");
 	}
 
 	private Long resourceOwnerId;
 
 	private String resourceOwnerAccount;
 
-	private String dBClusterId;
-
 	private String ownerAccount;
 
 	private Integer pageSize;
 
+	private String endTime;
+
+	private String dBInstanceId;
+
+	private String startTime;
+
 	private Long ownerId;
 
-	private String instanceNetworkType;
+	private String queryKeywords;
 
 	private Integer pageNumber;
 
@@ -64,17 +68,6 @@ public class DescribeDBInstancesRequest extends RpcAcsRequest<DescribeDBInstance
 		}
 	}
 
-	public String getDBClusterId() {
-		return this.dBClusterId;
-	}
-
-	public void setDBClusterId(String dBClusterId) {
-		this.dBClusterId = dBClusterId;
-		if(dBClusterId != null){
-			putQueryParameter("DBClusterId", dBClusterId);
-		}
-	}
-
 	public String getOwnerAccount() {
 		return this.ownerAccount;
 	}
@@ -97,6 +90,39 @@ public class DescribeDBInstancesRequest extends RpcAcsRequest<DescribeDBInstance
 		}
 	}
 
+	public String getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime);
+		}
+	}
+
+	public String getDBInstanceId() {
+		return this.dBInstanceId;
+	}
+
+	public void setDBInstanceId(String dBInstanceId) {
+		this.dBInstanceId = dBInstanceId;
+		if(dBInstanceId != null){
+			putQueryParameter("DBInstanceId", dBInstanceId);
+		}
+	}
+
+	public String getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime);
+		}
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -108,14 +134,14 @@ public class DescribeDBInstancesRequest extends RpcAcsRequest<DescribeDBInstance
 		}
 	}
 
-	public String getInstanceNetworkType() {
-		return this.instanceNetworkType;
+	public String getQueryKeywords() {
+		return this.queryKeywords;
 	}
 
-	public void setInstanceNetworkType(String instanceNetworkType) {
-		this.instanceNetworkType = instanceNetworkType;
-		if(instanceNetworkType != null){
-			putQueryParameter("InstanceNetworkType", instanceNetworkType);
+	public void setQueryKeywords(String queryKeywords) {
+		this.queryKeywords = queryKeywords;
+		if(queryKeywords != null){
+			putQueryParameter("QueryKeywords", queryKeywords);
 		}
 	}
 
@@ -131,8 +157,8 @@ public class DescribeDBInstancesRequest extends RpcAcsRequest<DescribeDBInstance
 	}
 
 	@Override
-	public Class<DescribeDBInstancesResponse> getResponseClass() {
-		return DescribeDBInstancesResponse.class;
+	public Class<DescribeSQLLogRecordsResponse> getResponseClass() {
+		return DescribeSQLLogRecordsResponse.class;
 	}
 
 }

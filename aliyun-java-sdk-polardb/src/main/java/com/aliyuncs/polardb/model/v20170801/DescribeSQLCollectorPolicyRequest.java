@@ -20,27 +20,21 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class DescribeDBInstancesRequest extends RpcAcsRequest<DescribeDBInstancesResponse> {
+public class DescribeSQLCollectorPolicyRequest extends RpcAcsRequest<DescribeSQLCollectorPolicyResponse> {
 	
-	public DescribeDBInstancesRequest() {
-		super("polardb", "2017-08-01", "DescribeDBInstances", "polardb");
+	public DescribeSQLCollectorPolicyRequest() {
+		super("polardb", "2017-08-01", "DescribeSQLCollectorPolicy", "polardb");
 	}
 
 	private Long resourceOwnerId;
 
 	private String resourceOwnerAccount;
 
-	private String dBClusterId;
-
 	private String ownerAccount;
 
-	private Integer pageSize;
+	private String dBInstanceId;
 
 	private Long ownerId;
-
-	private String instanceNetworkType;
-
-	private Integer pageNumber;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -64,17 +58,6 @@ public class DescribeDBInstancesRequest extends RpcAcsRequest<DescribeDBInstance
 		}
 	}
 
-	public String getDBClusterId() {
-		return this.dBClusterId;
-	}
-
-	public void setDBClusterId(String dBClusterId) {
-		this.dBClusterId = dBClusterId;
-		if(dBClusterId != null){
-			putQueryParameter("DBClusterId", dBClusterId);
-		}
-	}
-
 	public String getOwnerAccount() {
 		return this.ownerAccount;
 	}
@@ -86,14 +69,14 @@ public class DescribeDBInstancesRequest extends RpcAcsRequest<DescribeDBInstance
 		}
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public String getDBInstanceId() {
+		return this.dBInstanceId;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
+	public void setDBInstanceId(String dBInstanceId) {
+		this.dBInstanceId = dBInstanceId;
+		if(dBInstanceId != null){
+			putQueryParameter("DBInstanceId", dBInstanceId);
 		}
 	}
 
@@ -108,31 +91,9 @@ public class DescribeDBInstancesRequest extends RpcAcsRequest<DescribeDBInstance
 		}
 	}
 
-	public String getInstanceNetworkType() {
-		return this.instanceNetworkType;
-	}
-
-	public void setInstanceNetworkType(String instanceNetworkType) {
-		this.instanceNetworkType = instanceNetworkType;
-		if(instanceNetworkType != null){
-			putQueryParameter("InstanceNetworkType", instanceNetworkType);
-		}
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
-		}
-	}
-
 	@Override
-	public Class<DescribeDBInstancesResponse> getResponseClass() {
-		return DescribeDBInstancesResponse.class;
+	public Class<DescribeSQLCollectorPolicyResponse> getResponseClass() {
+		return DescribeSQLCollectorPolicyResponse.class;
 	}
 
 }

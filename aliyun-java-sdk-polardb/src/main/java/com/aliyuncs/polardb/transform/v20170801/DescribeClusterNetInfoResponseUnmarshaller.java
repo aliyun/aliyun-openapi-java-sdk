@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.polardb.model.v20170801.DescribeClusterNetInfoResponse;
 import com.aliyuncs.polardb.model.v20170801.DescribeClusterNetInfoResponse.DBInstanceNetInfo;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

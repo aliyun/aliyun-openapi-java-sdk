@@ -20,10 +20,10 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class DescribeDBInstancesRequest extends RpcAcsRequest<DescribeDBInstancesResponse> {
+public class ReleaseReadWriteSplittingConnectionRequest extends RpcAcsRequest<ReleaseReadWriteSplittingConnectionResponse> {
 	
-	public DescribeDBInstancesRequest() {
-		super("polardb", "2017-08-01", "DescribeDBInstances", "polardb");
+	public ReleaseReadWriteSplittingConnectionRequest() {
+		super("polardb", "2017-08-01", "ReleaseReadWriteSplittingConnection", "polardb");
 	}
 
 	private Long resourceOwnerId;
@@ -34,13 +34,9 @@ public class DescribeDBInstancesRequest extends RpcAcsRequest<DescribeDBInstance
 
 	private String ownerAccount;
 
-	private Integer pageSize;
-
 	private Long ownerId;
 
-	private String instanceNetworkType;
-
-	private Integer pageNumber;
+	private String currentConnectionString;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -86,17 +82,6 @@ public class DescribeDBInstancesRequest extends RpcAcsRequest<DescribeDBInstance
 		}
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -108,31 +93,20 @@ public class DescribeDBInstancesRequest extends RpcAcsRequest<DescribeDBInstance
 		}
 	}
 
-	public String getInstanceNetworkType() {
-		return this.instanceNetworkType;
+	public String getCurrentConnectionString() {
+		return this.currentConnectionString;
 	}
 
-	public void setInstanceNetworkType(String instanceNetworkType) {
-		this.instanceNetworkType = instanceNetworkType;
-		if(instanceNetworkType != null){
-			putQueryParameter("InstanceNetworkType", instanceNetworkType);
-		}
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
+	public void setCurrentConnectionString(String currentConnectionString) {
+		this.currentConnectionString = currentConnectionString;
+		if(currentConnectionString != null){
+			putQueryParameter("CurrentConnectionString", currentConnectionString);
 		}
 	}
 
 	@Override
-	public Class<DescribeDBInstancesResponse> getResponseClass() {
-		return DescribeDBInstancesResponse.class;
+	public Class<ReleaseReadWriteSplittingConnectionResponse> getResponseClass() {
+		return ReleaseReadWriteSplittingConnectionResponse.class;
 	}
 
 }

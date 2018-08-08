@@ -20,11 +20,13 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class DescribeDBInstancesRequest extends RpcAcsRequest<DescribeDBInstancesResponse> {
+public class DescribeBackupTasksRequest extends RpcAcsRequest<DescribeBackupTasksResponse> {
 	
-	public DescribeDBInstancesRequest() {
-		super("polardb", "2017-08-01", "DescribeDBInstances", "polardb");
+	public DescribeBackupTasksRequest() {
+		super("polardb", "2017-08-01", "DescribeBackupTasks", "polardb");
 	}
+
+	private String backupJobId;
 
 	private Long resourceOwnerId;
 
@@ -34,13 +36,18 @@ public class DescribeDBInstancesRequest extends RpcAcsRequest<DescribeDBInstance
 
 	private String ownerAccount;
 
-	private Integer pageSize;
-
 	private Long ownerId;
 
-	private String instanceNetworkType;
+	public String getBackupJobId() {
+		return this.backupJobId;
+	}
 
-	private Integer pageNumber;
+	public void setBackupJobId(String backupJobId) {
+		this.backupJobId = backupJobId;
+		if(backupJobId != null){
+			putQueryParameter("BackupJobId", backupJobId);
+		}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -86,17 +93,6 @@ public class DescribeDBInstancesRequest extends RpcAcsRequest<DescribeDBInstance
 		}
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -108,31 +104,9 @@ public class DescribeDBInstancesRequest extends RpcAcsRequest<DescribeDBInstance
 		}
 	}
 
-	public String getInstanceNetworkType() {
-		return this.instanceNetworkType;
-	}
-
-	public void setInstanceNetworkType(String instanceNetworkType) {
-		this.instanceNetworkType = instanceNetworkType;
-		if(instanceNetworkType != null){
-			putQueryParameter("InstanceNetworkType", instanceNetworkType);
-		}
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
-		}
-	}
-
 	@Override
-	public Class<DescribeDBInstancesResponse> getResponseClass() {
-		return DescribeDBInstancesResponse.class;
+	public Class<DescribeBackupTasksResponse> getResponseClass() {
+		return DescribeBackupTasksResponse.class;
 	}
 
 }

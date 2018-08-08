@@ -15,14 +15,14 @@
 package com.aliyuncs.polardb.model.v20170801;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.polardb.transform.v20170801.AllocateClusterPublicConnectionResponseUnmarshaller;
+import com.aliyuncs.polardb.transform.v20170801.AllocateReadWriteSplittingConnectionResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class AllocateClusterPublicConnectionResponse extends AcsResponse {
+public class AllocateReadWriteSplittingConnectionResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -75,7 +75,7 @@ public class AllocateClusterPublicConnectionResponse extends AcsResponse {
 	}
 
 	@Override
-	public AllocateClusterPublicConnectionResponse getInstance(UnmarshallerContext context) {
-		return	AllocateClusterPublicConnectionResponseUnmarshaller.unmarshall(this, context);
+	public AllocateReadWriteSplittingConnectionResponse getInstance(UnmarshallerContext context) {
+		return	AllocateReadWriteSplittingConnectionResponseUnmarshaller.unmarshall(this, context);
 	}
 }

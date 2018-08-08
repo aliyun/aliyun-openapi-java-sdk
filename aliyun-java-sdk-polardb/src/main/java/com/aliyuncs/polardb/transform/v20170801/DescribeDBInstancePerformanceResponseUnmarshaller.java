@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.polardb.model.v20170801.DescribeDBInstancePerformanceResponse;
 import com.aliyuncs.polardb.model.v20170801.DescribeDBInstancePerformanceResponse.PerformanceItem;
 import com.aliyuncs.polardb.model.v20170801.DescribeDBInstancePerformanceResponse.PerformanceItem.PerformanceItemValue;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -44,7 +45,7 @@ public class DescribeDBInstancePerformanceResponseUnmarshaller {
 			List<PerformanceItemValue> points = new ArrayList<PerformanceItemValue>();
 			for (int j = 0; j < context.lengthValue("DescribeDBInstancePerformanceResponse.PerformanceKeys["+ i +"].Points.Length"); j++) {
 				PerformanceItemValue performanceItemValue = new PerformanceItemValue();
-				performanceItemValue.setValue(context.floatValue("DescribeDBInstancePerformanceResponse.PerformanceKeys["+ i +"].Points["+ j +"].Value"));
+				performanceItemValue.setValue(context.stringValue("DescribeDBInstancePerformanceResponse.PerformanceKeys["+ i +"].Points["+ j +"].Value"));
 				performanceItemValue.setTimestamp(context.longValue("DescribeDBInstancePerformanceResponse.PerformanceKeys["+ i +"].Points["+ j +"].Timestamp"));
 
 				points.add(performanceItemValue);

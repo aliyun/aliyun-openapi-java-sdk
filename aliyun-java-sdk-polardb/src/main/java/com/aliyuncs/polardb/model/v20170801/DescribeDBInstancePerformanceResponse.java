@@ -139,15 +139,15 @@ public class DescribeDBInstancePerformanceResponse extends AcsResponse {
 
 		public static class PerformanceItemValue {
 
-			private Float value;
+			private String value;
 
 			private Long timestamp;
 
-			public Float getValue() {
+			public String getValue() {
 				return this.value;
 			}
 
-			public void setValue(Float value) {
+			public void setValue(String value) {
 				this.value = value;
 			}
 

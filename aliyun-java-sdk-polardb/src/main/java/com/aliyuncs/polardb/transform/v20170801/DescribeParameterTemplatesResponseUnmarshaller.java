@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.polardb.model.v20170801.DescribeParameterTemplatesResponse;
 import com.aliyuncs.polardb.model.v20170801.DescribeParameterTemplatesResponse.TemplateRecord;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

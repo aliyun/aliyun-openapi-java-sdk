@@ -20,25 +20,25 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class DescribeDBInstancesRequest extends RpcAcsRequest<DescribeDBInstancesResponse> {
+public class DescribeSQLLogFilesRequest extends RpcAcsRequest<DescribeSQLLogFilesResponse> {
 	
-	public DescribeDBInstancesRequest() {
-		super("polardb", "2017-08-01", "DescribeDBInstances", "polardb");
+	public DescribeSQLLogFilesRequest() {
+		super("polardb", "2017-08-01", "DescribeSQLLogFiles", "polardb");
 	}
 
 	private Long resourceOwnerId;
 
-	private String resourceOwnerAccount;
+	private String fileName;
 
-	private String dBClusterId;
+	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
 	private Integer pageSize;
 
-	private Long ownerId;
+	private String dBInstanceId;
 
-	private String instanceNetworkType;
+	private Long ownerId;
 
 	private Integer pageNumber;
 
@@ -53,6 +53,17 @@ public class DescribeDBInstancesRequest extends RpcAcsRequest<DescribeDBInstance
 		}
 	}
 
+	public String getFileName() {
+		return this.fileName;
+	}
+
+	public void setFileName(String fileName) {
+		this.fileName = fileName;
+		if(fileName != null){
+			putQueryParameter("FileName", fileName);
+		}
+	}
+
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
 	}
@@ -61,17 +72,6 @@ public class DescribeDBInstancesRequest extends RpcAcsRequest<DescribeDBInstance
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public String getDBClusterId() {
-		return this.dBClusterId;
-	}
-
-	public void setDBClusterId(String dBClusterId) {
-		this.dBClusterId = dBClusterId;
-		if(dBClusterId != null){
-			putQueryParameter("DBClusterId", dBClusterId);
 		}
 	}
 
@@ -97,6 +97,17 @@ public class DescribeDBInstancesRequest extends RpcAcsRequest<DescribeDBInstance
 		}
 	}
 
+	public String getDBInstanceId() {
+		return this.dBInstanceId;
+	}
+
+	public void setDBInstanceId(String dBInstanceId) {
+		this.dBInstanceId = dBInstanceId;
+		if(dBInstanceId != null){
+			putQueryParameter("DBInstanceId", dBInstanceId);
+		}
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -105,17 +116,6 @@ public class DescribeDBInstancesRequest extends RpcAcsRequest<DescribeDBInstance
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getInstanceNetworkType() {
-		return this.instanceNetworkType;
-	}
-
-	public void setInstanceNetworkType(String instanceNetworkType) {
-		this.instanceNetworkType = instanceNetworkType;
-		if(instanceNetworkType != null){
-			putQueryParameter("InstanceNetworkType", instanceNetworkType);
 		}
 	}
 
@@ -131,8 +131,8 @@ public class DescribeDBInstancesRequest extends RpcAcsRequest<DescribeDBInstance
 	}
 
 	@Override
-	public Class<DescribeDBInstancesResponse> getResponseClass() {
-		return DescribeDBInstancesResponse.class;
+	public Class<DescribeSQLLogFilesResponse> getResponseClass() {
+		return DescribeSQLLogFilesResponse.class;
 	}
 
 }

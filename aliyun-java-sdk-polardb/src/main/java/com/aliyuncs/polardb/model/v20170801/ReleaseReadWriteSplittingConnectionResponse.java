@@ -15,20 +15,16 @@
 package com.aliyuncs.polardb.model.v20170801;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.polardb.transform.v20170801.CreateDBClusterResponseUnmarshaller;
+import com.aliyuncs.polardb.transform.v20170801.ReleaseReadWriteSplittingConnectionResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CreateDBClusterResponse extends AcsResponse {
+public class ReleaseReadWriteSplittingConnectionResponse extends AcsResponse {
 
 	private String requestId;
-
-	private String dBClusterId;
-
-	private String orderId;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -38,24 +34,8 @@ public class CreateDBClusterResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getDBClusterId() {
-		return this.dBClusterId;
-	}
-
-	public void setDBClusterId(String dBClusterId) {
-		this.dBClusterId = dBClusterId;
-	}
-
-	public String getOrderId() {
-		return this.orderId;
-	}
-
-	public void setOrderId(String orderId) {
-		this.orderId = orderId;
-	}
-
 	@Override
-	public CreateDBClusterResponse getInstance(UnmarshallerContext context) {
-		return	CreateDBClusterResponseUnmarshaller.unmarshall(this, context);
+	public ReleaseReadWriteSplittingConnectionResponse getInstance(UnmarshallerContext context) {
+		return	ReleaseReadWriteSplittingConnectionResponseUnmarshaller.unmarshall(this, context);
 	}
 }

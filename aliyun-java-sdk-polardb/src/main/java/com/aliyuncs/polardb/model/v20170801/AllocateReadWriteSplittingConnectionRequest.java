@@ -20,13 +20,15 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class DescribeDBInstancesRequest extends RpcAcsRequest<DescribeDBInstancesResponse> {
+public class AllocateReadWriteSplittingConnectionRequest extends RpcAcsRequest<AllocateReadWriteSplittingConnectionResponse> {
 	
-	public DescribeDBInstancesRequest() {
-		super("polardb", "2017-08-01", "DescribeDBInstances", "polardb");
+	public AllocateReadWriteSplittingConnectionRequest() {
+		super("polardb", "2017-08-01", "AllocateReadWriteSplittingConnection", "polardb");
 	}
 
 	private Long resourceOwnerId;
+
+	private String connectionStringPrefix;
 
 	private String resourceOwnerAccount;
 
@@ -34,13 +36,9 @@ public class DescribeDBInstancesRequest extends RpcAcsRequest<DescribeDBInstance
 
 	private String ownerAccount;
 
-	private Integer pageSize;
+	private String netType;
 
 	private Long ownerId;
-
-	private String instanceNetworkType;
-
-	private Integer pageNumber;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -50,6 +48,17 @@ public class DescribeDBInstancesRequest extends RpcAcsRequest<DescribeDBInstance
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getConnectionStringPrefix() {
+		return this.connectionStringPrefix;
+	}
+
+	public void setConnectionStringPrefix(String connectionStringPrefix) {
+		this.connectionStringPrefix = connectionStringPrefix;
+		if(connectionStringPrefix != null){
+			putQueryParameter("ConnectionStringPrefix", connectionStringPrefix);
 		}
 	}
 
@@ -86,14 +95,14 @@ public class DescribeDBInstancesRequest extends RpcAcsRequest<DescribeDBInstance
 		}
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public String getNetType() {
+		return this.netType;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
+	public void setNetType(String netType) {
+		this.netType = netType;
+		if(netType != null){
+			putQueryParameter("NetType", netType);
 		}
 	}
 
@@ -108,31 +117,9 @@ public class DescribeDBInstancesRequest extends RpcAcsRequest<DescribeDBInstance
 		}
 	}
 
-	public String getInstanceNetworkType() {
-		return this.instanceNetworkType;
-	}
-
-	public void setInstanceNetworkType(String instanceNetworkType) {
-		this.instanceNetworkType = instanceNetworkType;
-		if(instanceNetworkType != null){
-			putQueryParameter("InstanceNetworkType", instanceNetworkType);
-		}
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
-		}
-	}
-
 	@Override
-	public Class<DescribeDBInstancesResponse> getResponseClass() {
-		return DescribeDBInstancesResponse.class;
+	public Class<AllocateReadWriteSplittingConnectionResponse> getResponseClass() {
+		return AllocateReadWriteSplittingConnectionResponse.class;
 	}
 
 }

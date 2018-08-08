@@ -14,18 +14,16 @@
 
 package com.aliyuncs.polardb.transform.v20170801;
 
-import com.aliyuncs.polardb.model.v20170801.CreateDBClusterResponse;
+import com.aliyuncs.polardb.model.v20170801.ModifySQLCollectorPolicyResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class CreateDBClusterResponseUnmarshaller {
+public class ModifySQLCollectorPolicyResponseUnmarshaller {
 
-	public static CreateDBClusterResponse unmarshall(CreateDBClusterResponse createDBClusterResponse, UnmarshallerContext context) {
+	public static ModifySQLCollectorPolicyResponse unmarshall(ModifySQLCollectorPolicyResponse modifySQLCollectorPolicyResponse, UnmarshallerContext context) {
 		
-		createDBClusterResponse.setRequestId(context.stringValue("CreateDBClusterResponse.RequestId"));
-		createDBClusterResponse.setDBClusterId(context.stringValue("CreateDBClusterResponse.DBClusterId"));
-		createDBClusterResponse.setOrderId(context.stringValue("CreateDBClusterResponse.OrderId"));
+		modifySQLCollectorPolicyResponse.setRequestId(context.stringValue("ModifySQLCollectorPolicyResponse.RequestId"));
 	 
-	 	return createDBClusterResponse;
+	 	return modifySQLCollectorPolicyResponse;
 	}
 }

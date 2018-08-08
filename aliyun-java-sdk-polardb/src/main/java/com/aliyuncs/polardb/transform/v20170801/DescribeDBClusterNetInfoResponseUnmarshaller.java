@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.polardb.model.v20170801.DescribeDBClusterNetInfoResponse;
 import com.aliyuncs.polardb.model.v20170801.DescribeDBClusterNetInfoResponse.DBClusterNetInfo;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -38,6 +39,7 @@ public class DescribeDBClusterNetInfoResponseUnmarshaller {
 			dBClusterNetInfo.setPort(context.stringValue("DescribeDBClusterNetInfoResponse.DBClusterNetInfos["+ i +"].Port"));
 			dBClusterNetInfo.setVPCId(context.stringValue("DescribeDBClusterNetInfoResponse.DBClusterNetInfos["+ i +"].VPCId"));
 			dBClusterNetInfo.setVSwitchId(context.stringValue("DescribeDBClusterNetInfoResponse.DBClusterNetInfos["+ i +"].VSwitchId"));
+			dBClusterNetInfo.setConnectionStringType(context.stringValue("DescribeDBClusterNetInfoResponse.DBClusterNetInfos["+ i +"].ConnectionStringType"));
 
 			dBClusterNetInfos.add(dBClusterNetInfo);
 		}
