@@ -64,6 +64,16 @@ import org.apache.http.protocol.HttpContext;
 import org.apache.http.ssl.SSLContextBuilder;
 import org.apache.http.util.EntityUtils;
 
+
+import java.security.cert.CertificateException;
+import java.security.cert.X509Certificate;
+import org.apache.http.ssl.TrustStrategy;
+
+import javax.net.ssl.SSLContext;
+import javax.net.ssl.TrustManager;
+import javax.net.ssl.X509TrustManager;
+
+
 /**
  * @author VK.Gao
  * @date 2018/04/02
@@ -105,15 +115,23 @@ public class ApacheHttpClient extends IHttpClient {
         RegistryBuilder<ConnectionSocketFactory> socketFactoryRegistryBuilder = RegistryBuilder.create();
         socketFactoryRegistryBuilder.register("http", new PlainConnectionSocketFactory());
         if (config.isIgnoreSSLCerts() || X509TrustAll.isIgnoreSSLCerts()) {
-            try {
-                SSLContext sslContext = SSLContextBuilder
-                    .create()
-                    .loadTrustMaterial(new TrustSelfSignedStrategy())
-                    .build();
+            try
+            {
+                SSLContext sslContext = new SSLContextBuilder().loadTrustMaterial(null, new TrustStrategy()
+                {
+                    // trust all
+                    @Override
+                    public boolean isTrusted(X509Certificate[] chain, String authType) throws CertificateException
+                    {
+                        return true;
+                    }
+                }).build();
 
                 SSLConnectionSocketFactory connectionFactory = new SSLConnectionSocketFactory(sslContext, NoopHostnameVerifier.INSTANCE);
+
                 socketFactoryRegistryBuilder.register("https", connectionFactory);
-            } catch (Exception e) {
+
+            } catch(Exception e) {
                 throw new ClientException("SDK.InitFailed", "Init https with SSL certs ignore failed", e);
             }
         } else {

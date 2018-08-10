@@ -20,6 +20,7 @@ public class HttpClientFactory {
             HttpClientConfig clientConfig = profile.getHttpClientConfig();
             if (clientConfig == null) {
                 clientConfig = HttpClientConfig.getDefault();
+                profile.setHttpClientConfig(clientConfig);
             }
 
             String customClientClassName = null;

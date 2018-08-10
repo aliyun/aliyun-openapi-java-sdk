@@ -37,6 +37,11 @@ public class HttpClientConfig {
     private long writeTimeoutMillis = 15000L;
 
     /**
+     * global protocolType
+     **/
+    private ProtocolType protocolType = ProtocolType.HTTP;
+
+    /**
      * https
      **/
     private boolean ignoreSSLCerts = false;
@@ -64,7 +69,7 @@ public class HttpClientConfig {
 
     public static HttpClientConfig getDefault() {
         HttpClientConfig config = new HttpClientConfig();
-        config.setClientType(HttpClientType.ApacheHttpClient);
+        config.setClientType(HttpClientType.Compatible);
         return config;
     }
 
@@ -240,5 +245,13 @@ public class HttpClientConfig {
 
     public void setCompatibleMode(boolean compatibleMode) {
         this.compatibleMode = compatibleMode;
+    }
+
+    public ProtocolType getProtocolType() {
+        return protocolType;
+    }
+
+    public void setProtocolType(ProtocolType protocolType) {
+        this.protocolType = protocolType;
     }
 }

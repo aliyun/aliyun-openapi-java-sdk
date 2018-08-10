@@ -58,7 +58,11 @@ public interface IAcsClient {
     public <T extends AcsResponse> T getAcsResponse(AcsRequest<T> request,
                                                     String regionId, Credential credential)
         throws ServerException, ClientException;
-    
+
+    public <T extends AcsResponse> T getAcsResponse(AcsRequest<T> request,
+                                                    String regionId)
+        throws ServerException, ClientException;
+
     public CommonResponse getCommonResponse(CommonRequest request) throws ServerException, ClientException;
 
     public <T extends AcsResponse> HttpResponse doAction(AcsRequest<T> request, boolean autoRetry,

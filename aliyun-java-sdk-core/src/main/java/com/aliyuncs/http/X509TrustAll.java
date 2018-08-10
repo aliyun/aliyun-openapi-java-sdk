@@ -31,7 +31,6 @@ public final class X509TrustAll {
         CompatibleUrlConnClient.HttpsCertIgnoreHelper.restoreSSLCertificate();
     }
 
-    @Deprecated
     public static void ignoreSSLCertificate() {
         ignoreSSLCerts = true;
         CompatibleUrlConnClient.HttpsCertIgnoreHelper.ignoreSSLCertificate();

@@ -36,11 +36,7 @@ import com.aliyuncs.auth.Signer;
 import com.aliyuncs.auth.StaticCredentialsProvider;
 import com.aliyuncs.exceptions.ClientException;
 import com.aliyuncs.exceptions.ServerException;
-import com.aliyuncs.http.FormatType;
-import com.aliyuncs.http.HttpClientFactory;
-import com.aliyuncs.http.HttpRequest;
-import com.aliyuncs.http.HttpResponse;
-import com.aliyuncs.http.IHttpClient;
+import com.aliyuncs.http.*;
 import com.aliyuncs.profile.DefaultProfile;
 import com.aliyuncs.profile.IClientProfile;
 import com.aliyuncs.reader.Reader;
@@ -160,6 +156,16 @@ public class DefaultAcsClient implements IAcsClient {
         return parseAcsResponse(request.getResponseClass(), baseResponse);
     }
 
+    @Override
+    public <T extends AcsResponse> T getAcsResponse(AcsRequest<T> request, String regionId)
+        throws ServerException, ClientException {
+        if (null == request.getRegionId()) {
+            request.setRegionId(regionId);
+        }
+        HttpResponse baseResponse = this.doAction(request);
+        return parseAcsResponse(request.getResponseClass(), baseResponse);
+    }
+
     @SuppressWarnings("unchecked")
     @Override
     public CommonResponse getCommonResponse(CommonRequest request)
@@ -261,6 +267,10 @@ public class DefaultAcsClient implements IAcsClient {
             }
             if (null == domain) {
                 throw new ClientException("SDK.InvalidRegionId", "Can not find endpoint to access.");
+            }
+
+            if (request.getProtocol() == null) {
+                request.setProtocol(this.clientProfile.getHttpClientConfig().getProtocolType());
             }
 
             boolean shouldRetry = true;
