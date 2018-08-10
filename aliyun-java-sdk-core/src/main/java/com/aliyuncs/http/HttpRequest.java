@@ -39,6 +39,7 @@ public class HttpRequest {
     protected static final String CONTENT_LENGTH = "Content-Length";
 
     private String url = null;
+    private String proxyAuth = null;
     private MethodType method = null;
     protected FormatType httpContentType = null;
     protected byte[] httpContent = null;
@@ -178,14 +179,20 @@ public class HttpRequest {
         HttpURLConnection httpConn = null;
         if (url.getProtocol().equalsIgnoreCase("https")) {
             if (sslSocketFactory != null) {
-                HttpsURLConnection httpsConn = (HttpsURLConnection)url.openConnection();
+                Proxy proxy = getProxy("HTTPS_PROXY");
+                HttpsURLConnection httpsConn = (HttpsURLConnection)url.openConnection(proxy);
                 httpsConn.setSSLSocketFactory(sslSocketFactory);
                 httpConn = httpsConn;
             }
         }
 
         if (httpConn == null) {
-            httpConn = (HttpURLConnection)url.openConnection();
+            Proxy proxy = getProxy("HTTP_PROXY");
+            httpConn = (HttpURLConnection)url.openConnection(proxy);
+        }
+
+        if (this.proxyAuth != null) {
+            httpConn.setRequestProperty("Proxy-Authorization", proxyAuth);
         }
 
         httpConn.setRequestMethod(this.method.toString());
@@ -229,6 +236,26 @@ public class HttpRequest {
             return FormatType.mapFormatToAccept(contentType);
         }
         return null;
+    }
+
+    private Proxy getProxy(String env) {
+        Proxy proxy = Proxy.NO_PROXY;
+        String httpProxy = System.getenv(env);
+        if (httpProxy != null) {
+            URL proxyUrl = new URL(httpProxy);
+            String userInfo = proxyUrl.getUserInfo();
+            if (userInfo != null) {
+                this.proxyAuth = "Basic " + Base64.encode(userInfo);
+            }
+            String hostname = proxyUrl.getHost();
+            int port = proxyUrl.getPort();
+            if (port == -1) {
+                port = proxyUrl.getDefaultPort();
+            }
+            SocketAddress addr = new InetSocketAddress(hostname, port);
+            proxy = new Proxy(Proxy.Type.HTTP, addr);
+        }
+        return proxy;
     }
 
     public SSLSocketFactory getSslSocketFactory() {
