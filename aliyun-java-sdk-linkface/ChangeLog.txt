@@ -1,3 +1,8 @@
+2018-08-13 Version: 1.1.0
+1, New userinfo fields for registerface input parameter.
+2, New userinfo fields for updateface input parameter.
+3, New userinfo fields for queryface output parameter.
+
 2018-08-08 Version: 1.0.0
 1, First release.
 

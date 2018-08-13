@@ -17,14 +17,14 @@ package com.aliyuncs.linkface.model.v20180720;
 import java.util.List;
 import java.util.Map;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.linkface.transform.v20180720.QueryFaceResponseUnmarshaller;
+import com.aliyuncs.linkface.transform.v20180720.SearchFaceResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class QueryFaceResponse extends AcsResponse {
+public class SearchFaceResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -78,73 +78,43 @@ public class QueryFaceResponse extends AcsResponse {
 
 	public static class Data {
 
-		private List<UserFaceMetasItem> userFaceMetas;
+		private List<TopUserItemItem> topUserItem;
 
-		private List<String> groupIds;
-
-		public List<UserFaceMetasItem> getUserFaceMetas() {
-			return this.userFaceMetas;
+		public List<TopUserItemItem> getTopUserItem() {
+			return this.topUserItem;
 		}
 
-		public void setUserFaceMetas(List<UserFaceMetasItem> userFaceMetas) {
-			this.userFaceMetas = userFaceMetas;
+		public void setTopUserItem(List<TopUserItemItem> topUserItem) {
+			this.topUserItem = topUserItem;
 		}
 
-		public List<String> getGroupIds() {
-			return this.groupIds;
-		}
+		public static class TopUserItemItem {
 
-		public void setGroupIds(List<String> groupIds) {
-			this.groupIds = groupIds;
-		}
+			private String userId;
 
-		public static class UserFaceMetasItem {
+			private Float score;
 
-			private String clientTag;
-
-			private Integer index;
-
-			private String faceUrl;
-
-			private String userInfo;
-
-			public String getClientTag() {
-				return this.clientTag;
+			public String getUserId() {
+				return this.userId;
 			}
 
-			public void setClientTag(String clientTag) {
-				this.clientTag = clientTag;
+			public void setUserId(String userId) {
+				this.userId = userId;
 			}
 
-			public Integer getIndex() {
-				return this.index;
+			public Float getScore() {
+				return this.score;
 			}
 
-			public void setIndex(Integer index) {
-				this.index = index;
-			}
-
-			public String getFaceUrl() {
-				return this.faceUrl;
-			}
-
-			public void setFaceUrl(String faceUrl) {
-				this.faceUrl = faceUrl;
-			}
-
-			public String getUserInfo() {
-				return this.userInfo;
-			}
-
-			public void setUserInfo(String userInfo) {
-				this.userInfo = userInfo;
+			public void setScore(Float score) {
+				this.score = score;
 			}
 		}
 	}
 
 	@Override
-	public QueryFaceResponse getInstance(UnmarshallerContext context) {
-		return	QueryFaceResponseUnmarshaller.unmarshall(this, context);
+	public SearchFaceResponse getInstance(UnmarshallerContext context) {
+		return	SearchFaceResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

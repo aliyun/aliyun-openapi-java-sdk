@@ -22,10 +22,10 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class RegisterFaceRequest extends RpcAcsRequest<RegisterFaceResponse> {
+public class SearchFaceRequest extends RpcAcsRequest<SearchFaceResponse> {
 	
-	public RegisterFaceRequest() {
-		super("LinkFace", "2018-07-20", "RegisterFace");
+	public SearchFaceRequest() {
+		super("LinkFace", "2018-07-20", "SearchFace");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
@@ -33,10 +33,6 @@ public class RegisterFaceRequest extends RpcAcsRequest<RegisterFaceResponse> {
 	private String image;
 
 	private String groupId;
-
-	private String userId;
-
-	private String userInfo;
 
 	public String getImage() {
 		return this.image;
@@ -60,31 +56,9 @@ public class RegisterFaceRequest extends RpcAcsRequest<RegisterFaceResponse> {
 		}
 	}
 
-	public String getUserId() {
-		return this.userId;
-	}
-
-	public void setUserId(String userId) {
-		this.userId = userId;
-		if(userId != null){
-			putBodyParameter("UserId", userId);
-		}
-	}
-
-	public String getUserInfo() {
-		return this.userInfo;
-	}
-
-	public void setUserInfo(String userInfo) {
-		this.userInfo = userInfo;
-		if(userInfo != null){
-			putBodyParameter("UserInfo", userInfo);
-		}
-	}
-
 	@Override
-	public Class<RegisterFaceResponse> getResponseClass() {
-		return RegisterFaceResponse.class;
+	public Class<SearchFaceResponse> getResponseClass() {
+		return SearchFaceResponse.class;
 	}
 
 }

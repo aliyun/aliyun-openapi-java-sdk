@@ -34,6 +34,8 @@ public class UpdateFaceRequest extends RpcAcsRequest<UpdateFaceResponse> {
 
 	private String userId;
 
+	private String userInfo;
+
 	public String getImage() {
 		return this.image;
 	}
@@ -53,6 +55,17 @@ public class UpdateFaceRequest extends RpcAcsRequest<UpdateFaceResponse> {
 		this.userId = userId;
 		if(userId != null){
 			putBodyParameter("UserId", userId);
+		}
+	}
+
+	public String getUserInfo() {
+		return this.userInfo;
+	}
+
+	public void setUserInfo(String userInfo) {
+		this.userInfo = userInfo;
+		if(userInfo != null){
+			putBodyParameter("UserInfo", userInfo);
 		}
 	}
 

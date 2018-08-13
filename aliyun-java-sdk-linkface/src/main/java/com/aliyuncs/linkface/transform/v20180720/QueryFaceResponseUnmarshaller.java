@@ -47,6 +47,7 @@ public class QueryFaceResponseUnmarshaller {
 			userFaceMetasItem.setClientTag(context.stringValue("QueryFaceResponse.Data.UserFaceMetas["+ i +"].ClientTag"));
 			userFaceMetasItem.setIndex(context.integerValue("QueryFaceResponse.Data.UserFaceMetas["+ i +"].Index"));
 			userFaceMetasItem.setFaceUrl(context.stringValue("QueryFaceResponse.Data.UserFaceMetas["+ i +"].FaceUrl"));
+			userFaceMetasItem.setUserInfo(context.stringValue("QueryFaceResponse.Data.UserFaceMetas["+ i +"].UserInfo"));
 
 			userFaceMetas.add(userFaceMetasItem);
 		}
