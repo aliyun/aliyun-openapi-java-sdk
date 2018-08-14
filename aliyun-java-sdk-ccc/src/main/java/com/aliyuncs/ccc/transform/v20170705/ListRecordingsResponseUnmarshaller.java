@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.ccc.model.v20170705.ListRecordingsResponse;
 import com.aliyuncs.ccc.model.v20170705.ListRecordingsResponse.Recordings;
 import com.aliyuncs.ccc.model.v20170705.ListRecordingsResponse.Recordings.Recording;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

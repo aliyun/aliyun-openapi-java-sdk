@@ -21,6 +21,7 @@ import com.aliyuncs.ccc.model.v20170705.CreateBatchJobsResponse;
 import com.aliyuncs.ccc.model.v20170705.CreateBatchJobsResponse.JobGroup;
 import com.aliyuncs.ccc.model.v20170705.CreateBatchJobsResponse.JobGroup.Strategy;
 import com.aliyuncs.ccc.model.v20170705.CreateBatchJobsResponse.JobGroup.Strategy.TimeFrame;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

@@ -34,6 +34,8 @@ public class DialogueRequest extends RpcAcsRequest<DialogueResponse> {
 
 	private String calledNumber;
 
+	private String actionKey;
+
 	private String actionParams;
 
 	private String callType;
@@ -85,6 +87,17 @@ public class DialogueRequest extends RpcAcsRequest<DialogueResponse> {
 		this.calledNumber = calledNumber;
 		if(calledNumber != null){
 			putQueryParameter("CalledNumber", calledNumber);
+		}
+	}
+
+	public String getActionKey() {
+		return this.actionKey;
+	}
+
+	public void setActionKey(String actionKey) {
+		this.actionKey = actionKey;
+		if(actionKey != null){
+			putQueryParameter("ActionKey", actionKey);
 		}
 	}
 

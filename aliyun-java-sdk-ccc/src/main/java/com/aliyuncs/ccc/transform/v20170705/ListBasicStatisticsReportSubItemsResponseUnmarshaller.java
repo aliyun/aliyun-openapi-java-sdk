@@ -21,6 +21,7 @@ import com.aliyuncs.ccc.model.v20170705.ListBasicStatisticsReportSubItemsRespons
 import com.aliyuncs.ccc.model.v20170705.ListBasicStatisticsReportSubItemsResponse.SubItems;
 import com.aliyuncs.ccc.model.v20170705.ListBasicStatisticsReportSubItemsResponse.SubItems.BasicStatisticsReportSubItem;
 import com.aliyuncs.ccc.model.v20170705.ListBasicStatisticsReportSubItemsResponse.SubItems.BasicStatisticsReportSubItem.KeyValuePair;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

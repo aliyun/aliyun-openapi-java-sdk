@@ -21,6 +21,7 @@ import com.aliyuncs.ccc.model.v20170705.ListSkillGroupsOfUserResponse;
 import com.aliyuncs.ccc.model.v20170705.ListSkillGroupsOfUserResponse.SkillLevel;
 import com.aliyuncs.ccc.model.v20170705.ListSkillGroupsOfUserResponse.SkillLevel.Skill;
 import com.aliyuncs.ccc.model.v20170705.ListSkillGroupsOfUserResponse.SkillLevel.Skill.PhoneNumber;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

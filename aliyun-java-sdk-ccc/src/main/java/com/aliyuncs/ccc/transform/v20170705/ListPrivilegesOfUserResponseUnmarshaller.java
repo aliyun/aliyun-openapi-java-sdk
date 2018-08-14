@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.ccc.model.v20170705.ListPrivilegesOfUserResponse;
 import com.aliyuncs.ccc.model.v20170705.ListPrivilegesOfUserResponse.Privilege;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

@@ -23,6 +23,7 @@ import com.aliyuncs.ccc.model.v20170705.GetJobGroupResponse.JobGroup.Progress;
 import com.aliyuncs.ccc.model.v20170705.GetJobGroupResponse.JobGroup.Progress.KeyValuePair;
 import com.aliyuncs.ccc.model.v20170705.GetJobGroupResponse.JobGroup.Strategy;
 import com.aliyuncs.ccc.model.v20170705.GetJobGroupResponse.JobGroup.Strategy.TimeFrame;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

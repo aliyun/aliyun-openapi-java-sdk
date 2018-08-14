@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.ccc.model.v20170705.GetConversationListResponse;
 import com.aliyuncs.ccc.model.v20170705.GetConversationListResponse.ConversationDetail;
 import com.aliyuncs.ccc.model.v20170705.GetConversationListResponse.ConversationDetail.SummaryItem;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

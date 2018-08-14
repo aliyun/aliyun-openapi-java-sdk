@@ -26,6 +26,7 @@ import com.aliyuncs.ccc.model.v20170705.GetJobStatusByCallIdResponse.Job.Task;
 import com.aliyuncs.ccc.model.v20170705.GetJobStatusByCallIdResponse.Job.Task.Contact2;
 import com.aliyuncs.ccc.model.v20170705.GetJobStatusByCallIdResponse.Job.Task.ConversationDetail;
 import com.aliyuncs.ccc.model.v20170705.GetJobStatusByCallIdResponse.Job.Task.ConversationDetail.SummaryItem;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

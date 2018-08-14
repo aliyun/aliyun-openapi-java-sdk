@@ -24,6 +24,7 @@ import com.aliyuncs.ccc.model.v20170705.ListJobGroupsResponse.JobGroups.JobGroup
 import com.aliyuncs.ccc.model.v20170705.ListJobGroupsResponse.JobGroups.JobGroup.Progress.KeyValuePair;
 import com.aliyuncs.ccc.model.v20170705.ListJobGroupsResponse.JobGroups.JobGroup.Strategy;
 import com.aliyuncs.ccc.model.v20170705.ListJobGroupsResponse.JobGroups.JobGroup.Strategy.TimeFrame;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
