@@ -1,3 +1,7 @@
+2018-08-15 Version: 1.1.4
+1, Fix bug in GetMaterials API.
+2, GetVerifyToken added a new param VerifyConfigs
+
 2018-07-11 Version: 1.1.3
 1, Add DetectFaceAttributesService.
 2, Add cloudauthPageUrl to GetVerifyTokenResponse.

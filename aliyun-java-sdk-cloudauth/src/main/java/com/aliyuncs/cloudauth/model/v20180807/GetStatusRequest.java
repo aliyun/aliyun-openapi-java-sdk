@@ -12,7 +12,7 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.cloudauth.model.v20180703;
+package com.aliyuncs.cloudauth.model.v20180807;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.ProtocolType;
@@ -21,14 +21,12 @@ import com.aliyuncs.http.ProtocolType;
  * @author auto create
  * @version 
  */
-public class GetVerifyTokenRequest extends RpcAcsRequest<GetVerifyTokenResponse> {
+public class GetStatusRequest extends RpcAcsRequest<GetStatusResponse> {
 	
-	public GetVerifyTokenRequest() {
-		super("Cloudauth", "2018-07-03", "GetVerifyToken", "cloudauth");
+	public GetStatusRequest() {
+		super("Cloudauth", "2018-08-07", "GetStatus", "cloudauth");
 		setProtocol(ProtocolType.HTTPS);
 	}
-
-	private String userData;
 
 	private Long resourceOwnerId;
 
@@ -36,20 +34,7 @@ public class GetVerifyTokenRequest extends RpcAcsRequest<GetVerifyTokenResponse>
 
 	private String sourceIp;
 
-	private String binding;
-
 	private String ticketId;
-
-	public String getUserData() {
-		return this.userData;
-	}
-
-	public void setUserData(String userData) {
-		this.userData = userData;
-		if(userData != null){
-			putQueryParameter("UserData", userData);
-		}
-	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -84,17 +69,6 @@ public class GetVerifyTokenRequest extends RpcAcsRequest<GetVerifyTokenResponse>
 		}
 	}
 
-	public String getBinding() {
-		return this.binding;
-	}
-
-	public void setBinding(String binding) {
-		this.binding = binding;
-		if(binding != null){
-			putQueryParameter("Binding", binding);
-		}
-	}
-
 	public String getTicketId() {
 		return this.ticketId;
 	}
@@ -107,8 +81,8 @@ public class GetVerifyTokenRequest extends RpcAcsRequest<GetVerifyTokenResponse>
 	}
 
 	@Override
-	public Class<GetVerifyTokenResponse> getResponseClass() {
-		return GetVerifyTokenResponse.class;
+	public Class<GetStatusResponse> getResponseClass() {
+		return GetStatusResponse.class;
 	}
 
 }

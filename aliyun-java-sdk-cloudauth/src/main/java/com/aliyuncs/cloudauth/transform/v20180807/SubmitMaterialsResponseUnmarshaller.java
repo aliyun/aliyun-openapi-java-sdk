@@ -12,11 +12,11 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.cloudauth.transform.v20180703;
+package com.aliyuncs.cloudauth.transform.v20180807;
 
-import com.aliyuncs.cloudauth.model.v20180703.SubmitMaterialsResponse;
-import com.aliyuncs.cloudauth.model.v20180703.SubmitMaterialsResponse.Data;
-import com.aliyuncs.cloudauth.model.v20180703.SubmitMaterialsResponse.Data.VerifyStatus;
+import com.aliyuncs.cloudauth.model.v20180807.SubmitMaterialsResponse;
+import com.aliyuncs.cloudauth.model.v20180807.SubmitMaterialsResponse.Data;
+import com.aliyuncs.cloudauth.model.v20180807.SubmitMaterialsResponse.Data.VerifyStatus;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

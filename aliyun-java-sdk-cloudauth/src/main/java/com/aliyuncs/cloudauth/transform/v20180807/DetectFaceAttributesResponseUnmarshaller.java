@@ -12,19 +12,20 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.cloudauth.transform.v20180703;
+package com.aliyuncs.cloudauth.transform.v20180807;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import com.aliyuncs.cloudauth.model.v20180703.DetectFaceAttributesResponse;
-import com.aliyuncs.cloudauth.model.v20180703.DetectFaceAttributesResponse.Data;
-import com.aliyuncs.cloudauth.model.v20180703.DetectFaceAttributesResponse.Data.FaceAttributesDetectInfo;
-import com.aliyuncs.cloudauth.model.v20180703.DetectFaceAttributesResponse.Data.FaceAttributesDetectInfo.FaceAttributes;
-import com.aliyuncs.cloudauth.model.v20180703.DetectFaceAttributesResponse.Data.FaceAttributesDetectInfo.FaceAttributes.Gender;
-import com.aliyuncs.cloudauth.model.v20180703.DetectFaceAttributesResponse.Data.FaceAttributesDetectInfo.FaceAttributes.Headpose;
-import com.aliyuncs.cloudauth.model.v20180703.DetectFaceAttributesResponse.Data.FaceAttributesDetectInfo.FaceAttributes.Smiling;
-import com.aliyuncs.cloudauth.model.v20180703.DetectFaceAttributesResponse.Data.FaceAttributesDetectInfo.FaceRect;
+import com.aliyuncs.cloudauth.model.v20180807.DetectFaceAttributesResponse;
+import com.aliyuncs.cloudauth.model.v20180807.DetectFaceAttributesResponse.Data;
+import com.aliyuncs.cloudauth.model.v20180807.DetectFaceAttributesResponse.Data.FaceAttributesDetectInfo;
+import com.aliyuncs.cloudauth.model.v20180807.DetectFaceAttributesResponse.Data.FaceAttributesDetectInfo.FaceAttributes;
+import com.aliyuncs.cloudauth.model.v20180807.DetectFaceAttributesResponse.Data.FaceAttributesDetectInfo.FaceAttributes.Gender;
+import com.aliyuncs.cloudauth.model.v20180807.DetectFaceAttributesResponse.Data.FaceAttributesDetectInfo.FaceAttributes.Headpose;
+import com.aliyuncs.cloudauth.model.v20180807.DetectFaceAttributesResponse.Data.FaceAttributesDetectInfo.FaceAttributes.Smiling;
+import com.aliyuncs.cloudauth.model.v20180807.DetectFaceAttributesResponse.Data.FaceAttributesDetectInfo.FaceRect;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

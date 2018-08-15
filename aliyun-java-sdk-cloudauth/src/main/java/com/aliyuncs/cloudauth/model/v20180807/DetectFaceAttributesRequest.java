@@ -12,7 +12,7 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.cloudauth.model.v20180703;
+package com.aliyuncs.cloudauth.model.v20180807;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.ProtocolType;
@@ -24,7 +24,7 @@ import com.aliyuncs.http.ProtocolType;
 public class DetectFaceAttributesRequest extends RpcAcsRequest<DetectFaceAttributesResponse> {
 	
 	public DetectFaceAttributesRequest() {
-		super("Cloudauth", "2018-07-03", "DetectFaceAttributes", "cloudauth");
+		super("Cloudauth", "2018-08-07", "DetectFaceAttributes", "cloudauth");
 		setProtocol(ProtocolType.HTTPS);
 	}
 

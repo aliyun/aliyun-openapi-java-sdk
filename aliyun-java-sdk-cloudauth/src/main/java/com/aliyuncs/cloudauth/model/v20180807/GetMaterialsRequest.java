@@ -12,7 +12,7 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.cloudauth.model.v20180703;
+package com.aliyuncs.cloudauth.model.v20180807;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.ProtocolType;
@@ -24,7 +24,7 @@ import com.aliyuncs.http.ProtocolType;
 public class GetMaterialsRequest extends RpcAcsRequest<GetMaterialsResponse> {
 	
 	public GetMaterialsRequest() {
-		super("Cloudauth", "2018-07-03", "GetMaterials", "cloudauth");
+		super("Cloudauth", "2018-08-07", "GetMaterials", "cloudauth");
 		setProtocol(ProtocolType.HTTPS);
 	}
 

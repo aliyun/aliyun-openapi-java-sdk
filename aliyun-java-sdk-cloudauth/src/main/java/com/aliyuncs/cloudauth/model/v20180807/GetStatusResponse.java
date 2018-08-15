@@ -12,17 +12,17 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.cloudauth.model.v20180703;
+package com.aliyuncs.cloudauth.model.v20180807;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.cloudauth.transform.v20180703.SubmitMaterialsResponseUnmarshaller;
+import com.aliyuncs.cloudauth.transform.v20180807.GetStatusResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class SubmitMaterialsResponse extends AcsResponse {
+public class GetStatusResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -76,52 +76,49 @@ public class SubmitMaterialsResponse extends AcsResponse {
 
 	public static class Data {
 
-		private VerifyStatus verifyStatus;
+		private Integer statusCode;
 
-		public VerifyStatus getVerifyStatus() {
-			return this.verifyStatus;
+		private Float trustedScore;
+
+		private Float similarityScore;
+
+		private String auditConclusions;
+
+		public Integer getStatusCode() {
+			return this.statusCode;
 		}
 
-		public void setVerifyStatus(VerifyStatus verifyStatus) {
-			this.verifyStatus = verifyStatus;
+		public void setStatusCode(Integer statusCode) {
+			this.statusCode = statusCode;
 		}
 
-		public static class VerifyStatus {
+		public Float getTrustedScore() {
+			return this.trustedScore;
+		}
 
-			private Integer statusCode;
+		public void setTrustedScore(Float trustedScore) {
+			this.trustedScore = trustedScore;
+		}
 
-			private Float trustedScore;
+		public Float getSimilarityScore() {
+			return this.similarityScore;
+		}
 
-			private Float similarityScore;
+		public void setSimilarityScore(Float similarityScore) {
+			this.similarityScore = similarityScore;
+		}
 
-			public Integer getStatusCode() {
-				return this.statusCode;
-			}
+		public String getAuditConclusions() {
+			return this.auditConclusions;
+		}
 
-			public void setStatusCode(Integer statusCode) {
-				this.statusCode = statusCode;
-			}
-
-			public Float getTrustedScore() {
-				return this.trustedScore;
-			}
-
-			public void setTrustedScore(Float trustedScore) {
-				this.trustedScore = trustedScore;
-			}
-
-			public Float getSimilarityScore() {
-				return this.similarityScore;
-			}
-
-			public void setSimilarityScore(Float similarityScore) {
-				this.similarityScore = similarityScore;
-			}
+		public void setAuditConclusions(String auditConclusions) {
+			this.auditConclusions = auditConclusions;
 		}
 	}
 
 	@Override
-	public SubmitMaterialsResponse getInstance(UnmarshallerContext context) {
-		return	SubmitMaterialsResponseUnmarshaller.unmarshall(this, context);
+	public GetStatusResponse getInstance(UnmarshallerContext context) {
+		return	GetStatusResponseUnmarshaller.unmarshall(this, context);
 	}
 }
