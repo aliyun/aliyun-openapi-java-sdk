@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.live.model.v20161101.DescribeLiveRecordVodConfigsResponse;
 import com.aliyuncs.live.model.v20161101.DescribeLiveRecordVodConfigsResponse.LiveRecordVodConfig;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

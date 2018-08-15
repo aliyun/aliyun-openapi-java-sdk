@@ -30,15 +30,17 @@ public class AddCustomLiveStreamTranscodeRequest extends RpcAcsRequest<AddCustom
 
 	private String template;
 
+	private Integer profile;
+
 	private Integer fPS;
+
+	private String gop;
 
 	private Long ownerId;
 
-	private String version;
-
-	private String securityToken;
-
 	private String templateType;
+
+	private Integer audioBitrate;
 
 	private String domain;
 
@@ -70,6 +72,17 @@ public class AddCustomLiveStreamTranscodeRequest extends RpcAcsRequest<AddCustom
 		}
 	}
 
+	public Integer getProfile() {
+		return this.profile;
+	}
+
+	public void setProfile(Integer profile) {
+		this.profile = profile;
+		if(profile != null){
+			putQueryParameter("Profile", profile.toString());
+		}
+	}
+
 	public Integer getFPS() {
 		return this.fPS;
 	}
@@ -78,6 +91,17 @@ public class AddCustomLiveStreamTranscodeRequest extends RpcAcsRequest<AddCustom
 		this.fPS = fPS;
 		if(fPS != null){
 			putQueryParameter("FPS", fPS.toString());
+		}
+	}
+
+	public String getGop() {
+		return this.gop;
+	}
+
+	public void setGop(String gop) {
+		this.gop = gop;
+		if(gop != null){
+			putQueryParameter("Gop", gop);
 		}
 	}
 
@@ -92,28 +116,6 @@ public class AddCustomLiveStreamTranscodeRequest extends RpcAcsRequest<AddCustom
 		}
 	}
 
-	public String getVersion() {
-		return this.version;
-	}
-
-	public void setVersion(String version) {
-		this.version = version;
-		if(version != null){
-			putQueryParameter("Version", version);
-		}
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
 	public String getTemplateType() {
 		return this.templateType;
 	}
@@ -122,6 +124,17 @@ public class AddCustomLiveStreamTranscodeRequest extends RpcAcsRequest<AddCustom
 		this.templateType = templateType;
 		if(templateType != null){
 			putQueryParameter("TemplateType", templateType);
+		}
+	}
+
+	public Integer getAudioBitrate() {
+		return this.audioBitrate;
+	}
+
+	public void setAudioBitrate(Integer audioBitrate) {
+		this.audioBitrate = audioBitrate;
+		if(audioBitrate != null){
+			putQueryParameter("AudioBitrate", audioBitrate.toString());
 		}
 	}
 

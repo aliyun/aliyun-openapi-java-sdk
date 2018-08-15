@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.live.model.v20161101.DescribeLiveDomainRecordDataResponse;
 import com.aliyuncs.live.model.v20161101.DescribeLiveDomainRecordDataResponse.RecordDataInfo;
 import com.aliyuncs.live.model.v20161101.DescribeLiveDomainRecordDataResponse.RecordDataInfo.Detail;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

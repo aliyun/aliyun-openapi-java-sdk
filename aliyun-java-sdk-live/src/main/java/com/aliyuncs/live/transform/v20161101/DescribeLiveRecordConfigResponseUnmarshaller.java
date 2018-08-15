@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.live.model.v20161101.DescribeLiveRecordConfigResponse;
 import com.aliyuncs.live.model.v20161101.DescribeLiveRecordConfigResponse.LiveAppRecord;
 import com.aliyuncs.live.model.v20161101.DescribeLiveRecordConfigResponse.LiveAppRecord.RecordFormat;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

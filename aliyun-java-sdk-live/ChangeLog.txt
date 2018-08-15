@@ -1,3 +1,8 @@
+2018-08-15 Version: 3.7.0
+1, Add domain operation api AddLiveDomain,DeleteLiveDomain,DescribeLiveDomainDetail,StartLiveDomain,StopLiveDomain.
+2, Add certificate operation api DescribeLiveCertificateDetail,DescribeLiveCertificateList,SetLiveDomainCertificate.
+3, Add domain config api BatchSetLiveDomainConfigs,BatchDeleteLiveDomainConfigs,DeleteLiveSpecificConfig,DescribeLiveDomainConfigs.
+
 2018-06-13 Version: 3.6.0
 1, Add API AddCasterEpisodeGroupContent,CreateCaster.
 2, Add Parameter fillMode for AddCasterLayout,ModifyCasterLayout.

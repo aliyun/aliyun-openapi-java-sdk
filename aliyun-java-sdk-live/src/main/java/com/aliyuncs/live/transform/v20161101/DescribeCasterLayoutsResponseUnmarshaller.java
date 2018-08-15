@@ -21,6 +21,7 @@ import com.aliyuncs.live.model.v20161101.DescribeCasterLayoutsResponse;
 import com.aliyuncs.live.model.v20161101.DescribeCasterLayoutsResponse.Layout;
 import com.aliyuncs.live.model.v20161101.DescribeCasterLayoutsResponse.Layout.AudioLayer;
 import com.aliyuncs.live.model.v20161101.DescribeCasterLayoutsResponse.Layout.VideoLayer;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

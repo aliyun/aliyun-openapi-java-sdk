@@ -52,17 +52,17 @@ public class AddCasterProgramRequest extends RpcAcsRequest<AddCasterProgramRespo
 		this.episodes = episodes;	
 		if (episodes != null) {
 			for (int depth1 = 0; depth1 < episodes.size(); depth1++) {
-				putQueryParameter("Episode." + (depth1 + 1) + ".EpisodeType" , episodes.get(depth1).getEpisodeType());
-				putQueryParameter("Episode." + (depth1 + 1) + ".EpisodeName" , episodes.get(depth1).getEpisodeName());
 				putQueryParameter("Episode." + (depth1 + 1) + ".ResourceId" , episodes.get(depth1).getResourceId());
 				if (episodes.get(depth1).getComponentIds() != null) {
 					for (int i = 0; i < episodes.get(depth1).getComponentIds().size(); i++) {
 						putQueryParameter("Episode." + (depth1 + 1) + ".ComponentId." + (i + 1) , episodes.get(depth1).getComponentIds().get(i));
 					}
 				}
-				putQueryParameter("Episode." + (depth1 + 1) + ".StartTime" , episodes.get(depth1).getStartTime());
-				putQueryParameter("Episode." + (depth1 + 1) + ".EndTime" , episodes.get(depth1).getEndTime());
 				putQueryParameter("Episode." + (depth1 + 1) + ".SwitchType" , episodes.get(depth1).getSwitchType());
+				putQueryParameter("Episode." + (depth1 + 1) + ".EpisodeType" , episodes.get(depth1).getEpisodeType());
+				putQueryParameter("Episode." + (depth1 + 1) + ".EpisodeName" , episodes.get(depth1).getEpisodeName());
+				putQueryParameter("Episode." + (depth1 + 1) + ".EndTime" , episodes.get(depth1).getEndTime());
+				putQueryParameter("Episode." + (depth1 + 1) + ".StartTime" , episodes.get(depth1).getStartTime());
 			}
 		}	
 	}
@@ -80,35 +80,19 @@ public class AddCasterProgramRequest extends RpcAcsRequest<AddCasterProgramRespo
 
 	public static class Episode {
 
-		private String episodeType;
-
-		private String episodeName;
-
 		private String resourceId;
 
 		private List<String> componentIds;
 
-		private String startTime;
+		private String switchType;
+
+		private String episodeType;
+
+		private String episodeName;
 
 		private String endTime;
 
-		private String switchType;
-
-		public String getEpisodeType() {
-			return this.episodeType;
-		}
-
-		public void setEpisodeType(String episodeType) {
-			this.episodeType = episodeType;
-		}
-
-		public String getEpisodeName() {
-			return this.episodeName;
-		}
-
-		public void setEpisodeName(String episodeName) {
-			this.episodeName = episodeName;
-		}
+		private String startTime;
 
 		public String getResourceId() {
 			return this.resourceId;
@@ -126,12 +110,28 @@ public class AddCasterProgramRequest extends RpcAcsRequest<AddCasterProgramRespo
 			this.componentIds = componentIds;
 		}
 
-		public String getStartTime() {
-			return this.startTime;
+		public String getSwitchType() {
+			return this.switchType;
 		}
 
-		public void setStartTime(String startTime) {
-			this.startTime = startTime;
+		public void setSwitchType(String switchType) {
+			this.switchType = switchType;
+		}
+
+		public String getEpisodeType() {
+			return this.episodeType;
+		}
+
+		public void setEpisodeType(String episodeType) {
+			this.episodeType = episodeType;
+		}
+
+		public String getEpisodeName() {
+			return this.episodeName;
+		}
+
+		public void setEpisodeName(String episodeName) {
+			this.episodeName = episodeName;
 		}
 
 		public String getEndTime() {
@@ -142,12 +142,12 @@ public class AddCasterProgramRequest extends RpcAcsRequest<AddCasterProgramRespo
 			this.endTime = endTime;
 		}
 
-		public String getSwitchType() {
-			return this.switchType;
+		public String getStartTime() {
+			return this.startTime;
 		}
 
-		public void setSwitchType(String switchType) {
-			this.switchType = switchType;
+		public void setStartTime(String startTime) {
+			this.startTime = startTime;
 		}
 	}
 

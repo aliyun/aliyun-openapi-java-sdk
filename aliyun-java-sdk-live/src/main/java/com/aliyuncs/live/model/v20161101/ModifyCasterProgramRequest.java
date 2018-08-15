@@ -52,18 +52,18 @@ public class ModifyCasterProgramRequest extends RpcAcsRequest<ModifyCasterProgra
 		this.episodes = episodes;	
 		if (episodes != null) {
 			for (int depth1 = 0; depth1 < episodes.size(); depth1++) {
-				putQueryParameter("Episode." + (depth1 + 1) + ".EpisodeId" , episodes.get(depth1).getEpisodeId());
-				putQueryParameter("Episode." + (depth1 + 1) + ".EpisodeType" , episodes.get(depth1).getEpisodeType());
-				putQueryParameter("Episode." + (depth1 + 1) + ".EpisodeName" , episodes.get(depth1).getEpisodeName());
 				putQueryParameter("Episode." + (depth1 + 1) + ".ResourceId" , episodes.get(depth1).getResourceId());
 				if (episodes.get(depth1).getComponentIds() != null) {
 					for (int i = 0; i < episodes.get(depth1).getComponentIds().size(); i++) {
 						putQueryParameter("Episode." + (depth1 + 1) + ".ComponentId." + (i + 1) , episodes.get(depth1).getComponentIds().get(i));
 					}
 				}
-				putQueryParameter("Episode." + (depth1 + 1) + ".StartTime" , episodes.get(depth1).getStartTime());
-				putQueryParameter("Episode." + (depth1 + 1) + ".EndTime" , episodes.get(depth1).getEndTime());
 				putQueryParameter("Episode." + (depth1 + 1) + ".SwitchType" , episodes.get(depth1).getSwitchType());
+				putQueryParameter("Episode." + (depth1 + 1) + ".EpisodeType" , episodes.get(depth1).getEpisodeType());
+				putQueryParameter("Episode." + (depth1 + 1) + ".EpisodeName" , episodes.get(depth1).getEpisodeName());
+				putQueryParameter("Episode." + (depth1 + 1) + ".EndTime" , episodes.get(depth1).getEndTime());
+				putQueryParameter("Episode." + (depth1 + 1) + ".StartTime" , episodes.get(depth1).getStartTime());
+				putQueryParameter("Episode." + (depth1 + 1) + ".EpisodeId" , episodes.get(depth1).getEpisodeId());
 			}
 		}	
 	}
@@ -81,28 +81,44 @@ public class ModifyCasterProgramRequest extends RpcAcsRequest<ModifyCasterProgra
 
 	public static class Episode {
 
-		private String episodeId;
+		private String resourceId;
+
+		private List<String> componentIds;
+
+		private String switchType;
 
 		private String episodeType;
 
 		private String episodeName;
 
-		private String resourceId;
-
-		private List<String> componentIds;
+		private String endTime;
 
 		private String startTime;
 
-		private String endTime;
+		private String episodeId;
 
-		private String switchType;
-
-		public String getEpisodeId() {
-			return this.episodeId;
+		public String getResourceId() {
+			return this.resourceId;
 		}
 
-		public void setEpisodeId(String episodeId) {
-			this.episodeId = episodeId;
+		public void setResourceId(String resourceId) {
+			this.resourceId = resourceId;
+		}
+
+		public List<String> getComponentIds() {
+			return this.componentIds;
+		}
+
+		public void setComponentIds(List<String> componentIds) {
+			this.componentIds = componentIds;
+		}
+
+		public String getSwitchType() {
+			return this.switchType;
+		}
+
+		public void setSwitchType(String switchType) {
+			this.switchType = switchType;
 		}
 
 		public String getEpisodeType() {
@@ -121,20 +137,12 @@ public class ModifyCasterProgramRequest extends RpcAcsRequest<ModifyCasterProgra
 			this.episodeName = episodeName;
 		}
 
-		public String getResourceId() {
-			return this.resourceId;
+		public String getEndTime() {
+			return this.endTime;
 		}
 
-		public void setResourceId(String resourceId) {
-			this.resourceId = resourceId;
-		}
-
-		public List<String> getComponentIds() {
-			return this.componentIds;
-		}
-
-		public void setComponentIds(List<String> componentIds) {
-			this.componentIds = componentIds;
+		public void setEndTime(String endTime) {
+			this.endTime = endTime;
 		}
 
 		public String getStartTime() {
@@ -145,20 +153,12 @@ public class ModifyCasterProgramRequest extends RpcAcsRequest<ModifyCasterProgra
 			this.startTime = startTime;
 		}
 
-		public String getEndTime() {
-			return this.endTime;
+		public String getEpisodeId() {
+			return this.episodeId;
 		}
 
-		public void setEndTime(String endTime) {
-			this.endTime = endTime;
-		}
-
-		public String getSwitchType() {
-			return this.switchType;
-		}
-
-		public void setSwitchType(String switchType) {
-			this.switchType = switchType;
+		public void setEpisodeId(String episodeId) {
+			this.episodeId = episodeId;
 		}
 	}
 

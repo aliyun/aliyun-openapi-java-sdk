@@ -23,6 +23,7 @@ import com.aliyuncs.live.model.v20161101.DescribeCasterComponentsResponse.Compon
 import com.aliyuncs.live.model.v20161101.DescribeCasterComponentsResponse.Component.ComponentLayer;
 import com.aliyuncs.live.model.v20161101.DescribeCasterComponentsResponse.Component.ImageLayerContent;
 import com.aliyuncs.live.model.v20161101.DescribeCasterComponentsResponse.Component.TextLayerContent;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

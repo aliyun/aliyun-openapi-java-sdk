@@ -14,18 +14,16 @@
 
 package com.aliyuncs.live.transform.v20161101;
 
-import com.aliyuncs.live.model.v20161101.ImagePornDetectionResponse;
+import com.aliyuncs.live.model.v20161101.BatchDeleteLiveDomainConfigsResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class ImagePornDetectionResponseUnmarshaller {
+public class BatchDeleteLiveDomainConfigsResponseUnmarshaller {
 
-	public static ImagePornDetectionResponse unmarshall(ImagePornDetectionResponse imagePornDetectionResponse, UnmarshallerContext context) {
+	public static BatchDeleteLiveDomainConfigsResponse unmarshall(BatchDeleteLiveDomainConfigsResponse batchDeleteLiveDomainConfigsResponse, UnmarshallerContext context) {
 		
-		imagePornDetectionResponse.setRequestId(context.stringValue("ImagePornDetectionResponse.RequestId"));
-		imagePornDetectionResponse.setLabel(context.stringValue("ImagePornDetectionResponse.Label"));
-		imagePornDetectionResponse.setRate(context.floatValue("ImagePornDetectionResponse.Rate"));
+		batchDeleteLiveDomainConfigsResponse.setRequestId(context.stringValue("BatchDeleteLiveDomainConfigsResponse.RequestId"));
 	 
-	 	return imagePornDetectionResponse;
+	 	return batchDeleteLiveDomainConfigsResponse;
 	}
 }

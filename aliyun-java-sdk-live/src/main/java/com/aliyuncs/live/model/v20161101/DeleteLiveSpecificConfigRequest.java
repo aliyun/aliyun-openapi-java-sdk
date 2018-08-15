@@ -20,15 +20,17 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class ImagePornDetectionRequest extends RpcAcsRequest<ImagePornDetectionResponse> {
+public class DeleteLiveSpecificConfigRequest extends RpcAcsRequest<DeleteLiveSpecificConfigResponse> {
 	
-	public ImagePornDetectionRequest() {
-		super("live", "2016-11-01", "ImagePornDetection", "live");
+	public DeleteLiveSpecificConfigRequest() {
+		super("live", "2016-11-01", "DeleteLiveSpecificConfig", "live");
 	}
 
 	private String securityToken;
 
-	private String imageUrl;
+	private String configId;
+
+	private String domainName;
 
 	private Long ownerId;
 
@@ -43,14 +45,25 @@ public class ImagePornDetectionRequest extends RpcAcsRequest<ImagePornDetectionR
 		}
 	}
 
-	public String getImageUrl() {
-		return this.imageUrl;
+	public String getConfigId() {
+		return this.configId;
 	}
 
-	public void setImageUrl(String imageUrl) {
-		this.imageUrl = imageUrl;
-		if(imageUrl != null){
-			putQueryParameter("ImageUrl", imageUrl);
+	public void setConfigId(String configId) {
+		this.configId = configId;
+		if(configId != null){
+			putQueryParameter("ConfigId", configId);
+		}
+	}
+
+	public String getDomainName() {
+		return this.domainName;
+	}
+
+	public void setDomainName(String domainName) {
+		this.domainName = domainName;
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
 		}
 	}
 
@@ -66,8 +79,8 @@ public class ImagePornDetectionRequest extends RpcAcsRequest<ImagePornDetectionR
 	}
 
 	@Override
-	public Class<ImagePornDetectionResponse> getResponseClass() {
-		return ImagePornDetectionResponse.class;
+	public Class<DeleteLiveSpecificConfigResponse> getResponseClass() {
+		return DeleteLiveSpecificConfigResponse.class;
 	}
 
 }

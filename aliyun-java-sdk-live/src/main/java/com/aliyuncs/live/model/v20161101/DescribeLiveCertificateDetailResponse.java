@@ -15,20 +15,24 @@
 package com.aliyuncs.live.model.v20161101;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.live.transform.v20161101.ImagePornDetectionResponseUnmarshaller;
+import com.aliyuncs.live.transform.v20161101.DescribeLiveCertificateDetailResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ImagePornDetectionResponse extends AcsResponse {
+public class DescribeLiveCertificateDetailResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String label;
+	private String cert;
 
-	private Float rate;
+	private String key;
+
+	private Long certId;
+
+	private String certName;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -38,24 +42,40 @@ public class ImagePornDetectionResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getLabel() {
-		return this.label;
+	public String getCert() {
+		return this.cert;
 	}
 
-	public void setLabel(String label) {
-		this.label = label;
+	public void setCert(String cert) {
+		this.cert = cert;
 	}
 
-	public Float getRate() {
-		return this.rate;
+	public String getKey() {
+		return this.key;
 	}
 
-	public void setRate(Float rate) {
-		this.rate = rate;
+	public void setKey(String key) {
+		this.key = key;
+	}
+
+	public Long getCertId() {
+		return this.certId;
+	}
+
+	public void setCertId(Long certId) {
+		this.certId = certId;
+	}
+
+	public String getCertName() {
+		return this.certName;
+	}
+
+	public void setCertName(String certName) {
+		this.certName = certName;
 	}
 
 	@Override
-	public ImagePornDetectionResponse getInstance(UnmarshallerContext context) {
-		return	ImagePornDetectionResponseUnmarshaller.unmarshall(this, context);
+	public DescribeLiveCertificateDetailResponse getInstance(UnmarshallerContext context) {
+		return	DescribeLiveCertificateDetailResponseUnmarshaller.unmarshall(this, context);
 	}
 }

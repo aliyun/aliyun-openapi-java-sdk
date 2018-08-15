@@ -62,8 +62,8 @@ public class AddCasterEpisodeGroupRequest extends RpcAcsRequest<AddCasterEpisode
 		this.items = items;	
 		if (items != null) {
 			for (int depth1 = 0; depth1 < items.size(); depth1++) {
-				putQueryParameter("Item." + (depth1 + 1) + ".ItemName" , items.get(depth1).getItemName());
 				putQueryParameter("Item." + (depth1 + 1) + ".VodUrl" , items.get(depth1).getVodUrl());
+				putQueryParameter("Item." + (depth1 + 1) + ".ItemName" , items.get(depth1).getItemName());
 			}
 		}	
 	}
@@ -136,17 +136,9 @@ public class AddCasterEpisodeGroupRequest extends RpcAcsRequest<AddCasterEpisode
 
 	public static class Item {
 
-		private String itemName;
-
 		private String vodUrl;
 
-		public String getItemName() {
-			return this.itemName;
-		}
-
-		public void setItemName(String itemName) {
-			this.itemName = itemName;
-		}
+		private String itemName;
 
 		public String getVodUrl() {
 			return this.vodUrl;
@@ -154,6 +146,14 @@ public class AddCasterEpisodeGroupRequest extends RpcAcsRequest<AddCasterEpisode
 
 		public void setVodUrl(String vodUrl) {
 			this.vodUrl = vodUrl;
+		}
+
+		public String getItemName() {
+			return this.itemName;
+		}
+
+		public void setItemName(String itemName) {
+			this.itemName = itemName;
 		}
 	}
 
