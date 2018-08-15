@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeletePhysicalConnectionRequest extends RpcAcsRequest<DeletePhysicalConnectionResponse> {
 	
 	public DeletePhysicalConnectionRequest() {
-		super("Ecs", "2014-05-26", "DeletePhysicalConnection");
+		super("Ecs", "2014-05-26", "DeletePhysicalConnection", "ecs");
 	}
 
 	private Long resourceOwnerId;
@@ -35,8 +35,6 @@ public class DeletePhysicalConnectionRequest extends RpcAcsRequest<DeletePhysica
 	private String physicalConnectionId;
 
 	private String ownerAccount;
-
-	private String userCidr;
 
 	private Long ownerId;
 
@@ -92,17 +90,6 @@ public class DeletePhysicalConnectionRequest extends RpcAcsRequest<DeletePhysica
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
-		}
-	}
-
-	public String getUserCidr() {
-		return this.userCidr;
-	}
-
-	public void setUserCidr(String userCidr) {
-		this.userCidr = userCidr;
-		if(userCidr != null){
-			putQueryParameter("UserCidr", userCidr);
 		}
 	}
 

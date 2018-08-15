@@ -24,7 +24,7 @@ import java.util.List;
 public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 	
 	public RunInstancesRequest() {
-		super("Ecs", "2014-05-26", "RunInstances");
+		super("Ecs", "2014-05-26", "RunInstances", "ecs");
 	}
 
 	private String launchTemplateName;

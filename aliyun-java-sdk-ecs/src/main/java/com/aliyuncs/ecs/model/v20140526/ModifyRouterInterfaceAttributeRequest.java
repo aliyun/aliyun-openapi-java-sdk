@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifyRouterInterfaceAttributeRequest extends RpcAcsRequest<ModifyRouterInterfaceAttributeResponse> {
 	
 	public ModifyRouterInterfaceAttributeRequest() {
-		super("Ecs", "2014-05-26", "ModifyRouterInterfaceAttribute");
+		super("Ecs", "2014-05-26", "ModifyRouterInterfaceAttribute", "ecs");
 	}
 
 	private String oppositeRouterId;

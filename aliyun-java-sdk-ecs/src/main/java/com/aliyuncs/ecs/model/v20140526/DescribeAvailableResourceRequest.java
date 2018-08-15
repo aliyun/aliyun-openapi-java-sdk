@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeAvailableResourceRequest extends RpcAcsRequest<DescribeAvailableResourceResponse> {
 	
 	public DescribeAvailableResourceRequest() {
-		super("Ecs", "2014-05-26", "DescribeAvailableResource");
+		super("Ecs", "2014-05-26", "DescribeAvailableResource", "ecs");
 	}
 
 	private Long resourceOwnerId;
@@ -51,6 +51,8 @@ public class DescribeAvailableResourceRequest extends RpcAcsRequest<DescribeAvai
 	private String dedicatedHostId;
 
 	private Long ownerId;
+
+	private String resourceType;
 
 	private String spotStrategy;
 
@@ -198,6 +200,17 @@ public class DescribeAvailableResourceRequest extends RpcAcsRequest<DescribeAvai
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getResourceType() {
+		return this.resourceType;
+	}
+
+	public void setResourceType(String resourceType) {
+		this.resourceType = resourceType;
+		if(resourceType != null){
+			putQueryParameter("ResourceType", resourceType);
 		}
 	}
 

@@ -22,6 +22,7 @@ import com.aliyuncs.ecs.model.v20140526.DescribeInstanceAttributeResponse.Dedica
 import com.aliyuncs.ecs.model.v20140526.DescribeInstanceAttributeResponse.EipAddress;
 import com.aliyuncs.ecs.model.v20140526.DescribeInstanceAttributeResponse.LockReason;
 import com.aliyuncs.ecs.model.v20140526.DescribeInstanceAttributeResponse.VpcAttributes;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

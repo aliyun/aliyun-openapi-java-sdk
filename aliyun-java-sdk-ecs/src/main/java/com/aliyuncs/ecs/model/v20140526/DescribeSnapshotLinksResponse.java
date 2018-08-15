@@ -87,6 +87,8 @@ public class DescribeSnapshotLinksResponse extends AcsResponse {
 
 		private String sourceDiskId;
 
+		private String sourceDiskName;
+
 		private Integer sourceDiskSize;
 
 		private String sourceDiskType;
@@ -133,6 +135,14 @@ public class DescribeSnapshotLinksResponse extends AcsResponse {
 
 		public void setSourceDiskId(String sourceDiskId) {
 			this.sourceDiskId = sourceDiskId;
+		}
+
+		public String getSourceDiskName() {
+			return this.sourceDiskName;
+		}
+
+		public void setSourceDiskName(String sourceDiskName) {
+			this.sourceDiskName = sourceDiskName;
 		}
 
 		public Integer getSourceDiskSize() {

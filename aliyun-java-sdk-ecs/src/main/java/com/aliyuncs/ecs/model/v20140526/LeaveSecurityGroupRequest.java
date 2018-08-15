@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class LeaveSecurityGroupRequest extends RpcAcsRequest<LeaveSecurityGroupResponse> {
 	
 	public LeaveSecurityGroupRequest() {
-		super("Ecs", "2014-05-26", "LeaveSecurityGroup");
+		super("Ecs", "2014-05-26", "LeaveSecurityGroup", "ecs");
 	}
 
 	private Long resourceOwnerId;

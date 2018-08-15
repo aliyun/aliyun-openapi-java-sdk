@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeInstanceVncPasswdRequest extends RpcAcsRequest<DescribeInstanceVncPasswdResponse> {
 	
 	public DescribeInstanceVncPasswdRequest() {
-		super("Ecs", "2014-05-26", "DescribeInstanceVncPasswd");
+		super("Ecs", "2014-05-26", "DescribeInstanceVncPasswd", "ecs");
 	}
 
 	private Long resourceOwnerId;

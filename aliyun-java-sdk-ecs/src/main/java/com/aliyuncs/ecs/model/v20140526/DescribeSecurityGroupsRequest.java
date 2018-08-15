@@ -15,6 +15,7 @@
 package com.aliyuncs.ecs.model.v20140526;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 
 /**
  * @author auto create
@@ -23,69 +24,40 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeSecurityGroupsRequest extends RpcAcsRequest<DescribeSecurityGroupsResponse> {
 	
 	public DescribeSecurityGroupsRequest() {
-		super("Ecs", "2014-05-26", "DescribeSecurityGroups");
+		super("Ecs", "2014-05-26", "DescribeSecurityGroups", "ecs");
 	}
-
-	private String tag4Value;
 
 	private Long resourceOwnerId;
 
-	private String tag2Key;
-
-	private Boolean fuzzyQuery;
-
-	private String securityGroupId;
-
-	private String tag3Key;
-
-	private Boolean isQueryEcsCount;
-
-	private String networkType;
-
-	private String securityGroupName;
-
-	private Integer pageNumber;
-
-	private String tag1Value;
-
-	private String resourceGroupId;
-
-	private Integer pageSize;
-
-	private String tag3Value;
-
 	private Boolean dryRun;
 
-	private String tag5Key;
+	private Boolean fuzzyQuery;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
+	private String securityGroupId;
+
+	private Boolean isQueryEcsCount;
+
+	private String networkType;
+
 	private Long ownerId;
 
 	private String securityGroupIds;
 
-	private String tag5Value;
+	private String securityGroupName;
 
-	private String tag1Key;
+	private Integer pageNumber;
+
+	private String resourceGroupId;
 
 	private String vpcId;
 
-	private String tag2Value;
+	private Integer pageSize;
 
-	private String tag4Key;
-
-	public String getTag4Value() {
-		return this.tag4Value;
-	}
-
-	public void setTag4Value(String tag4Value) {
-		this.tag4Value = tag4Value;
-		if(tag4Value != null){
-			putQueryParameter("Tag.4.Value", tag4Value);
-		}
-	}
+	private List<Tag> tags;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -95,138 +67,6 @@ public class DescribeSecurityGroupsRequest extends RpcAcsRequest<DescribeSecurit
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getTag2Key() {
-		return this.tag2Key;
-	}
-
-	public void setTag2Key(String tag2Key) {
-		this.tag2Key = tag2Key;
-		if(tag2Key != null){
-			putQueryParameter("Tag.2.Key", tag2Key);
-		}
-	}
-
-	public Boolean getFuzzyQuery() {
-		return this.fuzzyQuery;
-	}
-
-	public void setFuzzyQuery(Boolean fuzzyQuery) {
-		this.fuzzyQuery = fuzzyQuery;
-		if(fuzzyQuery != null){
-			putQueryParameter("FuzzyQuery", fuzzyQuery.toString());
-		}
-	}
-
-	public String getSecurityGroupId() {
-		return this.securityGroupId;
-	}
-
-	public void setSecurityGroupId(String securityGroupId) {
-		this.securityGroupId = securityGroupId;
-		if(securityGroupId != null){
-			putQueryParameter("SecurityGroupId", securityGroupId);
-		}
-	}
-
-	public String getTag3Key() {
-		return this.tag3Key;
-	}
-
-	public void setTag3Key(String tag3Key) {
-		this.tag3Key = tag3Key;
-		if(tag3Key != null){
-			putQueryParameter("Tag.3.Key", tag3Key);
-		}
-	}
-
-	public Boolean getIsQueryEcsCount() {
-		return this.isQueryEcsCount;
-	}
-
-	public void setIsQueryEcsCount(Boolean isQueryEcsCount) {
-		this.isQueryEcsCount = isQueryEcsCount;
-		if(isQueryEcsCount != null){
-			putQueryParameter("IsQueryEcsCount", isQueryEcsCount.toString());
-		}
-	}
-
-	public String getNetworkType() {
-		return this.networkType;
-	}
-
-	public void setNetworkType(String networkType) {
-		this.networkType = networkType;
-		if(networkType != null){
-			putQueryParameter("NetworkType", networkType);
-		}
-	}
-
-	public String getSecurityGroupName() {
-		return this.securityGroupName;
-	}
-
-	public void setSecurityGroupName(String securityGroupName) {
-		this.securityGroupName = securityGroupName;
-		if(securityGroupName != null){
-			putQueryParameter("SecurityGroupName", securityGroupName);
-		}
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
-		}
-	}
-
-	public String getTag1Value() {
-		return this.tag1Value;
-	}
-
-	public void setTag1Value(String tag1Value) {
-		this.tag1Value = tag1Value;
-		if(tag1Value != null){
-			putQueryParameter("Tag.1.Value", tag1Value);
-		}
-	}
-
-	public String getResourceGroupId() {
-		return this.resourceGroupId;
-	}
-
-	public void setResourceGroupId(String resourceGroupId) {
-		this.resourceGroupId = resourceGroupId;
-		if(resourceGroupId != null){
-			putQueryParameter("ResourceGroupId", resourceGroupId);
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
-	public String getTag3Value() {
-		return this.tag3Value;
-	}
-
-	public void setTag3Value(String tag3Value) {
-		this.tag3Value = tag3Value;
-		if(tag3Value != null){
-			putQueryParameter("Tag.3.Value", tag3Value);
 		}
 	}
 
@@ -241,14 +81,14 @@ public class DescribeSecurityGroupsRequest extends RpcAcsRequest<DescribeSecurit
 		}
 	}
 
-	public String getTag5Key() {
-		return this.tag5Key;
+	public Boolean getFuzzyQuery() {
+		return this.fuzzyQuery;
 	}
 
-	public void setTag5Key(String tag5Key) {
-		this.tag5Key = tag5Key;
-		if(tag5Key != null){
-			putQueryParameter("Tag.5.Key", tag5Key);
+	public void setFuzzyQuery(Boolean fuzzyQuery) {
+		this.fuzzyQuery = fuzzyQuery;
+		if(fuzzyQuery != null){
+			putQueryParameter("FuzzyQuery", fuzzyQuery.toString());
 		}
 	}
 
@@ -274,6 +114,39 @@ public class DescribeSecurityGroupsRequest extends RpcAcsRequest<DescribeSecurit
 		}
 	}
 
+	public String getSecurityGroupId() {
+		return this.securityGroupId;
+	}
+
+	public void setSecurityGroupId(String securityGroupId) {
+		this.securityGroupId = securityGroupId;
+		if(securityGroupId != null){
+			putQueryParameter("SecurityGroupId", securityGroupId);
+		}
+	}
+
+	public Boolean getIsQueryEcsCount() {
+		return this.isQueryEcsCount;
+	}
+
+	public void setIsQueryEcsCount(Boolean isQueryEcsCount) {
+		this.isQueryEcsCount = isQueryEcsCount;
+		if(isQueryEcsCount != null){
+			putQueryParameter("IsQueryEcsCount", isQueryEcsCount.toString());
+		}
+	}
+
+	public String getNetworkType() {
+		return this.networkType;
+	}
+
+	public void setNetworkType(String networkType) {
+		this.networkType = networkType;
+		if(networkType != null){
+			putQueryParameter("NetworkType", networkType);
+		}
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -296,25 +169,36 @@ public class DescribeSecurityGroupsRequest extends RpcAcsRequest<DescribeSecurit
 		}
 	}
 
-	public String getTag5Value() {
-		return this.tag5Value;
+	public String getSecurityGroupName() {
+		return this.securityGroupName;
 	}
 
-	public void setTag5Value(String tag5Value) {
-		this.tag5Value = tag5Value;
-		if(tag5Value != null){
-			putQueryParameter("Tag.5.Value", tag5Value);
+	public void setSecurityGroupName(String securityGroupName) {
+		this.securityGroupName = securityGroupName;
+		if(securityGroupName != null){
+			putQueryParameter("SecurityGroupName", securityGroupName);
 		}
 	}
 
-	public String getTag1Key() {
-		return this.tag1Key;
+	public Integer getPageNumber() {
+		return this.pageNumber;
 	}
 
-	public void setTag1Key(String tag1Key) {
-		this.tag1Key = tag1Key;
-		if(tag1Key != null){
-			putQueryParameter("Tag.1.Key", tag1Key);
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 
@@ -329,25 +213,51 @@ public class DescribeSecurityGroupsRequest extends RpcAcsRequest<DescribeSecurit
 		}
 	}
 
-	public String getTag2Value() {
-		return this.tag2Value;
+	public Integer getPageSize() {
+		return this.pageSize;
 	}
 
-	public void setTag2Value(String tag2Value) {
-		this.tag2Value = tag2Value;
-		if(tag2Value != null){
-			putQueryParameter("Tag.2.Value", tag2Value);
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 
-	public String getTag4Key() {
-		return this.tag4Key;
+	public List<Tag> getTags() {
+		return this.tags;
 	}
 
-	public void setTag4Key(String tag4Key) {
-		this.tag4Key = tag4Key;
-		if(tag4Key != null){
-			putQueryParameter("Tag.4.Key", tag4Key);
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
+				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
+			}
+		}	
+	}
+
+	public static class Tag {
+
+		private String value;
+
+		private String key;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
 		}
 	}
 

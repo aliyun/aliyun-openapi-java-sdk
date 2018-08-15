@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeleteSecurityGroupRequest extends RpcAcsRequest<DeleteSecurityGroupResponse> {
 	
 	public DeleteSecurityGroupRequest() {
-		super("Ecs", "2014-05-26", "DeleteSecurityGroup");
+		super("Ecs", "2014-05-26", "DeleteSecurityGroup", "ecs");
 	}
 
 	private Long resourceOwnerId;

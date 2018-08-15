@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeleteVSwitchRequest extends RpcAcsRequest<DeleteVSwitchResponse> {
 	
 	public DeleteVSwitchRequest() {
-		super("Ecs", "2014-05-26", "DeleteVSwitch");
+		super("Ecs", "2014-05-26", "DeleteVSwitch", "ecs");
 	}
 
 	private String vSwitchId;

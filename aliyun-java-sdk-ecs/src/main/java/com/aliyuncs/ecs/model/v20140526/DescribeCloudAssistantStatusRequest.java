@@ -24,7 +24,7 @@ import java.util.List;
 public class DescribeCloudAssistantStatusRequest extends RpcAcsRequest<DescribeCloudAssistantStatusResponse> {
 	
 	public DescribeCloudAssistantStatusRequest() {
-		super("Ecs", "2014-05-26", "DescribeCloudAssistantStatus");
+		super("Ecs", "2014-05-26", "DescribeCloudAssistantStatus", "ecs");
 	}
 
 	private Long resourceOwnerId;

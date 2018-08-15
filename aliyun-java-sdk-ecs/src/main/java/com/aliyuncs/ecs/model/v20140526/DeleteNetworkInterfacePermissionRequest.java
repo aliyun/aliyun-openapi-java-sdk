@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeleteNetworkInterfacePermissionRequest extends RpcAcsRequest<DeleteNetworkInterfacePermissionResponse> {
 	
 	public DeleteNetworkInterfacePermissionRequest() {
-		super("Ecs", "2014-05-26", "DeleteNetworkInterfacePermission");
+		super("Ecs", "2014-05-26", "DeleteNetworkInterfacePermission", "ecs");
 	}
 
 	private Long resourceOwnerId;

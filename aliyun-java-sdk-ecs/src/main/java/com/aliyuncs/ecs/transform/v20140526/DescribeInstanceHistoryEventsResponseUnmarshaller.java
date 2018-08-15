@@ -21,6 +21,7 @@ import com.aliyuncs.ecs.model.v20140526.DescribeInstanceHistoryEventsResponse;
 import com.aliyuncs.ecs.model.v20140526.DescribeInstanceHistoryEventsResponse.InstanceSystemEventType;
 import com.aliyuncs.ecs.model.v20140526.DescribeInstanceHistoryEventsResponse.InstanceSystemEventType.EventCycleStatus;
 import com.aliyuncs.ecs.model.v20140526.DescribeInstanceHistoryEventsResponse.InstanceSystemEventType.EventType;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

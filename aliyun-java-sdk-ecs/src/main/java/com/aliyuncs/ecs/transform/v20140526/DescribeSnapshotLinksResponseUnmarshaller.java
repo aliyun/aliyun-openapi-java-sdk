@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.ecs.model.v20140526.DescribeSnapshotLinksResponse;
 import com.aliyuncs.ecs.model.v20140526.DescribeSnapshotLinksResponse.SnapshotLink;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -39,6 +40,7 @@ public class DescribeSnapshotLinksResponseUnmarshaller {
 			snapshotLink.setInstanceId(context.stringValue("DescribeSnapshotLinksResponse.SnapshotLinks["+ i +"].InstanceId"));
 			snapshotLink.setInstanceName(context.stringValue("DescribeSnapshotLinksResponse.SnapshotLinks["+ i +"].InstanceName"));
 			snapshotLink.setSourceDiskId(context.stringValue("DescribeSnapshotLinksResponse.SnapshotLinks["+ i +"].SourceDiskId"));
+			snapshotLink.setSourceDiskName(context.stringValue("DescribeSnapshotLinksResponse.SnapshotLinks["+ i +"].SourceDiskName"));
 			snapshotLink.setSourceDiskSize(context.integerValue("DescribeSnapshotLinksResponse.SnapshotLinks["+ i +"].SourceDiskSize"));
 			snapshotLink.setSourceDiskType(context.stringValue("DescribeSnapshotLinksResponse.SnapshotLinks["+ i +"].SourceDiskType"));
 			snapshotLink.setTotalSize(context.integerValue("DescribeSnapshotLinksResponse.SnapshotLinks["+ i +"].TotalSize"));

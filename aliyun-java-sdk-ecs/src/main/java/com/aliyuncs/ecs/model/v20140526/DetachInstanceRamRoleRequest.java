@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DetachInstanceRamRoleRequest extends RpcAcsRequest<DetachInstanceRamRoleResponse> {
 	
 	public DetachInstanceRamRoleRequest() {
-		super("Ecs", "2014-05-26", "DetachInstanceRamRole");
+		super("Ecs", "2014-05-26", "DetachInstanceRamRole", "ecs");
 	}
 
 	private Long resourceOwnerId;

@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ConnectRouterInterfaceRequest extends RpcAcsRequest<ConnectRouterInterfaceResponse> {
 	
 	public ConnectRouterInterfaceRequest() {
-		super("Ecs", "2014-05-26", "ConnectRouterInterface");
+		super("Ecs", "2014-05-26", "ConnectRouterInterface", "ecs");
 	}
 
 	private Long resourceOwnerId;

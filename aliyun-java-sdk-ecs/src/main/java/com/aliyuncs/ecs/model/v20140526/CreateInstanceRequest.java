@@ -24,18 +24,12 @@ import java.util.List;
 public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse> {
 	
 	public CreateInstanceRequest() {
-		super("Ecs", "2014-05-26", "CreateInstance");
+		super("Ecs", "2014-05-26", "CreateInstance", "ecs");
 	}
-
-	private String tag4Value;
 
 	private Long resourceOwnerId;
 
-	private String tag2Key;
-
 	private String hpcClusterId;
-
-	private String tag3Key;
 
 	private String securityEnhancementStrategy;
 
@@ -43,13 +37,13 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 
 	private Float spotPriceLimit;
 
-	private String tag1Value;
-
 	private String resourceGroupId;
 
 	private String hostName;
 
 	private String password;
+
+	private List<Tag> tags;
 
 	private Integer autoRenewPeriod;
 
@@ -58,8 +52,6 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 	private Integer period;
 
 	private Boolean dryRun;
-
-	private String tag5Key;
 
 	private Long ownerId;
 
@@ -78,8 +70,6 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 	private String internetChargeType;
 
 	private String zoneId;
-
-	private String tag4Key;
 
 	private Integer internetMaxBandwidthIn;
 
@@ -111,8 +101,6 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 
 	private String instanceChargeType;
 
-	private String tag3Value;
-
 	private String deploymentSetId;
 
 	private String innerIpAddress;
@@ -131,26 +119,9 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 
 	private List<DataDisk> dataDisks;
 
-	private String tag5Value;
-
-	private String tag1Key;
-
 	private Integer systemDiskSize;
 
-	private String tag2Value;
-
 	private String systemDiskDescription;
-
-	public String getTag4Value() {
-		return this.tag4Value;
-	}
-
-	public void setTag4Value(String tag4Value) {
-		this.tag4Value = tag4Value;
-		if(tag4Value != null){
-			putQueryParameter("Tag.4.Value", tag4Value);
-		}
-	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -163,17 +134,6 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 		}
 	}
 
-	public String getTag2Key() {
-		return this.tag2Key;
-	}
-
-	public void setTag2Key(String tag2Key) {
-		this.tag2Key = tag2Key;
-		if(tag2Key != null){
-			putQueryParameter("Tag.2.Key", tag2Key);
-		}
-	}
-
 	public String getHpcClusterId() {
 		return this.hpcClusterId;
 	}
@@ -182,17 +142,6 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 		this.hpcClusterId = hpcClusterId;
 		if(hpcClusterId != null){
 			putQueryParameter("HpcClusterId", hpcClusterId);
-		}
-	}
-
-	public String getTag3Key() {
-		return this.tag3Key;
-	}
-
-	public void setTag3Key(String tag3Key) {
-		this.tag3Key = tag3Key;
-		if(tag3Key != null){
-			putQueryParameter("Tag.3.Key", tag3Key);
 		}
 	}
 
@@ -229,17 +178,6 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 		}
 	}
 
-	public String getTag1Value() {
-		return this.tag1Value;
-	}
-
-	public void setTag1Value(String tag1Value) {
-		this.tag1Value = tag1Value;
-		if(tag1Value != null){
-			putQueryParameter("Tag.1.Value", tag1Value);
-		}
-	}
-
 	public String getResourceGroupId() {
 		return this.resourceGroupId;
 	}
@@ -271,6 +209,20 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 		if(password != null){
 			putQueryParameter("Password", password);
 		}
+	}
+
+	public List<Tag> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
+				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
+			}
+		}	
 	}
 
 	public Integer getAutoRenewPeriod() {
@@ -314,17 +266,6 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 		this.dryRun = dryRun;
 		if(dryRun != null){
 			putQueryParameter("DryRun", dryRun.toString());
-		}
-	}
-
-	public String getTag5Key() {
-		return this.tag5Key;
-	}
-
-	public void setTag5Key(String tag5Key) {
-		this.tag5Key = tag5Key;
-		if(tag5Key != null){
-			putQueryParameter("Tag.5.Key", tag5Key);
 		}
 	}
 
@@ -424,17 +365,6 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 		this.zoneId = zoneId;
 		if(zoneId != null){
 			putQueryParameter("ZoneId", zoneId);
-		}
-	}
-
-	public String getTag4Key() {
-		return this.tag4Key;
-	}
-
-	public void setTag4Key(String tag4Key) {
-		this.tag4Key = tag4Key;
-		if(tag4Key != null){
-			putQueryParameter("Tag.4.Key", tag4Key);
 		}
 	}
 
@@ -603,17 +533,6 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 		}
 	}
 
-	public String getTag3Value() {
-		return this.tag3Value;
-	}
-
-	public void setTag3Value(String tag3Value) {
-		this.tag3Value = tag3Value;
-		if(tag3Value != null){
-			putQueryParameter("Tag.3.Value", tag3Value);
-		}
-	}
-
 	public String getDeploymentSetId() {
 		return this.deploymentSetId;
 	}
@@ -710,38 +629,16 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 		this.dataDisks = dataDisks;	
 		if (dataDisks != null) {
 			for (int depth1 = 0; depth1 < dataDisks.size(); depth1++) {
-				putQueryParameter("DataDisk." + (depth1 + 1) + ".Size" , dataDisks.get(depth1).getSize());
-				putQueryParameter("DataDisk." + (depth1 + 1) + ".SnapshotId" , dataDisks.get(depth1).getSnapshotId());
-				putQueryParameter("DataDisk." + (depth1 + 1) + ".Category" , dataDisks.get(depth1).getCategory());
 				putQueryParameter("DataDisk." + (depth1 + 1) + ".DiskName" , dataDisks.get(depth1).getDiskName());
+				putQueryParameter("DataDisk." + (depth1 + 1) + ".SnapshotId" , dataDisks.get(depth1).getSnapshotId());
+				putQueryParameter("DataDisk." + (depth1 + 1) + ".Size" , dataDisks.get(depth1).getSize());
+				putQueryParameter("DataDisk." + (depth1 + 1) + ".Encrypted" , dataDisks.get(depth1).getEncrypted());
 				putQueryParameter("DataDisk." + (depth1 + 1) + ".Description" , dataDisks.get(depth1).getDescription());
+				putQueryParameter("DataDisk." + (depth1 + 1) + ".Category" , dataDisks.get(depth1).getCategory());
 				putQueryParameter("DataDisk." + (depth1 + 1) + ".Device" , dataDisks.get(depth1).getDevice());
 				putQueryParameter("DataDisk." + (depth1 + 1) + ".DeleteWithInstance" , dataDisks.get(depth1).getDeleteWithInstance());
-				putQueryParameter("DataDisk." + (depth1 + 1) + ".Encrypted" , dataDisks.get(depth1).getEncrypted());
 			}
 		}	
-	}
-
-	public String getTag5Value() {
-		return this.tag5Value;
-	}
-
-	public void setTag5Value(String tag5Value) {
-		this.tag5Value = tag5Value;
-		if(tag5Value != null){
-			putQueryParameter("Tag.5.Value", tag5Value);
-		}
-	}
-
-	public String getTag1Key() {
-		return this.tag1Key;
-	}
-
-	public void setTag1Key(String tag1Key) {
-		this.tag1Key = tag1Key;
-		if(tag1Key != null){
-			putQueryParameter("Tag.1.Key", tag1Key);
-		}
 	}
 
 	public Integer getSystemDiskSize() {
@@ -752,17 +649,6 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 		this.systemDiskSize = systemDiskSize;
 		if(systemDiskSize != null){
 			putQueryParameter("SystemDisk.Size", systemDiskSize.toString());
-		}
-	}
-
-	public String getTag2Value() {
-		return this.tag2Value;
-	}
-
-	public void setTag2Value(String tag2Value) {
-		this.tag2Value = tag2Value;
-		if(tag2Value != null){
-			putQueryParameter("Tag.2.Value", tag2Value);
 		}
 	}
 
@@ -777,30 +663,53 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 		}
 	}
 
+	public static class Tag {
+
+		private String value;
+
+		private String key;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
+		}
+	}
+
 	public static class DataDisk {
-
-		private Integer size;
-
-		private String snapshotId;
-
-		private String category;
 
 		private String diskName;
 
+		private String snapshotId;
+
+		private Integer size;
+
+		private Boolean encrypted;
+
 		private String description;
+
+		private String category;
 
 		private String device;
 
 		private Boolean deleteWithInstance;
 
-		private Boolean encrypted;
-
-		public Integer getSize() {
-			return this.size;
+		public String getDiskName() {
+			return this.diskName;
 		}
 
-		public void setSize(Integer size) {
-			this.size = size;
+		public void setDiskName(String diskName) {
+			this.diskName = diskName;
 		}
 
 		public String getSnapshotId() {
@@ -811,20 +720,20 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 			this.snapshotId = snapshotId;
 		}
 
-		public String getCategory() {
-			return this.category;
+		public Integer getSize() {
+			return this.size;
 		}
 
-		public void setCategory(String category) {
-			this.category = category;
+		public void setSize(Integer size) {
+			this.size = size;
 		}
 
-		public String getDiskName() {
-			return this.diskName;
+		public Boolean getEncrypted() {
+			return this.encrypted;
 		}
 
-		public void setDiskName(String diskName) {
-			this.diskName = diskName;
+		public void setEncrypted(Boolean encrypted) {
+			this.encrypted = encrypted;
 		}
 
 		public String getDescription() {
@@ -833,6 +742,14 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 
 		public void setDescription(String description) {
 			this.description = description;
+		}
+
+		public String getCategory() {
+			return this.category;
+		}
+
+		public void setCategory(String category) {
+			this.category = category;
 		}
 
 		public String getDevice() {
@@ -849,14 +766,6 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 
 		public void setDeleteWithInstance(Boolean deleteWithInstance) {
 			this.deleteWithInstance = deleteWithInstance;
-		}
-
-		public Boolean getEncrypted() {
-			return this.encrypted;
-		}
-
-		public void setEncrypted(Boolean encrypted) {
-			this.encrypted = encrypted;
 		}
 	}
 

@@ -24,7 +24,7 @@ import java.util.List;
 public class StopInvocationRequest extends RpcAcsRequest<StopInvocationResponse> {
 	
 	public StopInvocationRequest() {
-		super("Ecs", "2014-05-26", "StopInvocation");
+		super("Ecs", "2014-05-26", "StopInvocation", "ecs");
 	}
 
 	private Long resourceOwnerId;

@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class RebootInstanceRequest extends RpcAcsRequest<RebootInstanceResponse> {
 	
 	public RebootInstanceRequest() {
-		super("Ecs", "2014-05-26", "RebootInstance");
+		super("Ecs", "2014-05-26", "RebootInstance", "ecs");
 	}
 
 	private Long resourceOwnerId;

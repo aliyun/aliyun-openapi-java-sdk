@@ -15,6 +15,7 @@
 package com.aliyuncs.ecs.model.v20140526;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 
 /**
  * @author auto create
@@ -23,16 +24,10 @@ import com.aliyuncs.RpcAcsRequest;
 public class CreateSnapshotRequest extends RpcAcsRequest<CreateSnapshotResponse> {
 	
 	public CreateSnapshotRequest() {
-		super("Ecs", "2014-05-26", "CreateSnapshot");
+		super("Ecs", "2014-05-26", "CreateSnapshot", "ecs");
 	}
 
-	private String tag4Value;
-
 	private Long resourceOwnerId;
-
-	private String tag2Key;
-
-	private String tag5Key;
 
 	private String resourceOwnerAccount;
 
@@ -42,36 +37,13 @@ public class CreateSnapshotRequest extends RpcAcsRequest<CreateSnapshotResponse>
 
 	private String description;
 
-	private String snapshotName;
-
-	private String tag3Key;
-
-	private Long ownerId;
-
-	private String tag5Value;
-
-	private String tag1Key;
-
-	private String tag1Value;
-
-	private String tag2Value;
-
-	private String tag4Key;
-
 	private String diskId;
 
-	private String tag3Value;
+	private String snapshotName;
 
-	public String getTag4Value() {
-		return this.tag4Value;
-	}
+	private List<Tag> tags;
 
-	public void setTag4Value(String tag4Value) {
-		this.tag4Value = tag4Value;
-		if(tag4Value != null){
-			putQueryParameter("Tag.4.Value", tag4Value);
-		}
-	}
+	private Long ownerId;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -81,28 +53,6 @@ public class CreateSnapshotRequest extends RpcAcsRequest<CreateSnapshotResponse>
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getTag2Key() {
-		return this.tag2Key;
-	}
-
-	public void setTag2Key(String tag2Key) {
-		this.tag2Key = tag2Key;
-		if(tag2Key != null){
-			putQueryParameter("Tag.2.Key", tag2Key);
-		}
-	}
-
-	public String getTag5Key() {
-		return this.tag5Key;
-	}
-
-	public void setTag5Key(String tag5Key) {
-		this.tag5Key = tag5Key;
-		if(tag5Key != null){
-			putQueryParameter("Tag.5.Key", tag5Key);
 		}
 	}
 
@@ -150,6 +100,17 @@ public class CreateSnapshotRequest extends RpcAcsRequest<CreateSnapshotResponse>
 		}
 	}
 
+	public String getDiskId() {
+		return this.diskId;
+	}
+
+	public void setDiskId(String diskId) {
+		this.diskId = diskId;
+		if(diskId != null){
+			putQueryParameter("DiskId", diskId);
+		}
+	}
+
 	public String getSnapshotName() {
 		return this.snapshotName;
 	}
@@ -161,15 +122,18 @@ public class CreateSnapshotRequest extends RpcAcsRequest<CreateSnapshotResponse>
 		}
 	}
 
-	public String getTag3Key() {
-		return this.tag3Key;
+	public List<Tag> getTags() {
+		return this.tags;
 	}
 
-	public void setTag3Key(String tag3Key) {
-		this.tag3Key = tag3Key;
-		if(tag3Key != null){
-			putQueryParameter("Tag.3.Key", tag3Key);
-		}
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
+				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
+			}
+		}	
 	}
 
 	public Long getOwnerId() {
@@ -183,80 +147,26 @@ public class CreateSnapshotRequest extends RpcAcsRequest<CreateSnapshotResponse>
 		}
 	}
 
-	public String getTag5Value() {
-		return this.tag5Value;
-	}
+	public static class Tag {
 
-	public void setTag5Value(String tag5Value) {
-		this.tag5Value = tag5Value;
-		if(tag5Value != null){
-			putQueryParameter("Tag.5.Value", tag5Value);
+		private String value;
+
+		private String key;
+
+		public String getValue() {
+			return this.value;
 		}
-	}
 
-	public String getTag1Key() {
-		return this.tag1Key;
-	}
-
-	public void setTag1Key(String tag1Key) {
-		this.tag1Key = tag1Key;
-		if(tag1Key != null){
-			putQueryParameter("Tag.1.Key", tag1Key);
+		public void setValue(String value) {
+			this.value = value;
 		}
-	}
 
-	public String getTag1Value() {
-		return this.tag1Value;
-	}
-
-	public void setTag1Value(String tag1Value) {
-		this.tag1Value = tag1Value;
-		if(tag1Value != null){
-			putQueryParameter("Tag.1.Value", tag1Value);
+		public String getKey() {
+			return this.key;
 		}
-	}
 
-	public String getTag2Value() {
-		return this.tag2Value;
-	}
-
-	public void setTag2Value(String tag2Value) {
-		this.tag2Value = tag2Value;
-		if(tag2Value != null){
-			putQueryParameter("Tag.2.Value", tag2Value);
-		}
-	}
-
-	public String getTag4Key() {
-		return this.tag4Key;
-	}
-
-	public void setTag4Key(String tag4Key) {
-		this.tag4Key = tag4Key;
-		if(tag4Key != null){
-			putQueryParameter("Tag.4.Key", tag4Key);
-		}
-	}
-
-	public String getDiskId() {
-		return this.diskId;
-	}
-
-	public void setDiskId(String diskId) {
-		this.diskId = diskId;
-		if(diskId != null){
-			putQueryParameter("DiskId", diskId);
-		}
-	}
-
-	public String getTag3Value() {
-		return this.tag3Value;
-	}
-
-	public void setTag3Value(String tag3Value) {
-		this.tag3Value = tag3Value;
-		if(tag3Value != null){
-			putQueryParameter("Tag.3.Value", tag3Value);
+		public void setKey(String key) {
+			this.key = key;
 		}
 	}
 

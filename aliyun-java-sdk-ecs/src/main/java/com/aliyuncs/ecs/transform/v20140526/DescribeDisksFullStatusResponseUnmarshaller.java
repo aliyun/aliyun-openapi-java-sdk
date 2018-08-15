@@ -23,6 +23,7 @@ import com.aliyuncs.ecs.model.v20140526.DescribeDisksFullStatusResponse.DiskFull
 import com.aliyuncs.ecs.model.v20140526.DescribeDisksFullStatusResponse.DiskFullStatusType.DiskEventType.EventType;
 import com.aliyuncs.ecs.model.v20140526.DescribeDisksFullStatusResponse.DiskFullStatusType.HealthStatus;
 import com.aliyuncs.ecs.model.v20140526.DescribeDisksFullStatusResponse.DiskFullStatusType.Status;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

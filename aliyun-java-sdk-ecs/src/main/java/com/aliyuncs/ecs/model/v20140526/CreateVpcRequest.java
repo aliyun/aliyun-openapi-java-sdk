@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class CreateVpcRequest extends RpcAcsRequest<CreateVpcResponse> {
 	
 	public CreateVpcRequest() {
-		super("Ecs", "2014-05-26", "CreateVpc");
+		super("Ecs", "2014-05-26", "CreateVpc", "ecs");
 	}
 
 	private String vpcName;

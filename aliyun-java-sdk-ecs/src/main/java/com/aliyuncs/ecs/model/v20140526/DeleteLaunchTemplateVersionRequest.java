@@ -24,7 +24,7 @@ import java.util.List;
 public class DeleteLaunchTemplateVersionRequest extends RpcAcsRequest<DeleteLaunchTemplateVersionResponse> {
 	
 	public DeleteLaunchTemplateVersionRequest() {
-		super("Ecs", "2014-05-26", "DeleteLaunchTemplateVersion");
+		super("Ecs", "2014-05-26", "DeleteLaunchTemplateVersion", "ecs");
 	}
 
 	private String launchTemplateName;

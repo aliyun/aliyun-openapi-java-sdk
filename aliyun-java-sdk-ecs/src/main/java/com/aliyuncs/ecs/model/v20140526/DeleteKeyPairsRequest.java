@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeleteKeyPairsRequest extends RpcAcsRequest<DeleteKeyPairsResponse> {
 	
 	public DeleteKeyPairsRequest() {
-		super("Ecs", "2014-05-26", "DeleteKeyPairs");
+		super("Ecs", "2014-05-26", "DeleteKeyPairs", "ecs");
 	}
 
 	private Long resourceOwnerId;

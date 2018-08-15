@@ -24,7 +24,7 @@ import java.util.List;
 public class CreateNatGatewayRequest extends RpcAcsRequest<CreateNatGatewayResponse> {
 	
 	public CreateNatGatewayRequest() {
-		super("Ecs", "2014-05-26", "CreateNatGateway");
+		super("Ecs", "2014-05-26", "CreateNatGateway", "ecs");
 	}
 
 	private Long resourceOwnerId;
@@ -141,28 +141,20 @@ public class CreateNatGatewayRequest extends RpcAcsRequest<CreateNatGatewayRespo
 		this.bandwidthPackages = bandwidthPackages;	
 		if (bandwidthPackages != null) {
 			for (int depth1 = 0; depth1 < bandwidthPackages.size(); depth1++) {
-				putQueryParameter("BandwidthPackage." + (depth1 + 1) + ".IpCount" , bandwidthPackages.get(depth1).getIpCount());
 				putQueryParameter("BandwidthPackage." + (depth1 + 1) + ".Bandwidth" , bandwidthPackages.get(depth1).getBandwidth());
 				putQueryParameter("BandwidthPackage." + (depth1 + 1) + ".Zone" , bandwidthPackages.get(depth1).getZone());
+				putQueryParameter("BandwidthPackage." + (depth1 + 1) + ".IpCount" , bandwidthPackages.get(depth1).getIpCount());
 			}
 		}	
 	}
 
 	public static class BandwidthPackage {
 
-		private Integer ipCount;
-
 		private Integer bandwidth;
 
 		private String zone;
 
-		public Integer getIpCount() {
-			return this.ipCount;
-		}
-
-		public void setIpCount(Integer ipCount) {
-			this.ipCount = ipCount;
-		}
+		private Integer ipCount;
 
 		public Integer getBandwidth() {
 			return this.bandwidth;
@@ -178,6 +170,14 @@ public class CreateNatGatewayRequest extends RpcAcsRequest<CreateNatGatewayRespo
 
 		public void setZone(String zone) {
 			this.zone = zone;
+		}
+
+		public Integer getIpCount() {
+			return this.ipCount;
+		}
+
+		public void setIpCount(Integer ipCount) {
+			this.ipCount = ipCount;
 		}
 	}
 

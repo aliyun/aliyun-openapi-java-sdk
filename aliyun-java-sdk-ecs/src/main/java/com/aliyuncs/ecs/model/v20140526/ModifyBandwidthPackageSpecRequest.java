@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifyBandwidthPackageSpecRequest extends RpcAcsRequest<ModifyBandwidthPackageSpecResponse> {
 	
 	public ModifyBandwidthPackageSpecRequest() {
-		super("Ecs", "2014-05-26", "ModifyBandwidthPackageSpec");
+		super("Ecs", "2014-05-26", "ModifyBandwidthPackageSpec", "ecs");
 	}
 
 	private Long resourceOwnerId;

@@ -24,28 +24,18 @@ import java.util.List;
 public class DescribeLaunchTemplatesRequest extends RpcAcsRequest<DescribeLaunchTemplatesResponse> {
 	
 	public DescribeLaunchTemplatesRequest() {
-		super("Ecs", "2014-05-26", "DescribeLaunchTemplates");
+		super("Ecs", "2014-05-26", "DescribeLaunchTemplates", "ecs");
 	}
-
-	private String templateTag1Value;
 
 	private List<String> launchTemplateNames;
 
 	private Long resourceOwnerId;
 
-	private String templateTag4Key;
-
 	private Integer pageNumber;
-
-	private String templateTag3Key;
-
-	private String templateTag5Value;
 
 	private Integer pageSize;
 
-	private String templateTag3Value;
-
-	private String templateTag2Key;
+	private List<TemplateTag> templateTags;
 
 	private List<String> launchTemplateIds;
 
@@ -55,26 +45,7 @@ public class DescribeLaunchTemplatesRequest extends RpcAcsRequest<DescribeLaunch
 
 	private String templateResourceGroupId;
 
-	private String templateTag2Value;
-
 	private Long ownerId;
-
-	private String templateTag4Value;
-
-	private String templateTag5Key;
-
-	private String templateTag1Key;
-
-	public String getTemplateTag1Value() {
-		return this.templateTag1Value;
-	}
-
-	public void setTemplateTag1Value(String templateTag1Value) {
-		this.templateTag1Value = templateTag1Value;
-		if(templateTag1Value != null){
-			putQueryParameter("TemplateTag.1.Value", templateTag1Value);
-		}
-	}
 
 	public List<String> getLaunchTemplateNames() {
 		return this.launchTemplateNames;
@@ -100,17 +71,6 @@ public class DescribeLaunchTemplatesRequest extends RpcAcsRequest<DescribeLaunch
 		}
 	}
 
-	public String getTemplateTag4Key() {
-		return this.templateTag4Key;
-	}
-
-	public void setTemplateTag4Key(String templateTag4Key) {
-		this.templateTag4Key = templateTag4Key;
-		if(templateTag4Key != null){
-			putQueryParameter("TemplateTag.4.Key", templateTag4Key);
-		}
-	}
-
 	public Integer getPageNumber() {
 		return this.pageNumber;
 	}
@@ -119,28 +79,6 @@ public class DescribeLaunchTemplatesRequest extends RpcAcsRequest<DescribeLaunch
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());
-		}
-	}
-
-	public String getTemplateTag3Key() {
-		return this.templateTag3Key;
-	}
-
-	public void setTemplateTag3Key(String templateTag3Key) {
-		this.templateTag3Key = templateTag3Key;
-		if(templateTag3Key != null){
-			putQueryParameter("TemplateTag.3.Key", templateTag3Key);
-		}
-	}
-
-	public String getTemplateTag5Value() {
-		return this.templateTag5Value;
-	}
-
-	public void setTemplateTag5Value(String templateTag5Value) {
-		this.templateTag5Value = templateTag5Value;
-		if(templateTag5Value != null){
-			putQueryParameter("TemplateTag.5.Value", templateTag5Value);
 		}
 	}
 
@@ -155,26 +93,18 @@ public class DescribeLaunchTemplatesRequest extends RpcAcsRequest<DescribeLaunch
 		}
 	}
 
-	public String getTemplateTag3Value() {
-		return this.templateTag3Value;
+	public List<TemplateTag> getTemplateTags() {
+		return this.templateTags;
 	}
 
-	public void setTemplateTag3Value(String templateTag3Value) {
-		this.templateTag3Value = templateTag3Value;
-		if(templateTag3Value != null){
-			putQueryParameter("TemplateTag.3.Value", templateTag3Value);
-		}
-	}
-
-	public String getTemplateTag2Key() {
-		return this.templateTag2Key;
-	}
-
-	public void setTemplateTag2Key(String templateTag2Key) {
-		this.templateTag2Key = templateTag2Key;
-		if(templateTag2Key != null){
-			putQueryParameter("TemplateTag.2.Key", templateTag2Key);
-		}
+	public void setTemplateTags(List<TemplateTag> templateTags) {
+		this.templateTags = templateTags;	
+		if (templateTags != null) {
+			for (int depth1 = 0; depth1 < templateTags.size(); depth1++) {
+				putQueryParameter("TemplateTag." + (depth1 + 1) + ".Key" , templateTags.get(depth1).getKey());
+				putQueryParameter("TemplateTag." + (depth1 + 1) + ".Value" , templateTags.get(depth1).getValue());
+			}
+		}	
 	}
 
 	public List<String> getLaunchTemplateIds() {
@@ -223,17 +153,6 @@ public class DescribeLaunchTemplatesRequest extends RpcAcsRequest<DescribeLaunch
 		}
 	}
 
-	public String getTemplateTag2Value() {
-		return this.templateTag2Value;
-	}
-
-	public void setTemplateTag2Value(String templateTag2Value) {
-		this.templateTag2Value = templateTag2Value;
-		if(templateTag2Value != null){
-			putQueryParameter("TemplateTag.2.Value", templateTag2Value);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -245,36 +164,26 @@ public class DescribeLaunchTemplatesRequest extends RpcAcsRequest<DescribeLaunch
 		}
 	}
 
-	public String getTemplateTag4Value() {
-		return this.templateTag4Value;
-	}
+	public static class TemplateTag {
 
-	public void setTemplateTag4Value(String templateTag4Value) {
-		this.templateTag4Value = templateTag4Value;
-		if(templateTag4Value != null){
-			putQueryParameter("TemplateTag.4.Value", templateTag4Value);
+		private String key;
+
+		private String value;
+
+		public String getKey() {
+			return this.key;
 		}
-	}
 
-	public String getTemplateTag5Key() {
-		return this.templateTag5Key;
-	}
-
-	public void setTemplateTag5Key(String templateTag5Key) {
-		this.templateTag5Key = templateTag5Key;
-		if(templateTag5Key != null){
-			putQueryParameter("TemplateTag.5.Key", templateTag5Key);
+		public void setKey(String key) {
+			this.key = key;
 		}
-	}
 
-	public String getTemplateTag1Key() {
-		return this.templateTag1Key;
-	}
+		public String getValue() {
+			return this.value;
+		}
 
-	public void setTemplateTag1Key(String templateTag1Key) {
-		this.templateTag1Key = templateTag1Key;
-		if(templateTag1Key != null){
-			putQueryParameter("TemplateTag.1.Key", templateTag1Key);
+		public void setValue(String value) {
+			this.value = value;
 		}
 	}
 

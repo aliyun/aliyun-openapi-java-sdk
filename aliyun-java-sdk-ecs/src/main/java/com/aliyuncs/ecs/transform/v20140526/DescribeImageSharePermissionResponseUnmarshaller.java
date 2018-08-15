@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.ecs.model.v20140526.DescribeImageSharePermissionResponse;
 import com.aliyuncs.ecs.model.v20140526.DescribeImageSharePermissionResponse.Account;
 import com.aliyuncs.ecs.model.v20140526.DescribeImageSharePermissionResponse.ShareGroup;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

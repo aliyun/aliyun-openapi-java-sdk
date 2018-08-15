@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeEniMonitorDataRequest extends RpcAcsRequest<DescribeEniMonitorDataResponse> {
 	
 	public DescribeEniMonitorDataRequest() {
-		super("Ecs", "2014-05-26", "DescribeEniMonitorData");
+		super("Ecs", "2014-05-26", "DescribeEniMonitorData", "ecs");
 	}
 
 	private Long resourceOwnerId;

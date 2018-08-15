@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeleteInstanceRequest extends RpcAcsRequest<DeleteInstanceResponse> {
 	
 	public DeleteInstanceRequest() {
-		super("Ecs", "2014-05-26", "DeleteInstance");
+		super("Ecs", "2014-05-26", "DeleteInstance", "ecs");
 	}
 
 	private Long resourceOwnerId;

@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class UnassociateEipAddressRequest extends RpcAcsRequest<UnassociateEipAddressResponse> {
 	
 	public UnassociateEipAddressRequest() {
-		super("Ecs", "2014-05-26", "UnassociateEipAddress");
+		super("Ecs", "2014-05-26", "UnassociateEipAddress", "ecs");
 	}
 
 	private Long resourceOwnerId;

@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifyIntranetBandwidthKbRequest extends RpcAcsRequest<ModifyIntranetBandwidthKbResponse> {
 	
 	public ModifyIntranetBandwidthKbRequest() {
-		super("Ecs", "2014-05-26", "ModifyIntranetBandwidthKb");
+		super("Ecs", "2014-05-26", "ModifyIntranetBandwidthKb", "ecs");
 	}
 
 	private Long resourceOwnerId;

@@ -24,7 +24,7 @@ import java.util.List;
 public class InstallCloudAssistantRequest extends RpcAcsRequest<InstallCloudAssistantResponse> {
 	
 	public InstallCloudAssistantRequest() {
-		super("Ecs", "2014-05-26", "InstallCloudAssistant");
+		super("Ecs", "2014-05-26", "InstallCloudAssistant", "ecs");
 	}
 
 	private Long resourceOwnerId;

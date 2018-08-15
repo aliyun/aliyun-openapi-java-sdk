@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.ecs.model.v20140526.DescribeCommandsResponse;
 import com.aliyuncs.ecs.model.v20140526.DescribeCommandsResponse.Command;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

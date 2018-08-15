@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeleteDiskRequest extends RpcAcsRequest<DeleteDiskResponse> {
 	
 	public DeleteDiskRequest() {
-		super("Ecs", "2014-05-26", "DeleteDisk");
+		super("Ecs", "2014-05-26", "DeleteDisk", "ecs");
 	}
 
 	private Long resourceOwnerId;

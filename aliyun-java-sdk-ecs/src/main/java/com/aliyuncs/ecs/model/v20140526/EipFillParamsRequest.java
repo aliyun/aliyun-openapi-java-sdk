@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class EipFillParamsRequest extends RpcAcsRequest<EipFillParamsResponse> {
 	
 	public EipFillParamsRequest() {
-		super("Ecs", "2014-05-26", "EipFillParams");
+		super("Ecs", "2014-05-26", "EipFillParams", "ecs");
 	}
 
 	private Long resourceOwnerId;

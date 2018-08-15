@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.ecs.model.v20140526.DescribeRouterInterfacesResponse;
 import com.aliyuncs.ecs.model.v20140526.DescribeRouterInterfacesResponse.RouterInterfaceType;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

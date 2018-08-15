@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifyAutoSnapshotPolicyRequest extends RpcAcsRequest<ModifyAutoSnapshotPolicyResponse> {
 	
 	public ModifyAutoSnapshotPolicyRequest() {
-		super("Ecs", "2014-05-26", "ModifyAutoSnapshotPolicy");
+		super("Ecs", "2014-05-26", "ModifyAutoSnapshotPolicy", "ecs");
 	}
 
 	private Boolean dataDiskPolicyEnabled;

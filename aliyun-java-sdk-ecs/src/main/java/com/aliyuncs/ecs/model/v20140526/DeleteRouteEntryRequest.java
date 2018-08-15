@@ -24,7 +24,7 @@ import java.util.List;
 public class DeleteRouteEntryRequest extends RpcAcsRequest<DeleteRouteEntryResponse> {
 	
 	public DeleteRouteEntryRequest() {
-		super("Ecs", "2014-05-26", "DeleteRouteEntry");
+		super("Ecs", "2014-05-26", "DeleteRouteEntry", "ecs");
 	}
 
 	private Long resourceOwnerId;
@@ -117,8 +117,8 @@ public class DeleteRouteEntryRequest extends RpcAcsRequest<DeleteRouteEntryRespo
 		this.nextHopLists = nextHopLists;	
 		if (nextHopLists != null) {
 			for (int depth1 = 0; depth1 < nextHopLists.size(); depth1++) {
-				putQueryParameter("NextHopList." + (depth1 + 1) + ".NextHopType" , nextHopLists.get(depth1).getNextHopType());
 				putQueryParameter("NextHopList." + (depth1 + 1) + ".NextHopId" , nextHopLists.get(depth1).getNextHopId());
+				putQueryParameter("NextHopList." + (depth1 + 1) + ".NextHopType" , nextHopLists.get(depth1).getNextHopType());
 			}
 		}	
 	}
@@ -136,17 +136,9 @@ public class DeleteRouteEntryRequest extends RpcAcsRequest<DeleteRouteEntryRespo
 
 	public static class NextHopList {
 
-		private String nextHopType;
-
 		private String nextHopId;
 
-		public String getNextHopType() {
-			return this.nextHopType;
-		}
-
-		public void setNextHopType(String nextHopType) {
-			this.nextHopType = nextHopType;
-		}
+		private String nextHopType;
 
 		public String getNextHopId() {
 			return this.nextHopId;
@@ -154,6 +146,14 @@ public class DeleteRouteEntryRequest extends RpcAcsRequest<DeleteRouteEntryRespo
 
 		public void setNextHopId(String nextHopId) {
 			this.nextHopId = nextHopId;
+		}
+
+		public String getNextHopType() {
+			return this.nextHopType;
+		}
+
+		public void setNextHopType(String nextHopType) {
+			this.nextHopType = nextHopType;
 		}
 	}
 

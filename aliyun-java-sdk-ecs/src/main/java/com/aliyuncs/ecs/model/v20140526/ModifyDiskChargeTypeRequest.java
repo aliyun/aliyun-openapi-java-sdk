@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifyDiskChargeTypeRequest extends RpcAcsRequest<ModifyDiskChargeTypeResponse> {
 	
 	public ModifyDiskChargeTypeRequest() {
-		super("Ecs", "2014-05-26", "ModifyDiskChargeType");
+		super("Ecs", "2014-05-26", "ModifyDiskChargeType", "ecs");
 	}
 
 	private Long resourceOwnerId;

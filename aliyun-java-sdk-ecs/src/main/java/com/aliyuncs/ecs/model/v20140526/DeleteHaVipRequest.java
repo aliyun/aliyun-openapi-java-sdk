@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeleteHaVipRequest extends RpcAcsRequest<DeleteHaVipResponse> {
 	
 	public DeleteHaVipRequest() {
-		super("Ecs", "2014-05-26", "DeleteHaVip");
+		super("Ecs", "2014-05-26", "DeleteHaVip", "ecs");
 	}
 
 	private String haVipId;

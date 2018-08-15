@@ -24,7 +24,7 @@ import java.util.List;
 public class DescribeImageSupportInstanceTypesRequest extends RpcAcsRequest<DescribeImageSupportInstanceTypesResponse> {
 	
 	public DescribeImageSupportInstanceTypesRequest() {
-		super("Ecs", "2014-05-26", "DescribeImageSupportInstanceTypes");
+		super("Ecs", "2014-05-26", "DescribeImageSupportInstanceTypes", "ecs");
 	}
 
 	private String actionType;
@@ -58,8 +58,8 @@ public class DescribeImageSupportInstanceTypesRequest extends RpcAcsRequest<Desc
 		this.filters = filters;	
 		if (filters != null) {
 			for (int depth1 = 0; depth1 < filters.size(); depth1++) {
-				putQueryParameter("Filter." + (depth1 + 1) + ".Key" , filters.get(depth1).getKey());
 				putQueryParameter("Filter." + (depth1 + 1) + ".Value" , filters.get(depth1).getValue());
+				putQueryParameter("Filter." + (depth1 + 1) + ".Key" , filters.get(depth1).getKey());
 			}
 		}	
 	}
@@ -110,17 +110,9 @@ public class DescribeImageSupportInstanceTypesRequest extends RpcAcsRequest<Desc
 
 	public static class Filter {
 
-		private String key;
-
 		private String value;
 
-		public String getKey() {
-			return this.key;
-		}
-
-		public void setKey(String key) {
-			this.key = key;
-		}
+		private String key;
 
 		public String getValue() {
 			return this.value;
@@ -128,6 +120,14 @@ public class DescribeImageSupportInstanceTypesRequest extends RpcAcsRequest<Desc
 
 		public void setValue(String value) {
 			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
 		}
 	}
 

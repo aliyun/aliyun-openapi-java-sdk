@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.ecs.model.v20140526.DescribeInvocationsResponse;
 import com.aliyuncs.ecs.model.v20140526.DescribeInvocationsResponse.Invocation;
 import com.aliyuncs.ecs.model.v20140526.DescribeInvocationsResponse.Invocation.InvokeInstance;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class AddIpRangeRequest extends RpcAcsRequest<AddIpRangeResponse> {
 	
 	public AddIpRangeRequest() {
-		super("Ecs", "2014-05-26", "AddIpRange");
+		super("Ecs", "2014-05-26", "AddIpRange", "ecs");
 	}
 
 	private String ipAddress;

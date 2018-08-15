@@ -24,7 +24,7 @@ import java.util.List;
 public class DescribeNetworkInterfacePermissionsRequest extends RpcAcsRequest<DescribeNetworkInterfacePermissionsResponse> {
 	
 	public DescribeNetworkInterfacePermissionsRequest() {
-		super("Ecs", "2014-05-26", "DescribeNetworkInterfacePermissions");
+		super("Ecs", "2014-05-26", "DescribeNetworkInterfacePermissions", "ecs");
 	}
 
 	private Long resourceOwnerId;

@@ -21,6 +21,7 @@ import com.aliyuncs.ecs.model.v20140526.DescribeResourcesModificationResponse;
 import com.aliyuncs.ecs.model.v20140526.DescribeResourcesModificationResponse.AvailableZone;
 import com.aliyuncs.ecs.model.v20140526.DescribeResourcesModificationResponse.AvailableZone.AvailableResource;
 import com.aliyuncs.ecs.model.v20140526.DescribeResourcesModificationResponse.AvailableZone.AvailableResource.SupportedResource;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

@@ -22,6 +22,7 @@ import com.aliyuncs.ecs.model.v20140526.DescribeDeploymentSetTopologyResponse.Ra
 import com.aliyuncs.ecs.model.v20140526.DescribeDeploymentSetTopologyResponse.Rack.Host2;
 import com.aliyuncs.ecs.model.v20140526.DescribeDeploymentSetTopologyResponse._Switch;
 import com.aliyuncs.ecs.model.v20140526.DescribeDeploymentSetTopologyResponse._Switch.Host;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

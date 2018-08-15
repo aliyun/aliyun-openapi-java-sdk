@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeUserBusinessBehaviorRequest extends RpcAcsRequest<DescribeUserBusinessBehaviorResponse> {
 	
 	public DescribeUserBusinessBehaviorRequest() {
-		super("Ecs", "2014-05-26", "DescribeUserBusinessBehavior");
+		super("Ecs", "2014-05-26", "DescribeUserBusinessBehavior", "ecs");
 	}
 
 	private Long resourceOwnerId;

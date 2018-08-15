@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeDeploymentSetsRequest extends RpcAcsRequest<DescribeDeploymentSetsResponse> {
 	
 	public DescribeDeploymentSetsRequest() {
-		super("Ecs", "2014-05-26", "DescribeDeploymentSets");
+		super("Ecs", "2014-05-26", "DescribeDeploymentSets", "ecs");
 	}
 
 	private Long resourceOwnerId;

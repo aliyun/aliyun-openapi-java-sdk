@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class CheckDiskEnableAutoSnapshotValidationRequest extends RpcAcsRequest<CheckDiskEnableAutoSnapshotValidationResponse> {
 	
 	public CheckDiskEnableAutoSnapshotValidationRequest() {
-		super("Ecs", "2014-05-26", "CheckDiskEnableAutoSnapshotValidation");
+		super("Ecs", "2014-05-26", "CheckDiskEnableAutoSnapshotValidation", "ecs");
 	}
 
 	private Long resourceOwnerId;

@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ValidateSecurityGroupRequest extends RpcAcsRequest<ValidateSecurityGroupResponse> {
 	
 	public ValidateSecurityGroupRequest() {
-		super("Ecs", "2014-05-26", "ValidateSecurityGroup");
+		super("Ecs", "2014-05-26", "ValidateSecurityGroup", "ecs");
 	}
 
 	private String nicType;

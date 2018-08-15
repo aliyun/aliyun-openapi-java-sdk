@@ -24,7 +24,7 @@ import java.util.List;
 public class ImportImageRequest extends RpcAcsRequest<ImportImageResponse> {
 	
 	public ImportImageRequest() {
-		super("Ecs", "2014-05-26", "ImportImage");
+		super("Ecs", "2014-05-26", "ImportImage", "ecs");
 	}
 
 	private List<DiskDeviceMapping> diskDeviceMappings;
@@ -55,12 +55,12 @@ public class ImportImageRequest extends RpcAcsRequest<ImportImageResponse> {
 		this.diskDeviceMappings = diskDeviceMappings;	
 		if (diskDeviceMappings != null) {
 			for (int depth1 = 0; depth1 < diskDeviceMappings.size(); depth1++) {
-				putQueryParameter("DiskDeviceMapping." + (depth1 + 1) + ".Format" , diskDeviceMappings.get(depth1).getFormat());
 				putQueryParameter("DiskDeviceMapping." + (depth1 + 1) + ".OSSBucket" , diskDeviceMappings.get(depth1).getOSSBucket());
-				putQueryParameter("DiskDeviceMapping." + (depth1 + 1) + ".OSSObject" , diskDeviceMappings.get(depth1).getOSSObject());
 				putQueryParameter("DiskDeviceMapping." + (depth1 + 1) + ".DiskImSize" , diskDeviceMappings.get(depth1).getDiskImSize());
-				putQueryParameter("DiskDeviceMapping." + (depth1 + 1) + ".DiskImageSize" , diskDeviceMappings.get(depth1).getDiskImageSize());
+				putQueryParameter("DiskDeviceMapping." + (depth1 + 1) + ".Format" , diskDeviceMappings.get(depth1).getFormat());
 				putQueryParameter("DiskDeviceMapping." + (depth1 + 1) + ".Device" , diskDeviceMappings.get(depth1).getDevice());
+				putQueryParameter("DiskDeviceMapping." + (depth1 + 1) + ".OSSObject" , diskDeviceMappings.get(depth1).getOSSObject());
+				putQueryParameter("DiskDeviceMapping." + (depth1 + 1) + ".DiskImageSize" , diskDeviceMappings.get(depth1).getDiskImageSize());
 			}
 		}	
 	}
@@ -166,25 +166,17 @@ public class ImportImageRequest extends RpcAcsRequest<ImportImageResponse> {
 
 	public static class DiskDeviceMapping {
 
-		private String format;
-
 		private String oSSBucket;
-
-		private String oSSObject;
 
 		private Integer diskImSize;
 
-		private Integer diskImageSize;
+		private String format;
 
 		private String device;
 
-		public String getFormat() {
-			return this.format;
-		}
+		private String oSSObject;
 
-		public void setFormat(String format) {
-			this.format = format;
-		}
+		private Integer diskImageSize;
 
 		public String getOSSBucket() {
 			return this.oSSBucket;
@@ -192,14 +184,6 @@ public class ImportImageRequest extends RpcAcsRequest<ImportImageResponse> {
 
 		public void setOSSBucket(String oSSBucket) {
 			this.oSSBucket = oSSBucket;
-		}
-
-		public String getOSSObject() {
-			return this.oSSObject;
-		}
-
-		public void setOSSObject(String oSSObject) {
-			this.oSSObject = oSSObject;
 		}
 
 		public Integer getDiskImSize() {
@@ -210,12 +194,12 @@ public class ImportImageRequest extends RpcAcsRequest<ImportImageResponse> {
 			this.diskImSize = diskImSize;
 		}
 
-		public Integer getDiskImageSize() {
-			return this.diskImageSize;
+		public String getFormat() {
+			return this.format;
 		}
 
-		public void setDiskImageSize(Integer diskImageSize) {
-			this.diskImageSize = diskImageSize;
+		public void setFormat(String format) {
+			this.format = format;
 		}
 
 		public String getDevice() {
@@ -224,6 +208,22 @@ public class ImportImageRequest extends RpcAcsRequest<ImportImageResponse> {
 
 		public void setDevice(String device) {
 			this.device = device;
+		}
+
+		public String getOSSObject() {
+			return this.oSSObject;
+		}
+
+		public void setOSSObject(String oSSObject) {
+			this.oSSObject = oSSObject;
+		}
+
+		public Integer getDiskImageSize() {
+			return this.diskImageSize;
+		}
+
+		public void setDiskImageSize(Integer diskImageSize) {
+			this.diskImageSize = diskImageSize;
 		}
 	}
 

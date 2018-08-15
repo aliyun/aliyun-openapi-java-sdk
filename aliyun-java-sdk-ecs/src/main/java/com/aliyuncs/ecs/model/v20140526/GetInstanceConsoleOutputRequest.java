@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class GetInstanceConsoleOutputRequest extends RpcAcsRequest<GetInstanceConsoleOutputResponse> {
 	
 	public GetInstanceConsoleOutputRequest() {
-		super("Ecs", "2014-05-26", "GetInstanceConsoleOutput");
+		super("Ecs", "2014-05-26", "GetInstanceConsoleOutput", "ecs");
 	}
 
 	private Long resourceOwnerId;

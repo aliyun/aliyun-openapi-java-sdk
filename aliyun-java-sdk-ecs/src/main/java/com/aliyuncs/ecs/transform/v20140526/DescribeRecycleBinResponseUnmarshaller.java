@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.ecs.model.v20140526.DescribeRecycleBinResponse;
 import com.aliyuncs.ecs.model.v20140526.DescribeRecycleBinResponse.RecycleBinModel;
 import com.aliyuncs.ecs.model.v20140526.DescribeRecycleBinResponse.RecycleBinModel.RelationResource;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

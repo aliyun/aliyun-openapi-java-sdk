@@ -24,7 +24,7 @@ import java.util.List;
 public class CreateRouteEntryRequest extends RpcAcsRequest<CreateRouteEntryResponse> {
 	
 	public CreateRouteEntryRequest() {
-		super("Ecs", "2014-05-26", "CreateRouteEntry");
+		super("Ecs", "2014-05-26", "CreateRouteEntry", "ecs");
 	}
 
 	private Long resourceOwnerId;
@@ -143,8 +143,8 @@ public class CreateRouteEntryRequest extends RpcAcsRequest<CreateRouteEntryRespo
 		this.nextHopLists = nextHopLists;	
 		if (nextHopLists != null) {
 			for (int depth1 = 0; depth1 < nextHopLists.size(); depth1++) {
-				putQueryParameter("NextHopList." + (depth1 + 1) + ".NextHopType" , nextHopLists.get(depth1).getNextHopType());
 				putQueryParameter("NextHopList." + (depth1 + 1) + ".NextHopId" , nextHopLists.get(depth1).getNextHopId());
+				putQueryParameter("NextHopList." + (depth1 + 1) + ".NextHopType" , nextHopLists.get(depth1).getNextHopType());
 			}
 		}	
 	}
@@ -162,17 +162,9 @@ public class CreateRouteEntryRequest extends RpcAcsRequest<CreateRouteEntryRespo
 
 	public static class NextHopList {
 
-		private String nextHopType;
-
 		private String nextHopId;
 
-		public String getNextHopType() {
-			return this.nextHopType;
-		}
-
-		public void setNextHopType(String nextHopType) {
-			this.nextHopType = nextHopType;
-		}
+		private String nextHopType;
 
 		public String getNextHopId() {
 			return this.nextHopId;
@@ -180,6 +172,14 @@ public class CreateRouteEntryRequest extends RpcAcsRequest<CreateRouteEntryRespo
 
 		public void setNextHopId(String nextHopId) {
 			this.nextHopId = nextHopId;
+		}
+
+		public String getNextHopType() {
+			return this.nextHopType;
+		}
+
+		public void setNextHopType(String nextHopType) {
+			this.nextHopType = nextHopType;
 		}
 	}
 

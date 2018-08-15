@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifyHaVipAttributeRequest extends RpcAcsRequest<ModifyHaVipAttributeResponse> {
 	
 	public ModifyHaVipAttributeRequest() {
-		super("Ecs", "2014-05-26", "ModifyHaVipAttribute");
+		super("Ecs", "2014-05-26", "ModifyHaVipAttribute", "ecs");
 	}
 
 	private String haVipId;

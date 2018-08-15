@@ -24,7 +24,7 @@ import java.util.List;
 public class DescribeVirtualBorderRoutersRequest extends RpcAcsRequest<DescribeVirtualBorderRoutersResponse> {
 	
 	public DescribeVirtualBorderRoutersRequest() {
-		super("Ecs", "2014-05-26", "DescribeVirtualBorderRouters");
+		super("Ecs", "2014-05-26", "DescribeVirtualBorderRouters", "ecs");
 	}
 
 	private List<Filter> filters;
@@ -47,12 +47,12 @@ public class DescribeVirtualBorderRoutersRequest extends RpcAcsRequest<DescribeV
 		this.filters = filters;	
 		if (filters != null) {
 			for (int depth1 = 0; depth1 < filters.size(); depth1++) {
-				putQueryParameter("Filter." + (depth1 + 1) + ".Key" , filters.get(depth1).getKey());
 				if (filters.get(depth1).getValues() != null) {
 					for (int i = 0; i < filters.get(depth1).getValues().size(); i++) {
 						putQueryParameter("Filter." + (depth1 + 1) + ".Value." + (i + 1) , filters.get(depth1).getValues().get(i));
 					}
 				}
+				putQueryParameter("Filter." + (depth1 + 1) + ".Key" , filters.get(depth1).getKey());
 			}
 		}	
 	}
@@ -114,17 +114,9 @@ public class DescribeVirtualBorderRoutersRequest extends RpcAcsRequest<DescribeV
 
 	public static class Filter {
 
-		private String key;
-
 		private List<String> values;
 
-		public String getKey() {
-			return this.key;
-		}
-
-		public void setKey(String key) {
-			this.key = key;
-		}
+		private String key;
 
 		public List<String> getValues() {
 			return this.values;
@@ -132,6 +124,14 @@ public class DescribeVirtualBorderRoutersRequest extends RpcAcsRequest<DescribeV
 
 		public void setValues(List<String> values) {
 			this.values = values;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
 		}
 	}
 

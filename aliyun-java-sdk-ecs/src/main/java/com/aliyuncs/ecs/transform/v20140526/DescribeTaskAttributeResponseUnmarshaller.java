@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.ecs.model.v20140526.DescribeTaskAttributeResponse;
 import com.aliyuncs.ecs.model.v20140526.DescribeTaskAttributeResponse.OperationProgress;
 import com.aliyuncs.ecs.model.v20140526.DescribeTaskAttributeResponse.OperationProgress.RelatedItem;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

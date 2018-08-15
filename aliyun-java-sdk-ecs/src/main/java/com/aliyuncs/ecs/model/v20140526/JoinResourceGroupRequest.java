@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class JoinResourceGroupRequest extends RpcAcsRequest<JoinResourceGroupResponse> {
 	
 	public JoinResourceGroupRequest() {
-		super("Ecs", "2014-05-26", "JoinResourceGroup");
+		super("Ecs", "2014-05-26", "JoinResourceGroup", "ecs");
 	}
 
 	private String resourceGroupId;

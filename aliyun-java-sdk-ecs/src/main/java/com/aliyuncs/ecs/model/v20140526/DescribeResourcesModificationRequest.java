@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeResourcesModificationRequest extends RpcAcsRequest<DescribeResourcesModificationResponse> {
 	
 	public DescribeResourcesModificationRequest() {
-		super("Ecs", "2014-05-26", "DescribeResourcesModification");
+		super("Ecs", "2014-05-26", "DescribeResourcesModification", "ecs");
 	}
 
 	private Long resourceOwnerId;

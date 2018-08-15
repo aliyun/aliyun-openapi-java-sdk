@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ReActivateInstancesRequest extends RpcAcsRequest<ReActivateInstancesResponse> {
 	
 	public ReActivateInstancesRequest() {
-		super("Ecs", "2014-05-26", "ReActivateInstances");
+		super("Ecs", "2014-05-26", "ReActivateInstances", "ecs");
 	}
 
 	private Long resourceOwnerId;

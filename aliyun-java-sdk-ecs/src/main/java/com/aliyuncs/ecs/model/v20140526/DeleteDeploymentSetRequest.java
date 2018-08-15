@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeleteDeploymentSetRequest extends RpcAcsRequest<DeleteDeploymentSetResponse> {
 	
 	public DeleteDeploymentSetRequest() {
-		super("Ecs", "2014-05-26", "DeleteDeploymentSet");
+		super("Ecs", "2014-05-26", "DeleteDeploymentSet", "ecs");
 	}
 
 	private String deploymentSetId;

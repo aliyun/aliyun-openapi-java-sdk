@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeInstanceRamRoleRequest extends RpcAcsRequest<DescribeInstanceRamRoleResponse> {
 	
 	public DescribeInstanceRamRoleRequest() {
-		super("Ecs", "2014-05-26", "DescribeInstanceRamRole");
+		super("Ecs", "2014-05-26", "DescribeInstanceRamRole", "ecs");
 	}
 
 	private Long resourceOwnerId;

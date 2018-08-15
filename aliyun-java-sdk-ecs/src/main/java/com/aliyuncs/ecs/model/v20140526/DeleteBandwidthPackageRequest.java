@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeleteBandwidthPackageRequest extends RpcAcsRequest<DeleteBandwidthPackageResponse> {
 	
 	public DeleteBandwidthPackageRequest() {
-		super("Ecs", "2014-05-26", "DeleteBandwidthPackage");
+		super("Ecs", "2014-05-26", "DeleteBandwidthPackage", "ecs");
 	}
 
 	private Long resourceOwnerId;

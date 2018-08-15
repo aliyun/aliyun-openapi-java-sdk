@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class CreateVirtualBorderRouterRequest extends RpcAcsRequest<CreateVirtualBorderRouterResponse> {
 	
 	public CreateVirtualBorderRouterRequest() {
-		super("Ecs", "2014-05-26", "CreateVirtualBorderRouter");
+		super("Ecs", "2014-05-26", "CreateVirtualBorderRouter", "ecs");
 	}
 
 	private Long resourceOwnerId;

@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeDiskMonitorDataRequest extends RpcAcsRequest<DescribeDiskMonitorDataResponse> {
 	
 	public DescribeDiskMonitorDataRequest() {
-		super("Ecs", "2014-05-26", "DescribeDiskMonitorData");
+		super("Ecs", "2014-05-26", "DescribeDiskMonitorData", "ecs");
 	}
 
 	private Long resourceOwnerId;

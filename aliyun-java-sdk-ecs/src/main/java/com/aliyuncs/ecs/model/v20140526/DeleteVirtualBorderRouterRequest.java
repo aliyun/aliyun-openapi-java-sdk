@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeleteVirtualBorderRouterRequest extends RpcAcsRequest<DeleteVirtualBorderRouterResponse> {
 	
 	public DeleteVirtualBorderRouterRequest() {
-		super("Ecs", "2014-05-26", "DeleteVirtualBorderRouter");
+		super("Ecs", "2014-05-26", "DeleteVirtualBorderRouter", "ecs");
 	}
 
 	private Long resourceOwnerId;

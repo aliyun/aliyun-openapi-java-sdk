@@ -24,6 +24,7 @@ import com.aliyuncs.ecs.model.v20140526.DescribeInstancesFullStatusResponse.Inst
 import com.aliyuncs.ecs.model.v20140526.DescribeInstancesFullStatusResponse.InstanceFullStatusType.ScheduledSystemEventType.EventCycleStatus;
 import com.aliyuncs.ecs.model.v20140526.DescribeInstancesFullStatusResponse.InstanceFullStatusType.ScheduledSystemEventType.EventType;
 import com.aliyuncs.ecs.model.v20140526.DescribeInstancesFullStatusResponse.InstanceFullStatusType.Status;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
