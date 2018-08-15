@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class BatchRegisterDeviceRequest extends RpcAcsRequest<BatchRegisterDeviceResponse> {
 	
 	public BatchRegisterDeviceRequest() {
-		super("Iot", "2018-01-20", "BatchRegisterDevice");
+		super("Iot", "2018-01-20", "BatchRegisterDevice", "iot");
 	}
 
 	private Integer count;

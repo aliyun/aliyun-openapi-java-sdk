@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class NotifyAddThingTopoRequest extends RpcAcsRequest<NotifyAddThingTopoResponse> {
 	
 	public NotifyAddThingTopoRequest() {
-		super("Iot", "2018-01-20", "NotifyAddThingTopo");
+		super("Iot", "2018-01-20", "NotifyAddThingTopo", "iot");
 	}
 
 	private String gwProductKey;

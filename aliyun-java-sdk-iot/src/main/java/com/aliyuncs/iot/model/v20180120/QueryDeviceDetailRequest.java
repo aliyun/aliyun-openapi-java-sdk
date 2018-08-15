@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class QueryDeviceDetailRequest extends RpcAcsRequest<QueryDeviceDetailResponse> {
 	
 	public QueryDeviceDetailRequest() {
-		super("Iot", "2018-01-20", "QueryDeviceDetail");
+		super("Iot", "2018-01-20", "QueryDeviceDetail", "iot");
 	}
 
 	private String iotId;

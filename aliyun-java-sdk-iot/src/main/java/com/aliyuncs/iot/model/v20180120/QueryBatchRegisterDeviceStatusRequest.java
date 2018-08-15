@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class QueryBatchRegisterDeviceStatusRequest extends RpcAcsRequest<QueryBatchRegisterDeviceStatusResponse> {
 	
 	public QueryBatchRegisterDeviceStatusRequest() {
-		super("Iot", "2018-01-20", "QueryBatchRegisterDeviceStatus");
+		super("Iot", "2018-01-20", "QueryBatchRegisterDeviceStatus", "iot");
 	}
 
 	private Long applyId;

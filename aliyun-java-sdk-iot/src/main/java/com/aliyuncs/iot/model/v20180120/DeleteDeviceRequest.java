@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeleteDeviceRequest extends RpcAcsRequest<DeleteDeviceResponse> {
 	
 	public DeleteDeviceRequest() {
-		super("Iot", "2018-01-20", "DeleteDevice");
+		super("Iot", "2018-01-20", "DeleteDevice", "iot");
 	}
 
 	private String iotId;
