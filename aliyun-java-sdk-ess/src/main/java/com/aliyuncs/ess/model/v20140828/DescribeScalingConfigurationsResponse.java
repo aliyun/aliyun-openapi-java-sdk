@@ -87,6 +87,8 @@ public class DescribeScalingConfigurationsResponse extends AcsResponse {
 
 		private String imageId;
 
+		private String imageName;
+
 		private String hostName;
 
 		private String instanceType;
@@ -173,6 +175,14 @@ public class DescribeScalingConfigurationsResponse extends AcsResponse {
 
 		public void setImageId(String imageId) {
 			this.imageId = imageId;
+		}
+
+		public String getImageName() {
+			return this.imageName;
+		}
+
+		public void setImageName(String imageName) {
+			this.imageName = imageName;
 		}
 
 		public String getHostName() {
@@ -377,6 +387,8 @@ public class DescribeScalingConfigurationsResponse extends AcsResponse {
 
 			private String device;
 
+			private Boolean deleteWithInstance;
+
 			public Integer getSize() {
 				return this.size;
 			}
@@ -407,6 +419,14 @@ public class DescribeScalingConfigurationsResponse extends AcsResponse {
 
 			public void setDevice(String device) {
 				this.device = device;
+			}
+
+			public Boolean getDeleteWithInstance() {
+				return this.deleteWithInstance;
+			}
+
+			public void setDeleteWithInstance(Boolean deleteWithInstance) {
+				this.deleteWithInstance = deleteWithInstance;
 			}
 		}
 

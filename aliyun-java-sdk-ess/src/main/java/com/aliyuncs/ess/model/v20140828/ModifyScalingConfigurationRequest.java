@@ -24,26 +24,40 @@ import java.util.List;
 public class ModifyScalingConfigurationRequest extends RpcAcsRequest<ModifyScalingConfigurationResponse> {
 	
 	public ModifyScalingConfigurationRequest() {
-		super("Ess", "2014-08-28", "ModifyScalingConfiguration", "ESS");
+		super("Ess", "2014-08-28", "ModifyScalingConfiguration", "ess");
 	}
 
 	private String imageId;
 
-	private String resourceOwnerAccount;
-
-	private String ownerAccount;
+	private String ioOptimized;
 
 	private List<String> instanceTypes;
 
 	private Integer internetMaxBandwidthOut;
 
-	private String ramRoleName;
-
 	private String keyPairName;
+
+	private List<SpotPriceLimit> spotPriceLimits;
+
+	private String systemDiskCategory;
+
+	private String userData;
+
+	private String hostName;
+
+	private Boolean passwordInherit;
+
+	private String imageName;
+
+	private String resourceOwnerAccount;
+
+	private String ownerAccount;
+
+	private String ramRoleName;
 
 	private Long ownerId;
 
-	private String systemDiskCategory;
+	private List<DataDisk> dataDisks;
 
 	private String scalingConfigurationName;
 
@@ -51,15 +65,11 @@ public class ModifyScalingConfigurationRequest extends RpcAcsRequest<ModifyScali
 
 	private String scalingConfigurationId;
 
-	private String userData;
-
-	private String hostName;
+	private String spotStrategy;
 
 	private String instanceName;
 
 	private Integer loadBalancerWeight;
-
-	private Boolean passwordInherit;
 
 	private Integer systemDiskSize;
 
@@ -73,6 +83,121 @@ public class ModifyScalingConfigurationRequest extends RpcAcsRequest<ModifyScali
 		this.imageId = imageId;
 		if(imageId != null){
 			putQueryParameter("ImageId", imageId);
+		}
+	}
+
+	public String getIoOptimized() {
+		return this.ioOptimized;
+	}
+
+	public void setIoOptimized(String ioOptimized) {
+		this.ioOptimized = ioOptimized;
+		if(ioOptimized != null){
+			putQueryParameter("IoOptimized", ioOptimized);
+		}
+	}
+
+	public List<String> getInstanceTypes() {
+		return this.instanceTypes;
+	}
+
+	public void setInstanceTypes(List<String> instanceTypes) {
+		this.instanceTypes = instanceTypes;
+		if (instanceTypes != null) {
+			for (int i = 0; i < instanceTypes.size(); i++) {
+				putQueryParameter("InstanceTypes." + (i + 1) , instanceTypes.get(i));
+			}
+		}	
+	}
+
+	public Integer getInternetMaxBandwidthOut() {
+		return this.internetMaxBandwidthOut;
+	}
+
+	public void setInternetMaxBandwidthOut(Integer internetMaxBandwidthOut) {
+		this.internetMaxBandwidthOut = internetMaxBandwidthOut;
+		if(internetMaxBandwidthOut != null){
+			putQueryParameter("InternetMaxBandwidthOut", internetMaxBandwidthOut.toString());
+		}
+	}
+
+	public String getKeyPairName() {
+		return this.keyPairName;
+	}
+
+	public void setKeyPairName(String keyPairName) {
+		this.keyPairName = keyPairName;
+		if(keyPairName != null){
+			putQueryParameter("KeyPairName", keyPairName);
+		}
+	}
+
+	public List<SpotPriceLimit> getSpotPriceLimits() {
+		return this.spotPriceLimits;
+	}
+
+	public void setSpotPriceLimits(List<SpotPriceLimit> spotPriceLimits) {
+		this.spotPriceLimits = spotPriceLimits;	
+		if (spotPriceLimits != null) {
+			for (int depth1 = 0; depth1 < spotPriceLimits.size(); depth1++) {
+				putQueryParameter("SpotPriceLimit." + (depth1 + 1) + ".InstanceType" , spotPriceLimits.get(depth1).getInstanceType());
+				putQueryParameter("SpotPriceLimit." + (depth1 + 1) + ".PriceLimit" , spotPriceLimits.get(depth1).getPriceLimit());
+			}
+		}	
+	}
+
+	public String getSystemDiskCategory() {
+		return this.systemDiskCategory;
+	}
+
+	public void setSystemDiskCategory(String systemDiskCategory) {
+		this.systemDiskCategory = systemDiskCategory;
+		if(systemDiskCategory != null){
+			putQueryParameter("SystemDisk.Category", systemDiskCategory);
+		}
+	}
+
+	public String getUserData() {
+		return this.userData;
+	}
+
+	public void setUserData(String userData) {
+		this.userData = userData;
+		if(userData != null){
+			putQueryParameter("UserData", userData);
+		}
+	}
+
+	public String getHostName() {
+		return this.hostName;
+	}
+
+	public void setHostName(String hostName) {
+		this.hostName = hostName;
+		if(hostName != null){
+			putQueryParameter("HostName", hostName);
+		}
+	}
+
+	public Boolean getPasswordInherit() {
+		return this.passwordInherit;
+	}
+
+	public void setPasswordInherit(Boolean passwordInherit) {
+		this.passwordInherit = passwordInherit;
+		if(passwordInherit != null){
+			putQueryParameter("PasswordInherit", passwordInherit.toString());
+		}
+	}
+
+	public String getImageName() {
+		return this.imageName;
+	}
+
+	public void setImageName(String imageName) {
+		this.imageName = imageName;
+		if(imageName != null){
+			putQueryParameter("ImageName", imageName);
 		}
 	}
 
@@ -98,30 +223,6 @@ public class ModifyScalingConfigurationRequest extends RpcAcsRequest<ModifyScali
 		}
 	}
 
-	public List<String> getinstanceTypes() {
-		return this.instanceTypes;
-	}
-
-	public void setinstanceTypes(List<String> instanceTypes) {
-		this.instanceTypes = instanceTypes;	
-		if (instanceTypes != null) {
-			for (int i = 0; i < instanceTypes.size(); i++) {
-				putQueryParameter("InstanceTypes." + (i + 1) , instanceTypes.get(i));
-			}
-		}	
-	}
-
-	public Integer getInternetMaxBandwidthOut() {
-		return this.internetMaxBandwidthOut;
-	}
-
-	public void setInternetMaxBandwidthOut(Integer internetMaxBandwidthOut) {
-		this.internetMaxBandwidthOut = internetMaxBandwidthOut;
-		if(internetMaxBandwidthOut != null){
-			putQueryParameter("InternetMaxBandwidthOut", internetMaxBandwidthOut.toString());
-		}
-	}
-
 	public String getRamRoleName() {
 		return this.ramRoleName;
 	}
@@ -130,17 +231,6 @@ public class ModifyScalingConfigurationRequest extends RpcAcsRequest<ModifyScali
 		this.ramRoleName = ramRoleName;
 		if(ramRoleName != null){
 			putQueryParameter("RamRoleName", ramRoleName);
-		}
-	}
-
-	public String getKeyPairName() {
-		return this.keyPairName;
-	}
-
-	public void setKeyPairName(String keyPairName) {
-		this.keyPairName = keyPairName;
-		if(keyPairName != null){
-			putQueryParameter("KeyPairName", keyPairName);
 		}
 	}
 
@@ -155,15 +245,21 @@ public class ModifyScalingConfigurationRequest extends RpcAcsRequest<ModifyScali
 		}
 	}
 
-	public String getSystemDiskCategory() {
-		return this.systemDiskCategory;
+	public List<DataDisk> getDataDisks() {
+		return this.dataDisks;
 	}
 
-	public void setSystemDiskCategory(String systemDiskCategory) {
-		this.systemDiskCategory = systemDiskCategory;
-		if(systemDiskCategory != null){
-			putQueryParameter("SystemDisk.Category", systemDiskCategory);
-		}
+	public void setDataDisks(List<DataDisk> dataDisks) {
+		this.dataDisks = dataDisks;	
+		if (dataDisks != null) {
+			for (int depth1 = 0; depth1 < dataDisks.size(); depth1++) {
+				putQueryParameter("DataDisk." + (depth1 + 1) + ".SnapshotId" , dataDisks.get(depth1).getSnapshotId());
+				putQueryParameter("DataDisk." + (depth1 + 1) + ".Size" , dataDisks.get(depth1).getSize());
+				putQueryParameter("DataDisk." + (depth1 + 1) + ".Category" , dataDisks.get(depth1).getCategory());
+				putQueryParameter("DataDisk." + (depth1 + 1) + ".Device" , dataDisks.get(depth1).getDevice());
+				putQueryParameter("DataDisk." + (depth1 + 1) + ".DeleteWithInstance" , dataDisks.get(depth1).getDeleteWithInstance());
+			}
+		}	
 	}
 
 	public String getScalingConfigurationName() {
@@ -199,25 +295,14 @@ public class ModifyScalingConfigurationRequest extends RpcAcsRequest<ModifyScali
 		}
 	}
 
-	public String getUserData() {
-		return this.userData;
+	public String getSpotStrategy() {
+		return this.spotStrategy;
 	}
 
-	public void setUserData(String userData) {
-		this.userData = userData;
-		if(userData != null){
-			putQueryParameter("UserData", userData);
-		}
-	}
-
-	public String getHostName() {
-		return this.hostName;
-	}
-
-	public void setHostName(String hostName) {
-		this.hostName = hostName;
-		if(hostName != null){
-			putQueryParameter("HostName", hostName);
+	public void setSpotStrategy(String spotStrategy) {
+		this.spotStrategy = spotStrategy;
+		if(spotStrategy != null){
+			putQueryParameter("SpotStrategy", spotStrategy);
 		}
 	}
 
@@ -243,17 +328,6 @@ public class ModifyScalingConfigurationRequest extends RpcAcsRequest<ModifyScali
 		}
 	}
 
-	public Boolean getPasswordInherit() {
-		return this.passwordInherit;
-	}
-
-	public void setPasswordInherit(Boolean passwordInherit) {
-		this.passwordInherit = passwordInherit;
-		if(passwordInherit != null){
-			putQueryParameter("PasswordInherit", passwordInherit.toString());
-		}
-	}
-
 	public Integer getSystemDiskSize() {
 		return this.systemDiskSize;
 	}
@@ -273,6 +347,82 @@ public class ModifyScalingConfigurationRequest extends RpcAcsRequest<ModifyScali
 		this.internetChargeType = internetChargeType;
 		if(internetChargeType != null){
 			putQueryParameter("InternetChargeType", internetChargeType);
+		}
+	}
+
+	public static class SpotPriceLimit {
+
+		private String instanceType;
+
+		private Float priceLimit;
+
+		public String getInstanceType() {
+			return this.instanceType;
+		}
+
+		public void setInstanceType(String instanceType) {
+			this.instanceType = instanceType;
+		}
+
+		public Float getPriceLimit() {
+			return this.priceLimit;
+		}
+
+		public void setPriceLimit(Float priceLimit) {
+			this.priceLimit = priceLimit;
+		}
+	}
+
+	public static class DataDisk {
+
+		private String snapshotId;
+
+		private Integer size;
+
+		private String category;
+
+		private String device;
+
+		private Boolean deleteWithInstance;
+
+		public String getSnapshotId() {
+			return this.snapshotId;
+		}
+
+		public void setSnapshotId(String snapshotId) {
+			this.snapshotId = snapshotId;
+		}
+
+		public Integer getSize() {
+			return this.size;
+		}
+
+		public void setSize(Integer size) {
+			this.size = size;
+		}
+
+		public String getCategory() {
+			return this.category;
+		}
+
+		public void setCategory(String category) {
+			this.category = category;
+		}
+
+		public String getDevice() {
+			return this.device;
+		}
+
+		public void setDevice(String device) {
+			this.device = device;
+		}
+
+		public Boolean getDeleteWithInstance() {
+			return this.deleteWithInstance;
+		}
+
+		public void setDeleteWithInstance(Boolean deleteWithInstance) {
+			this.deleteWithInstance = deleteWithInstance;
 		}
 	}
 

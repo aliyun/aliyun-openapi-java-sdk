@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.ess.model.v20140828.DescribeScalingActivitiesResponse;
 import com.aliyuncs.ess.model.v20140828.DescribeScalingActivitiesResponse.ScalingActivity;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

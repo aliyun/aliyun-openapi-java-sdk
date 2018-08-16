@@ -22,6 +22,7 @@ import com.aliyuncs.ess.model.v20140828.DescribeScalingConfigurationsResponse.Sc
 import com.aliyuncs.ess.model.v20140828.DescribeScalingConfigurationsResponse.ScalingConfiguration.DataDisk;
 import com.aliyuncs.ess.model.v20140828.DescribeScalingConfigurationsResponse.ScalingConfiguration.SpotPriceModel;
 import com.aliyuncs.ess.model.v20140828.DescribeScalingConfigurationsResponse.ScalingConfiguration.Tag;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -42,6 +43,7 @@ public class DescribeScalingConfigurationsResponseUnmarshaller {
 			scalingConfiguration.setScalingGroupId(context.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].ScalingGroupId"));
 			scalingConfiguration.setInstanceName(context.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].InstanceName"));
 			scalingConfiguration.setImageId(context.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].ImageId"));
+			scalingConfiguration.setImageName(context.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].ImageName"));
 			scalingConfiguration.setHostName(context.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].HostName"));
 			scalingConfiguration.setInstanceType(context.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].InstanceType"));
 			scalingConfiguration.setInstanceGeneration(context.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].InstanceGeneration"));
@@ -76,6 +78,7 @@ public class DescribeScalingConfigurationsResponseUnmarshaller {
 				dataDisk.setCategory(context.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].DataDisks["+ j +"].Category"));
 				dataDisk.setSnapshotId(context.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].DataDisks["+ j +"].SnapshotId"));
 				dataDisk.setDevice(context.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].DataDisks["+ j +"].Device"));
+				dataDisk.setDeleteWithInstance(context.booleanValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].DataDisks["+ j +"].DeleteWithInstance"));
 
 				dataDisks.add(dataDisk);
 			}

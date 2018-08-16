@@ -24,7 +24,7 @@ import java.util.List;
 public class CreateScalingGroupRequest extends RpcAcsRequest<CreateScalingGroupResponse> {
 	
 	public CreateScalingGroupRequest() {
-		super("Ess", "2014-08-28", "CreateScalingGroup", "ESS");
+		super("Ess", "2014-08-28", "CreateScalingGroup", "ess");
 	}
 
 	private String multiAZPolicy;
@@ -130,7 +130,7 @@ public class CreateScalingGroupRequest extends RpcAcsRequest<CreateScalingGroupR
 	}
 
 	public void setVSwitchIds(List<String> vSwitchIds) {
-		this.vSwitchIds = vSwitchIds;	
+		this.vSwitchIds = vSwitchIds;
 		if (vSwitchIds != null) {
 			for (int i = 0; i < vSwitchIds.size(); i++) {
 				putQueryParameter("VSwitchIds." + (i + 1) , vSwitchIds.get(i));
@@ -201,12 +201,12 @@ public class CreateScalingGroupRequest extends RpcAcsRequest<CreateScalingGroupR
 		this.lifecycleHooks = lifecycleHooks;	
 		if (lifecycleHooks != null) {
 			for (int depth1 = 0; depth1 < lifecycleHooks.size(); depth1++) {
-				putQueryParameter("LifecycleHook." + (depth1 + 1) + ".LifecycleHookName" , lifecycleHooks.get(depth1).getLifecycleHookName());
-				putQueryParameter("LifecycleHook." + (depth1 + 1) + ".LifecycleTransition" , lifecycleHooks.get(depth1).getLifecycleTransition());
 				putQueryParameter("LifecycleHook." + (depth1 + 1) + ".DefaultResult" , lifecycleHooks.get(depth1).getDefaultResult());
+				putQueryParameter("LifecycleHook." + (depth1 + 1) + ".LifecycleHookName" , lifecycleHooks.get(depth1).getLifecycleHookName());
 				putQueryParameter("LifecycleHook." + (depth1 + 1) + ".HeartbeatTimeout" , lifecycleHooks.get(depth1).getHeartbeatTimeout());
-				putQueryParameter("LifecycleHook." + (depth1 + 1) + ".NotificationMetadata" , lifecycleHooks.get(depth1).getNotificationMetadata());
 				putQueryParameter("LifecycleHook." + (depth1 + 1) + ".NotificationArn" , lifecycleHooks.get(depth1).getNotificationArn());
+				putQueryParameter("LifecycleHook." + (depth1 + 1) + ".NotificationMetadata" , lifecycleHooks.get(depth1).getNotificationMetadata());
+				putQueryParameter("LifecycleHook." + (depth1 + 1) + ".LifecycleTransition" , lifecycleHooks.get(depth1).getLifecycleTransition());
 			}
 		}	
 	}
@@ -246,33 +246,17 @@ public class CreateScalingGroupRequest extends RpcAcsRequest<CreateScalingGroupR
 
 	public static class LifecycleHook {
 
-		private String lifecycleHookName;
-
-		private String lifecycleTransition;
-
 		private String defaultResult;
+
+		private String lifecycleHookName;
 
 		private Integer heartbeatTimeout;
 
-		private String notificationMetadata;
-
 		private String notificationArn;
 
-		public String getLifecycleHookName() {
-			return this.lifecycleHookName;
-		}
+		private String notificationMetadata;
 
-		public void setLifecycleHookName(String lifecycleHookName) {
-			this.lifecycleHookName = lifecycleHookName;
-		}
-
-		public String getLifecycleTransition() {
-			return this.lifecycleTransition;
-		}
-
-		public void setLifecycleTransition(String lifecycleTransition) {
-			this.lifecycleTransition = lifecycleTransition;
-		}
+		private String lifecycleTransition;
 
 		public String getDefaultResult() {
 			return this.defaultResult;
@@ -280,6 +264,14 @@ public class CreateScalingGroupRequest extends RpcAcsRequest<CreateScalingGroupR
 
 		public void setDefaultResult(String defaultResult) {
 			this.defaultResult = defaultResult;
+		}
+
+		public String getLifecycleHookName() {
+			return this.lifecycleHookName;
+		}
+
+		public void setLifecycleHookName(String lifecycleHookName) {
+			this.lifecycleHookName = lifecycleHookName;
 		}
 
 		public Integer getHeartbeatTimeout() {
@@ -290,6 +282,14 @@ public class CreateScalingGroupRequest extends RpcAcsRequest<CreateScalingGroupR
 			this.heartbeatTimeout = heartbeatTimeout;
 		}
 
+		public String getNotificationArn() {
+			return this.notificationArn;
+		}
+
+		public void setNotificationArn(String notificationArn) {
+			this.notificationArn = notificationArn;
+		}
+
 		public String getNotificationMetadata() {
 			return this.notificationMetadata;
 		}
@@ -298,12 +298,12 @@ public class CreateScalingGroupRequest extends RpcAcsRequest<CreateScalingGroupR
 			this.notificationMetadata = notificationMetadata;
 		}
 
-		public String getNotificationArn() {
-			return this.notificationArn;
+		public String getLifecycleTransition() {
+			return this.lifecycleTransition;
 		}
 
-		public void setNotificationArn(String notificationArn) {
-			this.notificationArn = notificationArn;
+		public void setLifecycleTransition(String lifecycleTransition) {
+			this.lifecycleTransition = lifecycleTransition;
 		}
 	}
 

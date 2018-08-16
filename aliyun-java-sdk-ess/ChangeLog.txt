@@ -1,3 +1,7 @@
+2018-08-16 Version: 2.2.4
+1, ModifyScalingConfiguration add imageName.
+2, CreateScalingConfiguration add imageName.
+
 2018-07-11 Version: 2.2.2
 1, new function: Attach and Detach Rds instance of scalingGroup.
 

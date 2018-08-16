@@ -24,22 +24,12 @@ import java.util.List;
 public class CreateScalingConfigurationRequest extends RpcAcsRequest<CreateScalingConfigurationResponse> {
 	
 	public CreateScalingConfigurationRequest() {
-		super("Ess", "2014-08-28", "CreateScalingConfiguration", "ESS");
+		super("Ess", "2014-08-28", "CreateScalingConfiguration", "ess");
 	}
-
-	private Integer dataDisk3Size;
 
 	private String imageId;
 
-	private String dataDisk1SnapshotId;
-
-	private String dataDisk3Category;
-
-	private String dataDisk1Device;
-
 	private String scalingGroupId;
-
-	private String dataDisk2Device;
 
 	private List<String> instanceTypes;
 
@@ -59,45 +49,29 @@ public class CreateScalingConfigurationRequest extends RpcAcsRequest<CreateScali
 
 	private String userData;
 
-	private String dataDisk4Category;
-
 	private String hostName;
-
-	private String dataDisk2SnapshotId;
 
 	private Boolean passwordInherit;
 
-	private Integer dataDisk4Size;
+	private String imageName;
 
 	private String instanceType;
-
-	private String dataDisk2Category;
-
-	private Integer dataDisk1Size;
-
-	private String dataDisk3SnapshotId;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
-	private Integer dataDisk2Size;
-
 	private String ramRoleName;
 
 	private Long ownerId;
+
+	private List<DataDisk> dataDisks;
 
 	private String scalingConfigurationName;
 
 	private String tags;
 
-	private String dataDisk2DeleteWithInstance;
-
 	private String spotStrategy;
-
-	private String dataDisk1Category;
-
-	private String dataDisk3DeleteWithInstance;
 
 	private Integer loadBalancerWeight;
 
@@ -105,30 +79,9 @@ public class CreateScalingConfigurationRequest extends RpcAcsRequest<CreateScali
 
 	private Integer systemDiskSize;
 
-	private String dataDisk4SnapshotId;
-
-	private String dataDisk4Device;
-
 	private String internetChargeType;
 
-	private String dataDisk3Device;
-
-	private String dataDisk4DeleteWithInstance;
-
 	private Integer internetMaxBandwidthIn;
-
-	private String dataDisk1DeleteWithInstance;
-
-	public Integer getDataDisk3Size() {
-		return this.dataDisk3Size;
-	}
-
-	public void setDataDisk3Size(Integer dataDisk3Size) {
-		this.dataDisk3Size = dataDisk3Size;
-		if(dataDisk3Size != null){
-			putQueryParameter("DataDisk.3.Size", dataDisk3Size.toString());
-		}
-	}
 
 	public String getImageId() {
 		return this.imageId;
@@ -138,39 +91,6 @@ public class CreateScalingConfigurationRequest extends RpcAcsRequest<CreateScali
 		this.imageId = imageId;
 		if(imageId != null){
 			putQueryParameter("ImageId", imageId);
-		}
-	}
-
-	public String getDataDisk1SnapshotId() {
-		return this.dataDisk1SnapshotId;
-	}
-
-	public void setDataDisk1SnapshotId(String dataDisk1SnapshotId) {
-		this.dataDisk1SnapshotId = dataDisk1SnapshotId;
-		if(dataDisk1SnapshotId != null){
-			putQueryParameter("DataDisk.1.SnapshotId", dataDisk1SnapshotId);
-		}
-	}
-
-	public String getDataDisk3Category() {
-		return this.dataDisk3Category;
-	}
-
-	public void setDataDisk3Category(String dataDisk3Category) {
-		this.dataDisk3Category = dataDisk3Category;
-		if(dataDisk3Category != null){
-			putQueryParameter("DataDisk.3.Category", dataDisk3Category);
-		}
-	}
-
-	public String getDataDisk1Device() {
-		return this.dataDisk1Device;
-	}
-
-	public void setDataDisk1Device(String dataDisk1Device) {
-		this.dataDisk1Device = dataDisk1Device;
-		if(dataDisk1Device != null){
-			putQueryParameter("DataDisk.1.Device", dataDisk1Device);
 		}
 	}
 
@@ -185,23 +105,12 @@ public class CreateScalingConfigurationRequest extends RpcAcsRequest<CreateScali
 		}
 	}
 
-	public String getDataDisk2Device() {
-		return this.dataDisk2Device;
-	}
-
-	public void setDataDisk2Device(String dataDisk2Device) {
-		this.dataDisk2Device = dataDisk2Device;
-		if(dataDisk2Device != null){
-			putQueryParameter("DataDisk.2.Device", dataDisk2Device);
-		}
-	}
-
 	public List<String> getInstanceTypes() {
 		return this.instanceTypes;
 	}
 
 	public void setInstanceTypes(List<String> instanceTypes) {
-		this.instanceTypes = instanceTypes;	
+		this.instanceTypes = instanceTypes;
 		if (instanceTypes != null) {
 			for (int i = 0; i < instanceTypes.size(); i++) {
 				putQueryParameter("InstanceTypes." + (i + 1) , instanceTypes.get(i));
@@ -300,17 +209,6 @@ public class CreateScalingConfigurationRequest extends RpcAcsRequest<CreateScali
 		}
 	}
 
-	public String getDataDisk4Category() {
-		return this.dataDisk4Category;
-	}
-
-	public void setDataDisk4Category(String dataDisk4Category) {
-		this.dataDisk4Category = dataDisk4Category;
-		if(dataDisk4Category != null){
-			putQueryParameter("DataDisk.4.Category", dataDisk4Category);
-		}
-	}
-
 	public String getHostName() {
 		return this.hostName;
 	}
@@ -319,17 +217,6 @@ public class CreateScalingConfigurationRequest extends RpcAcsRequest<CreateScali
 		this.hostName = hostName;
 		if(hostName != null){
 			putQueryParameter("HostName", hostName);
-		}
-	}
-
-	public String getDataDisk2SnapshotId() {
-		return this.dataDisk2SnapshotId;
-	}
-
-	public void setDataDisk2SnapshotId(String dataDisk2SnapshotId) {
-		this.dataDisk2SnapshotId = dataDisk2SnapshotId;
-		if(dataDisk2SnapshotId != null){
-			putQueryParameter("DataDisk.2.SnapshotId", dataDisk2SnapshotId);
 		}
 	}
 
@@ -344,14 +231,14 @@ public class CreateScalingConfigurationRequest extends RpcAcsRequest<CreateScali
 		}
 	}
 
-	public Integer getDataDisk4Size() {
-		return this.dataDisk4Size;
+	public String getImageName() {
+		return this.imageName;
 	}
 
-	public void setDataDisk4Size(Integer dataDisk4Size) {
-		this.dataDisk4Size = dataDisk4Size;
-		if(dataDisk4Size != null){
-			putQueryParameter("DataDisk.4.Size", dataDisk4Size.toString());
+	public void setImageName(String imageName) {
+		this.imageName = imageName;
+		if(imageName != null){
+			putQueryParameter("ImageName", imageName);
 		}
 	}
 
@@ -363,39 +250,6 @@ public class CreateScalingConfigurationRequest extends RpcAcsRequest<CreateScali
 		this.instanceType = instanceType;
 		if(instanceType != null){
 			putQueryParameter("InstanceType", instanceType);
-		}
-	}
-
-	public String getDataDisk2Category() {
-		return this.dataDisk2Category;
-	}
-
-	public void setDataDisk2Category(String dataDisk2Category) {
-		this.dataDisk2Category = dataDisk2Category;
-		if(dataDisk2Category != null){
-			putQueryParameter("DataDisk.2.Category", dataDisk2Category);
-		}
-	}
-
-	public Integer getDataDisk1Size() {
-		return this.dataDisk1Size;
-	}
-
-	public void setDataDisk1Size(Integer dataDisk1Size) {
-		this.dataDisk1Size = dataDisk1Size;
-		if(dataDisk1Size != null){
-			putQueryParameter("DataDisk.1.Size", dataDisk1Size.toString());
-		}
-	}
-
-	public String getDataDisk3SnapshotId() {
-		return this.dataDisk3SnapshotId;
-	}
-
-	public void setDataDisk3SnapshotId(String dataDisk3SnapshotId) {
-		this.dataDisk3SnapshotId = dataDisk3SnapshotId;
-		if(dataDisk3SnapshotId != null){
-			putQueryParameter("DataDisk.3.SnapshotId", dataDisk3SnapshotId);
 		}
 	}
 
@@ -421,17 +275,6 @@ public class CreateScalingConfigurationRequest extends RpcAcsRequest<CreateScali
 		}
 	}
 
-	public Integer getDataDisk2Size() {
-		return this.dataDisk2Size;
-	}
-
-	public void setDataDisk2Size(Integer dataDisk2Size) {
-		this.dataDisk2Size = dataDisk2Size;
-		if(dataDisk2Size != null){
-			putQueryParameter("DataDisk.2.Size", dataDisk2Size.toString());
-		}
-	}
-
 	public String getRamRoleName() {
 		return this.ramRoleName;
 	}
@@ -452,6 +295,23 @@ public class CreateScalingConfigurationRequest extends RpcAcsRequest<CreateScali
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
 		}
+	}
+
+	public List<DataDisk> getDataDisks() {
+		return this.dataDisks;
+	}
+
+	public void setDataDisks(List<DataDisk> dataDisks) {
+		this.dataDisks = dataDisks;	
+		if (dataDisks != null) {
+			for (int depth1 = 0; depth1 < dataDisks.size(); depth1++) {
+				putQueryParameter("DataDisk." + (depth1 + 1) + ".SnapshotId" , dataDisks.get(depth1).getSnapshotId());
+				putQueryParameter("DataDisk." + (depth1 + 1) + ".Size" , dataDisks.get(depth1).getSize());
+				putQueryParameter("DataDisk." + (depth1 + 1) + ".Category" , dataDisks.get(depth1).getCategory());
+				putQueryParameter("DataDisk." + (depth1 + 1) + ".Device" , dataDisks.get(depth1).getDevice());
+				putQueryParameter("DataDisk." + (depth1 + 1) + ".DeleteWithInstance" , dataDisks.get(depth1).getDeleteWithInstance());
+			}
+		}	
 	}
 
 	public String getScalingConfigurationName() {
@@ -476,17 +336,6 @@ public class CreateScalingConfigurationRequest extends RpcAcsRequest<CreateScali
 		}
 	}
 
-	public String getDataDisk2DeleteWithInstance() {
-		return this.dataDisk2DeleteWithInstance;
-	}
-
-	public void setDataDisk2DeleteWithInstance(String dataDisk2DeleteWithInstance) {
-		this.dataDisk2DeleteWithInstance = dataDisk2DeleteWithInstance;
-		if(dataDisk2DeleteWithInstance != null){
-			putQueryParameter("DataDisk.2.DeleteWithInstance", dataDisk2DeleteWithInstance);
-		}
-	}
-
 	public String getSpotStrategy() {
 		return this.spotStrategy;
 	}
@@ -495,28 +344,6 @@ public class CreateScalingConfigurationRequest extends RpcAcsRequest<CreateScali
 		this.spotStrategy = spotStrategy;
 		if(spotStrategy != null){
 			putQueryParameter("SpotStrategy", spotStrategy);
-		}
-	}
-
-	public String getDataDisk1Category() {
-		return this.dataDisk1Category;
-	}
-
-	public void setDataDisk1Category(String dataDisk1Category) {
-		this.dataDisk1Category = dataDisk1Category;
-		if(dataDisk1Category != null){
-			putQueryParameter("DataDisk.1.Category", dataDisk1Category);
-		}
-	}
-
-	public String getDataDisk3DeleteWithInstance() {
-		return this.dataDisk3DeleteWithInstance;
-	}
-
-	public void setDataDisk3DeleteWithInstance(String dataDisk3DeleteWithInstance) {
-		this.dataDisk3DeleteWithInstance = dataDisk3DeleteWithInstance;
-		if(dataDisk3DeleteWithInstance != null){
-			putQueryParameter("DataDisk.3.DeleteWithInstance", dataDisk3DeleteWithInstance);
 		}
 	}
 
@@ -553,28 +380,6 @@ public class CreateScalingConfigurationRequest extends RpcAcsRequest<CreateScali
 		}
 	}
 
-	public String getDataDisk4SnapshotId() {
-		return this.dataDisk4SnapshotId;
-	}
-
-	public void setDataDisk4SnapshotId(String dataDisk4SnapshotId) {
-		this.dataDisk4SnapshotId = dataDisk4SnapshotId;
-		if(dataDisk4SnapshotId != null){
-			putQueryParameter("DataDisk.4.SnapshotId", dataDisk4SnapshotId);
-		}
-	}
-
-	public String getDataDisk4Device() {
-		return this.dataDisk4Device;
-	}
-
-	public void setDataDisk4Device(String dataDisk4Device) {
-		this.dataDisk4Device = dataDisk4Device;
-		if(dataDisk4Device != null){
-			putQueryParameter("DataDisk.4.Device", dataDisk4Device);
-		}
-	}
-
 	public String getInternetChargeType() {
 		return this.internetChargeType;
 	}
@@ -586,28 +391,6 @@ public class CreateScalingConfigurationRequest extends RpcAcsRequest<CreateScali
 		}
 	}
 
-	public String getDataDisk3Device() {
-		return this.dataDisk3Device;
-	}
-
-	public void setDataDisk3Device(String dataDisk3Device) {
-		this.dataDisk3Device = dataDisk3Device;
-		if(dataDisk3Device != null){
-			putQueryParameter("DataDisk.3.Device", dataDisk3Device);
-		}
-	}
-
-	public String getDataDisk4DeleteWithInstance() {
-		return this.dataDisk4DeleteWithInstance;
-	}
-
-	public void setDataDisk4DeleteWithInstance(String dataDisk4DeleteWithInstance) {
-		this.dataDisk4DeleteWithInstance = dataDisk4DeleteWithInstance;
-		if(dataDisk4DeleteWithInstance != null){
-			putQueryParameter("DataDisk.4.DeleteWithInstance", dataDisk4DeleteWithInstance);
-		}
-	}
-
 	public Integer getInternetMaxBandwidthIn() {
 		return this.internetMaxBandwidthIn;
 	}
@@ -616,17 +399,6 @@ public class CreateScalingConfigurationRequest extends RpcAcsRequest<CreateScali
 		this.internetMaxBandwidthIn = internetMaxBandwidthIn;
 		if(internetMaxBandwidthIn != null){
 			putQueryParameter("InternetMaxBandwidthIn", internetMaxBandwidthIn.toString());
-		}
-	}
-
-	public String getDataDisk1DeleteWithInstance() {
-		return this.dataDisk1DeleteWithInstance;
-	}
-
-	public void setDataDisk1DeleteWithInstance(String dataDisk1DeleteWithInstance) {
-		this.dataDisk1DeleteWithInstance = dataDisk1DeleteWithInstance;
-		if(dataDisk1DeleteWithInstance != null){
-			putQueryParameter("DataDisk.1.DeleteWithInstance", dataDisk1DeleteWithInstance);
 		}
 	}
 
@@ -650,6 +422,59 @@ public class CreateScalingConfigurationRequest extends RpcAcsRequest<CreateScali
 
 		public void setPriceLimit(Float priceLimit) {
 			this.priceLimit = priceLimit;
+		}
+	}
+
+	public static class DataDisk {
+
+		private String snapshotId;
+
+		private Integer size;
+
+		private String category;
+
+		private String device;
+
+		private Boolean deleteWithInstance;
+
+		public String getSnapshotId() {
+			return this.snapshotId;
+		}
+
+		public void setSnapshotId(String snapshotId) {
+			this.snapshotId = snapshotId;
+		}
+
+		public Integer getSize() {
+			return this.size;
+		}
+
+		public void setSize(Integer size) {
+			this.size = size;
+		}
+
+		public String getCategory() {
+			return this.category;
+		}
+
+		public void setCategory(String category) {
+			this.category = category;
+		}
+
+		public String getDevice() {
+			return this.device;
+		}
+
+		public void setDevice(String device) {
+			this.device = device;
+		}
+
+		public Boolean getDeleteWithInstance() {
+			return this.deleteWithInstance;
+		}
+
+		public void setDeleteWithInstance(Boolean deleteWithInstance) {
+			this.deleteWithInstance = deleteWithInstance;
 		}
 	}
 
