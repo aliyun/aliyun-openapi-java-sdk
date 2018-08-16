@@ -43,6 +43,9 @@ public class QueryAuthenticationResponseUnmarshaller {
 			dataItem.setIotId(context.stringValue("QueryAuthenticationResponse.Data["+ i +"].IotId"));
 			dataItem.setBeginTime(context.stringValue("QueryAuthenticationResponse.Data["+ i +"].BeginTime"));
 			dataItem.setExpiredTime(context.stringValue("QueryAuthenticationResponse.Data["+ i +"].ExpiredTime"));
+			dataItem.setApkPubkey(context.stringValue("QueryAuthenticationResponse.Data["+ i +"].ApkPubkey"));
+			dataItem.setPackageName(context.stringValue("QueryAuthenticationResponse.Data["+ i +"].PackageName"));
+			dataItem.setClientId(context.stringValue("QueryAuthenticationResponse.Data["+ i +"].ClientId"));
 
 			data.add(dataItem);
 		}

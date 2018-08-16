@@ -125,6 +125,12 @@ public class QueryAuthenticationResponse extends AcsResponse {
 
 		private String expiredTime;
 
+		private String apkPubkey;
+
+		private String packageName;
+
+		private String clientId;
+
 		public Integer getLicenseType() {
 			return this.licenseType;
 		}
@@ -155,6 +161,30 @@ public class QueryAuthenticationResponse extends AcsResponse {
 
 		public void setExpiredTime(String expiredTime) {
 			this.expiredTime = expiredTime;
+		}
+
+		public String getApkPubkey() {
+			return this.apkPubkey;
+		}
+
+		public void setApkPubkey(String apkPubkey) {
+			this.apkPubkey = apkPubkey;
+		}
+
+		public String getPackageName() {
+			return this.packageName;
+		}
+
+		public void setPackageName(String packageName) {
+			this.packageName = packageName;
+		}
+
+		public String getClientId() {
+			return this.clientId;
+		}
+
+		public void setClientId(String clientId) {
+			this.clientId = clientId;
 		}
 	}
 
