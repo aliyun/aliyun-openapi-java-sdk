@@ -368,9 +368,9 @@ public class SearchMediaResponse extends AcsResponse {
 
 			private String transcodeMode;
 
-			private List<String> snapshots2;
+			private List<String> snapshots1;
 
-			private List<String> spriteSnapshots3;
+			private List<String> spriteSnapshots2;
 
 			public String getAudioId() {
 				return this.audioId;
@@ -516,20 +516,20 @@ public class SearchMediaResponse extends AcsResponse {
 				this.transcodeMode = transcodeMode;
 			}
 
-			public List<String> getSnapshots2() {
-				return this.snapshots2;
+			public List<String> getSnapshots1() {
+				return this.snapshots1;
 			}
 
-			public void setSnapshots2(List<String> snapshots2) {
-				this.snapshots2 = snapshots2;
+			public void setSnapshots1(List<String> snapshots1) {
+				this.snapshots1 = snapshots1;
 			}
 
-			public List<String> getSpriteSnapshots3() {
-				return this.spriteSnapshots3;
+			public List<String> getSpriteSnapshots2() {
+				return this.spriteSnapshots2;
 			}
 
-			public void setSpriteSnapshots3(List<String> spriteSnapshots3) {
-				this.spriteSnapshots3 = spriteSnapshots3;
+			public void setSpriteSnapshots2(List<String> spriteSnapshots2) {
+				this.spriteSnapshots2 = spriteSnapshots2;
 			}
 		}
 	}

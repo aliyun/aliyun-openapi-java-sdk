@@ -94,6 +94,12 @@ public class GetPlayInfoResponse extends AcsResponse {
 
 		private String status;
 
+		private String creationTime;
+
+		private String modificationTime;
+
+		private String encryptType;
+
 		public Long getWidth() {
 			return this.width;
 		}
@@ -237,11 +243,33 @@ public class GetPlayInfoResponse extends AcsResponse {
 		public void setStatus(String status) {
 			this.status = status;
 		}
+
+		public String getCreationTime() {
+			return this.creationTime;
+		}
+
+		public void setCreationTime(String creationTime) {
+			this.creationTime = creationTime;
+		}
+
+		public String getModificationTime() {
+			return this.modificationTime;
+		}
+
+		public void setModificationTime(String modificationTime) {
+			this.modificationTime = modificationTime;
+		}
+
+		public String getEncryptType() {
+			return this.encryptType;
+		}
+
+		public void setEncryptType(String encryptType) {
+			this.encryptType = encryptType;
+		}
 	}
 
 	public static class VideoBase {
-
-		private String outputType;
 
 		private String coverURL;
 
@@ -260,14 +288,6 @@ public class GetPlayInfoResponse extends AcsResponse {
 		private String transcodeMode;
 
 		private List<Thumbnail> thumbnailList;
-
-		public String getOutputType() {
-			return this.outputType;
-		}
-
-		public void setOutputType(String outputType) {
-			this.outputType = outputType;
-		}
 
 		public String getCoverURL() {
 			return this.coverURL;

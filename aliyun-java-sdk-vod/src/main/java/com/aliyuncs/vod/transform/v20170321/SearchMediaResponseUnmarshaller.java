@@ -94,17 +94,17 @@ public class SearchMediaResponseUnmarshaller {
 			audio.setRegionId(context.stringValue("SearchMediaResponse.MediaList["+ i +"].Audio.RegionId"));
 			audio.setTranscodeMode(context.stringValue("SearchMediaResponse.MediaList["+ i +"].Audio.TranscodeMode"));
 
-			List<String> snapshots2 = new ArrayList<String>();
+			List<String> snapshots1 = new ArrayList<String>();
 			for (int j = 0; j < context.lengthValue("SearchMediaResponse.MediaList["+ i +"].Audio.Snapshots.Length"); j++) {
-				snapshots2.add(context.stringValue("SearchMediaResponse.MediaList["+ i +"].Audio.Snapshots["+ j +"]"));
+				snapshots1.add(context.stringValue("SearchMediaResponse.MediaList["+ i +"].Audio.Snapshots["+ j +"]"));
 			}
-			audio.setSnapshots2(snapshots2);
+			audio.setSnapshots1(snapshots1);
 
-			List<String> spriteSnapshots3 = new ArrayList<String>();
+			List<String> spriteSnapshots2 = new ArrayList<String>();
 			for (int j = 0; j < context.lengthValue("SearchMediaResponse.MediaList["+ i +"].Audio.SpriteSnapshots.Length"); j++) {
-				spriteSnapshots3.add(context.stringValue("SearchMediaResponse.MediaList["+ i +"].Audio.SpriteSnapshots["+ j +"]"));
+				spriteSnapshots2.add(context.stringValue("SearchMediaResponse.MediaList["+ i +"].Audio.SpriteSnapshots["+ j +"]"));
 			}
-			audio.setSpriteSnapshots3(spriteSnapshots3);
+			audio.setSpriteSnapshots2(spriteSnapshots2);
 			media.setAudio(audio);
 
 			mediaList.add(media);

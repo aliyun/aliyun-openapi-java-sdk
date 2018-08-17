@@ -35,7 +35,7 @@ public class ListAuditSecurityIpResponseUnmarshaller {
 			securityIp.setSecurityGroupName(context.stringValue("ListAuditSecurityIpResponse.SecurityIpList["+ i +"].SecurityGroupName"));
 			securityIp.setIps(context.stringValue("ListAuditSecurityIpResponse.SecurityIpList["+ i +"].Ips"));
 			securityIp.setCreationTime(context.stringValue("ListAuditSecurityIpResponse.SecurityIpList["+ i +"].CreationTime"));
-			securityIp.setModifyTime(context.stringValue("ListAuditSecurityIpResponse.SecurityIpList["+ i +"].ModifyTime"));
+			securityIp.setModificationTime(context.stringValue("ListAuditSecurityIpResponse.SecurityIpList["+ i +"].ModificationTime"));
 
 			securityIpList.add(securityIp);
 		}

@@ -20,27 +20,27 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class GetMezzanineInfoRequest extends RpcAcsRequest<GetMezzanineInfoResponse> {
+public class DeleteImageRequest extends RpcAcsRequest<DeleteImageResponse> {
 	
-	public GetMezzanineInfoRequest() {
-		super("vod", "2017-03-21", "GetMezzanineInfo", "vod");
+	public DeleteImageRequest() {
+		super("vod", "2017-03-21", "DeleteImage", "vod");
 	}
 
 	private Long resourceOwnerId;
 
+	private String imageType;
+
 	private String resourceOwnerAccount;
+
+	private String imageURLs;
 
 	private String videoId;
 
-	private Boolean previewSegment;
-
-	private String outputType;
-
-	private String additionType;
-
 	private Long ownerId;
 
-	private Long authTimeout;
+	private String deleteImageType;
+
+	private String imageIds;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -50,6 +50,17 @@ public class GetMezzanineInfoRequest extends RpcAcsRequest<GetMezzanineInfoRespo
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getImageType() {
+		return this.imageType;
+	}
+
+	public void setImageType(String imageType) {
+		this.imageType = imageType;
+		if(imageType != null){
+			putQueryParameter("ImageType", imageType);
 		}
 	}
 
@@ -64,6 +75,17 @@ public class GetMezzanineInfoRequest extends RpcAcsRequest<GetMezzanineInfoRespo
 		}
 	}
 
+	public String getImageURLs() {
+		return this.imageURLs;
+	}
+
+	public void setImageURLs(String imageURLs) {
+		this.imageURLs = imageURLs;
+		if(imageURLs != null){
+			putQueryParameter("ImageURLs", imageURLs);
+		}
+	}
+
 	public String getVideoId() {
 		return this.videoId;
 	}
@@ -72,39 +94,6 @@ public class GetMezzanineInfoRequest extends RpcAcsRequest<GetMezzanineInfoRespo
 		this.videoId = videoId;
 		if(videoId != null){
 			putQueryParameter("VideoId", videoId);
-		}
-	}
-
-	public Boolean getPreviewSegment() {
-		return this.previewSegment;
-	}
-
-	public void setPreviewSegment(Boolean previewSegment) {
-		this.previewSegment = previewSegment;
-		if(previewSegment != null){
-			putQueryParameter("PreviewSegment", previewSegment.toString());
-		}
-	}
-
-	public String getOutputType() {
-		return this.outputType;
-	}
-
-	public void setOutputType(String outputType) {
-		this.outputType = outputType;
-		if(outputType != null){
-			putQueryParameter("OutputType", outputType);
-		}
-	}
-
-	public String getAdditionType() {
-		return this.additionType;
-	}
-
-	public void setAdditionType(String additionType) {
-		this.additionType = additionType;
-		if(additionType != null){
-			putQueryParameter("AdditionType", additionType);
 		}
 	}
 
@@ -119,20 +108,31 @@ public class GetMezzanineInfoRequest extends RpcAcsRequest<GetMezzanineInfoRespo
 		}
 	}
 
-	public Long getAuthTimeout() {
-		return this.authTimeout;
+	public String getDeleteImageType() {
+		return this.deleteImageType;
 	}
 
-	public void setAuthTimeout(Long authTimeout) {
-		this.authTimeout = authTimeout;
-		if(authTimeout != null){
-			putQueryParameter("AuthTimeout", authTimeout.toString());
+	public void setDeleteImageType(String deleteImageType) {
+		this.deleteImageType = deleteImageType;
+		if(deleteImageType != null){
+			putQueryParameter("DeleteImageType", deleteImageType);
+		}
+	}
+
+	public String getImageIds() {
+		return this.imageIds;
+	}
+
+	public void setImageIds(String imageIds) {
+		this.imageIds = imageIds;
+		if(imageIds != null){
+			putQueryParameter("ImageIds", imageIds);
 		}
 	}
 
 	@Override
-	public Class<GetMezzanineInfoResponse> getResponseClass() {
-		return GetMezzanineInfoResponse.class;
+	public Class<DeleteImageResponse> getResponseClass() {
+		return DeleteImageResponse.class;
 	}
 
 }

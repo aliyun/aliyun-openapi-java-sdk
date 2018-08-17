@@ -45,6 +45,7 @@ public class GetMezzanineInfoResponseUnmarshaller {
 		mezzanine.setFileName(context.stringValue("GetMezzanineInfoResponse.Mezzanine.FileName"));
 		mezzanine.setCRC64(context.stringValue("GetMezzanineInfoResponse.Mezzanine.CRC64"));
 		mezzanine.setPreprocessStatus(context.stringValue("GetMezzanineInfoResponse.Mezzanine.PreprocessStatus"));
+		mezzanine.setOutputType(context.stringValue("GetMezzanineInfoResponse.Mezzanine.OutputType"));
 
 		List<AudioStream> audioStreamList = new ArrayList<AudioStream>();
 		for (int i = 0; i < context.lengthValue("GetMezzanineInfoResponse.Mezzanine.AudioStreamList.Length"); i++) {

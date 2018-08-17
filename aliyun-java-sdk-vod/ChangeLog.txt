@@ -1,3 +1,9 @@
+2018-08-17 Version: 2.11.5
+1, Add a new api called DeleteImage to clear the image resource.
+2, Add the field called AdditionType and OutputType to GetMezzanineInfo api request.
+3, Add the field called OutputType to GetMezzanineInfo api response.
+4, Add the field called CreationTime and ModificationTime to GetPlayInfo api response.
+
 2018-08-04 Version: 2.11.4
 1, Add a new api called SetAuditSecurityIp to set audit security ip.
 2, Add a new api called ListAuditSecurityIp to query audit security ip list.

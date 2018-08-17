@@ -53,7 +53,7 @@ public class ListAuditSecurityIpResponse extends AcsResponse {
 
 		private String creationTime;
 
-		private String modifyTime;
+		private String modificationTime;
 
 		public String getSecurityGroupName() {
 			return this.securityGroupName;
@@ -79,12 +79,12 @@ public class ListAuditSecurityIpResponse extends AcsResponse {
 			this.creationTime = creationTime;
 		}
 
-		public String getModifyTime() {
-			return this.modifyTime;
+		public String getModificationTime() {
+			return this.modificationTime;
 		}
 
-		public void setModifyTime(String modifyTime) {
-			this.modifyTime = modifyTime;
+		public void setModificationTime(String modificationTime) {
+			this.modificationTime = modificationTime;
 		}
 	}
 

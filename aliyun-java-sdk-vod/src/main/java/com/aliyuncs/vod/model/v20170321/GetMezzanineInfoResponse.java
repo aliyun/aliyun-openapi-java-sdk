@@ -74,6 +74,8 @@ public class GetMezzanineInfoResponse extends AcsResponse {
 
 		private String preprocessStatus;
 
+		private String outputType;
+
 		private List<AudioStream> audioStreamList;
 
 		private List<VideoStream> videoStreamList;
@@ -180,6 +182,14 @@ public class GetMezzanineInfoResponse extends AcsResponse {
 
 		public void setPreprocessStatus(String preprocessStatus) {
 			this.preprocessStatus = preprocessStatus;
+		}
+
+		public String getOutputType() {
+			return this.outputType;
+		}
+
+		public void setOutputType(String outputType) {
+			this.outputType = outputType;
 		}
 
 		public List<AudioStream> getAudioStreamList() {

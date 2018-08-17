@@ -3,7 +3,7 @@
   <groupId>com.aliyun</groupId>
   <artifactId>aliyun-java-sdk-vod</artifactId>
   <packaging>jar</packaging>
-  <version>2.11.4</version>
+  <version>2.11.5</version>
     <name>aliyun-java-sdk-vod</name>
   <url>http://www.aliyun.com</url>
   <description>Aliyun Open API SDK for Java
