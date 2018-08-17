@@ -58,7 +58,11 @@ public interface IAcsClient {
     public <T extends AcsResponse> T getAcsResponse(AcsRequest<T> request,
                                                     String regionId, Credential credential)
         throws ServerException, ClientException;
-    
+
+    public <T extends AcsResponse> T getAcsResponse(AcsRequest<T> request,
+                                                    String regionId)
+        throws ServerException, ClientException;
+
     public CommonResponse getCommonResponse(CommonRequest request) throws ServerException, ClientException;
 
     public <T extends AcsResponse> HttpResponse doAction(AcsRequest<T> request, boolean autoRetry,
@@ -72,5 +76,11 @@ public interface IAcsClient {
                                                          Signer signer, FormatType format,
                                                          List<Endpoint> endpoints)
         throws ClientException, ServerException;
+
+    public void restoreSSLCertificate() ;
+
+    public void ignoreSSLCertificate() ;
+
+    public abstract void shutdown();
 
 }

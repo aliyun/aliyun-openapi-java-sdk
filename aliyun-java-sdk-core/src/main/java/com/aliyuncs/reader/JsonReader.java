@@ -23,6 +23,7 @@ import java.text.StringCharacterIterator;
 import java.util.HashMap;
 import java.util.Map;
 
+@Deprecated
 public class JsonReader implements Reader {
 
     private static final Object ARRAY_END_TOKEN = new Object();

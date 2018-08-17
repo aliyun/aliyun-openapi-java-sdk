@@ -27,6 +27,7 @@ import java.util.Map;
 
 import com.aliyuncs.auth.AlibabaCloudCredentials;
 import com.aliyuncs.auth.BasicSessionCredentials;
+import com.aliyuncs.auth.BearerTokenCredentials;
 import com.aliyuncs.auth.RoaSignatureComposer;
 import com.aliyuncs.auth.Signer;
 import com.aliyuncs.http.FormatType;
@@ -154,7 +155,13 @@ public abstract class RoaAcsRequest<T extends AcsResponse> extends AcsRequest<T>
                 if (null != sessionToken) {
                     imutableMap.put("x-acs-security-token", sessionToken);
                 }
-            } 
+            }
+            if (credentials instanceof BearerTokenCredentials) {
+                String bearerToken = ((BearerTokenCredentials)credentials).getBearerToken();
+                if (null != ((BearerTokenCredentials)credentials).getBearerToken()) {
+                    imutableMap.put("x-acs-bearer-token", bearerToken);
+                }
+            }
             String strToSign = this.composer.composeStringToSign(this.getMethod(), this.getUriPattern(), signer,
                 this.getQueryParameters(), imutableMap, this.getPathParameters());
             String signature = signer.signString(strToSign, credentials);

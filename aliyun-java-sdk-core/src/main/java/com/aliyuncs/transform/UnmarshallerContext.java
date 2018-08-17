@@ -18,12 +18,14 @@
  */
 package com.aliyuncs.transform;
 
+import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import com.aliyuncs.http.HttpResponse;
+import com.aliyuncs.utils.FlattenMapUtil;
 
 public class UnmarshallerContext {
-
     private int httpStatus;
     private Map<String, String> responseMap;
     private HttpResponse httpResponse;
@@ -78,6 +80,14 @@ public class UnmarshallerContext {
             return 0;
         }
         return Integer.valueOf(responseMap.get(key));
+    }
+
+    public List<Map<Object, Object>> listMapValue(String key) {
+        return FlattenMapUtil.toListMap(responseMap, key);
+    }
+
+    public Map<Object, Object> mapValue(String key) {
+        return FlattenMapUtil.toMap(responseMap, key);
     }
 
     public int getHttpStatus() {

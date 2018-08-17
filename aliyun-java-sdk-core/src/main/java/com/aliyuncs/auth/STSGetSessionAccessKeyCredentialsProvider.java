@@ -26,7 +26,7 @@ package com.aliyuncs.auth;
 import com.aliyuncs.DefaultAcsClient;
 import com.aliyuncs.IAcsClient;
 import com.aliyuncs.auth.sts.GetSessionAccessKeyRequest;
-import com.aliyuncs.auth.sts.GetSessionAccessKeyResponse;
+import com.aliyuncs.auth.sts.GenerateSessionAccessKeyResponse;
 import com.aliyuncs.exceptions.ClientException;
 import com.aliyuncs.exceptions.ServerException;
 import com.aliyuncs.http.ProtocolType;
@@ -66,11 +66,11 @@ public class STSGetSessionAccessKeyCredentialsProvider implements AlibabaCloudCr
         request.setDurationSeconds((int)sessionDurationSeconds);
         request.setProtocol(ProtocolType.HTTPS);
 
-        GetSessionAccessKeyResponse response = this.stsClient.getAcsResponse(request);
+        GenerateSessionAccessKeyResponse response = this.stsClient.getAcsResponse(request);
 
         return new BasicSessionCredentials(
-            response.getSessionAccesskey().getSessionAccessKeyId(),
-            response.getSessionAccesskey().getSessionAccessKeySecert(),
+            response.getSessionAccessKey().getSessionAccessKeyId(),
+            response.getSessionAccessKey().getSessionAccessKeySecert(),
             null,
             sessionDurationSeconds
         );

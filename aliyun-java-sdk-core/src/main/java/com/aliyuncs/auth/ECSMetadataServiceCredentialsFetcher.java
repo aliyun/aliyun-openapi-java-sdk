@@ -23,7 +23,6 @@ package com.aliyuncs.auth;
  * Created by haowei.yao on 2017/9/12.
  */
 
-import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -32,9 +31,9 @@ import com.aliyuncs.exceptions.ClientException;
 import com.aliyuncs.http.HttpRequest;
 import com.aliyuncs.http.HttpResponse;
 import com.aliyuncs.http.MethodType;
-import org.json.JSONException;
-import org.json.JSONObject;
-
+import com.aliyuncs.http.clients.CompatibleUrlConnClient;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 
 public class ECSMetadataServiceCredentialsFetcher {
     private static final String URL_IN_ECS_METADATA =
@@ -88,7 +87,7 @@ public class ECSMetadataServiceCredentialsFetcher {
         HttpResponse response;
 
         try {
-            response = HttpResponse.getResponse(request);
+            response = CompatibleUrlConnClient.compatibleGetResponse(request);
         } catch (Exception e) {
             throw new ClientException("Failed to connect ECS Metadata Service: " + e.toString());
         }
@@ -102,37 +101,33 @@ public class ECSMetadataServiceCredentialsFetcher {
 
     public InstanceProfileCredentials fetch() throws ClientException {
         String jsonContent = getMetadata();
-        JSONObject obj;
-        try {
-            obj = new JSONObject(jsonContent);
-        } catch (JSONException e) {
-            throw new ClientException(ECS_METADAT_FETCH_ERROR_MSG + " Reason: " + e.toString());
-        }
+        JsonObject jsonObject = null;
+        jsonObject = new JsonParser().parse(jsonContent).getAsJsonObject();
 
-        if (obj.has("Code") &&
-            obj.has("AccessKeyId") &&
-            obj.has("AccessKeySecret") &&
-            obj.has("SecurityToken") &&
-            obj.has("Expiration")) {
+        if (jsonObject.has("Code") &&
+            jsonObject.has("AccessKeyId") &&
+            jsonObject.has("AccessKeySecret") &&
+            jsonObject.has("SecurityToken") &&
+            jsonObject.has("Expiration")) {
 
         } else {
             throw new ClientException("Invalid json got from ECS Metadata service.");
         }
 
-        if (!"Success".equals(obj.getString("Code"))) {
+        if (!"Success".equals(jsonObject.get("Code").getAsString())) {
             throw new ClientException(ECS_METADAT_FETCH_ERROR_MSG);
         }
         return new InstanceProfileCredentials(
-            obj.getString("AccessKeyId"),
-            obj.getString("AccessKeySecret"),
-            obj.getString("SecurityToken"),
-            obj.getString("Expiration"),
+            jsonObject.get("AccessKeyId").getAsString(),
+            jsonObject.get("AccessKeySecret").getAsString(),
+            jsonObject.get("SecurityToken").getAsString(),
+            jsonObject.get("Expiration").getAsString(),
             DEFAULT_ECS_SESSION_TOKEN_DURATION_SECONDS
         );
     }
 
     public InstanceProfileCredentials fetch(int retryTimes) throws ClientException {
-        for (int i = 0; i <= retryTimes; i ++) {
+        for (int i = 0; i <= retryTimes; i++) {
             try {
                 return fetch();
             } catch (ClientException e) {

@@ -1,3 +1,30 @@
+2018-08-17 Version: 4.0.8
+1, add proxy for urlconnection
+
+2018-08-10 Version: 4.0.8
+1, fix ecsRamRole
+
+2018-05-24 Version: 4.0.2
+1, add https for DescribeEndpoint
+
+2018-05-04 Version: 4.0.1
+1, fix signatrue when query param contains empty string
+2, set httpclient default Accept-Encoding to "identity"
+
+
+2018-04-18 Version: 4.0.0
+1, Use Apache httpclient as default instead of UrlConnection
+2, Support user custome http client
+3, Support keepalive and connection pool
+4, Support async invoking
+5, In addition to the depedency of Apache Httpclient that may cause problems with maven package conflicts, other parts are backwards compatible.
+
+2018-04-14 Version: 3.7.1
+1, Support bearer Token
+
+2018-04-13 Version: 3.7.0
+1, Support bearer Token
+
 2018-03-13 Version: 3.6.0
 1, Supports specifying the https certificate path
 2, Optimize the logic for resolving Endpoint

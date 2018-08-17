@@ -10,6 +10,8 @@ import com.aliyuncs.exceptions.ClientException;
 import com.aliyuncs.http.FormatType;
 import com.aliyuncs.http.HttpRequest;
 import com.aliyuncs.http.HttpResponse;
+import com.aliyuncs.http.ProtocolType;
+import com.aliyuncs.http.clients.CompatibleUrlConnClient;
 import com.aliyuncs.reader.Reader;
 import com.aliyuncs.reader.ReaderFactory;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -27,12 +29,13 @@ public class DescribeEndpointServiceImpl implements DescribeEndpointService {
 
     @Override
     public DescribeEndpointResponse describeEndpoint(String regionId, String serviceCode, String endpointType,
-                                                     Credential credential, LocationConfig locationConfig) {
+                                                     Credential credential, LocationConfig locationConfig) throws ClientException {
         if (isEmpty(serviceCode)) {
             return null;
         }
 
         DescribeEndpointRequest request = new DescribeEndpointRequest();
+        request.setProtocol(ProtocolType.HTTPS);
         request.setAcceptFormat(FormatType.JSON);
         request.setId(regionId);
         request.setRegionId(locationConfig.getRegionId());
@@ -42,13 +45,12 @@ public class DescribeEndpointServiceImpl implements DescribeEndpointService {
             endpointType = DEFAULT_ENDPOINT_TYPE;
         }
         request.setEndpointType(endpointType);
-
         Signer signer = Signer.getSigner(new LegacyCredentials(credential));
         ProductDomain domain = new ProductDomain(locationConfig.getProduct(), locationConfig.getEndpoint());
 
         try {
             HttpRequest httpRequest = request.signRequest(signer, credential, FormatType.JSON, domain);
-            HttpResponse httpResponse = HttpResponse.getResponse(httpRequest);
+            HttpResponse httpResponse = CompatibleUrlConnClient.compatibleGetResponse(httpRequest);
             if (httpResponse.isSuccess()) {
                 String data = new String(httpResponse.getHttpContent(), "utf-8");
                 DescribeEndpointResponse response = getEndpointResponse(data, endpointType);
@@ -59,15 +61,18 @@ public class DescribeEndpointServiceImpl implements DescribeEndpointService {
             }
             AcsError error = readError(httpResponse, FormatType.JSON);
             if (500 <= httpResponse.getStatus()) {
-                System.out.println("Invoke_Error, requestId:" + error.getRequestId() + "; code:" + error.getErrorCode()
-                    + "; Msg" + error.getErrorMessage());
+                System.out.println("Invoke_LocationService_Error, requestId:" + error.getRequestId() + "; code:" + error.getErrorCode()
+                    + "; Msg: " + error.getErrorMessage());
                 return null;
             }
-            System.out.println("Invoke_Error, requestId:" + error.getRequestId() + "; code:" + error.getErrorCode()
-                + "; Msg" + error.getErrorMessage());
+            if (error.getErrorCode().equals("InvalidAccessKeyId.NotFound")) {
+                throw new ClientException(error.toString());
+            }
             return null;
+        } catch (ClientException e) {
+            throw e;
         } catch (Throwable e) {
-            System.out.println("Invoke Remote Error,Msg" + e.getMessage());
+            System.out.println("Invoke location service failed, message: " + e.getMessage());
             return null;
         }
     }

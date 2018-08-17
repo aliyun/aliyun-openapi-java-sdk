@@ -28,22 +28,24 @@ import java.util.Set;
 import com.aliyuncs.auth.Credential;
 
 import com.aliyuncs.exceptions.ClientException;
-import org.json.JSONObject;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 
 public class LocalEndpointResolver implements EndpointResolver {
 
     Map<String, EndpointData> endpointDataMap = new HashMap<String, EndpointData>();
 
     public LocalEndpointResolver() {
-        JSONObject endpointData = new JSONObject(EndpointConfig.ENDPOINT_PROFILE);
-        for (Object productDataObj : endpointData.getJSONArray("products")) {
-            JSONObject productData = (JSONObject)productDataObj;
+        JsonObject endpointData = (new JsonParser()).parse(EndpointConfig.ENDPOINT_PROFILE).getAsJsonObject();
+        for (JsonElement productDataObj : endpointData.get("products").getAsJsonArray()) {
+            JsonObject productData = productDataObj.getAsJsonObject();
             EndpointData data = new EndpointData();
-            data.setProduct(productData.getString("code"));
-            data.setGlobalEndpoint(productData.getString("global_endpoint"));
-            for (Object regionalDataObj : productData.getJSONArray("regional_endpoints")) {
-                JSONObject regionalData = (JSONObject)regionalDataObj;
-                data.getRegionalEndpoint().put(regionalData.getString("region"), regionalData.getString("endpoint"));
+            data.setProduct(productData.get("code").getAsString());
+            data.setGlobalEndpoint(productData.get("global_endpoint").getAsString());
+            for (JsonElement regionalDataObj : productData.get("regional_endpoints").getAsJsonArray()) {
+                JsonObject regionalData = regionalDataObj.getAsJsonObject();
+                data.getRegionalEndpoint().put(regionalData.get("region").getAsString(), regionalData.get("endpoint").getAsString());
             }
             endpointDataMap.put(data.getProduct(), data);
         }
@@ -52,7 +54,7 @@ public class LocalEndpointResolver implements EndpointResolver {
     @Override
     public Endpoint getEndpoint(String region, String product) throws ClientException {
 
-        EndpointData endpointData = this.endpointDataMap.get(product);
+        EndpointData endpointData = this.endpointDataMap.get(product.toLowerCase());
 
         if (endpointData == null) {
             return null;

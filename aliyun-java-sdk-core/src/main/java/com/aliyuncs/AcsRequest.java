@@ -47,7 +47,7 @@ public abstract class AcsRequest<T extends AcsResponse> extends HttpRequest {
     private String securityToken = null;
     private FormatType acceptFormat = null;
     protected ISignatureComposer composer = null;
-    private ProtocolType protocol = ProtocolType.HTTP;
+    private ProtocolType protocol = null;
     private final Map<String, String> queryParameters = new HashMap<String, String>();
     private final Map<String, String> domainParameters = new HashMap<String, String>();
     private final Map<String, String> bodyParameters = new HashMap<String, String>();

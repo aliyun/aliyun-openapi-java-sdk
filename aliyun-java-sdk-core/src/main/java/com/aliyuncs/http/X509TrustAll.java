@@ -18,66 +18,38 @@
  */
 package com.aliyuncs.http;
 
-import java.security.KeyManagementException;
-import java.security.NoSuchAlgorithmException;
-import java.security.cert.CertificateException;
-import java.security.cert.X509Certificate;
+import com.aliyuncs.IAcsClient;
+import com.aliyuncs.http.clients.CompatibleUrlConnClient;
 
-import javax.net.ssl.HostnameVerifier;
-import javax.net.ssl.HttpsURLConnection;
-import javax.net.ssl.SSLContext;
-import javax.net.ssl.SSLSession;
-import javax.net.ssl.SSLSocketFactory;
-import javax.net.ssl.TrustManager;
-import javax.net.ssl.X509TrustManager;
+public final class X509TrustAll {
 
-public final class X509TrustAll implements X509TrustManager, HostnameVerifier {
+    private static boolean ignoreSSLCerts = false;
 
-    private static HostnameVerifier defaultVerifier;
-    private static SSLSocketFactory defaultSSLFactory;
-
-    @Override
-    public boolean verify(String hostname, SSLSession session) {
-        return true;
-    }
-
-    @Override
-    public void checkClientTrusted(X509Certificate[] arg0, String arg1)
-        throws CertificateException {
-    }
-
-    @Override
-    public void checkServerTrusted(X509Certificate[] arg0, String arg1)
-        throws CertificateException {
-    }
-
-    @Override
-    public X509Certificate[] getAcceptedIssuers() {
-        return null;
-    }
-
+    @Deprecated
     public static void restoreSSLCertificate() {
-        if (null != defaultSSLFactory) {
-            HttpsURLConnection.setDefaultSSLSocketFactory(defaultSSLFactory);
-            HttpsURLConnection.setDefaultHostnameVerifier(defaultVerifier);
-        }
+        ignoreSSLCerts = false;
+        CompatibleUrlConnClient.HttpsCertIgnoreHelper.restoreSSLCertificate();
     }
 
     public static void ignoreSSLCertificate() {
-        try {
-            X509TrustAll trustAll = new X509TrustAll();
-            SSLContext sc = SSLContext.getInstance("SSL");
-            sc.init(null, new TrustManager[] {trustAll}, new java.security.SecureRandom());
-            if (null == defaultSSLFactory) {
-                defaultSSLFactory = HttpsURLConnection.getDefaultSSLSocketFactory();
-                defaultVerifier = HttpsURLConnection.getDefaultHostnameVerifier();
-            }
-            HttpsURLConnection.setDefaultSSLSocketFactory(sc.getSocketFactory());
-            HttpsURLConnection.setDefaultHostnameVerifier(trustAll);
-        } catch (NoSuchAlgorithmException e) {
-            throw new RuntimeException("Failed setting up all thrusting certificate manager.", e);
-        } catch (KeyManagementException e) {
-            throw new RuntimeException("Failed setting up all thrusting certificate manager.", e);
-        }
+        ignoreSSLCerts = true;
+        CompatibleUrlConnClient.HttpsCertIgnoreHelper.ignoreSSLCertificate();
+    }
+
+    public static void restoreSSLCertificate(IAcsClient client) {
+        client.restoreSSLCertificate();
+    }
+
+    public static void ignoreSSLCertificate(IAcsClient client) {
+        client.ignoreSSLCertificate();
+    }
+
+    /**
+     * to keep compatible while using ApacheHttpClient
+     *
+     * @return
+     */
+    public static boolean isIgnoreSSLCerts() {
+        return ignoreSSLCerts;
     }
 }
