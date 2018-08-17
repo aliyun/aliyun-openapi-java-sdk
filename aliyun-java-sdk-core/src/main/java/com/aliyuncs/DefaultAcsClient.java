@@ -281,12 +281,8 @@ public class DefaultAcsClient implements IAcsClient {
                     HttpResponse response;
                     response = this.httpClient.syncInvoke(httpRequest);
 
-                    if (500 <= response.getStatus() || response.getHttpContent() == null) {
-                        if (shouldRetry) {
+                    if ((500 <= response.getStatus() || response.getHttpContent() == null) && shouldRetry) {
                             continue;
-                        } else {
-                            throw new ClientException("SDK.UnknownError", response.getHttpContentString());
-                        }
                     }
                     return response;
                 } catch (SocketTimeoutException exp) {

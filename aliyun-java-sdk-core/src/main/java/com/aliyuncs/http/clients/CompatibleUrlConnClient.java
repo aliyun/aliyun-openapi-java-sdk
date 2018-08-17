@@ -4,7 +4,12 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
+import java.net.InetSocketAddress;
+import java.net.MalformedURLException;
+import java.net.Proxy;
+import java.net.SocketAddress;
 import java.net.URL;
 import java.security.KeyManagementException;
 import java.security.NoSuchAlgorithmException;
@@ -22,6 +27,7 @@ import javax.net.ssl.SSLSession;
 import javax.net.ssl.SSLSocketFactory;
 import javax.net.ssl.TrustManager;
 import javax.net.ssl.X509TrustManager;
+import javax.xml.bind.DatatypeConverter;
 
 import com.aliyuncs.exceptions.ClientException;
 import com.aliyuncs.http.CallBack;
@@ -94,7 +100,6 @@ public class CompatibleUrlConnClient extends IHttpClient {
     }
 
     private HttpURLConnection buildHttpConnection(HttpRequest request) throws IOException {
-        Map<String, String> mappedHeaders = request.getHeaders();
         String strUrl = request.getUrl();
 
         if (null == strUrl) {
@@ -115,14 +120,16 @@ public class CompatibleUrlConnClient extends IHttpClient {
         HttpURLConnection httpConn = null;
         if (url.getProtocol().equalsIgnoreCase("https")) {
             if (sslSocketFactory != null) {
-                HttpsURLConnection httpsConn = (HttpsURLConnection)url.openConnection();
+                Proxy proxy = getProxy("HTTPS_PROXY", request);
+                HttpsURLConnection httpsConn = (HttpsURLConnection)url.openConnection(proxy);
                 httpsConn.setSSLSocketFactory(sslSocketFactory);
                 httpConn = httpsConn;
             }
         }
 
         if (httpConn == null) {
-            httpConn = (HttpURLConnection)url.openConnection();
+            Proxy proxy = getProxy("HTTP_PROXY", request);
+            httpConn = (HttpURLConnection)url.openConnection(proxy);
         }
 
         httpConn.setRequestMethod(request.getMethod().toString());
@@ -138,6 +145,7 @@ public class CompatibleUrlConnClient extends IHttpClient {
             httpConn.setReadTimeout(request.getReadTimeout());
         }
 
+        Map<String, String> mappedHeaders = request.getHeaders();
         httpConn.setRequestProperty(ACCEPT_ENCODING, "identity");
         for (Entry<String, String> entry : mappedHeaders.entrySet()) {
             httpConn.setRequestProperty(entry.getKey(), entry.getValue());
@@ -220,6 +228,28 @@ public class CompatibleUrlConnClient extends IHttpClient {
     @Override
     public void close() throws IOException {
 
+    }
+
+    private Proxy getProxy(String env, HttpRequest request) throws MalformedURLException, UnsupportedEncodingException {
+        Proxy proxy = Proxy.NO_PROXY;
+        String httpProxy = System.getenv(env);
+        if (httpProxy != null) {
+            URL proxyUrl = new URL(httpProxy);
+            String userInfo = proxyUrl.getUserInfo();
+            if (userInfo != null) {
+                byte[] bytes = userInfo.getBytes("UTF-8");
+                String auth = DatatypeConverter.printBase64Binary(bytes);
+                request.putHeaderParameter("Proxy-Authorization", "Basic " + auth);
+            }
+            String hostname = proxyUrl.getHost();
+            int port = proxyUrl.getPort();
+            if (port == -1) {
+                port = proxyUrl.getDefaultPort();
+            }
+            SocketAddress addr = new InetSocketAddress(hostname, port);
+            proxy = new Proxy(Proxy.Type.HTTP, addr);
+        }
+        return proxy;
     }
 
     public static final class HttpsCertIgnoreHelper implements X509TrustManager, HostnameVerifier {
