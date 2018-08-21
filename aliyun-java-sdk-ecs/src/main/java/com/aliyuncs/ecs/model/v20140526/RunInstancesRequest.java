@@ -115,6 +115,8 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 
 	private String dedicatedHostId;
 
+	private String creditSpecification;
+
 	private List<DataDisk> dataDisks;
 
 	private Long launchTemplateVersion;
@@ -613,6 +615,17 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 		this.dedicatedHostId = dedicatedHostId;
 		if(dedicatedHostId != null){
 			putQueryParameter("DedicatedHostId", dedicatedHostId);
+		}
+	}
+
+	public String getCreditSpecification() {
+		return this.creditSpecification;
+	}
+
+	public void setCreditSpecification(String creditSpecification) {
+		this.creditSpecification = creditSpecification;
+		if(creditSpecification != null){
+			putQueryParameter("CreditSpecification", creditSpecification);
 		}
 	}
 

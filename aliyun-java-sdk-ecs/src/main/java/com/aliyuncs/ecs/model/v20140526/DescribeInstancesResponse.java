@@ -157,6 +157,8 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		private String stoppedMode;
 
+		private String creditSpecification;
+
 		private List<NetworkInterface> networkInterfaces;
 
 		private List<LockReason> operationLocks;
@@ -495,6 +497,14 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		public void setStoppedMode(String stoppedMode) {
 			this.stoppedMode = stoppedMode;
+		}
+
+		public String getCreditSpecification() {
+			return this.creditSpecification;
+		}
+
+		public void setCreditSpecification(String creditSpecification) {
+			this.creditSpecification = creditSpecification;
 		}
 
 		public List<NetworkInterface> getNetworkInterfaces() {

@@ -74,6 +74,8 @@ public class DescribeInstanceAttributeResponse extends AcsResponse {
 
 	private String stoppedMode;
 
+	private String creditSpecification;
+
 	private List<LockReason> operationLocks;
 
 	private List<String> securityGroupIds;
@@ -278,6 +280,14 @@ public class DescribeInstanceAttributeResponse extends AcsResponse {
 
 	public void setStoppedMode(String stoppedMode) {
 		this.stoppedMode = stoppedMode;
+	}
+
+	public String getCreditSpecification() {
+		return this.creditSpecification;
+	}
+
+	public void setCreditSpecification(String creditSpecification) {
+		this.creditSpecification = creditSpecification;
 	}
 
 	public List<LockReason> getOperationLocks() {

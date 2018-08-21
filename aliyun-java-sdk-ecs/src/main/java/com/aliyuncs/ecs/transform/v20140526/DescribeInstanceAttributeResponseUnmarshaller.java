@@ -54,6 +54,7 @@ public class DescribeInstanceAttributeResponseUnmarshaller {
 		describeInstanceAttributeResponse.setInstanceChargeType(context.stringValue("DescribeInstanceAttributeResponse.InstanceChargeType"));
 		describeInstanceAttributeResponse.setExpiredTime(context.stringValue("DescribeInstanceAttributeResponse.ExpiredTime"));
 		describeInstanceAttributeResponse.setStoppedMode(context.stringValue("DescribeInstanceAttributeResponse.StoppedMode"));
+		describeInstanceAttributeResponse.setCreditSpecification(context.stringValue("DescribeInstanceAttributeResponse.CreditSpecification"));
 
 		List<String> securityGroupIds = new ArrayList<String>();
 		for (int i = 0; i < context.lengthValue("DescribeInstanceAttributeResponse.SecurityGroupIds.Length"); i++) {

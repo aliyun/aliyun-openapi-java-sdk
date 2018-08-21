@@ -231,7 +231,7 @@ public class DescribeLaunchTemplateVersionsResponse extends AcsResponse {
 
 			private String resourceGroupId;
 
-			private Boolean securityEnhancementStrategy;
+			private String securityEnhancementStrategy;
 
 			private List<DataDisk> dataDisks;
 
@@ -487,11 +487,11 @@ public class DescribeLaunchTemplateVersionsResponse extends AcsResponse {
 				this.resourceGroupId = resourceGroupId;
 			}
 
-			public Boolean getSecurityEnhancementStrategy() {
+			public String getSecurityEnhancementStrategy() {
 				return this.securityEnhancementStrategy;
 			}
 
-			public void setSecurityEnhancementStrategy(Boolean securityEnhancementStrategy) {
+			public void setSecurityEnhancementStrategy(String securityEnhancementStrategy) {
 				this.securityEnhancementStrategy = securityEnhancementStrategy;
 			}
 

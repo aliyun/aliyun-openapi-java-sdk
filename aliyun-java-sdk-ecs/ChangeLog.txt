@@ -1,3 +1,6 @@
+2018-08-21 Version: 4.9.7
+1, Repair describeLaunchTemplateVersions securityEnhancementStrategy type
+
 2018-08-15 Version: 4.9.6
 1, Update ecs tag to 20 maximum
 
