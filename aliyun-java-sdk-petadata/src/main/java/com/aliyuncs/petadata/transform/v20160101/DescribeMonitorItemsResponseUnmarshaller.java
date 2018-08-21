@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.petadata.model.v20160101.DescribeMonitorItemsResponse;
 import com.aliyuncs.petadata.model.v20160101.DescribeMonitorItemsResponse.MonitorItem;
 import com.aliyuncs.petadata.model.v20160101.DescribeMonitorItemsResponse.MonitorItem.MonitorItemModel;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

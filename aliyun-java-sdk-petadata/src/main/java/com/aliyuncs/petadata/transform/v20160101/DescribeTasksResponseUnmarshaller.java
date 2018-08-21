@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.petadata.model.v20160101.DescribeTasksResponse;
 import com.aliyuncs.petadata.model.v20160101.DescribeTasksResponse.Task;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

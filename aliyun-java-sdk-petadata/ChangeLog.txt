@@ -1,3 +1,6 @@
+2018-08-21 Version: 1.0.1
+1, Add API DescribeInstanceInfoByConnection
+
 2018-08-02 Version: 1.0.0
 1, init version 1.0.0
 

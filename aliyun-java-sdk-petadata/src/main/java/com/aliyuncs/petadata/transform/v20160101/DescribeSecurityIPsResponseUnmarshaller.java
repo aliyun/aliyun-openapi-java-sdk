@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.petadata.model.v20160101.DescribeSecurityIPsResponse;
 import com.aliyuncs.petadata.model.v20160101.DescribeSecurityIPsResponse.SecurityIpGroup;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

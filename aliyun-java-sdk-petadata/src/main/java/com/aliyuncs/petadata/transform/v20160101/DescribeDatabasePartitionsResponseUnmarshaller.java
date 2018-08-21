@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.petadata.model.v20160101.DescribeDatabasePartitionsResponse;
 import com.aliyuncs.petadata.model.v20160101.DescribeDatabasePartitionsResponse.Partition;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

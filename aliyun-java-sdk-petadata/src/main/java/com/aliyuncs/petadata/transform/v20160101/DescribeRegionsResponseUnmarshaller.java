@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.petadata.model.v20160101.DescribeRegionsResponse;
 import com.aliyuncs.petadata.model.v20160101.DescribeRegionsResponse.Region;
 import com.aliyuncs.petadata.model.v20160101.DescribeRegionsResponse.Region.Zone;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

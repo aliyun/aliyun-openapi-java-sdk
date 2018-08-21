@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.petadata.model.v20160101.DescribePriceResponse;
 import com.aliyuncs.petadata.model.v20160101.DescribePriceResponse.Order;
 import com.aliyuncs.petadata.model.v20160101.DescribePriceResponse.Rule;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
