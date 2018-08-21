@@ -28,6 +28,7 @@ public class GetFaceSetResponseUnmarshaller {
 		getFaceSetResponse.setPhotos(context.longValue("GetFaceSetResponse.Photos"));
 		getFaceSetResponse.setCreateTime(context.stringValue("GetFaceSetResponse.CreateTime"));
 		getFaceSetResponse.setModifyTime(context.stringValue("GetFaceSetResponse.ModifyTime"));
+		getFaceSetResponse.setFaces(context.longValue("GetFaceSetResponse.Faces"));
 	 
 	 	return getFaceSetResponse;
 	}

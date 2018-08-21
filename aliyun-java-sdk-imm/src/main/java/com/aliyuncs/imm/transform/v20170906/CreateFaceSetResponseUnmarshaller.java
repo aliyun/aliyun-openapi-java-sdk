@@ -28,6 +28,7 @@ public class CreateFaceSetResponseUnmarshaller {
 		createFaceSetResponse.setPhotos(context.longValue("CreateFaceSetResponse.Photos"));
 		createFaceSetResponse.setCreateTime(context.stringValue("CreateFaceSetResponse.CreateTime"));
 		createFaceSetResponse.setModifyTime(context.stringValue("CreateFaceSetResponse.ModifyTime"));
+		createFaceSetResponse.setFaces(context.longValue("CreateFaceSetResponse.Faces"));
 	 
 	 	return createFaceSetResponse;
 	}

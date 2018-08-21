@@ -20,30 +20,45 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class DeleteFaceSearchImageByIdRequest extends RpcAcsRequest<DeleteFaceSearchImageByIdResponse> {
+public class RegistFaceRequest extends RpcAcsRequest<RegistFaceResponse> {
 	
-	public DeleteFaceSearchImageByIdRequest() {
-		super("imm", "2017-09-06", "DeleteFaceSearchImageById", "imm");
+	public RegistFaceRequest() {
+		super("imm", "2017-09-06", "RegistFace", "imm");
 	}
 
-	private String imageId;
+	private Boolean chooseBiggestFace;
+
+	private Boolean isQualityLimit;
 
 	private String project;
 
 	private String srcUri;
 
+	private String registerCheckLevel;
+
 	private String groupName;
 
 	private String user;
 
-	public String getImageId() {
-		return this.imageId;
+	public Boolean getChooseBiggestFace() {
+		return this.chooseBiggestFace;
 	}
 
-	public void setImageId(String imageId) {
-		this.imageId = imageId;
-		if(imageId != null){
-			putQueryParameter("ImageId", imageId);
+	public void setChooseBiggestFace(Boolean chooseBiggestFace) {
+		this.chooseBiggestFace = chooseBiggestFace;
+		if(chooseBiggestFace != null){
+			putQueryParameter("ChooseBiggestFace", chooseBiggestFace.toString());
+		}
+	}
+
+	public Boolean getIsQualityLimit() {
+		return this.isQualityLimit;
+	}
+
+	public void setIsQualityLimit(Boolean isQualityLimit) {
+		this.isQualityLimit = isQualityLimit;
+		if(isQualityLimit != null){
+			putQueryParameter("IsQualityLimit", isQualityLimit.toString());
 		}
 	}
 
@@ -66,6 +81,17 @@ public class DeleteFaceSearchImageByIdRequest extends RpcAcsRequest<DeleteFaceSe
 		this.srcUri = srcUri;
 		if(srcUri != null){
 			putQueryParameter("SrcUri", srcUri);
+		}
+	}
+
+	public String getRegisterCheckLevel() {
+		return this.registerCheckLevel;
+	}
+
+	public void setRegisterCheckLevel(String registerCheckLevel) {
+		this.registerCheckLevel = registerCheckLevel;
+		if(registerCheckLevel != null){
+			putQueryParameter("RegisterCheckLevel", registerCheckLevel);
 		}
 	}
 
@@ -92,8 +118,8 @@ public class DeleteFaceSearchImageByIdRequest extends RpcAcsRequest<DeleteFaceSe
 	}
 
 	@Override
-	public Class<DeleteFaceSearchImageByIdResponse> getResponseClass() {
-		return DeleteFaceSearchImageByIdResponse.class;
+	public Class<RegistFaceResponse> getResponseClass() {
+		return RegistFaceResponse.class;
 	}
 
 }

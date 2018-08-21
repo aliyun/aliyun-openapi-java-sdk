@@ -107,7 +107,7 @@ public class IndexFaceResponseUnmarshaller {
 				Blur blur = new Blur();
 
 				Blurness blurness = new Blurness();
-				blurness.setBalue(context.floatValue("IndexFaceResponse.SuccessDetails["+ i +"].Faces["+ j +"].FaceAttribute.Blur.Blurness.Balue"));
+				blurness.setValue(context.floatValue("IndexFaceResponse.SuccessDetails["+ i +"].Faces["+ j +"].FaceAttribute.Blur.Blurness.Value"));
 				blurness.setThreshold(context.floatValue("IndexFaceResponse.SuccessDetails["+ i +"].Faces["+ j +"].FaceAttribute.Blur.Blurness.Threshold"));
 				blur.setBlurness(blurness);
 				faceAttribute.setBlur(blur);

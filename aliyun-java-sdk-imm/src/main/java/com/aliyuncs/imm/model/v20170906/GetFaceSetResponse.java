@@ -36,6 +36,8 @@ public class GetFaceSetResponse extends AcsResponse {
 
 	private String modifyTime;
 
+	private Long faces;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -82,6 +84,14 @@ public class GetFaceSetResponse extends AcsResponse {
 
 	public void setModifyTime(String modifyTime) {
 		this.modifyTime = modifyTime;
+	}
+
+	public Long getFaces() {
+		return this.faces;
+	}
+
+	public void setFaces(Long faces) {
+		this.faces = faces;
 	}
 
 	@Override

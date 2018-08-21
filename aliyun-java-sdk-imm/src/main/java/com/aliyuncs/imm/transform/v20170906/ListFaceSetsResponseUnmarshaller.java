@@ -38,6 +38,7 @@ public class ListFaceSetsResponseUnmarshaller {
 			setsItem.setPhotos(context.longValue("ListFaceSetsResponse.Sets["+ i +"].Photos"));
 			setsItem.setCreateTime(context.stringValue("ListFaceSetsResponse.Sets["+ i +"].CreateTime"));
 			setsItem.setModifyTime(context.stringValue("ListFaceSetsResponse.Sets["+ i +"].ModifyTime"));
+			setsItem.setFaces(context.longValue("ListFaceSetsResponse.Sets["+ i +"].Faces"));
 
 			sets.add(setsItem);
 		}

@@ -1,3 +1,9 @@
+2018-08-21 Version: 1.7.3
+1, DeleteFaceSearchImageByIdRequest add field: srcUri(String).
+2, CreateFaceSetResponse  add field: faces(Long).
+3, GetFaceSetResponse add field: faces(Long).
+4, Fix class Blurness in IndexFaceResponse.
+
 2018-08-04 Version: 1.7.2
 1, CreateOfficeConversionTask add TgtFilePages field to specify the final uploaded page
 

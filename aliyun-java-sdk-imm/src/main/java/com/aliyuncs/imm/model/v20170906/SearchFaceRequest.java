@@ -20,30 +20,32 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class DeleteFaceSearchImageByIdRequest extends RpcAcsRequest<DeleteFaceSearchImageByIdResponse> {
+public class SearchFaceRequest extends RpcAcsRequest<SearchFaceResponse> {
 	
-	public DeleteFaceSearchImageByIdRequest() {
-		super("imm", "2017-09-06", "DeleteFaceSearchImageById", "imm");
+	public SearchFaceRequest() {
+		super("imm", "2017-09-06", "SearchFace", "imm");
 	}
 
-	private String imageId;
+	private Integer resultNum;
 
 	private String project;
 
+	private String searchThresholdLevel;
+
 	private String srcUri;
+
+	private Boolean isThreshold;
 
 	private String groupName;
 
-	private String user;
-
-	public String getImageId() {
-		return this.imageId;
+	public Integer getResultNum() {
+		return this.resultNum;
 	}
 
-	public void setImageId(String imageId) {
-		this.imageId = imageId;
-		if(imageId != null){
-			putQueryParameter("ImageId", imageId);
+	public void setResultNum(Integer resultNum) {
+		this.resultNum = resultNum;
+		if(resultNum != null){
+			putQueryParameter("ResultNum", resultNum.toString());
 		}
 	}
 
@@ -58,6 +60,17 @@ public class DeleteFaceSearchImageByIdRequest extends RpcAcsRequest<DeleteFaceSe
 		}
 	}
 
+	public String getSearchThresholdLevel() {
+		return this.searchThresholdLevel;
+	}
+
+	public void setSearchThresholdLevel(String searchThresholdLevel) {
+		this.searchThresholdLevel = searchThresholdLevel;
+		if(searchThresholdLevel != null){
+			putQueryParameter("SearchThresholdLevel", searchThresholdLevel);
+		}
+	}
+
 	public String getSrcUri() {
 		return this.srcUri;
 	}
@@ -66,6 +79,17 @@ public class DeleteFaceSearchImageByIdRequest extends RpcAcsRequest<DeleteFaceSe
 		this.srcUri = srcUri;
 		if(srcUri != null){
 			putQueryParameter("SrcUri", srcUri);
+		}
+	}
+
+	public Boolean getIsThreshold() {
+		return this.isThreshold;
+	}
+
+	public void setIsThreshold(Boolean isThreshold) {
+		this.isThreshold = isThreshold;
+		if(isThreshold != null){
+			putQueryParameter("IsThreshold", isThreshold.toString());
 		}
 	}
 
@@ -80,20 +104,9 @@ public class DeleteFaceSearchImageByIdRequest extends RpcAcsRequest<DeleteFaceSe
 		}
 	}
 
-	public String getUser() {
-		return this.user;
-	}
-
-	public void setUser(String user) {
-		this.user = user;
-		if(user != null){
-			putQueryParameter("User", user);
-		}
-	}
-
 	@Override
-	public Class<DeleteFaceSearchImageByIdResponse> getResponseClass() {
-		return DeleteFaceSearchImageByIdResponse.class;
+	public Class<SearchFaceResponse> getResponseClass() {
+		return SearchFaceResponse.class;
 	}
 
 }

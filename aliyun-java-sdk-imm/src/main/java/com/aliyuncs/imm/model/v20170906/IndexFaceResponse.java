@@ -466,16 +466,16 @@ public class IndexFaceResponse extends AcsResponse {
 
 					public static class Blurness {
 
-						private Float balue;
+						private Float value;
 
 						private Float threshold;
 
-						public Float getBalue() {
-							return this.balue;
+						public Float getValue() {
+							return this.value;
 						}
 
-						public void setBalue(Float balue) {
-							this.balue = balue;
+						public void setValue(Float value) {
+							this.value = value;
 						}
 
 						public Float getThreshold() {
