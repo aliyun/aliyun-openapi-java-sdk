@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.dds.model.v20151201;
 
 import com.aliyuncs.AcsResponse;
@@ -30,6 +31,8 @@ public class DescribeBackupPolicyResponse extends AcsResponse {
 	private String preferredBackupTime;
 
 	private String preferredBackupPeriod;
+
+	private String preferredNextBackupTime;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -61,6 +64,14 @@ public class DescribeBackupPolicyResponse extends AcsResponse {
 
 	public void setPreferredBackupPeriod(String preferredBackupPeriod) {
 		this.preferredBackupPeriod = preferredBackupPeriod;
+	}
+
+	public String getPreferredNextBackupTime() {
+		return this.preferredNextBackupTime;
+	}
+
+	public void setPreferredNextBackupTime(String preferredNextBackupTime) {
+		this.preferredNextBackupTime = preferredNextBackupTime;
 	}
 
 	@Override

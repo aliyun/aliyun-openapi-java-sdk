@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.dds.transform.v20151201;
 
 import com.aliyuncs.dds.model.v20151201.DescribeBackupPolicyResponse;
@@ -25,6 +26,7 @@ public class DescribeBackupPolicyResponseUnmarshaller {
 		describeBackupPolicyResponse.setBackupRetentionPeriod(context.stringValue("DescribeBackupPolicyResponse.BackupRetentionPeriod"));
 		describeBackupPolicyResponse.setPreferredBackupTime(context.stringValue("DescribeBackupPolicyResponse.PreferredBackupTime"));
 		describeBackupPolicyResponse.setPreferredBackupPeriod(context.stringValue("DescribeBackupPolicyResponse.PreferredBackupPeriod"));
+		describeBackupPolicyResponse.setPreferredNextBackupTime(context.stringValue("DescribeBackupPolicyResponse.PreferredNextBackupTime"));
 	 
 	 	return describeBackupPolicyResponse;
 	}

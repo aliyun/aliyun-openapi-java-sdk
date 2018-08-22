@@ -1,21 +1,17 @@
 /*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
+
 package com.aliyuncs.dds.model.v20151201;
 
 import com.aliyuncs.RpcAcsRequest;
@@ -70,6 +66,8 @@ public class CreateShardingDBInstanceRequest extends RpcAcsRequest<CreateShardin
 	private String vSwitchId;
 
 	private String accountPassword;
+
+	private String autoRenew;
 
 	private String vpcId;
 
@@ -129,8 +127,8 @@ public class CreateShardingDBInstanceRequest extends RpcAcsRequest<CreateShardin
 		this.replicaSets = replicaSets;	
 		if (replicaSets != null) {
 			for (int depth1 = 0; depth1 < replicaSets.size(); depth1++) {
-				putQueryParameter("ReplicaSet." + (depth1 + 1) + ".Class" , replicaSets.get(depth1).get_Class());
 				putQueryParameter("ReplicaSet." + (depth1 + 1) + ".Storage" , replicaSets.get(depth1).getStorage());
+				putQueryParameter("ReplicaSet." + (depth1 + 1) + ".Class" , replicaSets.get(depth1).get_Class());
 			}
 		}	
 	}
@@ -242,8 +240,8 @@ public class CreateShardingDBInstanceRequest extends RpcAcsRequest<CreateShardin
 		this.configServers = configServers;	
 		if (configServers != null) {
 			for (int depth1 = 0; depth1 < configServers.size(); depth1++) {
-				putQueryParameter("ConfigServer." + (depth1 + 1) + ".Class" , configServers.get(depth1).get_Class());
 				putQueryParameter("ConfigServer." + (depth1 + 1) + ".Storage" , configServers.get(depth1).getStorage());
+				putQueryParameter("ConfigServer." + (depth1 + 1) + ".Class" , configServers.get(depth1).get_Class());
 			}
 		}	
 	}
@@ -305,6 +303,17 @@ public class CreateShardingDBInstanceRequest extends RpcAcsRequest<CreateShardin
 		}
 	}
 
+	public String getAutoRenew() {
+		return this.autoRenew;
+	}
+
+	public void setAutoRenew(String autoRenew) {
+		this.autoRenew = autoRenew;
+		if(autoRenew != null){
+			putQueryParameter("AutoRenew", autoRenew);
+		}
+	}
+
 	public String getVpcId() {
 		return this.vpcId;
 	}
@@ -340,17 +349,9 @@ public class CreateShardingDBInstanceRequest extends RpcAcsRequest<CreateShardin
 
 	public static class ReplicaSet {
 
-		private String _class;
-
 		private Integer storage;
 
-		public String get_Class() {
-			return this._class;
-		}
-
-		public void set_Class(String _class) {
-			this._class = _class;
-		}
+		private String _class;
 
 		public Integer getStorage() {
 			return this.storage;
@@ -358,22 +359,22 @@ public class CreateShardingDBInstanceRequest extends RpcAcsRequest<CreateShardin
 
 		public void setStorage(Integer storage) {
 			this.storage = storage;
+		}
+
+		public String get_Class() {
+			return this._class;
+		}
+
+		public void set_Class(String _class) {
+			this._class = _class;
 		}
 	}
 
 	public static class ConfigServer {
 
-		private String _class;
-
 		private Integer storage;
 
-		public String get_Class() {
-			return this._class;
-		}
-
-		public void set_Class(String _class) {
-			this._class = _class;
-		}
+		private String _class;
 
 		public Integer getStorage() {
 			return this.storage;
@@ -381,6 +382,14 @@ public class CreateShardingDBInstanceRequest extends RpcAcsRequest<CreateShardin
 
 		public void setStorage(Integer storage) {
 			this.storage = storage;
+		}
+
+		public String get_Class() {
+			return this._class;
+		}
+
+		public void set_Class(String _class) {
+			this._class = _class;
 		}
 	}
 

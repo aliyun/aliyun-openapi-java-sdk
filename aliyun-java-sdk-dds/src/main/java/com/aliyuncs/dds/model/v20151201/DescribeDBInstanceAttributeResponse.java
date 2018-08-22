@@ -1,21 +1,17 @@
 /*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
+
 package com.aliyuncs.dds.model.v20151201;
 
 import java.util.List;
@@ -69,6 +65,12 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 
 		private Integer dBInstanceStorage;
 
+		private String replacateId;
+
+		private String vPCId;
+
+		private String vSwitchId;
+
 		private String dBInstanceStatus;
 
 		private String lockMode;
@@ -90,6 +92,14 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 		private String dBInstanceType;
 
 		private Integer lastDowngradeTime;
+
+		private String replicationFactor;
+
+		private Integer maxIOPS;
+
+		private Integer maxConnections;
+
+		private String currentKernelVersion;
 
 		private List<MongosAttribute> mongosList;
 
@@ -165,6 +175,30 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 
 		public void setDBInstanceStorage(Integer dBInstanceStorage) {
 			this.dBInstanceStorage = dBInstanceStorage;
+		}
+
+		public String getReplacateId() {
+			return this.replacateId;
+		}
+
+		public void setReplacateId(String replacateId) {
+			this.replacateId = replacateId;
+		}
+
+		public String getVPCId() {
+			return this.vPCId;
+		}
+
+		public void setVPCId(String vPCId) {
+			this.vPCId = vPCId;
+		}
+
+		public String getVSwitchId() {
+			return this.vSwitchId;
+		}
+
+		public void setVSwitchId(String vSwitchId) {
+			this.vSwitchId = vSwitchId;
 		}
 
 		public String getDBInstanceStatus() {
@@ -255,6 +289,38 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 			this.lastDowngradeTime = lastDowngradeTime;
 		}
 
+		public String getReplicationFactor() {
+			return this.replicationFactor;
+		}
+
+		public void setReplicationFactor(String replicationFactor) {
+			this.replicationFactor = replicationFactor;
+		}
+
+		public Integer getMaxIOPS() {
+			return this.maxIOPS;
+		}
+
+		public void setMaxIOPS(Integer maxIOPS) {
+			this.maxIOPS = maxIOPS;
+		}
+
+		public Integer getMaxConnections() {
+			return this.maxConnections;
+		}
+
+		public void setMaxConnections(Integer maxConnections) {
+			this.maxConnections = maxConnections;
+		}
+
+		public String getCurrentKernelVersion() {
+			return this.currentKernelVersion;
+		}
+
+		public void setCurrentKernelVersion(String currentKernelVersion) {
+			this.currentKernelVersion = currentKernelVersion;
+		}
+
 		public List<MongosAttribute> getMongosList() {
 			return this.mongosList;
 		}
@@ -280,6 +346,10 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 			private String nodeClass;
 
 			private String connectSting;
+
+			private Integer maxIOPS;
+
+			private Integer maxConnections;
 
 			private Integer port;
 
@@ -315,6 +385,22 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 				this.connectSting = connectSting;
 			}
 
+			public Integer getMaxIOPS() {
+				return this.maxIOPS;
+			}
+
+			public void setMaxIOPS(Integer maxIOPS) {
+				this.maxIOPS = maxIOPS;
+			}
+
+			public Integer getMaxConnections() {
+				return this.maxConnections;
+			}
+
+			public void setMaxConnections(Integer maxConnections) {
+				this.maxConnections = maxConnections;
+			}
+
 			public Integer getPort() {
 				return this.port;
 			}
@@ -333,6 +419,10 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 			private String nodeClass;
 
 			private Integer nodeStorage;
+
+			private Integer maxIOPS;
+
+			private Integer maxConnections;
 
 			public String getNodeId() {
 				return this.nodeId;
@@ -364,6 +454,22 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 
 			public void setNodeStorage(Integer nodeStorage) {
 				this.nodeStorage = nodeStorage;
+			}
+
+			public Integer getMaxIOPS() {
+				return this.maxIOPS;
+			}
+
+			public void setMaxIOPS(Integer maxIOPS) {
+				this.maxIOPS = maxIOPS;
+			}
+
+			public Integer getMaxConnections() {
+				return this.maxConnections;
+			}
+
+			public void setMaxConnections(Integer maxConnections) {
+				this.maxConnections = maxConnections;
 			}
 		}
 	}

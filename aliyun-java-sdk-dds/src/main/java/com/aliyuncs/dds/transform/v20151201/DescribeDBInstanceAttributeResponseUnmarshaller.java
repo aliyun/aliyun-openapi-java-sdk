@@ -1,21 +1,17 @@
 /*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
+
 package com.aliyuncs.dds.transform.v20151201;
 
 import java.util.ArrayList;
@@ -25,6 +21,7 @@ import com.aliyuncs.dds.model.v20151201.DescribeDBInstanceAttributeResponse;
 import com.aliyuncs.dds.model.v20151201.DescribeDBInstanceAttributeResponse.DBInstance;
 import com.aliyuncs.dds.model.v20151201.DescribeDBInstanceAttributeResponse.DBInstance.MongosAttribute;
 import com.aliyuncs.dds.model.v20151201.DescribeDBInstanceAttributeResponse.DBInstance.ShardAttribute;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -46,6 +43,9 @@ public class DescribeDBInstanceAttributeResponseUnmarshaller {
 			dBInstance.setStorageEngine(context.stringValue("DescribeDBInstanceAttributeResponse.DBInstances["+ i +"].StorageEngine"));
 			dBInstance.setDBInstanceClass(context.stringValue("DescribeDBInstanceAttributeResponse.DBInstances["+ i +"].DBInstanceClass"));
 			dBInstance.setDBInstanceStorage(context.integerValue("DescribeDBInstanceAttributeResponse.DBInstances["+ i +"].DBInstanceStorage"));
+			dBInstance.setReplacateId(context.stringValue("DescribeDBInstanceAttributeResponse.DBInstances["+ i +"].ReplacateId"));
+			dBInstance.setVPCId(context.stringValue("DescribeDBInstanceAttributeResponse.DBInstances["+ i +"].VPCId"));
+			dBInstance.setVSwitchId(context.stringValue("DescribeDBInstanceAttributeResponse.DBInstances["+ i +"].VSwitchId"));
 			dBInstance.setDBInstanceStatus(context.stringValue("DescribeDBInstanceAttributeResponse.DBInstances["+ i +"].DBInstanceStatus"));
 			dBInstance.setLockMode(context.stringValue("DescribeDBInstanceAttributeResponse.DBInstances["+ i +"].LockMode"));
 			dBInstance.setChargeType(context.stringValue("DescribeDBInstanceAttributeResponse.DBInstances["+ i +"].ChargeType"));
@@ -57,6 +57,10 @@ public class DescribeDBInstanceAttributeResponseUnmarshaller {
 			dBInstance.setMaintainEndTime(context.stringValue("DescribeDBInstanceAttributeResponse.DBInstances["+ i +"].MaintainEndTime"));
 			dBInstance.setDBInstanceType(context.stringValue("DescribeDBInstanceAttributeResponse.DBInstances["+ i +"].DBInstanceType"));
 			dBInstance.setLastDowngradeTime(context.integerValue("DescribeDBInstanceAttributeResponse.DBInstances["+ i +"].LastDowngradeTime"));
+			dBInstance.setReplicationFactor(context.stringValue("DescribeDBInstanceAttributeResponse.DBInstances["+ i +"].ReplicationFactor"));
+			dBInstance.setMaxIOPS(context.integerValue("DescribeDBInstanceAttributeResponse.DBInstances["+ i +"].MaxIOPS"));
+			dBInstance.setMaxConnections(context.integerValue("DescribeDBInstanceAttributeResponse.DBInstances["+ i +"].MaxConnections"));
+			dBInstance.setCurrentKernelVersion(context.stringValue("DescribeDBInstanceAttributeResponse.DBInstances["+ i +"].CurrentKernelVersion"));
 
 			List<MongosAttribute> mongosList = new ArrayList<MongosAttribute>();
 			for (int j = 0; j < context.lengthValue("DescribeDBInstanceAttributeResponse.DBInstances["+ i +"].MongosList.Length"); j++) {
@@ -65,6 +69,8 @@ public class DescribeDBInstanceAttributeResponseUnmarshaller {
 				mongosAttribute.setNodeDescription(context.stringValue("DescribeDBInstanceAttributeResponse.DBInstances["+ i +"].MongosList["+ j +"].NodeDescription"));
 				mongosAttribute.setNodeClass(context.stringValue("DescribeDBInstanceAttributeResponse.DBInstances["+ i +"].MongosList["+ j +"].NodeClass"));
 				mongosAttribute.setConnectSting(context.stringValue("DescribeDBInstanceAttributeResponse.DBInstances["+ i +"].MongosList["+ j +"].ConnectSting"));
+				mongosAttribute.setMaxIOPS(context.integerValue("DescribeDBInstanceAttributeResponse.DBInstances["+ i +"].MongosList["+ j +"].MaxIOPS"));
+				mongosAttribute.setMaxConnections(context.integerValue("DescribeDBInstanceAttributeResponse.DBInstances["+ i +"].MongosList["+ j +"].MaxConnections"));
 				mongosAttribute.setPort(context.integerValue("DescribeDBInstanceAttributeResponse.DBInstances["+ i +"].MongosList["+ j +"].Port"));
 
 				mongosList.add(mongosAttribute);
@@ -78,6 +84,8 @@ public class DescribeDBInstanceAttributeResponseUnmarshaller {
 				shardAttribute.setNodeDescription(context.stringValue("DescribeDBInstanceAttributeResponse.DBInstances["+ i +"].ShardList["+ j +"].NodeDescription"));
 				shardAttribute.setNodeClass(context.stringValue("DescribeDBInstanceAttributeResponse.DBInstances["+ i +"].ShardList["+ j +"].NodeClass"));
 				shardAttribute.setNodeStorage(context.integerValue("DescribeDBInstanceAttributeResponse.DBInstances["+ i +"].ShardList["+ j +"].NodeStorage"));
+				shardAttribute.setMaxIOPS(context.integerValue("DescribeDBInstanceAttributeResponse.DBInstances["+ i +"].ShardList["+ j +"].MaxIOPS"));
+				shardAttribute.setMaxConnections(context.integerValue("DescribeDBInstanceAttributeResponse.DBInstances["+ i +"].ShardList["+ j +"].MaxConnections"));
 
 				shardList.add(shardAttribute);
 			}
