@@ -1,3 +1,7 @@
+2018-08-22 Version: 4.10.0
+1, Add api CreateSimulatedSystemEvents, support creating one or more simulated system events.
+2, Add api CancelSimulatedSystemEvents, support cancelling one or more simulated system events.
+
 2018-08-21 Version: 4.9.7
 1, Repair describeLaunchTemplateVersions securityEnhancementStrategy type
 
