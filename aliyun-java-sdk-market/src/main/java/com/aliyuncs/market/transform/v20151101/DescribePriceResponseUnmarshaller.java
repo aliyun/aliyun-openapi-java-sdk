@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.market.model.v20151101.DescribePriceResponse;
 import com.aliyuncs.market.model.v20151101.DescribePriceResponse.PromotionRule;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

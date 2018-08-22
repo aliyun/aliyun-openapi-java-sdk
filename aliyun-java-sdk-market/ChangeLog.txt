@@ -1,3 +1,7 @@
+2018-08-22 Version: 2.0.10
+1, add DescribePrice implement
+2, add DescribeProducts interface
+
 2018-05-15 Version: 2.0.9
 1, add instanceId for createorder
 

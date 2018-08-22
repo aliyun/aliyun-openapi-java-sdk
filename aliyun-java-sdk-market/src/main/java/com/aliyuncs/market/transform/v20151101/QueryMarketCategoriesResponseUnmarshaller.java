@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.market.model.v20151101.QueryMarketCategoriesResponse;
 import com.aliyuncs.market.model.v20151101.QueryMarketCategoriesResponse.Category;
 import com.aliyuncs.market.model.v20151101.QueryMarketCategoriesResponse.Category.ChildCategory;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

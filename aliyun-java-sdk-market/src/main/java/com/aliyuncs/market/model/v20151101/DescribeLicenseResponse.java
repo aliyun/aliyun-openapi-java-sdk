@@ -15,6 +15,7 @@
 package com.aliyuncs.market.model.v20151101;
 
 import java.util.List;
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.market.transform.v20151101.DescribeLicenseResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;

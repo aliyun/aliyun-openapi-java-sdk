@@ -21,6 +21,7 @@ import com.aliyuncs.market.model.v20151101.DescribeLicenseResponse;
 import com.aliyuncs.market.model.v20151101.DescribeLicenseResponse.License;
 import com.aliyuncs.market.model.v20151101.DescribeLicenseResponse.License.ExtendInfo;
 import com.aliyuncs.market.model.v20151101.DescribeLicenseResponse.License.LicenseAttribute;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
