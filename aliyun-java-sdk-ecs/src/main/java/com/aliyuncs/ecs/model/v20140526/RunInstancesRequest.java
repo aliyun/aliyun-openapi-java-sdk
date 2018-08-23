@@ -63,6 +63,8 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 
 	private String spotStrategy;
 
+	private String privateIpAddress;
+
 	private String periodUnit;
 
 	private String instanceName;
@@ -323,6 +325,17 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 		this.spotStrategy = spotStrategy;
 		if(spotStrategy != null){
 			putQueryParameter("SpotStrategy", spotStrategy);
+		}
+	}
+
+	public String getPrivateIpAddress() {
+		return this.privateIpAddress;
+	}
+
+	public void setPrivateIpAddress(String privateIpAddress) {
+		this.privateIpAddress = privateIpAddress;
+		if(privateIpAddress != null){
+			putQueryParameter("PrivateIpAddress", privateIpAddress);
 		}
 	}
 

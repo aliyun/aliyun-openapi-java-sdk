@@ -26,38 +26,27 @@ public class DescribeRouteTablesRequest extends RpcAcsRequest<DescribeRouteTable
 		super("Ecs", "2014-05-26", "DescribeRouteTables", "ecs");
 	}
 
-	private String routerType;
-
 	private Long resourceOwnerId;
-
-	private String routeTableName;
 
 	private String vRouterId;
 
 	private String resourceOwnerAccount;
 
-	private String routerId;
-
 	private String ownerAccount;
-
-	private Integer pageSize;
 
 	private Long ownerId;
 
 	private Integer pageNumber;
 
+	private String routerType;
+
+	private String routeTableName;
+
+	private String routerId;
+
+	private Integer pageSize;
+
 	private String routeTableId;
-
-	public String getRouterType() {
-		return this.routerType;
-	}
-
-	public void setRouterType(String routerType) {
-		this.routerType = routerType;
-		if(routerType != null){
-			putQueryParameter("RouterType", routerType);
-		}
-	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -67,17 +56,6 @@ public class DescribeRouteTablesRequest extends RpcAcsRequest<DescribeRouteTable
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getRouteTableName() {
-		return this.routeTableName;
-	}
-
-	public void setRouteTableName(String routeTableName) {
-		this.routeTableName = routeTableName;
-		if(routeTableName != null){
-			putQueryParameter("RouteTableName", routeTableName);
 		}
 	}
 
@@ -103,17 +81,6 @@ public class DescribeRouteTablesRequest extends RpcAcsRequest<DescribeRouteTable
 		}
 	}
 
-	public String getRouterId() {
-		return this.routerId;
-	}
-
-	public void setRouterId(String routerId) {
-		this.routerId = routerId;
-		if(routerId != null){
-			putQueryParameter("RouterId", routerId);
-		}
-	}
-
 	public String getOwnerAccount() {
 		return this.ownerAccount;
 	}
@@ -122,17 +89,6 @@ public class DescribeRouteTablesRequest extends RpcAcsRequest<DescribeRouteTable
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 
@@ -155,6 +111,50 @@ public class DescribeRouteTablesRequest extends RpcAcsRequest<DescribeRouteTable
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public String getRouterType() {
+		return this.routerType;
+	}
+
+	public void setRouterType(String routerType) {
+		this.routerType = routerType;
+		if(routerType != null){
+			putQueryParameter("RouterType", routerType);
+		}
+	}
+
+	public String getRouteTableName() {
+		return this.routeTableName;
+	}
+
+	public void setRouteTableName(String routeTableName) {
+		this.routeTableName = routeTableName;
+		if(routeTableName != null){
+			putQueryParameter("RouteTableName", routeTableName);
+		}
+	}
+
+	public String getRouterId() {
+		return this.routerId;
+	}
+
+	public void setRouterId(String routerId) {
+		this.routerId = routerId;
+		if(routerId != null){
+			putQueryParameter("RouterId", routerId);
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 
