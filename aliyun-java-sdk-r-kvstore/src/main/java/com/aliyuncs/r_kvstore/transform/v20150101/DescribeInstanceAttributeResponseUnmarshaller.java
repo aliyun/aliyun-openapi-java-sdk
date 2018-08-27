@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.r_kvstore.model.v20150101.DescribeInstanceAttributeResponse;
 import com.aliyuncs.r_kvstore.model.v20150101.DescribeInstanceAttributeResponse.DBInstanceAttribute;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -64,8 +65,11 @@ public class DescribeInstanceAttributeResponseUnmarshaller {
 			dBInstanceAttribute.setArchitectureType(context.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].ArchitectureType"));
 			dBInstanceAttribute.setNodeType1(context.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].NodeType"));
 			dBInstanceAttribute.setPackageType(context.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].PackageType"));
-			dBInstanceAttribute.setReplacateId(context.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].ReplacateId"));
-			dBInstanceAttribute.setEngineVersion2(context.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].EngineVersion"));
+			dBInstanceAttribute.setReplicaId(context.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].ReplicaId"));
+			dBInstanceAttribute.setVpcAuthMode(context.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].VpcAuthMode"));
+			dBInstanceAttribute.setVpcAuthMode2(context.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].VpcAuthMode"));
+			dBInstanceAttribute.setReplicationMode(context.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].ReplicationMode"));
+			dBInstanceAttribute.setLuaStatus(context.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].LuaStatus"));
 
 			instances.add(dBInstanceAttribute);
 		}

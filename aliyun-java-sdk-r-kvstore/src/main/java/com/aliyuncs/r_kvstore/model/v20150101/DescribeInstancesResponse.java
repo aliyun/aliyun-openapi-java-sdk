@@ -135,6 +135,8 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		private String engineVersion;
 
+		private String destroyTime;
+
 		public String getReplacateId() {
 			return this.replacateId;
 		}
@@ -365,6 +367,14 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		public void setEngineVersion(String engineVersion) {
 			this.engineVersion = engineVersion;
+		}
+
+		public String getDestroyTime() {
+			return this.destroyTime;
+		}
+
+		public void setDestroyTime(String destroyTime) {
+			this.destroyTime = destroyTime;
 		}
 	}
 

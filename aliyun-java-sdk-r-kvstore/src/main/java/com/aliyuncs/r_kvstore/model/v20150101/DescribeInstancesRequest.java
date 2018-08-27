@@ -44,6 +44,8 @@ public class DescribeInstancesRequest extends RpcAcsRequest<DescribeInstancesRes
 
 	private String vSwitchId;
 
+	private String expired;
+
 	private String securityToken;
 
 	private String instanceIds;
@@ -152,6 +154,17 @@ public class DescribeInstancesRequest extends RpcAcsRequest<DescribeInstancesRes
 		this.vSwitchId = vSwitchId;
 		if(vSwitchId != null){
 			putQueryParameter("VSwitchId", vSwitchId);
+		}
+	}
+
+	public String getExpired() {
+		return this.expired;
+	}
+
+	public void setExpired(String expired) {
+		this.expired = expired;
+		if(expired != null){
+			putQueryParameter("Expired", expired);
 		}
 	}
 

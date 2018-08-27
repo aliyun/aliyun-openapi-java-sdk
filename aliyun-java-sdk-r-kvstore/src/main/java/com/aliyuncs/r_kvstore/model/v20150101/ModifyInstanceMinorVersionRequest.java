@@ -26,6 +26,8 @@ public class ModifyInstanceMinorVersionRequest extends RpcAcsRequest<ModifyInsta
 		super("R-kvstore", "2015-01-01", "ModifyInstanceMinorVersion", "redisa");
 	}
 
+	private String executeMode;
+
 	private Long resourceOwnerId;
 
 	private String instanceId;
@@ -39,6 +41,17 @@ public class ModifyInstanceMinorVersionRequest extends RpcAcsRequest<ModifyInsta
 	private String ownerAccount;
 
 	private Long ownerId;
+
+	public String getExecuteMode() {
+		return this.executeMode;
+	}
+
+	public void setExecuteMode(String executeMode) {
+		this.executeMode = executeMode;
+		if(executeMode != null){
+			putQueryParameter("ExecuteMode", executeMode);
+		}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;

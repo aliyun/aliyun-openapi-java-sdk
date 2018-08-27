@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.r_kvstore.model.v20150101.DescribeRdsVSwitchsResponse;
 import com.aliyuncs.r_kvstore.model.v20150101.DescribeRdsVSwitchsResponse.VSwitches;
 import com.aliyuncs.r_kvstore.model.v20150101.DescribeRdsVSwitchsResponse.VSwitches.VSwitchItem;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

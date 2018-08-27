@@ -83,6 +83,8 @@ public class DescribeReplicasResponse extends AcsResponse {
 
 		private String replicaStatus;
 
+		private String replicationClusterStatus;
+
 		private String replicaMode;
 
 		private String domainMode;
@@ -111,6 +113,14 @@ public class DescribeReplicasResponse extends AcsResponse {
 
 		public void setReplicaStatus(String replicaStatus) {
 			this.replicaStatus = replicaStatus;
+		}
+
+		public String getReplicationClusterStatus() {
+			return this.replicationClusterStatus;
+		}
+
+		public void setReplicationClusterStatus(String replicationClusterStatus) {
+			this.replicationClusterStatus = replicationClusterStatus;
 		}
 
 		public String getReplicaMode() {
@@ -145,6 +155,18 @@ public class DescribeReplicasResponse extends AcsResponse {
 
 			private String readWriteType;
 
+			private String instanceNetworkType;
+
+			private String dBInstanceDescription;
+
+			private String dBInstanceStatus;
+
+			private String engine;
+
+			private String regionId;
+
+			private String zoneId;
+
 			public String getDBInstanceId() {
 				return this.dBInstanceId;
 			}
@@ -167,6 +189,54 @@ public class DescribeReplicasResponse extends AcsResponse {
 
 			public void setReadWriteType(String readWriteType) {
 				this.readWriteType = readWriteType;
+			}
+
+			public String getInstanceNetworkType() {
+				return this.instanceNetworkType;
+			}
+
+			public void setInstanceNetworkType(String instanceNetworkType) {
+				this.instanceNetworkType = instanceNetworkType;
+			}
+
+			public String getDBInstanceDescription() {
+				return this.dBInstanceDescription;
+			}
+
+			public void setDBInstanceDescription(String dBInstanceDescription) {
+				this.dBInstanceDescription = dBInstanceDescription;
+			}
+
+			public String getDBInstanceStatus() {
+				return this.dBInstanceStatus;
+			}
+
+			public void setDBInstanceStatus(String dBInstanceStatus) {
+				this.dBInstanceStatus = dBInstanceStatus;
+			}
+
+			public String getEngine() {
+				return this.engine;
+			}
+
+			public void setEngine(String engine) {
+				this.engine = engine;
+			}
+
+			public String getRegionId() {
+				return this.regionId;
+			}
+
+			public void setRegionId(String regionId) {
+				this.regionId = regionId;
+			}
+
+			public String getZoneId() {
+				return this.zoneId;
+			}
+
+			public void setZoneId(String zoneId) {
+				this.zoneId = zoneId;
 			}
 		}
 	}

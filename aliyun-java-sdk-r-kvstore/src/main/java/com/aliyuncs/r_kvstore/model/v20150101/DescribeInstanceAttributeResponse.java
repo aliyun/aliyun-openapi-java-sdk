@@ -113,9 +113,15 @@ public class DescribeInstanceAttributeResponse extends AcsResponse {
 
 		private String packageType;
 
-		private String replacateId;
+		private String replicaId;
 
-		private String engineVersion2;
+		private String vpcAuthMode;
+
+		private String vpcAuthMode2;
+
+		private String replicationMode;
+
+		private String luaStatus;
 
 		public String getInstanceId() {
 			return this.instanceId;
@@ -381,20 +387,44 @@ public class DescribeInstanceAttributeResponse extends AcsResponse {
 			this.packageType = packageType;
 		}
 
-		public String getReplacateId() {
-			return this.replacateId;
+		public String getReplicaId() {
+			return this.replicaId;
 		}
 
-		public void setReplacateId(String replacateId) {
-			this.replacateId = replacateId;
+		public void setReplicaId(String replicaId) {
+			this.replicaId = replicaId;
 		}
 
-		public String getEngineVersion2() {
-			return this.engineVersion2;
+		public String getVpcAuthMode() {
+			return this.vpcAuthMode;
 		}
 
-		public void setEngineVersion2(String engineVersion2) {
-			this.engineVersion2 = engineVersion2;
+		public void setVpcAuthMode(String vpcAuthMode) {
+			this.vpcAuthMode = vpcAuthMode;
+		}
+
+		public String getVpcAuthMode2() {
+			return this.vpcAuthMode2;
+		}
+
+		public void setVpcAuthMode2(String vpcAuthMode2) {
+			this.vpcAuthMode2 = vpcAuthMode2;
+		}
+
+		public String getReplicationMode() {
+			return this.replicationMode;
+		}
+
+		public void setReplicationMode(String replicationMode) {
+			this.replicationMode = replicationMode;
+		}
+
+		public String getLuaStatus() {
+			return this.luaStatus;
+		}
+
+		public void setLuaStatus(String luaStatus) {
+			this.luaStatus = luaStatus;
 		}
 	}
 

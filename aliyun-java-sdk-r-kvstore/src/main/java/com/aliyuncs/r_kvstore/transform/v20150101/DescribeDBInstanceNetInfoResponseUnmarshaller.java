@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.r_kvstore.model.v20150101.DescribeDBInstanceNetInfoResponse;
 import com.aliyuncs.r_kvstore.model.v20150101.DescribeDBInstanceNetInfoResponse.InstanceNetInfo;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
