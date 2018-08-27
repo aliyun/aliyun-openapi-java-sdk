@@ -35,7 +35,7 @@ public class CreateAlarmRequest extends RpcAcsRequest<CreateAlarmResponse> {
 
 	private String scalingGroupId;
 
-	private String groupId;
+	private Integer groupId;
 
 	private String description;
 
@@ -45,13 +45,13 @@ public class CreateAlarmRequest extends RpcAcsRequest<CreateAlarmResponse> {
 
 	private Long ownerId;
 
-	private String comparisionOperator;
-
 	private String name;
 
 	private Integer evaluationCount;
 
 	private String metricName;
+
+	private String comparisonOperator;
 
 	private List<Dimension> dimensions;
 
@@ -101,14 +101,14 @@ public class CreateAlarmRequest extends RpcAcsRequest<CreateAlarmResponse> {
 		}
 	}
 
-	public String getGroupId() {
+	public Integer getGroupId() {
 		return this.groupId;
 	}
 
-	public void setGroupId(String groupId) {
+	public void setGroupId(Integer groupId) {
 		this.groupId = groupId;
 		if(groupId != null){
-			putQueryParameter("GroupId", groupId);
+			putQueryParameter("GroupId", groupId.toString());
 		}
 	}
 
@@ -158,17 +158,6 @@ public class CreateAlarmRequest extends RpcAcsRequest<CreateAlarmResponse> {
 		}
 	}
 
-	public String getComparisionOperator() {
-		return this.comparisionOperator;
-	}
-
-	public void setComparisionOperator(String comparisionOperator) {
-		this.comparisionOperator = comparisionOperator;
-		if(comparisionOperator != null){
-			putQueryParameter("ComparisionOperator", comparisionOperator);
-		}
-	}
-
 	public String getName() {
 		return this.name;
 	}
@@ -199,6 +188,17 @@ public class CreateAlarmRequest extends RpcAcsRequest<CreateAlarmResponse> {
 		this.metricName = metricName;
 		if(metricName != null){
 			putQueryParameter("MetricName", metricName);
+		}
+	}
+
+	public String getComparisonOperator() {
+		return this.comparisonOperator;
+	}
+
+	public void setComparisonOperator(String comparisonOperator) {
+		this.comparisonOperator = comparisonOperator;
+		if(comparisonOperator != null){
+			putQueryParameter("ComparisonOperator", comparisonOperator);
 		}
 	}
 

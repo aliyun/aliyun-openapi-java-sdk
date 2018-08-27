@@ -1,3 +1,7 @@
+2018-08-27 Version: 2.2.5
+1, add Ess alarm task api, CreateAlarm, DeleteAlarm, DescribeAlarms, DeleteAlarm, EnableAlarm, DisableAlarm
+
+
 2018-08-16 Version: 2.2.4
 1, ModifyScalingConfiguration add imageName.
 2, CreateScalingConfiguration add imageName.

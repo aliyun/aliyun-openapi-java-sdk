@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.ess.model.v20140828.DescribeAlarmsResponse;
 import com.aliyuncs.ess.model.v20140828.DescribeAlarmsResponse.Alarm;
+import com.aliyuncs.ess.model.v20140828.DescribeAlarmsResponse.Alarm.Dimension;
 import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -40,7 +41,6 @@ public class DescribeAlarmsResponseUnmarshaller {
 			alarm.setDescription(context.stringValue("DescribeAlarmsResponse.AlarmList["+ i +"].Description"));
 			alarm.setMetricType(context.stringValue("DescribeAlarmsResponse.AlarmList["+ i +"].MetricType"));
 			alarm.setMetricName(context.stringValue("DescribeAlarmsResponse.AlarmList["+ i +"].MetricName"));
-			alarm.setDimensions(context.stringValue("DescribeAlarmsResponse.AlarmList["+ i +"].Dimensions"));
 			alarm.setPeriod(context.integerValue("DescribeAlarmsResponse.AlarmList["+ i +"].Period"));
 			alarm.setStatistics(context.stringValue("DescribeAlarmsResponse.AlarmList["+ i +"].Statistics"));
 			alarm.setComparisonOperator(context.stringValue("DescribeAlarmsResponse.AlarmList["+ i +"].ComparisonOperator"));
@@ -55,6 +55,16 @@ public class DescribeAlarmsResponseUnmarshaller {
 				alarmActions.add(context.stringValue("DescribeAlarmsResponse.AlarmList["+ i +"].alarmActions["+ j +"]"));
 			}
 			alarm.setAlarmActions(alarmActions);
+
+			List<Dimension> dimensions = new ArrayList<Dimension>();
+			for (int j = 0; j < context.lengthValue("DescribeAlarmsResponse.AlarmList["+ i +"].Dimensions.Length"); j++) {
+				Dimension dimension = new Dimension();
+				dimension.setDimensionKey(context.stringValue("DescribeAlarmsResponse.AlarmList["+ i +"].Dimensions["+ j +"].DimensionKey"));
+				dimension.setDimensionValue(context.stringValue("DescribeAlarmsResponse.AlarmList["+ i +"].Dimensions["+ j +"].DimensionValue"));
+
+				dimensions.add(dimension);
+			}
+			alarm.setDimensions(dimensions);
 
 			alarmList.add(alarm);
 		}

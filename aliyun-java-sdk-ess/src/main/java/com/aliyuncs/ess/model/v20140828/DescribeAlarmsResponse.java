@@ -87,8 +87,6 @@ public class DescribeAlarmsResponse extends AcsResponse {
 
 		private String metricName;
 
-		private String dimensions;
-
 		private Integer period;
 
 		private String statistics;
@@ -104,6 +102,8 @@ public class DescribeAlarmsResponse extends AcsResponse {
 		private String scalingGroupId;
 
 		private Boolean enable;
+
+		private List<Dimension> dimensions;
 
 		private List<String> alarmActions;
 
@@ -145,14 +145,6 @@ public class DescribeAlarmsResponse extends AcsResponse {
 
 		public void setMetricName(String metricName) {
 			this.metricName = metricName;
-		}
-
-		public String getDimensions() {
-			return this.dimensions;
-		}
-
-		public void setDimensions(String dimensions) {
-			this.dimensions = dimensions;
 		}
 
 		public Integer getPeriod() {
@@ -219,12 +211,43 @@ public class DescribeAlarmsResponse extends AcsResponse {
 			this.enable = enable;
 		}
 
+		public List<Dimension> getDimensions() {
+			return this.dimensions;
+		}
+
+		public void setDimensions(List<Dimension> dimensions) {
+			this.dimensions = dimensions;
+		}
+
 		public List<String> getAlarmActions() {
 			return this.alarmActions;
 		}
 
 		public void setAlarmActions(List<String> alarmActions) {
 			this.alarmActions = alarmActions;
+		}
+
+		public static class Dimension {
+
+			private String dimensionKey;
+
+			private String dimensionValue;
+
+			public String getDimensionKey() {
+				return this.dimensionKey;
+			}
+
+			public void setDimensionKey(String dimensionKey) {
+				this.dimensionKey = dimensionKey;
+			}
+
+			public String getDimensionValue() {
+				return this.dimensionValue;
+			}
+
+			public void setDimensionValue(String dimensionValue) {
+				this.dimensionValue = dimensionValue;
+			}
 		}
 	}
 
