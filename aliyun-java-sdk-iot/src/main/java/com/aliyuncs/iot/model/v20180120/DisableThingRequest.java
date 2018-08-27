@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DisableThingRequest extends RpcAcsRequest<DisableThingResponse> {
 	
 	public DisableThingRequest() {
-		super("Iot", "2018-01-20", "DisableThing", "iot");
+		super("Iot", "2018-01-20", "DisableThing");
 	}
 
 	private String iotId;

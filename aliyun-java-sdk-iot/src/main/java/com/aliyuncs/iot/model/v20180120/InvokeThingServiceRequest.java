@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class InvokeThingServiceRequest extends RpcAcsRequest<InvokeThingServiceResponse> {
 	
 	public InvokeThingServiceRequest() {
-		super("Iot", "2018-01-20", "InvokeThingService", "iot");
+		super("Iot", "2018-01-20", "InvokeThingService");
 	}
 
 	private String args;

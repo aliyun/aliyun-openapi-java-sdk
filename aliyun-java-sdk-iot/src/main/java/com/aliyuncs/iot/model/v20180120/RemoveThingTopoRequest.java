@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class RemoveThingTopoRequest extends RpcAcsRequest<RemoveThingTopoResponse> {
 	
 	public RemoveThingTopoRequest() {
-		super("Iot", "2018-01-20", "RemoveThingTopo", "iot");
+		super("Iot", "2018-01-20", "RemoveThingTopo");
 	}
 
 	private String iotId;

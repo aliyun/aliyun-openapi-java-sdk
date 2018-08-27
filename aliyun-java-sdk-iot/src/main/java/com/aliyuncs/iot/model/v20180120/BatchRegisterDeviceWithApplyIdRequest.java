@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class BatchRegisterDeviceWithApplyIdRequest extends RpcAcsRequest<BatchRegisterDeviceWithApplyIdResponse> {
 	
 	public BatchRegisterDeviceWithApplyIdRequest() {
-		super("Iot", "2018-01-20", "BatchRegisterDeviceWithApplyId", "iot");
+		super("Iot", "2018-01-20", "BatchRegisterDeviceWithApplyId");
 	}
 
 	private Long applyId;

@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class QueryProductListRequest extends RpcAcsRequest<QueryProductListResponse> {
 	
 	public QueryProductListRequest() {
-		super("Iot", "2018-01-20", "QueryProductList", "iot");
+		super("Iot", "2018-01-20", "QueryProductList");
 	}
 
 	private Integer pageSize;

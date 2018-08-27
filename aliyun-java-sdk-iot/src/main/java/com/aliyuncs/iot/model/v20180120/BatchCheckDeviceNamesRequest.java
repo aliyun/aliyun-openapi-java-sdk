@@ -24,7 +24,7 @@ import java.util.List;
 public class BatchCheckDeviceNamesRequest extends RpcAcsRequest<BatchCheckDeviceNamesResponse> {
 	
 	public BatchCheckDeviceNamesRequest() {
-		super("Iot", "2018-01-20", "BatchCheckDeviceNames", "iot");
+		super("Iot", "2018-01-20", "BatchCheckDeviceNames");
 	}
 
 	private List<String> deviceNames;
