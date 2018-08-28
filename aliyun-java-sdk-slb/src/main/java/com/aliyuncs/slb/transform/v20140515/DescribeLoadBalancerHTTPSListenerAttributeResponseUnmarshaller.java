@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.slb.model.v20140515.DescribeLoadBalancerHTTPSListenerAttributeResponse;
 import com.aliyuncs.slb.model.v20140515.DescribeLoadBalancerHTTPSListenerAttributeResponse.DomainExtension;
 import com.aliyuncs.slb.model.v20140515.DescribeLoadBalancerHTTPSListenerAttributeResponse.Rule;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -64,6 +65,7 @@ public class DescribeLoadBalancerHTTPSListenerAttributeResponseUnmarshaller {
 		describeLoadBalancerHTTPSListenerAttributeResponse.setIdleTimeout(context.integerValue("DescribeLoadBalancerHTTPSListenerAttributeResponse.IdleTimeout"));
 		describeLoadBalancerHTTPSListenerAttributeResponse.setEnableHttp2(context.stringValue("DescribeLoadBalancerHTTPSListenerAttributeResponse.EnableHttp2"));
 		describeLoadBalancerHTTPSListenerAttributeResponse.setTLSCipherPolicy(context.stringValue("DescribeLoadBalancerHTTPSListenerAttributeResponse.TLSCipherPolicy"));
+		describeLoadBalancerHTTPSListenerAttributeResponse.setDescription(context.stringValue("DescribeLoadBalancerHTTPSListenerAttributeResponse.Description"));
 
 		List<Rule> rules = new ArrayList<Rule>();
 		for (int i = 0; i < context.lengthValue("DescribeLoadBalancerHTTPSListenerAttributeResponse.Rules.Length"); i++) {

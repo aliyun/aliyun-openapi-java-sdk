@@ -26,11 +26,11 @@ public class SetLoadBalancerUDPListenerAttributeRequest extends RpcAcsRequest<Se
 		super("Slb", "2014-05-15", "SetLoadBalancerUDPListenerAttribute", "slb");
 	}
 
-	private String access_key_id;
-
 	private Integer healthCheckConnectTimeout;
 
 	private Long resourceOwnerId;
+
+	private String description;
 
 	private Integer unhealthyThreshold;
 
@@ -80,17 +80,6 @@ public class SetLoadBalancerUDPListenerAttributeRequest extends RpcAcsRequest<Se
 
 	private String vServerGroup;
 
-	public String getAccess_key_id() {
-		return this.access_key_id;
-	}
-
-	public void setAccess_key_id(String access_key_id) {
-		this.access_key_id = access_key_id;
-		if(access_key_id != null){
-			putQueryParameter("access_key_id", access_key_id);
-		}
-	}
-
 	public Integer getHealthCheckConnectTimeout() {
 		return this.healthCheckConnectTimeout;
 	}
@@ -110,6 +99,17 @@ public class SetLoadBalancerUDPListenerAttributeRequest extends RpcAcsRequest<Se
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+		if(description != null){
+			putQueryParameter("Description", description);
 		}
 	}
 

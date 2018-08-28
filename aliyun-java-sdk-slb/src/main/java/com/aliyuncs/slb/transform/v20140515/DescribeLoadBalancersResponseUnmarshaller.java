@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.slb.model.v20140515.DescribeLoadBalancersResponse;
 import com.aliyuncs.slb.model.v20140515.DescribeLoadBalancersResponse.LoadBalancer;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -51,10 +52,6 @@ public class DescribeLoadBalancersResponseUnmarshaller {
 			loadBalancer.setCreateTimeStamp(context.longValue("DescribeLoadBalancersResponse.LoadBalancers["+ i +"].CreateTimeStamp"));
 			loadBalancer.setPayType(context.stringValue("DescribeLoadBalancersResponse.LoadBalancers["+ i +"].PayType"));
 			loadBalancer.setResourceGroupId(context.stringValue("DescribeLoadBalancersResponse.LoadBalancers["+ i +"].ResourceGroupId"));
-			loadBalancer.setEndTimeStamp(context.longValue("DescribeLoadBalancersResponse.LoadBalancers["+ i +"].EndTimeStamp"));
-			loadBalancer.setRenewalDuration(context.integerValue("DescribeLoadBalancersResponse.LoadBalancers["+ i +"].RenewalDuration"));
-			loadBalancer.setRenewalStatus(context.stringValue("DescribeLoadBalancersResponse.LoadBalancers["+ i +"].RenewalStatus"));
-			loadBalancer.setRenewalCycUnit(context.stringValue("DescribeLoadBalancersResponse.LoadBalancers["+ i +"].RenewalCycUnit"));
 			loadBalancer.setAddressIPVersion(context.stringValue("DescribeLoadBalancersResponse.LoadBalancers["+ i +"].AddressIPVersion"));
 
 			loadBalancers.add(loadBalancer);

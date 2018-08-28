@@ -26,8 +26,6 @@ public class RemoveVServerGroupBackendServersRequest extends RpcAcsRequest<Remov
 		super("Slb", "2014-05-15", "RemoveVServerGroupBackendServers", "slb");
 	}
 
-	private String access_key_id;
-
 	private String vServerGroupId;
 
 	private Long resourceOwnerId;
@@ -41,17 +39,6 @@ public class RemoveVServerGroupBackendServersRequest extends RpcAcsRequest<Remov
 	private String backendServers;
 
 	private String tags;
-
-	public String getAccess_key_id() {
-		return this.access_key_id;
-	}
-
-	public void setAccess_key_id(String access_key_id) {
-		this.access_key_id = access_key_id;
-		if(access_key_id != null){
-			putQueryParameter("access_key_id", access_key_id);
-		}
-	}
 
 	public String getVServerGroupId() {
 		return this.vServerGroupId;

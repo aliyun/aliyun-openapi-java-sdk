@@ -26,8 +26,6 @@ public class DescribeVServerGroupsRequest extends RpcAcsRequest<DescribeVServerG
 		super("Slb", "2014-05-15", "DescribeVServerGroups", "slb");
 	}
 
-	private String access_key_id;
-
 	private Boolean includeRule;
 
 	private Long resourceOwnerId;
@@ -43,17 +41,6 @@ public class DescribeVServerGroupsRequest extends RpcAcsRequest<DescribeVServerG
 	private Long ownerId;
 
 	private String tags;
-
-	public String getAccess_key_id() {
-		return this.access_key_id;
-	}
-
-	public void setAccess_key_id(String access_key_id) {
-		this.access_key_id = access_key_id;
-		if(access_key_id != null){
-			putQueryParameter("access_key_id", access_key_id);
-		}
-	}
 
 	public Boolean getIncludeRule() {
 		return this.includeRule;

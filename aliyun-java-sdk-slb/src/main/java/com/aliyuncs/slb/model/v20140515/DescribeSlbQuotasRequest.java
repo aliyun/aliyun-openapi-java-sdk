@@ -20,17 +20,13 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class DeleteLoadBalancerListenerRequest extends RpcAcsRequest<DeleteLoadBalancerListenerResponse> {
+public class DescribeSlbQuotasRequest extends RpcAcsRequest<DescribeSlbQuotasResponse> {
 	
-	public DeleteLoadBalancerListenerRequest() {
-		super("Slb", "2014-05-15", "DeleteLoadBalancerListener", "slb");
+	public DescribeSlbQuotasRequest() {
+		super("Slb", "2014-05-15", "DescribeSlbQuotas", "slb");
 	}
 
 	private Long resourceOwnerId;
-
-	private Integer listenerPort;
-
-	private String loadBalancerId;
 
 	private String resourceOwnerAccount;
 
@@ -48,28 +44,6 @@ public class DeleteLoadBalancerListenerRequest extends RpcAcsRequest<DeleteLoadB
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public Integer getListenerPort() {
-		return this.listenerPort;
-	}
-
-	public void setListenerPort(Integer listenerPort) {
-		this.listenerPort = listenerPort;
-		if(listenerPort != null){
-			putQueryParameter("ListenerPort", listenerPort.toString());
-		}
-	}
-
-	public String getLoadBalancerId() {
-		return this.loadBalancerId;
-	}
-
-	public void setLoadBalancerId(String loadBalancerId) {
-		this.loadBalancerId = loadBalancerId;
-		if(loadBalancerId != null){
-			putQueryParameter("LoadBalancerId", loadBalancerId);
 		}
 	}
 
@@ -118,8 +92,8 @@ public class DeleteLoadBalancerListenerRequest extends RpcAcsRequest<DeleteLoadB
 	}
 
 	@Override
-	public Class<DeleteLoadBalancerListenerResponse> getResponseClass() {
-		return DeleteLoadBalancerListenerResponse.class;
+	public Class<DescribeSlbQuotasResponse> getResponseClass() {
+		return DescribeSlbQuotasResponse.class;
 	}
 
 }

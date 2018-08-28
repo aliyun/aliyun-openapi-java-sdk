@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.slb.model.v20140515.DescribeRegionsResponse;
 import com.aliyuncs.slb.model.v20140515.DescribeRegionsResponse.Region;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -33,6 +34,7 @@ public class DescribeRegionsResponseUnmarshaller {
 			Region region = new Region();
 			region.setRegionId(context.stringValue("DescribeRegionsResponse.Regions["+ i +"].RegionId"));
 			region.setLocalName(context.stringValue("DescribeRegionsResponse.Regions["+ i +"].LocalName"));
+			region.setRegionEndpoint(context.stringValue("DescribeRegionsResponse.Regions["+ i +"].RegionEndpoint"));
 
 			regions.add(region);
 		}

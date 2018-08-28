@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.slb.model.v20140515.CreateMasterSlaveServerGroupResponse;
 import com.aliyuncs.slb.model.v20140515.CreateMasterSlaveServerGroupResponse.MasterSlaveBackendServer;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

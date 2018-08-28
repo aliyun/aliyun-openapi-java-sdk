@@ -26,8 +26,6 @@ public class DescribeCACertificatesRequest extends RpcAcsRequest<DescribeCACerti
 		super("Slb", "2014-05-15", "DescribeCACertificates", "slb");
 	}
 
-	private String access_key_id;
-
 	private String resourceGroupId;
 
 	private Long resourceOwnerId;
@@ -39,17 +37,6 @@ public class DescribeCACertificatesRequest extends RpcAcsRequest<DescribeCACerti
 	private Long ownerId;
 
 	private String cACertificateId;
-
-	public String getAccess_key_id() {
-		return this.access_key_id;
-	}
-
-	public void setAccess_key_id(String access_key_id) {
-		this.access_key_id = access_key_id;
-		if(access_key_id != null){
-			putQueryParameter("access_key_id", access_key_id);
-		}
-	}
 
 	public String getResourceGroupId() {
 		return this.resourceGroupId;

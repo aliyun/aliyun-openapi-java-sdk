@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.slb.model.v20140515.DescribeRulesResponse;
 import com.aliyuncs.slb.model.v20140515.DescribeRulesResponse.Rule;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -36,6 +37,21 @@ public class DescribeRulesResponseUnmarshaller {
 			rule.setDomain(context.stringValue("DescribeRulesResponse.Rules["+ i +"].Domain"));
 			rule.setUrl(context.stringValue("DescribeRulesResponse.Rules["+ i +"].Url"));
 			rule.setVServerGroupId(context.stringValue("DescribeRulesResponse.Rules["+ i +"].VServerGroupId"));
+			rule.setListenerSync(context.stringValue("DescribeRulesResponse.Rules["+ i +"].ListenerSync"));
+			rule.setScheduler(context.stringValue("DescribeRulesResponse.Rules["+ i +"].Scheduler"));
+			rule.setStickySession(context.stringValue("DescribeRulesResponse.Rules["+ i +"].StickySession"));
+			rule.setStickySessionType(context.stringValue("DescribeRulesResponse.Rules["+ i +"].StickySessionType"));
+			rule.setCookieTimeout(context.integerValue("DescribeRulesResponse.Rules["+ i +"].CookieTimeout"));
+			rule.setCookie(context.stringValue("DescribeRulesResponse.Rules["+ i +"].Cookie"));
+			rule.setHealthCheck(context.stringValue("DescribeRulesResponse.Rules["+ i +"].HealthCheck"));
+			rule.setHealthCheckDomain(context.stringValue("DescribeRulesResponse.Rules["+ i +"].HealthCheckDomain"));
+			rule.setHealthCheckURI(context.stringValue("DescribeRulesResponse.Rules["+ i +"].HealthCheckURI"));
+			rule.setHealthyThreshold(context.integerValue("DescribeRulesResponse.Rules["+ i +"].HealthyThreshold"));
+			rule.setUnhealthyThreshold(context.integerValue("DescribeRulesResponse.Rules["+ i +"].UnhealthyThreshold"));
+			rule.setHealthCheckTimeout(context.integerValue("DescribeRulesResponse.Rules["+ i +"].HealthCheckTimeout"));
+			rule.setHealthCheckInterval(context.integerValue("DescribeRulesResponse.Rules["+ i +"].HealthCheckInterval"));
+			rule.setHealthCheckConnectPort(context.integerValue("DescribeRulesResponse.Rules["+ i +"].HealthCheckConnectPort"));
+			rule.setHealthCheckHttpCode(context.stringValue("DescribeRulesResponse.Rules["+ i +"].HealthCheckHttpCode"));
 
 			rules.add(rule);
 		}

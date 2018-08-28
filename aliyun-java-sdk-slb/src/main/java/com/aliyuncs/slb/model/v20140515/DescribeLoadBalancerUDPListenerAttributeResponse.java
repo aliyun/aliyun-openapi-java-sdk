@@ -68,6 +68,8 @@ public class DescribeLoadBalancerUDPListenerAttributeResponse extends AcsRespons
 
 	private String vpcIds;
 
+	private String description;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -242,6 +244,14 @@ public class DescribeLoadBalancerUDPListenerAttributeResponse extends AcsRespons
 
 	public void setVpcIds(String vpcIds) {
 		this.vpcIds = vpcIds;
+	}
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
 	}
 
 	@Override

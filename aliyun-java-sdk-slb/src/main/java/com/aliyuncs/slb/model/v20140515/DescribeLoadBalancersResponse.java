@@ -111,14 +111,6 @@ public class DescribeLoadBalancersResponse extends AcsResponse {
 
 		private String resourceGroupId;
 
-		private Long endTimeStamp;
-
-		private Integer renewalDuration;
-
-		private String renewalStatus;
-
-		private String renewalCycUnit;
-
 		private String addressIPVersion;
 
 		public String getLoadBalancerId() {
@@ -255,38 +247,6 @@ public class DescribeLoadBalancersResponse extends AcsResponse {
 
 		public void setResourceGroupId(String resourceGroupId) {
 			this.resourceGroupId = resourceGroupId;
-		}
-
-		public Long getEndTimeStamp() {
-			return this.endTimeStamp;
-		}
-
-		public void setEndTimeStamp(Long endTimeStamp) {
-			this.endTimeStamp = endTimeStamp;
-		}
-
-		public Integer getRenewalDuration() {
-			return this.renewalDuration;
-		}
-
-		public void setRenewalDuration(Integer renewalDuration) {
-			this.renewalDuration = renewalDuration;
-		}
-
-		public String getRenewalStatus() {
-			return this.renewalStatus;
-		}
-
-		public void setRenewalStatus(String renewalStatus) {
-			this.renewalStatus = renewalStatus;
-		}
-
-		public String getRenewalCycUnit() {
-			return this.renewalCycUnit;
-		}
-
-		public void setRenewalCycUnit(String renewalCycUnit) {
-			this.renewalCycUnit = renewalCycUnit;
 		}
 
 		public String getAddressIPVersion() {

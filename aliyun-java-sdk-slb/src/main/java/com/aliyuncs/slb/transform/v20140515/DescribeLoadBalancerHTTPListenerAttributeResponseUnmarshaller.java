@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.slb.model.v20140515.DescribeLoadBalancerHTTPListenerAttributeResponse;
 import com.aliyuncs.slb.model.v20140515.DescribeLoadBalancerHTTPListenerAttributeResponse.Rule;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -61,6 +62,7 @@ public class DescribeLoadBalancerHTTPListenerAttributeResponseUnmarshaller {
 		describeLoadBalancerHTTPListenerAttributeResponse.setForwardPort(context.integerValue("DescribeLoadBalancerHTTPListenerAttributeResponse.ForwardPort"));
 		describeLoadBalancerHTTPListenerAttributeResponse.setRequestTimeout(context.integerValue("DescribeLoadBalancerHTTPListenerAttributeResponse.RequestTimeout"));
 		describeLoadBalancerHTTPListenerAttributeResponse.setIdleTimeout(context.integerValue("DescribeLoadBalancerHTTPListenerAttributeResponse.IdleTimeout"));
+		describeLoadBalancerHTTPListenerAttributeResponse.setDescription(context.stringValue("DescribeLoadBalancerHTTPListenerAttributeResponse.Description"));
 
 		List<Rule> rules = new ArrayList<Rule>();
 		for (int i = 0; i < context.lengthValue("DescribeLoadBalancerHTTPListenerAttributeResponse.Rules.Length"); i++) {

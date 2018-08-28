@@ -126,12 +126,42 @@ public class DescribeVServerGroupsResponse extends AcsResponse {
 
 				private String ruleId;
 
+				private String domain;
+
+				private String url;
+
+				private String ruleName;
+
 				public String getRuleId() {
 					return this.ruleId;
 				}
 
 				public void setRuleId(String ruleId) {
 					this.ruleId = ruleId;
+				}
+
+				public String getDomain() {
+					return this.domain;
+				}
+
+				public void setDomain(String domain) {
+					this.domain = domain;
+				}
+
+				public String getUrl() {
+					return this.url;
+				}
+
+				public void setUrl(String url) {
+					this.url = url;
+				}
+
+				public String getRuleName() {
+					return this.ruleName;
+				}
+
+				public void setRuleName(String ruleName) {
+					this.ruleName = ruleName;
 				}
 			}
 		}

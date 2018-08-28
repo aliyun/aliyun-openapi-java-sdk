@@ -26,8 +26,6 @@ public class DeleteDomainExtensionRequest extends RpcAcsRequest<DeleteDomainExte
 		super("Slb", "2014-05-15", "DeleteDomainExtension", "slb");
 	}
 
-	private String access_key_id;
-
 	private Long resourceOwnerId;
 
 	private String resourceOwnerAccount;
@@ -39,17 +37,6 @@ public class DeleteDomainExtensionRequest extends RpcAcsRequest<DeleteDomainExte
 	private String tags;
 
 	private String domainExtensionId;
-
-	public String getAccess_key_id() {
-		return this.access_key_id;
-	}
-
-	public void setAccess_key_id(String access_key_id) {
-		this.access_key_id = access_key_id;
-		if(access_key_id != null){
-			putQueryParameter("access_key_id", access_key_id);
-		}
-	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;

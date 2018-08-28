@@ -26,8 +26,6 @@ public class CreateLoadBalancerHTTPSListenerRequest extends RpcAcsRequest<Create
 		super("Slb", "2014-05-15", "CreateLoadBalancerHTTPSListener", "slb");
 	}
 
-	private String access_key_id;
-
 	private Long resourceOwnerId;
 
 	private Integer healthCheckTimeout;
@@ -35,6 +33,8 @@ public class CreateLoadBalancerHTTPSListenerRequest extends RpcAcsRequest<Create
 	private String xForwardedFor;
 
 	private String healthCheckURI;
+
+	private String description;
 
 	private Integer unhealthyThreshold;
 
@@ -108,17 +108,6 @@ public class CreateLoadBalancerHTTPSListenerRequest extends RpcAcsRequest<Create
 
 	private String healthCheckHttpCode;
 
-	public String getAccess_key_id() {
-		return this.access_key_id;
-	}
-
-	public void setAccess_key_id(String access_key_id) {
-		this.access_key_id = access_key_id;
-		if(access_key_id != null){
-			putQueryParameter("access_key_id", access_key_id);
-		}
-	}
-
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
 	}
@@ -160,6 +149,17 @@ public class CreateLoadBalancerHTTPSListenerRequest extends RpcAcsRequest<Create
 		this.healthCheckURI = healthCheckURI;
 		if(healthCheckURI != null){
 			putQueryParameter("HealthCheckURI", healthCheckURI);
+		}
+	}
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+		if(description != null){
+			putQueryParameter("Description", description);
 		}
 	}
 

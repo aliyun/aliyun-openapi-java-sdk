@@ -48,6 +48,7 @@ public class DescribeLoadBalancerTCPListenerAttributeResponseUnmarshaller {
 		describeLoadBalancerTCPListenerAttributeResponse.setAclType(context.stringValue("DescribeLoadBalancerTCPListenerAttributeResponse.AclType"));
 		describeLoadBalancerTCPListenerAttributeResponse.setAclStatus(context.stringValue("DescribeLoadBalancerTCPListenerAttributeResponse.AclStatus"));
 		describeLoadBalancerTCPListenerAttributeResponse.setVpcIds(context.stringValue("DescribeLoadBalancerTCPListenerAttributeResponse.VpcIds"));
+		describeLoadBalancerTCPListenerAttributeResponse.setDescription(context.stringValue("DescribeLoadBalancerTCPListenerAttributeResponse.Description"));
 	 
 	 	return describeLoadBalancerTCPListenerAttributeResponse;
 	}

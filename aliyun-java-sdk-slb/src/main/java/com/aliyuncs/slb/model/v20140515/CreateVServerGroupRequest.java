@@ -26,8 +26,6 @@ public class CreateVServerGroupRequest extends RpcAcsRequest<CreateVServerGroupR
 		super("Slb", "2014-05-15", "CreateVServerGroup", "slb");
 	}
 
-	private String access_key_id;
-
 	private Long resourceOwnerId;
 
 	private String loadBalancerId;
@@ -43,17 +41,6 @@ public class CreateVServerGroupRequest extends RpcAcsRequest<CreateVServerGroupR
 	private String tags;
 
 	private String vServerGroupName;
-
-	public String getAccess_key_id() {
-		return this.access_key_id;
-	}
-
-	public void setAccess_key_id(String access_key_id) {
-		this.access_key_id = access_key_id;
-		if(access_key_id != null){
-			putQueryParameter("access_key_id", access_key_id);
-		}
-	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;

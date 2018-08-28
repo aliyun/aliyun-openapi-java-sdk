@@ -99,6 +99,8 @@ public class DescribeLoadBalancerHTTPSListenerAttributeResponse extends AcsRespo
 
 	private String tLSCipherPolicy;
 
+	private String description;
+
 	private List<Rule> rules;
 
 	private List<DomainExtension> domainExtensions;
@@ -397,6 +399,14 @@ public class DescribeLoadBalancerHTTPSListenerAttributeResponse extends AcsRespo
 
 	public void setTLSCipherPolicy(String tLSCipherPolicy) {
 		this.tLSCipherPolicy = tLSCipherPolicy;
+	}
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
 	}
 
 	public List<Rule> getRules() {

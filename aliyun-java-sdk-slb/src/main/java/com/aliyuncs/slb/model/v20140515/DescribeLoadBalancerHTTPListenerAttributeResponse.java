@@ -95,6 +95,8 @@ public class DescribeLoadBalancerHTTPListenerAttributeResponse extends AcsRespon
 
 	private Integer idleTimeout;
 
+	private String description;
+
 	private List<Rule> rules;
 
 	public String getRequestId() {
@@ -375,6 +377,14 @@ public class DescribeLoadBalancerHTTPListenerAttributeResponse extends AcsRespon
 
 	public void setIdleTimeout(Integer idleTimeout) {
 		this.idleTimeout = idleTimeout;
+	}
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
 	}
 
 	public List<Rule> getRules() {

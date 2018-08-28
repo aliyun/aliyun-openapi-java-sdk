@@ -26,8 +26,6 @@ public class ModifyLoadBalancerInstanceSpecRequest extends RpcAcsRequest<ModifyL
 		super("Slb", "2014-05-15", "ModifyLoadBalancerInstanceSpec", "slb");
 	}
 
-	private String access_key_id;
-
 	private String loadBalancerSpec;
 
 	private Long resourceOwnerId;
@@ -43,17 +41,6 @@ public class ModifyLoadBalancerInstanceSpecRequest extends RpcAcsRequest<ModifyL
 	private Long ownerId;
 
 	private String tags;
-
-	public String getAccess_key_id() {
-		return this.access_key_id;
-	}
-
-	public void setAccess_key_id(String access_key_id) {
-		this.access_key_id = access_key_id;
-		if(access_key_id != null){
-			putQueryParameter("access_key_id", access_key_id);
-		}
-	}
 
 	public String getLoadBalancerSpec() {
 		return this.loadBalancerSpec;

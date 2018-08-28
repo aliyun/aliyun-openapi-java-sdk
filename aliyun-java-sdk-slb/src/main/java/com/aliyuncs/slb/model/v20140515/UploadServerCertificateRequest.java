@@ -26,8 +26,6 @@ public class UploadServerCertificateRequest extends RpcAcsRequest<UploadServerCe
 		super("Slb", "2014-05-15", "UploadServerCertificate", "slb");
 	}
 
-	private String access_key_id;
-
 	private Long resourceOwnerId;
 
 	private String serverCertificate;
@@ -49,17 +47,6 @@ public class UploadServerCertificateRequest extends RpcAcsRequest<UploadServerCe
 	private String resourceGroupId;
 
 	private String serverCertificateName;
-
-	public String getAccess_key_id() {
-		return this.access_key_id;
-	}
-
-	public void setAccess_key_id(String access_key_id) {
-		this.access_key_id = access_key_id;
-		if(access_key_id != null){
-			putQueryParameter("access_key_id", access_key_id);
-		}
-	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
