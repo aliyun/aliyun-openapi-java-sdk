@@ -23,6 +23,7 @@ import com.aliyuncs.ehpc.model.v20180412.ListClustersResponse.ClusterInfoSimple.
 import com.aliyuncs.ehpc.model.v20180412.ListClustersResponse.ClusterInfoSimple.Managers;
 import com.aliyuncs.ehpc.model.v20180412.ListClustersResponse.ClusterInfoSimple.TotalResources;
 import com.aliyuncs.ehpc.model.v20180412.ListClustersResponse.ClusterInfoSimple.UsedResources;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

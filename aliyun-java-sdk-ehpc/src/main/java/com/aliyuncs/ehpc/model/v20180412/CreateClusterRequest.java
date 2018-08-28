@@ -67,6 +67,8 @@ public class CreateClusterRequest extends RpcAcsRequest<CreateClusterResponse> {
 
 	private String volumeProtocol;
 
+	private String clientVersion;
+
 	private String osTag;
 
 	private String remoteDirectory;
@@ -325,6 +327,17 @@ public class CreateClusterRequest extends RpcAcsRequest<CreateClusterResponse> {
 		}
 	}
 
+	public String getClientVersion() {
+		return this.clientVersion;
+	}
+
+	public void setClientVersion(String clientVersion) {
+		this.clientVersion = clientVersion;
+		if(clientVersion != null){
+			putQueryParameter("ClientVersion", clientVersion);
+		}
+	}
+
 	public String getOsTag() {
 		return this.osTag;
 	}
@@ -377,8 +390,8 @@ public class CreateClusterRequest extends RpcAcsRequest<CreateClusterResponse> {
 		this.postInstallScripts = postInstallScripts;	
 		if (postInstallScripts != null) {
 			for (int depth1 = 0; depth1 < postInstallScripts.size(); depth1++) {
-				putQueryParameter("PostInstallScript." + (depth1 + 1) + ".Url" , postInstallScripts.get(depth1).getUrl());
 				putQueryParameter("PostInstallScript." + (depth1 + 1) + ".Args" , postInstallScripts.get(depth1).getArgs());
+				putQueryParameter("PostInstallScript." + (depth1 + 1) + ".Url" , postInstallScripts.get(depth1).getUrl());
 			}
 		}	
 	}
@@ -541,17 +554,9 @@ public class CreateClusterRequest extends RpcAcsRequest<CreateClusterResponse> {
 
 	public static class PostInstallScript {
 
-		private String url;
-
 		private String args;
 
-		public String getUrl() {
-			return this.url;
-		}
-
-		public void setUrl(String url) {
-			this.url = url;
-		}
+		private String url;
 
 		public String getArgs() {
 			return this.args;
@@ -559,6 +564,14 @@ public class CreateClusterRequest extends RpcAcsRequest<CreateClusterResponse> {
 
 		public void setArgs(String args) {
 			this.args = args;
+		}
+
+		public String getUrl() {
+			return this.url;
+		}
+
+		public void setUrl(String url) {
+			this.url = url;
 		}
 	}
 

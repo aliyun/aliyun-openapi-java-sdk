@@ -81,7 +81,11 @@ public class ListNodesResponse extends AcsResponse {
 
 		private String regionId;
 
+		private String hostName;
+
 		private String status;
+
+		private String version;
 
 		private Boolean createdByEhpc;
 
@@ -123,12 +127,28 @@ public class ListNodesResponse extends AcsResponse {
 			this.regionId = regionId;
 		}
 
+		public String getHostName() {
+			return this.hostName;
+		}
+
+		public void setHostName(String hostName) {
+			this.hostName = hostName;
+		}
+
 		public String getStatus() {
 			return this.status;
 		}
 
 		public void setStatus(String status) {
 			this.status = status;
+		}
+
+		public String getVersion() {
+			return this.version;
+		}
+
+		public void setVersion(String version) {
+			this.version = version;
 		}
 
 		public Boolean getCreatedByEhpc() {

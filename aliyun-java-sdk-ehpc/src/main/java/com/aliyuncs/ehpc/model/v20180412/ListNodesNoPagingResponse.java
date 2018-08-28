@@ -79,9 +79,13 @@ public class ListNodesNoPagingResponse extends AcsResponse {
 
 		private String id;
 
+		private String hostName;
+
 		private String regionId;
 
 		private String status;
+
+		private String version;
 
 		private Boolean createdByEhpc;
 
@@ -113,6 +117,14 @@ public class ListNodesNoPagingResponse extends AcsResponse {
 			this.id = id;
 		}
 
+		public String getHostName() {
+			return this.hostName;
+		}
+
+		public void setHostName(String hostName) {
+			this.hostName = hostName;
+		}
+
 		public String getRegionId() {
 			return this.regionId;
 		}
@@ -127,6 +139,14 @@ public class ListNodesNoPagingResponse extends AcsResponse {
 
 		public void setStatus(String status) {
 			this.status = status;
+		}
+
+		public String getVersion() {
+			return this.version;
+		}
+
+		public void setVersion(String version) {
+			this.version = version;
 		}
 
 		public Boolean getCreatedByEhpc() {

@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.ehpc.model.v20180412.ListVolumesResponse;
 import com.aliyuncs.ehpc.model.v20180412.ListVolumesResponse.VolumeInfo;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

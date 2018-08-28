@@ -50,20 +50,28 @@ public class AddUsersRequest extends RpcAcsRequest<AddUsersResponse> {
 		this.users = users;	
 		if (users != null) {
 			for (int depth1 = 0; depth1 < users.size(); depth1++) {
+				putQueryParameter("User." + (depth1 + 1) + ".Password" , users.get(depth1).getPassword());
 				putQueryParameter("User." + (depth1 + 1) + ".Name" , users.get(depth1).getName());
 				putQueryParameter("User." + (depth1 + 1) + ".Group" , users.get(depth1).getGroup());
-				putQueryParameter("User." + (depth1 + 1) + ".Password" , users.get(depth1).getPassword());
 			}
 		}	
 	}
 
 	public static class User {
 
+		private String password;
+
 		private String name;
 
 		private String group;
 
-		private String password;
+		public String getPassword() {
+			return this.password;
+		}
+
+		public void setPassword(String password) {
+			this.password = password;
+		}
 
 		public String getName() {
 			return this.name;
@@ -79,14 +87,6 @@ public class AddUsersRequest extends RpcAcsRequest<AddUsersResponse> {
 
 		public void setGroup(String group) {
 			this.group = group;
-		}
-
-		public String getPassword() {
-			return this.password;
-		}
-
-		public void setPassword(String password) {
-			this.password = password;
 		}
 	}
 

@@ -21,6 +21,7 @@ import com.aliyuncs.ehpc.model.v20180412.ListNodesNoPagingResponse;
 import com.aliyuncs.ehpc.model.v20180412.ListNodesNoPagingResponse.NodeInfo;
 import com.aliyuncs.ehpc.model.v20180412.ListNodesNoPagingResponse.NodeInfo.TotalResources;
 import com.aliyuncs.ehpc.model.v20180412.ListNodesNoPagingResponse.NodeInfo.UsedResources;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -37,8 +38,10 @@ public class ListNodesNoPagingResponseUnmarshaller {
 		for (int i = 0; i < context.lengthValue("ListNodesNoPagingResponse.Nodes.Length"); i++) {
 			NodeInfo nodeInfo = new NodeInfo();
 			nodeInfo.setId(context.stringValue("ListNodesNoPagingResponse.Nodes["+ i +"].Id"));
+			nodeInfo.setHostName(context.stringValue("ListNodesNoPagingResponse.Nodes["+ i +"].HostName"));
 			nodeInfo.setRegionId(context.stringValue("ListNodesNoPagingResponse.Nodes["+ i +"].RegionId"));
 			nodeInfo.setStatus(context.stringValue("ListNodesNoPagingResponse.Nodes["+ i +"].Status"));
+			nodeInfo.setVersion(context.stringValue("ListNodesNoPagingResponse.Nodes["+ i +"].Version"));
 			nodeInfo.setCreatedByEhpc(context.booleanValue("ListNodesNoPagingResponse.Nodes["+ i +"].CreatedByEhpc"));
 			nodeInfo.setAddTime(context.stringValue("ListNodesNoPagingResponse.Nodes["+ i +"].AddTime"));
 			nodeInfo.setExpired(context.booleanValue("ListNodesNoPagingResponse.Nodes["+ i +"].Expired"));

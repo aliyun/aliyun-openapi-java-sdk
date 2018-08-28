@@ -21,6 +21,7 @@ import com.aliyuncs.ehpc.model.v20180412.ListNodesResponse;
 import com.aliyuncs.ehpc.model.v20180412.ListNodesResponse.NodeInfo;
 import com.aliyuncs.ehpc.model.v20180412.ListNodesResponse.NodeInfo.TotalResources;
 import com.aliyuncs.ehpc.model.v20180412.ListNodesResponse.NodeInfo.UsedResources;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -38,7 +39,9 @@ public class ListNodesResponseUnmarshaller {
 			NodeInfo nodeInfo = new NodeInfo();
 			nodeInfo.setId(context.stringValue("ListNodesResponse.Nodes["+ i +"].Id"));
 			nodeInfo.setRegionId(context.stringValue("ListNodesResponse.Nodes["+ i +"].RegionId"));
+			nodeInfo.setHostName(context.stringValue("ListNodesResponse.Nodes["+ i +"].HostName"));
 			nodeInfo.setStatus(context.stringValue("ListNodesResponse.Nodes["+ i +"].Status"));
+			nodeInfo.setVersion(context.stringValue("ListNodesResponse.Nodes["+ i +"].Version"));
 			nodeInfo.setCreatedByEhpc(context.booleanValue("ListNodesResponse.Nodes["+ i +"].CreatedByEhpc"));
 			nodeInfo.setAddTime(context.stringValue("ListNodesResponse.Nodes["+ i +"].AddTime"));
 			nodeInfo.setExpired(context.booleanValue("ListNodesResponse.Nodes["+ i +"].Expired"));

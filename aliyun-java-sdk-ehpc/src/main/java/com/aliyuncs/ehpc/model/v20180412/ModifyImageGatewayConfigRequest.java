@@ -75,8 +75,8 @@ public class ModifyImageGatewayConfigRequest extends RpcAcsRequest<ModifyImageGa
 		this.repos = repos;	
 		if (repos != null) {
 			for (int depth1 = 0; depth1 < repos.size(); depth1++) {
-				putQueryParameter("Repo." + (depth1 + 1) + ".Location" , repos.get(depth1).getLocation());
 				putQueryParameter("Repo." + (depth1 + 1) + ".Auth" , repos.get(depth1).getAuth());
+				putQueryParameter("Repo." + (depth1 + 1) + ".Location" , repos.get(depth1).getLocation());
 				putQueryParameter("Repo." + (depth1 + 1) + ".URL" , repos.get(depth1).getURL());
 			}
 		}	
@@ -150,19 +150,11 @@ public class ModifyImageGatewayConfigRequest extends RpcAcsRequest<ModifyImageGa
 
 	public static class Repo {
 
-		private String location;
-
 		private String auth;
 
+		private String location;
+
 		private String uRL;
-
-		public String getLocation() {
-			return this.location;
-		}
-
-		public void setLocation(String location) {
-			this.location = location;
-		}
 
 		public String getAuth() {
 			return this.auth;
@@ -170,6 +162,14 @@ public class ModifyImageGatewayConfigRequest extends RpcAcsRequest<ModifyImageGa
 
 		public void setAuth(String auth) {
 			this.auth = auth;
+		}
+
+		public String getLocation() {
+			return this.location;
+		}
+
+		public void setLocation(String location) {
+			this.location = location;
 		}
 
 		public String getURL() {

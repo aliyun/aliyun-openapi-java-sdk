@@ -53,6 +53,8 @@ public class CreateHybridClusterRequest extends RpcAcsRequest<CreateHybridCluste
 
 	private String onPremiseVolumeLocalPath;
 
+	private String clientVersion;
+
 	private String osTag;
 
 	private String remoteDirectory;
@@ -217,6 +219,17 @@ public class CreateHybridClusterRequest extends RpcAcsRequest<CreateHybridCluste
 		this.onPremiseVolumeLocalPath = onPremiseVolumeLocalPath;
 		if(onPremiseVolumeLocalPath != null){
 			putQueryParameter("OnPremiseVolumeLocalPath", onPremiseVolumeLocalPath);
+		}
+	}
+
+	public String getClientVersion() {
+		return this.clientVersion;
+	}
+
+	public void setClientVersion(String clientVersion) {
+		this.clientVersion = clientVersion;
+		if(clientVersion != null){
+			putQueryParameter("ClientVersion", clientVersion);
 		}
 	}
 

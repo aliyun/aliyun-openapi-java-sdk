@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.ehpc.model.v20180412.ListCustomImagesResponse;
 import com.aliyuncs.ehpc.model.v20180412.ListCustomImagesResponse.ImageInfo;
 import com.aliyuncs.ehpc.model.v20180412.ListCustomImagesResponse.ImageInfo.BaseOsTag;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

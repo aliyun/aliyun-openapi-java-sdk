@@ -32,8 +32,6 @@ public class GetCloudMetricLogsRequest extends RpcAcsRequest<GetCloudMetricLogsR
 
 	private String metricCategories;
 
-	private Integer line;
-
 	private String metricScope;
 
 	private Integer from;
@@ -76,17 +74,6 @@ public class GetCloudMetricLogsRequest extends RpcAcsRequest<GetCloudMetricLogsR
 		this.metricCategories = metricCategories;
 		if(metricCategories != null){
 			putQueryParameter("MetricCategories", metricCategories);
-		}
-	}
-
-	public Integer getLine() {
-		return this.line;
-	}
-
-	public void setLine(Integer line) {
-		this.line = line;
-		if(line != null){
-			putQueryParameter("Line", line.toString());
 		}
 	}
 
