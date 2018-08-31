@@ -64,6 +64,8 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 
 	private String vSwitchId;
 
+	private String privateIpAddress;
+
 	private String instanceName;
 
 	private String vpcId;
@@ -280,6 +282,17 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 		this.vSwitchId = vSwitchId;
 		if(vSwitchId != null){
 			putQueryParameter("VSwitchId", vSwitchId);
+		}
+	}
+
+	public String getPrivateIpAddress() {
+		return this.privateIpAddress;
+	}
+
+	public void setPrivateIpAddress(String privateIpAddress) {
+		this.privateIpAddress = privateIpAddress;
+		if(privateIpAddress != null){
+			putQueryParameter("PrivateIpAddress", privateIpAddress);
 		}
 	}
 
