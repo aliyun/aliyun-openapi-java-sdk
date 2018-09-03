@@ -1,3 +1,7 @@
+2018-09-03 Version: 2.0.12
+1, add DescribeProducts interface
+2, modify DescribePrice implement
+
 2018-09-03 Version: 2.0.11
 1, Add DescribeProducts interface.
 2, Modify DescribeProductPrice implements.
