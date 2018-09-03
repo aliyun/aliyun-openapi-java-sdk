@@ -1,3 +1,7 @@
+2018-09-03 Version: 3.3.0
+1, voice identify interface
+2, client upload credentials interface
+
 2018-05-28 Version: 3.2.0
 1, Add face 1-N,1-1 scan interface.
 
