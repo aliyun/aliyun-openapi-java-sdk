@@ -25,7 +25,7 @@ import com.aliyuncs.http.MethodType;
 public class ApproveOrderListRequest extends RpcAcsRequest<ApproveOrderListResponse> {
 	
 	public ApproveOrderListRequest() {
-		super("CSB", "2017-11-18", "ApproveOrderList", "CSB");
+		super("CSB", "2017-11-18", "ApproveOrderList");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

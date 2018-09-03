@@ -16,23 +16,25 @@ package com.aliyuncs.csb.model.v20171118;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.ProtocolType;
-import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
-public class CheckServiceExistRequest extends RpcAcsRequest<CheckServiceExistResponse> {
+public class FindServiceStatisticalDataRequest extends RpcAcsRequest<FindServiceStatisticalDataResponse> {
 	
-	public CheckServiceExistRequest() {
-		super("CSB", "2017-11-18", "CheckServiceExist");
+	public FindServiceStatisticalDataRequest() {
+		super("CSB", "2017-11-18", "FindServiceStatisticalData");
 		setProtocol(ProtocolType.HTTPS);
-		setMethod(MethodType.POST);
 	}
 
 	private Long csbId;
 
+	private Long endTime;
+
 	private String serviceName;
+
+	private Long startTime;
 
 	public Long getCsbId() {
 		return this.csbId;
@@ -42,6 +44,17 @@ public class CheckServiceExistRequest extends RpcAcsRequest<CheckServiceExistRes
 		this.csbId = csbId;
 		if(csbId != null){
 			putQueryParameter("CsbId", csbId.toString());
+		}
+	}
+
+	public Long getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(Long endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime.toString());
 		}
 	}
 
@@ -56,9 +69,20 @@ public class CheckServiceExistRequest extends RpcAcsRequest<CheckServiceExistRes
 		}
 	}
 
+	public Long getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(Long startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime.toString());
+		}
+	}
+
 	@Override
-	public Class<CheckServiceExistResponse> getResponseClass() {
-		return CheckServiceExistResponse.class;
+	public Class<FindServiceStatisticalDataResponse> getResponseClass() {
+		return FindServiceStatisticalDataResponse.class;
 	}
 
 }

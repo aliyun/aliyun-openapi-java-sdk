@@ -25,7 +25,7 @@ import com.aliyuncs.http.MethodType;
 public class UpdateServiceRequest extends RpcAcsRequest<UpdateServiceResponse> {
 	
 	public UpdateServiceRequest() {
-		super("CSB", "2017-11-18", "UpdateService", "CSB");
+		super("CSB", "2017-11-18", "UpdateService");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

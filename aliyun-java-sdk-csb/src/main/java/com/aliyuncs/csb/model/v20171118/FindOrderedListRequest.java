@@ -24,7 +24,7 @@ import com.aliyuncs.http.ProtocolType;
 public class FindOrderedListRequest extends RpcAcsRequest<FindOrderedListResponse> {
 	
 	public FindOrderedListRequest() {
-		super("CSB", "2017-11-18", "FindOrderedList", "CSB");
+		super("CSB", "2017-11-18", "FindOrderedList");
 		setProtocol(ProtocolType.HTTPS);
 	}
 

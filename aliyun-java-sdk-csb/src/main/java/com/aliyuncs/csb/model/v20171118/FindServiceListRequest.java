@@ -24,15 +24,15 @@ import com.aliyuncs.http.ProtocolType;
 public class FindServiceListRequest extends RpcAcsRequest<FindServiceListResponse> {
 	
 	public FindServiceListRequest() {
-		super("CSB", "2017-11-18", "FindServiceList", "CSB");
+		super("CSB", "2017-11-18", "FindServiceList");
 		setProtocol(ProtocolType.HTTPS);
 	}
 
 	private String projectName;
 
-	private Integer casShowType;
-
 	private Boolean showDelService;
+
+	private Integer casShowType;
 
 	private Long csbId;
 
@@ -53,17 +53,6 @@ public class FindServiceListRequest extends RpcAcsRequest<FindServiceListRespons
 		}
 	}
 
-	public Integer getCasShowType() {
-		return this.casShowType;
-	}
-
-	public void setCasShowType(Integer casShowType) {
-		this.casShowType = casShowType;
-		if(casShowType != null){
-			putQueryParameter("CasShowType", casShowType.toString());
-		}
-	}
-
 	public Boolean getShowDelService() {
 		return this.showDelService;
 	}
@@ -72,6 +61,17 @@ public class FindServiceListRequest extends RpcAcsRequest<FindServiceListRespons
 		this.showDelService = showDelService;
 		if(showDelService != null){
 			putQueryParameter("ShowDelService", showDelService.toString());
+		}
+	}
+
+	public Integer getCasShowType() {
+		return this.casShowType;
+	}
+
+	public void setCasShowType(Integer casShowType) {
+		this.casShowType = casShowType;
+		if(casShowType != null){
+			putQueryParameter("CasShowType", casShowType.toString());
 		}
 	}
 

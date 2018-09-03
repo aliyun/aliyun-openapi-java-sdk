@@ -25,7 +25,7 @@ import com.aliyuncs.http.MethodType;
 public class DeleteProjectRequest extends RpcAcsRequest<DeleteProjectResponse> {
 	
 	public DeleteProjectRequest() {
-		super("CSB", "2017-11-18", "DeleteProject", "CSB");
+		super("CSB", "2017-11-18", "DeleteProject");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

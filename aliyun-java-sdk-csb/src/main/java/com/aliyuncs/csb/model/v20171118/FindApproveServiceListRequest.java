@@ -24,13 +24,13 @@ import com.aliyuncs.http.ProtocolType;
 public class FindApproveServiceListRequest extends RpcAcsRequest<FindApproveServiceListResponse> {
 	
 	public FindApproveServiceListRequest() {
-		super("CSB", "2017-11-18", "FindApproveServiceList", "CSB");
+		super("CSB", "2017-11-18", "FindApproveServiceList");
 		setProtocol(ProtocolType.HTTPS);
 	}
 
-	private String approveLevel;
-
 	private String projectName;
+
+	private String approveLevel;
 
 	private Boolean showDelService;
 
@@ -40,17 +40,6 @@ public class FindApproveServiceListRequest extends RpcAcsRequest<FindApproveServ
 
 	private String serviceName;
 
-	public String getApproveLevel() {
-		return this.approveLevel;
-	}
-
-	public void setApproveLevel(String approveLevel) {
-		this.approveLevel = approveLevel;
-		if(approveLevel != null){
-			putQueryParameter("approveLevel", approveLevel);
-		}
-	}
-
 	public String getProjectName() {
 		return this.projectName;
 	}
@@ -58,7 +47,18 @@ public class FindApproveServiceListRequest extends RpcAcsRequest<FindApproveServ
 	public void setProjectName(String projectName) {
 		this.projectName = projectName;
 		if(projectName != null){
-			putQueryParameter("projectName", projectName);
+			putQueryParameter("ProjectName", projectName);
+		}
+	}
+
+	public String getApproveLevel() {
+		return this.approveLevel;
+	}
+
+	public void setApproveLevel(String approveLevel) {
+		this.approveLevel = approveLevel;
+		if(approveLevel != null){
+			putQueryParameter("ApproveLevel", approveLevel);
 		}
 	}
 
@@ -69,7 +69,7 @@ public class FindApproveServiceListRequest extends RpcAcsRequest<FindApproveServ
 	public void setShowDelService(Boolean showDelService) {
 		this.showDelService = showDelService;
 		if(showDelService != null){
-			putQueryParameter("showDelService", showDelService.toString());
+			putQueryParameter("ShowDelService", showDelService.toString());
 		}
 	}
 
@@ -80,7 +80,7 @@ public class FindApproveServiceListRequest extends RpcAcsRequest<FindApproveServ
 	public void setCsbId(Long csbId) {
 		this.csbId = csbId;
 		if(csbId != null){
-			putQueryParameter("csbId", csbId.toString());
+			putQueryParameter("CsbId", csbId.toString());
 		}
 	}
 
@@ -91,7 +91,7 @@ public class FindApproveServiceListRequest extends RpcAcsRequest<FindApproveServ
 	public void setAlias(String alias) {
 		this.alias = alias;
 		if(alias != null){
-			putQueryParameter("alias", alias);
+			putQueryParameter("Alias", alias);
 		}
 	}
 
@@ -102,7 +102,7 @@ public class FindApproveServiceListRequest extends RpcAcsRequest<FindApproveServ
 	public void setServiceName(String serviceName) {
 		this.serviceName = serviceName;
 		if(serviceName != null){
-			putQueryParameter("serviceName", serviceName);
+			putQueryParameter("ServiceName", serviceName);
 		}
 	}
 

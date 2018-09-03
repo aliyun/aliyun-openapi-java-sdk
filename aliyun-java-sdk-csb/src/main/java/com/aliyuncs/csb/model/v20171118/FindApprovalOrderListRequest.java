@@ -24,7 +24,7 @@ import com.aliyuncs.http.ProtocolType;
 public class FindApprovalOrderListRequest extends RpcAcsRequest<FindApprovalOrderListResponse> {
 	
 	public FindApprovalOrderListRequest() {
-		super("CSB", "2017-11-18", "FindApprovalOrderList", "CSB");
+		super("CSB", "2017-11-18", "FindApprovalOrderList");
 		setProtocol(ProtocolType.HTTPS);
 	}
 
@@ -34,9 +34,9 @@ public class FindApprovalOrderListRequest extends RpcAcsRequest<FindApprovalOrde
 
 	private String serviceName;
 
-	private Long serviceId;
-
 	private Integer pageNum;
+
+	private Long serviceId;
 
 	private Boolean onlyPending;
 
@@ -73,17 +73,6 @@ public class FindApprovalOrderListRequest extends RpcAcsRequest<FindApprovalOrde
 		}
 	}
 
-	public Long getServiceId() {
-		return this.serviceId;
-	}
-
-	public void setServiceId(Long serviceId) {
-		this.serviceId = serviceId;
-		if(serviceId != null){
-			putQueryParameter("ServiceId", serviceId.toString());
-		}
-	}
-
 	public Integer getPageNum() {
 		return this.pageNum;
 	}
@@ -92,6 +81,17 @@ public class FindApprovalOrderListRequest extends RpcAcsRequest<FindApprovalOrde
 		this.pageNum = pageNum;
 		if(pageNum != null){
 			putQueryParameter("PageNum", pageNum.toString());
+		}
+	}
+
+	public Long getServiceId() {
+		return this.serviceId;
+	}
+
+	public void setServiceId(Long serviceId) {
+		this.serviceId = serviceId;
+		if(serviceId != null){
+			putQueryParameter("ServiceId", serviceId.toString());
 		}
 	}
 

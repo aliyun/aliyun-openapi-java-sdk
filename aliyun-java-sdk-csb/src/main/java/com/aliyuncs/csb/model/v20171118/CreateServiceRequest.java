@@ -25,7 +25,7 @@ import com.aliyuncs.http.MethodType;
 public class CreateServiceRequest extends RpcAcsRequest<CreateServiceResponse> {
 	
 	public CreateServiceRequest() {
-		super("CSB", "2017-11-18", "CreateService", "CSB");
+		super("CSB", "2017-11-18", "CreateService");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
