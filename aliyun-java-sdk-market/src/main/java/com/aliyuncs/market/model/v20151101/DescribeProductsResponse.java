@@ -79,7 +79,7 @@ public class DescribeProductsResponse extends AcsResponse {
 
 		private String code;
 
-		private String code1;
+		private String name;
 
 		private Long categoryId;
 
@@ -115,12 +115,12 @@ public class DescribeProductsResponse extends AcsResponse {
 			this.code = code;
 		}
 
-		public String getCode1() {
-			return this.code1;
+		public String getName() {
+			return this.name;
 		}
 
-		public void setCode1(String code1) {
-			this.code1 = code1;
+		public void setName(String name) {
+			this.name = name;
 		}
 
 		public Long getCategoryId() {

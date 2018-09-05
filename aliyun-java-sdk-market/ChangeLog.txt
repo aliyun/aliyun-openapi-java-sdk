@@ -1,3 +1,7 @@
+2018-09-05 Version: 2.0.13
+1, Modify DescribeProducts Interface.
+2, Modify Identification require false for ActivateLicense
+
 2018-09-03 Version: 2.0.12
 1, add DescribeProducts interface
 2, modify DescribePrice implement

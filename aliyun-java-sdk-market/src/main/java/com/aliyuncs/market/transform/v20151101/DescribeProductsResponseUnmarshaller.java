@@ -36,7 +36,7 @@ public class DescribeProductsResponseUnmarshaller {
 		for (int i = 0; i < context.lengthValue("DescribeProductsResponse.ProductItems.Length"); i++) {
 			ProductItem productItem = new ProductItem();
 			productItem.setCode(context.stringValue("DescribeProductsResponse.ProductItems["+ i +"].Code"));
-			productItem.setCode1(context.stringValue("DescribeProductsResponse.ProductItems["+ i +"].Code"));
+			productItem.setName(context.stringValue("DescribeProductsResponse.ProductItems["+ i +"].Name"));
 			productItem.setCategoryId(context.longValue("DescribeProductsResponse.ProductItems["+ i +"].CategoryId"));
 			productItem.setSupplierId(context.longValue("DescribeProductsResponse.ProductItems["+ i +"].SupplierId"));
 			productItem.setSupplierName(context.stringValue("DescribeProductsResponse.ProductItems["+ i +"].SupplierName"));
