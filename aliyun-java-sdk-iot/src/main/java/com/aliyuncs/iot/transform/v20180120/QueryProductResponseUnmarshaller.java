@@ -41,6 +41,7 @@ public class QueryProductResponseUnmarshaller {
 		data.setCategoryKey(context.stringValue("QueryProductResponse.Data.CategoryKey"));
 		data.setAliyunCommodityCode(context.stringValue("QueryProductResponse.Data.AliyunCommodityCode"));
 		data.setId2(context.booleanValue("QueryProductResponse.Data.Id2"));
+		data.setProtocolType(context.stringValue("QueryProductResponse.Data.ProtocolType"));
 		queryProductResponse.setData(data);
 	 
 	 	return queryProductResponse;

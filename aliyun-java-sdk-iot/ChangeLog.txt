@@ -1,3 +1,7 @@
+2018-09-06 Version: 6.0.0
+1, Add API deleteProduct.
+2, Move all API to version 20180120.
+
 2018-08-27 Version: 5.1.0
 1, Add api GetGatewayBySubDevice.
 2, Modified the time related response parameters.

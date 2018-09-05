@@ -15,14 +15,14 @@
 package com.aliyuncs.iot.model.v20180120;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.iot.transform.v20180120.QueryProductResponseUnmarshaller;
+import com.aliyuncs.iot.transform.v20180120.CreateProductResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class QueryProductResponse extends AcsResponse {
+public class CreateProductResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -31,6 +31,8 @@ public class QueryProductResponse extends AcsResponse {
 	private String code;
 
 	private String errorMessage;
+
+	private String productKey;
 
 	private Data data;
 
@@ -66,6 +68,14 @@ public class QueryProductResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
+	public String getProductKey() {
+		return this.productKey;
+	}
+
+	public void setProductKey(String productKey) {
+		this.productKey = productKey;
+	}
+
 	public Data getData() {
 		return this.data;
 	}
@@ -76,13 +86,9 @@ public class QueryProductResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Long gmtCreate;
-
 		private Integer dataFormat;
 
 		private String description;
-
-		private Integer deviceCount;
 
 		private Integer nodeType;
 
@@ -90,25 +96,11 @@ public class QueryProductResponse extends AcsResponse {
 
 		private String productName;
 
-		private String productSecret;
-
-		private String categoryName;
-
-		private String categoryKey;
-
 		private String aliyunCommodityCode;
 
 		private Boolean id2;
 
 		private String protocolType;
-
-		public Long getGmtCreate() {
-			return this.gmtCreate;
-		}
-
-		public void setGmtCreate(Long gmtCreate) {
-			this.gmtCreate = gmtCreate;
-		}
 
 		public Integer getDataFormat() {
 			return this.dataFormat;
@@ -124,14 +116,6 @@ public class QueryProductResponse extends AcsResponse {
 
 		public void setDescription(String description) {
 			this.description = description;
-		}
-
-		public Integer getDeviceCount() {
-			return this.deviceCount;
-		}
-
-		public void setDeviceCount(Integer deviceCount) {
-			this.deviceCount = deviceCount;
 		}
 
 		public Integer getNodeType() {
@@ -156,30 +140,6 @@ public class QueryProductResponse extends AcsResponse {
 
 		public void setProductName(String productName) {
 			this.productName = productName;
-		}
-
-		public String getProductSecret() {
-			return this.productSecret;
-		}
-
-		public void setProductSecret(String productSecret) {
-			this.productSecret = productSecret;
-		}
-
-		public String getCategoryName() {
-			return this.categoryName;
-		}
-
-		public void setCategoryName(String categoryName) {
-			this.categoryName = categoryName;
-		}
-
-		public String getCategoryKey() {
-			return this.categoryKey;
-		}
-
-		public void setCategoryKey(String categoryKey) {
-			this.categoryKey = categoryKey;
 		}
 
 		public String getAliyunCommodityCode() {
@@ -208,7 +168,7 @@ public class QueryProductResponse extends AcsResponse {
 	}
 
 	@Override
-	public QueryProductResponse getInstance(UnmarshallerContext context) {
-		return	QueryProductResponseUnmarshaller.unmarshall(this, context);
+	public CreateProductResponse getInstance(UnmarshallerContext context) {
+		return	CreateProductResponseUnmarshaller.unmarshall(this, context);
 	}
 }
