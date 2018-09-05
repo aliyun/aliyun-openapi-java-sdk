@@ -1,3 +1,6 @@
+2018-09-05 Version: 1.7.0
+1, Add new APIs with control policy for querying price
+
 2018-08-28 Version: 1.6.0
 1, Add new APIs for profiling application performance: GetCloudMetricProfiling, etc.
 2, Add new APIs to support Shifter container applications: AddContainerApp, etc.
