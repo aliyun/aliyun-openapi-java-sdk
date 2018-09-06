@@ -51,8 +51,8 @@ public class DescribeAlarmsResponseUnmarshaller {
 			alarm.setEnable(context.booleanValue("DescribeAlarmsResponse.AlarmList["+ i +"].Enable"));
 
 			List<String> alarmActions = new ArrayList<String>();
-			for (int j = 0; j < context.lengthValue("DescribeAlarmsResponse.AlarmList["+ i +"].alarmActions.Length"); j++) {
-				alarmActions.add(context.stringValue("DescribeAlarmsResponse.AlarmList["+ i +"].alarmActions["+ j +"]"));
+			for (int j = 0; j < context.lengthValue("DescribeAlarmsResponse.AlarmList["+ i +"].AlarmActions.Length"); j++) {
+				alarmActions.add(context.stringValue("DescribeAlarmsResponse.AlarmList["+ i +"].AlarmActions["+ j +"]"));
 			}
 			alarm.setAlarmActions(alarmActions);
 

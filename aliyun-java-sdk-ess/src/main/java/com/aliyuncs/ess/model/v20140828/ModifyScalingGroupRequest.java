@@ -30,6 +30,8 @@ public class ModifyScalingGroupRequest extends RpcAcsRequest<ModifyScalingGroupR
 
 	private String healthCheckType;
 
+	private String launchTemplateId;
+
 	private String resourceOwnerAccount;
 
 	private String scalingGroupName;
@@ -43,6 +45,8 @@ public class ModifyScalingGroupRequest extends RpcAcsRequest<ModifyScalingGroupR
 	private Integer minSize;
 
 	private Long ownerId;
+
+	private String launchTemplateVersion;
 
 	private Integer maxSize;
 
@@ -71,6 +75,17 @@ public class ModifyScalingGroupRequest extends RpcAcsRequest<ModifyScalingGroupR
 		this.healthCheckType = healthCheckType;
 		if(healthCheckType != null){
 			putQueryParameter("HealthCheckType", healthCheckType);
+		}
+	}
+
+	public String getLaunchTemplateId() {
+		return this.launchTemplateId;
+	}
+
+	public void setLaunchTemplateId(String launchTemplateId) {
+		this.launchTemplateId = launchTemplateId;
+		if(launchTemplateId != null){
+			putQueryParameter("LaunchTemplateId", launchTemplateId);
 		}
 	}
 
@@ -148,6 +163,17 @@ public class ModifyScalingGroupRequest extends RpcAcsRequest<ModifyScalingGroupR
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getLaunchTemplateVersion() {
+		return this.launchTemplateVersion;
+	}
+
+	public void setLaunchTemplateVersion(String launchTemplateVersion) {
+		this.launchTemplateVersion = launchTemplateVersion;
+		if(launchTemplateVersion != null){
+			putQueryParameter("LaunchTemplateVersion", launchTemplateVersion);
 		}
 	}
 

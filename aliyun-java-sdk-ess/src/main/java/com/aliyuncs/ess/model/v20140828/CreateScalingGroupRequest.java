@@ -31,6 +31,8 @@ public class CreateScalingGroupRequest extends RpcAcsRequest<CreateScalingGroupR
 
 	private String dBInstanceIds;
 
+	private String launchTemplateId;
+
 	private String loadBalancerIds;
 
 	private String healthCheckType;
@@ -46,6 +48,8 @@ public class CreateScalingGroupRequest extends RpcAcsRequest<CreateScalingGroupR
 	private Integer minSize;
 
 	private Long ownerId;
+
+	private String launchTemplateVersion;
 
 	private String vSwitchId;
 
@@ -78,6 +82,17 @@ public class CreateScalingGroupRequest extends RpcAcsRequest<CreateScalingGroupR
 		this.dBInstanceIds = dBInstanceIds;
 		if(dBInstanceIds != null){
 			putQueryParameter("DBInstanceIds", dBInstanceIds);
+		}
+	}
+
+	public String getLaunchTemplateId() {
+		return this.launchTemplateId;
+	}
+
+	public void setLaunchTemplateId(String launchTemplateId) {
+		this.launchTemplateId = launchTemplateId;
+		if(launchTemplateId != null){
+			putQueryParameter("LaunchTemplateId", launchTemplateId);
 		}
 	}
 
@@ -168,6 +183,17 @@ public class CreateScalingGroupRequest extends RpcAcsRequest<CreateScalingGroupR
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getLaunchTemplateVersion() {
+		return this.launchTemplateVersion;
+	}
+
+	public void setLaunchTemplateVersion(String launchTemplateVersion) {
+		this.launchTemplateVersion = launchTemplateVersion;
+		if(launchTemplateVersion != null){
+			putQueryParameter("LaunchTemplateVersion", launchTemplateVersion);
 		}
 	}
 

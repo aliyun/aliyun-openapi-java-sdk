@@ -1,3 +1,6 @@
+2018-09-06 Version: 2.2.6
+1, AutoScaling support launchTemplate.
+
 2018-08-27 Version: 2.2.5
 1, add Ess alarm task api, CreateAlarm, DeleteAlarm, DescribeAlarms, DeleteAlarm, EnableAlarm, DisableAlarm
 

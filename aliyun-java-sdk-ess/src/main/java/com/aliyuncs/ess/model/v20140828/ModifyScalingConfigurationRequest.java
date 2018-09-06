@@ -101,7 +101,7 @@ public class ModifyScalingConfigurationRequest extends RpcAcsRequest<ModifyScali
 		return this.instanceTypes;
 	}
 
-	public void setInstanceTypess(List<String> instanceTypes) {
+	public void setInstanceTypes(List<String> instanceTypes) {
 		this.instanceTypes = instanceTypes;
 		if (instanceTypes != null) {
 			for (int i = 0; i < instanceTypes.size(); i++) {

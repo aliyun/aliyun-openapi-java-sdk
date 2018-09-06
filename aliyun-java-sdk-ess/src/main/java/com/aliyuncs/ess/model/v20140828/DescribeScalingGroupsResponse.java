@@ -99,6 +99,10 @@ public class DescribeScalingGroupsResponse extends AcsResponse {
 
 		private String activeScalingConfigurationId;
 
+		private String launchTemplateId;
+
+		private String launchTemplateVersion;
+
 		private String scalingGroupId;
 
 		private String regionId;
@@ -215,6 +219,22 @@ public class DescribeScalingGroupsResponse extends AcsResponse {
 
 		public void setActiveScalingConfigurationId(String activeScalingConfigurationId) {
 			this.activeScalingConfigurationId = activeScalingConfigurationId;
+		}
+
+		public String getLaunchTemplateId() {
+			return this.launchTemplateId;
+		}
+
+		public void setLaunchTemplateId(String launchTemplateId) {
+			this.launchTemplateId = launchTemplateId;
+		}
+
+		public String getLaunchTemplateVersion() {
+			return this.launchTemplateVersion;
+		}
+
+		public void setLaunchTemplateVersion(String launchTemplateVersion) {
+			this.launchTemplateVersion = launchTemplateVersion;
 		}
 
 		public String getScalingGroupId() {

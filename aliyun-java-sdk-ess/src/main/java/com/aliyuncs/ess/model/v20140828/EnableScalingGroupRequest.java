@@ -26,8 +26,6 @@ public class EnableScalingGroupRequest extends RpcAcsRequest<EnableScalingGroupR
 		super("Ess", "2014-08-28", "EnableScalingGroup", "ess");
 	}
 
-	private String instanceId10;
-
 	private Integer loadBalancerWeight6;
 
 	private Integer loadBalancerWeight11;
@@ -38,11 +36,7 @@ public class EnableScalingGroupRequest extends RpcAcsRequest<EnableScalingGroupR
 
 	private Long resourceOwnerId;
 
-	private String instanceId12;
-
 	private Integer loadBalancerWeight8;
-
-	private String instanceId11;
 
 	private Integer loadBalancerWeight9;
 
@@ -56,8 +50,6 @@ public class EnableScalingGroupRequest extends RpcAcsRequest<EnableScalingGroupR
 
 	private Integer loadBalancerWeight16;
 
-	private String scalingGroupId;
-
 	private Integer loadBalancerWeight4;
 
 	private Integer loadBalancerWeight13;
@@ -70,23 +62,19 @@ public class EnableScalingGroupRequest extends RpcAcsRequest<EnableScalingGroupR
 
 	private Integer loadBalancerWeight1;
 
-	private String instanceId20;
-
 	private String instanceId1;
 
 	private Integer loadBalancerWeight20;
 
 	private String instanceId3;
 
-	private String resourceOwnerAccount;
+	private String launchTemplateId;
 
 	private String instanceId2;
 
 	private String instanceId5;
 
 	private String instanceId4;
-
-	private String ownerAccount;
 
 	private String instanceId7;
 
@@ -98,17 +86,33 @@ public class EnableScalingGroupRequest extends RpcAcsRequest<EnableScalingGroupR
 
 	private Long ownerId;
 
-	private String instanceId18;
-
 	private Integer loadBalancerWeight19;
-
-	private String instanceId17;
 
 	private Integer loadBalancerWeight17;
 
-	private String instanceId19;
-
 	private Integer loadBalancerWeight18;
+
+	private String instanceId10;
+
+	private String instanceId12;
+
+	private String instanceId11;
+
+	private String scalingGroupId;
+
+	private String instanceId20;
+
+	private String resourceOwnerAccount;
+
+	private String ownerAccount;
+
+	private String launchTemplateVersion;
+
+	private String instanceId18;
+
+	private String instanceId17;
+
+	private String instanceId19;
 
 	private String instanceId14;
 
@@ -117,17 +121,6 @@ public class EnableScalingGroupRequest extends RpcAcsRequest<EnableScalingGroupR
 	private String instanceId16;
 
 	private String instanceId15;
-
-	public String getInstanceId10() {
-		return this.instanceId10;
-	}
-
-	public void setInstanceId10(String instanceId10) {
-		this.instanceId10 = instanceId10;
-		if(instanceId10 != null){
-			putQueryParameter("InstanceId.10", instanceId10);
-		}
-	}
 
 	public Integer getLoadBalancerWeight6() {
 		return this.loadBalancerWeight6;
@@ -184,17 +177,6 @@ public class EnableScalingGroupRequest extends RpcAcsRequest<EnableScalingGroupR
 		}
 	}
 
-	public String getInstanceId12() {
-		return this.instanceId12;
-	}
-
-	public void setInstanceId12(String instanceId12) {
-		this.instanceId12 = instanceId12;
-		if(instanceId12 != null){
-			putQueryParameter("InstanceId.12", instanceId12);
-		}
-	}
-
 	public Integer getLoadBalancerWeight8() {
 		return this.loadBalancerWeight8;
 	}
@@ -203,17 +185,6 @@ public class EnableScalingGroupRequest extends RpcAcsRequest<EnableScalingGroupR
 		this.loadBalancerWeight8 = loadBalancerWeight8;
 		if(loadBalancerWeight8 != null){
 			putQueryParameter("LoadBalancerWeight.8", loadBalancerWeight8.toString());
-		}
-	}
-
-	public String getInstanceId11() {
-		return this.instanceId11;
-	}
-
-	public void setInstanceId11(String instanceId11) {
-		this.instanceId11 = instanceId11;
-		if(instanceId11 != null){
-			putQueryParameter("InstanceId.11", instanceId11);
 		}
 	}
 
@@ -283,17 +254,6 @@ public class EnableScalingGroupRequest extends RpcAcsRequest<EnableScalingGroupR
 		}
 	}
 
-	public String getScalingGroupId() {
-		return this.scalingGroupId;
-	}
-
-	public void setScalingGroupId(String scalingGroupId) {
-		this.scalingGroupId = scalingGroupId;
-		if(scalingGroupId != null){
-			putQueryParameter("ScalingGroupId", scalingGroupId);
-		}
-	}
-
 	public Integer getLoadBalancerWeight4() {
 		return this.loadBalancerWeight4;
 	}
@@ -360,17 +320,6 @@ public class EnableScalingGroupRequest extends RpcAcsRequest<EnableScalingGroupR
 		}
 	}
 
-	public String getInstanceId20() {
-		return this.instanceId20;
-	}
-
-	public void setInstanceId20(String instanceId20) {
-		this.instanceId20 = instanceId20;
-		if(instanceId20 != null){
-			putQueryParameter("InstanceId.20", instanceId20);
-		}
-	}
-
 	public String getInstanceId1() {
 		return this.instanceId1;
 	}
@@ -404,14 +353,14 @@ public class EnableScalingGroupRequest extends RpcAcsRequest<EnableScalingGroupR
 		}
 	}
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
+	public String getLaunchTemplateId() {
+		return this.launchTemplateId;
 	}
 
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	public void setLaunchTemplateId(String launchTemplateId) {
+		this.launchTemplateId = launchTemplateId;
+		if(launchTemplateId != null){
+			putQueryParameter("LaunchTemplateId", launchTemplateId);
 		}
 	}
 
@@ -445,17 +394,6 @@ public class EnableScalingGroupRequest extends RpcAcsRequest<EnableScalingGroupR
 		this.instanceId4 = instanceId4;
 		if(instanceId4 != null){
 			putQueryParameter("InstanceId.4", instanceId4);
-		}
-	}
-
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
-
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		if(ownerAccount != null){
-			putQueryParameter("OwnerAccount", ownerAccount);
 		}
 	}
 
@@ -514,17 +452,6 @@ public class EnableScalingGroupRequest extends RpcAcsRequest<EnableScalingGroupR
 		}
 	}
 
-	public String getInstanceId18() {
-		return this.instanceId18;
-	}
-
-	public void setInstanceId18(String instanceId18) {
-		this.instanceId18 = instanceId18;
-		if(instanceId18 != null){
-			putQueryParameter("InstanceId.18", instanceId18);
-		}
-	}
-
 	public Integer getLoadBalancerWeight19() {
 		return this.loadBalancerWeight19;
 	}
@@ -533,17 +460,6 @@ public class EnableScalingGroupRequest extends RpcAcsRequest<EnableScalingGroupR
 		this.loadBalancerWeight19 = loadBalancerWeight19;
 		if(loadBalancerWeight19 != null){
 			putQueryParameter("LoadBalancerWeight.19", loadBalancerWeight19.toString());
-		}
-	}
-
-	public String getInstanceId17() {
-		return this.instanceId17;
-	}
-
-	public void setInstanceId17(String instanceId17) {
-		this.instanceId17 = instanceId17;
-		if(instanceId17 != null){
-			putQueryParameter("InstanceId.17", instanceId17);
 		}
 	}
 
@@ -558,17 +474,6 @@ public class EnableScalingGroupRequest extends RpcAcsRequest<EnableScalingGroupR
 		}
 	}
 
-	public String getInstanceId19() {
-		return this.instanceId19;
-	}
-
-	public void setInstanceId19(String instanceId19) {
-		this.instanceId19 = instanceId19;
-		if(instanceId19 != null){
-			putQueryParameter("InstanceId.19", instanceId19);
-		}
-	}
-
 	public Integer getLoadBalancerWeight18() {
 		return this.loadBalancerWeight18;
 	}
@@ -577,6 +482,127 @@ public class EnableScalingGroupRequest extends RpcAcsRequest<EnableScalingGroupR
 		this.loadBalancerWeight18 = loadBalancerWeight18;
 		if(loadBalancerWeight18 != null){
 			putQueryParameter("LoadBalancerWeight.18", loadBalancerWeight18.toString());
+		}
+	}
+
+	public String getInstanceId10() {
+		return this.instanceId10;
+	}
+
+	public void setInstanceId10(String instanceId10) {
+		this.instanceId10 = instanceId10;
+		if(instanceId10 != null){
+			putQueryParameter("InstanceId.10", instanceId10);
+		}
+	}
+
+	public String getInstanceId12() {
+		return this.instanceId12;
+	}
+
+	public void setInstanceId12(String instanceId12) {
+		this.instanceId12 = instanceId12;
+		if(instanceId12 != null){
+			putQueryParameter("InstanceId.12", instanceId12);
+		}
+	}
+
+	public String getInstanceId11() {
+		return this.instanceId11;
+	}
+
+	public void setInstanceId11(String instanceId11) {
+		this.instanceId11 = instanceId11;
+		if(instanceId11 != null){
+			putQueryParameter("InstanceId.11", instanceId11);
+		}
+	}
+
+	public String getScalingGroupId() {
+		return this.scalingGroupId;
+	}
+
+	public void setScalingGroupId(String scalingGroupId) {
+		this.scalingGroupId = scalingGroupId;
+		if(scalingGroupId != null){
+			putQueryParameter("ScalingGroupId", scalingGroupId);
+		}
+	}
+
+	public String getInstanceId20() {
+		return this.instanceId20;
+	}
+
+	public void setInstanceId20(String instanceId20) {
+		this.instanceId20 = instanceId20;
+		if(instanceId20 != null){
+			putQueryParameter("InstanceId.20", instanceId20);
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public String getLaunchTemplateVersion() {
+		return this.launchTemplateVersion;
+	}
+
+	public void setLaunchTemplateVersion(String launchTemplateVersion) {
+		this.launchTemplateVersion = launchTemplateVersion;
+		if(launchTemplateVersion != null){
+			putQueryParameter("LaunchTemplateVersion", launchTemplateVersion);
+		}
+	}
+
+	public String getInstanceId18() {
+		return this.instanceId18;
+	}
+
+	public void setInstanceId18(String instanceId18) {
+		this.instanceId18 = instanceId18;
+		if(instanceId18 != null){
+			putQueryParameter("InstanceId.18", instanceId18);
+		}
+	}
+
+	public String getInstanceId17() {
+		return this.instanceId17;
+	}
+
+	public void setInstanceId17(String instanceId17) {
+		this.instanceId17 = instanceId17;
+		if(instanceId17 != null){
+			putQueryParameter("InstanceId.17", instanceId17);
+		}
+	}
+
+	public String getInstanceId19() {
+		return this.instanceId19;
+	}
+
+	public void setInstanceId19(String instanceId19) {
+		this.instanceId19 = instanceId19;
+		if(instanceId19 != null){
+			putQueryParameter("InstanceId.19", instanceId19);
 		}
 	}
 

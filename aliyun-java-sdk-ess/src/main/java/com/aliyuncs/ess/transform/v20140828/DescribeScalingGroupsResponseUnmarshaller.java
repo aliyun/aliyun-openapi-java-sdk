@@ -46,6 +46,8 @@ public class DescribeScalingGroupsResponseUnmarshaller {
 			scalingGroup.setStandbyCapacity(context.integerValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].StandbyCapacity"));
 			scalingGroup.setProtectedCapacity(context.integerValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].ProtectedCapacity"));
 			scalingGroup.setActiveScalingConfigurationId(context.stringValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].ActiveScalingConfigurationId"));
+			scalingGroup.setLaunchTemplateId(context.stringValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].LaunchTemplateId"));
+			scalingGroup.setLaunchTemplateVersion(context.stringValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].LaunchTemplateVersion"));
 			scalingGroup.setScalingGroupId(context.stringValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].ScalingGroupId"));
 			scalingGroup.setRegionId(context.stringValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].RegionId"));
 			scalingGroup.setTotalCapacity(context.integerValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].TotalCapacity"));
