@@ -30,6 +30,8 @@ public class DescribeReplicaUsageRequest extends RpcAcsRequest<DescribeReplicaUs
 
 	private String sourceDBInstanceId;
 
+	private String destinationDBInstanceId;
+
 	private String securityToken;
 
 	private String resourceOwnerAccount;
@@ -59,6 +61,17 @@ public class DescribeReplicaUsageRequest extends RpcAcsRequest<DescribeReplicaUs
 		this.sourceDBInstanceId = sourceDBInstanceId;
 		if(sourceDBInstanceId != null){
 			putQueryParameter("SourceDBInstanceId", sourceDBInstanceId);
+		}
+	}
+
+	public String getDestinationDBInstanceId() {
+		return this.destinationDBInstanceId;
+	}
+
+	public void setDestinationDBInstanceId(String destinationDBInstanceId) {
+		this.destinationDBInstanceId = destinationDBInstanceId;
+		if(destinationDBInstanceId != null){
+			putQueryParameter("DestinationDBInstanceId", destinationDBInstanceId);
 		}
 	}
 

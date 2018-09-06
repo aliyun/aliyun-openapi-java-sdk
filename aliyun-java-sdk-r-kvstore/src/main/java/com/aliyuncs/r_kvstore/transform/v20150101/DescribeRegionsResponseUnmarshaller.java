@@ -36,7 +36,12 @@ public class DescribeRegionsResponseUnmarshaller {
 			kVStoreRegion.setZoneIds(context.stringValue("DescribeRegionsResponse.RegionIds["+ i +"].ZoneIds"));
 			kVStoreRegion.setLocalName(context.stringValue("DescribeRegionsResponse.RegionIds["+ i +"].LocalName"));
 			kVStoreRegion.setRegionEndpoint(context.stringValue("DescribeRegionsResponse.RegionIds["+ i +"].RegionEndpoint"));
-			kVStoreRegion.setZoneIdList(context.stringValue("DescribeRegionsResponse.RegionIds["+ i +"].ZoneIdList"));
+
+			List<String> zoneIdList = new ArrayList<String>();
+			for (int j = 0; j < context.lengthValue("DescribeRegionsResponse.RegionIds["+ i +"].ZoneIdList.Length"); j++) {
+				zoneIdList.add(context.stringValue("DescribeRegionsResponse.RegionIds["+ i +"].ZoneIdList["+ j +"]"));
+			}
+			kVStoreRegion.setZoneIdList(zoneIdList);
 
 			regionIds.add(kVStoreRegion);
 		}

@@ -28,6 +28,8 @@ public class DescribeReplicaPerformanceRequest extends RpcAcsRequest<DescribeRep
 
 	private Long resourceOwnerId;
 
+	private String destinationDBInstanceId;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
@@ -54,6 +56,17 @@ public class DescribeReplicaPerformanceRequest extends RpcAcsRequest<DescribeRep
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getDestinationDBInstanceId() {
+		return this.destinationDBInstanceId;
+	}
+
+	public void setDestinationDBInstanceId(String destinationDBInstanceId) {
+		this.destinationDBInstanceId = destinationDBInstanceId;
+		if(destinationDBInstanceId != null){
+			putQueryParameter("DestinationDBInstanceId", destinationDBInstanceId);
 		}
 	}
 
