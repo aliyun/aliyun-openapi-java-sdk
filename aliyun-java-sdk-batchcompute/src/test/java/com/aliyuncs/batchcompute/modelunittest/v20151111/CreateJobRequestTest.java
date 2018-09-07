@@ -25,8 +25,8 @@ import com.aliyuncs.batchcompute.pojo.v20151111.*;
 import com.aliyuncs.exceptions.ClientException;
 import com.aliyuncs.http.MethodType;
 import junit.framework.TestCase;
-import org.codehaus.jackson.map.ObjectMapper;
-import org.codehaus.jackson.map.annotate.JsonSerialize;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import org.junit.Test;
 
 import java.io.IOException;

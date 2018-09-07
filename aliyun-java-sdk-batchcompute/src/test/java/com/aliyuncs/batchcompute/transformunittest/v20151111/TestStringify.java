@@ -3,8 +3,8 @@ package com.aliyuncs.batchcompute.transformunittest.v20151111;
 import com.aliyuncs.batchcompute.pojo.v20151111.ClusterDescription;
 import com.aliyuncs.batchcompute.pojo.v20151111.GroupDescription;
 import junit.framework.TestCase;
-import org.codehaus.jackson.map.ObjectMapper;
-import org.codehaus.jackson.map.annotate.JsonSerialize;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import org.junit.Test;
 
 import java.io.IOException;
@@ -27,7 +27,7 @@ public class TestStringify extends TestCase {
 
 
         //默认值不序列化
-        mapper.setSerializationInclusion(JsonSerialize.Inclusion.NON_DEFAULT);
+        mapper.setSerializationInclusion(JsonInclude.Include.NON_DEFAULT);
 
         String contentString = null;
         contentString = mapper.writeValueAsString(clusterDesc);
@@ -52,7 +52,7 @@ public class TestStringify extends TestCase {
 
 
         //默认值不序列化
-        mapper.setSerializationInclusion(JsonSerialize.Inclusion.NON_DEFAULT);
+        mapper.setSerializationInclusion(JsonInclude.Include.NON_DEFAULT);
 
         String contentString = null;
         contentString = mapper.writeValueAsString(clusterDesc);

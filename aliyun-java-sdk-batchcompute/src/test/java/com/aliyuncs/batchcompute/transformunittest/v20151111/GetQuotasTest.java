@@ -6,8 +6,8 @@ import com.aliyuncs.batchcompute.pojo.v20151111.Quotas;
 import com.aliyuncs.batchcompute.pojo.v20151111.SystemDisk;
 import com.aliyuncs.batchcompute.util.FileLoader;
 import junit.framework.TestCase;
-import org.codehaus.jackson.map.ObjectMapper;
-import org.codehaus.jackson.map.annotate.JsonSerialize;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import org.junit.Test;
 
 import java.io.IOException;

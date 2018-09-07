@@ -20,8 +20,8 @@ package com.aliyuncs.batchcompute.transform.v20151111;
 
 import com.aliyuncs.batchcompute.model.v20151111.CreateJobRequest;
 import com.aliyuncs.exceptions.ClientException;
-import org.codehaus.jackson.map.ObjectMapper;
-import org.codehaus.jackson.map.annotate.JsonSerialize;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.annotation.JsonInclude;
 
 import java.io.IOException;
 import java.security.NoSuchAlgorithmException;
@@ -34,7 +34,7 @@ public class CreateJobRequestMarshaller {
         ObjectMapper mapper = new ObjectMapper();
 
         //默认值不序列化
-        mapper.setSerializationInclusion(JsonSerialize.Inclusion.NON_DEFAULT);
+        mapper.setSerializationInclusion(JsonInclude.Include.NON_DEFAULT);
 
         String contentString = null;
         try {
