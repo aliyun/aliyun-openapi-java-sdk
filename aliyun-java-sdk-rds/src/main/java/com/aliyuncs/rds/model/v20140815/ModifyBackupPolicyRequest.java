@@ -36,6 +36,8 @@ public class ModifyBackupPolicyRequest extends RpcAcsRequest<ModifyBackupPolicyR
 
 	private String ownerAccount;
 
+	private String logBackupFrequency;
+
 	private String backupLog;
 
 	private String localLogRetentionSpace;
@@ -114,6 +116,17 @@ public class ModifyBackupPolicyRequest extends RpcAcsRequest<ModifyBackupPolicyR
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public String getLogBackupFrequency() {
+		return this.logBackupFrequency;
+	}
+
+	public void setLogBackupFrequency(String logBackupFrequency) {
+		this.logBackupFrequency = logBackupFrequency;
+		if(logBackupFrequency != null){
+			putQueryParameter("LogBackupFrequency", logBackupFrequency);
 		}
 	}
 

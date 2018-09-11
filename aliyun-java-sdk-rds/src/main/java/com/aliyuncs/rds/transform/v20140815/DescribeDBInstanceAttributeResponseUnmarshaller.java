@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.rds.model.v20140815.DescribeDBInstanceAttributeResponse;
 import com.aliyuncs.rds.model.v20140815.DescribeDBInstanceAttributeResponse.DBInstanceAttribute;
 import com.aliyuncs.rds.model.v20140815.DescribeDBInstanceAttributeResponse.DBInstanceAttribute.ReadOnlyDBInstanceId;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -94,6 +95,7 @@ public class DescribeDBInstanceAttributeResponseUnmarshaller {
 			dBInstanceAttribute.setLatestKernelVersion(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].LatestKernelVersion"));
 			dBInstanceAttribute.setResourceGroupId(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].ResourceGroupId"));
 			dBInstanceAttribute.setReadonlyInstanceSQLDelayedTime(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].ReadonlyInstanceSQLDelayedTime"));
+			dBInstanceAttribute.setSecurityIPMode(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].SecurityIPMode"));
 
 			List<ReadOnlyDBInstanceId> readOnlyDBInstanceIds = new ArrayList<ReadOnlyDBInstanceId>();
 			for (int j = 0; j < context.lengthValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].ReadOnlyDBInstanceIds.Length"); j++) {

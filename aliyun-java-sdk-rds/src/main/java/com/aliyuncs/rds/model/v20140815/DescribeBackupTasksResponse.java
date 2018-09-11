@@ -49,13 +49,15 @@ public class DescribeBackupTasksResponse extends AcsResponse {
 
 		private String backupProgressStatus;
 
+		private String backupStatus;
+
 		private String jobMode;
 
 		private String process;
 
 		private String taskAction;
 
-		private String backupjobId;
+		private String backupJobId;
 
 		public String getBackupProgressStatus() {
 			return this.backupProgressStatus;
@@ -63,6 +65,14 @@ public class DescribeBackupTasksResponse extends AcsResponse {
 
 		public void setBackupProgressStatus(String backupProgressStatus) {
 			this.backupProgressStatus = backupProgressStatus;
+		}
+
+		public String getBackupStatus() {
+			return this.backupStatus;
+		}
+
+		public void setBackupStatus(String backupStatus) {
+			this.backupStatus = backupStatus;
 		}
 
 		public String getJobMode() {
@@ -89,12 +99,12 @@ public class DescribeBackupTasksResponse extends AcsResponse {
 			this.taskAction = taskAction;
 		}
 
-		public String getBackupjobId() {
-			return this.backupjobId;
+		public String getBackupJobId() {
+			return this.backupJobId;
 		}
 
-		public void setBackupjobId(String backupjobId) {
-			this.backupjobId = backupjobId;
+		public void setBackupJobId(String backupJobId) {
+			this.backupJobId = backupJobId;
 		}
 	}
 

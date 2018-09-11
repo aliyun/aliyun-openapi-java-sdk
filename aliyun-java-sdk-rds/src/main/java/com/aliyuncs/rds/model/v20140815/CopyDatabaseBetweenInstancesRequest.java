@@ -30,25 +30,15 @@ public class CopyDatabaseBetweenInstancesRequest extends RpcAcsRequest<CopyDatab
 
 	private String restoreTime;
 
-	private String resourceOwnerAccount;
-
-	private String clientToken;
-
 	private String backupId;
 
-	private String ownerAccount;
-
-	private Long ownerId;
+	private String syncUserPrivilege;
 
 	private String dbNames;
-
-	private String resourceGroupId;
 
 	private String targetDBInstanceId;
 
 	private String dBInstanceId;
-
-	private String payType;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -72,28 +62,6 @@ public class CopyDatabaseBetweenInstancesRequest extends RpcAcsRequest<CopyDatab
 		}
 	}
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public String getClientToken() {
-		return this.clientToken;
-	}
-
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putQueryParameter("ClientToken", clientToken);
-		}
-	}
-
 	public String getBackupId() {
 		return this.backupId;
 	}
@@ -105,25 +73,14 @@ public class CopyDatabaseBetweenInstancesRequest extends RpcAcsRequest<CopyDatab
 		}
 	}
 
-	public String getOwnerAccount() {
-		return this.ownerAccount;
+	public String getSyncUserPrivilege() {
+		return this.syncUserPrivilege;
 	}
 
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		if(ownerAccount != null){
-			putQueryParameter("OwnerAccount", ownerAccount);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
+	public void setSyncUserPrivilege(String syncUserPrivilege) {
+		this.syncUserPrivilege = syncUserPrivilege;
+		if(syncUserPrivilege != null){
+			putQueryParameter("SyncUserPrivilege", syncUserPrivilege);
 		}
 	}
 
@@ -135,17 +92,6 @@ public class CopyDatabaseBetweenInstancesRequest extends RpcAcsRequest<CopyDatab
 		this.dbNames = dbNames;
 		if(dbNames != null){
 			putQueryParameter("DbNames", dbNames);
-		}
-	}
-
-	public String getResourceGroupId() {
-		return this.resourceGroupId;
-	}
-
-	public void setResourceGroupId(String resourceGroupId) {
-		this.resourceGroupId = resourceGroupId;
-		if(resourceGroupId != null){
-			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 
@@ -168,17 +114,6 @@ public class CopyDatabaseBetweenInstancesRequest extends RpcAcsRequest<CopyDatab
 		this.dBInstanceId = dBInstanceId;
 		if(dBInstanceId != null){
 			putQueryParameter("DBInstanceId", dBInstanceId);
-		}
-	}
-
-	public String getPayType() {
-		return this.payType;
-	}
-
-	public void setPayType(String payType) {
-		this.payType = payType;
-		if(payType != null){
-			putQueryParameter("PayType", payType);
 		}
 	}
 

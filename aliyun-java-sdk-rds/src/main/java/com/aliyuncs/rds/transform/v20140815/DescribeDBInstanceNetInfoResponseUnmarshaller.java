@@ -21,6 +21,7 @@ import com.aliyuncs.rds.model.v20140815.DescribeDBInstanceNetInfoResponse;
 import com.aliyuncs.rds.model.v20140815.DescribeDBInstanceNetInfoResponse.DBInstanceNetInfo;
 import com.aliyuncs.rds.model.v20140815.DescribeDBInstanceNetInfoResponse.DBInstanceNetInfo.DBInstanceWeight;
 import com.aliyuncs.rds.model.v20140815.DescribeDBInstanceNetInfoResponse.DBInstanceNetInfo.SecurityIPGroup;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

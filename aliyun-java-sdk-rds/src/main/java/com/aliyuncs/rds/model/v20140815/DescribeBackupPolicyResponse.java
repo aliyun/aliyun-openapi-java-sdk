@@ -50,6 +50,8 @@ public class DescribeBackupPolicyResponse extends AcsResponse {
 
 	private String highSpaceUsageProtection;
 
+	private String logBackupFrequency;
+
 	private DuplicationLocation duplicationLocation;
 
 	public String getRequestId() {
@@ -154,6 +156,14 @@ public class DescribeBackupPolicyResponse extends AcsResponse {
 
 	public void setHighSpaceUsageProtection(String highSpaceUsageProtection) {
 		this.highSpaceUsageProtection = highSpaceUsageProtection;
+	}
+
+	public String getLogBackupFrequency() {
+		return this.logBackupFrequency;
+	}
+
+	public void setLogBackupFrequency(String logBackupFrequency) {
+		this.logBackupFrequency = logBackupFrequency;
 	}
 
 	public DuplicationLocation getDuplicationLocation() {

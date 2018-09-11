@@ -51,6 +51,8 @@ public class CalculateDBInstanceWeightResponse extends AcsResponse {
 
 		private String dBInstanceType;
 
+		private String readonlyInstanceSQLDelayedTime;
+
 		private String availability;
 
 		private String weight;
@@ -69,6 +71,14 @@ public class CalculateDBInstanceWeightResponse extends AcsResponse {
 
 		public void setDBInstanceType(String dBInstanceType) {
 			this.dBInstanceType = dBInstanceType;
+		}
+
+		public String getReadonlyInstanceSQLDelayedTime() {
+			return this.readonlyInstanceSQLDelayedTime;
+		}
+
+		public void setReadonlyInstanceSQLDelayedTime(String readonlyInstanceSQLDelayedTime) {
+			this.readonlyInstanceSQLDelayedTime = readonlyInstanceSQLDelayedTime;
 		}
 
 		public String getAvailability() {

@@ -26,28 +26,17 @@ public class UpgradeDBInstanceKernelVersionRequest extends RpcAcsRequest<Upgrade
 		super("Rds", "2014-08-15", "UpgradeDBInstanceKernelVersion", "rds");
 	}
 
-	private String switchTimeMode;
-
 	private Long resourceOwnerId;
 
 	private String resourceOwnerAccount;
+
+	private String upgradeTime;
 
 	private String dBInstanceId;
 
 	private String switchTime;
 
 	private Long ownerId;
-
-	public String getSwitchTimeMode() {
-		return this.switchTimeMode;
-	}
-
-	public void setSwitchTimeMode(String switchTimeMode) {
-		this.switchTimeMode = switchTimeMode;
-		if(switchTimeMode != null){
-			putQueryParameter("SwitchTimeMode", switchTimeMode);
-		}
-	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -68,6 +57,17 @@ public class UpgradeDBInstanceKernelVersionRequest extends RpcAcsRequest<Upgrade
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getUpgradeTime() {
+		return this.upgradeTime;
+	}
+
+	public void setUpgradeTime(String upgradeTime) {
+		this.upgradeTime = upgradeTime;
+		if(upgradeTime != null){
+			putQueryParameter("UpgradeTime", upgradeTime);
 		}
 	}
 

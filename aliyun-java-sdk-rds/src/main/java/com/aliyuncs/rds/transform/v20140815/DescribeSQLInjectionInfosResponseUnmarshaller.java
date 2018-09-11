@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.rds.model.v20140815.DescribeSQLInjectionInfosResponse;
 import com.aliyuncs.rds.model.v20140815.DescribeSQLInjectionInfosResponse.SQLInjectionInfo;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

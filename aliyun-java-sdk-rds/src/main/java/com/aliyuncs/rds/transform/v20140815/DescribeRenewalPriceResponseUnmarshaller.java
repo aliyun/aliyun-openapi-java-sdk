@@ -22,6 +22,7 @@ import com.aliyuncs.rds.model.v20140815.DescribeRenewalPriceResponse.PriceInfo;
 import com.aliyuncs.rds.model.v20140815.DescribeRenewalPriceResponse.PriceInfo.ActivityInfo;
 import com.aliyuncs.rds.model.v20140815.DescribeRenewalPriceResponse.PriceInfo.Coupon;
 import com.aliyuncs.rds.model.v20140815.DescribeRenewalPriceResponse.Rule;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

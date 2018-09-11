@@ -28,23 +28,15 @@ public class DescribeBackupsRequest extends RpcAcsRequest<DescribeBackupsRespons
 
 	private Long resourceOwnerId;
 
-	private String resourceOwnerAccount;
-
 	private String backupId;
-
-	private String ownerAccount;
 
 	private String endTime;
 
 	private String startTime;
 
-	private Long ownerId;
-
 	private Integer pageNumber;
 
 	private String backupStatus;
-
-	private String backupLocation;
 
 	private Integer pageSize;
 
@@ -63,17 +55,6 @@ public class DescribeBackupsRequest extends RpcAcsRequest<DescribeBackupsRespons
 		}
 	}
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
 	public String getBackupId() {
 		return this.backupId;
 	}
@@ -82,17 +63,6 @@ public class DescribeBackupsRequest extends RpcAcsRequest<DescribeBackupsRespons
 		this.backupId = backupId;
 		if(backupId != null){
 			putQueryParameter("BackupId", backupId);
-		}
-	}
-
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
-
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		if(ownerAccount != null){
-			putQueryParameter("OwnerAccount", ownerAccount);
 		}
 	}
 
@@ -118,17 +88,6 @@ public class DescribeBackupsRequest extends RpcAcsRequest<DescribeBackupsRespons
 		}
 	}
 
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
 	public Integer getPageNumber() {
 		return this.pageNumber;
 	}
@@ -148,17 +107,6 @@ public class DescribeBackupsRequest extends RpcAcsRequest<DescribeBackupsRespons
 		this.backupStatus = backupStatus;
 		if(backupStatus != null){
 			putQueryParameter("BackupStatus", backupStatus);
-		}
-	}
-
-	public String getBackupLocation() {
-		return this.backupLocation;
-	}
-
-	public void setBackupLocation(String backupLocation) {
-		this.backupLocation = backupLocation;
-		if(backupLocation != null){
-			putQueryParameter("BackupLocation", backupLocation);
 		}
 	}
 

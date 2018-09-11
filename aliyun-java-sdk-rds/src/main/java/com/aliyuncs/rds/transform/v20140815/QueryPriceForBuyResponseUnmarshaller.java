@@ -22,6 +22,7 @@ import com.aliyuncs.rds.model.v20140815.QueryPriceForBuyResponse.PriceInfo;
 import com.aliyuncs.rds.model.v20140815.QueryPriceForBuyResponse.PriceInfo.ActivityInfo;
 import com.aliyuncs.rds.model.v20140815.QueryPriceForBuyResponse.PriceInfo.Coupon;
 import com.aliyuncs.rds.model.v20140815.QueryPriceForBuyResponse.Rule;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

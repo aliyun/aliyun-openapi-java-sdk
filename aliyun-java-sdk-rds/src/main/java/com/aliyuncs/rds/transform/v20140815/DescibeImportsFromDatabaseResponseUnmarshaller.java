@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.rds.model.v20140815.DescibeImportsFromDatabaseResponse;
 import com.aliyuncs.rds.model.v20140815.DescibeImportsFromDatabaseResponse.ImportResultFromDB;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

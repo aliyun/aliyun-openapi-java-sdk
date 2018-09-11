@@ -34,15 +34,7 @@ public class RecoveryDBInstanceRequest extends RpcAcsRequest<RecoveryDBInstanceR
 
 	private Integer dBInstanceStorage;
 
-	private String resourceOwnerAccount;
-
-	private String clientToken;
-
 	private String backupId;
-
-	private String ownerAccount;
-
-	private Long ownerId;
 
 	private String usedTime;
 
@@ -54,13 +46,9 @@ public class RecoveryDBInstanceRequest extends RpcAcsRequest<RecoveryDBInstanceR
 
 	private String privateIpAddress;
 
-	private String resourceGroupId;
-
 	private String targetDBInstanceId;
 
 	private String vPCId;
-
-	private String dBInstanceDescription;
 
 	private String dBInstanceId;
 
@@ -112,28 +100,6 @@ public class RecoveryDBInstanceRequest extends RpcAcsRequest<RecoveryDBInstanceR
 		}
 	}
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public String getClientToken() {
-		return this.clientToken;
-	}
-
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putQueryParameter("ClientToken", clientToken);
-		}
-	}
-
 	public String getBackupId() {
 		return this.backupId;
 	}
@@ -142,28 +108,6 @@ public class RecoveryDBInstanceRequest extends RpcAcsRequest<RecoveryDBInstanceR
 		this.backupId = backupId;
 		if(backupId != null){
 			putQueryParameter("BackupId", backupId);
-		}
-	}
-
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
-
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		if(ownerAccount != null){
-			putQueryParameter("OwnerAccount", ownerAccount);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 
@@ -222,17 +166,6 @@ public class RecoveryDBInstanceRequest extends RpcAcsRequest<RecoveryDBInstanceR
 		}
 	}
 
-	public String getResourceGroupId() {
-		return this.resourceGroupId;
-	}
-
-	public void setResourceGroupId(String resourceGroupId) {
-		this.resourceGroupId = resourceGroupId;
-		if(resourceGroupId != null){
-			putQueryParameter("ResourceGroupId", resourceGroupId);
-		}
-	}
-
 	public String getTargetDBInstanceId() {
 		return this.targetDBInstanceId;
 	}
@@ -252,17 +185,6 @@ public class RecoveryDBInstanceRequest extends RpcAcsRequest<RecoveryDBInstanceR
 		this.vPCId = vPCId;
 		if(vPCId != null){
 			putQueryParameter("VPCId", vPCId);
-		}
-	}
-
-	public String getDBInstanceDescription() {
-		return this.dBInstanceDescription;
-	}
-
-	public void setDBInstanceDescription(String dBInstanceDescription) {
-		this.dBInstanceDescription = dBInstanceDescription;
-		if(dBInstanceDescription != null){
-			putQueryParameter("DBInstanceDescription", dBInstanceDescription);
 		}
 	}
 

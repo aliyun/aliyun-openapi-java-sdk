@@ -32,19 +32,9 @@ public class ModifySecurityIpsRequest extends RpcAcsRequest<ModifySecurityIpsRes
 
 	private String modifyMode;
 
-	private String resourceOwnerAccount;
-
-	private String clientToken;
-
-	private String ownerAccount;
-
 	private String securityIps;
 
 	private String securityGroupId;
-
-	private Long ownerId;
-
-	private String whitelistNetType;
 
 	private String dBInstanceIPArrayAttribute;
 
@@ -85,39 +75,6 @@ public class ModifySecurityIpsRequest extends RpcAcsRequest<ModifySecurityIpsRes
 		}
 	}
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public String getClientToken() {
-		return this.clientToken;
-	}
-
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putQueryParameter("ClientToken", clientToken);
-		}
-	}
-
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
-
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		if(ownerAccount != null){
-			putQueryParameter("OwnerAccount", ownerAccount);
-		}
-	}
-
 	public String getSecurityIps() {
 		return this.securityIps;
 	}
@@ -137,28 +94,6 @@ public class ModifySecurityIpsRequest extends RpcAcsRequest<ModifySecurityIpsRes
 		this.securityGroupId = securityGroupId;
 		if(securityGroupId != null){
 			putQueryParameter("SecurityGroupId", securityGroupId);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getWhitelistNetType() {
-		return this.whitelistNetType;
-	}
-
-	public void setWhitelistNetType(String whitelistNetType) {
-		this.whitelistNetType = whitelistNetType;
-		if(whitelistNetType != null){
-			putQueryParameter("WhitelistNetType", whitelistNetType);
 		}
 	}
 

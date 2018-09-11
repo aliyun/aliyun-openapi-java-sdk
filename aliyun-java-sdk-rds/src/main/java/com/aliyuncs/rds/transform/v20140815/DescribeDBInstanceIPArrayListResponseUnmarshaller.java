@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.rds.model.v20140815.DescribeDBInstanceIPArrayListResponse;
 import com.aliyuncs.rds.model.v20140815.DescribeDBInstanceIPArrayListResponse.DBInstanceIPArray;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

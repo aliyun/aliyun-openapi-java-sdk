@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.rds.model.v20140815.DescribeDiagnosticReportListResponse;
 import com.aliyuncs.rds.model.v20140815.DescribeDiagnosticReportListResponse.Report;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

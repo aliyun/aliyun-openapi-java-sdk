@@ -171,6 +171,8 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 
 		private String readonlyInstanceSQLDelayedTime;
 
+		private String securityIPMode;
+
 		private List<ReadOnlyDBInstanceId> readOnlyDBInstanceIds;
 
 		public String getIPType() {
@@ -667,6 +669,14 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 
 		public void setReadonlyInstanceSQLDelayedTime(String readonlyInstanceSQLDelayedTime) {
 			this.readonlyInstanceSQLDelayedTime = readonlyInstanceSQLDelayedTime;
+		}
+
+		public String getSecurityIPMode() {
+			return this.securityIPMode;
+		}
+
+		public void setSecurityIPMode(String securityIPMode) {
+			this.securityIPMode = securityIPMode;
 		}
 
 		public List<ReadOnlyDBInstanceId> getReadOnlyDBInstanceIds() {

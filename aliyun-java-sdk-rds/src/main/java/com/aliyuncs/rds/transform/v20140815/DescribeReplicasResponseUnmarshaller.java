@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.rds.model.v20140815.DescribeReplicasResponse;
 import com.aliyuncs.rds.model.v20140815.DescribeReplicasResponse.Items;
 import com.aliyuncs.rds.model.v20140815.DescribeReplicasResponse.Items.Items1;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -38,6 +39,7 @@ public class DescribeReplicasResponseUnmarshaller {
 			items.setReplicaId(context.stringValue("DescribeReplicasResponse.Replicas["+ i +"].ReplicaId"));
 			items.setReplicaDescription(context.stringValue("DescribeReplicasResponse.Replicas["+ i +"].ReplicaDescription"));
 			items.setReplicaStatus(context.stringValue("DescribeReplicasResponse.Replicas["+ i +"].ReplicaStatus"));
+			items.setReplicationClusterStatus(context.stringValue("DescribeReplicasResponse.Replicas["+ i +"].ReplicationClusterStatus"));
 			items.setReplicaMode(context.stringValue("DescribeReplicasResponse.Replicas["+ i +"].ReplicaMode"));
 			items.setDomainMode(context.stringValue("DescribeReplicasResponse.Replicas["+ i +"].DomainMode"));
 
@@ -52,6 +54,7 @@ public class DescribeReplicasResponseUnmarshaller {
 				items1.setDBInstanceStatus(context.stringValue("DescribeReplicasResponse.Replicas["+ i +"].DBInstances["+ j +"].DBInstanceStatus"));
 				items1.setEngine(context.stringValue("DescribeReplicasResponse.Replicas["+ i +"].DBInstances["+ j +"].Engine"));
 				items1.setRegionId(context.stringValue("DescribeReplicasResponse.Replicas["+ i +"].DBInstances["+ j +"].RegionId"));
+				items1.setZoneId(context.stringValue("DescribeReplicasResponse.Replicas["+ i +"].DBInstances["+ j +"].ZoneId"));
 
 				dBInstances.add(items1);
 			}

@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.rds.model.v20140815.CalculateDBInstanceWeightResponse;
 import com.aliyuncs.rds.model.v20140815.CalculateDBInstanceWeightResponse.DBInstanceWeight;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -33,6 +34,7 @@ public class CalculateDBInstanceWeightResponseUnmarshaller {
 			DBInstanceWeight dBInstanceWeight = new DBInstanceWeight();
 			dBInstanceWeight.setDBInstanceId(context.stringValue("CalculateDBInstanceWeightResponse.Items["+ i +"].DBInstanceId"));
 			dBInstanceWeight.setDBInstanceType(context.stringValue("CalculateDBInstanceWeightResponse.Items["+ i +"].DBInstanceType"));
+			dBInstanceWeight.setReadonlyInstanceSQLDelayedTime(context.stringValue("CalculateDBInstanceWeightResponse.Items["+ i +"].ReadonlyInstanceSQLDelayedTime"));
 			dBInstanceWeight.setAvailability(context.stringValue("CalculateDBInstanceWeightResponse.Items["+ i +"].Availability"));
 			dBInstanceWeight.setWeight(context.stringValue("CalculateDBInstanceWeightResponse.Items["+ i +"].Weight"));
 
