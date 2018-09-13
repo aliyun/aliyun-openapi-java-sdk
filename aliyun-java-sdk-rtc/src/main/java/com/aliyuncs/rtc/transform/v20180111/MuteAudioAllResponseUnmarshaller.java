@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.rtc.model.v20180111.MuteAudioAllResponse;
 import com.aliyuncs.rtc.model.v20180111.MuteAudioAllResponse.Participant;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

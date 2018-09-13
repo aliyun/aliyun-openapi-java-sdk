@@ -22,6 +22,7 @@ import com.aliyuncs.rtc.model.v20180111.DescribeStatisResponse.StatisInfo;
 import com.aliyuncs.rtc.model.v20180111.DescribeStatisResponse.StatisInfo.ChannelStatisItem;
 import com.aliyuncs.rtc.model.v20180111.DescribeStatisResponse.StatisInfo.DurationItem;
 import com.aliyuncs.rtc.model.v20180111.DescribeStatisResponse.StatisInfo.UserStatisItem;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

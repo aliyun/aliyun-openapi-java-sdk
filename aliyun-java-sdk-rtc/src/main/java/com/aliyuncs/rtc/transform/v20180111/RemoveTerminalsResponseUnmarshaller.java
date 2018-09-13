@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.rtc.model.v20180111.RemoveTerminalsResponse;
 import com.aliyuncs.rtc.model.v20180111.RemoveTerminalsResponse.Terminal;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
