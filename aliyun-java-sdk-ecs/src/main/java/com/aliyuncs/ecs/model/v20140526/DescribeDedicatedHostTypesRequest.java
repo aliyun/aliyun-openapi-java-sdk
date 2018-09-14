@@ -20,27 +20,23 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class DescribeInstanceMonitorDataRequest extends RpcAcsRequest<DescribeInstanceMonitorDataResponse> {
+public class DescribeDedicatedHostTypesRequest extends RpcAcsRequest<DescribeDedicatedHostTypesResponse> {
 	
-	public DescribeInstanceMonitorDataRequest() {
-		super("Ecs", "2014-05-26", "DescribeInstanceMonitorData", "ecs");
+	public DescribeDedicatedHostTypesRequest() {
+		super("Ecs", "2014-05-26", "DescribeDedicatedHostTypes", "ecs");
 	}
 
 	private Long resourceOwnerId;
 
-	private String startTime;
+	private String supportedInstanceTypeFamily;
 
-	private Integer period;
+	private String dedicatedHostType;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
-	private String endTime;
-
 	private Long ownerId;
-
-	private String instanceId;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -53,25 +49,25 @@ public class DescribeInstanceMonitorDataRequest extends RpcAcsRequest<DescribeIn
 		}
 	}
 
-	public String getStartTime() {
-		return this.startTime;
+	public String getSupportedInstanceTypeFamily() {
+		return this.supportedInstanceTypeFamily;
 	}
 
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("StartTime", startTime);
+	public void setSupportedInstanceTypeFamily(String supportedInstanceTypeFamily) {
+		this.supportedInstanceTypeFamily = supportedInstanceTypeFamily;
+		if(supportedInstanceTypeFamily != null){
+			putQueryParameter("SupportedInstanceTypeFamily", supportedInstanceTypeFamily);
 		}
 	}
 
-	public Integer getPeriod() {
-		return this.period;
+	public String getDedicatedHostType() {
+		return this.dedicatedHostType;
 	}
 
-	public void setPeriod(Integer period) {
-		this.period = period;
-		if(period != null){
-			putQueryParameter("Period", period.toString());
+	public void setDedicatedHostType(String dedicatedHostType) {
+		this.dedicatedHostType = dedicatedHostType;
+		if(dedicatedHostType != null){
+			putQueryParameter("DedicatedHostType", dedicatedHostType);
 		}
 	}
 
@@ -97,17 +93,6 @@ public class DescribeInstanceMonitorDataRequest extends RpcAcsRequest<DescribeIn
 		}
 	}
 
-	public String getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
-		if(endTime != null){
-			putQueryParameter("EndTime", endTime);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -119,20 +104,9 @@ public class DescribeInstanceMonitorDataRequest extends RpcAcsRequest<DescribeIn
 		}
 	}
 
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
-		}
-	}
-
 	@Override
-	public Class<DescribeInstanceMonitorDataResponse> getResponseClass() {
-		return DescribeInstanceMonitorDataResponse.class;
+	public Class<DescribeDedicatedHostTypesResponse> getResponseClass() {
+		return DescribeDedicatedHostTypesResponse.class;
 	}
 
 }

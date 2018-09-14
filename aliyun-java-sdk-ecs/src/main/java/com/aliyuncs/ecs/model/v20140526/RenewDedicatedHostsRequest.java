@@ -20,15 +20,17 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class DescribeInstanceMonitorDataRequest extends RpcAcsRequest<DescribeInstanceMonitorDataResponse> {
+public class RenewDedicatedHostsRequest extends RpcAcsRequest<RenewDedicatedHostsResponse> {
 	
-	public DescribeInstanceMonitorDataRequest() {
-		super("Ecs", "2014-05-26", "DescribeInstanceMonitorData", "ecs");
+	public RenewDedicatedHostsRequest() {
+		super("Ecs", "2014-05-26", "RenewDedicatedHosts", "ecs");
 	}
+
+	private String dedicatedHostIds;
 
 	private Long resourceOwnerId;
 
-	private String startTime;
+	private String clientToken;
 
 	private Integer period;
 
@@ -36,11 +38,20 @@ public class DescribeInstanceMonitorDataRequest extends RpcAcsRequest<DescribeIn
 
 	private String ownerAccount;
 
-	private String endTime;
-
 	private Long ownerId;
 
-	private String instanceId;
+	private String periodUnit;
+
+	public String getDedicatedHostIds() {
+		return this.dedicatedHostIds;
+	}
+
+	public void setDedicatedHostIds(String dedicatedHostIds) {
+		this.dedicatedHostIds = dedicatedHostIds;
+		if(dedicatedHostIds != null){
+			putQueryParameter("DedicatedHostIds", dedicatedHostIds);
+		}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -53,14 +64,14 @@ public class DescribeInstanceMonitorDataRequest extends RpcAcsRequest<DescribeIn
 		}
 	}
 
-	public String getStartTime() {
-		return this.startTime;
+	public String getClientToken() {
+		return this.clientToken;
 	}
 
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("StartTime", startTime);
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
 		}
 	}
 
@@ -97,17 +108,6 @@ public class DescribeInstanceMonitorDataRequest extends RpcAcsRequest<DescribeIn
 		}
 	}
 
-	public String getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
-		if(endTime != null){
-			putQueryParameter("EndTime", endTime);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -119,20 +119,20 @@ public class DescribeInstanceMonitorDataRequest extends RpcAcsRequest<DescribeIn
 		}
 	}
 
-	public String getInstanceId() {
-		return this.instanceId;
+	public String getPeriodUnit() {
+		return this.periodUnit;
 	}
 
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
+	public void setPeriodUnit(String periodUnit) {
+		this.periodUnit = periodUnit;
+		if(periodUnit != null){
+			putQueryParameter("PeriodUnit", periodUnit);
 		}
 	}
 
 	@Override
-	public Class<DescribeInstanceMonitorDataResponse> getResponseClass() {
-		return DescribeInstanceMonitorDataResponse.class;
+	public Class<RenewDedicatedHostsResponse> getResponseClass() {
+		return RenewDedicatedHostsResponse.class;
 	}
 
 }

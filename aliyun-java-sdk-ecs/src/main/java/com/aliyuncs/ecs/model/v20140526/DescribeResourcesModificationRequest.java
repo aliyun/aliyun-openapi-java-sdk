@@ -28,7 +28,7 @@ public class DescribeResourcesModificationRequest extends RpcAcsRequest<Describe
 
 	private Long resourceOwnerId;
 
-	private Integer memory;
+	private Float memory;
 
 	private Integer cores;
 
@@ -59,11 +59,11 @@ public class DescribeResourcesModificationRequest extends RpcAcsRequest<Describe
 		}
 	}
 
-	public Integer getMemory() {
+	public Float getMemory() {
 		return this.memory;
 	}
 
-	public void setMemory(Integer memory) {
+	public void setMemory(Float memory) {
 		this.memory = memory;
 		if(memory != null){
 			putQueryParameter("Memory", memory.toString());

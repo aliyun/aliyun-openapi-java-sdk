@@ -20,23 +20,19 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class DescribeInstanceMonitorDataRequest extends RpcAcsRequest<DescribeInstanceMonitorDataResponse> {
+public class ModifyInstanceDeploymentRequest extends RpcAcsRequest<ModifyInstanceDeploymentResponse> {
 	
-	public DescribeInstanceMonitorDataRequest() {
-		super("Ecs", "2014-05-26", "DescribeInstanceMonitorData", "ecs");
+	public ModifyInstanceDeploymentRequest() {
+		super("Ecs", "2014-05-26", "ModifyInstanceDeployment", "ecs");
 	}
 
 	private Long resourceOwnerId;
-
-	private String startTime;
-
-	private Integer period;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
-	private String endTime;
+	private String dedicatedHostId;
 
 	private Long ownerId;
 
@@ -50,28 +46,6 @@ public class DescribeInstanceMonitorDataRequest extends RpcAcsRequest<DescribeIn
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("StartTime", startTime);
-		}
-	}
-
-	public Integer getPeriod() {
-		return this.period;
-	}
-
-	public void setPeriod(Integer period) {
-		this.period = period;
-		if(period != null){
-			putQueryParameter("Period", period.toString());
 		}
 	}
 
@@ -97,14 +71,14 @@ public class DescribeInstanceMonitorDataRequest extends RpcAcsRequest<DescribeIn
 		}
 	}
 
-	public String getEndTime() {
-		return this.endTime;
+	public String getDedicatedHostId() {
+		return this.dedicatedHostId;
 	}
 
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
-		if(endTime != null){
-			putQueryParameter("EndTime", endTime);
+	public void setDedicatedHostId(String dedicatedHostId) {
+		this.dedicatedHostId = dedicatedHostId;
+		if(dedicatedHostId != null){
+			putQueryParameter("DedicatedHostId", dedicatedHostId);
 		}
 	}
 
@@ -131,8 +105,8 @@ public class DescribeInstanceMonitorDataRequest extends RpcAcsRequest<DescribeIn
 	}
 
 	@Override
-	public Class<DescribeInstanceMonitorDataResponse> getResponseClass() {
-		return DescribeInstanceMonitorDataResponse.class;
+	public Class<ModifyInstanceDeploymentResponse> getResponseClass() {
+		return ModifyInstanceDeploymentResponse.class;
 	}
 
 }

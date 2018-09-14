@@ -20,27 +20,51 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class DescribeInstanceMonitorDataRequest extends RpcAcsRequest<DescribeInstanceMonitorDataResponse> {
+public class ModifyDedicatedHostAutoRenewAttributeRequest extends RpcAcsRequest<ModifyDedicatedHostAutoRenewAttributeResponse> {
 	
-	public DescribeInstanceMonitorDataRequest() {
-		super("Ecs", "2014-05-26", "DescribeInstanceMonitorData", "ecs");
+	public ModifyDedicatedHostAutoRenewAttributeRequest() {
+		super("Ecs", "2014-05-26", "ModifyDedicatedHostAutoRenewAttribute", "ecs");
 	}
+
+	private Integer duration;
+
+	private String dedicatedHostIds;
 
 	private Long resourceOwnerId;
 
-	private String startTime;
+	private String periodUnit;
 
-	private Integer period;
+	private Boolean autoRenew;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
-	private String endTime;
+	private String renewalStatus;
 
 	private Long ownerId;
 
-	private String instanceId;
+	public Integer getDuration() {
+		return this.duration;
+	}
+
+	public void setDuration(Integer duration) {
+		this.duration = duration;
+		if(duration != null){
+			putQueryParameter("Duration", duration.toString());
+		}
+	}
+
+	public String getDedicatedHostIds() {
+		return this.dedicatedHostIds;
+	}
+
+	public void setDedicatedHostIds(String dedicatedHostIds) {
+		this.dedicatedHostIds = dedicatedHostIds;
+		if(dedicatedHostIds != null){
+			putQueryParameter("DedicatedHostIds", dedicatedHostIds);
+		}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -53,25 +77,25 @@ public class DescribeInstanceMonitorDataRequest extends RpcAcsRequest<DescribeIn
 		}
 	}
 
-	public String getStartTime() {
-		return this.startTime;
+	public String getPeriodUnit() {
+		return this.periodUnit;
 	}
 
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("StartTime", startTime);
+	public void setPeriodUnit(String periodUnit) {
+		this.periodUnit = periodUnit;
+		if(periodUnit != null){
+			putQueryParameter("PeriodUnit", periodUnit);
 		}
 	}
 
-	public Integer getPeriod() {
-		return this.period;
+	public Boolean getAutoRenew() {
+		return this.autoRenew;
 	}
 
-	public void setPeriod(Integer period) {
-		this.period = period;
-		if(period != null){
-			putQueryParameter("Period", period.toString());
+	public void setAutoRenew(Boolean autoRenew) {
+		this.autoRenew = autoRenew;
+		if(autoRenew != null){
+			putQueryParameter("AutoRenew", autoRenew.toString());
 		}
 	}
 
@@ -97,14 +121,14 @@ public class DescribeInstanceMonitorDataRequest extends RpcAcsRequest<DescribeIn
 		}
 	}
 
-	public String getEndTime() {
-		return this.endTime;
+	public String getRenewalStatus() {
+		return this.renewalStatus;
 	}
 
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
-		if(endTime != null){
-			putQueryParameter("EndTime", endTime);
+	public void setRenewalStatus(String renewalStatus) {
+		this.renewalStatus = renewalStatus;
+		if(renewalStatus != null){
+			putQueryParameter("RenewalStatus", renewalStatus);
 		}
 	}
 
@@ -119,20 +143,9 @@ public class DescribeInstanceMonitorDataRequest extends RpcAcsRequest<DescribeIn
 		}
 	}
 
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
-		}
-	}
-
 	@Override
-	public Class<DescribeInstanceMonitorDataResponse> getResponseClass() {
-		return DescribeInstanceMonitorDataResponse.class;
+	public Class<ModifyDedicatedHostAutoRenewAttributeResponse> getResponseClass() {
+		return ModifyDedicatedHostAutoRenewAttributeResponse.class;
 	}
 
 }

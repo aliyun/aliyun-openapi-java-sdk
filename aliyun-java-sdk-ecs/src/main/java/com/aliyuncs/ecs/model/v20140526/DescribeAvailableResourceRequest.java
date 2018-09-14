@@ -28,7 +28,7 @@ public class DescribeAvailableResourceRequest extends RpcAcsRequest<DescribeAvai
 
 	private Long resourceOwnerId;
 
-	private Integer memory;
+	private Float memory;
 
 	private String ioOptimized;
 
@@ -71,11 +71,11 @@ public class DescribeAvailableResourceRequest extends RpcAcsRequest<DescribeAvai
 		}
 	}
 
-	public Integer getMemory() {
+	public Float getMemory() {
 		return this.memory;
 	}
 
-	public void setMemory(Integer memory) {
+	public void setMemory(Float memory) {
 		this.memory = memory;
 		if(memory != null){
 			putQueryParameter("Memory", memory.toString());
