@@ -87,6 +87,8 @@ public class DescribeCensResponse extends AcsResponse {
 
 		private String creationTime;
 
+		private String protectionLevel;
+
 		private List<String> cenBandwidthPackageIds;
 
 		public String getCenId() {
@@ -127,6 +129,14 @@ public class DescribeCensResponse extends AcsResponse {
 
 		public void setCreationTime(String creationTime) {
 			this.creationTime = creationTime;
+		}
+
+		public String getProtectionLevel() {
+			return this.protectionLevel;
+		}
+
+		public void setProtectionLevel(String protectionLevel) {
+			this.protectionLevel = protectionLevel;
 		}
 
 		public List<String> getCenBandwidthPackageIds() {

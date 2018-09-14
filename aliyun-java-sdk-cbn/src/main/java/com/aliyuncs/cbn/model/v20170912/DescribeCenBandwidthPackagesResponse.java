@@ -91,6 +91,8 @@ public class DescribeCenBandwidthPackagesResponse extends AcsResponse {
 
 		private String geographicRegionBId;
 
+		private String geographicSpanId;
+
 		private String businessStatus;
 
 		private String creationTime;
@@ -155,6 +157,14 @@ public class DescribeCenBandwidthPackagesResponse extends AcsResponse {
 
 		public void setGeographicRegionBId(String geographicRegionBId) {
 			this.geographicRegionBId = geographicRegionBId;
+		}
+
+		public String getGeographicSpanId() {
+			return this.geographicSpanId;
+		}
+
+		public void setGeographicSpanId(String geographicSpanId) {
+			this.geographicSpanId = geographicSpanId;
 		}
 
 		public String getBusinessStatus() {

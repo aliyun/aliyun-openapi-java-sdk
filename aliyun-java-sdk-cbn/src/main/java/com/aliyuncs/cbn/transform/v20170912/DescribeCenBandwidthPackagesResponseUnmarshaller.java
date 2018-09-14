@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.cbn.model.v20170912.DescribeCenBandwidthPackagesResponse;
 import com.aliyuncs.cbn.model.v20170912.DescribeCenBandwidthPackagesResponse.CenBandwidthPackage;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -41,6 +42,7 @@ public class DescribeCenBandwidthPackagesResponseUnmarshaller {
 			cenBandwidthPackage.setBandwidthPackageChargeType(context.stringValue("DescribeCenBandwidthPackagesResponse.CenBandwidthPackages["+ i +"].BandwidthPackageChargeType"));
 			cenBandwidthPackage.setGeographicRegionAId(context.stringValue("DescribeCenBandwidthPackagesResponse.CenBandwidthPackages["+ i +"].GeographicRegionAId"));
 			cenBandwidthPackage.setGeographicRegionBId(context.stringValue("DescribeCenBandwidthPackagesResponse.CenBandwidthPackages["+ i +"].GeographicRegionBId"));
+			cenBandwidthPackage.setGeographicSpanId(context.stringValue("DescribeCenBandwidthPackagesResponse.CenBandwidthPackages["+ i +"].GeographicSpanId"));
 			cenBandwidthPackage.setBusinessStatus(context.stringValue("DescribeCenBandwidthPackagesResponse.CenBandwidthPackages["+ i +"].BusinessStatus"));
 			cenBandwidthPackage.setCreationTime(context.stringValue("DescribeCenBandwidthPackagesResponse.CenBandwidthPackages["+ i +"].CreationTime"));
 			cenBandwidthPackage.setExpiredTime(context.stringValue("DescribeCenBandwidthPackagesResponse.CenBandwidthPackages["+ i +"].ExpiredTime"));

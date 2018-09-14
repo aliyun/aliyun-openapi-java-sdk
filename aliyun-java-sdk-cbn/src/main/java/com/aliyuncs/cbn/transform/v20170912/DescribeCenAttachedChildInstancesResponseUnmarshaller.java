@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.cbn.model.v20170912.DescribeCenAttachedChildInstancesResponse;
 import com.aliyuncs.cbn.model.v20170912.DescribeCenAttachedChildInstancesResponse.ChildInstance;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

@@ -15,21 +15,20 @@
 package com.aliyuncs.cbn.model.v20170912;
 
 import com.aliyuncs.RpcAcsRequest;
-import java.util.List;
 
 /**
  * @author auto create
  * @version 
  */
-public class DescribeCensRequest extends RpcAcsRequest<DescribeCensResponse> {
+public class DescribeCenGeographicSpansRequest extends RpcAcsRequest<DescribeCenGeographicSpansResponse> {
 	
-	public DescribeCensRequest() {
-		super("Cbn", "2017-09-12", "DescribeCens", "cbn");
+	public DescribeCenGeographicSpansRequest() {
+		super("Cbn", "2017-09-12", "DescribeCenGeographicSpans", "cbn");
 	}
 
-	private List<Filter> filters;
-
 	private Long resourceOwnerId;
+
+	private String geographicSpanId;
 
 	private String resourceOwnerAccount;
 
@@ -41,24 +40,6 @@ public class DescribeCensRequest extends RpcAcsRequest<DescribeCensResponse> {
 
 	private Integer pageNumber;
 
-	public List<Filter> getFilters() {
-		return this.filters;
-	}
-
-	public void setFilters(List<Filter> filters) {
-		this.filters = filters;	
-		if (filters != null) {
-			for (int depth1 = 0; depth1 < filters.size(); depth1++) {
-				if (filters.get(depth1).getValues() != null) {
-					for (int i = 0; i < filters.get(depth1).getValues().size(); i++) {
-						putQueryParameter("Filter." + (depth1 + 1) + ".Value." + (i + 1) , filters.get(depth1).getValues().get(i));
-					}
-				}
-				putQueryParameter("Filter." + (depth1 + 1) + ".Key" , filters.get(depth1).getKey());
-			}
-		}	
-	}
-
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
 	}
@@ -67,6 +48,17 @@ public class DescribeCensRequest extends RpcAcsRequest<DescribeCensResponse> {
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getGeographicSpanId() {
+		return this.geographicSpanId;
+	}
+
+	public void setGeographicSpanId(String geographicSpanId) {
+		this.geographicSpanId = geographicSpanId;
+		if(geographicSpanId != null){
+			putQueryParameter("GeographicSpanId", geographicSpanId);
 		}
 	}
 
@@ -125,32 +117,9 @@ public class DescribeCensRequest extends RpcAcsRequest<DescribeCensResponse> {
 		}
 	}
 
-	public static class Filter {
-
-		private List<String> values;
-
-		private String key;
-
-		public List<String> getValues() {
-			return this.values;
-		}
-
-		public void setValues(List<String> values) {
-			this.values = values;
-		}
-
-		public String getKey() {
-			return this.key;
-		}
-
-		public void setKey(String key) {
-			this.key = key;
-		}
-	}
-
 	@Override
-	public Class<DescribeCensResponse> getResponseClass() {
-		return DescribeCensResponse.class;
+	public Class<DescribeCenGeographicSpansResponse> getResponseClass() {
+		return DescribeCenGeographicSpansResponse.class;
 	}
 
 }

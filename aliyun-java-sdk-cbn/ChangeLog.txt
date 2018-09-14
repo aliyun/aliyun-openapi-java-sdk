@@ -1,3 +1,7 @@
+2018-09-14 Version: 1.0.1
+1, ModifyCenAttribute supports ProtectionLevel.
+2, New APIs: PublishRouteEntries/WithdrawPublishedRouteEntries/DescribePublishedRouteEntries
+
 2018-03-29 Version: 1.0.0
 1, Cloud Enterprise Network SDK initial release.
 

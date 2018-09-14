@@ -16,14 +16,14 @@ package com.aliyuncs.cbn.model.v20170912;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.cbn.transform.v20170912.DescribeCenInterRegionBandwidthLimitsResponseUnmarshaller;
+import com.aliyuncs.cbn.transform.v20170912.DescribeCenGeographicSpansResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DescribeCenInterRegionBandwidthLimitsResponse extends AcsResponse {
+public class DescribeCenGeographicSpansResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -33,7 +33,7 @@ public class DescribeCenInterRegionBandwidthLimitsResponse extends AcsResponse {
 
 	private Integer pageSize;
 
-	private List<CenInterRegionBandwidthLimit> cenInterRegionBandwidthLimits;
+	private List<GeographicSpanModel> geographicSpanModels;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -67,51 +67,21 @@ public class DescribeCenInterRegionBandwidthLimitsResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
-	public List<CenInterRegionBandwidthLimit> getCenInterRegionBandwidthLimits() {
-		return this.cenInterRegionBandwidthLimits;
+	public List<GeographicSpanModel> getGeographicSpanModels() {
+		return this.geographicSpanModels;
 	}
 
-	public void setCenInterRegionBandwidthLimits(List<CenInterRegionBandwidthLimit> cenInterRegionBandwidthLimits) {
-		this.cenInterRegionBandwidthLimits = cenInterRegionBandwidthLimits;
+	public void setGeographicSpanModels(List<GeographicSpanModel> geographicSpanModels) {
+		this.geographicSpanModels = geographicSpanModels;
 	}
 
-	public static class CenInterRegionBandwidthLimit {
-
-		private String cenId;
-
-		private String localRegionId;
-
-		private String oppositeRegionId;
+	public static class GeographicSpanModel {
 
 		private String geographicSpanId;
 
-		private Long bandwidthLimit;
+		private String localGeoRegionId;
 
-		private String status;
-
-		public String getCenId() {
-			return this.cenId;
-		}
-
-		public void setCenId(String cenId) {
-			this.cenId = cenId;
-		}
-
-		public String getLocalRegionId() {
-			return this.localRegionId;
-		}
-
-		public void setLocalRegionId(String localRegionId) {
-			this.localRegionId = localRegionId;
-		}
-
-		public String getOppositeRegionId() {
-			return this.oppositeRegionId;
-		}
-
-		public void setOppositeRegionId(String oppositeRegionId) {
-			this.oppositeRegionId = oppositeRegionId;
-		}
+		private String oppositeGeoRegionId;
 
 		public String getGeographicSpanId() {
 			return this.geographicSpanId;
@@ -121,25 +91,25 @@ public class DescribeCenInterRegionBandwidthLimitsResponse extends AcsResponse {
 			this.geographicSpanId = geographicSpanId;
 		}
 
-		public Long getBandwidthLimit() {
-			return this.bandwidthLimit;
+		public String getLocalGeoRegionId() {
+			return this.localGeoRegionId;
 		}
 
-		public void setBandwidthLimit(Long bandwidthLimit) {
-			this.bandwidthLimit = bandwidthLimit;
+		public void setLocalGeoRegionId(String localGeoRegionId) {
+			this.localGeoRegionId = localGeoRegionId;
 		}
 
-		public String getStatus() {
-			return this.status;
+		public String getOppositeGeoRegionId() {
+			return this.oppositeGeoRegionId;
 		}
 
-		public void setStatus(String status) {
-			this.status = status;
+		public void setOppositeGeoRegionId(String oppositeGeoRegionId) {
+			this.oppositeGeoRegionId = oppositeGeoRegionId;
 		}
 	}
 
 	@Override
-	public DescribeCenInterRegionBandwidthLimitsResponse getInstance(UnmarshallerContext context) {
-		return	DescribeCenInterRegionBandwidthLimitsResponseUnmarshaller.unmarshall(this, context);
+	public DescribeCenGeographicSpansResponse getInstance(UnmarshallerContext context) {
+		return	DescribeCenGeographicSpansResponseUnmarshaller.unmarshall(this, context);
 	}
 }

@@ -15,19 +15,16 @@
 package com.aliyuncs.cbn.model.v20170912;
 
 import com.aliyuncs.RpcAcsRequest;
-import java.util.List;
 
 /**
  * @author auto create
  * @version 
  */
-public class DescribeCensRequest extends RpcAcsRequest<DescribeCensResponse> {
+public class DescribeChildInstanceRegionsRequest extends RpcAcsRequest<DescribeChildInstanceRegionsResponse> {
 	
-	public DescribeCensRequest() {
-		super("Cbn", "2017-09-12", "DescribeCens", "cbn");
+	public DescribeChildInstanceRegionsRequest() {
+		super("Cbn", "2017-09-12", "DescribeChildInstanceRegions", "cbn");
 	}
-
-	private List<Filter> filters;
 
 	private Long resourceOwnerId;
 
@@ -35,29 +32,9 @@ public class DescribeCensRequest extends RpcAcsRequest<DescribeCensResponse> {
 
 	private String ownerAccount;
 
-	private Integer pageSize;
-
 	private Long ownerId;
 
-	private Integer pageNumber;
-
-	public List<Filter> getFilters() {
-		return this.filters;
-	}
-
-	public void setFilters(List<Filter> filters) {
-		this.filters = filters;	
-		if (filters != null) {
-			for (int depth1 = 0; depth1 < filters.size(); depth1++) {
-				if (filters.get(depth1).getValues() != null) {
-					for (int i = 0; i < filters.get(depth1).getValues().size(); i++) {
-						putQueryParameter("Filter." + (depth1 + 1) + ".Value." + (i + 1) , filters.get(depth1).getValues().get(i));
-					}
-				}
-				putQueryParameter("Filter." + (depth1 + 1) + ".Key" , filters.get(depth1).getKey());
-			}
-		}	
-	}
+	private String productType;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -92,17 +69,6 @@ public class DescribeCensRequest extends RpcAcsRequest<DescribeCensResponse> {
 		}
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -114,43 +80,20 @@ public class DescribeCensRequest extends RpcAcsRequest<DescribeCensResponse> {
 		}
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
+	public String getProductType() {
+		return this.productType;
 	}
 
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
-		}
-	}
-
-	public static class Filter {
-
-		private List<String> values;
-
-		private String key;
-
-		public List<String> getValues() {
-			return this.values;
-		}
-
-		public void setValues(List<String> values) {
-			this.values = values;
-		}
-
-		public String getKey() {
-			return this.key;
-		}
-
-		public void setKey(String key) {
-			this.key = key;
+	public void setProductType(String productType) {
+		this.productType = productType;
+		if(productType != null){
+			putQueryParameter("ProductType", productType);
 		}
 	}
 
 	@Override
-	public Class<DescribeCensResponse> getResponseClass() {
-		return DescribeCensResponse.class;
+	public Class<DescribeChildInstanceRegionsResponse> getResponseClass() {
+		return DescribeChildInstanceRegionsResponse.class;
 	}
 
 }

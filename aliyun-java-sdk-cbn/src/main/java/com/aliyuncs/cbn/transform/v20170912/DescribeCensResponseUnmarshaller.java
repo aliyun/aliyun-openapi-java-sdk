@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.cbn.model.v20170912.DescribeCensResponse;
 import com.aliyuncs.cbn.model.v20170912.DescribeCensResponse.Cen;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -39,6 +40,7 @@ public class DescribeCensResponseUnmarshaller {
 			cen.setDescription(context.stringValue("DescribeCensResponse.Cens["+ i +"].Description"));
 			cen.setStatus(context.stringValue("DescribeCensResponse.Cens["+ i +"].Status"));
 			cen.setCreationTime(context.stringValue("DescribeCensResponse.Cens["+ i +"].CreationTime"));
+			cen.setProtectionLevel(context.stringValue("DescribeCensResponse.Cens["+ i +"].ProtectionLevel"));
 
 			List<String> cenBandwidthPackageIds = new ArrayList<String>();
 			for (int j = 0; j < context.lengthValue("DescribeCensResponse.Cens["+ i +"].CenBandwidthPackageIds.Length"); j++) {

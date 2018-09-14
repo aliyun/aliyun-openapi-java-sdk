@@ -20,11 +20,13 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class DescribeCenAttachedChildInstancesRequest extends RpcAcsRequest<DescribeCenAttachedChildInstancesResponse> {
+public class DescribePublishedRouteEntriesRequest extends RpcAcsRequest<DescribePublishedRouteEntriesResponse> {
 	
-	public DescribeCenAttachedChildInstancesRequest() {
-		super("Cbn", "2017-09-12", "DescribeCenAttachedChildInstances", "cbn");
+	public DescribePublishedRouteEntriesRequest() {
+		super("Cbn", "2017-09-12", "DescribePublishedRouteEntries", "cbn");
 	}
+
+	private String childInstanceId;
 
 	private Long resourceOwnerId;
 
@@ -32,15 +34,28 @@ public class DescribeCenAttachedChildInstancesRequest extends RpcAcsRequest<Desc
 
 	private String cenId;
 
-	private String ownerAccount;
+	private String destinationCidrBlock;
 
 	private Integer pageSize;
 
-	private Long ownerId;
-
 	private String childInstanceType;
 
+	private String childInstanceRouteTableId;
+
 	private Integer pageNumber;
+
+	private String childInstanceRegionId;
+
+	public String getChildInstanceId() {
+		return this.childInstanceId;
+	}
+
+	public void setChildInstanceId(String childInstanceId) {
+		this.childInstanceId = childInstanceId;
+		if(childInstanceId != null){
+			putQueryParameter("ChildInstanceId", childInstanceId);
+		}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -75,14 +90,14 @@ public class DescribeCenAttachedChildInstancesRequest extends RpcAcsRequest<Desc
 		}
 	}
 
-	public String getOwnerAccount() {
-		return this.ownerAccount;
+	public String getDestinationCidrBlock() {
+		return this.destinationCidrBlock;
 	}
 
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		if(ownerAccount != null){
-			putQueryParameter("OwnerAccount", ownerAccount);
+	public void setDestinationCidrBlock(String destinationCidrBlock) {
+		this.destinationCidrBlock = destinationCidrBlock;
+		if(destinationCidrBlock != null){
+			putQueryParameter("DestinationCidrBlock", destinationCidrBlock);
 		}
 	}
 
@@ -97,17 +112,6 @@ public class DescribeCenAttachedChildInstancesRequest extends RpcAcsRequest<Desc
 		}
 	}
 
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
 	public String getChildInstanceType() {
 		return this.childInstanceType;
 	}
@@ -116,6 +120,17 @@ public class DescribeCenAttachedChildInstancesRequest extends RpcAcsRequest<Desc
 		this.childInstanceType = childInstanceType;
 		if(childInstanceType != null){
 			putQueryParameter("ChildInstanceType", childInstanceType);
+		}
+	}
+
+	public String getChildInstanceRouteTableId() {
+		return this.childInstanceRouteTableId;
+	}
+
+	public void setChildInstanceRouteTableId(String childInstanceRouteTableId) {
+		this.childInstanceRouteTableId = childInstanceRouteTableId;
+		if(childInstanceRouteTableId != null){
+			putQueryParameter("ChildInstanceRouteTableId", childInstanceRouteTableId);
 		}
 	}
 
@@ -130,9 +145,20 @@ public class DescribeCenAttachedChildInstancesRequest extends RpcAcsRequest<Desc
 		}
 	}
 
+	public String getChildInstanceRegionId() {
+		return this.childInstanceRegionId;
+	}
+
+	public void setChildInstanceRegionId(String childInstanceRegionId) {
+		this.childInstanceRegionId = childInstanceRegionId;
+		if(childInstanceRegionId != null){
+			putQueryParameter("ChildInstanceRegionId", childInstanceRegionId);
+		}
+	}
+
 	@Override
-	public Class<DescribeCenAttachedChildInstancesResponse> getResponseClass() {
-		return DescribeCenAttachedChildInstancesResponse.class;
+	public Class<DescribePublishedRouteEntriesResponse> getResponseClass() {
+		return DescribePublishedRouteEntriesResponse.class;
 	}
 
 }

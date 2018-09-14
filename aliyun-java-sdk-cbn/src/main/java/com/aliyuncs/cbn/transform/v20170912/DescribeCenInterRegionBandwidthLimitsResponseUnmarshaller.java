@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.cbn.model.v20170912.DescribeCenInterRegionBandwidthLimitsResponse;
 import com.aliyuncs.cbn.model.v20170912.DescribeCenInterRegionBandwidthLimitsResponse.CenInterRegionBandwidthLimit;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -37,6 +38,7 @@ public class DescribeCenInterRegionBandwidthLimitsResponseUnmarshaller {
 			cenInterRegionBandwidthLimit.setCenId(context.stringValue("DescribeCenInterRegionBandwidthLimitsResponse.CenInterRegionBandwidthLimits["+ i +"].CenId"));
 			cenInterRegionBandwidthLimit.setLocalRegionId(context.stringValue("DescribeCenInterRegionBandwidthLimitsResponse.CenInterRegionBandwidthLimits["+ i +"].LocalRegionId"));
 			cenInterRegionBandwidthLimit.setOppositeRegionId(context.stringValue("DescribeCenInterRegionBandwidthLimitsResponse.CenInterRegionBandwidthLimits["+ i +"].OppositeRegionId"));
+			cenInterRegionBandwidthLimit.setGeographicSpanId(context.stringValue("DescribeCenInterRegionBandwidthLimitsResponse.CenInterRegionBandwidthLimits["+ i +"].GeographicSpanId"));
 			cenInterRegionBandwidthLimit.setBandwidthLimit(context.longValue("DescribeCenInterRegionBandwidthLimitsResponse.CenInterRegionBandwidthLimits["+ i +"].BandwidthLimit"));
 			cenInterRegionBandwidthLimit.setStatus(context.stringValue("DescribeCenInterRegionBandwidthLimitsResponse.CenInterRegionBandwidthLimits["+ i +"].Status"));
 

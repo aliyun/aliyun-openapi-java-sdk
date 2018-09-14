@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.cbn.model.v20170912.DescribeGeographicRegionMembershipResponse;
 import com.aliyuncs.cbn.model.v20170912.DescribeGeographicRegionMembershipResponse.RegionId;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
