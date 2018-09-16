@@ -20,10 +20,10 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class CheckDBInstancesRequest extends RpcAcsRequest<CheckDBInstancesResponse> {
+public class CheckInstanceExistRequest extends RpcAcsRequest<CheckInstanceExistResponse> {
 	
-	public CheckDBInstancesRequest() {
-		super("Rds", "2014-08-15", "CheckDBInstances", "rds");
+	public CheckInstanceExistRequest() {
+		super("Rds", "2014-08-15", "CheckInstanceExist", "rds");
 	}
 
 	private Long resourceOwnerId;
@@ -79,8 +79,8 @@ public class CheckDBInstancesRequest extends RpcAcsRequest<CheckDBInstancesRespo
 	}
 
 	@Override
-	public Class<CheckDBInstancesResponse> getResponseClass() {
-		return CheckDBInstancesResponse.class;
+	public Class<CheckInstanceExistResponse> getResponseClass() {
+		return CheckInstanceExistResponse.class;
 	}
 
 }

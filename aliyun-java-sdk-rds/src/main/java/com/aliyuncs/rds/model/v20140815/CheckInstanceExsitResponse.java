@@ -15,20 +15,18 @@
 package com.aliyuncs.rds.model.v20140815;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.rds.transform.v20140815.CheckDBInstancesResponseUnmarshaller;
+import com.aliyuncs.rds.transform.v20140815.CheckInstanceExsitResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CheckDBInstancesResponse extends AcsResponse {
+public class CheckInstanceExsitResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String dBInstanceId;
-
-	private String dBInstanceStatus;
+	private Boolean isExistInstance;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -38,24 +36,16 @@ public class CheckDBInstancesResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getDBInstanceId() {
-		return this.dBInstanceId;
+	public Boolean getIsExistInstance() {
+		return this.isExistInstance;
 	}
 
-	public void setDBInstanceId(String dBInstanceId) {
-		this.dBInstanceId = dBInstanceId;
-	}
-
-	public String getDBInstanceStatus() {
-		return this.dBInstanceStatus;
-	}
-
-	public void setDBInstanceStatus(String dBInstanceStatus) {
-		this.dBInstanceStatus = dBInstanceStatus;
+	public void setIsExistInstance(Boolean isExistInstance) {
+		this.isExistInstance = isExistInstance;
 	}
 
 	@Override
-	public CheckDBInstancesResponse getInstance(UnmarshallerContext context) {
-		return	CheckDBInstancesResponseUnmarshaller.unmarshall(this, context);
+	public CheckInstanceExsitResponse getInstance(UnmarshallerContext context) {
+		return	CheckInstanceExsitResponseUnmarshaller.unmarshall(this, context);
 	}
 }

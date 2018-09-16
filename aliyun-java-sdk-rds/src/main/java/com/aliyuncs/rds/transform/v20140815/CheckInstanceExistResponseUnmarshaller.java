@@ -14,18 +14,17 @@
 
 package com.aliyuncs.rds.transform.v20140815;
 
-import com.aliyuncs.rds.model.v20140815.CheckDBInstancesResponse;
+import com.aliyuncs.rds.model.v20140815.CheckInstanceExistResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class CheckDBInstancesResponseUnmarshaller {
+public class CheckInstanceExistResponseUnmarshaller {
 
-	public static CheckDBInstancesResponse unmarshall(CheckDBInstancesResponse checkDBInstancesResponse, UnmarshallerContext context) {
+	public static CheckInstanceExistResponse unmarshall(CheckInstanceExistResponse checkInstanceExistResponse, UnmarshallerContext context) {
 		
-		checkDBInstancesResponse.setRequestId(context.stringValue("CheckDBInstancesResponse.RequestId"));
-		checkDBInstancesResponse.setDBInstanceId(context.stringValue("CheckDBInstancesResponse.DBInstanceId"));
-		checkDBInstancesResponse.setDBInstanceStatus(context.stringValue("CheckDBInstancesResponse.DBInstanceStatus"));
+		checkInstanceExistResponse.setRequestId(context.stringValue("CheckInstanceExistResponse.RequestId"));
+		checkInstanceExistResponse.setIsExistInstance(context.booleanValue("CheckInstanceExistResponse.IsExistInstance"));
 	 
-	 	return checkDBInstancesResponse;
+	 	return checkInstanceExistResponse;
 	}
 }

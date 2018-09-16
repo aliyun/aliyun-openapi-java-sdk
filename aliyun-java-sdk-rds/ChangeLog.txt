@@ -1,3 +1,6 @@
+2018-09-16 Version: 2.1.7
+1, add CheckInstanceExist OpenApi.
+
 2018-09-13 Version: 2.1.6
 1, modify CheckDBInstance OpenApi
 
