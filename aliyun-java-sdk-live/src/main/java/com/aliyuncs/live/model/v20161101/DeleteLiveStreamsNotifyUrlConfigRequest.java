@@ -26,22 +26,9 @@ public class DeleteLiveStreamsNotifyUrlConfigRequest extends RpcAcsRequest<Delet
 		super("live", "2016-11-01", "DeleteLiveStreamsNotifyUrlConfig", "live");
 	}
 
-	private String securityToken;
-
 	private String domainName;
 
 	private Long ownerId;
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
 
 	public String getDomainName() {
 		return this.domainName;

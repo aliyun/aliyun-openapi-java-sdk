@@ -39,6 +39,7 @@ public class DescribeCasterConfigResponseUnmarshaller {
 		describeCasterConfigResponse.setCallbackUrl(context.stringValue("DescribeCasterConfigResponse.CallbackUrl"));
 		describeCasterConfigResponse.setProgramName(context.stringValue("DescribeCasterConfigResponse.ProgramName"));
 		describeCasterConfigResponse.setProgramEffect(context.integerValue("DescribeCasterConfigResponse.ProgramEffect"));
+		describeCasterConfigResponse.setChannelEnable(context.integerValue("DescribeCasterConfigResponse.ChannelEnable"));
 
 		TranscodeConfig transcodeConfig = new TranscodeConfig();
 		transcodeConfig.setCasterTemplate(context.stringValue("DescribeCasterConfigResponse.TranscodeConfig.CasterTemplate"));

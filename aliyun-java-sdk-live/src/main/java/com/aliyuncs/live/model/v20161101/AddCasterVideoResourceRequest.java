@@ -26,36 +26,27 @@ public class AddCasterVideoResourceRequest extends RpcAcsRequest<AddCasterVideoR
 		super("live", "2016-11-01", "AddCasterVideoResource", "live");
 	}
 
-	private Integer beginOffset;
-
 	private String vodUrl;
-
-	private String liveStreamUrl;
-
-	private String locationId;
 
 	private String casterId;
 
 	private Integer endOffset;
 
-	private String resourceName;
-
-	private Integer repeatNum;
-
 	private Long ownerId;
 
 	private String materialId;
 
-	public Integer getBeginOffset() {
-		return this.beginOffset;
-	}
+	private Integer beginOffset;
 
-	public void setBeginOffset(Integer beginOffset) {
-		this.beginOffset = beginOffset;
-		if(beginOffset != null){
-			putQueryParameter("BeginOffset", beginOffset.toString());
-		}
-	}
+	private String liveStreamUrl;
+
+	private String locationId;
+
+	private Integer ptsCallbackInterval;
+
+	private String resourceName;
+
+	private Integer repeatNum;
 
 	public String getVodUrl() {
 		return this.vodUrl;
@@ -65,28 +56,6 @@ public class AddCasterVideoResourceRequest extends RpcAcsRequest<AddCasterVideoR
 		this.vodUrl = vodUrl;
 		if(vodUrl != null){
 			putQueryParameter("VodUrl", vodUrl);
-		}
-	}
-
-	public String getLiveStreamUrl() {
-		return this.liveStreamUrl;
-	}
-
-	public void setLiveStreamUrl(String liveStreamUrl) {
-		this.liveStreamUrl = liveStreamUrl;
-		if(liveStreamUrl != null){
-			putQueryParameter("LiveStreamUrl", liveStreamUrl);
-		}
-	}
-
-	public String getLocationId() {
-		return this.locationId;
-	}
-
-	public void setLocationId(String locationId) {
-		this.locationId = locationId;
-		if(locationId != null){
-			putQueryParameter("LocationId", locationId);
 		}
 	}
 
@@ -112,28 +81,6 @@ public class AddCasterVideoResourceRequest extends RpcAcsRequest<AddCasterVideoR
 		}
 	}
 
-	public String getResourceName() {
-		return this.resourceName;
-	}
-
-	public void setResourceName(String resourceName) {
-		this.resourceName = resourceName;
-		if(resourceName != null){
-			putQueryParameter("ResourceName", resourceName);
-		}
-	}
-
-	public Integer getRepeatNum() {
-		return this.repeatNum;
-	}
-
-	public void setRepeatNum(Integer repeatNum) {
-		this.repeatNum = repeatNum;
-		if(repeatNum != null){
-			putQueryParameter("RepeatNum", repeatNum.toString());
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -153,6 +100,72 @@ public class AddCasterVideoResourceRequest extends RpcAcsRequest<AddCasterVideoR
 		this.materialId = materialId;
 		if(materialId != null){
 			putQueryParameter("MaterialId", materialId);
+		}
+	}
+
+	public Integer getBeginOffset() {
+		return this.beginOffset;
+	}
+
+	public void setBeginOffset(Integer beginOffset) {
+		this.beginOffset = beginOffset;
+		if(beginOffset != null){
+			putQueryParameter("BeginOffset", beginOffset.toString());
+		}
+	}
+
+	public String getLiveStreamUrl() {
+		return this.liveStreamUrl;
+	}
+
+	public void setLiveStreamUrl(String liveStreamUrl) {
+		this.liveStreamUrl = liveStreamUrl;
+		if(liveStreamUrl != null){
+			putQueryParameter("LiveStreamUrl", liveStreamUrl);
+		}
+	}
+
+	public String getLocationId() {
+		return this.locationId;
+	}
+
+	public void setLocationId(String locationId) {
+		this.locationId = locationId;
+		if(locationId != null){
+			putQueryParameter("LocationId", locationId);
+		}
+	}
+
+	public Integer getPtsCallbackInterval() {
+		return this.ptsCallbackInterval;
+	}
+
+	public void setPtsCallbackInterval(Integer ptsCallbackInterval) {
+		this.ptsCallbackInterval = ptsCallbackInterval;
+		if(ptsCallbackInterval != null){
+			putQueryParameter("PtsCallbackInterval", ptsCallbackInterval.toString());
+		}
+	}
+
+	public String getResourceName() {
+		return this.resourceName;
+	}
+
+	public void setResourceName(String resourceName) {
+		this.resourceName = resourceName;
+		if(resourceName != null){
+			putQueryParameter("ResourceName", resourceName);
+		}
+	}
+
+	public Integer getRepeatNum() {
+		return this.repeatNum;
+	}
+
+	public void setRepeatNum(Integer repeatNum) {
+		this.repeatNum = repeatNum;
+		if(repeatNum != null){
+			putQueryParameter("RepeatNum", repeatNum.toString());
 		}
 	}
 

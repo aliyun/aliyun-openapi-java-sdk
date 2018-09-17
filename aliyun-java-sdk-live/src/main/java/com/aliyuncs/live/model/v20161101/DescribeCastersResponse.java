@@ -77,6 +77,8 @@ public class DescribeCastersResponse extends AcsResponse {
 
 		private String casterTemplate;
 
+		private Integer channelEnable;
+
 		public Integer getStatus() {
 			return this.status;
 		}
@@ -155,6 +157,14 @@ public class DescribeCastersResponse extends AcsResponse {
 
 		public void setCasterTemplate(String casterTemplate) {
 			this.casterTemplate = casterTemplate;
+		}
+
+		public Integer getChannelEnable() {
+			return this.channelEnable;
+		}
+
+		public void setChannelEnable(Integer channelEnable) {
+			this.channelEnable = channelEnable;
 		}
 	}
 

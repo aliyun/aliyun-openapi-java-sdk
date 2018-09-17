@@ -42,6 +42,7 @@ public class DescribeCasterVideoResourcesResponseUnmarshaller {
 			videoResource.setVodUrl(context.stringValue("DescribeCasterVideoResourcesResponse.VideoResources["+ i +"].VodUrl"));
 			videoResource.setBeginOffset(context.integerValue("DescribeCasterVideoResourcesResponse.VideoResources["+ i +"].BeginOffset"));
 			videoResource.setEndOffset(context.integerValue("DescribeCasterVideoResourcesResponse.VideoResources["+ i +"].EndOffset"));
+			videoResource.setPtsCallbackInterval(context.integerValue("DescribeCasterVideoResourcesResponse.VideoResources["+ i +"].PtsCallbackInterval"));
 
 			videoResources.add(videoResource);
 		}

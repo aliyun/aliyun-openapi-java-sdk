@@ -28,23 +28,25 @@ public class ModifyCasterVideoResourceRequest extends RpcAcsRequest<ModifyCaster
 
 	private String resourceId;
 
-	private Integer beginOffset;
-
 	private String vodUrl;
-
-	private String liveStreamUrl;
 
 	private String casterId;
 
 	private Integer endOffset;
 
-	private String resourceName;
-
-	private Integer repeatNum;
-
 	private Long ownerId;
 
 	private String materialId;
+
+	private Integer beginOffset;
+
+	private String liveStreamUrl;
+
+	private Integer ptsCallbackInterval;
+
+	private String resourceName;
+
+	private Integer repeatNum;
 
 	public String getResourceId() {
 		return this.resourceId;
@@ -57,17 +59,6 @@ public class ModifyCasterVideoResourceRequest extends RpcAcsRequest<ModifyCaster
 		}
 	}
 
-	public Integer getBeginOffset() {
-		return this.beginOffset;
-	}
-
-	public void setBeginOffset(Integer beginOffset) {
-		this.beginOffset = beginOffset;
-		if(beginOffset != null){
-			putQueryParameter("BeginOffset", beginOffset.toString());
-		}
-	}
-
 	public String getVodUrl() {
 		return this.vodUrl;
 	}
@@ -76,17 +67,6 @@ public class ModifyCasterVideoResourceRequest extends RpcAcsRequest<ModifyCaster
 		this.vodUrl = vodUrl;
 		if(vodUrl != null){
 			putQueryParameter("VodUrl", vodUrl);
-		}
-	}
-
-	public String getLiveStreamUrl() {
-		return this.liveStreamUrl;
-	}
-
-	public void setLiveStreamUrl(String liveStreamUrl) {
-		this.liveStreamUrl = liveStreamUrl;
-		if(liveStreamUrl != null){
-			putQueryParameter("LiveStreamUrl", liveStreamUrl);
 		}
 	}
 
@@ -112,28 +92,6 @@ public class ModifyCasterVideoResourceRequest extends RpcAcsRequest<ModifyCaster
 		}
 	}
 
-	public String getResourceName() {
-		return this.resourceName;
-	}
-
-	public void setResourceName(String resourceName) {
-		this.resourceName = resourceName;
-		if(resourceName != null){
-			putQueryParameter("ResourceName", resourceName);
-		}
-	}
-
-	public Integer getRepeatNum() {
-		return this.repeatNum;
-	}
-
-	public void setRepeatNum(Integer repeatNum) {
-		this.repeatNum = repeatNum;
-		if(repeatNum != null){
-			putQueryParameter("RepeatNum", repeatNum.toString());
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -153,6 +111,61 @@ public class ModifyCasterVideoResourceRequest extends RpcAcsRequest<ModifyCaster
 		this.materialId = materialId;
 		if(materialId != null){
 			putQueryParameter("MaterialId", materialId);
+		}
+	}
+
+	public Integer getBeginOffset() {
+		return this.beginOffset;
+	}
+
+	public void setBeginOffset(Integer beginOffset) {
+		this.beginOffset = beginOffset;
+		if(beginOffset != null){
+			putQueryParameter("BeginOffset", beginOffset.toString());
+		}
+	}
+
+	public String getLiveStreamUrl() {
+		return this.liveStreamUrl;
+	}
+
+	public void setLiveStreamUrl(String liveStreamUrl) {
+		this.liveStreamUrl = liveStreamUrl;
+		if(liveStreamUrl != null){
+			putQueryParameter("LiveStreamUrl", liveStreamUrl);
+		}
+	}
+
+	public Integer getPtsCallbackInterval() {
+		return this.ptsCallbackInterval;
+	}
+
+	public void setPtsCallbackInterval(Integer ptsCallbackInterval) {
+		this.ptsCallbackInterval = ptsCallbackInterval;
+		if(ptsCallbackInterval != null){
+			putQueryParameter("PtsCallbackInterval", ptsCallbackInterval.toString());
+		}
+	}
+
+	public String getResourceName() {
+		return this.resourceName;
+	}
+
+	public void setResourceName(String resourceName) {
+		this.resourceName = resourceName;
+		if(resourceName != null){
+			putQueryParameter("ResourceName", resourceName);
+		}
+	}
+
+	public Integer getRepeatNum() {
+		return this.repeatNum;
+	}
+
+	public void setRepeatNum(Integer repeatNum) {
+		this.repeatNum = repeatNum;
+		if(repeatNum != null){
+			putQueryParameter("RepeatNum", repeatNum.toString());
 		}
 	}
 

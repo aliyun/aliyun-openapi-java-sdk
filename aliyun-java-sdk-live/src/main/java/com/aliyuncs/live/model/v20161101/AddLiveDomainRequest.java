@@ -26,6 +26,8 @@ public class AddLiveDomainRequest extends RpcAcsRequest<AddLiveDomainResponse> {
 		super("live", "2016-11-01", "AddLiveDomain", "live");
 	}
 
+	private String topLevelDomain;
+
 	private String securityToken;
 
 	private String ownerAccount;
@@ -41,6 +43,17 @@ public class AddLiveDomainRequest extends RpcAcsRequest<AddLiveDomainResponse> {
 	private String checkUrl;
 
 	private String liveDomainType;
+
+	public String getTopLevelDomain() {
+		return this.topLevelDomain;
+	}
+
+	public void setTopLevelDomain(String topLevelDomain) {
+		this.topLevelDomain = topLevelDomain;
+		if(topLevelDomain != null){
+			putQueryParameter("TopLevelDomain", topLevelDomain);
+		}
+	}
 
 	public String getSecurityToken() {
 		return this.securityToken;

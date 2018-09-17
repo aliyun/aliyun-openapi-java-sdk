@@ -43,6 +43,7 @@ public class DescribeCastersResponseUnmarshaller {
 			caster.setExpireTime(context.stringValue("DescribeCastersResponse.CasterList["+ i +"].ExpireTime"));
 			caster.setChargeType(context.stringValue("DescribeCastersResponse.CasterList["+ i +"].ChargeType"));
 			caster.setCasterTemplate(context.stringValue("DescribeCastersResponse.CasterList["+ i +"].CasterTemplate"));
+			caster.setChannelEnable(context.integerValue("DescribeCastersResponse.CasterList["+ i +"].ChannelEnable"));
 
 			casterList.add(caster);
 		}

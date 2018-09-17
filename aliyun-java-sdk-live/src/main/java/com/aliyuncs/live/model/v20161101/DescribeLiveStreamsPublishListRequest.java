@@ -32,6 +32,8 @@ public class DescribeLiveStreamsPublishListRequest extends RpcAcsRequest<Describ
 
 	private String endTime;
 
+	private String orderBy;
+
 	private String startTime;
 
 	private Long ownerId;
@@ -39,8 +41,6 @@ public class DescribeLiveStreamsPublishListRequest extends RpcAcsRequest<Describ
 	private Integer pageNumber;
 
 	private String appName;
-
-	private String securityToken;
 
 	private Integer pageSize;
 
@@ -78,6 +78,17 @@ public class DescribeLiveStreamsPublishListRequest extends RpcAcsRequest<Describ
 		this.endTime = endTime;
 		if(endTime != null){
 			putQueryParameter("EndTime", endTime);
+		}
+	}
+
+	public String getOrderBy() {
+		return this.orderBy;
+	}
+
+	public void setOrderBy(String orderBy) {
+		this.orderBy = orderBy;
+		if(orderBy != null){
+			putQueryParameter("OrderBy", orderBy);
 		}
 	}
 
@@ -122,17 +133,6 @@ public class DescribeLiveStreamsPublishListRequest extends RpcAcsRequest<Describ
 		this.appName = appName;
 		if(appName != null){
 			putQueryParameter("AppName", appName);
-		}
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 

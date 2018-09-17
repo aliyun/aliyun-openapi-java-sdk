@@ -75,6 +75,8 @@ public class DescribeCasterVideoResourcesResponse extends AcsResponse {
 
 		private Integer endOffset;
 
+		private Integer ptsCallbackInterval;
+
 		public String getMaterialId() {
 			return this.materialId;
 		}
@@ -145,6 +147,14 @@ public class DescribeCasterVideoResourcesResponse extends AcsResponse {
 
 		public void setEndOffset(Integer endOffset) {
 			this.endOffset = endOffset;
+		}
+
+		public Integer getPtsCallbackInterval() {
+			return this.ptsCallbackInterval;
+		}
+
+		public void setPtsCallbackInterval(Integer ptsCallbackInterval) {
+			this.ptsCallbackInterval = ptsCallbackInterval;
 		}
 	}
 

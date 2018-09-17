@@ -46,6 +46,8 @@ public class DescribeCasterConfigResponse extends AcsResponse {
 
 	private Integer programEffect;
 
+	private Integer channelEnable;
+
 	private TranscodeConfig transcodeConfig;
 
 	private RecordConfig recordConfig;
@@ -128,6 +130,14 @@ public class DescribeCasterConfigResponse extends AcsResponse {
 
 	public void setProgramEffect(Integer programEffect) {
 		this.programEffect = programEffect;
+	}
+
+	public Integer getChannelEnable() {
+		return this.channelEnable;
+	}
+
+	public void setChannelEnable(Integer channelEnable) {
+		this.channelEnable = channelEnable;
 	}
 
 	public TranscodeConfig getTranscodeConfig() {

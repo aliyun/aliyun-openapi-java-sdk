@@ -50,6 +50,10 @@ public class DescribeLiveStreamsNotifyUrlConfigResponse extends AcsResponse {
 
 		private String notifyUrl;
 
+		private String authType;
+
+		private String authKey;
+
 		public String getDomainName() {
 			return this.domainName;
 		}
@@ -64,6 +68,22 @@ public class DescribeLiveStreamsNotifyUrlConfigResponse extends AcsResponse {
 
 		public void setNotifyUrl(String notifyUrl) {
 			this.notifyUrl = notifyUrl;
+		}
+
+		public String getAuthType() {
+			return this.authType;
+		}
+
+		public void setAuthType(String authType) {
+			this.authType = authType;
+		}
+
+		public String getAuthKey() {
+			return this.authKey;
+		}
+
+		public void setAuthKey(String authKey) {
+			this.authKey = authKey;
 		}
 	}
 

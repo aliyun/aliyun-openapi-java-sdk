@@ -30,6 +30,8 @@ public class SetCasterConfigRequest extends RpcAcsRequest<SetCasterConfigRespons
 
 	private String casterId;
 
+	private Integer channelEnable;
+
 	private String domainName;
 
 	private Integer programEffect;
@@ -69,6 +71,17 @@ public class SetCasterConfigRequest extends RpcAcsRequest<SetCasterConfigRespons
 		this.casterId = casterId;
 		if(casterId != null){
 			putQueryParameter("CasterId", casterId);
+		}
+	}
+
+	public Integer getChannelEnable() {
+		return this.channelEnable;
+	}
+
+	public void setChannelEnable(Integer channelEnable) {
+		this.channelEnable = channelEnable;
+		if(channelEnable != null){
+			putQueryParameter("ChannelEnable", channelEnable.toString());
 		}
 	}
 
