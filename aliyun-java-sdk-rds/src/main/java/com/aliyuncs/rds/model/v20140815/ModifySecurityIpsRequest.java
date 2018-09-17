@@ -36,6 +36,8 @@ public class ModifySecurityIpsRequest extends RpcAcsRequest<ModifySecurityIpsRes
 
 	private String securityGroupId;
 
+	private String whitelistNetworkType;
+
 	private String dBInstanceIPArrayAttribute;
 
 	private String securityIPType;
@@ -94,6 +96,17 @@ public class ModifySecurityIpsRequest extends RpcAcsRequest<ModifySecurityIpsRes
 		this.securityGroupId = securityGroupId;
 		if(securityGroupId != null){
 			putQueryParameter("SecurityGroupId", securityGroupId);
+		}
+	}
+
+	public String getWhitelistNetworkType() {
+		return this.whitelistNetworkType;
+	}
+
+	public void setWhitelistNetworkType(String whitelistNetworkType) {
+		this.whitelistNetworkType = whitelistNetworkType;
+		if(whitelistNetworkType != null){
+			putQueryParameter("WhitelistNetworkType", whitelistNetworkType);
 		}
 	}
 
