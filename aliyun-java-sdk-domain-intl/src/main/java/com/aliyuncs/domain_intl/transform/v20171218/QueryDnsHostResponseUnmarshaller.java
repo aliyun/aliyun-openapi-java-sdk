@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.domain_intl.model.v20171218.QueryDnsHostResponse;
 import com.aliyuncs.domain_intl.model.v20171218.QueryDnsHostResponse.DnsHost;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

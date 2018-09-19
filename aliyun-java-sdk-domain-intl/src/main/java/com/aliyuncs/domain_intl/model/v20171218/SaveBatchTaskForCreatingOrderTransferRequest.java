@@ -41,10 +41,10 @@ public class SaveBatchTaskForCreatingOrderTransferRequest extends RpcAcsRequest<
 		this.orderTransferParams = orderTransferParams;	
 		if (orderTransferParams != null) {
 			for (int depth1 = 0; depth1 < orderTransferParams.size(); depth1++) {
-				putQueryParameter("OrderTransferParam." + (depth1 + 1) + ".DomainName" , orderTransferParams.get(depth1).getDomainName());
-				putQueryParameter("OrderTransferParam." + (depth1 + 1) + ".AuthorizationCode" , orderTransferParams.get(depth1).getAuthorizationCode());
-				putQueryParameter("OrderTransferParam." + (depth1 + 1) + ".RegistrantProfileId" , orderTransferParams.get(depth1).getRegistrantProfileId());
 				putQueryParameter("OrderTransferParam." + (depth1 + 1) + ".PermitPremiumTransfer" , orderTransferParams.get(depth1).getPermitPremiumTransfer());
+				putQueryParameter("OrderTransferParam." + (depth1 + 1) + ".AuthorizationCode" , orderTransferParams.get(depth1).getAuthorizationCode());
+				putQueryParameter("OrderTransferParam." + (depth1 + 1) + ".DomainName" , orderTransferParams.get(depth1).getDomainName());
+				putQueryParameter("OrderTransferParam." + (depth1 + 1) + ".RegistrantProfileId" , orderTransferParams.get(depth1).getRegistrantProfileId());
 			}
 		}	
 	}
@@ -73,20 +73,20 @@ public class SaveBatchTaskForCreatingOrderTransferRequest extends RpcAcsRequest<
 
 	public static class OrderTransferParam {
 
-		private String domainName;
+		private Boolean permitPremiumTransfer;
 
 		private String authorizationCode;
 
+		private String domainName;
+
 		private Long registrantProfileId;
 
-		private Boolean permitPremiumTransfer;
-
-		public String getDomainName() {
-			return this.domainName;
+		public Boolean getPermitPremiumTransfer() {
+			return this.permitPremiumTransfer;
 		}
 
-		public void setDomainName(String domainName) {
-			this.domainName = domainName;
+		public void setPermitPremiumTransfer(Boolean permitPremiumTransfer) {
+			this.permitPremiumTransfer = permitPremiumTransfer;
 		}
 
 		public String getAuthorizationCode() {
@@ -97,20 +97,20 @@ public class SaveBatchTaskForCreatingOrderTransferRequest extends RpcAcsRequest<
 			this.authorizationCode = authorizationCode;
 		}
 
+		public String getDomainName() {
+			return this.domainName;
+		}
+
+		public void setDomainName(String domainName) {
+			this.domainName = domainName;
+		}
+
 		public Long getRegistrantProfileId() {
 			return this.registrantProfileId;
 		}
 
 		public void setRegistrantProfileId(Long registrantProfileId) {
 			this.registrantProfileId = registrantProfileId;
-		}
-
-		public Boolean getPermitPremiumTransfer() {
-			return this.permitPremiumTransfer;
-		}
-
-		public void setPermitPremiumTransfer(Boolean permitPremiumTransfer) {
-			this.permitPremiumTransfer = permitPremiumTransfer;
 		}
 	}
 

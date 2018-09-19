@@ -15,18 +15,23 @@
 package com.aliyuncs.domain_intl.model.v20171218;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 
 /**
  * @author auto create
  * @version 
  */
-public class SaveSingleTaskForSynchronizingDnsHostRequest extends RpcAcsRequest<SaveSingleTaskForSynchronizingDnsHostResponse> {
+public class SaveSingleTaskForDeletingDnsHostRequest extends RpcAcsRequest<SaveSingleTaskForDeletingDnsHostResponse> {
 	
-	public SaveSingleTaskForSynchronizingDnsHostRequest() {
-		super("Domain-intl", "2017-12-18", "SaveSingleTaskForSynchronizingDnsHost", "domain");
+	public SaveSingleTaskForDeletingDnsHostRequest() {
+		super("Domain-intl", "2017-12-18", "SaveSingleTaskForDeletingDnsHost", "domain");
 	}
 
 	private String instanceId;
+
+	private List<String> ips;
+
+	private String dnsName;
 
 	private String userClientIp;
 
@@ -40,6 +45,30 @@ public class SaveSingleTaskForSynchronizingDnsHostRequest extends RpcAcsRequest<
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public List<String> getIps() {
+		return this.ips;
+	}
+
+	public void setIps(List<String> ips) {
+		this.ips = ips;	
+		if (ips != null) {
+			for (int i = 0; i < ips.size(); i++) {
+				putQueryParameter("Ip." + (i + 1) , ips.get(i));
+			}
+		}	
+	}
+
+	public String getDnsName() {
+		return this.dnsName;
+	}
+
+	public void setDnsName(String dnsName) {
+		this.dnsName = dnsName;
+		if(dnsName != null){
+			putQueryParameter("DnsName", dnsName);
 		}
 	}
 
@@ -66,8 +95,8 @@ public class SaveSingleTaskForSynchronizingDnsHostRequest extends RpcAcsRequest<
 	}
 
 	@Override
-	public Class<SaveSingleTaskForSynchronizingDnsHostResponse> getResponseClass() {
-		return SaveSingleTaskForSynchronizingDnsHostResponse.class;
+	public Class<SaveSingleTaskForDeletingDnsHostResponse> getResponseClass() {
+		return SaveSingleTaskForDeletingDnsHostResponse.class;
 	}
 
 }

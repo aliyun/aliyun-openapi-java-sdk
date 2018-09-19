@@ -41,25 +41,25 @@ public class SaveBatchTaskForCreatingOrderActivateRequest extends RpcAcsRequest<
 		this.orderActivateParams = orderActivateParams;	
 		if (orderActivateParams != null) {
 			for (int depth1 = 0; depth1 < orderActivateParams.size(); depth1++) {
-				putQueryParameter("OrderActivateParam." + (depth1 + 1) + ".DomainName" , orderActivateParams.get(depth1).getDomainName());
-				putQueryParameter("OrderActivateParam." + (depth1 + 1) + ".SubscriptionDuration" , orderActivateParams.get(depth1).getSubscriptionDuration());
-				putQueryParameter("OrderActivateParam." + (depth1 + 1) + ".RegistrantProfileId" , orderActivateParams.get(depth1).getRegistrantProfileId());
-				putQueryParameter("OrderActivateParam." + (depth1 + 1) + ".EnableDomainProxy" , orderActivateParams.get(depth1).getEnableDomainProxy());
-				putQueryParameter("OrderActivateParam." + (depth1 + 1) + ".PermitPremiumActivation" , orderActivateParams.get(depth1).getPermitPremiumActivation());
-				putQueryParameter("OrderActivateParam." + (depth1 + 1) + ".AliyunDns" , orderActivateParams.get(depth1).getAliyunDns());
-				putQueryParameter("OrderActivateParam." + (depth1 + 1) + ".Dns1" , orderActivateParams.get(depth1).getDns1());
-				putQueryParameter("OrderActivateParam." + (depth1 + 1) + ".Dns2" , orderActivateParams.get(depth1).getDns2());
 				putQueryParameter("OrderActivateParam." + (depth1 + 1) + ".Country" , orderActivateParams.get(depth1).getCountry());
-				putQueryParameter("OrderActivateParam." + (depth1 + 1) + ".City" , orderActivateParams.get(depth1).getCity());
-				putQueryParameter("OrderActivateParam." + (depth1 + 1) + ".RegistrantOrganization" , orderActivateParams.get(depth1).getRegistrantOrganization());
-				putQueryParameter("OrderActivateParam." + (depth1 + 1) + ".RegistrantName" , orderActivateParams.get(depth1).getRegistrantName());
-				putQueryParameter("OrderActivateParam." + (depth1 + 1) + ".Province" , orderActivateParams.get(depth1).getProvince());
+				putQueryParameter("OrderActivateParam." + (depth1 + 1) + ".SubscriptionDuration" , orderActivateParams.get(depth1).getSubscriptionDuration());
 				putQueryParameter("OrderActivateParam." + (depth1 + 1) + ".Address" , orderActivateParams.get(depth1).getAddress());
-				putQueryParameter("OrderActivateParam." + (depth1 + 1) + ".Email" , orderActivateParams.get(depth1).getEmail());
-				putQueryParameter("OrderActivateParam." + (depth1 + 1) + ".PostalCode" , orderActivateParams.get(depth1).getPostalCode());
+				putQueryParameter("OrderActivateParam." + (depth1 + 1) + ".PermitPremiumActivation" , orderActivateParams.get(depth1).getPermitPremiumActivation());
 				putQueryParameter("OrderActivateParam." + (depth1 + 1) + ".TelArea" , orderActivateParams.get(depth1).getTelArea());
+				putQueryParameter("OrderActivateParam." + (depth1 + 1) + ".City" , orderActivateParams.get(depth1).getCity());
+				putQueryParameter("OrderActivateParam." + (depth1 + 1) + ".Dns2" , orderActivateParams.get(depth1).getDns2());
+				putQueryParameter("OrderActivateParam." + (depth1 + 1) + ".Dns1" , orderActivateParams.get(depth1).getDns1());
+				putQueryParameter("OrderActivateParam." + (depth1 + 1) + ".DomainName" , orderActivateParams.get(depth1).getDomainName());
+				putQueryParameter("OrderActivateParam." + (depth1 + 1) + ".RegistrantProfileId" , orderActivateParams.get(depth1).getRegistrantProfileId());
 				putQueryParameter("OrderActivateParam." + (depth1 + 1) + ".Telephone" , orderActivateParams.get(depth1).getTelephone());
+				putQueryParameter("OrderActivateParam." + (depth1 + 1) + ".AliyunDns" , orderActivateParams.get(depth1).getAliyunDns());
+				putQueryParameter("OrderActivateParam." + (depth1 + 1) + ".RegistrantOrganization" , orderActivateParams.get(depth1).getRegistrantOrganization());
 				putQueryParameter("OrderActivateParam." + (depth1 + 1) + ".TelExt" , orderActivateParams.get(depth1).getTelExt());
+				putQueryParameter("OrderActivateParam." + (depth1 + 1) + ".Province" , orderActivateParams.get(depth1).getProvince());
+				putQueryParameter("OrderActivateParam." + (depth1 + 1) + ".PostalCode" , orderActivateParams.get(depth1).getPostalCode());
+				putQueryParameter("OrderActivateParam." + (depth1 + 1) + ".EnableDomainProxy" , orderActivateParams.get(depth1).getEnableDomainProxy());
+				putQueryParameter("OrderActivateParam." + (depth1 + 1) + ".Email" , orderActivateParams.get(depth1).getEmail());
+				putQueryParameter("OrderActivateParam." + (depth1 + 1) + ".RegistrantName" , orderActivateParams.get(depth1).getRegistrantName());
 			}
 		}	
 	}
@@ -88,50 +88,50 @@ public class SaveBatchTaskForCreatingOrderActivateRequest extends RpcAcsRequest<
 
 	public static class OrderActivateParam {
 
-		private String domainName;
+		private String country;
 
 		private Integer subscriptionDuration;
 
-		private Long registrantProfileId;
-
-		private Boolean enableDomainProxy;
+		private String address;
 
 		private Boolean permitPremiumActivation;
 
-		private Boolean aliyunDns;
-
-		private String dns1;
-
-		private String dns2;
-
-		private String country;
+		private String telArea;
 
 		private String city;
 
-		private String registrantOrganization;
+		private String dns2;
 
-		private String registrantName;
+		private String dns1;
 
-		private String province;
+		private String domainName;
 
-		private String address;
-
-		private String email;
-
-		private String postalCode;
-
-		private String telArea;
+		private Long registrantProfileId;
 
 		private String telephone;
 
+		private Boolean aliyunDns;
+
+		private String registrantOrganization;
+
 		private String telExt;
 
-		public String getDomainName() {
-			return this.domainName;
+		private String province;
+
+		private String postalCode;
+
+		private Boolean enableDomainProxy;
+
+		private String email;
+
+		private String registrantName;
+
+		public String getCountry() {
+			return this.country;
 		}
 
-		public void setDomainName(String domainName) {
-			this.domainName = domainName;
+		public void setCountry(String country) {
+			this.country = country;
 		}
 
 		public Integer getSubscriptionDuration() {
@@ -142,20 +142,12 @@ public class SaveBatchTaskForCreatingOrderActivateRequest extends RpcAcsRequest<
 			this.subscriptionDuration = subscriptionDuration;
 		}
 
-		public Long getRegistrantProfileId() {
-			return this.registrantProfileId;
+		public String getAddress() {
+			return this.address;
 		}
 
-		public void setRegistrantProfileId(Long registrantProfileId) {
-			this.registrantProfileId = registrantProfileId;
-		}
-
-		public Boolean getEnableDomainProxy() {
-			return this.enableDomainProxy;
-		}
-
-		public void setEnableDomainProxy(Boolean enableDomainProxy) {
-			this.enableDomainProxy = enableDomainProxy;
+		public void setAddress(String address) {
+			this.address = address;
 		}
 
 		public Boolean getPermitPremiumActivation() {
@@ -166,36 +158,12 @@ public class SaveBatchTaskForCreatingOrderActivateRequest extends RpcAcsRequest<
 			this.permitPremiumActivation = permitPremiumActivation;
 		}
 
-		public Boolean getAliyunDns() {
-			return this.aliyunDns;
+		public String getTelArea() {
+			return this.telArea;
 		}
 
-		public void setAliyunDns(Boolean aliyunDns) {
-			this.aliyunDns = aliyunDns;
-		}
-
-		public String getDns1() {
-			return this.dns1;
-		}
-
-		public void setDns1(String dns1) {
-			this.dns1 = dns1;
-		}
-
-		public String getDns2() {
-			return this.dns2;
-		}
-
-		public void setDns2(String dns2) {
-			this.dns2 = dns2;
-		}
-
-		public String getCountry() {
-			return this.country;
-		}
-
-		public void setCountry(String country) {
-			this.country = country;
+		public void setTelArea(String telArea) {
+			this.telArea = telArea;
 		}
 
 		public String getCity() {
@@ -206,60 +174,36 @@ public class SaveBatchTaskForCreatingOrderActivateRequest extends RpcAcsRequest<
 			this.city = city;
 		}
 
-		public String getRegistrantOrganization() {
-			return this.registrantOrganization;
+		public String getDns2() {
+			return this.dns2;
 		}
 
-		public void setRegistrantOrganization(String registrantOrganization) {
-			this.registrantOrganization = registrantOrganization;
+		public void setDns2(String dns2) {
+			this.dns2 = dns2;
 		}
 
-		public String getRegistrantName() {
-			return this.registrantName;
+		public String getDns1() {
+			return this.dns1;
 		}
 
-		public void setRegistrantName(String registrantName) {
-			this.registrantName = registrantName;
+		public void setDns1(String dns1) {
+			this.dns1 = dns1;
 		}
 
-		public String getProvince() {
-			return this.province;
+		public String getDomainName() {
+			return this.domainName;
 		}
 
-		public void setProvince(String province) {
-			this.province = province;
+		public void setDomainName(String domainName) {
+			this.domainName = domainName;
 		}
 
-		public String getAddress() {
-			return this.address;
+		public Long getRegistrantProfileId() {
+			return this.registrantProfileId;
 		}
 
-		public void setAddress(String address) {
-			this.address = address;
-		}
-
-		public String getEmail() {
-			return this.email;
-		}
-
-		public void setEmail(String email) {
-			this.email = email;
-		}
-
-		public String getPostalCode() {
-			return this.postalCode;
-		}
-
-		public void setPostalCode(String postalCode) {
-			this.postalCode = postalCode;
-		}
-
-		public String getTelArea() {
-			return this.telArea;
-		}
-
-		public void setTelArea(String telArea) {
-			this.telArea = telArea;
+		public void setRegistrantProfileId(Long registrantProfileId) {
+			this.registrantProfileId = registrantProfileId;
 		}
 
 		public String getTelephone() {
@@ -270,12 +214,68 @@ public class SaveBatchTaskForCreatingOrderActivateRequest extends RpcAcsRequest<
 			this.telephone = telephone;
 		}
 
+		public Boolean getAliyunDns() {
+			return this.aliyunDns;
+		}
+
+		public void setAliyunDns(Boolean aliyunDns) {
+			this.aliyunDns = aliyunDns;
+		}
+
+		public String getRegistrantOrganization() {
+			return this.registrantOrganization;
+		}
+
+		public void setRegistrantOrganization(String registrantOrganization) {
+			this.registrantOrganization = registrantOrganization;
+		}
+
 		public String getTelExt() {
 			return this.telExt;
 		}
 
 		public void setTelExt(String telExt) {
 			this.telExt = telExt;
+		}
+
+		public String getProvince() {
+			return this.province;
+		}
+
+		public void setProvince(String province) {
+			this.province = province;
+		}
+
+		public String getPostalCode() {
+			return this.postalCode;
+		}
+
+		public void setPostalCode(String postalCode) {
+			this.postalCode = postalCode;
+		}
+
+		public Boolean getEnableDomainProxy() {
+			return this.enableDomainProxy;
+		}
+
+		public void setEnableDomainProxy(Boolean enableDomainProxy) {
+			this.enableDomainProxy = enableDomainProxy;
+		}
+
+		public String getEmail() {
+			return this.email;
+		}
+
+		public void setEmail(String email) {
+			this.email = email;
+		}
+
+		public String getRegistrantName() {
+			return this.registrantName;
+		}
+
+		public void setRegistrantName(String registrantName) {
+			this.registrantName = registrantName;
 		}
 	}
 

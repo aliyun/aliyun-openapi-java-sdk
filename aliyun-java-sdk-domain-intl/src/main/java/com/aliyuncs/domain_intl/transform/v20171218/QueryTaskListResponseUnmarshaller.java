@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.domain_intl.model.v20171218.QueryTaskListResponse;
 import com.aliyuncs.domain_intl.model.v20171218.QueryTaskListResponse.TaskInfo;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

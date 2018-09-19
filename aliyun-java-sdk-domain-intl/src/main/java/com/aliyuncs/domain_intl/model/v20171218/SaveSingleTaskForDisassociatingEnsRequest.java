@@ -20,26 +20,26 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class SaveSingleTaskForSynchronizingDnsHostRequest extends RpcAcsRequest<SaveSingleTaskForSynchronizingDnsHostResponse> {
+public class SaveSingleTaskForDisassociatingEnsRequest extends RpcAcsRequest<SaveSingleTaskForDisassociatingEnsResponse> {
 	
-	public SaveSingleTaskForSynchronizingDnsHostRequest() {
-		super("Domain-intl", "2017-12-18", "SaveSingleTaskForSynchronizingDnsHost", "domain");
+	public SaveSingleTaskForDisassociatingEnsRequest() {
+		super("Domain-intl", "2017-12-18", "SaveSingleTaskForDisassociatingEns", "domain");
 	}
 
-	private String instanceId;
+	private String domainName;
 
 	private String userClientIp;
 
 	private String lang;
 
-	public String getInstanceId() {
-		return this.instanceId;
+	public String getDomainName() {
+		return this.domainName;
 	}
 
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
+	public void setDomainName(String domainName) {
+		this.domainName = domainName;
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
 		}
 	}
 
@@ -66,8 +66,8 @@ public class SaveSingleTaskForSynchronizingDnsHostRequest extends RpcAcsRequest<
 	}
 
 	@Override
-	public Class<SaveSingleTaskForSynchronizingDnsHostResponse> getResponseClass() {
-		return SaveSingleTaskForSynchronizingDnsHostResponse.class;
+	public Class<SaveSingleTaskForDisassociatingEnsResponse> getResponseClass() {
+		return SaveSingleTaskForDisassociatingEnsResponse.class;
 	}
 
 }

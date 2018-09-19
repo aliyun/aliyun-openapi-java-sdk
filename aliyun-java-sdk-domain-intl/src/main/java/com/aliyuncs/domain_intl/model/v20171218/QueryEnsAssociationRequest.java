@@ -20,28 +20,17 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class SaveSingleTaskForSynchronizingDnsHostRequest extends RpcAcsRequest<SaveSingleTaskForSynchronizingDnsHostResponse> {
+public class QueryEnsAssociationRequest extends RpcAcsRequest<QueryEnsAssociationResponse> {
 	
-	public SaveSingleTaskForSynchronizingDnsHostRequest() {
-		super("Domain-intl", "2017-12-18", "SaveSingleTaskForSynchronizingDnsHost", "domain");
+	public QueryEnsAssociationRequest() {
+		super("Domain-intl", "2017-12-18", "QueryEnsAssociation", "domain");
 	}
-
-	private String instanceId;
 
 	private String userClientIp;
 
+	private String domainName;
+
 	private String lang;
-
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
-		}
-	}
 
 	public String getUserClientIp() {
 		return this.userClientIp;
@@ -51,6 +40,17 @@ public class SaveSingleTaskForSynchronizingDnsHostRequest extends RpcAcsRequest<
 		this.userClientIp = userClientIp;
 		if(userClientIp != null){
 			putQueryParameter("UserClientIp", userClientIp);
+		}
+	}
+
+	public String getDomainName() {
+		return this.domainName;
+	}
+
+	public void setDomainName(String domainName) {
+		this.domainName = domainName;
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
 		}
 	}
 
@@ -66,8 +66,8 @@ public class SaveSingleTaskForSynchronizingDnsHostRequest extends RpcAcsRequest<
 	}
 
 	@Override
-	public Class<SaveSingleTaskForSynchronizingDnsHostResponse> getResponseClass() {
-		return SaveSingleTaskForSynchronizingDnsHostResponse.class;
+	public Class<QueryEnsAssociationResponse> getResponseClass() {
+		return QueryEnsAssociationResponse.class;
 	}
 
 }

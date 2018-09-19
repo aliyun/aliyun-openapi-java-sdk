@@ -1,3 +1,6 @@
+2018-09-19 Version: 1.2.0
+1, Add ens api, include SaveSingleTaskForDisassociatingEns, SaveSingleTaskForAssociatingEns, QueryLocalEnsAssociation and QueryEnsAssociation.
+
 2018-04-04 Version: 1.2.0
 1, Add APIs for domain transfer in and transfer out.
 2, Add APIs for poll and acknowledge domain task.

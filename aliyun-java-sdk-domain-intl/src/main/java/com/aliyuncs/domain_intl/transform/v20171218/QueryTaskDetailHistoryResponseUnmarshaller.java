@@ -22,6 +22,7 @@ import com.aliyuncs.domain_intl.model.v20171218.QueryTaskDetailHistoryResponse.C
 import com.aliyuncs.domain_intl.model.v20171218.QueryTaskDetailHistoryResponse.NextPageCursor;
 import com.aliyuncs.domain_intl.model.v20171218.QueryTaskDetailHistoryResponse.PrePageCursor;
 import com.aliyuncs.domain_intl.model.v20171218.QueryTaskDetailHistoryResponse.TaskDetailHistory;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

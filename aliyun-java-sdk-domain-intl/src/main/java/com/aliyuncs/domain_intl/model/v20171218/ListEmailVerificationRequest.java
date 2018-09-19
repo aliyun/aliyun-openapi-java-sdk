@@ -32,6 +32,8 @@ public class ListEmailVerificationRequest extends RpcAcsRequest<ListEmailVerific
 
 	private Integer pageSize;
 
+	private String userClientIp;
+
 	private String lang;
 
 	private Integer pageNum;
@@ -70,6 +72,17 @@ public class ListEmailVerificationRequest extends RpcAcsRequest<ListEmailVerific
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getUserClientIp() {
+		return this.userClientIp;
+	}
+
+	public void setUserClientIp(String userClientIp) {
+		this.userClientIp = userClientIp;
+		if(userClientIp != null){
+			putQueryParameter("UserClientIp", userClientIp);
 		}
 	}
 

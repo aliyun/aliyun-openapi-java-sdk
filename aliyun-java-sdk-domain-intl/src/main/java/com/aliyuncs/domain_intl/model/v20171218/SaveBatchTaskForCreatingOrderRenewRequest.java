@@ -52,9 +52,9 @@ public class SaveBatchTaskForCreatingOrderRenewRequest extends RpcAcsRequest<Sav
 		this.orderRenewParams = orderRenewParams;	
 		if (orderRenewParams != null) {
 			for (int depth1 = 0; depth1 < orderRenewParams.size(); depth1++) {
-				putQueryParameter("OrderRenewParam." + (depth1 + 1) + ".DomainName" , orderRenewParams.get(depth1).getDomainName());
-				putQueryParameter("OrderRenewParam." + (depth1 + 1) + ".CurrentExpirationDate" , orderRenewParams.get(depth1).getCurrentExpirationDate());
 				putQueryParameter("OrderRenewParam." + (depth1 + 1) + ".SubscriptionDuration" , orderRenewParams.get(depth1).getSubscriptionDuration());
+				putQueryParameter("OrderRenewParam." + (depth1 + 1) + ".CurrentExpirationDate" , orderRenewParams.get(depth1).getCurrentExpirationDate());
+				putQueryParameter("OrderRenewParam." + (depth1 + 1) + ".DomainName" , orderRenewParams.get(depth1).getDomainName());
 			}
 		}	
 	}
@@ -72,18 +72,18 @@ public class SaveBatchTaskForCreatingOrderRenewRequest extends RpcAcsRequest<Sav
 
 	public static class OrderRenewParam {
 
-		private String domainName;
+		private Integer subscriptionDuration;
 
 		private Long currentExpirationDate;
 
-		private Integer subscriptionDuration;
+		private String domainName;
 
-		public String getDomainName() {
-			return this.domainName;
+		public Integer getSubscriptionDuration() {
+			return this.subscriptionDuration;
 		}
 
-		public void setDomainName(String domainName) {
-			this.domainName = domainName;
+		public void setSubscriptionDuration(Integer subscriptionDuration) {
+			this.subscriptionDuration = subscriptionDuration;
 		}
 
 		public Long getCurrentExpirationDate() {
@@ -94,12 +94,12 @@ public class SaveBatchTaskForCreatingOrderRenewRequest extends RpcAcsRequest<Sav
 			this.currentExpirationDate = currentExpirationDate;
 		}
 
-		public Integer getSubscriptionDuration() {
-			return this.subscriptionDuration;
+		public String getDomainName() {
+			return this.domainName;
 		}
 
-		public void setSubscriptionDuration(Integer subscriptionDuration) {
-			this.subscriptionDuration = subscriptionDuration;
+		public void setDomainName(String domainName) {
+			this.domainName = domainName;
 		}
 	}
 
