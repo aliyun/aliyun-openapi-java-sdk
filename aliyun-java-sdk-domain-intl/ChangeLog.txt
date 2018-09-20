@@ -1,3 +1,6 @@
+2018-09-20 Version: 1.2.1
+1, Fix publish failure for Java, Python and C# SDK.
+
 2018-09-19 Version: 1.2.0
 1, Add ens api, include SaveSingleTaskForDisassociatingEns, SaveSingleTaskForAssociatingEns, QueryLocalEnsAssociation and QueryEnsAssociation.
 
