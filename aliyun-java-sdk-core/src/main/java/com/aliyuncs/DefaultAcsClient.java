@@ -34,14 +34,15 @@ import com.aliyuncs.auth.Credential;
 import com.aliyuncs.auth.LegacyCredentials;
 import com.aliyuncs.auth.Signer;
 import com.aliyuncs.auth.StaticCredentialsProvider;
+import com.aliyuncs.endpoint.*;
 import com.aliyuncs.exceptions.ClientException;
+import com.aliyuncs.exceptions.ErrorCodeConstant;
 import com.aliyuncs.exceptions.ServerException;
 import com.aliyuncs.http.*;
 import com.aliyuncs.profile.DefaultProfile;
 import com.aliyuncs.profile.IClientProfile;
 import com.aliyuncs.reader.Reader;
 import com.aliyuncs.reader.ReaderFactory;
-import com.aliyuncs.regions.Endpoint;
 import com.aliyuncs.regions.ProductDomain;
 import com.aliyuncs.transform.UnmarshallerContext;
 import com.aliyuncs.unmarshaller.UnmarshallerFactory;
@@ -54,26 +55,22 @@ public class DefaultAcsClient implements IAcsClient {
     private IClientProfile clientProfile = null;
     private AlibabaCloudCredentialsProvider credentialsProvider;
     private IHttpClient httpClient;
+    private EndpointResolver endpointResolver;
 
     private SSLSocketFactory sslSocketFactory = null;
 
+    @Deprecated
     public DefaultAcsClient() {
         this.clientProfile = DefaultProfile.getProfile();
         this.httpClient = HttpClientFactory.buildClient(this.clientProfile);
     }
 
     public DefaultAcsClient(IClientProfile profile) {
-        this.clientProfile = profile;
-        this.credentialsProvider = new StaticCredentialsProvider(profile);
-        this.clientProfile.setCredentialsProvider(this.credentialsProvider);
-        this.httpClient = HttpClientFactory.buildClient(this.clientProfile);
+        this(profile, new StaticCredentialsProvider(profile));
     }
 
     public DefaultAcsClient(IClientProfile profile, AlibabaCloudCredentials credentials) {
-        this.clientProfile = profile;
-        this.credentialsProvider = new StaticCredentialsProvider(credentials);
-        this.clientProfile.setCredentialsProvider(this.credentialsProvider);
-        this.httpClient = HttpClientFactory.buildClient(this.clientProfile);
+        this(profile, new StaticCredentialsProvider(credentials));
     }
 
     public DefaultAcsClient(IClientProfile profile, AlibabaCloudCredentialsProvider credentialsProvider) {
@@ -81,6 +78,20 @@ public class DefaultAcsClient implements IAcsClient {
         this.credentialsProvider = credentialsProvider;
         this.clientProfile.setCredentialsProvider(this.credentialsProvider);
         this.httpClient = HttpClientFactory.buildClient(this.clientProfile);
+        this.endpointResolver = initEndpointResolver();
+    }
+
+    private EndpointResolver initEndpointResolver() {
+        List<EndpointResolverBase> resolverChain = new ArrayList<EndpointResolverBase>();
+
+        // The order is very IMPORTANT!
+        resolverChain.add(DefaultProfile.userCustomizedEndpointResolver);
+        resolverChain.add(new LocalConfigRegionalEndpointResolver());
+        resolverChain.add(new LocalConfigGlobalEndpointResolver());
+        resolverChain.add(new LocationServiceEndpointResolver(this));
+
+        EndpointResolver endpointResolver = new ChainedEndpointResolver(resolverChain);
+        return endpointResolver;
     }
 
     @Override
@@ -109,22 +120,11 @@ public class DefaultAcsClient implements IAcsClient {
         int retryNumber = this.maxRetryNumber;
         Signer signer = Signer.getSigner(new LegacyCredentials(credential));
         FormatType format = null;
-        List<Endpoint> endpoints = null;
         if (null == request.getRegionId()) {
             request.setRegionId(regionId);
         }
-        if (null != this.clientProfile) {
-            format = clientProfile.getFormat();
-            try {
-                endpoints = clientProfile.getEndpoints(request.getProduct(), request.getRegionId(),
-                    request.getLocationProduct(),
-                    request.getEndpointType());
-            } catch (Throwable e) {
-                endpoints = clientProfile.getEndpoints(request.getRegionId(), request.getProduct());
-            }
-        }
 
-        return this.doAction(request, retry, retryNumber, request.getRegionId(), credential, signer, format, endpoints);
+        return this.doAction(request, retry, retryNumber, request.getRegionId(), credential, signer, format);
     }
 
     @Override
@@ -206,13 +206,8 @@ public class DefaultAcsClient implements IAcsClient {
         AlibabaCloudCredentials credentials = this.credentialsProvider.getCredentials();
         Signer signer = Signer.getSigner(credentials);
         FormatType format = profile.getFormat();
-        List<Endpoint> endpoints;
-        try {
-            endpoints = getEndpoints(request);
-        } catch (Throwable e) {
-            endpoints = clientProfile.getEndpoints(request.getRegionId(), request.getProduct());
-        }
-        return this.doAction(request, retry, retryNumber, request.getRegionId(), credentials, signer, format, endpoints);
+
+        return this.doAction(request, retry, retryNumber, request.getRegionId(), credentials, signer, format);
     }
 
     private <T extends AcsResponse> T parseAcsResponse(Class<T> clasz, HttpResponse baseResponse)
@@ -233,16 +228,14 @@ public class DefaultAcsClient implements IAcsClient {
     }
 
     @Deprecated
-    @Override
     public <T extends AcsResponse> HttpResponse doAction(AcsRequest<T> request,
                                                          boolean autoRetry, int maxRetryNumber,
                                                          String regionId, Credential credential,
-                                                         Signer signer, FormatType format,
-                                                         List<Endpoint> endpoints)
+                                                         Signer signer, FormatType format)
         throws ClientException, ServerException {
         return doAction(
             request, autoRetry, maxRetryNumber, regionId, new LegacyCredentials(credential),
-            signer, format, endpoints
+            signer, format
         );
     }
 
@@ -250,8 +243,7 @@ public class DefaultAcsClient implements IAcsClient {
                                                           boolean autoRetry, int maxRetryNumber,
                                                           String regionId,
                                                           AlibabaCloudCredentials credentials,
-                                                          Signer signer, FormatType format,
-                                                          List<Endpoint> endpoints)
+                                                          Signer signer, FormatType format)
         throws ClientException, ServerException {
 
         try {
@@ -263,10 +255,20 @@ public class DefaultAcsClient implements IAcsClient {
             if (request.getProductDomain() != null) {
                 domain = request.getProductDomain();
             } else {
-                domain = Endpoint.findProductDomain(regionId, request.getProduct(), endpoints);
-            }
-            if (null == domain) {
-                throw new ClientException("SDK.InvalidRegionId", "Can not find endpoint to access.");
+                ResolveEndpointRequest resolveEndpointRequest = new ResolveEndpointRequest(
+                        regionId,
+                        request.getProduct(),
+                        request.getLocationProduct(),
+                        request.getEndpointType()
+                );
+                String endpoint = endpointResolver.resolve(resolveEndpointRequest);
+                domain = new ProductDomain(request.getProduct(), endpoint);
+
+                if (endpoint.endsWith("endpoint-test.exception.com")) {
+                    // For endpoint testability, if the endpoint is xxxx.endpoint-test.special.com
+                    // throw a client exception with this endpoint
+                    throw new ClientException(ErrorCodeConstant.SDK_ENDPOINT_TESTABILITY, endpoint);
+                }
             }
 
             if (request.getProtocol() == null) {
@@ -300,7 +302,7 @@ public class DefaultAcsClient implements IAcsClient {
                 }
             }
         } catch (InvalidKeyException exp) {
-            throw new ClientException("SDK.InvalidAccessSecret", "Speicified access secret is not valid.", exp);
+            throw new ClientException("SDK.InvalidAccessSecret", "Specified access secret is not valid.", exp);
         } catch (NoSuchAlgorithmException exp) {
             throw new ClientException("SDK.InvalidMD5Algorithm", "MD5 hash is not supported by client side.", exp);
         }
@@ -354,16 +356,6 @@ public class DefaultAcsClient implements IAcsClient {
 
     }
 
-    @SuppressWarnings("rawtypes")
-    private List<Endpoint> getEndpoints(AcsRequest request) throws ClientException {
-        if (request.getProductDomain() != null && request.getProductDomain().getDomianName() != null) {
-            return new ArrayList<Endpoint>();
-        }
-
-        return clientProfile.getEndpoints(request.getProduct(), request.getRegionId(), request.getLocationProduct(),
-            request.getEndpointType());
-    }
-
     public boolean isAutoRetry() {
         return autoRetry;
     }
@@ -386,6 +378,10 @@ public class DefaultAcsClient implements IAcsClient {
 
     public void ignoreSSLCertificate() {
         this.httpClient.ignoreSSLCertificate();
+    }
+
+    public void setEndpointResolver(EndpointResolver resolver) {
+        endpointResolver = resolver;
     }
 
     @Override

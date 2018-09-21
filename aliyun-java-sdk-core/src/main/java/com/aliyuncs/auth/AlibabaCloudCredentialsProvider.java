@@ -34,6 +34,6 @@ public interface AlibabaCloudCredentialsProvider {
 
     /**
      * @return credentials for the client to authorize a request
-     */
-    public AlibabaCloudCredentials getCredentials() throws ClientException, ServerException;
-}
+        */
+public AlibabaCloudCredentials getCredentials() throws ClientException, ServerException;
+        }

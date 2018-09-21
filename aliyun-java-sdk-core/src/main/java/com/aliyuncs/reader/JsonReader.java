@@ -171,7 +171,7 @@ public class JsonReader implements Reader {
                 break;
             case '[':
                 if (c == '"') {
-                    processList(baseKey);
+                    processListForHideItem(baseKey);
                     break;
                 } else {
                     processArrayForHideItem(baseKey);
@@ -264,6 +264,19 @@ public class JsonReader implements Reader {
             }
         }
         map.put(trimFromLast(baseKey, ".") + ".Length", String.valueOf(index));
+    }
+
+    private void processListForHideItem(String baseKey) {
+        Object value = readJson(baseKey);
+        int index = 0;
+        while (token != ARRAY_END_TOKEN) {
+            String key = baseKey + "[" + (index++) + "]";
+            map.put(key, String.valueOf(value));
+            if (readJson(baseKey) == COMMA_TOKEN) {
+                value = readJson(baseKey);
+            }
+        }
+        map.put(baseKey + ".Length", String.valueOf(index));
     }
 
     private void processArray(String baseKey) {

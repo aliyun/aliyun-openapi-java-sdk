@@ -16,25 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package com.aliyuncs.regions;
+
+package com.aliyuncs.endpoint;
 
 import com.aliyuncs.exceptions.ClientException;
-import org.junit.Test;
 
-import static org.junit.Assert.fail;
-
-public class RegionsTest {
-
-    @Test
-    public void testParseRegions() {
-        LocalEndpointResolver parser = new LocalEndpointResolver();
-        Endpoint endpoint = null;
-        try {
-            endpoint = parser.getEndpoint("cn-hangzhou", "Rds");
-        } catch (ClientException e) {
-            fail(e.toString());
-        }
-        //assertEquals("rds.aliyuncs.com",
-        //    Endpoint.findProductDomain("cn-hangzhou", "Rds", Arrays.asList(endpoint)).getDomianName());
-    }
+public interface EndpointResolver {
+    String resolve(ResolveEndpointRequest request) throws ClientException;
 }
