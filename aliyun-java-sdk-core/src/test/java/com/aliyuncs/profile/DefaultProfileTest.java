@@ -26,12 +26,11 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import com.aliyuncs.regions.ProductDomain;
 import org.junit.Assert;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
 
-import com.aliyuncs.regions.Endpoint;
-import com.aliyuncs.regions.ProductDomain;
 import org.junit.runners.MethodSorters;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
@@ -44,33 +43,6 @@ public class DefaultProfileTest {
         assertEquals("cn-beijing", iprofile.getRegionId());
         assertEquals("testid", iprofile.getCredential().getAccessKeyId());
         assertEquals("testsecret", iprofile.getCredential().getAccessSecret());
-    }
-
-    @Test
-    public void testAddEndpoint() throws Exception {
-        try {
-            IClientProfile clientProfile = DefaultProfile.getProfile();
-            clientProfile.getEndpoints("cn-beijing", "Rds");
-            Method method = DefaultProfile.class.getDeclaredMethod("addEndpoint", String.class, String.class,
-                String.class, String.class);
-            method.setAccessible(true);
-            method.invoke(DefaultProfile.class, "cn-beijing", "cn-beijing", "Oss", "oss-admin.aliyuncs.com");
-            List<Endpoint> endpoints = clientProfile.getEndpoints("cn-beijing", "Oss");
-            boolean success = false;
-            for (Endpoint endpoint : endpoints) {
-                if ("cn-beijing".equals(endpoint.getName())) {
-                    ProductDomain productDomain = getProductDomain(endpoint.getProductDomains(),
-                        "oss-admin.aliyuncs.com", "Oss");
-                    String regionId = getRegionId(endpoint.getRegionIds(), "cn-beijing");
-                    if (null != productDomain && null != regionId) {
-                        success = true;
-                    }
-                }
-            }
-            Assert.assertTrue(success);
-        } catch (Exception e) {
-            Assert.fail();
-        }
     }
 
     private String getRegionId(Set<String> regionIds, String regionId) {
@@ -92,59 +64,6 @@ public class DefaultProfileTest {
         return null;
     }
 
-    @Test
-    public void testUpdateEndpoint() {
-        try {
-            Set<String> regions = new HashSet<String>();
-
-            List<ProductDomain> productDomains = new ArrayList<ProductDomain>();
-            productDomains.add(new ProductDomain("Ecs", "ecs.aliyuncs.com"));
-            productDomains.add(new ProductDomain("Rds", "rds.aliyuncs.com"));
-            productDomains.add(new ProductDomain("Oss", "oss.aliyuncs.com"));
-
-            Endpoint endpoint = new Endpoint("cn-hangzhou", regions, productDomains);
-
-            Method method = DefaultProfile.class.getDeclaredMethod("updateEndpoint", String.class, String.class,
-                String.class, Endpoint.class);
-            method.setAccessible(true);
-
-            method.invoke(DefaultProfile.class, "cn-hangzhou", "Oss", "oss-admin.aliyuncs.com", endpoint);
-
-            Method method_findProductDomain = DefaultProfile.class.getDeclaredMethod("findProductDomain", List.class,
-                String.class);
-            method_findProductDomain.setAccessible(true);
-            ProductDomain productDomain = (ProductDomain)method_findProductDomain.invoke(DefaultProfile.class,
-                productDomains, "Oss");
-            Assert.assertTrue("Oss".equals(productDomain.getProductName()));
-            Assert.assertTrue("oss-admin.aliyuncs.com".equals(productDomain.getDomianName()));
-
-            productDomain = (ProductDomain)method_findProductDomain.invoke(DefaultProfile.class, productDomains, "Oss");
-            Assert.assertTrue("Oss".equals(productDomain.getProductName()));
-            Assert.assertTrue("oss-admin.aliyuncs.com".equals(productDomain.getDomianName()));
-
-            Assert.assertTrue("cn-hangzhou".equals(endpoint.getName()));
-
-        } catch (Exception e) {
-            Assert.fail();
-        }
-    }
-
-    @Test
-    public void testFindEndpointByName() {
-        try {
-            DefaultProfile.addEndpoint("cn-hangzhou", "cn-hangzhou", "Ecs", "ecs-cn-hangzhou.aliyuncs.com");
-            DefaultProfile.addEndpoint("cn-hangzhou", "cn-beijing", "Ecs", "ecs-cn-hangzhou.aliyuncs.com");
-            DefaultProfile.addEndpoint("cn-hangzhou", "cn-shanghai", "Ecs", "ecs-cn-hangzhou.aliyuncs.com");
-            Method method = DefaultProfile.class.getDeclaredMethod("findEndpointByRegionId", String.class);
-            method.setAccessible(true);
-
-            Endpoint endpoint = (Endpoint)method.invoke(DefaultProfile.class, "cn-hangzhou");
-            Assert.assertTrue("cn-hangzhou".equals(endpoint.getName()));
-
-        } catch (Exception e) {
-            Assert.fail();
-        }
-    }
 
     @Test
     public void testFindProductDomain() {

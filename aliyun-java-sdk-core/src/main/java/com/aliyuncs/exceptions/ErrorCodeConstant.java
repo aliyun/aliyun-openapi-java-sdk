@@ -16,17 +16,10 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package com.aliyuncs.regions;
 
-import com.aliyuncs.auth.Credential;
-import com.aliyuncs.exceptions.ClientException;
+package com.aliyuncs.exceptions;
 
-@SuppressWarnings("deprecation")
-public interface EndpointResolver {
-    //  Endpoint getEndpoints() throws ClientException;
-
-    Endpoint getEndpoint(String region, String product) throws ClientException;
-
-    Endpoint getEndpoint(String region, String product, String serviceCode, String endpointType, Credential credential,
-                         LocationConfig locationConfig) throws ClientException;
+public class ErrorCodeConstant {
+    public static final String SDK_ENDPOINT_RESOLVING_ERROR = "SDK.EndpointResolvingError";
+    public static final String SDK_ENDPOINT_TESTABILITY = "SDK.EndpointTestability";
 }

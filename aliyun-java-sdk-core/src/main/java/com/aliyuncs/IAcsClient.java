@@ -27,7 +27,6 @@ import com.aliyuncs.exceptions.ServerException;
 import com.aliyuncs.http.FormatType;
 import com.aliyuncs.http.HttpResponse;
 import com.aliyuncs.profile.IClientProfile;
-import com.aliyuncs.regions.Endpoint;
 
 @SuppressWarnings("deprecation")
 public interface IAcsClient {
@@ -67,14 +66,6 @@ public interface IAcsClient {
 
     public <T extends AcsResponse> HttpResponse doAction(AcsRequest<T> request, boolean autoRetry,
                                                          int maxRetryCounts, IClientProfile profile)
-        throws ClientException, ServerException;
-
-    @Deprecated
-    public <T extends AcsResponse> HttpResponse doAction(AcsRequest<T> request,
-                                                         boolean autoRetry, int maxRetryNumber,
-                                                         String regionId, Credential credential,
-                                                         Signer signer, FormatType format,
-                                                         List<Endpoint> endpoints)
         throws ClientException, ServerException;
 
     public void restoreSSLCertificate() ;

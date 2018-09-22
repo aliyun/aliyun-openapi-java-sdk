@@ -18,97 +18,54 @@
  */
 package com.aliyuncs.profile;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-
 import com.aliyuncs.auth.AlibabaCloudCredentialsProvider;
 import com.aliyuncs.auth.Credential;
 import com.aliyuncs.auth.CredentialsBackupCompatibilityAdaptor;
 import com.aliyuncs.auth.ICredentialProvider;
 import com.aliyuncs.auth.ISigner;
+import com.aliyuncs.endpoint.UserCustomizedEndpointResolver;
 import com.aliyuncs.exceptions.ClientException;
 import com.aliyuncs.http.FormatType;
 import com.aliyuncs.http.HttpClientConfig;
-import com.aliyuncs.regions.CustomizedEndpointsParser;
-import com.aliyuncs.regions.Endpoint;
-import com.aliyuncs.regions.EndpointResolver;
-import com.aliyuncs.regions.LocalEndpointResolver;
-import com.aliyuncs.regions.LocationConfig;
-import com.aliyuncs.regions.ProductDomain;
-import com.aliyuncs.regions.LocationServiceEndpointResolver;
-import com.aliyuncs.utils.CacheTimeHelper;
 
 @SuppressWarnings("deprecation")
 public class DefaultProfile implements IClientProfile {
 
     private static DefaultProfile profile = null;
-    private static List<Endpoint> endpoints = null;
-
+    public static UserCustomizedEndpointResolver userCustomizedEndpointResolver = new UserCustomizedEndpointResolver();
     private String regionId = null;
     private FormatType acceptFormat = null;
-    private EndpointResolver iendpoints = null;
-    private EndpointResolver remoteProvider = null;
     private ICredentialProvider icredential = null;
     private Credential credential;
-    private LocationConfig locationConfig = new LocationConfig();
-
     private String certPath;
-
     private HttpClientConfig httpClientConfig = HttpClientConfig.getDefault();
 
     private DefaultProfile() {
-        this.locationConfig = new LocationConfig();
-        this.iendpoints = new LocalEndpointResolver();
-        this.remoteProvider = LocationServiceEndpointResolver.initRemoteEndpointsParser();
     }
 
     private DefaultProfile(String regionId) {
-        this();
         this.regionId = regionId;
     }
 
-    private DefaultProfile(String region, Credential creden) {
-        this.iendpoints = new LocalEndpointResolver();
-        this.remoteProvider = LocationServiceEndpointResolver.initRemoteEndpointsParser();
+    private DefaultProfile(String regionId, Credential creden) {
         this.credential = creden;
-        this.regionId = region;
-        this.locationConfig = new LocationConfig();
+        this.regionId = regionId;
     }
 
-    private DefaultProfile(String region, Credential creden, EndpointResolver provider) {
-        this.iendpoints = provider;
-        this.credential = creden;
-        this.regionId = region;
-        this.locationConfig = new LocationConfig();
-        this.remoteProvider = LocationServiceEndpointResolver.initRemoteEndpointsParser();
-    }
 
     private DefaultProfile(ICredentialProvider icredential) {
         this.icredential = icredential;
-        this.iendpoints = new LocalEndpointResolver();
-        this.remoteProvider = LocationServiceEndpointResolver.initRemoteEndpointsParser();
-        this.locationConfig = new LocationConfig();
     }
 
     private DefaultProfile(String region, ICredentialProvider icredential) {
         this.regionId = region;
         this.icredential = icredential;
-        this.iendpoints = new LocalEndpointResolver();
-        this.locationConfig = new LocationConfig();
-        this.remoteProvider = LocationServiceEndpointResolver.initRemoteEndpointsParser();
     }
 
     private DefaultProfile(ICredentialProvider icredential, String region, FormatType format) {
         this.regionId = region;
         this.acceptFormat = format;
         this.icredential = icredential;
-        this.iendpoints = new LocalEndpointResolver();
-        this.remoteProvider = LocationServiceEndpointResolver.initRemoteEndpointsParser();
-        this.locationConfig = new LocationConfig();
     }
 
     @Override
@@ -131,69 +88,6 @@ public class DefaultProfile implements IClientProfile {
     @Deprecated
     public ISigner getSigner() {
         return null;
-    }
-
-    @Override
-    public synchronized void setLocationConfig(String regionId, String product, String endpoint) {
-        this.locationConfig = LocationConfig.createLocationConfig(regionId, product, endpoint);
-    }
-
-    @Override
-    public List<Endpoint> getEndpoints() throws ClientException {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override
-    public synchronized List<Endpoint> getEndpoints(String regionId, String product) throws ClientException {
-        if (null == endpoints) {
-            Endpoint endpoint = iendpoints.getEndpoint(regionId, product);
-            if (endpoint != null) {
-                endpoints = new ArrayList<Endpoint>();
-                endpoints.add(endpoint);
-            }
-        }
-
-        return endpoints;
-    }
-
-    @Override
-    public synchronized List<Endpoint> getEndpoints(String product, String regionId, String serviceCode,
-                                                    String endpointType) throws ClientException {
-        if (product == null) {
-            return endpoints;
-        }
-
-        if (null == endpoints) {
-            Endpoint endpoint = null;
-            if (serviceCode != null) {
-                endpoint = remoteProvider.getEndpoint(regionId, product, serviceCode, endpointType, credential,
-                    locationConfig);
-            }
-            if (endpoint == null) {
-                endpoint = iendpoints.getEndpoint(regionId, product);
-            }
-            if (endpoint != null) {
-                endpoints = new ArrayList<Endpoint>();
-                endpoints.add(endpoint);
-                CacheTimeHelper.addLastClearTimePerProduct(product, regionId, new Date());
-            }
-        } else if (Endpoint.findProductDomain(regionId, product, endpoints) == null || CacheTimeHelper.CheckEndPointCacheIsExpire(product, regionId)) {
-            Endpoint endpoint;
-            endpoint = remoteProvider.getEndpoint(regionId, product, serviceCode, endpointType,
-                credential, locationConfig);
-            if (endpoint == null) {
-                endpoint = iendpoints.getEndpoint(regionId, product);
-            }
-            if (endpoint != null) {
-                for (String region : endpoint.getRegionIds()) {
-                    for (ProductDomain productDomain : endpoint.getProductDomains()) {
-                        addEndpoint(endpoint.getName(), region, product, productDomain.getDomianName(), false);
-                        CacheTimeHelper.addLastClearTimePerProduct(product, region, new Date());
-                    }
-                }
-            }
-        }
-        return endpoints;
     }
 
     public synchronized static DefaultProfile getProfile() {
@@ -220,122 +114,25 @@ public class DefaultProfile implements IClientProfile {
         return profile;
     }
 
-    /**
-     * <pre>
-     * 给个性化用户使用的，CustomizedEndpointsParser 通过这个去解析endpoint,
-     * 非本地和location；所以一般情况不要使用这个 regionId,
-     * </pre>
-     * eg: cn-hangzhou productDomainMap,eg: Map<String, String>
-     * productDomainMap= new HashMap<String,String>();
-     * productDomainMap.put("ecs","ecs.aliyuncs.com") accessKeyId secret
-     */
-    public synchronized static DefaultProfile getProfile(String regionId, Map<String, String> productDomainMap,
-                                                         String accessKeyId, String secret) {
-        Credential creden = new Credential(accessKeyId, secret);
-        EndpointResolver provider = CustomizedEndpointsParser.initParser(regionId, productDomainMap);
-        profile = new DefaultProfile(regionId, creden, provider);
-        return profile;
-    }
-
-    public synchronized static DefaultProfile getProfile(String regionId, Map<String, String> productDomainMap,
-                                                         String accessKeyId, String secret, String stsToken) {
-        Credential creden = new Credential(accessKeyId, secret, stsToken);
-        EndpointResolver provider = CustomizedEndpointsParser.initParser(regionId, productDomainMap);
-        profile = new DefaultProfile(regionId, creden, provider);
-        return profile;
-    }
-
-    public synchronized static DefaultProfile getProfile(String regionId, EndpointResolver provider,
-                                                         String accessKeyId, String secret) {
-        Credential creden = new Credential(accessKeyId, secret);
-        profile = new DefaultProfile(regionId, creden, provider);
-        return profile;
-    }
-
-    public synchronized static DefaultProfile getProfile(String regionId, EndpointResolver provider,
-                                                         String accessKeyId, String secret, String stsToken) {
-        Credential creden = new Credential(accessKeyId, secret, stsToken);
-        profile = new DefaultProfile(regionId, creden, provider);
-        return profile;
-    }
-
     public synchronized static DefaultProfile getProfile(String regionId) {
         return new DefaultProfile(regionId);
     }
 
+    @Deprecated
     public synchronized static void addEndpoint(String endpointName, String regionId, String product, String domain)
         throws ClientException {
         addEndpoint(endpointName, regionId, product, domain, true);
     }
 
-    public synchronized static void addEndpoint(String endpointName, String regionId, String product, String domain, boolean isNeverExpire)
-        throws ClientException {
-        if (null == endpoints) {
-            endpoints = getProfile().getEndpoints(regionId, product);
-        }
-        Endpoint endpoint = findEndpointByRegionId(regionId);
-        if (null == endpoint) {
-            addEndpoint_(endpointName, regionId, product, domain);
-        } else {
-            updateEndpoint(regionId, product, domain, endpoint);
-        }
-
-        if (isNeverExpire) {
-            Date date = new Date(32472115200000L);
-            CacheTimeHelper.addLastClearTimePerProduct(product, regionId, date);
-        }
+    @Deprecated
+    public synchronized static void addEndpoint(String endpointName, String regionId, String product, String domain,
+                                                boolean isNeverExpire) {
+        // endpointName, isNeverExpire take no effect
+        addEndpoint(regionId, product, domain);
     }
 
-    private static void addEndpoint_(String endpointName, String regionId, String product, String domain) {
-        Set<String> regions = new HashSet<String>();
-        regions.add(regionId);
-
-        List<ProductDomain> productDomains = new ArrayList<ProductDomain>();
-        productDomains.add(new ProductDomain(product, domain));
-        Endpoint endpoint = new Endpoint(endpointName, regions, productDomains);
-        if (endpoints == null) {
-            endpoints = new ArrayList<Endpoint>();
-        }
-        endpoints.add(endpoint);
-    }
-
-    private static void updateEndpoint(String regionId, String product, String domain, Endpoint endpoint) {
-        Set<String> regionIds = endpoint.getRegionIds();
-        regionIds.add(regionId);
-
-        List<ProductDomain> productDomains = endpoint.getProductDomains();
-        ProductDomain productDomain = findProductDomain(productDomains, product);
-        if (null == productDomain) {
-            ProductDomain newProductDomain = new ProductDomain(product, domain);
-            productDomains.add(newProductDomain);
-        } else {
-            productDomain.setDomianName(domain);
-        }
-    }
-
-    private static Endpoint findEndpointByRegionId(String regionId) {
-        if (null == endpoints) {
-            return null;
-        }
-        for (Endpoint endpoint : endpoints) {
-            if (endpoint.getRegionIds().contains(regionId)) {
-                return endpoint;
-            }
-        }
-        return null;
-    }
-
-    private static ProductDomain findProductDomain(List<ProductDomain> productDomains, String product) {
-        for (ProductDomain productDomain : productDomains) {
-            if (productDomain.getProductName().equals(product)) {
-                return productDomain;
-            }
-        }
-        return null;
-    }
-
-    public void mockRemoteProvider(EndpointResolver remoteProvider) {
-        this.remoteProvider = remoteProvider;
+    public synchronized static void addEndpoint(String regionId, String product, String endpoint) {
+        userCustomizedEndpointResolver.putEndpointEntry(regionId, product, endpoint);
     }
 
     @Override
