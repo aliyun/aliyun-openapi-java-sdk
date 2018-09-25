@@ -1,3 +1,6 @@
+2018-09-25 Version: 1.1.5
+1, Fix bug in GetVerifyToken and SubmitMaterials API.
+
 2018-08-15 Version: 1.1.4
 1, Fix bug in GetMaterials API.
 2, GetVerifyToken added a new param VerifyConfigs

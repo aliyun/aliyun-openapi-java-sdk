@@ -12,10 +12,11 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.cloudauth.model.v20180807;
+package com.aliyuncs.cloudauth.model.v20180916;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.ProtocolType;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
@@ -24,8 +25,9 @@ import com.aliyuncs.http.ProtocolType;
 public class DetectFaceAttributesRequest extends RpcAcsRequest<DetectFaceAttributesResponse> {
 	
 	public DetectFaceAttributesRequest() {
-		super("Cloudauth", "2018-08-07", "DetectFaceAttributes", "cloudauth");
+		super("Cloudauth", "2018-09-16", "DetectFaceAttributes", "cloudauth");
 		setProtocol(ProtocolType.HTTPS);
+		setMethod(MethodType.POST);
 	}
 
 	private Integer maxNumPhotosPerCategory;
@@ -51,7 +53,7 @@ public class DetectFaceAttributesRequest extends RpcAcsRequest<DetectFaceAttribu
 	public void setMaxNumPhotosPerCategory(Integer maxNumPhotosPerCategory) {
 		this.maxNumPhotosPerCategory = maxNumPhotosPerCategory;
 		if(maxNumPhotosPerCategory != null){
-			putQueryParameter("MaxNumPhotosPerCategory", maxNumPhotosPerCategory.toString());
+			putBodyParameter("MaxNumPhotosPerCategory", maxNumPhotosPerCategory.toString());
 		}
 	}
 
@@ -62,7 +64,7 @@ public class DetectFaceAttributesRequest extends RpcAcsRequest<DetectFaceAttribu
 	public void setMaxFaceNum(Integer maxFaceNum) {
 		this.maxFaceNum = maxFaceNum;
 		if(maxFaceNum != null){
-			putQueryParameter("MaxFaceNum", maxFaceNum.toString());
+			putBodyParameter("MaxFaceNum", maxFaceNum.toString());
 		}
 	}
 
@@ -95,7 +97,7 @@ public class DetectFaceAttributesRequest extends RpcAcsRequest<DetectFaceAttribu
 	public void setRetAttributes(String retAttributes) {
 		this.retAttributes = retAttributes;
 		if(retAttributes != null){
-			putQueryParameter("RetAttributes", retAttributes);
+			putBodyParameter("RetAttributes", retAttributes);
 		}
 	}
 
@@ -106,7 +108,7 @@ public class DetectFaceAttributesRequest extends RpcAcsRequest<DetectFaceAttribu
 	public void setMaterialValue(String materialValue) {
 		this.materialValue = materialValue;
 		if(materialValue != null){
-			putQueryParameter("MaterialValue", materialValue);
+			putBodyParameter("MaterialValue", materialValue);
 		}
 	}
 
@@ -117,7 +119,7 @@ public class DetectFaceAttributesRequest extends RpcAcsRequest<DetectFaceAttribu
 	public void setDontSaveDB(Boolean dontSaveDB) {
 		this.dontSaveDB = dontSaveDB;
 		if(dontSaveDB != null){
-			putQueryParameter("DontSaveDB", dontSaveDB.toString());
+			putBodyParameter("DontSaveDB", dontSaveDB.toString());
 		}
 	}
 
@@ -128,7 +130,7 @@ public class DetectFaceAttributesRequest extends RpcAcsRequest<DetectFaceAttribu
 	public void setClientTag(String clientTag) {
 		this.clientTag = clientTag;
 		if(clientTag != null){
-			putQueryParameter("ClientTag", clientTag);
+			putBodyParameter("ClientTag", clientTag);
 		}
 	}
 

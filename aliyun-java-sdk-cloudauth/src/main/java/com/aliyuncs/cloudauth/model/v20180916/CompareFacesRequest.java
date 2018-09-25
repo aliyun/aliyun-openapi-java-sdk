@@ -12,10 +12,11 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.cloudauth.model.v20180807;
+package com.aliyuncs.cloudauth.model.v20180916;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.ProtocolType;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
@@ -24,8 +25,9 @@ import com.aliyuncs.http.ProtocolType;
 public class CompareFacesRequest extends RpcAcsRequest<CompareFacesResponse> {
 	
 	public CompareFacesRequest() {
-		super("Cloudauth", "2018-08-07", "CompareFaces", "cloudauth");
+		super("Cloudauth", "2018-09-16", "CompareFaces", "cloudauth");
 		setProtocol(ProtocolType.HTTPS);
+		setMethod(MethodType.POST);
 	}
 
 	private String sourceImageType;
@@ -47,7 +49,7 @@ public class CompareFacesRequest extends RpcAcsRequest<CompareFacesResponse> {
 	public void setSourceImageType(String sourceImageType) {
 		this.sourceImageType = sourceImageType;
 		if(sourceImageType != null){
-			putQueryParameter("SourceImageType", sourceImageType);
+			putBodyParameter("SourceImageType", sourceImageType);
 		}
 	}
 
@@ -80,7 +82,7 @@ public class CompareFacesRequest extends RpcAcsRequest<CompareFacesResponse> {
 	public void setTargetImageType(String targetImageType) {
 		this.targetImageType = targetImageType;
 		if(targetImageType != null){
-			putQueryParameter("TargetImageType", targetImageType);
+			putBodyParameter("TargetImageType", targetImageType);
 		}
 	}
 
@@ -91,7 +93,7 @@ public class CompareFacesRequest extends RpcAcsRequest<CompareFacesResponse> {
 	public void setSourceImageValue(String sourceImageValue) {
 		this.sourceImageValue = sourceImageValue;
 		if(sourceImageValue != null){
-			putQueryParameter("SourceImageValue", sourceImageValue);
+			putBodyParameter("SourceImageValue", sourceImageValue);
 		}
 	}
 
@@ -102,7 +104,7 @@ public class CompareFacesRequest extends RpcAcsRequest<CompareFacesResponse> {
 	public void setTargetImageValue(String targetImageValue) {
 		this.targetImageValue = targetImageValue;
 		if(targetImageValue != null){
-			putQueryParameter("TargetImageValue", targetImageValue);
+			putBodyParameter("TargetImageValue", targetImageValue);
 		}
 	}
 

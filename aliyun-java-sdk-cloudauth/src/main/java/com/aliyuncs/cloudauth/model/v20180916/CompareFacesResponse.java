@@ -12,17 +12,17 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.cloudauth.model.v20180807;
+package com.aliyuncs.cloudauth.model.v20180916;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.cloudauth.transform.v20180807.GetStatusResponseUnmarshaller;
+import com.aliyuncs.cloudauth.transform.v20180916.CompareFacesResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class GetStatusResponse extends AcsResponse {
+public class CompareFacesResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -76,29 +76,9 @@ public class GetStatusResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Integer statusCode;
-
-		private Float trustedScore;
-
 		private Float similarityScore;
 
-		private String auditConclusions;
-
-		public Integer getStatusCode() {
-			return this.statusCode;
-		}
-
-		public void setStatusCode(Integer statusCode) {
-			this.statusCode = statusCode;
-		}
-
-		public Float getTrustedScore() {
-			return this.trustedScore;
-		}
-
-		public void setTrustedScore(Float trustedScore) {
-			this.trustedScore = trustedScore;
-		}
+		private String confidenceThresholds;
 
 		public Float getSimilarityScore() {
 			return this.similarityScore;
@@ -108,17 +88,17 @@ public class GetStatusResponse extends AcsResponse {
 			this.similarityScore = similarityScore;
 		}
 
-		public String getAuditConclusions() {
-			return this.auditConclusions;
+		public String getConfidenceThresholds() {
+			return this.confidenceThresholds;
 		}
 
-		public void setAuditConclusions(String auditConclusions) {
-			this.auditConclusions = auditConclusions;
+		public void setConfidenceThresholds(String confidenceThresholds) {
+			this.confidenceThresholds = confidenceThresholds;
 		}
 	}
 
 	@Override
-	public GetStatusResponse getInstance(UnmarshallerContext context) {
-		return	GetStatusResponseUnmarshaller.unmarshall(this, context);
+	public CompareFacesResponse getInstance(UnmarshallerContext context) {
+		return	CompareFacesResponseUnmarshaller.unmarshall(this, context);
 	}
 }

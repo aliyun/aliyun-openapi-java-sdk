@@ -12,11 +12,12 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.cloudauth.model.v20180807;
+package com.aliyuncs.cloudauth.model.v20180916;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
 import com.aliyuncs.http.ProtocolType;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
@@ -25,8 +26,9 @@ import com.aliyuncs.http.ProtocolType;
 public class SubmitMaterialsRequest extends RpcAcsRequest<SubmitMaterialsResponse> {
 	
 	public SubmitMaterialsRequest() {
-		super("Cloudauth", "2018-08-07", "SubmitMaterials", "cloudauth");
+		super("Cloudauth", "2018-09-16", "SubmitMaterials", "cloudauth");
 		setProtocol(ProtocolType.HTTPS);
+		setMethod(MethodType.POST);
 	}
 
 	private Long resourceOwnerId;
@@ -67,8 +69,8 @@ public class SubmitMaterialsRequest extends RpcAcsRequest<SubmitMaterialsRespons
 		this.materials = materials;	
 		if (materials != null) {
 			for (int depth1 = 0; depth1 < materials.size(); depth1++) {
-				putQueryParameter("Material." + (depth1 + 1) + ".MaterialType" , materials.get(depth1).getMaterialType());
-				putQueryParameter("Material." + (depth1 + 1) + ".Value" , materials.get(depth1).getValue());
+				putBodyParameter("Material." + (depth1 + 1) + ".MaterialType" , materials.get(depth1).getMaterialType());
+				putBodyParameter("Material." + (depth1 + 1) + ".Value" , materials.get(depth1).getValue());
 			}
 		}	
 	}
@@ -80,7 +82,7 @@ public class SubmitMaterialsRequest extends RpcAcsRequest<SubmitMaterialsRespons
 	public void setVerifyToken(String verifyToken) {
 		this.verifyToken = verifyToken;
 		if(verifyToken != null){
-			putQueryParameter("VerifyToken", verifyToken);
+			putBodyParameter("VerifyToken", verifyToken);
 		}
 	}
 
