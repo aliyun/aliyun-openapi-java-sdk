@@ -14,7 +14,12 @@
 
 package com.aliyuncs.ehpc.transform.v20180412;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.ehpc.model.v20180412.GetAutoScaleConfigResponse;
+import com.aliyuncs.ehpc.model.v20180412.GetAutoScaleConfigResponse.QueueInfo;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -37,7 +42,19 @@ public class GetAutoScaleConfigResponseUnmarshaller {
 		getAutoScaleConfigResponse.setMaxNodesInCluster(context.integerValue("GetAutoScaleConfigResponse.MaxNodesInCluster"));
 		getAutoScaleConfigResponse.setExcludeNodes(context.stringValue("GetAutoScaleConfigResponse.ExcludeNodes"));
 		getAutoScaleConfigResponse.setSpotStrategy(context.stringValue("GetAutoScaleConfigResponse.SpotStrategy"));
-		getAutoScaleConfigResponse.setSpotPriceLimit(context.stringValue("GetAutoScaleConfigResponse.SpotPriceLimit"));
+		getAutoScaleConfigResponse.setSpotPriceLimit(context.floatValue("GetAutoScaleConfigResponse.SpotPriceLimit"));
+
+		List<QueueInfo> queues = new ArrayList<QueueInfo>();
+		for (int i = 0; i < context.lengthValue("GetAutoScaleConfigResponse.Queues.Length"); i++) {
+			QueueInfo queueInfo = new QueueInfo();
+			queueInfo.setQueueName(context.stringValue("GetAutoScaleConfigResponse.Queues["+ i +"].QueueName"));
+			queueInfo.setInstanceType(context.stringValue("GetAutoScaleConfigResponse.Queues["+ i +"].InstanceType"));
+			queueInfo.setSpotStrategy(context.stringValue("GetAutoScaleConfigResponse.Queues["+ i +"].SpotStrategy"));
+			queueInfo.setSpotPriceLimit(context.floatValue("GetAutoScaleConfigResponse.Queues["+ i +"].SpotPriceLimit"));
+
+			queues.add(queueInfo);
+		}
+		getAutoScaleConfigResponse.setQueues(queues);
 	 
 	 	return getAutoScaleConfigResponse;
 	}

@@ -14,6 +14,7 @@
 
 package com.aliyuncs.ehpc.model.v20180412;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.ehpc.transform.v20180412.GetAutoScaleConfigResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -54,7 +55,9 @@ public class GetAutoScaleConfigResponse extends AcsResponse {
 
 	private String spotStrategy;
 
-	private String spotPriceLimit;
+	private Float spotPriceLimit;
+
+	private List<QueueInfo> queues;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -176,12 +179,63 @@ public class GetAutoScaleConfigResponse extends AcsResponse {
 		this.spotStrategy = spotStrategy;
 	}
 
-	public String getSpotPriceLimit() {
+	public Float getSpotPriceLimit() {
 		return this.spotPriceLimit;
 	}
 
-	public void setSpotPriceLimit(String spotPriceLimit) {
+	public void setSpotPriceLimit(Float spotPriceLimit) {
 		this.spotPriceLimit = spotPriceLimit;
+	}
+
+	public List<QueueInfo> getQueues() {
+		return this.queues;
+	}
+
+	public void setQueues(List<QueueInfo> queues) {
+		this.queues = queues;
+	}
+
+	public static class QueueInfo {
+
+		private String queueName;
+
+		private String instanceType;
+
+		private String spotStrategy;
+
+		private Float spotPriceLimit;
+
+		public String getQueueName() {
+			return this.queueName;
+		}
+
+		public void setQueueName(String queueName) {
+			this.queueName = queueName;
+		}
+
+		public String getInstanceType() {
+			return this.instanceType;
+		}
+
+		public void setInstanceType(String instanceType) {
+			this.instanceType = instanceType;
+		}
+
+		public String getSpotStrategy() {
+			return this.spotStrategy;
+		}
+
+		public void setSpotStrategy(String spotStrategy) {
+			this.spotStrategy = spotStrategy;
+		}
+
+		public Float getSpotPriceLimit() {
+			return this.spotPriceLimit;
+		}
+
+		public void setSpotPriceLimit(Float spotPriceLimit) {
+			this.spotPriceLimit = spotPriceLimit;
+		}
 	}
 
 	@Override

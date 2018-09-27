@@ -47,6 +47,8 @@ public class CreateClusterRequest extends RpcAcsRequest<CreateClusterResponse> {
 
 	private String ecsOrderComputeInstanceType;
 
+	private String jobQueue;
+
 	private String imageOwnerAlias;
 
 	private String volumeType;
@@ -214,6 +216,17 @@ public class CreateClusterRequest extends RpcAcsRequest<CreateClusterResponse> {
 		this.ecsOrderComputeInstanceType = ecsOrderComputeInstanceType;
 		if(ecsOrderComputeInstanceType != null){
 			putQueryParameter("EcsOrder.Compute.InstanceType", ecsOrderComputeInstanceType);
+		}
+	}
+
+	public String getJobQueue() {
+		return this.jobQueue;
+	}
+
+	public void setJobQueue(String jobQueue) {
+		this.jobQueue = jobQueue;
+		if(jobQueue != null){
+			putQueryParameter("JobQueue", jobQueue);
 		}
 	}
 

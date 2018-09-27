@@ -15,6 +15,7 @@
 package com.aliyuncs.ehpc.model.v20180412;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 
 /**
  * @author auto create
@@ -34,7 +35,7 @@ public class SetAutoScaleConfigRequest extends RpcAcsRequest<SetAutoScaleConfigR
 
 	private Boolean enableAutoGrow;
 
-	private String spotPriceLimit;
+	private Float spotPriceLimit;
 
 	private Boolean enableAutoShrink;
 
@@ -45,6 +46,8 @@ public class SetAutoScaleConfigRequest extends RpcAcsRequest<SetAutoScaleConfigR
 	private String excludeNodes;
 
 	private Integer shrinkIntervalInMinutes;
+
+	private List<Queues> queuess;
 
 	private Integer extraNodesGrowRatio;
 
@@ -96,14 +99,14 @@ public class SetAutoScaleConfigRequest extends RpcAcsRequest<SetAutoScaleConfigR
 		}
 	}
 
-	public String getSpotPriceLimit() {
+	public Float getSpotPriceLimit() {
 		return this.spotPriceLimit;
 	}
 
-	public void setSpotPriceLimit(String spotPriceLimit) {
+	public void setSpotPriceLimit(Float spotPriceLimit) {
 		this.spotPriceLimit = spotPriceLimit;
 		if(spotPriceLimit != null){
-			putQueryParameter("SpotPriceLimit", spotPriceLimit);
+			putQueryParameter("SpotPriceLimit", spotPriceLimit.toString());
 		}
 	}
 
@@ -162,6 +165,22 @@ public class SetAutoScaleConfigRequest extends RpcAcsRequest<SetAutoScaleConfigR
 		}
 	}
 
+	public List<Queues> getQueuess() {
+		return this.queuess;
+	}
+
+	public void setQueuess(List<Queues> queuess) {
+		this.queuess = queuess;	
+		if (queuess != null) {
+			for (int depth1 = 0; depth1 < queuess.size(); depth1++) {
+				putQueryParameter("Queues." + (depth1 + 1) + ".SpotStrategy" , queuess.get(depth1).getSpotStrategy());
+				putQueryParameter("Queues." + (depth1 + 1) + ".QueueName" , queuess.get(depth1).getQueueName());
+				putQueryParameter("Queues." + (depth1 + 1) + ".InstanceType" , queuess.get(depth1).getInstanceType());
+				putQueryParameter("Queues." + (depth1 + 1) + ".SpotPriceLimit" , queuess.get(depth1).getSpotPriceLimit());
+			}
+		}	
+	}
+
 	public Integer getExtraNodesGrowRatio() {
 		return this.extraNodesGrowRatio;
 	}
@@ -192,6 +211,49 @@ public class SetAutoScaleConfigRequest extends RpcAcsRequest<SetAutoScaleConfigR
 		this.growRatio = growRatio;
 		if(growRatio != null){
 			putQueryParameter("GrowRatio", growRatio.toString());
+		}
+	}
+
+	public static class Queues {
+
+		private String spotStrategy;
+
+		private String queueName;
+
+		private String instanceType;
+
+		private Float spotPriceLimit;
+
+		public String getSpotStrategy() {
+			return this.spotStrategy;
+		}
+
+		public void setSpotStrategy(String spotStrategy) {
+			this.spotStrategy = spotStrategy;
+		}
+
+		public String getQueueName() {
+			return this.queueName;
+		}
+
+		public void setQueueName(String queueName) {
+			this.queueName = queueName;
+		}
+
+		public String getInstanceType() {
+			return this.instanceType;
+		}
+
+		public void setInstanceType(String instanceType) {
+			this.instanceType = instanceType;
+		}
+
+		public Float getSpotPriceLimit() {
+			return this.spotPriceLimit;
+		}
+
+		public void setSpotPriceLimit(Float spotPriceLimit) {
+			this.spotPriceLimit = spotPriceLimit;
 		}
 	}
 

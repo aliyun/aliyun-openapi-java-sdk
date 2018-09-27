@@ -44,6 +44,8 @@ public class SubmitJobRequest extends RpcAcsRequest<SubmitJobResponse> {
 
 	private String commandLine;
 
+	private String jobQueue;
+
 	private String arrayRequest;
 
 	private String unzipCmd;
@@ -154,6 +156,17 @@ public class SubmitJobRequest extends RpcAcsRequest<SubmitJobResponse> {
 		this.commandLine = commandLine;
 		if(commandLine != null){
 			putQueryParameter("CommandLine", commandLine);
+		}
+	}
+
+	public String getJobQueue() {
+		return this.jobQueue;
+	}
+
+	public void setJobQueue(String jobQueue) {
+		this.jobQueue = jobQueue;
+		if(jobQueue != null){
+			putQueryParameter("JobQueue", jobQueue);
 		}
 	}
 

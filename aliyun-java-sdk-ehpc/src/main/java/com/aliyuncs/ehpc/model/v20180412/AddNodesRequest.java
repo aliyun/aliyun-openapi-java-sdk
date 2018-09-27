@@ -38,6 +38,8 @@ public class AddNodesRequest extends RpcAcsRequest<AddNodesResponse> {
 
 	private String computeSpotStrategy;
 
+	private String jobQueue;
+
 	private String imageOwnerAlias;
 
 	private String periodUnit;
@@ -113,6 +115,17 @@ public class AddNodesRequest extends RpcAcsRequest<AddNodesResponse> {
 		this.computeSpotStrategy = computeSpotStrategy;
 		if(computeSpotStrategy != null){
 			putQueryParameter("ComputeSpotStrategy", computeSpotStrategy);
+		}
+	}
+
+	public String getJobQueue() {
+		return this.jobQueue;
+	}
+
+	public void setJobQueue(String jobQueue) {
+		this.jobQueue = jobQueue;
+		if(jobQueue != null){
+			putQueryParameter("JobQueue", jobQueue);
 		}
 	}
 
