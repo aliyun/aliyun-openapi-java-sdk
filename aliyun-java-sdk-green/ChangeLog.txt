@@ -1,3 +1,6 @@
+2018-09-27 Version: 3.3.2
+1, modify getFaces Api
+
 2018-09-03 Version: 3.3.0
 1, voice identify interface
 2, client upload credentials interface

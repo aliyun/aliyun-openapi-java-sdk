@@ -22,6 +22,7 @@ public class GetFacesResponseUnmarshaller {
 
 	public static GetFacesResponse unmarshall(GetFacesResponse getFacesResponse, UnmarshallerContext context) {
 		
+		getFacesResponse.setRequestId(context.stringValue("GetFacesResponse.RequestId"));
 	 
 	 	return getFacesResponse;
 	}
