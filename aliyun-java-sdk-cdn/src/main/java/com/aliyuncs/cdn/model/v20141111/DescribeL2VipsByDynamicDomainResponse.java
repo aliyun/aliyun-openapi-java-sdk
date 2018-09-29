@@ -14,21 +14,30 @@
 
 package com.aliyuncs.cdn.model.v20141111;
 
-import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
+import com.aliyuncs.AcsResponse;
+import com.aliyuncs.cdn.transform.v20141111.DescribeL2VipsByDynamicDomainResponseUnmarshaller;
+import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DescribeDomainCustomLogConfigRequest extends RpcAcsRequest<DescribeDomainCustomLogConfigResponse> {
-	
-	public DescribeDomainCustomLogConfigRequest() {
-		super("Cdn", "2014-11-11", "DescribeDomainCustomLogConfig");
-	}
+public class DescribeL2VipsByDynamicDomainResponse extends AcsResponse {
+
+	private String requestId;
 
 	private String domainName;
 
-	private Long ownerId;
+	private List<String> vips;
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
 
 	public String getDomainName() {
 		return this.domainName;
@@ -36,25 +45,18 @@ public class DescribeDomainCustomLogConfigRequest extends RpcAcsRequest<Describe
 
 	public void setDomainName(String domainName) {
 		this.domainName = domainName;
-		if(domainName != null){
-			putQueryParameter("DomainName", domainName);
-		}
 	}
 
-	public Long getOwnerId() {
-		return this.ownerId;
+	public List<String> getVips() {
+		return this.vips;
 	}
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
+	public void setVips(List<String> vips) {
+		this.vips = vips;
 	}
 
 	@Override
-	public Class<DescribeDomainCustomLogConfigResponse> getResponseClass() {
-		return DescribeDomainCustomLogConfigResponse.class;
+	public DescribeL2VipsByDynamicDomainResponse getInstance(UnmarshallerContext context) {
+		return	DescribeL2VipsByDynamicDomainResponseUnmarshaller.unmarshall(this, context);
 	}
-
 }

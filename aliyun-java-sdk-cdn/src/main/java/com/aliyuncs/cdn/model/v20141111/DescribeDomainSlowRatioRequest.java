@@ -30,8 +30,6 @@ public class DescribeDomainSlowRatioRequest extends RpcAcsRequest<DescribeDomain
 
 	private Integer pageNumber;
 
-	private String securityToken;
-
 	private Integer pageSize;
 
 	private String domainName;
@@ -39,8 +37,6 @@ public class DescribeDomainSlowRatioRequest extends RpcAcsRequest<DescribeDomain
 	private String endTime;
 
 	private Long ownerId;
-
-	private String version;
 
 	public String getStartTime() {
 		return this.startTime;
@@ -61,17 +57,6 @@ public class DescribeDomainSlowRatioRequest extends RpcAcsRequest<DescribeDomain
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());
-		}
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 
@@ -116,17 +101,6 @@ public class DescribeDomainSlowRatioRequest extends RpcAcsRequest<DescribeDomain
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getVersion() {
-		return this.version;
-	}
-
-	public void setVersion(String version) {
-		this.version = version;
-		if(version != null){
-			putQueryParameter("Version", version);
 		}
 	}
 

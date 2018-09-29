@@ -26,13 +26,24 @@ public class DescribeDomainRealTimeByteHitRateDataRequest extends RpcAcsRequest<
 		super("Cdn", "2014-11-11", "DescribeDomainRealTimeByteHitRateData");
 	}
 
+	private String startTime;
+
 	private String domainName;
 
 	private String endTime;
 
-	private String startTime;
-
 	private Long ownerId;
+
+	public String getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime);
+		}
+	}
 
 	public String getDomainName() {
 		return this.domainName;
@@ -53,17 +64,6 @@ public class DescribeDomainRealTimeByteHitRateDataRequest extends RpcAcsRequest<
 		this.endTime = endTime;
 		if(endTime != null){
 			putQueryParameter("EndTime", endTime);
-		}
-	}
-
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("StartTime", startTime);
 		}
 	}
 

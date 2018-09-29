@@ -20,10 +20,10 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class DescribeDomainRealTimeReqHitRateDataRequest extends RpcAcsRequest<DescribeDomainRealTimeReqHitRateDataResponse> {
+public class DescribeDomainRealTimeSrcTrafficDataRequest extends RpcAcsRequest<DescribeDomainRealTimeSrcTrafficDataResponse> {
 	
-	public DescribeDomainRealTimeReqHitRateDataRequest() {
-		super("Cdn", "2014-11-11", "DescribeDomainRealTimeReqHitRateData");
+	public DescribeDomainRealTimeSrcTrafficDataRequest() {
+		super("Cdn", "2014-11-11", "DescribeDomainRealTimeSrcTrafficData");
 	}
 
 	private String startTime;
@@ -79,8 +79,8 @@ public class DescribeDomainRealTimeReqHitRateDataRequest extends RpcAcsRequest<D
 	}
 
 	@Override
-	public Class<DescribeDomainRealTimeReqHitRateDataResponse> getResponseClass() {
-		return DescribeDomainRealTimeReqHitRateDataResponse.class;
+	public Class<DescribeDomainRealTimeSrcTrafficDataResponse> getResponseClass() {
+		return DescribeDomainRealTimeSrcTrafficDataResponse.class;
 	}
 
 }

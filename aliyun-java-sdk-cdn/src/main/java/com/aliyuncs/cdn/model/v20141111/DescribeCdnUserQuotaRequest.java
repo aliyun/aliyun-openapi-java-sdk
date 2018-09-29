@@ -20,15 +20,26 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class ListDomainsByLogConfigIdRequest extends RpcAcsRequest<ListDomainsByLogConfigIdResponse> {
+public class DescribeCdnUserQuotaRequest extends RpcAcsRequest<DescribeCdnUserQuotaResponse> {
 	
-	public ListDomainsByLogConfigIdRequest() {
-		super("Cdn", "2014-11-11", "ListDomainsByLogConfigId");
+	public DescribeCdnUserQuotaRequest() {
+		super("Cdn", "2014-11-11", "DescribeCdnUserQuota");
 	}
+
+	private String securityToken;
 
 	private Long ownerId;
 
-	private String configId;
+	public String getSecurityToken() {
+		return this.securityToken;
+	}
+
+	public void setSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
 
 	public Long getOwnerId() {
 		return this.ownerId;
@@ -41,20 +52,9 @@ public class ListDomainsByLogConfigIdRequest extends RpcAcsRequest<ListDomainsBy
 		}
 	}
 
-	public String getConfigId() {
-		return this.configId;
-	}
-
-	public void setConfigId(String configId) {
-		this.configId = configId;
-		if(configId != null){
-			putQueryParameter("ConfigId", configId);
-		}
-	}
-
 	@Override
-	public Class<ListDomainsByLogConfigIdResponse> getResponseClass() {
-		return ListDomainsByLogConfigIdResponse.class;
+	public Class<DescribeCdnUserQuotaResponse> getResponseClass() {
+		return DescribeCdnUserQuotaResponse.class;
 	}
 
 }

@@ -20,30 +20,15 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class DescribeDomainRealTimeReqHitRateDataRequest extends RpcAcsRequest<DescribeDomainRealTimeReqHitRateDataResponse> {
+public class DescribeL2VipsByDynamicDomainRequest extends RpcAcsRequest<DescribeL2VipsByDynamicDomainResponse> {
 	
-	public DescribeDomainRealTimeReqHitRateDataRequest() {
-		super("Cdn", "2014-11-11", "DescribeDomainRealTimeReqHitRateData");
+	public DescribeL2VipsByDynamicDomainRequest() {
+		super("Cdn", "2014-11-11", "DescribeL2VipsByDynamicDomain");
 	}
-
-	private String startTime;
 
 	private String domainName;
 
-	private String endTime;
-
 	private Long ownerId;
-
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("StartTime", startTime);
-		}
-	}
 
 	public String getDomainName() {
 		return this.domainName;
@@ -53,17 +38,6 @@ public class DescribeDomainRealTimeReqHitRateDataRequest extends RpcAcsRequest<D
 		this.domainName = domainName;
 		if(domainName != null){
 			putQueryParameter("DomainName", domainName);
-		}
-	}
-
-	public String getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
-		if(endTime != null){
-			putQueryParameter("EndTime", endTime);
 		}
 	}
 
@@ -79,8 +53,8 @@ public class DescribeDomainRealTimeReqHitRateDataRequest extends RpcAcsRequest<D
 	}
 
 	@Override
-	public Class<DescribeDomainRealTimeReqHitRateDataResponse> getResponseClass() {
-		return DescribeDomainRealTimeReqHitRateDataResponse.class;
+	public Class<DescribeL2VipsByDynamicDomainResponse> getResponseClass() {
+		return DescribeL2VipsByDynamicDomainResponse.class;
 	}
 
 }

@@ -30,10 +30,6 @@ public class ModifyDomainCustomLogConfigRequest extends RpcAcsRequest<ModifyDoma
 
 	private Long ownerId;
 
-	private String version;
-
-	private String securityToken;
-
 	private String configId;
 
 	public String getDomainName() {
@@ -55,28 +51,6 @@ public class ModifyDomainCustomLogConfigRequest extends RpcAcsRequest<ModifyDoma
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getVersion() {
-		return this.version;
-	}
-
-	public void setVersion(String version) {
-		this.version = version;
-		if(version != null){
-			putQueryParameter("Version", version);
-		}
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 

@@ -34,8 +34,6 @@ public class AddCdnDomainRequest extends RpcAcsRequest<AddCdnDomainResponse> {
 
 	private String domainName;
 
-	private String liveType;
-
 	private Long ownerId;
 
 	private String resourceGroupId;
@@ -97,17 +95,6 @@ public class AddCdnDomainRequest extends RpcAcsRequest<AddCdnDomainResponse> {
 		this.domainName = domainName;
 		if(domainName != null){
 			putQueryParameter("DomainName", domainName);
-		}
-	}
-
-	public String getLiveType() {
-		return this.liveType;
-	}
-
-	public void setLiveType(String liveType) {
-		this.liveType = liveType;
-		if(liveType != null){
-			putQueryParameter("LiveType", liveType);
 		}
 	}
 

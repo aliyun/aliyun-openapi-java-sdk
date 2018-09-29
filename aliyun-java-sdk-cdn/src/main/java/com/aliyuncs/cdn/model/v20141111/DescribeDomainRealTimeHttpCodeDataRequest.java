@@ -20,19 +20,34 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class DescribeDomainRealTimeReqHitRateDataRequest extends RpcAcsRequest<DescribeDomainRealTimeReqHitRateDataResponse> {
+public class DescribeDomainRealTimeHttpCodeDataRequest extends RpcAcsRequest<DescribeDomainRealTimeHttpCodeDataResponse> {
 	
-	public DescribeDomainRealTimeReqHitRateDataRequest() {
-		super("Cdn", "2014-11-11", "DescribeDomainRealTimeReqHitRateData");
+	public DescribeDomainRealTimeHttpCodeDataRequest() {
+		super("Cdn", "2014-11-11", "DescribeDomainRealTimeHttpCodeData");
 	}
 
+	private String locationNameEn;
+
 	private String startTime;
+
+	private String ispNameEn;
 
 	private String domainName;
 
 	private String endTime;
 
 	private Long ownerId;
+
+	public String getLocationNameEn() {
+		return this.locationNameEn;
+	}
+
+	public void setLocationNameEn(String locationNameEn) {
+		this.locationNameEn = locationNameEn;
+		if(locationNameEn != null){
+			putQueryParameter("LocationNameEn", locationNameEn);
+		}
+	}
 
 	public String getStartTime() {
 		return this.startTime;
@@ -42,6 +57,17 @@ public class DescribeDomainRealTimeReqHitRateDataRequest extends RpcAcsRequest<D
 		this.startTime = startTime;
 		if(startTime != null){
 			putQueryParameter("StartTime", startTime);
+		}
+	}
+
+	public String getIspNameEn() {
+		return this.ispNameEn;
+	}
+
+	public void setIspNameEn(String ispNameEn) {
+		this.ispNameEn = ispNameEn;
+		if(ispNameEn != null){
+			putQueryParameter("IspNameEn", ispNameEn);
 		}
 	}
 
@@ -79,8 +105,8 @@ public class DescribeDomainRealTimeReqHitRateDataRequest extends RpcAcsRequest<D
 	}
 
 	@Override
-	public Class<DescribeDomainRealTimeReqHitRateDataResponse> getResponseClass() {
-		return DescribeDomainRealTimeReqHitRateDataResponse.class;
+	public Class<DescribeDomainRealTimeHttpCodeDataResponse> getResponseClass() {
+		return DescribeDomainRealTimeHttpCodeDataResponse.class;
 	}
 
 }
