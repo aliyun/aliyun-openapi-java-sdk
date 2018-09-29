@@ -20,28 +20,15 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class StopDcdnDomainRequest extends RpcAcsRequest<StopDcdnDomainResponse> {
+public class DescribeDcdnDomainCertificateInfoRequest extends RpcAcsRequest<DescribeDcdnDomainCertificateInfoResponse> {
 	
-	public StopDcdnDomainRequest() {
-		super("dcdn", "2018-01-15", "StopDcdnDomain");
+	public DescribeDcdnDomainCertificateInfoRequest() {
+		super("dcdn", "2018-01-15", "DescribeDcdnDomainCertificateInfo");
 	}
-
-	private String securityToken;
 
 	private String domainName;
 
 	private Long ownerId;
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
 
 	public String getDomainName() {
 		return this.domainName;
@@ -66,8 +53,8 @@ public class StopDcdnDomainRequest extends RpcAcsRequest<StopDcdnDomainResponse>
 	}
 
 	@Override
-	public Class<StopDcdnDomainResponse> getResponseClass() {
-		return StopDcdnDomainResponse.class;
+	public Class<DescribeDcdnDomainCertificateInfoResponse> getResponseClass() {
+		return DescribeDcdnDomainCertificateInfoResponse.class;
 	}
 
 }

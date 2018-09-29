@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeDcdnDomainDetailRequest extends RpcAcsRequest<DescribeDcdnDomainDetailResponse> {
 	
 	public DescribeDcdnDomainDetailRequest() {
-		super("dcdn", "2018-01-15", "DescribeDcdnDomainDetail", "dcdn");
+		super("dcdn", "2018-01-15", "DescribeDcdnDomainDetail");
 	}
 
 	private String securityToken;

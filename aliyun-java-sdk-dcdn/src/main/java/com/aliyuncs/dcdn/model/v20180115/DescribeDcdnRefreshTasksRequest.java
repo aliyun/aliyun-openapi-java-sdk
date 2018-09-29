@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeDcdnRefreshTasksRequest extends RpcAcsRequest<DescribeDcdnRefreshTasksResponse> {
 	
 	public DescribeDcdnRefreshTasksRequest() {
-		super("dcdn", "2018-01-15", "DescribeDcdnRefreshTasks", "dcdn");
+		super("dcdn", "2018-01-15", "DescribeDcdnRefreshTasks");
 	}
 
 	private String objectPath;

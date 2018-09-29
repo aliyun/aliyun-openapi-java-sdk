@@ -59,6 +59,10 @@ public class DescribeDcdnUserResourcePackageResponse extends AcsResponse {
 
 		private String status;
 
+		private String startTime;
+
+		private String endTime;
+
 		public String getCurrCapacity() {
 			return this.currCapacity;
 		}
@@ -105,6 +109,22 @@ public class DescribeDcdnUserResourcePackageResponse extends AcsResponse {
 
 		public void setStatus(String status) {
 			this.status = status;
+		}
+
+		public String getStartTime() {
+			return this.startTime;
+		}
+
+		public void setStartTime(String startTime) {
+			this.startTime = startTime;
+		}
+
+		public String getEndTime() {
+			return this.endTime;
+		}
+
+		public void setEndTime(String endTime) {
+			this.endTime = endTime;
 		}
 	}
 

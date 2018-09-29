@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.dcdn.model.v20180115.DescribeDcdnDomainHttpCodeDataResponse;
 import com.aliyuncs.dcdn.model.v20180115.DescribeDcdnDomainHttpCodeDataResponse.DataModule;
 import com.aliyuncs.dcdn.model.v20180115.DescribeDcdnDomainHttpCodeDataResponse.DataModule.HttpCodeDataModule;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

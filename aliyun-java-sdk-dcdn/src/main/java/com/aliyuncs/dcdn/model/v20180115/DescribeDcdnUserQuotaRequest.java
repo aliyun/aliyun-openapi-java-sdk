@@ -20,30 +20,15 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class PreloadDcdnObjectCachesRequest extends RpcAcsRequest<PreloadDcdnObjectCachesResponse> {
+public class DescribeDcdnUserQuotaRequest extends RpcAcsRequest<DescribeDcdnUserQuotaResponse> {
 	
-	public PreloadDcdnObjectCachesRequest() {
-		super("dcdn", "2018-01-15", "PreloadDcdnObjectCaches");
+	public DescribeDcdnUserQuotaRequest() {
+		super("dcdn", "2018-01-15", "DescribeDcdnUserQuota");
 	}
-
-	private String area;
 
 	private String securityToken;
 
-	private String objectPath;
-
 	private Long ownerId;
-
-	public String getArea() {
-		return this.area;
-	}
-
-	public void setArea(String area) {
-		this.area = area;
-		if(area != null){
-			putQueryParameter("Area", area);
-		}
-	}
 
 	public String getSecurityToken() {
 		return this.securityToken;
@@ -53,17 +38,6 @@ public class PreloadDcdnObjectCachesRequest extends RpcAcsRequest<PreloadDcdnObj
 		this.securityToken = securityToken;
 		if(securityToken != null){
 			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	public String getObjectPath() {
-		return this.objectPath;
-	}
-
-	public void setObjectPath(String objectPath) {
-		this.objectPath = objectPath;
-		if(objectPath != null){
-			putQueryParameter("ObjectPath", objectPath);
 		}
 	}
 
@@ -79,8 +53,8 @@ public class PreloadDcdnObjectCachesRequest extends RpcAcsRequest<PreloadDcdnObj
 	}
 
 	@Override
-	public Class<PreloadDcdnObjectCachesResponse> getResponseClass() {
-		return PreloadDcdnObjectCachesResponse.class;
+	public Class<DescribeDcdnUserQuotaResponse> getResponseClass() {
+		return DescribeDcdnUserQuotaResponse.class;
 	}
 
 }

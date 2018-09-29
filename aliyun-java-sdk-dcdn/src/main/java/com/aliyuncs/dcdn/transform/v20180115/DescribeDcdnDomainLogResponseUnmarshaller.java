@@ -21,6 +21,7 @@ import com.aliyuncs.dcdn.model.v20180115.DescribeDcdnDomainLogResponse;
 import com.aliyuncs.dcdn.model.v20180115.DescribeDcdnDomainLogResponse.DomainLogDetail;
 import com.aliyuncs.dcdn.model.v20180115.DescribeDcdnDomainLogResponse.DomainLogDetail.LogInfoDetail;
 import com.aliyuncs.dcdn.model.v20180115.DescribeDcdnDomainLogResponse.DomainLogDetail.PageInfoDetail;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

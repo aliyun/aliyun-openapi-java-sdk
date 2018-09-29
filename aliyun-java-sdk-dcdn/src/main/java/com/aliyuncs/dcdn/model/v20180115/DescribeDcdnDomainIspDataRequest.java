@@ -20,40 +20,19 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class DescribeDcdnDomainBpsDataRequest extends RpcAcsRequest<DescribeDcdnDomainBpsDataResponse> {
+public class DescribeDcdnDomainIspDataRequest extends RpcAcsRequest<DescribeDcdnDomainIspDataResponse> {
 	
-	public DescribeDcdnDomainBpsDataRequest() {
-		super("dcdn", "2018-01-15", "DescribeDcdnDomainBpsData");
+	public DescribeDcdnDomainIspDataRequest() {
+		super("dcdn", "2018-01-15", "DescribeDcdnDomainIspData");
 	}
 
-	private String locationNameEn;
-
 	private String startTime;
-
-	private String ispNameEn;
-
-	private String fixTimeGap;
-
-	private String timeMerge;
 
 	private String domainName;
 
 	private String endTime;
 
 	private Long ownerId;
-
-	private String interval;
-
-	public String getLocationNameEn() {
-		return this.locationNameEn;
-	}
-
-	public void setLocationNameEn(String locationNameEn) {
-		this.locationNameEn = locationNameEn;
-		if(locationNameEn != null){
-			putQueryParameter("LocationNameEn", locationNameEn);
-		}
-	}
 
 	public String getStartTime() {
 		return this.startTime;
@@ -63,39 +42,6 @@ public class DescribeDcdnDomainBpsDataRequest extends RpcAcsRequest<DescribeDcdn
 		this.startTime = startTime;
 		if(startTime != null){
 			putQueryParameter("StartTime", startTime);
-		}
-	}
-
-	public String getIspNameEn() {
-		return this.ispNameEn;
-	}
-
-	public void setIspNameEn(String ispNameEn) {
-		this.ispNameEn = ispNameEn;
-		if(ispNameEn != null){
-			putQueryParameter("IspNameEn", ispNameEn);
-		}
-	}
-
-	public String getFixTimeGap() {
-		return this.fixTimeGap;
-	}
-
-	public void setFixTimeGap(String fixTimeGap) {
-		this.fixTimeGap = fixTimeGap;
-		if(fixTimeGap != null){
-			putQueryParameter("FixTimeGap", fixTimeGap);
-		}
-	}
-
-	public String getTimeMerge() {
-		return this.timeMerge;
-	}
-
-	public void setTimeMerge(String timeMerge) {
-		this.timeMerge = timeMerge;
-		if(timeMerge != null){
-			putQueryParameter("TimeMerge", timeMerge);
 		}
 	}
 
@@ -132,20 +78,9 @@ public class DescribeDcdnDomainBpsDataRequest extends RpcAcsRequest<DescribeDcdn
 		}
 	}
 
-	public String getInterval() {
-		return this.interval;
-	}
-
-	public void setInterval(String interval) {
-		this.interval = interval;
-		if(interval != null){
-			putQueryParameter("Interval", interval);
-		}
-	}
-
 	@Override
-	public Class<DescribeDcdnDomainBpsDataResponse> getResponseClass() {
-		return DescribeDcdnDomainBpsDataResponse.class;
+	public Class<DescribeDcdnDomainIspDataResponse> getResponseClass() {
+		return DescribeDcdnDomainIspDataResponse.class;
 	}
 
 }

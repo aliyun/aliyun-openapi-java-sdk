@@ -37,6 +37,12 @@ public class DescribeDcdnServiceResponse extends AcsResponse {
 
 	private String changingAffectTime;
 
+	private String websocketChangingType;
+
+	private String websocketType;
+
+	private String websocketChangingTime;
+
 	private List<LockReason> operationLocks;
 
 	public String getRequestId() {
@@ -85,6 +91,30 @@ public class DescribeDcdnServiceResponse extends AcsResponse {
 
 	public void setChangingAffectTime(String changingAffectTime) {
 		this.changingAffectTime = changingAffectTime;
+	}
+
+	public String getWebsocketChangingType() {
+		return this.websocketChangingType;
+	}
+
+	public void setWebsocketChangingType(String websocketChangingType) {
+		this.websocketChangingType = websocketChangingType;
+	}
+
+	public String getWebsocketType() {
+		return this.websocketType;
+	}
+
+	public void setWebsocketType(String websocketType) {
+		this.websocketType = websocketType;
+	}
+
+	public String getWebsocketChangingTime() {
+		return this.websocketChangingTime;
+	}
+
+	public void setWebsocketChangingTime(String websocketChangingTime) {
+		this.websocketChangingTime = websocketChangingTime;
 	}
 
 	public List<LockReason> getOperationLocks() {

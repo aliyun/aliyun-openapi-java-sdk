@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.dcdn.model.v20180115.DescribeDcdnDomainConfigsResponse;
 import com.aliyuncs.dcdn.model.v20180115.DescribeDcdnDomainConfigsResponse.DomainConfig;
 import com.aliyuncs.dcdn.model.v20180115.DescribeDcdnDomainConfigsResponse.DomainConfig.FunctionArg;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

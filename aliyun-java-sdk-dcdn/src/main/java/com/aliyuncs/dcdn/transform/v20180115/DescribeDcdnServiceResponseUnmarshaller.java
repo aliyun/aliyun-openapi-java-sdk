@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.dcdn.model.v20180115.DescribeDcdnServiceResponse;
 import com.aliyuncs.dcdn.model.v20180115.DescribeDcdnServiceResponse.LockReason;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -32,6 +33,9 @@ public class DescribeDcdnServiceResponseUnmarshaller {
 		describeDcdnServiceResponse.setOpeningTime(context.stringValue("DescribeDcdnServiceResponse.OpeningTime"));
 		describeDcdnServiceResponse.setChangingChargeType(context.stringValue("DescribeDcdnServiceResponse.ChangingChargeType"));
 		describeDcdnServiceResponse.setChangingAffectTime(context.stringValue("DescribeDcdnServiceResponse.ChangingAffectTime"));
+		describeDcdnServiceResponse.setWebsocketChangingType(context.stringValue("DescribeDcdnServiceResponse.WebsocketChangingType"));
+		describeDcdnServiceResponse.setWebsocketType(context.stringValue("DescribeDcdnServiceResponse.WebsocketType"));
+		describeDcdnServiceResponse.setWebsocketChangingTime(context.stringValue("DescribeDcdnServiceResponse.WebsocketChangingTime"));
 
 		List<LockReason> operationLocks = new ArrayList<LockReason>();
 		for (int i = 0; i < context.lengthValue("DescribeDcdnServiceResponse.OperationLocks.Length"); i++) {

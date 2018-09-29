@@ -15,6 +15,7 @@
 package com.aliyuncs.dcdn.model.v20180115;
 
 import java.util.List;
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.dcdn.transform.v20180115.DescribeDcdnDomainDetailResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -179,6 +180,8 @@ public class DescribeDcdnDomainDetailResponse extends AcsResponse {
 
 			private String priority;
 
+			private String weight;
+
 			public String getContent() {
 				return this.content;
 			}
@@ -217,6 +220,14 @@ public class DescribeDcdnDomainDetailResponse extends AcsResponse {
 
 			public void setPriority(String priority) {
 				this.priority = priority;
+			}
+
+			public String getWeight() {
+				return this.weight;
+			}
+
+			public void setWeight(String weight) {
+				this.weight = weight;
 			}
 		}
 	}

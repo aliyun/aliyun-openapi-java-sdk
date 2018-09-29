@@ -197,6 +197,8 @@ public class DescribeDcdnUserDomainsResponse extends AcsResponse {
 
 			private String priority;
 
+			private String weight;
+
 			public String getType() {
 				return this.type;
 			}
@@ -227,6 +229,14 @@ public class DescribeDcdnUserDomainsResponse extends AcsResponse {
 
 			public void setPriority(String priority) {
 				this.priority = priority;
+			}
+
+			public String getWeight() {
+				return this.weight;
+			}
+
+			public void setWeight(String weight) {
+				this.weight = weight;
 			}
 		}
 	}

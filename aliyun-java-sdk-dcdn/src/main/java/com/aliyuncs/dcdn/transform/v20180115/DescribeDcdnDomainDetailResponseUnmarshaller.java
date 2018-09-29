@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.dcdn.model.v20180115.DescribeDcdnDomainDetailResponse;
 import com.aliyuncs.dcdn.model.v20180115.DescribeDcdnDomainDetailResponse.DomainDetail;
 import com.aliyuncs.dcdn.model.v20180115.DescribeDcdnDomainDetailResponse.DomainDetail.Source;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -50,6 +51,7 @@ public class DescribeDcdnDomainDetailResponseUnmarshaller {
 			source.setPort(context.integerValue("DescribeDcdnDomainDetailResponse.DomainDetail.Sources["+ i +"].Port"));
 			source.setEnabled(context.stringValue("DescribeDcdnDomainDetailResponse.DomainDetail.Sources["+ i +"].Enabled"));
 			source.setPriority(context.stringValue("DescribeDcdnDomainDetailResponse.DomainDetail.Sources["+ i +"].Priority"));
+			source.setWeight(context.stringValue("DescribeDcdnDomainDetailResponse.DomainDetail.Sources["+ i +"].Weight"));
 
 			sources.add(source);
 		}

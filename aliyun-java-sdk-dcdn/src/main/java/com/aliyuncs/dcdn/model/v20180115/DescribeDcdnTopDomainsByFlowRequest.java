@@ -20,19 +20,15 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class DescribeDcdnDomainLogRequest extends RpcAcsRequest<DescribeDcdnDomainLogResponse> {
+public class DescribeDcdnTopDomainsByFlowRequest extends RpcAcsRequest<DescribeDcdnTopDomainsByFlowResponse> {
 	
-	public DescribeDcdnDomainLogRequest() {
-		super("dcdn", "2018-01-15", "DescribeDcdnDomainLog");
+	public DescribeDcdnTopDomainsByFlowRequest() {
+		super("dcdn", "2018-01-15", "DescribeDcdnTopDomainsByFlow");
 	}
 
 	private String startTime;
 
-	private Long pageNumber;
-
-	private Long pageSize;
-
-	private String domainName;
+	private Long limit;
 
 	private String endTime;
 
@@ -49,36 +45,14 @@ public class DescribeDcdnDomainLogRequest extends RpcAcsRequest<DescribeDcdnDoma
 		}
 	}
 
-	public Long getPageNumber() {
-		return this.pageNumber;
+	public Long getLimit() {
+		return this.limit;
 	}
 
-	public void setPageNumber(Long pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
-		}
-	}
-
-	public Long getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Long pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
-	public String getDomainName() {
-		return this.domainName;
-	}
-
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
-		if(domainName != null){
-			putQueryParameter("DomainName", domainName);
+	public void setLimit(Long limit) {
+		this.limit = limit;
+		if(limit != null){
+			putQueryParameter("Limit", limit.toString());
 		}
 	}
 
@@ -105,8 +79,8 @@ public class DescribeDcdnDomainLogRequest extends RpcAcsRequest<DescribeDcdnDoma
 	}
 
 	@Override
-	public Class<DescribeDcdnDomainLogResponse> getResponseClass() {
-		return DescribeDcdnDomainLogResponse.class;
+	public Class<DescribeDcdnTopDomainsByFlowResponse> getResponseClass() {
+		return DescribeDcdnTopDomainsByFlowResponse.class;
 	}
 
 }

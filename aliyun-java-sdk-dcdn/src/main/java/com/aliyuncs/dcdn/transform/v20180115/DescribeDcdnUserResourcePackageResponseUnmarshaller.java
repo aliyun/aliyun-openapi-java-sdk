@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.dcdn.model.v20180115.DescribeDcdnUserResourcePackageResponse;
 import com.aliyuncs.dcdn.model.v20180115.DescribeDcdnUserResourcePackageResponse.ResourcePackageInfo;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -37,6 +38,8 @@ public class DescribeDcdnUserResourcePackageResponseUnmarshaller {
 			resourcePackageInfo.setDisplayName(context.stringValue("DescribeDcdnUserResourcePackageResponse.ResourcePackageInfos["+ i +"].DisplayName"));
 			resourcePackageInfo.setInstanceId(context.stringValue("DescribeDcdnUserResourcePackageResponse.ResourcePackageInfos["+ i +"].InstanceId"));
 			resourcePackageInfo.setStatus(context.stringValue("DescribeDcdnUserResourcePackageResponse.ResourcePackageInfos["+ i +"].Status"));
+			resourcePackageInfo.setStartTime(context.stringValue("DescribeDcdnUserResourcePackageResponse.ResourcePackageInfos["+ i +"].StartTime"));
+			resourcePackageInfo.setEndTime(context.stringValue("DescribeDcdnUserResourcePackageResponse.ResourcePackageInfos["+ i +"].EndTime"));
 
 			resourcePackageInfos.add(resourcePackageInfo);
 		}
