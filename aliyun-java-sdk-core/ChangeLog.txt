@@ -1,3 +1,8 @@
+2018-09-29 Version: 4.1.1
+1, endpoints data updated
+2, fixed global config location code normalization bug
+3, fixed no region hint bug
+
 2018-09-21 Version: 4.1.0
 1, Fix endpoint logic bug
 

@@ -45,17 +45,16 @@ public abstract class EndpointResolverBase implements EndpointResolver {
         endpointsData.put(key, endpoint);
     }
 
-    public boolean isProductCodeValid(String productCode) {
-        productCode = productCode.toLowerCase();
+    public boolean isProductCodeValid(ResolveEndpointRequest request) {
         for (String key : endpointsData.keySet()) {
-            if (key.startsWith(productCode)) {
+            if (key.startsWith(request.productCodeLower)) {
                 return true;
             }
         }
         return false;
     }
 
-    abstract public boolean isRegionIdValid(String regionId);
+    abstract public boolean isRegionIdValid(ResolveEndpointRequest request);
 
     abstract String makeEndpointKey(ResolveEndpointRequest request);
 
