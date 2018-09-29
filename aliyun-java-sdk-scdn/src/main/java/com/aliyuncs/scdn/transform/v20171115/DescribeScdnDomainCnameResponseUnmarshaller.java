@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.scdn.model.v20171115.DescribeScdnDomainCnameResponse;
 import com.aliyuncs.scdn.model.v20171115.DescribeScdnDomainCnameResponse.Data;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.scdn.model.v20171115.DescribeScdnServiceResponse;
 import com.aliyuncs.scdn.model.v20171115.DescribeScdnServiceResponse.LockReason;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

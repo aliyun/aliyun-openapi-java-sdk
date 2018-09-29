@@ -20,30 +20,17 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class PreloadScdnObjectCachesRequest extends RpcAcsRequest<PreloadScdnObjectCachesResponse> {
+public class DescribeScdnIpInfoRequest extends RpcAcsRequest<DescribeScdnIpInfoResponse> {
 	
-	public PreloadScdnObjectCachesRequest() {
-		super("scdn", "2017-11-15", "PreloadScdnObjectCaches");
+	public DescribeScdnIpInfoRequest() {
+		super("scdn", "2017-11-15", "DescribeScdnIpInfo");
 	}
-
-	private String area;
 
 	private String securityToken;
 
-	private String objectPath;
+	private String iP;
 
 	private Long ownerId;
-
-	public String getArea() {
-		return this.area;
-	}
-
-	public void setArea(String area) {
-		this.area = area;
-		if(area != null){
-			putQueryParameter("Area", area);
-		}
-	}
 
 	public String getSecurityToken() {
 		return this.securityToken;
@@ -56,14 +43,14 @@ public class PreloadScdnObjectCachesRequest extends RpcAcsRequest<PreloadScdnObj
 		}
 	}
 
-	public String getObjectPath() {
-		return this.objectPath;
+	public String getIP() {
+		return this.iP;
 	}
 
-	public void setObjectPath(String objectPath) {
-		this.objectPath = objectPath;
-		if(objectPath != null){
-			putQueryParameter("ObjectPath", objectPath);
+	public void setIP(String iP) {
+		this.iP = iP;
+		if(iP != null){
+			putQueryParameter("IP", iP);
 		}
 	}
 
@@ -79,8 +66,8 @@ public class PreloadScdnObjectCachesRequest extends RpcAcsRequest<PreloadScdnObj
 	}
 
 	@Override
-	public Class<PreloadScdnObjectCachesResponse> getResponseClass() {
-		return PreloadScdnObjectCachesResponse.class;
+	public Class<DescribeScdnIpInfoResponse> getResponseClass() {
+		return DescribeScdnIpInfoResponse.class;
 	}
 
 }

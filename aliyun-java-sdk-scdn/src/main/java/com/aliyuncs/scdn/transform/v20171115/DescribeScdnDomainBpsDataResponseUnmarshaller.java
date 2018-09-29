@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.scdn.model.v20171115.DescribeScdnDomainBpsDataResponse;
 import com.aliyuncs.scdn.model.v20171115.DescribeScdnDomainBpsDataResponse.DataModule;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

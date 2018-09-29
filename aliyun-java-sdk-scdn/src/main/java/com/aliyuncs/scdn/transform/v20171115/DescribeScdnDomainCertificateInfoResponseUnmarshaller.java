@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.scdn.model.v20171115.DescribeScdnDomainCertificateInfoResponse;
 import com.aliyuncs.scdn.model.v20171115.DescribeScdnDomainCertificateInfoResponse.CertInfo;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

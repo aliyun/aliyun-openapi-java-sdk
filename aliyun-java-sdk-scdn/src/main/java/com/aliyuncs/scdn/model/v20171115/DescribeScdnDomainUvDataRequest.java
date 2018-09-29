@@ -20,56 +20,30 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class DescribeScdnDomainTrafficDataRequest extends RpcAcsRequest<DescribeScdnDomainTrafficDataResponse> {
+public class DescribeScdnDomainUvDataRequest extends RpcAcsRequest<DescribeScdnDomainUvDataResponse> {
 	
-	public DescribeScdnDomainTrafficDataRequest() {
-		super("scdn", "2017-11-15", "DescribeScdnDomainTrafficData");
+	public DescribeScdnDomainUvDataRequest() {
+		super("scdn", "2017-11-15", "DescribeScdnDomainUvData");
 	}
 
-	private String locationNameEn;
-
-	private String startTime;
-
-	private String ispNameEn;
+	private String securityToken;
 
 	private String domainName;
 
 	private String endTime;
 
+	private String startTime;
+
 	private Long ownerId;
 
-	private String interval;
-
-	public String getLocationNameEn() {
-		return this.locationNameEn;
+	public String getSecurityToken() {
+		return this.securityToken;
 	}
 
-	public void setLocationNameEn(String locationNameEn) {
-		this.locationNameEn = locationNameEn;
-		if(locationNameEn != null){
-			putQueryParameter("LocationNameEn", locationNameEn);
-		}
-	}
-
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("StartTime", startTime);
-		}
-	}
-
-	public String getIspNameEn() {
-		return this.ispNameEn;
-	}
-
-	public void setIspNameEn(String ispNameEn) {
-		this.ispNameEn = ispNameEn;
-		if(ispNameEn != null){
-			putQueryParameter("IspNameEn", ispNameEn);
+	public void setSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 
@@ -95,6 +69,17 @@ public class DescribeScdnDomainTrafficDataRequest extends RpcAcsRequest<Describe
 		}
 	}
 
+	public String getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime);
+		}
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -106,20 +91,9 @@ public class DescribeScdnDomainTrafficDataRequest extends RpcAcsRequest<Describe
 		}
 	}
 
-	public String getInterval() {
-		return this.interval;
-	}
-
-	public void setInterval(String interval) {
-		this.interval = interval;
-		if(interval != null){
-			putQueryParameter("Interval", interval);
-		}
-	}
-
 	@Override
-	public Class<DescribeScdnDomainTrafficDataResponse> getResponseClass() {
-		return DescribeScdnDomainTrafficDataResponse.class;
+	public Class<DescribeScdnDomainUvDataResponse> getResponseClass() {
+		return DescribeScdnDomainUvDataResponse.class;
 	}
 
 }

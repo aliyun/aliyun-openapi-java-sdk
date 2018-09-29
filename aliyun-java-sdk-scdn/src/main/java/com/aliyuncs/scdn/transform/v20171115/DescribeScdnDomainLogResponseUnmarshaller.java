@@ -21,6 +21,7 @@ import com.aliyuncs.scdn.model.v20171115.DescribeScdnDomainLogResponse;
 import com.aliyuncs.scdn.model.v20171115.DescribeScdnDomainLogResponse.DomainLogDetail;
 import com.aliyuncs.scdn.model.v20171115.DescribeScdnDomainLogResponse.DomainLogDetail.LogInfoDetail;
 import com.aliyuncs.scdn.model.v20171115.DescribeScdnDomainLogResponse.DomainLogDetail.PageInfoDetail;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

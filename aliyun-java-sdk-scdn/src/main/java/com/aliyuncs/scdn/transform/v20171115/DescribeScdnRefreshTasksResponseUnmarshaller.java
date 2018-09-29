@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.scdn.model.v20171115.DescribeScdnRefreshTasksResponse;
 import com.aliyuncs.scdn.model.v20171115.DescribeScdnRefreshTasksResponse.Task;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

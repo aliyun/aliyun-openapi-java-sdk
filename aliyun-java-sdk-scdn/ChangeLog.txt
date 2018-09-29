@@ -1,3 +1,8 @@
+2018-09-29 Version: 1.1.0
+1, This is an example of release-log.
+2, Please strictly follow this format to edit in English.
+3, Format：Number + , + Space + Description
+
 2018-06-08 Version: 1.0.0
 1, Add scdn interface，support scdn.
 

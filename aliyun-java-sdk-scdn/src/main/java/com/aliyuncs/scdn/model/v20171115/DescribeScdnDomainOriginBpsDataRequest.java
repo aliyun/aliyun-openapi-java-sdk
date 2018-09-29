@@ -28,15 +28,11 @@ public class DescribeScdnDomainOriginBpsDataRequest extends RpcAcsRequest<Descri
 
 	private String startTime;
 
-	private String securityToken;
-
 	private String domainName;
 
 	private String endTime;
 
 	private Long ownerId;
-
-	private String version;
 
 	private String interval;
 
@@ -48,17 +44,6 @@ public class DescribeScdnDomainOriginBpsDataRequest extends RpcAcsRequest<Descri
 		this.startTime = startTime;
 		if(startTime != null){
 			putQueryParameter("StartTime", startTime);
-		}
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 
@@ -92,17 +77,6 @@ public class DescribeScdnDomainOriginBpsDataRequest extends RpcAcsRequest<Descri
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getVersion() {
-		return this.version;
-	}
-
-	public void setVersion(String version) {
-		this.version = version;
-		if(version != null){
-			putQueryParameter("Version", version);
 		}
 	}
 
