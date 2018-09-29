@@ -127,8 +127,8 @@ public class LocalConfigRegionalEndpointResolver extends EndpointResolverBase {
     }
 
     @Override
-    public boolean isRegionIdValid(String regionId) {
-        return validRegionIds.contains(regionId);
+    public boolean isRegionIdValid(ResolveEndpointRequest request) {
+        return validRegionIds.contains(request.regionId);
     }
 
     @Override
@@ -142,7 +142,13 @@ public class LocalConfigRegionalEndpointResolver extends EndpointResolverBase {
     }
 
     @Override
-    public boolean isProductCodeValid(String productCode) {
-        return super.isProductCodeValid(getNormalizedProductCode(productCode));
+    public boolean isProductCodeValid(ResolveEndpointRequest request) {
+        ResolveEndpointRequest request2 = new ResolveEndpointRequest(
+                request.regionId,
+                getNormalizedProductCode(request.productCode),
+                null,
+                null
+        );
+        return super.isProductCodeValid(request2);
     }
 }

@@ -39,6 +39,7 @@ public class LocalConfigGlobalEndpointResolver extends LocalConfigRegionalEndpoi
     protected void initLocalConfig(JsonObject obj) {
         initGlobalEndpointData(obj);
         initRegionIds(obj);
+        initLocationCodeMapping(obj);
     }
 
     private void initGlobalEndpointData(JsonObject obj) {
@@ -54,7 +55,7 @@ public class LocalConfigGlobalEndpointResolver extends LocalConfigRegionalEndpoi
 
     @Override
     public String resolve(ResolveEndpointRequest request) {
-        if (request.isOpenApiEndpoint() && isRegionIdValid(request.regionId)) {
+        if (request.isOpenApiEndpoint() && isRegionIdValid(request)) {
             return fetchEndpointEntry(request);
         } else {
             return null;

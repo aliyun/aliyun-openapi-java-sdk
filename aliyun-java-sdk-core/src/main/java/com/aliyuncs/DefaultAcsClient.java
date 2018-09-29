@@ -78,20 +78,7 @@ public class DefaultAcsClient implements IAcsClient {
         this.credentialsProvider = credentialsProvider;
         this.clientProfile.setCredentialsProvider(this.credentialsProvider);
         this.httpClient = HttpClientFactory.buildClient(this.clientProfile);
-        this.endpointResolver = initEndpointResolver();
-    }
-
-    private EndpointResolver initEndpointResolver() {
-        List<EndpointResolverBase> resolverChain = new ArrayList<EndpointResolverBase>();
-
-        // The order is very IMPORTANT!
-        resolverChain.add(DefaultProfile.userCustomizedEndpointResolver);
-        resolverChain.add(new LocalConfigRegionalEndpointResolver());
-        resolverChain.add(new LocalConfigGlobalEndpointResolver());
-        resolverChain.add(new LocationServiceEndpointResolver(this));
-
-        EndpointResolver endpointResolver = new ChainedEndpointResolver(resolverChain);
-        return endpointResolver;
+        this.endpointResolver = new DefaultEndpointResolver(this);
     }
 
     @Override

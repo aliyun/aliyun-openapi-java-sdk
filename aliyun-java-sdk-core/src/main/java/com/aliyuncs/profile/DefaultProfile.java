@@ -23,6 +23,7 @@ import com.aliyuncs.auth.Credential;
 import com.aliyuncs.auth.CredentialsBackupCompatibilityAdaptor;
 import com.aliyuncs.auth.ICredentialProvider;
 import com.aliyuncs.auth.ISigner;
+import com.aliyuncs.endpoint.DefaultEndpointResolver;
 import com.aliyuncs.endpoint.UserCustomizedEndpointResolver;
 import com.aliyuncs.exceptions.ClientException;
 import com.aliyuncs.http.FormatType;
@@ -32,7 +33,6 @@ import com.aliyuncs.http.HttpClientConfig;
 public class DefaultProfile implements IClientProfile {
 
     private static DefaultProfile profile = null;
-    public static UserCustomizedEndpointResolver userCustomizedEndpointResolver = new UserCustomizedEndpointResolver();
     private String regionId = null;
     private FormatType acceptFormat = null;
     private ICredentialProvider icredential = null;
@@ -132,7 +132,7 @@ public class DefaultProfile implements IClientProfile {
     }
 
     public synchronized static void addEndpoint(String regionId, String product, String endpoint) {
-        userCustomizedEndpointResolver.putEndpointEntry(regionId, product, endpoint);
+        DefaultEndpointResolver.predefinedEndpointResolver.putEndpointEntry(regionId, product, endpoint);
     }
 
     @Override

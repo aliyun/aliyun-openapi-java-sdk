@@ -36,32 +36,32 @@ public class ChainedEndpointResolver implements EndpointResolver {
         this.endpointResolvers = resolverChain;
     }
 
-    private void checkProductCode(String productCode) throws ClientException {
+    private void checkProductCode(ResolveEndpointRequest request) throws ClientException {
         boolean productCodeValid = false;
         for (EndpointResolverBase resolver : endpointResolvers) {
-            if (resolver.isProductCodeValid(productCode.toLowerCase()))
+            if (resolver.isProductCodeValid(request))
                 productCodeValid = true;
         }
 
         if (!productCodeValid) {
             throw new ClientException(
                     ErrorCodeConstant.SDK_ENDPOINT_RESOLVING_ERROR,
-                    String.format(ErrorMessageConstant.ENDPOINT_NO_PRODUCT, productCode)
+                    String.format(ErrorMessageConstant.ENDPOINT_NO_PRODUCT, request.productCode)
             );
         }
     }
 
-    private void checkRegionId(String regionId) throws ClientException {
+    private void checkRegionId(ResolveEndpointRequest request) throws ClientException {
         boolean regionIdValid = false;
         for (EndpointResolverBase resolver : endpointResolvers) {
-            if (resolver.isRegionIdValid(regionId))
+            if (resolver.isRegionIdValid(request))
                 regionIdValid = true;
         }
 
         if (!regionIdValid) {
             throw new ClientException(
                     ErrorCodeConstant.SDK_ENDPOINT_RESOLVING_ERROR,
-                    String.format(ErrorMessageConstant.INVALID_REGION_ID, regionId)
+                    String.format(ErrorMessageConstant.INVALID_REGION_ID, request.regionId)
             );
         }
     }
@@ -90,8 +90,8 @@ public class ChainedEndpointResolver implements EndpointResolver {
             }
         }
 
-        checkProductCode(request.productCode);
-        checkRegionId(request.regionId);
+        checkProductCode(request);
+        checkRegionId(request);
 
         throw new ClientException(
                 ErrorCodeConstant.SDK_ENDPOINT_RESOLVING_ERROR,

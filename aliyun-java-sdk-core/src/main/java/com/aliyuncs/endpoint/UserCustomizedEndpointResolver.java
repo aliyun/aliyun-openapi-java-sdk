@@ -51,7 +51,7 @@ public class UserCustomizedEndpointResolver extends EndpointResolverBase {
     }
 
     @Override
-    public boolean isRegionIdValid(String regionId) {
-        return validRegionIds.contains(regionId);
+    public boolean isRegionIdValid(ResolveEndpointRequest request) {
+        return validRegionIds.contains(request.regionId);
     }
 }

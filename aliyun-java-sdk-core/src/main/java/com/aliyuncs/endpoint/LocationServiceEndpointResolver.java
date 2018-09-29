@@ -142,13 +142,19 @@ public class LocationServiceEndpointResolver extends EndpointResolverBase {
     }
 
     @Override
-    public boolean isProductCodeValid(String productCode) {
-        return validProductCodes.contains(productCode);
+    public boolean isProductCodeValid(ResolveEndpointRequest request) {
+        if (request.locationServiceCode != null) {
+            return !invalidProductCodes.contains(request.productCodeLower);
+        }
+        return false;
     }
 
     @Override
-    public boolean isRegionIdValid(String regionId) {
-        return validRegionIds.contains(regionId);
+    public boolean isRegionIdValid(ResolveEndpointRequest request) {
+        if (request.locationServiceCode != null) {
+            return !invalidRegionIds.contains(request.regionId);
+        }
+        return false;
     }
 
     public String makeEndpointKey(ResolveEndpointRequest request) {
