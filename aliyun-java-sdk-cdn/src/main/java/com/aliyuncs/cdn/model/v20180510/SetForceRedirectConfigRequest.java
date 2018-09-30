@@ -1,0 +1,86 @@
+/*
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package com.aliyuncs.cdn.model.v20180510;
+
+import com.aliyuncs.RpcAcsRequest;
+
+/**
+ * @author auto create
+ * @version 
+ */
+public class SetForceRedirectConfigRequest extends RpcAcsRequest<SetForceRedirectConfigResponse> {
+	
+	public SetForceRedirectConfigRequest() {
+		super("Cdn", "2018-05-10", "SetForceRedirectConfig");
+	}
+
+	private String securityToken;
+
+	private String domainName;
+
+	private String redirectType;
+
+	private Long ownerId;
+
+	public String getSecurityToken() {
+		return this.securityToken;
+	}
+
+	public void setSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	public String getDomainName() {
+		return this.domainName;
+	}
+
+	public void setDomainName(String domainName) {
+		this.domainName = domainName;
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
+		}
+	}
+
+	public String getRedirectType() {
+		return this.redirectType;
+	}
+
+	public void setRedirectType(String redirectType) {
+		this.redirectType = redirectType;
+		if(redirectType != null){
+			putQueryParameter("RedirectType", redirectType);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	@Override
+	public Class<SetForceRedirectConfigResponse> getResponseClass() {
+		return SetForceRedirectConfigResponse.class;
+	}
+
+}
