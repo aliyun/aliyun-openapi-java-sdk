@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class StartAppRequest extends RpcAcsRequest<StartAppResponse> {
 	
 	public StartAppRequest() {
-		super("rtc", "2018-01-11", "StartApp", "rtc");
+		super("rtc", "2018-01-11", "StartApp");
 	}
 
 	private Long ownerId;

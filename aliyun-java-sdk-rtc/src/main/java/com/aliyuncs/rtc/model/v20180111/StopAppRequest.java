@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class StopAppRequest extends RpcAcsRequest<StopAppResponse> {
 	
 	public StopAppRequest() {
-		super("rtc", "2018-01-11", "StopApp", "rtc");
+		super("rtc", "2018-01-11", "StopApp");
 	}
 
 	private Long ownerId;

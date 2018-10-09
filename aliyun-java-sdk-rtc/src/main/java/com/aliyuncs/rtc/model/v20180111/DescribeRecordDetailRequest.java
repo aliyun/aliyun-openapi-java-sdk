@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeRecordDetailRequest extends RpcAcsRequest<DescribeRecordDetailResponse> {
 	
 	public DescribeRecordDetailRequest() {
-		super("rtc", "2018-01-11", "DescribeRecordDetail", "rtc");
+		super("rtc", "2018-01-11", "DescribeRecordDetail");
 	}
 
 	private String startTime;

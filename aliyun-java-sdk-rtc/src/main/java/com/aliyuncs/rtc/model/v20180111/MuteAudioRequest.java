@@ -24,7 +24,7 @@ import java.util.List;
 public class MuteAudioRequest extends RpcAcsRequest<MuteAudioResponse> {
 	
 	public MuteAudioRequest() {
-		super("rtc", "2018-01-11", "MuteAudio", "rtc");
+		super("rtc", "2018-01-11", "MuteAudio");
 	}
 
 	private List<String> participantIdss;

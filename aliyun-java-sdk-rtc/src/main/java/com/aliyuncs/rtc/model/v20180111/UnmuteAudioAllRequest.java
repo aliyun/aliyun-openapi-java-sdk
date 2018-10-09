@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class UnmuteAudioAllRequest extends RpcAcsRequest<UnmuteAudioAllResponse> {
 	
 	public UnmuteAudioAllRequest() {
-		super("rtc", "2018-01-11", "UnmuteAudioAll", "rtc");
+		super("rtc", "2018-01-11", "UnmuteAudioAll");
 	}
 
 	private Long ownerId;

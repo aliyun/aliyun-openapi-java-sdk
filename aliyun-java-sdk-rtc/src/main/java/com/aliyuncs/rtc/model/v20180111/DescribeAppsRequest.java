@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeAppsRequest extends RpcAcsRequest<DescribeAppsResponse> {
 	
 	public DescribeAppsRequest() {
-		super("rtc", "2018-01-11", "DescribeApps", "rtc");
+		super("rtc", "2018-01-11", "DescribeApps");
 	}
 
 	private Integer pageNum;

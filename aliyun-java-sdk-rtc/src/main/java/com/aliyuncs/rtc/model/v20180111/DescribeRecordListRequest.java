@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeRecordListRequest extends RpcAcsRequest<DescribeRecordListResponse> {
 	
 	public DescribeRecordListRequest() {
-		super("rtc", "2018-01-11", "DescribeRecordList", "rtc");
+		super("rtc", "2018-01-11", "DescribeRecordList");
 	}
 
 	private String sortType;

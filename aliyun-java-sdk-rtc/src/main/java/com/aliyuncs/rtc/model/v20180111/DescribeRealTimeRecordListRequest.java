@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeRealTimeRecordListRequest extends RpcAcsRequest<DescribeRealTimeRecordListResponse> {
 	
 	public DescribeRealTimeRecordListRequest() {
-		super("rtc", "2018-01-11", "DescribeRealTimeRecordList", "rtc");
+		super("rtc", "2018-01-11", "DescribeRealTimeRecordList");
 	}
 
 	private String endTime;

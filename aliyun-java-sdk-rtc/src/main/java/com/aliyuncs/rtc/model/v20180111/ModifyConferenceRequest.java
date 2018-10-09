@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifyConferenceRequest extends RpcAcsRequest<ModifyConferenceResponse> {
 	
 	public ModifyConferenceRequest() {
-		super("rtc", "2018-01-11", "ModifyConference", "rtc");
+		super("rtc", "2018-01-11", "ModifyConference");
 	}
 
 	private String startTime;

@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeRealTimeRecordDetailRequest extends RpcAcsRequest<DescribeRealTimeRecordDetailResponse> {
 	
 	public DescribeRealTimeRecordDetailRequest() {
-		super("rtc", "2018-01-11", "DescribeRealTimeRecordDetail", "rtc");
+		super("rtc", "2018-01-11", "DescribeRealTimeRecordDetail");
 	}
 
 	private Long ownerId;

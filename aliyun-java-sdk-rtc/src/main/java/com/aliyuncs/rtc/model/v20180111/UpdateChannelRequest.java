@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class UpdateChannelRequest extends RpcAcsRequest<UpdateChannelResponse> {
 	
 	public UpdateChannelRequest() {
-		super("rtc", "2018-01-11", "UpdateChannel", "rtc");
+		super("rtc", "2018-01-11", "UpdateChannel");
 	}
 
 	private Long ownerId;

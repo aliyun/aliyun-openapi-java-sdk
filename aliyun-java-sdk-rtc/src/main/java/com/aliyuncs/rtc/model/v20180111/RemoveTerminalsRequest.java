@@ -24,7 +24,7 @@ import java.util.List;
 public class RemoveTerminalsRequest extends RpcAcsRequest<RemoveTerminalsResponse> {
 	
 	public RemoveTerminalsRequest() {
-		super("rtc", "2018-01-11", "RemoveTerminals", "rtc");
+		super("rtc", "2018-01-11", "RemoveTerminals");
 	}
 
 	private List<String> terminalIdss;

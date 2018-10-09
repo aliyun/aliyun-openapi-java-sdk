@@ -24,7 +24,7 @@ import java.util.List;
 public class UnmuteAudioRequest extends RpcAcsRequest<UnmuteAudioResponse> {
 	
 	public UnmuteAudioRequest() {
-		super("rtc", "2018-01-11", "UnmuteAudio", "rtc");
+		super("rtc", "2018-01-11", "UnmuteAudio");
 	}
 
 	private List<String> participantIdss;
