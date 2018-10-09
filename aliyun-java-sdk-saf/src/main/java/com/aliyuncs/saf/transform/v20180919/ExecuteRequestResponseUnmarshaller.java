@@ -12,9 +12,10 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.saf.transform.v20170331;
+package com.aliyuncs.saf.transform.v20180919;
 
-import com.aliyuncs.saf.model.v20170331.ExecuteRequestResponse;
+import com.aliyuncs.saf.model.v20180919.ExecuteRequestResponse;
+import com.aliyuncs.saf.model.v20180919.ExecuteRequestResponse.Data;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -24,8 +25,13 @@ public class ExecuteRequestResponseUnmarshaller {
 		
 		executeRequestResponse.setRequestId(context.stringValue("ExecuteRequestResponse.RequestId"));
 		executeRequestResponse.setCode(context.integerValue("ExecuteRequestResponse.Code"));
-		executeRequestResponse.setData(context.stringValue("ExecuteRequestResponse.Data"));
 		executeRequestResponse.setMessage(context.stringValue("ExecuteRequestResponse.Message"));
+
+		Data data = new Data();
+		data.setTags(context.stringValue("ExecuteRequestResponse.Data.Tags"));
+		data.setScore(context.stringValue("ExecuteRequestResponse.Data.Score"));
+		data.setExtend(context.stringValue("ExecuteRequestResponse.Data.Extend"));
+		executeRequestResponse.setData(data);
 	 
 	 	return executeRequestResponse;
 	}

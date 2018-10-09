@@ -12,7 +12,7 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.saf.model.v20170331;
+package com.aliyuncs.saf.model.v20180919;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.ProtocolType;
@@ -24,7 +24,7 @@ import com.aliyuncs.http.ProtocolType;
 public class ExecuteRequestRequest extends RpcAcsRequest<ExecuteRequestResponse> {
 	
 	public ExecuteRequestRequest() {
-		super("saf", "2017-03-31", "ExecuteRequest");
+		super("saf", "2018-09-19", "ExecuteRequest", "saf");
 		setProtocol(ProtocolType.HTTPS);
 	}
 

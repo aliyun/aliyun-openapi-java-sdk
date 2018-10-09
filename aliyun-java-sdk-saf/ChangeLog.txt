@@ -1,3 +1,8 @@
+2018-10-09 Version: 1.0.1
+1, v1.0.0-->v1.0.1
+2, provider new region:beijing/shenzhen/zhangjiakou
+3, provider service for VPC user;
+
 2018-05-24 Version: 1.0.0
 1, fix  bug，add pom dependency
 
