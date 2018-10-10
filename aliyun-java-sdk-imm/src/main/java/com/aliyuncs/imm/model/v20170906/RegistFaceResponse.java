@@ -29,7 +29,7 @@ public class RegistFaceResponse extends AcsResponse {
 
 	private String groupId;
 
-	private String imageUrl;
+	private String imageUri;
 
 	private String imageMd5;
 
@@ -43,7 +43,7 @@ public class RegistFaceResponse extends AcsResponse {
 
 	private String faceId;
 
-	private String yaw;
+	private Float yaw;
 
 	private Float quality;
 
@@ -75,12 +75,12 @@ public class RegistFaceResponse extends AcsResponse {
 		this.groupId = groupId;
 	}
 
-	public String getImageUrl() {
-		return this.imageUrl;
+	public String getImageUri() {
+		return this.imageUri;
 	}
 
-	public void setImageUrl(String imageUrl) {
-		this.imageUrl = imageUrl;
+	public void setImageUri(String imageUri) {
+		this.imageUri = imageUri;
 	}
 
 	public String getImageMd5() {
@@ -131,11 +131,11 @@ public class RegistFaceResponse extends AcsResponse {
 		this.faceId = faceId;
 	}
 
-	public String getYaw() {
+	public Float getYaw() {
 		return this.yaw;
 	}
 
-	public void setYaw(String yaw) {
+	public void setYaw(Float yaw) {
 		this.yaw = yaw;
 	}
 

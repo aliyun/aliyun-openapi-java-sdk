@@ -9,11 +9,8 @@ import com.aliyuncs.http.FormatType;
 import com.aliyuncs.http.HttpResponse;
 import com.aliyuncs.imm.model.v20170906.ActionRequest;
 import com.aliyuncs.profile.DefaultProfile;
-import com.aliyuncs.regions.Endpoint;
-import com.aliyuncs.regions.ProductDomain;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
@@ -58,29 +55,6 @@ public class BaseClient {
         } catch (ClientException e) {
             e.printStackTrace();
         }
-    }
-
-    public static Map<String, String> listEndpoints() throws ClientException {
-
-        Map<String, String> m = new HashMap<String,String>();
-
-        for(Map.Entry<String, String>  ent : regionMap.entrySet()){
-            String region = ent.getKey();
-
-            List<Endpoint> list = DefaultProfile.getProfile().getEndpoints(region, PRODUCT_CODE);
-
-            for(Endpoint ep : list){
-                //System.out.println(ep.getName()+":  "+ ep.getProductDomains().size());
-                for( ProductDomain pd: ep.getProductDomains()) {
-                    if(pd.getProductName().equals(PRODUCT_CODE)) {
-                        m.put(ep.getName(), pd.getDomianName());
-                        //System.out.println("   "+ep.getName() + ", " + pd.getDomianName() + ", " + pd.getProductName());
-                    }
-                }
-            }
-        }
-        return m;
-
     }
 
 

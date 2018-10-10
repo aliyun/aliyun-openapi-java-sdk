@@ -71,9 +71,7 @@ public class ListProjectsResponse extends AcsResponse {
 
 		private String type;
 
-		private List<EnginesItem> engines;
-
-		private List<IndexersItem> indexers;
+		private String billingType;
 
 		public String getProject() {
 			return this.project;
@@ -131,66 +129,12 @@ public class ListProjectsResponse extends AcsResponse {
 			this.type = type;
 		}
 
-		public List<EnginesItem> getEngines() {
-			return this.engines;
+		public String getBillingType() {
+			return this.billingType;
 		}
 
-		public void setEngines(List<EnginesItem> engines) {
-			this.engines = engines;
-		}
-
-		public List<IndexersItem> getIndexers() {
-			return this.indexers;
-		}
-
-		public void setIndexers(List<IndexersItem> indexers) {
-			this.indexers = indexers;
-		}
-
-		public static class EnginesItem {
-
-			private String name;
-
-			private Long jobTtl;
-
-			public String getName() {
-				return this.name;
-			}
-
-			public void setName(String name) {
-				this.name = name;
-			}
-
-			public Long getJobTtl() {
-				return this.jobTtl;
-			}
-
-			public void setJobTtl(Long jobTtl) {
-				this.jobTtl = jobTtl;
-			}
-		}
-
-		public static class IndexersItem {
-
-			private String name;
-
-			private String status;
-
-			public String getName() {
-				return this.name;
-			}
-
-			public void setName(String name) {
-				this.name = name;
-			}
-
-			public String getStatus() {
-				return this.status;
-			}
-
-			public void setStatus(String status) {
-				this.status = status;
-			}
+		public void setBillingType(String billingType) {
+			this.billingType = billingType;
 		}
 	}
 

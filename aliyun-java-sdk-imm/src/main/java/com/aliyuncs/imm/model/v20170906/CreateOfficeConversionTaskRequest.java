@@ -26,8 +26,6 @@ public class CreateOfficeConversionTaskRequest extends RpcAcsRequest<CreateOffic
 		super("imm", "2017-09-06", "CreateOfficeConversionTask", "imm");
 	}
 
-	private String imageSpec;
-
 	private String srcType;
 
 	private String notifyTopicName;
@@ -35,8 +33,6 @@ public class CreateOfficeConversionTaskRequest extends RpcAcsRequest<CreateOffic
 	private String modelId;
 
 	private String project;
-
-	private String externalID;
 
 	private Long maxSheetRow;
 
@@ -58,24 +54,17 @@ public class CreateOfficeConversionTaskRequest extends RpcAcsRequest<CreateOffic
 
 	private String notifyEndpoint;
 
+	private Boolean fitToPagesWide;
+
 	private String tgtFilePrefix;
+
+	private Boolean fitToPagesTall;
 
 	private String srcUri;
 
 	private String tgtFilePages;
 
 	private String tgtUri;
-
-	public String getImageSpec() {
-		return this.imageSpec;
-	}
-
-	public void setImageSpec(String imageSpec) {
-		this.imageSpec = imageSpec;
-		if(imageSpec != null){
-			putQueryParameter("ImageSpec", imageSpec);
-		}
-	}
 
 	public String getSrcType() {
 		return this.srcType;
@@ -118,17 +107,6 @@ public class CreateOfficeConversionTaskRequest extends RpcAcsRequest<CreateOffic
 		this.project = project;
 		if(project != null){
 			putQueryParameter("Project", project);
-		}
-	}
-
-	public String getExternalID() {
-		return this.externalID;
-	}
-
-	public void setExternalID(String externalID) {
-		this.externalID = externalID;
-		if(externalID != null){
-			putQueryParameter("ExternalID", externalID);
 		}
 	}
 
@@ -242,6 +220,17 @@ public class CreateOfficeConversionTaskRequest extends RpcAcsRequest<CreateOffic
 		}
 	}
 
+	public Boolean getFitToPagesWide() {
+		return this.fitToPagesWide;
+	}
+
+	public void setFitToPagesWide(Boolean fitToPagesWide) {
+		this.fitToPagesWide = fitToPagesWide;
+		if(fitToPagesWide != null){
+			putQueryParameter("FitToPagesWide", fitToPagesWide.toString());
+		}
+	}
+
 	public String getTgtFilePrefix() {
 		return this.tgtFilePrefix;
 	}
@@ -250,6 +239,17 @@ public class CreateOfficeConversionTaskRequest extends RpcAcsRequest<CreateOffic
 		this.tgtFilePrefix = tgtFilePrefix;
 		if(tgtFilePrefix != null){
 			putQueryParameter("TgtFilePrefix", tgtFilePrefix);
+		}
+	}
+
+	public Boolean getFitToPagesTall() {
+		return this.fitToPagesTall;
+	}
+
+	public void setFitToPagesTall(Boolean fitToPagesTall) {
+		this.fitToPagesTall = fitToPagesTall;
+		if(fitToPagesTall != null){
+			putQueryParameter("FitToPagesTall", fitToPagesTall.toString());
 		}
 	}
 

@@ -24,7 +24,7 @@ public class GetFaceSearchUserResponseUnmarshaller {
 		
 		getFaceSearchUserResponse.setRequestId(context.stringValue("GetFaceSearchUserResponse.RequestId"));
 		getFaceSearchUserResponse.setGroupName(context.stringValue("GetFaceSearchUserResponse.GroupName"));
-		getFaceSearchUserResponse.setCount(context.stringValue("GetFaceSearchUserResponse.Count"));
+		getFaceSearchUserResponse.setCount(context.integerValue("GetFaceSearchUserResponse.Count"));
 		getFaceSearchUserResponse.setStatus(context.stringValue("GetFaceSearchUserResponse.Status"));
 		getFaceSearchUserResponse.setCreateTime(context.stringValue("GetFaceSearchUserResponse.CreateTime"));
 		getFaceSearchUserResponse.setModifyTime(context.stringValue("GetFaceSearchUserResponse.ModifyTime"));

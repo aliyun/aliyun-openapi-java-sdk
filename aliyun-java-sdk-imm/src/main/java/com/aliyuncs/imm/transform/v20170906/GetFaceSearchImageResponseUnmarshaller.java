@@ -32,7 +32,7 @@ public class GetFaceSearchImageResponseUnmarshaller {
 		getFaceSearchImageResponse.setGender(context.stringValue("GetFaceSearchImageResponse.Gender"));
 		getFaceSearchImageResponse.setAge(context.integerValue("GetFaceSearchImageResponse.Age"));
 		getFaceSearchImageResponse.setPitch(context.floatValue("GetFaceSearchImageResponse.Pitch"));
-		getFaceSearchImageResponse.setImageUrl(context.floatValue("GetFaceSearchImageResponse.ImageUrl"));
+		getFaceSearchImageResponse.setImageUri(context.stringValue("GetFaceSearchImageResponse.ImageUri"));
 		getFaceSearchImageResponse.setImageMd5(context.stringValue("GetFaceSearchImageResponse.ImageMd5"));
 		getFaceSearchImageResponse.setRoll(context.floatValue("GetFaceSearchImageResponse.Roll"));
 		getFaceSearchImageResponse.setFaceId(context.stringValue("GetFaceSearchImageResponse.FaceId"));

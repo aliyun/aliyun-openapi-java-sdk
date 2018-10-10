@@ -81,7 +81,7 @@ public class ListFaceSearchGroupImagesResponse extends AcsResponse {
 
 		private String imageId;
 
-		private String imageUrl;
+		private String imageUri;
 
 		private String imageMd5;
 
@@ -121,12 +121,12 @@ public class ListFaceSearchGroupImagesResponse extends AcsResponse {
 			this.imageId = imageId;
 		}
 
-		public String getImageUrl() {
-			return this.imageUrl;
+		public String getImageUri() {
+			return this.imageUri;
 		}
 
-		public void setImageUrl(String imageUrl) {
-			this.imageUrl = imageUrl;
+		public void setImageUri(String imageUri) {
+			this.imageUri = imageUri;
 		}
 
 		public String getImageMd5() {

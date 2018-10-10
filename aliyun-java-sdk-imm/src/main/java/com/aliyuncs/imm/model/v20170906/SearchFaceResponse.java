@@ -27,7 +27,7 @@ public class SearchFaceResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String imageUrl;
+	private String imageUri;
 
 	private String groupName;
 
@@ -36,8 +36,6 @@ public class SearchFaceResponse extends AcsResponse {
 	private Integer hat;
 
 	private Float score;
-
-	private Integer hat1;
 
 	private List<ResultFacesItem> resultFaces;
 
@@ -51,12 +49,12 @@ public class SearchFaceResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getImageUrl() {
-		return this.imageUrl;
+	public String getImageUri() {
+		return this.imageUri;
 	}
 
-	public void setImageUrl(String imageUrl) {
-		this.imageUrl = imageUrl;
+	public void setImageUri(String imageUri) {
+		this.imageUri = imageUri;
 	}
 
 	public String getGroupName() {
@@ -91,14 +89,6 @@ public class SearchFaceResponse extends AcsResponse {
 		this.score = score;
 	}
 
-	public Integer getHat1() {
-		return this.hat1;
-	}
-
-	public void setHat1(Integer hat1) {
-		this.hat1 = hat1;
-	}
-
 	public List<ResultFacesItem> getResultFaces() {
 		return this.resultFaces;
 	}
@@ -125,13 +115,13 @@ public class SearchFaceResponse extends AcsResponse {
 
 		private Float score;
 
-		private String imageUrl;
+		private String imageUri;
 
 		private Integer glasses;
 
 		private Integer hat;
 
-		private List<String> axis2;
+		private List<String> axis1;
 
 		public String getGroupId() {
 			return this.groupId;
@@ -165,12 +155,12 @@ public class SearchFaceResponse extends AcsResponse {
 			this.score = score;
 		}
 
-		public String getImageUrl() {
-			return this.imageUrl;
+		public String getImageUri() {
+			return this.imageUri;
 		}
 
-		public void setImageUrl(String imageUrl) {
-			this.imageUrl = imageUrl;
+		public void setImageUri(String imageUri) {
+			this.imageUri = imageUri;
 		}
 
 		public Integer getGlasses() {
@@ -189,12 +179,12 @@ public class SearchFaceResponse extends AcsResponse {
 			this.hat = hat;
 		}
 
-		public List<String> getAxis2() {
-			return this.axis2;
+		public List<String> getAxis1() {
+			return this.axis1;
 		}
 
-		public void setAxis2(List<String> axis2) {
-			this.axis2 = axis2;
+		public void setAxis1(List<String> axis1) {
+			this.axis1 = axis1;
 		}
 	}
 

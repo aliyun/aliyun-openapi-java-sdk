@@ -59,9 +59,7 @@ public class DetectQRCodesResponse extends AcsResponse {
 
 		private String srcUri;
 
-		private String result;
-
-		private QRCodesRectangle qRCodesRectangle;
+		private List<QRCodesItem> qRCodes;
 
 		public String getSrcUri() {
 			return this.srcUri;
@@ -71,62 +69,77 @@ public class DetectQRCodesResponse extends AcsResponse {
 			this.srcUri = srcUri;
 		}
 
-		public String getResult() {
-			return this.result;
+		public List<QRCodesItem> getQRCodes() {
+			return this.qRCodes;
 		}
 
-		public void setResult(String result) {
-			this.result = result;
+		public void setQRCodes(List<QRCodesItem> qRCodes) {
+			this.qRCodes = qRCodes;
 		}
 
-		public QRCodesRectangle getQRCodesRectangle() {
-			return this.qRCodesRectangle;
-		}
+		public static class QRCodesItem {
 
-		public void setQRCodesRectangle(QRCodesRectangle qRCodesRectangle) {
-			this.qRCodesRectangle = qRCodesRectangle;
-		}
+			private String content;
 
-		public static class QRCodesRectangle {
+			private QRCodesRectangle qRCodesRectangle;
 
-			private Integer left;
-
-			private Integer top;
-
-			private Integer width;
-
-			private Integer height;
-
-			public Integer getLeft() {
-				return this.left;
+			public String getContent() {
+				return this.content;
 			}
 
-			public void setLeft(Integer left) {
-				this.left = left;
+			public void setContent(String content) {
+				this.content = content;
 			}
 
-			public Integer getTop() {
-				return this.top;
+			public QRCodesRectangle getQRCodesRectangle() {
+				return this.qRCodesRectangle;
 			}
 
-			public void setTop(Integer top) {
-				this.top = top;
+			public void setQRCodesRectangle(QRCodesRectangle qRCodesRectangle) {
+				this.qRCodesRectangle = qRCodesRectangle;
 			}
 
-			public Integer getWidth() {
-				return this.width;
-			}
+			public static class QRCodesRectangle {
 
-			public void setWidth(Integer width) {
-				this.width = width;
-			}
+				private String left;
 
-			public Integer getHeight() {
-				return this.height;
-			}
+				private String top;
 
-			public void setHeight(Integer height) {
-				this.height = height;
+				private String width;
+
+				private String height;
+
+				public String getLeft() {
+					return this.left;
+				}
+
+				public void setLeft(String left) {
+					this.left = left;
+				}
+
+				public String getTop() {
+					return this.top;
+				}
+
+				public void setTop(String top) {
+					this.top = top;
+				}
+
+				public String getWidth() {
+					return this.width;
+				}
+
+				public void setWidth(String width) {
+					this.width = width;
+				}
+
+				public String getHeight() {
+					return this.height;
+				}
+
+				public void setHeight(String height) {
+					this.height = height;
+				}
 			}
 		}
 	}
@@ -135,7 +148,9 @@ public class DetectQRCodesResponse extends AcsResponse {
 
 		private String srcUri;
 
-		private String reason;
+		private String errorCode;
+
+		private String errorMessage;
 
 		public String getSrcUri() {
 			return this.srcUri;
@@ -145,12 +160,20 @@ public class DetectQRCodesResponse extends AcsResponse {
 			this.srcUri = srcUri;
 		}
 
-		public String getReason() {
-			return this.reason;
+		public String getErrorCode() {
+			return this.errorCode;
 		}
 
-		public void setReason(String reason) {
-			this.reason = reason;
+		public void setErrorCode(String errorCode) {
+			this.errorCode = errorCode;
+		}
+
+		public String getErrorMessage() {
+			return this.errorMessage;
+		}
+
+		public void setErrorMessage(String errorMessage) {
+			this.errorMessage = errorMessage;
 		}
 	}
 

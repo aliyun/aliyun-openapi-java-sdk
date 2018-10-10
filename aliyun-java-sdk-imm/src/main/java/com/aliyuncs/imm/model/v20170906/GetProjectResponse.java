@@ -14,7 +14,6 @@
 
 package com.aliyuncs.imm.model.v20170906;
 
-import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.imm.transform.v20170906.GetProjectResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -41,9 +40,7 @@ public class GetProjectResponse extends AcsResponse {
 
 	private Integer cU;
 
-	private List<IndexersItem> indexers;
-
-	private List<EnginesItem> engines;
+	private String billingType;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -109,66 +106,12 @@ public class GetProjectResponse extends AcsResponse {
 		this.cU = cU;
 	}
 
-	public List<IndexersItem> getIndexers() {
-		return this.indexers;
+	public String getBillingType() {
+		return this.billingType;
 	}
 
-	public void setIndexers(List<IndexersItem> indexers) {
-		this.indexers = indexers;
-	}
-
-	public List<EnginesItem> getEngines() {
-		return this.engines;
-	}
-
-	public void setEngines(List<EnginesItem> engines) {
-		this.engines = engines;
-	}
-
-	public static class IndexersItem {
-
-		private String name;
-
-		private String status;
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
-
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
-		}
-	}
-
-	public static class EnginesItem {
-
-		private String name;
-
-		private Long jobTtl;
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
-
-		public Long getJobTtl() {
-			return this.jobTtl;
-		}
-
-		public void setJobTtl(Long jobTtl) {
-			this.jobTtl = jobTtl;
-		}
+	public void setBillingType(String billingType) {
+		this.billingType = billingType;
 	}
 
 	@Override

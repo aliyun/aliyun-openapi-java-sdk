@@ -28,12 +28,11 @@ public class SearchFaceResponseUnmarshaller {
 	public static SearchFaceResponse unmarshall(SearchFaceResponse searchFaceResponse, UnmarshallerContext context) {
 		
 		searchFaceResponse.setRequestId(context.stringValue("SearchFaceResponse.RequestId"));
-		searchFaceResponse.setImageUrl(context.stringValue("SearchFaceResponse.ImageUrl"));
+		searchFaceResponse.setImageUri(context.stringValue("SearchFaceResponse.ImageUri"));
 		searchFaceResponse.setGroupName(context.stringValue("SearchFaceResponse.GroupName"));
 		searchFaceResponse.setGlasses(context.integerValue("SearchFaceResponse.Glasses"));
 		searchFaceResponse.setHat(context.integerValue("SearchFaceResponse.Hat"));
 		searchFaceResponse.setScore(context.floatValue("SearchFaceResponse.Score"));
-		searchFaceResponse.setHat1(context.integerValue("SearchFaceResponse.Hat"));
 
 		List<String> axis = new ArrayList<String>();
 		for (int i = 0; i < context.lengthValue("SearchFaceResponse.Axis.Length"); i++) {
@@ -48,15 +47,15 @@ public class SearchFaceResponseUnmarshaller {
 			resultFacesItem.setUser(context.stringValue("SearchFaceResponse.ResultFaces["+ i +"].User"));
 			resultFacesItem.setImageId(context.stringValue("SearchFaceResponse.ResultFaces["+ i +"].ImageId"));
 			resultFacesItem.setScore(context.floatValue("SearchFaceResponse.ResultFaces["+ i +"].Score"));
-			resultFacesItem.setImageUrl(context.stringValue("SearchFaceResponse.ResultFaces["+ i +"].ImageUrl"));
+			resultFacesItem.setImageUri(context.stringValue("SearchFaceResponse.ResultFaces["+ i +"].ImageUri"));
 			resultFacesItem.setGlasses(context.integerValue("SearchFaceResponse.ResultFaces["+ i +"].Glasses"));
 			resultFacesItem.setHat(context.integerValue("SearchFaceResponse.ResultFaces["+ i +"].Hat"));
 
-			List<String> axis2 = new ArrayList<String>();
+			List<String> axis1 = new ArrayList<String>();
 			for (int j = 0; j < context.lengthValue("SearchFaceResponse.ResultFaces["+ i +"].Axis.Length"); j++) {
-				axis2.add(context.stringValue("SearchFaceResponse.ResultFaces["+ i +"].Axis["+ j +"]"));
+				axis1.add(context.stringValue("SearchFaceResponse.ResultFaces["+ i +"].Axis["+ j +"]"));
 			}
-			resultFacesItem.setAxis2(axis2);
+			resultFacesItem.setAxis1(axis1);
 
 			resultFaces.add(resultFacesItem);
 		}

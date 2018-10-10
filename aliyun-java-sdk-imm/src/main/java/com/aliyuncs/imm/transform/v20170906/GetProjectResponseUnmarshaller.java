@@ -14,13 +14,7 @@
 
 package com.aliyuncs.imm.transform.v20170906;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.aliyuncs.imm.model.v20170906.GetProjectResponse;
-import com.aliyuncs.imm.model.v20170906.GetProjectResponse.EnginesItem;
-import com.aliyuncs.imm.model.v20170906.GetProjectResponse.IndexersItem;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -36,26 +30,7 @@ public class GetProjectResponseUnmarshaller {
 		getProjectResponse.setModifyTime(context.stringValue("GetProjectResponse.ModifyTime"));
 		getProjectResponse.setType(context.stringValue("GetProjectResponse.Type"));
 		getProjectResponse.setCU(context.integerValue("GetProjectResponse.CU"));
-
-		List<IndexersItem> indexers = new ArrayList<IndexersItem>();
-		for (int i = 0; i < context.lengthValue("GetProjectResponse.Indexers.Length"); i++) {
-			IndexersItem indexersItem = new IndexersItem();
-			indexersItem.setName(context.stringValue("GetProjectResponse.Indexers["+ i +"].Name"));
-			indexersItem.setStatus(context.stringValue("GetProjectResponse.Indexers["+ i +"].Status"));
-
-			indexers.add(indexersItem);
-		}
-		getProjectResponse.setIndexers(indexers);
-
-		List<EnginesItem> engines = new ArrayList<EnginesItem>();
-		for (int i = 0; i < context.lengthValue("GetProjectResponse.Engines.Length"); i++) {
-			EnginesItem enginesItem = new EnginesItem();
-			enginesItem.setName(context.stringValue("GetProjectResponse.Engines["+ i +"].Name"));
-			enginesItem.setJobTtl(context.longValue("GetProjectResponse.Engines["+ i +"].JobTtl"));
-
-			engines.add(enginesItem);
-		}
-		getProjectResponse.setEngines(engines);
+		getProjectResponse.setBillingType(context.stringValue("GetProjectResponse.BillingType"));
 	 
 	 	return getProjectResponse;
 	}

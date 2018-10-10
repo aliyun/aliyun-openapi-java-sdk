@@ -28,14 +28,14 @@ public class RegistFaceResponseUnmarshaller {
 		
 		registFaceResponse.setRequestId(context.stringValue("RegistFaceResponse.RequestId"));
 		registFaceResponse.setGroupId(context.stringValue("RegistFaceResponse.GroupId"));
-		registFaceResponse.setImageUrl(context.stringValue("RegistFaceResponse.ImageUrl"));
+		registFaceResponse.setImageUri(context.stringValue("RegistFaceResponse.ImageUri"));
 		registFaceResponse.setImageMd5(context.stringValue("RegistFaceResponse.ImageMd5"));
 		registFaceResponse.setImageId(context.stringValue("RegistFaceResponse.ImageId"));
 		registFaceResponse.setGroupName(context.stringValue("RegistFaceResponse.GroupName"));
 		registFaceResponse.setUser(context.stringValue("RegistFaceResponse.User"));
 		registFaceResponse.setRoll(context.floatValue("RegistFaceResponse.Roll"));
 		registFaceResponse.setFaceId(context.stringValue("RegistFaceResponse.FaceId"));
-		registFaceResponse.setYaw(context.stringValue("RegistFaceResponse.Yaw"));
+		registFaceResponse.setYaw(context.floatValue("RegistFaceResponse.Yaw"));
 		registFaceResponse.setQuality(context.floatValue("RegistFaceResponse.Quality"));
 		registFaceResponse.setGlasses(context.integerValue("RegistFaceResponse.Glasses"));
 		registFaceResponse.setHat(context.integerValue("RegistFaceResponse.Hat"));

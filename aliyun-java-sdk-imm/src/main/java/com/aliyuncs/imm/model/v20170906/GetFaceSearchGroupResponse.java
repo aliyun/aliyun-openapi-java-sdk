@@ -28,7 +28,7 @@ public class GetFaceSearchGroupResponse extends AcsResponse {
 
 	private String groupName;
 
-	private String count;
+	private Integer count;
 
 	private String status;
 
@@ -54,11 +54,11 @@ public class GetFaceSearchGroupResponse extends AcsResponse {
 		this.groupName = groupName;
 	}
 
-	public String getCount() {
+	public Integer getCount() {
 		return this.count;
 	}
 
-	public void setCount(String count) {
+	public void setCount(Integer count) {
 		this.count = count;
 	}
 

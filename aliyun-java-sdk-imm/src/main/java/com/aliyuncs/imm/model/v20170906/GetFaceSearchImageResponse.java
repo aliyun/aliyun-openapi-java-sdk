@@ -37,7 +37,7 @@ public class GetFaceSearchImageResponse extends AcsResponse {
 
 	private Float pitch;
 
-	private Float imageUrl;
+	private String imageUri;
 
 	private String imageMd5;
 
@@ -107,12 +107,12 @@ public class GetFaceSearchImageResponse extends AcsResponse {
 		this.pitch = pitch;
 	}
 
-	public Float getImageUrl() {
-		return this.imageUrl;
+	public String getImageUri() {
+		return this.imageUri;
 	}
 
-	public void setImageUrl(Float imageUrl) {
-		this.imageUrl = imageUrl;
+	public void setImageUri(String imageUri) {
+		this.imageUri = imageUri;
 	}
 
 	public String getImageMd5() {

@@ -1,3 +1,9 @@
+2018-10-10 Version: 1.8.0
+1, add UpdateProject api, support update CU, ServiceRole
+2, PutProject not support edit
+3, CreateOfficeConversionTask api now supports FitToPagesTall, FitToPagesWide
+4, Remove paramater Engines, Indexers from project apis
+
 2018-08-24 Version: 1.7.4
 1, Add api: DetectQRCode
 

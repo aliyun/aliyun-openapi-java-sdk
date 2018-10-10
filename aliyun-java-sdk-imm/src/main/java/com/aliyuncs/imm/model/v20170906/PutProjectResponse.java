@@ -14,7 +14,6 @@
 
 package com.aliyuncs.imm.model.v20170906;
 
-import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.imm.transform.v20170906.PutProjectResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -39,9 +38,9 @@ public class PutProjectResponse extends AcsResponse {
 
 	private String type;
 
-	private List<EnginesItem> engines;
+	private String endpoint;
 
-	private List<IndexersItem> indexers;
+	private String billingType;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -99,66 +98,20 @@ public class PutProjectResponse extends AcsResponse {
 		this.type = type;
 	}
 
-	public List<EnginesItem> getEngines() {
-		return this.engines;
+	public String getEndpoint() {
+		return this.endpoint;
 	}
 
-	public void setEngines(List<EnginesItem> engines) {
-		this.engines = engines;
+	public void setEndpoint(String endpoint) {
+		this.endpoint = endpoint;
 	}
 
-	public List<IndexersItem> getIndexers() {
-		return this.indexers;
+	public String getBillingType() {
+		return this.billingType;
 	}
 
-	public void setIndexers(List<IndexersItem> indexers) {
-		this.indexers = indexers;
-	}
-
-	public static class EnginesItem {
-
-		private String name;
-
-		private Long jobTtl;
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
-
-		public Long getJobTtl() {
-			return this.jobTtl;
-		}
-
-		public void setJobTtl(Long jobTtl) {
-			this.jobTtl = jobTtl;
-		}
-	}
-
-	public static class IndexersItem {
-
-		private String name;
-
-		private String status;
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
-
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
-		}
+	public void setBillingType(String billingType) {
+		this.billingType = billingType;
 	}
 
 	@Override

@@ -26,28 +26,15 @@ public class PutProjectRequest extends RpcAcsRequest<PutProjectResponse> {
 		super("imm", "2017-09-06", "PutProject", "imm");
 	}
 
-	private String indexers;
-
 	private Integer cU;
-
-	private String engines;
 
 	private String serviceRole;
 
 	private String project;
 
+	private String billingType;
+
 	private String type;
-
-	public String getIndexers() {
-		return this.indexers;
-	}
-
-	public void setIndexers(String indexers) {
-		this.indexers = indexers;
-		if(indexers != null){
-			putQueryParameter("Indexers", indexers);
-		}
-	}
 
 	public Integer getCU() {
 		return this.cU;
@@ -57,17 +44,6 @@ public class PutProjectRequest extends RpcAcsRequest<PutProjectResponse> {
 		this.cU = cU;
 		if(cU != null){
 			putQueryParameter("CU", cU.toString());
-		}
-	}
-
-	public String getEngines() {
-		return this.engines;
-	}
-
-	public void setEngines(String engines) {
-		this.engines = engines;
-		if(engines != null){
-			putQueryParameter("Engines", engines);
 		}
 	}
 
@@ -90,6 +66,17 @@ public class PutProjectRequest extends RpcAcsRequest<PutProjectResponse> {
 		this.project = project;
 		if(project != null){
 			putQueryParameter("Project", project);
+		}
+	}
+
+	public String getBillingType() {
+		return this.billingType;
+	}
+
+	public void setBillingType(String billingType) {
+		this.billingType = billingType;
+		if(billingType != null){
+			putQueryParameter("BillingType", billingType);
 		}
 	}
 

@@ -19,8 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.imm.model.v20170906.ListProjectsResponse;
 import com.aliyuncs.imm.model.v20170906.ListProjectsResponse.ProjectsItem;
-import com.aliyuncs.imm.model.v20170906.ListProjectsResponse.ProjectsItem.EnginesItem;
-import com.aliyuncs.imm.model.v20170906.ListProjectsResponse.ProjectsItem.IndexersItem;
 import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -42,26 +40,7 @@ public class ListProjectsResponseUnmarshaller {
 			projectsItem.setModifyTime(context.stringValue("ListProjectsResponse.Projects["+ i +"].ModifyTime"));
 			projectsItem.setCU(context.integerValue("ListProjectsResponse.Projects["+ i +"].CU"));
 			projectsItem.setType(context.stringValue("ListProjectsResponse.Projects["+ i +"].Type"));
-
-			List<EnginesItem> engines = new ArrayList<EnginesItem>();
-			for (int j = 0; j < context.lengthValue("ListProjectsResponse.Projects["+ i +"].Engines.Length"); j++) {
-				EnginesItem enginesItem = new EnginesItem();
-				enginesItem.setName(context.stringValue("ListProjectsResponse.Projects["+ i +"].Engines["+ j +"].Name"));
-				enginesItem.setJobTtl(context.longValue("ListProjectsResponse.Projects["+ i +"].Engines["+ j +"].JobTtl"));
-
-				engines.add(enginesItem);
-			}
-			projectsItem.setEngines(engines);
-
-			List<IndexersItem> indexers = new ArrayList<IndexersItem>();
-			for (int j = 0; j < context.lengthValue("ListProjectsResponse.Projects["+ i +"].Indexers.Length"); j++) {
-				IndexersItem indexersItem = new IndexersItem();
-				indexersItem.setName(context.stringValue("ListProjectsResponse.Projects["+ i +"].Indexers["+ j +"].Name"));
-				indexersItem.setStatus(context.stringValue("ListProjectsResponse.Projects["+ i +"].Indexers["+ j +"].Status"));
-
-				indexers.add(indexersItem);
-			}
-			projectsItem.setIndexers(indexers);
+			projectsItem.setBillingType(context.stringValue("ListProjectsResponse.Projects["+ i +"].BillingType"));
 
 			projects.add(projectsItem);
 		}

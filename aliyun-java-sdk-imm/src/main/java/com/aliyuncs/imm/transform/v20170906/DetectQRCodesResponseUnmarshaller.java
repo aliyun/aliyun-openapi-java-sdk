@@ -20,7 +20,8 @@ import java.util.List;
 import com.aliyuncs.imm.model.v20170906.DetectQRCodesResponse;
 import com.aliyuncs.imm.model.v20170906.DetectQRCodesResponse.FailDetailsItem;
 import com.aliyuncs.imm.model.v20170906.DetectQRCodesResponse.SuccessDetailsItem;
-import com.aliyuncs.imm.model.v20170906.DetectQRCodesResponse.SuccessDetailsItem.QRCodesRectangle;
+import com.aliyuncs.imm.model.v20170906.DetectQRCodesResponse.SuccessDetailsItem.QRCodesItem;
+import com.aliyuncs.imm.model.v20170906.DetectQRCodesResponse.SuccessDetailsItem.QRCodesItem.QRCodesRectangle;
 import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -35,14 +36,22 @@ public class DetectQRCodesResponseUnmarshaller {
 		for (int i = 0; i < context.lengthValue("DetectQRCodesResponse.SuccessDetails.Length"); i++) {
 			SuccessDetailsItem successDetailsItem = new SuccessDetailsItem();
 			successDetailsItem.setSrcUri(context.stringValue("DetectQRCodesResponse.SuccessDetails["+ i +"].SrcUri"));
-			successDetailsItem.setResult(context.stringValue("DetectQRCodesResponse.SuccessDetails["+ i +"].Result"));
 
-			QRCodesRectangle qRCodesRectangle = new QRCodesRectangle();
-			qRCodesRectangle.setLeft(context.integerValue("DetectQRCodesResponse.SuccessDetails["+ i +"].QRCodesRectangle.Left"));
-			qRCodesRectangle.setTop(context.integerValue("DetectQRCodesResponse.SuccessDetails["+ i +"].QRCodesRectangle.Top"));
-			qRCodesRectangle.setWidth(context.integerValue("DetectQRCodesResponse.SuccessDetails["+ i +"].QRCodesRectangle.Width"));
-			qRCodesRectangle.setHeight(context.integerValue("DetectQRCodesResponse.SuccessDetails["+ i +"].QRCodesRectangle.Height"));
-			successDetailsItem.setQRCodesRectangle(qRCodesRectangle);
+			List<QRCodesItem> qRCodes = new ArrayList<QRCodesItem>();
+			for (int j = 0; j < context.lengthValue("DetectQRCodesResponse.SuccessDetails["+ i +"].QRCodes.Length"); j++) {
+				QRCodesItem qRCodesItem = new QRCodesItem();
+				qRCodesItem.setContent(context.stringValue("DetectQRCodesResponse.SuccessDetails["+ i +"].QRCodes["+ j +"].Content"));
+
+				QRCodesRectangle qRCodesRectangle = new QRCodesRectangle();
+				qRCodesRectangle.setLeft(context.stringValue("DetectQRCodesResponse.SuccessDetails["+ i +"].QRCodes["+ j +"].QRCodesRectangle.Left"));
+				qRCodesRectangle.setTop(context.stringValue("DetectQRCodesResponse.SuccessDetails["+ i +"].QRCodes["+ j +"].QRCodesRectangle.Top"));
+				qRCodesRectangle.setWidth(context.stringValue("DetectQRCodesResponse.SuccessDetails["+ i +"].QRCodes["+ j +"].QRCodesRectangle.Width"));
+				qRCodesRectangle.setHeight(context.stringValue("DetectQRCodesResponse.SuccessDetails["+ i +"].QRCodes["+ j +"].QRCodesRectangle.Height"));
+				qRCodesItem.setQRCodesRectangle(qRCodesRectangle);
+
+				qRCodes.add(qRCodesItem);
+			}
+			successDetailsItem.setQRCodes(qRCodes);
 
 			successDetails.add(successDetailsItem);
 		}
@@ -52,7 +61,8 @@ public class DetectQRCodesResponseUnmarshaller {
 		for (int i = 0; i < context.lengthValue("DetectQRCodesResponse.FailDetails.Length"); i++) {
 			FailDetailsItem failDetailsItem = new FailDetailsItem();
 			failDetailsItem.setSrcUri(context.stringValue("DetectQRCodesResponse.FailDetails["+ i +"].SrcUri"));
-			failDetailsItem.setReason(context.stringValue("DetectQRCodesResponse.FailDetails["+ i +"].Reason"));
+			failDetailsItem.setErrorCode(context.stringValue("DetectQRCodesResponse.FailDetails["+ i +"].ErrorCode"));
+			failDetailsItem.setErrorMessage(context.stringValue("DetectQRCodesResponse.FailDetails["+ i +"].ErrorMessage"));
 
 			failDetails.add(failDetailsItem);
 		}

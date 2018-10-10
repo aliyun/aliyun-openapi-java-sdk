@@ -37,7 +37,7 @@ public class ListFaceSearchGroupImagesResponseUnmarshaller {
 			ImagesItem imagesItem = new ImagesItem();
 			imagesItem.setUser(context.stringValue("ListFaceSearchGroupImagesResponse.Images["+ i +"].User"));
 			imagesItem.setImageId(context.stringValue("ListFaceSearchGroupImagesResponse.Images["+ i +"].ImageId"));
-			imagesItem.setImageUrl(context.stringValue("ListFaceSearchGroupImagesResponse.Images["+ i +"].ImageUrl"));
+			imagesItem.setImageUri(context.stringValue("ListFaceSearchGroupImagesResponse.Images["+ i +"].ImageUri"));
 			imagesItem.setImageMd5(context.stringValue("ListFaceSearchGroupImagesResponse.Images["+ i +"].ImageMd5"));
 			imagesItem.setRoll(context.floatValue("ListFaceSearchGroupImagesResponse.Images["+ i +"].Roll"));
 			imagesItem.setFaceId(context.stringValue("ListFaceSearchGroupImagesResponse.Images["+ i +"].FaceId"));

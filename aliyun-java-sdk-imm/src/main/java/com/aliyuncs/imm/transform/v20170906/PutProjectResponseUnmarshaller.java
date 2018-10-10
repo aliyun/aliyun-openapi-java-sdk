@@ -14,13 +14,7 @@
 
 package com.aliyuncs.imm.transform.v20170906;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.aliyuncs.imm.model.v20170906.PutProjectResponse;
-import com.aliyuncs.imm.model.v20170906.PutProjectResponse.EnginesItem;
-import com.aliyuncs.imm.model.v20170906.PutProjectResponse.IndexersItem;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -35,26 +29,8 @@ public class PutProjectResponseUnmarshaller {
 		putProjectResponse.setServiceRole(context.stringValue("PutProjectResponse.ServiceRole"));
 		putProjectResponse.setCU(context.integerValue("PutProjectResponse.CU"));
 		putProjectResponse.setType(context.stringValue("PutProjectResponse.Type"));
-
-		List<EnginesItem> engines = new ArrayList<EnginesItem>();
-		for (int i = 0; i < context.lengthValue("PutProjectResponse.Engines.Length"); i++) {
-			EnginesItem enginesItem = new EnginesItem();
-			enginesItem.setName(context.stringValue("PutProjectResponse.Engines["+ i +"].Name"));
-			enginesItem.setJobTtl(context.longValue("PutProjectResponse.Engines["+ i +"].JobTtl"));
-
-			engines.add(enginesItem);
-		}
-		putProjectResponse.setEngines(engines);
-
-		List<IndexersItem> indexers = new ArrayList<IndexersItem>();
-		for (int i = 0; i < context.lengthValue("PutProjectResponse.Indexers.Length"); i++) {
-			IndexersItem indexersItem = new IndexersItem();
-			indexersItem.setName(context.stringValue("PutProjectResponse.Indexers["+ i +"].Name"));
-			indexersItem.setStatus(context.stringValue("PutProjectResponse.Indexers["+ i +"].Status"));
-
-			indexers.add(indexersItem);
-		}
-		putProjectResponse.setIndexers(indexers);
+		putProjectResponse.setEndpoint(context.stringValue("PutProjectResponse.Endpoint"));
+		putProjectResponse.setBillingType(context.stringValue("PutProjectResponse.BillingType"));
 	 
 	 	return putProjectResponse;
 	}

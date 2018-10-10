@@ -37,7 +37,7 @@ public class CompareFaceResponseUnmarshaller {
 			compareResultItem.setSimilarity(context.floatValue("CompareFaceResponse.CompareResult["+ i +"].Similarity"));
 
 			FaceA faceA = new FaceA();
-			faceA.setImageUrl(context.stringValue("CompareFaceResponse.CompareResult["+ i +"].FaceA.ImageUrl"));
+			faceA.setImageUri(context.stringValue("CompareFaceResponse.CompareResult["+ i +"].FaceA.ImageUri"));
 
 			List<String> axis = new ArrayList<String>();
 			for (int j = 0; j < context.lengthValue("CompareFaceResponse.CompareResult["+ i +"].FaceA.Axis.Length"); j++) {
@@ -47,7 +47,7 @@ public class CompareFaceResponseUnmarshaller {
 			compareResultItem.setFaceA(faceA);
 
 			FaceB faceB = new FaceB();
-			faceB.setImageUrl(context.stringValue("CompareFaceResponse.CompareResult["+ i +"].FaceB.ImageUrl"));
+			faceB.setImageUri(context.stringValue("CompareFaceResponse.CompareResult["+ i +"].FaceB.ImageUri"));
 
 			List<String> axis1 = new ArrayList<String>();
 			for (int j = 0; j < context.lengthValue("CompareFaceResponse.CompareResult["+ i +"].FaceB.Axis.Length"); j++) {

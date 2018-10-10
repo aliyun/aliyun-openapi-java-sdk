@@ -15,30 +15,28 @@
 package com.aliyuncs.imm.model.v20170906;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.imm.transform.v20170906.GetFaceSearchUserResponseUnmarshaller;
+import com.aliyuncs.imm.transform.v20170906.UpdateProjectResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class GetFaceSearchUserResponse extends AcsResponse {
+public class UpdateProjectResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String groupName;
-
-	private Integer count;
-
-	private String status;
+	private String project;
 
 	private String createTime;
 
 	private String modifyTime;
 
-	private String groupId;
+	private String serviceRole;
 
-	private String user;
+	private Integer cU;
+
+	private String type;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -48,28 +46,12 @@ public class GetFaceSearchUserResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getGroupName() {
-		return this.groupName;
+	public String getProject() {
+		return this.project;
 	}
 
-	public void setGroupName(String groupName) {
-		this.groupName = groupName;
-	}
-
-	public Integer getCount() {
-		return this.count;
-	}
-
-	public void setCount(Integer count) {
-		this.count = count;
-	}
-
-	public String getStatus() {
-		return this.status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
+	public void setProject(String project) {
+		this.project = project;
 	}
 
 	public String getCreateTime() {
@@ -88,25 +70,33 @@ public class GetFaceSearchUserResponse extends AcsResponse {
 		this.modifyTime = modifyTime;
 	}
 
-	public String getGroupId() {
-		return this.groupId;
+	public String getServiceRole() {
+		return this.serviceRole;
 	}
 
-	public void setGroupId(String groupId) {
-		this.groupId = groupId;
+	public void setServiceRole(String serviceRole) {
+		this.serviceRole = serviceRole;
 	}
 
-	public String getUser() {
-		return this.user;
+	public Integer getCU() {
+		return this.cU;
 	}
 
-	public void setUser(String user) {
-		this.user = user;
+	public void setCU(Integer cU) {
+		this.cU = cU;
+	}
+
+	public String getType() {
+		return this.type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
 	}
 
 	@Override
-	public GetFaceSearchUserResponse getInstance(UnmarshallerContext context) {
-		return	GetFaceSearchUserResponseUnmarshaller.unmarshall(this, context);
+	public UpdateProjectResponse getInstance(UnmarshallerContext context) {
+		return	UpdateProjectResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

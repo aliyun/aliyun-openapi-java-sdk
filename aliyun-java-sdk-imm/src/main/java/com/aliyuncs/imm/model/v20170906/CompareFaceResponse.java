@@ -79,16 +79,16 @@ public class CompareFaceResponse extends AcsResponse {
 
 		public static class FaceA {
 
-			private String imageUrl;
+			private String imageUri;
 
 			private List<String> axis;
 
-			public String getImageUrl() {
-				return this.imageUrl;
+			public String getImageUri() {
+				return this.imageUri;
 			}
 
-			public void setImageUrl(String imageUrl) {
-				this.imageUrl = imageUrl;
+			public void setImageUri(String imageUri) {
+				this.imageUri = imageUri;
 			}
 
 			public List<String> getAxis() {
@@ -102,16 +102,16 @@ public class CompareFaceResponse extends AcsResponse {
 
 		public static class FaceB {
 
-			private String imageUrl;
+			private String imageUri;
 
 			private List<String> axis1;
 
-			public String getImageUrl() {
-				return this.imageUrl;
+			public String getImageUri() {
+				return this.imageUri;
 			}
 
-			public void setImageUrl(String imageUrl) {
-				this.imageUrl = imageUrl;
+			public void setImageUri(String imageUri) {
+				this.imageUri = imageUri;
 			}
 
 			public List<String> getAxis1() {
