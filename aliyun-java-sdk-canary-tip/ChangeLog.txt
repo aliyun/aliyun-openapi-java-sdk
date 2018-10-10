@@ -1,3 +1,8 @@
+2018-10-10 Version: 1.0.4
+1, This is an example of release-log.
+2, Please strictly follow this format to edit in English.
+3, Format：Number + , + Space + Description
+
 2018-10-10 Version: 1.0.3
 1, This is an example of release-log.
 2, Please strictly follow this format to edit in English.

@@ -15,6 +15,7 @@
 package com.aliyuncs.canary_tip.model.v20181009;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
@@ -24,6 +25,7 @@ public class SayHelloRequest extends RpcAcsRequest<SayHelloResponse> {
 	
 	public SayHelloRequest() {
 		super("canary-tip", "2018-10-09", "SayHello");
+		setMethod(MethodType.POST);
 	}
 
 	private String name;
