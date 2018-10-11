@@ -20,23 +20,21 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class GetVideoPlayAuthRequest extends RpcAcsRequest<GetVideoPlayAuthResponse> {
+public class DeleteMezzaninesRequest extends RpcAcsRequest<DeleteMezzaninesResponse> {
 	
-	public GetVideoPlayAuthRequest() {
-		super("vod", "2017-03-21", "GetVideoPlayAuth", "vod");
+	public DeleteMezzaninesRequest() {
+		super("vod", "2017-03-21", "DeleteMezzanines", "vod");
 	}
 
 	private Long resourceOwnerId;
 
 	private String resourceOwnerAccount;
 
-	private String playConfig;
-
-	private Long authInfoTimeout;
-
-	private String videoId;
+	private Boolean force;
 
 	private Long ownerId;
+
+	private String videoIds;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -60,36 +58,14 @@ public class GetVideoPlayAuthRequest extends RpcAcsRequest<GetVideoPlayAuthRespo
 		}
 	}
 
-	public String getPlayConfig() {
-		return this.playConfig;
+	public Boolean getForce() {
+		return this.force;
 	}
 
-	public void setPlayConfig(String playConfig) {
-		this.playConfig = playConfig;
-		if(playConfig != null){
-			putQueryParameter("PlayConfig", playConfig);
-		}
-	}
-
-	public Long getAuthInfoTimeout() {
-		return this.authInfoTimeout;
-	}
-
-	public void setAuthInfoTimeout(Long authInfoTimeout) {
-		this.authInfoTimeout = authInfoTimeout;
-		if(authInfoTimeout != null){
-			putQueryParameter("AuthInfoTimeout", authInfoTimeout.toString());
-		}
-	}
-
-	public String getVideoId() {
-		return this.videoId;
-	}
-
-	public void setVideoId(String videoId) {
-		this.videoId = videoId;
-		if(videoId != null){
-			putQueryParameter("VideoId", videoId);
+	public void setForce(Boolean force) {
+		this.force = force;
+		if(force != null){
+			putQueryParameter("Force", force.toString());
 		}
 	}
 
@@ -104,9 +80,20 @@ public class GetVideoPlayAuthRequest extends RpcAcsRequest<GetVideoPlayAuthRespo
 		}
 	}
 
+	public String getVideoIds() {
+		return this.videoIds;
+	}
+
+	public void setVideoIds(String videoIds) {
+		this.videoIds = videoIds;
+		if(videoIds != null){
+			putQueryParameter("VideoIds", videoIds);
+		}
+	}
+
 	@Override
-	public Class<GetVideoPlayAuthResponse> getResponseClass() {
-		return GetVideoPlayAuthResponse.class;
+	public Class<DeleteMezzaninesResponse> getResponseClass() {
+		return DeleteMezzaninesResponse.class;
 	}
 
 }

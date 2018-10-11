@@ -32,6 +32,7 @@ public class GetPlayInfoResponseUnmarshaller {
 		getPlayInfoResponse.setRequestId(context.stringValue("GetPlayInfoResponse.RequestId"));
 
 		VideoBase videoBase = new VideoBase();
+		videoBase.setOutputType(context.stringValue("GetPlayInfoResponse.VideoBase.OutputType"));
 		videoBase.setCoverURL(context.stringValue("GetPlayInfoResponse.VideoBase.CoverURL"));
 		videoBase.setDuration(context.stringValue("GetPlayInfoResponse.VideoBase.Duration"));
 		videoBase.setStatus(context.stringValue("GetPlayInfoResponse.VideoBase.Status"));

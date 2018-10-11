@@ -1,3 +1,8 @@
+2018-10-11 Version: 2.11.6
+1, Add a new api called DeleteMezzanines to clear mezzanine infos and storages.
+2, Add the field called PlayConfig to GetVideoPlayAuth and GetPlayInfo api request.
+3, Add a new api called UpdateImageInfos to update image information.
+
 2018-08-17 Version: 2.11.5
 1, Add a new api called DeleteImage to clear the image resource.
 2, Add the field called AdditionType and OutputType to GetMezzanineInfo api request.

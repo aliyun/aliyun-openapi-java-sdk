@@ -46,11 +46,25 @@ public class GetAuditResultResponse extends AcsResponse {
 
 	public static class AIAuditResult {
 
+		private String abnormalModules;
+
 		private String label;
+
+		private String pornResult;
 
 		private String terrorismResult;
 
-		private String pornResult;
+		private String titleResult;
+
+		private String coverResult;
+
+		public String getAbnormalModules() {
+			return this.abnormalModules;
+		}
+
+		public void setAbnormalModules(String abnormalModules) {
+			this.abnormalModules = abnormalModules;
+		}
 
 		public String getLabel() {
 			return this.label;
@@ -58,6 +72,14 @@ public class GetAuditResultResponse extends AcsResponse {
 
 		public void setLabel(String label) {
 			this.label = label;
+		}
+
+		public String getPornResult() {
+			return this.pornResult;
+		}
+
+		public void setPornResult(String pornResult) {
+			this.pornResult = pornResult;
 		}
 
 		public String getTerrorismResult() {
@@ -68,17 +90,30 @@ public class GetAuditResultResponse extends AcsResponse {
 			this.terrorismResult = terrorismResult;
 		}
 
-		public String getPornResult() {
-			return this.pornResult;
+		public String getTitleResult() {
+			return this.titleResult;
 		}
 
-		public void setPornResult(String pornResult) {
-			this.pornResult = pornResult;
+		public void setTitleResult(String titleResult) {
+			this.titleResult = titleResult;
+		}
+
+		public String getCoverResult() {
+			return this.coverResult;
+		}
+
+		public void setCoverResult(String coverResult) {
+			this.coverResult = coverResult;
 		}
 	}
 
 	@Override
 	public GetAuditResultResponse getInstance(UnmarshallerContext context) {
 		return	GetAuditResultResponseUnmarshaller.unmarshall(this, context);
+	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }

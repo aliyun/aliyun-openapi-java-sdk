@@ -271,6 +271,8 @@ public class GetPlayInfoResponse extends AcsResponse {
 
 	public static class VideoBase {
 
+		private String outputType;
+
 		private String coverURL;
 
 		private String duration;
@@ -288,6 +290,14 @@ public class GetPlayInfoResponse extends AcsResponse {
 		private String transcodeMode;
 
 		private List<Thumbnail> thumbnailList;
+
+		public String getOutputType() {
+			return this.outputType;
+		}
+
+		public void setOutputType(String outputType) {
+			this.outputType = outputType;
+		}
 
 		public String getCoverURL() {
 			return this.coverURL;

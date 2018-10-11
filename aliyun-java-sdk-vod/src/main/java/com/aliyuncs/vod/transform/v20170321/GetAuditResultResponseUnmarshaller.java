@@ -26,9 +26,12 @@ public class GetAuditResultResponseUnmarshaller {
 		getAuditResultResponse.setRequestId(context.stringValue("GetAuditResultResponse.RequestId"));
 
 		AIAuditResult aIAuditResult = new AIAuditResult();
+		aIAuditResult.setAbnormalModules(context.stringValue("GetAuditResultResponse.AIAuditResult.AbnormalModules"));
 		aIAuditResult.setLabel(context.stringValue("GetAuditResultResponse.AIAuditResult.Label"));
-		aIAuditResult.setTerrorismResult(context.stringValue("GetAuditResultResponse.AIAuditResult.TerrorismResult"));
 		aIAuditResult.setPornResult(context.stringValue("GetAuditResultResponse.AIAuditResult.PornResult"));
+		aIAuditResult.setTerrorismResult(context.stringValue("GetAuditResultResponse.AIAuditResult.TerrorismResult"));
+		aIAuditResult.setTitleResult(context.stringValue("GetAuditResultResponse.AIAuditResult.TitleResult"));
+		aIAuditResult.setCoverResult(context.stringValue("GetAuditResultResponse.AIAuditResult.CoverResult"));
 		getAuditResultResponse.setAIAuditResult(aIAuditResult);
 	 
 	 	return getAuditResultResponse;

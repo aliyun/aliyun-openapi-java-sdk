@@ -48,6 +48,8 @@ public class GetPlayInfoRequest extends RpcAcsRequest<GetPlayInfoResponse> {
 
 	private String reAuthInfo;
 
+	private String playConfig;
+
 	private String outputType;
 
 	private String definition;
@@ -174,6 +176,17 @@ public class GetPlayInfoRequest extends RpcAcsRequest<GetPlayInfoResponse> {
 		this.reAuthInfo = reAuthInfo;
 		if(reAuthInfo != null){
 			putQueryParameter("ReAuthInfo", reAuthInfo);
+		}
+	}
+
+	public String getPlayConfig() {
+		return this.playConfig;
+	}
+
+	public void setPlayConfig(String playConfig) {
+		this.playConfig = playConfig;
+		if(playConfig != null){
+			putQueryParameter("PlayConfig", playConfig);
 		}
 	}
 

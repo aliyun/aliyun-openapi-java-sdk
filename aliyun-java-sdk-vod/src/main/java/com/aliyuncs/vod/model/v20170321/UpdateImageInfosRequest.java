@@ -20,21 +20,19 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class GetVideoPlayAuthRequest extends RpcAcsRequest<GetVideoPlayAuthResponse> {
+public class UpdateImageInfosRequest extends RpcAcsRequest<UpdateImageInfosResponse> {
 	
-	public GetVideoPlayAuthRequest() {
-		super("vod", "2017-03-21", "GetVideoPlayAuth", "vod");
+	public UpdateImageInfosRequest() {
+		super("vod", "2017-03-21", "UpdateImageInfos", "vod");
 	}
 
 	private Long resourceOwnerId;
 
+	private String updateContent;
+
 	private String resourceOwnerAccount;
 
-	private String playConfig;
-
-	private Long authInfoTimeout;
-
-	private String videoId;
+	private Long resourceRealOwnerId;
 
 	private Long ownerId;
 
@@ -49,6 +47,17 @@ public class GetVideoPlayAuthRequest extends RpcAcsRequest<GetVideoPlayAuthRespo
 		}
 	}
 
+	public String getUpdateContent() {
+		return this.updateContent;
+	}
+
+	public void setUpdateContent(String updateContent) {
+		this.updateContent = updateContent;
+		if(updateContent != null){
+			putQueryParameter("UpdateContent", updateContent);
+		}
+	}
+
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
 	}
@@ -60,36 +69,14 @@ public class GetVideoPlayAuthRequest extends RpcAcsRequest<GetVideoPlayAuthRespo
 		}
 	}
 
-	public String getPlayConfig() {
-		return this.playConfig;
+	public Long getResourceRealOwnerId() {
+		return this.resourceRealOwnerId;
 	}
 
-	public void setPlayConfig(String playConfig) {
-		this.playConfig = playConfig;
-		if(playConfig != null){
-			putQueryParameter("PlayConfig", playConfig);
-		}
-	}
-
-	public Long getAuthInfoTimeout() {
-		return this.authInfoTimeout;
-	}
-
-	public void setAuthInfoTimeout(Long authInfoTimeout) {
-		this.authInfoTimeout = authInfoTimeout;
-		if(authInfoTimeout != null){
-			putQueryParameter("AuthInfoTimeout", authInfoTimeout.toString());
-		}
-	}
-
-	public String getVideoId() {
-		return this.videoId;
-	}
-
-	public void setVideoId(String videoId) {
-		this.videoId = videoId;
-		if(videoId != null){
-			putQueryParameter("VideoId", videoId);
+	public void setResourceRealOwnerId(Long resourceRealOwnerId) {
+		this.resourceRealOwnerId = resourceRealOwnerId;
+		if(resourceRealOwnerId != null){
+			putQueryParameter("ResourceRealOwnerId", resourceRealOwnerId.toString());
 		}
 	}
 
@@ -105,8 +92,8 @@ public class GetVideoPlayAuthRequest extends RpcAcsRequest<GetVideoPlayAuthRespo
 	}
 
 	@Override
-	public Class<GetVideoPlayAuthResponse> getResponseClass() {
-		return GetVideoPlayAuthResponse.class;
+	public Class<UpdateImageInfosResponse> getResponseClass() {
+		return UpdateImageInfosResponse.class;
 	}
 
 }
