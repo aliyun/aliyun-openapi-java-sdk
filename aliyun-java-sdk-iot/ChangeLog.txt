@@ -1,3 +1,6 @@
+2018-10-13 Version: 6.3.0
+1, Add device group related APIs.
+
 2018-09-28 Version: 6.2.0
 1, Add one api, QueryAppDeviceList.
 

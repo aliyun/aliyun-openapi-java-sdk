@@ -45,6 +45,7 @@ public class QueryDeviceDetailResponseUnmarshaller {
 		data.setIpAddress(context.stringValue("QueryDeviceDetailResponse.Data.IpAddress"));
 		data.setNodeType(context.integerValue("QueryDeviceDetailResponse.Data.NodeType"));
 		data.setRegion(context.stringValue("QueryDeviceDetailResponse.Data.Region"));
+		data.setOwner(context.booleanValue("QueryDeviceDetailResponse.Data.Owner"));
 		queryDeviceDetailResponse.setData(data);
 	 
 	 	return queryDeviceDetailResponse;

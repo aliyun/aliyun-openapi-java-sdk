@@ -102,6 +102,10 @@ public class QueryProductResponse extends AcsResponse {
 
 		private String protocolType;
 
+		private String productStatus;
+
+		private Boolean owner;
+
 		public Long getGmtCreate() {
 			return this.gmtCreate;
 		}
@@ -204,6 +208,22 @@ public class QueryProductResponse extends AcsResponse {
 
 		public void setProtocolType(String protocolType) {
 			this.protocolType = protocolType;
+		}
+
+		public String getProductStatus() {
+			return this.productStatus;
+		}
+
+		public void setProductStatus(String productStatus) {
+			this.productStatus = productStatus;
+		}
+
+		public Boolean getOwner() {
+			return this.owner;
+		}
+
+		public void setOwner(Boolean owner) {
+			this.owner = owner;
 		}
 	}
 
