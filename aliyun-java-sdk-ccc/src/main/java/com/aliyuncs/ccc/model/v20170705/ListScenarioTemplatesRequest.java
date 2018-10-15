@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ListScenarioTemplatesRequest extends RpcAcsRequest<ListScenarioTemplatesResponse> {
 	
 	public ListScenarioTemplatesRequest() {
-		super("CCC", "2017-07-05", "ListScenarioTemplates", "ccc");
+		super("CCC", "2017-07-05", "ListScenarioTemplates");
 	}
 
 	@Override

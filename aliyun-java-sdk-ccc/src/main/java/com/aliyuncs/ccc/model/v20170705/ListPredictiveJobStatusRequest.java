@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ListPredictiveJobStatusRequest extends RpcAcsRequest<ListPredictiveJobStatusResponse> {
 	
 	public ListPredictiveJobStatusRequest() {
-		super("CCC", "2017-07-05", "ListPredictiveJobStatus", "ccc");
+		super("CCC", "2017-07-05", "ListPredictiveJobStatus");
 	}
 
 	private String contactName;

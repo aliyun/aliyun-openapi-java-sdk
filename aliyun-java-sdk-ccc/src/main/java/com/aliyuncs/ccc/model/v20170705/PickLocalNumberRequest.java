@@ -24,7 +24,7 @@ import java.util.List;
 public class PickLocalNumberRequest extends RpcAcsRequest<PickLocalNumberResponse> {
 	
 	public PickLocalNumberRequest() {
-		super("CCC", "2017-07-05", "PickLocalNumber", "ccc");
+		super("CCC", "2017-07-05", "PickLocalNumber");
 	}
 
 	private String instanceId;

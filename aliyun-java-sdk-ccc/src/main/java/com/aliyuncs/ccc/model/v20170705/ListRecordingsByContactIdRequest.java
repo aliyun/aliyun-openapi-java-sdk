@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ListRecordingsByContactIdRequest extends RpcAcsRequest<ListRecordingsByContactIdResponse> {
 	
 	public ListRecordingsByContactIdRequest() {
-		super("CCC", "2017-07-05", "ListRecordingsByContactId", "ccc");
+		super("CCC", "2017-07-05", "ListRecordingsByContactId");
 	}
 
 	private String instanceId;

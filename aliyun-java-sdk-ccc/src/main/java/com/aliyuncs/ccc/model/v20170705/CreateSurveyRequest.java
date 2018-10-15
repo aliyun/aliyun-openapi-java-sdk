@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class CreateSurveyRequest extends RpcAcsRequest<CreateSurveyResponse> {
 	
 	public CreateSurveyRequest() {
-		super("CCC", "2017-07-05", "CreateSurvey", "ccc");
+		super("CCC", "2017-07-05", "CreateSurvey");
 	}
 
 	private String instanceId;

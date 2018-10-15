@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ListUsersRequest extends RpcAcsRequest<ListUsersResponse> {
 	
 	public ListUsersRequest() {
-		super("CCC", "2017-07-05", "ListUsers", "ccc");
+		super("CCC", "2017-07-05", "ListUsers");
 	}
 
 	private String instanceId;

@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class GenerateAgentStatisticReportRequest extends RpcAcsRequest<GenerateAgentStatisticReportResponse> {
 	
 	public GenerateAgentStatisticReportRequest() {
-		super("CCC", "2017-07-05", "GenerateAgentStatisticReport", "ccc");
+		super("CCC", "2017-07-05", "GenerateAgentStatisticReport");
 	}
 
 	private String agentId;

@@ -24,7 +24,7 @@ import java.util.List;
 public class RemoveUsersRequest extends RpcAcsRequest<RemoveUsersResponse> {
 	
 	public RemoveUsersRequest() {
-		super("CCC", "2017-07-05", "RemoveUsers", "ccc");
+		super("CCC", "2017-07-05", "RemoveUsers");
 	}
 
 	private String instanceId;

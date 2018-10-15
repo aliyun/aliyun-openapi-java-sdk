@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class GetJobGroupRequest extends RpcAcsRequest<GetJobGroupResponse> {
 	
 	public GetJobGroupRequest() {
-		super("CCC", "2017-07-05", "GetJobGroup", "ccc");
+		super("CCC", "2017-07-05", "GetJobGroup");
 	}
 
 	private String instanceId;

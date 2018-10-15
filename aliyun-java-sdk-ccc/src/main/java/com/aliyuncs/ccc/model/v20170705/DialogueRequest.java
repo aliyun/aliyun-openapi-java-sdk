@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DialogueRequest extends RpcAcsRequest<DialogueResponse> {
 	
 	public DialogueRequest() {
-		super("CCC", "2017-07-05", "Dialogue", "ccc");
+		super("CCC", "2017-07-05", "Dialogue");
 	}
 
 	private String callId;

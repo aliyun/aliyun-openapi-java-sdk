@@ -24,7 +24,7 @@ import java.util.List;
 public class AssignJobsRequest extends RpcAcsRequest<AssignJobsResponse> {
 	
 	public AssignJobsRequest() {
-		super("CCC", "2017-07-05", "AssignJobs", "ccc");
+		super("CCC", "2017-07-05", "AssignJobs");
 	}
 
 	private List<String> callingNumbers;

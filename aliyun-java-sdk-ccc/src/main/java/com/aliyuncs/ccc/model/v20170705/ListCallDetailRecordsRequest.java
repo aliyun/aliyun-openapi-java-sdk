@@ -23,52 +23,32 @@ import com.aliyuncs.RpcAcsRequest;
 public class ListCallDetailRecordsRequest extends RpcAcsRequest<ListCallDetailRecordsResponse> {
 	
 	public ListCallDetailRecordsRequest() {
-		super("CCC", "2017-07-05", "ListCallDetailRecords", "ccc");
+		super("CCC", "2017-07-05", "ListCallDetailRecords");
 	}
 
-	private String instanceId;
-
-	private String contactDisposition;
-
 	private String contactType;
+
+	private String contactId;
 
 	private String criteria;
 
 	private String phoneNumber;
 
-	private Integer pageSize;
-
 	private String orderBy;
-
-	private Long stopTime;
 
 	private Long startTime;
 
+	private Long stopTime;
+
 	private Integer pageNumber;
 
+	private String instanceId;
+
+	private String contactDisposition;
+
+	private Integer pageSize;
+
 	private Boolean withRecording;
-
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
-		}
-	}
-
-	public String getContactDisposition() {
-		return this.contactDisposition;
-	}
-
-	public void setContactDisposition(String contactDisposition) {
-		this.contactDisposition = contactDisposition;
-		if(contactDisposition != null){
-			putQueryParameter("ContactDisposition", contactDisposition);
-		}
-	}
 
 	public String getContactType() {
 		return this.contactType;
@@ -78,6 +58,17 @@ public class ListCallDetailRecordsRequest extends RpcAcsRequest<ListCallDetailRe
 		this.contactType = contactType;
 		if(contactType != null){
 			putQueryParameter("ContactType", contactType);
+		}
+	}
+
+	public String getContactId() {
+		return this.contactId;
+	}
+
+	public void setContactId(String contactId) {
+		this.contactId = contactId;
+		if(contactId != null){
+			putQueryParameter("ContactId", contactId);
 		}
 	}
 
@@ -103,17 +94,6 @@ public class ListCallDetailRecordsRequest extends RpcAcsRequest<ListCallDetailRe
 		}
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
 	public String getOrderBy() {
 		return this.orderBy;
 	}
@@ -122,17 +102,6 @@ public class ListCallDetailRecordsRequest extends RpcAcsRequest<ListCallDetailRe
 		this.orderBy = orderBy;
 		if(orderBy != null){
 			putQueryParameter("OrderBy", orderBy);
-		}
-	}
-
-	public Long getStopTime() {
-		return this.stopTime;
-	}
-
-	public void setStopTime(Long stopTime) {
-		this.stopTime = stopTime;
-		if(stopTime != null){
-			putQueryParameter("StopTime", stopTime.toString());
 		}
 	}
 
@@ -147,6 +116,17 @@ public class ListCallDetailRecordsRequest extends RpcAcsRequest<ListCallDetailRe
 		}
 	}
 
+	public Long getStopTime() {
+		return this.stopTime;
+	}
+
+	public void setStopTime(Long stopTime) {
+		this.stopTime = stopTime;
+		if(stopTime != null){
+			putQueryParameter("StopTime", stopTime.toString());
+		}
+	}
+
 	public Integer getPageNumber() {
 		return this.pageNumber;
 	}
@@ -155,6 +135,39 @@ public class ListCallDetailRecordsRequest extends RpcAcsRequest<ListCallDetailRe
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public String getContactDisposition() {
+		return this.contactDisposition;
+	}
+
+	public void setContactDisposition(String contactDisposition) {
+		this.contactDisposition = contactDisposition;
+		if(contactDisposition != null){
+			putQueryParameter("ContactDisposition", contactDisposition);
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 

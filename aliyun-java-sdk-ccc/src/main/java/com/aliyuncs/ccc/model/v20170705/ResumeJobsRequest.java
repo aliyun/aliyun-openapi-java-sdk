@@ -24,7 +24,7 @@ import java.util.List;
 public class ResumeJobsRequest extends RpcAcsRequest<ResumeJobsResponse> {
 	
 	public ResumeJobsRequest() {
-		super("CCC", "2017-07-05", "ResumeJobs", "ccc");
+		super("CCC", "2017-07-05", "ResumeJobs");
 	}
 
 	private Boolean all;

@@ -24,7 +24,7 @@ import java.util.List;
 public class CreatePredictiveJobsRequest extends RpcAcsRequest<CreatePredictiveJobsResponse> {
 	
 	public CreatePredictiveJobsRequest() {
-		super("CCC", "2017-07-05", "CreatePredictiveJobs", "ccc");
+		super("CCC", "2017-07-05", "CreatePredictiveJobs");
 	}
 
 	private String instanceId;

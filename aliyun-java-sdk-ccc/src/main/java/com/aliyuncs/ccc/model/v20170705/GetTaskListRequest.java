@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class GetTaskListRequest extends RpcAcsRequest<GetTaskListResponse> {
 	
 	public GetTaskListRequest() {
-		super("CCC", "2017-07-05", "GetTaskList", "ccc");
+		super("CCC", "2017-07-05", "GetTaskList");
 	}
 
 	private String jobId;

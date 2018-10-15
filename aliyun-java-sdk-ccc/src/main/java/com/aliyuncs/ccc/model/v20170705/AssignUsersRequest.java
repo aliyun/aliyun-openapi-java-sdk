@@ -24,7 +24,7 @@ import java.util.List;
 public class AssignUsersRequest extends RpcAcsRequest<AssignUsersResponse> {
 	
 	public AssignUsersRequest() {
-		super("CCC", "2017-07-05", "AssignUsers", "ccc");
+		super("CCC", "2017-07-05", "AssignUsers");
 	}
 
 	private List<String> userRamIds;

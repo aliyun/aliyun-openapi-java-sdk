@@ -70,6 +70,8 @@ public class ListCallDetailRecordsResponseUnmarshaller {
 				callDetailAgent.setTalkTime(context.integerValue("ListCallDetailRecordsResponse.CallDetailRecords.List["+ i +"].Agents["+ j +"].TalkTime"));
 				callDetailAgent.setHoldTime(context.integerValue("ListCallDetailRecordsResponse.CallDetailRecords.List["+ i +"].Agents["+ j +"].HoldTime"));
 				callDetailAgent.setWorkTime(context.integerValue("ListCallDetailRecordsResponse.CallDetailRecords.List["+ i +"].Agents["+ j +"].WorkTime"));
+				callDetailAgent.setSatisfaction(context.stringValue("ListCallDetailRecordsResponse.CallDetailRecords.List["+ i +"].Agents["+ j +"].Satisfaction"));
+				callDetailAgent.setFeedback(context.stringValue("ListCallDetailRecordsResponse.CallDetailRecords.List["+ i +"].Agents["+ j +"].Feedback"));
 
 				agents.add(callDetailAgent);
 			}

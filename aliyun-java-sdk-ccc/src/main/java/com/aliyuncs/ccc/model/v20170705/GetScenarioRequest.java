@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class GetScenarioRequest extends RpcAcsRequest<GetScenarioResponse> {
 	
 	public GetScenarioRequest() {
-		super("CCC", "2017-07-05", "GetScenario", "ccc");
+		super("CCC", "2017-07-05", "GetScenario");
 	}
 
 	private String instanceId;

@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ListJobStatusRequest extends RpcAcsRequest<ListJobStatusResponse> {
 	
 	public ListJobStatusRequest() {
-		super("CCC", "2017-07-05", "ListJobStatus", "ccc");
+		super("CCC", "2017-07-05", "ListJobStatus");
 	}
 
 	private String contactName;

@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ListRecordingsRequest extends RpcAcsRequest<ListRecordingsResponse> {
 	
 	public ListRecordingsRequest() {
-		super("CCC", "2017-07-05", "ListRecordings", "ccc");
+		super("CCC", "2017-07-05", "ListRecordings");
 	}
 
 	private String agentId;

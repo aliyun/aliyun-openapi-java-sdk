@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class GetAgentDataRequest extends RpcAcsRequest<GetAgentDataResponse> {
 	
 	public GetAgentDataRequest() {
-		super("CCC", "2017-07-05", "GetAgentData", "ccc");
+		super("CCC", "2017-07-05", "GetAgentData");
 	}
 
 	private String instanceId;

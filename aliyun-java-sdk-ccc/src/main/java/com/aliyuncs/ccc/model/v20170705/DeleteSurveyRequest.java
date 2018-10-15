@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeleteSurveyRequest extends RpcAcsRequest<DeleteSurveyResponse> {
 	
 	public DeleteSurveyRequest() {
-		super("CCC", "2017-07-05", "DeleteSurvey", "ccc");
+		super("CCC", "2017-07-05", "DeleteSurvey");
 	}
 
 	private String surveyId;

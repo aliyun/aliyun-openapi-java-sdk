@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ListUnreachableContactsRequest extends RpcAcsRequest<ListUnreachableContactsResponse> {
 	
 	public ListUnreachableContactsRequest() {
-		super("CCC", "2017-07-05", "ListUnreachableContacts", "ccc");
+		super("CCC", "2017-07-05", "ListUnreachableContacts");
 	}
 
 	private String instanceId;

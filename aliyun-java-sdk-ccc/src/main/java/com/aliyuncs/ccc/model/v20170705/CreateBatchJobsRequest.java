@@ -24,7 +24,7 @@ import java.util.List;
 public class CreateBatchJobsRequest extends RpcAcsRequest<CreateBatchJobsResponse> {
 	
 	public CreateBatchJobsRequest() {
-		super("CCC", "2017-07-05", "CreateBatchJobs", "ccc");
+		super("CCC", "2017-07-05", "CreateBatchJobs");
 	}
 
 	private List<String> callingNumbers;

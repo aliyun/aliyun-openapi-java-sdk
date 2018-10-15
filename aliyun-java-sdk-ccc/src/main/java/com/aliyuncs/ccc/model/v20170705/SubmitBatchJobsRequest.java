@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class SubmitBatchJobsRequest extends RpcAcsRequest<SubmitBatchJobsResponse> {
 	
 	public SubmitBatchJobsRequest() {
-		super("CCC", "2017-07-05", "SubmitBatchJobs", "ccc");
+		super("CCC", "2017-07-05", "SubmitBatchJobs");
 	}
 
 	private String instanceId;

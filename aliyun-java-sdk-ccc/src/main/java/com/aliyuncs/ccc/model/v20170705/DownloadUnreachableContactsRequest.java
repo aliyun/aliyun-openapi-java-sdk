@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DownloadUnreachableContactsRequest extends RpcAcsRequest<DownloadUnreachableContactsResponse> {
 	
 	public DownloadUnreachableContactsRequest() {
-		super("CCC", "2017-07-05", "DownloadUnreachableContacts", "ccc");
+		super("CCC", "2017-07-05", "DownloadUnreachableContacts");
 	}
 
 	private String instanceId;

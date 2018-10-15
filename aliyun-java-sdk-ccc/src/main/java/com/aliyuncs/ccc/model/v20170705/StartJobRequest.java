@@ -24,7 +24,7 @@ import java.util.List;
 public class StartJobRequest extends RpcAcsRequest<StartJobResponse> {
 	
 	public StartJobRequest() {
-		super("CCC", "2017-07-05", "StartJob", "ccc");
+		super("CCC", "2017-07-05", "StartJob");
 	}
 
 	private String jobJson;

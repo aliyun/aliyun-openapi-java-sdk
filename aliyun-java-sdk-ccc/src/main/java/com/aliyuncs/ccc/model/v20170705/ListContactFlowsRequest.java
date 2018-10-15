@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ListContactFlowsRequest extends RpcAcsRequest<ListContactFlowsResponse> {
 	
 	public ListContactFlowsRequest() {
-		super("CCC", "2017-07-05", "ListContactFlows", "ccc");
+		super("CCC", "2017-07-05", "ListContactFlows");
 	}
 
 	private String instanceId;

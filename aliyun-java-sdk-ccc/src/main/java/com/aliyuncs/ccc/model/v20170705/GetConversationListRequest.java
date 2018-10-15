@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class GetConversationListRequest extends RpcAcsRequest<GetConversationListResponse> {
 	
 	public GetConversationListRequest() {
-		super("CCC", "2017-07-05", "GetConversationList", "ccc");
+		super("CCC", "2017-07-05", "GetConversationList");
 	}
 
 	private String instanceId;

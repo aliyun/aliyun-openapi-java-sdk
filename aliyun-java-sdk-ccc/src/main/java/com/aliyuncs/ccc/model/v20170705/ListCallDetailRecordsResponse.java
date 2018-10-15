@@ -292,6 +292,10 @@ public class ListCallDetailRecordsResponse extends AcsResponse {
 
 				private Integer workTime;
 
+				private String satisfaction;
+
+				private String feedback;
+
 				public String getContactId() {
 					return this.contactId;
 				}
@@ -370,6 +374,22 @@ public class ListCallDetailRecordsResponse extends AcsResponse {
 
 				public void setWorkTime(Integer workTime) {
 					this.workTime = workTime;
+				}
+
+				public String getSatisfaction() {
+					return this.satisfaction;
+				}
+
+				public void setSatisfaction(String satisfaction) {
+					this.satisfaction = satisfaction;
+				}
+
+				public String getFeedback() {
+					return this.feedback;
+				}
+
+				public void setFeedback(String feedback) {
+					this.feedback = feedback;
 				}
 			}
 

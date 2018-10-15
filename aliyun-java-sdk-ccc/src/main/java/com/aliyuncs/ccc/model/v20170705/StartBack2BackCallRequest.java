@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class StartBack2BackCallRequest extends RpcAcsRequest<StartBack2BackCallResponse> {
 	
 	public StartBack2BackCallRequest() {
-		super("CCC", "2017-07-05", "StartBack2BackCall", "ccc");
+		super("CCC", "2017-07-05", "StartBack2BackCall");
 	}
 
 	private String caller;

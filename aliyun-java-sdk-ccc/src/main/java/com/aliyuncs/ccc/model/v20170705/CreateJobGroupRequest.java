@@ -24,7 +24,7 @@ import java.util.List;
 public class CreateJobGroupRequest extends RpcAcsRequest<CreateJobGroupResponse> {
 	
 	public CreateJobGroupRequest() {
-		super("CCC", "2017-07-05", "CreateJobGroup", "ccc");
+		super("CCC", "2017-07-05", "CreateJobGroup");
 	}
 
 	private List<String> callingNumbers;

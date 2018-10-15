@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DownloadOriginalStatisticsReportRequest extends RpcAcsRequest<DownloadOriginalStatisticsReportResponse> {
 	
 	public DownloadOriginalStatisticsReportRequest() {
-		super("CCC", "2017-07-05", "DownloadOriginalStatisticsReport", "ccc");
+		super("CCC", "2017-07-05", "DownloadOriginalStatisticsReport");
 	}
 
 	private String instanceId;

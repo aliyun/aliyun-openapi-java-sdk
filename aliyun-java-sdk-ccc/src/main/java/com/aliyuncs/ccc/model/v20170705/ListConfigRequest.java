@@ -24,7 +24,7 @@ import java.util.List;
 public class ListConfigRequest extends RpcAcsRequest<ListConfigResponse> {
 	
 	public ListConfigRequest() {
-		super("CCC", "2017-07-05", "ListConfig", "ccc");
+		super("CCC", "2017-07-05", "ListConfig");
 	}
 
 	private String instanceId;

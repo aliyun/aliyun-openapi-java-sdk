@@ -1,0 +1,141 @@
+/*
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package com.aliyuncs.ccc.model.v20170705;
+
+import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
+
+/**
+ * @author auto create
+ * @version 
+ */
+public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse> {
+	
+	public CreateInstanceRequest() {
+		super("CCC", "2017-07-05", "CreateInstance");
+	}
+
+	private String name;
+
+	private String domainName;
+
+	private String phoneNumber;
+
+	private String description;
+
+	private Integer storageMaxDays;
+
+	private Integer storageMaxSize;
+
+	private String directoryId;
+
+	private List<String> adminRamIds;
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
+		}
+	}
+
+	public String getDomainName() {
+		return this.domainName;
+	}
+
+	public void setDomainName(String domainName) {
+		this.domainName = domainName;
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
+		}
+	}
+
+	public String getPhoneNumber() {
+		return this.phoneNumber;
+	}
+
+	public void setPhoneNumber(String phoneNumber) {
+		this.phoneNumber = phoneNumber;
+		if(phoneNumber != null){
+			putQueryParameter("PhoneNumber", phoneNumber);
+		}
+	}
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+		if(description != null){
+			putQueryParameter("Description", description);
+		}
+	}
+
+	public Integer getStorageMaxDays() {
+		return this.storageMaxDays;
+	}
+
+	public void setStorageMaxDays(Integer storageMaxDays) {
+		this.storageMaxDays = storageMaxDays;
+		if(storageMaxDays != null){
+			putQueryParameter("StorageMaxDays", storageMaxDays.toString());
+		}
+	}
+
+	public Integer getStorageMaxSize() {
+		return this.storageMaxSize;
+	}
+
+	public void setStorageMaxSize(Integer storageMaxSize) {
+		this.storageMaxSize = storageMaxSize;
+		if(storageMaxSize != null){
+			putQueryParameter("StorageMaxSize", storageMaxSize.toString());
+		}
+	}
+
+	public String getDirectoryId() {
+		return this.directoryId;
+	}
+
+	public void setDirectoryId(String directoryId) {
+		this.directoryId = directoryId;
+		if(directoryId != null){
+			putQueryParameter("DirectoryId", directoryId);
+		}
+	}
+
+	public List<String> getAdminRamIds() {
+		return this.adminRamIds;
+	}
+
+	public void setAdminRamIds(List<String> adminRamIds) {
+		this.adminRamIds = adminRamIds;	
+		if (adminRamIds != null) {
+			for (int i = 0; i < adminRamIds.size(); i++) {
+				putQueryParameter("AdminRamId." + (i + 1) , adminRamIds.get(i));
+			}
+		}	
+	}
+
+	@Override
+	public Class<CreateInstanceResponse> getResponseClass() {
+		return CreateInstanceResponse.class;
+	}
+
+}

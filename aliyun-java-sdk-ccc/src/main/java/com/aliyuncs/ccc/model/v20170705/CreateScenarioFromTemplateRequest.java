@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class CreateScenarioFromTemplateRequest extends RpcAcsRequest<CreateScenarioFromTemplateResponse> {
 	
 	public CreateScenarioFromTemplateRequest() {
-		super("CCC", "2017-07-05", "CreateScenarioFromTemplate", "ccc");
+		super("CCC", "2017-07-05", "CreateScenarioFromTemplate");
 	}
 
 	private String variables;

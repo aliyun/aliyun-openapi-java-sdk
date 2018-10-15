@@ -24,7 +24,7 @@ import java.util.List;
 public class EncryptRequest extends RpcAcsRequest<EncryptResponse> {
 	
 	public EncryptRequest() {
-		super("CCC", "2017-07-05", "Encrypt", "ccc");
+		super("CCC", "2017-07-05", "Encrypt");
 	}
 
 	private String publicKey;

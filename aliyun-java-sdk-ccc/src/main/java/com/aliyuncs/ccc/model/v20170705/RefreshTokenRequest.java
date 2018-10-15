@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class RefreshTokenRequest extends RpcAcsRequest<RefreshTokenResponse> {
 	
 	public RefreshTokenRequest() {
-		super("CCC", "2017-07-05", "RefreshToken", "ccc");
+		super("CCC", "2017-07-05", "RefreshToken");
 	}
 
 	private String instanceId;

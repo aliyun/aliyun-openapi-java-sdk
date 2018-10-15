@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifySurveyRequest extends RpcAcsRequest<ModifySurveyResponse> {
 	
 	public ModifySurveyRequest() {
-		super("CCC", "2017-07-05", "ModifySurvey", "ccc");
+		super("CCC", "2017-07-05", "ModifySurvey");
 	}
 
 	private String surveyId;

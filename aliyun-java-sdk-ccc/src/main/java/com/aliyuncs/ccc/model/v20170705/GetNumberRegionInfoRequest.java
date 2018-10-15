@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class GetNumberRegionInfoRequest extends RpcAcsRequest<GetNumberRegionInfoResponse> {
 	
 	public GetNumberRegionInfoRequest() {
-		super("CCC", "2017-07-05", "GetNumberRegionInfo", "ccc");
+		super("CCC", "2017-07-05", "GetNumberRegionInfo");
 	}
 
 	private String number;

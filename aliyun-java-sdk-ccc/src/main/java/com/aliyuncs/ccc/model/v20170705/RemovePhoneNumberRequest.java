@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class RemovePhoneNumberRequest extends RpcAcsRequest<RemovePhoneNumberResponse> {
 	
 	public RemovePhoneNumberRequest() {
-		super("CCC", "2017-07-05", "RemovePhoneNumber", "ccc");
+		super("CCC", "2017-07-05", "RemovePhoneNumber");
 	}
 
 	private String instanceId;

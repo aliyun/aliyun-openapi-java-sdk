@@ -50,6 +50,7 @@ public class ListUsersResponseUnmarshaller {
 			user.setRamId(context.stringValue("ListUsersResponse.Users.List["+ i +"].RamId"));
 			user.setInstanceId(context.stringValue("ListUsersResponse.Users.List["+ i +"].InstanceId"));
 			user.setPrimary(context.booleanValue("ListUsersResponse.Users.List["+ i +"].Primary"));
+			user.setPrivateOutboundNumberId(context.stringValue("ListUsersResponse.Users.List["+ i +"].PrivateOutboundNumberId"));
 
 			Detail detail = new Detail();
 			detail.setLoginName(context.stringValue("ListUsersResponse.Users.List["+ i +"].Detail.LoginName"));

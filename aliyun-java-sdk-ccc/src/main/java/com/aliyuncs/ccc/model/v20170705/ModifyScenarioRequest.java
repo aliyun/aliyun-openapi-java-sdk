@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifyScenarioRequest extends RpcAcsRequest<ModifyScenarioResponse> {
 	
 	public ModifyScenarioRequest() {
-		super("CCC", "2017-07-05", "ModifyScenario", "ccc");
+		super("CCC", "2017-07-05", "ModifyScenario");
 	}
 
 	private String variables;

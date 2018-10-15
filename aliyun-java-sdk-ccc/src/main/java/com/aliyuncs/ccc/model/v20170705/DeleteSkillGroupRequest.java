@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeleteSkillGroupRequest extends RpcAcsRequest<DeleteSkillGroupResponse> {
 	
 	public DeleteSkillGroupRequest() {
-		super("CCC", "2017-07-05", "DeleteSkillGroup", "ccc");
+		super("CCC", "2017-07-05", "DeleteSkillGroup");
 	}
 
 	private String instanceId;

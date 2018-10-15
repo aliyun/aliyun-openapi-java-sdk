@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ListRealTimeAgentRequest extends RpcAcsRequest<ListRealTimeAgentResponse> {
 	
 	public ListRealTimeAgentRequest() {
-		super("CCC", "2017-07-05", "ListRealTimeAgent", "ccc");
+		super("CCC", "2017-07-05", "ListRealTimeAgent");
 	}
 
 	private String instanceId;

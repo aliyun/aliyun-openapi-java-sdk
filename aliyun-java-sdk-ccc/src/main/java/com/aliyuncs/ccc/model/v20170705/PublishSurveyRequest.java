@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class PublishSurveyRequest extends RpcAcsRequest<PublishSurveyResponse> {
 	
 	public PublishSurveyRequest() {
-		super("CCC", "2017-07-05", "PublishSurvey", "ccc");
+		super("CCC", "2017-07-05", "PublishSurvey");
 	}
 
 	private String surveyId;

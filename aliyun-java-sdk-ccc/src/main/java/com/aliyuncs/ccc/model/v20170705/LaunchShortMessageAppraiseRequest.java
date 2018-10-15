@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class LaunchShortMessageAppraiseRequest extends RpcAcsRequest<LaunchShortMessageAppraiseResponse> {
 	
 	public LaunchShortMessageAppraiseRequest() {
-		super("CCC", "2017-07-05", "LaunchShortMessageAppraise", "ccc");
+		super("CCC", "2017-07-05", "LaunchShortMessageAppraise");
 	}
 
 	private String acid;

@@ -109,6 +109,8 @@ public class ListPhoneNumbersResponse extends AcsResponse {
 
 		private String city;
 
+		private String assignee;
+
 		private ContactFlow contactFlow;
 
 		public String getPhoneNumberId() {
@@ -197,6 +199,14 @@ public class ListPhoneNumbersResponse extends AcsResponse {
 
 		public void setCity(String city) {
 			this.city = city;
+		}
+
+		public String getAssignee() {
+			return this.assignee;
+		}
+
+		public void setAssignee(String assignee) {
+			this.assignee = assignee;
 		}
 
 		public ContactFlow getContactFlow() {

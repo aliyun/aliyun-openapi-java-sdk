@@ -24,8 +24,10 @@ import java.util.List;
 public class ModifyUserRequest extends RpcAcsRequest<ModifyUserResponse> {
 	
 	public ModifyUserRequest() {
-		super("CCC", "2017-07-05", "ModifyUser", "ccc");
+		super("CCC", "2017-07-05", "ModifyUser");
 	}
+
+	private String privateOutboundNumberId;
 
 	private List<Integer> skillLevels;
 
@@ -42,6 +44,17 @@ public class ModifyUserRequest extends RpcAcsRequest<ModifyUserResponse> {
 	private String userId;
 
 	private String email;
+
+	public String getPrivateOutboundNumberId() {
+		return this.privateOutboundNumberId;
+	}
+
+	public void setPrivateOutboundNumberId(String privateOutboundNumberId) {
+		this.privateOutboundNumberId = privateOutboundNumberId;
+		if(privateOutboundNumberId != null){
+			putQueryParameter("PrivateOutboundNumberId", privateOutboundNumberId);
+		}
+	}
 
 	public List<Integer> getSkillLevels() {
 		return this.skillLevels;

@@ -24,7 +24,7 @@ import java.util.List;
 public class CancelPredictiveJobsRequest extends RpcAcsRequest<CancelPredictiveJobsResponse> {
 	
 	public CancelPredictiveJobsRequest() {
-		super("CCC", "2017-07-05", "CancelPredictiveJobs", "ccc");
+		super("CCC", "2017-07-05", "CancelPredictiveJobs");
 	}
 
 	private Boolean all;

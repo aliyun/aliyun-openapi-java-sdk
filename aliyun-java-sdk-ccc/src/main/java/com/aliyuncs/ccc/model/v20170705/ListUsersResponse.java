@@ -138,6 +138,8 @@ public class ListUsersResponse extends AcsResponse {
 
 			private Boolean primary;
 
+			private String privateOutboundNumberId;
+
 			private List<Role> roles;
 
 			private List<SkillLevel> skillLevels;
@@ -174,6 +176,14 @@ public class ListUsersResponse extends AcsResponse {
 
 			public void setPrimary(Boolean primary) {
 				this.primary = primary;
+			}
+
+			public String getPrivateOutboundNumberId() {
+				return this.privateOutboundNumberId;
+			}
+
+			public void setPrivateOutboundNumberId(String privateOutboundNumberId) {
+				this.privateOutboundNumberId = privateOutboundNumberId;
 			}
 
 			public List<Role> getRoles() {

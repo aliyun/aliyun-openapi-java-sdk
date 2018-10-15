@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class GetJobDataUploadParamsRequest extends RpcAcsRequest<GetJobDataUploadParamsResponse> {
 	
 	public GetJobDataUploadParamsRequest() {
-		super("CCC", "2017-07-05", "GetJobDataUploadParams", "ccc");
+		super("CCC", "2017-07-05", "GetJobDataUploadParams");
 	}
 
 	private String instanceId;

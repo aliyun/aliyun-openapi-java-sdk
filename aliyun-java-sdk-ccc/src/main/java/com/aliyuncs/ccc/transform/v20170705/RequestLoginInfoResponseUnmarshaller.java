@@ -14,8 +14,13 @@
 
 package com.aliyuncs.ccc.transform.v20170705;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.ccc.model.v20170705.RequestLoginInfoResponse;
 import com.aliyuncs.ccc.model.v20170705.RequestLoginInfoResponse.LoginInfo;
+import com.aliyuncs.ccc.model.v20170705.RequestLoginInfoResponse.LoginInfo.Role;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -40,6 +45,18 @@ public class RequestLoginInfoResponseUnmarshaller {
 		loginInfo.setTenantId(context.stringValue("RequestLoginInfoResponse.LoginInfo.TenantId"));
 		loginInfo.setSignature(context.stringValue("RequestLoginInfoResponse.LoginInfo.Signature"));
 		loginInfo.setSignData(context.stringValue("RequestLoginInfoResponse.LoginInfo.SignData"));
+
+		List<Role> roles = new ArrayList<Role>();
+		for (int i = 0; i < context.lengthValue("RequestLoginInfoResponse.LoginInfo.Roles.Length"); i++) {
+			Role role = new Role();
+			role.setRoleId(context.stringValue("RequestLoginInfoResponse.LoginInfo.Roles["+ i +"].RoleId"));
+			role.setInstanceId(context.stringValue("RequestLoginInfoResponse.LoginInfo.Roles["+ i +"].InstanceId"));
+			role.setRoleName(context.stringValue("RequestLoginInfoResponse.LoginInfo.Roles["+ i +"].RoleName"));
+			role.setRoleDescription(context.stringValue("RequestLoginInfoResponse.LoginInfo.Roles["+ i +"].RoleDescription"));
+
+			roles.add(role);
+		}
+		loginInfo.setRoles(roles);
 		requestLoginInfoResponse.setLoginInfo(loginInfo);
 	 
 	 	return requestLoginInfoResponse;

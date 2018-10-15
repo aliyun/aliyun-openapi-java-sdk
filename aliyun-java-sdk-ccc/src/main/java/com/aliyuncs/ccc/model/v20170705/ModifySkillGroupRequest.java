@@ -24,12 +24,14 @@ import java.util.List;
 public class ModifySkillGroupRequest extends RpcAcsRequest<ModifySkillGroupResponse> {
 	
 	public ModifySkillGroupRequest() {
-		super("CCC", "2017-07-05", "ModifySkillGroup", "ccc");
+		super("CCC", "2017-07-05", "ModifySkillGroup");
 	}
 
 	private List<Integer> skillLevels;
 
 	private String instanceId;
+
+	private Boolean allowPrivateOutboundNumber;
 
 	private List<String> outboundPhoneNumberIds;
 
@@ -62,6 +64,17 @@ public class ModifySkillGroupRequest extends RpcAcsRequest<ModifySkillGroupRespo
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public Boolean getAllowPrivateOutboundNumber() {
+		return this.allowPrivateOutboundNumber;
+	}
+
+	public void setAllowPrivateOutboundNumber(Boolean allowPrivateOutboundNumber) {
+		this.allowPrivateOutboundNumber = allowPrivateOutboundNumber;
+		if(allowPrivateOutboundNumber != null){
+			putQueryParameter("AllowPrivateOutboundNumber", allowPrivateOutboundNumber.toString());
 		}
 	}
 

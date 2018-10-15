@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ListBasicStatisticsReportSubItemsRequest extends RpcAcsRequest<ListBasicStatisticsReportSubItemsResponse> {
 	
 	public ListBasicStatisticsReportSubItemsRequest() {
-		super("CCC", "2017-07-05", "ListBasicStatisticsReportSubItems", "ccc");
+		super("CCC", "2017-07-05", "ListBasicStatisticsReportSubItems");
 	}
 
 	private String instanceId;

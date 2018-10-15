@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeleteJobGroupRequest extends RpcAcsRequest<DeleteJobGroupResponse> {
 	
 	public DeleteJobGroupRequest() {
-		super("CCC", "2017-07-05", "DeleteJobGroup", "ccc");
+		super("CCC", "2017-07-05", "DeleteJobGroup");
 	}
 
 	private String instanceId;

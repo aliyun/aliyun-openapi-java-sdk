@@ -48,6 +48,7 @@ public class ListPhoneNumbersResponseUnmarshaller {
 			phoneNumber.setTrunks(context.integerValue("ListPhoneNumbersResponse.PhoneNumbers["+ i +"].Trunks"));
 			phoneNumber.setProvince(context.stringValue("ListPhoneNumbersResponse.PhoneNumbers["+ i +"].Province"));
 			phoneNumber.setCity(context.stringValue("ListPhoneNumbersResponse.PhoneNumbers["+ i +"].City"));
+			phoneNumber.setAssignee(context.stringValue("ListPhoneNumbersResponse.PhoneNumbers["+ i +"].Assignee"));
 
 			ContactFlow contactFlow = new ContactFlow();
 			contactFlow.setContactFlowId(context.stringValue("ListPhoneNumbersResponse.PhoneNumbers["+ i +"].ContactFlow.ContactFlowId"));

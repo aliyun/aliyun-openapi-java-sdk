@@ -14,6 +14,8 @@
 
 package com.aliyuncs.ccc.model.v20170705;
 
+import java.util.List;
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.ccc.transform.v20170705.RequestLoginInfoResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -106,6 +108,8 @@ public class RequestLoginInfoResponse extends AcsResponse {
 
 		private String signData;
 
+		private List<Role> roles;
+
 		public String getUserName() {
 			return this.userName;
 		}
@@ -184,6 +188,57 @@ public class RequestLoginInfoResponse extends AcsResponse {
 
 		public void setSignData(String signData) {
 			this.signData = signData;
+		}
+
+		public List<Role> getRoles() {
+			return this.roles;
+		}
+
+		public void setRoles(List<Role> roles) {
+			this.roles = roles;
+		}
+
+		public static class Role {
+
+			private String roleId;
+
+			private String instanceId;
+
+			private String roleName;
+
+			private String roleDescription;
+
+			public String getRoleId() {
+				return this.roleId;
+			}
+
+			public void setRoleId(String roleId) {
+				this.roleId = roleId;
+			}
+
+			public String getInstanceId() {
+				return this.instanceId;
+			}
+
+			public void setInstanceId(String instanceId) {
+				this.instanceId = instanceId;
+			}
+
+			public String getRoleName() {
+				return this.roleName;
+			}
+
+			public void setRoleName(String roleName) {
+				this.roleName = roleName;
+			}
+
+			public String getRoleDescription() {
+				return this.roleDescription;
+			}
+
+			public void setRoleDescription(String roleDescription) {
+				this.roleDescription = roleDescription;
+			}
 		}
 	}
 

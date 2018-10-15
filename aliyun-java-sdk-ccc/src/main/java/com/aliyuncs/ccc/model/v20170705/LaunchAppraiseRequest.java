@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class LaunchAppraiseRequest extends RpcAcsRequest<LaunchAppraiseResponse> {
 	
 	public LaunchAppraiseRequest() {
-		super("CCC", "2017-07-05", "LaunchAppraise", "ccc");
+		super("CCC", "2017-07-05", "LaunchAppraise");
 	}
 
 	private String acid;

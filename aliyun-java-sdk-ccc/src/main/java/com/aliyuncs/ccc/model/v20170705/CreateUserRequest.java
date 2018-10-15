@@ -24,8 +24,10 @@ import java.util.List;
 public class CreateUserRequest extends RpcAcsRequest<CreateUserResponse> {
 	
 	public CreateUserRequest() {
-		super("CCC", "2017-07-05", "CreateUser", "ccc");
+		super("CCC", "2017-07-05", "CreateUser");
 	}
+
+	private String privateOutboundNumberId;
 
 	private List<Integer> skillLevels;
 
@@ -42,6 +44,17 @@ public class CreateUserRequest extends RpcAcsRequest<CreateUserResponse> {
 	private List<String> skillGroupIds;
 
 	private String email;
+
+	public String getPrivateOutboundNumberId() {
+		return this.privateOutboundNumberId;
+	}
+
+	public void setPrivateOutboundNumberId(String privateOutboundNumberId) {
+		this.privateOutboundNumberId = privateOutboundNumberId;
+		if(privateOutboundNumberId != null){
+			putQueryParameter("PrivateOutboundNumberId", privateOutboundNumberId);
+		}
+	}
 
 	public List<Integer> getSkillLevels() {
 		return this.skillLevels;

@@ -24,7 +24,7 @@ import java.util.List;
 public class CreateScenarioRequest extends RpcAcsRequest<CreateScenarioResponse> {
 	
 	public CreateScenarioRequest() {
-		super("CCC", "2017-07-05", "CreateScenario", "ccc");
+		super("CCC", "2017-07-05", "CreateScenario");
 	}
 
 	private String instanceId;
