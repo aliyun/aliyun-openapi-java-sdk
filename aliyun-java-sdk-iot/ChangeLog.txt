@@ -1,3 +1,6 @@
+2018-10-16 Version: 6.3.1
+1, remove set group tags API.
+
 2018-10-13 Version: 6.3.0
 1, Add device group related APIs.
 
