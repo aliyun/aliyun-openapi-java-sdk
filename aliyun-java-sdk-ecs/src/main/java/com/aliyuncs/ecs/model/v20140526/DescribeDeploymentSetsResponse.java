@@ -95,6 +95,8 @@ public class DescribeDeploymentSetsResponse extends AcsResponse {
 
 		private String strategy;
 
+		private String deploymentStrategy;
+
 		private String domain;
 
 		private String granularity;
@@ -102,6 +104,8 @@ public class DescribeDeploymentSetsResponse extends AcsResponse {
 		private Integer instanceAmount;
 
 		private String creationTime;
+
+		private List<String> instanceIds;
 
 		public String getDeploymentSetId() {
 			return this.deploymentSetId;
@@ -135,6 +139,14 @@ public class DescribeDeploymentSetsResponse extends AcsResponse {
 			this.strategy = strategy;
 		}
 
+		public String getDeploymentStrategy() {
+			return this.deploymentStrategy;
+		}
+
+		public void setDeploymentStrategy(String deploymentStrategy) {
+			this.deploymentStrategy = deploymentStrategy;
+		}
+
 		public String getDomain() {
 			return this.domain;
 		}
@@ -165,6 +177,14 @@ public class DescribeDeploymentSetsResponse extends AcsResponse {
 
 		public void setCreationTime(String creationTime) {
 			this.creationTime = creationTime;
+		}
+
+		public List<String> getInstanceIds() {
+			return this.instanceIds;
+		}
+
+		public void setInstanceIds(List<String> instanceIds) {
+			this.instanceIds = instanceIds;
 		}
 	}
 

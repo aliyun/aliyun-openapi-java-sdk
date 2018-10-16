@@ -54,6 +54,7 @@ public class DescribeInstancesResponseUnmarshaller {
 			instance.setCpu(context.integerValue("DescribeInstancesResponse.Instances["+ i +"].Cpu"));
 			instance.setMemory(context.integerValue("DescribeInstancesResponse.Instances["+ i +"].Memory"));
 			instance.setHostName(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].HostName"));
+			instance.setDeploymentSetId(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].DeploymentSetId"));
 			instance.setStatus(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].Status"));
 			instance.setSerialNumber(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].SerialNumber"));
 			instance.setInternetChargeType(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].InternetChargeType"));

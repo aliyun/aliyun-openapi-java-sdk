@@ -103,6 +103,8 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		private String hostName;
 
+		private String deploymentSetId;
+
 		private String status;
 
 		private String serialNumber;
@@ -281,6 +283,14 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		public void setHostName(String hostName) {
 			this.hostName = hostName;
+		}
+
+		public String getDeploymentSetId() {
+			return this.deploymentSetId;
+		}
+
+		public void setDeploymentSetId(String deploymentSetId) {
+			this.deploymentSetId = deploymentSetId;
 		}
 
 		public String getStatus() {

@@ -83,6 +83,8 @@ public class DescribeInstancesRequest extends RpcAcsRequest<DescribeInstancesRes
 
 	private String filter1Value;
 
+	private Boolean needSaleCycle;
+
 	private String filter2Key;
 
 	private Long ownerId;
@@ -415,6 +417,17 @@ public class DescribeInstancesRequest extends RpcAcsRequest<DescribeInstancesRes
 		this.filter1Value = filter1Value;
 		if(filter1Value != null){
 			putQueryParameter("Filter.1.Value", filter1Value);
+		}
+	}
+
+	public Boolean getNeedSaleCycle() {
+		return this.needSaleCycle;
+	}
+
+	public void setNeedSaleCycle(Boolean needSaleCycle) {
+		this.needSaleCycle = needSaleCycle;
+		if(needSaleCycle != null){
+			putQueryParameter("NeedSaleCycle", needSaleCycle.toString());
 		}
 	}
 

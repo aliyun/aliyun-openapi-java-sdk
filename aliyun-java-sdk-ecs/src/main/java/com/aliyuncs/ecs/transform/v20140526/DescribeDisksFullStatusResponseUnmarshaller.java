@@ -40,6 +40,8 @@ public class DescribeDisksFullStatusResponseUnmarshaller {
 		for (int i = 0; i < context.lengthValue("DescribeDisksFullStatusResponse.DiskFullStatusSet.Length"); i++) {
 			DiskFullStatusType diskFullStatusType = new DiskFullStatusType();
 			diskFullStatusType.setDiskId(context.stringValue("DescribeDisksFullStatusResponse.DiskFullStatusSet["+ i +"].DiskId"));
+			diskFullStatusType.setInstanceId(context.stringValue("DescribeDisksFullStatusResponse.DiskFullStatusSet["+ i +"].InstanceId"));
+			diskFullStatusType.setDevice(context.stringValue("DescribeDisksFullStatusResponse.DiskFullStatusSet["+ i +"].Device"));
 
 			Status status = new Status();
 			status.setCode(context.integerValue("DescribeDisksFullStatusResponse.DiskFullStatusSet["+ i +"].Status.Code"));

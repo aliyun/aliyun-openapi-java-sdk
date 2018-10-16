@@ -40,6 +40,8 @@ public class ResizeDiskRequest extends RpcAcsRequest<ResizeDiskResponse> {
 
 	private Long ownerId;
 
+	private String type;
+
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
 	}
@@ -114,6 +116,17 @@ public class ResizeDiskRequest extends RpcAcsRequest<ResizeDiskResponse> {
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getType() {
+		return this.type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+		if(type != null){
+			putQueryParameter("Type", type);
 		}
 	}
 

@@ -14,21 +14,20 @@
 
 package com.aliyuncs.ecs.model.v20140526;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.ecs.transform.v20140526.CheckAutoSnapshotPolicyResponseUnmarshaller;
+import com.aliyuncs.ecs.transform.v20140526.DescribeInstanceTopologyResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CheckAutoSnapshotPolicyResponse extends AcsResponse {
+public class DescribeInstanceTopologyResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Integer autoSnapshotOccupation;
-
-	private String isPermittedModify;
+	private List<Topology> topologys;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -38,24 +37,39 @@ public class CheckAutoSnapshotPolicyResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Integer getAutoSnapshotOccupation() {
-		return this.autoSnapshotOccupation;
+	public List<Topology> getTopologys() {
+		return this.topologys;
 	}
 
-	public void setAutoSnapshotOccupation(Integer autoSnapshotOccupation) {
-		this.autoSnapshotOccupation = autoSnapshotOccupation;
+	public void setTopologys(List<Topology> topologys) {
+		this.topologys = topologys;
 	}
 
-	public String getIsPermittedModify() {
-		return this.isPermittedModify;
-	}
+	public static class Topology {
 
-	public void setIsPermittedModify(String isPermittedModify) {
-		this.isPermittedModify = isPermittedModify;
+		private String instanceId;
+
+		private String hostId;
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
+		}
+
+		public String getHostId() {
+			return this.hostId;
+		}
+
+		public void setHostId(String hostId) {
+			this.hostId = hostId;
+		}
 	}
 
 	@Override
-	public CheckAutoSnapshotPolicyResponse getInstance(UnmarshallerContext context) {
-		return	CheckAutoSnapshotPolicyResponseUnmarshaller.unmarshall(this, context);
+	public DescribeInstanceTopologyResponse getInstance(UnmarshallerContext context) {
+		return	DescribeInstanceTopologyResponseUnmarshaller.unmarshall(this, context);
 	}
 }

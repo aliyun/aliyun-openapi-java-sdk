@@ -28,6 +28,8 @@ public class ModifyInstanceDeploymentRequest extends RpcAcsRequest<ModifyInstanc
 
 	private Long resourceOwnerId;
 
+	private String deploymentSetId;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
@@ -38,6 +40,8 @@ public class ModifyInstanceDeploymentRequest extends RpcAcsRequest<ModifyInstanc
 
 	private String instanceId;
 
+	private Boolean force;
+
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
 	}
@@ -46,6 +50,17 @@ public class ModifyInstanceDeploymentRequest extends RpcAcsRequest<ModifyInstanc
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getDeploymentSetId() {
+		return this.deploymentSetId;
+	}
+
+	public void setDeploymentSetId(String deploymentSetId) {
+		this.deploymentSetId = deploymentSetId;
+		if(deploymentSetId != null){
+			putQueryParameter("DeploymentSetId", deploymentSetId);
 		}
 	}
 
@@ -101,6 +116,17 @@ public class ModifyInstanceDeploymentRequest extends RpcAcsRequest<ModifyInstanc
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public Boolean getForce() {
+		return this.force;
+	}
+
+	public void setForce(Boolean force) {
+		this.force = force;
+		if(force != null){
+			putQueryParameter("Force", force.toString());
 		}
 	}
 

@@ -20,34 +20,19 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class UnbindIpRangeRequest extends RpcAcsRequest<UnbindIpRangeResponse> {
+public class DescribeInstanceTopologyRequest extends RpcAcsRequest<DescribeInstanceTopologyResponse> {
 	
-	public UnbindIpRangeRequest() {
-		super("Ecs", "2014-05-26", "UnbindIpRange", "ecs");
+	public DescribeInstanceTopologyRequest() {
+		super("Ecs", "2014-05-26", "DescribeInstanceTopology", "ecs");
 	}
-
-	private String ipAddress;
 
 	private Long resourceOwnerId;
 
-	private String instanceId;
-
 	private String resourceOwnerAccount;
 
-	private String ownerAccount;
+	private String instanceIds;
 
 	private Long ownerId;
-
-	public String getIpAddress() {
-		return this.ipAddress;
-	}
-
-	public void setIpAddress(String ipAddress) {
-		this.ipAddress = ipAddress;
-		if(ipAddress != null){
-			putQueryParameter("IpAddress", ipAddress);
-		}
-	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -57,17 +42,6 @@ public class UnbindIpRangeRequest extends RpcAcsRequest<UnbindIpRangeResponse> {
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 
@@ -82,14 +56,14 @@ public class UnbindIpRangeRequest extends RpcAcsRequest<UnbindIpRangeResponse> {
 		}
 	}
 
-	public String getOwnerAccount() {
-		return this.ownerAccount;
+	public String getInstanceIds() {
+		return this.instanceIds;
 	}
 
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		if(ownerAccount != null){
-			putQueryParameter("OwnerAccount", ownerAccount);
+	public void setInstanceIds(String instanceIds) {
+		this.instanceIds = instanceIds;
+		if(instanceIds != null){
+			putQueryParameter("InstanceIds", instanceIds);
 		}
 	}
 
@@ -105,8 +79,8 @@ public class UnbindIpRangeRequest extends RpcAcsRequest<UnbindIpRangeResponse> {
 	}
 
 	@Override
-	public Class<UnbindIpRangeResponse> getResponseClass() {
-		return UnbindIpRangeResponse.class;
+	public Class<DescribeInstanceTopologyResponse> getResponseClass() {
+		return DescribeInstanceTopologyResponse.class;
 	}
 
 }

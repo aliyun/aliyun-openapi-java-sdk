@@ -40,11 +40,11 @@ public class CreateDeploymentSetRequest extends RpcAcsRequest<CreateDeploymentSe
 
 	private Long ownerId;
 
+	private String onUnableToRedeployFailedInstance;
+
 	private String granularity;
 
 	private String domain;
-
-	private String zoneId;
 
 	private String strategy;
 
@@ -125,6 +125,17 @@ public class CreateDeploymentSetRequest extends RpcAcsRequest<CreateDeploymentSe
 		}
 	}
 
+	public String getOnUnableToRedeployFailedInstance() {
+		return this.onUnableToRedeployFailedInstance;
+	}
+
+	public void setOnUnableToRedeployFailedInstance(String onUnableToRedeployFailedInstance) {
+		this.onUnableToRedeployFailedInstance = onUnableToRedeployFailedInstance;
+		if(onUnableToRedeployFailedInstance != null){
+			putQueryParameter("OnUnableToRedeployFailedInstance", onUnableToRedeployFailedInstance);
+		}
+	}
+
 	public String getGranularity() {
 		return this.granularity;
 	}
@@ -144,17 +155,6 @@ public class CreateDeploymentSetRequest extends RpcAcsRequest<CreateDeploymentSe
 		this.domain = domain;
 		if(domain != null){
 			putQueryParameter("Domain", domain);
-		}
-	}
-
-	public String getZoneId() {
-		return this.zoneId;
-	}
-
-	public void setZoneId(String zoneId) {
-		this.zoneId = zoneId;
-		if(zoneId != null){
-			putQueryParameter("ZoneId", zoneId);
 		}
 	}
 

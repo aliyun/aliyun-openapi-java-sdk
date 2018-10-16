@@ -40,10 +40,17 @@ public class DescribeDeploymentSetsResponseUnmarshaller {
 			deploymentSet.setDeploymentSetDescription(context.stringValue("DescribeDeploymentSetsResponse.DeploymentSets["+ i +"].DeploymentSetDescription"));
 			deploymentSet.setDeploymentSetName(context.stringValue("DescribeDeploymentSetsResponse.DeploymentSets["+ i +"].DeploymentSetName"));
 			deploymentSet.setStrategy(context.stringValue("DescribeDeploymentSetsResponse.DeploymentSets["+ i +"].Strategy"));
+			deploymentSet.setDeploymentStrategy(context.stringValue("DescribeDeploymentSetsResponse.DeploymentSets["+ i +"].DeploymentStrategy"));
 			deploymentSet.setDomain(context.stringValue("DescribeDeploymentSetsResponse.DeploymentSets["+ i +"].Domain"));
 			deploymentSet.setGranularity(context.stringValue("DescribeDeploymentSetsResponse.DeploymentSets["+ i +"].Granularity"));
 			deploymentSet.setInstanceAmount(context.integerValue("DescribeDeploymentSetsResponse.DeploymentSets["+ i +"].InstanceAmount"));
 			deploymentSet.setCreationTime(context.stringValue("DescribeDeploymentSetsResponse.DeploymentSets["+ i +"].CreationTime"));
+
+			List<String> instanceIds = new ArrayList<String>();
+			for (int j = 0; j < context.lengthValue("DescribeDeploymentSetsResponse.DeploymentSets["+ i +"].InstanceIds.Length"); j++) {
+				instanceIds.add(context.stringValue("DescribeDeploymentSetsResponse.DeploymentSets["+ i +"].InstanceIds["+ j +"]"));
+			}
+			deploymentSet.setInstanceIds(instanceIds);
 
 			deploymentSets.add(deploymentSet);
 		}

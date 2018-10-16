@@ -79,6 +79,10 @@ public class DescribeDisksFullStatusResponse extends AcsResponse {
 
 		private String diskId;
 
+		private String instanceId;
+
+		private String device;
+
 		private List<DiskEventType> diskEventSet;
 
 		private Status status;
@@ -91,6 +95,22 @@ public class DescribeDisksFullStatusResponse extends AcsResponse {
 
 		public void setDiskId(String diskId) {
 			this.diskId = diskId;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
+		}
+
+		public String getDevice() {
+			return this.device;
+		}
+
+		public void setDevice(String device) {
+			this.device = device;
 		}
 
 		public List<DiskEventType> getDiskEventSet() {
