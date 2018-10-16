@@ -27,9 +27,55 @@ public class ClusterInstance {
     @JsonProperty("IpAddress")
     private String ipAddress;
 
+    @JsonProperty("EcsInstanceId")
+    private String ecsInstanceId;
+
+    @JsonProperty("HostName")
+    private String hostName;
+
+    @JsonProperty("ErrorCode")
+    private int errorCode;
+
+    @JsonProperty("ErrorMessage")
+    private String errorMessage;
+
     @JsonProperty("CreationTime")
     @JsonDeserialize(using = CustomJsonDateDeserializer.class)
     private Date creationTime;
+
+
+    @JsonIgnore
+    public String getEcsInstanceId() {
+        return ecsInstanceId;
+    }
+    @JsonIgnore
+    public void setEcsInstanceId(String ecsInstanceId) {
+        this.ecsInstanceId = ecsInstanceId;
+    }
+    @JsonIgnore
+    public String getHostName() {
+        return hostName;
+    }
+    @JsonIgnore
+    public void setHostName(String hostName) {
+        this.hostName = hostName;
+    }
+    @JsonIgnore
+    public int getErrorCode() {
+        return errorCode;
+    }
+    @JsonIgnore
+    public void setErrorCode(int errorCode) {
+        this.errorCode = errorCode;
+    }
+    @JsonIgnore
+    public String getErrorMessage() {
+        return errorMessage;
+    }
+    @JsonIgnore
+    public void setErrorMessage(String errorMessage) {
+        this.errorMessage = errorMessage;
+    }
 
 
     @JsonIgnore

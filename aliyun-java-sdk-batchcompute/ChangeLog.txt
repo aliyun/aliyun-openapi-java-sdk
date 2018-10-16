@@ -1,3 +1,7 @@
+2018-10-16 Version: 5.3.3
+1, ClusterInstance add: EcsInstanceId, HostName, ErrorCode, ErrorMessage
+2, Group add: HostnamePrefix, ImageId
+
 2018-03-27 Version: 5.3.2
 1, Add SecurityGroups fields to Cluster Class
 

@@ -18,6 +18,10 @@ public class GroupDescription {
     private String instanceType;
 
 
+    @JsonProperty("ImageId")
+    private String imageId;
+
+
     @JsonProperty("ResourceType")
     private String resourceType;
 
@@ -26,6 +30,29 @@ public class GroupDescription {
 
     @JsonProperty("SpotPriceLimit")
     private float spotPriceLimit;
+
+    @JsonProperty("HostnamePrefix")
+    private String hostnamePrefix;
+
+
+    @JsonIgnore
+    public String getImageId() {
+        return imageId;
+    }
+    @JsonIgnore
+    public void setImageId(String imageId) {
+        this.imageId = imageId;
+    }
+    @JsonIgnore
+    public String getHostnamePrefix() {
+        return hostnamePrefix;
+    }
+
+    @JsonIgnore
+    public void setHostnamePrefix(String hostnamePrefix) {
+        this.hostnamePrefix = hostnamePrefix;
+    }
+
 
     @JsonIgnore
     public String getSpotStrategy() {

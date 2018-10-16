@@ -67,6 +67,8 @@ public class EndpointTest extends TestCase {
     private void doTest(String regionId) throws ClientException {
         BatchCompute client = new BatchComputeClient(regionId, cfg.getAccessId(), cfg.getAccessKey());
         GetQuotasResponse res = client.getQuotas();
+
+
         assertEquals("http://batchcompute." + regionId + ".aliyuncs.com/quotas", res.getHttpResponse().getUrl());
     }
 
