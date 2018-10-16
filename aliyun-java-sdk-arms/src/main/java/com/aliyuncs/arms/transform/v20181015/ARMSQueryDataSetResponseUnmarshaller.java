@@ -11,9 +11,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.aliyuncs.arms.transform.v20161125;
 
-import com.aliyuncs.arms.model.v20161125.ARMSQueryDataSetResponse;
+package com.aliyuncs.arms.transform.v20181015;
+
+import com.aliyuncs.arms.model.v20181015.ARMSQueryDataSetResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -21,6 +22,7 @@ public class ARMSQueryDataSetResponseUnmarshaller {
 
 	public static ARMSQueryDataSetResponse unmarshall(ARMSQueryDataSetResponse aRMSQueryDataSetResponse, UnmarshallerContext context) {
 		
+		aRMSQueryDataSetResponse.setRequestId(context.stringValue("ARMSQueryDataSetResponse.RequestId"));
 		aRMSQueryDataSetResponse.setData(context.stringValue("ARMSQueryDataSetResponse.Data"));
 	 
 	 	return aRMSQueryDataSetResponse;

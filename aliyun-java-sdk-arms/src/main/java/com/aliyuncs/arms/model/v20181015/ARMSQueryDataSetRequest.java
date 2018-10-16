@@ -1,22 +1,18 @@
 /*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
-package com.aliyuncs.arms.model.v20161125;
+
+package com.aliyuncs.arms.model.v20181015;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
@@ -28,10 +24,10 @@ import java.util.List;
 public class ARMSQueryDataSetRequest extends RpcAcsRequest<ARMSQueryDataSetResponse> {
 	
 	public ARMSQueryDataSetRequest() {
-		super("ARMS", "2016-11-25", "ARMSQueryDataSet");
+		super("ARMS", "2018-10-15", "ARMSQueryDataSet");
 	}
 
-	private Long dateStr;
+	private String dateStr;
 
 	private Long minTime;
 
@@ -49,24 +45,26 @@ public class ARMSQueryDataSetRequest extends RpcAcsRequest<ARMSQueryDataSetRespo
 
 	private Boolean hungryMode;
 
+	private String securityToken;
+
 	private String orderByKey;
 
 	private Integer limit;
 
-	private Long datasetId;
-
 	private List<RequiredDims> requiredDimss;
+
+	private Long datasetId;
 
 	private List<Dimensions> dimensionss;
 
-	public Long getDateStr() {
+	public String getDateStr() {
 		return this.dateStr;
 	}
 
-	public void setDateStr(Long dateStr) {
+	public void setDateStr(String dateStr) {
 		this.dateStr = dateStr;
 		if(dateStr != null){
-			putQueryParameter("DateStr", dateStr.toString());
+			putQueryParameter("DateStr", dateStr);
 		}
 	}
 
@@ -111,9 +109,9 @@ public class ARMSQueryDataSetRequest extends RpcAcsRequest<ARMSQueryDataSetRespo
 		this.optionalDimss = optionalDimss;	
 		if (optionalDimss != null) {
 			for (int depth1 = 0; depth1 < optionalDimss.size(); depth1++) {
-				putQueryParameter("OptionalDims." + (depth1 + 1) + ".Key" , optionalDimss.get(depth1).getKey());
-				putQueryParameter("OptionalDims." + (depth1 + 1) + ".Value" , optionalDimss.get(depth1).getValue());
 				putQueryParameter("OptionalDims." + (depth1 + 1) + ".Type" , optionalDimss.get(depth1).getType());
+				putQueryParameter("OptionalDims." + (depth1 + 1) + ".Value" , optionalDimss.get(depth1).getValue());
+				putQueryParameter("OptionalDims." + (depth1 + 1) + ".Key" , optionalDimss.get(depth1).getKey());
 			}
 		}	
 	}
@@ -164,6 +162,17 @@ public class ARMSQueryDataSetRequest extends RpcAcsRequest<ARMSQueryDataSetRespo
 		}
 	}
 
+	public String getSecurityToken() {
+		return this.securityToken;
+	}
+
+	public void setSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
 	public String getOrderByKey() {
 		return this.orderByKey;
 	}
@@ -186,6 +195,21 @@ public class ARMSQueryDataSetRequest extends RpcAcsRequest<ARMSQueryDataSetRespo
 		}
 	}
 
+	public List<RequiredDims> getRequiredDimss() {
+		return this.requiredDimss;
+	}
+
+	public void setRequiredDimss(List<RequiredDims> requiredDimss) {
+		this.requiredDimss = requiredDimss;	
+		if (requiredDimss != null) {
+			for (int depth1 = 0; depth1 < requiredDimss.size(); depth1++) {
+				putQueryParameter("RequiredDims." + (depth1 + 1) + ".Type" , requiredDimss.get(depth1).getType());
+				putQueryParameter("RequiredDims." + (depth1 + 1) + ".Value" , requiredDimss.get(depth1).getValue());
+				putQueryParameter("RequiredDims." + (depth1 + 1) + ".Key" , requiredDimss.get(depth1).getKey());
+			}
+		}	
+	}
+
 	public Long getDatasetId() {
 		return this.datasetId;
 	}
@@ -197,21 +221,6 @@ public class ARMSQueryDataSetRequest extends RpcAcsRequest<ARMSQueryDataSetRespo
 		}
 	}
 
-	public List<RequiredDims> getRequiredDimss() {
-		return this.requiredDimss;
-	}
-
-	public void setRequiredDimss(List<RequiredDims> requiredDimss) {
-		this.requiredDimss = requiredDimss;	
-		if (requiredDimss != null) {
-			for (int depth1 = 0; depth1 < requiredDimss.size(); depth1++) {
-				putQueryParameter("RequiredDims." + (depth1 + 1) + ".Key" , requiredDimss.get(depth1).getKey());
-				putQueryParameter("RequiredDims." + (depth1 + 1) + ".Value" , requiredDimss.get(depth1).getValue());
-				putQueryParameter("RequiredDims." + (depth1 + 1) + ".Type" , requiredDimss.get(depth1).getType());
-			}
-		}	
-	}
-
 	public List<Dimensions> getDimensionss() {
 		return this.dimensionss;
 	}
@@ -220,27 +229,27 @@ public class ARMSQueryDataSetRequest extends RpcAcsRequest<ARMSQueryDataSetRespo
 		this.dimensionss = dimensionss;	
 		if (dimensionss != null) {
 			for (int depth1 = 0; depth1 < dimensionss.size(); depth1++) {
-				putQueryParameter("Dimensions." + (depth1 + 1) + ".Key" , dimensionss.get(depth1).getKey());
-				putQueryParameter("Dimensions." + (depth1 + 1) + ".Value" , dimensionss.get(depth1).getValue());
 				putQueryParameter("Dimensions." + (depth1 + 1) + ".Type" , dimensionss.get(depth1).getType());
+				putQueryParameter("Dimensions." + (depth1 + 1) + ".Value" , dimensionss.get(depth1).getValue());
+				putQueryParameter("Dimensions." + (depth1 + 1) + ".Key" , dimensionss.get(depth1).getKey());
 			}
 		}	
 	}
 
 	public static class OptionalDims {
 
-		private String key;
+		private String type;
 
 		private String value;
 
-		private String type;
+		private String key;
 
-		public String getKey() {
-			return this.key;
+		public String getType() {
+			return this.type;
 		}
 
-		public void setKey(String key) {
-			this.key = key;
+		public void setType(String type) {
+			this.type = type;
 		}
 
 		public String getValue() {
@@ -251,29 +260,29 @@ public class ARMSQueryDataSetRequest extends RpcAcsRequest<ARMSQueryDataSetRespo
 			this.value = value;
 		}
 
-		public String getType() {
-			return this.type;
+		public String getKey() {
+			return this.key;
 		}
 
-		public void setType(String type) {
-			this.type = type;
+		public void setKey(String key) {
+			this.key = key;
 		}
 	}
 
 	public static class RequiredDims {
 
-		private String key;
+		private String type;
 
 		private String value;
 
-		private String type;
+		private String key;
 
-		public String getKey() {
-			return this.key;
+		public String getType() {
+			return this.type;
 		}
 
-		public void setKey(String key) {
-			this.key = key;
+		public void setType(String type) {
+			this.type = type;
 		}
 
 		public String getValue() {
@@ -284,29 +293,29 @@ public class ARMSQueryDataSetRequest extends RpcAcsRequest<ARMSQueryDataSetRespo
 			this.value = value;
 		}
 
-		public String getType() {
-			return this.type;
+		public String getKey() {
+			return this.key;
 		}
 
-		public void setType(String type) {
-			this.type = type;
+		public void setKey(String key) {
+			this.key = key;
 		}
 	}
 
 	public static class Dimensions {
 
-		private String key;
+		private String type;
 
 		private String value;
 
-		private String type;
+		private String key;
 
-		public String getKey() {
-			return this.key;
+		public String getType() {
+			return this.type;
 		}
 
-		public void setKey(String key) {
-			this.key = key;
+		public void setType(String type) {
+			this.type = type;
 		}
 
 		public String getValue() {
@@ -317,12 +326,12 @@ public class ARMSQueryDataSetRequest extends RpcAcsRequest<ARMSQueryDataSetRespo
 			this.value = value;
 		}
 
-		public String getType() {
-			return this.type;
+		public String getKey() {
+			return this.key;
 		}
 
-		public void setType(String type) {
-			this.type = type;
+		public void setKey(String key) {
+			this.key = key;
 		}
 	}
 

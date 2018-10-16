@@ -1,3 +1,6 @@
+2018-10-16 Version: 2.2.0
+1, This version add MetricQuery interface to support retcode and apm metric query.
+
 2017-12-20 Version: 2.0.1
 1, support tile dataset
 2, use dimension value type to replace isDrillDown

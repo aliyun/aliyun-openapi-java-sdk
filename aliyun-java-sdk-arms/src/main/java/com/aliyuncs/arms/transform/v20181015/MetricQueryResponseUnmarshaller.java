@@ -11,30 +11,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.aliyuncs.arms.model.v20161125;
 
-import com.aliyuncs.AcsResponse;
-import com.aliyuncs.arms.transform.v20161125.ARMSQueryDataSetResponseUnmarshaller;
+package com.aliyuncs.arms.transform.v20181015;
+
+import com.aliyuncs.arms.model.v20181015.MetricQueryResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
-/**
- * @author auto create
- * @version 
- */
-public class ARMSQueryDataSetResponse extends AcsResponse {
 
-	private String data;
+public class MetricQueryResponseUnmarshaller {
 
-	public String getData() {
-		return this.data;
-	}
-
-	public void setData(String data) {
-		this.data = data;
-	}
-
-	@Override
-	public ARMSQueryDataSetResponse getInstance(UnmarshallerContext context) {
-		return	ARMSQueryDataSetResponseUnmarshaller.unmarshall(this, context);
+	public static MetricQueryResponse unmarshall(MetricQueryResponse metricQueryResponse, UnmarshallerContext context) {
+		
+		metricQueryResponse.setRequestId(context.stringValue("MetricQueryResponse.RequestId"));
+		metricQueryResponse.setData(context.stringValue("MetricQueryResponse.Data"));
+	 
+	 	return metricQueryResponse;
 	}
 }

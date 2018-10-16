@@ -11,19 +11,22 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.aliyuncs.arms.model.v20161125;
+
+package com.aliyuncs.arms.model.v20181015;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.arms.transform.v20161125.WhereInDimQueryResponseUnmarshaller;
+import com.aliyuncs.arms.transform.v20181015.ARMSQueryDataSetResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class WhereInDimQueryResponse extends AcsResponse {
+public class ARMSQueryDataSetResponse extends AcsResponse {
 
 	private String data;
+
+	private String requestId;
 
 	public String getData() {
 		return this.data;
@@ -33,8 +36,16 @@ public class WhereInDimQueryResponse extends AcsResponse {
 		this.data = data;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
 	@Override
-	public WhereInDimQueryResponse getInstance(UnmarshallerContext context) {
-		return	WhereInDimQueryResponseUnmarshaller.unmarshall(this, context);
+	public ARMSQueryDataSetResponse getInstance(UnmarshallerContext context) {
+		return	ARMSQueryDataSetResponseUnmarshaller.unmarshall(this, context);
 	}
 }
