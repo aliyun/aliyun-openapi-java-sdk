@@ -195,8 +195,11 @@ public class BatchComputeClient implements BatchCompute {
     }
 
     @Override
-    public UpdateClusterResponse updateCluster(ClusterDescription desc) throws ClientException {
-        return null;
+    public UpdateClusterResponse updateCluster(String clusterId, ClusterDescription desc) throws ClientException {
+        UpdateClusterRequest request = new UpdateClusterRequest();
+        request.setClusterDescription(desc);
+        request.setClusterId(clusterId);
+        return getAcsResponse(request);
     }
 
     @Override

@@ -1,4 +1,4 @@
-.idea
+.idea/
 config_test.properties
 aliyun-java-sdk-batchcompute.iml
 .DS_Store
@@ -7,6 +7,8 @@ java/io
 .classpath
 .settings
 src/test/resources/config_test.properties
+target/
 
 archive
 archive.zip
+

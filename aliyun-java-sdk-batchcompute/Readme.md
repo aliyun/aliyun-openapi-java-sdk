@@ -20,7 +20,7 @@ Batchcompute SDK For Java
 <dependency>
     <groupId>com.aliyun</groupId>
     <artifactId>aliyun-java-sdk-batchcompute</artifactId>
-    <version>5.3.3</version>
+    <version>5.3.4</version>
 </dependency>
 ```
 
@@ -106,56 +106,4 @@ try {
 | 2. | deleteApp(String appName) | 删除 App |
 | 2. | createApp(AppDescription appDescription) | 创建App |
 | 2. | updateApp(AppDescription appDescription) | 修改App |
-
-### 5. release note
-
-5.3.1
-```
-1. 修复SecurityToken支持。
-```
-
-5.3.0
-
-```
-1. 修复SecurityToken支持。升级依赖core版本到3.5.1.
-```
-
-5.2.0
-```
-1. 创建集群时增加ScheduleType支持。
-2. 查询集群状态增加ErrorCode字段。
-```
-
-5.1.0
-```
-1. 支持VpcId
-```
-
-5.0.0
-```
-1. 支持App
-```
-
-4.7.0
-```
-1. 增加幂等token
-```
-
-4.6.0
-```
-1. AutoCluster增加竞价策略属性。
-```
-
-4.5.0
-```
-1. 集群增加竞价策略属性。
-```
-
-4.3.0
-
-```
-1. Mounts增加 cacheSupport 属性。
-2. AutoCluster 增加 reserveOnFail 属性。
-3. Group 增加Disks属性。
-```
 

@@ -1,3 +1,6 @@
+2018-10-17 Version: 5.3.4
+1, Fixed UpdateCluster(String clusterId, ClusterDescription desc)
+
 2018-10-16 Version: 5.3.3
 1, ClusterInstance add: EcsInstanceId, HostName, ErrorCode, ErrorMessage
 2, Group add: HostnamePrefix, ImageId
