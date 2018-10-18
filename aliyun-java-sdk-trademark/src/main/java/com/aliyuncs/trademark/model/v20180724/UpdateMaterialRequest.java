@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class UpdateMaterialRequest extends RpcAcsRequest<UpdateMaterialResponse> {
 	
 	public UpdateMaterialRequest() {
-		super("Trademark", "2018-07-24", "UpdateMaterial", "1.0.2");
+		super("Trademark", "2018-07-24", "UpdateMaterial", "trademark");
 	}
 
 	private String contactEmail;

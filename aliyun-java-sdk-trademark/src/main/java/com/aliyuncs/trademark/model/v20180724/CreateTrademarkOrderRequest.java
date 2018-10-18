@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class CreateTrademarkOrderRequest extends RpcAcsRequest<CreateTrademarkOrderResponse> {
 	
 	public CreateTrademarkOrderRequest() {
-		super("Trademark", "2018-07-24", "CreateTrademarkOrder", "1.0.2");
+		super("Trademark", "2018-07-24", "CreateTrademarkOrder", "trademark");
 	}
 
 	private String tmName;

@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class QueryMaterialRequest extends RpcAcsRequest<QueryMaterialResponse> {
 	
 	public QueryMaterialRequest() {
-		super("Trademark", "2018-07-24", "QueryMaterial", "1.0.2");
+		super("Trademark", "2018-07-24", "QueryMaterial", "trademark");
 	}
 
 	private Long id;
