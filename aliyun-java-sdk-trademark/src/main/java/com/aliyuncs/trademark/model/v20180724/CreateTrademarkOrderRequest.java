@@ -23,12 +23,14 @@ import com.aliyuncs.RpcAcsRequest;
 public class CreateTrademarkOrderRequest extends RpcAcsRequest<CreateTrademarkOrderResponse> {
 	
 	public CreateTrademarkOrderRequest() {
-		super("Trademark", "2018-07-24", "CreateTrademarkOrder", "trademark");
+		super("Trademark", "2018-07-24", "CreateTrademarkOrder", "1.0.2");
 	}
 
 	private String tmName;
 
 	private String tmIcon;
+
+	private Boolean isBlackIcon;
 
 	private String orderData;
 
@@ -59,6 +61,17 @@ public class CreateTrademarkOrderRequest extends RpcAcsRequest<CreateTrademarkOr
 		this.tmIcon = tmIcon;
 		if(tmIcon != null){
 			putQueryParameter("TmIcon", tmIcon);
+		}
+	}
+
+	public Boolean getIsBlackIcon() {
+		return this.isBlackIcon;
+	}
+
+	public void setIsBlackIcon(Boolean isBlackIcon) {
+		this.isBlackIcon = isBlackIcon;
+		if(isBlackIcon != null){
+			putQueryParameter("IsBlackIcon", isBlackIcon.toString());
 		}
 	}
 

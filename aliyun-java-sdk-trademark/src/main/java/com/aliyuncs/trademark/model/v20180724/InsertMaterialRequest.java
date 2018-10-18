@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class InsertMaterialRequest extends RpcAcsRequest<InsertMaterialResponse> {
 	
 	public InsertMaterialRequest() {
-		super("Trademark", "2018-07-24", "InsertMaterial", "trademark");
+		super("Trademark", "2018-07-24", "InsertMaterial", "1.0.2");
 	}
 
 	private String contactEmail;

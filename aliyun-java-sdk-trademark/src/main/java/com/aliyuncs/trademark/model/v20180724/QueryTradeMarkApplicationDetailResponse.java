@@ -51,6 +51,8 @@ public class QueryTradeMarkApplicationDetailResponse extends AcsResponse {
 
 	private String tmNumber;
 
+	private String acceptUrl;
+
 	private List<ThirdClassifications> thirdClassification;
 
 	private List<String> receiptUrl;
@@ -161,6 +163,14 @@ public class QueryTradeMarkApplicationDetailResponse extends AcsResponse {
 
 	public void setTmNumber(String tmNumber) {
 		this.tmNumber = tmNumber;
+	}
+
+	public String getAcceptUrl() {
+		return this.acceptUrl;
+	}
+
+	public void setAcceptUrl(String acceptUrl) {
+		this.acceptUrl = acceptUrl;
 	}
 
 	public List<ThirdClassifications> getThirdClassification() {

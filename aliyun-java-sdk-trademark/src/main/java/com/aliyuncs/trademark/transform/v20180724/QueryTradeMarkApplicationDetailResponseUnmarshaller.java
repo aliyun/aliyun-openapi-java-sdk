@@ -42,6 +42,7 @@ public class QueryTradeMarkApplicationDetailResponseUnmarshaller {
 		queryTradeMarkApplicationDetailResponse.setGrayIconUrl(context.stringValue("QueryTradeMarkApplicationDetailResponse.GrayIconUrl"));
 		queryTradeMarkApplicationDetailResponse.setNote(context.stringValue("QueryTradeMarkApplicationDetailResponse.Note"));
 		queryTradeMarkApplicationDetailResponse.setTmNumber(context.stringValue("QueryTradeMarkApplicationDetailResponse.TmNumber"));
+		queryTradeMarkApplicationDetailResponse.setAcceptUrl(context.stringValue("QueryTradeMarkApplicationDetailResponse.AcceptUrl"));
 
 		List<String> receiptUrl = new ArrayList<String>();
 		for (int i = 0; i < context.lengthValue("QueryTradeMarkApplicationDetailResponse.ReceiptUrl.Length"); i++) {
