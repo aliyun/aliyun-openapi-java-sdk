@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class GenerateUploadFilePolicyRequest extends RpcAcsRequest<GenerateUploadFilePolicyResponse> {
 	
 	public GenerateUploadFilePolicyRequest() {
-		super("Trademark", "2018-07-24", "GenerateUploadFilePolicy", "trademark");
+		super("Trademark", "2018-07-24", "GenerateUploadFilePolicy", "Trademark");
 	}
 
 	private String fileType;

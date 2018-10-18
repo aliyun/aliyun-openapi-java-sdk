@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class CheckLoaFillRequest extends RpcAcsRequest<CheckLoaFillResponse> {
 	
 	public CheckLoaFillRequest() {
-		super("Trademark", "2018-07-24", "CheckLoaFill", "trademark");
+		super("Trademark", "2018-07-24", "CheckLoaFill", "Trademark");
 	}
 
 	private String ossKey;

@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class BindMaterialRequest extends RpcAcsRequest<BindMaterialResponse> {
 	
 	public BindMaterialRequest() {
-		super("Trademark", "2018-07-24", "BindMaterial", "trademark");
+		super("Trademark", "2018-07-24", "BindMaterial", "Trademark");
 	}
 
 	private String bizId;

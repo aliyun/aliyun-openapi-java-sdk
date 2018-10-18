@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeleteMaterialRequest extends RpcAcsRequest<DeleteMaterialResponse> {
 	
 	public DeleteMaterialRequest() {
-		super("Trademark", "2018-07-24", "DeleteMaterial", "trademark");
+		super("Trademark", "2018-07-24", "DeleteMaterial", "Trademark");
 	}
 
 	private Long id;

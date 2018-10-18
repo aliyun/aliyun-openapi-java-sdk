@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class QueryTrademarkPriceRequest extends RpcAcsRequest<QueryTrademarkPriceResponse> {
 	
 	public QueryTrademarkPriceRequest() {
-		super("Trademark", "2018-07-24", "QueryTrademarkPrice", "trademark");
+		super("Trademark", "2018-07-24", "QueryTrademarkPrice", "Trademark");
 	}
 
 	private String tmName;

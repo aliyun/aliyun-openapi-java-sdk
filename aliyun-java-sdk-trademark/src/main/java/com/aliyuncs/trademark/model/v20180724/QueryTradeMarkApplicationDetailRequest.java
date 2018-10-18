@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class QueryTradeMarkApplicationDetailRequest extends RpcAcsRequest<QueryTradeMarkApplicationDetailResponse> {
 	
 	public QueryTradeMarkApplicationDetailRequest() {
-		super("Trademark", "2018-07-24", "QueryTradeMarkApplicationDetail", "trademark");
+		super("Trademark", "2018-07-24", "QueryTradeMarkApplicationDetail", "Trademark");
 	}
 
 	private String bizId;
