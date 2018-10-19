@@ -1,0 +1,315 @@
+/*
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package com.aliyuncs.linkedmall.model.v20180116;
+
+import java.util.List;
+import com.aliyuncs.AcsResponse;
+import com.aliyuncs.linkedmall.transform.v20180116.QueryUpcomingMoviesResponseUnmarshaller;
+import com.aliyuncs.transform.UnmarshallerContext;
+
+/**
+ * @author auto create
+ * @version 
+ */
+public class QueryUpcomingMoviesResponse extends AcsResponse {
+
+	private String requestId;
+
+	private String code;
+
+	private String message;
+
+	private String subCode;
+
+	private String subMessage;
+
+	private String logsId;
+
+	private Boolean success;
+
+	private Long totalCount;
+
+	private List<Movie> movies;
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
+	public String getSubCode() {
+		return this.subCode;
+	}
+
+	public void setSubCode(String subCode) {
+		this.subCode = subCode;
+	}
+
+	public String getSubMessage() {
+		return this.subMessage;
+	}
+
+	public void setSubMessage(String subMessage) {
+		this.subMessage = subMessage;
+	}
+
+	public String getLogsId() {
+		return this.logsId;
+	}
+
+	public void setLogsId(String logsId) {
+		this.logsId = logsId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
+	public Long getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Long totalCount) {
+		this.totalCount = totalCount;
+	}
+
+	public List<Movie> getMovies() {
+		return this.movies;
+	}
+
+	public void setMovies(List<Movie> movies) {
+		this.movies = movies;
+	}
+
+	public static class Movie {
+
+		private Long id;
+
+		private String backgroundPicture;
+
+		private String highlight;
+
+		private String openTime;
+
+		private String movieTypeList;
+
+		private String movieVersion;
+
+		private String description;
+
+		private String poster;
+
+		private String trailerList;
+
+		private String openDay;
+
+		private Long duration;
+
+		private String language;
+
+		private String country;
+
+		private String type;
+
+		private String leadingRole;
+
+		private String director;
+
+		private String movieNameEn;
+
+		private String movieName;
+
+		private String remark;
+
+		public Long getId() {
+			return this.id;
+		}
+
+		public void setId(Long id) {
+			this.id = id;
+		}
+
+		public String getBackgroundPicture() {
+			return this.backgroundPicture;
+		}
+
+		public void setBackgroundPicture(String backgroundPicture) {
+			this.backgroundPicture = backgroundPicture;
+		}
+
+		public String getHighlight() {
+			return this.highlight;
+		}
+
+		public void setHighlight(String highlight) {
+			this.highlight = highlight;
+		}
+
+		public String getOpenTime() {
+			return this.openTime;
+		}
+
+		public void setOpenTime(String openTime) {
+			this.openTime = openTime;
+		}
+
+		public String getMovieTypeList() {
+			return this.movieTypeList;
+		}
+
+		public void setMovieTypeList(String movieTypeList) {
+			this.movieTypeList = movieTypeList;
+		}
+
+		public String getMovieVersion() {
+			return this.movieVersion;
+		}
+
+		public void setMovieVersion(String movieVersion) {
+			this.movieVersion = movieVersion;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public String getPoster() {
+			return this.poster;
+		}
+
+		public void setPoster(String poster) {
+			this.poster = poster;
+		}
+
+		public String getTrailerList() {
+			return this.trailerList;
+		}
+
+		public void setTrailerList(String trailerList) {
+			this.trailerList = trailerList;
+		}
+
+		public String getOpenDay() {
+			return this.openDay;
+		}
+
+		public void setOpenDay(String openDay) {
+			this.openDay = openDay;
+		}
+
+		public Long getDuration() {
+			return this.duration;
+		}
+
+		public void setDuration(Long duration) {
+			this.duration = duration;
+		}
+
+		public String getLanguage() {
+			return this.language;
+		}
+
+		public void setLanguage(String language) {
+			this.language = language;
+		}
+
+		public String getCountry() {
+			return this.country;
+		}
+
+		public void setCountry(String country) {
+			this.country = country;
+		}
+
+		public String getType() {
+			return this.type;
+		}
+
+		public void setType(String type) {
+			this.type = type;
+		}
+
+		public String getLeadingRole() {
+			return this.leadingRole;
+		}
+
+		public void setLeadingRole(String leadingRole) {
+			this.leadingRole = leadingRole;
+		}
+
+		public String getDirector() {
+			return this.director;
+		}
+
+		public void setDirector(String director) {
+			this.director = director;
+		}
+
+		public String getMovieNameEn() {
+			return this.movieNameEn;
+		}
+
+		public void setMovieNameEn(String movieNameEn) {
+			this.movieNameEn = movieNameEn;
+		}
+
+		public String getMovieName() {
+			return this.movieName;
+		}
+
+		public void setMovieName(String movieName) {
+			this.movieName = movieName;
+		}
+
+		public String getRemark() {
+			return this.remark;
+		}
+
+		public void setRemark(String remark) {
+			this.remark = remark;
+		}
+	}
+
+	@Override
+	public QueryUpcomingMoviesResponse getInstance(UnmarshallerContext context) {
+		return	QueryUpcomingMoviesResponseUnmarshaller.unmarshall(this, context);
+	}
+}
