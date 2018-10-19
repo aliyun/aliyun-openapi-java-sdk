@@ -1,5 +1,9 @@
 # release notes
 
+5.3.5
+```
+1. 修复UpdateCluster返回的body为空时报错。
+```
 
 5.3.4
 ```

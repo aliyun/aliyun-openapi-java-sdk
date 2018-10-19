@@ -18,7 +18,6 @@
  */
 package com.aliyuncs.batchcompute.transform.v20151111;
 
-import com.aliyuncs.batchcompute.model.v20151111.ChangeClusterDesiredVMCountResponse;
 import com.aliyuncs.batchcompute.model.v20151111.UpdateClusterResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 

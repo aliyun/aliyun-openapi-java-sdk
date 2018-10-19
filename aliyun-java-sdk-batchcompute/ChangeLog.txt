@@ -1,3 +1,6 @@
+2018-10-19 Version: 5.3.5
+1, Fix NullpointException in calling updateCluster
+
 2018-10-17 Version: 5.3.4
 1, Fixed UpdateCluster(String clusterId, ClusterDescription desc)
 

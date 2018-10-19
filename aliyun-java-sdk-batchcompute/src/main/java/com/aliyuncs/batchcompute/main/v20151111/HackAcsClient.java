@@ -65,7 +65,7 @@ public class HackAcsClient {
 
         String responseEndpoint = clasz.getName().substring(clasz.getName().lastIndexOf(".") + 1);
         try {
-            context.setResponseMap(reader.read(stringContent, responseEndpoint));
+            if(reader!=null) context.setResponseMap(reader.read(stringContent, responseEndpoint));
         }catch(StringIndexOutOfBoundsException ee){}
         context.setHttpResponse(httpResponse);
         response.getInstance(context);
@@ -87,7 +87,9 @@ public class HackAcsClient {
         String stringContent = null;
 
         try {
-            stringContent = new String(httpResponse.getHttpContent(), httpResponse.getEncoding());
+            String encoding= httpResponse.getEncoding();
+            if(encoding==null)encoding="UTF-8";
+            stringContent = new String(httpResponse.getHttpContent(), encoding);
             return stringContent;
         } catch (UnsupportedEncodingException var4) {
             throw new ClientException("SDK.UnsupportedEncoding", "Can not parse response due to un supported encoding.",

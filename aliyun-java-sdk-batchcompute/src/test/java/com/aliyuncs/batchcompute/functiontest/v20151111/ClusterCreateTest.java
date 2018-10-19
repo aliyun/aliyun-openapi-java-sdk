@@ -91,7 +91,7 @@ public class ClusterCreateTest extends TestCase {
         assertTrue(0 == cluster.getGroups().get("group1").getDesiredVMCount());
 
 
-        //3 . update cluster
+        //3. update cluster
 
         ClusterDescription desc2 = getClusterDesc();
 
