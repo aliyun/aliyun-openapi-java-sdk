@@ -1,0 +1,3 @@
+2018-10-23 Version: 1.0.0
+1, finmall pop sdk 1.0.0
+
