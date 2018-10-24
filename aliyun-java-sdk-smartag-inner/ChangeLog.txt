@@ -1,0 +1,4 @@
+2018-10-24 Version: 2.0.0
+1, Add RegionId param in InnerCcnCheckCanAttachToCen and InnerCcnNotifyCenStatus
+2, Add some interface for Qitian system
+
