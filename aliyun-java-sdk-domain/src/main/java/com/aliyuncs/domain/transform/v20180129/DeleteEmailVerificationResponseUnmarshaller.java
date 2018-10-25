@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.domain.model.v20180129.DeleteEmailVerificationResponse;
 import com.aliyuncs.domain.model.v20180129.DeleteEmailVerificationResponse.SendResult;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

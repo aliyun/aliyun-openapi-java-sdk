@@ -1,3 +1,7 @@
+2018-10-25 Version: 3.9.0
+1, Add apis for trademark domains.
+2, Add QueryDomainAdminDivision api.
+
 2018-06-27 Version: 3.6.0
 1, Modify QueryDomainRealNameVerificationInfo Api, add a return value IdentityCredentialUrl, which is domain real name verification image, you can download it via a HTTP get request,It has validity for 30 seconds.
 2, Modify QueryRegistrantProfileRealNameVerificationInfo Api, add a return value IdentityCredentialUrl, which is domain real name verification image, you can download it via a HTTP get request,It has validity for 30 seconds

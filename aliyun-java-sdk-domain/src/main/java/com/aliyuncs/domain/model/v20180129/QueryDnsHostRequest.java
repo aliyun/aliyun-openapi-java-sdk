@@ -28,6 +28,8 @@ public class QueryDnsHostRequest extends RpcAcsRequest<QueryDnsHostResponse> {
 
 	private String instanceId;
 
+	private String userClientIp;
+
 	private String lang;
 
 	public String getInstanceId() {
@@ -38,6 +40,17 @@ public class QueryDnsHostRequest extends RpcAcsRequest<QueryDnsHostResponse> {
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public String getUserClientIp() {
+		return this.userClientIp;
+	}
+
+	public void setUserClientIp(String userClientIp) {
+		this.userClientIp = userClientIp;
+		if(userClientIp != null){
+			putQueryParameter("UserClientIp", userClientIp);
 		}
 	}
 

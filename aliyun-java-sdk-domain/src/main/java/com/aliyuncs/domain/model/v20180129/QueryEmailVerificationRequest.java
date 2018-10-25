@@ -26,9 +26,22 @@ public class QueryEmailVerificationRequest extends RpcAcsRequest<QueryEmailVerif
 		super("Domain", "2018-01-29", "QueryEmailVerification");
 	}
 
+	private String userClientIp;
+
 	private String lang;
 
 	private String email;
+
+	public String getUserClientIp() {
+		return this.userClientIp;
+	}
+
+	public void setUserClientIp(String userClientIp) {
+		this.userClientIp = userClientIp;
+		if(userClientIp != null){
+			putQueryParameter("UserClientIp", userClientIp);
+		}
+	}
 
 	public String getLang() {
 		return this.lang;

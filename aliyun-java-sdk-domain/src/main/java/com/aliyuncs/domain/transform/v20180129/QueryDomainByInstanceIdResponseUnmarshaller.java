@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.domain.model.v20180129.QueryDomainByInstanceIdResponse;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

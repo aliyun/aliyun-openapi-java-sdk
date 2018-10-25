@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.domain.model.v20180129.ListEmailVerificationResponse;
 import com.aliyuncs.domain.model.v20180129.ListEmailVerificationResponse.EmailVerification;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

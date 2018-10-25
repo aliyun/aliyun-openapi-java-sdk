@@ -41,8 +41,8 @@ public class SaveBatchTaskForCreatingOrderRedeemRequest extends RpcAcsRequest<Sa
 		this.orderRedeemParams = orderRedeemParams;	
 		if (orderRedeemParams != null) {
 			for (int depth1 = 0; depth1 < orderRedeemParams.size(); depth1++) {
-				putQueryParameter("OrderRedeemParam." + (depth1 + 1) + ".DomainName" , orderRedeemParams.get(depth1).getDomainName());
 				putQueryParameter("OrderRedeemParam." + (depth1 + 1) + ".CurrentExpirationDate" , orderRedeemParams.get(depth1).getCurrentExpirationDate());
+				putQueryParameter("OrderRedeemParam." + (depth1 + 1) + ".DomainName" , orderRedeemParams.get(depth1).getDomainName());
 			}
 		}	
 	}
@@ -71,17 +71,9 @@ public class SaveBatchTaskForCreatingOrderRedeemRequest extends RpcAcsRequest<Sa
 
 	public static class OrderRedeemParam {
 
-		private String domainName;
-
 		private Long currentExpirationDate;
 
-		public String getDomainName() {
-			return this.domainName;
-		}
-
-		public void setDomainName(String domainName) {
-			this.domainName = domainName;
-		}
+		private String domainName;
 
 		public Long getCurrentExpirationDate() {
 			return this.currentExpirationDate;
@@ -89,6 +81,14 @@ public class SaveBatchTaskForCreatingOrderRedeemRequest extends RpcAcsRequest<Sa
 
 		public void setCurrentExpirationDate(Long currentExpirationDate) {
 			this.currentExpirationDate = currentExpirationDate;
+		}
+
+		public String getDomainName() {
+			return this.domainName;
+		}
+
+		public void setDomainName(String domainName) {
+			this.domainName = domainName;
 		}
 	}
 

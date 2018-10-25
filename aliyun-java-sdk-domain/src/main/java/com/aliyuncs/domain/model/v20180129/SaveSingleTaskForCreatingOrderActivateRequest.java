@@ -70,6 +70,8 @@ public class SaveSingleTaskForCreatingOrderActivateRequest extends RpcAcsRequest
 
 	private String telephone;
 
+	private Boolean trademarkDomainActivation;
+
 	private String zhProvince;
 
 	private String registrantOrganization;
@@ -319,6 +321,17 @@ public class SaveSingleTaskForCreatingOrderActivateRequest extends RpcAcsRequest
 		this.telephone = telephone;
 		if(telephone != null){
 			putQueryParameter("Telephone", telephone);
+		}
+	}
+
+	public Boolean getTrademarkDomainActivation() {
+		return this.trademarkDomainActivation;
+	}
+
+	public void setTrademarkDomainActivation(Boolean trademarkDomainActivation) {
+		this.trademarkDomainActivation = trademarkDomainActivation;
+		if(trademarkDomainActivation != null){
+			putQueryParameter("TrademarkDomainActivation", trademarkDomainActivation.toString());
 		}
 	}
 

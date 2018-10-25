@@ -28,6 +28,8 @@ public class SaveBatchDomainRemarkRequest extends RpcAcsRequest<SaveBatchDomainR
 
 	private String instanceIds;
 
+	private String userClientIp;
+
 	private String remark;
 
 	private String lang;
@@ -40,6 +42,17 @@ public class SaveBatchDomainRemarkRequest extends RpcAcsRequest<SaveBatchDomainR
 		this.instanceIds = instanceIds;
 		if(instanceIds != null){
 			putQueryParameter("InstanceIds", instanceIds);
+		}
+	}
+
+	public String getUserClientIp() {
+		return this.userClientIp;
+	}
+
+	public void setUserClientIp(String userClientIp) {
+		this.userClientIp = userClientIp;
+		if(userClientIp != null){
+			putQueryParameter("UserClientIp", userClientIp);
 		}
 	}
 

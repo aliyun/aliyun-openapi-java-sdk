@@ -26,7 +26,20 @@ public class QueryDomainSuffixRequest extends RpcAcsRequest<QueryDomainSuffixRes
 		super("Domain", "2018-01-29", "QueryDomainSuffix");
 	}
 
+	private String userClientIp;
+
 	private String lang;
+
+	public String getUserClientIp() {
+		return this.userClientIp;
+	}
+
+	public void setUserClientIp(String userClientIp) {
+		this.userClientIp = userClientIp;
+		if(userClientIp != null){
+			putQueryParameter("UserClientIp", userClientIp);
+		}
+	}
 
 	public String getLang() {
 		return this.lang;

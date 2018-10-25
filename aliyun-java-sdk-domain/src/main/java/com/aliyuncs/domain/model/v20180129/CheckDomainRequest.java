@@ -32,7 +32,11 @@ public class CheckDomainRequest extends RpcAcsRequest<CheckDomainResponse> {
 
 	private String domainName;
 
+	private String userClientIp;
+
 	private String feeCommand;
+
+	private String lang;
 
 	public String getFeeCurrency() {
 		return this.feeCurrency;
@@ -67,6 +71,17 @@ public class CheckDomainRequest extends RpcAcsRequest<CheckDomainResponse> {
 		}
 	}
 
+	public String getUserClientIp() {
+		return this.userClientIp;
+	}
+
+	public void setUserClientIp(String userClientIp) {
+		this.userClientIp = userClientIp;
+		if(userClientIp != null){
+			putQueryParameter("UserClientIp", userClientIp);
+		}
+	}
+
 	public String getFeeCommand() {
 		return this.feeCommand;
 	}
@@ -75,6 +90,17 @@ public class CheckDomainRequest extends RpcAcsRequest<CheckDomainResponse> {
 		this.feeCommand = feeCommand;
 		if(feeCommand != null){
 			putQueryParameter("FeeCommand", feeCommand);
+		}
+	}
+
+	public String getLang() {
+		return this.lang;
+	}
+
+	public void setLang(String lang) {
+		this.lang = lang;
+		if(lang != null){
+			putQueryParameter("Lang", lang);
 		}
 	}
 
