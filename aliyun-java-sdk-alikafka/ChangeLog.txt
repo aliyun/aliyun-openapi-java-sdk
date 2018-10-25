@@ -1,0 +1,3 @@
+2018-10-25 Version: 1.0.0
+1, GetConsumerProgressResponse.OffsetListItem add partition property
+
