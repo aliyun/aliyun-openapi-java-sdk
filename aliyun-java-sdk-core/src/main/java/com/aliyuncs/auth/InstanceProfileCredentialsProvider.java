@@ -43,7 +43,7 @@ public class InstanceProfileCredentialsProvider implements AlibabaCloudCredentia
 
     public InstanceProfileCredentialsProvider(String roleName) {
         if (null == roleName) {
-            throw new NullPointerException("You must specifiy 如果切换成连接池会好点，参考 https://lark.alipay.com/pop/iz3d8m/pnxd6h#3%E5%A2%9E%E5%8A%A0apachehttpclient 设置一下a valid role name.");
+            throw new NullPointerException("You must specifiy a valid role name.");
         }
         this.roleName = roleName;
         this.fetcher = new ECSMetadataServiceCredentialsFetcher();

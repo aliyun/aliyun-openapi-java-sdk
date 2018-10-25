@@ -267,13 +267,13 @@ public class JsonReader implements Reader {
     }
 
     private void processListForHideItem(String baseKey) {
-        Object value = readJson(baseKey);
+        Object value = readJsonForHideItem(baseKey);
         int index = 0;
         while (token != ARRAY_END_TOKEN) {
             String key = baseKey + "[" + (index++) + "]";
             map.put(key, String.valueOf(value));
-            if (readJson(baseKey) == COMMA_TOKEN) {
-                value = readJson(baseKey);
+            if (readJsonForHideItem(baseKey) == COMMA_TOKEN) {
+                value = readJsonForHideItem(baseKey);
             }
         }
         map.put(baseKey + ".Length", String.valueOf(index));
@@ -301,16 +301,16 @@ public class JsonReader implements Reader {
         int index = 0;
         String preKey = baseKey;
         String key = preKey + "[" + index + "]";
-        Object value = readJson(key);
+        Object value = readJsonForHideItem(key);
 
         while (token != ARRAY_END_TOKEN) {
             map.put(preKey + ".Length", String.valueOf(index + 1));
             if (value instanceof String) {
                 map.put(key, String.valueOf(value));
             }
-            if (readJson(baseKey) == COMMA_TOKEN) {
+            if (readJsonForHideItem(baseKey) == COMMA_TOKEN) {
                 key = preKey + "[" + (++index) + "]";
-                value = readJson(key);
+                value = readJsonForHideItem(key);
             }
         }
     }
