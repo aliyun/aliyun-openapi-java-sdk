@@ -52,6 +52,7 @@ public class SaveBatchTaskForCreatingOrderActivateRequest extends RpcAcsRequest<
 				putQueryParameter("OrderActivateParam." + (depth1 + 1) + ".DomainName" , orderActivateParams.get(depth1).getDomainName());
 				putQueryParameter("OrderActivateParam." + (depth1 + 1) + ".RegistrantProfileId" , orderActivateParams.get(depth1).getRegistrantProfileId());
 				putQueryParameter("OrderActivateParam." + (depth1 + 1) + ".Telephone" , orderActivateParams.get(depth1).getTelephone());
+				putQueryParameter("OrderActivateParam." + (depth1 + 1) + ".TrademarkDomainActivation" , orderActivateParams.get(depth1).getTrademarkDomainActivation());
 				putQueryParameter("OrderActivateParam." + (depth1 + 1) + ".AliyunDns" , orderActivateParams.get(depth1).getAliyunDns());
 				putQueryParameter("OrderActivateParam." + (depth1 + 1) + ".RegistrantOrganization" , orderActivateParams.get(depth1).getRegistrantOrganization());
 				putQueryParameter("OrderActivateParam." + (depth1 + 1) + ".TelExt" , orderActivateParams.get(depth1).getTelExt());
@@ -109,6 +110,8 @@ public class SaveBatchTaskForCreatingOrderActivateRequest extends RpcAcsRequest<
 		private Long registrantProfileId;
 
 		private String telephone;
+
+		private Boolean trademarkDomainActivation;
 
 		private Boolean aliyunDns;
 
@@ -212,6 +215,14 @@ public class SaveBatchTaskForCreatingOrderActivateRequest extends RpcAcsRequest<
 
 		public void setTelephone(String telephone) {
 			this.telephone = telephone;
+		}
+
+		public Boolean getTrademarkDomainActivation() {
+			return this.trademarkDomainActivation;
+		}
+
+		public void setTrademarkDomainActivation(Boolean trademarkDomainActivation) {
+			this.trademarkDomainActivation = trademarkDomainActivation;
 		}
 
 		public Boolean getAliyunDns() {

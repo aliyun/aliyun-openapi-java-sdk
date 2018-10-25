@@ -20,45 +20,17 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class CheckDomainRequest extends RpcAcsRequest<CheckDomainResponse> {
+public class CheckDomainSunriseClaimRequest extends RpcAcsRequest<CheckDomainSunriseClaimResponse> {
 	
-	public CheckDomainRequest() {
-		super("Domain-intl", "2017-12-18", "CheckDomain", "domain");
+	public CheckDomainSunriseClaimRequest() {
+		super("Domain-intl", "2017-12-18", "CheckDomainSunriseClaim", "domain");
 	}
-
-	private String feeCurrency;
-
-	private Integer feePeriod;
 
 	private String domainName;
 
 	private String userClientIp;
 
-	private String feeCommand;
-
 	private String lang;
-
-	public String getFeeCurrency() {
-		return this.feeCurrency;
-	}
-
-	public void setFeeCurrency(String feeCurrency) {
-		this.feeCurrency = feeCurrency;
-		if(feeCurrency != null){
-			putQueryParameter("FeeCurrency", feeCurrency);
-		}
-	}
-
-	public Integer getFeePeriod() {
-		return this.feePeriod;
-	}
-
-	public void setFeePeriod(Integer feePeriod) {
-		this.feePeriod = feePeriod;
-		if(feePeriod != null){
-			putQueryParameter("FeePeriod", feePeriod.toString());
-		}
-	}
 
 	public String getDomainName() {
 		return this.domainName;
@@ -82,17 +54,6 @@ public class CheckDomainRequest extends RpcAcsRequest<CheckDomainResponse> {
 		}
 	}
 
-	public String getFeeCommand() {
-		return this.feeCommand;
-	}
-
-	public void setFeeCommand(String feeCommand) {
-		this.feeCommand = feeCommand;
-		if(feeCommand != null){
-			putQueryParameter("FeeCommand", feeCommand);
-		}
-	}
-
 	public String getLang() {
 		return this.lang;
 	}
@@ -105,8 +66,8 @@ public class CheckDomainRequest extends RpcAcsRequest<CheckDomainResponse> {
 	}
 
 	@Override
-	public Class<CheckDomainResponse> getResponseClass() {
-		return CheckDomainResponse.class;
+	public Class<CheckDomainSunriseClaimResponse> getResponseClass() {
+		return CheckDomainSunriseClaimResponse.class;
 	}
 
 }
