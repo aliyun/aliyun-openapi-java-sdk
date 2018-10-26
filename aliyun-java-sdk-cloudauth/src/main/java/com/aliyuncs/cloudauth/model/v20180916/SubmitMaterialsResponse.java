@@ -94,6 +94,8 @@ public class SubmitMaterialsResponse extends AcsResponse {
 
 			private Float similarityScore;
 
+			private String auditConclusions;
+
 			public Integer getStatusCode() {
 				return this.statusCode;
 			}
@@ -116,6 +118,14 @@ public class SubmitMaterialsResponse extends AcsResponse {
 
 			public void setSimilarityScore(Float similarityScore) {
 				this.similarityScore = similarityScore;
+			}
+
+			public String getAuditConclusions() {
+				return this.auditConclusions;
+			}
+
+			public void setAuditConclusions(String auditConclusions) {
+				this.auditConclusions = auditConclusions;
 			}
 		}
 	}
