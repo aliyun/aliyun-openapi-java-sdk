@@ -1,3 +1,6 @@
+2018-10-26 Version: 3.9.1
+1, Remove useless parameters QueryDomainAdminDivision api.
+
 2018-10-25 Version: 3.9.0
 1, Add apis for trademark domains.
 2, Add QueryDomainAdminDivision api.

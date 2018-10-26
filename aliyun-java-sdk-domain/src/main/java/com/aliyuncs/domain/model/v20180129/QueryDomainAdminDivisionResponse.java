@@ -27,18 +27,6 @@ public class QueryDomainAdminDivisionResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Integer totalItemNum;
-
-	private Integer currentPageNum;
-
-	private Integer totalPageNum;
-
-	private Integer pageSize;
-
-	private Boolean prePage;
-
-	private Boolean nextPage;
-
 	private List<AdminDivision> adminDivisions;
 
 	public String getRequestId() {
@@ -47,54 +35,6 @@ public class QueryDomainAdminDivisionResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Integer getTotalItemNum() {
-		return this.totalItemNum;
-	}
-
-	public void setTotalItemNum(Integer totalItemNum) {
-		this.totalItemNum = totalItemNum;
-	}
-
-	public Integer getCurrentPageNum() {
-		return this.currentPageNum;
-	}
-
-	public void setCurrentPageNum(Integer currentPageNum) {
-		this.currentPageNum = currentPageNum;
-	}
-
-	public Integer getTotalPageNum() {
-		return this.totalPageNum;
-	}
-
-	public void setTotalPageNum(Integer totalPageNum) {
-		this.totalPageNum = totalPageNum;
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-	}
-
-	public Boolean getPrePage() {
-		return this.prePage;
-	}
-
-	public void setPrePage(Boolean prePage) {
-		this.prePage = prePage;
-	}
-
-	public Boolean getNextPage() {
-		return this.nextPage;
-	}
-
-	public void setNextPage(Boolean nextPage) {
-		this.nextPage = nextPage;
 	}
 
 	public List<AdminDivision> getAdminDivisions() {

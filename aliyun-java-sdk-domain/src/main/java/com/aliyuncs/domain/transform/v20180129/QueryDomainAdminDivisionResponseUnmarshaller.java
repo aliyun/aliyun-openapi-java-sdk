@@ -29,12 +29,6 @@ public class QueryDomainAdminDivisionResponseUnmarshaller {
 	public static QueryDomainAdminDivisionResponse unmarshall(QueryDomainAdminDivisionResponse queryDomainAdminDivisionResponse, UnmarshallerContext context) {
 		
 		queryDomainAdminDivisionResponse.setRequestId(context.stringValue("QueryDomainAdminDivisionResponse.RequestId"));
-		queryDomainAdminDivisionResponse.setTotalItemNum(context.integerValue("QueryDomainAdminDivisionResponse.TotalItemNum"));
-		queryDomainAdminDivisionResponse.setCurrentPageNum(context.integerValue("QueryDomainAdminDivisionResponse.CurrentPageNum"));
-		queryDomainAdminDivisionResponse.setTotalPageNum(context.integerValue("QueryDomainAdminDivisionResponse.TotalPageNum"));
-		queryDomainAdminDivisionResponse.setPageSize(context.integerValue("QueryDomainAdminDivisionResponse.PageSize"));
-		queryDomainAdminDivisionResponse.setPrePage(context.booleanValue("QueryDomainAdminDivisionResponse.PrePage"));
-		queryDomainAdminDivisionResponse.setNextPage(context.booleanValue("QueryDomainAdminDivisionResponse.NextPage"));
 
 		List<AdminDivision> adminDivisions = new ArrayList<AdminDivision>();
 		for (int i = 0; i < context.lengthValue("QueryDomainAdminDivisionResponse.AdminDivisions.Length"); i++) {
