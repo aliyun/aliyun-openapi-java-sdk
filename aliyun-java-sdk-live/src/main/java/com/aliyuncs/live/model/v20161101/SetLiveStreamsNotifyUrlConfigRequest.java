@@ -26,7 +26,7 @@ public class SetLiveStreamsNotifyUrlConfigRequest extends RpcAcsRequest<SetLiveS
 		super("live", "2016-11-01", "SetLiveStreamsNotifyUrlConfig", "live");
 	}
 
-	private String securityToken;
+	private String authKey;
 
 	private String domainName;
 
@@ -34,14 +34,16 @@ public class SetLiveStreamsNotifyUrlConfigRequest extends RpcAcsRequest<SetLiveS
 
 	private Long ownerId;
 
-	public String getSecurityToken() {
-		return this.securityToken;
+	private String authType;
+
+	public String getAuthKey() {
+		return this.authKey;
 	}
 
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
+	public void setAuthKey(String authKey) {
+		this.authKey = authKey;
+		if(authKey != null){
+			putQueryParameter("AuthKey", authKey);
 		}
 	}
 
@@ -75,6 +77,17 @@ public class SetLiveStreamsNotifyUrlConfigRequest extends RpcAcsRequest<SetLiveS
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getAuthType() {
+		return this.authType;
+	}
+
+	public void setAuthType(String authType) {
+		this.authType = authType;
+		if(authType != null){
+			putQueryParameter("AuthType", authType);
 		}
 	}
 

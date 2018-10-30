@@ -37,6 +37,7 @@ public class DescribeRoomListResponseUnmarshaller {
 			room.setRoomId(context.stringValue("DescribeRoomListResponse.RoomList["+ i +"].RoomId"));
 			room.setAnchorId(context.stringValue("DescribeRoomListResponse.RoomList["+ i +"].AnchorId"));
 			room.setRoomStatus(context.integerValue("DescribeRoomListResponse.RoomList["+ i +"].RoomStatus"));
+			room.setForbidStream(context.stringValue("DescribeRoomListResponse.RoomList["+ i +"].ForbidStream"));
 			room.setCreateTime(context.stringValue("DescribeRoomListResponse.RoomList["+ i +"].CreateTime"));
 
 			roomList.add(room);

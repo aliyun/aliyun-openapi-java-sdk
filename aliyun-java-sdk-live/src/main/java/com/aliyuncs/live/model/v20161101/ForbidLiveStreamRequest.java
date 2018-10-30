@@ -26,13 +26,9 @@ public class ForbidLiveStreamRequest extends RpcAcsRequest<ForbidLiveStreamRespo
 		super("live", "2016-11-01", "ForbidLiveStream", "live");
 	}
 
-	private String appName;
-
-	private String streamName;
-
-	private String controlStreamAction;
-
 	private String resumeTime;
+
+	private String appName;
 
 	private String liveStreamType;
 
@@ -42,38 +38,9 @@ public class ForbidLiveStreamRequest extends RpcAcsRequest<ForbidLiveStreamRespo
 
 	private String oneshot;
 
-	public String getAppName() {
-		return this.appName;
-	}
+	private String streamName;
 
-	public void setAppName(String appName) {
-		this.appName = appName;
-		if(appName != null){
-			putQueryParameter("AppName", appName);
-		}
-	}
-
-	public String getStreamName() {
-		return this.streamName;
-	}
-
-	public void setStreamName(String streamName) {
-		this.streamName = streamName;
-		if(streamName != null){
-			putQueryParameter("StreamName", streamName);
-		}
-	}
-
-	public String getControlStreamAction() {
-		return this.controlStreamAction;
-	}
-
-	public void setControlStreamAction(String controlStreamAction) {
-		this.controlStreamAction = controlStreamAction;
-		if(controlStreamAction != null){
-			putQueryParameter("ControlStreamAction", controlStreamAction);
-		}
-	}
+	private String controlStreamAction;
 
 	public String getResumeTime() {
 		return this.resumeTime;
@@ -83,6 +50,17 @@ public class ForbidLiveStreamRequest extends RpcAcsRequest<ForbidLiveStreamRespo
 		this.resumeTime = resumeTime;
 		if(resumeTime != null){
 			putQueryParameter("ResumeTime", resumeTime);
+		}
+	}
+
+	public String getAppName() {
+		return this.appName;
+	}
+
+	public void setAppName(String appName) {
+		this.appName = appName;
+		if(appName != null){
+			putQueryParameter("AppName", appName);
 		}
 	}
 
@@ -127,6 +105,28 @@ public class ForbidLiveStreamRequest extends RpcAcsRequest<ForbidLiveStreamRespo
 		this.oneshot = oneshot;
 		if(oneshot != null){
 			putQueryParameter("Oneshot", oneshot);
+		}
+	}
+
+	public String getStreamName() {
+		return this.streamName;
+	}
+
+	public void setStreamName(String streamName) {
+		this.streamName = streamName;
+		if(streamName != null){
+			putQueryParameter("StreamName", streamName);
+		}
+	}
+
+	public String getControlStreamAction() {
+		return this.controlStreamAction;
+	}
+
+	public void setControlStreamAction(String controlStreamAction) {
+		this.controlStreamAction = controlStreamAction;
+		if(controlStreamAction != null){
+			putQueryParameter("ControlStreamAction", controlStreamAction);
 		}
 	}
 

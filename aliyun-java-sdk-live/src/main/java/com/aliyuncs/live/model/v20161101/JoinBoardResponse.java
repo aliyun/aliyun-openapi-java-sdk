@@ -32,6 +32,10 @@ public class JoinBoardResponse extends AcsResponse {
 
 	private String topicId;
 
+	private String keepaliveTopic;
+
+	private Integer keepaliveInterval;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -62,6 +66,22 @@ public class JoinBoardResponse extends AcsResponse {
 
 	public void setTopicId(String topicId) {
 		this.topicId = topicId;
+	}
+
+	public String getKeepaliveTopic() {
+		return this.keepaliveTopic;
+	}
+
+	public void setKeepaliveTopic(String keepaliveTopic) {
+		this.keepaliveTopic = keepaliveTopic;
+	}
+
+	public Integer getKeepaliveInterval() {
+		return this.keepaliveInterval;
+	}
+
+	public void setKeepaliveInterval(Integer keepaliveInterval) {
+		this.keepaliveInterval = keepaliveInterval;
 	}
 
 	@Override

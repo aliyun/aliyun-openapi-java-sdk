@@ -73,6 +73,8 @@ public class DescribeRoomListResponse extends AcsResponse {
 
 		private Integer roomStatus;
 
+		private String forbidStream;
+
 		private String createTime;
 
 		public String getRoomId() {
@@ -97,6 +99,14 @@ public class DescribeRoomListResponse extends AcsResponse {
 
 		public void setRoomStatus(Integer roomStatus) {
 			this.roomStatus = roomStatus;
+		}
+
+		public String getForbidStream() {
+			return this.forbidStream;
+		}
+
+		public void setForbidStream(String forbidStream) {
+			this.forbidStream = forbidStream;
 		}
 
 		public String getCreateTime() {

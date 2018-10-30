@@ -20,45 +20,25 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class DescribeDomainUsageDataRequest extends RpcAcsRequest<DescribeDomainUsageDataResponse> {
+public class DescribeLiveDomainTrafficDataRequest extends RpcAcsRequest<DescribeLiveDomainTrafficDataResponse> {
 	
-	public DescribeDomainUsageDataRequest() {
-		super("live", "2016-11-01", "DescribeDomainUsageData", "live");
+	public DescribeLiveDomainTrafficDataRequest() {
+		super("live", "2016-11-01", "DescribeLiveDomainTrafficData", "live");
 	}
-
-	private String startTime;
-
-	private String area;
 
 	private String domainName;
 
 	private String endTime;
 
-	private Long ownerId;
-
 	private String interval;
 
-	public String getStartTime() {
-		return this.startTime;
-	}
+	private String locationNameEn;
 
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("StartTime", startTime);
-		}
-	}
+	private String startTime;
 
-	public String getArea() {
-		return this.area;
-	}
+	private String ispNameEn;
 
-	public void setArea(String area) {
-		this.area = area;
-		if(area != null){
-			putQueryParameter("Area", area);
-		}
-	}
+	private Long ownerId;
 
 	public String getDomainName() {
 		return this.domainName;
@@ -82,17 +62,6 @@ public class DescribeDomainUsageDataRequest extends RpcAcsRequest<DescribeDomain
 		}
 	}
 
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
 	public String getInterval() {
 		return this.interval;
 	}
@@ -104,9 +73,53 @@ public class DescribeDomainUsageDataRequest extends RpcAcsRequest<DescribeDomain
 		}
 	}
 
+	public String getLocationNameEn() {
+		return this.locationNameEn;
+	}
+
+	public void setLocationNameEn(String locationNameEn) {
+		this.locationNameEn = locationNameEn;
+		if(locationNameEn != null){
+			putQueryParameter("LocationNameEn", locationNameEn);
+		}
+	}
+
+	public String getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime);
+		}
+	}
+
+	public String getIspNameEn() {
+		return this.ispNameEn;
+	}
+
+	public void setIspNameEn(String ispNameEn) {
+		this.ispNameEn = ispNameEn;
+		if(ispNameEn != null){
+			putQueryParameter("IspNameEn", ispNameEn);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
 	@Override
-	public Class<DescribeDomainUsageDataResponse> getResponseClass() {
-		return DescribeDomainUsageDataResponse.class;
+	public Class<DescribeLiveDomainTrafficDataResponse> getResponseClass() {
+		return DescribeLiveDomainTrafficDataResponse.class;
 	}
 
 }

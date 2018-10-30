@@ -26,6 +26,8 @@ public class JoinBoardResponseUnmarshaller {
 		joinBoardResponse.setToken(context.stringValue("JoinBoardResponse.Token"));
 		joinBoardResponse.setBoardId(context.stringValue("JoinBoardResponse.BoardId"));
 		joinBoardResponse.setTopicId(context.stringValue("JoinBoardResponse.TopicId"));
+		joinBoardResponse.setKeepaliveTopic(context.stringValue("JoinBoardResponse.KeepaliveTopic"));
+		joinBoardResponse.setKeepaliveInterval(context.integerValue("JoinBoardResponse.KeepaliveInterval"));
 	 
 	 	return joinBoardResponse;
 	}
