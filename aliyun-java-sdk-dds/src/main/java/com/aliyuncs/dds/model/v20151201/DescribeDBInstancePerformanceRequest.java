@@ -30,6 +30,8 @@ public class DescribeDBInstancePerformanceRequest extends RpcAcsRequest<Describe
 
 	private String resourceOwnerAccount;
 
+	private String roleId;
+
 	private String ownerAccount;
 
 	private String endTime;
@@ -67,6 +69,17 @@ public class DescribeDBInstancePerformanceRequest extends RpcAcsRequest<Describe
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getRoleId() {
+		return this.roleId;
+	}
+
+	public void setRoleId(String roleId) {
+		this.roleId = roleId;
+		if(roleId != null){
+			putQueryParameter("RoleId", roleId);
 		}
 	}
 

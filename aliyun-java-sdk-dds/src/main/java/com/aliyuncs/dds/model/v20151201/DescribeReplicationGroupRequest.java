@@ -20,27 +20,38 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class DescribeReplicaUsageRequest extends RpcAcsRequest<DescribeReplicaUsageResponse> {
+public class DescribeReplicationGroupRequest extends RpcAcsRequest<DescribeReplicationGroupResponse> {
 	
-	public DescribeReplicaUsageRequest() {
-		super("Dds", "2015-12-01", "DescribeReplicaUsage", "dds");
+	public DescribeReplicationGroupRequest() {
+		super("Dds", "2015-12-01", "DescribeReplicationGroup", "dds");
 	}
 
+	private String destinationInstanceIds;
+
 	private Long resourceOwnerId;
-
-	private String sourceDBInstanceId;
-
-	private String destinationDBInstanceId;
 
 	private String securityToken;
 
 	private String resourceOwnerAccount;
 
+	private String replicationGroupId;
+
 	private String ownerAccount;
 
-	private String replicaId;
+	private String sourceInstanceId;
 
 	private Long ownerId;
+
+	public String getDestinationInstanceIds() {
+		return this.destinationInstanceIds;
+	}
+
+	public void setDestinationInstanceIds(String destinationInstanceIds) {
+		this.destinationInstanceIds = destinationInstanceIds;
+		if(destinationInstanceIds != null){
+			putQueryParameter("DestinationInstanceIds", destinationInstanceIds);
+		}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -50,28 +61,6 @@ public class DescribeReplicaUsageRequest extends RpcAcsRequest<DescribeReplicaUs
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getSourceDBInstanceId() {
-		return this.sourceDBInstanceId;
-	}
-
-	public void setSourceDBInstanceId(String sourceDBInstanceId) {
-		this.sourceDBInstanceId = sourceDBInstanceId;
-		if(sourceDBInstanceId != null){
-			putQueryParameter("SourceDBInstanceId", sourceDBInstanceId);
-		}
-	}
-
-	public String getDestinationDBInstanceId() {
-		return this.destinationDBInstanceId;
-	}
-
-	public void setDestinationDBInstanceId(String destinationDBInstanceId) {
-		this.destinationDBInstanceId = destinationDBInstanceId;
-		if(destinationDBInstanceId != null){
-			putQueryParameter("DestinationDBInstanceId", destinationDBInstanceId);
 		}
 	}
 
@@ -97,6 +86,17 @@ public class DescribeReplicaUsageRequest extends RpcAcsRequest<DescribeReplicaUs
 		}
 	}
 
+	public String getReplicationGroupId() {
+		return this.replicationGroupId;
+	}
+
+	public void setReplicationGroupId(String replicationGroupId) {
+		this.replicationGroupId = replicationGroupId;
+		if(replicationGroupId != null){
+			putQueryParameter("ReplicationGroupId", replicationGroupId);
+		}
+	}
+
 	public String getOwnerAccount() {
 		return this.ownerAccount;
 	}
@@ -108,14 +108,14 @@ public class DescribeReplicaUsageRequest extends RpcAcsRequest<DescribeReplicaUs
 		}
 	}
 
-	public String getReplicaId() {
-		return this.replicaId;
+	public String getSourceInstanceId() {
+		return this.sourceInstanceId;
 	}
 
-	public void setReplicaId(String replicaId) {
-		this.replicaId = replicaId;
-		if(replicaId != null){
-			putQueryParameter("ReplicaId", replicaId);
+	public void setSourceInstanceId(String sourceInstanceId) {
+		this.sourceInstanceId = sourceInstanceId;
+		if(sourceInstanceId != null){
+			putQueryParameter("SourceInstanceId", sourceInstanceId);
 		}
 	}
 
@@ -131,8 +131,8 @@ public class DescribeReplicaUsageRequest extends RpcAcsRequest<DescribeReplicaUs
 	}
 
 	@Override
-	public Class<DescribeReplicaUsageResponse> getResponseClass() {
-		return DescribeReplicaUsageResponse.class;
+	public Class<DescribeReplicationGroupResponse> getResponseClass() {
+		return DescribeReplicationGroupResponse.class;
 	}
 
 }

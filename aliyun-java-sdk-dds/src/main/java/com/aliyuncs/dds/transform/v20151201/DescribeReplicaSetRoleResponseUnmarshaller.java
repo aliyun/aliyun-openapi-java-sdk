@@ -34,6 +34,7 @@ public class DescribeReplicaSetRoleResponseUnmarshaller {
 		for (int i = 0; i < context.lengthValue("DescribeReplicaSetRoleResponse.ReplicaSets.Length"); i++) {
 			ReplicaSet replicaSet = new ReplicaSet();
 			replicaSet.setReplicaSetRole(context.stringValue("DescribeReplicaSetRoleResponse.ReplicaSets["+ i +"].ReplicaSetRole"));
+			replicaSet.setRoleId(context.stringValue("DescribeReplicaSetRoleResponse.ReplicaSets["+ i +"].RoleId"));
 			replicaSet.setConnectionDomain(context.stringValue("DescribeReplicaSetRoleResponse.ReplicaSets["+ i +"].ConnectionDomain"));
 			replicaSet.setConnectionPort(context.stringValue("DescribeReplicaSetRoleResponse.ReplicaSets["+ i +"].ConnectionPort"));
 			replicaSet.setExpiredTime(context.stringValue("DescribeReplicaSetRoleResponse.ReplicaSets["+ i +"].ExpiredTime"));

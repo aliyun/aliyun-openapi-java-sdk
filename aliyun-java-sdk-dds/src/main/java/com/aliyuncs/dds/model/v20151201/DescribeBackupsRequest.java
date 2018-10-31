@@ -32,7 +32,7 @@ public class DescribeBackupsRequest extends RpcAcsRequest<DescribeBackupsRespons
 
 	private String ownerAccount;
 
-	private Integer backupId;
+	private String backupId;
 
 	private String endTime;
 
@@ -83,14 +83,14 @@ public class DescribeBackupsRequest extends RpcAcsRequest<DescribeBackupsRespons
 		}
 	}
 
-	public Integer getBackupId() {
+	public String getBackupId() {
 		return this.backupId;
 	}
 
-	public void setBackupId(Integer backupId) {
+	public void setBackupId(String backupId) {
 		this.backupId = backupId;
 		if(backupId != null){
-			putQueryParameter("BackupId", backupId.toString());
+			putQueryParameter("BackupId", backupId);
 		}
 	}
 

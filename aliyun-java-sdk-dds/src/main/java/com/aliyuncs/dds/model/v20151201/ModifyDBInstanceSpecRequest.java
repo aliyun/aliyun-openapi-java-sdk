@@ -42,6 +42,8 @@ public class ModifyDBInstanceSpecRequest extends RpcAcsRequest<ModifyDBInstanceS
 
 	private Long ownerId;
 
+	private String replicationFactor;
+
 	private String dBInstanceClass;
 
 	private String securityToken;
@@ -139,6 +141,17 @@ public class ModifyDBInstanceSpecRequest extends RpcAcsRequest<ModifyDBInstanceS
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getReplicationFactor() {
+		return this.replicationFactor;
+	}
+
+	public void setReplicationFactor(String replicationFactor) {
+		this.replicationFactor = replicationFactor;
+		if(replicationFactor != null){
+			putQueryParameter("ReplicationFactor", replicationFactor);
 		}
 	}
 

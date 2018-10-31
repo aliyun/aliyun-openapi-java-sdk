@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.dds.model.v20151201.DescribeDBInstanceAttributeResponse;
 import com.aliyuncs.dds.model.v20151201.DescribeDBInstanceAttributeResponse.DBInstance;
 import com.aliyuncs.dds.model.v20151201.DescribeDBInstanceAttributeResponse.DBInstance.MongosAttribute;
+import com.aliyuncs.dds.model.v20151201.DescribeDBInstanceAttributeResponse.DBInstance.ReplicaSet;
 import com.aliyuncs.dds.model.v20151201.DescribeDBInstanceAttributeResponse.DBInstance.ShardAttribute;
 import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -46,6 +47,7 @@ public class DescribeDBInstanceAttributeResponseUnmarshaller {
 			dBInstance.setReplacateId(context.stringValue("DescribeDBInstanceAttributeResponse.DBInstances["+ i +"].ReplacateId"));
 			dBInstance.setVPCId(context.stringValue("DescribeDBInstanceAttributeResponse.DBInstances["+ i +"].VPCId"));
 			dBInstance.setVSwitchId(context.stringValue("DescribeDBInstanceAttributeResponse.DBInstances["+ i +"].VSwitchId"));
+			dBInstance.setVPCCloudInstanceIds(context.stringValue("DescribeDBInstanceAttributeResponse.DBInstances["+ i +"].VPCCloudInstanceIds"));
 			dBInstance.setDBInstanceStatus(context.stringValue("DescribeDBInstanceAttributeResponse.DBInstances["+ i +"].DBInstanceStatus"));
 			dBInstance.setLockMode(context.stringValue("DescribeDBInstanceAttributeResponse.DBInstances["+ i +"].LockMode"));
 			dBInstance.setChargeType(context.stringValue("DescribeDBInstanceAttributeResponse.DBInstances["+ i +"].ChargeType"));
@@ -72,6 +74,9 @@ public class DescribeDBInstanceAttributeResponseUnmarshaller {
 				mongosAttribute.setMaxIOPS(context.integerValue("DescribeDBInstanceAttributeResponse.DBInstances["+ i +"].MongosList["+ j +"].MaxIOPS"));
 				mongosAttribute.setMaxConnections(context.integerValue("DescribeDBInstanceAttributeResponse.DBInstances["+ i +"].MongosList["+ j +"].MaxConnections"));
 				mongosAttribute.setPort(context.integerValue("DescribeDBInstanceAttributeResponse.DBInstances["+ i +"].MongosList["+ j +"].Port"));
+				mongosAttribute.setVpcCloudInstanceId(context.stringValue("DescribeDBInstanceAttributeResponse.DBInstances["+ i +"].MongosList["+ j +"].VpcCloudInstanceId"));
+				mongosAttribute.setVPCId(context.stringValue("DescribeDBInstanceAttributeResponse.DBInstances["+ i +"].MongosList["+ j +"].VPCId"));
+				mongosAttribute.setVSwitchId(context.stringValue("DescribeDBInstanceAttributeResponse.DBInstances["+ i +"].MongosList["+ j +"].VSwitchId"));
 
 				mongosList.add(mongosAttribute);
 			}
@@ -90,6 +95,21 @@ public class DescribeDBInstanceAttributeResponseUnmarshaller {
 				shardList.add(shardAttribute);
 			}
 			dBInstance.setShardList(shardList);
+
+			List<ReplicaSet> replicaSets = new ArrayList<ReplicaSet>();
+			for (int j = 0; j < context.lengthValue("DescribeDBInstanceAttributeResponse.DBInstances["+ i +"].ReplicaSets.Length"); j++) {
+				ReplicaSet replicaSet = new ReplicaSet();
+				replicaSet.setReplicaSetRole(context.stringValue("DescribeDBInstanceAttributeResponse.DBInstances["+ i +"].ReplicaSets["+ j +"].ReplicaSetRole"));
+				replicaSet.setConnectionDomain(context.stringValue("DescribeDBInstanceAttributeResponse.DBInstances["+ i +"].ReplicaSets["+ j +"].ConnectionDomain"));
+				replicaSet.setConnectionPort(context.stringValue("DescribeDBInstanceAttributeResponse.DBInstances["+ i +"].ReplicaSets["+ j +"].ConnectionPort"));
+				replicaSet.setVPCCloudInstanceId(context.stringValue("DescribeDBInstanceAttributeResponse.DBInstances["+ i +"].ReplicaSets["+ j +"].VPCCloudInstanceId"));
+				replicaSet.setVPCId(context.stringValue("DescribeDBInstanceAttributeResponse.DBInstances["+ i +"].ReplicaSets["+ j +"].VPCId"));
+				replicaSet.setVSwitchId(context.stringValue("DescribeDBInstanceAttributeResponse.DBInstances["+ i +"].ReplicaSets["+ j +"].VSwitchId"));
+				replicaSet.setNetworkType(context.stringValue("DescribeDBInstanceAttributeResponse.DBInstances["+ i +"].ReplicaSets["+ j +"].NetworkType"));
+
+				replicaSets.add(replicaSet);
+			}
+			dBInstance.setReplicaSets(replicaSets);
 
 			dBInstances.add(dBInstance);
 		}

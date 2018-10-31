@@ -59,6 +59,8 @@ public class DescribeReplicaSetRoleResponse extends AcsResponse {
 
 		private String replicaSetRole;
 
+		private String roleId;
+
 		private String connectionDomain;
 
 		private String connectionPort;
@@ -73,6 +75,14 @@ public class DescribeReplicaSetRoleResponse extends AcsResponse {
 
 		public void setReplicaSetRole(String replicaSetRole) {
 			this.replicaSetRole = replicaSetRole;
+		}
+
+		public String getRoleId() {
+			return this.roleId;
+		}
+
+		public void setRoleId(String roleId) {
+			this.roleId = roleId;
 		}
 
 		public String getConnectionDomain() {

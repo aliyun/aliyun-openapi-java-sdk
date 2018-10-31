@@ -71,6 +71,8 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 
 		private String vSwitchId;
 
+		private String vPCCloudInstanceIds;
+
 		private String dBInstanceStatus;
 
 		private String lockMode;
@@ -104,6 +106,8 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 		private List<MongosAttribute> mongosList;
 
 		private List<ShardAttribute> shardList;
+
+		private List<ReplicaSet> replicaSets;
 
 		public String getDBInstanceId() {
 			return this.dBInstanceId;
@@ -199,6 +203,14 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 
 		public void setVSwitchId(String vSwitchId) {
 			this.vSwitchId = vSwitchId;
+		}
+
+		public String getVPCCloudInstanceIds() {
+			return this.vPCCloudInstanceIds;
+		}
+
+		public void setVPCCloudInstanceIds(String vPCCloudInstanceIds) {
+			this.vPCCloudInstanceIds = vPCCloudInstanceIds;
 		}
 
 		public String getDBInstanceStatus() {
@@ -337,6 +349,14 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 			this.shardList = shardList;
 		}
 
+		public List<ReplicaSet> getReplicaSets() {
+			return this.replicaSets;
+		}
+
+		public void setReplicaSets(List<ReplicaSet> replicaSets) {
+			this.replicaSets = replicaSets;
+		}
+
 		public static class MongosAttribute {
 
 			private String nodeId;
@@ -352,6 +372,12 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 			private Integer maxConnections;
 
 			private Integer port;
+
+			private String vpcCloudInstanceId;
+
+			private String vPCId;
+
+			private String vSwitchId;
 
 			public String getNodeId() {
 				return this.nodeId;
@@ -407,6 +433,30 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 
 			public void setPort(Integer port) {
 				this.port = port;
+			}
+
+			public String getVpcCloudInstanceId() {
+				return this.vpcCloudInstanceId;
+			}
+
+			public void setVpcCloudInstanceId(String vpcCloudInstanceId) {
+				this.vpcCloudInstanceId = vpcCloudInstanceId;
+			}
+
+			public String getVPCId() {
+				return this.vPCId;
+			}
+
+			public void setVPCId(String vPCId) {
+				this.vPCId = vPCId;
+			}
+
+			public String getVSwitchId() {
+				return this.vSwitchId;
+			}
+
+			public void setVSwitchId(String vSwitchId) {
+				this.vSwitchId = vSwitchId;
 			}
 		}
 
@@ -470,6 +520,79 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 
 			public void setMaxConnections(Integer maxConnections) {
 				this.maxConnections = maxConnections;
+			}
+		}
+
+		public static class ReplicaSet {
+
+			private String replicaSetRole;
+
+			private String connectionDomain;
+
+			private String connectionPort;
+
+			private String vPCCloudInstanceId;
+
+			private String vPCId;
+
+			private String vSwitchId;
+
+			private String networkType;
+
+			public String getReplicaSetRole() {
+				return this.replicaSetRole;
+			}
+
+			public void setReplicaSetRole(String replicaSetRole) {
+				this.replicaSetRole = replicaSetRole;
+			}
+
+			public String getConnectionDomain() {
+				return this.connectionDomain;
+			}
+
+			public void setConnectionDomain(String connectionDomain) {
+				this.connectionDomain = connectionDomain;
+			}
+
+			public String getConnectionPort() {
+				return this.connectionPort;
+			}
+
+			public void setConnectionPort(String connectionPort) {
+				this.connectionPort = connectionPort;
+			}
+
+			public String getVPCCloudInstanceId() {
+				return this.vPCCloudInstanceId;
+			}
+
+			public void setVPCCloudInstanceId(String vPCCloudInstanceId) {
+				this.vPCCloudInstanceId = vPCCloudInstanceId;
+			}
+
+			public String getVPCId() {
+				return this.vPCId;
+			}
+
+			public void setVPCId(String vPCId) {
+				this.vPCId = vPCId;
+			}
+
+			public String getVSwitchId() {
+				return this.vSwitchId;
+			}
+
+			public void setVSwitchId(String vSwitchId) {
+				this.vSwitchId = vSwitchId;
+			}
+
+			public String getNetworkType() {
+				return this.networkType;
+			}
+
+			public void setNetworkType(String networkType) {
+				this.networkType = networkType;
 			}
 		}
 	}

@@ -26,9 +26,9 @@ public class DescribeDBInstancesRequest extends RpcAcsRequest<DescribeDBInstance
 		super("Dds", "2015-12-01", "DescribeDBInstances", "dds");
 	}
 
-	private Long resourceOwnerId;
+	private String expireTime;
 
-	private String dBInstanceIds;
+	private Long resourceOwnerId;
 
 	private String resourceOwnerAccount;
 
@@ -42,13 +42,32 @@ public class DescribeDBInstancesRequest extends RpcAcsRequest<DescribeDBInstance
 
 	private String dBInstanceType;
 
+	private String dBInstanceClass;
+
 	private String expired;
 
 	private String securityToken;
 
-	private String engine;
-
 	private Integer pageSize;
+
+	private String zoneId;
+
+	private String dBInstanceId;
+
+	private String dBInstanceDescription;
+
+	private String dBInstanceStatus;
+
+	public String getExpireTime() {
+		return this.expireTime;
+	}
+
+	public void setExpireTime(String expireTime) {
+		this.expireTime = expireTime;
+		if(expireTime != null){
+			putQueryParameter("ExpireTime", expireTime);
+		}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -58,17 +77,6 @@ public class DescribeDBInstancesRequest extends RpcAcsRequest<DescribeDBInstance
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getDBInstanceIds() {
-		return this.dBInstanceIds;
-	}
-
-	public void setDBInstanceIds(String dBInstanceIds) {
-		this.dBInstanceIds = dBInstanceIds;
-		if(dBInstanceIds != null){
-			putQueryParameter("DBInstanceIds", dBInstanceIds);
 		}
 	}
 
@@ -138,6 +146,17 @@ public class DescribeDBInstancesRequest extends RpcAcsRequest<DescribeDBInstance
 		}
 	}
 
+	public String getDBInstanceClass() {
+		return this.dBInstanceClass;
+	}
+
+	public void setDBInstanceClass(String dBInstanceClass) {
+		this.dBInstanceClass = dBInstanceClass;
+		if(dBInstanceClass != null){
+			putQueryParameter("DBInstanceClass", dBInstanceClass);
+		}
+	}
+
 	public String getExpired() {
 		return this.expired;
 	}
@@ -160,17 +179,6 @@ public class DescribeDBInstancesRequest extends RpcAcsRequest<DescribeDBInstance
 		}
 	}
 
-	public String getEngine() {
-		return this.engine;
-	}
-
-	public void setEngine(String engine) {
-		this.engine = engine;
-		if(engine != null){
-			putQueryParameter("Engine", engine);
-		}
-	}
-
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
@@ -179,6 +187,50 @@ public class DescribeDBInstancesRequest extends RpcAcsRequest<DescribeDBInstance
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getZoneId() {
+		return this.zoneId;
+	}
+
+	public void setZoneId(String zoneId) {
+		this.zoneId = zoneId;
+		if(zoneId != null){
+			putQueryParameter("ZoneId", zoneId);
+		}
+	}
+
+	public String getDBInstanceId() {
+		return this.dBInstanceId;
+	}
+
+	public void setDBInstanceId(String dBInstanceId) {
+		this.dBInstanceId = dBInstanceId;
+		if(dBInstanceId != null){
+			putQueryParameter("DBInstanceId", dBInstanceId);
+		}
+	}
+
+	public String getDBInstanceDescription() {
+		return this.dBInstanceDescription;
+	}
+
+	public void setDBInstanceDescription(String dBInstanceDescription) {
+		this.dBInstanceDescription = dBInstanceDescription;
+		if(dBInstanceDescription != null){
+			putQueryParameter("DBInstanceDescription", dBInstanceDescription);
+		}
+	}
+
+	public String getDBInstanceStatus() {
+		return this.dBInstanceStatus;
+	}
+
+	public void setDBInstanceStatus(String dBInstanceStatus) {
+		this.dBInstanceStatus = dBInstanceStatus;
+		if(dBInstanceStatus != null){
+			putQueryParameter("DBInstanceStatus", dBInstanceStatus);
 		}
 	}
 

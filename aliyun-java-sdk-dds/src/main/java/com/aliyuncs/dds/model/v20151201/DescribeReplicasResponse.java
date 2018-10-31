@@ -83,8 +83,6 @@ public class DescribeReplicasResponse extends AcsResponse {
 
 		private String replicaStatus;
 
-		private String replicationClusterStatus;
-
 		private String replicaMode;
 
 		private String domainMode;
@@ -113,14 +111,6 @@ public class DescribeReplicasResponse extends AcsResponse {
 
 		public void setReplicaStatus(String replicaStatus) {
 			this.replicaStatus = replicaStatus;
-		}
-
-		public String getReplicationClusterStatus() {
-			return this.replicationClusterStatus;
-		}
-
-		public void setReplicationClusterStatus(String replicationClusterStatus) {
-			this.replicationClusterStatus = replicationClusterStatus;
 		}
 
 		public String getReplicaMode() {
@@ -164,8 +154,6 @@ public class DescribeReplicasResponse extends AcsResponse {
 			private String engine;
 
 			private String regionId;
-
-			private String zoneId;
 
 			public String getDBInstanceId() {
 				return this.dBInstanceId;
@@ -229,14 +217,6 @@ public class DescribeReplicasResponse extends AcsResponse {
 
 			public void setRegionId(String regionId) {
 				this.regionId = regionId;
-			}
-
-			public String getZoneId() {
-				return this.zoneId;
-			}
-
-			public void setZoneId(String zoneId) {
-				this.zoneId = zoneId;
 			}
 		}
 	}

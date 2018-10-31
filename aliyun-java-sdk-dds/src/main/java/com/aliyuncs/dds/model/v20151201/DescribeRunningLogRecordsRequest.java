@@ -20,15 +20,15 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class DescribeReplicaPerformanceRequest extends RpcAcsRequest<DescribeReplicaPerformanceResponse> {
+public class DescribeRunningLogRecordsRequest extends RpcAcsRequest<DescribeRunningLogRecordsResponse> {
 	
-	public DescribeReplicaPerformanceRequest() {
-		super("Dds", "2015-12-01", "DescribeReplicaPerformance", "dds");
+	public DescribeRunningLogRecordsRequest() {
+		super("Dds", "2015-12-01", "DescribeRunningLogRecords", "dds");
 	}
 
-	private Long resourceOwnerId;
+	private Long sQLId;
 
-	private String destinationDBInstanceId;
+	private Long resourceOwnerId;
 
 	private String resourceOwnerAccount;
 
@@ -40,13 +40,30 @@ public class DescribeReplicaPerformanceRequest extends RpcAcsRequest<DescribeRep
 
 	private Long ownerId;
 
-	private String sourceDBInstanceId;
+	private Integer pageNumber;
+
+	private String dBName;
 
 	private String securityToken;
 
-	private String replicaId;
+	private Integer pageSize;
 
-	private String key;
+	private String dBInstanceId;
+
+	private String roleType;
+
+	private String nodeId;
+
+	public Long getSQLId() {
+		return this.sQLId;
+	}
+
+	public void setSQLId(Long sQLId) {
+		this.sQLId = sQLId;
+		if(sQLId != null){
+			putQueryParameter("SQLId", sQLId.toString());
+		}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -56,17 +73,6 @@ public class DescribeReplicaPerformanceRequest extends RpcAcsRequest<DescribeRep
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getDestinationDBInstanceId() {
-		return this.destinationDBInstanceId;
-	}
-
-	public void setDestinationDBInstanceId(String destinationDBInstanceId) {
-		this.destinationDBInstanceId = destinationDBInstanceId;
-		if(destinationDBInstanceId != null){
-			putQueryParameter("DestinationDBInstanceId", destinationDBInstanceId);
 		}
 	}
 
@@ -125,14 +131,25 @@ public class DescribeReplicaPerformanceRequest extends RpcAcsRequest<DescribeRep
 		}
 	}
 
-	public String getSourceDBInstanceId() {
-		return this.sourceDBInstanceId;
+	public Integer getPageNumber() {
+		return this.pageNumber;
 	}
 
-	public void setSourceDBInstanceId(String sourceDBInstanceId) {
-		this.sourceDBInstanceId = sourceDBInstanceId;
-		if(sourceDBInstanceId != null){
-			putQueryParameter("SourceDBInstanceId", sourceDBInstanceId);
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public String getDBName() {
+		return this.dBName;
+	}
+
+	public void setDBName(String dBName) {
+		this.dBName = dBName;
+		if(dBName != null){
+			putQueryParameter("DBName", dBName);
 		}
 	}
 
@@ -147,31 +164,53 @@ public class DescribeReplicaPerformanceRequest extends RpcAcsRequest<DescribeRep
 		}
 	}
 
-	public String getReplicaId() {
-		return this.replicaId;
+	public Integer getPageSize() {
+		return this.pageSize;
 	}
 
-	public void setReplicaId(String replicaId) {
-		this.replicaId = replicaId;
-		if(replicaId != null){
-			putQueryParameter("ReplicaId", replicaId);
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 
-	public String getKey() {
-		return this.key;
+	public String getDBInstanceId() {
+		return this.dBInstanceId;
 	}
 
-	public void setKey(String key) {
-		this.key = key;
-		if(key != null){
-			putQueryParameter("Key", key);
+	public void setDBInstanceId(String dBInstanceId) {
+		this.dBInstanceId = dBInstanceId;
+		if(dBInstanceId != null){
+			putQueryParameter("DBInstanceId", dBInstanceId);
+		}
+	}
+
+	public String getRoleType() {
+		return this.roleType;
+	}
+
+	public void setRoleType(String roleType) {
+		this.roleType = roleType;
+		if(roleType != null){
+			putQueryParameter("RoleType", roleType);
+		}
+	}
+
+	public String getNodeId() {
+		return this.nodeId;
+	}
+
+	public void setNodeId(String nodeId) {
+		this.nodeId = nodeId;
+		if(nodeId != null){
+			putQueryParameter("NodeId", nodeId);
 		}
 	}
 
 	@Override
-	public Class<DescribeReplicaPerformanceResponse> getResponseClass() {
-		return DescribeReplicaPerformanceResponse.class;
+	public Class<DescribeRunningLogRecordsResponse> getResponseClass() {
+		return DescribeRunningLogRecordsResponse.class;
 	}
 
 }

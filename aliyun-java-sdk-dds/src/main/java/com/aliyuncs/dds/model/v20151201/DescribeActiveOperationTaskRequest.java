@@ -20,33 +20,31 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class DescribeReplicaPerformanceRequest extends RpcAcsRequest<DescribeReplicaPerformanceResponse> {
+public class DescribeActiveOperationTaskRequest extends RpcAcsRequest<DescribeActiveOperationTaskResponse> {
 	
-	public DescribeReplicaPerformanceRequest() {
-		super("Dds", "2015-12-01", "DescribeReplicaPerformance", "dds");
+	public DescribeActiveOperationTaskRequest() {
+		super("Dds", "2015-12-01", "DescribeActiveOperationTask", "dds");
 	}
 
 	private Long resourceOwnerId;
 
-	private String destinationDBInstanceId;
+	private String taskType;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
-	private String endTime;
-
-	private String startTime;
-
 	private Long ownerId;
 
-	private String sourceDBInstanceId;
+	private Integer pageNumber;
+
+	private Integer isHistory;
 
 	private String securityToken;
 
-	private String replicaId;
+	private Integer pageSize;
 
-	private String key;
+	private String region;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -59,14 +57,14 @@ public class DescribeReplicaPerformanceRequest extends RpcAcsRequest<DescribeRep
 		}
 	}
 
-	public String getDestinationDBInstanceId() {
-		return this.destinationDBInstanceId;
+	public String getTaskType() {
+		return this.taskType;
 	}
 
-	public void setDestinationDBInstanceId(String destinationDBInstanceId) {
-		this.destinationDBInstanceId = destinationDBInstanceId;
-		if(destinationDBInstanceId != null){
-			putQueryParameter("DestinationDBInstanceId", destinationDBInstanceId);
+	public void setTaskType(String taskType) {
+		this.taskType = taskType;
+		if(taskType != null){
+			putQueryParameter("TaskType", taskType);
 		}
 	}
 
@@ -92,28 +90,6 @@ public class DescribeReplicaPerformanceRequest extends RpcAcsRequest<DescribeRep
 		}
 	}
 
-	public String getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
-		if(endTime != null){
-			putQueryParameter("EndTime", endTime);
-		}
-	}
-
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("StartTime", startTime);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -125,14 +101,25 @@ public class DescribeReplicaPerformanceRequest extends RpcAcsRequest<DescribeRep
 		}
 	}
 
-	public String getSourceDBInstanceId() {
-		return this.sourceDBInstanceId;
+	public Integer getPageNumber() {
+		return this.pageNumber;
 	}
 
-	public void setSourceDBInstanceId(String sourceDBInstanceId) {
-		this.sourceDBInstanceId = sourceDBInstanceId;
-		if(sourceDBInstanceId != null){
-			putQueryParameter("SourceDBInstanceId", sourceDBInstanceId);
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public Integer getIsHistory() {
+		return this.isHistory;
+	}
+
+	public void setIsHistory(Integer isHistory) {
+		this.isHistory = isHistory;
+		if(isHistory != null){
+			putQueryParameter("IsHistory", isHistory.toString());
 		}
 	}
 
@@ -147,31 +134,31 @@ public class DescribeReplicaPerformanceRequest extends RpcAcsRequest<DescribeRep
 		}
 	}
 
-	public String getReplicaId() {
-		return this.replicaId;
+	public Integer getPageSize() {
+		return this.pageSize;
 	}
 
-	public void setReplicaId(String replicaId) {
-		this.replicaId = replicaId;
-		if(replicaId != null){
-			putQueryParameter("ReplicaId", replicaId);
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 
-	public String getKey() {
-		return this.key;
+	public String getRegion() {
+		return this.region;
 	}
 
-	public void setKey(String key) {
-		this.key = key;
-		if(key != null){
-			putQueryParameter("Key", key);
+	public void setRegion(String region) {
+		this.region = region;
+		if(region != null){
+			putQueryParameter("Region", region);
 		}
 	}
 
 	@Override
-	public Class<DescribeReplicaPerformanceResponse> getResponseClass() {
-		return DescribeReplicaPerformanceResponse.class;
+	public Class<DescribeActiveOperationTaskResponse> getResponseClass() {
+		return DescribeActiveOperationTaskResponse.class;
 	}
 
 }
