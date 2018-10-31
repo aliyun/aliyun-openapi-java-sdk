@@ -102,7 +102,7 @@ public class DescribeRangeDataByLocateAndIspServiceRequest extends RpcAcsRequest
 	public void setStartTime(String startTime) {
 		this.startTime = startTime;
 		if(startTime != null){
-			putQueryParameter("startTime", startTime);
+			putQueryParameter("StartTime", startTime);
 		}
 	}
 
