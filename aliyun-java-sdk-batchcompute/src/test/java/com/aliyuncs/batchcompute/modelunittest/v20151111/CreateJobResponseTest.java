@@ -20,15 +20,12 @@
 package com.aliyuncs.batchcompute.modelunittest.v20151111;
 
 import com.aliyuncs.batchcompute.model.v20151111.CreateJobResponse;
-import com.aliyuncs.batchcompute.model.v20151111.DeleteJobResponse;
 import com.aliyuncs.exceptions.ServerException;
 import com.aliyuncs.http.FormatType;
 import com.aliyuncs.http.HttpResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 import junit.framework.TestCase;
 import org.junit.Test;
-
-import java.text.Format;
 
 /**
  * Created by guangchun.luo on 15/5/6.

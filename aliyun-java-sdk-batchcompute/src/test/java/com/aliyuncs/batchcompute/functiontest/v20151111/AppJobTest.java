@@ -2,8 +2,12 @@ package com.aliyuncs.batchcompute.functiontest.v20151111;
 
 import com.aliyuncs.batchcompute.main.v20151111.BatchCompute;
 import com.aliyuncs.batchcompute.main.v20151111.BatchComputeClient;
-import com.aliyuncs.batchcompute.model.v20151111.*;
-import com.aliyuncs.batchcompute.pojo.v20151111.*;
+import com.aliyuncs.batchcompute.model.v20151111.CreateAppResponse;
+import com.aliyuncs.batchcompute.model.v20151111.CreateJobResponse;
+import com.aliyuncs.batchcompute.pojo.v20151111.AppDescription;
+import com.aliyuncs.batchcompute.pojo.v20151111.AppJobDescription;
+import com.aliyuncs.batchcompute.pojo.v20151111.JobDescription;
+import com.aliyuncs.batchcompute.pojo.v20151111.Quotas;
 import com.aliyuncs.batchcompute.util.Config;
 import com.aliyuncs.exceptions.ClientException;
 import junit.framework.TestCase;

@@ -19,7 +19,6 @@
 
 package com.aliyuncs.batchcompute.modelunittest.v20151111;
 
-import com.aliyuncs.batchcompute.model.v20151111.DeleteJobResponse;
 import com.aliyuncs.batchcompute.model.v20151111.StartJobResponse;
 import com.aliyuncs.http.HttpResponse;
 import com.aliyuncs.transform.UnmarshallerContext;

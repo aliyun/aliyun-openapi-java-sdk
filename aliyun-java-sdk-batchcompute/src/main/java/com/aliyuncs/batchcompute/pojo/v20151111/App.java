@@ -2,10 +2,11 @@ package com.aliyuncs.batchcompute.pojo.v20151111;
 
 
 import com.aliyuncs.batchcompute.main.v20151111.CustomJsonDateDeserializer;
-import org.codehaus.jackson.annotate.JsonIgnore;
-import org.codehaus.jackson.annotate.JsonIgnoreProperties;
-import org.codehaus.jackson.annotate.JsonProperty;
-import org.codehaus.jackson.map.annotate.JsonDeserialize;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 
 import java.util.Date;
 import java.util.HashMap;
@@ -15,6 +16,7 @@ import java.util.Map;
  * Created by guangchun.luo on 17/10/13.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
+@JsonInclude(JsonInclude.Include.NON_DEFAULT)
 public class App {
     @JsonIgnore
     public String getName() {
@@ -111,7 +113,7 @@ public class App {
     private Config config;
 
 
-    @JsonIgnoreProperties(ignoreUnknown = true)
+    @JsonIgnoreProperties(ignoreUnknown = true) @JsonInclude(JsonInclude.Include.NON_DEFAULT)
     public static class Config{
         @JsonProperty("ResourceType")
         private ConfigValue resourceType;
@@ -192,7 +194,7 @@ public class App {
         }
     }
 
-    @JsonIgnoreProperties(ignoreUnknown = true)
+    @JsonIgnoreProperties(ignoreUnknown = true) @JsonInclude(JsonInclude.Include.NON_DEFAULT)
     public static class ConfigValue{
         @JsonProperty("Description")
         private String description;
@@ -229,7 +231,7 @@ public class App {
     }
 
 
-    @JsonIgnoreProperties(ignoreUnknown = true)
+    @JsonIgnoreProperties(ignoreUnknown = true) @JsonInclude(JsonInclude.Include.NON_DEFAULT)
     public static class ConfigValueInteger{
         @JsonProperty("Description")
         private String description;
@@ -271,7 +273,7 @@ public class App {
         }
     }
 
-    @JsonIgnoreProperties(ignoreUnknown = true)
+    @JsonIgnoreProperties(ignoreUnknown = true) @JsonInclude(JsonInclude.Include.NON_DEFAULT)
     public static class ConfigValueLong{
         @JsonProperty("Description")
         private String description;
@@ -310,7 +312,7 @@ public class App {
         }
     }
 
-    @JsonIgnoreProperties(ignoreUnknown = true)
+    @JsonIgnoreProperties(ignoreUnknown = true) @JsonInclude(JsonInclude.Include.NON_DEFAULT)
     public static class ConfigValueBoolean{
         @JsonProperty("Description")
         private String description;
@@ -351,7 +353,7 @@ public class App {
 
 
 
-    @JsonIgnoreProperties(ignoreUnknown = true)
+    @JsonIgnoreProperties(ignoreUnknown = true) @JsonInclude(JsonInclude.Include.NON_DEFAULT)
     public static class InputParameterValue{
         @JsonProperty("Description")
         private String description;
@@ -389,7 +391,7 @@ public class App {
 
     }
 
-    @JsonIgnoreProperties(ignoreUnknown = true)
+    @JsonIgnoreProperties(ignoreUnknown = true) @JsonInclude(JsonInclude.Include.NON_DEFAULT)
     public static class OutputParameterValue{
         @JsonProperty("Description")
         private String description;

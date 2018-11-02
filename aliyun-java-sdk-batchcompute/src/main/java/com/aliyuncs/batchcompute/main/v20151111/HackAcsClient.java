@@ -29,6 +29,7 @@ import com.aliyuncs.reader.ReaderFactory;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 import java.io.UnsupportedEncodingException;
+import java.util.HashMap;
 import java.util.Map;
 
 /**
@@ -50,28 +51,39 @@ public class HackAcsClient {
         }
     }
 
-    private static <T extends AcsResponse> T readResponse(Class<T> clasz, HttpResponse httpResponse, FormatType format) throws ClientException {
-        Reader reader = ReaderFactory.createInstance(format);
-        UnmarshallerContext context = new UnmarshallerContext();
-        AcsResponse response = null;
-        String stringContent = getResponseContent(httpResponse);
+    private static <T extends AcsResponse> T readResponse(Class<T> clasz, HttpResponse httpResponse, FormatType format)
+            throws ClientException {
 
+
+        UnmarshallerContext context = new UnmarshallerContext();
+        T response = null;
+        String stringContent = httpResponse.getHttpContentString();
         try {
-            response = (AcsResponse) clasz.newInstance();
-        } catch (Exception var9) {
-            throw new ClientException("SDK.InvalidResponseClass", "Unable to allocate " + clasz.getName() + " class",
-                    httpResponse.getHeaderValue("Request-Id"));
+            response = clasz.newInstance();
+        } catch (Exception e) {
+            throw new ClientException("SDK.InvalidResponseClass", "Unable to allocate " + clasz.getName() + " class");
         }
 
-        String responseEndpoint = clasz.getName().substring(clasz.getName().lastIndexOf(".") + 1);
-        try {
-            if(reader!=null) context.setResponseMap(reader.read(stringContent, responseEndpoint));
-        }catch(StringIndexOutOfBoundsException ee){}
+        if(format==null || format==FormatType.RAW ){
+            context.setResponseMap(new HashMap<String, String>());
+        }
+        else{
+            String responseEndpoint = clasz.getName().substring(clasz.getName().lastIndexOf(".") + 1);
+            if (response.checkShowJsonItemName()) {
+                Reader reader = ReaderFactory.createInstance(format);
+                context.setResponseMap(reader.read(stringContent, responseEndpoint));
+            } else {
+                Reader reader = ReaderFactory.createInstance(format);
+                context.setResponseMap(reader.readForHideArrayItem(stringContent, responseEndpoint));
+            }
+
+        }
+
         context.setHttpResponse(httpResponse);
         response.getInstance(context);
-        return (T) response;
-    }
+        return response;
 
+    }
     private static AcsError readError(HttpResponse httpResponse, FormatType format) throws ClientException {
         AcsError error = new AcsError();
         String responseEndpoint = "Error";

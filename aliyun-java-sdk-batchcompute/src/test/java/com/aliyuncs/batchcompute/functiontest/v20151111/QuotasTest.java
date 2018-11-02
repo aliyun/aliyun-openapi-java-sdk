@@ -21,7 +21,7 @@ package com.aliyuncs.batchcompute.functiontest.v20151111;
 
 import com.aliyuncs.batchcompute.main.v20151111.BatchCompute;
 import com.aliyuncs.batchcompute.main.v20151111.BatchComputeClient;
-import com.aliyuncs.batchcompute.model.v20151111.*;
+import com.aliyuncs.batchcompute.model.v20151111.GetQuotasResponse;
 import com.aliyuncs.batchcompute.pojo.v20151111.Quotas;
 import com.aliyuncs.batchcompute.util.Config;
 import com.aliyuncs.exceptions.ClientException;

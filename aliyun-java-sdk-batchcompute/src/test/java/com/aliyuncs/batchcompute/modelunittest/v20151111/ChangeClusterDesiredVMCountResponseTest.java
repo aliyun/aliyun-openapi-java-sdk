@@ -20,7 +20,6 @@
 package com.aliyuncs.batchcompute.modelunittest.v20151111;
 
 import com.aliyuncs.batchcompute.model.v20151111.ChangeClusterDesiredVMCountResponse;
-import com.aliyuncs.batchcompute.model.v20151111.ChangeJobPriorityResponse;
 import com.aliyuncs.http.HttpResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 import junit.framework.TestCase;

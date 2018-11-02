@@ -26,8 +26,6 @@ import com.aliyuncs.batchcompute.transform.v20151111.ChangeClusterDesiredVMCount
 import com.aliyuncs.exceptions.ClientException;
 import com.aliyuncs.http.MethodType;
 
-import java.util.Map;
-
 /**
  * @author auto create
  */

@@ -1,3 +1,7 @@
+2018-11-02 Version: 6.0.0
+1, Upgrade jackson lib version 2.x
+2, Upgrade core lib to version 4.1.2
+
 2018-10-19 Version: 5.3.5
 1, Fix NullpointException in calling updateCluster
 

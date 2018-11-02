@@ -19,9 +19,7 @@
 
 package com.aliyuncs.batchcompute.modelunittest.v20151111;
 
-import com.aliyuncs.batchcompute.model.v20151111.ListClustersResponse;
 import com.aliyuncs.batchcompute.model.v20151111.ListJobsResponse;
-import com.aliyuncs.batchcompute.pojo.v20151111.Cluster;
 import com.aliyuncs.batchcompute.pojo.v20151111.Job;
 import com.aliyuncs.batchcompute.util.FileLoader;
 import com.aliyuncs.exceptions.ServerException;

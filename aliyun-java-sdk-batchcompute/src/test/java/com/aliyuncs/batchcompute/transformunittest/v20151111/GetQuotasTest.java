@@ -1,13 +1,9 @@
 package com.aliyuncs.batchcompute.transformunittest.v20151111;
 
-import com.aliyuncs.batchcompute.pojo.v20151111.DataDisk;
-import com.aliyuncs.batchcompute.pojo.v20151111.Disks;
 import com.aliyuncs.batchcompute.pojo.v20151111.Quotas;
-import com.aliyuncs.batchcompute.pojo.v20151111.SystemDisk;
 import com.aliyuncs.batchcompute.util.FileLoader;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import junit.framework.TestCase;
-import org.codehaus.jackson.map.ObjectMapper;
-import org.codehaus.jackson.map.annotate.JsonSerialize;
 import org.junit.Test;
 
 import java.io.IOException;

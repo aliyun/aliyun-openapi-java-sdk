@@ -20,7 +20,6 @@
 package com.aliyuncs.batchcompute.modelunittest.v20151111;
 
 import com.aliyuncs.batchcompute.model.v20151111.CreateClusterResponse;
-import com.aliyuncs.batchcompute.model.v20151111.CreateJobResponse;
 import com.aliyuncs.exceptions.ServerException;
 import com.aliyuncs.http.FormatType;
 import com.aliyuncs.http.HttpResponse;

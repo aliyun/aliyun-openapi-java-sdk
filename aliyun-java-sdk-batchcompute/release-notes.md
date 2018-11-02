@@ -1,5 +1,11 @@
 # release notes
 
+6.0.0
+```
+1. 升级jackson库到最新。
+2. 升级core到最新。
+```
+
 5.3.5
 ```
 1. 修复UpdateCluster返回的body为空时报错。

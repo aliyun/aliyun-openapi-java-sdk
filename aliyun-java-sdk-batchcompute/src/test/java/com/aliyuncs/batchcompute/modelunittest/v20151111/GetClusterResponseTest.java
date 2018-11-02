@@ -20,20 +20,17 @@
 package com.aliyuncs.batchcompute.modelunittest.v20151111;
 
 import com.aliyuncs.batchcompute.model.v20151111.GetClusterResponse;
-import com.aliyuncs.batchcompute.model.v20151111.GetJobResponse;
-import com.aliyuncs.batchcompute.pojo.v20151111.*;
+import com.aliyuncs.batchcompute.pojo.v20151111.ClassicNetWork;
+import com.aliyuncs.batchcompute.pojo.v20151111.Cluster;
+import com.aliyuncs.batchcompute.pojo.v20151111.Mounts;
+import com.aliyuncs.batchcompute.pojo.v20151111.Topic;
 import com.aliyuncs.batchcompute.util.FileLoader;
-import com.aliyuncs.exceptions.ClientException;
 import com.aliyuncs.exceptions.ServerException;
 import com.aliyuncs.http.FormatType;
 import com.aliyuncs.http.HttpResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 import junit.framework.TestCase;
-import org.codehaus.jackson.map.ObjectMapper;
-import org.codehaus.jackson.map.annotate.JsonSerialize;
 import org.junit.Test;
-
-import java.io.IOException;
 
 /**
  * Created by guangchun.luo on 15/4/16.

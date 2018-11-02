@@ -20,8 +20,6 @@ package com.aliyuncs.batchcompute.transform.v20151111;
 
 import com.aliyuncs.batchcompute.model.v20151111.ChangeJobPriorityRequest;
 
-import java.security.NoSuchAlgorithmException;
-
 
 public class ChangeJobPriorityRequestMarshaller {
 

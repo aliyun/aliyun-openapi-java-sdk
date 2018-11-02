@@ -4,9 +4,9 @@ import com.aliyuncs.batchcompute.pojo.v20151111.DataDisk;
 import com.aliyuncs.batchcompute.pojo.v20151111.Disks;
 import com.aliyuncs.batchcompute.pojo.v20151111.SystemDisk;
 import com.aliyuncs.batchcompute.util.FileLoader;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import junit.framework.TestCase;
-import org.codehaus.jackson.map.ObjectMapper;
-import org.codehaus.jackson.map.annotate.JsonSerialize;
 import org.junit.Test;
 
 import java.io.IOException;
@@ -43,7 +43,7 @@ public class DisksTest extends TestCase {
         //d.setSize(20);
 
         ObjectMapper mapper = new ObjectMapper();
-        mapper.setSerializationInclusion(JsonSerialize.Inclusion.NON_DEFAULT);
+        mapper.setSerializationInclusion(JsonInclude.Include.NON_DEFAULT);
         String str = mapper.writeValueAsString(disks);
         System.out.println(str);
 
@@ -84,7 +84,7 @@ public class DisksTest extends TestCase {
         ObjectMapper mapper = new ObjectMapper();
 
         //默认值不序列化
-        mapper.setSerializationInclusion(JsonSerialize.Inclusion.NON_DEFAULT);
+        mapper.setSerializationInclusion(JsonInclude.Include.NON_DEFAULT);
 
         String body = mapper.writeValueAsString(disks);
 

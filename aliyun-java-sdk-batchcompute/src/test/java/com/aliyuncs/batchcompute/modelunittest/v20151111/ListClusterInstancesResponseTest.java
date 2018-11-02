@@ -20,9 +20,7 @@
 package com.aliyuncs.batchcompute.modelunittest.v20151111;
 
 import com.aliyuncs.batchcompute.model.v20151111.ListClusterInstancesResponse;
-import com.aliyuncs.batchcompute.model.v20151111.ListInstancesResponse;
 import com.aliyuncs.batchcompute.pojo.v20151111.ClusterInstance;
-import com.aliyuncs.batchcompute.pojo.v20151111.Instance;
 import com.aliyuncs.batchcompute.util.FileLoader;
 import com.aliyuncs.exceptions.ServerException;
 import com.aliyuncs.http.FormatType;

@@ -42,6 +42,9 @@ public class GetAppRevisionsResponse extends BatchComputeResponse {
 		this.list = list;
 	}
 
+	public boolean checkShowJsonItemName(){
+		return false;
+	}
 	@Override
 	public GetAppRevisionsResponse getInstance(UnmarshallerContext context) throws ServerException {
 		return GetAppRevisionsResponseUnmarshaller.unmarshall(this, context);

@@ -20,7 +20,6 @@
 package com.aliyuncs.batchcompute.modelunittest.v20151111;
 
 
-import com.aliyuncs.batchcompute.model.v20151111.ListClustersRequest;
 import com.aliyuncs.batchcompute.model.v20151111.ListJobsRequest;
 import junit.framework.TestCase;
 import org.junit.Test;

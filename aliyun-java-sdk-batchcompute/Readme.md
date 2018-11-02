@@ -13,14 +13,14 @@ Batchcompute SDK For Java
 <dependency>
     <groupId>com.aliyun</groupId>
     <artifactId>aliyun-java-sdk-core</artifactId>
-    <version>3.5.1</version>
+    <version>4.1.2</version>
 </dependency>
 
 
 <dependency>
     <groupId>com.aliyun</groupId>
     <artifactId>aliyun-java-sdk-batchcompute</artifactId>
-    <version>5.3.5</version>
+    <version>6.0.0</version>
 </dependency>
 ```
 

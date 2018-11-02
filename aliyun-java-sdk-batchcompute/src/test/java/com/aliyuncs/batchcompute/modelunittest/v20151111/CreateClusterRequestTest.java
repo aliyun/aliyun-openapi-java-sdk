@@ -20,12 +20,13 @@
 package com.aliyuncs.batchcompute.modelunittest.v20151111;
 
 
-import com.aliyuncs.batchcompute.model.v20151111.*;
-import com.aliyuncs.batchcompute.pojo.v20151111.*;
+import com.aliyuncs.batchcompute.model.v20151111.CreateClusterRequest;
+import com.aliyuncs.batchcompute.pojo.v20151111.ClusterDescription;
+import com.aliyuncs.batchcompute.pojo.v20151111.GroupDescription;
 import com.aliyuncs.exceptions.ClientException;
 import com.aliyuncs.http.MethodType;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import junit.framework.TestCase;
-import org.codehaus.jackson.map.ObjectMapper;
 import org.junit.Test;
 
 import java.io.IOException;

@@ -29,14 +29,14 @@ import com.aliyuncs.batchcompute.pojo.v20151111.AppDescription;
 import com.aliyuncs.batchcompute.pojo.v20151111.ClusterDescription;
 import com.aliyuncs.batchcompute.pojo.v20151111.ImageDescription;
 import com.aliyuncs.batchcompute.pojo.v20151111.JobDescription;
+import com.aliyuncs.endpoint.DefaultEndpointResolver;
+import com.aliyuncs.endpoint.ResolveEndpointRequest;
 import com.aliyuncs.exceptions.ClientException;
+import com.aliyuncs.exceptions.ServerException;
 import com.aliyuncs.http.HttpResponse;
 import com.aliyuncs.profile.DefaultProfile;
-import com.aliyuncs.regions.Endpoint;
-import com.aliyuncs.regions.ProductDomain;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
@@ -86,11 +86,7 @@ public class BatchComputeClient implements BatchCompute {
      */
     public static void addEndpoint(String region, String domain) {
         regionMap.put(region, domain);
-        try {
-            DefaultProfile.addEndpoint(region, region, "BatchCompute", domain);
-        } catch (ClientException e) {
-            e.printStackTrace();
-        }
+        DefaultProfile.addEndpoint( region, PRODUCT_CODE, domain);
     }
 
     public static Map<String, String> listEndpoints() throws ClientException {
@@ -100,17 +96,10 @@ public class BatchComputeClient implements BatchCompute {
         for(Map.Entry<String, String>  ent : regionMap.entrySet()){
             String region = ent.getKey();
 
-            List<Endpoint>  list = DefaultProfile.getProfile().getEndpoints(region, PRODUCT_CODE);
+            ResolveEndpointRequest req = new ResolveEndpointRequest(region, PRODUCT_CODE, "", ResolveEndpointRequest.ENDPOINT_TYPE_OPEN);
+            String endpoint = DefaultEndpointResolver.predefinedEndpointResolver.fetchEndpointEntry(req);
 
-            for(Endpoint ep : list){
-                //System.out.println(ep.getName()+":  "+ ep.getProductDomains().size());
-                for( ProductDomain pd: ep.getProductDomains()) {
-                    if(pd.getProductName().equals(PRODUCT_CODE)) {
-                        m.put(ep.getName(), pd.getDomianName());
-                        //System.out.println("   "+ep.getName() + ", " + pd.getDomianName() + ", " + pd.getProductName());
-                    }
-                }
-            }
+            m.put(region, endpoint);
         }
         return m;
 
@@ -129,8 +118,11 @@ public class BatchComputeClient implements BatchCompute {
 
     public static boolean verbose = false;
 
+    private <T extends AcsResponse> T getAcsResponse2(AcsRequest<T> request) throws ServerException, ClientException {
+        return client.getAcsResponse(request);
+    }
 
-    //hack一下，处理 ErrorCode 的兼容
+        //hack一下，处理 ErrorCode 的兼容
     private <T extends AcsResponse> T getAcsResponse(AcsRequest<T> request) throws ClientException {
 
         //request.putHeaderParameter("x-acs-access-key-id", this.accessKeyId);

@@ -21,21 +21,14 @@ package com.aliyuncs.batchcompute.functiontest.v20151111;
 
 import com.aliyuncs.batchcompute.main.v20151111.BatchCompute;
 import com.aliyuncs.batchcompute.main.v20151111.BatchComputeClient;
-import com.aliyuncs.batchcompute.model.v20151111.GetQuotasResponse;
-import com.aliyuncs.batchcompute.pojo.v20151111.Cluster;
 import com.aliyuncs.batchcompute.pojo.v20151111.Job;
-import com.aliyuncs.batchcompute.pojo.v20151111.Quotas;
 import com.aliyuncs.batchcompute.util.Config;
 import com.aliyuncs.exceptions.ClientException;
-import com.aliyuncs.profile.DefaultProfile;
-import com.aliyuncs.regions.Endpoint;
 import junit.framework.TestCase;
 import org.junit.Test;
 
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 
 
 public class RegionTest extends TestCase {
@@ -60,6 +53,7 @@ public class RegionTest extends TestCase {
         run("cn-qingdao");
         run("cn-shenzhen");
         run("cn-shanghai");
+
 
 
         Map<String,String> m = BatchComputeClient.listEndpoints();

@@ -21,7 +21,6 @@ package com.aliyuncs.batchcompute.modelunittest.v20151111;
 
 
 import com.aliyuncs.batchcompute.model.v20151111.ListInstancesRequest;
-import com.aliyuncs.batchcompute.model.v20151111.ListTasksRequest;
 import junit.framework.TestCase;
 import org.junit.Test;
 

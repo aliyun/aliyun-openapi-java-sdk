@@ -1,9 +1,10 @@
 package com.aliyuncs.batchcompute.pojo.v20151111;
 
 
-import org.codehaus.jackson.annotate.JsonIgnore;
-import org.codehaus.jackson.annotate.JsonIgnoreProperties;
-import org.codehaus.jackson.annotate.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -12,6 +13,7 @@ import java.util.Map;
  * Created by guangchun.luo on 17/10/13.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
+@JsonInclude(JsonInclude.Include.NON_DEFAULT)
 public class AppDescription {
     @JsonIgnore
     public String getName() {
@@ -170,7 +172,7 @@ public class AppDescription {
     private Config config;
 
 
-    @JsonIgnoreProperties(ignoreUnknown = true)
+    @JsonIgnoreProperties(ignoreUnknown = true) @JsonInclude(JsonInclude.Include.NON_DEFAULT)
     public static class Config{
         @JsonProperty("ResourceType")
         private ConfigValue resourceType;
@@ -251,7 +253,7 @@ public class AppDescription {
         }
     }
 
-    @JsonIgnoreProperties(ignoreUnknown = true)
+    @JsonIgnoreProperties(ignoreUnknown = true) @JsonInclude(JsonInclude.Include.NON_DEFAULT)
     public static class ConfigValue{
         @JsonProperty("Description")
         private String description;
@@ -288,7 +290,7 @@ public class AppDescription {
     }
 
 
-    @JsonIgnoreProperties(ignoreUnknown = true)
+    @JsonIgnoreProperties(ignoreUnknown = true) @JsonInclude(JsonInclude.Include.NON_DEFAULT)
     public static class ConfigValueInteger{
         @JsonProperty("Description")
         private String description;
@@ -330,7 +332,7 @@ public class AppDescription {
         }
     }
 
-    @JsonIgnoreProperties(ignoreUnknown = true)
+    @JsonIgnoreProperties(ignoreUnknown = true) @JsonInclude(JsonInclude.Include.NON_DEFAULT)
     public static class ConfigValueLong{
         @JsonProperty("Description")
         private String description;
@@ -369,7 +371,7 @@ public class AppDescription {
         }
     }
 
-    @JsonIgnoreProperties(ignoreUnknown = true)
+    @JsonIgnoreProperties(ignoreUnknown = true) @JsonInclude(JsonInclude.Include.NON_DEFAULT)
     public static class ConfigValueBoolean{
         @JsonProperty("Description")
         private String description;
@@ -409,7 +411,7 @@ public class AppDescription {
 
 
 
-    @JsonIgnoreProperties(ignoreUnknown = true)
+    @JsonIgnoreProperties(ignoreUnknown = true) @JsonInclude(JsonInclude.Include.NON_DEFAULT)
     public static class Docker{
         @JsonProperty("Image")
         private String image;
@@ -437,7 +439,7 @@ public class AppDescription {
     }
 
 
-    @JsonIgnoreProperties(ignoreUnknown = true)
+    @JsonIgnoreProperties(ignoreUnknown = true) @JsonInclude(JsonInclude.Include.NON_DEFAULT)
     public static class VM{
         public VM(){}
         public VM(String ecsImageId){
@@ -457,7 +459,7 @@ public class AppDescription {
     }
 
 
-    @JsonIgnoreProperties(ignoreUnknown = true)
+    @JsonIgnoreProperties(ignoreUnknown = true) @JsonInclude(JsonInclude.Include.NON_DEFAULT)
     public static class InputParameterValue{
 
 
@@ -507,7 +509,7 @@ public class AppDescription {
         private String localPath;
     }
 
-    @JsonIgnoreProperties(ignoreUnknown = true)
+    @JsonIgnoreProperties(ignoreUnknown = true) @JsonInclude(JsonInclude.Include.NON_DEFAULT)
     public static class OutputParameterValue{
         @JsonProperty("Description")
         private String description;

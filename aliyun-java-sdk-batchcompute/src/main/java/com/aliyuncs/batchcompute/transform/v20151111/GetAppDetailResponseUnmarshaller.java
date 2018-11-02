@@ -19,13 +19,11 @@
 package com.aliyuncs.batchcompute.transform.v20151111;
 
 import com.aliyuncs.batchcompute.model.v20151111.GetAppDetailResponse;
-import com.aliyuncs.batchcompute.model.v20151111.GetAppResponse;
-import com.aliyuncs.batchcompute.pojo.v20151111.App;
 import com.aliyuncs.batchcompute.pojo.v20151111.AppDescription;
 import com.aliyuncs.exceptions.ServerException;
 import com.aliyuncs.http.HttpResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
-import org.codehaus.jackson.map.ObjectMapper;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
