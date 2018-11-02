@@ -46,6 +46,8 @@ public class QueryAuthenticationResponseUnmarshaller {
 			dataItem.setApkPubkey(context.stringValue("QueryAuthenticationResponse.Data["+ i +"].ApkPubkey"));
 			dataItem.setPackageName(context.stringValue("QueryAuthenticationResponse.Data["+ i +"].PackageName"));
 			dataItem.setClientId(context.stringValue("QueryAuthenticationResponse.Data["+ i +"].ClientId"));
+			dataItem.setProductKey(context.stringValue("QueryAuthenticationResponse.Data["+ i +"].ProductKey"));
+			dataItem.setDeviceName(context.stringValue("QueryAuthenticationResponse.Data["+ i +"].DeviceName"));
 
 			data.add(dataItem);
 		}

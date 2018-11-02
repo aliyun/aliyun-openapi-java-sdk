@@ -1,3 +1,8 @@
+2018-11-02 Version: 1.1.2
+1, deviceName and productKey can be used instead of iotId.
+2, New productKey fields for queryauthentication output parameter.
+3, New deviceName fields for queryauthentication output parameter.
+
 2018-08-17 Version: 1.1.1
 1, New apkpubkey fields for queryauthentication output parameter.
 2, New packagename fields for queryauthentication output parameter.

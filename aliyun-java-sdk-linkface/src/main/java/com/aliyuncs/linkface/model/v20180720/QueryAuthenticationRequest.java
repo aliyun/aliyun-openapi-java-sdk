@@ -38,6 +38,10 @@ public class QueryAuthenticationRequest extends RpcAcsRequest<QueryAuthenticatio
 
 	private Integer currentPage;
 
+	private String deviceName;
+
+	private String productKey;
+
 	public Integer getLicenseType() {
 		return this.licenseType;
 	}
@@ -79,6 +83,28 @@ public class QueryAuthenticationRequest extends RpcAcsRequest<QueryAuthenticatio
 		this.currentPage = currentPage;
 		if(currentPage != null){
 			putBodyParameter("CurrentPage", currentPage.toString());
+		}
+	}
+
+	public String getDeviceName() {
+		return this.deviceName;
+	}
+
+	public void setDeviceName(String deviceName) {
+		this.deviceName = deviceName;
+		if(deviceName != null){
+			putBodyParameter("DeviceName", deviceName);
+		}
+	}
+
+	public String getProductKey() {
+		return this.productKey;
+	}
+
+	public void setProductKey(String productKey) {
+		this.productKey = productKey;
+		if(productKey != null){
+			putBodyParameter("ProductKey", productKey);
 		}
 	}
 

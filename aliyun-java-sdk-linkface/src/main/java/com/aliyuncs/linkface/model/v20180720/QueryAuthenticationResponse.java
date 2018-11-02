@@ -131,6 +131,10 @@ public class QueryAuthenticationResponse extends AcsResponse {
 
 		private String clientId;
 
+		private String productKey;
+
+		private String deviceName;
+
 		public Integer getLicenseType() {
 			return this.licenseType;
 		}
@@ -185,6 +189,22 @@ public class QueryAuthenticationResponse extends AcsResponse {
 
 		public void setClientId(String clientId) {
 			this.clientId = clientId;
+		}
+
+		public String getProductKey() {
+			return this.productKey;
+		}
+
+		public void setProductKey(String productKey) {
+			this.productKey = productKey;
+		}
+
+		public String getDeviceName() {
+			return this.deviceName;
+		}
+
+		public void setDeviceName(String deviceName) {
+			this.deviceName = deviceName;
 		}
 	}
 
