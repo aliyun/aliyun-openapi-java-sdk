@@ -1,3 +1,6 @@
+2018-11-05 Version: 1.0.10
+1, Add new open API
+
 2018-10-15 Version: 1.0.9
 1, Add new API.
 

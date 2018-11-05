@@ -111,6 +111,8 @@ public class ListOutboundPhoneNumberOfUserResponse extends AcsResponse {
 
 		private Boolean privateFlag;
 
+		private PrivacyNumber privacyNumber;
+
 		public String getPhoneNumberId() {
 			return this.phoneNumberId;
 		}
@@ -205,6 +207,97 @@ public class ListOutboundPhoneNumberOfUserResponse extends AcsResponse {
 
 		public void setPrivateFlag(Boolean privateFlag) {
 			this.privateFlag = privateFlag;
+		}
+
+		public PrivacyNumber getPrivacyNumber() {
+			return this.privacyNumber;
+		}
+
+		public void setPrivacyNumber(PrivacyNumber privacyNumber) {
+			this.privacyNumber = privacyNumber;
+		}
+
+		public static class PrivacyNumber {
+
+			private String poolId;
+
+			private String type;
+
+			private String telX;
+
+			private String poolName;
+
+			private String phoneNumber;
+
+			private String extra;
+
+			private String bizId;
+
+			private String subId;
+
+			public String getPoolId() {
+				return this.poolId;
+			}
+
+			public void setPoolId(String poolId) {
+				this.poolId = poolId;
+			}
+
+			public String getType() {
+				return this.type;
+			}
+
+			public void setType(String type) {
+				this.type = type;
+			}
+
+			public String getTelX() {
+				return this.telX;
+			}
+
+			public void setTelX(String telX) {
+				this.telX = telX;
+			}
+
+			public String getPoolName() {
+				return this.poolName;
+			}
+
+			public void setPoolName(String poolName) {
+				this.poolName = poolName;
+			}
+
+			public String getPhoneNumber() {
+				return this.phoneNumber;
+			}
+
+			public void setPhoneNumber(String phoneNumber) {
+				this.phoneNumber = phoneNumber;
+			}
+
+			public String getExtra() {
+				return this.extra;
+			}
+
+			public void setExtra(String extra) {
+				this.extra = extra;
+			}
+
+			public String getBizId() {
+				return this.bizId;
+			}
+
+			public void setBizId(String bizId) {
+				this.bizId = bizId;
+			}
+
+			public String getSubId() {
+				return this.subId;
+			}
+
+			public void setSubId(String subId) {
+				this.subId = subId;
+			}
 		}
 	}
 

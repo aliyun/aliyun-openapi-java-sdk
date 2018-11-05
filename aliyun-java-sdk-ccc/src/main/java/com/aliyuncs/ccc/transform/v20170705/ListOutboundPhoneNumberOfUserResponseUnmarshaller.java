@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.ccc.model.v20170705.ListOutboundPhoneNumberOfUserResponse;
 import com.aliyuncs.ccc.model.v20170705.ListOutboundPhoneNumberOfUserResponse.PhoneNumber;
+import com.aliyuncs.ccc.model.v20170705.ListOutboundPhoneNumberOfUserResponse.PhoneNumber.PrivacyNumber;
 import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -48,6 +49,17 @@ public class ListOutboundPhoneNumberOfUserResponseUnmarshaller {
 			phoneNumber.setCity(context.stringValue("ListOutboundPhoneNumberOfUserResponse.OutboundPhoneNumbers["+ i +"].City"));
 			phoneNumber.setProvince(context.stringValue("ListOutboundPhoneNumberOfUserResponse.OutboundPhoneNumbers["+ i +"].Province"));
 			phoneNumber.setPrivateFlag(context.booleanValue("ListOutboundPhoneNumberOfUserResponse.OutboundPhoneNumbers["+ i +"].PrivateFlag"));
+
+			PrivacyNumber privacyNumber = new PrivacyNumber();
+			privacyNumber.setPoolId(context.stringValue("ListOutboundPhoneNumberOfUserResponse.OutboundPhoneNumbers["+ i +"].PrivacyNumber.PoolId"));
+			privacyNumber.setType(context.stringValue("ListOutboundPhoneNumberOfUserResponse.OutboundPhoneNumbers["+ i +"].PrivacyNumber.Type"));
+			privacyNumber.setTelX(context.stringValue("ListOutboundPhoneNumberOfUserResponse.OutboundPhoneNumbers["+ i +"].PrivacyNumber.TelX"));
+			privacyNumber.setPoolName(context.stringValue("ListOutboundPhoneNumberOfUserResponse.OutboundPhoneNumbers["+ i +"].PrivacyNumber.PoolName"));
+			privacyNumber.setPhoneNumber(context.stringValue("ListOutboundPhoneNumberOfUserResponse.OutboundPhoneNumbers["+ i +"].PrivacyNumber.PhoneNumber"));
+			privacyNumber.setExtra(context.stringValue("ListOutboundPhoneNumberOfUserResponse.OutboundPhoneNumbers["+ i +"].PrivacyNumber.Extra"));
+			privacyNumber.setBizId(context.stringValue("ListOutboundPhoneNumberOfUserResponse.OutboundPhoneNumbers["+ i +"].PrivacyNumber.BizId"));
+			privacyNumber.setSubId(context.stringValue("ListOutboundPhoneNumberOfUserResponse.OutboundPhoneNumbers["+ i +"].PrivacyNumber.SubId"));
+			phoneNumber.setPrivacyNumber(privacyNumber);
 
 			outboundPhoneNumbers.add(phoneNumber);
 		}
