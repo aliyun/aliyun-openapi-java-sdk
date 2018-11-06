@@ -1,21 +1,17 @@
 /*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
+
 package com.aliyuncs.aegis.transform.v20161111;
 
 import java.util.ArrayList;
@@ -24,7 +20,8 @@ import java.util.List;
 import com.aliyuncs.aegis.model.v20161111.DescribeStratetyDetailResponse;
 import com.aliyuncs.aegis.model.v20161111.DescribeStratetyDetailResponse.Strategy;
 import com.aliyuncs.aegis.model.v20161111.DescribeStratetyDetailResponse.Strategy.RiskTypeWhiteListQueryResult;
-import com.aliyuncs.aegis.model.v20161111.DescribeStratetyDetailResponse.Strategy.RiskTypeWhiteListQueryResult.SubTyp;
+import com.aliyuncs.aegis.model.v20161111.DescribeStratetyDetailResponse.Strategy.RiskTypeWhiteListQueryResult.SubType;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -48,14 +45,14 @@ public class DescribeStratetyDetailResponseUnmarshaller {
 			riskTypeWhiteListQueryResult.setAlias(context.stringValue("DescribeStratetyDetailResponse.Strategy.RiskTypeWhiteListQueryResultList["+ i +"].Alias"));
 			riskTypeWhiteListQueryResult.setOn(context.booleanValue("DescribeStratetyDetailResponse.Strategy.RiskTypeWhiteListQueryResultList["+ i +"].On"));
 
-			List<SubTyp> subTypes = new ArrayList<SubTyp>();
+			List<SubType> subTypes = new ArrayList<SubType>();
 			for (int j = 0; j < context.lengthValue("DescribeStratetyDetailResponse.Strategy.RiskTypeWhiteListQueryResultList["+ i +"].SubTypes.Length"); j++) {
-				SubTyp subTyp = new SubTyp();
-				subTyp.setTypeName(context.stringValue("DescribeStratetyDetailResponse.Strategy.RiskTypeWhiteListQueryResultList["+ i +"].SubTypes["+ j +"].TypeName"));
-				subTyp.setAlias(context.stringValue("DescribeStratetyDetailResponse.Strategy.RiskTypeWhiteListQueryResultList["+ i +"].SubTypes["+ j +"].Alias"));
-				subTyp.setOn(context.booleanValue("DescribeStratetyDetailResponse.Strategy.RiskTypeWhiteListQueryResultList["+ i +"].SubTypes["+ j +"].On"));
+				SubType subType = new SubType();
+				subType.setTypeName(context.stringValue("DescribeStratetyDetailResponse.Strategy.RiskTypeWhiteListQueryResultList["+ i +"].SubTypes["+ j +"].TypeName"));
+				subType.setAlias(context.stringValue("DescribeStratetyDetailResponse.Strategy.RiskTypeWhiteListQueryResultList["+ i +"].SubTypes["+ j +"].Alias"));
+				subType.setOn(context.booleanValue("DescribeStratetyDetailResponse.Strategy.RiskTypeWhiteListQueryResultList["+ i +"].SubTypes["+ j +"].On"));
 
-				subTypes.add(subTyp);
+				subTypes.add(subType);
 			}
 			riskTypeWhiteListQueryResult.setSubTypes(subTypes);
 

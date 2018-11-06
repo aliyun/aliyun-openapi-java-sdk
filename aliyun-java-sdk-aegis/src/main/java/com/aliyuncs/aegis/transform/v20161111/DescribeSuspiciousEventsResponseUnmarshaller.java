@@ -11,12 +11,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.aegis.transform.v20161111;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.aegis.model.v20161111.DescribeSuspiciousEventsResponse;
+import com.aliyuncs.aegis.model.v20161111.DescribeSuspiciousEventsResponse.LogListItem;
+import com.aliyuncs.aegis.model.v20161111.DescribeSuspiciousEventsResponse.LogListItem.DetailListItem;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -28,13 +32,39 @@ public class DescribeSuspiciousEventsResponseUnmarshaller {
 		describeSuspiciousEventsResponse.setPageSize(context.integerValue("DescribeSuspiciousEventsResponse.PageSize"));
 		describeSuspiciousEventsResponse.setTotalCount(context.integerValue("DescribeSuspiciousEventsResponse.TotalCount"));
 		describeSuspiciousEventsResponse.setCurrentPage(context.integerValue("DescribeSuspiciousEventsResponse.CurrentPage"));
-		describeSuspiciousEventsResponse.setHttpStatusCode(context.integerValue("DescribeSuspiciousEventsResponse.HttpStatusCode"));
 
-		List<String> suspiciousEvents = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("DescribeSuspiciousEventsResponse.SuspiciousEvents.Length"); i++) {
-			suspiciousEvents.add(context.stringValue("DescribeSuspiciousEventsResponse.SuspiciousEvents["+ i +"]"));
+		List<LogListItem> logList = new ArrayList<LogListItem>();
+		for (int i = 0; i < context.lengthValue("DescribeSuspiciousEventsResponse.LogList.Length"); i++) {
+			LogListItem logListItem = new LogListItem();
+			logListItem.setAliasEventType(context.stringValue("DescribeSuspiciousEventsResponse.LogList["+ i +"].AliasEventType"));
+			logListItem.setLastTime(context.longValue("DescribeSuspiciousEventsResponse.LogList["+ i +"].LastTime"));
+			logListItem.setLevel(context.stringValue("DescribeSuspiciousEventsResponse.LogList["+ i +"].Level"));
+			logListItem.setInstanceName(context.stringValue("DescribeSuspiciousEventsResponse.LogList["+ i +"].InstanceName"));
+			logListItem.setGroupId(context.longValue("DescribeSuspiciousEventsResponse.LogList["+ i +"].GroupId"));
+			logListItem.setIp(context.stringValue("DescribeSuspiciousEventsResponse.LogList["+ i +"].Ip"));
+			logListItem.setEventType(context.stringValue("DescribeSuspiciousEventsResponse.LogList["+ i +"].EventType"));
+			logListItem.setUuid(context.stringValue("DescribeSuspiciousEventsResponse.LogList["+ i +"].Uuid"));
+			logListItem.setFirstTime(context.longValue("DescribeSuspiciousEventsResponse.LogList["+ i +"].FirstTime"));
+			logListItem.setInstanceId(context.stringValue("DescribeSuspiciousEventsResponse.LogList["+ i +"].InstanceId"));
+			logListItem.setAliasEventName(context.stringValue("DescribeSuspiciousEventsResponse.LogList["+ i +"].AliasEventName"));
+			logListItem.setOsVersion(context.stringValue("DescribeSuspiciousEventsResponse.LogList["+ i +"].OsVersion"));
+			logListItem.setClientIp(context.stringValue("DescribeSuspiciousEventsResponse.LogList["+ i +"].ClientIp"));
+			logListItem.setEventName(context.stringValue("DescribeSuspiciousEventsResponse.LogList["+ i +"].EventName"));
+
+			List<DetailListItem> detailList = new ArrayList<DetailListItem>();
+			for (int j = 0; j < context.lengthValue("DescribeSuspiciousEventsResponse.LogList["+ i +"].DetailList.Length"); j++) {
+				DetailListItem detailListItem = new DetailListItem();
+				detailListItem.setName(context.stringValue("DescribeSuspiciousEventsResponse.LogList["+ i +"].DetailList["+ j +"].Name"));
+				detailListItem.setType(context.stringValue("DescribeSuspiciousEventsResponse.LogList["+ i +"].DetailList["+ j +"].Type"));
+				detailListItem.setValue(context.stringValue("DescribeSuspiciousEventsResponse.LogList["+ i +"].DetailList["+ j +"].Value"));
+
+				detailList.add(detailListItem);
+			}
+			logListItem.setDetailList(detailList);
+
+			logList.add(logListItem);
 		}
-		describeSuspiciousEventsResponse.setSuspiciousEvents(suspiciousEvents);
+		describeSuspiciousEventsResponse.setLogList(logList);
 	 
 	 	return describeSuspiciousEventsResponse;
 	}

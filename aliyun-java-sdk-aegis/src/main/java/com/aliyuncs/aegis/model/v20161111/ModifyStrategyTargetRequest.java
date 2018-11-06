@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.aegis.model.v20161111;
 
 import com.aliyuncs.RpcAcsRequest;
@@ -27,8 +28,6 @@ public class ModifyStrategyTargetRequest extends RpcAcsRequest<ModifyStrategyTar
 		setMethod(MethodType.POST);
 	}
 
-	private Long resourceOwnerId;
-
 	private String sourceIp;
 
 	private String type;
@@ -36,17 +35,6 @@ public class ModifyStrategyTargetRequest extends RpcAcsRequest<ModifyStrategyTar
 	private String config;
 
 	private String target;
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
 
 	public String getSourceIp() {
 		return this.sourceIp;

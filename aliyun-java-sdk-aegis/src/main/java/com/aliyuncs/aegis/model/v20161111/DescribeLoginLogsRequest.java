@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.aegis.model.v20161111;
 
 import com.aliyuncs.RpcAcsRequest;
@@ -25,22 +26,28 @@ public class DescribeLoginLogsRequest extends RpcAcsRequest<DescribeLoginLogsRes
 		super("aegis", "2016-11-11", "DescribeLoginLogs", "vipaegis");
 	}
 
-	private Long resourceOwnerId;
+	private String types;
 
 	private String sourceIp;
 
 	private Integer pageSize;
 
+	private String statuses;
+
 	private Integer currentPage;
 
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
+	private String remark;
+
+	private String tag;
+
+	public String getTypes() {
+		return this.types;
 	}
 
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+	public void setTypes(String types) {
+		this.types = types;
+		if(types != null){
+			putQueryParameter("Types", types);
 		}
 	}
 
@@ -66,6 +73,17 @@ public class DescribeLoginLogsRequest extends RpcAcsRequest<DescribeLoginLogsRes
 		}
 	}
 
+	public String getStatuses() {
+		return this.statuses;
+	}
+
+	public void setStatuses(String statuses) {
+		this.statuses = statuses;
+		if(statuses != null){
+			putQueryParameter("Statuses", statuses);
+		}
+	}
+
 	public Integer getCurrentPage() {
 		return this.currentPage;
 	}
@@ -74,6 +92,28 @@ public class DescribeLoginLogsRequest extends RpcAcsRequest<DescribeLoginLogsRes
 		this.currentPage = currentPage;
 		if(currentPage != null){
 			putQueryParameter("CurrentPage", currentPage.toString());
+		}
+	}
+
+	public String getRemark() {
+		return this.remark;
+	}
+
+	public void setRemark(String remark) {
+		this.remark = remark;
+		if(remark != null){
+			putQueryParameter("Remark", remark);
+		}
+	}
+
+	public String getTag() {
+		return this.tag;
+	}
+
+	public void setTag(String tag) {
+		this.tag = tag;
+		if(tag != null){
+			putQueryParameter("Tag", tag);
 		}
 	}
 

@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.aegis.model.v20161111;
 
 import com.aliyuncs.RpcAcsRequest;
@@ -25,20 +26,9 @@ public class DescribeStratetyRequest extends RpcAcsRequest<DescribeStratetyRespo
 		super("aegis", "2016-11-11", "DescribeStratety", "vipaegis");
 	}
 
-	private Long resourceOwnerId;
-
 	private String sourceIp;
 
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
+	private String lang;
 
 	public String getSourceIp() {
 		return this.sourceIp;
@@ -48,6 +38,17 @@ public class DescribeStratetyRequest extends RpcAcsRequest<DescribeStratetyRespo
 		this.sourceIp = sourceIp;
 		if(sourceIp != null){
 			putQueryParameter("SourceIp", sourceIp);
+		}
+	}
+
+	public String getLang() {
+		return this.lang;
+	}
+
+	public void setLang(String lang) {
+		this.lang = lang;
+		if(lang != null){
+			putQueryParameter("Lang", lang);
 		}
 	}
 

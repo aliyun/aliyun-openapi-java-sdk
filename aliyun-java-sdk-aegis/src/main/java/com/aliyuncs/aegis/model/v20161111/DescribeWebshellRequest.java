@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.aegis.model.v20161111;
 
 import com.aliyuncs.RpcAcsRequest;
@@ -25,24 +26,15 @@ public class DescribeWebshellRequest extends RpcAcsRequest<DescribeWebshellRespo
 		super("aegis", "2016-11-11", "DescribeWebshell", "vipaegis");
 	}
 
-	private Long resourceOwnerId;
-
 	private String sourceIp;
 
 	private Integer groupId;
 
 	private String remark;
 
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
+	private String dealed;
 
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
+	private Integer tag;
 
 	public String getSourceIp() {
 		return this.sourceIp;
@@ -74,6 +66,28 @@ public class DescribeWebshellRequest extends RpcAcsRequest<DescribeWebshellRespo
 		this.remark = remark;
 		if(remark != null){
 			putQueryParameter("Remark", remark);
+		}
+	}
+
+	public String getDealed() {
+		return this.dealed;
+	}
+
+	public void setDealed(String dealed) {
+		this.dealed = dealed;
+		if(dealed != null){
+			putQueryParameter("Dealed", dealed);
+		}
+	}
+
+	public Integer getTag() {
+		return this.tag;
+	}
+
+	public void setTag(Integer tag) {
+		this.tag = tag;
+		if(tag != null){
+			putQueryParameter("Tag", tag.toString());
 		}
 	}
 

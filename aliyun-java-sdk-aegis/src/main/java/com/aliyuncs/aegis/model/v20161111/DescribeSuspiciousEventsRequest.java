@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.aegis.model.v20161111;
 
 import com.aliyuncs.RpcAcsRequest;
@@ -25,20 +26,21 @@ public class DescribeSuspiciousEventsRequest extends RpcAcsRequest<DescribeSuspi
 		super("aegis", "2016-11-11", "DescribeSuspiciousEvents", "vipaegis");
 	}
 
-	private Long resourceOwnerId;
-
 	private String sourceIp;
 
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
+	private String level;
 
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
+	private Integer pageSize;
+
+	private Integer currentPage;
+
+	private String dealed;
+
+	private String remark;
+
+	private String eventType;
+
+	private String uuid;
 
 	public String getSourceIp() {
 		return this.sourceIp;
@@ -48,6 +50,83 @@ public class DescribeSuspiciousEventsRequest extends RpcAcsRequest<DescribeSuspi
 		this.sourceIp = sourceIp;
 		if(sourceIp != null){
 			putQueryParameter("SourceIp", sourceIp);
+		}
+	}
+
+	public String getLevel() {
+		return this.level;
+	}
+
+	public void setLevel(String level) {
+		this.level = level;
+		if(level != null){
+			putQueryParameter("Level", level);
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public Integer getCurrentPage() {
+		return this.currentPage;
+	}
+
+	public void setCurrentPage(Integer currentPage) {
+		this.currentPage = currentPage;
+		if(currentPage != null){
+			putQueryParameter("CurrentPage", currentPage.toString());
+		}
+	}
+
+	public String getDealed() {
+		return this.dealed;
+	}
+
+	public void setDealed(String dealed) {
+		this.dealed = dealed;
+		if(dealed != null){
+			putQueryParameter("Dealed", dealed);
+		}
+	}
+
+	public String getRemark() {
+		return this.remark;
+	}
+
+	public void setRemark(String remark) {
+		this.remark = remark;
+		if(remark != null){
+			putQueryParameter("Remark", remark);
+		}
+	}
+
+	public String getEventType() {
+		return this.eventType;
+	}
+
+	public void setEventType(String eventType) {
+		this.eventType = eventType;
+		if(eventType != null){
+			putQueryParameter("EventType", eventType);
+		}
+	}
+
+	public String getUuid() {
+		return this.uuid;
+	}
+
+	public void setUuid(String uuid) {
+		this.uuid = uuid;
+		if(uuid != null){
+			putQueryParameter("Uuid", uuid);
 		}
 	}
 

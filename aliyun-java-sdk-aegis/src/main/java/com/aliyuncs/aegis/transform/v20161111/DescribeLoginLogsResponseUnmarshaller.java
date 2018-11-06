@@ -11,12 +11,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.aegis.transform.v20161111;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.aegis.model.v20161111.DescribeLoginLogsResponse;
+import com.aliyuncs.aegis.model.v20161111.DescribeLoginLogsResponse.LogListItem;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -28,13 +31,31 @@ public class DescribeLoginLogsResponseUnmarshaller {
 		describeLoginLogsResponse.setPageSize(context.integerValue("DescribeLoginLogsResponse.PageSize"));
 		describeLoginLogsResponse.setCurrentPage(context.integerValue("DescribeLoginLogsResponse.CurrentPage"));
 		describeLoginLogsResponse.setTotalCount(context.integerValue("DescribeLoginLogsResponse.TotalCount"));
-		describeLoginLogsResponse.setHttpStatusCode(context.integerValue("DescribeLoginLogsResponse.HttpStatusCode"));
 
-		List<String> loginLogs = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("DescribeLoginLogsResponse.LoginLogs.Length"); i++) {
-			loginLogs.add(context.stringValue("DescribeLoginLogsResponse.LoginLogs["+ i +"]"));
+		List<LogListItem> logList = new ArrayList<LogListItem>();
+		for (int i = 0; i < context.lengthValue("DescribeLoginLogsResponse.LogList.Length"); i++) {
+			LogListItem logListItem = new LogListItem();
+			logListItem.setLoginSourceIp(context.stringValue("DescribeLoginLogsResponse.LogList["+ i +"].LoginSourceIp"));
+			logListItem.setInstanceName(context.stringValue("DescribeLoginLogsResponse.LogList["+ i +"].InstanceName"));
+			logListItem.setGroupId(context.longValue("DescribeLoginLogsResponse.LogList["+ i +"].GroupId"));
+			logListItem.setIp(context.stringValue("DescribeLoginLogsResponse.LogList["+ i +"].Ip"));
+			logListItem.setType(context.stringValue("DescribeLoginLogsResponse.LogList["+ i +"].Type"));
+			logListItem.setUserName(context.stringValue("DescribeLoginLogsResponse.LogList["+ i +"].UserName"));
+			logListItem.setUuid(context.stringValue("DescribeLoginLogsResponse.LogList["+ i +"].Uuid"));
+			logListItem.setProtocol(context.integerValue("DescribeLoginLogsResponse.LogList["+ i +"].Protocol"));
+			logListItem.setLoginTime(context.longValue("DescribeLoginLogsResponse.LogList["+ i +"].LoginTime"));
+			logListItem.setInstanceId(context.stringValue("DescribeLoginLogsResponse.LogList["+ i +"].InstanceId"));
+			logListItem.setOsVersion(context.stringValue("DescribeLoginLogsResponse.LogList["+ i +"].OsVersion"));
+			logListItem.setProtocolName(context.stringValue("DescribeLoginLogsResponse.LogList["+ i +"].ProtocolName"));
+			logListItem.setOnline(context.stringValue("DescribeLoginLogsResponse.LogList["+ i +"].Online"));
+			logListItem.setLocation(context.stringValue("DescribeLoginLogsResponse.LogList["+ i +"].Location"));
+			logListItem.setId(context.longValue("DescribeLoginLogsResponse.LogList["+ i +"].id"));
+			logListItem.setRegion(context.stringValue("DescribeLoginLogsResponse.LogList["+ i +"].Region"));
+			logListItem.setStatus(context.integerValue("DescribeLoginLogsResponse.LogList["+ i +"].Status"));
+
+			logList.add(logListItem);
 		}
-		describeLoginLogsResponse.setLoginLogs(loginLogs);
+		describeLoginLogsResponse.setLogList(logList);
 	 
 	 	return describeLoginLogsResponse;
 	}

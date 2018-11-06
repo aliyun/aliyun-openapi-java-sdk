@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.aegis.model.v20161111;
 
 import java.util.List;
@@ -26,9 +27,7 @@ public class DescribeStrategyTargetResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Integer count;
-
-	private List<StringItem> strategyTargets;
+	private List<StrategyTarget> strategyTargets;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -38,23 +37,15 @@ public class DescribeStrategyTargetResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Integer getCount() {
-		return this.count;
-	}
-
-	public void setCount(Integer count) {
-		this.count = count;
-	}
-
-	public List<StringItem> getStrategyTargets() {
+	public List<StrategyTarget> getStrategyTargets() {
 		return this.strategyTargets;
 	}
 
-	public void setStrategyTargets(List<StringItem> strategyTargets) {
+	public void setStrategyTargets(List<StrategyTarget> strategyTargets) {
 		this.strategyTargets = strategyTargets;
 	}
 
-	public static class StringItem {
+	public static class StrategyTarget {
 
 		private String flag;
 

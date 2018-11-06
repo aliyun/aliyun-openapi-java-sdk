@@ -11,13 +11,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.aegis.transform.v20161111;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.aegis.model.v20161111.DescribeStrategyTargetResponse;
-import com.aliyuncs.aegis.model.v20161111.DescribeStrategyTargetResponse.StringItem;
+import com.aliyuncs.aegis.model.v20161111.DescribeStrategyTargetResponse.StrategyTarget;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -26,16 +28,15 @@ public class DescribeStrategyTargetResponseUnmarshaller {
 	public static DescribeStrategyTargetResponse unmarshall(DescribeStrategyTargetResponse describeStrategyTargetResponse, UnmarshallerContext context) {
 		
 		describeStrategyTargetResponse.setRequestId(context.stringValue("DescribeStrategyTargetResponse.RequestId"));
-		describeStrategyTargetResponse.setCount(context.integerValue("DescribeStrategyTargetResponse.Count"));
 
-		List<StringItem> strategyTargets = new ArrayList<StringItem>();
+		List<StrategyTarget> strategyTargets = new ArrayList<StrategyTarget>();
 		for (int i = 0; i < context.lengthValue("DescribeStrategyTargetResponse.StrategyTargets.Length"); i++) {
-			StringItem stringItem = new StringItem();
-			stringItem.setFlag(context.stringValue("DescribeStrategyTargetResponse.StrategyTargets["+ i +"].Flag"));
-			stringItem.setTarget(context.stringValue("DescribeStrategyTargetResponse.StrategyTargets["+ i +"].Target"));
-			stringItem.setTargetType(context.stringValue("DescribeStrategyTargetResponse.StrategyTargets["+ i +"].TargetType"));
+			StrategyTarget strategyTarget = new StrategyTarget();
+			strategyTarget.setFlag(context.stringValue("DescribeStrategyTargetResponse.StrategyTargets["+ i +"].Flag"));
+			strategyTarget.setTarget(context.stringValue("DescribeStrategyTargetResponse.StrategyTargets["+ i +"].Target"));
+			strategyTarget.setTargetType(context.stringValue("DescribeStrategyTargetResponse.StrategyTargets["+ i +"].TargetType"));
 
-			strategyTargets.add(stringItem);
+			strategyTargets.add(strategyTarget);
 		}
 		describeStrategyTargetResponse.setStrategyTargets(strategyTargets);
 	 

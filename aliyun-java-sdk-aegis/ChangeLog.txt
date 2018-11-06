@@ -1,3 +1,6 @@
+2018-11-06 Version: 1.0.3
+1, Added interfaces related to amrider sales
+
 2018-02-07 Version: 1.0.1
 1, add the access interface of logs such as vulnerabilities, baselines, exceptions, etc.
 
