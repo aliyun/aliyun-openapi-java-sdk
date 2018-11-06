@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.trademark.model.v20180724.QueryTradeMarkApplicationDetailResponse;
 import com.aliyuncs.trademark.model.v20180724.QueryTradeMarkApplicationDetailResponse.FirstClassification;
 import com.aliyuncs.trademark.model.v20180724.QueryTradeMarkApplicationDetailResponse.MaterialDetail;
+import com.aliyuncs.trademark.model.v20180724.QueryTradeMarkApplicationDetailResponse.SupplementsItem;
 import com.aliyuncs.trademark.model.v20180724.QueryTradeMarkApplicationDetailResponse.ThirdClassifications;
 import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -89,6 +90,34 @@ public class QueryTradeMarkApplicationDetailResponseUnmarshaller {
 			thirdClassification.add(thirdClassifications);
 		}
 		queryTradeMarkApplicationDetailResponse.setThirdClassification(thirdClassification);
+
+		List<SupplementsItem> supplements = new ArrayList<SupplementsItem>();
+		for (int i = 0; i < context.lengthValue("QueryTradeMarkApplicationDetailResponse.Supplements.Length"); i++) {
+			SupplementsItem supplementsItem = new SupplementsItem();
+			supplementsItem.setId(context.longValue("QueryTradeMarkApplicationDetailResponse.Supplements["+ i +"].Id"));
+			supplementsItem.setSerialNumber(context.stringValue("QueryTradeMarkApplicationDetailResponse.Supplements["+ i +"].SerialNumber"));
+			supplementsItem.setType(context.integerValue("QueryTradeMarkApplicationDetailResponse.Supplements["+ i +"].Type"));
+			supplementsItem.setStatus(context.integerValue("QueryTradeMarkApplicationDetailResponse.Supplements["+ i +"].Status"));
+			supplementsItem.setOrderId(context.stringValue("QueryTradeMarkApplicationDetailResponse.Supplements["+ i +"].OrderId"));
+			supplementsItem.setTmNumber(context.stringValue("QueryTradeMarkApplicationDetailResponse.Supplements["+ i +"].TmNumber"));
+			supplementsItem.setSendTime(context.longValue("QueryTradeMarkApplicationDetailResponse.Supplements["+ i +"].SendTime"));
+			supplementsItem.setAcceptTime(context.longValue("QueryTradeMarkApplicationDetailResponse.Supplements["+ i +"].AcceptTime"));
+			supplementsItem.setSbjDeadTime(context.longValue("QueryTradeMarkApplicationDetailResponse.Supplements["+ i +"].SbjDeadTime"));
+			supplementsItem.setAcceptDeadTime(context.longValue("QueryTradeMarkApplicationDetailResponse.Supplements["+ i +"].AcceptDeadTime"));
+			supplementsItem.setUploadFileTemplateUrl(context.stringValue("QueryTradeMarkApplicationDetailResponse.Supplements["+ i +"].UploadFileTemplateUrl"));
+			supplementsItem.setContent(context.stringValue("QueryTradeMarkApplicationDetailResponse.Supplements["+ i +"].Content"));
+			supplementsItem.setBatchNum(context.stringValue("QueryTradeMarkApplicationDetailResponse.Supplements["+ i +"].BatchNum"));
+			supplementsItem.setOperateTime(context.longValue("QueryTradeMarkApplicationDetailResponse.Supplements["+ i +"].OperateTime"));
+
+			List<String> fileTemplateUrls = new ArrayList<String>();
+			for (int j = 0; j < context.lengthValue("QueryTradeMarkApplicationDetailResponse.Supplements["+ i +"].FileTemplateUrls.Length"); j++) {
+				fileTemplateUrls.add(context.stringValue("QueryTradeMarkApplicationDetailResponse.Supplements["+ i +"].FileTemplateUrls["+ j +"]"));
+			}
+			supplementsItem.setFileTemplateUrls(fileTemplateUrls);
+
+			supplements.add(supplementsItem);
+		}
+		queryTradeMarkApplicationDetailResponse.setSupplements(supplements);
 	 
 	 	return queryTradeMarkApplicationDetailResponse;
 	}

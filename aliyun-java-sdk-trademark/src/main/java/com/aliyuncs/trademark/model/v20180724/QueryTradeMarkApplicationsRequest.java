@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class QueryTradeMarkApplicationsRequest extends RpcAcsRequest<QueryTradeMarkApplicationsResponse> {
 	
 	public QueryTradeMarkApplicationsRequest() {
-		super("Trademark", "2018-07-24", "QueryTradeMarkApplications", "Trademark");
+		super("Trademark", "2018-07-24", "QueryTradeMarkApplications", "trademark");
 	}
 
 	private String tmName;
@@ -32,21 +32,23 @@ public class QueryTradeMarkApplicationsRequest extends RpcAcsRequest<QueryTradeM
 
 	private String orderId;
 
-	private String bizId;
-
-	private Integer pageSize;
-
 	private String tmNumber;
 
 	private Long createTimeLeft;
 
-	private String keyword;
-
 	private Integer pageNum;
 
-	private Long createTimeRight;
-
 	private String userId;
+
+	private Integer supplementStatus;
+
+	private String bizId;
+
+	private Integer pageSize;
+
+	private String keyword;
+
+	private Long createTimeRight;
 
 	private Integer status;
 
@@ -83,28 +85,6 @@ public class QueryTradeMarkApplicationsRequest extends RpcAcsRequest<QueryTradeM
 		}
 	}
 
-	public String getBizId() {
-		return this.bizId;
-	}
-
-	public void setBizId(String bizId) {
-		this.bizId = bizId;
-		if(bizId != null){
-			putQueryParameter("BizId", bizId);
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
 	public String getTmNumber() {
 		return this.tmNumber;
 	}
@@ -127,17 +107,6 @@ public class QueryTradeMarkApplicationsRequest extends RpcAcsRequest<QueryTradeM
 		}
 	}
 
-	public String getKeyword() {
-		return this.keyword;
-	}
-
-	public void setKeyword(String keyword) {
-		this.keyword = keyword;
-		if(keyword != null){
-			putQueryParameter("Keyword", keyword);
-		}
-	}
-
 	public Integer getPageNum() {
 		return this.pageNum;
 	}
@@ -149,17 +118,6 @@ public class QueryTradeMarkApplicationsRequest extends RpcAcsRequest<QueryTradeM
 		}
 	}
 
-	public Long getCreateTimeRight() {
-		return this.createTimeRight;
-	}
-
-	public void setCreateTimeRight(Long createTimeRight) {
-		this.createTimeRight = createTimeRight;
-		if(createTimeRight != null){
-			putQueryParameter("CreateTimeRight", createTimeRight.toString());
-		}
-	}
-
 	public String getUserId() {
 		return this.userId;
 	}
@@ -168,6 +126,61 @@ public class QueryTradeMarkApplicationsRequest extends RpcAcsRequest<QueryTradeM
 		this.userId = userId;
 		if(userId != null){
 			putQueryParameter("UserId", userId);
+		}
+	}
+
+	public Integer getSupplementStatus() {
+		return this.supplementStatus;
+	}
+
+	public void setSupplementStatus(Integer supplementStatus) {
+		this.supplementStatus = supplementStatus;
+		if(supplementStatus != null){
+			putQueryParameter("SupplementStatus", supplementStatus.toString());
+		}
+	}
+
+	public String getBizId() {
+		return this.bizId;
+	}
+
+	public void setBizId(String bizId) {
+		this.bizId = bizId;
+		if(bizId != null){
+			putQueryParameter("BizId", bizId);
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getKeyword() {
+		return this.keyword;
+	}
+
+	public void setKeyword(String keyword) {
+		this.keyword = keyword;
+		if(keyword != null){
+			putQueryParameter("Keyword", keyword);
+		}
+	}
+
+	public Long getCreateTimeRight() {
+		return this.createTimeRight;
+	}
+
+	public void setCreateTimeRight(Long createTimeRight) {
+		this.createTimeRight = createTimeRight;
+		if(createTimeRight != null){
+			putQueryParameter("CreateTimeRight", createTimeRight.toString());
 		}
 	}
 

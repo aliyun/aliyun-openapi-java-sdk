@@ -20,41 +20,28 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class CheckLoaFillRequest extends RpcAcsRequest<CheckLoaFillResponse> {
+public class QuerySupplementDetailRequest extends RpcAcsRequest<QuerySupplementDetailResponse> {
 	
-	public CheckLoaFillRequest() {
-		super("Trademark", "2018-07-24", "CheckLoaFill", "trademark");
+	public QuerySupplementDetailRequest() {
+		super("Trademark", "2018-07-24", "QuerySupplementDetail", "trademark");
 	}
 
-	private String ossKey;
+	private Long id;
 
-	private String type;
-
-	public String getOssKey() {
-		return this.ossKey;
+	public Long getId() {
+		return this.id;
 	}
 
-	public void setOssKey(String ossKey) {
-		this.ossKey = ossKey;
-		if(ossKey != null){
-			putQueryParameter("OssKey", ossKey);
-		}
-	}
-
-	public String getType() {
-		return this.type;
-	}
-
-	public void setType(String type) {
-		this.type = type;
-		if(type != null){
-			putQueryParameter("Type", type);
+	public void setId(Long id) {
+		this.id = id;
+		if(id != null){
+			putQueryParameter("Id", id.toString());
 		}
 	}
 
 	@Override
-	public Class<CheckLoaFillResponse> getResponseClass() {
-		return CheckLoaFillResponse.class;
+	public Class<QuerySupplementDetailResponse> getResponseClass() {
+		return QuerySupplementDetailResponse.class;
 	}
 
 }

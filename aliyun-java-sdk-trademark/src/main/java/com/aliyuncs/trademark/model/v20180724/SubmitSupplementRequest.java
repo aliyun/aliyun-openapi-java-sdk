@@ -20,13 +20,28 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class QueryMaterialRequest extends RpcAcsRequest<QueryMaterialResponse> {
+public class SubmitSupplementRequest extends RpcAcsRequest<SubmitSupplementResponse> {
 	
-	public QueryMaterialRequest() {
-		super("Trademark", "2018-07-24", "QueryMaterial", "trademark");
+	public SubmitSupplementRequest() {
+		super("Trademark", "2018-07-24", "SubmitSupplement", "trademark");
 	}
 
+	private String uploadOssKeyList;
+
 	private Long id;
+
+	private String content;
+
+	public String getUploadOssKeyList() {
+		return this.uploadOssKeyList;
+	}
+
+	public void setUploadOssKeyList(String uploadOssKeyList) {
+		this.uploadOssKeyList = uploadOssKeyList;
+		if(uploadOssKeyList != null){
+			putQueryParameter("UploadOssKeyList", uploadOssKeyList);
+		}
+	}
 
 	public Long getId() {
 		return this.id;
@@ -39,9 +54,20 @@ public class QueryMaterialRequest extends RpcAcsRequest<QueryMaterialResponse> {
 		}
 	}
 
+	public String getContent() {
+		return this.content;
+	}
+
+	public void setContent(String content) {
+		this.content = content;
+		if(content != null){
+			putQueryParameter("Content", content);
+		}
+	}
+
 	@Override
-	public Class<QueryMaterialResponse> getResponseClass() {
-		return QueryMaterialResponse.class;
+	public Class<SubmitSupplementResponse> getResponseClass() {
+		return SubmitSupplementResponse.class;
 	}
 
 }

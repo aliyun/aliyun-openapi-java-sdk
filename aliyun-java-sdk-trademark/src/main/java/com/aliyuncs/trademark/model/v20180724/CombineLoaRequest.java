@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class CombineLoaRequest extends RpcAcsRequest<CombineLoaResponse> {
 	
 	public CombineLoaRequest() {
-		super("Trademark", "2018-07-24", "CombineLoa", "Trademark");
+		super("Trademark", "2018-07-24", "CombineLoa", "trademark");
 	}
 
 	private String trademarkName;

@@ -57,6 +57,8 @@ public class QueryTradeMarkApplicationsResponseUnmarshaller {
 			tmProduces.setReceiptUrl(context.stringValue("QueryTradeMarkApplicationsResponse.Data["+ i +"].ReceiptUrl"));
 			tmProduces.setNote(context.stringValue("QueryTradeMarkApplicationsResponse.Data["+ i +"].Note"));
 			tmProduces.setUpdateTime(context.longValue("QueryTradeMarkApplicationsResponse.Data["+ i +"].UpdateTime"));
+			tmProduces.setSupplementStatus(context.integerValue("QueryTradeMarkApplicationsResponse.Data["+ i +"].SupplementStatus"));
+			tmProduces.setSupplementId(context.longValue("QueryTradeMarkApplicationsResponse.Data["+ i +"].SupplementId"));
 
 			FirstClassification firstClassification = new FirstClassification();
 			firstClassification.setClassificationCode(context.stringValue("QueryTradeMarkApplicationsResponse.Data["+ i +"].FirstClassification.ClassificationCode"));

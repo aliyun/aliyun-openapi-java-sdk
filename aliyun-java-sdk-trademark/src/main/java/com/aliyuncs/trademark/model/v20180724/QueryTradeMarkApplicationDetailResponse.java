@@ -55,6 +55,8 @@ public class QueryTradeMarkApplicationDetailResponse extends AcsResponse {
 
 	private List<ThirdClassifications> thirdClassification;
 
+	private List<SupplementsItem> supplements;
+
 	private List<String> receiptUrl;
 
 	private MaterialDetail materialDetail;
@@ -181,6 +183,14 @@ public class QueryTradeMarkApplicationDetailResponse extends AcsResponse {
 		this.thirdClassification = thirdClassification;
 	}
 
+	public List<SupplementsItem> getSupplements() {
+		return this.supplements;
+	}
+
+	public void setSupplements(List<SupplementsItem> supplements) {
+		this.supplements = supplements;
+	}
+
 	public List<String> getReceiptUrl() {
 		return this.receiptUrl;
 	}
@@ -225,6 +235,159 @@ public class QueryTradeMarkApplicationDetailResponse extends AcsResponse {
 
 		public void setName(String name) {
 			this.name = name;
+		}
+	}
+
+	public static class SupplementsItem {
+
+		private Long id;
+
+		private String serialNumber;
+
+		private Integer type;
+
+		private Integer status;
+
+		private String orderId;
+
+		private String tmNumber;
+
+		private Long sendTime;
+
+		private Long acceptTime;
+
+		private Long sbjDeadTime;
+
+		private Long acceptDeadTime;
+
+		private String uploadFileTemplateUrl;
+
+		private String content;
+
+		private String batchNum;
+
+		private Long operateTime;
+
+		private List<String> fileTemplateUrls;
+
+		public Long getId() {
+			return this.id;
+		}
+
+		public void setId(Long id) {
+			this.id = id;
+		}
+
+		public String getSerialNumber() {
+			return this.serialNumber;
+		}
+
+		public void setSerialNumber(String serialNumber) {
+			this.serialNumber = serialNumber;
+		}
+
+		public Integer getType() {
+			return this.type;
+		}
+
+		public void setType(Integer type) {
+			this.type = type;
+		}
+
+		public Integer getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(Integer status) {
+			this.status = status;
+		}
+
+		public String getOrderId() {
+			return this.orderId;
+		}
+
+		public void setOrderId(String orderId) {
+			this.orderId = orderId;
+		}
+
+		public String getTmNumber() {
+			return this.tmNumber;
+		}
+
+		public void setTmNumber(String tmNumber) {
+			this.tmNumber = tmNumber;
+		}
+
+		public Long getSendTime() {
+			return this.sendTime;
+		}
+
+		public void setSendTime(Long sendTime) {
+			this.sendTime = sendTime;
+		}
+
+		public Long getAcceptTime() {
+			return this.acceptTime;
+		}
+
+		public void setAcceptTime(Long acceptTime) {
+			this.acceptTime = acceptTime;
+		}
+
+		public Long getSbjDeadTime() {
+			return this.sbjDeadTime;
+		}
+
+		public void setSbjDeadTime(Long sbjDeadTime) {
+			this.sbjDeadTime = sbjDeadTime;
+		}
+
+		public Long getAcceptDeadTime() {
+			return this.acceptDeadTime;
+		}
+
+		public void setAcceptDeadTime(Long acceptDeadTime) {
+			this.acceptDeadTime = acceptDeadTime;
+		}
+
+		public String getUploadFileTemplateUrl() {
+			return this.uploadFileTemplateUrl;
+		}
+
+		public void setUploadFileTemplateUrl(String uploadFileTemplateUrl) {
+			this.uploadFileTemplateUrl = uploadFileTemplateUrl;
+		}
+
+		public String getContent() {
+			return this.content;
+		}
+
+		public void setContent(String content) {
+			this.content = content;
+		}
+
+		public String getBatchNum() {
+			return this.batchNum;
+		}
+
+		public void setBatchNum(String batchNum) {
+			this.batchNum = batchNum;
+		}
+
+		public Long getOperateTime() {
+			return this.operateTime;
+		}
+
+		public void setOperateTime(Long operateTime) {
+			this.operateTime = operateTime;
+		}
+
+		public List<String> getFileTemplateUrls() {
+			return this.fileTemplateUrls;
+		}
+
+		public void setFileTemplateUrls(List<String> fileTemplateUrls) {
+			this.fileTemplateUrls = fileTemplateUrls;
 		}
 	}
 

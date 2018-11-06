@@ -20,41 +20,28 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class CheckLoaFillRequest extends RpcAcsRequest<CheckLoaFillResponse> {
+public class DenySupplementRequest extends RpcAcsRequest<DenySupplementResponse> {
 	
-	public CheckLoaFillRequest() {
-		super("Trademark", "2018-07-24", "CheckLoaFill", "trademark");
+	public DenySupplementRequest() {
+		super("Trademark", "2018-07-24", "DenySupplement", "trademark");
 	}
 
-	private String ossKey;
+	private Long id;
 
-	private String type;
-
-	public String getOssKey() {
-		return this.ossKey;
+	public Long getId() {
+		return this.id;
 	}
 
-	public void setOssKey(String ossKey) {
-		this.ossKey = ossKey;
-		if(ossKey != null){
-			putQueryParameter("OssKey", ossKey);
-		}
-	}
-
-	public String getType() {
-		return this.type;
-	}
-
-	public void setType(String type) {
-		this.type = type;
-		if(type != null){
-			putQueryParameter("Type", type);
+	public void setId(Long id) {
+		this.id = id;
+		if(id != null){
+			putQueryParameter("Id", id.toString());
 		}
 	}
 
 	@Override
-	public Class<CheckLoaFillResponse> getResponseClass() {
-		return CheckLoaFillResponse.class;
+	public Class<DenySupplementResponse> getResponseClass() {
+		return DenySupplementResponse.class;
 	}
 
 }

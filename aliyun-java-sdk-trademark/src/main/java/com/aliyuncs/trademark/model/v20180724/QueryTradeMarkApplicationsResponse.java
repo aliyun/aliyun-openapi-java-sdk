@@ -141,6 +141,10 @@ public class QueryTradeMarkApplicationsResponse extends AcsResponse {
 
 		private Long updateTime;
 
+		private Integer supplementStatus;
+
+		private Long supplementId;
+
 		private List<ThirdClassifications> thirdClassification;
 
 		private FirstClassification firstClassification;
@@ -279,6 +283,22 @@ public class QueryTradeMarkApplicationsResponse extends AcsResponse {
 
 		public void setUpdateTime(Long updateTime) {
 			this.updateTime = updateTime;
+		}
+
+		public Integer getSupplementStatus() {
+			return this.supplementStatus;
+		}
+
+		public void setSupplementStatus(Integer supplementStatus) {
+			this.supplementStatus = supplementStatus;
+		}
+
+		public Long getSupplementId() {
+			return this.supplementId;
+		}
+
+		public void setSupplementId(Long supplementId) {
+			this.supplementId = supplementId;
 		}
 
 		public List<ThirdClassifications> getThirdClassification() {
