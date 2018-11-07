@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.emr.model.v20160408.ListClusterOperationHostTaskResponse;
 import com.aliyuncs.emr.model.v20160408.ListClusterOperationHostTaskResponse.ClusterOperationHostTask;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

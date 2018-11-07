@@ -26,8 +26,6 @@ public class ListFlowProjectRequest extends RpcAcsRequest<ListFlowProjectRespons
 		super("Emr", "2016-04-08", "ListFlowProject");
 	}
 
-	private Long resourceOwnerId;
-
 	private String name;
 
 	private Integer pageSize;
@@ -35,17 +33,6 @@ public class ListFlowProjectRequest extends RpcAcsRequest<ListFlowProjectRespons
 	private String projectId;
 
 	private Integer pageNumber;
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
 
 	public String getName() {
 		return this.name;

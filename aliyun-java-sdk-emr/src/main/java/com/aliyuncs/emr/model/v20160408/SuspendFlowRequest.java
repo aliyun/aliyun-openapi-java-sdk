@@ -28,8 +28,6 @@ public class SuspendFlowRequest extends RpcAcsRequest<SuspendFlowResponse> {
 
 	private String flowInstanceId;
 
-	private Long resourceOwnerId;
-
 	private String projectId;
 
 	public String getFlowInstanceId() {
@@ -40,17 +38,6 @@ public class SuspendFlowRequest extends RpcAcsRequest<SuspendFlowResponse> {
 		this.flowInstanceId = flowInstanceId;
 		if(flowInstanceId != null){
 			putQueryParameter("FlowInstanceId", flowInstanceId);
-		}
-	}
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
 		}
 	}
 

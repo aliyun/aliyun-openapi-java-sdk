@@ -30,6 +30,8 @@ public class MetastoreDropDatabaseRequest extends RpcAcsRequest<MetastoreDropDat
 
 	private String dbName;
 
+	private String databaseId;
+
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
 	}
@@ -49,6 +51,17 @@ public class MetastoreDropDatabaseRequest extends RpcAcsRequest<MetastoreDropDat
 		this.dbName = dbName;
 		if(dbName != null){
 			putQueryParameter("DbName", dbName);
+		}
+	}
+
+	public String getDatabaseId() {
+		return this.databaseId;
+	}
+
+	public void setDatabaseId(String databaseId) {
+		this.databaseId = databaseId;
+		if(databaseId != null){
+			putQueryParameter("DatabaseId", databaseId);
 		}
 	}
 

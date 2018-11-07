@@ -15,6 +15,7 @@
 package com.aliyuncs.emr.model.v20160408;
 
 import java.util.List;
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.emr.transform.v20160408.DescribeClusterBasicInfoResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -116,6 +117,8 @@ public class DescribeClusterBasicInfoResponse extends AcsResponse {
 		private String securityGroupName;
 
 		private Boolean easEnable;
+
+		private String clusterType;
 
 		private List<BootstrapAction> bootstrapActionList;
 
@@ -401,6 +404,14 @@ public class DescribeClusterBasicInfoResponse extends AcsResponse {
 
 		public void setEasEnable(Boolean easEnable) {
 			this.easEnable = easEnable;
+		}
+
+		public String getClusterType() {
+			return this.clusterType;
+		}
+
+		public void setClusterType(String clusterType) {
+			this.clusterType = clusterType;
 		}
 
 		public List<BootstrapAction> getBootstrapActionList() {

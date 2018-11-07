@@ -28,6 +28,12 @@ public class MetastoreListDatabasesRequest extends RpcAcsRequest<MetastoreListDa
 
 	private Long resourceOwnerId;
 
+	private String dbName;
+
+	private Integer pageSize;
+
+	private Integer pageNumber;
+
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
 	}
@@ -36,6 +42,39 @@ public class MetastoreListDatabasesRequest extends RpcAcsRequest<MetastoreListDa
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getDbName() {
+		return this.dbName;
+	}
+
+	public void setDbName(String dbName) {
+		this.dbName = dbName;
+		if(dbName != null){
+			putQueryParameter("DbName", dbName);
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
 		}
 	}
 

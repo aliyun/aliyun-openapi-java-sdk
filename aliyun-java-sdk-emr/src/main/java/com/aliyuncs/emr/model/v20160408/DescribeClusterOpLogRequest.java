@@ -28,7 +28,11 @@ public class DescribeClusterOpLogRequest extends RpcAcsRequest<DescribeClusterOp
 
 	private Long resourceOwnerId;
 
+	private Long endTime;
+
 	private String id;
+
+	private Long startTime;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -41,6 +45,17 @@ public class DescribeClusterOpLogRequest extends RpcAcsRequest<DescribeClusterOp
 		}
 	}
 
+	public Long getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(Long endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime.toString());
+		}
+	}
+
 	public String getId() {
 		return this.id;
 	}
@@ -49,6 +64,17 @@ public class DescribeClusterOpLogRequest extends RpcAcsRequest<DescribeClusterOp
 		this.id = id;
 		if(id != null){
 			putQueryParameter("Id", id);
+		}
+	}
+
+	public Long getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(Long startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime.toString());
 		}
 	}
 

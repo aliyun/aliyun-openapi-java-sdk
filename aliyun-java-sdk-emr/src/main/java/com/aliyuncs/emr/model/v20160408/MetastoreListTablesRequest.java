@@ -30,6 +30,16 @@ public class MetastoreListTablesRequest extends RpcAcsRequest<MetastoreListTable
 
 	private String dbName;
 
+	private Integer pageSize;
+
+	private String tableId;
+
+	private String databaseId;
+
+	private String tableName;
+
+	private Integer pageNumber;
+
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
 	}
@@ -49,6 +59,61 @@ public class MetastoreListTablesRequest extends RpcAcsRequest<MetastoreListTable
 		this.dbName = dbName;
 		if(dbName != null){
 			putQueryParameter("DbName", dbName);
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getTableId() {
+		return this.tableId;
+	}
+
+	public void setTableId(String tableId) {
+		this.tableId = tableId;
+		if(tableId != null){
+			putQueryParameter("TableId", tableId);
+		}
+	}
+
+	public String getDatabaseId() {
+		return this.databaseId;
+	}
+
+	public void setDatabaseId(String databaseId) {
+		this.databaseId = databaseId;
+		if(databaseId != null){
+			putQueryParameter("DatabaseId", databaseId);
+		}
+	}
+
+	public String getTableName() {
+		return this.tableName;
+	}
+
+	public void setTableName(String tableName) {
+		this.tableName = tableName;
+		if(tableName != null){
+			putQueryParameter("TableName", tableName);
+		}
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
 		}
 	}
 

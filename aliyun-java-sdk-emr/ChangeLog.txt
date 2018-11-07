@@ -1,3 +1,8 @@
+2018-11-07 Version: 3.0.0
+1, Refactor createCluster and resizeCluster API.
+2, Add Emr-Flow API support.
+3, Add Emr-Metastore API support.
+
 2018-04-09 Version: 2.3.2
 1, Add E-MapReduce cluster statistical interfaces.
 2, Add new workflow system.

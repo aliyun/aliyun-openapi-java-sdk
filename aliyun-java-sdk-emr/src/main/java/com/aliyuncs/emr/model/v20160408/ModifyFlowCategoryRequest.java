@@ -26,8 +26,6 @@ public class ModifyFlowCategoryRequest extends RpcAcsRequest<ModifyFlowCategoryR
 		super("Emr", "2016-04-08", "ModifyFlowCategory");
 	}
 
-	private Long resourceOwnerId;
-
 	private String name;
 
 	private String id;
@@ -35,17 +33,6 @@ public class ModifyFlowCategoryRequest extends RpcAcsRequest<ModifyFlowCategoryR
 	private String projectId;
 
 	private String parentId;
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
 
 	public String getName() {
 		return this.name;

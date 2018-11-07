@@ -37,18 +37,26 @@ public class DescribeFlowNodeInstanceResponseUnmarshaller {
 		describeFlowNodeInstanceResponse.setRetryInterval(context.stringValue("DescribeFlowNodeInstanceResponse.RetryInterval"));
 		describeFlowNodeInstanceResponse.setNodeName(context.stringValue("DescribeFlowNodeInstanceResponse.NodeName"));
 		describeFlowNodeInstanceResponse.setFlowId(context.stringValue("DescribeFlowNodeInstanceResponse.FlowId"));
+		describeFlowNodeInstanceResponse.setFlowInstanceId(context.stringValue("DescribeFlowNodeInstanceResponse.FlowInstanceId"));
 		describeFlowNodeInstanceResponse.setClusterId(context.stringValue("DescribeFlowNodeInstanceResponse.ClusterId"));
 		describeFlowNodeInstanceResponse.setHostName(context.stringValue("DescribeFlowNodeInstanceResponse.HostName"));
 		describeFlowNodeInstanceResponse.setProjectId(context.stringValue("DescribeFlowNodeInstanceResponse.ProjectId"));
+		describeFlowNodeInstanceResponse.setPending(context.booleanValue("DescribeFlowNodeInstanceResponse.Pending"));
 		describeFlowNodeInstanceResponse.setStartTime(context.longValue("DescribeFlowNodeInstanceResponse.StartTime"));
 		describeFlowNodeInstanceResponse.setEndTime(context.longValue("DescribeFlowNodeInstanceResponse.EndTime"));
+		describeFlowNodeInstanceResponse.setDuration(context.longValue("DescribeFlowNodeInstanceResponse.Duration"));
 		describeFlowNodeInstanceResponse.setRetries(context.integerValue("DescribeFlowNodeInstanceResponse.Retries"));
 		describeFlowNodeInstanceResponse.setExternalId(context.stringValue("DescribeFlowNodeInstanceResponse.ExternalId"));
+		describeFlowNodeInstanceResponse.setExternalSubId(context.stringValue("DescribeFlowNodeInstanceResponse.ExternalSubId"));
+		describeFlowNodeInstanceResponse.setExternalChildIds(context.stringValue("DescribeFlowNodeInstanceResponse.ExternalChildIds"));
 		describeFlowNodeInstanceResponse.setExternalStatus(context.stringValue("DescribeFlowNodeInstanceResponse.ExternalStatus"));
 		describeFlowNodeInstanceResponse.setExternalInfo(context.stringValue("DescribeFlowNodeInstanceResponse.ExternalInfo"));
 		describeFlowNodeInstanceResponse.setParamConf(context.stringValue("DescribeFlowNodeInstanceResponse.ParamConf"));
 		describeFlowNodeInstanceResponse.setEnvConf(context.stringValue("DescribeFlowNodeInstanceResponse.EnvConf"));
 		describeFlowNodeInstanceResponse.setRunConf(context.stringValue("DescribeFlowNodeInstanceResponse.RunConf"));
+		describeFlowNodeInstanceResponse.setAdhoc(context.booleanValue("DescribeFlowNodeInstanceResponse.Adhoc"));
+		describeFlowNodeInstanceResponse.setMonitorConf(context.stringValue("DescribeFlowNodeInstanceResponse.MonitorConf"));
+		describeFlowNodeInstanceResponse.setMode(context.stringValue("DescribeFlowNodeInstanceResponse.Mode"));
 		describeFlowNodeInstanceResponse.setClusterName(context.stringValue("DescribeFlowNodeInstanceResponse.ClusterName"));
 	 
 	 	return describeFlowNodeInstanceResponse;

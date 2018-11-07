@@ -26,20 +26,7 @@ public class DescribeFlowProjectRequest extends RpcAcsRequest<DescribeFlowProjec
 		super("Emr", "2016-04-08", "DescribeFlowProject");
 	}
 
-	private Long resourceOwnerId;
-
 	private String projectId;
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
 
 	public String getProjectId() {
 		return this.projectId;

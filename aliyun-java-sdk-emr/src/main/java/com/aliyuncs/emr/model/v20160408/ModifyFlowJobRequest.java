@@ -15,6 +15,7 @@
 package com.aliyuncs.emr.model.v20160408;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 
 /**
  * @author auto create
@@ -26,23 +27,27 @@ public class ModifyFlowJobRequest extends RpcAcsRequest<ModifyFlowJobResponse> {
 		super("Emr", "2016-04-08", "ModifyFlowJob");
 	}
 
-	private Long resourceOwnerId;
-
 	private String runConf;
 
 	private String envConf;
 
 	private String description;
 
+	private String clusterId;
+
 	private String params;
 
 	private String paramConf;
+
+	private List<ResourceList> resourceLists;
 
 	private String failAct;
 
 	private String mode;
 
 	private Long retryInterval;
+
+	private String monitorConf;
 
 	private String name;
 
@@ -51,17 +56,6 @@ public class ModifyFlowJobRequest extends RpcAcsRequest<ModifyFlowJobResponse> {
 	private Integer maxRetry;
 
 	private String projectId;
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
 
 	public String getRunConf() {
 		return this.runConf;
@@ -96,6 +90,17 @@ public class ModifyFlowJobRequest extends RpcAcsRequest<ModifyFlowJobResponse> {
 		}
 	}
 
+	public String getClusterId() {
+		return this.clusterId;
+	}
+
+	public void setClusterId(String clusterId) {
+		this.clusterId = clusterId;
+		if(clusterId != null){
+			putQueryParameter("ClusterId", clusterId);
+		}
+	}
+
 	public String getParams() {
 		return this.params;
 	}
@@ -116,6 +121,20 @@ public class ModifyFlowJobRequest extends RpcAcsRequest<ModifyFlowJobResponse> {
 		if(paramConf != null){
 			putQueryParameter("ParamConf", paramConf);
 		}
+	}
+
+	public List<ResourceList> getResourceLists() {
+		return this.resourceLists;
+	}
+
+	public void setResourceLists(List<ResourceList> resourceLists) {
+		this.resourceLists = resourceLists;	
+		if (resourceLists != null) {
+			for (int depth1 = 0; depth1 < resourceLists.size(); depth1++) {
+				putQueryParameter("ResourceList." + (depth1 + 1) + ".Path" , resourceLists.get(depth1).getPath());
+				putQueryParameter("ResourceList." + (depth1 + 1) + ".Alias" , resourceLists.get(depth1).getAlias());
+			}
+		}	
 	}
 
 	public String getFailAct() {
@@ -148,6 +167,17 @@ public class ModifyFlowJobRequest extends RpcAcsRequest<ModifyFlowJobResponse> {
 		this.retryInterval = retryInterval;
 		if(retryInterval != null){
 			putQueryParameter("RetryInterval", retryInterval.toString());
+		}
+	}
+
+	public String getMonitorConf() {
+		return this.monitorConf;
+	}
+
+	public void setMonitorConf(String monitorConf) {
+		this.monitorConf = monitorConf;
+		if(monitorConf != null){
+			putQueryParameter("MonitorConf", monitorConf);
 		}
 	}
 
@@ -192,6 +222,29 @@ public class ModifyFlowJobRequest extends RpcAcsRequest<ModifyFlowJobResponse> {
 		this.projectId = projectId;
 		if(projectId != null){
 			putQueryParameter("ProjectId", projectId);
+		}
+	}
+
+	public static class ResourceList {
+
+		private String path;
+
+		private String alias;
+
+		public String getPath() {
+			return this.path;
+		}
+
+		public void setPath(String path) {
+			this.path = path;
+		}
+
+		public String getAlias() {
+			return this.alias;
+		}
+
+		public void setAlias(String alias) {
+			this.alias = alias;
 		}
 	}
 

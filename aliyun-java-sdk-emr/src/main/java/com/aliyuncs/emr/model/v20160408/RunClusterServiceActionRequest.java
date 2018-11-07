@@ -48,6 +48,8 @@ public class RunClusterServiceActionRequest extends RpcAcsRequest<RunClusterServ
 
 	private String comment;
 
+	private Long interval;
+
 	private String hostIdList;
 
 	private Boolean turnOnMaintenanceMode;
@@ -170,6 +172,17 @@ public class RunClusterServiceActionRequest extends RpcAcsRequest<RunClusterServ
 		this.comment = comment;
 		if(comment != null){
 			putQueryParameter("Comment", comment);
+		}
+	}
+
+	public Long getInterval() {
+		return this.interval;
+	}
+
+	public void setInterval(Long interval) {
+		this.interval = interval;
+		if(interval != null){
+			putQueryParameter("Interval", interval.toString());
 		}
 	}
 

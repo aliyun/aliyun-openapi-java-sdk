@@ -21,6 +21,7 @@ import com.aliyuncs.emr.model.v20160408.DescribeClusterServiceResponse;
 import com.aliyuncs.emr.model.v20160408.DescribeClusterServiceResponse.ServiceInfo;
 import com.aliyuncs.emr.model.v20160408.DescribeClusterServiceResponse.ServiceInfo.ClusterServiceSummary;
 import com.aliyuncs.emr.model.v20160408.DescribeClusterServiceResponse.ServiceInfo.ServiceAction;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

@@ -40,7 +40,11 @@ public class ListClusterHostComponentRequest extends RpcAcsRequest<ListClusterHo
 
 	private String clusterId;
 
+	private String hostRole;
+
 	private Integer pageNumber;
+
+	private String componentStatus;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -119,6 +123,17 @@ public class ListClusterHostComponentRequest extends RpcAcsRequest<ListClusterHo
 		}
 	}
 
+	public String getHostRole() {
+		return this.hostRole;
+	}
+
+	public void setHostRole(String hostRole) {
+		this.hostRole = hostRole;
+		if(hostRole != null){
+			putQueryParameter("HostRole", hostRole);
+		}
+	}
+
 	public Integer getPageNumber() {
 		return this.pageNumber;
 	}
@@ -127,6 +142,17 @@ public class ListClusterHostComponentRequest extends RpcAcsRequest<ListClusterHo
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public String getComponentStatus() {
+		return this.componentStatus;
+	}
+
+	public void setComponentStatus(String componentStatus) {
+		this.componentStatus = componentStatus;
+		if(componentStatus != null){
+			putQueryParameter("ComponentStatus", componentStatus);
 		}
 	}
 

@@ -28,7 +28,7 @@ public class DescribeClusterTemplateRequest extends RpcAcsRequest<DescribeCluste
 
 	private Long resourceOwnerId;
 
-	private String id;
+	private String bizId;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -41,14 +41,14 @@ public class DescribeClusterTemplateRequest extends RpcAcsRequest<DescribeCluste
 		}
 	}
 
-	public String getId() {
-		return this.id;
+	public String getBizId() {
+		return this.bizId;
 	}
 
-	public void setId(String id) {
-		this.id = id;
-		if(id != null){
-			putQueryParameter("Id", id);
+	public void setBizId(String bizId) {
+		this.bizId = bizId;
+		if(bizId != null){
+			putQueryParameter("BizId", bizId);
 		}
 	}
 

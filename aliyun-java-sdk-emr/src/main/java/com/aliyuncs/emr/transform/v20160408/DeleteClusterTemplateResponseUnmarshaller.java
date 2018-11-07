@@ -23,9 +23,6 @@ public class DeleteClusterTemplateResponseUnmarshaller {
 	public static DeleteClusterTemplateResponse unmarshall(DeleteClusterTemplateResponse deleteClusterTemplateResponse, UnmarshallerContext context) {
 		
 		deleteClusterTemplateResponse.setRequestId(context.stringValue("DeleteClusterTemplateResponse.RequestId"));
-		deleteClusterTemplateResponse.setSuccess(context.stringValue("DeleteClusterTemplateResponse.Success"));
-		deleteClusterTemplateResponse.setErrCode(context.stringValue("DeleteClusterTemplateResponse.ErrCode"));
-		deleteClusterTemplateResponse.setErrMsg(context.stringValue("DeleteClusterTemplateResponse.ErrMsg"));
 	 
 	 	return deleteClusterTemplateResponse;
 	}

@@ -18,8 +18,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.emr.model.v20160408.DescribeFlowNodeInstanceLauncherLogResponse;
-import com.aliyuncs.emr.model.v20160408.DescribeFlowNodeInstanceLauncherLogResponse.Log;
-import com.aliyuncs.emr.model.v20160408.DescribeFlowNodeInstanceLauncherLogResponse.Log.LogEntry;
+import com.aliyuncs.emr.model.v20160408.DescribeFlowNodeInstanceLauncherLogResponse.LogEntry;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -28,18 +28,16 @@ public class DescribeFlowNodeInstanceLauncherLogResponseUnmarshaller {
 	public static DescribeFlowNodeInstanceLauncherLogResponse unmarshall(DescribeFlowNodeInstanceLauncherLogResponse describeFlowNodeInstanceLauncherLogResponse, UnmarshallerContext context) {
 		
 		describeFlowNodeInstanceLauncherLogResponse.setRequestId(context.stringValue("DescribeFlowNodeInstanceLauncherLogResponse.RequestId"));
+		describeFlowNodeInstanceLauncherLogResponse.setLogEnd(context.booleanValue("DescribeFlowNodeInstanceLauncherLogResponse.LogEnd"));
 
-		List<Log> logs = new ArrayList<Log>();
-		for (int i = 0; i < context.lengthValue("DescribeFlowNodeInstanceLauncherLogResponse.Logs.Length"); i++) {
-			Log log = new Log();
-
+		List<LogEntry> logEntrys = new ArrayList<LogEntry>();
+		for (int i = 0; i < context.lengthValue("DescribeFlowNodeInstanceLauncherLogResponse.LogEntrys.Length"); i++) {
 			LogEntry logEntry = new LogEntry();
-			logEntry.setContent(context.stringValue("DescribeFlowNodeInstanceLauncherLogResponse.Logs["+ i +"].LogEntry.Content"));
-			log.setLogEntry(logEntry);
+			logEntry.setContent(context.stringValue("DescribeFlowNodeInstanceLauncherLogResponse.LogEntrys["+ i +"].Content"));
 
-			logs.add(log);
+			logEntrys.add(logEntry);
 		}
-		describeFlowNodeInstanceLauncherLogResponse.setLogs(logs);
+		describeFlowNodeInstanceLauncherLogResponse.setLogEntrys(logEntrys);
 	 
 	 	return describeFlowNodeInstanceLauncherLogResponse;
 	}

@@ -18,6 +18,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.emr.model.v20160408.DescribeFlowJobResponse;
+import com.aliyuncs.emr.model.v20160408.DescribeFlowJobResponse.Resource;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -30,6 +32,7 @@ public class DescribeFlowJobResponseUnmarshaller {
 		describeFlowJobResponse.setGmtCreate(context.longValue("DescribeFlowJobResponse.GmtCreate"));
 		describeFlowJobResponse.setGmtModified(context.longValue("DescribeFlowJobResponse.GmtModified"));
 		describeFlowJobResponse.setName(context.stringValue("DescribeFlowJobResponse.Name"));
+		describeFlowJobResponse.setType(context.stringValue("DescribeFlowJobResponse.Type"));
 		describeFlowJobResponse.setDescription(context.stringValue("DescribeFlowJobResponse.Description"));
 		describeFlowJobResponse.setFailAct(context.stringValue("DescribeFlowJobResponse.FailAct"));
 		describeFlowJobResponse.setMaxRetry(context.integerValue("DescribeFlowJobResponse.MaxRetry"));
@@ -38,14 +41,21 @@ public class DescribeFlowJobResponseUnmarshaller {
 		describeFlowJobResponse.setParamConf(context.stringValue("DescribeFlowJobResponse.ParamConf"));
 		describeFlowJobResponse.setEnvConf(context.stringValue("DescribeFlowJobResponse.EnvConf"));
 		describeFlowJobResponse.setRunConf(context.stringValue("DescribeFlowJobResponse.RunConf"));
+		describeFlowJobResponse.setMonitorConf(context.stringValue("DescribeFlowJobResponse.MonitorConf"));
 		describeFlowJobResponse.setCategoryId(context.stringValue("DescribeFlowJobResponse.CategoryId"));
 		describeFlowJobResponse.setMode(context.stringValue("DescribeFlowJobResponse.mode"));
+		describeFlowJobResponse.setLastInstanceId(context.stringValue("DescribeFlowJobResponse.LastInstanceId"));
+		describeFlowJobResponse.setAdhoc(context.stringValue("DescribeFlowJobResponse.Adhoc"));
 
-		List<String> resource = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("DescribeFlowJobResponse.Resource.Length"); i++) {
-			resource.add(context.stringValue("DescribeFlowJobResponse.Resource["+ i +"]"));
+		List<Resource> resourceList = new ArrayList<Resource>();
+		for (int i = 0; i < context.lengthValue("DescribeFlowJobResponse.ResourceList.Length"); i++) {
+			Resource resource = new Resource();
+			resource.setPath(context.stringValue("DescribeFlowJobResponse.ResourceList["+ i +"].Path"));
+			resource.setAlias(context.stringValue("DescribeFlowJobResponse.ResourceList["+ i +"].Alias"));
+
+			resourceList.add(resource);
 		}
-		describeFlowJobResponse.setResource(resource);
+		describeFlowJobResponse.setResourceList(resourceList);
 	 
 	 	return describeFlowJobResponse;
 	}

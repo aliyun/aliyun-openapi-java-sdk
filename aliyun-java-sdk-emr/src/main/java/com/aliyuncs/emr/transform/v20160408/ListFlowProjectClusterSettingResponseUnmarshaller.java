@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.emr.model.v20160408.ListFlowProjectClusterSettingResponse;
 import com.aliyuncs.emr.model.v20160408.ListFlowProjectClusterSettingResponse.ClusterSetting;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -38,6 +39,7 @@ public class ListFlowProjectClusterSettingResponseUnmarshaller {
 			clusterSetting.setGmtModified(context.longValue("ListFlowProjectClusterSettingResponse.ClusterSettings["+ i +"].GmtModified"));
 			clusterSetting.setProjectId(context.stringValue("ListFlowProjectClusterSettingResponse.ClusterSettings["+ i +"].ProjectId"));
 			clusterSetting.setClusterId(context.stringValue("ListFlowProjectClusterSettingResponse.ClusterSettings["+ i +"].ClusterId"));
+			clusterSetting.setClusterName(context.stringValue("ListFlowProjectClusterSettingResponse.ClusterSettings["+ i +"].ClusterName"));
 			clusterSetting.setDefaultUser(context.stringValue("ListFlowProjectClusterSettingResponse.ClusterSettings["+ i +"].DefaultUser"));
 			clusterSetting.setDefaultQueue(context.stringValue("ListFlowProjectClusterSettingResponse.ClusterSettings["+ i +"].DefaultQueue"));
 

@@ -15,6 +15,7 @@
 package com.aliyuncs.emr.model.v20160408;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 
 /**
  * @author auto create
@@ -28,19 +29,25 @@ public class ListClusterHostRequest extends RpcAcsRequest<ListClusterHostRespons
 
 	private Long resourceOwnerId;
 
-	private String hostName;
-
 	private String hostInstanceId;
+
+	private List<String> statusLists;
 
 	private String privateIp;
 
-	private Integer pageSize;
-
 	private String componentName;
+
+	private String publicIp;
 
 	private String clusterId;
 
 	private Integer pageNumber;
+
+	private String hostName;
+
+	private String groupType;
+
+	private Integer pageSize;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -50,17 +57,6 @@ public class ListClusterHostRequest extends RpcAcsRequest<ListClusterHostRespons
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getHostName() {
-		return this.hostName;
-	}
-
-	public void setHostName(String hostName) {
-		this.hostName = hostName;
-		if(hostName != null){
-			putQueryParameter("HostName", hostName);
 		}
 	}
 
@@ -75,6 +71,19 @@ public class ListClusterHostRequest extends RpcAcsRequest<ListClusterHostRespons
 		}
 	}
 
+	public List<String> getStatusLists() {
+		return this.statusLists;
+	}
+
+	public void setStatusLists(List<String> statusLists) {
+		this.statusLists = statusLists;	
+		if (statusLists != null) {
+			for (int i = 0; i < statusLists.size(); i++) {
+				putQueryParameter("StatusList." + (i + 1) , statusLists.get(i));
+			}
+		}	
+	}
+
 	public String getPrivateIp() {
 		return this.privateIp;
 	}
@@ -86,17 +95,6 @@ public class ListClusterHostRequest extends RpcAcsRequest<ListClusterHostRespons
 		}
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
 	public String getComponentName() {
 		return this.componentName;
 	}
@@ -105,6 +103,17 @@ public class ListClusterHostRequest extends RpcAcsRequest<ListClusterHostRespons
 		this.componentName = componentName;
 		if(componentName != null){
 			putQueryParameter("ComponentName", componentName);
+		}
+	}
+
+	public String getPublicIp() {
+		return this.publicIp;
+	}
+
+	public void setPublicIp(String publicIp) {
+		this.publicIp = publicIp;
+		if(publicIp != null){
+			putQueryParameter("PublicIp", publicIp);
 		}
 	}
 
@@ -127,6 +136,39 @@ public class ListClusterHostRequest extends RpcAcsRequest<ListClusterHostRespons
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public String getHostName() {
+		return this.hostName;
+	}
+
+	public void setHostName(String hostName) {
+		this.hostName = hostName;
+		if(hostName != null){
+			putQueryParameter("HostName", hostName);
+		}
+	}
+
+	public String getGroupType() {
+		return this.groupType;
+	}
+
+	public void setGroupType(String groupType) {
+		this.groupType = groupType;
+		if(groupType != null){
+			putQueryParameter("GroupType", groupType);
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 

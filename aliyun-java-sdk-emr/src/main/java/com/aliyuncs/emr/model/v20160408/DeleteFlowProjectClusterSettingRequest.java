@@ -26,22 +26,9 @@ public class DeleteFlowProjectClusterSettingRequest extends RpcAcsRequest<Delete
 		super("Emr", "2016-04-08", "DeleteFlowProjectClusterSetting");
 	}
 
-	private Long resourceOwnerId;
-
 	private String clusterId;
 
 	private String projectId;
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
 
 	public String getClusterId() {
 		return this.clusterId;

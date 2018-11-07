@@ -85,6 +85,8 @@ public class ListFlowProjectClusterSettingResponse extends AcsResponse {
 
 		private String clusterId;
 
+		private String clusterName;
+
 		private String defaultUser;
 
 		private String defaultQueue;
@@ -125,6 +127,14 @@ public class ListFlowProjectClusterSettingResponse extends AcsResponse {
 
 		public void setClusterId(String clusterId) {
 			this.clusterId = clusterId;
+		}
+
+		public String getClusterName() {
+			return this.clusterName;
+		}
+
+		public void setClusterName(String clusterName) {
+			this.clusterName = clusterName;
 		}
 
 		public String getDefaultUser() {

@@ -29,8 +29,6 @@ public class CreateFlowProjectClusterSettingRequest extends RpcAcsRequest<Create
 
 	private List<String> userLists;
 
-	private Long resourceOwnerId;
-
 	private List<String> queueLists;
 
 	private List<String> hostLists;
@@ -54,17 +52,6 @@ public class CreateFlowProjectClusterSettingRequest extends RpcAcsRequest<Create
 				putQueryParameter("UserList." + (i + 1) , userLists.get(i));
 			}
 		}	
-	}
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
 	}
 
 	public List<String> getQueueLists() {

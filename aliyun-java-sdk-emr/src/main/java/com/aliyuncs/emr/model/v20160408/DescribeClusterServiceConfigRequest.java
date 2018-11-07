@@ -28,9 +28,11 @@ public class DescribeClusterServiceConfigRequest extends RpcAcsRequest<DescribeC
 
 	private Long resourceOwnerId;
 
+	private String hostInstanceId;
+
 	private String tagValue;
 
-	private Long groupId;
+	private String groupId;
 
 	private String serviceName;
 
@@ -49,6 +51,17 @@ public class DescribeClusterServiceConfigRequest extends RpcAcsRequest<DescribeC
 		}
 	}
 
+	public String getHostInstanceId() {
+		return this.hostInstanceId;
+	}
+
+	public void setHostInstanceId(String hostInstanceId) {
+		this.hostInstanceId = hostInstanceId;
+		if(hostInstanceId != null){
+			putQueryParameter("HostInstanceId", hostInstanceId);
+		}
+	}
+
 	public String getTagValue() {
 		return this.tagValue;
 	}
@@ -60,14 +73,14 @@ public class DescribeClusterServiceConfigRequest extends RpcAcsRequest<DescribeC
 		}
 	}
 
-	public Long getGroupId() {
+	public String getGroupId() {
 		return this.groupId;
 	}
 
-	public void setGroupId(Long groupId) {
+	public void setGroupId(String groupId) {
 		this.groupId = groupId;
 		if(groupId != null){
-			putQueryParameter("GroupId", groupId.toString());
+			putQueryParameter("GroupId", groupId);
 		}
 	}
 

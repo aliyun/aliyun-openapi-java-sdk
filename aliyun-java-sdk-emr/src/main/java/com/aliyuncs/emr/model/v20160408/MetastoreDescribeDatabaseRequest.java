@@ -30,6 +30,8 @@ public class MetastoreDescribeDatabaseRequest extends RpcAcsRequest<MetastoreDes
 
 	private String dbName;
 
+	private String id;
+
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
 	}
@@ -49,6 +51,17 @@ public class MetastoreDescribeDatabaseRequest extends RpcAcsRequest<MetastoreDes
 		this.dbName = dbName;
 		if(dbName != null){
 			putQueryParameter("DbName", dbName);
+		}
+	}
+
+	public String getId() {
+		return this.id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+		if(id != null){
+			putQueryParameter("Id", id);
 		}
 	}
 

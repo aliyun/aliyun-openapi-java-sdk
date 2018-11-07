@@ -27,6 +27,12 @@ public class DescribeClusterOpLogResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String pageNumber;
+
+	private String pageSize;
+
+	private String total;
+
 	private List<ChangeLog> changeLogList;
 
 	public String getRequestId() {
@@ -35,6 +41,30 @@ public class DescribeClusterOpLogResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(String pageNumber) {
+		this.pageNumber = pageNumber;
+	}
+
+	public String getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(String pageSize) {
+		this.pageSize = pageSize;
+	}
+
+	public String getTotal() {
+		return this.total;
+	}
+
+	public void setTotal(String total) {
+		this.total = total;
 	}
 
 	public List<ChangeLog> getChangeLogList() {

@@ -19,6 +19,8 @@ import java.util.List;
 
 import com.aliyuncs.emr.model.v20160408.ListClusterHostResponse;
 import com.aliyuncs.emr.model.v20160408.ListClusterHostResponse.Host;
+import com.aliyuncs.emr.model.v20160408.ListClusterHostResponse.Host.Disk;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -34,7 +36,6 @@ public class ListClusterHostResponseUnmarshaller {
 		List<Host> hostList = new ArrayList<Host>();
 		for (int i = 0; i < context.lengthValue("ListClusterHostResponse.HostList.Length"); i++) {
 			Host host = new Host();
-			host.setHostId(context.stringValue("ListClusterHostResponse.HostList["+ i +"].HostId"));
 			host.setHostName(context.stringValue("ListClusterHostResponse.HostList["+ i +"].HostName"));
 			host.setPublicIp(context.stringValue("ListClusterHostResponse.HostList["+ i +"].PublicIp"));
 			host.setPrivateIp(context.stringValue("ListClusterHostResponse.HostList["+ i +"].PrivateIp"));
@@ -43,9 +44,24 @@ public class ListClusterHostResponseUnmarshaller {
 			host.setCpu(context.integerValue("ListClusterHostResponse.HostList["+ i +"].Cpu"));
 			host.setMemory(context.integerValue("ListClusterHostResponse.HostList["+ i +"].Memory"));
 			host.setStatus(context.stringValue("ListClusterHostResponse.HostList["+ i +"].Status"));
+			host.setInstanceStatus(context.stringValue("ListClusterHostResponse.HostList["+ i +"].InstanceStatus"));
 			host.setType(context.stringValue("ListClusterHostResponse.HostList["+ i +"].Type"));
 			host.setHostInstanceId(context.stringValue("ListClusterHostResponse.HostList["+ i +"].HostInstanceId"));
 			host.setSerialNumber(context.stringValue("ListClusterHostResponse.HostList["+ i +"].SerialNumber"));
+			host.setChargeType(context.stringValue("ListClusterHostResponse.HostList["+ i +"].ChargeType"));
+			host.setExpiredTime(context.longValue("ListClusterHostResponse.HostList["+ i +"].ExpiredTime"));
+
+			List<Disk> diskList = new ArrayList<Disk>();
+			for (int j = 0; j < context.lengthValue("ListClusterHostResponse.HostList["+ i +"].DiskList.Length"); j++) {
+				Disk disk = new Disk();
+				disk.setDiskId(context.stringValue("ListClusterHostResponse.HostList["+ i +"].DiskList["+ j +"].DiskId"));
+				disk.setType(context.stringValue("ListClusterHostResponse.HostList["+ i +"].DiskList["+ j +"].Type"));
+				disk.setDiskType(context.stringValue("ListClusterHostResponse.HostList["+ i +"].DiskList["+ j +"].DiskType"));
+				disk.setDiskSize(context.integerValue("ListClusterHostResponse.HostList["+ i +"].DiskList["+ j +"].DiskSize"));
+
+				diskList.add(disk);
+			}
+			host.setDiskList(diskList);
 
 			hostList.add(host);
 		}

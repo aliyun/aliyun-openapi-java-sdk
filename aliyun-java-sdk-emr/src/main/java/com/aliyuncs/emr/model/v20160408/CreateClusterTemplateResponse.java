@@ -26,12 +26,6 @@ public class CreateClusterTemplateResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String success;
-
-	private String errCode;
-
-	private String errMsg;
-
 	private String clusterTemplateId;
 
 	public String getRequestId() {
@@ -40,30 +34,6 @@ public class CreateClusterTemplateResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public String getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(String success) {
-		this.success = success;
-	}
-
-	public String getErrCode() {
-		return this.errCode;
-	}
-
-	public void setErrCode(String errCode) {
-		this.errCode = errCode;
-	}
-
-	public String getErrMsg() {
-		return this.errMsg;
-	}
-
-	public void setErrMsg(String errMsg) {
-		this.errMsg = errMsg;
 	}
 
 	public String getClusterTemplateId() {

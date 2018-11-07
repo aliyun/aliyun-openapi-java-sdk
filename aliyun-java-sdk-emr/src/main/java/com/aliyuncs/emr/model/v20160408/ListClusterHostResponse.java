@@ -77,8 +77,6 @@ public class ListClusterHostResponse extends AcsResponse {
 
 	public static class Host {
 
-		private String hostId;
-
 		private String hostName;
 
 		private String publicIp;
@@ -95,19 +93,19 @@ public class ListClusterHostResponse extends AcsResponse {
 
 		private String status;
 
+		private String instanceStatus;
+
 		private String type;
 
 		private String hostInstanceId;
 
 		private String serialNumber;
 
-		public String getHostId() {
-			return this.hostId;
-		}
+		private String chargeType;
 
-		public void setHostId(String hostId) {
-			this.hostId = hostId;
-		}
+		private Long expiredTime;
+
+		private List<Disk> diskList;
 
 		public String getHostName() {
 			return this.hostName;
@@ -173,6 +171,14 @@ public class ListClusterHostResponse extends AcsResponse {
 			this.status = status;
 		}
 
+		public String getInstanceStatus() {
+			return this.instanceStatus;
+		}
+
+		public void setInstanceStatus(String instanceStatus) {
+			this.instanceStatus = instanceStatus;
+		}
+
 		public String getType() {
 			return this.type;
 		}
@@ -195,6 +201,73 @@ public class ListClusterHostResponse extends AcsResponse {
 
 		public void setSerialNumber(String serialNumber) {
 			this.serialNumber = serialNumber;
+		}
+
+		public String getChargeType() {
+			return this.chargeType;
+		}
+
+		public void setChargeType(String chargeType) {
+			this.chargeType = chargeType;
+		}
+
+		public Long getExpiredTime() {
+			return this.expiredTime;
+		}
+
+		public void setExpiredTime(Long expiredTime) {
+			this.expiredTime = expiredTime;
+		}
+
+		public List<Disk> getDiskList() {
+			return this.diskList;
+		}
+
+		public void setDiskList(List<Disk> diskList) {
+			this.diskList = diskList;
+		}
+
+		public static class Disk {
+
+			private String diskId;
+
+			private String type;
+
+			private String diskType;
+
+			private Integer diskSize;
+
+			public String getDiskId() {
+				return this.diskId;
+			}
+
+			public void setDiskId(String diskId) {
+				this.diskId = diskId;
+			}
+
+			public String getType() {
+				return this.type;
+			}
+
+			public void setType(String type) {
+				this.type = type;
+			}
+
+			public String getDiskType() {
+				return this.diskType;
+			}
+
+			public void setDiskType(String diskType) {
+				this.diskType = diskType;
+			}
+
+			public Integer getDiskSize() {
+				return this.diskSize;
+			}
+
+			public void setDiskSize(Integer diskSize) {
+				this.diskSize = diskSize;
+			}
 		}
 	}
 

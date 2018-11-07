@@ -26,8 +26,6 @@ public class ListFlowNodeInstanceContainerStatusRequest extends RpcAcsRequest<Li
 		super("Emr", "2016-04-08", "ListFlowNodeInstanceContainerStatus");
 	}
 
-	private Long resourceOwnerId;
-
 	private Integer pageSize;
 
 	private String nodeInstanceId;
@@ -35,17 +33,6 @@ public class ListFlowNodeInstanceContainerStatusRequest extends RpcAcsRequest<Li
 	private String projectId;
 
 	private Integer pageNumber;
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
 
 	public Integer getPageSize() {
 		return this.pageSize;

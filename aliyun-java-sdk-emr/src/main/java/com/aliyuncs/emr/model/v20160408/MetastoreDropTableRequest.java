@@ -30,7 +30,11 @@ public class MetastoreDropTableRequest extends RpcAcsRequest<MetastoreDropTableR
 
 	private String dbName;
 
+	private String tableId;
+
 	private String tableName;
+
+	private String databaseId;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -54,6 +58,17 @@ public class MetastoreDropTableRequest extends RpcAcsRequest<MetastoreDropTableR
 		}
 	}
 
+	public String getTableId() {
+		return this.tableId;
+	}
+
+	public void setTableId(String tableId) {
+		this.tableId = tableId;
+		if(tableId != null){
+			putQueryParameter("TableId", tableId);
+		}
+	}
+
 	public String getTableName() {
 		return this.tableName;
 	}
@@ -62,6 +77,17 @@ public class MetastoreDropTableRequest extends RpcAcsRequest<MetastoreDropTableR
 		this.tableName = tableName;
 		if(tableName != null){
 			putQueryParameter("TableName", tableName);
+		}
+	}
+
+	public String getDatabaseId() {
+		return this.databaseId;
+	}
+
+	public void setDatabaseId(String databaseId) {
+		this.databaseId = databaseId;
+		if(databaseId != null){
+			putQueryParameter("DatabaseId", databaseId);
 		}
 	}
 

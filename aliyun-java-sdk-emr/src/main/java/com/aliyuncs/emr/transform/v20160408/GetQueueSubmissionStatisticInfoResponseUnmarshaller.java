@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.emr.model.v20160408.GetQueueSubmissionStatisticInfoResponse;
 import com.aliyuncs.emr.model.v20160408.GetQueueSubmissionStatisticInfoResponse.ClusterStatQueueSubmission;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

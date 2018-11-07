@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.emr.model.v20160408.ListFlowNodeInstanceContainerStatusResponse;
 import com.aliyuncs.emr.model.v20160408.ListFlowNodeInstanceContainerStatusResponse.ContainerStatus;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -27,6 +28,9 @@ public class ListFlowNodeInstanceContainerStatusResponseUnmarshaller {
 	public static ListFlowNodeInstanceContainerStatusResponse unmarshall(ListFlowNodeInstanceContainerStatusResponse listFlowNodeInstanceContainerStatusResponse, UnmarshallerContext context) {
 		
 		listFlowNodeInstanceContainerStatusResponse.setRequestId(context.stringValue("ListFlowNodeInstanceContainerStatusResponse.RequestId"));
+		listFlowNodeInstanceContainerStatusResponse.setPageNumber(context.integerValue("ListFlowNodeInstanceContainerStatusResponse.PageNumber"));
+		listFlowNodeInstanceContainerStatusResponse.setPageSize(context.integerValue("ListFlowNodeInstanceContainerStatusResponse.PageSize"));
+		listFlowNodeInstanceContainerStatusResponse.setTotal(context.integerValue("ListFlowNodeInstanceContainerStatusResponse.Total"));
 
 		List<ContainerStatus> containerStatusList = new ArrayList<ContainerStatus>();
 		for (int i = 0; i < context.lengthValue("ListFlowNodeInstanceContainerStatusResponse.ContainerStatusList.Length"); i++) {

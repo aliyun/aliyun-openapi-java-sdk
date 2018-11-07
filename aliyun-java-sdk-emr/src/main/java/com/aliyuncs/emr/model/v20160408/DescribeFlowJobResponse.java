@@ -35,6 +35,8 @@ public class DescribeFlowJobResponse extends AcsResponse {
 
 	private String name;
 
+	private String type;
+
 	private String description;
 
 	private String failAct;
@@ -51,11 +53,17 @@ public class DescribeFlowJobResponse extends AcsResponse {
 
 	private String runConf;
 
+	private String monitorConf;
+
 	private String categoryId;
 
 	private String mode;
 
-	private List<String> resource;
+	private String lastInstanceId;
+
+	private String adhoc;
+
+	private List<Resource> resourceList;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -95,6 +103,14 @@ public class DescribeFlowJobResponse extends AcsResponse {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public String getType() {
+		return this.type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
 	}
 
 	public String getDescription() {
@@ -161,6 +177,14 @@ public class DescribeFlowJobResponse extends AcsResponse {
 		this.runConf = runConf;
 	}
 
+	public String getMonitorConf() {
+		return this.monitorConf;
+	}
+
+	public void setMonitorConf(String monitorConf) {
+		this.monitorConf = monitorConf;
+	}
+
 	public String getCategoryId() {
 		return this.categoryId;
 	}
@@ -177,12 +201,51 @@ public class DescribeFlowJobResponse extends AcsResponse {
 		this.mode = mode;
 	}
 
-	public List<String> getResource() {
-		return this.resource;
+	public String getLastInstanceId() {
+		return this.lastInstanceId;
 	}
 
-	public void setResource(List<String> resource) {
-		this.resource = resource;
+	public void setLastInstanceId(String lastInstanceId) {
+		this.lastInstanceId = lastInstanceId;
+	}
+
+	public String getAdhoc() {
+		return this.adhoc;
+	}
+
+	public void setAdhoc(String adhoc) {
+		this.adhoc = adhoc;
+	}
+
+	public List<Resource> getResourceList() {
+		return this.resourceList;
+	}
+
+	public void setResourceList(List<Resource> resourceList) {
+		this.resourceList = resourceList;
+	}
+
+	public static class Resource {
+
+		private String path;
+
+		private String alias;
+
+		public String getPath() {
+			return this.path;
+		}
+
+		public void setPath(String path) {
+			this.path = path;
+		}
+
+		public String getAlias() {
+			return this.alias;
+		}
+
+		public void setAlias(String alias) {
+			this.alias = alias;
+		}
 	}
 
 	@Override

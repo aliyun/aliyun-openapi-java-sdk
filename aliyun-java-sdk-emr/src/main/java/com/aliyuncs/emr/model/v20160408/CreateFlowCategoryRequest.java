@@ -26,8 +26,6 @@ public class CreateFlowCategoryRequest extends RpcAcsRequest<CreateFlowCategoryR
 		super("Emr", "2016-04-08", "CreateFlowCategory");
 	}
 
-	private Long resourceOwnerId;
-
 	private String name;
 
 	private String type;
@@ -35,17 +33,6 @@ public class CreateFlowCategoryRequest extends RpcAcsRequest<CreateFlowCategoryR
 	private String projectId;
 
 	private String parentId;
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
 
 	public String getName() {
 		return this.name;

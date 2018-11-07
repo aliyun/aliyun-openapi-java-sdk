@@ -26,9 +26,9 @@ public class DescribeFlowNodeInstanceContainerLogRequest extends RpcAcsRequest<D
 		super("Emr", "2016-04-08", "DescribeFlowNodeInstanceContainerLog");
 	}
 
-	private Long resourceOwnerId;
-
 	private Integer offset;
+
+	private String logName;
 
 	private String appId;
 
@@ -40,17 +40,6 @@ public class DescribeFlowNodeInstanceContainerLogRequest extends RpcAcsRequest<D
 
 	private String projectId;
 
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
 	public Integer getOffset() {
 		return this.offset;
 	}
@@ -59,6 +48,17 @@ public class DescribeFlowNodeInstanceContainerLogRequest extends RpcAcsRequest<D
 		this.offset = offset;
 		if(offset != null){
 			putQueryParameter("Offset", offset.toString());
+		}
+	}
+
+	public String getLogName() {
+		return this.logName;
+	}
+
+	public void setLogName(String logName) {
+		this.logName = logName;
+		if(logName != null){
+			putQueryParameter("LogName", logName);
 		}
 	}
 

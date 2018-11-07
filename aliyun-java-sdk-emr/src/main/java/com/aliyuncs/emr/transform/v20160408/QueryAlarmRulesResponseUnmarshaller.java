@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.emr.model.v20160408.QueryAlarmRulesResponse;
 import com.aliyuncs.emr.model.v20160408.QueryAlarmRulesResponse.Alarm;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

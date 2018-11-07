@@ -30,7 +30,11 @@ public class ModifyClusterServiceConfigRequest extends RpcAcsRequest<ModifyClust
 
 	private String customConfigParams;
 
-	private Long groupId;
+	private String configType;
+
+	private String hostInstanceId;
+
+	private String groupId;
 
 	private String serviceName;
 
@@ -62,14 +66,36 @@ public class ModifyClusterServiceConfigRequest extends RpcAcsRequest<ModifyClust
 		}
 	}
 
-	public Long getGroupId() {
+	public String getConfigType() {
+		return this.configType;
+	}
+
+	public void setConfigType(String configType) {
+		this.configType = configType;
+		if(configType != null){
+			putQueryParameter("ConfigType", configType);
+		}
+	}
+
+	public String getHostInstanceId() {
+		return this.hostInstanceId;
+	}
+
+	public void setHostInstanceId(String hostInstanceId) {
+		this.hostInstanceId = hostInstanceId;
+		if(hostInstanceId != null){
+			putQueryParameter("HostInstanceId", hostInstanceId);
+		}
+	}
+
+	public String getGroupId() {
 		return this.groupId;
 	}
 
-	public void setGroupId(Long groupId) {
+	public void setGroupId(String groupId) {
 		this.groupId = groupId;
 		if(groupId != null){
-			putQueryParameter("GroupId", groupId.toString());
+			putQueryParameter("GroupId", groupId);
 		}
 	}
 

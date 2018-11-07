@@ -15,6 +15,7 @@
 package com.aliyuncs.emr.model.v20160408;
 
 import java.util.List;
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.emr.transform.v20160408.DescribeExecutionPlanResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -280,11 +281,19 @@ public class DescribeExecutionPlanResponse extends AcsResponse {
 
 		private Boolean easEnable;
 
+		private Boolean useCustomHiveMetaDB;
+
+		private Boolean initCustomHiveMetaDB;
+
 		private String userDefinedEmrEcsRole;
+
+		private Boolean useLocalMetaDb;
 
 		private List<EcsOrderInfo> ecsOrders;
 
 		private List<BootstrapAction> bootstrapActionList;
+
+		private List<Config> configList;
 
 		private SoftwareInfo softwareInfo;
 
@@ -408,12 +417,36 @@ public class DescribeExecutionPlanResponse extends AcsResponse {
 			this.easEnable = easEnable;
 		}
 
+		public Boolean getUseCustomHiveMetaDB() {
+			return this.useCustomHiveMetaDB;
+		}
+
+		public void setUseCustomHiveMetaDB(Boolean useCustomHiveMetaDB) {
+			this.useCustomHiveMetaDB = useCustomHiveMetaDB;
+		}
+
+		public Boolean getInitCustomHiveMetaDB() {
+			return this.initCustomHiveMetaDB;
+		}
+
+		public void setInitCustomHiveMetaDB(Boolean initCustomHiveMetaDB) {
+			this.initCustomHiveMetaDB = initCustomHiveMetaDB;
+		}
+
 		public String getUserDefinedEmrEcsRole() {
 			return this.userDefinedEmrEcsRole;
 		}
 
 		public void setUserDefinedEmrEcsRole(String userDefinedEmrEcsRole) {
 			this.userDefinedEmrEcsRole = userDefinedEmrEcsRole;
+		}
+
+		public Boolean getUseLocalMetaDb() {
+			return this.useLocalMetaDb;
+		}
+
+		public void setUseLocalMetaDb(Boolean useLocalMetaDb) {
+			this.useLocalMetaDb = useLocalMetaDb;
 		}
 
 		public List<EcsOrderInfo> getEcsOrders() {
@@ -430,6 +463,14 @@ public class DescribeExecutionPlanResponse extends AcsResponse {
 
 		public void setBootstrapActionList(List<BootstrapAction> bootstrapActionList) {
 			this.bootstrapActionList = bootstrapActionList;
+		}
+
+		public List<Config> getConfigList() {
+			return this.configList;
+		}
+
+		public void setConfigList(List<Config> configList) {
+			this.configList = configList;
 		}
 
 		public SoftwareInfo getSoftwareInfo() {
@@ -543,6 +584,59 @@ public class DescribeExecutionPlanResponse extends AcsResponse {
 
 			public void setArg(String arg) {
 				this.arg = arg;
+			}
+		}
+
+		public static class Config {
+
+			private String serviceName;
+
+			private String fileName;
+
+			private String configKey;
+
+			private String configValue;
+
+			private String encrypt;
+
+			public String getServiceName() {
+				return this.serviceName;
+			}
+
+			public void setServiceName(String serviceName) {
+				this.serviceName = serviceName;
+			}
+
+			public String getFileName() {
+				return this.fileName;
+			}
+
+			public void setFileName(String fileName) {
+				this.fileName = fileName;
+			}
+
+			public String getConfigKey() {
+				return this.configKey;
+			}
+
+			public void setConfigKey(String configKey) {
+				this.configKey = configKey;
+			}
+
+			public String getConfigValue() {
+				return this.configValue;
+			}
+
+			public void setConfigValue(String configValue) {
+				this.configValue = configValue;
+			}
+
+			public String getEncrypt() {
+				return this.encrypt;
+			}
+
+			public void setEncrypt(String encrypt) {
+				this.encrypt = encrypt;
 			}
 		}
 

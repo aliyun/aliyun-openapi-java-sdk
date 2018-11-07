@@ -28,19 +28,29 @@ public class CreateFlowForWebRequest extends RpcAcsRequest<CreateFlowForWebRespo
 
 	private String cronExpr;
 
-	private Long startSchedule;
+	private String parentFlowList;
 
-	private String name;
+	private String alertDingDingGroupBizId;
+
+	private Long startSchedule;
 
 	private String description;
 
-	private Long endSchedule;
-
 	private String clusterId;
 
-	private String projectId;
+	private String alertUserGroupBizId;
 
 	private String graph;
+
+	private String hostName;
+
+	private Boolean createCluster;
+
+	private String name;
+
+	private Long endSchedule;
+
+	private String projectId;
 
 	private String parentCategory;
 
@@ -55,6 +65,28 @@ public class CreateFlowForWebRequest extends RpcAcsRequest<CreateFlowForWebRespo
 		}
 	}
 
+	public String getParentFlowList() {
+		return this.parentFlowList;
+	}
+
+	public void setParentFlowList(String parentFlowList) {
+		this.parentFlowList = parentFlowList;
+		if(parentFlowList != null){
+			putQueryParameter("ParentFlowList", parentFlowList);
+		}
+	}
+
+	public String getAlertDingDingGroupBizId() {
+		return this.alertDingDingGroupBizId;
+	}
+
+	public void setAlertDingDingGroupBizId(String alertDingDingGroupBizId) {
+		this.alertDingDingGroupBizId = alertDingDingGroupBizId;
+		if(alertDingDingGroupBizId != null){
+			putQueryParameter("AlertDingDingGroupBizId", alertDingDingGroupBizId);
+		}
+	}
+
 	public Long getStartSchedule() {
 		return this.startSchedule;
 	}
@@ -63,17 +95,6 @@ public class CreateFlowForWebRequest extends RpcAcsRequest<CreateFlowForWebRespo
 		this.startSchedule = startSchedule;
 		if(startSchedule != null){
 			putQueryParameter("StartSchedule", startSchedule.toString());
-		}
-	}
-
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putQueryParameter("Name", name);
 		}
 	}
 
@@ -88,17 +109,6 @@ public class CreateFlowForWebRequest extends RpcAcsRequest<CreateFlowForWebRespo
 		}
 	}
 
-	public Long getEndSchedule() {
-		return this.endSchedule;
-	}
-
-	public void setEndSchedule(Long endSchedule) {
-		this.endSchedule = endSchedule;
-		if(endSchedule != null){
-			putQueryParameter("EndSchedule", endSchedule.toString());
-		}
-	}
-
 	public String getClusterId() {
 		return this.clusterId;
 	}
@@ -110,14 +120,14 @@ public class CreateFlowForWebRequest extends RpcAcsRequest<CreateFlowForWebRespo
 		}
 	}
 
-	public String getProjectId() {
-		return this.projectId;
+	public String getAlertUserGroupBizId() {
+		return this.alertUserGroupBizId;
 	}
 
-	public void setProjectId(String projectId) {
-		this.projectId = projectId;
-		if(projectId != null){
-			putQueryParameter("ProjectId", projectId);
+	public void setAlertUserGroupBizId(String alertUserGroupBizId) {
+		this.alertUserGroupBizId = alertUserGroupBizId;
+		if(alertUserGroupBizId != null){
+			putQueryParameter("AlertUserGroupBizId", alertUserGroupBizId);
 		}
 	}
 
@@ -129,6 +139,61 @@ public class CreateFlowForWebRequest extends RpcAcsRequest<CreateFlowForWebRespo
 		this.graph = graph;
 		if(graph != null){
 			putQueryParameter("Graph", graph);
+		}
+	}
+
+	public String getHostName() {
+		return this.hostName;
+	}
+
+	public void setHostName(String hostName) {
+		this.hostName = hostName;
+		if(hostName != null){
+			putQueryParameter("HostName", hostName);
+		}
+	}
+
+	public Boolean getCreateCluster() {
+		return this.createCluster;
+	}
+
+	public void setCreateCluster(Boolean createCluster) {
+		this.createCluster = createCluster;
+		if(createCluster != null){
+			putQueryParameter("CreateCluster", createCluster.toString());
+		}
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
+		}
+	}
+
+	public Long getEndSchedule() {
+		return this.endSchedule;
+	}
+
+	public void setEndSchedule(Long endSchedule) {
+		this.endSchedule = endSchedule;
+		if(endSchedule != null){
+			putQueryParameter("EndSchedule", endSchedule.toString());
+		}
+	}
+
+	public String getProjectId() {
+		return this.projectId;
+	}
+
+	public void setProjectId(String projectId) {
+		this.projectId = projectId;
+		if(projectId != null){
+			putQueryParameter("ProjectId", projectId);
 		}
 	}
 

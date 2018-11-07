@@ -15,6 +15,7 @@
 package com.aliyuncs.emr.model.v20160408;
 
 import java.util.List;
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.emr.transform.v20160408.DescribeClusterServiceConfigHistoryResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;

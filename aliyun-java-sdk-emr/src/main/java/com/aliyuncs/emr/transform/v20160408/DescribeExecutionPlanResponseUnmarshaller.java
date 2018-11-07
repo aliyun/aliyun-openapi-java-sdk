@@ -20,10 +20,12 @@ import java.util.List;
 import com.aliyuncs.emr.model.v20160408.DescribeExecutionPlanResponse;
 import com.aliyuncs.emr.model.v20160408.DescribeExecutionPlanResponse.ClusterInfo;
 import com.aliyuncs.emr.model.v20160408.DescribeExecutionPlanResponse.ClusterInfo.BootstrapAction;
+import com.aliyuncs.emr.model.v20160408.DescribeExecutionPlanResponse.ClusterInfo.Config;
 import com.aliyuncs.emr.model.v20160408.DescribeExecutionPlanResponse.ClusterInfo.EcsOrderInfo;
 import com.aliyuncs.emr.model.v20160408.DescribeExecutionPlanResponse.ClusterInfo.SoftwareInfo;
 import com.aliyuncs.emr.model.v20160408.DescribeExecutionPlanResponse.ClusterInfo.SoftwareInfo.Software;
 import com.aliyuncs.emr.model.v20160408.DescribeExecutionPlanResponse.JobInfo;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -63,7 +65,10 @@ public class DescribeExecutionPlanResponseUnmarshaller {
 		clusterInfo.setInstanceGeneration(context.stringValue("DescribeExecutionPlanResponse.ClusterInfo.InstanceGeneration"));
 		clusterInfo.setConfigurations(context.stringValue("DescribeExecutionPlanResponse.ClusterInfo.Configurations"));
 		clusterInfo.setEasEnable(context.booleanValue("DescribeExecutionPlanResponse.ClusterInfo.EasEnable"));
+		clusterInfo.setUseCustomHiveMetaDB(context.booleanValue("DescribeExecutionPlanResponse.ClusterInfo.UseCustomHiveMetaDB"));
+		clusterInfo.setInitCustomHiveMetaDB(context.booleanValue("DescribeExecutionPlanResponse.ClusterInfo.InitCustomHiveMetaDB"));
 		clusterInfo.setUserDefinedEmrEcsRole(context.stringValue("DescribeExecutionPlanResponse.ClusterInfo.UserDefinedEmrEcsRole"));
+		clusterInfo.setUseLocalMetaDb(context.booleanValue("DescribeExecutionPlanResponse.ClusterInfo.UseLocalMetaDb"));
 
 		SoftwareInfo softwareInfo = new SoftwareInfo();
 		softwareInfo.setEmrVer(context.stringValue("DescribeExecutionPlanResponse.ClusterInfo.SoftwareInfo.EmrVer"));
@@ -109,6 +114,19 @@ public class DescribeExecutionPlanResponseUnmarshaller {
 			bootstrapActionList.add(bootstrapAction);
 		}
 		clusterInfo.setBootstrapActionList(bootstrapActionList);
+
+		List<Config> configList = new ArrayList<Config>();
+		for (int i = 0; i < context.lengthValue("DescribeExecutionPlanResponse.ClusterInfo.ConfigList.Length"); i++) {
+			Config config = new Config();
+			config.setServiceName(context.stringValue("DescribeExecutionPlanResponse.ClusterInfo.ConfigList["+ i +"].ServiceName"));
+			config.setFileName(context.stringValue("DescribeExecutionPlanResponse.ClusterInfo.ConfigList["+ i +"].FileName"));
+			config.setConfigKey(context.stringValue("DescribeExecutionPlanResponse.ClusterInfo.ConfigList["+ i +"].ConfigKey"));
+			config.setConfigValue(context.stringValue("DescribeExecutionPlanResponse.ClusterInfo.ConfigList["+ i +"].ConfigValue"));
+			config.setEncrypt(context.stringValue("DescribeExecutionPlanResponse.ClusterInfo.ConfigList["+ i +"].Encrypt"));
+
+			configList.add(config);
+		}
+		clusterInfo.setConfigList(configList);
 		describeExecutionPlanResponse.setClusterInfo(clusterInfo);
 
 		List<JobInfo> jobInfoList = new ArrayList<JobInfo>();

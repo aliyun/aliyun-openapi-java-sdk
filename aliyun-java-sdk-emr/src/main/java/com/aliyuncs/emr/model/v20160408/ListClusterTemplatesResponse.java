@@ -27,11 +27,11 @@ public class ListClusterTemplatesResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String totalCount;
+	private Integer totalCount;
 
-	private String pageNumber;
+	private Integer pageNumber;
 
-	private String pageSize;
+	private Integer pageSize;
 
 	private List<TemplateInfo> templateInfoList;
 
@@ -43,27 +43,27 @@ public class ListClusterTemplatesResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getTotalCount() {
+	public Integer getTotalCount() {
 		return this.totalCount;
 	}
 
-	public void setTotalCount(String totalCount) {
+	public void setTotalCount(Integer totalCount) {
 		this.totalCount = totalCount;
 	}
 
-	public String getPageNumber() {
+	public Integer getPageNumber() {
 		return this.pageNumber;
 	}
 
-	public void setPageNumber(String pageNumber) {
+	public void setPageNumber(Integer pageNumber) {
 		this.pageNumber = pageNumber;
 	}
 
-	public String getPageSize() {
+	public Integer getPageSize() {
 		return this.pageSize;
 	}
 
-	public void setPageSize(String pageSize) {
+	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
 	}
 
@@ -105,11 +105,45 @@ public class ListClusterTemplatesResponse extends AcsResponse {
 
 		private Boolean easEnable;
 
+		private Long gmtCreate;
+
+		private Long gmtModified;
+
+		private String zoneId;
+
+		private String clusterType;
+
+		private String securityGroupId;
+
+		private String securityGroupName;
+
+		private String configurations;
+
+		private Boolean allowNotebook;
+
+		private String createSource;
+
+		private Boolean useLocalMetaDb;
+
+		private Boolean sshEnable;
+
+		private Boolean isOpenPublicIp;
+
+		private String depositType;
+
+		private String machineType;
+
+		private Boolean useCustomHiveMetaDb;
+
+		private Boolean initCustomHiveMetaDb;
+
 		private List<BootstrapAction> bootstrapActionList;
 
 		private List<HostGroup> hostGroupList;
 
-		private SoftwareInfo softwareInfo;
+		private List<Config> configList;
+
+		private List<String> softwareInfoList;
 
 		public String getId() {
 			return this.id;
@@ -223,6 +257,134 @@ public class ListClusterTemplatesResponse extends AcsResponse {
 			this.easEnable = easEnable;
 		}
 
+		public Long getGmtCreate() {
+			return this.gmtCreate;
+		}
+
+		public void setGmtCreate(Long gmtCreate) {
+			this.gmtCreate = gmtCreate;
+		}
+
+		public Long getGmtModified() {
+			return this.gmtModified;
+		}
+
+		public void setGmtModified(Long gmtModified) {
+			this.gmtModified = gmtModified;
+		}
+
+		public String getZoneId() {
+			return this.zoneId;
+		}
+
+		public void setZoneId(String zoneId) {
+			this.zoneId = zoneId;
+		}
+
+		public String getClusterType() {
+			return this.clusterType;
+		}
+
+		public void setClusterType(String clusterType) {
+			this.clusterType = clusterType;
+		}
+
+		public String getSecurityGroupId() {
+			return this.securityGroupId;
+		}
+
+		public void setSecurityGroupId(String securityGroupId) {
+			this.securityGroupId = securityGroupId;
+		}
+
+		public String getSecurityGroupName() {
+			return this.securityGroupName;
+		}
+
+		public void setSecurityGroupName(String securityGroupName) {
+			this.securityGroupName = securityGroupName;
+		}
+
+		public String getConfigurations() {
+			return this.configurations;
+		}
+
+		public void setConfigurations(String configurations) {
+			this.configurations = configurations;
+		}
+
+		public Boolean getAllowNotebook() {
+			return this.allowNotebook;
+		}
+
+		public void setAllowNotebook(Boolean allowNotebook) {
+			this.allowNotebook = allowNotebook;
+		}
+
+		public String getCreateSource() {
+			return this.createSource;
+		}
+
+		public void setCreateSource(String createSource) {
+			this.createSource = createSource;
+		}
+
+		public Boolean getUseLocalMetaDb() {
+			return this.useLocalMetaDb;
+		}
+
+		public void setUseLocalMetaDb(Boolean useLocalMetaDb) {
+			this.useLocalMetaDb = useLocalMetaDb;
+		}
+
+		public Boolean getSshEnable() {
+			return this.sshEnable;
+		}
+
+		public void setSshEnable(Boolean sshEnable) {
+			this.sshEnable = sshEnable;
+		}
+
+		public Boolean getIsOpenPublicIp() {
+			return this.isOpenPublicIp;
+		}
+
+		public void setIsOpenPublicIp(Boolean isOpenPublicIp) {
+			this.isOpenPublicIp = isOpenPublicIp;
+		}
+
+		public String getDepositType() {
+			return this.depositType;
+		}
+
+		public void setDepositType(String depositType) {
+			this.depositType = depositType;
+		}
+
+		public String getMachineType() {
+			return this.machineType;
+		}
+
+		public void setMachineType(String machineType) {
+			this.machineType = machineType;
+		}
+
+		public Boolean getUseCustomHiveMetaDb() {
+			return this.useCustomHiveMetaDb;
+		}
+
+		public void setUseCustomHiveMetaDb(Boolean useCustomHiveMetaDb) {
+			this.useCustomHiveMetaDb = useCustomHiveMetaDb;
+		}
+
+		public Boolean getInitCustomHiveMetaDb() {
+			return this.initCustomHiveMetaDb;
+		}
+
+		public void setInitCustomHiveMetaDb(Boolean initCustomHiveMetaDb) {
+			this.initCustomHiveMetaDb = initCustomHiveMetaDb;
+		}
+
 		public List<BootstrapAction> getBootstrapActionList() {
 			return this.bootstrapActionList;
 		}
@@ -239,12 +401,20 @@ public class ListClusterTemplatesResponse extends AcsResponse {
 			this.hostGroupList = hostGroupList;
 		}
 
-		public SoftwareInfo getSoftwareInfo() {
-			return this.softwareInfo;
+		public List<Config> getConfigList() {
+			return this.configList;
 		}
 
-		public void setSoftwareInfo(SoftwareInfo softwareInfo) {
-			this.softwareInfo = softwareInfo;
+		public void setConfigList(List<Config> configList) {
+			this.configList = configList;
+		}
+
+		public List<String> getSoftwareInfoList() {
+			return this.softwareInfoList;
+		}
+
+		public void setSoftwareInfoList(List<String> softwareInfoList) {
+			this.softwareInfoList = softwareInfoList;
 		}
 
 		public static class BootstrapAction {
@@ -301,6 +471,12 @@ public class ListClusterTemplatesResponse extends AcsResponse {
 			private Integer diskCapacity;
 
 			private Integer diskCount;
+
+			private String sysDiskType;
+
+			private Integer sysDiskCapacity;
+
+			private String multiInstanceTypes;
 
 			public String getHostGroupId() {
 				return this.hostGroupId;
@@ -381,91 +557,92 @@ public class ListClusterTemplatesResponse extends AcsResponse {
 			public void setDiskCount(Integer diskCount) {
 				this.diskCount = diskCount;
 			}
+
+			public String getSysDiskType() {
+				return this.sysDiskType;
+			}
+
+			public void setSysDiskType(String sysDiskType) {
+				this.sysDiskType = sysDiskType;
+			}
+
+			public Integer getSysDiskCapacity() {
+				return this.sysDiskCapacity;
+			}
+
+			public void setSysDiskCapacity(Integer sysDiskCapacity) {
+				this.sysDiskCapacity = sysDiskCapacity;
+			}
+
+			public String getMultiInstanceTypes() {
+				return this.multiInstanceTypes;
+			}
+
+			public void setMultiInstanceTypes(String multiInstanceTypes) {
+				this.multiInstanceTypes = multiInstanceTypes;
+			}
 		}
 
-		public static class SoftwareInfo {
+		public static class Config {
 
-			private String emrVer;
+			private String serviceName;
 
-			private String clusterType;
+			private String fileName;
 
-			private List<Software> softwares;
+			private String configKey;
 
-			public String getEmrVer() {
-				return this.emrVer;
+			private String configValue;
+
+			private String encrypt;
+
+			private String replace;
+
+			public String getServiceName() {
+				return this.serviceName;
 			}
 
-			public void setEmrVer(String emrVer) {
-				this.emrVer = emrVer;
+			public void setServiceName(String serviceName) {
+				this.serviceName = serviceName;
 			}
 
-			public String getClusterType() {
-				return this.clusterType;
+			public String getFileName() {
+				return this.fileName;
 			}
 
-			public void setClusterType(String clusterType) {
-				this.clusterType = clusterType;
+			public void setFileName(String fileName) {
+				this.fileName = fileName;
 			}
 
-			public List<Software> getSoftwares() {
-				return this.softwares;
+			public String getConfigKey() {
+				return this.configKey;
 			}
 
-			public void setSoftwares(List<Software> softwares) {
-				this.softwares = softwares;
+			public void setConfigKey(String configKey) {
+				this.configKey = configKey;
 			}
 
-			public static class Software {
+			public String getConfigValue() {
+				return this.configValue;
+			}
 
-				private String displayName;
+			public void setConfigValue(String configValue) {
+				this.configValue = configValue;
+			}
 
-				private String name;
+			public String getEncrypt() {
+				return this.encrypt;
+			}
 
-				private Boolean onlyDisplay;
+			public void setEncrypt(String encrypt) {
+				this.encrypt = encrypt;
+			}
 
-				private Integer startTpe;
+			public String getReplace() {
+				return this.replace;
+			}
 
-				private String version;
-
-				public String getDisplayName() {
-					return this.displayName;
-				}
-
-				public void setDisplayName(String displayName) {
-					this.displayName = displayName;
-				}
-
-				public String getName() {
-					return this.name;
-				}
-
-				public void setName(String name) {
-					this.name = name;
-				}
-
-				public Boolean getOnlyDisplay() {
-					return this.onlyDisplay;
-				}
-
-				public void setOnlyDisplay(Boolean onlyDisplay) {
-					this.onlyDisplay = onlyDisplay;
-				}
-
-				public Integer getStartTpe() {
-					return this.startTpe;
-				}
-
-				public void setStartTpe(Integer startTpe) {
-					this.startTpe = startTpe;
-				}
-
-				public String getVersion() {
-					return this.version;
-				}
-
-				public void setVersion(String version) {
-					this.version = version;
-				}
+			public void setReplace(String replace) {
+				this.replace = replace;
 			}
 		}
 	}

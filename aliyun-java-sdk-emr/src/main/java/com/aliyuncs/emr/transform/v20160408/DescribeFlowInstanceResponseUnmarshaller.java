@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.emr.model.v20160408.DescribeFlowInstanceResponse;
 import com.aliyuncs.emr.model.v20160408.DescribeFlowInstanceResponse.NodeInstanceItem;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -37,6 +38,8 @@ public class DescribeFlowInstanceResponseUnmarshaller {
 		describeFlowInstanceResponse.setClusterId(context.stringValue("DescribeFlowInstanceResponse.ClusterId"));
 		describeFlowInstanceResponse.setStartTime(context.longValue("DescribeFlowInstanceResponse.StartTime"));
 		describeFlowInstanceResponse.setEndTime(context.longValue("DescribeFlowInstanceResponse.EndTime"));
+		describeFlowInstanceResponse.setDuration(context.longValue("DescribeFlowInstanceResponse.Duration"));
+		describeFlowInstanceResponse.setGraph(context.stringValue("DescribeFlowInstanceResponse.Graph"));
 
 		List<NodeInstanceItem> nodeInstance = new ArrayList<NodeInstanceItem>();
 		for (int i = 0; i < context.lengthValue("DescribeFlowInstanceResponse.NodeInstance.Length"); i++) {
@@ -56,15 +59,14 @@ public class DescribeFlowInstanceResponseUnmarshaller {
 			nodeInstanceItem.setClusterId(context.stringValue("DescribeFlowInstanceResponse.NodeInstance["+ i +"].ClusterId"));
 			nodeInstanceItem.setHostName(context.stringValue("DescribeFlowInstanceResponse.NodeInstance["+ i +"].HostName"));
 			nodeInstanceItem.setProjectId(context.stringValue("DescribeFlowInstanceResponse.NodeInstance["+ i +"].ProjectId"));
+			nodeInstanceItem.setPending(context.booleanValue("DescribeFlowInstanceResponse.NodeInstance["+ i +"].Pending"));
 			nodeInstanceItem.setStartTime(context.longValue("DescribeFlowInstanceResponse.NodeInstance["+ i +"].StartTime"));
 			nodeInstanceItem.setEndTime(context.longValue("DescribeFlowInstanceResponse.NodeInstance["+ i +"].EndTime"));
+			nodeInstanceItem.setDuration(context.longValue("DescribeFlowInstanceResponse.NodeInstance["+ i +"].Duration"));
 			nodeInstanceItem.setRetries(context.integerValue("DescribeFlowInstanceResponse.NodeInstance["+ i +"].Retries"));
 			nodeInstanceItem.setExternalId(context.stringValue("DescribeFlowInstanceResponse.NodeInstance["+ i +"].ExternalId"));
 			nodeInstanceItem.setExternalStatus(context.stringValue("DescribeFlowInstanceResponse.NodeInstance["+ i +"].ExternalStatus"));
 			nodeInstanceItem.setExternalInfo(context.stringValue("DescribeFlowInstanceResponse.NodeInstance["+ i +"].ExternalInfo"));
-			nodeInstanceItem.setParamConf(context.stringValue("DescribeFlowInstanceResponse.NodeInstance["+ i +"].ParamConf"));
-			nodeInstanceItem.setEnvConf(context.stringValue("DescribeFlowInstanceResponse.NodeInstance["+ i +"].EnvConf"));
-			nodeInstanceItem.setRunConf(context.stringValue("DescribeFlowInstanceResponse.NodeInstance["+ i +"].RunConf"));
 
 			nodeInstance.add(nodeInstanceItem);
 		}

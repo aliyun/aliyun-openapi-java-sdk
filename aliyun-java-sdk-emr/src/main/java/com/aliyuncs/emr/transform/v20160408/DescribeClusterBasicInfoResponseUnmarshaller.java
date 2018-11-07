@@ -23,6 +23,7 @@ import com.aliyuncs.emr.model.v20160408.DescribeClusterBasicInfoResponse.Cluster
 import com.aliyuncs.emr.model.v20160408.DescribeClusterBasicInfoResponse.ClusterInfo.FailReason;
 import com.aliyuncs.emr.model.v20160408.DescribeClusterBasicInfoResponse.ClusterInfo.SoftwareInfo;
 import com.aliyuncs.emr.model.v20160408.DescribeClusterBasicInfoResponse.ClusterInfo.SoftwareInfo.Software;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -68,6 +69,7 @@ public class DescribeClusterBasicInfoResponseUnmarshaller {
 		clusterInfo.setSecurityGroupId(context.stringValue("DescribeClusterBasicInfoResponse.ClusterInfo.SecurityGroupId"));
 		clusterInfo.setSecurityGroupName(context.stringValue("DescribeClusterBasicInfoResponse.ClusterInfo.SecurityGroupName"));
 		clusterInfo.setEasEnable(context.booleanValue("DescribeClusterBasicInfoResponse.ClusterInfo.EasEnable"));
+		clusterInfo.setClusterType(context.stringValue("DescribeClusterBasicInfoResponse.ClusterInfo.ClusterType"));
 
 		SoftwareInfo softwareInfo = new SoftwareInfo();
 		softwareInfo.setEmrVer(context.stringValue("DescribeClusterBasicInfoResponse.ClusterInfo.SoftwareInfo.EmrVer"));

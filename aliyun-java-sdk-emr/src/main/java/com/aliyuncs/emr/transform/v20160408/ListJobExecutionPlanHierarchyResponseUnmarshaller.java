@@ -21,6 +21,7 @@ import com.aliyuncs.emr.model.v20160408.ListJobExecutionPlanHierarchyResponse;
 import com.aliyuncs.emr.model.v20160408.ListJobExecutionPlanHierarchyResponse.HierarchyInfo;
 import com.aliyuncs.emr.model.v20160408.ListJobExecutionPlanHierarchyResponse.HierarchyInfo.ExecutionPlan;
 import com.aliyuncs.emr.model.v20160408.ListJobExecutionPlanHierarchyResponse.HierarchyInfo.Job;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

@@ -26,24 +26,11 @@ public class SubmitFlowRequest extends RpcAcsRequest<SubmitFlowResponse> {
 		super("Emr", "2016-04-08", "SubmitFlow");
 	}
 
-	private Long resourceOwnerId;
-
 	private String conf;
 
 	private String projectId;
 
 	private String flowId;
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
 
 	public String getConf() {
 		return this.conf;

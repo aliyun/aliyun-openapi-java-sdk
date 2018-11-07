@@ -27,7 +27,9 @@ public class DescribeFlowNodeInstanceContainerLogResponse extends AcsResponse {
 
 	private String requestId;
 
-	private List<Log> logs;
+	private Boolean logEnd;
+
+	private List<LogEntry> logEntrys;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -37,37 +39,32 @@ public class DescribeFlowNodeInstanceContainerLogResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public List<Log> getLogs() {
-		return this.logs;
+	public Boolean getLogEnd() {
+		return this.logEnd;
 	}
 
-	public void setLogs(List<Log> logs) {
-		this.logs = logs;
+	public void setLogEnd(Boolean logEnd) {
+		this.logEnd = logEnd;
 	}
 
-	public static class Log {
+	public List<LogEntry> getLogEntrys() {
+		return this.logEntrys;
+	}
 
-		private LogEntry logEntry;
+	public void setLogEntrys(List<LogEntry> logEntrys) {
+		this.logEntrys = logEntrys;
+	}
 
-		public LogEntry getLogEntry() {
-			return this.logEntry;
+	public static class LogEntry {
+
+		private String content;
+
+		public String getContent() {
+			return this.content;
 		}
 
-		public void setLogEntry(LogEntry logEntry) {
-			this.logEntry = logEntry;
-		}
-
-		public static class LogEntry {
-
-			private String content;
-
-			public String getContent() {
-				return this.content;
-			}
-
-			public void setContent(String content) {
-				this.content = content;
-			}
+		public void setContent(String content) {
+			this.content = content;
 		}
 	}
 

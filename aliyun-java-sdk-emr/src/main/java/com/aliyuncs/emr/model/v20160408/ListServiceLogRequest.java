@@ -30,7 +30,11 @@ public class ListServiceLogRequest extends RpcAcsRequest<ListServiceLogResponse>
 
 	private String hostName;
 
+	private Integer maxKeys;
+
 	private String logstoreName;
+
+	private String marker;
 
 	private String clusterId;
 
@@ -56,6 +60,17 @@ public class ListServiceLogRequest extends RpcAcsRequest<ListServiceLogResponse>
 		}
 	}
 
+	public Integer getMaxKeys() {
+		return this.maxKeys;
+	}
+
+	public void setMaxKeys(Integer maxKeys) {
+		this.maxKeys = maxKeys;
+		if(maxKeys != null){
+			putQueryParameter("MaxKeys", maxKeys.toString());
+		}
+	}
+
 	public String getLogstoreName() {
 		return this.logstoreName;
 	}
@@ -64,6 +79,17 @@ public class ListServiceLogRequest extends RpcAcsRequest<ListServiceLogResponse>
 		this.logstoreName = logstoreName;
 		if(logstoreName != null){
 			putQueryParameter("LogstoreName", logstoreName);
+		}
+	}
+
+	public String getMarker() {
+		return this.marker;
+	}
+
+	public void setMarker(String marker) {
+		this.marker = marker;
+		if(marker != null){
+			putQueryParameter("Marker", marker);
 		}
 	}
 

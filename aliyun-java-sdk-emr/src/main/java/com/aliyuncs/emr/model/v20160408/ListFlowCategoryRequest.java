@@ -26,8 +26,6 @@ public class ListFlowCategoryRequest extends RpcAcsRequest<ListFlowCategoryRespo
 		super("Emr", "2016-04-08", "ListFlowCategory");
 	}
 
-	private Long resourceOwnerId;
-
 	private Boolean root;
 
 	private Integer pageSize;
@@ -37,17 +35,6 @@ public class ListFlowCategoryRequest extends RpcAcsRequest<ListFlowCategoryRespo
 	private String parentId;
 
 	private Integer pageNumber;
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
 
 	public Boolean getRoot() {
 		return this.root;

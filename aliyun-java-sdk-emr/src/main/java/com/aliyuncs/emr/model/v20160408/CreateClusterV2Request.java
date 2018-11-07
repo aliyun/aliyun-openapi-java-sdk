@@ -43,6 +43,8 @@ public class CreateClusterV2Request extends RpcAcsRequest<CreateClusterV2Respons
 
 	private Boolean easEnable;
 
+	private String keyPairName;
+
 	private String securityGroupName;
 
 	private String depositType;
@@ -54,6 +56,8 @@ public class CreateClusterV2Request extends RpcAcsRequest<CreateClusterV2Respons
 	private Boolean useLocalMetaDb;
 
 	private String emrVer;
+
+	private List<UserInfo> userInfos;
 
 	private String userDefinedEmrEcsRole;
 
@@ -85,7 +89,13 @@ public class CreateClusterV2Request extends RpcAcsRequest<CreateClusterV2Respons
 
 	private String chargeType;
 
+	private Boolean useCustomHiveMetaDB;
+
+	private List<Config> configs;
+
 	private Boolean highAvailabilityEnable;
+
+	private Boolean initCustomHiveMetaDB;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -175,6 +185,17 @@ public class CreateClusterV2Request extends RpcAcsRequest<CreateClusterV2Respons
 		}
 	}
 
+	public String getKeyPairName() {
+		return this.keyPairName;
+	}
+
+	public void setKeyPairName(String keyPairName) {
+		this.keyPairName = keyPairName;
+		if(keyPairName != null){
+			putQueryParameter("KeyPairName", keyPairName);
+		}
+	}
+
 	public String getSecurityGroupName() {
 		return this.securityGroupName;
 	}
@@ -216,9 +237,9 @@ public class CreateClusterV2Request extends RpcAcsRequest<CreateClusterV2Respons
 		this.bootstrapActions = bootstrapActions;	
 		if (bootstrapActions != null) {
 			for (int depth1 = 0; depth1 < bootstrapActions.size(); depth1++) {
-				putQueryParameter("BootstrapAction." + (depth1 + 1) + ".Name" , bootstrapActions.get(depth1).getName());
 				putQueryParameter("BootstrapAction." + (depth1 + 1) + ".Path" , bootstrapActions.get(depth1).getPath());
 				putQueryParameter("BootstrapAction." + (depth1 + 1) + ".Arg" , bootstrapActions.get(depth1).getArg());
+				putQueryParameter("BootstrapAction." + (depth1 + 1) + ".Name" , bootstrapActions.get(depth1).getName());
 			}
 		}	
 	}
@@ -243,6 +264,21 @@ public class CreateClusterV2Request extends RpcAcsRequest<CreateClusterV2Respons
 		if(emrVer != null){
 			putQueryParameter("EmrVer", emrVer);
 		}
+	}
+
+	public List<UserInfo> getUserInfos() {
+		return this.userInfos;
+	}
+
+	public void setUserInfos(List<UserInfo> userInfos) {
+		this.userInfos = userInfos;	
+		if (userInfos != null) {
+			for (int depth1 = 0; depth1 < userInfos.size(); depth1++) {
+				putQueryParameter("UserInfo." + (depth1 + 1) + ".Password" , userInfos.get(depth1).getPassword());
+				putQueryParameter("UserInfo." + (depth1 + 1) + ".UserId" , userInfos.get(depth1).getUserId());
+				putQueryParameter("UserInfo." + (depth1 + 1) + ".UserName" , userInfos.get(depth1).getUserName());
+			}
+		}	
 	}
 
 	public String getUserDefinedEmrEcsRole() {
@@ -387,23 +423,24 @@ public class CreateClusterV2Request extends RpcAcsRequest<CreateClusterV2Respons
 		this.hostGroups = hostGroups;	
 		if (hostGroups != null) {
 			for (int depth1 = 0; depth1 < hostGroups.size(); depth1++) {
-				putQueryParameter("HostGroup." + (depth1 + 1) + ".ClusterId" , hostGroups.get(depth1).getClusterId());
-				putQueryParameter("HostGroup." + (depth1 + 1) + ".HostGroupId" , hostGroups.get(depth1).getHostGroupId());
-				putQueryParameter("HostGroup." + (depth1 + 1) + ".HostGroupName" , hostGroups.get(depth1).getHostGroupName());
-				putQueryParameter("HostGroup." + (depth1 + 1) + ".HostGroupType" , hostGroups.get(depth1).getHostGroupType());
-				putQueryParameter("HostGroup." + (depth1 + 1) + ".Comment" , hostGroups.get(depth1).getComment());
-				putQueryParameter("HostGroup." + (depth1 + 1) + ".CreateType" , hostGroups.get(depth1).getCreateType());
-				putQueryParameter("HostGroup." + (depth1 + 1) + ".ChargeType" , hostGroups.get(depth1).getChargeType());
 				putQueryParameter("HostGroup." + (depth1 + 1) + ".Period" , hostGroups.get(depth1).getPeriod());
+				putQueryParameter("HostGroup." + (depth1 + 1) + ".SysDiskCapacity" , hostGroups.get(depth1).getSysDiskCapacity());
+				putQueryParameter("HostGroup." + (depth1 + 1) + ".DiskCapacity" , hostGroups.get(depth1).getDiskCapacity());
+				putQueryParameter("HostGroup." + (depth1 + 1) + ".SysDiskType" , hostGroups.get(depth1).getSysDiskType());
+				putQueryParameter("HostGroup." + (depth1 + 1) + ".ClusterId" , hostGroups.get(depth1).getClusterId());
+				putQueryParameter("HostGroup." + (depth1 + 1) + ".DiskType" , hostGroups.get(depth1).getDiskType());
+				putQueryParameter("HostGroup." + (depth1 + 1) + ".HostGroupName" , hostGroups.get(depth1).getHostGroupName());
+				putQueryParameter("HostGroup." + (depth1 + 1) + ".VSwitchId" , hostGroups.get(depth1).getVSwitchId());
+				putQueryParameter("HostGroup." + (depth1 + 1) + ".DiskCount" , hostGroups.get(depth1).getDiskCount());
+				putQueryParameter("HostGroup." + (depth1 + 1) + ".AutoRenew" , hostGroups.get(depth1).getAutoRenew());
+				putQueryParameter("HostGroup." + (depth1 + 1) + ".GpuDriver" , hostGroups.get(depth1).getGpuDriver());
+				putQueryParameter("HostGroup." + (depth1 + 1) + ".HostGroupId" , hostGroups.get(depth1).getHostGroupId());
 				putQueryParameter("HostGroup." + (depth1 + 1) + ".NodeCount" , hostGroups.get(depth1).getNodeCount());
 				putQueryParameter("HostGroup." + (depth1 + 1) + ".InstanceType" , hostGroups.get(depth1).getInstanceType());
-				putQueryParameter("HostGroup." + (depth1 + 1) + ".DiskType" , hostGroups.get(depth1).getDiskType());
-				putQueryParameter("HostGroup." + (depth1 + 1) + ".DiskCapacity" , hostGroups.get(depth1).getDiskCapacity());
-				putQueryParameter("HostGroup." + (depth1 + 1) + ".DiskCount" , hostGroups.get(depth1).getDiskCount());
-				putQueryParameter("HostGroup." + (depth1 + 1) + ".SysDiskType" , hostGroups.get(depth1).getSysDiskType());
-				putQueryParameter("HostGroup." + (depth1 + 1) + ".SysDiskCapacity" , hostGroups.get(depth1).getSysDiskCapacity());
-				putQueryParameter("HostGroup." + (depth1 + 1) + ".AutoRenew" , hostGroups.get(depth1).getAutoRenew());
-				putQueryParameter("HostGroup." + (depth1 + 1) + ".VSwitchId" , hostGroups.get(depth1).getVSwitchId());
+				putQueryParameter("HostGroup." + (depth1 + 1) + ".Comment" , hostGroups.get(depth1).getComment());
+				putQueryParameter("HostGroup." + (depth1 + 1) + ".ChargeType" , hostGroups.get(depth1).getChargeType());
+				putQueryParameter("HostGroup." + (depth1 + 1) + ".CreateType" , hostGroups.get(depth1).getCreateType());
+				putQueryParameter("HostGroup." + (depth1 + 1) + ".HostGroupType" , hostGroups.get(depth1).getHostGroupType());
 			}
 		}	
 	}
@@ -430,6 +467,35 @@ public class CreateClusterV2Request extends RpcAcsRequest<CreateClusterV2Respons
 		}
 	}
 
+	public Boolean getUseCustomHiveMetaDB() {
+		return this.useCustomHiveMetaDB;
+	}
+
+	public void setUseCustomHiveMetaDB(Boolean useCustomHiveMetaDB) {
+		this.useCustomHiveMetaDB = useCustomHiveMetaDB;
+		if(useCustomHiveMetaDB != null){
+			putQueryParameter("UseCustomHiveMetaDB", useCustomHiveMetaDB.toString());
+		}
+	}
+
+	public List<Config> getConfigs() {
+		return this.configs;
+	}
+
+	public void setConfigs(List<Config> configs) {
+		this.configs = configs;	
+		if (configs != null) {
+			for (int depth1 = 0; depth1 < configs.size(); depth1++) {
+				putQueryParameter("Config." + (depth1 + 1) + ".ConfigKey" , configs.get(depth1).getConfigKey());
+				putQueryParameter("Config." + (depth1 + 1) + ".FileName" , configs.get(depth1).getFileName());
+				putQueryParameter("Config." + (depth1 + 1) + ".Encrypt" , configs.get(depth1).getEncrypt());
+				putQueryParameter("Config." + (depth1 + 1) + ".Replace" , configs.get(depth1).getReplace());
+				putQueryParameter("Config." + (depth1 + 1) + ".ConfigValue" , configs.get(depth1).getConfigValue());
+				putQueryParameter("Config." + (depth1 + 1) + ".ServiceName" , configs.get(depth1).getServiceName());
+			}
+		}	
+	}
+
 	public Boolean getHighAvailabilityEnable() {
 		return this.highAvailabilityEnable;
 	}
@@ -441,21 +507,24 @@ public class CreateClusterV2Request extends RpcAcsRequest<CreateClusterV2Respons
 		}
 	}
 
-	public static class BootstrapAction {
+	public Boolean getInitCustomHiveMetaDB() {
+		return this.initCustomHiveMetaDB;
+	}
 
-		private String name;
+	public void setInitCustomHiveMetaDB(Boolean initCustomHiveMetaDB) {
+		this.initCustomHiveMetaDB = initCustomHiveMetaDB;
+		if(initCustomHiveMetaDB != null){
+			putQueryParameter("InitCustomHiveMetaDB", initCustomHiveMetaDB.toString());
+		}
+	}
+
+	public static class BootstrapAction {
 
 		private String path;
 
 		private String arg;
 
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
+		private String name;
 
 		public String getPath() {
 			return this.path;
@@ -472,43 +541,118 @@ public class CreateClusterV2Request extends RpcAcsRequest<CreateClusterV2Respons
 		public void setArg(String arg) {
 			this.arg = arg;
 		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+	}
+
+	public static class UserInfo {
+
+		private String password;
+
+		private String userId;
+
+		private String userName;
+
+		public String getPassword() {
+			return this.password;
+		}
+
+		public void setPassword(String password) {
+			this.password = password;
+		}
+
+		public String getUserId() {
+			return this.userId;
+		}
+
+		public void setUserId(String userId) {
+			this.userId = userId;
+		}
+
+		public String getUserName() {
+			return this.userName;
+		}
+
+		public void setUserName(String userName) {
+			this.userName = userName;
+		}
 	}
 
 	public static class HostGroup {
 
+		private Integer period;
+
+		private Integer sysDiskCapacity;
+
+		private Integer diskCapacity;
+
+		private String sysDiskType;
+
 		private String clusterId;
 
-		private String hostGroupId;
+		private String diskType;
 
 		private String hostGroupName;
 
-		private String hostGroupType;
+		private String vSwitchId;
 
-		private String comment;
+		private Integer diskCount;
 
-		private String createType;
+		private Boolean autoRenew;
 
-		private String chargeType;
+		private String gpuDriver;
 
-		private Integer period;
+		private String hostGroupId;
 
 		private Integer nodeCount;
 
 		private String instanceType;
 
-		private String diskType;
+		private String comment;
 
-		private Integer diskCapacity;
+		private String chargeType;
 
-		private Integer diskCount;
+		private String createType;
 
-		private String sysDiskType;
+		private String hostGroupType;
 
-		private Integer sysDiskCapacity;
+		public Integer getPeriod() {
+			return this.period;
+		}
 
-		private Boolean autoRenew;
+		public void setPeriod(Integer period) {
+			this.period = period;
+		}
 
-		private String vSwitchId;
+		public Integer getSysDiskCapacity() {
+			return this.sysDiskCapacity;
+		}
+
+		public void setSysDiskCapacity(Integer sysDiskCapacity) {
+			this.sysDiskCapacity = sysDiskCapacity;
+		}
+
+		public Integer getDiskCapacity() {
+			return this.diskCapacity;
+		}
+
+		public void setDiskCapacity(Integer diskCapacity) {
+			this.diskCapacity = diskCapacity;
+		}
+
+		public String getSysDiskType() {
+			return this.sysDiskType;
+		}
+
+		public void setSysDiskType(String sysDiskType) {
+			this.sysDiskType = sysDiskType;
+		}
 
 		public String getClusterId() {
 			return this.clusterId;
@@ -518,12 +662,12 @@ public class CreateClusterV2Request extends RpcAcsRequest<CreateClusterV2Respons
 			this.clusterId = clusterId;
 		}
 
-		public String getHostGroupId() {
-			return this.hostGroupId;
+		public String getDiskType() {
+			return this.diskType;
 		}
 
-		public void setHostGroupId(String hostGroupId) {
-			this.hostGroupId = hostGroupId;
+		public void setDiskType(String diskType) {
+			this.diskType = diskType;
 		}
 
 		public String getHostGroupName() {
@@ -534,44 +678,44 @@ public class CreateClusterV2Request extends RpcAcsRequest<CreateClusterV2Respons
 			this.hostGroupName = hostGroupName;
 		}
 
-		public String getHostGroupType() {
-			return this.hostGroupType;
+		public String getVSwitchId() {
+			return this.vSwitchId;
 		}
 
-		public void setHostGroupType(String hostGroupType) {
-			this.hostGroupType = hostGroupType;
+		public void setVSwitchId(String vSwitchId) {
+			this.vSwitchId = vSwitchId;
 		}
 
-		public String getComment() {
-			return this.comment;
+		public Integer getDiskCount() {
+			return this.diskCount;
 		}
 
-		public void setComment(String comment) {
-			this.comment = comment;
+		public void setDiskCount(Integer diskCount) {
+			this.diskCount = diskCount;
 		}
 
-		public String getCreateType() {
-			return this.createType;
+		public Boolean getAutoRenew() {
+			return this.autoRenew;
 		}
 
-		public void setCreateType(String createType) {
-			this.createType = createType;
+		public void setAutoRenew(Boolean autoRenew) {
+			this.autoRenew = autoRenew;
 		}
 
-		public String getChargeType() {
-			return this.chargeType;
+		public String getGpuDriver() {
+			return this.gpuDriver;
 		}
 
-		public void setChargeType(String chargeType) {
-			this.chargeType = chargeType;
+		public void setGpuDriver(String gpuDriver) {
+			this.gpuDriver = gpuDriver;
 		}
 
-		public Integer getPeriod() {
-			return this.period;
+		public String getHostGroupId() {
+			return this.hostGroupId;
 		}
 
-		public void setPeriod(Integer period) {
-			this.period = period;
+		public void setHostGroupId(String hostGroupId) {
+			this.hostGroupId = hostGroupId;
 		}
 
 		public Integer getNodeCount() {
@@ -590,60 +734,99 @@ public class CreateClusterV2Request extends RpcAcsRequest<CreateClusterV2Respons
 			this.instanceType = instanceType;
 		}
 
-		public String getDiskType() {
-			return this.diskType;
+		public String getComment() {
+			return this.comment;
 		}
 
-		public void setDiskType(String diskType) {
-			this.diskType = diskType;
+		public void setComment(String comment) {
+			this.comment = comment;
 		}
 
-		public Integer getDiskCapacity() {
-			return this.diskCapacity;
+		public String getChargeType() {
+			return this.chargeType;
 		}
 
-		public void setDiskCapacity(Integer diskCapacity) {
-			this.diskCapacity = diskCapacity;
+		public void setChargeType(String chargeType) {
+			this.chargeType = chargeType;
 		}
 
-		public Integer getDiskCount() {
-			return this.diskCount;
+		public String getCreateType() {
+			return this.createType;
 		}
 
-		public void setDiskCount(Integer diskCount) {
-			this.diskCount = diskCount;
+		public void setCreateType(String createType) {
+			this.createType = createType;
 		}
 
-		public String getSysDiskType() {
-			return this.sysDiskType;
+		public String getHostGroupType() {
+			return this.hostGroupType;
 		}
 
-		public void setSysDiskType(String sysDiskType) {
-			this.sysDiskType = sysDiskType;
+		public void setHostGroupType(String hostGroupType) {
+			this.hostGroupType = hostGroupType;
+		}
+	}
+
+	public static class Config {
+
+		private String configKey;
+
+		private String fileName;
+
+		private String encrypt;
+
+		private String replace;
+
+		private String configValue;
+
+		private String serviceName;
+
+		public String getConfigKey() {
+			return this.configKey;
 		}
 
-		public Integer getSysDiskCapacity() {
-			return this.sysDiskCapacity;
+		public void setConfigKey(String configKey) {
+			this.configKey = configKey;
 		}
 
-		public void setSysDiskCapacity(Integer sysDiskCapacity) {
-			this.sysDiskCapacity = sysDiskCapacity;
+		public String getFileName() {
+			return this.fileName;
 		}
 
-		public Boolean getAutoRenew() {
-			return this.autoRenew;
+		public void setFileName(String fileName) {
+			this.fileName = fileName;
 		}
 
-		public void setAutoRenew(Boolean autoRenew) {
-			this.autoRenew = autoRenew;
+		public String getEncrypt() {
+			return this.encrypt;
 		}
 
-		public String getVSwitchId() {
-			return this.vSwitchId;
+		public void setEncrypt(String encrypt) {
+			this.encrypt = encrypt;
 		}
 
-		public void setVSwitchId(String vSwitchId) {
-			this.vSwitchId = vSwitchId;
+		public String getReplace() {
+			return this.replace;
+		}
+
+		public void setReplace(String replace) {
+			this.replace = replace;
+		}
+
+		public String getConfigValue() {
+			return this.configValue;
+		}
+
+		public void setConfigValue(String configValue) {
+			this.configValue = configValue;
+		}
+
+		public String getServiceName() {
+			return this.serviceName;
+		}
+
+		public void setServiceName(String serviceName) {
+			this.serviceName = serviceName;
 		}
 	}
 

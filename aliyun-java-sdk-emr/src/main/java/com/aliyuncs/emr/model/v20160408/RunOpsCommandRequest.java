@@ -37,7 +37,7 @@ public class RunOpsCommandRequest extends RpcAcsRequest<RunOpsCommandResponse> {
 
 	private String clusterId;
 
-	private List<Long> hostIdLists;
+	private List<String> hostIdLists;
 
 	private String dimension;
 
@@ -96,11 +96,11 @@ public class RunOpsCommandRequest extends RpcAcsRequest<RunOpsCommandResponse> {
 		}
 	}
 
-	public List<Long> getHostIdLists() {
+	public List<String> getHostIdLists() {
 		return this.hostIdLists;
 	}
 
-	public void setHostIdLists(List<Long> hostIdLists) {
+	public void setHostIdLists(List<String> hostIdLists) {
 		this.hostIdLists = hostIdLists;	
 		if (hostIdLists != null) {
 			for (int i = 0; i < hostIdLists.size(); i++) {

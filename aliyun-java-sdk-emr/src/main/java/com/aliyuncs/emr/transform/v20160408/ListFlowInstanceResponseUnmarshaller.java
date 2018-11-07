@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.emr.model.v20160408.ListFlowInstanceResponse;
 import com.aliyuncs.emr.model.v20160408.ListFlowInstanceResponse.FlowInstance;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -44,6 +45,7 @@ public class ListFlowInstanceResponseUnmarshaller {
 			flowInstance.setClusterId(context.stringValue("ListFlowInstanceResponse.FlowInstances["+ i +"].ClusterId"));
 			flowInstance.setStartTime(context.longValue("ListFlowInstanceResponse.FlowInstances["+ i +"].StartTime"));
 			flowInstance.setEndTime(context.longValue("ListFlowInstanceResponse.FlowInstances["+ i +"].EndTime"));
+			flowInstance.setDuration(context.longValue("ListFlowInstanceResponse.FlowInstances["+ i +"].Duration"));
 
 			flowInstances.add(flowInstance);
 		}

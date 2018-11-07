@@ -28,8 +28,6 @@ public class SubmitFlowJobRequest extends RpcAcsRequest<SubmitFlowJobResponse> {
 
 	private String jobId;
 
-	private Long resourceOwnerId;
-
 	private String hostName;
 
 	private String conf;
@@ -46,17 +44,6 @@ public class SubmitFlowJobRequest extends RpcAcsRequest<SubmitFlowJobResponse> {
 		this.jobId = jobId;
 		if(jobId != null){
 			putQueryParameter("JobId", jobId);
-		}
-	}
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
 		}
 	}
 

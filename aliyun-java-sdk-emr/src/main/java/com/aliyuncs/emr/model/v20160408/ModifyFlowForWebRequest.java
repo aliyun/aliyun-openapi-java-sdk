@@ -28,7 +28,9 @@ public class ModifyFlowForWebRequest extends RpcAcsRequest<ModifyFlowForWebRespo
 
 	private String cronExpr;
 
-	private Long resourceOwnerId;
+	private String parentFlowList;
+
+	private String alertDingDingGroupBizId;
 
 	private Boolean periodic;
 
@@ -38,7 +40,11 @@ public class ModifyFlowForWebRequest extends RpcAcsRequest<ModifyFlowForWebRespo
 
 	private String clusterId;
 
+	private String alertUserGroupBizId;
+
 	private String graph;
+
+	private String hostName;
 
 	private Boolean createCluster;
 
@@ -65,14 +71,25 @@ public class ModifyFlowForWebRequest extends RpcAcsRequest<ModifyFlowForWebRespo
 		}
 	}
 
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
+	public String getParentFlowList() {
+		return this.parentFlowList;
 	}
 
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+	public void setParentFlowList(String parentFlowList) {
+		this.parentFlowList = parentFlowList;
+		if(parentFlowList != null){
+			putQueryParameter("ParentFlowList", parentFlowList);
+		}
+	}
+
+	public String getAlertDingDingGroupBizId() {
+		return this.alertDingDingGroupBizId;
+	}
+
+	public void setAlertDingDingGroupBizId(String alertDingDingGroupBizId) {
+		this.alertDingDingGroupBizId = alertDingDingGroupBizId;
+		if(alertDingDingGroupBizId != null){
+			putQueryParameter("AlertDingDingGroupBizId", alertDingDingGroupBizId);
 		}
 	}
 
@@ -120,6 +137,17 @@ public class ModifyFlowForWebRequest extends RpcAcsRequest<ModifyFlowForWebRespo
 		}
 	}
 
+	public String getAlertUserGroupBizId() {
+		return this.alertUserGroupBizId;
+	}
+
+	public void setAlertUserGroupBizId(String alertUserGroupBizId) {
+		this.alertUserGroupBizId = alertUserGroupBizId;
+		if(alertUserGroupBizId != null){
+			putQueryParameter("AlertUserGroupBizId", alertUserGroupBizId);
+		}
+	}
+
 	public String getGraph() {
 		return this.graph;
 	}
@@ -128,6 +156,17 @@ public class ModifyFlowForWebRequest extends RpcAcsRequest<ModifyFlowForWebRespo
 		this.graph = graph;
 		if(graph != null){
 			putQueryParameter("Graph", graph);
+		}
+	}
+
+	public String getHostName() {
+		return this.hostName;
+	}
+
+	public void setHostName(String hostName) {
+		this.hostName = hostName;
+		if(hostName != null){
+			putQueryParameter("HostName", hostName);
 		}
 	}
 

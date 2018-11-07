@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.emr.model.v20160408.GetSupportedOpsCommandResponse;
 import com.aliyuncs.emr.model.v20160408.GetSupportedOpsCommandResponse.OpsCommandCategory;
 import com.aliyuncs.emr.model.v20160408.GetSupportedOpsCommandResponse.OpsCommandCategory.OpsCommandInfo;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

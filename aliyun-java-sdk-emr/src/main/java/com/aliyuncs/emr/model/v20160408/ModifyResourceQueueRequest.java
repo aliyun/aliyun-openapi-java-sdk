@@ -141,34 +141,26 @@ public class ModifyResourceQueueRequest extends RpcAcsRequest<ModifyResourceQueu
 		this.configs = configs;	
 		if (configs != null) {
 			for (int depth1 = 0; depth1 < configs.size(); depth1++) {
-				putQueryParameter("Config." + (depth1 + 1) + ".Id" , configs.get(depth1).getId());
 				putQueryParameter("Config." + (depth1 + 1) + ".ConfigKey" , configs.get(depth1).getConfigKey());
-				putQueryParameter("Config." + (depth1 + 1) + ".ConfigValue" , configs.get(depth1).getConfigValue());
-				putQueryParameter("Config." + (depth1 + 1) + ".Category" , configs.get(depth1).getCategory());
 				putQueryParameter("Config." + (depth1 + 1) + ".Note" , configs.get(depth1).getNote());
+				putQueryParameter("Config." + (depth1 + 1) + ".ConfigValue" , configs.get(depth1).getConfigValue());
+				putQueryParameter("Config." + (depth1 + 1) + ".Id" , configs.get(depth1).getId());
+				putQueryParameter("Config." + (depth1 + 1) + ".Category" , configs.get(depth1).getCategory());
 			}
 		}	
 	}
 
 	public static class Config {
 
-		private Long id;
-
 		private String configKey;
-
-		private String configValue;
-
-		private String category;
 
 		private String note;
 
-		public Long getId() {
-			return this.id;
-		}
+		private String configValue;
 
-		public void setId(Long id) {
-			this.id = id;
-		}
+		private Long id;
+
+		private String category;
 
 		public String getConfigKey() {
 			return this.configKey;
@@ -176,6 +168,14 @@ public class ModifyResourceQueueRequest extends RpcAcsRequest<ModifyResourceQueu
 
 		public void setConfigKey(String configKey) {
 			this.configKey = configKey;
+		}
+
+		public String getNote() {
+			return this.note;
+		}
+
+		public void setNote(String note) {
+			this.note = note;
 		}
 
 		public String getConfigValue() {
@@ -186,20 +186,20 @@ public class ModifyResourceQueueRequest extends RpcAcsRequest<ModifyResourceQueu
 			this.configValue = configValue;
 		}
 
+		public Long getId() {
+			return this.id;
+		}
+
+		public void setId(Long id) {
+			this.id = id;
+		}
+
 		public String getCategory() {
 			return this.category;
 		}
 
 		public void setCategory(String category) {
 			this.category = category;
-		}
-
-		public String getNote() {
-			return this.note;
-		}
-
-		public void setNote(String note) {
-			this.note = note;
 		}
 	}
 

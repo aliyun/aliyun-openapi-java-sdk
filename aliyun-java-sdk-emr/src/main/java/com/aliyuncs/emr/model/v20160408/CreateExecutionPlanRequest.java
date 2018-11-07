@@ -87,9 +87,15 @@ public class CreateExecutionPlanRequest extends RpcAcsRequest<CreateExecutionPla
 
 	private String zoneId;
 
+	private Boolean useCustomHiveMetaDB;
+
 	private String strategy;
 
+	private List<Config> configs;
+
 	private Boolean highAvailabilityEnable;
+
+	private Boolean initCustomHiveMetaDB;
 
 	private Boolean logEnable;
 
@@ -235,9 +241,9 @@ public class CreateExecutionPlanRequest extends RpcAcsRequest<CreateExecutionPla
 		this.bootstrapActions = bootstrapActions;	
 		if (bootstrapActions != null) {
 			for (int depth1 = 0; depth1 < bootstrapActions.size(); depth1++) {
-				putQueryParameter("BootstrapAction." + (depth1 + 1) + ".Name" , bootstrapActions.get(depth1).getName());
 				putQueryParameter("BootstrapAction." + (depth1 + 1) + ".Path" , bootstrapActions.get(depth1).getPath());
 				putQueryParameter("BootstrapAction." + (depth1 + 1) + ".Arg" , bootstrapActions.get(depth1).getArg());
+				putQueryParameter("BootstrapAction." + (depth1 + 1) + ".Name" , bootstrapActions.get(depth1).getName());
 			}
 		}	
 	}
@@ -384,13 +390,13 @@ public class CreateExecutionPlanRequest extends RpcAcsRequest<CreateExecutionPla
 		this.ecsOrders = ecsOrders;	
 		if (ecsOrders != null) {
 			for (int depth1 = 0; depth1 < ecsOrders.size(); depth1++) {
-				putQueryParameter("EcsOrder." + (depth1 + 1) + ".Index" , ecsOrders.get(depth1).getIndex());
-				putQueryParameter("EcsOrder." + (depth1 + 1) + ".NodeCount" , ecsOrders.get(depth1).getNodeCount());
 				putQueryParameter("EcsOrder." + (depth1 + 1) + ".NodeType" , ecsOrders.get(depth1).getNodeType());
+				putQueryParameter("EcsOrder." + (depth1 + 1) + ".DiskCount" , ecsOrders.get(depth1).getDiskCount());
+				putQueryParameter("EcsOrder." + (depth1 + 1) + ".NodeCount" , ecsOrders.get(depth1).getNodeCount());
+				putQueryParameter("EcsOrder." + (depth1 + 1) + ".DiskCapacity" , ecsOrders.get(depth1).getDiskCapacity());
+				putQueryParameter("EcsOrder." + (depth1 + 1) + ".Index" , ecsOrders.get(depth1).getIndex());
 				putQueryParameter("EcsOrder." + (depth1 + 1) + ".InstanceType" , ecsOrders.get(depth1).getInstanceType());
 				putQueryParameter("EcsOrder." + (depth1 + 1) + ".DiskType" , ecsOrders.get(depth1).getDiskType());
-				putQueryParameter("EcsOrder." + (depth1 + 1) + ".DiskCapacity" , ecsOrders.get(depth1).getDiskCapacity());
-				putQueryParameter("EcsOrder." + (depth1 + 1) + ".DiskCount" , ecsOrders.get(depth1).getDiskCount());
 			}
 		}	
 	}
@@ -439,6 +445,17 @@ public class CreateExecutionPlanRequest extends RpcAcsRequest<CreateExecutionPla
 		}
 	}
 
+	public Boolean getUseCustomHiveMetaDB() {
+		return this.useCustomHiveMetaDB;
+	}
+
+	public void setUseCustomHiveMetaDB(Boolean useCustomHiveMetaDB) {
+		this.useCustomHiveMetaDB = useCustomHiveMetaDB;
+		if(useCustomHiveMetaDB != null){
+			putQueryParameter("UseCustomHiveMetaDB", useCustomHiveMetaDB.toString());
+		}
+	}
+
 	public String getStrategy() {
 		return this.strategy;
 	}
@@ -450,6 +467,24 @@ public class CreateExecutionPlanRequest extends RpcAcsRequest<CreateExecutionPla
 		}
 	}
 
+	public List<Config> getConfigs() {
+		return this.configs;
+	}
+
+	public void setConfigs(List<Config> configs) {
+		this.configs = configs;	
+		if (configs != null) {
+			for (int depth1 = 0; depth1 < configs.size(); depth1++) {
+				putQueryParameter("Config." + (depth1 + 1) + ".ConfigKey" , configs.get(depth1).getConfigKey());
+				putQueryParameter("Config." + (depth1 + 1) + ".FileName" , configs.get(depth1).getFileName());
+				putQueryParameter("Config." + (depth1 + 1) + ".Encrypt" , configs.get(depth1).getEncrypt());
+				putQueryParameter("Config." + (depth1 + 1) + ".Replace" , configs.get(depth1).getReplace());
+				putQueryParameter("Config." + (depth1 + 1) + ".ConfigValue" , configs.get(depth1).getConfigValue());
+				putQueryParameter("Config." + (depth1 + 1) + ".ServiceName" , configs.get(depth1).getServiceName());
+			}
+		}	
+	}
+
 	public Boolean getHighAvailabilityEnable() {
 		return this.highAvailabilityEnable;
 	}
@@ -458,6 +493,17 @@ public class CreateExecutionPlanRequest extends RpcAcsRequest<CreateExecutionPla
 		this.highAvailabilityEnable = highAvailabilityEnable;
 		if(highAvailabilityEnable != null){
 			putQueryParameter("HighAvailabilityEnable", highAvailabilityEnable.toString());
+		}
+	}
+
+	public Boolean getInitCustomHiveMetaDB() {
+		return this.initCustomHiveMetaDB;
+	}
+
+	public void setInitCustomHiveMetaDB(Boolean initCustomHiveMetaDB) {
+		this.initCustomHiveMetaDB = initCustomHiveMetaDB;
+		if(initCustomHiveMetaDB != null){
+			putQueryParameter("InitCustomHiveMetaDB", initCustomHiveMetaDB.toString());
 		}
 	}
 
@@ -474,19 +520,11 @@ public class CreateExecutionPlanRequest extends RpcAcsRequest<CreateExecutionPla
 
 	public static class BootstrapAction {
 
-		private String name;
-
 		private String path;
 
 		private String arg;
 
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
+		private String name;
 
 		public String getPath() {
 			return this.path;
@@ -503,30 +541,46 @@ public class CreateExecutionPlanRequest extends RpcAcsRequest<CreateExecutionPla
 		public void setArg(String arg) {
 			this.arg = arg;
 		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
 	}
 
 	public static class EcsOrder {
 
-		private Integer index;
+		private String nodeType;
+
+		private Integer diskCount;
 
 		private Integer nodeCount;
 
-		private String nodeType;
+		private Integer diskCapacity;
+
+		private Integer index;
 
 		private String instanceType;
 
 		private String diskType;
 
-		private Integer diskCapacity;
-
-		private Integer diskCount;
-
-		public Integer getIndex() {
-			return this.index;
+		public String getNodeType() {
+			return this.nodeType;
 		}
 
-		public void setIndex(Integer index) {
-			this.index = index;
+		public void setNodeType(String nodeType) {
+			this.nodeType = nodeType;
+		}
+
+		public Integer getDiskCount() {
+			return this.diskCount;
+		}
+
+		public void setDiskCount(Integer diskCount) {
+			this.diskCount = diskCount;
 		}
 
 		public Integer getNodeCount() {
@@ -537,12 +591,20 @@ public class CreateExecutionPlanRequest extends RpcAcsRequest<CreateExecutionPla
 			this.nodeCount = nodeCount;
 		}
 
-		public String getNodeType() {
-			return this.nodeType;
+		public Integer getDiskCapacity() {
+			return this.diskCapacity;
 		}
 
-		public void setNodeType(String nodeType) {
-			this.nodeType = nodeType;
+		public void setDiskCapacity(Integer diskCapacity) {
+			this.diskCapacity = diskCapacity;
+		}
+
+		public Integer getIndex() {
+			return this.index;
+		}
+
+		public void setIndex(Integer index) {
+			this.index = index;
 		}
 
 		public String getInstanceType() {
@@ -560,21 +622,68 @@ public class CreateExecutionPlanRequest extends RpcAcsRequest<CreateExecutionPla
 		public void setDiskType(String diskType) {
 			this.diskType = diskType;
 		}
+	}
 
-		public Integer getDiskCapacity() {
-			return this.diskCapacity;
+	public static class Config {
+
+		private String configKey;
+
+		private String fileName;
+
+		private String encrypt;
+
+		private String replace;
+
+		private String configValue;
+
+		private String serviceName;
+
+		public String getConfigKey() {
+			return this.configKey;
 		}
 
-		public void setDiskCapacity(Integer diskCapacity) {
-			this.diskCapacity = diskCapacity;
+		public void setConfigKey(String configKey) {
+			this.configKey = configKey;
 		}
 
-		public Integer getDiskCount() {
-			return this.diskCount;
+		public String getFileName() {
+			return this.fileName;
 		}
 
-		public void setDiskCount(Integer diskCount) {
-			this.diskCount = diskCount;
+		public void setFileName(String fileName) {
+			this.fileName = fileName;
+		}
+
+		public String getEncrypt() {
+			return this.encrypt;
+		}
+
+		public void setEncrypt(String encrypt) {
+			this.encrypt = encrypt;
+		}
+
+		public String getReplace() {
+			return this.replace;
+		}
+
+		public void setReplace(String replace) {
+			this.replace = replace;
+		}
+
+		public String getConfigValue() {
+			return this.configValue;
+		}
+
+		public void setConfigValue(String configValue) {
+			this.configValue = configValue;
+		}
+
+		public String getServiceName() {
+			return this.serviceName;
+		}
+
+		public void setServiceName(String serviceName) {
+			this.serviceName = serviceName;
 		}
 	}
 

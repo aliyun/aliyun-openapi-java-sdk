@@ -54,19 +54,29 @@ public class DescribeFlowNodeInstanceResponse extends AcsResponse {
 
 	private String flowId;
 
+	private String flowInstanceId;
+
 	private String clusterId;
 
 	private String hostName;
 
 	private String projectId;
 
+	private Boolean pending;
+
 	private Long startTime;
 
 	private Long endTime;
 
+	private Long duration;
+
 	private Integer retries;
 
 	private String externalId;
+
+	private String externalSubId;
+
+	private String externalChildIds;
 
 	private String externalStatus;
 
@@ -77,6 +87,12 @@ public class DescribeFlowNodeInstanceResponse extends AcsResponse {
 	private String envConf;
 
 	private String runConf;
+
+	private Boolean adhoc;
+
+	private String monitorConf;
+
+	private String mode;
 
 	private String clusterName;
 
@@ -200,6 +216,14 @@ public class DescribeFlowNodeInstanceResponse extends AcsResponse {
 		this.flowId = flowId;
 	}
 
+	public String getFlowInstanceId() {
+		return this.flowInstanceId;
+	}
+
+	public void setFlowInstanceId(String flowInstanceId) {
+		this.flowInstanceId = flowInstanceId;
+	}
+
 	public String getClusterId() {
 		return this.clusterId;
 	}
@@ -224,6 +248,14 @@ public class DescribeFlowNodeInstanceResponse extends AcsResponse {
 		this.projectId = projectId;
 	}
 
+	public Boolean getPending() {
+		return this.pending;
+	}
+
+	public void setPending(Boolean pending) {
+		this.pending = pending;
+	}
+
 	public Long getStartTime() {
 		return this.startTime;
 	}
@@ -240,6 +272,14 @@ public class DescribeFlowNodeInstanceResponse extends AcsResponse {
 		this.endTime = endTime;
 	}
 
+	public Long getDuration() {
+		return this.duration;
+	}
+
+	public void setDuration(Long duration) {
+		this.duration = duration;
+	}
+
 	public Integer getRetries() {
 		return this.retries;
 	}
@@ -254,6 +294,22 @@ public class DescribeFlowNodeInstanceResponse extends AcsResponse {
 
 	public void setExternalId(String externalId) {
 		this.externalId = externalId;
+	}
+
+	public String getExternalSubId() {
+		return this.externalSubId;
+	}
+
+	public void setExternalSubId(String externalSubId) {
+		this.externalSubId = externalSubId;
+	}
+
+	public String getExternalChildIds() {
+		return this.externalChildIds;
+	}
+
+	public void setExternalChildIds(String externalChildIds) {
+		this.externalChildIds = externalChildIds;
 	}
 
 	public String getExternalStatus() {
@@ -294,6 +350,30 @@ public class DescribeFlowNodeInstanceResponse extends AcsResponse {
 
 	public void setRunConf(String runConf) {
 		this.runConf = runConf;
+	}
+
+	public Boolean getAdhoc() {
+		return this.adhoc;
+	}
+
+	public void setAdhoc(Boolean adhoc) {
+		this.adhoc = adhoc;
+	}
+
+	public String getMonitorConf() {
+		return this.monitorConf;
+	}
+
+	public void setMonitorConf(String monitorConf) {
+		this.monitorConf = monitorConf;
+	}
+
+	public String getMode() {
+		return this.mode;
+	}
+
+	public void setMode(String mode) {
+		this.mode = mode;
 	}
 
 	public String getClusterName() {

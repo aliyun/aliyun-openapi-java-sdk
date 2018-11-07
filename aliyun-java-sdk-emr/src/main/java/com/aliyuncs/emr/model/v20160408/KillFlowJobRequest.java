@@ -26,22 +26,9 @@ public class KillFlowJobRequest extends RpcAcsRequest<KillFlowJobResponse> {
 		super("Emr", "2016-04-08", "KillFlowJob");
 	}
 
-	private Long resourceOwnerId;
-
 	private String jobInstanceId;
 
 	private String projectId;
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
 
 	public String getJobInstanceId() {
 		return this.jobInstanceId;

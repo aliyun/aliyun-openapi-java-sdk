@@ -47,6 +47,10 @@ public class DescribeFlowInstanceResponse extends AcsResponse {
 
 	private Long endTime;
 
+	private Long duration;
+
+	private String graph;
+
 	private List<NodeInstanceItem> nodeInstance;
 
 	public String getRequestId() {
@@ -137,6 +141,22 @@ public class DescribeFlowInstanceResponse extends AcsResponse {
 		this.endTime = endTime;
 	}
 
+	public Long getDuration() {
+		return this.duration;
+	}
+
+	public void setDuration(Long duration) {
+		this.duration = duration;
+	}
+
+	public String getGraph() {
+		return this.graph;
+	}
+
+	public void setGraph(String graph) {
+		this.graph = graph;
+	}
+
 	public List<NodeInstanceItem> getNodeInstance() {
 		return this.nodeInstance;
 	}
@@ -177,9 +197,13 @@ public class DescribeFlowInstanceResponse extends AcsResponse {
 
 		private String projectId;
 
+		private Boolean pending;
+
 		private Long startTime;
 
 		private Long endTime;
+
+		private Long duration;
 
 		private Integer retries;
 
@@ -188,12 +212,6 @@ public class DescribeFlowInstanceResponse extends AcsResponse {
 		private String externalStatus;
 
 		private String externalInfo;
-
-		private String paramConf;
-
-		private String envConf;
-
-		private String runConf;
 
 		public String getId() {
 			return this.id;
@@ -315,6 +333,14 @@ public class DescribeFlowInstanceResponse extends AcsResponse {
 			this.projectId = projectId;
 		}
 
+		public Boolean getPending() {
+			return this.pending;
+		}
+
+		public void setPending(Boolean pending) {
+			this.pending = pending;
+		}
+
 		public Long getStartTime() {
 			return this.startTime;
 		}
@@ -329,6 +355,14 @@ public class DescribeFlowInstanceResponse extends AcsResponse {
 
 		public void setEndTime(Long endTime) {
 			this.endTime = endTime;
+		}
+
+		public Long getDuration() {
+			return this.duration;
+		}
+
+		public void setDuration(Long duration) {
+			this.duration = duration;
 		}
 
 		public Integer getRetries() {
@@ -361,30 +395,6 @@ public class DescribeFlowInstanceResponse extends AcsResponse {
 
 		public void setExternalInfo(String externalInfo) {
 			this.externalInfo = externalInfo;
-		}
-
-		public String getParamConf() {
-			return this.paramConf;
-		}
-
-		public void setParamConf(String paramConf) {
-			this.paramConf = paramConf;
-		}
-
-		public String getEnvConf() {
-			return this.envConf;
-		}
-
-		public void setEnvConf(String envConf) {
-			this.envConf = envConf;
-		}
-
-		public String getRunConf() {
-			return this.runConf;
-		}
-
-		public void setRunConf(String runConf) {
-			this.runConf = runConf;
 		}
 	}
 

@@ -129,9 +129,9 @@ public class CreateResourceQueueRequest extends RpcAcsRequest<CreateResourceQueu
 		if (configs != null) {
 			for (int depth1 = 0; depth1 < configs.size(); depth1++) {
 				putQueryParameter("Config." + (depth1 + 1) + ".ConfigKey" , configs.get(depth1).getConfigKey());
+				putQueryParameter("Config." + (depth1 + 1) + ".Note" , configs.get(depth1).getNote());
 				putQueryParameter("Config." + (depth1 + 1) + ".ConfigValue" , configs.get(depth1).getConfigValue());
 				putQueryParameter("Config." + (depth1 + 1) + ".Category" , configs.get(depth1).getCategory());
-				putQueryParameter("Config." + (depth1 + 1) + ".Note" , configs.get(depth1).getNote());
 			}
 		}	
 	}
@@ -140,11 +140,11 @@ public class CreateResourceQueueRequest extends RpcAcsRequest<CreateResourceQueu
 
 		private String configKey;
 
+		private String note;
+
 		private String configValue;
 
 		private String category;
-
-		private String note;
 
 		public String getConfigKey() {
 			return this.configKey;
@@ -152,6 +152,14 @@ public class CreateResourceQueueRequest extends RpcAcsRequest<CreateResourceQueu
 
 		public void setConfigKey(String configKey) {
 			this.configKey = configKey;
+		}
+
+		public String getNote() {
+			return this.note;
+		}
+
+		public void setNote(String note) {
+			this.note = note;
 		}
 
 		public String getConfigValue() {
@@ -168,14 +176,6 @@ public class CreateResourceQueueRequest extends RpcAcsRequest<CreateResourceQueu
 
 		public void setCategory(String category) {
 			this.category = category;
-		}
-
-		public String getNote() {
-			return this.note;
-		}
-
-		public void setNote(String note) {
-			this.note = note;
 		}
 	}
 

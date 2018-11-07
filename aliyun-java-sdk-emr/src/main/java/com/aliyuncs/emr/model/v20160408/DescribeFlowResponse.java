@@ -14,6 +14,7 @@
 
 package com.aliyuncs.emr.model.v20160408;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.emr.transform.v20160408.DescribeFlowResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -52,9 +53,17 @@ public class DescribeFlowResponse extends AcsResponse {
 
 	private String clusterId;
 
+	private String hostName;
+
 	private String graph;
 
 	private String categoryId;
+
+	private String alertUserGroupBizId;
+
+	private String alertDingDingGroupBizId;
+
+	private List<ParentFlow> parentFlowList;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -168,6 +177,14 @@ public class DescribeFlowResponse extends AcsResponse {
 		this.clusterId = clusterId;
 	}
 
+	public String getHostName() {
+		return this.hostName;
+	}
+
+	public void setHostName(String hostName) {
+		this.hostName = hostName;
+	}
+
 	public String getGraph() {
 		return this.graph;
 	}
@@ -182,6 +199,73 @@ public class DescribeFlowResponse extends AcsResponse {
 
 	public void setCategoryId(String categoryId) {
 		this.categoryId = categoryId;
+	}
+
+	public String getAlertUserGroupBizId() {
+		return this.alertUserGroupBizId;
+	}
+
+	public void setAlertUserGroupBizId(String alertUserGroupBizId) {
+		this.alertUserGroupBizId = alertUserGroupBizId;
+	}
+
+	public String getAlertDingDingGroupBizId() {
+		return this.alertDingDingGroupBizId;
+	}
+
+	public void setAlertDingDingGroupBizId(String alertDingDingGroupBizId) {
+		this.alertDingDingGroupBizId = alertDingDingGroupBizId;
+	}
+
+	public List<ParentFlow> getParentFlowList() {
+		return this.parentFlowList;
+	}
+
+	public void setParentFlowList(List<ParentFlow> parentFlowList) {
+		this.parentFlowList = parentFlowList;
+	}
+
+	public static class ParentFlow {
+
+		private String parentFlowId;
+
+		private String parentFlowName;
+
+		private String projectId;
+
+		private String projectName;
+
+		public String getParentFlowId() {
+			return this.parentFlowId;
+		}
+
+		public void setParentFlowId(String parentFlowId) {
+			this.parentFlowId = parentFlowId;
+		}
+
+		public String getParentFlowName() {
+			return this.parentFlowName;
+		}
+
+		public void setParentFlowName(String parentFlowName) {
+			this.parentFlowName = parentFlowName;
+		}
+
+		public String getProjectId() {
+			return this.projectId;
+		}
+
+		public void setProjectId(String projectId) {
+			this.projectId = projectId;
+		}
+
+		public String getProjectName() {
+			return this.projectName;
+		}
+
+		public void setProjectName(String projectName) {
+			this.projectName = projectName;
+		}
 	}
 
 	@Override

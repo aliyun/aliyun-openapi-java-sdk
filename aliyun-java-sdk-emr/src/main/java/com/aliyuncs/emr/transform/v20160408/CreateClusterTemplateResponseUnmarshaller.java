@@ -23,9 +23,6 @@ public class CreateClusterTemplateResponseUnmarshaller {
 	public static CreateClusterTemplateResponse unmarshall(CreateClusterTemplateResponse createClusterTemplateResponse, UnmarshallerContext context) {
 		
 		createClusterTemplateResponse.setRequestId(context.stringValue("CreateClusterTemplateResponse.RequestId"));
-		createClusterTemplateResponse.setSuccess(context.stringValue("CreateClusterTemplateResponse.Success"));
-		createClusterTemplateResponse.setErrCode(context.stringValue("CreateClusterTemplateResponse.ErrCode"));
-		createClusterTemplateResponse.setErrMsg(context.stringValue("CreateClusterTemplateResponse.ErrMsg"));
 		createClusterTemplateResponse.setClusterTemplateId(context.stringValue("CreateClusterTemplateResponse.ClusterTemplateId"));
 	 
 	 	return createClusterTemplateResponse;

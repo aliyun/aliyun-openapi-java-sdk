@@ -31,6 +31,8 @@ public class AddClusterServiceRequest extends RpcAcsRequest<AddClusterServiceRes
 
 	private List<Service> services;
 
+	private String comment;
+
 	private String clusterId;
 
 	public Long getResourceOwnerId() {
@@ -55,6 +57,17 @@ public class AddClusterServiceRequest extends RpcAcsRequest<AddClusterServiceRes
 				putQueryParameter("Service." + (depth1 + 1) + ".ServiceName" , services.get(depth1).getServiceName());
 			}
 		}	
+	}
+
+	public String getComment() {
+		return this.comment;
+	}
+
+	public void setComment(String comment) {
+		this.comment = comment;
+		if(comment != null){
+			putQueryParameter("Comment", comment);
+		}
 	}
 
 	public String getClusterId() {

@@ -31,13 +31,23 @@ public class MetastoreCreateTableRequest extends RpcAcsRequest<MetastoreCreateTa
 
 	private String fieldDelimiter;
 
+	private List<Column> columns;
+
+	private String createWith;
+
+	private List<Partition> partitions;
+
 	private String dbName;
 
-	private List<Column> columns;
+	private String createSql;
+
+	private String comment;
 
 	private String locationUri;
 
 	private String tableName;
+
+	private String databaseId;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -61,6 +71,47 @@ public class MetastoreCreateTableRequest extends RpcAcsRequest<MetastoreCreateTa
 		}
 	}
 
+	public List<Column> getColumns() {
+		return this.columns;
+	}
+
+	public void setColumns(List<Column> columns) {
+		this.columns = columns;	
+		if (columns != null) {
+			for (int depth1 = 0; depth1 < columns.size(); depth1++) {
+				putQueryParameter("Column." + (depth1 + 1) + ".Name" , columns.get(depth1).getName());
+				putQueryParameter("Column." + (depth1 + 1) + ".Comment" , columns.get(depth1).getComment());
+				putQueryParameter("Column." + (depth1 + 1) + ".Type" , columns.get(depth1).getType());
+			}
+		}	
+	}
+
+	public String getCreateWith() {
+		return this.createWith;
+	}
+
+	public void setCreateWith(String createWith) {
+		this.createWith = createWith;
+		if(createWith != null){
+			putQueryParameter("CreateWith", createWith);
+		}
+	}
+
+	public List<Partition> getPartitions() {
+		return this.partitions;
+	}
+
+	public void setPartitions(List<Partition> partitions) {
+		this.partitions = partitions;	
+		if (partitions != null) {
+			for (int depth1 = 0; depth1 < partitions.size(); depth1++) {
+				putQueryParameter("Partition." + (depth1 + 1) + ".Name" , partitions.get(depth1).getName());
+				putQueryParameter("Partition." + (depth1 + 1) + ".Comment" , partitions.get(depth1).getComment());
+				putQueryParameter("Partition." + (depth1 + 1) + ".Type" , partitions.get(depth1).getType());
+			}
+		}	
+	}
+
 	public String getDbName() {
 		return this.dbName;
 	}
@@ -72,19 +123,26 @@ public class MetastoreCreateTableRequest extends RpcAcsRequest<MetastoreCreateTa
 		}
 	}
 
-	public List<Column> getColumns() {
-		return this.columns;
+	public String getCreateSql() {
+		return this.createSql;
 	}
 
-	public void setColumns(List<Column> columns) {
-		this.columns = columns;	
-		if (columns != null) {
-			for (int depth1 = 0; depth1 < columns.size(); depth1++) {
-				putQueryParameter("Column." + (depth1 + 1) + ".Name" , columns.get(depth1).getName());
-				putQueryParameter("Column." + (depth1 + 1) + ".Type" , columns.get(depth1).getType());
-				putQueryParameter("Column." + (depth1 + 1) + ".Comment" , columns.get(depth1).getComment());
-			}
-		}	
+	public void setCreateSql(String createSql) {
+		this.createSql = createSql;
+		if(createSql != null){
+			putQueryParameter("CreateSql", createSql);
+		}
+	}
+
+	public String getComment() {
+		return this.comment;
+	}
+
+	public void setComment(String comment) {
+		this.comment = comment;
+		if(comment != null){
+			putQueryParameter("Comment", comment);
+		}
 	}
 
 	public String getLocationUri() {
@@ -109,13 +167,24 @@ public class MetastoreCreateTableRequest extends RpcAcsRequest<MetastoreCreateTa
 		}
 	}
 
+	public String getDatabaseId() {
+		return this.databaseId;
+	}
+
+	public void setDatabaseId(String databaseId) {
+		this.databaseId = databaseId;
+		if(databaseId != null){
+			putQueryParameter("DatabaseId", databaseId);
+		}
+	}
+
 	public static class Column {
 
 		private String name;
 
-		private String type;
-
 		private String comment;
+
+		private String type;
 
 		public String getName() {
 			return this.name;
@@ -125,12 +194,37 @@ public class MetastoreCreateTableRequest extends RpcAcsRequest<MetastoreCreateTa
 			this.name = name;
 		}
 
+		public String getComment() {
+			return this.comment;
+		}
+
+		public void setComment(String comment) {
+			this.comment = comment;
+		}
+
 		public String getType() {
 			return this.type;
 		}
 
 		public void setType(String type) {
 			this.type = type;
+		}
+	}
+
+	public static class Partition {
+
+		private String name;
+
+		private String comment;
+
+		private String type;
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
 		}
 
 		public String getComment() {
@@ -139,6 +233,14 @@ public class MetastoreCreateTableRequest extends RpcAcsRequest<MetastoreCreateTa
 
 		public void setComment(String comment) {
 			this.comment = comment;
+		}
+
+		public String getType() {
+			return this.type;
+		}
+
+		public void setType(String type) {
+			this.type = type;
 		}
 	}
 

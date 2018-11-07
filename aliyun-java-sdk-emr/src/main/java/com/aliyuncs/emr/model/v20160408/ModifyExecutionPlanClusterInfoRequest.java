@@ -171,9 +171,9 @@ public class ModifyExecutionPlanClusterInfoRequest extends RpcAcsRequest<ModifyE
 		this.bootstrapActions = bootstrapActions;	
 		if (bootstrapActions != null) {
 			for (int depth1 = 0; depth1 < bootstrapActions.size(); depth1++) {
-				putQueryParameter("BootstrapAction." + (depth1 + 1) + ".Name" , bootstrapActions.get(depth1).getName());
 				putQueryParameter("BootstrapAction." + (depth1 + 1) + ".Path" , bootstrapActions.get(depth1).getPath());
 				putQueryParameter("BootstrapAction." + (depth1 + 1) + ".Arg" , bootstrapActions.get(depth1).getArg());
+				putQueryParameter("BootstrapAction." + (depth1 + 1) + ".Name" , bootstrapActions.get(depth1).getName());
 			}
 		}	
 	}
@@ -309,13 +309,13 @@ public class ModifyExecutionPlanClusterInfoRequest extends RpcAcsRequest<ModifyE
 		this.ecsOrders = ecsOrders;	
 		if (ecsOrders != null) {
 			for (int depth1 = 0; depth1 < ecsOrders.size(); depth1++) {
-				putQueryParameter("EcsOrder." + (depth1 + 1) + ".Index" , ecsOrders.get(depth1).getIndex());
-				putQueryParameter("EcsOrder." + (depth1 + 1) + ".NodeCount" , ecsOrders.get(depth1).getNodeCount());
-				putQueryParameter("EcsOrder." + (depth1 + 1) + ".InstanceType" , ecsOrders.get(depth1).getInstanceType());
-				putQueryParameter("EcsOrder." + (depth1 + 1) + ".DiskType" , ecsOrders.get(depth1).getDiskType());
-				putQueryParameter("EcsOrder." + (depth1 + 1) + ".DiskCapacity" , ecsOrders.get(depth1).getDiskCapacity());
 				putQueryParameter("EcsOrder." + (depth1 + 1) + ".NodeType" , ecsOrders.get(depth1).getNodeType());
 				putQueryParameter("EcsOrder." + (depth1 + 1) + ".DiskCount" , ecsOrders.get(depth1).getDiskCount());
+				putQueryParameter("EcsOrder." + (depth1 + 1) + ".NodeCount" , ecsOrders.get(depth1).getNodeCount());
+				putQueryParameter("EcsOrder." + (depth1 + 1) + ".DiskCapacity" , ecsOrders.get(depth1).getDiskCapacity());
+				putQueryParameter("EcsOrder." + (depth1 + 1) + ".Index" , ecsOrders.get(depth1).getIndex());
+				putQueryParameter("EcsOrder." + (depth1 + 1) + ".InstanceType" , ecsOrders.get(depth1).getInstanceType());
+				putQueryParameter("EcsOrder." + (depth1 + 1) + ".DiskType" , ecsOrders.get(depth1).getDiskType());
 			}
 		}	
 	}
@@ -355,19 +355,11 @@ public class ModifyExecutionPlanClusterInfoRequest extends RpcAcsRequest<ModifyE
 
 	public static class BootstrapAction {
 
-		private String name;
-
 		private String path;
 
 		private String arg;
 
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
+		private String name;
 
 		public String getPath() {
 			return this.path;
@@ -384,30 +376,46 @@ public class ModifyExecutionPlanClusterInfoRequest extends RpcAcsRequest<ModifyE
 		public void setArg(String arg) {
 			this.arg = arg;
 		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
 	}
 
 	public static class EcsOrder {
-
-		private Integer index;
-
-		private Integer nodeCount;
-
-		private String instanceType;
-
-		private String diskType;
-
-		private Integer diskCapacity;
 
 		private String nodeType;
 
 		private Integer diskCount;
 
-		public Integer getIndex() {
-			return this.index;
+		private Integer nodeCount;
+
+		private Integer diskCapacity;
+
+		private Integer index;
+
+		private String instanceType;
+
+		private String diskType;
+
+		public String getNodeType() {
+			return this.nodeType;
 		}
 
-		public void setIndex(Integer index) {
-			this.index = index;
+		public void setNodeType(String nodeType) {
+			this.nodeType = nodeType;
+		}
+
+		public Integer getDiskCount() {
+			return this.diskCount;
+		}
+
+		public void setDiskCount(Integer diskCount) {
+			this.diskCount = diskCount;
 		}
 
 		public Integer getNodeCount() {
@@ -416,6 +424,22 @@ public class ModifyExecutionPlanClusterInfoRequest extends RpcAcsRequest<ModifyE
 
 		public void setNodeCount(Integer nodeCount) {
 			this.nodeCount = nodeCount;
+		}
+
+		public Integer getDiskCapacity() {
+			return this.diskCapacity;
+		}
+
+		public void setDiskCapacity(Integer diskCapacity) {
+			this.diskCapacity = diskCapacity;
+		}
+
+		public Integer getIndex() {
+			return this.index;
+		}
+
+		public void setIndex(Integer index) {
+			this.index = index;
 		}
 
 		public String getInstanceType() {
@@ -432,30 +456,6 @@ public class ModifyExecutionPlanClusterInfoRequest extends RpcAcsRequest<ModifyE
 
 		public void setDiskType(String diskType) {
 			this.diskType = diskType;
-		}
-
-		public Integer getDiskCapacity() {
-			return this.diskCapacity;
-		}
-
-		public void setDiskCapacity(Integer diskCapacity) {
-			this.diskCapacity = diskCapacity;
-		}
-
-		public String getNodeType() {
-			return this.nodeType;
-		}
-
-		public void setNodeType(String nodeType) {
-			this.nodeType = nodeType;
-		}
-
-		public Integer getDiskCount() {
-			return this.diskCount;
-		}
-
-		public void setDiskCount(Integer diskCount) {
-			this.diskCount = diskCount;
 		}
 	}
 

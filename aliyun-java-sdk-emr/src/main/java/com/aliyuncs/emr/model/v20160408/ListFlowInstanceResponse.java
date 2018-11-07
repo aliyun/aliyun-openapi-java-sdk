@@ -97,6 +97,8 @@ public class ListFlowInstanceResponse extends AcsResponse {
 
 		private Long endTime;
 
+		private Long duration;
+
 		public String getId() {
 			return this.id;
 		}
@@ -175,6 +177,14 @@ public class ListFlowInstanceResponse extends AcsResponse {
 
 		public void setEndTime(Long endTime) {
 			this.endTime = endTime;
+		}
+
+		public Long getDuration() {
+			return this.duration;
+		}
+
+		public void setDuration(Long duration) {
+			this.duration = duration;
 		}
 	}
 

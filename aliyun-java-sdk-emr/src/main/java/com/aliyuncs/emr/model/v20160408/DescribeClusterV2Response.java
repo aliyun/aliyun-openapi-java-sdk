@@ -15,6 +15,7 @@
 package com.aliyuncs.emr.model.v20160408;
 
 import java.util.List;
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.emr.transform.v20160408.DescribeClusterV2ResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -55,9 +56,15 @@ public class DescribeClusterV2Response extends AcsResponse {
 
 		private String name;
 
+		private String relateClusterId;
+
+		private String gatewayClusterIds;
+
 		private String createType;
 
 		private Long startTime;
+
+		private Long expiredTime;
 
 		private Long stopTime;
 
@@ -73,7 +80,9 @@ public class DescribeClusterV2Response extends AcsResponse {
 
 		private String chargeType;
 
-		private Long expiredTime;
+		private String depositType;
+
+		private Long expiredTime1;
 
 		private Integer period;
 
@@ -119,13 +128,27 @@ public class DescribeClusterV2Response extends AcsResponse {
 
 		private Boolean easEnable;
 
+		private Boolean autoScalingEnable;
+
+		private Boolean autoScalingAllowed;
+
+		private Boolean autoScalingSpotWithLimitAllowed;
+
+		private Boolean resizeDiskEnable;
+
+		private List<GatewayClusterInfo> gatewayClusterInfoList;
+
 		private List<HostGroup> hostGroupList;
 
 		private List<BootstrapAction> bootstrapActionList;
 
+		private RelateClusterInfo relateClusterInfo;
+
 		private FailReason failReason;
 
 		private SoftwareInfo softwareInfo;
+
+		private AccessInfo accessInfo;
 
 		public String getId() {
 			return this.id;
@@ -159,6 +182,22 @@ public class DescribeClusterV2Response extends AcsResponse {
 			this.name = name;
 		}
 
+		public String getRelateClusterId() {
+			return this.relateClusterId;
+		}
+
+		public void setRelateClusterId(String relateClusterId) {
+			this.relateClusterId = relateClusterId;
+		}
+
+		public String getGatewayClusterIds() {
+			return this.gatewayClusterIds;
+		}
+
+		public void setGatewayClusterIds(String gatewayClusterIds) {
+			this.gatewayClusterIds = gatewayClusterIds;
+		}
+
 		public String getCreateType() {
 			return this.createType;
 		}
@@ -173,6 +212,14 @@ public class DescribeClusterV2Response extends AcsResponse {
 
 		public void setStartTime(Long startTime) {
 			this.startTime = startTime;
+		}
+
+		public Long getExpiredTime() {
+			return this.expiredTime;
+		}
+
+		public void setExpiredTime(Long expiredTime) {
+			this.expiredTime = expiredTime;
 		}
 
 		public Long getStopTime() {
@@ -231,12 +278,20 @@ public class DescribeClusterV2Response extends AcsResponse {
 			this.chargeType = chargeType;
 		}
 
-		public Long getExpiredTime() {
-			return this.expiredTime;
+		public String getDepositType() {
+			return this.depositType;
 		}
 
-		public void setExpiredTime(Long expiredTime) {
-			this.expiredTime = expiredTime;
+		public void setDepositType(String depositType) {
+			this.depositType = depositType;
+		}
+
+		public Long getExpiredTime1() {
+			return this.expiredTime1;
+		}
+
+		public void setExpiredTime1(Long expiredTime1) {
+			this.expiredTime1 = expiredTime1;
 		}
 
 		public Integer getPeriod() {
@@ -415,6 +470,46 @@ public class DescribeClusterV2Response extends AcsResponse {
 			this.easEnable = easEnable;
 		}
 
+		public Boolean getAutoScalingEnable() {
+			return this.autoScalingEnable;
+		}
+
+		public void setAutoScalingEnable(Boolean autoScalingEnable) {
+			this.autoScalingEnable = autoScalingEnable;
+		}
+
+		public Boolean getAutoScalingAllowed() {
+			return this.autoScalingAllowed;
+		}
+
+		public void setAutoScalingAllowed(Boolean autoScalingAllowed) {
+			this.autoScalingAllowed = autoScalingAllowed;
+		}
+
+		public Boolean getAutoScalingSpotWithLimitAllowed() {
+			return this.autoScalingSpotWithLimitAllowed;
+		}
+
+		public void setAutoScalingSpotWithLimitAllowed(Boolean autoScalingSpotWithLimitAllowed) {
+			this.autoScalingSpotWithLimitAllowed = autoScalingSpotWithLimitAllowed;
+		}
+
+		public Boolean getResizeDiskEnable() {
+			return this.resizeDiskEnable;
+		}
+
+		public void setResizeDiskEnable(Boolean resizeDiskEnable) {
+			this.resizeDiskEnable = resizeDiskEnable;
+		}
+
+		public List<GatewayClusterInfo> getGatewayClusterInfoList() {
+			return this.gatewayClusterInfoList;
+		}
+
+		public void setGatewayClusterInfoList(List<GatewayClusterInfo> gatewayClusterInfoList) {
+			this.gatewayClusterInfoList = gatewayClusterInfoList;
+		}
+
 		public List<HostGroup> getHostGroupList() {
 			return this.hostGroupList;
 		}
@@ -429,6 +524,14 @@ public class DescribeClusterV2Response extends AcsResponse {
 
 		public void setBootstrapActionList(List<BootstrapAction> bootstrapActionList) {
 			this.bootstrapActionList = bootstrapActionList;
+		}
+
+		public RelateClusterInfo getRelateClusterInfo() {
+			return this.relateClusterInfo;
+		}
+
+		public void setRelateClusterInfo(RelateClusterInfo relateClusterInfo) {
+			this.relateClusterInfo = relateClusterInfo;
 		}
 
 		public FailReason getFailReason() {
@@ -447,6 +550,37 @@ public class DescribeClusterV2Response extends AcsResponse {
 			this.softwareInfo = softwareInfo;
 		}
 
+		public AccessInfo getAccessInfo() {
+			return this.accessInfo;
+		}
+
+		public void setAccessInfo(AccessInfo accessInfo) {
+			this.accessInfo = accessInfo;
+		}
+
+		public static class GatewayClusterInfo {
+
+			private String clusterId;
+
+			private String clusterName;
+
+			public String getClusterId() {
+				return this.clusterId;
+			}
+
+			public void setClusterId(String clusterId) {
+				this.clusterId = clusterId;
+			}
+
+			public String getClusterName() {
+				return this.clusterName;
+			}
+
+			public void setClusterName(String clusterName) {
+				this.clusterName = clusterName;
+			}
+		}
+
 		public static class HostGroup {
 
 			private String hostGroupId;
@@ -454,6 +588,12 @@ public class DescribeClusterV2Response extends AcsResponse {
 			private String hostGroupName;
 
 			private String hostGroupType;
+
+			private String hostGroupSubType;
+
+			private String hostGroupChangeType;
+
+			private String hostGroupChangeStatus;
 
 			private String chargeType;
 
@@ -499,6 +639,30 @@ public class DescribeClusterV2Response extends AcsResponse {
 
 			public void setHostGroupType(String hostGroupType) {
 				this.hostGroupType = hostGroupType;
+			}
+
+			public String getHostGroupSubType() {
+				return this.hostGroupSubType;
+			}
+
+			public void setHostGroupSubType(String hostGroupSubType) {
+				this.hostGroupSubType = hostGroupSubType;
+			}
+
+			public String getHostGroupChangeType() {
+				return this.hostGroupChangeType;
+			}
+
+			public void setHostGroupChangeType(String hostGroupChangeType) {
+				this.hostGroupChangeType = hostGroupChangeType;
+			}
+
+			public String getHostGroupChangeStatus() {
+				return this.hostGroupChangeStatus;
+			}
+
+			public void setHostGroupChangeStatus(String hostGroupChangeStatus) {
+				this.hostGroupChangeStatus = hostGroupChangeStatus;
 			}
 
 			public String getChargeType() {
@@ -792,6 +956,29 @@ public class DescribeClusterV2Response extends AcsResponse {
 			}
 		}
 
+		public static class RelateClusterInfo {
+
+			private String clusterId;
+
+			private String clusterName;
+
+			public String getClusterId() {
+				return this.clusterId;
+			}
+
+			public void setClusterId(String clusterId) {
+				this.clusterId = clusterId;
+			}
+
+			public String getClusterName() {
+				return this.clusterName;
+			}
+
+			public void setClusterName(String clusterName) {
+				this.clusterName = clusterName;
+			}
+		}
+
 		public static class FailReason {
 
 			private String errorCode;
@@ -907,6 +1094,42 @@ public class DescribeClusterV2Response extends AcsResponse {
 
 				public void setVersion(String version) {
 					this.version = version;
+				}
+			}
+		}
+
+		public static class AccessInfo {
+
+			private List<ZKLink> zKLinks;
+
+			public List<ZKLink> getZKLinks() {
+				return this.zKLinks;
+			}
+
+			public void setZKLinks(List<ZKLink> zKLinks) {
+				this.zKLinks = zKLinks;
+			}
+
+			public static class ZKLink {
+
+				private String link;
+
+				private String port;
+
+				public String getLink() {
+					return this.link;
+				}
+
+				public void setLink(String link) {
+					this.link = link;
+				}
+
+				public String getPort() {
+					return this.port;
+				}
+
+				public void setPort(String port) {
+					this.port = port;
 				}
 			}
 		}

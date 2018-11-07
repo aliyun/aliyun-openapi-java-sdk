@@ -118,11 +118,11 @@ public class CreateResourcePoolRequest extends RpcAcsRequest<CreateResourcePoolR
 		if (configs != null) {
 			for (int depth1 = 0; depth1 < configs.size(); depth1++) {
 				putQueryParameter("Config." + (depth1 + 1) + ".ConfigKey" , configs.get(depth1).getConfigKey());
-				putQueryParameter("Config." + (depth1 + 1) + ".ConfigValue" , configs.get(depth1).getConfigValue());
+				putQueryParameter("Config." + (depth1 + 1) + ".Note" , configs.get(depth1).getNote());
 				putQueryParameter("Config." + (depth1 + 1) + ".configType" , configs.get(depth1).getConfigType());
 				putQueryParameter("Config." + (depth1 + 1) + ".TargetId" , configs.get(depth1).getTargetId());
+				putQueryParameter("Config." + (depth1 + 1) + ".ConfigValue" , configs.get(depth1).getConfigValue());
 				putQueryParameter("Config." + (depth1 + 1) + ".Category" , configs.get(depth1).getCategory());
-				putQueryParameter("Config." + (depth1 + 1) + ".Note" , configs.get(depth1).getNote());
 			}
 		}	
 	}
@@ -142,15 +142,15 @@ public class CreateResourcePoolRequest extends RpcAcsRequest<CreateResourcePoolR
 
 		private String configKey;
 
-		private String configValue;
+		private String note;
 
 		private String configType;
 
 		private String targetId;
 
-		private String category;
+		private String configValue;
 
-		private String note;
+		private String category;
 
 		public String getConfigKey() {
 			return this.configKey;
@@ -160,12 +160,12 @@ public class CreateResourcePoolRequest extends RpcAcsRequest<CreateResourcePoolR
 			this.configKey = configKey;
 		}
 
-		public String getConfigValue() {
-			return this.configValue;
+		public String getNote() {
+			return this.note;
 		}
 
-		public void setConfigValue(String configValue) {
-			this.configValue = configValue;
+		public void setNote(String note) {
+			this.note = note;
 		}
 
 		public String getConfigType() {
@@ -184,20 +184,20 @@ public class CreateResourcePoolRequest extends RpcAcsRequest<CreateResourcePoolR
 			this.targetId = targetId;
 		}
 
+		public String getConfigValue() {
+			return this.configValue;
+		}
+
+		public void setConfigValue(String configValue) {
+			this.configValue = configValue;
+		}
+
 		public String getCategory() {
 			return this.category;
 		}
 
 		public void setCategory(String category) {
 			this.category = category;
-		}
-
-		public String getNote() {
-			return this.note;
-		}
-
-		public void setNote(String note) {
-			this.note = note;
 		}
 	}
 

@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.emr.model.v20160408.DescribeClusterOpLogResponse;
 import com.aliyuncs.emr.model.v20160408.DescribeClusterOpLogResponse.ChangeLog;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -27,6 +28,9 @@ public class DescribeClusterOpLogResponseUnmarshaller {
 	public static DescribeClusterOpLogResponse unmarshall(DescribeClusterOpLogResponse describeClusterOpLogResponse, UnmarshallerContext context) {
 		
 		describeClusterOpLogResponse.setRequestId(context.stringValue("DescribeClusterOpLogResponse.RequestId"));
+		describeClusterOpLogResponse.setPageNumber(context.stringValue("DescribeClusterOpLogResponse.PageNumber"));
+		describeClusterOpLogResponse.setPageSize(context.stringValue("DescribeClusterOpLogResponse.PageSize"));
+		describeClusterOpLogResponse.setTotal(context.stringValue("DescribeClusterOpLogResponse.Total"));
 
 		List<ChangeLog> changeLogList = new ArrayList<ChangeLog>();
 		for (int i = 0; i < context.lengthValue("DescribeClusterOpLogResponse.ChangeLogList.Length"); i++) {
