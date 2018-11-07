@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeleteChannelRequest extends RpcAcsRequest<DeleteChannelResponse> {
 	
 	public DeleteChannelRequest() {
-		super("rtc", "2018-01-11", "DeleteChannel");
+		super("rtc", "2018-01-11", "DeleteChannel", "rtc");
 	}
 
 	private Long ownerId;

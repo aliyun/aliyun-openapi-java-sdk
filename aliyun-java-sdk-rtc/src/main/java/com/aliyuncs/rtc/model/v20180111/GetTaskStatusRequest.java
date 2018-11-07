@@ -15,38 +15,24 @@
 package com.aliyuncs.rtc.model.v20180111;
 
 import com.aliyuncs.RpcAcsRequest;
-import java.util.List;
 
 /**
  * @author auto create
  * @version 
  */
-public class MuteAudioRequest extends RpcAcsRequest<MuteAudioResponse> {
+public class GetTaskStatusRequest extends RpcAcsRequest<GetTaskStatusResponse> {
 	
-	public MuteAudioRequest() {
-		super("rtc", "2018-01-11", "MuteAudio", "rtc");
+	public GetTaskStatusRequest() {
+		super("rtc", "2018-01-11", "GetTaskStatus", "rtc");
 	}
-
-	private List<String> participantIdss;
 
 	private Long ownerId;
 
-	private String conferenceId;
-
 	private String appId;
 
-	public List<String> getParticipantIdss() {
-		return this.participantIdss;
-	}
+	private String channelId;
 
-	public void setParticipantIdss(List<String> participantIdss) {
-		this.participantIdss = participantIdss;	
-		if (participantIdss != null) {
-			for (int i = 0; i < participantIdss.size(); i++) {
-				putQueryParameter("ParticipantIds." + (i + 1) , participantIdss.get(i));
-			}
-		}	
-	}
+	private Long taskId;
 
 	public Long getOwnerId() {
 		return this.ownerId;
@@ -56,17 +42,6 @@ public class MuteAudioRequest extends RpcAcsRequest<MuteAudioResponse> {
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getConferenceId() {
-		return this.conferenceId;
-	}
-
-	public void setConferenceId(String conferenceId) {
-		this.conferenceId = conferenceId;
-		if(conferenceId != null){
-			putQueryParameter("ConferenceId", conferenceId);
 		}
 	}
 
@@ -81,9 +56,31 @@ public class MuteAudioRequest extends RpcAcsRequest<MuteAudioResponse> {
 		}
 	}
 
+	public String getChannelId() {
+		return this.channelId;
+	}
+
+	public void setChannelId(String channelId) {
+		this.channelId = channelId;
+		if(channelId != null){
+			putQueryParameter("ChannelId", channelId);
+		}
+	}
+
+	public Long getTaskId() {
+		return this.taskId;
+	}
+
+	public void setTaskId(Long taskId) {
+		this.taskId = taskId;
+		if(taskId != null){
+			putQueryParameter("TaskId", taskId.toString());
+		}
+	}
+
 	@Override
-	public Class<MuteAudioResponse> getResponseClass() {
-		return MuteAudioResponse.class;
+	public Class<GetTaskStatusResponse> getResponseClass() {
+		return GetTaskStatusResponse.class;
 	}
 
 }

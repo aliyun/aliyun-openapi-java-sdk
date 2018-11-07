@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeConferenceAuthInfoRequest extends RpcAcsRequest<DescribeConferenceAuthInfoResponse> {
 	
 	public DescribeConferenceAuthInfoRequest() {
-		super("rtc", "2018-01-11", "DescribeConferenceAuthInfo");
+		super("rtc", "2018-01-11", "DescribeConferenceAuthInfo", "rtc");
 	}
 
 	private Long ownerId;

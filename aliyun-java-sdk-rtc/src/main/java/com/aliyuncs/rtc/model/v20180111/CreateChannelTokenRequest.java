@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class CreateChannelTokenRequest extends RpcAcsRequest<CreateChannelTokenResponse> {
 	
 	public CreateChannelTokenRequest() {
-		super("rtc", "2018-01-11", "CreateChannelToken");
+		super("rtc", "2018-01-11", "CreateChannelToken", "rtc");
 	}
 
 	private String sessionId;

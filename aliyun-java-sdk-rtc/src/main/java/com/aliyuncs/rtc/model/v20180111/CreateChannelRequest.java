@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class CreateChannelRequest extends RpcAcsRequest<CreateChannelResponse> {
 	
 	public CreateChannelRequest() {
-		super("rtc", "2018-01-11", "CreateChannel");
+		super("rtc", "2018-01-11", "CreateChannel", "rtc");
 	}
 
 	private Long ownerId;

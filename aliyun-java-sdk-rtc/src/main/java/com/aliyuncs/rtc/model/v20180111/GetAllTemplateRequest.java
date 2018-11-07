@@ -15,38 +15,20 @@
 package com.aliyuncs.rtc.model.v20180111;
 
 import com.aliyuncs.RpcAcsRequest;
-import java.util.List;
 
 /**
  * @author auto create
  * @version 
  */
-public class MuteAudioRequest extends RpcAcsRequest<MuteAudioResponse> {
+public class GetAllTemplateRequest extends RpcAcsRequest<GetAllTemplateResponse> {
 	
-	public MuteAudioRequest() {
-		super("rtc", "2018-01-11", "MuteAudio", "rtc");
+	public GetAllTemplateRequest() {
+		super("rtc", "2018-01-11", "GetAllTemplate", "rtc");
 	}
-
-	private List<String> participantIdss;
 
 	private Long ownerId;
 
-	private String conferenceId;
-
 	private String appId;
-
-	public List<String> getParticipantIdss() {
-		return this.participantIdss;
-	}
-
-	public void setParticipantIdss(List<String> participantIdss) {
-		this.participantIdss = participantIdss;	
-		if (participantIdss != null) {
-			for (int i = 0; i < participantIdss.size(); i++) {
-				putQueryParameter("ParticipantIds." + (i + 1) , participantIdss.get(i));
-			}
-		}	
-	}
 
 	public Long getOwnerId() {
 		return this.ownerId;
@@ -56,17 +38,6 @@ public class MuteAudioRequest extends RpcAcsRequest<MuteAudioResponse> {
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getConferenceId() {
-		return this.conferenceId;
-	}
-
-	public void setConferenceId(String conferenceId) {
-		this.conferenceId = conferenceId;
-		if(conferenceId != null){
-			putQueryParameter("ConferenceId", conferenceId);
 		}
 	}
 
@@ -82,8 +53,8 @@ public class MuteAudioRequest extends RpcAcsRequest<MuteAudioResponse> {
 	}
 
 	@Override
-	public Class<MuteAudioResponse> getResponseClass() {
-		return MuteAudioResponse.class;
+	public Class<GetAllTemplateResponse> getResponseClass() {
+		return GetAllTemplateResponse.class;
 	}
 
 }

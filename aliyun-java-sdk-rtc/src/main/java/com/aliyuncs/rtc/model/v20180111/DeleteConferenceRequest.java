@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeleteConferenceRequest extends RpcAcsRequest<DeleteConferenceResponse> {
 	
 	public DeleteConferenceRequest() {
-		super("rtc", "2018-01-11", "DeleteConference");
+		super("rtc", "2018-01-11", "DeleteConference", "rtc");
 	}
 
 	private Long ownerId;

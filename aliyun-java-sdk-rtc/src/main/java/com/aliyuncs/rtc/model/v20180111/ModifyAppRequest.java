@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifyAppRequest extends RpcAcsRequest<ModifyAppResponse> {
 	
 	public ModifyAppRequest() {
-		super("rtc", "2018-01-11", "ModifyApp");
+		super("rtc", "2018-01-11", "ModifyApp", "rtc");
 	}
 
 	private Long ownerId;

@@ -24,7 +24,7 @@ import java.util.List;
 public class RemoveParticipantsRequest extends RpcAcsRequest<RemoveParticipantsResponse> {
 	
 	public RemoveParticipantsRequest() {
-		super("rtc", "2018-01-11", "RemoveParticipants");
+		super("rtc", "2018-01-11", "RemoveParticipants", "rtc");
 	}
 
 	private List<String> participantIdss;

@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class CreateConferenceRequest extends RpcAcsRequest<CreateConferenceResponse> {
 	
 	public CreateConferenceRequest() {
-		super("rtc", "2018-01-11", "CreateConference");
+		super("rtc", "2018-01-11", "CreateConference", "rtc");
 	}
 
 	private String clientToken;
