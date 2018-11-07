@@ -1,3 +1,6 @@
+2018-11-07 Version: 4.2.0
+1, add bssopenapi & fass endpoints
+
 2018-10-25 Version: 4.1.2
 1, fix bug for json reader
 
