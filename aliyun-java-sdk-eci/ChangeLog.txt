@@ -1,0 +1,5 @@
+2018-11-07 Version: 1.0.0
+1, The beta version SDK of ECI.
+2, Only supports Java and Python.
+3, Go will be supported soon
+
