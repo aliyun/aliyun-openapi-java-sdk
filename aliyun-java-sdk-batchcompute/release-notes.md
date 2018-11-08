@@ -1,5 +1,10 @@
 # release notes
 
+6.0.1
+```
+1. 修复SecurityToken支持。
+```
+
 6.0.0
 ```
 1. 升级jackson库到最新。

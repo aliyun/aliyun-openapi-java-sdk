@@ -125,7 +125,9 @@ public class BatchComputeClient implements BatchCompute {
         //hack一下，处理 ErrorCode 的兼容
     private <T extends AcsResponse> T getAcsResponse(AcsRequest<T> request) throws ClientException {
 
-        //request.putHeaderParameter("x-acs-access-key-id", this.accessKeyId);
+        //兼容服务端获取不到x-acs-accesskey-id的bug
+        request.putHeaderParameter("x-acs-access-key-id", this.accessKeyId);
+        request.putHeaderParameter("x-acs-accesskey-id", this.accessKeyId);
 
         if (verbose) {
             Map<String, String> reqHeaders = request.getHeaders();

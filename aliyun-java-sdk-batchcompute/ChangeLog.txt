@@ -1,3 +1,6 @@
+2018-11-08 Version: 6.0.1
+1, Support STS Token
+
 2018-11-02 Version: 6.0.0
 1, Upgrade jackson lib version 2.x
 2, Upgrade core lib to version 4.1.2

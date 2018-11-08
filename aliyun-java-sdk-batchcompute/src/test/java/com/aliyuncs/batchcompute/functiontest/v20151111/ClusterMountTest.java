@@ -103,7 +103,7 @@ public class ClusterMountTest extends TestCase {
         //  mounts
         Mounts mounts = cluster.getConfigs().getMounts();
         assertEquals(mounts.getEntries().get(0).getDestination(), "/home/admin/nas1");
-        assertEquals(mounts.getEntries().get(0).getSource(), "nas://0266ef-xx1.cn-hangzhou.nas.aliyuncs.com");
+        assertEquals(mounts.getEntries().get(0).getSource(), "nas://0266ef-xx1.cn-hangzhou.nas.aliyuncs.com:/nas1");
         assertEquals(mounts.getEntries().get(0).isWriteSupport(), false);
 
         assertEquals(mounts.getLocale(), "UTF-8");
@@ -167,7 +167,7 @@ public class ClusterMountTest extends TestCase {
         Mounts mounts = new Mounts();
         MountEntry entry = new MountEntry();
         entry.setDestination("/home/admin/nas1");
-        entry.setSource("nas://0266ef-xx1.cn-hangzhou.nas.aliyuncs.com");
+        entry.setSource("nas://0266ef-xx1.cn-hangzhou.nas.aliyuncs.com:/nas1");
         entry.setWriteSupport(false);
 
         mounts.setLock(true);

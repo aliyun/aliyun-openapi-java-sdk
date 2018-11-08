@@ -89,8 +89,8 @@ public class JobMountsTest extends TestCase {
 
         //  check task mounts
         Mounts taskMounts  = taskDesc2.getMounts();
-        assertEquals(taskMounts.getEntries().get(0).getDestination(), "/home/admin/nas1");
-        assertEquals(taskMounts.getEntries().get(0).getSource(), "nas://0266ef-xx1.cn-hangzhou.nas.aliyuncs.com");
+        assertEquals(taskMounts.getEntries().get(0).getDestination(), "/home/admin/nas1/");
+        assertEquals(taskMounts.getEntries().get(0).getSource(), "nas://0266ef-xx1.cn-hangzhou.nas.aliyuncs.com:/");
         assertEquals(taskMounts.getEntries().get(0).isWriteSupport(), false);
 
         assertEquals(taskMounts.getLocale(), "UTF-8");
@@ -106,8 +106,8 @@ public class JobMountsTest extends TestCase {
 
         // auto  mounts
         Mounts autoMounts = taskDesc2.getAutoCluster().getConfigs().getMounts();
-        assertEquals(autoMounts.getEntries().get(0).getDestination(), "/home/admin/nas1");
-        assertEquals(autoMounts.getEntries().get(0).getSource(), "nas://0266ef-xx1.cn-hangzhou.nas.aliyuncs.com");
+        assertEquals(autoMounts.getEntries().get(0).getDestination(), "/home/admin/nas1/");
+        assertEquals(autoMounts.getEntries().get(0).getSource(), "nas://0266ef-xx1.cn-hangzhou.nas.aliyuncs.com:/");
         assertEquals(autoMounts.getEntries().get(0).isWriteSupport(), false);
 
         assertEquals(autoMounts.getLocale(), "UTF-8");
@@ -213,8 +213,8 @@ public class JobMountsTest extends TestCase {
     private Mounts getMounts(){
         Mounts mounts = new Mounts();
         MountEntry entry = new MountEntry();
-        entry.setDestination("/home/admin/nas1");
-        entry.setSource("nas://0266ef-xx1.cn-hangzhou.nas.aliyuncs.com");
+        entry.setDestination("/home/admin/nas1/");
+        entry.setSource("nas://0266ef-xx1.cn-hangzhou.nas.aliyuncs.com:/");
         entry.setWriteSupport(false);
 
         mounts.setLock(true);
