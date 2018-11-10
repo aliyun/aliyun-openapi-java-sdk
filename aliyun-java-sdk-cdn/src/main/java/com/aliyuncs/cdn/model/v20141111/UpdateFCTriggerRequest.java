@@ -36,6 +36,8 @@ public class UpdateFCTriggerRequest extends RpcAcsRequest<UpdateFCTriggerRespons
 
 	private String roleARN;
 
+	private String functionARN;
+
 	public String getNotes() {
 		return this.notes;
 	}
@@ -88,6 +90,17 @@ public class UpdateFCTriggerRequest extends RpcAcsRequest<UpdateFCTriggerRespons
 		this.roleARN = roleARN;
 		if(roleARN != null){
 			putBodyParameter("RoleARN", roleARN);
+		}
+	}
+
+	public String getFunctionARN() {
+		return this.functionARN;
+	}
+
+	public void setFunctionARN(String functionARN) {
+		this.functionARN = functionARN;
+		if(functionARN != null){
+			putBodyParameter("FunctionARN", functionARN);
 		}
 	}
 

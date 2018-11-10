@@ -26,7 +26,13 @@ public class DescribeDomainQpsDataRequest extends RpcAcsRequest<DescribeDomainQp
 		super("Cdn", "2014-11-11", "DescribeDomainQpsData");
 	}
 
-	private String fixTimeGap;
+	private String locationNameEn;
+
+	private String startTime;
+
+	private String ispNameEn;
+
+	private String domainType;
 
 	private String timeMerge;
 
@@ -34,28 +40,51 @@ public class DescribeDomainQpsDataRequest extends RpcAcsRequest<DescribeDomainQp
 
 	private String endTime;
 
-	private String locationNameEn;
-
-	private String startTime;
-
-	private String ispNameEn;
-
 	private Long ownerId;
-
-	private String domainType;
-
-	private String securityToken;
 
 	private String interval;
 
-	public String getFixTimeGap() {
-		return this.fixTimeGap;
+	public String getLocationNameEn() {
+		return this.locationNameEn;
 	}
 
-	public void setFixTimeGap(String fixTimeGap) {
-		this.fixTimeGap = fixTimeGap;
-		if(fixTimeGap != null){
-			putQueryParameter("FixTimeGap", fixTimeGap);
+	public void setLocationNameEn(String locationNameEn) {
+		this.locationNameEn = locationNameEn;
+		if(locationNameEn != null){
+			putQueryParameter("LocationNameEn", locationNameEn);
+		}
+	}
+
+	public String getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime);
+		}
+	}
+
+	public String getIspNameEn() {
+		return this.ispNameEn;
+	}
+
+	public void setIspNameEn(String ispNameEn) {
+		this.ispNameEn = ispNameEn;
+		if(ispNameEn != null){
+			putQueryParameter("IspNameEn", ispNameEn);
+		}
+	}
+
+	public String getDomainType() {
+		return this.domainType;
+	}
+
+	public void setDomainType(String domainType) {
+		this.domainType = domainType;
+		if(domainType != null){
+			putQueryParameter("DomainType", domainType);
 		}
 	}
 
@@ -92,39 +121,6 @@ public class DescribeDomainQpsDataRequest extends RpcAcsRequest<DescribeDomainQp
 		}
 	}
 
-	public String getLocationNameEn() {
-		return this.locationNameEn;
-	}
-
-	public void setLocationNameEn(String locationNameEn) {
-		this.locationNameEn = locationNameEn;
-		if(locationNameEn != null){
-			putQueryParameter("LocationNameEn", locationNameEn);
-		}
-	}
-
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("StartTime", startTime);
-		}
-	}
-
-	public String getIspNameEn() {
-		return this.ispNameEn;
-	}
-
-	public void setIspNameEn(String ispNameEn) {
-		this.ispNameEn = ispNameEn;
-		if(ispNameEn != null){
-			putQueryParameter("IspNameEn", ispNameEn);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -133,28 +129,6 @@ public class DescribeDomainQpsDataRequest extends RpcAcsRequest<DescribeDomainQp
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getDomainType() {
-		return this.domainType;
-	}
-
-	public void setDomainType(String domainType) {
-		this.domainType = domainType;
-		if(domainType != null){
-			putQueryParameter("DomainType", domainType);
-		}
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 

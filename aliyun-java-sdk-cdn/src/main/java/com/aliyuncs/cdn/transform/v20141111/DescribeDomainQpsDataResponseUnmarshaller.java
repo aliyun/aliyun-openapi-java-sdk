@@ -29,9 +29,9 @@ public class DescribeDomainQpsDataResponseUnmarshaller {
 		
 		describeDomainQpsDataResponse.setRequestId(context.stringValue("DescribeDomainQpsDataResponse.RequestId"));
 		describeDomainQpsDataResponse.setDomainName(context.stringValue("DescribeDomainQpsDataResponse.DomainName"));
-		describeDomainQpsDataResponse.setDataInterval(context.stringValue("DescribeDomainQpsDataResponse.DataInterval"));
 		describeDomainQpsDataResponse.setStartTime(context.stringValue("DescribeDomainQpsDataResponse.StartTime"));
 		describeDomainQpsDataResponse.setEndTime(context.stringValue("DescribeDomainQpsDataResponse.EndTime"));
+		describeDomainQpsDataResponse.setDataInterval(context.stringValue("DescribeDomainQpsDataResponse.DataInterval"));
 
 		List<DataModule> qpsDataInterval = new ArrayList<DataModule>();
 		for (int i = 0; i < context.lengthValue("DescribeDomainQpsDataResponse.QpsDataInterval.Length"); i++) {

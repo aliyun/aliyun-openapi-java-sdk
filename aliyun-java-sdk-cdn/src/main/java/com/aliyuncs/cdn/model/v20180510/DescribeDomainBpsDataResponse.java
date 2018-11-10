@@ -15,6 +15,7 @@
 package com.aliyuncs.cdn.model.v20180510;
 
 import java.util.List;
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.cdn.transform.v20180510.DescribeDomainBpsDataResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;

@@ -40,6 +40,8 @@ public class AddFCTriggerRequest extends RpcAcsRequest<AddFCTriggerResponse> {
 
 	private String eventMetaName;
 
+	private String functionARN;
+
 	public String getNotes() {
 		return this.notes;
 	}
@@ -114,6 +116,17 @@ public class AddFCTriggerRequest extends RpcAcsRequest<AddFCTriggerResponse> {
 		this.eventMetaName = eventMetaName;
 		if(eventMetaName != null){
 			putBodyParameter("EventMetaName", eventMetaName);
+		}
+	}
+
+	public String getFunctionARN() {
+		return this.functionARN;
+	}
+
+	public void setFunctionARN(String functionARN) {
+		this.functionARN = functionARN;
+		if(functionARN != null){
+			putBodyParameter("FunctionARN", functionARN);
 		}
 	}
 
