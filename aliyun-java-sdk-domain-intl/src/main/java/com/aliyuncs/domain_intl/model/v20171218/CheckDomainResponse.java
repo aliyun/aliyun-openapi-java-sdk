@@ -14,6 +14,7 @@
 
 package com.aliyuncs.domain_intl.model.v20171218;
 
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.domain_intl.transform.v20171218.CheckDomainResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -35,6 +36,8 @@ public class CheckDomainResponse extends AcsResponse {
 	private String reason;
 
 	private Long price;
+
+	private Boolean dynamicCheck;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -82,6 +85,14 @@ public class CheckDomainResponse extends AcsResponse {
 
 	public void setPrice(Long price) {
 		this.price = price;
+	}
+
+	public Boolean getDynamicCheck() {
+		return this.dynamicCheck;
+	}
+
+	public void setDynamicCheck(Boolean dynamicCheck) {
+		this.dynamicCheck = dynamicCheck;
 	}
 
 	@Override

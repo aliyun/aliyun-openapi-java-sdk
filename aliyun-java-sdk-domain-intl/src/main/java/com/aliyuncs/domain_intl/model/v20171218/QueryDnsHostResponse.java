@@ -15,6 +15,7 @@
 package com.aliyuncs.domain_intl.model.v20171218;
 
 import java.util.List;
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.domain_intl.transform.v20171218.QueryDnsHostResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
