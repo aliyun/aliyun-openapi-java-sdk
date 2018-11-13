@@ -1,0 +1,3 @@
+2018-11-13 Version: 1.0.0
+1, Added pts platinum get report api
+
