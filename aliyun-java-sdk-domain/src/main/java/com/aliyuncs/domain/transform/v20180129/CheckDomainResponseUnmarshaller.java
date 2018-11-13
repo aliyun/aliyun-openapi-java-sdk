@@ -28,6 +28,7 @@ public class CheckDomainResponseUnmarshaller {
 		checkDomainResponse.setPremium(context.stringValue("CheckDomainResponse.Premium"));
 		checkDomainResponse.setReason(context.stringValue("CheckDomainResponse.Reason"));
 		checkDomainResponse.setPrice(context.longValue("CheckDomainResponse.Price"));
+		checkDomainResponse.setDynamicCheck(context.booleanValue("CheckDomainResponse.DynamicCheck"));
 	 
 	 	return checkDomainResponse;
 	}

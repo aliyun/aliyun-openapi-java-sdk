@@ -1,3 +1,8 @@
+2018-11-13 Version: 3.10.0
+1, Add FuzzyMatchDomainSensitiveWord interface，Support fuzzy matching sensitive words.
+2, Add BatchFuzzyMatchDomainSensitiveWord interface，Support batch fuzzy matching sensitive words.
+3, Add DynamicCheck properties for results of CheckDomain interface.
+
 2018-10-26 Version: 3.9.1
 1, Remove useless parameters QueryDomainAdminDivision api.
 

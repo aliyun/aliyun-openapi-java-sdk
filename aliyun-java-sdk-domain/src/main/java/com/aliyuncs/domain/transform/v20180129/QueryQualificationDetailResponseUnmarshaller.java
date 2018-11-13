@@ -37,7 +37,7 @@ public class QueryQualificationDetailResponseUnmarshaller {
 			qualificationCredential.setCredentialNo(context.stringValue("QueryQualificationDetailResponse.Credentials["+ i +"].CredentialNo"));
 			qualificationCredential.setCredentialType(context.stringValue("QueryQualificationDetailResponse.Credentials["+ i +"].CredentialType"));
 			qualificationCredential.setCredentialUrl(context.stringValue("QueryQualificationDetailResponse.Credentials["+ i +"].CredentialUrl"));
-			qualificationCredential.setParams(context.stringValue("QueryQualificationDetailResponse.Credentials["+ i +"].Params"));
+			qualificationCredential.setParams(context.mapValue("QueryQualificationDetailResponse.Credentials["+ i +"].Params"));
 
 			credentials.add(qualificationCredential);
 		}

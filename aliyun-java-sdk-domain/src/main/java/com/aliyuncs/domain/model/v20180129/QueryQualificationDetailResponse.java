@@ -15,6 +15,7 @@
 package com.aliyuncs.domain.model.v20180129;
 
 import java.util.List;
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.domain.transform.v20180129.QueryQualificationDetailResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -73,7 +74,7 @@ public class QueryQualificationDetailResponse extends AcsResponse {
 
 		private String credentialUrl;
 
-		private String params;
+		private Map<Object,Object> params;
 
 		public String getCredentialNo() {
 			return this.credentialNo;
@@ -99,11 +100,11 @@ public class QueryQualificationDetailResponse extends AcsResponse {
 			this.credentialUrl = credentialUrl;
 		}
 
-		public String getParams() {
+		public Map<Object,Object> getParams() {
 			return this.params;
 		}
 
-		public void setParams(String params) {
+		public void setParams(Map<Object,Object> params) {
 			this.params = params;
 		}
 	}
