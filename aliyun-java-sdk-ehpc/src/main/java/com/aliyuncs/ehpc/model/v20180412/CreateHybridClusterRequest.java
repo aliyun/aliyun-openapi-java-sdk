@@ -41,6 +41,8 @@ public class CreateHybridClusterRequest extends RpcAcsRequest<CreateHybridCluste
 
 	private String onPremiseVolumeRemotePath;
 
+	private String jobQueue;
+
 	private String volumeType;
 
 	private String password;
@@ -58,6 +60,8 @@ public class CreateHybridClusterRequest extends RpcAcsRequest<CreateHybridCluste
 	private String osTag;
 
 	private String remoteDirectory;
+
+	private List<PostInstallScript> postInstallScripts;
 
 	private String vSwitchId;
 
@@ -153,6 +157,17 @@ public class CreateHybridClusterRequest extends RpcAcsRequest<CreateHybridCluste
 		this.onPremiseVolumeRemotePath = onPremiseVolumeRemotePath;
 		if(onPremiseVolumeRemotePath != null){
 			putQueryParameter("OnPremiseVolumeRemotePath", onPremiseVolumeRemotePath);
+		}
+	}
+
+	public String getJobQueue() {
+		return this.jobQueue;
+	}
+
+	public void setJobQueue(String jobQueue) {
+		this.jobQueue = jobQueue;
+		if(jobQueue != null){
+			putQueryParameter("JobQueue", jobQueue);
 		}
 	}
 
@@ -253,6 +268,20 @@ public class CreateHybridClusterRequest extends RpcAcsRequest<CreateHybridCluste
 		if(remoteDirectory != null){
 			putQueryParameter("RemoteDirectory", remoteDirectory);
 		}
+	}
+
+	public List<PostInstallScript> getPostInstallScripts() {
+		return this.postInstallScripts;
+	}
+
+	public void setPostInstallScripts(List<PostInstallScript> postInstallScripts) {
+		this.postInstallScripts = postInstallScripts;	
+		if (postInstallScripts != null) {
+			for (int depth1 = 0; depth1 < postInstallScripts.size(); depth1++) {
+				putQueryParameter("PostInstallScript." + (depth1 + 1) + ".Args" , postInstallScripts.get(depth1).getArgs());
+				putQueryParameter("PostInstallScript." + (depth1 + 1) + ".Url" , postInstallScripts.get(depth1).getUrl());
+			}
+		}	
 	}
 
 	public String getVSwitchId() {
@@ -364,6 +393,29 @@ public class CreateHybridClusterRequest extends RpcAcsRequest<CreateHybridCluste
 		this.location = location;
 		if(location != null){
 			putQueryParameter("Location", location);
+		}
+	}
+
+	public static class PostInstallScript {
+
+		private String args;
+
+		private String url;
+
+		public String getArgs() {
+			return this.args;
+		}
+
+		public void setArgs(String args) {
+			this.args = args;
+		}
+
+		public String getUrl() {
+			return this.url;
+		}
+
+		public void setUrl(String url) {
+			this.url = url;
 		}
 	}
 

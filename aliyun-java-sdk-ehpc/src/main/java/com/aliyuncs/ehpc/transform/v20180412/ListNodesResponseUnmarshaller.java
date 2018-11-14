@@ -51,6 +51,7 @@ public class ListNodesResponseUnmarshaller {
 			nodeInfo.setImageOwnerAlias(context.stringValue("ListNodesResponse.Nodes["+ i +"].ImageOwnerAlias"));
 			nodeInfo.setImageId(context.stringValue("ListNodesResponse.Nodes["+ i +"].ImageId"));
 			nodeInfo.setLocation(context.stringValue("ListNodesResponse.Nodes["+ i +"].Location"));
+			nodeInfo.setCreateMode(context.stringValue("ListNodesResponse.Nodes["+ i +"].CreateMode"));
 
 			List<String> roles = new ArrayList<String>();
 			for (int j = 0; j < context.lengthValue("ListNodesResponse.Nodes["+ i +"].Roles.Length"); j++) {

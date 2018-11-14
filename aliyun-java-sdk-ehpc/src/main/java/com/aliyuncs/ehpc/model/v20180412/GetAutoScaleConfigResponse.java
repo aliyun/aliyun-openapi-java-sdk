@@ -15,6 +15,7 @@
 package com.aliyuncs.ehpc.model.v20180412;
 
 import java.util.List;
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.ehpc.transform.v20180412.GetAutoScaleConfigResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -205,6 +206,10 @@ public class GetAutoScaleConfigResponse extends AcsResponse {
 
 		private Float spotPriceLimit;
 
+		private Boolean enableAutoGrow;
+
+		private Boolean enableAutoShrink;
+
 		public String getQueueName() {
 			return this.queueName;
 		}
@@ -235,6 +240,22 @@ public class GetAutoScaleConfigResponse extends AcsResponse {
 
 		public void setSpotPriceLimit(Float spotPriceLimit) {
 			this.spotPriceLimit = spotPriceLimit;
+		}
+
+		public Boolean getEnableAutoGrow() {
+			return this.enableAutoGrow;
+		}
+
+		public void setEnableAutoGrow(Boolean enableAutoGrow) {
+			this.enableAutoGrow = enableAutoGrow;
+		}
+
+		public Boolean getEnableAutoShrink() {
+			return this.enableAutoShrink;
+		}
+
+		public void setEnableAutoShrink(Boolean enableAutoShrink) {
+			this.enableAutoShrink = enableAutoShrink;
 		}
 	}
 

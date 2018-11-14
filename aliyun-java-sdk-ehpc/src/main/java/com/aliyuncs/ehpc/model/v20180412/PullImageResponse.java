@@ -14,6 +14,7 @@
 
 package com.aliyuncs.ehpc.model.v20180412;
 
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.ehpc.transform.v20180412.PullImageResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;

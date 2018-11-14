@@ -48,6 +48,8 @@ public class AddNodesRequest extends RpcAcsRequest<AddNodesResponse> {
 
 	private String ecsChargeType;
 
+	private String createMode;
+
 	private String instanceType;
 
 	private String computeSpotPriceLimit;
@@ -170,6 +172,17 @@ public class AddNodesRequest extends RpcAcsRequest<AddNodesResponse> {
 		this.ecsChargeType = ecsChargeType;
 		if(ecsChargeType != null){
 			putQueryParameter("EcsChargeType", ecsChargeType);
+		}
+	}
+
+	public String getCreateMode() {
+		return this.createMode;
+	}
+
+	public void setCreateMode(String createMode) {
+		this.createMode = createMode;
+		if(createMode != null){
+			putQueryParameter("CreateMode", createMode);
 		}
 	}
 

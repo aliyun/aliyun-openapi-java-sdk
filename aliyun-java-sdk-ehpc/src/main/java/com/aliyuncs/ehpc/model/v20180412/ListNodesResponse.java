@@ -15,6 +15,7 @@
 package com.aliyuncs.ehpc.model.v20180412;
 
 import java.util.List;
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.ehpc.transform.v20180412.ListNodesResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -104,6 +105,8 @@ public class ListNodesResponse extends AcsResponse {
 		private String imageId;
 
 		private String location;
+
+		private String createMode;
 
 		private List<String> roles;
 
@@ -221,6 +224,14 @@ public class ListNodesResponse extends AcsResponse {
 
 		public void setLocation(String location) {
 			this.location = location;
+		}
+
+		public String getCreateMode() {
+			return this.createMode;
+		}
+
+		public void setCreateMode(String createMode) {
+			this.createMode = createMode;
 		}
 
 		public List<String> getRoles() {

@@ -1,3 +1,6 @@
+2018-11-14 Version: 1.9.0
+1, Better support for hybrid cluster.
+
 2018-09-27 Version: 1.8.0
 1, Add new API ListQueues, modify API SetAutoScaleConfig to support queue related features.
 

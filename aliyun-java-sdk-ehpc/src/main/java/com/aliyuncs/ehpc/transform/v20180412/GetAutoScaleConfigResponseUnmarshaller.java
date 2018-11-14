@@ -51,6 +51,8 @@ public class GetAutoScaleConfigResponseUnmarshaller {
 			queueInfo.setInstanceType(context.stringValue("GetAutoScaleConfigResponse.Queues["+ i +"].InstanceType"));
 			queueInfo.setSpotStrategy(context.stringValue("GetAutoScaleConfigResponse.Queues["+ i +"].SpotStrategy"));
 			queueInfo.setSpotPriceLimit(context.floatValue("GetAutoScaleConfigResponse.Queues["+ i +"].SpotPriceLimit"));
+			queueInfo.setEnableAutoGrow(context.booleanValue("GetAutoScaleConfigResponse.Queues["+ i +"].EnableAutoGrow"));
+			queueInfo.setEnableAutoShrink(context.booleanValue("GetAutoScaleConfigResponse.Queues["+ i +"].EnableAutoShrink"));
 
 			queues.add(queueInfo);
 		}
