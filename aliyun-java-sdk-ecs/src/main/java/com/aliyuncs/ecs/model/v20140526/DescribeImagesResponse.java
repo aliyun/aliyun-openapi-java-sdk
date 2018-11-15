@@ -15,6 +15,7 @@
 package com.aliyuncs.ecs.model.v20140526;
 
 import java.util.List;
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.ecs.transform.v20140526.DescribeImagesResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -333,6 +334,10 @@ public class DescribeImagesResponse extends AcsResponse {
 
 			private String importOSSObject;
 
+			private String progress;
+
+			private Integer remainTime;
+
 			public String getSnapshotId() {
 				return this.snapshotId;
 			}
@@ -387,6 +392,22 @@ public class DescribeImagesResponse extends AcsResponse {
 
 			public void setImportOSSObject(String importOSSObject) {
 				this.importOSSObject = importOSSObject;
+			}
+
+			public String getProgress() {
+				return this.progress;
+			}
+
+			public void setProgress(String progress) {
+				this.progress = progress;
+			}
+
+			public Integer getRemainTime() {
+				return this.remainTime;
+			}
+
+			public void setRemainTime(Integer remainTime) {
+				this.remainTime = remainTime;
 			}
 		}
 

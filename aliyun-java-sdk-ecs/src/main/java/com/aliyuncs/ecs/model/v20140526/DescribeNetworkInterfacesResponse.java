@@ -15,6 +15,7 @@
 package com.aliyuncs.ecs.model.v20140526;
 
 import java.util.List;
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.ecs.transform.v20140526.DescribeNetworkInterfacesResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -104,6 +105,8 @@ public class DescribeNetworkInterfacesResponse extends AcsResponse {
 		private String resourceGroupId;
 
 		private List<PrivateIpSet> privateIpSets;
+
+		private List<Ipv6Set> ipv6Sets;
 
 		private List<Tag> tags;
 
@@ -223,6 +226,14 @@ public class DescribeNetworkInterfacesResponse extends AcsResponse {
 			this.privateIpSets = privateIpSets;
 		}
 
+		public List<Ipv6Set> getIpv6Sets() {
+			return this.ipv6Sets;
+		}
+
+		public void setIpv6Sets(List<Ipv6Set> ipv6Sets) {
+			this.ipv6Sets = ipv6Sets;
+		}
+
 		public List<Tag> getTags() {
 			return this.tags;
 		}
@@ -300,6 +311,19 @@ public class DescribeNetworkInterfacesResponse extends AcsResponse {
 				public void setAllocationId(String allocationId) {
 					this.allocationId = allocationId;
 				}
+			}
+		}
+
+		public static class Ipv6Set {
+
+			private String ipv6Address;
+
+			public String getIpv6Address() {
+				return this.ipv6Address;
+			}
+
+			public void setIpv6Address(String ipv6Address) {
+				this.ipv6Address = ipv6Address;
 			}
 		}
 

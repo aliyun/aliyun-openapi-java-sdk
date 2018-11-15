@@ -45,6 +45,7 @@ public class DescribeVSwitchesResponseUnmarshaller {
 			vSwitch.setVSwitchName(context.stringValue("DescribeVSwitchesResponse.VSwitches["+ i +"].VSwitchName"));
 			vSwitch.setCreationTime(context.stringValue("DescribeVSwitchesResponse.VSwitches["+ i +"].CreationTime"));
 			vSwitch.setIsDefault(context.booleanValue("DescribeVSwitchesResponse.VSwitches["+ i +"].IsDefault"));
+			vSwitch.setResourceGroupId(context.stringValue("DescribeVSwitchesResponse.VSwitches["+ i +"].ResourceGroupId"));
 
 			vSwitches.add(vSwitch);
 		}

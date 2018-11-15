@@ -42,6 +42,10 @@ public class RevokeSecurityGroupRequest extends RpcAcsRequest<RevokeSecurityGrou
 
 	private String sourceGroupOwnerAccount;
 
+	private String ipv6DestCidrIp;
+
+	private String ipv6SourceCidrIp;
+
 	private String policy;
 
 	private String portRange;
@@ -147,6 +151,28 @@ public class RevokeSecurityGroupRequest extends RpcAcsRequest<RevokeSecurityGrou
 		this.sourceGroupOwnerAccount = sourceGroupOwnerAccount;
 		if(sourceGroupOwnerAccount != null){
 			putQueryParameter("SourceGroupOwnerAccount", sourceGroupOwnerAccount);
+		}
+	}
+
+	public String getIpv6DestCidrIp() {
+		return this.ipv6DestCidrIp;
+	}
+
+	public void setIpv6DestCidrIp(String ipv6DestCidrIp) {
+		this.ipv6DestCidrIp = ipv6DestCidrIp;
+		if(ipv6DestCidrIp != null){
+			putQueryParameter("Ipv6DestCidrIp", ipv6DestCidrIp);
+		}
+	}
+
+	public String getIpv6SourceCidrIp() {
+		return this.ipv6SourceCidrIp;
+	}
+
+	public void setIpv6SourceCidrIp(String ipv6SourceCidrIp) {
+		this.ipv6SourceCidrIp = ipv6SourceCidrIp;
+		if(ipv6SourceCidrIp != null){
+			putQueryParameter("Ipv6SourceCidrIp", ipv6SourceCidrIp);
 		}
 	}
 

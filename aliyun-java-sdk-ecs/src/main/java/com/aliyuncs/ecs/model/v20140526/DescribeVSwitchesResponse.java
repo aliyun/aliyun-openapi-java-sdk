@@ -15,6 +15,7 @@
 package com.aliyuncs.ecs.model.v20140526;
 
 import java.util.List;
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.ecs.transform.v20140526.DescribeVSwitchesResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -97,6 +98,8 @@ public class DescribeVSwitchesResponse extends AcsResponse {
 
 		private Boolean isDefault;
 
+		private String resourceGroupId;
+
 		public String getVSwitchId() {
 			return this.vSwitchId;
 		}
@@ -175,6 +178,14 @@ public class DescribeVSwitchesResponse extends AcsResponse {
 
 		public void setIsDefault(Boolean isDefault) {
 			this.isDefault = isDefault;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
 		}
 	}
 

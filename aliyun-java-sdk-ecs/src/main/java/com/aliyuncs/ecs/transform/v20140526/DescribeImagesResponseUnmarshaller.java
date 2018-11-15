@@ -70,6 +70,8 @@ public class DescribeImagesResponseUnmarshaller {
 				diskDeviceMapping.setFormat(context.stringValue("DescribeImagesResponse.Images["+ i +"].DiskDeviceMappings["+ j +"].Format"));
 				diskDeviceMapping.setImportOSSBucket(context.stringValue("DescribeImagesResponse.Images["+ i +"].DiskDeviceMappings["+ j +"].ImportOSSBucket"));
 				diskDeviceMapping.setImportOSSObject(context.stringValue("DescribeImagesResponse.Images["+ i +"].DiskDeviceMappings["+ j +"].ImportOSSObject"));
+				diskDeviceMapping.setProgress(context.stringValue("DescribeImagesResponse.Images["+ i +"].DiskDeviceMappings["+ j +"].Progress"));
+				diskDeviceMapping.setRemainTime(context.integerValue("DescribeImagesResponse.Images["+ i +"].DiskDeviceMappings["+ j +"].RemainTime"));
 
 				diskDeviceMappings.add(diskDeviceMapping);
 			}

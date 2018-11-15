@@ -57,6 +57,8 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 
 	private String launchTemplateId;
 
+	private Integer ipv6AddressCount;
+
 	private Long ownerId;
 
 	private String vSwitchId;
@@ -74,6 +76,8 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 	private String internetChargeType;
 
 	private String zoneId;
+
+	private List<String> ipv6Addresss;
 
 	private Integer internetMaxBandwidthIn;
 
@@ -297,6 +301,17 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 		}
 	}
 
+	public Integer getIpv6AddressCount() {
+		return this.ipv6AddressCount;
+	}
+
+	public void setIpv6AddressCount(Integer ipv6AddressCount) {
+		this.ipv6AddressCount = ipv6AddressCount;
+		if(ipv6AddressCount != null){
+			putQueryParameter("Ipv6AddressCount", ipv6AddressCount.toString());
+		}
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -394,6 +409,19 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 		if(zoneId != null){
 			putQueryParameter("ZoneId", zoneId);
 		}
+	}
+
+	public List<String> getIpv6Addresss() {
+		return this.ipv6Addresss;
+	}
+
+	public void setIpv6Addresss(List<String> ipv6Addresss) {
+		this.ipv6Addresss = ipv6Addresss;	
+		if (ipv6Addresss != null) {
+			for (int i = 0; i < ipv6Addresss.size(); i++) {
+				putQueryParameter("Ipv6Address." + (i + 1) , ipv6Addresss.get(i));
+			}
+		}	
 	}
 
 	public Integer getInternetMaxBandwidthIn() {

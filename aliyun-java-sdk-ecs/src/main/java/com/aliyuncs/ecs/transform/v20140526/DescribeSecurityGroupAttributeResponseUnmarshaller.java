@@ -44,12 +44,14 @@ public class DescribeSecurityGroupAttributeResponseUnmarshaller {
 			permission.setSourceGroupId(context.stringValue("DescribeSecurityGroupAttributeResponse.Permissions["+ i +"].SourceGroupId"));
 			permission.setSourceGroupName(context.stringValue("DescribeSecurityGroupAttributeResponse.Permissions["+ i +"].SourceGroupName"));
 			permission.setSourceCidrIp(context.stringValue("DescribeSecurityGroupAttributeResponse.Permissions["+ i +"].SourceCidrIp"));
+			permission.setIpv6SourceCidrIp(context.stringValue("DescribeSecurityGroupAttributeResponse.Permissions["+ i +"].Ipv6SourceCidrIp"));
 			permission.setPolicy(context.stringValue("DescribeSecurityGroupAttributeResponse.Permissions["+ i +"].Policy"));
 			permission.setNicType(context.stringValue("DescribeSecurityGroupAttributeResponse.Permissions["+ i +"].NicType"));
 			permission.setSourceGroupOwnerAccount(context.stringValue("DescribeSecurityGroupAttributeResponse.Permissions["+ i +"].SourceGroupOwnerAccount"));
 			permission.setDestGroupId(context.stringValue("DescribeSecurityGroupAttributeResponse.Permissions["+ i +"].DestGroupId"));
 			permission.setDestGroupName(context.stringValue("DescribeSecurityGroupAttributeResponse.Permissions["+ i +"].DestGroupName"));
 			permission.setDestCidrIp(context.stringValue("DescribeSecurityGroupAttributeResponse.Permissions["+ i +"].DestCidrIp"));
+			permission.setIpv6DestCidrIp(context.stringValue("DescribeSecurityGroupAttributeResponse.Permissions["+ i +"].Ipv6DestCidrIp"));
 			permission.setDestGroupOwnerAccount(context.stringValue("DescribeSecurityGroupAttributeResponse.Permissions["+ i +"].DestGroupOwnerAccount"));
 			permission.setPriority(context.stringValue("DescribeSecurityGroupAttributeResponse.Permissions["+ i +"].Priority"));
 			permission.setDirection(context.stringValue("DescribeSecurityGroupAttributeResponse.Permissions["+ i +"].Direction"));
