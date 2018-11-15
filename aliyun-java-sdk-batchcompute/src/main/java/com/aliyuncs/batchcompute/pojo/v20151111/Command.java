@@ -14,6 +14,23 @@ import java.util.Map;
 @JsonIgnoreProperties(ignoreUnknown = true) @JsonInclude(JsonInclude.Include.NON_DEFAULT)
 public class Command {
 
+    @JsonIgnoreProperties(ignoreUnknown = true) @JsonInclude(JsonInclude.Include.NON_DEFAULT)
+    public class Docker {
+
+        @JsonProperty("Image")
+        private String image;
+
+        @JsonIgnore
+        public String getImage() {
+            return image;
+        }
+
+        @JsonIgnore
+        public void setImage(String image) {
+            this.image = image;
+        }
+    }
+
     @JsonProperty("CommandLine")
     private String commandLine;
 
@@ -24,8 +41,8 @@ public class Command {
     @JsonProperty("EnvVars")
     private Map<String,String> envVars;
 
-
-
+    @JsonProperty("Docker")
+    private Docker docker;
 
     @JsonIgnore
     public String getCommandLine() {
@@ -65,6 +82,14 @@ public class Command {
     }
 
 
+    @JsonIgnore
+    public Command.Docker getDocker() {
+        return docker;
+    }
 
+    @JsonIgnore
+    public void setDocker(Command.Docker docker) {
+        this.docker = docker;
+    }
 
 }

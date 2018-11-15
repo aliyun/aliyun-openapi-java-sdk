@@ -1,5 +1,10 @@
 # release notes
 
+6.0.2
+```
+1. 支持docker imageId
+```
+
 6.0.1
 ```
 1. 修复SecurityToken支持。
