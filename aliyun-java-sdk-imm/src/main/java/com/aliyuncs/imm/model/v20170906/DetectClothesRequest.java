@@ -20,28 +20,24 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class RemoveTagByNameRequest extends RpcAcsRequest<RemoveTagByNameResponse> {
+public class DetectClothesRequest extends RpcAcsRequest<DetectClothesResponse> {
 	
-	public RemoveTagByNameRequest() {
-		super("imm", "2017-09-06", "RemoveTagByName", "imm");
+	public DetectClothesRequest() {
+		super("imm", "2017-09-06", "DetectClothes", "imm");
 	}
 
-	private String tagName;
+	private String srcUris;
 
 	private String project;
 
-	private String setId;
-
-	private String srcUri;
-
-	public String getTagName() {
-		return this.tagName;
+	public String getSrcUris() {
+		return this.srcUris;
 	}
 
-	public void setTagName(String tagName) {
-		this.tagName = tagName;
-		if(tagName != null){
-			putQueryParameter("TagName", tagName);
+	public void setSrcUris(String srcUris) {
+		this.srcUris = srcUris;
+		if(srcUris != null){
+			putQueryParameter("SrcUris", srcUris);
 		}
 	}
 
@@ -56,31 +52,9 @@ public class RemoveTagByNameRequest extends RpcAcsRequest<RemoveTagByNameRespons
 		}
 	}
 
-	public String getSetId() {
-		return this.setId;
-	}
-
-	public void setSetId(String setId) {
-		this.setId = setId;
-		if(setId != null){
-			putQueryParameter("SetId", setId);
-		}
-	}
-
-	public String getSrcUri() {
-		return this.srcUri;
-	}
-
-	public void setSrcUri(String srcUri) {
-		this.srcUri = srcUri;
-		if(srcUri != null){
-			putQueryParameter("SrcUri", srcUri);
-		}
-	}
-
 	@Override
-	public Class<RemoveTagByNameResponse> getResponseClass() {
-		return RemoveTagByNameResponse.class;
+	public Class<DetectClothesResponse> getResponseClass() {
+		return DetectClothesResponse.class;
 	}
 
 }

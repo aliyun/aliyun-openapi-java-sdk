@@ -7,7 +7,6 @@ import com.aliyuncs.IAcsClient;
 import com.aliyuncs.exceptions.ClientException;
 import com.aliyuncs.http.FormatType;
 import com.aliyuncs.http.HttpResponse;
-import com.aliyuncs.imm.model.v20170906.ActionRequest;
 import com.aliyuncs.profile.DefaultProfile;
 
 import java.util.HashMap;

@@ -10,14 +10,14 @@
     <groupId>com.aliyun</groupId>
     <artifactId>aliyun-java-sdk-core</artifactId>
     <optional>true</optional>
-    <version>4.0.1</version>
+    <version>4.1.2</version>
 </dependency>
 
 <dependency>
     <groupId>com.aliyun</groupId>
     <artifactId>aliyun-java-sdk-imm</artifactId>
     <optional>true</optional>
-    <version>1.8.0</version>
+    <version>1.8.1</version>
 </dependency>
 ```
 

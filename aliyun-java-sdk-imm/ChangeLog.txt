@@ -1,3 +1,8 @@
+2018-11-15 Version: 1.8.0
+1, Remove FaceCompare, FaceRegist, FaceSearch api.
+2, Add DetectLogo api.
+3, CreateOfficeConversionTask support IdempotentToken.
+
 2018-10-10 Version: 1.8.0
 1, add UpdateProject api, support update CU, ServiceRole
 2, PutProject not support edit

@@ -17,22 +17,22 @@ package com.aliyuncs.imm.model.v20170906;
 import java.util.List;
 import java.util.Map;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.imm.transform.v20170906.DetectTagResponseUnmarshaller;
+import com.aliyuncs.imm.transform.v20170906.DetectClothesResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DetectTagResponse extends AcsResponse {
+public class DetectClothesResponse extends AcsResponse {
 
 	private String requestId;
-
-	private String successNum;
 
 	private List<SuccessDetailsItem> successDetails;
 
 	private List<FailDetailsItem> failDetails;
+
+	private List<String> srcUris;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -40,14 +40,6 @@ public class DetectTagResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public String getSuccessNum() {
-		return this.successNum;
-	}
-
-	public void setSuccessNum(String successNum) {
-		this.successNum = successNum;
 	}
 
 	public List<SuccessDetailsItem> getSuccessDetails() {
@@ -66,11 +58,25 @@ public class DetectTagResponse extends AcsResponse {
 		this.failDetails = failDetails;
 	}
 
+	public List<String> getSrcUris() {
+		return this.srcUris;
+	}
+
+	public void setSrcUris(List<String> srcUris) {
+		this.srcUris = srcUris;
+	}
+
 	public static class SuccessDetailsItem {
 
 		private String srcUri;
 
-		private List<TagsItem> tags;
+		private String time;
+
+		private String getImageTime;
+
+		private String detectTime;
+
+		private List<ClothesBoxDetailItem> clothesBoxDetail;
 
 		public String getSrcUri() {
 			return this.srcUri;
@@ -80,74 +86,78 @@ public class DetectTagResponse extends AcsResponse {
 			this.srcUri = srcUri;
 		}
 
-		public List<TagsItem> getTags() {
-			return this.tags;
+		public String getTime() {
+			return this.time;
 		}
 
-		public void setTags(List<TagsItem> tags) {
-			this.tags = tags;
+		public void setTime(String time) {
+			this.time = time;
 		}
 
-		public static class TagsItem {
+		public String getGetImageTime() {
+			return this.getImageTime;
+		}
 
-			private String tagId;
+		public void setGetImageTime(String getImageTime) {
+			this.getImageTime = getImageTime;
+		}
 
-			private String tagLevel;
+		public String getDetectTime() {
+			return this.detectTime;
+		}
 
-			private String tagName;
+		public void setDetectTime(String detectTime) {
+			this.detectTime = detectTime;
+		}
 
-			private String parentTagId;
+		public List<ClothesBoxDetailItem> getClothesBoxDetail() {
+			return this.clothesBoxDetail;
+		}
 
-			private String parentTagName;
+		public void setClothesBoxDetail(List<ClothesBoxDetailItem> clothesBoxDetail) {
+			this.clothesBoxDetail = clothesBoxDetail;
+		}
 
-			private String tagScore;
+		public static class ClothesBoxDetailItem {
 
-			public String getTagId() {
-				return this.tagId;
+			private String pUID;
+
+			private String type;
+
+			private Float score;
+
+			private List<String> box;
+
+			public String getPUID() {
+				return this.pUID;
 			}
 
-			public void setTagId(String tagId) {
-				this.tagId = tagId;
+			public void setPUID(String pUID) {
+				this.pUID = pUID;
 			}
 
-			public String getTagLevel() {
-				return this.tagLevel;
+			public String getType() {
+				return this.type;
 			}
 
-			public void setTagLevel(String tagLevel) {
-				this.tagLevel = tagLevel;
+			public void setType(String type) {
+				this.type = type;
 			}
 
-			public String getTagName() {
-				return this.tagName;
+			public Float getScore() {
+				return this.score;
 			}
 
-			public void setTagName(String tagName) {
-				this.tagName = tagName;
+			public void setScore(Float score) {
+				this.score = score;
 			}
 
-			public String getParentTagId() {
-				return this.parentTagId;
+			public List<String> getBox() {
+				return this.box;
 			}
 
-			public void setParentTagId(String parentTagId) {
-				this.parentTagId = parentTagId;
-			}
-
-			public String getParentTagName() {
-				return this.parentTagName;
-			}
-
-			public void setParentTagName(String parentTagName) {
-				this.parentTagName = parentTagName;
-			}
-
-			public String getTagScore() {
-				return this.tagScore;
-			}
-
-			public void setTagScore(String tagScore) {
-				this.tagScore = tagScore;
+			public void setBox(List<String> box) {
+				this.box = box;
 			}
 		}
 	}
@@ -176,8 +186,8 @@ public class DetectTagResponse extends AcsResponse {
 	}
 
 	@Override
-	public DetectTagResponse getInstance(UnmarshallerContext context) {
-		return	DetectTagResponseUnmarshaller.unmarshall(this, context);
+	public DetectClothesResponse getInstance(UnmarshallerContext context) {
+		return	DetectClothesResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

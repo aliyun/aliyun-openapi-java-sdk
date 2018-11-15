@@ -17,20 +17,22 @@ package com.aliyuncs.imm.model.v20170906;
 import java.util.List;
 import java.util.Map;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.imm.transform.v20170906.DetectQRCodesResponseUnmarshaller;
+import com.aliyuncs.imm.transform.v20170906.DetectLogoResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DetectQRCodesResponse extends AcsResponse {
+public class DetectLogoResponse extends AcsResponse {
 
 	private String requestId;
 
 	private List<SuccessDetailsItem> successDetails;
 
 	private List<FailDetailsItem> failDetails;
+
+	private List<String> srcUris;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -56,11 +58,25 @@ public class DetectQRCodesResponse extends AcsResponse {
 		this.failDetails = failDetails;
 	}
 
+	public List<String> getSrcUris() {
+		return this.srcUris;
+	}
+
+	public void setSrcUris(List<String> srcUris) {
+		this.srcUris = srcUris;
+	}
+
 	public static class SuccessDetailsItem {
 
 		private String srcUri;
 
-		private List<QRCodesItem> qRCodes;
+		private String time;
+
+		private String getImageTime;
+
+		private String detectTime;
+
+		private List<LogoBoxDetailItem> logoBoxDetail;
 
 		public String getSrcUri() {
 			return this.srcUri;
@@ -70,77 +86,78 @@ public class DetectQRCodesResponse extends AcsResponse {
 			this.srcUri = srcUri;
 		}
 
-		public List<QRCodesItem> getQRCodes() {
-			return this.qRCodes;
+		public String getTime() {
+			return this.time;
 		}
 
-		public void setQRCodes(List<QRCodesItem> qRCodes) {
-			this.qRCodes = qRCodes;
+		public void setTime(String time) {
+			this.time = time;
 		}
 
-		public static class QRCodesItem {
+		public String getGetImageTime() {
+			return this.getImageTime;
+		}
 
-			private String content;
+		public void setGetImageTime(String getImageTime) {
+			this.getImageTime = getImageTime;
+		}
 
-			private QRCodesRectangle qRCodesRectangle;
+		public String getDetectTime() {
+			return this.detectTime;
+		}
 
-			public String getContent() {
-				return this.content;
+		public void setDetectTime(String detectTime) {
+			this.detectTime = detectTime;
+		}
+
+		public List<LogoBoxDetailItem> getLogoBoxDetail() {
+			return this.logoBoxDetail;
+		}
+
+		public void setLogoBoxDetail(List<LogoBoxDetailItem> logoBoxDetail) {
+			this.logoBoxDetail = logoBoxDetail;
+		}
+
+		public static class LogoBoxDetailItem {
+
+			private String pUID;
+
+			private String type;
+
+			private Float score;
+
+			private List<String> box;
+
+			public String getPUID() {
+				return this.pUID;
 			}
 
-			public void setContent(String content) {
-				this.content = content;
+			public void setPUID(String pUID) {
+				this.pUID = pUID;
 			}
 
-			public QRCodesRectangle getQRCodesRectangle() {
-				return this.qRCodesRectangle;
+			public String getType() {
+				return this.type;
 			}
 
-			public void setQRCodesRectangle(QRCodesRectangle qRCodesRectangle) {
-				this.qRCodesRectangle = qRCodesRectangle;
+			public void setType(String type) {
+				this.type = type;
 			}
 
-			public static class QRCodesRectangle {
+			public Float getScore() {
+				return this.score;
+			}
 
-				private String left;
+			public void setScore(Float score) {
+				this.score = score;
+			}
 
-				private String top;
+			public List<String> getBox() {
+				return this.box;
+			}
 
-				private String width;
-
-				private String height;
-
-				public String getLeft() {
-					return this.left;
-				}
-
-				public void setLeft(String left) {
-					this.left = left;
-				}
-
-				public String getTop() {
-					return this.top;
-				}
-
-				public void setTop(String top) {
-					this.top = top;
-				}
-
-				public String getWidth() {
-					return this.width;
-				}
-
-				public void setWidth(String width) {
-					this.width = width;
-				}
-
-				public String getHeight() {
-					return this.height;
-				}
-
-				public void setHeight(String height) {
-					this.height = height;
-				}
+			public void setBox(List<String> box) {
+				this.box = box;
 			}
 		}
 	}
@@ -149,9 +166,7 @@ public class DetectQRCodesResponse extends AcsResponse {
 
 		private String srcUri;
 
-		private String errorCode;
-
-		private String errorMessage;
+		private String reason;
 
 		public String getSrcUri() {
 			return this.srcUri;
@@ -161,26 +176,18 @@ public class DetectQRCodesResponse extends AcsResponse {
 			this.srcUri = srcUri;
 		}
 
-		public String getErrorCode() {
-			return this.errorCode;
+		public String getReason() {
+			return this.reason;
 		}
 
-		public void setErrorCode(String errorCode) {
-			this.errorCode = errorCode;
-		}
-
-		public String getErrorMessage() {
-			return this.errorMessage;
-		}
-
-		public void setErrorMessage(String errorMessage) {
-			this.errorMessage = errorMessage;
+		public void setReason(String reason) {
+			this.reason = reason;
 		}
 	}
 
 	@Override
-	public DetectQRCodesResponse getInstance(UnmarshallerContext context) {
-		return	DetectQRCodesResponseUnmarshaller.unmarshall(this, context);
+	public DetectLogoResponse getInstance(UnmarshallerContext context) {
+		return	DetectLogoResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

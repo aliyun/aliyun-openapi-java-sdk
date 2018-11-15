@@ -40,6 +40,8 @@ public class CreateOfficeConversionTaskRequest extends RpcAcsRequest<CreateOffic
 
 	private Long endPage;
 
+	private String idempotentToken;
+
 	private String tgtFileSuffix;
 
 	private Boolean sheetOnePage;
@@ -140,6 +142,17 @@ public class CreateOfficeConversionTaskRequest extends RpcAcsRequest<CreateOffic
 		this.endPage = endPage;
 		if(endPage != null){
 			putQueryParameter("EndPage", endPage.toString());
+		}
+	}
+
+	public String getIdempotentToken() {
+		return this.idempotentToken;
+	}
+
+	public void setIdempotentToken(String idempotentToken) {
+		this.idempotentToken = idempotentToken;
+		if(idempotentToken != null){
+			putQueryParameter("IdempotentToken", idempotentToken);
 		}
 	}
 

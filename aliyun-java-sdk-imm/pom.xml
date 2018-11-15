@@ -3,7 +3,7 @@
   <groupId>com.aliyun</groupId>
   <artifactId>aliyun-java-sdk-imm</artifactId>
   <packaging>jar</packaging>
-  <version>1.8.0</version>
+  <version>1.8.1</version>
     <name>aliyun-java-sdk-imm</name>
   <url>http://www.aliyun.com</url>
   <description>Aliyun Open API SDK for Java
@@ -30,7 +30,7 @@ http://www.aliyun.com</description>
 	  <dependency>
 		  <groupId>com.aliyun</groupId>
 		  <artifactId>aliyun-java-sdk-core</artifactId>
-		  <version>4.0.1</version>
+		  <version>4.1.2</version>
 		  <optional>true</optional>
 	  </dependency>
 
@@ -60,7 +60,7 @@ http://www.aliyun.com</description>
 			<name>Aliyun SDK</name>
 			<email>aliyunsdk@aliyun.com</email>
 		</developer>
-	</developers>  
+	</developers>
   <build>
 
         <!--测试-->

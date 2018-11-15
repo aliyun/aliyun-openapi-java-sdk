@@ -20,37 +20,24 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class FaceCompareRequest extends RpcAcsRequest<FaceCompareResponse> {
+public class DetectLogoRequest extends RpcAcsRequest<DetectLogoResponse> {
 	
-	public FaceCompareRequest() {
-		super("imm", "2017-09-06", "FaceCompare", "imm");
+	public DetectLogoRequest() {
+		super("imm", "2017-09-06", "DetectLogo", "imm");
 	}
 
-	private String srcUriB;
-
-	private String srcUriA;
+	private String srcUris;
 
 	private String project;
 
-	public String getSrcUriB() {
-		return this.srcUriB;
+	public String getSrcUris() {
+		return this.srcUris;
 	}
 
-	public void setSrcUriB(String srcUriB) {
-		this.srcUriB = srcUriB;
-		if(srcUriB != null){
-			putQueryParameter("SrcUriB", srcUriB);
-		}
-	}
-
-	public String getSrcUriA() {
-		return this.srcUriA;
-	}
-
-	public void setSrcUriA(String srcUriA) {
-		this.srcUriA = srcUriA;
-		if(srcUriA != null){
-			putQueryParameter("SrcUriA", srcUriA);
+	public void setSrcUris(String srcUris) {
+		this.srcUris = srcUris;
+		if(srcUris != null){
+			putQueryParameter("SrcUris", srcUris);
 		}
 	}
 
@@ -66,8 +53,8 @@ public class FaceCompareRequest extends RpcAcsRequest<FaceCompareResponse> {
 	}
 
 	@Override
-	public Class<FaceCompareResponse> getResponseClass() {
-		return FaceCompareResponse.class;
+	public Class<DetectLogoResponse> getResponseClass() {
+		return DetectLogoResponse.class;
 	}
 
 }

@@ -16,9 +16,8 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package com.aliyuncs.imm.transform.v20170906;
+package com.aliyuncs.imm.main;
 
-import com.aliyuncs.imm.model.v20170906.ActionResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
