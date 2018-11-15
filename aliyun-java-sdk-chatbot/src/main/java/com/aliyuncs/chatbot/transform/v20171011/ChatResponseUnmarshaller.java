@@ -22,6 +22,7 @@ import com.aliyuncs.chatbot.model.v20171011.ChatResponse.Message;
 import com.aliyuncs.chatbot.model.v20171011.ChatResponse.Message.Knowledge;
 import com.aliyuncs.chatbot.model.v20171011.ChatResponse.Message.Recommend;
 import com.aliyuncs.chatbot.model.v20171011.ChatResponse.Message.Text;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

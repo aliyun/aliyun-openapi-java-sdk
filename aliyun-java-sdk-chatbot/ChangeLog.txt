@@ -1,3 +1,6 @@
+2018-11-15 Version: 1.2.0
+1, Add new API.
+
 2018-07-05 Version: 1.1.0
 1, A new optional parameter 'Perspectives' is introduced to the 'Chat' API. By filling this parameter when calling 'Chat', you'll get the knowledge base content within the specified perspectives.
 
