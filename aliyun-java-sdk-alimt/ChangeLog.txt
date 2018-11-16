@@ -1,0 +1,5 @@
+2018-11-16 Version: 1.0.0
+1, The Machine Translation API released two versions as follows:
+2, Universal version API release
+3, E-commerce version API release
+
