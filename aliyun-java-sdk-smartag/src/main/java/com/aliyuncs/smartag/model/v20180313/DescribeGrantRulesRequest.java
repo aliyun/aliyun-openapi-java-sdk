@@ -20,25 +20,25 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class UpdateSmartAccessGatewayVersionRequest extends RpcAcsRequest<UpdateSmartAccessGatewayVersionResponse> {
+public class DescribeGrantRulesRequest extends RpcAcsRequest<DescribeGrantRulesResponse> {
 	
-	public UpdateSmartAccessGatewayVersionRequest() {
-		super("Smartag", "2018-03-13", "UpdateSmartAccessGatewayVersion", "smartag");
+	public DescribeGrantRulesRequest() {
+		super("Smartag", "2018-03-13", "DescribeGrantRules", "smartag");
 	}
 
 	private Long resourceOwnerId;
-
-	private String serialNumber;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
-	private String smartAGId;
+	private String pageSize;
+
+	private String associatedCcnId;
 
 	private Long ownerId;
 
-	private String versionCode;
+	private String pageNumber;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -48,17 +48,6 @@ public class UpdateSmartAccessGatewayVersionRequest extends RpcAcsRequest<Update
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getSerialNumber() {
-		return this.serialNumber;
-	}
-
-	public void setSerialNumber(String serialNumber) {
-		this.serialNumber = serialNumber;
-		if(serialNumber != null){
-			putQueryParameter("SerialNumber", serialNumber);
 		}
 	}
 
@@ -84,14 +73,25 @@ public class UpdateSmartAccessGatewayVersionRequest extends RpcAcsRequest<Update
 		}
 	}
 
-	public String getSmartAGId() {
-		return this.smartAGId;
+	public String getPageSize() {
+		return this.pageSize;
 	}
 
-	public void setSmartAGId(String smartAGId) {
-		this.smartAGId = smartAGId;
-		if(smartAGId != null){
-			putQueryParameter("SmartAGId", smartAGId);
+	public void setPageSize(String pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize);
+		}
+	}
+
+	public String getAssociatedCcnId() {
+		return this.associatedCcnId;
+	}
+
+	public void setAssociatedCcnId(String associatedCcnId) {
+		this.associatedCcnId = associatedCcnId;
+		if(associatedCcnId != null){
+			putQueryParameter("AssociatedCcnId", associatedCcnId);
 		}
 	}
 
@@ -106,20 +106,20 @@ public class UpdateSmartAccessGatewayVersionRequest extends RpcAcsRequest<Update
 		}
 	}
 
-	public String getVersionCode() {
-		return this.versionCode;
+	public String getPageNumber() {
+		return this.pageNumber;
 	}
 
-	public void setVersionCode(String versionCode) {
-		this.versionCode = versionCode;
-		if(versionCode != null){
-			putQueryParameter("VersionCode", versionCode);
+	public void setPageNumber(String pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber);
 		}
 	}
 
 	@Override
-	public Class<UpdateSmartAccessGatewayVersionResponse> getResponseClass() {
-		return UpdateSmartAccessGatewayVersionResponse.class;
+	public Class<DescribeGrantRulesResponse> getResponseClass() {
+		return DescribeGrantRulesResponse.class;
 	}
 
 }

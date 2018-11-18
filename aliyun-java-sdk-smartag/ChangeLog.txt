@@ -1,3 +1,8 @@
+2018-11-18 Version: 1.3.0
+1, Add unicom interface.
+2, Add switchSAGHaState, CreateSAGLinkLevelHa and DeleteSAGLinkLevelHa.
+3, Add CEN cross account bind interface.
+
 2018-08-13 Version: 1.2.0
 1, Add cross domain support.
 2, Add parameter SerialNumber to interface RebootSmartAccessGateway.

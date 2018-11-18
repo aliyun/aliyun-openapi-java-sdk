@@ -20,25 +20,31 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class UpdateSmartAccessGatewayVersionRequest extends RpcAcsRequest<UpdateSmartAccessGatewayVersionResponse> {
+public class CreateSAGLinkLevelHaRequest extends RpcAcsRequest<CreateSAGLinkLevelHaResponse> {
 	
-	public UpdateSmartAccessGatewayVersionRequest() {
-		super("Smartag", "2018-03-13", "UpdateSmartAccessGatewayVersion", "smartag");
+	public CreateSAGLinkLevelHaRequest() {
+		super("Smartag", "2018-03-13", "CreateSAGLinkLevelHa", "smartag");
 	}
 
 	private Long resourceOwnerId;
 
-	private String serialNumber;
+	private String backupLinkId;
 
 	private String resourceOwnerAccount;
 
+	private String haType;
+
 	private String ownerAccount;
+
+	private String mainLinkRegionId;
 
 	private String smartAGId;
 
 	private Long ownerId;
 
-	private String versionCode;
+	private String mainLinkId;
+
+	private String backupLinkRegionId;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -51,14 +57,14 @@ public class UpdateSmartAccessGatewayVersionRequest extends RpcAcsRequest<Update
 		}
 	}
 
-	public String getSerialNumber() {
-		return this.serialNumber;
+	public String getBackupLinkId() {
+		return this.backupLinkId;
 	}
 
-	public void setSerialNumber(String serialNumber) {
-		this.serialNumber = serialNumber;
-		if(serialNumber != null){
-			putQueryParameter("SerialNumber", serialNumber);
+	public void setBackupLinkId(String backupLinkId) {
+		this.backupLinkId = backupLinkId;
+		if(backupLinkId != null){
+			putQueryParameter("BackupLinkId", backupLinkId);
 		}
 	}
 
@@ -73,6 +79,17 @@ public class UpdateSmartAccessGatewayVersionRequest extends RpcAcsRequest<Update
 		}
 	}
 
+	public String getHaType() {
+		return this.haType;
+	}
+
+	public void setHaType(String haType) {
+		this.haType = haType;
+		if(haType != null){
+			putQueryParameter("HaType", haType);
+		}
+	}
+
 	public String getOwnerAccount() {
 		return this.ownerAccount;
 	}
@@ -81,6 +98,17 @@ public class UpdateSmartAccessGatewayVersionRequest extends RpcAcsRequest<Update
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public String getMainLinkRegionId() {
+		return this.mainLinkRegionId;
+	}
+
+	public void setMainLinkRegionId(String mainLinkRegionId) {
+		this.mainLinkRegionId = mainLinkRegionId;
+		if(mainLinkRegionId != null){
+			putQueryParameter("MainLinkRegionId", mainLinkRegionId);
 		}
 	}
 
@@ -106,20 +134,31 @@ public class UpdateSmartAccessGatewayVersionRequest extends RpcAcsRequest<Update
 		}
 	}
 
-	public String getVersionCode() {
-		return this.versionCode;
+	public String getMainLinkId() {
+		return this.mainLinkId;
 	}
 
-	public void setVersionCode(String versionCode) {
-		this.versionCode = versionCode;
-		if(versionCode != null){
-			putQueryParameter("VersionCode", versionCode);
+	public void setMainLinkId(String mainLinkId) {
+		this.mainLinkId = mainLinkId;
+		if(mainLinkId != null){
+			putQueryParameter("MainLinkId", mainLinkId);
+		}
+	}
+
+	public String getBackupLinkRegionId() {
+		return this.backupLinkRegionId;
+	}
+
+	public void setBackupLinkRegionId(String backupLinkRegionId) {
+		this.backupLinkRegionId = backupLinkRegionId;
+		if(backupLinkRegionId != null){
+			putQueryParameter("BackupLinkRegionId", backupLinkRegionId);
 		}
 	}
 
 	@Override
-	public Class<UpdateSmartAccessGatewayVersionResponse> getResponseClass() {
-		return UpdateSmartAccessGatewayVersionResponse.class;
+	public Class<CreateSAGLinkLevelHaResponse> getResponseClass() {
+		return CreateSAGLinkLevelHaResponse.class;
 	}
 
 }

@@ -16,16 +16,22 @@ package com.aliyuncs.smartag.model.v20180313;
 
 import java.util.Map;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.smartag.transform.v20180313.ModifySmartAccessGatewayResponseUnmarshaller;
+import com.aliyuncs.smartag.transform.v20180313.UnicomSignConfirmResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ModifySmartAccessGatewayResponse extends AcsResponse {
+public class UnicomSignConfirmResponse extends AcsResponse {
 
 	private String requestId;
+
+	private String code;
+
+	private String message;
+
+	private Boolean success;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -35,8 +41,32 @@ public class ModifySmartAccessGatewayResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
 	@Override
-	public ModifySmartAccessGatewayResponse getInstance(UnmarshallerContext context) {
-		return	ModifySmartAccessGatewayResponseUnmarshaller.unmarshall(this, context);
+	public UnicomSignConfirmResponse getInstance(UnmarshallerContext context) {
+		return	UnicomSignConfirmResponseUnmarshaller.unmarshall(this, context);
 	}
 }

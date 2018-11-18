@@ -32,6 +32,8 @@ public class DescribeSmartAccessGatewayHaResponseUnmarshaller {
 		describeSmartAccessGatewayHaResponse.setMainLinkId(context.stringValue("DescribeSmartAccessGatewayHaResponse.MainLinkId"));
 		describeSmartAccessGatewayHaResponse.setBackupLinkId(context.stringValue("DescribeSmartAccessGatewayHaResponse.BackupLinkId"));
 		describeSmartAccessGatewayHaResponse.setSmartAGId(context.stringValue("DescribeSmartAccessGatewayHaResponse.SmartAGId"));
+		describeSmartAccessGatewayHaResponse.setMainLinkState(context.stringValue("DescribeSmartAccessGatewayHaResponse.MainLinkState"));
+		describeSmartAccessGatewayHaResponse.setBackupLinkState(context.stringValue("DescribeSmartAccessGatewayHaResponse.BackupLinkState"));
 	 
 	 	return describeSmartAccessGatewayHaResponse;
 	}

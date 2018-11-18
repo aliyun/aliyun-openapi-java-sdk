@@ -32,6 +32,8 @@ public class DescribeSmartAccessGatewayVersionsRequest extends RpcAcsRequest<Des
 
 	private String ownerAccount;
 
+	private String smartAGId;
+
 	private Long ownerId;
 
 	public Long getResourceOwnerId() {
@@ -64,6 +66,17 @@ public class DescribeSmartAccessGatewayVersionsRequest extends RpcAcsRequest<Des
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public String getSmartAGId() {
+		return this.smartAGId;
+	}
+
+	public void setSmartAGId(String smartAGId) {
+		this.smartAGId = smartAGId;
+		if(smartAGId != null){
+			putQueryParameter("SmartAGId", smartAGId);
 		}
 	}
 

@@ -16,16 +16,18 @@ package com.aliyuncs.smartag.model.v20180313;
 
 import java.util.Map;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.smartag.transform.v20180313.ModifySmartAccessGatewayResponseUnmarshaller;
+import com.aliyuncs.smartag.transform.v20180313.UpgradeSmartAccessGatewayResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ModifySmartAccessGatewayResponse extends AcsResponse {
+public class UpgradeSmartAccessGatewayResponse extends AcsResponse {
 
 	private String requestId;
+
+	private String orderId;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -35,8 +37,16 @@ public class ModifySmartAccessGatewayResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public String getOrderId() {
+		return this.orderId;
+	}
+
+	public void setOrderId(String orderId) {
+		this.orderId = orderId;
+	}
+
 	@Override
-	public ModifySmartAccessGatewayResponse getInstance(UnmarshallerContext context) {
-		return	ModifySmartAccessGatewayResponseUnmarshaller.unmarshall(this, context);
+	public UpgradeSmartAccessGatewayResponse getInstance(UnmarshallerContext context) {
+		return	UpgradeSmartAccessGatewayResponseUnmarshaller.unmarshall(this, context);
 	}
 }

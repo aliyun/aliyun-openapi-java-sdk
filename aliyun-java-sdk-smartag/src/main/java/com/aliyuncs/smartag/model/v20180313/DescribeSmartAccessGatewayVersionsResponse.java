@@ -15,6 +15,7 @@
 package com.aliyuncs.smartag.model.v20180313;
 
 import java.util.List;
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.smartag.transform.v20180313.DescribeSmartAccessGatewayVersionsResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;

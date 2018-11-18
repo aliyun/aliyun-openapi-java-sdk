@@ -20,15 +20,13 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class UpdateSmartAccessGatewayVersionRequest extends RpcAcsRequest<UpdateSmartAccessGatewayVersionResponse> {
+public class DeleteSAGLinkLevelHaRequest extends RpcAcsRequest<DeleteSAGLinkLevelHaResponse> {
 	
-	public UpdateSmartAccessGatewayVersionRequest() {
-		super("Smartag", "2018-03-13", "UpdateSmartAccessGatewayVersion", "smartag");
+	public DeleteSAGLinkLevelHaRequest() {
+		super("Smartag", "2018-03-13", "DeleteSAGLinkLevelHa", "smartag");
 	}
 
 	private Long resourceOwnerId;
-
-	private String serialNumber;
 
 	private String resourceOwnerAccount;
 
@@ -38,8 +36,6 @@ public class UpdateSmartAccessGatewayVersionRequest extends RpcAcsRequest<Update
 
 	private Long ownerId;
 
-	private String versionCode;
-
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
 	}
@@ -48,17 +44,6 @@ public class UpdateSmartAccessGatewayVersionRequest extends RpcAcsRequest<Update
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getSerialNumber() {
-		return this.serialNumber;
-	}
-
-	public void setSerialNumber(String serialNumber) {
-		this.serialNumber = serialNumber;
-		if(serialNumber != null){
-			putQueryParameter("SerialNumber", serialNumber);
 		}
 	}
 
@@ -106,20 +91,9 @@ public class UpdateSmartAccessGatewayVersionRequest extends RpcAcsRequest<Update
 		}
 	}
 
-	public String getVersionCode() {
-		return this.versionCode;
-	}
-
-	public void setVersionCode(String versionCode) {
-		this.versionCode = versionCode;
-		if(versionCode != null){
-			putQueryParameter("VersionCode", versionCode);
-		}
-	}
-
 	@Override
-	public Class<UpdateSmartAccessGatewayVersionResponse> getResponseClass() {
-		return UpdateSmartAccessGatewayVersionResponse.class;
+	public Class<DeleteSAGLinkLevelHaResponse> getResponseClass() {
+		return DeleteSAGLinkLevelHaResponse.class;
 	}
 
 }

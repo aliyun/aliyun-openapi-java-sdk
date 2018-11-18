@@ -20,25 +20,23 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class UpdateSmartAccessGatewayVersionRequest extends RpcAcsRequest<UpdateSmartAccessGatewayVersionResponse> {
+public class SwitchSAGHaStateRequest extends RpcAcsRequest<SwitchSAGHaStateResponse> {
 	
-	public UpdateSmartAccessGatewayVersionRequest() {
-		super("Smartag", "2018-03-13", "UpdateSmartAccessGatewayVersion", "smartag");
+	public SwitchSAGHaStateRequest() {
+		super("Smartag", "2018-03-13", "SwitchSAGHaState", "smartag");
 	}
 
 	private Long resourceOwnerId;
 
-	private String serialNumber;
-
 	private String resourceOwnerAccount;
+
+	private String haType;
 
 	private String ownerAccount;
 
 	private String smartAGId;
 
 	private Long ownerId;
-
-	private String versionCode;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -51,17 +49,6 @@ public class UpdateSmartAccessGatewayVersionRequest extends RpcAcsRequest<Update
 		}
 	}
 
-	public String getSerialNumber() {
-		return this.serialNumber;
-	}
-
-	public void setSerialNumber(String serialNumber) {
-		this.serialNumber = serialNumber;
-		if(serialNumber != null){
-			putQueryParameter("SerialNumber", serialNumber);
-		}
-	}
-
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
 	}
@@ -70,6 +57,17 @@ public class UpdateSmartAccessGatewayVersionRequest extends RpcAcsRequest<Update
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getHaType() {
+		return this.haType;
+	}
+
+	public void setHaType(String haType) {
+		this.haType = haType;
+		if(haType != null){
+			putQueryParameter("HaType", haType);
 		}
 	}
 
@@ -106,20 +104,9 @@ public class UpdateSmartAccessGatewayVersionRequest extends RpcAcsRequest<Update
 		}
 	}
 
-	public String getVersionCode() {
-		return this.versionCode;
-	}
-
-	public void setVersionCode(String versionCode) {
-		this.versionCode = versionCode;
-		if(versionCode != null){
-			putQueryParameter("VersionCode", versionCode);
-		}
-	}
-
 	@Override
-	public Class<UpdateSmartAccessGatewayVersionResponse> getResponseClass() {
-		return UpdateSmartAccessGatewayVersionResponse.class;
+	public Class<SwitchSAGHaStateResponse> getResponseClass() {
+		return SwitchSAGHaStateResponse.class;
 	}
 
 }

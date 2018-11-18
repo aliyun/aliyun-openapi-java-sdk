@@ -20,15 +20,17 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class UpdateSmartAccessGatewayVersionRequest extends RpcAcsRequest<UpdateSmartAccessGatewayVersionResponse> {
+public class DowngradeSmartAccessGatewayRequest extends RpcAcsRequest<DowngradeSmartAccessGatewayResponse> {
 	
-	public UpdateSmartAccessGatewayVersionRequest() {
-		super("Smartag", "2018-03-13", "UpdateSmartAccessGatewayVersion", "smartag");
+	public DowngradeSmartAccessGatewayRequest() {
+		super("Smartag", "2018-03-13", "DowngradeSmartAccessGateway", "smartag");
 	}
 
 	private Long resourceOwnerId;
 
-	private String serialNumber;
+	private Boolean autoPay;
+
+	private Long bandWidthSpec;
 
 	private String resourceOwnerAccount;
 
@@ -37,8 +39,6 @@ public class UpdateSmartAccessGatewayVersionRequest extends RpcAcsRequest<Update
 	private String smartAGId;
 
 	private Long ownerId;
-
-	private String versionCode;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -51,14 +51,25 @@ public class UpdateSmartAccessGatewayVersionRequest extends RpcAcsRequest<Update
 		}
 	}
 
-	public String getSerialNumber() {
-		return this.serialNumber;
+	public Boolean getAutoPay() {
+		return this.autoPay;
 	}
 
-	public void setSerialNumber(String serialNumber) {
-		this.serialNumber = serialNumber;
-		if(serialNumber != null){
-			putQueryParameter("SerialNumber", serialNumber);
+	public void setAutoPay(Boolean autoPay) {
+		this.autoPay = autoPay;
+		if(autoPay != null){
+			putQueryParameter("AutoPay", autoPay.toString());
+		}
+	}
+
+	public Long getBandWidthSpec() {
+		return this.bandWidthSpec;
+	}
+
+	public void setBandWidthSpec(Long bandWidthSpec) {
+		this.bandWidthSpec = bandWidthSpec;
+		if(bandWidthSpec != null){
+			putQueryParameter("BandWidthSpec", bandWidthSpec.toString());
 		}
 	}
 
@@ -106,20 +117,9 @@ public class UpdateSmartAccessGatewayVersionRequest extends RpcAcsRequest<Update
 		}
 	}
 
-	public String getVersionCode() {
-		return this.versionCode;
-	}
-
-	public void setVersionCode(String versionCode) {
-		this.versionCode = versionCode;
-		if(versionCode != null){
-			putQueryParameter("VersionCode", versionCode);
-		}
-	}
-
 	@Override
-	public Class<UpdateSmartAccessGatewayVersionResponse> getResponseClass() {
-		return UpdateSmartAccessGatewayVersionResponse.class;
+	public Class<DowngradeSmartAccessGatewayResponse> getResponseClass() {
+		return DowngradeSmartAccessGatewayResponse.class;
 	}
 
 }

@@ -14,6 +14,7 @@
 
 package com.aliyuncs.smartag.model.v20180313;
 
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.smartag.transform.v20180313.DescribeSmartAccessGatewayHaResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -43,6 +44,10 @@ public class DescribeSmartAccessGatewayHaResponse extends AcsResponse {
 	private String backupLinkId;
 
 	private String smartAGId;
+
+	private String mainLinkState;
+
+	private String backupLinkState;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -122,6 +127,22 @@ public class DescribeSmartAccessGatewayHaResponse extends AcsResponse {
 
 	public void setSmartAGId(String smartAGId) {
 		this.smartAGId = smartAGId;
+	}
+
+	public String getMainLinkState() {
+		return this.mainLinkState;
+	}
+
+	public void setMainLinkState(String mainLinkState) {
+		this.mainLinkState = mainLinkState;
+	}
+
+	public String getBackupLinkState() {
+		return this.backupLinkState;
+	}
+
+	public void setBackupLinkState(String backupLinkState) {
+		this.backupLinkState = backupLinkState;
 	}
 
 	@Override

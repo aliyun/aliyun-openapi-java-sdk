@@ -16,14 +16,14 @@ package com.aliyuncs.smartag.model.v20180313;
 
 import java.util.Map;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.smartag.transform.v20180313.ModifySmartAccessGatewayResponseUnmarshaller;
+import com.aliyuncs.smartag.transform.v20180313.DeleteSAGLinkLevelHaResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ModifySmartAccessGatewayResponse extends AcsResponse {
+public class DeleteSAGLinkLevelHaResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -36,7 +36,7 @@ public class ModifySmartAccessGatewayResponse extends AcsResponse {
 	}
 
 	@Override
-	public ModifySmartAccessGatewayResponse getInstance(UnmarshallerContext context) {
-		return	ModifySmartAccessGatewayResponseUnmarshaller.unmarshall(this, context);
+	public DeleteSAGLinkLevelHaResponse getInstance(UnmarshallerContext context) {
+		return	DeleteSAGLinkLevelHaResponseUnmarshaller.unmarshall(this, context);
 	}
 }

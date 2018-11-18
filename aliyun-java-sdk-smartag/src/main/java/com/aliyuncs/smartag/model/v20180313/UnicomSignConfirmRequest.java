@@ -15,30 +15,27 @@
 package com.aliyuncs.smartag.model.v20180313;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 
 /**
  * @author auto create
  * @version 
  */
-public class UpdateSmartAccessGatewayVersionRequest extends RpcAcsRequest<UpdateSmartAccessGatewayVersionResponse> {
+public class UnicomSignConfirmRequest extends RpcAcsRequest<UnicomSignConfirmResponse> {
 	
-	public UpdateSmartAccessGatewayVersionRequest() {
-		super("Smartag", "2018-03-13", "UpdateSmartAccessGatewayVersion", "smartag");
+	public UnicomSignConfirmRequest() {
+		super("Smartag", "2018-03-13", "UnicomSignConfirm", "smartag");
 	}
 
 	private Long resourceOwnerId;
-
-	private String serialNumber;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
-	private String smartAGId;
+	private List<TmsOrder> tmsOrders;
 
 	private Long ownerId;
-
-	private String versionCode;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -48,17 +45,6 @@ public class UpdateSmartAccessGatewayVersionRequest extends RpcAcsRequest<Update
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getSerialNumber() {
-		return this.serialNumber;
-	}
-
-	public void setSerialNumber(String serialNumber) {
-		this.serialNumber = serialNumber;
-		if(serialNumber != null){
-			putQueryParameter("SerialNumber", serialNumber);
 		}
 	}
 
@@ -84,15 +70,20 @@ public class UpdateSmartAccessGatewayVersionRequest extends RpcAcsRequest<Update
 		}
 	}
 
-	public String getSmartAGId() {
-		return this.smartAGId;
+	public List<TmsOrder> getTmsOrders() {
+		return this.tmsOrders;
 	}
 
-	public void setSmartAGId(String smartAGId) {
-		this.smartAGId = smartAGId;
-		if(smartAGId != null){
-			putQueryParameter("SmartAGId", smartAGId);
-		}
+	public void setTmsOrders(List<TmsOrder> tmsOrders) {
+		this.tmsOrders = tmsOrders;	
+		if (tmsOrders != null) {
+			for (int depth1 = 0; depth1 < tmsOrders.size(); depth1++) {
+				putQueryParameter("TmsOrder." + (depth1 + 1) + ".TmsCode" , tmsOrders.get(depth1).getTmsCode());
+				putQueryParameter("TmsOrder." + (depth1 + 1) + ".SigningTime" , tmsOrders.get(depth1).getSigningTime());
+				putQueryParameter("TmsOrder." + (depth1 + 1) + ".TmsOrderCode" , tmsOrders.get(depth1).getTmsOrderCode());
+				putQueryParameter("TmsOrder." + (depth1 + 1) + ".TradeId" , tmsOrders.get(depth1).getTradeId());
+			}
+		}	
 	}
 
 	public Long getOwnerId() {
@@ -106,20 +97,52 @@ public class UpdateSmartAccessGatewayVersionRequest extends RpcAcsRequest<Update
 		}
 	}
 
-	public String getVersionCode() {
-		return this.versionCode;
-	}
+	public static class TmsOrder {
 
-	public void setVersionCode(String versionCode) {
-		this.versionCode = versionCode;
-		if(versionCode != null){
-			putQueryParameter("VersionCode", versionCode);
+		private String tmsCode;
+
+		private String signingTime;
+
+		private String tmsOrderCode;
+
+		private String tradeId;
+
+		public String getTmsCode() {
+			return this.tmsCode;
+		}
+
+		public void setTmsCode(String tmsCode) {
+			this.tmsCode = tmsCode;
+		}
+
+		public String getSigningTime() {
+			return this.signingTime;
+		}
+
+		public void setSigningTime(String signingTime) {
+			this.signingTime = signingTime;
+		}
+
+		public String getTmsOrderCode() {
+			return this.tmsOrderCode;
+		}
+
+		public void setTmsOrderCode(String tmsOrderCode) {
+			this.tmsOrderCode = tmsOrderCode;
+		}
+
+		public String getTradeId() {
+			return this.tradeId;
+		}
+
+		public void setTradeId(String tradeId) {
+			this.tradeId = tradeId;
 		}
 	}
 
 	@Override
-	public Class<UpdateSmartAccessGatewayVersionResponse> getResponseClass() {
-		return UpdateSmartAccessGatewayVersionResponse.class;
+	public Class<UnicomSignConfirmResponse> getResponseClass() {
+		return UnicomSignConfirmResponse.class;
 	}
 
 }

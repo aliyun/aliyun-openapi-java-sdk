@@ -20,25 +20,25 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class UpdateSmartAccessGatewayVersionRequest extends RpcAcsRequest<UpdateSmartAccessGatewayVersionResponse> {
+public class GrantInstanceToCbnRequest extends RpcAcsRequest<GrantInstanceToCbnResponse> {
 	
-	public UpdateSmartAccessGatewayVersionRequest() {
-		super("Smartag", "2018-03-13", "UpdateSmartAccessGatewayVersion", "smartag");
+	public GrantInstanceToCbnRequest() {
+		super("Smartag", "2018-03-13", "GrantInstanceToCbn", "smartag");
 	}
 
 	private Long resourceOwnerId;
 
-	private String serialNumber;
-
 	private String resourceOwnerAccount;
+
+	private String cenUid;
+
+	private String cenInstanceId;
 
 	private String ownerAccount;
 
-	private String smartAGId;
+	private String ccnInstanceId;
 
 	private Long ownerId;
-
-	private String versionCode;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -48,17 +48,6 @@ public class UpdateSmartAccessGatewayVersionRequest extends RpcAcsRequest<Update
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getSerialNumber() {
-		return this.serialNumber;
-	}
-
-	public void setSerialNumber(String serialNumber) {
-		this.serialNumber = serialNumber;
-		if(serialNumber != null){
-			putQueryParameter("SerialNumber", serialNumber);
 		}
 	}
 
@@ -73,6 +62,28 @@ public class UpdateSmartAccessGatewayVersionRequest extends RpcAcsRequest<Update
 		}
 	}
 
+	public String getCenUid() {
+		return this.cenUid;
+	}
+
+	public void setCenUid(String cenUid) {
+		this.cenUid = cenUid;
+		if(cenUid != null){
+			putQueryParameter("CenUid", cenUid);
+		}
+	}
+
+	public String getCenInstanceId() {
+		return this.cenInstanceId;
+	}
+
+	public void setCenInstanceId(String cenInstanceId) {
+		this.cenInstanceId = cenInstanceId;
+		if(cenInstanceId != null){
+			putQueryParameter("CenInstanceId", cenInstanceId);
+		}
+	}
+
 	public String getOwnerAccount() {
 		return this.ownerAccount;
 	}
@@ -84,14 +95,14 @@ public class UpdateSmartAccessGatewayVersionRequest extends RpcAcsRequest<Update
 		}
 	}
 
-	public String getSmartAGId() {
-		return this.smartAGId;
+	public String getCcnInstanceId() {
+		return this.ccnInstanceId;
 	}
 
-	public void setSmartAGId(String smartAGId) {
-		this.smartAGId = smartAGId;
-		if(smartAGId != null){
-			putQueryParameter("SmartAGId", smartAGId);
+	public void setCcnInstanceId(String ccnInstanceId) {
+		this.ccnInstanceId = ccnInstanceId;
+		if(ccnInstanceId != null){
+			putQueryParameter("CcnInstanceId", ccnInstanceId);
 		}
 	}
 
@@ -106,20 +117,9 @@ public class UpdateSmartAccessGatewayVersionRequest extends RpcAcsRequest<Update
 		}
 	}
 
-	public String getVersionCode() {
-		return this.versionCode;
-	}
-
-	public void setVersionCode(String versionCode) {
-		this.versionCode = versionCode;
-		if(versionCode != null){
-			putQueryParameter("VersionCode", versionCode);
-		}
-	}
-
 	@Override
-	public Class<UpdateSmartAccessGatewayVersionResponse> getResponseClass() {
-		return UpdateSmartAccessGatewayVersionResponse.class;
+	public Class<GrantInstanceToCbnResponse> getResponseClass() {
+		return GrantInstanceToCbnResponse.class;
 	}
 
 }
