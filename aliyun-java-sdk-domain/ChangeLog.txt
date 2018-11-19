@@ -1,3 +1,6 @@
+2018-11-19 Version: 3.10.1
+1, Add field BargainSellerPrice and BargainSellerMobile
+
 2018-11-13 Version: 3.10.0
 1, Add FuzzyMatchDomainSensitiveWord interface，Support fuzzy matching sensitive words.
 2, Add BatchFuzzyMatchDomainSensitiveWord interface，Support batch fuzzy matching sensitive words.

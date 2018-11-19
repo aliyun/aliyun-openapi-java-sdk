@@ -47,6 +47,8 @@ public class QueryBrokerDemandResponseUnmarshaller {
 			demand.setPayPrice(context.floatValue("QueryBrokerDemandResponse.Data["+ i +"].PayPrice"));
 			demand.setPayTime(context.longValue("QueryBrokerDemandResponse.Data["+ i +"].PayTime"));
 			demand.setProduceType(context.integerValue("QueryBrokerDemandResponse.Data["+ i +"].ProduceType"));
+			demand.setBargainSellerPrice(context.floatValue("QueryBrokerDemandResponse.Data["+ i +"].BargainSellerPrice"));
+			demand.setBargainSellerMobile(context.stringValue("QueryBrokerDemandResponse.Data["+ i +"].BargainSellerMobile"));
 
 			data.add(demand);
 		}
