@@ -28,7 +28,6 @@ import com.aliyuncs.http.FormatType;
 import com.aliyuncs.http.HttpResponse;
 import com.aliyuncs.profile.IClientProfile;
 
-@SuppressWarnings("deprecation")
 public interface IAcsClient {
 
     public <T extends AcsResponse> HttpResponse doAction(AcsRequest<T> request)

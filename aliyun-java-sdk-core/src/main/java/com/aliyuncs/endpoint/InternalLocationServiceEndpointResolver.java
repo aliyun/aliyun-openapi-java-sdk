@@ -16,17 +16,19 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package com.aliyuncs.reader;
 
-import com.aliyuncs.http.FormatType;
+package com.aliyuncs.endpoint;
 
-@Deprecated
-public class ReaderFactory {
+import com.aliyuncs.DefaultAcsClient;
 
-    public static Reader createInstance(FormatType format) {
-        if (FormatType.JSON == format) { return new JsonReader(); }
-        if (FormatType.XML == format) { return new XmlReader(); }
+public class InternalLocationServiceEndpointResolver extends LocationServiceEndpointResolver {
 
-        throw new IllegalStateException("Server response has a bad format type: " + format);
+    private final static String INNER_LOCATION_SERVICE_ENDPOINT = "location-inner.aliyuncs.com";
+    private final static String INNER_LOCATION_SERVICE_API_VERSION = "2015-12-25";
+
+    public InternalLocationServiceEndpointResolver(DefaultAcsClient client) {
+        super(client);
+        this.locationServiceEndpoint = INNER_LOCATION_SERVICE_ENDPOINT;
+        this.locationServiceApiVersion = INNER_LOCATION_SERVICE_API_VERSION;
     }
 }

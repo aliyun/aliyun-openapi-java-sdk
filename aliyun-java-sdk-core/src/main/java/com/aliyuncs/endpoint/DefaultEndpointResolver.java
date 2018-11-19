@@ -31,7 +31,10 @@ public class DefaultEndpointResolver implements EndpointResolver {
     private UserCustomizedEndpointResolver userCustomizedEndpointResolver;
     private EndpointResolver insideEndpointResolver;
 
-    public DefaultEndpointResolver(DefaultAcsClient client, String userConfig) {
+    public DefaultEndpointResolver(
+            DefaultAcsClient client,
+            String userConfig,
+            boolean usingInternalLocationService) {
         userCustomizedEndpointResolver = new UserCustomizedEndpointResolver();
         List<EndpointResolverBase> resolverChain = new ArrayList<EndpointResolverBase>();
 
@@ -45,13 +48,22 @@ public class DefaultEndpointResolver implements EndpointResolver {
             resolverChain.add(new LocalConfigRegionalEndpointResolver(userConfig));
             resolverChain.add(new LocalConfigGlobalEndpointResolver(userConfig));
         }
-        resolverChain.add(new LocationServiceEndpointResolver(client));
+
+        if (usingInternalLocationService) {
+            resolverChain.add(new InternalLocationServiceEndpointResolver(client));
+        } else {
+            resolverChain.add(new LocationServiceEndpointResolver(client));
+        }
 
         insideEndpointResolver = new ChainedEndpointResolver(resolverChain);
     }
 
     public DefaultEndpointResolver(DefaultAcsClient client) {
-        this(client, null);
+        this(client, null, false);
+    }
+
+    public DefaultEndpointResolver(DefaultAcsClient client, boolean usingInternalLocationService) {
+        this(client, null, usingInternalLocationService);
     }
 
     public String resolve(ResolveEndpointRequest request) throws ClientException {

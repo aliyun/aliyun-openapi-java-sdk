@@ -1,3 +1,8 @@
+2018-11-19 Version: 4.2.2
+1,  remove buggy retry logic
+2,  add deprecated warning for request.setSecurityToken()
+3,  fixes 2 potential NPE
+
 2018-11-07 Version: 4.2.0
 1, add bssopenapi & fass endpoints
 
