@@ -15,6 +15,7 @@
 package com.aliyuncs.polardb.model.v20170801;
 
 import java.util.List;
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.polardb.transform.v20170801.DescribeAccountsResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -57,6 +58,10 @@ public class DescribeAccountsResponse extends AcsResponse {
 
 		private String accountType;
 
+		private String privExceeded;
+
+		private List<DatabasePrivilege> databasePrivileges;
+
 		public String getDBClusterId() {
 			return this.dBClusterId;
 		}
@@ -95,6 +100,55 @@ public class DescribeAccountsResponse extends AcsResponse {
 
 		public void setAccountType(String accountType) {
 			this.accountType = accountType;
+		}
+
+		public String getPrivExceeded() {
+			return this.privExceeded;
+		}
+
+		public void setPrivExceeded(String privExceeded) {
+			this.privExceeded = privExceeded;
+		}
+
+		public List<DatabasePrivilege> getDatabasePrivileges() {
+			return this.databasePrivileges;
+		}
+
+		public void setDatabasePrivileges(List<DatabasePrivilege> databasePrivileges) {
+			this.databasePrivileges = databasePrivileges;
+		}
+
+		public static class DatabasePrivilege {
+
+			private String dBName;
+
+			private String accountPrivilege;
+
+			private String accountPrivilegeDetail;
+
+			public String getDBName() {
+				return this.dBName;
+			}
+
+			public void setDBName(String dBName) {
+				this.dBName = dBName;
+			}
+
+			public String getAccountPrivilege() {
+				return this.accountPrivilege;
+			}
+
+			public void setAccountPrivilege(String accountPrivilege) {
+				this.accountPrivilege = accountPrivilege;
+			}
+
+			public String getAccountPrivilegeDetail() {
+				return this.accountPrivilegeDetail;
+			}
+
+			public void setAccountPrivilegeDetail(String accountPrivilegeDetail) {
+				this.accountPrivilegeDetail = accountPrivilegeDetail;
+			}
 		}
 	}
 

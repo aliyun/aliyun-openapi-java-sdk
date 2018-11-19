@@ -28,6 +28,8 @@ public class DescribeErrorLogsRequest extends RpcAcsRequest<DescribeErrorLogsRes
 
 	private Long resourceOwnerId;
 
+	private String dBNodeId;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
@@ -52,6 +54,17 @@ public class DescribeErrorLogsRequest extends RpcAcsRequest<DescribeErrorLogsRes
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getDBNodeId() {
+		return this.dBNodeId;
+	}
+
+	public void setDBNodeId(String dBNodeId) {
+		this.dBNodeId = dBNodeId;
+		if(dBNodeId != null){
+			putQueryParameter("DBNodeId", dBNodeId);
 		}
 	}
 

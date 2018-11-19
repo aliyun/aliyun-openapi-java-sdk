@@ -20,10 +20,10 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class DescribeSlowLogRecordsRequest extends RpcAcsRequest<DescribeSlowLogRecordsResponse> {
+public class ModifySQLExplorerPolicyRequest extends RpcAcsRequest<ModifySQLExplorerPolicyResponse> {
 	
-	public DescribeSlowLogRecordsRequest() {
-		super("polardb", "2017-08-01", "DescribeSlowLogRecords", "polardb");
+	public ModifySQLExplorerPolicyRequest() {
+		super("polardb", "2017-08-01", "ModifySQLExplorerPolicy", "polardb");
 	}
 
 	private Long resourceOwnerId;
@@ -32,19 +32,13 @@ public class DescribeSlowLogRecordsRequest extends RpcAcsRequest<DescribeSlowLog
 
 	private String resourceOwnerAccount;
 
+	private String sQLCollectorStatus;
+
 	private String ownerAccount;
-
-	private Integer pageSize;
-
-	private String endTime;
 
 	private String dBInstanceId;
 
-	private String startTime;
-
 	private Long ownerId;
-
-	private Integer pageNumber;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -79,6 +73,17 @@ public class DescribeSlowLogRecordsRequest extends RpcAcsRequest<DescribeSlowLog
 		}
 	}
 
+	public String getSQLCollectorStatus() {
+		return this.sQLCollectorStatus;
+	}
+
+	public void setSQLCollectorStatus(String sQLCollectorStatus) {
+		this.sQLCollectorStatus = sQLCollectorStatus;
+		if(sQLCollectorStatus != null){
+			putQueryParameter("SQLCollectorStatus", sQLCollectorStatus);
+		}
+	}
+
 	public String getOwnerAccount() {
 		return this.ownerAccount;
 	}
@@ -87,28 +92,6 @@ public class DescribeSlowLogRecordsRequest extends RpcAcsRequest<DescribeSlowLog
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
-	public String getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
-		if(endTime != null){
-			putQueryParameter("EndTime", endTime);
 		}
 	}
 
@@ -123,17 +106,6 @@ public class DescribeSlowLogRecordsRequest extends RpcAcsRequest<DescribeSlowLog
 		}
 	}
 
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("StartTime", startTime);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -145,20 +117,9 @@ public class DescribeSlowLogRecordsRequest extends RpcAcsRequest<DescribeSlowLog
 		}
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
-		}
-	}
-
 	@Override
-	public Class<DescribeSlowLogRecordsResponse> getResponseClass() {
-		return DescribeSlowLogRecordsResponse.class;
+	public Class<ModifySQLExplorerPolicyResponse> getResponseClass() {
+		return ModifySQLExplorerPolicyResponse.class;
 	}
 
 }

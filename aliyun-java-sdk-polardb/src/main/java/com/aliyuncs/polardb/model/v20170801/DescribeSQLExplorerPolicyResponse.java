@@ -16,16 +16,18 @@ package com.aliyuncs.polardb.model.v20170801;
 
 import java.util.Map;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.polardb.transform.v20170801.ModifyAccountDescriptionResponseUnmarshaller;
+import com.aliyuncs.polardb.transform.v20170801.DescribeSQLExplorerPolicyResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ModifyAccountDescriptionResponse extends AcsResponse {
+public class DescribeSQLExplorerPolicyResponse extends AcsResponse {
 
 	private String requestId;
+
+	private String sQLCollectorStatus;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -35,8 +37,16 @@ public class ModifyAccountDescriptionResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public String getSQLCollectorStatus() {
+		return this.sQLCollectorStatus;
+	}
+
+	public void setSQLCollectorStatus(String sQLCollectorStatus) {
+		this.sQLCollectorStatus = sQLCollectorStatus;
+	}
+
 	@Override
-	public ModifyAccountDescriptionResponse getInstance(UnmarshallerContext context) {
-		return	ModifyAccountDescriptionResponseUnmarshaller.unmarshall(this, context);
+	public DescribeSQLExplorerPolicyResponse getInstance(UnmarshallerContext context) {
+		return	DescribeSQLExplorerPolicyResponseUnmarshaller.unmarshall(this, context);
 	}
 }

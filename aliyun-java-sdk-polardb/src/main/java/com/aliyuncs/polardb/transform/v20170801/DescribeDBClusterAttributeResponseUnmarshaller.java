@@ -52,6 +52,7 @@ public class DescribeDBClusterAttributeResponseUnmarshaller {
 			dBClusterAttribute.setLockReason(context.stringValue("DescribeDBClusterAttributeResponse.Items["+ i +"].LockReason"));
 			dBClusterAttribute.setCreationTime(context.stringValue("DescribeDBClusterAttributeResponse.Items["+ i +"].CreationTime"));
 			dBClusterAttribute.setExpireTime(context.stringValue("DescribeDBClusterAttributeResponse.Items["+ i +"].ExpireTime"));
+			dBClusterAttribute.setIsLatestVersion(context.booleanValue("DescribeDBClusterAttributeResponse.Items["+ i +"].IsLatestVersion"));
 
 			List<DbInstance> dbInstances = new ArrayList<DbInstance>();
 			for (int j = 0; j < context.lengthValue("DescribeDBClusterAttributeResponse.Items["+ i +"].DbInstances.Length"); j++) {
@@ -70,6 +71,8 @@ public class DescribeDBClusterAttributeResponseUnmarshaller {
 				dbInstance.setCreationTime(context.stringValue("DescribeDBClusterAttributeResponse.Items["+ i +"].DbInstances["+ j +"].CreationTime"));
 				dbInstance.setDBInstanceClass(context.stringValue("DescribeDBClusterAttributeResponse.Items["+ i +"].DbInstances["+ j +"].DBInstanceClass"));
 				dbInstance.setSecurityIPList(context.stringValue("DescribeDBClusterAttributeResponse.Items["+ i +"].DbInstances["+ j +"].SecurityIPList"));
+				dbInstance.setCurrentMinorVersion(context.stringValue("DescribeDBClusterAttributeResponse.Items["+ i +"].DbInstances["+ j +"].CurrentMinorVersion"));
+				dbInstance.setLatestMinorVersion(context.stringValue("DescribeDBClusterAttributeResponse.Items["+ i +"].DbInstances["+ j +"].LatestMinorVersion"));
 				dbInstance.setDBInstanceType(context.stringValue("DescribeDBClusterAttributeResponse.Items["+ i +"].DbInstances["+ j +"].DBInstanceType"));
 
 				dbInstances.add(dbInstance);

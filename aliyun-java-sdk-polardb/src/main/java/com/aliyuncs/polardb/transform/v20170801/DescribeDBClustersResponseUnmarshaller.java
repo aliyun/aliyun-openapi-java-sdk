@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.polardb.model.v20170801.DescribeDBClustersResponse;
 import com.aliyuncs.polardb.model.v20170801.DescribeDBClustersResponse.DBCluster;
+import com.aliyuncs.polardb.model.v20170801.DescribeDBClustersResponse.DBCluster.DBNode;
 import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -49,7 +50,19 @@ public class DescribeDBClustersResponseUnmarshaller {
 			dBCluster.setLockReason(context.stringValue("DescribeDBClustersResponse.Items["+ i +"].LockReason"));
 			dBCluster.setCreateTime(context.stringValue("DescribeDBClustersResponse.Items["+ i +"].CreateTime"));
 			dBCluster.setVpcId(context.stringValue("DescribeDBClustersResponse.Items["+ i +"].VpcId"));
-			dBCluster.setVSwitchId(context.stringValue("DescribeDBClustersResponse.Items["+ i +"].VSwitchId"));
+			dBCluster.setDBNodeNumber(context.stringValue("DescribeDBClustersResponse.Items["+ i +"].DBNodeNumber"));
+			dBCluster.setDBNodeClass(context.stringValue("DescribeDBClustersResponse.Items["+ i +"].DBNodeClass"));
+			dBCluster.setStorageUsed(context.stringValue("DescribeDBClustersResponse.Items["+ i +"].StorageUsed"));
+
+			List<DBNode> dBNodes = new ArrayList<DBNode>();
+			for (int j = 0; j < context.lengthValue("DescribeDBClustersResponse.Items["+ i +"].DBNodes.Length"); j++) {
+				DBNode dBNode = new DBNode();
+				dBNode.setDBNodeId(context.stringValue("DescribeDBClustersResponse.Items["+ i +"].DBNodes["+ j +"].DBNodeId"));
+				dBNode.setDBNodeClass(context.stringValue("DescribeDBClustersResponse.Items["+ i +"].DBNodes["+ j +"].DBNodeClass"));
+
+				dBNodes.add(dBNode);
+			}
+			dBCluster.setDBNodes(dBNodes);
 
 			items.add(dBCluster);
 		}

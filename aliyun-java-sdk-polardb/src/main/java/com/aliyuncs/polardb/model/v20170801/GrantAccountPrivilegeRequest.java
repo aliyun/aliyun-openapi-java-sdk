@@ -20,13 +20,17 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class CreateAccountRequest extends RpcAcsRequest<CreateAccountResponse> {
+public class GrantAccountPrivilegeRequest extends RpcAcsRequest<GrantAccountPrivilegeResponse> {
 	
-	public CreateAccountRequest() {
-		super("polardb", "2017-08-01", "CreateAccount", "polardb");
+	public GrantAccountPrivilegeRequest() {
+		super("polardb", "2017-08-01", "GrantAccountPrivilege", "polardb");
 	}
 
 	private Long resourceOwnerId;
+
+	private String accountName;
+
+	private String dBName;
 
 	private String resourceOwnerAccount;
 
@@ -34,19 +38,9 @@ public class CreateAccountRequest extends RpcAcsRequest<CreateAccountResponse> {
 
 	private String ownerAccount;
 
-	private String accountType;
-
 	private Long ownerId;
 
-	private String accountDescription;
-
 	private String accountPrivilege;
-
-	private String accountPassword;
-
-	private String accountName;
-
-	private String dBName;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -56,6 +50,28 @@ public class CreateAccountRequest extends RpcAcsRequest<CreateAccountResponse> {
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getAccountName() {
+		return this.accountName;
+	}
+
+	public void setAccountName(String accountName) {
+		this.accountName = accountName;
+		if(accountName != null){
+			putQueryParameter("AccountName", accountName);
+		}
+	}
+
+	public String getDBName() {
+		return this.dBName;
+	}
+
+	public void setDBName(String dBName) {
+		this.dBName = dBName;
+		if(dBName != null){
+			putQueryParameter("DBName", dBName);
 		}
 	}
 
@@ -92,17 +108,6 @@ public class CreateAccountRequest extends RpcAcsRequest<CreateAccountResponse> {
 		}
 	}
 
-	public String getAccountType() {
-		return this.accountType;
-	}
-
-	public void setAccountType(String accountType) {
-		this.accountType = accountType;
-		if(accountType != null){
-			putQueryParameter("AccountType", accountType);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -111,17 +116,6 @@ public class CreateAccountRequest extends RpcAcsRequest<CreateAccountResponse> {
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getAccountDescription() {
-		return this.accountDescription;
-	}
-
-	public void setAccountDescription(String accountDescription) {
-		this.accountDescription = accountDescription;
-		if(accountDescription != null){
-			putQueryParameter("AccountDescription", accountDescription);
 		}
 	}
 
@@ -136,42 +130,9 @@ public class CreateAccountRequest extends RpcAcsRequest<CreateAccountResponse> {
 		}
 	}
 
-	public String getAccountPassword() {
-		return this.accountPassword;
-	}
-
-	public void setAccountPassword(String accountPassword) {
-		this.accountPassword = accountPassword;
-		if(accountPassword != null){
-			putQueryParameter("AccountPassword", accountPassword);
-		}
-	}
-
-	public String getAccountName() {
-		return this.accountName;
-	}
-
-	public void setAccountName(String accountName) {
-		this.accountName = accountName;
-		if(accountName != null){
-			putQueryParameter("AccountName", accountName);
-		}
-	}
-
-	public String getDBName() {
-		return this.dBName;
-	}
-
-	public void setDBName(String dBName) {
-		this.dBName = dBName;
-		if(dBName != null){
-			putQueryParameter("DBName", dBName);
-		}
-	}
-
 	@Override
-	public Class<CreateAccountResponse> getResponseClass() {
-		return CreateAccountResponse.class;
+	public Class<GrantAccountPrivilegeResponse> getResponseClass() {
+		return GrantAccountPrivilegeResponse.class;
 	}
 
 }

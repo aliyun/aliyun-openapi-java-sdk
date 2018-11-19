@@ -20,13 +20,17 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class CreateAccountRequest extends RpcAcsRequest<CreateAccountResponse> {
+public class CreateDatabaseRequest extends RpcAcsRequest<CreateDatabaseResponse> {
 	
-	public CreateAccountRequest() {
-		super("polardb", "2017-08-01", "CreateAccount", "polardb");
+	public CreateDatabaseRequest() {
+		super("polardb", "2017-08-01", "CreateDatabase", "polardb");
 	}
 
 	private Long resourceOwnerId;
+
+	private String dBName;
+
+	private String accountName;
 
 	private String resourceOwnerAccount;
 
@@ -34,19 +38,13 @@ public class CreateAccountRequest extends RpcAcsRequest<CreateAccountResponse> {
 
 	private String ownerAccount;
 
-	private String accountType;
+	private String dBDescription;
 
 	private Long ownerId;
 
-	private String accountDescription;
+	private String characterSetName;
 
 	private String accountPrivilege;
-
-	private String accountPassword;
-
-	private String accountName;
-
-	private String dBName;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -56,6 +54,28 @@ public class CreateAccountRequest extends RpcAcsRequest<CreateAccountResponse> {
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getDBName() {
+		return this.dBName;
+	}
+
+	public void setDBName(String dBName) {
+		this.dBName = dBName;
+		if(dBName != null){
+			putQueryParameter("DBName", dBName);
+		}
+	}
+
+	public String getAccountName() {
+		return this.accountName;
+	}
+
+	public void setAccountName(String accountName) {
+		this.accountName = accountName;
+		if(accountName != null){
+			putQueryParameter("AccountName", accountName);
 		}
 	}
 
@@ -92,14 +112,14 @@ public class CreateAccountRequest extends RpcAcsRequest<CreateAccountResponse> {
 		}
 	}
 
-	public String getAccountType() {
-		return this.accountType;
+	public String getDBDescription() {
+		return this.dBDescription;
 	}
 
-	public void setAccountType(String accountType) {
-		this.accountType = accountType;
-		if(accountType != null){
-			putQueryParameter("AccountType", accountType);
+	public void setDBDescription(String dBDescription) {
+		this.dBDescription = dBDescription;
+		if(dBDescription != null){
+			putQueryParameter("DBDescription", dBDescription);
 		}
 	}
 
@@ -114,14 +134,14 @@ public class CreateAccountRequest extends RpcAcsRequest<CreateAccountResponse> {
 		}
 	}
 
-	public String getAccountDescription() {
-		return this.accountDescription;
+	public String getCharacterSetName() {
+		return this.characterSetName;
 	}
 
-	public void setAccountDescription(String accountDescription) {
-		this.accountDescription = accountDescription;
-		if(accountDescription != null){
-			putQueryParameter("AccountDescription", accountDescription);
+	public void setCharacterSetName(String characterSetName) {
+		this.characterSetName = characterSetName;
+		if(characterSetName != null){
+			putQueryParameter("CharacterSetName", characterSetName);
 		}
 	}
 
@@ -136,42 +156,9 @@ public class CreateAccountRequest extends RpcAcsRequest<CreateAccountResponse> {
 		}
 	}
 
-	public String getAccountPassword() {
-		return this.accountPassword;
-	}
-
-	public void setAccountPassword(String accountPassword) {
-		this.accountPassword = accountPassword;
-		if(accountPassword != null){
-			putQueryParameter("AccountPassword", accountPassword);
-		}
-	}
-
-	public String getAccountName() {
-		return this.accountName;
-	}
-
-	public void setAccountName(String accountName) {
-		this.accountName = accountName;
-		if(accountName != null){
-			putQueryParameter("AccountName", accountName);
-		}
-	}
-
-	public String getDBName() {
-		return this.dBName;
-	}
-
-	public void setDBName(String dBName) {
-		this.dBName = dBName;
-		if(dBName != null){
-			putQueryParameter("DBName", dBName);
-		}
-	}
-
 	@Override
-	public Class<CreateAccountResponse> getResponseClass() {
-		return CreateAccountResponse.class;
+	public Class<CreateDatabaseResponse> getResponseClass() {
+		return CreateDatabaseResponse.class;
 	}
 
 }

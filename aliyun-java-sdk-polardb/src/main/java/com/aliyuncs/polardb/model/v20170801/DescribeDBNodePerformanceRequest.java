@@ -20,10 +20,10 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class DescribeSlowLogRecordsRequest extends RpcAcsRequest<DescribeSlowLogRecordsResponse> {
+public class DescribeDBNodePerformanceRequest extends RpcAcsRequest<DescribeDBNodePerformanceResponse> {
 	
-	public DescribeSlowLogRecordsRequest() {
-		super("polardb", "2017-08-01", "DescribeSlowLogRecords", "polardb");
+	public DescribeDBNodePerformanceRequest() {
+		super("polardb", "2017-08-01", "DescribeDBNodePerformance", "polardb");
 	}
 
 	private Long resourceOwnerId;
@@ -34,17 +34,13 @@ public class DescribeSlowLogRecordsRequest extends RpcAcsRequest<DescribeSlowLog
 
 	private String ownerAccount;
 
-	private Integer pageSize;
-
 	private String endTime;
-
-	private String dBInstanceId;
 
 	private String startTime;
 
 	private Long ownerId;
 
-	private Integer pageNumber;
+	private String key;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -90,17 +86,6 @@ public class DescribeSlowLogRecordsRequest extends RpcAcsRequest<DescribeSlowLog
 		}
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
 	public String getEndTime() {
 		return this.endTime;
 	}
@@ -109,17 +94,6 @@ public class DescribeSlowLogRecordsRequest extends RpcAcsRequest<DescribeSlowLog
 		this.endTime = endTime;
 		if(endTime != null){
 			putQueryParameter("EndTime", endTime);
-		}
-	}
-
-	public String getDBInstanceId() {
-		return this.dBInstanceId;
-	}
-
-	public void setDBInstanceId(String dBInstanceId) {
-		this.dBInstanceId = dBInstanceId;
-		if(dBInstanceId != null){
-			putQueryParameter("DBInstanceId", dBInstanceId);
 		}
 	}
 
@@ -145,20 +119,20 @@ public class DescribeSlowLogRecordsRequest extends RpcAcsRequest<DescribeSlowLog
 		}
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
+	public String getKey() {
+		return this.key;
 	}
 
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
+	public void setKey(String key) {
+		this.key = key;
+		if(key != null){
+			putQueryParameter("Key", key);
 		}
 	}
 
 	@Override
-	public Class<DescribeSlowLogRecordsResponse> getResponseClass() {
-		return DescribeSlowLogRecordsResponse.class;
+	public Class<DescribeDBNodePerformanceResponse> getResponseClass() {
+		return DescribeDBNodePerformanceResponse.class;
 	}
 
 }

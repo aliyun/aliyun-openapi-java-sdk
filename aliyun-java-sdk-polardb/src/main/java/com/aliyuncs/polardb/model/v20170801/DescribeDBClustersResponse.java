@@ -15,6 +15,7 @@
 package com.aliyuncs.polardb.model.v20170801;
 
 import java.util.List;
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.polardb.transform.v20170801.DescribeDBClustersResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -105,7 +106,13 @@ public class DescribeDBClustersResponse extends AcsResponse {
 
 		private String vpcId;
 
-		private String vSwitchId;
+		private String dBNodeNumber;
+
+		private String dBNodeClass;
+
+		private String storageUsed;
+
+		private List<DBNode> dBNodes;
 
 		public String getDBClusterId() {
 			return this.dBClusterId;
@@ -219,12 +226,59 @@ public class DescribeDBClustersResponse extends AcsResponse {
 			this.vpcId = vpcId;
 		}
 
-		public String getVSwitchId() {
-			return this.vSwitchId;
+		public String getDBNodeNumber() {
+			return this.dBNodeNumber;
 		}
 
-		public void setVSwitchId(String vSwitchId) {
-			this.vSwitchId = vSwitchId;
+		public void setDBNodeNumber(String dBNodeNumber) {
+			this.dBNodeNumber = dBNodeNumber;
+		}
+
+		public String getDBNodeClass() {
+			return this.dBNodeClass;
+		}
+
+		public void setDBNodeClass(String dBNodeClass) {
+			this.dBNodeClass = dBNodeClass;
+		}
+
+		public String getStorageUsed() {
+			return this.storageUsed;
+		}
+
+		public void setStorageUsed(String storageUsed) {
+			this.storageUsed = storageUsed;
+		}
+
+		public List<DBNode> getDBNodes() {
+			return this.dBNodes;
+		}
+
+		public void setDBNodes(List<DBNode> dBNodes) {
+			this.dBNodes = dBNodes;
+		}
+
+		public static class DBNode {
+
+			private String dBNodeId;
+
+			private String dBNodeClass;
+
+			public String getDBNodeId() {
+				return this.dBNodeId;
+			}
+
+			public void setDBNodeId(String dBNodeId) {
+				this.dBNodeId = dBNodeId;
+			}
+
+			public String getDBNodeClass() {
+				return this.dBNodeClass;
+			}
+
+			public void setDBNodeClass(String dBNodeClass) {
+				this.dBNodeClass = dBNodeClass;
+			}
 		}
 	}
 

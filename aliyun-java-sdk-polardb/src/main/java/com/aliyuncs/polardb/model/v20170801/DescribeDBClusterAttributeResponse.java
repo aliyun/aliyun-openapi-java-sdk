@@ -15,6 +15,7 @@
 package com.aliyuncs.polardb.model.v20170801;
 
 import java.util.List;
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.polardb.transform.v20170801.DescribeDBClusterAttributeResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -84,6 +85,8 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 		private String creationTime;
 
 		private String expireTime;
+
+		private Boolean isLatestVersion;
 
 		private List<DbInstance> dbInstances;
 
@@ -239,6 +242,14 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 			this.expireTime = expireTime;
 		}
 
+		public Boolean getIsLatestVersion() {
+			return this.isLatestVersion;
+		}
+
+		public void setIsLatestVersion(Boolean isLatestVersion) {
+			this.isLatestVersion = isLatestVersion;
+		}
+
 		public List<DbInstance> getDbInstances() {
 			return this.dbInstances;
 		}
@@ -276,6 +287,10 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 			private String dBInstanceClass;
 
 			private String securityIPList;
+
+			private String currentMinorVersion;
+
+			private String latestMinorVersion;
 
 			private String dBInstanceType;
 
@@ -389,6 +404,22 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 
 			public void setSecurityIPList(String securityIPList) {
 				this.securityIPList = securityIPList;
+			}
+
+			public String getCurrentMinorVersion() {
+				return this.currentMinorVersion;
+			}
+
+			public void setCurrentMinorVersion(String currentMinorVersion) {
+				this.currentMinorVersion = currentMinorVersion;
+			}
+
+			public String getLatestMinorVersion() {
+				return this.latestMinorVersion;
+			}
+
+			public void setLatestMinorVersion(String latestMinorVersion) {
+				this.latestMinorVersion = latestMinorVersion;
 			}
 
 			public String getDBInstanceType() {

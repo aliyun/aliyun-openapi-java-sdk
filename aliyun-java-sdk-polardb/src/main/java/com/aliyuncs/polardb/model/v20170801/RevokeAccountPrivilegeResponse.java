@@ -16,14 +16,14 @@ package com.aliyuncs.polardb.model.v20170801;
 
 import java.util.Map;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.polardb.transform.v20170801.ModifyAccountDescriptionResponseUnmarshaller;
+import com.aliyuncs.polardb.transform.v20170801.RevokeAccountPrivilegeResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ModifyAccountDescriptionResponse extends AcsResponse {
+public class RevokeAccountPrivilegeResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -36,7 +36,7 @@ public class ModifyAccountDescriptionResponse extends AcsResponse {
 	}
 
 	@Override
-	public ModifyAccountDescriptionResponse getInstance(UnmarshallerContext context) {
-		return	ModifyAccountDescriptionResponseUnmarshaller.unmarshall(this, context);
+	public RevokeAccountPrivilegeResponse getInstance(UnmarshallerContext context) {
+		return	RevokeAccountPrivilegeResponseUnmarshaller.unmarshall(this, context);
 	}
 }
