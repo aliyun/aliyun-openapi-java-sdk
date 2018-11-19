@@ -732,6 +732,21 @@
       "us-west-1": "dybaseapi.ap-southeast-1.aliyuncs.com",
       "eu-central-1": "dybaseapi.ap-southeast-1.aliyuncs.com"
     },
+    "dyvmsapi": {
+      "cn-hangzhou": "dyvmsapi.aliyuncs.com"
+    },
+    "dyplsapi": {
+      "cn-hangzhou": "dyplsapi.aliyuncs.com"
+    },
+    "dycdpapi": {
+      "cn-hangzhou": "dycdpapi.aliyuncs.com"
+    },
+    "dyiotapi": {
+      "cn-hangzhou": "dyiotapi.aliyuncs.com"
+    },
+    "snsuapi": {
+      "cn-hangzhou": "snsuapi.aliyuncs.com"
+    },
     "bssopenapi": {
       "cn-qingdao": "business.aliyuncs.com",
       "cn-beijing": "business.aliyuncs.com",
