@@ -45,9 +45,9 @@ public class GetSubscriptionPriceRequest extends RpcAcsRequest<GetSubscriptionPr
 
 	private String region;
 
-	private String productType;
-
 	private String orderType;
+
+	private String productType;
 
 	public Integer getServicePeriodQuantity() {
 		return this.servicePeriodQuantity;
@@ -153,17 +153,6 @@ public class GetSubscriptionPriceRequest extends RpcAcsRequest<GetSubscriptionPr
 		}
 	}
 
-	public String getProductType() {
-		return this.productType;
-	}
-
-	public void setProductType(String productType) {
-		this.productType = productType;
-		if(productType != null){
-			putQueryParameter("ProductType", productType);
-		}
-	}
-
 	public String getOrderType() {
 		return this.orderType;
 	}
@@ -172,6 +161,17 @@ public class GetSubscriptionPriceRequest extends RpcAcsRequest<GetSubscriptionPr
 		this.orderType = orderType;
 		if(orderType != null){
 			putQueryParameter("OrderType", orderType);
+		}
+	}
+
+	public String getProductType() {
+		return this.productType;
+	}
+
+	public void setProductType(String productType) {
+		this.productType = productType;
+		if(productType != null){
+			putQueryParameter("ProductType", productType);
 		}
 	}
 

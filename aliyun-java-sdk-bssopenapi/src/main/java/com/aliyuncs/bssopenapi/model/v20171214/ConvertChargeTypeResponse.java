@@ -16,14 +16,14 @@ package com.aliyuncs.bssopenapi.model.v20171214;
 
 import java.util.Map;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.bssopenapi.transform.v20171214.UnsubscribeExportToOSSResponseUnmarshaller;
+import com.aliyuncs.bssopenapi.transform.v20171214.ConvertChargeTypeResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class UnsubscribeExportToOSSResponse extends AcsResponse {
+public class ConvertChargeTypeResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -32,6 +32,8 @@ public class UnsubscribeExportToOSSResponse extends AcsResponse {
 	private String code;
 
 	private String message;
+
+	private Data data;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -65,8 +67,34 @@ public class UnsubscribeExportToOSSResponse extends AcsResponse {
 		this.message = message;
 	}
 
+	public Data getData() {
+		return this.data;
+	}
+
+	public void setData(Data data) {
+		this.data = data;
+	}
+
+	public static class Data {
+
+		private String orderId;
+
+		public String getOrderId() {
+			return this.orderId;
+		}
+
+		public void setOrderId(String orderId) {
+			this.orderId = orderId;
+		}
+	}
+
 	@Override
-	public UnsubscribeExportToOSSResponse getInstance(UnmarshallerContext context) {
-		return	UnsubscribeExportToOSSResponseUnmarshaller.unmarshall(this, context);
+	public ConvertChargeTypeResponse getInstance(UnmarshallerContext context) {
+		return	ConvertChargeTypeResponseUnmarshaller.unmarshall(this, context);
+	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }

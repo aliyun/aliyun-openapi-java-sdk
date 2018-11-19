@@ -40,11 +40,11 @@ public class QueryOrdersRequest extends RpcAcsRequest<QueryOrdersResponse> {
 
 	private Long ownerId;
 
+	private String createTimeEnd;
+
 	private String productType;
 
 	private String orderType;
-
-	private String createTimeEnd;
 
 	public String getProductCode() {
 		return this.productCode;
@@ -123,6 +123,17 @@ public class QueryOrdersRequest extends RpcAcsRequest<QueryOrdersResponse> {
 		}
 	}
 
+	public String getCreateTimeEnd() {
+		return this.createTimeEnd;
+	}
+
+	public void setCreateTimeEnd(String createTimeEnd) {
+		this.createTimeEnd = createTimeEnd;
+		if(createTimeEnd != null){
+			putQueryParameter("CreateTimeEnd", createTimeEnd);
+		}
+	}
+
 	public String getProductType() {
 		return this.productType;
 	}
@@ -142,17 +153,6 @@ public class QueryOrdersRequest extends RpcAcsRequest<QueryOrdersResponse> {
 		this.orderType = orderType;
 		if(orderType != null){
 			putQueryParameter("OrderType", orderType);
-		}
-	}
-
-	public String getCreateTimeEnd() {
-		return this.createTimeEnd;
-	}
-
-	public void setCreateTimeEnd(String createTimeEnd) {
-		this.createTimeEnd = createTimeEnd;
-		if(createTimeEnd != null){
-			putQueryParameter("CreateTimeEnd", createTimeEnd);
 		}
 	}
 

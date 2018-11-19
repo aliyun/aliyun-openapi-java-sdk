@@ -28,6 +28,8 @@ public class QuerySettlementBillRequest extends RpcAcsRequest<QuerySettlementBil
 
 	private String productCode;
 
+	private Boolean isHideZeroCharge;
+
 	private String subscriptionType;
 
 	private Integer pageSize;
@@ -54,6 +56,17 @@ public class QuerySettlementBillRequest extends RpcAcsRequest<QuerySettlementBil
 		this.productCode = productCode;
 		if(productCode != null){
 			putQueryParameter("ProductCode", productCode);
+		}
+	}
+
+	public Boolean getIsHideZeroCharge() {
+		return this.isHideZeroCharge;
+	}
+
+	public void setIsHideZeroCharge(Boolean isHideZeroCharge) {
+		this.isHideZeroCharge = isHideZeroCharge;
+		if(isHideZeroCharge != null){
+			putQueryParameter("IsHideZeroCharge", isHideZeroCharge.toString());
 		}
 	}
 

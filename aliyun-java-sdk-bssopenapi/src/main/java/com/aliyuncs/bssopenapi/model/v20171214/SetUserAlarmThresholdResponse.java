@@ -16,22 +16,24 @@ package com.aliyuncs.bssopenapi.model.v20171214;
 
 import java.util.Map;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.bssopenapi.transform.v20171214.UnsubscribeExportToOSSResponseUnmarshaller;
+import com.aliyuncs.bssopenapi.transform.v20171214.SetUserAlarmThresholdResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class UnsubscribeExportToOSSResponse extends AcsResponse {
+public class SetUserAlarmThresholdResponse extends AcsResponse {
 
 	private String requestId;
-
-	private Boolean success;
 
 	private String code;
 
 	private String message;
+
+	private Boolean success;
+
+	private Boolean data;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -39,14 +41,6 @@ public class UnsubscribeExportToOSSResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
 	}
 
 	public String getCode() {
@@ -65,8 +59,24 @@ public class UnsubscribeExportToOSSResponse extends AcsResponse {
 		this.message = message;
 	}
 
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
+	public Boolean getData() {
+		return this.data;
+	}
+
+	public void setData(Boolean data) {
+		this.data = data;
+	}
+
 	@Override
-	public UnsubscribeExportToOSSResponse getInstance(UnmarshallerContext context) {
-		return	UnsubscribeExportToOSSResponseUnmarshaller.unmarshall(this, context);
+	public SetUserAlarmThresholdResponse getInstance(UnmarshallerContext context) {
+		return	SetUserAlarmThresholdResponseUnmarshaller.unmarshall(this, context);
 	}
 }

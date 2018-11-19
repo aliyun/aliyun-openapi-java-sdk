@@ -1,3 +1,6 @@
+2018-11-19 Version: 1.0.5
+1, Add query support for redeem
+
 2018-09-20 Version: 1.0.4
 1, BssOpenApi first deploy.
 

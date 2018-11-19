@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.bssopenapi.model.v20171214.DescribePricingModuleResponse;
 import com.aliyuncs.bssopenapi.model.v20171214.DescribePricingModuleResponse.Data;
 import com.aliyuncs.bssopenapi.model.v20171214.DescribePricingModuleResponse.Data.Attribute;
+import com.aliyuncs.bssopenapi.model.v20171214.DescribePricingModuleResponse.Data.Attribute.AttributeValue;
 import com.aliyuncs.bssopenapi.model.v20171214.DescribePricingModuleResponse.Data.Module;
 import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -60,6 +61,18 @@ public class DescribePricingModuleResponseUnmarshaller {
 			attribute.setCode(context.stringValue("DescribePricingModuleResponse.Data.AttributeList["+ i +"].Code"));
 			attribute.setName(context.stringValue("DescribePricingModuleResponse.Data.AttributeList["+ i +"].Name"));
 			attribute.setUnit(context.stringValue("DescribePricingModuleResponse.Data.AttributeList["+ i +"].Unit"));
+
+			List<AttributeValue> values = new ArrayList<AttributeValue>();
+			for (int j = 0; j < context.lengthValue("DescribePricingModuleResponse.Data.AttributeList["+ i +"].Values.Length"); j++) {
+				AttributeValue attributeValue = new AttributeValue();
+				attributeValue.setType(context.stringValue("DescribePricingModuleResponse.Data.AttributeList["+ i +"].Values["+ j +"].Type"));
+				attributeValue.setName(context.stringValue("DescribePricingModuleResponse.Data.AttributeList["+ i +"].Values["+ j +"].Name"));
+				attributeValue.setValue(context.stringValue("DescribePricingModuleResponse.Data.AttributeList["+ i +"].Values["+ j +"].Value"));
+				attributeValue.setRemark(context.stringValue("DescribePricingModuleResponse.Data.AttributeList["+ i +"].Values["+ j +"].Remark"));
+
+				values.add(attributeValue);
+			}
+			attribute.setValues(values);
 
 			attributeList.add(attribute);
 		}

@@ -20,25 +20,34 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class QueryMonthlyInstanceConsumptionRequest extends RpcAcsRequest<QueryMonthlyInstanceConsumptionResponse> {
+public class ConvertChargeTypeRequest extends RpcAcsRequest<ConvertChargeTypeResponse> {
 	
-	public QueryMonthlyInstanceConsumptionRequest() {
-		super("BssOpenApi", "2017-12-14", "QueryMonthlyInstanceConsumption");
+	public ConvertChargeTypeRequest() {
+		super("BssOpenApi", "2017-12-14", "ConvertChargeType");
 	}
+
+	private Integer period;
 
 	private String productCode;
 
+	private String instanceId;
+
 	private String subscriptionType;
-
-	private Integer pageSize;
-
-	private String billingCycle;
 
 	private Long ownerId;
 
-	private Integer pageNum;
-
 	private String productType;
+
+	public Integer getPeriod() {
+		return this.period;
+	}
+
+	public void setPeriod(Integer period) {
+		this.period = period;
+		if(period != null){
+			putQueryParameter("Period", period.toString());
+		}
+	}
 
 	public String getProductCode() {
 		return this.productCode;
@@ -48,6 +57,17 @@ public class QueryMonthlyInstanceConsumptionRequest extends RpcAcsRequest<QueryM
 		this.productCode = productCode;
 		if(productCode != null){
 			putQueryParameter("ProductCode", productCode);
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 
@@ -62,28 +82,6 @@ public class QueryMonthlyInstanceConsumptionRequest extends RpcAcsRequest<QueryM
 		}
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
-	public String getBillingCycle() {
-		return this.billingCycle;
-	}
-
-	public void setBillingCycle(String billingCycle) {
-		this.billingCycle = billingCycle;
-		if(billingCycle != null){
-			putQueryParameter("BillingCycle", billingCycle);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -92,17 +90,6 @@ public class QueryMonthlyInstanceConsumptionRequest extends RpcAcsRequest<QueryM
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public Integer getPageNum() {
-		return this.pageNum;
-	}
-
-	public void setPageNum(Integer pageNum) {
-		this.pageNum = pageNum;
-		if(pageNum != null){
-			putQueryParameter("PageNum", pageNum.toString());
 		}
 	}
 
@@ -118,8 +105,8 @@ public class QueryMonthlyInstanceConsumptionRequest extends RpcAcsRequest<QueryM
 	}
 
 	@Override
-	public Class<QueryMonthlyInstanceConsumptionResponse> getResponseClass() {
-		return QueryMonthlyInstanceConsumptionResponse.class;
+	public Class<ConvertChargeTypeResponse> getResponseClass() {
+		return ConvertChargeTypeResponse.class;
 	}
 
 }
