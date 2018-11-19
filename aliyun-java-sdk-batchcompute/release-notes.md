@@ -1,4 +1,8 @@
 # release notes
+6.0.3
+```
+1. 修复支持docker imageId
+```
 
 6.0.2
 ```

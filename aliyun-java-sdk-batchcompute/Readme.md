@@ -20,7 +20,7 @@ Batchcompute SDK For Java
 <dependency>
     <groupId>com.aliyun</groupId>
     <artifactId>aliyun-java-sdk-batchcompute</artifactId>
-    <version>6.0.2</version>
+    <version>6.0.3</version>
 </dependency>
 ```
 

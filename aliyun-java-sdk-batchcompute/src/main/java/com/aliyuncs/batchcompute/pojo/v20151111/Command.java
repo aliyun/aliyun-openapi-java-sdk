@@ -15,20 +15,21 @@ import java.util.Map;
 public class Command {
 
     @JsonIgnoreProperties(ignoreUnknown = true) @JsonInclude(JsonInclude.Include.NON_DEFAULT)
-    public class Docker {
+    public static class Docker {
 
         @JsonProperty("Image")
         private String image;
+
+        @JsonIgnore
+        public void setImage(String image) {
+            this.image = image;
+        }
 
         @JsonIgnore
         public String getImage() {
             return image;
         }
 
-        @JsonIgnore
-        public void setImage(String image) {
-            this.image = image;
-        }
     }
 
     @JsonProperty("CommandLine")

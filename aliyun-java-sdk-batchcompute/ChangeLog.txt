@@ -1,3 +1,6 @@
+2018-11-19 Version: 6.0.3
+1, fix docker image bug
+
 2018-11-15 Version: 6.0.2
 1, Support docker container registry
 
