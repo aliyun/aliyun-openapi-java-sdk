@@ -170,6 +170,7 @@ public abstract class AcsRequest<T extends AcsResponse> extends HttpRequest {
         return securityToken;
     }
 
+    @Deprecated
     public void setSecurityToken(String securityToken) {
         this.securityToken = securityToken;
         putQueryParameter("SecurityToken", securityToken);

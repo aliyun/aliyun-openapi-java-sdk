@@ -26,18 +26,24 @@ import com.aliyuncs.exceptions.ServerException;
 import com.aliyuncs.http.FormatType;
 import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.endpoint.location.model.v20150612.DescribeEndpointsRequest;
+import com.aliyuncs.profile.DefaultProfile;
 
 import java.util.HashSet;
 import java.util.Set;
 
 public class LocationServiceEndpointResolver extends EndpointResolverBase {
+
     private final static String DEFAULT_LOCATION_SERVICE_ENDPOINT = "location-readonly.aliyuncs.com";
+    private final static String DEFAULT_LOCATION_SERVICE_API_VERSION = "2015-06-12";
+
     private DefaultAcsClient client;
     private Set<String> invalidProductCodes;
     private Set<String> validProductCodes;
     private Set<String> invalidRegionIds;
     private Set<String> validRegionIds;
-    private String locationServiceEndpoint = DEFAULT_LOCATION_SERVICE_ENDPOINT;
+    protected String locationServiceEndpoint = DEFAULT_LOCATION_SERVICE_ENDPOINT;
+    protected String locationServiceApiVersion = DEFAULT_LOCATION_SERVICE_API_VERSION;
+
     public int locationServiceCallCounter = 0; // For test use
 
     public LocationServiceEndpointResolver(DefaultAcsClient client) {
@@ -97,6 +103,7 @@ public class LocationServiceEndpointResolver extends EndpointResolverBase {
         describeEndpointsRequest.setServiceCode(request.locationServiceCode);
         describeEndpointsRequest.setType(request.endpointType);
         describeEndpointsRequest.setEndpoint(locationServiceEndpoint);
+        describeEndpointsRequest.setVersion(locationServiceApiVersion);
 
         DescribeEndpointsResponse response;
         try {

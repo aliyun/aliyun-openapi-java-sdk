@@ -31,7 +31,6 @@ import com.aliyuncs.http.HttpClientConfig;
 
 @SuppressWarnings("deprecation")
 public class DefaultProfile implements IClientProfile {
-
     private static DefaultProfile profile = null;
     private String regionId = null;
     private FormatType acceptFormat = null;
@@ -39,6 +38,7 @@ public class DefaultProfile implements IClientProfile {
     private Credential credential;
     private String certPath;
     private HttpClientConfig httpClientConfig = HttpClientConfig.getDefault();
+    private boolean usingInternalLocationService = false;
 
     private DefaultProfile() {
     }
@@ -161,5 +161,15 @@ public class DefaultProfile implements IClientProfile {
     @Override
     public void setHttpClientConfig(HttpClientConfig httpClientConfig) {
         this.httpClientConfig = httpClientConfig;
+    }
+
+    @Override
+    public void setUsingInternalLocationService() {
+        usingInternalLocationService = true;
+    }
+
+    @Override
+    public boolean isUsingInternalLocationService() {
+        return usingInternalLocationService;
     }
 }

@@ -168,7 +168,7 @@ public abstract class HttpMessage {
                     stringContent = new String(this.httpContent, this.encoding);
                 }
             } catch (UnsupportedEncodingException exp) {
-                throw new ClientException("SDK.UnsupportedEncoding", "Can not parse response due to un supported encoding.");
+                throw new ClientException("SDK.UnsupportedEncoding", "Can not parse response due to unsupported encoding.");
             }
         }
 

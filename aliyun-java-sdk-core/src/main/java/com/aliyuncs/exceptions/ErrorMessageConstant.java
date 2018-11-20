@@ -36,4 +36,7 @@ public class ErrorMessageConstant {
             "No endpoint for product '%s'. \n" +
                     "Please check the product code, or set an endpoint for your request explicitly.\n" +
                     "See " + SDK_ENDPOINT_MANAGEMENT_DOC_HTML + "\n";
+
+    public static final String SERVER_RESPONSE_HTTP_BODY_EMPTY =
+            "Failed to parse the response. The request was succeeded, but the server returned an empty HTTP body.";
 }

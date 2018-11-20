@@ -37,6 +37,7 @@ import com.aliyuncs.auth.StaticCredentialsProvider;
 import com.aliyuncs.endpoint.*;
 import com.aliyuncs.exceptions.ClientException;
 import com.aliyuncs.exceptions.ErrorCodeConstant;
+import com.aliyuncs.exceptions.ErrorMessageConstant;
 import com.aliyuncs.exceptions.ServerException;
 import com.aliyuncs.http.*;
 import com.aliyuncs.profile.DefaultProfile;
@@ -50,6 +51,8 @@ import com.aliyuncs.utils.IOUtils;
 
 @SuppressWarnings("deprecation")
 public class DefaultAcsClient implements IAcsClient {
+
+    // Now maxRetryNumber and autoRetry has no effect.
     private int maxRetryNumber = 3;
     private boolean autoRetry = true;
     private IClientProfile clientProfile = null;
@@ -78,7 +81,8 @@ public class DefaultAcsClient implements IAcsClient {
         this.credentialsProvider = credentialsProvider;
         this.clientProfile.setCredentialsProvider(this.credentialsProvider);
         this.httpClient = HttpClientFactory.buildClient(this.clientProfile);
-        this.endpointResolver = new DefaultEndpointResolver(this);
+        this.endpointResolver = new DefaultEndpointResolver(this,
+                profile.isUsingInternalLocationService());
     }
 
     @Override
@@ -262,39 +266,21 @@ public class DefaultAcsClient implements IAcsClient {
                 request.setProtocol(this.clientProfile.getHttpClientConfig().getProtocolType());
             }
 
-            boolean shouldRetry = true;
-            for (int retryTimes = 0; shouldRetry; retryTimes++) {
-                shouldRetry = autoRetry && retryTimes < maxRetryNumber;
-                try {
-                    HttpRequest httpRequest = request.signRequest(signer, credentials, format, domain);
-                    HttpResponse response;
-                    response = this.httpClient.syncInvoke(httpRequest);
-
-                    if ((500 <= response.getStatus() || response.getHttpContent() == null) && shouldRetry) {
-                            continue;
-                    }
-                    return response;
-                } catch (SocketTimeoutException exp) {
-                    if (shouldRetry) {
-                        continue;
-                    } else {
-                        throw new ClientException("SDK.ServerUnreachable", "SocketTimeoutException has occurred on a socket read or accept.", exp);
-                    }
-                } catch (IOException exp) {
-                    if (shouldRetry) {
-                        continue;
-                    } else {
-                        throw new ClientException("SDK.ServerUnreachable", "Server unreachable: " + exp.toString(), exp);
-                    }
-                }
+            try {
+                HttpRequest httpRequest = request.signRequest(signer, credentials, format, domain);
+                HttpResponse response;
+                response = this.httpClient.syncInvoke(httpRequest);
+                return response;
+            } catch (SocketTimeoutException exp) {
+                throw new ClientException("SDK.ServerUnreachable", "SocketTimeoutException has occurred on a socket read or accept.", exp);
+            } catch (IOException exp) {
+                throw new ClientException("SDK.ServerUnreachable", "Server unreachable: " + exp.toString(), exp);
             }
         } catch (InvalidKeyException exp) {
             throw new ClientException("SDK.InvalidAccessSecret", "Specified access secret is not valid.", exp);
         } catch (NoSuchAlgorithmException exp) {
             throw new ClientException("SDK.InvalidMD5Algorithm", "MD5 hash is not supported by client side.", exp);
         }
-
-        return null;
     }
 
     private <T extends AcsResponse> T readResponse(Class<T> clasz, HttpResponse httpResponse, FormatType format)
@@ -308,6 +294,14 @@ public class DefaultAcsClient implements IAcsClient {
             UnmarshallerContext context = new UnmarshallerContext();
             T response = null;
             String stringContent = httpResponse.getHttpContentString();
+
+            if (stringContent == null) {
+                throw new ClientException(
+                        ErrorCodeConstant.SDK_INVALID_SERVER_RESPONSE,
+                        ErrorMessageConstant.SERVER_RESPONSE_HTTP_BODY_EMPTY
+                );
+            }
+
             try {
                 response = clasz.newInstance();
             } catch (Exception e) {
@@ -328,33 +322,40 @@ public class DefaultAcsClient implements IAcsClient {
     }
 
     private AcsError readError(HttpResponse httpResponse, FormatType format) throws ClientException {
-        try {
-            AcsError error = new AcsError();
-            String responseEndpoint = "Error";
-            Reader reader = ReaderFactory.createInstance(format);
-            UnmarshallerContext context = new UnmarshallerContext();
-            String stringContent = httpResponse.getHttpContentString();
+        AcsError error = new AcsError();
+        String responseEndpoint = "Error";
+        Reader reader = ReaderFactory.createInstance(format);
+        UnmarshallerContext context = new UnmarshallerContext();
+        String stringContent = httpResponse.getHttpContentString();
+
+        if (stringContent == null) {
+            error.setErrorCode("(null)");
+            error.setErrorMessage("(null)");
+            error.setRequestId("(null)");
+            error.setStatusCode(httpResponse.getStatus());
+            return error;
+        } else {
             context.setResponseMap(reader.read(stringContent, responseEndpoint));
             return error.getInstance(context);
-        } catch (Throwable e) {
-            String message = httpResponse.getHttpContentString();
-            throw new ClientException("SDK.UnknownError", message);
         }
-
     }
 
+    @Deprecated
     public boolean isAutoRetry() {
         return autoRetry;
     }
 
+    @Deprecated
     public void setAutoRetry(boolean autoRetry) {
         this.autoRetry = autoRetry;
     }
 
+    @Deprecated
     public int getMaxRetryNumber() {
         return maxRetryNumber;
     }
 
+    @Deprecated
     public void setMaxRetryNumber(int maxRetryNumber) {
         this.maxRetryNumber = maxRetryNumber;
     }
@@ -374,6 +375,10 @@ public class DefaultAcsClient implements IAcsClient {
     @Override
     public void shutdown() {
         IOUtils.closeQuietly(this.httpClient);
+    }
+
+    public DefaultProfile getProfile() {
+        return (DefaultProfile) clientProfile;
     }
 
 }

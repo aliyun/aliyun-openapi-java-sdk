@@ -63,4 +63,8 @@ public interface IClientProfile {
     public HttpClientConfig getHttpClientConfig();
 
     public void setHttpClientConfig(HttpClientConfig httpClientConfig);
+
+    public void setUsingInternalLocationService();
+
+    public boolean isUsingInternalLocationService();
 }
