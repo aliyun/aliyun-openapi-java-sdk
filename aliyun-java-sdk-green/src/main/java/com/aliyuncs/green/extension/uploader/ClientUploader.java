@@ -1,4 +1,4 @@
-package com.aliyuncs.green.model.v20180509;
+package com.aliyuncs.green.extension.uploader;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
@@ -6,6 +6,7 @@ import com.aliyun.oss.OSSClient;
 import com.aliyun.oss.model.ObjectMetadata;
 import com.aliyun.oss.model.PutObjectResult;
 import com.aliyuncs.IAcsClient;
+import com.aliyuncs.green.model.v20180509.UploadCredentialsRequest;
 import com.aliyuncs.http.FormatType;
 import com.aliyuncs.http.HttpResponse;
 import com.aliyuncs.http.ProtocolType;
@@ -17,16 +18,38 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 
-public class Uploader {
+/**
+ * 用于本地图片文件检测时，上传本地图片
+ */
+public class ClientUploader {
 
     private IAcsClient client;
-    private UploadCredentials uploadCredentials;
+    private volatile UploadCredentials uploadCredentials;
     private Map<String, String> headers;
+    private String prefix;
 
-    public Uploader(IAcsClient client) {
+    private ClientUploader(IAcsClient client, String prefix) {
         this.client = client;
         this.uploadCredentials = null;
         this.headers = new HashMap<String, String>();
+        this.prefix = prefix;
+    }
+
+
+    public static ClientUploader getImageClientUploader(IAcsClient client){
+        return  new ClientUploader(client, "images");
+    }
+
+    public static ClientUploader getVideoClientUploader(IAcsClient client){
+        return  new ClientUploader(client, "videos");
+    }
+
+    public static ClientUploader getVoiceClientUploader(IAcsClient client){
+        return  new ClientUploader(client, "voices");
+    }
+
+    public static ClientUploader getFileClientUploader(IAcsClient client){
+        return  new ClientUploader(client, "files");
     }
 
     /**
@@ -34,7 +57,7 @@ public class Uploader {
      * @param filePath
      * @return
      */
-    public String uploadFile(String filePath, String fileType){
+    public String uploadFile(String filePath){
         FileInputStream inputStream = null;
         OSSClient ossClient = null;
         try {
@@ -49,7 +72,7 @@ public class Uploader {
 
             ossClient = new OSSClient(uploadCredentials.getOssEndpoint(), uploadCredentials.getAccessKeyId(), uploadCredentials.getAccessKeySecret(), uploadCredentials.getSecurityToken());
 
-            String object = uploadCredentials.getUploadFolder() + '/' + getPrefix(fileType) + '/' + String.valueOf(filePath.hashCode());
+            String object = uploadCredentials.getUploadFolder() + '/' + this.prefix + '/' + String.valueOf(filePath.hashCode());
             PutObjectResult ret = ossClient.putObject(uploadCredentials.getUploadBucket(), object, inputStream, meta);
             return "oss://" + uploadCredentials.getUploadBucket() + "/" + object;
         } catch (Exception e) {
@@ -75,7 +98,7 @@ public class Uploader {
      * @param bytes
      * @return
      */
-    public String uploadBytes(byte[] bytes, String fileType){
+    public String uploadBytes(byte[] bytes){
         OSSClient ossClient = null;
         try {
             UploadCredentials uploadCredentials = getCredentials();
@@ -85,7 +108,7 @@ public class Uploader {
 
             ossClient = new OSSClient(uploadCredentials.getOssEndpoint(), uploadCredentials.getAccessKeyId(), uploadCredentials.getAccessKeySecret(), uploadCredentials.getSecurityToken());
 
-            String object = uploadCredentials.getUploadFolder() + '/' + getPrefix(fileType) + '/' + UUID.randomUUID().toString();
+            String object = uploadCredentials.getUploadFolder() + '/' + this.prefix + '/' + UUID.randomUUID().toString();
             PutObjectResult ret = ossClient.putObject(uploadCredentials.getUploadBucket(), object, new ByteArrayInputStream(bytes));
             return "oss://" + uploadCredentials.getUploadBucket() + "/" + object;
         } catch (Exception e) {
@@ -104,14 +127,13 @@ public class Uploader {
 
 
     private UploadCredentials getCredentials() throws Exception{
-        if(this.uploadCredentials == null){
-            this.uploadCredentials = getCredentialsFromServer();
+        if(this.uploadCredentials == null || this.uploadCredentials.getExpiredTime() < System.currentTimeMillis()){
+            synchronized(ClientUploader.class){
+                if(this.uploadCredentials == null || this.uploadCredentials.getExpiredTime() < System.currentTimeMillis()){
+                    this.uploadCredentials = getCredentialsFromServer();
+                }
+            }
         }
-
-        if(this.uploadCredentials.getExpiredTime() < System.currentTimeMillis()){
-            this.uploadCredentials = getCredentialsFromServer();
-        }
-
         return this.uploadCredentials;
     }
 
@@ -120,7 +142,7 @@ public class Uploader {
      * @return
      * @throws Exception
      */
-    private synchronized UploadCredentials getCredentialsFromServer() throws Exception{
+    private UploadCredentials getCredentialsFromServer() throws Exception{
         UploadCredentialsRequest uploadCredentialsRequest =  new UploadCredentialsRequest();
         uploadCredentialsRequest.setAcceptFormat(FormatType.JSON); // 指定api返回格式
         uploadCredentialsRequest.setMethod(com.aliyuncs.http.MethodType.POST); // 指定请求方法
@@ -148,15 +170,5 @@ public class Uploader {
     }
 
 
-    private String getPrefix(String fileType){
-        if("image".equals(fileType)){
-            return "images";
-        }
 
-        if("video".equals(fileType)){
-            return "videos";
-        }
-
-        return "images";
-    }
 }

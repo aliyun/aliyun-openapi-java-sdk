@@ -3,7 +3,7 @@
   <groupId>com.aliyun</groupId>
   <artifactId>aliyun-java-sdk-green</artifactId>
   <packaging>jar</packaging>
-  <version>3.3.2</version>
+  <version>3.4.0</version>
     <name>aliyun-java-sdk-green</name>
   <url>http://www.aliyun.com</url>
   <description>Aliyun Open API SDK for Java
@@ -31,18 +31,19 @@ http://www.aliyun.com</description>
   		<groupId>com.aliyun</groupId>
   		<artifactId>aliyun-java-sdk-core</artifactId>
 		<optional>true</optional>
-  		<version>3.7.1</version>
+  		<version>4.1.1</version>
   	</dependency>
-  	<dependency>
-		<groupId>com.aliyun.oss</groupId>
-		<artifactId>aliyun-sdk-oss</artifactId>
-		<version>2.8.3</version>
-	</dependency>
+	<dependency>
+        <groupId>com.alibaba</groupId>
+        <artifactId>fastjson</artifactId>
+        <version>1.2.51</version>
+    </dependency>
+
     <dependency>
-		<groupId>com.alibaba</groupId>
-		<artifactId>fastjson</artifactId>
-		<version>1.2.48</version>
-	</dependency>
+        <groupId>com.aliyun.oss</groupId>
+        <artifactId>aliyun-sdk-oss</artifactId>
+        <version>2.8.3</version>
+    </dependency>  
   </dependencies>
 	<licenses>
 		<license>

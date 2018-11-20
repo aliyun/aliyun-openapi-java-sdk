@@ -1,4 +1,4 @@
-package com.aliyuncs.green.model.v20180509;
+package com.aliyuncs.green.extension.uploader;
 
 import java.io.Serializable;
 
