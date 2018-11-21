@@ -15,6 +15,7 @@
 package com.aliyuncs.vod.model.v20170321;
 
 import java.util.List;
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.vod.transform.v20170321.GetVideoListResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -84,6 +85,8 @@ public class GetVideoListResponse extends AcsResponse {
 		private Long cateId;
 
 		private String cateName;
+
+		private String storageLocation;
 
 		private List<String> snapshots;
 
@@ -197,6 +200,14 @@ public class GetVideoListResponse extends AcsResponse {
 
 		public void setCateName(String cateName) {
 			this.cateName = cateName;
+		}
+
+		public String getStorageLocation() {
+			return this.storageLocation;
+		}
+
+		public void setStorageLocation(String storageLocation) {
+			this.storageLocation = storageLocation;
 		}
 
 		public List<String> getSnapshots() {

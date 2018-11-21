@@ -15,6 +15,7 @@
 package com.aliyuncs.vod.model.v20170321;
 
 import java.util.List;
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.vod.transform.v20170321.UploadMediaByURLResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -71,5 +72,10 @@ public class UploadMediaByURLResponse extends AcsResponse {
 	@Override
 	public UploadMediaByURLResponse getInstance(UnmarshallerContext context) {
 		return	UploadMediaByURLResponseUnmarshaller.unmarshall(this, context);
+	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }

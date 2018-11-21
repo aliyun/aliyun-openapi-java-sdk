@@ -34,6 +34,8 @@ public class SubmitTranscodeJobsRequest extends RpcAcsRequest<SubmitTranscodeJob
 
 	private String videoId;
 
+	private String overrideParams;
+
 	private Long ownerId;
 
 	private String encryptConfig;
@@ -81,6 +83,17 @@ public class SubmitTranscodeJobsRequest extends RpcAcsRequest<SubmitTranscodeJob
 		this.videoId = videoId;
 		if(videoId != null){
 			putQueryParameter("VideoId", videoId);
+		}
+	}
+
+	public String getOverrideParams() {
+		return this.overrideParams;
+	}
+
+	public void setOverrideParams(String overrideParams) {
+		this.overrideParams = overrideParams;
+		if(overrideParams != null){
+			putQueryParameter("OverrideParams", overrideParams);
 		}
 	}
 

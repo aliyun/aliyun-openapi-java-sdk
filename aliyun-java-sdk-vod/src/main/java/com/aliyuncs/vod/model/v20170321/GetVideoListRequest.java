@@ -46,6 +46,8 @@ public class GetVideoListRequest extends RpcAcsRequest<GetVideoListResponse> {
 
 	private String status;
 
+	private String storageLocation;
+
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
 	}
@@ -153,6 +155,17 @@ public class GetVideoListRequest extends RpcAcsRequest<GetVideoListResponse> {
 		this.status = status;
 		if(status != null){
 			putQueryParameter("Status", status);
+		}
+	}
+
+	public String getStorageLocation() {
+		return this.storageLocation;
+	}
+
+	public void setStorageLocation(String storageLocation) {
+		this.storageLocation = storageLocation;
+		if(storageLocation != null){
+			putQueryParameter("StorageLocation", storageLocation);
 		}
 	}
 

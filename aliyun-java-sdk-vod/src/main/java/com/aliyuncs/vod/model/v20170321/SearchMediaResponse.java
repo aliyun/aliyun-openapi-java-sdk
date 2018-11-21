@@ -15,6 +15,7 @@
 package com.aliyuncs.vod.model.v20170321;
 
 import java.util.List;
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.vod.transform.v20170321.SearchMediaResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -77,6 +78,8 @@ public class SearchMediaResponse extends AcsResponse {
 
 		private Audio audio;
 
+		private Image image;
+
 		public String getMediaType() {
 			return this.mediaType;
 		}
@@ -115,6 +118,14 @@ public class SearchMediaResponse extends AcsResponse {
 
 		public void setAudio(Audio audio) {
 			this.audio = audio;
+		}
+
+		public Image getImage() {
+			return this.image;
+		}
+
+		public void setImage(Image image) {
+			this.image = image;
 		}
 
 		public static class Video {
@@ -530,6 +541,149 @@ public class SearchMediaResponse extends AcsResponse {
 
 			public void setSpriteSnapshots2(List<String> spriteSnapshots2) {
 				this.spriteSnapshots2 = spriteSnapshots2;
+			}
+		}
+
+		public static class Image {
+
+			private String title;
+
+			private String imageId;
+
+			private Long cateId;
+
+			private String cateName;
+
+			private String ext;
+
+			private String creationTime;
+
+			private String modificationTime;
+
+			private String tags;
+
+			private String type;
+
+			private String uRL;
+
+			private String status;
+
+			private String description;
+
+			private String storageLocation;
+
+			private String regionId;
+
+			public String getTitle() {
+				return this.title;
+			}
+
+			public void setTitle(String title) {
+				this.title = title;
+			}
+
+			public String getImageId() {
+				return this.imageId;
+			}
+
+			public void setImageId(String imageId) {
+				this.imageId = imageId;
+			}
+
+			public Long getCateId() {
+				return this.cateId;
+			}
+
+			public void setCateId(Long cateId) {
+				this.cateId = cateId;
+			}
+
+			public String getCateName() {
+				return this.cateName;
+			}
+
+			public void setCateName(String cateName) {
+				this.cateName = cateName;
+			}
+
+			public String getExt() {
+				return this.ext;
+			}
+
+			public void setExt(String ext) {
+				this.ext = ext;
+			}
+
+			public String getCreationTime() {
+				return this.creationTime;
+			}
+
+			public void setCreationTime(String creationTime) {
+				this.creationTime = creationTime;
+			}
+
+			public String getModificationTime() {
+				return this.modificationTime;
+			}
+
+			public void setModificationTime(String modificationTime) {
+				this.modificationTime = modificationTime;
+			}
+
+			public String getTags() {
+				return this.tags;
+			}
+
+			public void setTags(String tags) {
+				this.tags = tags;
+			}
+
+			public String getType() {
+				return this.type;
+			}
+
+			public void setType(String type) {
+				this.type = type;
+			}
+
+			public String getURL() {
+				return this.uRL;
+			}
+
+			public void setURL(String uRL) {
+				this.uRL = uRL;
+			}
+
+			public String getStatus() {
+				return this.status;
+			}
+
+			public void setStatus(String status) {
+				this.status = status;
+			}
+
+			public String getDescription() {
+				return this.description;
+			}
+
+			public void setDescription(String description) {
+				this.description = description;
+			}
+
+			public String getStorageLocation() {
+				return this.storageLocation;
+			}
+
+			public void setStorageLocation(String storageLocation) {
+				this.storageLocation = storageLocation;
+			}
+
+			public String getRegionId() {
+				return this.regionId;
+			}
+
+			public void setRegionId(String regionId) {
+				this.regionId = regionId;
 			}
 		}
 	}

@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.vod.model.v20170321.SearchMediaResponse;
 import com.aliyuncs.vod.model.v20170321.SearchMediaResponse.Media;
 import com.aliyuncs.vod.model.v20170321.SearchMediaResponse.Media.Audio;
+import com.aliyuncs.vod.model.v20170321.SearchMediaResponse.Media.Image;
 import com.aliyuncs.vod.model.v20170321.SearchMediaResponse.Media.Video;
 import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -106,6 +107,23 @@ public class SearchMediaResponseUnmarshaller {
 			}
 			audio.setSpriteSnapshots2(spriteSnapshots2);
 			media.setAudio(audio);
+
+			Image image = new Image();
+			image.setTitle(context.stringValue("SearchMediaResponse.MediaList["+ i +"].Image.Title"));
+			image.setImageId(context.stringValue("SearchMediaResponse.MediaList["+ i +"].Image.ImageId"));
+			image.setCateId(context.longValue("SearchMediaResponse.MediaList["+ i +"].Image.CateId"));
+			image.setCateName(context.stringValue("SearchMediaResponse.MediaList["+ i +"].Image.CateName"));
+			image.setExt(context.stringValue("SearchMediaResponse.MediaList["+ i +"].Image.Ext"));
+			image.setCreationTime(context.stringValue("SearchMediaResponse.MediaList["+ i +"].Image.CreationTime"));
+			image.setModificationTime(context.stringValue("SearchMediaResponse.MediaList["+ i +"].Image.ModificationTime"));
+			image.setTags(context.stringValue("SearchMediaResponse.MediaList["+ i +"].Image.Tags"));
+			image.setType(context.stringValue("SearchMediaResponse.MediaList["+ i +"].Image.Type"));
+			image.setURL(context.stringValue("SearchMediaResponse.MediaList["+ i +"].Image.URL"));
+			image.setStatus(context.stringValue("SearchMediaResponse.MediaList["+ i +"].Image.Status"));
+			image.setDescription(context.stringValue("SearchMediaResponse.MediaList["+ i +"].Image.Description"));
+			image.setStorageLocation(context.stringValue("SearchMediaResponse.MediaList["+ i +"].Image.StorageLocation"));
+			image.setRegionId(context.stringValue("SearchMediaResponse.MediaList["+ i +"].Image.RegionId"));
+			media.setImage(image);
 
 			mediaList.add(media);
 		}

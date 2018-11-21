@@ -1,3 +1,8 @@
+2018-11-21 Version: 2.11.7
+1, Add new apis called AddWatermark, UpdateWatermark, DeleteWatermark, ListWatermarks, GetWatermark and SetDefaultWatermark which support watermark feature.
+2, Add a new api called RegisterMedia which supports registration of audio and video media files that already exist in the OSS bucket.
+3, Add the field named OverrideParams to SubmitTranscodeJobs api request.
+
 2018-10-11 Version: 2.11.6
 1, Add a new api called DeleteMezzanines to clear mezzanine infos and storages.
 2, Add the field called PlayConfig to GetVideoPlayAuth and GetPlayInfo api request.
