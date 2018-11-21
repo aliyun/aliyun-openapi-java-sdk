@@ -1,3 +1,8 @@
+2018-11-21 Version: 3.4.0
+1, api for custom keyword lib、similartext lib、voice keyword lib
+2, api for custom image lib
+3, support client file detect for image detection scenes、voice detection scenes、video detection scenes、file detection scenes
+
 2018-11-20 Version: 3.4.0
 1, api for custom keyword lib、similartext lib、voice keyword lib
 2, api for custom image lib
