@@ -34,6 +34,8 @@ public class TranslateECommerceRequest extends RpcAcsRequest<TranslateECommerceR
 
 	private String targetLanguage;
 
+	private String scene;
+
 	public String getSourceLanguage() {
 		return this.sourceLanguage;
 	}
@@ -75,6 +77,17 @@ public class TranslateECommerceRequest extends RpcAcsRequest<TranslateECommerceR
 		this.targetLanguage = targetLanguage;
 		if(targetLanguage != null){
 			putBodyParameter("TargetLanguage", targetLanguage);
+		}
+	}
+
+	public String getScene() {
+		return this.scene;
+	}
+
+	public void setScene(String scene) {
+		this.scene = scene;
+		if(scene != null){
+			putBodyParameter("Scene", scene);
 		}
 	}
 

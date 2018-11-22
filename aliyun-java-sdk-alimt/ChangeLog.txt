@@ -1,3 +1,6 @@
+2018-11-22 Version: 1.0.2
+1, Increase the scene field
+
 2018-11-16 Version: 1.0.1
 1, update version
 
