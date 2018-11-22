@@ -1,3 +1,6 @@
+2018-11-22 Version: 1.0.6
+1, Provide attribute info for DescribePricingModule api.
+
 2018-11-19 Version: 1.0.5
 1, Add query support for redeem
 
