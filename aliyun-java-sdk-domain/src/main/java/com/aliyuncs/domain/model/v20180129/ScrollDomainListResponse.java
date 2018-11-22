@@ -17,28 +17,22 @@ package com.aliyuncs.domain.model.v20180129;
 import java.util.List;
 import java.util.Map;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.domain.transform.v20180129.QueryAdvancedDomainListResponseUnmarshaller;
+import com.aliyuncs.domain.transform.v20180129.ScrollDomainListResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class QueryAdvancedDomainListResponse extends AcsResponse {
+public class ScrollDomainListResponse extends AcsResponse {
 
 	private String requestId;
 
 	private Integer totalItemNum;
 
-	private Integer currentPageNum;
-
-	private Integer totalPageNum;
-
 	private Integer pageSize;
 
-	private Boolean prePage;
-
-	private Boolean nextPage;
+	private String scrollId;
 
 	private List<Domain> data;
 
@@ -58,22 +52,6 @@ public class QueryAdvancedDomainListResponse extends AcsResponse {
 		this.totalItemNum = totalItemNum;
 	}
 
-	public Integer getCurrentPageNum() {
-		return this.currentPageNum;
-	}
-
-	public void setCurrentPageNum(Integer currentPageNum) {
-		this.currentPageNum = currentPageNum;
-	}
-
-	public Integer getTotalPageNum() {
-		return this.totalPageNum;
-	}
-
-	public void setTotalPageNum(Integer totalPageNum) {
-		this.totalPageNum = totalPageNum;
-	}
-
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
@@ -82,20 +60,12 @@ public class QueryAdvancedDomainListResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
-	public Boolean getPrePage() {
-		return this.prePage;
+	public String getScrollId() {
+		return this.scrollId;
 	}
 
-	public void setPrePage(Boolean prePage) {
-		this.prePage = prePage;
-	}
-
-	public Boolean getNextPage() {
-		return this.nextPage;
-	}
-
-	public void setNextPage(Boolean nextPage) {
-		this.nextPage = nextPage;
+	public void setScrollId(String scrollId) {
+		this.scrollId = scrollId;
 	}
 
 	public List<Domain> getData() {
@@ -320,7 +290,7 @@ public class QueryAdvancedDomainListResponse extends AcsResponse {
 	}
 
 	@Override
-	public QueryAdvancedDomainListResponse getInstance(UnmarshallerContext context) {
-		return	QueryAdvancedDomainListResponseUnmarshaller.unmarshall(this, context);
+	public ScrollDomainListResponse getInstance(UnmarshallerContext context) {
+		return	ScrollDomainListResponseUnmarshaller.unmarshall(this, context);
 	}
 }

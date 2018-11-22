@@ -55,6 +55,15 @@ public class QueryAdvancedDomainListResponseUnmarshaller {
 			domain.setRemark(context.stringValue("QueryAdvancedDomainListResponse.Data["+ i +"].Remark"));
 			domain.setDomainGroupName(context.stringValue("QueryAdvancedDomainListResponse.Data["+ i +"].DomainGroupName"));
 			domain.setExpirationCurrDateDiff(context.integerValue("QueryAdvancedDomainListResponse.Data["+ i +"].ExpirationCurrDateDiff"));
+			domain.setEmail(context.stringValue("QueryAdvancedDomainListResponse.Data["+ i +"].Email"));
+			domain.setZhRegistrantOrganization(context.stringValue("QueryAdvancedDomainListResponse.Data["+ i +"].ZhRegistrantOrganization"));
+			domain.setRegistrantOrganization(context.stringValue("QueryAdvancedDomainListResponse.Data["+ i +"].RegistrantOrganization"));
+
+			List<String> dnsList = new ArrayList<String>();
+			for (int j = 0; j < context.lengthValue("QueryAdvancedDomainListResponse.Data["+ i +"].DnsList.Length"); j++) {
+				dnsList.add(context.stringValue("QueryAdvancedDomainListResponse.Data["+ i +"].DnsList["+ j +"]"));
+			}
+			domain.setDnsList(dnsList);
 
 			data.add(domain);
 		}

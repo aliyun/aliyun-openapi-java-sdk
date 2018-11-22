@@ -1,3 +1,7 @@
+2018-11-22 Version: 3.11.0
+1, Add ScrollDomainList api.
+2, Add email filter for QueryRegistrantProfile.
+
 2018-11-19 Version: 3.10.1
 1, Add field BargainSellerPrice and BargainSellerMobile
 
