@@ -162,6 +162,8 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		private String creditSpecification;
 
+		private Boolean deletionProtection;
+
 		private List<NetworkInterface> networkInterfaces;
 
 		private List<LockReason> operationLocks;
@@ -516,6 +518,14 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		public void setCreditSpecification(String creditSpecification) {
 			this.creditSpecification = creditSpecification;
+		}
+
+		public Boolean getDeletionProtection() {
+			return this.deletionProtection;
+		}
+
+		public void setDeletionProtection(Boolean deletionProtection) {
+			this.deletionProtection = deletionProtection;
 		}
 
 		public List<NetworkInterface> getNetworkInterfaces() {

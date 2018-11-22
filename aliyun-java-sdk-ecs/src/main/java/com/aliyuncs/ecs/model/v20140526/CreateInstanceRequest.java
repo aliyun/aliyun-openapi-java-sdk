@@ -37,6 +37,8 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 
 	private Float spotPriceLimit;
 
+	private Boolean deletionProtection;
+
 	private String resourceGroupId;
 
 	private String hostName;
@@ -177,6 +179,17 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 		this.spotPriceLimit = spotPriceLimit;
 		if(spotPriceLimit != null){
 			putQueryParameter("SpotPriceLimit", spotPriceLimit.toString());
+		}
+	}
+
+	public Boolean getDeletionProtection() {
+		return this.deletionProtection;
+	}
+
+	public void setDeletionProtection(Boolean deletionProtection) {
+		this.deletionProtection = deletionProtection;
+		if(deletionProtection != null){
+			putQueryParameter("DeletionProtection", deletionProtection.toString());
 		}
 	}
 

@@ -1,3 +1,7 @@
+2018-11-22 Version: 4.13.1
+1, Add parameter DeletionProtection when creating instance and modifying instance attribute
+
+
 2018-11-15 Version: 4.13.0
 1, ECS support ipv6Address
 
