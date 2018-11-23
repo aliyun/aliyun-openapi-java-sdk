@@ -1,0 +1,4 @@
+2018-11-23 Version: 1.0.0
+1, First release.
+2, Alibaba Cloud customer info query for xspace using ID or phone number.
+
