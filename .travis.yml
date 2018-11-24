@@ -1,0 +1,12 @@
+
+language: java
+sudo: false # faster builds
+
+script:
+  - cd ./aliyun-java-sdk-core
+  #- mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+  - mvn test -B
+
+after_success:
+  - cd ./aliyun-java-sdk-core
+  - bash <(curl -s https://codecov.io/bash)
