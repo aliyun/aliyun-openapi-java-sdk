@@ -1,11 +1,15 @@
 # Alibaba Cloud Java Software Development Kit
+
+[![Build Status](https://travis-ci.org/aliyun/aliyun-openapi-java-sdk.svg?branch=master)](https://travis-ci.org/aliyun/aliyun-openapi-java-sdk)
+[![codecov](https://codecov.io/gh/aliyun/aliyun-openapi-java-sdk/branch/master/graph/badge.svg)](https://codecov.io/gh/aliyun/aliyun-openapi-java-sdk)
+
 [中文文档](./README_zh.md)
 
 The Alibaba Cloud Software Development Kit Java (SDK) allows you to access Alibaba Cloud services such as Elastic Compute Service (ECS), Server Load Balancer (SLB), and CloudMonitor. You can access Alibaba Cloud services without the need to handle API related tasks, such as signing and constructing your requests.
 
 This document introduces how to obtain and call Alibaba Cloud Java SDK.
 
-If you have any problem while using Java SDK, please join the **DingTalk group: 11771185 (the official SDK customer service group of Alibaba Cloud)** for consultation.
+If you have any problem while using Java SDK, please [submit an issue](https://github.com/aliyun/aliyun-openapi-java-sdk/issues/new).
 
 ## Prerequisites
 
