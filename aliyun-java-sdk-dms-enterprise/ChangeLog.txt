@@ -1,0 +1,5 @@
+2018-11-26 Version: 1.0.0
+1, Add RegisterInstance interface, Support admin or DBA user to register new db instance.
+2, Add RegisterUser Interface, Support admin user to register new user.
+3, Add GetOpLog Interface, Support admin user to get operation log.
+
