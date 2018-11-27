@@ -1,3 +1,6 @@
+2018-11-27 Version: 1.9.1
+1, ConvertOfficeFormat support TgtFilePrefix, TgtFileSuffix, TgtFilePages, FitToPagesTall, FitToPagesWide
+
 2018-11-27 Version: 1.9.0
 1, add doc index api
 
