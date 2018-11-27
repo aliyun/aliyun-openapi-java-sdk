@@ -16,22 +16,22 @@ package com.aliyuncs.iot.model.v20180120;
 
 import java.util.Map;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.iot.transform.v20180120.PubBroadcastResponseUnmarshaller;
+import com.aliyuncs.iot.transform.v20180120.InvokeThingsServiceResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class PubBroadcastResponse extends AcsResponse {
+public class InvokeThingsServiceResponse extends AcsResponse {
 
 	private String requestId;
 
 	private Boolean success;
 
-	private String code;
-
 	private String errorMessage;
+
+	private String code;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -49,14 +49,6 @@ public class PubBroadcastResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
 	public String getErrorMessage() {
 		return this.errorMessage;
 	}
@@ -65,8 +57,16 @@ public class PubBroadcastResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
 	@Override
-	public PubBroadcastResponse getInstance(UnmarshallerContext context) {
-		return	PubBroadcastResponseUnmarshaller.unmarshall(this, context);
+	public InvokeThingsServiceResponse getInstance(UnmarshallerContext context) {
+		return	InvokeThingsServiceResponseUnmarshaller.unmarshall(this, context);
 	}
 }

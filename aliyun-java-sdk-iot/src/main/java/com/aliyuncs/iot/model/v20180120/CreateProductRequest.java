@@ -32,6 +32,8 @@ public class CreateProductRequest extends RpcAcsRequest<CreateProductResponse> {
 
 	private Boolean id2;
 
+	private String netType;
+
 	private String productName;
 
 	private String description;
@@ -72,6 +74,17 @@ public class CreateProductRequest extends RpcAcsRequest<CreateProductResponse> {
 		this.id2 = id2;
 		if(id2 != null){
 			putQueryParameter("Id2", id2.toString());
+		}
+	}
+
+	public String getNetType() {
+		return this.netType;
+	}
+
+	public void setNetType(String netType) {
+		this.netType = netType;
+		if(netType != null){
+			putQueryParameter("NetType", netType);
 		}
 	}
 

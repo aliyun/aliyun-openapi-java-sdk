@@ -14,6 +14,7 @@
 
 package com.aliyuncs.iot.model.v20180120;
 
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.iot.transform.v20180120.UpdateDeviceGroupResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;

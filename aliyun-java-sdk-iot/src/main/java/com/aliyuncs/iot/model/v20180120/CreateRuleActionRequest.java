@@ -32,6 +32,8 @@ public class CreateRuleActionRequest extends RpcAcsRequest<CreateRuleActionRespo
 
 	private String type;
 
+	private Boolean errorActionFlag;
+
 	public String getConfiguration() {
 		return this.configuration;
 	}
@@ -62,6 +64,17 @@ public class CreateRuleActionRequest extends RpcAcsRequest<CreateRuleActionRespo
 		this.type = type;
 		if(type != null){
 			putQueryParameter("Type", type);
+		}
+	}
+
+	public Boolean getErrorActionFlag() {
+		return this.errorActionFlag;
+	}
+
+	public void setErrorActionFlag(Boolean errorActionFlag) {
+		this.errorActionFlag = errorActionFlag;
+		if(errorActionFlag != null){
+			putQueryParameter("ErrorActionFlag", errorActionFlag.toString());
 		}
 	}
 

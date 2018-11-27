@@ -17,14 +17,14 @@ package com.aliyuncs.iot.model.v20180120;
 import java.util.List;
 import java.util.Map;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.iot.transform.v20180120.QueryDeviceResponseUnmarshaller;
+import com.aliyuncs.iot.transform.v20180120.QueryDeviceByTagsResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class QueryDeviceResponse extends AcsResponse {
+public class QueryDeviceByTagsResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -34,15 +34,15 @@ public class QueryDeviceResponse extends AcsResponse {
 
 	private String errorMessage;
 
-	private Integer total;
+	private Integer page;
 
 	private Integer pageSize;
 
 	private Integer pageCount;
 
-	private Integer page;
+	private Integer total;
 
-	private List<DeviceInfo> data;
+	private List<SimpleDeviceInfo> data;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -76,12 +76,12 @@ public class QueryDeviceResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
-	public Integer getTotal() {
-		return this.total;
+	public Integer getPage() {
+		return this.page;
 	}
 
-	public void setTotal(Integer total) {
-		this.total = total;
+	public void setPage(Integer page) {
+		this.page = page;
 	}
 
 	public Integer getPageSize() {
@@ -100,54 +100,38 @@ public class QueryDeviceResponse extends AcsResponse {
 		this.pageCount = pageCount;
 	}
 
-	public Integer getPage() {
-		return this.page;
+	public Integer getTotal() {
+		return this.total;
 	}
 
-	public void setPage(Integer page) {
-		this.page = page;
+	public void setTotal(Integer total) {
+		this.total = total;
 	}
 
-	public List<DeviceInfo> getData() {
+	public List<SimpleDeviceInfo> getData() {
 		return this.data;
 	}
 
-	public void setData(List<DeviceInfo> data) {
+	public void setData(List<SimpleDeviceInfo> data) {
 		this.data = data;
 	}
 
-	public static class DeviceInfo {
+	public static class SimpleDeviceInfo {
 
-		private String deviceId;
-
-		private String deviceSecret;
+		private String productName;
 
 		private String productKey;
 
-		private String deviceStatus;
-
 		private String deviceName;
 
-		private String deviceType;
+		private String iotId;
 
-		private String gmtCreate;
-
-		private String gmtModified;
-
-		public String getDeviceId() {
-			return this.deviceId;
+		public String getProductName() {
+			return this.productName;
 		}
 
-		public void setDeviceId(String deviceId) {
-			this.deviceId = deviceId;
-		}
-
-		public String getDeviceSecret() {
-			return this.deviceSecret;
-		}
-
-		public void setDeviceSecret(String deviceSecret) {
-			this.deviceSecret = deviceSecret;
+		public void setProductName(String productName) {
+			this.productName = productName;
 		}
 
 		public String getProductKey() {
@@ -158,14 +142,6 @@ public class QueryDeviceResponse extends AcsResponse {
 			this.productKey = productKey;
 		}
 
-		public String getDeviceStatus() {
-			return this.deviceStatus;
-		}
-
-		public void setDeviceStatus(String deviceStatus) {
-			this.deviceStatus = deviceStatus;
-		}
-
 		public String getDeviceName() {
 			return this.deviceName;
 		}
@@ -174,33 +150,17 @@ public class QueryDeviceResponse extends AcsResponse {
 			this.deviceName = deviceName;
 		}
 
-		public String getDeviceType() {
-			return this.deviceType;
+		public String getIotId() {
+			return this.iotId;
 		}
 
-		public void setDeviceType(String deviceType) {
-			this.deviceType = deviceType;
-		}
-
-		public String getGmtCreate() {
-			return this.gmtCreate;
-		}
-
-		public void setGmtCreate(String gmtCreate) {
-			this.gmtCreate = gmtCreate;
-		}
-
-		public String getGmtModified() {
-			return this.gmtModified;
-		}
-
-		public void setGmtModified(String gmtModified) {
-			this.gmtModified = gmtModified;
+		public void setIotId(String iotId) {
+			this.iotId = iotId;
 		}
 	}
 
 	@Override
-	public QueryDeviceResponse getInstance(UnmarshallerContext context) {
-		return	QueryDeviceResponseUnmarshaller.unmarshall(this, context);
+	public QueryDeviceByTagsResponse getInstance(UnmarshallerContext context) {
+		return	QueryDeviceByTagsResponseUnmarshaller.unmarshall(this, context);
 	}
 }

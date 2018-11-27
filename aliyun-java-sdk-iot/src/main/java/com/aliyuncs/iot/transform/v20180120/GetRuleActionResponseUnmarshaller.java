@@ -33,6 +33,7 @@ public class GetRuleActionResponseUnmarshaller {
 		ruleActionInfo.setRuleId(context.longValue("GetRuleActionResponse.RuleActionInfo.RuleId"));
 		ruleActionInfo.setType(context.stringValue("GetRuleActionResponse.RuleActionInfo.Type"));
 		ruleActionInfo.setConfiguration(context.stringValue("GetRuleActionResponse.RuleActionInfo.Configuration"));
+		ruleActionInfo.setErrorActionFlag(context.booleanValue("GetRuleActionResponse.RuleActionInfo.ErrorActionFlag"));
 		getRuleActionResponse.setRuleActionInfo(ruleActionInfo);
 	 
 	 	return getRuleActionResponse;

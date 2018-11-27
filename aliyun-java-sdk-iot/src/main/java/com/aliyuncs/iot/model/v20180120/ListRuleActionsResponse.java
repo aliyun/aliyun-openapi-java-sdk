@@ -15,6 +15,7 @@
 package com.aliyuncs.iot.model.v20180120;
 
 import java.util.List;
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.iot.transform.v20180120.ListRuleActionsResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -85,6 +86,8 @@ public class ListRuleActionsResponse extends AcsResponse {
 
 		private String configuration;
 
+		private Boolean errorActionFlag;
+
 		public Long getId() {
 			return this.id;
 		}
@@ -115,6 +118,14 @@ public class ListRuleActionsResponse extends AcsResponse {
 
 		public void setConfiguration(String configuration) {
 			this.configuration = configuration;
+		}
+
+		public Boolean getErrorActionFlag() {
+			return this.errorActionFlag;
+		}
+
+		public void setErrorActionFlag(Boolean errorActionFlag) {
+			this.errorActionFlag = errorActionFlag;
 		}
 	}
 

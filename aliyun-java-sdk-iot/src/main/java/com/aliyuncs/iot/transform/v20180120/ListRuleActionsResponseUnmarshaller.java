@@ -39,6 +39,7 @@ public class ListRuleActionsResponseUnmarshaller {
 			ruleActionInfo.setRuleId(context.longValue("ListRuleActionsResponse.RuleActionList["+ i +"].RuleId"));
 			ruleActionInfo.setType(context.stringValue("ListRuleActionsResponse.RuleActionList["+ i +"].Type"));
 			ruleActionInfo.setConfiguration(context.stringValue("ListRuleActionsResponse.RuleActionList["+ i +"].Configuration"));
+			ruleActionInfo.setErrorActionFlag(context.booleanValue("ListRuleActionsResponse.RuleActionList["+ i +"].ErrorActionFlag"));
 
 			ruleActionList.add(ruleActionInfo);
 		}

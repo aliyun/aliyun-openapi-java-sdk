@@ -14,17 +14,16 @@
 
 package com.aliyuncs.iot.model.v20180120;
 
-import java.util.List;
 import java.util.Map;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.iot.transform.v20180120.QueryProductTopicResponseUnmarshaller;
+import com.aliyuncs.iot.transform.v20180120.SetDeviceGroupTagsResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class QueryProductTopicResponse extends AcsResponse {
+public class SetDeviceGroupTagsResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -33,8 +32,6 @@ public class QueryProductTopicResponse extends AcsResponse {
 	private String code;
 
 	private String errorMessage;
-
-	private List<ProductTopicInfo> data;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -68,69 +65,8 @@ public class QueryProductTopicResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
-	public List<ProductTopicInfo> getData() {
-		return this.data;
-	}
-
-	public void setData(List<ProductTopicInfo> data) {
-		this.data = data;
-	}
-
-	public static class ProductTopicInfo {
-
-		private String productKey;
-
-		private String topicShortName;
-
-		private String operation;
-
-		private String desc;
-
-		private String id;
-
-		public String getProductKey() {
-			return this.productKey;
-		}
-
-		public void setProductKey(String productKey) {
-			this.productKey = productKey;
-		}
-
-		public String getTopicShortName() {
-			return this.topicShortName;
-		}
-
-		public void setTopicShortName(String topicShortName) {
-			this.topicShortName = topicShortName;
-		}
-
-		public String getOperation() {
-			return this.operation;
-		}
-
-		public void setOperation(String operation) {
-			this.operation = operation;
-		}
-
-		public String getDesc() {
-			return this.desc;
-		}
-
-		public void setDesc(String desc) {
-			this.desc = desc;
-		}
-
-		public String getId() {
-			return this.id;
-		}
-
-		public void setId(String id) {
-			this.id = id;
-		}
-	}
-
 	@Override
-	public QueryProductTopicResponse getInstance(UnmarshallerContext context) {
-		return	QueryProductTopicResponseUnmarshaller.unmarshall(this, context);
+	public SetDeviceGroupTagsResponse getInstance(UnmarshallerContext context) {
+		return	SetDeviceGroupTagsResponseUnmarshaller.unmarshall(this, context);
 	}
 }
