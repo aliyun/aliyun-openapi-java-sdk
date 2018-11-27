@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class GetSmartAccessGatewayUseLimitRequest extends RpcAcsRequest<GetSmartAccessGatewayUseLimitResponse> {
 	
 	public GetSmartAccessGatewayUseLimitRequest() {
-		super("Smartag", "2018-03-13", "GetSmartAccessGatewayUseLimit", "smartag");
+		super("Smartag", "2018-03-13", "GetSmartAccessGatewayUseLimit", "1.4.0");
 	}
 
 	private Long resourceOwnerId;

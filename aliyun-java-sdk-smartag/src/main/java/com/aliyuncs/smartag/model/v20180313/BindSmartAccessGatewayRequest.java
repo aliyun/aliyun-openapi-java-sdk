@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class BindSmartAccessGatewayRequest extends RpcAcsRequest<BindSmartAccessGatewayResponse> {
 	
 	public BindSmartAccessGatewayRequest() {
-		super("Smartag", "2018-03-13", "BindSmartAccessGateway", "smartag");
+		super("Smartag", "2018-03-13", "BindSmartAccessGateway", "1.4.0");
 	}
 
 	private Long resourceOwnerId;

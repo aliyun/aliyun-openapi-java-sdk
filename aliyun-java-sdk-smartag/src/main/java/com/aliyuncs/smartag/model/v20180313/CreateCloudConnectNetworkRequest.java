@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class CreateCloudConnectNetworkRequest extends RpcAcsRequest<CreateCloudConnectNetworkResponse> {
 	
 	public CreateCloudConnectNetworkRequest() {
-		super("Smartag", "2018-03-13", "CreateCloudConnectNetwork", "smartag");
+		super("Smartag", "2018-03-13", "CreateCloudConnectNetwork", "1.4.0");
 	}
 
 	private Long resourceOwnerId;

@@ -23,12 +23,14 @@ import com.aliyuncs.RpcAcsRequest;
 public class RevokeInstanceFromCbnRequest extends RpcAcsRequest<RevokeInstanceFromCbnResponse> {
 	
 	public RevokeInstanceFromCbnRequest() {
-		super("Smartag", "2018-03-13", "RevokeInstanceFromCbn", "smartag");
+		super("Smartag", "2018-03-13", "RevokeInstanceFromCbn", "1.4.0");
 	}
 
 	private Long resourceOwnerId;
 
 	private String resourceOwnerAccount;
+
+	private String cenInstanceId;
 
 	private String ownerAccount;
 
@@ -55,6 +57,17 @@ public class RevokeInstanceFromCbnRequest extends RpcAcsRequest<RevokeInstanceFr
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getCenInstanceId() {
+		return this.cenInstanceId;
+	}
+
+	public void setCenInstanceId(String cenInstanceId) {
+		this.cenInstanceId = cenInstanceId;
+		if(cenInstanceId != null){
+			putQueryParameter("CenInstanceId", cenInstanceId);
 		}
 	}
 

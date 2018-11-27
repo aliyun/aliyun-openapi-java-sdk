@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeRegionsRequest extends RpcAcsRequest<DescribeRegionsResponse> {
 	
 	public DescribeRegionsRequest() {
-		super("Smartag", "2018-03-13", "DescribeRegions", "smartag");
+		super("Smartag", "2018-03-13", "DescribeRegions", "1.4.0");
 	}
 
 	private Long resourceOwnerId;

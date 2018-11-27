@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class SwitchCloudBoxHaStateRequest extends RpcAcsRequest<SwitchCloudBoxHaStateResponse> {
 	
 	public SwitchCloudBoxHaStateRequest() {
-		super("Smartag", "2018-03-13", "SwitchCloudBoxHaState", "smartag");
+		super("Smartag", "2018-03-13", "SwitchCloudBoxHaState", "1.4.0");
 	}
 
 	private Long resourceOwnerId;

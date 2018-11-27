@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class GrantInstanceToCbnRequest extends RpcAcsRequest<GrantInstanceToCbnResponse> {
 	
 	public GrantInstanceToCbnRequest() {
-		super("Smartag", "2018-03-13", "GrantInstanceToCbn", "smartag");
+		super("Smartag", "2018-03-13", "GrantInstanceToCbn", "1.4.0");
 	}
 
 	private Long resourceOwnerId;

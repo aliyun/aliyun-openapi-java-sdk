@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class CreateSAGLinkLevelHaRequest extends RpcAcsRequest<CreateSAGLinkLevelHaResponse> {
 	
 	public CreateSAGLinkLevelHaRequest() {
-		super("Smartag", "2018-03-13", "CreateSAGLinkLevelHa", "smartag");
+		super("Smartag", "2018-03-13", "CreateSAGLinkLevelHa", "1.4.0");
 	}
 
 	private Long resourceOwnerId;

@@ -1,3 +1,8 @@
+2018-11-27 Version: 1.4.0
+1, Add CenInstanceId to RevokeInstanceFromCbn.
+2, Modify the filter condition of the DescribeGrantRules.
+3, Add SerialNumber to DescribeSmartAccessGateways.
+
 2018-11-18 Version: 1.3.0
 1, Add unicom interface.
 2, Add switchSAGHaState, CreateSAGLinkLevelHa and DeleteSAGLinkLevelHa.

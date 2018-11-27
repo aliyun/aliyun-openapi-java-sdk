@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifySmartAccessGatewayRequest extends RpcAcsRequest<ModifySmartAccessGatewayResponse> {
 	
 	public ModifySmartAccessGatewayRequest() {
-		super("Smartag", "2018-03-13", "ModifySmartAccessGateway", "smartag");
+		super("Smartag", "2018-03-13", "ModifySmartAccessGateway", "1.4.0");
 	}
 
 	private Long resourceOwnerId;

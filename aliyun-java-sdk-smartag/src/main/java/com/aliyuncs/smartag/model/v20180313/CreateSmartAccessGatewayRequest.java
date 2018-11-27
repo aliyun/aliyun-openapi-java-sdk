@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class CreateSmartAccessGatewayRequest extends RpcAcsRequest<CreateSmartAccessGatewayResponse> {
 	
 	public CreateSmartAccessGatewayRequest() {
-		super("Smartag", "2018-03-13", "CreateSmartAccessGateway", "smartag");
+		super("Smartag", "2018-03-13", "CreateSmartAccessGateway", "1.4.0");
 	}
 
 	private Integer maxBandWidth;

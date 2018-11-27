@@ -24,7 +24,7 @@ import java.util.List;
 public class UnicomOrderConfirmRequest extends RpcAcsRequest<UnicomOrderConfirmResponse> {
 	
 	public UnicomOrderConfirmRequest() {
-		super("Smartag", "2018-03-13", "UnicomOrderConfirm", "smartag");
+		super("Smartag", "2018-03-13", "UnicomOrderConfirm", "1.4.0");
 	}
 
 	private String tmsCode;

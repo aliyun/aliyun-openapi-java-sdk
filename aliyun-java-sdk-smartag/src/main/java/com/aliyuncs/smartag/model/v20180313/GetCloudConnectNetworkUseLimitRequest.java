@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class GetCloudConnectNetworkUseLimitRequest extends RpcAcsRequest<GetCloudConnectNetworkUseLimitResponse> {
 	
 	public GetCloudConnectNetworkUseLimitRequest() {
-		super("Smartag", "2018-03-13", "GetCloudConnectNetworkUseLimit", "smartag");
+		super("Smartag", "2018-03-13", "GetCloudConnectNetworkUseLimit", "1.4.0");
 	}
 
 	private Long resourceOwnerId;

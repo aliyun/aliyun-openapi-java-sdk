@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeleteDedicatedLineBackupRequest extends RpcAcsRequest<DeleteDedicatedLineBackupResponse> {
 	
 	public DeleteDedicatedLineBackupRequest() {
-		super("Smartag", "2018-03-13", "DeleteDedicatedLineBackup", "smartag");
+		super("Smartag", "2018-03-13", "DeleteDedicatedLineBackup", "1.4.0");
 	}
 
 	private Long resourceOwnerId;
