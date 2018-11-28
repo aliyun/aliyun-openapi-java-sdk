@@ -1,3 +1,6 @@
+2018-11-28 Version: 4.14.0
+1, Add RedeployInstance interface, and support to migrate ecs instance with specified maintenance events actively
+
 2018-11-22 Version: 4.13.1
 1, Add parameter DeletionProtection when creating instance and modifying instance attribute
 

@@ -41,6 +41,7 @@ public class DescribeRouteTablesResponseUnmarshaller {
 			routeTable.setRouteTableId(context.stringValue("DescribeRouteTablesResponse.RouteTables["+ i +"].RouteTableId"));
 			routeTable.setRouteTableType(context.stringValue("DescribeRouteTablesResponse.RouteTables["+ i +"].RouteTableType"));
 			routeTable.setCreationTime(context.stringValue("DescribeRouteTablesResponse.RouteTables["+ i +"].CreationTime"));
+			routeTable.setResourceGroupId(context.stringValue("DescribeRouteTablesResponse.RouteTables["+ i +"].ResourceGroupId"));
 
 			List<RouteEntry> routeEntrys = new ArrayList<RouteEntry>();
 			for (int j = 0; j < context.lengthValue("DescribeRouteTablesResponse.RouteTables["+ i +"].RouteEntrys.Length"); j++) {

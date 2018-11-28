@@ -86,6 +86,8 @@ public class DescribeRouteTablesResponse extends AcsResponse {
 
 		private String creationTime;
 
+		private String resourceGroupId;
+
 		private List<RouteEntry> routeEntrys;
 
 		public String getVRouterId() {
@@ -118,6 +120,14 @@ public class DescribeRouteTablesResponse extends AcsResponse {
 
 		public void setCreationTime(String creationTime) {
 			this.creationTime = creationTime;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
 		}
 
 		public List<RouteEntry> getRouteEntrys() {
