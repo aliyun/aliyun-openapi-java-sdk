@@ -1,3 +1,6 @@
 2018-11-29 Version: 1.0.0
+1, This is the first version of Uis service.
+
+2018-11-29 Version: 1.0.0
 1, This is the first SDK version of Uis service.
 
