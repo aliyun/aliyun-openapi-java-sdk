@@ -33,9 +33,17 @@ public class GetImageInfoResponseUnmarshaller {
 		imageInfo.setImageType(context.stringValue("GetImageInfoResponse.ImageInfo.ImageType"));
 		imageInfo.setTags(context.stringValue("GetImageInfoResponse.ImageInfo.Tags"));
 		imageInfo.setURL(context.stringValue("GetImageInfoResponse.ImageInfo.URL"));
+		imageInfo.setCateId(context.longValue("GetImageInfoResponse.ImageInfo.CateId"));
+		imageInfo.setCateName(context.stringValue("GetImageInfoResponse.ImageInfo.CateName"));
+		imageInfo.setDescription(context.stringValue("GetImageInfoResponse.ImageInfo.Description"));
+		imageInfo.setStorageLocation(context.stringValue("GetImageInfoResponse.ImageInfo.StorageLocation"));
 
 		Mezzanine mezzanine = new Mezzanine();
 		mezzanine.setOriginalFileName(context.stringValue("GetImageInfoResponse.ImageInfo.Mezzanine.OriginalFileName"));
+		mezzanine.setFileSize(context.stringValue("GetImageInfoResponse.ImageInfo.Mezzanine.FileSize"));
+		mezzanine.setWidth(context.integerValue("GetImageInfoResponse.ImageInfo.Mezzanine.Width"));
+		mezzanine.setHeight(context.integerValue("GetImageInfoResponse.ImageInfo.Mezzanine.Height"));
+		mezzanine.setFileURL(context.stringValue("GetImageInfoResponse.ImageInfo.Mezzanine.FileURL"));
 		imageInfo.setMezzanine(mezzanine);
 		getImageInfoResponse.setImageInfo(imageInfo);
 	 

@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class RefreshObjectCachesRequest extends RpcAcsRequest<RefreshObjectCachesResponse> {
 	
 	public RefreshObjectCachesRequest() {
-		super("vod", "2017-03-21", "RefreshObjectCaches", "vod");
+		super("vod", "2017-03-21", "RefreshObjectCaches");
 	}
 
 	private String resourceOwnerId;

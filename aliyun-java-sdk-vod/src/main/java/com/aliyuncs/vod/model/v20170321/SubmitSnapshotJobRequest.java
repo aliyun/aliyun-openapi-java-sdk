@@ -23,26 +23,28 @@ import com.aliyuncs.RpcAcsRequest;
 public class SubmitSnapshotJobRequest extends RpcAcsRequest<SubmitSnapshotJobResponse> {
 	
 	public SubmitSnapshotJobRequest() {
-		super("vod", "2017-03-21", "SubmitSnapshotJob", "vod");
+		super("vod", "2017-03-21", "SubmitSnapshotJob");
 	}
 
 	private Long resourceOwnerId;
 
-	private Long specifiedOffsetTime;
-
 	private String resourceOwnerAccount;
-
-	private String width;
 
 	private Long count;
 
 	private String videoId;
 
-	private Long interval;
-
 	private Long ownerId;
 
+	private Long specifiedOffsetTime;
+
+	private String width;
+
+	private Long interval;
+
 	private String spriteSnapshotConfig;
+
+	private String snapshotTemplateId;
 
 	private String height;
 
@@ -57,17 +59,6 @@ public class SubmitSnapshotJobRequest extends RpcAcsRequest<SubmitSnapshotJobRes
 		}
 	}
 
-	public Long getSpecifiedOffsetTime() {
-		return this.specifiedOffsetTime;
-	}
-
-	public void setSpecifiedOffsetTime(Long specifiedOffsetTime) {
-		this.specifiedOffsetTime = specifiedOffsetTime;
-		if(specifiedOffsetTime != null){
-			putQueryParameter("SpecifiedOffsetTime", specifiedOffsetTime.toString());
-		}
-	}
-
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
 	}
@@ -76,17 +67,6 @@ public class SubmitSnapshotJobRequest extends RpcAcsRequest<SubmitSnapshotJobRes
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public String getWidth() {
-		return this.width;
-	}
-
-	public void setWidth(String width) {
-		this.width = width;
-		if(width != null){
-			putQueryParameter("Width", width);
 		}
 	}
 
@@ -112,17 +92,6 @@ public class SubmitSnapshotJobRequest extends RpcAcsRequest<SubmitSnapshotJobRes
 		}
 	}
 
-	public Long getInterval() {
-		return this.interval;
-	}
-
-	public void setInterval(Long interval) {
-		this.interval = interval;
-		if(interval != null){
-			putQueryParameter("Interval", interval.toString());
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -134,6 +103,39 @@ public class SubmitSnapshotJobRequest extends RpcAcsRequest<SubmitSnapshotJobRes
 		}
 	}
 
+	public Long getSpecifiedOffsetTime() {
+		return this.specifiedOffsetTime;
+	}
+
+	public void setSpecifiedOffsetTime(Long specifiedOffsetTime) {
+		this.specifiedOffsetTime = specifiedOffsetTime;
+		if(specifiedOffsetTime != null){
+			putQueryParameter("SpecifiedOffsetTime", specifiedOffsetTime.toString());
+		}
+	}
+
+	public String getWidth() {
+		return this.width;
+	}
+
+	public void setWidth(String width) {
+		this.width = width;
+		if(width != null){
+			putQueryParameter("Width", width);
+		}
+	}
+
+	public Long getInterval() {
+		return this.interval;
+	}
+
+	public void setInterval(Long interval) {
+		this.interval = interval;
+		if(interval != null){
+			putQueryParameter("Interval", interval.toString());
+		}
+	}
+
 	public String getSpriteSnapshotConfig() {
 		return this.spriteSnapshotConfig;
 	}
@@ -142,6 +144,17 @@ public class SubmitSnapshotJobRequest extends RpcAcsRequest<SubmitSnapshotJobRes
 		this.spriteSnapshotConfig = spriteSnapshotConfig;
 		if(spriteSnapshotConfig != null){
 			putQueryParameter("SpriteSnapshotConfig", spriteSnapshotConfig);
+		}
+	}
+
+	public String getSnapshotTemplateId() {
+		return this.snapshotTemplateId;
+	}
+
+	public void setSnapshotTemplateId(String snapshotTemplateId) {
+		this.snapshotTemplateId = snapshotTemplateId;
+		if(snapshotTemplateId != null){
+			putQueryParameter("SnapshotTemplateId", snapshotTemplateId);
 		}
 	}
 

@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class SubmitPreprocessJobsRequest extends RpcAcsRequest<SubmitPreprocessJobsResponse> {
 	
 	public SubmitPreprocessJobsRequest() {
-		super("vod", "2017-03-21", "SubmitPreprocessJobs", "vod");
+		super("vod", "2017-03-21", "SubmitPreprocessJobs");
 	}
 
 	private Long resourceOwnerId;

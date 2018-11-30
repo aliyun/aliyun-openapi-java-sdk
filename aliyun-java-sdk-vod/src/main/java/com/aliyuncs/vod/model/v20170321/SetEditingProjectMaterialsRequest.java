@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class SetEditingProjectMaterialsRequest extends RpcAcsRequest<SetEditingProjectMaterialsResponse> {
 	
 	public SetEditingProjectMaterialsRequest() {
-		super("vod", "2017-03-21", "SetEditingProjectMaterials", "vod");
+		super("vod", "2017-03-21", "SetEditingProjectMaterials");
 	}
 
 	private String resourceOwnerId;

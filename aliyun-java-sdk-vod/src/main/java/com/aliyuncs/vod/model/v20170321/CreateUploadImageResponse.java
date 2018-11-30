@@ -79,4 +79,9 @@ public class CreateUploadImageResponse extends AcsResponse {
 	public CreateUploadImageResponse getInstance(UnmarshallerContext context) {
 		return	CreateUploadImageResponseUnmarshaller.unmarshall(this, context);
 	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
+	}
 }

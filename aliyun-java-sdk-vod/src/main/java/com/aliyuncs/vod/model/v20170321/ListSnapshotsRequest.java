@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ListSnapshotsRequest extends RpcAcsRequest<ListSnapshotsResponse> {
 	
 	public ListSnapshotsRequest() {
-		super("vod", "2017-03-21", "ListSnapshots", "vod");
+		super("vod", "2017-03-21", "ListSnapshots");
 	}
 
 	private Long resourceOwnerId;

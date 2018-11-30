@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeleteMezzaninesRequest extends RpcAcsRequest<DeleteMezzaninesResponse> {
 	
 	public DeleteMezzaninesRequest() {
-		super("vod", "2017-03-21", "DeleteMezzanines", "vod");
+		super("vod", "2017-03-21", "DeleteMezzanines");
 	}
 
 	private Long resourceOwnerId;

@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class CreateUploadImageRequest extends RpcAcsRequest<CreateUploadImageResponse> {
 	
 	public CreateUploadImageRequest() {
-		super("vod", "2017-03-21", "CreateUploadImage", "vod");
+		super("vod", "2017-03-21", "CreateUploadImage");
 	}
 
 	private Long resourceOwnerId;
@@ -35,6 +35,8 @@ public class CreateUploadImageRequest extends RpcAcsRequest<CreateUploadImageRes
 	private String resourceOwnerAccount;
 
 	private String imageExt;
+
+	private Long cateId;
 
 	private Long ownerId;
 
@@ -96,6 +98,17 @@ public class CreateUploadImageRequest extends RpcAcsRequest<CreateUploadImageRes
 		this.imageExt = imageExt;
 		if(imageExt != null){
 			putQueryParameter("ImageExt", imageExt);
+		}
+	}
+
+	public Long getCateId() {
+		return this.cateId;
+	}
+
+	public void setCateId(Long cateId) {
+		this.cateId = cateId;
+		if(cateId != null){
+			putQueryParameter("CateId", cateId.toString());
 		}
 	}
 

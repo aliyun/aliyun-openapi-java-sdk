@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeleteWatermarkRequest extends RpcAcsRequest<DeleteWatermarkResponse> {
 	
 	public DeleteWatermarkRequest() {
-		super("vod", "2017-03-21", "DeleteWatermark", "vod");
+		super("vod", "2017-03-21", "DeleteWatermark");
 	}
 
 	private String watermarkId;

@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class SetDefaultWatermarkRequest extends RpcAcsRequest<SetDefaultWatermarkResponse> {
 	
 	public SetDefaultWatermarkRequest() {
-		super("vod", "2017-03-21", "SetDefaultWatermark", "vod");
+		super("vod", "2017-03-21", "SetDefaultWatermark");
 	}
 
 	private String watermarkId;

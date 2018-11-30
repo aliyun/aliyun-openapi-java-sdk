@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class GetVideoListRequest extends RpcAcsRequest<GetVideoListResponse> {
 	
 	public GetVideoListRequest() {
-		super("vod", "2017-03-21", "GetVideoList", "vod");
+		super("vod", "2017-03-21", "GetVideoList");
 	}
 
 	private Long resourceOwnerId;

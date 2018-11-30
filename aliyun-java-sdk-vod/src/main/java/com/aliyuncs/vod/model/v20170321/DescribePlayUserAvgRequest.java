@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribePlayUserAvgRequest extends RpcAcsRequest<DescribePlayUserAvgResponse> {
 	
 	public DescribePlayUserAvgRequest() {
-		super("vod", "2017-03-21", "DescribePlayUserAvg", "vod");
+		super("vod", "2017-03-21", "DescribePlayUserAvg");
 	}
 
 	private String endTime;

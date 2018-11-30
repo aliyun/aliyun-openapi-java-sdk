@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class GetPlayInfoRequest extends RpcAcsRequest<GetPlayInfoResponse> {
 	
 	public GetPlayInfoRequest() {
-		super("vod", "2017-03-21", "GetPlayInfo", "vod");
+		super("vod", "2017-03-21", "GetPlayInfo");
 	}
 
 	private Long resourceOwnerId;

@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ListAuditSecurityIpRequest extends RpcAcsRequest<ListAuditSecurityIpResponse> {
 	
 	public ListAuditSecurityIpRequest() {
-		super("vod", "2017-03-21", "ListAuditSecurityIp", "vod");
+		super("vod", "2017-03-21", "ListAuditSecurityIp");
 	}
 
 	private String securityGroupName;

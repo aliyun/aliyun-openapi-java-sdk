@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ListAIVideoCensorJobRequest extends RpcAcsRequest<ListAIVideoCensorJobResponse> {
 	
 	public ListAIVideoCensorJobRequest() {
-		super("vod", "2017-03-21", "ListAIVideoCensorJob", "vod");
+		super("vod", "2017-03-21", "ListAIVideoCensorJob");
 	}
 
 	private String aIVideoCensorJobIds;

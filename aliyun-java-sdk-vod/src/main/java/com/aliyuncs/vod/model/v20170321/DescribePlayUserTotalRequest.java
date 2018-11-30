@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribePlayUserTotalRequest extends RpcAcsRequest<DescribePlayUserTotalResponse> {
 	
 	public DescribePlayUserTotalRequest() {
-		super("vod", "2017-03-21", "DescribePlayUserTotal", "vod");
+		super("vod", "2017-03-21", "DescribePlayUserTotal");
 	}
 
 	private String endTime;

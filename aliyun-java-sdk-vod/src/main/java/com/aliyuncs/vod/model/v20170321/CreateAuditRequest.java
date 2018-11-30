@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class CreateAuditRequest extends RpcAcsRequest<CreateAuditResponse> {
 	
 	public CreateAuditRequest() {
-		super("vod", "2017-03-21", "CreateAudit", "vod");
+		super("vod", "2017-03-21", "CreateAudit");
 	}
 
 	private String auditContent;

@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class GetAuditResultRequest extends RpcAcsRequest<GetAuditResultResponse> {
 	
 	public GetAuditResultRequest() {
-		super("vod", "2017-03-21", "GetAuditResult", "vod");
+		super("vod", "2017-03-21", "GetAuditResult");
 	}
 
 	private String resourceOwnerId;

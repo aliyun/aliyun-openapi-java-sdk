@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeRefreshTasksRequest extends RpcAcsRequest<DescribeRefreshTasksResponse> {
 	
 	public DescribeRefreshTasksRequest() {
-		super("vod", "2017-03-21", "DescribeRefreshTasks", "vod");
+		super("vod", "2017-03-21", "DescribeRefreshTasks");
 	}
 
 	private String resourceOwnerId;

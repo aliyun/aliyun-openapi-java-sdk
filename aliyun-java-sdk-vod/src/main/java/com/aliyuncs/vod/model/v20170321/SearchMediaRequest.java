@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class SearchMediaRequest extends RpcAcsRequest<SearchMediaResponse> {
 	
 	public SearchMediaRequest() {
-		super("vod", "2017-03-21", "SearchMedia", "vod");
+		super("vod", "2017-03-21", "SearchMedia");
 	}
 
 	private Long resourceOwnerId;
