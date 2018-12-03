@@ -26,6 +26,8 @@ public class SetScdnDomainCertificateRequest extends RpcAcsRequest<SetScdnDomain
 		super("scdn", "2017-11-15", "SetScdnDomainCertificate");
 	}
 
+	private String forceSet;
+
 	private String securityToken;
 
 	private String certType;
@@ -43,6 +45,17 @@ public class SetScdnDomainCertificateRequest extends RpcAcsRequest<SetScdnDomain
 	private String region;
 
 	private String sSLPri;
+
+	public String getForceSet() {
+		return this.forceSet;
+	}
+
+	public void setForceSet(String forceSet) {
+		this.forceSet = forceSet;
+		if(forceSet != null){
+			putQueryParameter("ForceSet", forceSet);
+		}
+	}
 
 	public String getSecurityToken() {
 		return this.securityToken;
