@@ -32,7 +32,6 @@ public class DescribeDcdnUserDomainsResponseUnmarshaller {
 		describeDcdnUserDomainsResponse.setPageNumber(context.longValue("DescribeDcdnUserDomainsResponse.PageNumber"));
 		describeDcdnUserDomainsResponse.setPageSize(context.longValue("DescribeDcdnUserDomainsResponse.PageSize"));
 		describeDcdnUserDomainsResponse.setTotalCount(context.longValue("DescribeDcdnUserDomainsResponse.TotalCount"));
-		describeDcdnUserDomainsResponse.setOnlineCount(context.longValue("DescribeDcdnUserDomainsResponse.OnlineCount"));
 
 		List<PageData> domains = new ArrayList<PageData>();
 		for (int i = 0; i < context.lengthValue("DescribeDcdnUserDomainsResponse.Domains.Length"); i++) {

@@ -17,14 +17,14 @@ package com.aliyuncs.dcdn.model.v20180115;
 import java.util.List;
 import java.util.Map;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.dcdn.transform.v20180115.DescribeDcdnDomainTrafficDataResponseUnmarshaller;
+import com.aliyuncs.dcdn.transform.v20180115.DescribeDcdnDomainWebsocketTrafficDataResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DescribeDcdnDomainTrafficDataResponse extends AcsResponse {
+public class DescribeDcdnDomainWebsocketTrafficDataResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -90,15 +90,7 @@ public class DescribeDcdnDomainTrafficDataResponse extends AcsResponse {
 
 		private String timeStamp;
 
-		private Float traffic;
-
-		private Float dynamicHttpTraffic;
-
-		private Float dynamicHttpsTraffic;
-
-		private Float staticHttpTraffic;
-
-		private Float staticHttpsTraffic;
+		private Float websocketTraffic;
 
 		public String getTimeStamp() {
 			return this.timeStamp;
@@ -108,49 +100,17 @@ public class DescribeDcdnDomainTrafficDataResponse extends AcsResponse {
 			this.timeStamp = timeStamp;
 		}
 
-		public Float getTraffic() {
-			return this.traffic;
+		public Float getWebsocketTraffic() {
+			return this.websocketTraffic;
 		}
 
-		public void setTraffic(Float traffic) {
-			this.traffic = traffic;
-		}
-
-		public Float getDynamicHttpTraffic() {
-			return this.dynamicHttpTraffic;
-		}
-
-		public void setDynamicHttpTraffic(Float dynamicHttpTraffic) {
-			this.dynamicHttpTraffic = dynamicHttpTraffic;
-		}
-
-		public Float getDynamicHttpsTraffic() {
-			return this.dynamicHttpsTraffic;
-		}
-
-		public void setDynamicHttpsTraffic(Float dynamicHttpsTraffic) {
-			this.dynamicHttpsTraffic = dynamicHttpsTraffic;
-		}
-
-		public Float getStaticHttpTraffic() {
-			return this.staticHttpTraffic;
-		}
-
-		public void setStaticHttpTraffic(Float staticHttpTraffic) {
-			this.staticHttpTraffic = staticHttpTraffic;
-		}
-
-		public Float getStaticHttpsTraffic() {
-			return this.staticHttpsTraffic;
-		}
-
-		public void setStaticHttpsTraffic(Float staticHttpsTraffic) {
-			this.staticHttpsTraffic = staticHttpsTraffic;
+		public void setWebsocketTraffic(Float websocketTraffic) {
+			this.websocketTraffic = websocketTraffic;
 		}
 	}
 
 	@Override
-	public DescribeDcdnDomainTrafficDataResponse getInstance(UnmarshallerContext context) {
-		return	DescribeDcdnDomainTrafficDataResponseUnmarshaller.unmarshall(this, context);
+	public DescribeDcdnDomainWebsocketTrafficDataResponse getInstance(UnmarshallerContext context) {
+		return	DescribeDcdnDomainWebsocketTrafficDataResponseUnmarshaller.unmarshall(this, context);
 	}
 }

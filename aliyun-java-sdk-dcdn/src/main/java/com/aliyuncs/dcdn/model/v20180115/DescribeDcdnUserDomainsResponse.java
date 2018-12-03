@@ -15,6 +15,7 @@
 package com.aliyuncs.dcdn.model.v20180115;
 
 import java.util.List;
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.dcdn.transform.v20180115.DescribeDcdnUserDomainsResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -32,8 +33,6 @@ public class DescribeDcdnUserDomainsResponse extends AcsResponse {
 	private Long pageSize;
 
 	private Long totalCount;
-
-	private Long onlineCount;
 
 	private List<PageData> domains;
 
@@ -67,14 +66,6 @@ public class DescribeDcdnUserDomainsResponse extends AcsResponse {
 
 	public void setTotalCount(Long totalCount) {
 		this.totalCount = totalCount;
-	}
-
-	public Long getOnlineCount() {
-		return this.onlineCount;
-	}
-
-	public void setOnlineCount(Long onlineCount) {
-		this.onlineCount = onlineCount;
 	}
 
 	public List<PageData> getDomains() {

@@ -20,21 +20,36 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class DescribeDcdnTopDomainsByFlowRequest extends RpcAcsRequest<DescribeDcdnTopDomainsByFlowResponse> {
+public class DescribeDcdnDomainWebsocketHttpCodeDataRequest extends RpcAcsRequest<DescribeDcdnDomainWebsocketHttpCodeDataResponse> {
 	
-	public DescribeDcdnTopDomainsByFlowRequest() {
-		super("dcdn", "2018-01-15", "DescribeDcdnTopDomainsByFlow");
+	public DescribeDcdnDomainWebsocketHttpCodeDataRequest() {
+		super("dcdn", "2018-01-15", "DescribeDcdnDomainWebsocketHttpCodeData");
 	}
+
+	private String locationNameEn;
 
 	private String startTime;
 
-	private Long limit;
+	private String ispNameEn;
 
-	private String product;
+	private String domainName;
 
 	private String endTime;
 
 	private Long ownerId;
+
+	private String interval;
+
+	public String getLocationNameEn() {
+		return this.locationNameEn;
+	}
+
+	public void setLocationNameEn(String locationNameEn) {
+		this.locationNameEn = locationNameEn;
+		if(locationNameEn != null){
+			putQueryParameter("LocationNameEn", locationNameEn);
+		}
+	}
 
 	public String getStartTime() {
 		return this.startTime;
@@ -47,25 +62,25 @@ public class DescribeDcdnTopDomainsByFlowRequest extends RpcAcsRequest<DescribeD
 		}
 	}
 
-	public Long getLimit() {
-		return this.limit;
+	public String getIspNameEn() {
+		return this.ispNameEn;
 	}
 
-	public void setLimit(Long limit) {
-		this.limit = limit;
-		if(limit != null){
-			putQueryParameter("Limit", limit.toString());
+	public void setIspNameEn(String ispNameEn) {
+		this.ispNameEn = ispNameEn;
+		if(ispNameEn != null){
+			putQueryParameter("IspNameEn", ispNameEn);
 		}
 	}
 
-	public String getProduct() {
-		return this.product;
+	public String getDomainName() {
+		return this.domainName;
 	}
 
-	public void setProduct(String product) {
-		this.product = product;
-		if(product != null){
-			putQueryParameter("Product", product);
+	public void setDomainName(String domainName) {
+		this.domainName = domainName;
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
 		}
 	}
 
@@ -91,9 +106,20 @@ public class DescribeDcdnTopDomainsByFlowRequest extends RpcAcsRequest<DescribeD
 		}
 	}
 
+	public String getInterval() {
+		return this.interval;
+	}
+
+	public void setInterval(String interval) {
+		this.interval = interval;
+		if(interval != null){
+			putQueryParameter("Interval", interval);
+		}
+	}
+
 	@Override
-	public Class<DescribeDcdnTopDomainsByFlowResponse> getResponseClass() {
-		return DescribeDcdnTopDomainsByFlowResponse.class;
+	public Class<DescribeDcdnDomainWebsocketHttpCodeDataResponse> getResponseClass() {
+		return DescribeDcdnDomainWebsocketHttpCodeDataResponse.class;
 	}
 
 }
