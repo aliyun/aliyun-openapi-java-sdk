@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class AttachInstancesRequest extends RpcAcsRequest<AttachInstancesResponse> {
 	
 	public AttachInstancesRequest() {
-		super("Ess", "2014-08-28", "AttachInstances", "ess");
+		super("Ess", "2014-08-28", "AttachInstances");
 	}
 
 	private String instanceId10;

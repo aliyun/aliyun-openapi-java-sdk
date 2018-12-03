@@ -24,7 +24,7 @@ import java.util.List;
 public class DetachDBInstancesRequest extends RpcAcsRequest<DetachDBInstancesResponse> {
 	
 	public DetachDBInstancesRequest() {
-		super("Ess", "2014-08-28", "DetachDBInstances", "ess");
+		super("Ess", "2014-08-28", "DetachDBInstances");
 	}
 
 	private String resourceOwnerAccount;

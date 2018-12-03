@@ -43,6 +43,8 @@ public class DescribeScalingInstancesResponseUnmarshaller {
 			scalingInstance.setLifecycleState(context.stringValue("DescribeScalingInstancesResponse.ScalingInstances["+ i +"].LifecycleState"));
 			scalingInstance.setCreationTime(context.stringValue("DescribeScalingInstancesResponse.ScalingInstances["+ i +"].CreationTime"));
 			scalingInstance.setCreationType(context.stringValue("DescribeScalingInstancesResponse.ScalingInstances["+ i +"].CreationType"));
+			scalingInstance.setLaunchTemplateId(context.stringValue("DescribeScalingInstancesResponse.ScalingInstances["+ i +"].LaunchTemplateId"));
+			scalingInstance.setLaunchTemplateVersion(context.stringValue("DescribeScalingInstancesResponse.ScalingInstances["+ i +"].LaunchTemplateVersion"));
 
 			scalingInstances.add(scalingInstance);
 		}

@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeAlarmsRequest extends RpcAcsRequest<DescribeAlarmsResponse> {
 	
 	public DescribeAlarmsRequest() {
-		super("Ess", "2014-08-28", "DescribeAlarms", "ess");
+		super("Ess", "2014-08-28", "DescribeAlarms");
 	}
 
 	private Boolean isEnable;

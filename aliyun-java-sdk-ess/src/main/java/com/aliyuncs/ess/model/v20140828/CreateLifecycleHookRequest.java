@@ -24,7 +24,7 @@ import java.util.List;
 public class CreateLifecycleHookRequest extends RpcAcsRequest<CreateLifecycleHookResponse> {
 	
 	public CreateLifecycleHookRequest() {
-		super("Ess", "2014-08-28", "CreateLifecycleHook", "ess");
+		super("Ess", "2014-08-28", "CreateLifecycleHook");
 	}
 
 	private String defaultResult;

@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeNotificationTypesRequest extends RpcAcsRequest<DescribeNotificationTypesResponse> {
 	
 	public DescribeNotificationTypesRequest() {
-		super("Ess", "2014-08-28", "DescribeNotificationTypes", "ess");
+		super("Ess", "2014-08-28", "DescribeNotificationTypes");
 	}
 
 	private String resourceOwnerAccount;

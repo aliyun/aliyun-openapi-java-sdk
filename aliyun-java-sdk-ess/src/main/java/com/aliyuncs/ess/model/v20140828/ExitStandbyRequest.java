@@ -24,7 +24,7 @@ import java.util.List;
 public class ExitStandbyRequest extends RpcAcsRequest<ExitStandbyResponse> {
 	
 	public ExitStandbyRequest() {
-		super("Ess", "2014-08-28", "ExitStandby", "ess");
+		super("Ess", "2014-08-28", "ExitStandby");
 	}
 
 	private List<String> instanceIds;

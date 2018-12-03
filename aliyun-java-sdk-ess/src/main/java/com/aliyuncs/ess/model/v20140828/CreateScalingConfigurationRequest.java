@@ -19,15 +19,17 @@ import java.util.List;
 
 /**
  * @author auto create
- * @version 
+ * @version
  */
 public class CreateScalingConfigurationRequest extends RpcAcsRequest<CreateScalingConfigurationResponse> {
-	
+
 	public CreateScalingConfigurationRequest() {
-		super("Ess", "2014-08-28", "CreateScalingConfiguration", "ess");
+		super("Ess", "2014-08-28", "CreateScalingConfiguration");
 	}
 
 	private String imageId;
+
+	private Integer memory;
 
 	private String scalingGroupId;
 
@@ -51,15 +53,21 @@ public class CreateScalingConfigurationRequest extends RpcAcsRequest<CreateScali
 
 	private String hostName;
 
+	private String password;
+
 	private Boolean passwordInherit;
 
 	private String imageName;
 
 	private String instanceType;
 
+	private String deploymentSetId;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
+
+	private Integer cpu;
 
 	private String ramRoleName;
 
@@ -94,6 +102,17 @@ public class CreateScalingConfigurationRequest extends RpcAcsRequest<CreateScali
 		}
 	}
 
+	public Integer getMemory() {
+		return this.memory;
+	}
+
+	public void setMemory(Integer memory) {
+		this.memory = memory;
+		if(memory != null){
+			putQueryParameter("Memory", memory.toString());
+		}
+	}
+
 	public String getScalingGroupId() {
 		return this.scalingGroupId;
 	}
@@ -115,7 +134,7 @@ public class CreateScalingConfigurationRequest extends RpcAcsRequest<CreateScali
 			for (int i = 0; i < instanceTypes.size(); i++) {
 				putQueryParameter("InstanceTypes." + (i + 1) , instanceTypes.get(i));
 			}
-		}	
+		}
 	}
 
 	public String getIoOptimized() {
@@ -178,13 +197,13 @@ public class CreateScalingConfigurationRequest extends RpcAcsRequest<CreateScali
 	}
 
 	public void setSpotPriceLimits(List<SpotPriceLimit> spotPriceLimits) {
-		this.spotPriceLimits = spotPriceLimits;	
+		this.spotPriceLimits = spotPriceLimits;
 		if (spotPriceLimits != null) {
 			for (int depth1 = 0; depth1 < spotPriceLimits.size(); depth1++) {
 				putQueryParameter("SpotPriceLimit." + (depth1 + 1) + ".InstanceType" , spotPriceLimits.get(depth1).getInstanceType());
 				putQueryParameter("SpotPriceLimit." + (depth1 + 1) + ".PriceLimit" , spotPriceLimits.get(depth1).getPriceLimit());
 			}
-		}	
+		}
 	}
 
 	public String getSystemDiskCategory() {
@@ -217,6 +236,17 @@ public class CreateScalingConfigurationRequest extends RpcAcsRequest<CreateScali
 		this.hostName = hostName;
 		if(hostName != null){
 			putQueryParameter("HostName", hostName);
+		}
+	}
+
+	public String getPassword() {
+		return this.password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+		if(password != null){
+			putQueryParameter("Password", password);
 		}
 	}
 
@@ -253,6 +283,17 @@ public class CreateScalingConfigurationRequest extends RpcAcsRequest<CreateScali
 		}
 	}
 
+	public String getDeploymentSetId() {
+		return this.deploymentSetId;
+	}
+
+	public void setDeploymentSetId(String deploymentSetId) {
+		this.deploymentSetId = deploymentSetId;
+		if(deploymentSetId != null){
+			putQueryParameter("DeploymentSetId", deploymentSetId);
+		}
+	}
+
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
 	}
@@ -272,6 +313,17 @@ public class CreateScalingConfigurationRequest extends RpcAcsRequest<CreateScali
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public Integer getCpu() {
+		return this.cpu;
+	}
+
+	public void setCpu(Integer cpu) {
+		this.cpu = cpu;
+		if(cpu != null){
+			putQueryParameter("Cpu", cpu.toString());
 		}
 	}
 
@@ -302,7 +354,7 @@ public class CreateScalingConfigurationRequest extends RpcAcsRequest<CreateScali
 	}
 
 	public void setDataDisks(List<DataDisk> dataDisks) {
-		this.dataDisks = dataDisks;	
+		this.dataDisks = dataDisks;
 		if (dataDisks != null) {
 			for (int depth1 = 0; depth1 < dataDisks.size(); depth1++) {
 				putQueryParameter("DataDisk." + (depth1 + 1) + ".SnapshotId" , dataDisks.get(depth1).getSnapshotId());
@@ -311,7 +363,7 @@ public class CreateScalingConfigurationRequest extends RpcAcsRequest<CreateScali
 				putQueryParameter("DataDisk." + (depth1 + 1) + ".Device" , dataDisks.get(depth1).getDevice());
 				putQueryParameter("DataDisk." + (depth1 + 1) + ".DeleteWithInstance" , dataDisks.get(depth1).getDeleteWithInstance());
 			}
-		}	
+		}
 	}
 
 	public String getScalingConfigurationName() {

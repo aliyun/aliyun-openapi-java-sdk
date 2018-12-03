@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeScalingActivitiesRequest extends RpcAcsRequest<DescribeScalingActivitiesResponse> {
 	
 	public DescribeScalingActivitiesRequest() {
-		super("Ess", "2014-08-28", "DescribeScalingActivities", "ess");
+		super("Ess", "2014-08-28", "DescribeScalingActivities");
 	}
 
 	private String scalingActivityId9;

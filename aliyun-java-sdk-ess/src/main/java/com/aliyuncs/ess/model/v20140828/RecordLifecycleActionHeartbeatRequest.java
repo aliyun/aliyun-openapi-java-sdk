@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class RecordLifecycleActionHeartbeatRequest extends RpcAcsRequest<RecordLifecycleActionHeartbeatResponse> {
 	
 	public RecordLifecycleActionHeartbeatRequest() {
-		super("Ess", "2014-08-28", "RecordLifecycleActionHeartbeat", "ess");
+		super("Ess", "2014-08-28", "RecordLifecycleActionHeartbeat");
 	}
 
 	private String lifecycleActionToken;

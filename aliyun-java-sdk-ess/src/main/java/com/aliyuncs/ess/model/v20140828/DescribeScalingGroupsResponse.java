@@ -15,6 +15,7 @@
 package com.aliyuncs.ess.model.v20140828;
 
 import java.util.List;
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.ess.transform.v20140828.DescribeScalingGroupsResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -124,6 +125,10 @@ public class DescribeScalingGroupsResponse extends AcsResponse {
 		private String multiAZPolicy;
 
 		private String healthCheckType;
+
+		private String scalingPolicy;
+
+		private Integer stoppedCapacity;
 
 		private List<String> vSwitchIds;
 
@@ -323,6 +328,22 @@ public class DescribeScalingGroupsResponse extends AcsResponse {
 
 		public void setHealthCheckType(String healthCheckType) {
 			this.healthCheckType = healthCheckType;
+		}
+
+		public String getScalingPolicy() {
+			return this.scalingPolicy;
+		}
+
+		public void setScalingPolicy(String scalingPolicy) {
+			this.scalingPolicy = scalingPolicy;
+		}
+
+		public Integer getStoppedCapacity() {
+			return this.stoppedCapacity;
+		}
+
+		public void setStoppedCapacity(Integer stoppedCapacity) {
+			this.stoppedCapacity = stoppedCapacity;
 		}
 
 		public List<String> getVSwitchIds() {

@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class EnableAlarmRequest extends RpcAcsRequest<EnableAlarmResponse> {
 	
 	public EnableAlarmRequest() {
-		super("Ess", "2014-08-28", "EnableAlarm", "ess");
+		super("Ess", "2014-08-28", "EnableAlarm");
 	}
 
 	private String resourceOwnerAccount;

@@ -24,7 +24,7 @@ import java.util.List;
 public class DetachInstancesRequest extends RpcAcsRequest<DetachInstancesResponse> {
 	
 	public DetachInstancesRequest() {
-		super("Ess", "2014-08-28", "DetachInstances", "ess");
+		super("Ess", "2014-08-28", "DetachInstances");
 	}
 
 	private Long resourceOwnerId;

@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DisableScalingGroupRequest extends RpcAcsRequest<DisableScalingGroupResponse> {
 	
 	public DisableScalingGroupRequest() {
-		super("Ess", "2014-08-28", "DisableScalingGroup", "ess");
+		super("Ess", "2014-08-28", "DisableScalingGroup");
 	}
 
 	private Long resourceOwnerId;

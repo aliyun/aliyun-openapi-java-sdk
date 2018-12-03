@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifyScalingRuleRequest extends RpcAcsRequest<ModifyScalingRuleResponse> {
 	
 	public ModifyScalingRuleRequest() {
-		super("Ess", "2014-08-28", "ModifyScalingRule", "ess");
+		super("Ess", "2014-08-28", "ModifyScalingRule");
 	}
 
 	private String scalingRuleName;

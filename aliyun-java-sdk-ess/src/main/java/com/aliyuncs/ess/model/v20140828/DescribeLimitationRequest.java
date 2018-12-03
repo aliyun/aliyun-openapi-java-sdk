@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeLimitationRequest extends RpcAcsRequest<DescribeLimitationResponse> {
 	
 	public DescribeLimitationRequest() {
-		super("Ess", "2014-08-28", "DescribeLimitation", "ess");
+		super("Ess", "2014-08-28", "DescribeLimitation");
 	}
 
 	private String resourceOwnerAccount;

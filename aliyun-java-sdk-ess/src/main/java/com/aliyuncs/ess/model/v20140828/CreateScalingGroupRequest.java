@@ -19,12 +19,12 @@ import java.util.List;
 
 /**
  * @author auto create
- * @version 
+ * @version
  */
 public class CreateScalingGroupRequest extends RpcAcsRequest<CreateScalingGroupResponse> {
-	
+
 	public CreateScalingGroupRequest() {
-		super("Ess", "2014-08-28", "CreateScalingGroup", "ess");
+		super("Ess", "2014-08-28", "CreateScalingGroup");
 	}
 
 	private String multiAZPolicy;
@@ -50,6 +50,8 @@ public class CreateScalingGroupRequest extends RpcAcsRequest<CreateScalingGroupR
 	private Long ownerId;
 
 	private String launchTemplateVersion;
+
+	private String scalingPolicy;
 
 	private String vSwitchId;
 
@@ -150,7 +152,7 @@ public class CreateScalingGroupRequest extends RpcAcsRequest<CreateScalingGroupR
 			for (int i = 0; i < vSwitchIds.size(); i++) {
 				putQueryParameter("VSwitchIds." + (i + 1) , vSwitchIds.get(i));
 			}
-		}	
+		}
 	}
 
 	public String getOwnerAccount() {
@@ -197,6 +199,17 @@ public class CreateScalingGroupRequest extends RpcAcsRequest<CreateScalingGroupR
 		}
 	}
 
+	public String getScalingPolicy() {
+		return this.scalingPolicy;
+	}
+
+	public void setScalingPolicy(String scalingPolicy) {
+		this.scalingPolicy = scalingPolicy;
+		if(scalingPolicy != null){
+			putQueryParameter("ScalingPolicy", scalingPolicy);
+		}
+	}
+
 	public String getVSwitchId() {
 		return this.vSwitchId;
 	}
@@ -224,7 +237,7 @@ public class CreateScalingGroupRequest extends RpcAcsRequest<CreateScalingGroupR
 	}
 
 	public void setLifecycleHooks(List<LifecycleHook> lifecycleHooks) {
-		this.lifecycleHooks = lifecycleHooks;	
+		this.lifecycleHooks = lifecycleHooks;
 		if (lifecycleHooks != null) {
 			for (int depth1 = 0; depth1 < lifecycleHooks.size(); depth1++) {
 				putQueryParameter("LifecycleHook." + (depth1 + 1) + ".DefaultResult" , lifecycleHooks.get(depth1).getDefaultResult());
@@ -234,7 +247,7 @@ public class CreateScalingGroupRequest extends RpcAcsRequest<CreateScalingGroupR
 				putQueryParameter("LifecycleHook." + (depth1 + 1) + ".NotificationMetadata" , lifecycleHooks.get(depth1).getNotificationMetadata());
 				putQueryParameter("LifecycleHook." + (depth1 + 1) + ".LifecycleTransition" , lifecycleHooks.get(depth1).getLifecycleTransition());
 			}
-		}	
+		}
 	}
 
 	public Integer getDefaultCooldown() {

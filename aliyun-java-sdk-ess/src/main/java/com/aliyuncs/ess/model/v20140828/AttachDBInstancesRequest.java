@@ -24,7 +24,7 @@ import java.util.List;
 public class AttachDBInstancesRequest extends RpcAcsRequest<AttachDBInstancesResponse> {
 	
 	public AttachDBInstancesRequest() {
-		super("Ess", "2014-08-28", "AttachDBInstances", "ess");
+		super("Ess", "2014-08-28", "AttachDBInstances");
 	}
 
 	private String resourceOwnerAccount;

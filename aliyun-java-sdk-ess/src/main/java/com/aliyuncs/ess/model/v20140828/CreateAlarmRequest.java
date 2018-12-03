@@ -24,7 +24,7 @@ import java.util.List;
 public class CreateAlarmRequest extends RpcAcsRequest<CreateAlarmResponse> {
 	
 	public CreateAlarmRequest() {
-		super("Ess", "2014-08-28", "CreateAlarm", "ess");
+		super("Ess", "2014-08-28", "CreateAlarm");
 	}
 
 	private String metricType;

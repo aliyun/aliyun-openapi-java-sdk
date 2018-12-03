@@ -15,6 +15,7 @@
 package com.aliyuncs.ess.model.v20140828;
 
 import java.util.List;
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.ess.transform.v20140828.DescribeScalingConfigurationsResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -92,6 +93,10 @@ public class DescribeScalingConfigurationsResponse extends AcsResponse {
 		private String hostName;
 
 		private String instanceType;
+
+		private Integer cpu;
+
+		private Integer memory;
 
 		private String instanceGeneration;
 
@@ -199,6 +204,22 @@ public class DescribeScalingConfigurationsResponse extends AcsResponse {
 
 		public void setInstanceType(String instanceType) {
 			this.instanceType = instanceType;
+		}
+
+		public Integer getCpu() {
+			return this.cpu;
+		}
+
+		public void setCpu(Integer cpu) {
+			this.cpu = cpu;
+		}
+
+		public Integer getMemory() {
+			return this.memory;
+		}
+
+		public void setMemory(Integer memory) {
+			this.memory = memory;
 		}
 
 		public String getInstanceGeneration() {

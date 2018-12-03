@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeleteAlarmRequest extends RpcAcsRequest<DeleteAlarmResponse> {
 	
 	public DeleteAlarmRequest() {
-		super("Ess", "2014-08-28", "DeleteAlarm", "ess");
+		super("Ess", "2014-08-28", "DeleteAlarm");
 	}
 
 	private String resourceOwnerAccount;

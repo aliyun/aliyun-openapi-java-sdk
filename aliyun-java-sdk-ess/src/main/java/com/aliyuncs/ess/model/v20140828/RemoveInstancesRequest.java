@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class RemoveInstancesRequest extends RpcAcsRequest<RemoveInstancesResponse> {
 	
 	public RemoveInstancesRequest() {
-		super("Ess", "2014-08-28", "RemoveInstances", "ess");
+		super("Ess", "2014-08-28", "RemoveInstances");
 	}
 
 	private String instanceId10;
@@ -39,6 +39,8 @@ public class RemoveInstancesRequest extends RpcAcsRequest<RemoveInstancesRespons
 	private String instanceId20;
 
 	private String instanceId1;
+
+	private String removePolicy;
 
 	private String instanceId3;
 
@@ -150,6 +152,17 @@ public class RemoveInstancesRequest extends RpcAcsRequest<RemoveInstancesRespons
 		this.instanceId1 = instanceId1;
 		if(instanceId1 != null){
 			putQueryParameter("InstanceId.1", instanceId1);
+		}
+	}
+
+	public String getRemovePolicy() {
+		return this.removePolicy;
+	}
+
+	public void setRemovePolicy(String removePolicy) {
+		this.removePolicy = removePolicy;
+		if(removePolicy != null){
+			putQueryParameter("RemovePolicy", removePolicy);
 		}
 	}
 

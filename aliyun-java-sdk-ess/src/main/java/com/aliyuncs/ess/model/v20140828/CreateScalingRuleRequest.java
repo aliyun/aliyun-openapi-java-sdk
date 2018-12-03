@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class CreateScalingRuleRequest extends RpcAcsRequest<CreateScalingRuleResponse> {
 	
 	public CreateScalingRuleRequest() {
-		super("Ess", "2014-08-28", "CreateScalingRule", "ess");
+		super("Ess", "2014-08-28", "CreateScalingRule");
 	}
 
 	private String scalingRuleName;
