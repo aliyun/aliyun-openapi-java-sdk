@@ -29,18 +29,18 @@ public class DescribeCdnMonitorDataResponseUnmarshaller {
 		
 		describeCdnMonitorDataResponse.setRequestId(context.stringValue("DescribeCdnMonitorDataResponse.RequestId"));
 		describeCdnMonitorDataResponse.setDomainName(context.stringValue("DescribeCdnMonitorDataResponse.DomainName"));
-		describeCdnMonitorDataResponse.setMonitorInterval(context.longValue("DescribeCdnMonitorDataResponse.MonitorInterval"));
 		describeCdnMonitorDataResponse.setStartTime(context.stringValue("DescribeCdnMonitorDataResponse.StartTime"));
 		describeCdnMonitorDataResponse.setEndTime(context.stringValue("DescribeCdnMonitorDataResponse.EndTime"));
+		describeCdnMonitorDataResponse.setMonitorInterval(context.stringValue("DescribeCdnMonitorDataResponse.MonitorInterval"));
 
 		List<CDNMonitorData> monitorDatas = new ArrayList<CDNMonitorData>();
 		for (int i = 0; i < context.lengthValue("DescribeCdnMonitorDataResponse.MonitorDatas.Length"); i++) {
 			CDNMonitorData cDNMonitorData = new CDNMonitorData();
 			cDNMonitorData.setTimeStamp(context.stringValue("DescribeCdnMonitorDataResponse.MonitorDatas["+ i +"].TimeStamp"));
-			cDNMonitorData.setQueryPerSecond(context.stringValue("DescribeCdnMonitorDataResponse.MonitorDatas["+ i +"].QueryPerSecond"));
 			cDNMonitorData.setBytesPerSecond(context.stringValue("DescribeCdnMonitorDataResponse.MonitorDatas["+ i +"].BytesPerSecond"));
-			cDNMonitorData.setBytesHitRate(context.stringValue("DescribeCdnMonitorDataResponse.MonitorDatas["+ i +"].BytesHitRate"));
+			cDNMonitorData.setQueryPerSecond(context.stringValue("DescribeCdnMonitorDataResponse.MonitorDatas["+ i +"].QueryPerSecond"));
 			cDNMonitorData.setRequestHitRate(context.stringValue("DescribeCdnMonitorDataResponse.MonitorDatas["+ i +"].RequestHitRate"));
+			cDNMonitorData.setBytesHitRate(context.stringValue("DescribeCdnMonitorDataResponse.MonitorDatas["+ i +"].BytesHitRate"));
 			cDNMonitorData.setAverageObjectSize(context.stringValue("DescribeCdnMonitorDataResponse.MonitorDatas["+ i +"].AverageObjectSize"));
 
 			monitorDatas.add(cDNMonitorData);

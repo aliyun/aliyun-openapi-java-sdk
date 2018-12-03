@@ -100,15 +100,15 @@ public class DescribeDomainRegionDataResponse extends AcsResponse {
 
 		private String bps;
 
-		private String byteHitRate;
-
 		private String qps;
 
-		private String reqErrRate;
+		private String avgResponseRate;
+
+		private String byteHitRate;
 
 		private String reqHitRate;
 
-		private String avgResponseRate;
+		private String reqErrRate;
 
 		private String totalBytes;
 
@@ -164,14 +164,6 @@ public class DescribeDomainRegionDataResponse extends AcsResponse {
 			this.bps = bps;
 		}
 
-		public String getByteHitRate() {
-			return this.byteHitRate;
-		}
-
-		public void setByteHitRate(String byteHitRate) {
-			this.byteHitRate = byteHitRate;
-		}
-
 		public String getQps() {
 			return this.qps;
 		}
@@ -180,12 +172,20 @@ public class DescribeDomainRegionDataResponse extends AcsResponse {
 			this.qps = qps;
 		}
 
-		public String getReqErrRate() {
-			return this.reqErrRate;
+		public String getAvgResponseRate() {
+			return this.avgResponseRate;
 		}
 
-		public void setReqErrRate(String reqErrRate) {
-			this.reqErrRate = reqErrRate;
+		public void setAvgResponseRate(String avgResponseRate) {
+			this.avgResponseRate = avgResponseRate;
+		}
+
+		public String getByteHitRate() {
+			return this.byteHitRate;
+		}
+
+		public void setByteHitRate(String byteHitRate) {
+			this.byteHitRate = byteHitRate;
 		}
 
 		public String getReqHitRate() {
@@ -196,12 +196,12 @@ public class DescribeDomainRegionDataResponse extends AcsResponse {
 			this.reqHitRate = reqHitRate;
 		}
 
-		public String getAvgResponseRate() {
-			return this.avgResponseRate;
+		public String getReqErrRate() {
+			return this.reqErrRate;
 		}
 
-		public void setAvgResponseRate(String avgResponseRate) {
-			this.avgResponseRate = avgResponseRate;
+		public void setReqErrRate(String reqErrRate) {
+			this.reqErrRate = reqErrRate;
 		}
 
 		public String getTotalBytes() {

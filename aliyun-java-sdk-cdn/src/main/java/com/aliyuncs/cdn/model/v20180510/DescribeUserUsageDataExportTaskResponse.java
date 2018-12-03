@@ -90,6 +90,10 @@ public class DescribeUserUsageDataExportTaskResponse extends AcsResponse {
 
 		public static class DataItem {
 
+			private String taskName;
+
+			private String taskId;
+
 			private String createTime;
 
 			private String updateTime;
@@ -99,6 +103,22 @@ public class DescribeUserUsageDataExportTaskResponse extends AcsResponse {
 			private String downloadUrl;
 
 			private TaskConfig taskConfig;
+
+			public String getTaskName() {
+				return this.taskName;
+			}
+
+			public void setTaskName(String taskName) {
+				this.taskName = taskName;
+			}
+
+			public String getTaskId() {
+				return this.taskId;
+			}
+
+			public void setTaskId(String taskId) {
+				this.taskId = taskId;
+			}
 
 			public String getCreateTime() {
 				return this.createTime;

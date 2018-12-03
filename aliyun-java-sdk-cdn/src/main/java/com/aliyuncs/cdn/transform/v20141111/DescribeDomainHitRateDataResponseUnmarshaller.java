@@ -29,9 +29,9 @@ public class DescribeDomainHitRateDataResponseUnmarshaller {
 		
 		describeDomainHitRateDataResponse.setRequestId(context.stringValue("DescribeDomainHitRateDataResponse.RequestId"));
 		describeDomainHitRateDataResponse.setDomainName(context.stringValue("DescribeDomainHitRateDataResponse.DomainName"));
-		describeDomainHitRateDataResponse.setDataInterval(context.stringValue("DescribeDomainHitRateDataResponse.DataInterval"));
 		describeDomainHitRateDataResponse.setStartTime(context.stringValue("DescribeDomainHitRateDataResponse.StartTime"));
 		describeDomainHitRateDataResponse.setEndTime(context.stringValue("DescribeDomainHitRateDataResponse.EndTime"));
+		describeDomainHitRateDataResponse.setDataInterval(context.stringValue("DescribeDomainHitRateDataResponse.DataInterval"));
 
 		List<DataModule> hitRateInterval = new ArrayList<DataModule>();
 		for (int i = 0; i < context.lengthValue("DescribeDomainHitRateDataResponse.HitRateInterval.Length"); i++) {

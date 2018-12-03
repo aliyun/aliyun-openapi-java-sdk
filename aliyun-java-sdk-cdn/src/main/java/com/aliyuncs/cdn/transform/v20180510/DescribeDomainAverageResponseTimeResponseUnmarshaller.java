@@ -29,9 +29,13 @@ public class DescribeDomainAverageResponseTimeResponseUnmarshaller {
 		
 		describeDomainAverageResponseTimeResponse.setRequestId(context.stringValue("DescribeDomainAverageResponseTimeResponse.RequestId"));
 		describeDomainAverageResponseTimeResponse.setDomainName(context.stringValue("DescribeDomainAverageResponseTimeResponse.DomainName"));
-		describeDomainAverageResponseTimeResponse.setDataInterval(context.stringValue("DescribeDomainAverageResponseTimeResponse.DataInterval"));
 		describeDomainAverageResponseTimeResponse.setStartTime(context.stringValue("DescribeDomainAverageResponseTimeResponse.StartTime"));
 		describeDomainAverageResponseTimeResponse.setEndTime(context.stringValue("DescribeDomainAverageResponseTimeResponse.EndTime"));
+		describeDomainAverageResponseTimeResponse.setLocationNameEn(context.stringValue("DescribeDomainAverageResponseTimeResponse.LocationNameEn"));
+		describeDomainAverageResponseTimeResponse.setIspNameEn(context.stringValue("DescribeDomainAverageResponseTimeResponse.IspNameEn"));
+		describeDomainAverageResponseTimeResponse.setLocationName(context.stringValue("DescribeDomainAverageResponseTimeResponse.LocationName"));
+		describeDomainAverageResponseTimeResponse.setIspName(context.stringValue("DescribeDomainAverageResponseTimeResponse.IspName"));
+		describeDomainAverageResponseTimeResponse.setDataInterval(context.stringValue("DescribeDomainAverageResponseTimeResponse.DataInterval"));
 
 		List<DataModule> avgRTPerInterval = new ArrayList<DataModule>();
 		for (int i = 0; i < context.lengthValue("DescribeDomainAverageResponseTimeResponse.AvgRTPerInterval.Length"); i++) {

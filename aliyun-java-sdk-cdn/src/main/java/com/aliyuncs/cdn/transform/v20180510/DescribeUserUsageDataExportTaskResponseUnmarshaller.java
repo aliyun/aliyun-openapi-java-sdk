@@ -39,6 +39,8 @@ public class DescribeUserUsageDataExportTaskResponseUnmarshaller {
 		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < context.lengthValue("DescribeUserUsageDataExportTaskResponse.UsageDataPerPage.Data.Length"); i++) {
 			DataItem dataItem = new DataItem();
+			dataItem.setTaskName(context.stringValue("DescribeUserUsageDataExportTaskResponse.UsageDataPerPage.Data["+ i +"].TaskName"));
+			dataItem.setTaskId(context.stringValue("DescribeUserUsageDataExportTaskResponse.UsageDataPerPage.Data["+ i +"].TaskId"));
 			dataItem.setCreateTime(context.stringValue("DescribeUserUsageDataExportTaskResponse.UsageDataPerPage.Data["+ i +"].CreateTime"));
 			dataItem.setUpdateTime(context.stringValue("DescribeUserUsageDataExportTaskResponse.UsageDataPerPage.Data["+ i +"].UpdateTime"));
 			dataItem.setStatus(context.stringValue("DescribeUserUsageDataExportTaskResponse.UsageDataPerPage.Data["+ i +"].Status"));

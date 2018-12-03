@@ -30,9 +30,9 @@ public class DescribeDomainHttpCodeDataResponseUnmarshaller {
 		
 		describeDomainHttpCodeDataResponse.setRequestId(context.stringValue("DescribeDomainHttpCodeDataResponse.RequestId"));
 		describeDomainHttpCodeDataResponse.setDomainName(context.stringValue("DescribeDomainHttpCodeDataResponse.DomainName"));
-		describeDomainHttpCodeDataResponse.setDataInterval(context.stringValue("DescribeDomainHttpCodeDataResponse.DataInterval"));
 		describeDomainHttpCodeDataResponse.setStartTime(context.stringValue("DescribeDomainHttpCodeDataResponse.StartTime"));
 		describeDomainHttpCodeDataResponse.setEndTime(context.stringValue("DescribeDomainHttpCodeDataResponse.EndTime"));
+		describeDomainHttpCodeDataResponse.setDataInterval(context.stringValue("DescribeDomainHttpCodeDataResponse.DataInterval"));
 
 		List<UsageData> httpCodeData = new ArrayList<UsageData>();
 		for (int i = 0; i < context.lengthValue("DescribeDomainHttpCodeDataResponse.HttpCodeData.Length"); i++) {

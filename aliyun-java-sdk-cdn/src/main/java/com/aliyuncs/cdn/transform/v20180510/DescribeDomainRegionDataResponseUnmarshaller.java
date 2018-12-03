@@ -44,6 +44,7 @@ public class DescribeDomainRegionDataResponseUnmarshaller {
 			regionProportionData.setBps(context.stringValue("DescribeDomainRegionDataResponse.Value["+ i +"].Bps"));
 			regionProportionData.setQps(context.stringValue("DescribeDomainRegionDataResponse.Value["+ i +"].Qps"));
 			regionProportionData.setAvgResponseRate(context.stringValue("DescribeDomainRegionDataResponse.Value["+ i +"].AvgResponseRate"));
+			regionProportionData.setReqErrRate(context.stringValue("DescribeDomainRegionDataResponse.Value["+ i +"].ReqErrRate"));
 			regionProportionData.setTotalBytes(context.stringValue("DescribeDomainRegionDataResponse.Value["+ i +"].TotalBytes"));
 			regionProportionData.setBytesProportion(context.stringValue("DescribeDomainRegionDataResponse.Value["+ i +"].BytesProportion"));
 			regionProportionData.setTotalQuery(context.stringValue("DescribeDomainRegionDataResponse.Value["+ i +"].TotalQuery"));

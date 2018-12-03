@@ -26,11 +26,7 @@ public class DescribeDomainHitRateDataRequest extends RpcAcsRequest<DescribeDoma
 		super("Cdn", "2018-05-10", "DescribeDomainHitRateData");
 	}
 
-	private String locationNameEn;
-
 	private String startTime;
-
-	private String ispNameEn;
 
 	private String domainName;
 
@@ -40,17 +36,6 @@ public class DescribeDomainHitRateDataRequest extends RpcAcsRequest<DescribeDoma
 
 	private String interval;
 
-	public String getLocationNameEn() {
-		return this.locationNameEn;
-	}
-
-	public void setLocationNameEn(String locationNameEn) {
-		this.locationNameEn = locationNameEn;
-		if(locationNameEn != null){
-			putQueryParameter("LocationNameEn", locationNameEn);
-		}
-	}
-
 	public String getStartTime() {
 		return this.startTime;
 	}
@@ -59,17 +44,6 @@ public class DescribeDomainHitRateDataRequest extends RpcAcsRequest<DescribeDoma
 		this.startTime = startTime;
 		if(startTime != null){
 			putQueryParameter("StartTime", startTime);
-		}
-	}
-
-	public String getIspNameEn() {
-		return this.ispNameEn;
-	}
-
-	public void setIspNameEn(String ispNameEn) {
-		this.ispNameEn = ispNameEn;
-		if(ispNameEn != null){
-			putQueryParameter("IspNameEn", ispNameEn);
 		}
 	}
 

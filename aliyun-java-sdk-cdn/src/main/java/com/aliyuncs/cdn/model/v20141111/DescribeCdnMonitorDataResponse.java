@@ -30,11 +30,11 @@ public class DescribeCdnMonitorDataResponse extends AcsResponse {
 
 	private String domainName;
 
-	private Long monitorInterval;
-
 	private String startTime;
 
 	private String endTime;
+
+	private String monitorInterval;
 
 	private List<CDNMonitorData> monitorDatas;
 
@@ -54,14 +54,6 @@ public class DescribeCdnMonitorDataResponse extends AcsResponse {
 		this.domainName = domainName;
 	}
 
-	public Long getMonitorInterval() {
-		return this.monitorInterval;
-	}
-
-	public void setMonitorInterval(Long monitorInterval) {
-		this.monitorInterval = monitorInterval;
-	}
-
 	public String getStartTime() {
 		return this.startTime;
 	}
@@ -78,6 +70,14 @@ public class DescribeCdnMonitorDataResponse extends AcsResponse {
 		this.endTime = endTime;
 	}
 
+	public String getMonitorInterval() {
+		return this.monitorInterval;
+	}
+
+	public void setMonitorInterval(String monitorInterval) {
+		this.monitorInterval = monitorInterval;
+	}
+
 	public List<CDNMonitorData> getMonitorDatas() {
 		return this.monitorDatas;
 	}
@@ -90,13 +90,13 @@ public class DescribeCdnMonitorDataResponse extends AcsResponse {
 
 		private String timeStamp;
 
-		private String queryPerSecond;
-
 		private String bytesPerSecond;
 
-		private String bytesHitRate;
+		private String queryPerSecond;
 
 		private String requestHitRate;
+
+		private String bytesHitRate;
 
 		private String averageObjectSize;
 
@@ -108,14 +108,6 @@ public class DescribeCdnMonitorDataResponse extends AcsResponse {
 			this.timeStamp = timeStamp;
 		}
 
-		public String getQueryPerSecond() {
-			return this.queryPerSecond;
-		}
-
-		public void setQueryPerSecond(String queryPerSecond) {
-			this.queryPerSecond = queryPerSecond;
-		}
-
 		public String getBytesPerSecond() {
 			return this.bytesPerSecond;
 		}
@@ -124,12 +116,12 @@ public class DescribeCdnMonitorDataResponse extends AcsResponse {
 			this.bytesPerSecond = bytesPerSecond;
 		}
 
-		public String getBytesHitRate() {
-			return this.bytesHitRate;
+		public String getQueryPerSecond() {
+			return this.queryPerSecond;
 		}
 
-		public void setBytesHitRate(String bytesHitRate) {
-			this.bytesHitRate = bytesHitRate;
+		public void setQueryPerSecond(String queryPerSecond) {
+			this.queryPerSecond = queryPerSecond;
 		}
 
 		public String getRequestHitRate() {
@@ -138,6 +130,14 @@ public class DescribeCdnMonitorDataResponse extends AcsResponse {
 
 		public void setRequestHitRate(String requestHitRate) {
 			this.requestHitRate = requestHitRate;
+		}
+
+		public String getBytesHitRate() {
+			return this.bytesHitRate;
+		}
+
+		public void setBytesHitRate(String bytesHitRate) {
+			this.bytesHitRate = bytesHitRate;
 		}
 
 		public String getAverageObjectSize() {

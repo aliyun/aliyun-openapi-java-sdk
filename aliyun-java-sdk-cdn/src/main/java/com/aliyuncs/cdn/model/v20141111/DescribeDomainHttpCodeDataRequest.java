@@ -26,7 +26,11 @@ public class DescribeDomainHttpCodeDataRequest extends RpcAcsRequest<DescribeDom
 		super("Cdn", "2014-11-11", "DescribeDomainHttpCodeData");
 	}
 
-	private String securityToken;
+	private String locationNameEn;
+
+	private String startTime;
+
+	private String ispNameEn;
 
 	private String timeMerge;
 
@@ -34,24 +38,40 @@ public class DescribeDomainHttpCodeDataRequest extends RpcAcsRequest<DescribeDom
 
 	private String endTime;
 
-	private String locationNameEn;
+	private Long ownerId;
 
 	private String interval;
 
-	private String startTime;
-
-	private String ispNameEn;
-
-	private Long ownerId;
-
-	public String getSecurityToken() {
-		return this.securityToken;
+	public String getLocationNameEn() {
+		return this.locationNameEn;
 	}
 
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
+	public void setLocationNameEn(String locationNameEn) {
+		this.locationNameEn = locationNameEn;
+		if(locationNameEn != null){
+			putQueryParameter("LocationNameEn", locationNameEn);
+		}
+	}
+
+	public String getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime);
+		}
+	}
+
+	public String getIspNameEn() {
+		return this.ispNameEn;
+	}
+
+	public void setIspNameEn(String ispNameEn) {
+		this.ispNameEn = ispNameEn;
+		if(ispNameEn != null){
+			putQueryParameter("IspNameEn", ispNameEn);
 		}
 	}
 
@@ -88,14 +108,14 @@ public class DescribeDomainHttpCodeDataRequest extends RpcAcsRequest<DescribeDom
 		}
 	}
 
-	public String getLocationNameEn() {
-		return this.locationNameEn;
+	public Long getOwnerId() {
+		return this.ownerId;
 	}
 
-	public void setLocationNameEn(String locationNameEn) {
-		this.locationNameEn = locationNameEn;
-		if(locationNameEn != null){
-			putQueryParameter("LocationNameEn", locationNameEn);
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 
@@ -107,39 +127,6 @@ public class DescribeDomainHttpCodeDataRequest extends RpcAcsRequest<DescribeDom
 		this.interval = interval;
 		if(interval != null){
 			putQueryParameter("Interval", interval);
-		}
-	}
-
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("StartTime", startTime);
-		}
-	}
-
-	public String getIspNameEn() {
-		return this.ispNameEn;
-	}
-
-	public void setIspNameEn(String ispNameEn) {
-		this.ispNameEn = ispNameEn;
-		if(ispNameEn != null){
-			putQueryParameter("IspNameEn", ispNameEn);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 

@@ -28,6 +28,8 @@ public class SetDomainServerCertificateRequest extends RpcAcsRequest<SetDomainSe
 
 	private String privateKey;
 
+	private String forceSet;
+
 	private String serverCertificateStatus;
 
 	private String serverCertificate;
@@ -52,6 +54,17 @@ public class SetDomainServerCertificateRequest extends RpcAcsRequest<SetDomainSe
 		this.privateKey = privateKey;
 		if(privateKey != null){
 			putQueryParameter("PrivateKey", privateKey);
+		}
+	}
+
+	public String getForceSet() {
+		return this.forceSet;
+	}
+
+	public void setForceSet(String forceSet) {
+		this.forceSet = forceSet;
+		if(forceSet != null){
+			putQueryParameter("ForceSet", forceSet);
 		}
 	}
 

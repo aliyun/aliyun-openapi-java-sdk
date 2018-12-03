@@ -26,24 +26,24 @@ public class DescribeTopDomainsByFlowRequest extends RpcAcsRequest<DescribeTopDo
 		super("Cdn", "2014-11-11", "DescribeTopDomainsByFlow");
 	}
 
-	private String securityToken;
+	private String startTime;
 
 	private Long limit;
 
-	private String endTime;
+	private String product;
 
-	private String startTime;
+	private String endTime;
 
 	private Long ownerId;
 
-	public String getSecurityToken() {
-		return this.securityToken;
+	public String getStartTime() {
+		return this.startTime;
 	}
 
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime);
 		}
 	}
 
@@ -58,6 +58,17 @@ public class DescribeTopDomainsByFlowRequest extends RpcAcsRequest<DescribeTopDo
 		}
 	}
 
+	public String getProduct() {
+		return this.product;
+	}
+
+	public void setProduct(String product) {
+		this.product = product;
+		if(product != null){
+			putQueryParameter("Product", product);
+		}
+	}
+
 	public String getEndTime() {
 		return this.endTime;
 	}
@@ -66,17 +77,6 @@ public class DescribeTopDomainsByFlowRequest extends RpcAcsRequest<DescribeTopDo
 		this.endTime = endTime;
 		if(endTime != null){
 			putQueryParameter("EndTime", endTime);
-		}
-	}
-
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("StartTime", startTime);
 		}
 	}
 

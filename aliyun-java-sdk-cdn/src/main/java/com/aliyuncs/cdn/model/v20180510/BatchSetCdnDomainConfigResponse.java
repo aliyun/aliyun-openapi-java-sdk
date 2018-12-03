@@ -12,18 +12,18 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.cdn.model.v20141111;
+package com.aliyuncs.cdn.model.v20180510;
 
 import java.util.Map;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.cdn.transform.v20141111.SetDomainGreenManagerConfigResponseUnmarshaller;
+import com.aliyuncs.cdn.transform.v20180510.BatchSetCdnDomainConfigResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class SetDomainGreenManagerConfigResponse extends AcsResponse {
+public class BatchSetCdnDomainConfigResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -36,7 +36,7 @@ public class SetDomainGreenManagerConfigResponse extends AcsResponse {
 	}
 
 	@Override
-	public SetDomainGreenManagerConfigResponse getInstance(UnmarshallerContext context) {
-		return	SetDomainGreenManagerConfigResponseUnmarshaller.unmarshall(this, context);
+	public BatchSetCdnDomainConfigResponse getInstance(UnmarshallerContext context) {
+		return	BatchSetCdnDomainConfigResponseUnmarshaller.unmarshall(this, context);
 	}
 }
