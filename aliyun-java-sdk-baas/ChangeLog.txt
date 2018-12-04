@@ -1,0 +1,3 @@
+2018-12-04 Version: 1.0.0
+1, The first release of Alibaba Cloud BaaS SDK
+
