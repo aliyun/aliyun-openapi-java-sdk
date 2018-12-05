@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeleteScheduledTaskRequest extends RpcAcsRequest<DeleteScheduledTaskResponse> {
 	
 	public DeleteScheduledTaskRequest() {
-		super("Ess", "2014-08-28", "DeleteScheduledTask");
+		super("Ess", "2014-08-28", "DeleteScheduledTask", "ess");
 	}
 
 	private String resourceOwnerAccount;

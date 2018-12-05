@@ -19,12 +19,12 @@ import java.util.List;
 
 /**
  * @author auto create
- * @version
+ * @version 
  */
 public class ModifyScalingConfigurationRequest extends RpcAcsRequest<ModifyScalingConfigurationResponse> {
-
+	
 	public ModifyScalingConfigurationRequest() {
-		super("Ess", "2014-08-28", "ModifyScalingConfiguration");
+		super("Ess", "2014-08-28", "ModifyScalingConfiguration", "ess");
 	}
 
 	private String imageId;
@@ -128,7 +128,7 @@ public class ModifyScalingConfigurationRequest extends RpcAcsRequest<ModifyScali
 			for (int i = 0; i < instanceTypes.size(); i++) {
 				putQueryParameter("InstanceTypes." + (i + 1) , instanceTypes.get(i));
 			}
-		}
+		}	
 	}
 
 	public Integer getInternetMaxBandwidthOut() {
@@ -169,13 +169,13 @@ public class ModifyScalingConfigurationRequest extends RpcAcsRequest<ModifyScali
 	}
 
 	public void setSpotPriceLimits(List<SpotPriceLimit> spotPriceLimits) {
-		this.spotPriceLimits = spotPriceLimits;
+		this.spotPriceLimits = spotPriceLimits;	
 		if (spotPriceLimits != null) {
 			for (int depth1 = 0; depth1 < spotPriceLimits.size(); depth1++) {
 				putQueryParameter("SpotPriceLimit." + (depth1 + 1) + ".InstanceType" , spotPriceLimits.get(depth1).getInstanceType());
 				putQueryParameter("SpotPriceLimit." + (depth1 + 1) + ".PriceLimit" , spotPriceLimits.get(depth1).getPriceLimit());
 			}
-		}
+		}	
 	}
 
 	public String getSystemDiskCategory() {
@@ -315,7 +315,7 @@ public class ModifyScalingConfigurationRequest extends RpcAcsRequest<ModifyScali
 	}
 
 	public void setDataDisks(List<DataDisk> dataDisks) {
-		this.dataDisks = dataDisks;
+		this.dataDisks = dataDisks;	
 		if (dataDisks != null) {
 			for (int depth1 = 0; depth1 < dataDisks.size(); depth1++) {
 				putQueryParameter("DataDisk." + (depth1 + 1) + ".SnapshotId" , dataDisks.get(depth1).getSnapshotId());
@@ -324,7 +324,7 @@ public class ModifyScalingConfigurationRequest extends RpcAcsRequest<ModifyScali
 				putQueryParameter("DataDisk." + (depth1 + 1) + ".Device" , dataDisks.get(depth1).getDevice());
 				putQueryParameter("DataDisk." + (depth1 + 1) + ".DeleteWithInstance" , dataDisks.get(depth1).getDeleteWithInstance());
 			}
-		}
+		}	
 	}
 
 	public String getScalingConfigurationName() {

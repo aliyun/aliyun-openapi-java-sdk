@@ -130,6 +130,8 @@ public class DescribeScalingGroupsResponse extends AcsResponse {
 
 		private Integer stoppedCapacity;
 
+		private List<VServerGroup> vServerGroups;
+
 		private List<String> vSwitchIds;
 
 		private List<String> removalPolicies;
@@ -346,6 +348,14 @@ public class DescribeScalingGroupsResponse extends AcsResponse {
 			this.stoppedCapacity = stoppedCapacity;
 		}
 
+		public List<VServerGroup> getVServerGroups() {
+			return this.vServerGroups;
+		}
+
+		public void setVServerGroups(List<VServerGroup> vServerGroups) {
+			this.vServerGroups = vServerGroups;
+		}
+
 		public List<String> getVSwitchIds() {
 			return this.vSwitchIds;
 		}
@@ -376,6 +386,62 @@ public class DescribeScalingGroupsResponse extends AcsResponse {
 
 		public void setLoadBalancerIds(List<String> loadBalancerIds) {
 			this.loadBalancerIds = loadBalancerIds;
+		}
+
+		public static class VServerGroup {
+
+			private String loadBalancerId;
+
+			private List<VServerGroupAttribute> vServerGroupAttributes;
+
+			public String getLoadBalancerId() {
+				return this.loadBalancerId;
+			}
+
+			public void setLoadBalancerId(String loadBalancerId) {
+				this.loadBalancerId = loadBalancerId;
+			}
+
+			public List<VServerGroupAttribute> getVServerGroupAttributes() {
+				return this.vServerGroupAttributes;
+			}
+
+			public void setVServerGroupAttributes(List<VServerGroupAttribute> vServerGroupAttributes) {
+				this.vServerGroupAttributes = vServerGroupAttributes;
+			}
+
+			public static class VServerGroupAttribute {
+
+				private String vServerGroupId;
+
+				private Integer port;
+
+				private Integer weight;
+
+				public String getVServerGroupId() {
+					return this.vServerGroupId;
+				}
+
+				public void setVServerGroupId(String vServerGroupId) {
+					this.vServerGroupId = vServerGroupId;
+				}
+
+				public Integer getPort() {
+					return this.port;
+				}
+
+				public void setPort(Integer port) {
+					this.port = port;
+				}
+
+				public Integer getWeight() {
+					return this.weight;
+				}
+
+				public void setWeight(Integer weight) {
+					this.weight = weight;
+				}
+			}
 		}
 	}
 

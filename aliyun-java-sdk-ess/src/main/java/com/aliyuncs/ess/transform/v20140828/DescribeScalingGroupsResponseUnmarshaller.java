@@ -19,6 +19,8 @@ import java.util.List;
 
 import com.aliyuncs.ess.model.v20140828.DescribeScalingGroupsResponse;
 import com.aliyuncs.ess.model.v20140828.DescribeScalingGroupsResponse.ScalingGroup;
+import com.aliyuncs.ess.model.v20140828.DescribeScalingGroupsResponse.ScalingGroup.VServerGroup;
+import com.aliyuncs.ess.model.v20140828.DescribeScalingGroupsResponse.ScalingGroup.VServerGroup.VServerGroupAttribute;
 import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -85,6 +87,26 @@ public class DescribeScalingGroupsResponseUnmarshaller {
 				loadBalancerIds.add(context.stringValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].LoadBalancerIds["+ j +"]"));
 			}
 			scalingGroup.setLoadBalancerIds(loadBalancerIds);
+
+			List<VServerGroup> vServerGroups = new ArrayList<VServerGroup>();
+			for (int j = 0; j < context.lengthValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].VServerGroups.Length"); j++) {
+				VServerGroup vServerGroup = new VServerGroup();
+				vServerGroup.setLoadBalancerId(context.stringValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].VServerGroups["+ j +"].LoadBalancerId"));
+
+				List<VServerGroupAttribute> vServerGroupAttributes = new ArrayList<VServerGroupAttribute>();
+				for (int k = 0; k < context.lengthValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].VServerGroups["+ j +"].VServerGroupAttributes.Length"); k++) {
+					VServerGroupAttribute vServerGroupAttribute = new VServerGroupAttribute();
+					vServerGroupAttribute.setVServerGroupId(context.stringValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].VServerGroups["+ j +"].VServerGroupAttributes["+ k +"].VServerGroupId"));
+					vServerGroupAttribute.setPort(context.integerValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].VServerGroups["+ j +"].VServerGroupAttributes["+ k +"].Port"));
+					vServerGroupAttribute.setWeight(context.integerValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].VServerGroups["+ j +"].VServerGroupAttributes["+ k +"].Weight"));
+
+					vServerGroupAttributes.add(vServerGroupAttribute);
+				}
+				vServerGroup.setVServerGroupAttributes(vServerGroupAttributes);
+
+				vServerGroups.add(vServerGroup);
+			}
+			scalingGroup.setVServerGroups(vServerGroups);
 
 			scalingGroups.add(scalingGroup);
 		}

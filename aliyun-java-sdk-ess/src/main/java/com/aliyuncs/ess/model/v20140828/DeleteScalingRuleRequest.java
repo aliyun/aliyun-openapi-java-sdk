@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeleteScalingRuleRequest extends RpcAcsRequest<DeleteScalingRuleResponse> {
 	
 	public DeleteScalingRuleRequest() {
-		super("Ess", "2014-08-28", "DeleteScalingRule");
+		super("Ess", "2014-08-28", "DeleteScalingRule", "ess");
 	}
 
 	private String resourceOwnerAccount;

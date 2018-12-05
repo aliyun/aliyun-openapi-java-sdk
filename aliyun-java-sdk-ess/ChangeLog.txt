@@ -1,3 +1,6 @@
+2018-12-05 Version: 2.2.8
+1, Scaling group support vServerGroup.
+
 2018-12-03 Version: 2.2.7
 1,  Add a parameter to RemoveInstances.
 

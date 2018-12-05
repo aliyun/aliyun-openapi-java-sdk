@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class VerifyAuthenticationRequest extends RpcAcsRequest<VerifyAuthenticationResponse> {
 	
 	public VerifyAuthenticationRequest() {
-		super("Ess", "2014-08-28", "VerifyAuthentication");
+		super("Ess", "2014-08-28", "VerifyAuthentication", "ess");
 	}
 
 	private Long uid;

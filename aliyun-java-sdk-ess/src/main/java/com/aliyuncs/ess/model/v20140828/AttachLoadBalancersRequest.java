@@ -24,7 +24,7 @@ import java.util.List;
 public class AttachLoadBalancersRequest extends RpcAcsRequest<AttachLoadBalancersResponse> {
 	
 	public AttachLoadBalancersRequest() {
-		super("Ess", "2014-08-28", "AttachLoadBalancers");
+		super("Ess", "2014-08-28", "AttachLoadBalancers", "ess");
 	}
 
 	private List<String> loadBalancers;

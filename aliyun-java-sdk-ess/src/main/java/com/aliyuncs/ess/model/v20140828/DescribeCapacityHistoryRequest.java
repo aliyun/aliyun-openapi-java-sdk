@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeCapacityHistoryRequest extends RpcAcsRequest<DescribeCapacityHistoryResponse> {
 	
 	public DescribeCapacityHistoryRequest() {
-		super("Ess", "2014-08-28", "DescribeCapacityHistory");
+		super("Ess", "2014-08-28", "DescribeCapacityHistory", "ess");
 	}
 
 	private String resourceOwnerAccount;

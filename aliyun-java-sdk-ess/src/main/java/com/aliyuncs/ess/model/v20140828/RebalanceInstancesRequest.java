@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class RebalanceInstancesRequest extends RpcAcsRequest<RebalanceInstancesResponse> {
 	
 	public RebalanceInstancesRequest() {
-		super("Ess", "2014-08-28", "RebalanceInstances");
+		super("Ess", "2014-08-28", "RebalanceInstances", "ess");
 	}
 
 	private Long resourceOwnerId;

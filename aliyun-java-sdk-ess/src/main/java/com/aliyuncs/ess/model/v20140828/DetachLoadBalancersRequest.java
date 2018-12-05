@@ -24,7 +24,7 @@ import java.util.List;
 public class DetachLoadBalancersRequest extends RpcAcsRequest<DetachLoadBalancersResponse> {
 	
 	public DetachLoadBalancersRequest() {
-		super("Ess", "2014-08-28", "DetachLoadBalancers");
+		super("Ess", "2014-08-28", "DetachLoadBalancers", "ess");
 	}
 
 	private List<String> loadBalancers;

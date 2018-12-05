@@ -24,7 +24,7 @@ import java.util.List;
 public class ModifyNotificationConfigurationRequest extends RpcAcsRequest<ModifyNotificationConfigurationResponse> {
 	
 	public ModifyNotificationConfigurationRequest() {
-		super("Ess", "2014-08-28", "ModifyNotificationConfiguration");
+		super("Ess", "2014-08-28", "ModifyNotificationConfiguration", "ess");
 	}
 
 	private String resourceOwnerAccount;

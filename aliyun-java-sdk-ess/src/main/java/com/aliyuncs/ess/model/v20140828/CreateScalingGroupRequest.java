@@ -19,12 +19,12 @@ import java.util.List;
 
 /**
  * @author auto create
- * @version
+ * @version 
  */
 public class CreateScalingGroupRequest extends RpcAcsRequest<CreateScalingGroupResponse> {
-
+	
 	public CreateScalingGroupRequest() {
-		super("Ess", "2014-08-28", "CreateScalingGroup");
+		super("Ess", "2014-08-28", "CreateScalingGroup", "ess");
 	}
 
 	private String multiAZPolicy;
@@ -62,6 +62,8 @@ public class CreateScalingGroupRequest extends RpcAcsRequest<CreateScalingGroupR
 	private Integer defaultCooldown;
 
 	private String removalPolicy1;
+
+	private List<VServerGroup> vServerGroups;
 
 	private String removalPolicy2;
 
@@ -152,7 +154,7 @@ public class CreateScalingGroupRequest extends RpcAcsRequest<CreateScalingGroupR
 			for (int i = 0; i < vSwitchIds.size(); i++) {
 				putQueryParameter("VSwitchIds." + (i + 1) , vSwitchIds.get(i));
 			}
-		}
+		}	
 	}
 
 	public String getOwnerAccount() {
@@ -237,7 +239,7 @@ public class CreateScalingGroupRequest extends RpcAcsRequest<CreateScalingGroupR
 	}
 
 	public void setLifecycleHooks(List<LifecycleHook> lifecycleHooks) {
-		this.lifecycleHooks = lifecycleHooks;
+		this.lifecycleHooks = lifecycleHooks;	
 		if (lifecycleHooks != null) {
 			for (int depth1 = 0; depth1 < lifecycleHooks.size(); depth1++) {
 				putQueryParameter("LifecycleHook." + (depth1 + 1) + ".DefaultResult" , lifecycleHooks.get(depth1).getDefaultResult());
@@ -247,7 +249,7 @@ public class CreateScalingGroupRequest extends RpcAcsRequest<CreateScalingGroupR
 				putQueryParameter("LifecycleHook." + (depth1 + 1) + ".NotificationMetadata" , lifecycleHooks.get(depth1).getNotificationMetadata());
 				putQueryParameter("LifecycleHook." + (depth1 + 1) + ".LifecycleTransition" , lifecycleHooks.get(depth1).getLifecycleTransition());
 			}
-		}
+		}	
 	}
 
 	public Integer getDefaultCooldown() {
@@ -270,6 +272,26 @@ public class CreateScalingGroupRequest extends RpcAcsRequest<CreateScalingGroupR
 		if(removalPolicy1 != null){
 			putQueryParameter("RemovalPolicy.1", removalPolicy1);
 		}
+	}
+
+	public List<VServerGroup> getVServerGroups() {
+		return this.vServerGroups;
+	}
+
+	public void setVServerGroups(List<VServerGroup> vServerGroups) {
+		this.vServerGroups = vServerGroups;	
+		if (vServerGroups != null) {
+			for (int depth1 = 0; depth1 < vServerGroups.size(); depth1++) {
+				putQueryParameter("VServerGroup." + (depth1 + 1) + ".LoadBalancerId" , vServerGroups.get(depth1).getLoadBalancerId());
+				if (vServerGroups.get(depth1).getVServerGroupAttributes() != null) {
+					for (int depth2 = 0; depth2 < vServerGroups.get(depth1).getVServerGroupAttributes().size(); depth2++) {
+						putQueryParameter("VServerGroup." + (depth1 + 1) + ".VServerGroupAttribute." + (depth2 + 1) + ".VServerGroupId" , vServerGroups.get(depth1).getVServerGroupAttributes().get(depth2).getVServerGroupId());
+						putQueryParameter("VServerGroup." + (depth1 + 1) + ".VServerGroupAttribute." + (depth2 + 1) + ".Port" , vServerGroups.get(depth1).getVServerGroupAttributes().get(depth2).getPort());
+						putQueryParameter("VServerGroup." + (depth1 + 1) + ".VServerGroupAttribute." + (depth2 + 1) + ".Weight" , vServerGroups.get(depth1).getVServerGroupAttributes().get(depth2).getWeight());
+					}
+				}
+			}
+		}	
 	}
 
 	public String getRemovalPolicy2() {
@@ -343,6 +365,62 @@ public class CreateScalingGroupRequest extends RpcAcsRequest<CreateScalingGroupR
 
 		public void setLifecycleTransition(String lifecycleTransition) {
 			this.lifecycleTransition = lifecycleTransition;
+		}
+	}
+
+	public static class VServerGroup {
+
+		private String loadBalancerId;
+
+		private List<VServerGroupAttribute> vServerGroupAttributes;
+
+		public String getLoadBalancerId() {
+			return this.loadBalancerId;
+		}
+
+		public void setLoadBalancerId(String loadBalancerId) {
+			this.loadBalancerId = loadBalancerId;
+		}
+
+		public List<VServerGroupAttribute> getVServerGroupAttributes() {
+			return this.vServerGroupAttributes;
+		}
+
+		public void setVServerGroupAttributes(List<VServerGroupAttribute> vServerGroupAttributes) {
+			this.vServerGroupAttributes = vServerGroupAttributes;
+		}
+
+		public static class VServerGroupAttribute {
+
+			private String vServerGroupId;
+
+			private Integer port;
+
+			private Integer weight;
+
+			public String getVServerGroupId() {
+				return this.vServerGroupId;
+			}
+
+			public void setVServerGroupId(String vServerGroupId) {
+				this.vServerGroupId = vServerGroupId;
+			}
+
+			public Integer getPort() {
+				return this.port;
+			}
+
+			public void setPort(Integer port) {
+				this.port = port;
+			}
+
+			public Integer getWeight() {
+				return this.weight;
+			}
+
+			public void setWeight(Integer weight) {
+				this.weight = weight;
+			}
 		}
 	}
 

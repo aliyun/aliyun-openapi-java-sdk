@@ -24,7 +24,7 @@ import java.util.List;
 public class ModifyAlarmRequest extends RpcAcsRequest<ModifyAlarmResponse> {
 	
 	public ModifyAlarmRequest() {
-		super("Ess", "2014-08-28", "ModifyAlarm");
+		super("Ess", "2014-08-28", "ModifyAlarm", "ess");
 	}
 
 	private String resourceOwnerAccount;

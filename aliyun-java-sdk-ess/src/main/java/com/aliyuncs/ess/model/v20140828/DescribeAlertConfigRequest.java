@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeAlertConfigRequest extends RpcAcsRequest<DescribeAlertConfigResponse> {
 	
 	public DescribeAlertConfigRequest() {
-		super("Ess", "2014-08-28", "DescribeAlertConfig");
+		super("Ess", "2014-08-28", "DescribeAlertConfig", "ess");
 	}
 
 	private String resourceOwnerAccount;
