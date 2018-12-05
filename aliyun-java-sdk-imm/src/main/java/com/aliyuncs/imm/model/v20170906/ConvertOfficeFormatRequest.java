@@ -40,6 +40,8 @@ public class ConvertOfficeFormatRequest extends RpcAcsRequest<ConvertOfficeForma
 
 	private String tgtFileSuffix;
 
+	private Boolean pdfVector;
+
 	private Boolean sheetOnePage;
 
 	private String password;
@@ -136,6 +138,17 @@ public class ConvertOfficeFormatRequest extends RpcAcsRequest<ConvertOfficeForma
 		this.tgtFileSuffix = tgtFileSuffix;
 		if(tgtFileSuffix != null){
 			putQueryParameter("TgtFileSuffix", tgtFileSuffix);
+		}
+	}
+
+	public Boolean getPdfVector() {
+		return this.pdfVector;
+	}
+
+	public void setPdfVector(Boolean pdfVector) {
+		this.pdfVector = pdfVector;
+		if(pdfVector != null){
+			putQueryParameter("PdfVector", pdfVector.toString());
 		}
 	}
 

@@ -1,3 +1,7 @@
+2018-12-05 Version: 1.9.2
+1, Add image async job.
+2, Fix group bug.
+
 2018-11-27 Version: 1.9.1
 1, ConvertOfficeFormat support TgtFilePrefix, TgtFileSuffix, TgtFilePages, FitToPagesTall, FitToPagesWide
 

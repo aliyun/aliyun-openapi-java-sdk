@@ -28,7 +28,7 @@ public class DescribeRegionsResponse extends AcsResponse {
 
 	private String requestId;
 
-	private List<RegionsItem> regions;
+	private Regions regions;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -38,44 +38,47 @@ public class DescribeRegionsResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public List<RegionsItem> getRegions() {
+	public Regions getRegions() {
 		return this.regions;
 	}
 
-	public void setRegions(List<RegionsItem> regions) {
+	public void setRegions(Regions regions) {
 		this.regions = regions;
 	}
 
-	public static class RegionsItem {
+	public static class Regions {
 
-		private String region;
+		private List<RegionItem> region;
 
-		private String status;
-
-		private String showName;
-
-		public String getRegion() {
+		public List<RegionItem> getRegion() {
 			return this.region;
 		}
 
-		public void setRegion(String region) {
+		public void setRegion(List<RegionItem> region) {
 			this.region = region;
 		}
 
-		public String getStatus() {
-			return this.status;
-		}
+		public static class RegionItem {
 
-		public void setStatus(String status) {
-			this.status = status;
-		}
+			private String regionId;
 
-		public String getShowName() {
-			return this.showName;
-		}
+			private List<String> projectTypes;
 
-		public void setShowName(String showName) {
-			this.showName = showName;
+			public String getRegionId() {
+				return this.regionId;
+			}
+
+			public void setRegionId(String regionId) {
+				this.regionId = regionId;
+			}
+
+			public List<String> getProjectTypes() {
+				return this.projectTypes;
+			}
+
+			public void setProjectTypes(List<String> projectTypes) {
+				this.projectTypes = projectTypes;
+			}
 		}
 	}
 

@@ -18,7 +18,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.imm.model.v20170906.DescribeRegionsResponse;
-import com.aliyuncs.imm.model.v20170906.DescribeRegionsResponse.RegionsItem;
+import com.aliyuncs.imm.model.v20170906.DescribeRegionsResponse.Regions;
+import com.aliyuncs.imm.model.v20170906.DescribeRegionsResponse.Regions.RegionItem;
 import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -29,15 +30,22 @@ public class DescribeRegionsResponseUnmarshaller {
 		
 		describeRegionsResponse.setRequestId(context.stringValue("DescribeRegionsResponse.RequestId"));
 
-		List<RegionsItem> regions = new ArrayList<RegionsItem>();
-		for (int i = 0; i < context.lengthValue("DescribeRegionsResponse.Regions.Length"); i++) {
-			RegionsItem regionsItem = new RegionsItem();
-			regionsItem.setRegion(context.stringValue("DescribeRegionsResponse.Regions["+ i +"].Region"));
-			regionsItem.setStatus(context.stringValue("DescribeRegionsResponse.Regions["+ i +"].Status"));
-			regionsItem.setShowName(context.stringValue("DescribeRegionsResponse.Regions["+ i +"].ShowName"));
+		Regions regions = new Regions();
 
-			regions.add(regionsItem);
+		List<RegionItem> region = new ArrayList<RegionItem>();
+		for (int i = 0; i < context.lengthValue("DescribeRegionsResponse.Regions.Region.Length"); i++) {
+			RegionItem regionItem = new RegionItem();
+			regionItem.setRegionId(context.stringValue("DescribeRegionsResponse.Regions.Region["+ i +"].RegionId"));
+
+			List<String> projectTypes = new ArrayList<String>();
+			for (int j = 0; j < context.lengthValue("DescribeRegionsResponse.Regions.Region["+ i +"].ProjectTypes.Length"); j++) {
+				projectTypes.add(context.stringValue("DescribeRegionsResponse.Regions.Region["+ i +"].ProjectTypes["+ j +"]"));
+			}
+			regionItem.setProjectTypes(projectTypes);
+
+			region.add(regionItem);
 		}
+		regions.setRegion(region);
 		describeRegionsResponse.setRegions(regions);
 	 
 	 	return describeRegionsResponse;

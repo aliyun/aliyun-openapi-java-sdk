@@ -28,11 +28,25 @@ public class CreateOfficeConversionTaskRequest extends RpcAcsRequest<CreateOffic
 
 	private String srcType;
 
+	private String project;
+
+	private String idempotentToken;
+
+	private Boolean pdfVector;
+
+	private String password;
+
+	private Long startPage;
+
+	private String notifyEndpoint;
+
+	private Boolean fitToPagesWide;
+
+	private String tgtFilePrefix;
+
 	private String notifyTopicName;
 
 	private String modelId;
-
-	private String project;
 
 	private Long maxSheetRow;
 
@@ -40,25 +54,13 @@ public class CreateOfficeConversionTaskRequest extends RpcAcsRequest<CreateOffic
 
 	private Long endPage;
 
-	private String idempotentToken;
-
 	private String tgtFileSuffix;
 
 	private Boolean sheetOnePage;
 
-	private String password;
-
-	private Long startPage;
-
 	private Long maxSheetCol;
 
 	private String tgtType;
-
-	private String notifyEndpoint;
-
-	private Boolean fitToPagesWide;
-
-	private String tgtFilePrefix;
 
 	private Boolean fitToPagesTall;
 
@@ -76,6 +78,94 @@ public class CreateOfficeConversionTaskRequest extends RpcAcsRequest<CreateOffic
 		this.srcType = srcType;
 		if(srcType != null){
 			putQueryParameter("SrcType", srcType);
+		}
+	}
+
+	public String getProject() {
+		return this.project;
+	}
+
+	public void setProject(String project) {
+		this.project = project;
+		if(project != null){
+			putQueryParameter("Project", project);
+		}
+	}
+
+	public String getIdempotentToken() {
+		return this.idempotentToken;
+	}
+
+	public void setIdempotentToken(String idempotentToken) {
+		this.idempotentToken = idempotentToken;
+		if(idempotentToken != null){
+			putQueryParameter("IdempotentToken", idempotentToken);
+		}
+	}
+
+	public Boolean getPdfVector() {
+		return this.pdfVector;
+	}
+
+	public void setPdfVector(Boolean pdfVector) {
+		this.pdfVector = pdfVector;
+		if(pdfVector != null){
+			putQueryParameter("PdfVector", pdfVector.toString());
+		}
+	}
+
+	public String getPassword() {
+		return this.password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+		if(password != null){
+			putQueryParameter("Password", password);
+		}
+	}
+
+	public Long getStartPage() {
+		return this.startPage;
+	}
+
+	public void setStartPage(Long startPage) {
+		this.startPage = startPage;
+		if(startPage != null){
+			putQueryParameter("StartPage", startPage.toString());
+		}
+	}
+
+	public String getNotifyEndpoint() {
+		return this.notifyEndpoint;
+	}
+
+	public void setNotifyEndpoint(String notifyEndpoint) {
+		this.notifyEndpoint = notifyEndpoint;
+		if(notifyEndpoint != null){
+			putQueryParameter("NotifyEndpoint", notifyEndpoint);
+		}
+	}
+
+	public Boolean getFitToPagesWide() {
+		return this.fitToPagesWide;
+	}
+
+	public void setFitToPagesWide(Boolean fitToPagesWide) {
+		this.fitToPagesWide = fitToPagesWide;
+		if(fitToPagesWide != null){
+			putQueryParameter("FitToPagesWide", fitToPagesWide.toString());
+		}
+	}
+
+	public String getTgtFilePrefix() {
+		return this.tgtFilePrefix;
+	}
+
+	public void setTgtFilePrefix(String tgtFilePrefix) {
+		this.tgtFilePrefix = tgtFilePrefix;
+		if(tgtFilePrefix != null){
+			putQueryParameter("TgtFilePrefix", tgtFilePrefix);
 		}
 	}
 
@@ -98,17 +188,6 @@ public class CreateOfficeConversionTaskRequest extends RpcAcsRequest<CreateOffic
 		this.modelId = modelId;
 		if(modelId != null){
 			putQueryParameter("ModelId", modelId);
-		}
-	}
-
-	public String getProject() {
-		return this.project;
-	}
-
-	public void setProject(String project) {
-		this.project = project;
-		if(project != null){
-			putQueryParameter("Project", project);
 		}
 	}
 
@@ -145,17 +224,6 @@ public class CreateOfficeConversionTaskRequest extends RpcAcsRequest<CreateOffic
 		}
 	}
 
-	public String getIdempotentToken() {
-		return this.idempotentToken;
-	}
-
-	public void setIdempotentToken(String idempotentToken) {
-		this.idempotentToken = idempotentToken;
-		if(idempotentToken != null){
-			putQueryParameter("IdempotentToken", idempotentToken);
-		}
-	}
-
 	public String getTgtFileSuffix() {
 		return this.tgtFileSuffix;
 	}
@@ -178,28 +246,6 @@ public class CreateOfficeConversionTaskRequest extends RpcAcsRequest<CreateOffic
 		}
 	}
 
-	public String getPassword() {
-		return this.password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
-		if(password != null){
-			putQueryParameter("Password", password);
-		}
-	}
-
-	public Long getStartPage() {
-		return this.startPage;
-	}
-
-	public void setStartPage(Long startPage) {
-		this.startPage = startPage;
-		if(startPage != null){
-			putQueryParameter("StartPage", startPage.toString());
-		}
-	}
-
 	public Long getMaxSheetCol() {
 		return this.maxSheetCol;
 	}
@@ -219,39 +265,6 @@ public class CreateOfficeConversionTaskRequest extends RpcAcsRequest<CreateOffic
 		this.tgtType = tgtType;
 		if(tgtType != null){
 			putQueryParameter("TgtType", tgtType);
-		}
-	}
-
-	public String getNotifyEndpoint() {
-		return this.notifyEndpoint;
-	}
-
-	public void setNotifyEndpoint(String notifyEndpoint) {
-		this.notifyEndpoint = notifyEndpoint;
-		if(notifyEndpoint != null){
-			putQueryParameter("NotifyEndpoint", notifyEndpoint);
-		}
-	}
-
-	public Boolean getFitToPagesWide() {
-		return this.fitToPagesWide;
-	}
-
-	public void setFitToPagesWide(Boolean fitToPagesWide) {
-		this.fitToPagesWide = fitToPagesWide;
-		if(fitToPagesWide != null){
-			putQueryParameter("FitToPagesWide", fitToPagesWide.toString());
-		}
-	}
-
-	public String getTgtFilePrefix() {
-		return this.tgtFilePrefix;
-	}
-
-	public void setTgtFilePrefix(String tgtFilePrefix) {
-		this.tgtFilePrefix = tgtFilePrefix;
-		if(tgtFilePrefix != null){
-			putQueryParameter("TgtFilePrefix", tgtFilePrefix);
 		}
 	}
 
