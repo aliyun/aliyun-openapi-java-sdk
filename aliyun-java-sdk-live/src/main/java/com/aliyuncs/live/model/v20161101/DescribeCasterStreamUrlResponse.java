@@ -15,6 +15,7 @@
 package com.aliyuncs.live.model.v20161101;
 
 import java.util.List;
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.live.transform.v20161101.DescribeCasterStreamUrlResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -71,6 +72,8 @@ public class DescribeCasterStreamUrlResponse extends AcsResponse {
 
 		private String streamUrl;
 
+		private String rtmpUrl;
+
 		private Integer outputType;
 
 		private List<StreamInfo> streamInfos;
@@ -89,6 +92,14 @@ public class DescribeCasterStreamUrlResponse extends AcsResponse {
 
 		public void setStreamUrl(String streamUrl) {
 			this.streamUrl = streamUrl;
+		}
+
+		public String getRtmpUrl() {
+			return this.rtmpUrl;
+		}
+
+		public void setRtmpUrl(String rtmpUrl) {
+			this.rtmpUrl = rtmpUrl;
 		}
 
 		public Integer getOutputType() {

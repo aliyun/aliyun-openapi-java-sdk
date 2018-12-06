@@ -1,3 +1,8 @@
+2018-12-06 Version: 3.7.3
+1, Add DescribeLiveDomainRealTimeBpsData, DescribeLiveDomainRealTimeHttpCodeData,DescribeLiveDomainRealTimeTrafficData.
+2, Update DescirbeCasterChannels and DescribeCasterStreamUrl.
+
+
 2018-10-30 Version: 3.7.2
 1, Add API DescribeLiveDomainBpsData,DescribeLiveDomainTrafficData.
 

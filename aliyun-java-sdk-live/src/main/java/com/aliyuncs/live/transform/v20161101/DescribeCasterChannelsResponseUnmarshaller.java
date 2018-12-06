@@ -36,6 +36,7 @@ public class DescribeCasterChannelsResponseUnmarshaller {
 			channel.setChannelId(context.stringValue("DescribeCasterChannelsResponse.Channels["+ i +"].ChannelId"));
 			channel.setResourceId(context.stringValue("DescribeCasterChannelsResponse.Channels["+ i +"].ResourceId"));
 			channel.setStreamUrl(context.stringValue("DescribeCasterChannelsResponse.Channels["+ i +"].StreamUrl"));
+			channel.setRtmpUrl(context.stringValue("DescribeCasterChannelsResponse.Channels["+ i +"].RtmpUrl"));
 
 			channels.add(channel);
 		}

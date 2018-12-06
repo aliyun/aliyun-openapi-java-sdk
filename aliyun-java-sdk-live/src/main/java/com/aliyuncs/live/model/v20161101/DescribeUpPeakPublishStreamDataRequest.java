@@ -20,45 +20,21 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class DescribeDomainUsageDataRequest extends RpcAcsRequest<DescribeDomainUsageDataResponse> {
+public class DescribeUpPeakPublishStreamDataRequest extends RpcAcsRequest<DescribeUpPeakPublishStreamDataResponse> {
 	
-	public DescribeDomainUsageDataRequest() {
-		super("live", "2016-11-01", "DescribeDomainUsageData", "live");
+	public DescribeUpPeakPublishStreamDataRequest() {
+		super("live", "2016-11-01", "DescribeUpPeakPublishStreamData", "live");
 	}
-
-	private String startTime;
-
-	private String area;
 
 	private String domainName;
 
 	private String endTime;
 
+	private String startTime;
+
 	private Long ownerId;
 
-	private String interval;
-
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("StartTime", startTime);
-		}
-	}
-
-	public String getArea() {
-		return this.area;
-	}
-
-	public void setArea(String area) {
-		this.area = area;
-		if(area != null){
-			putQueryParameter("Area", area);
-		}
-	}
+	private String domainSwitch;
 
 	public String getDomainName() {
 		return this.domainName;
@@ -82,6 +58,17 @@ public class DescribeDomainUsageDataRequest extends RpcAcsRequest<DescribeDomain
 		}
 	}
 
+	public String getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime);
+		}
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -93,20 +80,20 @@ public class DescribeDomainUsageDataRequest extends RpcAcsRequest<DescribeDomain
 		}
 	}
 
-	public String getInterval() {
-		return this.interval;
+	public String getDomainSwitch() {
+		return this.domainSwitch;
 	}
 
-	public void setInterval(String interval) {
-		this.interval = interval;
-		if(interval != null){
-			putQueryParameter("Interval", interval);
+	public void setDomainSwitch(String domainSwitch) {
+		this.domainSwitch = domainSwitch;
+		if(domainSwitch != null){
+			putQueryParameter("DomainSwitch", domainSwitch);
 		}
 	}
 
 	@Override
-	public Class<DescribeDomainUsageDataResponse> getResponseClass() {
-		return DescribeDomainUsageDataResponse.class;
+	public Class<DescribeUpPeakPublishStreamDataResponse> getResponseClass() {
+		return DescribeUpPeakPublishStreamDataResponse.class;
 	}
 
 }

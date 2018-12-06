@@ -15,15 +15,16 @@
 package com.aliyuncs.live.model.v20161101;
 
 import java.util.List;
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.live.transform.v20161101.DescribeDomainUsageDataResponseUnmarshaller;
+import com.aliyuncs.live.transform.v20161101.DescribeLiveDomainRealTimeBpsDataResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DescribeDomainUsageDataResponse extends AcsResponse {
+public class DescribeLiveDomainRealTimeBpsDataResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -33,13 +34,9 @@ public class DescribeDomainUsageDataResponse extends AcsResponse {
 
 	private String endTime;
 
-	private String field;
-
-	private String area;
-
 	private String dataInterval;
 
-	private List<DataModule> usageDataPerInterval;
+	private List<DataModule> realTimeBpsDataPerInterval;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -73,22 +70,6 @@ public class DescribeDomainUsageDataResponse extends AcsResponse {
 		this.endTime = endTime;
 	}
 
-	public String getField() {
-		return this.field;
-	}
-
-	public void setField(String field) {
-		this.field = field;
-	}
-
-	public String getArea() {
-		return this.area;
-	}
-
-	public void setArea(String area) {
-		this.area = area;
-	}
-
 	public String getDataInterval() {
 		return this.dataInterval;
 	}
@@ -97,12 +78,12 @@ public class DescribeDomainUsageDataResponse extends AcsResponse {
 		this.dataInterval = dataInterval;
 	}
 
-	public List<DataModule> getUsageDataPerInterval() {
-		return this.usageDataPerInterval;
+	public List<DataModule> getRealTimeBpsDataPerInterval() {
+		return this.realTimeBpsDataPerInterval;
 	}
 
-	public void setUsageDataPerInterval(List<DataModule> usageDataPerInterval) {
-		this.usageDataPerInterval = usageDataPerInterval;
+	public void setRealTimeBpsDataPerInterval(List<DataModule> realTimeBpsDataPerInterval) {
+		this.realTimeBpsDataPerInterval = realTimeBpsDataPerInterval;
 	}
 
 	public static class DataModule {
@@ -129,7 +110,7 @@ public class DescribeDomainUsageDataResponse extends AcsResponse {
 	}
 
 	@Override
-	public DescribeDomainUsageDataResponse getInstance(UnmarshallerContext context) {
-		return	DescribeDomainUsageDataResponseUnmarshaller.unmarshall(this, context);
+	public DescribeLiveDomainRealTimeBpsDataResponse getInstance(UnmarshallerContext context) {
+		return	DescribeLiveDomainRealTimeBpsDataResponseUnmarshaller.unmarshall(this, context);
 	}
 }
