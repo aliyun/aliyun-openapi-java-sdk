@@ -1,3 +1,6 @@
+2018-12-07 Version: 1.0.2
+1, upload jar
+
 2018-12-03 Version: 1.0.2
 1, Format test case
 
