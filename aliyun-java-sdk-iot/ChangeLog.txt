@@ -1,3 +1,8 @@
+2018-12-09 Version: 6.5.0
+1, Add Open API QuerySuperDeviceGroup.
+2, Add Open API QueryDeviceProperties.
+3, Add Open API QueryDeviceListByDeviceGroup.
+
 2018-11-28 Version: 6.4.0
 1, Add APIs InvokeThingsService, SetDevicesProperty and QueryDeviceByTags .
 
