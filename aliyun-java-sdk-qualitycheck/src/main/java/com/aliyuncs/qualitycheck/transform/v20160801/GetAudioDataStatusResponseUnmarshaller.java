@@ -25,6 +25,7 @@ import com.aliyuncs.qualitycheck.model.v20160801.GetAudioDataStatusResponse.Task
 import com.aliyuncs.qualitycheck.model.v20160801.GetAudioDataStatusResponse.TaskAsrResult.AsrResult.SentenceResult;
 import com.aliyuncs.qualitycheck.model.v20160801.GetAudioDataStatusResponse.TaskAsrResult.AsrResult.ServiceEvStat;
 import com.aliyuncs.qualitycheck.model.v20160801.GetAudioDataStatusResponse.TaskAsrResult.AsrResult.ServiceSrStat;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

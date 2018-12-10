@@ -29,6 +29,7 @@ import com.aliyuncs.qualitycheck.model.v20160801.GetResultResponse.ResultInfo.Ru
 import com.aliyuncs.qualitycheck.model.v20160801.GetResultResponse.ResultInfo.RuleHitInfo.ConditionHitInfo;
 import com.aliyuncs.qualitycheck.model.v20160801.GetResultResponse.ResultInfo.RuleHitInfo.ConditionHitInfo.HitKeyWord;
 import com.aliyuncs.qualitycheck.model.v20160801.GetResultResponse.ResultInfo.RuleHitInfo.ConditionHitInfo.Phrase;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

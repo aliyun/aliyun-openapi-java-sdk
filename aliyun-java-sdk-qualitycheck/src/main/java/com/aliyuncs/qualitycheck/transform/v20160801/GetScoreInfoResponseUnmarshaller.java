@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.qualitycheck.model.v20160801.GetScoreInfoResponse;
 import com.aliyuncs.qualitycheck.model.v20160801.GetScoreInfoResponse.ScorePo;
 import com.aliyuncs.qualitycheck.model.v20160801.GetScoreInfoResponse.ScorePo.ScoreParam;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

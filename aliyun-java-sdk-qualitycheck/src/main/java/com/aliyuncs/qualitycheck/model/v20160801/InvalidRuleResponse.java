@@ -14,6 +14,7 @@
 
 package com.aliyuncs.qualitycheck.model.v20160801;
 
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.qualitycheck.transform.v20160801.InvalidRuleResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;

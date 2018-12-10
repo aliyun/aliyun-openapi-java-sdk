@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.qualitycheck.model.v20160801.GetRuleResponse;
 import com.aliyuncs.qualitycheck.model.v20160801.GetRuleResponse.Data;
 import com.aliyuncs.qualitycheck.model.v20160801.GetRuleResponse.Data.RuleInfo;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

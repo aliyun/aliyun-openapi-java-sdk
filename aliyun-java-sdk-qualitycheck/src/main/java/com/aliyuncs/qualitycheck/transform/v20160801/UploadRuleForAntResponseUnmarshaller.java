@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.qualitycheck.model.v20160801.UploadRuleForAntResponse;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

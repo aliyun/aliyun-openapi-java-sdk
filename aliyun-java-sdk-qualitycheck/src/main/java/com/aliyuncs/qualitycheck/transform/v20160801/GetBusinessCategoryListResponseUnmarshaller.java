@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.qualitycheck.model.v20160801.GetBusinessCategoryListResponse;
 import com.aliyuncs.qualitycheck.model.v20160801.GetBusinessCategoryListResponse.BusinessCategoryBasicInfo;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

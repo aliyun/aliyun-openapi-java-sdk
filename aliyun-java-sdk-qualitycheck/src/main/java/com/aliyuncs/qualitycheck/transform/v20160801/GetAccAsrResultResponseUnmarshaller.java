@@ -24,6 +24,7 @@ import com.aliyuncs.qualitycheck.model.v20160801.GetAccAsrResultResponse.AccAsrS
 import com.aliyuncs.qualitycheck.model.v20160801.GetAccAsrResultResponse.AccAsrSentenceResult.SentenceResult;
 import com.aliyuncs.qualitycheck.model.v20160801.GetAccAsrResultResponse.AccAsrSentenceResult.ServiceEvStat;
 import com.aliyuncs.qualitycheck.model.v20160801.GetAccAsrResultResponse.AccAsrSentenceResult.ServiceSrStat;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

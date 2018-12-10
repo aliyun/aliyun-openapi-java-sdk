@@ -27,6 +27,7 @@ import com.aliyuncs.qualitycheck.model.v20160801.GetRuleDetailResponse.Data.Cond
 import com.aliyuncs.qualitycheck.model.v20160801.GetRuleDetailResponse.Data.ConditionBasicInfo.OperatorBasicInfo.Param;
 import com.aliyuncs.qualitycheck.model.v20160801.GetRuleDetailResponse.Data.RuleBasicInfo;
 import com.aliyuncs.qualitycheck.model.v20160801.GetRuleDetailResponse.Data.RuleBasicInfo.BusinessCategoryBasicInfo;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
