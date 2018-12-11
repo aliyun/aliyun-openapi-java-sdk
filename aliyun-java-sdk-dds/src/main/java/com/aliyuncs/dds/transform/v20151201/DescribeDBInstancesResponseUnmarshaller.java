@@ -52,7 +52,7 @@ public class DescribeDBInstancesResponseUnmarshaller {
 			dBInstance.setCreationTime(context.stringValue("DescribeDBInstancesResponse.DBInstances["+ i +"].CreationTime"));
 			dBInstance.setExpireTime(context.stringValue("DescribeDBInstancesResponse.DBInstances["+ i +"].ExpireTime"));
 			dBInstance.setDBInstanceType(context.stringValue("DescribeDBInstancesResponse.DBInstances["+ i +"].DBInstanceType"));
-			dBInstance.setLastDowngradeTime(context.integerValue("DescribeDBInstancesResponse.DBInstances["+ i +"].LastDowngradeTime"));
+			dBInstance.setLastDowngradeTime(context.stringValue("DescribeDBInstancesResponse.DBInstances["+ i +"].LastDowngradeTime"));
 			dBInstance.setReplicationFactor(context.stringValue("DescribeDBInstancesResponse.DBInstances["+ i +"].ReplicationFactor"));
 			dBInstance.setDestroyTime(context.stringValue("DescribeDBInstancesResponse.DBInstances["+ i +"].DestroyTime"));
 

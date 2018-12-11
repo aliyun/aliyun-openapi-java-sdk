@@ -15,6 +15,7 @@
 package com.aliyuncs.dds.model.v20151201;
 
 import java.util.List;
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.dds.transform.v20151201.DescribeDBInstancesResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -107,7 +108,7 @@ public class DescribeDBInstancesResponse extends AcsResponse {
 
 		private String dBInstanceType;
 
-		private Integer lastDowngradeTime;
+		private String lastDowngradeTime;
 
 		private String replicationFactor;
 
@@ -237,11 +238,11 @@ public class DescribeDBInstancesResponse extends AcsResponse {
 			this.dBInstanceType = dBInstanceType;
 		}
 
-		public Integer getLastDowngradeTime() {
+		public String getLastDowngradeTime() {
 			return this.lastDowngradeTime;
 		}
 
-		public void setLastDowngradeTime(Integer lastDowngradeTime) {
+		public void setLastDowngradeTime(String lastDowngradeTime) {
 			this.lastDowngradeTime = lastDowngradeTime;
 		}
 

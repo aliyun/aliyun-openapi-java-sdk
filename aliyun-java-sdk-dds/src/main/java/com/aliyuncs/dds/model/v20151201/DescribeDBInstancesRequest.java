@@ -34,6 +34,10 @@ public class DescribeDBInstancesRequest extends RpcAcsRequest<DescribeDBInstance
 
 	private String ownerAccount;
 
+	private String engineVersion;
+
+	private String networkType;
+
 	private Long ownerId;
 
 	private Integer pageNumber;
@@ -44,9 +48,13 @@ public class DescribeDBInstancesRequest extends RpcAcsRequest<DescribeDBInstance
 
 	private String dBInstanceClass;
 
-	private String expired;
+	private String vSwitchId;
 
 	private String securityToken;
+
+	private String engine;
+
+	private String vpcId;
 
 	private Integer pageSize;
 
@@ -57,6 +65,8 @@ public class DescribeDBInstancesRequest extends RpcAcsRequest<DescribeDBInstance
 	private String dBInstanceDescription;
 
 	private String dBInstanceStatus;
+
+	private String chargeType;
 
 	public String getExpireTime() {
 		return this.expireTime;
@@ -99,6 +109,28 @@ public class DescribeDBInstancesRequest extends RpcAcsRequest<DescribeDBInstance
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public String getEngineVersion() {
+		return this.engineVersion;
+	}
+
+	public void setEngineVersion(String engineVersion) {
+		this.engineVersion = engineVersion;
+		if(engineVersion != null){
+			putQueryParameter("EngineVersion", engineVersion);
+		}
+	}
+
+	public String getNetworkType() {
+		return this.networkType;
+	}
+
+	public void setNetworkType(String networkType) {
+		this.networkType = networkType;
+		if(networkType != null){
+			putQueryParameter("NetworkType", networkType);
 		}
 	}
 
@@ -157,14 +189,14 @@ public class DescribeDBInstancesRequest extends RpcAcsRequest<DescribeDBInstance
 		}
 	}
 
-	public String getExpired() {
-		return this.expired;
+	public String getVSwitchId() {
+		return this.vSwitchId;
 	}
 
-	public void setExpired(String expired) {
-		this.expired = expired;
-		if(expired != null){
-			putQueryParameter("Expired", expired);
+	public void setVSwitchId(String vSwitchId) {
+		this.vSwitchId = vSwitchId;
+		if(vSwitchId != null){
+			putQueryParameter("VSwitchId", vSwitchId);
 		}
 	}
 
@@ -176,6 +208,28 @@ public class DescribeDBInstancesRequest extends RpcAcsRequest<DescribeDBInstance
 		this.securityToken = securityToken;
 		if(securityToken != null){
 			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	public String getEngine() {
+		return this.engine;
+	}
+
+	public void setEngine(String engine) {
+		this.engine = engine;
+		if(engine != null){
+			putQueryParameter("Engine", engine);
+		}
+	}
+
+	public String getVpcId() {
+		return this.vpcId;
+	}
+
+	public void setVpcId(String vpcId) {
+		this.vpcId = vpcId;
+		if(vpcId != null){
+			putQueryParameter("VpcId", vpcId);
 		}
 	}
 
@@ -231,6 +285,17 @@ public class DescribeDBInstancesRequest extends RpcAcsRequest<DescribeDBInstance
 		this.dBInstanceStatus = dBInstanceStatus;
 		if(dBInstanceStatus != null){
 			putQueryParameter("DBInstanceStatus", dBInstanceStatus);
+		}
+	}
+
+	public String getChargeType() {
+		return this.chargeType;
+	}
+
+	public void setChargeType(String chargeType) {
+		this.chargeType = chargeType;
+		if(chargeType != null){
+			putQueryParameter("ChargeType", chargeType);
 		}
 	}
 
