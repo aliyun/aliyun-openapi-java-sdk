@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class AddDcdnDomainRequest extends RpcAcsRequest<AddDcdnDomainResponse> {
 	
 	public AddDcdnDomainRequest() {
-		super("dcdn", "2018-01-15", "AddDcdnDomain");
+		super("dcdn", "2018-01-15", "AddDcdnDomain", "dcdn");
 	}
 
 	private String topLevelDomain;

@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeDcdnDomainWebsocketHttpCodeDataRequest extends RpcAcsRequest<DescribeDcdnDomainWebsocketHttpCodeDataResponse> {
 	
 	public DescribeDcdnDomainWebsocketHttpCodeDataRequest() {
-		super("dcdn", "2018-01-15", "DescribeDcdnDomainWebsocketHttpCodeData");
+		super("dcdn", "2018-01-15", "DescribeDcdnDomainWebsocketHttpCodeData", "dcdn");
 	}
 
 	private String locationNameEn;

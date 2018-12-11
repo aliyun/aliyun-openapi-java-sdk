@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class BatchDeleteDcdnDomainConfigsRequest extends RpcAcsRequest<BatchDeleteDcdnDomainConfigsResponse> {
 	
 	public BatchDeleteDcdnDomainConfigsRequest() {
-		super("dcdn", "2018-01-15", "BatchDeleteDcdnDomainConfigs");
+		super("dcdn", "2018-01-15", "BatchDeleteDcdnDomainConfigs", "dcdn");
 	}
 
 	private String functionNames;

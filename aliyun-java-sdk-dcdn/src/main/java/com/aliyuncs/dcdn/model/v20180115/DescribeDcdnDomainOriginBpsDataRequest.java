@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeDcdnDomainOriginBpsDataRequest extends RpcAcsRequest<DescribeDcdnDomainOriginBpsDataResponse> {
 	
 	public DescribeDcdnDomainOriginBpsDataRequest() {
-		super("dcdn", "2018-01-15", "DescribeDcdnDomainOriginBpsData");
+		super("dcdn", "2018-01-15", "DescribeDcdnDomainOriginBpsData", "dcdn");
 	}
 
 	private String startTime;

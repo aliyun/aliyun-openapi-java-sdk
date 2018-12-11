@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class StopDcdnDomainRequest extends RpcAcsRequest<StopDcdnDomainResponse> {
 	
 	public StopDcdnDomainRequest() {
-		super("dcdn", "2018-01-15", "StopDcdnDomain");
+		super("dcdn", "2018-01-15", "StopDcdnDomain", "dcdn");
 	}
 
 	private String securityToken;

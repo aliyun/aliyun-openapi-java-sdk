@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class SetDcdnDomainCertificateRequest extends RpcAcsRequest<SetDcdnDomainCertificateResponse> {
 	
 	public SetDcdnDomainCertificateRequest() {
-		super("dcdn", "2018-01-15", "SetDcdnDomainCertificate");
+		super("dcdn", "2018-01-15", "SetDcdnDomainCertificate", "dcdn");
 	}
 
 	private String forceSet;
