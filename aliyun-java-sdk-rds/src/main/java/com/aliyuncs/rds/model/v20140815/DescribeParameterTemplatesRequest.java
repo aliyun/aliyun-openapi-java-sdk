@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeParameterTemplatesRequest extends RpcAcsRequest<DescribeParameterTemplatesResponse> {
 	
 	public DescribeParameterTemplatesRequest() {
-		super("Rds", "2014-08-15", "DescribeParameterTemplates", "rds");
+		super("Rds", "2014-08-15", "DescribeParameterTemplates", "Rds");
 	}
 
 	private Long resourceOwnerId;
@@ -39,6 +39,8 @@ public class DescribeParameterTemplatesRequest extends RpcAcsRequest<DescribePar
 	private String engineVersion;
 
 	private Long ownerId;
+
+	private String category;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -114,6 +116,17 @@ public class DescribeParameterTemplatesRequest extends RpcAcsRequest<DescribePar
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getCategory() {
+		return this.category;
+	}
+
+	public void setCategory(String category) {
+		this.category = category;
+		if(category != null){
+			putQueryParameter("Category", category);
 		}
 	}
 

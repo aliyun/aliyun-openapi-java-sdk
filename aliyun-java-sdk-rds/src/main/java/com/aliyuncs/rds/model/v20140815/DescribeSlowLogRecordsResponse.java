@@ -15,6 +15,7 @@
 package com.aliyuncs.rds.model.v20140815;
 
 import java.util.List;
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.rds.transform.v20140815.DescribeSlowLogRecordsResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -26,6 +27,8 @@ import com.aliyuncs.transform.UnmarshallerContext;
 public class DescribeSlowLogRecordsResponse extends AcsResponse {
 
 	private String requestId;
+
+	private String dBInstanceId;
 
 	private String engine;
 
@@ -43,6 +46,14 @@ public class DescribeSlowLogRecordsResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getDBInstanceId() {
+		return this.dBInstanceId;
+	}
+
+	public void setDBInstanceId(String dBInstanceId) {
+		this.dBInstanceId = dBInstanceId;
 	}
 
 	public String getEngine() {
@@ -93,7 +104,7 @@ public class DescribeSlowLogRecordsResponse extends AcsResponse {
 
 		private String sQLText;
 
-		private String queryTimes;
+		private Long queryTimes;
 
 		private Long lockTimes;
 
@@ -127,11 +138,11 @@ public class DescribeSlowLogRecordsResponse extends AcsResponse {
 			this.sQLText = sQLText;
 		}
 
-		public String getQueryTimes() {
+		public Long getQueryTimes() {
 			return this.queryTimes;
 		}
 
-		public void setQueryTimes(String queryTimes) {
+		public void setQueryTimes(Long queryTimes) {
 			this.queryTimes = queryTimes;
 		}
 

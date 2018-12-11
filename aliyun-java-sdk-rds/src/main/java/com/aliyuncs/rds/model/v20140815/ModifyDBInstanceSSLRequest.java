@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifyDBInstanceSSLRequest extends RpcAcsRequest<ModifyDBInstanceSSLResponse> {
 	
 	public ModifyDBInstanceSSLRequest() {
-		super("Rds", "2014-08-15", "ModifyDBInstanceSSL", "rds");
+		super("Rds", "2014-08-15", "ModifyDBInstanceSSL", "Rds");
 	}
 
 	private Long resourceOwnerId;

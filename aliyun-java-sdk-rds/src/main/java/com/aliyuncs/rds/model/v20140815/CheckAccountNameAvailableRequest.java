@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class CheckAccountNameAvailableRequest extends RpcAcsRequest<CheckAccountNameAvailableResponse> {
 	
 	public CheckAccountNameAvailableRequest() {
-		super("Rds", "2014-08-15", "CheckAccountNameAvailable", "rds");
+		super("Rds", "2014-08-15", "CheckAccountNameAvailable", "Rds");
 	}
 
 	private Long resourceOwnerId;

@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifyDBInstanceProxyConfigurationRequest extends RpcAcsRequest<ModifyDBInstanceProxyConfigurationResponse> {
 	
 	public ModifyDBInstanceProxyConfigurationRequest() {
-		super("Rds", "2014-08-15", "ModifyDBInstanceProxyConfiguration", "rds");
+		super("Rds", "2014-08-15", "ModifyDBInstanceProxyConfiguration", "Rds");
 	}
 
 	private Long resourceOwnerId;

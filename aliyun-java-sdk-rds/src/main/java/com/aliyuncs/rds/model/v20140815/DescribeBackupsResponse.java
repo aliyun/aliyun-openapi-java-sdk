@@ -15,6 +15,7 @@
 package com.aliyuncs.rds.model.v20140815;
 
 import java.util.List;
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.rds.transform.v20140815.DescribeBackupsResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -122,6 +123,8 @@ public class DescribeBackupsResponse extends AcsResponse {
 		private String hostInstanceID;
 
 		private String storeStatus;
+
+		private String consistentTime;
 
 		public String getBackupId() {
 			return this.backupId;
@@ -265,6 +268,14 @@ public class DescribeBackupsResponse extends AcsResponse {
 
 		public void setStoreStatus(String storeStatus) {
 			this.storeStatus = storeStatus;
+		}
+
+		public String getConsistentTime() {
+			return this.consistentTime;
+		}
+
+		public void setConsistentTime(String consistentTime) {
+			this.consistentTime = consistentTime;
 		}
 	}
 

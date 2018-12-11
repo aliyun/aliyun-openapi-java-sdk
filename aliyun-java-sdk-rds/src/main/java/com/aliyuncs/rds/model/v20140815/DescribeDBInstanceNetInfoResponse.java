@@ -15,6 +15,7 @@
 package com.aliyuncs.rds.model.v20140815;
 
 import java.util.List;
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.rds.transform.v20140815.DescribeDBInstanceNetInfoResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -28,6 +29,8 @@ public class DescribeDBInstanceNetInfoResponse extends AcsResponse {
 	private String requestId;
 
 	private String instanceNetworkType;
+
+	private String securityIPMode;
 
 	private List<DBInstanceNetInfo> dBInstanceNetInfos;
 
@@ -45,6 +48,14 @@ public class DescribeDBInstanceNetInfoResponse extends AcsResponse {
 
 	public void setInstanceNetworkType(String instanceNetworkType) {
 		this.instanceNetworkType = instanceNetworkType;
+	}
+
+	public String getSecurityIPMode() {
+		return this.securityIPMode;
+	}
+
+	public void setSecurityIPMode(String securityIPMode) {
+		this.securityIPMode = securityIPMode;
 	}
 
 	public List<DBInstanceNetInfo> getDBInstanceNetInfos() {

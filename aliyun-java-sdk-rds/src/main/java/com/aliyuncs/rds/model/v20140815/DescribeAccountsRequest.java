@@ -23,12 +23,14 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeAccountsRequest extends RpcAcsRequest<DescribeAccountsResponse> {
 	
 	public DescribeAccountsRequest() {
-		super("Rds", "2014-08-15", "DescribeAccounts", "rds");
+		super("Rds", "2014-08-15", "DescribeAccounts", "Rds");
 	}
 
 	private Long resourceOwnerId;
 
 	private String accountName;
+
+	private String resourceOwnerAccount;
 
 	private Integer pageSize;
 
@@ -55,6 +57,17 @@ public class DescribeAccountsRequest extends RpcAcsRequest<DescribeAccountsRespo
 		this.accountName = accountName;
 		if(accountName != null){
 			putQueryParameter("AccountName", accountName);
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
 		}
 	}
 

@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescibeImportsFromDatabaseRequest extends RpcAcsRequest<DescibeImportsFromDatabaseResponse> {
 	
 	public DescibeImportsFromDatabaseRequest() {
-		super("Rds", "2014-08-15", "DescibeImportsFromDatabase", "rds");
+		super("Rds", "2014-08-15", "DescibeImportsFromDatabase", "Rds");
 	}
 
 	private Long resourceOwnerId;

@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeCharacterSetNameRequest extends RpcAcsRequest<DescribeCharacterSetNameResponse> {
 	
 	public DescribeCharacterSetNameRequest() {
-		super("Rds", "2014-08-15", "DescribeCharacterSetName", "rds");
+		super("Rds", "2014-08-15", "DescribeCharacterSetName", "Rds");
 	}
 
 	private Long resourceOwnerId;

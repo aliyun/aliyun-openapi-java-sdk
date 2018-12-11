@@ -15,6 +15,7 @@
 package com.aliyuncs.rds.model.v20140815;
 
 import java.util.List;
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.rds.transform.v20140815.DescribeSlowLogsResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -32,6 +33,8 @@ public class DescribeSlowLogsResponse extends AcsResponse {
 	private String startTime;
 
 	private String endTime;
+
+	private String dBInstanceId;
 
 	private Integer totalRecordCount;
 
@@ -71,6 +74,14 @@ public class DescribeSlowLogsResponse extends AcsResponse {
 
 	public void setEndTime(String endTime) {
 		this.endTime = endTime;
+	}
+
+	public String getDBInstanceId() {
+		return this.dBInstanceId;
+	}
+
+	public void setDBInstanceId(String dBInstanceId) {
+		this.dBInstanceId = dBInstanceId;
 	}
 
 	public Integer getTotalRecordCount() {

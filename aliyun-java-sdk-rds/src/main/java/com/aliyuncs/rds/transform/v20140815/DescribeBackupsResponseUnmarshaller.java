@@ -54,6 +54,7 @@ public class DescribeBackupsResponseUnmarshaller {
 			backup.setBackupSize(context.longValue("DescribeBackupsResponse.Items["+ i +"].BackupSize"));
 			backup.setHostInstanceID(context.stringValue("DescribeBackupsResponse.Items["+ i +"].HostInstanceID"));
 			backup.setStoreStatus(context.stringValue("DescribeBackupsResponse.Items["+ i +"].StoreStatus"));
+			backup.setConsistentTime(context.stringValue("DescribeBackupsResponse.Items["+ i +"].ConsistentTime"));
 
 			items.add(backup);
 		}

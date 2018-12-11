@@ -15,6 +15,7 @@
 package com.aliyuncs.rds.model.v20140815;
 
 import java.util.List;
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.rds.transform.v20140815.DescribeDBInstanceAttributeResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -173,7 +174,19 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 
 		private String securityIPMode;
 
+		private String timeZone;
+
+		private String collation;
+
+		private String dispenseMode;
+
+		private String masterRegion;
+
+		private List<SlaveRegion> slaveRegions;
+
 		private List<ReadOnlyDBInstanceId> readOnlyDBInstanceIds;
+
+		private Extra extra;
 
 		public String getIPType() {
 			return this.iPType;
@@ -679,12 +692,73 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 			this.securityIPMode = securityIPMode;
 		}
 
+		public String getTimeZone() {
+			return this.timeZone;
+		}
+
+		public void setTimeZone(String timeZone) {
+			this.timeZone = timeZone;
+		}
+
+		public String getCollation() {
+			return this.collation;
+		}
+
+		public void setCollation(String collation) {
+			this.collation = collation;
+		}
+
+		public String getDispenseMode() {
+			return this.dispenseMode;
+		}
+
+		public void setDispenseMode(String dispenseMode) {
+			this.dispenseMode = dispenseMode;
+		}
+
+		public String getMasterRegion() {
+			return this.masterRegion;
+		}
+
+		public void setMasterRegion(String masterRegion) {
+			this.masterRegion = masterRegion;
+		}
+
+		public List<SlaveRegion> getSlaveRegions() {
+			return this.slaveRegions;
+		}
+
+		public void setSlaveRegions(List<SlaveRegion> slaveRegions) {
+			this.slaveRegions = slaveRegions;
+		}
+
 		public List<ReadOnlyDBInstanceId> getReadOnlyDBInstanceIds() {
 			return this.readOnlyDBInstanceIds;
 		}
 
 		public void setReadOnlyDBInstanceIds(List<ReadOnlyDBInstanceId> readOnlyDBInstanceIds) {
 			this.readOnlyDBInstanceIds = readOnlyDBInstanceIds;
+		}
+
+		public Extra getExtra() {
+			return this.extra;
+		}
+
+		public void setExtra(Extra extra) {
+			this.extra = extra;
+		}
+
+		public static class SlaveRegion {
+
+			private String regionId;
+
+			public String getRegionId() {
+				return this.regionId;
+			}
+
+			public void setRegionId(String regionId) {
+				this.regionId = regionId;
+			}
 		}
 
 		public static class ReadOnlyDBInstanceId {
@@ -696,6 +770,49 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 			}
 
 			public void setDBInstanceId(String dBInstanceId) {
+				this.dBInstanceId = dBInstanceId;
+			}
+		}
+
+		public static class Extra {
+
+			private String replicaGroupID;
+
+			private String replicaGroupStatus;
+
+			private String activeReplicaDBInstanceID;
+
+			private List<String> dBInstanceId;
+
+			public String getReplicaGroupID() {
+				return this.replicaGroupID;
+			}
+
+			public void setReplicaGroupID(String replicaGroupID) {
+				this.replicaGroupID = replicaGroupID;
+			}
+
+			public String getReplicaGroupStatus() {
+				return this.replicaGroupStatus;
+			}
+
+			public void setReplicaGroupStatus(String replicaGroupStatus) {
+				this.replicaGroupStatus = replicaGroupStatus;
+			}
+
+			public String getActiveReplicaDBInstanceID() {
+				return this.activeReplicaDBInstanceID;
+			}
+
+			public void setActiveReplicaDBInstanceID(String activeReplicaDBInstanceID) {
+				this.activeReplicaDBInstanceID = activeReplicaDBInstanceID;
+			}
+
+			public List<String> getDBInstanceId() {
+				return this.dBInstanceId;
+			}
+
+			public void setDBInstanceId(List<String> dBInstanceId) {
 				this.dBInstanceId = dBInstanceId;
 			}
 		}

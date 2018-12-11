@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeDBInstancesRequest extends RpcAcsRequest<DescribeDBInstancesResponse> {
 	
 	public DescribeDBInstancesRequest() {
-		super("Rds", "2014-08-15", "DescribeDBInstances", "rds");
+		super("Rds", "2014-08-15", "DescribeDBInstances", "Rds");
 	}
 
 	private String connectionMode;
@@ -45,6 +45,8 @@ public class DescribeDBInstancesRequest extends RpcAcsRequest<DescribeDBInstance
 	private Integer pageNumber;
 
 	private String tag1value;
+
+	private String resourceGroupId;
 
 	private String expired;
 
@@ -199,6 +201,17 @@ public class DescribeDBInstancesRequest extends RpcAcsRequest<DescribeDBInstance
 		this.tag1value = tag1value;
 		if(tag1value != null){
 			putQueryParameter("Tag.1.value", tag1value);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

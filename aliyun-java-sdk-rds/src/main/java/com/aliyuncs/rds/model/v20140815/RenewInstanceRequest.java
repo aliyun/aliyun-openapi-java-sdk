@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class RenewInstanceRequest extends RpcAcsRequest<RenewInstanceResponse> {
 	
 	public RenewInstanceRequest() {
-		super("Rds", "2014-08-15", "RenewInstance", "rds");
+		super("Rds", "2014-08-15", "RenewInstance", "Rds");
 	}
 
 	private Long resourceOwnerId;
@@ -39,8 +39,6 @@ public class RenewInstanceRequest extends RpcAcsRequest<RenewInstanceResponse> {
 	private String dBInstanceId;
 
 	private Long ownerId;
-
-	private String businessInfo;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -116,17 +114,6 @@ public class RenewInstanceRequest extends RpcAcsRequest<RenewInstanceResponse> {
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getBusinessInfo() {
-		return this.businessInfo;
-	}
-
-	public void setBusinessInfo(String businessInfo) {
-		this.businessInfo = businessInfo;
-		if(businessInfo != null){
-			putQueryParameter("BusinessInfo", businessInfo);
 		}
 	}
 

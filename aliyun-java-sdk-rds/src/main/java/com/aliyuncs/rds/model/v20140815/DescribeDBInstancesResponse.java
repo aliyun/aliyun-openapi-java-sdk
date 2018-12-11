@@ -15,6 +15,7 @@
 package com.aliyuncs.rds.model.v20140815;
 
 import java.util.List;
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.rds.transform.v20140815.DescribeDBInstancesResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -137,7 +138,13 @@ public class DescribeDBInstancesResponse extends AcsResponse {
 
 		private String resourceGroupId;
 
+		private String dispenseMode;
+
+		private String masterRegion;
+
 		private List<ReadOnlyDBInstanceId> readOnlyDBInstanceIds;
+
+		private List<SlaveRegion> slaveRegions;
 
 		public Integer getInsId() {
 			return this.insId;
@@ -379,12 +386,36 @@ public class DescribeDBInstancesResponse extends AcsResponse {
 			this.resourceGroupId = resourceGroupId;
 		}
 
+		public String getDispenseMode() {
+			return this.dispenseMode;
+		}
+
+		public void setDispenseMode(String dispenseMode) {
+			this.dispenseMode = dispenseMode;
+		}
+
+		public String getMasterRegion() {
+			return this.masterRegion;
+		}
+
+		public void setMasterRegion(String masterRegion) {
+			this.masterRegion = masterRegion;
+		}
+
 		public List<ReadOnlyDBInstanceId> getReadOnlyDBInstanceIds() {
 			return this.readOnlyDBInstanceIds;
 		}
 
 		public void setReadOnlyDBInstanceIds(List<ReadOnlyDBInstanceId> readOnlyDBInstanceIds) {
 			this.readOnlyDBInstanceIds = readOnlyDBInstanceIds;
+		}
+
+		public List<SlaveRegion> getSlaveRegions() {
+			return this.slaveRegions;
+		}
+
+		public void setSlaveRegions(List<SlaveRegion> slaveRegions) {
+			this.slaveRegions = slaveRegions;
 		}
 
 		public static class ReadOnlyDBInstanceId {
@@ -397,6 +428,19 @@ public class DescribeDBInstancesResponse extends AcsResponse {
 
 			public void setDBInstanceId(String dBInstanceId) {
 				this.dBInstanceId = dBInstanceId;
+			}
+		}
+
+		public static class SlaveRegion {
+
+			private String regionId;
+
+			public String getRegionId() {
+				return this.regionId;
+			}
+
+			public void setRegionId(String regionId) {
+				this.regionId = regionId;
 			}
 		}
 	}

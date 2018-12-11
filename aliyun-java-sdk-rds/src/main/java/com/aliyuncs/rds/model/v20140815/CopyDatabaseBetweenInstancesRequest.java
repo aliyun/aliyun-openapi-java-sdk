@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class CopyDatabaseBetweenInstancesRequest extends RpcAcsRequest<CopyDatabaseBetweenInstancesResponse> {
 	
 	public CopyDatabaseBetweenInstancesRequest() {
-		super("Rds", "2014-08-15", "CopyDatabaseBetweenInstances", "rds");
+		super("Rds", "2014-08-15", "CopyDatabaseBetweenInstances", "Rds");
 	}
 
 	private Long resourceOwnerId;

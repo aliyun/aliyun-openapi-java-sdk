@@ -31,6 +31,7 @@ public class DescribeDBInstanceNetInfoResponseUnmarshaller {
 		
 		describeDBInstanceNetInfoResponse.setRequestId(context.stringValue("DescribeDBInstanceNetInfoResponse.RequestId"));
 		describeDBInstanceNetInfoResponse.setInstanceNetworkType(context.stringValue("DescribeDBInstanceNetInfoResponse.InstanceNetworkType"));
+		describeDBInstanceNetInfoResponse.setSecurityIPMode(context.stringValue("DescribeDBInstanceNetInfoResponse.SecurityIPMode"));
 
 		List<DBInstanceNetInfo> dBInstanceNetInfos = new ArrayList<DBInstanceNetInfo>();
 		for (int i = 0; i < context.lengthValue("DescribeDBInstanceNetInfoResponse.DBInstanceNetInfos.Length"); i++) {

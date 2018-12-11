@@ -31,6 +31,7 @@ public class DescribeSlowLogsResponseUnmarshaller {
 		describeSlowLogsResponse.setEngine(context.stringValue("DescribeSlowLogsResponse.Engine"));
 		describeSlowLogsResponse.setStartTime(context.stringValue("DescribeSlowLogsResponse.StartTime"));
 		describeSlowLogsResponse.setEndTime(context.stringValue("DescribeSlowLogsResponse.EndTime"));
+		describeSlowLogsResponse.setDBInstanceId(context.stringValue("DescribeSlowLogsResponse.DBInstanceId"));
 		describeSlowLogsResponse.setTotalRecordCount(context.integerValue("DescribeSlowLogsResponse.TotalRecordCount"));
 		describeSlowLogsResponse.setPageNumber(context.integerValue("DescribeSlowLogsResponse.PageNumber"));
 		describeSlowLogsResponse.setPageRecordCount(context.integerValue("DescribeSlowLogsResponse.PageRecordCount"));

@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeSlowLogRecordsRequest extends RpcAcsRequest<DescribeSlowLogRecordsResponse> {
 	
 	public DescribeSlowLogRecordsRequest() {
-		super("Rds", "2014-08-15", "DescribeSlowLogRecords", "rds");
+		super("Rds", "2014-08-15", "DescribeSlowLogRecords", "Rds");
 	}
 
 	private Long sQLId;
@@ -31,8 +31,6 @@ public class DescribeSlowLogRecordsRequest extends RpcAcsRequest<DescribeSlowLog
 	private Long resourceOwnerId;
 
 	private String resourceOwnerAccount;
-
-	private String queryTimeFormat;
 
 	private String ownerAccount;
 
@@ -80,17 +78,6 @@ public class DescribeSlowLogRecordsRequest extends RpcAcsRequest<DescribeSlowLog
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public String getQueryTimeFormat() {
-		return this.queryTimeFormat;
-	}
-
-	public void setQueryTimeFormat(String queryTimeFormat) {
-		this.queryTimeFormat = queryTimeFormat;
-		if(queryTimeFormat != null){
-			putQueryParameter("QueryTimeFormat", queryTimeFormat);
 		}
 	}
 

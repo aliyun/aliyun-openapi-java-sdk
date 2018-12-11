@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class CreateMigrateTaskRequest extends RpcAcsRequest<CreateMigrateTaskResponse> {
 	
 	public CreateMigrateTaskRequest() {
-		super("Rds", "2014-08-15", "CreateMigrateTask", "rds");
+		super("Rds", "2014-08-15", "CreateMigrateTask", "Rds");
 	}
 
 	private Long resourceOwnerId;
