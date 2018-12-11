@@ -38,7 +38,11 @@ public class DescribeInstancesRequest extends RpcAcsRequest<DescribeInstancesRes
 
 	private String networkType;
 
+	private String engineVersion;
+
 	private Long ownerId;
+
+	private String instanceClass;
 
 	private Integer pageNumber;
 
@@ -50,11 +54,15 @@ public class DescribeInstancesRequest extends RpcAcsRequest<DescribeInstancesRes
 
 	private String instanceIds;
 
+	private String architectureType;
+
 	private String vpcId;
 
 	private Integer pageSize;
 
 	private String instanceType;
+
+	private String zoneId;
 
 	private String chargeType;
 
@@ -124,6 +132,17 @@ public class DescribeInstancesRequest extends RpcAcsRequest<DescribeInstancesRes
 		}
 	}
 
+	public String getEngineVersion() {
+		return this.engineVersion;
+	}
+
+	public void setEngineVersion(String engineVersion) {
+		this.engineVersion = engineVersion;
+		if(engineVersion != null){
+			putQueryParameter("EngineVersion", engineVersion);
+		}
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -132,6 +151,17 @@ public class DescribeInstancesRequest extends RpcAcsRequest<DescribeInstancesRes
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getInstanceClass() {
+		return this.instanceClass;
+	}
+
+	public void setInstanceClass(String instanceClass) {
+		this.instanceClass = instanceClass;
+		if(instanceClass != null){
+			putQueryParameter("InstanceClass", instanceClass);
 		}
 	}
 
@@ -190,6 +220,17 @@ public class DescribeInstancesRequest extends RpcAcsRequest<DescribeInstancesRes
 		}
 	}
 
+	public String getArchitectureType() {
+		return this.architectureType;
+	}
+
+	public void setArchitectureType(String architectureType) {
+		this.architectureType = architectureType;
+		if(architectureType != null){
+			putQueryParameter("ArchitectureType", architectureType);
+		}
+	}
+
 	public String getVpcId() {
 		return this.vpcId;
 	}
@@ -220,6 +261,17 @@ public class DescribeInstancesRequest extends RpcAcsRequest<DescribeInstancesRes
 		this.instanceType = instanceType;
 		if(instanceType != null){
 			putQueryParameter("InstanceType", instanceType);
+		}
+	}
+
+	public String getZoneId() {
+		return this.zoneId;
+	}
+
+	public void setZoneId(String zoneId) {
+		this.zoneId = zoneId;
+		if(zoneId != null){
+			putQueryParameter("ZoneId", zoneId);
 		}
 	}
 

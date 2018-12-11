@@ -14,6 +14,7 @@
 
 package com.aliyuncs.r_kvstore.model.v20150101;
 
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.r_kvstore.transform.v20150101.ModifyInstanceSpecPreCheckResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -29,6 +30,8 @@ public class ModifyInstanceSpecPreCheckResponse extends AcsResponse {
 	private Boolean isAllowModify;
 
 	private String disableCommands;
+
+	private PreCheckResult preCheckResult;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -52,6 +55,57 @@ public class ModifyInstanceSpecPreCheckResponse extends AcsResponse {
 
 	public void setDisableCommands(String disableCommands) {
 		this.disableCommands = disableCommands;
+	}
+
+	public PreCheckResult getPreCheckResult() {
+		return this.preCheckResult;
+	}
+
+	public void setPreCheckResult(PreCheckResult preCheckResult) {
+		this.preCheckResult = preCheckResult;
+	}
+
+	public static class PreCheckResult {
+
+		private String usedMemorySize;
+
+		private String allowModify;
+
+		private String code;
+
+		private String message;
+
+		public String getUsedMemorySize() {
+			return this.usedMemorySize;
+		}
+
+		public void setUsedMemorySize(String usedMemorySize) {
+			this.usedMemorySize = usedMemorySize;
+		}
+
+		public String getAllowModify() {
+			return this.allowModify;
+		}
+
+		public void setAllowModify(String allowModify) {
+			this.allowModify = allowModify;
+		}
+
+		public String getCode() {
+			return this.code;
+		}
+
+		public void setCode(String code) {
+			this.code = code;
+		}
+
+		public String getMessage() {
+			return this.message;
+		}
+
+		public void setMessage(String message) {
+			this.message = message;
+		}
 	}
 
 	@Override

@@ -15,6 +15,7 @@
 package com.aliyuncs.r_kvstore.model.v20150101;
 
 import java.util.List;
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.r_kvstore.transform.v20150101.DescribeInstancesResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -83,6 +84,8 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		private String instanceName;
 
+		private String searchKey;
+
 		private String connectionDomain;
 
 		private Long port;
@@ -137,6 +140,8 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		private String destroyTime;
 
+		private String connectionMode;
+
 		public String getReplacateId() {
 			return this.replacateId;
 		}
@@ -159,6 +164,14 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		public void setInstanceName(String instanceName) {
 			this.instanceName = instanceName;
+		}
+
+		public String getSearchKey() {
+			return this.searchKey;
+		}
+
+		public void setSearchKey(String searchKey) {
+			this.searchKey = searchKey;
 		}
 
 		public String getConnectionDomain() {
@@ -375,6 +388,14 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		public void setDestroyTime(String destroyTime) {
 			this.destroyTime = destroyTime;
+		}
+
+		public String getConnectionMode() {
+			return this.connectionMode;
+		}
+
+		public void setConnectionMode(String connectionMode) {
+			this.connectionMode = connectionMode;
 		}
 	}
 

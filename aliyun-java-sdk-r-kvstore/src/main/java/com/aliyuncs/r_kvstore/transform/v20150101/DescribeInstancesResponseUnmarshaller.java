@@ -38,6 +38,7 @@ public class DescribeInstancesResponseUnmarshaller {
 			kVStoreInstance.setReplacateId(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].ReplacateId"));
 			kVStoreInstance.setInstanceId(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].InstanceId"));
 			kVStoreInstance.setInstanceName(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].InstanceName"));
+			kVStoreInstance.setSearchKey(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].SearchKey"));
 			kVStoreInstance.setConnectionDomain(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].ConnectionDomain"));
 			kVStoreInstance.setPort(context.longValue("DescribeInstancesResponse.Instances["+ i +"].Port"));
 			kVStoreInstance.setUserName(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].UserName"));
@@ -65,6 +66,7 @@ public class DescribeInstancesResponseUnmarshaller {
 			kVStoreInstance.setPackageType(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].PackageType"));
 			kVStoreInstance.setEngineVersion(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].EngineVersion"));
 			kVStoreInstance.setDestroyTime(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].DestroyTime"));
+			kVStoreInstance.setConnectionMode(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].ConnectionMode"));
 
 			instances.add(kVStoreInstance);
 		}

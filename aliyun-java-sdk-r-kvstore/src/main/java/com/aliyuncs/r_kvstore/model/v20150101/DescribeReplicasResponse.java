@@ -15,6 +15,7 @@
 package com.aliyuncs.r_kvstore.model.v20150101;
 
 import java.util.List;
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.r_kvstore.transform.v20150101.DescribeReplicasResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -83,8 +84,6 @@ public class DescribeReplicasResponse extends AcsResponse {
 
 		private String replicaStatus;
 
-		private String replicationClusterStatus;
-
 		private String replicaMode;
 
 		private String domainMode;
@@ -113,14 +112,6 @@ public class DescribeReplicasResponse extends AcsResponse {
 
 		public void setReplicaStatus(String replicaStatus) {
 			this.replicaStatus = replicaStatus;
-		}
-
-		public String getReplicationClusterStatus() {
-			return this.replicationClusterStatus;
-		}
-
-		public void setReplicationClusterStatus(String replicationClusterStatus) {
-			this.replicationClusterStatus = replicationClusterStatus;
 		}
 
 		public String getReplicaMode() {
@@ -164,8 +155,6 @@ public class DescribeReplicasResponse extends AcsResponse {
 			private String engine;
 
 			private String regionId;
-
-			private String zoneId;
 
 			public String getDBInstanceId() {
 				return this.dBInstanceId;
@@ -229,14 +218,6 @@ public class DescribeReplicasResponse extends AcsResponse {
 
 			public void setRegionId(String regionId) {
 				this.regionId = regionId;
-			}
-
-			public String getZoneId() {
-				return this.zoneId;
-			}
-
-			public void setZoneId(String zoneId) {
-				this.zoneId = zoneId;
 			}
 		}
 	}

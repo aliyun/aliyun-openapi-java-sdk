@@ -38,6 +38,8 @@ public class CreateAccountRequest extends RpcAcsRequest<CreateAccountResponse> {
 
 	private String accountDescription;
 
+	private String accountPrivilege;
+
 	private String accountPassword;
 
 	private String instanceId;
@@ -109,6 +111,17 @@ public class CreateAccountRequest extends RpcAcsRequest<CreateAccountResponse> {
 		this.accountDescription = accountDescription;
 		if(accountDescription != null){
 			putQueryParameter("AccountDescription", accountDescription);
+		}
+	}
+
+	public String getAccountPrivilege() {
+		return this.accountPrivilege;
+	}
+
+	public void setAccountPrivilege(String accountPrivilege) {
+		this.accountPrivilege = accountPrivilege;
+		if(accountPrivilege != null){
+			putQueryParameter("AccountPrivilege", accountPrivilege);
 		}
 	}
 

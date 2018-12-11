@@ -15,6 +15,7 @@
 package com.aliyuncs.r_kvstore.transform.v20150101;
 
 import com.aliyuncs.r_kvstore.model.v20150101.ModifyInstanceSpecPreCheckResponse;
+import com.aliyuncs.r_kvstore.model.v20150101.ModifyInstanceSpecPreCheckResponse.PreCheckResult;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -25,6 +26,13 @@ public class ModifyInstanceSpecPreCheckResponseUnmarshaller {
 		modifyInstanceSpecPreCheckResponse.setRequestId(context.stringValue("ModifyInstanceSpecPreCheckResponse.RequestId"));
 		modifyInstanceSpecPreCheckResponse.setIsAllowModify(context.booleanValue("ModifyInstanceSpecPreCheckResponse.IsAllowModify"));
 		modifyInstanceSpecPreCheckResponse.setDisableCommands(context.stringValue("ModifyInstanceSpecPreCheckResponse.DisableCommands"));
+
+		PreCheckResult preCheckResult = new PreCheckResult();
+		preCheckResult.setUsedMemorySize(context.stringValue("ModifyInstanceSpecPreCheckResponse.PreCheckResult.UsedMemorySize"));
+		preCheckResult.setAllowModify(context.stringValue("ModifyInstanceSpecPreCheckResponse.PreCheckResult.AllowModify"));
+		preCheckResult.setCode(context.stringValue("ModifyInstanceSpecPreCheckResponse.PreCheckResult.Code"));
+		preCheckResult.setMessage(context.stringValue("ModifyInstanceSpecPreCheckResponse.PreCheckResult.Message"));
+		modifyInstanceSpecPreCheckResponse.setPreCheckResult(preCheckResult);
 	 
 	 	return modifyInstanceSpecPreCheckResponse;
 	}

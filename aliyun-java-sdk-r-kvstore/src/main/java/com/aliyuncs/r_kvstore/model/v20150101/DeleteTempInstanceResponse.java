@@ -14,6 +14,7 @@
 
 package com.aliyuncs.r_kvstore.model.v20150101;
 
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.r_kvstore.transform.v20150101.DeleteTempInstanceResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
