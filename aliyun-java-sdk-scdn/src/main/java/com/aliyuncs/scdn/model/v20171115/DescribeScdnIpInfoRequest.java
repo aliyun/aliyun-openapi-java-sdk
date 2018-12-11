@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeScdnIpInfoRequest extends RpcAcsRequest<DescribeScdnIpInfoResponse> {
 	
 	public DescribeScdnIpInfoRequest() {
-		super("scdn", "2017-11-15", "DescribeScdnIpInfo");
+		super("scdn", "2017-11-15", "DescribeScdnIpInfo", "scdn");
 	}
 
 	private String securityToken;

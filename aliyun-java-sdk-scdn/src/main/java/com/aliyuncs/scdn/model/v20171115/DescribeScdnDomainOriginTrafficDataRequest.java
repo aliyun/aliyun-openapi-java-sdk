@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeScdnDomainOriginTrafficDataRequest extends RpcAcsRequest<DescribeScdnDomainOriginTrafficDataResponse> {
 	
 	public DescribeScdnDomainOriginTrafficDataRequest() {
-		super("scdn", "2017-11-15", "DescribeScdnDomainOriginTrafficData");
+		super("scdn", "2017-11-15", "DescribeScdnDomainOriginTrafficData", "scdn");
 	}
 
 	private String startTime;

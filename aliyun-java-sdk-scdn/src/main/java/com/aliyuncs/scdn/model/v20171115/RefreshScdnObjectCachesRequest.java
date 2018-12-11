@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class RefreshScdnObjectCachesRequest extends RpcAcsRequest<RefreshScdnObjectCachesResponse> {
 	
 	public RefreshScdnObjectCachesRequest() {
-		super("scdn", "2017-11-15", "RefreshScdnObjectCaches");
+		super("scdn", "2017-11-15", "RefreshScdnObjectCaches", "scdn");
 	}
 
 	private String securityToken;

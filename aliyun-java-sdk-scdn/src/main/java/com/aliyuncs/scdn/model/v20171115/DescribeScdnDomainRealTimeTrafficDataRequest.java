@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeScdnDomainRealTimeTrafficDataRequest extends RpcAcsRequest<DescribeScdnDomainRealTimeTrafficDataResponse> {
 	
 	public DescribeScdnDomainRealTimeTrafficDataRequest() {
-		super("scdn", "2017-11-15", "DescribeScdnDomainRealTimeTrafficData");
+		super("scdn", "2017-11-15", "DescribeScdnDomainRealTimeTrafficData", "scdn");
 	}
 
 	private String startTime;

@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeScdnDomainRealTimeSrcBpsDataRequest extends RpcAcsRequest<DescribeScdnDomainRealTimeSrcBpsDataResponse> {
 	
 	public DescribeScdnDomainRealTimeSrcBpsDataRequest() {
-		super("scdn", "2017-11-15", "DescribeScdnDomainRealTimeSrcBpsData");
+		super("scdn", "2017-11-15", "DescribeScdnDomainRealTimeSrcBpsData", "scdn");
 	}
 
 	private String startTime;

@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class SetDomainServerCertificateRequest extends RpcAcsRequest<SetDomainServerCertificateResponse> {
 	
 	public SetDomainServerCertificateRequest() {
-		super("scdn", "2017-11-15", "SetDomainServerCertificate");
+		super("scdn", "2017-11-15", "SetDomainServerCertificate", "scdn");
 	}
 
 	private String securityToken;

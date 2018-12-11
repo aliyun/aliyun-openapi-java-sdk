@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeScdnTopDomainsByFlowRequest extends RpcAcsRequest<DescribeScdnTopDomainsByFlowResponse> {
 	
 	public DescribeScdnTopDomainsByFlowRequest() {
-		super("scdn", "2017-11-15", "DescribeScdnTopDomainsByFlow");
+		super("scdn", "2017-11-15", "DescribeScdnTopDomainsByFlow", "scdn");
 	}
 
 	private String startTime;

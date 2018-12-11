@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class UpdateScdnDomainRequest extends RpcAcsRequest<UpdateScdnDomainResponse> {
 	
 	public UpdateScdnDomainRequest() {
-		super("scdn", "2017-11-15", "UpdateScdnDomain");
+		super("scdn", "2017-11-15", "UpdateScdnDomain", "scdn");
 	}
 
 	private String resourceGroupId;

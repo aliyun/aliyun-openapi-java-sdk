@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class AddScdnDomainRequest extends RpcAcsRequest<AddScdnDomainResponse> {
 	
 	public AddScdnDomainRequest() {
-		super("scdn", "2017-11-15", "AddScdnDomain");
+		super("scdn", "2017-11-15", "AddScdnDomain", "scdn");
 	}
 
 	private String resourceGroupId;

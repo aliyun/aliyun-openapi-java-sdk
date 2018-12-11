@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeScdnDomainCertificateInfoRequest extends RpcAcsRequest<DescribeScdnDomainCertificateInfoResponse> {
 	
 	public DescribeScdnDomainCertificateInfoRequest() {
-		super("scdn", "2017-11-15", "DescribeScdnDomainCertificateInfo");
+		super("scdn", "2017-11-15", "DescribeScdnDomainCertificateInfo", "scdn");
 	}
 
 	private String domainName;

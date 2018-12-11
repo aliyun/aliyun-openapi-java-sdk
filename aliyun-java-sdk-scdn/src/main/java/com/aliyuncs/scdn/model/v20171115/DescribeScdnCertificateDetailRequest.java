@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeScdnCertificateDetailRequest extends RpcAcsRequest<DescribeScdnCertificateDetailResponse> {
 	
 	public DescribeScdnCertificateDetailRequest() {
-		super("scdn", "2017-11-15", "DescribeScdnCertificateDetail");
+		super("scdn", "2017-11-15", "DescribeScdnCertificateDetail", "scdn");
 	}
 
 	private String securityToken;

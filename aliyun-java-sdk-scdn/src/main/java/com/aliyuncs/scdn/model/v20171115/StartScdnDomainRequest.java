@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class StartScdnDomainRequest extends RpcAcsRequest<StartScdnDomainResponse> {
 	
 	public StartScdnDomainRequest() {
-		super("scdn", "2017-11-15", "StartScdnDomain");
+		super("scdn", "2017-11-15", "StartScdnDomain", "scdn");
 	}
 
 	private String securityToken;

@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeScdnServiceRequest extends RpcAcsRequest<DescribeScdnServiceResponse> {
 	
 	public DescribeScdnServiceRequest() {
-		super("scdn", "2017-11-15", "DescribeScdnService");
+		super("scdn", "2017-11-15", "DescribeScdnService", "scdn");
 	}
 
 	private String securityToken;

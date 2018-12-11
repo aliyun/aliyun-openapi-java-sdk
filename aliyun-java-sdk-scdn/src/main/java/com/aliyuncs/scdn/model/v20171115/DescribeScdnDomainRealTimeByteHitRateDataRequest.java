@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeScdnDomainRealTimeByteHitRateDataRequest extends RpcAcsRequest<DescribeScdnDomainRealTimeByteHitRateDataResponse> {
 	
 	public DescribeScdnDomainRealTimeByteHitRateDataRequest() {
-		super("scdn", "2017-11-15", "DescribeScdnDomainRealTimeByteHitRateData");
+		super("scdn", "2017-11-15", "DescribeScdnDomainRealTimeByteHitRateData", "scdn");
 	}
 
 	private String startTime;

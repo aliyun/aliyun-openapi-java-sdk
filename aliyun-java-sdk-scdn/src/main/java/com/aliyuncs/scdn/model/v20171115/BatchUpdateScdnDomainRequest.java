@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class BatchUpdateScdnDomainRequest extends RpcAcsRequest<BatchUpdateScdnDomainResponse> {
 	
 	public BatchUpdateScdnDomainRequest() {
-		super("scdn", "2017-11-15", "BatchUpdateScdnDomain");
+		super("scdn", "2017-11-15", "BatchUpdateScdnDomain", "scdn");
 	}
 
 	private String topLevelDomain;

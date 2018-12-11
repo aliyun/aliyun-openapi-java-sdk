@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeScdnUserQuotaRequest extends RpcAcsRequest<DescribeScdnUserQuotaResponse> {
 	
 	public DescribeScdnUserQuotaRequest() {
-		super("scdn", "2017-11-15", "DescribeScdnUserQuota");
+		super("scdn", "2017-11-15", "DescribeScdnUserQuota", "scdn");
 	}
 
 	private String securityToken;

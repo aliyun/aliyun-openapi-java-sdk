@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeScdnDomainRealTimeQpsDataRequest extends RpcAcsRequest<DescribeScdnDomainRealTimeQpsDataResponse> {
 	
 	public DescribeScdnDomainRealTimeQpsDataRequest() {
-		super("scdn", "2017-11-15", "DescribeScdnDomainRealTimeQpsData");
+		super("scdn", "2017-11-15", "DescribeScdnDomainRealTimeQpsData", "scdn");
 	}
 
 	private String locationNameEn;

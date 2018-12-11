@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeScdnDomainRealTimeBpsDataRequest extends RpcAcsRequest<DescribeScdnDomainRealTimeBpsDataResponse> {
 	
 	public DescribeScdnDomainRealTimeBpsDataRequest() {
-		super("scdn", "2017-11-15", "DescribeScdnDomainRealTimeBpsData");
+		super("scdn", "2017-11-15", "DescribeScdnDomainRealTimeBpsData", "scdn");
 	}
 
 	private String locationNameEn;

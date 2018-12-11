@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class PreloadScdnObjectCachesRequest extends RpcAcsRequest<PreloadScdnObjectCachesResponse> {
 	
 	public PreloadScdnObjectCachesRequest() {
-		super("scdn", "2017-11-15", "PreloadScdnObjectCaches");
+		super("scdn", "2017-11-15", "PreloadScdnObjectCaches", "scdn");
 	}
 
 	private String area;

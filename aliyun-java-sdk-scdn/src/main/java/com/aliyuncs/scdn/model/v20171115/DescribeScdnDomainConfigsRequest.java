@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeScdnDomainConfigsRequest extends RpcAcsRequest<DescribeScdnDomainConfigsResponse> {
 	
 	public DescribeScdnDomainConfigsRequest() {
-		super("scdn", "2017-11-15", "DescribeScdnDomainConfigs");
+		super("scdn", "2017-11-15", "DescribeScdnDomainConfigs", "scdn");
 	}
 
 	private String functionNames;

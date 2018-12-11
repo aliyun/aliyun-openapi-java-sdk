@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class OpenScdnServiceRequest extends RpcAcsRequest<OpenScdnServiceResponse> {
 	
 	public OpenScdnServiceRequest() {
-		super("scdn", "2017-11-15", "OpenScdnService");
+		super("scdn", "2017-11-15", "OpenScdnService", "scdn");
 	}
 
 	private String endDate;

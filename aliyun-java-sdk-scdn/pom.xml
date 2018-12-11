@@ -3,7 +3,7 @@
   <groupId>com.aliyun</groupId>
   <artifactId>aliyun-java-sdk-scdn</artifactId>
   <packaging>jar</packaging>
-  <version>1.2.0</version>
+  <version>1.2.1</version>
     <name>aliyun-java-sdk-scdn</name>
   <url>http://www.aliyun.com</url>
   <description>Aliyun Open API SDK for Java

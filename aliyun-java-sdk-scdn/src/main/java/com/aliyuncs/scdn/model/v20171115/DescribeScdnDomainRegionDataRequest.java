@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeScdnDomainRegionDataRequest extends RpcAcsRequest<DescribeScdnDomainRegionDataResponse> {
 	
 	public DescribeScdnDomainRegionDataRequest() {
-		super("scdn", "2017-11-15", "DescribeScdnDomainRegionData");
+		super("scdn", "2017-11-15", "DescribeScdnDomainRegionData", "scdn");
 	}
 
 	private String startTime;

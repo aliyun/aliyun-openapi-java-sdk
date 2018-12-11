@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeScdnDomainHitRateDataRequest extends RpcAcsRequest<DescribeScdnDomainHitRateDataResponse> {
 	
 	public DescribeScdnDomainHitRateDataRequest() {
-		super("scdn", "2017-11-15", "DescribeScdnDomainHitRateData");
+		super("scdn", "2017-11-15", "DescribeScdnDomainHitRateData", "scdn");
 	}
 
 	private String startTime;
