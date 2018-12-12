@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class CreateDedicatedLineBackupRequest extends RpcAcsRequest<CreateDedicatedLineBackupResponse> {
 	
 	public CreateDedicatedLineBackupRequest() {
-		super("Smartag", "2018-03-13", "CreateDedicatedLineBackup", "1.4.0");
+		super("Smartag", "2018-03-13", "CreateDedicatedLineBackup", "smartag");
 	}
 
 	private Long resourceOwnerId;

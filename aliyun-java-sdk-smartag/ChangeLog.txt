@@ -1,3 +1,6 @@
+2018-12-12 Version: 1.4.1
+1, Fix a bug.
+
 2018-11-27 Version: 1.4.0
 1, Add CenInstanceId to RevokeInstanceFromCbn.
 2, Modify the filter condition of the DescribeGrantRules.

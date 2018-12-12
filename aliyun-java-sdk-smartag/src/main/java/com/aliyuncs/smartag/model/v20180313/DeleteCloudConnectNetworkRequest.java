@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeleteCloudConnectNetworkRequest extends RpcAcsRequest<DeleteCloudConnectNetworkResponse> {
 	
 	public DeleteCloudConnectNetworkRequest() {
-		super("Smartag", "2018-03-13", "DeleteCloudConnectNetwork", "1.4.0");
+		super("Smartag", "2018-03-13", "DeleteCloudConnectNetwork", "smartag");
 	}
 
 	private Long resourceOwnerId;

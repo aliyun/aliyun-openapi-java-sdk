@@ -24,7 +24,7 @@ import java.util.List;
 public class UnicomSignConfirmRequest extends RpcAcsRequest<UnicomSignConfirmResponse> {
 	
 	public UnicomSignConfirmRequest() {
-		super("Smartag", "2018-03-13", "UnicomSignConfirm", "1.4.0");
+		super("Smartag", "2018-03-13", "UnicomSignConfirm", "smartag");
 	}
 
 	private Long resourceOwnerId;

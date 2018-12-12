@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class RevokeInstanceFromCbnRequest extends RpcAcsRequest<RevokeInstanceFromCbnResponse> {
 	
 	public RevokeInstanceFromCbnRequest() {
-		super("Smartag", "2018-03-13", "RevokeInstanceFromCbn", "1.4.0");
+		super("Smartag", "2018-03-13", "RevokeInstanceFromCbn", "smartag");
 	}
 
 	private Long resourceOwnerId;

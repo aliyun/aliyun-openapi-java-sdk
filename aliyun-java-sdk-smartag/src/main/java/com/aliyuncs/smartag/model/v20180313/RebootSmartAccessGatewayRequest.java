@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class RebootSmartAccessGatewayRequest extends RpcAcsRequest<RebootSmartAccessGatewayResponse> {
 	
 	public RebootSmartAccessGatewayRequest() {
-		super("Smartag", "2018-03-13", "RebootSmartAccessGateway", "1.4.0");
+		super("Smartag", "2018-03-13", "RebootSmartAccessGateway", "smartag");
 	}
 
 	private Long resourceOwnerId;

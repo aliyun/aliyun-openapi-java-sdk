@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeGrantRulesRequest extends RpcAcsRequest<DescribeGrantRulesResponse> {
 	
 	public DescribeGrantRulesRequest() {
-		super("Smartag", "2018-03-13", "DescribeGrantRules", "1.4.0");
+		super("Smartag", "2018-03-13", "DescribeGrantRules", "smartag");
 	}
 
 	private Long resourceOwnerId;

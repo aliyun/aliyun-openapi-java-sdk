@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class SwitchSAGHaStateRequest extends RpcAcsRequest<SwitchSAGHaStateResponse> {
 	
 	public SwitchSAGHaStateRequest() {
-		super("Smartag", "2018-03-13", "SwitchSAGHaState", "1.4.0");
+		super("Smartag", "2018-03-13", "SwitchSAGHaState", "smartag");
 	}
 
 	private Long resourceOwnerId;

@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeleteSAGLinkLevelHaRequest extends RpcAcsRequest<DeleteSAGLinkLevelHaResponse> {
 	
 	public DeleteSAGLinkLevelHaRequest() {
-		super("Smartag", "2018-03-13", "DeleteSAGLinkLevelHa", "1.4.0");
+		super("Smartag", "2018-03-13", "DeleteSAGLinkLevelHa", "smartag");
 	}
 
 	private Long resourceOwnerId;

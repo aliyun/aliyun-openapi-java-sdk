@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DowngradeSmartAccessGatewayRequest extends RpcAcsRequest<DowngradeSmartAccessGatewayResponse> {
 	
 	public DowngradeSmartAccessGatewayRequest() {
-		super("Smartag", "2018-03-13", "DowngradeSmartAccessGateway", "1.4.0");
+		super("Smartag", "2018-03-13", "DowngradeSmartAccessGateway", "smartag");
 	}
 
 	private Long resourceOwnerId;
