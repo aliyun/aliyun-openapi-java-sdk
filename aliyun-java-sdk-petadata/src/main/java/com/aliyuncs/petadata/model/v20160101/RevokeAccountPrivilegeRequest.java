@@ -20,15 +20,15 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class ModifyTableRequest extends RpcAcsRequest<ModifyTableResponse> {
+public class RevokeAccountPrivilegeRequest extends RpcAcsRequest<RevokeAccountPrivilegeResponse> {
 	
-	public ModifyTableRequest() {
-		super("PetaData", "2016-01-01", "ModifyTable", "petadata");
+	public RevokeAccountPrivilegeRequest() {
+		super("PetaData", "2016-01-01", "RevokeAccountPrivilege", "petadata");
 	}
 
 	private Long resourceOwnerId;
 
-	private String instanceId;
+	private String accountName;
 
 	private String dBName;
 
@@ -38,9 +38,9 @@ public class ModifyTableRequest extends RpcAcsRequest<ModifyTableResponse> {
 
 	private String ownerAccount;
 
-	private Long ownerId;
+	private String dBInstanceId;
 
-	private String tableDDL;
+	private Long ownerId;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -53,14 +53,14 @@ public class ModifyTableRequest extends RpcAcsRequest<ModifyTableResponse> {
 		}
 	}
 
-	public String getInstanceId() {
-		return this.instanceId;
+	public String getAccountName() {
+		return this.accountName;
 	}
 
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
+	public void setAccountName(String accountName) {
+		this.accountName = accountName;
+		if(accountName != null){
+			putQueryParameter("AccountName", accountName);
 		}
 	}
 
@@ -108,6 +108,17 @@ public class ModifyTableRequest extends RpcAcsRequest<ModifyTableResponse> {
 		}
 	}
 
+	public String getDBInstanceId() {
+		return this.dBInstanceId;
+	}
+
+	public void setDBInstanceId(String dBInstanceId) {
+		this.dBInstanceId = dBInstanceId;
+		if(dBInstanceId != null){
+			putQueryParameter("DBInstanceId", dBInstanceId);
+		}
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -119,20 +130,9 @@ public class ModifyTableRequest extends RpcAcsRequest<ModifyTableResponse> {
 		}
 	}
 
-	public String getTableDDL() {
-		return this.tableDDL;
-	}
-
-	public void setTableDDL(String tableDDL) {
-		this.tableDDL = tableDDL;
-		if(tableDDL != null){
-			putQueryParameter("TableDDL", tableDDL);
-		}
-	}
-
 	@Override
-	public Class<ModifyTableResponse> getResponseClass() {
-		return ModifyTableResponse.class;
+	public Class<RevokeAccountPrivilegeResponse> getResponseClass() {
+		return RevokeAccountPrivilegeResponse.class;
 	}
 
 }

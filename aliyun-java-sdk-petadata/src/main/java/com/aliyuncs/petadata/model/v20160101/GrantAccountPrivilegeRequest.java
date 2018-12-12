@@ -20,15 +20,15 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class DescribeTablesRequest extends RpcAcsRequest<DescribeTablesResponse> {
+public class GrantAccountPrivilegeRequest extends RpcAcsRequest<GrantAccountPrivilegeResponse> {
 	
-	public DescribeTablesRequest() {
-		super("PetaData", "2016-01-01", "DescribeTables", "petadata");
+	public GrantAccountPrivilegeRequest() {
+		super("PetaData", "2016-01-01", "GrantAccountPrivilege", "petadata");
 	}
 
 	private Long resourceOwnerId;
 
-	private String instanceId;
+	private String accountName;
 
 	private String dBName;
 
@@ -38,7 +38,11 @@ public class DescribeTablesRequest extends RpcAcsRequest<DescribeTablesResponse>
 
 	private String ownerAccount;
 
+	private String dBInstanceId;
+
 	private Long ownerId;
+
+	private String accountPrivilege;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -51,14 +55,14 @@ public class DescribeTablesRequest extends RpcAcsRequest<DescribeTablesResponse>
 		}
 	}
 
-	public String getInstanceId() {
-		return this.instanceId;
+	public String getAccountName() {
+		return this.accountName;
 	}
 
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
+	public void setAccountName(String accountName) {
+		this.accountName = accountName;
+		if(accountName != null){
+			putQueryParameter("AccountName", accountName);
 		}
 	}
 
@@ -106,6 +110,17 @@ public class DescribeTablesRequest extends RpcAcsRequest<DescribeTablesResponse>
 		}
 	}
 
+	public String getDBInstanceId() {
+		return this.dBInstanceId;
+	}
+
+	public void setDBInstanceId(String dBInstanceId) {
+		this.dBInstanceId = dBInstanceId;
+		if(dBInstanceId != null){
+			putQueryParameter("DBInstanceId", dBInstanceId);
+		}
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -117,9 +132,20 @@ public class DescribeTablesRequest extends RpcAcsRequest<DescribeTablesResponse>
 		}
 	}
 
+	public String getAccountPrivilege() {
+		return this.accountPrivilege;
+	}
+
+	public void setAccountPrivilege(String accountPrivilege) {
+		this.accountPrivilege = accountPrivilege;
+		if(accountPrivilege != null){
+			putQueryParameter("AccountPrivilege", accountPrivilege);
+		}
+	}
+
 	@Override
-	public Class<DescribeTablesResponse> getResponseClass() {
-		return DescribeTablesResponse.class;
+	public Class<GrantAccountPrivilegeResponse> getResponseClass() {
+		return GrantAccountPrivilegeResponse.class;
 	}
 
 }

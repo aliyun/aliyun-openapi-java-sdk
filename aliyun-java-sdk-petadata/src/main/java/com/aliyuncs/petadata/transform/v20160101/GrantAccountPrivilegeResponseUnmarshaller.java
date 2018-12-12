@@ -14,16 +14,16 @@
 
 package com.aliyuncs.petadata.transform.v20160101;
 
-import com.aliyuncs.petadata.model.v20160101.DeleteTableResponse;
+import com.aliyuncs.petadata.model.v20160101.GrantAccountPrivilegeResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class DeleteTableResponseUnmarshaller {
+public class GrantAccountPrivilegeResponseUnmarshaller {
 
-	public static DeleteTableResponse unmarshall(DeleteTableResponse deleteTableResponse, UnmarshallerContext context) {
+	public static GrantAccountPrivilegeResponse unmarshall(GrantAccountPrivilegeResponse grantAccountPrivilegeResponse, UnmarshallerContext context) {
 		
-		deleteTableResponse.setRequestId(context.stringValue("DeleteTableResponse.RequestId"));
+		grantAccountPrivilegeResponse.setRequestId(context.stringValue("GrantAccountPrivilegeResponse.RequestId"));
 	 
-	 	return deleteTableResponse;
+	 	return grantAccountPrivilegeResponse;
 	}
 }

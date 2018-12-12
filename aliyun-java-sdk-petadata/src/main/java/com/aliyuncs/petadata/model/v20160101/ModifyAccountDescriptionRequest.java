@@ -20,17 +20,15 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class CreateIndexRequest extends RpcAcsRequest<CreateIndexResponse> {
+public class ModifyAccountDescriptionRequest extends RpcAcsRequest<ModifyAccountDescriptionResponse> {
 	
-	public CreateIndexRequest() {
-		super("PetaData", "2016-01-01", "CreateIndex", "petadata");
+	public ModifyAccountDescriptionRequest() {
+		super("PetaData", "2016-01-01", "ModifyAccountDescription", "petadata");
 	}
 
 	private Long resourceOwnerId;
 
-	private String instanceId;
-
-	private String dBName;
+	private String accountName;
 
 	private String securityToken;
 
@@ -38,9 +36,11 @@ public class CreateIndexRequest extends RpcAcsRequest<CreateIndexResponse> {
 
 	private String ownerAccount;
 
+	private String dBInstanceId;
+
 	private Long ownerId;
 
-	private String indexDDL;
+	private String accountDescription;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -53,25 +53,14 @@ public class CreateIndexRequest extends RpcAcsRequest<CreateIndexResponse> {
 		}
 	}
 
-	public String getInstanceId() {
-		return this.instanceId;
+	public String getAccountName() {
+		return this.accountName;
 	}
 
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
-		}
-	}
-
-	public String getDBName() {
-		return this.dBName;
-	}
-
-	public void setDBName(String dBName) {
-		this.dBName = dBName;
-		if(dBName != null){
-			putQueryParameter("DBName", dBName);
+	public void setAccountName(String accountName) {
+		this.accountName = accountName;
+		if(accountName != null){
+			putQueryParameter("AccountName", accountName);
 		}
 	}
 
@@ -108,6 +97,17 @@ public class CreateIndexRequest extends RpcAcsRequest<CreateIndexResponse> {
 		}
 	}
 
+	public String getDBInstanceId() {
+		return this.dBInstanceId;
+	}
+
+	public void setDBInstanceId(String dBInstanceId) {
+		this.dBInstanceId = dBInstanceId;
+		if(dBInstanceId != null){
+			putQueryParameter("DBInstanceId", dBInstanceId);
+		}
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -119,20 +119,20 @@ public class CreateIndexRequest extends RpcAcsRequest<CreateIndexResponse> {
 		}
 	}
 
-	public String getIndexDDL() {
-		return this.indexDDL;
+	public String getAccountDescription() {
+		return this.accountDescription;
 	}
 
-	public void setIndexDDL(String indexDDL) {
-		this.indexDDL = indexDDL;
-		if(indexDDL != null){
-			putQueryParameter("IndexDDL", indexDDL);
+	public void setAccountDescription(String accountDescription) {
+		this.accountDescription = accountDescription;
+		if(accountDescription != null){
+			putQueryParameter("AccountDescription", accountDescription);
 		}
 	}
 
 	@Override
-	public Class<CreateIndexResponse> getResponseClass() {
-		return CreateIndexResponse.class;
+	public Class<ModifyAccountDescriptionResponse> getResponseClass() {
+		return ModifyAccountDescriptionResponse.class;
 	}
 
 }

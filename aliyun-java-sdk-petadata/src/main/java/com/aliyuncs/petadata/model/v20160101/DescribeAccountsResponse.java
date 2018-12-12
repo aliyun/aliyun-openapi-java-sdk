@@ -15,6 +15,7 @@
 package com.aliyuncs.petadata.model.v20160101;
 
 import java.util.List;
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.petadata.transform.v20160101.DescribeAccountsResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -61,6 +62,12 @@ public class DescribeAccountsResponse extends AcsResponse {
 
 		private String accountStatus;
 
+		private String accountDescription;
+
+		private String accountType;
+
+		private List<DatabasePrivilege> databasePrivileges;
+
 		public String getAccountName() {
 			return this.accountName;
 		}
@@ -75,6 +82,63 @@ public class DescribeAccountsResponse extends AcsResponse {
 
 		public void setAccountStatus(String accountStatus) {
 			this.accountStatus = accountStatus;
+		}
+
+		public String getAccountDescription() {
+			return this.accountDescription;
+		}
+
+		public void setAccountDescription(String accountDescription) {
+			this.accountDescription = accountDescription;
+		}
+
+		public String getAccountType() {
+			return this.accountType;
+		}
+
+		public void setAccountType(String accountType) {
+			this.accountType = accountType;
+		}
+
+		public List<DatabasePrivilege> getDatabasePrivileges() {
+			return this.databasePrivileges;
+		}
+
+		public void setDatabasePrivileges(List<DatabasePrivilege> databasePrivileges) {
+			this.databasePrivileges = databasePrivileges;
+		}
+
+		public static class DatabasePrivilege {
+
+			private String dBName;
+
+			private String accountPrivilege;
+
+			private String accountPrivilegeDetail;
+
+			public String getDBName() {
+				return this.dBName;
+			}
+
+			public void setDBName(String dBName) {
+				this.dBName = dBName;
+			}
+
+			public String getAccountPrivilege() {
+				return this.accountPrivilege;
+			}
+
+			public void setAccountPrivilege(String accountPrivilege) {
+				this.accountPrivilege = accountPrivilege;
+			}
+
+			public String getAccountPrivilegeDetail() {
+				return this.accountPrivilegeDetail;
+			}
+
+			public void setAccountPrivilegeDetail(String accountPrivilegeDetail) {
+				this.accountPrivilegeDetail = accountPrivilegeDetail;
+			}
 		}
 	}
 

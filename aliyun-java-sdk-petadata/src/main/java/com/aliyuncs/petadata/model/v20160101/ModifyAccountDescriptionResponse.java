@@ -14,15 +14,16 @@
 
 package com.aliyuncs.petadata.model.v20160101;
 
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.petadata.transform.v20160101.DeleteIndexResponseUnmarshaller;
+import com.aliyuncs.petadata.transform.v20160101.ModifyAccountDescriptionResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DeleteIndexResponse extends AcsResponse {
+public class ModifyAccountDescriptionResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -35,7 +36,7 @@ public class DeleteIndexResponse extends AcsResponse {
 	}
 
 	@Override
-	public DeleteIndexResponse getInstance(UnmarshallerContext context) {
-		return	DeleteIndexResponseUnmarshaller.unmarshall(this, context);
+	public ModifyAccountDescriptionResponse getInstance(UnmarshallerContext context) {
+		return	ModifyAccountDescriptionResponseUnmarshaller.unmarshall(this, context);
 	}
 }

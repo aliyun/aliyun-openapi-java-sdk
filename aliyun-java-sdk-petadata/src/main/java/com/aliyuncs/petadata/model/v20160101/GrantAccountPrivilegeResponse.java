@@ -14,15 +14,16 @@
 
 package com.aliyuncs.petadata.model.v20160101;
 
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.petadata.transform.v20160101.ModifyTableResponseUnmarshaller;
+import com.aliyuncs.petadata.transform.v20160101.GrantAccountPrivilegeResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ModifyTableResponse extends AcsResponse {
+public class GrantAccountPrivilegeResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -35,7 +36,7 @@ public class ModifyTableResponse extends AcsResponse {
 	}
 
 	@Override
-	public ModifyTableResponse getInstance(UnmarshallerContext context) {
-		return	ModifyTableResponseUnmarshaller.unmarshall(this, context);
+	public GrantAccountPrivilegeResponse getInstance(UnmarshallerContext context) {
+		return	GrantAccountPrivilegeResponseUnmarshaller.unmarshall(this, context);
 	}
 }

@@ -14,21 +14,18 @@
 
 package com.aliyuncs.petadata.model.v20160101;
 
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.petadata.transform.v20160101.AddBuDBInstanceRelationResponseUnmarshaller;
+import com.aliyuncs.petadata.transform.v20160101.RevokeAccountPrivilegeResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class AddBuDBInstanceRelationResponse extends AcsResponse {
+public class RevokeAccountPrivilegeResponse extends AcsResponse {
 
 	private String requestId;
-
-	private String businessUnit;
-
-	private String dBInstanceName;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -38,24 +35,8 @@ public class AddBuDBInstanceRelationResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getBusinessUnit() {
-		return this.businessUnit;
-	}
-
-	public void setBusinessUnit(String businessUnit) {
-		this.businessUnit = businessUnit;
-	}
-
-	public String getDBInstanceName() {
-		return this.dBInstanceName;
-	}
-
-	public void setDBInstanceName(String dBInstanceName) {
-		this.dBInstanceName = dBInstanceName;
-	}
-
 	@Override
-	public AddBuDBInstanceRelationResponse getInstance(UnmarshallerContext context) {
-		return	AddBuDBInstanceRelationResponseUnmarshaller.unmarshall(this, context);
+	public RevokeAccountPrivilegeResponse getInstance(UnmarshallerContext context) {
+		return	RevokeAccountPrivilegeResponseUnmarshaller.unmarshall(this, context);
 	}
 }

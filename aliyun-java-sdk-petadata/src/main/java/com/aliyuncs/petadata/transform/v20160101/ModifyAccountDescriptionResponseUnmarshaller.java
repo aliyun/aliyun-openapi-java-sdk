@@ -14,16 +14,16 @@
 
 package com.aliyuncs.petadata.transform.v20160101;
 
-import com.aliyuncs.petadata.model.v20160101.CreateTableResponse;
+import com.aliyuncs.petadata.model.v20160101.ModifyAccountDescriptionResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class CreateTableResponseUnmarshaller {
+public class ModifyAccountDescriptionResponseUnmarshaller {
 
-	public static CreateTableResponse unmarshall(CreateTableResponse createTableResponse, UnmarshallerContext context) {
+	public static ModifyAccountDescriptionResponse unmarshall(ModifyAccountDescriptionResponse modifyAccountDescriptionResponse, UnmarshallerContext context) {
 		
-		createTableResponse.setRequestId(context.stringValue("CreateTableResponse.RequestId"));
+		modifyAccountDescriptionResponse.setRequestId(context.stringValue("ModifyAccountDescriptionResponse.RequestId"));
 	 
-	 	return createTableResponse;
+	 	return modifyAccountDescriptionResponse;
 	}
 }

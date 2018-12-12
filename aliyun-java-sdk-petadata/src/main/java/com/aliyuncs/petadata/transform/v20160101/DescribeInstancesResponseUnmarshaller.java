@@ -40,6 +40,7 @@ public class DescribeInstancesResponseUnmarshaller {
 			instance.setInstanceName(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].InstanceName"));
 			instance.setConnectionString(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].ConnectionString"));
 			instance.setPort(context.integerValue("DescribeInstancesResponse.Instances["+ i +"].Port"));
+			instance.setPrivateIpAddress(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].PrivateIpAddress"));
 			instance.setCreateTime(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].CreateTime"));
 			instance.setRegionId(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].RegionId"));
 			instance.setZoneId(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].ZoneId"));

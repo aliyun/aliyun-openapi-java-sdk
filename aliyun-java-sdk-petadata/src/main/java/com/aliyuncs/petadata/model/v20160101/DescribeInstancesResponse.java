@@ -15,6 +15,7 @@
 package com.aliyuncs.petadata.model.v20160101;
 
 import java.util.List;
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.petadata.transform.v20160101.DescribeInstancesResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -85,6 +86,8 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		private Integer port;
 
+		private String privateIpAddress;
+
 		private String createTime;
 
 		private String regionId;
@@ -131,6 +134,14 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		public void setPort(Integer port) {
 			this.port = port;
+		}
+
+		public String getPrivateIpAddress() {
+			return this.privateIpAddress;
+		}
+
+		public void setPrivateIpAddress(String privateIpAddress) {
+			this.privateIpAddress = privateIpAddress;
 		}
 
 		public String getCreateTime() {

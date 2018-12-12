@@ -14,6 +14,7 @@
 
 package com.aliyuncs.petadata.model.v20160101;
 
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.petadata.transform.v20160101.DescribeTaskStatusResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;

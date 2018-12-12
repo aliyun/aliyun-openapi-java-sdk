@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.petadata.model.v20160101.DescribeAccountsResponse;
 import com.aliyuncs.petadata.model.v20160101.DescribeAccountsResponse.Account;
+import com.aliyuncs.petadata.model.v20160101.DescribeAccountsResponse.Account.DatabasePrivilege;
 import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -35,6 +36,19 @@ public class DescribeAccountsResponseUnmarshaller {
 			Account account = new Account();
 			account.setAccountName(context.stringValue("DescribeAccountsResponse.AccountList["+ i +"].AccountName"));
 			account.setAccountStatus(context.stringValue("DescribeAccountsResponse.AccountList["+ i +"].AccountStatus"));
+			account.setAccountDescription(context.stringValue("DescribeAccountsResponse.AccountList["+ i +"].AccountDescription"));
+			account.setAccountType(context.stringValue("DescribeAccountsResponse.AccountList["+ i +"].AccountType"));
+
+			List<DatabasePrivilege> databasePrivileges = new ArrayList<DatabasePrivilege>();
+			for (int j = 0; j < context.lengthValue("DescribeAccountsResponse.AccountList["+ i +"].DatabasePrivileges.Length"); j++) {
+				DatabasePrivilege databasePrivilege = new DatabasePrivilege();
+				databasePrivilege.setDBName(context.stringValue("DescribeAccountsResponse.AccountList["+ i +"].DatabasePrivileges["+ j +"].DBName"));
+				databasePrivilege.setAccountPrivilege(context.stringValue("DescribeAccountsResponse.AccountList["+ i +"].DatabasePrivileges["+ j +"].AccountPrivilege"));
+				databasePrivilege.setAccountPrivilegeDetail(context.stringValue("DescribeAccountsResponse.AccountList["+ i +"].DatabasePrivileges["+ j +"].AccountPrivilegeDetail"));
+
+				databasePrivileges.add(databasePrivilege);
+			}
+			account.setDatabasePrivileges(databasePrivileges);
 
 			accountList.add(account);
 		}
