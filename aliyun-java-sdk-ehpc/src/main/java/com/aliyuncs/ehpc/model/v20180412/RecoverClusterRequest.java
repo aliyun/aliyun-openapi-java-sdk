@@ -26,7 +26,61 @@ public class RecoverClusterRequest extends RpcAcsRequest<RecoverClusterResponse>
 		super("EHPC", "2018-04-12", "RecoverCluster", "ehs");
 	}
 
+	private String imageId;
+
+	private String osTag;
+
+	private String accountType;
+
+	private String schedulerType;
+
 	private String clusterId;
+
+	private String imageOwnerAlias;
+
+	public String getImageId() {
+		return this.imageId;
+	}
+
+	public void setImageId(String imageId) {
+		this.imageId = imageId;
+		if(imageId != null){
+			putQueryParameter("ImageId", imageId);
+		}
+	}
+
+	public String getOsTag() {
+		return this.osTag;
+	}
+
+	public void setOsTag(String osTag) {
+		this.osTag = osTag;
+		if(osTag != null){
+			putQueryParameter("OsTag", osTag);
+		}
+	}
+
+	public String getAccountType() {
+		return this.accountType;
+	}
+
+	public void setAccountType(String accountType) {
+		this.accountType = accountType;
+		if(accountType != null){
+			putQueryParameter("AccountType", accountType);
+		}
+	}
+
+	public String getSchedulerType() {
+		return this.schedulerType;
+	}
+
+	public void setSchedulerType(String schedulerType) {
+		this.schedulerType = schedulerType;
+		if(schedulerType != null){
+			putQueryParameter("SchedulerType", schedulerType);
+		}
+	}
 
 	public String getClusterId() {
 		return this.clusterId;
@@ -36,6 +90,17 @@ public class RecoverClusterRequest extends RpcAcsRequest<RecoverClusterResponse>
 		this.clusterId = clusterId;
 		if(clusterId != null){
 			putQueryParameter("ClusterId", clusterId);
+		}
+	}
+
+	public String getImageOwnerAlias() {
+		return this.imageOwnerAlias;
+	}
+
+	public void setImageOwnerAlias(String imageOwnerAlias) {
+		this.imageOwnerAlias = imageOwnerAlias;
+		if(imageOwnerAlias != null){
+			putQueryParameter("ImageOwnerAlias", imageOwnerAlias);
 		}
 	}
 

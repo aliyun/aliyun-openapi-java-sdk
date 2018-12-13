@@ -61,6 +61,8 @@ public class CreateClusterRequest extends RpcAcsRequest<CreateClusterResponse> {
 
 	private Integer ecsOrderLoginCount;
 
+	private Integer systemDiskSize;
+
 	private String computeSpotPriceLimit;
 
 	private Integer autoRenewPeriod;
@@ -293,6 +295,17 @@ public class CreateClusterRequest extends RpcAcsRequest<CreateClusterResponse> {
 		this.ecsOrderLoginCount = ecsOrderLoginCount;
 		if(ecsOrderLoginCount != null){
 			putQueryParameter("EcsOrder.Login.Count", ecsOrderLoginCount.toString());
+		}
+	}
+
+	public Integer getSystemDiskSize() {
+		return this.systemDiskSize;
+	}
+
+	public void setSystemDiskSize(Integer systemDiskSize) {
+		this.systemDiskSize = systemDiskSize;
+		if(systemDiskSize != null){
+			putQueryParameter("SystemDiskSize", systemDiskSize.toString());
 		}
 	}
 

@@ -1,3 +1,6 @@
+2018-12-13 Version: 1.10.0
+1, Add SystemDiskSize in CreateCluster and AddNodes, add more parameters in RecoverCluster
+
 2018-11-14 Version: 1.9.0
 1, Better support for hybrid cluster.
 

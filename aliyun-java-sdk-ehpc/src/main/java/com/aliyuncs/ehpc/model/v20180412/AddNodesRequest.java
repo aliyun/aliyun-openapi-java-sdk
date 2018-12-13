@@ -50,6 +50,8 @@ public class AddNodesRequest extends RpcAcsRequest<AddNodesResponse> {
 
 	private String createMode;
 
+	private Integer systemDiskSize;
+
 	private String instanceType;
 
 	private String computeSpotPriceLimit;
@@ -183,6 +185,17 @@ public class AddNodesRequest extends RpcAcsRequest<AddNodesResponse> {
 		this.createMode = createMode;
 		if(createMode != null){
 			putQueryParameter("CreateMode", createMode);
+		}
+	}
+
+	public Integer getSystemDiskSize() {
+		return this.systemDiskSize;
+	}
+
+	public void setSystemDiskSize(Integer systemDiskSize) {
+		this.systemDiskSize = systemDiskSize;
+		if(systemDiskSize != null){
+			putQueryParameter("SystemDiskSize", systemDiskSize.toString());
 		}
 	}
 

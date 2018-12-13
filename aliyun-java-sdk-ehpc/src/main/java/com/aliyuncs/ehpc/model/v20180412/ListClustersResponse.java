@@ -112,6 +112,8 @@ public class ListClustersResponse extends AcsResponse {
 
 		private String location;
 
+		private String ehpcVersion;
+
 		private Managers managers;
 
 		private Computes computes;
@@ -254,6 +256,14 @@ public class ListClustersResponse extends AcsResponse {
 
 		public void setLocation(String location) {
 			this.location = location;
+		}
+
+		public String getEhpcVersion() {
+			return this.ehpcVersion;
+		}
+
+		public void setEhpcVersion(String ehpcVersion) {
+			this.ehpcVersion = ehpcVersion;
 		}
 
 		public Managers getManagers() {
