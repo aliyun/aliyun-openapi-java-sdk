@@ -1,3 +1,10 @@
+2018-12-13 Version: 3.4.1
+1, Query interface for oss scan results 
+2, Export interface for oss scan results
+3, Query interface for open api audit results
+4, Mark interface for oss scan results
+5, Mark interface for open api audit results
+
 2018-11-21 Version: 3.4.0
 1, api for custom keyword lib、similartext lib、voice keyword lib
 2, api for custom image lib
