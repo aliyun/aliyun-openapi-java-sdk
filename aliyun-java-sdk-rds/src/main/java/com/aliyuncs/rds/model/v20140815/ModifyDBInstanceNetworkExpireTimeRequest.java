@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifyDBInstanceNetworkExpireTimeRequest extends RpcAcsRequest<ModifyDBInstanceNetworkExpireTimeResponse> {
 	
 	public ModifyDBInstanceNetworkExpireTimeRequest() {
-		super("Rds", "2014-08-15", "ModifyDBInstanceNetworkExpireTime", "Rds");
+		super("Rds", "2014-08-15", "ModifyDBInstanceNetworkExpireTime", "rds");
 	}
 
 	private Long resourceOwnerId;

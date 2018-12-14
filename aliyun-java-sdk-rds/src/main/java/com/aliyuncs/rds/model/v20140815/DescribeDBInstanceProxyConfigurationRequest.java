@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeDBInstanceProxyConfigurationRequest extends RpcAcsRequest<DescribeDBInstanceProxyConfigurationResponse> {
 	
 	public DescribeDBInstanceProxyConfigurationRequest() {
-		super("Rds", "2014-08-15", "DescribeDBInstanceProxyConfiguration", "Rds");
+		super("Rds", "2014-08-15", "DescribeDBInstanceProxyConfiguration", "rds");
 	}
 
 	private Long resourceOwnerId;

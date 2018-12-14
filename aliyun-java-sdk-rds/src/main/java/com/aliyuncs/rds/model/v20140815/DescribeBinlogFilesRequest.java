@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeBinlogFilesRequest extends RpcAcsRequest<DescribeBinlogFilesResponse> {
 	
 	public DescribeBinlogFilesRequest() {
-		super("Rds", "2014-08-15", "DescribeBinlogFiles", "Rds");
+		super("Rds", "2014-08-15", "DescribeBinlogFiles", "rds");
 	}
 
 	private Long resourceOwnerId;

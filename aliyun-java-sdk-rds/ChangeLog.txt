@@ -1,3 +1,7 @@
+2018-12-14 Version: 2.2.0
+1, fixed sdk unit loute .
+2, upgrade rds sdk version 2.2.0.
+
 2018-12-11 Version: 2.3.0
 1, DescribeAccount support OwnerAccount params.
 2, Upgrade Rds SDK Version to 2.3.0

@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeModifyParameterLogRequest extends RpcAcsRequest<DescribeModifyParameterLogResponse> {
 	
 	public DescribeModifyParameterLogRequest() {
-		super("Rds", "2014-08-15", "DescribeModifyParameterLog", "Rds");
+		super("Rds", "2014-08-15", "DescribeModifyParameterLog", "rds");
 	}
 
 	private Long resourceOwnerId;

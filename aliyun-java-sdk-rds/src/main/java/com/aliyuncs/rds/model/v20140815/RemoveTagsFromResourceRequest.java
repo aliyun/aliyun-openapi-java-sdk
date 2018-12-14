@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class RemoveTagsFromResourceRequest extends RpcAcsRequest<RemoveTagsFromResourceResponse> {
 	
 	public RemoveTagsFromResourceRequest() {
-		super("Rds", "2014-08-15", "RemoveTagsFromResource", "Rds");
+		super("Rds", "2014-08-15", "RemoveTagsFromResource", "rds");
 	}
 
 	private String tag4value;

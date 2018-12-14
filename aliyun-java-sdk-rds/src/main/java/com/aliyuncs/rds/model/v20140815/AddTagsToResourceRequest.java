@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class AddTagsToResourceRequest extends RpcAcsRequest<AddTagsToResourceResponse> {
 	
 	public AddTagsToResourceRequest() {
-		super("Rds", "2014-08-15", "AddTagsToResource", "Rds");
+		super("Rds", "2014-08-15", "AddTagsToResource", "rds");
 	}
 
 	private String tag4value;

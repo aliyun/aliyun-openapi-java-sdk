@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class CreateMigrateTaskForSQLServerRequest extends RpcAcsRequest<CreateMigrateTaskForSQLServerResponse> {
 	
 	public CreateMigrateTaskForSQLServerRequest() {
-		super("Rds", "2014-08-15", "CreateMigrateTaskForSQLServer", "Rds");
+		super("Rds", "2014-08-15", "CreateMigrateTaskForSQLServer", "rds");
 	}
 
 	private Long resourceOwnerId;

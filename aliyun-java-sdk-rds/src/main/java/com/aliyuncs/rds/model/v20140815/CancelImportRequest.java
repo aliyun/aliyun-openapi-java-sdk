@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class CancelImportRequest extends RpcAcsRequest<CancelImportResponse> {
 	
 	public CancelImportRequest() {
-		super("Rds", "2014-08-15", "CancelImport", "Rds");
+		super("Rds", "2014-08-15", "CancelImport", "rds");
 	}
 
 	private Long resourceOwnerId;

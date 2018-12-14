@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class SwitchDBInstanceVpcRequest extends RpcAcsRequest<SwitchDBInstanceVpcResponse> {
 	
 	public SwitchDBInstanceVpcRequest() {
-		super("Rds", "2014-08-15", "SwitchDBInstanceVpc", "Rds");
+		super("Rds", "2014-08-15", "SwitchDBInstanceVpc", "rds");
 	}
 
 	private String vSwitchId;

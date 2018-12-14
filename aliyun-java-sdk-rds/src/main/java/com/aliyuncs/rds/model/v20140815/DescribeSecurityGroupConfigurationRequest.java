@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeSecurityGroupConfigurationRequest extends RpcAcsRequest<DescribeSecurityGroupConfigurationResponse> {
 	
 	public DescribeSecurityGroupConfigurationRequest() {
-		super("Rds", "2014-08-15", "DescribeSecurityGroupConfiguration", "Rds");
+		super("Rds", "2014-08-15", "DescribeSecurityGroupConfiguration", "rds");
 	}
 
 	private Long resourceOwnerId;

@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeleteBackupRequest extends RpcAcsRequest<DeleteBackupResponse> {
 	
 	public DeleteBackupRequest() {
-		super("Rds", "2014-08-15", "DeleteBackup", "Rds");
+		super("Rds", "2014-08-15", "DeleteBackup", "rds");
 	}
 
 	private Long resourceOwnerId;
