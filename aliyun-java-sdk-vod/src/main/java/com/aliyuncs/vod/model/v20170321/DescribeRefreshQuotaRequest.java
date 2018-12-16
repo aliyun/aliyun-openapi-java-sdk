@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeRefreshQuotaRequest extends RpcAcsRequest<DescribeRefreshQuotaResponse> {
 	
 	public DescribeRefreshQuotaRequest() {
-		super("vod", "2017-03-21", "DescribeRefreshQuota");
+		super("vod", "2017-03-21", "DescribeRefreshQuota", "vod");
 	}
 
 	private String resourceOwnerId;

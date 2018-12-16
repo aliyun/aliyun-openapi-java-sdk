@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class RegisterMediaRequest extends RpcAcsRequest<RegisterMediaResponse> {
 	
 	public RegisterMediaRequest() {
-		super("vod", "2017-03-21", "RegisterMedia");
+		super("vod", "2017-03-21", "RegisterMedia", "vod");
 	}
 
 	private String userData;

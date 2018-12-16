@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class UploadMediaByURLRequest extends RpcAcsRequest<UploadMediaByURLResponse> {
 	
 	public UploadMediaByURLRequest() {
-		super("vod", "2017-03-21", "UploadMediaByURL");
+		super("vod", "2017-03-21", "UploadMediaByURL", "vod");
 	}
 
 	private Long resourceOwnerId;

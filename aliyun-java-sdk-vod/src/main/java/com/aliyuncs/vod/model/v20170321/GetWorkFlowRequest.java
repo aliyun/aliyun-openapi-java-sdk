@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class GetWorkFlowRequest extends RpcAcsRequest<GetWorkFlowResponse> {
 	
 	public GetWorkFlowRequest() {
-		super("vod", "2017-03-21", "GetWorkFlow");
+		super("vod", "2017-03-21", "GetWorkFlow", "vod");
 	}
 
 	private Long resourceOwnerId;

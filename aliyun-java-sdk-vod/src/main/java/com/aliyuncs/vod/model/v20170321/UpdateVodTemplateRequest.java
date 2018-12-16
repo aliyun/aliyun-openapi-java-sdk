@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class UpdateVodTemplateRequest extends RpcAcsRequest<UpdateVodTemplateResponse> {
 	
 	public UpdateVodTemplateRequest() {
-		super("vod", "2017-03-21", "UpdateVodTemplate");
+		super("vod", "2017-03-21", "UpdateVodTemplate", "vod");
 	}
 
 	private Long resourceOwnerId;

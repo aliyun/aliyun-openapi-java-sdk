@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribePlayTopVideosRequest extends RpcAcsRequest<DescribePlayTopVideosResponse> {
 	
 	public DescribePlayTopVideosRequest() {
-		super("vod", "2017-03-21", "DescribePlayTopVideos");
+		super("vod", "2017-03-21", "DescribePlayTopVideos", "vod");
 	}
 
 	private String bizDate;

@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class CreateUploadImageRequest extends RpcAcsRequest<CreateUploadImageResponse> {
 	
 	public CreateUploadImageRequest() {
-		super("vod", "2017-03-21", "CreateUploadImage");
+		super("vod", "2017-03-21", "CreateUploadImage", "vod");
 	}
 
 	private Long resourceOwnerId;

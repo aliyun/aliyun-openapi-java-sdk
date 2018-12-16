@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class SetAuditSecurityIpRequest extends RpcAcsRequest<SetAuditSecurityIpResponse> {
 	
 	public SetAuditSecurityIpRequest() {
-		super("vod", "2017-03-21", "SetAuditSecurityIp");
+		super("vod", "2017-03-21", "SetAuditSecurityIp", "vod");
 	}
 
 	private String operateMode;

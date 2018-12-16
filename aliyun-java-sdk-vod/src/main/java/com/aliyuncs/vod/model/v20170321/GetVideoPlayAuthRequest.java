@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class GetVideoPlayAuthRequest extends RpcAcsRequest<GetVideoPlayAuthResponse> {
 	
 	public GetVideoPlayAuthRequest() {
-		super("vod", "2017-03-21", "GetVideoPlayAuth");
+		super("vod", "2017-03-21", "GetVideoPlayAuth", "vod");
 	}
 
 	private Long resourceOwnerId;

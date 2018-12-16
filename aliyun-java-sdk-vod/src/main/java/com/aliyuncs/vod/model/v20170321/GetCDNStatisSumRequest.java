@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class GetCDNStatisSumRequest extends RpcAcsRequest<GetCDNStatisSumResponse> {
 	
 	public GetCDNStatisSumRequest() {
-		super("vod", "2017-03-21", "GetCDNStatisSum");
+		super("vod", "2017-03-21", "GetCDNStatisSum", "vod");
 	}
 
 	private String resourceOwnerId;

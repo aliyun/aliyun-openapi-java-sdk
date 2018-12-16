@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class AddEditingProjectRequest extends RpcAcsRequest<AddEditingProjectResponse> {
 	
 	public AddEditingProjectRequest() {
-		super("vod", "2017-03-21", "AddEditingProject");
+		super("vod", "2017-03-21", "AddEditingProject", "vod");
 	}
 
 	private String coverURL;

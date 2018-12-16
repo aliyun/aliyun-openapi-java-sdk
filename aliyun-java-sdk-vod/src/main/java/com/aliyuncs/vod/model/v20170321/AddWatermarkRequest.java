@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class AddWatermarkRequest extends RpcAcsRequest<AddWatermarkResponse> {
 	
 	public AddWatermarkRequest() {
-		super("vod", "2017-03-21", "AddWatermark");
+		super("vod", "2017-03-21", "AddWatermark", "vod");
 	}
 
 	private Long resourceOwnerId;

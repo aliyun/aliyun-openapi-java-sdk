@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class GetWatermarkRequest extends RpcAcsRequest<GetWatermarkResponse> {
 	
 	public GetWatermarkRequest() {
-		super("vod", "2017-03-21", "GetWatermark");
+		super("vod", "2017-03-21", "GetWatermark", "vod");
 	}
 
 	private String watermarkId;

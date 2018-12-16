@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeleteWorkFlowRequest extends RpcAcsRequest<DeleteWorkFlowResponse> {
 	
 	public DeleteWorkFlowRequest() {
-		super("vod", "2017-03-21", "DeleteWorkFlow");
+		super("vod", "2017-03-21", "DeleteWorkFlow", "vod");
 	}
 
 	private Long resourceOwnerId;

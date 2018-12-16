@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeleteVodTemplateRequest extends RpcAcsRequest<DeleteVodTemplateResponse> {
 	
 	public DeleteVodTemplateRequest() {
-		super("vod", "2017-03-21", "DeleteVodTemplate");
+		super("vod", "2017-03-21", "DeleteVodTemplate", "vod");
 	}
 
 	private Long resourceOwnerId;

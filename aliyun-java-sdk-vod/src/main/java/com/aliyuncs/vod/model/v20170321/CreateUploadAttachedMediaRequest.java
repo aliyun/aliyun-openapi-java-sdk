@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class CreateUploadAttachedMediaRequest extends RpcAcsRequest<CreateUploadAttachedMediaResponse> {
 	
 	public CreateUploadAttachedMediaRequest() {
-		super("vod", "2017-03-21", "CreateUploadAttachedMedia");
+		super("vod", "2017-03-21", "CreateUploadAttachedMedia", "vod");
 	}
 
 	private Long resourceOwnerId;

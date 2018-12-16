@@ -14,34 +14,29 @@
 
 package com.aliyuncs.vod.model.v20170321;
 
-import com.aliyuncs.RpcAcsRequest;
+import java.util.Map;
+import com.aliyuncs.AcsResponse;
+import com.aliyuncs.vod.transform.v20170321.AddMediaSequencesResponseUnmarshaller;
+import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CreateAuditRequest extends RpcAcsRequest<CreateAuditResponse> {
-	
-	public CreateAuditRequest() {
-		super("vod", "2017-03-21", "CreateAudit", "vod");
+public class AddMediaSequencesResponse extends AcsResponse {
+
+	private String requestId;
+
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	private String auditContent;
-
-	public String getAuditContent() {
-		return this.auditContent;
-	}
-
-	public void setAuditContent(String auditContent) {
-		this.auditContent = auditContent;
-		if(auditContent != null){
-			putQueryParameter("AuditContent", auditContent);
-		}
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override
-	public Class<CreateAuditResponse> getResponseClass() {
-		return CreateAuditResponse.class;
+	public AddMediaSequencesResponse getInstance(UnmarshallerContext context) {
+		return	AddMediaSequencesResponseUnmarshaller.unmarshall(this, context);
 	}
-
 }

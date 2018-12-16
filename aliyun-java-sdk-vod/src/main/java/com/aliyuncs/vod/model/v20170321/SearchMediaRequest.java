@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class SearchMediaRequest extends RpcAcsRequest<SearchMediaResponse> {
 	
 	public SearchMediaRequest() {
-		super("vod", "2017-03-21", "SearchMedia");
+		super("vod", "2017-03-21", "SearchMedia", "vod");
 	}
 
 	private Long resourceOwnerId;
@@ -39,6 +39,8 @@ public class SearchMediaRequest extends RpcAcsRequest<SearchMediaResponse> {
 	private Integer pageSize;
 
 	private String sortBy;
+
+	private String sessionId;
 
 	private Long ownerId;
 
@@ -120,6 +122,17 @@ public class SearchMediaRequest extends RpcAcsRequest<SearchMediaResponse> {
 		this.sortBy = sortBy;
 		if(sortBy != null){
 			putQueryParameter("SortBy", sortBy);
+		}
+	}
+
+	public String getSessionId() {
+		return this.sessionId;
+	}
+
+	public void setSessionId(String sessionId) {
+		this.sessionId = sessionId;
+		if(sessionId != null){
+			putQueryParameter("SessionId", sessionId);
 		}
 	}
 

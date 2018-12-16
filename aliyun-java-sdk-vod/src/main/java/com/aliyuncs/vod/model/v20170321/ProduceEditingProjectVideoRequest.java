@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ProduceEditingProjectVideoRequest extends RpcAcsRequest<ProduceEditingProjectVideoResponse> {
 	
 	public ProduceEditingProjectVideoRequest() {
-		super("vod", "2017-03-21", "ProduceEditingProjectVideo");
+		super("vod", "2017-03-21", "ProduceEditingProjectVideo", "vod");
 	}
 
 	private Long resourceOwnerId;

@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class SubmitTranscodeJobsRequest extends RpcAcsRequest<SubmitTranscodeJobsResponse> {
 	
 	public SubmitTranscodeJobsRequest() {
-		super("vod", "2017-03-21", "SubmitTranscodeJobs");
+		super("vod", "2017-03-21", "SubmitTranscodeJobs", "vod");
 	}
 
 	private Long resourceOwnerId;

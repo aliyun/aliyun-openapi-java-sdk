@@ -20,23 +20,27 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class RefreshObjectCachesRequest extends RpcAcsRequest<RefreshObjectCachesResponse> {
+public class AddMediaSequencesRequest extends RpcAcsRequest<AddMediaSequencesResponse> {
 	
-	public RefreshObjectCachesRequest() {
-		super("vod", "2017-03-21", "RefreshObjectCaches", "vod");
+	public AddMediaSequencesRequest() {
+		super("vod", "2017-03-21", "AddMediaSequences", "vod");
 	}
 
 	private String resourceOwnerId;
+
+	private String mediaURL;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
-	private String objectPath;
+	private String mediaSequences;
 
 	private String ownerId;
 
-	private String objectType;
+	private String mediaId;
+
+	private String mediaType;
 
 	public String getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -46,6 +50,17 @@ public class RefreshObjectCachesRequest extends RpcAcsRequest<RefreshObjectCache
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId);
+		}
+	}
+
+	public String getMediaURL() {
+		return this.mediaURL;
+	}
+
+	public void setMediaURL(String mediaURL) {
+		this.mediaURL = mediaURL;
+		if(mediaURL != null){
+			putQueryParameter("MediaURL", mediaURL);
 		}
 	}
 
@@ -71,14 +86,14 @@ public class RefreshObjectCachesRequest extends RpcAcsRequest<RefreshObjectCache
 		}
 	}
 
-	public String getObjectPath() {
-		return this.objectPath;
+	public String getMediaSequences() {
+		return this.mediaSequences;
 	}
 
-	public void setObjectPath(String objectPath) {
-		this.objectPath = objectPath;
-		if(objectPath != null){
-			putQueryParameter("ObjectPath", objectPath);
+	public void setMediaSequences(String mediaSequences) {
+		this.mediaSequences = mediaSequences;
+		if(mediaSequences != null){
+			putQueryParameter("MediaSequences", mediaSequences);
 		}
 	}
 
@@ -93,20 +108,31 @@ public class RefreshObjectCachesRequest extends RpcAcsRequest<RefreshObjectCache
 		}
 	}
 
-	public String getObjectType() {
-		return this.objectType;
+	public String getMediaId() {
+		return this.mediaId;
 	}
 
-	public void setObjectType(String objectType) {
-		this.objectType = objectType;
-		if(objectType != null){
-			putQueryParameter("ObjectType", objectType);
+	public void setMediaId(String mediaId) {
+		this.mediaId = mediaId;
+		if(mediaId != null){
+			putQueryParameter("MediaId", mediaId);
+		}
+	}
+
+	public String getMediaType() {
+		return this.mediaType;
+	}
+
+	public void setMediaType(String mediaType) {
+		this.mediaType = mediaType;
+		if(mediaType != null){
+			putQueryParameter("MediaType", mediaType);
 		}
 	}
 
 	@Override
-	public Class<RefreshObjectCachesResponse> getResponseClass() {
-		return RefreshObjectCachesResponse.class;
+	public Class<AddMediaSequencesResponse> getResponseClass() {
+		return AddMediaSequencesResponse.class;
 	}
 
 }

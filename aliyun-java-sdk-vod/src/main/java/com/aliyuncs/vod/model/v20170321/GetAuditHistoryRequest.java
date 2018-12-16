@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class GetAuditHistoryRequest extends RpcAcsRequest<GetAuditHistoryResponse> {
 	
 	public GetAuditHistoryRequest() {
-		super("vod", "2017-03-21", "GetAuditHistory");
+		super("vod", "2017-03-21", "GetAuditHistory", "vod");
 	}
 
 	private Long pageNo;

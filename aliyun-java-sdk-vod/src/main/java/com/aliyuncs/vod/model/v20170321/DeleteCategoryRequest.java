@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeleteCategoryRequest extends RpcAcsRequest<DeleteCategoryResponse> {
 	
 	public DeleteCategoryRequest() {
-		super("vod", "2017-03-21", "DeleteCategory");
+		super("vod", "2017-03-21", "DeleteCategory", "vod");
 	}
 
 	private String resourceOwnerId;

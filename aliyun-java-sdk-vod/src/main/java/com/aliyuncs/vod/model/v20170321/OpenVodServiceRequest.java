@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class OpenVodServiceRequest extends RpcAcsRequest<OpenVodServiceResponse> {
 	
 	public OpenVodServiceRequest() {
-		super("vod", "2017-03-21", "OpenVodService");
+		super("vod", "2017-03-21", "OpenVodService", "vod");
 	}
 
 	private String resourceOwnerId;

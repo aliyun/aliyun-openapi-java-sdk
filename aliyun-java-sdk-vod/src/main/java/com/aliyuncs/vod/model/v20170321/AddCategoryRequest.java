@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class AddCategoryRequest extends RpcAcsRequest<AddCategoryResponse> {
 	
 	public AddCategoryRequest() {
-		super("vod", "2017-03-21", "AddCategory");
+		super("vod", "2017-03-21", "AddCategory", "vod");
 	}
 
 	private String resourceOwnerId;

@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ListAIVideoTerrorismRecogJobRequest extends RpcAcsRequest<ListAIVideoTerrorismRecogJobResponse> {
 	
 	public ListAIVideoTerrorismRecogJobRequest() {
-		super("vod", "2017-03-21", "ListAIVideoTerrorismRecogJob");
+		super("vod", "2017-03-21", "ListAIVideoTerrorismRecogJob", "vod");
 	}
 
 	private String resourceOwnerId;

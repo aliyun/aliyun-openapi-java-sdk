@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class GetMediaDNAResultRequest extends RpcAcsRequest<GetMediaDNAResultResponse> {
 	
 	public GetMediaDNAResultRequest() {
-		super("vod", "2017-03-21", "GetMediaDNAResult");
+		super("vod", "2017-03-21", "GetMediaDNAResult", "vod");
 	}
 
 	private String resourceOwnerId;
