@@ -47,7 +47,7 @@ public class QueryItemDetailResponseUnmarshaller {
 		item.setIsSellerPayPostfee(context.booleanValue("QueryItemDetailResponse.Item.IsSellerPayPostfee"));
 		item.setIsCanSell(context.booleanValue("QueryItemDetailResponse.Item.IsCanSell"));
 		item.setTotalSoldQuantity(context.integerValue("QueryItemDetailResponse.Item.TotalSoldQuantity"));
-		item.setProperties(context.stringValue("QueryItemDetailResponse.Item.Properties"));
+		item.setProperties(context.mapValue("QueryItemDetailResponse.Item.Properties"));
 
 		List<String> iforestProps = new ArrayList<String>();
 		for (int i = 0; i < context.lengthValue("QueryItemDetailResponse.Item.IforestProps.Length"); i++) {
@@ -67,7 +67,7 @@ public class QueryItemDetailResponseUnmarshaller {
 			sku.setExtJson(context.stringValue("QueryItemDetailResponse.Item.Skus["+ i +"].ExtJson"));
 			sku.setItemId(context.longValue("QueryItemDetailResponse.Item.Skus["+ i +"].ItemId"));
 			sku.setSkuId(context.longValue("QueryItemDetailResponse.Item.Skus["+ i +"].SkuId"));
-			sku.setSkuProperties(context.stringValue("QueryItemDetailResponse.Item.Skus["+ i +"].SkuProperties"));
+			sku.setSkuProperties(context.mapValue("QueryItemDetailResponse.Item.Skus["+ i +"].SkuProperties"));
 			sku.setSkuPicUrl(context.stringValue("QueryItemDetailResponse.Item.Skus["+ i +"].SkuPicUrl"));
 			sku.setSkuTitle(context.stringValue("QueryItemDetailResponse.Item.Skus["+ i +"].SkuTitle"));
 			sku.setQuantity(context.integerValue("QueryItemDetailResponse.Item.Skus["+ i +"].Quantity"));

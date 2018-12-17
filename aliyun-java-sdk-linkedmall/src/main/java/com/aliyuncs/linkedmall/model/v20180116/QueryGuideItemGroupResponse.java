@@ -15,6 +15,7 @@
 package com.aliyuncs.linkedmall.model.v20180116;
 
 import java.util.List;
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.linkedmall.transform.v20180116.QueryGuideItemGroupResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -109,7 +110,7 @@ public class QueryGuideItemGroupResponse extends AcsResponse {
 
 		private Long points;
 
-		private Long reservePrice;
+		private String reservePrice;
 
 		private Long pointsAmount;
 
@@ -163,11 +164,11 @@ public class QueryGuideItemGroupResponse extends AcsResponse {
 			this.points = points;
 		}
 
-		public Long getReservePrice() {
+		public String getReservePrice() {
 			return this.reservePrice;
 		}
 
-		public void setReservePrice(Long reservePrice) {
+		public void setReservePrice(String reservePrice) {
 			this.reservePrice = reservePrice;
 		}
 

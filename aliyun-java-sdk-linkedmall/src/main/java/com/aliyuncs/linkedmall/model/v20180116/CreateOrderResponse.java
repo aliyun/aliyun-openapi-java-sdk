@@ -14,16 +14,17 @@
 
 package com.aliyuncs.linkedmall.model.v20180116;
 
+import java.util.List;
 import java.util.Map;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.linkedmall.transform.v20180116.ReserveMovieSeatResponseUnmarshaller;
+import com.aliyuncs.linkedmall.transform.v20180116.CreateOrderResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ReserveMovieSeatResponse extends AcsResponse {
+public class CreateOrderResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -39,7 +40,9 @@ public class ReserveMovieSeatResponse extends AcsResponse {
 
 	private Boolean success;
 
-	private ReservedSeat reservedSeat;
+	private Long totalCount;
+
+	private Model model;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -97,59 +100,57 @@ public class ReserveMovieSeatResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public ReservedSeat getReservedSeat() {
-		return this.reservedSeat;
+	public Long getTotalCount() {
+		return this.totalCount;
 	}
 
-	public void setReservedSeat(ReservedSeat reservedSeat) {
-		this.reservedSeat = reservedSeat;
+	public void setTotalCount(Long totalCount) {
+		this.totalCount = totalCount;
 	}
 
-	public static class ReservedSeat {
+	public Model getModel() {
+		return this.model;
+	}
 
-		private String applyKey;
+	public void setModel(Model model) {
+		this.model = model;
+	}
 
-		private Long defaultLockSecond;
+	public static class Model {
 
-		private Long reservedTime;
+		private String redirectUrl;
 
-		private String status;
+		private List<String> orderIds;
 
-		public String getApplyKey() {
-			return this.applyKey;
+		private List<String> payTradeIds;
+
+		public String getRedirectUrl() {
+			return this.redirectUrl;
 		}
 
-		public void setApplyKey(String applyKey) {
-			this.applyKey = applyKey;
+		public void setRedirectUrl(String redirectUrl) {
+			this.redirectUrl = redirectUrl;
 		}
 
-		public Long getDefaultLockSecond() {
-			return this.defaultLockSecond;
+		public List<String> getOrderIds() {
+			return this.orderIds;
 		}
 
-		public void setDefaultLockSecond(Long defaultLockSecond) {
-			this.defaultLockSecond = defaultLockSecond;
+		public void setOrderIds(List<String> orderIds) {
+			this.orderIds = orderIds;
 		}
 
-		public Long getReservedTime() {
-			return this.reservedTime;
+		public List<String> getPayTradeIds() {
+			return this.payTradeIds;
 		}
 
-		public void setReservedTime(Long reservedTime) {
-			this.reservedTime = reservedTime;
-		}
-
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
+		public void setPayTradeIds(List<String> payTradeIds) {
+			this.payTradeIds = payTradeIds;
 		}
 	}
 
 	@Override
-	public ReserveMovieSeatResponse getInstance(UnmarshallerContext context) {
-		return	ReserveMovieSeatResponseUnmarshaller.unmarshall(this, context);
+	public CreateOrderResponse getInstance(UnmarshallerContext context) {
+		return	CreateOrderResponseUnmarshaller.unmarshall(this, context);
 	}
 }

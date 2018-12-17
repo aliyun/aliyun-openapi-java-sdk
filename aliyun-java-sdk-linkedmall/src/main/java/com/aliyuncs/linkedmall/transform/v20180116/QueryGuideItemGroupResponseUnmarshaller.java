@@ -43,7 +43,7 @@ public class QueryGuideItemGroupResponseUnmarshaller {
 			itemInfo.setItemUrl(context.stringValue("QueryGuideItemGroupResponse.GuideItemGroup["+ i +"].ItemUrl"));
 			itemInfo.setPriceCent(context.longValue("QueryGuideItemGroupResponse.GuideItemGroup["+ i +"].PriceCent"));
 			itemInfo.setPoints(context.longValue("QueryGuideItemGroupResponse.GuideItemGroup["+ i +"].Points"));
-			itemInfo.setReservePrice(context.longValue("QueryGuideItemGroupResponse.GuideItemGroup["+ i +"].ReservePrice"));
+			itemInfo.setReservePrice(context.stringValue("QueryGuideItemGroupResponse.GuideItemGroup["+ i +"].ReservePrice"));
 			itemInfo.setPointsAmount(context.longValue("QueryGuideItemGroupResponse.GuideItemGroup["+ i +"].PointsAmount"));
 			itemInfo.setPointPrice(context.longValue("QueryGuideItemGroupResponse.GuideItemGroup["+ i +"].PointPrice"));
 

@@ -120,7 +120,7 @@ public class QueryItemDetailResponse extends AcsResponse {
 
 		private Integer totalSoldQuantity;
 
-		private String properties;
+		private Map<Object,Object> properties;
 
 		private List<Sku> skus;
 
@@ -216,11 +216,11 @@ public class QueryItemDetailResponse extends AcsResponse {
 			this.totalSoldQuantity = totalSoldQuantity;
 		}
 
-		public String getProperties() {
+		public Map<Object,Object> getProperties() {
 			return this.properties;
 		}
 
-		public void setProperties(String properties) {
+		public void setProperties(Map<Object,Object> properties) {
 			this.properties = properties;
 		}
 
@@ -256,7 +256,7 @@ public class QueryItemDetailResponse extends AcsResponse {
 
 			private Long skuId;
 
-			private String skuProperties;
+			private Map<Object,Object> skuProperties;
 
 			private String skuPicUrl;
 
@@ -296,11 +296,11 @@ public class QueryItemDetailResponse extends AcsResponse {
 				this.skuId = skuId;
 			}
 
-			public String getSkuProperties() {
+			public Map<Object,Object> getSkuProperties() {
 				return this.skuProperties;
 			}
 
-			public void setSkuProperties(String skuProperties) {
+			public void setSkuProperties(Map<Object,Object> skuProperties) {
 				this.skuProperties = skuProperties;
 			}
 

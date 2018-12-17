@@ -14,6 +14,7 @@
 
 package com.aliyuncs.linkedmall.model.v20180116;
 
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.linkedmall.transform.v20180116.QueryMovieTicketsResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
