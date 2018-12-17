@@ -1,3 +1,8 @@
+2018-12-17 Version: 1.0.7
+1, Add EnableBillGeneration interface.
+2, Authorization for Virtual Network Operator.
+
+
 2018-11-22 Version: 1.0.6
 1, Provide attribute info for DescribePricingModule api.
 

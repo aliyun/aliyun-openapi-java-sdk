@@ -174,6 +174,8 @@ public class GetOrderDetailResponse extends AcsResponse {
 
 			private String paymentCurrency;
 
+			private String operator;
+
 			public String getOrderId() {
 				return this.orderId;
 			}
@@ -348,6 +350,14 @@ public class GetOrderDetailResponse extends AcsResponse {
 
 			public void setPaymentCurrency(String paymentCurrency) {
 				this.paymentCurrency = paymentCurrency;
+			}
+
+			public String getOperator() {
+				return this.operator;
+			}
+
+			public void setOperator(String operator) {
+				this.operator = operator;
 			}
 		}
 	}
