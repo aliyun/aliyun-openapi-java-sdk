@@ -5,3 +5,4 @@
 */*.bat
 */*.DS_Store
 .idea/
+.vscode/
