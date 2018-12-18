@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.drds.model.v20171016.QueryInstanceInfoByConnResponse;
 import com.aliyuncs.drds.model.v20171016.QueryInstanceInfoByConnResponse.Data;
 import com.aliyuncs.drds.model.v20171016.QueryInstanceInfoByConnResponse.Data.Vip;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

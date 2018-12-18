@@ -26,6 +26,8 @@ public class CreateDrdsInstanceRequest extends RpcAcsRequest<CreateDrdsInstanceR
 		super("Drds", "2017-10-16", "CreateDrdsInstance", "Drds");
 	}
 
+	private Boolean isAutoRenew;
+
 	private Integer quantity;
 
 	private String description;
@@ -36,6 +38,8 @@ public class CreateDrdsInstanceRequest extends RpcAcsRequest<CreateDrdsInstanceR
 
 	private String vswitchId;
 
+	private Integer duration;
+
 	private Boolean isHa;
 
 	private String instanceSeries;
@@ -45,6 +49,19 @@ public class CreateDrdsInstanceRequest extends RpcAcsRequest<CreateDrdsInstanceR
 	private String zoneId;
 
 	private String payType;
+
+	private String pricingCycle;
+
+	public Boolean getIsAutoRenew() {
+		return this.isAutoRenew;
+	}
+
+	public void setIsAutoRenew(Boolean isAutoRenew) {
+		this.isAutoRenew = isAutoRenew;
+		if(isAutoRenew != null){
+			putQueryParameter("IsAutoRenew", isAutoRenew.toString());
+		}
+	}
 
 	public Integer getQuantity() {
 		return this.quantity;
@@ -101,6 +118,17 @@ public class CreateDrdsInstanceRequest extends RpcAcsRequest<CreateDrdsInstanceR
 		}
 	}
 
+	public Integer getDuration() {
+		return this.duration;
+	}
+
+	public void setDuration(Integer duration) {
+		this.duration = duration;
+		if(duration != null){
+			putQueryParameter("Duration", duration.toString());
+		}
+	}
+
 	public Boolean getIsHa() {
 		return this.isHa;
 	}
@@ -153,6 +181,17 @@ public class CreateDrdsInstanceRequest extends RpcAcsRequest<CreateDrdsInstanceR
 		this.payType = payType;
 		if(payType != null){
 			putQueryParameter("PayType", payType);
+		}
+	}
+
+	public String getPricingCycle() {
+		return this.pricingCycle;
+	}
+
+	public void setPricingCycle(String pricingCycle) {
+		this.pricingCycle = pricingCycle;
+		if(pricingCycle != null){
+			putQueryParameter("PricingCycle", pricingCycle);
 		}
 	}
 

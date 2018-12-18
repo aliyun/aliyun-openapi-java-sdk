@@ -21,6 +21,7 @@ import com.aliyuncs.drds.model.v20171016.DescribeRegionsResponse;
 import com.aliyuncs.drds.model.v20171016.DescribeRegionsResponse.DrdsRegion;
 import com.aliyuncs.drds.model.v20171016.DescribeRegionsResponse.DrdsRegion.InstanceSeries;
 import com.aliyuncs.drds.model.v20171016.DescribeRegionsResponse.DrdsRegion.InstanceSeries.Spec;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

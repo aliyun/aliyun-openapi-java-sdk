@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.drds.model.v20171016.DescribeDrdsDBIpWhiteListResponse;
 import com.aliyuncs.drds.model.v20171016.DescribeDrdsDBIpWhiteListResponse.Data;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
