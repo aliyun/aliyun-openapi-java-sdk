@@ -2,6 +2,11 @@
 language: java
 sudo: false # faster builds
 
+jdk:
+  - oraclejdk8
+  - oraclejdk9
+  - oraclejdk11
+
 script:
   - cd ./aliyun-java-sdk-core
   #- mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
