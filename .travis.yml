@@ -8,5 +8,4 @@ script:
   - mvn test -B
 
 after_success:
-  - cd ./aliyun-java-sdk-core
   - bash <(curl -s https://codecov.io/bash)
