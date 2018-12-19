@@ -1,0 +1,4 @@
+2018-12-19 Version: 2.37.0
+1, Add api: InstallAgent.
+2, Add parameter debugEnable of ListUserDefineRegion.
+
