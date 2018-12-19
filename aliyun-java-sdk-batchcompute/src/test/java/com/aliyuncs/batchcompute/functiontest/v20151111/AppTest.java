@@ -91,6 +91,12 @@ public class AppTest extends TestCase {
         assertEquals(gInstanceType, config.getInstanceType().getDefaultValue());
         assertEquals("de", config.getInstanceType().getDescription());
 
+        assertEquals("/home/mount/", config.getDataDiskMountPoint().getDefaultValue());
+        assertEquals("minDataMountPoint", config.getDataDiskMountPoint().getDescription());
+        assertEquals("cloud_efficiency", config.getDataDiskType().getDefaultValue());
+        assertEquals("dataDiskType", config.getDataDiskType().getDescription());
+        assertEquals(40, config.getMinDatDiskSize().getDefaultValue());
+        assertEquals("minDataDiskSize", config.getMinDatDiskSize().getDescription());
 
         //4. update
         AppDescription.Docker docker = new AppDescription.Docker();
@@ -149,6 +155,24 @@ public class AppTest extends TestCase {
         instanceTypeConfigValue.setDescription("de");
         instanceTypeConfigValue.setOverwritable(true);
         config.setInstanceType(instanceTypeConfigValue);
+
+        AppDescription.ConfigValueInteger dataDiskSizeConfigInt = new AppDescription.ConfigValueInteger();
+        dataDiskSizeConfigInt.setOverwritable(true);
+        dataDiskSizeConfigInt.setDefaultValue(40);
+        dataDiskSizeConfigInt.setDescription("minDataDiskSize");
+        config.setMinDataDiskSize(dataDiskSizeConfigInt);
+
+        AppDescription.ConfigValue dataDiskMountPoint = new AppDescription.ConfigValue();
+        dataDiskMountPoint.setOverwritable(true);
+        dataDiskMountPoint.setDefaultValue("/home/mount/");
+        dataDiskMountPoint.setDescription("minDataMountPoint");
+        config.setDataDiskMountPoint(dataDiskMountPoint);
+
+        AppDescription.ConfigValue dataDiskType = new AppDescription.ConfigValue();
+        dataDiskType.setDescription("dataDiskType");
+        dataDiskType.setDefaultValue("cloud_efficiency");
+        dataDiskType.setOverwritable(true);
+        config.setDataDiskType(dataDiskType);
 
         desc.setConfig(config);
 

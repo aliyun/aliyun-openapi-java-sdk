@@ -1,4 +1,9 @@
 # release notes
+6.0.4
+```
+1. 支持App 数据盘参数设置
+```
+
 6.0.3
 ```
 1. 修复支持docker imageId

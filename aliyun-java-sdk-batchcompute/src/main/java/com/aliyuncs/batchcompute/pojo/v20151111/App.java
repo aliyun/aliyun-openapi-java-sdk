@@ -136,6 +136,38 @@ public class App {
         @JsonProperty("Timeout")
         private ConfigValueLong timeout;
 
+        @JsonProperty("MinDataDiskSize")
+        private ConfigValueInteger minDataDiskSize;
+
+        @JsonProperty("DataDiskType")
+        private ConfigValue dataDiskType;
+
+        @JsonProperty("DataDiskMountPoint")
+        private ConfigValue dataDiskMountPoint;
+
+        @JsonIgnore
+        public ConfigValueInteger getMinDatDiskSize() {
+            return minDataDiskSize;
+        }
+        @JsonIgnore
+        public void setMinDataDiskSize(ConfigValueInteger minDataDiskSize) {
+            this.minDataDiskSize = minDataDiskSize;
+        }
+        @JsonIgnore
+        public ConfigValue getDataDiskType() {
+            return dataDiskType;
+        }
+        @JsonIgnore
+        public void setDataDiskType(ConfigValue dataDiskType) {
+            this.dataDiskType = dataDiskType;
+        }
+        @JsonIgnore
+        public ConfigValue getDataDiskMountPoint() {
+            return dataDiskMountPoint;
+        }
+        @JsonIgnore
+        public void setDataDiskMountPointDiskType(ConfigValue dataDiskMountPoint) { this.dataDiskMountPoint = dataDiskMountPoint; }
+
         @JsonIgnore
         public ConfigValue getResourceType() {
             return resourceType;

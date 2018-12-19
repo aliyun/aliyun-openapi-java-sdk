@@ -1,3 +1,6 @@
+2018-12-19 Version: 6.0.4
+1, add app support data disk
+
 2018-11-19 Version: 6.0.3
 1, fix docker image bug
 
