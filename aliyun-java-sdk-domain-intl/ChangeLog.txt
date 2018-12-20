@@ -1,3 +1,7 @@
+2018-12-20 Version: 1.4.0
+1, Add Dns Sec apis.
+2, Add coupon and promotion fields for order apis.
+
 2018-11-13 Version: 1.3.0
 1, Add FuzzyMatchDomainSensitiveWord interface，Support fuzzy matching sensitive words.
 2, Add BatchFuzzyMatchDomainSensitiveWord interface，Support batch fuzzy matching sensitive words.

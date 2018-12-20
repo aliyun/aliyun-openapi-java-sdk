@@ -40,6 +40,8 @@ public class QueryRegistrantProfilesRequest extends RpcAcsRequest<QueryRegistran
 
 	private Boolean defaultRegistrantProfile;
 
+	private String email;
+
 	public String getRegistrantOrganization() {
 		return this.registrantOrganization;
 	}
@@ -114,6 +116,17 @@ public class QueryRegistrantProfilesRequest extends RpcAcsRequest<QueryRegistran
 		this.defaultRegistrantProfile = defaultRegistrantProfile;
 		if(defaultRegistrantProfile != null){
 			putQueryParameter("DefaultRegistrantProfile", defaultRegistrantProfile.toString());
+		}
+	}
+
+	public String getEmail() {
+		return this.email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+		if(email != null){
+			putQueryParameter("Email", email);
 		}
 	}
 

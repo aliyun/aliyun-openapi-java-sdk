@@ -30,11 +30,7 @@ public class SaveSingleTaskForCreatingOrderActivateRequest extends RpcAcsRequest
 
 	private Integer subscriptionDuration;
 
-	private String address;
-
 	private Boolean permitPremiumActivation;
-
-	private String telArea;
 
 	private String city;
 
@@ -42,17 +38,11 @@ public class SaveSingleTaskForCreatingOrderActivateRequest extends RpcAcsRequest
 
 	private String dns1;
 
-	private String domainName;
-
 	private Long registrantProfileId;
 
-	private String telephone;
-
-	private Boolean trademarkDomainActivation;
+	private String couponNo;
 
 	private Boolean aliyunDns;
-
-	private String registrantOrganization;
 
 	private String telExt;
 
@@ -60,15 +50,33 @@ public class SaveSingleTaskForCreatingOrderActivateRequest extends RpcAcsRequest
 
 	private String postalCode;
 
-	private String userClientIp;
-
-	private Boolean enableDomainProxy;
-
 	private String lang;
 
 	private String email;
 
+	private String address;
+
+	private String telArea;
+
+	private String domainName;
+
+	private String telephone;
+
+	private Boolean trademarkDomainActivation;
+
+	private Boolean useCoupon;
+
+	private String registrantOrganization;
+
+	private String promotionNo;
+
+	private String userClientIp;
+
+	private Boolean enableDomainProxy;
+
 	private String registrantName;
+
+	private Boolean usePromotion;
 
 	public String getCountry() {
 		return this.country;
@@ -92,17 +100,6 @@ public class SaveSingleTaskForCreatingOrderActivateRequest extends RpcAcsRequest
 		}
 	}
 
-	public String getAddress() {
-		return this.address;
-	}
-
-	public void setAddress(String address) {
-		this.address = address;
-		if(address != null){
-			putQueryParameter("Address", address);
-		}
-	}
-
 	public Boolean getPermitPremiumActivation() {
 		return this.permitPremiumActivation;
 	}
@@ -111,17 +108,6 @@ public class SaveSingleTaskForCreatingOrderActivateRequest extends RpcAcsRequest
 		this.permitPremiumActivation = permitPremiumActivation;
 		if(permitPremiumActivation != null){
 			putQueryParameter("PermitPremiumActivation", permitPremiumActivation.toString());
-		}
-	}
-
-	public String getTelArea() {
-		return this.telArea;
-	}
-
-	public void setTelArea(String telArea) {
-		this.telArea = telArea;
-		if(telArea != null){
-			putQueryParameter("TelArea", telArea);
 		}
 	}
 
@@ -158,17 +144,6 @@ public class SaveSingleTaskForCreatingOrderActivateRequest extends RpcAcsRequest
 		}
 	}
 
-	public String getDomainName() {
-		return this.domainName;
-	}
-
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
-		if(domainName != null){
-			putQueryParameter("DomainName", domainName);
-		}
-	}
-
 	public Long getRegistrantProfileId() {
 		return this.registrantProfileId;
 	}
@@ -180,25 +155,14 @@ public class SaveSingleTaskForCreatingOrderActivateRequest extends RpcAcsRequest
 		}
 	}
 
-	public String getTelephone() {
-		return this.telephone;
+	public String getCouponNo() {
+		return this.couponNo;
 	}
 
-	public void setTelephone(String telephone) {
-		this.telephone = telephone;
-		if(telephone != null){
-			putQueryParameter("Telephone", telephone);
-		}
-	}
-
-	public Boolean getTrademarkDomainActivation() {
-		return this.trademarkDomainActivation;
-	}
-
-	public void setTrademarkDomainActivation(Boolean trademarkDomainActivation) {
-		this.trademarkDomainActivation = trademarkDomainActivation;
-		if(trademarkDomainActivation != null){
-			putQueryParameter("TrademarkDomainActivation", trademarkDomainActivation.toString());
+	public void setCouponNo(String couponNo) {
+		this.couponNo = couponNo;
+		if(couponNo != null){
+			putQueryParameter("CouponNo", couponNo);
 		}
 	}
 
@@ -210,17 +174,6 @@ public class SaveSingleTaskForCreatingOrderActivateRequest extends RpcAcsRequest
 		this.aliyunDns = aliyunDns;
 		if(aliyunDns != null){
 			putQueryParameter("AliyunDns", aliyunDns.toString());
-		}
-	}
-
-	public String getRegistrantOrganization() {
-		return this.registrantOrganization;
-	}
-
-	public void setRegistrantOrganization(String registrantOrganization) {
-		this.registrantOrganization = registrantOrganization;
-		if(registrantOrganization != null){
-			putQueryParameter("RegistrantOrganization", registrantOrganization);
 		}
 	}
 
@@ -257,28 +210,6 @@ public class SaveSingleTaskForCreatingOrderActivateRequest extends RpcAcsRequest
 		}
 	}
 
-	public String getUserClientIp() {
-		return this.userClientIp;
-	}
-
-	public void setUserClientIp(String userClientIp) {
-		this.userClientIp = userClientIp;
-		if(userClientIp != null){
-			putQueryParameter("UserClientIp", userClientIp);
-		}
-	}
-
-	public Boolean getEnableDomainProxy() {
-		return this.enableDomainProxy;
-	}
-
-	public void setEnableDomainProxy(Boolean enableDomainProxy) {
-		this.enableDomainProxy = enableDomainProxy;
-		if(enableDomainProxy != null){
-			putQueryParameter("EnableDomainProxy", enableDomainProxy.toString());
-		}
-	}
-
 	public String getLang() {
 		return this.lang;
 	}
@@ -301,6 +232,116 @@ public class SaveSingleTaskForCreatingOrderActivateRequest extends RpcAcsRequest
 		}
 	}
 
+	public String getAddress() {
+		return this.address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+		if(address != null){
+			putQueryParameter("Address", address);
+		}
+	}
+
+	public String getTelArea() {
+		return this.telArea;
+	}
+
+	public void setTelArea(String telArea) {
+		this.telArea = telArea;
+		if(telArea != null){
+			putQueryParameter("TelArea", telArea);
+		}
+	}
+
+	public String getDomainName() {
+		return this.domainName;
+	}
+
+	public void setDomainName(String domainName) {
+		this.domainName = domainName;
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
+		}
+	}
+
+	public String getTelephone() {
+		return this.telephone;
+	}
+
+	public void setTelephone(String telephone) {
+		this.telephone = telephone;
+		if(telephone != null){
+			putQueryParameter("Telephone", telephone);
+		}
+	}
+
+	public Boolean getTrademarkDomainActivation() {
+		return this.trademarkDomainActivation;
+	}
+
+	public void setTrademarkDomainActivation(Boolean trademarkDomainActivation) {
+		this.trademarkDomainActivation = trademarkDomainActivation;
+		if(trademarkDomainActivation != null){
+			putQueryParameter("TrademarkDomainActivation", trademarkDomainActivation.toString());
+		}
+	}
+
+	public Boolean getUseCoupon() {
+		return this.useCoupon;
+	}
+
+	public void setUseCoupon(Boolean useCoupon) {
+		this.useCoupon = useCoupon;
+		if(useCoupon != null){
+			putQueryParameter("UseCoupon", useCoupon.toString());
+		}
+	}
+
+	public String getRegistrantOrganization() {
+		return this.registrantOrganization;
+	}
+
+	public void setRegistrantOrganization(String registrantOrganization) {
+		this.registrantOrganization = registrantOrganization;
+		if(registrantOrganization != null){
+			putQueryParameter("RegistrantOrganization", registrantOrganization);
+		}
+	}
+
+	public String getPromotionNo() {
+		return this.promotionNo;
+	}
+
+	public void setPromotionNo(String promotionNo) {
+		this.promotionNo = promotionNo;
+		if(promotionNo != null){
+			putQueryParameter("PromotionNo", promotionNo);
+		}
+	}
+
+	public String getUserClientIp() {
+		return this.userClientIp;
+	}
+
+	public void setUserClientIp(String userClientIp) {
+		this.userClientIp = userClientIp;
+		if(userClientIp != null){
+			putQueryParameter("UserClientIp", userClientIp);
+		}
+	}
+
+	public Boolean getEnableDomainProxy() {
+		return this.enableDomainProxy;
+	}
+
+	public void setEnableDomainProxy(Boolean enableDomainProxy) {
+		this.enableDomainProxy = enableDomainProxy;
+		if(enableDomainProxy != null){
+			putQueryParameter("EnableDomainProxy", enableDomainProxy.toString());
+		}
+	}
+
 	public String getRegistrantName() {
 		return this.registrantName;
 	}
@@ -309,6 +350,17 @@ public class SaveSingleTaskForCreatingOrderActivateRequest extends RpcAcsRequest
 		this.registrantName = registrantName;
 		if(registrantName != null){
 			putQueryParameter("RegistrantName", registrantName);
+		}
+	}
+
+	public Boolean getUsePromotion() {
+		return this.usePromotion;
+	}
+
+	public void setUsePromotion(Boolean usePromotion) {
+		this.usePromotion = usePromotion;
+		if(usePromotion != null){
+			putQueryParameter("UsePromotion", usePromotion.toString());
 		}
 	}
 
