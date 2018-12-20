@@ -40,6 +40,8 @@ public class SaveSingleTaskForCreatingOrderActivateRequest extends RpcAcsRequest
 
 	private Long registrantProfileId;
 
+	private String couponNo;
+
 	private Boolean aliyunDns;
 
 	private String zhCity;
@@ -72,15 +74,21 @@ public class SaveSingleTaskForCreatingOrderActivateRequest extends RpcAcsRequest
 
 	private Boolean trademarkDomainActivation;
 
+	private Boolean useCoupon;
+
 	private String zhProvince;
 
 	private String registrantOrganization;
+
+	private String promotionNo;
 
 	private Boolean enableDomainProxy;
 
 	private String userClientIp;
 
 	private String registrantName;
+
+	private Boolean usePromotion;
 
 	public String getCountry() {
 		return this.country;
@@ -156,6 +164,17 @@ public class SaveSingleTaskForCreatingOrderActivateRequest extends RpcAcsRequest
 		this.registrantProfileId = registrantProfileId;
 		if(registrantProfileId != null){
 			putQueryParameter("RegistrantProfileId", registrantProfileId.toString());
+		}
+	}
+
+	public String getCouponNo() {
+		return this.couponNo;
+	}
+
+	public void setCouponNo(String couponNo) {
+		this.couponNo = couponNo;
+		if(couponNo != null){
+			putQueryParameter("CouponNo", couponNo);
 		}
 	}
 
@@ -335,6 +354,17 @@ public class SaveSingleTaskForCreatingOrderActivateRequest extends RpcAcsRequest
 		}
 	}
 
+	public Boolean getUseCoupon() {
+		return this.useCoupon;
+	}
+
+	public void setUseCoupon(Boolean useCoupon) {
+		this.useCoupon = useCoupon;
+		if(useCoupon != null){
+			putQueryParameter("UseCoupon", useCoupon.toString());
+		}
+	}
+
 	public String getZhProvince() {
 		return this.zhProvince;
 	}
@@ -354,6 +384,17 @@ public class SaveSingleTaskForCreatingOrderActivateRequest extends RpcAcsRequest
 		this.registrantOrganization = registrantOrganization;
 		if(registrantOrganization != null){
 			putQueryParameter("RegistrantOrganization", registrantOrganization);
+		}
+	}
+
+	public String getPromotionNo() {
+		return this.promotionNo;
+	}
+
+	public void setPromotionNo(String promotionNo) {
+		this.promotionNo = promotionNo;
+		if(promotionNo != null){
+			putQueryParameter("PromotionNo", promotionNo);
 		}
 	}
 
@@ -387,6 +428,17 @@ public class SaveSingleTaskForCreatingOrderActivateRequest extends RpcAcsRequest
 		this.registrantName = registrantName;
 		if(registrantName != null){
 			putQueryParameter("RegistrantName", registrantName);
+		}
+	}
+
+	public Boolean getUsePromotion() {
+		return this.usePromotion;
+	}
+
+	public void setUsePromotion(Boolean usePromotion) {
+		this.usePromotion = usePromotion;
+		if(usePromotion != null){
+			putQueryParameter("UsePromotion", usePromotion.toString());
 		}
 	}
 

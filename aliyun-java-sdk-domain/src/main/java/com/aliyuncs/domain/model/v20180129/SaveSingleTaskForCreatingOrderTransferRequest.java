@@ -28,6 +28,8 @@ public class SaveSingleTaskForCreatingOrderTransferRequest extends RpcAcsRequest
 
 	private Boolean permitPremiumTransfer;
 
+	private String promotionNo;
+
 	private String authorizationCode;
 
 	private String userClientIp;
@@ -36,7 +38,13 @@ public class SaveSingleTaskForCreatingOrderTransferRequest extends RpcAcsRequest
 
 	private Long registrantProfileId;
 
+	private String couponNo;
+
+	private Boolean useCoupon;
+
 	private String lang;
+
+	private Boolean usePromotion;
 
 	public Boolean getPermitPremiumTransfer() {
 		return this.permitPremiumTransfer;
@@ -46,6 +54,17 @@ public class SaveSingleTaskForCreatingOrderTransferRequest extends RpcAcsRequest
 		this.permitPremiumTransfer = permitPremiumTransfer;
 		if(permitPremiumTransfer != null){
 			putQueryParameter("PermitPremiumTransfer", permitPremiumTransfer.toString());
+		}
+	}
+
+	public String getPromotionNo() {
+		return this.promotionNo;
+	}
+
+	public void setPromotionNo(String promotionNo) {
+		this.promotionNo = promotionNo;
+		if(promotionNo != null){
+			putQueryParameter("PromotionNo", promotionNo);
 		}
 	}
 
@@ -93,6 +112,28 @@ public class SaveSingleTaskForCreatingOrderTransferRequest extends RpcAcsRequest
 		}
 	}
 
+	public String getCouponNo() {
+		return this.couponNo;
+	}
+
+	public void setCouponNo(String couponNo) {
+		this.couponNo = couponNo;
+		if(couponNo != null){
+			putQueryParameter("CouponNo", couponNo);
+		}
+	}
+
+	public Boolean getUseCoupon() {
+		return this.useCoupon;
+	}
+
+	public void setUseCoupon(Boolean useCoupon) {
+		this.useCoupon = useCoupon;
+		if(useCoupon != null){
+			putQueryParameter("UseCoupon", useCoupon.toString());
+		}
+	}
+
 	public String getLang() {
 		return this.lang;
 	}
@@ -101,6 +142,17 @@ public class SaveSingleTaskForCreatingOrderTransferRequest extends RpcAcsRequest
 		this.lang = lang;
 		if(lang != null){
 			putQueryParameter("Lang", lang);
+		}
+	}
+
+	public Boolean getUsePromotion() {
+		return this.usePromotion;
+	}
+
+	public void setUsePromotion(Boolean usePromotion) {
+		this.usePromotion = usePromotion;
+		if(usePromotion != null){
+			putQueryParameter("UsePromotion", usePromotion.toString());
 		}
 	}
 

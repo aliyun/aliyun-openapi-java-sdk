@@ -1,3 +1,7 @@
+2018-12-20 Version: 3.12.0
+1, Add Dns Sec apis.
+2, Add coupon and promotion fields for order apis.
+
 2018-11-22 Version: 3.11.0
 1, Add ScrollDomainList api.
 2, Add email filter for QueryRegistrantProfile.

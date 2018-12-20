@@ -28,13 +28,21 @@ public class SaveSingleTaskForCreatingOrderRenewRequest extends RpcAcsRequest<Sa
 
 	private Integer subscriptionDuration;
 
+	private String promotionNo;
+
 	private Long currentExpirationDate;
 
 	private String userClientIp;
 
 	private String domainName;
 
+	private String couponNo;
+
+	private Boolean useCoupon;
+
 	private String lang;
+
+	private Boolean usePromotion;
 
 	public Integer getSubscriptionDuration() {
 		return this.subscriptionDuration;
@@ -44,6 +52,17 @@ public class SaveSingleTaskForCreatingOrderRenewRequest extends RpcAcsRequest<Sa
 		this.subscriptionDuration = subscriptionDuration;
 		if(subscriptionDuration != null){
 			putQueryParameter("SubscriptionDuration", subscriptionDuration.toString());
+		}
+	}
+
+	public String getPromotionNo() {
+		return this.promotionNo;
+	}
+
+	public void setPromotionNo(String promotionNo) {
+		this.promotionNo = promotionNo;
+		if(promotionNo != null){
+			putQueryParameter("PromotionNo", promotionNo);
 		}
 	}
 
@@ -80,6 +99,28 @@ public class SaveSingleTaskForCreatingOrderRenewRequest extends RpcAcsRequest<Sa
 		}
 	}
 
+	public String getCouponNo() {
+		return this.couponNo;
+	}
+
+	public void setCouponNo(String couponNo) {
+		this.couponNo = couponNo;
+		if(couponNo != null){
+			putQueryParameter("CouponNo", couponNo);
+		}
+	}
+
+	public Boolean getUseCoupon() {
+		return this.useCoupon;
+	}
+
+	public void setUseCoupon(Boolean useCoupon) {
+		this.useCoupon = useCoupon;
+		if(useCoupon != null){
+			putQueryParameter("UseCoupon", useCoupon.toString());
+		}
+	}
+
 	public String getLang() {
 		return this.lang;
 	}
@@ -88,6 +129,17 @@ public class SaveSingleTaskForCreatingOrderRenewRequest extends RpcAcsRequest<Sa
 		this.lang = lang;
 		if(lang != null){
 			putQueryParameter("Lang", lang);
+		}
+	}
+
+	public Boolean getUsePromotion() {
+		return this.usePromotion;
+	}
+
+	public void setUsePromotion(Boolean usePromotion) {
+		this.usePromotion = usePromotion;
+		if(usePromotion != null){
+			putQueryParameter("UsePromotion", usePromotion.toString());
 		}
 	}
 

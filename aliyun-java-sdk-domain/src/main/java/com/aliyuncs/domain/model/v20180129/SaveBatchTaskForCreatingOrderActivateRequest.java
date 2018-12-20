@@ -29,9 +29,17 @@ public class SaveBatchTaskForCreatingOrderActivateRequest extends RpcAcsRequest<
 
 	private List<OrderActivateParam> orderActivateParams;
 
+	private String promotionNo;
+
 	private String userClientIp;
 
+	private String couponNo;
+
+	private Boolean useCoupon;
+
 	private String lang;
+
+	private Boolean usePromotion;
 
 	public List<OrderActivateParam> getOrderActivateParams() {
 		return this.orderActivateParams;
@@ -71,6 +79,17 @@ public class SaveBatchTaskForCreatingOrderActivateRequest extends RpcAcsRequest<
 		}	
 	}
 
+	public String getPromotionNo() {
+		return this.promotionNo;
+	}
+
+	public void setPromotionNo(String promotionNo) {
+		this.promotionNo = promotionNo;
+		if(promotionNo != null){
+			putQueryParameter("PromotionNo", promotionNo);
+		}
+	}
+
 	public String getUserClientIp() {
 		return this.userClientIp;
 	}
@@ -82,6 +101,28 @@ public class SaveBatchTaskForCreatingOrderActivateRequest extends RpcAcsRequest<
 		}
 	}
 
+	public String getCouponNo() {
+		return this.couponNo;
+	}
+
+	public void setCouponNo(String couponNo) {
+		this.couponNo = couponNo;
+		if(couponNo != null){
+			putQueryParameter("CouponNo", couponNo);
+		}
+	}
+
+	public Boolean getUseCoupon() {
+		return this.useCoupon;
+	}
+
+	public void setUseCoupon(Boolean useCoupon) {
+		this.useCoupon = useCoupon;
+		if(useCoupon != null){
+			putQueryParameter("UseCoupon", useCoupon.toString());
+		}
+	}
+
 	public String getLang() {
 		return this.lang;
 	}
@@ -90,6 +131,17 @@ public class SaveBatchTaskForCreatingOrderActivateRequest extends RpcAcsRequest<
 		this.lang = lang;
 		if(lang != null){
 			putQueryParameter("Lang", lang);
+		}
+	}
+
+	public Boolean getUsePromotion() {
+		return this.usePromotion;
+	}
+
+	public void setUsePromotion(Boolean usePromotion) {
+		this.usePromotion = usePromotion;
+		if(usePromotion != null){
+			putQueryParameter("UsePromotion", usePromotion.toString());
 		}
 	}
 
