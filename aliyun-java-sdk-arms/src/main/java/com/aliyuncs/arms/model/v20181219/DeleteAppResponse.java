@@ -12,29 +12,22 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.arms.model.v20181015;
+package com.aliyuncs.arms.model.v20181219;
 
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.arms.transform.v20181015.MetricQueryResponseUnmarshaller;
+import com.aliyuncs.arms.transform.v20181219.DeleteAppResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class MetricQueryResponse extends AcsResponse {
-
-	private String data;
+public class DeleteAppResponse extends AcsResponse {
 
 	private String requestId;
 
-	public String getData() {
-		return this.data;
-	}
-
-	public void setData(String data) {
-		this.data = data;
-	}
+	private String data;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -44,8 +37,16 @@ public class MetricQueryResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public String getData() {
+		return this.data;
+	}
+
+	public void setData(String data) {
+		this.data = data;
+	}
+
 	@Override
-	public MetricQueryResponse getInstance(UnmarshallerContext context) {
-		return	MetricQueryResponseUnmarshaller.unmarshall(this, context);
+	public DeleteAppResponse getInstance(UnmarshallerContext context) {
+		return	DeleteAppResponseUnmarshaller.unmarshall(this, context);
 	}
 }

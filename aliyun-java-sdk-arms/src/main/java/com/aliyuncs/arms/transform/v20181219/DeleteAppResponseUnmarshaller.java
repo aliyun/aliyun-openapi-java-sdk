@@ -12,19 +12,19 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.arms.transform.v20181015;
+package com.aliyuncs.arms.transform.v20181219;
 
-import com.aliyuncs.arms.model.v20181015.MetricQueryResponse;
+import com.aliyuncs.arms.model.v20181219.DeleteAppResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class MetricQueryResponseUnmarshaller {
+public class DeleteAppResponseUnmarshaller {
 
-	public static MetricQueryResponse unmarshall(MetricQueryResponse metricQueryResponse, UnmarshallerContext context) {
+	public static DeleteAppResponse unmarshall(DeleteAppResponse deleteAppResponse, UnmarshallerContext context) {
 		
-		metricQueryResponse.setRequestId(context.stringValue("MetricQueryResponse.RequestId"));
-		metricQueryResponse.setData(context.stringValue("MetricQueryResponse.Data"));
+		deleteAppResponse.setRequestId(context.stringValue("DeleteAppResponse.RequestId"));
+		deleteAppResponse.setData(context.stringValue("DeleteAppResponse.Data"));
 	 
-	 	return metricQueryResponse;
+	 	return deleteAppResponse;
 	}
 }

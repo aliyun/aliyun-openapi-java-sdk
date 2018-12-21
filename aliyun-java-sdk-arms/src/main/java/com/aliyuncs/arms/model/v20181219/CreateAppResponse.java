@@ -12,29 +12,22 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.arms.model.v20181015;
+package com.aliyuncs.arms.model.v20181219;
 
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.arms.transform.v20181015.ARMSQueryDataSetResponseUnmarshaller;
+import com.aliyuncs.arms.transform.v20181219.CreateAppResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ARMSQueryDataSetResponse extends AcsResponse {
-
-	private String data;
+public class CreateAppResponse extends AcsResponse {
 
 	private String requestId;
 
-	public String getData() {
-		return this.data;
-	}
-
-	public void setData(String data) {
-		this.data = data;
-	}
+	private String data;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -44,8 +37,16 @@ public class ARMSQueryDataSetResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public String getData() {
+		return this.data;
+	}
+
+	public void setData(String data) {
+		this.data = data;
+	}
+
 	@Override
-	public ARMSQueryDataSetResponse getInstance(UnmarshallerContext context) {
-		return	ARMSQueryDataSetResponseUnmarshaller.unmarshall(this, context);
+	public CreateAppResponse getInstance(UnmarshallerContext context) {
+		return	CreateAppResponseUnmarshaller.unmarshall(this, context);
 	}
 }

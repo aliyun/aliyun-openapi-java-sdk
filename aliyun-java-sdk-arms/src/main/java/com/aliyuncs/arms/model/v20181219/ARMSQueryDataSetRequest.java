@@ -12,7 +12,7 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.arms.model.v20181015;
+package com.aliyuncs.arms.model.v20181219;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
@@ -24,7 +24,7 @@ import java.util.List;
 public class ARMSQueryDataSetRequest extends RpcAcsRequest<ARMSQueryDataSetResponse> {
 	
 	public ARMSQueryDataSetRequest() {
-		super("ARMS", "2018-10-15", "ARMSQueryDataSet");
+		super("ARMS", "2018-12-19", "ARMSQueryDataSet", "arms");
 	}
 
 	private String dateStr;

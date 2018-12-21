@@ -12,7 +12,7 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.arms.model.v20181015;
+package com.aliyuncs.arms.model.v20181219;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
@@ -24,8 +24,16 @@ import java.util.List;
 public class MetricQueryRequest extends RpcAcsRequest<MetricQueryResponse> {
 	
 	public MetricQueryRequest() {
-		super("ARMS", "2018-10-15", "MetricQuery");
+		super("ARMS", "2018-12-19", "MetricQuery", "arms");
 	}
+
+	private Long endTime;
+
+	private String orderBy;
+
+	private List<Filters> filterss;
+
+	private Long startTime;
 
 	private Integer iintervalInSec;
 
@@ -37,17 +45,56 @@ public class MetricQueryRequest extends RpcAcsRequest<MetricQueryResponse> {
 
 	private Integer limit;
 
-	private Long endTime;
-
-	private String orderBy;
-
-	private Long startTime;
-
-	private List<Filters> filterss;
-
 	private List<String> dimensionss;
 
 	private String order;
+
+	public Long getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(Long endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime.toString());
+		}
+	}
+
+	public String getOrderBy() {
+		return this.orderBy;
+	}
+
+	public void setOrderBy(String orderBy) {
+		this.orderBy = orderBy;
+		if(orderBy != null){
+			putQueryParameter("OrderBy", orderBy);
+		}
+	}
+
+	public List<Filters> getFilterss() {
+		return this.filterss;
+	}
+
+	public void setFilterss(List<Filters> filterss) {
+		this.filterss = filterss;	
+		if (filterss != null) {
+			for (int depth1 = 0; depth1 < filterss.size(); depth1++) {
+				putQueryParameter("Filters." + (depth1 + 1) + ".Value" , filterss.get(depth1).getValue());
+				putQueryParameter("Filters." + (depth1 + 1) + ".Key" , filterss.get(depth1).getKey());
+			}
+		}	
+	}
+
+	public Long getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(Long startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime.toString());
+		}
+	}
 
 	public Integer getIintervalInSec() {
 		return this.iintervalInSec;
@@ -104,53 +151,6 @@ public class MetricQueryRequest extends RpcAcsRequest<MetricQueryResponse> {
 		if(limit != null){
 			putQueryParameter("Limit", limit.toString());
 		}
-	}
-
-	public Long getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(Long endTime) {
-		this.endTime = endTime;
-		if(endTime != null){
-			putQueryParameter("EndTime", endTime.toString());
-		}
-	}
-
-	public String getOrderBy() {
-		return this.orderBy;
-	}
-
-	public void setOrderBy(String orderBy) {
-		this.orderBy = orderBy;
-		if(orderBy != null){
-			putQueryParameter("OrderBy", orderBy);
-		}
-	}
-
-	public Long getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(Long startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("StartTime", startTime.toString());
-		}
-	}
-
-	public List<Filters> getFilterss() {
-		return this.filterss;
-	}
-
-	public void setFilterss(List<Filters> filterss) {
-		this.filterss = filterss;	
-		if (filterss != null) {
-			for (int depth1 = 0; depth1 < filterss.size(); depth1++) {
-				putQueryParameter("Filters." + (depth1 + 1) + ".Value" , filterss.get(depth1).getValue());
-				putQueryParameter("Filters." + (depth1 + 1) + ".Key" , filterss.get(depth1).getKey());
-			}
-		}	
 	}
 
 	public List<String> getDimensionss() {
