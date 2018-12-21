@@ -1,6 +1,9 @@
 2018-12-21 Version: 3.3.2
 1, merge sdk 20161222 into 20180509 for compatible
 
+2018-12-21 Version: 3.3.2
+1, merge sdk 20161222 into 20180509 for compatible
+
 2018-12-13 Version: 3.4.1
 1, Query interface for oss scan results 
 2, Export interface for oss scan results
