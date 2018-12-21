@@ -3,7 +3,7 @@
   <groupId>com.aliyun</groupId>
   <artifactId>aliyun-java-sdk-green</artifactId>
   <packaging>jar</packaging>
-  <version>3.3.2</version>
+  <version>3.4.2</version>
     <name>aliyun-java-sdk-green</name>
   <url>http://www.aliyun.com</url>
   <description>Aliyun Open API SDK for Java
