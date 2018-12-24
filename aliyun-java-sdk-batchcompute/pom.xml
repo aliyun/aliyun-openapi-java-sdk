@@ -28,14 +28,14 @@
 
     <licenses>
         <license>
-            <name></name>
-            <url></url>
-            <distribution></distribution>
+            <name/>
+            <url/>
+            <distribution/>
         </license>
     </licenses>
     <scm>
-        <url></url>
-        <connection></connection>
+        <url/>
+        <connection/>
     </scm>
     <developers>
         <developer>
@@ -62,7 +62,7 @@
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
-             <version>2.9.7</version>
+             <version>2.9.8</version>
         </dependency>
 
         <dependency>
