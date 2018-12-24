@@ -25,7 +25,7 @@ import com.aliyuncs.http.MethodType;
 public class PublishCasServiceRequest extends RpcAcsRequest<PublishCasServiceResponse> {
 	
 	public PublishCasServiceRequest() {
-		super("CSB", "2017-11-18", "PublishCasService");
+		super("CSB", "2017-11-18", "PublishCasService", "csb");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

@@ -25,7 +25,7 @@ import com.aliyuncs.http.MethodType;
 public class CreateOrderRequest extends RpcAcsRequest<CreateOrderResponse> {
 	
 	public CreateOrderRequest() {
-		super("CSB", "2017-11-18", "CreateOrder");
+		super("CSB", "2017-11-18", "CreateOrder", "csb");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

@@ -1,3 +1,7 @@
+2018-12-24 Version: 1.1.7
+1, use new version of alisdk
+2, update some filed
+
 2018-09-03 Version: 1.1.6
 1, Add new service API：FindServiceStatisticalData, which can support query service statistical data.
 

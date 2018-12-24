@@ -25,7 +25,7 @@ import com.aliyuncs.http.MethodType;
 public class CreateProjectRequest extends RpcAcsRequest<CreateProjectResponse> {
 	
 	public CreateProjectRequest() {
-		super("CSB", "2017-11-18", "CreateProject");
+		super("CSB", "2017-11-18", "CreateProject", "csb");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

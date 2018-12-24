@@ -24,7 +24,7 @@ import com.aliyuncs.http.ProtocolType;
 public class GetOrderRequest extends RpcAcsRequest<GetOrderResponse> {
 	
 	public GetOrderRequest() {
-		super("CSB", "2017-11-18", "GetOrder");
+		super("CSB", "2017-11-18", "GetOrder", "csb");
 		setProtocol(ProtocolType.HTTPS);
 	}
 

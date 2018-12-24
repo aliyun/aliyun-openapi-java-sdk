@@ -25,7 +25,7 @@ import com.aliyuncs.http.MethodType;
 public class DeleteCredentialsListRequest extends RpcAcsRequest<DeleteCredentialsListResponse> {
 	
 	public DeleteCredentialsListRequest() {
-		super("CSB", "2017-11-18", "DeleteCredentialsList");
+		super("CSB", "2017-11-18", "DeleteCredentialsList", "csb");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

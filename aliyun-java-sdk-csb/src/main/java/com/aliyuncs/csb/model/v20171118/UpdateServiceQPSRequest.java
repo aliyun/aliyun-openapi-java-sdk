@@ -25,7 +25,7 @@ import com.aliyuncs.http.MethodType;
 public class UpdateServiceQPSRequest extends RpcAcsRequest<UpdateServiceQPSResponse> {
 	
 	public UpdateServiceQPSRequest() {
-		super("CSB", "2017-11-18", "UpdateServiceQPS");
+		super("CSB", "2017-11-18", "UpdateServiceQPS", "csb");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

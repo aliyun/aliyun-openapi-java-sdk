@@ -24,7 +24,7 @@ import com.aliyuncs.http.ProtocolType;
 public class GetProjectRequest extends RpcAcsRequest<GetProjectResponse> {
 	
 	public GetProjectRequest() {
-		super("CSB", "2017-11-18", "GetProject");
+		super("CSB", "2017-11-18", "GetProject", "csb");
 		setProtocol(ProtocolType.HTTPS);
 	}
 

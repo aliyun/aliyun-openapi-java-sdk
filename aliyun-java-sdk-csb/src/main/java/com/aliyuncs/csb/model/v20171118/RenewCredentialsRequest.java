@@ -25,7 +25,7 @@ import com.aliyuncs.http.MethodType;
 public class RenewCredentialsRequest extends RpcAcsRequest<RenewCredentialsResponse> {
 	
 	public RenewCredentialsRequest() {
-		super("CSB", "2017-11-18", "RenewCredentials");
+		super("CSB", "2017-11-18", "RenewCredentials", "csb");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

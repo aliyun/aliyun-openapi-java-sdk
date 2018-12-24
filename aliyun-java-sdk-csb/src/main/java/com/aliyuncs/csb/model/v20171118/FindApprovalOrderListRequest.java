@@ -24,19 +24,21 @@ import com.aliyuncs.http.ProtocolType;
 public class FindApprovalOrderListRequest extends RpcAcsRequest<FindApprovalOrderListResponse> {
 	
 	public FindApprovalOrderListRequest() {
-		super("CSB", "2017-11-18", "FindApprovalOrderList");
+		super("CSB", "2017-11-18", "FindApprovalOrderList", "csb");
 		setProtocol(ProtocolType.HTTPS);
 	}
 
 	private String projectName;
 
+	private Long csbId;
+
 	private String alias;
 
 	private String serviceName;
 
-	private Integer pageNum;
-
 	private Long serviceId;
+
+	private Integer pageNum;
 
 	private Boolean onlyPending;
 
@@ -48,6 +50,17 @@ public class FindApprovalOrderListRequest extends RpcAcsRequest<FindApprovalOrde
 		this.projectName = projectName;
 		if(projectName != null){
 			putQueryParameter("ProjectName", projectName);
+		}
+	}
+
+	public Long getCsbId() {
+		return this.csbId;
+	}
+
+	public void setCsbId(Long csbId) {
+		this.csbId = csbId;
+		if(csbId != null){
+			putQueryParameter("CsbId", csbId.toString());
 		}
 	}
 
@@ -73,17 +86,6 @@ public class FindApprovalOrderListRequest extends RpcAcsRequest<FindApprovalOrde
 		}
 	}
 
-	public Integer getPageNum() {
-		return this.pageNum;
-	}
-
-	public void setPageNum(Integer pageNum) {
-		this.pageNum = pageNum;
-		if(pageNum != null){
-			putQueryParameter("PageNum", pageNum.toString());
-		}
-	}
-
 	public Long getServiceId() {
 		return this.serviceId;
 	}
@@ -92,6 +94,17 @@ public class FindApprovalOrderListRequest extends RpcAcsRequest<FindApprovalOrde
 		this.serviceId = serviceId;
 		if(serviceId != null){
 			putQueryParameter("ServiceId", serviceId.toString());
+		}
+	}
+
+	public Integer getPageNum() {
+		return this.pageNum;
+	}
+
+	public void setPageNum(Integer pageNum) {
+		this.pageNum = pageNum;
+		if(pageNum != null){
+			putQueryParameter("PageNum", pageNum.toString());
 		}
 	}
 

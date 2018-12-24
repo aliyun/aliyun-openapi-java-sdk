@@ -24,7 +24,7 @@ import com.aliyuncs.http.ProtocolType;
 public class FindCredentialsListRequest extends RpcAcsRequest<FindCredentialsListResponse> {
 	
 	public FindCredentialsListRequest() {
-		super("CSB", "2017-11-18", "FindCredentialsList");
+		super("CSB", "2017-11-18", "FindCredentialsList", "csb");
 		setProtocol(ProtocolType.HTTPS);
 	}
 

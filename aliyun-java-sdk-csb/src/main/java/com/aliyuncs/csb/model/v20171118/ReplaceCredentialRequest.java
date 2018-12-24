@@ -25,7 +25,7 @@ import com.aliyuncs.http.MethodType;
 public class ReplaceCredentialRequest extends RpcAcsRequest<ReplaceCredentialResponse> {
 	
 	public ReplaceCredentialRequest() {
-		super("CSB", "2017-11-18", "ReplaceCredential");
+		super("CSB", "2017-11-18", "ReplaceCredential", "csb");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
