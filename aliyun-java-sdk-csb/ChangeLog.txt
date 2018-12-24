@@ -1,3 +1,7 @@
+2018-12-24 Version: 1.1.8
+1, use new version of alisdk
+2, update some filed
+
 2018-12-24 Version: 1.1.7
 1, use new version of alisdk
 2, update some filed
