@@ -18,8 +18,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.polardb.model.v20170801.DescribeAccountsResponse;
-import com.aliyuncs.polardb.model.v20170801.DescribeAccountsResponse.DBInstanceAccount;
-import com.aliyuncs.polardb.model.v20170801.DescribeAccountsResponse.DBInstanceAccount.DatabasePrivilege;
+import com.aliyuncs.polardb.model.v20170801.DescribeAccountsResponse.DBAccount;
+import com.aliyuncs.polardb.model.v20170801.DescribeAccountsResponse.DBAccount.DatabasePrivilege;
 import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -30,28 +30,26 @@ public class DescribeAccountsResponseUnmarshaller {
 		
 		describeAccountsResponse.setRequestId(context.stringValue("DescribeAccountsResponse.RequestId"));
 
-		List<DBInstanceAccount> accounts = new ArrayList<DBInstanceAccount>();
+		List<DBAccount> accounts = new ArrayList<DBAccount>();
 		for (int i = 0; i < context.lengthValue("DescribeAccountsResponse.Accounts.Length"); i++) {
-			DBInstanceAccount dBInstanceAccount = new DBInstanceAccount();
-			dBInstanceAccount.setDBClusterId(context.stringValue("DescribeAccountsResponse.Accounts["+ i +"].DBClusterId"));
-			dBInstanceAccount.setAccountName(context.stringValue("DescribeAccountsResponse.Accounts["+ i +"].AccountName"));
-			dBInstanceAccount.setAccountStatus(context.stringValue("DescribeAccountsResponse.Accounts["+ i +"].AccountStatus"));
-			dBInstanceAccount.setAccountDescription(context.stringValue("DescribeAccountsResponse.Accounts["+ i +"].AccountDescription"));
-			dBInstanceAccount.setAccountType(context.stringValue("DescribeAccountsResponse.Accounts["+ i +"].AccountType"));
-			dBInstanceAccount.setPrivExceeded(context.stringValue("DescribeAccountsResponse.Accounts["+ i +"].PrivExceeded"));
+			DBAccount dBAccount = new DBAccount();
+			dBAccount.setAccountName(context.stringValue("DescribeAccountsResponse.Accounts["+ i +"].AccountName"));
+			dBAccount.setAccountStatus(context.stringValue("DescribeAccountsResponse.Accounts["+ i +"].AccountStatus"));
+			dBAccount.setAccountDescription(context.stringValue("DescribeAccountsResponse.Accounts["+ i +"].AccountDescription"));
+			dBAccount.setAccountType(context.stringValue("DescribeAccountsResponse.Accounts["+ i +"].AccountType"));
+			dBAccount.setPrivilegeExceeded(context.stringValue("DescribeAccountsResponse.Accounts["+ i +"].PrivilegeExceeded"));
 
 			List<DatabasePrivilege> databasePrivileges = new ArrayList<DatabasePrivilege>();
 			for (int j = 0; j < context.lengthValue("DescribeAccountsResponse.Accounts["+ i +"].DatabasePrivileges.Length"); j++) {
 				DatabasePrivilege databasePrivilege = new DatabasePrivilege();
 				databasePrivilege.setDBName(context.stringValue("DescribeAccountsResponse.Accounts["+ i +"].DatabasePrivileges["+ j +"].DBName"));
 				databasePrivilege.setAccountPrivilege(context.stringValue("DescribeAccountsResponse.Accounts["+ i +"].DatabasePrivileges["+ j +"].AccountPrivilege"));
-				databasePrivilege.setAccountPrivilegeDetail(context.stringValue("DescribeAccountsResponse.Accounts["+ i +"].DatabasePrivileges["+ j +"].AccountPrivilegeDetail"));
 
 				databasePrivileges.add(databasePrivilege);
 			}
-			dBInstanceAccount.setDatabasePrivileges(databasePrivileges);
+			dBAccount.setDatabasePrivileges(databasePrivileges);
 
-			accounts.add(dBInstanceAccount);
+			accounts.add(dBAccount);
 		}
 		describeAccountsResponse.setAccounts(accounts);
 	 

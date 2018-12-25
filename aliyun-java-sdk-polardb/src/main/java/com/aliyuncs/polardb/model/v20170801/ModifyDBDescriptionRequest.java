@@ -20,19 +20,23 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class DeleteDBClusterRequest extends RpcAcsRequest<DeleteDBClusterResponse> {
+public class ModifyDBDescriptionRequest extends RpcAcsRequest<ModifyDBDescriptionResponse> {
 	
-	public DeleteDBClusterRequest() {
-		super("polardb", "2017-08-01", "DeleteDBCluster", "polardb");
+	public ModifyDBDescriptionRequest() {
+		super("polardb", "2017-08-01", "ModifyDBDescription", "polardb");
 	}
 
 	private Long resourceOwnerId;
+
+	private String dBName;
 
 	private String resourceOwnerAccount;
 
 	private String dBClusterId;
 
 	private String ownerAccount;
+
+	private String dBDescription;
 
 	private Long ownerId;
 
@@ -44,6 +48,17 @@ public class DeleteDBClusterRequest extends RpcAcsRequest<DeleteDBClusterRespons
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getDBName() {
+		return this.dBName;
+	}
+
+	public void setDBName(String dBName) {
+		this.dBName = dBName;
+		if(dBName != null){
+			putQueryParameter("DBName", dBName);
 		}
 	}
 
@@ -80,6 +95,17 @@ public class DeleteDBClusterRequest extends RpcAcsRequest<DeleteDBClusterRespons
 		}
 	}
 
+	public String getDBDescription() {
+		return this.dBDescription;
+	}
+
+	public void setDBDescription(String dBDescription) {
+		this.dBDescription = dBDescription;
+		if(dBDescription != null){
+			putQueryParameter("DBDescription", dBDescription);
+		}
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -92,8 +118,8 @@ public class DeleteDBClusterRequest extends RpcAcsRequest<DeleteDBClusterRespons
 	}
 
 	@Override
-	public Class<DeleteDBClusterResponse> getResponseClass() {
-		return DeleteDBClusterResponse.class;
+	public Class<ModifyDBDescriptionResponse> getResponseClass() {
+		return ModifyDBDescriptionResponse.class;
 	}
 
 }

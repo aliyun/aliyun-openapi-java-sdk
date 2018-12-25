@@ -20,31 +20,21 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class DescribeSlowLogsRequest extends RpcAcsRequest<DescribeSlowLogsResponse> {
+public class DescribeDBClusterAccessWhitelistRequest extends RpcAcsRequest<DescribeDBClusterAccessWhitelistResponse> {
 	
-	public DescribeSlowLogsRequest() {
-		super("polardb", "2017-08-01", "DescribeSlowLogs", "polardb");
+	public DescribeDBClusterAccessWhitelistRequest() {
+		super("polardb", "2017-08-01", "DescribeDBClusterAccessWhitelist", "polardb");
 	}
 
 	private Long resourceOwnerId;
 
-	private String dBNodeId;
-
 	private String resourceOwnerAccount;
+
+	private String dBClusterId;
 
 	private String ownerAccount;
 
-	private Integer pageSize;
-
-	private String endTime;
-
-	private String dBInstanceId;
-
-	private String startTime;
-
 	private Long ownerId;
-
-	private Integer pageNumber;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -54,17 +44,6 @@ public class DescribeSlowLogsRequest extends RpcAcsRequest<DescribeSlowLogsRespo
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getDBNodeId() {
-		return this.dBNodeId;
-	}
-
-	public void setDBNodeId(String dBNodeId) {
-		this.dBNodeId = dBNodeId;
-		if(dBNodeId != null){
-			putQueryParameter("DBNodeId", dBNodeId);
 		}
 	}
 
@@ -79,6 +58,17 @@ public class DescribeSlowLogsRequest extends RpcAcsRequest<DescribeSlowLogsRespo
 		}
 	}
 
+	public String getDBClusterId() {
+		return this.dBClusterId;
+	}
+
+	public void setDBClusterId(String dBClusterId) {
+		this.dBClusterId = dBClusterId;
+		if(dBClusterId != null){
+			putQueryParameter("DBClusterId", dBClusterId);
+		}
+	}
+
 	public String getOwnerAccount() {
 		return this.ownerAccount;
 	}
@@ -87,50 +77,6 @@ public class DescribeSlowLogsRequest extends RpcAcsRequest<DescribeSlowLogsRespo
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
-	public String getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
-		if(endTime != null){
-			putQueryParameter("EndTime", endTime);
-		}
-	}
-
-	public String getDBInstanceId() {
-		return this.dBInstanceId;
-	}
-
-	public void setDBInstanceId(String dBInstanceId) {
-		this.dBInstanceId = dBInstanceId;
-		if(dBInstanceId != null){
-			putQueryParameter("DBInstanceId", dBInstanceId);
-		}
-	}
-
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("StartTime", startTime);
 		}
 	}
 
@@ -145,20 +91,9 @@ public class DescribeSlowLogsRequest extends RpcAcsRequest<DescribeSlowLogsRespo
 		}
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
-		}
-	}
-
 	@Override
-	public Class<DescribeSlowLogsResponse> getResponseClass() {
-		return DescribeSlowLogsResponse.class;
+	public Class<DescribeDBClusterAccessWhitelistResponse> getResponseClass() {
+		return DescribeDBClusterAccessWhitelistResponse.class;
 	}
 
 }

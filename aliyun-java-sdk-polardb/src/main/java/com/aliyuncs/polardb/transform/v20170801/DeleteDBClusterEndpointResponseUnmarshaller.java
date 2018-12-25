@@ -14,17 +14,16 @@
 
 package com.aliyuncs.polardb.transform.v20170801;
 
-import com.aliyuncs.polardb.model.v20170801.DescribeSQLExplorerPolicyResponse;
+import com.aliyuncs.polardb.model.v20170801.DeleteDBClusterEndpointResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class DescribeSQLExplorerPolicyResponseUnmarshaller {
+public class DeleteDBClusterEndpointResponseUnmarshaller {
 
-	public static DescribeSQLExplorerPolicyResponse unmarshall(DescribeSQLExplorerPolicyResponse describeSQLExplorerPolicyResponse, UnmarshallerContext context) {
+	public static DeleteDBClusterEndpointResponse unmarshall(DeleteDBClusterEndpointResponse deleteDBClusterEndpointResponse, UnmarshallerContext context) {
 		
-		describeSQLExplorerPolicyResponse.setRequestId(context.stringValue("DescribeSQLExplorerPolicyResponse.RequestId"));
-		describeSQLExplorerPolicyResponse.setSQLCollectorStatus(context.stringValue("DescribeSQLExplorerPolicyResponse.SQLCollectorStatus"));
+		deleteDBClusterEndpointResponse.setRequestId(context.stringValue("DeleteDBClusterEndpointResponse.RequestId"));
 	 
-	 	return describeSQLExplorerPolicyResponse;
+	 	return deleteDBClusterEndpointResponse;
 	}
 }

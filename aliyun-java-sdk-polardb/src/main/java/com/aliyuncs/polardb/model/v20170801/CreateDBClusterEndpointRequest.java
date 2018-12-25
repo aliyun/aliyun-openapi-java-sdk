@@ -20,19 +20,21 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class ResetAccountPasswordRequest extends RpcAcsRequest<ResetAccountPasswordResponse> {
+public class CreateDBClusterEndpointRequest extends RpcAcsRequest<CreateDBClusterEndpointResponse> {
 	
-	public ResetAccountPasswordRequest() {
-		super("polardb", "2017-08-01", "ResetAccountPassword", "polardb");
+	public CreateDBClusterEndpointRequest() {
+		super("polardb", "2017-08-01", "CreateDBClusterEndpoint", "polardb");
 	}
 
 	private Long resourceOwnerId;
 
-	private String accountPassword;
-
-	private String accountName;
+	private String nodes;
 
 	private String resourceOwnerAccount;
+
+	private String endpointType;
+
+	private String clientToken;
 
 	private String dBClusterId;
 
@@ -51,25 +53,14 @@ public class ResetAccountPasswordRequest extends RpcAcsRequest<ResetAccountPassw
 		}
 	}
 
-	public String getAccountPassword() {
-		return this.accountPassword;
+	public String getNodes() {
+		return this.nodes;
 	}
 
-	public void setAccountPassword(String accountPassword) {
-		this.accountPassword = accountPassword;
-		if(accountPassword != null){
-			putQueryParameter("AccountPassword", accountPassword);
-		}
-	}
-
-	public String getAccountName() {
-		return this.accountName;
-	}
-
-	public void setAccountName(String accountName) {
-		this.accountName = accountName;
-		if(accountName != null){
-			putQueryParameter("AccountName", accountName);
+	public void setNodes(String nodes) {
+		this.nodes = nodes;
+		if(nodes != null){
+			putQueryParameter("Nodes", nodes);
 		}
 	}
 
@@ -81,6 +72,28 @@ public class ResetAccountPasswordRequest extends RpcAcsRequest<ResetAccountPassw
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getEndpointType() {
+		return this.endpointType;
+	}
+
+	public void setEndpointType(String endpointType) {
+		this.endpointType = endpointType;
+		if(endpointType != null){
+			putQueryParameter("EndpointType", endpointType);
+		}
+	}
+
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
 		}
 	}
 
@@ -118,8 +131,8 @@ public class ResetAccountPasswordRequest extends RpcAcsRequest<ResetAccountPassw
 	}
 
 	@Override
-	public Class<ResetAccountPasswordResponse> getResponseClass() {
-		return ResetAccountPasswordResponse.class;
+	public Class<CreateDBClusterEndpointResponse> getResponseClass() {
+		return CreateDBClusterEndpointResponse.class;
 	}
 
 }

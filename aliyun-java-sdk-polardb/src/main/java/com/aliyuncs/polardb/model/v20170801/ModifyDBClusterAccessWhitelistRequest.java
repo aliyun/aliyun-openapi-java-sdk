@@ -20,10 +20,10 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class DeleteDBClusterRequest extends RpcAcsRequest<DeleteDBClusterResponse> {
+public class ModifyDBClusterAccessWhitelistRequest extends RpcAcsRequest<ModifyDBClusterAccessWhitelistResponse> {
 	
-	public DeleteDBClusterRequest() {
-		super("polardb", "2017-08-01", "DeleteDBCluster", "polardb");
+	public ModifyDBClusterAccessWhitelistRequest() {
+		super("polardb", "2017-08-01", "ModifyDBClusterAccessWhitelist", "polardb");
 	}
 
 	private Long resourceOwnerId;
@@ -34,7 +34,13 @@ public class DeleteDBClusterRequest extends RpcAcsRequest<DeleteDBClusterRespons
 
 	private String ownerAccount;
 
+	private String securityIps;
+
+	private String dBClusterIPArrayName;
+
 	private Long ownerId;
+
+	private String dBClusterIPArrayAttribute;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -80,6 +86,28 @@ public class DeleteDBClusterRequest extends RpcAcsRequest<DeleteDBClusterRespons
 		}
 	}
 
+	public String getSecurityIps() {
+		return this.securityIps;
+	}
+
+	public void setSecurityIps(String securityIps) {
+		this.securityIps = securityIps;
+		if(securityIps != null){
+			putQueryParameter("SecurityIps", securityIps);
+		}
+	}
+
+	public String getDBClusterIPArrayName() {
+		return this.dBClusterIPArrayName;
+	}
+
+	public void setDBClusterIPArrayName(String dBClusterIPArrayName) {
+		this.dBClusterIPArrayName = dBClusterIPArrayName;
+		if(dBClusterIPArrayName != null){
+			putQueryParameter("DBClusterIPArrayName", dBClusterIPArrayName);
+		}
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -91,9 +119,20 @@ public class DeleteDBClusterRequest extends RpcAcsRequest<DeleteDBClusterRespons
 		}
 	}
 
+	public String getDBClusterIPArrayAttribute() {
+		return this.dBClusterIPArrayAttribute;
+	}
+
+	public void setDBClusterIPArrayAttribute(String dBClusterIPArrayAttribute) {
+		this.dBClusterIPArrayAttribute = dBClusterIPArrayAttribute;
+		if(dBClusterIPArrayAttribute != null){
+			putQueryParameter("DBClusterIPArrayAttribute", dBClusterIPArrayAttribute);
+		}
+	}
+
 	@Override
-	public Class<DeleteDBClusterResponse> getResponseClass() {
-		return DeleteDBClusterResponse.class;
+	public Class<ModifyDBClusterAccessWhitelistResponse> getResponseClass() {
+		return ModifyDBClusterAccessWhitelistResponse.class;
 	}
 
 }

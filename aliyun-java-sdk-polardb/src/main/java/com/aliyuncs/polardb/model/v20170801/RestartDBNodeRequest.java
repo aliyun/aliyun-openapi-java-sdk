@@ -32,8 +32,6 @@ public class RestartDBNodeRequest extends RpcAcsRequest<RestartDBNodeResponse> {
 
 	private String resourceOwnerAccount;
 
-	private String clientToken;
-
 	private String ownerAccount;
 
 	private Long ownerId;
@@ -68,17 +66,6 @@ public class RestartDBNodeRequest extends RpcAcsRequest<RestartDBNodeResponse> {
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public String getClientToken() {
-		return this.clientToken;
-	}
-
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putQueryParameter("ClientToken", clientToken);
 		}
 	}
 

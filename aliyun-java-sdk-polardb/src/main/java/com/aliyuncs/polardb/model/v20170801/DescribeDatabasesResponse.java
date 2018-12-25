@@ -48,8 +48,6 @@ public class DescribeDatabasesResponse extends AcsResponse {
 
 	public static class Database {
 
-		private String dBClusterId;
-
 		private String dBName;
 
 		private String dBStatus;
@@ -61,14 +59,6 @@ public class DescribeDatabasesResponse extends AcsResponse {
 		private String engine;
 
 		private List<Account> accounts;
-
-		public String getDBClusterId() {
-			return this.dBClusterId;
-		}
-
-		public void setDBClusterId(String dBClusterId) {
-			this.dBClusterId = dBClusterId;
-		}
 
 		public String getDBName() {
 			return this.dBName;

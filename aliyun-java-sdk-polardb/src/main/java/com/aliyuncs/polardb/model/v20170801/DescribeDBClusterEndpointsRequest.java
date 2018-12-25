@@ -20,10 +20,10 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class DeleteDBClusterRequest extends RpcAcsRequest<DeleteDBClusterResponse> {
+public class DescribeDBClusterEndpointsRequest extends RpcAcsRequest<DescribeDBClusterEndpointsResponse> {
 	
-	public DeleteDBClusterRequest() {
-		super("polardb", "2017-08-01", "DeleteDBCluster", "polardb");
+	public DescribeDBClusterEndpointsRequest() {
+		super("polardb", "2017-08-01", "DescribeDBClusterEndpoints", "polardb");
 	}
 
 	private Long resourceOwnerId;
@@ -33,6 +33,8 @@ public class DeleteDBClusterRequest extends RpcAcsRequest<DeleteDBClusterRespons
 	private String dBClusterId;
 
 	private String ownerAccount;
+
+	private String dBEndpointId;
 
 	private Long ownerId;
 
@@ -80,6 +82,17 @@ public class DeleteDBClusterRequest extends RpcAcsRequest<DeleteDBClusterRespons
 		}
 	}
 
+	public String getDBEndpointId() {
+		return this.dBEndpointId;
+	}
+
+	public void setDBEndpointId(String dBEndpointId) {
+		this.dBEndpointId = dBEndpointId;
+		if(dBEndpointId != null){
+			putQueryParameter("DBEndpointId", dBEndpointId);
+		}
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -92,8 +105,8 @@ public class DeleteDBClusterRequest extends RpcAcsRequest<DeleteDBClusterRespons
 	}
 
 	@Override
-	public Class<DeleteDBClusterResponse> getResponseClass() {
-		return DeleteDBClusterResponse.class;
+	public Class<DescribeDBClusterEndpointsResponse> getResponseClass() {
+		return DescribeDBClusterEndpointsResponse.class;
 	}
 
 }

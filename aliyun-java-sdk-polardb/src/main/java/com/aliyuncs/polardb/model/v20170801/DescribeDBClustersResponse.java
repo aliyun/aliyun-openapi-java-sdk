@@ -90,6 +90,8 @@ public class DescribeDBClustersResponse extends AcsResponse {
 
 		private String expireTime;
 
+		private String expired;
+
 		private String dBClusterStatus;
 
 		private String engine;
@@ -100,17 +102,15 @@ public class DescribeDBClustersResponse extends AcsResponse {
 
 		private String lockMode;
 
-		private String lockReason;
-
 		private String createTime;
 
 		private String vpcId;
 
-		private String dBNodeNumber;
+		private Integer dBNodeNumber;
 
 		private String dBNodeClass;
 
-		private String storageUsed;
+		private Long storageUsed;
 
 		private List<DBNode> dBNodes;
 
@@ -162,6 +162,14 @@ public class DescribeDBClustersResponse extends AcsResponse {
 			this.expireTime = expireTime;
 		}
 
+		public String getExpired() {
+			return this.expired;
+		}
+
+		public void setExpired(String expired) {
+			this.expired = expired;
+		}
+
 		public String getDBClusterStatus() {
 			return this.dBClusterStatus;
 		}
@@ -202,14 +210,6 @@ public class DescribeDBClustersResponse extends AcsResponse {
 			this.lockMode = lockMode;
 		}
 
-		public String getLockReason() {
-			return this.lockReason;
-		}
-
-		public void setLockReason(String lockReason) {
-			this.lockReason = lockReason;
-		}
-
 		public String getCreateTime() {
 			return this.createTime;
 		}
@@ -226,11 +226,11 @@ public class DescribeDBClustersResponse extends AcsResponse {
 			this.vpcId = vpcId;
 		}
 
-		public String getDBNodeNumber() {
+		public Integer getDBNodeNumber() {
 			return this.dBNodeNumber;
 		}
 
-		public void setDBNodeNumber(String dBNodeNumber) {
+		public void setDBNodeNumber(Integer dBNodeNumber) {
 			this.dBNodeNumber = dBNodeNumber;
 		}
 
@@ -242,11 +242,11 @@ public class DescribeDBClustersResponse extends AcsResponse {
 			this.dBNodeClass = dBNodeClass;
 		}
 
-		public String getStorageUsed() {
+		public Long getStorageUsed() {
 			return this.storageUsed;
 		}
 
-		public void setStorageUsed(String storageUsed) {
+		public void setStorageUsed(Long storageUsed) {
 			this.storageUsed = storageUsed;
 		}
 
@@ -264,6 +264,8 @@ public class DescribeDBClustersResponse extends AcsResponse {
 
 			private String dBNodeClass;
 
+			private String dBNodeRole;
+
 			public String getDBNodeId() {
 				return this.dBNodeId;
 			}
@@ -278,6 +280,14 @@ public class DescribeDBClustersResponse extends AcsResponse {
 
 			public void setDBNodeClass(String dBNodeClass) {
 				this.dBNodeClass = dBNodeClass;
+			}
+
+			public String getDBNodeRole() {
+				return this.dBNodeRole;
+			}
+
+			public void setDBNodeRole(String dBNodeRole) {
+				this.dBNodeRole = dBNodeRole;
 			}
 		}
 	}

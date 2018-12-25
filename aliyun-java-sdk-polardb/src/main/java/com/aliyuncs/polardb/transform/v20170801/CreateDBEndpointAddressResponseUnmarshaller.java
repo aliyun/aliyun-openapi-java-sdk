@@ -14,16 +14,16 @@
 
 package com.aliyuncs.polardb.transform.v20170801;
 
-import com.aliyuncs.polardb.model.v20170801.ModifySQLExplorerPolicyResponse;
+import com.aliyuncs.polardb.model.v20170801.CreateDBEndpointAddressResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class ModifySQLExplorerPolicyResponseUnmarshaller {
+public class CreateDBEndpointAddressResponseUnmarshaller {
 
-	public static ModifySQLExplorerPolicyResponse unmarshall(ModifySQLExplorerPolicyResponse modifySQLExplorerPolicyResponse, UnmarshallerContext context) {
+	public static CreateDBEndpointAddressResponse unmarshall(CreateDBEndpointAddressResponse createDBEndpointAddressResponse, UnmarshallerContext context) {
 		
-		modifySQLExplorerPolicyResponse.setRequestId(context.stringValue("ModifySQLExplorerPolicyResponse.RequestId"));
+		createDBEndpointAddressResponse.setRequestId(context.stringValue("CreateDBEndpointAddressResponse.RequestId"));
 	 
-	 	return modifySQLExplorerPolicyResponse;
+	 	return createDBEndpointAddressResponse;
 	}
 }

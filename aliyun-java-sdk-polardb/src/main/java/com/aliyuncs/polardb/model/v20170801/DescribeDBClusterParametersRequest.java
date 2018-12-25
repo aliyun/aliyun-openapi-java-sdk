@@ -20,21 +20,19 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class DescribeSQLExplorerPolicyRequest extends RpcAcsRequest<DescribeSQLExplorerPolicyResponse> {
+public class DescribeDBClusterParametersRequest extends RpcAcsRequest<DescribeDBClusterParametersResponse> {
 	
-	public DescribeSQLExplorerPolicyRequest() {
-		super("polardb", "2017-08-01", "DescribeSQLExplorerPolicy", "polardb");
+	public DescribeDBClusterParametersRequest() {
+		super("polardb", "2017-08-01", "DescribeDBClusterParameters", "polardb");
 	}
 
 	private Long resourceOwnerId;
 
-	private String dBNodeId;
-
 	private String resourceOwnerAccount;
 
-	private String ownerAccount;
+	private String dBClusterId;
 
-	private String dBInstanceId;
+	private String ownerAccount;
 
 	private Long ownerId;
 
@@ -49,17 +47,6 @@ public class DescribeSQLExplorerPolicyRequest extends RpcAcsRequest<DescribeSQLE
 		}
 	}
 
-	public String getDBNodeId() {
-		return this.dBNodeId;
-	}
-
-	public void setDBNodeId(String dBNodeId) {
-		this.dBNodeId = dBNodeId;
-		if(dBNodeId != null){
-			putQueryParameter("DBNodeId", dBNodeId);
-		}
-	}
-
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
 	}
@@ -71,6 +58,17 @@ public class DescribeSQLExplorerPolicyRequest extends RpcAcsRequest<DescribeSQLE
 		}
 	}
 
+	public String getDBClusterId() {
+		return this.dBClusterId;
+	}
+
+	public void setDBClusterId(String dBClusterId) {
+		this.dBClusterId = dBClusterId;
+		if(dBClusterId != null){
+			putQueryParameter("DBClusterId", dBClusterId);
+		}
+	}
+
 	public String getOwnerAccount() {
 		return this.ownerAccount;
 	}
@@ -79,17 +77,6 @@ public class DescribeSQLExplorerPolicyRequest extends RpcAcsRequest<DescribeSQLE
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
-		}
-	}
-
-	public String getDBInstanceId() {
-		return this.dBInstanceId;
-	}
-
-	public void setDBInstanceId(String dBInstanceId) {
-		this.dBInstanceId = dBInstanceId;
-		if(dBInstanceId != null){
-			putQueryParameter("DBInstanceId", dBInstanceId);
 		}
 	}
 
@@ -105,8 +92,8 @@ public class DescribeSQLExplorerPolicyRequest extends RpcAcsRequest<DescribeSQLE
 	}
 
 	@Override
-	public Class<DescribeSQLExplorerPolicyResponse> getResponseClass() {
-		return DescribeSQLExplorerPolicyResponse.class;
+	public Class<DescribeDBClusterParametersResponse> getResponseClass() {
+		return DescribeDBClusterParametersResponse.class;
 	}
 
 }

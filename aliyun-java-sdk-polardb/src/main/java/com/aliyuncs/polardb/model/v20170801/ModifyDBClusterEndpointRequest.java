@@ -20,31 +20,27 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class DescribeSlowLogRecordsRequest extends RpcAcsRequest<DescribeSlowLogRecordsResponse> {
+public class ModifyDBClusterEndpointRequest extends RpcAcsRequest<ModifyDBClusterEndpointResponse> {
 	
-	public DescribeSlowLogRecordsRequest() {
-		super("polardb", "2017-08-01", "DescribeSlowLogRecords", "polardb");
+	public ModifyDBClusterEndpointRequest() {
+		super("polardb", "2017-08-01", "ModifyDBClusterEndpoint", "polardb");
 	}
 
 	private Long resourceOwnerId;
 
-	private String dBNodeId;
+	private String nodes;
 
 	private String resourceOwnerAccount;
 
+	private String dBClusterId;
+
 	private String ownerAccount;
 
-	private Integer pageSize;
+	private String dBEndpointId;
 
-	private String endTime;
-
-	private String dBInstanceId;
-
-	private String startTime;
+	private String endpointConfig;
 
 	private Long ownerId;
-
-	private Integer pageNumber;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -57,14 +53,14 @@ public class DescribeSlowLogRecordsRequest extends RpcAcsRequest<DescribeSlowLog
 		}
 	}
 
-	public String getDBNodeId() {
-		return this.dBNodeId;
+	public String getNodes() {
+		return this.nodes;
 	}
 
-	public void setDBNodeId(String dBNodeId) {
-		this.dBNodeId = dBNodeId;
-		if(dBNodeId != null){
-			putQueryParameter("DBNodeId", dBNodeId);
+	public void setNodes(String nodes) {
+		this.nodes = nodes;
+		if(nodes != null){
+			putQueryParameter("Nodes", nodes);
 		}
 	}
 
@@ -79,6 +75,17 @@ public class DescribeSlowLogRecordsRequest extends RpcAcsRequest<DescribeSlowLog
 		}
 	}
 
+	public String getDBClusterId() {
+		return this.dBClusterId;
+	}
+
+	public void setDBClusterId(String dBClusterId) {
+		this.dBClusterId = dBClusterId;
+		if(dBClusterId != null){
+			putQueryParameter("DBClusterId", dBClusterId);
+		}
+	}
+
 	public String getOwnerAccount() {
 		return this.ownerAccount;
 	}
@@ -90,47 +97,25 @@ public class DescribeSlowLogRecordsRequest extends RpcAcsRequest<DescribeSlowLog
 		}
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public String getDBEndpointId() {
+		return this.dBEndpointId;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
+	public void setDBEndpointId(String dBEndpointId) {
+		this.dBEndpointId = dBEndpointId;
+		if(dBEndpointId != null){
+			putQueryParameter("DBEndpointId", dBEndpointId);
 		}
 	}
 
-	public String getEndTime() {
-		return this.endTime;
+	public String getEndpointConfig() {
+		return this.endpointConfig;
 	}
 
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
-		if(endTime != null){
-			putQueryParameter("EndTime", endTime);
-		}
-	}
-
-	public String getDBInstanceId() {
-		return this.dBInstanceId;
-	}
-
-	public void setDBInstanceId(String dBInstanceId) {
-		this.dBInstanceId = dBInstanceId;
-		if(dBInstanceId != null){
-			putQueryParameter("DBInstanceId", dBInstanceId);
-		}
-	}
-
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("StartTime", startTime);
+	public void setEndpointConfig(String endpointConfig) {
+		this.endpointConfig = endpointConfig;
+		if(endpointConfig != null){
+			putQueryParameter("EndpointConfig", endpointConfig);
 		}
 	}
 
@@ -145,20 +130,9 @@ public class DescribeSlowLogRecordsRequest extends RpcAcsRequest<DescribeSlowLog
 		}
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
-		}
-	}
-
 	@Override
-	public Class<DescribeSlowLogRecordsResponse> getResponseClass() {
-		return DescribeSlowLogRecordsResponse.class;
+	public Class<ModifyDBClusterEndpointResponse> getResponseClass() {
+		return ModifyDBClusterEndpointResponse.class;
 	}
 
 }

@@ -42,23 +42,24 @@ public class DescribeDBClustersResponseUnmarshaller {
 			dBCluster.setDBClusterNetworkType(context.stringValue("DescribeDBClustersResponse.Items["+ i +"].DBClusterNetworkType"));
 			dBCluster.setRegionId(context.stringValue("DescribeDBClustersResponse.Items["+ i +"].RegionId"));
 			dBCluster.setExpireTime(context.stringValue("DescribeDBClustersResponse.Items["+ i +"].ExpireTime"));
+			dBCluster.setExpired(context.stringValue("DescribeDBClustersResponse.Items["+ i +"].Expired"));
 			dBCluster.setDBClusterStatus(context.stringValue("DescribeDBClustersResponse.Items["+ i +"].DBClusterStatus"));
 			dBCluster.setEngine(context.stringValue("DescribeDBClustersResponse.Items["+ i +"].Engine"));
 			dBCluster.setDBType(context.stringValue("DescribeDBClustersResponse.Items["+ i +"].DBType"));
 			dBCluster.setDBVersion(context.stringValue("DescribeDBClustersResponse.Items["+ i +"].DBVersion"));
 			dBCluster.setLockMode(context.stringValue("DescribeDBClustersResponse.Items["+ i +"].LockMode"));
-			dBCluster.setLockReason(context.stringValue("DescribeDBClustersResponse.Items["+ i +"].LockReason"));
 			dBCluster.setCreateTime(context.stringValue("DescribeDBClustersResponse.Items["+ i +"].CreateTime"));
 			dBCluster.setVpcId(context.stringValue("DescribeDBClustersResponse.Items["+ i +"].VpcId"));
-			dBCluster.setDBNodeNumber(context.stringValue("DescribeDBClustersResponse.Items["+ i +"].DBNodeNumber"));
+			dBCluster.setDBNodeNumber(context.integerValue("DescribeDBClustersResponse.Items["+ i +"].DBNodeNumber"));
 			dBCluster.setDBNodeClass(context.stringValue("DescribeDBClustersResponse.Items["+ i +"].DBNodeClass"));
-			dBCluster.setStorageUsed(context.stringValue("DescribeDBClustersResponse.Items["+ i +"].StorageUsed"));
+			dBCluster.setStorageUsed(context.longValue("DescribeDBClustersResponse.Items["+ i +"].StorageUsed"));
 
 			List<DBNode> dBNodes = new ArrayList<DBNode>();
 			for (int j = 0; j < context.lengthValue("DescribeDBClustersResponse.Items["+ i +"].DBNodes.Length"); j++) {
 				DBNode dBNode = new DBNode();
 				dBNode.setDBNodeId(context.stringValue("DescribeDBClustersResponse.Items["+ i +"].DBNodes["+ j +"].DBNodeId"));
 				dBNode.setDBNodeClass(context.stringValue("DescribeDBClustersResponse.Items["+ i +"].DBNodes["+ j +"].DBNodeClass"));
+				dBNode.setDBNodeRole(context.stringValue("DescribeDBClustersResponse.Items["+ i +"].DBNodes["+ j +"].DBNodeRole"));
 
 				dBNodes.add(dBNode);
 			}

@@ -14,16 +14,16 @@
 
 package com.aliyuncs.polardb.transform.v20170801;
 
-import com.aliyuncs.polardb.model.v20170801.ResetAccountPasswordResponse;
+import com.aliyuncs.polardb.model.v20170801.ModifyDBClusterParametersResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class ResetAccountPasswordResponseUnmarshaller {
+public class ModifyDBClusterParametersResponseUnmarshaller {
 
-	public static ResetAccountPasswordResponse unmarshall(ResetAccountPasswordResponse resetAccountPasswordResponse, UnmarshallerContext context) {
+	public static ModifyDBClusterParametersResponse unmarshall(ModifyDBClusterParametersResponse modifyDBClusterParametersResponse, UnmarshallerContext context) {
 		
-		resetAccountPasswordResponse.setRequestId(context.stringValue("ResetAccountPasswordResponse.RequestId"));
+		modifyDBClusterParametersResponse.setRequestId(context.stringValue("ModifyDBClusterParametersResponse.RequestId"));
 	 
-	 	return resetAccountPasswordResponse;
+	 	return modifyDBClusterParametersResponse;
 	}
 }

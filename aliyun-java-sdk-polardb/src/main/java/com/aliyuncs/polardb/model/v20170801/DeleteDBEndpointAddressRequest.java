@@ -20,27 +20,25 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class DescribeDBNodePerformanceRequest extends RpcAcsRequest<DescribeDBNodePerformanceResponse> {
+public class DeleteDBEndpointAddressRequest extends RpcAcsRequest<DeleteDBEndpointAddressResponse> {
 	
-	public DescribeDBNodePerformanceRequest() {
-		super("polardb", "2017-08-01", "DescribeDBNodePerformance", "polardb");
+	public DeleteDBEndpointAddressRequest() {
+		super("polardb", "2017-08-01", "DeleteDBEndpointAddress", "polardb");
 	}
 
 	private Long resourceOwnerId;
 
-	private String dBNodeId;
-
 	private String resourceOwnerAccount;
+
+	private String dBClusterId;
 
 	private String ownerAccount;
 
-	private String endTime;
+	private String netType;
 
-	private String startTime;
+	private String dBEndpointId;
 
 	private Long ownerId;
-
-	private String key;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -50,17 +48,6 @@ public class DescribeDBNodePerformanceRequest extends RpcAcsRequest<DescribeDBNo
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getDBNodeId() {
-		return this.dBNodeId;
-	}
-
-	public void setDBNodeId(String dBNodeId) {
-		this.dBNodeId = dBNodeId;
-		if(dBNodeId != null){
-			putQueryParameter("DBNodeId", dBNodeId);
 		}
 	}
 
@@ -75,6 +62,17 @@ public class DescribeDBNodePerformanceRequest extends RpcAcsRequest<DescribeDBNo
 		}
 	}
 
+	public String getDBClusterId() {
+		return this.dBClusterId;
+	}
+
+	public void setDBClusterId(String dBClusterId) {
+		this.dBClusterId = dBClusterId;
+		if(dBClusterId != null){
+			putQueryParameter("DBClusterId", dBClusterId);
+		}
+	}
+
 	public String getOwnerAccount() {
 		return this.ownerAccount;
 	}
@@ -86,25 +84,25 @@ public class DescribeDBNodePerformanceRequest extends RpcAcsRequest<DescribeDBNo
 		}
 	}
 
-	public String getEndTime() {
-		return this.endTime;
+	public String getNetType() {
+		return this.netType;
 	}
 
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
-		if(endTime != null){
-			putQueryParameter("EndTime", endTime);
+	public void setNetType(String netType) {
+		this.netType = netType;
+		if(netType != null){
+			putQueryParameter("NetType", netType);
 		}
 	}
 
-	public String getStartTime() {
-		return this.startTime;
+	public String getDBEndpointId() {
+		return this.dBEndpointId;
 	}
 
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("StartTime", startTime);
+	public void setDBEndpointId(String dBEndpointId) {
+		this.dBEndpointId = dBEndpointId;
+		if(dBEndpointId != null){
+			putQueryParameter("DBEndpointId", dBEndpointId);
 		}
 	}
 
@@ -119,20 +117,9 @@ public class DescribeDBNodePerformanceRequest extends RpcAcsRequest<DescribeDBNo
 		}
 	}
 
-	public String getKey() {
-		return this.key;
-	}
-
-	public void setKey(String key) {
-		this.key = key;
-		if(key != null){
-			putQueryParameter("Key", key);
-		}
-	}
-
 	@Override
-	public Class<DescribeDBNodePerformanceResponse> getResponseClass() {
-		return DescribeDBNodePerformanceResponse.class;
+	public Class<DeleteDBEndpointAddressResponse> getResponseClass() {
+		return DeleteDBEndpointAddressResponse.class;
 	}
 
 }

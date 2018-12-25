@@ -20,13 +20,17 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class DeleteDBClusterRequest extends RpcAcsRequest<DeleteDBClusterResponse> {
+public class ModifyAccountPasswordRequest extends RpcAcsRequest<ModifyAccountPasswordResponse> {
 	
-	public DeleteDBClusterRequest() {
-		super("polardb", "2017-08-01", "DeleteDBCluster", "polardb");
+	public ModifyAccountPasswordRequest() {
+		super("polardb", "2017-08-01", "ModifyAccountPassword", "polardb");
 	}
 
 	private Long resourceOwnerId;
+
+	private String accountName;
+
+	private String newAccountPassword;
 
 	private String resourceOwnerAccount;
 
@@ -44,6 +48,28 @@ public class DeleteDBClusterRequest extends RpcAcsRequest<DeleteDBClusterRespons
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getAccountName() {
+		return this.accountName;
+	}
+
+	public void setAccountName(String accountName) {
+		this.accountName = accountName;
+		if(accountName != null){
+			putQueryParameter("AccountName", accountName);
+		}
+	}
+
+	public String getNewAccountPassword() {
+		return this.newAccountPassword;
+	}
+
+	public void setNewAccountPassword(String newAccountPassword) {
+		this.newAccountPassword = newAccountPassword;
+		if(newAccountPassword != null){
+			putQueryParameter("NewAccountPassword", newAccountPassword);
 		}
 	}
 
@@ -92,8 +118,8 @@ public class DeleteDBClusterRequest extends RpcAcsRequest<DeleteDBClusterRespons
 	}
 
 	@Override
-	public Class<DeleteDBClusterResponse> getResponseClass() {
-		return DeleteDBClusterResponse.class;
+	public Class<ModifyAccountPasswordResponse> getResponseClass() {
+		return ModifyAccountPasswordResponse.class;
 	}
 
 }

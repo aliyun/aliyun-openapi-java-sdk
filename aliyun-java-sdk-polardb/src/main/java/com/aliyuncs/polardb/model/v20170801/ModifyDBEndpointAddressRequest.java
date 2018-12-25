@@ -20,31 +20,27 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class DescribeErrorLogsRequest extends RpcAcsRequest<DescribeErrorLogsResponse> {
+public class ModifyDBEndpointAddressRequest extends RpcAcsRequest<ModifyDBEndpointAddressResponse> {
 	
-	public DescribeErrorLogsRequest() {
-		super("polardb", "2017-08-01", "DescribeErrorLogs", "polardb");
+	public ModifyDBEndpointAddressRequest() {
+		super("polardb", "2017-08-01", "ModifyDBEndpointAddress", "polardb");
 	}
 
 	private Long resourceOwnerId;
 
-	private String dBNodeId;
+	private String connectionStringPrefix;
 
 	private String resourceOwnerAccount;
 
+	private String dBClusterId;
+
 	private String ownerAccount;
 
-	private Integer pageSize;
+	private String netType;
 
-	private String endTime;
-
-	private String dBInstanceId;
-
-	private String startTime;
+	private String dBEndpointId;
 
 	private Long ownerId;
-
-	private Integer pageNumber;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -57,14 +53,14 @@ public class DescribeErrorLogsRequest extends RpcAcsRequest<DescribeErrorLogsRes
 		}
 	}
 
-	public String getDBNodeId() {
-		return this.dBNodeId;
+	public String getConnectionStringPrefix() {
+		return this.connectionStringPrefix;
 	}
 
-	public void setDBNodeId(String dBNodeId) {
-		this.dBNodeId = dBNodeId;
-		if(dBNodeId != null){
-			putQueryParameter("DBNodeId", dBNodeId);
+	public void setConnectionStringPrefix(String connectionStringPrefix) {
+		this.connectionStringPrefix = connectionStringPrefix;
+		if(connectionStringPrefix != null){
+			putQueryParameter("ConnectionStringPrefix", connectionStringPrefix);
 		}
 	}
 
@@ -79,6 +75,17 @@ public class DescribeErrorLogsRequest extends RpcAcsRequest<DescribeErrorLogsRes
 		}
 	}
 
+	public String getDBClusterId() {
+		return this.dBClusterId;
+	}
+
+	public void setDBClusterId(String dBClusterId) {
+		this.dBClusterId = dBClusterId;
+		if(dBClusterId != null){
+			putQueryParameter("DBClusterId", dBClusterId);
+		}
+	}
+
 	public String getOwnerAccount() {
 		return this.ownerAccount;
 	}
@@ -90,47 +97,25 @@ public class DescribeErrorLogsRequest extends RpcAcsRequest<DescribeErrorLogsRes
 		}
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public String getNetType() {
+		return this.netType;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
+	public void setNetType(String netType) {
+		this.netType = netType;
+		if(netType != null){
+			putQueryParameter("NetType", netType);
 		}
 	}
 
-	public String getEndTime() {
-		return this.endTime;
+	public String getDBEndpointId() {
+		return this.dBEndpointId;
 	}
 
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
-		if(endTime != null){
-			putQueryParameter("EndTime", endTime);
-		}
-	}
-
-	public String getDBInstanceId() {
-		return this.dBInstanceId;
-	}
-
-	public void setDBInstanceId(String dBInstanceId) {
-		this.dBInstanceId = dBInstanceId;
-		if(dBInstanceId != null){
-			putQueryParameter("DBInstanceId", dBInstanceId);
-		}
-	}
-
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("StartTime", startTime);
+	public void setDBEndpointId(String dBEndpointId) {
+		this.dBEndpointId = dBEndpointId;
+		if(dBEndpointId != null){
+			putQueryParameter("DBEndpointId", dBEndpointId);
 		}
 	}
 
@@ -145,20 +130,9 @@ public class DescribeErrorLogsRequest extends RpcAcsRequest<DescribeErrorLogsRes
 		}
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
-		}
-	}
-
 	@Override
-	public Class<DescribeErrorLogsResponse> getResponseClass() {
-		return DescribeErrorLogsResponse.class;
+	public Class<ModifyDBEndpointAddressResponse> getResponseClass() {
+		return ModifyDBEndpointAddressResponse.class;
 	}
 
 }

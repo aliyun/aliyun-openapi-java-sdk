@@ -16,14 +16,14 @@ package com.aliyuncs.polardb.model.v20170801;
 
 import java.util.Map;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.polardb.transform.v20170801.ResetAccountPasswordResponseUnmarshaller;
+import com.aliyuncs.polardb.transform.v20170801.ModifyDBEndpointAddressResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ResetAccountPasswordResponse extends AcsResponse {
+public class ModifyDBEndpointAddressResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -36,7 +36,12 @@ public class ResetAccountPasswordResponse extends AcsResponse {
 	}
 
 	@Override
-	public ResetAccountPasswordResponse getInstance(UnmarshallerContext context) {
-		return	ResetAccountPasswordResponseUnmarshaller.unmarshall(this, context);
+	public ModifyDBEndpointAddressResponse getInstance(UnmarshallerContext context) {
+		return	ModifyDBEndpointAddressResponseUnmarshaller.unmarshall(this, context);
+	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }

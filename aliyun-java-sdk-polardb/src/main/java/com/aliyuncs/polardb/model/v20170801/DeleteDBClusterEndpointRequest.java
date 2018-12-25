@@ -20,23 +20,21 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class ModifySQLExplorerPolicyRequest extends RpcAcsRequest<ModifySQLExplorerPolicyResponse> {
+public class DeleteDBClusterEndpointRequest extends RpcAcsRequest<DeleteDBClusterEndpointResponse> {
 	
-	public ModifySQLExplorerPolicyRequest() {
-		super("polardb", "2017-08-01", "ModifySQLExplorerPolicy", "polardb");
+	public DeleteDBClusterEndpointRequest() {
+		super("polardb", "2017-08-01", "DeleteDBClusterEndpoint", "polardb");
 	}
 
 	private Long resourceOwnerId;
 
-	private String dBNodeId;
-
 	private String resourceOwnerAccount;
 
-	private String sQLCollectorStatus;
+	private String dBClusterId;
 
 	private String ownerAccount;
 
-	private String dBInstanceId;
+	private String dBEndpointId;
 
 	private Long ownerId;
 
@@ -51,17 +49,6 @@ public class ModifySQLExplorerPolicyRequest extends RpcAcsRequest<ModifySQLExplo
 		}
 	}
 
-	public String getDBNodeId() {
-		return this.dBNodeId;
-	}
-
-	public void setDBNodeId(String dBNodeId) {
-		this.dBNodeId = dBNodeId;
-		if(dBNodeId != null){
-			putQueryParameter("DBNodeId", dBNodeId);
-		}
-	}
-
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
 	}
@@ -73,14 +60,14 @@ public class ModifySQLExplorerPolicyRequest extends RpcAcsRequest<ModifySQLExplo
 		}
 	}
 
-	public String getSQLCollectorStatus() {
-		return this.sQLCollectorStatus;
+	public String getDBClusterId() {
+		return this.dBClusterId;
 	}
 
-	public void setSQLCollectorStatus(String sQLCollectorStatus) {
-		this.sQLCollectorStatus = sQLCollectorStatus;
-		if(sQLCollectorStatus != null){
-			putQueryParameter("SQLCollectorStatus", sQLCollectorStatus);
+	public void setDBClusterId(String dBClusterId) {
+		this.dBClusterId = dBClusterId;
+		if(dBClusterId != null){
+			putQueryParameter("DBClusterId", dBClusterId);
 		}
 	}
 
@@ -95,14 +82,14 @@ public class ModifySQLExplorerPolicyRequest extends RpcAcsRequest<ModifySQLExplo
 		}
 	}
 
-	public String getDBInstanceId() {
-		return this.dBInstanceId;
+	public String getDBEndpointId() {
+		return this.dBEndpointId;
 	}
 
-	public void setDBInstanceId(String dBInstanceId) {
-		this.dBInstanceId = dBInstanceId;
-		if(dBInstanceId != null){
-			putQueryParameter("DBInstanceId", dBInstanceId);
+	public void setDBEndpointId(String dBEndpointId) {
+		this.dBEndpointId = dBEndpointId;
+		if(dBEndpointId != null){
+			putQueryParameter("DBEndpointId", dBEndpointId);
 		}
 	}
 
@@ -118,8 +105,8 @@ public class ModifySQLExplorerPolicyRequest extends RpcAcsRequest<ModifySQLExplo
 	}
 
 	@Override
-	public Class<ModifySQLExplorerPolicyResponse> getResponseClass() {
-		return ModifySQLExplorerPolicyResponse.class;
+	public Class<DeleteDBClusterEndpointResponse> getResponseClass() {
+		return DeleteDBClusterEndpointResponse.class;
 	}
 
 }

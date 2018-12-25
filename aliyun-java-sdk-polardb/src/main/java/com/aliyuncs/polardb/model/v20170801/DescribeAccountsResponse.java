@@ -28,7 +28,7 @@ public class DescribeAccountsResponse extends AcsResponse {
 
 	private String requestId;
 
-	private List<DBInstanceAccount> accounts;
+	private List<DBAccount> accounts;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -38,17 +38,15 @@ public class DescribeAccountsResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public List<DBInstanceAccount> getAccounts() {
+	public List<DBAccount> getAccounts() {
 		return this.accounts;
 	}
 
-	public void setAccounts(List<DBInstanceAccount> accounts) {
+	public void setAccounts(List<DBAccount> accounts) {
 		this.accounts = accounts;
 	}
 
-	public static class DBInstanceAccount {
-
-		private String dBClusterId;
+	public static class DBAccount {
 
 		private String accountName;
 
@@ -58,17 +56,9 @@ public class DescribeAccountsResponse extends AcsResponse {
 
 		private String accountType;
 
-		private String privExceeded;
+		private String privilegeExceeded;
 
 		private List<DatabasePrivilege> databasePrivileges;
-
-		public String getDBClusterId() {
-			return this.dBClusterId;
-		}
-
-		public void setDBClusterId(String dBClusterId) {
-			this.dBClusterId = dBClusterId;
-		}
 
 		public String getAccountName() {
 			return this.accountName;
@@ -102,12 +92,12 @@ public class DescribeAccountsResponse extends AcsResponse {
 			this.accountType = accountType;
 		}
 
-		public String getPrivExceeded() {
-			return this.privExceeded;
+		public String getPrivilegeExceeded() {
+			return this.privilegeExceeded;
 		}
 
-		public void setPrivExceeded(String privExceeded) {
-			this.privExceeded = privExceeded;
+		public void setPrivilegeExceeded(String privilegeExceeded) {
+			this.privilegeExceeded = privilegeExceeded;
 		}
 
 		public List<DatabasePrivilege> getDatabasePrivileges() {
@@ -124,8 +114,6 @@ public class DescribeAccountsResponse extends AcsResponse {
 
 			private String accountPrivilege;
 
-			private String accountPrivilegeDetail;
-
 			public String getDBName() {
 				return this.dBName;
 			}
@@ -141,19 +129,16 @@ public class DescribeAccountsResponse extends AcsResponse {
 			public void setAccountPrivilege(String accountPrivilege) {
 				this.accountPrivilege = accountPrivilege;
 			}
-
-			public String getAccountPrivilegeDetail() {
-				return this.accountPrivilegeDetail;
-			}
-
-			public void setAccountPrivilegeDetail(String accountPrivilegeDetail) {
-				this.accountPrivilegeDetail = accountPrivilegeDetail;
-			}
 		}
 	}
 
 	@Override
 	public DescribeAccountsResponse getInstance(UnmarshallerContext context) {
 		return	DescribeAccountsResponseUnmarshaller.unmarshall(this, context);
+	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }

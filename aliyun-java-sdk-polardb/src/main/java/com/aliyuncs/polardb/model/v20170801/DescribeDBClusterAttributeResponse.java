@@ -28,7 +28,43 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 
 	private String requestId;
 
-	private List<DBClusterAttribute> items;
+	private String regionId;
+
+	private String dBClusterNetworkType;
+
+	private String vPCId;
+
+	private String vSwitchId;
+
+	private String payType;
+
+	private String dBClusterId;
+
+	private String dBClusterStatus;
+
+	private String dBClusterDescription;
+
+	private String engine;
+
+	private String dBType;
+
+	private String dBVersion;
+
+	private String lockMode;
+
+	private String creationTime;
+
+	private String expireTime;
+
+	private String expired;
+
+	private String maintainTime;
+
+	private Long storageUsed;
+
+	private Long sQLSize;
+
+	private List<DBNode> dBNodes;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -38,192 +74,198 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public List<DBClusterAttribute> getItems() {
-		return this.items;
+	public String getRegionId() {
+		return this.regionId;
 	}
 
-	public void setItems(List<DBClusterAttribute> items) {
-		this.items = items;
+	public void setRegionId(String regionId) {
+		this.regionId = regionId;
 	}
 
-	public static class DBClusterAttribute {
+	public String getDBClusterNetworkType() {
+		return this.dBClusterNetworkType;
+	}
 
-		private String regionId;
+	public void setDBClusterNetworkType(String dBClusterNetworkType) {
+		this.dBClusterNetworkType = dBClusterNetworkType;
+	}
 
-		private String dBClusterNetworkType;
+	public String getVPCId() {
+		return this.vPCId;
+	}
 
-		private String vPCId;
+	public void setVPCId(String vPCId) {
+		this.vPCId = vPCId;
+	}
 
-		private String vSwitchId;
+	public String getVSwitchId() {
+		return this.vSwitchId;
+	}
 
-		private String payType;
+	public void setVSwitchId(String vSwitchId) {
+		this.vSwitchId = vSwitchId;
+	}
 
-		private String dBClusterId;
+	public String getPayType() {
+		return this.payType;
+	}
 
-		private String dBClusterStatus;
+	public void setPayType(String payType) {
+		this.payType = payType;
+	}
 
-		private String dBClusterDescription;
+	public String getDBClusterId() {
+		return this.dBClusterId;
+	}
 
-		private String engine;
+	public void setDBClusterId(String dBClusterId) {
+		this.dBClusterId = dBClusterId;
+	}
 
-		private String dBType;
+	public String getDBClusterStatus() {
+		return this.dBClusterStatus;
+	}
 
-		private String dBVersion;
+	public void setDBClusterStatus(String dBClusterStatus) {
+		this.dBClusterStatus = dBClusterStatus;
+	}
 
-		private Long dBClusterStorage;
+	public String getDBClusterDescription() {
+		return this.dBClusterDescription;
+	}
 
-		private Long connectionString;
+	public void setDBClusterDescription(String dBClusterDescription) {
+		this.dBClusterDescription = dBClusterDescription;
+	}
 
-		private Long port;
+	public String getEngine() {
+		return this.engine;
+	}
 
-		private String dBClusterNetType;
+	public void setEngine(String engine) {
+		this.engine = engine;
+	}
 
-		private String lockMode;
+	public String getDBType() {
+		return this.dBType;
+	}
 
-		private String lockReason;
+	public void setDBType(String dBType) {
+		this.dBType = dBType;
+	}
+
+	public String getDBVersion() {
+		return this.dBVersion;
+	}
+
+	public void setDBVersion(String dBVersion) {
+		this.dBVersion = dBVersion;
+	}
+
+	public String getLockMode() {
+		return this.lockMode;
+	}
+
+	public void setLockMode(String lockMode) {
+		this.lockMode = lockMode;
+	}
+
+	public String getCreationTime() {
+		return this.creationTime;
+	}
+
+	public void setCreationTime(String creationTime) {
+		this.creationTime = creationTime;
+	}
+
+	public String getExpireTime() {
+		return this.expireTime;
+	}
+
+	public void setExpireTime(String expireTime) {
+		this.expireTime = expireTime;
+	}
+
+	public String getExpired() {
+		return this.expired;
+	}
+
+	public void setExpired(String expired) {
+		this.expired = expired;
+	}
+
+	public String getMaintainTime() {
+		return this.maintainTime;
+	}
+
+	public void setMaintainTime(String maintainTime) {
+		this.maintainTime = maintainTime;
+	}
+
+	public Long getStorageUsed() {
+		return this.storageUsed;
+	}
+
+	public void setStorageUsed(Long storageUsed) {
+		this.storageUsed = storageUsed;
+	}
+
+	public Long getSQLSize() {
+		return this.sQLSize;
+	}
+
+	public void setSQLSize(Long sQLSize) {
+		this.sQLSize = sQLSize;
+	}
+
+	public List<DBNode> getDBNodes() {
+		return this.dBNodes;
+	}
+
+	public void setDBNodes(List<DBNode> dBNodes) {
+		this.dBNodes = dBNodes;
+	}
+
+	public static class DBNode {
+
+		private String dBNodeId;
+
+		private String zoneId;
+
+		private String dBNodeStatus;
 
 		private String creationTime;
 
-		private String expireTime;
+		private String dBNodeClass;
 
-		private Boolean isLatestVersion;
+		private String dBNodeRole;
 
-		private List<DbInstance> dbInstances;
+		private Integer maxIOPS;
 
-		public String getRegionId() {
-			return this.regionId;
+		private Integer maxConnections;
+
+		public String getDBNodeId() {
+			return this.dBNodeId;
 		}
 
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
+		public void setDBNodeId(String dBNodeId) {
+			this.dBNodeId = dBNodeId;
 		}
 
-		public String getDBClusterNetworkType() {
-			return this.dBClusterNetworkType;
+		public String getZoneId() {
+			return this.zoneId;
 		}
 
-		public void setDBClusterNetworkType(String dBClusterNetworkType) {
-			this.dBClusterNetworkType = dBClusterNetworkType;
+		public void setZoneId(String zoneId) {
+			this.zoneId = zoneId;
 		}
 
-		public String getVPCId() {
-			return this.vPCId;
+		public String getDBNodeStatus() {
+			return this.dBNodeStatus;
 		}
 
-		public void setVPCId(String vPCId) {
-			this.vPCId = vPCId;
-		}
-
-		public String getVSwitchId() {
-			return this.vSwitchId;
-		}
-
-		public void setVSwitchId(String vSwitchId) {
-			this.vSwitchId = vSwitchId;
-		}
-
-		public String getPayType() {
-			return this.payType;
-		}
-
-		public void setPayType(String payType) {
-			this.payType = payType;
-		}
-
-		public String getDBClusterId() {
-			return this.dBClusterId;
-		}
-
-		public void setDBClusterId(String dBClusterId) {
-			this.dBClusterId = dBClusterId;
-		}
-
-		public String getDBClusterStatus() {
-			return this.dBClusterStatus;
-		}
-
-		public void setDBClusterStatus(String dBClusterStatus) {
-			this.dBClusterStatus = dBClusterStatus;
-		}
-
-		public String getDBClusterDescription() {
-			return this.dBClusterDescription;
-		}
-
-		public void setDBClusterDescription(String dBClusterDescription) {
-			this.dBClusterDescription = dBClusterDescription;
-		}
-
-		public String getEngine() {
-			return this.engine;
-		}
-
-		public void setEngine(String engine) {
-			this.engine = engine;
-		}
-
-		public String getDBType() {
-			return this.dBType;
-		}
-
-		public void setDBType(String dBType) {
-			this.dBType = dBType;
-		}
-
-		public String getDBVersion() {
-			return this.dBVersion;
-		}
-
-		public void setDBVersion(String dBVersion) {
-			this.dBVersion = dBVersion;
-		}
-
-		public Long getDBClusterStorage() {
-			return this.dBClusterStorage;
-		}
-
-		public void setDBClusterStorage(Long dBClusterStorage) {
-			this.dBClusterStorage = dBClusterStorage;
-		}
-
-		public Long getConnectionString() {
-			return this.connectionString;
-		}
-
-		public void setConnectionString(Long connectionString) {
-			this.connectionString = connectionString;
-		}
-
-		public Long getPort() {
-			return this.port;
-		}
-
-		public void setPort(Long port) {
-			this.port = port;
-		}
-
-		public String getDBClusterNetType() {
-			return this.dBClusterNetType;
-		}
-
-		public void setDBClusterNetType(String dBClusterNetType) {
-			this.dBClusterNetType = dBClusterNetType;
-		}
-
-		public String getLockMode() {
-			return this.lockMode;
-		}
-
-		public void setLockMode(String lockMode) {
-			this.lockMode = lockMode;
-		}
-
-		public String getLockReason() {
-			return this.lockReason;
-		}
-
-		public void setLockReason(String lockReason) {
-			this.lockReason = lockReason;
+		public void setDBNodeStatus(String dBNodeStatus) {
+			this.dBNodeStatus = dBNodeStatus;
 		}
 
 		public String getCreationTime() {
@@ -234,206 +276,46 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 			this.creationTime = creationTime;
 		}
 
-		public String getExpireTime() {
-			return this.expireTime;
+		public String getDBNodeClass() {
+			return this.dBNodeClass;
 		}
 
-		public void setExpireTime(String expireTime) {
-			this.expireTime = expireTime;
+		public void setDBNodeClass(String dBNodeClass) {
+			this.dBNodeClass = dBNodeClass;
 		}
 
-		public Boolean getIsLatestVersion() {
-			return this.isLatestVersion;
+		public String getDBNodeRole() {
+			return this.dBNodeRole;
 		}
 
-		public void setIsLatestVersion(Boolean isLatestVersion) {
-			this.isLatestVersion = isLatestVersion;
+		public void setDBNodeRole(String dBNodeRole) {
+			this.dBNodeRole = dBNodeRole;
 		}
 
-		public List<DbInstance> getDbInstances() {
-			return this.dbInstances;
+		public Integer getMaxIOPS() {
+			return this.maxIOPS;
 		}
 
-		public void setDbInstances(List<DbInstance> dbInstances) {
-			this.dbInstances = dbInstances;
+		public void setMaxIOPS(Integer maxIOPS) {
+			this.maxIOPS = maxIOPS;
 		}
 
-		public static class DbInstance {
+		public Integer getMaxConnections() {
+			return this.maxConnections;
+		}
 
-			private String dBInstanceId;
-
-			private String dBInstanceStatus;
-
-			private String dBInstanceDescription;
-
-			private String engine;
-
-			private String dBType;
-
-			private String dBVersion;
-
-			private String dBInstanceStorage;
-
-			private String lockMode;
-
-			private String lockReason;
-
-			private String maintainStartTime;
-
-			private String maintainEndTime;
-
-			private String creationTime;
-
-			private String dBInstanceClass;
-
-			private String securityIPList;
-
-			private String currentMinorVersion;
-
-			private String latestMinorVersion;
-
-			private String dBInstanceType;
-
-			public String getDBInstanceId() {
-				return this.dBInstanceId;
-			}
-
-			public void setDBInstanceId(String dBInstanceId) {
-				this.dBInstanceId = dBInstanceId;
-			}
-
-			public String getDBInstanceStatus() {
-				return this.dBInstanceStatus;
-			}
-
-			public void setDBInstanceStatus(String dBInstanceStatus) {
-				this.dBInstanceStatus = dBInstanceStatus;
-			}
-
-			public String getDBInstanceDescription() {
-				return this.dBInstanceDescription;
-			}
-
-			public void setDBInstanceDescription(String dBInstanceDescription) {
-				this.dBInstanceDescription = dBInstanceDescription;
-			}
-
-			public String getEngine() {
-				return this.engine;
-			}
-
-			public void setEngine(String engine) {
-				this.engine = engine;
-			}
-
-			public String getDBType() {
-				return this.dBType;
-			}
-
-			public void setDBType(String dBType) {
-				this.dBType = dBType;
-			}
-
-			public String getDBVersion() {
-				return this.dBVersion;
-			}
-
-			public void setDBVersion(String dBVersion) {
-				this.dBVersion = dBVersion;
-			}
-
-			public String getDBInstanceStorage() {
-				return this.dBInstanceStorage;
-			}
-
-			public void setDBInstanceStorage(String dBInstanceStorage) {
-				this.dBInstanceStorage = dBInstanceStorage;
-			}
-
-			public String getLockMode() {
-				return this.lockMode;
-			}
-
-			public void setLockMode(String lockMode) {
-				this.lockMode = lockMode;
-			}
-
-			public String getLockReason() {
-				return this.lockReason;
-			}
-
-			public void setLockReason(String lockReason) {
-				this.lockReason = lockReason;
-			}
-
-			public String getMaintainStartTime() {
-				return this.maintainStartTime;
-			}
-
-			public void setMaintainStartTime(String maintainStartTime) {
-				this.maintainStartTime = maintainStartTime;
-			}
-
-			public String getMaintainEndTime() {
-				return this.maintainEndTime;
-			}
-
-			public void setMaintainEndTime(String maintainEndTime) {
-				this.maintainEndTime = maintainEndTime;
-			}
-
-			public String getCreationTime() {
-				return this.creationTime;
-			}
-
-			public void setCreationTime(String creationTime) {
-				this.creationTime = creationTime;
-			}
-
-			public String getDBInstanceClass() {
-				return this.dBInstanceClass;
-			}
-
-			public void setDBInstanceClass(String dBInstanceClass) {
-				this.dBInstanceClass = dBInstanceClass;
-			}
-
-			public String getSecurityIPList() {
-				return this.securityIPList;
-			}
-
-			public void setSecurityIPList(String securityIPList) {
-				this.securityIPList = securityIPList;
-			}
-
-			public String getCurrentMinorVersion() {
-				return this.currentMinorVersion;
-			}
-
-			public void setCurrentMinorVersion(String currentMinorVersion) {
-				this.currentMinorVersion = currentMinorVersion;
-			}
-
-			public String getLatestMinorVersion() {
-				return this.latestMinorVersion;
-			}
-
-			public void setLatestMinorVersion(String latestMinorVersion) {
-				this.latestMinorVersion = latestMinorVersion;
-			}
-
-			public String getDBInstanceType() {
-				return this.dBInstanceType;
-			}
-
-			public void setDBInstanceType(String dBInstanceType) {
-				this.dBInstanceType = dBInstanceType;
-			}
+		public void setMaxConnections(Integer maxConnections) {
+			this.maxConnections = maxConnections;
 		}
 	}
 
 	@Override
 	public DescribeDBClusterAttributeResponse getInstance(UnmarshallerContext context) {
 		return	DescribeDBClusterAttributeResponseUnmarshaller.unmarshall(this, context);
+	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }

@@ -20,21 +20,25 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class DeleteDBClusterRequest extends RpcAcsRequest<DeleteDBClusterResponse> {
+public class ModifyDBClusterParametersRequest extends RpcAcsRequest<ModifyDBClusterParametersResponse> {
 	
-	public DeleteDBClusterRequest() {
-		super("polardb", "2017-08-01", "DeleteDBCluster", "polardb");
+	public ModifyDBClusterParametersRequest() {
+		super("polardb", "2017-08-01", "ModifyDBClusterParameters", "polardb");
 	}
 
 	private Long resourceOwnerId;
 
 	private String resourceOwnerAccount;
 
+	private String effectiveTime;
+
 	private String dBClusterId;
 
 	private String ownerAccount;
 
 	private Long ownerId;
+
+	private String parameters;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -55,6 +59,17 @@ public class DeleteDBClusterRequest extends RpcAcsRequest<DeleteDBClusterRespons
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getEffectiveTime() {
+		return this.effectiveTime;
+	}
+
+	public void setEffectiveTime(String effectiveTime) {
+		this.effectiveTime = effectiveTime;
+		if(effectiveTime != null){
+			putQueryParameter("EffectiveTime", effectiveTime);
 		}
 	}
 
@@ -91,9 +106,20 @@ public class DeleteDBClusterRequest extends RpcAcsRequest<DeleteDBClusterRespons
 		}
 	}
 
+	public String getParameters() {
+		return this.parameters;
+	}
+
+	public void setParameters(String parameters) {
+		this.parameters = parameters;
+		if(parameters != null){
+			putQueryParameter("Parameters", parameters);
+		}
+	}
+
 	@Override
-	public Class<DeleteDBClusterResponse> getResponseClass() {
-		return DeleteDBClusterResponse.class;
+	public Class<ModifyDBClusterParametersResponse> getResponseClass() {
+		return ModifyDBClusterParametersResponse.class;
 	}
 
 }

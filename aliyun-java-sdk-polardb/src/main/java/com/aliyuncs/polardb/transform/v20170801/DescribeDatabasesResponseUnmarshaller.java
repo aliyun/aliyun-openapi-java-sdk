@@ -33,7 +33,6 @@ public class DescribeDatabasesResponseUnmarshaller {
 		List<Database> databases = new ArrayList<Database>();
 		for (int i = 0; i < context.lengthValue("DescribeDatabasesResponse.Databases.Length"); i++) {
 			Database database = new Database();
-			database.setDBClusterId(context.stringValue("DescribeDatabasesResponse.Databases["+ i +"].DBClusterId"));
 			database.setDBName(context.stringValue("DescribeDatabasesResponse.Databases["+ i +"].DBName"));
 			database.setDBStatus(context.stringValue("DescribeDatabasesResponse.Databases["+ i +"].DBStatus"));
 			database.setDBDescription(context.stringValue("DescribeDatabasesResponse.Databases["+ i +"].DBDescription"));

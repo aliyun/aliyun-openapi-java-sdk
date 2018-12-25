@@ -20,19 +20,25 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class DeleteDBClusterRequest extends RpcAcsRequest<DeleteDBClusterResponse> {
+public class CreateDBEndpointAddressRequest extends RpcAcsRequest<CreateDBEndpointAddressResponse> {
 	
-	public DeleteDBClusterRequest() {
-		super("polardb", "2017-08-01", "DeleteDBCluster", "polardb");
+	public CreateDBEndpointAddressRequest() {
+		super("polardb", "2017-08-01", "CreateDBEndpointAddress", "polardb");
 	}
 
 	private Long resourceOwnerId;
+
+	private String connectionStringPrefix;
 
 	private String resourceOwnerAccount;
 
 	private String dBClusterId;
 
 	private String ownerAccount;
+
+	private String netType;
+
+	private String dBEndpointId;
 
 	private Long ownerId;
 
@@ -44,6 +50,17 @@ public class DeleteDBClusterRequest extends RpcAcsRequest<DeleteDBClusterRespons
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getConnectionStringPrefix() {
+		return this.connectionStringPrefix;
+	}
+
+	public void setConnectionStringPrefix(String connectionStringPrefix) {
+		this.connectionStringPrefix = connectionStringPrefix;
+		if(connectionStringPrefix != null){
+			putQueryParameter("ConnectionStringPrefix", connectionStringPrefix);
 		}
 	}
 
@@ -80,6 +97,28 @@ public class DeleteDBClusterRequest extends RpcAcsRequest<DeleteDBClusterRespons
 		}
 	}
 
+	public String getNetType() {
+		return this.netType;
+	}
+
+	public void setNetType(String netType) {
+		this.netType = netType;
+		if(netType != null){
+			putQueryParameter("NetType", netType);
+		}
+	}
+
+	public String getDBEndpointId() {
+		return this.dBEndpointId;
+	}
+
+	public void setDBEndpointId(String dBEndpointId) {
+		this.dBEndpointId = dBEndpointId;
+		if(dBEndpointId != null){
+			putQueryParameter("DBEndpointId", dBEndpointId);
+		}
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -92,8 +131,8 @@ public class DeleteDBClusterRequest extends RpcAcsRequest<DeleteDBClusterRespons
 	}
 
 	@Override
-	public Class<DeleteDBClusterResponse> getResponseClass() {
-		return DeleteDBClusterResponse.class;
+	public Class<CreateDBEndpointAddressResponse> getResponseClass() {
+		return CreateDBEndpointAddressResponse.class;
 	}
 
 }

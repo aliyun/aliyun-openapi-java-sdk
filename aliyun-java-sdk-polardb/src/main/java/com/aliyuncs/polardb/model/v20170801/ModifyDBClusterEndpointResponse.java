@@ -16,18 +16,16 @@ package com.aliyuncs.polardb.model.v20170801;
 
 import java.util.Map;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.polardb.transform.v20170801.DescribeSQLExplorerPolicyResponseUnmarshaller;
+import com.aliyuncs.polardb.transform.v20170801.ModifyDBClusterEndpointResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DescribeSQLExplorerPolicyResponse extends AcsResponse {
+public class ModifyDBClusterEndpointResponse extends AcsResponse {
 
 	private String requestId;
-
-	private String sQLCollectorStatus;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -37,16 +35,13 @@ public class DescribeSQLExplorerPolicyResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getSQLCollectorStatus() {
-		return this.sQLCollectorStatus;
-	}
-
-	public void setSQLCollectorStatus(String sQLCollectorStatus) {
-		this.sQLCollectorStatus = sQLCollectorStatus;
+	@Override
+	public ModifyDBClusterEndpointResponse getInstance(UnmarshallerContext context) {
+		return	ModifyDBClusterEndpointResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override
-	public DescribeSQLExplorerPolicyResponse getInstance(UnmarshallerContext context) {
-		return	DescribeSQLExplorerPolicyResponseUnmarshaller.unmarshall(this, context);
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }
