@@ -28,6 +28,10 @@ public class DescribeEventLevelCountRequest extends RpcAcsRequest<DescribeEventL
 
 	private String sourceIp;
 
+	private String from;
+
+	private String type;
+
 	public String getSourceIp() {
 		return this.sourceIp;
 	}
@@ -36,6 +40,28 @@ public class DescribeEventLevelCountRequest extends RpcAcsRequest<DescribeEventL
 		this.sourceIp = sourceIp;
 		if(sourceIp != null){
 			putQueryParameter("SourceIp", sourceIp);
+		}
+	}
+
+	public String getFrom() {
+		return this.from;
+	}
+
+	public void setFrom(String from) {
+		this.from = from;
+		if(from != null){
+			putQueryParameter("From", from);
+		}
+	}
+
+	public String getType() {
+		return this.type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+		if(type != null){
+			putQueryParameter("Type", type);
 		}
 	}
 

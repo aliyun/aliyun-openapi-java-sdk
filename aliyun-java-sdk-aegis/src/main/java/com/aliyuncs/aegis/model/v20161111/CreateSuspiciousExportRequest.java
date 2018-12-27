@@ -26,8 +26,6 @@ public class CreateSuspiciousExportRequest extends RpcAcsRequest<CreateSuspiciou
 		super("aegis", "2016-11-11", "CreateSuspiciousExport", "vipaegis");
 	}
 
-	private Long resourceOwnerId;
-
 	private String statusList;
 
 	private String sourceIp;
@@ -45,19 +43,6 @@ public class CreateSuspiciousExportRequest extends RpcAcsRequest<CreateSuspiciou
 	private String remark;
 
 	private String tag;
-
-	private String uuids;
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
 
 	public String getStatusList() {
 		return this.statusList;
@@ -155,17 +140,6 @@ public class CreateSuspiciousExportRequest extends RpcAcsRequest<CreateSuspiciou
 		this.tag = tag;
 		if(tag != null){
 			putQueryParameter("Tag", tag);
-		}
-	}
-
-	public String getUuids() {
-		return this.uuids;
-	}
-
-	public void setUuids(String uuids) {
-		this.uuids = uuids;
-		if(uuids != null){
-			putQueryParameter("Uuids", uuids);
 		}
 	}
 

@@ -26,6 +26,8 @@ public class DescribeSuspEventsRequest extends RpcAcsRequest<DescribeSuspEventsR
 		super("aegis", "2016-11-11", "DescribeSuspEvents", "vipaegis");
 	}
 
+	private String alarmUniqueInfo;
+
 	private String sourceIp;
 
 	private String name;
@@ -38,13 +40,24 @@ public class DescribeSuspEventsRequest extends RpcAcsRequest<DescribeSuspEventsR
 
 	private String currentPage;
 
+	private String from;
+
 	private String lang;
 
 	private String levels;
 
 	private String parentEventTypes;
 
-	private Integer status;
+	public String getAlarmUniqueInfo() {
+		return this.alarmUniqueInfo;
+	}
+
+	public void setAlarmUniqueInfo(String alarmUniqueInfo) {
+		this.alarmUniqueInfo = alarmUniqueInfo;
+		if(alarmUniqueInfo != null){
+			putQueryParameter("AlarmUniqueInfo", alarmUniqueInfo);
+		}
+	}
 
 	public String getSourceIp() {
 		return this.sourceIp;
@@ -112,6 +125,17 @@ public class DescribeSuspEventsRequest extends RpcAcsRequest<DescribeSuspEventsR
 		}
 	}
 
+	public String getFrom() {
+		return this.from;
+	}
+
+	public void setFrom(String from) {
+		this.from = from;
+		if(from != null){
+			putQueryParameter("From", from);
+		}
+	}
+
 	public String getLang() {
 		return this.lang;
 	}
@@ -142,17 +166,6 @@ public class DescribeSuspEventsRequest extends RpcAcsRequest<DescribeSuspEventsR
 		this.parentEventTypes = parentEventTypes;
 		if(parentEventTypes != null){
 			putQueryParameter("ParentEventTypes", parentEventTypes);
-		}
-	}
-
-	public Integer getStatus() {
-		return this.status;
-	}
-
-	public void setStatus(Integer status) {
-		this.status = status;
-		if(status != null){
-			putQueryParameter("Status", status.toString());
 		}
 	}
 

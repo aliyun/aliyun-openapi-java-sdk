@@ -52,6 +52,9 @@ public class DescribeSuspEventsResponseUnmarshaller {
 			warningSummary.setDataSource(context.stringValue("DescribeSuspEventsResponse.SuspEvents["+ i +"].DataSource"));
 			warningSummary.setCanBeDealOnLine(context.booleanValue("DescribeSuspEventsResponse.SuspEvents["+ i +"].CanBeDealOnLine"));
 			warningSummary.setSaleVersion(context.stringValue("DescribeSuspEventsResponse.SuspEvents["+ i +"].SaleVersion"));
+			warningSummary.setAlarmEventType(context.stringValue("DescribeSuspEventsResponse.SuspEvents["+ i +"].AlarmEventType"));
+			warningSummary.setAlarmEventName(context.stringValue("DescribeSuspEventsResponse.SuspEvents["+ i +"].AlarmEventName"));
+			warningSummary.setAlarmUniqueInfo(context.stringValue("DescribeSuspEventsResponse.SuspEvents["+ i +"].AlarmUniqueInfo"));
 
 			suspEvents.add(warningSummary);
 		}

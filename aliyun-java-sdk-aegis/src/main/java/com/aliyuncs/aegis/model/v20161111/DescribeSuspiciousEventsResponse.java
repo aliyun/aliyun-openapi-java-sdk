@@ -15,6 +15,7 @@
 package com.aliyuncs.aegis.model.v20161111;
 
 import java.util.List;
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.aegis.transform.v20161111.DescribeSuspiciousEventsResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -96,6 +97,8 @@ public class DescribeSuspiciousEventsResponse extends AcsResponse {
 		private Long firstTime;
 
 		private String instanceId;
+
+		private String tag;
 
 		private String aliasEventName;
 
@@ -187,6 +190,14 @@ public class DescribeSuspiciousEventsResponse extends AcsResponse {
 			this.instanceId = instanceId;
 		}
 
+		public String getTag() {
+			return this.tag;
+		}
+
+		public void setTag(String tag) {
+			this.tag = tag;
+		}
+
 		public String getAliasEventName() {
 			return this.aliasEventName;
 		}
@@ -235,6 +246,8 @@ public class DescribeSuspiciousEventsResponse extends AcsResponse {
 
 			private String value;
 
+			private String infoType;
+
 			public String getName() {
 				return this.name;
 			}
@@ -257,6 +270,14 @@ public class DescribeSuspiciousEventsResponse extends AcsResponse {
 
 			public void setValue(String value) {
 				this.value = value;
+			}
+
+			public String getInfoType() {
+				return this.infoType;
+			}
+
+			public void setInfoType(String infoType) {
+				this.infoType = infoType;
 			}
 		}
 	}

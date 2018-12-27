@@ -28,6 +28,8 @@ public class DescribeSuspEventExportInfoRequest extends RpcAcsRequest<DescribeSu
 
 	private String sourceIp;
 
+	private String from;
+
 	private Integer exportId;
 
 	public String getSourceIp() {
@@ -38,6 +40,17 @@ public class DescribeSuspEventExportInfoRequest extends RpcAcsRequest<DescribeSu
 		this.sourceIp = sourceIp;
 		if(sourceIp != null){
 			putQueryParameter("SourceIp", sourceIp);
+		}
+	}
+
+	public String getFrom() {
+		return this.from;
+	}
+
+	public void setFrom(String from) {
+		this.from = from;
+		if(from != null){
+			putQueryParameter("From", from);
 		}
 	}
 

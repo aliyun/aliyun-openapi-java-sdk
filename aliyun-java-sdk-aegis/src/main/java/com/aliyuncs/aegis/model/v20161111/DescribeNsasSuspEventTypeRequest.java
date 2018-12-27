@@ -32,6 +32,8 @@ public class DescribeNsasSuspEventTypeRequest extends RpcAcsRequest<DescribeNsas
 
 	private String remark;
 
+	private String from;
+
 	private String lang;
 
 	public String getSourceIp() {
@@ -64,6 +66,17 @@ public class DescribeNsasSuspEventTypeRequest extends RpcAcsRequest<DescribeNsas
 		this.remark = remark;
 		if(remark != null){
 			putQueryParameter("Remark", remark);
+		}
+	}
+
+	public String getFrom() {
+		return this.from;
+	}
+
+	public void setFrom(String from) {
+		this.from = from;
+		if(from != null){
+			putQueryParameter("From", from);
 		}
 	}
 

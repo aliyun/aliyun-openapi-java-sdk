@@ -29,7 +29,7 @@ public class DescribeSuspiciousExportInfoResponseUnmarshaller {
 		describeSuspiciousExportInfoResponse.setCurrentCount(context.integerValue("DescribeSuspiciousExportInfoResponse.CurrentCount"));
 		describeSuspiciousExportInfoResponse.setTotalCount(context.integerValue("DescribeSuspiciousExportInfoResponse.TotalCount"));
 		describeSuspiciousExportInfoResponse.setProgress(context.integerValue("DescribeSuspiciousExportInfoResponse.Progress"));
-		describeSuspiciousExportInfoResponse.setStatus(context.stringValue("DescribeSuspiciousExportInfoResponse.Status"));
+		describeSuspiciousExportInfoResponse.setExportStatus(context.stringValue("DescribeSuspiciousExportInfoResponse.ExportStatus"));
 		describeSuspiciousExportInfoResponse.setMessage(context.stringValue("DescribeSuspiciousExportInfoResponse.Message"));
 		describeSuspiciousExportInfoResponse.setLink(context.stringValue("DescribeSuspiciousExportInfoResponse.Link"));
 	 

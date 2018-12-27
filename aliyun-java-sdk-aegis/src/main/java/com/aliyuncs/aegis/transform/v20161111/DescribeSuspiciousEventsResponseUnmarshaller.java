@@ -46,6 +46,7 @@ public class DescribeSuspiciousEventsResponseUnmarshaller {
 			logListItem.setUuid(context.stringValue("DescribeSuspiciousEventsResponse.LogList["+ i +"].Uuid"));
 			logListItem.setFirstTime(context.longValue("DescribeSuspiciousEventsResponse.LogList["+ i +"].FirstTime"));
 			logListItem.setInstanceId(context.stringValue("DescribeSuspiciousEventsResponse.LogList["+ i +"].InstanceId"));
+			logListItem.setTag(context.stringValue("DescribeSuspiciousEventsResponse.LogList["+ i +"].Tag"));
 			logListItem.setAliasEventName(context.stringValue("DescribeSuspiciousEventsResponse.LogList["+ i +"].AliasEventName"));
 			logListItem.setOsVersion(context.stringValue("DescribeSuspiciousEventsResponse.LogList["+ i +"].OsVersion"));
 			logListItem.setClientIp(context.stringValue("DescribeSuspiciousEventsResponse.LogList["+ i +"].ClientIp"));
@@ -57,6 +58,7 @@ public class DescribeSuspiciousEventsResponseUnmarshaller {
 				detailListItem.setName(context.stringValue("DescribeSuspiciousEventsResponse.LogList["+ i +"].DetailList["+ j +"].Name"));
 				detailListItem.setType(context.stringValue("DescribeSuspiciousEventsResponse.LogList["+ i +"].DetailList["+ j +"].Type"));
 				detailListItem.setValue(context.stringValue("DescribeSuspiciousEventsResponse.LogList["+ i +"].DetailList["+ j +"].Value"));
+				detailListItem.setInfoType(context.stringValue("DescribeSuspiciousEventsResponse.LogList["+ i +"].DetailList["+ j +"].InfoType"));
 
 				detailList.add(detailListItem);
 			}

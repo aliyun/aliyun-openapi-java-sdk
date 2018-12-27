@@ -15,6 +15,7 @@
 package com.aliyuncs.aegis.model.v20161111;
 
 import java.util.List;
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.aegis.transform.v20161111.DescribeSuspEventDetailResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -29,8 +30,6 @@ public class DescribeSuspEventDetailResponse extends AcsResponse {
 
 	private String lastTime;
 
-	private String eventTypeDesc;
-
 	private Integer id;
 
 	private String instanceName;
@@ -43,7 +42,7 @@ public class DescribeSuspEventDetailResponse extends AcsResponse {
 
 	private String eventDesc;
 
-	private String eventTypeDesc1;
+	private String eventTypeDesc;
 
 	private String level;
 
@@ -65,8 +64,6 @@ public class DescribeSuspEventDetailResponse extends AcsResponse {
 
 	private List<QuaraFile> details;
 
-	private List<CauseDetail> causeDetails;
-
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -81,14 +78,6 @@ public class DescribeSuspEventDetailResponse extends AcsResponse {
 
 	public void setLastTime(String lastTime) {
 		this.lastTime = lastTime;
-	}
-
-	public String getEventTypeDesc() {
-		return this.eventTypeDesc;
-	}
-
-	public void setEventTypeDesc(String eventTypeDesc) {
-		this.eventTypeDesc = eventTypeDesc;
 	}
 
 	public Integer getId() {
@@ -139,12 +128,12 @@ public class DescribeSuspEventDetailResponse extends AcsResponse {
 		this.eventDesc = eventDesc;
 	}
 
-	public String getEventTypeDesc1() {
-		return this.eventTypeDesc1;
+	public String getEventTypeDesc() {
+		return this.eventTypeDesc;
 	}
 
-	public void setEventTypeDesc1(String eventTypeDesc1) {
-		this.eventTypeDesc1 = eventTypeDesc1;
+	public void setEventTypeDesc(String eventTypeDesc) {
+		this.eventTypeDesc = eventTypeDesc;
 	}
 
 	public String getLevel() {
@@ -227,14 +216,6 @@ public class DescribeSuspEventDetailResponse extends AcsResponse {
 		this.details = details;
 	}
 
-	public List<CauseDetail> getCauseDetails() {
-		return this.causeDetails;
-	}
-
-	public void setCauseDetails(List<CauseDetail> causeDetails) {
-		this.causeDetails = causeDetails;
-	}
-
 	public static class QuaraFile {
 
 		private String name;
@@ -275,62 +256,6 @@ public class DescribeSuspEventDetailResponse extends AcsResponse {
 
 		public void setValue(String value) {
 			this.value = value;
-		}
-	}
-
-	public static class CauseDetail {
-
-		private List<DetailItemItem> detailItem;
-
-		public List<DetailItemItem> getDetailItem() {
-			return this.detailItem;
-		}
-
-		public void setDetailItem(List<DetailItemItem> detailItem) {
-			this.detailItem = detailItem;
-		}
-
-		public static class DetailItemItem {
-
-			private String name;
-
-			private String type;
-
-			private String infoType;
-
-			private String value;
-
-			public String getName() {
-				return this.name;
-			}
-
-			public void setName(String name) {
-				this.name = name;
-			}
-
-			public String getType() {
-				return this.type;
-			}
-
-			public void setType(String type) {
-				this.type = type;
-			}
-
-			public String getInfoType() {
-				return this.infoType;
-			}
-
-			public void setInfoType(String infoType) {
-				this.infoType = infoType;
-			}
-
-			public String getValue() {
-				return this.value;
-			}
-
-			public void setValue(String value) {
-				this.value = value;
-			}
 		}
 	}
 

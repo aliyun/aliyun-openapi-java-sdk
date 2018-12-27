@@ -36,6 +36,8 @@ public class ExportSuspEventsRequest extends RpcAcsRequest<ExportSuspEventsRespo
 
 	private String remark;
 
+	private String from;
+
 	private String timeStart;
 
 	private String lang;
@@ -98,6 +100,17 @@ public class ExportSuspEventsRequest extends RpcAcsRequest<ExportSuspEventsRespo
 		this.remark = remark;
 		if(remark != null){
 			putQueryParameter("Remark", remark);
+		}
+	}
+
+	public String getFrom() {
+		return this.from;
+	}
+
+	public void setFrom(String from) {
+		this.from = from;
+		if(from != null){
+			putQueryParameter("From", from);
 		}
 	}
 

@@ -14,6 +14,7 @@
 
 package com.aliyuncs.aegis.model.v20161111;
 
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.aegis.transform.v20161111.DescribeSuspiciousExportInfoResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -38,7 +39,7 @@ public class DescribeSuspiciousExportInfoResponse extends AcsResponse {
 
 	private Integer progress;
 
-	private String status;
+	private String exportStatus;
 
 	private String message;
 
@@ -100,12 +101,12 @@ public class DescribeSuspiciousExportInfoResponse extends AcsResponse {
 		this.progress = progress;
 	}
 
-	public String getStatus() {
-		return this.status;
+	public String getExportStatus() {
+		return this.exportStatus;
 	}
 
-	public void setStatus(String status) {
-		this.status = status;
+	public void setExportStatus(String exportStatus) {
+		this.exportStatus = exportStatus;
 	}
 
 	public String getMessage() {

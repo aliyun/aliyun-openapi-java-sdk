@@ -28,7 +28,11 @@ public class OperationSuspEventsRequest extends RpcAcsRequest<OperationSuspEvent
 
 	private String sourceIp;
 
+	private String warnType;
+
 	private String suspiciousEventIds;
+
+	private String from;
 
 	private String subOperation;
 
@@ -45,6 +49,17 @@ public class OperationSuspEventsRequest extends RpcAcsRequest<OperationSuspEvent
 		}
 	}
 
+	public String getWarnType() {
+		return this.warnType;
+	}
+
+	public void setWarnType(String warnType) {
+		this.warnType = warnType;
+		if(warnType != null){
+			putQueryParameter("WarnType", warnType);
+		}
+	}
+
 	public String getSuspiciousEventIds() {
 		return this.suspiciousEventIds;
 	}
@@ -53,6 +68,17 @@ public class OperationSuspEventsRequest extends RpcAcsRequest<OperationSuspEvent
 		this.suspiciousEventIds = suspiciousEventIds;
 		if(suspiciousEventIds != null){
 			putQueryParameter("SuspiciousEventIds", suspiciousEventIds);
+		}
+	}
+
+	public String getFrom() {
+		return this.from;
+	}
+
+	public void setFrom(String from) {
+		this.from = from;
+		if(from != null){
+			putQueryParameter("From", from);
 		}
 	}
 

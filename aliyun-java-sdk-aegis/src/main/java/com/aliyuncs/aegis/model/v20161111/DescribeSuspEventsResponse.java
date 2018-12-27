@@ -15,6 +15,7 @@
 package com.aliyuncs.aegis.model.v20161111;
 
 import java.util.List;
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.aegis.transform.v20161111.DescribeSuspEventsResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -118,6 +119,12 @@ public class DescribeSuspEventsResponse extends AcsResponse {
 		private Boolean canBeDealOnLine;
 
 		private String saleVersion;
+
+		private String alarmEventType;
+
+		private String alarmEventName;
+
+		private String alarmUniqueInfo;
 
 		public String getLastTime() {
 			return this.lastTime;
@@ -245,6 +252,30 @@ public class DescribeSuspEventsResponse extends AcsResponse {
 
 		public void setSaleVersion(String saleVersion) {
 			this.saleVersion = saleVersion;
+		}
+
+		public String getAlarmEventType() {
+			return this.alarmEventType;
+		}
+
+		public void setAlarmEventType(String alarmEventType) {
+			this.alarmEventType = alarmEventType;
+		}
+
+		public String getAlarmEventName() {
+			return this.alarmEventName;
+		}
+
+		public void setAlarmEventName(String alarmEventName) {
+			this.alarmEventName = alarmEventName;
+		}
+
+		public String getAlarmUniqueInfo() {
+			return this.alarmUniqueInfo;
+		}
+
+		public void setAlarmUniqueInfo(String alarmUniqueInfo) {
+			this.alarmUniqueInfo = alarmUniqueInfo;
 		}
 	}
 

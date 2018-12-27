@@ -1,0 +1,164 @@
+/*
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package com.aliyuncs.aegis.model.v20161111;
+
+import com.aliyuncs.RpcAcsRequest;
+
+/**
+ * @author auto create
+ * @version 
+ */
+public class DescribeAlarmEventListRequest extends RpcAcsRequest<DescribeAlarmEventListResponse> {
+	
+	public DescribeAlarmEventListRequest() {
+		super("aegis", "2016-11-11", "DescribeAlarmEventList", "vipaegis");
+	}
+
+	private String alarmEventName;
+
+	private String sourceIp;
+
+	private String pageSize;
+
+	private String alarmEventType;
+
+	private String dealed;
+
+	private String from;
+
+	private String remark;
+
+	private Integer currentPage;
+
+	private String lang;
+
+	private String levels;
+
+	public String getAlarmEventName() {
+		return this.alarmEventName;
+	}
+
+	public void setAlarmEventName(String alarmEventName) {
+		this.alarmEventName = alarmEventName;
+		if(alarmEventName != null){
+			putQueryParameter("AlarmEventName", alarmEventName);
+		}
+	}
+
+	public String getSourceIp() {
+		return this.sourceIp;
+	}
+
+	public void setSourceIp(String sourceIp) {
+		this.sourceIp = sourceIp;
+		if(sourceIp != null){
+			putQueryParameter("SourceIp", sourceIp);
+		}
+	}
+
+	public String getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(String pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize);
+		}
+	}
+
+	public String getAlarmEventType() {
+		return this.alarmEventType;
+	}
+
+	public void setAlarmEventType(String alarmEventType) {
+		this.alarmEventType = alarmEventType;
+		if(alarmEventType != null){
+			putQueryParameter("AlarmEventType", alarmEventType);
+		}
+	}
+
+	public String getDealed() {
+		return this.dealed;
+	}
+
+	public void setDealed(String dealed) {
+		this.dealed = dealed;
+		if(dealed != null){
+			putQueryParameter("Dealed", dealed);
+		}
+	}
+
+	public String getFrom() {
+		return this.from;
+	}
+
+	public void setFrom(String from) {
+		this.from = from;
+		if(from != null){
+			putQueryParameter("From", from);
+		}
+	}
+
+	public String getRemark() {
+		return this.remark;
+	}
+
+	public void setRemark(String remark) {
+		this.remark = remark;
+		if(remark != null){
+			putQueryParameter("Remark", remark);
+		}
+	}
+
+	public Integer getCurrentPage() {
+		return this.currentPage;
+	}
+
+	public void setCurrentPage(Integer currentPage) {
+		this.currentPage = currentPage;
+		if(currentPage != null){
+			putQueryParameter("CurrentPage", currentPage.toString());
+		}
+	}
+
+	public String getLang() {
+		return this.lang;
+	}
+
+	public void setLang(String lang) {
+		this.lang = lang;
+		if(lang != null){
+			putQueryParameter("Lang", lang);
+		}
+	}
+
+	public String getLevels() {
+		return this.levels;
+	}
+
+	public void setLevels(String levels) {
+		this.levels = levels;
+		if(levels != null){
+			putQueryParameter("Levels", levels);
+		}
+	}
+
+	@Override
+	public Class<DescribeAlarmEventListResponse> getResponseClass() {
+		return DescribeAlarmEventListResponse.class;
+	}
+
+}

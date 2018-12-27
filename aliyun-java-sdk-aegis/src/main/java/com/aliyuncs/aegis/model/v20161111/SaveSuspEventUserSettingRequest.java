@@ -28,6 +28,8 @@ public class SaveSuspEventUserSettingRequest extends RpcAcsRequest<SaveSuspEvent
 
 	private String sourceIp;
 
+	private String from;
+
 	private String levelsOn;
 
 	public String getSourceIp() {
@@ -38,6 +40,17 @@ public class SaveSuspEventUserSettingRequest extends RpcAcsRequest<SaveSuspEvent
 		this.sourceIp = sourceIp;
 		if(sourceIp != null){
 			putQueryParameter("SourceIp", sourceIp);
+		}
+	}
+
+	public String getFrom() {
+		return this.from;
+	}
+
+	public void setFrom(String from) {
+		this.from = from;
+		if(from != null){
+			putQueryParameter("From", from);
 		}
 	}
 

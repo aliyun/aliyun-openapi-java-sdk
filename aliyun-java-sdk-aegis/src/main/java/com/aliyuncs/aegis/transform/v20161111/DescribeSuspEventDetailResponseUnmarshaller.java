@@ -18,8 +18,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.aegis.model.v20161111.DescribeSuspEventDetailResponse;
-import com.aliyuncs.aegis.model.v20161111.DescribeSuspEventDetailResponse.CauseDetail;
-import com.aliyuncs.aegis.model.v20161111.DescribeSuspEventDetailResponse.CauseDetail.DetailItemItem;
 import com.aliyuncs.aegis.model.v20161111.DescribeSuspEventDetailResponse.QuaraFile;
 import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -31,14 +29,13 @@ public class DescribeSuspEventDetailResponseUnmarshaller {
 		
 		describeSuspEventDetailResponse.setRequestId(context.stringValue("DescribeSuspEventDetailResponse.RequestId"));
 		describeSuspEventDetailResponse.setLastTime(context.stringValue("DescribeSuspEventDetailResponse.LastTime"));
-		describeSuspEventDetailResponse.setEventTypeDesc(context.stringValue("DescribeSuspEventDetailResponse.EventTypeDesc"));
 		describeSuspEventDetailResponse.setId(context.integerValue("DescribeSuspEventDetailResponse.Id"));
 		describeSuspEventDetailResponse.setInstanceName(context.stringValue("DescribeSuspEventDetailResponse.InstanceName"));
 		describeSuspEventDetailResponse.setInternetIp(context.stringValue("DescribeSuspEventDetailResponse.InternetIp"));
 		describeSuspEventDetailResponse.setIntranetIp(context.stringValue("DescribeSuspEventDetailResponse.IntranetIp"));
 		describeSuspEventDetailResponse.setUuid(context.stringValue("DescribeSuspEventDetailResponse.Uuid"));
 		describeSuspEventDetailResponse.setEventDesc(context.stringValue("DescribeSuspEventDetailResponse.EventDesc"));
-		describeSuspEventDetailResponse.setEventTypeDesc1(context.stringValue("DescribeSuspEventDetailResponse.EventTypeDesc"));
+		describeSuspEventDetailResponse.setEventTypeDesc(context.stringValue("DescribeSuspEventDetailResponse.EventTypeDesc"));
 		describeSuspEventDetailResponse.setLevel(context.stringValue("DescribeSuspEventDetailResponse.Level"));
 		describeSuspEventDetailResponse.setEventStatus(context.stringValue("DescribeSuspEventDetailResponse.EventStatus"));
 		describeSuspEventDetailResponse.setSaleVersion(context.stringValue("DescribeSuspEventDetailResponse.SaleVersion"));
@@ -60,26 +57,6 @@ public class DescribeSuspEventDetailResponseUnmarshaller {
 			details.add(quaraFile);
 		}
 		describeSuspEventDetailResponse.setDetails(details);
-
-		List<CauseDetail> causeDetails = new ArrayList<CauseDetail>();
-		for (int i = 0; i < context.lengthValue("DescribeSuspEventDetailResponse.CauseDetails.Length"); i++) {
-			CauseDetail causeDetail = new CauseDetail();
-
-			List<DetailItemItem> detailItem = new ArrayList<DetailItemItem>();
-			for (int j = 0; j < context.lengthValue("DescribeSuspEventDetailResponse.CauseDetails["+ i +"].DetailItem.Length"); j++) {
-				DetailItemItem detailItemItem = new DetailItemItem();
-				detailItemItem.setName(context.stringValue("DescribeSuspEventDetailResponse.CauseDetails["+ i +"].DetailItem["+ j +"].Name"));
-				detailItemItem.setType(context.stringValue("DescribeSuspEventDetailResponse.CauseDetails["+ i +"].DetailItem["+ j +"].Type"));
-				detailItemItem.setInfoType(context.stringValue("DescribeSuspEventDetailResponse.CauseDetails["+ i +"].DetailItem["+ j +"].InfoType"));
-				detailItemItem.setValue(context.stringValue("DescribeSuspEventDetailResponse.CauseDetails["+ i +"].DetailItem["+ j +"].Value"));
-
-				detailItem.add(detailItemItem);
-			}
-			causeDetail.setDetailItem(detailItem);
-
-			causeDetails.add(causeDetail);
-		}
-		describeSuspEventDetailResponse.setCauseDetails(causeDetails);
 	 
 	 	return describeSuspEventDetailResponse;
 	}
