@@ -20,17 +20,13 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class ModifyInstanceAutoRenewalAttributeRequest extends RpcAcsRequest<ModifyInstanceAutoRenewalAttributeResponse> {
+public class CreateCacheAnalysisTaskRequest extends RpcAcsRequest<CreateCacheAnalysisTaskResponse> {
 	
-	public ModifyInstanceAutoRenewalAttributeRequest() {
-		super("R-kvstore", "2015-01-01", "ModifyInstanceAutoRenewalAttribute", "redisa");
+	public CreateCacheAnalysisTaskRequest() {
+		super("R-kvstore", "2015-01-01", "CreateCacheAnalysisTask", "redisa");
 	}
 
-	private String duration;
-
 	private Long resourceOwnerId;
-
-	private String autoRenew;
 
 	private String securityToken;
 
@@ -38,20 +34,7 @@ public class ModifyInstanceAutoRenewalAttributeRequest extends RpcAcsRequest<Mod
 
 	private String ownerAccount;
 
-	private String dBInstanceId;
-
 	private Long ownerId;
-
-	public String getDuration() {
-		return this.duration;
-	}
-
-	public void setDuration(String duration) {
-		this.duration = duration;
-		if(duration != null){
-			putQueryParameter("Duration", duration);
-		}
-	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -61,17 +44,6 @@ public class ModifyInstanceAutoRenewalAttributeRequest extends RpcAcsRequest<Mod
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getAutoRenew() {
-		return this.autoRenew;
-	}
-
-	public void setAutoRenew(String autoRenew) {
-		this.autoRenew = autoRenew;
-		if(autoRenew != null){
-			putQueryParameter("AutoRenew", autoRenew);
 		}
 	}
 
@@ -108,17 +80,6 @@ public class ModifyInstanceAutoRenewalAttributeRequest extends RpcAcsRequest<Mod
 		}
 	}
 
-	public String getDBInstanceId() {
-		return this.dBInstanceId;
-	}
-
-	public void setDBInstanceId(String dBInstanceId) {
-		this.dBInstanceId = dBInstanceId;
-		if(dBInstanceId != null){
-			putQueryParameter("DBInstanceId", dBInstanceId);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -131,8 +92,8 @@ public class ModifyInstanceAutoRenewalAttributeRequest extends RpcAcsRequest<Mod
 	}
 
 	@Override
-	public Class<ModifyInstanceAutoRenewalAttributeResponse> getResponseClass() {
-		return ModifyInstanceAutoRenewalAttributeResponse.class;
+	public Class<CreateCacheAnalysisTaskResponse> getResponseClass() {
+		return CreateCacheAnalysisTaskResponse.class;
 	}
 
 }

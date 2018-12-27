@@ -67,9 +67,8 @@ public class DescribeInstanceAttributeResponseUnmarshaller {
 			dBInstanceAttribute.setPackageType(context.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].PackageType"));
 			dBInstanceAttribute.setReplicaId(context.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].ReplicaId"));
 			dBInstanceAttribute.setVpcAuthMode(context.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].VpcAuthMode"));
-			dBInstanceAttribute.setVpcAuthMode2(context.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].VpcAuthMode"));
+			dBInstanceAttribute.setAuditLogRetention(context.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].AuditLogRetention"));
 			dBInstanceAttribute.setReplicationMode(context.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].ReplicationMode"));
-			dBInstanceAttribute.setLuaStatus(context.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].LuaStatus"));
 
 			instances.add(dBInstanceAttribute);
 		}

@@ -20,36 +20,38 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class ModifyInstanceAutoRenewalAttributeRequest extends RpcAcsRequest<ModifyInstanceAutoRenewalAttributeResponse> {
+public class MigrateToOtherZoneRequest extends RpcAcsRequest<MigrateToOtherZoneResponse> {
 	
-	public ModifyInstanceAutoRenewalAttributeRequest() {
-		super("R-kvstore", "2015-01-01", "ModifyInstanceAutoRenewalAttribute", "redisa");
+	public MigrateToOtherZoneRequest() {
+		super("R-kvstore", "2015-01-01", "MigrateToOtherZone", "redisa");
 	}
 
-	private String duration;
+	private String vSwitchId;
 
 	private Long resourceOwnerId;
-
-	private String autoRenew;
 
 	private String securityToken;
 
 	private String resourceOwnerAccount;
 
+	private String effectiveTime;
+
 	private String ownerAccount;
+
+	private String zoneId;
 
 	private String dBInstanceId;
 
 	private Long ownerId;
 
-	public String getDuration() {
-		return this.duration;
+	public String getVSwitchId() {
+		return this.vSwitchId;
 	}
 
-	public void setDuration(String duration) {
-		this.duration = duration;
-		if(duration != null){
-			putQueryParameter("Duration", duration);
+	public void setVSwitchId(String vSwitchId) {
+		this.vSwitchId = vSwitchId;
+		if(vSwitchId != null){
+			putQueryParameter("VSwitchId", vSwitchId);
 		}
 	}
 
@@ -61,17 +63,6 @@ public class ModifyInstanceAutoRenewalAttributeRequest extends RpcAcsRequest<Mod
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getAutoRenew() {
-		return this.autoRenew;
-	}
-
-	public void setAutoRenew(String autoRenew) {
-		this.autoRenew = autoRenew;
-		if(autoRenew != null){
-			putQueryParameter("AutoRenew", autoRenew);
 		}
 	}
 
@@ -97,6 +88,17 @@ public class ModifyInstanceAutoRenewalAttributeRequest extends RpcAcsRequest<Mod
 		}
 	}
 
+	public String getEffectiveTime() {
+		return this.effectiveTime;
+	}
+
+	public void setEffectiveTime(String effectiveTime) {
+		this.effectiveTime = effectiveTime;
+		if(effectiveTime != null){
+			putQueryParameter("EffectiveTime", effectiveTime);
+		}
+	}
+
 	public String getOwnerAccount() {
 		return this.ownerAccount;
 	}
@@ -105,6 +107,17 @@ public class ModifyInstanceAutoRenewalAttributeRequest extends RpcAcsRequest<Mod
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public String getZoneId() {
+		return this.zoneId;
+	}
+
+	public void setZoneId(String zoneId) {
+		this.zoneId = zoneId;
+		if(zoneId != null){
+			putQueryParameter("ZoneId", zoneId);
 		}
 	}
 
@@ -131,8 +144,8 @@ public class ModifyInstanceAutoRenewalAttributeRequest extends RpcAcsRequest<Mod
 	}
 
 	@Override
-	public Class<ModifyInstanceAutoRenewalAttributeResponse> getResponseClass() {
-		return ModifyInstanceAutoRenewalAttributeResponse.class;
+	public Class<MigrateToOtherZoneResponse> getResponseClass() {
+		return MigrateToOtherZoneResponse.class;
 	}
 
 }

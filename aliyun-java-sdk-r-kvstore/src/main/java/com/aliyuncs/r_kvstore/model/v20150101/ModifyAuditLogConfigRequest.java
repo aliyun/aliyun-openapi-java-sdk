@@ -20,38 +20,27 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class ModifyInstanceAutoRenewalAttributeRequest extends RpcAcsRequest<ModifyInstanceAutoRenewalAttributeResponse> {
+public class ModifyAuditLogConfigRequest extends RpcAcsRequest<ModifyAuditLogConfigResponse> {
 	
-	public ModifyInstanceAutoRenewalAttributeRequest() {
-		super("R-kvstore", "2015-01-01", "ModifyInstanceAutoRenewalAttribute", "redisa");
+	public ModifyAuditLogConfigRequest() {
+		super("R-kvstore", "2015-01-01", "ModifyAuditLogConfig", "redisa");
 	}
-
-	private String duration;
 
 	private Long resourceOwnerId;
 
-	private String autoRenew;
+	private String instanceId;
 
 	private String securityToken;
 
 	private String resourceOwnerAccount;
 
-	private String ownerAccount;
+	private String auditCommand;
 
-	private String dBInstanceId;
+	private String ownerAccount;
 
 	private Long ownerId;
 
-	public String getDuration() {
-		return this.duration;
-	}
-
-	public void setDuration(String duration) {
-		this.duration = duration;
-		if(duration != null){
-			putQueryParameter("Duration", duration);
-		}
-	}
+	private String retention;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -64,14 +53,14 @@ public class ModifyInstanceAutoRenewalAttributeRequest extends RpcAcsRequest<Mod
 		}
 	}
 
-	public String getAutoRenew() {
-		return this.autoRenew;
+	public String getInstanceId() {
+		return this.instanceId;
 	}
 
-	public void setAutoRenew(String autoRenew) {
-		this.autoRenew = autoRenew;
-		if(autoRenew != null){
-			putQueryParameter("AutoRenew", autoRenew);
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 
@@ -97,6 +86,17 @@ public class ModifyInstanceAutoRenewalAttributeRequest extends RpcAcsRequest<Mod
 		}
 	}
 
+	public String getAuditCommand() {
+		return this.auditCommand;
+	}
+
+	public void setAuditCommand(String auditCommand) {
+		this.auditCommand = auditCommand;
+		if(auditCommand != null){
+			putQueryParameter("AuditCommand", auditCommand);
+		}
+	}
+
 	public String getOwnerAccount() {
 		return this.ownerAccount;
 	}
@@ -105,17 +105,6 @@ public class ModifyInstanceAutoRenewalAttributeRequest extends RpcAcsRequest<Mod
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
-		}
-	}
-
-	public String getDBInstanceId() {
-		return this.dBInstanceId;
-	}
-
-	public void setDBInstanceId(String dBInstanceId) {
-		this.dBInstanceId = dBInstanceId;
-		if(dBInstanceId != null){
-			putQueryParameter("DBInstanceId", dBInstanceId);
 		}
 	}
 
@@ -130,9 +119,20 @@ public class ModifyInstanceAutoRenewalAttributeRequest extends RpcAcsRequest<Mod
 		}
 	}
 
+	public String getRetention() {
+		return this.retention;
+	}
+
+	public void setRetention(String retention) {
+		this.retention = retention;
+		if(retention != null){
+			putQueryParameter("Retention", retention);
+		}
+	}
+
 	@Override
-	public Class<ModifyInstanceAutoRenewalAttributeResponse> getResponseClass() {
-		return ModifyInstanceAutoRenewalAttributeResponse.class;
+	public Class<ModifyAuditLogConfigResponse> getResponseClass() {
+		return ModifyAuditLogConfigResponse.class;
 	}
 
 }

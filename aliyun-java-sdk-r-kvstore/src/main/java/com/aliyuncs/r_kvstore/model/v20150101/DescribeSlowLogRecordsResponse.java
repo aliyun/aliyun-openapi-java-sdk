@@ -38,6 +38,8 @@ public class DescribeSlowLogRecordsResponse extends AcsResponse {
 
 	private Integer pageNumber;
 
+	private Integer pageSize;
+
 	private Integer pageRecordCount;
 
 	private List<LogRecords> items;
@@ -88,6 +90,14 @@ public class DescribeSlowLogRecordsResponse extends AcsResponse {
 
 	public void setPageNumber(Integer pageNumber) {
 		this.pageNumber = pageNumber;
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
 	}
 
 	public Integer getPageRecordCount() {

@@ -118,11 +118,9 @@ public class DescribeInstanceAttributeResponse extends AcsResponse {
 
 		private String vpcAuthMode;
 
-		private String vpcAuthMode2;
+		private String auditLogRetention;
 
 		private String replicationMode;
-
-		private String luaStatus;
 
 		public String getInstanceId() {
 			return this.instanceId;
@@ -404,12 +402,12 @@ public class DescribeInstanceAttributeResponse extends AcsResponse {
 			this.vpcAuthMode = vpcAuthMode;
 		}
 
-		public String getVpcAuthMode2() {
-			return this.vpcAuthMode2;
+		public String getAuditLogRetention() {
+			return this.auditLogRetention;
 		}
 
-		public void setVpcAuthMode2(String vpcAuthMode2) {
-			this.vpcAuthMode2 = vpcAuthMode2;
+		public void setAuditLogRetention(String auditLogRetention) {
+			this.auditLogRetention = auditLogRetention;
 		}
 
 		public String getReplicationMode() {
@@ -418,14 +416,6 @@ public class DescribeInstanceAttributeResponse extends AcsResponse {
 
 		public void setReplicationMode(String replicationMode) {
 			this.replicationMode = replicationMode;
-		}
-
-		public String getLuaStatus() {
-			return this.luaStatus;
-		}
-
-		public void setLuaStatus(String luaStatus) {
-			this.luaStatus = luaStatus;
 		}
 	}
 

@@ -33,6 +33,7 @@ public class DescribeSlowLogRecordsResponseUnmarshaller {
 		describeSlowLogRecordsResponse.setEngine(context.stringValue("DescribeSlowLogRecordsResponse.Engine"));
 		describeSlowLogRecordsResponse.setTotalRecordCount(context.integerValue("DescribeSlowLogRecordsResponse.TotalRecordCount"));
 		describeSlowLogRecordsResponse.setPageNumber(context.integerValue("DescribeSlowLogRecordsResponse.PageNumber"));
+		describeSlowLogRecordsResponse.setPageSize(context.integerValue("DescribeSlowLogRecordsResponse.PageSize"));
 		describeSlowLogRecordsResponse.setPageRecordCount(context.integerValue("DescribeSlowLogRecordsResponse.PageRecordCount"));
 
 		List<LogRecords> items = new ArrayList<LogRecords>();
