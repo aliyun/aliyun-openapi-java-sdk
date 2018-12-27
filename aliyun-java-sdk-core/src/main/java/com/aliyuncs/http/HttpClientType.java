@@ -2,10 +2,6 @@ package com.aliyuncs.http;
 
 import com.aliyuncs.http.clients.CompatibleUrlConnClient;
 
-/**
- * @author VK.Gao
- * @date 2018/03/29
- */
 public enum HttpClientType {
 
     Compatible(CompatibleUrlConnClient.class),

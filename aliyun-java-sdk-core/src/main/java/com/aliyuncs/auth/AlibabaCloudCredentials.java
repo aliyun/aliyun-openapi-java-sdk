@@ -20,10 +20,6 @@
 package com.aliyuncs.auth;
 
 /**
- * Created by haowei.yao on 2017/9/12.
- */
-
-/**
  * Provides AccessKeyId and AccessKeySecret to authorize a
  * request, for accessing Alibaba Cloud services. The AK pair
  * is used to sign requests.

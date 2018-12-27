@@ -1,21 +1,3 @@
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
 package com.aliyuncs.http;
 
 import java.io.UnsupportedEncodingException;
@@ -43,12 +25,6 @@ public abstract class HttpMessage {
 
     public HttpMessage(String strUrl) {
         this.url = strUrl;
-        this.headers = new HashMap<String, String>();
-    }
-
-    public HttpMessage(String strUrl, Map<String, String> tmpHeaders) {
-        this.url = strUrl;
-        if (null != tmpHeaders) { this.headers = tmpHeaders; }
     }
 
     public HttpMessage() {
@@ -89,6 +65,10 @@ public abstract class HttpMessage {
 
     public void setMethod(MethodType method) {
         this.method = method;
+        //This is the pop rule and the put method accepts only json data
+        if (MethodType.PUT == method) {
+            setHttpContentType(FormatType.JSON);
+        }
     }
 
     public byte[] getHttpContent() {
@@ -134,14 +114,8 @@ public abstract class HttpMessage {
         this.encoding = encoding;
         String contentLen = String.valueOf(content.length);
         String strMd5 = ParameterHelper.md5Sum(content);
-        if (null != format) {
-            this.httpContentType = format;
-        } else {
-            this.httpContentType = FormatType.RAW;
-        }
         this.headers.put(CONTENT_MD5, strMd5);
         this.headers.put(CONTENT_LENGTH, contentLen);
-        this.headers.put(CONTENT_TYPE, getContentTypeValue(httpContentType, encoding));
     }
 
     public Map<String, String> getHeaders() {

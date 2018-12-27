@@ -20,9 +20,6 @@
 package com.aliyuncs.auth;
 
 /**
- * Created by haowei.yao on 2017/9/13.
- */
-/**
  * Simple credentials with AccessKeyID and AccessKeySecret
  */
 public class BasicCredentials implements AlibabaCloudCredentials {

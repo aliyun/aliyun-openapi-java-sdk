@@ -20,10 +20,13 @@ package com.aliyuncs.ecs.v20140526.model;
 
 import java.util.List;
 
+import javax.xml.bind.annotation.XmlRootElement;
+
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.ecs.v20140526.transform.DescribeRegionsResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
+@XmlRootElement(name="DescribeRegionsResponse")
 public class DescribeRegionsResponse extends AcsResponse {
 
     private List<Region> regions;

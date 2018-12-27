@@ -1,3 +1,8 @@
+2018-12-27 Version: 4.2.5
+1, The actual data format defaults to a form.
+2, Signature adds timestamp and thread id.
+
+
 2018-11-19 Version: 4.2.2
 1,  remove buggy retry logic
 2,  add deprecated warning for request.setSecurityToken()

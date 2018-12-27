@@ -19,10 +19,6 @@
 
 package com.aliyuncs.auth;
 
-/**
- * Created by haowei.yao on 2017/9/12.
- */
-
 import com.aliyuncs.exceptions.ClientException;
 import com.aliyuncs.exceptions.ServerException;
 

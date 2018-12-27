@@ -96,7 +96,10 @@ public class CompatibleUrlConnClient extends IHttpClient {
     }
 
     public static HttpResponse compatibleGetResponse(HttpRequest request) throws IOException, ClientException {
-        return new CompatibleUrlConnClient(null).syncInvoke(request);
+        CompatibleUrlConnClient client = new CompatibleUrlConnClient(null);
+        HttpResponse response = client.syncInvoke(request);
+        client.close();
+        return response;
     }
 
     private HttpURLConnection buildHttpConnection(HttpRequest request) throws IOException {
@@ -133,6 +136,7 @@ public class CompatibleUrlConnClient extends IHttpClient {
         }
 
         httpConn.setRequestMethod(request.getMethod().toString());
+        httpConn.setInstanceFollowRedirects(false);
         httpConn.setDoOutput(true);
         httpConn.setDoInput(true);
         httpConn.setUseCaches(false);

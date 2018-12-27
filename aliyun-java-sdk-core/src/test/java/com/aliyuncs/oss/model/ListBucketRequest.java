@@ -16,12 +16,22 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package com.aliyuncs.http;
+package com.aliyuncs.oss.model;
 
-public enum PositionType {
-    Host,
-    Path,
-    Query,
-    Header,
-    Body
+import com.aliyuncs.OssAcsRequest;
+import com.aliyuncs.http.MethodType;
+
+public class ListBucketRequest extends OssAcsRequest<ListBucketResponse> {
+
+    public ListBucketRequest() {
+        super("Oss", "ListBucket");
+        this.setUriPattern("/");
+        this.setMethod(MethodType.GET);
+    }
+
+    @Override
+    public Class<ListBucketResponse> getResponseClass() {
+        return ListBucketResponse.class;
+    }
+
 }

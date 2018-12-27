@@ -19,17 +19,14 @@
 
 package com.aliyuncs.endpoint;
 
-import com.aliyuncs.auth.AlibabaCloudCredentialsProvider;
 import com.aliyuncs.exceptions.ClientException;
 import com.aliyuncs.exceptions.ErrorCodeConstant;
 import com.aliyuncs.exceptions.ErrorMessageConstant;
-import com.aliyuncs.profile.IClientProfile;
 
-import java.io.InputStream;
 import java.util.*;
 
+@SuppressWarnings({ "ALL", "AlibabaClassMustHaveAuthor" })
 public class ChainedEndpointResolver implements EndpointResolver {
-    private static final String REGION_LIST_FILE = "regions.txt";
     protected List<EndpointResolverBase> endpointResolvers;
 
     public ChainedEndpointResolver(List<EndpointResolverBase> resolverChain) {
@@ -39,30 +36,28 @@ public class ChainedEndpointResolver implements EndpointResolver {
     private void checkProductCode(ResolveEndpointRequest request) throws ClientException {
         boolean productCodeValid = false;
         for (EndpointResolverBase resolver : endpointResolvers) {
-            if (resolver.isProductCodeValid(request))
+            if (resolver.isProductCodeValid(request)) {
                 productCodeValid = true;
+            }
         }
 
         if (!productCodeValid) {
-            throw new ClientException(
-                    ErrorCodeConstant.SDK_ENDPOINT_RESOLVING_ERROR,
-                    String.format(ErrorMessageConstant.ENDPOINT_NO_PRODUCT, request.productCode)
-            );
+            throw new ClientException(ErrorCodeConstant.SDK_ENDPOINT_RESOLVING_ERROR,
+                    String.format(ErrorMessageConstant.ENDPOINT_NO_PRODUCT, request.productCode));
         }
     }
 
     private void checkRegionId(ResolveEndpointRequest request) throws ClientException {
         boolean regionIdValid = false;
         for (EndpointResolverBase resolver : endpointResolvers) {
-            if (resolver.isRegionIdValid(request))
+            if (resolver.isRegionIdValid(request)) {
                 regionIdValid = true;
+            }
         }
 
         if (!regionIdValid) {
-            throw new ClientException(
-                    ErrorCodeConstant.SDK_ENDPOINT_RESOLVING_ERROR,
-                    String.format(ErrorMessageConstant.INVALID_REGION_ID, request.regionId)
-            );
+            throw new ClientException(ErrorCodeConstant.SDK_ENDPOINT_RESOLVING_ERROR,
+                    String.format(ErrorMessageConstant.INVALID_REGION_ID, request.regionId));
         }
     }
 
@@ -73,7 +68,7 @@ public class ChainedEndpointResolver implements EndpointResolver {
             availabeRegions = resolver.getValidRegionIdsByProduct(productCode);
             if (availabeRegions != null) {
                 availabeRegionsHint = "\nOr you can use the other available regions:";
-                for (String availabeRegion: availabeRegions) {
+                for (String availabeRegion : availabeRegions) {
                     availabeRegionsHint += " " + availabeRegion;
                 }
                 break;
@@ -82,6 +77,7 @@ public class ChainedEndpointResolver implements EndpointResolver {
         return availabeRegionsHint;
     }
 
+    @Override
     public String resolve(ResolveEndpointRequest request) throws ClientException {
         for (EndpointResolverBase resolver : endpointResolvers) {
             String endpoint = resolver.resolve(request);
@@ -93,14 +89,8 @@ public class ChainedEndpointResolver implements EndpointResolver {
         checkProductCode(request);
         checkRegionId(request);
 
-        throw new ClientException(
-                ErrorCodeConstant.SDK_ENDPOINT_RESOLVING_ERROR,
-                String.format(
-                        ErrorMessageConstant.ENDPOINT_NO_REGION,
-                        request.regionId,
-                        request.productCode,
-                        getAvailableRegionsHint(request.productCode)
-                )
-        );
+        throw new ClientException(ErrorCodeConstant.SDK_ENDPOINT_RESOLVING_ERROR,
+                String.format(ErrorMessageConstant.ENDPOINT_NO_REGION, request.regionId, request.productCode,
+                        getAvailableRegionsHint(request.productCode)));
     }
 }

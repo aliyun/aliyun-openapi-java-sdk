@@ -18,13 +18,9 @@
  */
 package com.aliyuncs;
 
-import java.util.List;
-
 import com.aliyuncs.auth.Credential;
-import com.aliyuncs.auth.Signer;
 import com.aliyuncs.exceptions.ClientException;
 import com.aliyuncs.exceptions.ServerException;
-import com.aliyuncs.http.FormatType;
 import com.aliyuncs.http.HttpResponse;
 import com.aliyuncs.profile.IClientProfile;
 

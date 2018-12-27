@@ -1,6 +1,10 @@
 package com.aliyuncs.utils;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class FlattenMapUtil {
     public static List<Map<Object, Object>> toListMap(Map<String, String> flattenMap, String prefix) {
@@ -8,7 +12,7 @@ public class FlattenMapUtil {
         Object object = null;
         String[] subKeys;
         String[] subPrefixes = prefix.split("\\.");
-        for (Map.Entry<String, String> entry: flattenMap.entrySet()) {
+        for (Map.Entry<String, String> entry : flattenMap.entrySet()) {
             String key = entry.getKey();
             if (!key.startsWith(prefix + "[")) {
                 continue;
@@ -21,7 +25,7 @@ public class FlattenMapUtil {
             object = put(flattenMap, object, subKeys, subPrefixes.length - 1);
         }
 
-        return (List<Map<Object, Object>>)object;
+        return (List<Map<Object, Object>>) object;
     }
 
     public static Map<Object, Object> toMap(Map<String, String> flattenMap, String prefix) {
@@ -29,7 +33,7 @@ public class FlattenMapUtil {
         Object object = null;
         String[] subKeys;
         String[] subPrefixes = prefix.split("\\.");
-        for (Map.Entry<String, String> entry: flattenMap.entrySet()) {
+        for (Map.Entry<String, String> entry : flattenMap.entrySet()) {
             String key = entry.getKey();
             if (!key.startsWith(prefix + ".")) {
                 continue;
@@ -42,7 +46,7 @@ public class FlattenMapUtil {
             object = putForMap(flattenMap, object, subKeys, subPrefixes.length - 1);
         }
 
-        return (Map<Object, Object>)object;
+        return (Map<Object, Object>) object;
     }
 
     public static Object put(Map<String, String> flattenMap, Object object, String[] subKeys, int subKeysIndex) {
@@ -61,7 +65,7 @@ public class FlattenMapUtil {
 
             if (object == null) {
                 StringBuilder sb = new StringBuilder();
-                for (int i = 0; i < subKeysIndex; i ++) {
+                for (int i = 0; i < subKeysIndex; i++) {
                     sb.append(subKeys[i]).append(".");
                 }
                 sb.append(key);
@@ -69,9 +73,9 @@ public class FlattenMapUtil {
                 if (length == -1) {
                     return null;
                 }
-                arrayList = new ArrayList<Object>(Collections.nCopies(length,null));
+                arrayList = new ArrayList<Object>(Collections.nCopies(length, null));
             } else {
-                arrayList = (ArrayList<Object>)object;
+                arrayList = (ArrayList<Object>) object;
             }
 
             if (subKeys.length == subKeysIndex + 1) {
@@ -87,7 +91,7 @@ public class FlattenMapUtil {
             if (object == null) {
                 hashMap = new HashMap<Object, Object>();
             } else {
-                hashMap = (HashMap<Object, Object>)object;
+                hashMap = (HashMap<Object, Object>) object;
             }
             if (subKeys.length == subKeysIndex + 1) {
                 hashMap.put(key, flattenMap.get(stringJoin(".", subKeys)));
@@ -111,44 +115,38 @@ public class FlattenMapUtil {
                 return null;
             }
 
+            if (object != null && !(object instanceof HashMap)) {
+                return null;
+            }
+
+            StringBuilder sb = new StringBuilder();
+            for (int i = 0; i < subKeysIndex; i++) {
+                sb.append(subKeys[i]).append(".");
+            }
+            sb.append(key);
+            int length = parseLength(flattenMap, sb.toString());
+            if (length == -1) {
+                return null;
+            }
+
+            String name = parseArrayName(key);
+
             ArrayList<Object> arrayList;
+            HashMap<Object, Object> hashMap;
+            if (object != null) {
+                hashMap = (HashMap<Object, Object>) object;
 
-            if (object == null || (object instanceof HashMap)) {
-                StringBuilder sb = new StringBuilder();
-                for (int i = 0; i < subKeysIndex; i ++) {
-                    sb.append(subKeys[i]).append(".");
-                }
-                sb.append(key);
-                int length = parseLength(flattenMap, sb.toString());
-                if (length == -1) {
-                    return null;
-                }
-
-                String name = parseArrayName(key);
-
-                if (name == null) {
-                    return null;
-                }
-
-
-                HashMap<Object, Object> hashMap;
-                if (object != null) {
-                    hashMap = (HashMap<Object, Object>)object;
-
-                    if (!(hashMap.get(name) instanceof ArrayList)) {
-                        arrayList = new ArrayList<Object>(Collections.nCopies(length,null));
-                        hashMap.put(name, arrayList);
-                    } else {
-                        arrayList = (ArrayList<Object>)hashMap.get(name);
-                    }
-                } else {
-                    hashMap = new HashMap<Object, Object>();
-                    arrayList = new ArrayList<Object>(Collections.nCopies(length,null));
+                if (!(hashMap.get(name) instanceof ArrayList)) {
+                    arrayList = new ArrayList<Object>(Collections.nCopies(length, null));
                     hashMap.put(name, arrayList);
-                    object = hashMap;
+                } else {
+                    arrayList = (ArrayList<Object>) hashMap.get(name);
                 }
             } else {
-                return null;
+                hashMap = new HashMap<Object, Object>();
+                arrayList = new ArrayList<Object>(Collections.nCopies(length, null));
+                hashMap.put(name, arrayList);
+                object = hashMap;
             }
 
             if (subKeys.length == subKeysIndex + 1) {
@@ -164,7 +162,7 @@ public class FlattenMapUtil {
             if (object == null) {
                 hashMap = new HashMap<Object, Object>();
             } else {
-                hashMap = (HashMap<Object, Object>)object;
+                hashMap = (HashMap<Object, Object>) object;
             }
             if (subKeys.length == subKeysIndex + 1) {
                 hashMap.put(key, flattenMap.get(stringJoin(".", subKeys)));
@@ -214,13 +212,12 @@ public class FlattenMapUtil {
         return key.substring(0, end);
     }
 
-
-    public static String stringJoin(String delimiter, String ...sequences) {
+    public static String stringJoin(String delimiter, String... sequences) {
         StringBuilder sb = new StringBuilder();
-        for (int i = 0;i < sequences.length; i ++) {
+        for (int i = 0; i < sequences.length; i++) {
             sb.append(sequences[i]);
             if (i < sequences.length - 1) {
-                sb.append(".");
+                sb.append(delimiter);
             }
         }
         return sb.toString();

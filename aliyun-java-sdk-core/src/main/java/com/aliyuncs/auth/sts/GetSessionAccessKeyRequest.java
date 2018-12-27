@@ -20,19 +20,16 @@ package com.aliyuncs.auth.sts;
 
 import com.aliyuncs.RpcAcsRequest;
 
-/**
- * Created by zhangw on 2017/8/10.
- */
 public class GetSessionAccessKeyRequest extends RpcAcsRequest<GenerateSessionAccessKeyResponse> {
-    
+
     private static String version = "2015-04-01";
 
     private static String product = "Sts";
-    
+
     private static String action = "GenerateSessionAccessKey";
 
     public GetSessionAccessKeyRequest() {
-        super(product, version, action);       
+        super(product, version, action);
     }
 
     private int durationSeconds = 3600;
@@ -60,17 +57,5 @@ public class GetSessionAccessKeyRequest extends RpcAcsRequest<GenerateSessionAcc
     @Override
     public Class<GenerateSessionAccessKeyResponse> getResponseClass() {
         return GenerateSessionAccessKeyResponse.class;
-    }
-
-    public static void setStsVersion(String version) {
-        GetSessionAccessKeyRequest.version = version;
-    }
-
-    public static void setStsProduct(String product) {
-        GetSessionAccessKeyRequest.product = product;
-    }
-
-    public static void setStsAction(String action) {
-        GetSessionAccessKeyRequest.action = action;
     }
 }

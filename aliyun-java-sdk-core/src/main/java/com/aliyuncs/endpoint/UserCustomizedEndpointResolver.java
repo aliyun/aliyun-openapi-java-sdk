@@ -19,8 +19,6 @@
 
 package com.aliyuncs.endpoint;
 
-import com.aliyuncs.exceptions.ClientException;
-
 import java.util.HashSet;
 import java.util.Set;
 

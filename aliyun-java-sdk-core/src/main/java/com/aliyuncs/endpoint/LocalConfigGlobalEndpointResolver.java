@@ -19,7 +19,6 @@
 
 package com.aliyuncs.endpoint;
 
-import com.aliyuncs.exceptions.ClientException;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 

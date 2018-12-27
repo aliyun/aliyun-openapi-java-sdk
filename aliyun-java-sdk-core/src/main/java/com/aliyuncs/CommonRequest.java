@@ -10,28 +10,28 @@ import com.aliyuncs.regions.ProductDomain;
 
 public class CommonRequest {
 
-    private String                    version         = null;
-    private String                    product         = null;
-    private String                    action          = null;
-    private String                    locationProduct = null;
-    private String                    endpointType    = null;
-    private String                    regionId        = null;
-    private ProtocolType              protocol        = null;
+    private String version = null;
+    private String product = null;
+    private String action = null;
+    private String locationProduct = null;
+    private String endpointType = null;
+    private String regionId = null;
+    private ProtocolType protocol = null;
     private final Map<String, String> queryParameters = new HashMap<String, String>();
-    private final Map<String, String> bodyParameters  = new HashMap<String, String>();
-    private final Map<String, String> headParameters  = new HashMap<String, String>();
+    private final Map<String, String> bodyParameters = new HashMap<String, String>();
+    private final Map<String, String> headParameters = new HashMap<String, String>();
 
-    private Integer                   connectTimeout  = null;
-    private Integer                   readTimeout     = null;
-    private MethodType                method          = null;
-    private FormatType                httpContentType = null;
-    private byte[]                    httpContent     = null;
-    private String                    encoding        = null;
+    private Integer connectTimeout = null;
+    private Integer readTimeout = null;
+    private MethodType method = null;
+    private FormatType httpContentType = null;
+    private byte[] httpContent = null;
+    private String encoding = null;
 
-    private String                    uriPattern      = null;
-    private Map<String, String>       pathParameters  = new HashMap<String, String>();
+    private String uriPattern = null;
+    private Map<String, String> pathParameters = new HashMap<String, String>();
 
-    private String                    domain          = null;
+    private String domain = null;
 
     @SuppressWarnings("rawtypes")
     public AcsRequest buildRequest() {
@@ -218,6 +218,34 @@ public class CommonRequest {
 
     public void setDomain(String domain) {
         this.domain = domain;
+    }
+
+    public FormatType getHttpContentType() {
+        return httpContentType;
+    }
+
+    public byte[] getHttpContent() {
+        return httpContent;
+    }
+
+    public String getEncoding() {
+        return encoding;
+    }
+
+    public Map<String, String> getQueryParameters() {
+        return queryParameters;
+    }
+
+    public Map<String, String> getBodyParameters() {
+        return bodyParameters;
+    }
+
+    public Map<String, String> getHeadParameters() {
+        return headParameters;
+    }
+
+    public Map<String, String> getPathParameters() {
+        return pathParameters;
     }
 
     public void setHttpContent(byte[] content, String encoding, FormatType format) {

@@ -1,19 +1,3 @@
-/*
- * Copyright 2017 Alibaba Group
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 package com.aliyuncs.http.clients;
 
 import java.io.IOException;
@@ -28,8 +12,9 @@ import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
-
 import javax.net.ssl.SSLContext;
+import java.security.cert.CertificateException;
+import java.security.cert.X509Certificate;
 
 import com.aliyuncs.exceptions.ClientException;
 import com.aliyuncs.http.CallBack;
@@ -37,9 +22,9 @@ import com.aliyuncs.http.FormatType;
 import com.aliyuncs.http.HttpClientConfig;
 import com.aliyuncs.http.HttpRequest;
 import com.aliyuncs.http.IHttpClient;
-import com.aliyuncs.http.X509TrustAll;
 import com.aliyuncs.utils.IOUtils;
 import com.aliyuncs.utils.StringUtils;
+
 import org.apache.http.Header;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.config.RequestConfig;
@@ -54,7 +39,6 @@ import org.apache.http.conn.socket.PlainConnectionSocketFactory;
 import org.apache.http.conn.ssl.NoopHostnameVerifier;
 import org.apache.http.conn.ssl.SSLConnectionSocketFactory;
 import org.apache.http.conn.ssl.SSLInitializationException;
-import org.apache.http.conn.ssl.TrustSelfSignedStrategy;
 import org.apache.http.entity.ContentType;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.DefaultConnectionKeepAliveStrategy;
@@ -63,21 +47,9 @@ import org.apache.http.impl.conn.PoolingHttpClientConnectionManager;
 import org.apache.http.protocol.HttpContext;
 import org.apache.http.ssl.SSLContextBuilder;
 import org.apache.http.util.EntityUtils;
-
-
-import java.security.cert.CertificateException;
-import java.security.cert.X509Certificate;
 import org.apache.http.ssl.TrustStrategy;
 
-import javax.net.ssl.SSLContext;
-import javax.net.ssl.TrustManager;
-import javax.net.ssl.X509TrustManager;
 
-
-/**
- * @author VK.Gao
- * @date 2018/04/02
- */
 public class ApacheHttpClient extends IHttpClient {
 
     protected static final String CONTENT_TYPE = "Content-Type";
@@ -98,31 +70,28 @@ public class ApacheHttpClient extends IHttpClient {
     protected void init(final HttpClientConfig config) throws ClientException {
         HttpClientBuilder builder;
         if (config.containsExtParam(EXT_PARAM_KEY_BUILDER)) {
-            builder = (HttpClientBuilder)config.getExtParam(EXT_PARAM_KEY_BUILDER);
+            builder = (HttpClientBuilder) config.getExtParam(EXT_PARAM_KEY_BUILDER);
         } else {
             builder = HttpClientBuilder.create();
         }
 
         // default request config
         RequestConfig defaultConfig = RequestConfig.custom()
-            .setConnectTimeout((int)config.getConnectionTimeoutMillis())
-            .setSocketTimeout((int)config.getReadTimeoutMillis())
-            .setConnectionRequestTimeout((int)config.getWriteTimeoutMillis())
-            .build();
+                .setConnectTimeout((int) config.getConnectionTimeoutMillis())
+                .setSocketTimeout((int) config.getReadTimeoutMillis())
+                .setConnectionRequestTimeout((int) config.getWriteTimeoutMillis())
+                .build();
         builder.setDefaultRequestConfig(defaultConfig);
 
         // https
         RegistryBuilder<ConnectionSocketFactory> socketFactoryRegistryBuilder = RegistryBuilder.create();
         socketFactoryRegistryBuilder.register("http", new PlainConnectionSocketFactory());
-        if (config.isIgnoreSSLCerts() || X509TrustAll.isIgnoreSSLCerts()) {
-            try
-            {
-                SSLContext sslContext = new SSLContextBuilder().loadTrustMaterial(null, new TrustStrategy()
-                {
+        if (config.isIgnoreSSLCerts()) {
+            try {
+                SSLContext sslContext = new SSLContextBuilder().loadTrustMaterial(null, new TrustStrategy() {
                     // trust all
                     @Override
-                    public boolean isTrusted(X509Certificate[] chain, String authType) throws CertificateException
-                    {
+                    public boolean isTrusted(X509Certificate[] chain, String authType) throws CertificateException {
                         return true;
                     }
                 }).build();
@@ -131,15 +100,15 @@ public class ApacheHttpClient extends IHttpClient {
 
                 socketFactoryRegistryBuilder.register("https", connectionFactory);
 
-            } catch(Exception e) {
+            } catch (Exception e) {
                 throw new ClientException("SDK.InitFailed", "Init https with SSL certs ignore failed", e);
             }
         } else {
             if (config.getSslSocketFactory() != null) {
                 SSLConnectionSocketFactory sslConnectionSocketFactory = new SSLConnectionSocketFactory(config.getSslSocketFactory(),
-                    config.getHostnameVerifier());
+                        config.getHostnameVerifier());
                 socketFactoryRegistryBuilder.register("https", sslConnectionSocketFactory);
-            }else if (config.getKeyManagers() != null || config.getX509TrustManagers() != null || config.getSecureRandom() != null) {
+            } else if (config.getKeyManagers() != null || config.getX509TrustManagers() != null || config.getSecureRandom() != null) {
                 try {
                     SSLContext sslContext = SSLContext.getInstance("TLS");
                     sslContext.init(config.getKeyManagers(), config.getX509TrustManagers(), config.getSecureRandom());
@@ -163,8 +132,8 @@ public class ApacheHttpClient extends IHttpClient {
         // async
         if (config.getExecutorService() == null) {
             executorService = new ThreadPoolExecutor(0, config.getMaxRequests(), DEFAULT_THREAD_KEEP_ALIVE_TIME, TimeUnit.SECONDS,
-                new SynchronousQueue<Runnable>(),
-                new DefaultAsyncThreadFactory());
+                    new SynchronousQueue<Runnable>(),
+                    new DefaultAsyncThreadFactory());
         } else {
             executorService = config.getExecutorService();
         }
@@ -199,8 +168,7 @@ public class ApacheHttpClient extends IHttpClient {
             String contentType = apiReq.getHeaderValue(CONTENT_TYPE);
             if (StringUtils.isEmpty(contentType)) {
                 contentType = apiReq.getContentTypeValue(apiReq.getHttpContentType(), apiReq.getEncoding());
-            }
-            if (StringUtils.isNotEmpty(contentType)) {
+            } else {
                 bodyBuilder.setContentType(ContentType.parse(contentType));
             }
             bodyBuilder.setBinary(apiReq.getHttpContent());
@@ -233,7 +201,7 @@ public class ApacheHttpClient extends IHttpClient {
             result.setHttpContentType(formatType);
 
             String charset = "utf-8";
-            if(contentType.getCharset() != null){
+            if (contentType.getCharset() != null) {
                 charset = contentType.getCharset().toString();
             }
 
@@ -294,13 +262,13 @@ public class ApacheHttpClient extends IHttpClient {
     @Override
     public void ignoreSSLCertificate() {
         throw new IllegalStateException("Apache httpclient does not support modify sslFactory after inited, "
-            + "use HttpClientConfig.setIgnoreSSLCerts(true) while building client");
+                + "use HttpClientConfig.setIgnoreSSLCerts(true) while building client");
     }
 
     @Override
     public void restoreSSLCertificate() {
         throw new IllegalStateException("Apache httpclient does not support modify sslFactory after inited, "
-            + "use HttpClientConfig.setIgnoreSSLCerts(true) while building client");
+                + "use HttpClientConfig.setIgnoreSSLCerts(true) while building client");
     }
 
     @Override

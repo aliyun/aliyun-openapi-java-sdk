@@ -49,6 +49,5 @@ public class CredentialTest {
         } catch (InvocationTargetException e) {
             Assert.fail();
         }
-
     }
 }

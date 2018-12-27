@@ -1,9 +1,9 @@
 package com.aliyuncs.auth;
 
 public class BearerTokenCredentials implements AlibabaCloudCredentials {
-    
+
     private String bearerToken;
-    
+
     public BearerTokenCredentials(String bearerToken) {
         this.bearerToken = bearerToken;
     }
@@ -23,7 +23,7 @@ public class BearerTokenCredentials implements AlibabaCloudCredentials {
     }
 
     public void setBearerToken(String bearerToken) {
-        bearerToken = bearerToken;
+        this.bearerToken = bearerToken;
     }
 
 }

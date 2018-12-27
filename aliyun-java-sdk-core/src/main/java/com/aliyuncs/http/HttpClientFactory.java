@@ -26,7 +26,7 @@ public class HttpClientFactory {
             String customClientClassName = null;
             if (clientConfig.isCompatibleMode()) {
                 customClientClassName = COMPATIBLE_HTTP_CLIENT_CLASS_NAME;
-            } else if (clientConfig.getClientType() == HttpClientType.Custom && StringUtils.isNotEmpty(clientConfig.getCustomClientClassName())) {
+            } else if (clientConfig.getClientType() == HttpClientType.Custom && !StringUtils.isEmpty(clientConfig.getCustomClientClassName())) {
                 customClientClassName = clientConfig.getCustomClientClassName();
             } else {
                 customClientClassName = System.getProperty(HTTP_CLIENT_IMPL_KEY);

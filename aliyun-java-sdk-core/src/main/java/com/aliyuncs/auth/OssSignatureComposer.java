@@ -18,6 +18,7 @@
  */
 package com.aliyuncs.auth;
 
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -32,7 +33,7 @@ public class OssSignatureComposer extends RoaSignatureComposer {
     public Map<String, String> refreshSignParameters(Map<String, String> parameters,
                                                      Signer signer, String accessKeyId, FormatType format) {
         Map<String, String> immutableMap = new HashMap<String, String>(parameters);
-        immutableMap.put("Date", ParameterHelper.getRFC2616Date(null));
+        immutableMap.put("Date", ParameterHelper.getRFC2616Date(new Date()));
         return immutableMap;
     }
 

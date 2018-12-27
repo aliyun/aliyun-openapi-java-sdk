@@ -21,7 +21,6 @@ package com.aliyuncs.profile;
 import com.aliyuncs.auth.AlibabaCloudCredentialsProvider;
 import com.aliyuncs.auth.Credential;
 import com.aliyuncs.auth.ISigner;
-import com.aliyuncs.exceptions.ClientException;
 import com.aliyuncs.http.FormatType;
 import com.aliyuncs.http.HttpClientConfig;
 

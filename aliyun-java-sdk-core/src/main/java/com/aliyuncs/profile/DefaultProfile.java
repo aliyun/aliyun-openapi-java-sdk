@@ -24,7 +24,6 @@ import com.aliyuncs.auth.CredentialsBackupCompatibilityAdaptor;
 import com.aliyuncs.auth.ICredentialProvider;
 import com.aliyuncs.auth.ISigner;
 import com.aliyuncs.endpoint.DefaultEndpointResolver;
-import com.aliyuncs.endpoint.UserCustomizedEndpointResolver;
 import com.aliyuncs.exceptions.ClientException;
 import com.aliyuncs.http.FormatType;
 import com.aliyuncs.http.HttpClientConfig;

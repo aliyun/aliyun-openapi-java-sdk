@@ -1,31 +1,10 @@
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
 package com.aliyuncs;
 
 import java.io.IOException;
 import java.net.SocketTimeoutException;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
-import java.util.ArrayList;
-import java.util.List;
 
-import javax.net.ssl.SSLSocketFactory;
 import javax.xml.bind.annotation.XmlRootElement;
 
 import com.aliyuncs.auth.AlibabaCloudCredentials;
@@ -46,6 +25,7 @@ import com.aliyuncs.reader.Reader;
 import com.aliyuncs.reader.ReaderFactory;
 import com.aliyuncs.regions.ProductDomain;
 import com.aliyuncs.transform.UnmarshallerContext;
+import com.aliyuncs.unmarshaller.Unmarshaller;
 import com.aliyuncs.unmarshaller.UnmarshallerFactory;
 import com.aliyuncs.utils.IOUtils;
 
@@ -59,8 +39,6 @@ public class DefaultAcsClient implements IAcsClient {
     private AlibabaCloudCredentialsProvider credentialsProvider;
     private IHttpClient httpClient;
     private EndpointResolver endpointResolver;
-
-    private SSLSocketFactory sslSocketFactory = null;
 
     @Deprecated
     public DefaultAcsClient() {
@@ -81,32 +59,30 @@ public class DefaultAcsClient implements IAcsClient {
         this.credentialsProvider = credentialsProvider;
         this.clientProfile.setCredentialsProvider(this.credentialsProvider);
         this.httpClient = HttpClientFactory.buildClient(this.clientProfile);
-        this.endpointResolver = new DefaultEndpointResolver(this,
-                profile.isUsingInternalLocationService());
+        this.endpointResolver = new DefaultEndpointResolver(this, profile.isUsingInternalLocationService());
     }
 
     @Override
     public <T extends AcsResponse> HttpResponse doAction(AcsRequest<T> request)
-        throws ClientException, ServerException {
+            throws ClientException, ServerException {
         return this.doAction(request, autoRetry, maxRetryNumber, this.clientProfile);
     }
 
     @Override
-    public <T extends AcsResponse> HttpResponse doAction(AcsRequest<T> request,
-                                                         boolean autoRetry, int maxRetryCounts)
-        throws ClientException, ServerException {
+    public <T extends AcsResponse> HttpResponse doAction(AcsRequest<T> request, boolean autoRetry, int maxRetryCounts)
+            throws ClientException, ServerException {
         return this.doAction(request, autoRetry, maxRetryCounts, this.clientProfile);
     }
 
     @Override
     public <T extends AcsResponse> HttpResponse doAction(AcsRequest<T> request, IClientProfile profile)
-        throws ClientException, ServerException {
+            throws ClientException, ServerException {
         return this.doAction(request, this.autoRetry, this.maxRetryNumber, profile);
     }
 
     @Override
     public <T extends AcsResponse> HttpResponse doAction(AcsRequest<T> request, String regionId, Credential credential)
-        throws ClientException, ServerException {
+            throws ClientException, ServerException {
         boolean retry = this.autoRetry;
         int retryNumber = this.maxRetryNumber;
         Signer signer = Signer.getSigner(new LegacyCredentials(credential));
@@ -119,37 +95,35 @@ public class DefaultAcsClient implements IAcsClient {
     }
 
     @Override
-    public <T extends AcsResponse> T getAcsResponse(AcsRequest<T> request)
-        throws ServerException, ClientException {
+    public <T extends AcsResponse> T getAcsResponse(AcsRequest<T> request) throws ServerException, ClientException {
         HttpResponse baseResponse = this.doAction(request);
         return parseAcsResponse(request.getResponseClass(), baseResponse);
     }
 
     @Override
-    public <T extends AcsResponse> T getAcsResponse(AcsRequest<T> request,
-                                                    boolean autoRetry, int maxRetryCounts)
-        throws ServerException, ClientException {
+    public <T extends AcsResponse> T getAcsResponse(AcsRequest<T> request, boolean autoRetry, int maxRetryCounts)
+            throws ServerException, ClientException {
         HttpResponse baseResponse = this.doAction(request, autoRetry, maxRetryCounts);
         return parseAcsResponse(request.getResponseClass(), baseResponse);
     }
 
     @Override
     public <T extends AcsResponse> T getAcsResponse(AcsRequest<T> request, IClientProfile profile)
-        throws ServerException, ClientException {
+            throws ServerException, ClientException {
         HttpResponse baseResponse = this.doAction(request, profile);
         return parseAcsResponse(request.getResponseClass(), baseResponse);
     }
 
     @Override
     public <T extends AcsResponse> T getAcsResponse(AcsRequest<T> request, String regionId, Credential credential)
-        throws ServerException, ClientException {
+            throws ServerException, ClientException {
         HttpResponse baseResponse = this.doAction(request, regionId, credential);
         return parseAcsResponse(request.getResponseClass(), baseResponse);
     }
 
     @Override
     public <T extends AcsResponse> T getAcsResponse(AcsRequest<T> request, String regionId)
-        throws ServerException, ClientException {
+            throws ServerException, ClientException {
         if (null == request.getRegionId()) {
             request.setRegionId(regionId);
         }
@@ -159,8 +133,7 @@ public class DefaultAcsClient implements IAcsClient {
 
     @SuppressWarnings("unchecked")
     @Override
-    public CommonResponse getCommonResponse(CommonRequest request)
-        throws ServerException, ClientException {
+    public CommonResponse getCommonResponse(CommonRequest request) throws ServerException, ClientException {
         HttpResponse baseResponse = this.doAction(request.buildRequest());
         if (baseResponse.isSuccess()) {
             String stringContent = baseResponse.getHttpContentString();
@@ -181,9 +154,8 @@ public class DefaultAcsClient implements IAcsClient {
     }
 
     @Override
-    public <T extends AcsResponse> HttpResponse doAction(AcsRequest<T> request, boolean autoRetry,
-                                                         int maxRetryCounts, IClientProfile profile)
-        throws ClientException, ServerException {
+    public <T extends AcsResponse> HttpResponse doAction(AcsRequest<T> request, boolean autoRetry, int maxRetryCounts,
+            IClientProfile profile) throws ClientException, ServerException {
         if (null == profile) {
             throw new ClientException("SDK.InvalidProfile", "No active profile found.");
         }
@@ -202,7 +174,7 @@ public class DefaultAcsClient implements IAcsClient {
     }
 
     private <T extends AcsResponse> T parseAcsResponse(Class<T> clasz, HttpResponse baseResponse)
-        throws ServerException, ClientException {
+            throws ServerException, ClientException {
 
         FormatType format = baseResponse.getHttpContentType();
 
@@ -219,23 +191,16 @@ public class DefaultAcsClient implements IAcsClient {
     }
 
     @Deprecated
-    public <T extends AcsResponse> HttpResponse doAction(AcsRequest<T> request,
-                                                         boolean autoRetry, int maxRetryNumber,
-                                                         String regionId, Credential credential,
-                                                         Signer signer, FormatType format)
-        throws ClientException, ServerException {
-        return doAction(
-            request, autoRetry, maxRetryNumber, regionId, new LegacyCredentials(credential),
-            signer, format
-        );
+    public <T extends AcsResponse> HttpResponse doAction(AcsRequest<T> request, boolean autoRetry, int maxRetryNumber,
+            String regionId, Credential credential, Signer signer, FormatType format)
+            throws ClientException, ServerException {
+        return doAction(request, autoRetry, maxRetryNumber, regionId, new LegacyCredentials(credential), signer,
+                format);
     }
 
-    private <T extends AcsResponse> HttpResponse doAction(AcsRequest<T> request,
-                                                          boolean autoRetry, int maxRetryNumber,
-                                                          String regionId,
-                                                          AlibabaCloudCredentials credentials,
-                                                          Signer signer, FormatType format)
-        throws ClientException, ServerException {
+    private <T extends AcsResponse> HttpResponse doAction(AcsRequest<T> request, boolean autoRetry, int maxRetryNumber,
+            String regionId, AlibabaCloudCredentials credentials, Signer signer, FormatType format)
+            throws ClientException, ServerException {
 
         try {
             FormatType requestFormatType = request.getAcceptFormat();
@@ -246,12 +211,8 @@ public class DefaultAcsClient implements IAcsClient {
             if (request.getProductDomain() != null) {
                 domain = request.getProductDomain();
             } else {
-                ResolveEndpointRequest resolveEndpointRequest = new ResolveEndpointRequest(
-                        regionId,
-                        request.getProduct(),
-                        request.getLocationProduct(),
-                        request.getEndpointType()
-                );
+                ResolveEndpointRequest resolveEndpointRequest = new ResolveEndpointRequest(regionId,
+                        request.getProduct(), request.getLocationProduct(), request.getEndpointType());
                 String endpoint = endpointResolver.resolve(resolveEndpointRequest);
                 domain = new ProductDomain(request.getProduct(), endpoint);
 
@@ -272,7 +233,8 @@ public class DefaultAcsClient implements IAcsClient {
                 response = this.httpClient.syncInvoke(httpRequest);
                 return response;
             } catch (SocketTimeoutException exp) {
-                throw new ClientException("SDK.ServerUnreachable", "SocketTimeoutException has occurred on a socket read or accept.", exp);
+                throw new ClientException("SDK.ServerUnreachable",
+                        "SocketTimeoutException has occurred on a socket read or accept.", exp);
             } catch (IOException exp) {
                 throw new ClientException("SDK.ServerUnreachable", "Server unreachable: " + exp.toString(), exp);
             }
@@ -284,11 +246,12 @@ public class DefaultAcsClient implements IAcsClient {
     }
 
     private <T extends AcsResponse> T readResponse(Class<T> clasz, HttpResponse httpResponse, FormatType format)
-        throws ClientException {
+            throws ClientException {
         // new version response contains "@XmlRootElement" annotation
-        if (clasz.isAnnotationPresent(XmlRootElement.class) && !clientProfile.getHttpClientConfig().isCompatibleMode()) {
-            com.aliyuncs.unmarshaller.Unmarshaller unmarshaller = UnmarshallerFactory.getUnmarshaller(format);
-            return unmarshaller.unmarshal(clasz, httpResponse);
+        if (clasz.isAnnotationPresent(XmlRootElement.class)
+                && !clientProfile.getHttpClientConfig().isCompatibleMode()) {
+            Unmarshaller unmarshaller = UnmarshallerFactory.getUnmarshaller(format);
+            return unmarshaller.unmarshal(clasz, httpResponse.getHttpContentString());
         } else {
             Reader reader = ReaderFactory.createInstance(format);
             UnmarshallerContext context = new UnmarshallerContext();
@@ -296,16 +259,15 @@ public class DefaultAcsClient implements IAcsClient {
             String stringContent = httpResponse.getHttpContentString();
 
             if (stringContent == null) {
-                throw new ClientException(
-                        ErrorCodeConstant.SDK_INVALID_SERVER_RESPONSE,
-                        ErrorMessageConstant.SERVER_RESPONSE_HTTP_BODY_EMPTY
-                );
+                throw new ClientException(ErrorCodeConstant.SDK_INVALID_SERVER_RESPONSE,
+                        ErrorMessageConstant.SERVER_RESPONSE_HTTP_BODY_EMPTY);
             }
 
             try {
                 response = clasz.newInstance();
             } catch (Exception e) {
-                throw new ClientException("SDK.InvalidResponseClass", "Unable to allocate " + clasz.getName() + " class");
+                throw new ClientException("SDK.InvalidResponseClass",
+                        "Unable to allocate " + clasz.getName() + " class");
             }
 
             String responseEndpoint = clasz.getName().substring(clasz.getName().lastIndexOf(".") + 1);
@@ -360,10 +322,12 @@ public class DefaultAcsClient implements IAcsClient {
         this.maxRetryNumber = maxRetryNumber;
     }
 
+    @Override
     public void restoreSSLCertificate() {
         this.httpClient.restoreSSLCertificate();
     }
 
+    @Override
     public void ignoreSSLCertificate() {
         this.httpClient.ignoreSSLCertificate();
     }

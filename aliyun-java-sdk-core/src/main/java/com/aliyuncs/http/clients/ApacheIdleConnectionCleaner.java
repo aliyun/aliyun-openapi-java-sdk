@@ -31,7 +31,7 @@ public class ApacheIdleConnectionCleaner extends Thread {
     private static final int PERIOD_SEC = 60;
 
     private static volatile ApacheIdleConnectionCleaner instance;
-    private static final Map<HttpClientConnectionManager, Long> connMgrMap = new ConcurrentHashMap<HttpClientConnectionManager, Long>();
+    private static final Map<HttpClientConnectionManager, Long> CONNMGRMAP = new ConcurrentHashMap<HttpClientConnectionManager, Long>();
 
     private volatile boolean isShuttingDown;
 
@@ -40,7 +40,7 @@ public class ApacheIdleConnectionCleaner extends Thread {
         setDaemon(true);
     }
 
-    public static void registerConnectionManager(HttpClientConnectionManager connMgr, Long idleTimeMills){
+    public static void registerConnectionManager(HttpClientConnectionManager connMgr, Long idleTimeMills) {
         if (instance == null) {
             synchronized (ApacheIdleConnectionCleaner.class) {
                 if (instance == null) {
@@ -49,21 +49,21 @@ public class ApacheIdleConnectionCleaner extends Thread {
                 }
             }
         }
-        connMgrMap.put(connMgr, idleTimeMills);
+        CONNMGRMAP.put(connMgr, idleTimeMills);
     }
 
     public static void removeConnectionManager(HttpClientConnectionManager connectionManager) {
-        connMgrMap.remove(connectionManager);
-        if (connMgrMap.isEmpty()) {
+        CONNMGRMAP.remove(connectionManager);
+        if (CONNMGRMAP.isEmpty()) {
             shutdown();
         }
     }
 
-    public static void shutdown(){
+    public static void shutdown() {
         if (instance != null) {
             instance.isShuttingDown = true;
             instance.interrupt();
-            connMgrMap.clear();
+            CONNMGRMAP.clear();
             instance = null;
         }
     }
@@ -78,17 +78,15 @@ public class ApacheIdleConnectionCleaner extends Thread {
             try {
                 Thread.sleep(PERIOD_SEC * 1000);
 
-                for (Entry<HttpClientConnectionManager, Long> entry : connMgrMap.entrySet()) {
+                for (Entry<HttpClientConnectionManager, Long> entry : CONNMGRMAP.entrySet()) {
                     try {
                         entry.getKey().closeIdleConnections(entry.getValue(), TimeUnit.MILLISECONDS);
                     } catch (Exception t) {
                         LOG.warn("close idle connections failed", t);
                     }
                 }
-            } catch (InterruptedException e){
+            } catch (InterruptedException e) {
                 LOG.debug("interrupted.", e);
-            } catch (Throwable t) {
-                LOG.warn("fatal error", t);
             }
         }
     }

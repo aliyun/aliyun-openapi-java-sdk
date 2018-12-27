@@ -2,7 +2,6 @@ package com.aliyuncs.unmarshaller;
 
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.exceptions.ClientException;
-import com.aliyuncs.http.HttpResponse;
 
 /**
  * @author VK.Gao
@@ -10,5 +9,5 @@ import com.aliyuncs.http.HttpResponse;
  */
 public interface Unmarshaller {
 
-    <T extends AcsResponse> T unmarshal(Class<T> clasz, HttpResponse httpResponse) throws ClientException;
+    <T extends AcsResponse> T unmarshal(Class<T> clasz, String content) throws ClientException;
 }

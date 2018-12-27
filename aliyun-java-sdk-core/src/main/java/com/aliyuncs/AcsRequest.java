@@ -221,7 +221,7 @@ public abstract class AcsRequest<T extends AcsResponse> extends HttpRequest {
     public void setProductDomain(ProductDomain productDomain) {
         this.productDomain = productDomain;
     }
-    
+
     public void setEndpoint(String endpoint) {
         ProductDomain productDomain = new ProductDomain(product, endpoint);
         setProductDomain(productDomain);

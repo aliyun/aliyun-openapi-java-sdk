@@ -21,9 +21,6 @@ package com.aliyuncs.auth.sts;
 import com.aliyuncs.auth.sts.GenerateSessionAccessKeyResponse.SessionAccessKey;
 import com.aliyuncs.transform.UnmarshallerContext;
 
-/**
- * Created by zhangw on 2017/8/10.
- */
 public class GetSessionAccessKeyResponseUnmarshaller {
 
     public static GenerateSessionAccessKeyResponse unmarshall(GenerateSessionAccessKeyResponse getSessionAccessKeyResponse,

@@ -19,7 +19,6 @@
 
 package com.aliyuncs.endpoint;
 
-import com.aliyuncs.exceptions.ClientException;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
@@ -29,6 +28,7 @@ import java.io.*;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
+import java.util.Scanner;
 import java.util.Set;
 
 public class LocalConfigRegionalEndpointResolver extends EndpointResolverBase {
@@ -102,7 +102,8 @@ public class LocalConfigRegionalEndpointResolver extends EndpointResolverBase {
     protected JsonObject readLocalConfigAsJsonObject() {
         ClassLoader classLoader = getClass().getClassLoader();
         InputStream is = classLoader.getResourceAsStream(ENDPOINT_JSON);
-        java.util.Scanner scanner = new java.util.Scanner(is,"UTF-8").useDelimiter("\0");
+        Scanner scanner = new Scanner(is,"UTF-8");
+        scanner.useDelimiter("\0");
         String jsonStr = scanner.hasNext() ? scanner.next() : "";
         scanner.close();
         JsonObject endpointData = (new JsonParser()).parse(jsonStr).getAsJsonObject();

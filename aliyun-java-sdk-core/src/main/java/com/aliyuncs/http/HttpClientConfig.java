@@ -10,10 +10,7 @@ import javax.net.ssl.KeyManager;
 import javax.net.ssl.SSLSocketFactory;
 import javax.net.ssl.X509TrustManager;
 
-/**
- * @author VK.Gao
- * @date 2018/03/29
- */
+
 public class HttpClientConfig {
 
     /**

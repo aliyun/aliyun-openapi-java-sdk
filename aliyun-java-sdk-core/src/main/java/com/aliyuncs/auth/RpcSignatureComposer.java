@@ -20,6 +20,7 @@ package com.aliyuncs.auth;
 
 import java.io.UnsupportedEncodingException;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -40,7 +41,7 @@ public class RpcSignatureComposer implements ISignatureComposer {
     public Map<String, String> refreshSignParameters(Map<String, String> parameters,
                                                      Signer signer, String accessKeyId, FormatType format) {
         Map<String, String> immutableMap = new HashMap<String, String>(parameters);
-        immutableMap.put("Timestamp", ParameterHelper.getISO8601Time(null));
+        immutableMap.put("Timestamp", ParameterHelper.getISO8601Time(new Date()));
         immutableMap.put("SignatureMethod", signer.getSignerName());
         immutableMap.put("SignatureVersion", signer.getSignerVersion());
         immutableMap.put("SignatureNonce", ParameterHelper.getUniqueNonce());

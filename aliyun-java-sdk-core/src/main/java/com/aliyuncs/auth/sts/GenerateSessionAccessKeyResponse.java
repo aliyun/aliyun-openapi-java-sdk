@@ -25,11 +25,7 @@ import com.aliyuncs.AcsResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 import com.google.gson.annotations.SerializedName;
 
-/**
- * Created by zhangw on 2017/8/10.
- */
-
-@XmlRootElement(name="GenerateSessionAccessKeyResponse")
+@XmlRootElement(name = "GenerateSessionAccessKeyResponse")
 public class GenerateSessionAccessKeyResponse extends AcsResponse {
 
     @SerializedName("RequestId")
@@ -42,12 +38,12 @@ public class GenerateSessionAccessKeyResponse extends AcsResponse {
         return requestId;
     }
 
-    @XmlElement(name="RequestId")
+    @XmlElement(name = "RequestId")
     public void setRequestId(String requestId) {
         this.requestId = requestId;
     }
 
-    @XmlElement(name="SessionAccessKey")
+    @XmlElement(name = "SessionAccessKey")
     public SessionAccessKey getSessionAccessKey() {
         return sessionAccessKey;
     }
@@ -71,7 +67,7 @@ public class GenerateSessionAccessKeyResponse extends AcsResponse {
             return sessionAccessKeyId;
         }
 
-        @XmlElement(name="SessionAccessKeyId")
+        @XmlElement(name = "SessionAccessKeyId")
         public void setSessionAccessKeyId(String sessionAccessKeyId) {
             this.sessionAccessKeyId = sessionAccessKeyId;
         }
@@ -80,7 +76,7 @@ public class GenerateSessionAccessKeyResponse extends AcsResponse {
             return sessionAccessKeySecret;
         }
 
-        @XmlElement(name="SessionAccessKeySecret")
+        @XmlElement(name = "SessionAccessKeySecret")
         public void setSessionAccessKeySecert(String sessionAccessKeySecert) {
             this.sessionAccessKeySecret = sessionAccessKeySecert;
         }
@@ -89,7 +85,7 @@ public class GenerateSessionAccessKeyResponse extends AcsResponse {
             return expiration;
         }
 
-        @XmlElement(name="Expiration")
+        @XmlElement(name = "Expiration")
         public void setExpiration(String expiration) {
             this.expiration = expiration;
         }

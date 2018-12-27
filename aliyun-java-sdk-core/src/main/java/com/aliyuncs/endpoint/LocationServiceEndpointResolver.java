@@ -22,11 +22,9 @@ package com.aliyuncs.endpoint;
 import com.aliyuncs.DefaultAcsClient;
 import com.aliyuncs.endpoint.location.model.v20150612.DescribeEndpointsResponse;
 import com.aliyuncs.exceptions.ClientException;
-import com.aliyuncs.exceptions.ServerException;
 import com.aliyuncs.http.FormatType;
 import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.endpoint.location.model.v20150612.DescribeEndpointsRequest;
-import com.aliyuncs.profile.DefaultProfile;
 
 import java.util.HashSet;
 import java.util.Set;

@@ -4,11 +4,10 @@
     <groupId>com.aliyun</groupId>
     <artifactId>aliyun-java-sdk-core</artifactId>
     <packaging>jar</packaging>
-    <version>4.2.2</version>
+    <version>4.2.5</version>
     <name>aliyun-java-sdk-core</name>
     <url>http://www.aliyun.com</url>
     <description>Aliyun Open API SDK for Java
-
 
         Copyright (C) Alibaba Cloud Computing
         All rights reserved.
@@ -41,6 +40,7 @@
         <developerConnection>scm:git:git@github.com:aliyun/aliyun-openapi-java-sdk.git</developerConnection>
         <url>https://github.com/aliyun/aliyun-openapi-java-sdk</url>
     </scm>
+
     <developers>
         <developer>
             <id>aliyunproducts</id>
@@ -68,7 +68,7 @@
         <dependency>
             <groupId>javax.xml.bind</groupId>
             <artifactId>jaxb-api</artifactId>
-            <version>2.3.1</version>
+            <version>2.1</version>
         </dependency>
         <dependency>
             <groupId>com.sun.xml.bind</groupId>
@@ -88,11 +88,12 @@
     </dependencies>
 
     <build>
+        <sourceDirectory>src/main/java</sourceDirectory>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.8.0</version>
+                <version>2.3.2</version>
                 <configuration>
                     <source>1.6</source>
                     <target>1.6</target>
@@ -117,7 +118,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-gpg-plugin</artifactId>
-                <version>1.6</version>
+                <version>1.5</version>
                 <executions>
                     <execution>
                         <id>sign-artifacts</id>
@@ -131,13 +132,32 @@
             <plugin>
                 <groupId>org.sonatype.plugins</groupId>
                 <artifactId>nexus-staging-maven-plugin</artifactId>
-                <version>1.6.8</version>
+                <version>1.6.3</version>
                 <extensions>true</extensions>
                 <configuration>
                     <serverId>sonatype-nexus-staging</serverId>
                     <nexusUrl>https://oss.sonatype.org/</nexusUrl>
                     <autoReleaseAfterClose>true</autoReleaseAfterClose>
                 </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+                <version>0.8.2</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>prepare-agent</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>report</id>
+                        <phase>test</phase>
+                        <goals>
+                            <goal>report</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
