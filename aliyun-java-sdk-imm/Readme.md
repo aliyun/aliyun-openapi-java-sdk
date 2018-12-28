@@ -17,7 +17,7 @@
     <groupId>com.aliyun</groupId>
     <artifactId>aliyun-java-sdk-imm</artifactId>
     <optional>true</optional>
-    <version>1.9.2</version>
+    <version>1.10.0</version>
 </dependency>
 ```
 

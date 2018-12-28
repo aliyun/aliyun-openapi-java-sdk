@@ -17,18 +17,18 @@ package com.aliyuncs.imm.model.v20170906;
 import java.util.List;
 import java.util.Map;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.imm.transform.v20170906.ListTagNamesResponseUnmarshaller;
+import com.aliyuncs.imm.transform.v20170906.ListSetTagsResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ListTagNamesResponse extends AcsResponse {
+public class ListSetTagsResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String nextMarker;
+	private String setId;
 
 	private List<TagsItem> tags;
 
@@ -40,12 +40,12 @@ public class ListTagNamesResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getNextMarker() {
-		return this.nextMarker;
+	public String getSetId() {
+		return this.setId;
 	}
 
-	public void setNextMarker(String nextMarker) {
-		this.nextMarker = nextMarker;
+	public void setSetId(String setId) {
+		this.setId = setId;
 	}
 
 	public List<TagsItem> getTags() {
@@ -60,7 +60,7 @@ public class ListTagNamesResponse extends AcsResponse {
 
 		private String tagName;
 
-		private Integer num;
+		private Integer tagCount;
 
 		public String getTagName() {
 			return this.tagName;
@@ -70,18 +70,18 @@ public class ListTagNamesResponse extends AcsResponse {
 			this.tagName = tagName;
 		}
 
-		public Integer getNum() {
-			return this.num;
+		public Integer getTagCount() {
+			return this.tagCount;
 		}
 
-		public void setNum(Integer num) {
-			this.num = num;
+		public void setTagCount(Integer tagCount) {
+			this.tagCount = tagCount;
 		}
 	}
 
 	@Override
-	public ListTagNamesResponse getInstance(UnmarshallerContext context) {
-		return	ListTagNamesResponseUnmarshaller.unmarshall(this, context);
+	public ListSetTagsResponse getInstance(UnmarshallerContext context) {
+		return	ListSetTagsResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

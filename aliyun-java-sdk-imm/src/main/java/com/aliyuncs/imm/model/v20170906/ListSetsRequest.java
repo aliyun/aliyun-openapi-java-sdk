@@ -20,17 +20,15 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class ListTagNamesRequest extends RpcAcsRequest<ListTagNamesResponse> {
+public class ListSetsRequest extends RpcAcsRequest<ListSetsResponse> {
 	
-	public ListTagNamesRequest() {
-		super("imm", "2017-09-06", "ListTagNames", "imm");
+	public ListSetsRequest() {
+		super("imm", "2017-09-06", "ListSets", "imm");
 	}
 
 	private String marker;
 
 	private String project;
-
-	private String setId;
 
 	public String getMarker() {
 		return this.marker;
@@ -54,20 +52,9 @@ public class ListTagNamesRequest extends RpcAcsRequest<ListTagNamesResponse> {
 		}
 	}
 
-	public String getSetId() {
-		return this.setId;
-	}
-
-	public void setSetId(String setId) {
-		this.setId = setId;
-		if(setId != null){
-			putQueryParameter("SetId", setId);
-		}
-	}
-
 	@Override
-	public Class<ListTagNamesResponse> getResponseClass() {
-		return ListTagNamesResponse.class;
+	public Class<ListSetsResponse> getResponseClass() {
+		return ListSetsResponse.class;
 	}
 
 }

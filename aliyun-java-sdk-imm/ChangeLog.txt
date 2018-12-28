@@ -1,3 +1,7 @@
+2018-12-28 Version: 1.9.2
+1, Add new set image video api.
+2, Add video async task api.
+
 2018-12-05 Version: 1.9.2
 1, Add image async job.
 2, Fix group bug.

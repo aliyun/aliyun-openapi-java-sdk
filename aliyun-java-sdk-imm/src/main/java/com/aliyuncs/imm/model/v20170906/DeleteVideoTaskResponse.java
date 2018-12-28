@@ -14,23 +14,18 @@
 
 package com.aliyuncs.imm.model.v20170906;
 
-import java.util.List;
 import java.util.Map;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.imm.transform.v20170906.ListTagNamesResponseUnmarshaller;
+import com.aliyuncs.imm.transform.v20170906.DeleteVideoTaskResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ListTagNamesResponse extends AcsResponse {
+public class DeleteVideoTaskResponse extends AcsResponse {
 
 	private String requestId;
-
-	private String nextMarker;
-
-	private List<TagsItem> tags;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -40,48 +35,9 @@ public class ListTagNamesResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getNextMarker() {
-		return this.nextMarker;
-	}
-
-	public void setNextMarker(String nextMarker) {
-		this.nextMarker = nextMarker;
-	}
-
-	public List<TagsItem> getTags() {
-		return this.tags;
-	}
-
-	public void setTags(List<TagsItem> tags) {
-		this.tags = tags;
-	}
-
-	public static class TagsItem {
-
-		private String tagName;
-
-		private Integer num;
-
-		public String getTagName() {
-			return this.tagName;
-		}
-
-		public void setTagName(String tagName) {
-			this.tagName = tagName;
-		}
-
-		public Integer getNum() {
-			return this.num;
-		}
-
-		public void setNum(Integer num) {
-			this.num = num;
-		}
-	}
-
 	@Override
-	public ListTagNamesResponse getInstance(UnmarshallerContext context) {
-		return	ListTagNamesResponseUnmarshaller.unmarshall(this, context);
+	public DeleteVideoTaskResponse getInstance(UnmarshallerContext context) {
+		return	DeleteVideoTaskResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

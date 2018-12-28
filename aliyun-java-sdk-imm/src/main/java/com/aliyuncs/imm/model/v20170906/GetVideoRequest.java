@@ -20,26 +20,26 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class ListTagNamesRequest extends RpcAcsRequest<ListTagNamesResponse> {
+public class GetVideoRequest extends RpcAcsRequest<GetVideoResponse> {
 	
-	public ListTagNamesRequest() {
-		super("imm", "2017-09-06", "ListTagNames", "imm");
+	public GetVideoRequest() {
+		super("imm", "2017-09-06", "GetVideo", "imm");
 	}
 
-	private String marker;
+	private String videoUri;
 
 	private String project;
 
 	private String setId;
 
-	public String getMarker() {
-		return this.marker;
+	public String getVideoUri() {
+		return this.videoUri;
 	}
 
-	public void setMarker(String marker) {
-		this.marker = marker;
-		if(marker != null){
-			putQueryParameter("Marker", marker);
+	public void setVideoUri(String videoUri) {
+		this.videoUri = videoUri;
+		if(videoUri != null){
+			putQueryParameter("VideoUri", videoUri);
 		}
 	}
 
@@ -66,8 +66,8 @@ public class ListTagNamesRequest extends RpcAcsRequest<ListTagNamesResponse> {
 	}
 
 	@Override
-	public Class<ListTagNamesResponse> getResponseClass() {
-		return ListTagNamesResponse.class;
+	public Class<GetVideoResponse> getResponseClass() {
+		return GetVideoResponse.class;
 	}
 
 }

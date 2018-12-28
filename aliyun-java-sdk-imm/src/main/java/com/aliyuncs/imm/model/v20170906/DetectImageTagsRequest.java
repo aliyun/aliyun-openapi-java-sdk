@@ -20,26 +20,24 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class ListTagNamesRequest extends RpcAcsRequest<ListTagNamesResponse> {
+public class DetectImageTagsRequest extends RpcAcsRequest<DetectImageTagsResponse> {
 	
-	public ListTagNamesRequest() {
-		super("imm", "2017-09-06", "ListTagNames", "imm");
+	public DetectImageTagsRequest() {
+		super("imm", "2017-09-06", "DetectImageTags", "imm");
 	}
 
-	private String marker;
+	private String imageUri;
 
 	private String project;
 
-	private String setId;
-
-	public String getMarker() {
-		return this.marker;
+	public String getImageUri() {
+		return this.imageUri;
 	}
 
-	public void setMarker(String marker) {
-		this.marker = marker;
-		if(marker != null){
-			putQueryParameter("Marker", marker);
+	public void setImageUri(String imageUri) {
+		this.imageUri = imageUri;
+		if(imageUri != null){
+			putQueryParameter("ImageUri", imageUri);
 		}
 	}
 
@@ -54,20 +52,9 @@ public class ListTagNamesRequest extends RpcAcsRequest<ListTagNamesResponse> {
 		}
 	}
 
-	public String getSetId() {
-		return this.setId;
-	}
-
-	public void setSetId(String setId) {
-		this.setId = setId;
-		if(setId != null){
-			putQueryParameter("SetId", setId);
-		}
-	}
-
 	@Override
-	public Class<ListTagNamesResponse> getResponseClass() {
-		return ListTagNamesResponse.class;
+	public Class<DetectImageTagsResponse> getResponseClass() {
+		return DetectImageTagsResponse.class;
 	}
 
 }

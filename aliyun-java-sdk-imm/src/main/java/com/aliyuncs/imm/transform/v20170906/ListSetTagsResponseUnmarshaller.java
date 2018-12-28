@@ -17,29 +17,29 @@ package com.aliyuncs.imm.transform.v20170906;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.aliyuncs.imm.model.v20170906.ListTagNamesResponse;
-import com.aliyuncs.imm.model.v20170906.ListTagNamesResponse.TagsItem;
+import com.aliyuncs.imm.model.v20170906.ListSetTagsResponse;
+import com.aliyuncs.imm.model.v20170906.ListSetTagsResponse.TagsItem;
 import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class ListTagNamesResponseUnmarshaller {
+public class ListSetTagsResponseUnmarshaller {
 
-	public static ListTagNamesResponse unmarshall(ListTagNamesResponse listTagNamesResponse, UnmarshallerContext context) {
+	public static ListSetTagsResponse unmarshall(ListSetTagsResponse listSetTagsResponse, UnmarshallerContext context) {
 		
-		listTagNamesResponse.setRequestId(context.stringValue("ListTagNamesResponse.RequestId"));
-		listTagNamesResponse.setNextMarker(context.stringValue("ListTagNamesResponse.NextMarker"));
+		listSetTagsResponse.setRequestId(context.stringValue("ListSetTagsResponse.RequestId"));
+		listSetTagsResponse.setSetId(context.stringValue("ListSetTagsResponse.SetId"));
 
 		List<TagsItem> tags = new ArrayList<TagsItem>();
-		for (int i = 0; i < context.lengthValue("ListTagNamesResponse.Tags.Length"); i++) {
+		for (int i = 0; i < context.lengthValue("ListSetTagsResponse.Tags.Length"); i++) {
 			TagsItem tagsItem = new TagsItem();
-			tagsItem.setTagName(context.stringValue("ListTagNamesResponse.Tags["+ i +"].TagName"));
-			tagsItem.setNum(context.integerValue("ListTagNamesResponse.Tags["+ i +"].Num"));
+			tagsItem.setTagName(context.stringValue("ListSetTagsResponse.Tags["+ i +"].TagName"));
+			tagsItem.setTagCount(context.integerValue("ListSetTagsResponse.Tags["+ i +"].TagCount"));
 
 			tags.add(tagsItem);
 		}
-		listTagNamesResponse.setTags(tags);
+		listSetTagsResponse.setTags(tags);
 	 
-	 	return listTagNamesResponse;
+	 	return listSetTagsResponse;
 	}
 }

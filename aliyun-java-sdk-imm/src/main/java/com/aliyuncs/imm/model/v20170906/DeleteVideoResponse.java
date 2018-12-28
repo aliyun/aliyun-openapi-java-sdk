@@ -14,23 +14,22 @@
 
 package com.aliyuncs.imm.model.v20170906;
 
-import java.util.List;
 import java.util.Map;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.imm.transform.v20170906.ListTagNamesResponseUnmarshaller;
+import com.aliyuncs.imm.transform.v20170906.DeleteVideoResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ListTagNamesResponse extends AcsResponse {
+public class DeleteVideoResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String nextMarker;
+	private String setId;
 
-	private List<TagsItem> tags;
+	private String videoUri;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -40,48 +39,25 @@ public class ListTagNamesResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getNextMarker() {
-		return this.nextMarker;
+	public String getSetId() {
+		return this.setId;
 	}
 
-	public void setNextMarker(String nextMarker) {
-		this.nextMarker = nextMarker;
+	public void setSetId(String setId) {
+		this.setId = setId;
 	}
 
-	public List<TagsItem> getTags() {
-		return this.tags;
+	public String getVideoUri() {
+		return this.videoUri;
 	}
 
-	public void setTags(List<TagsItem> tags) {
-		this.tags = tags;
-	}
-
-	public static class TagsItem {
-
-		private String tagName;
-
-		private Integer num;
-
-		public String getTagName() {
-			return this.tagName;
-		}
-
-		public void setTagName(String tagName) {
-			this.tagName = tagName;
-		}
-
-		public Integer getNum() {
-			return this.num;
-		}
-
-		public void setNum(Integer num) {
-			this.num = num;
-		}
+	public void setVideoUri(String videoUri) {
+		this.videoUri = videoUri;
 	}
 
 	@Override
-	public ListTagNamesResponse getInstance(UnmarshallerContext context) {
-		return	ListTagNamesResponseUnmarshaller.unmarshall(this, context);
+	public DeleteVideoResponse getInstance(UnmarshallerContext context) {
+		return	DeleteVideoResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

@@ -20,10 +20,10 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class ListTagNamesRequest extends RpcAcsRequest<ListTagNamesResponse> {
+public class ListVideosRequest extends RpcAcsRequest<ListVideosResponse> {
 	
-	public ListTagNamesRequest() {
-		super("imm", "2017-09-06", "ListTagNames", "imm");
+	public ListVideosRequest() {
+		super("imm", "2017-09-06", "ListVideos", "imm");
 	}
 
 	private String marker;
@@ -31,6 +31,8 @@ public class ListTagNamesRequest extends RpcAcsRequest<ListTagNamesResponse> {
 	private String project;
 
 	private String setId;
+
+	private String createTimeStart;
 
 	public String getMarker() {
 		return this.marker;
@@ -65,9 +67,20 @@ public class ListTagNamesRequest extends RpcAcsRequest<ListTagNamesResponse> {
 		}
 	}
 
+	public String getCreateTimeStart() {
+		return this.createTimeStart;
+	}
+
+	public void setCreateTimeStart(String createTimeStart) {
+		this.createTimeStart = createTimeStart;
+		if(createTimeStart != null){
+			putQueryParameter("CreateTimeStart", createTimeStart);
+		}
+	}
+
 	@Override
-	public Class<ListTagNamesResponse> getResponseClass() {
-		return ListTagNamesResponse.class;
+	public Class<ListVideosResponse> getResponseClass() {
+		return ListVideosResponse.class;
 	}
 
 }

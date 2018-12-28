@@ -20,26 +20,26 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class ListTagNamesRequest extends RpcAcsRequest<ListTagNamesResponse> {
+public class GetVideoTaskRequest extends RpcAcsRequest<GetVideoTaskResponse> {
 	
-	public ListTagNamesRequest() {
-		super("imm", "2017-09-06", "ListTagNames", "imm");
+	public GetVideoTaskRequest() {
+		super("imm", "2017-09-06", "GetVideoTask", "imm");
 	}
 
-	private String marker;
+	private String taskType;
 
 	private String project;
 
-	private String setId;
+	private String taskId;
 
-	public String getMarker() {
-		return this.marker;
+	public String getTaskType() {
+		return this.taskType;
 	}
 
-	public void setMarker(String marker) {
-		this.marker = marker;
-		if(marker != null){
-			putQueryParameter("Marker", marker);
+	public void setTaskType(String taskType) {
+		this.taskType = taskType;
+		if(taskType != null){
+			putQueryParameter("TaskType", taskType);
 		}
 	}
 
@@ -54,20 +54,20 @@ public class ListTagNamesRequest extends RpcAcsRequest<ListTagNamesResponse> {
 		}
 	}
 
-	public String getSetId() {
-		return this.setId;
+	public String getTaskId() {
+		return this.taskId;
 	}
 
-	public void setSetId(String setId) {
-		this.setId = setId;
-		if(setId != null){
-			putQueryParameter("SetId", setId);
+	public void setTaskId(String taskId) {
+		this.taskId = taskId;
+		if(taskId != null){
+			putQueryParameter("TaskId", taskId);
 		}
 	}
 
 	@Override
-	public Class<ListTagNamesResponse> getResponseClass() {
-		return ListTagNamesResponse.class;
+	public Class<GetVideoTaskResponse> getResponseClass() {
+		return GetVideoTaskResponse.class;
 	}
 
 }

@@ -20,26 +20,26 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class ListTagNamesRequest extends RpcAcsRequest<ListTagNamesResponse> {
+public class DeleteImageRequest extends RpcAcsRequest<DeleteImageResponse> {
 	
-	public ListTagNamesRequest() {
-		super("imm", "2017-09-06", "ListTagNames", "imm");
+	public DeleteImageRequest() {
+		super("imm", "2017-09-06", "DeleteImage", "imm");
 	}
 
-	private String marker;
+	private String imageUri;
 
 	private String project;
 
 	private String setId;
 
-	public String getMarker() {
-		return this.marker;
+	public String getImageUri() {
+		return this.imageUri;
 	}
 
-	public void setMarker(String marker) {
-		this.marker = marker;
-		if(marker != null){
-			putQueryParameter("Marker", marker);
+	public void setImageUri(String imageUri) {
+		this.imageUri = imageUri;
+		if(imageUri != null){
+			putQueryParameter("ImageUri", imageUri);
 		}
 	}
 
@@ -66,8 +66,8 @@ public class ListTagNamesRequest extends RpcAcsRequest<ListTagNamesResponse> {
 	}
 
 	@Override
-	public Class<ListTagNamesResponse> getResponseClass() {
-		return ListTagNamesResponse.class;
+	public Class<DeleteImageResponse> getResponseClass() {
+		return DeleteImageResponse.class;
 	}
 
 }

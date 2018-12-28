@@ -17,18 +17,18 @@ package com.aliyuncs.imm.model.v20170906;
 import java.util.List;
 import java.util.Map;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.imm.transform.v20170906.ListTagNamesResponseUnmarshaller;
+import com.aliyuncs.imm.transform.v20170906.DetectImageTagsResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ListTagNamesResponse extends AcsResponse {
+public class DetectImageTagsResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String nextMarker;
+	private String imageUri;
 
 	private List<TagsItem> tags;
 
@@ -40,12 +40,12 @@ public class ListTagNamesResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getNextMarker() {
-		return this.nextMarker;
+	public String getImageUri() {
+		return this.imageUri;
 	}
 
-	public void setNextMarker(String nextMarker) {
-		this.nextMarker = nextMarker;
+	public void setImageUri(String imageUri) {
+		this.imageUri = imageUri;
 	}
 
 	public List<TagsItem> getTags() {
@@ -60,7 +60,15 @@ public class ListTagNamesResponse extends AcsResponse {
 
 		private String tagName;
 
-		private Integer num;
+		private Float tagConfidence;
+
+		private Integer tagLevel;
+
+		private String parentTagName;
+
+		private String parentTagEnName;
+
+		private String tagEnName;
 
 		public String getTagName() {
 			return this.tagName;
@@ -70,18 +78,50 @@ public class ListTagNamesResponse extends AcsResponse {
 			this.tagName = tagName;
 		}
 
-		public Integer getNum() {
-			return this.num;
+		public Float getTagConfidence() {
+			return this.tagConfidence;
 		}
 
-		public void setNum(Integer num) {
-			this.num = num;
+		public void setTagConfidence(Float tagConfidence) {
+			this.tagConfidence = tagConfidence;
+		}
+
+		public Integer getTagLevel() {
+			return this.tagLevel;
+		}
+
+		public void setTagLevel(Integer tagLevel) {
+			this.tagLevel = tagLevel;
+		}
+
+		public String getParentTagName() {
+			return this.parentTagName;
+		}
+
+		public void setParentTagName(String parentTagName) {
+			this.parentTagName = parentTagName;
+		}
+
+		public String getParentTagEnName() {
+			return this.parentTagEnName;
+		}
+
+		public void setParentTagEnName(String parentTagEnName) {
+			this.parentTagEnName = parentTagEnName;
+		}
+
+		public String getTagEnName() {
+			return this.tagEnName;
+		}
+
+		public void setTagEnName(String tagEnName) {
+			this.tagEnName = tagEnName;
 		}
 	}
 
 	@Override
-	public ListTagNamesResponse getInstance(UnmarshallerContext context) {
-		return	ListTagNamesResponseUnmarshaller.unmarshall(this, context);
+	public DetectImageTagsResponse getInstance(UnmarshallerContext context) {
+		return	DetectImageTagsResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override
