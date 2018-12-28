@@ -62,7 +62,7 @@ public class DetectImageFacesResponse extends AcsResponse {
 
 		private Float faceConfidence;
 
-		private String age;
+		private Integer age;
 
 		private String gender;
 
@@ -98,11 +98,11 @@ public class DetectImageFacesResponse extends AcsResponse {
 			this.faceConfidence = faceConfidence;
 		}
 
-		public String getAge() {
+		public Integer getAge() {
 			return this.age;
 		}
 
-		public void setAge(String age) {
+		public void setAge(Integer age) {
 			this.age = age;
 		}
 

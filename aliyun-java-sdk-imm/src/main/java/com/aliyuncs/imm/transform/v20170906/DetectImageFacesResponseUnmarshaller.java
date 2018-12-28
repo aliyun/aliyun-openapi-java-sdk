@@ -38,7 +38,7 @@ public class DetectImageFacesResponseUnmarshaller {
 			FacesItem facesItem = new FacesItem();
 			facesItem.setFaceId(context.stringValue("DetectImageFacesResponse.Faces["+ i +"].FaceId"));
 			facesItem.setFaceConfidence(context.floatValue("DetectImageFacesResponse.Faces["+ i +"].FaceConfidence"));
-			facesItem.setAge(context.stringValue("DetectImageFacesResponse.Faces["+ i +"].Age"));
+			facesItem.setAge(context.integerValue("DetectImageFacesResponse.Faces["+ i +"].Age"));
 			facesItem.setGender(context.stringValue("DetectImageFacesResponse.Faces["+ i +"].Gender"));
 			facesItem.setEmotion(context.stringValue("DetectImageFacesResponse.Faces["+ i +"].Emotion"));
 			facesItem.setAttractive(context.floatValue("DetectImageFacesResponse.Faces["+ i +"].Attractive"));
