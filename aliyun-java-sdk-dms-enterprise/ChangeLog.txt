@@ -1,3 +1,8 @@
+2018-12-29 Version: 1.1.0
+1, Add EnableUser interface, Support admin user to enable another user.
+2, Add DisableUser Interface, Support admin user to disable another user.
+3, Add DeleteUser Interface, Support admin user to delete another user.
+
 2018-11-26 Version: 1.0.0
 1, Add RegisterInstance interface, Support admin or DBA user to register new db instance.
 2, Add RegisterUser Interface, Support admin user to register new user.
