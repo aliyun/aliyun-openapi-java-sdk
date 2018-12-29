@@ -20,8 +20,8 @@ import com.aliyuncs.eci.transform.v20180808.DescribeContainerGroupsResponseUnmar
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
- * @author auto create
- * @version 
+ * @author liumi
+ * @version 1.0.3
  */
 public class DescribeContainerGroupsResponse extends AcsResponse {
 
@@ -95,6 +95,8 @@ public class DescribeContainerGroupsResponse extends AcsResponse {
 
 		private String succeededTime;
 
+		private String eniInstanceId;
+
 		private List<Label> tags;
 
 		private List<Event> events;
@@ -104,6 +106,8 @@ public class DescribeContainerGroupsResponse extends AcsResponse {
 		private List<Volume> volumes;
 
 		private List<Container> initContainers;
+
+		private DnsConfig dnsConfig;
 
 		public String getContainerGroupId() {
 			return this.containerGroupId;
@@ -217,6 +221,14 @@ public class DescribeContainerGroupsResponse extends AcsResponse {
 			this.succeededTime = succeededTime;
 		}
 
+		public String getEniInstanceId() {
+			return this.eniInstanceId;
+		}
+
+		public void setEniInstanceId(String eniInstanceId) {
+			this.eniInstanceId = eniInstanceId;
+		}
+
 		public List<Label> getTags() {
 			return this.tags;
 		}
@@ -257,6 +269,14 @@ public class DescribeContainerGroupsResponse extends AcsResponse {
 			this.initContainers = initContainers;
 		}
 
+		public DnsConfig getDnsConfig() {
+			return this.dnsConfig;
+		}
+
+		public void setDnsConfig(DnsConfig dnsConfig) {
+			this.dnsConfig = dnsConfig;
+		}
+
 		public static class Label {
 
 			private String key;
@@ -293,6 +313,8 @@ public class DescribeContainerGroupsResponse extends AcsResponse {
 			private String firstTimestamp;
 
 			private String lastTimestamp;
+
+			private String reason;
 
 			public Integer getCount() {
 				return this.count;
@@ -341,6 +363,14 @@ public class DescribeContainerGroupsResponse extends AcsResponse {
 			public void setLastTimestamp(String lastTimestamp) {
 				this.lastTimestamp = lastTimestamp;
 			}
+
+			public String getReason() {
+				return this.reason;
+			}
+
+			public void setReason(String reason) {
+				this.reason = reason;
+			}
 		}
 
 		public static class Container {
@@ -369,9 +399,15 @@ public class DescribeContainerGroupsResponse extends AcsResponse {
 
 			private List<String> args;
 
-			private PreviousState previousState;
+			private ContainerState previousState;
 
-			private CurrentState currentState;
+			private ContainerState currentState;
+
+			private ContainerProbe readinessProbe;
+
+			private ContainerProbe livenessProbe;
+
+			private SecurityContext securityContext;
 
 			public String getName() {
 				return this.name;
@@ -469,20 +505,44 @@ public class DescribeContainerGroupsResponse extends AcsResponse {
 				this.args = args;
 			}
 
-			public PreviousState getPreviousState() {
+			public ContainerState getPreviousState() {
 				return this.previousState;
 			}
 
-			public void setPreviousState(PreviousState previousState) {
+			public void setPreviousState(ContainerState previousState) {
 				this.previousState = previousState;
 			}
 
-			public CurrentState getCurrentState() {
+			public ContainerState getCurrentState() {
 				return this.currentState;
 			}
 
-			public void setCurrentState(CurrentState currentState) {
+			public void setCurrentState(ContainerState currentState) {
 				this.currentState = currentState;
+			}
+
+			public ContainerProbe getReadinessProbe() {
+				return this.readinessProbe;
+			}
+
+			public void setReadinessProbe(ContainerProbe readinessProbe) {
+				this.readinessProbe = readinessProbe;
+			}
+
+			public ContainerProbe getLivenessProbe() {
+				return this.livenessProbe;
+			}
+
+			public void setLivenessProbe(ContainerProbe livenessProbe) {
+				this.livenessProbe = livenessProbe;
+			}
+
+			public SecurityContext getSecurityContext() {
+				return this.securityContext;
+			}
+
+			public void setSecurityContext(SecurityContext securityContext) {
+				this.securityContext = securityContext;
 			}
 
 			public static class VolumeMount {
@@ -564,7 +624,7 @@ public class DescribeContainerGroupsResponse extends AcsResponse {
 				}
 			}
 
-			public static class PreviousState {
+			public static class ContainerState {
 
 				private String state;
 
@@ -617,56 +677,189 @@ public class DescribeContainerGroupsResponse extends AcsResponse {
 				}
 			}
 
-			public static class CurrentState {
+			public static class ContainerProbe {
 
-				private String state;
+				private Integer initialDelaySeconds;
 
-				private String detailStatus;
+				private Integer periodSeconds;
 
-				private Integer exitCode;
+				private Integer timeoutSeconds;
 
-				private String startTime;
+				private Integer successThreshold;
 
-				private String finishTime;
+				private Integer failureThreshold;
 
-				public String getState() {
-					return this.state;
+				private List<String> execs;
+
+				private HttpGet httpGet;
+
+				private TcpSocket tcpSocket;
+
+				public Integer getInitialDelaySeconds() {
+					return this.initialDelaySeconds;
 				}
 
-				public void setState(String state) {
-					this.state = state;
+				public void setInitialDelaySeconds(Integer initialDelaySeconds) {
+					this.initialDelaySeconds = initialDelaySeconds;
 				}
 
-				public String getDetailStatus() {
-					return this.detailStatus;
+				public Integer getPeriodSeconds() {
+					return this.periodSeconds;
 				}
 
-				public void setDetailStatus(String detailStatus) {
-					this.detailStatus = detailStatus;
+				public void setPeriodSeconds(Integer periodSeconds) {
+					this.periodSeconds = periodSeconds;
 				}
 
-				public Integer getExitCode() {
-					return this.exitCode;
+				public Integer getTimeoutSeconds() {
+					return this.timeoutSeconds;
 				}
 
-				public void setExitCode(Integer exitCode) {
-					this.exitCode = exitCode;
+				public void setTimeoutSeconds(Integer timeoutSeconds) {
+					this.timeoutSeconds = timeoutSeconds;
 				}
 
-				public String getStartTime() {
-					return this.startTime;
+				public Integer getSuccessThreshold() {
+					return this.successThreshold;
 				}
 
-				public void setStartTime(String startTime) {
-					this.startTime = startTime;
+				public void setSuccessThreshold(Integer successThreshold) {
+					this.successThreshold = successThreshold;
 				}
 
-				public String getFinishTime() {
-					return this.finishTime;
+				public Integer getFailureThreshold() {
+					return this.failureThreshold;
 				}
 
-				public void setFinishTime(String finishTime) {
-					this.finishTime = finishTime;
+				public void setFailureThreshold(Integer failureThreshold) {
+					this.failureThreshold = failureThreshold;
+				}
+
+				public List<String> getExecs() {
+					return this.execs;
+				}
+
+				public void setExecs(List<String> execs) {
+					this.execs = execs;
+				}
+
+				public HttpGet getHttpGet() {
+					return this.httpGet;
+				}
+
+				public void setHttpGet(HttpGet httpGet) {
+					this.httpGet = httpGet;
+				}
+
+				public TcpSocket getTcpSocket() {
+					return this.tcpSocket;
+				}
+
+				public void setTcpSocket(TcpSocket tcpSocket) {
+					this.tcpSocket = tcpSocket;
+				}
+
+				public static class HttpGet {
+
+					private String path;
+
+					private Integer port;
+
+					private String scheme;
+
+					public String getPath() {
+						return this.path;
+					}
+
+					public void setPath(String path) {
+						this.path = path;
+					}
+
+					public Integer getPort() {
+						return this.port;
+					}
+
+					public void setPort(Integer port) {
+						this.port = port;
+					}
+
+					public String getScheme() {
+						return this.scheme;
+					}
+
+					public void setScheme(String scheme) {
+						this.scheme = scheme;
+					}
+				}
+
+				public static class TcpSocket {
+
+					private String host;
+
+					private Integer port;
+
+					public String getHost() {
+						return this.host;
+					}
+
+					public void setHost(String host) {
+						this.host = host;
+					}
+
+					public Integer getPort() {
+						return this.port;
+					}
+
+					public void setPort(Integer port) {
+						this.port = port;
+					}
+				}
+			}
+
+
+			public static class SecurityContext {
+
+				private Boolean readOnlyRootFilesystem;
+
+				private Long runAsUser;
+
+				private Capability capability;
+
+				public Boolean getReadOnlyRootFilesystem() {
+					return this.readOnlyRootFilesystem;
+				}
+
+				public void setReadOnlyRootFilesystem(Boolean readOnlyRootFilesystem) {
+					this.readOnlyRootFilesystem = readOnlyRootFilesystem;
+				}
+
+				public Long getRunAsUser() {
+					return this.runAsUser;
+				}
+
+				public void setRunAsUser(Long runAsUser) {
+					this.runAsUser = runAsUser;
+				}
+
+				public Capability getCapability() {
+					return this.capability;
+				}
+
+				public void setCapability(Capability capability) {
+					this.capability = capability;
+				}
+
+				public static class Capability {
+
+					private List<String> adds;
+
+					public List<String> getAdds() {
+						return this.adds;
+					}
+
+					public void setAdds(List<String> adds) {
+						this.adds = adds;
+					}
 				}
 			}
 		}
@@ -682,8 +875,6 @@ public class DescribeContainerGroupsResponse extends AcsResponse {
 			private String nFSVolumeServer;
 
 			private Boolean nFSVolumeReadOnly;
-
-			private Boolean emptyDirVolumeEnable;
 
 			private List<ConfigFileVolumeConfigFileToPath> configFileVolumeConfigFileToPaths;
 
@@ -727,14 +918,6 @@ public class DescribeContainerGroupsResponse extends AcsResponse {
 				this.nFSVolumeReadOnly = nFSVolumeReadOnly;
 			}
 
-			public Boolean getEmptyDirVolumeEnable() {
-				return this.emptyDirVolumeEnable;
-			}
-
-			public void setEmptyDirVolumeEnable(Boolean emptyDirVolumeEnable) {
-				this.emptyDirVolumeEnable = emptyDirVolumeEnable;
-			}
-
 			public List<ConfigFileVolumeConfigFileToPath> getConfigFileVolumeConfigFileToPaths() {
 				return this.configFileVolumeConfigFileToPaths;
 			}
@@ -763,6 +946,62 @@ public class DescribeContainerGroupsResponse extends AcsResponse {
 
 				public void setPath(String path) {
 					this.path = path;
+				}
+			}
+		}
+
+		public static class DnsConfig {
+
+			private List<Option> options;
+
+			private List<String> nameServers;
+
+			private List<String> searches;
+
+			public List<Option> getOptions() {
+				return this.options;
+			}
+
+			public void setOptions(List<Option> options) {
+				this.options = options;
+			}
+
+			public List<String> getNameServers() {
+				return this.nameServers;
+			}
+
+			public void setNameServers(List<String> nameServers) {
+				this.nameServers = nameServers;
+			}
+
+			public List<String> getSearches() {
+				return this.searches;
+			}
+
+			public void setSearches(List<String> searches) {
+				this.searches = searches;
+			}
+
+			public static class Option {
+
+				private String name;
+
+				private String value;
+
+				public String getName() {
+					return this.name;
+				}
+
+				public void setName(String name) {
+					this.name = name;
+				}
+
+				public String getValue() {
+					return this.value;
+				}
+
+				public void setValue(String value) {
+					this.value = value;
 				}
 			}
 		}

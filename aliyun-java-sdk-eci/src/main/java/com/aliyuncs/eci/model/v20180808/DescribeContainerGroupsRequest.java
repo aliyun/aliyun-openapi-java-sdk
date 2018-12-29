@@ -19,10 +19,10 @@ import java.util.List;
 
 /**
  * @author auto create
- * @version 
+ * @version
  */
 public class DescribeContainerGroupsRequest extends RpcAcsRequest<DescribeContainerGroupsResponse> {
-	
+
 	public DescribeContainerGroupsRequest() {
 		super("Eci", "2018-08-08", "DescribeContainerGroups", "eci");
 	}
@@ -35,19 +35,21 @@ public class DescribeContainerGroupsRequest extends RpcAcsRequest<DescribeContai
 
 	private Integer limit;
 
+	private List<Tag> tags;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
 	private Long ownerId;
 
-	private List<Tag> tags;
-
 	private String vSwitchId;
 
 	private String containerGroupName;
 
 	private String zoneId;
+
+	private String status;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -93,6 +95,20 @@ public class DescribeContainerGroupsRequest extends RpcAcsRequest<DescribeContai
 		}
 	}
 
+	public List<Tag> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;
+		if (tags != null) {
+			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
+				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+			}
+		}
+	}
+
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
 	}
@@ -126,20 +142,6 @@ public class DescribeContainerGroupsRequest extends RpcAcsRequest<DescribeContai
 		}
 	}
 
-	public List<Tag> getTagss() {
-		return this.tags;
-	}
-
-	public void setTagss(List<Tag> tagss) {
-		this.tags = tagss;
-		if (tagss != null) {
-			for (int depth1 = 0; depth1 < tagss.size(); depth1++) {
-				putQueryParameter("Tags." + (depth1 + 1) + ".Key" , tagss.get(depth1).getKey());
-				putQueryParameter("Tags." + (depth1 + 1) + ".Value" , tagss.get(depth1).getValue());
-			}
-		}	
-	}
-
 	public String getVSwitchId() {
 		return this.vSwitchId;
 	}
@@ -170,6 +172,17 @@ public class DescribeContainerGroupsRequest extends RpcAcsRequest<DescribeContai
 		this.zoneId = zoneId;
 		if(zoneId != null){
 			putQueryParameter("ZoneId", zoneId);
+		}
+	}
+
+	public String getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+		if(status != null){
+			putQueryParameter("Status", status);
 		}
 	}
 

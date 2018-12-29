@@ -20,22 +20,31 @@ import java.util.List;
 import com.aliyuncs.eci.model.v20180808.DescribeContainerGroupsResponse;
 import com.aliyuncs.eci.model.v20180808.DescribeContainerGroupsResponse.ContainerGroup;
 import com.aliyuncs.eci.model.v20180808.DescribeContainerGroupsResponse.ContainerGroup.Container;
-import com.aliyuncs.eci.model.v20180808.DescribeContainerGroupsResponse.ContainerGroup.Container.CurrentState;
+import com.aliyuncs.eci.model.v20180808.DescribeContainerGroupsResponse.ContainerGroup.Container.*;
+import com.aliyuncs.eci.model.v20180808.DescribeContainerGroupsResponse.ContainerGroup.Container.ContainerProbe;
+import com.aliyuncs.eci.model.v20180808.DescribeContainerGroupsResponse.ContainerGroup.Container.ContainerProbe.*;
 import com.aliyuncs.eci.model.v20180808.DescribeContainerGroupsResponse.ContainerGroup.Container.EnvironmentVar;
 import com.aliyuncs.eci.model.v20180808.DescribeContainerGroupsResponse.ContainerGroup.Container.Port;
-import com.aliyuncs.eci.model.v20180808.DescribeContainerGroupsResponse.ContainerGroup.Container.PreviousState;
+import com.aliyuncs.eci.model.v20180808.DescribeContainerGroupsResponse.ContainerGroup.Container.SecurityContext;
+import com.aliyuncs.eci.model.v20180808.DescribeContainerGroupsResponse.ContainerGroup.Container.SecurityContext.Capability;
 import com.aliyuncs.eci.model.v20180808.DescribeContainerGroupsResponse.ContainerGroup.Container.VolumeMount;
+import com.aliyuncs.eci.model.v20180808.DescribeContainerGroupsResponse.ContainerGroup.DnsConfig;
+import com.aliyuncs.eci.model.v20180808.DescribeContainerGroupsResponse.ContainerGroup.DnsConfig.Option;
 import com.aliyuncs.eci.model.v20180808.DescribeContainerGroupsResponse.ContainerGroup.Event;
 import com.aliyuncs.eci.model.v20180808.DescribeContainerGroupsResponse.ContainerGroup.Label;
 import com.aliyuncs.eci.model.v20180808.DescribeContainerGroupsResponse.ContainerGroup.Volume;
 import com.aliyuncs.eci.model.v20180808.DescribeContainerGroupsResponse.ContainerGroup.Volume.ConfigFileVolumeConfigFileToPath;
 import com.aliyuncs.transform.UnmarshallerContext;
 
-
+/**
+ * 2018/12/29
+ * @author liumi
+ * @version 1.0.3
+ */
 public class DescribeContainerGroupsResponseUnmarshaller {
 
 	public static DescribeContainerGroupsResponse unmarshall(DescribeContainerGroupsResponse describeContainerGroupsResponse, UnmarshallerContext context) {
-		
+
 		describeContainerGroupsResponse.setRequestId(context.stringValue("DescribeContainerGroupsResponse.RequestId"));
 		describeContainerGroupsResponse.setNextToken(context.stringValue("DescribeContainerGroupsResponse.NextToken"));
 		describeContainerGroupsResponse.setTotalCount(context.integerValue("DescribeContainerGroupsResponse.TotalCount"));
@@ -57,6 +66,32 @@ public class DescribeContainerGroupsResponseUnmarshaller {
 			containerGroup.setInternetIp(context.stringValue("DescribeContainerGroupsResponse.ContainerGroups["+ i +"].InternetIp"));
 			containerGroup.setCreationTime(context.stringValue("DescribeContainerGroupsResponse.ContainerGroups["+ i +"].CreationTime"));
 			containerGroup.setSucceededTime(context.stringValue("DescribeContainerGroupsResponse.ContainerGroups["+ i +"].SucceededTime"));
+			containerGroup.setEniInstanceId(context.stringValue("DescribeContainerGroupsResponse.ContainerGroups["+ i +"].EniInstanceId"));
+
+			DnsConfig dnsConfig = new DnsConfig();
+
+			List<String> nameServers = new ArrayList<String>();
+			for (int j = 0; j < context.lengthValue("DescribeContainerGroupsResponse.ContainerGroups["+ i +"].DnsConfig.NameServers.Length"); j++) {
+				nameServers.add(context.stringValue("DescribeContainerGroupsResponse.ContainerGroups["+ i +"].DnsConfig.NameServers["+ j +"]"));
+			}
+			dnsConfig.setNameServers(nameServers);
+
+			List<String> searches = new ArrayList<String>();
+			for (int j = 0; j < context.lengthValue("DescribeContainerGroupsResponse.ContainerGroups["+ i +"].DnsConfig.Searches.Length"); j++) {
+				searches.add(context.stringValue("DescribeContainerGroupsResponse.ContainerGroups["+ i +"].DnsConfig.Searches["+ j +"]"));
+			}
+			dnsConfig.setSearches(searches);
+
+			List<Option> options = new ArrayList<Option>();
+			for (int j = 0; j < context.lengthValue("DescribeContainerGroupsResponse.ContainerGroups["+ i +"].DnsConfig.Options.Length"); j++) {
+				Option option = new Option();
+				option.setName(context.stringValue("DescribeContainerGroupsResponse.ContainerGroups["+ i +"].DnsConfig.Options["+ j +"].Name"));
+				option.setValue(context.stringValue("DescribeContainerGroupsResponse.ContainerGroups["+ i +"].DnsConfig.Options["+ j +"].Value"));
+
+				options.add(option);
+			}
+			dnsConfig.setOptions(options);
+			containerGroup.setDnsConfig(dnsConfig);
 
 			List<Label> tags = new ArrayList<Label>();
 			for (int j = 0; j < context.lengthValue("DescribeContainerGroupsResponse.ContainerGroups["+ i +"].Tags.Length"); j++) {
@@ -77,6 +112,7 @@ public class DescribeContainerGroupsResponseUnmarshaller {
 				event.setMessage(context.stringValue("DescribeContainerGroupsResponse.ContainerGroups["+ i +"].Events["+ j +"].Message"));
 				event.setFirstTimestamp(context.stringValue("DescribeContainerGroupsResponse.ContainerGroups["+ i +"].Events["+ j +"].FirstTimestamp"));
 				event.setLastTimestamp(context.stringValue("DescribeContainerGroupsResponse.ContainerGroups["+ i +"].Events["+ j +"].LastTimestamp"));
+				event.setReason(context.stringValue("DescribeContainerGroupsResponse.ContainerGroups["+ i +"].Events["+ j +"].Reason"));
 
 				events.add(event);
 			}
@@ -105,7 +141,7 @@ public class DescribeContainerGroupsResponseUnmarshaller {
 				}
 				container.setArgs(args);
 
-				PreviousState previousState = new PreviousState();
+				ContainerState previousState = new ContainerState();
 				previousState.setState(context.stringValue("DescribeContainerGroupsResponse.ContainerGroups["+ i +"].Containers["+ j +"].PreviousState.State"));
 				previousState.setDetailStatus(context.stringValue("DescribeContainerGroupsResponse.ContainerGroups["+ i +"].Containers["+ j +"].PreviousState.DetailStatus"));
 				previousState.setExitCode(context.integerValue("DescribeContainerGroupsResponse.ContainerGroups["+ i +"].Containers["+ j +"].PreviousState.ExitCode"));
@@ -113,13 +149,79 @@ public class DescribeContainerGroupsResponseUnmarshaller {
 				previousState.setFinishTime(context.stringValue("DescribeContainerGroupsResponse.ContainerGroups["+ i +"].Containers["+ j +"].PreviousState.FinishTime"));
 				container.setPreviousState(previousState);
 
-				CurrentState currentState = new CurrentState();
+				ContainerState currentState = new ContainerState();
 				currentState.setState(context.stringValue("DescribeContainerGroupsResponse.ContainerGroups["+ i +"].Containers["+ j +"].CurrentState.State"));
 				currentState.setDetailStatus(context.stringValue("DescribeContainerGroupsResponse.ContainerGroups["+ i +"].Containers["+ j +"].CurrentState.DetailStatus"));
 				currentState.setExitCode(context.integerValue("DescribeContainerGroupsResponse.ContainerGroups["+ i +"].Containers["+ j +"].CurrentState.ExitCode"));
 				currentState.setStartTime(context.stringValue("DescribeContainerGroupsResponse.ContainerGroups["+ i +"].Containers["+ j +"].CurrentState.StartTime"));
 				currentState.setFinishTime(context.stringValue("DescribeContainerGroupsResponse.ContainerGroups["+ i +"].Containers["+ j +"].CurrentState.FinishTime"));
 				container.setCurrentState(currentState);
+
+				ContainerProbe readinessProbe = new ContainerProbe();
+				readinessProbe.setInitialDelaySeconds(context.integerValue("DescribeContainerGroupsResponse.ContainerGroups["+ i +"].Containers["+ j +"].ReadinessProbe.InitialDelaySeconds"));
+				readinessProbe.setPeriodSeconds(context.integerValue("DescribeContainerGroupsResponse.ContainerGroups["+ i +"].Containers["+ j +"].ReadinessProbe.PeriodSeconds"));
+				readinessProbe.setTimeoutSeconds(context.integerValue("DescribeContainerGroupsResponse.ContainerGroups["+ i +"].Containers["+ j +"].ReadinessProbe.TimeoutSeconds"));
+				readinessProbe.setSuccessThreshold(context.integerValue("DescribeContainerGroupsResponse.ContainerGroups["+ i +"].Containers["+ j +"].ReadinessProbe.SuccessThreshold"));
+				readinessProbe.setFailureThreshold(context.integerValue("DescribeContainerGroupsResponse.ContainerGroups["+ i +"].Containers["+ j +"].ReadinessProbe.FailureThreshold"));
+
+				List<String> execs = new ArrayList<String>();
+				for (int k = 0; k < context.lengthValue("DescribeContainerGroupsResponse.ContainerGroups["+ i +"].Containers["+ j +"].ReadinessProbe.Execs.Length"); k++) {
+					execs.add(context.stringValue("DescribeContainerGroupsResponse.ContainerGroups["+ i +"].Containers["+ j +"].ReadinessProbe.Execs["+ k +"]"));
+				}
+				readinessProbe.setExecs(execs);
+
+				HttpGet httpGet = new HttpGet();
+				httpGet.setPath(context.stringValue("DescribeContainerGroupsResponse.ContainerGroups["+ i +"].Containers["+ j +"].ReadinessProbe.HttpGet.Path"));
+				httpGet.setPort(context.integerValue("DescribeContainerGroupsResponse.ContainerGroups["+ i +"].Containers["+ j +"].ReadinessProbe.HttpGet.Port"));
+				httpGet.setScheme(context.stringValue("DescribeContainerGroupsResponse.ContainerGroups["+ i +"].Containers["+ j +"].ReadinessProbe.HttpGet.Scheme"));
+				readinessProbe.setHttpGet(httpGet);
+
+				TcpSocket tcpSocket = new TcpSocket();
+				tcpSocket.setHost(context.stringValue("DescribeContainerGroupsResponse.ContainerGroups["+ i +"].Containers["+ j +"].ReadinessProbe.TcpSocket.Host"));
+				tcpSocket.setPort(context.integerValue("DescribeContainerGroupsResponse.ContainerGroups["+ i +"].Containers["+ j +"].ReadinessProbe.TcpSocket.Port"));
+				readinessProbe.setTcpSocket(tcpSocket);
+
+				container.setReadinessProbe(readinessProbe);
+
+				ContainerProbe livenessProbe = new ContainerProbe();
+				livenessProbe.setInitialDelaySeconds(context.integerValue("DescribeContainerGroupsResponse.ContainerGroups["+ i +"].Containers["+ j +"].LivenessProbe.InitialDelaySeconds"));
+				livenessProbe.setPeriodSeconds(context.integerValue("DescribeContainerGroupsResponse.ContainerGroups["+ i +"].Containers["+ j +"].LivenessProbe.PeriodSeconds"));
+				livenessProbe.setTimeoutSeconds(context.integerValue("DescribeContainerGroupsResponse.ContainerGroups["+ i +"].Containers["+ j +"].LivenessProbe.TimeoutSeconds"));
+				livenessProbe.setSuccessThreshold(context.integerValue("DescribeContainerGroupsResponse.ContainerGroups["+ i +"].Containers["+ j +"].LivenessProbe.SuccessThreshold"));
+				livenessProbe.setFailureThreshold(context.integerValue("DescribeContainerGroupsResponse.ContainerGroups["+ i +"].Containers["+ j +"].LivenessProbe.FailureThreshold"));
+
+				List<String> execs2 = new ArrayList<String>();
+				for (int k = 0; k < context.lengthValue("DescribeContainerGroupsResponse.ContainerGroups["+ i +"].Containers["+ j +"].LivenessProbe.Execs.Length"); k++) {
+					execs2.add(context.stringValue("DescribeContainerGroupsResponse.ContainerGroups["+ i +"].Containers["+ j +"].LivenessProbe.Execs["+ k +"]"));
+				}
+				livenessProbe.setExecs(execs2);
+
+				HttpGet httpGet2 = new HttpGet();
+				httpGet2.setPath(context.stringValue("DescribeContainerGroupsResponse.ContainerGroups["+ i +"].Containers["+ j +"].LivenessProbe.HttpGet.Path"));
+				httpGet2.setPort(context.integerValue("DescribeContainerGroupsResponse.ContainerGroups["+ i +"].Containers["+ j +"].LivenessProbe.HttpGet.Port"));
+				httpGet2.setScheme(context.stringValue("DescribeContainerGroupsResponse.ContainerGroups["+ i +"].Containers["+ j +"].LivenessProbe.HttpGet.Scheme"));
+				livenessProbe.setHttpGet(httpGet2);
+
+				TcpSocket tcpSocket2 = new TcpSocket();
+				tcpSocket2.setHost(context.stringValue("DescribeContainerGroupsResponse.ContainerGroups["+ i +"].Containers["+ j +"].LivenessProbe.TcpSocket.Host"));
+				tcpSocket2.setPort(context.integerValue("DescribeContainerGroupsResponse.ContainerGroups["+ i +"].Containers["+ j +"].LivenessProbe.TcpSocket.Port"));
+				livenessProbe.setTcpSocket(tcpSocket2);
+
+				container.setLivenessProbe(livenessProbe);
+
+				SecurityContext securityContext = new SecurityContext();
+				securityContext.setReadOnlyRootFilesystem(context.booleanValue("DescribeContainerGroupsResponse.ContainerGroups["+ i +"].Containers["+ j +"].SecurityContext.ReadOnlyRootFilesystem"));
+				securityContext.setRunAsUser(context.longValue("DescribeContainerGroupsResponse.ContainerGroups["+ i +"].Containers["+ j +"].SecurityContext.RunAsUser"));
+
+				Capability capability = new Capability();
+
+				List<String> adds = new ArrayList<String>();
+				for (int k = 0; k < context.lengthValue("DescribeContainerGroupsResponse.ContainerGroups["+ i +"].Containers["+ j +"].SecurityContext.Capability.Adds.Length"); k++) {
+					adds.add(context.stringValue("DescribeContainerGroupsResponse.ContainerGroups["+ i +"].Containers["+ j +"].SecurityContext.Capability.Adds["+ k +"]"));
+				}
+				capability.setAdds(adds);
+				securityContext.setCapability(capability);
+				container.setSecurityContext(securityContext);
 
 				List<VolumeMount> volumeMounts = new ArrayList<VolumeMount>();
 				for (int k = 0; k < context.lengthValue("DescribeContainerGroupsResponse.ContainerGroups["+ i +"].Containers["+ j +"].VolumeMounts.Length"); k++) {
@@ -164,7 +266,6 @@ public class DescribeContainerGroupsResponseUnmarshaller {
 				volume.setNFSVolumePath(context.stringValue("DescribeContainerGroupsResponse.ContainerGroups["+ i +"].Volumes["+ j +"].NFSVolumePath"));
 				volume.setNFSVolumeServer(context.stringValue("DescribeContainerGroupsResponse.ContainerGroups["+ i +"].Volumes["+ j +"].NFSVolumeServer"));
 				volume.setNFSVolumeReadOnly(context.booleanValue("DescribeContainerGroupsResponse.ContainerGroups["+ i +"].Volumes["+ j +"].NFSVolumeReadOnly"));
-				volume.setEmptyDirVolumeEnable(context.booleanValue("DescribeContainerGroupsResponse.ContainerGroups["+ i +"].Volumes["+ j +"].EmptyDirVolumeEnable"));
 
 				List<ConfigFileVolumeConfigFileToPath> configFileVolumeConfigFileToPaths = new ArrayList<ConfigFileVolumeConfigFileToPath>();
 				for (int k = 0; k < context.lengthValue("DescribeContainerGroupsResponse.ContainerGroups["+ i +"].Volumes["+ j +"].ConfigFileVolumeConfigFileToPaths.Length"); k++) {
@@ -197,13 +298,13 @@ public class DescribeContainerGroupsResponseUnmarshaller {
 				}
 				container.setCommands(command);
 
-				List<String> args2 = new ArrayList<String>();
+				List<String> args = new ArrayList<String>();
 				for (int k = 0; k < context.lengthValue("DescribeContainerGroupsResponse.ContainerGroups["+ i +"].InitContainers["+ j +"].Args.Length"); k++) {
-					args2.add(context.stringValue("DescribeContainerGroupsResponse.ContainerGroups["+ i +"].InitContainers["+ j +"].Args["+ k +"]"));
+					args.add(context.stringValue("DescribeContainerGroupsResponse.ContainerGroups["+ i +"].InitContainers["+ j +"].Args["+ k +"]"));
 				}
-				container.setArgs(args2);
+				container.setArgs(args);
 
-				PreviousState previousState = new PreviousState();
+				ContainerState previousState = new ContainerState();
 				previousState.setState(context.stringValue("DescribeContainerGroupsResponse.ContainerGroups["+ i +"].InitContainers["+ j +"].PreviousState.State"));
 				previousState.setDetailStatus(context.stringValue("DescribeContainerGroupsResponse.ContainerGroups["+ i +"].InitContainers["+ j +"].PreviousState.DetailStatus"));
 				previousState.setExitCode(context.integerValue("DescribeContainerGroupsResponse.ContainerGroups["+ i +"].InitContainers["+ j +"].PreviousState.ExitCode"));
@@ -211,13 +312,27 @@ public class DescribeContainerGroupsResponseUnmarshaller {
 				previousState.setFinishTime(context.stringValue("DescribeContainerGroupsResponse.ContainerGroups["+ i +"].InitContainers["+ j +"].PreviousState.FinishTime"));
 				container.setPreviousState(previousState);
 
-				CurrentState currentState = new CurrentState();
+				ContainerState currentState = new ContainerState();
 				currentState.setState(context.stringValue("DescribeContainerGroupsResponse.ContainerGroups["+ i +"].InitContainers["+ j +"].CurrentState.State"));
 				currentState.setDetailStatus(context.stringValue("DescribeContainerGroupsResponse.ContainerGroups["+ i +"].InitContainers["+ j +"].CurrentState.DetailStatus"));
 				currentState.setExitCode(context.integerValue("DescribeContainerGroupsResponse.ContainerGroups["+ i +"].InitContainers["+ j +"].CurrentState.ExitCode"));
 				currentState.setStartTime(context.stringValue("DescribeContainerGroupsResponse.ContainerGroups["+ i +"].InitContainers["+ j +"].CurrentState.StartTime"));
 				currentState.setFinishTime(context.stringValue("DescribeContainerGroupsResponse.ContainerGroups["+ i +"].InitContainers["+ j +"].CurrentState.FinishTime"));
 				container.setCurrentState(currentState);
+
+				SecurityContext securityContext = new SecurityContext();
+				securityContext.setReadOnlyRootFilesystem(context.booleanValue("DescribeContainerGroupsResponse.ContainerGroups["+ i +"].InitContainers["+ j +"].SecurityContext.ReadOnlyRootFilesystem"));
+				securityContext.setRunAsUser(context.longValue("DescribeContainerGroupsResponse.ContainerGroups["+ i +"].InitContainers["+ j +"].SecurityContext.RunAsUser"));
+
+				Capability capability = new Capability();
+
+				List<String> adds = new ArrayList<String>();
+				for (int k = 0; k < context.lengthValue("DescribeContainerGroupsResponse.ContainerGroups["+ i +"].InitContainers["+ j +"].SecurityContext.Capability.Adds.Length"); k++) {
+					adds.add(context.stringValue("DescribeContainerGroupsResponse.ContainerGroups["+ i +"].InitContainers["+ j +"].SecurityContext.Capability.Adds["+ k +"]"));
+				}
+				capability.setAdds(adds);
+				securityContext.setCapability(capability);
+				container.setSecurityContext(securityContext);
 
 				List<VolumeMount> volumeMounts = new ArrayList<VolumeMount>();
 				for (int k = 0; k < context.lengthValue("DescribeContainerGroupsResponse.ContainerGroups["+ i +"].InitContainers["+ j +"].VolumeMounts.Length"); k++) {
@@ -230,25 +345,25 @@ public class DescribeContainerGroupsResponseUnmarshaller {
 				}
 				container.setVolumeMounts(volumeMounts);
 
-				List<Port> ports6 = new ArrayList<Port>();
+				List<Port> ports = new ArrayList<Port>();
 				for (int k = 0; k < context.lengthValue("DescribeContainerGroupsResponse.ContainerGroups["+ i +"].InitContainers["+ j +"].Ports.Length"); k++) {
 					Port port = new Port();
 					port.setPort(context.integerValue("DescribeContainerGroupsResponse.ContainerGroups["+ i +"].InitContainers["+ j +"].Ports["+ k +"].Port"));
 					port.setProtocol(context.stringValue("DescribeContainerGroupsResponse.ContainerGroups["+ i +"].InitContainers["+ j +"].Ports["+ k +"].Protocol"));
 
-					ports6.add(port);
+					ports.add(port);
 				}
-				container.setPorts(ports6);
+				container.setPorts(ports);
 
-				List<EnvironmentVar> environmentVars7 = new ArrayList<EnvironmentVar>();
+				List<EnvironmentVar> environmentVars = new ArrayList<EnvironmentVar>();
 				for (int k = 0; k < context.lengthValue("DescribeContainerGroupsResponse.ContainerGroups["+ i +"].InitContainers["+ j +"].EnvironmentVars.Length"); k++) {
 					EnvironmentVar environmentVar = new EnvironmentVar();
 					environmentVar.setKey(context.stringValue("DescribeContainerGroupsResponse.ContainerGroups["+ i +"].InitContainers["+ j +"].EnvironmentVars["+ k +"].Key"));
 					environmentVar.setValue(context.stringValue("DescribeContainerGroupsResponse.ContainerGroups["+ i +"].InitContainers["+ j +"].EnvironmentVars["+ k +"].Value"));
 
-					environmentVars7.add(environmentVar);
+					environmentVars.add(environmentVar);
 				}
-				container.setEnvironmentVars(environmentVars7);
+				container.setEnvironmentVars(environmentVars);
 
 				initContainers.add(container);
 			}
@@ -257,7 +372,7 @@ public class DescribeContainerGroupsResponseUnmarshaller {
 			containerGroups.add(containerGroup);
 		}
 		describeContainerGroupsResponse.setContainerGroups(containerGroups);
-	 
-	 	return describeContainerGroupsResponse;
+
+		return describeContainerGroupsResponse;
 	}
 }

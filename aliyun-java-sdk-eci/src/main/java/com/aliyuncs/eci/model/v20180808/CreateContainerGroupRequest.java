@@ -18,8 +18,8 @@ import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
 
 /**
- * @author auto create
- * @version 
+ * @author liumi
+ * @version 1.0.3
  */
 public class CreateContainerGroupRequest extends RpcAcsRequest<CreateContainerGroupResponse> {
 	
@@ -57,6 +57,8 @@ public class CreateContainerGroupRequest extends RpcAcsRequest<CreateContainerGr
 
 	private String zoneId;
 
+	private DnsConfig dnsConfig;
+
 	public List<Container> getContainers() {
 		return this.containers;
 	}
@@ -71,6 +73,7 @@ public class CreateContainerGroupRequest extends RpcAcsRequest<CreateContainerGr
 				putQueryParameter("Container." + (depth1 + 1) + ".Memory" , containers.get(depth1).getMemory());
 				putQueryParameter("Container." + (depth1 + 1) + ".WorkingDir" , containers.get(depth1).getWorkingDir());
 				putQueryParameter("Container." + (depth1 + 1) + ".ImagePullPolicy" , containers.get(depth1).getImagePullPolicy());
+
 				if (containers.get(depth1).getCommands() != null) {
 					for (int i = 0; i < containers.get(depth1).getCommands().size(); i++) {
 						putQueryParameter("Container." + (depth1 + 1) + ".Command." + (i + 1) , containers.get(depth1).getCommands().get(i));
@@ -99,6 +102,63 @@ public class CreateContainerGroupRequest extends RpcAcsRequest<CreateContainerGr
 						putQueryParameter("Container." + (depth1 + 1) + ".EnvironmentVar." + (depth2 + 1) + ".Key" , containers.get(depth1).getEnvironmentVars().get(depth2).getKey());
 						putQueryParameter("Container." + (depth1 + 1) + ".EnvironmentVar." + (depth2 + 1) + ".Value" , containers.get(depth1).getEnvironmentVars().get(depth2).getValue());
 					}
+				}
+
+				if(containers.get(depth1).getReadinessProbe() != null){
+					if(containers.get(depth1).getReadinessProbe().getExec() != null){
+						for (int i = 0; i < containers.get(depth1).getReadinessProbe().getExec().size(); i++) {
+							putQueryParameter("Container." + (depth1 + 1) + ".ReadinessProbe.Exec.Command." + (i + 1) , containers.get(depth1).getReadinessProbe().getExec().get(i));
+						}
+					}
+					if(containers.get(depth1).getReadinessProbe().getHttpGet() != null){
+						putQueryParameter("Container." + (depth1 + 1) + ".ReadinessProbe.HttpGet.Path" , containers.get(depth1).getReadinessProbe().getHttpGet().getPath());
+						putQueryParameter("Container." + (depth1 + 1) + ".ReadinessProbe.HttpGet.Port" , containers.get(depth1).getReadinessProbe().getHttpGet().getPort());
+						putQueryParameter("Container." + (depth1 + 1) + ".ReadinessProbe.HttpGet.Scheme" , containers.get(depth1).getReadinessProbe().getHttpGet().getScheme());
+					}
+					if(containers.get(depth1).getReadinessProbe().getTcpSocketPort() != null){
+						putQueryParameter("Container." + (depth1 + 1) + ".ReadinessProbe.TcpSocket.Port" , containers.get(depth1).getReadinessProbe().getTcpSocketPort());
+					}
+
+					putQueryParameter("Container." + (depth1 + 1) + ".ReadinessProbe.InitialDelaySeconds" , containers.get(depth1).getReadinessProbe().getInitialDelaySeconds());
+					putQueryParameter("Container." + (depth1 + 1) + ".ReadinessProbe.PeriodSeconds" , containers.get(depth1).getReadinessProbe().getPeriodSeconds());
+					putQueryParameter("Container." + (depth1 + 1) + ".ReadinessProbe.SuccessThreshold" , containers.get(depth1).getReadinessProbe().getSuccessThreshold());
+					putQueryParameter("Container." + (depth1 + 1) + ".ReadinessProbe.FailureThreshold" , containers.get(depth1).getReadinessProbe().getFailureThreshold());
+					putQueryParameter("Container." + (depth1 + 1) + ".ReadinessProbe.TimeoutSeconds" , containers.get(depth1).getReadinessProbe().getTimeoutSeconds());
+				}
+
+				if(containers.get(depth1).getLivenessProbe() != null){
+					if(containers.get(depth1).getLivenessProbe().getExec() != null){
+						for (int i = 0; i < containers.get(depth1).getLivenessProbe().getExec().size(); i++) {
+							putQueryParameter("Container." + (depth1 + 1) + ".LivenessProbe.Exec.Command." + (i + 1) , containers.get(depth1).getLivenessProbe().getExec().get(i));
+						}
+					}
+					if(containers.get(depth1).getLivenessProbe().getHttpGet() != null){
+						putQueryParameter("Container." + (depth1 + 1) + ".LivenessProbe.HttpGet.Path" , containers.get(depth1).getLivenessProbe().getHttpGet().getPath());
+						putQueryParameter("Container." + (depth1 + 1) + ".LivenessProbe.HttpGet.Port" , containers.get(depth1).getLivenessProbe().getHttpGet().getPort());
+						putQueryParameter("Container." + (depth1 + 1) + ".LivenessProbe.HttpGet.Scheme" , containers.get(depth1).getLivenessProbe().getHttpGet().getScheme());
+					}
+					if(containers.get(depth1).getLivenessProbe().getTcpSocketPort() != null){
+						putQueryParameter("Container." + (depth1 + 1) + ".LivenessProbe.TcpSocket.Port" , containers.get(depth1).getLivenessProbe().getTcpSocketPort());
+					}
+
+					putQueryParameter("Container." + (depth1 + 1) + ".LivenessProbe.InitialDelaySeconds" , containers.get(depth1).getLivenessProbe().getInitialDelaySeconds());
+					putQueryParameter("Container." + (depth1 + 1) + ".LivenessProbe.PeriodSeconds" , containers.get(depth1).getLivenessProbe().getPeriodSeconds());
+					putQueryParameter("Container." + (depth1 + 1) + ".LivenessProbe.SuccessThreshold" , containers.get(depth1).getLivenessProbe().getSuccessThreshold());
+					putQueryParameter("Container." + (depth1 + 1) + ".LivenessProbe.FailureThreshold" , containers.get(depth1).getLivenessProbe().getFailureThreshold());
+					putQueryParameter("Container." + (depth1 + 1) + ".LivenessProbe.TimeoutSeconds" , containers.get(depth1).getLivenessProbe().getTimeoutSeconds());
+				}
+
+				if(containers.get(depth1).getSecurityContext() != null){
+					if (containers.get(depth1).getSecurityContext().getCapability() != null) {
+						if(containers.get(depth1).getSecurityContext().getCapability().getAdds() != null){
+							for (int i = 0; i < containers.get(depth1).getSecurityContext().getCapability().getAdds().size(); i++) {
+								putQueryParameter("Container." + (depth1 + 1) + ".SecurityContext.Capability.Add." + (i + 1) , containers.get(depth1).getSecurityContext().getCapability().getAdds().get(i));
+							}
+						}
+
+					}
+					putQueryParameter("Container." + (depth1 + 1) + ".SecurityContext.ReadOnlyRootFilesystem" , containers.get(depth1).getSecurityContext().getReadOnlyRootFilesystem());
+					putQueryParameter("Container." + (depth1 + 1) + ".SecurityContext.RunAsUser" , containers.get(depth1).getSecurityContext().getRunAsUser());
 				}
 			}
 		}	
@@ -168,6 +228,19 @@ public class CreateContainerGroupRequest extends RpcAcsRequest<CreateContainerGr
 						putQueryParameter("InitContainer." + (depth1 + 1) + ".EnvironmentVar." + (depth2 + 1) + ".Key" , initContainers.get(depth1).getEnvironmentVars().get(depth2).getKey());
 						putQueryParameter("InitContainer." + (depth1 + 1) + ".EnvironmentVar." + (depth2 + 1) + ".Value" , initContainers.get(depth1).getEnvironmentVars().get(depth2).getValue());
 					}
+				}
+
+				if(initContainers.get(depth1).getSecurityContext() != null){
+					if (initContainers.get(depth1).getSecurityContext().getCapability() != null) {
+						if(initContainers.get(depth1).getSecurityContext().getCapability().getAdds() != null){
+							for (int i = 0; i < initContainers.get(depth1).getSecurityContext().getCapability().getAdds().size(); i++) {
+								putQueryParameter("InitContainer." + (depth1 + 1) + ".SecurityContext.Capability.Add." + (i + 1) , initContainers.get(depth1).getSecurityContext().getCapability().getAdds().get(i));
+							}
+						}
+
+					}
+					putQueryParameter("InitContainer." + (depth1 + 1) + ".SecurityContext.ReadOnlyRootFilesystem" , initContainers.get(depth1).getSecurityContext().getReadOnlyRootFilesystem());
+					putQueryParameter("InitContainer." + (depth1 + 1) + ".SecurityContext.RunAsUser" , initContainers.get(depth1).getSecurityContext().getRunAsUser());
 				}
 			}
 		}	
@@ -280,7 +353,7 @@ public class CreateContainerGroupRequest extends RpcAcsRequest<CreateContainerGr
 				putQueryParameter("Volume." + (depth1 + 1) + ".NFSVolume.Server" , volumes.get(depth1).getNFSVolumeServer());
 				putQueryParameter("Volume." + (depth1 + 1) + ".NFSVolume.Path" , volumes.get(depth1).getNFSVolumePath());
 				putQueryParameter("Volume." + (depth1 + 1) + ".NFSVolume.ReadOnly" , volumes.get(depth1).getNFSVolumeReadOnly());
-				putQueryParameter("Volume." + (depth1 + 1) + ".EmptyDirVolume.Enable" , volumes.get(depth1).getEmptyDirVolumeEnable());
+
 				if (volumes.get(depth1).getConfigFileVolumeConfigFileToPaths() != null) {
 					for (int depth2 = 0; depth2 < volumes.get(depth1).getConfigFileVolumeConfigFileToPaths().size(); depth2++) {
 						putQueryParameter("Volume." + (depth1 + 1) + ".ConfigFileVolume.ConfigFileToPath." + (depth2 + 1) + ".Content" , volumes.get(depth1).getConfigFileVolumeConfigFileToPaths().get(depth2).getContent());
@@ -314,6 +387,30 @@ public class CreateContainerGroupRequest extends RpcAcsRequest<CreateContainerGr
 		}
 	}
 
+	public DnsConfig getDnsConfig(){
+		return this.dnsConfig;
+	}
+
+	public void setDnsConfig(DnsConfig dnsConfig) {
+		this.dnsConfig = dnsConfig;
+		if(dnsConfig.getSearches() != null){
+			for (int i = 0; i < dnsConfig.getSearches().size(); i++) {
+				putQueryParameter("DnsConfig.Search." + (i + 1) , dnsConfig.getSearches().get(i));
+			}
+		}
+		if(dnsConfig.getNameServers() != null){
+			for (int i = 0; i < dnsConfig.getNameServers().size(); i++) {
+				putQueryParameter("DnsConfig.NameServer." + (i + 1) , dnsConfig.getNameServers().get(i));
+			}
+		}
+		if (dnsConfig.getOptions() != null) {
+			for (int depth1 = 0; depth1 < dnsConfig.getOptions().size(); depth1++) {
+				putQueryParameter("DnsConfig.Option." + (depth1 + 1) + ".Name" , dnsConfig.getOptions().get(depth1).getName());
+				putQueryParameter("DnsConfig.Option." + (depth1 + 1) + ".Value" , dnsConfig.getOptions().get(depth1).getValue());
+			}
+		}
+	}
+
 	public static class Container {
 
 		private String image;
@@ -337,6 +434,12 @@ public class CreateContainerGroupRequest extends RpcAcsRequest<CreateContainerGr
 		private List<Port> ports;
 
 		private List<EnvironmentVar> environmentVars;
+
+		private ContainerProbe readinessProbe;
+
+		private ContainerProbe livenessProbe;
+
+		private SecurityContext securityContext;
 
 		public String getImage() {
 			return this.image;
@@ -426,6 +529,30 @@ public class CreateContainerGroupRequest extends RpcAcsRequest<CreateContainerGr
 			this.environmentVars = environmentVars;
 		}
 
+		public SecurityContext getSecurityContext() {
+			return securityContext;
+		}
+
+		public void setSecurityContext(SecurityContext securityContext) {
+			this.securityContext = securityContext;
+		}
+
+		public ContainerProbe getReadinessProbe() {
+			return readinessProbe;
+		}
+
+		public void setReadinessProbe(ContainerProbe readinessProbe) {
+			this.readinessProbe = readinessProbe;
+		}
+
+		public ContainerProbe getLivenessProbe() {
+			return livenessProbe;
+		}
+
+		public void setLivenessProbe(ContainerProbe livenessProbe) {
+			this.livenessProbe = livenessProbe;
+		}
+
 		public static class VolumeMount {
 
 			private String mountPath;
@@ -504,6 +631,168 @@ public class CreateContainerGroupRequest extends RpcAcsRequest<CreateContainerGr
 				this.value = value;
 			}
 		}
+
+		public static class ContainerProbe {
+
+			private List<String> exec;
+
+			private Integer failureThreshold;
+
+			private ContainerHttpGet httpGet;
+
+			private Integer initialDelaySeconds;
+
+			private Integer periodSeconds;
+
+			private Integer successThreshold;
+
+			private Integer timeoutSeconds;
+
+			private Integer tcpSocketPort;
+
+			public List<String> getExec() {
+				return exec;
+			}
+
+			public void setExec(List<String> exec) {
+				this.exec = exec;
+			}
+
+			public Integer getFailureThreshold() {
+				return failureThreshold;
+			}
+
+			public void setFailureThreshold(Integer failureThreshold) {
+				this.failureThreshold = failureThreshold;
+			}
+
+			public ContainerHttpGet getHttpGet() {
+				return httpGet;
+			}
+
+			public void setHttpGet(ContainerHttpGet httpGet) {
+				this.httpGet = httpGet;
+			}
+
+			public Integer getTcpSocketPort() {
+				return tcpSocketPort;
+			}
+
+			public void setTcpSocketPort(Integer tcpSocketPort) {
+				this.tcpSocketPort = tcpSocketPort;
+			}
+
+			public Integer getInitialDelaySeconds() {
+				return initialDelaySeconds;
+			}
+
+			public void setInitialDelaySeconds(Integer initialDelaySeconds) {
+				this.initialDelaySeconds = initialDelaySeconds;
+			}
+
+			public Integer getPeriodSeconds() {
+				return periodSeconds;
+			}
+
+			public void setPeriodSeconds(Integer periodSeconds) {
+				this.periodSeconds = periodSeconds;
+			}
+
+			public Integer getSuccessThreshold() {
+				return successThreshold;
+			}
+
+			public void setSuccessThreshold(Integer successThreshold) {
+				this.successThreshold = successThreshold;
+			}
+
+			public Integer getTimeoutSeconds() {
+				return timeoutSeconds;
+			}
+
+			public void setTimeoutSeconds(Integer timeoutSeconds) {
+				this.timeoutSeconds = timeoutSeconds;
+			}
+		}
+
+		public static class ContainerHttpGet{
+
+			private String path;
+
+			private Integer port;
+
+			private String scheme;
+
+			public String getPath() {
+				return path;
+			}
+
+			public void setPath(String path) {
+				this.path = path;
+			}
+
+			public Integer getPort() {
+				return port;
+			}
+
+			public void setPort(Integer port) {
+				this.port = port;
+			}
+
+			public String getScheme() {
+				return scheme;
+			}
+
+			public void setScheme(String scheme) {
+				this.scheme = scheme;
+			}
+		}
+
+		public static class SecurityContext {
+
+			private Capability capability;
+
+			private Boolean readOnlyRootFilesystem;
+
+			private Long runAsUser;
+
+			public Capability getCapability() {
+				return capability;
+			}
+
+			public void setCapability(Capability capability) {
+				this.capability = capability;
+			}
+
+			public Boolean getReadOnlyRootFilesystem() {
+				return readOnlyRootFilesystem;
+			}
+
+			public void setReadOnlyRootFilesystem(Boolean readOnlyRootFilesystem) {
+				this.readOnlyRootFilesystem = readOnlyRootFilesystem;
+			}
+
+			public Long getRunAsUser() {
+				return runAsUser;
+			}
+
+			public void setRunAsUser(Long runAsUser) {
+				this.runAsUser = runAsUser;
+			}
+		}
+
+		public static class Capability {
+
+			private List<String> adds;
+
+			public List<String> getAdds() {
+				return adds;
+			}
+
+			public void setAdds(List<String> adds) {
+				this.adds = adds;
+			}
+		}
 	}
 
 	public static class ImageRegistryCredential {
@@ -572,8 +861,6 @@ public class CreateContainerGroupRequest extends RpcAcsRequest<CreateContainerGr
 
 		private Boolean nFSVolumeReadOnly;
 
-		private Boolean emptyDirVolumeEnable;
-
 		private List<ConfigFileVolumeConfigFileToPath> configFileVolumeConfigFileToPaths;
 
 		private String type;
@@ -608,14 +895,6 @@ public class CreateContainerGroupRequest extends RpcAcsRequest<CreateContainerGr
 
 		public void setNFSVolumeReadOnly(Boolean nFSVolumeReadOnly) {
 			this.nFSVolumeReadOnly = nFSVolumeReadOnly;
-		}
-
-		public Boolean getEmptyDirVolumeEnable() {
-			return this.emptyDirVolumeEnable;
-		}
-
-		public void setEmptyDirVolumeEnable(Boolean emptyDirVolumeEnable) {
-			this.emptyDirVolumeEnable = emptyDirVolumeEnable;
 		}
 
 		public List<ConfigFileVolumeConfigFileToPath> getConfigFileVolumeConfigFileToPaths() {
@@ -654,6 +933,59 @@ public class CreateContainerGroupRequest extends RpcAcsRequest<CreateContainerGr
 
 			public void setPath(String path) {
 				this.path = path;
+			}
+		}
+	}
+
+	public static class DnsConfig {
+
+		List<String> nameServers;
+		List<String> searches;
+		List<DnsConfigOption> options;
+
+		public List<String> getNameServers() {
+			return nameServers;
+		}
+
+		public void setNameServers(List<String> nameServers) {
+			this.nameServers = nameServers;
+		}
+
+		public List<String> getSearches() {
+			return searches;
+		}
+
+		public void setSearches(List<String> searches) {
+			this.searches = searches;
+		}
+
+		public List<DnsConfigOption> getOptions() {
+			return options;
+		}
+
+		public void setOptions(List<DnsConfigOption> options) {
+			this.options = options;
+		}
+
+
+		public static class DnsConfigOption {
+			private String name;
+			private String value;
+
+			public String getName() {
+				return name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
+			}
+
+			public String getValue() {
+				return value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
 			}
 		}
 	}
