@@ -1,3 +1,6 @@
+2019-01-04 Version: 3.2.0
+1, Add new APIs for new feature of NAS Tiering
+
 2017-12-15 Version: 3.1.2
 1, This is for Aliyun Location service.
 2, User no longer need to addEndpoint in the initialization code.
