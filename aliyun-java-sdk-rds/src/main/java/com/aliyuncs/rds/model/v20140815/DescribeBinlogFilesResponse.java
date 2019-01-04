@@ -104,6 +104,8 @@ public class DescribeBinlogFilesResponse extends AcsResponse {
 
 		private String hostInstanceID;
 
+		private String logFileName;
+
 		public Long getFileSize() {
 			return this.fileSize;
 		}
@@ -166,6 +168,14 @@ public class DescribeBinlogFilesResponse extends AcsResponse {
 
 		public void setHostInstanceID(String hostInstanceID) {
 			this.hostInstanceID = hostInstanceID;
+		}
+
+		public String getLogFileName() {
+			return this.logFileName;
+		}
+
+		public void setLogFileName(String logFileName) {
+			this.logFileName = logFileName;
 		}
 	}
 

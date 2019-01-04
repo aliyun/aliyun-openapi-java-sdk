@@ -20,21 +20,17 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class RestoreDBInstanceRequest extends RpcAcsRequest<RestoreDBInstanceResponse> {
+public class DescribeProxyFunctionSupportRequest extends RpcAcsRequest<DescribeProxyFunctionSupportResponse> {
 	
-	public RestoreDBInstanceRequest() {
-		super("Rds", "2014-08-15", "RestoreDBInstance", "rds");
+	public DescribeProxyFunctionSupportRequest() {
+		super("Rds", "2014-08-15", "DescribeProxyFunctionSupport", "rds");
 	}
 
 	private Long resourceOwnerId;
 
-	private String restoreTime;
+	private String securityToken;
 
 	private String resourceOwnerAccount;
-
-	private String clientToken;
-
-	private String backupId;
 
 	private String ownerAccount;
 
@@ -53,14 +49,14 @@ public class RestoreDBInstanceRequest extends RpcAcsRequest<RestoreDBInstanceRes
 		}
 	}
 
-	public String getRestoreTime() {
-		return this.restoreTime;
+	public String getSecurityToken() {
+		return this.securityToken;
 	}
 
-	public void setRestoreTime(String restoreTime) {
-		this.restoreTime = restoreTime;
-		if(restoreTime != null){
-			putQueryParameter("RestoreTime", restoreTime);
+	public void setSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 
@@ -72,28 +68,6 @@ public class RestoreDBInstanceRequest extends RpcAcsRequest<RestoreDBInstanceRes
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public String getClientToken() {
-		return this.clientToken;
-	}
-
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putQueryParameter("ClientToken", clientToken);
-		}
-	}
-
-	public String getBackupId() {
-		return this.backupId;
-	}
-
-	public void setBackupId(String backupId) {
-		this.backupId = backupId;
-		if(backupId != null){
-			putQueryParameter("BackupId", backupId);
 		}
 	}
 
@@ -131,8 +105,8 @@ public class RestoreDBInstanceRequest extends RpcAcsRequest<RestoreDBInstanceRes
 	}
 
 	@Override
-	public Class<RestoreDBInstanceResponse> getResponseClass() {
-		return RestoreDBInstanceResponse.class;
+	public Class<DescribeProxyFunctionSupportResponse> getResponseClass() {
+		return DescribeProxyFunctionSupportResponse.class;
 	}
 
 }

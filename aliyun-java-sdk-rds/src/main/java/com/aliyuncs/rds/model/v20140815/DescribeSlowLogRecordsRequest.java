@@ -48,6 +48,8 @@ public class DescribeSlowLogRecordsRequest extends RpcAcsRequest<DescribeSlowLog
 
 	private String dBInstanceId;
 
+	private String sQLHASH;
+
 	public Long getSQLId() {
 		return this.sQLId;
 	}
@@ -166,6 +168,17 @@ public class DescribeSlowLogRecordsRequest extends RpcAcsRequest<DescribeSlowLog
 		this.dBInstanceId = dBInstanceId;
 		if(dBInstanceId != null){
 			putQueryParameter("DBInstanceId", dBInstanceId);
+		}
+	}
+
+	public String getSQLHASH() {
+		return this.sQLHASH;
+	}
+
+	public void setSQLHASH(String sQLHASH) {
+		this.sQLHASH = sQLHASH;
+		if(sQLHASH != null){
+			putQueryParameter("SQLHASH", sQLHASH);
 		}
 	}
 

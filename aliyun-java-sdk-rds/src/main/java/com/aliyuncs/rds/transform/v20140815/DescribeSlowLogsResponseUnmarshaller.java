@@ -28,10 +28,10 @@ public class DescribeSlowLogsResponseUnmarshaller {
 	public static DescribeSlowLogsResponse unmarshall(DescribeSlowLogsResponse describeSlowLogsResponse, UnmarshallerContext context) {
 		
 		describeSlowLogsResponse.setRequestId(context.stringValue("DescribeSlowLogsResponse.RequestId"));
+		describeSlowLogsResponse.setDBInstanceId(context.stringValue("DescribeSlowLogsResponse.DBInstanceId"));
 		describeSlowLogsResponse.setEngine(context.stringValue("DescribeSlowLogsResponse.Engine"));
 		describeSlowLogsResponse.setStartTime(context.stringValue("DescribeSlowLogsResponse.StartTime"));
 		describeSlowLogsResponse.setEndTime(context.stringValue("DescribeSlowLogsResponse.EndTime"));
-		describeSlowLogsResponse.setDBInstanceId(context.stringValue("DescribeSlowLogsResponse.DBInstanceId"));
 		describeSlowLogsResponse.setTotalRecordCount(context.integerValue("DescribeSlowLogsResponse.TotalRecordCount"));
 		describeSlowLogsResponse.setPageNumber(context.integerValue("DescribeSlowLogsResponse.PageNumber"));
 		describeSlowLogsResponse.setPageRecordCount(context.integerValue("DescribeSlowLogsResponse.PageRecordCount"));
@@ -41,6 +41,7 @@ public class DescribeSlowLogsResponseUnmarshaller {
 			SQLSlowLog sQLSlowLog = new SQLSlowLog();
 			sQLSlowLog.setSlowLogId(context.longValue("DescribeSlowLogsResponse.Items["+ i +"].SlowLogId"));
 			sQLSlowLog.setSQLId(context.longValue("DescribeSlowLogsResponse.Items["+ i +"].SQLId"));
+			sQLSlowLog.setSQLHASH(context.longValue("DescribeSlowLogsResponse.Items["+ i +"].SQLHASH"));
 			sQLSlowLog.setSQLIdStr(context.stringValue("DescribeSlowLogsResponse.Items["+ i +"].SQLIdStr"));
 			sQLSlowLog.setDBName(context.stringValue("DescribeSlowLogsResponse.Items["+ i +"].DBName"));
 			sQLSlowLog.setSQLText(context.stringValue("DescribeSlowLogsResponse.Items["+ i +"].SQLText"));

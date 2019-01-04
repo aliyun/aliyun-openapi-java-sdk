@@ -44,6 +44,7 @@ public class DescribeBinlogFilesResponseUnmarshaller {
 			binLogFile.setLinkExpiredTime(context.stringValue("DescribeBinlogFilesResponse.Items["+ i +"].LinkExpiredTime"));
 			binLogFile.setChecksum(context.stringValue("DescribeBinlogFilesResponse.Items["+ i +"].Checksum"));
 			binLogFile.setHostInstanceID(context.stringValue("DescribeBinlogFilesResponse.Items["+ i +"].HostInstanceID"));
+			binLogFile.setLogFileName(context.stringValue("DescribeBinlogFilesResponse.Items["+ i +"].LogFileName"));
 
 			items.add(binLogFile);
 		}

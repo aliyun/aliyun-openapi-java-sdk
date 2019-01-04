@@ -28,13 +28,13 @@ public class DescribeSlowLogsResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String dBInstanceId;
+
 	private String engine;
 
 	private String startTime;
 
 	private String endTime;
-
-	private String dBInstanceId;
 
 	private Integer totalRecordCount;
 
@@ -50,6 +50,14 @@ public class DescribeSlowLogsResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getDBInstanceId() {
+		return this.dBInstanceId;
+	}
+
+	public void setDBInstanceId(String dBInstanceId) {
+		this.dBInstanceId = dBInstanceId;
 	}
 
 	public String getEngine() {
@@ -74,14 +82,6 @@ public class DescribeSlowLogsResponse extends AcsResponse {
 
 	public void setEndTime(String endTime) {
 		this.endTime = endTime;
-	}
-
-	public String getDBInstanceId() {
-		return this.dBInstanceId;
-	}
-
-	public void setDBInstanceId(String dBInstanceId) {
-		this.dBInstanceId = dBInstanceId;
 	}
 
 	public Integer getTotalRecordCount() {
@@ -121,6 +121,8 @@ public class DescribeSlowLogsResponse extends AcsResponse {
 		private Long slowLogId;
 
 		private Long sQLId;
+
+		private Long sQLHASH;
 
 		private String sQLIdStr;
 
@@ -174,6 +176,14 @@ public class DescribeSlowLogsResponse extends AcsResponse {
 
 		public void setSQLId(Long sQLId) {
 			this.sQLId = sQLId;
+		}
+
+		public Long getSQLHASH() {
+			return this.sQLHASH;
+		}
+
+		public void setSQLHASH(Long sQLHASH) {
+			this.sQLHASH = sQLHASH;
 		}
 
 		public String getSQLIdStr() {

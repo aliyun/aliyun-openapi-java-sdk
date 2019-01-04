@@ -22,6 +22,7 @@ public class DescribeCloudDbExpertServiceResponseUnmarshaller {
 
 	public static DescribeCloudDbExpertServiceResponse unmarshall(DescribeCloudDbExpertServiceResponse describeCloudDbExpertServiceResponse, UnmarshallerContext context) {
 		
+		describeCloudDbExpertServiceResponse.setRequestId(context.stringValue("DescribeCloudDbExpertServiceResponse.RequestId"));
 		describeCloudDbExpertServiceResponse.setMessage(context.stringValue("DescribeCloudDbExpertServiceResponse.Message"));
 		describeCloudDbExpertServiceResponse.setData(context.stringValue("DescribeCloudDbExpertServiceResponse.Data"));
 		describeCloudDbExpertServiceResponse.setCode(context.stringValue("DescribeCloudDbExpertServiceResponse.Code"));

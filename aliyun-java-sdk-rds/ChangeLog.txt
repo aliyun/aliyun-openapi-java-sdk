@@ -1,3 +1,8 @@
+2019-01-04 Version: 2.3.1
+1, modify DescribeSlowLogs, support query param SQLHASH, remove SQLID query param.
+2, modify DescribeSlowLogRecords, response values add SQLHASH, remove SQLID.
+3, upgrade rds sdk version 2.3.1.
+
 2018-12-14 Version: 2.2.0
 1, fixed sdk unit loute .
 2, upgrade rds sdk version 2.2.0.

@@ -20,10 +20,10 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class RestoreDBInstanceRequest extends RpcAcsRequest<RestoreDBInstanceResponse> {
+public class DescribeMetaListRequest extends RpcAcsRequest<DescribeMetaListResponse> {
 	
-	public RestoreDBInstanceRequest() {
-		super("Rds", "2014-08-15", "RestoreDBInstance", "rds");
+	public DescribeMetaListRequest() {
+		super("Rds", "2014-08-15", "DescribeMetaList", "rds");
 	}
 
 	private Long resourceOwnerId;
@@ -34,13 +34,21 @@ public class RestoreDBInstanceRequest extends RpcAcsRequest<RestoreDBInstanceRes
 
 	private String clientToken;
 
-	private String backupId;
+	private String pattern;
 
-	private String ownerAccount;
+	private String backupSetID;
+
+	private Long ownerId;
+
+	private String getDbName;
+
+	private String restoreType;
+
+	private String pageSize;
 
 	private String dBInstanceId;
 
-	private Long ownerId;
+	private String pageIndex;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -86,36 +94,25 @@ public class RestoreDBInstanceRequest extends RpcAcsRequest<RestoreDBInstanceRes
 		}
 	}
 
-	public String getBackupId() {
-		return this.backupId;
+	public String getPattern() {
+		return this.pattern;
 	}
 
-	public void setBackupId(String backupId) {
-		this.backupId = backupId;
-		if(backupId != null){
-			putQueryParameter("BackupId", backupId);
+	public void setPattern(String pattern) {
+		this.pattern = pattern;
+		if(pattern != null){
+			putQueryParameter("Pattern", pattern);
 		}
 	}
 
-	public String getOwnerAccount() {
-		return this.ownerAccount;
+	public String getBackupSetID() {
+		return this.backupSetID;
 	}
 
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		if(ownerAccount != null){
-			putQueryParameter("OwnerAccount", ownerAccount);
-		}
-	}
-
-	public String getDBInstanceId() {
-		return this.dBInstanceId;
-	}
-
-	public void setDBInstanceId(String dBInstanceId) {
-		this.dBInstanceId = dBInstanceId;
-		if(dBInstanceId != null){
-			putQueryParameter("DBInstanceId", dBInstanceId);
+	public void setBackupSetID(String backupSetID) {
+		this.backupSetID = backupSetID;
+		if(backupSetID != null){
+			putQueryParameter("BackupSetID", backupSetID);
 		}
 	}
 
@@ -130,9 +127,64 @@ public class RestoreDBInstanceRequest extends RpcAcsRequest<RestoreDBInstanceRes
 		}
 	}
 
+	public String getGetDbName() {
+		return this.getDbName;
+	}
+
+	public void setGetDbName(String getDbName) {
+		this.getDbName = getDbName;
+		if(getDbName != null){
+			putQueryParameter("GetDbName", getDbName);
+		}
+	}
+
+	public String getRestoreType() {
+		return this.restoreType;
+	}
+
+	public void setRestoreType(String restoreType) {
+		this.restoreType = restoreType;
+		if(restoreType != null){
+			putQueryParameter("RestoreType", restoreType);
+		}
+	}
+
+	public String getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(String pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize);
+		}
+	}
+
+	public String getDBInstanceId() {
+		return this.dBInstanceId;
+	}
+
+	public void setDBInstanceId(String dBInstanceId) {
+		this.dBInstanceId = dBInstanceId;
+		if(dBInstanceId != null){
+			putQueryParameter("DBInstanceId", dBInstanceId);
+		}
+	}
+
+	public String getPageIndex() {
+		return this.pageIndex;
+	}
+
+	public void setPageIndex(String pageIndex) {
+		this.pageIndex = pageIndex;
+		if(pageIndex != null){
+			putQueryParameter("PageIndex", pageIndex);
+		}
+	}
+
 	@Override
-	public Class<RestoreDBInstanceResponse> getResponseClass() {
-		return RestoreDBInstanceResponse.class;
+	public Class<DescribeMetaListResponse> getResponseClass() {
+		return DescribeMetaListResponse.class;
 	}
 
 }

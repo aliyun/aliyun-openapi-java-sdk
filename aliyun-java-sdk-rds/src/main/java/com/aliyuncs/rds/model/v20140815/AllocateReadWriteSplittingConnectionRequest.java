@@ -38,11 +38,11 @@ public class AllocateReadWriteSplittingConnectionRequest extends RpcAcsRequest<A
 
 	private Long ownerId;
 
-	private String iPType;
-
 	private String port;
 
 	private String distributionType;
+
+	private String netType;
 
 	private String dBInstanceId;
 
@@ -114,17 +114,6 @@ public class AllocateReadWriteSplittingConnectionRequest extends RpcAcsRequest<A
 		}
 	}
 
-	public String getIPType() {
-		return this.iPType;
-	}
-
-	public void setIPType(String iPType) {
-		this.iPType = iPType;
-		if(iPType != null){
-			putQueryParameter("IPType", iPType);
-		}
-	}
-
 	public String getPort() {
 		return this.port;
 	}
@@ -144,6 +133,17 @@ public class AllocateReadWriteSplittingConnectionRequest extends RpcAcsRequest<A
 		this.distributionType = distributionType;
 		if(distributionType != null){
 			putQueryParameter("DistributionType", distributionType);
+		}
+	}
+
+	public String getNetType() {
+		return this.netType;
+	}
+
+	public void setNetType(String netType) {
+		this.netType = netType;
+		if(netType != null){
+			putQueryParameter("NetType", netType);
 		}
 	}
 
