@@ -56,6 +56,11 @@ public class GetInstanceSummaryReportSinceMidnightResponseUnmarshaller {
 		instanceSummaryReport.setOverall(overall);
 
 		Inbound inbound = new Inbound();
+		inbound.setCallsIncomingLine(context.longValue("GetInstanceSummaryReportSinceMidnightResponse.InstanceSummaryReport.Inbound.CallsIncomingLine"));
+		inbound.setCallsIncomingIVR(context.longValue("GetInstanceSummaryReportSinceMidnightResponse.InstanceSummaryReport.Inbound.CallsIncomingIVR"));
+		inbound.setCallsAbandonedInIVR(context.longValue("GetInstanceSummaryReportSinceMidnightResponse.InstanceSummaryReport.Inbound.CallsAbandonedInIVR"));
+		inbound.setCallsIncomingQueue(context.longValue("GetInstanceSummaryReportSinceMidnightResponse.InstanceSummaryReport.Inbound.CallsIncomingQueue"));
+		inbound.setCallsAbandonedInQueue(context.longValue("GetInstanceSummaryReportSinceMidnightResponse.InstanceSummaryReport.Inbound.CallsAbandonedInQueue"));
 		inbound.setCallsOffered(context.longValue("GetInstanceSummaryReportSinceMidnightResponse.InstanceSummaryReport.Inbound.CallsOffered"));
 		inbound.setCallsHandled(context.longValue("GetInstanceSummaryReportSinceMidnightResponse.InstanceSummaryReport.Inbound.CallsHandled"));
 		inbound.setHandleRate(context.floatValue("GetInstanceSummaryReportSinceMidnightResponse.InstanceSummaryReport.Inbound.HandleRate"));

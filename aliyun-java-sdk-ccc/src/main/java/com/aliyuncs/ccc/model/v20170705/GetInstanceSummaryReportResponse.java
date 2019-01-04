@@ -14,6 +14,7 @@
 
 package com.aliyuncs.ccc.model.v20170705;
 
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.ccc.transform.v20170705.GetInstanceSummaryReportResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -291,6 +292,16 @@ public class GetInstanceSummaryReportResponse extends AcsResponse {
 
 		public static class Inbound {
 
+			private Long callsIncomingLine;
+
+			private Long callsIncomingIVR;
+
+			private Long callsAbandonedInIVR;
+
+			private Long callsIncomingQueue;
+
+			private Long callsAbandonedInQueue;
+
 			private Long callsOffered;
 
 			private Long callsHandled;
@@ -322,6 +333,46 @@ public class GetInstanceSummaryReportResponse extends AcsResponse {
 			private Long satisfactionSurveysOffered;
 
 			private Long satisfactionSurveysResponded;
+
+			public Long getCallsIncomingLine() {
+				return this.callsIncomingLine;
+			}
+
+			public void setCallsIncomingLine(Long callsIncomingLine) {
+				this.callsIncomingLine = callsIncomingLine;
+			}
+
+			public Long getCallsIncomingIVR() {
+				return this.callsIncomingIVR;
+			}
+
+			public void setCallsIncomingIVR(Long callsIncomingIVR) {
+				this.callsIncomingIVR = callsIncomingIVR;
+			}
+
+			public Long getCallsAbandonedInIVR() {
+				return this.callsAbandonedInIVR;
+			}
+
+			public void setCallsAbandonedInIVR(Long callsAbandonedInIVR) {
+				this.callsAbandonedInIVR = callsAbandonedInIVR;
+			}
+
+			public Long getCallsIncomingQueue() {
+				return this.callsIncomingQueue;
+			}
+
+			public void setCallsIncomingQueue(Long callsIncomingQueue) {
+				this.callsIncomingQueue = callsIncomingQueue;
+			}
+
+			public Long getCallsAbandonedInQueue() {
+				return this.callsAbandonedInQueue;
+			}
+
+			public void setCallsAbandonedInQueue(Long callsAbandonedInQueue) {
+				this.callsAbandonedInQueue = callsAbandonedInQueue;
+			}
 
 			public Long getCallsOffered() {
 				return this.callsOffered;

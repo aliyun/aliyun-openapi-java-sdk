@@ -15,6 +15,7 @@
 package com.aliyuncs.ccc.model.v20170705;
 
 import java.util.List;
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.ccc.transform.v20170705.ListContactFlowsResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;

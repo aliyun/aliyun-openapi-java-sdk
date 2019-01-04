@@ -66,6 +66,11 @@ public class GetInstanceSummaryReportByIntervalResponseUnmarshaller {
 			instanceSummaryReport.setOverall(overall);
 
 			Inbound inbound = new Inbound();
+			inbound.setCallsIncomingLine(context.longValue("GetInstanceSummaryReportByIntervalResponse.InstanceTimeIntervalReport.IntervalList["+ i +"].Inbound.CallsIncomingLine"));
+			inbound.setCallsIncomingIVR(context.longValue("GetInstanceSummaryReportByIntervalResponse.InstanceTimeIntervalReport.IntervalList["+ i +"].Inbound.CallsIncomingIVR"));
+			inbound.setCallsAbandonedInIVR(context.longValue("GetInstanceSummaryReportByIntervalResponse.InstanceTimeIntervalReport.IntervalList["+ i +"].Inbound.CallsAbandonedInIVR"));
+			inbound.setCallsIncomingQueue(context.longValue("GetInstanceSummaryReportByIntervalResponse.InstanceTimeIntervalReport.IntervalList["+ i +"].Inbound.CallsIncomingQueue"));
+			inbound.setCallsAbandonedInQueue(context.longValue("GetInstanceSummaryReportByIntervalResponse.InstanceTimeIntervalReport.IntervalList["+ i +"].Inbound.CallsAbandonedInQueue"));
 			inbound.setCallsOffered(context.longValue("GetInstanceSummaryReportByIntervalResponse.InstanceTimeIntervalReport.IntervalList["+ i +"].Inbound.CallsOffered"));
 			inbound.setCallsHandled(context.longValue("GetInstanceSummaryReportByIntervalResponse.InstanceTimeIntervalReport.IntervalList["+ i +"].Inbound.CallsHandled"));
 			inbound.setHandleRate(context.floatValue("GetInstanceSummaryReportByIntervalResponse.InstanceTimeIntervalReport.IntervalList["+ i +"].Inbound.HandleRate"));

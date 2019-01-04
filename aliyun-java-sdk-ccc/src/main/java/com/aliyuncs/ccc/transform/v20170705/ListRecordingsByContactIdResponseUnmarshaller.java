@@ -49,6 +49,8 @@ public class ListRecordingsByContactIdResponseUnmarshaller {
 			recording.setFileDescription(context.stringValue("ListRecordingsByContactIdResponse.Recordings["+ i +"].FileDescription"));
 			recording.setChannel(context.stringValue("ListRecordingsByContactIdResponse.Recordings["+ i +"].Channel"));
 			recording.setInstanceId(context.stringValue("ListRecordingsByContactIdResponse.Recordings["+ i +"].InstanceId"));
+			recording.setQualityCheckTid(context.stringValue("ListRecordingsByContactIdResponse.Recordings["+ i +"].QualityCheckTid"));
+			recording.setQualityCheckTaskId(context.stringValue("ListRecordingsByContactIdResponse.Recordings["+ i +"].QualityCheckTaskId"));
 
 			recordings.add(recording);
 		}
