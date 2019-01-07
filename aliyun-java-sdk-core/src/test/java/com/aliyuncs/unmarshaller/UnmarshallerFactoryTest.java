@@ -1,7 +1,6 @@
 package com.aliyuncs.unmarshaller;
 
 import com.aliyuncs.http.FormatType;
-
 import org.junit.Assert;
 import org.junit.Test;
 

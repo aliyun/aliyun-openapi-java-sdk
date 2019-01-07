@@ -22,43 +22,41 @@ import com.aliyuncs.RpcAcsRequest;
 
 /**
  * @author auto create
- * @version 
  */
 public class TestRpcApiRequest extends RpcAcsRequest<TestRpcApiResponse> {
-	
-	public TestRpcApiRequest() {
-		super("Ft", "2016-01-01", "TestRpcApi");
-	}
 
-	private String bodyParam;
+    private String bodyParam;
+    private String queryParam;
 
-	private String queryParam;
+    public TestRpcApiRequest() {
+        super("Ft", "2016-01-01", "TestRpcApi");
+    }
 
-	public String getBodyParam() {
-		return this.bodyParam;
-	}
+    public String getBodyParam() {
+        return this.bodyParam;
+    }
 
-	public void setBodyParam(String bodyParam) {
-		this.bodyParam = bodyParam;
-		if(bodyParam != null){
-			putBodyParameter("BodyParam", bodyParam);
-		}
-	}
+    public void setBodyParam(String bodyParam) {
+        this.bodyParam = bodyParam;
+        if (bodyParam != null) {
+            putBodyParameter("BodyParam", bodyParam);
+        }
+    }
 
-	public String getQueryParam() {
-		return this.queryParam;
-	}
+    public String getQueryParam() {
+        return this.queryParam;
+    }
 
-	public void setQueryParam(String queryParam) {
-		this.queryParam = queryParam;
-		if(queryParam != null){
-			putQueryParameter("QueryParam", queryParam);
-		}
-	}
+    public void setQueryParam(String queryParam) {
+        this.queryParam = queryParam;
+        if (queryParam != null) {
+            putQueryParameter("QueryParam", queryParam);
+        }
+    }
 
-	@Override
-	public Class<TestRpcApiResponse> getResponseClass() {
-		return TestRpcApiResponse.class;
-	}
+    @Override
+    public Class<TestRpcApiResponse> getResponseClass() {
+        return TestRpcApiResponse.class;
+    }
 
 }

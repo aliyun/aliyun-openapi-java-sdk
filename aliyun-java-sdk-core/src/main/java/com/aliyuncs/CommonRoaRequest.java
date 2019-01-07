@@ -6,23 +6,23 @@ public class CommonRoaRequest extends RoaAcsRequest<CommonResponse> {
 
     public CommonRoaRequest(String product) {
         super(product);
-        setAcceptFormat(FormatType.JSON);
+        setSysAcceptFormat(FormatType.JSON);
     }
-    
+
     public CommonRoaRequest(String product, String version, String action) {
         super(product, version, action);
-        setAcceptFormat(FormatType.JSON);
+        setSysAcceptFormat(FormatType.JSON);
     }
 
     public CommonRoaRequest(String product, String version, String action, String locationProduct) {
         super(product, version, action, locationProduct);
-        setAcceptFormat(FormatType.JSON);
+        setSysAcceptFormat(FormatType.JSON);
     }
 
     public CommonRoaRequest(String product, String version, String action, String locationProduct,
                             String endpointType) {
         super(product, version, action, locationProduct, endpointType);
-        setAcceptFormat(FormatType.JSON);
+        setSysAcceptFormat(FormatType.JSON);
     }
 
     @Override

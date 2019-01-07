@@ -24,32 +24,31 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
- * @version 
  */
 public class AddTopicResponse extends AcsResponse {
 
-	private String requestId;
+    private String requestId;
 
-	private Long topicId;
+    private Long topicId;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
+    public String getRequestId() {
+        return this.requestId;
+    }
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+    public void setRequestId(String requestId) {
+        this.requestId = requestId;
+    }
 
-	public Long getTopicId() {
-		return this.topicId;
-	}
+    public Long getTopicId() {
+        return this.topicId;
+    }
 
-	public void setTopicId(Long topicId) {
-		this.topicId = topicId;
-	}
+    public void setTopicId(Long topicId) {
+        this.topicId = topicId;
+    }
 
-	@Override
-	public AddTopicResponse getInstance(UnmarshallerContext context) {
-		return	AddTopicResponseUnmarshaller.unmarshall(this, context);
-	}
+    @Override
+    public AddTopicResponse getInstance(UnmarshallerContext context) {
+        return AddTopicResponseUnmarshaller.unmarshall(this, context);
+    }
 }

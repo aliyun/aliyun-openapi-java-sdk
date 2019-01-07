@@ -30,6 +30,6 @@ public class AcsURLEncoder {
 
     public static String percentEncode(String value) throws UnsupportedEncodingException {
         return value != null ? URLEncoder.encode(value, URL_ENCODING).replace("+", "%20")
-            .replace("*", "%2A").replace("%7E", "~") : null;
+                .replace("*", "%2A").replace("%7E", "~") : null;
     }
 }

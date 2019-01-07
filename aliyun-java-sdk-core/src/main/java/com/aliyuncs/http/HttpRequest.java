@@ -10,6 +10,8 @@ public class HttpRequest extends HttpMessage {
 
     public HttpRequest(String strUrl, Map<String, String> tmpHeaders) {
         super(strUrl);
-        if (null != tmpHeaders) { this.headers = tmpHeaders; }
+        if (null != tmpHeaders) {
+            this.headers = tmpHeaders;
+        }
     }
 }

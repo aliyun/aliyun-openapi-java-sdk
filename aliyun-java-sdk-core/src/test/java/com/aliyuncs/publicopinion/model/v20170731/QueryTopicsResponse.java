@@ -18,49 +18,49 @@
  */
 package com.aliyuncs.publicopinion.model.v20170731;
 
-import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.publicopinion.transform.v20170731.QueryTopicsResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
+import java.util.List;
+
 /**
  * @author auto create
- * @version 
  */
 public class QueryTopicsResponse extends AcsResponse {
 
-	private String traceId;
+    private String traceId;
 
-	private Integer errCode;
+    private Integer errCode;
 
-	private List<String> result;
+    private List<String> result;
 
-	public String getTraceId() {
-		return this.traceId;
-	}
+    public String getTraceId() {
+        return this.traceId;
+    }
 
-	public void setTraceId(String traceId) {
-		this.traceId = traceId;
-	}
+    public void setTraceId(String traceId) {
+        this.traceId = traceId;
+    }
 
-	public Integer getErrCode() {
-		return this.errCode;
-	}
+    public Integer getErrCode() {
+        return this.errCode;
+    }
 
-	public void setErrCode(Integer errCode) {
-		this.errCode = errCode;
-	}
+    public void setErrCode(Integer errCode) {
+        this.errCode = errCode;
+    }
 
-	public List<String> getResult() {
-		return this.result;
-	}
+    public List<String> getResult() {
+        return this.result;
+    }
 
-	public void setResult(List<String> result) {
-		this.result = result;
-	}
+    public void setResult(List<String> result) {
+        this.result = result;
+    }
 
-	@Override
-	public QueryTopicsResponse getInstance(UnmarshallerContext context) {
-		return	QueryTopicsResponseUnmarshaller.unmarshall(this, context);
-	}
+    @Override
+    public QueryTopicsResponse getInstance(UnmarshallerContext context) {
+        return QueryTopicsResponseUnmarshaller.unmarshall(this, context);
+    }
 }

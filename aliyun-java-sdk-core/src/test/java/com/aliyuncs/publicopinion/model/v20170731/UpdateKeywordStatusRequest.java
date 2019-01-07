@@ -23,44 +23,42 @@ import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
- * @version 
  */
 public class UpdateKeywordStatusRequest extends RpcAcsRequest<UpdateKeywordStatusResponse> {
-	
-	public UpdateKeywordStatusRequest() {
-		super("publicopinion", "2017-07-31", "UpdateKeywordStatus");
-		setMethod(MethodType.POST);
-	}
 
-	private Long id;
+    private Long id;
+    private String status;
 
-	private String status;
+    public UpdateKeywordStatusRequest() {
+        super("publicopinion", "2017-07-31", "UpdateKeywordStatus");
+        setMethod(MethodType.POST);
+    }
 
-	public Long getId() {
-		return this.id;
-	}
+    public Long getId() {
+        return this.id;
+    }
 
-	public void setId(Long id) {
-		this.id = id;
-		if(id != null){
-			putBodyParameter("id", id.toString());
-		}
-	}
+    public void setId(Long id) {
+        this.id = id;
+        if (id != null) {
+            putBodyParameter("id", id.toString());
+        }
+    }
 
-	public String getStatus() {
-		return this.status;
-	}
+    public String getStatus() {
+        return this.status;
+    }
 
-	public void setStatus(String status) {
-		this.status = status;
-		if(status != null){
-			putBodyParameter("status", status);
-		}
-	}
+    public void setStatus(String status) {
+        this.status = status;
+        if (status != null) {
+            putBodyParameter("status", status);
+        }
+    }
 
-	@Override
-	public Class<UpdateKeywordStatusResponse> getResponseClass() {
-		return UpdateKeywordStatusResponse.class;
-	}
+    @Override
+    public Class<UpdateKeywordStatusResponse> getResponseClass() {
+        return UpdateKeywordStatusResponse.class;
+    }
 
 }

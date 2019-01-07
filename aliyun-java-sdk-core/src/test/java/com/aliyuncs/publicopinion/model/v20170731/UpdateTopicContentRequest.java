@@ -23,57 +23,54 @@ import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
- * @version 
  */
 public class UpdateTopicContentRequest extends RpcAcsRequest<UpdateTopicContentResponse> {
-	
-	public UpdateTopicContentRequest() {
-		super("publicopinion", "2017-07-31", "UpdateTopicContent");
-		setMethod(MethodType.POST);
-	}
 
-	private Long id;
+    private Long id;
+    private String desc;
+    private String name;
 
-	private String desc;
+    public UpdateTopicContentRequest() {
+        super("publicopinion", "2017-07-31", "UpdateTopicContent");
+        setMethod(MethodType.POST);
+    }
 
-	private String name;
+    public Long getId() {
+        return this.id;
+    }
 
-	public Long getId() {
-		return this.id;
-	}
+    public void setId(Long id) {
+        this.id = id;
+        if (id != null) {
+            putBodyParameter("id", id.toString());
+        }
+    }
 
-	public void setId(Long id) {
-		this.id = id;
-		if(id != null){
-			putBodyParameter("id", id.toString());
-		}
-	}
+    public String getDesc() {
+        return this.desc;
+    }
 
-	public String getDesc() {
-		return this.desc;
-	}
+    public void setDesc(String desc) {
+        this.desc = desc;
+        if (desc != null) {
+            putBodyParameter("desc", desc);
+        }
+    }
 
-	public void setDesc(String desc) {
-		this.desc = desc;
-		if(desc != null){
-			putBodyParameter("desc", desc);
-		}
-	}
+    public String getName() {
+        return this.name;
+    }
 
-	public String getName() {
-		return this.name;
-	}
+    public void setName(String name) {
+        this.name = name;
+        if (name != null) {
+            putBodyParameter("name", name);
+        }
+    }
 
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putBodyParameter("name", name);
-		}
-	}
-
-	@Override
-	public Class<UpdateTopicContentResponse> getResponseClass() {
-		return UpdateTopicContentResponse.class;
-	}
+    @Override
+    public Class<UpdateTopicContentResponse> getResponseClass() {
+        return UpdateTopicContentResponse.class;
+    }
 
 }

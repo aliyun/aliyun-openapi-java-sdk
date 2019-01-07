@@ -23,31 +23,30 @@ import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
- * @version 
  */
 public class DeleteTopicRequest extends RpcAcsRequest<DeleteTopicResponse> {
-	
-	public DeleteTopicRequest() {
-		super("publicopinion", "2017-07-31", "DeleteTopic");
-		setMethod(MethodType.POST);
-	}
 
-	private Long id;
+    private Long id;
 
-	public Long getId() {
-		return this.id;
-	}
+    public DeleteTopicRequest() {
+        super("publicopinion", "2017-07-31", "DeleteTopic");
+        setMethod(MethodType.POST);
+    }
 
-	public void setId(Long id) {
-		this.id = id;
-		if(id != null){
-			putBodyParameter("id", id.toString());
-		}
-	}
+    public Long getId() {
+        return this.id;
+    }
 
-	@Override
-	public Class<DeleteTopicResponse> getResponseClass() {
-		return DeleteTopicResponse.class;
-	}
+    public void setId(Long id) {
+        this.id = id;
+        if (id != null) {
+            putBodyParameter("id", id.toString());
+        }
+    }
+
+    @Override
+    public Class<DeleteTopicResponse> getResponseClass() {
+        return DeleteTopicResponse.class;
+    }
 
 }

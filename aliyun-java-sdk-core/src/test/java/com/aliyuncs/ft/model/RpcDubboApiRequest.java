@@ -1,10 +1,5 @@
 package com.aliyuncs.ft.model;
 
-import java.io.UnsupportedEncodingException;
-import java.security.InvalidKeyException;
-import java.util.HashMap;
-import java.util.Map;
-
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.auth.AlibabaCloudCredentials;
 import com.aliyuncs.auth.BasicSessionCredentials;
@@ -14,6 +9,11 @@ import com.aliyuncs.http.FormatType;
 import com.aliyuncs.http.HttpRequest;
 import com.aliyuncs.regions.ProductDomain;
 import com.aliyuncs.utils.ParameterHelper;
+
+import java.io.UnsupportedEncodingException;
+import java.security.InvalidKeyException;
+import java.util.HashMap;
+import java.util.Map;
 
 public class RpcDubboApiRequest extends RpcAcsRequest<RpcDubboApiResponse> {
 
@@ -50,7 +50,7 @@ public class RpcDubboApiRequest extends RpcAcsRequest<RpcDubboApiResponse> {
             throws InvalidKeyException, IllegalStateException, UnsupportedEncodingException {
 
         signer = new HmacSHA1Signer();
-        Map<String, String> imutableMap = new HashMap<String, String>(this.getQueryParameters());
+        Map<String, String> imutableMap = new HashMap<String, String>(this.getBizQueryParameters());
         if (null != signer && null != credentials) {
             String accessKeyId = credentials.getAccessKeyId();
 
@@ -60,10 +60,10 @@ public class RpcDubboApiRequest extends RpcAcsRequest<RpcDubboApiResponse> {
                     this.putQueryParameter("SecurityToken", basicSessionCredentials.getSessionToken());
                 }
             }
-            imutableMap = this.composer.refreshSignParameters(this.getQueryParameters(), signer, accessKeyId, format);
-            imutableMap.put("RegionId", getRegionId());
+            imutableMap = this.composer.refreshSignParameters(this.getBizQueryParameters(), signer, accessKeyId, format);
+            imutableMap.put("RegionId", getBizRegionId());
             Map<String, String> paramsToSign = new HashMap<String, String>(imutableMap);
-            Map<String, String> bodyParams = this.getBodyParameters();
+            Map<String, String> bodyParams = this.getBizBodyParameters();
             if (bodyParams != null && !bodyParams.isEmpty()) {
                 byte[] data;
                 if (FormatType.JSON == this.getHttpContentType()) {
@@ -76,12 +76,12 @@ public class RpcDubboApiRequest extends RpcAcsRequest<RpcDubboApiResponse> {
                 this.setHttpContent(data, "UTF-8", this.getHttpContentType());
                 paramsToSign.putAll(bodyParams);
             }
-            String strToSign = this.composer.composeStringToSign(this.getMethod(), null, signer, paramsToSign, null,
+            String strToSign = this.composer.composeStringToSign(this.getBizMethod(), null, signer, paramsToSign, null,
                     null);
             String signature = signer.signString(strToSign, credentials.getAccessKeySecret());
             imutableMap.put("Signature", signature);
         }
-        setUrl(this.composeUrl(domain.getDomianName(), imutableMap));
+        setSysUrl(this.composeUrl(domain.getDomianName(), imutableMap));
         return this;
     }
 

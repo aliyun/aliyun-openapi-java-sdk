@@ -25,17 +25,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class TestRpcApiResponseUnmarshaller {
 
-	public static TestRpcApiResponse unmarshall(TestRpcApiResponse testRpcApiResponse, UnmarshallerContext context) {
-		
-		testRpcApiResponse.setRemoteAddr(context.stringValue("TestRpcApiResponse.RemoteAddr"));
-		testRpcApiResponse.setQueryString(context.stringValue("TestRpcApiResponse.QueryString"));
-		testRpcApiResponse.setRequestURL(context.stringValue("TestRpcApiResponse.RequestURL"));
+    public static TestRpcApiResponse unmarshall(TestRpcApiResponse testRpcApiResponse, UnmarshallerContext context) {
 
-		Params params = new Params();
-		params.setQueryParam(context.stringValue("TestRpcApiResponse.Params.QueryParam"));
-		params.setBodyParam(context.stringValue("TestRpcApiResponse.Params.BodyParam"));
-		testRpcApiResponse.setParams(params);
-	 
-	 	return testRpcApiResponse;
-	}
+        testRpcApiResponse.setRemoteAddr(context.stringValue("TestRpcApiResponse.RemoteAddr"));
+        testRpcApiResponse.setQueryString(context.stringValue("TestRpcApiResponse.QueryString"));
+        testRpcApiResponse.setRequestURL(context.stringValue("TestRpcApiResponse.RequestURL"));
+
+        Params params = new Params();
+        params.setQueryParam(context.stringValue("TestRpcApiResponse.Params.QueryParam"));
+        params.setBodyParam(context.stringValue("TestRpcApiResponse.Params.BodyParam"));
+        testRpcApiResponse.setParams(params);
+
+        return testRpcApiResponse;
+    }
 }

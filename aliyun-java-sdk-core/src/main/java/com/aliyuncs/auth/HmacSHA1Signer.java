@@ -19,30 +19,29 @@
 
 package com.aliyuncs.auth;
 
-import java.io.UnsupportedEncodingException;
-import java.security.InvalidKeyException;
-import java.security.NoSuchAlgorithmException;
-
 import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;
 import javax.xml.bind.DatatypeConverter;
+import java.io.UnsupportedEncodingException;
+import java.security.InvalidKeyException;
+import java.security.NoSuchAlgorithmException;
 
 /**
  * Created by haowei.yao on 2017/9/28.
  */
 
-public class HmacSHA1Signer extends Signer{
+public class HmacSHA1Signer extends Signer {
 
-    private static final String ALGORITHM_NAME = "HmacSHA1";
     public static final String ENCODING = "UTF-8";
+    private static final String ALGORITHM_NAME = "HmacSHA1";
 
     @Override
     public String signString(String stringToSign, String accessKeySecret) {
         try {
             Mac mac = Mac.getInstance(ALGORITHM_NAME);
             mac.init(new SecretKeySpec(
-                accessKeySecret.getBytes(ENCODING),
-                ALGORITHM_NAME
+                    accessKeySecret.getBytes(ENCODING),
+                    ALGORITHM_NAME
             ));
             byte[] signData = mac.doFinal(stringToSign.getBytes(ENCODING));
             return DatatypeConverter.printBase64Binary(signData);

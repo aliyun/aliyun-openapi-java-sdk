@@ -41,35 +41,28 @@ public class STSAssumeRoleSessionCredentialsProvider implements AlibabaCloudCred
      * Default duration for started sessions.
      */
     public static final int DEFAULT_DURATION_SECONDS = 3600;
-
-    /**
-     * The client for starting STS sessions.
-     */
-    private IAcsClient stsClient;
-
     /**
      * The arn of the role to be assumed.
      */
     private final String roleArn;
-
     /**
-     * An identifier for the assumed role session.
-     */
-    private String roleSessionName;
-
-    /**
-     * The Duration for assume role sessions.
-     */
-    private long roleSessionDurationSeconds;
-
-    private BasicSessionCredentials credentials = null;
-
-    /**
-     *
      * For test
      * To know how many rounds AssumeRole has been called
      */
     public long assumeRoleRound = 0;
+    /**
+     * The client for starting STS sessions.
+     */
+    private IAcsClient stsClient;
+    /**
+     * An identifier for the assumed role session.
+     */
+    private String roleSessionName;
+    /**
+     * The Duration for assume role sessions.
+     */
+    private long roleSessionDurationSeconds;
+    private BasicSessionCredentials credentials = null;
 
 
     public STSAssumeRoleSessionCredentialsProvider(AlibabaCloudCredentials longLivedCredentials,
@@ -77,30 +70,11 @@ public class STSAssumeRoleSessionCredentialsProvider implements AlibabaCloudCred
         this(new StaticCredentialsProvider(longLivedCredentials), roleArn, clientProfile);
     }
 
-    public STSAssumeRoleSessionCredentialsProvider withRoleSessionName(String roleSessionName) {
-        this.roleSessionName = roleSessionName;
-        return this;
-    }
-
-    public STSAssumeRoleSessionCredentialsProvider withRoleSessionDurationSeconds(long roleSessionDurationSeconds) {
-        if (roleSessionDurationSeconds < 900 || roleSessionDurationSeconds > 3600) {
-            throw new IllegalArgumentException(
-                "Assume Role session duration should be in the range of 15min - 1Hr");
-        }
-        this.roleSessionDurationSeconds = roleSessionDurationSeconds;
-        return this;
-    }
-
-    public STSAssumeRoleSessionCredentialsProvider withSTSClient(IAcsClient client) {
-        this.stsClient = client;
-        return this;
-    }
-
     public STSAssumeRoleSessionCredentialsProvider(AlibabaCloudCredentialsProvider longLivedCredentialsProvider,
                                                    String roleArn, IClientProfile clientProfile) {
         if (roleArn == null) {
             throw new NullPointerException(
-                "You must specify a value for roleArn.");
+                    "You must specify a value for roleArn.");
         }
         this.roleArn = roleArn;
         this.roleSessionName = getNewRoleSessionName();
@@ -112,8 +86,27 @@ public class STSAssumeRoleSessionCredentialsProvider implements AlibabaCloudCred
         return "aliyun-java-sdk-" + System.currentTimeMillis();
     }
 
+    public STSAssumeRoleSessionCredentialsProvider withRoleSessionName(String roleSessionName) {
+        this.roleSessionName = roleSessionName;
+        return this;
+    }
+
+    public STSAssumeRoleSessionCredentialsProvider withRoleSessionDurationSeconds(long roleSessionDurationSeconds) {
+        if (roleSessionDurationSeconds < 900 || roleSessionDurationSeconds > 3600) {
+            throw new IllegalArgumentException(
+                    "Assume Role session duration should be in the range of 15min - 1Hr");
+        }
+        this.roleSessionDurationSeconds = roleSessionDurationSeconds;
+        return this;
+    }
+
+    public STSAssumeRoleSessionCredentialsProvider withSTSClient(IAcsClient client) {
+        this.stsClient = client;
+        return this;
+    }
+
     @Override
-    public AlibabaCloudCredentials getCredentials() throws ClientException, ServerException{
+    public AlibabaCloudCredentials getCredentials() throws ClientException, ServerException {
         if (credentials == null || credentials.willSoonExpire()) {
             credentials = getNewSessionCredentials();
         }
@@ -131,10 +124,10 @@ public class STSAssumeRoleSessionCredentialsProvider implements AlibabaCloudCred
 
         AssumeRoleResponse response = stsClient.getAcsResponse(assumeRoleRequest);
         return new BasicSessionCredentials(
-            response.getCredentials().getAccessKeyId(),
-            response.getCredentials().getAccessKeySecret(),
-            response.getCredentials().getSecurityToken(),
-            roleSessionDurationSeconds
+                response.getCredentials().getAccessKeyId(),
+                response.getCredentials().getAccessKeySecret(),
+                response.getCredentials().getSecurityToken(),
+                roleSessionDurationSeconds
         );
     }
 }

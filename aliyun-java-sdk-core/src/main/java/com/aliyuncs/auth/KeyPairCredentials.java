@@ -20,13 +20,13 @@ package com.aliyuncs.auth;
 
 public class KeyPairCredentials implements AlibabaCloudCredentials {
 
-    private String     privateKeySecret;
-    private String     publicKeyId;
+    private String privateKeySecret;
+    private String publicKeyId;
 
     public KeyPairCredentials(String publicKeyId, String privateKeySecret) {
         if (publicKeyId == null || privateKeySecret == null) {
             throw new IllegalArgumentException(
-                "You must provide a valid pair of Public Key ID and Private Key Secret."
+                    "You must provide a valid pair of Public Key ID and Private Key Secret."
             );
         }
 

@@ -24,11 +24,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class AddTopicResponseUnmarshaller {
 
-	public static AddTopicResponse unmarshall(AddTopicResponse addTopicResponse, UnmarshallerContext context) {
-		
-		addTopicResponse.setRequestId(context.stringValue("addTopicResponse.RequestId"));
-		addTopicResponse.setTopicId(context.longValue("addTopicResponse.topicId"));
-	 
-	 	return addTopicResponse;
-	}
+    public static AddTopicResponse unmarshall(AddTopicResponse addTopicResponse, UnmarshallerContext context) {
+
+        addTopicResponse.setRequestId(context.stringValue("addTopicResponse.RequestId"));
+        addTopicResponse.setTopicId(context.longValue("addTopicResponse.topicId"));
+
+        return addTopicResponse;
+    }
 }

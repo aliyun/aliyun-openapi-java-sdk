@@ -1,10 +1,10 @@
 package com.aliyuncs.http;
 
+import com.aliyuncs.exceptions.ClientException;
+
 import java.io.Closeable;
 import java.io.IOException;
 import java.util.concurrent.Future;
-
-import com.aliyuncs.exceptions.ClientException;
 
 /**
  * @author VK.Gao

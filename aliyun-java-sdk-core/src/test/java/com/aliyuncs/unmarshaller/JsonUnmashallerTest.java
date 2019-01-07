@@ -1,10 +1,9 @@
 package com.aliyuncs.unmarshaller;
 
-import org.junit.Assert;
-import org.junit.Test;
-
 import com.aliyuncs.ecs.v20140526.model.DescribeRegionsResponse;
 import com.aliyuncs.exceptions.ClientException;
+import org.junit.Assert;
+import org.junit.Test;
 
 public class JsonUnmashallerTest {
     @Test

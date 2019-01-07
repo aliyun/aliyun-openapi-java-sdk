@@ -19,17 +19,17 @@
 
 package com.aliyuncs.endpoint.location.transform.v20150612;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.aliyuncs.endpoint.location.model.v20150612.DescribeEndpointsResponse;
 import com.aliyuncs.endpoint.location.model.v20150612.DescribeEndpointsResponse.Endpoint;
 import com.aliyuncs.transform.UnmarshallerContext;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class DescribeEndpointsResponseUnmarshaller {
 
     public static DescribeEndpointsResponse unmarshall(DescribeEndpointsResponse describeEndpointsResponse,
-            UnmarshallerContext context) {
+                                                       UnmarshallerContext context) {
 
         describeEndpointsResponse.setRequestId(context.stringValue("DescribeEndpointsResponse.RequestId"));
         describeEndpointsResponse.setSuccess(context.booleanValue("DescribeEndpointsResponse.Success"));

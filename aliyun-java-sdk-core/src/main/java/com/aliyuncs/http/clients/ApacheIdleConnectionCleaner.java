@@ -16,23 +16,21 @@
 
 package com.aliyuncs.http.clients;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.apache.http.conn.HttpClientConnectionManager;
+
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.TimeUnit;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-import org.apache.http.conn.HttpClientConnectionManager;
-
 public class ApacheIdleConnectionCleaner extends Thread {
 
     private static final Log LOG = LogFactory.getLog(ApacheIdleConnectionCleaner.class);
     private static final int PERIOD_SEC = 60;
-
-    private static volatile ApacheIdleConnectionCleaner instance;
     private static final Map<HttpClientConnectionManager, Long> CONNMGRMAP = new ConcurrentHashMap<HttpClientConnectionManager, Long>();
-
+    private static volatile ApacheIdleConnectionCleaner instance;
     private volatile boolean isShuttingDown;
 
     private ApacheIdleConnectionCleaner() {

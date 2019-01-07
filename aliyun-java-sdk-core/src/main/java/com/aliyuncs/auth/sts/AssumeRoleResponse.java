@@ -35,6 +35,11 @@ public class AssumeRoleResponse extends AcsResponse {
         this.assumedRoleUser = assumedRoleUser;
     }
 
+    @Override
+    public AssumeRoleResponse getInstance(UnmarshallerContext context) {
+        return AssumeRoleResponseUnmarshaller.unmarshall(this, context);
+    }
+
     public static class Credentials {
 
         private String securityToken;
@@ -99,10 +104,5 @@ public class AssumeRoleResponse extends AcsResponse {
         public void setAssumedRoleId(String assumedRoleId) {
             this.assumedRoleId = assumedRoleId;
         }
-    }
-
-    @Override
-    public AssumeRoleResponse getInstance(UnmarshallerContext context) {
-        return  AssumeRoleResponseUnmarshaller.unmarshall(this, context);
     }
 }

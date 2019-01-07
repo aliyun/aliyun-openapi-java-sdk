@@ -23,11 +23,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class AddResourceResponseUnmarshaller {
 
-	public static AddResourceResponse unmarshall(AddResourceResponse addResourceResponse, UnmarshallerContext context) {
-		
-		addResourceResponse.setRequestId(context.stringValue("AddResourceResponse.RequestId"));
-		addResourceResponse.setResourceId(context.longValue("AddResourceResponse.ResourceId"));
-	 
-	 	return addResourceResponse;
-	}
+    public static AddResourceResponse unmarshall(AddResourceResponse addResourceResponse, UnmarshallerContext context) {
+
+        addResourceResponse.setRequestId(context.stringValue("AddResourceResponse.RequestId"));
+        addResourceResponse.setResourceId(context.longValue("AddResourceResponse.ResourceId"));
+
+        return addResourceResponse;
+    }
 }

@@ -1,30 +1,9 @@
 package com.aliyuncs.http.clients;
 
-import java.io.IOException;
-import java.security.KeyManagementException;
-import java.security.NoSuchAlgorithmException;
-import java.util.Map;
-import java.util.concurrent.Callable;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Future;
-import java.util.concurrent.SynchronousQueue;
-import java.util.concurrent.ThreadFactory;
-import java.util.concurrent.ThreadPoolExecutor;
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.atomic.AtomicInteger;
-import javax.net.ssl.SSLContext;
-import java.security.cert.CertificateException;
-import java.security.cert.X509Certificate;
-
 import com.aliyuncs.exceptions.ClientException;
-import com.aliyuncs.http.CallBack;
-import com.aliyuncs.http.FormatType;
-import com.aliyuncs.http.HttpClientConfig;
-import com.aliyuncs.http.HttpRequest;
-import com.aliyuncs.http.IHttpClient;
+import com.aliyuncs.http.*;
 import com.aliyuncs.utils.IOUtils;
 import com.aliyuncs.utils.StringUtils;
-
 import org.apache.http.Header;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.config.RequestConfig;
@@ -46,8 +25,18 @@ import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.impl.conn.PoolingHttpClientConnectionManager;
 import org.apache.http.protocol.HttpContext;
 import org.apache.http.ssl.SSLContextBuilder;
-import org.apache.http.util.EntityUtils;
 import org.apache.http.ssl.TrustStrategy;
+import org.apache.http.util.EntityUtils;
+
+import javax.net.ssl.SSLContext;
+import java.io.IOException;
+import java.security.KeyManagementException;
+import java.security.NoSuchAlgorithmException;
+import java.security.cert.CertificateException;
+import java.security.cert.X509Certificate;
+import java.util.Map;
+import java.util.concurrent.*;
+import java.util.concurrent.atomic.AtomicInteger;
 
 
 public class ApacheHttpClient extends IHttpClient {
@@ -158,16 +147,16 @@ public class ApacheHttpClient extends IHttpClient {
     }
 
     private HttpUriRequest parseToHttpRequest(HttpRequest apiReq) throws IOException {
-        RequestBuilder builder = RequestBuilder.create(apiReq.getMethod().name());
+        RequestBuilder builder = RequestBuilder.create(apiReq.getBizMethod().name());
 
-        builder.setUri(apiReq.getUrl());
+        builder.setUri(apiReq.getBizUrl());
 
-        if (apiReq.getMethod().hasContent()) {
+        if (apiReq.getBizMethod().hasContent()) {
             EntityBuilder bodyBuilder = EntityBuilder.create();
 
             String contentType = apiReq.getHeaderValue(CONTENT_TYPE);
             if (StringUtils.isEmpty(contentType)) {
-                contentType = apiReq.getContentTypeValue(apiReq.getHttpContentType(), apiReq.getEncoding());
+                contentType = apiReq.getContentTypeValue(apiReq.getHttpContentType(), apiReq.getBizEncoding());
             } else {
                 bodyBuilder.setContentType(ContentType.parse(contentType));
             }
@@ -177,8 +166,8 @@ public class ApacheHttpClient extends IHttpClient {
 
         builder.addHeader(ACCEPT_ENCODING, "identity");
 
-        for (Map.Entry<String, String> entry : apiReq.getHeaders().entrySet()) {
-            if (entry.getKey().equalsIgnoreCase("Content-Length")) {
+        for (Map.Entry<String, String> entry : apiReq.getBizHeaders().entrySet()) {
+            if ("Content-Length".equalsIgnoreCase(entry.getKey())) {
                 continue;
             }
             builder.addHeader(entry.getKey(), entry.getValue());

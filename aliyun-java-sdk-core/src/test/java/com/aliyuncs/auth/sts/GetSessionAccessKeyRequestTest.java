@@ -3,27 +3,24 @@ package com.aliyuncs.auth.sts;
 import org.junit.Assert;
 import org.junit.Test;
 
-/**
- * GetSessionAccessKeyRequestTest
- */
 public class GetSessionAccessKeyRequestTest {
 
     @Test
     public void testGetSessionAccessKeyRequestTest() {
         GetSessionAccessKeyRequest request = new GetSessionAccessKeyRequest();
-        Assert.assertEquals("Sts", request.getProduct());
+        Assert.assertEquals("Sts", request.getBizProduct());
         // duration seconds
         Assert.assertEquals(3600, request.getDurationSeconds());
-        Assert.assertNull(request.getQueryParameters().get("DurationSeconds"));
+        Assert.assertNull(request.getBizQueryParameters().get("DurationSeconds"));
         request.setDurationSeconds(100);
         Assert.assertTrue(100 == request.getDurationSeconds());
-        Assert.assertEquals("100", request.getQueryParameters().get("DurationSeconds"));
+        Assert.assertEquals("100", request.getBizQueryParameters().get("DurationSeconds"));
         // public key id
         Assert.assertNull(request.getPublicKeyId());
-        Assert.assertNull(request.getQueryParameters().get("PublicKeyId"));
+        Assert.assertNull(request.getBizQueryParameters().get("PublicKeyId"));
         request.setPublicKeyId("publicKeyId");
         Assert.assertEquals("publicKeyId", request.getPublicKeyId());
-        Assert.assertEquals("publicKeyId", request.getQueryParameters().get("PublicKeyId"));
+        Assert.assertEquals("publicKeyId", request.getBizQueryParameters().get("PublicKeyId"));
         // policy
         // Assert.assertNull(request.getPolicy());
         // Assert.assertNull(request.getQueryParameters().get("Policy"));

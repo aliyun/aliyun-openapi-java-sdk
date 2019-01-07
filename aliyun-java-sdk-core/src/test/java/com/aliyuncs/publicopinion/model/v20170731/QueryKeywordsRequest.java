@@ -22,56 +22,53 @@ import com.aliyuncs.RpcAcsRequest;
 
 /**
  * @author auto create
- * @version 
  */
 public class QueryKeywordsRequest extends RpcAcsRequest<QueryKeywordsResponse> {
-	
-	public QueryKeywordsRequest() {
-		super("publicopinion", "2017-07-31", "QueryKeywords");
-	}
 
-	private Integer pageSize;
+    private Integer pageSize;
+    private String topicId;
+    private Integer toPage;
 
-	private String topicId;
+    public QueryKeywordsRequest() {
+        super("publicopinion", "2017-07-31", "QueryKeywords");
+    }
 
-	private Integer toPage;
+    public Integer getPageSize() {
+        return this.pageSize;
+    }
 
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
+    public void setPageSize(Integer pageSize) {
+        this.pageSize = pageSize;
+        if (pageSize != null) {
+            putQueryParameter("pageSize", pageSize.toString());
+        }
+    }
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("pageSize", pageSize.toString());
-		}
-	}
+    public String getTopicId() {
+        return this.topicId;
+    }
 
-	public String getTopicId() {
-		return this.topicId;
-	}
+    public void setTopicId(String topicId) {
+        this.topicId = topicId;
+        if (topicId != null) {
+            putQueryParameter("topicId", topicId);
+        }
+    }
 
-	public void setTopicId(String topicId) {
-		this.topicId = topicId;
-		if(topicId != null){
-			putQueryParameter("topicId", topicId);
-		}
-	}
+    public Integer getToPage() {
+        return this.toPage;
+    }
 
-	public Integer getToPage() {
-		return this.toPage;
-	}
+    public void setToPage(Integer toPage) {
+        this.toPage = toPage;
+        if (toPage != null) {
+            putQueryParameter("toPage", toPage.toString());
+        }
+    }
 
-	public void setToPage(Integer toPage) {
-		this.toPage = toPage;
-		if(toPage != null){
-			putQueryParameter("toPage", toPage.toString());
-		}
-	}
-
-	@Override
-	public Class<QueryKeywordsResponse> getResponseClass() {
-		return QueryKeywordsResponse.class;
-	}
+    @Override
+    public Class<QueryKeywordsResponse> getResponseClass() {
+        return QueryKeywordsResponse.class;
+    }
 
 }

@@ -24,12 +24,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
- * @version 
  */
 public class TestRoaApiResponse extends AcsResponse {
 
-	@Override
-	public TestRoaApiResponse getInstance(UnmarshallerContext context) {
-		return	TestRoaApiResponseUnmarshaller.unmarshall(this, context);
-	}
+    @Override
+    public TestRoaApiResponse getInstance(UnmarshallerContext context) {
+        return TestRoaApiResponseUnmarshaller.unmarshall(this, context);
+    }
 }

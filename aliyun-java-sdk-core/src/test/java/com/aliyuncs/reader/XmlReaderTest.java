@@ -18,13 +18,12 @@
  */
 package com.aliyuncs.reader;
 
-import java.util.Map;
-
+import com.aliyuncs.exceptions.ClientException;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.aliyuncs.exceptions.ClientException;
+import java.util.Map;
 
 public class XmlReaderTest {
     String xml = "<?xml version=\"1.0\" encoding=\"utf-8\"?><DescribeInstancesResponse><Instances><Instance><CreationTime"

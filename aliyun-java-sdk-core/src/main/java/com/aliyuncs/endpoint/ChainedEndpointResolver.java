@@ -23,9 +23,10 @@ import com.aliyuncs.exceptions.ClientException;
 import com.aliyuncs.exceptions.ErrorCodeConstant;
 import com.aliyuncs.exceptions.ErrorMessageConstant;
 
-import java.util.*;
+import java.util.List;
+import java.util.Set;
 
-@SuppressWarnings({ "ALL", "AlibabaClassMustHaveAuthor" })
+@SuppressWarnings({"ALL", "AlibabaClassMustHaveAuthor"})
 public class ChainedEndpointResolver implements EndpointResolver {
     protected List<EndpointResolverBase> endpointResolvers;
 

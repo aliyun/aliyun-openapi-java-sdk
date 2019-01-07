@@ -1,9 +1,9 @@
 package com.aliyuncs.utils;
 
-import java.io.UnsupportedEncodingException;
-
 import org.junit.Assert;
 import org.junit.Test;
+
+import java.io.UnsupportedEncodingException;
 
 public class Base64HelperTest {
 

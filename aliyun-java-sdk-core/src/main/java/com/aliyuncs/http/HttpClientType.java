@@ -7,8 +7,7 @@ public enum HttpClientType {
     Compatible(CompatibleUrlConnClient.class),
     ApacheHttpClient(com.aliyuncs.http.clients.ApacheHttpClient.class),
     OkHttp(null),
-    Custom(null),
-    ;
+    Custom(null),;
 
     private Class<? extends IHttpClient> implClass;
 

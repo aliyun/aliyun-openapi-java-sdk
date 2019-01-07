@@ -1,16 +1,12 @@
 package com.aliyuncs.http.clients;
 
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.io.UnsupportedEncodingException;
-import java.net.HttpURLConnection;
-import java.net.InetSocketAddress;
-import java.net.MalformedURLException;
-import java.net.Proxy;
-import java.net.SocketAddress;
-import java.net.URL;
+import com.aliyuncs.exceptions.ClientException;
+import com.aliyuncs.http.*;
+
+import javax.net.ssl.*;
+import javax.xml.bind.DatatypeConverter;
+import java.io.*;
+import java.net.*;
 import java.security.KeyManagementException;
 import java.security.NoSuchAlgorithmException;
 import java.security.cert.CertificateException;
@@ -20,28 +16,6 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.concurrent.Future;
 
-import javax.net.ssl.HostnameVerifier;
-import javax.net.ssl.HttpsURLConnection;
-import javax.net.ssl.SSLContext;
-import javax.net.ssl.SSLSession;
-import javax.net.ssl.SSLSocketFactory;
-import javax.net.ssl.TrustManager;
-import javax.net.ssl.X509TrustManager;
-import javax.xml.bind.DatatypeConverter;
-
-import com.aliyuncs.exceptions.ClientException;
-import com.aliyuncs.http.CallBack;
-import com.aliyuncs.http.FormatType;
-import com.aliyuncs.http.HttpClientConfig;
-import com.aliyuncs.http.HttpRequest;
-import com.aliyuncs.http.HttpResponse;
-import com.aliyuncs.http.IHttpClient;
-import com.aliyuncs.http.MethodType;
-
-/**
- * @author VK.Gao
- * @date 2018/03/28
- */
 public class CompatibleUrlConnClient extends IHttpClient {
 
     protected static final String CONTENT_TYPE = "Content-Type";
@@ -55,6 +29,14 @@ public class CompatibleUrlConnClient extends IHttpClient {
         super(clientConfig);
     }
 
+    public static HttpResponse compatibleGetResponse(HttpRequest request) throws IOException, ClientException {
+        CompatibleUrlConnClient client = new CompatibleUrlConnClient(null);
+        HttpResponse response = client.syncInvoke(request);
+        client.close();
+        return response;
+    }
+
+    @Override
     protected void init(HttpClientConfig clientConfig) throws ClientException {
         this.sslSocketFactory = clientConfig.getSslSocketFactory();
         if (clientConfig.isIgnoreSSLCerts()) {
@@ -85,7 +67,9 @@ public class CompatibleUrlConnClient extends IHttpClient {
             parseHttpConn(response, httpConn, content);
             return response;
         } finally {
-            if (content != null) { content.close(); }
+            if (content != null) {
+                content.close();
+            }
             httpConn.disconnect();
         }
     }
@@ -95,25 +79,18 @@ public class CompatibleUrlConnClient extends IHttpClient {
         throw new IllegalStateException("not supported");
     }
 
-    public static HttpResponse compatibleGetResponse(HttpRequest request) throws IOException, ClientException {
-        CompatibleUrlConnClient client = new CompatibleUrlConnClient(null);
-        HttpResponse response = client.syncInvoke(request);
-        client.close();
-        return response;
-    }
-
     private HttpURLConnection buildHttpConnection(HttpRequest request) throws IOException {
-        String strUrl = request.getUrl();
+        String strUrl = request.getBizUrl();
 
         if (null == strUrl) {
             throw new IllegalArgumentException("URL is null for HttpRequest.");
         }
-        if (null == request.getMethod()) {
+        if (null == request.getBizMethod()) {
             throw new IllegalArgumentException("Method is not set for HttpRequest.");
         }
         URL url = null;
         String[] urlArray = null;
-        if (MethodType.POST.equals(request.getMethod()) && null == request.getHttpContent()) {
+        if (MethodType.POST.equals(request.getBizMethod()) && null == request.getHttpContent()) {
             urlArray = strUrl.split("\\?");
             url = new URL(urlArray[0]);
         } else {
@@ -121,10 +98,10 @@ public class CompatibleUrlConnClient extends IHttpClient {
         }
         System.setProperty("sun.net.http.allowRestrictedHeaders", "true");
         HttpURLConnection httpConn = null;
-        if (url.getProtocol().equalsIgnoreCase("https")) {
+        if ("https".equalsIgnoreCase(url.getProtocol())) {
             if (sslSocketFactory != null) {
                 Proxy proxy = getProxy("HTTPS_PROXY", request);
-                HttpsURLConnection httpsConn = (HttpsURLConnection)url.openConnection(proxy);
+                HttpsURLConnection httpsConn = (HttpsURLConnection) url.openConnection(proxy);
                 httpsConn.setSSLSocketFactory(sslSocketFactory);
                 httpConn = httpsConn;
             }
@@ -132,24 +109,24 @@ public class CompatibleUrlConnClient extends IHttpClient {
 
         if (httpConn == null) {
             Proxy proxy = getProxy("HTTP_PROXY", request);
-            httpConn = (HttpURLConnection)url.openConnection(proxy);
+            httpConn = (HttpURLConnection) url.openConnection(proxy);
         }
 
-        httpConn.setRequestMethod(request.getMethod().toString());
+        httpConn.setRequestMethod(request.getBizMethod().toString());
         httpConn.setInstanceFollowRedirects(false);
         httpConn.setDoOutput(true);
         httpConn.setDoInput(true);
         httpConn.setUseCaches(false);
 
-        if (request.getConnectTimeout() != null) {
-            httpConn.setConnectTimeout(request.getConnectTimeout());
+        if (request.getBizConnectTimeout() != null) {
+            httpConn.setConnectTimeout(request.getBizConnectTimeout());
         }
 
-        if (request.getReadTimeout() != null) {
-            httpConn.setReadTimeout(request.getReadTimeout());
+        if (request.getBizReadTimeout() != null) {
+            httpConn.setReadTimeout(request.getBizReadTimeout());
         }
 
-        Map<String, String> mappedHeaders = request.getHeaders();
+        Map<String, String> mappedHeaders = request.getBizHeaders();
         httpConn.setRequestProperty(ACCEPT_ENCODING, "identity");
         for (Entry<String, String> entry : mappedHeaders.entrySet()) {
             httpConn.setRequestProperty(entry.getKey(), entry.getValue());
@@ -158,13 +135,13 @@ public class CompatibleUrlConnClient extends IHttpClient {
         if (null != request.getHeaderValue(CONTENT_TYPE)) {
             httpConn.setRequestProperty(CONTENT_TYPE, request.getHeaderValue(CONTENT_TYPE));
         } else {
-            String contentTypeValue = request.getContentTypeValue(request.getHttpContentType(), request.getEncoding());
+            String contentTypeValue = request.getContentTypeValue(request.getHttpContentType(), request.getBizEncoding());
             if (null != contentTypeValue) {
                 httpConn.setRequestProperty(CONTENT_TYPE, contentTypeValue);
             }
         }
 
-        if (MethodType.POST.equals(request.getMethod()) && null != urlArray && urlArray.length == 2) {
+        if (MethodType.POST.equals(request.getBizMethod()) && null != urlArray && urlArray.length == 2) {
             httpConn.getOutputStream().write(urlArray[1].getBytes());
         }
 
@@ -178,7 +155,9 @@ public class CompatibleUrlConnClient extends IHttpClient {
         Map<String, List<String>> headers = httpConn.getHeaderFields();
         for (Entry<String, List<String>> entry : headers.entrySet()) {
             String key = entry.getKey();
-            if (null == key) { continue; }
+            if (null == key) {
+                continue;
+            }
             List<String> values = entry.getValue();
             StringBuilder builder = new StringBuilder(values.get(0));
             for (int i = 1; i < values.size(); i++) {
@@ -189,21 +168,21 @@ public class CompatibleUrlConnClient extends IHttpClient {
         }
         String type = response.getHeaderValue("Content-Type");
         if (null != buff && null != type) {
-            response.setEncoding("UTF-8");
+            response.setSysEncoding("UTF-8");
             String[] split = type.split(";");
             response.setHttpContentType(FormatType.mapAcceptToFormat(split[0].trim()));
             if (split.length > 1 && split[1].contains("=")) {
                 String[] codings = split[1].split("=");
-                response.setEncoding(codings[1].trim().toUpperCase());
+                response.setSysEncoding(codings[1].trim().toUpperCase());
             }
         }
         response.setStatus(httpConn.getResponseCode());
-        response.setHttpContent(buff, response.getEncoding(),
-            response.getHttpContentType());
+        response.setHttpContent(buff, response.getBizEncoding(),
+                response.getHttpContentType());
     }
 
     private byte[] readContent(InputStream content)
-        throws IOException {
+            throws IOException {
         if (content == null) {
             return null;
         }
@@ -212,7 +191,9 @@ public class CompatibleUrlConnClient extends IHttpClient {
 
         while (true) {
             final int read = content.read(buff);
-            if (read == -1) { break; }
+            if (read == -1) {
+                break;
+            }
             outputStream.write(buff, 0, read);
         }
 
@@ -261,26 +242,6 @@ public class CompatibleUrlConnClient extends IHttpClient {
         private static HostnameVerifier defaultVerifier;
         private static SSLSocketFactory defaultSSLFactory;
 
-        @Override
-        public boolean verify(String hostname, SSLSession session) {
-            return true;
-        }
-
-        @Override
-        public void checkClientTrusted(X509Certificate[] arg0, String arg1)
-            throws CertificateException {
-        }
-
-        @Override
-        public void checkServerTrusted(X509Certificate[] arg0, String arg1)
-            throws CertificateException {
-        }
-
-        @Override
-        public X509Certificate[] getAcceptedIssuers() {
-            return null;
-        }
-
         public static void restoreSSLCertificate() {
             if (null != defaultSSLFactory) {
                 HttpsURLConnection.setDefaultSSLSocketFactory(defaultSSLFactory);
@@ -292,7 +253,7 @@ public class CompatibleUrlConnClient extends IHttpClient {
             try {
                 HttpsCertIgnoreHelper trustAll = new HttpsCertIgnoreHelper();
                 SSLContext sc = SSLContext.getInstance("SSL");
-                sc.init(null, new TrustManager[] {trustAll}, new java.security.SecureRandom());
+                sc.init(null, new TrustManager[]{trustAll}, new java.security.SecureRandom());
                 if (null == defaultSSLFactory) {
                     defaultSSLFactory = HttpsURLConnection.getDefaultSSLSocketFactory();
                     defaultVerifier = HttpsURLConnection.getDefaultHostnameVerifier();
@@ -304,6 +265,26 @@ public class CompatibleUrlConnClient extends IHttpClient {
             } catch (KeyManagementException e) {
                 throw new RuntimeException("Failed setting up all thrusting certificate manager.", e);
             }
+        }
+
+        @Override
+        public boolean verify(String hostname, SSLSession session) {
+            return true;
+        }
+
+        @Override
+        public void checkClientTrusted(X509Certificate[] arg0, String arg1)
+                throws CertificateException {
+        }
+
+        @Override
+        public void checkServerTrusted(X509Certificate[] arg0, String arg1)
+                throws CertificateException {
+        }
+
+        @Override
+        public X509Certificate[] getAcceptedIssuers() {
+            return null;
         }
     }
 }

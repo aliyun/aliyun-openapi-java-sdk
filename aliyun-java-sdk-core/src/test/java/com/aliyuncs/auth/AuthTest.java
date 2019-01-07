@@ -18,18 +18,18 @@
  */
 package com.aliyuncs.auth;
 
-import static org.junit.Assert.*;
-
-import java.security.InvalidKeyException;
-import java.util.Map;
-
-import org.junit.Test;
-
 import com.aliyuncs.AcsRequest;
 import com.aliyuncs.RoaAcsRequest;
 import com.aliyuncs.ecs.v20140526.model.DescribeRegionsRequest;
 import com.aliyuncs.ecs.v20140526.model.GetRegionsRequest;
 import com.aliyuncs.http.FormatType;
+import org.junit.Test;
+
+import java.security.InvalidKeyException;
+import java.util.Map;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.fail;
 
 @SuppressWarnings("unchecked")
 public class AuthTest {
@@ -41,9 +41,9 @@ public class AuthTest {
         AcsRequest request = new DescribeRegionsRequest();
 
         ISignatureComposer composer = RpcSignatureComposer.getComposer();
-        Map<String, String> immune = composer.refreshSignParameters(request.getQueryParameters(), signer, "testid",
+        Map<String, String> immune = composer.refreshSignParameters(request.getBizQueryParameters(), signer, "testid",
                 FormatType.XML);
-        String strToSign = composer.composeStringToSign(request.getMethod(), null, signer, immune, null, null);
+        String strToSign = composer.composeStringToSign(request.getBizMethod(), null, signer, immune, null, null);
         assertEquals(0, strToSign.indexOf("GET&%2F&AccessKeyId%3Dtestid%26Action%3DDescribeRegions%26Format%3DXML%26"));
         assertEquals(true, strToSign.endsWith("Version%3D2014-05-26"));
     }
@@ -55,10 +55,10 @@ public class AuthTest {
         RoaAcsRequest request = new GetRegionsRequest();
 
         ISignatureComposer composer = RoaSignatureComposer.getComposer();
-        Map<String, String> immune = composer.refreshSignParameters(request.getHeaders(), signer, "testid",
+        Map<String, String> immune = composer.refreshSignParameters(request.getBizHeaders(), signer, "testid",
                 FormatType.XML);
-        String strToSign = composer.composeStringToSign(request.getMethod(), request.getUriPattern(), signer,
-                request.getQueryParameters(), immune, request.getPathParameters());
+        String strToSign = composer.composeStringToSign(request.getBizMethod(), request.getBizUriPattern(), signer,
+                request.getBizQueryParameters(), immune, request.getPathParameters());
         assertEquals(0, strToSign.indexOf("GET\napplication/xml\n"));
         assertEquals(true, strToSign.endsWith(
                 "\nx-acs-signature-method:HMAC-SHA1\nx-acs-signature-version:1.0\nx-acs-version:2015-01-01\n/"));
@@ -72,8 +72,8 @@ public class AuthTest {
         String sign;
         try {
             sign = signer.signString("GET&%2F&AccessKeyId%3Dtestid%26Action%3DDescribeRegions%26Format%3DXML"
-                    + "%26RegionId%3Dregion1%26SignatureMethod%3DHMAC-SHA1%26SignatureNonce%3DNwDAxvLU6tFE0DVb%26Sign"
-                    + "atureVersion%3D1.0%26TimeStamp%3D2012-12-26T10%253A33%253A56Z%26Version%3D2013-01-10",
+                            + "%26RegionId%3Dregion1%26SignatureMethod%3DHMAC-SHA1%26SignatureNonce%3DNwDAxvLU6tFE0DVb%26Sign"
+                            + "atureVersion%3D1.0%26TimeStamp%3D2012-12-26T10%253A33%253A56Z%26Version%3D2013-01-10",
                     "testsecret&");
             assertEquals("axE3FUHgDyfm9/+Iep0HpZXrRwE=", sign);
         } catch (InvalidKeyException e) {

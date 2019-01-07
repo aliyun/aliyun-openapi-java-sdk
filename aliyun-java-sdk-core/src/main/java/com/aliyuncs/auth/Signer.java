@@ -29,14 +29,8 @@ public abstract class Signer {
     private final static Signer sha256withRSASigner = new SHA256withRSASigner();
     private final static Signer bearerTokenSigner = new BearerTokenSigner();
 
-    public abstract String signString(String stringToSign, AlibabaCloudCredentials credentials);
-    public abstract String signString(String stringToSign, String accessKeySecret);
-    public abstract String getSignerName();
-    public abstract String getSignerVersion();
-    public abstract String getSignerType();
-
     public static Signer getSigner(AlibabaCloudCredentials credentials) {
-        if (credentials instanceof KeyPairCredentials){
+        if (credentials instanceof KeyPairCredentials) {
             return sha256withRSASigner;
         } else if (credentials instanceof BearerTokenCredentials) {
             return bearerTokenSigner;
@@ -44,4 +38,14 @@ public abstract class Signer {
             return hmacSHA1Signer;
         }
     }
+
+    public abstract String signString(String stringToSign, AlibabaCloudCredentials credentials);
+
+    public abstract String signString(String stringToSign, String accessKeySecret);
+
+    public abstract String getSignerName();
+
+    public abstract String getSignerVersion();
+
+    public abstract String getSignerType();
 }

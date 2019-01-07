@@ -12,75 +12,75 @@ import java.util.Map;
 public class CommonRequestTest {
 
     @Test
-    public void CommonRoaRequestTest() {
+    public void commonRoaRequestTest() {
         CommonRequest request = new CommonRequest();
-        request.setUriPattern("uri");
+        request.setSysUriPattern("uri");
         request.putPathParameter("test", "test");
         AcsRequest acsRequest = request.buildRequest();
         Assert.assertTrue(acsRequest instanceof CommonRoaRequest);
     }
 
     @Test
-    public void CommonRequestGetSetTest() throws UnsupportedEncodingException {
+    public void commonRequestGetSetTest() throws UnsupportedEncodingException {
         CommonRequest request = new CommonRequest();
         request.setHttpContent("abc".getBytes(), "utf-8", FormatType.JSON);
-        Assert.assertEquals("utf-8", request.getEncoding());
+        Assert.assertEquals("utf-8", request.getBizEncoding());
         Assert.assertTrue(FormatType.JSON == request.getHttpContentType());
         Assert.assertEquals("abc", new String(request.getHttpContent(), "utf-8"));
 
-        request.setUriPattern("uri");
-        Assert.assertEquals("uri", request.getUriPattern());
+        request.setSysUriPattern("uri");
+        Assert.assertEquals("uri", request.getBizUriPattern());
 
-        request.setProduct("ecs");
-        Assert.assertEquals("ecs", request.getProduct());
+        request.setSysProduct("ecs");
+        Assert.assertEquals("ecs", request.getBizProduct());
 
-        request.setReadTimeout(50000);
-        Assert.assertTrue(50000 == request.getReadTimeout());
+        request.setSysReadTimeout(50000);
+        Assert.assertTrue(50000 == request.getBizReadTimeout());
 
         request.putBodyParameter("test", "test");
-        Map<String, String> bodyMap = request.getBodyParameters();
+        Map<String, String> bodyMap = request.getBizBodyParameters();
         Assert.assertNotNull(bodyMap);
         Assert.assertEquals("test", bodyMap.get("test"));
 
-        request.setMethod(MethodType.DELETE);
-        Assert.assertTrue(MethodType.DELETE == request.getMethod());
+        request.setSysMethod(MethodType.DELETE);
+        Assert.assertTrue(MethodType.DELETE == request.getBizMethod());
 
-        request.setAction("action");
-        Assert.assertEquals("action", request.getAction());
+        request.setSysAction("action");
+        Assert.assertEquals("action", request.getBizAction());
 
-        request.setConnectTimeout(5000);
-        Assert.assertTrue(5000 == request.getConnectTimeout());
+        request.setSysConnectTimeout(5000);
+        Assert.assertTrue(5000 == request.getBizConnectTimeout());
 
-        request.setDomain("domian");
-        Assert.assertEquals("domian", request.getDomain());
+        request.setSysDomain("domian");
+        Assert.assertEquals("domian", request.getBizDomain());
 
-        request.setEndpointType("endPoint");
-        Assert.assertEquals("endPoint", request.getEndpointType());
+        request.setSysEndpointType("endPoint");
+        Assert.assertEquals("endPoint", request.getBizEndpointType());
 
-        request.setLocationProduct("test");
-        Assert.assertEquals("test", request.getLocationProduct());
+        request.setSysLocationProduct("test");
+        Assert.assertEquals("test", request.getBizLocationProduct());
 
-        request.setProtocol(ProtocolType.HTTP);
-        Assert.assertTrue(ProtocolType.HTTP == request.getProtocol());
+        request.setSysProtocol(ProtocolType.HTTP);
+        Assert.assertTrue(ProtocolType.HTTP == request.getBizProtocol());
 
-        request.setRegionId("hangzhou");
-        Assert.assertEquals("hangzhou", request.getRegionId());
+        request.setSysRegionId("hangzhou");
+        Assert.assertEquals("hangzhou", request.getBizRegionId());
 
-        request.setVersion("4");
-        Assert.assertEquals("4", request.getVersion());
+        request.setSysVersion("4");
+        Assert.assertEquals("4", request.getBizVersion());
 
         request.putQueryParameter("test", "test");
-        Map<String, String> queryMap = request.getQueryParameters();
+        Map<String, String> queryMap = request.getBizQueryParameters();
         Assert.assertNotNull(queryMap);
         Assert.assertEquals("test", queryMap.get("test"));
 
         request.putHeadParameter("test", "test");
-        Map<String, String> headMap = request.getHeadParameters();
+        Map<String, String> headMap = request.getBizHeadParameters();
         Assert.assertNotNull(headMap);
         Assert.assertEquals("test", headMap.get("test"));
 
         request.putPathParameter("test", "test");
-        Map<String, String> pathMap = request.getPathParameters();
+        Map<String, String> pathMap = request.getBizPathParameters();
         Assert.assertNotNull(pathMap);
         Assert.assertEquals("test", pathMap.get("test"));
 
@@ -90,21 +90,21 @@ public class CommonRequestTest {
     }
 
     @Test
-    public void CommonRpcRequestTest() {
+    public void commonRpcRequestTest() {
         CommonRequest request = new CommonRequest();
         request.setHttpContent("abc".getBytes(), "utf-8", FormatType.JSON);
-        request.setProduct("ecs");
-        request.setReadTimeout(50000);
+        request.setSysProduct("ecs");
+        request.setSysReadTimeout(50000);
         request.putBodyParameter("test", "test");
-        request.setMethod(MethodType.DELETE);
-        request.setAction("action");
-        request.setConnectTimeout(5000);
-        request.setDomain("domian");
-        request.setEndpointType("endPoint");
-        request.setLocationProduct("test");
-        request.setProtocol(ProtocolType.HTTP);
-        request.setRegionId("hangzhou");
-        request.setVersion("4.2.3");
+        request.setSysMethod(MethodType.DELETE);
+        request.setSysAction("action");
+        request.setSysConnectTimeout(5000);
+        request.setSysDomain("domian");
+        request.setSysEndpointType("endPoint");
+        request.setSysLocationProduct("test");
+        request.setSysProtocol(ProtocolType.HTTP);
+        request.setSysRegionId("hangzhou");
+        request.setSysVersion("4.2.3");
         request.putQueryParameter("test", "test");
         request.putHeadParameter("test", "test");
         AcsRequest acsRequest = request.buildRequest();

@@ -25,6 +25,7 @@ import java.util.Set;
 public class UserCustomizedEndpointResolver extends EndpointResolverBase {
 
     private Set<String> validRegionIds;
+
     public UserCustomizedEndpointResolver() {
         validRegionIds = new HashSet<String>();
     }

@@ -1,14 +1,13 @@
 package com.aliyuncs.endpoint.location.transform.v20150612;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import com.aliyuncs.endpoint.location.model.v20150612.DescribeEndpointsResponse;
 import com.aliyuncs.endpoint.location.model.v20150612.DescribeEndpointsResponse.Endpoint;
 import com.aliyuncs.transform.UnmarshallerContext;
-
 import org.junit.Assert;
 import org.junit.Test;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class DescribeEndpointsResponseUnmarshallerTest {
 

@@ -26,15 +26,14 @@ import com.aliyuncs.http.MethodType;
  */
 public class CreateDBSourceRequest extends RoaAcsRequest<CreateDBSourceResponse> {
 
+    private String projectName;
+    private String source;
+
     public CreateDBSourceRequest() {
         super("Cms", "2015-08-14", "CreateDBSource");
         setUriPattern("/projects/[ProjectName]/sources");
         setMethod(MethodType.POST);
     }
-
-    private String projectName;
-
-    private String source;
 
     public String getProjectName() {
         return this.projectName;

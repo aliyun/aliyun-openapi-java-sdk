@@ -1,14 +1,9 @@
 package com.aliyuncs.utils;
 
 import org.junit.Assert;
-import org.junit.BeforeClass;
 import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class FlattenMapUtilTest {
 
@@ -24,7 +19,7 @@ public class FlattenMapUtilTest {
         String[] subKeys = {};
         Assert.assertEquals(null, FlattenMapUtil.put(flattenMap, null, subKeys, 0));
         // case 2 object is null
-        String[] subKeys2 = { "key" };
+        String[] subKeys2 = {"key"};
         HashMap<?, ?> hashMap = (HashMap<?, ?>) FlattenMapUtil.put(flattenMap, null, subKeys2, 0);
         Assert.assertTrue("the hashmap has key", hashMap.containsKey("key"));
         Assert.assertEquals(null, hashMap.get("key"));
@@ -35,7 +30,7 @@ public class FlattenMapUtilTest {
         Assert.assertEquals(null, hashMap2.get("key"));
         Assert.assertEquals(input, hashMap2);
         // case 4
-        String[] subKeys3 = { "key1", "key2" };
+        String[] subKeys3 = {"key1", "key2"};
         HashMap<String, String> input2 = new HashMap<String, String>();
         HashMap<?, ?> hashMap3 = (HashMap<?, ?>) FlattenMapUtil.put(flattenMap, input2, subKeys3, 0);
         Assert.assertTrue("the hashmap has key1", hashMap3.containsKey("key1"));
@@ -49,13 +44,13 @@ public class FlattenMapUtilTest {
     public void testPutForArrayCase() {
         Map<String, String> flattenMap = new HashMap<String, String>();
         // case: invalid index
-        String[] subKeys = { "key[hehe]" };
+        String[] subKeys = {"key[hehe]"};
         Assert.assertEquals(null, FlattenMapUtil.put(flattenMap, null, subKeys, 0));
 
         // case: no Length
-        String[] subKeys2 = { "key[0]" };
+        String[] subKeys2 = {"key[0]"};
         Assert.assertEquals(null, FlattenMapUtil.put(flattenMap, null, subKeys2, 0));
-        String[] subKeys3 = { "first", "key[0]" };
+        String[] subKeys3 = {"first", "key[0]"};
         Assert.assertEquals(null, FlattenMapUtil.put(flattenMap, null, subKeys3, 1));
 
         flattenMap.put("key.Length", "1");
@@ -71,7 +66,7 @@ public class FlattenMapUtilTest {
         Assert.assertEquals(null, array2.get(0));
 
         // case: multi keys
-        String[] subKeys4 = { "key[0]", "value" };
+        String[] subKeys4 = {"key[0]", "value"};
         ArrayList<?> array3 = (ArrayList<?>) FlattenMapUtil.put(flattenMap, null, subKeys4, 0);
         Assert.assertEquals(1, array3.size());
         HashMap<?, ?> item = (HashMap<?, ?>) array3.get(0);
@@ -92,7 +87,6 @@ public class FlattenMapUtilTest {
         flattenMap.put("AnyPrefix.Length", "1");
         List<Map<Object, Object>> list = (List<Map<Object, Object>>) FlattenMapUtil.toListMap(flattenMap, "AnyPrefix");
         Assert.assertEquals(1, list.size());
-        System.out.println(list);
         Map<Object, Object> item = list.get(0);
         Assert.assertEquals("value", item.get("Key"));
     }
@@ -104,7 +98,7 @@ public class FlattenMapUtilTest {
         String[] subKeys = {};
         Assert.assertEquals(null, FlattenMapUtil.putForMap(flattenMap, null, subKeys, 0));
         // case 2 object is null
-        String[] subKeys2 = { "key" };
+        String[] subKeys2 = {"key"};
         HashMap<?, ?> hashMap = (HashMap<?, ?>) FlattenMapUtil.putForMap(flattenMap, null, subKeys2, 0);
         Assert.assertTrue("the hashmap has key", hashMap.containsKey("key"));
         Assert.assertEquals(null, hashMap.get("key"));
@@ -115,7 +109,7 @@ public class FlattenMapUtilTest {
         Assert.assertEquals(null, hashMap2.get("key"));
         Assert.assertEquals(input, hashMap2);
         // case 4
-        String[] subKeys3 = { "key1", "key2" };
+        String[] subKeys3 = {"key1", "key2"};
         HashMap<String, String> input2 = new HashMap<String, String>();
         HashMap<?, ?> hashMap3 = (HashMap<?, ?>) FlattenMapUtil.putForMap(flattenMap, input2, subKeys3, 0);
         Assert.assertTrue("the hashmap has key1", hashMap3.containsKey("key1"));
@@ -129,16 +123,16 @@ public class FlattenMapUtilTest {
     public void testPutForMapArrayCase() {
         Map<String, String> flattenMap = new HashMap<String, String>();
         // case: invalid index
-        String[] subKeys = { "key[hehe]" };
+        String[] subKeys = {"key[hehe]"};
         Assert.assertEquals(null, FlattenMapUtil.putForMap(flattenMap, null, subKeys, 0));
 
         // case: no Length
-        String[] subKeys2 = { "key[0]" };
+        String[] subKeys2 = {"key[0]"};
         // not null and not hashmap
         Assert.assertEquals(null, FlattenMapUtil.putForMap(flattenMap, "not null and hashmap", subKeys2, 0));
         // object is null but no length
         Assert.assertEquals(null, FlattenMapUtil.putForMap(flattenMap, null, subKeys2, 0));
-        String[] subKeys3 = { "first", "key[0]" };
+        String[] subKeys3 = {"first", "key[0]"};
         Assert.assertEquals(null, FlattenMapUtil.putForMap(flattenMap, null, subKeys3, 1));
         Assert.assertEquals(null, FlattenMapUtil.putForMap(flattenMap, new HashMap<String, String>(), subKeys2, 0));
 
@@ -166,7 +160,7 @@ public class FlattenMapUtilTest {
         Assert.assertEquals(1, array3.size());
         Assert.assertNull(array3.get(0));
         // object is null
-        String[] subKeys4 = { "key[0]", "value" };
+        String[] subKeys4 = {"key[0]", "value"};
         HashMap<?, ?> hashMap4 = (HashMap<?, ?>) FlattenMapUtil.putForMap(flattenMap, null, subKeys4, 0);
         Assert.assertTrue(hashMap4.containsKey("key"));
         ArrayList<?> array4 = (ArrayList<?>) hashMap4.get("key");

@@ -19,90 +19,87 @@
 package com.aliyuncs.publicopinion.model.v20170731;
 
 import com.aliyuncs.RpcAcsRequest;
-import java.util.List;
 import com.aliyuncs.http.MethodType;
+
+import java.util.List;
 
 /**
  * @author auto create
- * @version 
  */
 public class UpdateKeywordContentRequest extends RpcAcsRequest<UpdateKeywordContentResponse> {
-	
-	public UpdateKeywordContentRequest() {
-		super("publicopinion", "2017-07-31", "UpdateKeywordContent");
-		setMethod(MethodType.POST);
-	}
 
-	private Long id;
+    private Long id;
+    private List<Keyword> keywords;
+    private String name;
+    private List<Long> siteTypeIds;
 
-	private List<Keyword> keywords;
+    public UpdateKeywordContentRequest() {
+        super("publicopinion", "2017-07-31", "UpdateKeywordContent");
+        setMethod(MethodType.POST);
+    }
 
-	private String name;
+    public Long getId() {
+        return this.id;
+    }
 
-	private List<Long> siteTypeIds;
+    public void setId(Long id) {
+        this.id = id;
+        if (id != null) {
+            putBodyParameter("id", id.toString());
+        }
+    }
 
-	public Long getId() {
-		return this.id;
-	}
+    public List<Keyword> getKeywords() {
+        return this.keywords;
+    }
 
-	public void setId(Long id) {
-		this.id = id;
-		if(id != null){
-			putBodyParameter("id", id.toString());
-		}
-	}
+    public void setKeywords(List<Keyword> keywords) {
+        this.keywords = keywords;
+        for (int depth1 = 0; depth1 < keywords.size(); depth1++) {
+            for (int i = 0; i < keywords.get(depth1).getWords().size(); i++) {
+                putBodyParameter("keyword." + (depth1 + 1) + ".word." + (i + 1), keywords.get(depth1).getWords().get(i));
+            }
+        }
+    }
 
-	public List<Keyword> getKeywords() {
-		return this.keywords;
-	}
+    public String getName() {
+        return this.name;
+    }
 
-	public void setKeywords(List<Keyword> keywords) {
-		this.keywords = keywords;	
-		for (int depth1 = 0; depth1 < keywords.size(); depth1++) {
-			for (int i = 0; i < keywords.get(depth1).getWords().size(); i++) {
-				putBodyParameter("keyword." + (depth1 + 1) + ".word." + (i + 1) , keywords.get(depth1).getWords().get(i));
-			}
-		}	
-	}
+    public void setName(String name) {
+        this.name = name;
+        if (name != null) {
+            putBodyParameter("name", name);
+        }
+    }
 
-	public String getName() {
-		return this.name;
-	}
+    public List<Long> getSiteTypeIds() {
+        return this.siteTypeIds;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putBodyParameter("name", name);
-		}
-	}
+    public void setSiteTypeIds(List<Long> siteTypeIds) {
+        this.siteTypeIds = siteTypeIds;
+        for (int i = 0; i < siteTypeIds.size(); i++) {
+            putBodyParameter("siteTypeId." + (i + 1), siteTypeIds.get(i));
+        }
+    }
 
-	public List<Long> getSiteTypeIds() {
-		return this.siteTypeIds;
-	}
+    @Override
+    public Class<UpdateKeywordContentResponse> getResponseClass() {
+        return UpdateKeywordContentResponse.class;
+    }
 
-	public void setSiteTypeIds(List<Long> siteTypeIds) {
-		this.siteTypeIds = siteTypeIds;	
-		for (int i = 0; i < siteTypeIds.size(); i++) {
-			putBodyParameter("siteTypeId." + (i + 1) , siteTypeIds.get(i));
-		}	
-	}
+    public static class Keyword {
 
-	public static class Keyword {
+        private List<String> words;
 
-		private List<String> words;
+        public List<String> getWords() {
+            return this.words;
+        }
 
-		public List<String> getWords() {
-			return this.words;
-		}
-
-		public void setWords(List<String> words) {
-			this.words = words;
-		}
-	}
-
-	@Override
-	public Class<UpdateKeywordContentResponse> getResponseClass() {
-		return UpdateKeywordContentResponse.class;
-	}
+        public void setWords(List<String> words) {
+            this.words = words;
+        }
+    }
 
 }

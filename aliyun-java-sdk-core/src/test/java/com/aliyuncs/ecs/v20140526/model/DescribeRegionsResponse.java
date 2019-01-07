@@ -18,15 +18,14 @@
  */
 package com.aliyuncs.ecs.v20140526.model;
 
-import java.util.List;
-
-import javax.xml.bind.annotation.XmlRootElement;
-
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.ecs.v20140526.transform.DescribeRegionsResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
-@XmlRootElement(name="DescribeRegionsResponse")
+import javax.xml.bind.annotation.XmlRootElement;
+import java.util.List;
+
+@XmlRootElement(name = "DescribeRegionsResponse")
 public class DescribeRegionsResponse extends AcsResponse {
 
     private List<Region> regions;
@@ -38,6 +37,19 @@ public class DescribeRegionsResponse extends AcsResponse {
 
     public void setRegions(List<Region> regions) {
         this.regions = regions;
+    }
+
+    @Override
+    public DescribeRegionsResponse getInstance(UnmarshallerContext context) {
+        return DescribeRegionsResponseUnmarshaller.unmarshall(this, context);
+    }
+
+    public String getRequestId() {
+        return requestId;
+    }
+
+    public void setRequestId(String requestId) {
+        this.requestId = requestId;
     }
 
     public static class Region {
@@ -61,18 +73,5 @@ public class DescribeRegionsResponse extends AcsResponse {
         public void setLocalName(String localName) {
             this.localName = localName;
         }
-    }
-
-    @Override
-    public DescribeRegionsResponse getInstance(UnmarshallerContext context) {
-        return DescribeRegionsResponseUnmarshaller.unmarshall(this, context);
-    }
-
-    public String getRequestId() {
-        return requestId;
-    }
-
-    public void setRequestId(String requestId) {
-        this.requestId = requestId;
     }
 }

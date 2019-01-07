@@ -26,15 +26,14 @@ import com.aliyuncs.http.MethodType;
  */
 public class GetDBSourceRequest extends RoaAcsRequest<GetDBSourceResponse> {
 
+    private String projectName;
+    private String sourceName;
+
     public GetDBSourceRequest() {
         super("Cms", "2015-08-14", "GetDBSource");
         setUriPattern("/projects/[ProjectName]/sources/[SourceName]");
         setMethod(MethodType.GET);
     }
-
-    private String projectName;
-
-    private String sourceName;
 
     public String getProjectName() {
         return this.projectName;

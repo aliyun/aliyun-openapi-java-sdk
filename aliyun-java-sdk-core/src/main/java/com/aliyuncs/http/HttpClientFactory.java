@@ -1,10 +1,10 @@
 package com.aliyuncs.http;
 
-import java.lang.reflect.Constructor;
-
 import com.aliyuncs.http.clients.CompatibleUrlConnClient;
 import com.aliyuncs.profile.IClientProfile;
 import com.aliyuncs.utils.StringUtils;
+
+import java.lang.reflect.Constructor;
 
 /**
  * @author VK.Gao
@@ -34,6 +34,7 @@ public class HttpClientFactory {
             if (StringUtils.isEmpty(customClientClassName)) {
                 customClientClassName = clientConfig.getClientType().getImplClass().getName();
             }
+
             Class httpClientClass = Class.forName(customClientClassName);
             if (!IHttpClient.class.isAssignableFrom(httpClientClass)) {
                 throw new IllegalStateException(String.format("%s is not assignable from com.aliyuncs.http.IHttpClient", customClientClassName));

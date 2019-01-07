@@ -24,13 +24,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class UpdateKeywordStatusResponseUnmarshaller {
 
-	public static UpdateKeywordStatusResponse unmarshall(UpdateKeywordStatusResponse updateKeywordStatusResponse, UnmarshallerContext context) {
-		
-		updateKeywordStatusResponse.setTraceId(context.stringValue("UpdateKeywordStatusResponse.traceId"));
-		updateKeywordStatusResponse.setSuccess(context.booleanValue("UpdateKeywordStatusResponse.success"));
-		updateKeywordStatusResponse.setResult(context.booleanValue("UpdateKeywordStatusResponse.result"));
-		updateKeywordStatusResponse.setErrCode(context.integerValue("UpdateKeywordStatusResponse.errCode"));
-	 
-	 	return updateKeywordStatusResponse;
-	}
+    public static UpdateKeywordStatusResponse unmarshall(UpdateKeywordStatusResponse updateKeywordStatusResponse, UnmarshallerContext context) {
+
+        updateKeywordStatusResponse.setTraceId(context.stringValue("UpdateKeywordStatusResponse.traceId"));
+        updateKeywordStatusResponse.setSuccess(context.booleanValue("UpdateKeywordStatusResponse.success"));
+        updateKeywordStatusResponse.setResult(context.booleanValue("UpdateKeywordStatusResponse.result"));
+        updateKeywordStatusResponse.setErrCode(context.integerValue("UpdateKeywordStatusResponse.errCode"));
+
+        return updateKeywordStatusResponse;
+    }
 }

@@ -1,14 +1,14 @@
 package com.aliyuncs.utils;
 
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Test;
+
 import java.io.UnsupportedEncodingException;
 import java.text.ParseException;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
-
-import org.junit.Assert;
-import org.junit.Test;
-import org.junit.Before;
 
 public class ParameterHelperTest {
     @Before

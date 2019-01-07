@@ -26,15 +26,14 @@ import com.aliyuncs.http.MethodType;
  */
 public class DeleteDBSourceRequest extends RoaAcsRequest<DeleteDBSourceResponse> {
 
+    private String projectName;
+    private String sourceName;
+
     public DeleteDBSourceRequest() {
         super("Cms", "2015-08-14", "DeleteDBSource");
         setUriPattern("/projects/[ProjectName]/sources/[SourceName]");
         setMethod(MethodType.DELETE);
     }
-
-    private String projectName;
-
-    private String sourceName;
 
     public String getProjectName() {
         return this.projectName;

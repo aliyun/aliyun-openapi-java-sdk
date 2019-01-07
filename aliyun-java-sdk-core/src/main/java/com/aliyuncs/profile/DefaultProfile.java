@@ -1,28 +1,6 @@
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
 package com.aliyuncs.profile;
 
-import com.aliyuncs.auth.AlibabaCloudCredentialsProvider;
-import com.aliyuncs.auth.Credential;
-import com.aliyuncs.auth.CredentialsBackupCompatibilityAdaptor;
-import com.aliyuncs.auth.ICredentialProvider;
-import com.aliyuncs.auth.ISigner;
+import com.aliyuncs.auth.*;
 import com.aliyuncs.endpoint.DefaultEndpointResolver;
 import com.aliyuncs.exceptions.ClientException;
 import com.aliyuncs.http.FormatType;
@@ -67,30 +45,10 @@ public class DefaultProfile implements IClientProfile {
         this.icredential = icredential;
     }
 
-    @Override
-    public synchronized String getRegionId() {
-        return regionId;
-    }
-
-    @Override
-    public synchronized FormatType getFormat() {
-        return acceptFormat;
-    }
-
-    @Override
-    public synchronized Credential getCredential() {
-        if (null == credential && null != icredential) { credential = icredential.fresh(); }
-        return credential;
-    }
-
-    @Override
-    @Deprecated
-    public ISigner getSigner() {
-        return null;
-    }
-
     public synchronized static DefaultProfile getProfile() {
-        if (null == profile) { profile = new DefaultProfile(); }
+        if (null == profile) {
+            profile = new DefaultProfile();
+        }
 
         return profile;
     }
@@ -119,7 +77,7 @@ public class DefaultProfile implements IClientProfile {
 
     @Deprecated
     public synchronized static void addEndpoint(String endpointName, String regionId, String product, String domain)
-        throws ClientException {
+            throws ClientException {
         addEndpoint(endpointName, regionId, product, domain, true);
     }
 
@@ -132,6 +90,30 @@ public class DefaultProfile implements IClientProfile {
 
     public synchronized static void addEndpoint(String regionId, String product, String endpoint) {
         DefaultEndpointResolver.predefinedEndpointResolver.putEndpointEntry(regionId, product, endpoint);
+    }
+
+    @Override
+    public synchronized String getRegionId() {
+        return regionId;
+    }
+
+    @Override
+    public synchronized FormatType getFormat() {
+        return acceptFormat;
+    }
+
+    @Override
+    public synchronized Credential getCredential() {
+        if (null == credential && null != icredential) {
+            credential = icredential.fresh();
+        }
+        return credential;
+    }
+
+    @Override
+    @Deprecated
+    public ISigner getSigner() {
+        return null;
     }
 
     @Override

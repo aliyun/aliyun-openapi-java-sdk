@@ -24,52 +24,51 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
- * @version 
  */
 public class UpdateKeywordStatusResponse extends AcsResponse {
 
-	private String traceId;
+    private String traceId;
 
-	private Boolean success;
+    private Boolean success;
 
-	private Boolean result;
+    private Boolean result;
 
-	private Integer errCode;
+    private Integer errCode;
 
-	public String getTraceId() {
-		return this.traceId;
-	}
+    public String getTraceId() {
+        return this.traceId;
+    }
 
-	public void setTraceId(String traceId) {
-		this.traceId = traceId;
-	}
+    public void setTraceId(String traceId) {
+        this.traceId = traceId;
+    }
 
-	public Boolean getSuccess() {
-		return this.success;
-	}
+    public Boolean getSuccess() {
+        return this.success;
+    }
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
+    public void setSuccess(Boolean success) {
+        this.success = success;
+    }
 
-	public Boolean getResult() {
-		return this.result;
-	}
+    public Boolean getResult() {
+        return this.result;
+    }
 
-	public void setResult(Boolean result) {
-		this.result = result;
-	}
+    public void setResult(Boolean result) {
+        this.result = result;
+    }
 
-	public Integer getErrCode() {
-		return this.errCode;
-	}
+    public Integer getErrCode() {
+        return this.errCode;
+    }
 
-	public void setErrCode(Integer errCode) {
-		this.errCode = errCode;
-	}
+    public void setErrCode(Integer errCode) {
+        this.errCode = errCode;
+    }
 
-	@Override
-	public UpdateKeywordStatusResponse getInstance(UnmarshallerContext context) {
-		return	UpdateKeywordStatusResponseUnmarshaller.unmarshall(this, context);
-	}
+    @Override
+    public UpdateKeywordStatusResponse getInstance(UnmarshallerContext context) {
+        return UpdateKeywordStatusResponseUnmarshaller.unmarshall(this, context);
+    }
 }

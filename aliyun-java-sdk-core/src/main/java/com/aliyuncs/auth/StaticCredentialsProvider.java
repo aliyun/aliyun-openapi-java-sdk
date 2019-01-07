@@ -44,9 +44,9 @@ public class StaticCredentialsProvider implements AlibabaCloudCredentialsProvide
         Credential legacyCredential = this.clientProfile.getCredential();
         if (null != legacyCredential.getSecurityToken()) {
             this.credentials = new BasicSessionCredentials(
-                legacyCredential.getAccessKeyId(),
-                legacyCredential.getAccessSecret(),
-                legacyCredential.getSecurityToken()
+                    legacyCredential.getAccessKeyId(),
+                    legacyCredential.getAccessSecret(),
+                    legacyCredential.getSecurityToken()
             );
         } else {
             this.credentials = new LegacyCredentials(legacyCredential);
@@ -54,8 +54,7 @@ public class StaticCredentialsProvider implements AlibabaCloudCredentialsProvide
     }
 
     @Override
-    public AlibabaCloudCredentials getCredentials()
-    {
+    public AlibabaCloudCredentials getCredentials() {
         return this.credentials;
     }
 }

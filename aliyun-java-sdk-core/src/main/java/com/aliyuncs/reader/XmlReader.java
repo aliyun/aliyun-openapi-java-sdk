@@ -18,18 +18,16 @@
  */
 package com.aliyuncs.reader;
 
+import com.aliyuncs.exceptions.ClientException;
+import com.aliyuncs.utils.XmlUtils;
+import org.w3c.dom.Element;
+import org.xml.sax.SAXException;
+
+import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
-import javax.xml.parsers.ParserConfigurationException;
-
-import org.w3c.dom.Element;
-import org.xml.sax.SAXException;
-
-import com.aliyuncs.exceptions.ClientException;
-import com.aliyuncs.utils.XmlUtils;
 
 @Deprecated
 public class XmlReader implements Reader {
@@ -51,8 +49,9 @@ public class XmlReader implements Reader {
         return map;
     }
 
+    @Override
     public Map<String, String> readForHideArrayItem(String response, String endpoint) throws ClientException {
-        return  read(response, endpoint);
+        return read(response, endpoint);
     }
 
     private void read(Element element, String path, boolean appendPath) {

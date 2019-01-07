@@ -3,12 +3,12 @@ package com.aliyuncs;
 import com.aliyuncs.http.FormatType;
 
 public class CommonRpcRequest extends RpcAcsRequest<CommonResponse> {
- 
+
     public CommonRpcRequest(String product) {
         super(product);
         setAcceptFormat(FormatType.JSON);
     }
-    
+
     public CommonRpcRequest(String product, String version, String action) {
         super(product, version, action);
         setAcceptFormat(FormatType.JSON);

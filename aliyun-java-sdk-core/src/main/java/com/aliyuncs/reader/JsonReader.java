@@ -34,13 +34,6 @@ public class JsonReader implements Reader {
     private static final int FIRST_POSITION = 0;
     private static final int CURRENT_POSITION = 1;
     private static final int NEXT_POSITION = 2;
-
-    private CharacterIterator ct;
-    private char c;
-    private Object token;
-    private StringBuffer stringBuffer = new StringBuffer();
-    private Map<String, String> map = new HashMap<String, String>();
-
     private static Map<Character, Character> escapes = new HashMap<Character, Character>();
 
     static {
@@ -54,11 +47,27 @@ public class JsonReader implements Reader {
         escapes.put(Character.valueOf('f'), Character.valueOf('\f'));
     }
 
+    private CharacterIterator ct;
+    private char c;
+    private Object token;
+    private StringBuffer stringBuffer = new StringBuffer();
+    private Map<String, String> map = new HashMap<String, String>();
+
+    public static String trimFromLast(String str, String stripString) {
+        int pos = str.lastIndexOf(stripString);
+        if (pos > -1) {
+            return str.substring(0, pos);
+        } else {
+            return str;
+        }
+    }
+
     @Override
     public Map<String, String> read(String response, String endpoint) {
         return read(new StringCharacterIterator(response), endpoint, FIRST_POSITION);
     }
-    
+
+    @Override
     public Map<String, String> readForHideArrayItem(String response, String endpoint) {
         return readForHideItem(new StringCharacterIterator(response), endpoint, FIRST_POSITION);
     }
@@ -81,7 +90,7 @@ public class JsonReader implements Reader {
         readJson(endpoint);
         return map;
     }
-    
+
     public Map<String, String> readForHideItem(CharacterIterator ci, String endpoint, int start) {
         ct = ci;
         switch (start) {
@@ -157,7 +166,7 @@ public class JsonReader implements Reader {
         }
         return token;
     }
-    
+
     private Object readJsonForHideItem(String baseKey) {
         skipWhiteSpace();
         char ch = c;
@@ -234,7 +243,7 @@ public class JsonReader implements Reader {
             }
         }
     }
-    
+
     private void processObjectForHideItemName(String baseKey) {
         String key = baseKey + "." + readJsonForHideItem(baseKey);
         while (token != OBJECT_END_TOKEN) {
@@ -296,7 +305,7 @@ public class JsonReader implements Reader {
             }
         }
     }
-    
+
     private void processArrayForHideItem(String baseKey) {
         int index = 0;
         String preKey = baseKey;
@@ -359,7 +368,7 @@ public class JsonReader implements Reader {
                 nextChar();
                 Object value = escapes.get(Character.valueOf(c));
                 if (value != null) {
-                    addChar(((Character)value).charValue());
+                    addChar(((Character) value).charValue());
                 }
             } else {
                 addChar();
@@ -376,15 +385,6 @@ public class JsonReader implements Reader {
 
     private void addChar() {
         addChar(c);
-    }
-
-    public static String trimFromLast(String str, String stripString) {
-        int pos = str.lastIndexOf(stripString);
-        if (pos > -1) {
-            return str.substring(0, pos);
-        } else {
-            return str;
-        }
     }
 
 }

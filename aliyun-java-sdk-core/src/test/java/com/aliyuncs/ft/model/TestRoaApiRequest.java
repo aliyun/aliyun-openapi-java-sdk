@@ -23,58 +23,55 @@ import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
- * @version 
  */
 public class TestRoaApiRequest extends RoaAcsRequest<TestRoaApiResponse> {
-	
-	public TestRoaApiRequest() {
-		super("Ft", "2016-01-02", "TestRoaApi");
-		setUriPattern("/web/cloudapi");
-		setMethod(MethodType.PUT);
-	}
 
-	private String bodyParam;
+    private String bodyParam;
+    private String queryParam;
+    private String headerParam;
 
-	private String queryParam;
+    public TestRoaApiRequest() {
+        super("Ft", "2016-01-02", "TestRoaApi");
+        setUriPattern("/web/cloudapi");
+        setMethod(MethodType.PUT);
+    }
 
-	private String headerParam;
+    public String getBodyParam() {
+        return this.bodyParam;
+    }
 
-	public String getBodyParam() {
-		return this.bodyParam;
-	}
+    public void setBodyParam(String bodyParam) {
+        this.bodyParam = bodyParam;
+        if (bodyParam != null) {
+            putBodyParameter("BodyParam", bodyParam);
+        }
+    }
 
-	public void setBodyParam(String bodyParam) {
-		this.bodyParam = bodyParam;
-		if (bodyParam != null) {
-			putBodyParameter("BodyParam", bodyParam);
-		}
-	}
+    public String getQueryParam() {
+        return this.queryParam;
+    }
 
-	public String getQueryParam() {
-		return this.queryParam;
-	}
+    public void setQueryParam(String queryParam) {
+        this.queryParam = queryParam;
+        if (queryParam != null) {
+            putQueryParameter("QueryParam", queryParam);
+        }
+    }
 
-	public void setQueryParam(String queryParam) {
-		this.queryParam = queryParam;
-		if(queryParam != null){
-			putQueryParameter("QueryParam", queryParam);
-		}
-	}
+    public String getHeaderParam() {
+        return this.headerParam;
+    }
 
-	public String getHeaderParam() {
-		return this.headerParam;
-	}
+    public void setHeaderParam(String headerParam) {
+        this.headerParam = headerParam;
+        if (headerParam != null) {
+            putHeaderParameter("HeaderParam", headerParam);
+        }
+    }
 
-	public void setHeaderParam(String headerParam) {
-		this.headerParam = headerParam;
-		if(headerParam != null){
-			putHeaderParameter("HeaderParam", headerParam);
-		}
-	}
-
-	@Override
-	public Class<TestRoaApiResponse> getResponseClass() {
-		return TestRoaApiResponse.class;
-	}
+    @Override
+    public Class<TestRoaApiResponse> getResponseClass() {
+        return TestRoaApiResponse.class;
+    }
 
 }

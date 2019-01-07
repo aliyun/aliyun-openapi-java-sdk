@@ -18,14 +18,13 @@
  */
 package com.aliyuncs.auth;
 
-import java.io.UnsupportedEncodingException;
-import java.security.InvalidKeyException;
-import java.security.NoSuchAlgorithmException;
+import com.aliyuncs.utils.Base64Helper;
 
 import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;
-
-import com.aliyuncs.utils.Base64Helper;
+import java.io.UnsupportedEncodingException;
+import java.security.InvalidKeyException;
+import java.security.NoSuchAlgorithmException;
 
 @Deprecated
 public class ShaHmac1 implements ISigner {
@@ -34,11 +33,11 @@ public class ShaHmac1 implements ISigner {
 
     @Override
     public String signString(String source, String accessSecret)
-        throws InvalidKeyException, IllegalStateException {
+            throws InvalidKeyException, IllegalStateException {
         try {
             Mac mac = Mac.getInstance(AGLORITHM_NAME);
             mac.init(new SecretKeySpec(
-                accessSecret.getBytes(AcsURLEncoder.URL_ENCODING), AGLORITHM_NAME));
+                    accessSecret.getBytes(AcsURLEncoder.URL_ENCODING), AGLORITHM_NAME));
             byte[] signData = mac.doFinal(source.getBytes(AcsURLEncoder.URL_ENCODING));
             return Base64Helper.encode(signData);
         } catch (NoSuchAlgorithmException e) {

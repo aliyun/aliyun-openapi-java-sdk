@@ -26,17 +26,15 @@ import com.aliyuncs.http.MethodType;
  */
 public class ChangeDBSourceStatusRequest extends RoaAcsRequest<ChangeDBSourceStatusResponse> {
 
+    private String projectName;
+    private String sourceName;
+    private String status;
+
     public ChangeDBSourceStatusRequest() {
         super("Cms", "2015-08-14", "ChangeDBSourceStatus");
         setUriPattern("/projects/[ProjectName]/sources/[SourceName]/setStatus");
         setMethod(MethodType.PUT);
     }
-
-    private String projectName;
-
-    private String sourceName;
-
-    private String status;
 
     public String getProjectName() {
         return this.projectName;

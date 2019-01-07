@@ -1,22 +1,10 @@
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
 package com.aliyuncs;
+
+import com.aliyuncs.auth.*;
+import com.aliyuncs.http.FormatType;
+import com.aliyuncs.http.HttpRequest;
+import com.aliyuncs.http.ProtocolType;
+import com.aliyuncs.regions.ProductDomain;
 
 import java.io.UnsupportedEncodingException;
 import java.security.InvalidKeyException;
@@ -26,32 +14,20 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
 
-import com.aliyuncs.auth.AcsURLEncoder;
-import com.aliyuncs.auth.AlibabaCloudCredentials;
-import com.aliyuncs.auth.Credential;
-import com.aliyuncs.auth.ISignatureComposer;
-import com.aliyuncs.auth.LegacyCredentials;
-import com.aliyuncs.auth.Signer;
-import com.aliyuncs.http.FormatType;
-import com.aliyuncs.http.HttpRequest;
-import com.aliyuncs.http.ProtocolType;
-import com.aliyuncs.regions.ProductDomain;
-
 @SuppressWarnings("deprecation")
 public abstract class AcsRequest<T extends AcsResponse> extends HttpRequest {
 
+    private final Map<String, String> queryParameters = new HashMap<String, String>();
+    private final Map<String, String> domainParameters = new HashMap<String, String>();
+    private final Map<String, String> bodyParameters = new HashMap<String, String>();
+    protected ISignatureComposer composer = null;
     private String version = null;
     private String product = null;
     private String actionName = null;
     private String regionId = null;
     private String securityToken = null;
     private FormatType acceptFormat = null;
-    protected ISignatureComposer composer = null;
     private ProtocolType protocol = null;
-    private final Map<String, String> queryParameters = new HashMap<String, String>();
-    private final Map<String, String> domainParameters = new HashMap<String, String>();
-    private final Map<String, String> bodyParameters = new HashMap<String, String>();
-
     private String locationProduct;
     private String endpointType;
     private ProductDomain productDomain = null;
@@ -63,45 +39,110 @@ public abstract class AcsRequest<T extends AcsResponse> extends HttpRequest {
         this.product = product;
     }
 
-    public String getLocationProduct() {
-        return locationProduct;
+    public static String concatQueryString(Map<String, String> parameters) throws UnsupportedEncodingException {
+        if (null == parameters) {
+            return null;
+        }
+
+        StringBuilder urlBuilder = new StringBuilder("");
+        for (Entry<String, String> entry : parameters.entrySet()) {
+            String key = entry.getKey();
+            String val = entry.getValue();
+            urlBuilder.append(AcsURLEncoder.encode(key));
+            if (val != null) {
+                urlBuilder.append("=").append(AcsURLEncoder.encode(val));
+            }
+            urlBuilder.append("&");
+        }
+
+        int strIndex = urlBuilder.length();
+        if (parameters.size() > 0) {
+            urlBuilder.deleteCharAt(strIndex - 1);
+        }
+
+        return urlBuilder.toString();
     }
 
-    public void setLocationProduct(String locationProduct) {
-        this.locationProduct = locationProduct;
-        putQueryParameter("ServiceCode", locationProduct);
+    @Deprecated
+    public void setEndpoint(String endpoint) {
+        ProductDomain productDomain = new ProductDomain(product, endpoint);
+        setProductDomain(productDomain);
     }
 
-    public String getEndpointType() {
-        return endpointType;
+    @Deprecated
+    public String getVersion() {
+        return version;
     }
 
-    public void setEndpointType(String endpointType) {
-        this.endpointType = endpointType;
-        putQueryParameter("Type", endpointType);
+    @Deprecated
+    public void setVersion(String version) {
+        this.version = version;
     }
 
-    public String getActionName() {
-        return actionName;
-    }
-
-    public void setActionName(String actionName) {
-        this.actionName = actionName;
-    }
-
+    @Deprecated
     public String getProduct() {
         return product;
     }
 
+    @Deprecated
+    public String getActionName() {
+        return actionName;
+    }
+
+    @Deprecated
+    public void setActionName(String actionName) {
+        this.actionName = actionName;
+    }
+
+    @Deprecated
+    public String getRegionId() {
+        return regionId;
+    }
+
+    @Deprecated
+    public void setRegionId(String regionId) {
+        this.regionId = regionId;
+    }
+
+    @Deprecated
+    public String getSecurityToken() {
+        return securityToken;
+    }
+
+    @Deprecated
+    public void setSecurityToken(String securityToken) {
+        this.securityToken = securityToken;
+        putQueryParameter("SecurityToken", securityToken);
+    }
+
+    @Deprecated
+    public FormatType getAcceptFormat() {
+        return acceptFormat;
+    }
+
+    @Deprecated
+    public void setAcceptFormat(FormatType acceptFormat) {
+        this.acceptFormat = acceptFormat;
+        this.putHeaderParameter("Accept",
+                FormatType.mapFormatToAccept(acceptFormat));
+    }
+
+    @Deprecated
     public ProtocolType getProtocol() {
         return protocol;
     }
 
+    @Deprecated
     public void setProtocol(ProtocolType protocol) {
         this.protocol = protocol;
     }
 
+    @Deprecated
     public Map<String, String> getQueryParameters() {
+        return Collections.unmodifiableMap(queryParameters);
+    }
+
+    public Map<String, String> getBizQueryParameters() {
         return Collections.unmodifiableMap(queryParameters);
     }
 
@@ -113,7 +154,12 @@ public abstract class AcsRequest<T extends AcsResponse> extends HttpRequest {
         setParameter(this.queryParameters, name, value);
     }
 
+    @Deprecated
     public Map<String, String> getDomainParameters() {
+        return Collections.unmodifiableMap(domainParameters);
+    }
+
+    public Map<String, String> getBizDomainParameters() {
         return Collections.unmodifiableMap(domainParameters);
     }
 
@@ -121,7 +167,12 @@ public abstract class AcsRequest<T extends AcsResponse> extends HttpRequest {
         setParameter(this.domainParameters, name, value);
     }
 
+    @Deprecated
     public Map<String, String> getBodyParameters() {
+        return Collections.unmodifiableMap(bodyParameters);
+    }
+
+    public Map<String, String> getBizBodyParameters() {
         return Collections.unmodifiableMap(bodyParameters);
     }
 
@@ -140,91 +191,139 @@ public abstract class AcsRequest<T extends AcsResponse> extends HttpRequest {
         map.put(name, String.valueOf(value));
     }
 
-    public String getVersion() {
-        return version;
-    }
-
-    public void setVersion(String version) {
-        this.version = version;
-    }
-
-    public FormatType getAcceptFormat() {
-        return acceptFormat;
-    }
-
-    public void setAcceptFormat(FormatType acceptFormat) {
-        this.acceptFormat = acceptFormat;
-        this.putHeaderParameter("Accept",
-            FormatType.mapFormatToAccept(acceptFormat));
-    }
-
-    public String getRegionId() {
-        return regionId;
-    }
-
-    public void setRegionId(String regionId) {
-        this.regionId = regionId;
-    }
-
-    public String getSecurityToken() {
-        return securityToken;
+    @Deprecated
+    public String getLocationProduct() {
+        return locationProduct;
     }
 
     @Deprecated
-    public void setSecurityToken(String securityToken) {
-        this.securityToken = securityToken;
-        putQueryParameter("SecurityToken", securityToken);
+    public void setLocationProduct(String locationProduct) {
+        this.locationProduct = locationProduct;
+        putQueryParameter("ServiceCode", locationProduct);
     }
 
-    public static String concatQueryString(Map<String, String> parameters)
-        throws UnsupportedEncodingException {
-        if (null == parameters) { return null; }
+    @Deprecated
+    public String getEndpointType() {
+        return endpointType;
+    }
 
-        StringBuilder urlBuilder = new StringBuilder("");
-        for (Entry<String, String> entry : parameters.entrySet()) {
-            String key = entry.getKey();
-            String val = entry.getValue();
-            urlBuilder.append(AcsURLEncoder.encode(key));
-            if (val != null) {
-                urlBuilder.append("=").append(AcsURLEncoder.encode(val));
-            }
-            urlBuilder.append("&");
-        }
+    @Deprecated
+    public void setEndpointType(String endpointType) {
+        this.endpointType = endpointType;
+        putQueryParameter("Type", endpointType);
+    }
 
-        int strIndex = urlBuilder.length();
-        if (parameters.size() > 0) { urlBuilder.deleteCharAt(strIndex - 1); }
+    @Deprecated
+    public ProductDomain getProductDomain() {
+        return productDomain;
+    }
 
-        return urlBuilder.toString();
+    @Deprecated
+    public void setProductDomain(ProductDomain productDomain) {
+        this.productDomain = productDomain;
     }
 
     public HttpRequest signRequest(Signer signer, Credential credential,
                                    FormatType format, ProductDomain domain)
-        throws InvalidKeyException, IllegalStateException,
-        UnsupportedEncodingException, NoSuchAlgorithmException {
+            throws InvalidKeyException, IllegalStateException,
+            UnsupportedEncodingException, NoSuchAlgorithmException {
         return signRequest(signer, new LegacyCredentials(credential), format, domain);
     }
 
     public abstract HttpRequest signRequest(Signer signer, AlibabaCloudCredentials credentials,
                                             FormatType format, ProductDomain domain)
-        throws InvalidKeyException, IllegalStateException,
-        UnsupportedEncodingException, NoSuchAlgorithmException;
+            throws InvalidKeyException, IllegalStateException,
+            UnsupportedEncodingException, NoSuchAlgorithmException;
 
     public abstract String composeUrl(String endpoint, Map<String, String> queries)
-        throws UnsupportedEncodingException;
+            throws UnsupportedEncodingException;
 
     public abstract Class<T> getResponseClass();
 
-    public ProductDomain getProductDomain() {
+    public String getBizVersion() {
+        return version;
+    }
+
+    public void setSysVersion(String version) {
+        this.version = version;
+    }
+
+    public String getBizProduct() {
+        return product;
+    }
+
+    public String getBizActionName() {
+        return actionName;
+    }
+
+    public void setSysActionName(String actionName) {
+        this.actionName = actionName;
+    }
+
+    public String getBizRegionId() {
+        return regionId;
+    }
+
+    public void setSysRegionId(String regionId) {
+        this.regionId = regionId;
+    }
+
+    public String getBizSecurityToken() {
+        return securityToken;
+    }
+
+    public void setSysSecurityToken(String securityToken) {
+        this.securityToken = securityToken;
+        putQueryParameter("SecurityToken", securityToken);
+    }
+
+    public FormatType getBizAcceptFormat() {
+        return acceptFormat;
+    }
+
+    public void setSysAcceptFormat(FormatType acceptFormat) {
+        this.acceptFormat = acceptFormat;
+        this.putHeaderParameter("Accept",
+                FormatType.mapFormatToAccept(acceptFormat));
+    }
+
+    public ProtocolType getBizProtocol() {
+        return protocol;
+    }
+
+    public void setSysProtocol(ProtocolType protocol) {
+        this.protocol = protocol;
+    }
+
+    public void setSysEndpoint(String endpoint) {
+        ProductDomain productDomain = new ProductDomain(product, endpoint);
+        setSysProductDomain(productDomain);
+    }
+
+    public String getBizLocationProduct() {
+        return locationProduct;
+    }
+
+    public void setSysLocationProduct(String locationProduct) {
+        this.locationProduct = locationProduct;
+        putQueryParameter("ServiceCode", locationProduct);
+    }
+
+    public String getBizEndpointType() {
+        return endpointType;
+    }
+
+    public void setSysEndpointType(String endpointType) {
+        this.endpointType = endpointType;
+        putQueryParameter("Type", endpointType);
+    }
+
+    public ProductDomain getBizProductDomain() {
         return productDomain;
     }
 
-    public void setProductDomain(ProductDomain productDomain) {
+    public void setSysProductDomain(ProductDomain productDomain) {
         this.productDomain = productDomain;
-    }
-
-    public void setEndpoint(String endpoint) {
-        ProductDomain productDomain = new ProductDomain(product, endpoint);
-        setProductDomain(productDomain);
     }
 
 }

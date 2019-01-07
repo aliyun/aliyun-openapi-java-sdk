@@ -22,56 +22,53 @@ import com.aliyuncs.RpcAcsRequest;
 
 /**
  * @author auto create
- * @version 
  */
 public class QueryTopicsRequest extends RpcAcsRequest<QueryTopicsResponse> {
-	
-	public QueryTopicsRequest() {
-		super("publicopinion", "2017-07-31", "QueryTopics");
-	}
 
-	private Integer pageSize;
+    private Integer pageSize;
+    private Integer toPage;
+    private String name;
 
-	private Integer toPage;
+    public QueryTopicsRequest() {
+        super("publicopinion", "2017-07-31", "QueryTopics");
+    }
 
-	private String name;
+    public Integer getPageSize() {
+        return this.pageSize;
+    }
 
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
+    public void setPageSize(Integer pageSize) {
+        this.pageSize = pageSize;
+        if (pageSize != null) {
+            putQueryParameter("pageSize", pageSize.toString());
+        }
+    }
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("pageSize", pageSize.toString());
-		}
-	}
+    public Integer getToPage() {
+        return this.toPage;
+    }
 
-	public Integer getToPage() {
-		return this.toPage;
-	}
+    public void setToPage(Integer toPage) {
+        this.toPage = toPage;
+        if (toPage != null) {
+            putQueryParameter("toPage", toPage.toString());
+        }
+    }
 
-	public void setToPage(Integer toPage) {
-		this.toPage = toPage;
-		if(toPage != null){
-			putQueryParameter("toPage", toPage.toString());
-		}
-	}
+    public String getName() {
+        return this.name;
+    }
 
-	public String getName() {
-		return this.name;
-	}
+    public void setName(String name) {
+        this.name = name;
+        if (name != null) {
+            putQueryParameter("name", name);
+        }
+    }
 
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putQueryParameter("name", name);
-		}
-	}
-
-	@Override
-	public Class<QueryTopicsResponse> getResponseClass() {
-		return QueryTopicsResponse.class;
-	}
+    @Override
+    public Class<QueryTopicsResponse> getResponseClass() {
+        return QueryTopicsResponse.class;
+    }
 
 }

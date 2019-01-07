@@ -64,15 +64,6 @@ public class Credential {
         setExpiredDate(expiredHours);
     }
 
-    private void setExpiredDate(int expiredHours) {
-        if (expiredHours > 0) {
-            Calendar cal = Calendar.getInstance();
-            cal.setTime(new Date());
-            cal.add(Calendar.HOUR, expiredHours);
-            expiredDate = cal.getTime();
-        }
-    }
-
     public String getAccessKeyId() {
         return accessKeyId;
     }
@@ -113,6 +104,15 @@ public class Credential {
 
     public Date getExpiredDate() {
         return expiredDate;
+    }
+
+    private void setExpiredDate(int expiredHours) {
+        if (expiredHours > 0) {
+            Calendar cal = Calendar.getInstance();
+            cal.setTime(new Date());
+            cal.add(Calendar.HOUR, expiredHours);
+            expiredDate = cal.getTime();
+        }
     }
 
 }

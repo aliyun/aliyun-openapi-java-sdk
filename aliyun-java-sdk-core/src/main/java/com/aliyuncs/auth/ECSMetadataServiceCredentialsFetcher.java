@@ -23,10 +23,6 @@ package com.aliyuncs.auth;
  * Created by haowei.yao on 2017/9/12.
  */
 
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URL;
-
 import com.aliyuncs.exceptions.ClientException;
 import com.aliyuncs.http.HttpRequest;
 import com.aliyuncs.http.HttpResponse;
@@ -35,17 +31,21 @@ import com.aliyuncs.http.clients.CompatibleUrlConnClient;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
+
 public class ECSMetadataServiceCredentialsFetcher {
     private static final String URL_IN_ECS_METADATA =
-        "/latest/meta-data/ram/security-credentials/";
+            "/latest/meta-data/ram/security-credentials/";
     private static final int DEFAULT_TIMEOUT_IN_MILLISECONDS = 5000;
+    private static final String ECS_METADAT_FETCH_ERROR_MSG =
+            "Failed to get RAM session credentials from ECS metadata service.";
+    private static final int DEFAULT_ECS_SESSION_TOKEN_DURATION_SECONDS = 3600 * 6;
     private URL credentialUrl;
     private String roleName;
     private String metadataServiceHost = "100.100.100.200";
     private int connectionTimeoutInMilliseconds;
-    private static final String ECS_METADAT_FETCH_ERROR_MSG =
-        "Failed to get RAM session credentials from ECS metadata service.";
-    private static final int DEFAULT_ECS_SESSION_TOKEN_DURATION_SECONDS = 3600 * 6;
 
     public ECSMetadataServiceCredentialsFetcher() {
         this.connectionTimeoutInMilliseconds = DEFAULT_TIMEOUT_IN_MILLISECONDS;
@@ -81,9 +81,9 @@ public class ECSMetadataServiceCredentialsFetcher {
 
     public String getMetadata() throws ClientException {
         HttpRequest request = new HttpRequest(credentialUrl.toString());
-        request.setMethod(MethodType.GET);
-        request.setConnectTimeout(connectionTimeoutInMilliseconds);
-        request.setReadTimeout(connectionTimeoutInMilliseconds);
+        request.setSysMethod(MethodType.GET);
+        request.setSysConnectTimeout(connectionTimeoutInMilliseconds);
+        request.setSysReadTimeout(connectionTimeoutInMilliseconds);
         HttpResponse response;
 
         try {
@@ -105,10 +105,10 @@ public class ECSMetadataServiceCredentialsFetcher {
         jsonObject = new JsonParser().parse(jsonContent).getAsJsonObject();
 
         if (jsonObject.has("Code") &&
-            jsonObject.has("AccessKeyId") &&
-            jsonObject.has("AccessKeySecret") &&
-            jsonObject.has("SecurityToken") &&
-            jsonObject.has("Expiration")) {
+                jsonObject.has("AccessKeyId") &&
+                jsonObject.has("AccessKeySecret") &&
+                jsonObject.has("SecurityToken") &&
+                jsonObject.has("Expiration")) {
 
         } else {
             throw new ClientException("Invalid json got from ECS Metadata service.");
@@ -118,11 +118,11 @@ public class ECSMetadataServiceCredentialsFetcher {
             throw new ClientException(ECS_METADAT_FETCH_ERROR_MSG);
         }
         return new InstanceProfileCredentials(
-            jsonObject.get("AccessKeyId").getAsString(),
-            jsonObject.get("AccessKeySecret").getAsString(),
-            jsonObject.get("SecurityToken").getAsString(),
-            jsonObject.get("Expiration").getAsString(),
-            DEFAULT_ECS_SESSION_TOKEN_DURATION_SECONDS
+                jsonObject.get("AccessKeyId").getAsString(),
+                jsonObject.get("AccessKeySecret").getAsString(),
+                jsonObject.get("SecurityToken").getAsString(),
+                jsonObject.get("Expiration").getAsString(),
+                DEFAULT_ECS_SESSION_TOKEN_DURATION_SECONDS
         );
     }
 

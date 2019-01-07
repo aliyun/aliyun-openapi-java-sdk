@@ -24,42 +24,41 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
- * @version 
  */
 public class CreateTopicResponse extends AcsResponse {
 
-	private String traceId;
+    private String traceId;
 
-	private Long result;
+    private Long result;
 
-	private Integer errCode;
+    private Integer errCode;
 
-	public String getTraceId() {
-		return this.traceId;
-	}
+    public String getTraceId() {
+        return this.traceId;
+    }
 
-	public void setTraceId(String traceId) {
-		this.traceId = traceId;
-	}
+    public void setTraceId(String traceId) {
+        this.traceId = traceId;
+    }
 
-	public Long getResult() {
-		return this.result;
-	}
+    public Long getResult() {
+        return this.result;
+    }
 
-	public void setResult(Long result) {
-		this.result = result;
-	}
+    public void setResult(Long result) {
+        this.result = result;
+    }
 
-	public Integer getErrCode() {
-		return this.errCode;
-	}
+    public Integer getErrCode() {
+        return this.errCode;
+    }
 
-	public void setErrCode(Integer errCode) {
-		this.errCode = errCode;
-	}
+    public void setErrCode(Integer errCode) {
+        this.errCode = errCode;
+    }
 
-	@Override
-	public CreateTopicResponse getInstance(UnmarshallerContext context) {
-		return	CreateTopicResponseUnmarshaller.unmarshall(this, context);
-	}
+    @Override
+    public CreateTopicResponse getInstance(UnmarshallerContext context) {
+        return CreateTopicResponseUnmarshaller.unmarshall(this, context);
+    }
 }

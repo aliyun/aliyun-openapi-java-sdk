@@ -23,32 +23,31 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
- * @version 
  */
 public class AddResourceResponse extends AcsResponse {
 
-	private String requestId;
+    private String requestId;
 
-	private Long resourceId;
+    private Long resourceId;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
+    public String getRequestId() {
+        return this.requestId;
+    }
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+    public void setRequestId(String requestId) {
+        this.requestId = requestId;
+    }
 
-	public Long getResourceId() {
-		return this.resourceId;
-	}
+    public Long getResourceId() {
+        return this.resourceId;
+    }
 
-	public void setResourceId(Long resourceId) {
-		this.resourceId = resourceId;
-	}
+    public void setResourceId(Long resourceId) {
+        this.resourceId = resourceId;
+    }
 
-	@Override
-	public AddResourceResponse getInstance(UnmarshallerContext context) {
-		return	AddResourceResponseUnmarshaller.unmarshall(this, context);
-	}
+    @Override
+    public AddResourceResponse getInstance(UnmarshallerContext context) {
+        return AddResourceResponseUnmarshaller.unmarshall(this, context);
+    }
 }

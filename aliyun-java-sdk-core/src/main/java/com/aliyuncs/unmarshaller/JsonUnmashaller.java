@@ -18,6 +18,6 @@ public class JsonUnmashaller implements Unmarshaller {
 
     private ClientException newUnmarshalException(Class<?> clazz, String content, Exception e) {
         return new ClientException("SDK.UnmarshalFailed",
-            "unmarshal response from json content failed, clazz = " + clazz.getSimpleName() + ", origin response = " + content, e);
+                "unmarshal response from json content failed, clazz = " + clazz.getSimpleName() + ", origin response = " + content, e);
     }
 }

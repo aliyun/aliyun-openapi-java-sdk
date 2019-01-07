@@ -6,11 +6,11 @@ import com.aliyuncs.http.HttpResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CommonResponse extends AcsResponse {
-    
+
     private String data;
-    
+
     private int httpStatus;
-    
+
     private HttpResponse httpResponse;
 
     @Override
@@ -41,5 +41,4 @@ public class CommonResponse extends AcsResponse {
     public void setHttpResponse(HttpResponse httpResponse) {
         this.httpResponse = httpResponse;
     }
-
 }

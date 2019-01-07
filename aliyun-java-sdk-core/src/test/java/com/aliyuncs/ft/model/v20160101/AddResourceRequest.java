@@ -23,70 +23,66 @@ import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
- * @version 
  */
 public class AddResourceRequest extends RpcAcsRequest<AddResourceResponse> {
-	
-	public AddResourceRequest() {
-		super("Txapi", "2017-09-20", "AddResource");
-		this.setMethod(MethodType.POST);
-	}
 
-	private String content;
+    private String content;
+    private String name;
+    private String resourceType;
+    private Long bid;
 
-	private String name;
+    public AddResourceRequest() {
+        super("Txapi", "2017-09-20", "AddResource");
+        this.setMethod(MethodType.POST);
+    }
 
-	private String resourceType;
+    public String getContent() {
+        return this.content;
+    }
 
-	private Long bid;
+    public void setContent(String content) {
+        this.content = content;
+        if (content != null) {
+            putBodyParameter("Content", content);
+        }
+    }
 
-	public String getContent() {
-		return this.content;
-	}
+    public String getName() {
+        return this.name;
+    }
 
-	public void setContent(String content) {
-		this.content = content;
-		if(content != null){
-			putBodyParameter("Content", content);
-		}
-	}
+    public void setName(String name) {
+        this.name = name;
+        if (name != null) {
+            putBodyParameter("Name", name);
+        }
+    }
 
-	public String getName() {
-		return this.name;
-	}
+    public String getResourceType() {
+        return this.resourceType;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putBodyParameter("Name", name);
-		}
-	}
+    public void setResourceType(String resourceType) {
+        this.resourceType = resourceType;
+        if (resourceType != null) {
+            putBodyParameter("ResourceType", resourceType);
+        }
+    }
 
-	public String getResourceType() {
-		return this.resourceType;
-	}
+    public Long getBid() {
+        return this.bid;
+    }
 
-	public void setResourceType(String resourceType) {
-		this.resourceType = resourceType;
-		if(resourceType != null){
-			putBodyParameter("ResourceType", resourceType);
-		}
-	}
+    public void setBid(Long bid) {
+        this.bid = bid;
+        if (bid != null) {
+            putBodyParameter("Bid", bid.toString());
+        }
+    }
 
-	public Long getBid() {
-		return this.bid;
-	}
-
-	public void setBid(Long bid) {
-		this.bid = bid;
-		if(bid != null){
-			putBodyParameter("Bid", bid.toString());
-		}
-	}
-
-	@Override
-	public Class<AddResourceResponse> getResponseClass() {
-		return AddResourceResponse.class;
-	}
+    @Override
+    public Class<AddResourceResponse> getResponseClass() {
+        return AddResourceResponse.class;
+    }
 
 }

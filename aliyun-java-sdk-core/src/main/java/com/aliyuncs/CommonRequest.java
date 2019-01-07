@@ -1,15 +1,18 @@
 package com.aliyuncs;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import com.aliyuncs.http.FormatType;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.regions.ProductDomain;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class CommonRequest {
 
+    private final Map<String, String> queryParameters = new HashMap<String, String>();
+    private final Map<String, String> bodyParameters = new HashMap<String, String>();
+    private final Map<String, String> headParameters = new HashMap<String, String>();
     private String version = null;
     private String product = null;
     private String action = null;
@@ -17,10 +20,6 @@ public class CommonRequest {
     private String endpointType = null;
     private String regionId = null;
     private ProtocolType protocol = null;
-    private final Map<String, String> queryParameters = new HashMap<String, String>();
-    private final Map<String, String> bodyParameters = new HashMap<String, String>();
-    private final Map<String, String> headParameters = new HashMap<String, String>();
-
     private Integer connectTimeout = null;
     private Integer readTimeout = null;
     private MethodType method = null;
@@ -37,7 +36,7 @@ public class CommonRequest {
     public AcsRequest buildRequest() {
         if (uriPattern != null) {
             CommonRoaRequest request = new CommonRoaRequest(product);
-            request.setUriPattern(uriPattern);
+            request.setSysUriPattern(uriPattern);
             for (String pathParamKey : pathParameters.keySet()) {
                 request.putPathParameter(pathParamKey, pathParameters.get(pathParamKey));
             }
@@ -57,35 +56,35 @@ public class CommonRequest {
         request.putHeaderParameter("x-sdk-invoke-type", "common");
 
         if (version != null) {
-            request.setVersion(version);
+            request.setSysVersion(version);
         }
         if (action != null) {
-            request.setActionName(action);
+            request.setSysActionName(action);
         }
         if (regionId != null) {
-            request.setRegionId(regionId);
+            request.setSysRegionId(regionId);
         }
         if (locationProduct != null) {
-            request.setLocationProduct(locationProduct);
+            request.setSysLocationProduct(locationProduct);
         }
         if (endpointType != null) {
-            request.setEndpointType(endpointType);
+            request.setSysEndpointType(endpointType);
         }
         if (connectTimeout != null) {
-            request.setConnectTimeout(connectTimeout);
+            request.setSysConnectTimeout(connectTimeout);
         }
         if (readTimeout != null) {
-            request.setReadTimeout(readTimeout);
+            request.setSysReadTimeout(readTimeout);
         }
         if (method != null) {
-            request.setMethod(method);
+            request.setSysMethod(method);
         }
         if (protocol != null) {
-            request.setProtocol(protocol);
+            request.setSysProtocol(protocol);
         }
         if (domain != null) {
             ProductDomain productDomain = new ProductDomain(product, domain);
-            request.setProductDomain(productDomain);
+            request.setSysProductDomain(productDomain);
         }
         if (httpContent != null) {
             request.setHttpContent(httpContent, encoding, httpContentType);
@@ -101,58 +100,72 @@ public class CommonRequest {
         }
     }
 
+    @Deprecated
     public String getVersion() {
         return version;
     }
 
+    @Deprecated
     public void setVersion(String version) {
         this.version = version;
     }
 
+    @Deprecated
     public String getProduct() {
         return product;
     }
 
+    @Deprecated
     public void setProduct(String product) {
         this.product = product;
     }
 
+    @Deprecated
     public String getAction() {
         return action;
     }
 
+    @Deprecated
     public void setAction(String action) {
         this.action = action;
     }
 
+    @Deprecated
     public String getLocationProduct() {
         return locationProduct;
     }
 
+    @Deprecated
     public void setLocationProduct(String locationProduct) {
         this.locationProduct = locationProduct;
     }
 
+    @Deprecated
     public String getEndpointType() {
         return endpointType;
     }
 
+    @Deprecated
     public void setEndpointType(String endpointType) {
         this.endpointType = endpointType;
     }
 
+    @Deprecated
     public String getRegionId() {
         return regionId;
     }
 
+    @Deprecated
     public void setRegionId(String regionId) {
         this.regionId = regionId;
     }
 
+    @Deprecated
     public ProtocolType getProtocol() {
         return protocol;
     }
 
+    @Deprecated
     public void setProtocol(ProtocolType protocol) {
         this.protocol = protocol;
     }
@@ -176,34 +189,42 @@ public class CommonRequest {
         map.put(name, String.valueOf(value));
     }
 
+    @Deprecated
     public Integer getConnectTimeout() {
         return connectTimeout;
     }
 
+    @Deprecated
     public void setConnectTimeout(Integer connectTimeout) {
         this.connectTimeout = connectTimeout;
     }
 
+    @Deprecated
     public Integer getReadTimeout() {
         return readTimeout;
     }
 
+    @Deprecated
     public void setReadTimeout(Integer readTimeout) {
         this.readTimeout = readTimeout;
     }
 
+    @Deprecated
     public MethodType getMethod() {
         return method;
     }
 
+    @Deprecated
     public void setMethod(MethodType method) {
         this.method = method;
     }
 
+    @Deprecated
     public String getUriPattern() {
         return uriPattern;
     }
 
+    @Deprecated
     public void setUriPattern(String uriPattern) {
         this.uriPattern = uriPattern;
     }
@@ -212,10 +233,12 @@ public class CommonRequest {
         setParameter(this.pathParameters, name, value);
     }
 
+    @Deprecated
     public String getDomain() {
         return domain;
     }
 
+    @Deprecated
     public void setDomain(String domain) {
         this.domain = domain;
     }
@@ -228,22 +251,27 @@ public class CommonRequest {
         return httpContent;
     }
 
+    @Deprecated
     public String getEncoding() {
         return encoding;
     }
 
+    @Deprecated
     public Map<String, String> getQueryParameters() {
         return queryParameters;
     }
 
+    @Deprecated
     public Map<String, String> getBodyParameters() {
         return bodyParameters;
     }
 
+    @Deprecated
     public Map<String, String> getHeadParameters() {
         return headParameters;
     }
 
+    @Deprecated
     public Map<String, String> getPathParameters() {
         return pathParameters;
     }
@@ -255,6 +283,123 @@ public class CommonRequest {
         this.httpContent = content;
         this.httpContentType = format;
         this.encoding = encoding;
+    }
+
+    public String getBizVersion() {
+        return version;
+    }
+
+    public void setSysVersion(String version) {
+        this.version = version;
+    }
+
+    public String getBizProduct() {
+        return product;
+    }
+
+    public void setSysProduct(String product) {
+        this.product = product;
+    }
+
+    public String getBizAction() {
+        return action;
+    }
+
+    public void setSysAction(String action) {
+        this.action = action;
+    }
+
+    public String getBizLocationProduct() {
+        return locationProduct;
+    }
+
+    public void setSysLocationProduct(String locationProduct) {
+        this.locationProduct = locationProduct;
+    }
+
+    public String getBizEndpointType() {
+        return endpointType;
+    }
+
+    public void setSysEndpointType(String endpointType) {
+        this.endpointType = endpointType;
+    }
+
+    public String getBizRegionId() {
+        return regionId;
+    }
+
+    public void setSysRegionId(String regionId) {
+        this.regionId = regionId;
+    }
+
+    public ProtocolType getBizProtocol() {
+        return protocol;
+    }
+
+    public void setSysProtocol(ProtocolType protocol) {
+        this.protocol = protocol;
+    }
+
+
+    public Integer getBizConnectTimeout() {
+        return connectTimeout;
+    }
+
+    public void setSysConnectTimeout(Integer connectTimeout) {
+        this.connectTimeout = connectTimeout;
+    }
+
+    public Integer getBizReadTimeout() {
+        return readTimeout;
+    }
+
+    public void setSysReadTimeout(Integer readTimeout) {
+        this.readTimeout = readTimeout;
+    }
+
+    public MethodType getBizMethod() {
+        return method;
+    }
+
+    public void setSysMethod(MethodType method) {
+        this.method = method;
+    }
+
+    public String getBizUriPattern() {
+        return uriPattern;
+    }
+
+    public void setSysUriPattern(String uriPattern) {
+        this.uriPattern = uriPattern;
+    }
+
+    public String getBizDomain() {
+        return domain;
+    }
+
+    public void setSysDomain(String domain) {
+        this.domain = domain;
+    }
+
+    public String getBizEncoding() {
+        return encoding;
+    }
+
+    public Map<String, String> getBizQueryParameters() {
+        return queryParameters;
+    }
+
+    public Map<String, String> getBizBodyParameters() {
+        return bodyParameters;
+    }
+
+    public Map<String, String> getBizHeadParameters() {
+        return headParameters;
+    }
+
+    public Map<String, String> getBizPathParameters() {
+        return pathParameters;
     }
 
 }

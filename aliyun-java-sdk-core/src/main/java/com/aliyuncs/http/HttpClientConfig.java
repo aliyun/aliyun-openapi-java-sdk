@@ -1,14 +1,13 @@
 package com.aliyuncs.http;
 
-import java.security.SecureRandom;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.concurrent.ExecutorService;
-
 import javax.net.ssl.HostnameVerifier;
 import javax.net.ssl.KeyManager;
 import javax.net.ssl.SSLSocketFactory;
 import javax.net.ssl.X509TrustManager;
+import java.security.SecureRandom;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.concurrent.ExecutorService;
 
 
 public class HttpClientConfig {
@@ -222,11 +221,17 @@ public class HttpClientConfig {
         this.customClientClassName = customClientClassName;
     }
 
-    public Object getExtParam(Object key) {return extParams.get(key);}
+    public Object getExtParam(Object key) {
+        return extParams.get(key);
+    }
 
-    public Object setExtParam(String key, Object value) {return extParams.put(key, value);}
+    public Object setExtParam(String key, Object value) {
+        return extParams.put(key, value);
+    }
 
-    public boolean containsExtParam(Object key) {return extParams.containsKey(key);}
+    public boolean containsExtParam(Object key) {
+        return extParams.containsKey(key);
+    }
 
     public boolean isIgnoreSSLCerts() {
         return ignoreSSLCerts;

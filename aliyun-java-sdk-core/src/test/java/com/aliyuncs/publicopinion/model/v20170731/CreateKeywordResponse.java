@@ -24,42 +24,41 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
- * @version 
  */
 public class CreateKeywordResponse extends AcsResponse {
 
-	private String traceId;
+    private String traceId;
 
-	private Integer errCode;
+    private Integer errCode;
 
-	private Long result;
+    private Long result;
 
-	public String getTraceId() {
-		return this.traceId;
-	}
+    public String getTraceId() {
+        return this.traceId;
+    }
 
-	public void setTraceId(String traceId) {
-		this.traceId = traceId;
-	}
+    public void setTraceId(String traceId) {
+        this.traceId = traceId;
+    }
 
-	public Integer getErrCode() {
-		return this.errCode;
-	}
+    public Integer getErrCode() {
+        return this.errCode;
+    }
 
-	public void setErrCode(Integer errCode) {
-		this.errCode = errCode;
-	}
+    public void setErrCode(Integer errCode) {
+        this.errCode = errCode;
+    }
 
-	public Long getResult() {
-		return this.result;
-	}
+    public Long getResult() {
+        return this.result;
+    }
 
-	public void setResult(Long result) {
-		this.result = result;
-	}
+    public void setResult(Long result) {
+        this.result = result;
+    }
 
-	@Override
-	public CreateKeywordResponse getInstance(UnmarshallerContext context) {
-		return	CreateKeywordResponseUnmarshaller.unmarshall(this, context);
-	}
+    @Override
+    public CreateKeywordResponse getInstance(UnmarshallerContext context) {
+        return CreateKeywordResponseUnmarshaller.unmarshall(this, context);
+    }
 }

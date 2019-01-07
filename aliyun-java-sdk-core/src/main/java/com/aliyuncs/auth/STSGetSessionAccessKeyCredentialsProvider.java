@@ -25,18 +25,18 @@ package com.aliyuncs.auth;
 
 import com.aliyuncs.DefaultAcsClient;
 import com.aliyuncs.IAcsClient;
-import com.aliyuncs.auth.sts.GetSessionAccessKeyRequest;
 import com.aliyuncs.auth.sts.GenerateSessionAccessKeyResponse;
+import com.aliyuncs.auth.sts.GetSessionAccessKeyRequest;
 import com.aliyuncs.exceptions.ClientException;
 import com.aliyuncs.exceptions.ServerException;
 import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.profile.IClientProfile;
 
-public class STSGetSessionAccessKeyCredentialsProvider implements AlibabaCloudCredentialsProvider{
+public class STSGetSessionAccessKeyCredentialsProvider implements AlibabaCloudCredentialsProvider {
 
     public static final int DEFAULT_DURATION_SECONDS = 3600;
-    private final IAcsClient stsClient;
     private final KeyPairCredentials keyPairCredentials;
+    private IAcsClient stsClient;
     private long sessionDurationSeconds = DEFAULT_DURATION_SECONDS;
     private BasicSessionCredentials sessionCredentials = null;
 
@@ -52,6 +52,11 @@ public class STSGetSessionAccessKeyCredentialsProvider implements AlibabaCloudCr
         return this;
     }
 
+    public STSGetSessionAccessKeyCredentialsProvider withSTSClient(IAcsClient client) {
+        this.stsClient = client;
+        return this;
+    }
+
     @Override
     public AlibabaCloudCredentials getCredentials() throws ClientException, ServerException {
         if (sessionCredentials == null || sessionCredentials.willSoonExpire()) {
@@ -63,16 +68,16 @@ public class STSGetSessionAccessKeyCredentialsProvider implements AlibabaCloudCr
     private BasicSessionCredentials getNewSessionCredentials() throws ClientException, ServerException {
         GetSessionAccessKeyRequest request = new GetSessionAccessKeyRequest();
         request.setPublicKeyId(keyPairCredentials.getAccessKeyId());
-        request.setDurationSeconds((int)sessionDurationSeconds);
-        request.setProtocol(ProtocolType.HTTPS);
+        request.setDurationSeconds((int) sessionDurationSeconds);
+        request.setSysProtocol(ProtocolType.HTTPS);
 
         GenerateSessionAccessKeyResponse response = this.stsClient.getAcsResponse(request);
 
         return new BasicSessionCredentials(
-            response.getSessionAccessKey().getSessionAccessKeyId(),
-            response.getSessionAccessKey().getSessionAccessKeySecert(),
-            null,
-            sessionDurationSeconds
+                response.getSessionAccessKey().getSessionAccessKeyId(),
+                response.getSessionAccessKey().getSessionAccessKeySecert(),
+                null,
+                sessionDurationSeconds
         );
     }
 }

@@ -1,10 +1,10 @@
 package com.aliyuncs.utils;
 
+import org.junit.Test;
+
 import java.io.Closeable;
 import java.io.IOException;
 import java.io.StringReader;
-
-import org.junit.Test;
 
 public class IOUtilsTest {
 

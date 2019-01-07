@@ -18,12 +18,12 @@
  */
 package com.aliyuncs.ecs.v20140526.transform;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.aliyuncs.ecs.v20140526.model.DescribeRegionsResponse;
 import com.aliyuncs.ecs.v20140526.model.DescribeRegionsResponse.Region;
 import com.aliyuncs.transform.UnmarshallerContext;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class DescribeRegionsResponseUnmarshaller {
 

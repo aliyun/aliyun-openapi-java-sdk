@@ -25,81 +25,80 @@ import com.google.gson.annotations.SerializedName;
 
 /**
  * @author auto create
- * @version 
  */
 public class TestRpcApiResponse extends AcsResponse {
 
-	@SerializedName("RemoteAddr")
-	private String remoteAddr;
+    @SerializedName("RemoteAddr")
+    private String remoteAddr;
 
-	@SerializedName("QueryString")
-	private String queryString;
+    @SerializedName("QueryString")
+    private String queryString;
 
-	@SerializedName("RequestURL")
-	private String requestURL;
+    @SerializedName("RequestURL")
+    private String requestURL;
 
-	@SerializedName("Params")
-	private Params params;
+    @SerializedName("Params")
+    private Params params;
 
-	public String getRemoteAddr() {
-		return this.remoteAddr;
-	}
+    public String getRemoteAddr() {
+        return this.remoteAddr;
+    }
 
-	public void setRemoteAddr(String remoteAddr) {
-		this.remoteAddr = remoteAddr;
-	}
+    public void setRemoteAddr(String remoteAddr) {
+        this.remoteAddr = remoteAddr;
+    }
 
-	public String getQueryString() {
-		return this.queryString;
-	}
+    public String getQueryString() {
+        return this.queryString;
+    }
 
-	public void setQueryString(String queryString) {
-		this.queryString = queryString;
-	}
+    public void setQueryString(String queryString) {
+        this.queryString = queryString;
+    }
 
-	public String getRequestURL() {
-		return this.requestURL;
-	}
+    public String getRequestURL() {
+        return this.requestURL;
+    }
 
-	public void setRequestURL(String requestURL) {
-		this.requestURL = requestURL;
-	}
+    public void setRequestURL(String requestURL) {
+        this.requestURL = requestURL;
+    }
 
-	public Params getParams() {
-		return this.params;
-	}
+    public Params getParams() {
+        return this.params;
+    }
 
-	public void setParams(Params params) {
-		this.params = params;
-	}
+    public void setParams(Params params) {
+        this.params = params;
+    }
 
-	public static class Params {
+    @Override
+    public TestRpcApiResponse getInstance(UnmarshallerContext context) {
+        return TestRpcApiResponseUnmarshaller.unmarshall(this, context);
+    }
 
-		@SerializedName("QueryParam")
-		private String queryParam;
+    public static class Params {
 
-		@SerializedName("BodyParam")
-		private String bodyParam;
+        @SerializedName("QueryParam")
+        private String queryParam;
 
-		public String getQueryParam() {
-			return this.queryParam;
-		}
+        @SerializedName("BodyParam")
+        private String bodyParam;
 
-		public void setQueryParam(String queryParam) {
-			this.queryParam = queryParam;
-		}
+        public String getQueryParam() {
+            return this.queryParam;
+        }
 
-		public String getBodyParam() {
-			return this.bodyParam;
-		}
+        public void setQueryParam(String queryParam) {
+            this.queryParam = queryParam;
+        }
 
-		public void setBodyParam(String bodyParam) {
-			this.bodyParam = bodyParam;
-		}
-	}
+        public String getBodyParam() {
+            return this.bodyParam;
+        }
 
-	@Override
-	public TestRpcApiResponse getInstance(UnmarshallerContext context) {
-		return	TestRpcApiResponseUnmarshaller.unmarshall(this, context);
-	}
+        public void setBodyParam(String bodyParam) {
+            this.bodyParam = bodyParam;
+        }
+    }
 }

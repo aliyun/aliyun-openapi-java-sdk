@@ -18,11 +18,11 @@
  */
 package com.aliyuncs.oss.model;
 
-import java.util.List;
-
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.oss.transform.ListBucketResponseUnmashaller;
 import com.aliyuncs.transform.UnmarshallerContext;
+
+import java.util.List;
 
 public class ListBucketResponse extends AcsResponse {
 

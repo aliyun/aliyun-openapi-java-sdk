@@ -18,26 +18,26 @@
  */
 package com.aliyuncs.publicopinion.transform.v20170731;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.aliyuncs.publicopinion.model.v20170731.QueryTopicsResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class QueryTopicsResponseUnmarshaller {
 
-	public static QueryTopicsResponse unmarshall(QueryTopicsResponse queryTopicsResponse, UnmarshallerContext context) {
-		
-		queryTopicsResponse.setTraceId(context.stringValue("QueryTopicsResponse.traceId"));
-		queryTopicsResponse.setErrCode(context.integerValue("QueryTopicsResponse.errCode"));
+    public static QueryTopicsResponse unmarshall(QueryTopicsResponse queryTopicsResponse, UnmarshallerContext context) {
 
-		List<String> result = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("QueryTopicsResponse.result.Length"); i++) {
-			result.add(context.stringValue("QueryTopicsResponse.result["+ i +"]"));
-		}
-		queryTopicsResponse.setResult(result);
-	 
-	 	return queryTopicsResponse;
-	}
+        queryTopicsResponse.setTraceId(context.stringValue("QueryTopicsResponse.traceId"));
+        queryTopicsResponse.setErrCode(context.integerValue("QueryTopicsResponse.errCode"));
+
+        List<String> result = new ArrayList<String>();
+        for (int i = 0; i < context.lengthValue("QueryTopicsResponse.result.Length"); i++) {
+            result.add(context.stringValue("QueryTopicsResponse.result[" + i + "]"));
+        }
+        queryTopicsResponse.setResult(result);
+
+        return queryTopicsResponse;
+    }
 }

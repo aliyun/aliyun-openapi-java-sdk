@@ -27,14 +27,12 @@ public class GetSessionAccessKeyRequest extends RpcAcsRequest<GenerateSessionAcc
     private static String product = "Sts";
 
     private static String action = "GenerateSessionAccessKey";
+    private int durationSeconds = 3600;
+    private String publicKeyId;
 
     public GetSessionAccessKeyRequest() {
         super(product, version, action);
     }
-
-    private int durationSeconds = 3600;
-
-    private String publicKeyId;
 
     public int getDurationSeconds() {
         return durationSeconds;

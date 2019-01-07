@@ -23,44 +23,42 @@ import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
- * @version 
  */
 public class CreateTopicRequest extends RpcAcsRequest<CreateTopicResponse> {
-	
-	public CreateTopicRequest() {
-		super("publicopinion", "2017-07-31", "CreateTopic");
-		setMethod(MethodType.POST);
-	}
 
-	private String desc;
+    private String desc;
+    private String name;
 
-	private String name;
+    public CreateTopicRequest() {
+        super("publicopinion", "2017-07-31", "CreateTopic");
+        setMethod(MethodType.POST);
+    }
 
-	public String getDesc() {
-		return this.desc;
-	}
+    public String getDesc() {
+        return this.desc;
+    }
 
-	public void setDesc(String desc) {
-		this.desc = desc;
-		if(desc != null){
-			putBodyParameter("desc", desc);
-		}
-	}
+    public void setDesc(String desc) {
+        this.desc = desc;
+        if (desc != null) {
+            putBodyParameter("desc", desc);
+        }
+    }
 
-	public String getName() {
-		return this.name;
-	}
+    public String getName() {
+        return this.name;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putBodyParameter("name", name);
-		}
-	}
+    public void setName(String name) {
+        this.name = name;
+        if (name != null) {
+            putBodyParameter("name", name);
+        }
+    }
 
-	@Override
-	public Class<CreateTopicResponse> getResponseClass() {
-		return CreateTopicResponse.class;
-	}
+    @Override
+    public Class<CreateTopicResponse> getResponseClass() {
+        return CreateTopicResponse.class;
+    }
 
 }

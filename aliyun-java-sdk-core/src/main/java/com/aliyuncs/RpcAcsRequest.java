@@ -1,21 +1,16 @@
 package com.aliyuncs;
 
-import java.io.UnsupportedEncodingException;
-import java.security.InvalidKeyException;
-import java.util.HashMap;
-import java.util.Map;
-
-import com.aliyuncs.auth.AlibabaCloudCredentials;
-import com.aliyuncs.auth.BasicSessionCredentials;
-import com.aliyuncs.auth.BearerTokenCredentials;
-import com.aliyuncs.auth.KeyPairCredentials;
-import com.aliyuncs.auth.RpcSignatureComposer;
-import com.aliyuncs.auth.Signer;
+import com.aliyuncs.auth.*;
 import com.aliyuncs.http.FormatType;
 import com.aliyuncs.http.HttpRequest;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.regions.ProductDomain;
 import com.aliyuncs.utils.ParameterHelper;
+
+import java.io.UnsupportedEncodingException;
+import java.security.InvalidKeyException;
+import java.util.HashMap;
+import java.util.Map;
 
 public abstract class RpcAcsRequest<T extends AcsResponse> extends AcsRequest<T> {
 
@@ -26,36 +21,36 @@ public abstract class RpcAcsRequest<T extends AcsResponse> extends AcsRequest<T>
 
     public RpcAcsRequest(String product, String version) {
         super(product);
-        this.setVersion(version);
+        this.setSysVersion(version);
         initialize();
     }
 
     public RpcAcsRequest(String product, String version, String action) {
         super(product);
-        this.setVersion(version);
-        this.setActionName(action);
+        this.setSysVersion(version);
+        this.setSysActionName(action);
         initialize();
     }
 
     public RpcAcsRequest(String product, String version, String action, String locationProduct) {
         super(product);
-        this.setVersion(version);
-        this.setActionName(action);
-        this.setLocationProduct(locationProduct);
+        this.setSysVersion(version);
+        this.setSysActionName(action);
+        this.setSysLocationProduct(locationProduct);
         initialize();
     }
 
     public RpcAcsRequest(String product, String version, String action, String locationProduct, String endpointType) {
         super(product);
-        this.setVersion(version);
-        this.setActionName(action);
-        this.setLocationProduct(locationProduct);
-        this.setEndpointType(endpointType);
+        this.setSysVersion(version);
+        this.setSysActionName(action);
+        this.setSysLocationProduct(locationProduct);
+        this.setSysEndpointType(endpointType);
         initialize();
     }
 
     private void initialize() {
-        this.setMethod(MethodType.GET);
+        this.setSysMethod(MethodType.GET);
         this.setAcceptFormat(FormatType.XML);
         this.setHttpContentType(FormatType.FORM);
         this.composer = RpcSignatureComposer.getComposer();
@@ -86,10 +81,34 @@ public abstract class RpcAcsRequest<T extends AcsResponse> extends AcsRequest<T>
     }
 
     @Override
+    public void setSysActionName(String actionName) {
+        super.setSysActionName(actionName);
+        this.putQueryParameter("Action", actionName);
+    }
+
+    @Override
+    public void setSysVersion(String version) {
+        super.setSysVersion(version);
+        this.putQueryParameter("Version", version);
+    }
+
+    @Override
+    public void setSysAcceptFormat(FormatType acceptFormat) {
+        super.setSysAcceptFormat(acceptFormat);
+        this.putQueryParameter("Format", acceptFormat.toString());
+    }
+
+    @Override
+    public void setSysSecurityToken(String securityToken) {
+        super.setSysSecurityToken(securityToken);
+        this.putQueryParameter("SecurityToken", securityToken);
+    }
+
+    @Override
     public String composeUrl(String endpoint, Map<String, String> queries) throws UnsupportedEncodingException {
-        Map<String, String> mapQueries = (queries == null) ? this.getQueryParameters() : queries;
+        Map<String, String> mapQueries = (queries == null) ? this.getBizQueryParameters() : queries;
         StringBuilder urlBuilder = new StringBuilder("");
-        urlBuilder.append(this.getProtocol().toString());
+        urlBuilder.append(this.getBizProtocol().toString());
         urlBuilder.append("://").append(endpoint);
         if (-1 == urlBuilder.indexOf("?")) {
             urlBuilder.append("/?");
@@ -103,7 +122,7 @@ public abstract class RpcAcsRequest<T extends AcsResponse> extends AcsRequest<T>
                                    FormatType format, ProductDomain domain)
             throws InvalidKeyException, IllegalStateException, UnsupportedEncodingException {
 
-        Map<String, String> imutableMap = new HashMap<String, String>(this.getQueryParameters());
+        Map<String, String> imutableMap = new HashMap<String, String>(this.getBizQueryParameters());
         if (null != signer && null != credentials) {
             String accessKeyId = credentials.getAccessKeyId();
             String accessSecret = credentials.getAccessKeySecret();
@@ -119,10 +138,10 @@ public abstract class RpcAcsRequest<T extends AcsResponse> extends AcsRequest<T>
                     this.putQueryParameter("BearerToken", bearerToken);
                 }
             }
-            imutableMap = this.composer.refreshSignParameters(this.getQueryParameters(), signer, accessKeyId, format);
-            imutableMap.put("RegionId", getRegionId());
+            imutableMap = this.composer.refreshSignParameters(this.getBizQueryParameters(), signer, accessKeyId, format);
+            imutableMap.put("RegionId", getBizRegionId());
             Map<String, String> paramsToSign = new HashMap<String, String>(imutableMap);
-            Map<String, String> bodyParams = this.getBodyParameters();
+            Map<String, String> bodyParams = this.getBizBodyParameters();
             if (bodyParams != null && !bodyParams.isEmpty()) {
                 byte[] data;
                 if (FormatType.JSON == this.getHttpContentType()) {
@@ -137,7 +156,7 @@ public abstract class RpcAcsRequest<T extends AcsResponse> extends AcsRequest<T>
                 paramsToSign.putAll(bodyParams);
             }
             String strToSign = this.composer.composeStringToSign(
-                    this.getMethod(), null, signer, paramsToSign, null, null);
+                    this.getBizMethod(), null, signer, paramsToSign, null, null);
 
             String signature;
             if (credentials instanceof KeyPairCredentials) {
@@ -147,7 +166,7 @@ public abstract class RpcAcsRequest<T extends AcsResponse> extends AcsRequest<T>
             }
             imutableMap.put("Signature", signature);
         }
-        setUrl(this.composeUrl(domain.getDomianName(), imutableMap));
+        setSysUrl(this.composeUrl(domain.getDomianName(), imutableMap));
         return this;
     }
 }

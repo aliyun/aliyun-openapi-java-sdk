@@ -24,13 +24,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DeleteTopicResponseUnmarshaller {
 
-	public static DeleteTopicResponse unmarshall(DeleteTopicResponse deleteTopicResponse, UnmarshallerContext context) {
-		
-		deleteTopicResponse.setTraceId(context.stringValue("DeleteTopicResponse.traceId"));
-		deleteTopicResponse.setSuccess(context.booleanValue("DeleteTopicResponse.success"));
-		deleteTopicResponse.setResult(context.booleanValue("DeleteTopicResponse.result"));
-		deleteTopicResponse.setErrCode(context.integerValue("DeleteTopicResponse.errCode"));
-	 
-	 	return deleteTopicResponse;
-	}
+    public static DeleteTopicResponse unmarshall(DeleteTopicResponse deleteTopicResponse, UnmarshallerContext context) {
+
+        deleteTopicResponse.setTraceId(context.stringValue("DeleteTopicResponse.traceId"));
+        deleteTopicResponse.setSuccess(context.booleanValue("DeleteTopicResponse.success"));
+        deleteTopicResponse.setResult(context.booleanValue("DeleteTopicResponse.result"));
+        deleteTopicResponse.setErrCode(context.integerValue("DeleteTopicResponse.errCode"));
+
+        return deleteTopicResponse;
+    }
 }

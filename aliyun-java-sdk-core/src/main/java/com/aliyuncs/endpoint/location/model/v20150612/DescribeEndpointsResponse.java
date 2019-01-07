@@ -1,9 +1,10 @@
 package com.aliyuncs.endpoint.location.model.v20150612;
 
-import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.endpoint.location.transform.v20150612.DescribeEndpointsResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
+
+import java.util.List;
 
 public class DescribeEndpointsResponse extends AcsResponse {
 
@@ -35,6 +36,11 @@ public class DescribeEndpointsResponse extends AcsResponse {
 
     public void setEndpoints(List<Endpoint> endpoints) {
         this.endpoints = endpoints;
+    }
+
+    @Override
+    public DescribeEndpointsResponse getInstance(UnmarshallerContext context) {
+        return DescribeEndpointsResponseUnmarshaller.unmarshall(this, context);
     }
 
     public static class Endpoint {
@@ -98,10 +104,5 @@ public class DescribeEndpointsResponse extends AcsResponse {
         public void setProtocols(List<String> protocols) {
             this.protocols = protocols;
         }
-    }
-
-    @Override
-    public DescribeEndpointsResponse getInstance(UnmarshallerContext context) {
-        return DescribeEndpointsResponseUnmarshaller.unmarshall(this, context);
     }
 }

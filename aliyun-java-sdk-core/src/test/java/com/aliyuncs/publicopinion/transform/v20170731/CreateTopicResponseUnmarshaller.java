@@ -24,12 +24,12 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CreateTopicResponseUnmarshaller {
 
-	public static CreateTopicResponse unmarshall(CreateTopicResponse createTopicResponse, UnmarshallerContext context) {
-		
-		createTopicResponse.setTraceId(context.stringValue("createTopicResponse.traceId"));
-		createTopicResponse.setResult(context.longValue("createTopicResponse.result"));
-		createTopicResponse.setErrCode(context.integerValue("createTopicResponse.errCode"));
-	 
-	 	return createTopicResponse;
-	}
+    public static CreateTopicResponse unmarshall(CreateTopicResponse createTopicResponse, UnmarshallerContext context) {
+
+        createTopicResponse.setTraceId(context.stringValue("createTopicResponse.traceId"));
+        createTopicResponse.setResult(context.longValue("createTopicResponse.result"));
+        createTopicResponse.setErrCode(context.integerValue("createTopicResponse.errCode"));
+
+        return createTopicResponse;
+    }
 }

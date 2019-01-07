@@ -28,6 +28,6 @@ public interface ISigner {
     public String getSignerVersion();
 
     public String signString(String source, String accessSecret)
-        throws InvalidKeyException, IllegalStateException;
+            throws InvalidKeyException, IllegalStateException;
 
 }

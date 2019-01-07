@@ -4,15 +4,13 @@ import com.aliyuncs.RpcAcsRequest;
 
 public class DescribeEndpointsRequest extends RpcAcsRequest<DescribeEndpointsResponse> {
 
+    private String id;
+    private String serviceCode;
+    private String type;
+
     public DescribeEndpointsRequest() {
         super("Location", "2015-06-12", "DescribeEndpoints");
     }
-
-    private String id;
-
-    private String serviceCode;
-
-    private String type;
 
     public String getId() {
         return this.id;

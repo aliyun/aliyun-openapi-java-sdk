@@ -10,7 +10,7 @@ import javax.net.ssl.X509TrustManager;
 import java.security.SecureRandom;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.concurrent.*;
+import java.util.concurrent.Executors;
 
 public class HttpClientConfigTest {
 

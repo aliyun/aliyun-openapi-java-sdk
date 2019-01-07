@@ -27,45 +27,45 @@ import com.aliyuncs.profile.IClientProfile;
 public interface IAcsClient {
 
     public <T extends AcsResponse> HttpResponse doAction(AcsRequest<T> request)
-        throws ClientException, ServerException;
+            throws ClientException, ServerException;
 
     public <T extends AcsResponse> HttpResponse doAction(AcsRequest<T> request,
                                                          boolean autoRetry, int maxRetryCounts)
-        throws ClientException, ServerException;
+            throws ClientException, ServerException;
 
     public <T extends AcsResponse> HttpResponse doAction(AcsRequest<T> request, IClientProfile profile)
-        throws ClientException, ServerException;
+            throws ClientException, ServerException;
 
     public <T extends AcsResponse> HttpResponse doAction(AcsRequest<T> request, String regionId,
                                                          Credential credential) throws ClientException, ServerException;
 
     public <T extends AcsResponse> T getAcsResponse(AcsRequest<T> request)
-        throws ServerException, ClientException;
+            throws ServerException, ClientException;
 
     public <T extends AcsResponse> T getAcsResponse(AcsRequest<T> request,
                                                     boolean autoRetry, int maxRetryCounts)
-        throws ServerException, ClientException;
+            throws ServerException, ClientException;
 
     public <T extends AcsResponse> T getAcsResponse(AcsRequest<T> request,
                                                     IClientProfile profile) throws ServerException, ClientException;
 
     public <T extends AcsResponse> T getAcsResponse(AcsRequest<T> request,
                                                     String regionId, Credential credential)
-        throws ServerException, ClientException;
+            throws ServerException, ClientException;
 
     public <T extends AcsResponse> T getAcsResponse(AcsRequest<T> request,
                                                     String regionId)
-        throws ServerException, ClientException;
+            throws ServerException, ClientException;
 
     public CommonResponse getCommonResponse(CommonRequest request) throws ServerException, ClientException;
 
     public <T extends AcsResponse> HttpResponse doAction(AcsRequest<T> request, boolean autoRetry,
                                                          int maxRetryCounts, IClientProfile profile)
-        throws ClientException, ServerException;
+            throws ClientException, ServerException;
 
-    public void restoreSSLCertificate() ;
+    public void restoreSSLCertificate();
 
-    public void ignoreSSLCertificate() ;
+    public void ignoreSSLCertificate();
 
     public abstract void shutdown();
 

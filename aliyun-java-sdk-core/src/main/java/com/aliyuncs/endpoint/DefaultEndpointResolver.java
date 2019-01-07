@@ -66,6 +66,7 @@ public class DefaultEndpointResolver implements EndpointResolver {
         this(client, null, usingInternalLocationService);
     }
 
+    @Override
     public String resolve(ResolveEndpointRequest request) throws ClientException {
         return this.insideEndpointResolver.resolve(request);
     }

@@ -1,21 +1,17 @@
 package com.aliyuncs;
 
+import com.aliyuncs.auth.*;
+import com.aliyuncs.http.FormatType;
+import com.aliyuncs.http.HttpRequest;
+import com.aliyuncs.regions.ProductDomain;
+import com.aliyuncs.utils.ParameterHelper;
+
 import java.io.UnsupportedEncodingException;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-
-import com.aliyuncs.auth.AlibabaCloudCredentials;
-import com.aliyuncs.auth.BasicSessionCredentials;
-import com.aliyuncs.auth.BearerTokenCredentials;
-import com.aliyuncs.auth.RoaSignatureComposer;
-import com.aliyuncs.auth.Signer;
-import com.aliyuncs.http.FormatType;
-import com.aliyuncs.http.HttpRequest;
-import com.aliyuncs.regions.ProductDomain;
-import com.aliyuncs.utils.ParameterHelper;
 
 public abstract class RoaAcsRequest<T extends AcsResponse> extends AcsRequest<T> {
 
@@ -29,31 +25,31 @@ public abstract class RoaAcsRequest<T extends AcsResponse> extends AcsRequest<T>
 
     public RoaAcsRequest(String product, String version) {
         super(product);
-        this.setVersion(version);
+        this.setSysVersion(version);
         initialize();
     }
 
     public RoaAcsRequest(String product, String version, String action) {
         super(product);
-        this.setVersion(version);
-        this.setActionName(action);
+        this.setSysVersion(version);
+        this.setSysActionName(action);
         initialize();
     }
 
     public RoaAcsRequest(String product, String version, String action, String locationProduct) {
         super(product);
-        this.setVersion(version);
-        this.setActionName(action);
-        this.setLocationProduct(locationProduct);
+        this.setSysVersion(version);
+        this.setSysActionName(action);
+        this.setSysLocationProduct(locationProduct);
         initialize();
     }
 
     public RoaAcsRequest(String product, String version, String action, String locationProduct, String endpointType) {
         super(product);
-        this.setVersion(version);
-        this.setActionName(action);
-        this.setLocationProduct(locationProduct);
-        this.setEndpointType(endpointType);
+        this.setSysVersion(version);
+        this.setSysActionName(action);
+        this.setSysLocationProduct(locationProduct);
+        this.setSysEndpointType(endpointType);
         initialize();
     }
 
@@ -75,7 +71,24 @@ public abstract class RoaAcsRequest<T extends AcsResponse> extends AcsRequest<T>
         this.putHeaderParameter("x-acs-security-token", securityToken);
     }
 
+    @Override
+    public void setSysVersion(String version) {
+        super.setSysVersion(version);
+        this.putHeaderParameter("x-acs-version", version);
+    }
+
+    @Override
+    public void setSysSecurityToken(String securityToken) {
+        super.setSysSecurityToken(securityToken);
+        this.putHeaderParameter("x-acs-security-token", securityToken);
+    }
+
+    @Deprecated
     public Map<String, String> getPathParameters() {
+        return Collections.unmodifiableMap(pathParameters);
+    }
+
+    public Map<String, String> getBizPathParameters() {
         return Collections.unmodifiableMap(pathParameters);
     }
 
@@ -89,10 +102,9 @@ public abstract class RoaAcsRequest<T extends AcsResponse> extends AcsRequest<T>
 
     @Override
     public String composeUrl(String endpoint, Map<String, String> queries) throws UnsupportedEncodingException {
-
-        Map<String, String> mapQueries = (queries == null) ? this.getQueryParameters() : queries;
+        Map<String, String> mapQueries = (queries == null) ? this.getBizQueryParameters() : queries;
         StringBuilder urlBuilder = new StringBuilder("");
-        urlBuilder.append(this.getProtocol().toString());
+        urlBuilder.append(this.getBizProtocol().toString());
         urlBuilder.append("://").append(endpoint);
         if (null != this.uriPattern) {
             urlBuilder.append(RoaSignatureComposer.replaceOccupiedParameters(uriPattern, this.getPathParameters()));
@@ -110,20 +122,29 @@ public abstract class RoaAcsRequest<T extends AcsResponse> extends AcsRequest<T>
         return url;
     }
 
+    @Deprecated
     public String getUriPattern() {
         return uriPattern;
     }
 
+    @Deprecated
     public void setUriPattern(String uriPattern) {
         this.uriPattern = uriPattern;
     }
 
-    @Override
-    public HttpRequest signRequest(Signer signer, AlibabaCloudCredentials credentials,
-                                   FormatType format, ProductDomain domain)
-            throws InvalidKeyException, IllegalStateException, UnsupportedEncodingException, NoSuchAlgorithmException {
+    public String getBizUriPattern() {
+        return uriPattern;
+    }
 
-        Map<String, String> bodyParams = this.getBodyParameters();
+    public void setSysUriPattern(String uriPattern) {
+        this.uriPattern = uriPattern;
+    }
+
+    @Override
+    public HttpRequest signRequest(Signer signer, AlibabaCloudCredentials credentials, FormatType format,
+                                   ProductDomain domain) throws InvalidKeyException, IllegalStateException,
+            UnsupportedEncodingException, NoSuchAlgorithmException {
+        Map<String, String> bodyParams = this.getBizBodyParameters();
         if (bodyParams != null && !bodyParams.isEmpty()) {
             byte[] data;
             if (FormatType.JSON == this.getHttpContentType()) {
@@ -137,10 +158,10 @@ public abstract class RoaAcsRequest<T extends AcsResponse> extends AcsRequest<T>
             this.setHttpContent(data, "UTF-8", null);
         }
 
-        Map<String, String> imutableMap = new HashMap<String, String>(this.getHeaders());
+        Map<String, String> imutableMap = new HashMap<String, String>(this.getBizHeaders());
         if (null != signer && null != credentials) {
             String accessKeyId = credentials.getAccessKeyId();
-            imutableMap = this.composer.refreshSignParameters(this.getHeaders(), signer, accessKeyId, format);
+            imutableMap = this.composer.refreshSignParameters(this.getBizHeaders(), signer, accessKeyId, format);
             if (credentials instanceof BasicSessionCredentials) {
                 String sessionToken = ((BasicSessionCredentials) credentials).getSessionToken();
                 if (null != sessionToken) {
@@ -153,12 +174,12 @@ public abstract class RoaAcsRequest<T extends AcsResponse> extends AcsRequest<T>
                     imutableMap.put("x-acs-bearer-token", bearerToken);
                 }
             }
-            String strToSign = this.composer.composeStringToSign(this.getMethod(), this.getUriPattern(), signer,
-                    this.getQueryParameters(), imutableMap, this.getPathParameters());
+            String strToSign = this.composer.composeStringToSign(this.getBizMethod(), this.getBizUriPattern(), signer,
+                    this.getBizQueryParameters(), imutableMap, this.getPathParameters());
             String signature = signer.signString(strToSign, credentials);
             imutableMap.put("Authorization", "acs " + accessKeyId + ":" + signature);
         }
-        this.setUrl(this.composeUrl(domain.getDomianName(), this.getQueryParameters()));
+        this.setSysUrl(this.composeUrl(domain.getDomianName(), this.getBizQueryParameters()));
         this.headers = imutableMap;
         return this;
     }

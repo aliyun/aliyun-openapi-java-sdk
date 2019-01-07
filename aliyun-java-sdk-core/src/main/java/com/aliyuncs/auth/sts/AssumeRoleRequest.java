@@ -28,22 +28,18 @@ import com.aliyuncs.http.ProtocolType;
 
 /**
  * @author auto create
- * @version
  */
 public class AssumeRoleRequest extends RpcAcsRequest<AssumeRoleResponse> {
+
+    private Long durationSeconds;
+    private String policy;
+    private String roleArn;
+    private String roleSessionName;
 
     public AssumeRoleRequest() {
         super("Sts", "2015-04-01", "AssumeRole");
         setProtocol(ProtocolType.HTTPS);
     }
-
-    private Long durationSeconds;
-
-    private String policy;
-
-    private String roleArn;
-
-    private String roleSessionName;
 
     public Long getDurationSeconds() {
         return this.durationSeconds;

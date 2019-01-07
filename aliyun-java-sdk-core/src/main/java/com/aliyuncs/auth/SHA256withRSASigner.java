@@ -19,25 +19,20 @@
 
 package com.aliyuncs.auth;
 
+import javax.xml.bind.DatatypeConverter;
 import java.io.UnsupportedEncodingException;
-import java.security.InvalidKeyException;
-import java.security.KeyFactory;
-import java.security.NoSuchAlgorithmException;
-import java.security.PrivateKey;
-import java.security.Signature;
-import java.security.SignatureException;
+import java.security.*;
 import java.security.spec.InvalidKeySpecException;
 import java.security.spec.PKCS8EncodedKeySpec;
-import javax.xml.bind.DatatypeConverter;
 
 /**
  * Created by haowei.yao on 2017/9/28.
  */
 
-public class SHA256withRSASigner extends Signer{
+public class SHA256withRSASigner extends Signer {
 
-    private static final String ALGORITHM_NAME = "SHA256withRSA";
     public static final String ENCODING = "UTF-8";
+    private static final String ALGORITHM_NAME = "SHA256withRSA";
 
     @Override
     public String signString(String stringToSign, String accessKeySecret) {

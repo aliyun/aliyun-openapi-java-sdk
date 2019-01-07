@@ -18,10 +18,10 @@
  */
 package com.aliyuncs.auth;
 
-import java.security.InvalidKeyException;
-
 import org.junit.Assert;
 import org.junit.Test;
+
+import java.security.InvalidKeyException;
 
 public class ShaHmac256Test {
 
@@ -31,7 +31,7 @@ public class ShaHmac256Test {
         ShaHmac256 shaHmac256 = new ShaHmac256();
         try {
             Assert.assertTrue("P0MHB3wlta/4BOKa5xt+Pii9WnDM6S+jgCbQ42p0KEg="
-                .equals(shaHmac256.signString("this is a ShaHmac256 test.", "AccessSecret")));
+                    .equals(shaHmac256.signString("this is a ShaHmac256 test.", "AccessSecret")));
         } catch (InvalidKeyException e) {
             Assert.assertTrue(false);
         } catch (IllegalStateException e) {

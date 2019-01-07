@@ -24,12 +24,12 @@ package com.aliyuncs.auth;
  */
 public class BasicSessionCredentials implements AlibabaCloudCredentials {
 
+    protected final long roleSessionDurationSeconds;
     private final String accessKeyId;
     private final String accessKeySecret;
     private final String sessionToken;
-    protected final long roleSessionDurationSeconds;
-    private long sessionStartedTimeInMilliSeconds = 0;
     private final double expireFact = 0.8;
+    private long sessionStartedTimeInMilliSeconds = 0;
 
     public BasicSessionCredentials(String accessKeyId, String accessKeySecret,
                                    String sessionToken) {

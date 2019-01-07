@@ -18,26 +18,26 @@
  */
 package com.aliyuncs.publicopinion.transform.v20170731;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.aliyuncs.publicopinion.model.v20170731.QueryKeywordsResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class QueryKeywordsResponseUnmarshaller {
 
-	public static QueryKeywordsResponse unmarshall(QueryKeywordsResponse queryKeywordsResponse, UnmarshallerContext context) {
-		
-		queryKeywordsResponse.setTraceId(context.stringValue("QueryKeywordsResponse.traceId"));
-		queryKeywordsResponse.setErrCode(context.integerValue("QueryKeywordsResponse.errCode"));
+    public static QueryKeywordsResponse unmarshall(QueryKeywordsResponse queryKeywordsResponse, UnmarshallerContext context) {
 
-		List<String> result = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("QueryKeywordsResponse.result.Length"); i++) {
-			result.add(context.stringValue("QueryKeywordsResponse.result["+ i +"]"));
-		}
-		queryKeywordsResponse.setResult(result);
-	 
-	 	return queryKeywordsResponse;
-	}
+        queryKeywordsResponse.setTraceId(context.stringValue("QueryKeywordsResponse.traceId"));
+        queryKeywordsResponse.setErrCode(context.integerValue("QueryKeywordsResponse.errCode"));
+
+        List<String> result = new ArrayList<String>();
+        for (int i = 0; i < context.lengthValue("QueryKeywordsResponse.result.Length"); i++) {
+            result.add(context.stringValue("QueryKeywordsResponse.result[" + i + "]"));
+        }
+        queryKeywordsResponse.setResult(result);
+
+        return queryKeywordsResponse;
+    }
 }

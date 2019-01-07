@@ -24,6 +24,7 @@ import com.aliyuncs.exceptions.ClientException;
 public class CredentialsBackupCompatibilityAdaptor extends Credential {
 
     private final AlibabaCloudCredentialsProvider provider;
+
     public CredentialsBackupCompatibilityAdaptor(AlibabaCloudCredentialsProvider provider) {
         this.provider = provider;
     }
@@ -56,7 +57,7 @@ public class CredentialsBackupCompatibilityAdaptor extends Credential {
     public String getSecurityToken() {
         AlibabaCloudCredentials credentials = getCredentials();
         if (credentials instanceof BasicSessionCredentials) {
-            return ((BasicSessionCredentials)credentials).getSessionToken();
+            return ((BasicSessionCredentials) credentials).getSessionToken();
         } else {
             return null;
         }

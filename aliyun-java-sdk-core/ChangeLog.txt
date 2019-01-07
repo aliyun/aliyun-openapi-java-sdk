@@ -1,3 +1,6 @@
+2019-01-07 Version: 4.3.0
+1, Separation of system and business parameters
+
 2018-12-27 Version: 4.2.5
 1, The actual data format defaults to a form.
 2, Signature adds timestamp and thread id.

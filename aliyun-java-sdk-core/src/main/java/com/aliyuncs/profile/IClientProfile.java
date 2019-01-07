@@ -39,22 +39,24 @@ public interface IClientProfile {
 
     /**
      * This method exists because ClientProfile holds too much modules like endpoint management
+     *
      * @param credentialsProvider
      */
     public void setCredentialsProvider(AlibabaCloudCredentialsProvider credentialsProvider);
 
     /**
-     *  use HttpClientConfig.setCertPath instead
+     * use HttpClientConfig.getCertPath instead
+     */
+    @Deprecated
+    public String getCertPath();
+
+    /**
+     * use HttpClientConfig.setCertPath instead
+     *
      * @param certPath
      */
     @Deprecated
     public void setCertPath(String certPath);
-
-    /**
-     *  use HttpClientConfig.getCertPath instead
-     */
-    @Deprecated
-    public String getCertPath();
 
     /**
      * http client configs

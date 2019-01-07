@@ -23,44 +23,42 @@ import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
- * @version 
  */
 public class DeleteKeywordRequest extends RpcAcsRequest<DeleteKeywordResponse> {
-	
-	public DeleteKeywordRequest() {
-		super("publicopinion", "2017-07-31", "DeleteKeyword");
-		setMethod(MethodType.POST);
-	}
 
-	private Long id;
+    private Long id;
+    private String name;
 
-	private String name;
+    public DeleteKeywordRequest() {
+        super("publicopinion", "2017-07-31", "DeleteKeyword");
+        setMethod(MethodType.POST);
+    }
 
-	public Long getId() {
-		return this.id;
-	}
+    public Long getId() {
+        return this.id;
+    }
 
-	public void setId(Long id) {
-		this.id = id;
-		if(id != null){
-			putBodyParameter("id", id.toString());
-		}
-	}
+    public void setId(Long id) {
+        this.id = id;
+        if (id != null) {
+            putBodyParameter("id", id.toString());
+        }
+    }
 
-	public String getName() {
-		return this.name;
-	}
+    public String getName() {
+        return this.name;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putBodyParameter("name", name);
-		}
-	}
+    public void setName(String name) {
+        this.name = name;
+        if (name != null) {
+            putBodyParameter("name", name);
+        }
+    }
 
-	@Override
-	public Class<DeleteKeywordResponse> getResponseClass() {
-		return DeleteKeywordResponse.class;
-	}
+    @Override
+    public Class<DeleteKeywordResponse> getResponseClass() {
+        return DeleteKeywordResponse.class;
+    }
 
 }

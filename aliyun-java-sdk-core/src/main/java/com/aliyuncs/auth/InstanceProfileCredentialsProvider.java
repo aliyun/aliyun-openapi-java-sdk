@@ -31,15 +31,15 @@ import com.aliyuncs.exceptions.ClientException;
  */
 public class InstanceProfileCredentialsProvider implements AlibabaCloudCredentialsProvider {
 
+    private static final int MAX_ECS_METADATA_FETCH_RETRY_TIMES = 3;
+    private final String roleName;
+    public int ecsMetadataServiceFetchCount = 0;
     /**
      * Default duration for started sessions.
      */
     private InstanceProfileCredentials credentials = null;
-    public int ecsMetadataServiceFetchCount = 0;
     private ECSMetadataServiceCredentialsFetcher fetcher;
-    private static final int MAX_ECS_METADATA_FETCH_RETRY_TIMES = 3;
     private int maxRetryTimes = MAX_ECS_METADATA_FETCH_RETRY_TIMES;
-    private final String roleName;
 
     public InstanceProfileCredentialsProvider(String roleName) {
         if (null == roleName) {
@@ -61,8 +61,8 @@ public class InstanceProfileCredentialsProvider implements AlibabaCloudCredentia
         if (credentials == null || credentials.isExpired()) {
             ecsMetadataServiceFetchCount += 1;
             credentials = fetcher.fetch(maxRetryTimes);
-        //} else if (credentials.isExpired()) {
-        //    throw new ClientException("SDK.SessionTokenExpired", "Current session token has expired.");
+            //} else if (credentials.isExpired()) {
+            //    throw new ClientException("SDK.SessionTokenExpired", "Current session token has expired.");
         } else if (credentials.willSoonExpire() && credentials.shouldRefresh()) {
             try {
                 ecsMetadataServiceFetchCount += 1;

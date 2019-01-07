@@ -18,10 +18,10 @@
  */
 package com.aliyuncs.auth;
 
-import java.util.Map;
-
 import com.aliyuncs.http.FormatType;
 import com.aliyuncs.http.MethodType;
+
+import java.util.Map;
 
 public interface ISignatureComposer {
 

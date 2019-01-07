@@ -1,10 +1,6 @@
 package com.aliyuncs.utils;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class FlattenMapUtil {
     public static List<Map<Object, Object>> toListMap(Map<String, String> flattenMap, String prefix) {

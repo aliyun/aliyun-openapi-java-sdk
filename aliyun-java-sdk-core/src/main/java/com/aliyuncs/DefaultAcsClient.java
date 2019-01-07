@@ -1,19 +1,9 @@
 package com.aliyuncs;
 
-import java.io.IOException;
-import java.net.SocketTimeoutException;
-import java.security.InvalidKeyException;
-import java.security.NoSuchAlgorithmException;
-
-import javax.xml.bind.annotation.XmlRootElement;
-
-import com.aliyuncs.auth.AlibabaCloudCredentials;
-import com.aliyuncs.auth.AlibabaCloudCredentialsProvider;
-import com.aliyuncs.auth.Credential;
-import com.aliyuncs.auth.LegacyCredentials;
-import com.aliyuncs.auth.Signer;
-import com.aliyuncs.auth.StaticCredentialsProvider;
-import com.aliyuncs.endpoint.*;
+import com.aliyuncs.auth.*;
+import com.aliyuncs.endpoint.DefaultEndpointResolver;
+import com.aliyuncs.endpoint.EndpointResolver;
+import com.aliyuncs.endpoint.ResolveEndpointRequest;
 import com.aliyuncs.exceptions.ClientException;
 import com.aliyuncs.exceptions.ErrorCodeConstant;
 import com.aliyuncs.exceptions.ErrorMessageConstant;
@@ -28,6 +18,12 @@ import com.aliyuncs.transform.UnmarshallerContext;
 import com.aliyuncs.unmarshaller.Unmarshaller;
 import com.aliyuncs.unmarshaller.UnmarshallerFactory;
 import com.aliyuncs.utils.IOUtils;
+
+import javax.xml.bind.annotation.XmlRootElement;
+import java.io.IOException;
+import java.net.SocketTimeoutException;
+import java.security.InvalidKeyException;
+import java.security.NoSuchAlgorithmException;
 
 @SuppressWarnings("deprecation")
 public class DefaultAcsClient implements IAcsClient {
@@ -87,11 +83,11 @@ public class DefaultAcsClient implements IAcsClient {
         int retryNumber = this.maxRetryNumber;
         Signer signer = Signer.getSigner(new LegacyCredentials(credential));
         FormatType format = null;
-        if (null == request.getRegionId()) {
-            request.setRegionId(regionId);
+        if (null == request.getBizRegionId()) {
+            request.setSysRegionId(regionId);
         }
 
-        return this.doAction(request, retry, retryNumber, request.getRegionId(), credential, signer, format);
+        return this.doAction(request, retry, retryNumber, request.getBizRegionId(), credential, signer, format);
     }
 
     @Override
@@ -124,8 +120,8 @@ public class DefaultAcsClient implements IAcsClient {
     @Override
     public <T extends AcsResponse> T getAcsResponse(AcsRequest<T> request, String regionId)
             throws ServerException, ClientException {
-        if (null == request.getRegionId()) {
-            request.setRegionId(regionId);
+        if (null == request.getBizRegionId()) {
+            request.setSysRegionId(regionId);
         }
         HttpResponse baseResponse = this.doAction(request);
         return parseAcsResponse(request.getResponseClass(), baseResponse);
@@ -155,22 +151,22 @@ public class DefaultAcsClient implements IAcsClient {
 
     @Override
     public <T extends AcsResponse> HttpResponse doAction(AcsRequest<T> request, boolean autoRetry, int maxRetryCounts,
-            IClientProfile profile) throws ClientException, ServerException {
+                                                         IClientProfile profile) throws ClientException, ServerException {
         if (null == profile) {
             throw new ClientException("SDK.InvalidProfile", "No active profile found.");
         }
         boolean retry = autoRetry;
         int retryNumber = maxRetryCounts;
         String region = profile.getRegionId();
-        if (null == request.getRegionId()) {
-            request.setRegionId(region);
+        if (null == request.getBizRegionId()) {
+            request.setSysRegionId(region);
         }
 
         AlibabaCloudCredentials credentials = this.credentialsProvider.getCredentials();
         Signer signer = Signer.getSigner(credentials);
         FormatType format = profile.getFormat();
 
-        return this.doAction(request, retry, retryNumber, request.getRegionId(), credentials, signer, format);
+        return this.doAction(request, retry, retryNumber, request.getBizRegionId(), credentials, signer, format);
     }
 
     private <T extends AcsResponse> T parseAcsResponse(Class<T> clasz, HttpResponse baseResponse)
@@ -192,29 +188,29 @@ public class DefaultAcsClient implements IAcsClient {
 
     @Deprecated
     public <T extends AcsResponse> HttpResponse doAction(AcsRequest<T> request, boolean autoRetry, int maxRetryNumber,
-            String regionId, Credential credential, Signer signer, FormatType format)
+                                                         String regionId, Credential credential, Signer signer, FormatType format)
             throws ClientException, ServerException {
         return doAction(request, autoRetry, maxRetryNumber, regionId, new LegacyCredentials(credential), signer,
                 format);
     }
 
     private <T extends AcsResponse> HttpResponse doAction(AcsRequest<T> request, boolean autoRetry, int maxRetryNumber,
-            String regionId, AlibabaCloudCredentials credentials, Signer signer, FormatType format)
+                                                          String regionId, AlibabaCloudCredentials credentials, Signer signer, FormatType format)
             throws ClientException, ServerException {
 
         try {
-            FormatType requestFormatType = request.getAcceptFormat();
+            FormatType requestFormatType = request.getBizAcceptFormat();
             if (null != requestFormatType) {
                 format = requestFormatType;
             }
             ProductDomain domain = null;
-            if (request.getProductDomain() != null) {
-                domain = request.getProductDomain();
+            if (request.getBizProductDomain() != null) {
+                domain = request.getBizProductDomain();
             } else {
                 ResolveEndpointRequest resolveEndpointRequest = new ResolveEndpointRequest(regionId,
-                        request.getProduct(), request.getLocationProduct(), request.getEndpointType());
+                        request.getBizProduct(), request.getBizLocationProduct(), request.getBizEndpointType());
                 String endpoint = endpointResolver.resolve(resolveEndpointRequest);
-                domain = new ProductDomain(request.getProduct(), endpoint);
+                domain = new ProductDomain(request.getBizProduct(), endpoint);
 
                 if (endpoint.endsWith("endpoint-test.exception.com")) {
                     // For endpoint testability, if the endpoint is xxxx.endpoint-test.special.com
@@ -223,8 +219,8 @@ public class DefaultAcsClient implements IAcsClient {
                 }
             }
 
-            if (request.getProtocol() == null) {
-                request.setProtocol(this.clientProfile.getHttpClientConfig().getProtocolType());
+            if (request.getBizProtocol() == null) {
+                request.setSysProtocol(this.clientProfile.getHttpClientConfig().getProtocolType());
             }
 
             try {
@@ -245,7 +241,10 @@ public class DefaultAcsClient implements IAcsClient {
         }
     }
 
-    private <T extends AcsResponse> T readResponse(Class<T> clasz, HttpResponse httpResponse, FormatType format)
+    /**
+     * 2019-01-03 change access control from private to protected, then subClass can override it and rewrite httpResponse processing
+     */
+    protected <T extends AcsResponse> T readResponse(Class<T> clasz, HttpResponse httpResponse, FormatType format)
             throws ClientException {
         // new version response contains "@XmlRootElement" annotation
         if (clasz.isAnnotationPresent(XmlRootElement.class)
