@@ -1,6 +1,20 @@
 package com.aliyuncs;
 
-import com.aliyuncs.auth.*;
+import java.io.IOException;
+import java.net.SocketTimeoutException;
+import java.security.InvalidKeyException;
+import java.security.NoSuchAlgorithmException;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+import javax.xml.bind.annotation.XmlRootElement;
+
+import com.aliyuncs.auth.AlibabaCloudCredentials;
+import com.aliyuncs.auth.AlibabaCloudCredentialsProvider;
+import com.aliyuncs.auth.Credential;
+import com.aliyuncs.auth.LegacyCredentials;
+import com.aliyuncs.auth.Signer;
+import com.aliyuncs.auth.StaticCredentialsProvider;
 import com.aliyuncs.endpoint.DefaultEndpointResolver;
 import com.aliyuncs.endpoint.EndpointResolver;
 import com.aliyuncs.endpoint.ResolveEndpointRequest;
@@ -8,7 +22,11 @@ import com.aliyuncs.exceptions.ClientException;
 import com.aliyuncs.exceptions.ErrorCodeConstant;
 import com.aliyuncs.exceptions.ErrorMessageConstant;
 import com.aliyuncs.exceptions.ServerException;
-import com.aliyuncs.http.*;
+import com.aliyuncs.http.FormatType;
+import com.aliyuncs.http.HttpClientFactory;
+import com.aliyuncs.http.HttpRequest;
+import com.aliyuncs.http.HttpResponse;
+import com.aliyuncs.http.IHttpClient;
 import com.aliyuncs.profile.DefaultProfile;
 import com.aliyuncs.profile.IClientProfile;
 import com.aliyuncs.reader.Reader;
@@ -18,12 +36,6 @@ import com.aliyuncs.transform.UnmarshallerContext;
 import com.aliyuncs.unmarshaller.Unmarshaller;
 import com.aliyuncs.unmarshaller.UnmarshallerFactory;
 import com.aliyuncs.utils.IOUtils;
-
-import javax.xml.bind.annotation.XmlRootElement;
-import java.io.IOException;
-import java.net.SocketTimeoutException;
-import java.security.InvalidKeyException;
-import java.security.NoSuchAlgorithmException;
 
 @SuppressWarnings("deprecation")
 public class DefaultAcsClient implements IAcsClient {
@@ -35,6 +47,7 @@ public class DefaultAcsClient implements IAcsClient {
     private AlibabaCloudCredentialsProvider credentialsProvider;
     private IHttpClient httpClient;
     private EndpointResolver endpointResolver;
+    private static final String SIGNATURE_BEGIN = "string to sign is:";
 
     @Deprecated
     public DefaultAcsClient() {
@@ -93,28 +106,28 @@ public class DefaultAcsClient implements IAcsClient {
     @Override
     public <T extends AcsResponse> T getAcsResponse(AcsRequest<T> request) throws ServerException, ClientException {
         HttpResponse baseResponse = this.doAction(request);
-        return parseAcsResponse(request.getResponseClass(), baseResponse);
+        return parseAcsResponse(request, baseResponse);
     }
 
     @Override
     public <T extends AcsResponse> T getAcsResponse(AcsRequest<T> request, boolean autoRetry, int maxRetryCounts)
             throws ServerException, ClientException {
         HttpResponse baseResponse = this.doAction(request, autoRetry, maxRetryCounts);
-        return parseAcsResponse(request.getResponseClass(), baseResponse);
+        return parseAcsResponse(request, baseResponse);
     }
 
     @Override
     public <T extends AcsResponse> T getAcsResponse(AcsRequest<T> request, IClientProfile profile)
             throws ServerException, ClientException {
         HttpResponse baseResponse = this.doAction(request, profile);
-        return parseAcsResponse(request.getResponseClass(), baseResponse);
+        return parseAcsResponse(request, baseResponse);
     }
 
     @Override
     public <T extends AcsResponse> T getAcsResponse(AcsRequest<T> request, String regionId, Credential credential)
             throws ServerException, ClientException {
         HttpResponse baseResponse = this.doAction(request, regionId, credential);
-        return parseAcsResponse(request.getResponseClass(), baseResponse);
+        return parseAcsResponse(request, baseResponse);
     }
 
     @Override
@@ -124,7 +137,7 @@ public class DefaultAcsClient implements IAcsClient {
             request.setSysRegionId(regionId);
         }
         HttpResponse baseResponse = this.doAction(request);
-        return parseAcsResponse(request.getResponseClass(), baseResponse);
+        return parseAcsResponse(request, baseResponse);
     }
 
     @SuppressWarnings("unchecked")
@@ -151,7 +164,7 @@ public class DefaultAcsClient implements IAcsClient {
 
     @Override
     public <T extends AcsResponse> HttpResponse doAction(AcsRequest<T> request, boolean autoRetry, int maxRetryCounts,
-                                                         IClientProfile profile) throws ClientException, ServerException {
+            IClientProfile profile) throws ClientException, ServerException {
         if (null == profile) {
             throw new ClientException("SDK.InvalidProfile", "No active profile found.");
         }
@@ -169,33 +182,44 @@ public class DefaultAcsClient implements IAcsClient {
         return this.doAction(request, retry, retryNumber, request.getBizRegionId(), credentials, signer, format);
     }
 
-    private <T extends AcsResponse> T parseAcsResponse(Class<T> clasz, HttpResponse baseResponse)
+    private <T extends AcsResponse> T parseAcsResponse(AcsRequest<T> request, HttpResponse baseResponse)
             throws ServerException, ClientException {
 
         FormatType format = baseResponse.getHttpContentType();
 
         if (baseResponse.isSuccess()) {
-            return readResponse(clasz, baseResponse, format);
+            return readResponse(request.getResponseClass(), baseResponse, format);
         } else {
             AcsError error = readError(baseResponse, format);
             if (500 <= baseResponse.getStatus()) {
                 throw new ServerException(error.getErrorCode(), error.getErrorMessage(), error.getRequestId());
-            } else {
-                throw new ClientException(error.getErrorCode(), error.getErrorMessage(), error.getRequestId());
+            } else if ("IncompleteSignature".equals(error.getErrorCode())) {
+                String strToSign = request.strToSign;
+                String errorMessage = error.getErrorMessage();
+                Pattern startPattern = Pattern.compile(SIGNATURE_BEGIN);
+                Matcher startMatcher = startPattern.matcher(errorMessage);
+                startMatcher.find();
+                int start = startMatcher.end();
+                String errorStrToSign = errorMessage.substring(start);
+                if (strToSign.equals(errorStrToSign)) {
+                    throw new ClientException("InvalidAccessSecret", "Specified Access Key Secret is not valid.",
+                            error.getRequestId());
+                }
             }
+            throw new ClientException(error.getErrorCode(), error.getErrorMessage(), error.getRequestId());
         }
     }
 
     @Deprecated
     public <T extends AcsResponse> HttpResponse doAction(AcsRequest<T> request, boolean autoRetry, int maxRetryNumber,
-                                                         String regionId, Credential credential, Signer signer, FormatType format)
+            String regionId, Credential credential, Signer signer, FormatType format)
             throws ClientException, ServerException {
         return doAction(request, autoRetry, maxRetryNumber, regionId, new LegacyCredentials(credential), signer,
                 format);
     }
 
     private <T extends AcsResponse> HttpResponse doAction(AcsRequest<T> request, boolean autoRetry, int maxRetryNumber,
-                                                          String regionId, AlibabaCloudCredentials credentials, Signer signer, FormatType format)
+            String regionId, AlibabaCloudCredentials credentials, Signer signer, FormatType format)
             throws ClientException, ServerException {
 
         try {
@@ -242,7 +266,8 @@ public class DefaultAcsClient implements IAcsClient {
     }
 
     /**
-     * 2019-01-03 change access control from private to protected, then subClass can override it and rewrite httpResponse processing
+     * 2019-01-03 change access control from private to protected, then subClass can
+     * override it and rewrite httpResponse processing
      */
     protected <T extends AcsResponse> T readResponse(Class<T> clasz, HttpResponse httpResponse, FormatType format)
             throws ClientException {

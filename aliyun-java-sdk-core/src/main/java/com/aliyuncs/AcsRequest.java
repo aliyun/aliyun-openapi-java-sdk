@@ -31,7 +31,8 @@ public abstract class AcsRequest<T extends AcsResponse> extends HttpRequest {
     private String locationProduct;
     private String endpointType;
     private ProductDomain productDomain = null;
-
+    protected String strToSign;
+    
     public AcsRequest(String product) {
         super(null);
         this.headers.put("x-sdk-client", "Java/2.0.0");
