@@ -8,7 +8,6 @@ import com.aliyuncs.ecs.model.v20140526.DescribeRegionsRequest;
 import com.aliyuncs.ecs.model.v20140526.DescribeRegionsResponse;
 import com.aliyuncs.endpoint.*;
 import com.aliyuncs.exceptions.ErrorCodeConstant;
-import com.aliyuncs.exceptions.ErrorMessageConstant;
 import com.aliyuncs.profile.DefaultProfile;
 import com.aliyuncs.profile.IClientProfile;
 import com.aliyuncs.ram.model.v20150501.ListAccessKeysResponse;
@@ -22,7 +21,6 @@ import org.junit.Test;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class NewEndpointTest extends BaseTest {

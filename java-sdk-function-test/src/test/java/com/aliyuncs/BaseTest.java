@@ -33,7 +33,6 @@ import org.junit.Before;
 
 import com.aliyuncs.profile.DefaultProfile;
 import com.aliyuncs.profile.IClientProfile;
-import com.aliyuncs.utils.SslUtils;
 
 @SuppressWarnings("deprecation")
 public class BaseTest {
@@ -61,10 +60,6 @@ public class BaseTest {
 
     @Before
     public void init() {
-        try {
-            SslUtils.ignoreSsl();
-        } catch (Exception e) {
-        }
         this.regionId = "cn-hangzhou";
         properties = getProperties();
         client = getClientWithRegionId(this.regionId);

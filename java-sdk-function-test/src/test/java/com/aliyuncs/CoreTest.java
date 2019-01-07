@@ -9,19 +9,15 @@ import com.aliyuncs.http.ProtocolType;
 import org.junit.Assert;
 import org.junit.Test;
 
-/**
- * @author 治强
- * @create 2018-11-26 14:40
- */
 public class CoreTest extends BaseTest {
 
 
     @Test
     public void basicRpcConnectionsTest() throws ClientException {
         CommonRequest request = new CommonRequest();
-        request.setDomain("ecs-cn-hangzhou.aliyuncs.com");
-        request.setVersion("2014-05-26");
-        request.setAction("DescribeAccessPoints");
+        request.setSysDomain("ecs-cn-hangzhou.aliyuncs.com");
+        request.setSysVersion("2014-05-26");
+        request.setSysAction("DescribeAccessPoints");
         CommonResponse response = this.client.getCommonResponse(request);
         Assert.assertEquals(200, response.getHttpStatus());
         Assert.assertNotNull(response.getData());
@@ -30,11 +26,11 @@ public class CoreTest extends BaseTest {
     @Test
     public void basicRoaConnectionsTest() throws ClientException {
         CommonRequest request = new CommonRequest();
-        request.setDomain("ros.aliyuncs.com");
-        request.setVersion("2015-09-01");
-        request.setAction("DescribeResourceTypes");
-        request.setUriPattern("/resource_types");
-        request.setMethod(MethodType.GET);
+        request.setSysDomain("ros.aliyuncs.com");
+        request.setSysVersion("2015-09-01");
+        request.setSysAction("DescribeResourceTypes");
+        request.setSysUriPattern("/resource_types");
+        request.setSysMethod(MethodType.GET);
         CommonResponse response = this.client.getCommonResponse(request);
         Assert.assertEquals(200, response.getHttpStatus());
         Assert.assertNotNull(response.getData());
@@ -53,11 +49,11 @@ public class CoreTest extends BaseTest {
     public void basicRoaTokenConnectionsTest() throws ClientException {
         DefaultAcsClient client = creatDefaultAcsClient();
         CommonRequest request = new CommonRequest();
-        request.setDomain("ros.aliyuncs.com");
-        request.setVersion("2015-09-01");
-        request.setAction("DescribeResourceTypes");
-        request.setUriPattern("/resource_types");
-        request.setMethod(MethodType.GET);
+        request.setSysDomain("ros.aliyuncs.com");
+        request.setSysVersion("2015-09-01");
+        request.setSysAction("DescribeResourceTypes");
+        request.setSysUriPattern("/resource_types");
+        request.setSysMethod(MethodType.GET);
         CommonResponse response = client.getCommonResponse(request);
         Assert.assertEquals(200, response.getHttpStatus());
         Assert.assertNotNull(response.getData());
@@ -66,10 +62,10 @@ public class CoreTest extends BaseTest {
     @Test
     public void httpsModeOfRpcConnectionsTest() throws ClientException {
         CommonRequest request = new CommonRequest();
-        request.setDomain("ecs-cn-hangzhou.aliyuncs.com");
-        request.setVersion("2014-05-26");
-        request.setAction("DescribeAccessPoints");
-        request.setProtocol(ProtocolType.HTTPS);
+        request.setSysDomain("ecs-cn-hangzhou.aliyuncs.com");
+        request.setSysVersion("2014-05-26");
+        request.setSysAction("DescribeAccessPoints");
+        request.setSysProtocol(ProtocolType.HTTPS);
         CommonResponse response = this.client.getCommonResponse(request);
         Assert.assertEquals(200, response.getHttpStatus());
         Assert.assertNotNull(response.getData());
@@ -78,12 +74,12 @@ public class CoreTest extends BaseTest {
     @Test
     public void httpsModeOfRoaConnectionsTest() throws ClientException {
         CommonRequest request = new CommonRequest();
-        request.setDomain("ros.aliyuncs.com");
-        request.setVersion("2015-09-01");
-        request.setAction("DescribeResourceTypes");
-        request.setUriPattern("/resource_types");
-        request.setMethod(MethodType.GET);
-        request.setProtocol(ProtocolType.HTTPS);
+        request.setSysDomain("ros.aliyuncs.com");
+        request.setSysVersion("2015-09-01");
+        request.setSysAction("DescribeResourceTypes");
+        request.setSysUriPattern("/resource_types");
+        request.setSysMethod(MethodType.GET);
+        request.setSysProtocol(ProtocolType.HTTPS);
         CommonResponse response = this.client.getCommonResponse(request);
         Assert.assertEquals(200, response.getHttpStatus());
         Assert.assertNotNull(response.getData());
@@ -92,9 +88,9 @@ public class CoreTest extends BaseTest {
     @Test
     public void serverUnreachableTest() {
         CommonRequest request = new CommonRequest();
-        request.setDomain("www.serverUnreachableTest.com");
-        request.setVersion("2018-11-28");
-        request.setAction("serverUnreachableTest");
+        request.setSysDomain("www.serverUnreachableTest.com");
+        request.setSysVersion("2018-11-28");
+        request.setSysAction("serverUnreachableTest");
         CommonResponse response = null;
         try {
             response = client.getCommonResponse(request);
@@ -112,11 +108,11 @@ public class CoreTest extends BaseTest {
     public void unicodeAndQueryTest() throws ClientException {
         DefaultAcsClient client = this.creatDefaultAcsClient();
         CommonRequest request = new CommonRequest();
-        request.setDomain("ros.aliyuncs.com");
-        request.setVersion("2015-09-01");
-        request.setAction("DescribeResourceTypes");
-        request.setUriPattern("/resource_types");
-        request.setMethod(MethodType.GET);
+        request.setSysDomain("ros.aliyuncs.com");
+        request.setSysVersion("2015-09-01");
+        request.setSysAction("DescribeResourceTypes");
+        request.setSysUriPattern("/resource_types");
+        request.setSysMethod(MethodType.GET);
         request.putQueryParameter("testParam", "O(∩_∩)O&&&&&哈&&&哈~");
         CommonResponse response = client.getCommonResponse(request);
         Assert.assertEquals(200, response.getHttpStatus());

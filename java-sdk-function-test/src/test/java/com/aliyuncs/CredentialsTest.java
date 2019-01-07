@@ -9,10 +9,6 @@ import com.aliyuncs.profile.DefaultProfile;
 import org.junit.Assert;
 import org.junit.Test;
 
-/**
- * @author 治强
- * @create 2018-11-29 11:49
- */
 public class CredentialsTest extends BaseTest {
 
     @Test

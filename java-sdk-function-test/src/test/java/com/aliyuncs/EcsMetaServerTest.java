@@ -6,18 +6,16 @@ import com.aliyuncs.ecs.model.v20140526.DescribeInstancesResponse;
 import com.aliyuncs.exceptions.ClientException;
 import com.aliyuncs.profile.DefaultProfile;
 import org.junit.Assert;
+import org.junit.Ignore;
 import org.junit.Test;
 
-/**
- * @author 治强
- * @create 2018-11-29 17:10
- */
 public class EcsMetaServerTest extends BaseTest{
     /**
-     * 此测试必须放在ECS服务器上测试
+     * Must be tested on the ECS server
      * @throws ClientException
      */
     @Test
+    @Ignore
     public void ecsMetaServerStsTokenTest() throws ClientException {
         DefaultProfile profile = DefaultProfile.getProfile(this.regionId);
         InstanceProfileCredentialsProvider provider = new InstanceProfileCredentialsProvider("alice");
