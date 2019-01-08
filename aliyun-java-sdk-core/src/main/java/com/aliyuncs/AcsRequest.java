@@ -31,6 +31,7 @@ public abstract class AcsRequest<T extends AcsResponse> extends HttpRequest {
     private String locationProduct;
     private String endpointType;
     private ProductDomain productDomain = null;
+    protected String strToSign;
 
     public AcsRequest(String product) {
         super(null);
@@ -123,8 +124,7 @@ public abstract class AcsRequest<T extends AcsResponse> extends HttpRequest {
     @Deprecated
     public void setAcceptFormat(FormatType acceptFormat) {
         this.acceptFormat = acceptFormat;
-        this.putHeaderParameter("Accept",
-                FormatType.mapFormatToAccept(acceptFormat));
+        this.putHeaderParameter("Accept", FormatType.mapFormatToAccept(acceptFormat));
     }
 
     @Deprecated
@@ -223,20 +223,16 @@ public abstract class AcsRequest<T extends AcsResponse> extends HttpRequest {
         this.productDomain = productDomain;
     }
 
-    public HttpRequest signRequest(Signer signer, Credential credential,
-                                   FormatType format, ProductDomain domain)
-            throws InvalidKeyException, IllegalStateException,
-            UnsupportedEncodingException, NoSuchAlgorithmException {
+    public HttpRequest signRequest(Signer signer, Credential credential, FormatType format, ProductDomain domain)
+            throws InvalidKeyException, IllegalStateException, UnsupportedEncodingException, NoSuchAlgorithmException {
         return signRequest(signer, new LegacyCredentials(credential), format, domain);
     }
 
-    public abstract HttpRequest signRequest(Signer signer, AlibabaCloudCredentials credentials,
-                                            FormatType format, ProductDomain domain)
-            throws InvalidKeyException, IllegalStateException,
-            UnsupportedEncodingException, NoSuchAlgorithmException;
+    public abstract HttpRequest signRequest(Signer signer, AlibabaCloudCredentials credentials, FormatType format,
+            ProductDomain domain)
+            throws InvalidKeyException, IllegalStateException, UnsupportedEncodingException, NoSuchAlgorithmException;
 
-    public abstract String composeUrl(String endpoint, Map<String, String> queries)
-            throws UnsupportedEncodingException;
+    public abstract String composeUrl(String endpoint, Map<String, String> queries) throws UnsupportedEncodingException;
 
     public abstract Class<T> getResponseClass();
 
@@ -283,8 +279,7 @@ public abstract class AcsRequest<T extends AcsResponse> extends HttpRequest {
 
     public void setSysAcceptFormat(FormatType acceptFormat) {
         this.acceptFormat = acceptFormat;
-        this.putHeaderParameter("Accept",
-                FormatType.mapFormatToAccept(acceptFormat));
+        this.putHeaderParameter("Accept", FormatType.mapFormatToAccept(acceptFormat));
     }
 
     public ProtocolType getBizProtocol() {
