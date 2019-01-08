@@ -24,6 +24,8 @@ import java.io.IOException;
 import java.net.SocketTimeoutException;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 @SuppressWarnings("deprecation")
 public class DefaultAcsClient implements IAcsClient {
@@ -35,6 +37,7 @@ public class DefaultAcsClient implements IAcsClient {
     private AlibabaCloudCredentialsProvider credentialsProvider;
     private IHttpClient httpClient;
     private EndpointResolver endpointResolver;
+    private static final String SIGNATURE_BEGIN = "string to sign is:";
 
     @Deprecated
     public DefaultAcsClient() {
@@ -93,28 +96,28 @@ public class DefaultAcsClient implements IAcsClient {
     @Override
     public <T extends AcsResponse> T getAcsResponse(AcsRequest<T> request) throws ServerException, ClientException {
         HttpResponse baseResponse = this.doAction(request);
-        return parseAcsResponse(request.getResponseClass(), baseResponse);
+        return parseAcsResponse(request, baseResponse);
     }
 
     @Override
     public <T extends AcsResponse> T getAcsResponse(AcsRequest<T> request, boolean autoRetry, int maxRetryCounts)
             throws ServerException, ClientException {
         HttpResponse baseResponse = this.doAction(request, autoRetry, maxRetryCounts);
-        return parseAcsResponse(request.getResponseClass(), baseResponse);
+        return parseAcsResponse(request, baseResponse);
     }
 
     @Override
     public <T extends AcsResponse> T getAcsResponse(AcsRequest<T> request, IClientProfile profile)
             throws ServerException, ClientException {
         HttpResponse baseResponse = this.doAction(request, profile);
-        return parseAcsResponse(request.getResponseClass(), baseResponse);
+        return parseAcsResponse(request, baseResponse);
     }
 
     @Override
     public <T extends AcsResponse> T getAcsResponse(AcsRequest<T> request, String regionId, Credential credential)
             throws ServerException, ClientException {
         HttpResponse baseResponse = this.doAction(request, regionId, credential);
-        return parseAcsResponse(request.getResponseClass(), baseResponse);
+        return parseAcsResponse(request, baseResponse);
     }
 
     @Override
@@ -124,7 +127,7 @@ public class DefaultAcsClient implements IAcsClient {
             request.setSysRegionId(regionId);
         }
         HttpResponse baseResponse = this.doAction(request);
-        return parseAcsResponse(request.getResponseClass(), baseResponse);
+        return parseAcsResponse(request, baseResponse);
     }
 
     @SuppressWarnings("unchecked")
@@ -151,7 +154,7 @@ public class DefaultAcsClient implements IAcsClient {
 
     @Override
     public <T extends AcsResponse> HttpResponse doAction(AcsRequest<T> request, boolean autoRetry, int maxRetryCounts,
-                                                         IClientProfile profile) throws ClientException, ServerException {
+            IClientProfile profile) throws ClientException, ServerException {
         if (null == profile) {
             throw new ClientException("SDK.InvalidProfile", "No active profile found.");
         }
@@ -169,33 +172,48 @@ public class DefaultAcsClient implements IAcsClient {
         return this.doAction(request, retry, retryNumber, request.getSysRegionId(), credentials, signer, format);
     }
 
-    private <T extends AcsResponse> T parseAcsResponse(Class<T> clasz, HttpResponse baseResponse)
+    private <T extends AcsResponse> T parseAcsResponse(AcsRequest<T> request, HttpResponse baseResponse)
             throws ServerException, ClientException {
 
         FormatType format = baseResponse.getHttpContentType();
 
         if (baseResponse.isSuccess()) {
-            return readResponse(clasz, baseResponse, format);
+            return readResponse(request.getResponseClass(), baseResponse, format);
         } else {
             AcsError error = readError(baseResponse, format);
-            if (500 <= baseResponse.getStatus()) {
-                throw new ServerException(error.getErrorCode(), error.getErrorMessage(), error.getRequestId());
-            } else {
-                throw new ClientException(error.getErrorCode(), error.getErrorMessage(), error.getRequestId());
+            return distinguishError(request, error, baseResponse);
+        }
+    }
+
+    public <T extends AcsResponse> T distinguishError(AcsRequest<T> request, AcsError error, HttpResponse baseResponse) throws ClientException {
+        if (500 <= baseResponse.getStatus()) {
+            throw new ServerException(error.getErrorCode(), error.getErrorMessage(), error.getRequestId());
+        } else if ("IncompleteSignature".equals(error.getErrorCode())) {
+            String errorMessage = error.getErrorMessage();
+            Pattern startPattern = Pattern.compile(SIGNATURE_BEGIN);
+            Matcher startMatcher = startPattern.matcher(errorMessage);
+            if (startMatcher.find()) {
+                int start = startMatcher.end();
+                String errorStrToSign = errorMessage.substring(start);
+                if (request.strToSign.equals(errorStrToSign)) {
+                    throw new ClientException("InvalidAccessKeySecret", "Specified Access Key Secret is not valid.",
+                            error.getRequestId());
+                }
             }
         }
+        throw new ClientException(error.getErrorCode(), error.getErrorMessage(), error.getRequestId());
     }
 
     @Deprecated
     public <T extends AcsResponse> HttpResponse doAction(AcsRequest<T> request, boolean autoRetry, int maxRetryNumber,
-                                                         String regionId, Credential credential, Signer signer, FormatType format)
+            String regionId, Credential credential, Signer signer, FormatType format)
             throws ClientException, ServerException {
         return doAction(request, autoRetry, maxRetryNumber, regionId, new LegacyCredentials(credential), signer,
                 format);
     }
 
     private <T extends AcsResponse> HttpResponse doAction(AcsRequest<T> request, boolean autoRetry, int maxRetryNumber,
-                                                          String regionId, AlibabaCloudCredentials credentials, Signer signer, FormatType format)
+            String regionId, AlibabaCloudCredentials credentials, Signer signer, FormatType format)
             throws ClientException, ServerException {
 
         try {
@@ -242,7 +260,8 @@ public class DefaultAcsClient implements IAcsClient {
     }
 
     /**
-     * 2019-01-03 change access control from private to protected, then subClass can override it and rewrite httpResponse processing
+     * 2019-01-03 change access control from private to protected, then subClass can
+     * override it and rewrite httpResponse processing
      */
     protected <T extends AcsResponse> T readResponse(Class<T> clasz, HttpResponse httpResponse, FormatType format)
             throws ClientException {
