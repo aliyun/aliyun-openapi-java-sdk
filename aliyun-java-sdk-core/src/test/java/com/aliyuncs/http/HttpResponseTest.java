@@ -17,13 +17,13 @@ public class HttpResponseTest {
     @Test
     public void httpResponseTest() {
         response = new HttpResponse("test");
-        Assert.assertEquals("test", response.getBizUrl());
+        Assert.assertEquals("test", response.getSysUrl());
     }
 
     @Test
     public void setHttpContentTest() throws UnsupportedEncodingException {
         response.setHttpContent("test".getBytes(), "UTF-8", FormatType.JSON);
-        Assert.assertEquals("UTF-8", response.getBizEncoding());
+        Assert.assertEquals("UTF-8", response.getSysEncoding());
         Assert.assertEquals("test", new String(response.getHttpContent(), "UTF-8"));
         Assert.assertTrue(FormatType.JSON == response.getHttpContentType());
     }

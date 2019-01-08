@@ -24,63 +24,63 @@ public class CommonRequestTest {
     public void commonRequestGetSetTest() throws UnsupportedEncodingException {
         CommonRequest request = new CommonRequest();
         request.setHttpContent("abc".getBytes(), "utf-8", FormatType.JSON);
-        Assert.assertEquals("utf-8", request.getBizEncoding());
+        Assert.assertEquals("utf-8", request.getSysEncoding());
         Assert.assertTrue(FormatType.JSON == request.getHttpContentType());
         Assert.assertEquals("abc", new String(request.getHttpContent(), "utf-8"));
 
         request.setSysUriPattern("uri");
-        Assert.assertEquals("uri", request.getBizUriPattern());
+        Assert.assertEquals("uri", request.getSysUriPattern());
 
         request.setSysProduct("ecs");
-        Assert.assertEquals("ecs", request.getBizProduct());
+        Assert.assertEquals("ecs", request.getSysProduct());
 
         request.setSysReadTimeout(50000);
-        Assert.assertTrue(50000 == request.getBizReadTimeout());
+        Assert.assertTrue(50000 == request.getSysReadTimeout());
 
         request.putBodyParameter("test", "test");
-        Map<String, String> bodyMap = request.getBizBodyParameters();
+        Map<String, String> bodyMap = request.getSysBodyParameters();
         Assert.assertNotNull(bodyMap);
         Assert.assertEquals("test", bodyMap.get("test"));
 
         request.setSysMethod(MethodType.DELETE);
-        Assert.assertTrue(MethodType.DELETE == request.getBizMethod());
+        Assert.assertTrue(MethodType.DELETE == request.getSysMethod());
 
         request.setSysAction("action");
-        Assert.assertEquals("action", request.getBizAction());
+        Assert.assertEquals("action", request.getSysAction());
 
         request.setSysConnectTimeout(5000);
-        Assert.assertTrue(5000 == request.getBizConnectTimeout());
+        Assert.assertTrue(5000 == request.getSysConnectTimeout());
 
         request.setSysDomain("domian");
-        Assert.assertEquals("domian", request.getBizDomain());
+        Assert.assertEquals("domian", request.getSysDomain());
 
         request.setSysEndpointType("endPoint");
-        Assert.assertEquals("endPoint", request.getBizEndpointType());
+        Assert.assertEquals("endPoint", request.getSysEndpointType());
 
         request.setSysLocationProduct("test");
-        Assert.assertEquals("test", request.getBizLocationProduct());
+        Assert.assertEquals("test", request.getSysLocationProduct());
 
         request.setSysProtocol(ProtocolType.HTTP);
-        Assert.assertTrue(ProtocolType.HTTP == request.getBizProtocol());
+        Assert.assertTrue(ProtocolType.HTTP == request.getSysProtocol());
 
         request.setSysRegionId("hangzhou");
-        Assert.assertEquals("hangzhou", request.getBizRegionId());
+        Assert.assertEquals("hangzhou", request.getSysRegionId());
 
         request.setSysVersion("4");
-        Assert.assertEquals("4", request.getBizVersion());
+        Assert.assertEquals("4", request.getSysVersion());
 
         request.putQueryParameter("test", "test");
-        Map<String, String> queryMap = request.getBizQueryParameters();
+        Map<String, String> queryMap = request.getSysQueryParameters();
         Assert.assertNotNull(queryMap);
         Assert.assertEquals("test", queryMap.get("test"));
 
         request.putHeadParameter("test", "test");
-        Map<String, String> headMap = request.getBizHeadParameters();
+        Map<String, String> headMap = request.getSysHeadParameters();
         Assert.assertNotNull(headMap);
         Assert.assertEquals("test", headMap.get("test"));
 
         request.putPathParameter("test", "test");
-        Map<String, String> pathMap = request.getBizPathParameters();
+        Map<String, String> pathMap = request.getSysPathParameters();
         Assert.assertNotNull(pathMap);
         Assert.assertEquals("test", pathMap.get("test"));
 

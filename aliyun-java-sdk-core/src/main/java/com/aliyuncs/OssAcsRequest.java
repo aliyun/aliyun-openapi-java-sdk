@@ -31,9 +31,9 @@ public abstract class OssAcsRequest<T extends AcsResponse>
 
     @Override
     public String composeUrl(String endpoint, Map<String, String> queries) throws UnsupportedEncodingException {
-        Map<String, String> mapQueries = queries == null ? this.getBizQueryParameters() : queries;
+        Map<String, String> mapQueries = queries == null ? this.getSysQueryParameters() : queries;
         StringBuilder urlBuilder = new StringBuilder("");
-        urlBuilder.append(this.getBizProtocol().toString());
+        urlBuilder.append(this.getSysProtocol().toString());
         urlBuilder.append("://");
         if (null != this.bucketName) {
             urlBuilder.append(this.bucketName).append(".");
@@ -60,20 +60,20 @@ public abstract class OssAcsRequest<T extends AcsResponse>
         if (null != signer && null != credentials) {
             String accessKeyId = credentials.getAccessKeyId();
             imutableMap = this.composer.refreshSignParameters
-                    (this.getBizHeaders(), signer, accessKeyId, format);
+                    (this.getSysHeaders(), signer, accessKeyId, format);
             String uri = this.uriPattern;
             if (null != this.bucketName) {
                 uri = "/" + bucketName + uri;
             }
-            String strToSign = this.composer.composeStringToSign(this.getBizMethod(), uri, signer,
-                    this.getBizQueryParameters(), imutableMap, this.getPathParameters());
+            String strToSign = this.composer.composeStringToSign(this.getSysMethod(), uri, signer,
+                    this.getSysQueryParameters(), imutableMap, this.getPathParameters());
             String signature = signer.signString(strToSign, credentials);
             imutableMap.put("Authorization", "OSS " + accessKeyId + ":" + signature);
         }
         HttpRequest request = new HttpRequest(
-                this.composeUrl(domain.getDomianName(), this.getBizQueryParameters()), imutableMap);
-        request.setSysMethod(this.getBizMethod());
-        request.setHttpContent(this.getHttpContent(), this.getBizEncoding(), this.getHttpContentType());
+                this.composeUrl(domain.getDomianName(), this.getSysQueryParameters()), imutableMap);
+        request.setSysMethod(this.getSysMethod());
+        request.setHttpContent(this.getHttpContent(), this.getSysEncoding(), this.getHttpContentType());
 
         return request;
     }

@@ -142,7 +142,7 @@ public abstract class AcsRequest<T extends AcsResponse> extends HttpRequest {
         return Collections.unmodifiableMap(queryParameters);
     }
 
-    public Map<String, String> getBizQueryParameters() {
+    public Map<String, String> getSysQueryParameters() {
         return Collections.unmodifiableMap(queryParameters);
     }
 
@@ -159,7 +159,7 @@ public abstract class AcsRequest<T extends AcsResponse> extends HttpRequest {
         return Collections.unmodifiableMap(domainParameters);
     }
 
-    public Map<String, String> getBizDomainParameters() {
+    public Map<String, String> getSysDomainParameters() {
         return Collections.unmodifiableMap(domainParameters);
     }
 
@@ -172,7 +172,7 @@ public abstract class AcsRequest<T extends AcsResponse> extends HttpRequest {
         return Collections.unmodifiableMap(bodyParameters);
     }
 
-    public Map<String, String> getBizBodyParameters() {
+    public Map<String, String> getSysBodyParameters() {
         return Collections.unmodifiableMap(bodyParameters);
     }
 
@@ -240,7 +240,7 @@ public abstract class AcsRequest<T extends AcsResponse> extends HttpRequest {
 
     public abstract Class<T> getResponseClass();
 
-    public String getBizVersion() {
+    public String getSysVersion() {
         return version;
     }
 
@@ -248,11 +248,11 @@ public abstract class AcsRequest<T extends AcsResponse> extends HttpRequest {
         this.version = version;
     }
 
-    public String getBizProduct() {
+    public String getSysProduct() {
         return product;
     }
 
-    public String getBizActionName() {
+    public String getSysActionName() {
         return actionName;
     }
 
@@ -260,7 +260,7 @@ public abstract class AcsRequest<T extends AcsResponse> extends HttpRequest {
         this.actionName = actionName;
     }
 
-    public String getBizRegionId() {
+    public String getSysRegionId() {
         return regionId;
     }
 
@@ -268,7 +268,7 @@ public abstract class AcsRequest<T extends AcsResponse> extends HttpRequest {
         this.regionId = regionId;
     }
 
-    public String getBizSecurityToken() {
+    public String getSysSecurityToken() {
         return securityToken;
     }
 
@@ -277,7 +277,7 @@ public abstract class AcsRequest<T extends AcsResponse> extends HttpRequest {
         putQueryParameter("SecurityToken", securityToken);
     }
 
-    public FormatType getBizAcceptFormat() {
+    public FormatType getSysAcceptFormat() {
         return acceptFormat;
     }
 
@@ -287,7 +287,7 @@ public abstract class AcsRequest<T extends AcsResponse> extends HttpRequest {
                 FormatType.mapFormatToAccept(acceptFormat));
     }
 
-    public ProtocolType getBizProtocol() {
+    public ProtocolType getSysProtocol() {
         return protocol;
     }
 
@@ -300,7 +300,7 @@ public abstract class AcsRequest<T extends AcsResponse> extends HttpRequest {
         setSysProductDomain(productDomain);
     }
 
-    public String getBizLocationProduct() {
+    public String getSysLocationProduct() {
         return locationProduct;
     }
 
@@ -309,7 +309,7 @@ public abstract class AcsRequest<T extends AcsResponse> extends HttpRequest {
         putQueryParameter("ServiceCode", locationProduct);
     }
 
-    public String getBizEndpointType() {
+    public String getSysEndpointType() {
         return endpointType;
     }
 
@@ -318,7 +318,7 @@ public abstract class AcsRequest<T extends AcsResponse> extends HttpRequest {
         putQueryParameter("Type", endpointType);
     }
 
-    public ProductDomain getBizProductDomain() {
+    public ProductDomain getSysProductDomain() {
         return productDomain;
     }
 
