@@ -285,7 +285,7 @@ public class CommonRequest {
         this.encoding = encoding;
     }
 
-    public String getBizVersion() {
+    public String getSysVersion() {
         return version;
     }
 
@@ -293,7 +293,7 @@ public class CommonRequest {
         this.version = version;
     }
 
-    public String getBizProduct() {
+    public String getSysProduct() {
         return product;
     }
 
@@ -301,7 +301,7 @@ public class CommonRequest {
         this.product = product;
     }
 
-    public String getBizAction() {
+    public String getSysAction() {
         return action;
     }
 
@@ -309,7 +309,7 @@ public class CommonRequest {
         this.action = action;
     }
 
-    public String getBizLocationProduct() {
+    public String getSysLocationProduct() {
         return locationProduct;
     }
 
@@ -317,7 +317,7 @@ public class CommonRequest {
         this.locationProduct = locationProduct;
     }
 
-    public String getBizEndpointType() {
+    public String getSysEndpointType() {
         return endpointType;
     }
 
@@ -325,7 +325,7 @@ public class CommonRequest {
         this.endpointType = endpointType;
     }
 
-    public String getBizRegionId() {
+    public String getSysRegionId() {
         return regionId;
     }
 
@@ -333,7 +333,7 @@ public class CommonRequest {
         this.regionId = regionId;
     }
 
-    public ProtocolType getBizProtocol() {
+    public ProtocolType getSysProtocol() {
         return protocol;
     }
 
@@ -342,7 +342,7 @@ public class CommonRequest {
     }
 
 
-    public Integer getBizConnectTimeout() {
+    public Integer getSysConnectTimeout() {
         return connectTimeout;
     }
 
@@ -350,7 +350,7 @@ public class CommonRequest {
         this.connectTimeout = connectTimeout;
     }
 
-    public Integer getBizReadTimeout() {
+    public Integer getSysReadTimeout() {
         return readTimeout;
     }
 
@@ -358,7 +358,7 @@ public class CommonRequest {
         this.readTimeout = readTimeout;
     }
 
-    public MethodType getBizMethod() {
+    public MethodType getSysMethod() {
         return method;
     }
 
@@ -366,7 +366,7 @@ public class CommonRequest {
         this.method = method;
     }
 
-    public String getBizUriPattern() {
+    public String getSysUriPattern() {
         return uriPattern;
     }
 
@@ -374,7 +374,7 @@ public class CommonRequest {
         this.uriPattern = uriPattern;
     }
 
-    public String getBizDomain() {
+    public String getSysDomain() {
         return domain;
     }
 
@@ -382,23 +382,23 @@ public class CommonRequest {
         this.domain = domain;
     }
 
-    public String getBizEncoding() {
+    public String getSysEncoding() {
         return encoding;
     }
 
-    public Map<String, String> getBizQueryParameters() {
+    public Map<String, String> getSysQueryParameters() {
         return queryParameters;
     }
 
-    public Map<String, String> getBizBodyParameters() {
+    public Map<String, String> getSysBodyParameters() {
         return bodyParameters;
     }
 
-    public Map<String, String> getBizHeadParameters() {
+    public Map<String, String> getSysHeadParameters() {
         return headParameters;
     }
 
-    public Map<String, String> getBizPathParameters() {
+    public Map<String, String> getSysPathParameters() {
         return pathParameters;
     }
 

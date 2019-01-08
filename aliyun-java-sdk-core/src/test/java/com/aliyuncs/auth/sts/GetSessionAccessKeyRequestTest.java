@@ -8,19 +8,19 @@ public class GetSessionAccessKeyRequestTest {
     @Test
     public void testGetSessionAccessKeyRequestTest() {
         GetSessionAccessKeyRequest request = new GetSessionAccessKeyRequest();
-        Assert.assertEquals("Sts", request.getBizProduct());
+        Assert.assertEquals("Sts", request.getSysProduct());
         // duration seconds
         Assert.assertEquals(3600, request.getDurationSeconds());
-        Assert.assertNull(request.getBizQueryParameters().get("DurationSeconds"));
+        Assert.assertNull(request.getSysQueryParameters().get("DurationSeconds"));
         request.setDurationSeconds(100);
         Assert.assertTrue(100 == request.getDurationSeconds());
-        Assert.assertEquals("100", request.getBizQueryParameters().get("DurationSeconds"));
+        Assert.assertEquals("100", request.getSysQueryParameters().get("DurationSeconds"));
         // public key id
         Assert.assertNull(request.getPublicKeyId());
-        Assert.assertNull(request.getBizQueryParameters().get("PublicKeyId"));
+        Assert.assertNull(request.getSysQueryParameters().get("PublicKeyId"));
         request.setPublicKeyId("publicKeyId");
         Assert.assertEquals("publicKeyId", request.getPublicKeyId());
-        Assert.assertEquals("publicKeyId", request.getBizQueryParameters().get("PublicKeyId"));
+        Assert.assertEquals("publicKeyId", request.getSysQueryParameters().get("PublicKeyId"));
         // policy
         // Assert.assertNull(request.getPolicy());
         // Assert.assertNull(request.getQueryParameters().get("Policy"));

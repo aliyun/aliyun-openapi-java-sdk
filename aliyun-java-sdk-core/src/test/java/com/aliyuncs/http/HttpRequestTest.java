@@ -11,12 +11,12 @@ public class HttpRequestTest {
     @Test
     public void httpRequestTest() {
         HttpRequest request = new HttpRequest("test");
-        Assert.assertEquals("test", request.getBizUrl());
+        Assert.assertEquals("test", request.getSysUrl());
 
         ConcurrentHashMap<String, String> map = new ConcurrentHashMap<String, String>();
         map.put("test", "test");
         HttpRequest httpRequest = new HttpRequest("test", map);
-        Assert.assertEquals("test", httpRequest.getBizUrl());
+        Assert.assertEquals("test", httpRequest.getSysUrl());
         Assert.assertEquals("test", httpRequest.getHeaderValue("test"));
     }
 
@@ -24,7 +24,7 @@ public class HttpRequestTest {
     public void setGetTest() {
         HttpRequest request = new HttpRequest("test");
         request.setSysUrl("otherTest");
-        Assert.assertEquals("otherTest", request.getBizUrl());
+        Assert.assertEquals("otherTest", request.getSysUrl());
 
         request.setHttpContentType(null);
         Assert.assertNull(request.getHeaderValue("Content-Type"));
@@ -35,7 +35,7 @@ public class HttpRequestTest {
         Assert.assertEquals("0", request.getHeaderValue("Content-Length"));
         Assert.assertNull(request.getHttpContent());
         Assert.assertNull(request.getHttpContentType());
-        Assert.assertNull(request.getBizEncoding());
+        Assert.assertNull(request.getSysEncoding());
     }
 
     @Test

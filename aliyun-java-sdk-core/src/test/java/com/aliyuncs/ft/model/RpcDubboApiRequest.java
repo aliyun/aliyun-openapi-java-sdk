@@ -50,7 +50,7 @@ public class RpcDubboApiRequest extends RpcAcsRequest<RpcDubboApiResponse> {
             throws InvalidKeyException, IllegalStateException, UnsupportedEncodingException {
 
         signer = new HmacSHA1Signer();
-        Map<String, String> imutableMap = new HashMap<String, String>(this.getBizQueryParameters());
+        Map<String, String> imutableMap = new HashMap<String, String>(this.getSysQueryParameters());
         if (null != signer && null != credentials) {
             String accessKeyId = credentials.getAccessKeyId();
 
@@ -60,10 +60,10 @@ public class RpcDubboApiRequest extends RpcAcsRequest<RpcDubboApiResponse> {
                     this.putQueryParameter("SecurityToken", basicSessionCredentials.getSessionToken());
                 }
             }
-            imutableMap = this.composer.refreshSignParameters(this.getBizQueryParameters(), signer, accessKeyId, format);
-            imutableMap.put("RegionId", getBizRegionId());
+            imutableMap = this.composer.refreshSignParameters(this.getSysQueryParameters(), signer, accessKeyId, format);
+            imutableMap.put("RegionId", getSysRegionId());
             Map<String, String> paramsToSign = new HashMap<String, String>(imutableMap);
-            Map<String, String> bodyParams = this.getBizBodyParameters();
+            Map<String, String> bodyParams = this.getSysBodyParameters();
             if (bodyParams != null && !bodyParams.isEmpty()) {
                 byte[] data;
                 if (FormatType.JSON == this.getHttpContentType()) {
@@ -76,7 +76,7 @@ public class RpcDubboApiRequest extends RpcAcsRequest<RpcDubboApiResponse> {
                 this.setHttpContent(data, "UTF-8", this.getHttpContentType());
                 paramsToSign.putAll(bodyParams);
             }
-            String strToSign = this.composer.composeStringToSign(this.getBizMethod(), null, signer, paramsToSign, null,
+            String strToSign = this.composer.composeStringToSign(this.getSysMethod(), null, signer, paramsToSign, null,
                     null);
             String signature = signer.signString(strToSign, credentials.getAccessKeySecret());
             imutableMap.put("Signature", signature);

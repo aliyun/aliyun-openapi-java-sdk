@@ -106,9 +106,9 @@ public abstract class RpcAcsRequest<T extends AcsResponse> extends AcsRequest<T>
 
     @Override
     public String composeUrl(String endpoint, Map<String, String> queries) throws UnsupportedEncodingException {
-        Map<String, String> mapQueries = (queries == null) ? this.getBizQueryParameters() : queries;
+        Map<String, String> mapQueries = (queries == null) ? this.getSysQueryParameters() : queries;
         StringBuilder urlBuilder = new StringBuilder("");
-        urlBuilder.append(this.getBizProtocol().toString());
+        urlBuilder.append(this.getSysProtocol().toString());
         urlBuilder.append("://").append(endpoint);
         if (-1 == urlBuilder.indexOf("?")) {
             urlBuilder.append("/?");
@@ -122,7 +122,7 @@ public abstract class RpcAcsRequest<T extends AcsResponse> extends AcsRequest<T>
                                    FormatType format, ProductDomain domain)
             throws InvalidKeyException, IllegalStateException, UnsupportedEncodingException {
 
-        Map<String, String> imutableMap = new HashMap<String, String>(this.getBizQueryParameters());
+        Map<String, String> imutableMap = new HashMap<String, String>(this.getSysQueryParameters());
         if (null != signer && null != credentials) {
             String accessKeyId = credentials.getAccessKeyId();
             String accessSecret = credentials.getAccessKeySecret();
@@ -138,10 +138,10 @@ public abstract class RpcAcsRequest<T extends AcsResponse> extends AcsRequest<T>
                     this.putQueryParameter("BearerToken", bearerToken);
                 }
             }
-            imutableMap = this.composer.refreshSignParameters(this.getBizQueryParameters(), signer, accessKeyId, format);
-            imutableMap.put("RegionId", getBizRegionId());
+            imutableMap = this.composer.refreshSignParameters(this.getSysQueryParameters(), signer, accessKeyId, format);
+            imutableMap.put("RegionId", getSysRegionId());
             Map<String, String> paramsToSign = new HashMap<String, String>(imutableMap);
-            Map<String, String> bodyParams = this.getBizBodyParameters();
+            Map<String, String> bodyParams = this.getSysBodyParameters();
             if (bodyParams != null && !bodyParams.isEmpty()) {
                 byte[] data;
                 if (FormatType.JSON == this.getHttpContentType()) {
@@ -156,7 +156,7 @@ public abstract class RpcAcsRequest<T extends AcsResponse> extends AcsRequest<T>
                 paramsToSign.putAll(bodyParams);
             }
             String strToSign = this.composer.composeStringToSign(
-                    this.getBizMethod(), null, signer, paramsToSign, null, null);
+                    this.getSysMethod(), null, signer, paramsToSign, null, null);
 
             String signature;
             if (credentials instanceof KeyPairCredentials) {

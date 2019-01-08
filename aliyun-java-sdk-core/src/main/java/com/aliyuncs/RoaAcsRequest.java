@@ -77,18 +77,8 @@ public abstract class RoaAcsRequest<T extends AcsResponse> extends AcsRequest<T>
         this.putHeaderParameter("x-acs-version", version);
     }
 
-    @Override
-    public void setSysSecurityToken(String securityToken) {
-        super.setSysSecurityToken(securityToken);
-        this.putHeaderParameter("x-acs-security-token", securityToken);
-    }
-
     @Deprecated
     public Map<String, String> getPathParameters() {
-        return Collections.unmodifiableMap(pathParameters);
-    }
-
-    public Map<String, String> getBizPathParameters() {
         return Collections.unmodifiableMap(pathParameters);
     }
 
@@ -102,9 +92,9 @@ public abstract class RoaAcsRequest<T extends AcsResponse> extends AcsRequest<T>
 
     @Override
     public String composeUrl(String endpoint, Map<String, String> queries) throws UnsupportedEncodingException {
-        Map<String, String> mapQueries = (queries == null) ? this.getBizQueryParameters() : queries;
+        Map<String, String> mapQueries = (queries == null) ? this.getSysQueryParameters() : queries;
         StringBuilder urlBuilder = new StringBuilder("");
-        urlBuilder.append(this.getBizProtocol().toString());
+        urlBuilder.append(this.getSysProtocol().toString());
         urlBuilder.append("://").append(endpoint);
         if (null != this.uriPattern) {
             urlBuilder.append(RoaSignatureComposer.replaceOccupiedParameters(uriPattern, this.getPathParameters()));
@@ -132,7 +122,7 @@ public abstract class RoaAcsRequest<T extends AcsResponse> extends AcsRequest<T>
         this.uriPattern = uriPattern;
     }
 
-    public String getBizUriPattern() {
+    public String getSysUriPattern() {
         return uriPattern;
     }
 
@@ -144,7 +134,7 @@ public abstract class RoaAcsRequest<T extends AcsResponse> extends AcsRequest<T>
     public HttpRequest signRequest(Signer signer, AlibabaCloudCredentials credentials, FormatType format,
                                    ProductDomain domain) throws InvalidKeyException, IllegalStateException,
             UnsupportedEncodingException, NoSuchAlgorithmException {
-        Map<String, String> bodyParams = this.getBizBodyParameters();
+        Map<String, String> bodyParams = this.getSysBodyParameters();
         if (bodyParams != null && !bodyParams.isEmpty()) {
             byte[] data;
             if (FormatType.JSON == this.getHttpContentType()) {
@@ -158,10 +148,10 @@ public abstract class RoaAcsRequest<T extends AcsResponse> extends AcsRequest<T>
             this.setHttpContent(data, "UTF-8", null);
         }
 
-        Map<String, String> imutableMap = new HashMap<String, String>(this.getBizHeaders());
+        Map<String, String> imutableMap = new HashMap<String, String>(this.getSysHeaders());
         if (null != signer && null != credentials) {
             String accessKeyId = credentials.getAccessKeyId();
-            imutableMap = this.composer.refreshSignParameters(this.getBizHeaders(), signer, accessKeyId, format);
+            imutableMap = this.composer.refreshSignParameters(this.getSysHeaders(), signer, accessKeyId, format);
             if (credentials instanceof BasicSessionCredentials) {
                 String sessionToken = ((BasicSessionCredentials) credentials).getSessionToken();
                 if (null != sessionToken) {
@@ -174,12 +164,12 @@ public abstract class RoaAcsRequest<T extends AcsResponse> extends AcsRequest<T>
                     imutableMap.put("x-acs-bearer-token", bearerToken);
                 }
             }
-            String strToSign = this.composer.composeStringToSign(this.getBizMethod(), this.getBizUriPattern(), signer,
-                    this.getBizQueryParameters(), imutableMap, this.getPathParameters());
+            String strToSign = this.composer.composeStringToSign(this.getSysMethod(), this.getSysUriPattern(), signer,
+                    this.getSysQueryParameters(), imutableMap, this.getPathParameters());
             String signature = signer.signString(strToSign, credentials);
             imutableMap.put("Authorization", "acs " + accessKeyId + ":" + signature);
         }
-        this.setSysUrl(this.composeUrl(domain.getDomianName(), this.getBizQueryParameters()));
+        this.setSysUrl(this.composeUrl(domain.getDomianName(), this.getSysQueryParameters()));
         this.headers = imutableMap;
         return this;
     }
