@@ -1,6 +1,10 @@
 package com.aliyuncs.profile;
 
-import com.aliyuncs.auth.*;
+import com.aliyuncs.auth.AlibabaCloudCredentialsProvider;
+import com.aliyuncs.auth.Credential;
+import com.aliyuncs.auth.CredentialsBackupCompatibilityAdaptor;
+import com.aliyuncs.auth.ICredentialProvider;
+import com.aliyuncs.auth.ISigner;
 import com.aliyuncs.endpoint.DefaultEndpointResolver;
 import com.aliyuncs.exceptions.ClientException;
 import com.aliyuncs.http.FormatType;
@@ -16,6 +20,7 @@ public class DefaultProfile implements IClientProfile {
     private String certPath;
     private HttpClientConfig httpClientConfig = HttpClientConfig.getDefault();
     private boolean usingInternalLocationService = false;
+    private boolean usingVpcEndpoint = false;
 
     private DefaultProfile() {
     }
@@ -49,7 +54,6 @@ public class DefaultProfile implements IClientProfile {
         if (null == profile) {
             profile = new DefaultProfile();
         }
-
         return profile;
     }
 
@@ -145,12 +149,22 @@ public class DefaultProfile implements IClientProfile {
     }
 
     @Override
-    public void setUsingInternalLocationService() {
+    public void enableUsingInternalLocationService() {
         usingInternalLocationService = true;
     }
 
     @Override
     public boolean isUsingInternalLocationService() {
         return usingInternalLocationService;
+    }
+
+    @Override
+    public boolean isUsingVpcEndpoint() {
+        return usingVpcEndpoint;
+    }
+
+    @Override
+    public void enableUsingVpcEndpoint() {
+        this.usingVpcEndpoint = true;
     }
 }
