@@ -23,7 +23,7 @@ public class CommonRpcRequestTest {
     @Test
     public void acsRequestTest() {
         CommonRpcRequest acsRequest = new CommonRpcRequest("test");
-        Assert.assertEquals("test", acsRequest.getBizProduct());
+        Assert.assertEquals("test", acsRequest.getSysProduct());
         Assert.assertEquals("Java/2.0.0", acsRequest.getHeaderValue("x-sdk-client"));
         Assert.assertEquals("normal", acsRequest.getHeaderValue("x-sdk-invoke-type"));
     }
@@ -32,44 +32,44 @@ public class CommonRpcRequestTest {
     public void acsRequestGetSetTest() throws UnsupportedEncodingException, InvalidKeyException, NoSuchAlgorithmException {
         CommonRpcRequest acsRequest = new CommonRpcRequest("test", "test", "test",
                 "locationProduct", "endpointType");
-        Assert.assertEquals("test", acsRequest.getBizVersion());
-        Assert.assertEquals("test", acsRequest.getBizActionName());
-        Assert.assertEquals("locationProduct", acsRequest.getBizLocationProduct());
-        Assert.assertEquals("endpointType", acsRequest.getBizEndpointType());
+        Assert.assertEquals("test", acsRequest.getSysVersion());
+        Assert.assertEquals("test", acsRequest.getSysActionName());
+        Assert.assertEquals("locationProduct", acsRequest.getSysLocationProduct());
+        Assert.assertEquals("endpointType", acsRequest.getSysEndpointType());
 
         acsRequest.setSysRegionId("hangzhou");
-        Assert.assertEquals("hangzhou", acsRequest.getBizRegionId());
+        Assert.assertEquals("hangzhou", acsRequest.getSysRegionId());
 
         acsRequest.setSecurityToken("token");
         Assert.assertEquals("token", acsRequest.getSecurityToken());
 
         acsRequest.setAcceptFormat(FormatType.JSON);
-        Assert.assertTrue(FormatType.JSON == acsRequest.getBizAcceptFormat());
+        Assert.assertTrue(FormatType.JSON == acsRequest.getSysAcceptFormat());
         Assert.assertEquals("application/json", acsRequest.getHeaderValue("Accept"));
 
         acsRequest.setSysProtocol(ProtocolType.HTTP);
-        Assert.assertTrue(ProtocolType.HTTP == acsRequest.getBizProtocol());
+        Assert.assertTrue(ProtocolType.HTTP == acsRequest.getSysProtocol());
 
         acsRequest.setSysEndpoint("endPonit");
-        Assert.assertTrue(acsRequest.getBizProductDomain() instanceof ProductDomain);
+        Assert.assertTrue(acsRequest.getSysProductDomain() instanceof ProductDomain);
 
         acsRequest.putQueryParameter("test", "test");
         acsRequest.putQueryParameter("objectTest", 8);
         acsRequest.putQueryParameter("nullTest", null);
-        Map<String, String> map = acsRequest.getBizQueryParameters();
+        Map<String, String> map = acsRequest.getSysQueryParameters();
         Assert.assertEquals("test", map.get("test"));
         Assert.assertEquals("8", map.get("objectTest"));
         Assert.assertNull(map.get("nullTest"));
 
         acsRequest.putDomainParameter("test", "test");
         acsRequest.putDomainParameter("objectTest", 8);
-        map = acsRequest.getBizDomainParameters();
+        map = acsRequest.getSysDomainParameters();
         Assert.assertEquals("test", map.get("test"));
         Assert.assertEquals("8", map.get("objectTest"));
 
         acsRequest.putBodyParameter("test", "test");
         acsRequest.putBodyParameter("objectTest", 8);
-        map = acsRequest.getBizBodyParameters();
+        map = acsRequest.getSysBodyParameters();
         Assert.assertEquals("test", map.get("test"));
         Assert.assertEquals("8", map.get("objectTest"));
     }
@@ -88,15 +88,15 @@ public class CommonRpcRequestTest {
     public void commonRpcRequestTest() {
         CommonRpcRequest commonRpcRequest = new CommonRpcRequest("test", "test", "test",
                 "locationProduct");
-        Assert.assertEquals("test", commonRpcRequest.getBizProduct());
-        Assert.assertEquals("test", commonRpcRequest.getBizVersion());
-        Assert.assertEquals("test", commonRpcRequest.getBizActionName());
-        Assert.assertEquals("locationProduct", commonRpcRequest.getBizLocationProduct());
+        Assert.assertEquals("test", commonRpcRequest.getSysProduct());
+        Assert.assertEquals("test", commonRpcRequest.getSysVersion());
+        Assert.assertEquals("test", commonRpcRequest.getSysActionName());
+        Assert.assertEquals("locationProduct", commonRpcRequest.getSysLocationProduct());
 
         commonRpcRequest = new CommonRpcRequest("test", "test", "test");
-        Assert.assertEquals("test", commonRpcRequest.getBizProduct());
-        Assert.assertEquals("test", commonRpcRequest.getBizVersion());
-        Assert.assertEquals("test", commonRpcRequest.getBizActionName());
+        Assert.assertEquals("test", commonRpcRequest.getSysProduct());
+        Assert.assertEquals("test", commonRpcRequest.getSysVersion());
+        Assert.assertEquals("test", commonRpcRequest.getSysActionName());
     }
 
     @Test
@@ -108,21 +108,21 @@ public class CommonRpcRequestTest {
     @Test
     public void rpcAcsRequestGetSetTest() {
         CommonRpcRequest commonRpcRequest = new CommonRpcRequest("test");
-        Map<String, String> map = commonRpcRequest.getBizQueryParameters();
+        Map<String, String> map = commonRpcRequest.getSysQueryParameters();
         commonRpcRequest.setSysSecurityToken("token");
-        Assert.assertEquals("token", commonRpcRequest.getBizSecurityToken());
+        Assert.assertEquals("token", commonRpcRequest.getSysSecurityToken());
         Assert.assertEquals("token", map.get("SecurityToken"));
 
         commonRpcRequest.setSysAcceptFormat(FormatType.JSON);
-        Assert.assertTrue(FormatType.JSON == commonRpcRequest.getBizAcceptFormat());
+        Assert.assertTrue(FormatType.JSON == commonRpcRequest.getSysAcceptFormat());
         Assert.assertEquals("JSON", map.get("Format"));
 
         commonRpcRequest.setSysVersion("version");
-        Assert.assertEquals("version", commonRpcRequest.getBizVersion());
+        Assert.assertEquals("version", commonRpcRequest.getSysVersion());
         Assert.assertEquals("version", map.get("Version"));
 
         commonRpcRequest.setSysActionName("action");
-        Assert.assertEquals("action", commonRpcRequest.getBizActionName());
+        Assert.assertEquals("action", commonRpcRequest.getSysActionName());
         Assert.assertEquals("action", map.get("Action"));
     }
 
@@ -148,11 +148,11 @@ public class CommonRpcRequestTest {
         ProductDomain domain = mock(ProductDomain.class);
         when(domain.getDomianName()).thenReturn("testDomain");
         commonRpcRequest.signRequest(signer, credentials, FormatType.JSON, domain);
-        Assert.assertTrue(commonRpcRequest.getBizUrl().contains("http"));
-        Assert.assertTrue(commonRpcRequest.getBizUrl().contains("testDomain"));
-        Assert.assertTrue(commonRpcRequest.getBizUrl().contains("SecurityToken=token"));
-        Assert.assertTrue(commonRpcRequest.getBizUrl().contains("Format=JSON"));
-        Assert.assertTrue(commonRpcRequest.getBizUrl().contains("AccessKeyId=testId"));
+        Assert.assertTrue(commonRpcRequest.getSysUrl().contains("http"));
+        Assert.assertTrue(commonRpcRequest.getSysUrl().contains("testDomain"));
+        Assert.assertTrue(commonRpcRequest.getSysUrl().contains("SecurityToken=token"));
+        Assert.assertTrue(commonRpcRequest.getSysUrl().contains("Format=JSON"));
+        Assert.assertTrue(commonRpcRequest.getSysUrl().contains("AccessKeyId=testId"));
 
         commonRpcRequest = new CommonRpcRequest("test");
         commonRpcRequest.setSysProtocol(ProtocolType.HTTP);
@@ -161,8 +161,8 @@ public class CommonRpcRequestTest {
         commonRpcRequest.putBodyParameter("test", "test");
         commonRpcRequest.setHttpContentType(FormatType.JSON);
         commonRpcRequest.signRequest(signer, bearerTokenCredentials, FormatType.JSON, domain);
-        Assert.assertTrue(commonRpcRequest.getBizUrl().contains("BearerToken=token"));
-        Map<String, String> map = commonRpcRequest.getBizBodyParameters();
+        Assert.assertTrue(commonRpcRequest.getSysUrl().contains("BearerToken=token"));
+        Map<String, String> map = commonRpcRequest.getSysBodyParameters();
         Assert.assertEquals("test", map.get("test"));
 
         commonRpcRequest = new CommonRpcRequest("test");
@@ -171,7 +171,7 @@ public class CommonRpcRequestTest {
         commonRpcRequest.putBodyParameter("test", "xml");
         commonRpcRequest.setHttpContentType(FormatType.XML);
         commonRpcRequest.signRequest(signer, keyPairCredentials, FormatType.JSON, domain);
-        map = commonRpcRequest.getBizBodyParameters();
+        map = commonRpcRequest.getSysBodyParameters();
         Assert.assertEquals("xml", map.get("test"));
 
         commonRpcRequest.setHttpContentType(FormatType.FORM);
