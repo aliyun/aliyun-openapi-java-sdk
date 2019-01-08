@@ -55,7 +55,7 @@ public class DefaultAcsClient implements IAcsClient {
         this.credentialsProvider = credentialsProvider;
         this.clientProfile.setCredentialsProvider(this.credentialsProvider);
         this.httpClient = HttpClientFactory.buildClient(this.clientProfile);
-        this.endpointResolver = new DefaultEndpointResolver(this, profile.isUsingInternalLocationService());
+        this.endpointResolver = new DefaultEndpointResolver(this, profile);
     }
 
     @Override

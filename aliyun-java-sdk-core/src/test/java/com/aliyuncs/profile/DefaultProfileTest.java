@@ -28,13 +28,16 @@ public class DefaultProfileTest {
         assertNull(profile.getCertPath());
         profile.setCertPath("certPath");
         assertEquals("certPath", profile.getCertPath());
+
+        profile.enableUsingVpcEndpoint();
+        assertTrue(profile.isUsingVpcEndpoint());
     }
 
     @Test
     public void testIsUsingInternalLocationService() {
         DefaultProfile profile = DefaultProfile.getProfile("cn-hangzhou");
         assertFalse(profile.isUsingInternalLocationService());
-        profile.setUsingInternalLocationService();
+        profile.enableUsingInternalLocationService();
         assertTrue(profile.isUsingInternalLocationService());
     }
 
