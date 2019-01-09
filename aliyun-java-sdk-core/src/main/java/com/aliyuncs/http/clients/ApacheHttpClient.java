@@ -147,16 +147,16 @@ public class ApacheHttpClient extends IHttpClient {
     }
 
     private HttpUriRequest parseToHttpRequest(HttpRequest apiReq) throws IOException {
-        RequestBuilder builder = RequestBuilder.create(apiReq.getBizMethod().name());
+        RequestBuilder builder = RequestBuilder.create(apiReq.getSysMethod().name());
 
-        builder.setUri(apiReq.getBizUrl());
+        builder.setUri(apiReq.getSysUrl());
 
-        if (apiReq.getBizMethod().hasContent()) {
+        if (apiReq.getSysMethod().hasContent()) {
             EntityBuilder bodyBuilder = EntityBuilder.create();
 
             String contentType = apiReq.getHeaderValue(CONTENT_TYPE);
             if (StringUtils.isEmpty(contentType)) {
-                contentType = apiReq.getContentTypeValue(apiReq.getHttpContentType(), apiReq.getBizEncoding());
+                contentType = apiReq.getContentTypeValue(apiReq.getHttpContentType(), apiReq.getSysEncoding());
             } else {
                 bodyBuilder.setContentType(ContentType.parse(contentType));
             }
@@ -166,7 +166,7 @@ public class ApacheHttpClient extends IHttpClient {
 
         builder.addHeader(ACCEPT_ENCODING, "identity");
 
-        for (Map.Entry<String, String> entry : apiReq.getBizHeaders().entrySet()) {
+        for (Map.Entry<String, String> entry : apiReq.getSysHeaders().entrySet()) {
             if ("Content-Length".equalsIgnoreCase(entry.getKey())) {
                 continue;
             }

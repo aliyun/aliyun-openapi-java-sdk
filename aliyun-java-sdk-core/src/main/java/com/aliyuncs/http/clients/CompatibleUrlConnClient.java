@@ -80,17 +80,17 @@ public class CompatibleUrlConnClient extends IHttpClient {
     }
 
     private HttpURLConnection buildHttpConnection(HttpRequest request) throws IOException {
-        String strUrl = request.getBizUrl();
+        String strUrl = request.getSysUrl();
 
         if (null == strUrl) {
             throw new IllegalArgumentException("URL is null for HttpRequest.");
         }
-        if (null == request.getBizMethod()) {
+        if (null == request.getSysMethod()) {
             throw new IllegalArgumentException("Method is not set for HttpRequest.");
         }
         URL url = null;
         String[] urlArray = null;
-        if (MethodType.POST.equals(request.getBizMethod()) && null == request.getHttpContent()) {
+        if (MethodType.POST.equals(request.getSysMethod()) && null == request.getHttpContent()) {
             urlArray = strUrl.split("\\?");
             url = new URL(urlArray[0]);
         } else {
@@ -112,21 +112,21 @@ public class CompatibleUrlConnClient extends IHttpClient {
             httpConn = (HttpURLConnection) url.openConnection(proxy);
         }
 
-        httpConn.setRequestMethod(request.getBizMethod().toString());
+        httpConn.setRequestMethod(request.getSysMethod().toString());
         httpConn.setInstanceFollowRedirects(false);
         httpConn.setDoOutput(true);
         httpConn.setDoInput(true);
         httpConn.setUseCaches(false);
 
-        if (request.getBizConnectTimeout() != null) {
-            httpConn.setConnectTimeout(request.getBizConnectTimeout());
+        if (request.getSysConnectTimeout() != null) {
+            httpConn.setConnectTimeout(request.getSysConnectTimeout());
         }
 
-        if (request.getBizReadTimeout() != null) {
-            httpConn.setReadTimeout(request.getBizReadTimeout());
+        if (request.getSysReadTimeout() != null) {
+            httpConn.setReadTimeout(request.getSysReadTimeout());
         }
 
-        Map<String, String> mappedHeaders = request.getBizHeaders();
+        Map<String, String> mappedHeaders = request.getSysHeaders();
         httpConn.setRequestProperty(ACCEPT_ENCODING, "identity");
         for (Entry<String, String> entry : mappedHeaders.entrySet()) {
             httpConn.setRequestProperty(entry.getKey(), entry.getValue());
@@ -135,13 +135,13 @@ public class CompatibleUrlConnClient extends IHttpClient {
         if (null != request.getHeaderValue(CONTENT_TYPE)) {
             httpConn.setRequestProperty(CONTENT_TYPE, request.getHeaderValue(CONTENT_TYPE));
         } else {
-            String contentTypeValue = request.getContentTypeValue(request.getHttpContentType(), request.getBizEncoding());
+            String contentTypeValue = request.getContentTypeValue(request.getHttpContentType(), request.getSysEncoding());
             if (null != contentTypeValue) {
                 httpConn.setRequestProperty(CONTENT_TYPE, contentTypeValue);
             }
         }
 
-        if (MethodType.POST.equals(request.getBizMethod()) && null != urlArray && urlArray.length == 2) {
+        if (MethodType.POST.equals(request.getSysMethod()) && null != urlArray && urlArray.length == 2) {
             httpConn.getOutputStream().write(urlArray[1].getBytes());
         }
 
@@ -177,7 +177,7 @@ public class CompatibleUrlConnClient extends IHttpClient {
             }
         }
         response.setStatus(httpConn.getResponseCode());
-        response.setHttpContent(buff, response.getBizEncoding(),
+        response.setHttpContent(buff, response.getSysEncoding(),
                 response.getHttpContentType());
     }
 

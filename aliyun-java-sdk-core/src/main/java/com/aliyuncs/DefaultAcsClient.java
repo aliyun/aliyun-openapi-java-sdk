@@ -55,7 +55,7 @@ public class DefaultAcsClient implements IAcsClient {
         this.credentialsProvider = credentialsProvider;
         this.clientProfile.setCredentialsProvider(this.credentialsProvider);
         this.httpClient = HttpClientFactory.buildClient(this.clientProfile);
-        this.endpointResolver = new DefaultEndpointResolver(this, profile.isUsingInternalLocationService());
+        this.endpointResolver = new DefaultEndpointResolver(this, profile);
     }
 
     @Override
@@ -83,11 +83,11 @@ public class DefaultAcsClient implements IAcsClient {
         int retryNumber = this.maxRetryNumber;
         Signer signer = Signer.getSigner(new LegacyCredentials(credential));
         FormatType format = null;
-        if (null == request.getBizRegionId()) {
+        if (null == request.getSysRegionId()) {
             request.setSysRegionId(regionId);
         }
 
-        return this.doAction(request, retry, retryNumber, request.getBizRegionId(), credential, signer, format);
+        return this.doAction(request, retry, retryNumber, request.getSysRegionId(), credential, signer, format);
     }
 
     @Override
@@ -120,7 +120,7 @@ public class DefaultAcsClient implements IAcsClient {
     @Override
     public <T extends AcsResponse> T getAcsResponse(AcsRequest<T> request, String regionId)
             throws ServerException, ClientException {
-        if (null == request.getBizRegionId()) {
+        if (null == request.getSysRegionId()) {
             request.setSysRegionId(regionId);
         }
         HttpResponse baseResponse = this.doAction(request);
@@ -158,7 +158,7 @@ public class DefaultAcsClient implements IAcsClient {
         boolean retry = autoRetry;
         int retryNumber = maxRetryCounts;
         String region = profile.getRegionId();
-        if (null == request.getBizRegionId()) {
+        if (null == request.getSysRegionId()) {
             request.setSysRegionId(region);
         }
 
@@ -166,7 +166,7 @@ public class DefaultAcsClient implements IAcsClient {
         Signer signer = Signer.getSigner(credentials);
         FormatType format = profile.getFormat();
 
-        return this.doAction(request, retry, retryNumber, request.getBizRegionId(), credentials, signer, format);
+        return this.doAction(request, retry, retryNumber, request.getSysRegionId(), credentials, signer, format);
     }
 
     private <T extends AcsResponse> T parseAcsResponse(Class<T> clasz, HttpResponse baseResponse)
@@ -199,18 +199,18 @@ public class DefaultAcsClient implements IAcsClient {
             throws ClientException, ServerException {
 
         try {
-            FormatType requestFormatType = request.getBizAcceptFormat();
+            FormatType requestFormatType = request.getSysAcceptFormat();
             if (null != requestFormatType) {
                 format = requestFormatType;
             }
             ProductDomain domain = null;
-            if (request.getBizProductDomain() != null) {
-                domain = request.getBizProductDomain();
+            if (request.getSysProductDomain() != null) {
+                domain = request.getSysProductDomain();
             } else {
                 ResolveEndpointRequest resolveEndpointRequest = new ResolveEndpointRequest(regionId,
-                        request.getBizProduct(), request.getBizLocationProduct(), request.getBizEndpointType());
+                        request.getSysProduct(), request.getSysLocationProduct(), request.getSysEndpointType());
                 String endpoint = endpointResolver.resolve(resolveEndpointRequest);
-                domain = new ProductDomain(request.getBizProduct(), endpoint);
+                domain = new ProductDomain(request.getSysProduct(), endpoint);
 
                 if (endpoint.endsWith("endpoint-test.exception.com")) {
                     // For endpoint testability, if the endpoint is xxxx.endpoint-test.special.com
@@ -219,7 +219,7 @@ public class DefaultAcsClient implements IAcsClient {
                 }
             }
 
-            if (request.getBizProtocol() == null) {
+            if (request.getSysProtocol() == null) {
                 request.setSysProtocol(this.clientProfile.getHttpClientConfig().getProtocolType());
             }
 

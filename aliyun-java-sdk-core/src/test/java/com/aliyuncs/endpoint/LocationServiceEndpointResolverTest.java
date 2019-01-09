@@ -149,4 +149,12 @@ public class LocationServiceEndpointResolverTest {
         request.productCodeLower = "cds";
         assertNull(resolver.resolve(request));
     }
+
+    @Test
+    public void setLocationServiceEndpointTest(){
+        DefaultAcsClient client = mock(DefaultAcsClient.class);
+        LocationServiceEndpointResolver resolver = new LocationServiceEndpointResolver(client);
+        resolver.setLocationServiceEndpoint("test");
+        assertEquals("test", resolver.locationServiceEndpoint);
+    }
 }

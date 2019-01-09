@@ -161,7 +161,7 @@ public abstract class HttpMessage {
     }
 
 
-    public String getBizUrl() {
+    public String getSysUrl() {
         return url;
     }
 
@@ -169,7 +169,7 @@ public abstract class HttpMessage {
         this.url = url;
     }
 
-    public MethodType getBizMethod() {
+    public MethodType getSysMethod() {
         return method;
     }
 
@@ -181,7 +181,7 @@ public abstract class HttpMessage {
         }
     }
 
-    public String getBizEncoding() {
+    public String getSysEncoding() {
         return encoding;
     }
 
@@ -189,7 +189,7 @@ public abstract class HttpMessage {
         this.encoding = encoding;
     }
 
-    public Integer getBizConnectTimeout() {
+    public Integer getSysConnectTimeout() {
         return connectTimeout;
     }
 
@@ -197,7 +197,7 @@ public abstract class HttpMessage {
         this.connectTimeout = connectTimeout;
     }
 
-    public Integer getBizReadTimeout() {
+    public Integer getSysReadTimeout() {
         return readTimeout;
     }
 
@@ -205,7 +205,7 @@ public abstract class HttpMessage {
         this.readTimeout = readTimeout;
     }
 
-    public Map<String, String> getBizHeaders() {
+    public Map<String, String> getSysHeaders() {
         return Collections.unmodifiableMap(headers);
     }
 }
