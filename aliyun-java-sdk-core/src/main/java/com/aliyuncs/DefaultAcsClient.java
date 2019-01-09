@@ -181,27 +181,26 @@ public class DefaultAcsClient implements IAcsClient {
             return readResponse(request.getResponseClass(), baseResponse, format);
         } else {
             AcsError error = readError(baseResponse, format);
-            return distinguishError(request, error, baseResponse);
-        }
-    }
+            if (500 <= baseResponse.getStatus()) {
+                throw new ServerException(error.getErrorCode(), error.getErrorMessage(), error.getRequestId());
+            }
 
-    public <T extends AcsResponse> T distinguishError(AcsRequest<T> request, AcsError error, HttpResponse baseResponse) throws ClientException {
-        if (500 <= baseResponse.getStatus()) {
-            throw new ServerException(error.getErrorCode(), error.getErrorMessage(), error.getRequestId());
-        } else if ("IncompleteSignature".equals(error.getErrorCode())) {
-            String errorMessage = error.getErrorMessage();
-            Pattern startPattern = Pattern.compile(SIGNATURE_BEGIN);
-            Matcher startMatcher = startPattern.matcher(errorMessage);
-            if (startMatcher.find()) {
-                int start = startMatcher.end();
-                String errorStrToSign = errorMessage.substring(start);
-                if (request.strToSign.equals(errorStrToSign)) {
-                    throw new ClientException("InvalidAccessKeySecret", "Specified Access Key Secret is not valid.",
-                            error.getRequestId());
+            if ("IncompleteSignature".equals(error.getErrorCode())) {
+                String errorMessage = error.getErrorMessage();
+                Pattern startPattern = Pattern.compile(SIGNATURE_BEGIN);
+                Matcher startMatcher = startPattern.matcher(errorMessage);
+                if (startMatcher.find()) {
+                    int start = startMatcher.end();
+                    String errorStrToSign = errorMessage.substring(start);
+                    if (request.strToSign.equals(errorStrToSign)) {
+                        throw new ClientException("SDK.InvalidAccessKeySecret",
+                                "Specified Access Key Secret is not valid.", error.getRequestId());
+                    }
                 }
             }
+
+            throw new ClientException(error.getErrorCode(), error.getErrorMessage(), error.getRequestId());
         }
-        throw new ClientException(error.getErrorCode(), error.getErrorMessage(), error.getRequestId());
     }
 
     @Deprecated

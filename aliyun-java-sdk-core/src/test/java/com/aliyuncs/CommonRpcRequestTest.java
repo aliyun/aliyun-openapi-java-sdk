@@ -29,9 +29,9 @@ public class CommonRpcRequestTest {
     }
 
     @Test
-    public void acsRequestGetSetTest() throws UnsupportedEncodingException, InvalidKeyException, NoSuchAlgorithmException {
-        CommonRpcRequest acsRequest = new CommonRpcRequest("test", "test", "test",
-                "locationProduct", "endpointType");
+    public void acsRequestGetSetTest()
+            throws UnsupportedEncodingException, InvalidKeyException, NoSuchAlgorithmException {
+        CommonRpcRequest acsRequest = new CommonRpcRequest("test", "test", "test", "locationProduct", "endpointType");
         Assert.assertEquals("test", acsRequest.getSysVersion());
         Assert.assertEquals("test", acsRequest.getSysActionName());
         Assert.assertEquals("locationProduct", acsRequest.getSysLocationProduct());
@@ -86,8 +86,7 @@ public class CommonRpcRequestTest {
 
     @Test
     public void commonRpcRequestTest() {
-        CommonRpcRequest commonRpcRequest = new CommonRpcRequest("test", "test", "test",
-                "locationProduct");
+        CommonRpcRequest commonRpcRequest = new CommonRpcRequest("test", "test", "test", "locationProduct");
         Assert.assertEquals("test", commonRpcRequest.getSysProduct());
         Assert.assertEquals("test", commonRpcRequest.getSysVersion());
         Assert.assertEquals("test", commonRpcRequest.getSysActionName());
