@@ -14,17 +14,17 @@
 
 package com.aliyuncs.arms.transform.v20181219;
 
-import com.aliyuncs.arms.model.v20181219.CreateAppResponse;
+import com.aliyuncs.arms.model.v20181219.GetTraceResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class CreateAppResponseUnmarshaller {
+public class GetTraceResponseUnmarshaller {
 
-	public static CreateAppResponse unmarshall(CreateAppResponse createAppResponse, UnmarshallerContext context) {
+	public static GetTraceResponse unmarshall(GetTraceResponse getTraceResponse, UnmarshallerContext context) {
 		
-		createAppResponse.setRequestId(context.stringValue("CreateAppResponse.RequestId"));
-		createAppResponse.setData(context.stringValue("CreateAppResponse.Data"));
+		getTraceResponse.setRequestId(context.stringValue("GetTraceResponse.RequestId"));
+		getTraceResponse.setData(context.stringValue("GetTraceResponse.Data"));
 	 
-	 	return createAppResponse;
+	 	return getTraceResponse;
 	}
 }
