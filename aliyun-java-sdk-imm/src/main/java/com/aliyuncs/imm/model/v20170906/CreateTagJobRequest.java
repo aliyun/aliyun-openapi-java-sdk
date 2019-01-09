@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class CreateTagJobRequest extends RpcAcsRequest<CreateTagJobResponse> {
 	
 	public CreateTagJobRequest() {
-		super("imm", "2017-09-06", "CreateTagJob", "imm");
+		super("imm", "2017-09-06", "CreateTagJob", "2017-09-06");
 	}
 
 	private String notifyTopicName;

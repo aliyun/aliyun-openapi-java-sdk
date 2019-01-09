@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class CompareFaceRequest extends RpcAcsRequest<CompareFaceResponse> {
 	
 	public CompareFaceRequest() {
-		super("imm", "2017-09-06", "CompareFace", "imm");
+		super("imm", "2017-09-06", "CompareFace", "2017-09-06");
 	}
 
 	private String srcUriB;

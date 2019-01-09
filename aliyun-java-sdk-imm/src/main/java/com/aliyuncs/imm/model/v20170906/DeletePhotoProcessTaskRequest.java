@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeletePhotoProcessTaskRequest extends RpcAcsRequest<DeletePhotoProcessTaskResponse> {
 	
 	public DeletePhotoProcessTaskRequest() {
-		super("imm", "2017-09-06", "DeletePhotoProcessTask", "imm");
+		super("imm", "2017-09-06", "DeletePhotoProcessTask", "2017-09-06");
 	}
 
 	private String project;

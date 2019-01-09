@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ListProjectsRequest extends RpcAcsRequest<ListProjectsResponse> {
 	
 	public ListProjectsRequest() {
-		super("imm", "2017-09-06", "ListProjects", "imm");
+		super("imm", "2017-09-06", "ListProjects", "2017-09-06");
 	}
 
 	private Integer maxKeys;

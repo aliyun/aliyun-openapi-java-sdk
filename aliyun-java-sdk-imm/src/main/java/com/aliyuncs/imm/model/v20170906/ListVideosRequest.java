@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ListVideosRequest extends RpcAcsRequest<ListVideosResponse> {
 	
 	public ListVideosRequest() {
-		super("imm", "2017-09-06", "ListVideos", "imm");
+		super("imm", "2017-09-06", "ListVideos", "2017-09-06");
 	}
 
 	private String marker;

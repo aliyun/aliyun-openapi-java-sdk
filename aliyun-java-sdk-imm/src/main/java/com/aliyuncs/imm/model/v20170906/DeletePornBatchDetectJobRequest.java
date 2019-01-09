@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeletePornBatchDetectJobRequest extends RpcAcsRequest<DeletePornBatchDetectJobResponse> {
 	
 	public DeletePornBatchDetectJobRequest() {
-		super("imm", "2017-09-06", "DeletePornBatchDetectJob", "imm");
+		super("imm", "2017-09-06", "DeletePornBatchDetectJob", "2017-09-06");
 	}
 
 	private String jobId;

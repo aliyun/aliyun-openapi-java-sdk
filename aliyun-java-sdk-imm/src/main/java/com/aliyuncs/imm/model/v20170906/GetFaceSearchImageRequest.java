@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class GetFaceSearchImageRequest extends RpcAcsRequest<GetFaceSearchImageResponse> {
 	
 	public GetFaceSearchImageRequest() {
-		super("imm", "2017-09-06", "GetFaceSearchImage", "imm");
+		super("imm", "2017-09-06", "GetFaceSearchImage", "2017-09-06");
 	}
 
 	private String imageId;

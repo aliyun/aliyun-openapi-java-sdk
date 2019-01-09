@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ListTagNamesRequest extends RpcAcsRequest<ListTagNamesResponse> {
 	
 	public ListTagNamesRequest() {
-		super("imm", "2017-09-06", "ListTagNames", "imm");
+		super("imm", "2017-09-06", "ListTagNames", "2017-09-06");
 	}
 
 	private String marker;

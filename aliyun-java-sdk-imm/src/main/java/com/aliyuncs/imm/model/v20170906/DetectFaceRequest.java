@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DetectFaceRequest extends RpcAcsRequest<DetectFaceResponse> {
 	
 	public DetectFaceRequest() {
-		super("imm", "2017-09-06", "DetectFace", "imm");
+		super("imm", "2017-09-06", "DetectFace", "2017-09-06");
 	}
 
 	private String srcUris;

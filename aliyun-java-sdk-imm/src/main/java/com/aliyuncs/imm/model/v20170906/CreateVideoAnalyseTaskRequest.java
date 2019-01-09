@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class CreateVideoAnalyseTaskRequest extends RpcAcsRequest<CreateVideoAnalyseTaskResponse> {
 	
 	public CreateVideoAnalyseTaskRequest() {
-		super("imm", "2017-09-06", "CreateVideoAnalyseTask", "imm");
+		super("imm", "2017-09-06", "CreateVideoAnalyseTask", "2017-09-06");
 	}
 
 	private String notifyTopicName;

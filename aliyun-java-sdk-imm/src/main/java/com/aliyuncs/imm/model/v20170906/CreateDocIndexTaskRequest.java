@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class CreateDocIndexTaskRequest extends RpcAcsRequest<CreateDocIndexTaskResponse> {
 	
 	public CreateDocIndexTaskRequest() {
-		super("imm", "2017-09-06", "CreateDocIndexTask", "imm");
+		super("imm", "2017-09-06", "CreateDocIndexTask", "2017-09-06");
 	}
 
 	private String customKey1;

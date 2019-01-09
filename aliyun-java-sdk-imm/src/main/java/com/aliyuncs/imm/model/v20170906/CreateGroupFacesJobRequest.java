@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class CreateGroupFacesJobRequest extends RpcAcsRequest<CreateGroupFacesJobResponse> {
 	
 	public CreateGroupFacesJobRequest() {
-		super("imm", "2017-09-06", "CreateGroupFacesJob", "imm");
+		super("imm", "2017-09-06", "CreateGroupFacesJob", "2017-09-06");
 	}
 
 	private String notifyTopicName;

@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class GetPhotoProcessTaskRequest extends RpcAcsRequest<GetPhotoProcessTaskResponse> {
 	
 	public GetPhotoProcessTaskRequest() {
-		super("imm", "2017-09-06", "GetPhotoProcessTask", "imm");
+		super("imm", "2017-09-06", "GetPhotoProcessTask", "2017-09-06");
 	}
 
 	private String project;

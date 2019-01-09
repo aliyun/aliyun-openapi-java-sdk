@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class CreatePornBatchDetectJobRequest extends RpcAcsRequest<CreatePornBatchDetectJobResponse> {
 	
 	public CreatePornBatchDetectJobRequest() {
-		super("imm", "2017-09-06", "CreatePornBatchDetectJob", "imm");
+		super("imm", "2017-09-06", "CreatePornBatchDetectJob", "2017-09-06");
 	}
 
 	private String notifyTopicName;

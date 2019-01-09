@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ListVideoTasksRequest extends RpcAcsRequest<ListVideoTasksResponse> {
 	
 	public ListVideoTasksRequest() {
-		super("imm", "2017-09-06", "ListVideoTasks", "imm");
+		super("imm", "2017-09-06", "ListVideoTasks", "2017-09-06");
 	}
 
 	private Integer maxKeys;

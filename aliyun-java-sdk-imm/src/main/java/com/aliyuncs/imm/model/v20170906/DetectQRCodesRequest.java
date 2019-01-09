@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DetectQRCodesRequest extends RpcAcsRequest<DetectQRCodesResponse> {
 	
 	public DetectQRCodesRequest() {
-		super("imm", "2017-09-06", "DetectQRCodes", "imm");
+		super("imm", "2017-09-06", "DetectQRCodes", "2017-09-06");
 	}
 
 	private String srcUris;

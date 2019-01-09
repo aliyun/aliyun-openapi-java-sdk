@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeleteFaceSearchUserRequest extends RpcAcsRequest<DeleteFaceSearchUserResponse> {
 	
 	public DeleteFaceSearchUserRequest() {
-		super("imm", "2017-09-06", "DeleteFaceSearchUser", "imm");
+		super("imm", "2017-09-06", "DeleteFaceSearchUser", "2017-09-06");
 	}
 
 	private String project;

@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class UpdateSetRequest extends RpcAcsRequest<UpdateSetResponse> {
 	
 	public UpdateSetRequest() {
-		super("imm", "2017-09-06", "UpdateSet", "imm");
+		super("imm", "2017-09-06", "UpdateSet", "2017-09-06");
 	}
 
 	private String setName;

@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class PutProjectRequest extends RpcAcsRequest<PutProjectResponse> {
 	
 	public PutProjectRequest() {
-		super("imm", "2017-09-06", "PutProject", "imm");
+		super("imm", "2017-09-06", "PutProject", "2017-09-06");
 	}
 
 	private Integer cU;

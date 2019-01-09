@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class CreateDeleteFaceSetJobRequest extends RpcAcsRequest<CreateDeleteFaceSetJobResponse> {
 	
 	public CreateDeleteFaceSetJobRequest() {
-		super("imm", "2017-09-06", "CreateDeleteFaceSetJob", "imm");
+		super("imm", "2017-09-06", "CreateDeleteFaceSetJob", "2017-09-06");
 	}
 
 	private String notifyTopicName;

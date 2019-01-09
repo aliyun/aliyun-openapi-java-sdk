@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeleteProjectRequest extends RpcAcsRequest<DeleteProjectResponse> {
 	
 	public DeleteProjectRequest() {
-		super("imm", "2017-09-06", "DeleteProject", "imm");
+		super("imm", "2017-09-06", "DeleteProject", "2017-09-06");
 	}
 
 	private String project;

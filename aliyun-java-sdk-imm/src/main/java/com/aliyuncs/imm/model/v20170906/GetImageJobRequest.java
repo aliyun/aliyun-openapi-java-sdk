@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class GetImageJobRequest extends RpcAcsRequest<GetImageJobResponse> {
 	
 	public GetImageJobRequest() {
-		super("imm", "2017-09-06", "GetImageJob", "imm");
+		super("imm", "2017-09-06", "GetImageJob", "2017-09-06");
 	}
 
 	private String jobId;

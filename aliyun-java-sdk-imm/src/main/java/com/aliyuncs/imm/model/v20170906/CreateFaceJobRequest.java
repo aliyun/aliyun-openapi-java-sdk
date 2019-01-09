@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class CreateFaceJobRequest extends RpcAcsRequest<CreateFaceJobResponse> {
 	
 	public CreateFaceJobRequest() {
-		super("imm", "2017-09-06", "CreateFaceJob", "imm");
+		super("imm", "2017-09-06", "CreateFaceJob", "2017-09-06");
 	}
 
 	private String project;

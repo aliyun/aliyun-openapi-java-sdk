@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ListTagSetsRequest extends RpcAcsRequest<ListTagSetsResponse> {
 	
 	public ListTagSetsRequest() {
-		super("imm", "2017-09-06", "ListTagSets", "imm");
+		super("imm", "2017-09-06", "ListTagSets", "2017-09-06");
 	}
 
 	private Integer maxKeys;

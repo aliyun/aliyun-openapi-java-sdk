@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DetectImageTextsRequest extends RpcAcsRequest<DetectImageTextsResponse> {
 	
 	public DetectImageTextsRequest() {
-		super("imm", "2017-09-06", "DetectImageTexts", "imm");
+		super("imm", "2017-09-06", "DetectImageTexts", "2017-09-06");
 	}
 
 	private String imageUri;

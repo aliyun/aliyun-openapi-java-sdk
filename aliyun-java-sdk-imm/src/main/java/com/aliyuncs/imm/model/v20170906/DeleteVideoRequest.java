@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeleteVideoRequest extends RpcAcsRequest<DeleteVideoResponse> {
 	
 	public DeleteVideoRequest() {
-		super("imm", "2017-09-06", "DeleteVideo", "imm");
+		super("imm", "2017-09-06", "DeleteVideo", "2017-09-06");
 	}
 
 	private String videoUri;

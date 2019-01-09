@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class GetVideoTaskRequest extends RpcAcsRequest<GetVideoTaskResponse> {
 	
 	public GetVideoTaskRequest() {
-		super("imm", "2017-09-06", "GetVideoTask", "imm");
+		super("imm", "2017-09-06", "GetVideoTask", "2017-09-06");
 	}
 
 	private String taskType;

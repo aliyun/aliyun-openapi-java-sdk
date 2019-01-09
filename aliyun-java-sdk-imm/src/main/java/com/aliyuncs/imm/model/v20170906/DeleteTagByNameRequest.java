@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeleteTagByNameRequest extends RpcAcsRequest<DeleteTagByNameResponse> {
 	
 	public DeleteTagByNameRequest() {
-		super("imm", "2017-09-06", "DeleteTagByName", "imm");
+		super("imm", "2017-09-06", "DeleteTagByName", "2017-09-06");
 	}
 
 	private String tagName;

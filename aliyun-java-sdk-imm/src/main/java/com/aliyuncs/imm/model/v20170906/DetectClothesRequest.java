@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DetectClothesRequest extends RpcAcsRequest<DetectClothesResponse> {
 	
 	public DetectClothesRequest() {
-		super("imm", "2017-09-06", "DetectClothes", "imm");
+		super("imm", "2017-09-06", "DetectClothes", "2017-09-06");
 	}
 
 	private String srcUris;

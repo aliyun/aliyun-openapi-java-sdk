@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class CreateSetRequest extends RpcAcsRequest<CreateSetResponse> {
 	
 	public CreateSetRequest() {
-		super("imm", "2017-09-06", "CreateSet", "imm");
+		super("imm", "2017-09-06", "CreateSet", "2017-09-06");
 	}
 
 	private String setName;

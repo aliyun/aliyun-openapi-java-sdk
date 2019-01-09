@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeleteFaceSetRequest extends RpcAcsRequest<DeleteFaceSetResponse> {
 	
 	public DeleteFaceSetRequest() {
-		super("imm", "2017-09-06", "DeleteFaceSet", "imm");
+		super("imm", "2017-09-06", "DeleteFaceSet", "2017-09-06");
 	}
 
 	private String lazyMode;

@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class CreateFaceSetRequest extends RpcAcsRequest<CreateFaceSetResponse> {
 	
 	public CreateFaceSetRequest() {
-		super("imm", "2017-09-06", "CreateFaceSet", "imm");
+		super("imm", "2017-09-06", "CreateFaceSet", "2017-09-06");
 	}
 
 	private String project;

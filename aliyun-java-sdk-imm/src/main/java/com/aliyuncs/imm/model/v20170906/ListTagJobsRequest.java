@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ListTagJobsRequest extends RpcAcsRequest<ListTagJobsResponse> {
 	
 	public ListTagJobsRequest() {
-		super("imm", "2017-09-06", "ListTagJobs", "imm");
+		super("imm", "2017-09-06", "ListTagJobs", "2017-09-06");
 	}
 
 	private String condition;

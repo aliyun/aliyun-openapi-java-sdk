@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ListPornBatchDetectJobsRequest extends RpcAcsRequest<ListPornBatchDetectJobsResponse> {
 	
 	public ListPornBatchDetectJobsRequest() {
-		super("imm", "2017-09-06", "ListPornBatchDetectJobs", "imm");
+		super("imm", "2017-09-06", "ListPornBatchDetectJobs", "2017-09-06");
 	}
 
 	private Integer maxKeys;

@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DetectTagRequest extends RpcAcsRequest<DetectTagResponse> {
 	
 	public DetectTagRequest() {
-		super("imm", "2017-09-06", "DetectTag", "imm");
+		super("imm", "2017-09-06", "DetectTag", "2017-09-06");
 	}
 
 	private String srcUris;

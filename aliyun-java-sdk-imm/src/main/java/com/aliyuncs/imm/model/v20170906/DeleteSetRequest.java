@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeleteSetRequest extends RpcAcsRequest<DeleteSetResponse> {
 	
 	public DeleteSetRequest() {
-		super("imm", "2017-09-06", "DeleteSet", "imm");
+		super("imm", "2017-09-06", "DeleteSet", "2017-09-06");
 	}
 
 	private String project;

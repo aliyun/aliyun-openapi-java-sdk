@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ListImageFacesRequest extends RpcAcsRequest<ListImageFacesResponse> {
 	
 	public ListImageFacesRequest() {
-		super("imm", "2017-09-06", "ListImageFaces", "imm");
+		super("imm", "2017-09-06", "ListImageFaces", "2017-09-06");
 	}
 
 	private Integer maxKeys;

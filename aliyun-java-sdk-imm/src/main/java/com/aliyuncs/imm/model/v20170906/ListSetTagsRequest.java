@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ListSetTagsRequest extends RpcAcsRequest<ListSetTagsResponse> {
 	
 	public ListSetTagsRequest() {
-		super("imm", "2017-09-06", "ListSetTags", "imm");
+		super("imm", "2017-09-06", "ListSetTags", "2017-09-06");
 	}
 
 	private String project;
