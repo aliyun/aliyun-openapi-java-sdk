@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class FindImagesRequest extends RpcAcsRequest<FindImagesResponse> {
 	
 	public FindImagesRequest() {
-		super("imm", "2017-09-06", "FindImages", "2017-09-06");
+		super("imm", "2017-09-06", "FindImages", "imm");
 	}
 
 	private String gender;

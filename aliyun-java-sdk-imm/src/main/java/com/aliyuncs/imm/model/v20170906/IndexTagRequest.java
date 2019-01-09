@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class IndexTagRequest extends RpcAcsRequest<IndexTagResponse> {
 	
 	public IndexTagRequest() {
-		super("imm", "2017-09-06", "IndexTag", "2017-09-06");
+		super("imm", "2017-09-06", "IndexTag", "imm");
 	}
 
 	private String srcUris;

@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ListPhotoProcessTasksRequest extends RpcAcsRequest<ListPhotoProcessTasksResponse> {
 	
 	public ListPhotoProcessTasksRequest() {
-		super("imm", "2017-09-06", "ListPhotoProcessTasks", "2017-09-06");
+		super("imm", "2017-09-06", "ListPhotoProcessTasks", "imm");
 	}
 
 	private Integer maxKeys;

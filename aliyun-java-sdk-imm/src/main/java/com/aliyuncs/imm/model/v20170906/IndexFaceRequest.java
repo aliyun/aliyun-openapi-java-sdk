@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class IndexFaceRequest extends RpcAcsRequest<IndexFaceResponse> {
 	
 	public IndexFaceRequest() {
-		super("imm", "2017-09-06", "IndexFace", "2017-09-06");
+		super("imm", "2017-09-06", "IndexFace", "imm");
 	}
 
 	private String chain;

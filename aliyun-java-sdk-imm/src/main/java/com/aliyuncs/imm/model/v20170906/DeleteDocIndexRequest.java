@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeleteDocIndexRequest extends RpcAcsRequest<DeleteDocIndexResponse> {
 	
 	public DeleteDocIndexRequest() {
-		super("imm", "2017-09-06", "DeleteDocIndex", "2017-09-06");
+		super("imm", "2017-09-06", "DeleteDocIndex", "imm");
 	}
 
 	private String set;

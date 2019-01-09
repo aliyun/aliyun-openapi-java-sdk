@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class SearchFaceRequest extends RpcAcsRequest<SearchFaceResponse> {
 	
 	public SearchFaceRequest() {
-		super("imm", "2017-09-06", "SearchFace", "2017-09-06");
+		super("imm", "2017-09-06", "SearchFace", "imm");
 	}
 
 	private Integer resultNum;

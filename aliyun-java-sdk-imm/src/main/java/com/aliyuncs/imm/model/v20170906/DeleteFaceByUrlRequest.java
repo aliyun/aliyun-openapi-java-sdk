@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeleteFaceByUrlRequest extends RpcAcsRequest<DeleteFaceByUrlResponse> {
 	
 	public DeleteFaceByUrlRequest() {
-		super("imm", "2017-09-06", "DeleteFaceByUrl", "2017-09-06");
+		super("imm", "2017-09-06", "DeleteFaceByUrl", "imm");
 	}
 
 	private String project;

@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class FindSimilarFacesRequest extends RpcAcsRequest<FindSimilarFacesResponse> {
 	
 	public FindSimilarFacesRequest() {
-		super("imm", "2017-09-06", "FindSimilarFaces", "2017-09-06");
+		super("imm", "2017-09-06", "FindSimilarFaces", "imm");
 	}
 
 	private String imageUri;

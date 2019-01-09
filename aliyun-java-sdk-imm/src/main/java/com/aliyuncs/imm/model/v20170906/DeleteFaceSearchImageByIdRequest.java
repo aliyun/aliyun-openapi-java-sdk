@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeleteFaceSearchImageByIdRequest extends RpcAcsRequest<DeleteFaceSearchImageByIdResponse> {
 	
 	public DeleteFaceSearchImageByIdRequest() {
-		super("imm", "2017-09-06", "DeleteFaceSearchImageById", "2017-09-06");
+		super("imm", "2017-09-06", "DeleteFaceSearchImageById", "imm");
 	}
 
 	private String imageId;

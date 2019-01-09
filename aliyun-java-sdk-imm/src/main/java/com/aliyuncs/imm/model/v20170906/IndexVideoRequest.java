@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class IndexVideoRequest extends RpcAcsRequest<IndexVideoResponse> {
 	
 	public IndexVideoRequest() {
-		super("imm", "2017-09-06", "IndexVideo", "2017-09-06");
+		super("imm", "2017-09-06", "IndexVideo", "imm");
 	}
 
 	private String grabType;

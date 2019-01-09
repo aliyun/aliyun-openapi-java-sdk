@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ListOfficeConversionTaskRequest extends RpcAcsRequest<ListOfficeConversionTaskResponse> {
 	
 	public ListOfficeConversionTaskRequest() {
-		super("imm", "2017-09-06", "ListOfficeConversionTask", "2017-09-06");
+		super("imm", "2017-09-06", "ListOfficeConversionTask", "imm");
 	}
 
 	private Integer maxKeys;

@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class GetSetRequest extends RpcAcsRequest<GetSetResponse> {
 	
 	public GetSetRequest() {
-		super("imm", "2017-09-06", "GetSet", "2017-09-06");
+		super("imm", "2017-09-06", "GetSet", "imm");
 	}
 
 	private String project;

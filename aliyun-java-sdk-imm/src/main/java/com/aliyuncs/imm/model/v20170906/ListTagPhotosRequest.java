@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ListTagPhotosRequest extends RpcAcsRequest<ListTagPhotosResponse> {
 	
 	public ListTagPhotosRequest() {
-		super("imm", "2017-09-06", "ListTagPhotos", "2017-09-06");
+		super("imm", "2017-09-06", "ListTagPhotos", "imm");
 	}
 
 	private String tagName;

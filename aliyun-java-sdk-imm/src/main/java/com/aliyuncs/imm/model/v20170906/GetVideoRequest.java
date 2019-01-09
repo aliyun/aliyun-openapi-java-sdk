@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class GetVideoRequest extends RpcAcsRequest<GetVideoResponse> {
 	
 	public GetVideoRequest() {
-		super("imm", "2017-09-06", "GetVideo", "2017-09-06");
+		super("imm", "2017-09-06", "GetVideo", "imm");
 	}
 
 	private String videoUri;

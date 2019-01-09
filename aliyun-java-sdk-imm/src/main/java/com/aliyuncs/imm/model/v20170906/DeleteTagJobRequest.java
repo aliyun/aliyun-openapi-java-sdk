@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeleteTagJobRequest extends RpcAcsRequest<DeleteTagJobResponse> {
 	
 	public DeleteTagJobRequest() {
-		super("imm", "2017-09-06", "DeleteTagJob", "2017-09-06");
+		super("imm", "2017-09-06", "DeleteTagJob", "imm");
 	}
 
 	private String jobId;

@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ListVideoFramesRequest extends RpcAcsRequest<ListVideoFramesResponse> {
 	
 	public ListVideoFramesRequest() {
-		super("imm", "2017-09-06", "ListVideoFrames", "2017-09-06");
+		super("imm", "2017-09-06", "ListVideoFrames", "imm");
 	}
 
 	private String videoUri;

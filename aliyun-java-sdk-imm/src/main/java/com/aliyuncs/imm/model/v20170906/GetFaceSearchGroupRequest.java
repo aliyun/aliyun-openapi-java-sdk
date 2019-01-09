@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class GetFaceSearchGroupRequest extends RpcAcsRequest<GetFaceSearchGroupResponse> {
 	
 	public GetFaceSearchGroupRequest() {
-		super("imm", "2017-09-06", "GetFaceSearchGroup", "2017-09-06");
+		super("imm", "2017-09-06", "GetFaceSearchGroup", "imm");
 	}
 
 	private String project;

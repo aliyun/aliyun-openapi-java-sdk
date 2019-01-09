@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class UpdateFaceGroupByIdRequest extends RpcAcsRequest<UpdateFaceGroupByIdResponse> {
 	
 	public UpdateFaceGroupByIdRequest() {
-		super("imm", "2017-09-06", "UpdateFaceGroupById", "2017-09-06");
+		super("imm", "2017-09-06", "UpdateFaceGroupById", "imm");
 	}
 
 	private String project;

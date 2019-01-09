@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class RegistFaceRequest extends RpcAcsRequest<RegistFaceResponse> {
 	
 	public RegistFaceRequest() {
-		super("imm", "2017-09-06", "RegistFace", "2017-09-06");
+		super("imm", "2017-09-06", "RegistFace", "imm");
 	}
 
 	private Boolean chooseBiggestFace;

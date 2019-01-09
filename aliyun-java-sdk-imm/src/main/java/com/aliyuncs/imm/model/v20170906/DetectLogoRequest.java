@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DetectLogoRequest extends RpcAcsRequest<DetectLogoResponse> {
 	
 	public DetectLogoRequest() {
-		super("imm", "2017-09-06", "DetectLogo", "2017-09-06");
+		super("imm", "2017-09-06", "DetectLogo", "imm");
 	}
 
 	private String srcUris;

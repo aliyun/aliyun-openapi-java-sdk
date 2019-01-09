@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class CreateOfficeConversionTaskRequest extends RpcAcsRequest<CreateOfficeConversionTaskResponse> {
 	
 	public CreateOfficeConversionTaskRequest() {
-		super("imm", "2017-09-06", "CreateOfficeConversionTask", "2017-09-06");
+		super("imm", "2017-09-06", "CreateOfficeConversionTask", "imm");
 	}
 
 	private String srcType;

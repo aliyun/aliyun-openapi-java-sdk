@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeleteImageRequest extends RpcAcsRequest<DeleteImageResponse> {
 	
 	public DeleteImageRequest() {
-		super("imm", "2017-09-06", "DeleteImage", "2017-09-06");
+		super("imm", "2017-09-06", "DeleteImage", "imm");
 	}
 
 	private String imageUri;

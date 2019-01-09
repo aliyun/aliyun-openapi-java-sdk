@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeleteImageJobRequest extends RpcAcsRequest<DeleteImageJobResponse> {
 	
 	public DeleteImageJobRequest() {
-		super("imm", "2017-09-06", "DeleteImageJob", "2017-09-06");
+		super("imm", "2017-09-06", "DeleteImageJob", "imm");
 	}
 
 	private String jobId;

@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class GetDocIndexTaskRequest extends RpcAcsRequest<GetDocIndexTaskResponse> {
 	
 	public GetDocIndexTaskRequest() {
-		super("imm", "2017-09-06", "GetDocIndexTask", "2017-09-06");
+		super("imm", "2017-09-06", "GetDocIndexTask", "imm");
 	}
 
 	private String project;

@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class GetFaceDetailRequest extends RpcAcsRequest<GetFaceDetailResponse> {
 	
 	public GetFaceDetailRequest() {
-		super("imm", "2017-09-06", "GetFaceDetail", "2017-09-06");
+		super("imm", "2017-09-06", "GetFaceDetail", "imm");
 	}
 
 	private String project;

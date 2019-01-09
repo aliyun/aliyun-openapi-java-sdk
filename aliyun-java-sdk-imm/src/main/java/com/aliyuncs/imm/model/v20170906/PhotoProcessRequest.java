@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class PhotoProcessRequest extends RpcAcsRequest<PhotoProcessResponse> {
 	
 	public PhotoProcessRequest() {
-		super("imm", "2017-09-06", "PhotoProcess", "2017-09-06");
+		super("imm", "2017-09-06", "PhotoProcess", "imm");
 	}
 
 	private String notifyTopicName;

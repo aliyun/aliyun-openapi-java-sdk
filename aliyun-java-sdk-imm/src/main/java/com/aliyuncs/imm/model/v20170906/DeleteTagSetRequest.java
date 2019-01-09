@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeleteTagSetRequest extends RpcAcsRequest<DeleteTagSetResponse> {
 	
 	public DeleteTagSetRequest() {
-		super("imm", "2017-09-06", "DeleteTagSet", "2017-09-06");
+		super("imm", "2017-09-06", "DeleteTagSet", "imm");
 	}
 
 	private String lazyMode;

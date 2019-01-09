@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeleteVideoTaskRequest extends RpcAcsRequest<DeleteVideoTaskResponse> {
 	
 	public DeleteVideoTaskRequest() {
-		super("imm", "2017-09-06", "DeleteVideoTask", "2017-09-06");
+		super("imm", "2017-09-06", "DeleteVideoTask", "imm");
 	}
 
 	private String taskType;

@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ListSetsRequest extends RpcAcsRequest<ListSetsResponse> {
 	
 	public ListSetsRequest() {
-		super("imm", "2017-09-06", "ListSets", "2017-09-06");
+		super("imm", "2017-09-06", "ListSets", "imm");
 	}
 
 	private String marker;

@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class UpdateDocIndexMetaRequest extends RpcAcsRequest<UpdateDocIndexMetaResponse> {
 	
 	public UpdateDocIndexMetaRequest() {
-		super("imm", "2017-09-06", "UpdateDocIndexMeta", "2017-09-06");
+		super("imm", "2017-09-06", "UpdateDocIndexMeta", "imm");
 	}
 
 	private String customKey1;

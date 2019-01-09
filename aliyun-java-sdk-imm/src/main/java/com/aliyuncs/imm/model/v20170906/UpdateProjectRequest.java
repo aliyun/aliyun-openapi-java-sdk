@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class UpdateProjectRequest extends RpcAcsRequest<UpdateProjectResponse> {
 	
 	public UpdateProjectRequest() {
-		super("imm", "2017-09-06", "UpdateProject", "2017-09-06");
+		super("imm", "2017-09-06", "UpdateProject", "imm");
 	}
 
 	private String newServiceRole;

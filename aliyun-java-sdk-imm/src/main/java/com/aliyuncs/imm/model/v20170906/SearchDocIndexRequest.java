@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class SearchDocIndexRequest extends RpcAcsRequest<SearchDocIndexResponse> {
 	
 	public SearchDocIndexRequest() {
-		super("imm", "2017-09-06", "SearchDocIndex", "2017-09-06");
+		super("imm", "2017-09-06", "SearchDocIndex", "imm");
 	}
 
 	private Integer modifiedTimeEnd;

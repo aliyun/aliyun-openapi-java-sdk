@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class GetProjectRequest extends RpcAcsRequest<GetProjectResponse> {
 	
 	public GetProjectRequest() {
-		super("imm", "2017-09-06", "GetProject", "2017-09-06");
+		super("imm", "2017-09-06", "GetProject", "imm");
 	}
 
 	private String project;

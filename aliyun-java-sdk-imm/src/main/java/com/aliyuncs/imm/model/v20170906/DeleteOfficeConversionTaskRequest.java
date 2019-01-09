@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeleteOfficeConversionTaskRequest extends RpcAcsRequest<DeleteOfficeConversionTaskResponse> {
 	
 	public DeleteOfficeConversionTaskRequest() {
-		super("imm", "2017-09-06", "DeleteOfficeConversionTask", "2017-09-06");
+		super("imm", "2017-09-06", "DeleteOfficeConversionTask", "imm");
 	}
 
 	private String project;

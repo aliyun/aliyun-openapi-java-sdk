@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ConvertOfficeFormatRequest extends RpcAcsRequest<ConvertOfficeFormatResponse> {
 	
 	public ConvertOfficeFormatRequest() {
-		super("imm", "2017-09-06", "ConvertOfficeFormat", "2017-09-06");
+		super("imm", "2017-09-06", "ConvertOfficeFormat", "imm");
 	}
 
 	private String srcType;

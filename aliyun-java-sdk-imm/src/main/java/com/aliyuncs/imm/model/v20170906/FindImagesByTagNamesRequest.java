@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class FindImagesByTagNamesRequest extends RpcAcsRequest<FindImagesByTagNamesResponse> {
 	
 	public FindImagesByTagNamesRequest() {
-		super("imm", "2017-09-06", "FindImagesByTagNames", "2017-09-06");
+		super("imm", "2017-09-06", "FindImagesByTagNames", "imm");
 	}
 
 	private String marker;
