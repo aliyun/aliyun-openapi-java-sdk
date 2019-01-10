@@ -49,6 +49,7 @@ public class QueryBrokerDemandResponseUnmarshaller {
 			demand.setProduceType(context.integerValue("QueryBrokerDemandResponse.Data["+ i +"].ProduceType"));
 			demand.setBargainSellerPrice(context.floatValue("QueryBrokerDemandResponse.Data["+ i +"].BargainSellerPrice"));
 			demand.setBargainSellerMobile(context.stringValue("QueryBrokerDemandResponse.Data["+ i +"].BargainSellerMobile"));
+			demand.setServicePayPrice(context.floatValue("QueryBrokerDemandResponse.Data["+ i +"].ServicePayPrice"));
 
 			data.add(demand);
 		}

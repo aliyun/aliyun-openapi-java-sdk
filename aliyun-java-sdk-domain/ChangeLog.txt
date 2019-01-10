@@ -1,3 +1,6 @@
+2019-01-10 Version: 3.12.1
+1, Add fields for QueryBrokerDemand api.
+
 2018-12-20 Version: 3.12.0
 1, Add Dns Sec apis.
 2, Add coupon and promotion fields for order apis.
