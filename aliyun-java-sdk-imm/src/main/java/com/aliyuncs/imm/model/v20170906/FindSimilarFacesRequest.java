@@ -20,28 +20,41 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class SearchImagesByTagNamesRequest extends RpcAcsRequest<SearchImagesByTagNamesResponse> {
+public class FindSimilarFacesRequest extends RpcAcsRequest<FindSimilarFacesResponse> {
 	
-	public SearchImagesByTagNamesRequest() {
-		super("imm", "2017-09-06", "SearchImagesByTagNames", "imm");
+	public FindSimilarFacesRequest() {
+		super("imm", "2017-09-06", "FindSimilarFaces", "imm");
 	}
 
-	private String marker;
+	private String imageUri;
+
+	private Integer limit;
 
 	private String project;
 
 	private String setId;
 
-	private String tagNames;
+	private String faceId;
 
-	public String getMarker() {
-		return this.marker;
+	public String getImageUri() {
+		return this.imageUri;
 	}
 
-	public void setMarker(String marker) {
-		this.marker = marker;
-		if(marker != null){
-			putQueryParameter("Marker", marker);
+	public void setImageUri(String imageUri) {
+		this.imageUri = imageUri;
+		if(imageUri != null){
+			putQueryParameter("ImageUri", imageUri);
+		}
+	}
+
+	public Integer getLimit() {
+		return this.limit;
+	}
+
+	public void setLimit(Integer limit) {
+		this.limit = limit;
+		if(limit != null){
+			putQueryParameter("Limit", limit.toString());
 		}
 	}
 
@@ -67,20 +80,20 @@ public class SearchImagesByTagNamesRequest extends RpcAcsRequest<SearchImagesByT
 		}
 	}
 
-	public String getTagNames() {
-		return this.tagNames;
+	public String getFaceId() {
+		return this.faceId;
 	}
 
-	public void setTagNames(String tagNames) {
-		this.tagNames = tagNames;
-		if(tagNames != null){
-			putQueryParameter("TagNames", tagNames);
+	public void setFaceId(String faceId) {
+		this.faceId = faceId;
+		if(faceId != null){
+			putQueryParameter("FaceId", faceId);
 		}
 	}
 
 	@Override
-	public Class<SearchImagesByTagNamesResponse> getResponseClass() {
-		return SearchImagesByTagNamesResponse.class;
+	public Class<FindSimilarFacesResponse> getResponseClass() {
+		return FindSimilarFacesResponse.class;
 	}
 
 }

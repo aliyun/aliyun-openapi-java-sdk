@@ -118,9 +118,8 @@ public abstract class RpcAcsRequest<T extends AcsResponse> extends AcsRequest<T>
     }
 
     @Override
-    public HttpRequest signRequest(Signer signer, AlibabaCloudCredentials credentials,
-                                   FormatType format, ProductDomain domain)
-            throws InvalidKeyException, IllegalStateException, UnsupportedEncodingException {
+    public HttpRequest signRequest(Signer signer, AlibabaCloudCredentials credentials, FormatType format,
+            ProductDomain domain) throws InvalidKeyException, IllegalStateException, UnsupportedEncodingException {
 
         Map<String, String> imutableMap = new HashMap<String, String>(this.getSysQueryParameters());
         if (null != signer && null != credentials) {
@@ -140,6 +139,7 @@ public abstract class RpcAcsRequest<T extends AcsResponse> extends AcsRequest<T>
             }
             imutableMap = this.composer.refreshSignParameters(this.getSysQueryParameters(), signer, accessKeyId, format);
             imutableMap.put("RegionId", getSysRegionId());
+
             Map<String, String> paramsToSign = new HashMap<String, String>(imutableMap);
             Map<String, String> bodyParams = this.getSysBodyParameters();
             if (bodyParams != null && !bodyParams.isEmpty()) {
@@ -157,7 +157,6 @@ public abstract class RpcAcsRequest<T extends AcsResponse> extends AcsRequest<T>
             }
             String strToSign = this.composer.composeStringToSign(
                     this.getSysMethod(), null, signer, paramsToSign, null, null);
-
             String signature;
             if (credentials instanceof KeyPairCredentials) {
                 signature = signer.signString(strToSign, credentials);
@@ -165,6 +164,7 @@ public abstract class RpcAcsRequest<T extends AcsResponse> extends AcsRequest<T>
                 signature = signer.signString(strToSign, accessSecret + "&");
             }
             imutableMap.put("Signature", signature);
+            this.strToSign = strToSign;
         }
         setSysUrl(this.composeUrl(domain.getDomianName(), imutableMap));
         return this;

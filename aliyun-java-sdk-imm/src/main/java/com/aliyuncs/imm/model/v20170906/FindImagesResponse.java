@@ -17,14 +17,14 @@ package com.aliyuncs.imm.model.v20170906;
 import java.util.List;
 import java.util.Map;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.imm.transform.v20170906.SearchImagesResponseUnmarshaller;
+import com.aliyuncs.imm.transform.v20170906.FindImagesResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class SearchImagesResponse extends AcsResponse {
+public class FindImagesResponse extends AcsResponse {
 
 	private String setId;
 
@@ -917,8 +917,8 @@ public class SearchImagesResponse extends AcsResponse {
 	}
 
 	@Override
-	public SearchImagesResponse getInstance(UnmarshallerContext context) {
-		return	SearchImagesResponseUnmarshaller.unmarshall(this, context);
+	public FindImagesResponse getInstance(UnmarshallerContext context) {
+		return	FindImagesResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

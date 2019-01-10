@@ -20,41 +20,41 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class DeleteAppRequest extends RpcAcsRequest<DeleteAppResponse> {
+public class GetTraceRequest extends RpcAcsRequest<GetTraceResponse> {
 	
-	public DeleteAppRequest() {
-		super("ARMS", "2018-12-19", "DeleteApp", "arms");
+	public GetTraceRequest() {
+		super("ARMS", "2018-12-19", "GetTrace");
 	}
 
-	private String appId;
+	private String traceID;
 
-	private String type;
+	private String appType;
 
-	public String getAppId() {
-		return this.appId;
+	public String getTraceID() {
+		return this.traceID;
 	}
 
-	public void setAppId(String appId) {
-		this.appId = appId;
-		if(appId != null){
-			putQueryParameter("AppId", appId);
+	public void setTraceID(String traceID) {
+		this.traceID = traceID;
+		if(traceID != null){
+			putQueryParameter("TraceID", traceID);
 		}
 	}
 
-	public String getType() {
-		return this.type;
+	public String getAppType() {
+		return this.appType;
 	}
 
-	public void setType(String type) {
-		this.type = type;
-		if(type != null){
-			putQueryParameter("Type", type);
+	public void setAppType(String appType) {
+		this.appType = appType;
+		if(appType != null){
+			putQueryParameter("AppType", appType);
 		}
 	}
 
 	@Override
-	public Class<DeleteAppResponse> getResponseClass() {
-		return DeleteAppResponse.class;
+	public Class<GetTraceResponse> getResponseClass() {
+		return GetTraceResponse.class;
 	}
 
 }

@@ -16,14 +16,14 @@ package com.aliyuncs.arms.model.v20181219;
 
 import java.util.Map;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.arms.transform.v20181219.CreateAppResponseUnmarshaller;
+import com.aliyuncs.arms.transform.v20181219.GetTraceResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CreateAppResponse extends AcsResponse {
+public class GetTraceResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -46,7 +46,7 @@ public class CreateAppResponse extends AcsResponse {
 	}
 
 	@Override
-	public CreateAppResponse getInstance(UnmarshallerContext context) {
-		return	CreateAppResponseUnmarshaller.unmarshall(this, context);
+	public GetTraceResponse getInstance(UnmarshallerContext context) {
+		return	GetTraceResponseUnmarshaller.unmarshall(this, context);
 	}
 }

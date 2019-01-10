@@ -20,10 +20,10 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class SearchImagesRequest extends RpcAcsRequest<SearchImagesResponse> {
+public class FindImagesRequest extends RpcAcsRequest<FindImagesResponse> {
 	
-	public SearchImagesRequest() {
-		super("imm", "2017-09-06", "SearchImages", "imm");
+	public FindImagesRequest() {
+		super("imm", "2017-09-06", "FindImages", "imm");
 	}
 
 	private String gender;
@@ -274,8 +274,8 @@ public class SearchImagesRequest extends RpcAcsRequest<SearchImagesResponse> {
 	}
 
 	@Override
-	public Class<SearchImagesResponse> getResponseClass() {
-		return SearchImagesResponse.class;
+	public Class<FindImagesResponse> getResponseClass() {
+		return FindImagesResponse.class;
 	}
 
 }

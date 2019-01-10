@@ -14,17 +14,17 @@
 
 package com.aliyuncs.arms.transform.v20181219;
 
-import com.aliyuncs.arms.model.v20181219.DeleteAppResponse;
+import com.aliyuncs.arms.model.v20181219.SearchTracesResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class DeleteAppResponseUnmarshaller {
+public class SearchTracesResponseUnmarshaller {
 
-	public static DeleteAppResponse unmarshall(DeleteAppResponse deleteAppResponse, UnmarshallerContext context) {
+	public static SearchTracesResponse unmarshall(SearchTracesResponse searchTracesResponse, UnmarshallerContext context) {
 		
-		deleteAppResponse.setRequestId(context.stringValue("DeleteAppResponse.RequestId"));
-		deleteAppResponse.setData(context.stringValue("DeleteAppResponse.Data"));
+		searchTracesResponse.setRequestId(context.stringValue("SearchTracesResponse.RequestId"));
+		searchTracesResponse.setData(context.stringValue("SearchTracesResponse.Data"));
 	 
-	 	return deleteAppResponse;
+	 	return searchTracesResponse;
 	}
 }
