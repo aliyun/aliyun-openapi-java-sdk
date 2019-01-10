@@ -6,10 +6,6 @@ import com.aliyuncs.utils.StringUtils;
 
 import java.lang.reflect.Constructor;
 
-/**
- * @author VK.Gao
- * @date 2018/03/28
- */
 public class HttpClientFactory {
 
     public static String HTTP_CLIENT_IMPL_KEY = "aliyuncs.sdk.httpclient";

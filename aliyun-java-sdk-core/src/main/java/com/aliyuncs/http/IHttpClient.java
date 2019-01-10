@@ -6,10 +6,6 @@ import java.io.Closeable;
 import java.io.IOException;
 import java.util.concurrent.Future;
 
-/**
- * @author VK.Gao
- * @date 2018/03/28
- */
 public abstract class IHttpClient implements Closeable {
 
     protected boolean ignoreHttpsCert = false;

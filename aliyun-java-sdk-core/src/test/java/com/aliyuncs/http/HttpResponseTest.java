@@ -48,5 +48,8 @@ public class HttpResponseTest {
 
         response.setStatus(300);
         Assert.assertFalse(response.isSuccess());
+
+        response.setStatus(100);
+        Assert.assertFalse(response.isSuccess());
     }
 }

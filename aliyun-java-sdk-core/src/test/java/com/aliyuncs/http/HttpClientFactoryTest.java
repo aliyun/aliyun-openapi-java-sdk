@@ -26,6 +26,22 @@ public class HttpClientFactoryTest {
         client = factory.buildClient(profile);
         Assert.assertTrue(client instanceof CompatibleUrlConnClient);
 
+        config.setClientType(HttpClientType.Compatible);
+        client = factory.buildClient(profile);
+        Assert.assertTrue(client instanceof CompatibleUrlConnClient);
+
+        config.setCustomClientClassName(null);
+        client = factory.buildClient(profile);
+        Assert.assertTrue(client instanceof CompatibleUrlConnClient);
+
+        try {
+            config.setClientType(HttpClientType.Custom);
+            client = factory.buildClient(profile);
+            Assert.fail();
+        } catch (IllegalStateException e){
+            Assert.assertEquals("HttpClientFactory buildClient failed", e.getMessage());
+        }
+
         profile.setHttpClientConfig(null);
         client = HttpClientFactory.buildClient(profile);
         Assert.assertTrue(client instanceof CompatibleUrlConnClient);
