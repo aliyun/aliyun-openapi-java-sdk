@@ -18,6 +18,10 @@ public class HttpRequestTest {
         HttpRequest httpRequest = new HttpRequest("test", map);
         Assert.assertEquals("test", httpRequest.getSysUrl());
         Assert.assertEquals("test", httpRequest.getHeaderValue("test"));
+
+        httpRequest = new HttpRequest("test", null);
+        Assert.assertEquals("test", httpRequest.getSysUrl());
+        Assert.assertNotNull(request.getSysHeaders());
     }
 
     @Test
