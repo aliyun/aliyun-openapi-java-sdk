@@ -62,6 +62,8 @@ public class CreateOfficeConversionTaskRequest extends RpcAcsRequest<CreateOffic
 
 	private String tgtType;
 
+	private Boolean hidecomments;
+
 	private Boolean fitToPagesTall;
 
 	private String srcUri;
@@ -265,6 +267,17 @@ public class CreateOfficeConversionTaskRequest extends RpcAcsRequest<CreateOffic
 		this.tgtType = tgtType;
 		if(tgtType != null){
 			putQueryParameter("TgtType", tgtType);
+		}
+	}
+
+	public Boolean getHidecomments() {
+		return this.hidecomments;
+	}
+
+	public void setHidecomments(Boolean hidecomments) {
+		this.hidecomments = hidecomments;
+		if(hidecomments != null){
+			putQueryParameter("Hidecomments", hidecomments.toString());
 		}
 	}
 

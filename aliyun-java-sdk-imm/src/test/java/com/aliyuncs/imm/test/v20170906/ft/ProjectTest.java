@@ -39,8 +39,8 @@ public class ProjectTest extends TestCase {
         //create project
         PutProjectRequest putProjectRequest = new PutProjectRequest();
         putProjectRequest.setProject(projectName);
-        putProjectRequest.setServiceRole("test");
-        putProjectRequest.setType("DocStarter"); 
+        putProjectRequest.setServiceRole("AliyunIMMDefaultRole");
+        putProjectRequest.setType("DocStarter");
         PutProjectResponse putProjectResponse = client.getResponse(putProjectRequest);
 
         assertEquals(projectName, putProjectResponse.getProject());
