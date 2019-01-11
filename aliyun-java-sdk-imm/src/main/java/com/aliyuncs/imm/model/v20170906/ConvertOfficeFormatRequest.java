@@ -54,6 +54,8 @@ public class ConvertOfficeFormatRequest extends RpcAcsRequest<ConvertOfficeForma
 
 	private Boolean fitToPagesWide;
 
+	private Boolean hidecomments;
+
 	private String tgtFilePrefix;
 
 	private Boolean fitToPagesTall;
@@ -215,6 +217,17 @@ public class ConvertOfficeFormatRequest extends RpcAcsRequest<ConvertOfficeForma
 		this.fitToPagesWide = fitToPagesWide;
 		if(fitToPagesWide != null){
 			putQueryParameter("FitToPagesWide", fitToPagesWide.toString());
+		}
+	}
+
+	public Boolean getHidecomments() {
+		return this.hidecomments;
+	}
+
+	public void setHidecomments(Boolean hidecomments) {
+		this.hidecomments = hidecomments;
+		if(hidecomments != null){
+			putQueryParameter("Hidecomments", hidecomments.toString());
 		}
 	}
 
