@@ -28,7 +28,17 @@ import java.util.concurrent.TimeUnit;
 public class ApacheIdleConnectionCleaner extends Thread {
 
     private static final Log LOG = LogFactory.getLog(ApacheIdleConnectionCleaner.class);
-    private static final int PERIOD_SEC = 60;
+
+    public static int getPeriodSec() {
+        return periodSec;
+    }
+
+    public static void setPeriodSec(int periodSec) {
+        ApacheIdleConnectionCleaner.periodSec = periodSec;
+    }
+
+    private static final int DEFAULT_PERIOD_SEC = 60;
+    private static int periodSec = DEFAULT_PERIOD_SEC;
     private static final Map<HttpClientConnectionManager, Long> CONNMGRMAP = new ConcurrentHashMap<HttpClientConnectionManager, Long>();
     private static volatile ApacheIdleConnectionCleaner instance;
     private volatile boolean isShuttingDown;
@@ -74,7 +84,7 @@ public class ApacheIdleConnectionCleaner extends Thread {
                 return;
             }
             try {
-                Thread.sleep(PERIOD_SEC * 1000);
+                Thread.sleep(periodSec * 1000);
 
                 for (Entry<HttpClientConnectionManager, Long> entry : CONNMGRMAP.entrySet()) {
                     try {
