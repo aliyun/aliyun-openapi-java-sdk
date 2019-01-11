@@ -37,6 +37,13 @@ public class CommonRpcRequestTest {
         Assert.assertEquals("locationProduct", acsRequest.getSysLocationProduct());
         Assert.assertEquals("endpointType", acsRequest.getSysEndpointType());
 
+        Map<String, String> param = new HashMap<String, String>();
+        acsRequest.setParameter(null, null, null);
+        acsRequest.setParameter(param, null, null);
+        acsRequest.setParameter(param, null, "value");
+        acsRequest.setParameter(param, "name", null);
+        Assert.assertNull(param.get("name"));
+
         acsRequest.setSysRegionId("hangzhou");
         Assert.assertEquals("hangzhou", acsRequest.getSysRegionId());
 
@@ -72,6 +79,58 @@ public class CommonRpcRequestTest {
         map = acsRequest.getSysBodyParameters();
         Assert.assertEquals("test", map.get("test"));
         Assert.assertEquals("8", map.get("objectTest"));
+    }
+
+    @Test
+    public void deprecatedGetSetTest() throws UnsupportedEncodingException, InvalidKeyException, NoSuchAlgorithmException {
+        CommonRpcRequest acsRequest = new CommonRpcRequest("test", "test", "test",
+                "locationProduct", "endpointType");
+        Assert.assertEquals("test", acsRequest.getProduct());
+        acsRequest.setRegionId("hangzhou");
+        Assert.assertEquals("hangzhou", acsRequest.getRegionId());
+
+        acsRequest.setSecurityToken("token");
+        Assert.assertEquals("token", acsRequest.getSecurityToken());
+
+        acsRequest.setAcceptFormat(FormatType.JSON);
+        Assert.assertTrue(FormatType.JSON == acsRequest.getAcceptFormat());
+        Assert.assertEquals("application/json", acsRequest.getHeaderValue("Accept"));
+
+        acsRequest.setProtocol(ProtocolType.HTTP);
+        Assert.assertTrue(ProtocolType.HTTP == acsRequest.getProtocol());
+
+        acsRequest.setEndpoint("endPonit");
+        Assert.assertTrue(acsRequest.getProductDomain() instanceof ProductDomain);
+
+        acsRequest.putQueryParameter("test", "test");
+        acsRequest.putQueryParameter("objectTest", 8);
+        acsRequest.putQueryParameter("nullTest", null);
+        Map<String, String> map = acsRequest.getQueryParameters();
+        Assert.assertEquals("test", map.get("test"));
+        Assert.assertEquals("8", map.get("objectTest"));
+        Assert.assertNull(map.get("nullTest"));
+
+        acsRequest.putDomainParameter("test", "test");
+        acsRequest.putDomainParameter("objectTest", 8);
+        map = acsRequest.getDomainParameters();
+        Assert.assertEquals("test", map.get("test"));
+        Assert.assertEquals("8", map.get("objectTest"));
+
+        acsRequest.putBodyParameter("test", "test");
+        acsRequest.putBodyParameter("objectTest", 8);
+        map = acsRequest.getBodyParameters();
+        Assert.assertEquals("test", map.get("test"));
+        Assert.assertEquals("8", map.get("objectTest"));
+
+        acsRequest.setActionName("test");
+        Assert.assertEquals("test", acsRequest.getActionName());
+
+        acsRequest.setEndpointType("test");
+        Assert.assertEquals("test", acsRequest.getEndpointType());
+
+        acsRequest.setLocationProduct("test");
+        Assert.assertEquals("test", acsRequest.getLocationProduct());
+        Assert.assertEquals("test", acsRequest.getSysQueryParameters().get("ServiceCode"));
     }
 
     @Test

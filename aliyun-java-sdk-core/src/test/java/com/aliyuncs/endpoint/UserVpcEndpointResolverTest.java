@@ -20,12 +20,18 @@ public class UserVpcEndpointResolverTest {
     public void isRegionIdValidTest(){
         request = mock(ResolveEndpointRequest.class);
         Assert.assertFalse(resolver.isRegionIdValid(request));
+
+        request.regionId = "test";
+        Assert.assertTrue(resolver.isRegionIdValid(request));
     }
 
     @Test
     public void isProductCodeValidTest(){
         request = mock(ResolveEndpointRequest.class);
         Assert.assertFalse(resolver.isProductCodeValid(request));
+
+        request.productCode = "test";
+        Assert.assertTrue(resolver.isProductCodeValid(request));
     }
 
     @Test
