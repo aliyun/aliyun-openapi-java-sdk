@@ -10,8 +10,8 @@ public class LocalConfigRegionalEndpointResolverTest {
     @Test
     public void testLocalConfigRegionalEndpointResolver() {
         LocalConfigRegionalEndpointResolver regional = new LocalConfigRegionalEndpointResolver();
-        ResolveEndpointRequest request = new ResolveEndpointRequest("cn-shanghai", "arms",
-                "", ResolveEndpointRequest.ENDPOINT_TYPE_INNER);
+        ResolveEndpointRequest request = new ResolveEndpointRequest("cn-shanghai", "arms", "",
+                ResolveEndpointRequest.ENDPOINT_TYPE_INNER);
 
         Assert.assertNull(regional.resolve(request));
         request.endpointType = ResolveEndpointRequest.ENDPOINT_TYPE_OPEN;
@@ -40,6 +40,5 @@ public class LocalConfigRegionalEndpointResolverTest {
         request.productCodeLower = "xxx";
         Assert.assertFalse(regional.isProductCodeValid(request));
     }
-
 
 }
