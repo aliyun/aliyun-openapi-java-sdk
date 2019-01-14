@@ -189,29 +189,42 @@ public class CommonRpcRequestTest {
     public void composeUrlTest() throws UnsupportedEncodingException {
         CommonRpcRequest commonRpcRequest = new CommonRpcRequest("test");
         commonRpcRequest.setSysProtocol(ProtocolType.HTTP);
+        String url = commonRpcRequest.composeUrl("test/?", null);
+        Assert.assertEquals("http://test/?Format=JSON", url);
+
         Map<String, String> map = new HashMap<String, String>(2);
         map.put("test", "test");
-        String url = commonRpcRequest.composeUrl("test", map);
+        url = commonRpcRequest.composeUrl("test", map);
         Assert.assertEquals("http://test/?test=test", url);
     }
 
     @Test
-    public void signRequestTest() throws UnsupportedEncodingException, InvalidKeyException {
-        CommonRpcRequest commonRpcRequest = new CommonRpcRequest("test");
+    public void signRequestTest() throws UnsupportedEncodingException, InvalidKeyException, NoSuchAlgorithmException {
+        AcsRequest commonRpcRequest = new CommonRpcRequest("test");
         commonRpcRequest.setSysProtocol(ProtocolType.HTTP);
+        ProductDomain domain = mock(ProductDomain.class);
+        when(domain.getDomianName()).thenReturn("testDomain");
         Signer signer = mock(Signer.class);
         BasicSessionCredentials credentials = mock(BasicSessionCredentials.class);
+        commonRpcRequest.signRequest(null, null, FormatType.JSON, domain);
+        commonRpcRequest.signRequest(null, credentials, FormatType.JSON, domain);
+        commonRpcRequest.signRequest(signer, null, FormatType.JSON, domain);
+        Assert.assertTrue(commonRpcRequest.getSysUrl().contains("testDomain"));
+
         when(credentials.getAccessKeyId()).thenReturn("testId");
         when(credentials.getAccessKeySecret()).thenReturn("testSecret");
         when(credentials.getSessionToken()).thenReturn("token");
-        ProductDomain domain = mock(ProductDomain.class);
-        when(domain.getDomianName()).thenReturn("testDomain");
         commonRpcRequest.signRequest(signer, credentials, FormatType.JSON, domain);
         Assert.assertTrue(commonRpcRequest.getSysUrl().contains("http"));
         Assert.assertTrue(commonRpcRequest.getSysUrl().contains("testDomain"));
         Assert.assertTrue(commonRpcRequest.getSysUrl().contains("SecurityToken=token"));
         Assert.assertTrue(commonRpcRequest.getSysUrl().contains("Format=JSON"));
         Assert.assertTrue(commonRpcRequest.getSysUrl().contains("AccessKeyId=testId"));
+
+        commonRpcRequest.putQueryParameter("SecurityToken", "test");
+        when(credentials.getSessionToken()).thenReturn(null);
+        commonRpcRequest.signRequest(signer, credentials, FormatType.JSON, domain);
+        Assert.assertFalse(commonRpcRequest.getSysUrl().contains("SecurityToken=token"));
 
         commonRpcRequest = new CommonRpcRequest("test");
         commonRpcRequest.setSysProtocol(ProtocolType.HTTP);
@@ -223,6 +236,11 @@ public class CommonRpcRequestTest {
         Assert.assertTrue(commonRpcRequest.getSysUrl().contains("BearerToken=token"));
         Map<String, String> map = commonRpcRequest.getSysBodyParameters();
         Assert.assertEquals("test", map.get("test"));
+
+        commonRpcRequest.putQueryParameter("BearerToken", "test");
+        when(bearerTokenCredentials.getBearerToken()).thenReturn(null);
+        commonRpcRequest.signRequest(signer, bearerTokenCredentials, FormatType.JSON, domain);
+        Assert.assertFalse(commonRpcRequest.getSysUrl().contains("BearerToken=token"));
 
         commonRpcRequest = new CommonRpcRequest("test");
         commonRpcRequest.setSysProtocol(ProtocolType.HTTP);

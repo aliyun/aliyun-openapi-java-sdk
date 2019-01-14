@@ -223,11 +223,6 @@ public abstract class AcsRequest<T extends AcsResponse> extends HttpRequest {
         this.productDomain = productDomain;
     }
 
-    public HttpRequest signRequest(Signer signer, Credential credential, FormatType format, ProductDomain domain)
-            throws InvalidKeyException, IllegalStateException, UnsupportedEncodingException, NoSuchAlgorithmException {
-        return signRequest(signer, new LegacyCredentials(credential), format, domain);
-    }
-
     public abstract HttpRequest signRequest(Signer signer, AlibabaCloudCredentials credentials, FormatType format,
             ProductDomain domain)
             throws InvalidKeyException, IllegalStateException, UnsupportedEncodingException, NoSuchAlgorithmException;

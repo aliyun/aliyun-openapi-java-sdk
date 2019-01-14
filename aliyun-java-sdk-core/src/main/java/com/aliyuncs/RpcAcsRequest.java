@@ -19,12 +19,6 @@ public abstract class RpcAcsRequest<T extends AcsResponse> extends AcsRequest<T>
         initialize();
     }
 
-    public RpcAcsRequest(String product, String version) {
-        super(product);
-        this.setSysVersion(version);
-        initialize();
-    }
-
     public RpcAcsRequest(String product, String version, String action) {
         super(product);
         this.setSysVersion(version);

@@ -5,6 +5,7 @@ import com.aliyuncs.http.MethodType;
 import com.aliyuncs.http.ProtocolType;
 import org.junit.Assert;
 import org.junit.Test;
+import org.powermock.reflect.Whitebox;
 
 import java.io.UnsupportedEncodingException;
 import java.util.HashMap;
@@ -178,5 +179,18 @@ public class CommonRequestTest {
         request.putHeadParameter("test", "test");
         AcsRequest acsRequest = request.buildRequest();
         Assert.assertTrue(acsRequest instanceof CommonRpcRequest);
+    }
+
+    @Test
+    public void setParameterTest() throws Exception {
+        CommonRequest request = new CommonRequest();
+        Map<String, String> testMap = null;
+        Whitebox.invokeMethod(request, "setParameter", testMap, null, null);
+        Whitebox.invokeMethod(request, "setParameter", testMap, "", null);
+        Whitebox.invokeMethod(request, "setParameter", testMap, "test", "test");
+        testMap = new HashMap<String, String>();
+        Whitebox.invokeMethod(request, "setParameter", testMap, null, "test");
+        Whitebox.invokeMethod(request, "setParameter", testMap, "", null);
+        Assert.assertNull(testMap.get("test"));
     }
 }

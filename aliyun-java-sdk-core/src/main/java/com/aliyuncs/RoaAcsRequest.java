@@ -23,12 +23,6 @@ public abstract class RoaAcsRequest<T extends AcsResponse> extends AcsRequest<T>
         initialize();
     }
 
-    public RoaAcsRequest(String product, String version) {
-        super(product);
-        this.setSysVersion(version);
-        initialize();
-    }
-
     public RoaAcsRequest(String product, String version, String action) {
         super(product);
         this.setSysVersion(version);
