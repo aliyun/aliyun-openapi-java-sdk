@@ -108,6 +108,11 @@ public class CommonRoaRequestTest {
 
         BDDMockito.given(
                 RoaSignatureComposer.replaceOccupiedParameters(request.getUriPattern(), request.getPathParameters()))
+                .willReturn("static?");
+        Assert.assertEquals("https://cn-beijingstatic", request.composeUrl("cn-beijing", null));
+
+        BDDMockito.given(
+                RoaSignatureComposer.replaceOccupiedParameters(request.getUriPattern(), request.getPathParameters()))
                 .willReturn("static?num=123");
         Assert.assertEquals("https://cn-beijingstatic?num=123", request.composeUrl("cn-beijing", null));
 
