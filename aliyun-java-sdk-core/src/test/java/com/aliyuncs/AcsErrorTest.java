@@ -12,6 +12,7 @@ public class AcsErrorTest {
 
     @Test
     public void toStringTest() {
+        AcsErrorUnmarshaller unmarshaller = new AcsErrorUnmarshaller();
         AcsError acsError = new AcsError();
         Assert.assertEquals("AcsError{statusCode=0, errorCode='null', errorMessage='null', " +
                 "requestId='null'}", acsError.toString());
