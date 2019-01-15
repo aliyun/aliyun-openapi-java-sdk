@@ -1,4 +1,7 @@
 2019-01-15 Version: 6.0.5
+1, update jacson core
+
+2019-01-15 Version: 6.0.5
 1, update jackson core
 
 2018-12-19 Version: 6.0.4
