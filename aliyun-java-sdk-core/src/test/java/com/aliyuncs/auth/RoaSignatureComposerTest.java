@@ -1,9 +1,11 @@
 package com.aliyuncs.auth;
 
-import com.aliyuncs.http.FormatType;
-import com.aliyuncs.http.MethodType;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
+
+import java.util.HashMap;
+import java.util.Map;
+
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -12,16 +14,12 @@ import org.powermock.api.mockito.PowerMockito;
 import org.powermock.core.classloader.annotations.PrepareForTest;
 import org.powermock.modules.junit4.PowerMockRunner;
 
-import java.util.HashMap;
-import java.util.Map;
-
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
+import com.aliyuncs.http.FormatType;
+import com.aliyuncs.http.MethodType;
 
 @RunWith(PowerMockRunner.class)
 @PrepareForTest(FormatType.class)
 public class RoaSignatureComposerTest {
-    private static final Log log = LogFactory.getLog(RpcSignatureComposerTest.class);
 
     @Test
     public void constructorTest() {

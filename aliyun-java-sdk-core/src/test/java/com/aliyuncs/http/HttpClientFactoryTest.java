@@ -1,44 +1,50 @@
 package com.aliyuncs.http;
 
-import com.aliyuncs.http.clients.CompatibleUrlConnClient;
-import com.aliyuncs.profile.DefaultProfile;
+import static com.aliyuncs.http.HttpClientFactory.HTTP_CLIENT_IMPL_KEY;
+
 import org.junit.Assert;
 import org.junit.Test;
 
-import static com.aliyuncs.http.HttpClientFactory.HTTP_CLIENT_IMPL_KEY;
+import com.aliyuncs.http.clients.CompatibleUrlConnClient;
+import com.aliyuncs.profile.DefaultProfile;
 
 public class HttpClientFactoryTest {
 
     @Test
-    public void buildClientTest() {
+    public void testHttpClientFactoryContructor() {
         HttpClientFactory factory = new HttpClientFactory();
+        Assert.assertTrue(factory instanceof HttpClientFactory);
+    }
+
+    @Test
+    public void buildClientTest() {
         DefaultProfile profile = DefaultProfile.getProfile("hangzhou", "test", "test");
         HttpClientConfig config = new HttpClientConfig();
         config.setCompatibleMode(true);
         profile.setHttpClientConfig(config);
-        IHttpClient client = factory.buildClient(profile);
+        IHttpClient client = HttpClientFactory.buildClient(profile);
         Assert.assertTrue(client instanceof CompatibleUrlConnClient);
 
         config.setCustomClientClassName(CompatibleUrlConnClient.class.getName());
         config.setCompatibleMode(false);
         config.setClientType(HttpClientType.Custom);
         profile.setHttpClientConfig(config);
-        client = factory.buildClient(profile);
+        client = HttpClientFactory.buildClient(profile);
         Assert.assertTrue(client instanceof CompatibleUrlConnClient);
 
         config.setClientType(HttpClientType.Compatible);
-        client = factory.buildClient(profile);
+        client = HttpClientFactory.buildClient(profile);
         Assert.assertTrue(client instanceof CompatibleUrlConnClient);
 
         config.setCustomClientClassName(null);
-        client = factory.buildClient(profile);
+        client = HttpClientFactory.buildClient(profile);
         Assert.assertTrue(client instanceof CompatibleUrlConnClient);
 
         try {
             config.setClientType(HttpClientType.Custom);
-            client = factory.buildClient(profile);
+            client = HttpClientFactory.buildClient(profile);
             Assert.fail();
-        } catch (IllegalStateException e){
+        } catch (IllegalStateException e) {
             Assert.assertEquals("HttpClientFactory buildClient failed", e.getMessage());
         }
 
