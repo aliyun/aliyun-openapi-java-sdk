@@ -107,6 +107,8 @@ public class QueryProductResponse extends AcsResponse {
 
 		private Boolean owner;
 
+		private Integer netType;
+
 		public Long getGmtCreate() {
 			return this.gmtCreate;
 		}
@@ -225,6 +227,14 @@ public class QueryProductResponse extends AcsResponse {
 
 		public void setOwner(Boolean owner) {
 			this.owner = owner;
+		}
+
+		public Integer getNetType() {
+			return this.netType;
+		}
+
+		public void setNetType(Integer netType) {
+			this.netType = netType;
 		}
 	}
 

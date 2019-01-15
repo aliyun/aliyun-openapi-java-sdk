@@ -17,24 +17,24 @@ package com.aliyuncs.iot.model.v20180120;
 import java.util.List;
 import java.util.Map;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.iot.transform.v20180120.BatchCheckDeviceNamesResponseUnmarshaller;
+import com.aliyuncs.iot.transform.v20180120.UpdateProductTagsResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class BatchCheckDeviceNamesResponse extends AcsResponse {
+public class UpdateProductTagsResponse extends AcsResponse {
 
 	private String requestId;
 
 	private Boolean success;
 
-	private String code;
-
 	private String errorMessage;
 
-	private Data data;
+	private String code;
+
+	private List<ProductTag> invalidProductTags;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -52,14 +52,6 @@ public class BatchCheckDeviceNamesResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
 	public String getErrorMessage() {
 		return this.errorMessage;
 	}
@@ -68,39 +60,47 @@ public class BatchCheckDeviceNamesResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
-	public Data getData() {
-		return this.data;
+	public String getCode() {
+		return this.code;
 	}
 
-	public void setData(Data data) {
-		this.data = data;
+	public void setCode(String code) {
+		this.code = code;
 	}
 
-	public static class Data {
+	public List<ProductTag> getInvalidProductTags() {
+		return this.invalidProductTags;
+	}
 
-		private Long applyId;
+	public void setInvalidProductTags(List<ProductTag> invalidProductTags) {
+		this.invalidProductTags = invalidProductTags;
+	}
 
-		private List<String> invalidDeviceNameList;
+	public static class ProductTag {
 
-		public Long getApplyId() {
-			return this.applyId;
+		private String tagKey;
+
+		private String tagValue;
+
+		public String getTagKey() {
+			return this.tagKey;
 		}
 
-		public void setApplyId(Long applyId) {
-			this.applyId = applyId;
+		public void setTagKey(String tagKey) {
+			this.tagKey = tagKey;
 		}
 
-		public List<String> getInvalidDeviceNameList() {
-			return this.invalidDeviceNameList;
+		public String getTagValue() {
+			return this.tagValue;
 		}
 
-		public void setInvalidDeviceNameList(List<String> invalidDeviceNameList) {
-			this.invalidDeviceNameList = invalidDeviceNameList;
+		public void setTagValue(String tagValue) {
+			this.tagValue = tagValue;
 		}
 	}
 
 	@Override
-	public BatchCheckDeviceNamesResponse getInstance(UnmarshallerContext context) {
-		return	BatchCheckDeviceNamesResponseUnmarshaller.unmarshall(this, context);
+	public UpdateProductTagsResponse getInstance(UnmarshallerContext context) {
+		return	UpdateProductTagsResponseUnmarshaller.unmarshall(this, context);
 	}
 }

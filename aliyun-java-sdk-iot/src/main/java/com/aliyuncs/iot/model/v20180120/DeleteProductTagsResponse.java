@@ -16,14 +16,14 @@ package com.aliyuncs.iot.model.v20180120;
 
 import java.util.Map;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.iot.transform.v20180120.UpdateRecordPlanResponseUnmarshaller;
+import com.aliyuncs.iot.transform.v20180120.DeleteProductTagsResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class UpdateRecordPlanResponse extends AcsResponse {
+public class DeleteProductTagsResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -66,12 +66,7 @@ public class UpdateRecordPlanResponse extends AcsResponse {
 	}
 
 	@Override
-	public UpdateRecordPlanResponse getInstance(UnmarshallerContext context) {
-		return	UpdateRecordPlanResponseUnmarshaller.unmarshall(this, context);
-	}
-
-	@Override
-	public boolean checkShowJsonItemName() {
-		return false;
+	public DeleteProductTagsResponse getInstance(UnmarshallerContext context) {
+		return	DeleteProductTagsResponseUnmarshaller.unmarshall(this, context);
 	}
 }

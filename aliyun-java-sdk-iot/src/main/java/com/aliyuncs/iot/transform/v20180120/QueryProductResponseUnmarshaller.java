@@ -44,6 +44,7 @@ public class QueryProductResponseUnmarshaller {
 		data.setProtocolType(context.stringValue("QueryProductResponse.Data.ProtocolType"));
 		data.setProductStatus(context.stringValue("QueryProductResponse.Data.ProductStatus"));
 		data.setOwner(context.booleanValue("QueryProductResponse.Data.Owner"));
+		data.setNetType(context.integerValue("QueryProductResponse.Data.NetType"));
 		queryProductResponse.setData(data);
 	 
 	 	return queryProductResponse;

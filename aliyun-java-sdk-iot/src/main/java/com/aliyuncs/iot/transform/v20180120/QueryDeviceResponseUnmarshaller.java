@@ -47,6 +47,8 @@ public class QueryDeviceResponseUnmarshaller {
 			deviceInfo.setDeviceType(context.stringValue("QueryDeviceResponse.Data["+ i +"].DeviceType"));
 			deviceInfo.setGmtCreate(context.stringValue("QueryDeviceResponse.Data["+ i +"].GmtCreate"));
 			deviceInfo.setGmtModified(context.stringValue("QueryDeviceResponse.Data["+ i +"].GmtModified"));
+			deviceInfo.setUtcCreate(context.stringValue("QueryDeviceResponse.Data["+ i +"].UtcCreate"));
+			deviceInfo.setUtcModified(context.stringValue("QueryDeviceResponse.Data["+ i +"].UtcModified"));
 
 			data.add(deviceInfo);
 		}

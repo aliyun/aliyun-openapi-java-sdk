@@ -17,14 +17,14 @@ package com.aliyuncs.iot.model.v20180120;
 import java.util.List;
 import java.util.Map;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.iot.transform.v20180120.BatchCheckDeviceNamesResponseUnmarshaller;
+import com.aliyuncs.iot.transform.v20180120.QueryDeviceGroupByTagsResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class BatchCheckDeviceNamesResponse extends AcsResponse {
+public class QueryDeviceGroupByTagsResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -34,7 +34,15 @@ public class BatchCheckDeviceNamesResponse extends AcsResponse {
 
 	private String errorMessage;
 
-	private Data data;
+	private Integer page;
+
+	private Integer pageSize;
+
+	private Integer pageCount;
+
+	private Integer total;
+
+	private List<DeviceGroup> data;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -68,39 +76,71 @@ public class BatchCheckDeviceNamesResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
-	public Data getData() {
+	public Integer getPage() {
+		return this.page;
+	}
+
+	public void setPage(Integer page) {
+		this.page = page;
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
+
+	public Integer getPageCount() {
+		return this.pageCount;
+	}
+
+	public void setPageCount(Integer pageCount) {
+		this.pageCount = pageCount;
+	}
+
+	public Integer getTotal() {
+		return this.total;
+	}
+
+	public void setTotal(Integer total) {
+		this.total = total;
+	}
+
+	public List<DeviceGroup> getData() {
 		return this.data;
 	}
 
-	public void setData(Data data) {
+	public void setData(List<DeviceGroup> data) {
 		this.data = data;
 	}
 
-	public static class Data {
+	public static class DeviceGroup {
 
-		private Long applyId;
+		private String groupId;
 
-		private List<String> invalidDeviceNameList;
+		private String groupName;
 
-		public Long getApplyId() {
-			return this.applyId;
+		public String getGroupId() {
+			return this.groupId;
 		}
 
-		public void setApplyId(Long applyId) {
-			this.applyId = applyId;
+		public void setGroupId(String groupId) {
+			this.groupId = groupId;
 		}
 
-		public List<String> getInvalidDeviceNameList() {
-			return this.invalidDeviceNameList;
+		public String getGroupName() {
+			return this.groupName;
 		}
 
-		public void setInvalidDeviceNameList(List<String> invalidDeviceNameList) {
-			this.invalidDeviceNameList = invalidDeviceNameList;
+		public void setGroupName(String groupName) {
+			this.groupName = groupName;
 		}
 	}
 
 	@Override
-	public BatchCheckDeviceNamesResponse getInstance(UnmarshallerContext context) {
-		return	BatchCheckDeviceNamesResponseUnmarshaller.unmarshall(this, context);
+	public QueryDeviceGroupByTagsResponse getInstance(UnmarshallerContext context) {
+		return	QueryDeviceGroupByTagsResponseUnmarshaller.unmarshall(this, context);
 	}
 }

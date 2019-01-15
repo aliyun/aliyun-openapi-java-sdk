@@ -134,6 +134,10 @@ public class QueryDeviceResponse extends AcsResponse {
 
 		private String gmtModified;
 
+		private String utcCreate;
+
+		private String utcModified;
+
 		public String getDeviceId() {
 			return this.deviceId;
 		}
@@ -196,6 +200,22 @@ public class QueryDeviceResponse extends AcsResponse {
 
 		public void setGmtModified(String gmtModified) {
 			this.gmtModified = gmtModified;
+		}
+
+		public String getUtcCreate() {
+			return this.utcCreate;
+		}
+
+		public void setUtcCreate(String utcCreate) {
+			this.utcCreate = utcCreate;
+		}
+
+		public String getUtcModified() {
+			return this.utcModified;
+		}
+
+		public void setUtcModified(String utcModified) {
+			this.utcModified = utcModified;
 		}
 	}
 
