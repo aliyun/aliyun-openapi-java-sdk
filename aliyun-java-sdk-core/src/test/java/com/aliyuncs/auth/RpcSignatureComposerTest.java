@@ -1,17 +1,16 @@
 package com.aliyuncs.auth;
 
-import com.aliyuncs.http.FormatType;
-import com.aliyuncs.http.MethodType;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-import org.junit.Assert;
-import org.junit.Test;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
 import java.util.HashMap;
 import java.util.Map;
 
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
+import org.junit.Assert;
+import org.junit.Test;
+
+import com.aliyuncs.http.FormatType;
+import com.aliyuncs.http.MethodType;
 
 public class RpcSignatureComposerTest {
 

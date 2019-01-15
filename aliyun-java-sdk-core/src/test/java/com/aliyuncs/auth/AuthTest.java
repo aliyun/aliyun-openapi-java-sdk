@@ -25,11 +25,9 @@ import com.aliyuncs.ecs.v20140526.model.GetRegionsRequest;
 import com.aliyuncs.http.FormatType;
 import org.junit.Test;
 
-import java.security.InvalidKeyException;
 import java.util.Map;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.fail;
 
 @SuppressWarnings("unchecked")
 public class AuthTest {

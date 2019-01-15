@@ -1,21 +1,20 @@
 package com.aliyuncs;
 
-import com.aliyuncs.transform.UnmarshallerContext;
-import org.junit.Assert;
-import org.junit.Test;
-
 import java.util.HashMap;
 import java.util.Map;
 
-public class AcsErrorTest {
+import org.junit.Assert;
+import org.junit.Test;
 
+import com.aliyuncs.transform.UnmarshallerContext;
+
+public class AcsErrorTest {
 
     @Test
     public void toStringTest() {
-        AcsErrorUnmarshaller unmarshaller = new AcsErrorUnmarshaller();
         AcsError acsError = new AcsError();
-        Assert.assertEquals("AcsError{statusCode=0, errorCode='null', errorMessage='null', " +
-                "requestId='null'}", acsError.toString());
+        Assert.assertEquals("AcsError{statusCode=0, errorCode='null', errorMessage='null', " + "requestId='null'}",
+                acsError.toString());
     }
 
     @Test
@@ -51,5 +50,7 @@ public class AcsErrorTest {
         Assert.assertEquals("Error.message", acsError.getErrorMessage());
         Assert.assertEquals(200, acsError.getStatusCode());
 
+        AcsErrorUnmarshaller unmarshaller = new AcsErrorUnmarshaller();
+        Assert.assertTrue(unmarshaller instanceof AcsErrorUnmarshaller);
     }
 }

@@ -1,16 +1,16 @@
 package com.aliyuncs.http;
 
-import org.apache.http.conn.ssl.NoopHostnameVerifier;
-import org.junit.Assert;
-import org.junit.Test;
+import java.security.SecureRandom;
+import java.util.HashMap;
+import java.util.Map;
 
 import javax.net.ssl.KeyManager;
 import javax.net.ssl.SSLSocketFactory;
 import javax.net.ssl.X509TrustManager;
-import java.security.SecureRandom;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.concurrent.Executors;
+
+import org.apache.http.conn.ssl.NoopHostnameVerifier;
+import org.junit.Assert;
+import org.junit.Test;
 
 public class HttpClientConfigTest {
 
@@ -83,8 +83,6 @@ public class HttpClientConfigTest {
         });
         Assert.assertTrue(httpClientConfig.getIdleCallback() instanceof Runnable);
 
-        Executors.newFixedThreadPool(1);
-
         httpClientConfig.setExecutorService(null);
         Assert.assertNull(httpClientConfig.getExecutorService());
 
@@ -100,6 +98,5 @@ public class HttpClientConfigTest {
         httpClientConfig.setCustomClientClassName("test");
         Assert.assertEquals("test", httpClientConfig.getCustomClientClassName());
     }
-
 
 }

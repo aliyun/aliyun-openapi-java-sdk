@@ -17,7 +17,8 @@ public class STSGetSessionAccessKeyCredentialsProviderTest {
     public void constructorTest() {
         KeyPairCredentials credentials = mock(KeyPairCredentials.class);
         IClientProfile clientProfile = mock(IClientProfile.class);
-        STSGetSessionAccessKeyCredentialsProvider provider = new STSGetSessionAccessKeyCredentialsProvider(credentials, clientProfile);
+        STSGetSessionAccessKeyCredentialsProvider provider = new STSGetSessionAccessKeyCredentialsProvider(credentials,
+                clientProfile);
         Assert.assertNotNull(provider);
     }
 
@@ -25,7 +26,8 @@ public class STSGetSessionAccessKeyCredentialsProviderTest {
     public void withDurationSecondsTest() {
         KeyPairCredentials credentials = mock(KeyPairCredentials.class);
         IClientProfile clientProfile = mock(IClientProfile.class);
-        STSGetSessionAccessKeyCredentialsProvider provider = new STSGetSessionAccessKeyCredentialsProvider(credentials, clientProfile);
+        STSGetSessionAccessKeyCredentialsProvider provider = new STSGetSessionAccessKeyCredentialsProvider(credentials,
+                clientProfile);
         Assert.assertNotNull(provider);
 
         provider = provider.withDurationSeconds(1800);
@@ -36,7 +38,8 @@ public class STSGetSessionAccessKeyCredentialsProviderTest {
     public void withSTSClientTest() {
         KeyPairCredentials credentials = mock(KeyPairCredentials.class);
         IClientProfile clientProfile = mock(IClientProfile.class);
-        STSGetSessionAccessKeyCredentialsProvider provider = new STSGetSessionAccessKeyCredentialsProvider(credentials, clientProfile);
+        STSGetSessionAccessKeyCredentialsProvider provider = new STSGetSessionAccessKeyCredentialsProvider(credentials,
+                clientProfile);
         IAcsClient acsClient = mock(IAcsClient.class);
         provider.withSTSClient(acsClient);
         Assert.assertNotNull(provider);
@@ -46,14 +49,16 @@ public class STSGetSessionAccessKeyCredentialsProviderTest {
     public void getCredentialsWithNullCredentials() throws ClientException {
         IAcsClient acsClient = mock(IAcsClient.class);
         GenerateSessionAccessKeyResponse akResponse = mock(GenerateSessionAccessKeyResponse.class);
-        GenerateSessionAccessKeyResponse.SessionAccessKey sessionAccessKey = mock(GenerateSessionAccessKeyResponse.SessionAccessKey.class);
+        GenerateSessionAccessKeyResponse.SessionAccessKey sessionAccessKey = mock(
+                GenerateSessionAccessKeyResponse.SessionAccessKey.class);
         when(sessionAccessKey.getSessionAccessKeyId()).thenReturn("ak");
         when(sessionAccessKey.getSessionAccessKeySecert()).thenReturn("sk");
         when(akResponse.getSessionAccessKey()).thenReturn(sessionAccessKey);
         when(acsClient.getAcsResponse(any(GetSessionAccessKeyRequest.class))).thenReturn(akResponse);
         KeyPairCredentials credentials = mock(KeyPairCredentials.class);
         IClientProfile clientProfile = mock(IClientProfile.class);
-        STSGetSessionAccessKeyCredentialsProvider provider = new STSGetSessionAccessKeyCredentialsProvider(credentials, clientProfile);
+        STSGetSessionAccessKeyCredentialsProvider provider = new STSGetSessionAccessKeyCredentialsProvider(credentials,
+                clientProfile);
 
         provider.withSTSClient(acsClient);
         AlibabaCloudCredentials credentials2 = provider.getCredentials();
@@ -64,14 +69,16 @@ public class STSGetSessionAccessKeyCredentialsProviderTest {
     public void getCredentialsWithPreviousCredentials() throws ClientException {
         IAcsClient acsClient = mock(IAcsClient.class);
         GenerateSessionAccessKeyResponse akResponse = mock(GenerateSessionAccessKeyResponse.class);
-        GenerateSessionAccessKeyResponse.SessionAccessKey sessionAccessKey = mock(GenerateSessionAccessKeyResponse.SessionAccessKey.class);
+        GenerateSessionAccessKeyResponse.SessionAccessKey sessionAccessKey = mock(
+                GenerateSessionAccessKeyResponse.SessionAccessKey.class);
         when(sessionAccessKey.getSessionAccessKeyId()).thenReturn("ak");
         when(sessionAccessKey.getSessionAccessKeySecert()).thenReturn("sk");
         when(akResponse.getSessionAccessKey()).thenReturn(sessionAccessKey);
         when(acsClient.getAcsResponse(any(GetSessionAccessKeyRequest.class))).thenReturn(akResponse);
         KeyPairCredentials credentials = mock(KeyPairCredentials.class);
         IClientProfile clientProfile = mock(IClientProfile.class);
-        STSGetSessionAccessKeyCredentialsProvider provider = new STSGetSessionAccessKeyCredentialsProvider(credentials, clientProfile);
+        STSGetSessionAccessKeyCredentialsProvider provider = new STSGetSessionAccessKeyCredentialsProvider(credentials,
+                clientProfile);
 
         provider.withSTSClient(acsClient);
         AlibabaCloudCredentials credentials2 = provider.getCredentials();
@@ -80,6 +87,5 @@ public class STSGetSessionAccessKeyCredentialsProviderTest {
         AlibabaCloudCredentials credentials3 = provider.getCredentials();
         Assert.assertEquals(credentials2, credentials3);
     }
-
 
 }

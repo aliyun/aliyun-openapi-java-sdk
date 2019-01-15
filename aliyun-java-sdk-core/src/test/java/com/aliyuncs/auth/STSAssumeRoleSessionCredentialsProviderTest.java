@@ -23,7 +23,8 @@ public class STSAssumeRoleSessionCredentialsProviderTest {
         AlibabaCloudCredentials credentials = mock(AlibabaCloudCredentials.class);
         String roleArn = "roleArn";
         IClientProfile clientProfile = mock(IClientProfile.class);
-        STSAssumeRoleSessionCredentialsProvider provider = new STSAssumeRoleSessionCredentialsProvider(credentials, roleArn, clientProfile);
+        STSAssumeRoleSessionCredentialsProvider provider = new STSAssumeRoleSessionCredentialsProvider(credentials,
+                roleArn, clientProfile);
         Assert.assertNotNull(provider);
     }
 
@@ -32,7 +33,8 @@ public class STSAssumeRoleSessionCredentialsProviderTest {
         AlibabaCloudCredentialsProvider mockProvider = mock(AlibabaCloudCredentialsProvider.class);
         String roleArn = "roleArn";
         IClientProfile clientProfile = mock(IClientProfile.class);
-        STSAssumeRoleSessionCredentialsProvider provider = new STSAssumeRoleSessionCredentialsProvider(mockProvider, roleArn, clientProfile);
+        STSAssumeRoleSessionCredentialsProvider provider = new STSAssumeRoleSessionCredentialsProvider(mockProvider,
+                roleArn, clientProfile);
         Assert.assertNotNull(provider);
     }
 
@@ -42,7 +44,8 @@ public class STSAssumeRoleSessionCredentialsProviderTest {
         AlibabaCloudCredentialsProvider mockProvider = mock(AlibabaCloudCredentialsProvider.class);
         String roleArn = null;
         IClientProfile clientProfile = mock(IClientProfile.class);
-        STSAssumeRoleSessionCredentialsProvider provider = new STSAssumeRoleSessionCredentialsProvider(mockProvider, roleArn, clientProfile);
+        STSAssumeRoleSessionCredentialsProvider provider = new STSAssumeRoleSessionCredentialsProvider(mockProvider,
+                roleArn, clientProfile);
         Assert.assertNull(provider);
     }
 
@@ -59,7 +62,8 @@ public class STSAssumeRoleSessionCredentialsProviderTest {
         AlibabaCloudCredentials credentials = mock(AlibabaCloudCredentials.class);
         String roleArn = "roleArn";
         IClientProfile clientProfile = mock(IClientProfile.class);
-        STSAssumeRoleSessionCredentialsProvider provider = new STSAssumeRoleSessionCredentialsProvider(credentials, roleArn, clientProfile);
+        STSAssumeRoleSessionCredentialsProvider provider = new STSAssumeRoleSessionCredentialsProvider(credentials,
+                roleArn, clientProfile);
         provider.withSTSClient(acsClient);
         Assert.assertNotNull(provider);
     }
@@ -69,7 +73,8 @@ public class STSAssumeRoleSessionCredentialsProviderTest {
         AlibabaCloudCredentials credentials = mock(AlibabaCloudCredentials.class);
         String roleArn = "roleArn";
         IClientProfile clientProfile = mock(IClientProfile.class);
-        STSAssumeRoleSessionCredentialsProvider provider = new STSAssumeRoleSessionCredentialsProvider(credentials, roleArn, clientProfile);
+        STSAssumeRoleSessionCredentialsProvider provider = new STSAssumeRoleSessionCredentialsProvider(credentials,
+                roleArn, clientProfile);
         String roleSessionName = "roleSessionName";
         provider.withRoleSessionName(roleSessionName);
         Assert.assertNotNull(provider);
@@ -82,7 +87,8 @@ public class STSAssumeRoleSessionCredentialsProviderTest {
         AlibabaCloudCredentials credentials = mock(AlibabaCloudCredentials.class);
         String roleArn = "roleArn";
         IClientProfile clientProfile = mock(IClientProfile.class);
-        STSAssumeRoleSessionCredentialsProvider provider = new STSAssumeRoleSessionCredentialsProvider(credentials, roleArn, clientProfile);
+        STSAssumeRoleSessionCredentialsProvider provider = new STSAssumeRoleSessionCredentialsProvider(credentials,
+                roleArn, clientProfile);
         provider.withRoleSessionDurationSeconds(duration);
 
     }
@@ -94,7 +100,8 @@ public class STSAssumeRoleSessionCredentialsProviderTest {
         AlibabaCloudCredentials credentials = mock(AlibabaCloudCredentials.class);
         String roleArn = "roleArn";
         IClientProfile clientProfile = mock(IClientProfile.class);
-        STSAssumeRoleSessionCredentialsProvider provider = new STSAssumeRoleSessionCredentialsProvider(credentials, roleArn, clientProfile);
+        STSAssumeRoleSessionCredentialsProvider provider = new STSAssumeRoleSessionCredentialsProvider(credentials,
+                roleArn, clientProfile);
         provider.withRoleSessionDurationSeconds(duration);
 
     }
@@ -105,7 +112,8 @@ public class STSAssumeRoleSessionCredentialsProviderTest {
         AlibabaCloudCredentials credentials = mock(AlibabaCloudCredentials.class);
         String roleArn = "roleArn";
         IClientProfile clientProfile = mock(IClientProfile.class);
-        STSAssumeRoleSessionCredentialsProvider provider = new STSAssumeRoleSessionCredentialsProvider(credentials, roleArn, clientProfile);
+        STSAssumeRoleSessionCredentialsProvider provider = new STSAssumeRoleSessionCredentialsProvider(credentials,
+                roleArn, clientProfile);
         provider.withRoleSessionDurationSeconds(duration);
         Assert.assertNotNull(provider);
     }
@@ -123,7 +131,8 @@ public class STSAssumeRoleSessionCredentialsProviderTest {
         AlibabaCloudCredentials credentials1 = mock(AlibabaCloudCredentials.class);
         String roleArn = "roleArn";
         IClientProfile clientProfile = mock(IClientProfile.class);
-        STSAssumeRoleSessionCredentialsProvider provider = new STSAssumeRoleSessionCredentialsProvider(credentials1, roleArn, clientProfile);
+        STSAssumeRoleSessionCredentialsProvider provider = new STSAssumeRoleSessionCredentialsProvider(credentials1,
+                roleArn, clientProfile);
         provider.withSTSClient(acsClient);
         AlibabaCloudCredentials credentials2 = provider.getCredentials();
         Assert.assertEquals("ak", credentials2.getAccessKeyId());
@@ -142,14 +151,14 @@ public class STSAssumeRoleSessionCredentialsProviderTest {
         AlibabaCloudCredentials credentials1 = mock(AlibabaCloudCredentials.class);
         String roleArn = "roleArn";
         IClientProfile clientProfile = mock(IClientProfile.class);
-        STSAssumeRoleSessionCredentialsProvider provider = new STSAssumeRoleSessionCredentialsProvider(credentials1, roleArn, clientProfile);
+        STSAssumeRoleSessionCredentialsProvider provider = new STSAssumeRoleSessionCredentialsProvider(credentials1,
+                roleArn, clientProfile);
         provider.withSTSClient(acsClient);
         AlibabaCloudCredentials credentials2 = provider.getCredentials();
         Assert.assertEquals("ak", credentials2.getAccessKeyId());
 
         AlibabaCloudCredentials credentials3 = provider.getCredentials();
         Assert.assertEquals(credentials2, credentials3);
-
 
     }
 }
