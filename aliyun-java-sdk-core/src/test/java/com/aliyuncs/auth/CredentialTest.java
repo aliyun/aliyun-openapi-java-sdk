@@ -1,53 +1,81 @@
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
 package com.aliyuncs.auth;
+
+import java.util.Date;
 
 import org.junit.Assert;
 import org.junit.Test;
 
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
-
 public class CredentialTest {
 
-    @SuppressWarnings("deprecation")
     @Test
-    public void setExpiredDateTest() {
-        Credential credential = new Credential("<accessKeyId>", "<accessSecret>");
-        Method method;
-        try {
-            Assert.assertFalse(credential.isExpired());
-            int expiredHours = 1;
-            method = Credential.class.getDeclaredMethod("setExpiredDate", int.class);
-            method.setAccessible(true);
-            method.invoke(credential, expiredHours);
-            Assert.assertFalse(credential.isExpired());
-        } catch (SecurityException e) {
-            Assert.fail();
-        } catch (NoSuchMethodException e) {
-            Assert.fail();
-        } catch (IllegalArgumentException e) {
-            Assert.fail();
-        } catch (IllegalAccessException e) {
-            Assert.fail();
-        } catch (InvocationTargetException e) {
-            Assert.fail();
-        }
+    public void testConstructorWithNull() throws InterruptedException {
+        Credential credential = new Credential();
+        Assert.assertNull(credential.getAccessKeyId());
+        Assert.assertNull(credential.getAccessSecret());
+        Thread.sleep(100);
+        Assert.assertTrue(credential.getRefreshDate().before(new Date()));
+        Assert.assertNull(credential.getExpiredDate());
+        Assert.assertNull(credential.getSecurityToken());
+        Assert.assertFalse(credential.isExpired());
+
+        credential.setAccessKeyId("accessKeyId");
+        credential.setAccessSecret("accessSecret");
+        credential.setSecurityToken("securityToken");
+        Assert.assertEquals("accessKeyId", credential.getAccessKeyId());
+        Assert.assertEquals("accessSecret", credential.getAccessSecret());
+        Assert.assertEquals("securityToken", credential.getSecurityToken());
     }
+
+    @Test
+    public void testConstructorWithAK() throws InterruptedException {
+        Credential credential = new Credential("accessKeyId", "accessSecret");
+        Assert.assertEquals("accessKeyId", credential.getAccessKeyId());
+        Assert.assertEquals("accessSecret", credential.getAccessSecret());
+        Thread.sleep(100);
+        Assert.assertTrue(credential.getRefreshDate().before(new Date()));
+        Assert.assertNull(credential.getExpiredDate());
+        Assert.assertNull(credential.getSecurityToken());
+        Assert.assertFalse(credential.isExpired());
+    }
+
+    @Test
+    public void testConstructorWithToken() throws InterruptedException {
+        Credential credential = new Credential("accessKeyId", "accessSecret", "securityToken");
+        Assert.assertEquals("accessKeyId", credential.getAccessKeyId());
+        Assert.assertEquals("accessSecret", credential.getAccessSecret());
+        Assert.assertEquals("securityToken", credential.getSecurityToken());
+        Thread.sleep(100);
+        Assert.assertTrue(credential.getRefreshDate().before(new Date()));
+        Assert.assertNull(credential.getExpiredDate());
+        Assert.assertFalse(credential.isExpired());
+    }
+
+    @Test
+    public void testConstructorWithExpiredHours() throws InterruptedException {
+        Credential credential = new Credential("accessKeyId", "accessSecret", 1);
+        Assert.assertEquals("accessKeyId", credential.getAccessKeyId());
+        Assert.assertEquals("accessSecret", credential.getAccessSecret());
+        Thread.sleep(100);
+        Assert.assertTrue(credential.getRefreshDate().before(new Date()));
+        Assert.assertTrue(credential.getExpiredDate().after(new Date()));
+        Assert.assertFalse(credential.isExpired());
+        Assert.assertNull(credential.getSecurityToken());
+
+        credential = new Credential("accessKeyId", "accessSecret", 0);
+        Assert.assertFalse(credential.isExpired());
+        Assert.assertNull(credential.getExpiredDate());
+    }
+
+    @Test
+    public void testConstructorWithTokenAndExpiredHours() throws InterruptedException {
+        Credential credential = new Credential("accessKeyId", "accessSecret", "securityToken", 1);
+        Assert.assertEquals("accessKeyId", credential.getAccessKeyId());
+        Assert.assertEquals("accessSecret", credential.getAccessSecret());
+        Assert.assertEquals("securityToken", credential.getSecurityToken());
+        Assert.assertFalse(credential.isExpired());
+        Thread.sleep(100);
+        Assert.assertTrue(credential.getRefreshDate().before(new Date()));
+        Assert.assertTrue(credential.getExpiredDate().after(new Date()));
+    }
+
 }
