@@ -14,6 +14,7 @@
 
 package com.aliyuncs.cloudauth.model.v20180916;
 
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.cloudauth.transform.v20180916.GetVerifyTokenResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;

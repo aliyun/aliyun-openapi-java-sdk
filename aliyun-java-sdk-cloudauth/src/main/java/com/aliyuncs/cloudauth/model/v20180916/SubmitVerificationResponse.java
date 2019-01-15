@@ -16,14 +16,14 @@ package com.aliyuncs.cloudauth.model.v20180916;
 
 import java.util.Map;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.cloudauth.transform.v20180916.SubmitMaterialsResponseUnmarshaller;
+import com.aliyuncs.cloudauth.transform.v20180916.SubmitVerificationResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class SubmitMaterialsResponse extends AcsResponse {
+public class SubmitVerificationResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -142,7 +142,7 @@ public class SubmitMaterialsResponse extends AcsResponse {
 	}
 
 	@Override
-	public SubmitMaterialsResponse getInstance(UnmarshallerContext context) {
-		return	SubmitMaterialsResponseUnmarshaller.unmarshall(this, context);
+	public SubmitVerificationResponse getInstance(UnmarshallerContext context) {
+		return	SubmitVerificationResponseUnmarshaller.unmarshall(this, context);
 	}
 }

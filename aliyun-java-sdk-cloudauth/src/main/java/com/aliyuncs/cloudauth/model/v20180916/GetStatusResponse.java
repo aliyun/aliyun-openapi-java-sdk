@@ -14,6 +14,7 @@
 
 package com.aliyuncs.cloudauth.model.v20180916;
 
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.cloudauth.transform.v20180916.GetStatusResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -84,6 +85,8 @@ public class GetStatusResponse extends AcsResponse {
 
 		private String auditConclusions;
 
+		private Float authorityComparisonScore;
+
 		public Integer getStatusCode() {
 			return this.statusCode;
 		}
@@ -114,6 +117,14 @@ public class GetStatusResponse extends AcsResponse {
 
 		public void setAuditConclusions(String auditConclusions) {
 			this.auditConclusions = auditConclusions;
+		}
+
+		public Float getAuthorityComparisonScore() {
+			return this.authorityComparisonScore;
+		}
+
+		public void setAuthorityComparisonScore(Float authorityComparisonScore) {
+			this.authorityComparisonScore = authorityComparisonScore;
 		}
 	}
 

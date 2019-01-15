@@ -24,7 +24,7 @@ import com.aliyuncs.http.ProtocolType;
 public class GetStatusRequest extends RpcAcsRequest<GetStatusResponse> {
 	
 	public GetStatusRequest() {
-		super("Cloudauth", "2018-09-16", "GetStatus", "cloudauth");
+		super("Cloudauth", "2018-09-16", "GetStatus", "CloudAuth");
 		setProtocol(ProtocolType.HTTPS);
 	}
 

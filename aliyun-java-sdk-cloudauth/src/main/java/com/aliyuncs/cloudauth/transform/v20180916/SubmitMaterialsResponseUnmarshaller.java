@@ -36,6 +36,7 @@ public class SubmitMaterialsResponseUnmarshaller {
 		verifyStatus.setTrustedScore(context.floatValue("SubmitMaterialsResponse.Data.VerifyStatus.TrustedScore"));
 		verifyStatus.setSimilarityScore(context.floatValue("SubmitMaterialsResponse.Data.VerifyStatus.SimilarityScore"));
 		verifyStatus.setAuditConclusions(context.stringValue("SubmitMaterialsResponse.Data.VerifyStatus.AuditConclusions"));
+		verifyStatus.setAuthorityComparisonScore(context.floatValue("SubmitMaterialsResponse.Data.VerifyStatus.AuthorityComparisonScore"));
 		data.setVerifyStatus(verifyStatus);
 		submitMaterialsResponse.setData(data);
 	 

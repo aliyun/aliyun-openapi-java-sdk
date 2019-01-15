@@ -1,3 +1,7 @@
+2019-01-15 Version: 1.2.0
+1, Add SubmitVerification API for RPMin solution.
+2, Return authority comparison score in GetStatus, SubmitMaterials and SubmitVerification.
+
 2018-10-26 Version: 1.1.6
 1, Return AuditConclusions in SubmitMaterials API.
 

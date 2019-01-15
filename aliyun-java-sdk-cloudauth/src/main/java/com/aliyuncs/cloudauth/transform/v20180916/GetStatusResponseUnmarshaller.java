@@ -33,6 +33,7 @@ public class GetStatusResponseUnmarshaller {
 		data.setTrustedScore(context.floatValue("GetStatusResponse.Data.TrustedScore"));
 		data.setSimilarityScore(context.floatValue("GetStatusResponse.Data.SimilarityScore"));
 		data.setAuditConclusions(context.stringValue("GetStatusResponse.Data.AuditConclusions"));
+		data.setAuthorityComparisonScore(context.floatValue("GetStatusResponse.Data.AuthorityComparisonScore"));
 		getStatusResponse.setData(data);
 	 
 	 	return getStatusResponse;

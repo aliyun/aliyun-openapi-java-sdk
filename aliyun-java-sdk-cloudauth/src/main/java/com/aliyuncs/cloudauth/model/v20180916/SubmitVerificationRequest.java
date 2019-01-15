@@ -15,20 +15,21 @@
 package com.aliyuncs.cloudauth.model.v20180916;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.ProtocolType;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
-public class GetVerifyTokenRequest extends RpcAcsRequest<GetVerifyTokenResponse> {
+public class SubmitVerificationRequest extends RpcAcsRequest<SubmitVerificationResponse> {
 	
-	public GetVerifyTokenRequest() {
-		super("Cloudauth", "2018-09-16", "GetVerifyToken", "CloudAuth");
+	public SubmitVerificationRequest() {
+		super("Cloudauth", "2018-09-16", "SubmitVerification", "CloudAuth");
 		setProtocol(ProtocolType.HTTPS);
+		setMethod(MethodType.POST);
 	}
-
-	private String userData;
 
 	private Long resourceOwnerId;
 
@@ -36,22 +37,9 @@ public class GetVerifyTokenRequest extends RpcAcsRequest<GetVerifyTokenResponse>
 
 	private String sourceIp;
 
-	private String binding;
-
-	private String verifyConfigs;
+	private List<Material> materials;
 
 	private String ticketId;
-
-	public String getUserData() {
-		return this.userData;
-	}
-
-	public void setUserData(String userData) {
-		this.userData = userData;
-		if(userData != null){
-			putQueryParameter("UserData", userData);
-		}
-	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -71,7 +59,7 @@ public class GetVerifyTokenRequest extends RpcAcsRequest<GetVerifyTokenResponse>
 	public void setBiz(String biz) {
 		this.biz = biz;
 		if(biz != null){
-			putQueryParameter("Biz", biz);
+			putBodyParameter("Biz", biz);
 		}
 	}
 
@@ -86,26 +74,18 @@ public class GetVerifyTokenRequest extends RpcAcsRequest<GetVerifyTokenResponse>
 		}
 	}
 
-	public String getBinding() {
-		return this.binding;
+	public List<Material> getMaterials() {
+		return this.materials;
 	}
 
-	public void setBinding(String binding) {
-		this.binding = binding;
-		if(binding != null){
-			putBodyParameter("Binding", binding);
-		}
-	}
-
-	public String getVerifyConfigs() {
-		return this.verifyConfigs;
-	}
-
-	public void setVerifyConfigs(String verifyConfigs) {
-		this.verifyConfigs = verifyConfigs;
-		if(verifyConfigs != null){
-			putQueryParameter("VerifyConfigs", verifyConfigs);
-		}
+	public void setMaterials(List<Material> materials) {
+		this.materials = materials;	
+		if (materials != null) {
+			for (int depth1 = 0; depth1 < materials.size(); depth1++) {
+				putBodyParameter("Material." + (depth1 + 1) + ".MaterialType" , materials.get(depth1).getMaterialType());
+				putBodyParameter("Material." + (depth1 + 1) + ".Value" , materials.get(depth1).getValue());
+			}
+		}	
 	}
 
 	public String getTicketId() {
@@ -115,13 +95,36 @@ public class GetVerifyTokenRequest extends RpcAcsRequest<GetVerifyTokenResponse>
 	public void setTicketId(String ticketId) {
 		this.ticketId = ticketId;
 		if(ticketId != null){
-			putQueryParameter("TicketId", ticketId);
+			putBodyParameter("TicketId", ticketId);
+		}
+	}
+
+	public static class Material {
+
+		private String materialType;
+
+		private String value;
+
+		public String getMaterialType() {
+			return this.materialType;
+		}
+
+		public void setMaterialType(String materialType) {
+			this.materialType = materialType;
+		}
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
 		}
 	}
 
 	@Override
-	public Class<GetVerifyTokenResponse> getResponseClass() {
-		return GetVerifyTokenResponse.class;
+	public Class<SubmitVerificationResponse> getResponseClass() {
+		return SubmitVerificationResponse.class;
 	}
 
 }

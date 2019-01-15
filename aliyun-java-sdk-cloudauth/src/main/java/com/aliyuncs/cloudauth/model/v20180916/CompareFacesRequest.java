@@ -25,7 +25,7 @@ import com.aliyuncs.http.MethodType;
 public class CompareFacesRequest extends RpcAcsRequest<CompareFacesResponse> {
 	
 	public CompareFacesRequest() {
-		super("Cloudauth", "2018-09-16", "CompareFaces", "cloudauth");
+		super("Cloudauth", "2018-09-16", "CompareFaces", "CloudAuth");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

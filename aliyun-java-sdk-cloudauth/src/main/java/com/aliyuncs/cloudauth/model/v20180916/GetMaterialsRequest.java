@@ -24,7 +24,7 @@ import com.aliyuncs.http.ProtocolType;
 public class GetMaterialsRequest extends RpcAcsRequest<GetMaterialsResponse> {
 	
 	public GetMaterialsRequest() {
-		super("Cloudauth", "2018-09-16", "GetMaterials", "cloudauth");
+		super("Cloudauth", "2018-09-16", "GetMaterials", "CloudAuth");
 		setProtocol(ProtocolType.HTTPS);
 	}
 

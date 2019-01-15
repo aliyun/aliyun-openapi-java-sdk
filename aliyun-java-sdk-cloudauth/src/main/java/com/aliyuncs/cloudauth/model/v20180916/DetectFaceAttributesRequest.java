@@ -25,7 +25,7 @@ import com.aliyuncs.http.MethodType;
 public class DetectFaceAttributesRequest extends RpcAcsRequest<DetectFaceAttributesResponse> {
 	
 	public DetectFaceAttributesRequest() {
-		super("Cloudauth", "2018-09-16", "DetectFaceAttributes", "cloudauth");
+		super("Cloudauth", "2018-09-16", "DetectFaceAttributes", "CloudAuth");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
