@@ -56,6 +56,8 @@ public class CreateUploadVideoRequest extends RpcAcsRequest<CreateUploadVideoRes
 
 	private Long cateId;
 
+	private String workflowId;
+
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
 	}
@@ -218,6 +220,17 @@ public class CreateUploadVideoRequest extends RpcAcsRequest<CreateUploadVideoRes
 		this.cateId = cateId;
 		if(cateId != null){
 			putQueryParameter("CateId", cateId.toString());
+		}
+	}
+
+	public String getWorkflowId() {
+		return this.workflowId;
+	}
+
+	public void setWorkflowId(String workflowId) {
+		this.workflowId = workflowId;
+		if(workflowId != null){
+			putQueryParameter("WorkflowId", workflowId);
 		}
 	}
 

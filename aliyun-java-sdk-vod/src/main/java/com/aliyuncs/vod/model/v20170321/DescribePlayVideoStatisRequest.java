@@ -26,13 +26,24 @@ public class DescribePlayVideoStatisRequest extends RpcAcsRequest<DescribePlayVi
 		super("vod", "2017-03-21", "DescribePlayVideoStatis", "vod");
 	}
 
+	private String startTime;
+
 	private String endTime;
 
 	private String videoId;
 
-	private String startTime;
-
 	private Long ownerId;
+
+	public String getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime);
+		}
+	}
 
 	public String getEndTime() {
 		return this.endTime;
@@ -53,17 +64,6 @@ public class DescribePlayVideoStatisRequest extends RpcAcsRequest<DescribePlayVi
 		this.videoId = videoId;
 		if(videoId != null){
 			putQueryParameter("VideoId", videoId);
-		}
-	}
-
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("StartTime", startTime);
 		}
 	}
 

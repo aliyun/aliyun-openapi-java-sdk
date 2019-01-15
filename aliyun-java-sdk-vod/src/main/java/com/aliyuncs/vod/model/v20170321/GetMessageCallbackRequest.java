@@ -32,6 +32,8 @@ public class GetMessageCallbackRequest extends RpcAcsRequest<GetMessageCallbackR
 
 	private String ownerAccount;
 
+	private Long resourceRealOwnerId;
+
 	private String ownerId;
 
 	public String getResourceOwnerId() {
@@ -64,6 +66,17 @@ public class GetMessageCallbackRequest extends RpcAcsRequest<GetMessageCallbackR
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public Long getResourceRealOwnerId() {
+		return this.resourceRealOwnerId;
+	}
+
+	public void setResourceRealOwnerId(Long resourceRealOwnerId) {
+		this.resourceRealOwnerId = resourceRealOwnerId;
+		if(resourceRealOwnerId != null){
+			putQueryParameter("ResourceRealOwnerId", resourceRealOwnerId.toString());
 		}
 	}
 

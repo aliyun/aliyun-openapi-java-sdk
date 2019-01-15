@@ -26,6 +26,8 @@ public class UploadMediaByURLRequest extends RpcAcsRequest<UploadMediaByURLRespo
 		super("vod", "2017-03-21", "UploadMediaByURL", "vod");
 	}
 
+	private String userData;
+
 	private Long resourceOwnerId;
 
 	private String templateGroupId;
@@ -43,6 +45,17 @@ public class UploadMediaByURLRequest extends RpcAcsRequest<UploadMediaByURLRespo
 	private String priority;
 
 	private String storageLocation;
+
+	public String getUserData() {
+		return this.userData;
+	}
+
+	public void setUserData(String userData) {
+		this.userData = userData;
+		if(userData != null){
+			putQueryParameter("UserData", userData);
+		}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;

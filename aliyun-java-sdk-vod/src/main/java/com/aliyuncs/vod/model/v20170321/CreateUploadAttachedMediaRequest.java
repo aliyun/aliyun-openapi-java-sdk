@@ -44,11 +44,13 @@ public class CreateUploadAttachedMediaRequest extends RpcAcsRequest<CreateUpload
 
 	private String storageLocation;
 
+	private String userData;
+
 	private String mediaExt;
 
 	private String fileName;
 
-	private Integer cateId;
+	private Long cateId;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -149,6 +151,17 @@ public class CreateUploadAttachedMediaRequest extends RpcAcsRequest<CreateUpload
 		}
 	}
 
+	public String getUserData() {
+		return this.userData;
+	}
+
+	public void setUserData(String userData) {
+		this.userData = userData;
+		if(userData != null){
+			putQueryParameter("UserData", userData);
+		}
+	}
+
 	public String getMediaExt() {
 		return this.mediaExt;
 	}
@@ -171,11 +184,11 @@ public class CreateUploadAttachedMediaRequest extends RpcAcsRequest<CreateUpload
 		}
 	}
 
-	public Integer getCateId() {
+	public Long getCateId() {
 		return this.cateId;
 	}
 
-	public void setCateId(Integer cateId) {
+	public void setCateId(Long cateId) {
 		this.cateId = cateId;
 		if(cateId != null){
 			putQueryParameter("CateId", cateId.toString());

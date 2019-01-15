@@ -32,6 +32,8 @@ public class GetMessageCallbackResponseUnmarshaller {
 		messageCallback.setEventTypeList(context.stringValue("GetMessageCallbackResponse.MessageCallback.EventTypeList"));
 		messageCallback.setAuthSwitch(context.stringValue("GetMessageCallbackResponse.MessageCallback.AuthSwitch"));
 		messageCallback.setAuthKey(context.stringValue("GetMessageCallbackResponse.MessageCallback.AuthKey"));
+		messageCallback.setMnsEndpoint(context.stringValue("GetMessageCallbackResponse.MessageCallback.MnsEndpoint"));
+		messageCallback.setMnsQueueName(context.stringValue("GetMessageCallbackResponse.MessageCallback.MnsQueueName"));
 		getMessageCallbackResponse.setMessageCallback(messageCallback);
 	 
 	 	return getMessageCallbackResponse;

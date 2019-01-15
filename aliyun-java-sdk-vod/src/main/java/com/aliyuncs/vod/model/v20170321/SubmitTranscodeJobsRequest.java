@@ -38,6 +38,8 @@ public class SubmitTranscodeJobsRequest extends RpcAcsRequest<SubmitTranscodeJob
 
 	private Long ownerId;
 
+	private String priority;
+
 	private String encryptConfig;
 
 	private String pipelineId;
@@ -105,6 +107,17 @@ public class SubmitTranscodeJobsRequest extends RpcAcsRequest<SubmitTranscodeJob
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getPriority() {
+		return this.priority;
+	}
+
+	public void setPriority(String priority) {
+		this.priority = priority;
+		if(priority != null){
+			putQueryParameter("Priority", priority);
 		}
 	}
 

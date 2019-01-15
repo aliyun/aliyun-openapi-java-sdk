@@ -59,6 +59,10 @@ public class GetMessageCallbackResponse extends AcsResponse {
 
 		private String authKey;
 
+		private String mnsEndpoint;
+
+		private String mnsQueueName;
+
 		public String getCallbackType() {
 			return this.callbackType;
 		}
@@ -105,6 +109,22 @@ public class GetMessageCallbackResponse extends AcsResponse {
 
 		public void setAuthKey(String authKey) {
 			this.authKey = authKey;
+		}
+
+		public String getMnsEndpoint() {
+			return this.mnsEndpoint;
+		}
+
+		public void setMnsEndpoint(String mnsEndpoint) {
+			this.mnsEndpoint = mnsEndpoint;
+		}
+
+		public String getMnsQueueName() {
+			return this.mnsQueueName;
+		}
+
+		public void setMnsQueueName(String mnsQueueName) {
+			this.mnsQueueName = mnsQueueName;
 		}
 	}
 

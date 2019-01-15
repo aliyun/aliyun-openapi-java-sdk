@@ -1,3 +1,12 @@
+2019-01-15 Version: 2.12.0
+1, Add new apis called AddTranscodeTemplateGroup, UpdateTranscodeTemplateGroup, ListTranscodeTemplateGroup, GetTranscodeTemplateGroup, SetDefaultTranscodeTemplateGroup ,DeleteTranscodeTemplateGroup and DeleteTranscodeTemplates which support transcode template feature.
+2, Add new apis called AddAITemplate, DeleteAITemplate, UpdateAITemplate, GetAITemplate, ListAITemplate, GetDefaultAITemplate and SetDefaultAITemplate which support AI template feature.
+3, Add new apis called SubmitAIMediaAuditJob, GetAIMediaAuditJob, GetMediaAuditResult, GetMediaAuditResultTimeline which support AIMediaAudit feature.
+4, Add the field named Priority to SubmitTranscodeJobs api request.
+5, Add the field named UserData to UploadMediaByURL api request.
+6, Add the field named UserData to CreateUploadImage api request.
+7, Add the field named UserData to CreateUploadAttachedMedia api request.
+
 2018-12-16 Version: 2.11.9
 1, Add a new api called AddMediaSequences to add media sequences of vod videos with in/out or live streams with start time/end time.
 

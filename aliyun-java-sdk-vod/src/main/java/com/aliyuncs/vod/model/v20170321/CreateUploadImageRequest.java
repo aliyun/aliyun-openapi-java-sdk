@@ -30,13 +30,11 @@ public class CreateUploadImageRequest extends RpcAcsRequest<CreateUploadImageRes
 
 	private String imageType;
 
-	private String originalFileName;
-
 	private String resourceOwnerAccount;
 
 	private String imageExt;
 
-	private Long cateId;
+	private String description;
 
 	private Long ownerId;
 
@@ -45,6 +43,12 @@ public class CreateUploadImageRequest extends RpcAcsRequest<CreateUploadImageRes
 	private String tags;
 
 	private String storageLocation;
+
+	private String userData;
+
+	private String originalFileName;
+
+	private Long cateId;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -65,17 +69,6 @@ public class CreateUploadImageRequest extends RpcAcsRequest<CreateUploadImageRes
 		this.imageType = imageType;
 		if(imageType != null){
 			putQueryParameter("ImageType", imageType);
-		}
-	}
-
-	public String getOriginalFileName() {
-		return this.originalFileName;
-	}
-
-	public void setOriginalFileName(String originalFileName) {
-		this.originalFileName = originalFileName;
-		if(originalFileName != null){
-			putQueryParameter("OriginalFileName", originalFileName);
 		}
 	}
 
@@ -101,14 +94,14 @@ public class CreateUploadImageRequest extends RpcAcsRequest<CreateUploadImageRes
 		}
 	}
 
-	public Long getCateId() {
-		return this.cateId;
+	public String getDescription() {
+		return this.description;
 	}
 
-	public void setCateId(Long cateId) {
-		this.cateId = cateId;
-		if(cateId != null){
-			putQueryParameter("CateId", cateId.toString());
+	public void setDescription(String description) {
+		this.description = description;
+		if(description != null){
+			putQueryParameter("Description", description);
 		}
 	}
 
@@ -153,6 +146,39 @@ public class CreateUploadImageRequest extends RpcAcsRequest<CreateUploadImageRes
 		this.storageLocation = storageLocation;
 		if(storageLocation != null){
 			putQueryParameter("StorageLocation", storageLocation);
+		}
+	}
+
+	public String getUserData() {
+		return this.userData;
+	}
+
+	public void setUserData(String userData) {
+		this.userData = userData;
+		if(userData != null){
+			putQueryParameter("UserData", userData);
+		}
+	}
+
+	public String getOriginalFileName() {
+		return this.originalFileName;
+	}
+
+	public void setOriginalFileName(String originalFileName) {
+		this.originalFileName = originalFileName;
+		if(originalFileName != null){
+			putQueryParameter("OriginalFileName", originalFileName);
+		}
+	}
+
+	public Long getCateId() {
+		return this.cateId;
+	}
+
+	public void setCateId(Long cateId) {
+		this.cateId = cateId;
+		if(cateId != null){
+			putQueryParameter("CateId", cateId.toString());
 		}
 	}
 
