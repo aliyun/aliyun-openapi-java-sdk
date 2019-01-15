@@ -3,6 +3,11 @@
 2, add API QueryDeviceGroupByTags.
 3, update response data of API BatchCheckDeviceNames.
 
+2019-01-15 Version: 6.6.0
+1, add API of product tags.
+2, add API QueryDeviceGroupByTags.
+3, update response data of API BatchCheckDeviceNames.
+
 2018-12-09 Version: 6.5.0
 1, Add Open API QuerySuperDeviceGroup.
 2, Add Open API QueryDeviceProperties.
