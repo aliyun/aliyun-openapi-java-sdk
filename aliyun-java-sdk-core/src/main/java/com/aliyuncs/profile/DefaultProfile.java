@@ -168,9 +168,12 @@ public class DefaultProfile implements IClientProfile {
         this.usingVpcEndpoint = true;
     }
 
+    /**
+     * @deprecated : use enableUsingInternalLocationService instead of this.
+     */
     @Override
     @Deprecated
     public void setUsingInternalLocationService() {
-        usingInternalLocationService = true;
+        enableUsingInternalLocationService();
     }
 }
