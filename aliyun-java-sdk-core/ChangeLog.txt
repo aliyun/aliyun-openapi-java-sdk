@@ -1,3 +1,12 @@
+2019-01-16 Version: 4.3.2
+1. Add more test cases
+2. Improve coding style
+3. Add back setUsingInternalLocationService and mark it as deprecated.
+
+2019-01-16 Version: 4.3.1
+1. Add more test cases
+2. support VPC endPoint
+
 2019-01-07 Version: 4.3.0
 1, Separation of system and business parameters
 
