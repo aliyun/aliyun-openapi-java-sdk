@@ -7,6 +7,7 @@ import org.junit.Test;
 
 public class CredentialTest {
 
+    @SuppressWarnings("deprecation")
     @Test
     public void testConstructorWithNull() throws InterruptedException {
         Credential credential = new Credential();
@@ -26,6 +27,7 @@ public class CredentialTest {
         Assert.assertEquals("securityToken", credential.getSecurityToken());
     }
 
+    @SuppressWarnings("deprecation")
     @Test
     public void testConstructorWithAK() throws InterruptedException {
         Credential credential = new Credential("accessKeyId", "accessSecret");
@@ -38,6 +40,7 @@ public class CredentialTest {
         Assert.assertFalse(credential.isExpired());
     }
 
+    @SuppressWarnings("deprecation")
     @Test
     public void testConstructorWithToken() throws InterruptedException {
         Credential credential = new Credential("accessKeyId", "accessSecret", "securityToken");
@@ -50,6 +53,7 @@ public class CredentialTest {
         Assert.assertFalse(credential.isExpired());
     }
 
+    @SuppressWarnings("deprecation")
     @Test
     public void testConstructorWithExpiredHours() throws InterruptedException {
         Credential credential = new Credential("accessKeyId", "accessSecret", 1);
@@ -64,8 +68,13 @@ public class CredentialTest {
         credential = new Credential("accessKeyId", "accessSecret", 0);
         Assert.assertFalse(credential.isExpired());
         Assert.assertNull(credential.getExpiredDate());
+
+        credential = new Credential("accessKeyId", "accessSecret", -1);
+        Assert.assertFalse(credential.isExpired());
+        Assert.assertNull(credential.getExpiredDate());
     }
 
+    @SuppressWarnings("deprecation")
     @Test
     public void testConstructorWithTokenAndExpiredHours() throws InterruptedException {
         Credential credential = new Credential("accessKeyId", "accessSecret", "securityToken", 1);
