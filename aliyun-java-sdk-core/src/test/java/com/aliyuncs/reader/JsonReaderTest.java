@@ -1,27 +1,11 @@
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
 package com.aliyuncs.reader;
 
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.text.StringCharacterIterator;
+import java.util.HashMap;
 import java.util.Map;
 
 public class JsonReaderTest {
@@ -51,6 +35,72 @@ public class JsonReaderTest {
             + "\"RequestId\":\"A11D2D03-8DE3-43E6-B362-625DEBF3F88F\"}";
     Map<String, String> map = null;
 
+    @Test
+    public void trimFromLastTest() {
+        String str = JsonReader.trimFromLast("abc", "c");
+        Assert.assertEquals("ab", str);
+
+        str = JsonReader.trimFromLast("abc", "h");
+        Assert.assertEquals("abc", str);
+    }
+
+    @Test
+    public void readForHideArrayItemTest() {
+        String json = "{\"RequestId\":\"A11D2D03-8DE3-43E6-B362-625DEBF3F88F\",\"tArray\":" +
+                "{\"tTest\":[\"tTest\":\"tTest\",\"gTest\":[[\"g\":\"g\"]]]}}";
+        JsonReader reader = new JsonReader();
+        Map<String, String> map;
+        map = reader.readForHideArrayItem(json, "test");
+        Assert.assertEquals("g", map.get("test.tArray.tTest[0][0]"));
+        Assert.assertEquals("g", map.get("test.tArray.tTest[0][1]"));
+        Assert.assertEquals("3", map.get("test.tArray.tTest[0].Length"));
+        Assert.assertEquals("tTest", map.get("test.tArray.tTest[0]"));
+        Assert.assertEquals("5", map.get("test.tArray.tTest.Length"));
+        Assert.assertEquals("tTest", map.get("test.tArray.tTest[1]"));
+        Assert.assertEquals("tTest", map.get("test.tArray.tTest[2]"));
+        Assert.assertEquals("gTest", map.get("test.tArray.tTest[3]"));
+        Assert.assertEquals("gTest", map.get("test.tArray.tTest[4]"));
+        Assert.assertEquals("g", map.get("test.tArray.tTest[0][2]"));
+        Assert.assertEquals("A11D2D03-8DE3-43E6-B362-625DEBF3F88F", map.get("test.RequestId"));
+    }
+
+    @Test
+    public void readForHideItemTest() {
+        String json = "{{\"RequestId\":\"A11D2D03-8DE3-43E6-B362-625DEBF3F88F\",\"tArray\":" +
+                "{\"tTest\":[\"tTest\":\"tTest\",\"gTest\":[[\"g\":\"g\"]]]}}";
+        JsonReader reader = new JsonReader();
+        Map<String, String> map;
+        map = reader.readForHideItem(new StringCharacterIterator(json), "test",1);
+        Assert.assertEquals("g", map.get("test.tArray.tTest[0][0]"));
+        Assert.assertEquals("g", map.get("test.tArray.tTest[0][1]"));
+        Assert.assertEquals("3", map.get("test.tArray.tTest[0].Length"));
+        Assert.assertEquals("tTest", map.get("test.tArray.tTest[0]"));
+        Assert.assertEquals("5", map.get("test.tArray.tTest.Length"));
+        Assert.assertEquals("tTest", map.get("test.tArray.tTest[1]"));
+        Assert.assertEquals("tTest", map.get("test.tArray.tTest[2]"));
+        Assert.assertEquals("gTest", map.get("test.tArray.tTest[3]"));
+        Assert.assertEquals("gTest", map.get("test.tArray.tTest[4]"));
+        Assert.assertEquals("g", map.get("test.tArray.tTest[0][2]"));
+        Assert.assertEquals("A11D2D03-8DE3-43E6-B362-625DEBF3F88F", map.get("test.RequestId"));
+
+        json = "{{{\"RequestId\":\"A11D2D03-8DE3-43E6-B362-625DEBF3F88F\",\"tArray\":" +
+                "{\"tTest\":[\"tTest\":\"tTest\",\"gTest\":[[\"g\":\"g\"]]]}}";
+        map = reader.readForHideItem(new StringCharacterIterator(json), "test",2);
+        Assert.assertEquals("g", map.get("test.tArray.tTest[0][0]"));
+        Assert.assertEquals("g", map.get("test.tArray.tTest[0][1]"));
+        Assert.assertEquals("3", map.get("test.tArray.tTest[0].Length"));
+        Assert.assertEquals("tTest", map.get("test.tArray.tTest[0]"));
+        Assert.assertEquals("5", map.get("test.tArray.tTest.Length"));
+        Assert.assertEquals("tTest", map.get("test.tArray.tTest[1]"));
+        Assert.assertEquals("tTest", map.get("test.tArray.tTest[2]"));
+        Assert.assertEquals("gTest", map.get("test.tArray.tTest[3]"));
+        Assert.assertEquals("gTest", map.get("test.tArray.tTest[4]"));
+        Assert.assertEquals("g", map.get("test.tArray.tTest[0][2]"));
+        Assert.assertEquals("A11D2D03-8DE3-43E6-B362-625DEBF3F88F", map.get("test.RequestId"));
+    }
+
+
+
     @Before
     public void init() {
         JsonReader jsonReader = new JsonReader();
@@ -74,7 +124,8 @@ public class JsonReaderTest {
         Assert.assertTrue(
                 map.get("DescribeInstancesResponse.RequestId").equals("A11D2D03-8DE3-43E6-B362-625DEBF3F88F"));
         Assert.assertTrue(
-                map.get("DescribeInstancesResponse.Instances[0].ImageId").equals("centos7u0_64_20G_aliaegis_20141117.vhd"));
+                map.get("DescribeInstancesResponse.Instances[0].ImageId")
+                        .equals("centos7u0_64_20G_aliaegis_20141117.vhd"));
         Assert.assertTrue(
                 map.get("DescribeInstancesResponse.Instances[0].Description").equals("test escape \"Timeout\""));
     }
@@ -92,7 +143,8 @@ public class JsonReaderTest {
 
     @Test
     public void test() {
-        Assert.assertEquals("JsonReaderTest", JsonReaderTest.class.getName().substring(JsonReaderTest.class.getName().lastIndexOf(".") + 1));
+        Assert.assertEquals("JsonReaderTest", JsonReaderTest.class.getName().substring(
+                JsonReaderTest.class.getName().lastIndexOf(".") + 1));
 
     }
 
