@@ -1,25 +1,66 @@
 package com.aliyuncs.profile;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertTrue;
+
+import org.junit.Before;
+import org.junit.Test;
+import org.mockito.Mockito;
+
 import com.aliyuncs.auth.Credential;
 import com.aliyuncs.auth.ICredentialProvider;
 import com.aliyuncs.auth.StaticCredentialsProvider;
+import com.aliyuncs.endpoint.DefaultEndpointResolver;
+import com.aliyuncs.endpoint.ResolveEndpointRequest;
+import com.aliyuncs.exceptions.ClientException;
 import com.aliyuncs.http.HttpClientConfig;
-import org.junit.Test;
-
-import static org.junit.Assert.*;
-import static org.mockito.Mockito.mock;
 
 public class DefaultProfileTest {
 
-    @Test
-    public void testCredential() {
+    @Before
+    public void testSingleDefaultProfile() {
+        DefaultProfile profile1 = DefaultProfile.getProfile();
+        DefaultProfile profile2 = DefaultProfile.getProfile();
+        assertTrue(profile2 == profile1);
+    }
 
-        DefaultProfile profile = DefaultProfile.getProfile("cn-hangzhou");
+    @SuppressWarnings("deprecation")
+    @Test
+    public void testGetCredential() {
+        DefaultProfile profile = DefaultProfile.getProfile("regionId");
         assertNull(profile.getCredential());
-        StaticCredentialsProvider credentialsProvider = mock(StaticCredentialsProvider.class);
+        StaticCredentialsProvider credentialsProvider = Mockito.mock(StaticCredentialsProvider.class);
         profile.setCredentialsProvider(credentialsProvider);
         assertTrue(profile.getCredential() instanceof Credential);
-        assertTrue(profile.getCredential() instanceof Credential);
+
+        ICredentialProvider iCredentialProvider = Mockito.mock(ICredentialProvider.class);
+        profile = DefaultProfile.getProfile("regionId", iCredentialProvider);
+        Credential credential = Mockito.mock(Credential.class);
+        Mockito.when(iCredentialProvider.fresh()).thenReturn(credential);
+        assertTrue(profile.getCredential() == credential);
+        profile.setCredentialsProvider(credentialsProvider);
+        assertTrue(profile.getCredential() == credential);
+    }
+
+    @Test
+    public void getRegionId() {
+        DefaultProfile profile = DefaultProfile.getProfile("regionId");
+        assertEquals("regionId", profile.getRegionId());
+    }
+
+    @Test
+    public void getFormat() {
+        DefaultProfile profile = DefaultProfile.getProfile("regionId");
+        assertNull(profile.getFormat());
+    }
+
+    @SuppressWarnings("deprecation")
+    @Test
+    public void testGetSigner() {
+        DefaultProfile profile = DefaultProfile.getProfile("cn-hangzhou");
+        assertNull(profile.getSigner());
     }
 
     @Test
@@ -49,13 +90,14 @@ public class DefaultProfileTest {
         assertNull(profile.getHttpClientConfig());
     }
 
+    @SuppressWarnings("deprecation")
     @Test
     public void testProfileConstructor() {
         DefaultProfile profile1 = DefaultProfile.getProfile("cn-hangzhou");
         assertEquals("cn-hangzhou", profile1.getRegionId());
         assertNull(profile1.getCredential());
 
-        ICredentialProvider icredential = mock(ICredentialProvider.class);
+        ICredentialProvider icredential = Mockito.mock(ICredentialProvider.class);
         DefaultProfile profile2 = DefaultProfile.getProfile("cn-shanghai", icredential);
         assertEquals("cn-shanghai", profile2.getRegionId());
         assertTrue(profile1 != profile2);
@@ -74,10 +116,20 @@ public class DefaultProfileTest {
     }
 
     @Test
-    public void deprecatedTest(){
+    public void deprecatedTest() {
         DefaultProfile profile = DefaultProfile.getProfile("cn-hangzhou");
         profile.setUsingInternalLocationService();
         assertTrue(profile.isUsingInternalLocationService());
+
+    }
+
+    @SuppressWarnings("deprecation")
+    @Test
+    public void testAddEndpoint() throws ClientException {
+        DefaultProfile.addEndpoint("endpointName", "regionId", "product", "domain");
+        ResolveEndpointRequest request = Mockito.mock(ResolveEndpointRequest.class);
+        request.regionId = "regionId";
+        assertTrue(DefaultEndpointResolver.predefinedEndpointResolver.isRegionIdValid(request));
     }
 
 }

@@ -11,6 +11,13 @@ import com.aliyuncs.profile.IClientProfile;
 public class StaticCredentialsProviderTest {
 
     @Test
+    public void constructorNormal() {
+        AlibabaCloudCredentials credentials = mock(AlibabaCloudCredentials.class);
+        StaticCredentialsProvider provider = new StaticCredentialsProvider(credentials);
+        Assert.assertEquals(credentials, provider.getCredentials());
+    }
+
+    @Test
     public void testConstructorLegacyCredentials() {
         Credential credential = mock(Credential.class);
         Mockito.when(credential.getSecurityToken()).thenReturn(null);
