@@ -167,4 +167,10 @@ public class DefaultProfile implements IClientProfile {
     public void enableUsingVpcEndpoint() {
         this.usingVpcEndpoint = true;
     }
+
+    @Override
+    @Deprecated
+    public void setUsingInternalLocationService() {
+        usingInternalLocationService = true;
+    }
 }
