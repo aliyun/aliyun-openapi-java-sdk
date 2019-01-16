@@ -34,19 +34,8 @@ public class DefaultProfile implements IClientProfile {
         this.regionId = regionId;
     }
 
-
-    private DefaultProfile(ICredentialProvider icredential) {
-        this.icredential = icredential;
-    }
-
     private DefaultProfile(String region, ICredentialProvider icredential) {
         this.regionId = region;
-        this.icredential = icredential;
-    }
-
-    private DefaultProfile(ICredentialProvider icredential, String region, FormatType format) {
-        this.regionId = region;
-        this.acceptFormat = format;
         this.icredential = icredential;
     }
 
@@ -69,7 +58,7 @@ public class DefaultProfile implements IClientProfile {
     }
 
     public synchronized static DefaultProfile getProfile(String regionId, String accessKeyId, String secret,
-                                                         String stsToken) {
+            String stsToken) {
         Credential creden = new Credential(accessKeyId, secret, stsToken);
         profile = new DefaultProfile(regionId, creden);
         return profile;
@@ -87,7 +76,7 @@ public class DefaultProfile implements IClientProfile {
 
     @Deprecated
     public synchronized static void addEndpoint(String endpointName, String regionId, String product, String domain,
-                                                boolean isNeverExpire) {
+            boolean isNeverExpire) {
         // endpointName, isNeverExpire take no effect
         addEndpoint(regionId, product, domain);
     }
