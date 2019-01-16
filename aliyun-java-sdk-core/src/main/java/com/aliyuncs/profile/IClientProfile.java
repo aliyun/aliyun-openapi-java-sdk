@@ -54,4 +54,6 @@ public interface IClientProfile {
     public boolean isUsingVpcEndpoint();
 
     public void enableUsingVpcEndpoint();
+    @Deprecated
+    public void setUsingInternalLocationService();
 }

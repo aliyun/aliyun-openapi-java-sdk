@@ -73,4 +73,11 @@ public class DefaultProfileTest {
         assertEquals("stsToken", profile.getCredential().getSecurityToken());
     }
 
+    @Test
+    public void deprecatedTest(){
+        DefaultProfile profile = DefaultProfile.getProfile("cn-hangzhou");
+        profile.setUsingInternalLocationService();
+        assertTrue(profile.isUsingInternalLocationService());
+    }
+
 }
