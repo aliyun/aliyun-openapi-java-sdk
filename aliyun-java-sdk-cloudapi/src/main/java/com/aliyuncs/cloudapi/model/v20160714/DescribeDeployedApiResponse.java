@@ -61,6 +61,8 @@ public class DescribeDeployedApiResponse extends AcsResponse {
     
     private String                    allowSignatureMethod;
 
+    private String                    resultBodyModel;
+
     private List<ErrorCodeSample>     errorCodeSamples;
 
     private List<SystemParameter>     systemParameters;
@@ -187,6 +189,14 @@ public class DescribeDeployedApiResponse extends AcsResponse {
 
     public String getAllowSignatureMethod() {
         return allowSignatureMethod;
+    }
+
+    public String getResultBodyModel() {
+        return resultBodyModel;
+    }
+
+    public void setResultBodyModel(String resultBodyModel) {
+        this.resultBodyModel = resultBodyModel;
     }
 
     public void setAllowSignatureMethod(String allowSignatureMethod) {

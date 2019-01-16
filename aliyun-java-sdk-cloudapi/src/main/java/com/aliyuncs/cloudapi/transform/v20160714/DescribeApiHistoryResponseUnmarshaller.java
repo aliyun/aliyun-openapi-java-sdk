@@ -47,6 +47,7 @@ public class DescribeApiHistoryResponseUnmarshaller {
 		describeApiHistoryResponse.setFailResultSample(context.stringValue("DescribeApiHistoryResponse.FailResultSample"));
 		describeApiHistoryResponse.setDeployedTime(context.stringValue("DescribeApiHistoryResponse.DeployedTime"));
 		describeApiHistoryResponse.setAllowSignatureMethod(context.stringValue("DescribeApiHistoryResponse.AllowSignatureMethod"));
+		describeApiHistoryResponse.setResultBodyModel(context.stringValue("DescribeApiHistoryResponse.ResultBodyModel"));
 
 		RequestConfig requestConfig = new RequestConfig();
 		requestConfig.setRequestProtocol(context.stringValue("DescribeApiHistoryResponse.RequestConfig.RequestProtocol"));
@@ -55,6 +56,7 @@ public class DescribeApiHistoryResponseUnmarshaller {
 		requestConfig.setBodyFormat(context.stringValue("DescribeApiHistoryResponse.RequestConfig.BodyFormat"));
 		requestConfig.setPostBodyDescription(context.stringValue("DescribeApiHistoryResponse.RequestConfig.PostBodyDescription"));
 		requestConfig.setRequestMode(context.stringValue("DescribeApiHistoryResponse.RequestConfig.RequestMode"));
+		requestConfig.setBodyModel(context.stringValue("DescribeApiHistoryResponse.RequestConfig.BodyModel"));
 		describeApiHistoryResponse.setRequestConfig(requestConfig);
 
 		ServiceConfig serviceConfig = new ServiceConfig();
@@ -71,7 +73,19 @@ public class DescribeApiHistoryResponseUnmarshaller {
         vpcConfig.setInstanceId(context.stringValue("DescribeApiHistoryResponse.ServiceConfig.VpcConfig.InstanceId"));
         vpcConfig.setPort(context.integerValue("DescribeApiHistoryResponse.ServiceConfig.VpcConfig.Port"));
         serviceConfig.setVpcConfig(vpcConfig);
-		describeApiHistoryResponse.setServiceConfig(serviceConfig);
+
+		serviceConfig.setMockStatusCode(context.integerValue("DescribeApiHistoryResponse.ServiceConfig.MockStatusCode"));
+
+		List<MockHeader> mockHeaders=new ArrayList<MockHeader>();
+		for(int i=0;i<context.lengthValue("DescribeApiHistoryResponse.ServiceConfig.MockHeaders.Length");i++){
+			MockHeader mockHeader=new MockHeader();
+			mockHeader.setHeaderName(context.stringValue("DescribeApiHistoryResponse.ServiceConfig.MockHeaders["+ i +"].HeaderName"));
+			mockHeader.setHeaderValue(context.stringValue("DescribeApiHistoryResponse.ServiceConfig.MockHeaders["+ i +"].HeaderValue"));
+			mockHeaders.add(mockHeader);
+		}
+		serviceConfig.setMockHeaders(mockHeaders);
+
+        describeApiHistoryResponse.setServiceConfig(serviceConfig);
 		
 		OpenIdConnectConfig openIdConnectConfig = new OpenIdConnectConfig();
         openIdConnectConfig.setIdTokenParamName(context.stringValue("DescribeApiHistoryResponse.OpenIdConnectConfig.IdTokenParamName"));

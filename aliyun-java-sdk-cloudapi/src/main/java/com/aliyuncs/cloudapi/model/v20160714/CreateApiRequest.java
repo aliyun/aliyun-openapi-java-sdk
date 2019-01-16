@@ -70,6 +70,10 @@ public class CreateApiRequest extends RpcAcsRequest<CreateApiResponse> {
 	
 	private String allowSignatureMethod;
 
+	private String resultBodyModel;
+
+	private String webSocketApiType;
+
 	public String getGroupId() {
 		return this.groupId;
 	}
@@ -131,6 +135,24 @@ public class CreateApiRequest extends RpcAcsRequest<CreateApiResponse> {
 	public void setServiceConfig(String serviceConfig) {
 		this.serviceConfig = serviceConfig;
 		putQueryParameter("ServiceConfig", serviceConfig);
+	}
+
+	public String getResultBodyModel() {
+		return resultBodyModel;
+	}
+
+	public void setResultBodyModel(String resultBodyModel) {
+		this.resultBodyModel = resultBodyModel;
+		putQueryParameter("ResultBodyModel", resultBodyModel);
+	}
+
+	public String getWebSocketApiType() {
+		return webSocketApiType;
+	}
+
+	public void setWebSocketApiType(String webSocketApiType) {
+		this.webSocketApiType = webSocketApiType;
+		putQueryParameter("WebSocketApiType", webSocketApiType);
 	}
 
 	public String getRequestParameters() {

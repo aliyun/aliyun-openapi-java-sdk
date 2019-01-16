@@ -1,3 +1,6 @@
+2019-01-16 Version: 4.8.0
+1, The plugin feature is released and supports a variety of plugins, as follows:trafficControl、backendSignature、ipControl、jwtAuth、cors、caching
+
 2018-01-18 Version: 4.5.0
 1, Add IP Controls APIs
 2, Add Log Config APIs

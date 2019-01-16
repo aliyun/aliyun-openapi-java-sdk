@@ -60,6 +60,10 @@ public class DescribeApiResponse extends AcsResponse {
     
     private String                    allowSignatureMethod;
 
+    private String                    resultBodyModel;
+
+    private String                    webSocketApiType;
+
     private List<SystemParameter>     systemParameters;
 
     private List<SystemParameter>     customSystemParameters;
@@ -288,6 +292,22 @@ public class DescribeApiResponse extends AcsResponse {
 
     public void setAllowSignatureMethod(String allowSignatureMethod) {
         this.allowSignatureMethod = allowSignatureMethod;
+    }
+
+    public String getResultBodyModel() {
+        return resultBodyModel;
+    }
+
+    public void setResultBodyModel(String resultBodyModel) {
+        this.resultBodyModel = resultBodyModel;
+    }
+
+    public String getWebSocketApiType() {
+        return webSocketApiType;
+    }
+
+    public void setWebSocketApiType(String webSocketApiType) {
+        this.webSocketApiType = webSocketApiType;
     }
 
     public static class SystemParameter {
@@ -685,6 +705,8 @@ public class DescribeApiResponse extends AcsResponse {
 
         private String requestMode;
 
+        private String bodyModel;
+
         public String getRequestProtocol() {
             return this.requestProtocol;
         }
@@ -732,6 +754,14 @@ public class DescribeApiResponse extends AcsResponse {
         public void setRequestMode(String requestMode) {
             this.requestMode = requestMode;
         }
+
+        public String getBodyModel() {
+            return bodyModel;
+        }
+
+        public void setBodyModel(String bodyModel) {
+            this.bodyModel = bodyModel;
+        }
     }
 
     public static class ServiceConfig {
@@ -749,6 +779,10 @@ public class DescribeApiResponse extends AcsResponse {
         private String    mock;
 
         private String    mockResult;
+
+        private Integer   mockStatusCode;
+
+        private List<MockHeader> mockHeaders;
 
         private Boolean   serviceVpcEnable = false;
 
@@ -864,6 +898,43 @@ public class DescribeApiResponse extends AcsResponse {
         public void setAoneAppName(String aoneAppName) {
             this.aoneAppName = aoneAppName;
         }
+
+        public Integer getMockStatusCode() {
+            return mockStatusCode;
+        }
+
+        public void setMockStatusCode(Integer mockStatusCode) {
+            this.mockStatusCode = mockStatusCode;
+        }
+
+        public List<MockHeader> getMockHeaders() {
+            return mockHeaders;
+        }
+
+        public void setMockHeaders(List<MockHeader> mockHeaders) {
+            this.mockHeaders = mockHeaders;
+        }
+    }
+
+    public static class MockHeader{
+        private String headerName;
+        private String headerValue;
+
+        public String getHeaderName() {
+            return headerName;
+        }
+
+        public void setHeaderName(String headerName) {
+            this.headerName = headerName;
+        }
+
+        public String getHeaderValue() {
+            return headerValue;
+        }
+
+        public void setHeaderValue(String headerValue) {
+            this.headerValue = headerValue;
+        }
     }
 
     public static class OpenIdConnectConfig {
@@ -916,6 +987,8 @@ public class DescribeApiResponse extends AcsResponse {
 
         private Integer port;
 
+        private String  name;
+
         public String getVpcId() {
             return vpcId;
         }
@@ -940,6 +1013,13 @@ public class DescribeApiResponse extends AcsResponse {
             this.port = port;
         }
 
+        public String getName() {
+            return name;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
     }
 
     @Override

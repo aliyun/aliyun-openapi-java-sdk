@@ -65,6 +65,8 @@ public class DescribeApiHistoryResponse extends AcsResponse {
 
     private String                    allowSignatureMethod;
 
+    private String                    ResultBodyModel;
+
     private List<ErrorCodeSample>     errorCodeSamples;
 
     private List<SystemParameter>     systemParameters;
@@ -299,6 +301,14 @@ public class DescribeApiHistoryResponse extends AcsResponse {
 
     public void setOpenIdConnectConfig(OpenIdConnectConfig openIdConnectConfig) {
         this.openIdConnectConfig = openIdConnectConfig;
+    }
+
+    public String getResultBodyModel() {
+        return ResultBodyModel;
+    }
+
+    public void setResultBodyModel(String resultBodyModel) {
+        ResultBodyModel = resultBodyModel;
     }
 
     @Override
