@@ -1,6 +1,20 @@
 package com.aliyuncs;
 
-import com.aliyuncs.auth.*;
+import java.io.IOException;
+import java.net.SocketTimeoutException;
+import java.security.InvalidKeyException;
+import java.security.NoSuchAlgorithmException;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+import javax.xml.bind.annotation.XmlRootElement;
+
+import com.aliyuncs.auth.AlibabaCloudCredentials;
+import com.aliyuncs.auth.AlibabaCloudCredentialsProvider;
+import com.aliyuncs.auth.Credential;
+import com.aliyuncs.auth.LegacyCredentials;
+import com.aliyuncs.auth.Signer;
+import com.aliyuncs.auth.StaticCredentialsProvider;
 import com.aliyuncs.endpoint.DefaultEndpointResolver;
 import com.aliyuncs.endpoint.EndpointResolver;
 import com.aliyuncs.endpoint.ResolveEndpointRequest;
@@ -8,7 +22,11 @@ import com.aliyuncs.exceptions.ClientException;
 import com.aliyuncs.exceptions.ErrorCodeConstant;
 import com.aliyuncs.exceptions.ErrorMessageConstant;
 import com.aliyuncs.exceptions.ServerException;
-import com.aliyuncs.http.*;
+import com.aliyuncs.http.FormatType;
+import com.aliyuncs.http.HttpClientFactory;
+import com.aliyuncs.http.HttpRequest;
+import com.aliyuncs.http.HttpResponse;
+import com.aliyuncs.http.IHttpClient;
 import com.aliyuncs.profile.DefaultProfile;
 import com.aliyuncs.profile.IClientProfile;
 import com.aliyuncs.reader.Reader;
@@ -18,14 +36,6 @@ import com.aliyuncs.transform.UnmarshallerContext;
 import com.aliyuncs.unmarshaller.Unmarshaller;
 import com.aliyuncs.unmarshaller.UnmarshallerFactory;
 import com.aliyuncs.utils.IOUtils;
-
-import javax.xml.bind.annotation.XmlRootElement;
-import java.io.IOException;
-import java.net.SocketTimeoutException;
-import java.security.InvalidKeyException;
-import java.security.NoSuchAlgorithmException;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 @SuppressWarnings("deprecation")
 public class DefaultAcsClient implements IAcsClient {
@@ -62,8 +72,8 @@ public class DefaultAcsClient implements IAcsClient {
     }
 
     @Override
-    public <T extends AcsResponse> HttpResponse doAction(AcsRequest<T> request)
-            throws ClientException, ServerException {
+    public <T extends AcsResponse> HttpResponse doAction(AcsRequest<T> request) throws ClientException,
+            ServerException {
         return this.doAction(request, autoRetry, maxRetryNumber, this.clientProfile);
     }
 
@@ -82,15 +92,13 @@ public class DefaultAcsClient implements IAcsClient {
     @Override
     public <T extends AcsResponse> HttpResponse doAction(AcsRequest<T> request, String regionId, Credential credential)
             throws ClientException, ServerException {
-        boolean retry = this.autoRetry;
-        int retryNumber = this.maxRetryNumber;
         Signer signer = Signer.getSigner(new LegacyCredentials(credential));
         FormatType format = null;
         if (null == request.getSysRegionId()) {
             request.setSysRegionId(regionId);
         }
-
-        return this.doAction(request, retry, retryNumber, request.getSysRegionId(), credential, signer, format);
+        return doAction(request, autoRetry, maxRetryNumber, regionId, new LegacyCredentials(credential), signer,
+                format);
     }
 
     @Override
@@ -121,8 +129,8 @@ public class DefaultAcsClient implements IAcsClient {
     }
 
     @Override
-    public <T extends AcsResponse> T getAcsResponse(AcsRequest<T> request, String regionId)
-            throws ServerException, ClientException {
+    public <T extends AcsResponse> T getAcsResponse(AcsRequest<T> request, String regionId) throws ServerException,
+            ClientException {
         if (null == request.getSysRegionId()) {
             request.setSysRegionId(regionId);
         }
@@ -200,8 +208,8 @@ public class DefaultAcsClient implements IAcsClient {
 
     @Deprecated
     public <T extends AcsResponse> HttpResponse doAction(AcsRequest<T> request, boolean autoRetry, int maxRetryNumber,
-            String regionId, Credential credential, Signer signer, FormatType format)
-            throws ClientException, ServerException {
+            String regionId, Credential credential, Signer signer, FormatType format) throws ClientException,
+            ServerException {
         return doAction(request, autoRetry, maxRetryNumber, regionId, new LegacyCredentials(credential), signer,
                 format);
     }
@@ -219,8 +227,8 @@ public class DefaultAcsClient implements IAcsClient {
             if (request.getSysProductDomain() != null) {
                 domain = request.getSysProductDomain();
             } else {
-                ResolveEndpointRequest resolveEndpointRequest = new ResolveEndpointRequest(regionId,
-                        request.getSysProduct(), request.getSysLocationProduct(), request.getSysEndpointType());
+                ResolveEndpointRequest resolveEndpointRequest = new ResolveEndpointRequest(regionId, request
+                        .getSysProduct(), request.getSysLocationProduct(), request.getSysEndpointType());
                 String endpoint = endpointResolver.resolve(resolveEndpointRequest);
                 domain = new ProductDomain(request.getSysProduct(), endpoint);
 
@@ -260,8 +268,8 @@ public class DefaultAcsClient implements IAcsClient {
     protected <T extends AcsResponse> T readResponse(Class<T> clasz, HttpResponse httpResponse, FormatType format)
             throws ClientException {
         // new version response contains "@XmlRootElement" annotation
-        if (clasz.isAnnotationPresent(XmlRootElement.class)
-                && !clientProfile.getHttpClientConfig().isCompatibleMode()) {
+        if (clasz.isAnnotationPresent(XmlRootElement.class) && !clientProfile.getHttpClientConfig()
+                .isCompatibleMode()) {
             Unmarshaller unmarshaller = UnmarshallerFactory.getUnmarshaller(format);
             return unmarshaller.unmarshal(clasz, httpResponse.getHttpContentString());
         } else {
@@ -278,8 +286,8 @@ public class DefaultAcsClient implements IAcsClient {
             try {
                 response = clasz.newInstance();
             } catch (Exception e) {
-                throw new ClientException("SDK.InvalidResponseClass",
-                        "Unable to allocate " + clasz.getName() + " class");
+                throw new ClientException("SDK.InvalidResponseClass", "Unable to allocate " + clasz.getName()
+                        + " class");
             }
 
             String responseEndpoint = clasz.getName().substring(clasz.getName().lastIndexOf(".") + 1);

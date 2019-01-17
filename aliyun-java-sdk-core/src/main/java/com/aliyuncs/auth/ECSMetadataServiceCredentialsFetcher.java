@@ -1,23 +1,8 @@
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
-
 package com.aliyuncs.auth;
+
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
 
 /**
  * Created by haowei.yao on 2017/9/12.
@@ -31,16 +16,10 @@ import com.aliyuncs.http.clients.CompatibleUrlConnClient;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URL;
-
 public class ECSMetadataServiceCredentialsFetcher {
-    private static final String URL_IN_ECS_METADATA =
-            "/latest/meta-data/ram/security-credentials/";
+    private static final String URL_IN_ECS_METADATA = "/latest/meta-data/ram/security-credentials/";
     private static final int DEFAULT_TIMEOUT_IN_MILLISECONDS = 5000;
-    private static final String ECS_METADAT_FETCH_ERROR_MSG =
-            "Failed to get RAM session credentials from ECS metadata service.";
+    private static final String ECS_METADAT_FETCH_ERROR_MSG = "Failed to get RAM session credentials from ECS metadata service.";
     private static final int DEFAULT_ECS_SESSION_TOKEN_DURATION_SECONDS = 3600 * 6;
     private URL credentialUrl;
     private String roleName;
@@ -104,11 +83,8 @@ public class ECSMetadataServiceCredentialsFetcher {
         JsonObject jsonObject = null;
         jsonObject = new JsonParser().parse(jsonContent).getAsJsonObject();
 
-        if (jsonObject.has("Code") &&
-                jsonObject.has("AccessKeyId") &&
-                jsonObject.has("AccessKeySecret") &&
-                jsonObject.has("SecurityToken") &&
-                jsonObject.has("Expiration")) {
+        if (jsonObject.has("Code") && jsonObject.has("AccessKeyId") && jsonObject.has("AccessKeySecret") && jsonObject
+                .has("SecurityToken") && jsonObject.has("Expiration")) {
 
         } else {
             throw new ClientException("Invalid json got from ECS Metadata service.");
@@ -117,13 +93,9 @@ public class ECSMetadataServiceCredentialsFetcher {
         if (!"Success".equals(jsonObject.get("Code").getAsString())) {
             throw new ClientException(ECS_METADAT_FETCH_ERROR_MSG);
         }
-        return new InstanceProfileCredentials(
-                jsonObject.get("AccessKeyId").getAsString(),
-                jsonObject.get("AccessKeySecret").getAsString(),
-                jsonObject.get("SecurityToken").getAsString(),
-                jsonObject.get("Expiration").getAsString(),
-                DEFAULT_ECS_SESSION_TOKEN_DURATION_SECONDS
-        );
+        return new InstanceProfileCredentials(jsonObject.get("AccessKeyId").getAsString(), jsonObject.get(
+                "AccessKeySecret").getAsString(), jsonObject.get("SecurityToken").getAsString(), jsonObject.get(
+                        "Expiration").getAsString(), DEFAULT_ECS_SESSION_TOKEN_DURATION_SECONDS);
     }
 
     public InstanceProfileCredentials fetch(int retryTimes) throws ClientException {
