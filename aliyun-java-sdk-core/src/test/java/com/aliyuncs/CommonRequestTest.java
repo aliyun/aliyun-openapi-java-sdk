@@ -1,15 +1,16 @@
 package com.aliyuncs;
 
-import com.aliyuncs.http.FormatType;
-import com.aliyuncs.http.MethodType;
-import com.aliyuncs.http.ProtocolType;
+import java.io.UnsupportedEncodingException;
+import java.util.HashMap;
+import java.util.Map;
+
 import org.junit.Assert;
 import org.junit.Test;
 import org.powermock.reflect.Whitebox;
 
-import java.io.UnsupportedEncodingException;
-import java.util.HashMap;
-import java.util.Map;
+import com.aliyuncs.http.FormatType;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.http.ProtocolType;
 
 public class CommonRequestTest {
 
@@ -18,7 +19,7 @@ public class CommonRequestTest {
         CommonRequest request = new CommonRequest();
         request.setSysUriPattern("uri");
         request.putPathParameter("test", "test");
-        AcsRequest acsRequest = request.buildRequest();
+        AcsRequest<CommonResponse> acsRequest = request.buildRequest();
         Assert.assertTrue(acsRequest instanceof CommonRoaRequest);
     }
 
