@@ -176,7 +176,6 @@ public class CompatibleUrlConnClient extends IHttpClient {
                 response.setSysEncoding(codings[1].trim().toUpperCase());
             }
         }
-        response.setStatus(httpConn.getResponseCode());
         response.setHttpContent(buff, response.getSysEncoding(),
                 response.getHttpContentType());
     }
