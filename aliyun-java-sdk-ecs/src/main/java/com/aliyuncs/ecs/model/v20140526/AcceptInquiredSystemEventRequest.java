@@ -20,27 +20,32 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class AllocateEipAddressRequest extends RpcAcsRequest<AllocateEipAddressResponse> {
+public class AcceptInquiredSystemEventRequest extends RpcAcsRequest<AcceptInquiredSystemEventResponse> {
 	
-	public AllocateEipAddressRequest() {
-		super("Ecs", "2014-05-26", "AllocateEipAddress", "ecs");
+	public AcceptInquiredSystemEventRequest() {
+		super("Ecs", "2014-05-26", "AcceptInquiredSystemEvent", "ecs");
 	}
+
+	private String eventId;
 
 	private Long resourceOwnerId;
 
 	private String resourceOwnerAccount;
 
-	private String bandwidth;
-
-	private String clientToken;
-
-	private String internetChargeType;
-
-	private String iSP;
-
 	private String ownerAccount;
 
 	private Long ownerId;
+
+	public String getEventId() {
+		return this.eventId;
+	}
+
+	public void setEventId(String eventId) {
+		this.eventId = eventId;
+		if(eventId != null){
+			putQueryParameter("EventId", eventId);
+		}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -61,50 +66,6 @@ public class AllocateEipAddressRequest extends RpcAcsRequest<AllocateEipAddressR
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public String getBandwidth() {
-		return this.bandwidth;
-	}
-
-	public void setBandwidth(String bandwidth) {
-		this.bandwidth = bandwidth;
-		if(bandwidth != null){
-			putQueryParameter("Bandwidth", bandwidth);
-		}
-	}
-
-	public String getClientToken() {
-		return this.clientToken;
-	}
-
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putQueryParameter("ClientToken", clientToken);
-		}
-	}
-
-	public String getInternetChargeType() {
-		return this.internetChargeType;
-	}
-
-	public void setInternetChargeType(String internetChargeType) {
-		this.internetChargeType = internetChargeType;
-		if(internetChargeType != null){
-			putQueryParameter("InternetChargeType", internetChargeType);
-		}
-	}
-
-	public String getISP() {
-		return this.iSP;
-	}
-
-	public void setISP(String iSP) {
-		this.iSP = iSP;
-		if(iSP != null){
-			putQueryParameter("ISP", iSP);
 		}
 	}
 
@@ -131,8 +92,8 @@ public class AllocateEipAddressRequest extends RpcAcsRequest<AllocateEipAddressR
 	}
 
 	@Override
-	public Class<AllocateEipAddressResponse> getResponseClass() {
-		return AllocateEipAddressResponse.class;
+	public Class<AcceptInquiredSystemEventResponse> getResponseClass() {
+		return AcceptInquiredSystemEventResponse.class;
 	}
 
 }

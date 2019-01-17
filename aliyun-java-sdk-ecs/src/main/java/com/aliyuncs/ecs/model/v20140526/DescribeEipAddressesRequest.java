@@ -32,6 +32,8 @@ public class DescribeEipAddressesRequest extends RpcAcsRequest<DescribeEipAddres
 
 	private String filter2Value;
 
+	private String iSP;
+
 	private String ownerAccount;
 
 	private String allocationId;
@@ -90,6 +92,17 @@ public class DescribeEipAddressesRequest extends RpcAcsRequest<DescribeEipAddres
 		this.filter2Value = filter2Value;
 		if(filter2Value != null){
 			putQueryParameter("Filter.2.Value", filter2Value);
+		}
+	}
+
+	public String getISP() {
+		return this.iSP;
+	}
+
+	public void setISP(String iSP) {
+		this.iSP = iSP;
+		if(iSP != null){
+			putQueryParameter("ISP", iSP);
 		}
 	}
 

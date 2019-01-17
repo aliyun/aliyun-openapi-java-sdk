@@ -23,6 +23,7 @@ import com.aliyuncs.ecs.model.v20140526.DescribeInstancesFullStatusResponse.Inst
 import com.aliyuncs.ecs.model.v20140526.DescribeInstancesFullStatusResponse.InstanceFullStatusType.ScheduledSystemEventType;
 import com.aliyuncs.ecs.model.v20140526.DescribeInstancesFullStatusResponse.InstanceFullStatusType.ScheduledSystemEventType.EventCycleStatus;
 import com.aliyuncs.ecs.model.v20140526.DescribeInstancesFullStatusResponse.InstanceFullStatusType.ScheduledSystemEventType.EventType;
+import com.aliyuncs.ecs.model.v20140526.DescribeInstancesFullStatusResponse.InstanceFullStatusType.ScheduledSystemEventType.ExtendedAttribute;
 import com.aliyuncs.ecs.model.v20140526.DescribeInstancesFullStatusResponse.InstanceFullStatusType.Status;
 import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -68,6 +69,11 @@ public class DescribeInstancesFullStatusResponseUnmarshaller {
 				eventType.setCode(context.integerValue("DescribeInstancesFullStatusResponse.InstanceFullStatusSet["+ i +"].ScheduledSystemEventSet["+ j +"].EventType.Code"));
 				eventType.setName(context.stringValue("DescribeInstancesFullStatusResponse.InstanceFullStatusSet["+ i +"].ScheduledSystemEventSet["+ j +"].EventType.Name"));
 				scheduledSystemEventType.setEventType(eventType);
+
+				ExtendedAttribute extendedAttribute = new ExtendedAttribute();
+				extendedAttribute.setDiskId(context.stringValue("DescribeInstancesFullStatusResponse.InstanceFullStatusSet["+ i +"].ScheduledSystemEventSet["+ j +"].ExtendedAttribute.DiskId"));
+				extendedAttribute.setDevice(context.stringValue("DescribeInstancesFullStatusResponse.InstanceFullStatusSet["+ i +"].ScheduledSystemEventSet["+ j +"].ExtendedAttribute.Device"));
+				scheduledSystemEventType.setExtendedAttribute(extendedAttribute);
 
 				scheduledSystemEventSet.add(scheduledSystemEventType);
 			}

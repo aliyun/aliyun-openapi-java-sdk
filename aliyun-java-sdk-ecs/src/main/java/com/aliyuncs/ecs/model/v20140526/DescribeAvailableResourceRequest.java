@@ -38,6 +38,8 @@ public class DescribeAvailableResourceRequest extends RpcAcsRequest<DescribeAvai
 
 	private String systemDiskCategory;
 
+	private String scope;
+
 	private String instanceType;
 
 	private String networkCategory;
@@ -123,6 +125,17 @@ public class DescribeAvailableResourceRequest extends RpcAcsRequest<DescribeAvai
 		this.systemDiskCategory = systemDiskCategory;
 		if(systemDiskCategory != null){
 			putQueryParameter("SystemDiskCategory", systemDiskCategory);
+		}
+	}
+
+	public String getScope() {
+		return this.scope;
+	}
+
+	public void setScope(String scope) {
+		this.scope = scope;
+		if(scope != null){
+			putQueryParameter("Scope", scope);
 		}
 	}
 

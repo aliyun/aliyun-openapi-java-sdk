@@ -89,6 +89,8 @@ public class DescribeDisksRequest extends RpcAcsRequest<DescribeDisksResponse> {
 
 	private String category;
 
+	private String kMSKeyId;
+
 	private String status;
 
 	public Long getResourceOwnerId() {
@@ -434,6 +436,17 @@ public class DescribeDisksRequest extends RpcAcsRequest<DescribeDisksResponse> {
 		this.category = category;
 		if(category != null){
 			putQueryParameter("Category", category);
+		}
+	}
+
+	public String getKMSKeyId() {
+		return this.kMSKeyId;
+	}
+
+	public void setKMSKeyId(String kMSKeyId) {
+		this.kMSKeyId = kMSKeyId;
+		if(kMSKeyId != null){
+			putQueryParameter("KMSKeyId", kMSKeyId);
 		}
 	}
 

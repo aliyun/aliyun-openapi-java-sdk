@@ -39,6 +39,8 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 
 	private String keyPairName;
 
+	private Integer minAmount;
+
 	private Float spotPriceLimit;
 
 	private Boolean deletionProtection;
@@ -198,6 +200,17 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 		this.keyPairName = keyPairName;
 		if(keyPairName != null){
 			putQueryParameter("KeyPairName", keyPairName);
+		}
+	}
+
+	public Integer getMinAmount() {
+		return this.minAmount;
+	}
+
+	public void setMinAmount(Integer minAmount) {
+		this.minAmount = minAmount;
+		if(minAmount != null){
+			putQueryParameter("MinAmount", minAmount.toString());
 		}
 	}
 
@@ -708,6 +721,7 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 				putQueryParameter("DataDisk." + (depth1 + 1) + ".SnapshotId" , dataDisks.get(depth1).getSnapshotId());
 				putQueryParameter("DataDisk." + (depth1 + 1) + ".Category" , dataDisks.get(depth1).getCategory());
 				putQueryParameter("DataDisk." + (depth1 + 1) + ".Encrypted" , dataDisks.get(depth1).getEncrypted());
+				putQueryParameter("DataDisk." + (depth1 + 1) + ".KMSKeyId" , dataDisks.get(depth1).getKMSKeyId());
 				putQueryParameter("DataDisk." + (depth1 + 1) + ".DiskName" , dataDisks.get(depth1).getDiskName());
 				putQueryParameter("DataDisk." + (depth1 + 1) + ".Description" , dataDisks.get(depth1).getDescription());
 				putQueryParameter("DataDisk." + (depth1 + 1) + ".Device" , dataDisks.get(depth1).getDevice());
@@ -835,6 +849,8 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 
 		private String encrypted;
 
+		private String kMSKeyId;
+
 		private String diskName;
 
 		private String description;
@@ -873,6 +889,14 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 
 		public void setEncrypted(String encrypted) {
 			this.encrypted = encrypted;
+		}
+
+		public String getKMSKeyId() {
+			return this.kMSKeyId;
+		}
+
+		public void setKMSKeyId(String kMSKeyId) {
+			this.kMSKeyId = kMSKeyId;
 		}
 
 		public String getDiskName() {

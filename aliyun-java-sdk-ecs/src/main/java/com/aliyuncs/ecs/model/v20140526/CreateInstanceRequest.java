@@ -661,6 +661,7 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 				putQueryParameter("DataDisk." + (depth1 + 1) + ".Encrypted" , dataDisks.get(depth1).getEncrypted());
 				putQueryParameter("DataDisk." + (depth1 + 1) + ".Description" , dataDisks.get(depth1).getDescription());
 				putQueryParameter("DataDisk." + (depth1 + 1) + ".Category" , dataDisks.get(depth1).getCategory());
+				putQueryParameter("DataDisk." + (depth1 + 1) + ".KMSKeyId" , dataDisks.get(depth1).getKMSKeyId());
 				putQueryParameter("DataDisk." + (depth1 + 1) + ".Device" , dataDisks.get(depth1).getDevice());
 				putQueryParameter("DataDisk." + (depth1 + 1) + ".DeleteWithInstance" , dataDisks.get(depth1).getDeleteWithInstance());
 			}
@@ -726,6 +727,8 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 
 		private String category;
 
+		private String kMSKeyId;
+
 		private String device;
 
 		private Boolean deleteWithInstance;
@@ -776,6 +779,14 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 
 		public void setCategory(String category) {
 			this.category = category;
+		}
+
+		public String getKMSKeyId() {
+			return this.kMSKeyId;
+		}
+
+		public void setKMSKeyId(String kMSKeyId) {
+			this.kMSKeyId = kMSKeyId;
 		}
 
 		public String getDevice() {

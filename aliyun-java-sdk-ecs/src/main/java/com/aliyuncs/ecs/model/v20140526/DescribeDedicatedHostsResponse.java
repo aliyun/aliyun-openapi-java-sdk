@@ -96,6 +96,10 @@ public class DescribeDedicatedHostsResponse extends AcsResponse {
 
 		private Integer cores;
 
+		private Integer physicalGpus;
+
+		private String gPUSpec;
+
 		private String actionOnMaintenance;
 
 		private String status;
@@ -120,6 +124,8 @@ public class DescribeDedicatedHostsResponse extends AcsResponse {
 
 		private List<String> supportedInstanceTypeFamilies;
 
+		private List<String> supportedInstanceTypesList;
+
 		private Capacity capacity;
 
 		private NetworkAttributes networkAttributes;
@@ -132,10 +138,26 @@ public class DescribeDedicatedHostsResponse extends AcsResponse {
 			this.dedicatedHostId = dedicatedHostId;
 		}
 
+		public String getBizRegionId() {
+			return this.regionId;
+		}
+
+		public void setBizRegionId(String regionId) {
+			this.regionId = regionId;
+		}
+
+		/**
+		 * @deprecated use getBizRegionId instead of this.
+		 */
+		@Deprecated
 		public String getRegionId() {
 			return this.regionId;
 		}
 
+		/**
+		 * @deprecated use setBizRegionId instead of this.
+		 */
+		@Deprecated
 		public void setRegionId(String regionId) {
 			this.regionId = regionId;
 		}
@@ -194,6 +216,22 @@ public class DescribeDedicatedHostsResponse extends AcsResponse {
 
 		public void setCores(Integer cores) {
 			this.cores = cores;
+		}
+
+		public Integer getPhysicalGpus() {
+			return this.physicalGpus;
+		}
+
+		public void setPhysicalGpus(Integer physicalGpus) {
+			this.physicalGpus = physicalGpus;
+		}
+
+		public String getGPUSpec() {
+			return this.gPUSpec;
+		}
+
+		public void setGPUSpec(String gPUSpec) {
+			this.gPUSpec = gPUSpec;
 		}
 
 		public String getActionOnMaintenance() {
@@ -292,6 +330,14 @@ public class DescribeDedicatedHostsResponse extends AcsResponse {
 			this.supportedInstanceTypeFamilies = supportedInstanceTypeFamilies;
 		}
 
+		public List<String> getSupportedInstanceTypesList() {
+			return this.supportedInstanceTypesList;
+		}
+
+		public void setSupportedInstanceTypesList(List<String> supportedInstanceTypesList) {
+			this.supportedInstanceTypesList = supportedInstanceTypesList;
+		}
+
 		public Capacity getCapacity() {
 			return this.capacity;
 		}
@@ -373,6 +419,10 @@ public class DescribeDedicatedHostsResponse extends AcsResponse {
 
 			private Integer availableVcpus;
 
+			private Integer totalVgpus;
+
+			private Integer availableVgpus;
+
 			private Float totalMemory;
 
 			private Float availableMemory;
@@ -397,6 +447,22 @@ public class DescribeDedicatedHostsResponse extends AcsResponse {
 
 			public void setAvailableVcpus(Integer availableVcpus) {
 				this.availableVcpus = availableVcpus;
+			}
+
+			public Integer getTotalVgpus() {
+				return this.totalVgpus;
+			}
+
+			public void setTotalVgpus(Integer totalVgpus) {
+				this.totalVgpus = totalVgpus;
+			}
+
+			public Integer getAvailableVgpus() {
+				return this.availableVgpus;
+			}
+
+			public void setAvailableVgpus(Integer availableVgpus) {
+				this.availableVgpus = availableVgpus;
 			}
 
 			public Float getTotalMemory() {

@@ -44,6 +44,7 @@ public class DescribeInstanceTypesResponseUnmarshaller {
 			instanceType.setInitialCredit(context.integerValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].InitialCredit"));
 			instanceType.setBaselineCredit(context.integerValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].BaselineCredit"));
 			instanceType.setEniQuantity(context.integerValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].EniQuantity"));
+			instanceType.setEniPrivateIpAddressQuantity(context.integerValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].EniPrivateIpAddressQuantity"));
 			instanceType.setInstanceBandwidthRx(context.integerValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].InstanceBandwidthRx"));
 			instanceType.setInstanceBandwidthTx(context.integerValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].InstanceBandwidthTx"));
 			instanceType.setInstancePpsRx(context.longValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].InstancePpsRx"));

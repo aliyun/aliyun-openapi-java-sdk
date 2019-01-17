@@ -21,6 +21,7 @@ import com.aliyuncs.ecs.model.v20140526.DescribeInstanceHistoryEventsResponse;
 import com.aliyuncs.ecs.model.v20140526.DescribeInstanceHistoryEventsResponse.InstanceSystemEventType;
 import com.aliyuncs.ecs.model.v20140526.DescribeInstanceHistoryEventsResponse.InstanceSystemEventType.EventCycleStatus;
 import com.aliyuncs.ecs.model.v20140526.DescribeInstanceHistoryEventsResponse.InstanceSystemEventType.EventType;
+import com.aliyuncs.ecs.model.v20140526.DescribeInstanceHistoryEventsResponse.InstanceSystemEventType.ExtendedAttribute;
 import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -52,6 +53,11 @@ public class DescribeInstanceHistoryEventsResponseUnmarshaller {
 			eventCycleStatus.setCode(context.integerValue("DescribeInstanceHistoryEventsResponse.InstanceSystemEventSet["+ i +"].EventCycleStatus.Code"));
 			eventCycleStatus.setName(context.stringValue("DescribeInstanceHistoryEventsResponse.InstanceSystemEventSet["+ i +"].EventCycleStatus.Name"));
 			instanceSystemEventType.setEventCycleStatus(eventCycleStatus);
+
+			ExtendedAttribute extendedAttribute = new ExtendedAttribute();
+			extendedAttribute.setDiskId(context.stringValue("DescribeInstanceHistoryEventsResponse.InstanceSystemEventSet["+ i +"].ExtendedAttribute.DiskId"));
+			extendedAttribute.setDevice(context.stringValue("DescribeInstanceHistoryEventsResponse.InstanceSystemEventSet["+ i +"].ExtendedAttribute.Device"));
+			instanceSystemEventType.setExtendedAttribute(extendedAttribute);
 
 			instanceSystemEventSet.add(instanceSystemEventType);
 		}

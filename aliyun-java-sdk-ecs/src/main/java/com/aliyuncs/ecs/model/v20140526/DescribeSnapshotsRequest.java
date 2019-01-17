@@ -71,6 +71,8 @@ public class DescribeSnapshotsRequest extends RpcAcsRequest<DescribeSnapshotsRes
 
 	private String snapshotType;
 
+	private String kMSKeyId;
+
 	private String status;
 
 	public Long getResourceOwnerId() {
@@ -315,6 +317,17 @@ public class DescribeSnapshotsRequest extends RpcAcsRequest<DescribeSnapshotsRes
 		this.snapshotType = snapshotType;
 		if(snapshotType != null){
 			putQueryParameter("SnapshotType", snapshotType);
+		}
+	}
+
+	public String getKMSKeyId() {
+		return this.kMSKeyId;
+	}
+
+	public void setKMSKeyId(String kMSKeyId) {
+		this.kMSKeyId = kMSKeyId;
+		if(kMSKeyId != null){
+			putQueryParameter("KMSKeyId", kMSKeyId);
 		}
 	}
 

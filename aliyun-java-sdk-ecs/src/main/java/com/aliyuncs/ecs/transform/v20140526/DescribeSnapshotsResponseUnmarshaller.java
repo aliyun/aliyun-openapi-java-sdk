@@ -52,6 +52,7 @@ public class DescribeSnapshotsResponseUnmarshaller {
 			snapshot.setSourceStorageType(context.stringValue("DescribeSnapshotsResponse.Snapshots["+ i +"].SourceStorageType"));
 			snapshot.setRemainTime(context.integerValue("DescribeSnapshotsResponse.Snapshots["+ i +"].RemainTime"));
 			snapshot.setResourceGroupId(context.stringValue("DescribeSnapshotsResponse.Snapshots["+ i +"].ResourceGroupId"));
+			snapshot.setKMSKeyId(context.stringValue("DescribeSnapshotsResponse.Snapshots["+ i +"].KMSKeyId"));
 
 			List<Tag> tags = new ArrayList<Tag>();
 			for (int j = 0; j < context.lengthValue("DescribeSnapshotsResponse.Snapshots["+ i +"].Tags.Length"); j++) {

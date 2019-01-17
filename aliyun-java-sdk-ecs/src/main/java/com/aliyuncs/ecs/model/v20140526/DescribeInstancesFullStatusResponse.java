@@ -130,6 +130,8 @@ public class DescribeInstancesFullStatusResponse extends AcsResponse {
 
 			private EventType eventType;
 
+			private ExtendedAttribute extendedAttribute;
+
 			public String getEventId() {
 				return this.eventId;
 			}
@@ -168,6 +170,14 @@ public class DescribeInstancesFullStatusResponse extends AcsResponse {
 
 			public void setEventType(EventType eventType) {
 				this.eventType = eventType;
+			}
+
+			public ExtendedAttribute getExtendedAttribute() {
+				return this.extendedAttribute;
+			}
+
+			public void setExtendedAttribute(ExtendedAttribute extendedAttribute) {
+				this.extendedAttribute = extendedAttribute;
 			}
 
 			public static class EventCycleStatus {
@@ -213,6 +223,29 @@ public class DescribeInstancesFullStatusResponse extends AcsResponse {
 
 				public void setName(String name) {
 					this.name = name;
+				}
+			}
+
+			public static class ExtendedAttribute {
+
+				private String diskId;
+
+				private String device;
+
+				public String getDiskId() {
+					return this.diskId;
+				}
+
+				public void setDiskId(String diskId) {
+					this.diskId = diskId;
+				}
+
+				public String getDevice() {
+					return this.device;
+				}
+
+				public void setDevice(String device) {
+					this.device = device;
 				}
 			}
 		}

@@ -85,6 +85,8 @@ public class CreateLaunchTemplateRequest extends RpcAcsRequest<CreateLaunchTempl
 
 	private String userData;
 
+	private Boolean passwordInherit;
+
 	private String instanceType;
 
 	private String instanceChargeType;
@@ -438,6 +440,17 @@ public class CreateLaunchTemplateRequest extends RpcAcsRequest<CreateLaunchTempl
 		}
 	}
 
+	public Boolean getPasswordInherit() {
+		return this.passwordInherit;
+	}
+
+	public void setPasswordInherit(Boolean passwordInherit) {
+		this.passwordInherit = passwordInherit;
+		if(passwordInherit != null){
+			putQueryParameter("PasswordInherit", passwordInherit.toString());
+		}
+	}
+
 	public String getInstanceType() {
 		return this.instanceType;
 	}
@@ -569,6 +582,7 @@ public class CreateLaunchTemplateRequest extends RpcAcsRequest<CreateLaunchTempl
 				putQueryParameter("DataDisk." + (depth1 + 1) + ".DiskName" , dataDisks.get(depth1).getDiskName());
 				putQueryParameter("DataDisk." + (depth1 + 1) + ".Description" , dataDisks.get(depth1).getDescription());
 				putQueryParameter("DataDisk." + (depth1 + 1) + ".DeleteWithInstance" , dataDisks.get(depth1).getDeleteWithInstance());
+				putQueryParameter("DataDisk." + (depth1 + 1) + ".Device" , dataDisks.get(depth1).getDevice());
 			}
 		}	
 	}
@@ -721,6 +735,8 @@ public class CreateLaunchTemplateRequest extends RpcAcsRequest<CreateLaunchTempl
 
 		private Boolean deleteWithInstance;
 
+		private String device;
+
 		public Integer getSize() {
 			return this.size;
 		}
@@ -775,6 +791,14 @@ public class CreateLaunchTemplateRequest extends RpcAcsRequest<CreateLaunchTempl
 
 		public void setDeleteWithInstance(Boolean deleteWithInstance) {
 			this.deleteWithInstance = deleteWithInstance;
+		}
+
+		public String getDevice() {
+			return this.device;
+		}
+
+		public void setDevice(String device) {
+			this.device = device;
 		}
 	}
 

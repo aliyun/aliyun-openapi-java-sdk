@@ -35,17 +35,26 @@ public class DescribeDedicatedHostTypesResponseUnmarshaller {
 			dedicatedHostType.setDedicatedHostType(context.stringValue("DescribeDedicatedHostTypesResponse.DedicatedHostTypes["+ i +"].DedicatedHostType"));
 			dedicatedHostType.setSockets(context.integerValue("DescribeDedicatedHostTypesResponse.DedicatedHostTypes["+ i +"].Sockets"));
 			dedicatedHostType.setTotalVcpus(context.integerValue("DescribeDedicatedHostTypesResponse.DedicatedHostTypes["+ i +"].TotalVcpus"));
+			dedicatedHostType.setTotalVgpus(context.integerValue("DescribeDedicatedHostTypesResponse.DedicatedHostTypes["+ i +"].TotalVgpus"));
 			dedicatedHostType.setCores(context.integerValue("DescribeDedicatedHostTypesResponse.DedicatedHostTypes["+ i +"].Cores"));
+			dedicatedHostType.setPhysicalGpus(context.integerValue("DescribeDedicatedHostTypesResponse.DedicatedHostTypes["+ i +"].PhysicalGpus"));
 			dedicatedHostType.setMemorySize(context.floatValue("DescribeDedicatedHostTypesResponse.DedicatedHostTypes["+ i +"].MemorySize"));
 			dedicatedHostType.setLocalStorageCapacity(context.longValue("DescribeDedicatedHostTypesResponse.DedicatedHostTypes["+ i +"].LocalStorageCapacity"));
 			dedicatedHostType.setLocalStorageAmount(context.integerValue("DescribeDedicatedHostTypesResponse.DedicatedHostTypes["+ i +"].LocalStorageAmount"));
 			dedicatedHostType.setLocalStorageCategory(context.stringValue("DescribeDedicatedHostTypesResponse.DedicatedHostTypes["+ i +"].LocalStorageCategory"));
+			dedicatedHostType.setGPUSpec(context.stringValue("DescribeDedicatedHostTypesResponse.DedicatedHostTypes["+ i +"].GPUSpec"));
 
 			List<String> supportedInstanceTypeFamilies = new ArrayList<String>();
 			for (int j = 0; j < context.lengthValue("DescribeDedicatedHostTypesResponse.DedicatedHostTypes["+ i +"].SupportedInstanceTypeFamilies.Length"); j++) {
 				supportedInstanceTypeFamilies.add(context.stringValue("DescribeDedicatedHostTypesResponse.DedicatedHostTypes["+ i +"].SupportedInstanceTypeFamilies["+ j +"]"));
 			}
 			dedicatedHostType.setSupportedInstanceTypeFamilies(supportedInstanceTypeFamilies);
+
+			List<String> supportedInstanceTypesList = new ArrayList<String>();
+			for (int j = 0; j < context.lengthValue("DescribeDedicatedHostTypesResponse.DedicatedHostTypes["+ i +"].SupportedInstanceTypesList.Length"); j++) {
+				supportedInstanceTypesList.add(context.stringValue("DescribeDedicatedHostTypesResponse.DedicatedHostTypes["+ i +"].SupportedInstanceTypesList["+ j +"]"));
+			}
+			dedicatedHostType.setSupportedInstanceTypesList(supportedInstanceTypesList);
 
 			dedicatedHostTypes.add(dedicatedHostType);
 		}

@@ -55,6 +55,8 @@ public class CreateDiskRequest extends RpcAcsRequest<CreateDiskResponse> {
 
 	private List<Tag> tags;
 
+	private String kMSKeyId;
+
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
 	}
@@ -210,6 +212,17 @@ public class CreateDiskRequest extends RpcAcsRequest<CreateDiskResponse> {
 				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
 			}
 		}	
+	}
+
+	public String getKMSKeyId() {
+		return this.kMSKeyId;
+	}
+
+	public void setKMSKeyId(String kMSKeyId) {
+		this.kMSKeyId = kMSKeyId;
+		if(kMSKeyId != null){
+			putQueryParameter("KMSKeyId", kMSKeyId);
+		}
 	}
 
 	public static class Tag {

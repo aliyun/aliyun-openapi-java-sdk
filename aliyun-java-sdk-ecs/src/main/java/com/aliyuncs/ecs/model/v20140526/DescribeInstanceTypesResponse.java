@@ -72,6 +72,8 @@ public class DescribeInstanceTypesResponse extends AcsResponse {
 
 		private Integer eniQuantity;
 
+		private Integer eniPrivateIpAddressQuantity;
+
 		private Integer instanceBandwidthRx;
 
 		private Integer instanceBandwidthTx;
@@ -176,6 +178,14 @@ public class DescribeInstanceTypesResponse extends AcsResponse {
 
 		public void setEniQuantity(Integer eniQuantity) {
 			this.eniQuantity = eniQuantity;
+		}
+
+		public Integer getEniPrivateIpAddressQuantity() {
+			return this.eniPrivateIpAddressQuantity;
+		}
+
+		public void setEniPrivateIpAddressQuantity(Integer eniPrivateIpAddressQuantity) {
+			this.eniPrivateIpAddressQuantity = eniPrivateIpAddressQuantity;
 		}
 
 		public Integer getInstanceBandwidthRx() {

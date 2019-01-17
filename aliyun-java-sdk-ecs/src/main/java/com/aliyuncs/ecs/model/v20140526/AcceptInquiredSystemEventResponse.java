@@ -16,20 +16,16 @@ package com.aliyuncs.ecs.model.v20140526;
 
 import java.util.Map;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.ecs.transform.v20140526.ExportImageResponseUnmarshaller;
+import com.aliyuncs.ecs.transform.v20140526.AcceptInquiredSystemEventResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ExportImageResponse extends AcsResponse {
+public class AcceptInquiredSystemEventResponse extends AcsResponse {
 
 	private String requestId;
-
-	private String taskId;
-
-	private String regionId;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -39,40 +35,8 @@ public class ExportImageResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getTaskId() {
-		return this.taskId;
-	}
-
-	public void setTaskId(String taskId) {
-		this.taskId = taskId;
-	}
-
-	public String getBizRegionId() {
-		return this.regionId;
-	}
-
-	public void setBizRegionId(String regionId) {
-		this.regionId = regionId;
-	}
-
-	/**
-	 * @deprecated use getBizRegionId instead of this.
-	 */
-	@Deprecated
-	public String getRegionId() {
-		return this.regionId;
-	}
-
-	/**
-	 * @deprecated use setBizRegionId instead of this.
-	 */
-	@Deprecated
-	public void setRegionId(String regionId) {
-		this.regionId = regionId;
-	}
-
 	@Override
-	public ExportImageResponse getInstance(UnmarshallerContext context) {
-		return	ExportImageResponseUnmarshaller.unmarshall(this, context);
+	public AcceptInquiredSystemEventResponse getInstance(UnmarshallerContext context) {
+		return	AcceptInquiredSystemEventResponseUnmarshaller.unmarshall(this, context);
 	}
 }

@@ -110,6 +110,8 @@ public class DescribeSnapshotsResponse extends AcsResponse {
 
 		private String resourceGroupId;
 
+		private String kMSKeyId;
+
 		private List<Tag> tags;
 
 		public String getSnapshotId() {
@@ -238,6 +240,14 @@ public class DescribeSnapshotsResponse extends AcsResponse {
 
 		public void setResourceGroupId(String resourceGroupId) {
 			this.resourceGroupId = resourceGroupId;
+		}
+
+		public String getKMSKeyId() {
+			return this.kMSKeyId;
+		}
+
+		public void setKMSKeyId(String kMSKeyId) {
+			this.kMSKeyId = kMSKeyId;
 		}
 
 		public List<Tag> getTags() {

@@ -92,6 +92,8 @@ public class DescribeInstanceHistoryEventsResponse extends AcsResponse {
 
 		private EventCycleStatus eventCycleStatus;
 
+		private ExtendedAttribute extendedAttribute;
+
 		public String getInstanceId() {
 			return this.instanceId;
 		}
@@ -148,6 +150,14 @@ public class DescribeInstanceHistoryEventsResponse extends AcsResponse {
 			this.eventCycleStatus = eventCycleStatus;
 		}
 
+		public ExtendedAttribute getExtendedAttribute() {
+			return this.extendedAttribute;
+		}
+
+		public void setExtendedAttribute(ExtendedAttribute extendedAttribute) {
+			this.extendedAttribute = extendedAttribute;
+		}
+
 		public static class EventType {
 
 			private Integer code;
@@ -191,6 +201,29 @@ public class DescribeInstanceHistoryEventsResponse extends AcsResponse {
 
 			public void setName(String name) {
 				this.name = name;
+			}
+		}
+
+		public static class ExtendedAttribute {
+
+			private String diskId;
+
+			private String device;
+
+			public String getDiskId() {
+				return this.diskId;
+			}
+
+			public void setDiskId(String diskId) {
+				this.diskId = diskId;
+			}
+
+			public String getDevice() {
+				return this.device;
+			}
+
+			public void setDevice(String device) {
+				this.device = device;
 			}
 		}
 	}
