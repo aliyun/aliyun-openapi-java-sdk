@@ -13,7 +13,6 @@ import static org.mockito.Mockito.when;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.junit.Assert;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
@@ -218,6 +217,6 @@ public class LocationServiceEndpointResolverTest {
     public void testGetValidRegionIdsByProduct() {
         DefaultAcsClient client = mock(DefaultAcsClient.class);
         LocationServiceEndpointResolver resolver = new LocationServiceEndpointResolver(client);
-        Assert.assertNull(resolver.getValidRegionIdsByProduct("ecs"));
+        assertNull(resolver.getValidRegionIdsByProduct("ecs"));
     }
 }

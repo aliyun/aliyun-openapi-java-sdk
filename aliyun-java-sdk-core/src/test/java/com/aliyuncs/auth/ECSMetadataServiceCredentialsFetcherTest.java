@@ -94,7 +94,7 @@ public class ECSMetadataServiceCredentialsFetcherTest {
                 new ClientException("client exception"));
         ECSMetadataServiceCredentialsFetcher fetcher = new ECSMetadataServiceCredentialsFetcher();
         fetcher.setRoleName("role");
-        String res = fetcher.getMetadata();
+        fetcher.getMetadata();
     }
 
     @Test
@@ -108,7 +108,7 @@ public class ECSMetadataServiceCredentialsFetcherTest {
         BDDMockito.given(CompatibleUrlConnClient.compatibleGetResponse(any(HttpRequest.class))).willReturn(response);
         ECSMetadataServiceCredentialsFetcher fetcher = new ECSMetadataServiceCredentialsFetcher();
         fetcher.setRoleName("role");
-        String res = fetcher.getMetadata();
+        fetcher.getMetadata();
     }
 
     @Test
