@@ -45,14 +45,14 @@ public class HttpRequestTest {
     @Test
     public void getHttpContentStringTest() throws ClientException, UnsupportedEncodingException {
         HttpRequest request = new HttpRequest("test");
-        request.setHttpContent("测试".getBytes(), null, null);
+        request.setHttpContent("test".getBytes(), null, null);
         String content = request.getHttpContentString();
-        Assert.assertEquals("测试", content);
+        Assert.assertEquals("test", content);
 
         request = new HttpRequest("test");
-        request.setHttpContent("测试".getBytes("UTF-8"), "UTF-8", null);
+        request.setHttpContent("test".getBytes("UTF-8"), "UTF-8", null);
         content = request.getHttpContentString();
-        Assert.assertEquals("测试", content);
+        Assert.assertEquals("test", content);
 
         try {
             request = new HttpRequest("test");
