@@ -1,0 +1,4 @@
+2019-01-18 Version: 1.0.1
+1, fix bug: the 'Success' return value type is String but not Boolean, for CreateGateway and DeleteGateway method
+2, fix bug: the 'Longitude', 'Latitude' return value type is Long but not Float, for GetGateway method
+
