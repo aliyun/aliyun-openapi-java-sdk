@@ -1,18 +1,15 @@
 package com.aliyuncs.auth;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.TimeZone;
+
 import org.junit.Assert;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.TimeZone;
-
 public class InstanceProfileCredentialsTest {
-    private static final Log log = LogFactory.getLog(InstanceProfileCredentialsTest.class);
 
     @Rule
     public ExpectedException thrown = ExpectedException.none();

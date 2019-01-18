@@ -1,14 +1,18 @@
 package com.aliyuncs.http.clients;
 
+import static org.mockito.Mockito.doAnswer;
+import static org.mockito.Mockito.doThrow;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
+
+import java.util.concurrent.TimeUnit;
+
 import org.apache.http.conn.HttpClientConnectionManager;
 import org.junit.Assert;
 import org.junit.Test;
 import org.mockito.invocation.InvocationOnMock;
 import org.mockito.stubbing.Answer;
-
-import java.util.concurrent.TimeUnit;
-
-import static org.mockito.Mockito.*;
 
 public class ApacheIdleConnectionCleanerTest {
 
@@ -55,7 +59,6 @@ public class ApacheIdleConnectionCleanerTest {
         RuntimeException e0 = new RuntimeException("mock");
         doThrow(e0).when(manager).closeIdleConnections(60 * 1000L, TimeUnit.MILLISECONDS);
         ApacheIdleConnectionCleaner.registerConnectionManager(manager, 60 * 1000L);
-
 
         try {
             Thread.sleep(1500);
@@ -150,7 +153,6 @@ public class ApacheIdleConnectionCleanerTest {
         ApacheIdleConnectionCleaner.setPeriodSec(1);
         HttpClientConnectionManager manager1 = mock(HttpClientConnectionManager.class);
         HttpClientConnectionManager manager2 = mock(HttpClientConnectionManager.class);
-        RuntimeException e0 = new RuntimeException("mock");
         doAnswer(new Answer() {
             @Override
             public Object answer(InvocationOnMock invocationOnMock) {

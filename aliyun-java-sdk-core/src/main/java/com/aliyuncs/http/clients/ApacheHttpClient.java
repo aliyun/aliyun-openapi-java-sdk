@@ -1,9 +1,22 @@
 package com.aliyuncs.http.clients;
 
-import com.aliyuncs.exceptions.ClientException;
-import com.aliyuncs.http.*;
-import com.aliyuncs.utils.IOUtils;
-import com.aliyuncs.utils.StringUtils;
+import java.io.IOException;
+import java.security.KeyManagementException;
+import java.security.NoSuchAlgorithmException;
+import java.security.cert.CertificateException;
+import java.security.cert.X509Certificate;
+import java.util.Map;
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Future;
+import java.util.concurrent.SynchronousQueue;
+import java.util.concurrent.ThreadFactory;
+import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicInteger;
+
+import javax.net.ssl.SSLContext;
+
 import org.apache.http.Header;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.config.RequestConfig;
@@ -28,16 +41,14 @@ import org.apache.http.ssl.SSLContextBuilder;
 import org.apache.http.ssl.TrustStrategy;
 import org.apache.http.util.EntityUtils;
 
-import javax.net.ssl.SSLContext;
-import java.io.IOException;
-import java.security.KeyManagementException;
-import java.security.NoSuchAlgorithmException;
-import java.security.cert.CertificateException;
-import java.security.cert.X509Certificate;
-import java.util.Map;
-import java.util.concurrent.*;
-import java.util.concurrent.atomic.AtomicInteger;
-
+import com.aliyuncs.exceptions.ClientException;
+import com.aliyuncs.http.CallBack;
+import com.aliyuncs.http.FormatType;
+import com.aliyuncs.http.HttpClientConfig;
+import com.aliyuncs.http.HttpRequest;
+import com.aliyuncs.http.IHttpClient;
+import com.aliyuncs.utils.IOUtils;
+import com.aliyuncs.utils.StringUtils;
 
 public class ApacheHttpClient extends IHttpClient {
 
@@ -65,11 +76,9 @@ public class ApacheHttpClient extends IHttpClient {
         }
 
         // default request config
-        RequestConfig defaultConfig = RequestConfig.custom()
-                .setConnectTimeout((int) config.getConnectionTimeoutMillis())
-                .setSocketTimeout((int) config.getReadTimeoutMillis())
-                .setConnectionRequestTimeout((int) config.getWriteTimeoutMillis())
-                .build();
+        RequestConfig defaultConfig = RequestConfig.custom().setConnectTimeout((int) config
+                .getConnectionTimeoutMillis()).setSocketTimeout((int) config.getReadTimeoutMillis())
+                .setConnectionRequestTimeout((int) config.getWriteTimeoutMillis()).build();
         builder.setDefaultRequestConfig(defaultConfig);
 
         // https
@@ -85,7 +94,8 @@ public class ApacheHttpClient extends IHttpClient {
                     }
                 }).build();
 
-                SSLConnectionSocketFactory connectionFactory = new SSLConnectionSocketFactory(sslContext, NoopHostnameVerifier.INSTANCE);
+                SSLConnectionSocketFactory connectionFactory = new SSLConnectionSocketFactory(sslContext,
+                        NoopHostnameVerifier.INSTANCE);
 
                 socketFactoryRegistryBuilder.register("https", connectionFactory);
 
@@ -94,10 +104,11 @@ public class ApacheHttpClient extends IHttpClient {
             }
         } else {
             if (config.getSslSocketFactory() != null) {
-                SSLConnectionSocketFactory sslConnectionSocketFactory = new SSLConnectionSocketFactory(config.getSslSocketFactory(),
-                        config.getHostnameVerifier());
+                SSLConnectionSocketFactory sslConnectionSocketFactory = new SSLConnectionSocketFactory(config
+                        .getSslSocketFactory(), config.getHostnameVerifier());
                 socketFactoryRegistryBuilder.register("https", sslConnectionSocketFactory);
-            } else if (config.getKeyManagers() != null || config.getX509TrustManagers() != null || config.getSecureRandom() != null) {
+            } else if (config.getKeyManagers() != null || config.getX509TrustManagers() != null || config
+                    .getSecureRandom() != null) {
                 try {
                     SSLContext sslContext = SSLContext.getInstance("TLS");
                     sslContext.init(config.getKeyManagers(), config.getX509TrustManagers(), config.getSecureRandom());
@@ -120,9 +131,8 @@ public class ApacheHttpClient extends IHttpClient {
 
         // async
         if (config.getExecutorService() == null) {
-            executorService = new ThreadPoolExecutor(0, config.getMaxRequests(), DEFAULT_THREAD_KEEP_ALIVE_TIME, TimeUnit.SECONDS,
-                    new SynchronousQueue<Runnable>(),
-                    new DefaultAsyncThreadFactory());
+            executorService = new ThreadPoolExecutor(0, config.getMaxRequests(), DEFAULT_THREAD_KEEP_ALIVE_TIME,
+                    TimeUnit.SECONDS, new SynchronousQueue<Runnable>(), new DefaultAsyncThreadFactory());
         } else {
             executorService = config.getExecutorService();
         }
@@ -226,7 +236,8 @@ public class ApacheHttpClient extends IHttpClient {
     }
 
     @Override
-    public final Future<com.aliyuncs.http.HttpResponse> asyncInvoke(final HttpRequest apiRequest, final CallBack callback) {
+    public final Future<com.aliyuncs.http.HttpResponse> asyncInvoke(final HttpRequest apiRequest,
+            final CallBack callback) {
         return executorService.submit(new Callable<com.aliyuncs.http.HttpResponse>() {
             @Override
             public com.aliyuncs.http.HttpResponse call() throws Exception {

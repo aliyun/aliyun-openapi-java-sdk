@@ -1,7 +1,34 @@
 package com.aliyuncs.http.clients;
 
-import com.aliyuncs.exceptions.ClientException;
-import com.aliyuncs.http.*;
+import static com.aliyuncs.http.clients.CompatibleUrlConnClient.CONTENT_TYPE;
+import static org.mockito.Matchers.any;
+import static org.mockito.Matchers.anyString;
+import static org.mockito.Mockito.doAnswer;
+import static org.mockito.Mockito.doNothing;
+import static org.mockito.Mockito.doThrow;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
+import static org.powermock.api.mockito.PowerMockito.verifyPrivate;
+import static org.powermock.api.mockito.PowerMockito.verifyStatic;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.net.HttpURLConnection;
+import java.net.Proxy;
+import java.net.URL;
+import java.security.cert.CertificateException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import javax.net.ssl.HttpsURLConnection;
+import javax.net.ssl.SSLSession;
+import javax.net.ssl.SSLSocketFactory;
+
 import org.junit.Assert;
 import org.junit.Rule;
 import org.junit.Test;
@@ -16,29 +43,17 @@ import org.powermock.core.classloader.annotations.PrepareForTest;
 import org.powermock.modules.junit4.PowerMockRunner;
 import org.powermock.reflect.Whitebox;
 
-import javax.net.ssl.HttpsURLConnection;
-import javax.net.ssl.SSLSession;
-import javax.net.ssl.SSLSocketFactory;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.net.HttpURLConnection;
-import java.net.Proxy;
-import java.net.URL;
-import java.security.cert.CertificateException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import static com.aliyuncs.http.clients.CompatibleUrlConnClient.CONTENT_TYPE;
-import static org.mockito.Mockito.*;
-import static org.powermock.api.mockito.PowerMockito.verifyPrivate;
-import static org.powermock.api.mockito.PowerMockito.verifyStatic;
+import com.aliyuncs.exceptions.ClientException;
+import com.aliyuncs.http.CallBack;
+import com.aliyuncs.http.FormatType;
+import com.aliyuncs.http.HttpClientConfig;
+import com.aliyuncs.http.HttpRequest;
+import com.aliyuncs.http.HttpResponse;
+import com.aliyuncs.http.MethodType;
 
 @RunWith(PowerMockRunner.class)
 @PrepareForTest(CompatibleUrlConnClient.class)
-@PowerMockIgnore({"javax.net.ssl.*"})
+@PowerMockIgnore({ "javax.net.ssl.*" })
 public class CompatibleUrlConnClientTest {
     @Rule
     public ExpectedException thrown = ExpectedException.none();
@@ -88,7 +103,6 @@ public class CompatibleUrlConnClientTest {
         client.ignoreSSLCertificate();
         verifyStatic(CompatibleUrlConnClient.HttpsCertIgnoreHelper.class, Mockito.times(1));
 
-
     }
 
     @Test
@@ -102,7 +116,6 @@ public class CompatibleUrlConnClientTest {
         CompatibleUrlConnClient client = new CompatibleUrlConnClient(config);
         client.restoreSSLCertificate();
         verifyStatic(CompatibleUrlConnClient.HttpsCertIgnoreHelper.class, Mockito.times(1));
-
 
     }
 
@@ -131,7 +144,6 @@ public class CompatibleUrlConnClientTest {
         thrown.expect(IllegalArgumentException.class);
         HttpRequest request = mock(HttpRequest.class);
         Whitebox.invokeMethod(client, "buildHttpConnection", request);
-
 
     }
 
@@ -167,11 +179,13 @@ public class CompatibleUrlConnClientTest {
         when(request.getSysUrl()).thenReturn("https://www.aliyun.com");
         when(request.getSysConnectTimeout()).thenReturn(120);
         when(request.getSysReadTimeout()).thenReturn(120);
-        Map<String, String> headers = new HashMap<String, String>() {{
-            put("header1", "value1");
-            put(CONTENT_TYPE, "json");
+        Map<String, String> headers = new HashMap<String, String>() {
+            {
+                put("header1", "value1");
+                put(CONTENT_TYPE, "json");
 
-        }};
+            }
+        };
         when(request.getSysHeaders()).thenReturn(headers);
         when(request.getHeaderValue(CONTENT_TYPE)).thenReturn("json");
         HttpURLConnection connection = Whitebox.invokeMethod(client, "buildHttpConnection", request);
@@ -308,9 +322,11 @@ public class CompatibleUrlConnClientTest {
         when(connection.getURL()).thenReturn(url);
         InputStream errorStream = mock(InputStream.class);
         when(connection.getErrorStream()).thenReturn(errorStream);
-        PowerMockito.doNothing().when(client, "parseHttpConn", any(HttpResponse.class), any(HttpURLConnection.class), any(InputStream.class));
+        PowerMockito.doNothing().when(client, "parseHttpConn", any(HttpResponse.class), any(HttpURLConnection.class),
+                any(InputStream.class));
         HttpResponse response = client.syncInvoke(request);
-        verifyPrivate(client, times(1)).invoke("parseHttpConn", any(HttpResponse.class), any(HttpURLConnection.class), any(InputStream.class));
+        verifyPrivate(client, times(1)).invoke("parseHttpConn", any(HttpResponse.class), any(HttpURLConnection.class),
+                any(InputStream.class));
         Assert.assertEquals("http://www.aliyun.com", response.getSysUrl());
     }
 
@@ -334,9 +350,11 @@ public class CompatibleUrlConnClientTest {
         doNothing().when(outputStream).write("http content".getBytes());
         when(connection.getOutputStream()).thenReturn(outputStream);
         when(connection.getInputStream()).thenReturn(null);
-        PowerMockito.doNothing().when(client, "parseHttpConn", any(HttpResponse.class), any(HttpURLConnection.class), any(InputStream.class));
+        PowerMockito.doNothing().when(client, "parseHttpConn", any(HttpResponse.class), any(HttpURLConnection.class),
+                any(InputStream.class));
         HttpResponse response = client.syncInvoke(request);
-        verifyPrivate(client, times(1)).invoke("parseHttpConn", any(HttpResponse.class), any(HttpURLConnection.class), any(InputStream.class));
+        verifyPrivate(client, times(1)).invoke("parseHttpConn", any(HttpResponse.class), any(HttpURLConnection.class),
+                any(InputStream.class));
         Assert.assertEquals("http://www.aliyun.com", response.getSysUrl());
         verify(outputStream, times(1)).write("http content".getBytes());
     }
@@ -358,9 +376,11 @@ public class CompatibleUrlConnClientTest {
         when(url.toString()).thenReturn("http://www.aliyun.com");
         when(connection.getURL()).thenReturn(url);
         when(connection.getInputStream()).thenReturn(null);
-        PowerMockito.doNothing().when(client, "parseHttpConn", any(HttpResponse.class), any(HttpURLConnection.class), any(InputStream.class));
+        PowerMockito.doNothing().when(client, "parseHttpConn", any(HttpResponse.class), any(HttpURLConnection.class),
+                any(InputStream.class));
         HttpResponse response = client.syncInvoke(request);
-        verifyPrivate(client, times(1)).invoke("parseHttpConn", any(HttpResponse.class), any(HttpURLConnection.class), any(InputStream.class));
+        verifyPrivate(client, times(1)).invoke("parseHttpConn", any(HttpResponse.class), any(HttpURLConnection.class),
+                any(InputStream.class));
         Assert.assertEquals("http://www.aliyun.com", response.getSysUrl());
     }
 
@@ -389,13 +409,15 @@ public class CompatibleUrlConnClientTest {
         when(connection.getResponseCode()).thenReturn(200);
         Map<String, List<String>> headers = new HashMap<String, List<String>>();
         headers.put(null, null);
-        headers.put("header1", new ArrayList<String>() {{
-            add("value1");
-            add("value2");
-        }});
+        headers.put("header1", new ArrayList<String>() {
+            {
+                add("value1");
+                add("value2");
+            }
+        });
         when(connection.getHeaderFields()).thenReturn(headers);
         when(response.getHeaderValue("Content-Type")).thenReturn("application;encode=iso");
-        byte[] buff = new byte[]{'a', 'b', 'c'};
+        byte[] buff = new byte[] { 'a', 'b', 'c' };
         PowerMockito.doReturn(buff).when(client, "readContent", content);
         when(response.getSysEncoding()).thenReturn("ISO");
         when(response.getHttpContentType()).thenReturn(FormatType.RAW);
@@ -420,10 +442,12 @@ public class CompatibleUrlConnClientTest {
         when(connection.getResponseCode()).thenReturn(200);
         Map<String, List<String>> headers = new HashMap<String, List<String>>();
         headers.put(null, null);
-        headers.put("header1", new ArrayList<String>() {{
-            add("value1");
-            add("value2");
-        }});
+        headers.put("header1", new ArrayList<String>() {
+            {
+                add("value1");
+                add("value2");
+            }
+        });
         when(connection.getHeaderFields()).thenReturn(headers);
         when(response.getHeaderValue("Content-Type")).thenReturn("application;encode=iso");
         byte[] buff = null;
@@ -435,7 +459,6 @@ public class CompatibleUrlConnClientTest {
         verify(response, times(0)).setSysEncoding("UTF-8");
         verify(response, times(0)).setSysEncoding("ISO");
         verify(response, times(1)).setHttpContent(buff, "ISO", FormatType.RAW);
-
 
     }
 
@@ -453,13 +476,15 @@ public class CompatibleUrlConnClientTest {
         when(connection.getResponseCode()).thenReturn(200);
         Map<String, List<String>> headers = new HashMap<String, List<String>>();
         headers.put(null, null);
-        headers.put("header1", new ArrayList<String>() {{
-            add("value1");
-            add("value2");
-        }});
+        headers.put("header1", new ArrayList<String>() {
+            {
+                add("value1");
+                add("value2");
+            }
+        });
         when(connection.getHeaderFields()).thenReturn(headers);
         when(response.getHeaderValue("Content-Type")).thenReturn(null);
-        byte[] buff = new byte[]{'a', 'b', 'c'};
+        byte[] buff = new byte[] { 'a', 'b', 'c' };
         PowerMockito.doReturn(buff).when(client, "readContent", content);
         when(response.getSysEncoding()).thenReturn("ISO");
         when(response.getHttpContentType()).thenReturn(FormatType.RAW);
@@ -484,10 +509,12 @@ public class CompatibleUrlConnClientTest {
         when(connection.getResponseCode()).thenReturn(200);
         Map<String, List<String>> headers = new HashMap<String, List<String>>();
         headers.put(null, null);
-        headers.put("header1", new ArrayList<String>() {{
-            add("value1");
-            add("value2");
-        }});
+        headers.put("header1", new ArrayList<String>() {
+            {
+                add("value1");
+                add("value2");
+            }
+        });
         when(connection.getHeaderFields()).thenReturn(headers);
         when(response.getHeaderValue("Content-Type")).thenReturn(null);
         PowerMockito.doReturn(null).when(client, "readContent", content);
@@ -514,13 +541,15 @@ public class CompatibleUrlConnClientTest {
         when(connection.getResponseCode()).thenReturn(200);
         Map<String, List<String>> headers = new HashMap<String, List<String>>();
         headers.put(null, null);
-        headers.put("header1", new ArrayList<String>() {{
-            add("value1");
-            add("value2");
-        }});
+        headers.put("header1", new ArrayList<String>() {
+            {
+                add("value1");
+                add("value2");
+            }
+        });
         when(connection.getHeaderFields()).thenReturn(headers);
         when(response.getHeaderValue("Content-Type")).thenReturn("application;json;utf8");
-        byte[] buff = new byte[]{'a', 'b', 'c'};
+        byte[] buff = new byte[] { 'a', 'b', 'c' };
         PowerMockito.doReturn(buff).when(client, "readContent", content);
         when(response.getSysEncoding()).thenReturn("ISO");
         when(response.getHttpContentType()).thenReturn(FormatType.RAW);
@@ -544,13 +573,15 @@ public class CompatibleUrlConnClientTest {
         when(connection.getResponseCode()).thenReturn(200);
         Map<String, List<String>> headers = new HashMap<String, List<String>>();
         headers.put(null, null);
-        headers.put("header1", new ArrayList<String>() {{
-            add("value1");
-            add("value2");
-        }});
+        headers.put("header1", new ArrayList<String>() {
+            {
+                add("value1");
+                add("value2");
+            }
+        });
         when(connection.getHeaderFields()).thenReturn(headers);
         when(response.getHeaderValue("Content-Type")).thenReturn("application");
-        byte[] buff = new byte[]{'a', 'b', 'c'};
+        byte[] buff = new byte[] { 'a', 'b', 'c' };
         PowerMockito.doReturn(buff).when(client, "readContent", content);
         when(response.getSysEncoding()).thenReturn("ISO");
         when(response.getHttpContentType()).thenReturn(FormatType.RAW);
@@ -589,7 +620,7 @@ public class CompatibleUrlConnClientTest {
         PowerMockito.mockStatic(HttpsURLConnection.class);
         CompatibleUrlConnClient.HttpsCertIgnoreHelper.ignoreSSLCertificate();
         CompatibleUrlConnClient.HttpsCertIgnoreHelper.ignoreSSLCertificate();
-        verifyStatic(HttpsURLConnection.class, Mockito.times(1));
+        verifyStatic(HttpsURLConnection.class, times(1));
         HttpsURLConnection.getDefaultSSLSocketFactory();
     }
 
@@ -599,7 +630,7 @@ public class CompatibleUrlConnClientTest {
         CompatibleUrlConnClient.HttpsCertIgnoreHelper.restoreSSLCertificate();
         CompatibleUrlConnClient.HttpsCertIgnoreHelper.ignoreSSLCertificate();
         CompatibleUrlConnClient.HttpsCertIgnoreHelper.restoreSSLCertificate();
-        verifyStatic(HttpsURLConnection.class, Mockito.times(1));
+        verifyStatic(HttpsURLConnection.class, times(1));
         HttpsURLConnection.getDefaultSSLSocketFactory();
 
     }
