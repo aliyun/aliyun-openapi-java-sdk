@@ -1,3 +1,7 @@
+2019-01-21 Version: 4.8.1
+1, Interface DescribePluginApis returns the modification
+
+
 2019-01-16 Version: 4.8.0
 1, The plugin feature is released and supports a variety of plugins, as follows:trafficControl、backendSignature、ipControl、jwtAuth、cors、caching
 

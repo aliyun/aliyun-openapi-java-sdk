@@ -23,7 +23,7 @@ public class DescribePluginApisResponse extends AcsResponse {
 
     private Integer pageNumber;
 
-    private List<ApiSummary> apiSummaries;
+    private List<ApiPluginSummary> apiPluginSummaries;
 
     public String getRequestId() {
         return requestId;
@@ -57,16 +57,16 @@ public class DescribePluginApisResponse extends AcsResponse {
         this.pageNumber = pageNumber;
     }
 
-    public List<ApiSummary> getApiSummaries() {
-        return apiSummaries;
+    public List<ApiPluginSummary> getApiPluginSummaries() {
+        return apiPluginSummaries;
     }
 
-    public void setApiSummaries(
-        List<ApiSummary> apiSummaries) {
-        this.apiSummaries = apiSummaries;
+    public void setApiPluginSummaries(
+        List<ApiPluginSummary> apiPluginSummaries) {
+        this.apiPluginSummaries = apiPluginSummaries;
     }
 
-    public static class ApiSummary{
+    public static class ApiPluginSummary{
         private String regionId;
         private String groupId;
         private String groupName;

@@ -19,10 +19,10 @@ public class DescribePluginApisResponseUnmarshaller {
         describePluginApisResponse.setTotalCount(context.integerValue("DescribePluginApisResponse.TotalCount"));
         describePluginApisResponse.setPageSize(context.integerValue("DescribePluginApisResponse.PageSize"));
         describePluginApisResponse.setPageNumber(context.integerValue("DescribePluginApisResponse.PageNumber"));
-        List<DescribePluginApisResponse.ApiSummary>
-            apiSummaries = new ArrayList<DescribePluginApisResponse.ApiSummary>();
+        List<DescribePluginApisResponse.ApiPluginSummary>
+            apiSummaries = new ArrayList<DescribePluginApisResponse.ApiPluginSummary>();
         for (int i = 0; i < context.lengthValue("DescribePluginApisResponse.ApiSummarys.Length"); i++) {
-            DescribePluginApisResponse.ApiSummary apiSummary = new DescribePluginApisResponse.ApiSummary();
+            DescribePluginApisResponse.ApiPluginSummary apiSummary = new DescribePluginApisResponse.ApiPluginSummary();
             apiSummary.setRegionId(context.stringValue("DescribePluginApisResponse.ApiSummarys["+ i +"].RegionId"));
             apiSummary.setGroupId(context.stringValue("DescribePluginApisResponse.ApiSummarys["+ i +"].GroupId"));
             apiSummary.setGroupName(context.stringValue("DescribePluginApisResponse.ApiSummarys["+ i +"].GroupName"));
@@ -35,7 +35,7 @@ public class DescribePluginApisResponseUnmarshaller {
 
             apiSummaries.add(apiSummary);
         }
-        describePluginApisResponse.setApiSummaries(apiSummaries);
+        describePluginApisResponse.setApiPluginSummaries(apiSummaries);
 
         return describePluginApisResponse;
     }
