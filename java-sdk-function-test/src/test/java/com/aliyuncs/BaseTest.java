@@ -6,15 +6,16 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
-import com.aliyuncs.auth.*;
+import org.junit.Before;
+
+import com.aliyuncs.auth.BasicSessionCredentials;
+import com.aliyuncs.auth.Credential;
 import com.aliyuncs.auth.sts.AssumeRoleRequest;
 import com.aliyuncs.auth.sts.AssumeRoleResponse;
 import com.aliyuncs.exceptions.ClientException;
-
-import org.junit.Before;
-
 import com.aliyuncs.profile.DefaultProfile;
 import com.aliyuncs.profile.IClientProfile;
+
 @SuppressWarnings("deprecation")
 public class BaseTest {
 
@@ -27,34 +28,28 @@ public class BaseTest {
     protected String roleArn = null;
     protected String regionId = null;
 
-    private static final String SETTINGS_FILE_NAME = System.getProperty("user.home")
-            + System.getProperty("file.separator") + "aliyun-sdk.properties";
+    private static final String SETTINGS_FILE_NAME = System.getProperty("user.home") + System.getProperty(
+            "file.separator") + "aliyun-sdk.properties";
 
     public DefaultAcsClient getClientWithRegionId(String regionId) {
-        IClientProfile profile = DefaultProfile.getProfile(
-                regionId,
-                properties.getProperty("daily_accessKeyId"),
-                properties.getProperty("daily_accessSecret")
-        );
+        IClientProfile profile = DefaultProfile.getProfile(regionId, properties.getProperty("daily_accessKeyId"),
+                properties.getProperty("daily_accessSecret"));
         return new DefaultAcsClient(profile);
     }
 
     @Before
-    public void init() {
+    public void init() throws ClientException {
         this.regionId = "cn-hangzhou";
         properties = getProperties();
         client = getClientWithRegionId(this.regionId);
 
-        dailyEnvCredentail = new Credential(properties.getProperty("daily_accessKeyId"),
-                properties.getProperty("daily_accessSecret"));
+        dailyEnvCredentail = new Credential(properties.getProperty("daily_accessKeyId"), properties.getProperty(
+                "daily_accessSecret"));
 
-        System.setProperty("http.proxyHost", "127.0.0.1");
-        System.setProperty("http.proxyPort", "8888");
         this.tokenAccesskeyId = properties.getProperty("RAMAccessKeyId");
         this.tokenAccesskeySecret = properties.getProperty("RAMAccessKeySecret");
         this.roleArn = properties.getProperty("roleArn");
     }
-
 
     private Properties getProperties() {
         Properties pr = null;
@@ -72,11 +67,8 @@ public class BaseTest {
     }
 
     protected String getToken() throws ClientException {
-        DefaultProfile profile = DefaultProfile.getProfile(
-                this.regionId,
-                this.tokenAccesskeyId,
-                this.tokenAccesskeySecret
-        );
+        DefaultProfile profile = DefaultProfile.getProfile(this.regionId, this.tokenAccesskeyId,
+                this.tokenAccesskeySecret);
         IAcsClient client = new DefaultAcsClient(profile);
         AssumeRoleRequest assumeRoleRequest = new AssumeRoleRequest();
         assumeRoleRequest.setRoleArn(this.roleArn);
@@ -86,12 +78,10 @@ public class BaseTest {
     }
 
     protected DefaultAcsClient creatDefaultAcsClient() throws ClientException {
-        BasicSessionCredentials credentials = new BasicSessionCredentials(
-                this.tokenAccesskeyId,
-                this.tokenAccesskeySecret,
-                getToken()
-        );
+        BasicSessionCredentials credentials = new BasicSessionCredentials(this.tokenAccesskeyId,
+                this.tokenAccesskeySecret, getToken());
         DefaultProfile profile = DefaultProfile.getProfile(this.regionId);
         return new DefaultAcsClient(profile, credentials);
     }
+
 }

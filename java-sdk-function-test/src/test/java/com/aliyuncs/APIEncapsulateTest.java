@@ -1,7 +1,9 @@
 package com.aliyuncs;
 
+import org.junit.Assert;
+import org.junit.Test;
+
 import com.aliyuncs.ccc.model.v20170705.CommitContactFlowVersionModificationRequest;
-import com.aliyuncs.ccc.model.v20170705.CommitContactFlowVersionModificationResponse;
 import com.aliyuncs.cdn.model.v20180510.DescribeCdnCertificateDetailRequest;
 import com.aliyuncs.cdn.model.v20180510.DescribeCdnCertificateDetailResponse;
 import com.aliyuncs.ecs.model.v20140526.DescribeInstancesRequest;
@@ -11,16 +13,17 @@ import com.aliyuncs.exceptions.ServerException;
 import com.aliyuncs.http.FormatType;
 import com.aliyuncs.ram.model.v20150501.ListAccessKeysRequest;
 import com.aliyuncs.ram.model.v20150501.ListAccessKeysResponse;
-import com.aliyuncs.rds.model.v20140815.DescribeAbnormalDBInstancesRequest;
-import com.aliyuncs.rds.model.v20140815.DescribeAbnormalDBInstancesResponse;
-import com.aliyuncs.ros.model.v20150901.*;
+import com.aliyuncs.rds.model.v20140815.DescribeRegionsRequest;
+import com.aliyuncs.rds.model.v20140815.DescribeRegionsResponse;
+//import com.aliyuncs.rds.model.v20140815.DescribeAbnormalDBInstancesRequest;
+//import com.aliyuncs.rds.model.v20140815.DescribeAbnormalDBInstancesResponse;
+import com.aliyuncs.ros.model.v20150901.DeleteStackRequest;
+import com.aliyuncs.ros.model.v20150901.DoActionsRequest;
+import com.aliyuncs.ros.model.v20150901.UpdateStackRequest;
 import com.aliyuncs.slb.model.v20140515.DescribeAccessControlListsRequest;
 import com.aliyuncs.slb.model.v20140515.DescribeAccessControlListsResponse;
 import com.aliyuncs.vpc.model.v20160428.DescribeAccessPointsRequest;
 import com.aliyuncs.vpc.model.v20160428.DescribeAccessPointsResponse;
-import org.junit.Assert;
-import org.junit.Test;
-
 
 public class APIEncapsulateTest extends BaseTest {
 
@@ -34,10 +37,10 @@ public class APIEncapsulateTest extends BaseTest {
 
     @Test
     public void rdsRequestTest() throws ClientException {
-        DescribeAbnormalDBInstancesRequest request = new DescribeAbnormalDBInstancesRequest();
-        DescribeAbnormalDBInstancesResponse response = this.client.getAcsResponse(request);
+        DescribeRegionsRequest request = new DescribeRegionsRequest();
+        DescribeRegionsResponse response = this.client.getAcsResponse(request);
         Assert.assertNotNull(response);
-        Assert.assertNull(response.getTotalRecordCount());
+        Assert.assertTrue(response.checkShowJsonItemName());
     }
 
     @Test
@@ -80,7 +83,7 @@ public class APIEncapsulateTest extends BaseTest {
         request.setStackId("test");
         request.putBodyParameter("ContentMD5NotMatched", "test");
         try {
-            UpdateStackResponse response = this.client.getAcsResponse(request);
+            this.client.getAcsResponse(request);
             Assert.fail();
         } catch (ClientException e) {
             Assert.assertEquals("HTTPBadRequest", e.getErrCode());
@@ -97,7 +100,7 @@ public class APIEncapsulateTest extends BaseTest {
         request.setHttpContentType(FormatType.XML);
         request.putBodyParameter("ContentMD5NotMatched", "test");
         try {
-            UpdateStackResponse response = this.client.getAcsResponse(request);
+            this.client.getAcsResponse(request);
             Assert.fail();
         } catch (IllegalStateException e) {
             Assert.assertEquals("Server response has a bad format type: null", e.getMessage());
@@ -112,7 +115,7 @@ public class APIEncapsulateTest extends BaseTest {
         request.setHttpContentType(FormatType.FORM);
         request.putBodyParameter("ContentMD5NotMatched", "test");
         try {
-            UpdateStackResponse response = this.client.getAcsResponse(request);
+            this.client.getAcsResponse(request);
             Assert.fail();
         } catch (ClientException e) {
             Assert.assertEquals("ContentMD5NotMatched", e.getErrCode());
@@ -130,7 +133,7 @@ public class APIEncapsulateTest extends BaseTest {
         request.setHttpContentType(FormatType.JSON);
         request.putBodyParameter("ContentMD5NotMatched", "test");
         try {
-            DeleteStackResponse response = this.client.getAcsResponse(request);
+            this.client.getAcsResponse(request);
             Assert.fail();
         } catch (ClientException e) {
             Assert.assertEquals("StackNotFound", e.getErrCode());
@@ -147,7 +150,7 @@ public class APIEncapsulateTest extends BaseTest {
         request.setHttpContentType(FormatType.XML);
         request.putBodyParameter("ContentMD5NotMatched", "test");
         try {
-            DeleteStackResponse response = this.client.getAcsResponse(request);
+            this.client.getAcsResponse(request);
             Assert.fail();
         } catch (ClientException e) {
             Assert.assertEquals("StackNotFound", e.getErrCode());
@@ -164,7 +167,7 @@ public class APIEncapsulateTest extends BaseTest {
         request.setHttpContentType(FormatType.FORM);
         request.putBodyParameter("ContentMD5NotMatched", "test");
         try {
-            DeleteStackResponse response = this.client.getAcsResponse(request);
+            this.client.getAcsResponse(request);
             Assert.fail();
         } catch (ClientException e) {
             Assert.assertEquals("StackNotFound", e.getErrCode());
@@ -184,7 +187,7 @@ public class APIEncapsulateTest extends BaseTest {
         request.putBodyParameter("test", "test");
         request.putBodyParameter("test2", "test2");
         try {
-            DoActionsResponse response = this.client.getAcsResponse(request);
+            this.client.getAcsResponse(request);
             Assert.fail();
         } catch (IllegalStateException e) {
             Assert.assertEquals("Server response has a bad format type: null", e.getMessage());
@@ -199,7 +202,7 @@ public class APIEncapsulateTest extends BaseTest {
         request.setStackId("test");
         request.putBodyParameter("test", "test");
         try {
-            DoActionsResponse response = this.client.getAcsResponse(request);
+            this.client.getAcsResponse(request);
             Assert.fail();
         } catch (ClientException e) {
             Assert.assertEquals("HTTPBadRequest", e.getErrCode());
@@ -215,7 +218,7 @@ public class APIEncapsulateTest extends BaseTest {
         request.setStackId("test");
         request.putBodyParameter("test", "test");
         try {
-            DoActionsResponse response = this.client.getAcsResponse(request);
+            this.client.getAcsResponse(request);
             Assert.fail();
         } catch (ClientException e) {
             Assert.assertEquals("HTTPBadRequest", e.getErrCode());
@@ -230,13 +233,12 @@ public class APIEncapsulateTest extends BaseTest {
         request.setCanvas("test");
         request.setContactFlowVersionId("test");
         request.setInstanceId("test");
-        try{
-            CommitContactFlowVersionModificationResponse response = this.client.getAcsResponse(request);
+        try {
+            this.client.getAcsResponse(request);
             Assert.fail();
         } catch (ServerException e) {
             Assert.assertEquals("ServiceUnavailable", e.getErrCode());
-            Assert.assertEquals("The request has failed due to a temporary failure of the server.",
-                    e.getErrMsg());
+            Assert.assertEquals("The request has failed due to a temporary failure of the server.", e.getErrMsg());
         }
     }
 }

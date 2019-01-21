@@ -1,27 +1,36 @@
 package com.aliyuncs;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import org.junit.Assert;
+import org.junit.Ignore;
+import org.junit.Test;
+
 import com.aliyuncs.cloudapi.model.v20160714.DescribeApisRequest;
 import com.aliyuncs.cloudapi.model.v20160714.DescribeApisResponse;
 import com.aliyuncs.ecs.model.v20140526.DescribeInstancesRequest;
 import com.aliyuncs.ecs.model.v20140526.DescribeInstancesResponse;
 import com.aliyuncs.ecs.model.v20140526.DescribeRegionsRequest;
 import com.aliyuncs.ecs.model.v20140526.DescribeRegionsResponse;
-import com.aliyuncs.endpoint.*;
+import com.aliyuncs.endpoint.ChainedEndpointResolver;
+import com.aliyuncs.endpoint.DefaultEndpointResolver;
+import com.aliyuncs.endpoint.EndpointResolver;
+import com.aliyuncs.endpoint.EndpointResolverBase;
+import com.aliyuncs.endpoint.LocalConfigGlobalEndpointResolver;
+import com.aliyuncs.endpoint.LocalConfigRegionalEndpointResolver;
+import com.aliyuncs.endpoint.LocationServiceEndpointResolver;
+import com.aliyuncs.endpoint.ResolveEndpointRequest;
+import com.aliyuncs.endpoint.UserCustomizedEndpointResolver;
+import com.aliyuncs.exceptions.ClientException;
 import com.aliyuncs.exceptions.ErrorCodeConstant;
 import com.aliyuncs.profile.DefaultProfile;
 import com.aliyuncs.profile.IClientProfile;
-import com.aliyuncs.ram.model.v20150501.ListAccessKeysResponse;
-import com.aliyuncs.exceptions.ClientException;
 import com.aliyuncs.ram.model.v20150501.ListAccessKeysRequest;
+import com.aliyuncs.ram.model.v20150501.ListAccessKeysResponse;
 import com.aliyuncs.ros.model.v20150901.DescribeResourcesRequest;
-import com.aliyuncs.ros.model.v20150901.DescribeResourcesResponse;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
-import java.util.ArrayList;
-import java.util.List;
+import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 public class NewEndpointTest extends BaseTest {
     private EndpointResolver endpointResolver;
@@ -65,9 +74,8 @@ public class NewEndpointTest extends BaseTest {
 
     public String resolve(String regionId, String productCode, String locationServiceCode, String endpointType)
             throws ClientException {
-        ResolveEndpointRequest request = new ResolveEndpointRequest(
-                regionId, productCode, locationServiceCode, endpointType
-        );
+        ResolveEndpointRequest request = new ResolveEndpointRequest(regionId, productCode, locationServiceCode,
+                endpointType);
         return endpointResolver.resolve(request);
     }
 
@@ -79,12 +87,14 @@ public class NewEndpointTest extends BaseTest {
     public void testProductsWithLocationService() throws ClientException {
         DescribeRegionsRequest request = new DescribeRegionsRequest();
         DescribeRegionsResponse response = this.client.getAcsResponse(request);
+        Assert.assertTrue(response.getRegions().size() > 0);
     }
 
     @Test
     public void testProductsWithoutLocationService() throws ClientException {
         ListAccessKeysRequest request = new ListAccessKeysRequest();
         ListAccessKeysResponse response = this.client.getAcsResponse(request);
+        Assert.assertTrue(response.getAccessKeys().size() > 0);
     }
 
     @Test
@@ -94,24 +104,18 @@ public class NewEndpointTest extends BaseTest {
 
         DescribeRegionsRequest request = new DescribeRegionsRequest();
         try {
-            DescribeRegionsResponse response = myClient.getAcsResponse(request);
+            myClient.getAcsResponse(request);
             Assert.fail();
         } catch (ClientException e) {
             Assert.assertEquals(ErrorCodeConstant.SDK_ENDPOINT_RESOLVING_ERROR, e.getErrCode());
-            Assert.assertEquals(
-                "No such region 'cn-ningbo'. Please check your region ID.",
-                e.getErrMsg()
-            );
+            Assert.assertEquals("No such region 'cn-ningbo'. Please check your region ID.", e.getErrMsg());
         }
 
-        DefaultProfile.addEndpoint(
-                "cn-ningbo",  // which does not exist at all
-                "Ecs",
-                "abc.cn-ningbo.endpoint-test.exception.com");
+        DefaultProfile.addEndpoint("cn-ningbo", // which does not exist at all
+                "Ecs", "abc.cn-ningbo.endpoint-test.exception.com");
 
-        DescribeRegionsRequest request2 = new DescribeRegionsRequest();
         try {
-            DescribeRegionsResponse response2 = myClient.getAcsResponse(request);
+            myClient.getAcsResponse(request);
             Assert.fail();
         } catch (ClientException e) {
             Assert.assertEquals(ErrorCodeConstant.SDK_ENDPOINT_TESTABILITY, e.getErrCode());
@@ -124,15 +128,12 @@ public class NewEndpointTest extends BaseTest {
         DefaultAcsClient myClient = getClientWithRegionId("cn-hangzhou");
         DescribeRegionsRequest request = new DescribeRegionsRequest();
         DescribeRegionsResponse response = myClient.getAcsResponse(request);
+        Assert.assertTrue(response.getRegions().size() > 0);
 
-        DefaultProfile.addEndpoint(
-                "cn-hangzhou",
-                "Ecs",
-                "abc.cn-hangzhou.endpoint-test.exception.com");
+        DefaultProfile.addEndpoint("cn-hangzhou", "Ecs", "abc.cn-hangzhou.endpoint-test.exception.com");
 
-        DescribeRegionsRequest request2 = new DescribeRegionsRequest();
         try {
-            DescribeRegionsResponse response2 = myClient.getAcsResponse(request);
+            myClient.getAcsResponse(request);
             Assert.fail();
         } catch (ClientException e) {
             Assert.assertEquals(ErrorCodeConstant.SDK_ENDPOINT_TESTABILITY, e.getErrCode());
@@ -145,63 +146,34 @@ public class NewEndpointTest extends BaseTest {
 
     @Test
     public void testRegionalEndpointComesFromLocalConfig() throws ClientException {
-        String testConfig = "" +
-                "{\n" +
-                "  \"regional_endpoints\" : {\n" +
-                "    \"abc\" : {\n" +
-                "      \"mars-ningbo\" : \"ecs.mars-ningbo.aliyuncs.com\"\n" +
-                "    }\n" +
-                "  }\n" +
-                "}";
+        String testConfig = "" + "{\n" + "  \"regional_endpoints\" : {\n" + "    \"abc\" : {\n"
+                + "      \"mars-ningbo\" : \"ecs.mars-ningbo.aliyuncs.com\"\n" + "    }\n" + "  }\n" + "}";
 
         initEnv(testConfig);
 
-        Assert.assertEquals(
-                "ecs.mars-ningbo.aliyuncs.com",
-                resolve("mars-ningbo", "abc")
-        );
+        Assert.assertEquals("ecs.mars-ningbo.aliyuncs.com", resolve("mars-ningbo", "abc"));
     }
 
     @Test
     public void testGlobalEndpointComesFromLocalConfig() throws ClientException {
-        String testConfig = "" +
-                "{\n" +
-                "  \"regional_endpoints\" : {\n" +
-                "    \"abc\" : {\n" +
-                "      \"mars-ningbo\" : \"ecs.mars-ningbo.aliyuncs.com\"\n" +
-                "    }\n" +
-                "  },\n" +
-                "  \"global_endpoints\" : {\n" +
-                "    \"abc\" : \"ecs.mars.aliyuncs.com\"\n" +
-                "  },\n" +
-                "  \"regions\" : [\"mars-ningbo\", \"mars-hangzhou\", \"mars-shanghai\"]\n" +
-                "}";
+        String testConfig = "" + "{\n" + "  \"regional_endpoints\" : {\n" + "    \"abc\" : {\n"
+                + "      \"mars-ningbo\" : \"ecs.mars-ningbo.aliyuncs.com\"\n" + "    }\n" + "  },\n"
+                + "  \"global_endpoints\" : {\n" + "    \"abc\" : \"ecs.mars.aliyuncs.com\"\n" + "  },\n"
+                + "  \"regions\" : [\"mars-ningbo\", \"mars-hangzhou\", \"mars-shanghai\"]\n" + "}";
 
         initEnv(testConfig);
 
-        Assert.assertEquals(
-                "ecs.mars-ningbo.aliyuncs.com",
-                resolve("mars-ningbo", "abc")
-        );
-        Assert.assertEquals(
-                "ecs.mars.aliyuncs.com",
-                resolve("mars-hangzhou", "abc")
-        );
-        Assert.assertEquals(
-                "ecs.mars.aliyuncs.com",
-                resolve("mars-shanghai", "abc")
-        );
+        Assert.assertEquals("ecs.mars-ningbo.aliyuncs.com", resolve("mars-ningbo", "abc"));
+        Assert.assertEquals("ecs.mars.aliyuncs.com", resolve("mars-hangzhou", "abc"));
+        Assert.assertEquals("ecs.mars.aliyuncs.com", resolve("mars-shanghai", "abc"));
     }
 
     @Test
     public void testEndpointComesFromLocationService() throws ClientException {
         initEnv("{}"); // empty local config
 
-        for (int i = 0; i < 3; i ++) {
-            Assert.assertEquals(
-                    "ecs-cn-hangzhou.aliyuncs.com",
-                    resolve("cn-hangzhou", "ecs", "ecs", null)
-            );
+        for (int i = 0; i < 3; i++) {
+            Assert.assertEquals("ecs-cn-hangzhou.aliyuncs.com", resolve("cn-hangzhou", "ecs", "ecs", null));
         }
         Assert.assertEquals(1, locationServiceEndpointResolver.locationServiceCallCounter);
     }
@@ -211,30 +183,26 @@ public class NewEndpointTest extends BaseTest {
         initEnv("{}"); // empty local config
 
         // No openAPI data
-        for (int i = 0; i < 3; i ++) {
+        for (int i = 0; i < 3; i++) {
             try {
                 resolve("cn-hangzhou", "Ram", "ram", "openAPI");
                 Assert.fail();
             } catch (ClientException e) {
                 Assert.assertEquals(ErrorCodeConstant.SDK_ENDPOINT_RESOLVING_ERROR, e.getErrCode());
                 Assert.assertTrue(e.getErrMsg().startsWith(
-                        "No endpoint in the region 'cn-hangzhou' for product 'Ram'."
-                ));
+                        "No endpoint in the region 'cn-hangzhou' for product 'Ram'."));
             }
         }
         Assert.assertEquals(1, locationServiceEndpointResolver.locationServiceCallCounter);
 
         // Bad region ID
-        for (int i = 0; i < 3; i ++) {
+        for (int i = 0; i < 3; i++) {
             try {
                 resolve("mars", "Ram", "ram", "openAPI");
                 Assert.fail();
             } catch (ClientException e) {
                 Assert.assertEquals(ErrorCodeConstant.SDK_ENDPOINT_RESOLVING_ERROR, e.getErrCode());
-                Assert.assertEquals(
-                        "No such region 'mars'. Please check your region ID.",
-                        e.getErrMsg()
-                );
+                Assert.assertEquals("No such region 'mars'. Please check your region ID.", e.getErrMsg());
             }
         }
         // Bad region ID with another product
@@ -243,38 +211,29 @@ public class NewEndpointTest extends BaseTest {
             Assert.fail();
         } catch (ClientException e) {
             Assert.assertEquals(ErrorCodeConstant.SDK_ENDPOINT_RESOLVING_ERROR, e.getErrCode());
-            Assert.assertEquals(
-                    "No such region 'mars'. Please check your region ID.",
-                    e.getErrMsg()
-            );
+            Assert.assertEquals("No such region 'mars'. Please check your region ID.", e.getErrMsg());
         }
         Assert.assertEquals(2, locationServiceEndpointResolver.locationServiceCallCounter);
 
         // Bad product code
-        for (int i = 0; i < 3; i ++) {
+        for (int i = 0; i < 3; i++) {
             try {
-                resolve("cn-hangzhou", "InvalidProductCode",
-                        "InvalidProductCode", "openAPI");
+                resolve("cn-hangzhou", "InvalidProductCode", "InvalidProductCode", "openAPI");
                 Assert.fail();
             } catch (ClientException e) {
                 Assert.assertEquals(ErrorCodeConstant.SDK_ENDPOINT_RESOLVING_ERROR, e.getErrCode());
-                Assert.assertTrue(e.getErrMsg().startsWith("" +
-                                "No endpoint for product 'InvalidProductCode'. \n" +
-                                "Please check the product code, or set an endpoint for your request explicitly.\n")
-                );
+                Assert.assertTrue(e.getErrMsg().startsWith("" + "No endpoint for product 'InvalidProductCode'. \n"
+                        + "Please check the product code, or set an endpoint for your request explicitly.\n"));
             }
         }
         // Bad product code with another region ID
         try {
-            resolve("cn-beijing", "InvalidProductCode",
-                    "InvalidProductCode", "openAPI");
+            resolve("cn-beijing", "InvalidProductCode", "InvalidProductCode", "openAPI");
             Assert.fail();
         } catch (ClientException e) {
             Assert.assertEquals(ErrorCodeConstant.SDK_ENDPOINT_RESOLVING_ERROR, e.getErrCode());
-            Assert.assertTrue(e.getErrMsg().startsWith("" +
-                    "No endpoint for product 'InvalidProductCode'. \n" +
-                    "Please check the product code, or set an endpoint for your request explicitly.\n")
-            );
+            Assert.assertTrue(e.getErrMsg().startsWith("" + "No endpoint for product 'InvalidProductCode'. \n"
+                    + "Please check the product code, or set an endpoint for your request explicitly.\n"));
         }
         Assert.assertEquals(3, locationServiceEndpointResolver.locationServiceCallCounter);
     }
@@ -287,10 +246,7 @@ public class NewEndpointTest extends BaseTest {
             Assert.fail();
         } catch (ClientException e) {
             Assert.assertEquals(ErrorCodeConstant.SDK_ENDPOINT_RESOLVING_ERROR, e.getErrCode());
-            Assert.assertEquals(
-                    "No such region 'mars'. Please check your region ID.",
-                    e.getErrMsg()
-            );
+            Assert.assertEquals("No such region 'mars'. Please check your region ID.", e.getErrMsg());
         }
     }
 
@@ -303,55 +259,34 @@ public class NewEndpointTest extends BaseTest {
         } catch (ClientException e) {
             Assert.assertEquals(ErrorCodeConstant.SDK_ENDPOINT_RESOLVING_ERROR, e.getErrCode());
             System.out.println(e.getErrMsg());
-            Assert.assertTrue(e.getErrMsg().startsWith("" +
-                    "No endpoint for product 'InvalidProductCode'. \n" +
-                    "Please check the product code, or set an endpoint for your request explicitly.\n")
-            );
+            Assert.assertTrue(e.getErrMsg().startsWith("" + "No endpoint for product 'InvalidProductCode'. \n"
+                    + "Please check the product code, or set an endpoint for your request explicitly.\n"));
         }
     }
 
     @Test
     public void testInnerApiEndpoint() throws ClientException {
         initEnv();
-        Assert.assertEquals(
-                "ram-share.aliyuncs.com",
-                resolve("cn-hangzhou", "Ram", "ram", "innerAPI")
-        );
+        Assert.assertEquals("ram-share.aliyuncs.com", resolve("cn-hangzhou", "Ram", "ram", "innerAPI"));
     }
 
     @Test
     public void testGetInnerApiEndpointBypassLocalConfig() throws ClientException {
-        String testConfig = "" +
-                "{\n" +
-                "  \"ram\" : {\n" +
-                "    \"regional_endpoints\" : [\n" +
-                "      {\n" +
-                "        \"region\" : \"cn-hangzhou\",\n" +
-                "        \"endpoint\" : \"ram.mars-ningbo.aliyuncs.com\"\n" +
-                "      }\n" +
-                "    ],\n" +
-                "    \"global_endpoint\" : \"ram.mars.aliyuncs.com\"\n" +
-                "  }\n" +
-                "}";
+        String testConfig = "" + "{\n" + "  \"ram\" : {\n" + "    \"regional_endpoints\" : [\n" + "      {\n"
+                + "        \"region\" : \"cn-hangzhou\",\n"
+                + "        \"endpoint\" : \"ram.mars-ningbo.aliyuncs.com\"\n" + "      }\n" + "    ],\n"
+                + "    \"global_endpoint\" : \"ram.mars.aliyuncs.com\"\n" + "  }\n" + "}";
         initEnv(testConfig);
-        Assert.assertEquals(
-                "ram-share.aliyuncs.com",
-                resolve("cn-hangzhou", "Ram", "ram", "innerAPI")
-        );
+        Assert.assertEquals("ram-share.aliyuncs.com", resolve("cn-hangzhou", "Ram", "ram", "innerAPI"));
     }
 
     @Test
     public void testGetInnerApiEndpointByManuallyAdding() throws ClientException {
         initEnv();
-        userCustomizedEndpointResolver.putEndpointEntry(
-                "cn-hangzhou",
-                "Ram",
-                "ram.cn-hangzhou.endpoint-test.exception.com"
-        );
-        Assert.assertEquals(
-                "ram.cn-hangzhou.endpoint-test.exception.com",
-                resolve("cn-hangzhou", "Ram", "ram", "innerAPI")
-        );
+        userCustomizedEndpointResolver.putEndpointEntry("cn-hangzhou", "Ram",
+                "ram.cn-hangzhou.endpoint-test.exception.com");
+        Assert.assertEquals("ram.cn-hangzhou.endpoint-test.exception.com", resolve("cn-hangzhou", "Ram", "ram",
+                "innerAPI"));
     }
 
     @Test
@@ -369,11 +304,8 @@ public class NewEndpointTest extends BaseTest {
 
     @Test
     public void testInvalidAccessKeyId() throws ClientException {
-        IClientProfile profile = DefaultProfile.getProfile(
-                "cn-hangzhou",
-                "BadAccessKeyId",
-                properties.getProperty("daily_accessSecret")
-        );
+        IClientProfile profile = DefaultProfile.getProfile("cn-hangzhou", "BadAccessKeyId", properties.getProperty(
+                "daily_accessSecret"));
         DefaultAcsClient client = new DefaultAcsClient(profile);
         initEnv(null, client);
         try {
@@ -386,11 +318,8 @@ public class NewEndpointTest extends BaseTest {
 
     @Test
     public void testInvalidAccessKeySecret() {
-        IClientProfile profile = DefaultProfile.getProfile(
-                "cn-hangzhou",
-                properties.getProperty("daily_accessKeyId"),
-                "BadAccessKeySecret"
-        );
+        IClientProfile profile = DefaultProfile.getProfile("cn-hangzhou", properties.getProperty("daily_accessKeyId"),
+                "BadAccessKeySecret");
         DefaultAcsClient client = new DefaultAcsClient(profile);
         initEnv(null, client);
         try {
@@ -411,6 +340,7 @@ public class NewEndpointTest extends BaseTest {
     public void testCallRpcRequestWithClient() throws ClientException {
         DescribeRegionsRequest request = new DescribeRegionsRequest();
         DescribeRegionsResponse response = this.client.getAcsResponse(request);
+        Assert.assertTrue(response.getRegions().size() > 0);
     }
 
     @Test
@@ -419,7 +349,7 @@ public class NewEndpointTest extends BaseTest {
         request.setStackId("StackId");
         request.setStackName("StackName");
         try {
-            DescribeResourcesResponse response = this.client.getAcsResponse(request);
+            this.client.getAcsResponse(request);
             Assert.fail();
         } catch (ClientException e) {
             Assert.assertEquals("StackNotFound", e.getErrCode());
@@ -430,6 +360,7 @@ public class NewEndpointTest extends BaseTest {
     public void testLocationServiceCodeNotEqualsProductCode() throws ClientException {
         DescribeApisRequest request = new DescribeApisRequest();
         DescribeApisResponse response = this.client.getAcsResponse(request);
+        Assert.assertNotNull(response.getRequestId());
     }
 
     @Test
@@ -437,9 +368,9 @@ public class NewEndpointTest extends BaseTest {
         initEnv("{}");
         this.client.setEndpointResolver(endpointResolver);
 
-        for (int i = 0; i < 3; i ++) {
+        for (int i = 0; i < 3; i++) {
             DescribeApisRequest request = new DescribeApisRequest();
-            DescribeApisResponse response = this.client.getAcsResponse(request);
+            this.client.getAcsResponse(request);
         }
         Assert.assertEquals(1, locationServiceEndpointResolver.locationServiceCallCounter);
         initEnv();
@@ -449,55 +380,46 @@ public class NewEndpointTest extends BaseTest {
     @Test
     public void testDocSample() throws ClientException {
         DescribeInstancesRequest request = new DescribeInstancesRequest();
-        request.setEndpoint("ecs-cn-hangzhou.aliyuncs.com");
+        request.setSysEndpoint("ecs-cn-hangzhou.aliyuncs.com");
         DescribeInstancesResponse response = this.client.getAcsResponse(request);
+        Assert.assertTrue(response.getInstances().size() > 0);
     }
 
     @Test
     public void testRkvstore() throws ClientException {
         EndpointResolver resolver = new DefaultEndpointResolver(this.client);
-        ResolveEndpointRequest request = new ResolveEndpointRequest(
-                "cn-hangzhou",
-                "R-kvstore",
-                null, null);
+        ResolveEndpointRequest request = new ResolveEndpointRequest("cn-hangzhou", "R-kvstore", null, null);
         Assert.assertEquals("r-kvstore.aliyuncs.com", resolver.resolve(request));
     }
 
     @Test
     public void testDtsRegion() throws ClientException {
         EndpointResolver resolver = new DefaultEndpointResolver(this.client);
-        ResolveEndpointRequest request = new ResolveEndpointRequest(
-                "cn-chengdu",
-                "Dts",
-                null, null);
+        ResolveEndpointRequest request = new ResolveEndpointRequest("cn-chengdu", "Dts", null, null);
 
         try {
             resolver.resolve(request);
             Assert.fail();
         } catch (ClientException e) {
             Assert.assertEquals(ErrorCodeConstant.SDK_ENDPOINT_RESOLVING_ERROR, e.getErrCode());
-            Assert.assertEquals(e.getErrMsg(), "No endpoint in the region 'cn-chengdu' for product 'Dts'. \n" +
-                    "You can set an endpoint for your request explicitly.\n" +
-                    "Or you can use the other available regions: cn-qingdao cn-beijing cn-zhangjiakou cn-huhehaote cn-hangzhou cn-shanghai cn-shenzhen cn-hongkong ap-southeast-1\n" +
-                    "See https://www.alibabacloud.com/help/zh/doc-detail/92049.htm\n"
-            );
+            Assert.assertEquals(e.getErrMsg(), "No endpoint in the region 'cn-chengdu' for product 'Dts'. \n"
+                    + "You can set an endpoint for your request explicitly.\n"
+                    + "Or you can use the other available regions: cn-qingdao cn-beijing cn-zhangjiakou cn-huhehaote cn-hangzhou cn-shanghai cn-shenzhen cn-hongkong ap-southeast-1\n"
+                    + "See https://www.alibabacloud.com/help/zh/doc-detail/92049.htm\n");
         }
     }
 
     @Test
     public void testSetLocationEndpoint() throws ClientException {
-        DefaultProfile profile = DefaultProfile.getProfile(
-                "cn-blah",
-                properties.getProperty("daily_accessKeyId"),
-                properties.getProperty("daily_accessSecret")
-        );
-        profile.setUsingInternalLocationService();
+        DefaultProfile profile = DefaultProfile.getProfile("cn-blah", properties.getProperty("daily_accessKeyId"),
+                properties.getProperty("daily_accessSecret"));
+        profile.enableUsingInternalLocationService();
         DefaultAcsClient client = new DefaultAcsClient(profile);
 
         DescribeInstancesRequest request = new DescribeInstancesRequest();
 
         try {
-            DescribeInstancesResponse response = client.getAcsResponse(request);
+            client.getAcsResponse(request);
         } catch (ClientException e) {
             Assert.assertEquals(ErrorCodeConstant.SDK_ENDPOINT_RESOLVING_ERROR, e.getErrCode());
             Assert.assertEquals("No such region 'cn-blah'. Please check your region ID.", e.getErrMsg());
