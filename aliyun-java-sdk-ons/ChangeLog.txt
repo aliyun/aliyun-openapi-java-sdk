@@ -1,3 +1,6 @@
+2019-01-21 Version: 2.1.2
+1, API OnsInstanceInServiceList response add a instance name return value.
+
 2018-04-17 Version: 2.0.1
 1, Add create mqtt groupId api
 
