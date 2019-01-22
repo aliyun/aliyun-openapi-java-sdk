@@ -80,7 +80,6 @@ public class ApacheIdleConnectionCleanerTest {
         ApacheIdleConnectionCleaner.setPeriodSec(1);
         HttpClientConnectionManager manager1 = mock(HttpClientConnectionManager.class);
         HttpClientConnectionManager manager2 = mock(HttpClientConnectionManager.class);
-        RuntimeException e0 = new RuntimeException("mock");
         ApacheIdleConnectionCleaner.registerConnectionManager(manager1, 60 * 1000L);
         ApacheIdleConnectionCleaner.registerConnectionManager(manager2, 60 * 1000L);
         doAnswer(new Answer() {
@@ -122,7 +121,6 @@ public class ApacheIdleConnectionCleanerTest {
     public void registerOnceAndRemoveManager() {
         ApacheIdleConnectionCleaner.setPeriodSec(1);
         HttpClientConnectionManager manager = mock(HttpClientConnectionManager.class);
-        RuntimeException e0 = new RuntimeException("mock");
         doAnswer(new Answer() {
             @Override
             public Object answer(InvocationOnMock invocationOnMock) {
