@@ -666,6 +666,8 @@ public class DescribeApiResponse extends AcsResponse {
 
         private String description;
 
+        private String model;
+
         public String getCode() {
             return this.code;
         }
@@ -688,6 +690,14 @@ public class DescribeApiResponse extends AcsResponse {
 
         public void setDescription(String description) {
             this.description = description;
+        }
+
+        public String getModel() {
+            return model;
+        }
+
+        public void setModel(String model) {
+            this.model = model;
         }
     }
 

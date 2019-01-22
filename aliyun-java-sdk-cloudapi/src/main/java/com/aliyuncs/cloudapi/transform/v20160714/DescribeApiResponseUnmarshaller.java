@@ -198,6 +198,7 @@ public class DescribeApiResponseUnmarshaller {
 			errorCodeSample.setCode(context.stringValue("DescribeApiResponse.ErrorCodeSamples["+ i +"].Code"));
 			errorCodeSample.setMessage(context.stringValue("DescribeApiResponse.ErrorCodeSamples["+ i +"].Message"));
 			errorCodeSample.setDescription(context.stringValue("DescribeApiResponse.ErrorCodeSamples["+ i +"].Description"));
+			errorCodeSample.setModel(context.stringValue("DescribeApiResponse.ErrorCodeSamples["+ i +"].Model"));
 
 			errorCodeSamples.add(errorCodeSample);
 		}
