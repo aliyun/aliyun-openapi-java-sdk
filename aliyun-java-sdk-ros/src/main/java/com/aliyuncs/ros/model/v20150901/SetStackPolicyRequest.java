@@ -21,12 +21,12 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class DescribeResourcesRequest extends RoaAcsRequest<DescribeResourcesResponse> {
+public class SetStackPolicyRequest extends RoaAcsRequest<SetStackPolicyResponse> {
 	
-	public DescribeResourcesRequest() {
-		super("ROS", "2015-09-01", "DescribeResources");
-		setUriPattern("/stacks/[StackName]/[StackId]/resources");
-		setMethod(MethodType.GET);
+	public SetStackPolicyRequest() {
+		super("ROS", "2015-09-01", "SetStackPolicy");
+		setUriPattern("/stacks/[StackName]/[StackId]/policy");
+		setMethod(MethodType.POST);
 	}
 
 	private String stackId;
@@ -56,8 +56,8 @@ public class DescribeResourcesRequest extends RoaAcsRequest<DescribeResourcesRes
 	}
 
 	@Override
-	public Class<DescribeResourcesResponse> getResponseClass() {
-		return DescribeResourcesResponse.class;
+	public Class<SetStackPolicyResponse> getResponseClass() {
+		return SetStackPolicyResponse.class;
 	}
 
 }

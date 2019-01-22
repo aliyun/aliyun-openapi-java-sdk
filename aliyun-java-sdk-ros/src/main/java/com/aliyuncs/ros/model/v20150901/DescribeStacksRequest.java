@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.ros.model.v20150901;
 
 import com.aliyuncs.RoaAcsRequest;
@@ -28,23 +29,25 @@ public class DescribeStacksRequest extends RoaAcsRequest<DescribeStacksResponse>
 		setMethod(MethodType.GET);
 	}
 
-	private String status;
+	private String stackId;
 
 	private String name;
-
-	private String stackId;
 
 	private Integer pageSize;
 
 	private Integer pageNumber;
 
-	public String getStatus() {
-		return this.status;
+	private String status;
+
+	public String getStackId() {
+		return this.stackId;
 	}
 
-	public void setStatus(String status) {
-		this.status = status;
-		putQueryParameter("Status", status);
+	public void setStackId(String stackId) {
+		this.stackId = stackId;
+		if(stackId != null){
+			putQueryParameter("StackId", stackId);
+		}
 	}
 
 	public String getName() {
@@ -53,16 +56,9 @@ public class DescribeStacksRequest extends RoaAcsRequest<DescribeStacksResponse>
 
 	public void setName(String name) {
 		this.name = name;
-		putQueryParameter("Name", name);
-	}
-
-	public String getStackId() {
-		return this.stackId;
-	}
-
-	public void setStackId(String stackId) {
-		this.stackId = stackId;
-		putQueryParameter("StackId", stackId);
+		if(name != null){
+			putQueryParameter("Name", name);
+		}
 	}
 
 	public Integer getPageSize() {
@@ -71,7 +67,9 @@ public class DescribeStacksRequest extends RoaAcsRequest<DescribeStacksResponse>
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
-		putQueryParameter("PageSize", pageSize);
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
 	}
 
 	public Integer getPageNumber() {
@@ -80,7 +78,20 @@ public class DescribeStacksRequest extends RoaAcsRequest<DescribeStacksResponse>
 
 	public void setPageNumber(Integer pageNumber) {
 		this.pageNumber = pageNumber;
-		putQueryParameter("PageNumber", pageNumber);
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public String getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+		if(status != null){
+			putQueryParameter("Status", status);
+		}
 	}
 
 	@Override

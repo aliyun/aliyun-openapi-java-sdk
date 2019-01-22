@@ -12,21 +12,17 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.ros.model.v20150901;
+package com.aliyuncs.ros.transform.v20150901;
 
-import java.util.Map;
-import com.aliyuncs.AcsResponse;
-import com.aliyuncs.ros.transform.v20150901.DescribeResourceTypeDetailResponseUnmarshaller;
+import com.aliyuncs.ros.model.v20150901.ContinueCreateStackResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
-/**
- * @author auto create
- * @version 
- */
-public class DescribeResourceTypeDetailResponse extends AcsResponse {
 
-	@Override
-	public DescribeResourceTypeDetailResponse getInstance(UnmarshallerContext context) {
-		return	DescribeResourceTypeDetailResponseUnmarshaller.unmarshall(this, context);
+public class ContinueCreateStackResponseUnmarshaller {
+
+	public static ContinueCreateStackResponse unmarshall(ContinueCreateStackResponse continueCreateStackResponse, UnmarshallerContext context) {
+		
+	 
+	 	return continueCreateStackResponse;
 	}
 }

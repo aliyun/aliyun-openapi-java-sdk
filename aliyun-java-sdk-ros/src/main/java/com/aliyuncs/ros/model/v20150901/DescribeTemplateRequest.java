@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.ros.model.v20150901;
 
 import com.aliyuncs.RoaAcsRequest;
@@ -28,18 +29,9 @@ public class DescribeTemplateRequest extends RoaAcsRequest<DescribeTemplateRespo
 		setMethod(MethodType.GET);
 	}
 
-	private String stackName;
-
 	private String stackId;
 
-	public String getStackName() {
-		return this.stackName;
-	}
-
-	public void setStackName(String stackName) {
-		this.stackName = stackName;
-		putPathParameter("StackName", stackName);
-	}
+	private String stackName;
 
 	public String getStackId() {
 		return this.stackId;
@@ -47,7 +39,20 @@ public class DescribeTemplateRequest extends RoaAcsRequest<DescribeTemplateRespo
 
 	public void setStackId(String stackId) {
 		this.stackId = stackId;
-		putPathParameter("StackId", stackId);
+		if(stackId != null){
+			putPathParameter("StackId", stackId);
+		}
+	}
+
+	public String getStackName() {
+		return this.stackName;
+	}
+
+	public void setStackName(String stackName) {
+		this.stackName = stackName;
+		if(stackName != null){
+			putPathParameter("StackName", stackName);
+		}
 	}
 
 	@Override

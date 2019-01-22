@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.ros.model.v20150901;
 
 import com.aliyuncs.RoaAcsRequest;
@@ -36,7 +37,9 @@ public class DescribeResourceTypesRequest extends RoaAcsRequest<DescribeResource
 
 	public void setSupportStatus(String supportStatus) {
 		this.supportStatus = supportStatus;
-		putQueryParameter("SupportStatus", supportStatus);
+		if(supportStatus != null){
+			putQueryParameter("SupportStatus", supportStatus);
+		}
 	}
 
 	@Override

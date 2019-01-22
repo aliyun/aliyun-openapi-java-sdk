@@ -16,17 +16,17 @@ package com.aliyuncs.ros.model.v20150901;
 
 import java.util.Map;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.ros.transform.v20150901.DescribeResourceTypeDetailResponseUnmarshaller;
+import com.aliyuncs.ros.transform.v20150901.GetStackPolicyResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DescribeResourceTypeDetailResponse extends AcsResponse {
+public class GetStackPolicyResponse extends AcsResponse {
 
 	@Override
-	public DescribeResourceTypeDetailResponse getInstance(UnmarshallerContext context) {
-		return	DescribeResourceTypeDetailResponseUnmarshaller.unmarshall(this, context);
+	public GetStackPolicyResponse getInstance(UnmarshallerContext context) {
+		return	GetStackPolicyResponseUnmarshaller.unmarshall(this, context);
 	}
 }

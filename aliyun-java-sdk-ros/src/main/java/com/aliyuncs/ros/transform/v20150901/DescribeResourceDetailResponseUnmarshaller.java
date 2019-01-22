@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.ros.transform.v20150901;
 
 import com.aliyuncs.ros.model.v20150901.DescribeResourceDetailResponse;

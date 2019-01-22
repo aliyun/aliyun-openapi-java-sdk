@@ -21,12 +21,12 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class DescribeResourcesRequest extends RoaAcsRequest<DescribeResourcesResponse> {
+public class ContinueCreateStackRequest extends RoaAcsRequest<ContinueCreateStackResponse> {
 	
-	public DescribeResourcesRequest() {
-		super("ROS", "2015-09-01", "DescribeResources");
-		setUriPattern("/stacks/[StackName]/[StackId]/resources");
-		setMethod(MethodType.GET);
+	public ContinueCreateStackRequest() {
+		super("ROS", "2015-09-01", "ContinueCreateStack");
+		setUriPattern("/stacks/[StackName]/[StackId]/continue");
+		setMethod(MethodType.POST);
 	}
 
 	private String stackId;
@@ -56,8 +56,8 @@ public class DescribeResourcesRequest extends RoaAcsRequest<DescribeResourcesRes
 	}
 
 	@Override
-	public Class<DescribeResourcesResponse> getResponseClass() {
-		return DescribeResourcesResponse.class;
+	public Class<ContinueCreateStackResponse> getResponseClass() {
+		return ContinueCreateStackResponse.class;
 	}
 
 }

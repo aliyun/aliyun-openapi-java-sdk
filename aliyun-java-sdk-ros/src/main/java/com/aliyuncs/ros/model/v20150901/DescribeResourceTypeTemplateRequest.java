@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.ros.model.v20150901;
 
 import com.aliyuncs.RoaAcsRequest;
@@ -36,7 +37,9 @@ public class DescribeResourceTypeTemplateRequest extends RoaAcsRequest<DescribeR
 
 	public void setTypeName(String typeName) {
 		this.typeName = typeName;
-		putPathParameter("TypeName", typeName);
+		if(typeName != null){
+			putPathParameter("TypeName", typeName);
+		}
 	}
 
 	@Override

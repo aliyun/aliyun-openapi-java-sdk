@@ -16,17 +16,17 @@ package com.aliyuncs.ros.model.v20150901;
 
 import java.util.Map;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.ros.transform.v20150901.DescribeResourceTypeDetailResponseUnmarshaller;
+import com.aliyuncs.ros.transform.v20150901.CancelUpdateStackResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DescribeResourceTypeDetailResponse extends AcsResponse {
+public class CancelUpdateStackResponse extends AcsResponse {
 
 	@Override
-	public DescribeResourceTypeDetailResponse getInstance(UnmarshallerContext context) {
-		return	DescribeResourceTypeDetailResponseUnmarshaller.unmarshall(this, context);
+	public CancelUpdateStackResponse getInstance(UnmarshallerContext context) {
+		return	CancelUpdateStackResponseUnmarshaller.unmarshall(this, context);
 	}
 }

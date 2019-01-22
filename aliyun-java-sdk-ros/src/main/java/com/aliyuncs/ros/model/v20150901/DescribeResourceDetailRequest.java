@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.ros.model.v20150901;
 
 import com.aliyuncs.RoaAcsRequest;
@@ -28,20 +29,11 @@ public class DescribeResourceDetailRequest extends RoaAcsRequest<DescribeResourc
 		setMethod(MethodType.GET);
 	}
 
-	private String stackName;
-
 	private String stackId;
 
+	private String stackName;
+
 	private String resourceName;
-
-	public String getStackName() {
-		return this.stackName;
-	}
-
-	public void setStackName(String stackName) {
-		this.stackName = stackName;
-		putPathParameter("StackName", stackName);
-	}
 
 	public String getStackId() {
 		return this.stackId;
@@ -49,7 +41,20 @@ public class DescribeResourceDetailRequest extends RoaAcsRequest<DescribeResourc
 
 	public void setStackId(String stackId) {
 		this.stackId = stackId;
-		putPathParameter("StackId", stackId);
+		if(stackId != null){
+			putPathParameter("StackId", stackId);
+		}
+	}
+
+	public String getStackName() {
+		return this.stackName;
+	}
+
+	public void setStackName(String stackName) {
+		this.stackName = stackName;
+		if(stackName != null){
+			putPathParameter("StackName", stackName);
+		}
 	}
 
 	public String getResourceName() {
@@ -58,7 +63,9 @@ public class DescribeResourceDetailRequest extends RoaAcsRequest<DescribeResourc
 
 	public void setResourceName(String resourceName) {
 		this.resourceName = resourceName;
-		putPathParameter("ResourceName", resourceName);
+		if(resourceName != null){
+			putPathParameter("ResourceName", resourceName);
+		}
 	}
 
 	@Override
