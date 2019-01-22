@@ -34,7 +34,6 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
-import org.mockito.Mockito;
 import org.mockito.invocation.InvocationOnMock;
 import org.mockito.stubbing.Answer;
 import org.powermock.api.mockito.PowerMockito;
@@ -101,7 +100,7 @@ public class CompatibleUrlConnClientTest {
         when(config.isIgnoreSSLCerts()).thenReturn(true);
         CompatibleUrlConnClient client = new CompatibleUrlConnClient(config);
         client.ignoreSSLCertificate();
-        verifyStatic(CompatibleUrlConnClient.HttpsCertIgnoreHelper.class, Mockito.times(1));
+        verifyStatic(CompatibleUrlConnClient.HttpsCertIgnoreHelper.class, times(1));
 
     }
 
@@ -115,7 +114,7 @@ public class CompatibleUrlConnClientTest {
         when(config.isIgnoreSSLCerts()).thenReturn(true);
         CompatibleUrlConnClient client = new CompatibleUrlConnClient(config);
         client.restoreSSLCertificate();
-        verifyStatic(CompatibleUrlConnClient.HttpsCertIgnoreHelper.class, Mockito.times(1));
+        verifyStatic(CompatibleUrlConnClient.HttpsCertIgnoreHelper.class, times(1));
 
     }
 
