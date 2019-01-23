@@ -196,4 +196,8 @@ public interface BatchCompute {
     /** Quotas **/
     GetQuotasResponse getQuotas() throws ClientException;
     GetQuotasResponse getQuotas(GetQuotasRequest req) throws ClientException;
+
+    GetAvailableResourceResponse getAvailableResource() throws ClientException;
+    GetAvailableResourceResponse getAvailableResource(GetAvailableResourceRequest req) throws ClientException;
+
 }

@@ -1,0 +1,47 @@
+{
+  "AvailableClusterInstanceType": [
+    {
+      "CpuCore": 4,
+      "InstanceType": "ecs.sn2ne.xlarge",
+      "MemorySize": 16,
+      "Network": {
+        "Classic": false,
+        "Vpc": true
+      }
+    }
+  ],
+  "AvailableSpotInstanceType": [
+    {
+      "CpuCore": 4,
+      "InstanceType": "ecs.sn2ne.xlarge",
+      "MemorySize": 16,
+      "Network": {
+        "Classic": false,
+        "Vpc": true
+      }
+    }
+  ],
+  "AvailablePrepaidInstanceType": [
+    {
+      "CpuCore": 4,
+      "InstanceType": "ecs.sn2ne.xlarge",
+      "MemorySize": 16,
+      "Network": {
+        "Classic": false,
+        "Vpc": true
+      }
+    }
+  ],
+  "AvailableResourceType": [
+    "OnDemand",
+    "Spot"
+  ],
+  "AvailableSystemDiskType": [
+    "cloud_efficiency",
+    "cloud_ssd"
+  ],
+  "AvailableDataDiskType": [
+    "cloud_efficiency",
+    "cloud_ssd"
+  ]
+}

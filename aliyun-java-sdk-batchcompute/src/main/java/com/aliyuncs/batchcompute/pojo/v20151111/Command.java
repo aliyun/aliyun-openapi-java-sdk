@@ -20,6 +20,9 @@ public class Command {
         @JsonProperty("Image")
         private String image;
 
+        @JsonProperty("RunMode")
+        private String runMode;
+
         @JsonIgnore
         public void setImage(String image) {
             this.image = image;
@@ -28,6 +31,17 @@ public class Command {
         @JsonIgnore
         public String getImage() {
             return image;
+        }
+
+
+        @JsonIgnore
+        public void setRunMode(String runMode) {
+            this.runMode = runMode;
+        }
+
+        @JsonIgnore
+        public String getRunMode() {
+            return runMode;
         }
 
     }

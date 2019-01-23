@@ -1,4 +1,9 @@
 # release notes
+6.0.6
+```
+1. 支持docker安全模式。
+2. 支持/available API接口
+```
 6.0.5
 ```
 1. 升级jackson库到最新。

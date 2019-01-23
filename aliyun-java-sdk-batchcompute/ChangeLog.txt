@@ -1,3 +1,7 @@
+2019-01-23 Version: 6.0.6
+1, support docker safe mode
+2, support /available api interface
+
 2019-01-15 Version: 6.0.5
 1, update jacson core
 

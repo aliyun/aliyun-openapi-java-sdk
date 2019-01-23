@@ -731,4 +731,14 @@ public class BatchComputeClient implements BatchCompute {
         return getAcsResponse(req);
     }
 
+    @Override
+    public GetAvailableResourceResponse getAvailableResource() throws ClientException {
+        GetAvailableResourceRequest req = new GetAvailableResourceRequest();
+        return getAvailableResource(req);
+    }
+
+    @Override
+    public GetAvailableResourceResponse getAvailableResource(GetAvailableResourceRequest req) throws ClientException {
+        return getAcsResponse(req);
+    }
 }

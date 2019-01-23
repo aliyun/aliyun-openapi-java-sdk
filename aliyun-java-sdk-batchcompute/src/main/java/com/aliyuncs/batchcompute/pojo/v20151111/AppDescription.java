@@ -448,6 +448,9 @@ public class AppDescription {
         @JsonProperty("Image")
         private String image;
 
+        @JsonProperty("RunMode")
+        private String runMode;
+
         @JsonProperty("RegistryOSSPath")
         private String registryOSSPath;
 
@@ -460,6 +463,7 @@ public class AppDescription {
         public void setImage(String image) {
             this.image = image;
         }
+
         @JsonIgnore
         public String getRegistryOSSPath() {
             return registryOSSPath;
@@ -467,6 +471,16 @@ public class AppDescription {
         @JsonIgnore
         public void setRegistryOSSPath(String registryOSSPath) {
             this.registryOSSPath = registryOSSPath;
+        }
+
+        @JsonIgnore
+        public String getRunMode() {
+            return runMode;
+        }
+
+        @JsonIgnore
+        public void setRunMode(String runMode) {
+            this.runMode = runMode;
         }
     }
 
