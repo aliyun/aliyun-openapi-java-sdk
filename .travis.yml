@@ -9,9 +9,37 @@ jdk:
 
 script:
   - cd ./aliyun-java-sdk-core
-  #- mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+  - mvn package -Dmaven.test.skip=true
+  - mv ./aliyun-java-sdk-core/target/aliyun-java-sdk-core-4.3.2.jar ./core.jar
+  - cd ./aliyun-java-sdk-ecs
+  - mvn package -Dmaven.test.skip=true
+  - mv ./aliyun-java-sdk-ecs/target/aliyun-java-sdk-ecs-*.jar ./ecs.jar
+  - cd ./aliyun-java-sdk-ccc
+  - mvn package -Dmaven.test.skip=true
+  - mv ./aliyun-java-sdk-ccc/target/*.jar ./ccc.jar
+  - cd ./aliyun-java-sdk-slb
+  - mvn package -Dmaven.test.skip=true
+  - mv ./aliyun-java-sdk-slb/target/*.jar ./slb.jar
+  - cd ./aliyun-java-sdk-cdn
+  - mvn package -Dmaven.test.skip=true
+  - mv ./aliyun-java-sdk-cdn/target/*.jar ./cdn.jar
+  - cd ./aliyun-java-sdk-cloudapi
+  - mvn package -Dmaven.test.skip=true
+  - mv ./aliyun-java-sdk-cloudapi/target/*.jar ./cloudapi.jar
+  - cd ./aliyun-java-sdk-ros
+  - mvn package -Dmaven.test.skip=true
+  - mv ./aliyun-java-sdk-ros/target/*.jar ./ros.jar
+  - cd ./aliyun-java-sdk-ram
+  - mvn package -Dmaven.test.skip=true
+  - mv ./aliyun-java-sdk-ram/target/*.jar ./ram.jar
+  - cd ./aliyun-java-sdk-vpc
+  - mvn package -Dmaven.test.skip=true
+  - mv ./aliyun-java-sdk-vpc/target/*.jar ./vpc.jar
+  - cd ./aliyun-java-sdk-rds
+  - mvn package -Dmaven.test.skip=true
+  - mv ./aliyun-java-sdk-rds/target/*.jar ./rds.jar
+  - cd ./java-sdk-function-test
   - mvn test -B
-
 after_success:
   - bash <(curl -s https://codecov.io/bash)
 

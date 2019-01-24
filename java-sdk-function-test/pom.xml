@@ -28,7 +28,7 @@
             <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
         </repository>
     </distributionManagement>
-
+ 
     <licenses>
         <license>
             <name></name>
@@ -48,56 +48,77 @@
             <email>aliyunsdk@aliyun.com</email>
         </developer>
     </developers>
+    
     <dependencies>
-        <dependency>
-            <groupId>com.aliyun</groupId>
-            <artifactId>aliyun-java-sdk-ccc</artifactId>
-            <version>[1.0.12,)</version>
-        </dependency>
-        <dependency>
+	    <dependency>
+		    <groupId>com.aliyun</groupId>
+		    <artifactId>aliyun-java-sdk-ccc</artifactId>
+		    <version>1.0</version>
+		    <scope>system</scope>
+		    <systemPath>D:\ali-work\lib\aliyun-java-sdk-ccc.jar</systemPath>
+    	</dependency>
+    	 <dependency>
             <groupId>com.aliyun</groupId>
             <artifactId>aliyun-java-sdk-cdn</artifactId>
-            <version>[3.0.3,)</version>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>D:\ali-work\lib\aliyun-java-sdk-cdn.jar</systemPath>
         </dependency>
-        <dependency>
+         <dependency>
             <groupId>com.aliyun</groupId>
             <artifactId>aliyun-java-sdk-cloudapi</artifactId>
-            <version>[4.8.0,)</version>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>D:\ali-work\lib\aliyun-java-sdk-cloudapi.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>com.aliyun</groupId>
             <artifactId>aliyun-java-sdk-core</artifactId>
-            <version>[4.2.5,)</version>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>D:\ali-work\lib\aliyun-java-sdk-core.jar</systemPath>
         </dependency>
-        <dependency>
+         <dependency>
             <groupId>com.aliyun</groupId>
             <artifactId>aliyun-java-sdk-ecs</artifactId>
-            <version>[4.16.0,)</version>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>D:\ali-work\lib\aliyun-java-sdk-ecs.jar</systemPath>
         </dependency>
-        <dependency>
+         <dependency>
             <groupId>com.aliyun</groupId>
             <artifactId>aliyun-java-sdk-ram</artifactId>
-            <version>[3.0.0,)</version>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>D:\ali-work\lib\aliyun-java-sdk-ram.jar</systemPath>
         </dependency>
-        <dependency>
+         <dependency>
             <groupId>com.aliyun</groupId>
             <artifactId>aliyun-java-sdk-rds</artifactId>
-            <version>[2.3.1,)</version>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>D:\ali-work\lib\aliyun-java-sdk-rds.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>com.aliyun</groupId>
             <artifactId>aliyun-java-sdk-ros</artifactId>
-            <version>[2.2.6,)</version>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>D:\ali-work\lib\aliyun-java-sdk-ros.jar</systemPath>
         </dependency>
-        <dependency>
+                <dependency>
             <groupId>com.aliyun</groupId>
             <artifactId>aliyun-java-sdk-slb</artifactId>
-            <version>[3.2.7,)</version>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>D:\ali-work\lib\aliyun-java-sdk-slb.jar</systemPath>
         </dependency>
-        <dependency>
+                <dependency>
             <groupId>com.aliyun</groupId>
             <artifactId>aliyun-java-sdk-vpc</artifactId>
-            <version>[3.0.2,)</version>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>D:\ali-work\lib\aliyun-java-sdk-vpc.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>junit</groupId>
@@ -139,6 +160,7 @@
 
     <build>
         <plugins>
+        
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>

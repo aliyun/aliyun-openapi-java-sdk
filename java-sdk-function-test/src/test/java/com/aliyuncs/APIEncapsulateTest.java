@@ -15,8 +15,6 @@ import com.aliyuncs.ram.model.v20150501.ListAccessKeysRequest;
 import com.aliyuncs.ram.model.v20150501.ListAccessKeysResponse;
 import com.aliyuncs.rds.model.v20140815.DescribeRegionsRequest;
 import com.aliyuncs.rds.model.v20140815.DescribeRegionsResponse;
-//import com.aliyuncs.rds.model.v20140815.DescribeAbnormalDBInstancesRequest;
-//import com.aliyuncs.rds.model.v20140815.DescribeAbnormalDBInstancesResponse;
 import com.aliyuncs.ros.model.v20150901.DeleteStackRequest;
 import com.aliyuncs.ros.model.v20150901.DoActionsRequest;
 import com.aliyuncs.ros.model.v20150901.UpdateStackRequest;
