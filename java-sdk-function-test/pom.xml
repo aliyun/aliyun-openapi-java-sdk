@@ -55,70 +55,70 @@
             <artifactId>aliyun-java-sdk-ccc</artifactId>
             <version>1.0</version>
             <scope>system</scope>
-            <systemPath>ccc.jar</systemPath>
+            <systemPath>./java-sdk-function-test/ccc.jar</systemPath>
         </dependency>
          <dependency>
             <groupId>com.aliyun</groupId>
             <artifactId>aliyun-java-sdk-cdn</artifactId>
             <version>1.0</version>
             <scope>system</scope>
-            <systemPath>cdn.jar</systemPath>
+            <systemPath>./java-sdk-function-test/cdn.jar</systemPath>
         </dependency>
          <dependency>
             <groupId>com.aliyun</groupId>
             <artifactId>aliyun-java-sdk-cloudapi</artifactId>
             <version>1.0</version>
             <scope>system</scope>
-            <systemPath>cloudapi.jar</systemPath>
+            <systemPath>./java-sdk-function-test/cloudapi.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>com.aliyun</groupId>
             <artifactId>aliyun-java-sdk-core</artifactId>
             <version>1.0</version>
             <scope>system</scope>
-            <systemPath>core.jar</systemPath>
+            <systemPath>./java-sdk-function-test/core.jar</systemPath>
         </dependency>
          <dependency>
             <groupId>com.aliyun</groupId>
             <artifactId>aliyun-java-sdk-ecs</artifactId>
             <version>1.0</version>
             <scope>system</scope>
-            <systemPath>ecs.jar</systemPath>
+            <systemPath>./java-sdk-function-test/ecs.jar</systemPath>
         </dependency>
          <dependency>
             <groupId>com.aliyun</groupId>
             <artifactId>aliyun-java-sdk-ram</artifactId>
             <version>1.0</version>
             <scope>system</scope>
-            <systemPath>ram.jar</systemPath>
+            <systemPath>./java-sdk-function-test/ram.jar</systemPath>
         </dependency>
          <dependency>
             <groupId>com.aliyun</groupId>
             <artifactId>aliyun-java-sdk-rds</artifactId>
             <version>1.0</version>
             <scope>system</scope>
-            <systemPath>rds.jar</systemPath>
+            <systemPath>./java-sdk-function-test/rds.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>com.aliyun</groupId>
             <artifactId>aliyun-java-sdk-ros</artifactId>
             <version>1.0</version>
             <scope>system</scope>
-            <systemPath>ros.jar</systemPath>
+            <systemPath>./java-sdk-function-test/ros.jar</systemPath>
         </dependency>
                 <dependency>
             <groupId>com.aliyun</groupId>
             <artifactId>aliyun-java-sdk-slb</artifactId>
             <version>1.0</version>
             <scope>system</scope>
-            <systemPath>slb.jar</systemPath>
+            <systemPath>./java-sdk-function-test/slb.jar</systemPath>
         </dependency>
                 <dependency>
             <groupId>com.aliyun</groupId>
             <artifactId>aliyun-java-sdk-vpc</artifactId>
             <version>1.0</version>
             <scope>system</scope>
-            <systemPath>vpc.jar</systemPath>
+            <systemPath>./java-sdk-function-test/vpc.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>junit</groupId>
