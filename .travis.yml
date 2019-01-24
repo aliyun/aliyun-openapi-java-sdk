@@ -10,34 +10,34 @@ jdk:
 script:
   - cd ./aliyun-java-sdk-core
   - mvn package -Dmaven.test.skip=true
-  - mv ./aliyun-java-sdk-core/target/aliyun-java-sdk-core-4.3.2.jar ./core.jar
+  - mv ./aliyun-java-sdk-core/target/aliyun-java-sdk-core-4.3.2.jar ../java-sdk-function-test/core.jar
   - cd ./aliyun-java-sdk-ecs
   - mvn package -Dmaven.test.skip=true
-  - mv ./aliyun-java-sdk-ecs/target/aliyun-java-sdk-ecs-*.jar ./ecs.jar
+  - mv ./aliyun-java-sdk-ecs/target/aliyun-java-sdk-ecs-*.jar ../java-sdk-function-test/ecs.jar
   - cd ./aliyun-java-sdk-ccc
   - mvn package -Dmaven.test.skip=true
-  - mv ./aliyun-java-sdk-ccc/target/*.jar ./ccc.jar
+  - mv ./aliyun-java-sdk-ccc/target/*.jar ../java-sdk-function-test/ccc.jar
   - cd ./aliyun-java-sdk-slb
   - mvn package -Dmaven.test.skip=true
-  - mv ./aliyun-java-sdk-slb/target/*.jar ./slb.jar
+  - mv ./aliyun-java-sdk-slb/target/*.jar ../java-sdk-function-test/slb.jar
   - cd ./aliyun-java-sdk-cdn
   - mvn package -Dmaven.test.skip=true
-  - mv ./aliyun-java-sdk-cdn/target/*.jar ./cdn.jar
+  - mv ./aliyun-java-sdk-cdn/target/*.jar ../java-sdk-function-test/cdn.jar
   - cd ./aliyun-java-sdk-cloudapi
   - mvn package -Dmaven.test.skip=true
-  - mv ./aliyun-java-sdk-cloudapi/target/*.jar ./cloudapi.jar
+  - mv ./aliyun-java-sdk-cloudapi/target/*.jar ../java-sdk-function-test/cloudapi.jar
   - cd ./aliyun-java-sdk-ros
   - mvn package -Dmaven.test.skip=true
-  - mv ./aliyun-java-sdk-ros/target/*.jar ./ros.jar
+  - mv ./aliyun-java-sdk-ros/target/*.jar ../java-sdk-function-test/ros.jar
   - cd ./aliyun-java-sdk-ram
   - mvn package -Dmaven.test.skip=true
-  - mv ./aliyun-java-sdk-ram/target/*.jar ./ram.jar
+  - mv ./aliyun-java-sdk-ram/target/*.jar ../java-sdk-function-test/ram.jar
   - cd ./aliyun-java-sdk-vpc
   - mvn package -Dmaven.test.skip=true
-  - mv ./aliyun-java-sdk-vpc/target/*.jar ./vpc.jar
+  - mv ./aliyun-java-sdk-vpc/target/*.jar ../java-sdk-function-test/vpc.jar
   - cd ./aliyun-java-sdk-rds
   - mvn package -Dmaven.test.skip=true
-  - mv ./aliyun-java-sdk-rds/target/*.jar ./rds.jar
+  - mv ./aliyun-java-sdk-rds/target/*.jar ../java-sdk-function-test/rds.jar
   - cd ./java-sdk-function-test
   - mvn test -B
 after_success:

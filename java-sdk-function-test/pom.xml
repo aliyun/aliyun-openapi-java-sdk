@@ -51,74 +51,74 @@
     
     <dependencies>
 	    <dependency>
-		    <groupId>com.aliyun</groupId>
-		    <artifactId>aliyun-java-sdk-ccc</artifactId>
-		    <version>1.0</version>
-		    <scope>system</scope>
-		    <systemPath>D:\ali-work\lib\aliyun-java-sdk-ccc.jar</systemPath>
-    	</dependency>
-    	 <dependency>
+            <groupId>com.aliyun</groupId>
+            <artifactId>aliyun-java-sdk-ccc</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>ccc.jar</systemPath>
+        </dependency>
+         <dependency>
             <groupId>com.aliyun</groupId>
             <artifactId>aliyun-java-sdk-cdn</artifactId>
             <version>1.0</version>
             <scope>system</scope>
-            <systemPath>D:\ali-work\lib\aliyun-java-sdk-cdn.jar</systemPath>
+            <systemPath>cdn.jar</systemPath>
         </dependency>
          <dependency>
             <groupId>com.aliyun</groupId>
             <artifactId>aliyun-java-sdk-cloudapi</artifactId>
             <version>1.0</version>
             <scope>system</scope>
-            <systemPath>D:\ali-work\lib\aliyun-java-sdk-cloudapi.jar</systemPath>
+            <systemPath>cloudapi.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>com.aliyun</groupId>
             <artifactId>aliyun-java-sdk-core</artifactId>
             <version>1.0</version>
             <scope>system</scope>
-            <systemPath>D:\ali-work\lib\aliyun-java-sdk-core.jar</systemPath>
+            <systemPath>core.jar</systemPath>
         </dependency>
          <dependency>
             <groupId>com.aliyun</groupId>
             <artifactId>aliyun-java-sdk-ecs</artifactId>
             <version>1.0</version>
             <scope>system</scope>
-            <systemPath>D:\ali-work\lib\aliyun-java-sdk-ecs.jar</systemPath>
+            <systemPath>ecs.jar</systemPath>
         </dependency>
          <dependency>
             <groupId>com.aliyun</groupId>
             <artifactId>aliyun-java-sdk-ram</artifactId>
             <version>1.0</version>
             <scope>system</scope>
-            <systemPath>D:\ali-work\lib\aliyun-java-sdk-ram.jar</systemPath>
+            <systemPath>ram.jar</systemPath>
         </dependency>
          <dependency>
             <groupId>com.aliyun</groupId>
             <artifactId>aliyun-java-sdk-rds</artifactId>
             <version>1.0</version>
             <scope>system</scope>
-            <systemPath>D:\ali-work\lib\aliyun-java-sdk-rds.jar</systemPath>
+            <systemPath>rds.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>com.aliyun</groupId>
             <artifactId>aliyun-java-sdk-ros</artifactId>
             <version>1.0</version>
             <scope>system</scope>
-            <systemPath>D:\ali-work\lib\aliyun-java-sdk-ros.jar</systemPath>
+            <systemPath>ros.jar</systemPath>
         </dependency>
                 <dependency>
             <groupId>com.aliyun</groupId>
             <artifactId>aliyun-java-sdk-slb</artifactId>
             <version>1.0</version>
             <scope>system</scope>
-            <systemPath>D:\ali-work\lib\aliyun-java-sdk-slb.jar</systemPath>
+            <systemPath>slb.jar</systemPath>
         </dependency>
                 <dependency>
             <groupId>com.aliyun</groupId>
             <artifactId>aliyun-java-sdk-vpc</artifactId>
             <version>1.0</version>
             <scope>system</scope>
-            <systemPath>D:\ali-work\lib\aliyun-java-sdk-vpc.jar</systemPath>
+            <systemPath>vpc.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>junit</groupId>
