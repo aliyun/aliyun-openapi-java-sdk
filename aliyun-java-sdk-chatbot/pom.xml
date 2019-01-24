@@ -41,14 +41,14 @@ http://www.aliyun.com</description>
 	<dependency>
 		<groupId>com.alibaba</groupId>
 		<artifactId>fastjson</artifactId>
-		<version>1.2.9</version>
+		<version>1.2.25</version>
 	</dependency>
   </dependencies>
 	<licenses>
 		<license>
-			<name></name>
-			<url></url>
-			<distribution></distribution>
+			<name/>
+			<url/>
+			<distribution/>
 		</license>
 	</licenses>
 	<scm>
