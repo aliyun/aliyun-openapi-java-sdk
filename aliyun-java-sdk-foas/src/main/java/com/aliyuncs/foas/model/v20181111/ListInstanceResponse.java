@@ -1,0 +1,325 @@
+/*
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package com.aliyuncs.foas.model.v20181111;
+
+import java.util.List;
+import com.aliyuncs.AcsResponse;
+import com.aliyuncs.foas.transform.v20181111.ListInstanceResponseUnmarshaller;
+import com.aliyuncs.transform.UnmarshallerContext;
+
+/**
+ * @author auto create
+ * @version 
+ */
+public class ListInstanceResponse extends AcsResponse {
+
+	private String requestId;
+
+	private Integer pageIndex;
+
+	private Integer pageSize;
+
+	private Integer totalPage;
+
+	private Long totalCount;
+
+	private List<Instance> instances;
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Integer getPageIndex() {
+		return this.pageIndex;
+	}
+
+	public void setPageIndex(Integer pageIndex) {
+		this.pageIndex = pageIndex;
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
+
+	public Integer getTotalPage() {
+		return this.totalPage;
+	}
+
+	public void setTotalPage(Integer totalPage) {
+		this.totalPage = totalPage;
+	}
+
+	public Long getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Long totalCount) {
+		this.totalCount = totalCount;
+	}
+
+	public List<Instance> getInstances() {
+		return this.instances;
+	}
+
+	public void setInstances(List<Instance> instances) {
+		this.instances = instances;
+	}
+
+	public static class Instance {
+
+		private Long id;
+
+		private String projectName;
+
+		private String jobName;
+
+		private String actualState;
+
+		private String expectState;
+
+		private String jobType;
+
+		private String apiType;
+
+		private String code;
+
+		private String properties;
+
+		private String packages;
+
+		private String starter;
+
+		private Long startTime;
+
+		private Long lastErrorTime;
+
+		private String lastErrorMessage;
+
+		private String lastOperator;
+
+		private Long lastOperateTime;
+
+		private String planJson;
+
+		private String engineVersion;
+
+		private String engineJobHandler;
+
+		private Long inputDelay;
+
+		private String clusterId;
+
+		private String queueName;
+
+		private Long endTime;
+
+		public Long getId() {
+			return this.id;
+		}
+
+		public void setId(Long id) {
+			this.id = id;
+		}
+
+		public String getProjectName() {
+			return this.projectName;
+		}
+
+		public void setProjectName(String projectName) {
+			this.projectName = projectName;
+		}
+
+		public String getJobName() {
+			return this.jobName;
+		}
+
+		public void setJobName(String jobName) {
+			this.jobName = jobName;
+		}
+
+		public String getActualState() {
+			return this.actualState;
+		}
+
+		public void setActualState(String actualState) {
+			this.actualState = actualState;
+		}
+
+		public String getExpectState() {
+			return this.expectState;
+		}
+
+		public void setExpectState(String expectState) {
+			this.expectState = expectState;
+		}
+
+		public String getJobType() {
+			return this.jobType;
+		}
+
+		public void setJobType(String jobType) {
+			this.jobType = jobType;
+		}
+
+		public String getApiType() {
+			return this.apiType;
+		}
+
+		public void setApiType(String apiType) {
+			this.apiType = apiType;
+		}
+
+		public String getCode() {
+			return this.code;
+		}
+
+		public void setCode(String code) {
+			this.code = code;
+		}
+
+		public String getProperties() {
+			return this.properties;
+		}
+
+		public void setProperties(String properties) {
+			this.properties = properties;
+		}
+
+		public String getPackages() {
+			return this.packages;
+		}
+
+		public void setPackages(String packages) {
+			this.packages = packages;
+		}
+
+		public String getStarter() {
+			return this.starter;
+		}
+
+		public void setStarter(String starter) {
+			this.starter = starter;
+		}
+
+		public Long getStartTime() {
+			return this.startTime;
+		}
+
+		public void setStartTime(Long startTime) {
+			this.startTime = startTime;
+		}
+
+		public Long getLastErrorTime() {
+			return this.lastErrorTime;
+		}
+
+		public void setLastErrorTime(Long lastErrorTime) {
+			this.lastErrorTime = lastErrorTime;
+		}
+
+		public String getLastErrorMessage() {
+			return this.lastErrorMessage;
+		}
+
+		public void setLastErrorMessage(String lastErrorMessage) {
+			this.lastErrorMessage = lastErrorMessage;
+		}
+
+		public String getLastOperator() {
+			return this.lastOperator;
+		}
+
+		public void setLastOperator(String lastOperator) {
+			this.lastOperator = lastOperator;
+		}
+
+		public Long getLastOperateTime() {
+			return this.lastOperateTime;
+		}
+
+		public void setLastOperateTime(Long lastOperateTime) {
+			this.lastOperateTime = lastOperateTime;
+		}
+
+		public String getPlanJson() {
+			return this.planJson;
+		}
+
+		public void setPlanJson(String planJson) {
+			this.planJson = planJson;
+		}
+
+		public String getEngineVersion() {
+			return this.engineVersion;
+		}
+
+		public void setEngineVersion(String engineVersion) {
+			this.engineVersion = engineVersion;
+		}
+
+		public String getEngineJobHandler() {
+			return this.engineJobHandler;
+		}
+
+		public void setEngineJobHandler(String engineJobHandler) {
+			this.engineJobHandler = engineJobHandler;
+		}
+
+		public Long getInputDelay() {
+			return this.inputDelay;
+		}
+
+		public void setInputDelay(Long inputDelay) {
+			this.inputDelay = inputDelay;
+		}
+
+		public String getClusterId() {
+			return this.clusterId;
+		}
+
+		public void setClusterId(String clusterId) {
+			this.clusterId = clusterId;
+		}
+
+		public String getQueueName() {
+			return this.queueName;
+		}
+
+		public void setQueueName(String queueName) {
+			this.queueName = queueName;
+		}
+
+		public Long getEndTime() {
+			return this.endTime;
+		}
+
+		public void setEndTime(Long endTime) {
+			this.endTime = endTime;
+		}
+	}
+
+	@Override
+	public ListInstanceResponse getInstance(UnmarshallerContext context) {
+		return	ListInstanceResponseUnmarshaller.unmarshall(this, context);
+	}
+}
