@@ -14,7 +14,6 @@
 
 package com.aliyuncs.ons.model.v20180516;
 
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.ons.transform.v20180516.OnsMqttQueryTraceByTraceIdResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;

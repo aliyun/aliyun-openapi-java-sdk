@@ -20,7 +20,6 @@ import java.util.List;
 import com.aliyuncs.ons.model.v20180516.OnsMqttQueryMsgTransTrendResponse;
 import com.aliyuncs.ons.model.v20180516.OnsMqttQueryMsgTransTrendResponse.Data;
 import com.aliyuncs.ons.model.v20180516.OnsMqttQueryMsgTransTrendResponse.Data.StatsDataDo;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

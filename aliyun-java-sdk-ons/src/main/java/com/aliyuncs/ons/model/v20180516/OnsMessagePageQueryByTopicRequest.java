@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class OnsMessagePageQueryByTopicRequest extends RpcAcsRequest<OnsMessagePageQueryByTopicResponse> {
 	
 	public OnsMessagePageQueryByTopicRequest() {
-		super("Ons", "2018-05-16", "OnsMessagePageQueryByTopic", "2018-05-16");
+		super("Ons", "2018-05-16", "OnsMessagePageQueryByTopic");
 	}
 
 	private Long preventCache;

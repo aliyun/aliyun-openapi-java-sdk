@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class OnsConsumerResetOffsetRequest extends RpcAcsRequest<OnsConsumerResetOffsetResponse> {
 	
 	public OnsConsumerResetOffsetRequest() {
-		super("Ons", "2018-05-16", "OnsConsumerResetOffset", "2018-05-16");
+		super("Ons", "2018-05-16", "OnsConsumerResetOffset");
 	}
 
 	private Long preventCache;

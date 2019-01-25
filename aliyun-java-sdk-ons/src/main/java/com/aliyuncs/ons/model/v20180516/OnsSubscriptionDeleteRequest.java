@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class OnsSubscriptionDeleteRequest extends RpcAcsRequest<OnsSubscriptionDeleteResponse> {
 	
 	public OnsSubscriptionDeleteRequest() {
-		super("Ons", "2018-05-16", "OnsSubscriptionDelete", "2018-05-16");
+		super("Ons", "2018-05-16", "OnsSubscriptionDelete");
 	}
 
 	private Long preventCache;

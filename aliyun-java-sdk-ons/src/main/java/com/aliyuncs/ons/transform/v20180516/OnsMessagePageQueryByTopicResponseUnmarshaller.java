@@ -21,7 +21,6 @@ import com.aliyuncs.ons.model.v20180516.OnsMessagePageQueryByTopicResponse;
 import com.aliyuncs.ons.model.v20180516.OnsMessagePageQueryByTopicResponse.MsgFoundDo;
 import com.aliyuncs.ons.model.v20180516.OnsMessagePageQueryByTopicResponse.MsgFoundDo.OnsRestMessageDo;
 import com.aliyuncs.ons.model.v20180516.OnsMessagePageQueryByTopicResponse.MsgFoundDo.OnsRestMessageDo.MessageProperty;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

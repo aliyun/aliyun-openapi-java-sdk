@@ -20,7 +20,6 @@ import java.util.List;
 import com.aliyuncs.ons.model.v20180516.OnsMessageGetByKeyResponse;
 import com.aliyuncs.ons.model.v20180516.OnsMessageGetByKeyResponse.OnsRestMessageDo;
 import com.aliyuncs.ons.model.v20180516.OnsMessageGetByKeyResponse.OnsRestMessageDo.MessageProperty;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

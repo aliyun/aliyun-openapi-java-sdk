@@ -20,7 +20,6 @@ import java.util.List;
 import com.aliyuncs.ons.model.v20180516.OnsConsumerAccumulateResponse;
 import com.aliyuncs.ons.model.v20180516.OnsConsumerAccumulateResponse.Data;
 import com.aliyuncs.ons.model.v20180516.OnsConsumerAccumulateResponse.Data.DetailInTopicDo;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

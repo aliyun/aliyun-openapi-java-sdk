@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class OnsMqttQueryTraceByTraceIdRequest extends RpcAcsRequest<OnsMqttQueryTraceByTraceIdResponse> {
 	
 	public OnsMqttQueryTraceByTraceIdRequest() {
-		super("Ons", "2018-05-16", "OnsMqttQueryTraceByTraceId", "2018-05-16");
+		super("Ons", "2018-05-16", "OnsMqttQueryTraceByTraceId");
 	}
 
 	private String traceId;

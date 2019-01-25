@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class OnsMessageGetByKeyRequest extends RpcAcsRequest<OnsMessageGetByKeyResponse> {
 	
 	public OnsMessageGetByKeyRequest() {
-		super("Ons", "2018-05-16", "OnsMessageGetByKey", "2018-05-16");
+		super("Ons", "2018-05-16", "OnsMessageGetByKey");
 	}
 
 	private Long preventCache;

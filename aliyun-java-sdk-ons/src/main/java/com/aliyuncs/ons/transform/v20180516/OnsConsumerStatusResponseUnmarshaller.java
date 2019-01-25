@@ -25,7 +25,6 @@ import com.aliyuncs.ons.model.v20180516.OnsConsumerStatusResponse.Data.ConsumerC
 import com.aliyuncs.ons.model.v20180516.OnsConsumerStatusResponse.Data.ConsumerConnectionInfoDo.SubscriptionData;
 import com.aliyuncs.ons.model.v20180516.OnsConsumerStatusResponse.Data.ConsumerConnectionInfoDo.ThreadTrackDo;
 import com.aliyuncs.ons.model.v20180516.OnsConsumerStatusResponse.Data.DetailInTopicDo;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

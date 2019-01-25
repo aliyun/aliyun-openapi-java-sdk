@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class OnsInstanceInServiceListRequest extends RpcAcsRequest<OnsInstanceInServiceListResponse> {
 	
 	public OnsInstanceInServiceListRequest() {
-		super("Ons", "2018-05-16", "OnsInstanceInServiceList", "2018-05-16");
+		super("Ons", "2018-05-16", "OnsInstanceInServiceList");
 	}
 
 	private Long preventCache;

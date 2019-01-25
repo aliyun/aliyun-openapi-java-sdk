@@ -15,7 +15,6 @@
 package com.aliyuncs.ons.model.v20180516;
 
 import java.util.List;
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.ons.transform.v20180516.OnsTopicListResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -83,6 +82,8 @@ public class OnsTopicListResponse extends AcsResponse {
 		private Long updateTime;
 
 		private String remark;
+
+		private String instanceId;
 
 		public Long getId() {
 			return this.id;
@@ -186,6 +187,14 @@ public class OnsTopicListResponse extends AcsResponse {
 
 		public void setRemark(String remark) {
 			this.remark = remark;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
 		}
 	}
 

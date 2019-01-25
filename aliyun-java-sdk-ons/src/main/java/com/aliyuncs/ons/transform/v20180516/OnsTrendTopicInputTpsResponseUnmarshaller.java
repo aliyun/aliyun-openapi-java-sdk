@@ -20,7 +20,6 @@ import java.util.List;
 import com.aliyuncs.ons.model.v20180516.OnsTrendTopicInputTpsResponse;
 import com.aliyuncs.ons.model.v20180516.OnsTrendTopicInputTpsResponse.Data;
 import com.aliyuncs.ons.model.v20180516.OnsTrendTopicInputTpsResponse.Data.StatsDataDo;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

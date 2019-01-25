@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class OnsTraceGetResultRequest extends RpcAcsRequest<OnsTraceGetResultResponse> {
 	
 	public OnsTraceGetResultRequest() {
-		super("Ons", "2018-05-16", "OnsTraceGetResult", "2018-05-16");
+		super("Ons", "2018-05-16", "OnsTraceGetResult");
 	}
 
 	private Long preventCache;

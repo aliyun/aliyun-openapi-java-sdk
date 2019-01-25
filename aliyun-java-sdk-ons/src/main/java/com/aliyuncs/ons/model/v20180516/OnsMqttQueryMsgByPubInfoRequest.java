@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class OnsMqttQueryMsgByPubInfoRequest extends RpcAcsRequest<OnsMqttQueryMsgByPubInfoResponse> {
 	
 	public OnsMqttQueryMsgByPubInfoRequest() {
-		super("Ons", "2018-05-16", "OnsMqttQueryMsgByPubInfo", "2018-05-16");
+		super("Ons", "2018-05-16", "OnsMqttQueryMsgByPubInfo");
 	}
 
 	private Long preventCache;

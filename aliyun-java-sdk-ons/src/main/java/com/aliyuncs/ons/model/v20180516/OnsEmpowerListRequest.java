@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class OnsEmpowerListRequest extends RpcAcsRequest<OnsEmpowerListResponse> {
 	
 	public OnsEmpowerListRequest() {
-		super("Ons", "2018-05-16", "OnsEmpowerList", "2018-05-16");
+		super("Ons", "2018-05-16", "OnsEmpowerList");
 	}
 
 	private Long preventCache;

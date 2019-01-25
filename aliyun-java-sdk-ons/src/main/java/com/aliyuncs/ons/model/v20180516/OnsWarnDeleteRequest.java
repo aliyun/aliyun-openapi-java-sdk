@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class OnsWarnDeleteRequest extends RpcAcsRequest<OnsWarnDeleteResponse> {
 	
 	public OnsWarnDeleteRequest() {
-		super("Ons", "2018-05-16", "OnsWarnDelete", "2018-05-16");
+		super("Ons", "2018-05-16", "OnsWarnDelete");
 	}
 
 	private Long preventCache;

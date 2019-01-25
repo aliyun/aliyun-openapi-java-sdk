@@ -20,7 +20,6 @@ import java.util.List;
 import com.aliyuncs.ons.model.v20180516.OnsConsumerGetConnectionResponse;
 import com.aliyuncs.ons.model.v20180516.OnsConsumerGetConnectionResponse.Data;
 import com.aliyuncs.ons.model.v20180516.OnsConsumerGetConnectionResponse.Data.ConnectionDo;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

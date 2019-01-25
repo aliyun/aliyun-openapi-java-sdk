@@ -22,7 +22,6 @@ import com.aliyuncs.ons.model.v20180516.OnsTraceGetResultResponse.TraceData;
 import com.aliyuncs.ons.model.v20180516.OnsTraceGetResultResponse.TraceData.TraceMapDo;
 import com.aliyuncs.ons.model.v20180516.OnsTraceGetResultResponse.TraceData.TraceMapDo.SubMapDo;
 import com.aliyuncs.ons.model.v20180516.OnsTraceGetResultResponse.TraceData.TraceMapDo.SubMapDo.SubClientInfoDo;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

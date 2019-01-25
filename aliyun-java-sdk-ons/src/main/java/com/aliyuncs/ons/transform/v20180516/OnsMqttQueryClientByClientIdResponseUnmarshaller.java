@@ -20,7 +20,6 @@ import java.util.List;
 import com.aliyuncs.ons.model.v20180516.OnsMqttQueryClientByClientIdResponse;
 import com.aliyuncs.ons.model.v20180516.OnsMqttQueryClientByClientIdResponse.MqttClientInfoDo;
 import com.aliyuncs.ons.model.v20180516.OnsMqttQueryClientByClientIdResponse.MqttClientInfoDo.SubscriptionDo;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

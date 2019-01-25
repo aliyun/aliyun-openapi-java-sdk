@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.ons.model.v20180516.OnsRegionListResponse;
 import com.aliyuncs.ons.model.v20180516.OnsRegionListResponse.RegionDo;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

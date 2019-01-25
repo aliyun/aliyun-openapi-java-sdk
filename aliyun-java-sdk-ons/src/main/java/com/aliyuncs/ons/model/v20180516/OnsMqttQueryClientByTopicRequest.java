@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class OnsMqttQueryClientByTopicRequest extends RpcAcsRequest<OnsMqttQueryClientByTopicResponse> {
 	
 	public OnsMqttQueryClientByTopicRequest() {
-		super("Ons", "2018-05-16", "OnsMqttQueryClientByTopic", "2018-05-16");
+		super("Ons", "2018-05-16", "OnsMqttQueryClientByTopic");
 	}
 
 	private Long preventCache;

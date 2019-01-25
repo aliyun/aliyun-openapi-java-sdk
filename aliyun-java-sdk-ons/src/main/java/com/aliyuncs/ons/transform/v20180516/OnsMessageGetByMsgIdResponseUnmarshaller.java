@@ -20,7 +20,6 @@ import java.util.List;
 import com.aliyuncs.ons.model.v20180516.OnsMessageGetByMsgIdResponse;
 import com.aliyuncs.ons.model.v20180516.OnsMessageGetByMsgIdResponse.Data;
 import com.aliyuncs.ons.model.v20180516.OnsMessageGetByMsgIdResponse.Data.MessageProperty;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

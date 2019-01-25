@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.ons.model.v20180516.OnsPublishListResponse;
 import com.aliyuncs.ons.model.v20180516.OnsPublishListResponse.PublishInfoDo;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.ons.model.v20180516.OnsMqttQueryMsgByPubInfoResponse;
 import com.aliyuncs.ons.model.v20180516.OnsMqttQueryMsgByPubInfoResponse.MqttMessageDo;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

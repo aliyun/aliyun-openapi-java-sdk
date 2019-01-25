@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.ons.model.v20180516.OnsTopicListResponse;
 import com.aliyuncs.ons.model.v20180516.OnsTopicListResponse.PublishInfoDo;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -46,6 +45,7 @@ public class OnsTopicListResponseUnmarshaller {
 			publishInfoDo.setCreateTime(context.longValue("OnsTopicListResponse.Data["+ i +"].CreateTime"));
 			publishInfoDo.setUpdateTime(context.longValue("OnsTopicListResponse.Data["+ i +"].UpdateTime"));
 			publishInfoDo.setRemark(context.stringValue("OnsTopicListResponse.Data["+ i +"].Remark"));
+			publishInfoDo.setInstanceId(context.stringValue("OnsTopicListResponse.Data["+ i +"].InstanceId"));
 
 			data.add(publishInfoDo);
 		}

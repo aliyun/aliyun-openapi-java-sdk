@@ -15,7 +15,6 @@
 package com.aliyuncs.ons.model.v20180516;
 
 import java.util.List;
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.ons.transform.v20180516.OnsConsumerAccumulateResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;

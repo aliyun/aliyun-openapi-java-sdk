@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.ons.model.v20180516.OnsSubscriptionGetResponse;
 import com.aliyuncs.ons.model.v20180516.OnsSubscriptionGetResponse.SubscribeInfoDo;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -43,6 +42,7 @@ public class OnsSubscriptionGetResponseUnmarshaller {
 			subscribeInfoDo.setStatusName(context.stringValue("OnsSubscriptionGetResponse.Data["+ i +"].StatusName"));
 			subscribeInfoDo.setCreateTime(context.longValue("OnsSubscriptionGetResponse.Data["+ i +"].CreateTime"));
 			subscribeInfoDo.setUpdateTime(context.longValue("OnsSubscriptionGetResponse.Data["+ i +"].UpdateTime"));
+			subscribeInfoDo.setInstanceId(context.stringValue("OnsSubscriptionGetResponse.Data["+ i +"].InstanceId"));
 
 			data.add(subscribeInfoDo);
 		}
