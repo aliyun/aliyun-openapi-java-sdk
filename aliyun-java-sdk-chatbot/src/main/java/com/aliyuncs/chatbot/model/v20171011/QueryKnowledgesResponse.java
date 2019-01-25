@@ -15,7 +15,6 @@
 package com.aliyuncs.chatbot.model.v20171011;
 
 import java.util.List;
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.chatbot.transform.v20171011.QueryKnowledgesResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -182,10 +181,26 @@ public class QueryKnowledgesResponse extends AcsResponse {
 			this.endDate = endDate;
 		}
 
+		public String getBizVersion() {
+			return this.version;
+		}
+
+		public void setBizVersion(String version) {
+			this.version = version;
+		}
+
+		/**
+		 * @deprecated use getBizVersion instead of this.
+		 */
+		@Deprecated
 		public String getVersion() {
 			return this.version;
 		}
 
+		/**
+		 * @deprecated use setBizVersion instead of this.
+		 */
+		@Deprecated
 		public void setVersion(String version) {
 			this.version = version;
 		}

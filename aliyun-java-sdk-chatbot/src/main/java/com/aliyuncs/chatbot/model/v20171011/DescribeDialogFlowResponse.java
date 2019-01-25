@@ -16,6 +16,7 @@ package com.aliyuncs.chatbot.model.v20171011;
 
 import java.util.List;
 import java.util.Map;
+
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.chatbot.transform.v20171011.DescribeDialogFlowResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -484,9 +485,9 @@ public class DescribeDialogFlowResponse extends AcsResponse {
 
 						private String type;
 
-						private List<SwitchItem> _switch;
+						private Map<Object,Object> params;
 
-						private List<String> params;
+						private List<SwitchItem> _switch;
 
 						public String getCode() {
 							return this.code;
@@ -552,20 +553,20 @@ public class DescribeDialogFlowResponse extends AcsResponse {
 							this.type = type;
 						}
 
+						public Map<Object,Object> getParams() {
+							return this.params;
+						}
+
+						public void setParams(Map<Object,Object> params) {
+							this.params = params;
+						}
+
 						public List<SwitchItem> get_Switch() {
 							return this._switch;
 						}
 
 						public void set_Switch(List<SwitchItem> _switch) {
 							this._switch = _switch;
-						}
-
-						public List<String> getParams() {
-							return this.params;
-						}
-
-						public void setParams(List<String> params) {
-							this.params = params;
 						}
 
 						public static class SwitchItem {

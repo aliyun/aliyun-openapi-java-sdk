@@ -34,6 +34,8 @@ public class QueryKnowledgesRequest extends RpcAcsRequest<QueryKnowledgesRespons
 
 	private Integer pageNumber;
 
+	private Long categoryId;
+
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
@@ -75,6 +77,17 @@ public class QueryKnowledgesRequest extends RpcAcsRequest<QueryKnowledgesRespons
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public Long getCategoryId() {
+		return this.categoryId;
+	}
+
+	public void setCategoryId(Long categoryId) {
+		this.categoryId = categoryId;
+		if(categoryId != null){
+			putQueryParameter("CategoryId", categoryId.toString());
 		}
 	}
 

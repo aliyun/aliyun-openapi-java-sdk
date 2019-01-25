@@ -21,7 +21,6 @@ import com.aliyuncs.chatbot.model.v20171011.DescribeKnowledgeResponse;
 import com.aliyuncs.chatbot.model.v20171011.DescribeKnowledgeResponse.Outline;
 import com.aliyuncs.chatbot.model.v20171011.DescribeKnowledgeResponse.SimQuestion;
 import com.aliyuncs.chatbot.model.v20171011.DescribeKnowledgeResponse.Solution;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

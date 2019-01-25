@@ -3,7 +3,7 @@
   <groupId>com.aliyun</groupId>
   <artifactId>aliyun-java-sdk-chatbot</artifactId>
   <packaging>jar</packaging>
-  <version>1.2.0</version>
+  <version>1.2.1</version>
     <name>aliyun-java-sdk-chatbot</name>
   <url>http://www.aliyun.com</url>
   <description>Aliyun Open API SDK for Java
@@ -41,8 +41,13 @@ http://www.aliyun.com</description>
 	<dependency>
 		<groupId>com.alibaba</groupId>
 		<artifactId>fastjson</artifactId>
-		<version>1.2.9</version>
+		<version>1.2.48</version>
 	</dependency>
+    <dependency>
+        <groupId>org.testng</groupId>
+        <artifactId>testng</artifactId>
+        <version>6.8.7</version>
+    </dependency>
   </dependencies>
 	<licenses>
 		<license>

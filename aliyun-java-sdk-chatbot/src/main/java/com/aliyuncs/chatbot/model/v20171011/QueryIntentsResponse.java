@@ -15,7 +15,6 @@
 package com.aliyuncs.chatbot.model.v20171011;
 
 import java.util.List;
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.chatbot.transform.v20171011.QueryIntentsResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;

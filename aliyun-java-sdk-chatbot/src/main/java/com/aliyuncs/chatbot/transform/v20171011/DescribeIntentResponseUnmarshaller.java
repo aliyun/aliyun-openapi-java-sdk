@@ -23,7 +23,6 @@ import com.aliyuncs.chatbot.model.v20171011.DescribeIntentResponse.SlotItem;
 import com.aliyuncs.chatbot.model.v20171011.DescribeIntentResponse.SlotItem.TagsItem;
 import com.aliyuncs.chatbot.model.v20171011.DescribeIntentResponse.UserSayItem;
 import com.aliyuncs.chatbot.model.v20171011.DescribeIntentResponse.UserSayItem.DataItem;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

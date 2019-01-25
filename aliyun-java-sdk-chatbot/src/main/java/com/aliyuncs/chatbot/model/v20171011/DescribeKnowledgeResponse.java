@@ -15,7 +15,6 @@
 package com.aliyuncs.chatbot.model.v20171011;
 
 import java.util.List;
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.chatbot.transform.v20171011.DescribeKnowledgeResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -94,10 +93,26 @@ public class DescribeKnowledgeResponse extends AcsResponse {
 		this.knowledgeTitle = knowledgeTitle;
 	}
 
+    public Integer getBizVersion() {
+        return this.version;
+    }
+
+    public void setBizVersion(Integer version) {
+        this.version = version;
+    }
+
+    /**
+     * @deprecated use getBizVersion instead of this.
+     */
+    @Deprecated
 	public Integer getVersion() {
 		return this.version;
 	}
 
+    /**
+     * @deprecated use setBizVersion instead of this.
+     */
+    @Deprecated
 	public void setVersion(Integer version) {
 		this.version = version;
 	}

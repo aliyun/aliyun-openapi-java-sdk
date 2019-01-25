@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.chatbot.model.v20171011.DescribeEntitiesResponse;
 import com.aliyuncs.chatbot.model.v20171011.DescribeEntitiesResponse.MembersItem;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

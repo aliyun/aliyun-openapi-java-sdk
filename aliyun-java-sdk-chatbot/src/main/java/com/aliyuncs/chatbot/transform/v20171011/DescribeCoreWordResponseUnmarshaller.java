@@ -18,7 +18,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.chatbot.model.v20171011.DescribeCoreWordResponse;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

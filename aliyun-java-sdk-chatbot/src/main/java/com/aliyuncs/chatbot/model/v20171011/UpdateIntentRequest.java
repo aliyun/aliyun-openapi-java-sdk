@@ -200,7 +200,7 @@ public class UpdateIntentRequest extends RpcAcsRequest<UpdateIntentResponse> {
 		}
 	}
 
-	public class RuleMtopDTO {
+	public static class RuleMtopDTO {
 
 		private Boolean strict;
 
@@ -326,7 +326,7 @@ public class UpdateIntentRequest extends RpcAcsRequest<UpdateIntentResponse> {
 		}
 	}
 
-	public class TagMtopDTO {
+	public static class TagMtopDTO {
 
 		private String userSayId;
 

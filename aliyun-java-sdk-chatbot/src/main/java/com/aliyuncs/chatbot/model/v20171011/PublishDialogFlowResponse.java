@@ -14,7 +14,6 @@
 
 package com.aliyuncs.chatbot.model.v20171011;
 
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.chatbot.transform.v20171011.PublishDialogFlowResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;

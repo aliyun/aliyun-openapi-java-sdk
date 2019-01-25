@@ -19,9 +19,11 @@ import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author auto create
+ * @version 
  */
 public class UpdateDialogFlowRequest extends RpcAcsRequest<UpdateDialogFlowResponse> {
 
@@ -32,6 +34,8 @@ public class UpdateDialogFlowRequest extends RpcAcsRequest<UpdateDialogFlowRespo
     }
 
     private PaasModuleDTO moduleDefinition;
+
+	private Long dialogId;
 
     public PaasModuleDTO getModuleDefinition() {
         return moduleDefinition;
@@ -44,8 +48,6 @@ public class UpdateDialogFlowRequest extends RpcAcsRequest<UpdateDialogFlowRespo
             putBodyParameter("ModuleDefinition", moduleDefinitionStr);
         }
     }
-
-    private Long dialogId;
 
     public Long getDialogId() {
         return this.dialogId;
@@ -572,7 +574,7 @@ public class UpdateDialogFlowRequest extends RpcAcsRequest<UpdateDialogFlowRespo
 
         private List<SwitchItem> _switch;
 
-        private List<String> params;
+        private Map<String,Object> params;
 
         public String getCode() {
             return this.code;
@@ -646,11 +648,11 @@ public class UpdateDialogFlowRequest extends RpcAcsRequest<UpdateDialogFlowRespo
             this._switch = _switch;
         }
 
-        public List<String> getParams() {
-            return this.params;
+        public Map<String, Object> getParams() {
+            return params;
         }
 
-        public void setParams(List<String> params) {
+        public void setParams(Map<String, Object> params) {
             this.params = params;
         }
     }
@@ -822,9 +824,9 @@ public class UpdateDialogFlowRequest extends RpcAcsRequest<UpdateDialogFlowRespo
         }
     }
 
-    @Override
-    public Class<UpdateDialogFlowResponse> getResponseClass() {
-        return UpdateDialogFlowResponse.class;
-    }
+	@Override
+	public Class<UpdateDialogFlowResponse> getResponseClass() {
+		return UpdateDialogFlowResponse.class;
+	}
 
 }

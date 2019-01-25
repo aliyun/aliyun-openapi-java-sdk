@@ -15,7 +15,6 @@
 package com.aliyuncs.chatbot.model.v20171011;
 
 import java.util.List;
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.chatbot.transform.v20171011.ChatResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -177,6 +176,8 @@ public class ChatResponse extends AcsResponse {
 
 			private String answerSource;
 
+			private String metaData;
+
 			public String getContent() {
 				return this.content;
 			}
@@ -191,6 +192,14 @@ public class ChatResponse extends AcsResponse {
 
 			public void setAnswerSource(String answerSource) {
 				this.answerSource = answerSource;
+			}
+
+			public String getMetaData() {
+				return this.metaData;
+			}
+
+			public void setMetaData(String metaData) {
+				this.metaData = metaData;
 			}
 		}
 

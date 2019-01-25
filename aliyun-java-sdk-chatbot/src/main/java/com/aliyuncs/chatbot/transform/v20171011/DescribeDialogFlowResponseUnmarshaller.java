@@ -117,12 +117,7 @@ public class DescribeDialogFlowResponseUnmarshaller {
 			pluginFieldDataFunction.setAliyunFunction(context.stringValue("DescribeDialogFlowResponse.ModuleDefinition.Nodes["+ i +"].PluginData.Function.PluginFieldDataFunction.AliyunFunction"));
 			pluginFieldDataFunction.setEndPoint(context.stringValue("DescribeDialogFlowResponse.ModuleDefinition.Nodes["+ i +"].PluginData.Function.PluginFieldDataFunction.EndPoint"));
 			pluginFieldDataFunction.setType(context.stringValue("DescribeDialogFlowResponse.ModuleDefinition.Nodes["+ i +"].PluginData.Function.PluginFieldDataFunction.Type"));
-
-			List<String> params = new ArrayList<String>();
-			for (int j = 0; j < context.lengthValue("DescribeDialogFlowResponse.ModuleDefinition.Nodes["+ i +"].PluginData.Function.PluginFieldDataFunction.Params.Length"); j++) {
-				params.add(context.stringValue("DescribeDialogFlowResponse.ModuleDefinition.Nodes["+ i +"].PluginData.Function.PluginFieldDataFunction.Params["+ j +"]"));
-			}
-			pluginFieldDataFunction.setParams(params);
+			pluginFieldDataFunction.setParams(context.mapValue("DescribeDialogFlowResponse.ModuleDefinition.Nodes["+ i +"].PluginData.Function.PluginFieldDataFunction.Params"));
 
 			List<SwitchItem> _switch = new ArrayList<SwitchItem>();
 			for (int j = 0; j < context.lengthValue("DescribeDialogFlowResponse.ModuleDefinition.Nodes["+ i +"].PluginData.Function.PluginFieldDataFunction.Switch.Length"); j++) {

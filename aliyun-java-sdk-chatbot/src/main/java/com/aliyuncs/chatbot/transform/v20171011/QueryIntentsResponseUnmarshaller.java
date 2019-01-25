@@ -24,7 +24,6 @@ import com.aliyuncs.chatbot.model.v20171011.QueryIntentsResponse.Intent.SlotItem
 import com.aliyuncs.chatbot.model.v20171011.QueryIntentsResponse.Intent.SlotItem.TagsItem;
 import com.aliyuncs.chatbot.model.v20171011.QueryIntentsResponse.Intent.UserSayItem;
 import com.aliyuncs.chatbot.model.v20171011.QueryIntentsResponse.Intent.UserSayItem.DataItem;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

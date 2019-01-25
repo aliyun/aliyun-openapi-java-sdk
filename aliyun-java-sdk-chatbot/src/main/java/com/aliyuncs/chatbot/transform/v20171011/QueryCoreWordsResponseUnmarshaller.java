@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.chatbot.model.v20171011.QueryCoreWordsResponse;
 import com.aliyuncs.chatbot.model.v20171011.QueryCoreWordsResponse.CoreWord;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

@@ -1,3 +1,7 @@
+2019-01-25 Version: 1.2.1
+1, fixed fastjson vulnerabilities: com.alibaba:fastjson@1.2.9 > com.alibaba:fastjson@1.2.48.
+2, add "categoryId" to api "QueryKnowledges".
+
 2018-11-15 Version: 1.2.0
 1, Add new API.
 
