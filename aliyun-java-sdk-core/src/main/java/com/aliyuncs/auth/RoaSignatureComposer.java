@@ -40,7 +40,7 @@ public class RoaSignatureComposer implements ISignatureComposer {
         Map<String, String> immutableMap = new HashMap<String, String>(parameters);
         immutableMap.put("Date", ParameterHelper.getRFC2616Date(new Date()));
         if (null == format) {
-            format = FormatType.RAW;
+            format = FormatType.JSON;
         }
         immutableMap.put("Accept", FormatType.mapFormatToAccept(format));
         immutableMap.put("x-acs-signature-method", signer.getSignerName());

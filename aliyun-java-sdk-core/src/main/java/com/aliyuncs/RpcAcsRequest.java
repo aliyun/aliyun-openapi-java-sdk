@@ -45,7 +45,7 @@ public abstract class RpcAcsRequest<T extends AcsResponse> extends AcsRequest<T>
 
     private void initialize() {
         this.setSysMethod(MethodType.GET);
-        this.setAcceptFormat(FormatType.XML);
+        this.setSysAcceptFormat(FormatType.JSON);
         this.setHttpContentType(FormatType.FORM);
         this.composer = RpcSignatureComposer.getComposer();
     }
