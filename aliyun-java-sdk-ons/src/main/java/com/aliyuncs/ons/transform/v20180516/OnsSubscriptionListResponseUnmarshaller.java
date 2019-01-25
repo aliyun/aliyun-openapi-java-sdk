@@ -43,6 +43,7 @@ public class OnsSubscriptionListResponseUnmarshaller {
 			subscribeInfoDo.setCreateTime(context.longValue("OnsSubscriptionListResponse.Data["+ i +"].CreateTime"));
 			subscribeInfoDo.setUpdateTime(context.longValue("OnsSubscriptionListResponse.Data["+ i +"].UpdateTime"));
 			subscribeInfoDo.setInstanceId(context.stringValue("OnsSubscriptionListResponse.Data["+ i +"].InstanceId"));
+			subscribeInfoDo.setIndependentNaming(context.booleanValue("OnsSubscriptionListResponse.Data["+ i +"].IndependentNaming"));
 
 			data.add(subscribeInfoDo);
 		}

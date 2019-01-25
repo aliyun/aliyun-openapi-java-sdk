@@ -85,6 +85,8 @@ public class OnsTopicGetResponse extends AcsResponse {
 
 		private String instanceId;
 
+		private Boolean independentNaming;
+
 		public Long getId() {
 			return this.id;
 		}
@@ -195,6 +197,14 @@ public class OnsTopicGetResponse extends AcsResponse {
 
 		public void setInstanceId(String instanceId) {
 			this.instanceId = instanceId;
+		}
+
+		public Boolean getIndependentNaming() {
+			return this.independentNaming;
+		}
+
+		public void setIndependentNaming(Boolean independentNaming) {
+			this.independentNaming = independentNaming;
 		}
 	}
 

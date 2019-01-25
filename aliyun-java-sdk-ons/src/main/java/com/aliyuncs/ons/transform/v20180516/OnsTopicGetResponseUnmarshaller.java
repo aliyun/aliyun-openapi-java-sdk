@@ -46,6 +46,7 @@ public class OnsTopicGetResponseUnmarshaller {
 			publishInfoDo.setUpdateTime(context.longValue("OnsTopicGetResponse.Data["+ i +"].UpdateTime"));
 			publishInfoDo.setRemark(context.stringValue("OnsTopicGetResponse.Data["+ i +"].Remark"));
 			publishInfoDo.setInstanceId(context.stringValue("OnsTopicGetResponse.Data["+ i +"].InstanceId"));
+			publishInfoDo.setIndependentNaming(context.booleanValue("OnsTopicGetResponse.Data["+ i +"].IndependentNaming"));
 
 			data.add(publishInfoDo);
 		}
