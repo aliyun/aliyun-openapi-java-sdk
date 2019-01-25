@@ -1,5 +1,6 @@
 package com.aliyuncs;
 
+import com.aliyuncs.airec.model.v20181012.PushDocumentRequest;
 import com.aliyuncs.exceptions.ClientException;
 import org.junit.Assert;
 import org.junit.Test;
@@ -40,6 +41,20 @@ public class ErrorHandlingTest extends BaseTest {
             Assert.assertEquals("SocketTimeoutException has occurred on a socket read or accept.",
                     e.getErrMsg()
             );
+        }
+    }
+
+    @Test
+    public void badFormatTypeTest() throws ClientException {
+        PushDocumentRequest request = new PushDocumentRequest();
+        request.setInstanceId("ff");
+        request.setTableName("test");
+        try {
+            this.client.getAcsResponse(request);
+            Assert.fail();
+        } catch (ClientException e) {
+            Assert.assertEquals("InstanceNotExist", e.getErrCode());
+            Assert.assertEquals("The specified instance does not exist.", e.getErrMsg());
         }
     }
 }

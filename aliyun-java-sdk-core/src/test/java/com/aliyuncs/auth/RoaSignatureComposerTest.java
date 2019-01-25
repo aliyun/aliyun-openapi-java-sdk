@@ -149,13 +149,13 @@ public class RoaSignatureComposerTest {
         when(signer.getSignerVersion()).thenReturn("signerVersion1");
         when(signer.getSignerType()).thenReturn("signerType1");
         PowerMockito.mockStatic(FormatType.class);
-        BDDMockito.given(FormatType.mapFormatToAccept(FormatType.RAW)).willReturn("raw");
+        BDDMockito.given(FormatType.mapFormatToAccept(FormatType.JSON)).willReturn("json");
         String accessKeyId = "ak";
         FormatType formatType = null;
         Map<String, String> res = composer.refreshSignParameters(parameters, signer, accessKeyId, formatType);
         Assert.assertEquals("paraValue1", res.get("paraKey1"));
         Assert.assertEquals("signerVersion1", res.get("x-acs-signature-version"));
-        Assert.assertEquals("raw", res.get("Accept"));
+        Assert.assertEquals("json", res.get("Accept"));
         Assert.assertEquals("signerType1", res.get("x-acs-signature-type"));
         Assert.assertEquals("signerName1", res.get("x-acs-signature-method"));
         Assert.assertNotNull(res.get("Date"));
