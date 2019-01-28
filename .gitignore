@@ -8,3 +8,4 @@
 .vscode/
 */*.iml
 .DS_Store
+*/lib/

@@ -9,10 +9,6 @@ skip_commits:
 build: off
 
 test_script:
-  - cd c:\projects\aliyun-openapi-java-sdk\aliyun-java-sdk-core
-  - mvn test -B
-#  - function test 做好后可以直接启用下面的命令，上面的命令可以抛弃
-#  - cd c:\projects\aliyun-openapi-java-sdk\java-sdk-function-test
-#  - mvn test -B
-
+  - mvn test -B -f .\aliyun-java-sdk-core\pom.xml
+  - if defined daily_accessKeyId ( if defined daily_accessSecret ( call appveyor-test.bat ) ) else echo BUILD FAILURE MissingAccessKeyId
 
