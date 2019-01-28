@@ -8,10 +8,9 @@ jdk:
   - oraclejdk11
 
 script:
-  - cd ./aliyun-java-sdk-core
-  #- mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
-  - mvn test -B
-
+  - mvn test -B -f ./aliyun-java-sdk-core/pom.xml
+  - test -z $daily_accessKeyId -a -z $daily_accessSecret || make travis-test
+ 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
 
