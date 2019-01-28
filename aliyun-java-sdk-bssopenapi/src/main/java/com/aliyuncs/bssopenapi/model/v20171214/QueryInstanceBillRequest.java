@@ -20,30 +20,36 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class QueryPriceListRequest extends RpcAcsRequest<QueryPriceListResponse> {
+public class QueryInstanceBillRequest extends RpcAcsRequest<QueryInstanceBillResponse> {
 	
-	public QueryPriceListRequest() {
-		super("BssOpenApi", "2017-12-14", "QueryPriceList");
+	public QueryInstanceBillRequest() {
+		super("BssOpenApi", "2017-12-14", "QueryInstanceBill");
 	}
 
-	private String moduleCode;
+	private Boolean isBillingItem;
 
 	private String productCode;
 
 	private String subscriptionType;
 
+	private Integer pageSize;
+
+	private String billingCycle;
+
 	private Long ownerId;
+
+	private Integer pageNum;
 
 	private String productType;
 
-	public String getModuleCode() {
-		return this.moduleCode;
+	public Boolean getIsBillingItem() {
+		return this.isBillingItem;
 	}
 
-	public void setModuleCode(String moduleCode) {
-		this.moduleCode = moduleCode;
-		if(moduleCode != null){
-			putQueryParameter("ModuleCode", moduleCode);
+	public void setIsBillingItem(Boolean isBillingItem) {
+		this.isBillingItem = isBillingItem;
+		if(isBillingItem != null){
+			putQueryParameter("IsBillingItem", isBillingItem.toString());
 		}
 	}
 
@@ -69,6 +75,28 @@ public class QueryPriceListRequest extends RpcAcsRequest<QueryPriceListResponse>
 		}
 	}
 
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getBillingCycle() {
+		return this.billingCycle;
+	}
+
+	public void setBillingCycle(String billingCycle) {
+		this.billingCycle = billingCycle;
+		if(billingCycle != null){
+			putQueryParameter("BillingCycle", billingCycle);
+		}
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -77,6 +105,17 @@ public class QueryPriceListRequest extends RpcAcsRequest<QueryPriceListResponse>
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public Integer getPageNum() {
+		return this.pageNum;
+	}
+
+	public void setPageNum(Integer pageNum) {
+		this.pageNum = pageNum;
+		if(pageNum != null){
+			putQueryParameter("PageNum", pageNum.toString());
 		}
 	}
 
@@ -92,8 +131,8 @@ public class QueryPriceListRequest extends RpcAcsRequest<QueryPriceListResponse>
 	}
 
 	@Override
-	public Class<QueryPriceListResponse> getResponseClass() {
-		return QueryPriceListResponse.class;
+	public Class<QueryInstanceBillResponse> getResponseClass() {
+		return QueryInstanceBillResponse.class;
 	}
 
 }

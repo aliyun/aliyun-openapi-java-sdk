@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.bssopenapi.model.v20171214.QueryPrepaidCardsResponse;
 import com.aliyuncs.bssopenapi.model.v20171214.QueryPrepaidCardsResponse.PrepaidCard;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

@@ -21,7 +21,6 @@ import com.aliyuncs.bssopenapi.model.v20171214.GetPayAsYouGoPriceResponse;
 import com.aliyuncs.bssopenapi.model.v20171214.GetPayAsYouGoPriceResponse.Data;
 import com.aliyuncs.bssopenapi.model.v20171214.GetPayAsYouGoPriceResponse.Data.ModuleDetail;
 import com.aliyuncs.bssopenapi.model.v20171214.GetPayAsYouGoPriceResponse.Data.PromotionDetail;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

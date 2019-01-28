@@ -14,7 +14,6 @@
 
 package com.aliyuncs.bssopenapi.model.v20171214;
 
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.bssopenapi.transform.v20171214.SetRenewalResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;

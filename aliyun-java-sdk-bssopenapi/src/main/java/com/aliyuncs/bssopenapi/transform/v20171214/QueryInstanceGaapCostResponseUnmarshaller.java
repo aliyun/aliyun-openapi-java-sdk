@@ -20,7 +20,6 @@ import java.util.List;
 import com.aliyuncs.bssopenapi.model.v20171214.QueryInstanceGaapCostResponse;
 import com.aliyuncs.bssopenapi.model.v20171214.QueryInstanceGaapCostResponse.Data;
 import com.aliyuncs.bssopenapi.model.v20171214.QueryInstanceGaapCostResponse.Data.Module;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

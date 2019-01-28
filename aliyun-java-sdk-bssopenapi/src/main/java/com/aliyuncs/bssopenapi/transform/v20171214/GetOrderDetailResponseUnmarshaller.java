@@ -20,7 +20,6 @@ import java.util.List;
 import com.aliyuncs.bssopenapi.model.v20171214.GetOrderDetailResponse;
 import com.aliyuncs.bssopenapi.model.v20171214.GetOrderDetailResponse.Data;
 import com.aliyuncs.bssopenapi.model.v20171214.GetOrderDetailResponse.Data.Order;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

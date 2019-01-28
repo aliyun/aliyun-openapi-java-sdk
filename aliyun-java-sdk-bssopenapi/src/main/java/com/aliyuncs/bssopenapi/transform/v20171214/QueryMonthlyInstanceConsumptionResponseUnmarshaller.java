@@ -20,7 +20,6 @@ import java.util.List;
 import com.aliyuncs.bssopenapi.model.v20171214.QueryMonthlyInstanceConsumptionResponse;
 import com.aliyuncs.bssopenapi.model.v20171214.QueryMonthlyInstanceConsumptionResponse.Data;
 import com.aliyuncs.bssopenapi.model.v20171214.QueryMonthlyInstanceConsumptionResponse.Data.Item;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

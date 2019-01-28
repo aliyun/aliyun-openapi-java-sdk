@@ -22,7 +22,6 @@ import com.aliyuncs.bssopenapi.model.v20171214.DescribePricingModuleResponse.Dat
 import com.aliyuncs.bssopenapi.model.v20171214.DescribePricingModuleResponse.Data.Attribute;
 import com.aliyuncs.bssopenapi.model.v20171214.DescribePricingModuleResponse.Data.Attribute.AttributeValue;
 import com.aliyuncs.bssopenapi.model.v20171214.DescribePricingModuleResponse.Data.Module;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

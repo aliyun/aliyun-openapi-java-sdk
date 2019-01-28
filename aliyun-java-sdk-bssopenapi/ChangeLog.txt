@@ -1,3 +1,7 @@
+2019-01-28 Version: 1.1.0
+1, Release 3 new Alibaba Cloud Bill API(QueryBillOverview、QueryBill、QueryInstanceBill). 
+2, Kindly suggest replace to new APIs who is using the old ones(QueryMonthlyBill、QuerySettlementBill、QueryMonthlyInstanceConsumption).
+
 2018-12-17 Version: 1.0.7
 1, Add EnableBillGeneration interface.
 2, Authorization for Virtual Network Operator.

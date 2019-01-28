@@ -24,7 +24,6 @@ import com.aliyuncs.bssopenapi.model.v20171214.DescribeResourcePackageProductRes
 import com.aliyuncs.bssopenapi.model.v20171214.DescribeResourcePackageProductResponse.Data.ResourcePackage.PackageType.Property;
 import com.aliyuncs.bssopenapi.model.v20171214.DescribeResourcePackageProductResponse.Data.ResourcePackage.PackageType.Specification;
 import com.aliyuncs.bssopenapi.model.v20171214.DescribeResourcePackageProductResponse.Data.ResourcePackage.PackageType.Specification.AvailableDuration;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

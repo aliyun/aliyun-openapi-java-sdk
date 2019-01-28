@@ -20,7 +20,6 @@ import java.util.List;
 import com.aliyuncs.bssopenapi.model.v20171214.GetResourcePackagePriceResponse;
 import com.aliyuncs.bssopenapi.model.v20171214.GetResourcePackagePriceResponse.Data;
 import com.aliyuncs.bssopenapi.model.v20171214.GetResourcePackagePriceResponse.Data.Promotion;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

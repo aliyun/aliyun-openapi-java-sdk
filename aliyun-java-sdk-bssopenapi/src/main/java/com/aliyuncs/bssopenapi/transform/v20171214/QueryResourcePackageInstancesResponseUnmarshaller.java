@@ -20,7 +20,6 @@ import java.util.List;
 import com.aliyuncs.bssopenapi.model.v20171214.QueryResourcePackageInstancesResponse;
 import com.aliyuncs.bssopenapi.model.v20171214.QueryResourcePackageInstancesResponse.Data;
 import com.aliyuncs.bssopenapi.model.v20171214.QueryResourcePackageInstancesResponse.Data.Instance;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

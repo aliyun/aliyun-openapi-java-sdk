@@ -16,14 +16,14 @@ package com.aliyuncs.bssopenapi.model.v20171214;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.bssopenapi.transform.v20171214.QueryMonthlyInstanceConsumptionResponseUnmarshaller;
+import com.aliyuncs.bssopenapi.transform.v20171214.QueryBillOverviewResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class QueryMonthlyInstanceConsumptionResponse extends AcsResponse {
+public class QueryBillOverviewResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -77,39 +77,13 @@ public class QueryMonthlyInstanceConsumptionResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Integer pageNum;
-
-		private Integer pageSize;
-
-		private Integer totalCount;
-
 		private String billingCycle;
 
+		private String accountID;
+
+		private String accountName;
+
 		private List<Item> items;
-
-		public Integer getPageNum() {
-			return this.pageNum;
-		}
-
-		public void setPageNum(Integer pageNum) {
-			this.pageNum = pageNum;
-		}
-
-		public Integer getPageSize() {
-			return this.pageSize;
-		}
-
-		public void setPageSize(Integer pageSize) {
-			this.pageSize = pageSize;
-		}
-
-		public Integer getTotalCount() {
-			return this.totalCount;
-		}
-
-		public void setTotalCount(Integer totalCount) {
-			this.totalCount = totalCount;
-		}
 
 		public String getBillingCycle() {
 			return this.billingCycle;
@@ -117,6 +91,22 @@ public class QueryMonthlyInstanceConsumptionResponse extends AcsResponse {
 
 		public void setBillingCycle(String billingCycle) {
 			this.billingCycle = billingCycle;
+		}
+
+		public String getAccountID() {
+			return this.accountID;
+		}
+
+		public void setAccountID(String accountID) {
+			this.accountID = accountID;
+		}
+
+		public String getAccountName() {
+			return this.accountName;
+		}
+
+		public void setAccountName(String accountName) {
+			this.accountName = accountName;
 		}
 
 		public List<Item> getItems() {
@@ -129,7 +119,7 @@ public class QueryMonthlyInstanceConsumptionResponse extends AcsResponse {
 
 		public static class Item {
 
-			private String instanceID;
+			private String item;
 
 			private String productCode;
 
@@ -137,23 +127,27 @@ public class QueryMonthlyInstanceConsumptionResponse extends AcsResponse {
 
 			private String subscriptionType;
 
-			private String tag;
+			private String productName;
 
-			private String resourceGroup;
-
-			private String payerAccount;
-
-			private String ownerID;
-
-			private String region;
+			private String productDetail;
 
 			private Float pretaxGrossAmount;
 
-			private Float discountAmount;
+			private Float invoiceDiscount;
+
+			private Float deductedByCoupons;
 
 			private Float pretaxAmount;
 
 			private String currency;
+
+			private Float paymentAmount;
+
+			private Float outstandingAmount;
+
+			private Float deductedByCashCoupons;
+
+			private Float deductedByPrepaidCard;
 
 			private Float pretaxAmountLocal;
 
@@ -163,12 +157,12 @@ public class QueryMonthlyInstanceConsumptionResponse extends AcsResponse {
 
 			private String paymentCurrency;
 
-			public String getInstanceID() {
-				return this.instanceID;
+			public String getItem() {
+				return this.item;
 			}
 
-			public void setInstanceID(String instanceID) {
-				this.instanceID = instanceID;
+			public void setItem(String item) {
+				this.item = item;
 			}
 
 			public String getProductCode() {
@@ -195,44 +189,20 @@ public class QueryMonthlyInstanceConsumptionResponse extends AcsResponse {
 				this.subscriptionType = subscriptionType;
 			}
 
-			public String getTag() {
-				return this.tag;
+			public String getProductName() {
+				return this.productName;
 			}
 
-			public void setTag(String tag) {
-				this.tag = tag;
+			public void setProductName(String productName) {
+				this.productName = productName;
 			}
 
-			public String getResourceGroup() {
-				return this.resourceGroup;
+			public String getProductDetail() {
+				return this.productDetail;
 			}
 
-			public void setResourceGroup(String resourceGroup) {
-				this.resourceGroup = resourceGroup;
-			}
-
-			public String getPayerAccount() {
-				return this.payerAccount;
-			}
-
-			public void setPayerAccount(String payerAccount) {
-				this.payerAccount = payerAccount;
-			}
-
-			public String getOwnerID() {
-				return this.ownerID;
-			}
-
-			public void setOwnerID(String ownerID) {
-				this.ownerID = ownerID;
-			}
-
-			public String getRegion() {
-				return this.region;
-			}
-
-			public void setRegion(String region) {
-				this.region = region;
+			public void setProductDetail(String productDetail) {
+				this.productDetail = productDetail;
 			}
 
 			public Float getPretaxGrossAmount() {
@@ -243,12 +213,20 @@ public class QueryMonthlyInstanceConsumptionResponse extends AcsResponse {
 				this.pretaxGrossAmount = pretaxGrossAmount;
 			}
 
-			public Float getDiscountAmount() {
-				return this.discountAmount;
+			public Float getInvoiceDiscount() {
+				return this.invoiceDiscount;
 			}
 
-			public void setDiscountAmount(Float discountAmount) {
-				this.discountAmount = discountAmount;
+			public void setInvoiceDiscount(Float invoiceDiscount) {
+				this.invoiceDiscount = invoiceDiscount;
+			}
+
+			public Float getDeductedByCoupons() {
+				return this.deductedByCoupons;
+			}
+
+			public void setDeductedByCoupons(Float deductedByCoupons) {
+				this.deductedByCoupons = deductedByCoupons;
 			}
 
 			public Float getPretaxAmount() {
@@ -265,6 +243,38 @@ public class QueryMonthlyInstanceConsumptionResponse extends AcsResponse {
 
 			public void setCurrency(String currency) {
 				this.currency = currency;
+			}
+
+			public Float getPaymentAmount() {
+				return this.paymentAmount;
+			}
+
+			public void setPaymentAmount(Float paymentAmount) {
+				this.paymentAmount = paymentAmount;
+			}
+
+			public Float getOutstandingAmount() {
+				return this.outstandingAmount;
+			}
+
+			public void setOutstandingAmount(Float outstandingAmount) {
+				this.outstandingAmount = outstandingAmount;
+			}
+
+			public Float getDeductedByCashCoupons() {
+				return this.deductedByCashCoupons;
+			}
+
+			public void setDeductedByCashCoupons(Float deductedByCashCoupons) {
+				this.deductedByCashCoupons = deductedByCashCoupons;
+			}
+
+			public Float getDeductedByPrepaidCard() {
+				return this.deductedByPrepaidCard;
+			}
+
+			public void setDeductedByPrepaidCard(Float deductedByPrepaidCard) {
+				this.deductedByPrepaidCard = deductedByPrepaidCard;
 			}
 
 			public Float getPretaxAmountLocal() {
@@ -302,7 +312,7 @@ public class QueryMonthlyInstanceConsumptionResponse extends AcsResponse {
 	}
 
 	@Override
-	public QueryMonthlyInstanceConsumptionResponse getInstance(UnmarshallerContext context) {
-		return	QueryMonthlyInstanceConsumptionResponseUnmarshaller.unmarshall(this, context);
+	public QueryBillOverviewResponse getInstance(UnmarshallerContext context) {
+		return	QueryBillOverviewResponseUnmarshaller.unmarshall(this, context);
 	}
 }

@@ -20,7 +20,6 @@ import java.util.List;
 import com.aliyuncs.bssopenapi.model.v20171214.QueryRedeemResponse;
 import com.aliyuncs.bssopenapi.model.v20171214.QueryRedeemResponse.Data;
 import com.aliyuncs.bssopenapi.model.v20171214.QueryRedeemResponse.Data.RedeemItem;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

@@ -20,7 +20,6 @@ import java.util.List;
 import com.aliyuncs.bssopenapi.model.v20171214.QueryProductListResponse;
 import com.aliyuncs.bssopenapi.model.v20171214.QueryProductListResponse.Data;
 import com.aliyuncs.bssopenapi.model.v20171214.QueryProductListResponse.Data.Product;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
