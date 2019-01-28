@@ -22,7 +22,6 @@ import com.aliyuncs.rds.model.v20140815.DescribeDBInstanceAttributeResponse.DBIn
 import com.aliyuncs.rds.model.v20140815.DescribeDBInstanceAttributeResponse.DBInstanceAttribute.Extra;
 import com.aliyuncs.rds.model.v20140815.DescribeDBInstanceAttributeResponse.DBInstanceAttribute.ReadOnlyDBInstanceId;
 import com.aliyuncs.rds.model.v20140815.DescribeDBInstanceAttributeResponse.DBInstanceAttribute.SlaveRegion;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

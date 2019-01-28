@@ -14,7 +14,6 @@
 
 package com.aliyuncs.rds.model.v20140815;
 
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.rds.transform.v20140815.DescribeProxyFunctionSupportResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -27,19 +26,19 @@ public class DescribeProxyFunctionSupportResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Integer isProxyEnable;
+	private Boolean isProxySwitchEnable;
 
-	private Integer isRwsplitEnable;
+	private Boolean isRwsplitEnable;
 
-	private Integer isRwsplitSupportReplicationLag;
+	private Boolean isRwsplitSupportReplicationLag;
 
-	private Integer isRwsplitSupportWeight;
+	private Boolean isRwsplitSupportWeight;
 
-	private Integer isTransparentSwitchEnable;
+	private Boolean isTransparentSwitchEnable;
 
-	private Integer isShortConnectionOptimizeEnable;
+	private Boolean isShortConnectionOptimizeEnable;
 
-	private Integer isAntiBruteFroceEnable;
+	private Boolean isAntiBruteFroceEnable;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -49,59 +48,59 @@ public class DescribeProxyFunctionSupportResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Integer getIsProxyEnable() {
-		return this.isProxyEnable;
+	public Boolean getIsProxySwitchEnable() {
+		return this.isProxySwitchEnable;
 	}
 
-	public void setIsProxyEnable(Integer isProxyEnable) {
-		this.isProxyEnable = isProxyEnable;
+	public void setIsProxySwitchEnable(Boolean isProxySwitchEnable) {
+		this.isProxySwitchEnable = isProxySwitchEnable;
 	}
 
-	public Integer getIsRwsplitEnable() {
+	public Boolean getIsRwsplitEnable() {
 		return this.isRwsplitEnable;
 	}
 
-	public void setIsRwsplitEnable(Integer isRwsplitEnable) {
+	public void setIsRwsplitEnable(Boolean isRwsplitEnable) {
 		this.isRwsplitEnable = isRwsplitEnable;
 	}
 
-	public Integer getIsRwsplitSupportReplicationLag() {
+	public Boolean getIsRwsplitSupportReplicationLag() {
 		return this.isRwsplitSupportReplicationLag;
 	}
 
-	public void setIsRwsplitSupportReplicationLag(Integer isRwsplitSupportReplicationLag) {
+	public void setIsRwsplitSupportReplicationLag(Boolean isRwsplitSupportReplicationLag) {
 		this.isRwsplitSupportReplicationLag = isRwsplitSupportReplicationLag;
 	}
 
-	public Integer getIsRwsplitSupportWeight() {
+	public Boolean getIsRwsplitSupportWeight() {
 		return this.isRwsplitSupportWeight;
 	}
 
-	public void setIsRwsplitSupportWeight(Integer isRwsplitSupportWeight) {
+	public void setIsRwsplitSupportWeight(Boolean isRwsplitSupportWeight) {
 		this.isRwsplitSupportWeight = isRwsplitSupportWeight;
 	}
 
-	public Integer getIsTransparentSwitchEnable() {
+	public Boolean getIsTransparentSwitchEnable() {
 		return this.isTransparentSwitchEnable;
 	}
 
-	public void setIsTransparentSwitchEnable(Integer isTransparentSwitchEnable) {
+	public void setIsTransparentSwitchEnable(Boolean isTransparentSwitchEnable) {
 		this.isTransparentSwitchEnable = isTransparentSwitchEnable;
 	}
 
-	public Integer getIsShortConnectionOptimizeEnable() {
+	public Boolean getIsShortConnectionOptimizeEnable() {
 		return this.isShortConnectionOptimizeEnable;
 	}
 
-	public void setIsShortConnectionOptimizeEnable(Integer isShortConnectionOptimizeEnable) {
+	public void setIsShortConnectionOptimizeEnable(Boolean isShortConnectionOptimizeEnable) {
 		this.isShortConnectionOptimizeEnable = isShortConnectionOptimizeEnable;
 	}
 
-	public Integer getIsAntiBruteFroceEnable() {
+	public Boolean getIsAntiBruteFroceEnable() {
 		return this.isAntiBruteFroceEnable;
 	}
 
-	public void setIsAntiBruteFroceEnable(Integer isAntiBruteFroceEnable) {
+	public void setIsAntiBruteFroceEnable(Boolean isAntiBruteFroceEnable) {
 		this.isAntiBruteFroceEnable = isAntiBruteFroceEnable;
 	}
 

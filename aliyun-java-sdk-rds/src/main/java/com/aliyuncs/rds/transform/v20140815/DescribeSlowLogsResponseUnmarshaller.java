@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.rds.model.v20140815.DescribeSlowLogsResponse;
 import com.aliyuncs.rds.model.v20140815.DescribeSlowLogsResponse.SQLSlowLog;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -40,8 +39,7 @@ public class DescribeSlowLogsResponseUnmarshaller {
 		for (int i = 0; i < context.lengthValue("DescribeSlowLogsResponse.Items.Length"); i++) {
 			SQLSlowLog sQLSlowLog = new SQLSlowLog();
 			sQLSlowLog.setSlowLogId(context.longValue("DescribeSlowLogsResponse.Items["+ i +"].SlowLogId"));
-			sQLSlowLog.setSQLId(context.longValue("DescribeSlowLogsResponse.Items["+ i +"].SQLId"));
-			sQLSlowLog.setSQLHASH(context.longValue("DescribeSlowLogsResponse.Items["+ i +"].SQLHASH"));
+			sQLSlowLog.setSQLHASH(context.stringValue("DescribeSlowLogsResponse.Items["+ i +"].SQLHASH"));
 			sQLSlowLog.setSQLIdStr(context.stringValue("DescribeSlowLogsResponse.Items["+ i +"].SQLIdStr"));
 			sQLSlowLog.setDBName(context.stringValue("DescribeSlowLogsResponse.Items["+ i +"].DBName"));
 			sQLSlowLog.setSQLText(context.stringValue("DescribeSlowLogsResponse.Items["+ i +"].SQLText"));

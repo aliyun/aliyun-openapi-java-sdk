@@ -22,7 +22,6 @@ import com.aliyuncs.rds.model.v20140815.DescribePriceResponse.PriceInfo;
 import com.aliyuncs.rds.model.v20140815.DescribePriceResponse.PriceInfo.ActivityInfo;
 import com.aliyuncs.rds.model.v20140815.DescribePriceResponse.PriceInfo.Coupon;
 import com.aliyuncs.rds.model.v20140815.DescribePriceResponse.Rule;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

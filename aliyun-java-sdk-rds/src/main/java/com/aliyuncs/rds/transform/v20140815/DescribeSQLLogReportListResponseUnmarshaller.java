@@ -21,7 +21,6 @@ import com.aliyuncs.rds.model.v20140815.DescribeSQLLogReportListResponse;
 import com.aliyuncs.rds.model.v20140815.DescribeSQLLogReportListResponse.Item;
 import com.aliyuncs.rds.model.v20140815.DescribeSQLLogReportListResponse.Item.LatencyTopNItem;
 import com.aliyuncs.rds.model.v20140815.DescribeSQLLogReportListResponse.Item.QPSTopNItem;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

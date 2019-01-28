@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.rds.model.v20140815.DescribeCollationTimeZonesResponse;
 import com.aliyuncs.rds.model.v20140815.DescribeCollationTimeZonesResponse.CollationTimeZone;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.rds.model.v20140815.DescribeBinlogFilesResponse;
 import com.aliyuncs.rds.model.v20140815.DescribeBinlogFilesResponse.BinLogFile;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

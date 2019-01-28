@@ -20,7 +20,6 @@ import java.util.List;
 import com.aliyuncs.rds.model.v20140815.DescribeDBInstancePerformanceResponse;
 import com.aliyuncs.rds.model.v20140815.DescribeDBInstancePerformanceResponse.PerformanceKey;
 import com.aliyuncs.rds.model.v20140815.DescribeDBInstancePerformanceResponse.PerformanceKey.PerformanceValue;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

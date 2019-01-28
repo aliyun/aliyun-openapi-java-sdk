@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.rds.model.v20140815.DescribeModifyParameterLogResponse;
 import com.aliyuncs.rds.model.v20140815.DescribeModifyParameterLogResponse.ParameterChangeLog;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

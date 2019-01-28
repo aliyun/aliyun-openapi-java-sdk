@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.rds.model.v20140815.DescribeTemplatesListResponse;
 import com.aliyuncs.rds.model.v20140815.DescribeTemplatesListResponse.ItemsItem;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

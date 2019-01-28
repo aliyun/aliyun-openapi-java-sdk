@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.rds.model.v20140815.DescribeSlowLogRecordsResponse;
 import com.aliyuncs.rds.model.v20140815.DescribeSlowLogRecordsResponse.SQLSlowRecord;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

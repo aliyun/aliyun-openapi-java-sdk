@@ -18,7 +18,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.rds.model.v20140815.DescribeCharacterSetNameResponse;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

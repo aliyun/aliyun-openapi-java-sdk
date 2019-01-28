@@ -1,3 +1,7 @@
+2019-01-28 Version: 2.3.2
+1, modify DescribeSlowLogs OpenApi.
+
+
 2019-01-04 Version: 2.3.1
 1, modify DescribeSlowLogs, support query param SQLHASH, remove SQLID query param.
 2, modify DescribeSlowLogRecords, response values add SQLHASH, remove SQLID.

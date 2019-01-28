@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.rds.model.v20140815.DescribeMetaListResponse;
 import com.aliyuncs.rds.model.v20140815.DescribeMetaListResponse.Meta;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

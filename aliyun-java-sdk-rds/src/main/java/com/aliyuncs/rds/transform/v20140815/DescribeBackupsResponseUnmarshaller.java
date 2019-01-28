@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.rds.model.v20140815.DescribeBackupsResponse;
 import com.aliyuncs.rds.model.v20140815.DescribeBackupsResponse.Backup;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -54,7 +53,7 @@ public class DescribeBackupsResponseUnmarshaller {
 			backup.setBackupSize(context.longValue("DescribeBackupsResponse.Items["+ i +"].BackupSize"));
 			backup.setHostInstanceID(context.stringValue("DescribeBackupsResponse.Items["+ i +"].HostInstanceID"));
 			backup.setStoreStatus(context.stringValue("DescribeBackupsResponse.Items["+ i +"].StoreStatus"));
-			backup.setConsistentTime(context.stringValue("DescribeBackupsResponse.Items["+ i +"].ConsistentTime"));
+			backup.setMetaStatus(context.stringValue("DescribeBackupsResponse.Items["+ i +"].MetaStatus"));
 
 			items.add(backup);
 		}

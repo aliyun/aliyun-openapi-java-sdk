@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.rds.model.v20140815.DescribeTagsResponse;
 import com.aliyuncs.rds.model.v20140815.DescribeTagsResponse.TagInfos;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

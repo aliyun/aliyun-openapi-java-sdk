@@ -15,7 +15,6 @@
 package com.aliyuncs.rds.model.v20140815;
 
 import java.util.List;
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.rds.transform.v20140815.DescribeAvailableResourceResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -58,10 +57,26 @@ public class DescribeAvailableResourceResponse extends AcsResponse {
 
 		private List<SupportedEngines> supportedEngine;
 
+		public String getBizRegionId() {
+			return this.regionId;
+		}
+
+		public void setBizRegionId(String regionId) {
+			this.regionId = regionId;
+		}
+
+		/**
+		 * @deprecated use getBizRegionId instead of this.
+		 */
+		@Deprecated
 		public String getRegionId() {
 			return this.regionId;
 		}
 
+		/**
+		 * @deprecated use setBizRegionId instead of this.
+		 */
+		@Deprecated
 		public void setRegionId(String regionId) {
 			this.regionId = regionId;
 		}
@@ -126,10 +141,26 @@ public class DescribeAvailableResourceResponse extends AcsResponse {
 
 				private List<SupportedCategorys> supportedCategory;
 
+				public String getBizVersion() {
+					return this.version;
+				}
+
+				public void setBizVersion(String version) {
+					this.version = version;
+				}
+
+				/**
+				 * @deprecated use getBizVersion instead of this.
+				 */
+				@Deprecated
 				public String getVersion() {
 					return this.version;
 				}
 
+				/**
+				 * @deprecated use setBizVersion instead of this.
+				 */
+				@Deprecated
 				public void setVersion(String version) {
 					this.version = version;
 				}

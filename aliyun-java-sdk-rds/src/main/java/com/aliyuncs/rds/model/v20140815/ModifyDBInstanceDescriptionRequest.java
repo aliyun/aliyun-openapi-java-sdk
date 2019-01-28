@@ -30,8 +30,6 @@ public class ModifyDBInstanceDescriptionRequest extends RpcAcsRequest<ModifyDBIn
 
 	private String resourceOwnerAccount;
 
-	private String clientToken;
-
 	private String ownerAccount;
 
 	private String dBInstanceId;
@@ -59,17 +57,6 @@ public class ModifyDBInstanceDescriptionRequest extends RpcAcsRequest<ModifyDBIn
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public String getClientToken() {
-		return this.clientToken;
-	}
-
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putQueryParameter("ClientToken", clientToken);
 		}
 	}
 

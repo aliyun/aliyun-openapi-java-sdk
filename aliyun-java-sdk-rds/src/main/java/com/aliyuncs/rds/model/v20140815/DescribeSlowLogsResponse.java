@@ -15,7 +15,6 @@
 package com.aliyuncs.rds.model.v20140815;
 
 import java.util.List;
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.rds.transform.v20140815.DescribeSlowLogsResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -120,9 +119,7 @@ public class DescribeSlowLogsResponse extends AcsResponse {
 
 		private Long slowLogId;
 
-		private Long sQLId;
-
-		private Long sQLHASH;
+		private String sQLHASH;
 
 		private String sQLIdStr;
 
@@ -170,19 +167,11 @@ public class DescribeSlowLogsResponse extends AcsResponse {
 			this.slowLogId = slowLogId;
 		}
 
-		public Long getSQLId() {
-			return this.sQLId;
-		}
-
-		public void setSQLId(Long sQLId) {
-			this.sQLId = sQLId;
-		}
-
-		public Long getSQLHASH() {
+		public String getSQLHASH() {
 			return this.sQLHASH;
 		}
 
-		public void setSQLHASH(Long sQLHASH) {
+		public void setSQLHASH(String sQLHASH) {
 			this.sQLHASH = sQLHASH;
 		}
 

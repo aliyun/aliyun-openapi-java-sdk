@@ -30,8 +30,6 @@ public class DescribeResourceUsageRequest extends RpcAcsRequest<DescribeResource
 
 	private String resourceOwnerAccount;
 
-	private String clientToken;
-
 	private String ownerAccount;
 
 	private String dBInstanceId;
@@ -57,17 +55,6 @@ public class DescribeResourceUsageRequest extends RpcAcsRequest<DescribeResource
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public String getClientToken() {
-		return this.clientToken;
-	}
-
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putQueryParameter("ClientToken", clientToken);
 		}
 	}
 

@@ -26,8 +26,6 @@ public class DescribeSlowLogRecordsRequest extends RpcAcsRequest<DescribeSlowLog
 		super("Rds", "2014-08-15", "DescribeSlowLogRecords", "rds");
 	}
 
-	private Long sQLId;
-
 	private Long resourceOwnerId;
 
 	private String resourceOwnerAccount;
@@ -49,17 +47,6 @@ public class DescribeSlowLogRecordsRequest extends RpcAcsRequest<DescribeSlowLog
 	private String dBInstanceId;
 
 	private String sQLHASH;
-
-	public Long getSQLId() {
-		return this.sQLId;
-	}
-
-	public void setSQLId(Long sQLId) {
-		this.sQLId = sQLId;
-		if(sQLId != null){
-			putQueryParameter("SQLId", sQLId.toString());
-		}
-	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;

@@ -14,7 +14,6 @@
 
 package com.aliyuncs.rds.model.v20140815;
 
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.rds.transform.v20140815.UpgradeDBInstanceKernelVersionResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;

@@ -24,7 +24,6 @@ import com.aliyuncs.rds.model.v20140815.DescribeAvailableInstanceClassResponse.A
 import com.aliyuncs.rds.model.v20140815.DescribeAvailableInstanceClassResponse.AvailableZone.SupportedEngines.SupportedEngineVersions.SupportedCategorys;
 import com.aliyuncs.rds.model.v20140815.DescribeAvailableInstanceClassResponse.AvailableZone.SupportedEngines.SupportedEngineVersions.SupportedCategorys.SupportedStorageTypes;
 import com.aliyuncs.rds.model.v20140815.DescribeAvailableInstanceClassResponse.AvailableZone.SupportedEngines.SupportedEngineVersions.SupportedCategorys.SupportedStorageTypes.AvailableResources;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

@@ -23,13 +23,13 @@ public class DescribeProxyFunctionSupportResponseUnmarshaller {
 	public static DescribeProxyFunctionSupportResponse unmarshall(DescribeProxyFunctionSupportResponse describeProxyFunctionSupportResponse, UnmarshallerContext context) {
 		
 		describeProxyFunctionSupportResponse.setRequestId(context.stringValue("DescribeProxyFunctionSupportResponse.RequestId"));
-		describeProxyFunctionSupportResponse.setIsProxyEnable(context.integerValue("DescribeProxyFunctionSupportResponse.IsProxyEnable"));
-		describeProxyFunctionSupportResponse.setIsRwsplitEnable(context.integerValue("DescribeProxyFunctionSupportResponse.IsRwsplitEnable"));
-		describeProxyFunctionSupportResponse.setIsRwsplitSupportReplicationLag(context.integerValue("DescribeProxyFunctionSupportResponse.IsRwsplitSupportReplicationLag"));
-		describeProxyFunctionSupportResponse.setIsRwsplitSupportWeight(context.integerValue("DescribeProxyFunctionSupportResponse.IsRwsplitSupportWeight"));
-		describeProxyFunctionSupportResponse.setIsTransparentSwitchEnable(context.integerValue("DescribeProxyFunctionSupportResponse.IsTransparentSwitchEnable"));
-		describeProxyFunctionSupportResponse.setIsShortConnectionOptimizeEnable(context.integerValue("DescribeProxyFunctionSupportResponse.IsShortConnectionOptimizeEnable"));
-		describeProxyFunctionSupportResponse.setIsAntiBruteFroceEnable(context.integerValue("DescribeProxyFunctionSupportResponse.IsAntiBruteFroceEnable"));
+		describeProxyFunctionSupportResponse.setIsProxySwitchEnable(context.booleanValue("DescribeProxyFunctionSupportResponse.IsProxySwitchEnable"));
+		describeProxyFunctionSupportResponse.setIsRwsplitEnable(context.booleanValue("DescribeProxyFunctionSupportResponse.IsRwsplitEnable"));
+		describeProxyFunctionSupportResponse.setIsRwsplitSupportReplicationLag(context.booleanValue("DescribeProxyFunctionSupportResponse.IsRwsplitSupportReplicationLag"));
+		describeProxyFunctionSupportResponse.setIsRwsplitSupportWeight(context.booleanValue("DescribeProxyFunctionSupportResponse.IsRwsplitSupportWeight"));
+		describeProxyFunctionSupportResponse.setIsTransparentSwitchEnable(context.booleanValue("DescribeProxyFunctionSupportResponse.IsTransparentSwitchEnable"));
+		describeProxyFunctionSupportResponse.setIsShortConnectionOptimizeEnable(context.booleanValue("DescribeProxyFunctionSupportResponse.IsShortConnectionOptimizeEnable"));
+		describeProxyFunctionSupportResponse.setIsAntiBruteFroceEnable(context.booleanValue("DescribeProxyFunctionSupportResponse.IsAntiBruteFroceEnable"));
 	 
 	 	return describeProxyFunctionSupportResponse;
 	}
