@@ -54,6 +54,8 @@ public class DescribeScalingRulesRequest extends RpcAcsRequest<DescribeScalingRu
 
 	private Integer pageSize;
 
+	private String scalingRuleType;
+
 	private String scalingRuleId10;
 
 	private String resourceOwnerAccount;
@@ -251,6 +253,17 @@ public class DescribeScalingRulesRequest extends RpcAcsRequest<DescribeScalingRu
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getScalingRuleType() {
+		return this.scalingRuleType;
+	}
+
+	public void setScalingRuleType(String scalingRuleType) {
+		this.scalingRuleType = scalingRuleType;
+		if(scalingRuleType != null){
+			putQueryParameter("ScalingRuleType", scalingRuleType);
 		}
 	}
 

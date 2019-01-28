@@ -31,6 +31,9 @@ public class DescribeLimitationResponseUnmarshaller {
 		describeLimitationResponse.setMaxNumberOfLoadBalancers(context.integerValue("DescribeLimitationResponse.MaxNumberOfLoadBalancers"));
 		describeLimitationResponse.setMaxNumberOfMinSize(context.integerValue("DescribeLimitationResponse.MaxNumberOfMinSize"));
 		describeLimitationResponse.setMaxNumberOfMaxSize(context.integerValue("DescribeLimitationResponse.MaxNumberOfMaxSize"));
+		describeLimitationResponse.setMaxNumberOfVServerGroups(context.integerValue("DescribeLimitationResponse.MaxNumberOfVServerGroups"));
+		describeLimitationResponse.setMaxNumberOfLifecycleHooks(context.integerValue("DescribeLimitationResponse.MaxNumberOfLifecycleHooks"));
+		describeLimitationResponse.setMaxNumberOfNotificationConfigurations(context.integerValue("DescribeLimitationResponse.MaxNumberOfNotificationConfigurations"));
 	 
 	 	return describeLimitationResponse;
 	}

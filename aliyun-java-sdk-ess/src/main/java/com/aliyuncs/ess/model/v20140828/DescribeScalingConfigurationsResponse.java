@@ -15,7 +15,6 @@
 package com.aliyuncs.ess.model.v20140828;
 
 import java.util.List;
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.ess.transform.v20140828.DescribeScalingConfigurationsResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -133,6 +132,8 @@ public class DescribeScalingConfigurationsResponse extends AcsResponse {
 		private String spotStrategy;
 
 		private Boolean passwordInherit;
+
+		private String resourceGroupId;
 
 		private List<DataDisk> dataDisks;
 
@@ -364,6 +365,14 @@ public class DescribeScalingConfigurationsResponse extends AcsResponse {
 
 		public void setPasswordInherit(Boolean passwordInherit) {
 			this.passwordInherit = passwordInherit;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
 		}
 
 		public List<DataDisk> getDataDisks() {

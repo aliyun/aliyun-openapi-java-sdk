@@ -20,30 +20,15 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class DescribeScalingActivityDetailRequest extends RpcAcsRequest<DescribeScalingActivityDetailResponse> {
+public class DescribeAccountAttributesRequest extends RpcAcsRequest<DescribeAccountAttributesResponse> {
 	
-	public DescribeScalingActivityDetailRequest() {
-		super("Ess", "2014-08-28", "DescribeScalingActivityDetail", "ess");
+	public DescribeAccountAttributesRequest() {
+		super("Ess", "2014-08-28", "DescribeAccountAttributes", "ess");
 	}
-
-	private Long resourceOwnerId;
 
 	private String resourceOwnerAccount;
 
 	private Long ownerId;
-
-	private String scalingActivityId;
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
 
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
@@ -67,20 +52,9 @@ public class DescribeScalingActivityDetailRequest extends RpcAcsRequest<Describe
 		}
 	}
 
-	public String getScalingActivityId() {
-		return this.scalingActivityId;
-	}
-
-	public void setScalingActivityId(String scalingActivityId) {
-		this.scalingActivityId = scalingActivityId;
-		if(scalingActivityId != null){
-			putQueryParameter("ScalingActivityId", scalingActivityId);
-		}
-	}
-
 	@Override
-	public Class<DescribeScalingActivityDetailResponse> getResponseClass() {
-		return DescribeScalingActivityDetailResponse.class;
+	public Class<DescribeAccountAttributesResponse> getResponseClass() {
+		return DescribeAccountAttributesResponse.class;
 	}
 
 }

@@ -15,7 +15,6 @@
 package com.aliyuncs.ess.model.v20140828;
 
 import java.util.List;
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.ess.transform.v20140828.DescribeScalingGroupsResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -252,10 +251,26 @@ public class DescribeScalingGroupsResponse extends AcsResponse {
 			this.scalingGroupId = scalingGroupId;
 		}
 
+		public String getBizRegionId() {
+			return this.regionId;
+		}
+
+		public void setBizRegionId(String regionId) {
+			this.regionId = regionId;
+		}
+
+		/**
+		 * @deprecated use getBizRegionId instead of this.
+		 */
+		@Deprecated
 		public String getRegionId() {
 			return this.regionId;
 		}
 
+		/**
+		 * @deprecated use setBizRegionId instead of this.
+		 */
+		@Deprecated
 		public void setRegionId(String regionId) {
 			this.regionId = regionId;
 		}

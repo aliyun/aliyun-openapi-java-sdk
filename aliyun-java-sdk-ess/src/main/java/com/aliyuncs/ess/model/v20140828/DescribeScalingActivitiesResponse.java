@@ -15,7 +15,6 @@
 package com.aliyuncs.ess.model.v20140828;
 
 import java.util.List;
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.ess.transform.v20140828.DescribeScalingActivitiesResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;

@@ -15,7 +15,6 @@
 package com.aliyuncs.ess.model.v20140828;
 
 import java.util.List;
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.ess.transform.v20140828.DescribeScalingRulesResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -96,6 +95,18 @@ public class DescribeScalingRulesResponse extends AcsResponse {
 
 		private String scalingRuleAri;
 
+		private String scalingRuleType;
+
+		private Integer estimatedInstanceWarmup;
+
+		private String metricName;
+
+		private Float targetValue;
+
+		private Boolean disableScaleIn;
+
+		private List<Alarm> alarms;
+
 		public String getScalingRuleId() {
 			return this.scalingRuleId;
 		}
@@ -166,6 +177,77 @@ public class DescribeScalingRulesResponse extends AcsResponse {
 
 		public void setScalingRuleAri(String scalingRuleAri) {
 			this.scalingRuleAri = scalingRuleAri;
+		}
+
+		public String getScalingRuleType() {
+			return this.scalingRuleType;
+		}
+
+		public void setScalingRuleType(String scalingRuleType) {
+			this.scalingRuleType = scalingRuleType;
+		}
+
+		public Integer getEstimatedInstanceWarmup() {
+			return this.estimatedInstanceWarmup;
+		}
+
+		public void setEstimatedInstanceWarmup(Integer estimatedInstanceWarmup) {
+			this.estimatedInstanceWarmup = estimatedInstanceWarmup;
+		}
+
+		public String getMetricName() {
+			return this.metricName;
+		}
+
+		public void setMetricName(String metricName) {
+			this.metricName = metricName;
+		}
+
+		public Float getTargetValue() {
+			return this.targetValue;
+		}
+
+		public void setTargetValue(Float targetValue) {
+			this.targetValue = targetValue;
+		}
+
+		public Boolean getDisableScaleIn() {
+			return this.disableScaleIn;
+		}
+
+		public void setDisableScaleIn(Boolean disableScaleIn) {
+			this.disableScaleIn = disableScaleIn;
+		}
+
+		public List<Alarm> getAlarms() {
+			return this.alarms;
+		}
+
+		public void setAlarms(List<Alarm> alarms) {
+			this.alarms = alarms;
+		}
+
+		public static class Alarm {
+
+			private String alarmTaskName;
+
+			private String alarmTaskId;
+
+			public String getAlarmTaskName() {
+				return this.alarmTaskName;
+			}
+
+			public void setAlarmTaskName(String alarmTaskName) {
+				this.alarmTaskName = alarmTaskName;
+			}
+
+			public String getAlarmTaskId() {
+				return this.alarmTaskId;
+			}
+
+			public void setAlarmTaskId(String alarmTaskId) {
+				this.alarmTaskId = alarmTaskId;
+			}
 		}
 	}
 

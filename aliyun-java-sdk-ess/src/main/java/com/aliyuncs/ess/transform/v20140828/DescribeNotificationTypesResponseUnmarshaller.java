@@ -18,7 +18,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.ess.model.v20140828.DescribeNotificationTypesResponse;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

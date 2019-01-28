@@ -47,6 +47,8 @@ public class ModifyScalingConfigurationRequest extends RpcAcsRequest<ModifyScali
 
 	private String userData;
 
+	private String resourceGroupId;
+
 	private String hostName;
 
 	private Boolean passwordInherit;
@@ -197,6 +199,17 @@ public class ModifyScalingConfigurationRequest extends RpcAcsRequest<ModifyScali
 		this.userData = userData;
 		if(userData != null){
 			putQueryParameter("UserData", userData);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

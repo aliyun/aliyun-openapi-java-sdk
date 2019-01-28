@@ -27,17 +27,57 @@ public class ModifyAlarmRequest extends RpcAcsRequest<ModifyAlarmResponse> {
 		super("Ess", "2014-08-28", "ModifyAlarm", "ess");
 	}
 
+	private String metricType;
+
+	private Integer period;
+
 	private String resourceOwnerAccount;
 
-	private String name;
+	private Integer groupId;
 
 	private String description;
 
 	private List<String> alarmActions;
 
+	private Float threshold;
+
 	private Long ownerId;
 
 	private String alarmTaskId;
+
+	private String name;
+
+	private Integer evaluationCount;
+
+	private String metricName;
+
+	private String comparisonOperator;
+
+	private List<Dimension> dimensions;
+
+	private String statistics;
+
+	public String getMetricType() {
+		return this.metricType;
+	}
+
+	public void setMetricType(String metricType) {
+		this.metricType = metricType;
+		if(metricType != null){
+			putQueryParameter("MetricType", metricType);
+		}
+	}
+
+	public Integer getPeriod() {
+		return this.period;
+	}
+
+	public void setPeriod(Integer period) {
+		this.period = period;
+		if(period != null){
+			putQueryParameter("Period", period.toString());
+		}
+	}
 
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
@@ -50,14 +90,14 @@ public class ModifyAlarmRequest extends RpcAcsRequest<ModifyAlarmResponse> {
 		}
 	}
 
-	public String getName() {
-		return this.name;
+	public Integer getGroupId() {
+		return this.groupId;
 	}
 
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putQueryParameter("Name", name);
+	public void setGroupId(Integer groupId) {
+		this.groupId = groupId;
+		if(groupId != null){
+			putQueryParameter("GroupId", groupId.toString());
 		}
 	}
 
@@ -85,6 +125,17 @@ public class ModifyAlarmRequest extends RpcAcsRequest<ModifyAlarmResponse> {
 		}	
 	}
 
+	public Float getThreshold() {
+		return this.threshold;
+	}
+
+	public void setThreshold(Float threshold) {
+		this.threshold = threshold;
+		if(threshold != null){
+			putQueryParameter("Threshold", threshold.toString());
+		}
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -104,6 +155,98 @@ public class ModifyAlarmRequest extends RpcAcsRequest<ModifyAlarmResponse> {
 		this.alarmTaskId = alarmTaskId;
 		if(alarmTaskId != null){
 			putQueryParameter("AlarmTaskId", alarmTaskId);
+		}
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
+		}
+	}
+
+	public Integer getEvaluationCount() {
+		return this.evaluationCount;
+	}
+
+	public void setEvaluationCount(Integer evaluationCount) {
+		this.evaluationCount = evaluationCount;
+		if(evaluationCount != null){
+			putQueryParameter("EvaluationCount", evaluationCount.toString());
+		}
+	}
+
+	public String getMetricName() {
+		return this.metricName;
+	}
+
+	public void setMetricName(String metricName) {
+		this.metricName = metricName;
+		if(metricName != null){
+			putQueryParameter("MetricName", metricName);
+		}
+	}
+
+	public String getComparisonOperator() {
+		return this.comparisonOperator;
+	}
+
+	public void setComparisonOperator(String comparisonOperator) {
+		this.comparisonOperator = comparisonOperator;
+		if(comparisonOperator != null){
+			putQueryParameter("ComparisonOperator", comparisonOperator);
+		}
+	}
+
+	public List<Dimension> getDimensions() {
+		return this.dimensions;
+	}
+
+	public void setDimensions(List<Dimension> dimensions) {
+		this.dimensions = dimensions;	
+		if (dimensions != null) {
+			for (int depth1 = 0; depth1 < dimensions.size(); depth1++) {
+				putQueryParameter("Dimension." + (depth1 + 1) + ".DimensionValue" , dimensions.get(depth1).getDimensionValue());
+				putQueryParameter("Dimension." + (depth1 + 1) + ".DimensionKey" , dimensions.get(depth1).getDimensionKey());
+			}
+		}	
+	}
+
+	public String getStatistics() {
+		return this.statistics;
+	}
+
+	public void setStatistics(String statistics) {
+		this.statistics = statistics;
+		if(statistics != null){
+			putQueryParameter("Statistics", statistics);
+		}
+	}
+
+	public static class Dimension {
+
+		private String dimensionValue;
+
+		private String dimensionKey;
+
+		public String getDimensionValue() {
+			return this.dimensionValue;
+		}
+
+		public void setDimensionValue(String dimensionValue) {
+			this.dimensionValue = dimensionValue;
+		}
+
+		public String getDimensionKey() {
+			return this.dimensionKey;
+		}
+
+		public void setDimensionKey(String dimensionKey) {
+			this.dimensionKey = dimensionKey;
 		}
 	}
 

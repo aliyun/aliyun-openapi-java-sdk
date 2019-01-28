@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.ess.model.v20140828.DescribeScalingInstancesResponse;
 import com.aliyuncs.ess.model.v20140828.DescribeScalingInstancesResponse.ScalingInstance;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -45,6 +44,7 @@ public class DescribeScalingInstancesResponseUnmarshaller {
 			scalingInstance.setCreationType(context.stringValue("DescribeScalingInstancesResponse.ScalingInstances["+ i +"].CreationType"));
 			scalingInstance.setLaunchTemplateId(context.stringValue("DescribeScalingInstancesResponse.ScalingInstances["+ i +"].LaunchTemplateId"));
 			scalingInstance.setLaunchTemplateVersion(context.stringValue("DescribeScalingInstancesResponse.ScalingInstances["+ i +"].LaunchTemplateVersion"));
+			scalingInstance.setWarmupState(context.stringValue("DescribeScalingInstancesResponse.ScalingInstances["+ i +"].WarmupState"));
 
 			scalingInstances.add(scalingInstance);
 		}

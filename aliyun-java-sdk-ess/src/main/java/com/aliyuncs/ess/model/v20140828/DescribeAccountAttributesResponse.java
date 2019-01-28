@@ -15,14 +15,14 @@
 package com.aliyuncs.ess.model.v20140828;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.ess.transform.v20140828.DescribeLimitationResponseUnmarshaller;
+import com.aliyuncs.ess.transform.v20140828.DescribeAccountAttributesResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DescribeLimitationResponse extends AcsResponse {
+public class DescribeAccountAttributesResponse extends AcsResponse {
 
 	private Integer maxNumberOfScalingGroups;
 
@@ -41,12 +41,6 @@ public class DescribeLimitationResponse extends AcsResponse {
 	private Integer maxNumberOfMinSize;
 
 	private Integer maxNumberOfMaxSize;
-
-	private Integer maxNumberOfVServerGroups;
-
-	private Integer maxNumberOfLifecycleHooks;
-
-	private Integer maxNumberOfNotificationConfigurations;
 
 	public Integer getMaxNumberOfScalingGroups() {
 		return this.maxNumberOfScalingGroups;
@@ -120,32 +114,8 @@ public class DescribeLimitationResponse extends AcsResponse {
 		this.maxNumberOfMaxSize = maxNumberOfMaxSize;
 	}
 
-	public Integer getMaxNumberOfVServerGroups() {
-		return this.maxNumberOfVServerGroups;
-	}
-
-	public void setMaxNumberOfVServerGroups(Integer maxNumberOfVServerGroups) {
-		this.maxNumberOfVServerGroups = maxNumberOfVServerGroups;
-	}
-
-	public Integer getMaxNumberOfLifecycleHooks() {
-		return this.maxNumberOfLifecycleHooks;
-	}
-
-	public void setMaxNumberOfLifecycleHooks(Integer maxNumberOfLifecycleHooks) {
-		this.maxNumberOfLifecycleHooks = maxNumberOfLifecycleHooks;
-	}
-
-	public Integer getMaxNumberOfNotificationConfigurations() {
-		return this.maxNumberOfNotificationConfigurations;
-	}
-
-	public void setMaxNumberOfNotificationConfigurations(Integer maxNumberOfNotificationConfigurations) {
-		this.maxNumberOfNotificationConfigurations = maxNumberOfNotificationConfigurations;
-	}
-
 	@Override
-	public DescribeLimitationResponse getInstance(UnmarshallerContext context) {
-		return	DescribeLimitationResponseUnmarshaller.unmarshall(this, context);
+	public DescribeAccountAttributesResponse getInstance(UnmarshallerContext context) {
+		return	DescribeAccountAttributesResponseUnmarshaller.unmarshall(this, context);
 	}
 }

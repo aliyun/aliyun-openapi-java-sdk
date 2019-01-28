@@ -15,7 +15,6 @@
 package com.aliyuncs.ess.model.v20140828;
 
 import java.util.List;
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.ess.transform.v20140828.DescribeScalingInstancesResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -98,6 +97,8 @@ public class DescribeScalingInstancesResponse extends AcsResponse {
 
 		private String launchTemplateVersion;
 
+		private String warmupState;
+
 		public String getInstanceId() {
 			return this.instanceId;
 		}
@@ -176,6 +177,14 @@ public class DescribeScalingInstancesResponse extends AcsResponse {
 
 		public void setLaunchTemplateVersion(String launchTemplateVersion) {
 			this.launchTemplateVersion = launchTemplateVersion;
+		}
+
+		public String getWarmupState() {
+			return this.warmupState;
+		}
+
+		public void setWarmupState(String warmupState) {
+			this.warmupState = warmupState;
 		}
 	}
 

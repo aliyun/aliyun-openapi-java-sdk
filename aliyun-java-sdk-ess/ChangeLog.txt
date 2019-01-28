@@ -1,3 +1,7 @@
+2019-01-28 Version: 2.2.9
+1, Support modify vSwitch of scalingGroup.
+2, Support new target tracking scaling rule.
+
 2018-12-05 Version: 2.2.8
 1, Scaling group support vServerGroup.
 

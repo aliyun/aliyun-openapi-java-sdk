@@ -20,7 +20,6 @@ import java.util.List;
 import com.aliyuncs.ess.model.v20140828.DescribeAlarmsResponse;
 import com.aliyuncs.ess.model.v20140828.DescribeAlarmsResponse.Alarm;
 import com.aliyuncs.ess.model.v20140828.DescribeAlarmsResponse.Alarm.Dimension;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

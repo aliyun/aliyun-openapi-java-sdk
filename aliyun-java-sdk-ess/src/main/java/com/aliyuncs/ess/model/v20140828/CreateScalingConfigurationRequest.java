@@ -51,6 +51,8 @@ public class CreateScalingConfigurationRequest extends RpcAcsRequest<CreateScali
 
 	private String userData;
 
+	private String resourceGroupId;
+
 	private String hostName;
 
 	private String password;
@@ -225,6 +227,17 @@ public class CreateScalingConfigurationRequest extends RpcAcsRequest<CreateScali
 		this.userData = userData;
 		if(userData != null){
 			putQueryParameter("UserData", userData);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

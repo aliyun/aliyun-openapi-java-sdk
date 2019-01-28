@@ -19,7 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.ess.model.v20140828.DescribeScalingRulesResponse;
 import com.aliyuncs.ess.model.v20140828.DescribeScalingRulesResponse.ScalingRule;
-import java.util.Map;
+import com.aliyuncs.ess.model.v20140828.DescribeScalingRulesResponse.ScalingRule.Alarm;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -44,6 +44,21 @@ public class DescribeScalingRulesResponseUnmarshaller {
 			scalingRule.setMinSize(context.integerValue("DescribeScalingRulesResponse.ScalingRules["+ i +"].MinSize"));
 			scalingRule.setMaxSize(context.integerValue("DescribeScalingRulesResponse.ScalingRules["+ i +"].MaxSize"));
 			scalingRule.setScalingRuleAri(context.stringValue("DescribeScalingRulesResponse.ScalingRules["+ i +"].ScalingRuleAri"));
+			scalingRule.setScalingRuleType(context.stringValue("DescribeScalingRulesResponse.ScalingRules["+ i +"].ScalingRuleType"));
+			scalingRule.setEstimatedInstanceWarmup(context.integerValue("DescribeScalingRulesResponse.ScalingRules["+ i +"].EstimatedInstanceWarmup"));
+			scalingRule.setMetricName(context.stringValue("DescribeScalingRulesResponse.ScalingRules["+ i +"].MetricName"));
+			scalingRule.setTargetValue(context.floatValue("DescribeScalingRulesResponse.ScalingRules["+ i +"].TargetValue"));
+			scalingRule.setDisableScaleIn(context.booleanValue("DescribeScalingRulesResponse.ScalingRules["+ i +"].DisableScaleIn"));
+
+			List<Alarm> alarms = new ArrayList<Alarm>();
+			for (int j = 0; j < context.lengthValue("DescribeScalingRulesResponse.ScalingRules["+ i +"].Alarms.Length"); j++) {
+				Alarm alarm = new Alarm();
+				alarm.setAlarmTaskName(context.stringValue("DescribeScalingRulesResponse.ScalingRules["+ i +"].Alarms["+ j +"].AlarmTaskName"));
+				alarm.setAlarmTaskId(context.stringValue("DescribeScalingRulesResponse.ScalingRules["+ i +"].Alarms["+ j +"].AlarmTaskId"));
+
+				alarms.add(alarm);
+			}
+			scalingRule.setAlarms(alarms);
 
 			scalingRules.add(scalingRule);
 		}
