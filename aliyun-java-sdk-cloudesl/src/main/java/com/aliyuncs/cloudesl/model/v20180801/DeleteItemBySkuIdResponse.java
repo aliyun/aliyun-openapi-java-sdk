@@ -15,14 +15,14 @@
 package com.aliyuncs.cloudesl.model.v20180801;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.cloudesl.transform.v20180801.DeleteEslDeviceResponseUnmarshaller;
+import com.aliyuncs.cloudesl.transform.v20180801.DeleteItemBySkuIdResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DeleteEslDeviceResponse extends AcsResponse {
+public class DeleteItemBySkuIdResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -65,7 +65,7 @@ public class DeleteEslDeviceResponse extends AcsResponse {
 	}
 
 	@Override
-	public DeleteEslDeviceResponse getInstance(UnmarshallerContext context) {
-		return	DeleteEslDeviceResponseUnmarshaller.unmarshall(this, context);
+	public DeleteItemBySkuIdResponse getInstance(UnmarshallerContext context) {
+		return	DeleteItemBySkuIdResponseUnmarshaller.unmarshall(this, context);
 	}
 }

@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.cloudesl.model.v20180801.DescribeEslDevicesResponse;
 import com.aliyuncs.cloudesl.model.v20180801.DescribeEslDevicesResponse.EslDeviceInfo;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

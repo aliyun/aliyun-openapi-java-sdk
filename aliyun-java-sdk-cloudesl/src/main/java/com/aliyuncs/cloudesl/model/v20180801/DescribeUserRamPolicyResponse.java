@@ -14,7 +14,6 @@
 
 package com.aliyuncs.cloudesl.model.v20180801;
 
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.cloudesl.transform.v20180801.DescribeUserRamPolicyResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;

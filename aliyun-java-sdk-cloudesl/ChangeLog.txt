@@ -1,3 +1,8 @@
+2019-01-29 Version: 1.0.0
+1, This is an example of release-log.
+2, Please strictly follow this format to edit in English.
+3, Format：Number + , + Space + Description
+
 2018-12-17 Version: 1.0.0
 1, First Release
 

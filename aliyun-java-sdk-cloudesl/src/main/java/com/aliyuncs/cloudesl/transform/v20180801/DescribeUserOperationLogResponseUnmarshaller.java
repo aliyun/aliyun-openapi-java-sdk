@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.cloudesl.model.v20180801.DescribeUserOperationLogResponse;
 import com.aliyuncs.cloudesl.model.v20180801.DescribeUserOperationLogResponse.OperationLogInfo;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
