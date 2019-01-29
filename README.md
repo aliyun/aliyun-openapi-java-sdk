@@ -34,12 +34,12 @@ For example, with SDK core library 3.5.0 and ECS SDK 3.0.0, you need to declare 
 <dependency>
     <groupId>com.aliyun</groupId>
     <artifactId>aliyun-java-sdk-core</artifactId>
-    <version>3.5.0</version>
+    <version>4.3.2</version>
 </dependency>
 <dependency>
     <groupId>com.aliyun</groupId>
     <artifactId>aliyun-java-sdk-ecs</artifactId>
-    <version>3.0.0</version>
+    <version>4.16.0</version>
 </dependency>
 ```
 ## Initiate a call
