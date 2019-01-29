@@ -17,11 +17,13 @@ import com.aliyuncs.endpoint.ChainedEndpointResolver;
 import com.aliyuncs.endpoint.DefaultEndpointResolver;
 import com.aliyuncs.endpoint.EndpointResolver;
 import com.aliyuncs.endpoint.EndpointResolverBase;
+import com.aliyuncs.endpoint.InternalLocationServiceEndpointResolver;
 import com.aliyuncs.endpoint.LocalConfigGlobalEndpointResolver;
 import com.aliyuncs.endpoint.LocalConfigRegionalEndpointResolver;
 import com.aliyuncs.endpoint.LocationServiceEndpointResolver;
 import com.aliyuncs.endpoint.ResolveEndpointRequest;
 import com.aliyuncs.endpoint.UserCustomizedEndpointResolver;
+import com.aliyuncs.endpoint.UserVpcEndpointResolver;
 import com.aliyuncs.exceptions.ClientException;
 import com.aliyuncs.exceptions.ErrorCodeConstant;
 import com.aliyuncs.profile.DefaultProfile;
@@ -39,7 +41,8 @@ public class NewEndpointTest extends BaseTest {
     private LocalConfigGlobalEndpointResolver localConfigGlobalEndpointResolver;
     private LocationServiceEndpointResolver locationServiceEndpointResolver;
 
-    public void initEnv(String testLocalConfig, DefaultAcsClient client) {
+    public void initEnv(String testLocalConfig, DefaultAcsClient client, boolean isUsingVpcEndpoint,
+            boolean isUsingInternalLocationService) {
         List<EndpointResolverBase> resolverChain = new ArrayList<EndpointResolverBase>();
 
         userCustomizedEndpointResolver = new UserCustomizedEndpointResolver();
@@ -50,13 +53,17 @@ public class NewEndpointTest extends BaseTest {
             localConfigRegionalEndpointResolver = new LocalConfigRegionalEndpointResolver(testLocalConfig);
             localConfigGlobalEndpointResolver = new LocalConfigGlobalEndpointResolver(testLocalConfig);
         }
-        if (client != null) {
-            locationServiceEndpointResolver = new LocationServiceEndpointResolver(client);
+        if (isUsingInternalLocationService) {
+            locationServiceEndpointResolver = new InternalLocationServiceEndpointResolver(client != null ? client
+                    : this.client);
         } else {
-            locationServiceEndpointResolver = new LocationServiceEndpointResolver(this.client);
+            locationServiceEndpointResolver = new LocationServiceEndpointResolver(client != null ? client
+                    : this.client);
         }
-
         resolverChain.add(userCustomizedEndpointResolver);
+        if (isUsingVpcEndpoint) {
+            resolverChain.add(new UserVpcEndpointResolver());
+        }
         resolverChain.add(localConfigRegionalEndpointResolver);
         resolverChain.add(localConfigGlobalEndpointResolver);
         resolverChain.add(locationServiceEndpointResolver);
@@ -65,7 +72,7 @@ public class NewEndpointTest extends BaseTest {
     }
 
     public void initEnv(String testLocalConfig) {
-        initEnv(testLocalConfig, null);
+        initEnv(testLocalConfig, null, false, false);
     }
 
     public void initEnv() {
@@ -307,7 +314,7 @@ public class NewEndpointTest extends BaseTest {
         IClientProfile profile = DefaultProfile.getProfile("cn-hangzhou", "BadAccessKeyId", accesskeyId,
                 accesskeySecret);
         DefaultAcsClient client = new DefaultAcsClient(profile);
-        initEnv(null, client);
+        initEnv(null, client, false, false);
         try {
             resolve("cn-hangzhou", "Ecs", "ecs", "innerAPI");
             Assert.fail();
@@ -320,7 +327,7 @@ public class NewEndpointTest extends BaseTest {
     public void testInvalidAccessKeySecret() {
         IClientProfile profile = DefaultProfile.getProfile("cn-hangzhou", accesskeyId, "BadAccesskeySecret");
         DefaultAcsClient client = new DefaultAcsClient(profile);
-        initEnv(null, client);
+        initEnv(null, client, false, false);
         try {
             resolve("cn-hangzhou", "Ecs", "ecs", "innerAPI");
             Assert.fail();
@@ -422,6 +429,78 @@ public class NewEndpointTest extends BaseTest {
             Assert.assertEquals(ErrorCodeConstant.SDK_ENDPOINT_RESOLVING_ERROR, e.getErrCode());
             Assert.assertEquals("No such region 'cn-blah'. Please check your region ID.", e.getErrMsg());
         }
+    }
+
+    @Test
+    public void testSetSysEndpointCompareAddEndpointPriority() throws ClientException {
+        initEnv();
+        this.client.setEndpointResolver(endpointResolver);
+        DescribeRegionsRequest request = new DescribeRegionsRequest();
+        userCustomizedEndpointResolver.putEndpointEntry("cn-hangzhou", "ecs", "add.endpoint");
+        try {
+            client.getAcsResponse(request);
+            Assert.fail();
+        } catch (ClientException e) {
+            Assert.assertEquals("SDK.ServerUnreachable", e.getErrCode());
+            Assert.assertEquals("Server unreachable: java.net.UnknownHostException: add.endpoint", e.getErrMsg());
+        }
+
+        request.setSysEndpoint("request.set.error.endpoint");
+        userCustomizedEndpointResolver.putEndpointEntry("cn-hangzhou", "ecs", "add.point");
+        try {
+            client.getAcsResponse(request);
+            Assert.fail();
+        } catch (ClientException e) {
+            Assert.assertEquals("SDK.ServerUnreachable", e.getErrCode());
+            Assert.assertEquals("Server unreachable: java.net.UnknownHostException: request.set.error.endpoint", e
+                    .getErrMsg());
+        }
+    }
+
+    @Test
+    public void testAddEndpointCompareUserVpcPriority() throws ClientException {
+        initEnv(null, null, true, false);
+        Assert.assertEquals("ecs-vpc.cn-hefei.aliyuncs.com", resolve("cn-hefei", "ecs", "ecs", null));
+        userCustomizedEndpointResolver.putEndpointEntry("cn-hefei", "ecs", "test-vpc-addEndpoint");
+        Assert.assertEquals("test-vpc-addEndpoint", resolve("cn-hefei", "ecs", "ecs", null));
+    }
+
+    @Test
+    public void testUserVpcCompareRegionalPriority() throws ClientException {
+        String testConfig = "" + "{\n" + "  \"regional_endpoints\" : {\n" + "    \"ecs\" : {\n"
+                + "      \"cn-bozhou\" : \"test-regional\"\n" + "    }\n" + "  }\n" + "}";
+        initEnv(testConfig);
+        Assert.assertEquals("test-regional", resolve("cn-bozhou", "ecs"));
+        initEnv(testConfig, null, true, false);
+        Assert.assertEquals("ecs-vpc.cn-bozhou.aliyuncs.com", resolve("cn-bozhou", "ecs"));
+    }
+
+    @Test
+    public void testRegionalCompareGlobalEndpointPriority() throws ClientException {
+        String testConfig = "" + "{\n" + "  \"regional_endpoints\" : {\n" + "    \"ecs\" : {\n"
+                + "      \"cn-hefei\" : \"regional.endpoints\"\n" + "    }\n" + "  },\n"
+                + "  \"global_endpoints\" : {\n" + "    \"ecs\" : \"global.endpoints\"\n" + "  },\n"
+                + "  \"regions\" : [\"cn-hangzhou\", \"cn-hefei\", \"cn-shanghai\"]\n" + "}";
+        initEnv(testConfig);
+        Assert.assertEquals("regional.endpoints", resolve("cn-hefei", "ecs"));
+    }
+
+    @Test
+    public void testGlobalCompareLocationServiceEndpointPriority() throws ClientException {
+        initEnv("{}");
+        Assert.assertEquals("ecs-cn-hangzhou.aliyuncs.com", resolve("cn-hangzhou", "ecs", "ecs", null));
+        Assert.assertTrue(1 == locationServiceEndpointResolver.locationServiceCallCounter);
+        String testConfig = "" + "{\n\"global_endpoints\" : {\n \"ecs\" : \"global.endpoints\"\n" + "  },\n"
+                + "  \"regions\" : [\"cn-hangzhou\", \"cn-hefei\", \"cn-shanghai\"]\n" + "}";
+        initEnv(testConfig);
+        Assert.assertEquals("global.endpoints", resolve("cn-hangzhou", "ecs", "ecs", null));
+    }
+
+    @Test
+    public void testInternalLocationServiceEndpointResolver() throws ClientException {
+        initEnv("{}", null, false, true);
+        Assert.assertEquals("ecs-cn-hangzhou.aliyuncs.com", resolve("cn-hangzhou", "ecs", "ecs", null));
+        Assert.assertTrue(1 == locationServiceEndpointResolver.locationServiceCallCounter);
     }
 
 }

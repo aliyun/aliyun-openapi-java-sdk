@@ -23,9 +23,6 @@ public class BaseTest {
     protected String roleArn = null;
     protected String regionId = null;
 
-    private static final String SETTINGS_FILE_NAME = System.getProperty("user.home") + System.getProperty(
-            "file.separator") + "aliyun-sdk.properties";
-
     public DefaultAcsClient getClientWithRegionId(String regionId) {
         this.accesskeyId = System.getenv("daily_accessKeyId");
         this.accesskeySecret = System.getenv("daily_accessSecret");
