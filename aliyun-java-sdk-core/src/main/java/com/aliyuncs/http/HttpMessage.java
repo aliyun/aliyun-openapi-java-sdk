@@ -86,6 +86,9 @@ public abstract class HttpMessage {
         String strMd5 = ParameterHelper.md5Sum(content);
         this.headers.put(CONTENT_MD5, strMd5);
         this.headers.put(CONTENT_LENGTH, contentLen);
+        if (null != format) {
+            this.headers.put(CONTENT_TYPE, FormatType.mapFormatToAccept(format));
+        }
     }
 
     @Deprecated
