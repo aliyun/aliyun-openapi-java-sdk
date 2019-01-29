@@ -1,4 +1,7 @@
 2019-01-29 Version: 1.0.0
+1, Add a new pop interface to support deleting item by skuId which is defined by users to distinguish items
+
+2019-01-29 Version: 1.0.0
 1, This is an example of release-log.
 2, Please strictly follow this format to edit in English.
 3, Format：Number + , + Space + Description
