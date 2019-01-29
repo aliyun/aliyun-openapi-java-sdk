@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.imm.model.v20170906.ListPhotoProcessTasksResponse;
 import com.aliyuncs.imm.model.v20170906.ListPhotoProcessTasksResponse.TasksItem;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

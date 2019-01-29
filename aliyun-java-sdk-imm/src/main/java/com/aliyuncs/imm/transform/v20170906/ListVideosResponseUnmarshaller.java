@@ -22,7 +22,6 @@ import com.aliyuncs.imm.model.v20170906.ListVideosResponse.VideosItem;
 import com.aliyuncs.imm.model.v20170906.ListVideosResponse.VideosItem.CelebrityItem;
 import com.aliyuncs.imm.model.v20170906.ListVideosResponse.VideosItem.PersonsItem;
 import com.aliyuncs.imm.model.v20170906.ListVideosResponse.VideosItem.VideoTagsItem;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -60,6 +59,9 @@ public class ListVideosResponseUnmarshaller {
 			videosItem.setCelebrityFailReason(context.stringValue("ListVideosResponse.Videos["+ i +"].CelebrityFailReason"));
 			videosItem.setVideoTagsFailReason(context.stringValue("ListVideosResponse.Videos["+ i +"].VideoTagsFailReason"));
 			videosItem.setProcessFailReason(context.stringValue("ListVideosResponse.Videos["+ i +"].ProcessFailReason"));
+			videosItem.setRemarksC(context.stringValue("ListVideosResponse.Videos["+ i +"].RemarksC"));
+			videosItem.setRemarksD(context.stringValue("ListVideosResponse.Videos["+ i +"].RemarksD"));
+			videosItem.setExternalId(context.stringValue("ListVideosResponse.Videos["+ i +"].ExternalId"));
 
 			List<VideoTagsItem> videoTags = new ArrayList<VideoTagsItem>();
 			for (int j = 0; j < context.lengthValue("ListVideosResponse.Videos["+ i +"].VideoTags.Length"); j++) {

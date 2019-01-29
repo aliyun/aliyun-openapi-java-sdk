@@ -21,7 +21,6 @@ import com.aliyuncs.imm.model.v20170906.FindSimilarFacesResponse;
 import com.aliyuncs.imm.model.v20170906.FindSimilarFacesResponse.FacesItem;
 import com.aliyuncs.imm.model.v20170906.FindSimilarFacesResponse.FacesItem.FaceAttributes;
 import com.aliyuncs.imm.model.v20170906.FindSimilarFacesResponse.FacesItem.FaceAttributes.FaceBoundary;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

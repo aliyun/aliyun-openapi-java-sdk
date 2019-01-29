@@ -28,7 +28,6 @@ import com.aliyuncs.imm.model.v20170906.ListVideoFramesResponse.FramesItem.Faces
 import com.aliyuncs.imm.model.v20170906.ListVideoFramesResponse.FramesItem.OCRItem;
 import com.aliyuncs.imm.model.v20170906.ListVideoFramesResponse.FramesItem.OCRItem.OCRBoundary;
 import com.aliyuncs.imm.model.v20170906.ListVideoFramesResponse.FramesItem.TagsItem;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -72,6 +71,9 @@ public class ListVideoFramesResponseUnmarshaller {
 			framesItem.setCelebrityModifyTime(context.stringValue("ListVideoFramesResponse.Frames["+ i +"].CelebrityModifyTime"));
 			framesItem.setCelebrityFailReason(context.stringValue("ListVideoFramesResponse.Frames["+ i +"].CelebrityFailReason"));
 			framesItem.setTagsStatus(context.stringValue("ListVideoFramesResponse.Frames["+ i +"].TagsStatus"));
+			framesItem.setRemarksC(context.stringValue("ListVideoFramesResponse.Frames["+ i +"].RemarksC"));
+			framesItem.setRemarksD(context.stringValue("ListVideoFramesResponse.Frames["+ i +"].RemarksD"));
+			framesItem.setExternalId(context.stringValue("ListVideoFramesResponse.Frames["+ i +"].ExternalId"));
 
 			List<FacesItem> faces = new ArrayList<FacesItem>();
 			for (int j = 0; j < context.lengthValue("ListVideoFramesResponse.Frames["+ i +"].Faces.Length"); j++) {

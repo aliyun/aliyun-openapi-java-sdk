@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.imm.model.v20170906.DetectImageTagsResponse;
 import com.aliyuncs.imm.model.v20170906.DetectImageTagsResponse.TagsItem;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

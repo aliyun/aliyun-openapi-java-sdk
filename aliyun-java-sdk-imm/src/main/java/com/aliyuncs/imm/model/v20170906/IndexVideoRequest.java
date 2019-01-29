@@ -36,9 +36,15 @@ public class IndexVideoRequest extends RpcAcsRequest<IndexVideoResponse> {
 
 	private String endTime;
 
+	private String externalId;
+
 	private String startTime;
 
 	private String videoUri;
+
+	private String remarksD;
+
+	private String remarksC;
 
 	private String setId;
 
@@ -101,6 +107,17 @@ public class IndexVideoRequest extends RpcAcsRequest<IndexVideoResponse> {
 		}
 	}
 
+	public String getExternalId() {
+		return this.externalId;
+	}
+
+	public void setExternalId(String externalId) {
+		this.externalId = externalId;
+		if(externalId != null){
+			putQueryParameter("ExternalId", externalId);
+		}
+	}
+
 	public String getStartTime() {
 		return this.startTime;
 	}
@@ -120,6 +137,28 @@ public class IndexVideoRequest extends RpcAcsRequest<IndexVideoResponse> {
 		this.videoUri = videoUri;
 		if(videoUri != null){
 			putQueryParameter("VideoUri", videoUri);
+		}
+	}
+
+	public String getRemarksD() {
+		return this.remarksD;
+	}
+
+	public void setRemarksD(String remarksD) {
+		this.remarksD = remarksD;
+		if(remarksD != null){
+			putQueryParameter("RemarksD", remarksD);
+		}
+	}
+
+	public String getRemarksC() {
+		return this.remarksC;
+	}
+
+	public void setRemarksC(String remarksC) {
+		this.remarksC = remarksC;
+		if(remarksC != null){
+			putQueryParameter("RemarksC", remarksC);
 		}
 	}
 

@@ -20,7 +20,6 @@ import java.util.List;
 import com.aliyuncs.imm.model.v20170906.DetectImageTextsResponse;
 import com.aliyuncs.imm.model.v20170906.DetectImageTextsResponse.OCRItem;
 import com.aliyuncs.imm.model.v20170906.DetectImageTextsResponse.OCRItem.OCRBoundary;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

@@ -22,7 +22,6 @@ import com.aliyuncs.imm.model.v20170906.DetectImageFacesResponse.FacesItem;
 import com.aliyuncs.imm.model.v20170906.DetectImageFacesResponse.FacesItem.EmotionDetails;
 import com.aliyuncs.imm.model.v20170906.DetectImageFacesResponse.FacesItem.FaceAttributes;
 import com.aliyuncs.imm.model.v20170906.DetectImageFacesResponse.FacesItem.FaceAttributes.FaceBoundary;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

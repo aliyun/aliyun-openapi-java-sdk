@@ -15,7 +15,6 @@
 package com.aliyuncs.imm.model.v20170906;
 
 import java.util.List;
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.imm.transform.v20170906.ListVideoAudiosResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -113,6 +112,12 @@ public class ListVideoAudiosResponse extends AcsResponse {
 		private String audioTextsFailReason;
 
 		private String processFailReason;
+
+		private String remarksC;
+
+		private String remarksD;
+
+		private String externalId;
 
 		private List<AudioTextsItem> audioTexts;
 
@@ -258,6 +263,30 @@ public class ListVideoAudiosResponse extends AcsResponse {
 
 		public void setProcessFailReason(String processFailReason) {
 			this.processFailReason = processFailReason;
+		}
+
+		public String getRemarksC() {
+			return this.remarksC;
+		}
+
+		public void setRemarksC(String remarksC) {
+			this.remarksC = remarksC;
+		}
+
+		public String getRemarksD() {
+			return this.remarksD;
+		}
+
+		public void setRemarksD(String remarksD) {
+			this.remarksD = remarksD;
+		}
+
+		public String getExternalId() {
+			return this.externalId;
+		}
+
+		public void setExternalId(String externalId) {
+			this.externalId = externalId;
 		}
 
 		public List<AudioTextsItem> getAudioTexts() {

@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.imm.model.v20170906.ListPornBatchDetectJobsResponse;
 import com.aliyuncs.imm.model.v20170906.ListPornBatchDetectJobsResponse.JobsItem;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

@@ -21,7 +21,6 @@ import com.aliyuncs.imm.model.v20170906.DetectClothesResponse;
 import com.aliyuncs.imm.model.v20170906.DetectClothesResponse.FailDetailsItem;
 import com.aliyuncs.imm.model.v20170906.DetectClothesResponse.SuccessDetailsItem;
 import com.aliyuncs.imm.model.v20170906.DetectClothesResponse.SuccessDetailsItem.ClothesBoxDetailItem;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

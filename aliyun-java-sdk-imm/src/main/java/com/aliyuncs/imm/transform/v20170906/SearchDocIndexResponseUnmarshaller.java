@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.imm.model.v20170906.SearchDocIndexResponse;
 import com.aliyuncs.imm.model.v20170906.SearchDocIndexResponse.DocInfosItem;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

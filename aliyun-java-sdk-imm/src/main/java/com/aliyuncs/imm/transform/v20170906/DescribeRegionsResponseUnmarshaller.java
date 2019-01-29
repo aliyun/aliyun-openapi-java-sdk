@@ -20,7 +20,6 @@ import java.util.List;
 import com.aliyuncs.imm.model.v20170906.DescribeRegionsResponse;
 import com.aliyuncs.imm.model.v20170906.DescribeRegionsResponse.Regions;
 import com.aliyuncs.imm.model.v20170906.DescribeRegionsResponse.Regions.RegionItem;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

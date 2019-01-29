@@ -28,41 +28,47 @@ public class FindImagesRequest extends RpcAcsRequest<FindImagesResponse> {
 
 	private String gender;
 
-	private String remarksAPrefix;
-
 	private String project;
 
-	private String orderBy;
+	private String externalId;
 
 	private String imageSizeRange;
 
 	private String remarksBPrefix;
 
+	private String locationBoundary;
+
+	private String imageTimeRange;
+
+	private String oCRContentsMatch;
+
+	private String remarksDPrefix;
+
+	private String sourceType;
+
+	private String ageRange;
+
+	private String order;
+
+	private String remarksAPrefix;
+
+	private String orderBy;
+
 	private String tagNames;
 
 	private String sourceUriPrefix;
 
-	private String locationBoundary;
-
 	private String emotion;
-
-	private String imageTimeRange;
 
 	private String marker;
 
-	private String oCRContentsMatch;
+	private String remarksCPrefix;
 
 	private String createTimeRange;
 
 	private String setId;
 
-	private String sourceType;
-
 	private String updateTimeRange;
-
-	private String ageRange;
-
-	private String order;
 
 	public String getGender() {
 		return this.gender;
@@ -72,17 +78,6 @@ public class FindImagesRequest extends RpcAcsRequest<FindImagesResponse> {
 		this.gender = gender;
 		if(gender != null){
 			putQueryParameter("Gender", gender);
-		}
-	}
-
-	public String getRemarksAPrefix() {
-		return this.remarksAPrefix;
-	}
-
-	public void setRemarksAPrefix(String remarksAPrefix) {
-		this.remarksAPrefix = remarksAPrefix;
-		if(remarksAPrefix != null){
-			putQueryParameter("RemarksAPrefix", remarksAPrefix);
 		}
 	}
 
@@ -97,14 +92,14 @@ public class FindImagesRequest extends RpcAcsRequest<FindImagesResponse> {
 		}
 	}
 
-	public String getOrderBy() {
-		return this.orderBy;
+	public String getExternalId() {
+		return this.externalId;
 	}
 
-	public void setOrderBy(String orderBy) {
-		this.orderBy = orderBy;
-		if(orderBy != null){
-			putQueryParameter("OrderBy", orderBy);
+	public void setExternalId(String externalId) {
+		this.externalId = externalId;
+		if(externalId != null){
+			putQueryParameter("ExternalId", externalId);
 		}
 	}
 
@@ -130,6 +125,105 @@ public class FindImagesRequest extends RpcAcsRequest<FindImagesResponse> {
 		}
 	}
 
+	public String getLocationBoundary() {
+		return this.locationBoundary;
+	}
+
+	public void setLocationBoundary(String locationBoundary) {
+		this.locationBoundary = locationBoundary;
+		if(locationBoundary != null){
+			putQueryParameter("LocationBoundary", locationBoundary);
+		}
+	}
+
+	public String getImageTimeRange() {
+		return this.imageTimeRange;
+	}
+
+	public void setImageTimeRange(String imageTimeRange) {
+		this.imageTimeRange = imageTimeRange;
+		if(imageTimeRange != null){
+			putQueryParameter("ImageTimeRange", imageTimeRange);
+		}
+	}
+
+	public String getOCRContentsMatch() {
+		return this.oCRContentsMatch;
+	}
+
+	public void setOCRContentsMatch(String oCRContentsMatch) {
+		this.oCRContentsMatch = oCRContentsMatch;
+		if(oCRContentsMatch != null){
+			putQueryParameter("OCRContentsMatch", oCRContentsMatch);
+		}
+	}
+
+	public String getRemarksDPrefix() {
+		return this.remarksDPrefix;
+	}
+
+	public void setRemarksDPrefix(String remarksDPrefix) {
+		this.remarksDPrefix = remarksDPrefix;
+		if(remarksDPrefix != null){
+			putQueryParameter("RemarksDPrefix", remarksDPrefix);
+		}
+	}
+
+	public String getSourceType() {
+		return this.sourceType;
+	}
+
+	public void setSourceType(String sourceType) {
+		this.sourceType = sourceType;
+		if(sourceType != null){
+			putQueryParameter("SourceType", sourceType);
+		}
+	}
+
+	public String getAgeRange() {
+		return this.ageRange;
+	}
+
+	public void setAgeRange(String ageRange) {
+		this.ageRange = ageRange;
+		if(ageRange != null){
+			putQueryParameter("AgeRange", ageRange);
+		}
+	}
+
+	public String getOrder() {
+		return this.order;
+	}
+
+	public void setOrder(String order) {
+		this.order = order;
+		if(order != null){
+			putQueryParameter("Order", order);
+		}
+	}
+
+	public String getRemarksAPrefix() {
+		return this.remarksAPrefix;
+	}
+
+	public void setRemarksAPrefix(String remarksAPrefix) {
+		this.remarksAPrefix = remarksAPrefix;
+		if(remarksAPrefix != null){
+			putQueryParameter("RemarksAPrefix", remarksAPrefix);
+		}
+	}
+
+	public String getOrderBy() {
+		return this.orderBy;
+	}
+
+	public void setOrderBy(String orderBy) {
+		this.orderBy = orderBy;
+		if(orderBy != null){
+			putQueryParameter("OrderBy", orderBy);
+		}
+	}
+
 	public String getTagNames() {
 		return this.tagNames;
 	}
@@ -152,17 +246,6 @@ public class FindImagesRequest extends RpcAcsRequest<FindImagesResponse> {
 		}
 	}
 
-	public String getLocationBoundary() {
-		return this.locationBoundary;
-	}
-
-	public void setLocationBoundary(String locationBoundary) {
-		this.locationBoundary = locationBoundary;
-		if(locationBoundary != null){
-			putQueryParameter("LocationBoundary", locationBoundary);
-		}
-	}
-
 	public String getEmotion() {
 		return this.emotion;
 	}
@@ -171,17 +254,6 @@ public class FindImagesRequest extends RpcAcsRequest<FindImagesResponse> {
 		this.emotion = emotion;
 		if(emotion != null){
 			putQueryParameter("Emotion", emotion);
-		}
-	}
-
-	public String getImageTimeRange() {
-		return this.imageTimeRange;
-	}
-
-	public void setImageTimeRange(String imageTimeRange) {
-		this.imageTimeRange = imageTimeRange;
-		if(imageTimeRange != null){
-			putQueryParameter("ImageTimeRange", imageTimeRange);
 		}
 	}
 
@@ -196,14 +268,14 @@ public class FindImagesRequest extends RpcAcsRequest<FindImagesResponse> {
 		}
 	}
 
-	public String getOCRContentsMatch() {
-		return this.oCRContentsMatch;
+	public String getRemarksCPrefix() {
+		return this.remarksCPrefix;
 	}
 
-	public void setOCRContentsMatch(String oCRContentsMatch) {
-		this.oCRContentsMatch = oCRContentsMatch;
-		if(oCRContentsMatch != null){
-			putQueryParameter("OCRContentsMatch", oCRContentsMatch);
+	public void setRemarksCPrefix(String remarksCPrefix) {
+		this.remarksCPrefix = remarksCPrefix;
+		if(remarksCPrefix != null){
+			putQueryParameter("RemarksCPrefix", remarksCPrefix);
 		}
 	}
 
@@ -229,17 +301,6 @@ public class FindImagesRequest extends RpcAcsRequest<FindImagesResponse> {
 		}
 	}
 
-	public String getSourceType() {
-		return this.sourceType;
-	}
-
-	public void setSourceType(String sourceType) {
-		this.sourceType = sourceType;
-		if(sourceType != null){
-			putQueryParameter("SourceType", sourceType);
-		}
-	}
-
 	public String getUpdateTimeRange() {
 		return this.updateTimeRange;
 	}
@@ -248,28 +309,6 @@ public class FindImagesRequest extends RpcAcsRequest<FindImagesResponse> {
 		this.updateTimeRange = updateTimeRange;
 		if(updateTimeRange != null){
 			putQueryParameter("UpdateTimeRange", updateTimeRange);
-		}
-	}
-
-	public String getAgeRange() {
-		return this.ageRange;
-	}
-
-	public void setAgeRange(String ageRange) {
-		this.ageRange = ageRange;
-		if(ageRange != null){
-			putQueryParameter("AgeRange", ageRange);
-		}
-	}
-
-	public String getOrder() {
-		return this.order;
-	}
-
-	public void setOrder(String order) {
-		this.order = order;
-		if(order != null){
-			putQueryParameter("Order", order);
 		}
 	}
 

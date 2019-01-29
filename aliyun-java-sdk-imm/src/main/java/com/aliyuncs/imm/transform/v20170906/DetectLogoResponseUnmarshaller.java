@@ -21,7 +21,6 @@ import com.aliyuncs.imm.model.v20170906.DetectLogoResponse;
 import com.aliyuncs.imm.model.v20170906.DetectLogoResponse.FailDetailsItem;
 import com.aliyuncs.imm.model.v20170906.DetectLogoResponse.SuccessDetailsItem;
 import com.aliyuncs.imm.model.v20170906.DetectLogoResponse.SuccessDetailsItem.LogoBoxDetailItem;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

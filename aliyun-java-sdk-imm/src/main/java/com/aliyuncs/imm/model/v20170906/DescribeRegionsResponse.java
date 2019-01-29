@@ -15,7 +15,6 @@
 package com.aliyuncs.imm.model.v20170906;
 
 import java.util.List;
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.imm.transform.v20170906.DescribeRegionsResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -64,10 +63,26 @@ public class DescribeRegionsResponse extends AcsResponse {
 
 			private List<String> projectTypes;
 
+			public String getBizRegionId() {
+				return this.regionId;
+			}
+
+			public void setBizRegionId(String regionId) {
+				this.regionId = regionId;
+			}
+
+			/**
+			 * @deprecated use getBizRegionId instead of this.
+			 */
+			@Deprecated
 			public String getRegionId() {
 				return this.regionId;
 			}
 
+			/**
+			 * @deprecated use setBizRegionId instead of this.
+			 */
+			@Deprecated
 			public void setRegionId(String regionId) {
 				this.regionId = regionId;
 			}

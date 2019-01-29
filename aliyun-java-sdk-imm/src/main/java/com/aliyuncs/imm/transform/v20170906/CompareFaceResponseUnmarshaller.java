@@ -21,7 +21,6 @@ import com.aliyuncs.imm.model.v20170906.CompareFaceResponse;
 import com.aliyuncs.imm.model.v20170906.CompareFaceResponse.CompareResultItem;
 import com.aliyuncs.imm.model.v20170906.CompareFaceResponse.CompareResultItem.FaceA;
 import com.aliyuncs.imm.model.v20170906.CompareFaceResponse.CompareResultItem.FaceB;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

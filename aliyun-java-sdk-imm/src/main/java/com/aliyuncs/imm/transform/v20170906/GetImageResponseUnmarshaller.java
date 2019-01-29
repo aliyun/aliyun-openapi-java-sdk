@@ -27,7 +27,6 @@ import com.aliyuncs.imm.model.v20170906.GetImageResponse.FacesItem.FaceAttribute
 import com.aliyuncs.imm.model.v20170906.GetImageResponse.OCRItem;
 import com.aliyuncs.imm.model.v20170906.GetImageResponse.OCRItem.OCRBoundary;
 import com.aliyuncs.imm.model.v20170906.GetImageResponse.TagsItem;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -65,6 +64,9 @@ public class GetImageResponseUnmarshaller {
 		getImageResponse.setCelebrityModifyTime(context.stringValue("GetImageResponse.CelebrityModifyTime"));
 		getImageResponse.setCelebrityFailReason(context.stringValue("GetImageResponse.CelebrityFailReason"));
 		getImageResponse.setTagsStatus(context.stringValue("GetImageResponse.TagsStatus"));
+		getImageResponse.setRemarksC(context.stringValue("GetImageResponse.RemarksC"));
+		getImageResponse.setRemarksD(context.stringValue("GetImageResponse.RemarksD"));
+		getImageResponse.setExternalId(context.stringValue("GetImageResponse.ExternalId"));
 
 		List<FacesItem> faces = new ArrayList<FacesItem>();
 		for (int i = 0; i < context.lengthValue("GetImageResponse.Faces.Length"); i++) {

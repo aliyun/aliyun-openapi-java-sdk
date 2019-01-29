@@ -22,7 +22,6 @@ import com.aliyuncs.imm.model.v20170906.DetectQRCodesResponse.FailDetailsItem;
 import com.aliyuncs.imm.model.v20170906.DetectQRCodesResponse.SuccessDetailsItem;
 import com.aliyuncs.imm.model.v20170906.DetectQRCodesResponse.SuccessDetailsItem.QRCodesItem;
 import com.aliyuncs.imm.model.v20170906.DetectQRCodesResponse.SuccessDetailsItem.QRCodesItem.QRCodesRectangle;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

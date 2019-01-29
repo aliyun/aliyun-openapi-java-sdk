@@ -18,7 +18,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.imm.model.v20170906.RegistFaceResponse;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

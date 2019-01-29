@@ -14,7 +14,6 @@
 
 package com.aliyuncs.imm.model.v20170906;
 
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.imm.transform.v20170906.UpdateImageResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -38,6 +37,12 @@ public class UpdateImageResponse extends AcsResponse {
 	private String createTime;
 
 	private String modifyTime;
+
+	private String remarksC;
+
+	private String remarksD;
+
+	private String externalId;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -93,6 +98,30 @@ public class UpdateImageResponse extends AcsResponse {
 
 	public void setModifyTime(String modifyTime) {
 		this.modifyTime = modifyTime;
+	}
+
+	public String getRemarksC() {
+		return this.remarksC;
+	}
+
+	public void setRemarksC(String remarksC) {
+		this.remarksC = remarksC;
+	}
+
+	public String getRemarksD() {
+		return this.remarksD;
+	}
+
+	public void setRemarksD(String remarksD) {
+		this.remarksD = remarksD;
+	}
+
+	public String getExternalId() {
+		return this.externalId;
+	}
+
+	public void setExternalId(String externalId) {
+		this.externalId = externalId;
 	}
 
 	@Override

@@ -15,7 +15,6 @@
 package com.aliyuncs.imm.model.v20170906;
 
 import java.util.List;
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.imm.transform.v20170906.FindImagesResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -123,6 +122,12 @@ public class FindImagesResponse extends AcsResponse {
 		private String celebrityFailReason;
 
 		private String tagsStatus;
+
+		private String remarksC;
+
+		private String remarksD;
+
+		private String externalId;
 
 		private List<FacesItem> faces;
 
@@ -354,6 +359,30 @@ public class FindImagesResponse extends AcsResponse {
 
 		public void setTagsStatus(String tagsStatus) {
 			this.tagsStatus = tagsStatus;
+		}
+
+		public String getRemarksC() {
+			return this.remarksC;
+		}
+
+		public void setRemarksC(String remarksC) {
+			this.remarksC = remarksC;
+		}
+
+		public String getRemarksD() {
+			return this.remarksD;
+		}
+
+		public void setRemarksD(String remarksD) {
+			this.remarksD = remarksD;
+		}
+
+		public String getExternalId() {
+			return this.externalId;
+		}
+
+		public void setExternalId(String externalId) {
+			this.externalId = externalId;
 		}
 
 		public List<FacesItem> getFaces() {

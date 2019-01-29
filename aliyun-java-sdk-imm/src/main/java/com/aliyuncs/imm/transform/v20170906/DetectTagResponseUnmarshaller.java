@@ -21,7 +21,6 @@ import com.aliyuncs.imm.model.v20170906.DetectTagResponse;
 import com.aliyuncs.imm.model.v20170906.DetectTagResponse.FailDetailsItem;
 import com.aliyuncs.imm.model.v20170906.DetectTagResponse.SuccessDetailsItem;
 import com.aliyuncs.imm.model.v20170906.DetectTagResponse.SuccessDetailsItem.TagsItem;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

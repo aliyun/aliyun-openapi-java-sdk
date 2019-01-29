@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.imm.model.v20170906.ListTagPhotosResponse;
 import com.aliyuncs.imm.model.v20170906.ListTagPhotosResponse.PhotosItem;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

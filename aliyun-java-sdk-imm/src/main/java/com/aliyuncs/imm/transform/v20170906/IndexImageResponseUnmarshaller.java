@@ -29,6 +29,9 @@ public class IndexImageResponseUnmarshaller {
 		indexImageResponse.setRemarksB(context.stringValue("IndexImageResponse.RemarksB"));
 		indexImageResponse.setCreateTime(context.stringValue("IndexImageResponse.CreateTime"));
 		indexImageResponse.setModifyTime(context.stringValue("IndexImageResponse.ModifyTime"));
+		indexImageResponse.setRemarksC(context.stringValue("IndexImageResponse.RemarksC"));
+		indexImageResponse.setRemarksD(context.stringValue("IndexImageResponse.RemarksD"));
+		indexImageResponse.setExternalId(context.stringValue("IndexImageResponse.ExternalId"));
 	 
 	 	return indexImageResponse;
 	}

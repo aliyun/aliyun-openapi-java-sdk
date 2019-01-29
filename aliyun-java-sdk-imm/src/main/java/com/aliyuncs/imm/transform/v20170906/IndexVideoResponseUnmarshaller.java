@@ -35,6 +35,9 @@ public class IndexVideoResponseUnmarshaller {
 		indexVideoResponse.setEndTime(context.stringValue("IndexVideoResponse.EndTime"));
 		indexVideoResponse.setSaveType(context.booleanValue("IndexVideoResponse.SaveType"));
 		indexVideoResponse.setTgtUri(context.stringValue("IndexVideoResponse.TgtUri"));
+		indexVideoResponse.setRemarksC(context.stringValue("IndexVideoResponse.RemarksC"));
+		indexVideoResponse.setRemarksD(context.stringValue("IndexVideoResponse.RemarksD"));
+		indexVideoResponse.setExternalId(context.stringValue("IndexVideoResponse.ExternalId"));
 	 
 	 	return indexVideoResponse;
 	}

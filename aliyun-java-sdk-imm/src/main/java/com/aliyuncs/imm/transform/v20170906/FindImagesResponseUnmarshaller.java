@@ -28,7 +28,6 @@ import com.aliyuncs.imm.model.v20170906.FindImagesResponse.ImagesItem.FacesItem.
 import com.aliyuncs.imm.model.v20170906.FindImagesResponse.ImagesItem.OCRItem;
 import com.aliyuncs.imm.model.v20170906.FindImagesResponse.ImagesItem.OCRItem.OCRBoundary;
 import com.aliyuncs.imm.model.v20170906.FindImagesResponse.ImagesItem.TagsItem;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -71,6 +70,9 @@ public class FindImagesResponseUnmarshaller {
 			imagesItem.setCelebrityModifyTime(context.stringValue("FindImagesResponse.Images["+ i +"].CelebrityModifyTime"));
 			imagesItem.setCelebrityFailReason(context.stringValue("FindImagesResponse.Images["+ i +"].CelebrityFailReason"));
 			imagesItem.setTagsStatus(context.stringValue("FindImagesResponse.Images["+ i +"].TagsStatus"));
+			imagesItem.setRemarksC(context.stringValue("FindImagesResponse.Images["+ i +"].RemarksC"));
+			imagesItem.setRemarksD(context.stringValue("FindImagesResponse.Images["+ i +"].RemarksD"));
+			imagesItem.setExternalId(context.stringValue("FindImagesResponse.Images["+ i +"].ExternalId"));
 
 			List<FacesItem> faces = new ArrayList<FacesItem>();
 			for (int j = 0; j < context.lengthValue("FindImagesResponse.Images["+ i +"].Faces.Length"); j++) {

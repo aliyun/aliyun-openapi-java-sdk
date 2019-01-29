@@ -14,32 +14,27 @@
 
 package com.aliyuncs.imm.model.v20170906;
 
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.imm.transform.v20170906.GetFaceJobResponseUnmarshaller;
+import com.aliyuncs.imm.transform.v20170906.CreateCADConversionTaskResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class GetFaceJobResponse extends AcsResponse {
+public class CreateCADConversionTaskResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String jobId;
+	private String taskId;
 
-	private String setId;
-
-	private String srcUri;
+	private String tgtLoc;
 
 	private String status;
 
-	private Integer percent;
-
 	private String createTime;
 
-	private String finishTime;
+	private Integer percent;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -49,28 +44,20 @@ public class GetFaceJobResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getJobId() {
-		return this.jobId;
+	public String getTaskId() {
+		return this.taskId;
 	}
 
-	public void setJobId(String jobId) {
-		this.jobId = jobId;
+	public void setTaskId(String taskId) {
+		this.taskId = taskId;
 	}
 
-	public String getSetId() {
-		return this.setId;
+	public String getTgtLoc() {
+		return this.tgtLoc;
 	}
 
-	public void setSetId(String setId) {
-		this.setId = setId;
-	}
-
-	public String getSrcUri() {
-		return this.srcUri;
-	}
-
-	public void setSrcUri(String srcUri) {
-		this.srcUri = srcUri;
+	public void setTgtLoc(String tgtLoc) {
+		this.tgtLoc = tgtLoc;
 	}
 
 	public String getStatus() {
@@ -81,14 +68,6 @@ public class GetFaceJobResponse extends AcsResponse {
 		this.status = status;
 	}
 
-	public Integer getPercent() {
-		return this.percent;
-	}
-
-	public void setPercent(Integer percent) {
-		this.percent = percent;
-	}
-
 	public String getCreateTime() {
 		return this.createTime;
 	}
@@ -97,16 +76,21 @@ public class GetFaceJobResponse extends AcsResponse {
 		this.createTime = createTime;
 	}
 
-	public String getFinishTime() {
-		return this.finishTime;
+	public Integer getPercent() {
+		return this.percent;
 	}
 
-	public void setFinishTime(String finishTime) {
-		this.finishTime = finishTime;
+	public void setPercent(Integer percent) {
+		this.percent = percent;
 	}
 
 	@Override
-	public GetFaceJobResponse getInstance(UnmarshallerContext context) {
-		return	GetFaceJobResponseUnmarshaller.unmarshall(this, context);
+	public CreateCADConversionTaskResponse getInstance(UnmarshallerContext context) {
+		return	CreateCADConversionTaskResponseUnmarshaller.unmarshall(this, context);
+	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }

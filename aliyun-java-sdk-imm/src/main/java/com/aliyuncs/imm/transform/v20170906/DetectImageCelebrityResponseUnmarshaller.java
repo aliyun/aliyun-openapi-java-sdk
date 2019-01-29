@@ -20,7 +20,6 @@ import java.util.List;
 import com.aliyuncs.imm.model.v20170906.DetectImageCelebrityResponse;
 import com.aliyuncs.imm.model.v20170906.DetectImageCelebrityResponse.CelebrityItem;
 import com.aliyuncs.imm.model.v20170906.DetectImageCelebrityResponse.CelebrityItem.CelebrityBoundary;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

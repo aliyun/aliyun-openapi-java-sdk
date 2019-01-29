@@ -20,7 +20,6 @@ import java.util.List;
 import com.aliyuncs.imm.model.v20170906.ListVideoAudiosResponse;
 import com.aliyuncs.imm.model.v20170906.ListVideoAudiosResponse.AudiosItem;
 import com.aliyuncs.imm.model.v20170906.ListVideoAudiosResponse.AudiosItem.AudioTextsItem;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -54,6 +53,9 @@ public class ListVideoAudiosResponseUnmarshaller {
 			audiosItem.setAudioFormat(context.stringValue("ListVideoAudiosResponse.Audios["+ i +"].AudioFormat"));
 			audiosItem.setAudioTextsFailReason(context.stringValue("ListVideoAudiosResponse.Audios["+ i +"].AudioTextsFailReason"));
 			audiosItem.setProcessFailReason(context.stringValue("ListVideoAudiosResponse.Audios["+ i +"].ProcessFailReason"));
+			audiosItem.setRemarksC(context.stringValue("ListVideoAudiosResponse.Audios["+ i +"].RemarksC"));
+			audiosItem.setRemarksD(context.stringValue("ListVideoAudiosResponse.Audios["+ i +"].RemarksD"));
+			audiosItem.setExternalId(context.stringValue("ListVideoAudiosResponse.Audios["+ i +"].ExternalId"));
 
 			List<AudioTextsItem> audioTexts = new ArrayList<AudioTextsItem>();
 			for (int j = 0; j < context.lengthValue("ListVideoAudiosResponse.Audios["+ i +"].AudioTexts.Length"); j++) {

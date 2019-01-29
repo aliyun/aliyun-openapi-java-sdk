@@ -26,21 +26,71 @@ public class IndexImageRequest extends RpcAcsRequest<IndexImageResponse> {
 		super("imm", "2017-09-06", "IndexImage", "imm");
 	}
 
+	private String remarksB;
+
+	private String project;
+
+	private String remarksA;
+
+	private String externalId;
+
 	private String imageUri;
 
 	private String sourceUri;
 
 	private String sourcePosition;
 
-	private String remarksB;
+	private String remarksD;
 
-	private String project;
+	private String remarksC;
 
 	private String setId;
 
-	private String remarksA;
-
 	private String sourceType;
+
+	public String getRemarksB() {
+		return this.remarksB;
+	}
+
+	public void setRemarksB(String remarksB) {
+		this.remarksB = remarksB;
+		if(remarksB != null){
+			putQueryParameter("RemarksB", remarksB);
+		}
+	}
+
+	public String getProject() {
+		return this.project;
+	}
+
+	public void setProject(String project) {
+		this.project = project;
+		if(project != null){
+			putQueryParameter("Project", project);
+		}
+	}
+
+	public String getRemarksA() {
+		return this.remarksA;
+	}
+
+	public void setRemarksA(String remarksA) {
+		this.remarksA = remarksA;
+		if(remarksA != null){
+			putQueryParameter("RemarksA", remarksA);
+		}
+	}
+
+	public String getExternalId() {
+		return this.externalId;
+	}
+
+	public void setExternalId(String externalId) {
+		this.externalId = externalId;
+		if(externalId != null){
+			putQueryParameter("ExternalId", externalId);
+		}
+	}
 
 	public String getImageUri() {
 		return this.imageUri;
@@ -75,25 +125,25 @@ public class IndexImageRequest extends RpcAcsRequest<IndexImageResponse> {
 		}
 	}
 
-	public String getRemarksB() {
-		return this.remarksB;
+	public String getRemarksD() {
+		return this.remarksD;
 	}
 
-	public void setRemarksB(String remarksB) {
-		this.remarksB = remarksB;
-		if(remarksB != null){
-			putQueryParameter("RemarksB", remarksB);
+	public void setRemarksD(String remarksD) {
+		this.remarksD = remarksD;
+		if(remarksD != null){
+			putQueryParameter("RemarksD", remarksD);
 		}
 	}
 
-	public String getProject() {
-		return this.project;
+	public String getRemarksC() {
+		return this.remarksC;
 	}
 
-	public void setProject(String project) {
-		this.project = project;
-		if(project != null){
-			putQueryParameter("Project", project);
+	public void setRemarksC(String remarksC) {
+		this.remarksC = remarksC;
+		if(remarksC != null){
+			putQueryParameter("RemarksC", remarksC);
 		}
 	}
 
@@ -105,17 +155,6 @@ public class IndexImageRequest extends RpcAcsRequest<IndexImageResponse> {
 		this.setId = setId;
 		if(setId != null){
 			putQueryParameter("SetId", setId);
-		}
-	}
-
-	public String getRemarksA() {
-		return this.remarksA;
-	}
-
-	public void setRemarksA(String remarksA) {
-		this.remarksA = remarksA;
-		if(remarksA != null){
-			putQueryParameter("RemarksA", remarksA);
 		}
 	}
 

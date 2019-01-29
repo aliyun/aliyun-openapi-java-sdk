@@ -29,6 +29,9 @@ public class UpdateImageResponseUnmarshaller {
 		updateImageResponse.setRemarksB(context.stringValue("UpdateImageResponse.RemarksB"));
 		updateImageResponse.setCreateTime(context.stringValue("UpdateImageResponse.CreateTime"));
 		updateImageResponse.setModifyTime(context.stringValue("UpdateImageResponse.ModifyTime"));
+		updateImageResponse.setRemarksC(context.stringValue("UpdateImageResponse.RemarksC"));
+		updateImageResponse.setRemarksD(context.stringValue("UpdateImageResponse.RemarksD"));
+		updateImageResponse.setExternalId(context.stringValue("UpdateImageResponse.ExternalId"));
 	 
 	 	return updateImageResponse;
 	}
