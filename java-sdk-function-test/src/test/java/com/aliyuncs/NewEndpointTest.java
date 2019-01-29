@@ -496,11 +496,4 @@ public class NewEndpointTest extends BaseTest {
         Assert.assertEquals("global.endpoints", resolve("cn-hangzhou", "ecs", "ecs", null));
     }
 
-    @Test
-    public void testInternalLocationServiceEndpointResolver() throws ClientException {
-        initEnv("{}", null, false, true);
-        Assert.assertEquals("ecs-cn-hangzhou.aliyuncs.com", resolve("cn-hangzhou", "ecs", "ecs", null));
-        Assert.assertTrue(1 == locationServiceEndpointResolver.locationServiceCallCounter);
-    }
-
 }
