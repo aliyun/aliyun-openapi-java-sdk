@@ -23,12 +23,12 @@
 <dependency>
     <groupId>com.aliyun</groupId>
     <artifactId>aliyun-java-sdk-core</artifactId>
-    <version>3.5.0</version>
+    <version>4.3.2</version>
 </dependency>
 <dependency>
     <groupId>com.aliyun</groupId>
     <artifactId>aliyun-java-sdk-ecs</artifactId>
-    <version>3.0.0</version>
+    <version>4.16.0</version>
 </dependency>
 ```
 ## 开始调用
