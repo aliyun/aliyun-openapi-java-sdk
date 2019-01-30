@@ -7,6 +7,9 @@
 2019-01-30 Version: 1.0.0
 1, Add a new pop interface to support deleting item by skuId which is defined by users to distinguish items
 
+2019-01-30 Version: 1.0.0
+1, Add a new pop interface to support deleting item by skuId which is defined by users to distinguish items
+
 2019-01-29 Version: 1.0.0
 1, Add a new pop interface to support deleting item by skuId which is defined by users to distinguish items
 
