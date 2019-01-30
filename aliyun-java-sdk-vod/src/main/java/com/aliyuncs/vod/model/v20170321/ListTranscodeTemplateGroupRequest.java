@@ -30,8 +30,6 @@ public class ListTranscodeTemplateGroupRequest extends RpcAcsRequest<ListTransco
 
 	private String resourceOwnerAccount;
 
-	private Long resourceRealOwnerId;
-
 	private Long ownerId;
 
 	public Long getResourceOwnerId() {
@@ -53,17 +51,6 @@ public class ListTranscodeTemplateGroupRequest extends RpcAcsRequest<ListTransco
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public Long getResourceRealOwnerId() {
-		return this.resourceRealOwnerId;
-	}
-
-	public void setResourceRealOwnerId(Long resourceRealOwnerId) {
-		this.resourceRealOwnerId = resourceRealOwnerId;
-		if(resourceRealOwnerId != null){
-			putQueryParameter("ResourceRealOwnerId", resourceRealOwnerId.toString());
 		}
 	}
 

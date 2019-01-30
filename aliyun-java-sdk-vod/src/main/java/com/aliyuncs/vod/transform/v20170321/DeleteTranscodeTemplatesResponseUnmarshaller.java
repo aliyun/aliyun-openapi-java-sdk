@@ -14,6 +14,9 @@
 
 package com.aliyuncs.vod.transform.v20170321;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.vod.model.v20170321.DeleteTranscodeTemplatesResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -23,6 +26,12 @@ public class DeleteTranscodeTemplatesResponseUnmarshaller {
 	public static DeleteTranscodeTemplatesResponse unmarshall(DeleteTranscodeTemplatesResponse deleteTranscodeTemplatesResponse, UnmarshallerContext context) {
 		
 		deleteTranscodeTemplatesResponse.setRequestId(context.stringValue("DeleteTranscodeTemplatesResponse.RequestId"));
+
+		List<String> nonExistTranscodeTemplateIds = new ArrayList<String>();
+		for (int i = 0; i < context.lengthValue("DeleteTranscodeTemplatesResponse.NonExistTranscodeTemplateIds.Length"); i++) {
+			nonExistTranscodeTemplateIds.add(context.stringValue("DeleteTranscodeTemplatesResponse.NonExistTranscodeTemplateIds["+ i +"]"));
+		}
+		deleteTranscodeTemplatesResponse.setNonExistTranscodeTemplateIds(nonExistTranscodeTemplateIds);
 	 
 	 	return deleteTranscodeTemplatesResponse;
 	}

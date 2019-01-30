@@ -15,7 +15,6 @@
 package com.aliyuncs.vod.model.v20170321;
 
 import java.util.List;
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.vod.transform.v20170321.GetMediaAuditResultDetailResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -122,10 +121,26 @@ public class GetMediaAuditResultDetailResponse extends AcsResponse {
 				this.timestamp = timestamp;
 			}
 
+			public String getBizUrl() {
+				return this.url;
+			}
+
+			public void setBizUrl(String url) {
+				this.url = url;
+			}
+
+			/**
+			 * @deprecated use getBizUrl instead of this.
+			 */
+			@Deprecated
 			public String getUrl() {
 				return this.url;
 			}
 
+			/**
+			 * @deprecated use setBizUrl instead of this.
+			 */
+			@Deprecated
 			public void setUrl(String url) {
 				this.url = url;
 			}

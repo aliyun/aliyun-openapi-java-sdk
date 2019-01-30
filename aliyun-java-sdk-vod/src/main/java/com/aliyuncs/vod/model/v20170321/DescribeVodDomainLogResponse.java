@@ -15,7 +15,6 @@
 package com.aliyuncs.vod.model.v20170321;
 
 import java.util.List;
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.vod.transform.v20170321.DescribeVodDomainLogResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -52,9 +51,9 @@ public class DescribeVodDomainLogResponse extends AcsResponse {
 
 		private Long logCount;
 
-		private List<PageInfoDetail> pageInfos;
-
 		private List<LogInfoDetail> logInfos;
+
+		private PageInfos pageInfos;
 
 		public String getDomainName() {
 			return this.domainName;
@@ -72,14 +71,6 @@ public class DescribeVodDomainLogResponse extends AcsResponse {
 			this.logCount = logCount;
 		}
 
-		public List<PageInfoDetail> getPageInfos() {
-			return this.pageInfos;
-		}
-
-		public void setPageInfos(List<PageInfoDetail> pageInfos) {
-			this.pageInfos = pageInfos;
-		}
-
 		public List<LogInfoDetail> getLogInfos() {
 			return this.logInfos;
 		}
@@ -88,37 +79,12 @@ public class DescribeVodDomainLogResponse extends AcsResponse {
 			this.logInfos = logInfos;
 		}
 
-		public static class PageInfoDetail {
+		public PageInfos getPageInfos() {
+			return this.pageInfos;
+		}
 
-			private Long pageIndex;
-
-			private Long pageSize;
-
-			private Long total;
-
-			public Long getPageIndex() {
-				return this.pageIndex;
-			}
-
-			public void setPageIndex(Long pageIndex) {
-				this.pageIndex = pageIndex;
-			}
-
-			public Long getPageSize() {
-				return this.pageSize;
-			}
-
-			public void setPageSize(Long pageSize) {
-				this.pageSize = pageSize;
-			}
-
-			public Long getTotal() {
-				return this.total;
-			}
-
-			public void setTotal(Long total) {
-				this.total = total;
-			}
+		public void setPageInfos(PageInfos pageInfos) {
+			this.pageInfos = pageInfos;
 		}
 
 		public static class LogInfoDetail {
@@ -171,6 +137,39 @@ public class DescribeVodDomainLogResponse extends AcsResponse {
 
 			public void setEndTime(String endTime) {
 				this.endTime = endTime;
+			}
+		}
+
+		public static class PageInfos {
+
+			private Long pageNumber;
+
+			private Long pageSize;
+
+			private Long total;
+
+			public Long getPageNumber() {
+				return this.pageNumber;
+			}
+
+			public void setPageNumber(Long pageNumber) {
+				this.pageNumber = pageNumber;
+			}
+
+			public Long getPageSize() {
+				return this.pageSize;
+			}
+
+			public void setPageSize(Long pageSize) {
+				this.pageSize = pageSize;
+			}
+
+			public Long getTotal() {
+				return this.total;
+			}
+
+			public void setTotal(Long total) {
+				this.total = total;
 			}
 		}
 	}

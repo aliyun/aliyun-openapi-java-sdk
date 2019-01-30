@@ -22,7 +22,6 @@ import com.aliyuncs.vod.model.v20170321.SearchMediaResponse.Media;
 import com.aliyuncs.vod.model.v20170321.SearchMediaResponse.Media.Audio;
 import com.aliyuncs.vod.model.v20170321.SearchMediaResponse.Media.Image;
 import com.aliyuncs.vod.model.v20170321.SearchMediaResponse.Media.Video;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

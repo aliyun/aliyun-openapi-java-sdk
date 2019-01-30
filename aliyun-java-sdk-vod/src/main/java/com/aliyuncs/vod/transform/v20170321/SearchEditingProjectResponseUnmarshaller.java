@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.vod.model.v20170321.SearchEditingProjectResponse;
 import com.aliyuncs.vod.model.v20170321.SearchEditingProjectResponse.Project;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

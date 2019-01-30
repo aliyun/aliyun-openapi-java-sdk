@@ -30,8 +30,6 @@ public class DeleteTranscodeTemplateGroupRequest extends RpcAcsRequest<DeleteTra
 
 	private String resourceOwnerAccount;
 
-	private Long resourceRealOwnerId;
-
 	private Long ownerId;
 
 	private String transcodeTemplateGroupId;
@@ -55,17 +53,6 @@ public class DeleteTranscodeTemplateGroupRequest extends RpcAcsRequest<DeleteTra
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public Long getResourceRealOwnerId() {
-		return this.resourceRealOwnerId;
-	}
-
-	public void setResourceRealOwnerId(Long resourceRealOwnerId) {
-		this.resourceRealOwnerId = resourceRealOwnerId;
-		if(resourceRealOwnerId != null){
-			putQueryParameter("ResourceRealOwnerId", resourceRealOwnerId.toString());
 		}
 	}
 

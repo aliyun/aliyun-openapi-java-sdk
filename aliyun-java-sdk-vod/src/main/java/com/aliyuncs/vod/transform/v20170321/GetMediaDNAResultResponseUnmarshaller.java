@@ -23,7 +23,6 @@ import com.aliyuncs.vod.model.v20170321.GetMediaDNAResultResponse.DNAResult.Vide
 import com.aliyuncs.vod.model.v20170321.GetMediaDNAResultResponse.DNAResult.VideoDNAItem.DetailItem;
 import com.aliyuncs.vod.model.v20170321.GetMediaDNAResultResponse.DNAResult.VideoDNAItem.DetailItem.Duplication;
 import com.aliyuncs.vod.model.v20170321.GetMediaDNAResultResponse.DNAResult.VideoDNAItem.DetailItem.Input;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

@@ -21,7 +21,6 @@ import com.aliyuncs.vod.model.v20170321.GetMediaAuditResultTimelineResponse;
 import com.aliyuncs.vod.model.v20170321.GetMediaAuditResultTimelineResponse.MediaAuditResultTimeline;
 import com.aliyuncs.vod.model.v20170321.GetMediaAuditResultTimelineResponse.MediaAuditResultTimeline.PornItem;
 import com.aliyuncs.vod.model.v20170321.GetMediaAuditResultTimelineResponse.MediaAuditResultTimeline.TerrorismItem;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

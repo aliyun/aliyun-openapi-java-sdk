@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.vod.model.v20170321.ListAITemplateResponse;
 import com.aliyuncs.vod.model.v20170321.ListAITemplateResponse.TemplateInfoListItem;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

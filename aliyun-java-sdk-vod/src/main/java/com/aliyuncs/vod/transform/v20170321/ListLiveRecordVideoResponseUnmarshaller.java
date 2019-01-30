@@ -21,7 +21,6 @@ import com.aliyuncs.vod.model.v20170321.ListLiveRecordVideoResponse;
 import com.aliyuncs.vod.model.v20170321.ListLiveRecordVideoResponse.LiveRecordVideo;
 import com.aliyuncs.vod.model.v20170321.ListLiveRecordVideoResponse.LiveRecordVideo.PlayInfo;
 import com.aliyuncs.vod.model.v20170321.ListLiveRecordVideoResponse.LiveRecordVideo.Video;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

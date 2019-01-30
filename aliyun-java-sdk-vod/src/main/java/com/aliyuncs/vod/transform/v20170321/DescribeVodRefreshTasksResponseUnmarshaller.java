@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.vod.model.v20170321.DescribeVodRefreshTasksResponse;
 import com.aliyuncs.vod.model.v20170321.DescribeVodRefreshTasksResponse.Task;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

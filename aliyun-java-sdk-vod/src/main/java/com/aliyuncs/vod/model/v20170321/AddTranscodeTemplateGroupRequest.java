@@ -34,8 +34,6 @@ public class AddTranscodeTemplateGroupRequest extends RpcAcsRequest<AddTranscode
 
 	private String name;
 
-	private Long resourceRealOwnerId;
-
 	private Long ownerId;
 
 	private String transcodeTemplateGroupId;
@@ -81,17 +79,6 @@ public class AddTranscodeTemplateGroupRequest extends RpcAcsRequest<AddTranscode
 		this.name = name;
 		if(name != null){
 			putQueryParameter("Name", name);
-		}
-	}
-
-	public Long getResourceRealOwnerId() {
-		return this.resourceRealOwnerId;
-	}
-
-	public void setResourceRealOwnerId(Long resourceRealOwnerId) {
-		this.resourceRealOwnerId = resourceRealOwnerId;
-		if(resourceRealOwnerId != null){
-			putQueryParameter("ResourceRealOwnerId", resourceRealOwnerId.toString());
 		}
 	}
 

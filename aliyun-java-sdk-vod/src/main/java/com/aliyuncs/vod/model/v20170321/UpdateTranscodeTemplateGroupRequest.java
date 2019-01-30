@@ -34,8 +34,6 @@ public class UpdateTranscodeTemplateGroupRequest extends RpcAcsRequest<UpdateTra
 
 	private String name;
 
-	private Long resourceRealOwnerId;
-
 	private Long ownerId;
 
 	private String locked;
@@ -83,17 +81,6 @@ public class UpdateTranscodeTemplateGroupRequest extends RpcAcsRequest<UpdateTra
 		this.name = name;
 		if(name != null){
 			putQueryParameter("Name", name);
-		}
-	}
-
-	public Long getResourceRealOwnerId() {
-		return this.resourceRealOwnerId;
-	}
-
-	public void setResourceRealOwnerId(Long resourceRealOwnerId) {
-		this.resourceRealOwnerId = resourceRealOwnerId;
-		if(resourceRealOwnerId != null){
-			putQueryParameter("ResourceRealOwnerId", resourceRealOwnerId.toString());
 		}
 	}
 

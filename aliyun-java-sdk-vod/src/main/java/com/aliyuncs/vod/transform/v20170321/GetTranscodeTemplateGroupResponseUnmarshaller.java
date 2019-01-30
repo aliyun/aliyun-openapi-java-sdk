@@ -20,7 +20,6 @@ import java.util.List;
 import com.aliyuncs.vod.model.v20170321.GetTranscodeTemplateGroupResponse;
 import com.aliyuncs.vod.model.v20170321.GetTranscodeTemplateGroupResponse.TranscodeTemplateGroup;
 import com.aliyuncs.vod.model.v20170321.GetTranscodeTemplateGroupResponse.TranscodeTemplateGroup.TranscodeTemplate;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

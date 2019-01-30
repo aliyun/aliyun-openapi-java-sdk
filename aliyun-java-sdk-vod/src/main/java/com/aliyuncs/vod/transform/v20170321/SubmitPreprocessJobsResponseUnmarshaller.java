@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.vod.model.v20170321.SubmitPreprocessJobsResponse;
 import com.aliyuncs.vod.model.v20170321.SubmitPreprocessJobsResponse.PreprocessJob;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

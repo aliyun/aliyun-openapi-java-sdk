@@ -20,7 +20,6 @@ import java.util.List;
 import com.aliyuncs.vod.model.v20170321.GetMediaAuditResultDetailResponse;
 import com.aliyuncs.vod.model.v20170321.GetMediaAuditResultDetailResponse.MediaAuditResultDetail;
 import com.aliyuncs.vod.model.v20170321.GetMediaAuditResultDetailResponse.MediaAuditResultDetail.ListItem;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

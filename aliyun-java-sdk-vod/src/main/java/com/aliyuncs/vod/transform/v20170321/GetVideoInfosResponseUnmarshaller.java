@@ -20,7 +20,6 @@ import java.util.List;
 import com.aliyuncs.vod.model.v20170321.GetVideoInfosResponse;
 import com.aliyuncs.vod.model.v20170321.GetVideoInfosResponse.Video;
 import com.aliyuncs.vod.model.v20170321.GetVideoInfosResponse.Video.Thumbnail;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

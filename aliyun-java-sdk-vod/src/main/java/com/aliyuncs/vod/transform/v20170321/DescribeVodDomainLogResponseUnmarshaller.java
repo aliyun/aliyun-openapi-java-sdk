@@ -20,8 +20,7 @@ import java.util.List;
 import com.aliyuncs.vod.model.v20170321.DescribeVodDomainLogResponse;
 import com.aliyuncs.vod.model.v20170321.DescribeVodDomainLogResponse.DomainLogDetail;
 import com.aliyuncs.vod.model.v20170321.DescribeVodDomainLogResponse.DomainLogDetail.LogInfoDetail;
-import com.aliyuncs.vod.model.v20170321.DescribeVodDomainLogResponse.DomainLogDetail.PageInfoDetail;
-import java.util.Map;
+import com.aliyuncs.vod.model.v20170321.DescribeVodDomainLogResponse.DomainLogDetail.PageInfos;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -37,15 +36,10 @@ public class DescribeVodDomainLogResponseUnmarshaller {
 			domainLogDetail.setDomainName(context.stringValue("DescribeVodDomainLogResponse.DomainLogDetails["+ i +"].DomainName"));
 			domainLogDetail.setLogCount(context.longValue("DescribeVodDomainLogResponse.DomainLogDetails["+ i +"].LogCount"));
 
-			List<PageInfoDetail> pageInfos = new ArrayList<PageInfoDetail>();
-			for (int j = 0; j < context.lengthValue("DescribeVodDomainLogResponse.DomainLogDetails["+ i +"].PageInfos.Length"); j++) {
-				PageInfoDetail pageInfoDetail = new PageInfoDetail();
-				pageInfoDetail.setPageIndex(context.longValue("DescribeVodDomainLogResponse.DomainLogDetails["+ i +"].PageInfos["+ j +"].PageIndex"));
-				pageInfoDetail.setPageSize(context.longValue("DescribeVodDomainLogResponse.DomainLogDetails["+ i +"].PageInfos["+ j +"].PageSize"));
-				pageInfoDetail.setTotal(context.longValue("DescribeVodDomainLogResponse.DomainLogDetails["+ i +"].PageInfos["+ j +"].Total"));
-
-				pageInfos.add(pageInfoDetail);
-			}
+			PageInfos pageInfos = new PageInfos();
+			pageInfos.setPageNumber(context.longValue("DescribeVodDomainLogResponse.DomainLogDetails["+ i +"].PageInfos.PageNumber"));
+			pageInfos.setPageSize(context.longValue("DescribeVodDomainLogResponse.DomainLogDetails["+ i +"].PageInfos.PageSize"));
+			pageInfos.setTotal(context.longValue("DescribeVodDomainLogResponse.DomainLogDetails["+ i +"].PageInfos.Total"));
 			domainLogDetail.setPageInfos(pageInfos);
 
 			List<LogInfoDetail> logInfos = new ArrayList<LogInfoDetail>();

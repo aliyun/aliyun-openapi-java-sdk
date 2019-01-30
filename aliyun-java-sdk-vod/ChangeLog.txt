@@ -1,3 +1,10 @@
+2019-01-30 Version: 2.15.0
+1, Add a new api called GetURLUploadInfos to query the upload task of UploadMediaByURL.
+2, Clean up the old api related to the CDN of VoD that is going offline, such as DescribeDomainBpsData, is replaced with the new CDN api.
+3, Clean up the old AI related apis of VoD, such as SubmitAIASRJob, is replaced with the new AI api.
+4, Clean up an api called GetVideoPlayInfo, which is used by the old player SDKs that are no longer supported.
+5, Clean up some apis that used only by the VoD console to avoid misuse, such as OpenVodService.
+
 2019-01-15 Version: 2.12.0
 1, Add new apis called AddTranscodeTemplateGroup, UpdateTranscodeTemplateGroup, ListTranscodeTemplateGroup, GetTranscodeTemplateGroup, SetDefaultTranscodeTemplateGroup ,DeleteTranscodeTemplateGroup and DeleteTranscodeTemplates which support transcode template feature.
 2, Add new apis called AddAITemplate, DeleteAITemplate, UpdateAITemplate, GetAITemplate, ListAITemplate, GetDefaultAITemplate and SetDefaultAITemplate which support AI template feature.

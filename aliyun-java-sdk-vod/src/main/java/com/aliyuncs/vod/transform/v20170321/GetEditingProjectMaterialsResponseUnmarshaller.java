@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.vod.model.v20170321.GetEditingProjectMaterialsResponse;
 import com.aliyuncs.vod.model.v20170321.GetEditingProjectMaterialsResponse.Material;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

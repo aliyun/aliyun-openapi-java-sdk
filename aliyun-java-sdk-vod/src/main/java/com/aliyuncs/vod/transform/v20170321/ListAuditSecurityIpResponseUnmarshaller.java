@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.vod.model.v20170321.ListAuditSecurityIpResponse;
 import com.aliyuncs.vod.model.v20170321.ListAuditSecurityIpResponse.SecurityIp;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

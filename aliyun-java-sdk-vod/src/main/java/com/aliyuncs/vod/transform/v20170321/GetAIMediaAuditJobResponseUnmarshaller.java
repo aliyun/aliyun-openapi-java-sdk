@@ -30,7 +30,6 @@ import com.aliyuncs.vod.model.v20170321.GetAIMediaAuditJobResponse.MediaAuditJob
 import com.aliyuncs.vod.model.v20170321.GetAIMediaAuditJobResponse.MediaAuditJob.Data.VideoResult.TerrorismResult;
 import com.aliyuncs.vod.model.v20170321.GetAIMediaAuditJobResponse.MediaAuditJob.Data.VideoResult.TerrorismResult.CounterListItem;
 import com.aliyuncs.vod.model.v20170321.GetAIMediaAuditJobResponse.MediaAuditJob.Data.VideoResult.TerrorismResult.TopListItem;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

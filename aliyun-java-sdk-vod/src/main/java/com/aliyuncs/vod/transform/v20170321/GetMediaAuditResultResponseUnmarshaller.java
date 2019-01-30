@@ -29,7 +29,6 @@ import com.aliyuncs.vod.model.v20170321.GetMediaAuditResultResponse.MediaAuditRe
 import com.aliyuncs.vod.model.v20170321.GetMediaAuditResultResponse.MediaAuditResult.VideoResult.TerrorismResult;
 import com.aliyuncs.vod.model.v20170321.GetMediaAuditResultResponse.MediaAuditResult.VideoResult.TerrorismResult.CounterListItem;
 import com.aliyuncs.vod.model.v20170321.GetMediaAuditResultResponse.MediaAuditResult.VideoResult.TerrorismResult.TopListItem;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

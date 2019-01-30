@@ -15,7 +15,6 @@
 package com.aliyuncs.vod.model.v20170321;
 
 import java.util.List;
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.vod.transform.v20170321.ListAuditSecurityIpResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;

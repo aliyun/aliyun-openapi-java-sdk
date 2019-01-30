@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.vod.model.v20170321.SubmitTranscodeJobsResponse;
 import com.aliyuncs.vod.model.v20170321.SubmitTranscodeJobsResponse.TranscodeJob;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

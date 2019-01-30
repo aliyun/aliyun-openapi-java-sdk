@@ -21,7 +21,6 @@ import com.aliyuncs.vod.model.v20170321.GetPlayInfoResponse;
 import com.aliyuncs.vod.model.v20170321.GetPlayInfoResponse.PlayInfo;
 import com.aliyuncs.vod.model.v20170321.GetPlayInfoResponse.VideoBase;
 import com.aliyuncs.vod.model.v20170321.GetPlayInfoResponse.VideoBase.Thumbnail;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
