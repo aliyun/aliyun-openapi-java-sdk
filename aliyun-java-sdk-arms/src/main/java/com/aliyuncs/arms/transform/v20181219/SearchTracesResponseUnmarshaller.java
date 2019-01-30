@@ -14,7 +14,11 @@
 
 package com.aliyuncs.arms.transform.v20181219;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.arms.model.v20181219.SearchTracesResponse;
+import com.aliyuncs.arms.model.v20181219.SearchTracesResponse.TraceInfo;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -23,7 +27,20 @@ public class SearchTracesResponseUnmarshaller {
 	public static SearchTracesResponse unmarshall(SearchTracesResponse searchTracesResponse, UnmarshallerContext context) {
 		
 		searchTracesResponse.setRequestId(context.stringValue("SearchTracesResponse.RequestId"));
-		searchTracesResponse.setData(context.stringValue("SearchTracesResponse.Data"));
+
+		List<TraceInfo> data = new ArrayList<TraceInfo>();
+		for (int i = 0; i < context.lengthValue("SearchTracesResponse.Data.Length"); i++) {
+			TraceInfo traceInfo = new TraceInfo();
+			traceInfo.setTraceID(context.stringValue("SearchTracesResponse.Data["+ i +"].TraceID"));
+			traceInfo.setOperationName(context.stringValue("SearchTracesResponse.Data["+ i +"].OperationName"));
+			traceInfo.setDuration(context.integerValue("SearchTracesResponse.Data["+ i +"].Duration"));
+			traceInfo.setServiceName(context.stringValue("SearchTracesResponse.Data["+ i +"].ServiceName"));
+			traceInfo.setServiceIp(context.stringValue("SearchTracesResponse.Data["+ i +"].ServiceIp"));
+			traceInfo.setTimestamp(context.longValue("SearchTracesResponse.Data["+ i +"].Timestamp"));
+
+			data.add(traceInfo);
+		}
+		searchTracesResponse.setData(data);
 	 
 	 	return searchTracesResponse;
 	}

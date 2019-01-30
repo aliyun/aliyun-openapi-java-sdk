@@ -14,7 +14,7 @@
 
 package com.aliyuncs.arms.model.v20181219;
 
-import java.util.Map;
+import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.arms.transform.v20181219.GetTraceResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -27,7 +27,7 @@ public class GetTraceResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String data;
+	private List<CallChainInfo> data;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -37,12 +37,194 @@ public class GetTraceResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getData() {
+	public List<CallChainInfo> getData() {
 		return this.data;
 	}
 
-	public void setData(String data) {
+	public void setData(List<CallChainInfo> data) {
 		this.data = data;
+	}
+
+	public static class CallChainInfo {
+
+		private String traceID;
+
+		private String operationName;
+
+		private Integer duration;
+
+		private String serviceName;
+
+		private String serviceIp;
+
+		private Long timestamp;
+
+		private String rpcId;
+
+		private String resultCode;
+
+		private Boolean haveStack;
+
+		private List<TagEntry> tagEntryList;
+
+		private List<LogEvent> logEventList;
+
+		public String getTraceID() {
+			return this.traceID;
+		}
+
+		public void setTraceID(String traceID) {
+			this.traceID = traceID;
+		}
+
+		public String getOperationName() {
+			return this.operationName;
+		}
+
+		public void setOperationName(String operationName) {
+			this.operationName = operationName;
+		}
+
+		public Integer getDuration() {
+			return this.duration;
+		}
+
+		public void setDuration(Integer duration) {
+			this.duration = duration;
+		}
+
+		public String getServiceName() {
+			return this.serviceName;
+		}
+
+		public void setServiceName(String serviceName) {
+			this.serviceName = serviceName;
+		}
+
+		public String getServiceIp() {
+			return this.serviceIp;
+		}
+
+		public void setServiceIp(String serviceIp) {
+			this.serviceIp = serviceIp;
+		}
+
+		public Long getTimestamp() {
+			return this.timestamp;
+		}
+
+		public void setTimestamp(Long timestamp) {
+			this.timestamp = timestamp;
+		}
+
+		public String getRpcId() {
+			return this.rpcId;
+		}
+
+		public void setRpcId(String rpcId) {
+			this.rpcId = rpcId;
+		}
+
+		public String getResultCode() {
+			return this.resultCode;
+		}
+
+		public void setResultCode(String resultCode) {
+			this.resultCode = resultCode;
+		}
+
+		public Boolean getHaveStack() {
+			return this.haveStack;
+		}
+
+		public void setHaveStack(Boolean haveStack) {
+			this.haveStack = haveStack;
+		}
+
+		public List<TagEntry> getTagEntryList() {
+			return this.tagEntryList;
+		}
+
+		public void setTagEntryList(List<TagEntry> tagEntryList) {
+			this.tagEntryList = tagEntryList;
+		}
+
+		public List<LogEvent> getLogEventList() {
+			return this.logEventList;
+		}
+
+		public void setLogEventList(List<LogEvent> logEventList) {
+			this.logEventList = logEventList;
+		}
+
+		public static class TagEntry {
+
+			private String key;
+
+			private String value;
+
+			public String getKey() {
+				return this.key;
+			}
+
+			public void setKey(String key) {
+				this.key = key;
+			}
+
+			public String getValue() {
+				return this.value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
+			}
+		}
+
+		public static class LogEvent {
+
+			private Long timestamp;
+
+			private List<TagEntry2> tagEntryList1;
+
+			public Long getTimestamp() {
+				return this.timestamp;
+			}
+
+			public void setTimestamp(Long timestamp) {
+				this.timestamp = timestamp;
+			}
+
+			public List<TagEntry2> getTagEntryList1() {
+				return this.tagEntryList1;
+			}
+
+			public void setTagEntryList1(List<TagEntry2> tagEntryList1) {
+				this.tagEntryList1 = tagEntryList1;
+			}
+
+			public static class TagEntry2 {
+
+				private String key;
+
+				private String value;
+
+				public String getKey() {
+					return this.key;
+				}
+
+				public void setKey(String key) {
+					this.key = key;
+				}
+
+				public String getValue() {
+					return this.value;
+				}
+
+				public void setValue(String value) {
+					this.value = value;
+				}
+			}
+		}
 	}
 
 	@Override

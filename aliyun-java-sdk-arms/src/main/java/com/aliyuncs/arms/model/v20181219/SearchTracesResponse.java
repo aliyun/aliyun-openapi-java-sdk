@@ -14,7 +14,7 @@
 
 package com.aliyuncs.arms.model.v20181219;
 
-import java.util.Map;
+import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.arms.transform.v20181219.SearchTracesResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -27,7 +27,7 @@ public class SearchTracesResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String data;
+	private List<TraceInfo> data;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -37,12 +37,75 @@ public class SearchTracesResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getData() {
+	public List<TraceInfo> getData() {
 		return this.data;
 	}
 
-	public void setData(String data) {
+	public void setData(List<TraceInfo> data) {
 		this.data = data;
+	}
+
+	public static class TraceInfo {
+
+		private String traceID;
+
+		private String operationName;
+
+		private Integer duration;
+
+		private String serviceName;
+
+		private String serviceIp;
+
+		private Long timestamp;
+
+		public String getTraceID() {
+			return this.traceID;
+		}
+
+		public void setTraceID(String traceID) {
+			this.traceID = traceID;
+		}
+
+		public String getOperationName() {
+			return this.operationName;
+		}
+
+		public void setOperationName(String operationName) {
+			this.operationName = operationName;
+		}
+
+		public Integer getDuration() {
+			return this.duration;
+		}
+
+		public void setDuration(Integer duration) {
+			this.duration = duration;
+		}
+
+		public String getServiceName() {
+			return this.serviceName;
+		}
+
+		public void setServiceName(String serviceName) {
+			this.serviceName = serviceName;
+		}
+
+		public String getServiceIp() {
+			return this.serviceIp;
+		}
+
+		public void setServiceIp(String serviceIp) {
+			this.serviceIp = serviceIp;
+		}
+
+		public Long getTimestamp() {
+			return this.timestamp;
+		}
+
+		public void setTimestamp(Long timestamp) {
+			this.timestamp = timestamp;
+		}
 	}
 
 	@Override

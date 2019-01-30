@@ -14,7 +14,6 @@
 
 package com.aliyuncs.arms.model.v20181219;
 
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.arms.transform.v20181219.MetricQueryResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;

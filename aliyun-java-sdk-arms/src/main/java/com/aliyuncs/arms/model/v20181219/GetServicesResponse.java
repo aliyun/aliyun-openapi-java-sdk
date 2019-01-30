@@ -14,27 +14,20 @@
 
 package com.aliyuncs.arms.model.v20181219;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.arms.transform.v20181219.ARMSQueryDataSetResponseUnmarshaller;
+import com.aliyuncs.arms.transform.v20181219.GetServicesResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ARMSQueryDataSetResponse extends AcsResponse {
-
-	private String data;
+public class GetServicesResponse extends AcsResponse {
 
 	private String requestId;
 
-	public String getData() {
-		return this.data;
-	}
-
-	public void setData(String data) {
-		this.data = data;
-	}
+	private Data data;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -44,8 +37,29 @@ public class ARMSQueryDataSetResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public Data getData() {
+		return this.data;
+	}
+
+	public void setData(Data data) {
+		this.data = data;
+	}
+
+	public static class Data {
+
+		private List<String> services;
+
+		public List<String> getServices() {
+			return this.services;
+		}
+
+		public void setServices(List<String> services) {
+			this.services = services;
+		}
+	}
+
 	@Override
-	public ARMSQueryDataSetResponse getInstance(UnmarshallerContext context) {
-		return	ARMSQueryDataSetResponseUnmarshaller.unmarshall(this, context);
+	public GetServicesResponse getInstance(UnmarshallerContext context) {
+		return	GetServicesResponseUnmarshaller.unmarshall(this, context);
 	}
 }
