@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class ListClusterMembersRequest extends RoaAcsRequest<ListClusterMembersResponse> {
 	
 	public ListClusterMembersRequest() {
-		super("Edas", "2017-08-01", "ListClusterMembers", "edas");
+		super("Edas", "2017-08-01", "ListClusterMembers");
 		setUriPattern("/pop/v5/resource/cluster_member_list");
 		setMethod(MethodType.GET);
 	}

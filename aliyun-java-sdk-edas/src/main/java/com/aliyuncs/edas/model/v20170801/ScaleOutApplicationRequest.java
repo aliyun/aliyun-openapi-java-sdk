@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class ScaleOutApplicationRequest extends RoaAcsRequest<ScaleOutApplicationResponse> {
 	
 	public ScaleOutApplicationRequest() {
-		super("Edas", "2017-08-01", "ScaleOutApplication", "edas");
+		super("Edas", "2017-08-01", "ScaleOutApplication");
 		setUriPattern("/pop/v5/changeorder/co_scale_out");
 		setMethod(MethodType.POST);
 	}

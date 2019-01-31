@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class ScaleInApplicationRequest extends RoaAcsRequest<ScaleInApplicationResponse> {
 	
 	public ScaleInApplicationRequest() {
-		super("Edas", "2017-08-01", "ScaleInApplication", "edas");
+		super("Edas", "2017-08-01", "ScaleInApplication");
 		setUriPattern("/pop/v5/changeorder/co_scale_in");
 		setMethod(MethodType.POST);
 	}

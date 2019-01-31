@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class ListUserDefineRegionRequest extends RoaAcsRequest<ListUserDefineRegionResponse> {
 	
 	public ListUserDefineRegionRequest() {
-		super("Edas", "2017-08-01", "ListUserDefineRegion", "edas");
+		super("Edas", "2017-08-01", "ListUserDefineRegion");
 		setUriPattern("/pop/v5/user_region_defs");
 		setMethod(MethodType.POST);
 	}

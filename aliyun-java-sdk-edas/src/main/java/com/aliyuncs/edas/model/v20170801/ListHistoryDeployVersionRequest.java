@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class ListHistoryDeployVersionRequest extends RoaAcsRequest<ListHistoryDeployVersionResponse> {
 	
 	public ListHistoryDeployVersionRequest() {
-		super("Edas", "2017-08-01", "ListHistoryDeployVersion", "edas");
+		super("Edas", "2017-08-01", "ListHistoryDeployVersion");
 		setUriPattern("/pop/v5/app/deploy_history_version_list");
 		setMethod(MethodType.GET);
 	}

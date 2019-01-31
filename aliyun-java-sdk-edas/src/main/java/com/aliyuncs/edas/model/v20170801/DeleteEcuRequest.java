@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class DeleteEcuRequest extends RoaAcsRequest<DeleteEcuResponse> {
 	
 	public DeleteEcuRequest() {
-		super("Edas", "2017-08-01", "DeleteEcu", "edas");
+		super("Edas", "2017-08-01", "DeleteEcu");
 		setUriPattern("/pop/v5/resource/delete_ecu");
 		setMethod(MethodType.POST);
 	}

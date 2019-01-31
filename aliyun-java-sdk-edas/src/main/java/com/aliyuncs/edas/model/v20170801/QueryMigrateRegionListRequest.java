@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class QueryMigrateRegionListRequest extends RoaAcsRequest<QueryMigrateRegionListResponse> {
 	
 	public QueryMigrateRegionListRequest() {
-		super("Edas", "2017-08-01", "QueryMigrateRegionList", "edas");
+		super("Edas", "2017-08-01", "QueryMigrateRegionList");
 		setUriPattern("/pop/v5/resource/migrate_region_select");
 		setMethod(MethodType.GET);
 	}

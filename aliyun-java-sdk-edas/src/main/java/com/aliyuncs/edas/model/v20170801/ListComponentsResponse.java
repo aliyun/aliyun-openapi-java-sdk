@@ -15,7 +15,6 @@
 package com.aliyuncs.edas.model.v20170801;
 
 import java.util.List;
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.edas.transform.v20170801.ListComponentsResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -82,10 +81,26 @@ public class ListComponentsResponse extends AcsResponse {
 			this.type = type;
 		}
 
+		public String getBizVersion() {
+			return this.version;
+		}
+
+		public void setBizVersion(String version) {
+			this.version = version;
+		}
+
+		/**
+		 * @deprecated use getBizVersion instead of this.
+		 */
+		@Deprecated
 		public String getVersion() {
 			return this.version;
 		}
 
+		/**
+		 * @deprecated use setBizVersion instead of this.
+		 */
+		@Deprecated
 		public void setVersion(String version) {
 			this.version = version;
 		}

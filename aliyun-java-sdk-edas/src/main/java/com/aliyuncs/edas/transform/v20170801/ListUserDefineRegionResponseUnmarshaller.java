@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.edas.model.v20170801.ListUserDefineRegionResponse;
 import com.aliyuncs.edas.model.v20170801.ListUserDefineRegionResponse.UserDefineRegionEntity;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

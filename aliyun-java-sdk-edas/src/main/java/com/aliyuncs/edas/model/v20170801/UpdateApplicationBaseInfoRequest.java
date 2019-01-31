@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class UpdateApplicationBaseInfoRequest extends RoaAcsRequest<UpdateApplicationBaseInfoResponse> {
 	
 	public UpdateApplicationBaseInfoRequest() {
-		super("Edas", "2017-08-01", "UpdateApplicationBaseInfo", "edas");
+		super("Edas", "2017-08-01", "UpdateApplicationBaseInfo");
 		setUriPattern("/pop/v5/app/update_app_info");
 		setMethod(MethodType.POST);
 	}

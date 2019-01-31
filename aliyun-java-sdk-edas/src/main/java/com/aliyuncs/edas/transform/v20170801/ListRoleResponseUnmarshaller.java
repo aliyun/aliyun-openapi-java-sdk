@@ -21,7 +21,6 @@ import com.aliyuncs.edas.model.v20170801.ListRoleResponse;
 import com.aliyuncs.edas.model.v20170801.ListRoleResponse.RoleItem;
 import com.aliyuncs.edas.model.v20170801.ListRoleResponse.RoleItem.Action;
 import com.aliyuncs.edas.model.v20170801.ListRoleResponse.RoleItem.Role;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

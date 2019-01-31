@@ -24,7 +24,6 @@ import com.aliyuncs.edas.model.v20170801.QueryApplicationStatusResponse.AppInfo.
 import com.aliyuncs.edas.model.v20170801.QueryApplicationStatusResponse.AppInfo.Ecc;
 import com.aliyuncs.edas.model.v20170801.QueryApplicationStatusResponse.AppInfo.Ecu;
 import com.aliyuncs.edas.model.v20170801.QueryApplicationStatusResponse.AppInfo.Group;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.edas.model.v20170801.ListConvertableEcuResponse;
 import com.aliyuncs.edas.model.v20170801.ListConvertableEcuResponse.Instance;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

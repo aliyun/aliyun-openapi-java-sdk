@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.edas.model.v20170801.ListVpcResponse;
 import com.aliyuncs.edas.model.v20170801.ListVpcResponse.VpcEntity;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

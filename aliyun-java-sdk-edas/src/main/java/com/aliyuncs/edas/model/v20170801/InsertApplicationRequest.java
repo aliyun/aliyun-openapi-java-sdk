@@ -24,20 +24,18 @@ import com.aliyuncs.http.MethodType;
 public class InsertApplicationRequest extends RoaAcsRequest<InsertApplicationResponse> {
 	
 	public InsertApplicationRequest() {
-		super("Edas", "2017-08-01", "InsertApplication", "edas");
+		super("Edas", "2017-08-01", "InsertApplication");
 		setUriPattern("/pop/v5/changeorder/co_create_app");
 		setMethod(MethodType.POST);
 	}
+
+	private String webContainer;
 
 	private String ecuInfo;
 
 	private Integer buildPackId;
 
-	private Integer mem;
-
 	private String healthCheckURL;
-
-	private String logicalRegionId;
 
 	private String reservedPortStr;
 
@@ -48,6 +46,25 @@ public class InsertApplicationRequest extends RoaAcsRequest<InsertApplicationRes
 	private String clusterId;
 
 	private String applicationName;
+
+	private String jdk;
+
+	private Integer mem;
+
+	private String logicalRegionId;
+
+	private String packageType;
+
+	public String getWebContainer() {
+		return this.webContainer;
+	}
+
+	public void setWebContainer(String webContainer) {
+		this.webContainer = webContainer;
+		if(webContainer != null){
+			putQueryParameter("WebContainer", webContainer);
+		}
+	}
 
 	public String getEcuInfo() {
 		return this.ecuInfo;
@@ -71,17 +88,6 @@ public class InsertApplicationRequest extends RoaAcsRequest<InsertApplicationRes
 		}
 	}
 
-	public Integer getMem() {
-		return this.mem;
-	}
-
-	public void setMem(Integer mem) {
-		this.mem = mem;
-		if(mem != null){
-			putQueryParameter("Mem", mem.toString());
-		}
-	}
-
 	public String getHealthCheckURL() {
 		return this.healthCheckURL;
 	}
@@ -90,17 +96,6 @@ public class InsertApplicationRequest extends RoaAcsRequest<InsertApplicationRes
 		this.healthCheckURL = healthCheckURL;
 		if(healthCheckURL != null){
 			putQueryParameter("HealthCheckURL", healthCheckURL);
-		}
-	}
-
-	public String getLogicalRegionId() {
-		return this.logicalRegionId;
-	}
-
-	public void setLogicalRegionId(String logicalRegionId) {
-		this.logicalRegionId = logicalRegionId;
-		if(logicalRegionId != null){
-			putQueryParameter("LogicalRegionId", logicalRegionId);
 		}
 	}
 
@@ -156,6 +151,50 @@ public class InsertApplicationRequest extends RoaAcsRequest<InsertApplicationRes
 		this.applicationName = applicationName;
 		if(applicationName != null){
 			putQueryParameter("ApplicationName", applicationName);
+		}
+	}
+
+	public String getJdk() {
+		return this.jdk;
+	}
+
+	public void setJdk(String jdk) {
+		this.jdk = jdk;
+		if(jdk != null){
+			putQueryParameter("Jdk", jdk);
+		}
+	}
+
+	public Integer getMem() {
+		return this.mem;
+	}
+
+	public void setMem(Integer mem) {
+		this.mem = mem;
+		if(mem != null){
+			putQueryParameter("Mem", mem.toString());
+		}
+	}
+
+	public String getLogicalRegionId() {
+		return this.logicalRegionId;
+	}
+
+	public void setLogicalRegionId(String logicalRegionId) {
+		this.logicalRegionId = logicalRegionId;
+		if(logicalRegionId != null){
+			putQueryParameter("LogicalRegionId", logicalRegionId);
+		}
+	}
+
+	public String getPackageType() {
+		return this.packageType;
+	}
+
+	public void setPackageType(String packageType) {
+		this.packageType = packageType;
+		if(packageType != null){
+			putQueryParameter("PackageType", packageType);
 		}
 	}
 

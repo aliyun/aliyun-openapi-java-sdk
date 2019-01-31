@@ -23,7 +23,6 @@ import com.aliyuncs.edas.model.v20170801.ListResourceGroupResponse.ResGroupEntit
 import com.aliyuncs.edas.model.v20170801.ListResourceGroupResponse.ResGroupEntity.EcsEntity.EcuEntity;
 import com.aliyuncs.edas.model.v20170801.ListResourceGroupResponse.ResGroupEntity.EcsEntity.VpcEntity;
 import com.aliyuncs.edas.model.v20170801.ListResourceGroupResponse.ResGroupEntity.SlbEntity;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

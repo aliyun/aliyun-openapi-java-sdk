@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.edas.model.v20170801.ListEcuByRegionResponse;
 import com.aliyuncs.edas.model.v20170801.ListEcuByRegionResponse.EcuEntity;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

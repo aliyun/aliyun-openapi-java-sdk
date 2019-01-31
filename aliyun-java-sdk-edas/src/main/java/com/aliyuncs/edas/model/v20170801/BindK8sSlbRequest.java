@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class BindK8sSlbRequest extends RoaAcsRequest<BindK8sSlbResponse> {
 	
 	public BindK8sSlbRequest() {
-		super("Edas", "2017-08-01", "BindK8sSlb", "edas");
+		super("Edas", "2017-08-01", "BindK8sSlb");
 		setUriPattern("/pop/v5/k8s/acs/k8s_slb_binding");
 		setMethod(MethodType.POST);
 	}

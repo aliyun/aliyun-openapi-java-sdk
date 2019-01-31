@@ -22,7 +22,6 @@ import com.aliyuncs.edas.model.v20170801.ListDegradeControlsResponse.FlowControl
 import com.aliyuncs.edas.model.v20170801.ListDegradeControlsResponse.FlowControlsMap.InterfaceMethod;
 import com.aliyuncs.edas.model.v20170801.ListDegradeControlsResponse.FlowControlsMap.RuleList;
 import com.aliyuncs.edas.model.v20170801.ListDegradeControlsResponse.FlowControlsMap.RuleList.Rule;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

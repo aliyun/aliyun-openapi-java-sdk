@@ -20,7 +20,6 @@ import java.util.List;
 import com.aliyuncs.edas.model.v20170801.ListAuthorityResponse;
 import com.aliyuncs.edas.model.v20170801.ListAuthorityResponse.Authority;
 import com.aliyuncs.edas.model.v20170801.ListAuthorityResponse.Authority.Action;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

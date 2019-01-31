@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class AuthorizeRoleRequest extends RoaAcsRequest<AuthorizeRoleResponse> {
 	
 	public AuthorizeRoleRequest() {
-		super("Edas", "2017-08-01", "AuthorizeRole", "edas");
+		super("Edas", "2017-08-01", "AuthorizeRole");
 		setUriPattern("/pop/v5/account/authorize_role");
 		setMethod(MethodType.POST);
 	}

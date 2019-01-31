@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class StartApplicationRequest extends RoaAcsRequest<StartApplicationResponse> {
 	
 	public StartApplicationRequest() {
-		super("Edas", "2017-08-01", "StartApplication", "edas");
+		super("Edas", "2017-08-01", "StartApplication");
 		setUriPattern("/pop/v5/changeorder/co_start");
 		setMethod(MethodType.POST);
 	}

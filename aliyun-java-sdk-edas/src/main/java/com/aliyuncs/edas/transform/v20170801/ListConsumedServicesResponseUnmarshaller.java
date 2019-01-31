@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.edas.model.v20170801.ListConsumedServicesResponse;
 import com.aliyuncs.edas.model.v20170801.ListConsumedServicesResponse.ListConsumedServices;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class UnbindSlbRequest extends RoaAcsRequest<UnbindSlbResponse> {
 	
 	public UnbindSlbRequest() {
-		super("Edas", "2017-08-01", "UnbindSlb", "edas");
+		super("Edas", "2017-08-01", "UnbindSlb");
 		setUriPattern("/pop/app/unbind_slb_json");
 		setMethod(MethodType.POST);
 	}
