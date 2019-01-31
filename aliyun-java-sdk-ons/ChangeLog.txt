@@ -1,3 +1,7 @@
+2019-01-31 Version: 3.0.0
+1, Instantiation: adding the property of instance.
+2, Replace the "ProducerId" and "ConsumerId" properties with "GROUP_ID".
+
 2019-01-25 Version: 2.1.4
 1, Add response independentNaming
 
