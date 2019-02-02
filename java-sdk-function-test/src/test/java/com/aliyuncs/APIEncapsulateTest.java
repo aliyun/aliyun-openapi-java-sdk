@@ -116,8 +116,10 @@ public class APIEncapsulateTest extends BaseTest {
             this.client.getAcsResponse(request);
             Assert.fail();
         } catch (ClientException e) {
-            Assert.assertEquals("ContentMD5NotMatched", e.getErrCode());
-            Assert.assertEquals("Specified content md5 is not matched with your request body.", e.getErrMsg());
+            Assert.assertEquals("HTTPBadRequest", e.getErrCode());
+            Assert.assertEquals(
+                    "The server could not comply with the request since it is either malformed or otherwise incorrect. "
+                            + "The content type is None. Try use \"application/json\" instead.", e.getErrMsg());
         }
     }
 
