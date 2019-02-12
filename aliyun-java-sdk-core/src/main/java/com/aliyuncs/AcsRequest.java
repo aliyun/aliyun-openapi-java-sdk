@@ -4,6 +4,7 @@ import com.aliyuncs.auth.*;
 import com.aliyuncs.http.FormatType;
 import com.aliyuncs.http.HttpRequest;
 import com.aliyuncs.http.ProtocolType;
+import com.aliyuncs.http.UserAgentConfig;
 import com.aliyuncs.regions.ProductDomain;
 
 import java.io.UnsupportedEncodingException;
@@ -20,6 +21,7 @@ public abstract class AcsRequest<T extends AcsResponse> extends HttpRequest {
     private final Map<String, String> queryParameters = new HashMap<String, String>();
     private final Map<String, String> domainParameters = new HashMap<String, String>();
     private final Map<String, String> bodyParameters = new HashMap<String, String>();
+    private UserAgentConfig userAgentConfig;
     protected ISignatureComposer composer = null;
     private String version = null;
     private String product = null;
@@ -316,4 +318,14 @@ public abstract class AcsRequest<T extends AcsResponse> extends HttpRequest {
         this.productDomain = productDomain;
     }
 
+    public UserAgentConfig getSysUserAgentConfig() {
+        return userAgentConfig;
+    }
+
+    public void appendUserAgent(String key, String value) {
+        if (this.userAgentConfig == null) {
+            this.userAgentConfig = new UserAgentConfig();
+        }
+        this.userAgentConfig.append(key, value);
+    }
 }
