@@ -6,6 +6,7 @@ import java.net.SocketTimeoutException;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
 
+import com.aliyuncs.http.*;
 import org.junit.Assert;
 import org.junit.Rule;
 import org.junit.Test;
@@ -25,13 +26,6 @@ import com.aliyuncs.exceptions.ClientException;
 import com.aliyuncs.exceptions.ErrorCodeConstant;
 import com.aliyuncs.exceptions.ErrorMessageConstant;
 import com.aliyuncs.exceptions.ServerException;
-import com.aliyuncs.http.FormatType;
-import com.aliyuncs.http.HttpClientConfig;
-import com.aliyuncs.http.HttpClientFactory;
-import com.aliyuncs.http.HttpRequest;
-import com.aliyuncs.http.HttpResponse;
-import com.aliyuncs.http.IHttpClient;
-import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.clients.CompatibleUrlConnClient;
 import com.aliyuncs.profile.DefaultProfile;
 import com.aliyuncs.regions.ProductDomain;
@@ -605,5 +599,20 @@ public class DefaultAcsClientTest {
         thrown.expect(ClientException.class);
         thrown.expectMessage(" : ");
         spyClient.getAcsResponse(request);
+    }
+
+    @Test
+    public void userAgentConfigTest() {
+        Credential credential = Mockito.mock(Credential.class);
+        Mockito.when(credential.getSecurityToken()).thenReturn(null);
+        DefaultProfile profile = Mockito.mock(DefaultProfile.class);
+        Mockito.when(profile.getCredential()).thenReturn(credential);
+        DefaultAcsClient client = new DefaultAcsClient(profile);
+        client.appendUserAgent("test", "1.2.2");
+        client.appendUserAgent("test", "1.2.3");
+        client.appendUserAgent("order", "1.2.2");
+        String userAgent = UserAgentConfig.resolve(null, client.getUserAgentConfig());
+        String resultStr = UserAgentConfig.getDefaultMessage() + " Client/CompatibleUrlConnClient test/1.2.3 order/1.2.2";
+        Assert.assertEquals(resultStr, userAgent);
     }
 }

@@ -6,6 +6,7 @@ import com.aliyuncs.auth.KeyPairCredentials;
 import com.aliyuncs.auth.Signer;
 import com.aliyuncs.http.FormatType;
 import com.aliyuncs.http.ProtocolType;
+import com.aliyuncs.http.UserAgentConfig;
 import com.aliyuncs.regions.ProductDomain;
 import org.junit.Assert;
 import org.junit.Test;
@@ -26,6 +27,17 @@ public class CommonRpcRequestTest {
         Assert.assertEquals("test", acsRequest.getSysProduct());
         Assert.assertEquals("Java/2.0.0", acsRequest.getHeaderValue("x-sdk-client"));
         Assert.assertEquals("normal", acsRequest.getHeaderValue("x-sdk-invoke-type"));
+    }
+
+    @Test
+    public void acsRequestUserConfigTest() {
+        CommonRpcRequest acsRequest = new CommonRpcRequest("test");
+        acsRequest.appendUserAgent("test", "1.2.2");
+        acsRequest.appendUserAgent("user", "1.2.2");
+        acsRequest.appendUserAgent("user", "1.3.3");
+        String agent = UserAgentConfig.resolve(acsRequest.getSysUserAgentConfig(), null);
+        String resultStr = UserAgentConfig.getDefaultMessage() + " test/1.2.2 user/1.3.3";
+        Assert.assertEquals(resultStr, agent);
     }
 
     @Test

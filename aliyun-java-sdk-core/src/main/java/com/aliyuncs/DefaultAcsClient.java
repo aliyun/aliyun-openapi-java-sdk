@@ -22,11 +22,7 @@ import com.aliyuncs.exceptions.ClientException;
 import com.aliyuncs.exceptions.ErrorCodeConstant;
 import com.aliyuncs.exceptions.ErrorMessageConstant;
 import com.aliyuncs.exceptions.ServerException;
-import com.aliyuncs.http.FormatType;
-import com.aliyuncs.http.HttpClientFactory;
-import com.aliyuncs.http.HttpRequest;
-import com.aliyuncs.http.HttpResponse;
-import com.aliyuncs.http.IHttpClient;
+import com.aliyuncs.http.*;
 import com.aliyuncs.profile.DefaultProfile;
 import com.aliyuncs.profile.IClientProfile;
 import com.aliyuncs.reader.Reader;
@@ -48,6 +44,7 @@ public class DefaultAcsClient implements IAcsClient {
     private IHttpClient httpClient;
     private EndpointResolver endpointResolver;
     private static final String SIGNATURE_BEGIN = "string to sign is:";
+    private final UserAgentConfig userAgentConfig = new UserAgentConfig();
 
     @Deprecated
     public DefaultAcsClient() {
@@ -69,6 +66,7 @@ public class DefaultAcsClient implements IAcsClient {
         this.clientProfile.setCredentialsProvider(this.credentialsProvider);
         this.httpClient = HttpClientFactory.buildClient(this.clientProfile);
         this.endpointResolver = new DefaultEndpointResolver(this, profile);
+        this.appendUserAgent("Client", this.httpClient.getClass().getSimpleName());
     }
 
     @Override
@@ -242,7 +240,8 @@ public class DefaultAcsClient implements IAcsClient {
             if (request.getSysProtocol() == null) {
                 request.setSysProtocol(this.clientProfile.getHttpClientConfig().getProtocolType());
             }
-
+            request.putHeaderParameter("User-Agent",
+                    UserAgentConfig.resolve(request.getSysUserAgentConfig(), this.userAgentConfig));
             try {
                 HttpRequest httpRequest = request.signRequest(signer, credentials, format, domain);
                 HttpResponse response;
@@ -365,4 +364,11 @@ public class DefaultAcsClient implements IAcsClient {
         return (DefaultProfile) clientProfile;
     }
 
+    public void appendUserAgent(String key, String value) {
+        this.userAgentConfig.append(key, value);
+    }
+
+    public UserAgentConfig getUserAgentConfig() {
+        return userAgentConfig;
+    }
 }
