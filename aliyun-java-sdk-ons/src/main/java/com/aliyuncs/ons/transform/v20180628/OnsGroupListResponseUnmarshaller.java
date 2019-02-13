@@ -34,12 +34,10 @@ public class OnsGroupListResponseUnmarshaller {
 			SubscribeInfoDo subscribeInfoDo = new SubscribeInfoDo();
 			subscribeInfoDo.setOwner(context.stringValue("OnsGroupListResponse.Data["+ i +"].Owner"));
 			subscribeInfoDo.setGroupId(context.stringValue("OnsGroupListResponse.Data["+ i +"].GroupId"));
-			subscribeInfoDo.setStatus(context.integerValue("OnsGroupListResponse.Data["+ i +"].Status"));
-			subscribeInfoDo.setStatusName(context.stringValue("OnsGroupListResponse.Data["+ i +"].StatusName"));
-			subscribeInfoDo.setCreateTime(context.longValue("OnsGroupListResponse.Data["+ i +"].CreateTime"));
 			subscribeInfoDo.setUpdateTime(context.longValue("OnsGroupListResponse.Data["+ i +"].UpdateTime"));
 			subscribeInfoDo.setRemark(context.stringValue("OnsGroupListResponse.Data["+ i +"].Remark"));
 			subscribeInfoDo.setInstanceId(context.stringValue("OnsGroupListResponse.Data["+ i +"].InstanceId"));
+			subscribeInfoDo.setIndependentNaming(context.booleanValue("OnsGroupListResponse.Data["+ i +"].IndependentNaming"));
 
 			data.add(subscribeInfoDo);
 		}

@@ -61,17 +61,13 @@ public class OnsGroupListResponse extends AcsResponse {
 
 		private String groupId;
 
-		private Integer status;
-
-		private String statusName;
-
-		private Long createTime;
-
 		private Long updateTime;
 
 		private String remark;
 
 		private String instanceId;
+
+		private Boolean independentNaming;
 
 		public String getOwner() {
 			return this.owner;
@@ -87,30 +83,6 @@ public class OnsGroupListResponse extends AcsResponse {
 
 		public void setGroupId(String groupId) {
 			this.groupId = groupId;
-		}
-
-		public Integer getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(Integer status) {
-			this.status = status;
-		}
-
-		public String getStatusName() {
-			return this.statusName;
-		}
-
-		public void setStatusName(String statusName) {
-			this.statusName = statusName;
-		}
-
-		public Long getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(Long createTime) {
-			this.createTime = createTime;
 		}
 
 		public Long getUpdateTime() {
@@ -135,6 +107,14 @@ public class OnsGroupListResponse extends AcsResponse {
 
 		public void setInstanceId(String instanceId) {
 			this.instanceId = instanceId;
+		}
+
+		public Boolean getIndependentNaming() {
+			return this.independentNaming;
+		}
+
+		public void setIndependentNaming(Boolean independentNaming) {
+			this.independentNaming = independentNaming;
 		}
 	}
 

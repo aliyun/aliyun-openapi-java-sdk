@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class OnsTopicCreateRequest extends RpcAcsRequest<OnsTopicCreateResponse> {
 	
 	public OnsTopicCreateRequest() {
-		super("Ons", "2018-06-28", "OnsTopicCreate");
+		super("Ons", "2018-06-28", "OnsTopicCreate", "ons");
 	}
 
 	private Long preventCache;
@@ -37,8 +37,6 @@ public class OnsTopicCreateRequest extends RpcAcsRequest<OnsTopicCreateResponse>
 	private String topic;
 
 	private String remark;
-
-	private String appkey;
 
 	public Long getPreventCache() {
 		return this.preventCache;
@@ -103,17 +101,6 @@ public class OnsTopicCreateRequest extends RpcAcsRequest<OnsTopicCreateResponse>
 		this.remark = remark;
 		if(remark != null){
 			putQueryParameter("Remark", remark);
-		}
-	}
-
-	public String getAppkey() {
-		return this.appkey;
-	}
-
-	public void setAppkey(String appkey) {
-		this.appkey = appkey;
-		if(appkey != null){
-			putQueryParameter("Appkey", appkey);
 		}
 	}
 

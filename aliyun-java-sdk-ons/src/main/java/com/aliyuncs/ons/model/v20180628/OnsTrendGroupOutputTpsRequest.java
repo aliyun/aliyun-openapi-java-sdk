@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class OnsTrendGroupOutputTpsRequest extends RpcAcsRequest<OnsTrendGroupOutputTpsResponse> {
 	
 	public OnsTrendGroupOutputTpsRequest() {
-		super("Ons", "2018-06-28", "OnsTrendGroupOutputTps");
+		super("Ons", "2018-06-28", "OnsTrendGroupOutputTps", "ons");
 	}
 
 	private Long preventCache;

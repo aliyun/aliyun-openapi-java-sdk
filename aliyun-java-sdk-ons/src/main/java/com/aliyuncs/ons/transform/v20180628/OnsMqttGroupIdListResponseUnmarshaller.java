@@ -40,6 +40,8 @@ public class OnsMqttGroupIdListResponseUnmarshaller {
 			mqttGroupIdDo.setStatus(context.integerValue("OnsMqttGroupIdListResponse.Data["+ i +"].Status"));
 			mqttGroupIdDo.setCreateTime(context.longValue("OnsMqttGroupIdListResponse.Data["+ i +"].CreateTime"));
 			mqttGroupIdDo.setUpdateTime(context.longValue("OnsMqttGroupIdListResponse.Data["+ i +"].UpdateTime"));
+			mqttGroupIdDo.setInstanceId(context.stringValue("OnsMqttGroupIdListResponse.Data["+ i +"].InstanceId"));
+			mqttGroupIdDo.setIndependentNaming(context.booleanValue("OnsMqttGroupIdListResponse.Data["+ i +"].IndependentNaming"));
 
 			data.add(mqttGroupIdDo);
 		}

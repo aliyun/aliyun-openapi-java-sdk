@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class OnsGroupConsumerUpdateRequest extends RpcAcsRequest<OnsGroupConsumerUpdateResponse> {
 	
 	public OnsGroupConsumerUpdateRequest() {
-		super("Ons", "2018-06-28", "OnsGroupConsumerUpdate");
+		super("Ons", "2018-06-28", "OnsGroupConsumerUpdate", "ons");
 	}
 
 	private Long preventCache;

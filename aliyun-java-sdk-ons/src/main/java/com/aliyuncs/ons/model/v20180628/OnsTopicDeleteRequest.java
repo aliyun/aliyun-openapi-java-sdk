@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class OnsTopicDeleteRequest extends RpcAcsRequest<OnsTopicDeleteResponse> {
 	
 	public OnsTopicDeleteRequest() {
-		super("Ons", "2018-06-28", "OnsTopicDelete");
+		super("Ons", "2018-06-28", "OnsTopicDelete", "ons");
 	}
 
 	private Long preventCache;

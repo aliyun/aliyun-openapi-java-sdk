@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class OnsConsumerTimeSpanRequest extends RpcAcsRequest<OnsConsumerTimeSpanResponse> {
 	
 	public OnsConsumerTimeSpanRequest() {
-		super("Ons", "2018-06-28", "OnsConsumerTimeSpan");
+		super("Ons", "2018-06-28", "OnsConsumerTimeSpan", "ons");
 	}
 
 	private Long preventCache;

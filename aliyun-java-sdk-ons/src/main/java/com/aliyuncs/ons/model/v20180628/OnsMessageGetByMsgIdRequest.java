@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class OnsMessageGetByMsgIdRequest extends RpcAcsRequest<OnsMessageGetByMsgIdResponse> {
 	
 	public OnsMessageGetByMsgIdRequest() {
-		super("Ons", "2018-06-28", "OnsMessageGetByMsgId");
+		super("Ons", "2018-06-28", "OnsMessageGetByMsgId", "ons");
 	}
 
 	private Long preventCache;

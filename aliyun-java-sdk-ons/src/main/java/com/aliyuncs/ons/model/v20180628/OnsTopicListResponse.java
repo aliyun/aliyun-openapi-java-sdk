@@ -65,14 +65,6 @@ public class OnsTopicListResponse extends AcsResponse {
 
 		private String relationName;
 
-		private Integer status;
-
-		private String statusName;
-
-		private String appkey;
-
-		private Long createTime;
-
 		private Long updateTime;
 
 		private String remark;
@@ -80,6 +72,8 @@ public class OnsTopicListResponse extends AcsResponse {
 		private Integer messageType;
 
 		private String instanceId;
+
+		private Boolean independentNaming;
 
 		public String getTopic() {
 			return this.topic;
@@ -113,38 +107,6 @@ public class OnsTopicListResponse extends AcsResponse {
 			this.relationName = relationName;
 		}
 
-		public Integer getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(Integer status) {
-			this.status = status;
-		}
-
-		public String getStatusName() {
-			return this.statusName;
-		}
-
-		public void setStatusName(String statusName) {
-			this.statusName = statusName;
-		}
-
-		public String getAppkey() {
-			return this.appkey;
-		}
-
-		public void setAppkey(String appkey) {
-			this.appkey = appkey;
-		}
-
-		public Long getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(Long createTime) {
-			this.createTime = createTime;
-		}
-
 		public Long getUpdateTime() {
 			return this.updateTime;
 		}
@@ -175,6 +137,14 @@ public class OnsTopicListResponse extends AcsResponse {
 
 		public void setInstanceId(String instanceId) {
 			this.instanceId = instanceId;
+		}
+
+		public Boolean getIndependentNaming() {
+			return this.independentNaming;
+		}
+
+		public void setIndependentNaming(Boolean independentNaming) {
+			this.independentNaming = independentNaming;
 		}
 	}
 

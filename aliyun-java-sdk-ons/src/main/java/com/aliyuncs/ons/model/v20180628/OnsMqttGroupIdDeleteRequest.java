@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class OnsMqttGroupIdDeleteRequest extends RpcAcsRequest<OnsMqttGroupIdDeleteResponse> {
 	
 	public OnsMqttGroupIdDeleteRequest() {
-		super("Ons", "2018-06-28", "OnsMqttGroupIdDelete");
+		super("Ons", "2018-06-28", "OnsMqttGroupIdDelete", "ons");
 	}
 
 	private Long preventCache;

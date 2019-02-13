@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class OnsTraceQueryByMsgIdRequest extends RpcAcsRequest<OnsTraceQueryByMsgIdResponse> {
 	
 	public OnsTraceQueryByMsgIdRequest() {
-		super("Ons", "2018-06-28", "OnsTraceQueryByMsgId");
+		super("Ons", "2018-06-28", "OnsTraceQueryByMsgId", "ons");
 	}
 
 	private Long preventCache;

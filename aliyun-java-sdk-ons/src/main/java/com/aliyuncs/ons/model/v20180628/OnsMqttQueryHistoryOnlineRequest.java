@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class OnsMqttQueryHistoryOnlineRequest extends RpcAcsRequest<OnsMqttQueryHistoryOnlineResponse> {
 	
 	public OnsMqttQueryHistoryOnlineRequest() {
-		super("Ons", "2018-06-28", "OnsMqttQueryHistoryOnline");
+		super("Ons", "2018-06-28", "OnsMqttQueryHistoryOnline", "ons");
 	}
 
 	private Long preventCache;

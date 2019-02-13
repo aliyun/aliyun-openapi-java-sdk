@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class OnsInstanceCreateRequest extends RpcAcsRequest<OnsInstanceCreateResponse> {
 	
 	public OnsInstanceCreateRequest() {
-		super("Ons", "2018-06-28", "OnsInstanceCreate");
+		super("Ons", "2018-06-28", "OnsInstanceCreate", "ons");
 	}
 
 	private Long preventCache;

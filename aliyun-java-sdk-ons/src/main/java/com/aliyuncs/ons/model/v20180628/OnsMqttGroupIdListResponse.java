@@ -73,6 +73,10 @@ public class OnsMqttGroupIdListResponse extends AcsResponse {
 
 		private Long updateTime;
 
+		private String instanceId;
+
+		private Boolean independentNaming;
+
 		public Long getId() {
 			return this.id;
 		}
@@ -135,6 +139,22 @@ public class OnsMqttGroupIdListResponse extends AcsResponse {
 
 		public void setUpdateTime(Long updateTime) {
 			this.updateTime = updateTime;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
+		}
+
+		public Boolean getIndependentNaming() {
+			return this.independentNaming;
+		}
+
+		public void setIndependentNaming(Boolean independentNaming) {
+			this.independentNaming = independentNaming;
 		}
 	}
 
