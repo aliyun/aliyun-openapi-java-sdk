@@ -1,3 +1,8 @@
+2019-02-14 Version: 2.1.07130214
+1, fixed bugs  .
+2, new version: 2.1.07130214.
+3, class: DescribeUserCertificateListResponse
+
 2018-07-31 Version: 2.0.0713
 1, This is 2.0.0713 version log.
 2, This version only supports user certificate list queries.

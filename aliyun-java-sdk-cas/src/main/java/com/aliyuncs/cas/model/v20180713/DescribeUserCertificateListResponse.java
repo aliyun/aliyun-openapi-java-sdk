@@ -33,7 +33,7 @@ public class DescribeUserCertificateListResponse extends AcsResponse {
 
 	private Integer currentPage;
 
-	private List<String> certificateList;
+	private List<Certificate> certificateList;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -67,12 +67,155 @@ public class DescribeUserCertificateListResponse extends AcsResponse {
 		this.currentPage = currentPage;
 	}
 
-	public List<String> getCertificateList() {
+	public List<Certificate> getCertificateList() {
 		return this.certificateList;
 	}
 
-	public void setCertificateList(List<String> certificateList) {
+	public void setCertificateList(List<Certificate> certificateList) {
 		this.certificateList = certificateList;
+	}
+
+	public static class Certificate {
+
+		private Long id;
+
+		private String name;
+
+		private String common;
+
+		private String fingerprint;
+
+		private String issuer;
+
+		private String orgName;
+
+		private String province;
+
+		private String city;
+
+		private String country;
+
+		private String startDate;
+
+		private String endDate;
+
+		private String sans;
+
+		private Boolean expired;
+
+		private Boolean buyInAliyun;
+
+		public Long getId() {
+			return this.id;
+		}
+
+		public void setId(Long id) {
+			this.id = id;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public String getCommon() {
+			return this.common;
+		}
+
+		public void setCommon(String common) {
+			this.common = common;
+		}
+
+		public String getFingerprint() {
+			return this.fingerprint;
+		}
+
+		public void setFingerprint(String fingerprint) {
+			this.fingerprint = fingerprint;
+		}
+
+		public String getIssuer() {
+			return this.issuer;
+		}
+
+		public void setIssuer(String issuer) {
+			this.issuer = issuer;
+		}
+
+		public String getOrgName() {
+			return this.orgName;
+		}
+
+		public void setOrgName(String orgName) {
+			this.orgName = orgName;
+		}
+
+		public String getProvince() {
+			return this.province;
+		}
+
+		public void setProvince(String province) {
+			this.province = province;
+		}
+
+		public String getCity() {
+			return this.city;
+		}
+
+		public void setCity(String city) {
+			this.city = city;
+		}
+
+		public String getCountry() {
+			return this.country;
+		}
+
+		public void setCountry(String country) {
+			this.country = country;
+		}
+
+		public String getStartDate() {
+			return this.startDate;
+		}
+
+		public void setStartDate(String startDate) {
+			this.startDate = startDate;
+		}
+
+		public String getEndDate() {
+			return this.endDate;
+		}
+
+		public void setEndDate(String endDate) {
+			this.endDate = endDate;
+		}
+
+		public String getSans() {
+			return this.sans;
+		}
+
+		public void setSans(String sans) {
+			this.sans = sans;
+		}
+
+		public Boolean getExpired() {
+			return this.expired;
+		}
+
+		public void setExpired(Boolean expired) {
+			this.expired = expired;
+		}
+
+		public Boolean getBuyInAliyun() {
+			return this.buyInAliyun;
+		}
+
+		public void setBuyInAliyun(Boolean buyInAliyun) {
+			this.buyInAliyun = buyInAliyun;
+		}
 	}
 
 	@Override

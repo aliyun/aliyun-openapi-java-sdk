@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.cas.model.v20180713.DescribeUserCertificateListResponse;
+import com.aliyuncs.cas.model.v20180713.DescribeUserCertificateListResponse.Certificate;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -30,9 +31,25 @@ public class DescribeUserCertificateListResponseUnmarshaller {
 		describeUserCertificateListResponse.setShowSize(context.integerValue("DescribeUserCertificateListResponse.ShowSize"));
 		describeUserCertificateListResponse.setCurrentPage(context.integerValue("DescribeUserCertificateListResponse.CurrentPage"));
 
-		List<String> certificateList = new ArrayList<String>();
+		List<Certificate> certificateList = new ArrayList<Certificate>();
 		for (int i = 0; i < context.lengthValue("DescribeUserCertificateListResponse.CertificateList.Length"); i++) {
-			certificateList.add(context.stringValue("DescribeUserCertificateListResponse.CertificateList["+ i +"]"));
+			Certificate certificate = new Certificate();
+			certificate.setId(context.longValue("DescribeUserCertificateListResponse.CertificateList["+ i +"].id"));
+			certificate.setName(context.stringValue("DescribeUserCertificateListResponse.CertificateList["+ i +"].name"));
+			certificate.setCommon(context.stringValue("DescribeUserCertificateListResponse.CertificateList["+ i +"].common"));
+			certificate.setFingerprint(context.stringValue("DescribeUserCertificateListResponse.CertificateList["+ i +"].fingerprint"));
+			certificate.setIssuer(context.stringValue("DescribeUserCertificateListResponse.CertificateList["+ i +"].issuer"));
+			certificate.setOrgName(context.stringValue("DescribeUserCertificateListResponse.CertificateList["+ i +"].orgName"));
+			certificate.setProvince(context.stringValue("DescribeUserCertificateListResponse.CertificateList["+ i +"].province"));
+			certificate.setCity(context.stringValue("DescribeUserCertificateListResponse.CertificateList["+ i +"].city"));
+			certificate.setCountry(context.stringValue("DescribeUserCertificateListResponse.CertificateList["+ i +"].country"));
+			certificate.setStartDate(context.stringValue("DescribeUserCertificateListResponse.CertificateList["+ i +"].startDate"));
+			certificate.setEndDate(context.stringValue("DescribeUserCertificateListResponse.CertificateList["+ i +"].endDate"));
+			certificate.setSans(context.stringValue("DescribeUserCertificateListResponse.CertificateList["+ i +"].sans"));
+			certificate.setExpired(context.booleanValue("DescribeUserCertificateListResponse.CertificateList["+ i +"].expired"));
+			certificate.setBuyInAliyun(context.booleanValue("DescribeUserCertificateListResponse.CertificateList["+ i +"].buyInAliyun"));
+
+			certificateList.add(certificate);
 		}
 		describeUserCertificateListResponse.setCertificateList(certificateList);
 	 
