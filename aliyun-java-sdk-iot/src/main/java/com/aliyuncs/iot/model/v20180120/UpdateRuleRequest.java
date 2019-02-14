@@ -30,6 +30,8 @@ public class UpdateRuleRequest extends RpcAcsRequest<UpdateRuleResponse> {
 
 	private String ruleDesc;
 
+	private String iotInstanceId;
+
 	private String name;
 
 	private String where;
@@ -61,6 +63,17 @@ public class UpdateRuleRequest extends RpcAcsRequest<UpdateRuleResponse> {
 		this.ruleDesc = ruleDesc;
 		if(ruleDesc != null){
 			putQueryParameter("RuleDesc", ruleDesc);
+		}
+	}
+
+	public String getIotInstanceId() {
+		return this.iotInstanceId;
+	}
+
+	public void setIotInstanceId(String iotInstanceId) {
+		this.iotInstanceId = iotInstanceId;
+		if(iotInstanceId != null){
+			putQueryParameter("IotInstanceId", iotInstanceId);
 		}
 	}
 

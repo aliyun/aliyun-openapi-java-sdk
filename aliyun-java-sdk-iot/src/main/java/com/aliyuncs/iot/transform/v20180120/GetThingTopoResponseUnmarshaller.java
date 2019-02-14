@@ -20,7 +20,6 @@ import java.util.List;
 import com.aliyuncs.iot.model.v20180120.GetThingTopoResponse;
 import com.aliyuncs.iot.model.v20180120.GetThingTopoResponse.Data;
 import com.aliyuncs.iot.model.v20180120.GetThingTopoResponse.Data.DeviceInfo;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

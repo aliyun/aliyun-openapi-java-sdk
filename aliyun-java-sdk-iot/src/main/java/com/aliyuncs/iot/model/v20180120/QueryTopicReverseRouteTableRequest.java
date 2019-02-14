@@ -26,7 +26,20 @@ public class QueryTopicReverseRouteTableRequest extends RpcAcsRequest<QueryTopic
 		super("Iot", "2018-01-20", "QueryTopicReverseRouteTable");
 	}
 
+	private String iotInstanceId;
+
 	private String topic;
+
+	public String getIotInstanceId() {
+		return this.iotInstanceId;
+	}
+
+	public void setIotInstanceId(String iotInstanceId) {
+		this.iotInstanceId = iotInstanceId;
+		if(iotInstanceId != null){
+			putQueryParameter("IotInstanceId", iotInstanceId);
+		}
+	}
 
 	public String getTopic() {
 		return this.topic;

@@ -32,6 +32,8 @@ public class CreateProductRequest extends RpcAcsRequest<CreateProductResponse> {
 
 	private Boolean id2;
 
+	private String iotInstanceId;
+
 	private String netType;
 
 	private String productName;
@@ -74,6 +76,17 @@ public class CreateProductRequest extends RpcAcsRequest<CreateProductResponse> {
 		this.id2 = id2;
 		if(id2 != null){
 			putQueryParameter("Id2", id2.toString());
+		}
+	}
+
+	public String getIotInstanceId() {
+		return this.iotInstanceId;
+	}
+
+	public void setIotInstanceId(String iotInstanceId) {
+		this.iotInstanceId = iotInstanceId;
+		if(iotInstanceId != null){
+			putQueryParameter("IotInstanceId", iotInstanceId);
 		}
 	}
 

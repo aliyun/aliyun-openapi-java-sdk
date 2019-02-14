@@ -28,6 +28,8 @@ public class QueryBatchRegisterDeviceStatusRequest extends RpcAcsRequest<QueryBa
 
 	private Long applyId;
 
+	private String iotInstanceId;
+
 	private String productKey;
 
 	public Long getApplyId() {
@@ -38,6 +40,17 @@ public class QueryBatchRegisterDeviceStatusRequest extends RpcAcsRequest<QueryBa
 		this.applyId = applyId;
 		if(applyId != null){
 			putQueryParameter("ApplyId", applyId.toString());
+		}
+	}
+
+	public String getIotInstanceId() {
+		return this.iotInstanceId;
+	}
+
+	public void setIotInstanceId(String iotInstanceId) {
+		this.iotInstanceId = iotInstanceId;
+		if(iotInstanceId != null){
+			putQueryParameter("IotInstanceId", iotInstanceId);
 		}
 	}
 

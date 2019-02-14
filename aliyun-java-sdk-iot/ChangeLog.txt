@@ -1,3 +1,6 @@
+2019-02-14 Version: 6.6.1
+1, fix SDK.InvalidRegionId exception in aliyun-net-sdk-core.
+
 2019-01-15 Version: 6.6.0
 1, add API of product tags.
 2, add API QueryDeviceGroupByTags.

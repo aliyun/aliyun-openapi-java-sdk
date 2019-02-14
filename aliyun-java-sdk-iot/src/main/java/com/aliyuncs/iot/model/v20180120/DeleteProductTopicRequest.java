@@ -28,6 +28,8 @@ public class DeleteProductTopicRequest extends RpcAcsRequest<DeleteProductTopicR
 
 	private String topicId;
 
+	private String iotInstanceId;
+
 	public String getTopicId() {
 		return this.topicId;
 	}
@@ -36,6 +38,17 @@ public class DeleteProductTopicRequest extends RpcAcsRequest<DeleteProductTopicR
 		this.topicId = topicId;
 		if(topicId != null){
 			putQueryParameter("TopicId", topicId);
+		}
+	}
+
+	public String getIotInstanceId() {
+		return this.iotInstanceId;
+	}
+
+	public void setIotInstanceId(String iotInstanceId) {
+		this.iotInstanceId = iotInstanceId;
+		if(iotInstanceId != null){
+			putQueryParameter("IotInstanceId", iotInstanceId);
 		}
 	}
 

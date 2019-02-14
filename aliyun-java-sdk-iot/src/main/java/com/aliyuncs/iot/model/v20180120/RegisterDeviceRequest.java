@@ -26,9 +26,22 @@ public class RegisterDeviceRequest extends RpcAcsRequest<RegisterDeviceResponse>
 		super("Iot", "2018-01-20", "RegisterDevice");
 	}
 
+	private String iotInstanceId;
+
 	private String deviceName;
 
 	private String productKey;
+
+	public String getIotInstanceId() {
+		return this.iotInstanceId;
+	}
+
+	public void setIotInstanceId(String iotInstanceId) {
+		this.iotInstanceId = iotInstanceId;
+		if(iotInstanceId != null){
+			putQueryParameter("IotInstanceId", iotInstanceId);
+		}
+	}
 
 	public String getDeviceName() {
 		return this.deviceName;

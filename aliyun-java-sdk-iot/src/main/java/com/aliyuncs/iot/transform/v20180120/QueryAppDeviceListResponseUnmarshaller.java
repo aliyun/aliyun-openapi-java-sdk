@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.iot.model.v20180120.QueryAppDeviceListResponse;
 import com.aliyuncs.iot.model.v20180120.QueryAppDeviceListResponse.DataItem;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

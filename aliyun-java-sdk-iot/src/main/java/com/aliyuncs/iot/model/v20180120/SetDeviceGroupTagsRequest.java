@@ -28,6 +28,8 @@ public class SetDeviceGroupTagsRequest extends RpcAcsRequest<SetDeviceGroupTagsR
 
 	private String tagString;
 
+	private String iotInstanceId;
+
 	private String groupId;
 
 	public String getTagString() {
@@ -38,6 +40,17 @@ public class SetDeviceGroupTagsRequest extends RpcAcsRequest<SetDeviceGroupTagsR
 		this.tagString = tagString;
 		if(tagString != null){
 			putQueryParameter("TagString", tagString);
+		}
+	}
+
+	public String getIotInstanceId() {
+		return this.iotInstanceId;
+	}
+
+	public void setIotInstanceId(String iotInstanceId) {
+		this.iotInstanceId = iotInstanceId;
+		if(iotInstanceId != null){
+			putQueryParameter("IotInstanceId", iotInstanceId);
 		}
 	}
 

@@ -26,11 +26,24 @@ public class DeleteDevicePropRequest extends RpcAcsRequest<DeleteDevicePropRespo
 		super("Iot", "2018-01-20", "DeleteDeviceProp");
 	}
 
+	private String iotInstanceId;
+
 	private String deviceName;
 
 	private String productKey;
 
 	private String propKey;
+
+	public String getIotInstanceId() {
+		return this.iotInstanceId;
+	}
+
+	public void setIotInstanceId(String iotInstanceId) {
+		this.iotInstanceId = iotInstanceId;
+		if(iotInstanceId != null){
+			putQueryParameter("IotInstanceId", iotInstanceId);
+		}
+	}
 
 	public String getDeviceName() {
 		return this.deviceName;

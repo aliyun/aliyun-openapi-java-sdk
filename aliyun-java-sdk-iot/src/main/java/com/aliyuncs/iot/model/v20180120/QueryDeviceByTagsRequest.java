@@ -27,11 +27,24 @@ public class QueryDeviceByTagsRequest extends RpcAcsRequest<QueryDeviceByTagsRes
 		super("Iot", "2018-01-20", "QueryDeviceByTags");
 	}
 
+	private String iotInstanceId;
+
 	private Integer pageSize;
 
 	private Integer currentPage;
 
 	private List<Tag> tags;
+
+	public String getIotInstanceId() {
+		return this.iotInstanceId;
+	}
+
+	public void setIotInstanceId(String iotInstanceId) {
+		this.iotInstanceId = iotInstanceId;
+		if(iotInstanceId != null){
+			putQueryParameter("IotInstanceId", iotInstanceId);
+		}
+	}
 
 	public Integer getPageSize() {
 		return this.pageSize;

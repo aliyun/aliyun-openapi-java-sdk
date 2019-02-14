@@ -15,7 +15,6 @@
 package com.aliyuncs.iot.model.v20180120;
 
 import java.util.List;
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.iot.transform.v20180120.ListProductTagsResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;

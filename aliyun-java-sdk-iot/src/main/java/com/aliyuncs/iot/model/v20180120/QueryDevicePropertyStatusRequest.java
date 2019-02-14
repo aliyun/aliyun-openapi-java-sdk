@@ -28,6 +28,8 @@ public class QueryDevicePropertyStatusRequest extends RpcAcsRequest<QueryDeviceP
 
 	private String iotId;
 
+	private String iotInstanceId;
+
 	private String deviceName;
 
 	private String productKey;
@@ -40,6 +42,17 @@ public class QueryDevicePropertyStatusRequest extends RpcAcsRequest<QueryDeviceP
 		this.iotId = iotId;
 		if(iotId != null){
 			putQueryParameter("IotId", iotId);
+		}
+	}
+
+	public String getIotInstanceId() {
+		return this.iotInstanceId;
+	}
+
+	public void setIotInstanceId(String iotInstanceId) {
+		this.iotInstanceId = iotInstanceId;
+		if(iotInstanceId != null){
+			putQueryParameter("IotInstanceId", iotInstanceId);
 		}
 	}
 

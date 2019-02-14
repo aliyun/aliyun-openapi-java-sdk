@@ -26,7 +26,20 @@ public class StopRuleRequest extends RpcAcsRequest<StopRuleResponse> {
 		super("Iot", "2018-01-20", "StopRule");
 	}
 
+	private String iotInstanceId;
+
 	private Long ruleId;
+
+	public String getIotInstanceId() {
+		return this.iotInstanceId;
+	}
+
+	public void setIotInstanceId(String iotInstanceId) {
+		this.iotInstanceId = iotInstanceId;
+		if(iotInstanceId != null){
+			putQueryParameter("IotInstanceId", iotInstanceId);
+		}
+	}
 
 	public Long getRuleId() {
 		return this.ruleId;

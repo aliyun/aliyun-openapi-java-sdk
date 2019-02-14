@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.iot.model.v20180120.QueryProductTopicResponse;
 import com.aliyuncs.iot.model.v20180120.QueryProductTopicResponse.ProductTopicInfo;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

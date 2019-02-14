@@ -32,6 +32,8 @@ public class PubRequest extends RpcAcsRequest<PubResponse> {
 
 	private String messageContent;
 
+	private String iotInstanceId;
+
 	private String productKey;
 
 	public String getTopicFullName() {
@@ -64,6 +66,17 @@ public class PubRequest extends RpcAcsRequest<PubResponse> {
 		this.messageContent = messageContent;
 		if(messageContent != null){
 			putQueryParameter("MessageContent", messageContent);
+		}
+	}
+
+	public String getIotInstanceId() {
+		return this.iotInstanceId;
+	}
+
+	public void setIotInstanceId(String iotInstanceId) {
+		this.iotInstanceId = iotInstanceId;
+		if(iotInstanceId != null){
+			putQueryParameter("IotInstanceId", iotInstanceId);
 		}
 	}
 

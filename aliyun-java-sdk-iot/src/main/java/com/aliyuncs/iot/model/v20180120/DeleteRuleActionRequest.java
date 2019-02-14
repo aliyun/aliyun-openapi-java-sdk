@@ -26,7 +26,20 @@ public class DeleteRuleActionRequest extends RpcAcsRequest<DeleteRuleActionRespo
 		super("Iot", "2018-01-20", "DeleteRuleAction");
 	}
 
+	private String iotInstanceId;
+
 	private Long actionId;
+
+	public String getIotInstanceId() {
+		return this.iotInstanceId;
+	}
+
+	public void setIotInstanceId(String iotInstanceId) {
+		this.iotInstanceId = iotInstanceId;
+		if(iotInstanceId != null){
+			putQueryParameter("IotInstanceId", iotInstanceId);
+		}
+	}
 
 	public Long getActionId() {
 		return this.actionId;

@@ -20,7 +20,6 @@ import java.util.List;
 import com.aliyuncs.iot.model.v20180120.QueryDevicePropertyDataResponse;
 import com.aliyuncs.iot.model.v20180120.QueryDevicePropertyDataResponse.Data;
 import com.aliyuncs.iot.model.v20180120.QueryDevicePropertyDataResponse.Data.PropertyInfo;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.iot.model.v20180120.BatchGetDeviceStateResponse;
 import com.aliyuncs.iot.model.v20180120.BatchGetDeviceStateResponse.DeviceStatus;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

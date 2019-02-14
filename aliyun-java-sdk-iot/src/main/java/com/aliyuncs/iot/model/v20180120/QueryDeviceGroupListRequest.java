@@ -26,6 +26,8 @@ public class QueryDeviceGroupListRequest extends RpcAcsRequest<QueryDeviceGroupL
 		super("Iot", "2018-01-20", "QueryDeviceGroupList");
 	}
 
+	private String iotInstanceId;
+
 	private String superGroupId;
 
 	private Integer pageSize;
@@ -33,6 +35,17 @@ public class QueryDeviceGroupListRequest extends RpcAcsRequest<QueryDeviceGroupL
 	private Integer currentPage;
 
 	private String groupName;
+
+	public String getIotInstanceId() {
+		return this.iotInstanceId;
+	}
+
+	public void setIotInstanceId(String iotInstanceId) {
+		this.iotInstanceId = iotInstanceId;
+		if(iotInstanceId != null){
+			putQueryParameter("IotInstanceId", iotInstanceId);
+		}
+	}
 
 	public String getSuperGroupId() {
 		return this.superGroupId;

@@ -26,6 +26,8 @@ public class CreateProductTopicRequest extends RpcAcsRequest<CreateProductTopicR
 		super("Iot", "2018-01-20", "CreateProductTopic");
 	}
 
+	private String iotInstanceId;
+
 	private String productKey;
 
 	private String topicShortName;
@@ -33,6 +35,17 @@ public class CreateProductTopicRequest extends RpcAcsRequest<CreateProductTopicR
 	private String operation;
 
 	private String desc;
+
+	public String getIotInstanceId() {
+		return this.iotInstanceId;
+	}
+
+	public void setIotInstanceId(String iotInstanceId) {
+		this.iotInstanceId = iotInstanceId;
+		if(iotInstanceId != null){
+			putQueryParameter("IotInstanceId", iotInstanceId);
+		}
+	}
 
 	public String getProductKey() {
 		return this.productKey;

@@ -20,7 +20,6 @@ import java.util.List;
 import com.aliyuncs.iot.model.v20180120.QueryProductListResponse;
 import com.aliyuncs.iot.model.v20180120.QueryProductListResponse.Data;
 import com.aliyuncs.iot.model.v20180120.QueryProductListResponse.Data.ProductInfo;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

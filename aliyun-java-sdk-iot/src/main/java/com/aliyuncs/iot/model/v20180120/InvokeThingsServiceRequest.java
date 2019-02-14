@@ -31,6 +31,8 @@ public class InvokeThingsServiceRequest extends RpcAcsRequest<InvokeThingsServic
 
 	private String identifier;
 
+	private String iotInstanceId;
+
 	private List<String> deviceNames;
 
 	private String productKey;
@@ -54,6 +56,17 @@ public class InvokeThingsServiceRequest extends RpcAcsRequest<InvokeThingsServic
 		this.identifier = identifier;
 		if(identifier != null){
 			putQueryParameter("Identifier", identifier);
+		}
+	}
+
+	public String getIotInstanceId() {
+		return this.iotInstanceId;
+	}
+
+	public void setIotInstanceId(String iotInstanceId) {
+		this.iotInstanceId = iotInstanceId;
+		if(iotInstanceId != null){
+			putQueryParameter("IotInstanceId", iotInstanceId);
 		}
 	}
 

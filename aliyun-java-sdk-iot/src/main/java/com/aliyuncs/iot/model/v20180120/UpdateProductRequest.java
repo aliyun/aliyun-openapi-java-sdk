@@ -26,11 +26,24 @@ public class UpdateProductRequest extends RpcAcsRequest<UpdateProductResponse> {
 		super("Iot", "2018-01-20", "UpdateProduct");
 	}
 
+	private String iotInstanceId;
+
 	private String productName;
 
 	private String description;
 
 	private String productKey;
+
+	public String getIotInstanceId() {
+		return this.iotInstanceId;
+	}
+
+	public void setIotInstanceId(String iotInstanceId) {
+		this.iotInstanceId = iotInstanceId;
+		if(iotInstanceId != null){
+			putQueryParameter("IotInstanceId", iotInstanceId);
+		}
+	}
 
 	public String getProductName() {
 		return this.productName;

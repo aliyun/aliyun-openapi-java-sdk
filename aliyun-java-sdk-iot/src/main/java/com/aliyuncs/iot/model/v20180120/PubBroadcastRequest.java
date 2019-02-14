@@ -30,6 +30,8 @@ public class PubBroadcastRequest extends RpcAcsRequest<PubBroadcastResponse> {
 
 	private String messageContent;
 
+	private String iotInstanceId;
+
 	private String productKey;
 
 	public String getTopicFullName() {
@@ -51,6 +53,17 @@ public class PubBroadcastRequest extends RpcAcsRequest<PubBroadcastResponse> {
 		this.messageContent = messageContent;
 		if(messageContent != null){
 			putQueryParameter("MessageContent", messageContent);
+		}
+	}
+
+	public String getIotInstanceId() {
+		return this.iotInstanceId;
+	}
+
+	public void setIotInstanceId(String iotInstanceId) {
+		this.iotInstanceId = iotInstanceId;
+		if(iotInstanceId != null){
+			putQueryParameter("IotInstanceId", iotInstanceId);
 		}
 	}
 

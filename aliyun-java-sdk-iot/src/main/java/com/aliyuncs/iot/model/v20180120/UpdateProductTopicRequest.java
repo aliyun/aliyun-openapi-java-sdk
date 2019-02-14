@@ -28,6 +28,8 @@ public class UpdateProductTopicRequest extends RpcAcsRequest<UpdateProductTopicR
 
 	private String topicId;
 
+	private String iotInstanceId;
+
 	private String operation;
 
 	private String topicShortName;
@@ -42,6 +44,17 @@ public class UpdateProductTopicRequest extends RpcAcsRequest<UpdateProductTopicR
 		this.topicId = topicId;
 		if(topicId != null){
 			putQueryParameter("TopicId", topicId);
+		}
+	}
+
+	public String getIotInstanceId() {
+		return this.iotInstanceId;
+	}
+
+	public void setIotInstanceId(String iotInstanceId) {
+		this.iotInstanceId = iotInstanceId;
+		if(iotInstanceId != null){
+			putQueryParameter("IotInstanceId", iotInstanceId);
 		}
 	}
 

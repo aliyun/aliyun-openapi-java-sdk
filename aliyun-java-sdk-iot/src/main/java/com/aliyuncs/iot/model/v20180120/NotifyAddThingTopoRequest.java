@@ -30,6 +30,8 @@ public class NotifyAddThingTopoRequest extends RpcAcsRequest<NotifyAddThingTopoR
 
 	private String gwDeviceName;
 
+	private String iotInstanceId;
+
 	private String gwIotId;
 
 	private String deviceListStr;
@@ -53,6 +55,17 @@ public class NotifyAddThingTopoRequest extends RpcAcsRequest<NotifyAddThingTopoR
 		this.gwDeviceName = gwDeviceName;
 		if(gwDeviceName != null){
 			putQueryParameter("GwDeviceName", gwDeviceName);
+		}
+	}
+
+	public String getIotInstanceId() {
+		return this.iotInstanceId;
+	}
+
+	public void setIotInstanceId(String iotInstanceId) {
+		this.iotInstanceId = iotInstanceId;
+		if(iotInstanceId != null){
+			putQueryParameter("IotInstanceId", iotInstanceId);
 		}
 	}
 

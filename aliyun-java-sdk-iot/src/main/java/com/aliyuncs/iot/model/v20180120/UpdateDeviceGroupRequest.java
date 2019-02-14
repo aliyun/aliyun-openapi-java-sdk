@@ -28,6 +28,8 @@ public class UpdateDeviceGroupRequest extends RpcAcsRequest<UpdateDeviceGroupRes
 
 	private String groupDesc;
 
+	private String iotInstanceId;
+
 	private String groupId;
 
 	public String getGroupDesc() {
@@ -38,6 +40,17 @@ public class UpdateDeviceGroupRequest extends RpcAcsRequest<UpdateDeviceGroupRes
 		this.groupDesc = groupDesc;
 		if(groupDesc != null){
 			putQueryParameter("GroupDesc", groupDesc);
+		}
+	}
+
+	public String getIotInstanceId() {
+		return this.iotInstanceId;
+	}
+
+	public void setIotInstanceId(String iotInstanceId) {
+		this.iotInstanceId = iotInstanceId;
+		if(iotInstanceId != null){
+			putQueryParameter("IotInstanceId", iotInstanceId);
 		}
 	}
 

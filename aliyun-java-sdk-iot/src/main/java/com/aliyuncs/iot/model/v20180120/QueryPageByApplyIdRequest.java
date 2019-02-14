@@ -28,6 +28,8 @@ public class QueryPageByApplyIdRequest extends RpcAcsRequest<QueryPageByApplyIdR
 
 	private Long applyId;
 
+	private String iotInstanceId;
+
 	private Integer pageSize;
 
 	private Integer currentPage;
@@ -40,6 +42,17 @@ public class QueryPageByApplyIdRequest extends RpcAcsRequest<QueryPageByApplyIdR
 		this.applyId = applyId;
 		if(applyId != null){
 			putQueryParameter("ApplyId", applyId.toString());
+		}
+	}
+
+	public String getIotInstanceId() {
+		return this.iotInstanceId;
+	}
+
+	public void setIotInstanceId(String iotInstanceId) {
+		this.iotInstanceId = iotInstanceId;
+		if(iotInstanceId != null){
+			putQueryParameter("IotInstanceId", iotInstanceId);
 		}
 	}
 

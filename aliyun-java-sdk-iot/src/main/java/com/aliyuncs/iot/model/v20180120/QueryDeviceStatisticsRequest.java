@@ -26,7 +26,20 @@ public class QueryDeviceStatisticsRequest extends RpcAcsRequest<QueryDeviceStati
 		super("Iot", "2018-01-20", "QueryDeviceStatistics");
 	}
 
+	private String iotInstanceId;
+
 	private String productKey;
+
+	public String getIotInstanceId() {
+		return this.iotInstanceId;
+	}
+
+	public void setIotInstanceId(String iotInstanceId) {
+		this.iotInstanceId = iotInstanceId;
+		if(iotInstanceId != null){
+			putQueryParameter("IotInstanceId", iotInstanceId);
+		}
+	}
 
 	public String getProductKey() {
 		return this.productKey;

@@ -26,9 +26,22 @@ public class ListRuleRequest extends RpcAcsRequest<ListRuleResponse> {
 		super("Iot", "2018-01-20", "ListRule");
 	}
 
+	private String iotInstanceId;
+
 	private Integer pageSize;
 
 	private Integer currentPage;
+
+	public String getIotInstanceId() {
+		return this.iotInstanceId;
+	}
+
+	public void setIotInstanceId(String iotInstanceId) {
+		this.iotInstanceId = iotInstanceId;
+		if(iotInstanceId != null){
+			putQueryParameter("IotInstanceId", iotInstanceId);
+		}
+	}
 
 	public Integer getPageSize() {
 		return this.pageSize;

@@ -32,6 +32,8 @@ public class CreateRuleRequest extends RpcAcsRequest<CreateRuleResponse> {
 
 	private String dataType;
 
+	private String iotInstanceId;
+
 	private String name;
 
 	private String where;
@@ -72,6 +74,17 @@ public class CreateRuleRequest extends RpcAcsRequest<CreateRuleResponse> {
 		this.dataType = dataType;
 		if(dataType != null){
 			putQueryParameter("DataType", dataType);
+		}
+	}
+
+	public String getIotInstanceId() {
+		return this.iotInstanceId;
+	}
+
+	public void setIotInstanceId(String iotInstanceId) {
+		this.iotInstanceId = iotInstanceId;
+		if(iotInstanceId != null){
+			putQueryParameter("IotInstanceId", iotInstanceId);
 		}
 	}
 

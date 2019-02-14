@@ -30,6 +30,8 @@ public class GetThingTopoRequest extends RpcAcsRequest<GetThingTopoResponse> {
 
 	private Integer pageNo;
 
+	private String iotInstanceId;
+
 	private Integer pageSize;
 
 	private String deviceName;
@@ -55,6 +57,17 @@ public class GetThingTopoRequest extends RpcAcsRequest<GetThingTopoResponse> {
 		this.pageNo = pageNo;
 		if(pageNo != null){
 			putQueryParameter("PageNo", pageNo.toString());
+		}
+	}
+
+	public String getIotInstanceId() {
+		return this.iotInstanceId;
+	}
+
+	public void setIotInstanceId(String iotInstanceId) {
+		this.iotInstanceId = iotInstanceId;
+		if(iotInstanceId != null){
+			putQueryParameter("IotInstanceId", iotInstanceId);
 		}
 	}
 

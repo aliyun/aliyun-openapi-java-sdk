@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.iot.model.v20180120.ListRuleActionsResponse;
 import com.aliyuncs.iot.model.v20180120.ListRuleActionsResponse.RuleActionInfo;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

@@ -26,9 +26,22 @@ public class BatchRegisterDeviceRequest extends RpcAcsRequest<BatchRegisterDevic
 		super("Iot", "2018-01-20", "BatchRegisterDevice");
 	}
 
+	private String iotInstanceId;
+
 	private Integer count;
 
 	private String productKey;
+
+	public String getIotInstanceId() {
+		return this.iotInstanceId;
+	}
+
+	public void setIotInstanceId(String iotInstanceId) {
+		this.iotInstanceId = iotInstanceId;
+		if(iotInstanceId != null){
+			putQueryParameter("IotInstanceId", iotInstanceId);
+		}
+	}
 
 	public Integer getCount() {
 		return this.count;

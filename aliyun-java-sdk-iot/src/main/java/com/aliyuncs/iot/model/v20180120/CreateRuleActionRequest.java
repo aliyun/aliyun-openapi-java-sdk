@@ -28,6 +28,8 @@ public class CreateRuleActionRequest extends RpcAcsRequest<CreateRuleActionRespo
 
 	private String configuration;
 
+	private String iotInstanceId;
+
 	private Long ruleId;
 
 	private String type;
@@ -42,6 +44,17 @@ public class CreateRuleActionRequest extends RpcAcsRequest<CreateRuleActionRespo
 		this.configuration = configuration;
 		if(configuration != null){
 			putQueryParameter("Configuration", configuration);
+		}
+	}
+
+	public String getIotInstanceId() {
+		return this.iotInstanceId;
+	}
+
+	public void setIotInstanceId(String iotInstanceId) {
+		this.iotInstanceId = iotInstanceId;
+		if(iotInstanceId != null){
+			putQueryParameter("IotInstanceId", iotInstanceId);
 		}
 	}
 

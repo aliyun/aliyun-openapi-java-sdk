@@ -28,6 +28,8 @@ public class GetDeviceShadowRequest extends RpcAcsRequest<GetDeviceShadowRespons
 
 	private String shadowMessage;
 
+	private String iotInstanceId;
+
 	private String deviceName;
 
 	private String productKey;
@@ -40,6 +42,17 @@ public class GetDeviceShadowRequest extends RpcAcsRequest<GetDeviceShadowRespons
 		this.shadowMessage = shadowMessage;
 		if(shadowMessage != null){
 			putQueryParameter("ShadowMessage", shadowMessage);
+		}
+	}
+
+	public String getIotInstanceId() {
+		return this.iotInstanceId;
+	}
+
+	public void setIotInstanceId(String iotInstanceId) {
+		this.iotInstanceId = iotInstanceId;
+		if(iotInstanceId != null){
+			putQueryParameter("IotInstanceId", iotInstanceId);
 		}
 	}
 

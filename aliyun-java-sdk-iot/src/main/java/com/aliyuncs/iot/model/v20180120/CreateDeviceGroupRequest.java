@@ -28,6 +28,8 @@ public class CreateDeviceGroupRequest extends RpcAcsRequest<CreateDeviceGroupRes
 
 	private String groupDesc;
 
+	private String iotInstanceId;
+
 	private String superGroupId;
 
 	private String groupName;
@@ -40,6 +42,17 @@ public class CreateDeviceGroupRequest extends RpcAcsRequest<CreateDeviceGroupRes
 		this.groupDesc = groupDesc;
 		if(groupDesc != null){
 			putQueryParameter("GroupDesc", groupDesc);
+		}
+	}
+
+	public String getIotInstanceId() {
+		return this.iotInstanceId;
+	}
+
+	public void setIotInstanceId(String iotInstanceId) {
+		this.iotInstanceId = iotInstanceId;
+		if(iotInstanceId != null){
+			putQueryParameter("IotInstanceId", iotInstanceId);
 		}
 	}
 

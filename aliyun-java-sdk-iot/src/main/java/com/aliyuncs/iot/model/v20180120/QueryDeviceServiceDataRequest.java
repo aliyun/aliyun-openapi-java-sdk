@@ -32,6 +32,8 @@ public class QueryDeviceServiceDataRequest extends RpcAcsRequest<QueryDeviceServ
 
 	private String iotId;
 
+	private String iotInstanceId;
+
 	private Integer pageSize;
 
 	private Long endTime;
@@ -72,6 +74,17 @@ public class QueryDeviceServiceDataRequest extends RpcAcsRequest<QueryDeviceServ
 		this.iotId = iotId;
 		if(iotId != null){
 			putQueryParameter("IotId", iotId);
+		}
+	}
+
+	public String getIotInstanceId() {
+		return this.iotInstanceId;
+	}
+
+	public void setIotInstanceId(String iotInstanceId) {
+		this.iotInstanceId = iotInstanceId;
+		if(iotInstanceId != null){
+			putQueryParameter("IotInstanceId", iotInstanceId);
 		}
 	}
 

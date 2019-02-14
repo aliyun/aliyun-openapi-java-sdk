@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.iot.model.v20180120.QueryDeviceGroupByDeviceResponse;
 import com.aliyuncs.iot.model.v20180120.QueryDeviceGroupByDeviceResponse.GroupInfo;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

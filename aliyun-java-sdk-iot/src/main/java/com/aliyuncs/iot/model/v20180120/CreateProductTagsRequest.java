@@ -29,6 +29,8 @@ public class CreateProductTagsRequest extends RpcAcsRequest<CreateProductTagsRes
 
 	private List<ProductTag> productTags;
 
+	private String iotInstanceId;
+
 	private String productKey;
 
 	public List<ProductTag> getProductTags() {
@@ -43,6 +45,17 @@ public class CreateProductTagsRequest extends RpcAcsRequest<CreateProductTagsRes
 				putQueryParameter("ProductTag." + (depth1 + 1) + ".TagKey" , productTags.get(depth1).getTagKey());
 			}
 		}	
+	}
+
+	public String getIotInstanceId() {
+		return this.iotInstanceId;
+	}
+
+	public void setIotInstanceId(String iotInstanceId) {
+		this.iotInstanceId = iotInstanceId;
+		if(iotInstanceId != null){
+			putQueryParameter("IotInstanceId", iotInstanceId);
+		}
 	}
 
 	public String getProductKey() {

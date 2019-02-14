@@ -26,7 +26,20 @@ public class QueryDeviceGroupInfoRequest extends RpcAcsRequest<QueryDeviceGroupI
 		super("Iot", "2018-01-20", "QueryDeviceGroupInfo");
 	}
 
+	private String iotInstanceId;
+
 	private String groupId;
+
+	public String getIotInstanceId() {
+		return this.iotInstanceId;
+	}
+
+	public void setIotInstanceId(String iotInstanceId) {
+		this.iotInstanceId = iotInstanceId;
+		if(iotInstanceId != null){
+			putQueryParameter("IotInstanceId", iotInstanceId);
+		}
+	}
 
 	public String getGroupId() {
 		return this.groupId;

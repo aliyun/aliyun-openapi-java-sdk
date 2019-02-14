@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.iot.model.v20180120.BatchCheckDeviceNamesResponse;
 import com.aliyuncs.iot.model.v20180120.BatchCheckDeviceNamesResponse.Data;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

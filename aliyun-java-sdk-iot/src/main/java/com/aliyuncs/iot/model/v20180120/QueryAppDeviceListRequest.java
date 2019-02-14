@@ -31,6 +31,8 @@ public class QueryAppDeviceListRequest extends RpcAcsRequest<QueryAppDeviceListR
 
 	private List<String> categoryKeyLists;
 
+	private String iotInstanceId;
+
 	private Integer pageSize;
 
 	private Integer currentPage;
@@ -63,6 +65,17 @@ public class QueryAppDeviceListRequest extends RpcAcsRequest<QueryAppDeviceListR
 				putQueryParameter("CategoryKeyList." + (i + 1) , categoryKeyLists.get(i));
 			}
 		}	
+	}
+
+	public String getIotInstanceId() {
+		return this.iotInstanceId;
+	}
+
+	public void setIotInstanceId(String iotInstanceId) {
+		this.iotInstanceId = iotInstanceId;
+		if(iotInstanceId != null){
+			putQueryParameter("IotInstanceId", iotInstanceId);
+		}
 	}
 
 	public Integer getPageSize() {

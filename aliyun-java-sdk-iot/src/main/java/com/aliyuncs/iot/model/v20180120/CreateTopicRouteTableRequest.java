@@ -29,6 +29,8 @@ public class CreateTopicRouteTableRequest extends RpcAcsRequest<CreateTopicRoute
 
 	private List<String> dstTopics;
 
+	private String iotInstanceId;
+
 	private String srcTopic;
 
 	public List<String> getDstTopics() {
@@ -42,6 +44,17 @@ public class CreateTopicRouteTableRequest extends RpcAcsRequest<CreateTopicRoute
 				putQueryParameter("DstTopic." + (i + 1) , dstTopics.get(i));
 			}
 		}	
+	}
+
+	public String getIotInstanceId() {
+		return this.iotInstanceId;
+	}
+
+	public void setIotInstanceId(String iotInstanceId) {
+		this.iotInstanceId = iotInstanceId;
+		if(iotInstanceId != null){
+			putQueryParameter("IotInstanceId", iotInstanceId);
+		}
 	}
 
 	public String getSrcTopic() {

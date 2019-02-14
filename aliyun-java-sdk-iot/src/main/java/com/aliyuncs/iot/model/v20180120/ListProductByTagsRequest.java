@@ -29,6 +29,8 @@ public class ListProductByTagsRequest extends RpcAcsRequest<ListProductByTagsRes
 
 	private List<ProductTag> productTags;
 
+	private String iotInstanceId;
+
 	private Integer pageSize;
 
 	private Integer currentPage;
@@ -45,6 +47,17 @@ public class ListProductByTagsRequest extends RpcAcsRequest<ListProductByTagsRes
 				putQueryParameter("ProductTag." + (depth1 + 1) + ".TagKey" , productTags.get(depth1).getTagKey());
 			}
 		}	
+	}
+
+	public String getIotInstanceId() {
+		return this.iotInstanceId;
+	}
+
+	public void setIotInstanceId(String iotInstanceId) {
+		this.iotInstanceId = iotInstanceId;
+		if(iotInstanceId != null){
+			putQueryParameter("IotInstanceId", iotInstanceId);
+		}
 	}
 
 	public Integer getPageSize() {

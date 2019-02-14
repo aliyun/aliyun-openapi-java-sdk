@@ -26,11 +26,24 @@ public class QueryProductListRequest extends RpcAcsRequest<QueryProductListRespo
 		super("Iot", "2018-01-20", "QueryProductList");
 	}
 
+	private String iotInstanceId;
+
 	private Integer pageSize;
 
 	private Integer currentPage;
 
 	private String aliyunCommodityCode;
+
+	public String getIotInstanceId() {
+		return this.iotInstanceId;
+	}
+
+	public void setIotInstanceId(String iotInstanceId) {
+		this.iotInstanceId = iotInstanceId;
+		if(iotInstanceId != null){
+			putQueryParameter("IotInstanceId", iotInstanceId);
+		}
+	}
 
 	public Integer getPageSize() {
 		return this.pageSize;
