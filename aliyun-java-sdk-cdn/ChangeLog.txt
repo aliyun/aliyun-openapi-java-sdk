@@ -1,3 +1,6 @@
+2019-02-14 Version: 3.0.5
+1, Update DescribeCdnTypes.
+
 2019-02-14 Version: 3.0.4
 1, Update DescribeTopDomainsByFlow.
 
