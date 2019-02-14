@@ -20,7 +20,6 @@ import java.util.List;
 import com.aliyuncs.cdn.model.v20141111.DescribeDomainRealTimeHttpCodeDataResponse;
 import com.aliyuncs.cdn.model.v20141111.DescribeDomainRealTimeHttpCodeDataResponse.UsageData;
 import com.aliyuncs.cdn.model.v20141111.DescribeDomainRealTimeHttpCodeDataResponse.UsageData.RealTimeCodeProportionData;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

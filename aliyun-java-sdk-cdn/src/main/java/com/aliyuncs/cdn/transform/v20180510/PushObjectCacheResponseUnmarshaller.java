@@ -23,7 +23,7 @@ public class PushObjectCacheResponseUnmarshaller {
 	public static PushObjectCacheResponse unmarshall(PushObjectCacheResponse pushObjectCacheResponse, UnmarshallerContext context) {
 		
 		pushObjectCacheResponse.setRequestId(context.stringValue("PushObjectCacheResponse.RequestId"));
-		pushObjectCacheResponse.setPreloadTaskId(context.stringValue("PushObjectCacheResponse.PreloadTaskId"));
+		pushObjectCacheResponse.setPushTaskId(context.stringValue("PushObjectCacheResponse.PushTaskId"));
 	 
 	 	return pushObjectCacheResponse;
 	}

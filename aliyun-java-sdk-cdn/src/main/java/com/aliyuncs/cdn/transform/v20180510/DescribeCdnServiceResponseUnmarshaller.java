@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.cdn.model.v20180510.DescribeCdnServiceResponse;
 import com.aliyuncs.cdn.model.v20180510.DescribeCdnServiceResponse.LockReason;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

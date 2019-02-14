@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.cdn.model.v20180510.DescribeTopDomainsByFlowResponse;
 import com.aliyuncs.cdn.model.v20180510.DescribeTopDomainsByFlowResponse.TopDomain;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -40,7 +39,7 @@ public class DescribeTopDomainsByFlowResponseUnmarshaller {
 			topDomain.setRank(context.longValue("DescribeTopDomainsByFlowResponse.TopDomains["+ i +"].Rank"));
 			topDomain.setTotalTraffic(context.stringValue("DescribeTopDomainsByFlowResponse.TopDomains["+ i +"].TotalTraffic"));
 			topDomain.setTrafficPercent(context.stringValue("DescribeTopDomainsByFlowResponse.TopDomains["+ i +"].TrafficPercent"));
-			topDomain.setMaxBps(context.longValue("DescribeTopDomainsByFlowResponse.TopDomains["+ i +"].MaxBps"));
+			topDomain.setMaxBps(context.floatValue("DescribeTopDomainsByFlowResponse.TopDomains["+ i +"].MaxBps"));
 			topDomain.setMaxBpsTime(context.stringValue("DescribeTopDomainsByFlowResponse.TopDomains["+ i +"].MaxBpsTime"));
 			topDomain.setTotalAccess(context.longValue("DescribeTopDomainsByFlowResponse.TopDomains["+ i +"].TotalAccess"));
 

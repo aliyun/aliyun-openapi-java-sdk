@@ -15,7 +15,6 @@
 package com.aliyuncs.cdn.model.v20141111;
 
 import java.util.List;
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.cdn.transform.v20141111.DescribeLiveStreamsControlHistoryResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -72,10 +71,26 @@ public class DescribeLiveStreamsControlHistoryResponse extends AcsResponse {
 			this.clientIP = clientIP;
 		}
 
+		public String getBizAction() {
+			return this.action;
+		}
+
+		public void setBizAction(String action) {
+			this.action = action;
+		}
+
+		/**
+		 * @deprecated use getBizAction instead of this.
+		 */
+		@Deprecated
 		public String getAction() {
 			return this.action;
 		}
 
+		/**
+		 * @deprecated use setBizAction instead of this.
+		 */
+		@Deprecated
 		public void setAction(String action) {
 			this.action = action;
 		}

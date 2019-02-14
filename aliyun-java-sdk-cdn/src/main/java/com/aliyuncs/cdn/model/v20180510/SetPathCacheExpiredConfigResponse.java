@@ -14,7 +14,6 @@
 
 package com.aliyuncs.cdn.model.v20180510;
 
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.cdn.transform.v20180510.SetPathCacheExpiredConfigResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;

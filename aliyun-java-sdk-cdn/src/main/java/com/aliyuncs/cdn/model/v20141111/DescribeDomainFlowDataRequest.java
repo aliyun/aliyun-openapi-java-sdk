@@ -26,7 +26,11 @@ public class DescribeDomainFlowDataRequest extends RpcAcsRequest<DescribeDomainF
 		super("Cdn", "2014-11-11", "DescribeDomainFlowData");
 	}
 
+	private String domainType;
+
 	private String fixTimeGap;
+
+	private String securityToken;
 
 	private String timeMerge;
 
@@ -36,17 +40,24 @@ public class DescribeDomainFlowDataRequest extends RpcAcsRequest<DescribeDomainF
 
 	private String locationNameEn;
 
+	private String interval;
+
 	private String startTime;
 
 	private String ispNameEn;
 
 	private Long ownerId;
 
-	private String domainType;
+	public String getDomainType() {
+		return this.domainType;
+	}
 
-	private String securityToken;
-
-	private String interval;
+	public void setDomainType(String domainType) {
+		this.domainType = domainType;
+		if(domainType != null){
+			putQueryParameter("DomainType", domainType);
+		}
+	}
 
 	public String getFixTimeGap() {
 		return this.fixTimeGap;
@@ -56,6 +67,36 @@ public class DescribeDomainFlowDataRequest extends RpcAcsRequest<DescribeDomainF
 		this.fixTimeGap = fixTimeGap;
 		if(fixTimeGap != null){
 			putQueryParameter("FixTimeGap", fixTimeGap);
+		}
+	}
+
+	public String getBizSecurityToken() {
+		return this.securityToken;
+	}
+
+	public void setBizSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	/**
+	 * @deprecated use getBizSecurityToken instead of this.
+	 */
+	@Deprecated
+	public String getSecurityToken() {
+		return this.securityToken;
+	}
+
+	/**
+	 * @deprecated use setBizSecurityToken instead of this.
+	 */
+	@Deprecated
+	public void setSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 
@@ -103,6 +144,17 @@ public class DescribeDomainFlowDataRequest extends RpcAcsRequest<DescribeDomainF
 		}
 	}
 
+	public String getInterval() {
+		return this.interval;
+	}
+
+	public void setInterval(String interval) {
+		this.interval = interval;
+		if(interval != null){
+			putQueryParameter("Interval", interval);
+		}
+	}
+
 	public String getStartTime() {
 		return this.startTime;
 	}
@@ -133,39 +185,6 @@ public class DescribeDomainFlowDataRequest extends RpcAcsRequest<DescribeDomainF
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getDomainType() {
-		return this.domainType;
-	}
-
-	public void setDomainType(String domainType) {
-		this.domainType = domainType;
-		if(domainType != null){
-			putQueryParameter("DomainType", domainType);
-		}
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	public String getInterval() {
-		return this.interval;
-	}
-
-	public void setInterval(String interval) {
-		this.interval = interval;
-		if(interval != null){
-			putQueryParameter("Interval", interval);
 		}
 	}
 

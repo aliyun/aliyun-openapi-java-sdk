@@ -26,24 +26,22 @@ public class DescribeDomainMax95BpsDataRequest extends RpcAcsRequest<DescribeDom
 		super("Cdn", "2014-11-11", "DescribeDomainMax95BpsData");
 	}
 
-	private String securityToken;
+	private String startTime;
 
 	private String domainName;
 
 	private String endTime;
 
-	private String startTime;
-
 	private Long ownerId;
 
-	public String getSecurityToken() {
-		return this.securityToken;
+	public String getStartTime() {
+		return this.startTime;
 	}
 
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime);
 		}
 	}
 
@@ -66,17 +64,6 @@ public class DescribeDomainMax95BpsDataRequest extends RpcAcsRequest<DescribeDom
 		this.endTime = endTime;
 		if(endTime != null){
 			putQueryParameter("EndTime", endTime);
-		}
-	}
-
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("StartTime", startTime);
 		}
 	}
 

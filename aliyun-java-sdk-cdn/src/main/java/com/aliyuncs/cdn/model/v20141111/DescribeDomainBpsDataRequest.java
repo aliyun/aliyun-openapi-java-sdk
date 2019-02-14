@@ -26,13 +26,19 @@ public class DescribeDomainBpsDataRequest extends RpcAcsRequest<DescribeDomainBp
 		super("Cdn", "2014-11-11", "DescribeDomainBpsData");
 	}
 
+	private String domainType;
+
 	private String fixTimeGap;
+
+	private String securityToken;
 
 	private String timeMerge;
 
 	private String domainName;
 
 	private String endTime;
+
+	private String interval;
 
 	private String locationNameEn;
 
@@ -42,11 +48,16 @@ public class DescribeDomainBpsDataRequest extends RpcAcsRequest<DescribeDomainBp
 
 	private Long ownerId;
 
-	private String domainType;
+	public String getDomainType() {
+		return this.domainType;
+	}
 
-	private String securityToken;
-
-	private String interval;
+	public void setDomainType(String domainType) {
+		this.domainType = domainType;
+		if(domainType != null){
+			putQueryParameter("DomainType", domainType);
+		}
+	}
 
 	public String getFixTimeGap() {
 		return this.fixTimeGap;
@@ -56,6 +67,36 @@ public class DescribeDomainBpsDataRequest extends RpcAcsRequest<DescribeDomainBp
 		this.fixTimeGap = fixTimeGap;
 		if(fixTimeGap != null){
 			putQueryParameter("FixTimeGap", fixTimeGap);
+		}
+	}
+
+	public String getBizSecurityToken() {
+		return this.securityToken;
+	}
+
+	public void setBizSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	/**
+	 * @deprecated use getBizSecurityToken instead of this.
+	 */
+	@Deprecated
+	public String getSecurityToken() {
+		return this.securityToken;
+	}
+
+	/**
+	 * @deprecated use setBizSecurityToken instead of this.
+	 */
+	@Deprecated
+	public void setSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 
@@ -89,6 +130,17 @@ public class DescribeDomainBpsDataRequest extends RpcAcsRequest<DescribeDomainBp
 		this.endTime = endTime;
 		if(endTime != null){
 			putQueryParameter("EndTime", endTime);
+		}
+	}
+
+	public String getInterval() {
+		return this.interval;
+	}
+
+	public void setInterval(String interval) {
+		this.interval = interval;
+		if(interval != null){
+			putQueryParameter("Interval", interval);
 		}
 	}
 
@@ -133,39 +185,6 @@ public class DescribeDomainBpsDataRequest extends RpcAcsRequest<DescribeDomainBp
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getDomainType() {
-		return this.domainType;
-	}
-
-	public void setDomainType(String domainType) {
-		this.domainType = domainType;
-		if(domainType != null){
-			putQueryParameter("DomainType", domainType);
-		}
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	public String getInterval() {
-		return this.interval;
-	}
-
-	public void setInterval(String interval) {
-		this.interval = interval;
-		if(interval != null){
-			putQueryParameter("Interval", interval);
 		}
 	}
 

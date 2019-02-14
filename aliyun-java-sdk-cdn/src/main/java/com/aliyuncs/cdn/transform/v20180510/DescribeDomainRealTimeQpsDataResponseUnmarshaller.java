@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.cdn.model.v20180510.DescribeDomainRealTimeQpsDataResponse;
 import com.aliyuncs.cdn.model.v20180510.DescribeDomainRealTimeQpsDataResponse.QpsModel;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

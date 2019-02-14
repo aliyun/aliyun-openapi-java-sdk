@@ -20,7 +20,6 @@ import java.util.List;
 import com.aliyuncs.cdn.model.v20180510.DescribeDomainSrcHttpCodeDataResponse;
 import com.aliyuncs.cdn.model.v20180510.DescribeDomainSrcHttpCodeDataResponse.UsageData;
 import com.aliyuncs.cdn.model.v20180510.DescribeDomainSrcHttpCodeDataResponse.UsageData.CodeProportionData;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

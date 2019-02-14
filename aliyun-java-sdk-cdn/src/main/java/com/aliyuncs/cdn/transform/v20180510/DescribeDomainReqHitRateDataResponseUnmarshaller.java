@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.cdn.model.v20180510.DescribeDomainReqHitRateDataResponse;
 import com.aliyuncs.cdn.model.v20180510.DescribeDomainReqHitRateDataResponse.DataModule;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

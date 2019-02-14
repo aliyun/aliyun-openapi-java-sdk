@@ -14,7 +14,6 @@
 
 package com.aliyuncs.cdn.model.v20141111;
 
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.cdn.transform.v20141111.UpdateLiveAppSnapshotConfigResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;

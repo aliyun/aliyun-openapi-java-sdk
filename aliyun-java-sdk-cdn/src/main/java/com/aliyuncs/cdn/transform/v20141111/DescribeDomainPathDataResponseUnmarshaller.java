@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.cdn.model.v20141111.DescribeDomainPathDataResponse;
 import com.aliyuncs.cdn.model.v20141111.DescribeDomainPathDataResponse.UsageData;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

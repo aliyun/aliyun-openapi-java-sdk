@@ -18,7 +18,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.cdn.model.v20180510.ListDomainsByLogConfigIdResponse;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

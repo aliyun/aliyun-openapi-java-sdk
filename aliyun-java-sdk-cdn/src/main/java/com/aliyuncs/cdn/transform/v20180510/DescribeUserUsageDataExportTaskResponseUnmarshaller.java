@@ -21,7 +21,6 @@ import com.aliyuncs.cdn.model.v20180510.DescribeUserUsageDataExportTaskResponse;
 import com.aliyuncs.cdn.model.v20180510.DescribeUserUsageDataExportTaskResponse.UsageDataPerPage;
 import com.aliyuncs.cdn.model.v20180510.DescribeUserUsageDataExportTaskResponse.UsageDataPerPage.DataItem;
 import com.aliyuncs.cdn.model.v20180510.DescribeUserUsageDataExportTaskResponse.UsageDataPerPage.DataItem.TaskConfig;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

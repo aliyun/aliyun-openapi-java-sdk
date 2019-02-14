@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.cdn.model.v20141111.DescribeDomainCertificateInfoResponse;
 import com.aliyuncs.cdn.model.v20141111.DescribeDomainCertificateInfoResponse.CertInfo;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

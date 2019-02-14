@@ -18,6 +18,7 @@ import com.aliyuncs.cdn.model.v20180510.DescribeUserConfigsResponse;
 import com.aliyuncs.cdn.model.v20180510.DescribeUserConfigsResponse.Configs;
 import com.aliyuncs.cdn.model.v20180510.DescribeUserConfigsResponse.Configs.GreenManagerConfig;
 import com.aliyuncs.cdn.model.v20180510.DescribeUserConfigsResponse.Configs.OssLogConfig;
+import com.aliyuncs.cdn.model.v20180510.DescribeUserConfigsResponse.Configs.WafConfig;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -39,6 +40,10 @@ public class DescribeUserConfigsResponseUnmarshaller {
 		greenManagerConfig.setQuota(context.stringValue("DescribeUserConfigsResponse.Configs.GreenManagerConfig.Quota"));
 		greenManagerConfig.setRatio(context.stringValue("DescribeUserConfigsResponse.Configs.GreenManagerConfig.Ratio"));
 		configs.setGreenManagerConfig(greenManagerConfig);
+
+		WafConfig wafConfig = new WafConfig();
+		wafConfig.setEnable(context.stringValue("DescribeUserConfigsResponse.Configs.WafConfig.Enable"));
+		configs.setWafConfig(wafConfig);
 		describeUserConfigsResponse.setConfigs(configs);
 	 
 	 	return describeUserConfigsResponse;

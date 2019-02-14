@@ -1,3 +1,6 @@
+2019-02-14 Version: 3.0.4
+1, Update DescribeTopDomainsByFlow.
+
 2018-12-03 Version: 3.0.3
 1, Update 2014-11-11 API.
 

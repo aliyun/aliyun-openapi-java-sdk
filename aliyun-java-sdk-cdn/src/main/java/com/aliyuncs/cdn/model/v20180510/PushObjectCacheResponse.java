@@ -14,7 +14,6 @@
 
 package com.aliyuncs.cdn.model.v20180510;
 
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.cdn.transform.v20180510.PushObjectCacheResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -27,7 +26,7 @@ public class PushObjectCacheResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String preloadTaskId;
+	private String pushTaskId;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -37,12 +36,12 @@ public class PushObjectCacheResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getPreloadTaskId() {
-		return this.preloadTaskId;
+	public String getPushTaskId() {
+		return this.pushTaskId;
 	}
 
-	public void setPreloadTaskId(String preloadTaskId) {
-		this.preloadTaskId = preloadTaskId;
+	public void setPushTaskId(String pushTaskId) {
+		this.pushTaskId = pushTaskId;
 	}
 
 	@Override

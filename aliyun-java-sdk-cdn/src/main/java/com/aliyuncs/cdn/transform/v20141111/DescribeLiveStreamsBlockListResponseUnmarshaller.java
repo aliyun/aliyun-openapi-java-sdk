@@ -18,7 +18,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.cdn.model.v20141111.DescribeLiveStreamsBlockListResponse;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

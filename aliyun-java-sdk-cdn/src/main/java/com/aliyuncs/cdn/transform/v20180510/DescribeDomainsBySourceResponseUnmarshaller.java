@@ -20,7 +20,6 @@ import java.util.List;
 import com.aliyuncs.cdn.model.v20180510.DescribeDomainsBySourceResponse;
 import com.aliyuncs.cdn.model.v20180510.DescribeDomainsBySourceResponse.DomainsData;
 import com.aliyuncs.cdn.model.v20180510.DescribeDomainsBySourceResponse.DomainsData.DomainInfo;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

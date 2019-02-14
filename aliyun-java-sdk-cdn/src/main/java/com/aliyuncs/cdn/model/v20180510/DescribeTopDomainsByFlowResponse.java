@@ -15,7 +15,6 @@
 package com.aliyuncs.cdn.model.v20180510;
 
 import java.util.List;
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.cdn.transform.v20180510.DescribeTopDomainsByFlowResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -96,7 +95,7 @@ public class DescribeTopDomainsByFlowResponse extends AcsResponse {
 
 		private String trafficPercent;
 
-		private Long maxBps;
+		private Float maxBps;
 
 		private String maxBpsTime;
 
@@ -134,11 +133,11 @@ public class DescribeTopDomainsByFlowResponse extends AcsResponse {
 			this.trafficPercent = trafficPercent;
 		}
 
-		public Long getMaxBps() {
+		public Float getMaxBps() {
 			return this.maxBps;
 		}
 
-		public void setMaxBps(Long maxBps) {
+		public void setMaxBps(Float maxBps) {
 			this.maxBps = maxBps;
 		}
 

@@ -20,7 +20,6 @@ import java.util.List;
 import com.aliyuncs.cdn.model.v20141111.DescribeCdnDomainLogsResponse;
 import com.aliyuncs.cdn.model.v20141111.DescribeCdnDomainLogsResponse.DomainLogModel;
 import com.aliyuncs.cdn.model.v20141111.DescribeCdnDomainLogsResponse.DomainLogModel.DomainLogDetail;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

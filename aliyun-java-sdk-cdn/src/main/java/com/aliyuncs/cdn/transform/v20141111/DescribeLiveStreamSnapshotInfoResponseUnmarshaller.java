@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.cdn.model.v20141111.DescribeLiveStreamSnapshotInfoResponse;
 import com.aliyuncs.cdn.model.v20141111.DescribeLiveStreamSnapshotInfoResponse.LiveStreamSnapshotInfo;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

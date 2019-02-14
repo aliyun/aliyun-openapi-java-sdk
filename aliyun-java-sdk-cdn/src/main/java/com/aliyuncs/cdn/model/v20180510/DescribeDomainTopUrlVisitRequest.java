@@ -26,24 +26,35 @@ public class DescribeDomainTopUrlVisitRequest extends RpcAcsRequest<DescribeDoma
 		super("Cdn", "2018-05-10", "DescribeDomainTopUrlVisit");
 	}
 
-	private String securityToken;
+	private String startTime;
+
+	private String percent;
 
 	private String domainName;
 
-	private String sortBy;
-
-	private String startTime;
-
 	private Long ownerId;
 
-	public String getSecurityToken() {
-		return this.securityToken;
+	private String sortBy;
+
+	public String getStartTime() {
+		return this.startTime;
 	}
 
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime);
+		}
+	}
+
+	public String getPercent() {
+		return this.percent;
+	}
+
+	public void setPercent(String percent) {
+		this.percent = percent;
+		if(percent != null){
+			putQueryParameter("Percent", percent);
 		}
 	}
 
@@ -58,28 +69,6 @@ public class DescribeDomainTopUrlVisitRequest extends RpcAcsRequest<DescribeDoma
 		}
 	}
 
-	public String getSortBy() {
-		return this.sortBy;
-	}
-
-	public void setSortBy(String sortBy) {
-		this.sortBy = sortBy;
-		if(sortBy != null){
-			putQueryParameter("SortBy", sortBy);
-		}
-	}
-
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("StartTime", startTime);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -88,6 +77,17 @@ public class DescribeDomainTopUrlVisitRequest extends RpcAcsRequest<DescribeDoma
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getSortBy() {
+		return this.sortBy;
+	}
+
+	public void setSortBy(String sortBy) {
+		this.sortBy = sortBy;
+		if(sortBy != null){
+			putQueryParameter("SortBy", sortBy);
 		}
 	}
 

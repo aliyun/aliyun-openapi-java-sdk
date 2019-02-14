@@ -20,7 +20,6 @@ import java.util.List;
 import com.aliyuncs.cdn.model.v20180510.DescribeCdnCertificateListResponse;
 import com.aliyuncs.cdn.model.v20180510.DescribeCdnCertificateListResponse.CertificateListModel;
 import com.aliyuncs.cdn.model.v20180510.DescribeCdnCertificateListResponse.CertificateListModel.Cert;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

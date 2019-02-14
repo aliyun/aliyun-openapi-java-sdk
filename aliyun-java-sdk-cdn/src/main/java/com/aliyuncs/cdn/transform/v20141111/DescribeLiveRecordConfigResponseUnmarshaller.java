@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.cdn.model.v20141111.DescribeLiveRecordConfigResponse;
 import com.aliyuncs.cdn.model.v20141111.DescribeLiveRecordConfigResponse.LiveAppRecord;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
