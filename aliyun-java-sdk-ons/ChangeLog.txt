@@ -1,3 +1,8 @@
+2019-02-15 Version: 3.1.0
+1, Instantiation: adding the property of instance.
+2, Replace the "ProducerId" and "ConsumerId" properties with "GROUP_ID".
+3, Remove parameter OnsRegionId.
+
 2019-02-13 Version: 3.0.1
 1, Instantiation: adding the property of instance
 2, Replace the "ProducerId" and "ConsumerId" properties with "GROUP_ID"
