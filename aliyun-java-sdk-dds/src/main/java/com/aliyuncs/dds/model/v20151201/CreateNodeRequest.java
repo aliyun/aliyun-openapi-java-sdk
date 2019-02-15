@@ -30,6 +30,10 @@ public class CreateNodeRequest extends RpcAcsRequest<CreateNodeResponse> {
 
 	private String nodeType;
 
+	private Boolean autoPay;
+
+	private String fromApp;
+
 	private String resourceOwnerAccount;
 
 	private String clientToken;
@@ -65,6 +69,28 @@ public class CreateNodeRequest extends RpcAcsRequest<CreateNodeResponse> {
 		this.nodeType = nodeType;
 		if(nodeType != null){
 			putQueryParameter("NodeType", nodeType);
+		}
+	}
+
+	public Boolean getAutoPay() {
+		return this.autoPay;
+	}
+
+	public void setAutoPay(Boolean autoPay) {
+		this.autoPay = autoPay;
+		if(autoPay != null){
+			putQueryParameter("AutoPay", autoPay.toString());
+		}
+	}
+
+	public String getFromApp() {
+		return this.fromApp;
+	}
+
+	public void setFromApp(String fromApp) {
+		this.fromApp = fromApp;
+		if(fromApp != null){
+			putQueryParameter("FromApp", fromApp);
 		}
 	}
 
@@ -134,10 +160,29 @@ public class CreateNodeRequest extends RpcAcsRequest<CreateNodeResponse> {
 		}
 	}
 
+	public String getBizSecurityToken() {
+		return this.securityToken;
+	}
+
+	public void setBizSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	/**
+	 * @deprecated use getBizSecurityToken instead of this.
+	 */
+	@Deprecated
 	public String getSecurityToken() {
 		return this.securityToken;
 	}
 
+	/**
+	 * @deprecated use setBizSecurityToken instead of this.
+	 */
+	@Deprecated
 	public void setSecurityToken(String securityToken) {
 		this.securityToken = securityToken;
 		if(securityToken != null){

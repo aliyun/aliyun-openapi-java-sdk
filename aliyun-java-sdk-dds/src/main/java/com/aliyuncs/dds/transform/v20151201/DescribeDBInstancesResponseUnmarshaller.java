@@ -21,7 +21,6 @@ import com.aliyuncs.dds.model.v20151201.DescribeDBInstancesResponse;
 import com.aliyuncs.dds.model.v20151201.DescribeDBInstancesResponse.DBInstance;
 import com.aliyuncs.dds.model.v20151201.DescribeDBInstancesResponse.DBInstance.MongosAttribute;
 import com.aliyuncs.dds.model.v20151201.DescribeDBInstancesResponse.DBInstance.ShardAttribute;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -37,6 +36,7 @@ public class DescribeDBInstancesResponseUnmarshaller {
 		List<DBInstance> dBInstances = new ArrayList<DBInstance>();
 		for (int i = 0; i < context.lengthValue("DescribeDBInstancesResponse.DBInstances.Length"); i++) {
 			DBInstance dBInstance = new DBInstance();
+			dBInstance.setResourceGroupId(context.stringValue("DescribeDBInstancesResponse.DBInstances["+ i +"].ResourceGroupId"));
 			dBInstance.setDBInstanceId(context.stringValue("DescribeDBInstancesResponse.DBInstances["+ i +"].DBInstanceId"));
 			dBInstance.setDBInstanceDescription(context.stringValue("DescribeDBInstancesResponse.DBInstances["+ i +"].DBInstanceDescription"));
 			dBInstance.setRegionId(context.stringValue("DescribeDBInstancesResponse.DBInstances["+ i +"].RegionId"));

@@ -15,7 +15,6 @@
 package com.aliyuncs.dds.model.v20151201;
 
 import java.util.List;
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.dds.transform.v20151201.DescribeDBInstanceAttributeResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -47,6 +46,8 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 	}
 
 	public static class DBInstance {
+
+		private String resourceGroupId;
 
 		private String dBInstanceId;
 
@@ -94,7 +95,7 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 
 		private String dBInstanceType;
 
-		private Integer lastDowngradeTime;
+		private String lastDowngradeTime;
 
 		private String replicationFactor;
 
@@ -109,6 +110,14 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 		private List<ShardAttribute> shardList;
 
 		private List<ReplicaSet> replicaSets;
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
+		}
 
 		public String getDBInstanceId() {
 			return this.dBInstanceId;
@@ -126,10 +135,26 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 			this.dBInstanceDescription = dBInstanceDescription;
 		}
 
+		public String getBizRegionId() {
+			return this.regionId;
+		}
+
+		public void setBizRegionId(String regionId) {
+			this.regionId = regionId;
+		}
+
+		/**
+		 * @deprecated use getBizRegionId instead of this.
+		 */
+		@Deprecated
 		public String getRegionId() {
 			return this.regionId;
 		}
 
+		/**
+		 * @deprecated use setBizRegionId instead of this.
+		 */
+		@Deprecated
 		public void setRegionId(String regionId) {
 			this.regionId = regionId;
 		}
@@ -294,11 +319,11 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 			this.dBInstanceType = dBInstanceType;
 		}
 
-		public Integer getLastDowngradeTime() {
+		public String getLastDowngradeTime() {
 			return this.lastDowngradeTime;
 		}
 
-		public void setLastDowngradeTime(Integer lastDowngradeTime) {
+		public void setLastDowngradeTime(String lastDowngradeTime) {
 			this.lastDowngradeTime = lastDowngradeTime;
 		}
 

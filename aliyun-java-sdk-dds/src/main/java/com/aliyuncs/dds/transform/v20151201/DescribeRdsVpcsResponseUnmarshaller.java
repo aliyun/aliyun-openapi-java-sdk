@@ -21,7 +21,6 @@ import com.aliyuncs.dds.model.v20151201.DescribeRdsVpcsResponse;
 import com.aliyuncs.dds.model.v20151201.DescribeRdsVpcsResponse.Vpcs;
 import com.aliyuncs.dds.model.v20151201.DescribeRdsVpcsResponse.Vpcs.VpcItem;
 import com.aliyuncs.dds.model.v20151201.DescribeRdsVpcsResponse.Vpcs.VpcItem.VSwitch;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

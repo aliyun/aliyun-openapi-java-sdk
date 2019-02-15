@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.dds.model.v20151201.DescribeParametersResponse;
 import com.aliyuncs.dds.model.v20151201.DescribeParametersResponse.Parameter;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

@@ -22,7 +22,6 @@ import com.aliyuncs.dds.model.v20151201.DescribeReplicaUsageResponse.Performance
 import com.aliyuncs.dds.model.v20151201.DescribeReplicaUsageResponse.PerformanceKeys.PerformanceKeyItem;
 import com.aliyuncs.dds.model.v20151201.DescribeReplicaUsageResponse.PerformanceKeys.PerformanceKeyItem.PerformanceValues;
 import com.aliyuncs.dds.model.v20151201.DescribeReplicaUsageResponse.PerformanceKeys.PerformanceKeyItem.PerformanceValues.PerformanceValueItem;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

@@ -18,7 +18,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.dds.model.v20151201.DescribeReplicationGroupResponse;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

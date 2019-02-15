@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.dds.model.v20151201.DescribeActiveOperationTaskResponse;
 import com.aliyuncs.dds.model.v20151201.DescribeActiveOperationTaskResponse.ItemsItem;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

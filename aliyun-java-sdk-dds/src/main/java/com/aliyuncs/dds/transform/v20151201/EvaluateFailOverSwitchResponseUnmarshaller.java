@@ -21,7 +21,6 @@ import com.aliyuncs.dds.model.v20151201.EvaluateFailOverSwitchResponse;
 import com.aliyuncs.dds.model.v20151201.EvaluateFailOverSwitchResponse.ItemsItem;
 import com.aliyuncs.dds.model.v20151201.EvaluateFailOverSwitchResponse.ItemsItem.AccountsItem;
 import com.aliyuncs.dds.model.v20151201.EvaluateFailOverSwitchResponse.ReportsItem;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

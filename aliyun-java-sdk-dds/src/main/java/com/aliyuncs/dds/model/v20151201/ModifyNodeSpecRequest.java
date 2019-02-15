@@ -28,6 +28,10 @@ public class ModifyNodeSpecRequest extends RpcAcsRequest<ModifyNodeSpecResponse>
 
 	private Long resourceOwnerId;
 
+	private Boolean autoPay;
+
+	private String fromApp;
+
 	private String resourceOwnerAccount;
 
 	private String clientToken;
@@ -56,6 +60,28 @@ public class ModifyNodeSpecRequest extends RpcAcsRequest<ModifyNodeSpecResponse>
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public Boolean getAutoPay() {
+		return this.autoPay;
+	}
+
+	public void setAutoPay(Boolean autoPay) {
+		this.autoPay = autoPay;
+		if(autoPay != null){
+			putQueryParameter("AutoPay", autoPay.toString());
+		}
+	}
+
+	public String getFromApp() {
+		return this.fromApp;
+	}
+
+	public void setFromApp(String fromApp) {
+		this.fromApp = fromApp;
+		if(fromApp != null){
+			putQueryParameter("FromApp", fromApp);
 		}
 	}
 
@@ -125,10 +151,29 @@ public class ModifyNodeSpecRequest extends RpcAcsRequest<ModifyNodeSpecResponse>
 		}
 	}
 
+	public String getBizSecurityToken() {
+		return this.securityToken;
+	}
+
+	public void setBizSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	/**
+	 * @deprecated use getBizSecurityToken instead of this.
+	 */
+	@Deprecated
 	public String getSecurityToken() {
 		return this.securityToken;
 	}
 
+	/**
+	 * @deprecated use setBizSecurityToken instead of this.
+	 */
+	@Deprecated
 	public void setSecurityToken(String securityToken) {
 		this.securityToken = securityToken;
 		if(securityToken != null){

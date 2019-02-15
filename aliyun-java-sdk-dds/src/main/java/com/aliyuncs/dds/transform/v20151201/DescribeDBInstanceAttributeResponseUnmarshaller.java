@@ -22,7 +22,6 @@ import com.aliyuncs.dds.model.v20151201.DescribeDBInstanceAttributeResponse.DBIn
 import com.aliyuncs.dds.model.v20151201.DescribeDBInstanceAttributeResponse.DBInstance.MongosAttribute;
 import com.aliyuncs.dds.model.v20151201.DescribeDBInstanceAttributeResponse.DBInstance.ReplicaSet;
 import com.aliyuncs.dds.model.v20151201.DescribeDBInstanceAttributeResponse.DBInstance.ShardAttribute;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -35,6 +34,7 @@ public class DescribeDBInstanceAttributeResponseUnmarshaller {
 		List<DBInstance> dBInstances = new ArrayList<DBInstance>();
 		for (int i = 0; i < context.lengthValue("DescribeDBInstanceAttributeResponse.DBInstances.Length"); i++) {
 			DBInstance dBInstance = new DBInstance();
+			dBInstance.setResourceGroupId(context.stringValue("DescribeDBInstanceAttributeResponse.DBInstances["+ i +"].ResourceGroupId"));
 			dBInstance.setDBInstanceId(context.stringValue("DescribeDBInstanceAttributeResponse.DBInstances["+ i +"].DBInstanceId"));
 			dBInstance.setDBInstanceDescription(context.stringValue("DescribeDBInstanceAttributeResponse.DBInstances["+ i +"].DBInstanceDescription"));
 			dBInstance.setRegionId(context.stringValue("DescribeDBInstanceAttributeResponse.DBInstances["+ i +"].RegionId"));
@@ -58,7 +58,7 @@ public class DescribeDBInstanceAttributeResponseUnmarshaller {
 			dBInstance.setMaintainStartTime(context.stringValue("DescribeDBInstanceAttributeResponse.DBInstances["+ i +"].MaintainStartTime"));
 			dBInstance.setMaintainEndTime(context.stringValue("DescribeDBInstanceAttributeResponse.DBInstances["+ i +"].MaintainEndTime"));
 			dBInstance.setDBInstanceType(context.stringValue("DescribeDBInstanceAttributeResponse.DBInstances["+ i +"].DBInstanceType"));
-			dBInstance.setLastDowngradeTime(context.integerValue("DescribeDBInstanceAttributeResponse.DBInstances["+ i +"].LastDowngradeTime"));
+			dBInstance.setLastDowngradeTime(context.stringValue("DescribeDBInstanceAttributeResponse.DBInstances["+ i +"].LastDowngradeTime"));
 			dBInstance.setReplicationFactor(context.stringValue("DescribeDBInstanceAttributeResponse.DBInstances["+ i +"].ReplicationFactor"));
 			dBInstance.setMaxIOPS(context.integerValue("DescribeDBInstanceAttributeResponse.DBInstances["+ i +"].MaxIOPS"));
 			dBInstance.setMaxConnections(context.integerValue("DescribeDBInstanceAttributeResponse.DBInstances["+ i +"].MaxConnections"));

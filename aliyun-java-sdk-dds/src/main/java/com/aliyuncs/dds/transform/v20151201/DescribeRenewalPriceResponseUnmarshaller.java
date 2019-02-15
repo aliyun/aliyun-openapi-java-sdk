@@ -22,7 +22,6 @@ import com.aliyuncs.dds.model.v20151201.DescribeRenewalPriceResponse.Order;
 import com.aliyuncs.dds.model.v20151201.DescribeRenewalPriceResponse.Order.Coupon;
 import com.aliyuncs.dds.model.v20151201.DescribeRenewalPriceResponse.Rule;
 import com.aliyuncs.dds.model.v20151201.DescribeRenewalPriceResponse.SubOrder;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

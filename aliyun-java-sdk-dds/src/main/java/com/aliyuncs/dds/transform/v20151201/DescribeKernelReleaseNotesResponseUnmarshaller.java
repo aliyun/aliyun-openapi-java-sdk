@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.dds.model.v20151201.DescribeKernelReleaseNotesResponse;
 import com.aliyuncs.dds.model.v20151201.DescribeKernelReleaseNotesResponse.ReleaseNote;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

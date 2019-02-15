@@ -20,7 +20,6 @@ import java.util.List;
 import com.aliyuncs.dds.model.v20151201.DescribeRdsVSwitchsResponse;
 import com.aliyuncs.dds.model.v20151201.DescribeRdsVSwitchsResponse.VSwitches;
 import com.aliyuncs.dds.model.v20151201.DescribeRdsVSwitchsResponse.VSwitches.VSwitchItem;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

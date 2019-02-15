@@ -20,7 +20,6 @@ import java.util.List;
 import com.aliyuncs.dds.model.v20151201.DescribeReplicasResponse;
 import com.aliyuncs.dds.model.v20151201.DescribeReplicasResponse.Items;
 import com.aliyuncs.dds.model.v20151201.DescribeReplicasResponse.Items.Items1;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

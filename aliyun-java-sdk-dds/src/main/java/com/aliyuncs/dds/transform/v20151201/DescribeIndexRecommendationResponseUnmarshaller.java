@@ -20,7 +20,6 @@ import java.util.List;
 import com.aliyuncs.dds.model.v20151201.DescribeIndexRecommendationResponse;
 import com.aliyuncs.dds.model.v20151201.DescribeIndexRecommendationResponse.Analyzation;
 import com.aliyuncs.dds.model.v20151201.DescribeIndexRecommendationResponse.Analyzation.Recommendation;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
