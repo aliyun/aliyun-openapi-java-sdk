@@ -38,6 +38,9 @@ public class DescribeApiResponseUnmarshaller {
 		describeApiResponse.setGroupName(context.stringValue("DescribeApiResponse.GroupName"));
 		describeApiResponse.setVisibility(context.stringValue("DescribeApiResponse.Visibility"));
 		describeApiResponse.setAuthType(context.stringValue("DescribeApiResponse.AuthType"));
+		describeApiResponse.setForceNonceCheck(context.booleanValue("DescribeApiResponse.ForceNonceCheck"));
+		describeApiResponse.setDisableInternet(context.booleanValue("DescribeApiResponse.DisableInternet"));
+
 		describeApiResponse.setResultType(context.stringValue("DescribeApiResponse.ResultType"));
 		describeApiResponse.setResultSample(context.stringValue("DescribeApiResponse.ResultSample"));
 		describeApiResponse.setFailResultSample(context.stringValue("DescribeApiResponse.FailResultSample"));

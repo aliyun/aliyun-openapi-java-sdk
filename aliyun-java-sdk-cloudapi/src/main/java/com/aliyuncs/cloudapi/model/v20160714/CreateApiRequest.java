@@ -44,6 +44,10 @@ public class CreateApiRequest extends RpcAcsRequest<CreateApiResponse> {
 
 	private String authType;
 
+	private Boolean forceNonceCheck;
+
+	private Boolean disableInternet;
+
 	private String requestConfig;
 
 	private String serviceConfig;
@@ -117,6 +121,24 @@ public class CreateApiRequest extends RpcAcsRequest<CreateApiResponse> {
 	public void setAuthType(String authType) {
 		this.authType = authType;
 		putQueryParameter("AuthType", authType);
+	}
+
+	public Boolean getForceNonceCheck() {
+		return forceNonceCheck;
+	}
+
+	public void setForceNonceCheck(Boolean forceNonceCheck) {
+		this.forceNonceCheck = forceNonceCheck;
+		putQueryParameter("ForceNonceCheck", forceNonceCheck);
+	}
+
+	public Boolean getDisableInternet() {
+		return disableInternet;
+	}
+
+	public void setDisableInternet(Boolean disableInternet) {
+		this.disableInternet = disableInternet;
+		putQueryParameter("DisableInternet", disableInternet);
 	}
 
 	public String getRequestConfig() {

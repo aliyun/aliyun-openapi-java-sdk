@@ -42,6 +42,9 @@ public class DescribeApiDocResponseUnmarshaller {
 		describeApiDocResponse.setDescription(context.stringValue("DescribeApiDocResponse.Description"));
 		describeApiDocResponse.setVisibility(context.stringValue("DescribeApiDocResponse.Visibility"));
 		describeApiDocResponse.setAuthType(context.stringValue("DescribeApiDocResponse.AuthType"));
+		describeApiDocResponse.setForceNonceCheck(context.booleanValue("DescribeApiDocResponse.ForceNonceCheck"));
+		describeApiDocResponse.setDisableInternet(context.booleanValue("DescribeApiDocResponse.DisableInternet"));
+
 		describeApiDocResponse.setResultType(context.stringValue("DescribeApiDocResponse.ResultType"));
 		describeApiDocResponse.setResultSample(context.stringValue("DescribeApiDocResponse.ResultSample"));
 		describeApiDocResponse.setFailResultSample(context.stringValue("DescribeApiDocResponse.FailResultSample"));

@@ -42,6 +42,9 @@ public class DescribeApiHistoryResponseUnmarshaller {
 		describeApiHistoryResponse.setStatus(context.stringValue("DescribeApiHistoryResponse.Status"));
 		describeApiHistoryResponse.setVisibility(context.stringValue("DescribeApiHistoryResponse.Visibility"));
 		describeApiHistoryResponse.setAuthType(context.stringValue("DescribeApiHistoryResponse.AuthType"));
+		describeApiHistoryResponse.setForceNonceCheck(context.booleanValue("DescribeApiHistoryResponse.ForceNonceCheck"));
+		describeApiHistoryResponse.setDisableInternet(context.booleanValue("DescribeApiHistoryResponse.DisableInternet"));
+
 		describeApiHistoryResponse.setResultType(context.stringValue("DescribeApiHistoryResponse.ResultType"));
 		describeApiHistoryResponse.setResultSample(context.stringValue("DescribeApiHistoryResponse.ResultSample"));
 		describeApiHistoryResponse.setFailResultSample(context.stringValue("DescribeApiHistoryResponse.FailResultSample"));

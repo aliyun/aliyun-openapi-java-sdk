@@ -51,6 +51,10 @@ public class DescribeDeployedApiResponse extends AcsResponse {
 
     private String                    authType;
 
+    private Boolean                   forceNonceCheck;
+
+    private Boolean                   disableInternet;
+
     private String                    resultType;
 
     private String                    resultSample;
@@ -289,6 +293,22 @@ public class DescribeDeployedApiResponse extends AcsResponse {
 
     public void setOpenIdConnectConfig(OpenIdConnectConfig openIdConnectConfig) {
         this.openIdConnectConfig = openIdConnectConfig;
+    }
+
+    public Boolean getForceNonceCheck() {
+        return forceNonceCheck;
+    }
+
+    public void setForceNonceCheck(Boolean forceNonceCheck) {
+        this.forceNonceCheck = forceNonceCheck;
+    }
+
+    public Boolean getDisableInternet() {
+        return disableInternet;
+    }
+
+    public void setDisableInternet(Boolean disableInternet) {
+        this.disableInternet = disableInternet;
     }
 
     @Override

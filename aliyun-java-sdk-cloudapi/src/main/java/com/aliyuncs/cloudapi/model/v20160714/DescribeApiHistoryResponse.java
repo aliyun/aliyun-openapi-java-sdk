@@ -55,6 +55,10 @@ public class DescribeApiHistoryResponse extends AcsResponse {
 
     private String                    authType;
 
+    private Boolean                   forceNonceCheck;
+
+    private Boolean                   disableInternet;
+
     private String                    resultType;
 
     private String                    resultSample;
@@ -237,6 +241,22 @@ public class DescribeApiHistoryResponse extends AcsResponse {
 
     public void setRequestParameters(List<RequestParameter> requestParameters) {
         this.requestParameters = requestParameters;
+    }
+
+    public Boolean getForceNonceCheck() {
+        return forceNonceCheck;
+    }
+
+    public void setForceNonceCheck(Boolean forceNonceCheck) {
+        this.forceNonceCheck = forceNonceCheck;
+    }
+
+    public Boolean getDisableInternet() {
+        return disableInternet;
+    }
+
+    public void setDisableInternet(Boolean disableInternet) {
+        this.disableInternet = disableInternet;
     }
 
     public List<ServiceParameter> getServiceParameters() {
