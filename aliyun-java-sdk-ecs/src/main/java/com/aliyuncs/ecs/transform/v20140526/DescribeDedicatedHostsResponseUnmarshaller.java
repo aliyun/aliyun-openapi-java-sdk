@@ -24,7 +24,6 @@ import com.aliyuncs.ecs.model.v20140526.DescribeDedicatedHostsResponse.Dedicated
 import com.aliyuncs.ecs.model.v20140526.DescribeDedicatedHostsResponse.DedicatedHost.NetworkAttributes;
 import com.aliyuncs.ecs.model.v20140526.DescribeDedicatedHostsResponse.DedicatedHost.OperationLock;
 import com.aliyuncs.ecs.model.v20140526.DescribeDedicatedHostsResponse.DedicatedHost.Tag;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

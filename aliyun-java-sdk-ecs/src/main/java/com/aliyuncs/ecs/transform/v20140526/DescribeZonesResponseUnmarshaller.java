@@ -20,7 +20,6 @@ import java.util.List;
 import com.aliyuncs.ecs.model.v20140526.DescribeZonesResponse;
 import com.aliyuncs.ecs.model.v20140526.DescribeZonesResponse.Zone;
 import com.aliyuncs.ecs.model.v20140526.DescribeZonesResponse.Zone.ResourcesInfo;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

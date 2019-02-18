@@ -22,7 +22,6 @@ import com.aliyuncs.ecs.model.v20140526.DescribeDisksResponse.Disk;
 import com.aliyuncs.ecs.model.v20140526.DescribeDisksResponse.Disk.MountInstance;
 import com.aliyuncs.ecs.model.v20140526.DescribeDisksResponse.Disk.OperationLock;
 import com.aliyuncs.ecs.model.v20140526.DescribeDisksResponse.Disk.Tag;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

@@ -20,7 +20,6 @@ import java.util.List;
 import com.aliyuncs.ecs.model.v20140526.DescribeBandwidthPackagesResponse;
 import com.aliyuncs.ecs.model.v20140526.DescribeBandwidthPackagesResponse.BandwidthPackage;
 import com.aliyuncs.ecs.model.v20140526.DescribeBandwidthPackagesResponse.BandwidthPackage.PublicIpAddresse;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

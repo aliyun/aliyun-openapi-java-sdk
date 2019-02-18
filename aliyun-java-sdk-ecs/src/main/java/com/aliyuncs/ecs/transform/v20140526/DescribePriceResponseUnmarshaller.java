@@ -23,7 +23,6 @@ import com.aliyuncs.ecs.model.v20140526.DescribePriceResponse.PriceInfo.Price;
 import com.aliyuncs.ecs.model.v20140526.DescribePriceResponse.PriceInfo.Price.ResourcePriceModel;
 import com.aliyuncs.ecs.model.v20140526.DescribePriceResponse.PriceInfo.Price.ResourcePriceModel.Rule1;
 import com.aliyuncs.ecs.model.v20140526.DescribePriceResponse.PriceInfo.Rule;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

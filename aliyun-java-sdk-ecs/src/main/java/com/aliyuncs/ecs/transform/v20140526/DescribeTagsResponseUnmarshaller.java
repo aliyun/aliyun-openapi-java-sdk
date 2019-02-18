@@ -20,7 +20,6 @@ import java.util.List;
 import com.aliyuncs.ecs.model.v20140526.DescribeTagsResponse;
 import com.aliyuncs.ecs.model.v20140526.DescribeTagsResponse.Tag;
 import com.aliyuncs.ecs.model.v20140526.DescribeTagsResponse.Tag.ResourceTypeCount;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

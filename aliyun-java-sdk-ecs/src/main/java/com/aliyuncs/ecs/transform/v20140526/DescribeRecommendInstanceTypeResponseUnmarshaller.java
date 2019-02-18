@@ -21,7 +21,6 @@ import com.aliyuncs.ecs.model.v20140526.DescribeRecommendInstanceTypeResponse;
 import com.aliyuncs.ecs.model.v20140526.DescribeRecommendInstanceTypeResponse.RecommendInstanceType;
 import com.aliyuncs.ecs.model.v20140526.DescribeRecommendInstanceTypeResponse.RecommendInstanceType.InstanceType;
 import com.aliyuncs.ecs.model.v20140526.DescribeRecommendInstanceTypeResponse.RecommendInstanceType.Zone;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

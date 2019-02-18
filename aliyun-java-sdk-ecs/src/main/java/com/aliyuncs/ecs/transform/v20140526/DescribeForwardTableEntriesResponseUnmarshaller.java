@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.ecs.model.v20140526.DescribeForwardTableEntriesResponse;
 import com.aliyuncs.ecs.model.v20140526.DescribeForwardTableEntriesResponse.ForwardTableEntry;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

@@ -25,7 +25,6 @@ import com.aliyuncs.ecs.model.v20140526.DescribeInstancesResponse.Instance.LockR
 import com.aliyuncs.ecs.model.v20140526.DescribeInstancesResponse.Instance.NetworkInterface;
 import com.aliyuncs.ecs.model.v20140526.DescribeInstancesResponse.Instance.Tag;
 import com.aliyuncs.ecs.model.v20140526.DescribeInstancesResponse.Instance.VpcAttributes;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

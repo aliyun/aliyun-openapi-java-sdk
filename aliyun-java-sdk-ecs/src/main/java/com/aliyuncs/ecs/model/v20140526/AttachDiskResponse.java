@@ -14,7 +14,6 @@
 
 package com.aliyuncs.ecs.model.v20140526;
 
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.ecs.transform.v20140526.AttachDiskResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;

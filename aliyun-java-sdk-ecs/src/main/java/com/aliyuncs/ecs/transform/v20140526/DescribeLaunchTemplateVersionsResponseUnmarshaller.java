@@ -23,7 +23,6 @@ import com.aliyuncs.ecs.model.v20140526.DescribeLaunchTemplateVersionsResponse.L
 import com.aliyuncs.ecs.model.v20140526.DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSet.LaunchTemplateData.DataDisk;
 import com.aliyuncs.ecs.model.v20140526.DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSet.LaunchTemplateData.InstanceTag;
 import com.aliyuncs.ecs.model.v20140526.DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSet.LaunchTemplateData.NetworkInterface;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.ecs.model.v20140526.DescribeEniMonitorDataResponse;
 import com.aliyuncs.ecs.model.v20140526.DescribeEniMonitorDataResponse.EniMonitorData;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.ecs.model.v20140526.DescribeAccessPointsResponse;
 import com.aliyuncs.ecs.model.v20140526.DescribeAccessPointsResponse.AccessPointType;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

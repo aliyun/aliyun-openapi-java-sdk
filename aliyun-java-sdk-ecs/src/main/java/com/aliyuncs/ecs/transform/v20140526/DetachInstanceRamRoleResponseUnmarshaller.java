@@ -20,7 +20,6 @@ import java.util.List;
 import com.aliyuncs.ecs.model.v20140526.DetachInstanceRamRoleResponse;
 import com.aliyuncs.ecs.model.v20140526.DetachInstanceRamRoleResponse.DetachInstanceRamRoleResult;
 import com.aliyuncs.ecs.model.v20140526.DetachInstanceRamRoleResponse.DetachInstanceRamRoleResult.InstanceRamRoleSet;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

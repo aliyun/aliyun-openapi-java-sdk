@@ -30,6 +30,8 @@ public class StopInstanceRequest extends RpcAcsRequest<StopInstanceResponse> {
 
 	private String instanceId;
 
+	private Boolean dryRun;
+
 	private String resourceOwnerAccount;
 
 	private Boolean confirmStop;
@@ -61,6 +63,17 @@ public class StopInstanceRequest extends RpcAcsRequest<StopInstanceResponse> {
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public Boolean getDryRun() {
+		return this.dryRun;
+	}
+
+	public void setDryRun(Boolean dryRun) {
+		this.dryRun = dryRun;
+		if(dryRun != null){
+			putQueryParameter("DryRun", dryRun.toString());
 		}
 	}
 

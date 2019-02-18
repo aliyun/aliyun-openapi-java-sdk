@@ -23,7 +23,6 @@ import com.aliyuncs.ecs.model.v20140526.DescribeRenewalPriceResponse.PriceInfo.P
 import com.aliyuncs.ecs.model.v20140526.DescribeRenewalPriceResponse.PriceInfo.Price.ResourcePriceModel;
 import com.aliyuncs.ecs.model.v20140526.DescribeRenewalPriceResponse.PriceInfo.Price.ResourcePriceModel.Rule1;
 import com.aliyuncs.ecs.model.v20140526.DescribeRenewalPriceResponse.PriceInfo.Rule;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

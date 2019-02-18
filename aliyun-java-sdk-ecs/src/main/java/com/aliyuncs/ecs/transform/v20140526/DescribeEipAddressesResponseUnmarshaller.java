@@ -20,7 +20,6 @@ import java.util.List;
 import com.aliyuncs.ecs.model.v20140526.DescribeEipAddressesResponse;
 import com.aliyuncs.ecs.model.v20140526.DescribeEipAddressesResponse.EipAddress;
 import com.aliyuncs.ecs.model.v20140526.DescribeEipAddressesResponse.EipAddress.LockReason;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.ecs.model.v20140526.DescribeDedicatedHostAutoRenewResponse;
 import com.aliyuncs.ecs.model.v20140526.DescribeDedicatedHostAutoRenewResponse.DedicatedHostRenewAttribute;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

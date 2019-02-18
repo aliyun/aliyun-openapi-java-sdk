@@ -15,7 +15,6 @@
 package com.aliyuncs.ecs.model.v20140526;
 
 import java.util.List;
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.ecs.transform.v20140526.DescribeInstancesFullStatusResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
