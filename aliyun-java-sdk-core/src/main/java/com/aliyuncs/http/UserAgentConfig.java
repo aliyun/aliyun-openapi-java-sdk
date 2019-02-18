@@ -13,7 +13,7 @@ public class UserAgentConfig {
             props.load(ClassLoader.getSystemResourceAsStream("project.properties"));
         } catch (IOException e) {
             props.setProperty("project.version","(got version failed)");
-            props.setProperty("project.name","aliyun-java-sdk-core");
+            props.setProperty("project.name","Core");
         }
         DEFAULT_MESSAGE = String.format("AlibabaCloud (%s; %s) Java/%s %s/%s",
                 props.getProperty("os.name"), props.getProperty("os.arch"), props.getProperty("java.runtime.version"),
@@ -26,7 +26,7 @@ public class UserAgentConfig {
 
     public UserAgentConfig() {
         excludeList.add("java");
-        excludeList.add("aliyun-java-sdk-core");
+        excludeList.add("Core");
     }
     public static String getDefaultMessage(){
         return DEFAULT_MESSAGE;
