@@ -28,18 +28,18 @@ If you use Apache Maven to manage Java projects, you only need to add correspond
 
 You must install the SDK core library for any SDK you use. For example, to call the ECS SDK, you must install both the ECS SDK and the SDK core library.
 
-For example, with SDK core library 3.5.0 and ECS SDK 3.0.0, you need to declare the two SDKs in the pom.xml file.
+For example, with SDK core library latest version and ECS SDK latest version, you need to declare the two SDKs in the pom.xml file.
 
 ```xml
 <dependency>
     <groupId>com.aliyun</groupId>
     <artifactId>aliyun-java-sdk-core</artifactId>
-    <version>4.3.2</version>
+    <version>[4.3.2,10.0.0)</version>
 </dependency>
 <dependency>
     <groupId>com.aliyun</groupId>
     <artifactId>aliyun-java-sdk-ecs</artifactId>
-    <version>4.16.0</version>
+    <version>[4.16.0,10.0.0)</version>
 </dependency>
 ```
 ## Initiate a call
