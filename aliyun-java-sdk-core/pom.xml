@@ -4,7 +4,7 @@
     <groupId>com.aliyun</groupId>
     <artifactId>aliyun-java-sdk-core</artifactId>
     <packaging>jar</packaging>
-    <version>4.3.3</version>
+    <version>4.3.4</version>
     <name>aliyun-java-sdk-core</name>
     <url>http://www.aliyun.com</url>
     <description>Aliyun Open API SDK for Java
@@ -152,6 +152,7 @@
                 <version>3.0.1</version>
                 <configuration>
                     <encoding>UTF-8</encoding>
+                    <doclint>none</doclint>
                 </configuration>
             </plugin>
             <plugin>
