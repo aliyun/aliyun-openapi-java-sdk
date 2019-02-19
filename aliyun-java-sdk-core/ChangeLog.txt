@@ -1,3 +1,7 @@
+2019-01-31 Version: 4.3.4
+1. Add User-Agent to the http/https protocol
+2. Add User-Agent test
+
 2019-01-31 Version: 4.3.3
 1. Compatible with commonRequest usage.
 2. Fixed an issue where the format was empty.
