@@ -22,7 +22,13 @@ import com.aliyuncs.exceptions.ClientException;
 import com.aliyuncs.exceptions.ErrorCodeConstant;
 import com.aliyuncs.exceptions.ErrorMessageConstant;
 import com.aliyuncs.exceptions.ServerException;
-import com.aliyuncs.http.*;
+import com.aliyuncs.http.FormatType;
+import com.aliyuncs.http.HttpClientFactory;
+import com.aliyuncs.http.HttpUtil;
+import com.aliyuncs.http.HttpRequest;
+import com.aliyuncs.http.HttpResponse;
+import com.aliyuncs.http.IHttpClient;
+import com.aliyuncs.http.UserAgentConfig;
 import com.aliyuncs.profile.DefaultProfile;
 import com.aliyuncs.profile.IClientProfile;
 import com.aliyuncs.reader.Reader;
@@ -240,12 +246,14 @@ public class DefaultAcsClient implements IAcsClient {
             if (request.getSysProtocol() == null) {
                 request.setSysProtocol(this.clientProfile.getHttpClientConfig().getProtocolType());
             }
-            request.putHeaderParameter("User-Agent",
-                    UserAgentConfig.resolve(request.getSysUserAgentConfig(), this.userAgentConfig));
+            request.putHeaderParameter("User-Agent", UserAgentConfig.resolve(request.getSysUserAgentConfig(),
+                    this.userAgentConfig));
             try {
                 HttpRequest httpRequest = request.signRequest(signer, credentials, format, domain);
+                HttpUtil.debugHttpRequest(request);
                 HttpResponse response;
                 response = this.httpClient.syncInvoke(httpRequest);
+                HttpUtil.debugHttpResponse(response);
                 return response;
             } catch (SocketTimeoutException exp) {
                 throw new ClientException("SDK.ServerUnreachable",

@@ -1,20 +1,23 @@
 package com.aliyuncs;
 
+import static org.mockito.Matchers.any;
+
 import java.io.IOException;
 import java.lang.reflect.Field;
 import java.net.SocketTimeoutException;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
 
-import com.aliyuncs.http.*;
 import org.junit.Assert;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
+import org.mockito.BDDMockito;
 import org.mockito.Mockito;
-import org.mockito.runners.MockitoJUnitRunner;
+import org.powermock.api.mockito.PowerMockito;
 import org.powermock.core.classloader.annotations.PrepareForTest;
+import org.powermock.modules.junit4.PowerMockRunner;
 
 import com.aliyuncs.auth.Credential;
 import com.aliyuncs.auth.LegacyCredentials;
@@ -26,12 +29,20 @@ import com.aliyuncs.exceptions.ClientException;
 import com.aliyuncs.exceptions.ErrorCodeConstant;
 import com.aliyuncs.exceptions.ErrorMessageConstant;
 import com.aliyuncs.exceptions.ServerException;
+import com.aliyuncs.http.FormatType;
+import com.aliyuncs.http.HttpClientConfig;
+import com.aliyuncs.http.HttpRequest;
+import com.aliyuncs.http.HttpResponse;
+import com.aliyuncs.http.HttpUtil;
+import com.aliyuncs.http.IHttpClient;
+import com.aliyuncs.http.ProtocolType;
+import com.aliyuncs.http.UserAgentConfig;
 import com.aliyuncs.http.clients.CompatibleUrlConnClient;
 import com.aliyuncs.profile.DefaultProfile;
 import com.aliyuncs.regions.ProductDomain;
 
-@RunWith(MockitoJUnitRunner.class)
-@PrepareForTest(HttpClientFactory.class)
+@RunWith(PowerMockRunner.class)
+@PrepareForTest(HttpUtil.class)
 public class DefaultAcsClientTest {
     @Rule
     public ExpectedException thrown = ExpectedException.none();
@@ -104,7 +115,7 @@ public class DefaultAcsClientTest {
 
     @SuppressWarnings("deprecation")
     private DefaultAcsClient initDefaultAcsClient() throws NoSuchFieldException, SecurityException,
-            IllegalArgumentException, IllegalAccessException {
+            IllegalArgumentException, IllegalAccessException, ClientException {
         Credential credential = Mockito.mock(Credential.class);
         Mockito.when(credential.getSecurityToken()).thenReturn(null);
         DefaultProfile profile = Mockito.mock(DefaultProfile.class);
@@ -117,7 +128,9 @@ public class DefaultAcsClientTest {
         HttpClientConfig httpClientConfig = Mockito.mock(HttpClientConfig.class);
         Mockito.when(httpClientConfig.getProtocolType()).thenReturn(ProtocolType.HTTP);
         Mockito.when(profile.getHttpClientConfig()).thenReturn(httpClientConfig);
-
+        PowerMockito.mockStatic(HttpUtil.class);
+        BDDMockito.given(HttpUtil.debugHttpRequest(any(HttpRequest.class))).willReturn(null);
+        BDDMockito.given(HttpUtil.debugHttpResponse(any(HttpResponse.class))).willReturn(null);
         return client;
     }
 
@@ -153,7 +166,7 @@ public class DefaultAcsClientTest {
 
     @Test
     public void testRestoreSSLCertificate() throws NoSuchFieldException, SecurityException, IllegalArgumentException,
-            IllegalAccessException {
+            IllegalAccessException, ClientException {
         DefaultAcsClient client = initDefaultAcsClient();
         client.restoreSSLCertificate();
         client.ignoreSSLCertificate();
@@ -171,6 +184,7 @@ public class DefaultAcsClientTest {
         Mockito.doReturn("endpoint").when(endpointResolver).resolve(Mockito.any(ResolveEndpointRequest.class));
         HttpResponse response = initHttpResponse();
         Mockito.doReturn(response).when(getHttpClient(client)).syncInvoke(Mockito.any(HttpRequest.class));
+        Mockito.doReturn("http://test.domain").when(response).getSysUrl();
         AcsRequest request = initRequest(DescribeEndpointsResponse.class);
 
         Assert.assertTrue(client.getAcsResponse(request) instanceof DescribeEndpointsResponse);
@@ -194,6 +208,7 @@ public class DefaultAcsClientTest {
         DefaultAcsClient client = initDefaultAcsClient();
         HttpResponse response = Mockito.mock(HttpResponse.class);
         Mockito.doReturn(response).when(getHttpClient(client)).syncInvoke(Mockito.any(HttpRequest.class));
+        Mockito.doReturn("http://test.domain").when(response).getSysUrl();
         DefaultEndpointResolver endpointResolver = Mockito.mock(DefaultEndpointResolver.class);
         client.setEndpointResolver(endpointResolver);
         Mockito.doReturn("endpoint").when(endpointResolver).resolve(Mockito.any(ResolveEndpointRequest.class));
@@ -306,6 +321,7 @@ public class DefaultAcsClientTest {
         Mockito.when(response.isSuccess()).thenReturn(true);
         Mockito.when(response.getHttpContentType()).thenReturn(FormatType.XML);
         Mockito.when(response.getHttpContentString()).thenReturn(null);
+        Mockito.doReturn("http://test.domain").when(response).getSysUrl();
         Mockito.doReturn(response).when(getHttpClient(client)).syncInvoke(Mockito.any(HttpRequest.class));
         AcsRequest request = initRequest(DescribeEndpointsResponse.class);
 
@@ -612,7 +628,8 @@ public class DefaultAcsClientTest {
         client.appendUserAgent("test", "1.2.3");
         client.appendUserAgent("order", "1.2.2");
         String userAgent = UserAgentConfig.resolve(null, client.getUserAgentConfig());
-        String resultStr = UserAgentConfig.getDefaultMessage() + " Client/CompatibleUrlConnClient test/1.2.3 order/1.2.2";
+        String resultStr = UserAgentConfig.getDefaultMessage()
+                + " Client/CompatibleUrlConnClient test/1.2.3 order/1.2.2";
         Assert.assertEquals(resultStr, userAgent);
     }
 }

@@ -95,3 +95,6 @@ The following code example shows the three main steps to use Alibaba Cloud Java 
      }
  }
 ```
+
+## Debugging
+If there is an environment variable DEBUG=sdk , all http request/response will work in debug mode.
