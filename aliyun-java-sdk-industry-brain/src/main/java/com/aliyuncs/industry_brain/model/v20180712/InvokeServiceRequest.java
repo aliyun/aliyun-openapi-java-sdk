@@ -15,7 +15,6 @@
 package com.aliyuncs.industry_brain.model.v20180712;
 
 import com.aliyuncs.RpcAcsRequest;
-import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 
 /**
@@ -26,7 +25,6 @@ public class InvokeServiceRequest extends RpcAcsRequest<InvokeServiceResponse> {
 	
 	public InvokeServiceRequest() {
 		super("industry-brain", "2018-07-12", "InvokeService");
-		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
 

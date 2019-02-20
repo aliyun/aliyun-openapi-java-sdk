@@ -1,3 +1,8 @@
+2019-02-20 Version: 1.0.0
+1, Add code and message to inovkeService API
+2, User could check code and message to get more specific information
+3, 1.0.0 alpha release
+
 2019-02-18 Version: 1.0.0
 1, industrial-brain release.
 2, publish SDK to public package stores.

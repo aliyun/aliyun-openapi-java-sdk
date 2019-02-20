@@ -28,6 +28,10 @@ public class InvokeServiceResponse extends AcsResponse {
 
 	private String data;
 
+	private String code;
+
+	private String message;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -42,6 +46,22 @@ public class InvokeServiceResponse extends AcsResponse {
 
 	public void setData(String data) {
 		this.data = data;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	@Override
