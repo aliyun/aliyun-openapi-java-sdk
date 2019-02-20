@@ -42,6 +42,15 @@ For example, with SDK core library latest version and ECS SDK latest version, yo
     <version>[4.16.0,10.0.0)</version>
 </dependency>
 ```
+
+If maven is not downloading jar packages from a central repository, you need to add this dependency in the pom.xml file, or a NoClassDefFoundError exception will be reported
+```xml
+<dependency>
+    <groupId>com.google.code.gson</groupId>
+    <artifactId>gson</artifactId>
+    <version>2.8.5</version>
+</dependency>
+```
 ## Initiate a call
 
 The following code example shows the three main steps to use Alibaba Cloud Java SDK:
