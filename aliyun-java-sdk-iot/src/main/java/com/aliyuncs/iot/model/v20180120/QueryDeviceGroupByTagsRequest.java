@@ -24,7 +24,7 @@ import java.util.List;
 public class QueryDeviceGroupByTagsRequest extends RpcAcsRequest<QueryDeviceGroupByTagsResponse> {
 	
 	public QueryDeviceGroupByTagsRequest() {
-		super("Iot", "2018-01-20", "QueryDeviceGroupByTags");
+		super("Iot", "2018-01-20", "QueryDeviceGroupByTags", "iot");
 	}
 
 	private String iotInstanceId;

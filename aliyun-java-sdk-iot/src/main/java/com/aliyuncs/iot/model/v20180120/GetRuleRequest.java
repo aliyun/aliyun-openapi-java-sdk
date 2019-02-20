@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class GetRuleRequest extends RpcAcsRequest<GetRuleResponse> {
 	
 	public GetRuleRequest() {
-		super("Iot", "2018-01-20", "GetRule");
+		super("Iot", "2018-01-20", "GetRule", "iot");
 	}
 
 	private String iotInstanceId;

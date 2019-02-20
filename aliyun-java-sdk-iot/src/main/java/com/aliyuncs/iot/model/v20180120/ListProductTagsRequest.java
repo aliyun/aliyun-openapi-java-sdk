@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ListProductTagsRequest extends RpcAcsRequest<ListProductTagsResponse> {
 	
 	public ListProductTagsRequest() {
-		super("Iot", "2018-01-20", "ListProductTags");
+		super("Iot", "2018-01-20", "ListProductTags", "iot");
 	}
 
 	private String iotInstanceId;

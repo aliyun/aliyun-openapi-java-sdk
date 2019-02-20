@@ -24,7 +24,7 @@ import java.util.List;
 public class UpdateProductTagsRequest extends RpcAcsRequest<UpdateProductTagsResponse> {
 	
 	public UpdateProductTagsRequest() {
-		super("Iot", "2018-01-20", "UpdateProductTags");
+		super("Iot", "2018-01-20", "UpdateProductTags", "iot");
 	}
 
 	private List<ProductTag> productTags;

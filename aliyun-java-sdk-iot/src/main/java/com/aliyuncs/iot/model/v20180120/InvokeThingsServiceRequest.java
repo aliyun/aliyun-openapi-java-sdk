@@ -24,7 +24,7 @@ import java.util.List;
 public class InvokeThingsServiceRequest extends RpcAcsRequest<InvokeThingsServiceResponse> {
 	
 	public InvokeThingsServiceRequest() {
-		super("Iot", "2018-01-20", "InvokeThingsService");
+		super("Iot", "2018-01-20", "InvokeThingsService", "iot");
 	}
 
 	private String args;

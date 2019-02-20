@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class QueryTopicReverseRouteTableRequest extends RpcAcsRequest<QueryTopicReverseRouteTableResponse> {
 	
 	public QueryTopicReverseRouteTableRequest() {
-		super("Iot", "2018-01-20", "QueryTopicReverseRouteTable");
+		super("Iot", "2018-01-20", "QueryTopicReverseRouteTable", "iot");
 	}
 
 	private String iotInstanceId;

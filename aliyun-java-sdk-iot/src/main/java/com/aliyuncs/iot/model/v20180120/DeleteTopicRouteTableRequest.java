@@ -24,7 +24,7 @@ import java.util.List;
 public class DeleteTopicRouteTableRequest extends RpcAcsRequest<DeleteTopicRouteTableResponse> {
 	
 	public DeleteTopicRouteTableRequest() {
-		super("Iot", "2018-01-20", "DeleteTopicRouteTable");
+		super("Iot", "2018-01-20", "DeleteTopicRouteTable", "iot");
 	}
 
 	private List<String> dstTopics;

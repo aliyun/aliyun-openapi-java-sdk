@@ -3,7 +3,7 @@
   <groupId>com.aliyun</groupId>
   <artifactId>aliyun-java-sdk-iot</artifactId>
   <packaging>jar</packaging>
-  <version>6.6.1</version>
+  <version>6.6.2</version>
     <name>aliyun-java-sdk-iot</name>
   <url>http://www.aliyun.com</url>
   <description>Aliyun Open API SDK for Java

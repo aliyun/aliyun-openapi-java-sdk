@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class CreateRuleRequest extends RpcAcsRequest<CreateRuleResponse> {
 	
 	public CreateRuleRequest() {
-		super("Iot", "2018-01-20", "CreateRule");
+		super("Iot", "2018-01-20", "CreateRule", "iot");
 	}
 
 	private String select;

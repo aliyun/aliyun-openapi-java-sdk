@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class SetDeviceGroupTagsRequest extends RpcAcsRequest<SetDeviceGroupTagsResponse> {
 	
 	public SetDeviceGroupTagsRequest() {
-		super("Iot", "2018-01-20", "SetDeviceGroupTags");
+		super("Iot", "2018-01-20", "SetDeviceGroupTags", "iot");
 	}
 
 	private String tagString;

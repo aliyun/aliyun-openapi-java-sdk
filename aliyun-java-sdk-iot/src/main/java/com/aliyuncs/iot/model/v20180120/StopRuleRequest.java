@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class StopRuleRequest extends RpcAcsRequest<StopRuleResponse> {
 	
 	public StopRuleRequest() {
-		super("Iot", "2018-01-20", "StopRule");
+		super("Iot", "2018-01-20", "StopRule", "iot");
 	}
 
 	private String iotInstanceId;

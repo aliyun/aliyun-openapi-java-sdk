@@ -1,3 +1,6 @@
+2019-02-20 Version: 6.6.2
+1, fix aliyun-net-sdk-iot service code issue.
+
 2019-02-14 Version: 6.6.1
 1, fix SDK.InvalidRegionId exception in aliyun-net-sdk-core.
 

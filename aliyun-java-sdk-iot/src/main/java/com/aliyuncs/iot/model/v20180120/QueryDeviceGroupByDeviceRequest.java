@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class QueryDeviceGroupByDeviceRequest extends RpcAcsRequest<QueryDeviceGroupByDeviceResponse> {
 	
 	public QueryDeviceGroupByDeviceRequest() {
-		super("Iot", "2018-01-20", "QueryDeviceGroupByDevice");
+		super("Iot", "2018-01-20", "QueryDeviceGroupByDevice", "iot");
 	}
 
 	private String iotInstanceId;

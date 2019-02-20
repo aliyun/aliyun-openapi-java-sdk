@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class GetThingTopoRequest extends RpcAcsRequest<GetThingTopoResponse> {
 	
 	public GetThingTopoRequest() {
-		super("Iot", "2018-01-20", "GetThingTopo");
+		super("Iot", "2018-01-20", "GetThingTopo", "iot");
 	}
 
 	private String iotId;

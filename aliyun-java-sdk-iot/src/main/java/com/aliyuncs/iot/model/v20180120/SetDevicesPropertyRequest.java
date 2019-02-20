@@ -24,7 +24,7 @@ import java.util.List;
 public class SetDevicesPropertyRequest extends RpcAcsRequest<SetDevicesPropertyResponse> {
 	
 	public SetDevicesPropertyRequest() {
-		super("Iot", "2018-01-20", "SetDevicesProperty");
+		super("Iot", "2018-01-20", "SetDevicesProperty", "iot");
 	}
 
 	private String iotInstanceId;

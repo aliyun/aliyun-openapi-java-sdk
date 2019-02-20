@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class CreateProductRequest extends RpcAcsRequest<CreateProductResponse> {
 	
 	public CreateProductRequest() {
-		super("Iot", "2018-01-20", "CreateProduct");
+		super("Iot", "2018-01-20", "CreateProduct", "iot");
 	}
 
 	private Integer dataFormat;

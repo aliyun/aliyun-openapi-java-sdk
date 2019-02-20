@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ListRuleActionsRequest extends RpcAcsRequest<ListRuleActionsResponse> {
 	
 	public ListRuleActionsRequest() {
-		super("Iot", "2018-01-20", "ListRuleActions");
+		super("Iot", "2018-01-20", "ListRuleActions", "iot");
 	}
 
 	private String iotInstanceId;

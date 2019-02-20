@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class RegisterDeviceRequest extends RpcAcsRequest<RegisterDeviceResponse> {
 	
 	public RegisterDeviceRequest() {
-		super("Iot", "2018-01-20", "RegisterDevice");
+		super("Iot", "2018-01-20", "RegisterDevice", "iot");
 	}
 
 	private String iotInstanceId;

@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class SaveDevicePropRequest extends RpcAcsRequest<SaveDevicePropResponse> {
 	
 	public SaveDevicePropRequest() {
-		super("Iot", "2018-01-20", "SaveDeviceProp");
+		super("Iot", "2018-01-20", "SaveDeviceProp", "iot");
 	}
 
 	private String iotInstanceId;

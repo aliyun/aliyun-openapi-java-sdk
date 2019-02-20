@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class SetDevicePropertyRequest extends RpcAcsRequest<SetDevicePropertyResponse> {
 	
 	public SetDevicePropertyRequest() {
-		super("Iot", "2018-01-20", "SetDeviceProperty");
+		super("Iot", "2018-01-20", "SetDeviceProperty", "iot");
 	}
 
 	private String iotId;

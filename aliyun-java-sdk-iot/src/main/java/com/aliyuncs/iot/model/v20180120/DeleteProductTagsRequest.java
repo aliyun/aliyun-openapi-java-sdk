@@ -24,7 +24,7 @@ import java.util.List;
 public class DeleteProductTagsRequest extends RpcAcsRequest<DeleteProductTagsResponse> {
 	
 	public DeleteProductTagsRequest() {
-		super("Iot", "2018-01-20", "DeleteProductTags");
+		super("Iot", "2018-01-20", "DeleteProductTags", "iot");
 	}
 
 	private String iotInstanceId;

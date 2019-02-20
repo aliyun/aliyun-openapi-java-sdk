@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class UpdateRuleActionRequest extends RpcAcsRequest<UpdateRuleActionResponse> {
 	
 	public UpdateRuleActionRequest() {
-		super("Iot", "2018-01-20", "UpdateRuleAction");
+		super("Iot", "2018-01-20", "UpdateRuleAction", "iot");
 	}
 
 	private String configuration;

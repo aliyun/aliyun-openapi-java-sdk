@@ -24,7 +24,7 @@ import java.util.List;
 public class QueryAppDeviceListRequest extends RpcAcsRequest<QueryAppDeviceListResponse> {
 	
 	public QueryAppDeviceListRequest() {
-		super("Iot", "2018-01-20", "QueryAppDeviceList");
+		super("Iot", "2018-01-20", "QueryAppDeviceList", "iot");
 	}
 
 	private List<String> productKeyLists;

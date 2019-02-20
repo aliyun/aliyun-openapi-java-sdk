@@ -24,7 +24,7 @@ import java.util.List;
 public class BatchAddDeviceGroupRelationsRequest extends RpcAcsRequest<BatchAddDeviceGroupRelationsResponse> {
 	
 	public BatchAddDeviceGroupRelationsRequest() {
-		super("Iot", "2018-01-20", "BatchAddDeviceGroupRelations");
+		super("Iot", "2018-01-20", "BatchAddDeviceGroupRelations", "iot");
 	}
 
 	private String iotInstanceId;

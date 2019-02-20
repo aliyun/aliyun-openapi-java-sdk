@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class RRpcRequest extends RpcAcsRequest<RRpcResponse> {
 	
 	public RRpcRequest() {
-		super("Iot", "2018-01-20", "RRpc");
+		super("Iot", "2018-01-20", "RRpc", "iot");
 	}
 
 	private String iotInstanceId;

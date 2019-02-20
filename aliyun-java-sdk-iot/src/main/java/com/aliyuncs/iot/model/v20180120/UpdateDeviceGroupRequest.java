@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class UpdateDeviceGroupRequest extends RpcAcsRequest<UpdateDeviceGroupResponse> {
 	
 	public UpdateDeviceGroupRequest() {
-		super("Iot", "2018-01-20", "UpdateDeviceGroup");
+		super("Iot", "2018-01-20", "UpdateDeviceGroup", "iot");
 	}
 
 	private String groupDesc;

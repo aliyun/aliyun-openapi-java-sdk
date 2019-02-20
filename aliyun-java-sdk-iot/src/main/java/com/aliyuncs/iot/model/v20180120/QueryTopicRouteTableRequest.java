@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class QueryTopicRouteTableRequest extends RpcAcsRequest<QueryTopicRouteTableResponse> {
 	
 	public QueryTopicRouteTableRequest() {
-		super("Iot", "2018-01-20", "QueryTopicRouteTable");
+		super("Iot", "2018-01-20", "QueryTopicRouteTable", "iot");
 	}
 
 	private String iotInstanceId;

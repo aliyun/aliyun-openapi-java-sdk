@@ -24,7 +24,7 @@ import java.util.List;
 public class QueryDevicePropertiesDataRequest extends RpcAcsRequest<QueryDevicePropertiesDataResponse> {
 	
 	public QueryDevicePropertiesDataRequest() {
-		super("Iot", "2018-01-20", "QueryDevicePropertiesData");
+		super("Iot", "2018-01-20", "QueryDevicePropertiesData", "iot");
 	}
 
 	private Integer asc;

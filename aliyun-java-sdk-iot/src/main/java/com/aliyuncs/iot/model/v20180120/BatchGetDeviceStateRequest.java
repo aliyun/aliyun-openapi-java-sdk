@@ -24,7 +24,7 @@ import java.util.List;
 public class BatchGetDeviceStateRequest extends RpcAcsRequest<BatchGetDeviceStateResponse> {
 	
 	public BatchGetDeviceStateRequest() {
-		super("Iot", "2018-01-20", "BatchGetDeviceState");
+		super("Iot", "2018-01-20", "BatchGetDeviceState", "iot");
 	}
 
 	private String iotInstanceId;

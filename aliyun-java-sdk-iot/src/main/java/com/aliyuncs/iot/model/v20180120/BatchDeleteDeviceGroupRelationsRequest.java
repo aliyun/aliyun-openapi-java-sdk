@@ -24,7 +24,7 @@ import java.util.List;
 public class BatchDeleteDeviceGroupRelationsRequest extends RpcAcsRequest<BatchDeleteDeviceGroupRelationsResponse> {
 	
 	public BatchDeleteDeviceGroupRelationsRequest() {
-		super("Iot", "2018-01-20", "BatchDeleteDeviceGroupRelations");
+		super("Iot", "2018-01-20", "BatchDeleteDeviceGroupRelations", "iot");
 	}
 
 	private String iotInstanceId;

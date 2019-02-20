@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class GetGatewayBySubDeviceRequest extends RpcAcsRequest<GetGatewayBySubDeviceResponse> {
 	
 	public GetGatewayBySubDeviceRequest() {
-		super("Iot", "2018-01-20", "GetGatewayBySubDevice");
+		super("Iot", "2018-01-20", "GetGatewayBySubDevice", "iot");
 	}
 
 	private String iotId;

@@ -24,7 +24,7 @@ import java.util.List;
 public class CreateTopicRouteTableRequest extends RpcAcsRequest<CreateTopicRouteTableResponse> {
 	
 	public CreateTopicRouteTableRequest() {
-		super("Iot", "2018-01-20", "CreateTopicRouteTable");
+		super("Iot", "2018-01-20", "CreateTopicRouteTable", "iot");
 	}
 
 	private List<String> dstTopics;

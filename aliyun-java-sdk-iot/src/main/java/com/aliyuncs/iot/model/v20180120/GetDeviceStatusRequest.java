@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class GetDeviceStatusRequest extends RpcAcsRequest<GetDeviceStatusResponse> {
 	
 	public GetDeviceStatusRequest() {
-		super("Iot", "2018-01-20", "GetDeviceStatus");
+		super("Iot", "2018-01-20", "GetDeviceStatus", "iot");
 	}
 
 	private String iotId;

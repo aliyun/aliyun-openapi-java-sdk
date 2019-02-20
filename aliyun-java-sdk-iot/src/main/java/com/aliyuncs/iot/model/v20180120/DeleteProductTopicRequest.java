@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeleteProductTopicRequest extends RpcAcsRequest<DeleteProductTopicResponse> {
 	
 	public DeleteProductTopicRequest() {
-		super("Iot", "2018-01-20", "DeleteProductTopic");
+		super("Iot", "2018-01-20", "DeleteProductTopic", "iot");
 	}
 
 	private String topicId;
