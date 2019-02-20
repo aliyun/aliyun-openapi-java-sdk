@@ -14,16 +14,15 @@
 
 package com.aliyuncs.linkwan.model.v20181230;
 
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.linkwan.transform.v20181230.UpdateLocalJoinPermissionResponseUnmarshaller;
+import com.aliyuncs.linkwan.transform.v20181230.UpdateRoamingJoinPermissionEnablingStateResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class UpdateLocalJoinPermissionResponse extends AcsResponse {
+public class UpdateRoamingJoinPermissionEnablingStateResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -46,8 +45,8 @@ public class UpdateLocalJoinPermissionResponse extends AcsResponse {
 	}
 
 	@Override
-	public UpdateLocalJoinPermissionResponse getInstance(UnmarshallerContext context) {
-		return	UpdateLocalJoinPermissionResponseUnmarshaller.unmarshall(this, context);
+	public UpdateRoamingJoinPermissionEnablingStateResponse getInstance(UnmarshallerContext context) {
+		return	UpdateRoamingJoinPermissionEnablingStateResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

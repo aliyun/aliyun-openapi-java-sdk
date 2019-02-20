@@ -28,23 +28,54 @@ public class ListOwnedJoinPermissionsRequest extends RpcAcsRequest<ListOwnedJoin
 		setProtocol(ProtocolType.HTTPS);
 	}
 
+	private String fuzzyJoinPermissionName;
+
+	private Long offset;
+
+	private String fuzzyRenterAliyunId;
+
 	private Boolean enabled;
 
 	private String fuzzyJoinEui;
 
 	private Long limit;
 
-	private Long offset;
-
-	private String fuzzyRenterAliyunId;
-
-	private Boolean boundNodeGroup;
-
-	private String joinPermissionType;
-
 	private String sortingField;
 
 	private Boolean ascending;
+
+	public String getFuzzyJoinPermissionName() {
+		return this.fuzzyJoinPermissionName;
+	}
+
+	public void setFuzzyJoinPermissionName(String fuzzyJoinPermissionName) {
+		this.fuzzyJoinPermissionName = fuzzyJoinPermissionName;
+		if(fuzzyJoinPermissionName != null){
+			putBodyParameter("FuzzyJoinPermissionName", fuzzyJoinPermissionName);
+		}
+	}
+
+	public Long getOffset() {
+		return this.offset;
+	}
+
+	public void setOffset(Long offset) {
+		this.offset = offset;
+		if(offset != null){
+			putBodyParameter("Offset", offset.toString());
+		}
+	}
+
+	public String getFuzzyRenterAliyunId() {
+		return this.fuzzyRenterAliyunId;
+	}
+
+	public void setFuzzyRenterAliyunId(String fuzzyRenterAliyunId) {
+		this.fuzzyRenterAliyunId = fuzzyRenterAliyunId;
+		if(fuzzyRenterAliyunId != null){
+			putBodyParameter("FuzzyRenterAliyunId", fuzzyRenterAliyunId);
+		}
+	}
 
 	public Boolean getEnabled() {
 		return this.enabled;
@@ -76,50 +107,6 @@ public class ListOwnedJoinPermissionsRequest extends RpcAcsRequest<ListOwnedJoin
 		this.limit = limit;
 		if(limit != null){
 			putBodyParameter("Limit", limit.toString());
-		}
-	}
-
-	public Long getOffset() {
-		return this.offset;
-	}
-
-	public void setOffset(Long offset) {
-		this.offset = offset;
-		if(offset != null){
-			putBodyParameter("Offset", offset.toString());
-		}
-	}
-
-	public String getFuzzyRenterAliyunId() {
-		return this.fuzzyRenterAliyunId;
-	}
-
-	public void setFuzzyRenterAliyunId(String fuzzyRenterAliyunId) {
-		this.fuzzyRenterAliyunId = fuzzyRenterAliyunId;
-		if(fuzzyRenterAliyunId != null){
-			putBodyParameter("FuzzyRenterAliyunId", fuzzyRenterAliyunId);
-		}
-	}
-
-	public Boolean getBoundNodeGroup() {
-		return this.boundNodeGroup;
-	}
-
-	public void setBoundNodeGroup(Boolean boundNodeGroup) {
-		this.boundNodeGroup = boundNodeGroup;
-		if(boundNodeGroup != null){
-			putBodyParameter("BoundNodeGroup", boundNodeGroup.toString());
-		}
-	}
-
-	public String getJoinPermissionType() {
-		return this.joinPermissionType;
-	}
-
-	public void setJoinPermissionType(String joinPermissionType) {
-		this.joinPermissionType = joinPermissionType;
-		if(joinPermissionType != null){
-			putBodyParameter("JoinPermissionType", joinPermissionType);
 		}
 	}
 

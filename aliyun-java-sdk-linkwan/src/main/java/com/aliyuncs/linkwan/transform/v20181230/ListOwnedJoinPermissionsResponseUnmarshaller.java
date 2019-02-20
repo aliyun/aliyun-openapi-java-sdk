@@ -20,7 +20,6 @@ import java.util.List;
 import com.aliyuncs.linkwan.model.v20181230.ListOwnedJoinPermissionsResponse;
 import com.aliyuncs.linkwan.model.v20181230.ListOwnedJoinPermissionsResponse.Data;
 import com.aliyuncs.linkwan.model.v20181230.ListOwnedJoinPermissionsResponse.Data.JoinPermission;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -44,14 +43,7 @@ public class ListOwnedJoinPermissionsResponseUnmarshaller {
 			joinPermission.setClassMode(context.stringValue("ListOwnedJoinPermissionsResponse.Data.List["+ i +"].ClassMode"));
 			joinPermission.setAuthState(context.stringValue("ListOwnedJoinPermissionsResponse.Data.List["+ i +"].AuthState"));
 			joinPermission.setEnabled(context.booleanValue("ListOwnedJoinPermissionsResponse.Data.List["+ i +"].Enabled"));
-			joinPermission.setNodesCnt(context.longValue("ListOwnedJoinPermissionsResponse.Data.List["+ i +"].NodesCnt"));
-			joinPermission.setDataDispatchDestination(context.stringValue("ListOwnedJoinPermissionsResponse.Data.List["+ i +"].DataDispatchDestination"));
-			joinPermission.setRxDailySum(context.longValue("ListOwnedJoinPermissionsResponse.Data.List["+ i +"].RxDailySum"));
-			joinPermission.setRxMonthSum(context.longValue("ListOwnedJoinPermissionsResponse.Data.List["+ i +"].RxMonthSum"));
-			joinPermission.setTxDailySum(context.longValue("ListOwnedJoinPermissionsResponse.Data.List["+ i +"].TxDailySum"));
-			joinPermission.setTxMonthSum(context.longValue("ListOwnedJoinPermissionsResponse.Data.List["+ i +"].TxMonthSum"));
-			joinPermission.setCreateMillis(context.longValue("ListOwnedJoinPermissionsResponse.Data.List["+ i +"].CreateMillis"));
-			joinPermission.setNodeGroupId(context.stringValue("ListOwnedJoinPermissionsResponse.Data.List["+ i +"].NodeGroupId"));
+			joinPermission.setJoinPermissionName(context.stringValue("ListOwnedJoinPermissionsResponse.Data.List["+ i +"].JoinPermissionName"));
 
 			list.add(joinPermission);
 		}

@@ -32,7 +32,6 @@ public class GetOwnedJoinPermissionResponseUnmarshaller {
 		data.setJoinEui(context.stringValue("GetOwnedJoinPermissionResponse.Data.JoinEui"));
 		data.setFreqBandPlanGroupId(context.longValue("GetOwnedJoinPermissionResponse.Data.FreqBandPlanGroupId"));
 		data.setClassMode(context.stringValue("GetOwnedJoinPermissionResponse.Data.ClassMode"));
-		data.setAuthState(context.stringValue("GetOwnedJoinPermissionResponse.Data.AuthState"));
 		data.setEnabled(context.booleanValue("GetOwnedJoinPermissionResponse.Data.Enabled"));
 		data.setNodesCnt(context.longValue("GetOwnedJoinPermissionResponse.Data.NodesCnt"));
 		data.setDataDispatchDestination(context.stringValue("GetOwnedJoinPermissionResponse.Data.DataDispatchDestination"));
@@ -41,7 +40,8 @@ public class GetOwnedJoinPermissionResponseUnmarshaller {
 		data.setTxDailySum(context.longValue("GetOwnedJoinPermissionResponse.Data.TxDailySum"));
 		data.setTxMonthSum(context.longValue("GetOwnedJoinPermissionResponse.Data.TxMonthSum"));
 		data.setCreateMillis(context.longValue("GetOwnedJoinPermissionResponse.Data.CreateMillis"));
-		data.setNodeGroupId(context.stringValue("GetOwnedJoinPermissionResponse.Data.NodeGroupId"));
+		data.setJoinPermissionName(context.stringValue("GetOwnedJoinPermissionResponse.Data.JoinPermissionName"));
+		data.setAuthState(context.stringValue("GetOwnedJoinPermissionResponse.Data.AuthState"));
 		getOwnedJoinPermissionResponse.setData(data);
 	 
 	 	return getOwnedJoinPermissionResponse;

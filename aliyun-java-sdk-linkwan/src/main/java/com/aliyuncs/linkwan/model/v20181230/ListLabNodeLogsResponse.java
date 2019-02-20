@@ -15,7 +15,6 @@
 package com.aliyuncs.linkwan.model.v20181230;
 
 import java.util.List;
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.linkwan.transform.v20181230.ListLabNodeLogsResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;

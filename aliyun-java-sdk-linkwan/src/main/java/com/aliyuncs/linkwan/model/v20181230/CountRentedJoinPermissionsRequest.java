@@ -28,7 +28,7 @@ public class CountRentedJoinPermissionsRequest extends RpcAcsRequest<CountRented
 		setProtocol(ProtocolType.HTTPS);
 	}
 
-	private String fuzzyNodeGroupName;
+	private String fuzzyJoinPermissionName;
 
 	private String type;
 
@@ -40,14 +40,14 @@ public class CountRentedJoinPermissionsRequest extends RpcAcsRequest<CountRented
 
 	private String fuzzyOwnerAliyunId;
 
-	public String getFuzzyNodeGroupName() {
-		return this.fuzzyNodeGroupName;
+	public String getFuzzyJoinPermissionName() {
+		return this.fuzzyJoinPermissionName;
 	}
 
-	public void setFuzzyNodeGroupName(String fuzzyNodeGroupName) {
-		this.fuzzyNodeGroupName = fuzzyNodeGroupName;
-		if(fuzzyNodeGroupName != null){
-			putBodyParameter("FuzzyNodeGroupName", fuzzyNodeGroupName);
+	public void setFuzzyJoinPermissionName(String fuzzyJoinPermissionName) {
+		this.fuzzyJoinPermissionName = fuzzyJoinPermissionName;
+		if(fuzzyJoinPermissionName != null){
+			putBodyParameter("FuzzyJoinPermissionName", fuzzyJoinPermissionName);
 		}
 	}
 

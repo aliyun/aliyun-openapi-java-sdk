@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.linkwan.model.v20181230.ListFreqBandPlanGroupsResponse;
 import com.aliyuncs.linkwan.model.v20181230.ListFreqBandPlanGroupsResponse.Group;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

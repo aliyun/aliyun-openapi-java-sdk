@@ -14,7 +14,6 @@
 
 package com.aliyuncs.linkwan.model.v20181230;
 
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.linkwan.transform.v20181230.GetJoinPermissionAuthOrderResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -61,8 +60,6 @@ public class GetJoinPermissionAuthOrderResponse extends AcsResponse {
 
 		private String joinPermissionId;
 
-		private String joinEui;
-
 		private String ownerAliyunId;
 
 		private String renterAliyunId;
@@ -91,14 +88,6 @@ public class GetJoinPermissionAuthOrderResponse extends AcsResponse {
 
 		public void setJoinPermissionId(String joinPermissionId) {
 			this.joinPermissionId = joinPermissionId;
-		}
-
-		public String getJoinEui() {
-			return this.joinEui;
-		}
-
-		public void setJoinEui(String joinEui) {
-			this.joinEui = joinEui;
 		}
 
 		public String getOwnerAliyunId() {

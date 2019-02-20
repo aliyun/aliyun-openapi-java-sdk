@@ -15,16 +15,15 @@
 package com.aliyuncs.linkwan.model.v20181230;
 
 import java.util.List;
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.linkwan.transform.v20181230.ListNodesResponseUnmarshaller;
+import com.aliyuncs.linkwan.transform.v20181230.ListNodeTransferPacketPathsResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ListNodesResponse extends AcsResponse {
+public class ListNodeTransferPacketPathsResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -60,7 +59,7 @@ public class ListNodesResponse extends AcsResponse {
 
 		private Long totalCount;
 
-		private List<NodeGroup> list;
+		private List<Path> list;
 
 		public Long getTotalCount() {
 			return this.totalCount;
@@ -70,34 +69,32 @@ public class ListNodesResponse extends AcsResponse {
 			this.totalCount = totalCount;
 		}
 
-		public List<NodeGroup> getList() {
+		public List<Path> getList() {
 			return this.list;
 		}
 
-		public void setList(List<NodeGroup> list) {
+		public void setList(List<Path> list) {
 			this.list = list;
 		}
 
-		public static class NodeGroup {
+		public static class Path {
 
-			private String nodeGroupId;
+			private String gwEui;
 
 			private String devEui;
 
-			private String devAddr;
+			private Integer rssi;
 
-			private String classMode;
+			private Float lsnr;
 
-			private Long lastJoinMillis;
+			private Boolean bestPath;
 
-			private Long boundMillis;
-
-			public String getNodeGroupId() {
-				return this.nodeGroupId;
+			public String getGwEui() {
+				return this.gwEui;
 			}
 
-			public void setNodeGroupId(String nodeGroupId) {
-				this.nodeGroupId = nodeGroupId;
+			public void setGwEui(String gwEui) {
+				this.gwEui = gwEui;
 			}
 
 			public String getDevEui() {
@@ -108,43 +105,35 @@ public class ListNodesResponse extends AcsResponse {
 				this.devEui = devEui;
 			}
 
-			public String getDevAddr() {
-				return this.devAddr;
+			public Integer getRssi() {
+				return this.rssi;
 			}
 
-			public void setDevAddr(String devAddr) {
-				this.devAddr = devAddr;
+			public void setRssi(Integer rssi) {
+				this.rssi = rssi;
 			}
 
-			public String getClassMode() {
-				return this.classMode;
+			public Float getLsnr() {
+				return this.lsnr;
 			}
 
-			public void setClassMode(String classMode) {
-				this.classMode = classMode;
+			public void setLsnr(Float lsnr) {
+				this.lsnr = lsnr;
 			}
 
-			public Long getLastJoinMillis() {
-				return this.lastJoinMillis;
+			public Boolean getBestPath() {
+				return this.bestPath;
 			}
 
-			public void setLastJoinMillis(Long lastJoinMillis) {
-				this.lastJoinMillis = lastJoinMillis;
-			}
-
-			public Long getBoundMillis() {
-				return this.boundMillis;
-			}
-
-			public void setBoundMillis(Long boundMillis) {
-				this.boundMillis = boundMillis;
+			public void setBestPath(Boolean bestPath) {
+				this.bestPath = bestPath;
 			}
 		}
 	}
 
 	@Override
-	public ListNodesResponse getInstance(UnmarshallerContext context) {
-		return	ListNodesResponseUnmarshaller.unmarshall(this, context);
+	public ListNodeTransferPacketPathsResponse getInstance(UnmarshallerContext context) {
+		return	ListNodeTransferPacketPathsResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

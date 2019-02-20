@@ -14,7 +14,6 @@
 
 package com.aliyuncs.linkwan.model.v20181230;
 
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.linkwan.transform.v20181230.GetOwnedJoinPermissionResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -67,8 +66,6 @@ public class GetOwnedJoinPermissionResponse extends AcsResponse {
 
 		private String classMode;
 
-		private String authState;
-
 		private Boolean enabled;
 
 		private Long nodesCnt;
@@ -85,7 +82,9 @@ public class GetOwnedJoinPermissionResponse extends AcsResponse {
 
 		private Long createMillis;
 
-		private String nodeGroupId;
+		private String joinPermissionName;
+
+		private String authState;
 
 		public String getJoinPermissionId() {
 			return this.joinPermissionId;
@@ -125,14 +124,6 @@ public class GetOwnedJoinPermissionResponse extends AcsResponse {
 
 		public void setClassMode(String classMode) {
 			this.classMode = classMode;
-		}
-
-		public String getAuthState() {
-			return this.authState;
-		}
-
-		public void setAuthState(String authState) {
-			this.authState = authState;
 		}
 
 		public Boolean getEnabled() {
@@ -199,12 +190,20 @@ public class GetOwnedJoinPermissionResponse extends AcsResponse {
 			this.createMillis = createMillis;
 		}
 
-		public String getNodeGroupId() {
-			return this.nodeGroupId;
+		public String getJoinPermissionName() {
+			return this.joinPermissionName;
 		}
 
-		public void setNodeGroupId(String nodeGroupId) {
-			this.nodeGroupId = nodeGroupId;
+		public void setJoinPermissionName(String joinPermissionName) {
+			this.joinPermissionName = joinPermissionName;
+		}
+
+		public String getAuthState() {
+			return this.authState;
+		}
+
+		public void setAuthState(String authState) {
+			this.authState = authState;
 		}
 	}
 

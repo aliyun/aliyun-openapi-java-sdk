@@ -21,38 +21,25 @@ import com.aliyuncs.http.ProtocolType;
  * @author auto create
  * @version 
  */
-public class ApplyRoamingJoinPermissionRequest extends RpcAcsRequest<ApplyRoamingJoinPermissionResponse> {
+public class UpdateRoamingJoinPermissionRequest extends RpcAcsRequest<UpdateRoamingJoinPermissionResponse> {
 	
-	public ApplyRoamingJoinPermissionRequest() {
-		super("LinkWAN", "2018-12-30", "ApplyRoamingJoinPermission", "linkwan");
+	public UpdateRoamingJoinPermissionRequest() {
+		super("LinkWAN", "2018-12-30", "UpdateRoamingJoinPermission", "linkwan");
 		setProtocol(ProtocolType.HTTPS);
 	}
 
-	private String classMode;
-
-	private Long freqBandPlanGroupId;
+	private String joinPermissionId;
 
 	private String joinPermissionName;
 
-	public String getClassMode() {
-		return this.classMode;
+	public String getJoinPermissionId() {
+		return this.joinPermissionId;
 	}
 
-	public void setClassMode(String classMode) {
-		this.classMode = classMode;
-		if(classMode != null){
-			putBodyParameter("ClassMode", classMode);
-		}
-	}
-
-	public Long getFreqBandPlanGroupId() {
-		return this.freqBandPlanGroupId;
-	}
-
-	public void setFreqBandPlanGroupId(Long freqBandPlanGroupId) {
-		this.freqBandPlanGroupId = freqBandPlanGroupId;
-		if(freqBandPlanGroupId != null){
-			putBodyParameter("FreqBandPlanGroupId", freqBandPlanGroupId.toString());
+	public void setJoinPermissionId(String joinPermissionId) {
+		this.joinPermissionId = joinPermissionId;
+		if(joinPermissionId != null){
+			putBodyParameter("JoinPermissionId", joinPermissionId);
 		}
 	}
 
@@ -68,8 +55,8 @@ public class ApplyRoamingJoinPermissionRequest extends RpcAcsRequest<ApplyRoamin
 	}
 
 	@Override
-	public Class<ApplyRoamingJoinPermissionResponse> getResponseClass() {
-		return ApplyRoamingJoinPermissionResponse.class;
+	public Class<UpdateRoamingJoinPermissionResponse> getResponseClass() {
+		return UpdateRoamingJoinPermissionResponse.class;
 	}
 
 }

@@ -15,7 +15,6 @@
 package com.aliyuncs.linkwan.model.v20181230;
 
 import java.util.List;
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.linkwan.transform.v20181230.ListNodeGroupsResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -111,6 +110,8 @@ public class ListNodeGroupsResponse extends AcsResponse {
 			private Long txMonthSum;
 
 			private Long createMillis;
+
+			private List<LocksItem> locks;
 
 			private DataDispatchConfig dataDispatchConfig;
 
@@ -242,12 +243,63 @@ public class ListNodeGroupsResponse extends AcsResponse {
 				this.createMillis = createMillis;
 			}
 
+			public List<LocksItem> getLocks() {
+				return this.locks;
+			}
+
+			public void setLocks(List<LocksItem> locks) {
+				this.locks = locks;
+			}
+
 			public DataDispatchConfig getDataDispatchConfig() {
 				return this.dataDispatchConfig;
 			}
 
 			public void setDataDispatchConfig(DataDispatchConfig dataDispatchConfig) {
 				this.dataDispatchConfig = dataDispatchConfig;
+			}
+
+			public static class LocksItem {
+
+				private String lockId;
+
+				private String lockType;
+
+				private Boolean enabled;
+
+				private Long createMillis;
+
+				public String getLockId() {
+					return this.lockId;
+				}
+
+				public void setLockId(String lockId) {
+					this.lockId = lockId;
+				}
+
+				public String getLockType() {
+					return this.lockType;
+				}
+
+				public void setLockType(String lockType) {
+					this.lockType = lockType;
+				}
+
+				public Boolean getEnabled() {
+					return this.enabled;
+				}
+
+				public void setEnabled(Boolean enabled) {
+					this.enabled = enabled;
+				}
+
+				public Long getCreateMillis() {
+					return this.createMillis;
+				}
+
+				public void setCreateMillis(Long createMillis) {
+					this.createMillis = createMillis;
+				}
 			}
 
 			public static class DataDispatchConfig {

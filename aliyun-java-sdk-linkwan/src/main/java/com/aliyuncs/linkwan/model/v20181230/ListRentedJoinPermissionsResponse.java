@@ -15,7 +15,6 @@
 package com.aliyuncs.linkwan.model.v20181230;
 
 import java.util.List;
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.linkwan.transform.v20181230.ListRentedJoinPermissionsResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -90,25 +89,13 @@ public class ListRentedJoinPermissionsResponse extends AcsResponse {
 
 			private String classMode;
 
-			private String type;
-
 			private Boolean enabled;
 
 			private Boolean boundNodeGroup;
 
-			private String nodeGroupId;
+			private String joinPermissionName;
 
-			private String nodeGroupName;
-
-			private Long rxDailySum;
-
-			private Long rxMonthSum;
-
-			private Long txDailySum;
-
-			private Long txMonthSum;
-
-			private Long createMillis;
+			private String type;
 
 			public String getJoinPermissionId() {
 				return this.joinPermissionId;
@@ -150,14 +137,6 @@ public class ListRentedJoinPermissionsResponse extends AcsResponse {
 				this.classMode = classMode;
 			}
 
-			public String getType() {
-				return this.type;
-			}
-
-			public void setType(String type) {
-				this.type = type;
-			}
-
 			public Boolean getEnabled() {
 				return this.enabled;
 			}
@@ -174,60 +153,20 @@ public class ListRentedJoinPermissionsResponse extends AcsResponse {
 				this.boundNodeGroup = boundNodeGroup;
 			}
 
-			public String getNodeGroupId() {
-				return this.nodeGroupId;
+			public String getJoinPermissionName() {
+				return this.joinPermissionName;
 			}
 
-			public void setNodeGroupId(String nodeGroupId) {
-				this.nodeGroupId = nodeGroupId;
+			public void setJoinPermissionName(String joinPermissionName) {
+				this.joinPermissionName = joinPermissionName;
 			}
 
-			public String getNodeGroupName() {
-				return this.nodeGroupName;
+			public String getType() {
+				return this.type;
 			}
 
-			public void setNodeGroupName(String nodeGroupName) {
-				this.nodeGroupName = nodeGroupName;
-			}
-
-			public Long getRxDailySum() {
-				return this.rxDailySum;
-			}
-
-			public void setRxDailySum(Long rxDailySum) {
-				this.rxDailySum = rxDailySum;
-			}
-
-			public Long getRxMonthSum() {
-				return this.rxMonthSum;
-			}
-
-			public void setRxMonthSum(Long rxMonthSum) {
-				this.rxMonthSum = rxMonthSum;
-			}
-
-			public Long getTxDailySum() {
-				return this.txDailySum;
-			}
-
-			public void setTxDailySum(Long txDailySum) {
-				this.txDailySum = txDailySum;
-			}
-
-			public Long getTxMonthSum() {
-				return this.txMonthSum;
-			}
-
-			public void setTxMonthSum(Long txMonthSum) {
-				this.txMonthSum = txMonthSum;
-			}
-
-			public Long getCreateMillis() {
-				return this.createMillis;
-			}
-
-			public void setCreateMillis(Long createMillis) {
-				this.createMillis = createMillis;
+			public void setType(String type) {
+				this.type = type;
 			}
 		}
 	}

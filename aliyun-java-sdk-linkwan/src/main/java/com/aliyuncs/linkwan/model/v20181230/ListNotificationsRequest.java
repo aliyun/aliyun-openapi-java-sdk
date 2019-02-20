@@ -16,6 +16,7 @@ package com.aliyuncs.linkwan.model.v20181230;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.ProtocolType;
 
 /**
  * @author auto create
@@ -25,6 +26,7 @@ public class ListNotificationsRequest extends RpcAcsRequest<ListNotificationsRes
 	
 	public ListNotificationsRequest() {
 		super("LinkWAN", "2018-12-30", "ListNotifications", "linkwan");
+		setProtocol(ProtocolType.HTTPS);
 	}
 
 	private Long offset;
@@ -41,7 +43,7 @@ public class ListNotificationsRequest extends RpcAcsRequest<ListNotificationsRes
 
 	private String sortingField;
 
-	private String ascending;
+	private Boolean ascending;
 
 	public Long getOffset() {
 		return this.offset;
@@ -122,14 +124,14 @@ public class ListNotificationsRequest extends RpcAcsRequest<ListNotificationsRes
 		}
 	}
 
-	public String getAscending() {
+	public Boolean getAscending() {
 		return this.ascending;
 	}
 
-	public void setAscending(String ascending) {
+	public void setAscending(Boolean ascending) {
 		this.ascending = ascending;
 		if(ascending != null){
-			putBodyParameter("Ascending", ascending);
+			putBodyParameter("Ascending", ascending.toString());
 		}
 	}
 

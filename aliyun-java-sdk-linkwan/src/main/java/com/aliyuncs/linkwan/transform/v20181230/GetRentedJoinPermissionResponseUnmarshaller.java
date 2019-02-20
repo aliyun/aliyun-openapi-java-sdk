@@ -28,20 +28,18 @@ public class GetRentedJoinPermissionResponseUnmarshaller {
 
 		Data data = new Data();
 		data.setJoinPermissionId(context.stringValue("GetRentedJoinPermissionResponse.Data.JoinPermissionId"));
-		data.setOwnerAliyunId(context.stringValue("GetRentedJoinPermissionResponse.Data.OwnerAliyunId"));
 		data.setJoinEui(context.stringValue("GetRentedJoinPermissionResponse.Data.JoinEui"));
 		data.setFreqBandPlanGroupId(context.longValue("GetRentedJoinPermissionResponse.Data.FreqBandPlanGroupId"));
 		data.setClassMode(context.stringValue("GetRentedJoinPermissionResponse.Data.ClassMode"));
 		data.setType(context.stringValue("GetRentedJoinPermissionResponse.Data.Type"));
 		data.setEnabled(context.booleanValue("GetRentedJoinPermissionResponse.Data.Enabled"));
-		data.setBoundNodeGroup(context.booleanValue("GetRentedJoinPermissionResponse.Data.BoundNodeGroup"));
-		data.setNodeGroupId(context.stringValue("GetRentedJoinPermissionResponse.Data.NodeGroupId"));
-		data.setNodeGroupName(context.stringValue("GetRentedJoinPermissionResponse.Data.NodeGroupName"));
 		data.setRxDailySum(context.longValue("GetRentedJoinPermissionResponse.Data.RxDailySum"));
 		data.setRxMonthSum(context.longValue("GetRentedJoinPermissionResponse.Data.RxMonthSum"));
 		data.setTxDailySum(context.longValue("GetRentedJoinPermissionResponse.Data.TxDailySum"));
 		data.setTxMonthSum(context.longValue("GetRentedJoinPermissionResponse.Data.TxMonthSum"));
 		data.setCreateMillis(context.longValue("GetRentedJoinPermissionResponse.Data.CreateMillis"));
+		data.setNodesCnt(context.longValue("GetRentedJoinPermissionResponse.Data.NodesCnt"));
+		data.setJoinPermissionName(context.stringValue("GetRentedJoinPermissionResponse.Data.JoinPermissionName"));
 		getRentedJoinPermissionResponse.setData(data);
 	 
 	 	return getRentedJoinPermissionResponse;

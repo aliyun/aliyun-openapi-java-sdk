@@ -20,7 +20,6 @@ import java.util.List;
 import com.aliyuncs.linkwan.model.v20181230.ListNodesByOwnedJoinPermissionIdResponse;
 import com.aliyuncs.linkwan.model.v20181230.ListNodesByOwnedJoinPermissionIdResponse.Data;
 import com.aliyuncs.linkwan.model.v20181230.ListNodesByOwnedJoinPermissionIdResponse.Data.NodeGroup;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

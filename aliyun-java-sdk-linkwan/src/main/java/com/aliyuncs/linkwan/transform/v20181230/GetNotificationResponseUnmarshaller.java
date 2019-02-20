@@ -51,6 +51,7 @@ public class GetNotificationResponseUnmarshaller {
 		joinPermissionAuthInfo.setCanceledMillis(context.longValue("GetNotificationResponse.Data.JoinPermissionAuthInfo.CanceledMillis"));
 		joinPermissionAuthInfo.setRejectedMillis(context.longValue("GetNotificationResponse.Data.JoinPermissionAuthInfo.RejectedMillis"));
 		joinPermissionAuthInfo.setJoinEui(context.stringValue("GetNotificationResponse.Data.JoinPermissionAuthInfo.JoinEui"));
+		joinPermissionAuthInfo.setJoinPermissionName(context.stringValue("GetNotificationResponse.Data.JoinPermissionAuthInfo.JoinPermissionName"));
 		data.setJoinPermissionAuthInfo(joinPermissionAuthInfo);
 		getNotificationResponse.setData(data);
 	 

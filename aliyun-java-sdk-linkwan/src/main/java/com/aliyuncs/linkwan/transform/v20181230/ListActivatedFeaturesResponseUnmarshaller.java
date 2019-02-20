@@ -18,7 +18,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.linkwan.model.v20181230.ListActivatedFeaturesResponse;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

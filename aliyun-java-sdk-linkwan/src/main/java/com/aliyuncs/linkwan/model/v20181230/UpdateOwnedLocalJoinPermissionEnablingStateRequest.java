@@ -21,29 +21,16 @@ import com.aliyuncs.http.ProtocolType;
  * @author auto create
  * @version 
  */
-public class UpdateLocalJoinPermissionRequest extends RpcAcsRequest<UpdateLocalJoinPermissionResponse> {
+public class UpdateOwnedLocalJoinPermissionEnablingStateRequest extends RpcAcsRequest<UpdateOwnedLocalJoinPermissionEnablingStateResponse> {
 	
-	public UpdateLocalJoinPermissionRequest() {
-		super("LinkWAN", "2018-12-30", "UpdateLocalJoinPermission", "linkwan");
+	public UpdateOwnedLocalJoinPermissionEnablingStateRequest() {
+		super("LinkWAN", "2018-12-30", "UpdateOwnedLocalJoinPermissionEnablingState", "linkwan");
 		setProtocol(ProtocolType.HTTPS);
 	}
 
-	private String classMode;
-
 	private String joinPermissionId;
 
-	private Long freqBandPlanGroupId;
-
-	public String getClassMode() {
-		return this.classMode;
-	}
-
-	public void setClassMode(String classMode) {
-		this.classMode = classMode;
-		if(classMode != null){
-			putBodyParameter("ClassMode", classMode);
-		}
-	}
+	private Boolean enabled;
 
 	public String getJoinPermissionId() {
 		return this.joinPermissionId;
@@ -56,20 +43,20 @@ public class UpdateLocalJoinPermissionRequest extends RpcAcsRequest<UpdateLocalJ
 		}
 	}
 
-	public Long getFreqBandPlanGroupId() {
-		return this.freqBandPlanGroupId;
+	public Boolean getEnabled() {
+		return this.enabled;
 	}
 
-	public void setFreqBandPlanGroupId(Long freqBandPlanGroupId) {
-		this.freqBandPlanGroupId = freqBandPlanGroupId;
-		if(freqBandPlanGroupId != null){
-			putBodyParameter("FreqBandPlanGroupId", freqBandPlanGroupId.toString());
+	public void setEnabled(Boolean enabled) {
+		this.enabled = enabled;
+		if(enabled != null){
+			putBodyParameter("Enabled", enabled.toString());
 		}
 	}
 
 	@Override
-	public Class<UpdateLocalJoinPermissionResponse> getResponseClass() {
-		return UpdateLocalJoinPermissionResponse.class;
+	public Class<UpdateOwnedLocalJoinPermissionEnablingStateResponse> getResponseClass() {
+		return UpdateOwnedLocalJoinPermissionEnablingStateResponse.class;
 	}
 
 }

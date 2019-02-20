@@ -15,7 +15,6 @@
 package com.aliyuncs.linkwan.model.v20181230;
 
 import java.util.List;
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.linkwan.transform.v20181230.ListOwnedJoinPermissionsResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -94,21 +93,7 @@ public class ListOwnedJoinPermissionsResponse extends AcsResponse {
 
 			private Boolean enabled;
 
-			private Long nodesCnt;
-
-			private String dataDispatchDestination;
-
-			private Long rxDailySum;
-
-			private Long rxMonthSum;
-
-			private Long txDailySum;
-
-			private Long txMonthSum;
-
-			private Long createMillis;
-
-			private String nodeGroupId;
+			private String joinPermissionName;
 
 			public String getJoinPermissionId() {
 				return this.joinPermissionId;
@@ -166,68 +151,12 @@ public class ListOwnedJoinPermissionsResponse extends AcsResponse {
 				this.enabled = enabled;
 			}
 
-			public Long getNodesCnt() {
-				return this.nodesCnt;
+			public String getJoinPermissionName() {
+				return this.joinPermissionName;
 			}
 
-			public void setNodesCnt(Long nodesCnt) {
-				this.nodesCnt = nodesCnt;
-			}
-
-			public String getDataDispatchDestination() {
-				return this.dataDispatchDestination;
-			}
-
-			public void setDataDispatchDestination(String dataDispatchDestination) {
-				this.dataDispatchDestination = dataDispatchDestination;
-			}
-
-			public Long getRxDailySum() {
-				return this.rxDailySum;
-			}
-
-			public void setRxDailySum(Long rxDailySum) {
-				this.rxDailySum = rxDailySum;
-			}
-
-			public Long getRxMonthSum() {
-				return this.rxMonthSum;
-			}
-
-			public void setRxMonthSum(Long rxMonthSum) {
-				this.rxMonthSum = rxMonthSum;
-			}
-
-			public Long getTxDailySum() {
-				return this.txDailySum;
-			}
-
-			public void setTxDailySum(Long txDailySum) {
-				this.txDailySum = txDailySum;
-			}
-
-			public Long getTxMonthSum() {
-				return this.txMonthSum;
-			}
-
-			public void setTxMonthSum(Long txMonthSum) {
-				this.txMonthSum = txMonthSum;
-			}
-
-			public Long getCreateMillis() {
-				return this.createMillis;
-			}
-
-			public void setCreateMillis(Long createMillis) {
-				this.createMillis = createMillis;
-			}
-
-			public String getNodeGroupId() {
-				return this.nodeGroupId;
-			}
-
-			public void setNodeGroupId(String nodeGroupId) {
-				this.nodeGroupId = nodeGroupId;
+			public void setJoinPermissionName(String joinPermissionName) {
+				this.joinPermissionName = joinPermissionName;
 			}
 		}
 	}

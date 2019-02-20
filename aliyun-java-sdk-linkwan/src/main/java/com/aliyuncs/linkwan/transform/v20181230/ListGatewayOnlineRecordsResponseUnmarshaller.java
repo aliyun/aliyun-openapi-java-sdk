@@ -20,7 +20,6 @@ import java.util.List;
 import com.aliyuncs.linkwan.model.v20181230.ListGatewayOnlineRecordsResponse;
 import com.aliyuncs.linkwan.model.v20181230.ListGatewayOnlineRecordsResponse.Data;
 import com.aliyuncs.linkwan.model.v20181230.ListGatewayOnlineRecordsResponse.Data.Record;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

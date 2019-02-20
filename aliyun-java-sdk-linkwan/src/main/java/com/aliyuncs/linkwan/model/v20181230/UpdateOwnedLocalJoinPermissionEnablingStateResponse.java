@@ -14,22 +14,19 @@
 
 package com.aliyuncs.linkwan.model.v20181230;
 
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.linkwan.transform.v20181230.SubmitNodesAddingTaskResponseUnmarshaller;
+import com.aliyuncs.linkwan.transform.v20181230.UpdateOwnedLocalJoinPermissionEnablingStateResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class SubmitNodesAddingTaskResponse extends AcsResponse {
+public class UpdateOwnedLocalJoinPermissionEnablingStateResponse extends AcsResponse {
 
 	private String requestId;
 
 	private Boolean success;
-
-	private String data;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -47,17 +44,9 @@ public class SubmitNodesAddingTaskResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public String getData() {
-		return this.data;
-	}
-
-	public void setData(String data) {
-		this.data = data;
-	}
-
 	@Override
-	public SubmitNodesAddingTaskResponse getInstance(UnmarshallerContext context) {
-		return	SubmitNodesAddingTaskResponseUnmarshaller.unmarshall(this, context);
+	public UpdateOwnedLocalJoinPermissionEnablingStateResponse getInstance(UnmarshallerContext context) {
+		return	UpdateOwnedLocalJoinPermissionEnablingStateResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

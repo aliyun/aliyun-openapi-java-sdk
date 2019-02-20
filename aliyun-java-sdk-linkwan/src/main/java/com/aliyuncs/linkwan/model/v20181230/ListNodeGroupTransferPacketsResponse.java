@@ -15,7 +15,6 @@
 package com.aliyuncs.linkwan.model.v20181230;
 
 import java.util.List;
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.linkwan.transform.v20181230.ListNodeGroupTransferPacketsResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -103,6 +102,20 @@ public class ListNodeGroupTransferPacketsResponse extends AcsResponse {
 			private Long freqBandPlanGroupId;
 
 			private Long logMillis;
+
+			private Boolean hasMacCommand;
+
+			private Boolean hasData;
+
+			private String base64EncodedMacPayload;
+
+			private Long macPayloadSize;
+
+			private String processEvent;
+
+			private String messageType;
+
+			private List<String> macCommandCIDs;
 
 			public String getGwEui() {
 				return this.gwEui;
@@ -198,6 +211,62 @@ public class ListNodeGroupTransferPacketsResponse extends AcsResponse {
 
 			public void setLogMillis(Long logMillis) {
 				this.logMillis = logMillis;
+			}
+
+			public Boolean getHasMacCommand() {
+				return this.hasMacCommand;
+			}
+
+			public void setHasMacCommand(Boolean hasMacCommand) {
+				this.hasMacCommand = hasMacCommand;
+			}
+
+			public Boolean getHasData() {
+				return this.hasData;
+			}
+
+			public void setHasData(Boolean hasData) {
+				this.hasData = hasData;
+			}
+
+			public String getBase64EncodedMacPayload() {
+				return this.base64EncodedMacPayload;
+			}
+
+			public void setBase64EncodedMacPayload(String base64EncodedMacPayload) {
+				this.base64EncodedMacPayload = base64EncodedMacPayload;
+			}
+
+			public Long getMacPayloadSize() {
+				return this.macPayloadSize;
+			}
+
+			public void setMacPayloadSize(Long macPayloadSize) {
+				this.macPayloadSize = macPayloadSize;
+			}
+
+			public String getProcessEvent() {
+				return this.processEvent;
+			}
+
+			public void setProcessEvent(String processEvent) {
+				this.processEvent = processEvent;
+			}
+
+			public String getMessageType() {
+				return this.messageType;
+			}
+
+			public void setMessageType(String messageType) {
+				this.messageType = messageType;
+			}
+
+			public List<String> getMacCommandCIDs() {
+				return this.macCommandCIDs;
+			}
+
+			public void setMacCommandCIDs(List<String> macCommandCIDs) {
+				this.macCommandCIDs = macCommandCIDs;
 			}
 		}
 	}

@@ -20,7 +20,6 @@ import java.util.List;
 import com.aliyuncs.linkwan.model.v20181230.ListRentedJoinPermissionsResponse;
 import com.aliyuncs.linkwan.model.v20181230.ListRentedJoinPermissionsResponse.Data;
 import com.aliyuncs.linkwan.model.v20181230.ListRentedJoinPermissionsResponse.Data.JoinPermission;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -42,16 +41,10 @@ public class ListRentedJoinPermissionsResponseUnmarshaller {
 			joinPermission.setJoinEui(context.stringValue("ListRentedJoinPermissionsResponse.Data.List["+ i +"].JoinEui"));
 			joinPermission.setFreqBandPlanGroupId(context.stringValue("ListRentedJoinPermissionsResponse.Data.List["+ i +"].FreqBandPlanGroupId"));
 			joinPermission.setClassMode(context.stringValue("ListRentedJoinPermissionsResponse.Data.List["+ i +"].ClassMode"));
-			joinPermission.setType(context.stringValue("ListRentedJoinPermissionsResponse.Data.List["+ i +"].Type"));
 			joinPermission.setEnabled(context.booleanValue("ListRentedJoinPermissionsResponse.Data.List["+ i +"].Enabled"));
 			joinPermission.setBoundNodeGroup(context.booleanValue("ListRentedJoinPermissionsResponse.Data.List["+ i +"].BoundNodeGroup"));
-			joinPermission.setNodeGroupId(context.stringValue("ListRentedJoinPermissionsResponse.Data.List["+ i +"].NodeGroupId"));
-			joinPermission.setNodeGroupName(context.stringValue("ListRentedJoinPermissionsResponse.Data.List["+ i +"].NodeGroupName"));
-			joinPermission.setRxDailySum(context.longValue("ListRentedJoinPermissionsResponse.Data.List["+ i +"].RxDailySum"));
-			joinPermission.setRxMonthSum(context.longValue("ListRentedJoinPermissionsResponse.Data.List["+ i +"].RxMonthSum"));
-			joinPermission.setTxDailySum(context.longValue("ListRentedJoinPermissionsResponse.Data.List["+ i +"].TxDailySum"));
-			joinPermission.setTxMonthSum(context.longValue("ListRentedJoinPermissionsResponse.Data.List["+ i +"].TxMonthSum"));
-			joinPermission.setCreateMillis(context.longValue("ListRentedJoinPermissionsResponse.Data.List["+ i +"].CreateMillis"));
+			joinPermission.setJoinPermissionName(context.stringValue("ListRentedJoinPermissionsResponse.Data.List["+ i +"].JoinPermissionName"));
+			joinPermission.setType(context.stringValue("ListRentedJoinPermissionsResponse.Data.List["+ i +"].Type"));
 
 			list.add(joinPermission);
 		}

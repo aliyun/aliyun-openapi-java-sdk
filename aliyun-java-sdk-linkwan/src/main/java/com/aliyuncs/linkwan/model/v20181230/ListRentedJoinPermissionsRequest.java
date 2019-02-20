@@ -28,8 +28,6 @@ public class ListRentedJoinPermissionsRequest extends RpcAcsRequest<ListRentedJo
 		setProtocol(ProtocolType.HTTPS);
 	}
 
-	private String fuzzyNodeGroupName;
-
 	private String type;
 
 	private Boolean enabled;
@@ -37,6 +35,8 @@ public class ListRentedJoinPermissionsRequest extends RpcAcsRequest<ListRentedJo
 	private String fuzzyJoinEui;
 
 	private Long limit;
+
+	private String fuzzyJoinPermissionName;
 
 	private Long offset;
 
@@ -47,17 +47,6 @@ public class ListRentedJoinPermissionsRequest extends RpcAcsRequest<ListRentedJo
 	private String sortingField;
 
 	private Boolean ascending;
-
-	public String getFuzzyNodeGroupName() {
-		return this.fuzzyNodeGroupName;
-	}
-
-	public void setFuzzyNodeGroupName(String fuzzyNodeGroupName) {
-		this.fuzzyNodeGroupName = fuzzyNodeGroupName;
-		if(fuzzyNodeGroupName != null){
-			putBodyParameter("FuzzyNodeGroupName", fuzzyNodeGroupName);
-		}
-	}
 
 	public String getType() {
 		return this.type;
@@ -100,6 +89,17 @@ public class ListRentedJoinPermissionsRequest extends RpcAcsRequest<ListRentedJo
 		this.limit = limit;
 		if(limit != null){
 			putBodyParameter("Limit", limit.toString());
+		}
+	}
+
+	public String getFuzzyJoinPermissionName() {
+		return this.fuzzyJoinPermissionName;
+	}
+
+	public void setFuzzyJoinPermissionName(String fuzzyJoinPermissionName) {
+		this.fuzzyJoinPermissionName = fuzzyJoinPermissionName;
+		if(fuzzyJoinPermissionName != null){
+			putBodyParameter("FuzzyJoinPermissionName", fuzzyJoinPermissionName);
 		}
 	}
 

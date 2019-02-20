@@ -28,16 +28,16 @@ public class GetNotificationRequest extends RpcAcsRequest<GetNotificationRespons
 		setProtocol(ProtocolType.HTTPS);
 	}
 
-	private Long notificationId;
+	private String notificationId;
 
-	public Long getNotificationId() {
+	public String getNotificationId() {
 		return this.notificationId;
 	}
 
-	public void setNotificationId(Long notificationId) {
+	public void setNotificationId(String notificationId) {
 		this.notificationId = notificationId;
 		if(notificationId != null){
-			putBodyParameter("NotificationId", notificationId.toString());
+			putBodyParameter("NotificationId", notificationId);
 		}
 	}
 

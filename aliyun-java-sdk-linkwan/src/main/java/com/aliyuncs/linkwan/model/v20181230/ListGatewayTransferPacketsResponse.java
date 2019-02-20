@@ -15,7 +15,6 @@
 package com.aliyuncs.linkwan.model.v20181230;
 
 import java.util.List;
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.linkwan.transform.v20181230.ListGatewayTransferPacketsResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -100,6 +99,22 @@ public class ListGatewayTransferPacketsResponse extends AcsResponse {
 
 			private Integer fPort;
 
+			private Boolean hasMacCommand;
+
+			private Boolean hasData;
+
+			private String base64EncodedMacPayload;
+
+			private Long macPayloadSize;
+
+			private String processEvent;
+
+			private String messageType;
+
+			private String nodeOwnerAliyunId;
+
+			private List<String> macCommandCIDs;
+
 			public String getGwEui() {
 				return this.gwEui;
 			}
@@ -178,6 +193,70 @@ public class ListGatewayTransferPacketsResponse extends AcsResponse {
 
 			public void setFPort(Integer fPort) {
 				this.fPort = fPort;
+			}
+
+			public Boolean getHasMacCommand() {
+				return this.hasMacCommand;
+			}
+
+			public void setHasMacCommand(Boolean hasMacCommand) {
+				this.hasMacCommand = hasMacCommand;
+			}
+
+			public Boolean getHasData() {
+				return this.hasData;
+			}
+
+			public void setHasData(Boolean hasData) {
+				this.hasData = hasData;
+			}
+
+			public String getBase64EncodedMacPayload() {
+				return this.base64EncodedMacPayload;
+			}
+
+			public void setBase64EncodedMacPayload(String base64EncodedMacPayload) {
+				this.base64EncodedMacPayload = base64EncodedMacPayload;
+			}
+
+			public Long getMacPayloadSize() {
+				return this.macPayloadSize;
+			}
+
+			public void setMacPayloadSize(Long macPayloadSize) {
+				this.macPayloadSize = macPayloadSize;
+			}
+
+			public String getProcessEvent() {
+				return this.processEvent;
+			}
+
+			public void setProcessEvent(String processEvent) {
+				this.processEvent = processEvent;
+			}
+
+			public String getMessageType() {
+				return this.messageType;
+			}
+
+			public void setMessageType(String messageType) {
+				this.messageType = messageType;
+			}
+
+			public String getNodeOwnerAliyunId() {
+				return this.nodeOwnerAliyunId;
+			}
+
+			public void setNodeOwnerAliyunId(String nodeOwnerAliyunId) {
+				this.nodeOwnerAliyunId = nodeOwnerAliyunId;
+			}
+
+			public List<String> getMacCommandCIDs() {
+				return this.macCommandCIDs;
+			}
+
+			public void setMacCommandCIDs(List<String> macCommandCIDs) {
+				this.macCommandCIDs = macCommandCIDs;
 			}
 		}
 	}

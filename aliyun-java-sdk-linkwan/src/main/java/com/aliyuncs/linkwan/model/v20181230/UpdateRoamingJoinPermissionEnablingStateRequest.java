@@ -21,10 +21,10 @@ import com.aliyuncs.http.ProtocolType;
  * @author auto create
  * @version 
  */
-public class UpdateLocalJoinPermissionEnablingStateRequest extends RpcAcsRequest<UpdateLocalJoinPermissionEnablingStateResponse> {
+public class UpdateRoamingJoinPermissionEnablingStateRequest extends RpcAcsRequest<UpdateRoamingJoinPermissionEnablingStateResponse> {
 	
-	public UpdateLocalJoinPermissionEnablingStateRequest() {
-		super("LinkWAN", "2018-12-30", "UpdateLocalJoinPermissionEnablingState", "linkwan");
+	public UpdateRoamingJoinPermissionEnablingStateRequest() {
+		super("LinkWAN", "2018-12-30", "UpdateRoamingJoinPermissionEnablingState", "linkwan");
 		setProtocol(ProtocolType.HTTPS);
 	}
 
@@ -55,8 +55,8 @@ public class UpdateLocalJoinPermissionEnablingStateRequest extends RpcAcsRequest
 	}
 
 	@Override
-	public Class<UpdateLocalJoinPermissionEnablingStateResponse> getResponseClass() {
-		return UpdateLocalJoinPermissionEnablingStateResponse.class;
+	public Class<UpdateRoamingJoinPermissionEnablingStateResponse> getResponseClass() {
+		return UpdateRoamingJoinPermissionEnablingStateResponse.class;
 	}
 
 }

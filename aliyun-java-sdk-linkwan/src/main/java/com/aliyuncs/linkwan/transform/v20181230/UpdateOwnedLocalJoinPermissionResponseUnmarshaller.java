@@ -14,18 +14,17 @@
 
 package com.aliyuncs.linkwan.transform.v20181230;
 
-import com.aliyuncs.linkwan.model.v20181230.CountNodesResponse;
+import com.aliyuncs.linkwan.model.v20181230.UpdateOwnedLocalJoinPermissionResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class CountNodesResponseUnmarshaller {
+public class UpdateOwnedLocalJoinPermissionResponseUnmarshaller {
 
-	public static CountNodesResponse unmarshall(CountNodesResponse countNodesResponse, UnmarshallerContext context) {
+	public static UpdateOwnedLocalJoinPermissionResponse unmarshall(UpdateOwnedLocalJoinPermissionResponse updateOwnedLocalJoinPermissionResponse, UnmarshallerContext context) {
 		
-		countNodesResponse.setRequestId(context.stringValue("CountNodesResponse.RequestId"));
-		countNodesResponse.setSuccess(context.booleanValue("CountNodesResponse.Success"));
-		countNodesResponse.setData(context.longValue("CountNodesResponse.Data"));
+		updateOwnedLocalJoinPermissionResponse.setRequestId(context.stringValue("UpdateOwnedLocalJoinPermissionResponse.RequestId"));
+		updateOwnedLocalJoinPermissionResponse.setSuccess(context.booleanValue("UpdateOwnedLocalJoinPermissionResponse.Success"));
 	 
-	 	return countNodesResponse;
+	 	return updateOwnedLocalJoinPermissionResponse;
 	}
 }

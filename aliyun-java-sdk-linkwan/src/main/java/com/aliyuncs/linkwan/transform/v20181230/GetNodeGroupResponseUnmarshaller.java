@@ -14,11 +14,15 @@
 
 package com.aliyuncs.linkwan.transform.v20181230;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.linkwan.model.v20181230.GetNodeGroupResponse;
 import com.aliyuncs.linkwan.model.v20181230.GetNodeGroupResponse.Data;
 import com.aliyuncs.linkwan.model.v20181230.GetNodeGroupResponse.Data.DataDispatchConfig;
 import com.aliyuncs.linkwan.model.v20181230.GetNodeGroupResponse.Data.DataDispatchConfig.IotProduct;
 import com.aliyuncs.linkwan.model.v20181230.GetNodeGroupResponse.Data.DataDispatchConfig.OnsTopics;
+import com.aliyuncs.linkwan.model.v20181230.GetNodeGroupResponse.Data.LocksItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -63,6 +67,18 @@ public class GetNodeGroupResponseUnmarshaller {
 		onsTopics.setUplinkTopic(context.stringValue("GetNodeGroupResponse.Data.DataDispatchConfig.OnsTopics.UplinkTopic"));
 		dataDispatchConfig.setOnsTopics(onsTopics);
 		data.setDataDispatchConfig(dataDispatchConfig);
+
+		List<LocksItem> locks = new ArrayList<LocksItem>();
+		for (int i = 0; i < context.lengthValue("GetNodeGroupResponse.Data.Locks.Length"); i++) {
+			LocksItem locksItem = new LocksItem();
+			locksItem.setLockId(context.stringValue("GetNodeGroupResponse.Data.Locks["+ i +"].LockId"));
+			locksItem.setLockType(context.stringValue("GetNodeGroupResponse.Data.Locks["+ i +"].LockType"));
+			locksItem.setEnabled(context.booleanValue("GetNodeGroupResponse.Data.Locks["+ i +"].Enabled"));
+			locksItem.setCreateMillis(context.longValue("GetNodeGroupResponse.Data.Locks["+ i +"].CreateMillis"));
+
+			locks.add(locksItem);
+		}
+		data.setLocks(locks);
 		getNodeGroupResponse.setData(data);
 	 
 	 	return getNodeGroupResponse;

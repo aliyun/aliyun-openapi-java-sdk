@@ -14,17 +14,17 @@
 
 package com.aliyuncs.linkwan.transform.v20181230;
 
-import com.aliyuncs.linkwan.model.v20181230.UpdateLocalJoinPermissionResponse;
+import com.aliyuncs.linkwan.model.v20181230.UpdateRoamingJoinPermissionResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class UpdateLocalJoinPermissionResponseUnmarshaller {
+public class UpdateRoamingJoinPermissionResponseUnmarshaller {
 
-	public static UpdateLocalJoinPermissionResponse unmarshall(UpdateLocalJoinPermissionResponse updateLocalJoinPermissionResponse, UnmarshallerContext context) {
+	public static UpdateRoamingJoinPermissionResponse unmarshall(UpdateRoamingJoinPermissionResponse updateRoamingJoinPermissionResponse, UnmarshallerContext context) {
 		
-		updateLocalJoinPermissionResponse.setRequestId(context.stringValue("UpdateLocalJoinPermissionResponse.RequestId"));
-		updateLocalJoinPermissionResponse.setSuccess(context.booleanValue("UpdateLocalJoinPermissionResponse.Success"));
+		updateRoamingJoinPermissionResponse.setRequestId(context.stringValue("UpdateRoamingJoinPermissionResponse.RequestId"));
+		updateRoamingJoinPermissionResponse.setSuccess(context.booleanValue("UpdateRoamingJoinPermissionResponse.Success"));
 	 
-	 	return updateLocalJoinPermissionResponse;
+	 	return updateRoamingJoinPermissionResponse;
 	}
 }

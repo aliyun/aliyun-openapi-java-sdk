@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.linkwan.model.v20181230.ListBoundLabNodesResponse;
 import com.aliyuncs.linkwan.model.v20181230.ListBoundLabNodesResponse.LabNode;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

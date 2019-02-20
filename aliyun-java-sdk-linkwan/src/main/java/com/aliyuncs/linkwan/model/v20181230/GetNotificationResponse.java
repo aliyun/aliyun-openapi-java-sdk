@@ -14,7 +14,6 @@
 
 package com.aliyuncs.linkwan.model.v20181230;
 
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.linkwan.transform.v20181230.GetNotificationResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -172,6 +171,8 @@ public class GetNotificationResponse extends AcsResponse {
 
 			private String joinEui;
 
+			private String joinPermissionName;
+
 			public String getOrderId() {
 				return this.orderId;
 			}
@@ -250,6 +251,14 @@ public class GetNotificationResponse extends AcsResponse {
 
 			public void setJoinEui(String joinEui) {
 				this.joinEui = joinEui;
+			}
+
+			public String getJoinPermissionName() {
+				return this.joinPermissionName;
+			}
+
+			public void setJoinPermissionName(String joinPermissionName) {
+				this.joinPermissionName = joinPermissionName;
 			}
 		}
 	}

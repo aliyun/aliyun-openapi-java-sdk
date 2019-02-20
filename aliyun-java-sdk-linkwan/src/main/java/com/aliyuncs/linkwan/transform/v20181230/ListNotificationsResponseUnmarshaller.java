@@ -22,7 +22,6 @@ import com.aliyuncs.linkwan.model.v20181230.ListNotificationsResponse.Data;
 import com.aliyuncs.linkwan.model.v20181230.ListNotificationsResponse.Data.Notification;
 import com.aliyuncs.linkwan.model.v20181230.ListNotificationsResponse.Data.Notification.GatewayOfflineInfo;
 import com.aliyuncs.linkwan.model.v20181230.ListNotificationsResponse.Data.Notification.JoinPermissionAuthInfo;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -61,6 +60,7 @@ public class ListNotificationsResponseUnmarshaller {
 			joinPermissionAuthInfo.setCanceledMillis(context.longValue("ListNotificationsResponse.Data.List["+ i +"].JoinPermissionAuthInfo.CanceledMillis"));
 			joinPermissionAuthInfo.setRejectedMillis(context.longValue("ListNotificationsResponse.Data.List["+ i +"].JoinPermissionAuthInfo.RejectedMillis"));
 			joinPermissionAuthInfo.setJoinEui(context.stringValue("ListNotificationsResponse.Data.List["+ i +"].JoinPermissionAuthInfo.JoinEui"));
+			joinPermissionAuthInfo.setJoinPermissionName(context.stringValue("ListNotificationsResponse.Data.List["+ i +"].JoinPermissionAuthInfo.JoinPermissionName"));
 			notification.setJoinPermissionAuthInfo(joinPermissionAuthInfo);
 
 			list.add(notification);

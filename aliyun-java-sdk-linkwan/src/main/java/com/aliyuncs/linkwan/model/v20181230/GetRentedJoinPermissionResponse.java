@@ -14,7 +14,6 @@
 
 package com.aliyuncs.linkwan.model.v20181230;
 
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.linkwan.transform.v20181230.GetRentedJoinPermissionResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -59,8 +58,6 @@ public class GetRentedJoinPermissionResponse extends AcsResponse {
 
 		private String joinPermissionId;
 
-		private String ownerAliyunId;
-
 		private String joinEui;
 
 		private Long freqBandPlanGroupId;
@@ -70,12 +67,6 @@ public class GetRentedJoinPermissionResponse extends AcsResponse {
 		private String type;
 
 		private Boolean enabled;
-
-		private Boolean boundNodeGroup;
-
-		private String nodeGroupId;
-
-		private String nodeGroupName;
 
 		private Long rxDailySum;
 
@@ -87,20 +78,16 @@ public class GetRentedJoinPermissionResponse extends AcsResponse {
 
 		private Long createMillis;
 
+		private Long nodesCnt;
+
+		private String joinPermissionName;
+
 		public String getJoinPermissionId() {
 			return this.joinPermissionId;
 		}
 
 		public void setJoinPermissionId(String joinPermissionId) {
 			this.joinPermissionId = joinPermissionId;
-		}
-
-		public String getOwnerAliyunId() {
-			return this.ownerAliyunId;
-		}
-
-		public void setOwnerAliyunId(String ownerAliyunId) {
-			this.ownerAliyunId = ownerAliyunId;
 		}
 
 		public String getJoinEui() {
@@ -143,30 +130,6 @@ public class GetRentedJoinPermissionResponse extends AcsResponse {
 			this.enabled = enabled;
 		}
 
-		public Boolean getBoundNodeGroup() {
-			return this.boundNodeGroup;
-		}
-
-		public void setBoundNodeGroup(Boolean boundNodeGroup) {
-			this.boundNodeGroup = boundNodeGroup;
-		}
-
-		public String getNodeGroupId() {
-			return this.nodeGroupId;
-		}
-
-		public void setNodeGroupId(String nodeGroupId) {
-			this.nodeGroupId = nodeGroupId;
-		}
-
-		public String getNodeGroupName() {
-			return this.nodeGroupName;
-		}
-
-		public void setNodeGroupName(String nodeGroupName) {
-			this.nodeGroupName = nodeGroupName;
-		}
-
 		public Long getRxDailySum() {
 			return this.rxDailySum;
 		}
@@ -205,6 +168,22 @@ public class GetRentedJoinPermissionResponse extends AcsResponse {
 
 		public void setCreateMillis(Long createMillis) {
 			this.createMillis = createMillis;
+		}
+
+		public Long getNodesCnt() {
+			return this.nodesCnt;
+		}
+
+		public void setNodesCnt(Long nodesCnt) {
+			this.nodesCnt = nodesCnt;
+		}
+
+		public String getJoinPermissionName() {
+			return this.joinPermissionName;
+		}
+
+		public void setJoinPermissionName(String joinPermissionName) {
+			this.joinPermissionName = joinPermissionName;
 		}
 	}
 

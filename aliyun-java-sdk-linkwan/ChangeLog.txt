@@ -1,3 +1,13 @@
+2019-02-20 Version: 1.0.3
+1, Modify the NotificationId parameter type of the GetNotification API from Long to String.
+2, Modify the Ascending parameter type of the ListNotifications API from String to Boolean.
+3, Add API UpdateOwnedLocalJoinPermission.
+4, Add API UpdateRoamingJoinPermission.
+5, Add API UpdateOwnedLocalJoinPermissionEnablingState.
+6, Add API UpdateRoamingJoinPermissionEnablingState.
+7, Add parameter JoinPermissionName and UseDefaultJoinEui to request of API CreateLocalJoinPermission.
+8, Add parameter JoinPermissionName to request of API ApplyRoamingJoinPermission.
+
 2019-01-18 Version: 1.0.2
 1, fix bug: EndpointResolvingError
 

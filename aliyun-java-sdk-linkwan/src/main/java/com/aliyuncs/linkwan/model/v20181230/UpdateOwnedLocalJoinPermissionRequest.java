@@ -15,22 +15,24 @@
 package com.aliyuncs.linkwan.model.v20181230;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.ProtocolType;
 
 /**
  * @author auto create
  * @version 
  */
-public class CreateLocalJoinPermissionRequest extends RpcAcsRequest<CreateLocalJoinPermissionResponse> {
+public class UpdateOwnedLocalJoinPermissionRequest extends RpcAcsRequest<UpdateOwnedLocalJoinPermissionResponse> {
 	
-	public CreateLocalJoinPermissionRequest() {
-		super("LinkWAN", "2018-12-30", "CreateLocalJoinPermission", "linkwan");
+	public UpdateOwnedLocalJoinPermissionRequest() {
+		super("LinkWAN", "2018-12-30", "UpdateOwnedLocalJoinPermission", "linkwan");
+		setProtocol(ProtocolType.HTTPS);
 	}
 
 	private String classMode;
 
-	private Long freqBandPlanGroupId;
+	private String joinPermissionId;
 
-	private Boolean useDefaultJoinEui;
+	private Long freqBandPlanGroupId;
 
 	private String joinPermissionName;
 
@@ -45,6 +47,17 @@ public class CreateLocalJoinPermissionRequest extends RpcAcsRequest<CreateLocalJ
 		}
 	}
 
+	public String getJoinPermissionId() {
+		return this.joinPermissionId;
+	}
+
+	public void setJoinPermissionId(String joinPermissionId) {
+		this.joinPermissionId = joinPermissionId;
+		if(joinPermissionId != null){
+			putBodyParameter("JoinPermissionId", joinPermissionId);
+		}
+	}
+
 	public Long getFreqBandPlanGroupId() {
 		return this.freqBandPlanGroupId;
 	}
@@ -53,17 +66,6 @@ public class CreateLocalJoinPermissionRequest extends RpcAcsRequest<CreateLocalJ
 		this.freqBandPlanGroupId = freqBandPlanGroupId;
 		if(freqBandPlanGroupId != null){
 			putBodyParameter("FreqBandPlanGroupId", freqBandPlanGroupId.toString());
-		}
-	}
-
-	public Boolean getUseDefaultJoinEui() {
-		return this.useDefaultJoinEui;
-	}
-
-	public void setUseDefaultJoinEui(Boolean useDefaultJoinEui) {
-		this.useDefaultJoinEui = useDefaultJoinEui;
-		if(useDefaultJoinEui != null){
-			putBodyParameter("UseDefaultJoinEui", useDefaultJoinEui.toString());
 		}
 	}
 
@@ -79,8 +81,8 @@ public class CreateLocalJoinPermissionRequest extends RpcAcsRequest<CreateLocalJ
 	}
 
 	@Override
-	public Class<CreateLocalJoinPermissionResponse> getResponseClass() {
-		return CreateLocalJoinPermissionResponse.class;
+	public Class<UpdateOwnedLocalJoinPermissionResponse> getResponseClass() {
+		return UpdateOwnedLocalJoinPermissionResponse.class;
 	}
 
 }

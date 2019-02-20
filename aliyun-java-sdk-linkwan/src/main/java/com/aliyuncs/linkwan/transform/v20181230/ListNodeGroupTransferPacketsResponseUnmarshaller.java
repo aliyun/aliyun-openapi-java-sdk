@@ -20,7 +20,6 @@ import java.util.List;
 import com.aliyuncs.linkwan.model.v20181230.ListNodeGroupTransferPacketsResponse;
 import com.aliyuncs.linkwan.model.v20181230.ListNodeGroupTransferPacketsResponse.Data;
 import com.aliyuncs.linkwan.model.v20181230.ListNodeGroupTransferPacketsResponse.Data.Packet;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -49,6 +48,18 @@ public class ListNodeGroupTransferPacketsResponseUnmarshaller {
 			packet.setGwOwnerAliyunId(context.stringValue("ListNodeGroupTransferPacketsResponse.Data.List["+ i +"].GwOwnerAliyunId"));
 			packet.setFreqBandPlanGroupId(context.longValue("ListNodeGroupTransferPacketsResponse.Data.List["+ i +"].FreqBandPlanGroupId"));
 			packet.setLogMillis(context.longValue("ListNodeGroupTransferPacketsResponse.Data.List["+ i +"].LogMillis"));
+			packet.setHasMacCommand(context.booleanValue("ListNodeGroupTransferPacketsResponse.Data.List["+ i +"].HasMacCommand"));
+			packet.setHasData(context.booleanValue("ListNodeGroupTransferPacketsResponse.Data.List["+ i +"].HasData"));
+			packet.setBase64EncodedMacPayload(context.stringValue("ListNodeGroupTransferPacketsResponse.Data.List["+ i +"].Base64EncodedMacPayload"));
+			packet.setMacPayloadSize(context.longValue("ListNodeGroupTransferPacketsResponse.Data.List["+ i +"].MacPayloadSize"));
+			packet.setProcessEvent(context.stringValue("ListNodeGroupTransferPacketsResponse.Data.List["+ i +"].ProcessEvent"));
+			packet.setMessageType(context.stringValue("ListNodeGroupTransferPacketsResponse.Data.List["+ i +"].MessageType"));
+
+			List<String> macCommandCIDs = new ArrayList<String>();
+			for (int j = 0; j < context.lengthValue("ListNodeGroupTransferPacketsResponse.Data.List["+ i +"].MacCommandCIDs.Length"); j++) {
+				macCommandCIDs.add(context.stringValue("ListNodeGroupTransferPacketsResponse.Data.List["+ i +"].MacCommandCIDs["+ j +"]"));
+			}
+			packet.setMacCommandCIDs(macCommandCIDs);
 
 			list.add(packet);
 		}

@@ -20,7 +20,6 @@ import java.util.List;
 import com.aliyuncs.linkwan.model.v20181230.ListGatewayTupleOrdersResponse;
 import com.aliyuncs.linkwan.model.v20181230.ListGatewayTupleOrdersResponse.Data;
 import com.aliyuncs.linkwan.model.v20181230.ListGatewayTupleOrdersResponse.Data.GatewayTupleOrder;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

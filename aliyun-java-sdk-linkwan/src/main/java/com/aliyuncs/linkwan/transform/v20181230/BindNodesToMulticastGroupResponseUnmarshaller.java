@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.linkwan.model.v20181230.BindNodesToMulticastGroupResponse;
 import com.aliyuncs.linkwan.model.v20181230.BindNodesToMulticastGroupResponse.Data;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

@@ -20,7 +20,6 @@ import java.util.List;
 import com.aliyuncs.linkwan.model.v20181230.ListLabNodesResponse;
 import com.aliyuncs.linkwan.model.v20181230.ListLabNodesResponse.Data;
 import com.aliyuncs.linkwan.model.v20181230.ListLabNodesResponse.Data.LabNode;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

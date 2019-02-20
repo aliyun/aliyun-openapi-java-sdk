@@ -14,22 +14,19 @@
 
 package com.aliyuncs.linkwan.model.v20181230;
 
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.linkwan.transform.v20181230.CountNodesResponseUnmarshaller;
+import com.aliyuncs.linkwan.transform.v20181230.UpdateOwnedLocalJoinPermissionResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CountNodesResponse extends AcsResponse {
+public class UpdateOwnedLocalJoinPermissionResponse extends AcsResponse {
 
 	private String requestId;
 
 	private Boolean success;
-
-	private Long data;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -47,17 +44,9 @@ public class CountNodesResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public Long getData() {
-		return this.data;
-	}
-
-	public void setData(Long data) {
-		this.data = data;
-	}
-
 	@Override
-	public CountNodesResponse getInstance(UnmarshallerContext context) {
-		return	CountNodesResponseUnmarshaller.unmarshall(this, context);
+	public UpdateOwnedLocalJoinPermissionResponse getInstance(UnmarshallerContext context) {
+		return	UpdateOwnedLocalJoinPermissionResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

@@ -14,7 +14,6 @@
 
 package com.aliyuncs.linkwan.model.v20181230;
 
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.linkwan.transform.v20181230.TriggerLabGatewayDeviceInfoReportResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;

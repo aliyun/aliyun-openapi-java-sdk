@@ -28,11 +28,24 @@ public class CountOwnedJoinPermissionsRequest extends RpcAcsRequest<CountOwnedJo
 		setProtocol(ProtocolType.HTTPS);
 	}
 
+	private String fuzzyJoinPermissionName;
+
 	private String fuzzyRenterAliyunId;
 
 	private Boolean enabled;
 
 	private String fuzzyJoinEui;
+
+	public String getFuzzyJoinPermissionName() {
+		return this.fuzzyJoinPermissionName;
+	}
+
+	public void setFuzzyJoinPermissionName(String fuzzyJoinPermissionName) {
+		this.fuzzyJoinPermissionName = fuzzyJoinPermissionName;
+		if(fuzzyJoinPermissionName != null){
+			putBodyParameter("FuzzyJoinPermissionName", fuzzyJoinPermissionName);
+		}
+	}
 
 	public String getFuzzyRenterAliyunId() {
 		return this.fuzzyRenterAliyunId;

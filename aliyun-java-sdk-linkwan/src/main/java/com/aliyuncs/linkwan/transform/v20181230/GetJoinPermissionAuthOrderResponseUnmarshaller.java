@@ -29,7 +29,6 @@ public class GetJoinPermissionAuthOrderResponseUnmarshaller {
 		Data data = new Data();
 		data.setOrderId(context.stringValue("GetJoinPermissionAuthOrderResponse.Data.OrderId"));
 		data.setJoinPermissionId(context.stringValue("GetJoinPermissionAuthOrderResponse.Data.JoinPermissionId"));
-		data.setJoinEui(context.stringValue("GetJoinPermissionAuthOrderResponse.Data.JoinEui"));
 		data.setOwnerAliyunId(context.stringValue("GetJoinPermissionAuthOrderResponse.Data.OwnerAliyunId"));
 		data.setRenterAliyunId(context.stringValue("GetJoinPermissionAuthOrderResponse.Data.RenterAliyunId"));
 		data.setOrderState(context.stringValue("GetJoinPermissionAuthOrderResponse.Data.OrderState"));
