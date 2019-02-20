@@ -20,7 +20,6 @@ import java.util.List;
 import com.aliyuncs.drds.model.v20171016.DescribeDrdsInstanceDbMonitorResponse;
 import com.aliyuncs.drds.model.v20171016.DescribeDrdsInstanceDbMonitorResponse.PartialPerformanceData;
 import com.aliyuncs.drds.model.v20171016.DescribeDrdsInstanceDbMonitorResponse.PartialPerformanceData.PerformanceValue;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

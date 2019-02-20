@@ -20,7 +20,6 @@ import java.util.List;
 import com.aliyuncs.drds.model.v20171016.DescribeDrdsInstanceResponse;
 import com.aliyuncs.drds.model.v20171016.DescribeDrdsInstanceResponse.Data;
 import com.aliyuncs.drds.model.v20171016.DescribeDrdsInstanceResponse.Data.Vip;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

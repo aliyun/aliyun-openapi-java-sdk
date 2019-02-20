@@ -14,7 +14,6 @@
 
 package com.aliyuncs.drds.model.v20171016;
 
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.drds.transform.v20171016.DescribeShardDbConnectionInfoResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;

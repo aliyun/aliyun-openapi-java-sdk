@@ -15,7 +15,6 @@
 package com.aliyuncs.drds.model.v20171016;
 
 import java.util.List;
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.drds.transform.v20171016.DescribeDrdsInstancesResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -96,10 +95,26 @@ public class DescribeDrdsInstancesResponse extends AcsResponse {
 			this.type = type;
 		}
 
+		public String getBizRegionId() {
+			return this.regionId;
+		}
+
+		public void setBizRegionId(String regionId) {
+			this.regionId = regionId;
+		}
+
+		/**
+		 * @deprecated use getBizRegionId instead of this.
+		 */
+		@Deprecated
 		public String getRegionId() {
 			return this.regionId;
 		}
 
+		/**
+		 * @deprecated use setBizRegionId instead of this.
+		 */
+		@Deprecated
 		public void setRegionId(String regionId) {
 			this.regionId = regionId;
 		}
@@ -144,10 +159,26 @@ public class DescribeDrdsInstancesResponse extends AcsResponse {
 			this.createTime = createTime;
 		}
 
+		public Long getBizVersion() {
+			return this.version;
+		}
+
+		public void setBizVersion(Long version) {
+			this.version = version;
+		}
+
+		/**
+		 * @deprecated use getBizVersion instead of this.
+		 */
+		@Deprecated
 		public Long getVersion() {
 			return this.version;
 		}
 
+		/**
+		 * @deprecated use setBizVersion instead of this.
+		 */
+		@Deprecated
 		public void setVersion(Long version) {
 			this.version = version;
 		}

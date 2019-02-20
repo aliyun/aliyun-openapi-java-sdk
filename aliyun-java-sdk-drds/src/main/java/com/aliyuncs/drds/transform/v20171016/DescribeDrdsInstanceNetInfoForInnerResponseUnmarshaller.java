@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.drds.model.v20171016.DescribeDrdsInstanceNetInfoForInnerResponse;
 import com.aliyuncs.drds.model.v20171016.DescribeDrdsInstanceNetInfoForInnerResponse.NetInfo;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

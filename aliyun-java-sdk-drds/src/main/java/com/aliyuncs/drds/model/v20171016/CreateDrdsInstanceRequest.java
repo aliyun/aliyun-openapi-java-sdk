@@ -30,6 +30,8 @@ public class CreateDrdsInstanceRequest extends RpcAcsRequest<CreateDrdsInstanceR
 
 	private Integer quantity;
 
+	private String clientToken;
+
 	private String description;
 
 	private String specification;
@@ -71,6 +73,17 @@ public class CreateDrdsInstanceRequest extends RpcAcsRequest<CreateDrdsInstanceR
 		this.quantity = quantity;
 		if(quantity != null){
 			putQueryParameter("Quantity", quantity.toString());
+		}
+	}
+
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
 		}
 	}
 
@@ -136,7 +149,7 @@ public class CreateDrdsInstanceRequest extends RpcAcsRequest<CreateDrdsInstanceR
 	public void setIsHa(Boolean isHa) {
 		this.isHa = isHa;
 		if(isHa != null){
-			putQueryParameter("isHa", isHa.toString());
+			putQueryParameter("IsHa", isHa.toString());
 		}
 	}
 
@@ -147,7 +160,7 @@ public class CreateDrdsInstanceRequest extends RpcAcsRequest<CreateDrdsInstanceR
 	public void setInstanceSeries(String instanceSeries) {
 		this.instanceSeries = instanceSeries;
 		if(instanceSeries != null){
-			putQueryParameter("instanceSeries", instanceSeries);
+			putQueryParameter("InstanceSeries", instanceSeries);
 		}
 	}
 
