@@ -22,17 +22,15 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class QuerySyncPicScheduleRequest extends RpcAcsRequest<QuerySyncPicScheduleResponse> {
+public class DeleteDeviceAllGroupRequest extends RpcAcsRequest<DeleteDeviceAllGroupResponse> {
 	
-	public QuerySyncPicScheduleRequest() {
-		super("LinkFace", "2018-07-20", "QuerySyncPicSchedule");
+	public DeleteDeviceAllGroupRequest() {
+		super("LinkFace", "2018-07-20", "DeleteDeviceAllGroup");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
 
 	private String iotId;
-
-	private String groupId;
 
 	private String deviceName;
 
@@ -46,17 +44,6 @@ public class QuerySyncPicScheduleRequest extends RpcAcsRequest<QuerySyncPicSched
 		this.iotId = iotId;
 		if(iotId != null){
 			putBodyParameter("IotId", iotId);
-		}
-	}
-
-	public String getGroupId() {
-		return this.groupId;
-	}
-
-	public void setGroupId(String groupId) {
-		this.groupId = groupId;
-		if(groupId != null){
-			putBodyParameter("GroupId", groupId);
 		}
 	}
 
@@ -83,8 +70,8 @@ public class QuerySyncPicScheduleRequest extends RpcAcsRequest<QuerySyncPicSched
 	}
 
 	@Override
-	public Class<QuerySyncPicScheduleResponse> getResponseClass() {
-		return QuerySyncPicScheduleResponse.class;
+	public Class<DeleteDeviceAllGroupResponse> getResponseClass() {
+		return DeleteDeviceAllGroupResponse.class;
 	}
 
 }

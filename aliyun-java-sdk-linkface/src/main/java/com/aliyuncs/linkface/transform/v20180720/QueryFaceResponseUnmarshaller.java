@@ -20,7 +20,6 @@ import java.util.List;
 import com.aliyuncs.linkface.model.v20180720.QueryFaceResponse;
 import com.aliyuncs.linkface.model.v20180720.QueryFaceResponse.Data;
 import com.aliyuncs.linkface.model.v20180720.QueryFaceResponse.Data.UserFaceMetasItem;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

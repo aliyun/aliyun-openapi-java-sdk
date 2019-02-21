@@ -14,16 +14,15 @@
 
 package com.aliyuncs.linkface.model.v20180720;
 
-import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.linkface.transform.v20180720.SearchFaceResponseUnmarshaller;
+import com.aliyuncs.linkface.transform.v20180720.DeleteDeviceGroupResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class SearchFaceResponse extends AcsResponse {
+public class DeleteDeviceGroupResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -32,8 +31,6 @@ public class SearchFaceResponse extends AcsResponse {
 	private String message;
 
 	private Boolean success;
-
-	private Data data;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -67,53 +64,9 @@ public class SearchFaceResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public Data getData() {
-		return this.data;
-	}
-
-	public void setData(Data data) {
-		this.data = data;
-	}
-
-	public static class Data {
-
-		private List<TopUserItemItem> topUserItem;
-
-		public List<TopUserItemItem> getTopUserItem() {
-			return this.topUserItem;
-		}
-
-		public void setTopUserItem(List<TopUserItemItem> topUserItem) {
-			this.topUserItem = topUserItem;
-		}
-
-		public static class TopUserItemItem {
-
-			private String userId;
-
-			private Float score;
-
-			public String getUserId() {
-				return this.userId;
-			}
-
-			public void setUserId(String userId) {
-				this.userId = userId;
-			}
-
-			public Float getScore() {
-				return this.score;
-			}
-
-			public void setScore(Float score) {
-				this.score = score;
-			}
-		}
-	}
-
 	@Override
-	public SearchFaceResponse getInstance(UnmarshallerContext context) {
-		return	SearchFaceResponseUnmarshaller.unmarshall(this, context);
+	public DeleteDeviceGroupResponse getInstance(UnmarshallerContext context) {
+		return	DeleteDeviceGroupResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

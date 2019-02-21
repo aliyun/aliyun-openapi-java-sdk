@@ -20,7 +20,6 @@ import java.util.List;
 import com.aliyuncs.linkface.model.v20180720.SearchFaceResponse;
 import com.aliyuncs.linkface.model.v20180720.SearchFaceResponse.Data;
 import com.aliyuncs.linkface.model.v20180720.SearchFaceResponse.Data.TopUserItemItem;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.linkface.model.v20180720.QueryAuthenticationResponse;
 import com.aliyuncs.linkface.model.v20180720.QueryAuthenticationResponse.DataItem;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

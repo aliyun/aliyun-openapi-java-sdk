@@ -21,7 +21,6 @@ import com.aliyuncs.linkface.model.v20180720.QueryAddUserInfoResponse;
 import com.aliyuncs.linkface.model.v20180720.QueryAddUserInfoResponse.Data;
 import com.aliyuncs.linkface.model.v20180720.QueryAddUserInfoResponse.Data.CurrentFaceInfosItem;
 import com.aliyuncs.linkface.model.v20180720.QueryAddUserInfoResponse.Data.FailedFaceInfosItem;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

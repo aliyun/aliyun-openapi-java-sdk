@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.linkface.model.v20180720.QueryAllGroupsResponse;
 import com.aliyuncs.linkface.model.v20180720.QueryAllGroupsResponse.Data;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.linkface.model.v20180720.QueryLicensesResponse;
 import com.aliyuncs.linkface.model.v20180720.QueryLicensesResponse.DataItem;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

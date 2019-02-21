@@ -32,6 +32,8 @@ public class QueryAddUserInfoRequest extends RpcAcsRequest<QueryAddUserInfoRespo
 
 	private String iotId;
 
+	private String groupId;
+
 	private String deviceName;
 
 	private String productKey;
@@ -44,6 +46,17 @@ public class QueryAddUserInfoRequest extends RpcAcsRequest<QueryAddUserInfoRespo
 		this.iotId = iotId;
 		if(iotId != null){
 			putBodyParameter("IotId", iotId);
+		}
+	}
+
+	public String getGroupId() {
+		return this.groupId;
+	}
+
+	public void setGroupId(String groupId) {
+		this.groupId = groupId;
+		if(groupId != null){
+			putBodyParameter("GroupId", groupId);
 		}
 	}
 

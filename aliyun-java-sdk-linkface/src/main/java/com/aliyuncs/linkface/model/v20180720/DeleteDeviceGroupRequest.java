@@ -22,10 +22,10 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class QuerySyncPicScheduleRequest extends RpcAcsRequest<QuerySyncPicScheduleResponse> {
+public class DeleteDeviceGroupRequest extends RpcAcsRequest<DeleteDeviceGroupResponse> {
 	
-	public QuerySyncPicScheduleRequest() {
-		super("LinkFace", "2018-07-20", "QuerySyncPicSchedule");
+	public DeleteDeviceGroupRequest() {
+		super("LinkFace", "2018-07-20", "DeleteDeviceGroup");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
@@ -83,8 +83,8 @@ public class QuerySyncPicScheduleRequest extends RpcAcsRequest<QuerySyncPicSched
 	}
 
 	@Override
-	public Class<QuerySyncPicScheduleResponse> getResponseClass() {
-		return QuerySyncPicScheduleResponse.class;
+	public Class<DeleteDeviceGroupResponse> getResponseClass() {
+		return DeleteDeviceGroupResponse.class;
 	}
 
 }
