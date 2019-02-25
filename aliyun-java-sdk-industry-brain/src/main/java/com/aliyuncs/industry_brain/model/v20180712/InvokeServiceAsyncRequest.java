@@ -15,7 +15,6 @@
 package com.aliyuncs.industry_brain.model.v20180712;
 
 import com.aliyuncs.RpcAcsRequest;
-import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 
 /**
@@ -26,13 +25,27 @@ public class InvokeServiceAsyncRequest extends RpcAcsRequest<InvokeServiceAsyncR
 	
 	public InvokeServiceAsyncRequest() {
 		super("industry-brain", "2018-07-12", "InvokeServiceAsync");
-		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
+
+	private Boolean isShowInput;
 
 	private String serviceId;
 
 	private String params;
+
+	private String requestData;
+
+	public Boolean getIsShowInput() {
+		return this.isShowInput;
+	}
+
+	public void setIsShowInput(Boolean isShowInput) {
+		this.isShowInput = isShowInput;
+		if(isShowInput != null){
+			putQueryParameter("IsShowInput", isShowInput.toString());
+		}
+	}
 
 	public String getServiceId() {
 		return this.serviceId;
@@ -52,7 +65,18 @@ public class InvokeServiceAsyncRequest extends RpcAcsRequest<InvokeServiceAsyncR
 	public void setParams(String params) {
 		this.params = params;
 		if(params != null){
-			putBodyParameter("Params", params);
+			putQueryParameter("Params", params);
+		}
+	}
+
+	public String getRequestData() {
+		return this.requestData;
+	}
+
+	public void setRequestData(String requestData) {
+		this.requestData = requestData;
+		if(requestData != null){
+			putQueryParameter("RequestData", requestData);
 		}
 	}
 

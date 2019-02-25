@@ -24,6 +24,8 @@ public class InvokeServiceAsyncResponseUnmarshaller {
 		
 		invokeServiceAsyncResponse.setRequestId(context.stringValue("InvokeServiceAsyncResponse.RequestId"));
 		invokeServiceAsyncResponse.setData(context.stringValue("InvokeServiceAsyncResponse.Data"));
+		invokeServiceAsyncResponse.setCode(context.stringValue("InvokeServiceAsyncResponse.Code"));
+		invokeServiceAsyncResponse.setMessage(context.stringValue("InvokeServiceAsyncResponse.Message"));
 	 
 	 	return invokeServiceAsyncResponse;
 	}

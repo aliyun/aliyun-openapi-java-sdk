@@ -24,6 +24,8 @@ public class GetAsyncServiceResultResponseUnmarshaller {
 		
 		getAsyncServiceResultResponse.setRequestId(context.stringValue("GetAsyncServiceResultResponse.RequestId"));
 		getAsyncServiceResultResponse.setData(context.stringValue("GetAsyncServiceResultResponse.Data"));
+		getAsyncServiceResultResponse.setCode(context.stringValue("GetAsyncServiceResultResponse.Code"));
+		getAsyncServiceResultResponse.setMessage(context.stringValue("GetAsyncServiceResultResponse.Message"));
 	 
 	 	return getAsyncServiceResultResponse;
 	}

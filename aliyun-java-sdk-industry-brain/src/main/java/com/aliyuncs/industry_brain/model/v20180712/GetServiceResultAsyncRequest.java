@@ -15,8 +15,6 @@
 package com.aliyuncs.industry_brain.model.v20180712;
 
 import com.aliyuncs.RpcAcsRequest;
-import com.aliyuncs.http.ProtocolType;
-import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
@@ -26,20 +24,18 @@ public class GetServiceResultAsyncRequest extends RpcAcsRequest<GetServiceResult
 	
 	public GetServiceResultAsyncRequest() {
 		super("industry-brain", "2018-07-12", "GetServiceResultAsync");
-		setProtocol(ProtocolType.HTTPS);
-		setMethod(MethodType.POST);
 	}
 
-	private String serviceId;
+	private String taskId;
 
-	public String getServiceId() {
-		return this.serviceId;
+	public String getTaskId() {
+		return this.taskId;
 	}
 
-	public void setServiceId(String serviceId) {
-		this.serviceId = serviceId;
-		if(serviceId != null){
-			putQueryParameter("ServiceId", serviceId);
+	public void setTaskId(String taskId) {
+		this.taskId = taskId;
+		if(taskId != null){
+			putQueryParameter("TaskId", taskId);
 		}
 	}
 

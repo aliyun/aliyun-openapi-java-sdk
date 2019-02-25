@@ -15,18 +15,20 @@
 package com.aliyuncs.industry_brain.model.v20180712;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.industry_brain.transform.v20180712.GetServiceResultAsyncResponseUnmarshaller;
+import com.aliyuncs.industry_brain.transform.v20180712.AsyncResponsePostResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class GetServiceResultAsyncResponse extends AcsResponse {
+public class AsyncResponsePostResponse extends AcsResponse {
 
 	private String requestId;
 
 	private String data;
+
+	private String status;
 
 	private String code;
 
@@ -48,6 +50,14 @@ public class GetServiceResultAsyncResponse extends AcsResponse {
 		this.data = data;
 	}
 
+	public String getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
 	public String getCode() {
 		return this.code;
 	}
@@ -65,8 +75,8 @@ public class GetServiceResultAsyncResponse extends AcsResponse {
 	}
 
 	@Override
-	public GetServiceResultAsyncResponse getInstance(UnmarshallerContext context) {
-		return	GetServiceResultAsyncResponseUnmarshaller.unmarshall(this, context);
+	public AsyncResponsePostResponse getInstance(UnmarshallerContext context) {
+		return	AsyncResponsePostResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override
