@@ -16,6 +16,7 @@ import org.junit.runner.RunWith;
 import org.mockito.BDDMockito;
 import org.mockito.Mockito;
 import org.powermock.api.mockito.PowerMockito;
+import org.powermock.core.classloader.annotations.PowerMockIgnore;
 import org.powermock.core.classloader.annotations.PrepareForTest;
 import org.powermock.modules.junit4.PowerMockRunner;
 
@@ -40,7 +41,7 @@ import com.aliyuncs.http.UserAgentConfig;
 import com.aliyuncs.http.clients.CompatibleUrlConnClient;
 import com.aliyuncs.profile.DefaultProfile;
 import com.aliyuncs.regions.ProductDomain;
-
+@PowerMockIgnore("javax.net.ssl.*")
 @RunWith(PowerMockRunner.class)
 @PrepareForTest(HttpUtil.class)
 public class DefaultAcsClientTest {
@@ -651,7 +652,7 @@ public class DefaultAcsClientTest {
         client.appendUserAgent("order", "1.2.2");
         String userAgent = UserAgentConfig.resolve(null, client.getUserAgentConfig());
         String resultStr = UserAgentConfig.getDefaultMessage()
-                + " Client/CompatibleUrlConnClient test/1.2.3 order/1.2.2";
+                + " Client/ApacheHttpClient test/1.2.3 order/1.2.2";
         Assert.assertEquals(resultStr, userAgent);
     }
 }

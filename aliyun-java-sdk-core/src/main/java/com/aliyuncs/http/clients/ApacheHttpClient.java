@@ -15,7 +15,9 @@ import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 
+import javax.net.ssl.HttpsURLConnection;
 import javax.net.ssl.SSLContext;
+import javax.net.ssl.TrustManager;
 
 import org.apache.http.Header;
 import org.apache.http.HttpResponse;
@@ -81,28 +83,36 @@ public class ApacheHttpClient extends IHttpClient {
                 .setConnectionRequestTimeout((int) config.getWriteTimeoutMillis()).build();
         builder.setDefaultRequestConfig(defaultConfig);
 
-        // https
+        // http
         RegistryBuilder<ConnectionSocketFactory> socketFactoryRegistryBuilder = RegistryBuilder.create();
         socketFactoryRegistryBuilder.register("http", new PlainConnectionSocketFactory());
-        if (config.isIgnoreSSLCerts()) {
-            try {
-                SSLContext sslContext = new SSLContextBuilder().loadTrustMaterial(null, new TrustStrategy() {
-                    // trust all
-                    @Override
-                    public boolean isTrusted(X509Certificate[] chain, String authType) throws CertificateException {
-                        return true;
-                    }
-                }).build();
 
-                SSLConnectionSocketFactory connectionFactory = new SSLConnectionSocketFactory(sslContext,
-                        NoopHostnameVerifier.INSTANCE);
+        // https
+        // register default https connector(ignore untrusted cert)
 
-                socketFactoryRegistryBuilder.register("https", connectionFactory);
+//        SSLContext sc = SSLContext.getInstance("SSL");
+//        sc.init(null, new TrustManager[]{trustAll}, new java.security.SecureRandom());
+//
+        try {
+            SSLContext sslContext = new SSLContextBuilder().loadTrustMaterial(null, new TrustStrategy() {
+                // trust all
+                @Override
+                public boolean isTrusted(X509Certificate[] chain, String authType) throws CertificateException {
+                    return true;
+                }
+            }).build();
 
-            } catch (Exception e) {
-                throw new ClientException("SDK.InitFailed", "Init https with SSL certs ignore failed", e);
-            }
-        } else {
+            SSLConnectionSocketFactory connectionFactory = new SSLConnectionSocketFactory(sslContext,
+                    NoopHostnameVerifier.INSTANCE);
+
+            socketFactoryRegistryBuilder.register("https", connectionFactory);
+
+        } catch (Exception e) {
+            throw new ClientException("SDK.InitFailed", "Init https with SSL certs ignore failed", e);
+        }
+
+        // override default https connector if possible
+        if(!config.isIgnoreSSLCerts()){
             if (config.getSslSocketFactory() != null) {
                 SSLConnectionSocketFactory sslConnectionSocketFactory = new SSLConnectionSocketFactory(config
                         .getSslSocketFactory(), config.getHostnameVerifier());
@@ -121,6 +131,8 @@ public class ApacheHttpClient extends IHttpClient {
                 }
             }
         }
+
+
 
         // connPool
         connectionManager = new PoolingHttpClientConnectionManager(socketFactoryRegistryBuilder.build());

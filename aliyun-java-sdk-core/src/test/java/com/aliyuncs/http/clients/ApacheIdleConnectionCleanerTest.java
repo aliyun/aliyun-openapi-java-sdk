@@ -10,11 +10,17 @@ import java.util.concurrent.TimeUnit;
 
 import org.apache.http.conn.HttpClientConnectionManager;
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 import org.mockito.invocation.InvocationOnMock;
 import org.mockito.stubbing.Answer;
 
 public class ApacheIdleConnectionCleanerTest {
+
+    @Before
+    public void init(){
+        ApacheIdleConnectionCleaner.shutdown();
+    }
 
     @Test
     public void getSetTest() {

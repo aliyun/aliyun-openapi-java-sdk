@@ -65,7 +65,8 @@ public class HttpClientConfig {
 
     public static HttpClientConfig getDefault() {
         HttpClientConfig config = new HttpClientConfig();
-        config.setClientType(HttpClientType.Compatible);
+        config.setClientType(HttpClientType.ApacheHttpClient);
+        //config.setClientType(HttpClientType.Compatible);
         return config;
     }
 

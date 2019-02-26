@@ -2,6 +2,7 @@ package com.aliyuncs.http;
 
 import static com.aliyuncs.http.HttpClientFactory.HTTP_CLIENT_IMPL_KEY;
 
+import com.aliyuncs.http.clients.ApacheHttpClient;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -50,7 +51,7 @@ public class HttpClientFactoryTest {
 
         profile.setHttpClientConfig(null);
         client = HttpClientFactory.buildClient(profile);
-        Assert.assertTrue(client instanceof CompatibleUrlConnClient);
+        Assert.assertTrue(client instanceof ApacheHttpClient);
 
         try {
             System.setProperty(HTTP_CLIENT_IMPL_KEY, "com.aliyuncs.http.HttpClientFactory");
