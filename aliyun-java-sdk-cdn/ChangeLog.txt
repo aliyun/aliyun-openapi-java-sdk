@@ -1,3 +1,6 @@
+2019-02-26 Version: 3.0.6
+1, Update Config API.
+
 2019-02-14 Version: 3.0.5
 1, Update DescribeCdnTypes.
 
