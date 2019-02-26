@@ -1,3 +1,8 @@
+2019-02-26 Version: 1.0.0
+1, Industry brain v1.3.7 release
+2, Add asynchronous APIs
+3, version 1.3.7
+
 2019-02-25 Version: 1.3.7
 1, Industry brain version 1.3.7 release
 2, Add Async API functionality
