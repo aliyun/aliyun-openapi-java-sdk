@@ -37,7 +37,7 @@ public class CoreTest extends BaseTest {
 
     @Test
     public void basicRpcStsTokenConnectionsTest() throws ClientException {
-        DefaultAcsClient client = this.creatDefaultAcsClient();
+        DefaultAcsClient client = this.createDefaultAcsClient();
         DescribeInstancesRequest request = new DescribeInstancesRequest();
         DescribeInstancesResponse response = client.getAcsResponse(request);
         Assert.assertNotNull(response);
@@ -46,7 +46,7 @@ public class CoreTest extends BaseTest {
 
     @Test
     public void basicRoaTokenConnectionsTest() throws ClientException {
-        DefaultAcsClient client = creatDefaultAcsClient();
+        DefaultAcsClient client = createDefaultAcsClient();
         CommonRequest request = new CommonRequest();
         request.setSysDomain("ros.aliyuncs.com");
         request.setSysVersion("2015-09-01");
@@ -95,14 +95,13 @@ public class CoreTest extends BaseTest {
             Assert.fail("No exceptions thrown");
         } catch (ClientException e) {
             Assert.assertEquals("SDK.ServerUnreachable", e.getErrCode());
-            Assert.assertEquals("Server unreachable: java.net.UnknownHostException: www.serverUnreachableTest.com", e
-                    .getErrMsg());
+            Assert.assertTrue(e.getErrMsg().contains("Server unreachable: java.net.UnknownHostException: www.serverUnreachableTest.com"));
         }
     }
 
     @Test
     public void unicodeAndQueryTest() throws ClientException {
-        DefaultAcsClient client = this.creatDefaultAcsClient();
+        DefaultAcsClient client = this.createDefaultAcsClient();
         CommonRequest request = new CommonRequest();
         request.setSysDomain("ros.aliyuncs.com");
         request.setSysVersion("2015-09-01");

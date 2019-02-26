@@ -37,7 +37,7 @@ public class ErrorHandlingTest extends BaseTest {
         request.setSysAction("DescribeAccessPoints");
         request.setSysReadTimeout(1);
         try {
-            this.client.getCommonResponse(request);
+            this.timeoutClient.getCommonResponse(request);
             Assert.fail();
         } catch (ClientException e) {
             Assert.assertEquals("SDK.ServerUnreachable", e.getErrCode());

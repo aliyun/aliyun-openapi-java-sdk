@@ -5,6 +5,7 @@ import com.aliyuncs.http.MethodType;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.powermock.core.classloader.annotations.PowerMockIgnore;
 import org.powermock.core.classloader.annotations.PrepareForTest;
 import org.powermock.modules.junit4.PowerMockRunner;
 
@@ -12,7 +13,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import static org.mockito.Mockito.mock;
-
+@PowerMockIgnore("javax.net.ssl.*")
 @RunWith(PowerMockRunner.class)
 @PrepareForTest(FormatType.class)
 public class OssSignatureComposerTest {
