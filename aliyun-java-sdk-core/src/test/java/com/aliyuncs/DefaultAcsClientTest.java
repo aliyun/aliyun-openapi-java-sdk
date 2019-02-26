@@ -475,7 +475,7 @@ public class DefaultAcsClientTest {
         Mockito.when(response.isSuccess()).thenReturn(false);
         Mockito.when(response.getHttpContentType()).thenReturn(FormatType.XML);
         Mockito.when(response.getHttpContentString()).thenReturn(makeAcsErrorXML("", "", "500", "ServerException", ""));
-        Mockito.when(response.getStatus()).thenReturn(401);
+        Mockito.when(response.getStatus()).thenReturn(404);
         thrown.expect(ClientException.class);
         spyClient.getCommonResponse(commonRequest);
     }
@@ -516,7 +516,7 @@ public class DefaultAcsClientTest {
         DefaultAcsClient client = new DefaultAcsClient(profile);
         DefaultAcsClient spyClient = Mockito.spy(client);
         HttpResponse response = Mockito.mock(HttpResponse.class);
-        Mockito.when(response.getStatus()).thenReturn(401);
+        Mockito.when(response.getStatus()).thenReturn(400);
         Mockito.when(response.getHttpContentType()).thenReturn(FormatType.XML);
         Mockito.when(response.getHttpContentString()).thenReturn(makeAcsErrorXML("", "", "Not IncompleteSignature",
                 "ClientException", ""));
@@ -537,7 +537,7 @@ public class DefaultAcsClientTest {
         DefaultAcsClient client = new DefaultAcsClient(profile);
         DefaultAcsClient spyClient = Mockito.spy(client);
         HttpResponse response = Mockito.mock(HttpResponse.class);
-        Mockito.when(response.getStatus()).thenReturn(401);
+        Mockito.when(response.getStatus()).thenReturn(400);
         Mockito.when(response.getHttpContentType()).thenReturn(FormatType.XML);
         AcsRequest request = Mockito.mock(AcsRequest.class);
         request.strToSign = "GET&%2F%3DDescriat%3DXML%26";
@@ -560,7 +560,7 @@ public class DefaultAcsClientTest {
         DefaultAcsClient client = new DefaultAcsClient(profile);
         DefaultAcsClient spyClient = Mockito.spy(client);
         HttpResponse response = Mockito.mock(HttpResponse.class);
-        Mockito.when(response.getStatus()).thenReturn(401);
+        Mockito.when(response.getStatus()).thenReturn(400);
         Mockito.when(response.getHttpContentType()).thenReturn(FormatType.XML);
         AcsRequest request = Mockito.mock(AcsRequest.class);
         request.strToSign = "GET&%2F&scribeInstancesDXML%26";
@@ -583,7 +583,7 @@ public class DefaultAcsClientTest {
         DefaultAcsClient client = new DefaultAcsClient(profile);
         HttpResponse response = Mockito.mock(HttpResponse.class);
         DefaultAcsClient spyClient = Mockito.spy(client);
-        Mockito.when(response.getStatus()).thenReturn(401);
+        Mockito.when(response.getStatus()).thenReturn(400);
         Mockito.when(response.getHttpContentType()).thenReturn(FormatType.XML);
         AcsRequest request = Mockito.mock(AcsRequest.class);
         request.strToSign = "GET&%2F&Action%3DDescribeInances%26Format%3DXML%26";
@@ -593,6 +593,28 @@ public class DefaultAcsClientTest {
         Mockito.doReturn(response).when(spyClient).doAction(request);
         thrown.expect(ClientException.class);
         thrown.expectMessage("IncompleteSignature : " + errorMessage);
+        spyClient.getAcsResponse(request);
+    }
+
+    @Test
+    public void testResponseSignatureDoesNotMatch() throws ClientException {
+        Credential credential = Mockito.mock(Credential.class);
+        Mockito.when(credential.getSecurityToken()).thenReturn(null);
+        DefaultProfile profile = Mockito.mock(DefaultProfile.class);
+        Mockito.when(profile.getCredential()).thenReturn(credential);
+        DefaultAcsClient client = new DefaultAcsClient(profile);
+        HttpResponse response = Mockito.mock(HttpResponse.class);
+        DefaultAcsClient spyClient = Mockito.spy(client);
+        Mockito.when(response.getStatus()).thenReturn(400);
+        Mockito.when(response.getHttpContentType()).thenReturn(FormatType.XML);
+        AcsRequest request = Mockito.mock(AcsRequest.class);
+        request.strToSign = "GET&%2F&Action%3DDescribeInances%26Format%3DXML%26";
+        String errorMessage = "signature does not conform to standards. server string to sign is:Error Signature";
+        Mockito.when(response.getHttpContentString()).thenReturn(makeAcsErrorXML("", "", "SignatureDoesNotMatch",
+                errorMessage, ""));
+        Mockito.doReturn(response).when(spyClient).doAction(request);
+        thrown.expect(ClientException.class);
+        thrown.expectMessage("SignatureDoesNotMatch : " + errorMessage);
         spyClient.getAcsResponse(request);
     }
 
@@ -606,7 +628,7 @@ public class DefaultAcsClientTest {
         DefaultAcsClient client = new DefaultAcsClient(profile);
         HttpResponse response = Mockito.mock(HttpResponse.class);
         DefaultAcsClient spyClient = Mockito.spy(client);
-        Mockito.when(response.getStatus()).thenReturn(401);
+        Mockito.when(response.getStatus()).thenReturn(400);
         Mockito.when(response.getHttpContentType()).thenReturn(FormatType.XML);
         AcsRequest request = Mockito.mock(AcsRequest.class);
         request.strToSign = "GET&%2F&ssddddfgfK";

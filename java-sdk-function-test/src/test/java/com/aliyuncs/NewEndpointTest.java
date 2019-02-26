@@ -332,7 +332,7 @@ public class NewEndpointTest extends BaseTest {
             resolve("cn-hangzhou", "Ecs", "ecs", "innerAPI");
             Assert.fail();
         } catch (ClientException e) {
-            Assert.assertEquals("SignatureDoesNotMatch", e.getErrCode());
+            Assert.assertEquals("SDK.InvalidAccessKeySecret", e.getErrCode());
         }
     }
 
