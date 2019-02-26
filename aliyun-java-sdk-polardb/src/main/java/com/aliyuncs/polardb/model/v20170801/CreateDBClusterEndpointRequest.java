@@ -75,10 +75,29 @@ public class CreateDBClusterEndpointRequest extends RpcAcsRequest<CreateDBCluste
 		}
 	}
 
+	public String getBizEndpointType() {
+		return this.endpointType;
+	}
+
+	public void setBizEndpointType(String endpointType) {
+		this.endpointType = endpointType;
+		if(endpointType != null){
+			putQueryParameter("EndpointType", endpointType);
+		}
+	}
+
+	/**
+	 * @deprecated use getBizEndpointType instead of this.
+	 */
+	@Deprecated
 	public String getEndpointType() {
 		return this.endpointType;
 	}
 
+	/**
+	 * @deprecated use setBizEndpointType instead of this.
+	 */
+	@Deprecated
 	public void setEndpointType(String endpointType) {
 		this.endpointType = endpointType;
 		if(endpointType != null){

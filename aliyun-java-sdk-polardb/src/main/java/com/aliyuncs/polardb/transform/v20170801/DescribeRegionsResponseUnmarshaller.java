@@ -20,7 +20,6 @@ import java.util.List;
 import com.aliyuncs.polardb.model.v20170801.DescribeRegionsResponse;
 import com.aliyuncs.polardb.model.v20170801.DescribeRegionsResponse.Region;
 import com.aliyuncs.polardb.model.v20170801.DescribeRegionsResponse.Region.Zone;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

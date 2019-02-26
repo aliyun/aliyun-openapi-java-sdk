@@ -12,30 +12,18 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.polardb.model.v20170801;
+package com.aliyuncs.polardb.transform.v20170801;
 
-import com.aliyuncs.AcsResponse;
-import com.aliyuncs.polardb.transform.v20170801.CreateBackupResponseUnmarshaller;
+import com.aliyuncs.polardb.model.v20170801.TagResourcesResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
-/**
- * @author auto create
- * @version 
- */
-public class CreateBackupResponse extends AcsResponse {
 
-	private String requestId;
+public class TagResourcesResponseUnmarshaller {
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	@Override
-	public CreateBackupResponse getInstance(UnmarshallerContext context) {
-		return	CreateBackupResponseUnmarshaller.unmarshall(this, context);
+	public static TagResourcesResponse unmarshall(TagResourcesResponse tagResourcesResponse, UnmarshallerContext context) {
+		
+		tagResourcesResponse.setRequestId(context.stringValue("TagResourcesResponse.RequestId"));
+	 
+	 	return tagResourcesResponse;
 	}
 }

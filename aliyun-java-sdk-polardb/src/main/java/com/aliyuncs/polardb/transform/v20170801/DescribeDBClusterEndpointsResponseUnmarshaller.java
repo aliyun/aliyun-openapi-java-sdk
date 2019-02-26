@@ -20,7 +20,6 @@ import java.util.List;
 import com.aliyuncs.polardb.model.v20170801.DescribeDBClusterEndpointsResponse;
 import com.aliyuncs.polardb.model.v20170801.DescribeDBClusterEndpointsResponse.DBEndpoint;
 import com.aliyuncs.polardb.model.v20170801.DescribeDBClusterEndpointsResponse.DBEndpoint.Address;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

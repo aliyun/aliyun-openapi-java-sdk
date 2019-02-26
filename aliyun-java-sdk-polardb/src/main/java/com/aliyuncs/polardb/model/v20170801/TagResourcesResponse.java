@@ -15,14 +15,14 @@
 package com.aliyuncs.polardb.model.v20170801;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.polardb.transform.v20170801.CreateBackupResponseUnmarshaller;
+import com.aliyuncs.polardb.transform.v20170801.TagResourcesResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CreateBackupResponse extends AcsResponse {
+public class TagResourcesResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -35,7 +35,7 @@ public class CreateBackupResponse extends AcsResponse {
 	}
 
 	@Override
-	public CreateBackupResponse getInstance(UnmarshallerContext context) {
-		return	CreateBackupResponseUnmarshaller.unmarshall(this, context);
+	public TagResourcesResponse getInstance(UnmarshallerContext context) {
+		return	TagResourcesResponseUnmarshaller.unmarshall(this, context);
 	}
 }

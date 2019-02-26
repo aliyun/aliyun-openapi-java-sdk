@@ -21,33 +21,27 @@ import java.util.List;
  * @author auto create
  * @version 
  */
-public class DescribeDBClustersRequest extends RpcAcsRequest<DescribeDBClustersResponse> {
+public class ListTagResourcesRequest extends RpcAcsRequest<ListTagResourcesResponse> {
 	
-	public DescribeDBClustersRequest() {
-		super("polardb", "2017-08-01", "DescribeDBClusters", "polardb");
+	public ListTagResourcesRequest() {
+		super("polardb", "2017-08-01", "ListTagResources", "polardb");
 	}
 
 	private Long resourceOwnerId;
 
-	private String dBClusterDescription;
-
-	private String dBClusterStatus;
+	private List<String> resourceIds;
 
 	private String resourceOwnerAccount;
 
+	private String nextToken;
+
 	private String ownerAccount;
-
-	private Long ownerId;
-
-	private Integer pageNumber;
-
-	private String dBType;
-
-	private Integer pageSize;
 
 	private List<Tag> tags;
 
-	private String dBClusterIds;
+	private Long ownerId;
+
+	private String resourceType;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -60,26 +54,17 @@ public class DescribeDBClustersRequest extends RpcAcsRequest<DescribeDBClustersR
 		}
 	}
 
-	public String getDBClusterDescription() {
-		return this.dBClusterDescription;
+	public List<String> getResourceIds() {
+		return this.resourceIds;
 	}
 
-	public void setDBClusterDescription(String dBClusterDescription) {
-		this.dBClusterDescription = dBClusterDescription;
-		if(dBClusterDescription != null){
-			putQueryParameter("DBClusterDescription", dBClusterDescription);
-		}
-	}
-
-	public String getDBClusterStatus() {
-		return this.dBClusterStatus;
-	}
-
-	public void setDBClusterStatus(String dBClusterStatus) {
-		this.dBClusterStatus = dBClusterStatus;
-		if(dBClusterStatus != null){
-			putQueryParameter("DBClusterStatus", dBClusterStatus);
-		}
+	public void setResourceIds(List<String> resourceIds) {
+		this.resourceIds = resourceIds;	
+		if (resourceIds != null) {
+			for (int i = 0; i < resourceIds.size(); i++) {
+				putQueryParameter("ResourceId." + (i + 1) , resourceIds.get(i));
+			}
+		}	
 	}
 
 	public String getResourceOwnerAccount() {
@@ -93,6 +78,17 @@ public class DescribeDBClustersRequest extends RpcAcsRequest<DescribeDBClustersR
 		}
 	}
 
+	public String getNextToken() {
+		return this.nextToken;
+	}
+
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
+		if(nextToken != null){
+			putQueryParameter("NextToken", nextToken);
+		}
+	}
+
 	public String getOwnerAccount() {
 		return this.ownerAccount;
 	}
@@ -101,50 +97,6 @@ public class DescribeDBClustersRequest extends RpcAcsRequest<DescribeDBClustersR
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
-		}
-	}
-
-	public String getDBType() {
-		return this.dBType;
-	}
-
-	public void setDBType(String dBType) {
-		this.dBType = dBType;
-		if(dBType != null){
-			putQueryParameter("DBType", dBType);
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 
@@ -162,14 +114,25 @@ public class DescribeDBClustersRequest extends RpcAcsRequest<DescribeDBClustersR
 		}	
 	}
 
-	public String getDBClusterIds() {
-		return this.dBClusterIds;
+	public Long getOwnerId() {
+		return this.ownerId;
 	}
 
-	public void setDBClusterIds(String dBClusterIds) {
-		this.dBClusterIds = dBClusterIds;
-		if(dBClusterIds != null){
-			putQueryParameter("DBClusterIds", dBClusterIds);
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getResourceType() {
+		return this.resourceType;
+	}
+
+	public void setResourceType(String resourceType) {
+		this.resourceType = resourceType;
+		if(resourceType != null){
+			putQueryParameter("ResourceType", resourceType);
 		}
 	}
 
@@ -197,8 +160,8 @@ public class DescribeDBClustersRequest extends RpcAcsRequest<DescribeDBClustersR
 	}
 
 	@Override
-	public Class<DescribeDBClustersResponse> getResponseClass() {
-		return DescribeDBClustersResponse.class;
+	public Class<ListTagResourcesResponse> getResponseClass() {
+		return ListTagResourcesResponse.class;
 	}
 
 }

@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.polardb.model.v20170801.DescribeDBClusterParametersResponse;
 import com.aliyuncs.polardb.model.v20170801.DescribeDBClusterParametersResponse.Parameter;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

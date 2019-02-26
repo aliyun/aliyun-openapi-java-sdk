@@ -15,7 +15,6 @@
 package com.aliyuncs.polardb.model.v20170801;
 
 import java.util.List;
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.polardb.transform.v20170801.DescribeDBClusterEndpointsResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -66,10 +65,26 @@ public class DescribeDBClusterEndpointsResponse extends AcsResponse {
 			this.dBEndpointId = dBEndpointId;
 		}
 
+		public String getBizEndpointType() {
+			return this.endpointType;
+		}
+
+		public void setBizEndpointType(String endpointType) {
+			this.endpointType = endpointType;
+		}
+
+		/**
+		 * @deprecated use getBizEndpointType instead of this.
+		 */
+		@Deprecated
 		public String getEndpointType() {
 			return this.endpointType;
 		}
 
+		/**
+		 * @deprecated use setBizEndpointType instead of this.
+		 */
+		@Deprecated
 		public void setEndpointType(String endpointType) {
 			this.endpointType = endpointType;
 		}

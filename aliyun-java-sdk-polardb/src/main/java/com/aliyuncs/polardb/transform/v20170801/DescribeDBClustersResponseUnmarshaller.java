@@ -20,7 +20,7 @@ import java.util.List;
 import com.aliyuncs.polardb.model.v20170801.DescribeDBClustersResponse;
 import com.aliyuncs.polardb.model.v20170801.DescribeDBClustersResponse.DBCluster;
 import com.aliyuncs.polardb.model.v20170801.DescribeDBClustersResponse.DBCluster.DBNode;
-import java.util.Map;
+import com.aliyuncs.polardb.model.v20170801.DescribeDBClustersResponse.DBCluster.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -64,6 +64,16 @@ public class DescribeDBClustersResponseUnmarshaller {
 				dBNodes.add(dBNode);
 			}
 			dBCluster.setDBNodes(dBNodes);
+
+			List<Tag> tags = new ArrayList<Tag>();
+			for (int j = 0; j < context.lengthValue("DescribeDBClustersResponse.Items["+ i +"].Tags.Length"); j++) {
+				Tag tag = new Tag();
+				tag.setKey(context.stringValue("DescribeDBClustersResponse.Items["+ i +"].Tags["+ j +"].Key"));
+				tag.setValue(context.stringValue("DescribeDBClustersResponse.Items["+ i +"].Tags["+ j +"].Value"));
+
+				tags.add(tag);
+			}
+			dBCluster.setTags(tags);
 
 			items.add(dBCluster);
 		}

@@ -1,3 +1,7 @@
+2019-02-26 Version: 1.3.0
+1, Add interface of tag.
+2, Add tag info in DescribeDBClusters and DescribeDBClusterAttribute.
+
 2018-12-25 Version: 1.2.0
 1, Add interface of endpoint.
 2, Add interface of cluster parameter.

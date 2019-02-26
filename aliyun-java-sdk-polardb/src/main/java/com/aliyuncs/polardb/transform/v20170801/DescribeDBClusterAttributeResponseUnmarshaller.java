@@ -19,7 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.polardb.model.v20170801.DescribeDBClusterAttributeResponse;
 import com.aliyuncs.polardb.model.v20170801.DescribeDBClusterAttributeResponse.DBNode;
-import java.util.Map;
+import com.aliyuncs.polardb.model.v20170801.DescribeDBClusterAttributeResponse.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -46,6 +46,16 @@ public class DescribeDBClusterAttributeResponseUnmarshaller {
 		describeDBClusterAttributeResponse.setMaintainTime(context.stringValue("DescribeDBClusterAttributeResponse.MaintainTime"));
 		describeDBClusterAttributeResponse.setStorageUsed(context.longValue("DescribeDBClusterAttributeResponse.StorageUsed"));
 		describeDBClusterAttributeResponse.setSQLSize(context.longValue("DescribeDBClusterAttributeResponse.SQLSize"));
+
+		List<Tag> tags = new ArrayList<Tag>();
+		for (int i = 0; i < context.lengthValue("DescribeDBClusterAttributeResponse.Tags.Length"); i++) {
+			Tag tag = new Tag();
+			tag.setKey(context.stringValue("DescribeDBClusterAttributeResponse.Tags["+ i +"].Key"));
+			tag.setValue(context.stringValue("DescribeDBClusterAttributeResponse.Tags["+ i +"].Value"));
+
+			tags.add(tag);
+		}
+		describeDBClusterAttributeResponse.setTags(tags);
 
 		List<DBNode> dBNodes = new ArrayList<DBNode>();
 		for (int i = 0; i < context.lengthValue("DescribeDBClusterAttributeResponse.DBNodes.Length"); i++) {

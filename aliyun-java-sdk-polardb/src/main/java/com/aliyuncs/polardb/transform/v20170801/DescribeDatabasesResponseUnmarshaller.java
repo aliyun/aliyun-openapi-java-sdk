@@ -20,7 +20,6 @@ import java.util.List;
 import com.aliyuncs.polardb.model.v20170801.DescribeDatabasesResponse;
 import com.aliyuncs.polardb.model.v20170801.DescribeDatabasesResponse.Database;
 import com.aliyuncs.polardb.model.v20170801.DescribeDatabasesResponse.Database.Account;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
