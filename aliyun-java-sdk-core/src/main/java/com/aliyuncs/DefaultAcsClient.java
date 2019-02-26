@@ -24,9 +24,9 @@ import com.aliyuncs.exceptions.ErrorMessageConstant;
 import com.aliyuncs.exceptions.ServerException;
 import com.aliyuncs.http.FormatType;
 import com.aliyuncs.http.HttpClientFactory;
-import com.aliyuncs.http.HttpUtil;
 import com.aliyuncs.http.HttpRequest;
 import com.aliyuncs.http.HttpResponse;
+import com.aliyuncs.http.HttpUtil;
 import com.aliyuncs.http.IHttpClient;
 import com.aliyuncs.http.UserAgentConfig;
 import com.aliyuncs.profile.DefaultProfile;
@@ -193,7 +193,8 @@ public class DefaultAcsClient implements IAcsClient {
             AcsError error = readError(baseResponse, format);
             if (500 <= baseResponse.getStatus()) {
                 throw new ServerException(error.getErrorCode(), error.getErrorMessage(), error.getRequestId());
-            } else if ("IncompleteSignature".equals(error.getErrorCode())) {
+            } else if (400 == baseResponse.getStatus() && ("IncompleteSignature".equals(error.getErrorCode())
+                    || "SignatureDoesNotMatch".equals(error.getErrorCode()))) {
                 String errorMessage = error.getErrorMessage();
                 Pattern startPattern = Pattern.compile(SIGNATURE_BEGIN);
                 Matcher startMatcher = startPattern.matcher(errorMessage);
