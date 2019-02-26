@@ -1,24 +1,5 @@
 package com.aliyuncs;
 
-import static org.mockito.Matchers.any;
-
-import java.io.IOException;
-import java.lang.reflect.Field;
-import java.net.SocketTimeoutException;
-import java.security.InvalidKeyException;
-import java.security.NoSuchAlgorithmException;
-
-import org.junit.Assert;
-import org.junit.Rule;
-import org.junit.Test;
-import org.junit.rules.ExpectedException;
-import org.junit.runner.RunWith;
-import org.mockito.BDDMockito;
-import org.mockito.Mockito;
-import org.powermock.api.mockito.PowerMockito;
-import org.powermock.core.classloader.annotations.PrepareForTest;
-import org.powermock.modules.junit4.PowerMockRunner;
-
 import com.aliyuncs.auth.Credential;
 import com.aliyuncs.auth.LegacyCredentials;
 import com.aliyuncs.ecs.v20140526.model.DescribeRegionsResponse;
@@ -29,18 +10,31 @@ import com.aliyuncs.exceptions.ClientException;
 import com.aliyuncs.exceptions.ErrorCodeConstant;
 import com.aliyuncs.exceptions.ErrorMessageConstant;
 import com.aliyuncs.exceptions.ServerException;
-import com.aliyuncs.http.FormatType;
-import com.aliyuncs.http.HttpClientConfig;
-import com.aliyuncs.http.HttpRequest;
-import com.aliyuncs.http.HttpResponse;
-import com.aliyuncs.http.HttpUtil;
-import com.aliyuncs.http.IHttpClient;
-import com.aliyuncs.http.ProtocolType;
-import com.aliyuncs.http.UserAgentConfig;
+import com.aliyuncs.http.*;
 import com.aliyuncs.http.clients.CompatibleUrlConnClient;
 import com.aliyuncs.profile.DefaultProfile;
 import com.aliyuncs.regions.ProductDomain;
+import org.junit.Assert;
+import org.junit.Rule;
+import org.junit.Test;
+import org.junit.rules.ExpectedException;
+import org.junit.runner.RunWith;
+import org.mockito.BDDMockito;
+import org.mockito.Mockito;
+import org.powermock.api.mockito.PowerMockito;
+import org.powermock.core.classloader.annotations.PowerMockIgnore;
+import org.powermock.core.classloader.annotations.PrepareForTest;
+import org.powermock.modules.junit4.PowerMockRunner;
 
+import java.io.IOException;
+import java.lang.reflect.Field;
+import java.net.SocketTimeoutException;
+import java.security.InvalidKeyException;
+import java.security.NoSuchAlgorithmException;
+
+import static org.mockito.Matchers.any;
+
+@PowerMockIgnore("javax.net.ssl.*")
 @RunWith(PowerMockRunner.class)
 @PrepareForTest(HttpUtil.class)
 public class DefaultAcsClientTest {
@@ -174,7 +168,7 @@ public class DefaultAcsClientTest {
         Mockito.verify(getHttpClient(client), Mockito.times(1)).restoreSSLCertificate();
     }
 
-    @SuppressWarnings({ "unchecked", "rawtypes" })
+    @SuppressWarnings({"unchecked", "rawtypes"})
     @Test
     public void testGetAcsResponse() throws NoSuchFieldException, SecurityException, IllegalArgumentException,
             IllegalAccessException, ClientException, IOException {
@@ -201,7 +195,7 @@ public class DefaultAcsClientTest {
         Assert.assertTrue(client.getAcsResponse(request, "regionId") instanceof DescribeRegionsResponse);
     }
 
-    @SuppressWarnings({ "unchecked", "rawtypes" })
+    @SuppressWarnings({"unchecked", "rawtypes"})
     @Test
     public void testDoActionBranch() throws ClientException, IOException, IllegalArgumentException,
             IllegalAccessException, NoSuchFieldException, SecurityException {
@@ -220,7 +214,7 @@ public class DefaultAcsClientTest {
         Assert.assertTrue(client.doAction(request) instanceof HttpResponse);
     }
 
-    @SuppressWarnings({ "unchecked", "rawtypes" })
+    @SuppressWarnings({"unchecked", "rawtypes"})
     @Test
     public void testGetAcsResponseNoProfile() throws ClientException, IOException, IllegalArgumentException,
             IllegalAccessException, NoSuchFieldException, SecurityException {
@@ -234,7 +228,7 @@ public class DefaultAcsClientTest {
         client.getAcsResponse(request);
     }
 
-    @SuppressWarnings({ "deprecation", "unchecked", "rawtypes" })
+    @SuppressWarnings({"deprecation", "unchecked", "rawtypes"})
     @Test
     public void testReadResponseUnmarshaller() throws ClientException, IOException, IllegalArgumentException,
             IllegalAccessException, NoSuchFieldException, SecurityException {
@@ -266,7 +260,7 @@ public class DefaultAcsClientTest {
         Assert.assertTrue(spyClient.getAcsResponse(request) instanceof DescribeEndpointsResponse);
     }
 
-    @SuppressWarnings({ "deprecation", "rawtypes", "unchecked" })
+    @SuppressWarnings({"deprecation", "rawtypes", "unchecked"})
     @Test
     public void testReadResponseClientException() throws ClientException {
         Credential credential = Mockito.mock(Credential.class);
@@ -292,7 +286,7 @@ public class DefaultAcsClientTest {
         }
     }
 
-    @SuppressWarnings({ "unchecked", "rawtypes", "deprecation" })
+    @SuppressWarnings({"unchecked", "rawtypes", "deprecation"})
     @Test
     public void testReadResponseForHideArrayItem() throws ClientException {
         Credential credential = Mockito.mock(Credential.class);
@@ -308,7 +302,7 @@ public class DefaultAcsClientTest {
         Assert.assertTrue(spyClient.getAcsResponse(request) instanceof TestResponse);
     }
 
-    @SuppressWarnings({ "rawtypes", "unchecked" })
+    @SuppressWarnings({"rawtypes", "unchecked"})
     @Test
     public void testGetAcsResponseInvalidServerResponseException() throws NoSuchFieldException, SecurityException,
             IllegalArgumentException, IllegalAccessException, ClientException, IOException {
@@ -331,7 +325,7 @@ public class DefaultAcsClientTest {
         client.getAcsResponse(request);
     }
 
-    @SuppressWarnings({ "unchecked", "rawtypes", "deprecation" })
+    @SuppressWarnings({"unchecked", "rawtypes", "deprecation"})
     @Test
     public void testDoActionEndpointTestabilityException() throws ClientException, IOException,
             IllegalArgumentException, IllegalAccessException, NoSuchFieldException, SecurityException {
@@ -350,7 +344,7 @@ public class DefaultAcsClientTest {
         client.doAction(request);
     }
 
-    @SuppressWarnings({ "unchecked", "rawtypes" })
+    @SuppressWarnings({"unchecked", "rawtypes"})
     @Test
     public void testDoActionSocketTimeoutException() throws ClientException, IOException, IllegalArgumentException,
             IllegalAccessException, NoSuchFieldException, SecurityException {
@@ -366,7 +360,7 @@ public class DefaultAcsClientTest {
         client.doAction(request);
     }
 
-    @SuppressWarnings({ "unchecked", "rawtypes" })
+    @SuppressWarnings({"unchecked", "rawtypes"})
     @Test
     public void testDoActionIOException() throws ClientException, IOException, IllegalArgumentException,
             IllegalAccessException, NoSuchFieldException, SecurityException {
@@ -382,7 +376,7 @@ public class DefaultAcsClientTest {
         client.doAction(request);
     }
 
-    @SuppressWarnings({ "unchecked", "rawtypes" })
+    @SuppressWarnings({"unchecked", "rawtypes"})
     @Test
     public void testDoActionInvalidKeyException() throws ClientException, IOException, IllegalArgumentException,
             IllegalAccessException, NoSuchFieldException, SecurityException {
@@ -398,7 +392,7 @@ public class DefaultAcsClientTest {
         client.doAction(request);
     }
 
-    @SuppressWarnings({ "unchecked", "rawtypes" })
+    @SuppressWarnings({"unchecked", "rawtypes"})
     @Test
     public void testDoActionNoSuchAlgorithmException() throws ClientException, IOException, IllegalArgumentException,
             IllegalAccessException, NoSuchFieldException, SecurityException {
@@ -414,7 +408,7 @@ public class DefaultAcsClientTest {
         client.doAction(request);
     }
 
-    @SuppressWarnings({ "unchecked", "rawtypes", "deprecation" })
+    @SuppressWarnings({"unchecked", "rawtypes", "deprecation"})
     @Test
     public void testGetCommonResponse() throws ClientException, IOException, IllegalArgumentException,
             IllegalAccessException, NoSuchFieldException, SecurityException {
@@ -433,7 +427,7 @@ public class DefaultAcsClientTest {
         Assert.assertTrue(spyClient.getCommonResponse(commonRequest) instanceof CommonResponse);
     }
 
-    @SuppressWarnings({ "unchecked", "rawtypes", "deprecation" })
+    @SuppressWarnings({"unchecked", "rawtypes", "deprecation"})
     @Test
     public void testGetCommonResponseServerException() throws ClientException, IOException, IllegalArgumentException,
             IllegalAccessException, NoSuchFieldException, SecurityException {
@@ -456,7 +450,7 @@ public class DefaultAcsClientTest {
         spyClient.getCommonResponse(commonRequest);
     }
 
-    @SuppressWarnings({ "unchecked", "rawtypes", "deprecation" })
+    @SuppressWarnings({"unchecked", "rawtypes", "deprecation"})
     @Test
     public void testGetCommonResponseClientException() throws ClientException, IOException, IllegalArgumentException,
             IllegalAccessException, NoSuchFieldException, SecurityException {
@@ -482,11 +476,11 @@ public class DefaultAcsClientTest {
 
     private String makeAcsErrorXML(String requestId, String hostId, String code, String message, String recommend) {
         return String.format("<Error><RequestId>%s</RequestId><HostId>%s</HostId><Code>%s</Code>"
-                + "<Message><![CDATA[%s]]></Message><Recommend><![CDATA[%s]]></Recommend></Error>", requestId, hostId,
+                        + "<Message><![CDATA[%s]]></Message><Recommend><![CDATA[%s]]></Recommend></Error>", requestId, hostId,
                 code, message, recommend);
     }
 
-    @SuppressWarnings({ "unchecked", "rawtypes", "deprecation" })
+    @SuppressWarnings({"unchecked", "rawtypes", "deprecation"})
     @Test
     public void testResponseServerExceptionError() throws ClientException {
         Credential credential = Mockito.mock(Credential.class);
@@ -506,7 +500,7 @@ public class DefaultAcsClientTest {
         spyClient.getAcsResponse(request);
     }
 
-    @SuppressWarnings({ "unchecked", "rawtypes", "deprecation" })
+    @SuppressWarnings({"unchecked", "rawtypes", "deprecation"})
     @Test
     public void testResponseNotIncompleteSignatureError() throws ClientException {
         Credential credential = Mockito.mock(Credential.class);
@@ -527,7 +521,7 @@ public class DefaultAcsClientTest {
         spyClient.getAcsResponse(request);
     }
 
-    @SuppressWarnings({ "unchecked", "rawtypes", "deprecation" })
+    @SuppressWarnings({"unchecked", "rawtypes", "deprecation"})
     @Test
     public void testResponseInvalidAccessKeySecretError() throws ClientException {
         Credential credential = Mockito.mock(Credential.class);
@@ -550,7 +544,7 @@ public class DefaultAcsClientTest {
         spyClient.getAcsResponse(request);
     }
 
-    @SuppressWarnings({ "unchecked", "rawtypes", "deprecation" })
+    @SuppressWarnings({"unchecked", "rawtypes", "deprecation"})
     @Test
     public void testResponseSignatureNullError() throws ClientException {
         Credential credential = Mockito.mock(Credential.class);
@@ -573,7 +567,7 @@ public class DefaultAcsClientTest {
         spyClient.getAcsResponse(request);
     }
 
-    @SuppressWarnings({ "unchecked", "rawtypes", "deprecation" })
+    @SuppressWarnings({"unchecked", "rawtypes", "deprecation"})
     @Test
     public void testResponseSignatureError() throws ClientException {
         Credential credential = Mockito.mock(Credential.class);
@@ -618,7 +612,7 @@ public class DefaultAcsClientTest {
         spyClient.getAcsResponse(request);
     }
 
-    @SuppressWarnings({ "unchecked", "rawtypes", "deprecation" })
+    @SuppressWarnings({"unchecked", "rawtypes", "deprecation"})
     @Test
     public void testResponseStringContentNull() throws ClientException {
         Credential credential = Mockito.mock(Credential.class);
@@ -651,7 +645,7 @@ public class DefaultAcsClientTest {
         client.appendUserAgent("order", "1.2.2");
         String userAgent = UserAgentConfig.resolve(null, client.getUserAgentConfig());
         String resultStr = UserAgentConfig.getDefaultMessage()
-                + " Client/CompatibleUrlConnClient test/1.2.3 order/1.2.2";
+                + " Client/ApacheHttpClient test/1.2.3 order/1.2.2";
         Assert.assertEquals(resultStr, userAgent);
     }
 }

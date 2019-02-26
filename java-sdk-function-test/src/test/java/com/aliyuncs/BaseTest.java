@@ -1,5 +1,6 @@
 package com.aliyuncs;
 
+import com.aliyuncs.http.HttpClientConfig;
 import org.junit.Before;
 
 import com.aliyuncs.auth.BasicSessionCredentials;
@@ -14,7 +15,7 @@ import com.aliyuncs.profile.IClientProfile;
 public class BaseTest {
 
     protected DefaultAcsClient client = null;
-    protected IAcsClient clientV2 = null;
+    protected IAcsClient timeoutClient = null;
     protected Credential dailyEnvCredentail = null;
     protected String accesskeyId = null;
     protected String accesskeySecret = null;
@@ -24,20 +25,30 @@ public class BaseTest {
     protected String regionId = null;
 
     public DefaultAcsClient getClientWithRegionId(String regionId) {
-        this.accesskeyId = System.getenv("daily_accessKeyId");
-        this.accesskeySecret = System.getenv("daily_accessSecret");
         IClientProfile profile = DefaultProfile.getProfile(regionId, accesskeyId, accesskeySecret);
+        return new DefaultAcsClient(profile);
+    }
+
+    private DefaultAcsClient getTimeoutClientWithRegionId(String regionId) {
+        HttpClientConfig clientConfig = HttpClientConfig.getDefault();
+        clientConfig.setReadTimeoutMillis(1);
+        IClientProfile profile = DefaultProfile.getProfile(regionId, accesskeyId, accesskeySecret);
+        profile.setHttpClientConfig(clientConfig);
         return new DefaultAcsClient(profile);
     }
 
     @Before
     public void init() {
-        this.regionId = "cn-hangzhou";
-        client = getClientWithRegionId(this.regionId);
-        dailyEnvCredentail = new Credential(accesskeyId, accesskeySecret);
+        this.accesskeyId = System.getenv("daily_accessKeyId");
+        this.accesskeySecret = System.getenv("daily_accessSecret");
         this.tokenAccesskeyId = System.getenv("RAMAccessKeyId");
         this.tokenAccesskeySecret = System.getenv("RAMAccessKeySecret");
         this.roleArn = System.getenv("roleArn");
+        this.regionId = "cn-hangzhou";
+        client = getClientWithRegionId(this.regionId);
+        timeoutClient = getTimeoutClientWithRegionId(this.regionId);
+        dailyEnvCredentail = new Credential(accesskeyId, accesskeySecret);
+
     }
 
     protected String getToken() throws ClientException {
@@ -51,7 +62,7 @@ public class BaseTest {
         return assumeRoleResponse.getCredentials().getSecurityToken();
     }
 
-    protected DefaultAcsClient creatDefaultAcsClient() throws ClientException {
+    protected DefaultAcsClient createDefaultAcsClient() throws ClientException {
         BasicSessionCredentials credentials = new BasicSessionCredentials(this.tokenAccesskeyId,
                 this.tokenAccesskeySecret, getToken());
         DefaultProfile profile = DefaultProfile.getProfile(this.regionId);

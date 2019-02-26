@@ -1,16 +1,7 @@
 package com.aliyuncs.http.clients;
 
-import java.io.IOException;
-import java.lang.reflect.Field;
-import java.security.SecureRandom;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Future;
-
-import javax.net.ssl.HostnameVerifier;
-import javax.net.ssl.SSLSocketFactory;
-
+import com.aliyuncs.exceptions.ClientException;
+import com.aliyuncs.http.*;
 import org.apache.http.Header;
 import org.apache.http.HttpEntity;
 import org.apache.http.StatusLine;
@@ -30,17 +21,19 @@ import org.powermock.core.classloader.annotations.PowerMockIgnore;
 import org.powermock.core.classloader.annotations.PrepareForTest;
 import org.powermock.modules.junit4.PowerMockRunner;
 
-import com.aliyuncs.exceptions.ClientException;
-import com.aliyuncs.http.CallBack;
-import com.aliyuncs.http.FormatType;
-import com.aliyuncs.http.HttpClientConfig;
-import com.aliyuncs.http.HttpRequest;
-import com.aliyuncs.http.HttpResponse;
-import com.aliyuncs.http.MethodType;
+import javax.net.ssl.HostnameVerifier;
+import javax.net.ssl.SSLSocketFactory;
+import java.io.IOException;
+import java.lang.reflect.Field;
+import java.security.SecureRandom;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Future;
 
 @RunWith(PowerMockRunner.class)
-@PrepareForTest({ FormatType.class, ContentType.class })
-@PowerMockIgnore({ "javax.net.ssl.*" })
+@PrepareForTest({FormatType.class, ContentType.class})
+@PowerMockIgnore({"javax.net.ssl.*"})
 public class ApacheHttpClientTest {
 
     @Rule
@@ -275,5 +268,63 @@ public class ApacheHttpClientTest {
         Mockito.when(closeableHttpResponse.getFirstHeader(Mockito.anyString())).thenReturn(null);
         Assert.assertTrue(apacheHttpClient.syncInvoke(apiRequest) instanceof HttpResponse);
     }
+
+    @Test
+    public void testSyncInvokeNotNullHttpResponseEntityIsChunked() throws ClientException, IOException, NoSuchFieldException,
+            SecurityException, IllegalArgumentException, IllegalAccessException {
+        HttpClientConfig config = this.getMockHttpClientConfigWithFalseIgnoreSSLCerts();
+        ApacheHttpClient apacheHttpClient = new ApacheHttpClient(config);
+        HttpRequest apiRequest = this.getMockHttpRequest();
+        Mockito.when(apiRequest.getSysMethod()).thenReturn(MethodType.PUT);
+        Mockito.when(apiRequest.getHeaderValue(Mockito.anyString())).thenReturn("contentType");
+        CloseableHttpResponse closeableHttpResponse = this.getMockHttpResponse();
+        Mockito.when(closeableHttpResponse.getEntity().isChunked()).thenReturn(true);
+        Header contentTypeHeader = Mockito.mock(Header.class);
+        Mockito.when(contentTypeHeader.getValue()).thenReturn("value");
+        Mockito.when(closeableHttpResponse.getFirstHeader(Mockito.anyString())).thenReturn(contentTypeHeader);
+
+        Field httpClientReflect = ApacheHttpClient.class.getDeclaredField("httpClient");
+        httpClientReflect.setAccessible(true);
+        CloseableHttpClient closeableHttpClient = Mockito.mock(CloseableHttpClient.class);
+        httpClientReflect.set(apacheHttpClient, closeableHttpClient);
+        Mockito.doReturn(closeableHttpResponse).when(closeableHttpClient).execute(Mockito.any(HttpUriRequest.class));
+        Assert.assertTrue(apacheHttpClient.syncInvoke(apiRequest) instanceof HttpResponse);
+        apacheHttpClient.close();
+        Mockito.when(closeableHttpResponse.getFirstHeader(Mockito.anyString())).thenReturn(null);
+        HttpResponse response = apacheHttpClient.syncInvoke(apiRequest);
+        Assert.assertEquals(FormatType.JSON, response.getHttpContentType());
+        Assert.assertEquals("utf-8", response.getSysEncoding());
+    }
+
+    @Test
+    public void testSyncInvokeNotNullHttpResponseEntity() throws ClientException, IOException, NoSuchFieldException,
+            SecurityException, IllegalArgumentException, IllegalAccessException {
+        HttpClientConfig config = this.getMockHttpClientConfigWithFalseIgnoreSSLCerts();
+        ApacheHttpClient apacheHttpClient = new ApacheHttpClient(config);
+        HttpRequest apiRequest = this.getMockHttpRequest();
+        Mockito.when(apiRequest.getSysMethod()).thenReturn(MethodType.PUT);
+        Mockito.when(apiRequest.getHeaderValue(Mockito.anyString())).thenReturn("contentType");
+        CloseableHttpResponse closeableHttpResponse = this.getMockHttpResponse();
+        Mockito.when(closeableHttpResponse.getEntity().getContentLength()).thenReturn(1L);
+
+        Header contentTypeHeader = Mockito.mock(Header.class);
+        Mockito.when(contentTypeHeader.getValue()).thenReturn("value");
+        Mockito.when(closeableHttpResponse.getFirstHeader(Mockito.anyString())).thenReturn(contentTypeHeader);
+        PowerMockito.mockStatic(ContentType.class);
+        PowerMockito.when(ContentType.parse(Mockito.anyString())).thenReturn(ContentType.APPLICATION_JSON);
+        Field httpClientReflect = ApacheHttpClient.class.getDeclaredField("httpClient");
+        httpClientReflect.setAccessible(true);
+        CloseableHttpClient closeableHttpClient = Mockito.mock(CloseableHttpClient.class);
+        httpClientReflect.set(apacheHttpClient, closeableHttpClient);
+        Mockito.doReturn(closeableHttpResponse).when(closeableHttpClient).execute(Mockito.any(HttpUriRequest.class));
+        Assert.assertTrue(apacheHttpClient.syncInvoke(apiRequest) instanceof HttpResponse);
+        apacheHttpClient.close();
+
+        Mockito.when(closeableHttpResponse.getFirstHeader(Mockito.anyString())).thenReturn(null);
+        HttpResponse response = apacheHttpClient.syncInvoke(apiRequest);
+        Assert.assertEquals(FormatType.JSON, response.getHttpContentType());
+        Assert.assertEquals("UTF-8", response.getSysEncoding());
+    }
+
 
 }

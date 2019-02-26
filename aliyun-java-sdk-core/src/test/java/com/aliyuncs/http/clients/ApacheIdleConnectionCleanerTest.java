@@ -1,20 +1,22 @@
 package com.aliyuncs.http.clients;
 
-import static org.mockito.Mockito.doAnswer;
-import static org.mockito.Mockito.doThrow;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.times;
-import static org.mockito.Mockito.verify;
-
-import java.util.concurrent.TimeUnit;
-
 import org.apache.http.conn.HttpClientConnectionManager;
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 import org.mockito.invocation.InvocationOnMock;
 import org.mockito.stubbing.Answer;
 
+import java.util.concurrent.TimeUnit;
+
+import static org.mockito.Mockito.*;
+
 public class ApacheIdleConnectionCleanerTest {
+
+    @Before
+    public void init() {
+        ApacheIdleConnectionCleaner.shutdown();
+    }
 
     @Test
     public void getSetTest() {

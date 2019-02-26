@@ -1,22 +1,9 @@
 package com.aliyuncs.http.clients;
 
-import java.io.IOException;
-import java.security.KeyManagementException;
-import java.security.NoSuchAlgorithmException;
-import java.security.cert.CertificateException;
-import java.security.cert.X509Certificate;
-import java.util.Map;
-import java.util.concurrent.Callable;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Future;
-import java.util.concurrent.SynchronousQueue;
-import java.util.concurrent.ThreadFactory;
-import java.util.concurrent.ThreadPoolExecutor;
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.atomic.AtomicInteger;
-
-import javax.net.ssl.SSLContext;
-
+import com.aliyuncs.exceptions.ClientException;
+import com.aliyuncs.http.*;
+import com.aliyuncs.utils.IOUtils;
+import com.aliyuncs.utils.StringUtils;
 import org.apache.http.Header;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.config.RequestConfig;
@@ -41,14 +28,15 @@ import org.apache.http.ssl.SSLContextBuilder;
 import org.apache.http.ssl.TrustStrategy;
 import org.apache.http.util.EntityUtils;
 
-import com.aliyuncs.exceptions.ClientException;
-import com.aliyuncs.http.CallBack;
-import com.aliyuncs.http.FormatType;
-import com.aliyuncs.http.HttpClientConfig;
-import com.aliyuncs.http.HttpRequest;
-import com.aliyuncs.http.IHttpClient;
-import com.aliyuncs.utils.IOUtils;
-import com.aliyuncs.utils.StringUtils;
+import javax.net.ssl.SSLContext;
+import java.io.IOException;
+import java.security.KeyManagementException;
+import java.security.NoSuchAlgorithmException;
+import java.security.cert.CertificateException;
+import java.security.cert.X509Certificate;
+import java.util.Map;
+import java.util.concurrent.*;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class ApacheHttpClient extends IHttpClient {
 
@@ -81,28 +69,32 @@ public class ApacheHttpClient extends IHttpClient {
                 .setConnectionRequestTimeout((int) config.getWriteTimeoutMillis()).build();
         builder.setDefaultRequestConfig(defaultConfig);
 
-        // https
+        // http
         RegistryBuilder<ConnectionSocketFactory> socketFactoryRegistryBuilder = RegistryBuilder.create();
         socketFactoryRegistryBuilder.register("http", new PlainConnectionSocketFactory());
-        if (config.isIgnoreSSLCerts()) {
-            try {
-                SSLContext sslContext = new SSLContextBuilder().loadTrustMaterial(null, new TrustStrategy() {
-                    // trust all
-                    @Override
-                    public boolean isTrusted(X509Certificate[] chain, String authType) throws CertificateException {
-                        return true;
-                    }
-                }).build();
 
-                SSLConnectionSocketFactory connectionFactory = new SSLConnectionSocketFactory(sslContext,
-                        NoopHostnameVerifier.INSTANCE);
+        // https
+        // register default https connector(ignore untrusted cert)
+        try {
+            SSLContext sslContext = new SSLContextBuilder().loadTrustMaterial(null, new TrustStrategy() {
+                // trust all
+                @Override
+                public boolean isTrusted(X509Certificate[] chain, String authType) throws CertificateException {
+                    return true;
+                }
+            }).build();
 
-                socketFactoryRegistryBuilder.register("https", connectionFactory);
+            SSLConnectionSocketFactory connectionFactory = new SSLConnectionSocketFactory(sslContext,
+                    NoopHostnameVerifier.INSTANCE);
 
-            } catch (Exception e) {
-                throw new ClientException("SDK.InitFailed", "Init https with SSL certs ignore failed", e);
-            }
-        } else {
+            socketFactoryRegistryBuilder.register("https", connectionFactory);
+
+        } catch (Exception e) {
+            throw new ClientException("SDK.InitFailed", "Init https with SSL certs ignore failed", e);
+        }
+
+        // override default https connector if possible
+        if (!config.isIgnoreSSLCerts()) {
             if (config.getSslSocketFactory() != null) {
                 SSLConnectionSocketFactory sslConnectionSocketFactory = new SSLConnectionSocketFactory(config
                         .getSslSocketFactory(), config.getHostnameVerifier());
@@ -121,6 +113,7 @@ public class ApacheHttpClient extends IHttpClient {
                 }
             }
         }
+
 
         // connPool
         connectionManager = new PoolingHttpClientConnectionManager(socketFactoryRegistryBuilder.build());
@@ -167,9 +160,8 @@ public class ApacheHttpClient extends IHttpClient {
             String contentType = apiReq.getHeaderValue(CONTENT_TYPE);
             if (StringUtils.isEmpty(contentType)) {
                 contentType = apiReq.getContentTypeValue(apiReq.getHttpContentType(), apiReq.getSysEncoding());
-            } else {
-                bodyBuilder.setContentType(ContentType.parse(contentType));
             }
+            bodyBuilder.setContentType(ContentType.parse(contentType));
             bodyBuilder.setBinary(apiReq.getHttpContent());
             builder.setEntity(bodyBuilder.build());
         }
@@ -183,6 +175,7 @@ public class ApacheHttpClient extends IHttpClient {
             builder.addHeader(entry.getKey(), entry.getValue());
         }
 
+
         return builder.build();
     }
 
@@ -191,8 +184,8 @@ public class ApacheHttpClient extends IHttpClient {
 
         // status code
         result.setStatus(httpResponse.getStatusLine().getStatusCode());
-
-        if (httpResponse.getEntity() != null) {
+        if ((httpResponse.getEntity() != null &&
+                (httpResponse.getEntity().getContentLength() > 0 || httpResponse.getEntity().isChunked()))) {
             // content type
             Header contentTypeHeader = httpResponse.getEntity().getContentType();
             ContentType contentType = ContentType.parse(contentTypeHeader.getValue());
@@ -206,13 +199,6 @@ public class ApacheHttpClient extends IHttpClient {
 
             // body
             result.setHttpContent(EntityUtils.toByteArray(httpResponse.getEntity()), charset, formatType);
-        } else {
-            Header contentTypeHeader = httpResponse.getFirstHeader("Content-Type");
-            if (contentTypeHeader != null) {
-                ContentType contentType = ContentType.parse(contentTypeHeader.getValue());
-                FormatType formatType = FormatType.mapAcceptToFormat(contentType.getMimeType());
-                result.setHttpContentType(formatType);
-            }
         }
 
         // headers
@@ -237,7 +223,7 @@ public class ApacheHttpClient extends IHttpClient {
 
     @Override
     public final Future<com.aliyuncs.http.HttpResponse> asyncInvoke(final HttpRequest apiRequest,
-            final CallBack callback) {
+                                                                    final CallBack callback) {
         return executorService.submit(new Callable<com.aliyuncs.http.HttpResponse>() {
             @Override
             public com.aliyuncs.http.HttpResponse call() throws Exception {
