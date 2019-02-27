@@ -10,7 +10,7 @@ public class UserAgentConfig {
     static {
         Properties props = System.getProperties();
         try {
-            props.load(ClassLoader.getSystemResourceAsStream("project.properties"));
+            props.load(UserAgentConfig.class.getClassLoader().getResourceAsStream("project.properties"));
         } catch (IOException e) {
             props.setProperty("project.version","(got version failed)");
             props.setProperty("project.name","Core");
