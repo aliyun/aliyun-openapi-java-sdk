@@ -46,17 +46,22 @@ public class CompatibleUrlConnClient extends IHttpClient {
 
     @Override
     public HttpResponse syncInvoke(HttpRequest request) throws IOException {
-        OutputStream out = null;
         InputStream content = null;
         HttpResponse response = null;
         HttpURLConnection httpConn = buildHttpConnection(request);
+        OutputStream out = null;
 
         try {
             httpConn.connect();
             if (null != request.getHttpContent() && request.getHttpContent().length > 0) {
                 out = httpConn.getOutputStream();
-                out.write(request.getHttpContent());
+                if(request.getSysMethod().hasContent()){
+                    out.write(request.getHttpContent());
+                }
+                out.flush();
+
             }
+
             content = httpConn.getInputStream();
             response = new HttpResponse(httpConn.getURL().toString());
             parseHttpConn(response, httpConn, content);

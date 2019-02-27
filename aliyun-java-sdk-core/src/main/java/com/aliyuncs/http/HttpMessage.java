@@ -80,6 +80,12 @@ public abstract class HttpMessage {
             this.encoding = null;
             return;
         }
+
+        // for GET HEADER DELETE OPTION method, sdk should ignore the content
+        if(getSysMethod() != null && !getSysMethod().hasContent()){
+            content = new byte[0];
+        }
+
         this.httpContent = content;
         this.encoding = encoding;
         String contentLen = String.valueOf(content.length);

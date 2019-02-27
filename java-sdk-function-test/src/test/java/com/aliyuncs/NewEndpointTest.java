@@ -3,6 +3,7 @@ package com.aliyuncs;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.aliyuncs.http.HttpUtil;
 import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;
@@ -442,8 +443,8 @@ public class NewEndpointTest extends BaseTest {
             Assert.fail();
         } catch (ClientException e) {
             Assert.assertEquals("SDK.ServerUnreachable", e.getErrCode());
-            Assert.assertEquals("Server unreachable: java.net.UnknownHostException: add.endpoint", e.getErrMsg());
-        }
+            Assert.assertTrue(e.getErrMsg().contains("Server unreachable: java.net.UnknownHostException: add.endpoint"));
+            }
 
         request.setSysEndpoint("request.set.error.endpoint");
         userCustomizedEndpointResolver.putEndpointEntry("cn-hangzhou", "ecs", "add.point");
@@ -452,8 +453,8 @@ public class NewEndpointTest extends BaseTest {
             Assert.fail();
         } catch (ClientException e) {
             Assert.assertEquals("SDK.ServerUnreachable", e.getErrCode());
-            Assert.assertEquals("Server unreachable: java.net.UnknownHostException: request.set.error.endpoint", e
-                    .getErrMsg());
+            Assert.assertTrue(e.getErrMsg().contains("Server unreachable: java.net.UnknownHostException: request.set.error.endpoint"));
+
         }
     }
 

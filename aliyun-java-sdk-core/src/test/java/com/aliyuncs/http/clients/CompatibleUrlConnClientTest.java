@@ -329,8 +329,10 @@ public class CompatibleUrlConnClientTest {
         Assert.assertEquals("http://www.aliyun.com", response.getSysUrl());
     }
 
+
     @Test
-    public void syncInvokeNormalAndContentIsNotEmptyTest() throws Exception {
+    public void syncInvokeNormalAndNoneMethodAndContentIsNotEmptyTest() throws Exception {
+        thrown.expect(NullPointerException.class);
         HttpClientConfig config = mock(HttpClientConfig.class);
         when(config.isIgnoreSSLCerts()).thenReturn(true);
         PowerMockito.mockStatic(CompatibleUrlConnClient.HttpsCertIgnoreHelper.class);
@@ -338,6 +340,64 @@ public class CompatibleUrlConnClientTest {
         CompatibleUrlConnClient client0 = new CompatibleUrlConnClient(config);
         CompatibleUrlConnClient client = PowerMockito.spy(client0);
         HttpRequest request = mock(HttpRequest.class);
+        when(request.getHttpContent()).thenReturn("http content".getBytes());
+        HttpURLConnection connection = mock(HttpURLConnection.class);
+        doNothing().when(connection).connect();
+        PowerMockito.doReturn(connection).when(client, "buildHttpConnection", request);
+        URL url = PowerMockito.mock(URL.class);
+        when(url.toString()).thenReturn("http://www.aliyun.com");
+        when(connection.getURL()).thenReturn(url);
+        OutputStream outputStream = mock(OutputStream.class);
+        doNothing().when(outputStream).write("http content".getBytes());
+        when(connection.getOutputStream()).thenReturn(outputStream);
+        when(connection.getInputStream()).thenReturn(null);
+        PowerMockito.doNothing().when(client, "parseHttpConn", any(HttpResponse.class), any(HttpURLConnection.class),
+                any(InputStream.class));
+        client.syncInvoke(request);
+
+    }
+
+    @Test
+    public void syncInvokeNormalAndGetMethodAndContentIsNotEmptyTest() throws Exception {
+        HttpClientConfig config = mock(HttpClientConfig.class);
+        when(config.isIgnoreSSLCerts()).thenReturn(true);
+        PowerMockito.mockStatic(CompatibleUrlConnClient.HttpsCertIgnoreHelper.class);
+        PowerMockito.doNothing().when(CompatibleUrlConnClient.HttpsCertIgnoreHelper.class, "ignoreSSLCertificate");
+        CompatibleUrlConnClient client0 = new CompatibleUrlConnClient(config);
+        CompatibleUrlConnClient client = PowerMockito.spy(client0);
+        HttpRequest request = mock(HttpRequest.class);
+        when(request.getSysMethod()).thenReturn(MethodType.GET);
+        when(request.getHttpContent()).thenReturn("http content".getBytes());
+        HttpURLConnection connection = mock(HttpURLConnection.class);
+        doNothing().when(connection).connect();
+        PowerMockito.doReturn(connection).when(client, "buildHttpConnection", request);
+        URL url = PowerMockito.mock(URL.class);
+        when(url.toString()).thenReturn("http://www.aliyun.com");
+        when(connection.getURL()).thenReturn(url);
+        OutputStream outputStream = mock(OutputStream.class);
+        doNothing().when(outputStream).write("http content".getBytes());
+        when(connection.getOutputStream()).thenReturn(outputStream);
+        when(connection.getInputStream()).thenReturn(null);
+        PowerMockito.doNothing().when(client, "parseHttpConn", any(HttpResponse.class), any(HttpURLConnection.class),
+                any(InputStream.class));
+        HttpResponse response = client.syncInvoke(request);
+        verifyPrivate(client, times(1)).invoke("parseHttpConn", any(HttpResponse.class), any(HttpURLConnection.class),
+                any(InputStream.class));
+        Assert.assertEquals("http://www.aliyun.com", response.getSysUrl());
+        verify(outputStream, times(0)).write("http content".getBytes());
+
+    }
+
+    @Test
+    public void syncInvokeNormalAndPostMethodAndContentIsNotEmptyTest() throws Exception {
+        HttpClientConfig config = mock(HttpClientConfig.class);
+        when(config.isIgnoreSSLCerts()).thenReturn(true);
+        PowerMockito.mockStatic(CompatibleUrlConnClient.HttpsCertIgnoreHelper.class);
+        PowerMockito.doNothing().when(CompatibleUrlConnClient.HttpsCertIgnoreHelper.class, "ignoreSSLCertificate");
+        CompatibleUrlConnClient client0 = new CompatibleUrlConnClient(config);
+        CompatibleUrlConnClient client = PowerMockito.spy(client0);
+        HttpRequest request = mock(HttpRequest.class);
+        when(request.getSysMethod()).thenReturn(MethodType.POST);
         when(request.getHttpContent()).thenReturn("http content".getBytes());
         HttpURLConnection connection = mock(HttpURLConnection.class);
         doNothing().when(connection).connect();
@@ -367,6 +427,7 @@ public class CompatibleUrlConnClientTest {
         CompatibleUrlConnClient client0 = new CompatibleUrlConnClient(config);
         CompatibleUrlConnClient client = PowerMockito.spy(client0);
         HttpRequest request = mock(HttpRequest.class);
+        when(request.getSysMethod()).thenReturn(MethodType.GET);
         when(request.getHttpContent()).thenReturn("".getBytes());
         HttpURLConnection connection = mock(HttpURLConnection.class);
         doNothing().when(connection).connect();

@@ -179,9 +179,8 @@ public class ApacheHttpClient extends IHttpClient {
             String contentType = apiReq.getHeaderValue(CONTENT_TYPE);
             if (StringUtils.isEmpty(contentType)) {
                 contentType = apiReq.getContentTypeValue(apiReq.getHttpContentType(), apiReq.getSysEncoding());
-            } else {
-                bodyBuilder.setContentType(ContentType.parse(contentType));
             }
+            bodyBuilder.setContentType(ContentType.parse(contentType));
             bodyBuilder.setBinary(apiReq.getHttpContent());
             builder.setEntity(bodyBuilder.build());
         }
@@ -195,6 +194,7 @@ public class ApacheHttpClient extends IHttpClient {
             builder.addHeader(entry.getKey(), entry.getValue());
         }
 
+
         return builder.build();
     }
 
@@ -203,8 +203,8 @@ public class ApacheHttpClient extends IHttpClient {
 
         // status code
         result.setStatus(httpResponse.getStatusLine().getStatusCode());
-
-        if (httpResponse.getEntity() != null) {
+        if ((httpResponse.getEntity() != null &&
+                (httpResponse.getEntity().getContentLength() > 0 || httpResponse.getEntity().isChunked()))){
             // content type
             Header contentTypeHeader = httpResponse.getEntity().getContentType();
             ContentType contentType = ContentType.parse(contentTypeHeader.getValue());
@@ -218,13 +218,6 @@ public class ApacheHttpClient extends IHttpClient {
 
             // body
             result.setHttpContent(EntityUtils.toByteArray(httpResponse.getEntity()), charset, formatType);
-        } else {
-            Header contentTypeHeader = httpResponse.getFirstHeader("Content-Type");
-            if (contentTypeHeader != null) {
-                ContentType contentType = ContentType.parse(contentTypeHeader.getValue());
-                FormatType formatType = FormatType.mapAcceptToFormat(contentType.getMimeType());
-                result.setHttpContentType(formatType);
-            }
         }
 
         // headers

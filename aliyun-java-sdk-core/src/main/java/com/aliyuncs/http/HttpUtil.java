@@ -58,7 +58,7 @@ public class HttpUtil {
 
     public static String debugHttpResponse(HttpResponse response) throws ClientException {
         if (isHttpDebug) {
-            String protocol = response.getSysUrl().split("://")[0].toUpperCase() + "/1.1";
+            String protocol = "HTTP/1.1";
             StringBuilder debugString = new StringBuilder("< " + protocol + " " + response.getStatus() + "\n< ");
             Map<String, String> responseHeaders = response.getSysHeaders();
             for (Entry<String, String> entry : responseHeaders.entrySet()) {
