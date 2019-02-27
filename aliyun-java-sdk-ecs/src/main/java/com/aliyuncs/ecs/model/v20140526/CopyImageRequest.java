@@ -31,8 +31,6 @@ public class CopyImageRequest extends RpcAcsRequest<CopyImageResponse> {
 
 	private String imageId;
 
-	private Boolean encrypted;
-
 	private String resourceOwnerAccount;
 
 	private String destinationImageName;
@@ -41,9 +39,11 @@ public class CopyImageRequest extends RpcAcsRequest<CopyImageResponse> {
 
 	private String ownerAccount;
 
-	private List<Tag> tags;
-
 	private Long ownerId;
+
+	private Boolean encrypted;
+
+	private List<Tag> tags;
 
 	private String destinationDescription;
 
@@ -66,17 +66,6 @@ public class CopyImageRequest extends RpcAcsRequest<CopyImageResponse> {
 		this.imageId = imageId;
 		if(imageId != null){
 			putQueryParameter("ImageId", imageId);
-		}
-	}
-
-	public Boolean getEncrypted() {
-		return this.encrypted;
-	}
-
-	public void setEncrypted(Boolean encrypted) {
-		this.encrypted = encrypted;
-		if(encrypted != null){
-			putQueryParameter("Encrypted", encrypted.toString());
 		}
 	}
 
@@ -124,6 +113,28 @@ public class CopyImageRequest extends RpcAcsRequest<CopyImageResponse> {
 		}
 	}
 
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public Boolean getEncrypted() {
+		return this.encrypted;
+	}
+
+	public void setEncrypted(Boolean encrypted) {
+		this.encrypted = encrypted;
+		if(encrypted != null){
+			putQueryParameter("Encrypted", encrypted.toString());
+		}
+	}
+
 	public List<Tag> getTags() {
 		return this.tags;
 	}
@@ -136,17 +147,6 @@ public class CopyImageRequest extends RpcAcsRequest<CopyImageResponse> {
 				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
 			}
 		}	
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
 	}
 
 	public String getDestinationDescription() {

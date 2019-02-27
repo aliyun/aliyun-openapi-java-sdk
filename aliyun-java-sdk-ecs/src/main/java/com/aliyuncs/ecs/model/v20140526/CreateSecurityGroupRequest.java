@@ -27,36 +27,25 @@ public class CreateSecurityGroupRequest extends RpcAcsRequest<CreateSecurityGrou
 		super("Ecs", "2014-05-26", "CreateSecurityGroup", "ecs");
 	}
 
-	private String resourceGroupId;
-
 	private Long resourceOwnerId;
 
 	private String resourceOwnerAccount;
 
 	private String clientToken;
 
-	private String vpcId;
-
 	private String ownerAccount;
 
 	private String description;
-
-	private List<Tag> tags;
 
 	private Long ownerId;
 
 	private String securityGroupName;
 
-	public String getResourceGroupId() {
-		return this.resourceGroupId;
-	}
+	private String resourceGroupId;
 
-	public void setResourceGroupId(String resourceGroupId) {
-		this.resourceGroupId = resourceGroupId;
-		if(resourceGroupId != null){
-			putQueryParameter("ResourceGroupId", resourceGroupId);
-		}
-	}
+	private String vpcId;
+
+	private List<Tag> tags;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -91,17 +80,6 @@ public class CreateSecurityGroupRequest extends RpcAcsRequest<CreateSecurityGrou
 		}
 	}
 
-	public String getVpcId() {
-		return this.vpcId;
-	}
-
-	public void setVpcId(String vpcId) {
-		this.vpcId = vpcId;
-		if(vpcId != null){
-			putQueryParameter("VpcId", vpcId);
-		}
-	}
-
 	public String getOwnerAccount() {
 		return this.ownerAccount;
 	}
@@ -124,20 +102,6 @@ public class CreateSecurityGroupRequest extends RpcAcsRequest<CreateSecurityGrou
 		}
 	}
 
-	public List<Tag> getTags() {
-		return this.tags;
-	}
-
-	public void setTags(List<Tag> tags) {
-		this.tags = tags;	
-		if (tags != null) {
-			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
-				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
-				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
-			}
-		}	
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -158,6 +122,42 @@ public class CreateSecurityGroupRequest extends RpcAcsRequest<CreateSecurityGrou
 		if(securityGroupName != null){
 			putQueryParameter("SecurityGroupName", securityGroupName);
 		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
+	public String getVpcId() {
+		return this.vpcId;
+	}
+
+	public void setVpcId(String vpcId) {
+		this.vpcId = vpcId;
+		if(vpcId != null){
+			putQueryParameter("VpcId", vpcId);
+		}
+	}
+
+	public List<Tag> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
+				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
+			}
+		}	
 	}
 
 	public static class Tag {

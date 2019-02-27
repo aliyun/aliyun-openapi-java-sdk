@@ -15,26 +15,23 @@
 package com.aliyuncs.ecs.model.v20140526;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 
 /**
  * @author auto create
  * @version 
  */
-public class StartInstanceRequest extends RpcAcsRequest<StartInstanceResponse> {
+public class UntagResourcesRequest extends RpcAcsRequest<UntagResourcesResponse> {
 	
-	public StartInstanceRequest() {
-		super("Ecs", "2014-05-26", "StartInstance", "ecs");
+	public UntagResourcesRequest() {
+		super("Ecs", "2014-05-26", "UntagResources", "ecs");
 	}
-
-	private String sourceRegionId;
-
-	private Boolean initLocalDisk;
 
 	private Long resourceOwnerId;
 
-	private String instanceId;
+	private Boolean all;
 
-	private Boolean dryRun;
+	private List<String> resourceIds;
 
 	private String resourceOwnerAccount;
 
@@ -42,27 +39,9 @@ public class StartInstanceRequest extends RpcAcsRequest<StartInstanceResponse> {
 
 	private Long ownerId;
 
-	public String getSourceRegionId() {
-		return this.sourceRegionId;
-	}
+	private String resourceType;
 
-	public void setSourceRegionId(String sourceRegionId) {
-		this.sourceRegionId = sourceRegionId;
-		if(sourceRegionId != null){
-			putQueryParameter("SourceRegionId", sourceRegionId);
-		}
-	}
-
-	public Boolean getInitLocalDisk() {
-		return this.initLocalDisk;
-	}
-
-	public void setInitLocalDisk(Boolean initLocalDisk) {
-		this.initLocalDisk = initLocalDisk;
-		if(initLocalDisk != null){
-			putQueryParameter("InitLocalDisk", initLocalDisk.toString());
-		}
-	}
+	private List<String> tagKeys;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -75,26 +54,28 @@ public class StartInstanceRequest extends RpcAcsRequest<StartInstanceResponse> {
 		}
 	}
 
-	public String getInstanceId() {
-		return this.instanceId;
+	public Boolean getAll() {
+		return this.all;
 	}
 
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
+	public void setAll(Boolean all) {
+		this.all = all;
+		if(all != null){
+			putQueryParameter("All", all.toString());
 		}
 	}
 
-	public Boolean getDryRun() {
-		return this.dryRun;
+	public List<String> getResourceIds() {
+		return this.resourceIds;
 	}
 
-	public void setDryRun(Boolean dryRun) {
-		this.dryRun = dryRun;
-		if(dryRun != null){
-			putQueryParameter("DryRun", dryRun.toString());
-		}
+	public void setResourceIds(List<String> resourceIds) {
+		this.resourceIds = resourceIds;	
+		if (resourceIds != null) {
+			for (int i = 0; i < resourceIds.size(); i++) {
+				putQueryParameter("ResourceId." + (i + 1) , resourceIds.get(i));
+			}
+		}	
 	}
 
 	public String getResourceOwnerAccount() {
@@ -130,9 +111,33 @@ public class StartInstanceRequest extends RpcAcsRequest<StartInstanceResponse> {
 		}
 	}
 
+	public String getResourceType() {
+		return this.resourceType;
+	}
+
+	public void setResourceType(String resourceType) {
+		this.resourceType = resourceType;
+		if(resourceType != null){
+			putQueryParameter("ResourceType", resourceType);
+		}
+	}
+
+	public List<String> getTagKeys() {
+		return this.tagKeys;
+	}
+
+	public void setTagKeys(List<String> tagKeys) {
+		this.tagKeys = tagKeys;	
+		if (tagKeys != null) {
+			for (int i = 0; i < tagKeys.size(); i++) {
+				putQueryParameter("TagKey." + (i + 1) , tagKeys.get(i));
+			}
+		}	
+	}
+
 	@Override
-	public Class<StartInstanceResponse> getResponseClass() {
-		return StartInstanceResponse.class;
+	public Class<UntagResourcesResponse> getResponseClass() {
+		return UntagResourcesResponse.class;
 	}
 
 }

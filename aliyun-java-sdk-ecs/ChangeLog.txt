@@ -1,3 +1,6 @@
+2019-02-27 Version: 4.16.2
+1, Add three APIs for tag. APIs : TagResources, UntagResources, ListTagResources.
+
 2019-02-18 Version: 4.16.1
 1, Add DryRun into StartInstance, StopInstance and RebootInstance.
 2, Add snapshot operations: ExportSnapshot and ImportSnapshot
