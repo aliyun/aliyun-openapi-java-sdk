@@ -1,14 +1,17 @@
 package com.aliyuncs;
 
-import com.aliyuncs.green.model.v20180509.TextScanRequest;
 import com.aliyuncs.airec.model.v20181012.PushDocumentRequest;
 import com.aliyuncs.exceptions.ClientException;
+import com.aliyuncs.green.model.v20180509.TextScanRequest;
 import com.aliyuncs.http.FormatType;
+import com.aliyuncs.http.HttpClientConfig;
 import com.aliyuncs.http.HttpResponse;
+import com.aliyuncs.http.clients.ApacheHttpClient;
 import com.google.gson.Gson;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.util.*;
 
@@ -30,18 +33,20 @@ public class ErrorHandlingTest extends BaseTest {
     }
 
     @Test
-    public void timeOutErrorTest() {
+    public void timeOutErrorTest() throws ClientException, IOException {
         CommonRequest request = new CommonRequest();
         request.setSysDomain("ecs-cn-hangzhou.aliyuncs.com");
         request.setSysVersion("2014-05-26");
         request.setSysAction("DescribeAccessPoints");
         request.setSysReadTimeout(1);
         try {
-            this.timeoutClient.getCommonResponse(request);
+            getTimeoutClientWithRegionId(regionId).getCommonResponse(request);
             Assert.fail();
         } catch (ClientException e) {
             Assert.assertEquals("SDK.ServerUnreachable", e.getErrCode());
             Assert.assertEquals("SocketTimeoutException has occurred on a socket read or accept.", e.getErrMsg());
+        } finally {
+            ApacheHttpClient.getInstance(HttpClientConfig.getDefault()).close();
         }
     }
 

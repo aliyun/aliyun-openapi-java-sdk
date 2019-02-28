@@ -215,6 +215,11 @@ public class CompatibleUrlConnClient extends IHttpClient {
     }
 
     @Override
+    public boolean isSingleton() {
+        return false;
+    }
+
+    @Override
     public void close() throws IOException {
 
     }

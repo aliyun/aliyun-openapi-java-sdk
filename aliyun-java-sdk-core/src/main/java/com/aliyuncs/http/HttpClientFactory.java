@@ -1,5 +1,6 @@
 package com.aliyuncs.http;
 
+import com.aliyuncs.http.clients.ApacheHttpClient;
 import com.aliyuncs.http.clients.CompatibleUrlConnClient;
 import com.aliyuncs.profile.IClientProfile;
 import com.aliyuncs.utils.StringUtils;
@@ -34,6 +35,9 @@ public class HttpClientFactory {
             Class httpClientClass = Class.forName(customClientClassName);
             if (!IHttpClient.class.isAssignableFrom(httpClientClass)) {
                 throw new IllegalStateException(String.format("%s is not assignable from com.aliyuncs.http.IHttpClient", customClientClassName));
+            }
+            if (ApacheHttpClient.class.equals(httpClientClass)) {
+                return ApacheHttpClient.getInstance(clientConfig);
             }
             Constructor<? extends IHttpClient> constructor = httpClientClass.getConstructor(HttpClientConfig.class);
             return constructor.newInstance(clientConfig);

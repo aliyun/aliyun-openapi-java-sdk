@@ -50,7 +50,20 @@ public class ApacheHttpClient extends IHttpClient {
     private CloseableHttpClient httpClient;
     private PoolingHttpClientConnectionManager connectionManager;
 
-    public ApacheHttpClient(HttpClientConfig config) throws ClientException {
+    private static volatile ApacheHttpClient client;
+
+    public static ApacheHttpClient getInstance(HttpClientConfig config) throws ClientException {
+        if (client == null) {
+            synchronized (ApacheHttpClient.class) {
+                if (client == null) {
+                    client = new ApacheHttpClient(config);
+                }
+            }
+        }
+        return client;
+    }
+
+    private ApacheHttpClient(HttpClientConfig config) throws ClientException {
         super(config);
     }
 
@@ -258,7 +271,13 @@ public class ApacheHttpClient extends IHttpClient {
     }
 
     @Override
+    public boolean isSingleton() {
+        return true;
+    }
+
+    @Override
     public void close() throws IOException {
+        client = null;
         executorService.shutdown();
         ApacheIdleConnectionCleaner.removeConnectionManager(connectionManager);
         connectionManager.shutdown();

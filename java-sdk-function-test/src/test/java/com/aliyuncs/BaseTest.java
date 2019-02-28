@@ -1,21 +1,22 @@
 package com.aliyuncs;
 
-import com.aliyuncs.http.HttpClientConfig;
-import org.junit.Before;
-
 import com.aliyuncs.auth.BasicSessionCredentials;
 import com.aliyuncs.auth.Credential;
 import com.aliyuncs.auth.sts.AssumeRoleRequest;
 import com.aliyuncs.auth.sts.AssumeRoleResponse;
 import com.aliyuncs.exceptions.ClientException;
+import com.aliyuncs.http.HttpClientConfig;
+import com.aliyuncs.http.clients.ApacheHttpClient;
 import com.aliyuncs.profile.DefaultProfile;
 import com.aliyuncs.profile.IClientProfile;
+import org.junit.Before;
+
+import java.io.IOException;
 
 @SuppressWarnings("deprecation")
 public class BaseTest {
 
     protected DefaultAcsClient client = null;
-    protected IAcsClient timeoutClient = null;
     protected Credential dailyEnvCredentail = null;
     protected String accesskeyId = null;
     protected String accesskeySecret = null;
@@ -29,8 +30,9 @@ public class BaseTest {
         return new DefaultAcsClient(profile);
     }
 
-    private DefaultAcsClient getTimeoutClientWithRegionId(String regionId) {
+    protected DefaultAcsClient getTimeoutClientWithRegionId(String regionId) throws ClientException, IOException {
         HttpClientConfig clientConfig = HttpClientConfig.getDefault();
+        ApacheHttpClient.getInstance(clientConfig).close();
         clientConfig.setReadTimeoutMillis(1);
         IClientProfile profile = DefaultProfile.getProfile(regionId, accesskeyId, accesskeySecret);
         profile.setHttpClientConfig(clientConfig);
@@ -46,7 +48,6 @@ public class BaseTest {
         this.roleArn = System.getenv("roleArn");
         this.regionId = "cn-hangzhou";
         client = getClientWithRegionId(this.regionId);
-        timeoutClient = getTimeoutClientWithRegionId(this.regionId);
         dailyEnvCredentail = new Credential(accesskeyId, accesskeySecret);
 
     }
