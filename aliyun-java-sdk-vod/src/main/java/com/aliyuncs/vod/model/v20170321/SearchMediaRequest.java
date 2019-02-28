@@ -30,23 +30,23 @@ public class SearchMediaRequest extends RpcAcsRequest<SearchMediaResponse> {
 
 	private String resourceOwnerAccount;
 
-	private Integer pageNo;
-
-	private String searchType;
-
 	private String match;
-
-	private Integer pageSize;
-
-	private String sortBy;
 
 	private String sessionId;
 
 	private Long ownerId;
 
-	private String fields;
-
 	private String scrollToken;
+
+	private Integer pageNo;
+
+	private String searchType;
+
+	private Integer pageSize;
+
+	private String sortBy;
+
+	private String fields;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -70,28 +70,6 @@ public class SearchMediaRequest extends RpcAcsRequest<SearchMediaResponse> {
 		}
 	}
 
-	public Integer getPageNo() {
-		return this.pageNo;
-	}
-
-	public void setPageNo(Integer pageNo) {
-		this.pageNo = pageNo;
-		if(pageNo != null){
-			putQueryParameter("PageNo", pageNo.toString());
-		}
-	}
-
-	public String getSearchType() {
-		return this.searchType;
-	}
-
-	public void setSearchType(String searchType) {
-		this.searchType = searchType;
-		if(searchType != null){
-			putQueryParameter("SearchType", searchType);
-		}
-	}
-
 	public String getMatch() {
 		return this.match;
 	}
@@ -100,28 +78,6 @@ public class SearchMediaRequest extends RpcAcsRequest<SearchMediaResponse> {
 		this.match = match;
 		if(match != null){
 			putQueryParameter("Match", match);
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
-	public String getSortBy() {
-		return this.sortBy;
-	}
-
-	public void setSortBy(String sortBy) {
-		this.sortBy = sortBy;
-		if(sortBy != null){
-			putQueryParameter("SortBy", sortBy);
 		}
 	}
 
@@ -147,17 +103,6 @@ public class SearchMediaRequest extends RpcAcsRequest<SearchMediaResponse> {
 		}
 	}
 
-	public String getFields() {
-		return this.fields;
-	}
-
-	public void setFields(String fields) {
-		this.fields = fields;
-		if(fields != null){
-			putQueryParameter("Fields", fields);
-		}
-	}
-
 	public String getScrollToken() {
 		return this.scrollToken;
 	}
@@ -166,6 +111,61 @@ public class SearchMediaRequest extends RpcAcsRequest<SearchMediaResponse> {
 		this.scrollToken = scrollToken;
 		if(scrollToken != null){
 			putQueryParameter("ScrollToken", scrollToken);
+		}
+	}
+
+	public Integer getPageNo() {
+		return this.pageNo;
+	}
+
+	public void setPageNo(Integer pageNo) {
+		this.pageNo = pageNo;
+		if(pageNo != null){
+			putQueryParameter("PageNo", pageNo.toString());
+		}
+	}
+
+	public String getSearchType() {
+		return this.searchType;
+	}
+
+	public void setSearchType(String searchType) {
+		this.searchType = searchType;
+		if(searchType != null){
+			putQueryParameter("SearchType", searchType);
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getSortBy() {
+		return this.sortBy;
+	}
+
+	public void setSortBy(String sortBy) {
+		this.sortBy = sortBy;
+		if(sortBy != null){
+			putQueryParameter("SortBy", sortBy);
+		}
+	}
+
+	public String getFields() {
+		return this.fields;
+	}
+
+	public void setFields(String fields) {
+		this.fields = fields;
+		if(fields != null){
+			putQueryParameter("Fields", fields);
 		}
 	}
 

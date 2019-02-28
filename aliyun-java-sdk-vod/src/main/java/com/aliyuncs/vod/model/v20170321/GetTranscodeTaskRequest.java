@@ -20,17 +20,17 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class GetVideoInfoRequest extends RpcAcsRequest<GetVideoInfoResponse> {
+public class GetTranscodeTaskRequest extends RpcAcsRequest<GetTranscodeTaskResponse> {
 	
-	public GetVideoInfoRequest() {
-		super("vod", "2017-03-21", "GetVideoInfo", "vod");
+	public GetTranscodeTaskRequest() {
+		super("vod", "2017-03-21", "GetTranscodeTask", "vod");
 	}
 
 	private Long resourceOwnerId;
 
 	private String resourceOwnerAccount;
 
-	private String videoId;
+	private String transcodeTaskId;
 
 	private Long ownerId;
 
@@ -56,14 +56,14 @@ public class GetVideoInfoRequest extends RpcAcsRequest<GetVideoInfoResponse> {
 		}
 	}
 
-	public String getVideoId() {
-		return this.videoId;
+	public String getTranscodeTaskId() {
+		return this.transcodeTaskId;
 	}
 
-	public void setVideoId(String videoId) {
-		this.videoId = videoId;
-		if(videoId != null){
-			putQueryParameter("VideoId", videoId);
+	public void setTranscodeTaskId(String transcodeTaskId) {
+		this.transcodeTaskId = transcodeTaskId;
+		if(transcodeTaskId != null){
+			putQueryParameter("TranscodeTaskId", transcodeTaskId);
 		}
 	}
 
@@ -79,8 +79,8 @@ public class GetVideoInfoRequest extends RpcAcsRequest<GetVideoInfoResponse> {
 	}
 
 	@Override
-	public Class<GetVideoInfoResponse> getResponseClass() {
-		return GetVideoInfoResponse.class;
+	public Class<GetTranscodeTaskResponse> getResponseClass() {
+		return GetTranscodeTaskResponse.class;
 	}
 
 }

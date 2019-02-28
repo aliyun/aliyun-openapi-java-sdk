@@ -20,17 +20,25 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class GetVideoInfoRequest extends RpcAcsRequest<GetVideoInfoResponse> {
+public class ListTranscodeTaskRequest extends RpcAcsRequest<ListTranscodeTaskResponse> {
 	
-	public GetVideoInfoRequest() {
-		super("vod", "2017-03-21", "GetVideoInfo", "vod");
+	public ListTranscodeTaskRequest() {
+		super("vod", "2017-03-21", "ListTranscodeTask", "vod");
 	}
 
 	private Long resourceOwnerId;
 
 	private String resourceOwnerAccount;
 
+	private Integer pageNo;
+
+	private Integer pageSize;
+
+	private String endTime;
+
 	private String videoId;
+
+	private String startTime;
 
 	private Long ownerId;
 
@@ -56,6 +64,39 @@ public class GetVideoInfoRequest extends RpcAcsRequest<GetVideoInfoResponse> {
 		}
 	}
 
+	public Integer getPageNo() {
+		return this.pageNo;
+	}
+
+	public void setPageNo(Integer pageNo) {
+		this.pageNo = pageNo;
+		if(pageNo != null){
+			putQueryParameter("PageNo", pageNo.toString());
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime);
+		}
+	}
+
 	public String getVideoId() {
 		return this.videoId;
 	}
@@ -64,6 +105,17 @@ public class GetVideoInfoRequest extends RpcAcsRequest<GetVideoInfoResponse> {
 		this.videoId = videoId;
 		if(videoId != null){
 			putQueryParameter("VideoId", videoId);
+		}
+	}
+
+	public String getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime);
 		}
 	}
 
@@ -79,8 +131,8 @@ public class GetVideoInfoRequest extends RpcAcsRequest<GetVideoInfoResponse> {
 	}
 
 	@Override
-	public Class<GetVideoInfoResponse> getResponseClass() {
-		return GetVideoInfoResponse.class;
+	public Class<ListTranscodeTaskResponse> getResponseClass() {
+		return ListTranscodeTaskResponse.class;
 	}
 
 }

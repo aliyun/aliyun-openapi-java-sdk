@@ -95,6 +95,8 @@ public class GetVideoInfoResponse extends AcsResponse {
 
 		private String regionId;
 
+		private String customMediaInfo;
+
 		private List<Thumbnail> thumbnailList;
 
 		private List<String> snapshots;
@@ -265,6 +267,14 @@ public class GetVideoInfoResponse extends AcsResponse {
 		@Deprecated
 		public void setRegionId(String regionId) {
 			this.regionId = regionId;
+		}
+
+		public String getCustomMediaInfo() {
+			return this.customMediaInfo;
+		}
+
+		public void setCustomMediaInfo(String customMediaInfo) {
+			this.customMediaInfo = customMediaInfo;
 		}
 
 		public List<Thumbnail> getThumbnailList() {

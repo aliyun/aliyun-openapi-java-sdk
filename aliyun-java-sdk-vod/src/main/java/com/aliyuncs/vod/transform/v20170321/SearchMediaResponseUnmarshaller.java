@@ -20,8 +20,10 @@ import java.util.List;
 import com.aliyuncs.vod.model.v20170321.SearchMediaResponse;
 import com.aliyuncs.vod.model.v20170321.SearchMediaResponse.Media;
 import com.aliyuncs.vod.model.v20170321.SearchMediaResponse.Media.Audio;
+import com.aliyuncs.vod.model.v20170321.SearchMediaResponse.Media.Audio.PlayInfo4;
 import com.aliyuncs.vod.model.v20170321.SearchMediaResponse.Media.Image;
 import com.aliyuncs.vod.model.v20170321.SearchMediaResponse.Media.Video;
+import com.aliyuncs.vod.model.v20170321.SearchMediaResponse.Media.Video.PlayInfo;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -60,6 +62,12 @@ public class SearchMediaResponseUnmarshaller {
 			video.setStorageLocation(context.stringValue("SearchMediaResponse.MediaList["+ i +"].Video.StorageLocation"));
 			video.setRegionId(context.stringValue("SearchMediaResponse.MediaList["+ i +"].Video.RegionId"));
 			video.setTranscodeMode(context.stringValue("SearchMediaResponse.MediaList["+ i +"].Video.TranscodeMode"));
+			video.setAuditStatus(context.stringValue("SearchMediaResponse.MediaList["+ i +"].Video.AuditStatus"));
+			video.setAuditAIStatus(context.stringValue("SearchMediaResponse.MediaList["+ i +"].Video.AuditAIStatus"));
+			video.setAuditManualStatus(context.stringValue("SearchMediaResponse.MediaList["+ i +"].Video.AuditManualStatus"));
+			video.setAuditAIResult(context.stringValue("SearchMediaResponse.MediaList["+ i +"].Video.AuditAIResult"));
+			video.setAuditTemplateId(context.stringValue("SearchMediaResponse.MediaList["+ i +"].Video.AuditTemplateId"));
+			video.setCustomMediaInfo(context.stringValue("SearchMediaResponse.MediaList["+ i +"].Video.CustomMediaInfo"));
 
 			List<String> snapshots = new ArrayList<String>();
 			for (int j = 0; j < context.lengthValue("SearchMediaResponse.MediaList["+ i +"].Video.Snapshots.Length"); j++) {
@@ -72,6 +80,29 @@ public class SearchMediaResponseUnmarshaller {
 				spriteSnapshots.add(context.stringValue("SearchMediaResponse.MediaList["+ i +"].Video.SpriteSnapshots["+ j +"]"));
 			}
 			video.setSpriteSnapshots(spriteSnapshots);
+
+			List<PlayInfo> playInfoList = new ArrayList<PlayInfo>();
+			for (int j = 0; j < context.lengthValue("SearchMediaResponse.MediaList["+ i +"].Video.PlayInfoList.Length"); j++) {
+				PlayInfo playInfo = new PlayInfo();
+				playInfo.setWidth(context.stringValue("SearchMediaResponse.MediaList["+ i +"].Video.PlayInfoList["+ j +"].Width"));
+				playInfo.setHeight(context.stringValue("SearchMediaResponse.MediaList["+ i +"].Video.PlayInfoList["+ j +"].Height"));
+				playInfo.setSize(context.stringValue("SearchMediaResponse.MediaList["+ i +"].Video.PlayInfoList["+ j +"].Size"));
+				playInfo.setPlayURL(context.stringValue("SearchMediaResponse.MediaList["+ i +"].Video.PlayInfoList["+ j +"].PlayURL"));
+				playInfo.setBitrate(context.stringValue("SearchMediaResponse.MediaList["+ i +"].Video.PlayInfoList["+ j +"].Bitrate"));
+				playInfo.setDefinition(context.stringValue("SearchMediaResponse.MediaList["+ i +"].Video.PlayInfoList["+ j +"].Definition"));
+				playInfo.setDuration(context.stringValue("SearchMediaResponse.MediaList["+ i +"].Video.PlayInfoList["+ j +"].Duration"));
+				playInfo.setFormat(context.stringValue("SearchMediaResponse.MediaList["+ i +"].Video.PlayInfoList["+ j +"].Format"));
+				playInfo.setFps(context.stringValue("SearchMediaResponse.MediaList["+ i +"].Video.PlayInfoList["+ j +"].Fps"));
+				playInfo.setEncrypt(context.longValue("SearchMediaResponse.MediaList["+ i +"].Video.PlayInfoList["+ j +"].Encrypt"));
+				playInfo.setPlaintext(context.stringValue("SearchMediaResponse.MediaList["+ i +"].Video.PlayInfoList["+ j +"].Plaintext"));
+				playInfo.setComplexity(context.stringValue("SearchMediaResponse.MediaList["+ i +"].Video.PlayInfoList["+ j +"].Complexity"));
+				playInfo.setStreamType(context.stringValue("SearchMediaResponse.MediaList["+ i +"].Video.PlayInfoList["+ j +"].StreamType"));
+				playInfo.setRand(context.stringValue("SearchMediaResponse.MediaList["+ i +"].Video.PlayInfoList["+ j +"].Rand"));
+				playInfo.setJobId(context.stringValue("SearchMediaResponse.MediaList["+ i +"].Video.PlayInfoList["+ j +"].JobId"));
+
+				playInfoList.add(playInfo);
+			}
+			video.setPlayInfoList(playInfoList);
 			media.setVideo(video);
 
 			Audio audio = new Audio();
@@ -93,6 +124,12 @@ public class SearchMediaResponseUnmarshaller {
 			audio.setStorageLocation(context.stringValue("SearchMediaResponse.MediaList["+ i +"].Audio.StorageLocation"));
 			audio.setRegionId(context.stringValue("SearchMediaResponse.MediaList["+ i +"].Audio.RegionId"));
 			audio.setTranscodeMode(context.stringValue("SearchMediaResponse.MediaList["+ i +"].Audio.TranscodeMode"));
+			audio.setAuditStatus(context.stringValue("SearchMediaResponse.MediaList["+ i +"].Audio.AuditStatus"));
+			audio.setAuditAIStatus(context.stringValue("SearchMediaResponse.MediaList["+ i +"].Audio.AuditAIStatus"));
+			audio.setAuditManualStatus(context.stringValue("SearchMediaResponse.MediaList["+ i +"].Audio.AuditManualStatus"));
+			audio.setAuditAIResult(context.stringValue("SearchMediaResponse.MediaList["+ i +"].Audio.AuditAIResult"));
+			audio.setAuditTemplateId(context.stringValue("SearchMediaResponse.MediaList["+ i +"].Audio.AuditTemplateId"));
+			audio.setCustomMediaInfo(context.stringValue("SearchMediaResponse.MediaList["+ i +"].Audio.CustomMediaInfo"));
 
 			List<String> snapshots1 = new ArrayList<String>();
 			for (int j = 0; j < context.lengthValue("SearchMediaResponse.MediaList["+ i +"].Audio.Snapshots.Length"); j++) {
@@ -105,6 +142,29 @@ public class SearchMediaResponseUnmarshaller {
 				spriteSnapshots2.add(context.stringValue("SearchMediaResponse.MediaList["+ i +"].Audio.SpriteSnapshots["+ j +"]"));
 			}
 			audio.setSpriteSnapshots2(spriteSnapshots2);
+
+			List<PlayInfo4> playInfoList3 = new ArrayList<PlayInfo4>();
+			for (int j = 0; j < context.lengthValue("SearchMediaResponse.MediaList["+ i +"].Audio.PlayInfoList.Length"); j++) {
+				PlayInfo4 playInfo4 = new PlayInfo4();
+				playInfo4.setWidth(context.stringValue("SearchMediaResponse.MediaList["+ i +"].Audio.PlayInfoList["+ j +"].Width"));
+				playInfo4.setHeight(context.stringValue("SearchMediaResponse.MediaList["+ i +"].Audio.PlayInfoList["+ j +"].Height"));
+				playInfo4.setSize(context.stringValue("SearchMediaResponse.MediaList["+ i +"].Audio.PlayInfoList["+ j +"].Size"));
+				playInfo4.setPlayURL(context.stringValue("SearchMediaResponse.MediaList["+ i +"].Audio.PlayInfoList["+ j +"].PlayURL"));
+				playInfo4.setBitrate(context.stringValue("SearchMediaResponse.MediaList["+ i +"].Audio.PlayInfoList["+ j +"].Bitrate"));
+				playInfo4.setDefinition(context.stringValue("SearchMediaResponse.MediaList["+ i +"].Audio.PlayInfoList["+ j +"].Definition"));
+				playInfo4.setDuration(context.stringValue("SearchMediaResponse.MediaList["+ i +"].Audio.PlayInfoList["+ j +"].Duration"));
+				playInfo4.setFormat(context.stringValue("SearchMediaResponse.MediaList["+ i +"].Audio.PlayInfoList["+ j +"].Format"));
+				playInfo4.setFps(context.stringValue("SearchMediaResponse.MediaList["+ i +"].Audio.PlayInfoList["+ j +"].Fps"));
+				playInfo4.setEncrypt(context.longValue("SearchMediaResponse.MediaList["+ i +"].Audio.PlayInfoList["+ j +"].Encrypt"));
+				playInfo4.setPlaintext(context.stringValue("SearchMediaResponse.MediaList["+ i +"].Audio.PlayInfoList["+ j +"].Plaintext"));
+				playInfo4.setComplexity(context.stringValue("SearchMediaResponse.MediaList["+ i +"].Audio.PlayInfoList["+ j +"].Complexity"));
+				playInfo4.setStreamType(context.stringValue("SearchMediaResponse.MediaList["+ i +"].Audio.PlayInfoList["+ j +"].StreamType"));
+				playInfo4.setRand(context.stringValue("SearchMediaResponse.MediaList["+ i +"].Audio.PlayInfoList["+ j +"].Rand"));
+				playInfo4.setJobId(context.stringValue("SearchMediaResponse.MediaList["+ i +"].Audio.PlayInfoList["+ j +"].JobId"));
+
+				playInfoList3.add(playInfo4);
+			}
+			audio.setPlayInfoList3(playInfoList3);
 			media.setAudio(audio);
 
 			Image image = new Image();

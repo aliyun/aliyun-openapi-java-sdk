@@ -30,9 +30,13 @@ public class DeleteTranscodeTemplateGroupRequest extends RpcAcsRequest<DeleteTra
 
 	private String resourceOwnerAccount;
 
+	private String transcodeTemplateIds;
+
 	private Long ownerId;
 
 	private String transcodeTemplateGroupId;
+
+	private String forceDelGroup;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -56,6 +60,17 @@ public class DeleteTranscodeTemplateGroupRequest extends RpcAcsRequest<DeleteTra
 		}
 	}
 
+	public String getTranscodeTemplateIds() {
+		return this.transcodeTemplateIds;
+	}
+
+	public void setTranscodeTemplateIds(String transcodeTemplateIds) {
+		this.transcodeTemplateIds = transcodeTemplateIds;
+		if(transcodeTemplateIds != null){
+			putQueryParameter("TranscodeTemplateIds", transcodeTemplateIds);
+		}
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -75,6 +90,17 @@ public class DeleteTranscodeTemplateGroupRequest extends RpcAcsRequest<DeleteTra
 		this.transcodeTemplateGroupId = transcodeTemplateGroupId;
 		if(transcodeTemplateGroupId != null){
 			putQueryParameter("TranscodeTemplateGroupId", transcodeTemplateGroupId);
+		}
+	}
+
+	public String getForceDelGroup() {
+		return this.forceDelGroup;
+	}
+
+	public void setForceDelGroup(String forceDelGroup) {
+		this.forceDelGroup = forceDelGroup;
+		if(forceDelGroup != null){
+			putQueryParameter("ForceDelGroup", forceDelGroup);
 		}
 	}
 

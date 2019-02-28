@@ -14,6 +14,7 @@
 
 package com.aliyuncs.vod.model.v20170321;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.vod.transform.v20170321.DeleteTranscodeTemplateGroupResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -26,12 +27,22 @@ public class DeleteTranscodeTemplateGroupResponse extends AcsResponse {
 
 	private String requestId;
 
+	private List<String> nonExistTranscodeTemplateIds;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public List<String> getNonExistTranscodeTemplateIds() {
+		return this.nonExistTranscodeTemplateIds;
+	}
+
+	public void setNonExistTranscodeTemplateIds(List<String> nonExistTranscodeTemplateIds) {
+		this.nonExistTranscodeTemplateIds = nonExistTranscodeTemplateIds;
 	}
 
 	@Override

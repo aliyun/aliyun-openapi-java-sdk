@@ -1,3 +1,12 @@
+2019-02-28 Version: 2.15.1
+1, Add new apis named ListTranscodeTask, GetTranscodeTask, GetTranscodeSummary.
+2, Add the new field named TranscodeTemplateIds and ForceDelGroup to DeleteTranscodeTemplateGroup api request, and add a new field named NonExistTranscodeTemplateIds to the api response.
+3, Add a new field named Rotate in VideoStream of Mezzanine struct to GetMezzanineInfo api response .
+4, Add a new field named Status in ImageInfo to GetImageInfo api response.
+5, Add a new field named CustomMediaInfo to UpdateVideoInfo, GetVideoInfo and SearchMedia api to support the custom mediaInfo feature.
+6, Add a new filed named PlayInfoList and some Audit fields to SearchMedia api response.
+7, Clean up an api named DeleteTranscodeTemplates, which is replaced with the api named DeleteTranscodeTemplateGroup.
+
 2019-01-30 Version: 2.15.0
 1, Add a new api called GetURLUploadInfos to query the upload task of UploadMediaByURL.
 2, Clean up the old api related to the CDN of VoD that is going offline, such as DescribeDomainBpsData, is replaced with the new CDN api.

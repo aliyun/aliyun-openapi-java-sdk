@@ -20,10 +20,10 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class DeleteTranscodeTemplatesRequest extends RpcAcsRequest<DeleteTranscodeTemplatesResponse> {
+public class GetTranscodeSummaryRequest extends RpcAcsRequest<GetTranscodeSummaryResponse> {
 	
-	public DeleteTranscodeTemplatesRequest() {
-		super("vod", "2017-03-21", "DeleteTranscodeTemplates", "vod");
+	public GetTranscodeSummaryRequest() {
+		super("vod", "2017-03-21", "GetTranscodeSummary", "vod");
 	}
 
 	private Long resourceOwnerId;
@@ -32,9 +32,7 @@ public class DeleteTranscodeTemplatesRequest extends RpcAcsRequest<DeleteTransco
 
 	private Long ownerId;
 
-	private String transcodeTemplateGroupId;
-
-	private String transcodeTemplateIdList;
+	private String videoIds;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -69,31 +67,20 @@ public class DeleteTranscodeTemplatesRequest extends RpcAcsRequest<DeleteTransco
 		}
 	}
 
-	public String getTranscodeTemplateGroupId() {
-		return this.transcodeTemplateGroupId;
+	public String getVideoIds() {
+		return this.videoIds;
 	}
 
-	public void setTranscodeTemplateGroupId(String transcodeTemplateGroupId) {
-		this.transcodeTemplateGroupId = transcodeTemplateGroupId;
-		if(transcodeTemplateGroupId != null){
-			putQueryParameter("TranscodeTemplateGroupId", transcodeTemplateGroupId);
-		}
-	}
-
-	public String getTranscodeTemplateIdList() {
-		return this.transcodeTemplateIdList;
-	}
-
-	public void setTranscodeTemplateIdList(String transcodeTemplateIdList) {
-		this.transcodeTemplateIdList = transcodeTemplateIdList;
-		if(transcodeTemplateIdList != null){
-			putQueryParameter("TranscodeTemplateIdList", transcodeTemplateIdList);
+	public void setVideoIds(String videoIds) {
+		this.videoIds = videoIds;
+		if(videoIds != null){
+			putQueryParameter("VideoIds", videoIds);
 		}
 	}
 
 	@Override
-	public Class<DeleteTranscodeTemplatesResponse> getResponseClass() {
-		return DeleteTranscodeTemplatesResponse.class;
+	public Class<GetTranscodeSummaryResponse> getResponseClass() {
+		return GetTranscodeSummaryResponse.class;
 	}
 
 }

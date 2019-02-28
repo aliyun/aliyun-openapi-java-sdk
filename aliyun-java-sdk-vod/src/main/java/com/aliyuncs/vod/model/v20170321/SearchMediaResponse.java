@@ -167,6 +167,20 @@ public class SearchMediaResponse extends AcsResponse {
 
 			private String transcodeMode;
 
+			private String auditStatus;
+
+			private String auditAIStatus;
+
+			private String auditManualStatus;
+
+			private String auditAIResult;
+
+			private String auditTemplateId;
+
+			private String customMediaInfo;
+
+			private List<PlayInfo> playInfoList;
+
 			private List<String> snapshots;
 
 			private List<String> spriteSnapshots;
@@ -339,6 +353,62 @@ public class SearchMediaResponse extends AcsResponse {
 				this.transcodeMode = transcodeMode;
 			}
 
+			public String getAuditStatus() {
+				return this.auditStatus;
+			}
+
+			public void setAuditStatus(String auditStatus) {
+				this.auditStatus = auditStatus;
+			}
+
+			public String getAuditAIStatus() {
+				return this.auditAIStatus;
+			}
+
+			public void setAuditAIStatus(String auditAIStatus) {
+				this.auditAIStatus = auditAIStatus;
+			}
+
+			public String getAuditManualStatus() {
+				return this.auditManualStatus;
+			}
+
+			public void setAuditManualStatus(String auditManualStatus) {
+				this.auditManualStatus = auditManualStatus;
+			}
+
+			public String getAuditAIResult() {
+				return this.auditAIResult;
+			}
+
+			public void setAuditAIResult(String auditAIResult) {
+				this.auditAIResult = auditAIResult;
+			}
+
+			public String getAuditTemplateId() {
+				return this.auditTemplateId;
+			}
+
+			public void setAuditTemplateId(String auditTemplateId) {
+				this.auditTemplateId = auditTemplateId;
+			}
+
+			public String getCustomMediaInfo() {
+				return this.customMediaInfo;
+			}
+
+			public void setCustomMediaInfo(String customMediaInfo) {
+				this.customMediaInfo = customMediaInfo;
+			}
+
+			public List<PlayInfo> getPlayInfoList() {
+				return this.playInfoList;
+			}
+
+			public void setPlayInfoList(List<PlayInfo> playInfoList) {
+				this.playInfoList = playInfoList;
+			}
+
 			public List<String> getSnapshots() {
 				return this.snapshots;
 			}
@@ -353,6 +423,159 @@ public class SearchMediaResponse extends AcsResponse {
 
 			public void setSpriteSnapshots(List<String> spriteSnapshots) {
 				this.spriteSnapshots = spriteSnapshots;
+			}
+
+			public static class PlayInfo {
+
+				private String width;
+
+				private String height;
+
+				private String size;
+
+				private String playURL;
+
+				private String bitrate;
+
+				private String definition;
+
+				private String duration;
+
+				private String format;
+
+				private String fps;
+
+				private Long encrypt;
+
+				private String plaintext;
+
+				private String complexity;
+
+				private String streamType;
+
+				private String rand;
+
+				private String jobId;
+
+				public String getWidth() {
+					return this.width;
+				}
+
+				public void setWidth(String width) {
+					this.width = width;
+				}
+
+				public String getHeight() {
+					return this.height;
+				}
+
+				public void setHeight(String height) {
+					this.height = height;
+				}
+
+				public String getSize() {
+					return this.size;
+				}
+
+				public void setSize(String size) {
+					this.size = size;
+				}
+
+				public String getPlayURL() {
+					return this.playURL;
+				}
+
+				public void setPlayURL(String playURL) {
+					this.playURL = playURL;
+				}
+
+				public String getBitrate() {
+					return this.bitrate;
+				}
+
+				public void setBitrate(String bitrate) {
+					this.bitrate = bitrate;
+				}
+
+				public String getDefinition() {
+					return this.definition;
+				}
+
+				public void setDefinition(String definition) {
+					this.definition = definition;
+				}
+
+				public String getDuration() {
+					return this.duration;
+				}
+
+				public void setDuration(String duration) {
+					this.duration = duration;
+				}
+
+				public String getFormat() {
+					return this.format;
+				}
+
+				public void setFormat(String format) {
+					this.format = format;
+				}
+
+				public String getFps() {
+					return this.fps;
+				}
+
+				public void setFps(String fps) {
+					this.fps = fps;
+				}
+
+				public Long getEncrypt() {
+					return this.encrypt;
+				}
+
+				public void setEncrypt(Long encrypt) {
+					this.encrypt = encrypt;
+				}
+
+				public String getPlaintext() {
+					return this.plaintext;
+				}
+
+				public void setPlaintext(String plaintext) {
+					this.plaintext = plaintext;
+				}
+
+				public String getComplexity() {
+					return this.complexity;
+				}
+
+				public void setComplexity(String complexity) {
+					this.complexity = complexity;
+				}
+
+				public String getStreamType() {
+					return this.streamType;
+				}
+
+				public void setStreamType(String streamType) {
+					this.streamType = streamType;
+				}
+
+				public String getRand() {
+					return this.rand;
+				}
+
+				public void setRand(String rand) {
+					this.rand = rand;
+				}
+
+				public String getJobId() {
+					return this.jobId;
+				}
+
+				public void setJobId(String jobId) {
+					this.jobId = jobId;
+				}
 			}
 		}
 
@@ -393,6 +616,20 @@ public class SearchMediaResponse extends AcsResponse {
 			private String regionId;
 
 			private String transcodeMode;
+
+			private String auditStatus;
+
+			private String auditAIStatus;
+
+			private String auditManualStatus;
+
+			private String auditAIResult;
+
+			private String auditTemplateId;
+
+			private String customMediaInfo;
+
+			private List<PlayInfo4> playInfoList3;
 
 			private List<String> snapshots1;
 
@@ -558,6 +795,62 @@ public class SearchMediaResponse extends AcsResponse {
 				this.transcodeMode = transcodeMode;
 			}
 
+			public String getAuditStatus() {
+				return this.auditStatus;
+			}
+
+			public void setAuditStatus(String auditStatus) {
+				this.auditStatus = auditStatus;
+			}
+
+			public String getAuditAIStatus() {
+				return this.auditAIStatus;
+			}
+
+			public void setAuditAIStatus(String auditAIStatus) {
+				this.auditAIStatus = auditAIStatus;
+			}
+
+			public String getAuditManualStatus() {
+				return this.auditManualStatus;
+			}
+
+			public void setAuditManualStatus(String auditManualStatus) {
+				this.auditManualStatus = auditManualStatus;
+			}
+
+			public String getAuditAIResult() {
+				return this.auditAIResult;
+			}
+
+			public void setAuditAIResult(String auditAIResult) {
+				this.auditAIResult = auditAIResult;
+			}
+
+			public String getAuditTemplateId() {
+				return this.auditTemplateId;
+			}
+
+			public void setAuditTemplateId(String auditTemplateId) {
+				this.auditTemplateId = auditTemplateId;
+			}
+
+			public String getCustomMediaInfo() {
+				return this.customMediaInfo;
+			}
+
+			public void setCustomMediaInfo(String customMediaInfo) {
+				this.customMediaInfo = customMediaInfo;
+			}
+
+			public List<PlayInfo4> getPlayInfoList3() {
+				return this.playInfoList3;
+			}
+
+			public void setPlayInfoList3(List<PlayInfo4> playInfoList3) {
+				this.playInfoList3 = playInfoList3;
+			}
+
 			public List<String> getSnapshots1() {
 				return this.snapshots1;
 			}
@@ -572,6 +865,159 @@ public class SearchMediaResponse extends AcsResponse {
 
 			public void setSpriteSnapshots2(List<String> spriteSnapshots2) {
 				this.spriteSnapshots2 = spriteSnapshots2;
+			}
+
+			public static class PlayInfo4 {
+
+				private String width;
+
+				private String height;
+
+				private String size;
+
+				private String playURL;
+
+				private String bitrate;
+
+				private String definition;
+
+				private String duration;
+
+				private String format;
+
+				private String fps;
+
+				private Long encrypt;
+
+				private String plaintext;
+
+				private String complexity;
+
+				private String streamType;
+
+				private String rand;
+
+				private String jobId;
+
+				public String getWidth() {
+					return this.width;
+				}
+
+				public void setWidth(String width) {
+					this.width = width;
+				}
+
+				public String getHeight() {
+					return this.height;
+				}
+
+				public void setHeight(String height) {
+					this.height = height;
+				}
+
+				public String getSize() {
+					return this.size;
+				}
+
+				public void setSize(String size) {
+					this.size = size;
+				}
+
+				public String getPlayURL() {
+					return this.playURL;
+				}
+
+				public void setPlayURL(String playURL) {
+					this.playURL = playURL;
+				}
+
+				public String getBitrate() {
+					return this.bitrate;
+				}
+
+				public void setBitrate(String bitrate) {
+					this.bitrate = bitrate;
+				}
+
+				public String getDefinition() {
+					return this.definition;
+				}
+
+				public void setDefinition(String definition) {
+					this.definition = definition;
+				}
+
+				public String getDuration() {
+					return this.duration;
+				}
+
+				public void setDuration(String duration) {
+					this.duration = duration;
+				}
+
+				public String getFormat() {
+					return this.format;
+				}
+
+				public void setFormat(String format) {
+					this.format = format;
+				}
+
+				public String getFps() {
+					return this.fps;
+				}
+
+				public void setFps(String fps) {
+					this.fps = fps;
+				}
+
+				public Long getEncrypt() {
+					return this.encrypt;
+				}
+
+				public void setEncrypt(Long encrypt) {
+					this.encrypt = encrypt;
+				}
+
+				public String getPlaintext() {
+					return this.plaintext;
+				}
+
+				public void setPlaintext(String plaintext) {
+					this.plaintext = plaintext;
+				}
+
+				public String getComplexity() {
+					return this.complexity;
+				}
+
+				public void setComplexity(String complexity) {
+					this.complexity = complexity;
+				}
+
+				public String getStreamType() {
+					return this.streamType;
+				}
+
+				public void setStreamType(String streamType) {
+					this.streamType = streamType;
+				}
+
+				public String getRand() {
+					return this.rand;
+				}
+
+				public void setRand(String rand) {
+					this.rand = rand;
+				}
+
+				public String getJobId() {
+					return this.jobId;
+				}
+
+				public void setJobId(String jobId) {
+					this.jobId = jobId;
+				}
 			}
 		}
 

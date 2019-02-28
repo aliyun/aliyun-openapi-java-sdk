@@ -37,6 +37,7 @@ public class GetImageInfoResponseUnmarshaller {
 		imageInfo.setCateName(context.stringValue("GetImageInfoResponse.ImageInfo.CateName"));
 		imageInfo.setDescription(context.stringValue("GetImageInfoResponse.ImageInfo.Description"));
 		imageInfo.setStorageLocation(context.stringValue("GetImageInfoResponse.ImageInfo.StorageLocation"));
+		imageInfo.setStatus(context.stringValue("GetImageInfoResponse.ImageInfo.Status"));
 
 		Mezzanine mezzanine = new Mezzanine();
 		mezzanine.setOriginalFileName(context.stringValue("GetImageInfoResponse.ImageInfo.Mezzanine.OriginalFileName"));

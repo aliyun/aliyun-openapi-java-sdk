@@ -26,13 +26,9 @@ public class UpdateVideoInfoRequest extends RpcAcsRequest<UpdateVideoInfoRespons
 		super("vod", "2017-03-21", "UpdateVideoInfo", "vod");
 	}
 
-	private String coverURL;
-
 	private Long resourceOwnerId;
 
 	private String resourceOwnerAccount;
-
-	private Long cateId;
 
 	private String description;
 
@@ -44,16 +40,11 @@ public class UpdateVideoInfoRequest extends RpcAcsRequest<UpdateVideoInfoRespons
 
 	private String tags;
 
-	public String getCoverURL() {
-		return this.coverURL;
-	}
+	private String coverURL;
 
-	public void setCoverURL(String coverURL) {
-		this.coverURL = coverURL;
-		if(coverURL != null){
-			putQueryParameter("CoverURL", coverURL);
-		}
-	}
+	private Long cateId;
+
+	private String customMediaInfo;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -74,17 +65,6 @@ public class UpdateVideoInfoRequest extends RpcAcsRequest<UpdateVideoInfoRespons
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public Long getCateId() {
-		return this.cateId;
-	}
-
-	public void setCateId(Long cateId) {
-		this.cateId = cateId;
-		if(cateId != null){
-			putQueryParameter("CateId", cateId.toString());
 		}
 	}
 
@@ -140,6 +120,39 @@ public class UpdateVideoInfoRequest extends RpcAcsRequest<UpdateVideoInfoRespons
 		this.tags = tags;
 		if(tags != null){
 			putQueryParameter("Tags", tags);
+		}
+	}
+
+	public String getCoverURL() {
+		return this.coverURL;
+	}
+
+	public void setCoverURL(String coverURL) {
+		this.coverURL = coverURL;
+		if(coverURL != null){
+			putQueryParameter("CoverURL", coverURL);
+		}
+	}
+
+	public Long getCateId() {
+		return this.cateId;
+	}
+
+	public void setCateId(Long cateId) {
+		this.cateId = cateId;
+		if(cateId != null){
+			putQueryParameter("CateId", cateId.toString());
+		}
+	}
+
+	public String getCustomMediaInfo() {
+		return this.customMediaInfo;
+	}
+
+	public void setCustomMediaInfo(String customMediaInfo) {
+		this.customMediaInfo = customMediaInfo;
+		if(customMediaInfo != null){
+			putQueryParameter("CustomMediaInfo", customMediaInfo);
 		}
 	}
 

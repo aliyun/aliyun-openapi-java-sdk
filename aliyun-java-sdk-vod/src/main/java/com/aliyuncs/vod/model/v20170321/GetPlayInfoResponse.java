@@ -99,6 +99,8 @@ public class GetPlayInfoResponse extends AcsResponse {
 
 		private String encryptType;
 
+		private String narrowBandType;
+
 		public Long getWidth() {
 			return this.width;
 		}
@@ -265,6 +267,14 @@ public class GetPlayInfoResponse extends AcsResponse {
 
 		public void setEncryptType(String encryptType) {
 			this.encryptType = encryptType;
+		}
+
+		public String getNarrowBandType() {
+			return this.narrowBandType;
+		}
+
+		public void setNarrowBandType(String narrowBandType) {
+			this.narrowBandType = narrowBandType;
 		}
 	}
 

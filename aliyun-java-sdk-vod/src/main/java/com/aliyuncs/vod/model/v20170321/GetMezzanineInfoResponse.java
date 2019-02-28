@@ -414,6 +414,8 @@ public class GetMezzanineInfoResponse extends AcsResponse {
 
 			private String lang;
 
+			private String rotate;
+
 			public String getIndex() {
 				return this.index;
 			}
@@ -580,6 +582,14 @@ public class GetMezzanineInfoResponse extends AcsResponse {
 
 			public void setLang(String lang) {
 				this.lang = lang;
+			}
+
+			public String getRotate() {
+				return this.rotate;
+			}
+
+			public void setRotate(String rotate) {
+				this.rotate = rotate;
 			}
 		}
 	}

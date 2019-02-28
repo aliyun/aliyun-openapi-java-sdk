@@ -58,6 +58,8 @@ public class CreateUploadVideoRequest extends RpcAcsRequest<CreateUploadVideoRes
 
 	private String workflowId;
 
+	private String customMediaInfo;
+
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
 	}
@@ -231,6 +233,17 @@ public class CreateUploadVideoRequest extends RpcAcsRequest<CreateUploadVideoRes
 		this.workflowId = workflowId;
 		if(workflowId != null){
 			putQueryParameter("WorkflowId", workflowId);
+		}
+	}
+
+	public String getCustomMediaInfo() {
+		return this.customMediaInfo;
+	}
+
+	public void setCustomMediaInfo(String customMediaInfo) {
+		this.customMediaInfo = customMediaInfo;
+		if(customMediaInfo != null){
+			putQueryParameter("CustomMediaInfo", customMediaInfo);
 		}
 	}
 
