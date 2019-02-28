@@ -74,7 +74,7 @@ public class ApacheHttpClientTest {
     @Test
     public void testApacheHttpClientConstructorFalseIgnoreSSLCerts() throws ClientException, IOException {
         HttpClientConfig config = this.getMockHttpClientConfigWithFalseIgnoreSSLCerts();
-        ApacheHttpClient httpClient = new ApacheHttpClient(config);
+        ApacheHttpClient httpClient = ApacheHttpClient.getInstance(config);
         Assert.assertTrue(httpClient instanceof ApacheHttpClient);
         httpClient.close();
     }
@@ -87,7 +87,7 @@ public class ApacheHttpClientTest {
         Mockito.when(config.getSslSocketFactory()).thenReturn(sslSocketFactory);
         Mockito.when(config.getHostnameVerifier()).thenReturn(hostnameVerifier);
 
-        ApacheHttpClient httpClient = new ApacheHttpClient(config);
+        ApacheHttpClient httpClient = ApacheHttpClient.getInstance(config);
         Assert.assertTrue(httpClient instanceof ApacheHttpClient);
         httpClient.close();
     }
@@ -98,7 +98,7 @@ public class ApacheHttpClientTest {
         SecureRandom secureRandom = Mockito.mock(SecureRandom.class);
         Mockito.when(config.getSecureRandom()).thenReturn(secureRandom);
 
-        ApacheHttpClient httpClient = new ApacheHttpClient(config);
+        ApacheHttpClient httpClient = ApacheHttpClient.getInstance(config);
         Assert.assertTrue(httpClient instanceof ApacheHttpClient);
         httpClient.close();
     }
@@ -111,7 +111,7 @@ public class ApacheHttpClientTest {
 
         Mockito.when(config.getKeepAliveDurationMillis()).thenReturn(0L);
 
-        ApacheHttpClient httpClient = new ApacheHttpClient(config);
+        ApacheHttpClient httpClient = ApacheHttpClient.getInstance(config);
         Assert.assertTrue(httpClient instanceof ApacheHttpClient);
         httpClient.close();
     }
@@ -119,7 +119,7 @@ public class ApacheHttpClientTest {
     @Test
     public void testApacheHttpClientConstructorIgnoreSSLCerts() throws ClientException, IOException {
         HttpClientConfig config = this.getMockHttpClientConfigWithTrueIgnoreSSLCerts();
-        ApacheHttpClient httpClient = new ApacheHttpClient(config);
+        ApacheHttpClient httpClient = ApacheHttpClient.getInstance(config);
         Assert.assertTrue(httpClient instanceof ApacheHttpClient);
         httpClient.close();
     }
@@ -127,7 +127,7 @@ public class ApacheHttpClientTest {
     @Test
     public void testRestoreSSLCertificate() throws ClientException, IOException {
         HttpClientConfig config = this.getMockHttpClientConfigWithFalseIgnoreSSLCerts();
-        ApacheHttpClient httpClient = new ApacheHttpClient(config);
+        ApacheHttpClient httpClient = ApacheHttpClient.getInstance(config);
         thrown.expect(IllegalStateException.class);
         thrown.expectMessage("Apache httpclient does not support modify sslFactory after inited, "
                 + "use HttpClientConfig.setIgnoreSSLCerts(true) while building client");
@@ -138,7 +138,7 @@ public class ApacheHttpClientTest {
     @Test
     public void testIgnoreSSLCertificate() throws ClientException, IOException {
         HttpClientConfig config = this.getMockHttpClientConfigWithFalseIgnoreSSLCerts();
-        ApacheHttpClient httpClient = new ApacheHttpClient(config);
+        ApacheHttpClient httpClient = ApacheHttpClient.getInstance(config);
         thrown.expect(IllegalStateException.class);
         thrown.expectMessage("Apache httpclient does not support modify sslFactory after inited, "
                 + "use HttpClientConfig.setIgnoreSSLCerts(true) while building client");
@@ -189,7 +189,7 @@ public class ApacheHttpClientTest {
     public void testSyncInvoke() throws ClientException, IOException, NoSuchFieldException, SecurityException,
             IllegalArgumentException, IllegalAccessException {
         HttpClientConfig config = this.getMockHttpClientConfigWithFalseIgnoreSSLCerts();
-        ApacheHttpClient apacheHttpClient = new ApacheHttpClient(config);
+        ApacheHttpClient apacheHttpClient = ApacheHttpClient.getInstance(config);
         HttpRequest apiRequest = this.getMockHttpRequest();
         CloseableHttpResponse closeableHttpResponse = this.getMockHttpResponse();
         Field httpClientReflect = ApacheHttpClient.class.getDeclaredField("httpClient");
@@ -205,7 +205,7 @@ public class ApacheHttpClientTest {
     public void testAsyncInvoke() throws ClientException, IOException, NoSuchFieldException, SecurityException,
             IllegalArgumentException, IllegalAccessException {
         HttpClientConfig config = this.getMockHttpClientConfigWithFalseIgnoreSSLCerts();
-        ApacheHttpClient apacheHttpClient = new ApacheHttpClient(config);
+        ApacheHttpClient apacheHttpClient = ApacheHttpClient.getInstance(config);
         HttpRequest apiRequest = this.getMockHttpRequest();
 
         CloseableHttpResponse closeableHttpResponse = this.getMockHttpResponse();
@@ -224,7 +224,7 @@ public class ApacheHttpClientTest {
     public void testSyncInvokeNullContentType() throws ClientException, IOException, NoSuchFieldException,
             SecurityException, IllegalArgumentException, IllegalAccessException {
         HttpClientConfig config = this.getMockHttpClientConfigWithFalseIgnoreSSLCerts();
-        ApacheHttpClient apacheHttpClient = new ApacheHttpClient(config);
+        ApacheHttpClient apacheHttpClient = ApacheHttpClient.getInstance(config);
         HttpRequest apiRequest = this.getMockHttpRequest();
         CloseableHttpResponse closeableHttpResponse = this.getMockHttpResponse();
 
@@ -246,7 +246,7 @@ public class ApacheHttpClientTest {
     public void testSyncInvokeNullHttpResponseEntity() throws ClientException, IOException, NoSuchFieldException,
             SecurityException, IllegalArgumentException, IllegalAccessException {
         HttpClientConfig config = this.getMockHttpClientConfigWithFalseIgnoreSSLCerts();
-        ApacheHttpClient apacheHttpClient = new ApacheHttpClient(config);
+        ApacheHttpClient apacheHttpClient = ApacheHttpClient.getInstance(config);
         HttpRequest apiRequest = this.getMockHttpRequest();
         Mockito.when(apiRequest.getSysMethod()).thenReturn(MethodType.PUT);
         Mockito.when(apiRequest.getHeaderValue(Mockito.anyString())).thenReturn("contentType");
@@ -273,7 +273,7 @@ public class ApacheHttpClientTest {
     public void testSyncInvokeNotNullHttpResponseEntityIsChunked() throws ClientException, IOException, NoSuchFieldException,
             SecurityException, IllegalArgumentException, IllegalAccessException {
         HttpClientConfig config = this.getMockHttpClientConfigWithFalseIgnoreSSLCerts();
-        ApacheHttpClient apacheHttpClient = new ApacheHttpClient(config);
+        ApacheHttpClient apacheHttpClient = ApacheHttpClient.getInstance(config);
         HttpRequest apiRequest = this.getMockHttpRequest();
         Mockito.when(apiRequest.getSysMethod()).thenReturn(MethodType.PUT);
         Mockito.when(apiRequest.getHeaderValue(Mockito.anyString())).thenReturn("contentType");
@@ -300,7 +300,7 @@ public class ApacheHttpClientTest {
     public void testSyncInvokeNotNullHttpResponseEntity() throws ClientException, IOException, NoSuchFieldException,
             SecurityException, IllegalArgumentException, IllegalAccessException {
         HttpClientConfig config = this.getMockHttpClientConfigWithFalseIgnoreSSLCerts();
-        ApacheHttpClient apacheHttpClient = new ApacheHttpClient(config);
+        ApacheHttpClient apacheHttpClient = ApacheHttpClient.getInstance(config);
         HttpRequest apiRequest = this.getMockHttpRequest();
         Mockito.when(apiRequest.getSysMethod()).thenReturn(MethodType.PUT);
         Mockito.when(apiRequest.getHeaderValue(Mockito.anyString())).thenReturn("contentType");

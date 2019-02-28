@@ -1,20 +1,6 @@
 package com.aliyuncs;
 
-import java.io.IOException;
-import java.net.SocketTimeoutException;
-import java.security.InvalidKeyException;
-import java.security.NoSuchAlgorithmException;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
-import javax.xml.bind.annotation.XmlRootElement;
-
-import com.aliyuncs.auth.AlibabaCloudCredentials;
-import com.aliyuncs.auth.AlibabaCloudCredentialsProvider;
-import com.aliyuncs.auth.Credential;
-import com.aliyuncs.auth.LegacyCredentials;
-import com.aliyuncs.auth.Signer;
-import com.aliyuncs.auth.StaticCredentialsProvider;
+import com.aliyuncs.auth.*;
 import com.aliyuncs.endpoint.DefaultEndpointResolver;
 import com.aliyuncs.endpoint.EndpointResolver;
 import com.aliyuncs.endpoint.ResolveEndpointRequest;
@@ -22,13 +8,7 @@ import com.aliyuncs.exceptions.ClientException;
 import com.aliyuncs.exceptions.ErrorCodeConstant;
 import com.aliyuncs.exceptions.ErrorMessageConstant;
 import com.aliyuncs.exceptions.ServerException;
-import com.aliyuncs.http.FormatType;
-import com.aliyuncs.http.HttpClientFactory;
-import com.aliyuncs.http.HttpRequest;
-import com.aliyuncs.http.HttpResponse;
-import com.aliyuncs.http.HttpUtil;
-import com.aliyuncs.http.IHttpClient;
-import com.aliyuncs.http.UserAgentConfig;
+import com.aliyuncs.http.*;
 import com.aliyuncs.profile.DefaultProfile;
 import com.aliyuncs.profile.IClientProfile;
 import com.aliyuncs.reader.Reader;
@@ -39,6 +19,14 @@ import com.aliyuncs.unmarshaller.Unmarshaller;
 import com.aliyuncs.unmarshaller.UnmarshallerFactory;
 import com.aliyuncs.utils.IOUtils;
 
+import javax.xml.bind.annotation.XmlRootElement;
+import java.io.IOException;
+import java.net.SocketTimeoutException;
+import java.security.InvalidKeyException;
+import java.security.NoSuchAlgorithmException;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 @SuppressWarnings("deprecation")
 public class DefaultAcsClient implements IAcsClient {
 
@@ -47,6 +35,7 @@ public class DefaultAcsClient implements IAcsClient {
     private boolean autoRetry = true;
     private IClientProfile clientProfile = null;
     private AlibabaCloudCredentialsProvider credentialsProvider;
+
     private IHttpClient httpClient;
     private EndpointResolver endpointResolver;
     private static final String SIGNATURE_BEGIN = "string to sign is:";
@@ -166,7 +155,7 @@ public class DefaultAcsClient implements IAcsClient {
 
     @Override
     public <T extends AcsResponse> HttpResponse doAction(AcsRequest<T> request, boolean autoRetry, int maxRetryCounts,
-            IClientProfile profile) throws ClientException, ServerException {
+                                                         IClientProfile profile) throws ClientException, ServerException {
         if (null == profile) {
             throw new ClientException("SDK.InvalidProfile", "No active profile found.");
         }
@@ -213,14 +202,14 @@ public class DefaultAcsClient implements IAcsClient {
 
     @Deprecated
     public <T extends AcsResponse> HttpResponse doAction(AcsRequest<T> request, boolean autoRetry, int maxRetryNumber,
-            String regionId, Credential credential, Signer signer, FormatType format) throws ClientException,
+                                                         String regionId, Credential credential, Signer signer, FormatType format) throws ClientException,
             ServerException {
         return doAction(request, autoRetry, maxRetryNumber, regionId, new LegacyCredentials(credential), signer,
                 format);
     }
 
     private <T extends AcsResponse> HttpResponse doAction(AcsRequest<T> request, boolean autoRetry, int maxRetryNumber,
-            String regionId, AlibabaCloudCredentials credentials, Signer signer, FormatType format)
+                                                          String regionId, AlibabaCloudCredentials credentials, Signer signer, FormatType format)
             throws ClientException, ServerException {
 
         try {
@@ -366,7 +355,11 @@ public class DefaultAcsClient implements IAcsClient {
 
     @Override
     public void shutdown() {
-        IOUtils.closeQuietly(this.httpClient);
+        if (!this.httpClient.isSingleton()) {
+            IOUtils.closeQuietly(this.httpClient);
+            this.httpClient = null;
+        }
+
     }
 
     public DefaultProfile getProfile() {
@@ -380,4 +373,13 @@ public class DefaultAcsClient implements IAcsClient {
     public UserAgentConfig getUserAgentConfig() {
         return userAgentConfig;
     }
+
+    public IHttpClient getHttpClient() {
+        return httpClient;
+    }
+
+    public void setHttpClient(IHttpClient httpClient) {
+        this.httpClient = httpClient;
+    }
+
 }

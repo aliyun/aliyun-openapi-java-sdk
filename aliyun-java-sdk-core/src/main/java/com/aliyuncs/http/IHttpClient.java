@@ -27,4 +27,6 @@ public abstract class IHttpClient implements Closeable {
 
     public abstract void restoreSSLCertificate();
 
+    public abstract boolean isSingleton();
+
 }

@@ -64,6 +64,14 @@
              "<your-region-id>",          // 地域ID
              "<your-access-key-id>",      // RAM账号的AccessKey ID
              "<your-access-key-secret>"); // RAM账号Access Key Secret
+        
+         // 多个SDK client共享一个HTTP client，此处设置该client的参数，
+         // 比如每个host的最大连接数，client的最大连接数，超时时间等
+         HttpClientConfig clientConfig = HttpClientConfig.getDefault();
+         clientConfig.setMaxRequestsPerHost(6);
+         clientConfig.setMaxRequests(60);
+         
+         profile.setHttpClientConfig(clientConfig);
          IAcsClient client = new DefaultAcsClient(profile);
          // 创建API请求并设置参数
          DescribeInstancesRequest request = new DescribeInstancesRequest();

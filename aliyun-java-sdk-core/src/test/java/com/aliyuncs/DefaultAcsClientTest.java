@@ -11,6 +11,7 @@ import com.aliyuncs.exceptions.ErrorCodeConstant;
 import com.aliyuncs.exceptions.ErrorMessageConstant;
 import com.aliyuncs.exceptions.ServerException;
 import com.aliyuncs.http.*;
+import com.aliyuncs.http.clients.ApacheHttpClient;
 import com.aliyuncs.http.clients.CompatibleUrlConnClient;
 import com.aliyuncs.profile.DefaultProfile;
 import com.aliyuncs.regions.ProductDomain;
@@ -57,6 +58,7 @@ public class DefaultAcsClientTest {
         Mockito.when(profile.getCredential()).thenReturn(credential);
         DefaultAcsClient client = new DefaultAcsClient(profile);
         Assert.assertTrue(profile == client.getProfile());
+        Assert.assertTrue(ApacheHttpClient.class.equals(client.getHttpClient().getClass()));
     }
 
     @SuppressWarnings("deprecation")
@@ -66,6 +68,19 @@ public class DefaultAcsClientTest {
         LegacyCredentials legacyCredentials = new LegacyCredentials(new Credential());
         DefaultAcsClient client = new DefaultAcsClient(profile, legacyCredentials);
         Assert.assertTrue(profile == client.getProfile());
+    }
+
+    @SuppressWarnings("deprecation")
+    @Test
+    public void testGetSetHttpClient() throws ClientException, IOException {
+        Credential credential = Mockito.mock(Credential.class);
+        Mockito.when(credential.getSecurityToken()).thenReturn(null);
+        DefaultProfile profile = Mockito.mock(DefaultProfile.class);
+        Mockito.when(profile.getCredential()).thenReturn(credential);
+        DefaultAcsClient client = new DefaultAcsClient(profile);
+        Assert.assertNotNull(client.getHttpClient());
+        client.setHttpClient(client.getHttpClient());
+        Assert.assertNotNull(client.getHttpClient());
     }
 
     @SuppressWarnings("deprecation")
@@ -96,7 +111,7 @@ public class DefaultAcsClientTest {
 
     @SuppressWarnings("deprecation")
     @Test
-    public void testShutdown() {
+    public void testShutdownWithApacheHttpClient() {
         Credential credential = Mockito.mock(Credential.class);
         Mockito.when(credential.getSecurityToken()).thenReturn(null);
         DefaultProfile profile = Mockito.mock(DefaultProfile.class);
@@ -105,6 +120,25 @@ public class DefaultAcsClientTest {
         DefaultAcsClient spyClient = Mockito.spy(client);
         spyClient.shutdown();
         Mockito.verify(spyClient, Mockito.times(1)).shutdown();
+    }
+
+    @SuppressWarnings("deprecation")
+    @Test
+    public void testShutdownWithCompatibleHttpClient() {
+        Credential credential = Mockito.mock(Credential.class);
+        Mockito.when(credential.getSecurityToken()).thenReturn(null);
+        DefaultProfile profile = Mockito.mock(DefaultProfile.class);
+        Mockito.when(profile.getCredential()).thenReturn(credential);
+        HttpClientConfig clientConfig = HttpClientConfig.getDefault();
+        clientConfig.setCompatibleMode(true);
+        Mockito.when(profile.getHttpClientConfig()).thenReturn(clientConfig);
+        DefaultAcsClient client = new DefaultAcsClient(profile);
+        DefaultAcsClient spyClient = Mockito.spy(client);
+        spyClient.shutdown();
+        // check httpClient type
+        Assert.assertTrue(CompatibleUrlConnClient.class.equals(client.getHttpClient().getClass()));
+        Mockito.verify(spyClient, Mockito.times(1)).shutdown();
+        Assert.assertNull(spyClient.getHttpClient());
     }
 
     @SuppressWarnings("deprecation")
