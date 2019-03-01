@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class InsertClusterRequest extends RoaAcsRequest<InsertClusterResponse> {
 	
 	public InsertClusterRequest() {
-		super("Edas", "2017-08-01", "InsertCluster");
+		super("Edas", "2017-08-01", "InsertCluster", "edas");
 		setUriPattern("/pop/v5/resource/cluster");
 		setMethod(MethodType.POST);
 	}

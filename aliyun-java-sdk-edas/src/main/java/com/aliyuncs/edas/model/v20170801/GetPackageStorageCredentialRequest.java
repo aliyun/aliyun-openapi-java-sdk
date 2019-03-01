@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class GetPackageStorageCredentialRequest extends RoaAcsRequest<GetPackageStorageCredentialResponse> {
 	
 	public GetPackageStorageCredentialRequest() {
-		super("Edas", "2017-08-01", "GetPackageStorageCredential");
+		super("Edas", "2017-08-01", "GetPackageStorageCredential", "edas");
 		setUriPattern("/pop/v5/package_storage_credential");
 		setMethod(MethodType.GET);
 	}

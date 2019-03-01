@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class ListConvertableEcuRequest extends RoaAcsRequest<ListConvertableEcuResponse> {
 	
 	public ListConvertableEcuRequest() {
-		super("Edas", "2017-08-01", "ListConvertableEcu");
+		super("Edas", "2017-08-01", "ListConvertableEcu", "edas");
 		setUriPattern("/pop/v5/resource/convertable_ecu_list");
 		setMethod(MethodType.GET);
 	}

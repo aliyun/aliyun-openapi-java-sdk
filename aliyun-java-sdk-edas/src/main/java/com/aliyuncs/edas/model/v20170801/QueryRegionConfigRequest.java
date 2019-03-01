@@ -21,30 +21,17 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class GetApplicationRequest extends RoaAcsRequest<GetApplicationResponse> {
+public class QueryRegionConfigRequest extends RoaAcsRequest<QueryRegionConfigResponse> {
 	
-	public GetApplicationRequest() {
-		super("Edas", "2017-08-01", "GetApplication", "edas");
-		setUriPattern("/pop/v5/app/app_info");
-		setMethod(MethodType.POST);
-	}
-
-	private String appId;
-
-	public String getAppId() {
-		return this.appId;
-	}
-
-	public void setAppId(String appId) {
-		this.appId = appId;
-		if(appId != null){
-			putQueryParameter("AppId", appId);
-		}
+	public QueryRegionConfigRequest() {
+		super("Edas", "2017-08-01", "QueryRegionConfig", "edas");
+		setUriPattern("/pop/v5/region_config");
+		setMethod(MethodType.GET);
 	}
 
 	@Override
-	public Class<GetApplicationResponse> getResponseClass() {
-		return GetApplicationResponse.class;
+	public Class<QueryRegionConfigResponse> getResponseClass() {
+		return QueryRegionConfigResponse.class;
 	}
 
 }

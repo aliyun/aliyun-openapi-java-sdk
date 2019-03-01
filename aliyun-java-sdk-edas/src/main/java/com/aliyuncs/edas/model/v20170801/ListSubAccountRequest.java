@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class ListSubAccountRequest extends RoaAcsRequest<ListSubAccountResponse> {
 	
 	public ListSubAccountRequest() {
-		super("Edas", "2017-08-01", "ListSubAccount");
+		super("Edas", "2017-08-01", "ListSubAccount", "edas");
 		setUriPattern("/pop/v5/account/sub_account_list");
 		setMethod(MethodType.POST);
 	}

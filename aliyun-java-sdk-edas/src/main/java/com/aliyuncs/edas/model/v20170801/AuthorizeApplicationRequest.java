@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class AuthorizeApplicationRequest extends RoaAcsRequest<AuthorizeApplicationResponse> {
 	
 	public AuthorizeApplicationRequest() {
-		super("Edas", "2017-08-01", "AuthorizeApplication");
+		super("Edas", "2017-08-01", "AuthorizeApplication", "edas");
 		setUriPattern("/pop/v5/account/authorize_app");
 		setMethod(MethodType.POST);
 	}

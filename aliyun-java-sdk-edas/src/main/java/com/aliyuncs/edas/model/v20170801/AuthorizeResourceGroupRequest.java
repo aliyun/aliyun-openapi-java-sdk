@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class AuthorizeResourceGroupRequest extends RoaAcsRequest<AuthorizeResourceGroupResponse> {
 	
 	public AuthorizeResourceGroupRequest() {
-		super("Edas", "2017-08-01", "AuthorizeResourceGroup");
+		super("Edas", "2017-08-01", "AuthorizeResourceGroup", "edas");
 		setUriPattern("/pop/v5/account/authorize_res_group");
 		setMethod(MethodType.POST);
 	}

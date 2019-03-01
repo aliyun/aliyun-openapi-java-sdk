@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class DeleteFlowControlRequest extends RoaAcsRequest<DeleteFlowControlResponse> {
 	
 	public DeleteFlowControlRequest() {
-		super("Edas", "2017-08-01", "DeleteFlowControl");
+		super("Edas", "2017-08-01", "DeleteFlowControl", "edas");
 		setUriPattern("/pop/v5/flowControl");
 		setMethod(MethodType.DELETE);
 	}

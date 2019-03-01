@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class GetContainerConfigurationRequest extends RoaAcsRequest<GetContainerConfigurationResponse> {
 	
 	public GetContainerConfigurationRequest() {
-		super("Edas", "2017-08-01", "GetContainerConfiguration");
+		super("Edas", "2017-08-01", "GetContainerConfiguration", "edas");
 		setUriPattern("/pop/v5/app/container_config");
 		setMethod(MethodType.GET);
 	}

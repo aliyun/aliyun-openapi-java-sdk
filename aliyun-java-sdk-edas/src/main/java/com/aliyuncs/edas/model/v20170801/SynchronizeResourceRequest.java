@@ -21,41 +21,15 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class UnbindK8sSlbRequest extends RoaAcsRequest<UnbindK8sSlbResponse> {
+public class SynchronizeResourceRequest extends RoaAcsRequest<SynchronizeResourceResponse> {
 	
-	public UnbindK8sSlbRequest() {
-		super("Edas", "2017-08-01", "UnbindK8sSlb", "edas");
-		setUriPattern("/pop/v5/k8s/acs/k8s_slb_binding");
-		setMethod(MethodType.DELETE);
+	public SynchronizeResourceRequest() {
+		super("Edas", "2017-08-01", "SynchronizeResource", "edas");
+		setUriPattern("/pop/v5/resource/pop_sync_resource");
+		setMethod(MethodType.GET);
 	}
-
-	private String appId;
-
-	private String clusterId;
 
 	private String type;
-
-	public String getAppId() {
-		return this.appId;
-	}
-
-	public void setAppId(String appId) {
-		this.appId = appId;
-		if(appId != null){
-			putQueryParameter("AppId", appId);
-		}
-	}
-
-	public String getClusterId() {
-		return this.clusterId;
-	}
-
-	public void setClusterId(String clusterId) {
-		this.clusterId = clusterId;
-		if(clusterId != null){
-			putQueryParameter("ClusterId", clusterId);
-		}
-	}
 
 	public String getType() {
 		return this.type;
@@ -69,8 +43,8 @@ public class UnbindK8sSlbRequest extends RoaAcsRequest<UnbindK8sSlbResponse> {
 	}
 
 	@Override
-	public Class<UnbindK8sSlbResponse> getResponseClass() {
-		return UnbindK8sSlbResponse.class;
+	public Class<SynchronizeResourceResponse> getResponseClass() {
+		return SynchronizeResourceResponse.class;
 	}
 
 }

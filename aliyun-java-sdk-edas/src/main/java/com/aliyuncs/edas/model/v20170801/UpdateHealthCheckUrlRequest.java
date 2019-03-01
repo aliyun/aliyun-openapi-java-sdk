@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class UpdateHealthCheckUrlRequest extends RoaAcsRequest<UpdateHealthCheckUrlResponse> {
 	
 	public UpdateHealthCheckUrlRequest() {
-		super("Edas", "2017-08-01", "UpdateHealthCheckUrl");
+		super("Edas", "2017-08-01", "UpdateHealthCheckUrl", "edas");
 		setUriPattern("/pop/v5/app/modify_hc_url");
 		setMethod(MethodType.POST);
 	}

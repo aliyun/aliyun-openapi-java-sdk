@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class GetSecureTokenRequest extends RoaAcsRequest<GetSecureTokenResponse> {
 	
 	public GetSecureTokenRequest() {
-		super("Edas", "2017-08-01", "GetSecureToken");
+		super("Edas", "2017-08-01", "GetSecureToken", "edas");
 		setUriPattern("/pop/v5/secure_token");
 		setMethod(MethodType.GET);
 	}

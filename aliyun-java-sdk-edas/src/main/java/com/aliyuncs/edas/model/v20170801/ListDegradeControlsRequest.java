@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class ListDegradeControlsRequest extends RoaAcsRequest<ListDegradeControlsResponse> {
 	
 	public ListDegradeControlsRequest() {
-		super("Edas", "2017-08-01", "ListDegradeControls");
+		super("Edas", "2017-08-01", "ListDegradeControls", "edas");
 		setUriPattern("/pop/v5/app/degradeControls");
 		setMethod(MethodType.GET);
 	}

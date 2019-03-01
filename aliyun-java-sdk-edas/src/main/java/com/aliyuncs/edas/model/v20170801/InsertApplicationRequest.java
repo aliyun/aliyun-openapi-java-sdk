@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class InsertApplicationRequest extends RoaAcsRequest<InsertApplicationResponse> {
 	
 	public InsertApplicationRequest() {
-		super("Edas", "2017-08-01", "InsertApplication");
+		super("Edas", "2017-08-01", "InsertApplication", "edas");
 		setUriPattern("/pop/v5/changeorder/co_create_app");
 		setMethod(MethodType.POST);
 	}

@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class DeployServerlessApplicationRequest extends RoaAcsRequest<DeployServerlessApplicationResponse> {
 	
 	public DeployServerlessApplicationRequest() {
-		super("Edas", "2017-08-01", "DeployServerlessApplication");
+		super("Edas", "2017-08-01", "DeployServerlessApplication", "edas");
 		setUriPattern("/pop/v5/k8s/pop/pop_serverless_app_deploy");
 		setMethod(MethodType.POST);
 	}

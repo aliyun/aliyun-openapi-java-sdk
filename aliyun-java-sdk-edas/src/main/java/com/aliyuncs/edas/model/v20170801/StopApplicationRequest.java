@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class StopApplicationRequest extends RoaAcsRequest<StopApplicationResponse> {
 	
 	public StopApplicationRequest() {
-		super("Edas", "2017-08-01", "StopApplication");
+		super("Edas", "2017-08-01", "StopApplication", "edas");
 		setUriPattern("/pop/v5/changeorder/co_stop");
 		setMethod(MethodType.POST);
 	}

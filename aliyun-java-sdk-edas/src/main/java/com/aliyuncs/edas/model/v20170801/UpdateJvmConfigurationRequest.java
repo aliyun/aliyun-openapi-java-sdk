@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class UpdateJvmConfigurationRequest extends RoaAcsRequest<UpdateJvmConfigurationResponse> {
 	
 	public UpdateJvmConfigurationRequest() {
-		super("Edas", "2017-08-01", "UpdateJvmConfiguration");
+		super("Edas", "2017-08-01", "UpdateJvmConfiguration", "edas");
 		setUriPattern("/pop/v5/app/app_jvm_config");
 		setMethod(MethodType.POST);
 	}

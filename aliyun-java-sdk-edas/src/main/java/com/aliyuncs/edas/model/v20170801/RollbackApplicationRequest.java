@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class RollbackApplicationRequest extends RoaAcsRequest<RollbackApplicationResponse> {
 	
 	public RollbackApplicationRequest() {
-		super("Edas", "2017-08-01", "RollbackApplication");
+		super("Edas", "2017-08-01", "RollbackApplication", "edas");
 		setUriPattern("/pop/v5/changeorder/co_rollback");
 		setMethod(MethodType.POST);
 	}

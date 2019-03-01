@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class UpdateAccountInfoRequest extends RoaAcsRequest<UpdateAccountInfoResponse> {
 	
 	public UpdateAccountInfoRequest() {
-		super("Edas", "2017-08-01", "UpdateAccountInfo");
+		super("Edas", "2017-08-01", "UpdateAccountInfo", "edas");
 		setUriPattern("/pop/v5/account/edit_account_info");
 		setMethod(MethodType.POST);
 	}
