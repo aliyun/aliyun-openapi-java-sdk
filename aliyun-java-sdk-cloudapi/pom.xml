@@ -3,7 +3,7 @@
   <groupId>com.aliyun</groupId>
   <artifactId>aliyun-java-sdk-cloudapi</artifactId>
   <packaging>jar</packaging>
-  <version>4.8.3</version>
+  <version>4.8.4</version>
     <name>aliyun-java-sdk-cloudapi</name>
   <url>http://www.aliyun.com</url>
   <description>Aliyun Open API SDK for Java

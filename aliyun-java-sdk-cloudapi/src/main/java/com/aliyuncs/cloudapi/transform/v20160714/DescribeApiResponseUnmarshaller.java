@@ -81,6 +81,13 @@ public class DescribeApiResponseUnmarshaller {
 		serviceConfig.setContentTypeValue(context.stringValue("DescribeApiResponse.ServiceConfig.ContentTypeValue"));
 		serviceConfig.setMockStatusCode(context.integerValue("DescribeApiResponse.ServiceConfig.MockStatusCode"));
 
+		FunctionComputeConfig functionComputeConfig = new FunctionComputeConfig();
+		functionComputeConfig.setFcRegionId("DescribeApiResponse.ServiceConfig.FunctionComputeConfig.RegionId");
+		functionComputeConfig.setFunctionName("DescribeApiResponse.ServiceConfig.FunctionComputeConfig.FunctionName");
+		functionComputeConfig.setServiceName("DescribeApiResponse.ServiceConfig.FunctionComputeConfig.ServiceName");
+		functionComputeConfig.setRoleArn("DescribeApiResponse.ServiceConfig.FunctionComputeConfig.RoleArn");
+		serviceConfig.setFunctionComputeConfig(functionComputeConfig);
+
 		List<MockHeader> mockHeaders=new ArrayList<MockHeader>();
 		for(int i=0;i<context.lengthValue("DescribeApiResponse.ServiceConfig.MockHeaders.Length");i++){
 			MockHeader mockHeader=new MockHeader();

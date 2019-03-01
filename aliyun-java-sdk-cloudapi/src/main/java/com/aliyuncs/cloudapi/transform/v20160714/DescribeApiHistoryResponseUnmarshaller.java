@@ -77,6 +77,13 @@ public class DescribeApiHistoryResponseUnmarshaller {
         vpcConfig.setPort(context.integerValue("DescribeApiHistoryResponse.ServiceConfig.VpcConfig.Port"));
         serviceConfig.setVpcConfig(vpcConfig);
 
+        FunctionComputeConfig functionComputeConfig = new FunctionComputeConfig();
+        functionComputeConfig.setFcRegionId("DescribeApiHistoryResponse.ServiceConfig.FunctionComputeConfig.RegionId");
+        functionComputeConfig.setFunctionName("DescribeApiHistoryResponse.ServiceConfig.FunctionComputeConfig.FunctionName");
+        functionComputeConfig.setRoleArn("DescribeApiHistoryResponse.ServiceConfig.FunctionComputeConfig.RoleArn");
+        functionComputeConfig.setServiceName("DescribeApiHistoryResponse.ServiceConfig.FunctionComputeConfig.ServiceName");
+        serviceConfig.setFunctionComputeConfig(functionComputeConfig);
+
 		serviceConfig.setMockStatusCode(context.integerValue("DescribeApiHistoryResponse.ServiceConfig.MockStatusCode"));
 
 		List<MockHeader> mockHeaders=new ArrayList<MockHeader>();

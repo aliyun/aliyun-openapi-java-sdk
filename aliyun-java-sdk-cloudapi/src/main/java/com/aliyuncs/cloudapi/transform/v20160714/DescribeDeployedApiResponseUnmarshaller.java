@@ -74,6 +74,12 @@ public class DescribeDeployedApiResponseUnmarshaller {
         vpcConfig.setInstanceId(context.stringValue("DescribeDeployedApiResponse.ServiceConfig.VpcConfig.InstanceId"));
         vpcConfig.setPort(context.integerValue("DescribeDeployedApiResponse.ServiceConfig.VpcConfig.Port"));
         serviceConfig.setVpcConfig(vpcConfig);
+        FunctionComputeConfig functionComputeConfig = new FunctionComputeConfig();
+        functionComputeConfig.setFcRegionId("DescribeDeployedApiResponse.ServiceConfig.FunctionComputeConfig.RegionId");
+        functionComputeConfig.setFunctionName("DescribeDeployedApiResponse.ServiceConfig.FunctionComputeConfig.FunctionName");
+        functionComputeConfig.setServiceName("DescribeDeployedApiResponse.ServiceConfig.FunctionComputeConfig.ServiceName");
+        functionComputeConfig.setRoleArn("DescribeDeployedApiResponse.ServiceConfig.FunctionComputeConfig.RoleArn");
+        serviceConfig.setFunctionComputeConfig(functionComputeConfig);
 
 		serviceConfig.setMockStatusCode(context.integerValue("DescribeDeployedApiResponse.ServiceConfig.MockStatusCode"));
 

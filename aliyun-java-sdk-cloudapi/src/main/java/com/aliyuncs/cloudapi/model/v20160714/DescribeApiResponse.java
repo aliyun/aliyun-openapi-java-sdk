@@ -818,6 +818,8 @@ public class DescribeApiResponse extends AcsResponse {
 
         private VpcConfig vpcConfig;
 
+        private FunctionComputeConfig functionComputeConfig;
+
         /**
          * 用户定义给后端的ContentType的类型：
          * DEFAULT:服务器默认
@@ -944,6 +946,14 @@ public class DescribeApiResponse extends AcsResponse {
         public void setMockHeaders(List<MockHeader> mockHeaders) {
             this.mockHeaders = mockHeaders;
         }
+
+        public FunctionComputeConfig getFunctionComputeConfig() {
+            return functionComputeConfig;
+        }
+
+        public void setFunctionComputeConfig(FunctionComputeConfig functionComputeConfig) {
+            this.functionComputeConfig = functionComputeConfig;
+        }
     }
 
     public static class MockHeader{
@@ -1049,6 +1059,46 @@ public class DescribeApiResponse extends AcsResponse {
 
         public void setName(String name) {
             this.name = name;
+        }
+    }
+
+    public static class FunctionComputeConfig {
+
+        private String fcRegionId;
+        private String serviceName;
+        private String functionName;
+        private String roleArn;
+
+        public String getFcRegionId() {
+            return fcRegionId;
+        }
+
+        public void setFcRegionId(String fcRegionId) {
+            this.fcRegionId = fcRegionId;
+        }
+
+        public String getServiceName() {
+            return serviceName;
+        }
+
+        public void setServiceName(String serviceName) {
+            this.serviceName = serviceName;
+        }
+
+        public String getFunctionName() {
+            return functionName;
+        }
+
+        public void setFunctionName(String functionName) {
+            this.functionName = functionName;
+        }
+
+        public String getRoleArn() {
+            return roleArn;
+        }
+
+        public void setRoleArn(String roleArn) {
+            this.roleArn = roleArn;
         }
     }
 
