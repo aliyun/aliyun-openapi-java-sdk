@@ -6,6 +6,10 @@ jdk:
   - oraclejdk8
   - oraclejdk9
   - oraclejdk11
+ 
+branches: # build only on these branches
+  only:
+    - master
 
 script:
   - mvn test -B -f ./aliyun-java-sdk-core/pom.xml
