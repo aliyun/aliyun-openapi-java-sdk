@@ -1,3 +1,8 @@
+2019-03-01 Version: 4.3.5
+1. Update endpoint data
+2. Modify the default client to apache client
+3. Multiple SDK clients share one connection pool
+
 2019-01-31 Version: 4.3.4
 1. Add User-Agent to the http/https protocol
 2. Add User-Agent test
