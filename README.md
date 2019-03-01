@@ -76,14 +76,6 @@ The following code example shows the three main steps to use Alibaba Cloud Java 
              "<your-region-id>",          // The region ID
              "<your-access-key-id>",      // The AccessKey ID of the RAM account
              "<your-access-key-secret>"); // The AccessKey Secret of the RAM account
-         
-         // Multiple SDK clients share the same HTTP client, set the parameters for 
-         // this client here such as maxRequestsPerHost, maxRequests, etc.
-         HttpClientConfig clientConfig = HttpClientConfig.getDefault();
-         clientConfig.setMaxRequestsPerHost(6);
-         clientConfig.setMaxRequests(60);
-         
-         profile.setHttpClientConfig(clientConfig);
          IAcsClient client = new DefaultAcsClient(profile);
          // Create an API request and set parameters
          DescribeInstancesRequest request = new DescribeInstancesRequest();
@@ -106,3 +98,22 @@ The following code example shows the three main steps to use Alibaba Cloud Java 
 
 ## Debugging
 If there is an environment variable DEBUG=sdk , all http request/response will work in debug mode.
+
+## Configure the connection pool
+Multiple SDK clients share the same connection pool, configure the pool in the initialization phase of the client
+```java
+// Create and initialize a DefaultAcsClient instance
+DefaultProfile profile = DefaultProfile.getProfile(
+"<your-region-id>",          // The region ID
+"<your-access-key-id>",      // The AccessKey ID of the RAM account
+"<your-access-key-secret>"); // The AccessKey Secret of the RAM account
+
+// Multiple SDK clients share the same connection pool, set the
+// parameters for this pool here such as maxRequestsPerHost, timeout, etc.
+HttpClientConfig clientConfig = HttpClientConfig.getDefault();
+clientConfig.setMaxRequestsPerHost(6);
+clientConfig.setMaxRequests(60);
+
+profile.setHttpClientConfig(clientConfig);
+IAcsClient client = new DefaultAcsClient(profile);
+```
