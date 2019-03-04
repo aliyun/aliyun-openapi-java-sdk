@@ -20,38 +20,30 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class QueryInstanceBillRequest extends RpcAcsRequest<QueryInstanceBillResponse> {
+public class QueryPriceListRequest extends RpcAcsRequest<QueryPriceListResponse> {
 	
-	public QueryInstanceBillRequest() {
-		super("BssOpenApi", "2017-12-14", "QueryInstanceBill");
+	public QueryPriceListRequest() {
+		super("BssOpenApi", "2017-12-14", "QueryPriceList");
 	}
 
-	private Boolean isBillingItem;
+	private String moduleCode;
 
 	private String productCode;
 
-	private Boolean isHideZeroCharge;
-
 	private String subscriptionType;
-
-	private Integer pageSize;
-
-	private String billingCycle;
 
 	private Long ownerId;
 
-	private Integer pageNum;
-
 	private String productType;
 
-	public Boolean getIsBillingItem() {
-		return this.isBillingItem;
+	public String getModuleCode() {
+		return this.moduleCode;
 	}
 
-	public void setIsBillingItem(Boolean isBillingItem) {
-		this.isBillingItem = isBillingItem;
-		if(isBillingItem != null){
-			putQueryParameter("IsBillingItem", isBillingItem.toString());
+	public void setModuleCode(String moduleCode) {
+		this.moduleCode = moduleCode;
+		if(moduleCode != null){
+			putQueryParameter("ModuleCode", moduleCode);
 		}
 	}
 
@@ -66,17 +58,6 @@ public class QueryInstanceBillRequest extends RpcAcsRequest<QueryInstanceBillRes
 		}
 	}
 
-	public Boolean getIsHideZeroCharge() {
-		return this.isHideZeroCharge;
-	}
-
-	public void setIsHideZeroCharge(Boolean isHideZeroCharge) {
-		this.isHideZeroCharge = isHideZeroCharge;
-		if(isHideZeroCharge != null){
-			putQueryParameter("IsHideZeroCharge", isHideZeroCharge.toString());
-		}
-	}
-
 	public String getSubscriptionType() {
 		return this.subscriptionType;
 	}
@@ -88,28 +69,6 @@ public class QueryInstanceBillRequest extends RpcAcsRequest<QueryInstanceBillRes
 		}
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
-	public String getBillingCycle() {
-		return this.billingCycle;
-	}
-
-	public void setBillingCycle(String billingCycle) {
-		this.billingCycle = billingCycle;
-		if(billingCycle != null){
-			putQueryParameter("BillingCycle", billingCycle);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -118,17 +77,6 @@ public class QueryInstanceBillRequest extends RpcAcsRequest<QueryInstanceBillRes
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public Integer getPageNum() {
-		return this.pageNum;
-	}
-
-	public void setPageNum(Integer pageNum) {
-		this.pageNum = pageNum;
-		if(pageNum != null){
-			putQueryParameter("PageNum", pageNum.toString());
 		}
 	}
 
@@ -144,8 +92,8 @@ public class QueryInstanceBillRequest extends RpcAcsRequest<QueryInstanceBillRes
 	}
 
 	@Override
-	public Class<QueryInstanceBillResponse> getResponseClass() {
-		return QueryInstanceBillResponse.class;
+	public Class<QueryPriceListResponse> getResponseClass() {
+		return QueryPriceListResponse.class;
 	}
 
 }

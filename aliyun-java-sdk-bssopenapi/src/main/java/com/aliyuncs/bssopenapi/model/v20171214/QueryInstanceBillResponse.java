@@ -151,15 +151,9 @@ public class QueryInstanceBillResponse extends AcsResponse {
 
 			private String instanceID;
 
-			private String nickName;
-
 			private Float servicePeriod;
 
 			private String billingType;
-
-			private String instanceConfig;
-
-			private String instanceSpec;
 
 			private String costUnit;
 
@@ -173,13 +167,7 @@ public class QueryInstanceBillResponse extends AcsResponse {
 
 			private String productDetail;
 
-			private String tag;
-
-			private String resourceGroup;
-
 			private Long ownerID;
-
-			private String region;
 
 			private String billingItem;
 
@@ -219,14 +207,6 @@ public class QueryInstanceBillResponse extends AcsResponse {
 				this.instanceID = instanceID;
 			}
 
-			public String getNickName() {
-				return this.nickName;
-			}
-
-			public void setNickName(String nickName) {
-				this.nickName = nickName;
-			}
-
 			public Float getServicePeriod() {
 				return this.servicePeriod;
 			}
@@ -241,22 +221,6 @@ public class QueryInstanceBillResponse extends AcsResponse {
 
 			public void setBillingType(String billingType) {
 				this.billingType = billingType;
-			}
-
-			public String getInstanceConfig() {
-				return this.instanceConfig;
-			}
-
-			public void setInstanceConfig(String instanceConfig) {
-				this.instanceConfig = instanceConfig;
-			}
-
-			public String getInstanceSpec() {
-				return this.instanceSpec;
-			}
-
-			public void setInstanceSpec(String instanceSpec) {
-				this.instanceSpec = instanceSpec;
 			}
 
 			public String getCostUnit() {
@@ -307,36 +271,12 @@ public class QueryInstanceBillResponse extends AcsResponse {
 				this.productDetail = productDetail;
 			}
 
-			public String getTag() {
-				return this.tag;
-			}
-
-			public void setTag(String tag) {
-				this.tag = tag;
-			}
-
-			public String getResourceGroup() {
-				return this.resourceGroup;
-			}
-
-			public void setResourceGroup(String resourceGroup) {
-				this.resourceGroup = resourceGroup;
-			}
-
 			public Long getOwnerID() {
 				return this.ownerID;
 			}
 
 			public void setOwnerID(Long ownerID) {
 				this.ownerID = ownerID;
-			}
-
-			public String getRegion() {
-				return this.region;
-			}
-
-			public void setRegion(String region) {
-				this.region = region;
 			}
 
 			public String getBillingItem() {

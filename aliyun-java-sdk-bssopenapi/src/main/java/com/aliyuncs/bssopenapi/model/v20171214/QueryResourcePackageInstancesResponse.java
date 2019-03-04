@@ -177,6 +177,14 @@ public class QueryResourcePackageInstancesResponse extends AcsResponse {
 
 			private String remark;
 
+			private String packageType;
+
+			private String status;
+
+			private String deductType;
+
+			private List<String> applicableProducts;
+
 			public String getInstanceId() {
 				return this.instanceId;
 			}
@@ -247,6 +255,38 @@ public class QueryResourcePackageInstancesResponse extends AcsResponse {
 
 			public void setRemark(String remark) {
 				this.remark = remark;
+			}
+
+			public String getPackageType() {
+				return this.packageType;
+			}
+
+			public void setPackageType(String packageType) {
+				this.packageType = packageType;
+			}
+
+			public String getStatus() {
+				return this.status;
+			}
+
+			public void setStatus(String status) {
+				this.status = status;
+			}
+
+			public String getDeductType() {
+				return this.deductType;
+			}
+
+			public void setDeductType(String deductType) {
+				this.deductType = deductType;
+			}
+
+			public List<String> getApplicableProducts() {
+				return this.applicableProducts;
+			}
+
+			public void setApplicableProducts(List<String> applicableProducts) {
+				this.applicableProducts = applicableProducts;
 			}
 		}
 	}

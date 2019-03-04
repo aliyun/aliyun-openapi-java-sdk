@@ -44,21 +44,15 @@ public class QueryInstanceBillResponseUnmarshaller {
 		for (int i = 0; i < context.lengthValue("QueryInstanceBillResponse.Data.Items.Length"); i++) {
 			Item item = new Item();
 			item.setInstanceID(context.stringValue("QueryInstanceBillResponse.Data.Items["+ i +"].InstanceID"));
-			item.setNickName(context.stringValue("QueryInstanceBillResponse.Data.Items["+ i +"].NickName"));
 			item.setServicePeriod(context.floatValue("QueryInstanceBillResponse.Data.Items["+ i +"].ServicePeriod"));
 			item.setBillingType(context.stringValue("QueryInstanceBillResponse.Data.Items["+ i +"].BillingType"));
-			item.setInstanceConfig(context.stringValue("QueryInstanceBillResponse.Data.Items["+ i +"].InstanceConfig"));
-			item.setInstanceSpec(context.stringValue("QueryInstanceBillResponse.Data.Items["+ i +"].InstanceSpec"));
 			item.setCostUnit(context.stringValue("QueryInstanceBillResponse.Data.Items["+ i +"].CostUnit"));
 			item.setProductCode(context.stringValue("QueryInstanceBillResponse.Data.Items["+ i +"].ProductCode"));
 			item.setProductType(context.stringValue("QueryInstanceBillResponse.Data.Items["+ i +"].ProductType"));
 			item.setSubscriptionType(context.stringValue("QueryInstanceBillResponse.Data.Items["+ i +"].SubscriptionType"));
 			item.setProductName(context.stringValue("QueryInstanceBillResponse.Data.Items["+ i +"].ProductName"));
 			item.setProductDetail(context.stringValue("QueryInstanceBillResponse.Data.Items["+ i +"].ProductDetail"));
-			item.setTag(context.stringValue("QueryInstanceBillResponse.Data.Items["+ i +"].Tag"));
-			item.setResourceGroup(context.stringValue("QueryInstanceBillResponse.Data.Items["+ i +"].ResourceGroup"));
 			item.setOwnerID(context.longValue("QueryInstanceBillResponse.Data.Items["+ i +"].OwnerID"));
-			item.setRegion(context.stringValue("QueryInstanceBillResponse.Data.Items["+ i +"].Region"));
 			item.setBillingItem(context.stringValue("QueryInstanceBillResponse.Data.Items["+ i +"].BillingItem"));
 			item.setListPrice(context.floatValue("QueryInstanceBillResponse.Data.Items["+ i +"].ListPrice"));
 			item.setListPriceUnit(context.stringValue("QueryInstanceBillResponse.Data.Items["+ i +"].ListPriceUnit"));
