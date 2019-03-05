@@ -49,6 +49,7 @@ public class ListPackageResponseUnmarshaller {
 			_package.setOssBucket(context.stringValue("ListPackageResponse.Packages["+ i +"].OssBucket"));
 			_package.setOssOwner(context.stringValue("ListPackageResponse.Packages["+ i +"].OssOwner"));
 			_package.setOssPath(context.stringValue("ListPackageResponse.Packages["+ i +"].OssPath"));
+			_package.setTag(context.stringValue("ListPackageResponse.Packages["+ i +"].Tag"));
 
 			packages.add(_package);
 		}

@@ -39,6 +39,8 @@ public class ListPackageRequest extends RoaAcsRequest<ListPackageResponse> {
 
 	private Integer pageIndex;
 
+	private String tag;
+
 	private String type;
 
 	public String getProjectName() {
@@ -82,6 +84,17 @@ public class ListPackageRequest extends RoaAcsRequest<ListPackageResponse> {
 		this.pageIndex = pageIndex;
 		if(pageIndex != null){
 			putQueryParameter("pageIndex", pageIndex.toString());
+		}
+	}
+
+	public String getTag() {
+		return this.tag;
+	}
+
+	public void setTag(String tag) {
+		this.tag = tag;
+		if(tag != null){
+			putQueryParameter("tag", tag);
 		}
 	}
 

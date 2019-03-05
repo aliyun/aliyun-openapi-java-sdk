@@ -1,3 +1,8 @@
+2019-03-05 Version: 1.1.0
+1, add ListProject api.
+2, GetRefPackageJobRequest api add pageSize and pageIndex parameter.
+3, GetPackageResponse api add tag return value.
+
 2019-01-25 Version: 1.0.0
 1, the first version 1.0.0 of aliyun-java-sdk-foas
 

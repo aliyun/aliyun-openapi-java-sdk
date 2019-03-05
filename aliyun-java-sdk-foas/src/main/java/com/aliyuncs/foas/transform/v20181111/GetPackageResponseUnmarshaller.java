@@ -40,6 +40,7 @@ public class GetPackageResponseUnmarshaller {
 		_package.setOssBucket(context.stringValue("GetPackageResponse.Package.OssBucket"));
 		_package.setOssOwner(context.stringValue("GetPackageResponse.Package.OssOwner"));
 		_package.setOssPath(context.stringValue("GetPackageResponse.Package.OssPath"));
+		_package.setTag(context.stringValue("GetPackageResponse.Package.Tag"));
 		getPackageResponse.set_Package(_package);
 	 
 	 	return getPackageResponse;

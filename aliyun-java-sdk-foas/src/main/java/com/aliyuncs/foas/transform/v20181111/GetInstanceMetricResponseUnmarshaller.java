@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.foas.model.v20181111.GetInstanceMetricResponse;
 import com.aliyuncs.foas.model.v20181111.GetInstanceMetricResponse.Metric;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

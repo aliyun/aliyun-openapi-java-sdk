@@ -74,6 +74,8 @@ public class GetPackageResponse extends AcsResponse {
 
 		private String ossPath;
 
+		private String tag;
+
 		public String getProjectName() {
 			return this.projectName;
 		}
@@ -184,6 +186,14 @@ public class GetPackageResponse extends AcsResponse {
 
 		public void setOssPath(String ossPath) {
 			this.ossPath = ossPath;
+		}
+
+		public String getTag() {
+			return this.tag;
+		}
+
+		public void setTag(String tag) {
+			this.tag = tag;
 		}
 	}
 

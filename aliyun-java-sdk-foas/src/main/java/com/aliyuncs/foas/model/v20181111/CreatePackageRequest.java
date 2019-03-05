@@ -43,6 +43,8 @@ public class CreatePackageRequest extends RoaAcsRequest<CreatePackageResponse> {
 
 	private String description;
 
+	private String tag;
+
 	private String originName;
 
 	private String type;
@@ -114,6 +116,17 @@ public class CreatePackageRequest extends RoaAcsRequest<CreatePackageResponse> {
 		this.description = description;
 		if(description != null){
 			putBodyParameter("description", description);
+		}
+	}
+
+	public String getTag() {
+		return this.tag;
+	}
+
+	public void setTag(String tag) {
+		this.tag = tag;
+		if(tag != null){
+			putBodyParameter("tag", tag);
 		}
 	}
 

@@ -3,7 +3,7 @@
   <groupId>com.aliyun</groupId>
   <artifactId>aliyun-java-sdk-foas</artifactId>
   <packaging>jar</packaging>
-  <version>1.0.0</version>
+  <version>1.1.0</version>
     <name>aliyun-java-sdk-foas</name>
   <url>http://www.aliyun.com</url>
   <description>Aliyun Open API SDK for Java
@@ -30,7 +30,8 @@ http://www.aliyun.com</description>
   	<dependency>
   		<groupId>com.aliyun</groupId>
   		<artifactId>aliyun-java-sdk-core</artifactId>
-  		<version>4.2.3</version>
+		<optional>true</optional>
+  		<version>[4.3.2,5.0.0)</version>
   	</dependency>
   </dependencies>
 	<licenses>

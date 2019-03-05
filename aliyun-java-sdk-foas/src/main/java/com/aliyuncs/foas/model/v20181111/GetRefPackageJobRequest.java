@@ -35,6 +35,10 @@ public class GetRefPackageJobRequest extends RoaAcsRequest<GetRefPackageJobRespo
 
 	private String packageName;
 
+	private Integer pageSize;
+
+	private Integer pageIndex;
+
 	public String getProjectName() {
 		return this.projectName;
 	}
@@ -54,6 +58,28 @@ public class GetRefPackageJobRequest extends RoaAcsRequest<GetRefPackageJobRespo
 		this.packageName = packageName;
 		if(packageName != null){
 			putPathParameter("packageName", packageName);
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("pageSize", pageSize.toString());
+		}
+	}
+
+	public Integer getPageIndex() {
+		return this.pageIndex;
+	}
+
+	public void setPageIndex(Integer pageIndex) {
+		this.pageIndex = pageIndex;
+		if(pageIndex != null){
+			putQueryParameter("pageIndex", pageIndex.toString());
 		}
 	}
 
