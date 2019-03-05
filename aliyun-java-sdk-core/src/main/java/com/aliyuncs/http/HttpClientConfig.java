@@ -1,17 +1,20 @@
 package com.aliyuncs.http;
 
-import javax.net.ssl.HostnameVerifier;
-import javax.net.ssl.KeyManager;
-import javax.net.ssl.SSLSocketFactory;
-import javax.net.ssl.X509TrustManager;
 import java.security.SecureRandom;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.ExecutorService;
 
+import javax.net.ssl.HostnameVerifier;
+import javax.net.ssl.KeyManager;
+import javax.net.ssl.SSLSocketFactory;
+import javax.net.ssl.X509TrustManager;
 
 public class HttpClientConfig {
 
+    public static final long DEFAULT_CONNECTION_TIMEOUT = 5000;
+
+    public static final long DEFAULT_READ_TIMEOUT = 10000;
     /**
      * client type
      */
@@ -28,8 +31,8 @@ public class HttpClientConfig {
     /**
      * timeout
      **/
-    private long connectionTimeoutMillis = 15000L;
-    private long readTimeoutMillis = 15000L;
+    private long connectionTimeoutMillis = DEFAULT_CONNECTION_TIMEOUT;
+    private long readTimeoutMillis = DEFAULT_READ_TIMEOUT;
     private long writeTimeoutMillis = 15000L;
 
     /**

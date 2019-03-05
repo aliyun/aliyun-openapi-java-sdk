@@ -6,6 +6,7 @@ import org.apache.http.Header;
 import org.apache.http.HttpEntity;
 import org.apache.http.StatusLine;
 import org.apache.http.client.methods.CloseableHttpResponse;
+import org.apache.http.client.methods.HttpRequestBase;
 import org.apache.http.client.methods.HttpUriRequest;
 import org.apache.http.entity.ContentType;
 import org.apache.http.impl.client.CloseableHttpClient;
@@ -25,6 +26,8 @@ import javax.net.ssl.HostnameVerifier;
 import javax.net.ssl.SSLSocketFactory;
 import java.io.IOException;
 import java.lang.reflect.Field;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.security.SecureRandom;
 import java.util.HashMap;
 import java.util.Map;
@@ -326,5 +329,52 @@ public class ApacheHttpClientTest {
         Assert.assertEquals("UTF-8", response.getSysEncoding());
     }
 
+    @Test
+    public void testClientTimeout() throws ClientException, IOException, NoSuchFieldException, SecurityException,
+            IllegalArgumentException, IllegalAccessException, NoSuchMethodException, InvocationTargetException {
+        ApacheHttpClient.getInstance(HttpClientConfig.getDefault()).close();
+        HttpClientConfig config = HttpClientConfig.getDefault();
+        ApacheHttpClient apacheHttpClient = ApacheHttpClient.getInstance(config);
+        Method declaredMethod = ApacheHttpClient.class.getDeclaredMethod("parseToHttpRequest", HttpRequest.class);
+        declaredMethod.setAccessible(true);
+        HttpRequest apiReq = new HttpRequest("http://test.com");
+        apiReq.setSysMethod(MethodType.GET);
+        HttpRequestBase httpRequest = (HttpRequestBase) declaredMethod.invoke(apacheHttpClient, apiReq);
+        Assert.assertEquals(5000, httpRequest.getConfig().getConnectTimeout());
+        Assert.assertEquals(10000, httpRequest.getConfig().getSocketTimeout());
+        apacheHttpClient.close();
+
+        config.setConnectionTimeoutMillis(5010);
+        config.setReadTimeoutMillis(10010);
+        apacheHttpClient = ApacheHttpClient.getInstance(config);
+        httpRequest = (HttpRequestBase) declaredMethod.invoke(apacheHttpClient, apiReq);
+        Assert.assertEquals(5010, httpRequest.getConfig().getConnectTimeout());
+        Assert.assertEquals(10010, httpRequest.getConfig().getSocketTimeout());
+        apacheHttpClient.close();
+    }
+
+    @Test
+    public void testRequestTimeout() throws ClientException, IOException, NoSuchFieldException, SecurityException,
+            IllegalArgumentException, IllegalAccessException, NoSuchMethodException, InvocationTargetException {
+        ApacheHttpClient.getInstance(HttpClientConfig.getDefault()).close();
+        HttpClientConfig config = HttpClientConfig.getDefault();
+        config.setConnectionTimeoutMillis(5020);
+        config.setReadTimeoutMillis(10020);
+        ApacheHttpClient apacheHttpClient = ApacheHttpClient.getInstance(config);
+        Method declaredMethod = ApacheHttpClient.class.getDeclaredMethod("parseToHttpRequest", HttpRequest.class);
+        declaredMethod.setAccessible(true);
+        HttpRequest apiReq = new HttpRequest("http://test.com");
+        apiReq.setSysMethod(MethodType.GET);
+        HttpRequestBase httpRequest = (HttpRequestBase) declaredMethod.invoke(apacheHttpClient, apiReq);
+        Assert.assertEquals(5020, httpRequest.getConfig().getConnectTimeout());
+        Assert.assertEquals(10020, httpRequest.getConfig().getSocketTimeout());
+
+        apiReq.setSysConnectTimeout(5030);
+        apiReq.setSysReadTimeout(10030);
+        httpRequest = (HttpRequestBase) declaredMethod.invoke(apacheHttpClient, apiReq);
+        Assert.assertEquals(5030, httpRequest.getConfig().getConnectTimeout());
+        Assert.assertEquals(10030, httpRequest.getConfig().getSocketTimeout());
+        apacheHttpClient.close();
+    }
 
 }
