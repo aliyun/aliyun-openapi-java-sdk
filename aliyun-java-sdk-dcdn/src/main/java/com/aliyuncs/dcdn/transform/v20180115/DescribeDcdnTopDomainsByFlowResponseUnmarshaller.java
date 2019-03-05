@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.dcdn.model.v20180115.DescribeDcdnTopDomainsByFlowResponse;
 import com.aliyuncs.dcdn.model.v20180115.DescribeDcdnTopDomainsByFlowResponse.TopDomain;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

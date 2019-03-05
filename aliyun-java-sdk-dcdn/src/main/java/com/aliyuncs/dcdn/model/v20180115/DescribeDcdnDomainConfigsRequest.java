@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeDcdnDomainConfigsRequest extends RpcAcsRequest<DescribeDcdnDomainConfigsResponse> {
 	
 	public DescribeDcdnDomainConfigsRequest() {
-		super("dcdn", "2018-01-15", "DescribeDcdnDomainConfigs", "dcdn");
+		super("dcdn", "2018-01-15", "DescribeDcdnDomainConfigs");
 	}
 
 	private String functionNames;
@@ -45,10 +45,29 @@ public class DescribeDcdnDomainConfigsRequest extends RpcAcsRequest<DescribeDcdn
 		}
 	}
 
+	public String getBizSecurityToken() {
+		return this.securityToken;
+	}
+
+	public void setBizSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	/**
+	 * @deprecated use getBizSecurityToken instead of this.
+	 */
+	@Deprecated
 	public String getSecurityToken() {
 		return this.securityToken;
 	}
 
+	/**
+	 * @deprecated use setBizSecurityToken instead of this.
+	 */
+	@Deprecated
 	public void setSecurityToken(String securityToken) {
 		this.securityToken = securityToken;
 		if(securityToken != null){

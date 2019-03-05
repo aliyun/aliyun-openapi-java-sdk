@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeDcdnDomainTopReferVisitRequest extends RpcAcsRequest<DescribeDcdnDomainTopReferVisitResponse> {
 	
 	public DescribeDcdnDomainTopReferVisitRequest() {
-		super("dcdn", "2018-01-15", "DescribeDcdnDomainTopReferVisit", "dcdn");
+		super("dcdn", "2018-01-15", "DescribeDcdnDomainTopReferVisit");
 	}
 
 	private String securityToken;
@@ -36,10 +36,29 @@ public class DescribeDcdnDomainTopReferVisitRequest extends RpcAcsRequest<Descri
 
 	private Long ownerId;
 
+	public String getBizSecurityToken() {
+		return this.securityToken;
+	}
+
+	public void setBizSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	/**
+	 * @deprecated use getBizSecurityToken instead of this.
+	 */
+	@Deprecated
 	public String getSecurityToken() {
 		return this.securityToken;
 	}
 
+	/**
+	 * @deprecated use setBizSecurityToken instead of this.
+	 */
+	@Deprecated
 	public void setSecurityToken(String securityToken) {
 		this.securityToken = securityToken;
 		if(securityToken != null){

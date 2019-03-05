@@ -15,7 +15,6 @@
 package com.aliyuncs.dcdn.model.v20180115;
 
 import java.util.List;
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.dcdn.transform.v20180115.DescribeDcdnUserResourcePackageResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -56,6 +55,8 @@ public class DescribeDcdnUserResourcePackageResponse extends AcsResponse {
 
 		private String displayName;
 
+		private String templateName;
+
 		private String instanceId;
 
 		private String status;
@@ -94,6 +95,14 @@ public class DescribeDcdnUserResourcePackageResponse extends AcsResponse {
 
 		public void setDisplayName(String displayName) {
 			this.displayName = displayName;
+		}
+
+		public String getTemplateName() {
+			return this.templateName;
+		}
+
+		public void setTemplateName(String templateName) {
+			this.templateName = templateName;
 		}
 
 		public String getInstanceId() {

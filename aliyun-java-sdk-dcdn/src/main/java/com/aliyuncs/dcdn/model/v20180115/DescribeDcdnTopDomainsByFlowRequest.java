@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeDcdnTopDomainsByFlowRequest extends RpcAcsRequest<DescribeDcdnTopDomainsByFlowResponse> {
 	
 	public DescribeDcdnTopDomainsByFlowRequest() {
-		super("dcdn", "2018-01-15", "DescribeDcdnTopDomainsByFlow", "dcdn");
+		super("dcdn", "2018-01-15", "DescribeDcdnTopDomainsByFlow");
 	}
 
 	private String startTime;
@@ -58,10 +58,29 @@ public class DescribeDcdnTopDomainsByFlowRequest extends RpcAcsRequest<DescribeD
 		}
 	}
 
+	public String getBizProduct() {
+		return this.product;
+	}
+
+	public void setBizProduct(String product) {
+		this.product = product;
+		if(product != null){
+			putQueryParameter("Product", product);
+		}
+	}
+
+	/**
+	 * @deprecated use getBizProduct instead of this.
+	 */
+	@Deprecated
 	public String getProduct() {
 		return this.product;
 	}
 
+	/**
+	 * @deprecated use setBizProduct instead of this.
+	 */
+	@Deprecated
 	public void setProduct(String product) {
 		this.product = product;
 		if(product != null){

@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeDcdnDomainLogRequest extends RpcAcsRequest<DescribeDcdnDomainLogResponse> {
 	
 	public DescribeDcdnDomainLogRequest() {
-		super("dcdn", "2018-01-15", "DescribeDcdnDomainLog", "dcdn");
+		super("dcdn", "2018-01-15", "DescribeDcdnDomainLog");
 	}
 
 	private String startTime;

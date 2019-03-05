@@ -15,7 +15,6 @@
 package com.aliyuncs.dcdn.model.v20180115;
 
 import java.util.List;
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.dcdn.transform.v20180115.DescribeDcdnDomainConfigsResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;

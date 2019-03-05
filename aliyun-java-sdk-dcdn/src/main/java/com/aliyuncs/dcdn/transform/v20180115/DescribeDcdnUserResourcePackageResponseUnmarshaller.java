@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.dcdn.model.v20180115.DescribeDcdnUserResourcePackageResponse;
 import com.aliyuncs.dcdn.model.v20180115.DescribeDcdnUserResourcePackageResponse.ResourcePackageInfo;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -36,6 +35,7 @@ public class DescribeDcdnUserResourcePackageResponseUnmarshaller {
 			resourcePackageInfo.setInitCapacity(context.stringValue("DescribeDcdnUserResourcePackageResponse.ResourcePackageInfos["+ i +"].InitCapacity"));
 			resourcePackageInfo.setCommodityCode(context.stringValue("DescribeDcdnUserResourcePackageResponse.ResourcePackageInfos["+ i +"].CommodityCode"));
 			resourcePackageInfo.setDisplayName(context.stringValue("DescribeDcdnUserResourcePackageResponse.ResourcePackageInfos["+ i +"].DisplayName"));
+			resourcePackageInfo.setTemplateName(context.stringValue("DescribeDcdnUserResourcePackageResponse.ResourcePackageInfos["+ i +"].TemplateName"));
 			resourcePackageInfo.setInstanceId(context.stringValue("DescribeDcdnUserResourcePackageResponse.ResourcePackageInfos["+ i +"].InstanceId"));
 			resourcePackageInfo.setStatus(context.stringValue("DescribeDcdnUserResourcePackageResponse.ResourcePackageInfos["+ i +"].Status"));
 			resourcePackageInfo.setStartTime(context.stringValue("DescribeDcdnUserResourcePackageResponse.ResourcePackageInfos["+ i +"].StartTime"));

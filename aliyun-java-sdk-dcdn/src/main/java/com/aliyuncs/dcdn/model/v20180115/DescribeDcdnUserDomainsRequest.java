@@ -23,10 +23,18 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeDcdnUserDomainsRequest extends RpcAcsRequest<DescribeDcdnUserDomainsResponse> {
 	
 	public DescribeDcdnUserDomainsRequest() {
-		super("dcdn", "2018-01-15", "DescribeDcdnUserDomains", "dcdn");
+		super("dcdn", "2018-01-15", "DescribeDcdnUserDomains");
 	}
 
 	private String funcFilter;
+
+	private Boolean checkDomainShow;
+
+	private String resourceGroupId;
+
+	private String securityToken;
+
+	private Integer pageSize;
 
 	private String domainName;
 
@@ -40,14 +48,6 @@ public class DescribeDcdnUserDomainsRequest extends RpcAcsRequest<DescribeDcdnUs
 
 	private String domainSearchType;
 
-	private Boolean checkDomainShow;
-
-	private String resourceGroupId;
-
-	private String securityToken;
-
-	private Integer pageSize;
-
 	public String getFuncFilter() {
 		return this.funcFilter;
 	}
@@ -56,6 +56,69 @@ public class DescribeDcdnUserDomainsRequest extends RpcAcsRequest<DescribeDcdnUs
 		this.funcFilter = funcFilter;
 		if(funcFilter != null){
 			putQueryParameter("FuncFilter", funcFilter);
+		}
+	}
+
+	public Boolean getCheckDomainShow() {
+		return this.checkDomainShow;
+	}
+
+	public void setCheckDomainShow(Boolean checkDomainShow) {
+		this.checkDomainShow = checkDomainShow;
+		if(checkDomainShow != null){
+			putQueryParameter("CheckDomainShow", checkDomainShow.toString());
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
+	public String getBizSecurityToken() {
+		return this.securityToken;
+	}
+
+	public void setBizSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	/**
+	 * @deprecated use getBizSecurityToken instead of this.
+	 */
+	@Deprecated
+	public String getSecurityToken() {
+		return this.securityToken;
+	}
+
+	/**
+	 * @deprecated use setBizSecurityToken instead of this.
+	 */
+	@Deprecated
+	public void setSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 
@@ -122,50 +185,6 @@ public class DescribeDcdnUserDomainsRequest extends RpcAcsRequest<DescribeDcdnUs
 		this.domainSearchType = domainSearchType;
 		if(domainSearchType != null){
 			putQueryParameter("DomainSearchType", domainSearchType);
-		}
-	}
-
-	public Boolean getCheckDomainShow() {
-		return this.checkDomainShow;
-	}
-
-	public void setCheckDomainShow(Boolean checkDomainShow) {
-		this.checkDomainShow = checkDomainShow;
-		if(checkDomainShow != null){
-			putQueryParameter("CheckDomainShow", checkDomainShow.toString());
-		}
-	}
-
-	public String getResourceGroupId() {
-		return this.resourceGroupId;
-	}
-
-	public void setResourceGroupId(String resourceGroupId) {
-		this.resourceGroupId = resourceGroupId;
-		if(resourceGroupId != null){
-			putQueryParameter("ResourceGroupId", resourceGroupId);
-		}
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 

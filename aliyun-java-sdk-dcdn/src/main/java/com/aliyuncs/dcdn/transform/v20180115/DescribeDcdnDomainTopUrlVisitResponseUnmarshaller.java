@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.dcdn.model.v20180115.DescribeDcdnDomainTopUrlVisitResponse;
 import com.aliyuncs.dcdn.model.v20180115.DescribeDcdnDomainTopUrlVisitResponse.UrlList;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

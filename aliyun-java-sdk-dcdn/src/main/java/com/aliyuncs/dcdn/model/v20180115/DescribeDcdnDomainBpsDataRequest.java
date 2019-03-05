@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeDcdnDomainBpsDataRequest extends RpcAcsRequest<DescribeDcdnDomainBpsDataResponse> {
 	
 	public DescribeDcdnDomainBpsDataRequest() {
-		super("dcdn", "2018-01-15", "DescribeDcdnDomainBpsData", "dcdn");
+		super("dcdn", "2018-01-15", "DescribeDcdnDomainBpsData");
 	}
 
 	private String locationNameEn;

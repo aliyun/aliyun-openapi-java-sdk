@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.dcdn.model.v20180115.DescribeDcdnDomainRegionDataResponse;
 import com.aliyuncs.dcdn.model.v20180115.DescribeDcdnDomainRegionDataResponse.RegionProportionData;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
