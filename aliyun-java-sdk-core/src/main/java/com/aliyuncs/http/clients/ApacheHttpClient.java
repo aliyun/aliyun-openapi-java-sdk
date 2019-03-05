@@ -1,9 +1,22 @@
 package com.aliyuncs.http.clients;
 
-import com.aliyuncs.exceptions.ClientException;
-import com.aliyuncs.http.*;
-import com.aliyuncs.utils.IOUtils;
-import com.aliyuncs.utils.StringUtils;
+import java.io.IOException;
+import java.security.KeyManagementException;
+import java.security.NoSuchAlgorithmException;
+import java.security.cert.CertificateException;
+import java.security.cert.X509Certificate;
+import java.util.Map;
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Future;
+import java.util.concurrent.SynchronousQueue;
+import java.util.concurrent.ThreadFactory;
+import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicInteger;
+
+import javax.net.ssl.SSLContext;
+
 import org.apache.http.Header;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.config.RequestConfig;
@@ -28,15 +41,14 @@ import org.apache.http.ssl.SSLContextBuilder;
 import org.apache.http.ssl.TrustStrategy;
 import org.apache.http.util.EntityUtils;
 
-import javax.net.ssl.SSLContext;
-import java.io.IOException;
-import java.security.KeyManagementException;
-import java.security.NoSuchAlgorithmException;
-import java.security.cert.CertificateException;
-import java.security.cert.X509Certificate;
-import java.util.Map;
-import java.util.concurrent.*;
-import java.util.concurrent.atomic.AtomicInteger;
+import com.aliyuncs.exceptions.ClientException;
+import com.aliyuncs.http.CallBack;
+import com.aliyuncs.http.FormatType;
+import com.aliyuncs.http.HttpClientConfig;
+import com.aliyuncs.http.HttpRequest;
+import com.aliyuncs.http.IHttpClient;
+import com.aliyuncs.utils.IOUtils;
+import com.aliyuncs.utils.StringUtils;
 
 public class ApacheHttpClient extends IHttpClient {
 
@@ -127,7 +139,6 @@ public class ApacheHttpClient extends IHttpClient {
             }
         }
 
-
         // connPool
         connectionManager = new PoolingHttpClientConnectionManager(socketFactoryRegistryBuilder.build());
         connectionManager.setMaxTotal(config.getMaxRequests());
@@ -187,8 +198,21 @@ public class ApacheHttpClient extends IHttpClient {
             }
             builder.addHeader(entry.getKey(), entry.getValue());
         }
-
-
+        int connectTimeout;
+        int readTimeout;
+        if (null != apiReq.getSysConnectTimeout()) {
+            connectTimeout = apiReq.getSysConnectTimeout();
+        } else {
+            connectTimeout = (int) clientConfig.getConnectionTimeoutMillis();
+        }
+        if (null != apiReq.getSysReadTimeout()) {
+            readTimeout = apiReq.getSysReadTimeout();
+        } else {
+            readTimeout = (int) clientConfig.getReadTimeoutMillis();
+        }
+        RequestConfig requestConfig = RequestConfig.custom().setConnectTimeout(connectTimeout).setSocketTimeout(
+                readTimeout).setConnectionRequestTimeout((int) clientConfig.getWriteTimeoutMillis()).build();
+        builder.setConfig(requestConfig);
         return builder.build();
     }
 
@@ -197,8 +221,8 @@ public class ApacheHttpClient extends IHttpClient {
 
         // status code
         result.setStatus(httpResponse.getStatusLine().getStatusCode());
-        if ((httpResponse.getEntity() != null &&
-                (httpResponse.getEntity().getContentLength() > 0 || httpResponse.getEntity().isChunked()))) {
+        if ((httpResponse.getEntity() != null && (httpResponse.getEntity().getContentLength() > 0 || httpResponse
+                .getEntity().isChunked()))) {
             // content type
             Header contentTypeHeader = httpResponse.getEntity().getContentType();
             ContentType contentType = ContentType.parse(contentTypeHeader.getValue());
@@ -236,7 +260,7 @@ public class ApacheHttpClient extends IHttpClient {
 
     @Override
     public final Future<com.aliyuncs.http.HttpResponse> asyncInvoke(final HttpRequest apiRequest,
-                                                                    final CallBack callback) {
+            final CallBack callback) {
         return executorService.submit(new Callable<com.aliyuncs.http.HttpResponse>() {
             @Override
             public com.aliyuncs.http.HttpResponse call() throws Exception {
@@ -293,4 +317,5 @@ public class ApacheHttpClient extends IHttpClient {
             return new Thread(runnable, "Aliyun_SDK_Async_ThreadPool_" + counter.incrementAndGet());
         }
     }
+
 }

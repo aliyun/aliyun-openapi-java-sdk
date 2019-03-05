@@ -1,17 +1,19 @@
 package com.aliyuncs;
 
+import java.io.IOException;
+
+import org.junit.Before;
+
 import com.aliyuncs.auth.BasicSessionCredentials;
 import com.aliyuncs.auth.Credential;
 import com.aliyuncs.auth.sts.AssumeRoleRequest;
 import com.aliyuncs.auth.sts.AssumeRoleResponse;
 import com.aliyuncs.exceptions.ClientException;
 import com.aliyuncs.http.HttpClientConfig;
+import com.aliyuncs.http.HttpClientType;
 import com.aliyuncs.http.clients.ApacheHttpClient;
 import com.aliyuncs.profile.DefaultProfile;
 import com.aliyuncs.profile.IClientProfile;
-import org.junit.Before;
-
-import java.io.IOException;
 
 @SuppressWarnings("deprecation")
 public class BaseTest {
@@ -30,10 +32,49 @@ public class BaseTest {
         return new DefaultAcsClient(profile);
     }
 
-    protected DefaultAcsClient getTimeoutClientWithRegionId(String regionId) throws ClientException, IOException {
+    protected DefaultAcsClient getReadTimeoutClientWithRegionId(String regionId, Long readTimeoutMillis)
+            throws ClientException, IOException {
         HttpClientConfig clientConfig = HttpClientConfig.getDefault();
         ApacheHttpClient.getInstance(clientConfig).close();
-        clientConfig.setReadTimeoutMillis(1);
+        clientConfig.setReadTimeoutMillis(readTimeoutMillis);
+        IClientProfile profile = DefaultProfile.getProfile(regionId, accesskeyId, accesskeySecret);
+        profile.setHttpClientConfig(clientConfig);
+        return new DefaultAcsClient(profile);
+    }
+
+    protected DefaultAcsClient getConnectTimeoutClientWithRegionId(String regionId, Long connectionTimeoutMillis)
+            throws ClientException, IOException {
+        HttpClientConfig clientConfig = HttpClientConfig.getDefault();
+        ApacheHttpClient.getInstance(clientConfig).close();
+        clientConfig.setConnectionTimeoutMillis(connectionTimeoutMillis);
+        IClientProfile profile = DefaultProfile.getProfile(regionId, accesskeyId, accesskeySecret);
+        profile.setHttpClientConfig(clientConfig);
+        return new DefaultAcsClient(profile);
+    }
+
+    protected DefaultAcsClient getCompatibleUrlConnClient(String regionId) throws ClientException, IOException {
+        HttpClientConfig clientConfig = HttpClientConfig.getDefault();
+        clientConfig.setClientType(HttpClientType.Compatible);
+        IClientProfile profile = DefaultProfile.getProfile(regionId, accesskeyId, accesskeySecret);
+        profile.setHttpClientConfig(clientConfig);
+        return new DefaultAcsClient(profile);
+    }
+
+    protected DefaultAcsClient getReadTimeoutCompatibleUrlConnClient(String regionId, Long readTimeoutMillis)
+            throws ClientException, IOException {
+        HttpClientConfig clientConfig = HttpClientConfig.getDefault();
+        clientConfig.setClientType(HttpClientType.Compatible);
+        clientConfig.setReadTimeoutMillis(readTimeoutMillis);
+        IClientProfile profile = DefaultProfile.getProfile(regionId, accesskeyId, accesskeySecret);
+        profile.setHttpClientConfig(clientConfig);
+        return new DefaultAcsClient(profile);
+    }
+
+    protected DefaultAcsClient getConnectTimeoutCompatibleUrlConnClient(String regionId, Long connectionTimeoutMillis)
+            throws ClientException, IOException {
+        HttpClientConfig clientConfig = HttpClientConfig.getDefault();
+        clientConfig.setClientType(HttpClientType.Compatible);
+        clientConfig.setConnectionTimeoutMillis(connectionTimeoutMillis);
         IClientProfile profile = DefaultProfile.getProfile(regionId, accesskeyId, accesskeySecret);
         profile.setHttpClientConfig(clientConfig);
         return new DefaultAcsClient(profile);

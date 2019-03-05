@@ -1,6 +1,7 @@
 package com.aliyuncs.http.clients;
 
 import com.aliyuncs.exceptions.ClientException;
+import com.aliyuncs.exceptions.ServerException;
 import com.aliyuncs.http.*;
 import org.junit.Assert;
 import org.junit.Rule;
@@ -21,6 +22,8 @@ import javax.net.ssl.SSLSocketFactory;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.net.HttpURLConnection;
 import java.net.Proxy;
 import java.net.URL;
@@ -315,7 +318,6 @@ public class CompatibleUrlConnClientTest {
                 any(InputStream.class));
         Assert.assertEquals("http://www.aliyun.com", response.getSysUrl());
     }
-
 
     @Test
     public void syncInvokeNormalAndNoneMethodAndContentIsNotEmptyTest() throws Exception {
@@ -682,4 +684,46 @@ public class CompatibleUrlConnClientTest {
 
     }
 
+    @Test
+    public void testClientTimeout() throws IOException, ServerException, ClientException, NoSuchMethodException,
+            SecurityException, IllegalAccessException, IllegalArgumentException, InvocationTargetException {
+        HttpClientConfig clientConfig = HttpClientConfig.getDefault();
+        CompatibleUrlConnClient compatibleUrlConnClient = new CompatibleUrlConnClient(clientConfig);
+        HttpRequest request = new HttpRequest("http://test.com");
+        request.setSysMethod(MethodType.GET);
+
+        Method declaredMethod = CompatibleUrlConnClient.class.getDeclaredMethod("buildHttpConnection",
+                HttpRequest.class);
+        declaredMethod.setAccessible(true);
+        HttpURLConnection httpConn = (HttpURLConnection) declaredMethod.invoke(compatibleUrlConnClient, request);
+        Assert.assertEquals(HttpClientConfig.DEFAULT_CONNECTION_TIMEOUT, httpConn.getConnectTimeout());
+        Assert.assertEquals(HttpClientConfig.DEFAULT_READ_TIMEOUT, httpConn.getReadTimeout());
+
+        clientConfig.setConnectionTimeoutMillis(5010);
+        clientConfig.setReadTimeoutMillis(10010);
+        compatibleUrlConnClient = new CompatibleUrlConnClient(clientConfig);
+        httpConn = (HttpURLConnection) declaredMethod.invoke(compatibleUrlConnClient, request);
+        Assert.assertEquals(5010, httpConn.getConnectTimeout());
+        Assert.assertEquals(10010, httpConn.getReadTimeout());
+    }
+
+    @Test
+    public void testRequestTimeout() throws IOException, ServerException, ClientException, NoSuchMethodException,
+            SecurityException, IllegalAccessException, IllegalArgumentException, InvocationTargetException {
+        HttpClientConfig clientConfig = HttpClientConfig.getDefault();
+        clientConfig.setConnectionTimeoutMillis(5015);
+        clientConfig.setReadTimeoutMillis(10015);
+        CompatibleUrlConnClient compatibleUrlConnClient = new CompatibleUrlConnClient(clientConfig);
+        HttpRequest request = new HttpRequest("http://test.com");
+        request.setSysMethod(MethodType.GET);
+        request.setSysConnectTimeout(5020);
+        request.setSysReadTimeout(10020);
+        Method declaredMethod = CompatibleUrlConnClient.class.getDeclaredMethod("buildHttpConnection",
+                HttpRequest.class);
+        declaredMethod.setAccessible(true);
+        HttpURLConnection httpConn = (HttpURLConnection) declaredMethod.invoke(compatibleUrlConnClient, request);
+
+        Assert.assertEquals(5020, httpConn.getConnectTimeout());
+        Assert.assertEquals(10020, httpConn.getReadTimeout());
+    }
 }
