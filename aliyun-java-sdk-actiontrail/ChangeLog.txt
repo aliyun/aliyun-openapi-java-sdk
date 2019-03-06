@@ -1,3 +1,6 @@
+2019-03-06 Version: 1.0.0
+1, Release Actiontrail OpenApi.
+
 2019-03-06 Version: 1.1.5
 1, Release ActionTrail OpenApi
 

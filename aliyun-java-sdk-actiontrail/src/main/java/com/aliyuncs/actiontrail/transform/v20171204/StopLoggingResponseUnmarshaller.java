@@ -23,8 +23,6 @@ public class StopLoggingResponseUnmarshaller {
 	public static StopLoggingResponse unmarshall(StopLoggingResponse stopLoggingResponse, UnmarshallerContext context) {
 		
 		stopLoggingResponse.setRequestId(context.stringValue("StopLoggingResponse.RequestId"));
-		stopLoggingResponse.setParam(context.stringValue("StopLoggingResponse.Param"));
-		stopLoggingResponse.setResult(context.stringValue("StopLoggingResponse.Result"));
 	 
 	 	return stopLoggingResponse;
 	}

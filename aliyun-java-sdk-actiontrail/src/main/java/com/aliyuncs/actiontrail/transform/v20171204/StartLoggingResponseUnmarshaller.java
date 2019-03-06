@@ -23,8 +23,6 @@ public class StartLoggingResponseUnmarshaller {
 	public static StartLoggingResponse unmarshall(StartLoggingResponse startLoggingResponse, UnmarshallerContext context) {
 		
 		startLoggingResponse.setRequestId(context.stringValue("StartLoggingResponse.RequestId"));
-		startLoggingResponse.setParam(context.stringValue("StartLoggingResponse.Param"));
-		startLoggingResponse.setResult(context.stringValue("StartLoggingResponse.Result"));
 	 
 	 	return startLoggingResponse;
 	}
