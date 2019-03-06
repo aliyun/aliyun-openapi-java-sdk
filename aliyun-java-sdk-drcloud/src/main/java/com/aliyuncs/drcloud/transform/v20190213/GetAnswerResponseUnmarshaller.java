@@ -43,6 +43,7 @@ public class GetAnswerResponseUnmarshaller {
 		replyDTO.setAnswer(context.stringValue("GetAnswerResponse.Data.ReplyDTO.Answer"));
 		replyDTO.setLink(context.stringValue("GetAnswerResponse.Data.ReplyDTO.Link"));
 		replyDTO.setType(context.stringValue("GetAnswerResponse.Data.ReplyDTO.Type"));
+		replyDTO.setDocTitle(context.stringValue("GetAnswerResponse.Data.ReplyDTO.DocTitle"));
 		data.setReplyDTO(replyDTO);
 		getAnswerResponse.setData(data);
 	 

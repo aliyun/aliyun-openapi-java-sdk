@@ -28,25 +28,27 @@ public class GetAnswerRequest extends RpcAcsRequest<GetAnswerResponse> {
 
 	private String nodeType;
 
-	private String userQuestion;
-
 	private Long docContentStructureId;
+
+	private String queryChannel;
+
+	private String sessionId;
+
+	private Integer needAnswerNum;
+
+	private String userQuestion;
 
 	private String sourceEnum;
 
 	private String sopInstanceKey;
 
-	private String queryChannel;
+	private String requestId;
 
 	private Long customerId;
 
 	private Long tenantId;
 
 	private String categories;
-
-	private String sessionId;
-
-	private Integer needAnswerNum;
 
 	private Long nodeId;
 
@@ -61,17 +63,6 @@ public class GetAnswerRequest extends RpcAcsRequest<GetAnswerResponse> {
 		}
 	}
 
-	public String getUserQuestion() {
-		return this.userQuestion;
-	}
-
-	public void setUserQuestion(String userQuestion) {
-		this.userQuestion = userQuestion;
-		if(userQuestion != null){
-			putQueryParameter("UserQuestion", userQuestion);
-		}
-	}
-
 	public Long getDocContentStructureId() {
 		return this.docContentStructureId;
 	}
@@ -80,6 +71,50 @@ public class GetAnswerRequest extends RpcAcsRequest<GetAnswerResponse> {
 		this.docContentStructureId = docContentStructureId;
 		if(docContentStructureId != null){
 			putQueryParameter("DocContentStructureId", docContentStructureId.toString());
+		}
+	}
+
+	public String getQueryChannel() {
+		return this.queryChannel;
+	}
+
+	public void setQueryChannel(String queryChannel) {
+		this.queryChannel = queryChannel;
+		if(queryChannel != null){
+			putQueryParameter("QueryChannel", queryChannel);
+		}
+	}
+
+	public String getSessionId() {
+		return this.sessionId;
+	}
+
+	public void setSessionId(String sessionId) {
+		this.sessionId = sessionId;
+		if(sessionId != null){
+			putQueryParameter("SessionId", sessionId);
+		}
+	}
+
+	public Integer getNeedAnswerNum() {
+		return this.needAnswerNum;
+	}
+
+	public void setNeedAnswerNum(Integer needAnswerNum) {
+		this.needAnswerNum = needAnswerNum;
+		if(needAnswerNum != null){
+			putQueryParameter("NeedAnswerNum", needAnswerNum.toString());
+		}
+	}
+
+	public String getUserQuestion() {
+		return this.userQuestion;
+	}
+
+	public void setUserQuestion(String userQuestion) {
+		this.userQuestion = userQuestion;
+		if(userQuestion != null){
+			putQueryParameter("UserQuestion", userQuestion);
 		}
 	}
 
@@ -105,14 +140,14 @@ public class GetAnswerRequest extends RpcAcsRequest<GetAnswerResponse> {
 		}
 	}
 
-	public String getQueryChannel() {
-		return this.queryChannel;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setQueryChannel(String queryChannel) {
-		this.queryChannel = queryChannel;
-		if(queryChannel != null){
-			putQueryParameter("QueryChannel", queryChannel);
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+		if(requestId != null){
+			putQueryParameter("RequestId", requestId);
 		}
 	}
 
@@ -146,28 +181,6 @@ public class GetAnswerRequest extends RpcAcsRequest<GetAnswerResponse> {
 		this.categories = categories;
 		if(categories != null){
 			putQueryParameter("Categories", categories);
-		}
-	}
-
-	public String getSessionId() {
-		return this.sessionId;
-	}
-
-	public void setSessionId(String sessionId) {
-		this.sessionId = sessionId;
-		if(sessionId != null){
-			putQueryParameter("SessionId", sessionId);
-		}
-	}
-
-	public Integer getNeedAnswerNum() {
-		return this.needAnswerNum;
-	}
-
-	public void setNeedAnswerNum(Integer needAnswerNum) {
-		this.needAnswerNum = needAnswerNum;
-		if(needAnswerNum != null){
-			putQueryParameter("NeedAnswerNum", needAnswerNum.toString());
 		}
 	}
 

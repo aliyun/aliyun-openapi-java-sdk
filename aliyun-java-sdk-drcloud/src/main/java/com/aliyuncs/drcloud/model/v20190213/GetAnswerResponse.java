@@ -139,6 +139,8 @@ public class GetAnswerResponse extends AcsResponse {
 
 			private String type;
 
+			private String docTitle;
+
 			public String getQuestion() {
 				return this.question;
 			}
@@ -169,6 +171,14 @@ public class GetAnswerResponse extends AcsResponse {
 
 			public void setType(String type) {
 				this.type = type;
+			}
+
+			public String getDocTitle() {
+				return this.docTitle;
+			}
+
+			public void setDocTitle(String docTitle) {
+				this.docTitle = docTitle;
 			}
 		}
 	}
