@@ -39,6 +39,13 @@ public class STSAssumeRoleSessionCredentialsProviderTest {
     }
 
     @Test
+    public void constructorNormalTest3(){
+        STSAssumeRoleSessionCredentialsProvider provider = new STSAssumeRoleSessionCredentialsProvider(
+                "","","","","");
+        Assert.assertNotNull(provider);
+    }
+
+    @Test
     public void constructorWillNullRoleArn() {
         thrown.expect(NullPointerException.class);
         AlibabaCloudCredentialsProvider mockProvider = mock(AlibabaCloudCredentialsProvider.class);

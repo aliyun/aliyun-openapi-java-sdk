@@ -18,7 +18,7 @@ import com.google.gson.JsonParser;
 
 public class ECSMetadataServiceCredentialsFetcher {
     private static final String URL_IN_ECS_METADATA = "/latest/meta-data/ram/security-credentials/";
-    private static final int DEFAULT_TIMEOUT_IN_MILLISECONDS = 5000;
+    private static final int DEFAULT_TIMEOUT_IN_MILLISECONDS = 1000;
     private static final String ECS_METADAT_FETCH_ERROR_MSG = "Failed to get RAM session credentials from ECS metadata service.";
     private static final int DEFAULT_ECS_SESSION_TOKEN_DURATION_SECONDS = 3600 * 6;
     private URL credentialUrl;

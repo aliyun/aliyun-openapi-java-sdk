@@ -8,8 +8,8 @@ import java.util.TimeZone;
 public class InstanceProfileCredentials extends BasicSessionCredentials {
 
     private final long expiration;
-    private final double expireFact = 0.9;
-    private final long refreshIntervalInMillSeconds = 10000; // 10 sec
+    private final double expireFact = 0.95;
+    private final long refreshIntervalInMillSeconds = 180000;
     private long lastFailedRefreshTime = 0;
 
     public InstanceProfileCredentials(String accessKeyId, String accessKeySecret, String sessionToken,

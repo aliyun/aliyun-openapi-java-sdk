@@ -29,6 +29,7 @@ import com.aliyuncs.auth.sts.AssumeRoleRequest;
 import com.aliyuncs.auth.sts.AssumeRoleResponse;
 import com.aliyuncs.exceptions.ClientException;
 import com.aliyuncs.exceptions.ServerException;
+import com.aliyuncs.profile.DefaultProfile;
 import com.aliyuncs.profile.IClientProfile;
 
 /**
@@ -80,6 +81,14 @@ public class STSAssumeRoleSessionCredentialsProvider implements AlibabaCloudCred
         this.roleSessionName = getNewRoleSessionName();
         this.stsClient = new DefaultAcsClient(clientProfile, longLivedCredentialsProvider);
         this.roleSessionDurationSeconds = DEFAULT_DURATION_SECONDS;
+    }
+    public STSAssumeRoleSessionCredentialsProvider(String accessKeyId, String accessKeySecret, String roleSessionName,
+                                                   String roleArn,String regionId) {
+        this.roleArn = roleArn;
+        this.roleSessionName = roleSessionName;
+        DefaultProfile profile = DefaultProfile.getProfile(regionId, accessKeyId, accessKeySecret);
+        this.stsClient = new DefaultAcsClient(profile);
+        this.roleSessionDurationSeconds = AuthConstant.TSC_VALID_TIME_SECONDS;
     }
 
     public static String getNewRoleSessionName() {
