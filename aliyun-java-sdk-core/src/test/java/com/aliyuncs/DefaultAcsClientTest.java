@@ -378,6 +378,21 @@ public class DefaultAcsClientTest {
         client.doAction(request);
     }
 
+    @Test
+    public void doActionTest() throws ClientException {
+        System.setProperty("alibabacloud.accessKeyId", "test");
+        System.setProperty("alibabacloud.accessKeyIdSecret", "test");
+        DefaultAcsClient client = new DefaultAcsClient();
+        DefaultEndpointResolver endpointResolver = Mockito.mock(DefaultEndpointResolver.class);
+        client.setEndpointResolver(endpointResolver);
+        String endPoint = "endpoint-test.exception.com";
+        Mockito.doReturn(endPoint).when(endpointResolver).resolve(Mockito.any(ResolveEndpointRequest.class));
+        AcsRequest request = initRequest(DescribeEndpointsResponse.class);
+        thrown.expect(ClientException.class);
+        thrown.expectMessage(ErrorCodeConstant.SDK_ENDPOINT_TESTABILITY + " : " + endPoint);
+        client.doAction(request);
+    }
+
     @SuppressWarnings({"unchecked", "rawtypes"})
     @Test
     public void testDoActionSocketTimeoutException() throws ClientException, IOException, IllegalArgumentException,
