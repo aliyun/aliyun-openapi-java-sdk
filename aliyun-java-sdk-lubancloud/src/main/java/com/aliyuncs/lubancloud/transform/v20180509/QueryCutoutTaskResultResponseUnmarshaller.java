@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.lubancloud.model.v20180509.QueryCutoutTaskResultResponse;
 import com.aliyuncs.lubancloud.model.v20180509.QueryCutoutTaskResultResponse.Picture;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

@@ -20,7 +20,6 @@ import java.util.List;
 import com.aliyuncs.lubancloud.model.v20180509.GetStylesResponse;
 import com.aliyuncs.lubancloud.model.v20180509.GetStylesResponse.Style;
 import com.aliyuncs.lubancloud.model.v20180509.GetStylesResponse.Style.SubStyle;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
