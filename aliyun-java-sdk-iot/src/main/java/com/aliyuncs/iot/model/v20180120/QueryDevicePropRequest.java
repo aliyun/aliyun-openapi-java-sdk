@@ -26,11 +26,24 @@ public class QueryDevicePropRequest extends RpcAcsRequest<QueryDevicePropRespons
 		super("Iot", "2018-01-20", "QueryDeviceProp", "iot");
 	}
 
+	private String iotId;
+
 	private String iotInstanceId;
 
 	private String deviceName;
 
 	private String productKey;
+
+	public String getIotId() {
+		return this.iotId;
+	}
+
+	public void setIotId(String iotId) {
+		this.iotId = iotId;
+		if(iotId != null){
+			putQueryParameter("IotId", iotId);
+		}
+	}
 
 	public String getIotInstanceId() {
 		return this.iotInstanceId;

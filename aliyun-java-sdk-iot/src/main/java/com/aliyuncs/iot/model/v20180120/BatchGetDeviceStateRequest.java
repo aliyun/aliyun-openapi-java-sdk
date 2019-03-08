@@ -27,11 +27,26 @@ public class BatchGetDeviceStateRequest extends RpcAcsRequest<BatchGetDeviceStat
 		super("Iot", "2018-01-20", "BatchGetDeviceState", "iot");
 	}
 
+	private List<String> iotIds;
+
 	private String iotInstanceId;
 
 	private List<String> deviceNames;
 
 	private String productKey;
+
+	public List<String> getIotIds() {
+		return this.iotIds;
+	}
+
+	public void setIotIds(List<String> iotIds) {
+		this.iotIds = iotIds;	
+		if (iotIds != null) {
+			for (int i = 0; i < iotIds.size(); i++) {
+				putQueryParameter("IotId." + (i + 1) , iotIds.get(i));
+			}
+		}	
+	}
 
 	public String getIotInstanceId() {
 		return this.iotInstanceId;

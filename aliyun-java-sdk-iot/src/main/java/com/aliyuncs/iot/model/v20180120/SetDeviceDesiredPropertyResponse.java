@@ -15,22 +15,22 @@
 package com.aliyuncs.iot.model.v20180120;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.iot.transform.v20180120.RegisterDeviceResponseUnmarshaller;
+import com.aliyuncs.iot.transform.v20180120.SetDeviceDesiredPropertyResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class RegisterDeviceResponse extends AcsResponse {
+public class SetDeviceDesiredPropertyResponse extends AcsResponse {
 
 	private String requestId;
 
 	private Boolean success;
 
-	private String code;
-
 	private String errorMessage;
+
+	private String code;
 
 	private Data data;
 
@@ -50,20 +50,20 @@ public class RegisterDeviceResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
 	public String getErrorMessage() {
 		return this.errorMessage;
 	}
 
 	public void setErrorMessage(String errorMessage) {
 		this.errorMessage = errorMessage;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public Data getData() {
@@ -76,69 +76,29 @@ public class RegisterDeviceResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String iotId;
+		private String messageId;
 
-		private String productKey;
+		private String versions;
 
-		private String deviceName;
-
-		private String deviceSecret;
-
-		private String devEui;
-
-		private String joinEui;
-
-		public String getIotId() {
-			return this.iotId;
+		public String getMessageId() {
+			return this.messageId;
 		}
 
-		public void setIotId(String iotId) {
-			this.iotId = iotId;
+		public void setMessageId(String messageId) {
+			this.messageId = messageId;
 		}
 
-		public String getProductKey() {
-			return this.productKey;
+		public String getVersions() {
+			return this.versions;
 		}
 
-		public void setProductKey(String productKey) {
-			this.productKey = productKey;
-		}
-
-		public String getDeviceName() {
-			return this.deviceName;
-		}
-
-		public void setDeviceName(String deviceName) {
-			this.deviceName = deviceName;
-		}
-
-		public String getDeviceSecret() {
-			return this.deviceSecret;
-		}
-
-		public void setDeviceSecret(String deviceSecret) {
-			this.deviceSecret = deviceSecret;
-		}
-
-		public String getDevEui() {
-			return this.devEui;
-		}
-
-		public void setDevEui(String devEui) {
-			this.devEui = devEui;
-		}
-
-		public String getJoinEui() {
-			return this.joinEui;
-		}
-
-		public void setJoinEui(String joinEui) {
-			this.joinEui = joinEui;
+		public void setVersions(String versions) {
+			this.versions = versions;
 		}
 	}
 
 	@Override
-	public RegisterDeviceResponse getInstance(UnmarshallerContext context) {
-		return	RegisterDeviceResponseUnmarshaller.unmarshall(this, context);
+	public SetDeviceDesiredPropertyResponse getInstance(UnmarshallerContext context) {
+		return	SetDeviceDesiredPropertyResponseUnmarshaller.unmarshall(this, context);
 	}
 }

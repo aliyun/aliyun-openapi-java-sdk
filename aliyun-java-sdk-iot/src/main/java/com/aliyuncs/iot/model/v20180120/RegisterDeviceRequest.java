@@ -26,11 +26,26 @@ public class RegisterDeviceRequest extends RpcAcsRequest<RegisterDeviceResponse>
 		super("Iot", "2018-01-20", "RegisterDevice", "iot");
 	}
 
+	private String pinCode;
+
 	private String iotInstanceId;
 
 	private String deviceName;
 
 	private String productKey;
+
+	private String devEui;
+
+	public String getPinCode() {
+		return this.pinCode;
+	}
+
+	public void setPinCode(String pinCode) {
+		this.pinCode = pinCode;
+		if(pinCode != null){
+			putQueryParameter("PinCode", pinCode);
+		}
+	}
 
 	public String getIotInstanceId() {
 		return this.iotInstanceId;
@@ -62,6 +77,17 @@ public class RegisterDeviceRequest extends RpcAcsRequest<RegisterDeviceResponse>
 		this.productKey = productKey;
 		if(productKey != null){
 			putQueryParameter("ProductKey", productKey);
+		}
+	}
+
+	public String getDevEui() {
+		return this.devEui;
+	}
+
+	public void setDevEui(String devEui) {
+		this.devEui = devEui;
+		if(devEui != null){
+			putQueryParameter("DevEui", devEui);
 		}
 	}
 

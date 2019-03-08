@@ -20,13 +20,15 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class SaveDevicePropRequest extends RpcAcsRequest<SaveDevicePropResponse> {
+public class SetDeviceDesiredPropertyRequest extends RpcAcsRequest<SetDeviceDesiredPropertyResponse> {
 	
-	public SaveDevicePropRequest() {
-		super("Iot", "2018-01-20", "SaveDeviceProp", "iot");
+	public SetDeviceDesiredPropertyRequest() {
+		super("Iot", "2018-01-20", "SetDeviceDesiredProperty", "iot");
 	}
 
 	private String iotId;
+
+	private String versions;
 
 	private String iotInstanceId;
 
@@ -34,7 +36,7 @@ public class SaveDevicePropRequest extends RpcAcsRequest<SaveDevicePropResponse>
 
 	private String productKey;
 
-	private String props;
+	private String items;
 
 	public String getIotId() {
 		return this.iotId;
@@ -44,6 +46,17 @@ public class SaveDevicePropRequest extends RpcAcsRequest<SaveDevicePropResponse>
 		this.iotId = iotId;
 		if(iotId != null){
 			putQueryParameter("IotId", iotId);
+		}
+	}
+
+	public String getVersions() {
+		return this.versions;
+	}
+
+	public void setVersions(String versions) {
+		this.versions = versions;
+		if(versions != null){
+			putQueryParameter("Versions", versions);
 		}
 	}
 
@@ -80,20 +93,20 @@ public class SaveDevicePropRequest extends RpcAcsRequest<SaveDevicePropResponse>
 		}
 	}
 
-	public String getProps() {
-		return this.props;
+	public String getItems() {
+		return this.items;
 	}
 
-	public void setProps(String props) {
-		this.props = props;
-		if(props != null){
-			putQueryParameter("Props", props);
+	public void setItems(String items) {
+		this.items = items;
+		if(items != null){
+			putQueryParameter("Items", items);
 		}
 	}
 
 	@Override
-	public Class<SaveDevicePropResponse> getResponseClass() {
-		return SaveDevicePropResponse.class;
+	public Class<SetDeviceDesiredPropertyResponse> getResponseClass() {
+		return SetDeviceDesiredPropertyResponse.class;
 	}
 
 }

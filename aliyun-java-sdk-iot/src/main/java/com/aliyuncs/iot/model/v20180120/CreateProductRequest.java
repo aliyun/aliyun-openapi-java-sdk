@@ -44,6 +44,8 @@ public class CreateProductRequest extends RpcAcsRequest<CreateProductResponse> {
 
 	private String aliyunCommodityCode;
 
+	private String joinPermissionId;
+
 	private Long categoryId;
 
 	public Integer getDataFormat() {
@@ -142,6 +144,17 @@ public class CreateProductRequest extends RpcAcsRequest<CreateProductResponse> {
 		this.aliyunCommodityCode = aliyunCommodityCode;
 		if(aliyunCommodityCode != null){
 			putQueryParameter("AliyunCommodityCode", aliyunCommodityCode);
+		}
+	}
+
+	public String getJoinPermissionId() {
+		return this.joinPermissionId;
+	}
+
+	public void setJoinPermissionId(String joinPermissionId) {
+		this.joinPermissionId = joinPermissionId;
+		if(joinPermissionId != null){
+			putQueryParameter("JoinPermissionId", joinPermissionId);
 		}
 	}
 
