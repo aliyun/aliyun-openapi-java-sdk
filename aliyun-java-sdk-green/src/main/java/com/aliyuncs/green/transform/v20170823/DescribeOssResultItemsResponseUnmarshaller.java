@@ -20,7 +20,6 @@ import java.util.List;
 import com.aliyuncs.green.model.v20170823.DescribeOssResultItemsResponse;
 import com.aliyuncs.green.model.v20170823.DescribeOssResultItemsResponse.ScanResult;
 import com.aliyuncs.green.model.v20170823.DescribeOssResultItemsResponse.ScanResult.FrameResult;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -45,7 +44,7 @@ public class DescribeOssResultItemsResponseUnmarshaller {
 			scanResult.setScanFinishedTime(context.stringValue("DescribeOssResultItemsResponse.ScanResultList["+ i +"].ScanFinishedTime"));
 			scanResult.setCreateTime(context.stringValue("DescribeOssResultItemsResponse.ScanResultList["+ i +"].CreateTime"));
 			scanResult.setSuggestion(context.stringValue("DescribeOssResultItemsResponse.ScanResultList["+ i +"].Suggestion"));
-			scanResult.setId(context.integerValue("DescribeOssResultItemsResponse.ScanResultList["+ i +"].Id"));
+			scanResult.setId(context.longValue("DescribeOssResultItemsResponse.ScanResultList["+ i +"].Id"));
 			scanResult.setBucket(context.stringValue("DescribeOssResultItemsResponse.ScanResultList["+ i +"].Bucket"));
 			scanResult.setObject(context.stringValue("DescribeOssResultItemsResponse.ScanResultList["+ i +"].Object"));
 			scanResult.setScore(context.stringValue("DescribeOssResultItemsResponse.ScanResultList["+ i +"].Score"));

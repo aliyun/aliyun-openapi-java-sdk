@@ -15,7 +15,6 @@
 package com.aliyuncs.green.model.v20170823;
 
 import java.util.List;
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.green.transform.v20170823.DescribeOssResultItemsResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -104,7 +103,7 @@ public class DescribeOssResultItemsResponse extends AcsResponse {
 
 		private String suggestion;
 
-		private Integer id;
+		private Long id;
 
 		private String bucket;
 
@@ -182,11 +181,11 @@ public class DescribeOssResultItemsResponse extends AcsResponse {
 			this.suggestion = suggestion;
 		}
 
-		public Integer getId() {
+		public Long getId() {
 			return this.id;
 		}
 
-		public void setId(Integer id) {
+		public void setId(Long id) {
 			this.id = id;
 		}
 
@@ -262,10 +261,26 @@ public class DescribeOssResultItemsResponse extends AcsResponse {
 				this.offset = offset;
 			}
 
+			public String getBizUrl() {
+				return this.url;
+			}
+
+			public void setBizUrl(String url) {
+				this.url = url;
+			}
+
+			/**
+			 * @deprecated use getBizUrl instead of this.
+			 */
+			@Deprecated
 			public String getUrl() {
 				return this.url;
 			}
 
+			/**
+			 * @deprecated use setBizUrl instead of this.
+			 */
+			@Deprecated
 			public void setUrl(String url) {
 				this.url = url;
 			}
