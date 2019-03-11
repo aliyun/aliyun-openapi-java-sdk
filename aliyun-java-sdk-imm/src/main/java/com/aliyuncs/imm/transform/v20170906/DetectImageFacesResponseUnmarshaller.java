@@ -22,6 +22,7 @@ import com.aliyuncs.imm.model.v20170906.DetectImageFacesResponse.FacesItem;
 import com.aliyuncs.imm.model.v20170906.DetectImageFacesResponse.FacesItem.EmotionDetails;
 import com.aliyuncs.imm.model.v20170906.DetectImageFacesResponse.FacesItem.FaceAttributes;
 import com.aliyuncs.imm.model.v20170906.DetectImageFacesResponse.FacesItem.FaceAttributes.FaceBoundary;
+import com.aliyuncs.imm.model.v20170906.DetectImageFacesResponse.FacesItem.FaceAttributes.HeadPose;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -45,6 +46,7 @@ public class DetectImageFacesResponseUnmarshaller {
 			facesItem.setAgeConfidence(context.floatValue("DetectImageFacesResponse.Faces["+ i +"].AgeConfidence"));
 			facesItem.setAttractiveConfidence(context.floatValue("DetectImageFacesResponse.Faces["+ i +"].AttractiveConfidence"));
 			facesItem.setEmotionConfidence(context.floatValue("DetectImageFacesResponse.Faces["+ i +"].EmotionConfidence"));
+			facesItem.setFaceQuality(context.floatValue("DetectImageFacesResponse.Faces["+ i +"].FaceQuality"));
 
 			FaceAttributes faceAttributes = new FaceAttributes();
 			faceAttributes.setGlasses(context.stringValue("DetectImageFacesResponse.Faces["+ i +"].FaceAttributes.Glasses"));
@@ -62,6 +64,12 @@ public class DetectImageFacesResponseUnmarshaller {
 			faceBoundary.setWidth(context.integerValue("DetectImageFacesResponse.Faces["+ i +"].FaceAttributes.FaceBoundary.Width"));
 			faceBoundary.setHeight(context.integerValue("DetectImageFacesResponse.Faces["+ i +"].FaceAttributes.FaceBoundary.Height"));
 			faceAttributes.setFaceBoundary(faceBoundary);
+
+			HeadPose headPose = new HeadPose();
+			headPose.setPitch(context.floatValue("DetectImageFacesResponse.Faces["+ i +"].FaceAttributes.HeadPose.Pitch"));
+			headPose.setRoll(context.floatValue("DetectImageFacesResponse.Faces["+ i +"].FaceAttributes.HeadPose.Roll"));
+			headPose.setYaw(context.floatValue("DetectImageFacesResponse.Faces["+ i +"].FaceAttributes.HeadPose.Yaw"));
+			faceAttributes.setHeadPose(headPose);
 			facesItem.setFaceAttributes(faceAttributes);
 
 			EmotionDetails emotionDetails = new EmotionDetails();

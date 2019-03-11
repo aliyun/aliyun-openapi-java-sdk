@@ -25,6 +25,7 @@ import com.aliyuncs.imm.model.v20170906.ListVideoFramesResponse.FramesItem.Faces
 import com.aliyuncs.imm.model.v20170906.ListVideoFramesResponse.FramesItem.FacesItem.EmotionDetails;
 import com.aliyuncs.imm.model.v20170906.ListVideoFramesResponse.FramesItem.FacesItem.FaceAttributes;
 import com.aliyuncs.imm.model.v20170906.ListVideoFramesResponse.FramesItem.FacesItem.FaceAttributes.FaceBoundary;
+import com.aliyuncs.imm.model.v20170906.ListVideoFramesResponse.FramesItem.FacesItem.FaceAttributes.HeadPose;
 import com.aliyuncs.imm.model.v20170906.ListVideoFramesResponse.FramesItem.OCRItem;
 import com.aliyuncs.imm.model.v20170906.ListVideoFramesResponse.FramesItem.OCRItem.OCRBoundary;
 import com.aliyuncs.imm.model.v20170906.ListVideoFramesResponse.FramesItem.TagsItem;
@@ -86,6 +87,8 @@ public class ListVideoFramesResponseUnmarshaller {
 				facesItem.setEmotion(context.stringValue("ListVideoFramesResponse.Frames["+ i +"].Faces["+ j +"].Emotion"));
 				facesItem.setFaceId(context.stringValue("ListVideoFramesResponse.Frames["+ i +"].Faces["+ j +"].FaceId"));
 				facesItem.setEmotionConfidence(context.floatValue("ListVideoFramesResponse.Frames["+ i +"].Faces["+ j +"].EmotionConfidence"));
+				facesItem.setGroupId(context.stringValue("ListVideoFramesResponse.Frames["+ i +"].Faces["+ j +"].GroupId"));
+				facesItem.setFaceQuality(context.floatValue("ListVideoFramesResponse.Frames["+ i +"].Faces["+ j +"].FaceQuality"));
 
 				EmotionDetails emotionDetails = new EmotionDetails();
 				emotionDetails.setSAD(context.floatValue("ListVideoFramesResponse.Frames["+ i +"].Faces["+ j +"].EmotionDetails.SAD"));
@@ -113,6 +116,12 @@ public class ListVideoFramesResponseUnmarshaller {
 				faceBoundary.setWidth(context.integerValue("ListVideoFramesResponse.Frames["+ i +"].Faces["+ j +"].FaceAttributes.FaceBoundary.Width"));
 				faceBoundary.setLeft(context.integerValue("ListVideoFramesResponse.Frames["+ i +"].Faces["+ j +"].FaceAttributes.FaceBoundary.Left"));
 				faceAttributes.setFaceBoundary(faceBoundary);
+
+				HeadPose headPose = new HeadPose();
+				headPose.setPitch(context.floatValue("ListVideoFramesResponse.Frames["+ i +"].Faces["+ j +"].FaceAttributes.HeadPose.Pitch"));
+				headPose.setRoll(context.floatValue("ListVideoFramesResponse.Frames["+ i +"].Faces["+ j +"].FaceAttributes.HeadPose.Roll"));
+				headPose.setYaw(context.floatValue("ListVideoFramesResponse.Frames["+ i +"].Faces["+ j +"].FaceAttributes.HeadPose.Yaw"));
+				faceAttributes.setHeadPose(headPose);
 				facesItem.setFaceAttributes(faceAttributes);
 
 				faces.add(facesItem);

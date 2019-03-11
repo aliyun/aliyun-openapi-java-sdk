@@ -28,6 +28,8 @@ public class ListImagesRequest extends RpcAcsRequest<ListImagesResponse> {
 
 	private String marker;
 
+	private Integer limit;
+
 	private String project;
 
 	private String setId;
@@ -42,6 +44,17 @@ public class ListImagesRequest extends RpcAcsRequest<ListImagesResponse> {
 		this.marker = marker;
 		if(marker != null){
 			putQueryParameter("Marker", marker);
+		}
+	}
+
+	public Integer getLimit() {
+		return this.limit;
+	}
+
+	public void setLimit(Integer limit) {
+		this.limit = limit;
+		if(limit != null){
+			putQueryParameter("Limit", limit.toString());
 		}
 	}
 

@@ -20,41 +20,39 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class FindImagesByTagNamesRequest extends RpcAcsRequest<FindImagesByTagNamesResponse> {
+public class CreateGroupFacesJobRequest extends RpcAcsRequest<CreateGroupFacesJobResponse> {
 	
-	public FindImagesByTagNamesRequest() {
-		super("imm", "2017-09-06", "FindImagesByTagNames", "imm");
+	public CreateGroupFacesJobRequest() {
+		super("imm", "2017-09-06", "CreateGroupFacesJob", "imm");
 	}
 
-	private String marker;
+	private String notifyTopicName;
 
-	private Integer limit;
+	private String notifyEndpoint;
 
 	private String project;
 
 	private String setId;
 
-	private String tagNames;
-
-	public String getMarker() {
-		return this.marker;
+	public String getNotifyTopicName() {
+		return this.notifyTopicName;
 	}
 
-	public void setMarker(String marker) {
-		this.marker = marker;
-		if(marker != null){
-			putQueryParameter("Marker", marker);
+	public void setNotifyTopicName(String notifyTopicName) {
+		this.notifyTopicName = notifyTopicName;
+		if(notifyTopicName != null){
+			putQueryParameter("NotifyTopicName", notifyTopicName);
 		}
 	}
 
-	public Integer getLimit() {
-		return this.limit;
+	public String getNotifyEndpoint() {
+		return this.notifyEndpoint;
 	}
 
-	public void setLimit(Integer limit) {
-		this.limit = limit;
-		if(limit != null){
-			putQueryParameter("Limit", limit.toString());
+	public void setNotifyEndpoint(String notifyEndpoint) {
+		this.notifyEndpoint = notifyEndpoint;
+		if(notifyEndpoint != null){
+			putQueryParameter("NotifyEndpoint", notifyEndpoint);
 		}
 	}
 
@@ -80,20 +78,9 @@ public class FindImagesByTagNamesRequest extends RpcAcsRequest<FindImagesByTagNa
 		}
 	}
 
-	public String getTagNames() {
-		return this.tagNames;
-	}
-
-	public void setTagNames(String tagNames) {
-		this.tagNames = tagNames;
-		if(tagNames != null){
-			putQueryParameter("TagNames", tagNames);
-		}
-	}
-
 	@Override
-	public Class<FindImagesByTagNamesResponse> getResponseClass() {
-		return FindImagesByTagNamesResponse.class;
+	public Class<CreateGroupFacesJobResponse> getResponseClass() {
+		return CreateGroupFacesJobResponse.class;
 	}
 
 }

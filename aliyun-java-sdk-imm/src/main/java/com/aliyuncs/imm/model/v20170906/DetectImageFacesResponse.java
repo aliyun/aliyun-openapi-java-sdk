@@ -77,6 +77,8 @@ public class DetectImageFacesResponse extends AcsResponse {
 
 		private Float emotionConfidence;
 
+		private Float faceQuality;
+
 		private FaceAttributes faceAttributes;
 
 		private EmotionDetails emotionDetails;
@@ -161,6 +163,14 @@ public class DetectImageFacesResponse extends AcsResponse {
 			this.emotionConfidence = emotionConfidence;
 		}
 
+		public Float getFaceQuality() {
+			return this.faceQuality;
+		}
+
+		public void setFaceQuality(Float faceQuality) {
+			this.faceQuality = faceQuality;
+		}
+
 		public FaceAttributes getFaceAttributes() {
 			return this.faceAttributes;
 		}
@@ -196,6 +206,8 @@ public class DetectImageFacesResponse extends AcsResponse {
 			private Float maskConfidence;
 
 			private FaceBoundary faceBoundary;
+
+			private HeadPose headPose;
 
 			public String getGlasses() {
 				return this.glasses;
@@ -269,6 +281,14 @@ public class DetectImageFacesResponse extends AcsResponse {
 				this.faceBoundary = faceBoundary;
 			}
 
+			public HeadPose getHeadPose() {
+				return this.headPose;
+			}
+
+			public void setHeadPose(HeadPose headPose) {
+				this.headPose = headPose;
+			}
+
 			public static class FaceBoundary {
 
 				private Integer left;
@@ -309,6 +329,39 @@ public class DetectImageFacesResponse extends AcsResponse {
 
 				public void setHeight(Integer height) {
 					this.height = height;
+				}
+			}
+
+			public static class HeadPose {
+
+				private Float pitch;
+
+				private Float roll;
+
+				private Float yaw;
+
+				public Float getPitch() {
+					return this.pitch;
+				}
+
+				public void setPitch(Float pitch) {
+					this.pitch = pitch;
+				}
+
+				public Float getRoll() {
+					return this.roll;
+				}
+
+				public void setRoll(Float roll) {
+					this.roll = roll;
+				}
+
+				public Float getYaw() {
+					return this.yaw;
+				}
+
+				public void setYaw(Float yaw) {
+					this.yaw = yaw;
 				}
 			}
 		}

@@ -42,6 +42,8 @@ public class FindImagesRequest extends RpcAcsRequest<FindImagesResponse> {
 
 	private String oCRContentsMatch;
 
+	private Integer limit;
+
 	private String remarksDPrefix;
 
 	private String sourceType;
@@ -51,6 +53,8 @@ public class FindImagesRequest extends RpcAcsRequest<FindImagesResponse> {
 	private String order;
 
 	private String remarksAPrefix;
+
+	private String groupId;
 
 	private String orderBy;
 
@@ -68,7 +72,7 @@ public class FindImagesRequest extends RpcAcsRequest<FindImagesResponse> {
 
 	private String setId;
 
-	private String updateTimeRange;
+	private String modifyTimeRange;
 
 	public String getGender() {
 		return this.gender;
@@ -158,6 +162,17 @@ public class FindImagesRequest extends RpcAcsRequest<FindImagesResponse> {
 		}
 	}
 
+	public Integer getLimit() {
+		return this.limit;
+	}
+
+	public void setLimit(Integer limit) {
+		this.limit = limit;
+		if(limit != null){
+			putQueryParameter("Limit", limit.toString());
+		}
+	}
+
 	public String getRemarksDPrefix() {
 		return this.remarksDPrefix;
 	}
@@ -210,6 +225,17 @@ public class FindImagesRequest extends RpcAcsRequest<FindImagesResponse> {
 		this.remarksAPrefix = remarksAPrefix;
 		if(remarksAPrefix != null){
 			putQueryParameter("RemarksAPrefix", remarksAPrefix);
+		}
+	}
+
+	public String getGroupId() {
+		return this.groupId;
+	}
+
+	public void setGroupId(String groupId) {
+		this.groupId = groupId;
+		if(groupId != null){
+			putQueryParameter("GroupId", groupId);
 		}
 	}
 
@@ -301,14 +327,14 @@ public class FindImagesRequest extends RpcAcsRequest<FindImagesResponse> {
 		}
 	}
 
-	public String getUpdateTimeRange() {
-		return this.updateTimeRange;
+	public String getModifyTimeRange() {
+		return this.modifyTimeRange;
 	}
 
-	public void setUpdateTimeRange(String updateTimeRange) {
-		this.updateTimeRange = updateTimeRange;
-		if(updateTimeRange != null){
-			putQueryParameter("UpdateTimeRange", updateTimeRange);
+	public void setModifyTimeRange(String modifyTimeRange) {
+		this.modifyTimeRange = modifyTimeRange;
+		if(modifyTimeRange != null){
+			putQueryParameter("ModifyTimeRange", modifyTimeRange);
 		}
 	}
 
