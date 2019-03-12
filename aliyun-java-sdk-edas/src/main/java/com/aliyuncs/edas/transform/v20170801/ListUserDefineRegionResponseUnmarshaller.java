@@ -39,8 +39,7 @@ public class ListUserDefineRegionResponseUnmarshaller {
 			userDefineRegionEntity.setRegionName(context.stringValue("ListUserDefineRegionResponse.UserDefineRegionList["+ i +"].RegionName"));
 			userDefineRegionEntity.setDescription(context.stringValue("ListUserDefineRegionResponse.UserDefineRegionList["+ i +"].Description"));
 			userDefineRegionEntity.setBelongRegion(context.stringValue("ListUserDefineRegionResponse.UserDefineRegionList["+ i +"].BelongRegion"));
-			userDefineRegionEntity.setHybridCloudEnable(context.booleanValue("ListUserDefineRegionResponse.UserDefineRegionList["+ i +"].HybridCloudEnable"));
-			userDefineRegionEntity.setVpcId(context.stringValue("ListUserDefineRegionResponse.UserDefineRegionList["+ i +"].VpcId"));
+			userDefineRegionEntity.setDebugEnable(context.booleanValue("ListUserDefineRegionResponse.UserDefineRegionList["+ i +"].DebugEnable"));
 
 			userDefineRegionList.add(userDefineRegionEntity);
 		}

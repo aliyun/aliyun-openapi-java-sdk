@@ -29,7 +29,20 @@ public class DeleteUserDefineRegionRequest extends RoaAcsRequest<DeleteUserDefin
 		setMethod(MethodType.DELETE);
 	}
 
+	private String regionTag;
+
 	private Long id;
+
+	public String getRegionTag() {
+		return this.regionTag;
+	}
+
+	public void setRegionTag(String regionTag) {
+		this.regionTag = regionTag;
+		if(regionTag != null){
+			putQueryParameter("RegionTag", regionTag);
+		}
+	}
 
 	public Long getId() {
 		return this.id;

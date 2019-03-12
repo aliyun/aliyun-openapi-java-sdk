@@ -29,9 +29,7 @@ public class InsertOrUpdateRegionRequest extends RoaAcsRequest<InsertOrUpdateReg
 		setMethod(MethodType.POST);
 	}
 
-	private Boolean hybridCloudEnable;
-
-	private String vpcId;
+	private Boolean debugEnable;
 
 	private String regionTag;
 
@@ -41,25 +39,14 @@ public class InsertOrUpdateRegionRequest extends RoaAcsRequest<InsertOrUpdateReg
 
 	private Long id;
 
-	public Boolean getHybridCloudEnable() {
-		return this.hybridCloudEnable;
+	public Boolean getDebugEnable() {
+		return this.debugEnable;
 	}
 
-	public void setHybridCloudEnable(Boolean hybridCloudEnable) {
-		this.hybridCloudEnable = hybridCloudEnable;
-		if(hybridCloudEnable != null){
-			putQueryParameter("HybridCloudEnable", hybridCloudEnable.toString());
-		}
-	}
-
-	public String getVpcId() {
-		return this.vpcId;
-	}
-
-	public void setVpcId(String vpcId) {
-		this.vpcId = vpcId;
-		if(vpcId != null){
-			putQueryParameter("VpcId", vpcId);
+	public void setDebugEnable(Boolean debugEnable) {
+		this.debugEnable = debugEnable;
+		if(debugEnable != null){
+			putQueryParameter("DebugEnable", debugEnable.toString());
 		}
 	}
 
