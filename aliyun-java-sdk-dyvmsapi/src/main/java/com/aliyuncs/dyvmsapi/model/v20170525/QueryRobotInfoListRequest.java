@@ -20,23 +20,19 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class VoipGetTokenRequest extends RpcAcsRequest<VoipGetTokenResponse> {
+public class QueryRobotInfoListRequest extends RpcAcsRequest<QueryRobotInfoListResponse> {
 	
-	public VoipGetTokenRequest() {
-		super("Dyvmsapi", "2017-05-25", "VoipGetToken");
+	public QueryRobotInfoListRequest() {
+		super("Dyvmsapi", "2017-05-25", "QueryRobotInfoList");
 	}
 
 	private Long resourceOwnerId;
 
-	private String voipId;
+	private String auditStatus;
 
 	private String resourceOwnerAccount;
 
 	private Long ownerId;
-
-	private String deviceId;
-
-	private Boolean isCustomAccount;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -49,14 +45,14 @@ public class VoipGetTokenRequest extends RpcAcsRequest<VoipGetTokenResponse> {
 		}
 	}
 
-	public String getVoipId() {
-		return this.voipId;
+	public String getAuditStatus() {
+		return this.auditStatus;
 	}
 
-	public void setVoipId(String voipId) {
-		this.voipId = voipId;
-		if(voipId != null){
-			putQueryParameter("VoipId", voipId);
+	public void setAuditStatus(String auditStatus) {
+		this.auditStatus = auditStatus;
+		if(auditStatus != null){
+			putQueryParameter("AuditStatus", auditStatus);
 		}
 	}
 
@@ -82,31 +78,9 @@ public class VoipGetTokenRequest extends RpcAcsRequest<VoipGetTokenResponse> {
 		}
 	}
 
-	public String getDeviceId() {
-		return this.deviceId;
-	}
-
-	public void setDeviceId(String deviceId) {
-		this.deviceId = deviceId;
-		if(deviceId != null){
-			putQueryParameter("DeviceId", deviceId);
-		}
-	}
-
-	public Boolean getIsCustomAccount() {
-		return this.isCustomAccount;
-	}
-
-	public void setIsCustomAccount(Boolean isCustomAccount) {
-		this.isCustomAccount = isCustomAccount;
-		if(isCustomAccount != null){
-			putQueryParameter("IsCustomAccount", isCustomAccount.toString());
-		}
-	}
-
 	@Override
-	public Class<VoipGetTokenResponse> getResponseClass() {
-		return VoipGetTokenResponse.class;
+	public Class<QueryRobotInfoListResponse> getResponseClass() {
+		return QueryRobotInfoListResponse.class;
 	}
 
 }

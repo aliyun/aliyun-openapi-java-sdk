@@ -20,19 +20,19 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class VoipGetTokenRequest extends RpcAcsRequest<VoipGetTokenResponse> {
+public class GetRtcTokenRequest extends RpcAcsRequest<GetRtcTokenResponse> {
 	
-	public VoipGetTokenRequest() {
-		super("Dyvmsapi", "2017-05-25", "VoipGetToken");
+	public GetRtcTokenRequest() {
+		super("Dyvmsapi", "2017-05-25", "GetRtcToken");
 	}
 
 	private Long resourceOwnerId;
 
-	private String voipId;
-
 	private String resourceOwnerAccount;
 
 	private Long ownerId;
+
+	private String userId;
 
 	private String deviceId;
 
@@ -46,17 +46,6 @@ public class VoipGetTokenRequest extends RpcAcsRequest<VoipGetTokenResponse> {
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getVoipId() {
-		return this.voipId;
-	}
-
-	public void setVoipId(String voipId) {
-		this.voipId = voipId;
-		if(voipId != null){
-			putQueryParameter("VoipId", voipId);
 		}
 	}
 
@@ -79,6 +68,17 @@ public class VoipGetTokenRequest extends RpcAcsRequest<VoipGetTokenResponse> {
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getUserId() {
+		return this.userId;
+	}
+
+	public void setUserId(String userId) {
+		this.userId = userId;
+		if(userId != null){
+			putQueryParameter("UserId", userId);
 		}
 	}
 
@@ -105,8 +105,8 @@ public class VoipGetTokenRequest extends RpcAcsRequest<VoipGetTokenResponse> {
 	}
 
 	@Override
-	public Class<VoipGetTokenResponse> getResponseClass() {
-		return VoipGetTokenResponse.class;
+	public Class<GetRtcTokenResponse> getResponseClass() {
+		return GetRtcTokenResponse.class;
 	}
 
 }

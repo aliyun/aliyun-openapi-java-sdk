@@ -20,23 +20,19 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class VoipGetTokenRequest extends RpcAcsRequest<VoipGetTokenResponse> {
+public class AddRtcAccountRequest extends RpcAcsRequest<AddRtcAccountResponse> {
 	
-	public VoipGetTokenRequest() {
-		super("Dyvmsapi", "2017-05-25", "VoipGetToken");
+	public AddRtcAccountRequest() {
+		super("Dyvmsapi", "2017-05-25", "AddRtcAccount");
 	}
 
 	private Long resourceOwnerId;
-
-	private String voipId;
 
 	private String resourceOwnerAccount;
 
 	private Long ownerId;
 
 	private String deviceId;
-
-	private Boolean isCustomAccount;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -46,17 +42,6 @@ public class VoipGetTokenRequest extends RpcAcsRequest<VoipGetTokenResponse> {
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getVoipId() {
-		return this.voipId;
-	}
-
-	public void setVoipId(String voipId) {
-		this.voipId = voipId;
-		if(voipId != null){
-			putQueryParameter("VoipId", voipId);
 		}
 	}
 
@@ -93,20 +78,9 @@ public class VoipGetTokenRequest extends RpcAcsRequest<VoipGetTokenResponse> {
 		}
 	}
 
-	public Boolean getIsCustomAccount() {
-		return this.isCustomAccount;
-	}
-
-	public void setIsCustomAccount(Boolean isCustomAccount) {
-		this.isCustomAccount = isCustomAccount;
-		if(isCustomAccount != null){
-			putQueryParameter("IsCustomAccount", isCustomAccount.toString());
-		}
-	}
-
 	@Override
-	public Class<VoipGetTokenResponse> getResponseClass() {
-		return VoipGetTokenResponse.class;
+	public Class<AddRtcAccountResponse> getResponseClass() {
+		return AddRtcAccountResponse.class;
 	}
 
 }

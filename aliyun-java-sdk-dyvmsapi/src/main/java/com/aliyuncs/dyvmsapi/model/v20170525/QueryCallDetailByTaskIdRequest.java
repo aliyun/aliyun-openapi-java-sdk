@@ -20,23 +20,23 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class VoipGetTokenRequest extends RpcAcsRequest<VoipGetTokenResponse> {
+public class QueryCallDetailByTaskIdRequest extends RpcAcsRequest<QueryCallDetailByTaskIdResponse> {
 	
-	public VoipGetTokenRequest() {
-		super("Dyvmsapi", "2017-05-25", "VoipGetToken");
+	public QueryCallDetailByTaskIdRequest() {
+		super("Dyvmsapi", "2017-05-25", "QueryCallDetailByTaskId");
 	}
 
 	private Long resourceOwnerId;
 
-	private String voipId;
+	private Long queryDate;
 
 	private String resourceOwnerAccount;
 
+	private String callee;
+
 	private Long ownerId;
 
-	private String deviceId;
-
-	private Boolean isCustomAccount;
+	private String taskId;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -49,14 +49,14 @@ public class VoipGetTokenRequest extends RpcAcsRequest<VoipGetTokenResponse> {
 		}
 	}
 
-	public String getVoipId() {
-		return this.voipId;
+	public Long getQueryDate() {
+		return this.queryDate;
 	}
 
-	public void setVoipId(String voipId) {
-		this.voipId = voipId;
-		if(voipId != null){
-			putQueryParameter("VoipId", voipId);
+	public void setQueryDate(Long queryDate) {
+		this.queryDate = queryDate;
+		if(queryDate != null){
+			putQueryParameter("QueryDate", queryDate.toString());
 		}
 	}
 
@@ -71,6 +71,17 @@ public class VoipGetTokenRequest extends RpcAcsRequest<VoipGetTokenResponse> {
 		}
 	}
 
+	public String getCallee() {
+		return this.callee;
+	}
+
+	public void setCallee(String callee) {
+		this.callee = callee;
+		if(callee != null){
+			putQueryParameter("Callee", callee);
+		}
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -82,31 +93,20 @@ public class VoipGetTokenRequest extends RpcAcsRequest<VoipGetTokenResponse> {
 		}
 	}
 
-	public String getDeviceId() {
-		return this.deviceId;
+	public String getTaskId() {
+		return this.taskId;
 	}
 
-	public void setDeviceId(String deviceId) {
-		this.deviceId = deviceId;
-		if(deviceId != null){
-			putQueryParameter("DeviceId", deviceId);
-		}
-	}
-
-	public Boolean getIsCustomAccount() {
-		return this.isCustomAccount;
-	}
-
-	public void setIsCustomAccount(Boolean isCustomAccount) {
-		this.isCustomAccount = isCustomAccount;
-		if(isCustomAccount != null){
-			putQueryParameter("IsCustomAccount", isCustomAccount.toString());
+	public void setTaskId(String taskId) {
+		this.taskId = taskId;
+		if(taskId != null){
+			putQueryParameter("TaskId", taskId);
 		}
 	}
 
 	@Override
-	public Class<VoipGetTokenResponse> getResponseClass() {
-		return VoipGetTokenResponse.class;
+	public Class<QueryCallDetailByTaskIdResponse> getResponseClass() {
+		return QueryCallDetailByTaskIdResponse.class;
 	}
 
 }
