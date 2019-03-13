@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.tesladam.model.v20180118;
 
 import com.aliyuncs.RpcAcsRequest;
@@ -22,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ActionDiskMaskRequest extends RpcAcsRequest<ActionDiskMaskResponse> {
 	
 	public ActionDiskMaskRequest() {
-		super("TeslaDam", "2018-01-18", "ActionDiskMask");
+		super("TeslaDam", "2018-01-18", "ActionDiskMask", "tesladam");
 	}
 
 	private String op;
