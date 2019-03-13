@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeleteUidWhiteListGroupRequest extends RpcAcsRequest<DeleteUidWhiteListGroupResponse> {
 	
 	public DeleteUidWhiteListGroupRequest() {
-		super("jarvis", "2018-02-06", "DeleteUidWhiteListGroup");
+		super("jarvis", "2018-02-06", "DeleteUidWhiteListGroup", "jarvis");
 	}
 
 	private String groupIdList;

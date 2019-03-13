@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeAccessWhiteListGroupRequest extends RpcAcsRequest<DescribeAccessWhiteListGroupResponse> {
 	
 	public DescribeAccessWhiteListGroupRequest() {
-		super("jarvis", "2018-02-06", "DescribeAccessWhiteListGroup");
+		super("jarvis", "2018-02-06", "DescribeAccessWhiteListGroup", "jarvis");
 	}
 
 	private String srcIP;
@@ -31,6 +31,8 @@ public class DescribeAccessWhiteListGroupRequest extends RpcAcsRequest<DescribeA
 	private String sourceIp;
 
 	private Integer pageSize;
+
+	private String queryProduct;
 
 	private Integer currentPage;
 
@@ -74,6 +76,17 @@ public class DescribeAccessWhiteListGroupRequest extends RpcAcsRequest<DescribeA
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getQueryProduct() {
+		return this.queryProduct;
+	}
+
+	public void setQueryProduct(String queryProduct) {
+		this.queryProduct = queryProduct;
+		if(queryProduct != null){
+			putQueryParameter("queryProduct", queryProduct);
 		}
 	}
 

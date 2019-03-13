@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class CreateAccessWhiteListGroupRequest extends RpcAcsRequest<CreateAccessWhiteListGroupResponse> {
 	
 	public CreateAccessWhiteListGroupRequest() {
-		super("jarvis", "2018-02-06", "CreateAccessWhiteListGroup");
+		super("jarvis", "2018-02-06", "CreateAccessWhiteListGroup", "jarvis");
 	}
 
 	private String note;
@@ -43,6 +43,8 @@ public class CreateAccessWhiteListGroupRequest extends RpcAcsRequest<CreateAcces
 	private String productName;
 
 	private Integer whiteListType;
+
+	private String instanceInfoList;
 
 	private String lang;
 
@@ -144,6 +146,17 @@ public class CreateAccessWhiteListGroupRequest extends RpcAcsRequest<CreateAcces
 		this.whiteListType = whiteListType;
 		if(whiteListType != null){
 			putQueryParameter("WhiteListType", whiteListType.toString());
+		}
+	}
+
+	public String getInstanceInfoList() {
+		return this.instanceInfoList;
+	}
+
+	public void setInstanceInfoList(String instanceInfoList) {
+		this.instanceInfoList = instanceInfoList;
+		if(instanceInfoList != null){
+			putQueryParameter("InstanceInfoList", instanceInfoList);
 		}
 	}
 

@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifyAccessWhiteListAutoShareRequest extends RpcAcsRequest<ModifyAccessWhiteListAutoShareResponse> {
 	
 	public ModifyAccessWhiteListAutoShareRequest() {
-		super("jarvis", "2018-02-06", "ModifyAccessWhiteListAutoShare");
+		super("jarvis", "2018-02-06", "ModifyAccessWhiteListAutoShare", "jarvis");
 	}
 
 	private String srcIP;

@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeUidWhiteListGroupRequest extends RpcAcsRequest<DescribeUidWhiteListGroupResponse> {
 	
 	public DescribeUidWhiteListGroupRequest() {
-		super("jarvis", "2018-02-06", "DescribeUidWhiteListGroup");
+		super("jarvis", "2018-02-06", "DescribeUidWhiteListGroup", "jarvis");
 	}
 
 	private String sourceIp;

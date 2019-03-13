@@ -41,6 +41,7 @@ public class DescribeAccessWhiteListGroupResponseUnmarshaller {
 		for (int i = 0; i < context.lengthValue("DescribeAccessWhiteListGroupResponse.DataList.Length"); i++) {
 			Data data = new Data();
 			data.setStatus(context.stringValue("DescribeAccessWhiteListGroupResponse.DataList["+ i +"].Status"));
+			data.setInsProduct(context.stringValue("DescribeAccessWhiteListGroupResponse.DataList["+ i +"].InsProduct"));
 			data.setGmtCreate(context.stringValue("DescribeAccessWhiteListGroupResponse.DataList["+ i +"].GmtCreate"));
 			data.setGmtRealExpire(context.stringValue("DescribeAccessWhiteListGroupResponse.DataList["+ i +"].GmtRealExpire"));
 			data.setSrcIP(context.stringValue("DescribeAccessWhiteListGroupResponse.DataList["+ i +"].SrcIP"));

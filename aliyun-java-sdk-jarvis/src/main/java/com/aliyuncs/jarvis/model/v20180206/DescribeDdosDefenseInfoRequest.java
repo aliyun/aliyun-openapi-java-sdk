@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeDdosDefenseInfoRequest extends RpcAcsRequest<DescribeDdosDefenseInfoResponse> {
 	
 	public DescribeDdosDefenseInfoRequest() {
-		super("jarvis", "2018-02-06", "DescribeDdosDefenseInfo");
+		super("jarvis", "2018-02-06", "DescribeDdosDefenseInfo", "jarvis");
 	}
 
 	private String sourceIp;

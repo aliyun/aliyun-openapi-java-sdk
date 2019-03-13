@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class CreateUidWhiteListGroupRequest extends RpcAcsRequest<CreateUidWhiteListGroupResponse> {
 	
 	public CreateUidWhiteListGroupRequest() {
-		super("jarvis", "2018-02-06", "CreateUidWhiteListGroup");
+		super("jarvis", "2018-02-06", "CreateUidWhiteListGroup", "jarvis");
 	}
 
 	private String note;

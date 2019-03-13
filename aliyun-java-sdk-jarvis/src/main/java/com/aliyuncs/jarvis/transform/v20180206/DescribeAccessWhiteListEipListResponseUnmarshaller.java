@@ -30,16 +30,18 @@ public class DescribeAccessWhiteListEipListResponseUnmarshaller {
 		describeAccessWhiteListEipListResponse.setTotalCount(context.integerValue("DescribeAccessWhiteListEipListResponse.TotalCount"));
 		describeAccessWhiteListEipListResponse.setModule(context.stringValue("DescribeAccessWhiteListEipListResponse.module"));
 
-		List<Ecs> ecsList = new ArrayList<Ecs>();
-		for (int i = 0; i < context.lengthValue("DescribeAccessWhiteListEipListResponse.EcsList.Length"); i++) {
+		List<Ecs> eipList = new ArrayList<Ecs>();
+		for (int i = 0; i < context.lengthValue("DescribeAccessWhiteListEipListResponse.EipList.Length"); i++) {
 			Ecs ecs = new Ecs();
-			ecs.setInstanceName(context.stringValue("DescribeAccessWhiteListEipListResponse.EcsList["+ i +"].InstanceName"));
-			ecs.setInstanceId(context.stringValue("DescribeAccessWhiteListEipListResponse.EcsList["+ i +"].InstanceId"));
-			ecs.setIP(context.stringValue("DescribeAccessWhiteListEipListResponse.EcsList["+ i +"].IP"));
+			ecs.setInstanceName(context.stringValue("DescribeAccessWhiteListEipListResponse.EipList["+ i +"].InstanceName"));
+			ecs.setInstanceId(context.stringValue("DescribeAccessWhiteListEipListResponse.EipList["+ i +"].InstanceId"));
+			ecs.setIP(context.stringValue("DescribeAccessWhiteListEipListResponse.EipList["+ i +"].IP"));
+			ecs.setRegion(context.stringValue("DescribeAccessWhiteListEipListResponse.EipList["+ i +"].Region"));
+			ecs.setItemSign(context.stringValue("DescribeAccessWhiteListEipListResponse.EipList["+ i +"].ItemSign"));
 
-			ecsList.add(ecs);
+			eipList.add(ecs);
 		}
-		describeAccessWhiteListEipListResponse.setEcsList(ecsList);
+		describeAccessWhiteListEipListResponse.setEipList(eipList);
 	 
 	 	return describeAccessWhiteListEipListResponse;
 	}

@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeResetRecordQueryCountRequest extends RpcAcsRequest<DescribeResetRecordQueryCountResponse> {
 	
 	public DescribeResetRecordQueryCountRequest() {
-		super("jarvis", "2018-02-06", "DescribeResetRecordQueryCount");
+		super("jarvis", "2018-02-06", "DescribeResetRecordQueryCount", "jarvis");
 	}
 
 	private String sourceIp;
