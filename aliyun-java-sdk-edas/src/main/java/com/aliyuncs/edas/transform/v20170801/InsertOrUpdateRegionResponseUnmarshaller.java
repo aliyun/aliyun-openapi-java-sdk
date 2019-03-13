@@ -34,6 +34,7 @@ public class InsertOrUpdateRegionResponseUnmarshaller {
 		userDefineRegionEntity.setRegionName(context.stringValue("InsertOrUpdateRegionResponse.UserDefineRegionEntity.RegionName"));
 		userDefineRegionEntity.setDescription(context.stringValue("InsertOrUpdateRegionResponse.UserDefineRegionEntity.Description"));
 		userDefineRegionEntity.setBelongRegion(context.stringValue("InsertOrUpdateRegionResponse.UserDefineRegionEntity.BelongRegion"));
+		userDefineRegionEntity.setDebugEnable(context.booleanValue("InsertOrUpdateRegionResponse.UserDefineRegionEntity.DebugEnable"));
 		insertOrUpdateRegionResponse.setUserDefineRegionEntity(userDefineRegionEntity);
 	 
 	 	return insertOrUpdateRegionResponse;

@@ -1,3 +1,18 @@
+2019-03-13 Version: 1.0.4
+1, Add application name support for config center APIs.
+2, Add GetCluster API.
+3, Support debug switch in user region APIs.
+
+2019-03-13 Version: 1.0.4
+1, Add application name support for config center APIs.
+2, Add GetCluster API.
+3, Support debug switch in user region APIs.
+
+2019-03-13 Version: 1.0.4
+1, support restart/update for eci.
+2, support describePrice and exec api.
+3, support subpath for volumemount
+
 2018-12-29 Version: 1.0.3
 1, Add probe for container.
 2, Add securityContext for container.

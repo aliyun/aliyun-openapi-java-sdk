@@ -78,6 +78,8 @@ public class InsertOrUpdateRegionResponse extends AcsResponse {
 
 		private String belongRegion;
 
+		private Boolean debugEnable;
+
 		public Long getId() {
 			return this.id;
 		}
@@ -140,6 +142,14 @@ public class InsertOrUpdateRegionResponse extends AcsResponse {
 
 		public void setBelongRegion(String belongRegion) {
 			this.belongRegion = belongRegion;
+		}
+
+		public Boolean getDebugEnable() {
+			return this.debugEnable;
+		}
+
+		public void setDebugEnable(Boolean debugEnable) {
+			this.debugEnable = debugEnable;
 		}
 	}
 

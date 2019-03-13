@@ -561,6 +561,8 @@ public class CreateContainerGroupRequest extends RpcAcsRequest<CreateContainerGr
 
 			private String name;
 
+			private String subPath;
+
 			public String getMountPath() {
 				return this.mountPath;
 			}
@@ -584,6 +586,15 @@ public class CreateContainerGroupRequest extends RpcAcsRequest<CreateContainerGr
 			public void setName(String name) {
 				this.name = name;
 			}
+
+			public String getSubPath() {
+				return subPath;
+			}
+
+			public void setSubPath(String subPath) {
+				this.subPath = subPath;
+			}
+
 		}
 
 		public static class Port {

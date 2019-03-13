@@ -79,9 +79,7 @@ public class ListUserDefineRegionResponse extends AcsResponse {
 
 		private String belongRegion;
 
-		private Boolean hybridCloudEnable;
-
-		private String vpcId;
+		private Boolean debugEnable;
 
 		public Long getId() {
 			return this.id;
@@ -147,20 +145,12 @@ public class ListUserDefineRegionResponse extends AcsResponse {
 			this.belongRegion = belongRegion;
 		}
 
-		public Boolean getHybridCloudEnable() {
-			return this.hybridCloudEnable;
+		public Boolean getDebugEnable() {
+			return this.debugEnable;
 		}
 
-		public void setHybridCloudEnable(Boolean hybridCloudEnable) {
-			this.hybridCloudEnable = hybridCloudEnable;
-		}
-
-		public String getVpcId() {
-			return this.vpcId;
-		}
-
-		public void setVpcId(String vpcId) {
-			this.vpcId = vpcId;
+		public void setDebugEnable(Boolean debugEnable) {
+			this.debugEnable = debugEnable;
 		}
 	}
 

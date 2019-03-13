@@ -36,6 +36,8 @@ public class VoipGetTokenRequest extends RpcAcsRequest<VoipGetTokenResponse> {
 
 	private String deviceId;
 
+	private Boolean isCustomAccount;
+
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
 	}
@@ -88,6 +90,17 @@ public class VoipGetTokenRequest extends RpcAcsRequest<VoipGetTokenResponse> {
 		this.deviceId = deviceId;
 		if(deviceId != null){
 			putQueryParameter("DeviceId", deviceId);
+		}
+	}
+
+	public Boolean getIsCustomAccount() {
+		return this.isCustomAccount;
+	}
+
+	public void setIsCustomAccount(Boolean isCustomAccount) {
+		this.isCustomAccount = isCustomAccount;
+		if(isCustomAccount != null){
+			putQueryParameter("IsCustomAccount", isCustomAccount.toString());
 		}
 	}
 

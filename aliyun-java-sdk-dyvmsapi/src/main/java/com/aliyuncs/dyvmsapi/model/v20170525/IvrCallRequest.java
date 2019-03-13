@@ -72,9 +72,9 @@ public class IvrCallRequest extends RpcAcsRequest<IvrCallResponse> {
 		this.menuKeyMaps = menuKeyMaps;	
 		if (menuKeyMaps != null) {
 			for (int depth1 = 0; depth1 < menuKeyMaps.size(); depth1++) {
-				putQueryParameter("MenuKeyMap." + (depth1 + 1) + ".Key" , menuKeyMaps.get(depth1).getKey());
 				putQueryParameter("MenuKeyMap." + (depth1 + 1) + ".Code" , menuKeyMaps.get(depth1).getCode());
 				putQueryParameter("MenuKeyMap." + (depth1 + 1) + ".TtsParams" , menuKeyMaps.get(depth1).getTtsParams());
+				putQueryParameter("MenuKeyMap." + (depth1 + 1) + ".Key" , menuKeyMaps.get(depth1).getKey());
 			}
 		}	
 	}
@@ -202,19 +202,11 @@ public class IvrCallRequest extends RpcAcsRequest<IvrCallResponse> {
 
 	public static class MenuKeyMap {
 
-		private String key;
-
 		private String code;
 
 		private String ttsParams;
 
-		public String getKey() {
-			return this.key;
-		}
-
-		public void setKey(String key) {
-			this.key = key;
-		}
+		private String key;
 
 		public String getCode() {
 			return this.code;
@@ -230,6 +222,14 @@ public class IvrCallRequest extends RpcAcsRequest<IvrCallResponse> {
 
 		public void setTtsParams(String ttsParams) {
 			this.ttsParams = ttsParams;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
 		}
 	}
 

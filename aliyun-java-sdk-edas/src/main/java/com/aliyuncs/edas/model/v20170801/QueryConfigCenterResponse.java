@@ -74,6 +74,8 @@ public class QueryConfigCenterResponse extends AcsResponse {
 
 		private String id;
 
+		private String appName;
+
 		public String getContent() {
 			return this.content;
 		}
@@ -104,6 +106,14 @@ public class QueryConfigCenterResponse extends AcsResponse {
 
 		public void setId(String id) {
 			this.id = id;
+		}
+
+		public String getAppName() {
+			return this.appName;
+		}
+
+		public void setAppName(String appName) {
+			this.appName = appName;
 		}
 	}
 

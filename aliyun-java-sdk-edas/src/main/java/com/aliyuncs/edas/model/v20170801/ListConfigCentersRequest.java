@@ -29,11 +29,24 @@ public class ListConfigCentersRequest extends RoaAcsRequest<ListConfigCentersRes
 		setMethod(MethodType.GET);
 	}
 
+	private String appName;
+
 	private String logicalRegionId;
 
 	private String dataIdPattern;
 
 	private String group;
+
+	public String getAppName() {
+		return this.appName;
+	}
+
+	public void setAppName(String appName) {
+		this.appName = appName;
+		if(appName != null){
+			putQueryParameter("AppName", appName);
+		}
+	}
 
 	public String getLogicalRegionId() {
 		return this.logicalRegionId;

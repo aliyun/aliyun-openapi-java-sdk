@@ -36,6 +36,7 @@ public class ListConfigCentersResponseUnmarshaller {
 			listConfigCenters.setDataId(context.stringValue("ListConfigCentersResponse.ConfigCentersList["+ i +"].DataId"));
 			listConfigCenters.setGroup(context.stringValue("ListConfigCentersResponse.ConfigCentersList["+ i +"].Group"));
 			listConfigCenters.setId(context.stringValue("ListConfigCentersResponse.ConfigCentersList["+ i +"].Id"));
+			listConfigCenters.setAppName(context.stringValue("ListConfigCentersResponse.ConfigCentersList["+ i +"].AppName"));
 
 			configCentersList.add(listConfigCenters);
 		}
