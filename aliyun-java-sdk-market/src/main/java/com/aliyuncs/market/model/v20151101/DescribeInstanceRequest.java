@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeInstanceRequest extends RpcAcsRequest<DescribeInstanceResponse> {
 	
 	public DescribeInstanceRequest() {
-		super("Market", "2015-11-01", "DescribeInstance", "yunmarket");
+		super("Market", "2015-11-01", "DescribeInstance", "market");
 	}
 
 	private String instanceId;

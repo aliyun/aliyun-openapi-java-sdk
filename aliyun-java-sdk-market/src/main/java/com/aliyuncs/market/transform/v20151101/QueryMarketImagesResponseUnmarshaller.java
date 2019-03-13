@@ -25,7 +25,6 @@ import com.aliyuncs.market.model.v20151101.QueryMarketImagesResponse.ImageProduc
 import com.aliyuncs.market.model.v20151101.QueryMarketImagesResponse.ImageProduct.PriceInfo.Order;
 import com.aliyuncs.market.model.v20151101.QueryMarketImagesResponse.ImageProduct.PriceInfo.Rule;
 import com.aliyuncs.market.model.v20151101.QueryMarketImagesResponse.ImageProduct.Quota;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

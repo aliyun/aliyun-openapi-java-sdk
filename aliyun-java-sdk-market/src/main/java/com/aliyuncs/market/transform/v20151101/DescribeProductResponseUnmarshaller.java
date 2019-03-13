@@ -26,7 +26,6 @@ import com.aliyuncs.market.model.v20151101.DescribeProductResponse.ProductSku.Mo
 import com.aliyuncs.market.model.v20151101.DescribeProductResponse.ProductSku.OrderPeriod;
 import com.aliyuncs.market.model.v20151101.DescribeProductResponse.ShopInfo;
 import com.aliyuncs.market.model.v20151101.DescribeProductResponse.ShopInfo.WangWang;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

@@ -18,7 +18,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.market.model.v20151101.CreateOrderResponse;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
