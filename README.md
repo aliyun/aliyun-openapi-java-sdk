@@ -53,6 +53,7 @@ If maven is not downloading jar packages from a central repository, you need to 
 ```
 ## Initiate a call
 
+
 The following code example shows the three main steps to use Alibaba Cloud Java SDK:
 
 1. Create and initialize a `DefaultAcsClient` instance.
@@ -60,6 +61,8 @@ The following code example shows the three main steps to use Alibaba Cloud Java 
 2. Create an API request and set parameters.
 
 3. Initiate the request and handle the response or exceptions.
+
+### Using AccessKey call
 
 ```java
  package com.testprogram;
@@ -87,6 +90,43 @@ The following code example shows the three main steps to use Alibaba Cloud Java 
              for (DescribeInstancesResponse.Instance instance:response.getInstances()) {
                  System.out.println(instance.getPublicIpAddress());
              }
+         } catch (ServerException e) {
+             e.printStackTrace();
+         } catch (ClientException e) {
+             e.printStackTrace();
+         }
+     }
+ }
+```
+### Using BearerToken call
+
+Only CCC supports this method
+
+```java
+ package com.testprogram;
+ import com.aliyuncs.profile.DefaultProfile;
+ import com.aliyuncs.DefaultAcsClient;
+ import com.aliyuncs.IAcsClient;
+ import com.aliyuncs.exceptions.ClientException;
+ import com.aliyuncs.exceptions.ServerException;
+ import com.aliyuncs.ccc.model.v20170705.ListPhoneNumbersRequest;
+ import com.aliyuncs.ccc.model.v20170705.ListPhoneNumbersResponse;
+ public class Main {
+     public static void main(String[] args) {
+         // Create and initialize a DefaultAcsClient instance
+         DefaultProfile profile = DefaultProfile.getProfile(
+             "<your-region-id>"         // The region ID
+         ); 
+         BearerTokenCredentials bearerTokenCredential = new BearerTokenCredentials("<your-bearer-token>");
+         DefaultAcsClient client = new DefaultAcsClient(profile, bearerTokenCredential);
+         // Create an API request and set parameters
+         ListPhoneNumbersRequest request = new ListPhoneNumbersRequest();
+         request.getInstanceId("yourId");
+         request.setOutboundOnly(true);
+         // Initiate the request and handle the response or exceptions
+         ListPhoneNumbersResponse response; 
+         try {
+             response = client.getAcsResponse(request);
          } catch (ServerException e) {
              e.printStackTrace();
          } catch (ClientException e) {
