@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.vpc.model.v20160428.DescribeEipAddressesResponse;
 import com.aliyuncs.vpc.model.v20160428.DescribeEipAddressesResponse.EipAddress;
 import com.aliyuncs.vpc.model.v20160428.DescribeEipAddressesResponse.EipAddress.LockReason;
+import com.aliyuncs.vpc.model.v20160428.DescribeEipAddressesResponse.EipAddress.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -37,6 +38,7 @@ public class DescribeEipAddressesResponseUnmarshaller {
 			EipAddress eipAddress = new EipAddress();
 			eipAddress.setRegionId(context.stringValue("DescribeEipAddressesResponse.EipAddresses["+ i +"].RegionId"));
 			eipAddress.setIpAddress(context.stringValue("DescribeEipAddressesResponse.EipAddresses["+ i +"].IpAddress"));
+			eipAddress.setPrivateIpAddress(context.stringValue("DescribeEipAddressesResponse.EipAddresses["+ i +"].PrivateIpAddress"));
 			eipAddress.setAllocationId(context.stringValue("DescribeEipAddressesResponse.EipAddresses["+ i +"].AllocationId"));
 			eipAddress.setStatus(context.stringValue("DescribeEipAddressesResponse.EipAddresses["+ i +"].Status"));
 			eipAddress.setInstanceId(context.stringValue("DescribeEipAddressesResponse.EipAddresses["+ i +"].InstanceId"));
@@ -48,12 +50,19 @@ public class DescribeEipAddressesResponseUnmarshaller {
 			eipAddress.setInstanceRegionId(context.stringValue("DescribeEipAddressesResponse.EipAddresses["+ i +"].InstanceRegionId"));
 			eipAddress.setChargeType(context.stringValue("DescribeEipAddressesResponse.EipAddresses["+ i +"].ChargeType"));
 			eipAddress.setExpiredTime(context.stringValue("DescribeEipAddressesResponse.EipAddresses["+ i +"].ExpiredTime"));
+			eipAddress.setHDMonitorStatus(context.stringValue("DescribeEipAddressesResponse.EipAddresses["+ i +"].HDMonitorStatus"));
 			eipAddress.setName(context.stringValue("DescribeEipAddressesResponse.EipAddresses["+ i +"].Name"));
 			eipAddress.setISP(context.stringValue("DescribeEipAddressesResponse.EipAddresses["+ i +"].ISP"));
 			eipAddress.setDescritpion(context.stringValue("DescribeEipAddressesResponse.EipAddresses["+ i +"].Descritpion"));
 			eipAddress.setBandwidthPackageId(context.stringValue("DescribeEipAddressesResponse.EipAddresses["+ i +"].BandwidthPackageId"));
 			eipAddress.setBandwidthPackageType(context.stringValue("DescribeEipAddressesResponse.EipAddresses["+ i +"].BandwidthPackageType"));
 			eipAddress.setResourceGroupId(context.stringValue("DescribeEipAddressesResponse.EipAddresses["+ i +"].ResourceGroupId"));
+			eipAddress.setHasReservationData(context.stringValue("DescribeEipAddressesResponse.EipAddresses["+ i +"].HasReservationData"));
+			eipAddress.setReservationBandwidth(context.stringValue("DescribeEipAddressesResponse.EipAddresses["+ i +"].ReservationBandwidth"));
+			eipAddress.setReservationInternetChargeType(context.stringValue("DescribeEipAddressesResponse.EipAddresses["+ i +"].ReservationInternetChargeType"));
+			eipAddress.setReservationActiveTime(context.stringValue("DescribeEipAddressesResponse.EipAddresses["+ i +"].ReservationActiveTime"));
+			eipAddress.setReservationOrderType(context.stringValue("DescribeEipAddressesResponse.EipAddresses["+ i +"].ReservationOrderType"));
+			eipAddress.setMode(context.stringValue("DescribeEipAddressesResponse.EipAddresses["+ i +"].Mode"));
 
 			List<String> availableRegions = new ArrayList<String>();
 			for (int j = 0; j < context.lengthValue("DescribeEipAddressesResponse.EipAddresses["+ i +"].AvailableRegions.Length"); j++) {
@@ -69,6 +78,16 @@ public class DescribeEipAddressesResponseUnmarshaller {
 				operationLocks.add(lockReason);
 			}
 			eipAddress.setOperationLocks(operationLocks);
+
+			List<Tag> tags = new ArrayList<Tag>();
+			for (int j = 0; j < context.lengthValue("DescribeEipAddressesResponse.EipAddresses["+ i +"].Tags.Length"); j++) {
+				Tag tag = new Tag();
+				tag.setKey(context.stringValue("DescribeEipAddressesResponse.EipAddresses["+ i +"].Tags["+ j +"].Key"));
+				tag.setValue(context.stringValue("DescribeEipAddressesResponse.EipAddresses["+ i +"].Tags["+ j +"].Value"));
+
+				tags.add(tag);
+			}
+			eipAddress.setTags(tags);
 
 			eipAddresses.add(eipAddress);
 		}

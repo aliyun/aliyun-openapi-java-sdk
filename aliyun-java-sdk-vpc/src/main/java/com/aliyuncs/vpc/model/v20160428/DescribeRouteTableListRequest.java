@@ -38,6 +38,8 @@ public class DescribeRouteTableListRequest extends RpcAcsRequest<DescribeRouteTa
 
 	private String routerType;
 
+	private String resourceGroupId;
+
 	private String routeTableName;
 
 	private String routerId;
@@ -111,6 +113,17 @@ public class DescribeRouteTableListRequest extends RpcAcsRequest<DescribeRouteTa
 		this.routerType = routerType;
 		if(routerType != null){
 			putQueryParameter("RouterType", routerType);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

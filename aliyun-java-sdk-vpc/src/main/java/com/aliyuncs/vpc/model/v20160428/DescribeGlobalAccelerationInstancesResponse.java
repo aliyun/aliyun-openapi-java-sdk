@@ -105,16 +105,42 @@ public class DescribeGlobalAccelerationInstancesResponse extends AcsResponse {
 
 		private String creationTime;
 
+		private String hasReservationData;
+
+		private String reservationBandwidth;
+
+		private String reservationInternetChargeType;
+
+		private String reservationActiveTime;
+
+		private String reservationOrderType;
+
 		private List<LockReason> operationLocks;
 
 		private List<BackendServer> backendServers;
 
 		private List<PublicIpAddress> publicIpAddresses;
 
+		public String getBizRegionId() {
+			return this.regionId;
+		}
+
+		public void setBizRegionId(String regionId) {
+			this.regionId = regionId;
+		}
+
+		/**
+		 * @deprecated use getBizRegionId instead of this.
+		 */
+		@Deprecated
 		public String getRegionId() {
 			return this.regionId;
 		}
 
+		/**
+		 * @deprecated use setBizRegionId instead of this.
+		 */
+		@Deprecated
 		public void setRegionId(String regionId) {
 			this.regionId = regionId;
 		}
@@ -223,6 +249,46 @@ public class DescribeGlobalAccelerationInstancesResponse extends AcsResponse {
 			this.creationTime = creationTime;
 		}
 
+		public String getHasReservationData() {
+			return this.hasReservationData;
+		}
+
+		public void setHasReservationData(String hasReservationData) {
+			this.hasReservationData = hasReservationData;
+		}
+
+		public String getReservationBandwidth() {
+			return this.reservationBandwidth;
+		}
+
+		public void setReservationBandwidth(String reservationBandwidth) {
+			this.reservationBandwidth = reservationBandwidth;
+		}
+
+		public String getReservationInternetChargeType() {
+			return this.reservationInternetChargeType;
+		}
+
+		public void setReservationInternetChargeType(String reservationInternetChargeType) {
+			this.reservationInternetChargeType = reservationInternetChargeType;
+		}
+
+		public String getReservationActiveTime() {
+			return this.reservationActiveTime;
+		}
+
+		public void setReservationActiveTime(String reservationActiveTime) {
+			this.reservationActiveTime = reservationActiveTime;
+		}
+
+		public String getReservationOrderType() {
+			return this.reservationOrderType;
+		}
+
+		public void setReservationOrderType(String reservationOrderType) {
+			this.reservationOrderType = reservationOrderType;
+		}
+
 		public List<LockReason> getOperationLocks() {
 			return this.operationLocks;
 		}
@@ -270,10 +336,26 @@ public class DescribeGlobalAccelerationInstancesResponse extends AcsResponse {
 
 			private String serverType;
 
+			public String getBizRegionId() {
+				return this.regionId;
+			}
+
+			public void setBizRegionId(String regionId) {
+				this.regionId = regionId;
+			}
+
+			/**
+			 * @deprecated use getBizRegionId instead of this.
+			 */
+			@Deprecated
 			public String getRegionId() {
 				return this.regionId;
 			}
 
+			/**
+			 * @deprecated use setBizRegionId instead of this.
+			 */
+			@Deprecated
 			public void setRegionId(String regionId) {
 				this.regionId = regionId;
 			}

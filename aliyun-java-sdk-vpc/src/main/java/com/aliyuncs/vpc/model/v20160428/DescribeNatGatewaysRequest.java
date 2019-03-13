@@ -32,6 +32,12 @@ public class DescribeNatGatewaysRequest extends RpcAcsRequest<DescribeNatGateway
 
 	private String ownerAccount;
 
+	private Long ownerId;
+
+	private String spec;
+
+	private Integer pageNumber;
+
 	private String vpcId;
 
 	private String name;
@@ -40,9 +46,7 @@ public class DescribeNatGatewaysRequest extends RpcAcsRequest<DescribeNatGateway
 
 	private String natGatewayId;
 
-	private Long ownerId;
-
-	private Integer pageNumber;
+	private String instanceChargeType;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -74,6 +78,39 @@ public class DescribeNatGatewaysRequest extends RpcAcsRequest<DescribeNatGateway
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getSpec() {
+		return this.spec;
+	}
+
+	public void setSpec(String spec) {
+		this.spec = spec;
+		if(spec != null){
+			putQueryParameter("Spec", spec);
+		}
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
 		}
 	}
 
@@ -121,25 +158,14 @@ public class DescribeNatGatewaysRequest extends RpcAcsRequest<DescribeNatGateway
 		}
 	}
 
-	public Long getOwnerId() {
-		return this.ownerId;
+	public String getInstanceChargeType() {
+		return this.instanceChargeType;
 	}
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
+	public void setInstanceChargeType(String instanceChargeType) {
+		this.instanceChargeType = instanceChargeType;
+		if(instanceChargeType != null){
+			putQueryParameter("InstanceChargeType", instanceChargeType);
 		}
 	}
 

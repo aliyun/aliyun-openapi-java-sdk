@@ -42,6 +42,8 @@ public class DescribeNatGatewaysResponseUnmarshaller {
 			natGateway.setVpcId(context.stringValue("DescribeNatGatewaysResponse.NatGateways["+ i +"].VpcId"));
 			natGateway.setSpec(context.stringValue("DescribeNatGatewaysResponse.NatGateways["+ i +"].Spec"));
 			natGateway.setInstanceChargeType(context.stringValue("DescribeNatGatewaysResponse.NatGateways["+ i +"].InstanceChargeType"));
+			natGateway.setExpiredTime(context.stringValue("DescribeNatGatewaysResponse.NatGateways["+ i +"].ExpiredTime"));
+			natGateway.setAutoPay(context.booleanValue("DescribeNatGatewaysResponse.NatGateways["+ i +"].AutoPay"));
 			natGateway.setBusinessStatus(context.stringValue("DescribeNatGatewaysResponse.NatGateways["+ i +"].BusinessStatus"));
 			natGateway.setCreationTime(context.stringValue("DescribeNatGatewaysResponse.NatGateways["+ i +"].CreationTime"));
 			natGateway.setStatus(context.stringValue("DescribeNatGatewaysResponse.NatGateways["+ i +"].Status"));

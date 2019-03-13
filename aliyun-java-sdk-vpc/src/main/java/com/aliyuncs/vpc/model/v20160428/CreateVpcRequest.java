@@ -26,10 +26,6 @@ public class CreateVpcRequest extends RpcAcsRequest<CreateVpcResponse> {
 		super("Vpc", "2016-04-28", "CreateVpc", "vpc");
 	}
 
-	private String vpcName;
-
-	private String resourceGroupId;
-
 	private Long resourceOwnerId;
 
 	private String resourceOwnerAccount;
@@ -38,35 +34,21 @@ public class CreateVpcRequest extends RpcAcsRequest<CreateVpcResponse> {
 
 	private String ownerAccount;
 
-	private String cidrBlock;
+	private Boolean enableIpv6;
 
 	private String description;
 
-	private String userCidr;
-
 	private Long ownerId;
 
-	public String getVpcName() {
-		return this.vpcName;
-	}
+	private String ipv6CidrBlock;
 
-	public void setVpcName(String vpcName) {
-		this.vpcName = vpcName;
-		if(vpcName != null){
-			putQueryParameter("VpcName", vpcName);
-		}
-	}
+	private String vpcName;
 
-	public String getResourceGroupId() {
-		return this.resourceGroupId;
-	}
+	private String resourceGroupId;
 
-	public void setResourceGroupId(String resourceGroupId) {
-		this.resourceGroupId = resourceGroupId;
-		if(resourceGroupId != null){
-			putQueryParameter("ResourceGroupId", resourceGroupId);
-		}
-	}
+	private String cidrBlock;
+
+	private String userCidr;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -112,14 +94,14 @@ public class CreateVpcRequest extends RpcAcsRequest<CreateVpcResponse> {
 		}
 	}
 
-	public String getCidrBlock() {
-		return this.cidrBlock;
+	public Boolean getEnableIpv6() {
+		return this.enableIpv6;
 	}
 
-	public void setCidrBlock(String cidrBlock) {
-		this.cidrBlock = cidrBlock;
-		if(cidrBlock != null){
-			putQueryParameter("CidrBlock", cidrBlock);
+	public void setEnableIpv6(Boolean enableIpv6) {
+		this.enableIpv6 = enableIpv6;
+		if(enableIpv6 != null){
+			putQueryParameter("EnableIpv6", enableIpv6.toString());
 		}
 	}
 
@@ -134,17 +116,6 @@ public class CreateVpcRequest extends RpcAcsRequest<CreateVpcResponse> {
 		}
 	}
 
-	public String getUserCidr() {
-		return this.userCidr;
-	}
-
-	public void setUserCidr(String userCidr) {
-		this.userCidr = userCidr;
-		if(userCidr != null){
-			putQueryParameter("UserCidr", userCidr);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -153,6 +124,61 @@ public class CreateVpcRequest extends RpcAcsRequest<CreateVpcResponse> {
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getIpv6CidrBlock() {
+		return this.ipv6CidrBlock;
+	}
+
+	public void setIpv6CidrBlock(String ipv6CidrBlock) {
+		this.ipv6CidrBlock = ipv6CidrBlock;
+		if(ipv6CidrBlock != null){
+			putQueryParameter("Ipv6CidrBlock", ipv6CidrBlock);
+		}
+	}
+
+	public String getVpcName() {
+		return this.vpcName;
+	}
+
+	public void setVpcName(String vpcName) {
+		this.vpcName = vpcName;
+		if(vpcName != null){
+			putQueryParameter("VpcName", vpcName);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
+	public String getCidrBlock() {
+		return this.cidrBlock;
+	}
+
+	public void setCidrBlock(String cidrBlock) {
+		this.cidrBlock = cidrBlock;
+		if(cidrBlock != null){
+			putQueryParameter("CidrBlock", cidrBlock);
+		}
+	}
+
+	public String getUserCidr() {
+		return this.userCidr;
+	}
+
+	public void setUserCidr(String userCidr) {
+		this.userCidr = userCidr;
+		if(userCidr != null){
+			putQueryParameter("UserCidr", userCidr);
 		}
 	}
 

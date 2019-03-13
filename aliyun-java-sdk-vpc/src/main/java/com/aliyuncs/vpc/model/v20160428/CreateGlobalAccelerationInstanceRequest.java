@@ -44,8 +44,6 @@ public class CreateGlobalAccelerationInstanceRequest extends RpcAcsRequest<Creat
 
 	private Long ownerId;
 
-	private String internetChargeType;
-
 	private String name;
 
 	public Long getResourceOwnerId() {
@@ -144,17 +142,6 @@ public class CreateGlobalAccelerationInstanceRequest extends RpcAcsRequest<Creat
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getInternetChargeType() {
-		return this.internetChargeType;
-	}
-
-	public void setInternetChargeType(String internetChargeType) {
-		this.internetChargeType = internetChargeType;
-		if(internetChargeType != null){
-			putQueryParameter("InternetChargeType", internetChargeType);
 		}
 	}
 

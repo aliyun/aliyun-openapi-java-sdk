@@ -29,6 +29,8 @@ public class CreateRouteEntryRequest extends RpcAcsRequest<CreateRouteEntryRespo
 
 	private Long resourceOwnerId;
 
+	private String routeEntryName;
+
 	private String resourceOwnerAccount;
 
 	private String clientToken;
@@ -37,9 +39,9 @@ public class CreateRouteEntryRequest extends RpcAcsRequest<CreateRouteEntryRespo
 
 	private String ownerAccount;
 
-	private String nextHopId;
-
 	private Long ownerId;
+
+	private String nextHopId;
 
 	private String nextHopType;
 
@@ -55,6 +57,17 @@ public class CreateRouteEntryRequest extends RpcAcsRequest<CreateRouteEntryRespo
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getRouteEntryName() {
+		return this.routeEntryName;
+	}
+
+	public void setRouteEntryName(String routeEntryName) {
+		this.routeEntryName = routeEntryName;
+		if(routeEntryName != null){
+			putQueryParameter("RouteEntryName", routeEntryName);
 		}
 	}
 
@@ -102,17 +115,6 @@ public class CreateRouteEntryRequest extends RpcAcsRequest<CreateRouteEntryRespo
 		}
 	}
 
-	public String getNextHopId() {
-		return this.nextHopId;
-	}
-
-	public void setNextHopId(String nextHopId) {
-		this.nextHopId = nextHopId;
-		if(nextHopId != null){
-			putQueryParameter("NextHopId", nextHopId);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -121,6 +123,17 @@ public class CreateRouteEntryRequest extends RpcAcsRequest<CreateRouteEntryRespo
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getNextHopId() {
+		return this.nextHopId;
+	}
+
+	public void setNextHopId(String nextHopId) {
+		this.nextHopId = nextHopId;
+		if(nextHopId != null){
+			putQueryParameter("NextHopId", nextHopId);
 		}
 	}
 
@@ -143,9 +156,9 @@ public class CreateRouteEntryRequest extends RpcAcsRequest<CreateRouteEntryRespo
 		this.nextHopLists = nextHopLists;	
 		if (nextHopLists != null) {
 			for (int depth1 = 0; depth1 < nextHopLists.size(); depth1++) {
-				putQueryParameter("NextHopList." + (depth1 + 1) + ".NextHopType" , nextHopLists.get(depth1).getNextHopType());
-				putQueryParameter("NextHopList." + (depth1 + 1) + ".NextHopId" , nextHopLists.get(depth1).getNextHopId());
 				putQueryParameter("NextHopList." + (depth1 + 1) + ".Weight" , nextHopLists.get(depth1).getWeight());
+				putQueryParameter("NextHopList." + (depth1 + 1) + ".NextHopId" , nextHopLists.get(depth1).getNextHopId());
+				putQueryParameter("NextHopList." + (depth1 + 1) + ".NextHopType" , nextHopLists.get(depth1).getNextHopType());
 			}
 		}	
 	}
@@ -163,18 +176,18 @@ public class CreateRouteEntryRequest extends RpcAcsRequest<CreateRouteEntryRespo
 
 	public static class NextHopList {
 
-		private String nextHopType;
+		private Integer weight;
 
 		private String nextHopId;
 
-		private Integer weight;
+		private String nextHopType;
 
-		public String getNextHopType() {
-			return this.nextHopType;
+		public Integer getWeight() {
+			return this.weight;
 		}
 
-		public void setNextHopType(String nextHopType) {
-			this.nextHopType = nextHopType;
+		public void setWeight(Integer weight) {
+			this.weight = weight;
 		}
 
 		public String getNextHopId() {
@@ -185,12 +198,12 @@ public class CreateRouteEntryRequest extends RpcAcsRequest<CreateRouteEntryRespo
 			this.nextHopId = nextHopId;
 		}
 
-		public Integer getWeight() {
-			return this.weight;
+		public String getNextHopType() {
+			return this.nextHopType;
 		}
 
-		public void setWeight(Integer weight) {
-			this.weight = weight;
+		public void setNextHopType(String nextHopType) {
+			this.nextHopType = nextHopType;
 		}
 	}
 

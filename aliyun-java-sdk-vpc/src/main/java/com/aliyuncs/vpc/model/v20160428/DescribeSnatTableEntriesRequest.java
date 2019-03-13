@@ -32,15 +32,23 @@ public class DescribeSnatTableEntriesRequest extends RpcAcsRequest<DescribeSnatT
 
 	private String ownerAccount;
 
-	private Integer pageSize;
+	private String sourceCIDR;
 
 	private String snatTableId;
 
-	private String snatEntryId;
-
 	private Long ownerId;
 
+	private String snatIp;
+
 	private Integer pageNumber;
+
+	private String sourceVSwitchId;
+
+	private String snatEntryName;
+
+	private Integer pageSize;
+
+	private String snatEntryId;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -75,14 +83,14 @@ public class DescribeSnatTableEntriesRequest extends RpcAcsRequest<DescribeSnatT
 		}
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public String getSourceCIDR() {
+		return this.sourceCIDR;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
+	public void setSourceCIDR(String sourceCIDR) {
+		this.sourceCIDR = sourceCIDR;
+		if(sourceCIDR != null){
+			putQueryParameter("SourceCIDR", sourceCIDR);
 		}
 	}
 
@@ -97,17 +105,6 @@ public class DescribeSnatTableEntriesRequest extends RpcAcsRequest<DescribeSnatT
 		}
 	}
 
-	public String getSnatEntryId() {
-		return this.snatEntryId;
-	}
-
-	public void setSnatEntryId(String snatEntryId) {
-		this.snatEntryId = snatEntryId;
-		if(snatEntryId != null){
-			putQueryParameter("SnatEntryId", snatEntryId);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -119,6 +116,17 @@ public class DescribeSnatTableEntriesRequest extends RpcAcsRequest<DescribeSnatT
 		}
 	}
 
+	public String getSnatIp() {
+		return this.snatIp;
+	}
+
+	public void setSnatIp(String snatIp) {
+		this.snatIp = snatIp;
+		if(snatIp != null){
+			putQueryParameter("SnatIp", snatIp);
+		}
+	}
+
 	public Integer getPageNumber() {
 		return this.pageNumber;
 	}
@@ -127,6 +135,50 @@ public class DescribeSnatTableEntriesRequest extends RpcAcsRequest<DescribeSnatT
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public String getSourceVSwitchId() {
+		return this.sourceVSwitchId;
+	}
+
+	public void setSourceVSwitchId(String sourceVSwitchId) {
+		this.sourceVSwitchId = sourceVSwitchId;
+		if(sourceVSwitchId != null){
+			putQueryParameter("SourceVSwitchId", sourceVSwitchId);
+		}
+	}
+
+	public String getSnatEntryName() {
+		return this.snatEntryName;
+	}
+
+	public void setSnatEntryName(String snatEntryName) {
+		this.snatEntryName = snatEntryName;
+		if(snatEntryName != null){
+			putQueryParameter("SnatEntryName", snatEntryName);
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getSnatEntryId() {
+		return this.snatEntryId;
+	}
+
+	public void setSnatEntryId(String snatEntryId) {
+		this.snatEntryId = snatEntryId;
+		if(snatEntryId != null){
+			putQueryParameter("SnatEntryId", snatEntryId);
 		}
 	}
 

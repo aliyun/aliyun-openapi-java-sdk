@@ -38,6 +38,8 @@ public class DescribeVSwitchesRequest extends RpcAcsRequest<DescribeVSwitchesRes
 
 	private String vSwitchId;
 
+	private String resourceGroupId;
+
 	private String vpcId;
 
 	private String vSwitchName;
@@ -47,6 +49,8 @@ public class DescribeVSwitchesRequest extends RpcAcsRequest<DescribeVSwitchesRes
 	private String zoneId;
 
 	private Boolean isDefault;
+
+	private String routeTableId;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -114,6 +118,17 @@ public class DescribeVSwitchesRequest extends RpcAcsRequest<DescribeVSwitchesRes
 		}
 	}
 
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
 	public String getVpcId() {
 		return this.vpcId;
 	}
@@ -166,6 +181,17 @@ public class DescribeVSwitchesRequest extends RpcAcsRequest<DescribeVSwitchesRes
 		this.isDefault = isDefault;
 		if(isDefault != null){
 			putQueryParameter("IsDefault", isDefault.toString());
+		}
+	}
+
+	public String getRouteTableId() {
+		return this.routeTableId;
+	}
+
+	public void setRouteTableId(String routeTableId) {
+		this.routeTableId = routeTableId;
+		if(routeTableId != null){
+			putQueryParameter("RouteTableId", routeTableId);
 		}
 	}
 

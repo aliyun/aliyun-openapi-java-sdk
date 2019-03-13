@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.vpc.model.v20160428.DescribeVpcsResponse;
 import com.aliyuncs.vpc.model.v20160428.DescribeVpcsResponse.Vpc;
+import com.aliyuncs.vpc.model.v20160428.DescribeVpcsResponse.Vpc.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -40,6 +41,7 @@ public class DescribeVpcsResponseUnmarshaller {
 			vpc.setVpcName(context.stringValue("DescribeVpcsResponse.Vpcs["+ i +"].VpcName"));
 			vpc.setCreationTime(context.stringValue("DescribeVpcsResponse.Vpcs["+ i +"].CreationTime"));
 			vpc.setCidrBlock(context.stringValue("DescribeVpcsResponse.Vpcs["+ i +"].CidrBlock"));
+			vpc.setIpv6CidrBlock(context.stringValue("DescribeVpcsResponse.Vpcs["+ i +"].Ipv6CidrBlock"));
 			vpc.setVRouterId(context.stringValue("DescribeVpcsResponse.Vpcs["+ i +"].VRouterId"));
 			vpc.setDescription(context.stringValue("DescribeVpcsResponse.Vpcs["+ i +"].Description"));
 			vpc.setIsDefault(context.booleanValue("DescribeVpcsResponse.Vpcs["+ i +"].IsDefault"));
@@ -68,6 +70,16 @@ public class DescribeVpcsResponseUnmarshaller {
 				routerTableIds.add(context.stringValue("DescribeVpcsResponse.Vpcs["+ i +"].RouterTableIds["+ j +"]"));
 			}
 			vpc.setRouterTableIds(routerTableIds);
+
+			List<Tag> tags = new ArrayList<Tag>();
+			for (int j = 0; j < context.lengthValue("DescribeVpcsResponse.Vpcs["+ i +"].Tags.Length"); j++) {
+				Tag tag = new Tag();
+				tag.setKey(context.stringValue("DescribeVpcsResponse.Vpcs["+ i +"].Tags["+ j +"].Key"));
+				tag.setValue(context.stringValue("DescribeVpcsResponse.Vpcs["+ i +"].Tags["+ j +"].Value"));
+
+				tags.add(tag);
+			}
+			vpc.setTags(tags);
 
 			vpcs.add(vpc);
 		}

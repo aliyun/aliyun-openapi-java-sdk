@@ -34,6 +34,7 @@ public class DescribeVpcAttributeResponseUnmarshaller {
 		describeVpcAttributeResponse.setVpcName(context.stringValue("DescribeVpcAttributeResponse.VpcName"));
 		describeVpcAttributeResponse.setCreationTime(context.stringValue("DescribeVpcAttributeResponse.CreationTime"));
 		describeVpcAttributeResponse.setCidrBlock(context.stringValue("DescribeVpcAttributeResponse.CidrBlock"));
+		describeVpcAttributeResponse.setIpv6CidrBlock(context.stringValue("DescribeVpcAttributeResponse.Ipv6CidrBlock"));
 		describeVpcAttributeResponse.setVRouterId(context.stringValue("DescribeVpcAttributeResponse.VRouterId"));
 		describeVpcAttributeResponse.setDescription(context.stringValue("DescribeVpcAttributeResponse.Description"));
 		describeVpcAttributeResponse.setIsDefault(context.booleanValue("DescribeVpcAttributeResponse.IsDefault"));

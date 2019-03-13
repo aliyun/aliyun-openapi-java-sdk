@@ -60,7 +60,17 @@ public class DescribeRouterInterfacesResponseUnmarshaller {
 			routerInterfaceType.setHealthCheckSourceIp(context.stringValue("DescribeRouterInterfacesResponse.RouterInterfaceSet["+ i +"].HealthCheckSourceIp"));
 			routerInterfaceType.setHealthCheckTargetIp(context.stringValue("DescribeRouterInterfacesResponse.RouterInterfaceSet["+ i +"].HealthCheckTargetIp"));
 			routerInterfaceType.setOppositeVpcInstanceId(context.stringValue("DescribeRouterInterfacesResponse.RouterInterfaceSet["+ i +"].OppositeVpcInstanceId"));
+			routerInterfaceType.setBandwidth(context.integerValue("DescribeRouterInterfacesResponse.RouterInterfaceSet["+ i +"].Bandwidth"));
 			routerInterfaceType.setVpcInstanceId(context.stringValue("DescribeRouterInterfacesResponse.RouterInterfaceSet["+ i +"].VpcInstanceId"));
+			routerInterfaceType.setOppositeBandwidth(context.integerValue("DescribeRouterInterfacesResponse.RouterInterfaceSet["+ i +"].OppositeBandwidth"));
+			routerInterfaceType.setHasReservationData(context.stringValue("DescribeRouterInterfacesResponse.RouterInterfaceSet["+ i +"].HasReservationData"));
+			routerInterfaceType.setReservationBandwidth(context.stringValue("DescribeRouterInterfacesResponse.RouterInterfaceSet["+ i +"].ReservationBandwidth"));
+			routerInterfaceType.setReservationInternetChargeType(context.stringValue("DescribeRouterInterfacesResponse.RouterInterfaceSet["+ i +"].ReservationInternetChargeType"));
+			routerInterfaceType.setReservationActiveTime(context.stringValue("DescribeRouterInterfacesResponse.RouterInterfaceSet["+ i +"].ReservationActiveTime"));
+			routerInterfaceType.setReservationOrderType(context.stringValue("DescribeRouterInterfacesResponse.RouterInterfaceSet["+ i +"].ReservationOrderType"));
+			routerInterfaceType.setCrossBorder(context.booleanValue("DescribeRouterInterfacesResponse.RouterInterfaceSet["+ i +"].CrossBorder"));
+			routerInterfaceType.setHcThreshold(context.integerValue("DescribeRouterInterfacesResponse.RouterInterfaceSet["+ i +"].HcThreshold"));
+			routerInterfaceType.setHcRate(context.integerValue("DescribeRouterInterfacesResponse.RouterInterfaceSet["+ i +"].HcRate"));
 
 			routerInterfaceSet.add(routerInterfaceType);
 		}

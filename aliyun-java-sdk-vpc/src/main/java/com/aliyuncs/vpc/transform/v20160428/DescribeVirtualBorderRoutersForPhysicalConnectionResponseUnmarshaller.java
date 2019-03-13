@@ -42,6 +42,9 @@ public class DescribeVirtualBorderRoutersForPhysicalConnectionResponseUnmarshall
 			virtualBorderRouterForPhysicalConnectionType.setRecoveryTime(context.stringValue("DescribeVirtualBorderRoutersForPhysicalConnectionResponse.VirtualBorderRouterForPhysicalConnectionSet["+ i +"].RecoveryTime"));
 			virtualBorderRouterForPhysicalConnectionType.setVlanId(context.integerValue("DescribeVirtualBorderRoutersForPhysicalConnectionResponse.VirtualBorderRouterForPhysicalConnectionSet["+ i +"].VlanId"));
 			virtualBorderRouterForPhysicalConnectionType.setCircuitCode(context.stringValue("DescribeVirtualBorderRoutersForPhysicalConnectionResponse.VirtualBorderRouterForPhysicalConnectionSet["+ i +"].CircuitCode"));
+			virtualBorderRouterForPhysicalConnectionType.setLocalGatewayIp(context.stringValue("DescribeVirtualBorderRoutersForPhysicalConnectionResponse.VirtualBorderRouterForPhysicalConnectionSet["+ i +"].LocalGatewayIp"));
+			virtualBorderRouterForPhysicalConnectionType.setPeerGatewayIp(context.stringValue("DescribeVirtualBorderRoutersForPhysicalConnectionResponse.VirtualBorderRouterForPhysicalConnectionSet["+ i +"].PeerGatewayIp"));
+			virtualBorderRouterForPhysicalConnectionType.setPeeringSubnetMask(context.stringValue("DescribeVirtualBorderRoutersForPhysicalConnectionResponse.VirtualBorderRouterForPhysicalConnectionSet["+ i +"].PeeringSubnetMask"));
 
 			virtualBorderRouterForPhysicalConnectionSet.add(virtualBorderRouterForPhysicalConnectionType);
 		}

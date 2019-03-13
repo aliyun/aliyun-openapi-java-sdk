@@ -39,6 +39,8 @@ public class DescribeVpcAttributeResponse extends AcsResponse {
 
 	private String cidrBlock;
 
+	private String ipv6CidrBlock;
+
 	private String vRouterId;
 
 	private String description;
@@ -73,10 +75,26 @@ public class DescribeVpcAttributeResponse extends AcsResponse {
 		this.vpcId = vpcId;
 	}
 
+	public String getBizRegionId() {
+		return this.regionId;
+	}
+
+	public void setBizRegionId(String regionId) {
+		this.regionId = regionId;
+	}
+
+	/**
+	 * @deprecated use getBizRegionId instead of this.
+	 */
+	@Deprecated
 	public String getRegionId() {
 		return this.regionId;
 	}
 
+	/**
+	 * @deprecated use setBizRegionId instead of this.
+	 */
+	@Deprecated
 	public void setRegionId(String regionId) {
 		this.regionId = regionId;
 	}
@@ -111,6 +129,14 @@ public class DescribeVpcAttributeResponse extends AcsResponse {
 
 	public void setCidrBlock(String cidrBlock) {
 		this.cidrBlock = cidrBlock;
+	}
+
+	public String getIpv6CidrBlock() {
+		return this.ipv6CidrBlock;
+	}
+
+	public void setIpv6CidrBlock(String ipv6CidrBlock) {
+		this.ipv6CidrBlock = ipv6CidrBlock;
 	}
 
 	public String getVRouterId() {

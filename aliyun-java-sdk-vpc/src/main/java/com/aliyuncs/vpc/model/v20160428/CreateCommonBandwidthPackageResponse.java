@@ -28,6 +28,8 @@ public class CreateCommonBandwidthPackageResponse extends AcsResponse {
 
 	private String bandwidthPackageId;
 
+	private String resourceGroupId;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -42,6 +44,14 @@ public class CreateCommonBandwidthPackageResponse extends AcsResponse {
 
 	public void setBandwidthPackageId(String bandwidthPackageId) {
 		this.bandwidthPackageId = bandwidthPackageId;
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
 	}
 
 	@Override

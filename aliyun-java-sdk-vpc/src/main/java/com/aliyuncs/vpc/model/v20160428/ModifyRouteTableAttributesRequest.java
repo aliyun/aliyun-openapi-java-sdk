@@ -30,21 +30,13 @@ public class ModifyRouteTableAttributesRequest extends RpcAcsRequest<ModifyRoute
 
 	private String resourceOwnerAccount;
 
-	private String bandwidth;
-
 	private String ownerAccount;
 
 	private String description;
 
 	private Long ownerId;
 
-	private String kbpsBandwidth;
-
 	private String routeTableName;
-
-	private Long resourceUid;
-
-	private String resourceBid;
 
 	private String routeTableId;
 
@@ -67,17 +59,6 @@ public class ModifyRouteTableAttributesRequest extends RpcAcsRequest<ModifyRoute
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public String getBandwidth() {
-		return this.bandwidth;
-	}
-
-	public void setBandwidth(String bandwidth) {
-		this.bandwidth = bandwidth;
-		if(bandwidth != null){
-			putQueryParameter("Bandwidth", bandwidth);
 		}
 	}
 
@@ -114,17 +95,6 @@ public class ModifyRouteTableAttributesRequest extends RpcAcsRequest<ModifyRoute
 		}
 	}
 
-	public String getKbpsBandwidth() {
-		return this.kbpsBandwidth;
-	}
-
-	public void setKbpsBandwidth(String kbpsBandwidth) {
-		this.kbpsBandwidth = kbpsBandwidth;
-		if(kbpsBandwidth != null){
-			putQueryParameter("KbpsBandwidth", kbpsBandwidth);
-		}
-	}
-
 	public String getRouteTableName() {
 		return this.routeTableName;
 	}
@@ -133,28 +103,6 @@ public class ModifyRouteTableAttributesRequest extends RpcAcsRequest<ModifyRoute
 		this.routeTableName = routeTableName;
 		if(routeTableName != null){
 			putQueryParameter("RouteTableName", routeTableName);
-		}
-	}
-
-	public Long getResourceUid() {
-		return this.resourceUid;
-	}
-
-	public void setResourceUid(Long resourceUid) {
-		this.resourceUid = resourceUid;
-		if(resourceUid != null){
-			putQueryParameter("ResourceUid", resourceUid.toString());
-		}
-	}
-
-	public String getResourceBid() {
-		return this.resourceBid;
-	}
-
-	public void setResourceBid(String resourceBid) {
-		this.resourceBid = resourceBid;
-		if(resourceBid != null){
-			putQueryParameter("ResourceBid", resourceBid);
 		}
 	}
 

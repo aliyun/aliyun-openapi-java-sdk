@@ -24,6 +24,7 @@ public class CreateCommonBandwidthPackageResponseUnmarshaller {
 		
 		createCommonBandwidthPackageResponse.setRequestId(context.stringValue("CreateCommonBandwidthPackageResponse.RequestId"));
 		createCommonBandwidthPackageResponse.setBandwidthPackageId(context.stringValue("CreateCommonBandwidthPackageResponse.BandwidthPackageId"));
+		createCommonBandwidthPackageResponse.setResourceGroupId(context.stringValue("CreateCommonBandwidthPackageResponse.ResourceGroupId"));
 	 
 	 	return createCommonBandwidthPackageResponse;
 	}

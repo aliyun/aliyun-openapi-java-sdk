@@ -89,6 +89,8 @@ public class DescribeVpcsResponse extends AcsResponse {
 
 		private String cidrBlock;
 
+		private String ipv6CidrBlock;
+
 		private String vRouterId;
 
 		private String description;
@@ -96,6 +98,8 @@ public class DescribeVpcsResponse extends AcsResponse {
 		private Boolean isDefault;
 
 		private String resourceGroupId;
+
+		private List<Tag> tags;
 
 		private List<String> vSwitchIds;
 
@@ -113,10 +117,26 @@ public class DescribeVpcsResponse extends AcsResponse {
 			this.vpcId = vpcId;
 		}
 
+		public String getBizRegionId() {
+			return this.regionId;
+		}
+
+		public void setBizRegionId(String regionId) {
+			this.regionId = regionId;
+		}
+
+		/**
+		 * @deprecated use getBizRegionId instead of this.
+		 */
+		@Deprecated
 		public String getRegionId() {
 			return this.regionId;
 		}
 
+		/**
+		 * @deprecated use setBizRegionId instead of this.
+		 */
+		@Deprecated
 		public void setRegionId(String regionId) {
 			this.regionId = regionId;
 		}
@@ -153,6 +173,14 @@ public class DescribeVpcsResponse extends AcsResponse {
 			this.cidrBlock = cidrBlock;
 		}
 
+		public String getIpv6CidrBlock() {
+			return this.ipv6CidrBlock;
+		}
+
+		public void setIpv6CidrBlock(String ipv6CidrBlock) {
+			this.ipv6CidrBlock = ipv6CidrBlock;
+		}
+
 		public String getVRouterId() {
 			return this.vRouterId;
 		}
@@ -185,6 +213,14 @@ public class DescribeVpcsResponse extends AcsResponse {
 			this.resourceGroupId = resourceGroupId;
 		}
 
+		public List<Tag> getTags() {
+			return this.tags;
+		}
+
+		public void setTags(List<Tag> tags) {
+			this.tags = tags;
+		}
+
 		public List<String> getVSwitchIds() {
 			return this.vSwitchIds;
 		}
@@ -215,6 +251,29 @@ public class DescribeVpcsResponse extends AcsResponse {
 
 		public void setRouterTableIds(List<String> routerTableIds) {
 			this.routerTableIds = routerTableIds;
+		}
+
+		public static class Tag {
+
+			private String key;
+
+			private String value;
+
+			public String getKey() {
+				return this.key;
+			}
+
+			public void setKey(String key) {
+				this.key = key;
+			}
+
+			public String getValue() {
+				return this.value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
+			}
 		}
 	}
 

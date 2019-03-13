@@ -30,17 +30,29 @@ public class DescribeForwardTableEntriesRequest extends RpcAcsRequest<DescribeFo
 
 	private String resourceOwnerAccount;
 
-	private String forwardEntryId;
+	private String ipProtocol;
+
+	private String forwardEntryName;
 
 	private String ownerAccount;
 
 	private String forwardTableId;
 
-	private Integer pageSize;
-
 	private Long ownerId;
 
+	private String internalIp;
+
 	private Integer pageNumber;
+
+	private String forwardEntryId;
+
+	private String internalPort;
+
+	private Integer pageSize;
+
+	private String externalIp;
+
+	private String externalPort;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -64,14 +76,25 @@ public class DescribeForwardTableEntriesRequest extends RpcAcsRequest<DescribeFo
 		}
 	}
 
-	public String getForwardEntryId() {
-		return this.forwardEntryId;
+	public String getIpProtocol() {
+		return this.ipProtocol;
 	}
 
-	public void setForwardEntryId(String forwardEntryId) {
-		this.forwardEntryId = forwardEntryId;
-		if(forwardEntryId != null){
-			putQueryParameter("ForwardEntryId", forwardEntryId);
+	public void setIpProtocol(String ipProtocol) {
+		this.ipProtocol = ipProtocol;
+		if(ipProtocol != null){
+			putQueryParameter("IpProtocol", ipProtocol);
+		}
+	}
+
+	public String getForwardEntryName() {
+		return this.forwardEntryName;
+	}
+
+	public void setForwardEntryName(String forwardEntryName) {
+		this.forwardEntryName = forwardEntryName;
+		if(forwardEntryName != null){
+			putQueryParameter("ForwardEntryName", forwardEntryName);
 		}
 	}
 
@@ -97,17 +120,6 @@ public class DescribeForwardTableEntriesRequest extends RpcAcsRequest<DescribeFo
 		}
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -119,6 +131,17 @@ public class DescribeForwardTableEntriesRequest extends RpcAcsRequest<DescribeFo
 		}
 	}
 
+	public String getInternalIp() {
+		return this.internalIp;
+	}
+
+	public void setInternalIp(String internalIp) {
+		this.internalIp = internalIp;
+		if(internalIp != null){
+			putQueryParameter("InternalIp", internalIp);
+		}
+	}
+
 	public Integer getPageNumber() {
 		return this.pageNumber;
 	}
@@ -127,6 +150,61 @@ public class DescribeForwardTableEntriesRequest extends RpcAcsRequest<DescribeFo
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public String getForwardEntryId() {
+		return this.forwardEntryId;
+	}
+
+	public void setForwardEntryId(String forwardEntryId) {
+		this.forwardEntryId = forwardEntryId;
+		if(forwardEntryId != null){
+			putQueryParameter("ForwardEntryId", forwardEntryId);
+		}
+	}
+
+	public String getInternalPort() {
+		return this.internalPort;
+	}
+
+	public void setInternalPort(String internalPort) {
+		this.internalPort = internalPort;
+		if(internalPort != null){
+			putQueryParameter("InternalPort", internalPort);
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getExternalIp() {
+		return this.externalIp;
+	}
+
+	public void setExternalIp(String externalIp) {
+		this.externalIp = externalIp;
+		if(externalIp != null){
+			putQueryParameter("ExternalIp", externalIp);
+		}
+	}
+
+	public String getExternalPort() {
+		return this.externalPort;
+	}
+
+	public void setExternalPort(String externalPort) {
+		this.externalPort = externalPort;
+		if(externalPort != null){
+			putQueryParameter("ExternalPort", externalPort);
 		}
 	}
 

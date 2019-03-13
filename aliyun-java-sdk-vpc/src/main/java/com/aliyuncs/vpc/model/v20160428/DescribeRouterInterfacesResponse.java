@@ -129,7 +129,27 @@ public class DescribeRouterInterfacesResponse extends AcsResponse {
 
 		private String oppositeVpcInstanceId;
 
+		private Integer bandwidth;
+
 		private String vpcInstanceId;
+
+		private Integer oppositeBandwidth;
+
+		private String hasReservationData;
+
+		private String reservationBandwidth;
+
+		private String reservationInternetChargeType;
+
+		private String reservationActiveTime;
+
+		private String reservationOrderType;
+
+		private Boolean crossBorder;
+
+		private Integer hcThreshold;
+
+		private Integer hcRate;
 
 		public String getRouterInterfaceId() {
 			return this.routerInterfaceId;
@@ -339,12 +359,92 @@ public class DescribeRouterInterfacesResponse extends AcsResponse {
 			this.oppositeVpcInstanceId = oppositeVpcInstanceId;
 		}
 
+		public Integer getBandwidth() {
+			return this.bandwidth;
+		}
+
+		public void setBandwidth(Integer bandwidth) {
+			this.bandwidth = bandwidth;
+		}
+
 		public String getVpcInstanceId() {
 			return this.vpcInstanceId;
 		}
 
 		public void setVpcInstanceId(String vpcInstanceId) {
 			this.vpcInstanceId = vpcInstanceId;
+		}
+
+		public Integer getOppositeBandwidth() {
+			return this.oppositeBandwidth;
+		}
+
+		public void setOppositeBandwidth(Integer oppositeBandwidth) {
+			this.oppositeBandwidth = oppositeBandwidth;
+		}
+
+		public String getHasReservationData() {
+			return this.hasReservationData;
+		}
+
+		public void setHasReservationData(String hasReservationData) {
+			this.hasReservationData = hasReservationData;
+		}
+
+		public String getReservationBandwidth() {
+			return this.reservationBandwidth;
+		}
+
+		public void setReservationBandwidth(String reservationBandwidth) {
+			this.reservationBandwidth = reservationBandwidth;
+		}
+
+		public String getReservationInternetChargeType() {
+			return this.reservationInternetChargeType;
+		}
+
+		public void setReservationInternetChargeType(String reservationInternetChargeType) {
+			this.reservationInternetChargeType = reservationInternetChargeType;
+		}
+
+		public String getReservationActiveTime() {
+			return this.reservationActiveTime;
+		}
+
+		public void setReservationActiveTime(String reservationActiveTime) {
+			this.reservationActiveTime = reservationActiveTime;
+		}
+
+		public String getReservationOrderType() {
+			return this.reservationOrderType;
+		}
+
+		public void setReservationOrderType(String reservationOrderType) {
+			this.reservationOrderType = reservationOrderType;
+		}
+
+		public Boolean getCrossBorder() {
+			return this.crossBorder;
+		}
+
+		public void setCrossBorder(Boolean crossBorder) {
+			this.crossBorder = crossBorder;
+		}
+
+		public Integer getHcThreshold() {
+			return this.hcThreshold;
+		}
+
+		public void setHcThreshold(Integer hcThreshold) {
+			this.hcThreshold = hcThreshold;
+		}
+
+		public Integer getHcRate() {
+			return this.hcRate;
+		}
+
+		public void setHcRate(Integer hcRate) {
+			this.hcRate = hcRate;
 		}
 	}
 

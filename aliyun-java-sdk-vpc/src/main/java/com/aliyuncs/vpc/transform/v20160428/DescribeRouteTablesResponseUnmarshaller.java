@@ -40,6 +40,13 @@ public class DescribeRouteTablesResponseUnmarshaller {
 			routeTable.setRouteTableId(context.stringValue("DescribeRouteTablesResponse.RouteTables["+ i +"].RouteTableId"));
 			routeTable.setRouteTableType(context.stringValue("DescribeRouteTablesResponse.RouteTables["+ i +"].RouteTableType"));
 			routeTable.setCreationTime(context.stringValue("DescribeRouteTablesResponse.RouteTables["+ i +"].CreationTime"));
+			routeTable.setResourceGroupId(context.stringValue("DescribeRouteTablesResponse.RouteTables["+ i +"].ResourceGroupId"));
+
+			List<String> vSwitchIds = new ArrayList<String>();
+			for (int j = 0; j < context.lengthValue("DescribeRouteTablesResponse.RouteTables["+ i +"].VSwitchIds.Length"); j++) {
+				vSwitchIds.add(context.stringValue("DescribeRouteTablesResponse.RouteTables["+ i +"].VSwitchIds["+ j +"]"));
+			}
+			routeTable.setVSwitchIds(vSwitchIds);
 
 			List<RouteEntry> routeEntrys = new ArrayList<RouteEntry>();
 			for (int j = 0; j < context.lengthValue("DescribeRouteTablesResponse.RouteTables["+ i +"].RouteEntrys.Length"); j++) {
@@ -51,6 +58,10 @@ public class DescribeRouteTablesResponseUnmarshaller {
 				routeEntry.setInstanceId(context.stringValue("DescribeRouteTablesResponse.RouteTables["+ i +"].RouteEntrys["+ j +"].InstanceId"));
 				routeEntry.setNextHopType(context.stringValue("DescribeRouteTablesResponse.RouteTables["+ i +"].RouteEntrys["+ j +"].NextHopType"));
 				routeEntry.setNextHopRegionId(context.stringValue("DescribeRouteTablesResponse.RouteTables["+ i +"].RouteEntrys["+ j +"].NextHopRegionId"));
+				routeEntry.setNextHopOppsiteType(context.stringValue("DescribeRouteTablesResponse.RouteTables["+ i +"].RouteEntrys["+ j +"].NextHopOppsiteType"));
+				routeEntry.setNextHopOppsiteInstanceId(context.stringValue("DescribeRouteTablesResponse.RouteTables["+ i +"].RouteEntrys["+ j +"].NextHopOppsiteInstanceId"));
+				routeEntry.setNextHopOppsiteRegionId(context.stringValue("DescribeRouteTablesResponse.RouteTables["+ i +"].RouteEntrys["+ j +"].NextHopOppsiteRegionId"));
+				routeEntry.setPrivateIpAddress(context.stringValue("DescribeRouteTablesResponse.RouteTables["+ i +"].RouteEntrys["+ j +"].PrivateIpAddress"));
 
 				List<NextHop> nextHops = new ArrayList<NextHop>();
 				for (int k = 0; k < context.lengthValue("DescribeRouteTablesResponse.RouteTables["+ i +"].RouteEntrys["+ j +"].NextHops.Length"); k++) {
@@ -60,6 +71,9 @@ public class DescribeRouteTablesResponseUnmarshaller {
 					nextHop.setEnabled(context.integerValue("DescribeRouteTablesResponse.RouteTables["+ i +"].RouteEntrys["+ j +"].NextHops["+ k +"].Enabled"));
 					nextHop.setWeight(context.integerValue("DescribeRouteTablesResponse.RouteTables["+ i +"].RouteEntrys["+ j +"].NextHops["+ k +"].Weight"));
 					nextHop.setNextHopRegionId(context.stringValue("DescribeRouteTablesResponse.RouteTables["+ i +"].RouteEntrys["+ j +"].NextHops["+ k +"].NextHopRegionId"));
+					nextHop.setNextHopOppsiteType(context.stringValue("DescribeRouteTablesResponse.RouteTables["+ i +"].RouteEntrys["+ j +"].NextHops["+ k +"].NextHopOppsiteType"));
+					nextHop.setNextHopOppsiteInstanceId(context.stringValue("DescribeRouteTablesResponse.RouteTables["+ i +"].RouteEntrys["+ j +"].NextHops["+ k +"].NextHopOppsiteInstanceId"));
+					nextHop.setNextHopOppsiteRegionId(context.stringValue("DescribeRouteTablesResponse.RouteTables["+ i +"].RouteEntrys["+ j +"].NextHops["+ k +"].NextHopOppsiteRegionId"));
 
 					nextHops.add(nextHop);
 				}

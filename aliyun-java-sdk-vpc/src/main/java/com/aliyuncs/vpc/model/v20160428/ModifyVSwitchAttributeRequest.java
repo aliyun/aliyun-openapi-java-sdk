@@ -40,6 +40,8 @@ public class ModifyVSwitchAttributeRequest extends RpcAcsRequest<ModifyVSwitchAt
 
 	private Long ownerId;
 
+	private Integer ipv6CidrBlock;
+
 	public String getVSwitchId() {
 		return this.vSwitchId;
 	}
@@ -114,6 +116,17 @@ public class ModifyVSwitchAttributeRequest extends RpcAcsRequest<ModifyVSwitchAt
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public Integer getIpv6CidrBlock() {
+		return this.ipv6CidrBlock;
+	}
+
+	public void setIpv6CidrBlock(Integer ipv6CidrBlock) {
+		this.ipv6CidrBlock = ipv6CidrBlock;
+		if(ipv6CidrBlock != null){
+			putQueryParameter("Ipv6CidrBlock", ipv6CidrBlock.toString());
 		}
 	}
 
