@@ -20,15 +20,15 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class QueryResourceInventoryRequest extends RpcAcsRequest<QueryResourceInventoryResponse> {
+public class ListUserQuotasRequest extends RpcAcsRequest<ListUserQuotasResponse> {
 	
-	public QueryResourceInventoryRequest() {
-		super("TeslaMaxCompute", "2018-01-04", "QueryResourceInventory", "teslamaxcompute");
+	public ListUserQuotasRequest() {
+		super("TeslaMaxCompute", "2018-01-04", "ListUserQuotas", "teslamaxcompute");
 	}
 
 	@Override
-	public Class<QueryResourceInventoryResponse> getResponseClass() {
-		return QueryResourceInventoryResponse.class;
+	public Class<ListUserQuotasResponse> getResponseClass() {
+		return ListUserQuotasResponse.class;
 	}
 
 }

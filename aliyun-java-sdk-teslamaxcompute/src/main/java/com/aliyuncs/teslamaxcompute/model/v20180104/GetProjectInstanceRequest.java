@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class GetProjectInstanceRequest extends RpcAcsRequest<GetProjectInstanceResponse> {
 	
 	public GetProjectInstanceRequest() {
-		super("TeslaMaxCompute", "2018-01-04", "GetProjectInstance");
+		super("TeslaMaxCompute", "2018-01-04", "GetProjectInstance", "teslamaxcompute");
 	}
 
 	private Integer pageSize;

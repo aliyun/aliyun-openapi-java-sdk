@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class QueryTopologyRequest extends RpcAcsRequest<QueryTopologyResponse> {
 	
 	public QueryTopologyRequest() {
-		super("TeslaMaxCompute", "2018-01-04", "QueryTopology");
+		super("TeslaMaxCompute", "2018-01-04", "QueryTopology", "teslamaxcompute");
 	}
 
 	@Override

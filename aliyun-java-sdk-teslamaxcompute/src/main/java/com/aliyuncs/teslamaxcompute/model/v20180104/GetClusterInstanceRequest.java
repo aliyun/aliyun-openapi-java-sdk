@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class GetClusterInstanceRequest extends RpcAcsRequest<GetClusterInstanceResponse> {
 	
 	public GetClusterInstanceRequest() {
-		super("TeslaMaxCompute", "2018-01-04", "GetClusterInstance");
+		super("TeslaMaxCompute", "2018-01-04", "GetClusterInstance", "teslamaxcompute");
 	}
 
 	private String cluster;
