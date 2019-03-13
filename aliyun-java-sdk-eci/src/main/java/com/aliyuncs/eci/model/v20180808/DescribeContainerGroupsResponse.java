@@ -545,38 +545,49 @@ public class DescribeContainerGroupsResponse extends AcsResponse {
 				this.securityContext = securityContext;
 			}
 
-			public static class VolumeMount {
+            public static class VolumeMount {
 
-				private String name;
+                private String mountPath;
 
-				private String mountPath;
+                private Boolean readOnly;
 
-				private Boolean readOnly;
+                private String name;
 
-				public String getName() {
-					return this.name;
-				}
+                private String subPath;
 
-				public void setName(String name) {
-					this.name = name;
-				}
+                public String getMountPath() {
+                    return this.mountPath;
+                }
 
-				public String getMountPath() {
-					return this.mountPath;
-				}
+                public void setMountPath(String mountPath) {
+                    this.mountPath = mountPath;
+                }
 
-				public void setMountPath(String mountPath) {
-					this.mountPath = mountPath;
-				}
+                public Boolean getReadOnly() {
+                    return this.readOnly;
+                }
 
-				public Boolean getReadOnly() {
-					return this.readOnly;
-				}
+                public void setReadOnly(Boolean readOnly) {
+                    this.readOnly = readOnly;
+                }
 
-				public void setReadOnly(Boolean readOnly) {
-					this.readOnly = readOnly;
-				}
-			}
+                public String getName() {
+                    return this.name;
+                }
+
+                public void setName(String name) {
+                    this.name = name;
+                }
+
+                public String getSubPath() {
+                    return subPath;
+                }
+
+                public void setSubPath(String subPath) {
+                    this.subPath = subPath;
+                }
+
+            }
 
 			public static class Port {
 

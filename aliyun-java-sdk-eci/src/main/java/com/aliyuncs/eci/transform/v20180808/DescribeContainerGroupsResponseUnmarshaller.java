@@ -227,6 +227,7 @@ public class DescribeContainerGroupsResponseUnmarshaller {
 				for (int k = 0; k < context.lengthValue("DescribeContainerGroupsResponse.ContainerGroups["+ i +"].Containers["+ j +"].VolumeMounts.Length"); k++) {
 					VolumeMount volumeMount = new VolumeMount();
 					volumeMount.setName(context.stringValue("DescribeContainerGroupsResponse.ContainerGroups["+ i +"].Containers["+ j +"].VolumeMounts["+ k +"].Name"));
+					volumeMount.setSubPath(context.stringValue("DescribeContainerGroupsResponse.ContainerGroups["+ i +"].Containers["+ j +"].VolumeMounts["+ k +"].SubPath"));
 					volumeMount.setMountPath(context.stringValue("DescribeContainerGroupsResponse.ContainerGroups["+ i +"].Containers["+ j +"].VolumeMounts["+ k +"].MountPath"));
 					volumeMount.setReadOnly(context.booleanValue("DescribeContainerGroupsResponse.ContainerGroups["+ i +"].Containers["+ j +"].VolumeMounts["+ k +"].ReadOnly"));
 
