@@ -36,6 +36,7 @@ public class DescribeResourcesModificationResponseUnmarshaller {
 			availableZone.setRegionId(context.stringValue("DescribeResourcesModificationResponse.AvailableZones["+ i +"].RegionId"));
 			availableZone.setZoneId(context.stringValue("DescribeResourcesModificationResponse.AvailableZones["+ i +"].ZoneId"));
 			availableZone.setStatus(context.stringValue("DescribeResourcesModificationResponse.AvailableZones["+ i +"].Status"));
+			availableZone.setStatusCategory(context.stringValue("DescribeResourcesModificationResponse.AvailableZones["+ i +"].StatusCategory"));
 
 			List<AvailableResource> availableResources = new ArrayList<AvailableResource>();
 			for (int j = 0; j < context.lengthValue("DescribeResourcesModificationResponse.AvailableZones["+ i +"].AvailableResources.Length"); j++) {
@@ -47,6 +48,7 @@ public class DescribeResourcesModificationResponseUnmarshaller {
 					SupportedResource supportedResource = new SupportedResource();
 					supportedResource.setValue(context.stringValue("DescribeResourcesModificationResponse.AvailableZones["+ i +"].AvailableResources["+ j +"].SupportedResources["+ k +"].Value"));
 					supportedResource.setStatus(context.stringValue("DescribeResourcesModificationResponse.AvailableZones["+ i +"].AvailableResources["+ j +"].SupportedResources["+ k +"].Status"));
+					supportedResource.setStatusCategory(context.stringValue("DescribeResourcesModificationResponse.AvailableZones["+ i +"].AvailableResources["+ j +"].SupportedResources["+ k +"].StatusCategory"));
 					supportedResource.setMin(context.integerValue("DescribeResourcesModificationResponse.AvailableZones["+ i +"].AvailableResources["+ j +"].SupportedResources["+ k +"].Min"));
 					supportedResource.setMax(context.integerValue("DescribeResourcesModificationResponse.AvailableZones["+ i +"].AvailableResources["+ j +"].SupportedResources["+ k +"].Max"));
 					supportedResource.setUnit(context.stringValue("DescribeResourcesModificationResponse.AvailableZones["+ i +"].AvailableResources["+ j +"].SupportedResources["+ k +"].Unit"));

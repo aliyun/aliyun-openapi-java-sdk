@@ -183,6 +183,8 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		private DedicatedHostAttribute dedicatedHostAttribute;
 
+		private EcsCapacityReservationAttr ecsCapacityReservationAttr;
+
 		public String getInstanceId() {
 			return this.instanceId;
 		}
@@ -623,6 +625,14 @@ public class DescribeInstancesResponse extends AcsResponse {
 			this.dedicatedHostAttribute = dedicatedHostAttribute;
 		}
 
+		public EcsCapacityReservationAttr getEcsCapacityReservationAttr() {
+			return this.ecsCapacityReservationAttr;
+		}
+
+		public void setEcsCapacityReservationAttr(EcsCapacityReservationAttr ecsCapacityReservationAttr) {
+			this.ecsCapacityReservationAttr = ecsCapacityReservationAttr;
+		}
+
 		public static class NetworkInterface {
 
 			private String networkInterfaceId;
@@ -818,6 +828,29 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 			public void setDedicatedHostName(String dedicatedHostName) {
 				this.dedicatedHostName = dedicatedHostName;
+			}
+		}
+
+		public static class EcsCapacityReservationAttr {
+
+			private String capacityReservationId;
+
+			private String capacityReservationPreference;
+
+			public String getCapacityReservationId() {
+				return this.capacityReservationId;
+			}
+
+			public void setCapacityReservationId(String capacityReservationId) {
+				this.capacityReservationId = capacityReservationId;
+			}
+
+			public String getCapacityReservationPreference() {
+				return this.capacityReservationPreference;
+			}
+
+			public void setCapacityReservationPreference(String capacityReservationPreference) {
+				this.capacityReservationPreference = capacityReservationPreference;
 			}
 		}
 	}
