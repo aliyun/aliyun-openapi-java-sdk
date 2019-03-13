@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribePhoneInfoRequest extends RpcAcsRequest<DescribePhoneInfoResponse> {
 	
 	public DescribePhoneInfoRequest() {
-		super("jarvis-public", "2018-06-21", "DescribePhoneInfo");
+		super("jarvis-public", "2018-06-21", "DescribePhoneInfo", "jarvis-public");
 	}
 
 	private String sourceIp;
