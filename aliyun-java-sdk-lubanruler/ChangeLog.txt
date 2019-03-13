@@ -1,3 +1,6 @@
+2019-03-13 Version: 1.0.1
+1, Update Dependency
+
 2018-01-31 Version: 1.0.0
 1, add lubanruler pop api for RDC.
 

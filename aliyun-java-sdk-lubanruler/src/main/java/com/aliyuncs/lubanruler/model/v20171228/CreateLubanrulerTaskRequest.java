@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.lubanruler.model.v20171228;
 
 import com.aliyuncs.RpcAcsRequest;
@@ -23,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class CreateLubanrulerTaskRequest extends RpcAcsRequest<CreateLubanrulerTaskResponse> {
 	
 	public CreateLubanrulerTaskRequest() {
-		super("Lubanruler", "2017-12-28", "CreateLubanrulerTask");
+		super("Lubanruler", "2017-12-28", "CreateLubanrulerTask", "lubanruler");
 		setMethod(MethodType.POST);
 	}
 
