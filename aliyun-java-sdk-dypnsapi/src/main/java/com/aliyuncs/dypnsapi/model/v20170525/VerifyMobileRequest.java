@@ -15,20 +15,22 @@
 package com.aliyuncs.dypnsapi.model.v20170525;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.ProtocolType;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
-public class GatewayVerifyRequest extends RpcAcsRequest<GatewayVerifyResponse> {
+public class VerifyMobileRequest extends RpcAcsRequest<VerifyMobileResponse> {
 	
-	public GatewayVerifyRequest() {
-		super("Dypnsapi", "2017-05-25", "GatewayVerify");
+	public VerifyMobileRequest() {
+		super("Dypnsapi", "2017-05-25", "VerifyMobile", "dypnsapi");
+		setProtocol(ProtocolType.HTTPS);
+		setMethod(MethodType.POST);
 	}
 
 	private Long resourceOwnerId;
-
-	private String sceneCode;
 
 	private String accessCode;
 
@@ -48,17 +50,6 @@ public class GatewayVerifyRequest extends RpcAcsRequest<GatewayVerifyResponse> {
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getSceneCode() {
-		return this.sceneCode;
-	}
-
-	public void setSceneCode(String sceneCode) {
-		this.sceneCode = sceneCode;
-		if(sceneCode != null){
-			putQueryParameter("SceneCode", sceneCode);
 		}
 	}
 
@@ -118,8 +109,8 @@ public class GatewayVerifyRequest extends RpcAcsRequest<GatewayVerifyResponse> {
 	}
 
 	@Override
-	public Class<GatewayVerifyResponse> getResponseClass() {
-		return GatewayVerifyResponse.class;
+	public Class<VerifyMobileResponse> getResponseClass() {
+		return VerifyMobileResponse.class;
 	}
 
 }

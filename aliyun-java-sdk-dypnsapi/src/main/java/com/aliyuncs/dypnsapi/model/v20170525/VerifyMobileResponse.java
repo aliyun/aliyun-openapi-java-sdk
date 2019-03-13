@@ -15,14 +15,14 @@
 package com.aliyuncs.dypnsapi.model.v20170525;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.dypnsapi.transform.v20170525.GatewayVerifyResponseUnmarshaller;
+import com.aliyuncs.dypnsapi.transform.v20170525.VerifyMobileResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class GatewayVerifyResponse extends AcsResponse {
+public class VerifyMobileResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -88,7 +88,7 @@ public class GatewayVerifyResponse extends AcsResponse {
 	}
 
 	@Override
-	public GatewayVerifyResponse getInstance(UnmarshallerContext context) {
-		return	GatewayVerifyResponseUnmarshaller.unmarshall(this, context);
+	public VerifyMobileResponse getInstance(UnmarshallerContext context) {
+		return	VerifyMobileResponseUnmarshaller.unmarshall(this, context);
 	}
 }

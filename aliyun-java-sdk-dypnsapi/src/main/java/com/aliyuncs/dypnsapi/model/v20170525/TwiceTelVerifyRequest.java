@@ -20,23 +20,21 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class GatewayVerifyInitializationRequest extends RpcAcsRequest<GatewayVerifyInitializationResponse> {
+public class TwiceTelVerifyRequest extends RpcAcsRequest<TwiceTelVerifyResponse> {
 	
-	public GatewayVerifyInitializationRequest() {
-		super("Dypnsapi", "2017-05-25", "GatewayVerifyInitialization");
+	public TwiceTelVerifyRequest() {
+		super("Dypnsapi", "2017-05-25", "TwiceTelVerify", "dypnsapi");
 	}
 
 	private Long resourceOwnerId;
-
-	private String sdkVersion;
-
-	private String sceneCode;
 
 	private String resourceOwnerAccount;
 
 	private String phoneNumber;
 
 	private Long ownerId;
+
+	private String since;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -46,28 +44,6 @@ public class GatewayVerifyInitializationRequest extends RpcAcsRequest<GatewayVer
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getSdkVersion() {
-		return this.sdkVersion;
-	}
-
-	public void setSdkVersion(String sdkVersion) {
-		this.sdkVersion = sdkVersion;
-		if(sdkVersion != null){
-			putQueryParameter("SdkVersion", sdkVersion);
-		}
-	}
-
-	public String getSceneCode() {
-		return this.sceneCode;
-	}
-
-	public void setSceneCode(String sceneCode) {
-		this.sceneCode = sceneCode;
-		if(sceneCode != null){
-			putQueryParameter("SceneCode", sceneCode);
 		}
 	}
 
@@ -104,9 +80,20 @@ public class GatewayVerifyInitializationRequest extends RpcAcsRequest<GatewayVer
 		}
 	}
 
+	public String getSince() {
+		return this.since;
+	}
+
+	public void setSince(String since) {
+		this.since = since;
+		if(since != null){
+			putQueryParameter("Since", since);
+		}
+	}
+
 	@Override
-	public Class<GatewayVerifyInitializationResponse> getResponseClass() {
-		return GatewayVerifyInitializationResponse.class;
+	public Class<TwiceTelVerifyResponse> getResponseClass() {
+		return TwiceTelVerifyResponse.class;
 	}
 
 }
