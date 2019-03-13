@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class BatchGetJobMetricInfoRequest extends RpcAcsRequest<BatchGetJobMetricInfoResponse> {
 	
 	public BatchGetJobMetricInfoRequest() {
-		super("TeslaStream", "2018-01-15", "BatchGetJobMetricInfo");
+		super("TeslaStream", "2018-01-15", "BatchGetJobMetricInfo", "teslastream");
 	}
 
 	private String jobInfos;

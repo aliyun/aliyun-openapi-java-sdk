@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class BatchGetPluginConfigInfoRequest extends RpcAcsRequest<BatchGetPluginConfigInfoResponse> {
 	
 	public BatchGetPluginConfigInfoRequest() {
-		super("TeslaStream", "2018-01-15", "BatchGetPluginConfigInfo");
+		super("TeslaStream", "2018-01-15", "BatchGetPluginConfigInfo", "teslastream");
 	}
 
 	private String pluginInfos;
