@@ -20,7 +20,7 @@ public class AuthConstant {
     public static final String INI_ROLE_ARN = "role_arn";
 
     public static final long TSC_VALID_TIME_SECONDS = 3600L;
-    public static final String DEFAULT_REGION = "cn-hangzhou";
+    public static final String DEFAULT_REGION = "region_id";
     public static final String INI_ENABLE = "enable";
 
 }
