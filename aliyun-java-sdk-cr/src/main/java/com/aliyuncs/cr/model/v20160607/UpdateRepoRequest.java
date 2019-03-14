@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class UpdateRepoRequest extends RoaAcsRequest<UpdateRepoResponse> {
 	
 	public UpdateRepoRequest() {
-		super("cr", "2016-06-07", "UpdateRepo");
+		super("cr", "2016-06-07", "UpdateRepo", "cr");
 		setUriPattern("/repos/[RepoNamespace]/[RepoName]");
 		setMethod(MethodType.POST);
 	}

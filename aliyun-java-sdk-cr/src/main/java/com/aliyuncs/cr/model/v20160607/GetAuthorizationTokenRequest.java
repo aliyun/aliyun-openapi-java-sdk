@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class GetAuthorizationTokenRequest extends RoaAcsRequest<GetAuthorizationTokenResponse> {
 	
 	public GetAuthorizationTokenRequest() {
-		super("cr", "2016-06-07", "GetAuthorizationToken");
+		super("cr", "2016-06-07", "GetAuthorizationToken", "cr");
 		setUriPattern("/tokens");
 		setMethod(MethodType.GET);
 	}

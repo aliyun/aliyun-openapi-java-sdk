@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class CreateRepoRequest extends RoaAcsRequest<CreateRepoResponse> {
 	
 	public CreateRepoRequest() {
-		super("cr", "2016-06-07", "CreateRepo");
+		super("cr", "2016-06-07", "CreateRepo", "cr");
 		setUriPattern("/repos");
 		setMethod(MethodType.PUT);
 	}
