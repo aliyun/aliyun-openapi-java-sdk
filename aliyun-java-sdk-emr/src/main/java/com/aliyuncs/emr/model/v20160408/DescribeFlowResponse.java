@@ -59,9 +59,13 @@ public class DescribeFlowResponse extends AcsResponse {
 
 	private String categoryId;
 
+	private String alertConf;
+
 	private String alertUserGroupBizId;
 
 	private String alertDingDingGroupBizId;
+
+	private String application;
 
 	private List<ParentFlow> parentFlowList;
 
@@ -201,6 +205,14 @@ public class DescribeFlowResponse extends AcsResponse {
 		this.categoryId = categoryId;
 	}
 
+	public String getAlertConf() {
+		return this.alertConf;
+	}
+
+	public void setAlertConf(String alertConf) {
+		this.alertConf = alertConf;
+	}
+
 	public String getAlertUserGroupBizId() {
 		return this.alertUserGroupBizId;
 	}
@@ -215,6 +227,14 @@ public class DescribeFlowResponse extends AcsResponse {
 
 	public void setAlertDingDingGroupBizId(String alertDingDingGroupBizId) {
 		this.alertDingDingGroupBizId = alertDingDingGroupBizId;
+	}
+
+	public String getApplication() {
+		return this.application;
+	}
+
+	public void setApplication(String application) {
+		this.application = application;
 	}
 
 	public List<ParentFlow> getParentFlowList() {

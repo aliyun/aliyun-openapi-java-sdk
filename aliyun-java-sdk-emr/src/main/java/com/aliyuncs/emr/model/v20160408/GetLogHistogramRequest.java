@@ -30,6 +30,8 @@ public class GetLogHistogramRequest extends RpcAcsRequest<GetLogHistogramRespons
 
 	private String hostInnerIp;
 
+	private String hostName;
+
 	private String logstoreName;
 
 	private Integer fromTimestamp;
@@ -59,6 +61,17 @@ public class GetLogHistogramRequest extends RpcAcsRequest<GetLogHistogramRespons
 		this.hostInnerIp = hostInnerIp;
 		if(hostInnerIp != null){
 			putQueryParameter("HostInnerIp", hostInnerIp);
+		}
+	}
+
+	public String getHostName() {
+		return this.hostName;
+	}
+
+	public void setHostName(String hostName) {
+		this.hostName = hostName;
+		if(hostName != null){
+			putQueryParameter("HostName", hostName);
 		}
 	}
 

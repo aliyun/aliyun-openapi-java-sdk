@@ -47,6 +47,11 @@ public class DefaultAcsClientTest {
     public void testConstructor() throws ClientException, IOException {
         DefaultAcsClient client = new DefaultAcsClient();
         Assert.assertTrue(DefaultProfile.getProfile() == client.getProfile());
+
+        client = new DefaultAcsClient("cn-test");
+        Assert.assertEquals("cn-test", client.getProfile().getRegionId());
+        Assert.assertEquals("ApacheHttpClient",
+                client.getUserAgentConfig().getSysUserAgentsMap().get("HTTPClient"));
     }
 
     @SuppressWarnings("deprecation")
@@ -382,7 +387,7 @@ public class DefaultAcsClientTest {
     public void doActionTest() throws ClientException {
         System.setProperty("alibabacloud.accessKeyId", "test");
         System.setProperty("alibabacloud.accessKeyIdSecret", "test");
-        DefaultAcsClient client = new DefaultAcsClient();
+        DefaultAcsClient client = new DefaultAcsClient("test");
         DefaultEndpointResolver endpointResolver = Mockito.mock(DefaultEndpointResolver.class);
         client.setEndpointResolver(endpointResolver);
         String endPoint = "endpoint-test.exception.com";
@@ -694,7 +699,7 @@ public class DefaultAcsClientTest {
         client.appendUserAgent("order", "1.2.2");
         String userAgent = UserAgentConfig.resolve(null, client.getUserAgentConfig());
         String resultStr = UserAgentConfig.getDefaultMessage()
-                + " Client/ApacheHttpClient test/1.2.3 order/1.2.2";
+                + " HTTPClient/ApacheHttpClient test/1.2.3 order/1.2.2";
         Assert.assertEquals(resultStr, userAgent);
     }
 }

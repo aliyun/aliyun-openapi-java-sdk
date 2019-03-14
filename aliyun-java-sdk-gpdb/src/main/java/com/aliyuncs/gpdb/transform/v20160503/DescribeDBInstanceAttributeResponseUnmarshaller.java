@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.gpdb.model.v20160503.DescribeDBInstanceAttributeResponse;
 import com.aliyuncs.gpdb.model.v20160503.DescribeDBInstanceAttributeResponse.DBInstanceAttribute;
+import com.aliyuncs.gpdb.model.v20160503.DescribeDBInstanceAttributeResponse.DBInstanceAttribute.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -63,6 +64,16 @@ public class DescribeDBInstanceAttributeResponseUnmarshaller {
 			dBInstanceAttribute.setInstanceNetworkType(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].InstanceNetworkType"));
 			dBInstanceAttribute.setVpcId(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].VpcId"));
 			dBInstanceAttribute.setConnectionMode(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].ConnectionMode"));
+
+			List<Tag> tags = new ArrayList<Tag>();
+			for (int j = 0; j < context.lengthValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].Tags.Length"); j++) {
+				Tag tag = new Tag();
+				tag.setKey(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].Tags["+ j +"].Key"));
+				tag.setValue(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].Tags["+ j +"].Value"));
+
+				tags.add(tag);
+			}
+			dBInstanceAttribute.setTags(tags);
 
 			items.add(dBInstanceAttribute);
 		}

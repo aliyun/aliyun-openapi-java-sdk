@@ -28,8 +28,6 @@ public class SearchLogRequest extends RpcAcsRequest<SearchLogResponse> {
 
 	private Long resourceOwnerId;
 
-	private String hostInnerIp;
-
 	private String logstoreName;
 
 	private Integer fromTimestamp;
@@ -38,13 +36,17 @@ public class SearchLogRequest extends RpcAcsRequest<SearchLogResponse> {
 
 	private Integer line;
 
-	private Integer toTimestamp;
-
-	private String slsQueryString;
-
 	private String clusterId;
 
 	private Boolean reverse;
+
+	private String hostInnerIp;
+
+	private String hostName;
+
+	private Integer toTimestamp;
+
+	private String slsQueryString;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -54,17 +56,6 @@ public class SearchLogRequest extends RpcAcsRequest<SearchLogResponse> {
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getHostInnerIp() {
-		return this.hostInnerIp;
-	}
-
-	public void setHostInnerIp(String hostInnerIp) {
-		this.hostInnerIp = hostInnerIp;
-		if(hostInnerIp != null){
-			putQueryParameter("HostInnerIp", hostInnerIp);
 		}
 	}
 
@@ -112,28 +103,6 @@ public class SearchLogRequest extends RpcAcsRequest<SearchLogResponse> {
 		}
 	}
 
-	public Integer getToTimestamp() {
-		return this.toTimestamp;
-	}
-
-	public void setToTimestamp(Integer toTimestamp) {
-		this.toTimestamp = toTimestamp;
-		if(toTimestamp != null){
-			putQueryParameter("ToTimestamp", toTimestamp.toString());
-		}
-	}
-
-	public String getSlsQueryString() {
-		return this.slsQueryString;
-	}
-
-	public void setSlsQueryString(String slsQueryString) {
-		this.slsQueryString = slsQueryString;
-		if(slsQueryString != null){
-			putQueryParameter("SlsQueryString", slsQueryString);
-		}
-	}
-
 	public String getClusterId() {
 		return this.clusterId;
 	}
@@ -153,6 +122,50 @@ public class SearchLogRequest extends RpcAcsRequest<SearchLogResponse> {
 		this.reverse = reverse;
 		if(reverse != null){
 			putQueryParameter("Reverse", reverse.toString());
+		}
+	}
+
+	public String getHostInnerIp() {
+		return this.hostInnerIp;
+	}
+
+	public void setHostInnerIp(String hostInnerIp) {
+		this.hostInnerIp = hostInnerIp;
+		if(hostInnerIp != null){
+			putQueryParameter("HostInnerIp", hostInnerIp);
+		}
+	}
+
+	public String getHostName() {
+		return this.hostName;
+	}
+
+	public void setHostName(String hostName) {
+		this.hostName = hostName;
+		if(hostName != null){
+			putQueryParameter("HostName", hostName);
+		}
+	}
+
+	public Integer getToTimestamp() {
+		return this.toTimestamp;
+	}
+
+	public void setToTimestamp(Integer toTimestamp) {
+		this.toTimestamp = toTimestamp;
+		if(toTimestamp != null){
+			putQueryParameter("ToTimestamp", toTimestamp.toString());
+		}
+	}
+
+	public String getSlsQueryString() {
+		return this.slsQueryString;
+	}
+
+	public void setSlsQueryString(String slsQueryString) {
+		this.slsQueryString = slsQueryString;
+		if(slsQueryString != null){
+			putQueryParameter("SlsQueryString", slsQueryString);
 		}
 	}
 

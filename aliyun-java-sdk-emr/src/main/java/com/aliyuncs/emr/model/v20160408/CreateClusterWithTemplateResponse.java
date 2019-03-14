@@ -26,19 +26,13 @@ public class CreateClusterWithTemplateResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String clusterBizId;
-
-	private Long clusterId;
-
-	private Long workFlowId;
+	private String clusterId;
 
 	private String emrOrderId;
 
 	private String masterOrderId;
 
 	private String coreOrderId;
-
-	private String workFlowInstanceId;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -48,28 +42,12 @@ public class CreateClusterWithTemplateResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getClusterBizId() {
-		return this.clusterBizId;
-	}
-
-	public void setClusterBizId(String clusterBizId) {
-		this.clusterBizId = clusterBizId;
-	}
-
-	public Long getClusterId() {
+	public String getClusterId() {
 		return this.clusterId;
 	}
 
-	public void setClusterId(Long clusterId) {
+	public void setClusterId(String clusterId) {
 		this.clusterId = clusterId;
-	}
-
-	public Long getWorkFlowId() {
-		return this.workFlowId;
-	}
-
-	public void setWorkFlowId(Long workFlowId) {
-		this.workFlowId = workFlowId;
 	}
 
 	public String getEmrOrderId() {
@@ -94,14 +72,6 @@ public class CreateClusterWithTemplateResponse extends AcsResponse {
 
 	public void setCoreOrderId(String coreOrderId) {
 		this.coreOrderId = coreOrderId;
-	}
-
-	public String getWorkFlowInstanceId() {
-		return this.workFlowInstanceId;
-	}
-
-	public void setWorkFlowInstanceId(String workFlowInstanceId) {
-		this.workFlowInstanceId = workFlowInstanceId;
 	}
 
 	@Override

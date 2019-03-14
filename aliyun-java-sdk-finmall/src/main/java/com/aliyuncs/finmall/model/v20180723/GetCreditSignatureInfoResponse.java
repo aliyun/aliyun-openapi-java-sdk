@@ -30,7 +30,7 @@ public class GetCreditSignatureInfoResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Data data;
+	private String data;
 
 	public String getCode() {
 		return this.code;
@@ -56,95 +56,12 @@ public class GetCreditSignatureInfoResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Data getData() {
+	public String getData() {
 		return this.data;
 	}
 
-	public void setData(Data data) {
+	public void setData(String data) {
 		this.data = data;
-	}
-
-	public static class Data {
-
-		private String creditId;
-
-		private String agreementId;
-
-		private String agreementNo;
-
-		private String agreementTitle;
-
-		private String signType;
-
-		private String agreementSigners;
-
-		private String agreementPath;
-
-		private String signState;
-
-		public String getCreditId() {
-			return this.creditId;
-		}
-
-		public void setCreditId(String creditId) {
-			this.creditId = creditId;
-		}
-
-		public String getAgreementId() {
-			return this.agreementId;
-		}
-
-		public void setAgreementId(String agreementId) {
-			this.agreementId = agreementId;
-		}
-
-		public String getAgreementNo() {
-			return this.agreementNo;
-		}
-
-		public void setAgreementNo(String agreementNo) {
-			this.agreementNo = agreementNo;
-		}
-
-		public String getAgreementTitle() {
-			return this.agreementTitle;
-		}
-
-		public void setAgreementTitle(String agreementTitle) {
-			this.agreementTitle = agreementTitle;
-		}
-
-		public String getSignType() {
-			return this.signType;
-		}
-
-		public void setSignType(String signType) {
-			this.signType = signType;
-		}
-
-		public String getAgreementSigners() {
-			return this.agreementSigners;
-		}
-
-		public void setAgreementSigners(String agreementSigners) {
-			this.agreementSigners = agreementSigners;
-		}
-
-		public String getAgreementPath() {
-			return this.agreementPath;
-		}
-
-		public void setAgreementPath(String agreementPath) {
-			this.agreementPath = agreementPath;
-		}
-
-		public String getSignState() {
-			return this.signState;
-		}
-
-		public void setSignState(String signState) {
-			this.signState = signState;
-		}
 	}
 
 	@Override

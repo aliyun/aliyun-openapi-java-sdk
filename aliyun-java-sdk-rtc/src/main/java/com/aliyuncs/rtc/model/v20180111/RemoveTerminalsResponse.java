@@ -15,7 +15,6 @@
 package com.aliyuncs.rtc.model.v20180111;
 
 import java.util.List;
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.rtc.transform.v20180111.RemoveTerminalsResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;

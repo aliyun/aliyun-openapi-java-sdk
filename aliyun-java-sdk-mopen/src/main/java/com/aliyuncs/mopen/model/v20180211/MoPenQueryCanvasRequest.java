@@ -25,7 +25,7 @@ import com.aliyuncs.http.MethodType;
 public class MoPenQueryCanvasRequest extends RpcAcsRequest<MoPenQueryCanvasResponse> {
 	
 	public MoPenQueryCanvasRequest() {
-		super("MoPen", "2018-02-11", "MoPenQueryCanvas");
+		super("MoPen", "2018-02-11", "MoPenQueryCanvas", "mopen");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

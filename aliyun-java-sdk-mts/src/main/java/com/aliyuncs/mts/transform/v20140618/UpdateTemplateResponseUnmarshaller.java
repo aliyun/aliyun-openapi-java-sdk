@@ -21,6 +21,7 @@ import com.aliyuncs.mts.model.v20140618.UpdateTemplateResponse.Template.Containe
 import com.aliyuncs.mts.model.v20140618.UpdateTemplateResponse.Template.MuxConfig;
 import com.aliyuncs.mts.model.v20140618.UpdateTemplateResponse.Template.MuxConfig.Gif;
 import com.aliyuncs.mts.model.v20140618.UpdateTemplateResponse.Template.MuxConfig.Segment;
+import com.aliyuncs.mts.model.v20140618.UpdateTemplateResponse.Template.MuxConfig.Webp;
 import com.aliyuncs.mts.model.v20140618.UpdateTemplateResponse.Template.TransConfig;
 import com.aliyuncs.mts.model.v20140618.UpdateTemplateResponse.Template.Video;
 import com.aliyuncs.mts.model.v20140618.UpdateTemplateResponse.Template.Video.BitrateBnd;
@@ -49,6 +50,7 @@ public class UpdateTemplateResponseUnmarshaller {
 		video.setCrf(context.stringValue("UpdateTemplateResponse.Template.Video.Crf"));
 		video.setWidth(context.stringValue("UpdateTemplateResponse.Template.Video.Width"));
 		video.setHeight(context.stringValue("UpdateTemplateResponse.Template.Video.Height"));
+		video.setLongShortMode(context.stringValue("UpdateTemplateResponse.Template.Video.LongShortMode"));
 		video.setFps(context.stringValue("UpdateTemplateResponse.Template.Video.Fps"));
 		video.setGop(context.stringValue("UpdateTemplateResponse.Template.Video.Gop"));
 		video.setPreset(context.stringValue("UpdateTemplateResponse.Template.Video.Preset"));
@@ -62,6 +64,7 @@ public class UpdateTemplateResponseUnmarshaller {
 		video.setCrop(context.stringValue("UpdateTemplateResponse.Template.Video.Crop"));
 		video.setPad(context.stringValue("UpdateTemplateResponse.Template.Video.Pad"));
 		video.setMaxFps(context.stringValue("UpdateTemplateResponse.Template.Video.MaxFps"));
+		video.setResoPriority(context.stringValue("UpdateTemplateResponse.Template.Video.ResoPriority"));
 
 		BitrateBnd bitrateBnd = new BitrateBnd();
 		bitrateBnd.setMax(context.stringValue("UpdateTemplateResponse.Template.Video.BitrateBnd.Max"));
@@ -102,6 +105,10 @@ public class UpdateTemplateResponseUnmarshaller {
 		gif.setIsCustomPalette(context.stringValue("UpdateTemplateResponse.Template.MuxConfig.Gif.IsCustomPalette"));
 		gif.setDitherMode(context.stringValue("UpdateTemplateResponse.Template.MuxConfig.Gif.DitherMode"));
 		muxConfig.setGif(gif);
+
+		Webp webp = new Webp();
+		webp.setLoop(context.stringValue("UpdateTemplateResponse.Template.MuxConfig.Webp.Loop"));
+		muxConfig.setWebp(webp);
 		template.setMuxConfig(muxConfig);
 		updateTemplateResponse.setTemplate(template);
 	 

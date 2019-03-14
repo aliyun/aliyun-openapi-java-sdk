@@ -28,6 +28,8 @@ public class MetastoreDescribeKafkaConsumerGroupRequest extends RpcAcsRequest<Me
 
 	private Long resourceOwnerId;
 
+	private String topicId;
+
 	private String consumerGroupId;
 
 	public Long getResourceOwnerId() {
@@ -38,6 +40,17 @@ public class MetastoreDescribeKafkaConsumerGroupRequest extends RpcAcsRequest<Me
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getTopicId() {
+		return this.topicId;
+	}
+
+	public void setTopicId(String topicId) {
+		this.topicId = topicId;
+		if(topicId != null){
+			putQueryParameter("TopicId", topicId);
 		}
 	}
 

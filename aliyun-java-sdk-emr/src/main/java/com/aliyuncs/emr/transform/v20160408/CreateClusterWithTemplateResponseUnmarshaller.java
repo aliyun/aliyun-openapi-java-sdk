@@ -23,13 +23,10 @@ public class CreateClusterWithTemplateResponseUnmarshaller {
 	public static CreateClusterWithTemplateResponse unmarshall(CreateClusterWithTemplateResponse createClusterWithTemplateResponse, UnmarshallerContext context) {
 		
 		createClusterWithTemplateResponse.setRequestId(context.stringValue("CreateClusterWithTemplateResponse.RequestId"));
-		createClusterWithTemplateResponse.setClusterBizId(context.stringValue("CreateClusterWithTemplateResponse.clusterBizId"));
-		createClusterWithTemplateResponse.setClusterId(context.longValue("CreateClusterWithTemplateResponse.ClusterId"));
-		createClusterWithTemplateResponse.setWorkFlowId(context.longValue("CreateClusterWithTemplateResponse.WorkFlowId"));
+		createClusterWithTemplateResponse.setClusterId(context.stringValue("CreateClusterWithTemplateResponse.ClusterId"));
 		createClusterWithTemplateResponse.setEmrOrderId(context.stringValue("CreateClusterWithTemplateResponse.EmrOrderId"));
 		createClusterWithTemplateResponse.setMasterOrderId(context.stringValue("CreateClusterWithTemplateResponse.MasterOrderId"));
 		createClusterWithTemplateResponse.setCoreOrderId(context.stringValue("CreateClusterWithTemplateResponse.CoreOrderId"));
-		createClusterWithTemplateResponse.setWorkFlowInstanceId(context.stringValue("CreateClusterWithTemplateResponse.WorkFlowInstanceId"));
 	 
 	 	return createClusterWithTemplateResponse;
 	}

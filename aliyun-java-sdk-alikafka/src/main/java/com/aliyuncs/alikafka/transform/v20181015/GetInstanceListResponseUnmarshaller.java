@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.alikafka.model.v20181015.GetInstanceListResponse;
 import com.aliyuncs.alikafka.model.v20181015.GetInstanceListResponse.InstanceListItem;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -43,6 +42,8 @@ public class GetInstanceListResponseUnmarshaller {
 			instanceListItem.setEndPoint(context.stringValue("GetInstanceListResponse.InstanceList["+ i +"].EndPoint"));
 			instanceListItem.setCreateTime(context.longValue("GetInstanceListResponse.InstanceList["+ i +"].CreateTime"));
 			instanceListItem.setExpiredTime(context.longValue("GetInstanceListResponse.InstanceList["+ i +"].ExpiredTime"));
+			instanceListItem.setDeployType(context.integerValue("GetInstanceListResponse.InstanceList["+ i +"].DeployType"));
+			instanceListItem.setSslEndPoint(context.stringValue("GetInstanceListResponse.InstanceList["+ i +"].SslEndPoint"));
 
 			instanceList.add(instanceListItem);
 		}

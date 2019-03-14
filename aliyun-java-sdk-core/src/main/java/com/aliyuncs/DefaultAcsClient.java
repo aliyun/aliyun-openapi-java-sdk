@@ -42,10 +42,18 @@ public class DefaultAcsClient implements IAcsClient {
     private static final String SIGNATURE_BEGIN = "string to sign is:";
     private final UserAgentConfig userAgentConfig = new UserAgentConfig();
 
+    @Deprecated
     public DefaultAcsClient() throws ClientException {
         this.clientProfile = DefaultProfile.getProfile();
         this.httpClient = HttpClientFactory.buildClient(this.clientProfile);
+    }
+
+    public DefaultAcsClient(String regionId) throws ClientException {
+        this.clientProfile = DefaultProfile.getProfile(regionId);
+        this.httpClient = HttpClientFactory.buildClient(this.clientProfile);
         this.defaultCredentialsProvider = new DefaultCredentialsProvider();
+        this.endpointResolver = new DefaultEndpointResolver(this);
+        this.appendUserAgent("HTTPClient", this.httpClient.getClass().getSimpleName());
     }
 
     public DefaultAcsClient(IClientProfile profile) {
@@ -62,7 +70,7 @@ public class DefaultAcsClient implements IAcsClient {
         this.clientProfile.setCredentialsProvider(this.credentialsProvider);
         this.httpClient = HttpClientFactory.buildClient(this.clientProfile);
         this.endpointResolver = new DefaultEndpointResolver(this, profile);
-        this.appendUserAgent("Client", this.httpClient.getClass().getSimpleName());
+        this.appendUserAgent("HTTPClient", this.httpClient.getClass().getSimpleName());
     }
 
     @Override

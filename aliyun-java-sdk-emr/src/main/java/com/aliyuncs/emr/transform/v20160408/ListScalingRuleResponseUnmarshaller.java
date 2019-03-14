@@ -19,7 +19,8 @@ import java.util.List;
 
 import com.aliyuncs.emr.model.v20160408.ListScalingRuleResponse;
 import com.aliyuncs.emr.model.v20160408.ListScalingRuleResponse.Rule;
-import java.util.Map;
+import com.aliyuncs.emr.model.v20160408.ListScalingRuleResponse.Rule.CloudWatchTrigger;
+import com.aliyuncs.emr.model.v20160408.ListScalingRuleResponse.Rule.SchedulerTrigger;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -39,15 +40,30 @@ public class ListScalingRuleResponseUnmarshaller {
 			rule.setGmtCreate(context.longValue("ListScalingRuleResponse.RuleList["+ i +"].GmtCreate"));
 			rule.setGmtModified(context.longValue("ListScalingRuleResponse.RuleList["+ i +"].GmtModified"));
 			rule.setRuleName(context.stringValue("ListScalingRuleResponse.RuleList["+ i +"].RuleName"));
+			rule.setRuleCategory(context.stringValue("ListScalingRuleResponse.RuleList["+ i +"].RuleCategory"));
 			rule.setAdjustmentType(context.stringValue("ListScalingRuleResponse.RuleList["+ i +"].AdjustmentType"));
 			rule.setAdjustmentValue(context.integerValue("ListScalingRuleResponse.RuleList["+ i +"].AdjustmentValue"));
 			rule.setCooldown(context.integerValue("ListScalingRuleResponse.RuleList["+ i +"].Cooldown"));
 			rule.setStatus(context.stringValue("ListScalingRuleResponse.RuleList["+ i +"].Status"));
-			rule.setLaunchTime(context.stringValue("ListScalingRuleResponse.RuleList["+ i +"].LaunchTime"));
-			rule.setLaunchExpirationTime(context.integerValue("ListScalingRuleResponse.RuleList["+ i +"].LaunchExpirationTime"));
-			rule.setRecurrenceType(context.stringValue("ListScalingRuleResponse.RuleList["+ i +"].RecurrenceType"));
-			rule.setRecurrenceValue(context.stringValue("ListScalingRuleResponse.RuleList["+ i +"].RecurrenceValue"));
-			rule.setRecurrenceEndTime(context.stringValue("ListScalingRuleResponse.RuleList["+ i +"].RecurrenceEndTime"));
+
+			SchedulerTrigger schedulerTrigger = new SchedulerTrigger();
+			schedulerTrigger.setLaunchTime(context.longValue("ListScalingRuleResponse.RuleList["+ i +"].SchedulerTrigger.LaunchTime"));
+			schedulerTrigger.setLaunchExpirationTime(context.integerValue("ListScalingRuleResponse.RuleList["+ i +"].SchedulerTrigger.LaunchExpirationTime"));
+			schedulerTrigger.setRecurrenceType(context.stringValue("ListScalingRuleResponse.RuleList["+ i +"].SchedulerTrigger.RecurrenceType"));
+			schedulerTrigger.setRecurrenceValue(context.stringValue("ListScalingRuleResponse.RuleList["+ i +"].SchedulerTrigger.RecurrenceValue"));
+			schedulerTrigger.setRecurrenceEndTime(context.longValue("ListScalingRuleResponse.RuleList["+ i +"].SchedulerTrigger.RecurrenceEndTime"));
+			rule.setSchedulerTrigger(schedulerTrigger);
+
+			CloudWatchTrigger cloudWatchTrigger = new CloudWatchTrigger();
+			cloudWatchTrigger.setMetricName(context.stringValue("ListScalingRuleResponse.RuleList["+ i +"].CloudWatchTrigger.MetricName"));
+			cloudWatchTrigger.setPeriod(context.integerValue("ListScalingRuleResponse.RuleList["+ i +"].CloudWatchTrigger.Period"));
+			cloudWatchTrigger.setStatistics(context.stringValue("ListScalingRuleResponse.RuleList["+ i +"].CloudWatchTrigger.Statistics"));
+			cloudWatchTrigger.setComparisonOperator(context.stringValue("ListScalingRuleResponse.RuleList["+ i +"].CloudWatchTrigger.ComparisonOperator"));
+			cloudWatchTrigger.setThreshold(context.stringValue("ListScalingRuleResponse.RuleList["+ i +"].CloudWatchTrigger.Threshold"));
+			cloudWatchTrigger.setEvaluationCount(context.stringValue("ListScalingRuleResponse.RuleList["+ i +"].CloudWatchTrigger.EvaluationCount"));
+			cloudWatchTrigger.setUnit(context.stringValue("ListScalingRuleResponse.RuleList["+ i +"].CloudWatchTrigger.Unit"));
+			cloudWatchTrigger.setMetricDisplayName(context.stringValue("ListScalingRuleResponse.RuleList["+ i +"].CloudWatchTrigger.MetricDisplayName"));
+			rule.setCloudWatchTrigger(cloudWatchTrigger);
 
 			ruleList.add(rule);
 		}

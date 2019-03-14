@@ -14,11 +14,7 @@
 
 package com.aliyuncs.emr.transform.v20160408;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.aliyuncs.emr.model.v20160408.MigrateJobsResponse;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -26,18 +22,7 @@ public class MigrateJobsResponseUnmarshaller {
 
 	public static MigrateJobsResponse unmarshall(MigrateJobsResponse migrateJobsResponse, UnmarshallerContext context) {
 		
-
-		List<String> succeedIds = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("MigrateJobsResponse.SucceedIds.Length"); i++) {
-			succeedIds.add(context.stringValue("MigrateJobsResponse.SucceedIds["+ i +"]"));
-		}
-		migrateJobsResponse.setSucceedIds(succeedIds);
-
-		List<String> failedIds = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("MigrateJobsResponse.FailedIds.Length"); i++) {
-			failedIds.add(context.stringValue("MigrateJobsResponse.FailedIds["+ i +"]"));
-		}
-		migrateJobsResponse.setFailedIds(failedIds);
+		migrateJobsResponse.setResult(context.stringValue("MigrateJobsResponse.Result"));
 	 
 	 	return migrateJobsResponse;
 	}

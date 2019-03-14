@@ -15,7 +15,6 @@
 package com.aliyuncs.mts.model.v20140618;
 
 import java.util.List;
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.mts.transform.v20140618.SubmitComplexJobResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -2312,10 +2311,26 @@ public class SubmitComplexJobResponse extends AcsResponse {
 						this.level = level;
 					}
 
+					public String getBizMethod() {
+						return this.method;
+					}
+
+					public void setBizMethod(String method) {
+						this.method = method;
+					}
+
+					/**
+					 * @deprecated use getBizMethod instead of this.
+					 */
+					@Deprecated
 					public String getMethod() {
 						return this.method;
 					}
 
+					/**
+					 * @deprecated use setBizMethod instead of this.
+					 */
+					@Deprecated
 					public void setMethod(String method) {
 						this.method = method;
 					}

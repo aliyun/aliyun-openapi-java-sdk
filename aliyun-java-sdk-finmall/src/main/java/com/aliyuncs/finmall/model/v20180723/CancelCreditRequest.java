@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class CancelCreditRequest extends RpcAcsRequest<CancelCreditResponse> {
 	
 	public CancelCreditRequest() {
-		super("finmall", "2018-07-23", "CancelCredit", "finmall", "innerAPI");
+		super("finmall", "2018-07-23", "CancelCredit", "finmall");
 	}
 
 	private String creditId;

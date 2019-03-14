@@ -15,7 +15,6 @@
 package com.aliyuncs.finmall.transform.v20180723;
 
 import com.aliyuncs.finmall.model.v20180723.GetCreditSignatureInfoResponse;
-import com.aliyuncs.finmall.model.v20180723.GetCreditSignatureInfoResponse.Data;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -26,17 +25,7 @@ public class GetCreditSignatureInfoResponseUnmarshaller {
 		getCreditSignatureInfoResponse.setRequestId(context.stringValue("GetCreditSignatureInfoResponse.RequestId"));
 		getCreditSignatureInfoResponse.setCode(context.stringValue("GetCreditSignatureInfoResponse.Code"));
 		getCreditSignatureInfoResponse.setMessage(context.stringValue("GetCreditSignatureInfoResponse.Message"));
-
-		Data data = new Data();
-		data.setCreditId(context.stringValue("GetCreditSignatureInfoResponse.Data.CreditId"));
-		data.setAgreementId(context.stringValue("GetCreditSignatureInfoResponse.Data.AgreementId"));
-		data.setAgreementNo(context.stringValue("GetCreditSignatureInfoResponse.Data.AgreementNo"));
-		data.setAgreementTitle(context.stringValue("GetCreditSignatureInfoResponse.Data.AgreementTitle"));
-		data.setSignType(context.stringValue("GetCreditSignatureInfoResponse.Data.SignType"));
-		data.setAgreementSigners(context.stringValue("GetCreditSignatureInfoResponse.Data.AgreementSigners"));
-		data.setAgreementPath(context.stringValue("GetCreditSignatureInfoResponse.Data.AgreementPath"));
-		data.setSignState(context.stringValue("GetCreditSignatureInfoResponse.Data.SignState"));
-		getCreditSignatureInfoResponse.setData(data);
+		getCreditSignatureInfoResponse.setData(context.stringValue("GetCreditSignatureInfoResponse.Data"));
 	 
 	 	return getCreditSignatureInfoResponse;
 	}

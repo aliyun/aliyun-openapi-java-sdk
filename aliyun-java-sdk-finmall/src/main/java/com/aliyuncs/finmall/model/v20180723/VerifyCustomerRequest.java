@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class VerifyCustomerRequest extends RpcAcsRequest<VerifyCustomerResponse> {
 	
 	public VerifyCustomerRequest() {
-		super("finmall", "2018-07-23", "VerifyCustomer", "finmall", "innerAPI");
+		super("finmall", "2018-07-23", "VerifyCustomer", "finmall");
 	}
 
 	private String idCardNumber;

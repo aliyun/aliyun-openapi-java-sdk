@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.ubsms.model.v20150623;
 
 import com.aliyuncs.RpcAcsRequest;
@@ -22,21 +23,12 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeBusinessStatusRequest extends RpcAcsRequest<DescribeBusinessStatusResponse> {
 	
 	public DescribeBusinessStatusRequest() {
-		super("Ubsms", "2015-06-23", "DescribeBusinessStatus");
+		super("Ubsms", "2015-06-23", "DescribeBusinessStatus", "ubsms");
 	}
-
-	private String callerBid;
 
 	private String password;
 
-	public String getcallerBid() {
-		return this.callerBid;
-	}
-
-	public void setcallerBid(String callerBid) {
-		this.callerBid = callerBid;
-		putQueryParameter("callerBid", callerBid);
-	}
+	private String callerBid;
 
 	public String getPassword() {
 		return this.password;
@@ -44,7 +36,20 @@ public class DescribeBusinessStatusRequest extends RpcAcsRequest<DescribeBusines
 
 	public void setPassword(String password) {
 		this.password = password;
-		putQueryParameter("Password", password);
+		if(password != null){
+			putQueryParameter("Password", password);
+		}
+	}
+
+	public String getCallerBid() {
+		return this.callerBid;
+	}
+
+	public void setCallerBid(String callerBid) {
+		this.callerBid = callerBid;
+		if(callerBid != null){
+			putQueryParameter("callerBid", callerBid);
+		}
 	}
 
 	@Override

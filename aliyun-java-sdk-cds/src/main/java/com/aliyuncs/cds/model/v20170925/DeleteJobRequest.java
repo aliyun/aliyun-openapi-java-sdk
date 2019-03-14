@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class DeleteJobRequest extends RoaAcsRequest<DeleteJobResponse> {
 	
 	public DeleteJobRequest() {
-		super("Cds", "2017-09-25", "DeleteJob", "codepipeline");
+		super("Cds", "2017-09-25", "DeleteJob", "cds");
 		setUriPattern("/v1/job/[JobName]");
 		setMethod(MethodType.DELETE);
 	}

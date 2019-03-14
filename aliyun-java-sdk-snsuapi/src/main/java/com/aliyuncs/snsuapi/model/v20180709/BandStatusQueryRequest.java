@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class BandStatusQueryRequest extends RpcAcsRequest<BandStatusQueryResponse> {
 	
 	public BandStatusQueryRequest() {
-		super("Snsuapi", "2018-07-09", "BandStatusQuery");
+		super("Snsuapi", "2018-07-09", "BandStatusQuery", "snsuapi");
 	}
 
 	private Long resourceOwnerId;

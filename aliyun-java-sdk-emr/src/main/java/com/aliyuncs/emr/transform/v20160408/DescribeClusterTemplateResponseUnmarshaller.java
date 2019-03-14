@@ -22,7 +22,6 @@ import com.aliyuncs.emr.model.v20160408.DescribeClusterTemplateResponse.Template
 import com.aliyuncs.emr.model.v20160408.DescribeClusterTemplateResponse.TemplateInfo.BootstrapAction;
 import com.aliyuncs.emr.model.v20160408.DescribeClusterTemplateResponse.TemplateInfo.Config;
 import com.aliyuncs.emr.model.v20160408.DescribeClusterTemplateResponse.TemplateInfo.HostGroup;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

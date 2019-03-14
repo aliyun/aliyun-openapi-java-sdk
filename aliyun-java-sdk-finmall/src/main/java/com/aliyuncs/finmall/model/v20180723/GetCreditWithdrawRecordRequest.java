@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class GetCreditWithdrawRecordRequest extends RpcAcsRequest<GetCreditWithdrawRecordResponse> {
 	
 	public GetCreditWithdrawRecordRequest() {
-		super("finmall", "2018-07-23", "GetCreditWithdrawRecord", "finmall", "innerAPI");
+		super("finmall", "2018-07-23", "GetCreditWithdrawRecord", "finmall");
 	}
 
 	private String creditId;

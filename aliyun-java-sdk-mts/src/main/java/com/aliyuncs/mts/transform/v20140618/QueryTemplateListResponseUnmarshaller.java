@@ -24,10 +24,10 @@ import com.aliyuncs.mts.model.v20140618.QueryTemplateListResponse.Template.Conta
 import com.aliyuncs.mts.model.v20140618.QueryTemplateListResponse.Template.MuxConfig;
 import com.aliyuncs.mts.model.v20140618.QueryTemplateListResponse.Template.MuxConfig.Gif;
 import com.aliyuncs.mts.model.v20140618.QueryTemplateListResponse.Template.MuxConfig.Segment;
+import com.aliyuncs.mts.model.v20140618.QueryTemplateListResponse.Template.MuxConfig.Webp;
 import com.aliyuncs.mts.model.v20140618.QueryTemplateListResponse.Template.TransConfig;
 import com.aliyuncs.mts.model.v20140618.QueryTemplateListResponse.Template.Video;
 import com.aliyuncs.mts.model.v20140618.QueryTemplateListResponse.Template.Video.BitrateBnd;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -70,10 +70,12 @@ public class QueryTemplateListResponseUnmarshaller {
 			video.setPixFmt(context.stringValue("QueryTemplateListResponse.TemplateList["+ i +"].Video.PixFmt"));
 			video.setDegrain(context.stringValue("QueryTemplateListResponse.TemplateList["+ i +"].Video.Degrain"));
 			video.setQscale(context.stringValue("QueryTemplateListResponse.TemplateList["+ i +"].Video.Qscale"));
+			video.setLongShortMode(context.stringValue("QueryTemplateListResponse.TemplateList["+ i +"].Video.LongShortMode"));
 			video.setRemove(context.stringValue("QueryTemplateListResponse.TemplateList["+ i +"].Video.Remove"));
 			video.setCrop(context.stringValue("QueryTemplateListResponse.TemplateList["+ i +"].Video.Crop"));
 			video.setPad(context.stringValue("QueryTemplateListResponse.TemplateList["+ i +"].Video.Pad"));
 			video.setMaxFps(context.stringValue("QueryTemplateListResponse.TemplateList["+ i +"].Video.MaxFps"));
+			video.setResoPriority(context.stringValue("QueryTemplateListResponse.TemplateList["+ i +"].Video.ResoPriority"));
 
 			BitrateBnd bitrateBnd = new BitrateBnd();
 			bitrateBnd.setMax(context.stringValue("QueryTemplateListResponse.TemplateList["+ i +"].Video.BitrateBnd.Max"));
@@ -114,6 +116,10 @@ public class QueryTemplateListResponseUnmarshaller {
 			gif.setIsCustomPalette(context.stringValue("QueryTemplateListResponse.TemplateList["+ i +"].MuxConfig.Gif.IsCustomPalette"));
 			gif.setDitherMode(context.stringValue("QueryTemplateListResponse.TemplateList["+ i +"].MuxConfig.Gif.DitherMode"));
 			muxConfig.setGif(gif);
+
+			Webp webp = new Webp();
+			webp.setLoop(context.stringValue("QueryTemplateListResponse.TemplateList["+ i +"].MuxConfig.Webp.Loop"));
+			muxConfig.setWebp(webp);
 			template.setMuxConfig(muxConfig);
 
 			templateList.add(template);

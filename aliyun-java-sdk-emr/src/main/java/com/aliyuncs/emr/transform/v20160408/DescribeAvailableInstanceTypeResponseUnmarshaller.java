@@ -20,7 +20,6 @@ import java.util.List;
 import com.aliyuncs.emr.model.v20160408.DescribeAvailableInstanceTypeResponse;
 import com.aliyuncs.emr.model.v20160408.DescribeAvailableInstanceTypeResponse.EmrSupportInstanceType;
 import com.aliyuncs.emr.model.v20160408.DescribeAvailableInstanceTypeResponse.EmrSupportInstanceType.ClusterNodeTypeSupportInfo;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

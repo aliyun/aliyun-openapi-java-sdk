@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class AddIdentityCertifiedForBidUserRequest extends RpcAcsRequest<AddIdentityCertifiedForBidUserResponse> {
 	
 	public AddIdentityCertifiedForBidUserRequest() {
-		super("Crm", "2015-04-08", "AddIdentityCertifiedForBidUser");
+		super("Crm", "2015-04-08", "AddIdentityCertifiedForBidUser", "crm");
 	}
 
 	private String bidType;

@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class GetAuthorizeCreditQueryRequest extends RpcAcsRequest<GetAuthorizeCreditQueryResponse> {
 	
 	public GetAuthorizeCreditQueryRequest() {
-		super("finmall", "2018-07-23", "GetAuthorizeCreditQuery", "finmall", "innerAPI");
+		super("finmall", "2018-07-23", "GetAuthorizeCreditQuery", "finmall");
 	}
 
 	private String creditId;

@@ -14,7 +14,6 @@
 
 package com.aliyuncs.emr.model.v20160408;
 
-import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.emr.transform.v20160408.MigrateJobsResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -25,24 +24,14 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class MigrateJobsResponse extends AcsResponse {
 
-	private List<String> succeedIds;
+	private String result;
 
-	private List<String> failedIds;
-
-	public List<String> getSucceedIds() {
-		return this.succeedIds;
+	public String getResult() {
+		return this.result;
 	}
 
-	public void setSucceedIds(List<String> succeedIds) {
-		this.succeedIds = succeedIds;
-	}
-
-	public List<String> getFailedIds() {
-		return this.failedIds;
-	}
-
-	public void setFailedIds(List<String> failedIds) {
-		this.failedIds = failedIds;
+	public void setResult(String result) {
+		this.result = result;
 	}
 
 	@Override

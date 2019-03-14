@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.rtc.model.v20180111.GetTaskParamResponse;
 import com.aliyuncs.rtc.model.v20180111.GetTaskParamResponse.MixPaneItem;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

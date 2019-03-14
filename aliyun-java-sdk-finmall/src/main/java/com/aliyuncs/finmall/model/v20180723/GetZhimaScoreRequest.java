@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class GetZhimaScoreRequest extends RpcAcsRequest<GetZhimaScoreResponse> {
 	
 	public GetZhimaScoreRequest() {
-		super("finmall", "2018-07-23", "GetZhimaScore", "finmall", "innerAPI");
+		super("finmall", "2018-07-23", "GetZhimaScore", "finmall");
 	}
 
 	private String userId;

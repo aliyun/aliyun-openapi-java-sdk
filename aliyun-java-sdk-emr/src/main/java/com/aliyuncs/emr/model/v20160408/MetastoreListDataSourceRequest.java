@@ -28,6 +28,8 @@ public class MetastoreListDataSourceRequest extends RpcAcsRequest<MetastoreListD
 
 	private Long resourceOwnerId;
 
+	private Boolean clusterReleased;
+
 	private Integer pageSize;
 
 	private String sourceType;
@@ -44,6 +46,17 @@ public class MetastoreListDataSourceRequest extends RpcAcsRequest<MetastoreListD
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public Boolean getClusterReleased() {
+		return this.clusterReleased;
+	}
+
+	public void setClusterReleased(Boolean clusterReleased) {
+		this.clusterReleased = clusterReleased;
+		if(clusterReleased != null){
+			putQueryParameter("ClusterReleased", clusterReleased.toString());
 		}
 	}
 

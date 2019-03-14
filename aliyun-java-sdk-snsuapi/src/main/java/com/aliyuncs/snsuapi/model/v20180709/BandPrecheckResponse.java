@@ -15,7 +15,6 @@
 package com.aliyuncs.snsuapi.model.v20180709;
 
 import java.util.List;
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.snsuapi.transform.v20180709.BandPrecheckResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;

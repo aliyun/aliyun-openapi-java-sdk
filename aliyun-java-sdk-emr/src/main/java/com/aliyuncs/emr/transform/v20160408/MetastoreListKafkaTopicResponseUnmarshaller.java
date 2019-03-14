@@ -20,7 +20,7 @@ import java.util.List;
 import com.aliyuncs.emr.model.v20160408.MetastoreListKafkaTopicResponse;
 import com.aliyuncs.emr.model.v20160408.MetastoreListKafkaTopicResponse.Topic;
 import com.aliyuncs.emr.model.v20160408.MetastoreListKafkaTopicResponse.Topic.AdvancedConfig;
-import java.util.Map;
+import com.aliyuncs.emr.model.v20160408.MetastoreListKafkaTopicResponse.Topic.Cluster;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -38,10 +38,17 @@ public class MetastoreListKafkaTopicResponseUnmarshaller {
 			Topic topic = new Topic();
 			topic.setId(context.stringValue("MetastoreListKafkaTopicResponse.TopicList["+ i +"].Id"));
 			topic.setDataSourceId(context.stringValue("MetastoreListKafkaTopicResponse.TopicList["+ i +"].DataSourceId"));
+			topic.setTopicName(context.stringValue("MetastoreListKafkaTopicResponse.TopicList["+ i +"].TopicName"));
 			topic.setNumPartitions(context.integerValue("MetastoreListKafkaTopicResponse.TopicList["+ i +"].NumPartitions"));
 			topic.setReplicationFactor(context.integerValue("MetastoreListKafkaTopicResponse.TopicList["+ i +"].ReplicationFactor"));
 			topic.setGmtCreate(context.longValue("MetastoreListKafkaTopicResponse.TopicList["+ i +"].GmtCreate"));
 			topic.setGmtModified(context.longValue("MetastoreListKafkaTopicResponse.TopicList["+ i +"].GmtModified"));
+
+			Cluster cluster = new Cluster();
+			cluster.setClusterBizId(context.stringValue("MetastoreListKafkaTopicResponse.TopicList["+ i +"].Cluster.ClusterBizId"));
+			cluster.setClusterName(context.stringValue("MetastoreListKafkaTopicResponse.TopicList["+ i +"].Cluster.ClusterName"));
+			cluster.setClusterStatus(context.stringValue("MetastoreListKafkaTopicResponse.TopicList["+ i +"].Cluster.ClusterStatus"));
+			topic.setCluster(cluster);
 
 			List<AdvancedConfig> advancedConfigList = new ArrayList<AdvancedConfig>();
 			for (int j = 0; j < context.lengthValue("MetastoreListKafkaTopicResponse.TopicList["+ i +"].AdvancedConfigList.Length"); j++) {

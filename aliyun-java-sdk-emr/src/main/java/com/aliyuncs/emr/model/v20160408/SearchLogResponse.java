@@ -67,6 +67,10 @@ public class SearchLogResponse extends AcsResponse {
 
 		private String content;
 
+		private String packMeta;
+
+		private String packId;
+
 		public Integer getTimestamp() {
 			return this.timestamp;
 		}
@@ -105,6 +109,22 @@ public class SearchLogResponse extends AcsResponse {
 
 		public void setContent(String content) {
 			this.content = content;
+		}
+
+		public String getPackMeta() {
+			return this.packMeta;
+		}
+
+		public void setPackMeta(String packMeta) {
+			this.packMeta = packMeta;
+		}
+
+		public String getPackId() {
+			return this.packId;
+		}
+
+		public void setPackId(String packId) {
+			this.packId = packId;
 		}
 	}
 

@@ -20,7 +20,6 @@ import java.util.List;
 import com.aliyuncs.emr.model.v20160408.DescribeSecurityGroupAttributeResponse;
 import com.aliyuncs.emr.model.v20160408.DescribeSecurityGroupAttributeResponse.SecurityGroup;
 import com.aliyuncs.emr.model.v20160408.DescribeSecurityGroupAttributeResponse.SecurityGroupAttribute;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

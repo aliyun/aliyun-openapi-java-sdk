@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class GetOverdueRecordListRequest extends RpcAcsRequest<GetOverdueRecordListResponse> {
 	
 	public GetOverdueRecordListRequest() {
-		super("finmall", "2018-07-23", "GetOverdueRecordList", "finmall", "innerAPI");
+		super("finmall", "2018-07-23", "GetOverdueRecordList", "finmall");
 		setMethod(MethodType.POST);
 	}
 

@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class QueryBidUserCertifiedInfoRequest extends RpcAcsRequest<QueryBidUserCertifiedInfoResponse> {
 	
 	public QueryBidUserCertifiedInfoRequest() {
-		super("Crm", "2015-04-08", "QueryBidUserCertifiedInfo");
+		super("Crm", "2015-04-08", "QueryBidUserCertifiedInfo", "crm");
 	}
 
 	private String bidType;

@@ -23,10 +23,23 @@ import com.aliyuncs.RpcAcsRequest;
 public class GetEndPointByDomainRequest extends RpcAcsRequest<GetEndPointByDomainResponse> {
 	
 	public GetEndPointByDomainRequest() {
-		super("openanalytics", "2018-03-01", "GetEndPointByDomain", "openanalytics", "innerAPI");
+		super("openanalytics", "2018-03-01", "GetEndPointByDomain", "openanalytics");
 	}
 
+	private Long userID;
+
 	private String domainURL;
+
+	public Long getUserID() {
+		return this.userID;
+	}
+
+	public void setUserID(Long userID) {
+		this.userID = userID;
+		if(userID != null){
+			putBodyParameter("UserID", userID.toString());
+		}
+	}
 
 	public String getDomainURL() {
 		return this.domainURL;

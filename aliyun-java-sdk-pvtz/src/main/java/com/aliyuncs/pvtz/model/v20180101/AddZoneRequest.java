@@ -26,11 +26,24 @@ public class AddZoneRequest extends RpcAcsRequest<AddZoneResponse> {
 		super("pvtz", "2018-01-01", "AddZone", "pvtz");
 	}
 
+	private String proxyPattern;
+
 	private String userClientIp;
 
 	private String lang;
 
 	private String zoneName;
+
+	public String getProxyPattern() {
+		return this.proxyPattern;
+	}
+
+	public void setProxyPattern(String proxyPattern) {
+		this.proxyPattern = proxyPattern;
+		if(proxyPattern != null){
+			putQueryParameter("ProxyPattern", proxyPattern);
+		}
+	}
 
 	public String getUserClientIp() {
 		return this.userClientIp;

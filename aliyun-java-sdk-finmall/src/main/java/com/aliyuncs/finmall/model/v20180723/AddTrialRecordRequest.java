@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class AddTrialRecordRequest extends RpcAcsRequest<AddTrialRecordResponse> {
 	
 	public AddTrialRecordRequest() {
-		super("finmall", "2018-07-23", "AddTrialRecord", "finmall", "innerAPI");
+		super("finmall", "2018-07-23", "AddTrialRecord", "finmall");
 	}
 
 	private String note;
@@ -34,9 +34,15 @@ public class AddTrialRecordRequest extends RpcAcsRequest<AddTrialRecordResponse>
 
 	private String contractName;
 
+	private String channel;
+
 	private String enterpriseName;
 
 	private String userId;
+
+	private String products;
+
+	private String budget;
 
 	public String getNote() {
 		return this.note;
@@ -82,6 +88,17 @@ public class AddTrialRecordRequest extends RpcAcsRequest<AddTrialRecordResponse>
 		}
 	}
 
+	public String getChannel() {
+		return this.channel;
+	}
+
+	public void setChannel(String channel) {
+		this.channel = channel;
+		if(channel != null){
+			putQueryParameter("Channel", channel);
+		}
+	}
+
 	public String getEnterpriseName() {
 		return this.enterpriseName;
 	}
@@ -101,6 +118,28 @@ public class AddTrialRecordRequest extends RpcAcsRequest<AddTrialRecordResponse>
 		this.userId = userId;
 		if(userId != null){
 			putQueryParameter("UserId", userId);
+		}
+	}
+
+	public String getProducts() {
+		return this.products;
+	}
+
+	public void setProducts(String products) {
+		this.products = products;
+		if(products != null){
+			putQueryParameter("Products", products);
+		}
+	}
+
+	public String getBudget() {
+		return this.budget;
+	}
+
+	public void setBudget(String budget) {
+		this.budget = budget;
+		if(budget != null){
+			putQueryParameter("Budget", budget);
 		}
 	}
 

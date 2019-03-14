@@ -105,6 +105,8 @@ public class DescribeZonesResponse extends AcsResponse {
 
 		private Boolean isPtr;
 
+		private String proxyPattern;
+
 		public String getZoneId() {
 			return this.zoneId;
 		}
@@ -175,6 +177,14 @@ public class DescribeZonesResponse extends AcsResponse {
 
 		public void setIsPtr(Boolean isPtr) {
 			this.isPtr = isPtr;
+		}
+
+		public String getProxyPattern() {
+			return this.proxyPattern;
+		}
+
+		public void setProxyPattern(String proxyPattern) {
+			this.proxyPattern = proxyPattern;
 		}
 	}
 

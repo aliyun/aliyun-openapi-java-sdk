@@ -33,6 +33,7 @@ public class MetastoreDescribeTaskResponseUnmarshaller {
 		task.setStartTime(context.longValue("MetastoreDescribeTaskResponse.Task.StartTime"));
 		task.setEndTime(context.longValue("MetastoreDescribeTaskResponse.Task.EndTime"));
 		task.setTaskDetail(context.stringValue("MetastoreDescribeTaskResponse.Task.TaskDetail"));
+		task.setTaskObject(context.stringValue("MetastoreDescribeTaskResponse.Task.TaskObject"));
 		task.setTaskResultDetail(context.stringValue("MetastoreDescribeTaskResponse.Task.TaskResultDetail"));
 		task.setTaskProcess(context.integerValue("MetastoreDescribeTaskResponse.Task.TaskProcess"));
 		task.setTriggerUser(context.stringValue("MetastoreDescribeTaskResponse.Task.TriggerUser"));

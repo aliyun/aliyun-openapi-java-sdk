@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.gpdb.model.v20160503.DescribeDBInstancesResponse;
 import com.aliyuncs.gpdb.model.v20160503.DescribeDBInstancesResponse.DBInstance;
+import com.aliyuncs.gpdb.model.v20160503.DescribeDBInstancesResponse.DBInstance.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -51,6 +52,16 @@ public class DescribeDBInstancesResponseUnmarshaller {
 			dBInstance.setCreateTime(context.stringValue("DescribeDBInstancesResponse.Items["+ i +"].CreateTime"));
 			dBInstance.setVpcId(context.stringValue("DescribeDBInstancesResponse.Items["+ i +"].VpcId"));
 			dBInstance.setVSwitchId(context.stringValue("DescribeDBInstancesResponse.Items["+ i +"].VSwitchId"));
+
+			List<Tag> tags = new ArrayList<Tag>();
+			for (int j = 0; j < context.lengthValue("DescribeDBInstancesResponse.Items["+ i +"].Tags.Length"); j++) {
+				Tag tag = new Tag();
+				tag.setKey(context.stringValue("DescribeDBInstancesResponse.Items["+ i +"].Tags["+ j +"].Key"));
+				tag.setValue(context.stringValue("DescribeDBInstancesResponse.Items["+ i +"].Tags["+ j +"].Value"));
+
+				tags.add(tag);
+			}
+			dBInstance.setTags(tags);
 
 			items.add(dBInstance);
 		}

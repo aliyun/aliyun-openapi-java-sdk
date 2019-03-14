@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class GetRepoListByNamespaceRequest extends RoaAcsRequest<GetRepoListByNamespaceResponse> {
 	
 	public GetRepoListByNamespaceRequest() {
-		super("cr", "2016-06-07", "GetRepoListByNamespace");
+		super("cr", "2016-06-07", "GetRepoListByNamespace", "cr");
 		setUriPattern("/repos/[RepoNamespace]");
 		setMethod(MethodType.GET);
 	}

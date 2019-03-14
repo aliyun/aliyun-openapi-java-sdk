@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.ram.transform.v20150501;
 
 import java.util.ArrayList;
@@ -26,6 +27,8 @@ public class ListUsersForGroupResponseUnmarshaller {
 	public static ListUsersForGroupResponse unmarshall(ListUsersForGroupResponse listUsersForGroupResponse, UnmarshallerContext context) {
 		
 		listUsersForGroupResponse.setRequestId(context.stringValue("ListUsersForGroupResponse.RequestId"));
+		listUsersForGroupResponse.setIsTruncated(context.booleanValue("ListUsersForGroupResponse.IsTruncated"));
+		listUsersForGroupResponse.setMarker(context.stringValue("ListUsersForGroupResponse.Marker"));
 
 		List<User> users = new ArrayList<User>();
 		for (int i = 0; i < context.lengthValue("ListUsersForGroupResponse.Users.Length"); i++) {

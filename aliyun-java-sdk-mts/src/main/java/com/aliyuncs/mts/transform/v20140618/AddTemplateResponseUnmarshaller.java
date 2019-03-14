@@ -22,6 +22,7 @@ import com.aliyuncs.mts.model.v20140618.AddTemplateResponse.Template.Container;
 import com.aliyuncs.mts.model.v20140618.AddTemplateResponse.Template.MuxConfig;
 import com.aliyuncs.mts.model.v20140618.AddTemplateResponse.Template.MuxConfig.Gif;
 import com.aliyuncs.mts.model.v20140618.AddTemplateResponse.Template.MuxConfig.Segment;
+import com.aliyuncs.mts.model.v20140618.AddTemplateResponse.Template.MuxConfig.Webp;
 import com.aliyuncs.mts.model.v20140618.AddTemplateResponse.Template.TransConfig;
 import com.aliyuncs.mts.model.v20140618.AddTemplateResponse.Template.Video;
 import com.aliyuncs.mts.model.v20140618.AddTemplateResponse.Template.Video.BitrateBnd;
@@ -59,10 +60,12 @@ public class AddTemplateResponseUnmarshaller {
 		video.setPixFmt(context.stringValue("AddTemplateResponse.Template.Video.PixFmt"));
 		video.setDegrain(context.stringValue("AddTemplateResponse.Template.Video.Degrain"));
 		video.setQscale(context.stringValue("AddTemplateResponse.Template.Video.Qscale"));
+		video.setLongShortMode(context.stringValue("AddTemplateResponse.Template.Video.LongShortMode"));
 		video.setRemove(context.stringValue("AddTemplateResponse.Template.Video.Remove"));
 		video.setCrop(context.stringValue("AddTemplateResponse.Template.Video.Crop"));
 		video.setPad(context.stringValue("AddTemplateResponse.Template.Video.Pad"));
 		video.setMaxFps(context.stringValue("AddTemplateResponse.Template.Video.MaxFps"));
+		video.setResoPriority(context.stringValue("AddTemplateResponse.Template.Video.ResoPriority"));
 
 		BitrateBnd bitrateBnd = new BitrateBnd();
 		bitrateBnd.setMax(context.stringValue("AddTemplateResponse.Template.Video.BitrateBnd.Max"));
@@ -108,6 +111,10 @@ public class AddTemplateResponseUnmarshaller {
 		gif.setIsCustomPalette(context.stringValue("AddTemplateResponse.Template.MuxConfig.Gif.IsCustomPalette"));
 		gif.setDitherMode(context.stringValue("AddTemplateResponse.Template.MuxConfig.Gif.DitherMode"));
 		muxConfig.setGif(gif);
+
+		Webp webp = new Webp();
+		webp.setLoop(context.stringValue("AddTemplateResponse.Template.MuxConfig.Webp.Loop"));
+		muxConfig.setWebp(webp);
 		template.setMuxConfig(muxConfig);
 		addTemplateResponse.setTemplate(template);
 	 

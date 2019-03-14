@@ -57,6 +57,8 @@ public class CreateFlowJobRequest extends RpcAcsRequest<CreateFlowJobResponse> {
 
 	private Boolean adhoc;
 
+	private String alertConf;
+
 	private String projectId;
 
 	private String parentCategory;
@@ -226,6 +228,17 @@ public class CreateFlowJobRequest extends RpcAcsRequest<CreateFlowJobResponse> {
 		this.adhoc = adhoc;
 		if(adhoc != null){
 			putQueryParameter("Adhoc", adhoc.toString());
+		}
+	}
+
+	public String getAlertConf() {
+		return this.alertConf;
+	}
+
+	public void setAlertConf(String alertConf) {
+		this.alertConf = alertConf;
+		if(alertConf != null){
+			putQueryParameter("AlertConf", alertConf);
 		}
 	}
 

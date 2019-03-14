@@ -111,6 +111,8 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 
 		private String connectionMode;
 
+		private List<Tag> tags;
+
 		public String getDBInstanceId() {
 			return this.dBInstanceId;
 		}
@@ -135,10 +137,26 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 			this.dBInstanceClassType = dBInstanceClassType;
 		}
 
+		public String getBizRegionId() {
+			return this.regionId;
+		}
+
+		public void setBizRegionId(String regionId) {
+			this.regionId = regionId;
+		}
+
+		/**
+		 * @deprecated use getBizRegionId instead of this.
+		 */
+		@Deprecated
 		public String getRegionId() {
 			return this.regionId;
 		}
 
+		/**
+		 * @deprecated use setBizRegionId instead of this.
+		 */
+		@Deprecated
 		public void setRegionId(String regionId) {
 			this.regionId = regionId;
 		}
@@ -365,6 +383,37 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 
 		public void setConnectionMode(String connectionMode) {
 			this.connectionMode = connectionMode;
+		}
+
+		public List<Tag> getTags() {
+			return this.tags;
+		}
+
+		public void setTags(List<Tag> tags) {
+			this.tags = tags;
+		}
+
+		public static class Tag {
+
+			private String key;
+
+			private String value;
+
+			public String getKey() {
+				return this.key;
+			}
+
+			public void setKey(String key) {
+				this.key = key;
+			}
+
+			public String getValue() {
+				return this.value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
+			}
 		}
 	}
 

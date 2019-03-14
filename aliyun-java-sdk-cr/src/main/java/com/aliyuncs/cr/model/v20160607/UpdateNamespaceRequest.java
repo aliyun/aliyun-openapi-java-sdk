@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class UpdateNamespaceRequest extends RoaAcsRequest<UpdateNamespaceResponse> {
 	
 	public UpdateNamespaceRequest() {
-		super("cr", "2016-06-07", "UpdateNamespace");
+		super("cr", "2016-06-07", "UpdateNamespace", "cr");
 		setUriPattern("/namespace/[Namespace]");
 		setMethod(MethodType.POST);
 	}

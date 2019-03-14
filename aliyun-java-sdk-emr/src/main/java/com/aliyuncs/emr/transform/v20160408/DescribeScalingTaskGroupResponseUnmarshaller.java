@@ -18,9 +18,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.emr.model.v20160408.DescribeScalingTaskGroupResponse;
-import com.aliyuncs.emr.model.v20160408.DescribeScalingTaskGroupResponse.ScalingRule;
-import com.aliyuncs.emr.model.v20160408.DescribeScalingTaskGroupResponse.SpotPriceLimit;
-import java.util.Map;
+import com.aliyuncs.emr.model.v20160408.DescribeScalingTaskGroupResponse.ScalingConfig;
+import com.aliyuncs.emr.model.v20160408.DescribeScalingTaskGroupResponse.ScalingConfig.SpotPriceLimit;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -35,50 +34,35 @@ public class DescribeScalingTaskGroupResponseUnmarshaller {
 		describeScalingTaskGroupResponse.setMaxSize(context.integerValue("DescribeScalingTaskGroupResponse.MaxSize"));
 		describeScalingTaskGroupResponse.setDefaultCooldown(context.integerValue("DescribeScalingTaskGroupResponse.DefaultCooldown"));
 		describeScalingTaskGroupResponse.setStatus(context.stringValue("DescribeScalingTaskGroupResponse.Status"));
-		describeScalingTaskGroupResponse.setPayType(context.stringValue("DescribeScalingTaskGroupResponse.PayType"));
-		describeScalingTaskGroupResponse.setDataDiskCategory(context.stringValue("DescribeScalingTaskGroupResponse.DataDiskCategory"));
-		describeScalingTaskGroupResponse.setDataDiskSize(context.integerValue("DescribeScalingTaskGroupResponse.DataDiskSize"));
-		describeScalingTaskGroupResponse.setDataDiskCount(context.integerValue("DescribeScalingTaskGroupResponse.DataDiskCount"));
-		describeScalingTaskGroupResponse.setSysDiskCategory(context.stringValue("DescribeScalingTaskGroupResponse.SysDiskCategory"));
-		describeScalingTaskGroupResponse.setSysDiskSize(context.integerValue("DescribeScalingTaskGroupResponse.SysDiskSize"));
-		describeScalingTaskGroupResponse.setCpuCount(context.integerValue("DescribeScalingTaskGroupResponse.CpuCount"));
-		describeScalingTaskGroupResponse.setMemSize(context.integerValue("DescribeScalingTaskGroupResponse.MemSize"));
-		describeScalingTaskGroupResponse.setSpotStrategy(context.stringValue("DescribeScalingTaskGroupResponse.SpotStrategy"));
+		describeScalingTaskGroupResponse.setActiveRuleCategory(context.stringValue("DescribeScalingTaskGroupResponse.ActiveRuleCategory"));
+
+		ScalingConfig scalingConfig = new ScalingConfig();
+		scalingConfig.setPayType(context.stringValue("DescribeScalingTaskGroupResponse.ScalingConfig.PayType"));
+		scalingConfig.setDataDiskCategory(context.stringValue("DescribeScalingTaskGroupResponse.ScalingConfig.DataDiskCategory"));
+		scalingConfig.setDataDiskSize(context.integerValue("DescribeScalingTaskGroupResponse.ScalingConfig.DataDiskSize"));
+		scalingConfig.setDataDiskCount(context.integerValue("DescribeScalingTaskGroupResponse.ScalingConfig.DataDiskCount"));
+		scalingConfig.setSysDiskCategory(context.stringValue("DescribeScalingTaskGroupResponse.ScalingConfig.SysDiskCategory"));
+		scalingConfig.setSysDiskSize(context.integerValue("DescribeScalingTaskGroupResponse.ScalingConfig.SysDiskSize"));
+		scalingConfig.setCpuCount(context.integerValue("DescribeScalingTaskGroupResponse.ScalingConfig.CpuCount"));
+		scalingConfig.setMemSize(context.integerValue("DescribeScalingTaskGroupResponse.ScalingConfig.MemSize"));
+		scalingConfig.setSpotStrategy(context.stringValue("DescribeScalingTaskGroupResponse.ScalingConfig.SpotStrategy"));
 
 		List<String> instanceTypeList = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("DescribeScalingTaskGroupResponse.InstanceTypeList.Length"); i++) {
-			instanceTypeList.add(context.stringValue("DescribeScalingTaskGroupResponse.InstanceTypeList["+ i +"]"));
+		for (int i = 0; i < context.lengthValue("DescribeScalingTaskGroupResponse.ScalingConfig.InstanceTypeList.Length"); i++) {
+			instanceTypeList.add(context.stringValue("DescribeScalingTaskGroupResponse.ScalingConfig.InstanceTypeList["+ i +"]"));
 		}
-		describeScalingTaskGroupResponse.setInstanceTypeList(instanceTypeList);
-
-		List<ScalingRule> scalingRules = new ArrayList<ScalingRule>();
-		for (int i = 0; i < context.lengthValue("DescribeScalingTaskGroupResponse.ScalingRules.Length"); i++) {
-			ScalingRule scalingRule = new ScalingRule();
-			scalingRule.setId(context.stringValue("DescribeScalingTaskGroupResponse.ScalingRules["+ i +"].Id"));
-			scalingRule.setRuleCategory(context.stringValue("DescribeScalingTaskGroupResponse.ScalingRules["+ i +"].RuleCategory"));
-			scalingRule.setRuleName(context.stringValue("DescribeScalingTaskGroupResponse.ScalingRules["+ i +"].RuleName"));
-			scalingRule.setAdjustmentType(context.stringValue("DescribeScalingTaskGroupResponse.ScalingRules["+ i +"].AdjustmentType"));
-			scalingRule.setAdjustmentValue(context.integerValue("DescribeScalingTaskGroupResponse.ScalingRules["+ i +"].AdjustmentValue"));
-			scalingRule.setCooldown(context.integerValue("DescribeScalingTaskGroupResponse.ScalingRules["+ i +"].Cooldown"));
-			scalingRule.setLaunchTime(context.stringValue("DescribeScalingTaskGroupResponse.ScalingRules["+ i +"].LaunchTime"));
-			scalingRule.setLaunchExpirationTime(context.integerValue("DescribeScalingTaskGroupResponse.ScalingRules["+ i +"].LaunchExpirationTime"));
-			scalingRule.setRecurrenceType(context.stringValue("DescribeScalingTaskGroupResponse.ScalingRules["+ i +"].RecurrenceType"));
-			scalingRule.setRecurrenceValue(context.stringValue("DescribeScalingTaskGroupResponse.ScalingRules["+ i +"].RecurrenceValue"));
-			scalingRule.setRecurrenceEndTime(context.stringValue("DescribeScalingTaskGroupResponse.ScalingRules["+ i +"].RecurrenceEndTime"));
-
-			scalingRules.add(scalingRule);
-		}
-		describeScalingTaskGroupResponse.setScalingRules(scalingRules);
+		scalingConfig.setInstanceTypeList(instanceTypeList);
 
 		List<SpotPriceLimit> spotPriceLimits = new ArrayList<SpotPriceLimit>();
-		for (int i = 0; i < context.lengthValue("DescribeScalingTaskGroupResponse.SpotPriceLimits.Length"); i++) {
+		for (int i = 0; i < context.lengthValue("DescribeScalingTaskGroupResponse.ScalingConfig.SpotPriceLimits.Length"); i++) {
 			SpotPriceLimit spotPriceLimit = new SpotPriceLimit();
-			spotPriceLimit.setInstanceType(context.stringValue("DescribeScalingTaskGroupResponse.SpotPriceLimits["+ i +"].InstanceType"));
-			spotPriceLimit.setPriceLimit(context.floatValue("DescribeScalingTaskGroupResponse.SpotPriceLimits["+ i +"].PriceLimit"));
+			spotPriceLimit.setInstanceType(context.stringValue("DescribeScalingTaskGroupResponse.ScalingConfig.SpotPriceLimits["+ i +"].InstanceType"));
+			spotPriceLimit.setPriceLimit(context.floatValue("DescribeScalingTaskGroupResponse.ScalingConfig.SpotPriceLimits["+ i +"].PriceLimit"));
 
 			spotPriceLimits.add(spotPriceLimit);
 		}
-		describeScalingTaskGroupResponse.setSpotPriceLimits(spotPriceLimits);
+		scalingConfig.setSpotPriceLimits(spotPriceLimits);
+		describeScalingTaskGroupResponse.setScalingConfig(scalingConfig);
 	 
 	 	return describeScalingTaskGroupResponse;
 	}

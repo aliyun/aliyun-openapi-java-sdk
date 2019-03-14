@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class GetNamespaceListRequest extends RoaAcsRequest<GetNamespaceListResponse> {
 	
 	public GetNamespaceListRequest() {
-		super("cr", "2016-06-07", "GetNamespaceList");
+		super("cr", "2016-06-07", "GetNamespaceList", "cr");
 		setUriPattern("/namespace");
 		setMethod(MethodType.GET);
 	}

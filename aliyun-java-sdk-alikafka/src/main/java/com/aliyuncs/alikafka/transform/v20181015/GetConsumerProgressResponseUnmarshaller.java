@@ -21,7 +21,6 @@ import com.aliyuncs.alikafka.model.v20181015.GetConsumerProgressResponse;
 import com.aliyuncs.alikafka.model.v20181015.GetConsumerProgressResponse.ConsumerProgress;
 import com.aliyuncs.alikafka.model.v20181015.GetConsumerProgressResponse.ConsumerProgress.TopicListItem;
 import com.aliyuncs.alikafka.model.v20181015.GetConsumerProgressResponse.ConsumerProgress.TopicListItem.OffsetListItem;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

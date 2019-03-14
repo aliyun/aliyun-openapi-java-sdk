@@ -40,6 +40,8 @@ public class MetastoreListTablesRequest extends RpcAcsRequest<MetastoreListTable
 
 	private Integer pageNumber;
 
+	private String fuzzyTableName;
+
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
 	}
@@ -114,6 +116,17 @@ public class MetastoreListTablesRequest extends RpcAcsRequest<MetastoreListTable
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public String getFuzzyTableName() {
+		return this.fuzzyTableName;
+	}
+
+	public void setFuzzyTableName(String fuzzyTableName) {
+		this.fuzzyTableName = fuzzyTableName;
+		if(fuzzyTableName != null){
+			putQueryParameter("FuzzyTableName", fuzzyTableName);
 		}
 	}
 

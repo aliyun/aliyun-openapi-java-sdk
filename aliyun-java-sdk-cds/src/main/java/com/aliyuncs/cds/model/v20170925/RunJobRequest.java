@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class RunJobRequest extends RoaAcsRequest<RunJobResponse> {
 	
 	public RunJobRequest() {
-		super("Cds", "2017-09-25", "RunJob", "codepipeline");
+		super("Cds", "2017-09-25", "RunJob", "cds");
 		setUriPattern("/v1/job/[JobName]/run");
 		setMethod(MethodType.POST);
 	}

@@ -1,3 +1,9 @@
+2019-03-14 Version: 3.1.0
+1, Support auto pay order while create and resize PrePaid cluster.
+
+2019-03-14 Version: 3.0.1
+1, Update Dependency
+
 2018-11-07 Version: 3.0.0
 1, Refactor createCluster and resizeCluster API.
 2, Add Emr-Flow API support.

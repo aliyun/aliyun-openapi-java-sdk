@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class DeleteNamespaceRequest extends RoaAcsRequest<DeleteNamespaceResponse> {
 	
 	public DeleteNamespaceRequest() {
-		super("cr", "2016-06-07", "DeleteNamespace");
+		super("cr", "2016-06-07", "DeleteNamespace", "cr");
 		setUriPattern("/namespace/[Namespace]");
 		setMethod(MethodType.DELETE);
 	}

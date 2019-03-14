@@ -28,6 +28,8 @@ public class DescribeRegionsRequest extends RpcAcsRequest<DescribeRegionsRespons
 
 	private String userClientIp;
 
+	private String acceptLanguage;
+
 	private String lang;
 
 	public String getUserClientIp() {
@@ -38,6 +40,17 @@ public class DescribeRegionsRequest extends RpcAcsRequest<DescribeRegionsRespons
 		this.userClientIp = userClientIp;
 		if(userClientIp != null){
 			putQueryParameter("UserClientIp", userClientIp);
+		}
+	}
+
+	public String getAcceptLanguage() {
+		return this.acceptLanguage;
+	}
+
+	public void setAcceptLanguage(String acceptLanguage) {
+		this.acceptLanguage = acceptLanguage;
+		if(acceptLanguage != null){
+			putQueryParameter("AcceptLanguage", acceptLanguage);
 		}
 	}
 

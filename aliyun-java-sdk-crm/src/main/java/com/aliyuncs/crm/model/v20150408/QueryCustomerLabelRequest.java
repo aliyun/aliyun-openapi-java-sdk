@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class QueryCustomerLabelRequest extends RpcAcsRequest<QueryCustomerLabelResponse> {
 	
 	public QueryCustomerLabelRequest() {
-		super("Crm", "2015-04-08", "QueryCustomerLabel");
+		super("Crm", "2015-04-08", "QueryCustomerLabel", "crm");
 	}
 
 	private String labelSeries;

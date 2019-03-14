@@ -34,6 +34,8 @@ public class DescribeScalingRuleResponse extends AcsResponse {
 
 	private String ruleName;
 
+	private String ruleCategory;
+
 	private String adjustmentType;
 
 	private Integer adjustmentValue;
@@ -42,15 +44,9 @@ public class DescribeScalingRuleResponse extends AcsResponse {
 
 	private String status;
 
-	private String launchTime;
+	private SchedulerTrigger schedulerTrigger;
 
-	private Integer launchExpirationTime;
-
-	private String recurrenceType;
-
-	private String recurrenceValue;
-
-	private String recurrenceEndTime;
+	private CloudWatchTrigger cloudWatchTrigger;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -92,6 +88,14 @@ public class DescribeScalingRuleResponse extends AcsResponse {
 		this.ruleName = ruleName;
 	}
 
+	public String getRuleCategory() {
+		return this.ruleCategory;
+	}
+
+	public void setRuleCategory(String ruleCategory) {
+		this.ruleCategory = ruleCategory;
+	}
+
 	public String getAdjustmentType() {
 		return this.adjustmentType;
 	}
@@ -124,44 +128,156 @@ public class DescribeScalingRuleResponse extends AcsResponse {
 		this.status = status;
 	}
 
-	public String getLaunchTime() {
-		return this.launchTime;
+	public SchedulerTrigger getSchedulerTrigger() {
+		return this.schedulerTrigger;
 	}
 
-	public void setLaunchTime(String launchTime) {
-		this.launchTime = launchTime;
+	public void setSchedulerTrigger(SchedulerTrigger schedulerTrigger) {
+		this.schedulerTrigger = schedulerTrigger;
 	}
 
-	public Integer getLaunchExpirationTime() {
-		return this.launchExpirationTime;
+	public CloudWatchTrigger getCloudWatchTrigger() {
+		return this.cloudWatchTrigger;
 	}
 
-	public void setLaunchExpirationTime(Integer launchExpirationTime) {
-		this.launchExpirationTime = launchExpirationTime;
+	public void setCloudWatchTrigger(CloudWatchTrigger cloudWatchTrigger) {
+		this.cloudWatchTrigger = cloudWatchTrigger;
 	}
 
-	public String getRecurrenceType() {
-		return this.recurrenceType;
+	public static class SchedulerTrigger {
+
+		private Long launchTime;
+
+		private Integer launchExpirationTime;
+
+		private String recurrenceType;
+
+		private String recurrenceValue;
+
+		private Long recurrenceEndTime;
+
+		public Long getLaunchTime() {
+			return this.launchTime;
+		}
+
+		public void setLaunchTime(Long launchTime) {
+			this.launchTime = launchTime;
+		}
+
+		public Integer getLaunchExpirationTime() {
+			return this.launchExpirationTime;
+		}
+
+		public void setLaunchExpirationTime(Integer launchExpirationTime) {
+			this.launchExpirationTime = launchExpirationTime;
+		}
+
+		public String getRecurrenceType() {
+			return this.recurrenceType;
+		}
+
+		public void setRecurrenceType(String recurrenceType) {
+			this.recurrenceType = recurrenceType;
+		}
+
+		public String getRecurrenceValue() {
+			return this.recurrenceValue;
+		}
+
+		public void setRecurrenceValue(String recurrenceValue) {
+			this.recurrenceValue = recurrenceValue;
+		}
+
+		public Long getRecurrenceEndTime() {
+			return this.recurrenceEndTime;
+		}
+
+		public void setRecurrenceEndTime(Long recurrenceEndTime) {
+			this.recurrenceEndTime = recurrenceEndTime;
+		}
 	}
 
-	public void setRecurrenceType(String recurrenceType) {
-		this.recurrenceType = recurrenceType;
-	}
+	public static class CloudWatchTrigger {
 
-	public String getRecurrenceValue() {
-		return this.recurrenceValue;
-	}
+		private String metricName;
 
-	public void setRecurrenceValue(String recurrenceValue) {
-		this.recurrenceValue = recurrenceValue;
-	}
+		private Integer period;
 
-	public String getRecurrenceEndTime() {
-		return this.recurrenceEndTime;
-	}
+		private String statistics;
 
-	public void setRecurrenceEndTime(String recurrenceEndTime) {
-		this.recurrenceEndTime = recurrenceEndTime;
+		private String comparisonOperator;
+
+		private String threshold;
+
+		private String evaluationCount;
+
+		private String unit;
+
+		private String metricDisplayName;
+
+		public String getMetricName() {
+			return this.metricName;
+		}
+
+		public void setMetricName(String metricName) {
+			this.metricName = metricName;
+		}
+
+		public Integer getPeriod() {
+			return this.period;
+		}
+
+		public void setPeriod(Integer period) {
+			this.period = period;
+		}
+
+		public String getStatistics() {
+			return this.statistics;
+		}
+
+		public void setStatistics(String statistics) {
+			this.statistics = statistics;
+		}
+
+		public String getComparisonOperator() {
+			return this.comparisonOperator;
+		}
+
+		public void setComparisonOperator(String comparisonOperator) {
+			this.comparisonOperator = comparisonOperator;
+		}
+
+		public String getThreshold() {
+			return this.threshold;
+		}
+
+		public void setThreshold(String threshold) {
+			this.threshold = threshold;
+		}
+
+		public String getEvaluationCount() {
+			return this.evaluationCount;
+		}
+
+		public void setEvaluationCount(String evaluationCount) {
+			this.evaluationCount = evaluationCount;
+		}
+
+		public String getUnit() {
+			return this.unit;
+		}
+
+		public void setUnit(String unit) {
+			this.unit = unit;
+		}
+
+		public String getMetricDisplayName() {
+			return this.metricDisplayName;
+		}
+
+		public void setMetricDisplayName(String metricDisplayName) {
+			this.metricDisplayName = metricDisplayName;
+		}
 	}
 
 	@Override

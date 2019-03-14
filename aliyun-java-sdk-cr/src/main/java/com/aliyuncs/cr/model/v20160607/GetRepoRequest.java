@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class GetRepoRequest extends RoaAcsRequest<GetRepoResponse> {
 	
 	public GetRepoRequest() {
-		super("cr", "2016-06-07", "GetRepo");
+		super("cr", "2016-06-07", "GetRepo", "cr");
 		setUriPattern("/repos/[RepoNamespace]/[RepoName]");
 		setMethod(MethodType.GET);
 	}

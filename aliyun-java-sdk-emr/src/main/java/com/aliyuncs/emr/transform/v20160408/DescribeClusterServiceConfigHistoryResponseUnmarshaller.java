@@ -21,7 +21,6 @@ import com.aliyuncs.emr.model.v20160408.DescribeClusterServiceConfigHistoryRespo
 import com.aliyuncs.emr.model.v20160408.DescribeClusterServiceConfigHistoryResponse.Config;
 import com.aliyuncs.emr.model.v20160408.DescribeClusterServiceConfigHistoryResponse.Config.ConfigValue;
 import com.aliyuncs.emr.model.v20160408.DescribeClusterServiceConfigHistoryResponse.Config.ConfigValue.ConfigItemValue;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

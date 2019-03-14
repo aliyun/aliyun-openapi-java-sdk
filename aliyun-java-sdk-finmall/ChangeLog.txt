@@ -1,3 +1,6 @@
+2019-03-15 Version: 1.0.1
+1,  Update Dependency
+
 2018-10-23 Version: 1.0.0
 1, finmall pop sdk 1.0.0
 

@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class GetRepoTagsRequest extends RoaAcsRequest<GetRepoTagsResponse> {
 	
 	public GetRepoTagsRequest() {
-		super("cr", "2016-06-07", "GetRepoTags");
+		super("cr", "2016-06-07", "GetRepoTags", "cr");
 		setUriPattern("/repos/[RepoNamespace]/[RepoName]/tags");
 		setMethod(MethodType.GET);
 	}

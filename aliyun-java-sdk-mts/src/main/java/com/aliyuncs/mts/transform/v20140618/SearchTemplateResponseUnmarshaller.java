@@ -27,7 +27,6 @@ import com.aliyuncs.mts.model.v20140618.SearchTemplateResponse.Template.MuxConfi
 import com.aliyuncs.mts.model.v20140618.SearchTemplateResponse.Template.TransConfig;
 import com.aliyuncs.mts.model.v20140618.SearchTemplateResponse.Template.Video;
 import com.aliyuncs.mts.model.v20140618.SearchTemplateResponse.Template.Video.BitrateBnd;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -67,6 +66,7 @@ public class SearchTemplateResponseUnmarshaller {
 			video.setPixFmt(context.stringValue("SearchTemplateResponse.TemplateList["+ i +"].Video.PixFmt"));
 			video.setDegrain(context.stringValue("SearchTemplateResponse.TemplateList["+ i +"].Video.Degrain"));
 			video.setQscale(context.stringValue("SearchTemplateResponse.TemplateList["+ i +"].Video.Qscale"));
+			video.setLongShortMode(context.stringValue("SearchTemplateResponse.TemplateList["+ i +"].Video.LongShortMode"));
 			video.setRemove(context.stringValue("SearchTemplateResponse.TemplateList["+ i +"].Video.Remove"));
 			video.setCrop(context.stringValue("SearchTemplateResponse.TemplateList["+ i +"].Video.Crop"));
 			video.setPad(context.stringValue("SearchTemplateResponse.TemplateList["+ i +"].Video.Pad"));

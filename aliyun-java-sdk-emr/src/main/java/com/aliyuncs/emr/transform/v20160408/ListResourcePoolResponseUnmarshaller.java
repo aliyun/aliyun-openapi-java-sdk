@@ -24,7 +24,6 @@ import com.aliyuncs.emr.model.v20160408.ListResourcePoolResponse.PoolInfo.EcmRes
 import com.aliyuncs.emr.model.v20160408.ListResourcePoolResponse.PoolInfo.Queue;
 import com.aliyuncs.emr.model.v20160408.ListResourcePoolResponse.PoolInfo.Queue.EcmResourcePoolConfig;
 import com.aliyuncs.emr.model.v20160408.ListResourcePoolResponse.PoolInfo.Queue.EcmResourceQueue;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

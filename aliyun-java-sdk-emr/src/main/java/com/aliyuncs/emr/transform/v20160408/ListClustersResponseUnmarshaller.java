@@ -21,7 +21,6 @@ import com.aliyuncs.emr.model.v20160408.ListClustersResponse;
 import com.aliyuncs.emr.model.v20160408.ListClustersResponse.ClusterInfo;
 import com.aliyuncs.emr.model.v20160408.ListClustersResponse.ClusterInfo.FailReason;
 import com.aliyuncs.emr.model.v20160408.ListClustersResponse.ClusterInfo.OrderTaskInfo;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -49,6 +48,7 @@ public class ListClustersResponseUnmarshaller {
 			clusterInfo.setHasUncompletedOrder(context.booleanValue("ListClustersResponse.Clusters["+ i +"].HasUncompletedOrder"));
 			clusterInfo.setOrderList(context.stringValue("ListClustersResponse.Clusters["+ i +"].OrderList"));
 			clusterInfo.setCreateResource(context.stringValue("ListClustersResponse.Clusters["+ i +"].CreateResource"));
+			clusterInfo.setDepositType(context.stringValue("ListClustersResponse.Clusters["+ i +"].DepositType"));
 
 			OrderTaskInfo orderTaskInfo = new OrderTaskInfo();
 			orderTaskInfo.setTargetCount(context.integerValue("ListClustersResponse.Clusters["+ i +"].OrderTaskInfo.TargetCount"));

@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class GetUserInfoAuthorizationAgreementRequest extends RpcAcsRequest<GetUserInfoAuthorizationAgreementResponse> {
 	
 	public GetUserInfoAuthorizationAgreementRequest() {
-		super("finmall", "2018-07-23", "GetUserInfoAuthorizationAgreement", "finmall", "innerAPI");
+		super("finmall", "2018-07-23", "GetUserInfoAuthorizationAgreement", "finmall");
 	}
 
 	private String creditId;

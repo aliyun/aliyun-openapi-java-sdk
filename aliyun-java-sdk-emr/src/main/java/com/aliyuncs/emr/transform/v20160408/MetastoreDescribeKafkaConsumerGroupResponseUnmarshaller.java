@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.emr.model.v20160408.MetastoreDescribeKafkaConsumerGroupResponse;
 import com.aliyuncs.emr.model.v20160408.MetastoreDescribeKafkaConsumerGroupResponse.Partition;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -32,7 +31,8 @@ public class MetastoreDescribeKafkaConsumerGroupResponseUnmarshaller {
 		metastoreDescribeKafkaConsumerGroupResponse.setDataSourceId(context.stringValue("MetastoreDescribeKafkaConsumerGroupResponse.DataSourceId"));
 		metastoreDescribeKafkaConsumerGroupResponse.setConsumerGroup(context.stringValue("MetastoreDescribeKafkaConsumerGroupResponse.ConsumerGroup"));
 		metastoreDescribeKafkaConsumerGroupResponse.setConsumerType(context.stringValue("MetastoreDescribeKafkaConsumerGroupResponse.ConsumerType"));
-		metastoreDescribeKafkaConsumerGroupResponse.setTotalLag(context.integerValue("MetastoreDescribeKafkaConsumerGroupResponse.TotalLag"));
+		metastoreDescribeKafkaConsumerGroupResponse.setTotalLag(context.longValue("MetastoreDescribeKafkaConsumerGroupResponse.TotalLag"));
+		metastoreDescribeKafkaConsumerGroupResponse.setPartitionProportion(context.stringValue("MetastoreDescribeKafkaConsumerGroupResponse.PartitionProportion"));
 		metastoreDescribeKafkaConsumerGroupResponse.setGmtCreate(context.longValue("MetastoreDescribeKafkaConsumerGroupResponse.GmtCreate"));
 		metastoreDescribeKafkaConsumerGroupResponse.setGmtModified(context.longValue("MetastoreDescribeKafkaConsumerGroupResponse.GmtModified"));
 
@@ -40,10 +40,9 @@ public class MetastoreDescribeKafkaConsumerGroupResponseUnmarshaller {
 		for (int i = 0; i < context.lengthValue("MetastoreDescribeKafkaConsumerGroupResponse.PartitionList.Length"); i++) {
 			Partition partition = new Partition();
 			partition.setDataSourceId(context.stringValue("MetastoreDescribeKafkaConsumerGroupResponse.PartitionList["+ i +"].DataSourceId"));
-			partition.setTopicId(context.stringValue("MetastoreDescribeKafkaConsumerGroupResponse.PartitionList["+ i +"].TopicId"));
 			partition.setConsumerGroupId(context.stringValue("MetastoreDescribeKafkaConsumerGroupResponse.PartitionList["+ i +"].ConsumerGroupId"));
 			partition.setPartitionId(context.integerValue("MetastoreDescribeKafkaConsumerGroupResponse.PartitionList["+ i +"].PartitionId"));
-			partition.setConsumeOffset(context.longValue("MetastoreDescribeKafkaConsumerGroupResponse.PartitionList["+ i +"].ConsumeOffset"));
+			partition.setConsumerOffset(context.longValue("MetastoreDescribeKafkaConsumerGroupResponse.PartitionList["+ i +"].ConsumerOffset"));
 			partition.setLogEndOffset(context.longValue("MetastoreDescribeKafkaConsumerGroupResponse.PartitionList["+ i +"].LogEndOffset"));
 			partition.setLag(context.longValue("MetastoreDescribeKafkaConsumerGroupResponse.PartitionList["+ i +"].Lag"));
 			partition.setConsumerInstanceOwner(context.stringValue("MetastoreDescribeKafkaConsumerGroupResponse.PartitionList["+ i +"].ConsumerInstanceOwner"));

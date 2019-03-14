@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.crm.model.v20150408.BatchGetAliyunIdByAliyunPkResponse;
 import com.aliyuncs.crm.model.v20150408.BatchGetAliyunIdByAliyunPkResponse.ProfileItem;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

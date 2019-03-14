@@ -20,7 +20,6 @@ import java.util.List;
 import com.aliyuncs.mts.model.v20140618.AddMediaResponse;
 import com.aliyuncs.mts.model.v20140618.AddMediaResponse.Media;
 import com.aliyuncs.mts.model.v20140618.AddMediaResponse.Media.File;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

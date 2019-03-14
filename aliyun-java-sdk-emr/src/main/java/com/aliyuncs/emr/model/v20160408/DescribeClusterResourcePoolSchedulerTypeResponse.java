@@ -30,6 +30,8 @@ public class DescribeClusterResourcePoolSchedulerTypeResponse extends AcsRespons
 
 	private String supportSchedulerType;
 
+	private String defaultSchedulerType;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -52,6 +54,14 @@ public class DescribeClusterResourcePoolSchedulerTypeResponse extends AcsRespons
 
 	public void setSupportSchedulerType(String supportSchedulerType) {
 		this.supportSchedulerType = supportSchedulerType;
+	}
+
+	public String getDefaultSchedulerType() {
+		return this.defaultSchedulerType;
+	}
+
+	public void setDefaultSchedulerType(String defaultSchedulerType) {
+		this.defaultSchedulerType = defaultSchedulerType;
 	}
 
 	@Override

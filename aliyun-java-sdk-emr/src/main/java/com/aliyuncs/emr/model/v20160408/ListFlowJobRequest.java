@@ -34,6 +34,8 @@ public class ListFlowJobRequest extends RpcAcsRequest<ListFlowJobResponse> {
 
 	private String type;
 
+	private Boolean adhoc;
+
 	private String projectId;
 
 	private Integer pageNumber;
@@ -79,6 +81,17 @@ public class ListFlowJobRequest extends RpcAcsRequest<ListFlowJobResponse> {
 		this.type = type;
 		if(type != null){
 			putQueryParameter("Type", type);
+		}
+	}
+
+	public Boolean getAdhoc() {
+		return this.adhoc;
+	}
+
+	public void setAdhoc(Boolean adhoc) {
+		this.adhoc = adhoc;
+		if(adhoc != null){
+			putQueryParameter("Adhoc", adhoc.toString());
 		}
 	}
 

@@ -31,11 +31,14 @@ public class UpdatePipelineResponseUnmarshaller {
 		pipeline.setName(context.stringValue("UpdatePipelineResponse.Pipeline.Name"));
 		pipeline.setState(context.stringValue("UpdatePipelineResponse.Pipeline.State"));
 		pipeline.setSpeed(context.stringValue("UpdatePipelineResponse.Pipeline.Speed"));
+		pipeline.setQuotaAllocate(context.longValue("UpdatePipelineResponse.Pipeline.QuotaAllocate"));
 		pipeline.setRole(context.stringValue("UpdatePipelineResponse.Pipeline.Role"));
 
 		NotifyConfig notifyConfig = new NotifyConfig();
 		notifyConfig.setTopic(context.stringValue("UpdatePipelineResponse.Pipeline.NotifyConfig.Topic"));
 		notifyConfig.setQueueName(context.stringValue("UpdatePipelineResponse.Pipeline.NotifyConfig.QueueName"));
+		notifyConfig.setMqTopic(context.stringValue("UpdatePipelineResponse.Pipeline.NotifyConfig.MqTopic"));
+		notifyConfig.setMqTag(context.stringValue("UpdatePipelineResponse.Pipeline.NotifyConfig.MqTag"));
 		pipeline.setNotifyConfig(notifyConfig);
 		updatePipelineResponse.setPipeline(pipeline);
 	 

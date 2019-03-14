@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.openanalytics.model.v20180301.DescribeRegionListResponse;
 import com.aliyuncs.openanalytics.model.v20180301.DescribeRegionListResponse.RegionListItem;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

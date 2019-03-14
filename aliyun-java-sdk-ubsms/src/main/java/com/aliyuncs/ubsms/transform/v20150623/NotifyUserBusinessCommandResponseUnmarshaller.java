@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.ubsms.transform.v20150623;
 
 import com.aliyuncs.ubsms.model.v20150623.NotifyUserBusinessCommandResponse;

@@ -27,6 +27,8 @@ public class ListAllMediaBucketResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String nextPageToken;
+
 	private List<MediaBucket> mediaBucketList;
 
 	public String getRequestId() {
@@ -35,6 +37,14 @@ public class ListAllMediaBucketResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getNextPageToken() {
+		return this.nextPageToken;
+	}
+
+	public void setNextPageToken(String nextPageToken) {
+		this.nextPageToken = nextPageToken;
 	}
 
 	public List<MediaBucket> getMediaBucketList() {

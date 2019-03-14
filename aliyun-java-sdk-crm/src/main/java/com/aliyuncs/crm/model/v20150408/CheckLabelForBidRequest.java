@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class CheckLabelForBidRequest extends RpcAcsRequest<CheckLabelForBidResponse> {
 	
 	public CheckLabelForBidRequest() {
-		super("Crm", "2015-04-08", "CheckLabelForBid");
+		super("Crm", "2015-04-08", "CheckLabelForBid", "crm");
 	}
 
 	private String labelSeries;

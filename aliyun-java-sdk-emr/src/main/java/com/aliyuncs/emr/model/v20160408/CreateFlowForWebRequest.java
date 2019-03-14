@@ -50,6 +50,8 @@ public class CreateFlowForWebRequest extends RpcAcsRequest<CreateFlowForWebRespo
 
 	private Long endSchedule;
 
+	private String alertConf;
+
 	private String projectId;
 
 	private String parentCategory;
@@ -183,6 +185,17 @@ public class CreateFlowForWebRequest extends RpcAcsRequest<CreateFlowForWebRespo
 		this.endSchedule = endSchedule;
 		if(endSchedule != null){
 			putQueryParameter("EndSchedule", endSchedule.toString());
+		}
+	}
+
+	public String getAlertConf() {
+		return this.alertConf;
+	}
+
+	public void setAlertConf(String alertConf) {
+		this.alertConf = alertConf;
+		if(alertConf != null){
+			putQueryParameter("AlertConf", alertConf);
 		}
 	}
 

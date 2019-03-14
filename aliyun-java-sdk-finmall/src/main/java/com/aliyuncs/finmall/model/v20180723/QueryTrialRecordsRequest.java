@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class QueryTrialRecordsRequest extends RpcAcsRequest<QueryTrialRecordsResponse> {
 	
 	public QueryTrialRecordsRequest() {
-		super("finmall", "2018-07-23", "QueryTrialRecords", "finmall", "innerAPI");
+		super("finmall", "2018-07-23", "QueryTrialRecords", "finmall");
 	}
 
 	private String userId;

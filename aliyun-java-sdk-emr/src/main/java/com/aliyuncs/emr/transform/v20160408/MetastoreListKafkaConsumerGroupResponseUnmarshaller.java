@@ -18,8 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.emr.model.v20160408.MetastoreListKafkaConsumerGroupResponse;
-import com.aliyuncs.emr.model.v20160408.MetastoreListKafkaConsumerGroupResponse.ConsumeGroup;
-import java.util.Map;
+import com.aliyuncs.emr.model.v20160408.MetastoreListKafkaConsumerGroupResponse.ConsumerGroup;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -32,20 +31,21 @@ public class MetastoreListKafkaConsumerGroupResponseUnmarshaller {
 		metastoreListKafkaConsumerGroupResponse.setPageNumber(context.integerValue("MetastoreListKafkaConsumerGroupResponse.PageNumber"));
 		metastoreListKafkaConsumerGroupResponse.setPageSize(context.integerValue("MetastoreListKafkaConsumerGroupResponse.PageSize"));
 
-		List<ConsumeGroup> consumeGroupList = new ArrayList<ConsumeGroup>();
-		for (int i = 0; i < context.lengthValue("MetastoreListKafkaConsumerGroupResponse.ConsumeGroupList.Length"); i++) {
-			ConsumeGroup consumeGroup = new ConsumeGroup();
-			consumeGroup.setId(context.stringValue("MetastoreListKafkaConsumerGroupResponse.ConsumeGroupList["+ i +"].Id"));
-			consumeGroup.setDataSourceId(context.stringValue("MetastoreListKafkaConsumerGroupResponse.ConsumeGroupList["+ i +"].DataSourceId"));
-			consumeGroup.setConsumerGroup(context.stringValue("MetastoreListKafkaConsumerGroupResponse.ConsumeGroupList["+ i +"].ConsumerGroup"));
-			consumeGroup.setConsumerType(context.stringValue("MetastoreListKafkaConsumerGroupResponse.ConsumeGroupList["+ i +"].ConsumerType"));
-			consumeGroup.setTotalLag(context.integerValue("MetastoreListKafkaConsumerGroupResponse.ConsumeGroupList["+ i +"].TotalLag"));
-			consumeGroup.setGmtCreate(context.longValue("MetastoreListKafkaConsumerGroupResponse.ConsumeGroupList["+ i +"].GmtCreate"));
-			consumeGroup.setGmtModified(context.longValue("MetastoreListKafkaConsumerGroupResponse.ConsumeGroupList["+ i +"].GmtModified"));
+		List<ConsumerGroup> consumerGroupList = new ArrayList<ConsumerGroup>();
+		for (int i = 0; i < context.lengthValue("MetastoreListKafkaConsumerGroupResponse.ConsumerGroupList.Length"); i++) {
+			ConsumerGroup consumerGroup = new ConsumerGroup();
+			consumerGroup.setId(context.stringValue("MetastoreListKafkaConsumerGroupResponse.ConsumerGroupList["+ i +"].Id"));
+			consumerGroup.setDataSourceId(context.stringValue("MetastoreListKafkaConsumerGroupResponse.ConsumerGroupList["+ i +"].DataSourceId"));
+			consumerGroup.setConsumerGroup(context.stringValue("MetastoreListKafkaConsumerGroupResponse.ConsumerGroupList["+ i +"].ConsumerGroup"));
+			consumerGroup.setConsumerType(context.stringValue("MetastoreListKafkaConsumerGroupResponse.ConsumerGroupList["+ i +"].ConsumerType"));
+			consumerGroup.setTotalLag(context.longValue("MetastoreListKafkaConsumerGroupResponse.ConsumerGroupList["+ i +"].TotalLag"));
+			consumerGroup.setGmtCreate(context.longValue("MetastoreListKafkaConsumerGroupResponse.ConsumerGroupList["+ i +"].GmtCreate"));
+			consumerGroup.setGmtModified(context.longValue("MetastoreListKafkaConsumerGroupResponse.ConsumerGroupList["+ i +"].GmtModified"));
+			consumerGroup.setPartitionProportion(context.stringValue("MetastoreListKafkaConsumerGroupResponse.ConsumerGroupList["+ i +"].PartitionProportion"));
 
-			consumeGroupList.add(consumeGroup);
+			consumerGroupList.add(consumerGroup);
 		}
-		metastoreListKafkaConsumerGroupResponse.setConsumeGroupList(consumeGroupList);
+		metastoreListKafkaConsumerGroupResponse.setConsumerGroupList(consumerGroupList);
 	 
 	 	return metastoreListKafkaConsumerGroupResponse;
 	}

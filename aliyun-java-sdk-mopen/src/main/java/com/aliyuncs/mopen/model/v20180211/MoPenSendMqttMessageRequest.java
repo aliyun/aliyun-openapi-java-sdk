@@ -25,7 +25,7 @@ import com.aliyuncs.http.MethodType;
 public class MoPenSendMqttMessageRequest extends RpcAcsRequest<MoPenSendMqttMessageResponse> {
 	
 	public MoPenSendMqttMessageRequest() {
-		super("MoPen", "2018-02-11", "MoPenSendMqttMessage");
+		super("MoPen", "2018-02-11", "MoPenSendMqttMessage", "mopen");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

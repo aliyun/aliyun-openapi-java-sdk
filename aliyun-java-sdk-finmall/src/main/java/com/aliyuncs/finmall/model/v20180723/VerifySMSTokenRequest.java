@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class VerifySMSTokenRequest extends RpcAcsRequest<VerifySMSTokenResponse> {
 	
 	public VerifySMSTokenRequest() {
-		super("finmall", "2018-07-23", "VerifySMSToken", "finmall", "innerAPI");
+		super("finmall", "2018-07-23", "VerifySMSToken", "finmall");
 	}
 
 	private String actionType;

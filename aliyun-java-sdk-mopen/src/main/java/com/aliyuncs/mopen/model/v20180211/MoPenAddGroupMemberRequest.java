@@ -25,7 +25,7 @@ import com.aliyuncs.http.MethodType;
 public class MoPenAddGroupMemberRequest extends RpcAcsRequest<MoPenAddGroupMemberResponse> {
 	
 	public MoPenAddGroupMemberRequest() {
-		super("MoPen", "2018-02-11", "MoPenAddGroupMember");
+		super("MoPen", "2018-02-11", "MoPenAddGroupMember", "mopen");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

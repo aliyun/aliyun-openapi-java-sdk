@@ -24,7 +24,6 @@ import com.aliyuncs.mts.model.v20140618.QueryTagJobListResponse.TagJob.VideoTagR
 import com.aliyuncs.mts.model.v20140618.QueryTagJobListResponse.TagJob.VideoTagResult.TagAnResult;
 import com.aliyuncs.mts.model.v20140618.QueryTagJobListResponse.TagJob.VideoTagResult.TagFrResult;
 import com.aliyuncs.mts.model.v20140618.QueryTagJobListResponse.TagJob.VideoTagResult.TagFrResult.TagFace;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

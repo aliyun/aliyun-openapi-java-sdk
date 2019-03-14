@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.emr.model.v20160408.ListFlowProjectUserResponse;
 import com.aliyuncs.emr.model.v20160408.ListFlowProjectUserResponse.User;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

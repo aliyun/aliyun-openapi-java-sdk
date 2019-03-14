@@ -15,6 +15,7 @@
 package com.aliyuncs.emr.model.v20160408;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 
 /**
  * @author auto create
@@ -32,7 +33,7 @@ public class MetastoreCreateKafkaTopicRequest extends RpcAcsRequest<MetastoreCre
 
 	private String topicName;
 
-	private String advancedConfig;
+	private List<AdvancedConfig> advancedConfigs;
 
 	private Integer numPartitions;
 
@@ -71,15 +72,18 @@ public class MetastoreCreateKafkaTopicRequest extends RpcAcsRequest<MetastoreCre
 		}
 	}
 
-	public String getAdvancedConfig() {
-		return this.advancedConfig;
+	public List<AdvancedConfig> getAdvancedConfigs() {
+		return this.advancedConfigs;
 	}
 
-	public void setAdvancedConfig(String advancedConfig) {
-		this.advancedConfig = advancedConfig;
-		if(advancedConfig != null){
-			putQueryParameter("AdvancedConfig", advancedConfig);
-		}
+	public void setAdvancedConfigs(List<AdvancedConfig> advancedConfigs) {
+		this.advancedConfigs = advancedConfigs;	
+		if (advancedConfigs != null) {
+			for (int depth1 = 0; depth1 < advancedConfigs.size(); depth1++) {
+				putQueryParameter("AdvancedConfig." + (depth1 + 1) + ".Value" , advancedConfigs.get(depth1).getValue());
+				putQueryParameter("AdvancedConfig." + (depth1 + 1) + ".Key" , advancedConfigs.get(depth1).getKey());
+			}
+		}	
 	}
 
 	public Integer getNumPartitions() {
@@ -101,6 +105,29 @@ public class MetastoreCreateKafkaTopicRequest extends RpcAcsRequest<MetastoreCre
 		this.replicationFactor = replicationFactor;
 		if(replicationFactor != null){
 			putQueryParameter("ReplicationFactor", replicationFactor.toString());
+		}
+	}
+
+	public static class AdvancedConfig {
+
+		private String value;
+
+		private String key;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
 		}
 	}
 

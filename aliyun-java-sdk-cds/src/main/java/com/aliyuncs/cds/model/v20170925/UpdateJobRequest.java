@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class UpdateJobRequest extends RoaAcsRequest<UpdateJobResponse> {
 	
 	public UpdateJobRequest() {
-		super("Cds", "2017-09-25", "UpdateJob", "codepipeline");
+		super("Cds", "2017-09-25", "UpdateJob", "cds");
 		setUriPattern("/v1/job/update");
 		setMethod(MethodType.POST);
 	}

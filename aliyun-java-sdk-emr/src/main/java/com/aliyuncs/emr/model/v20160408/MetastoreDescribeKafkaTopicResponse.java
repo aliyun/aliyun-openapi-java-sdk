@@ -15,7 +15,6 @@
 package com.aliyuncs.emr.model.v20160408;
 
 import java.util.List;
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.emr.transform.v20160408.MetastoreDescribeKafkaTopicResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -32,6 +31,8 @@ public class MetastoreDescribeKafkaTopicResponse extends AcsResponse {
 
 	private String dataSourceId;
 
+	private String topicName;
+
 	private Integer numPartitions;
 
 	private Integer replicationFactor;
@@ -40,9 +41,23 @@ public class MetastoreDescribeKafkaTopicResponse extends AcsResponse {
 
 	private Long gmtModified;
 
+	private Integer brokerTotal;
+
+	private Integer numUsingBrokers;
+
+	private String brokersLeaderSkewPercentage;
+
+	private String underReplicatedPercentage;
+
+	private String preferredReplicasPercentage;
+
 	private List<AdvancedConfig> advancedConfigList;
 
-	private Distribution distribution;
+	private List<Summary> summaryList;
+
+	private List<Distribution> distributionList;
+
+	private Cluster cluster;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -66,6 +81,14 @@ public class MetastoreDescribeKafkaTopicResponse extends AcsResponse {
 
 	public void setDataSourceId(String dataSourceId) {
 		this.dataSourceId = dataSourceId;
+	}
+
+	public String getTopicName() {
+		return this.topicName;
+	}
+
+	public void setTopicName(String topicName) {
+		this.topicName = topicName;
 	}
 
 	public Integer getNumPartitions() {
@@ -100,6 +123,46 @@ public class MetastoreDescribeKafkaTopicResponse extends AcsResponse {
 		this.gmtModified = gmtModified;
 	}
 
+	public Integer getBrokerTotal() {
+		return this.brokerTotal;
+	}
+
+	public void setBrokerTotal(Integer brokerTotal) {
+		this.brokerTotal = brokerTotal;
+	}
+
+	public Integer getNumUsingBrokers() {
+		return this.numUsingBrokers;
+	}
+
+	public void setNumUsingBrokers(Integer numUsingBrokers) {
+		this.numUsingBrokers = numUsingBrokers;
+	}
+
+	public String getBrokersLeaderSkewPercentage() {
+		return this.brokersLeaderSkewPercentage;
+	}
+
+	public void setBrokersLeaderSkewPercentage(String brokersLeaderSkewPercentage) {
+		this.brokersLeaderSkewPercentage = brokersLeaderSkewPercentage;
+	}
+
+	public String getUnderReplicatedPercentage() {
+		return this.underReplicatedPercentage;
+	}
+
+	public void setUnderReplicatedPercentage(String underReplicatedPercentage) {
+		this.underReplicatedPercentage = underReplicatedPercentage;
+	}
+
+	public String getPreferredReplicasPercentage() {
+		return this.preferredReplicasPercentage;
+	}
+
+	public void setPreferredReplicasPercentage(String preferredReplicasPercentage) {
+		this.preferredReplicasPercentage = preferredReplicasPercentage;
+	}
+
 	public List<AdvancedConfig> getAdvancedConfigList() {
 		return this.advancedConfigList;
 	}
@@ -108,15 +171,54 @@ public class MetastoreDescribeKafkaTopicResponse extends AcsResponse {
 		this.advancedConfigList = advancedConfigList;
 	}
 
-	public Distribution getDistribution() {
-		return this.distribution;
+	public List<Summary> getSummaryList() {
+		return this.summaryList;
 	}
 
-	public void setDistribution(Distribution distribution) {
-		this.distribution = distribution;
+	public void setSummaryList(List<Summary> summaryList) {
+		this.summaryList = summaryList;
+	}
+
+	public List<Distribution> getDistributionList() {
+		return this.distributionList;
+	}
+
+	public void setDistributionList(List<Distribution> distributionList) {
+		this.distributionList = distributionList;
+	}
+
+	public Cluster getCluster() {
+		return this.cluster;
+	}
+
+	public void setCluster(Cluster cluster) {
+		this.cluster = cluster;
 	}
 
 	public static class AdvancedConfig {
+
+		private String key;
+
+		private String value;
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
+		}
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+	}
+
+	public static class Summary {
 
 		private String key;
 
@@ -143,11 +245,15 @@ public class MetastoreDescribeKafkaTopicResponse extends AcsResponse {
 
 		private Integer partition;
 
+		private Long offset;
+
 		private Integer leader;
 
 		private Boolean preferredLeader;
 
 		private Boolean underReplicated;
+
+		private Long logEndOffset;
 
 		private List<String> isrList;
 
@@ -159,6 +265,14 @@ public class MetastoreDescribeKafkaTopicResponse extends AcsResponse {
 
 		public void setPartition(Integer partition) {
 			this.partition = partition;
+		}
+
+		public Long getOffset() {
+			return this.offset;
+		}
+
+		public void setOffset(Long offset) {
+			this.offset = offset;
 		}
 
 		public Integer getLeader() {
@@ -185,6 +299,14 @@ public class MetastoreDescribeKafkaTopicResponse extends AcsResponse {
 			this.underReplicated = underReplicated;
 		}
 
+		public Long getLogEndOffset() {
+			return this.logEndOffset;
+		}
+
+		public void setLogEndOffset(Long logEndOffset) {
+			this.logEndOffset = logEndOffset;
+		}
+
 		public List<String> getIsrList() {
 			return this.isrList;
 		}
@@ -199,6 +321,39 @@ public class MetastoreDescribeKafkaTopicResponse extends AcsResponse {
 
 		public void setReplicaList(List<String> replicaList) {
 			this.replicaList = replicaList;
+		}
+	}
+
+	public static class Cluster {
+
+		private String clusterBizId;
+
+		private String clusterName;
+
+		private String clusterStatus;
+
+		public String getClusterBizId() {
+			return this.clusterBizId;
+		}
+
+		public void setClusterBizId(String clusterBizId) {
+			this.clusterBizId = clusterBizId;
+		}
+
+		public String getClusterName() {
+			return this.clusterName;
+		}
+
+		public void setClusterName(String clusterName) {
+			this.clusterName = clusterName;
+		}
+
+		public String getClusterStatus() {
+			return this.clusterStatus;
+		}
+
+		public void setClusterStatus(String clusterStatus) {
+			this.clusterStatus = clusterStatus;
 		}
 	}
 

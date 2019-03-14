@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.emr.model.v20160408.GetLogHistogramResponse;
 import com.aliyuncs.emr.model.v20160408.GetLogHistogramResponse.SlsLogHistogram;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

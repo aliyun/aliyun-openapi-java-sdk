@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.crm.model.v20150408.QueryCustomerLabelResponse;
 import com.aliyuncs.crm.model.v20150408.QueryCustomerLabelResponse.CustomerLabel;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

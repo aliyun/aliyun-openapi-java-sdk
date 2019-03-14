@@ -30,7 +30,7 @@ public class BandOfferOrderResponse extends AcsResponse {
 
 	private String resultMessage;
 
-	private String resultModule;
+	private ResultModule resultModule;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -56,12 +56,25 @@ public class BandOfferOrderResponse extends AcsResponse {
 		this.resultMessage = resultMessage;
 	}
 
-	public String getResultModule() {
+	public ResultModule getResultModule() {
 		return this.resultModule;
 	}
 
-	public void setResultModule(String resultModule) {
+	public void setResultModule(ResultModule resultModule) {
 		this.resultModule = resultModule;
+	}
+
+	public static class ResultModule {
+
+		private Long lxOrderId;
+
+		public Long getLxOrderId() {
+			return this.lxOrderId;
+		}
+
+		public void setLxOrderId(Long lxOrderId) {
+			this.lxOrderId = lxOrderId;
+		}
 	}
 
 	@Override

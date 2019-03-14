@@ -44,6 +44,7 @@ public class DescribeZonesResponseUnmarshaller {
 			zone.setUpdateTime(context.stringValue("DescribeZonesResponse.Zones["+ i +"].UpdateTime"));
 			zone.setUpdateTimestamp(context.longValue("DescribeZonesResponse.Zones["+ i +"].UpdateTimestamp"));
 			zone.setIsPtr(context.booleanValue("DescribeZonesResponse.Zones["+ i +"].IsPtr"));
+			zone.setProxyPattern(context.stringValue("DescribeZonesResponse.Zones["+ i +"].ProxyPattern"));
 
 			zones.add(zone);
 		}

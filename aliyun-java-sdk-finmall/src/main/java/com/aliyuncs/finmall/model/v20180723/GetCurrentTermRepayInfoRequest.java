@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class GetCurrentTermRepayInfoRequest extends RpcAcsRequest<GetCurrentTermRepayInfoResponse> {
 	
 	public GetCurrentTermRepayInfoRequest() {
-		super("finmall", "2018-07-23", "GetCurrentTermRepayInfo", "finmall", "innerAPI");
+		super("finmall", "2018-07-23", "GetCurrentTermRepayInfo", "finmall");
 	}
 
 	private String creditId;

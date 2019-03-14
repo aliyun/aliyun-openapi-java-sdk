@@ -35,7 +35,9 @@ public class MetastoreDescribeKafkaConsumerGroupResponse extends AcsResponse {
 
 	private String consumerType;
 
-	private Integer totalLag;
+	private Long totalLag;
+
+	private String partitionProportion;
 
 	private Long gmtCreate;
 
@@ -83,12 +85,20 @@ public class MetastoreDescribeKafkaConsumerGroupResponse extends AcsResponse {
 		this.consumerType = consumerType;
 	}
 
-	public Integer getTotalLag() {
+	public Long getTotalLag() {
 		return this.totalLag;
 	}
 
-	public void setTotalLag(Integer totalLag) {
+	public void setTotalLag(Long totalLag) {
 		this.totalLag = totalLag;
+	}
+
+	public String getPartitionProportion() {
+		return this.partitionProportion;
+	}
+
+	public void setPartitionProportion(String partitionProportion) {
+		this.partitionProportion = partitionProportion;
 	}
 
 	public Long getGmtCreate() {
@@ -119,13 +129,11 @@ public class MetastoreDescribeKafkaConsumerGroupResponse extends AcsResponse {
 
 		private String dataSourceId;
 
-		private String topicId;
-
 		private String consumerGroupId;
 
 		private Integer partitionId;
 
-		private Long consumeOffset;
+		private Long consumerOffset;
 
 		private Long logEndOffset;
 
@@ -145,14 +153,6 @@ public class MetastoreDescribeKafkaConsumerGroupResponse extends AcsResponse {
 			this.dataSourceId = dataSourceId;
 		}
 
-		public String getTopicId() {
-			return this.topicId;
-		}
-
-		public void setTopicId(String topicId) {
-			this.topicId = topicId;
-		}
-
 		public String getConsumerGroupId() {
 			return this.consumerGroupId;
 		}
@@ -169,12 +169,12 @@ public class MetastoreDescribeKafkaConsumerGroupResponse extends AcsResponse {
 			this.partitionId = partitionId;
 		}
 
-		public Long getConsumeOffset() {
-			return this.consumeOffset;
+		public Long getConsumerOffset() {
+			return this.consumerOffset;
 		}
 
-		public void setConsumeOffset(Long consumeOffset) {
-			this.consumeOffset = consumeOffset;
+		public void setConsumerOffset(Long consumerOffset) {
+			this.consumerOffset = consumerOffset;
 		}
 
 		public Long getLogEndOffset() {

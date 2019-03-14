@@ -76,6 +76,8 @@ public class GetCreditStatusResponse extends AcsResponse {
 
 		private String tradeDataId;
 
+		private String creditApproveComment;
+
 		public String getStatus() {
 			return this.status;
 		}
@@ -114,6 +116,14 @@ public class GetCreditStatusResponse extends AcsResponse {
 
 		public void setTradeDataId(String tradeDataId) {
 			this.tradeDataId = tradeDataId;
+		}
+
+		public String getCreditApproveComment() {
+			return this.creditApproveComment;
+		}
+
+		public void setCreditApproveComment(String creditApproveComment) {
+			this.creditApproveComment = creditApproveComment;
 		}
 	}
 

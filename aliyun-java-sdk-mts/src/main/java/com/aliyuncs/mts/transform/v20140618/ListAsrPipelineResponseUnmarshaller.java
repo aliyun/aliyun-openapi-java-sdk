@@ -20,7 +20,6 @@ import java.util.List;
 import com.aliyuncs.mts.model.v20140618.ListAsrPipelineResponse;
 import com.aliyuncs.mts.model.v20140618.ListAsrPipelineResponse.Pipeline;
 import com.aliyuncs.mts.model.v20140618.ListAsrPipelineResponse.Pipeline.NotifyConfig;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

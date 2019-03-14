@@ -18,7 +18,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.mts.model.v20140618.RefreshCdnDomainConfigsCacheResponse;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
