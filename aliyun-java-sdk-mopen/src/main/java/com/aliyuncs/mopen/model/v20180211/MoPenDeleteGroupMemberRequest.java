@@ -25,7 +25,7 @@ import com.aliyuncs.http.MethodType;
 public class MoPenDeleteGroupMemberRequest extends RpcAcsRequest<MoPenDeleteGroupMemberResponse> {
 	
 	public MoPenDeleteGroupMemberRequest() {
-		super("MoPen", "2018-02-11", "MoPenDeleteGroupMember");
+		super("MoPen", "2018-02-11", "MoPenDeleteGroupMember", "mopen");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

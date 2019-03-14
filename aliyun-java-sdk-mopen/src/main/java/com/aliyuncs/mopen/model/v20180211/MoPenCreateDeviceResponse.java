@@ -90,10 +90,26 @@ public class MoPenCreateDeviceResponse extends AcsResponse {
 			this.deviceName = deviceName;
 		}
 
+		public String getBizProduct() {
+			return this.product;
+		}
+
+		public void setBizProduct(String product) {
+			this.product = product;
+		}
+
+		/**
+		 * @deprecated use getBizProduct instead of this.
+		 */
+		@Deprecated
 		public String getProduct() {
 			return this.product;
 		}
 
+		/**
+		 * @deprecated use setBizProduct instead of this.
+		 */
+		@Deprecated
 		public void setProduct(String product) {
 			this.product = product;
 		}

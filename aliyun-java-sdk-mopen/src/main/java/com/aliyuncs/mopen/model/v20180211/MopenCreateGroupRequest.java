@@ -25,7 +25,7 @@ import com.aliyuncs.http.MethodType;
 public class MopenCreateGroupRequest extends RpcAcsRequest<MopenCreateGroupResponse> {
 	
 	public MopenCreateGroupRequest() {
-		super("MoPen", "2018-02-11", "MopenCreateGroup");
+		super("MoPen", "2018-02-11", "MopenCreateGroup", "mopen");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

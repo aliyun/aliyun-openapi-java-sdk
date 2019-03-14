@@ -25,7 +25,7 @@ import com.aliyuncs.http.MethodType;
 public class MoPenDoRecognizeRequest extends RpcAcsRequest<MoPenDoRecognizeResponse> {
 	
 	public MoPenDoRecognizeRequest() {
-		super("MoPen", "2018-02-11", "MoPenDoRecognize");
+		super("MoPen", "2018-02-11", "MoPenDoRecognize", "mopen");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

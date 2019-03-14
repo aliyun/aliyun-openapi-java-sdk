@@ -25,7 +25,7 @@ import com.aliyuncs.http.MethodType;
 public class MoPenBindIsvRequest extends RpcAcsRequest<MoPenBindIsvResponse> {
 	
 	public MoPenBindIsvRequest() {
-		super("MoPen", "2018-02-11", "MoPenBindIsv");
+		super("MoPen", "2018-02-11", "MoPenBindIsv", "mopen");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
