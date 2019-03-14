@@ -15,7 +15,6 @@
 package com.aliyuncs.hsm.model.v20180111;
 
 import com.aliyuncs.RpcAcsRequest;
-import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
@@ -25,7 +24,6 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 	
 	public CreateInstanceRequest() {
 		super("hsm", "2018-01-11", "CreateInstance", "hsm");
-		setMethod(MethodType.POST);
 	}
 
 	private Integer period;
