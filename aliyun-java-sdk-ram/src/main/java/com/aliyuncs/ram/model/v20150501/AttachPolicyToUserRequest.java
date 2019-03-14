@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.ram.model.v20150501;
 
 import com.aliyuncs.RpcAcsRequest;
@@ -23,7 +24,7 @@ import com.aliyuncs.http.ProtocolType;
 public class AttachPolicyToUserRequest extends RpcAcsRequest<AttachPolicyToUserResponse> {
 	
 	public AttachPolicyToUserRequest() {
-		super("Ram", "2015-05-01", "AttachPolicyToUser");
+		super("Ram", "2015-05-01", "AttachPolicyToUser", "ram");
 		setProtocol(ProtocolType.HTTPS);
 	}
 

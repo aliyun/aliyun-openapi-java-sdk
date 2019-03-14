@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.ram.model.v20150501;
 
 import com.aliyuncs.RpcAcsRequest;
@@ -23,11 +24,37 @@ import com.aliyuncs.http.ProtocolType;
 public class ListUsersForGroupRequest extends RpcAcsRequest<ListUsersForGroupResponse> {
 	
 	public ListUsersForGroupRequest() {
-		super("Ram", "2015-05-01", "ListUsersForGroup");
+		super("Ram", "2015-05-01", "ListUsersForGroup", "ram");
 		setProtocol(ProtocolType.HTTPS);
 	}
 
+	private String marker;
+
+	private Integer maxItems;
+
 	private String groupName;
+
+	public String getMarker() {
+		return this.marker;
+	}
+
+	public void setMarker(String marker) {
+		this.marker = marker;
+		if(marker != null){
+			putQueryParameter("Marker", marker);
+		}
+	}
+
+	public Integer getMaxItems() {
+		return this.maxItems;
+	}
+
+	public void setMaxItems(Integer maxItems) {
+		this.maxItems = maxItems;
+		if(maxItems != null){
+			putQueryParameter("MaxItems", maxItems.toString());
+		}
+	}
 
 	public String getGroupName() {
 		return this.groupName;

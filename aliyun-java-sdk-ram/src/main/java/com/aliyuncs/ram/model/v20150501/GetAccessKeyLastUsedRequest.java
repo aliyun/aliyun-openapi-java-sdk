@@ -21,25 +21,25 @@ import com.aliyuncs.http.ProtocolType;
  * @author auto create
  * @version 
  */
-public class RemoveUserFromGroupRequest extends RpcAcsRequest<RemoveUserFromGroupResponse> {
+public class GetAccessKeyLastUsedRequest extends RpcAcsRequest<GetAccessKeyLastUsedResponse> {
 	
-	public RemoveUserFromGroupRequest() {
-		super("Ram", "2015-05-01", "RemoveUserFromGroup", "ram");
+	public GetAccessKeyLastUsedRequest() {
+		super("Ram", "2015-05-01", "GetAccessKeyLastUsed", "ram");
 		setProtocol(ProtocolType.HTTPS);
 	}
 
-	private String groupName;
+	private String userAccessKeyId;
 
 	private String userName;
 
-	public String getGroupName() {
-		return this.groupName;
+	public String getUserAccessKeyId() {
+		return this.userAccessKeyId;
 	}
 
-	public void setGroupName(String groupName) {
-		this.groupName = groupName;
-		if(groupName != null){
-			putQueryParameter("GroupName", groupName);
+	public void setUserAccessKeyId(String userAccessKeyId) {
+		this.userAccessKeyId = userAccessKeyId;
+		if(userAccessKeyId != null){
+			putQueryParameter("UserAccessKeyId", userAccessKeyId);
 		}
 	}
 
@@ -55,8 +55,8 @@ public class RemoveUserFromGroupRequest extends RpcAcsRequest<RemoveUserFromGrou
 	}
 
 	@Override
-	public Class<RemoveUserFromGroupResponse> getResponseClass() {
-		return RemoveUserFromGroupResponse.class;
+	public Class<GetAccessKeyLastUsedResponse> getResponseClass() {
+		return GetAccessKeyLastUsedResponse.class;
 	}
 
 }

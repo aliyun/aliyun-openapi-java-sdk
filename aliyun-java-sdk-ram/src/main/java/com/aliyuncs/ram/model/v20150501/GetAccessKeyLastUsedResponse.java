@@ -15,16 +15,18 @@
 package com.aliyuncs.ram.model.v20150501;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.ram.transform.v20150501.AttachPolicyToRoleResponseUnmarshaller;
+import com.aliyuncs.ram.transform.v20150501.GetAccessKeyLastUsedResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class AttachPolicyToRoleResponse extends AcsResponse {
+public class GetAccessKeyLastUsedResponse extends AcsResponse {
 
 	private String requestId;
+
+	private AccessKeyLastUsed accessKeyLastUsed;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -34,8 +36,29 @@ public class AttachPolicyToRoleResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public AccessKeyLastUsed getAccessKeyLastUsed() {
+		return this.accessKeyLastUsed;
+	}
+
+	public void setAccessKeyLastUsed(AccessKeyLastUsed accessKeyLastUsed) {
+		this.accessKeyLastUsed = accessKeyLastUsed;
+	}
+
+	public static class AccessKeyLastUsed {
+
+		private String lastUsedDate;
+
+		public String getLastUsedDate() {
+			return this.lastUsedDate;
+		}
+
+		public void setLastUsedDate(String lastUsedDate) {
+			this.lastUsedDate = lastUsedDate;
+		}
+	}
+
 	@Override
-	public AttachPolicyToRoleResponse getInstance(UnmarshallerContext context) {
-		return	AttachPolicyToRoleResponseUnmarshaller.unmarshall(this, context);
+	public GetAccessKeyLastUsedResponse getInstance(UnmarshallerContext context) {
+		return	GetAccessKeyLastUsedResponseUnmarshaller.unmarshall(this, context);
 	}
 }
