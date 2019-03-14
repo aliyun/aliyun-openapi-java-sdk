@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.sts.model.v20150401;
 
 import com.aliyuncs.AcsResponse;
@@ -27,7 +28,13 @@ public class GetCallerIdentityResponse extends AcsResponse {
 
 	private String userId;
 
+	private String roleId;
+
 	private String arn;
+
+	private String identityType;
+
+	private String principalId;
 
 	private String requestId;
 
@@ -47,12 +54,36 @@ public class GetCallerIdentityResponse extends AcsResponse {
 		this.userId = userId;
 	}
 
+	public String getRoleId() {
+		return this.roleId;
+	}
+
+	public void setRoleId(String roleId) {
+		this.roleId = roleId;
+	}
+
 	public String getArn() {
 		return this.arn;
 	}
 
 	public void setArn(String arn) {
 		this.arn = arn;
+	}
+
+	public String getIdentityType() {
+		return this.identityType;
+	}
+
+	public void setIdentityType(String identityType) {
+		this.identityType = identityType;
+	}
+
+	public String getPrincipalId() {
+		return this.principalId;
+	}
+
+	public void setPrincipalId(String principalId) {
+		this.principalId = principalId;
 	}
 
 	public String getRequestId() {

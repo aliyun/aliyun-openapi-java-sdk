@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.sts.transform.v20150401;
 
 import com.aliyuncs.sts.model.v20150401.GetCallerIdentityResponse;
@@ -24,7 +25,10 @@ public class GetCallerIdentityResponseUnmarshaller {
 		getCallerIdentityResponse.setRequestId(context.stringValue("GetCallerIdentityResponse.RequestId"));
 		getCallerIdentityResponse.setAccountId(context.stringValue("GetCallerIdentityResponse.AccountId"));
 		getCallerIdentityResponse.setUserId(context.stringValue("GetCallerIdentityResponse.UserId"));
+		getCallerIdentityResponse.setRoleId(context.stringValue("GetCallerIdentityResponse.RoleId"));
 		getCallerIdentityResponse.setArn(context.stringValue("GetCallerIdentityResponse.Arn"));
+		getCallerIdentityResponse.setIdentityType(context.stringValue("GetCallerIdentityResponse.IdentityType"));
+		getCallerIdentityResponse.setPrincipalId(context.stringValue("GetCallerIdentityResponse.PrincipalId"));
 	 
 	 	return getCallerIdentityResponse;
 	}
