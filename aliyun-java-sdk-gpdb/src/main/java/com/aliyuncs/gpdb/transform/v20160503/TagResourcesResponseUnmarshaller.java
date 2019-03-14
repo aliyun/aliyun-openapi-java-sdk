@@ -12,23 +12,18 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.gpdb.model.v20160503;
+package com.aliyuncs.gpdb.transform.v20160503;
 
-import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.gpdb.model.v20160503.TagResourcesResponse;
+import com.aliyuncs.transform.UnmarshallerContext;
 
-/**
- * @author auto create
- * @version 
- */
-public class DescribeRegionsRequest extends RpcAcsRequest<DescribeRegionsResponse> {
-	
-	public DescribeRegionsRequest() {
-		super("gpdb", "2016-05-03", "DescribeRegions", "gpdb");
+
+public class TagResourcesResponseUnmarshaller {
+
+	public static TagResourcesResponse unmarshall(TagResourcesResponse tagResourcesResponse, UnmarshallerContext context) {
+		
+		tagResourcesResponse.setRequestId(context.stringValue("TagResourcesResponse.RequestId"));
+	 
+	 	return tagResourcesResponse;
 	}
-
-	@Override
-	public Class<DescribeRegionsResponse> getResponseClass() {
-		return DescribeRegionsResponse.class;
-	}
-
 }

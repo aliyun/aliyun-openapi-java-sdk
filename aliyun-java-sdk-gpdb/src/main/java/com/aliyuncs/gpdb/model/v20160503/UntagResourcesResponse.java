@@ -14,21 +14,28 @@
 
 package com.aliyuncs.gpdb.model.v20160503;
 
-import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.AcsResponse;
+import com.aliyuncs.gpdb.transform.v20160503.UntagResourcesResponseUnmarshaller;
+import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DescribeRegionsRequest extends RpcAcsRequest<DescribeRegionsResponse> {
-	
-	public DescribeRegionsRequest() {
-		super("gpdb", "2016-05-03", "DescribeRegions", "gpdb");
+public class UntagResourcesResponse extends AcsResponse {
+
+	private String requestId;
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override
-	public Class<DescribeRegionsResponse> getResponseClass() {
-		return DescribeRegionsResponse.class;
+	public UntagResourcesResponse getInstance(UnmarshallerContext context) {
+		return	UntagResourcesResponseUnmarshaller.unmarshall(this, context);
 	}
-
 }

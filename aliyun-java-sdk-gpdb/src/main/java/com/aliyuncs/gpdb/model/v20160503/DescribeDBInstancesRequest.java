@@ -15,6 +15,7 @@
 package com.aliyuncs.gpdb.model.v20160503;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 
 /**
  * @author auto create
@@ -26,11 +27,13 @@ public class DescribeDBInstancesRequest extends RpcAcsRequest<DescribeDBInstance
 		super("gpdb", "2016-05-03", "DescribeDBInstances", "gpdb");
 	}
 
-	private String connectionMode;
+	private String dBInstanceIds;
 
 	private Integer pageSize;
 
 	private String dBInstanceDescription;
+
+	private List<Tag> tags;
 
 	private Long ownerId;
 
@@ -38,14 +41,14 @@ public class DescribeDBInstancesRequest extends RpcAcsRequest<DescribeDBInstance
 
 	private Integer pageNumber;
 
-	public String getConnectionMode() {
-		return this.connectionMode;
+	public String getDBInstanceIds() {
+		return this.dBInstanceIds;
 	}
 
-	public void setConnectionMode(String connectionMode) {
-		this.connectionMode = connectionMode;
-		if(connectionMode != null){
-			putQueryParameter("ConnectionMode", connectionMode);
+	public void setDBInstanceIds(String dBInstanceIds) {
+		this.dBInstanceIds = dBInstanceIds;
+		if(dBInstanceIds != null){
+			putQueryParameter("DBInstanceIds", dBInstanceIds);
 		}
 	}
 
@@ -69,6 +72,20 @@ public class DescribeDBInstancesRequest extends RpcAcsRequest<DescribeDBInstance
 		if(dBInstanceDescription != null){
 			putQueryParameter("DBInstanceDescription", dBInstanceDescription);
 		}
+	}
+
+	public List<Tag> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
+				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
+			}
+		}	
 	}
 
 	public Long getOwnerId() {
@@ -101,6 +118,29 @@ public class DescribeDBInstancesRequest extends RpcAcsRequest<DescribeDBInstance
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public static class Tag {
+
+		private String value;
+
+		private String key;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
 		}
 	}
 
