@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.alikafka.model.v20181015.GetTopicListResponse;
 import com.aliyuncs.alikafka.model.v20181015.GetTopicListResponse.TopicListItem;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

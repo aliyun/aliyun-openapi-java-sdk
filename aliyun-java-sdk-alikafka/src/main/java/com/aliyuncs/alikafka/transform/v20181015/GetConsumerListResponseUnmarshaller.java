@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.alikafka.model.v20181015.GetConsumerListResponse;
 import com.aliyuncs.alikafka.model.v20181015.GetConsumerListResponse.ConsumerListItem;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

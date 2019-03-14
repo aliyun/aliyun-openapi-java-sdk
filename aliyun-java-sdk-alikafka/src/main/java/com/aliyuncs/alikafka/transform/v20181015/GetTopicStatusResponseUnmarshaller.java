@@ -20,7 +20,6 @@ import java.util.List;
 import com.aliyuncs.alikafka.model.v20181015.GetTopicStatusResponse;
 import com.aliyuncs.alikafka.model.v20181015.GetTopicStatusResponse.TopicStatus;
 import com.aliyuncs.alikafka.model.v20181015.GetTopicStatusResponse.TopicStatus.OffsetTableItem;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
