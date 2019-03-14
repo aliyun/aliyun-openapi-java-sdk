@@ -19,7 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.cbn.model.v20170912.DescribeCensResponse;
 import com.aliyuncs.cbn.model.v20170912.DescribeCensResponse.Cen;
-import java.util.Map;
+import com.aliyuncs.cbn.model.v20170912.DescribeCensResponse.Cen.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -38,15 +38,25 @@ public class DescribeCensResponseUnmarshaller {
 			cen.setCenId(context.stringValue("DescribeCensResponse.Cens["+ i +"].CenId"));
 			cen.setName(context.stringValue("DescribeCensResponse.Cens["+ i +"].Name"));
 			cen.setDescription(context.stringValue("DescribeCensResponse.Cens["+ i +"].Description"));
+			cen.setProtectionLevel(context.stringValue("DescribeCensResponse.Cens["+ i +"].ProtectionLevel"));
 			cen.setStatus(context.stringValue("DescribeCensResponse.Cens["+ i +"].Status"));
 			cen.setCreationTime(context.stringValue("DescribeCensResponse.Cens["+ i +"].CreationTime"));
-			cen.setProtectionLevel(context.stringValue("DescribeCensResponse.Cens["+ i +"].ProtectionLevel"));
 
 			List<String> cenBandwidthPackageIds = new ArrayList<String>();
 			for (int j = 0; j < context.lengthValue("DescribeCensResponse.Cens["+ i +"].CenBandwidthPackageIds.Length"); j++) {
 				cenBandwidthPackageIds.add(context.stringValue("DescribeCensResponse.Cens["+ i +"].CenBandwidthPackageIds["+ j +"]"));
 			}
 			cen.setCenBandwidthPackageIds(cenBandwidthPackageIds);
+
+			List<Tag> tags = new ArrayList<Tag>();
+			for (int j = 0; j < context.lengthValue("DescribeCensResponse.Cens["+ i +"].Tags.Length"); j++) {
+				Tag tag = new Tag();
+				tag.setKey(context.stringValue("DescribeCensResponse.Cens["+ i +"].Tags["+ j +"].Key"));
+				tag.setValue(context.stringValue("DescribeCensResponse.Cens["+ i +"].Tags["+ j +"].Value"));
+
+				tags.add(tag);
+			}
+			cen.setTags(tags);
 
 			cens.add(cen);
 		}

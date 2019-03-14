@@ -83,11 +83,13 @@ public class DescribeCensResponse extends AcsResponse {
 
 		private String description;
 
+		private String protectionLevel;
+
 		private String status;
 
 		private String creationTime;
 
-		private String protectionLevel;
+		private List<Tag> tags;
 
 		private List<String> cenBandwidthPackageIds;
 
@@ -115,6 +117,14 @@ public class DescribeCensResponse extends AcsResponse {
 			this.description = description;
 		}
 
+		public String getProtectionLevel() {
+			return this.protectionLevel;
+		}
+
+		public void setProtectionLevel(String protectionLevel) {
+			this.protectionLevel = protectionLevel;
+		}
+
 		public String getStatus() {
 			return this.status;
 		}
@@ -131,12 +141,12 @@ public class DescribeCensResponse extends AcsResponse {
 			this.creationTime = creationTime;
 		}
 
-		public String getProtectionLevel() {
-			return this.protectionLevel;
+		public List<Tag> getTags() {
+			return this.tags;
 		}
 
-		public void setProtectionLevel(String protectionLevel) {
-			this.protectionLevel = protectionLevel;
+		public void setTags(List<Tag> tags) {
+			this.tags = tags;
 		}
 
 		public List<String> getCenBandwidthPackageIds() {
@@ -145,6 +155,29 @@ public class DescribeCensResponse extends AcsResponse {
 
 		public void setCenBandwidthPackageIds(List<String> cenBandwidthPackageIds) {
 			this.cenBandwidthPackageIds = cenBandwidthPackageIds;
+		}
+
+		public static class Tag {
+
+			private String key;
+
+			private String value;
+
+			public String getKey() {
+				return this.key;
+			}
+
+			public void setKey(String key) {
+				this.key = key;
+			}
+
+			public String getValue() {
+				return this.value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
+			}
 		}
 	}
 

@@ -15,51 +15,36 @@
 package com.aliyuncs.cbn.model.v20170912;
 
 import com.aliyuncs.RpcAcsRequest;
-import java.util.List;
 
 /**
  * @author auto create
  * @version 
  */
-public class DescribeCensRequest extends RpcAcsRequest<DescribeCensResponse> {
+public class DescribeRouteServicesInCenRequest extends RpcAcsRequest<DescribeRouteServicesInCenResponse> {
 	
-	public DescribeCensRequest() {
-		super("Cbn", "2017-09-12", "DescribeCens", "cbn");
+	public DescribeRouteServicesInCenRequest() {
+		super("Cbn", "2017-09-12", "DescribeRouteServicesInCen", "cbn");
 	}
-
-	private List<Filter> filters;
 
 	private Long resourceOwnerId;
 
 	private String resourceOwnerAccount;
 
+	private String cenId;
+
 	private String ownerAccount;
 
 	private Integer pageSize;
 
-	private List<Tag> tags;
+	private String host;
+
+	private String hostRegionId;
+
+	private String accessRegionId;
 
 	private Long ownerId;
 
 	private Integer pageNumber;
-
-	public List<Filter> getFilters() {
-		return this.filters;
-	}
-
-	public void setFilters(List<Filter> filters) {
-		this.filters = filters;	
-		if (filters != null) {
-			for (int depth1 = 0; depth1 < filters.size(); depth1++) {
-				if (filters.get(depth1).getValues() != null) {
-					for (int i = 0; i < filters.get(depth1).getValues().size(); i++) {
-						putQueryParameter("Filter." + (depth1 + 1) + ".Value." + (i + 1) , filters.get(depth1).getValues().get(i));
-					}
-				}
-				putQueryParameter("Filter." + (depth1 + 1) + ".Key" , filters.get(depth1).getKey());
-			}
-		}	
-	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -80,6 +65,17 @@ public class DescribeCensRequest extends RpcAcsRequest<DescribeCensResponse> {
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getCenId() {
+		return this.cenId;
+	}
+
+	public void setCenId(String cenId) {
+		this.cenId = cenId;
+		if(cenId != null){
+			putQueryParameter("CenId", cenId);
 		}
 	}
 
@@ -105,18 +101,37 @@ public class DescribeCensRequest extends RpcAcsRequest<DescribeCensResponse> {
 		}
 	}
 
-	public List<Tag> getTags() {
-		return this.tags;
+	public String getHost() {
+		return this.host;
 	}
 
-	public void setTags(List<Tag> tags) {
-		this.tags = tags;	
-		if (tags != null) {
-			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
-				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
-				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
-			}
-		}	
+	public void setHost(String host) {
+		this.host = host;
+		if(host != null){
+			putQueryParameter("Host", host);
+		}
+	}
+
+	public String getHostRegionId() {
+		return this.hostRegionId;
+	}
+
+	public void setHostRegionId(String hostRegionId) {
+		this.hostRegionId = hostRegionId;
+		if(hostRegionId != null){
+			putQueryParameter("HostRegionId", hostRegionId);
+		}
+	}
+
+	public String getAccessRegionId() {
+		return this.accessRegionId;
+	}
+
+	public void setAccessRegionId(String accessRegionId) {
+		this.accessRegionId = accessRegionId;
+		if(accessRegionId != null){
+			putQueryParameter("AccessRegionId", accessRegionId);
+		}
 	}
 
 	public Long getOwnerId() {
@@ -141,55 +156,9 @@ public class DescribeCensRequest extends RpcAcsRequest<DescribeCensResponse> {
 		}
 	}
 
-	public static class Filter {
-
-		private List<String> values;
-
-		private String key;
-
-		public List<String> getValues() {
-			return this.values;
-		}
-
-		public void setValues(List<String> values) {
-			this.values = values;
-		}
-
-		public String getKey() {
-			return this.key;
-		}
-
-		public void setKey(String key) {
-			this.key = key;
-		}
-	}
-
-	public static class Tag {
-
-		private String value;
-
-		private String key;
-
-		public String getValue() {
-			return this.value;
-		}
-
-		public void setValue(String value) {
-			this.value = value;
-		}
-
-		public String getKey() {
-			return this.key;
-		}
-
-		public void setKey(String key) {
-			this.key = key;
-		}
-	}
-
 	@Override
-	public Class<DescribeCensResponse> getResponseClass() {
-		return DescribeCensResponse.class;
+	public Class<DescribeRouteServicesInCenResponse> getResponseClass() {
+		return DescribeRouteServicesInCenResponse.class;
 	}
 
 }

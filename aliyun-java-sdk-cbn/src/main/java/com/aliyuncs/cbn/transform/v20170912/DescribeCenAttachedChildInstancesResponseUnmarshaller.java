@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.cbn.model.v20170912.DescribeCenAttachedChildInstancesResponse;
 import com.aliyuncs.cbn.model.v20170912.DescribeCenAttachedChildInstancesResponse.ChildInstance;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -41,6 +40,7 @@ public class DescribeCenAttachedChildInstancesResponseUnmarshaller {
 			childInstance.setChildInstanceRegionId(context.stringValue("DescribeCenAttachedChildInstancesResponse.ChildInstances["+ i +"].ChildInstanceRegionId"));
 			childInstance.setChildInstanceOwnerId(context.longValue("DescribeCenAttachedChildInstancesResponse.ChildInstances["+ i +"].ChildInstanceOwnerId"));
 			childInstance.setStatus(context.stringValue("DescribeCenAttachedChildInstancesResponse.ChildInstances["+ i +"].Status"));
+			childInstance.setChildInstanceAttachTime(context.stringValue("DescribeCenAttachedChildInstancesResponse.ChildInstances["+ i +"].ChildInstanceAttachTime"));
 
 			childInstances.add(childInstance);
 		}

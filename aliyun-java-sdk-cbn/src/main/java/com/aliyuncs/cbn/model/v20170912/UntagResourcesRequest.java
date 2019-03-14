@@ -15,43 +15,35 @@
 package com.aliyuncs.cbn.model.v20170912;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 
 /**
  * @author auto create
  * @version 
  */
-public class CreateCenRequest extends RpcAcsRequest<CreateCenResponse> {
+public class UntagResourcesRequest extends RpcAcsRequest<UntagResourcesResponse> {
 	
-	public CreateCenRequest() {
-		super("Cbn", "2017-09-12", "CreateCen", "cbn");
+	public UntagResourcesRequest() {
+		super("Cbn", "2017-09-12", "UntagResources", "cbn");
 	}
-
-	private String protectionLevel;
 
 	private Long resourceOwnerId;
 
-	private String resourceOwnerAccount;
+	private List<String> resourceIds;
 
-	private String clientToken;
+	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
-	private String name;
+	private Long tagOwnerUid;
 
-	private String description;
+	private String tagOwnerBid;
 
 	private Long ownerId;
 
-	public String getProtectionLevel() {
-		return this.protectionLevel;
-	}
+	private List<String> tagKeys;
 
-	public void setProtectionLevel(String protectionLevel) {
-		this.protectionLevel = protectionLevel;
-		if(protectionLevel != null){
-			putQueryParameter("ProtectionLevel", protectionLevel);
-		}
-	}
+	private String resourceType;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -64,6 +56,19 @@ public class CreateCenRequest extends RpcAcsRequest<CreateCenResponse> {
 		}
 	}
 
+	public List<String> getResourceIds() {
+		return this.resourceIds;
+	}
+
+	public void setResourceIds(List<String> resourceIds) {
+		this.resourceIds = resourceIds;	
+		if (resourceIds != null) {
+			for (int i = 0; i < resourceIds.size(); i++) {
+				putQueryParameter("ResourceId." + (i + 1) , resourceIds.get(i));
+			}
+		}	
+	}
+
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
 	}
@@ -72,17 +77,6 @@ public class CreateCenRequest extends RpcAcsRequest<CreateCenResponse> {
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public String getClientToken() {
-		return this.clientToken;
-	}
-
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putQueryParameter("ClientToken", clientToken);
 		}
 	}
 
@@ -97,25 +91,25 @@ public class CreateCenRequest extends RpcAcsRequest<CreateCenResponse> {
 		}
 	}
 
-	public String getName() {
-		return this.name;
+	public Long getTagOwnerUid() {
+		return this.tagOwnerUid;
 	}
 
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putQueryParameter("Name", name);
+	public void setTagOwnerUid(Long tagOwnerUid) {
+		this.tagOwnerUid = tagOwnerUid;
+		if(tagOwnerUid != null){
+			putQueryParameter("TagOwnerUid", tagOwnerUid.toString());
 		}
 	}
 
-	public String getDescription() {
-		return this.description;
+	public String getTagOwnerBid() {
+		return this.tagOwnerBid;
 	}
 
-	public void setDescription(String description) {
-		this.description = description;
-		if(description != null){
-			putQueryParameter("Description", description);
+	public void setTagOwnerBid(String tagOwnerBid) {
+		this.tagOwnerBid = tagOwnerBid;
+		if(tagOwnerBid != null){
+			putQueryParameter("TagOwnerBid", tagOwnerBid);
 		}
 	}
 
@@ -130,9 +124,33 @@ public class CreateCenRequest extends RpcAcsRequest<CreateCenResponse> {
 		}
 	}
 
+	public List<String> getTagKeys() {
+		return this.tagKeys;
+	}
+
+	public void setTagKeys(List<String> tagKeys) {
+		this.tagKeys = tagKeys;	
+		if (tagKeys != null) {
+			for (int i = 0; i < tagKeys.size(); i++) {
+				putQueryParameter("TagKey." + (i + 1) , tagKeys.get(i));
+			}
+		}	
+	}
+
+	public String getResourceType() {
+		return this.resourceType;
+	}
+
+	public void setResourceType(String resourceType) {
+		this.resourceType = resourceType;
+		if(resourceType != null){
+			putQueryParameter("ResourceType", resourceType);
+		}
+	}
+
 	@Override
-	public Class<CreateCenResponse> getResponseClass() {
-		return CreateCenResponse.class;
+	public Class<UntagResourcesResponse> getResponseClass() {
+		return UntagResourcesResponse.class;
 	}
 
 }

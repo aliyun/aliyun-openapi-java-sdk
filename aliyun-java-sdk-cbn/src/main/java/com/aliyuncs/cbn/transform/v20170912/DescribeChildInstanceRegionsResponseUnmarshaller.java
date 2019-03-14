@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.cbn.model.v20170912.DescribeChildInstanceRegionsResponse;
 import com.aliyuncs.cbn.model.v20170912.DescribeChildInstanceRegionsResponse.Region;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

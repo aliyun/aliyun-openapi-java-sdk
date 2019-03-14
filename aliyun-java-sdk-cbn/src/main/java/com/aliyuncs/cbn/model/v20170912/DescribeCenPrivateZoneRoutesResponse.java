@@ -16,16 +16,20 @@ package com.aliyuncs.cbn.model.v20170912;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.cbn.transform.v20170912.DescribeRouteConflictResponseUnmarshaller;
+import com.aliyuncs.cbn.transform.v20170912.DescribeCenPrivateZoneRoutesResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DescribeRouteConflictResponse extends AcsResponse {
+public class DescribeCenPrivateZoneRoutesResponse extends AcsResponse {
 
 	private String requestId;
+
+	private String cenId;
+
+	private String privateZoneDnsServers;
 
 	private Integer pageNumber;
 
@@ -33,7 +37,7 @@ public class DescribeRouteConflictResponse extends AcsResponse {
 
 	private Integer pageSize;
 
-	private List<RouteConflict> routeConflicts;
+	private List<PrivateZoneInfo> privateZoneInfos;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -41,6 +45,22 @@ public class DescribeRouteConflictResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getCenId() {
+		return this.cenId;
+	}
+
+	public void setCenId(String cenId) {
+		this.cenId = cenId;
+	}
+
+	public String getPrivateZoneDnsServers() {
+		return this.privateZoneDnsServers;
+	}
+
+	public void setPrivateZoneDnsServers(String privateZoneDnsServers) {
+		this.privateZoneDnsServers = privateZoneDnsServers;
 	}
 
 	public Integer getPageNumber() {
@@ -67,72 +87,46 @@ public class DescribeRouteConflictResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
-	public List<RouteConflict> getRouteConflicts() {
-		return this.routeConflicts;
+	public List<PrivateZoneInfo> getPrivateZoneInfos() {
+		return this.privateZoneInfos;
 	}
 
-	public void setRouteConflicts(List<RouteConflict> routeConflicts) {
-		this.routeConflicts = routeConflicts;
+	public void setPrivateZoneInfos(List<PrivateZoneInfo> privateZoneInfos) {
+		this.privateZoneInfos = privateZoneInfos;
 	}
 
-	public static class RouteConflict {
+	public static class PrivateZoneInfo {
 
-		private String destinationCidrBlock;
+		private String accessRegionId;
 
-		private String regionId;
+		private String hostRegionId;
 
-		private String instanceId;
-
-		private String instanceType;
+		private String hostVpcId;
 
 		private String status;
 
-		public String getDestinationCidrBlock() {
-			return this.destinationCidrBlock;
+		public String getAccessRegionId() {
+			return this.accessRegionId;
 		}
 
-		public void setDestinationCidrBlock(String destinationCidrBlock) {
-			this.destinationCidrBlock = destinationCidrBlock;
+		public void setAccessRegionId(String accessRegionId) {
+			this.accessRegionId = accessRegionId;
 		}
 
-		public String getBizRegionId() {
-			return this.regionId;
+		public String getHostRegionId() {
+			return this.hostRegionId;
 		}
 
-		public void setBizRegionId(String regionId) {
-			this.regionId = regionId;
+		public void setHostRegionId(String hostRegionId) {
+			this.hostRegionId = hostRegionId;
 		}
 
-		/**
-		 * @deprecated use getBizRegionId instead of this.
-		 */
-		@Deprecated
-		public String getRegionId() {
-			return this.regionId;
+		public String getHostVpcId() {
+			return this.hostVpcId;
 		}
 
-		/**
-		 * @deprecated use setBizRegionId instead of this.
-		 */
-		@Deprecated
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
-		public String getInstanceId() {
-			return this.instanceId;
-		}
-
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
-		}
-
-		public String getInstanceType() {
-			return this.instanceType;
-		}
-
-		public void setInstanceType(String instanceType) {
-			this.instanceType = instanceType;
+		public void setHostVpcId(String hostVpcId) {
+			this.hostVpcId = hostVpcId;
 		}
 
 		public String getStatus() {
@@ -145,7 +139,7 @@ public class DescribeRouteConflictResponse extends AcsResponse {
 	}
 
 	@Override
-	public DescribeRouteConflictResponse getInstance(UnmarshallerContext context) {
-		return	DescribeRouteConflictResponseUnmarshaller.unmarshall(this, context);
+	public DescribeCenPrivateZoneRoutesResponse getInstance(UnmarshallerContext context) {
+		return	DescribeCenPrivateZoneRoutesResponseUnmarshaller.unmarshall(this, context);
 	}
 }

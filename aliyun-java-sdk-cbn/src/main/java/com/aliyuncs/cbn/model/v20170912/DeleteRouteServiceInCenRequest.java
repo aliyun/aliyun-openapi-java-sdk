@@ -20,38 +20,27 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class CreateCenRequest extends RpcAcsRequest<CreateCenResponse> {
+public class DeleteRouteServiceInCenRequest extends RpcAcsRequest<DeleteRouteServiceInCenResponse> {
 	
-	public CreateCenRequest() {
-		super("Cbn", "2017-09-12", "CreateCen", "cbn");
+	public DeleteRouteServiceInCenRequest() {
+		super("Cbn", "2017-09-12", "DeleteRouteServiceInCen", "cbn");
 	}
-
-	private String protectionLevel;
 
 	private Long resourceOwnerId;
 
 	private String resourceOwnerAccount;
 
-	private String clientToken;
+	private String cenId;
 
 	private String ownerAccount;
 
-	private String name;
+	private String host;
 
-	private String description;
+	private String hostRegionId;
+
+	private String accessRegionId;
 
 	private Long ownerId;
-
-	public String getProtectionLevel() {
-		return this.protectionLevel;
-	}
-
-	public void setProtectionLevel(String protectionLevel) {
-		this.protectionLevel = protectionLevel;
-		if(protectionLevel != null){
-			putQueryParameter("ProtectionLevel", protectionLevel);
-		}
-	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -75,14 +64,14 @@ public class CreateCenRequest extends RpcAcsRequest<CreateCenResponse> {
 		}
 	}
 
-	public String getClientToken() {
-		return this.clientToken;
+	public String getCenId() {
+		return this.cenId;
 	}
 
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putQueryParameter("ClientToken", clientToken);
+	public void setCenId(String cenId) {
+		this.cenId = cenId;
+		if(cenId != null){
+			putQueryParameter("CenId", cenId);
 		}
 	}
 
@@ -97,25 +86,36 @@ public class CreateCenRequest extends RpcAcsRequest<CreateCenResponse> {
 		}
 	}
 
-	public String getName() {
-		return this.name;
+	public String getHost() {
+		return this.host;
 	}
 
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putQueryParameter("Name", name);
+	public void setHost(String host) {
+		this.host = host;
+		if(host != null){
+			putQueryParameter("Host", host);
 		}
 	}
 
-	public String getDescription() {
-		return this.description;
+	public String getHostRegionId() {
+		return this.hostRegionId;
 	}
 
-	public void setDescription(String description) {
-		this.description = description;
-		if(description != null){
-			putQueryParameter("Description", description);
+	public void setHostRegionId(String hostRegionId) {
+		this.hostRegionId = hostRegionId;
+		if(hostRegionId != null){
+			putQueryParameter("HostRegionId", hostRegionId);
+		}
+	}
+
+	public String getAccessRegionId() {
+		return this.accessRegionId;
+	}
+
+	public void setAccessRegionId(String accessRegionId) {
+		this.accessRegionId = accessRegionId;
+		if(accessRegionId != null){
+			putQueryParameter("AccessRegionId", accessRegionId);
 		}
 	}
 
@@ -131,8 +131,8 @@ public class CreateCenRequest extends RpcAcsRequest<CreateCenResponse> {
 	}
 
 	@Override
-	public Class<CreateCenResponse> getResponseClass() {
-		return CreateCenResponse.class;
+	public Class<DeleteRouteServiceInCenResponse> getResponseClass() {
+		return DeleteRouteServiceInCenResponse.class;
 	}
 
 }

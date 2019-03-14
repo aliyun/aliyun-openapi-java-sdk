@@ -20,38 +20,23 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class CreateCenRequest extends RpcAcsRequest<CreateCenResponse> {
+public class DescribeGrantRulesToCenRequest extends RpcAcsRequest<DescribeGrantRulesToCenResponse> {
 	
-	public CreateCenRequest() {
-		super("Cbn", "2017-09-12", "CreateCen", "cbn");
+	public DescribeGrantRulesToCenRequest() {
+		super("Cbn", "2017-09-12", "DescribeGrantRulesToCen", "cbn");
 	}
-
-	private String protectionLevel;
 
 	private Long resourceOwnerId;
 
 	private String resourceOwnerAccount;
 
-	private String clientToken;
+	private String cenId;
 
 	private String ownerAccount;
 
-	private String name;
-
-	private String description;
-
 	private Long ownerId;
 
-	public String getProtectionLevel() {
-		return this.protectionLevel;
-	}
-
-	public void setProtectionLevel(String protectionLevel) {
-		this.protectionLevel = protectionLevel;
-		if(protectionLevel != null){
-			putQueryParameter("ProtectionLevel", protectionLevel);
-		}
-	}
+	private String productType;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -75,14 +60,14 @@ public class CreateCenRequest extends RpcAcsRequest<CreateCenResponse> {
 		}
 	}
 
-	public String getClientToken() {
-		return this.clientToken;
+	public String getCenId() {
+		return this.cenId;
 	}
 
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putQueryParameter("ClientToken", clientToken);
+	public void setCenId(String cenId) {
+		this.cenId = cenId;
+		if(cenId != null){
+			putQueryParameter("CenId", cenId);
 		}
 	}
 
@@ -97,28 +82,6 @@ public class CreateCenRequest extends RpcAcsRequest<CreateCenResponse> {
 		}
 	}
 
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putQueryParameter("Name", name);
-		}
-	}
-
-	public String getDescription() {
-		return this.description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-		if(description != null){
-			putQueryParameter("Description", description);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -130,9 +93,20 @@ public class CreateCenRequest extends RpcAcsRequest<CreateCenResponse> {
 		}
 	}
 
+	public String getProductType() {
+		return this.productType;
+	}
+
+	public void setProductType(String productType) {
+		this.productType = productType;
+		if(productType != null){
+			putQueryParameter("ProductType", productType);
+		}
+	}
+
 	@Override
-	public Class<CreateCenResponse> getResponseClass() {
-		return CreateCenResponse.class;
+	public Class<DescribeGrantRulesToCenResponse> getResponseClass() {
+		return DescribeGrantRulesToCenResponse.class;
 	}
 
 }

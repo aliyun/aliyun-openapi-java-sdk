@@ -20,38 +20,27 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class CreateCenRequest extends RpcAcsRequest<CreateCenResponse> {
+public class RoutePrivateZoneInCenToVpcRequest extends RpcAcsRequest<RoutePrivateZoneInCenToVpcResponse> {
 	
-	public CreateCenRequest() {
-		super("Cbn", "2017-09-12", "CreateCen", "cbn");
+	public RoutePrivateZoneInCenToVpcRequest() {
+		super("Cbn", "2017-09-12", "RoutePrivateZoneInCenToVpc", "cbn");
 	}
-
-	private String protectionLevel;
 
 	private Long resourceOwnerId;
 
 	private String resourceOwnerAccount;
 
-	private String clientToken;
+	private String cenId;
 
 	private String ownerAccount;
 
-	private String name;
+	private String hostRegionId;
 
-	private String description;
+	private String accessRegionId;
 
 	private Long ownerId;
 
-	public String getProtectionLevel() {
-		return this.protectionLevel;
-	}
-
-	public void setProtectionLevel(String protectionLevel) {
-		this.protectionLevel = protectionLevel;
-		if(protectionLevel != null){
-			putQueryParameter("ProtectionLevel", protectionLevel);
-		}
-	}
+	private String hostVpcId;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -75,14 +64,14 @@ public class CreateCenRequest extends RpcAcsRequest<CreateCenResponse> {
 		}
 	}
 
-	public String getClientToken() {
-		return this.clientToken;
+	public String getCenId() {
+		return this.cenId;
 	}
 
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putQueryParameter("ClientToken", clientToken);
+	public void setCenId(String cenId) {
+		this.cenId = cenId;
+		if(cenId != null){
+			putQueryParameter("CenId", cenId);
 		}
 	}
 
@@ -97,25 +86,25 @@ public class CreateCenRequest extends RpcAcsRequest<CreateCenResponse> {
 		}
 	}
 
-	public String getName() {
-		return this.name;
+	public String getHostRegionId() {
+		return this.hostRegionId;
 	}
 
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putQueryParameter("Name", name);
+	public void setHostRegionId(String hostRegionId) {
+		this.hostRegionId = hostRegionId;
+		if(hostRegionId != null){
+			putQueryParameter("HostRegionId", hostRegionId);
 		}
 	}
 
-	public String getDescription() {
-		return this.description;
+	public String getAccessRegionId() {
+		return this.accessRegionId;
 	}
 
-	public void setDescription(String description) {
-		this.description = description;
-		if(description != null){
-			putQueryParameter("Description", description);
+	public void setAccessRegionId(String accessRegionId) {
+		this.accessRegionId = accessRegionId;
+		if(accessRegionId != null){
+			putQueryParameter("AccessRegionId", accessRegionId);
 		}
 	}
 
@@ -130,9 +119,20 @@ public class CreateCenRequest extends RpcAcsRequest<CreateCenResponse> {
 		}
 	}
 
+	public String getHostVpcId() {
+		return this.hostVpcId;
+	}
+
+	public void setHostVpcId(String hostVpcId) {
+		this.hostVpcId = hostVpcId;
+		if(hostVpcId != null){
+			putQueryParameter("HostVpcId", hostVpcId);
+		}
+	}
+
 	@Override
-	public Class<CreateCenResponse> getResponseClass() {
-		return CreateCenResponse.class;
+	public Class<RoutePrivateZoneInCenToVpcResponse> getResponseClass() {
+		return RoutePrivateZoneInCenToVpcResponse.class;
 	}
 
 }

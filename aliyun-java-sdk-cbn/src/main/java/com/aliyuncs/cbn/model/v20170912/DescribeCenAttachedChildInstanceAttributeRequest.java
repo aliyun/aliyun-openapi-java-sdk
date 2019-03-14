@@ -20,11 +20,13 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class DescribeCenAttachedChildInstancesRequest extends RpcAcsRequest<DescribeCenAttachedChildInstancesResponse> {
+public class DescribeCenAttachedChildInstanceAttributeRequest extends RpcAcsRequest<DescribeCenAttachedChildInstanceAttributeResponse> {
 	
-	public DescribeCenAttachedChildInstancesRequest() {
-		super("Cbn", "2017-09-12", "DescribeCenAttachedChildInstances", "cbn");
+	public DescribeCenAttachedChildInstanceAttributeRequest() {
+		super("Cbn", "2017-09-12", "DescribeCenAttachedChildInstanceAttribute", "cbn");
 	}
+
+	private String childInstanceId;
 
 	private Long resourceOwnerId;
 
@@ -34,15 +36,22 @@ public class DescribeCenAttachedChildInstancesRequest extends RpcAcsRequest<Desc
 
 	private String ownerAccount;
 
-	private Integer pageSize;
-
 	private Long ownerId;
 
 	private String childInstanceType;
 
-	private Integer pageNumber;
-
 	private String childInstanceRegionId;
+
+	public String getChildInstanceId() {
+		return this.childInstanceId;
+	}
+
+	public void setChildInstanceId(String childInstanceId) {
+		this.childInstanceId = childInstanceId;
+		if(childInstanceId != null){
+			putQueryParameter("ChildInstanceId", childInstanceId);
+		}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -88,17 +97,6 @@ public class DescribeCenAttachedChildInstancesRequest extends RpcAcsRequest<Desc
 		}
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -121,17 +119,6 @@ public class DescribeCenAttachedChildInstancesRequest extends RpcAcsRequest<Desc
 		}
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
-		}
-	}
-
 	public String getChildInstanceRegionId() {
 		return this.childInstanceRegionId;
 	}
@@ -144,8 +131,8 @@ public class DescribeCenAttachedChildInstancesRequest extends RpcAcsRequest<Desc
 	}
 
 	@Override
-	public Class<DescribeCenAttachedChildInstancesResponse> getResponseClass() {
-		return DescribeCenAttachedChildInstancesResponse.class;
+	public Class<DescribeCenAttachedChildInstanceAttributeResponse> getResponseClass() {
+		return DescribeCenAttachedChildInstanceAttributeResponse.class;
 	}
 
 }

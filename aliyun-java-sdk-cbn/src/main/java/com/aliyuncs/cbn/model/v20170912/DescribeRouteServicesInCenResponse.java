@@ -16,14 +16,14 @@ package com.aliyuncs.cbn.model.v20170912;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.cbn.transform.v20170912.DescribeCenAttachedChildInstancesResponseUnmarshaller;
+import com.aliyuncs.cbn.transform.v20170912.DescribeRouteServicesInCenResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DescribeCenAttachedChildInstancesResponse extends AcsResponse {
+public class DescribeRouteServicesInCenResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -33,7 +33,7 @@ public class DescribeCenAttachedChildInstancesResponse extends AcsResponse {
 
 	private Integer pageSize;
 
-	private List<ChildInstance> childInstances;
+	private List<RouteServiceEntry> routeServiceEntries;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -67,29 +67,29 @@ public class DescribeCenAttachedChildInstancesResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
-	public List<ChildInstance> getChildInstances() {
-		return this.childInstances;
+	public List<RouteServiceEntry> getRouteServiceEntries() {
+		return this.routeServiceEntries;
 	}
 
-	public void setChildInstances(List<ChildInstance> childInstances) {
-		this.childInstances = childInstances;
+	public void setRouteServiceEntries(List<RouteServiceEntry> routeServiceEntries) {
+		this.routeServiceEntries = routeServiceEntries;
 	}
 
-	public static class ChildInstance {
+	public static class RouteServiceEntry {
 
 		private String cenId;
 
-		private String childInstanceId;
+		private String host;
 
-		private String childInstanceType;
+		private String hostRegionId;
 
-		private String childInstanceRegionId;
+		private String accessRegionId;
 
-		private Long childInstanceOwnerId;
+		private String updateInterval;
 
 		private String status;
 
-		private String childInstanceAttachTime;
+		private List<String> cidrs;
 
 		public String getCenId() {
 			return this.cenId;
@@ -99,36 +99,36 @@ public class DescribeCenAttachedChildInstancesResponse extends AcsResponse {
 			this.cenId = cenId;
 		}
 
-		public String getChildInstanceId() {
-			return this.childInstanceId;
+		public String getHost() {
+			return this.host;
 		}
 
-		public void setChildInstanceId(String childInstanceId) {
-			this.childInstanceId = childInstanceId;
+		public void setHost(String host) {
+			this.host = host;
 		}
 
-		public String getChildInstanceType() {
-			return this.childInstanceType;
+		public String getHostRegionId() {
+			return this.hostRegionId;
 		}
 
-		public void setChildInstanceType(String childInstanceType) {
-			this.childInstanceType = childInstanceType;
+		public void setHostRegionId(String hostRegionId) {
+			this.hostRegionId = hostRegionId;
 		}
 
-		public String getChildInstanceRegionId() {
-			return this.childInstanceRegionId;
+		public String getAccessRegionId() {
+			return this.accessRegionId;
 		}
 
-		public void setChildInstanceRegionId(String childInstanceRegionId) {
-			this.childInstanceRegionId = childInstanceRegionId;
+		public void setAccessRegionId(String accessRegionId) {
+			this.accessRegionId = accessRegionId;
 		}
 
-		public Long getChildInstanceOwnerId() {
-			return this.childInstanceOwnerId;
+		public String getUpdateInterval() {
+			return this.updateInterval;
 		}
 
-		public void setChildInstanceOwnerId(Long childInstanceOwnerId) {
-			this.childInstanceOwnerId = childInstanceOwnerId;
+		public void setUpdateInterval(String updateInterval) {
+			this.updateInterval = updateInterval;
 		}
 
 		public String getStatus() {
@@ -139,17 +139,17 @@ public class DescribeCenAttachedChildInstancesResponse extends AcsResponse {
 			this.status = status;
 		}
 
-		public String getChildInstanceAttachTime() {
-			return this.childInstanceAttachTime;
+		public List<String> getCidrs() {
+			return this.cidrs;
 		}
 
-		public void setChildInstanceAttachTime(String childInstanceAttachTime) {
-			this.childInstanceAttachTime = childInstanceAttachTime;
+		public void setCidrs(List<String> cidrs) {
+			this.cidrs = cidrs;
 		}
 	}
 
 	@Override
-	public DescribeCenAttachedChildInstancesResponse getInstance(UnmarshallerContext context) {
-		return	DescribeCenAttachedChildInstancesResponseUnmarshaller.unmarshall(this, context);
+	public DescribeRouteServicesInCenResponse getInstance(UnmarshallerContext context) {
+		return	DescribeRouteServicesInCenResponseUnmarshaller.unmarshall(this, context);
 	}
 }

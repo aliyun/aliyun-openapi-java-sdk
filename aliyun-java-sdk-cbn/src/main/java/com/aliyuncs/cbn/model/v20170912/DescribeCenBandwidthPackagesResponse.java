@@ -101,6 +101,8 @@ public class DescribeCenBandwidthPackagesResponse extends AcsResponse {
 
 		private String status;
 
+		private Boolean isCrossBorder;
+
 		private List<String> cenIds;
 
 		public String getCenBandwidthPackageId() {
@@ -197,6 +199,14 @@ public class DescribeCenBandwidthPackagesResponse extends AcsResponse {
 
 		public void setStatus(String status) {
 			this.status = status;
+		}
+
+		public Boolean getIsCrossBorder() {
+			return this.isCrossBorder;
+		}
+
+		public void setIsCrossBorder(Boolean isCrossBorder) {
+			this.isCrossBorder = isCrossBorder;
 		}
 
 		public List<String> getCenIds() {

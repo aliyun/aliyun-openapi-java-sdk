@@ -20,38 +20,23 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class CreateCenRequest extends RpcAcsRequest<CreateCenResponse> {
+public class UnroutePrivateZoneInCenToVpcRequest extends RpcAcsRequest<UnroutePrivateZoneInCenToVpcResponse> {
 	
-	public CreateCenRequest() {
-		super("Cbn", "2017-09-12", "CreateCen", "cbn");
+	public UnroutePrivateZoneInCenToVpcRequest() {
+		super("Cbn", "2017-09-12", "UnroutePrivateZoneInCenToVpc", "cbn");
 	}
-
-	private String protectionLevel;
 
 	private Long resourceOwnerId;
 
 	private String resourceOwnerAccount;
 
-	private String clientToken;
+	private String cenId;
 
 	private String ownerAccount;
 
-	private String name;
-
-	private String description;
+	private String accessRegionId;
 
 	private Long ownerId;
-
-	public String getProtectionLevel() {
-		return this.protectionLevel;
-	}
-
-	public void setProtectionLevel(String protectionLevel) {
-		this.protectionLevel = protectionLevel;
-		if(protectionLevel != null){
-			putQueryParameter("ProtectionLevel", protectionLevel);
-		}
-	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -75,14 +60,14 @@ public class CreateCenRequest extends RpcAcsRequest<CreateCenResponse> {
 		}
 	}
 
-	public String getClientToken() {
-		return this.clientToken;
+	public String getCenId() {
+		return this.cenId;
 	}
 
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putQueryParameter("ClientToken", clientToken);
+	public void setCenId(String cenId) {
+		this.cenId = cenId;
+		if(cenId != null){
+			putQueryParameter("CenId", cenId);
 		}
 	}
 
@@ -97,25 +82,14 @@ public class CreateCenRequest extends RpcAcsRequest<CreateCenResponse> {
 		}
 	}
 
-	public String getName() {
-		return this.name;
+	public String getAccessRegionId() {
+		return this.accessRegionId;
 	}
 
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putQueryParameter("Name", name);
-		}
-	}
-
-	public String getDescription() {
-		return this.description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-		if(description != null){
-			putQueryParameter("Description", description);
+	public void setAccessRegionId(String accessRegionId) {
+		this.accessRegionId = accessRegionId;
+		if(accessRegionId != null){
+			putQueryParameter("AccessRegionId", accessRegionId);
 		}
 	}
 
@@ -131,8 +105,8 @@ public class CreateCenRequest extends RpcAcsRequest<CreateCenResponse> {
 	}
 
 	@Override
-	public Class<CreateCenResponse> getResponseClass() {
-		return CreateCenResponse.class;
+	public Class<UnroutePrivateZoneInCenToVpcResponse> getResponseClass() {
+		return UnroutePrivateZoneInCenToVpcResponse.class;
 	}
 
 }

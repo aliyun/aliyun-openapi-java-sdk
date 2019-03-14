@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.cbn.model.v20170912.DescribeCenInterRegionBandwidthLimitsResponse;
 import com.aliyuncs.cbn.model.v20170912.DescribeCenInterRegionBandwidthLimitsResponse.CenInterRegionBandwidthLimit;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

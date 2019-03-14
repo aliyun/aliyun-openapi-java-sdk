@@ -20,13 +20,11 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class CreateCenRequest extends RpcAcsRequest<CreateCenResponse> {
+public class ResolveAndRouteServiceInCenRequest extends RpcAcsRequest<ResolveAndRouteServiceInCenResponse> {
 	
-	public CreateCenRequest() {
-		super("Cbn", "2017-09-12", "CreateCen", "cbn");
+	public ResolveAndRouteServiceInCenRequest() {
+		super("Cbn", "2017-09-12", "ResolveAndRouteServiceInCen", "cbn");
 	}
-
-	private String protectionLevel;
 
 	private Long resourceOwnerId;
 
@@ -34,24 +32,19 @@ public class CreateCenRequest extends RpcAcsRequest<CreateCenResponse> {
 
 	private String clientToken;
 
+	private String cenId;
+
 	private String ownerAccount;
 
-	private String name;
+	private String host;
 
-	private String description;
+	private String hostRegionId;
+
+	private String accessRegionId;
 
 	private Long ownerId;
 
-	public String getProtectionLevel() {
-		return this.protectionLevel;
-	}
-
-	public void setProtectionLevel(String protectionLevel) {
-		this.protectionLevel = protectionLevel;
-		if(protectionLevel != null){
-			putQueryParameter("ProtectionLevel", protectionLevel);
-		}
-	}
+	private Long updateInterval;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -86,6 +79,17 @@ public class CreateCenRequest extends RpcAcsRequest<CreateCenResponse> {
 		}
 	}
 
+	public String getCenId() {
+		return this.cenId;
+	}
+
+	public void setCenId(String cenId) {
+		this.cenId = cenId;
+		if(cenId != null){
+			putQueryParameter("CenId", cenId);
+		}
+	}
+
 	public String getOwnerAccount() {
 		return this.ownerAccount;
 	}
@@ -97,25 +101,36 @@ public class CreateCenRequest extends RpcAcsRequest<CreateCenResponse> {
 		}
 	}
 
-	public String getName() {
-		return this.name;
+	public String getHost() {
+		return this.host;
 	}
 
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putQueryParameter("Name", name);
+	public void setHost(String host) {
+		this.host = host;
+		if(host != null){
+			putQueryParameter("Host", host);
 		}
 	}
 
-	public String getDescription() {
-		return this.description;
+	public String getHostRegionId() {
+		return this.hostRegionId;
 	}
 
-	public void setDescription(String description) {
-		this.description = description;
-		if(description != null){
-			putQueryParameter("Description", description);
+	public void setHostRegionId(String hostRegionId) {
+		this.hostRegionId = hostRegionId;
+		if(hostRegionId != null){
+			putQueryParameter("HostRegionId", hostRegionId);
+		}
+	}
+
+	public String getAccessRegionId() {
+		return this.accessRegionId;
+	}
+
+	public void setAccessRegionId(String accessRegionId) {
+		this.accessRegionId = accessRegionId;
+		if(accessRegionId != null){
+			putQueryParameter("AccessRegionId", accessRegionId);
 		}
 	}
 
@@ -130,9 +145,20 @@ public class CreateCenRequest extends RpcAcsRequest<CreateCenResponse> {
 		}
 	}
 
+	public Long getUpdateInterval() {
+		return this.updateInterval;
+	}
+
+	public void setUpdateInterval(Long updateInterval) {
+		this.updateInterval = updateInterval;
+		if(updateInterval != null){
+			putQueryParameter("UpdateInterval", updateInterval.toString());
+		}
+	}
+
 	@Override
-	public Class<CreateCenResponse> getResponseClass() {
-		return CreateCenResponse.class;
+	public Class<ResolveAndRouteServiceInCenResponse> getResponseClass() {
+		return ResolveAndRouteServiceInCenResponse.class;
 	}
 
 }

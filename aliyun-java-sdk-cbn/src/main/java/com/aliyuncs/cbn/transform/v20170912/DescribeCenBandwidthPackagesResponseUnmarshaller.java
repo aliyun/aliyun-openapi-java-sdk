@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.cbn.model.v20170912.DescribeCenBandwidthPackagesResponse;
 import com.aliyuncs.cbn.model.v20170912.DescribeCenBandwidthPackagesResponse.CenBandwidthPackage;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -47,6 +46,7 @@ public class DescribeCenBandwidthPackagesResponseUnmarshaller {
 			cenBandwidthPackage.setCreationTime(context.stringValue("DescribeCenBandwidthPackagesResponse.CenBandwidthPackages["+ i +"].CreationTime"));
 			cenBandwidthPackage.setExpiredTime(context.stringValue("DescribeCenBandwidthPackagesResponse.CenBandwidthPackages["+ i +"].ExpiredTime"));
 			cenBandwidthPackage.setStatus(context.stringValue("DescribeCenBandwidthPackagesResponse.CenBandwidthPackages["+ i +"].Status"));
+			cenBandwidthPackage.setIsCrossBorder(context.booleanValue("DescribeCenBandwidthPackagesResponse.CenBandwidthPackages["+ i +"].IsCrossBorder"));
 
 			List<String> cenIds = new ArrayList<String>();
 			for (int j = 0; j < context.lengthValue("DescribeCenBandwidthPackagesResponse.CenBandwidthPackages["+ i +"].CenIds.Length"); j++) {
